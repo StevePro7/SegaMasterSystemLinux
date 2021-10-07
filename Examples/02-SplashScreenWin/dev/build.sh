@@ -17,37 +17,35 @@ cd ..
 sdcc -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
 
 # Link
-sdcc -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-loc 0xC000 ^
-../crt0/crt0_sms.rel main.rel ^
-../lib/SMSlib.lib ^
-devkit/_sms_manager.rel ^
-engine/asm_manager.rel ^
-engine/content_manager.rel ^
+sdcc -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-loc 0xC000 \
+../crt0/crt0_sms.rel main.rel \
+../lib/SMSlib.lib \
+devkit/_sms_manager.rel \
+engine/asm_manager.rel \
+engine/content_manager.rel \
 gfx.rel
 
 # Execute
 ihx2sms output.ihx output.sms
 
-# Delete
 cd devkit
-if exist "*.asm" del "*.asm" > nul
-if exist "*.lst" del "*.lst" > nul
-if exist "*.sym" del "*.sym" > nul
+rm -f *.asm 2> /dev/null
+rm -f *.lst 2> /dev/null
+rm -f *.sym 2> /dev/null
 cd ..
 
 cd engine
-if exist "*.asm" del "*.asm" > nul
-if exist "*.lst" del "*.lst" > nul
-if exist "*.sym" del "*.sym" > nul
+rm -f *.asm 2> /dev/null
+rm -f *.lst 2> /dev/null
+rm -f *.sym 2> /dev/null
 cd ..
 
-if exist "*.asm" del "*.asm" > nul
-if exist "*.ihx" del "*.ihx" > nul
-if exist "*.lk"  del "*.lk"  > nul
-if exist "*.lst" del "*.lst" > nul
-if exist "*.noi" del "*.noi" > nul
-if exist "*.sym" del "*.sym" > nul
+rm -f *.asm 2> /dev/null
+rm -f *.ihx 2> /dev/null
+rm -f *.lk  2> /dev/null
+rm -f *.lst 2> /dev/null
+rm -f *.noi 2> /dev/null
+rm -f *.sym 2> /dev/null
 
 # Run
-java -jar C:/SEGA/Emulicious/Emulicious.jar output.sms
-#output.sms
+#java -jar ~/Sega/Emulicious/Emulicious.jar output.sms
