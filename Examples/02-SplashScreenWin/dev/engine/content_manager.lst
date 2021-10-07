@@ -1,0 +1,103 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 4.1.0 #12072 (Linux)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module content_manager
+                                      6 	.optsdcc -mz80
+                                      7 	
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl _devkit_SMS_setSpritePaletteColor
+                                     12 	.globl _devkit_SMS_loadBGPalette
+                                     13 	.globl _devkit_SMS_loadSTMcompressedTileMap
+                                     14 	.globl _devkit_SMS_loadPSGaidencompressedTiles
+                                     15 	.globl _engine_content_manager_load_sprite_palette
+                                     16 	.globl _engine_content_manager_load_splash_screen
+                                     17 ;--------------------------------------------------------
+                                     18 ; special function registers
+                                     19 ;--------------------------------------------------------
+                                     20 ;--------------------------------------------------------
+                                     21 ; ram data
+                                     22 ;--------------------------------------------------------
+                                     23 	.area _DATA
+                                     24 ;--------------------------------------------------------
+                                     25 ; ram data
+                                     26 ;--------------------------------------------------------
+                                     27 	.area _INITIALIZED
+                                     28 ;--------------------------------------------------------
+                                     29 ; absolute external ram data
+                                     30 ;--------------------------------------------------------
+                                     31 	.area _DABS (ABS)
+                                     32 ;--------------------------------------------------------
+                                     33 ; global & static initialisations
+                                     34 ;--------------------------------------------------------
+                                     35 	.area _HOME
+                                     36 	.area _GSINIT
+                                     37 	.area _GSFINAL
+                                     38 	.area _GSINIT
+                                     39 ;--------------------------------------------------------
+                                     40 ; Home
+                                     41 ;--------------------------------------------------------
+                                     42 	.area _HOME
+                                     43 	.area _HOME
+                                     44 ;--------------------------------------------------------
+                                     45 ; code
+                                     46 ;--------------------------------------------------------
+                                     47 	.area _CODE
+                                     48 ;content_manager.c:7: void engine_content_manager_load_sprite_palette()
+                                     49 ;	---------------------------------
+                                     50 ; Function engine_content_manager_load_sprite_palette
+                                     51 ; ---------------------------------
+      000000                         52 _engine_content_manager_load_sprite_palette::
+                                     53 ;content_manager.c:9: devkit_SMS_setSpritePaletteColor( 0, 0, 0, 0 );
+      000000 AF               [ 4]   54 	xor	a, a
+      000001 F5               [11]   55 	push	af
+      000002 33               [ 6]   56 	inc	sp
+      000003 AF               [ 4]   57 	xor	a, a
+      000004 F5               [11]   58 	push	af
+      000005 33               [ 6]   59 	inc	sp
+      000006 AF               [ 4]   60 	xor	a, a
+      000007 F5               [11]   61 	push	af
+      000008 33               [ 6]   62 	inc	sp
+      000009 AF               [ 4]   63 	xor	a, a
+      00000A F5               [11]   64 	push	af
+      00000B 33               [ 6]   65 	inc	sp
+      00000C CDr00r00         [17]   66 	call	_devkit_SMS_setSpritePaletteColor
+      00000F F1               [10]   67 	pop	af
+      000010 F1               [10]   68 	pop	af
+                                     69 ;content_manager.c:10: }
+      000011 C9               [10]   70 	ret
+                                     71 ;content_manager.c:12: void engine_content_manager_load_splash_screen()
+                                     72 ;	---------------------------------
+                                     73 ; Function engine_content_manager_load_splash_screen
+                                     74 ; ---------------------------------
+      000012                         75 _engine_content_manager_load_splash_screen::
+                                     76 ;content_manager.c:14: devkit_SMS_loadPSGaidencompressedTiles( splash__tiles__psgcompr, SPLASH_TILES_OFFSET );
+      000012 21 80 00         [10]   77 	ld	hl, #0x0080
+      000015 E5               [11]   78 	push	hl
+      000016 21r00r00         [10]   79 	ld	hl, #_splash__tiles__psgcompr
+      000019 E5               [11]   80 	push	hl
+      00001A CDr00r00         [17]   81 	call	_devkit_SMS_loadPSGaidencompressedTiles
+      00001D F1               [10]   82 	pop	af
+                                     83 ;content_manager.c:15: devkit_SMS_loadSTMcompressedTileMap( 0, 0, ( void * ) splash__tilemap__stmcompr );
+      00001E 21r00r00         [10]   84 	ld	hl, #_splash__tilemap__stmcompr
+      000021 E3               [19]   85 	ex	(sp),hl
+      000022 AF               [ 4]   86 	xor	a, a
+      000023 F5               [11]   87 	push	af
+      000024 33               [ 6]   88 	inc	sp
+      000025 AF               [ 4]   89 	xor	a, a
+      000026 F5               [11]   90 	push	af
+      000027 33               [ 6]   91 	inc	sp
+      000028 CDr00r00         [17]   92 	call	_devkit_SMS_loadSTMcompressedTileMap
+      00002B F1               [10]   93 	pop	af
+                                     94 ;content_manager.c:16: devkit_SMS_loadBGPalette( ( void * ) splash__palette__bin );
+      00002C 21r00r00         [10]   95 	ld	hl, #_splash__palette__bin
+      00002F E3               [19]   96 	ex	(sp),hl
+      000030 CDr00r00         [17]   97 	call	_devkit_SMS_loadBGPalette
+      000033 F1               [10]   98 	pop	af
+                                     99 ;content_manager.c:17: }
+      000034 C9               [10]  100 	ret
+                                    101 	.area _CODE
+                                    102 	.area _INITIALIZER
+                                    103 	.area _CABS (ABS)

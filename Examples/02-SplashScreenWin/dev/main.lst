@@ -1,0 +1,74 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 4.1.0 #12072 (Linux)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module main
+                                      6 	.optsdcc -mz80
+                                      7 	
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl _main
+                                     12 	.globl _engine_content_manager_load_splash_screen
+                                     13 	.globl _engine_content_manager_load_sprite_palette
+                                     14 	.globl _engine_asm_manager_clear_VRAM
+                                     15 	.globl _devkit_SMS_waitForVBlank
+                                     16 	.globl _devkit_SMS_displayOff
+                                     17 	.globl _devkit_SMS_displayOn
+                                     18 	.globl _devkit_SMS_init
+                                     19 ;--------------------------------------------------------
+                                     20 ; special function registers
+                                     21 ;--------------------------------------------------------
+                                     22 ;--------------------------------------------------------
+                                     23 ; ram data
+                                     24 ;--------------------------------------------------------
+                                     25 	.area _DATA
+                                     26 ;--------------------------------------------------------
+                                     27 ; ram data
+                                     28 ;--------------------------------------------------------
+                                     29 	.area _INITIALIZED
+                                     30 ;--------------------------------------------------------
+                                     31 ; absolute external ram data
+                                     32 ;--------------------------------------------------------
+                                     33 	.area _DABS (ABS)
+                                     34 ;--------------------------------------------------------
+                                     35 ; global & static initialisations
+                                     36 ;--------------------------------------------------------
+                                     37 	.area _HOME
+                                     38 	.area _GSINIT
+                                     39 	.area _GSFINAL
+                                     40 	.area _GSINIT
+                                     41 ;--------------------------------------------------------
+                                     42 ; Home
+                                     43 ;--------------------------------------------------------
+                                     44 	.area _HOME
+                                     45 	.area _HOME
+                                     46 ;--------------------------------------------------------
+                                     47 ; code
+                                     48 ;--------------------------------------------------------
+                                     49 	.area _CODE
+                                     50 ;main.c:3: void main( void )
+                                     51 ;	---------------------------------
+                                     52 ; Function main
+                                     53 ; ---------------------------------
+      000000                         54 _main::
+                                     55 ;main.c:5: devkit_SMS_init();
+      000000 CDr00r00         [17]   56 	call	_devkit_SMS_init
+                                     57 ;main.c:6: devkit_SMS_displayOff();
+      000003 CDr00r00         [17]   58 	call	_devkit_SMS_displayOff
+                                     59 ;main.c:7: engine_asm_manager_clear_VRAM();
+      000006 CDr00r00         [17]   60 	call	_engine_asm_manager_clear_VRAM
+                                     61 ;main.c:9: engine_content_manager_load_sprite_palette();
+      000009 CDr00r00         [17]   62 	call	_engine_content_manager_load_sprite_palette
+                                     63 ;main.c:10: engine_content_manager_load_splash_screen();
+      00000C CDr00r00         [17]   64 	call	_engine_content_manager_load_splash_screen
+                                     65 ;main.c:12: devkit_SMS_displayOn();
+      00000F CDr00r00         [17]   66 	call	_devkit_SMS_displayOn
+      000012                         67 00102$:
+                                     68 ;main.c:15: devkit_SMS_waitForVBlank();
+      000012 CDr00r00         [17]   69 	call	_devkit_SMS_waitForVBlank
+                                     70 ;main.c:17: }
+      000015 18 FB            [12]   71 	jr	00102$
+                                     72 	.area _CODE
+                                     73 	.area _INITIALIZER
+                                     74 	.area _CABS (ABS)

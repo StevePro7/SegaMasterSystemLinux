@@ -1,6 +1,6 @@
 #include "content_manager.h"
-#include "..\devkit\_sms_manager.h"
-#include "..\gfx.h"
+#include "../devkit/_sms_manager.h"
+#include "../gfx.h"
 
 #define SPLASH_TILES_OFFSET		128
 
