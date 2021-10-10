@@ -2,20 +2,20 @@
 #include "../devkit/_sms_manager.h"
 #include "../gfx.h"
 
-#define TEXT_ROOT	32		// 32 is " " in ASCII.
-#define DATA_ROOT	16		// 16 is "0" (48=16+32)
-#define UNIT_ROOT	10		// 10 is decimal
-#define DATA_LONG	4		// 4 placeholder
+#define TEXT_ROOT 32 // 32 is " " in ASCII.
+#define DATA_ROOT 16 // 16 is "0" (48=16+32)
+#define UNIT_ROOT 10 // 10 is decimal
+#define DATA_LONG 4	 // 4 placeholder
 
-void engine_font_manager_draw_char( unsigned char ch, unsigned char x, unsigned char y )
+void engine_font_manager_draw_char(unsigned char ch, unsigned char x, unsigned char y)
 {
 	const unsigned char *pnt = font_tiles__tilemap__bin;
 	unsigned char tile = ch - TEXT_ROOT;
-	devkit_SMS_setNextTileatXY( x, y );
-	devkit_SMS_setTile( *pnt + tile );
+	devkit_SMS_setNextTileatXY(x, y);
+	devkit_SMS_setTile(*pnt + tile);
 }
 
-void engine_font_manager_draw_text( unsigned char *text, unsigned char x, unsigned char y )
+void engine_font_manager_draw_text(unsigned char *text, unsigned char x, unsigned char y)
 {
 	const unsigned char *pnt = font_tiles__tilemap__bin;
 	unsigned char idx = 0;
@@ -24,27 +24,27 @@ void engine_font_manager_draw_text( unsigned char *text, unsigned char x, unsign
 	//engine_font_manager_draw_char(ch, x, y);
 
 	//if ( '/0' != text[idx])
-//	if (text[0] == '')
-//	{
-//		engine_font_manager_draw_data(13, 4, 4);
-//		return;
-//	}
+	//	if (text[0] == '')
+	//	{
+	//		engine_font_manager_draw_data(13, 4, 4);
+	//		return;
+	//	}
 
-// todo how do I detect null termination string in Linux??
-// also works in Windows?
-	while( idx < 5 )
+	// todo how do I detect null termination string in Linux??
+	// also works in Windows?
+	//while( idx < 5 )
+	while (text[idx] != '\0')
 	{
 		unsigned char ch = text[idx];
 		//signed char tile = text[idx] - TEXT_ROOT;
 		unsigned char tile = ch - TEXT_ROOT;
-		devkit_SMS_setNextTileatXY( x++, y );
-		devkit_SMS_setTile( *pnt + tile );
+		devkit_SMS_setNextTileatXY(x++, y);
+		devkit_SMS_setTile(*pnt + tile);
 		idx++;
 	}
-	
 }
 
-void engine_font_manager_draw_data( unsigned int data, unsigned char x, unsigned char y )
+void engine_font_manager_draw_data(unsigned int data, unsigned char x, unsigned char y)
 {
 	const unsigned char *pnt = font_tiles__tilemap__bin;
 
@@ -55,7 +55,7 @@ void engine_font_manager_draw_data( unsigned int data, unsigned char x, unsigned
 	unsigned char remainder = 0;
 
 	char hold[DATA_LONG];
-	for( idx = 0; idx < DATA_LONG; ++idx )
+	for (idx = 0; idx < DATA_LONG; ++idx)
 	{
 		quotient = data / UNIT_ROOT;
 		remainder = data % UNIT_ROOT;
@@ -64,18 +64,18 @@ void engine_font_manager_draw_data( unsigned int data, unsigned char x, unsigned
 		data /= UNIT_ROOT;
 
 		tile = hold[idx] + DATA_ROOT;
-		if( 0 == quotient && 0 == remainder && idx > 0 )
+		if (0 == quotient && 0 == remainder && idx > 0)
 		{
 			// Replace with space!
 			tile = 0;
 		}
 
-		devkit_SMS_setNextTileatXY( x--, y );
-		devkit_SMS_setTile( *pnt + tile );
+		devkit_SMS_setNextTileatXY(x--, y);
+		devkit_SMS_setTile(*pnt + tile);
 	}
 }
 
-void engine_font_manager_draw_data_ZERO( unsigned int data, unsigned char x, unsigned char y )
+void engine_font_manager_draw_data_ZERO(unsigned int data, unsigned char x, unsigned char y)
 {
 	const unsigned char *pnt = font_tiles__tilemap__bin;
 
@@ -84,14 +84,14 @@ void engine_font_manager_draw_data_ZERO( unsigned int data, unsigned char x, uns
 	unsigned char tile;
 
 	char hold[DATA_LONG];
-	for( idx = 0; idx < DATA_LONG; ++idx )
+	for (idx = 0; idx < DATA_LONG; ++idx)
 	{
 		hold[idx] = data % UNIT_ROOT;
 		data /= UNIT_ROOT;
 
 		tile = hold[idx] + DATA_ROOT;
 
-		devkit_SMS_setNextTileatXY( x--, y );
-		devkit_SMS_setTile( *pnt + tile );
+		devkit_SMS_setNextTileatXY(x--, y);
+		devkit_SMS_setTile(*pnt + tile);
 	}
 }

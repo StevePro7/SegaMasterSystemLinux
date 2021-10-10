@@ -4,7 +4,7 @@
 
 void engine_screen_manager_init()
 {
-	engine_font_manager_draw_text( "HELLO", 10, 10 );
+	engine_font_manager_draw_text("STEVEPRO", 10, 10);
 	//engine_font_manager_draw_char('X', 12, 12);
 	//engine_font_manager_draw_data(1, 14, 14);
 }
