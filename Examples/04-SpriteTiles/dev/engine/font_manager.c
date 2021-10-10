@@ -33,7 +33,7 @@ void engine_font_manager_draw_text(unsigned char *text, unsigned char x, unsigne
 	// todo how do I detect null termination string in Linux??
 	// also works in Windows?
 	//while( idx < 5 )
-	while (text[idx] != '\0')
+	while ('\0' != text[idx])
 	{
 		unsigned char ch = text[idx];
 		//signed char tile = text[idx] - TEXT_ROOT;
