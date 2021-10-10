@@ -1,4 +1,3 @@
-#!/bin/bash
 echo Build
 
 cd engine
@@ -21,20 +20,22 @@ ihx2sms output.ihx output.sms
 
 
 cd engine
-rm -f -- *.asm
-rm -f -- *.ihx
-rm -f -- *.lk
-rm -f -- *.lst
-rm -f -- *.noi
-rm -f -- *.sym
+if exist "*.asm" del "*.asm" > nul
+if exist "*.ihx" del "*.ihx" > nul
+if exist "*.lk"  del "*.lk"  > nul
+if exist "*.lst" del "*.lst" > nul
+if exist "*.noi" del "*.noi" > nul
+if exist "*.sym" del "*.sym" > nul
+
 cd ..
 
-rm -f -- *.asm
-rm -f -- *.ihx
-rm -f -- *.lk
-rm -f -- *.lst
-rm -f -- *.noi
-rm -f -- *.sym
+if exist "*.asm" del "*.asm" > nul
+if exist "*.ihx" del "*.ihx" > nul
+if exist "*.lk"  del "*.lk"  > nul
+if exist "*.lst" del "*.lst" > nul
+if exist "*.noi" del "*.noi" > nul
+if exist "*.sym" del "*.sym" > nul
 
-java -jar ~/Sega/Emulicious/Emulicious.jar output.sms
-#output.sms
+
+#java -jar ~/Sega/Emulicious/Emulicious.jar output.sms
+output.sms
