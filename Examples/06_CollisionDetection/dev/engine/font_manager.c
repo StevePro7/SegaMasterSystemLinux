@@ -20,7 +20,7 @@ void engine_font_manager_draw_text(unsigned char *text, unsigned char x, unsigne
 	const unsigned char *pnt = font_tiles__tilemap__bin;
 	unsigned char idx = 0;
 
-	while ('\0' != text[idx])
+	while ( '\0' != text[idx] )
 	{
 		signed char tile = text[idx] - TEXT_ROOT;
 		devkit_SMS_setNextTileatXY(x++, y);

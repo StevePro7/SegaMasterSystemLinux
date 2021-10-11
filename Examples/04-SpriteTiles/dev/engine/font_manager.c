@@ -19,24 +19,9 @@ void engine_font_manager_draw_text(unsigned char *text, unsigned char x, unsigne
 {
 	const unsigned char *pnt = font_tiles__tilemap__bin;
 	unsigned char idx = 0;
-	//unsigned char ch = text[idx];
-
-	//engine_font_manager_draw_char(ch, x, y);
-
-	//if ( '/0' != text[idx])
-	//	if (text[0] == '')
-	//	{
-	//		engine_font_manager_draw_data(13, 4, 4);
-	//		return;
-	//	}
-
-	// todo how do I detect null termination string in Linux??
-	// also works in Windows?
-	//while( idx < 5 )
-	while ('\0' != text[idx])
+	while ( '\0' != text[idx] )
 	{
 		unsigned char ch = text[idx];
-		//signed char tile = text[idx] - TEXT_ROOT;
 		unsigned char tile = ch - TEXT_ROOT;
 		devkit_SMS_setNextTileatXY(x++, y);
 		devkit_SMS_setTile(*pnt + tile);

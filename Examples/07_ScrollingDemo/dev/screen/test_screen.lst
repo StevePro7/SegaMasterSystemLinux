@@ -1,0 +1,127 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 4.1.0 #12072 (Linux)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module test_screen
+                                      6 	.optsdcc -mz80
+                                      7 	
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl _engine_scroll_manager_update_right
+                                     12 	.globl _engine_scroll_manager_update_left
+                                     13 	.globl _engine_scroll_manager_load
+                                     14 	.globl _engine_input_manager_move_right
+                                     15 	.globl _engine_input_manager_move_left
+                                     16 	.globl _screen_test_screen_load
+                                     17 	.globl _screen_test_screen_update
+                                     18 ;--------------------------------------------------------
+                                     19 ; special function registers
+                                     20 ;--------------------------------------------------------
+                                     21 ;--------------------------------------------------------
+                                     22 ; ram data
+                                     23 ;--------------------------------------------------------
+                                     24 	.area _DATA
+                                     25 ;--------------------------------------------------------
+                                     26 ; ram data
+                                     27 ;--------------------------------------------------------
+                                     28 	.area _INITIALIZED
+                                     29 ;--------------------------------------------------------
+                                     30 ; absolute external ram data
+                                     31 ;--------------------------------------------------------
+                                     32 	.area _DABS (ABS)
+                                     33 ;--------------------------------------------------------
+                                     34 ; global & static initialisations
+                                     35 ;--------------------------------------------------------
+                                     36 	.area _HOME
+                                     37 	.area _GSINIT
+                                     38 	.area _GSFINAL
+                                     39 	.area _GSINIT
+                                     40 ;--------------------------------------------------------
+                                     41 ; Home
+                                     42 ;--------------------------------------------------------
+                                     43 	.area _HOME
+                                     44 	.area _HOME
+                                     45 ;--------------------------------------------------------
+                                     46 ; code
+                                     47 ;--------------------------------------------------------
+                                     48 	.area _CODE
+                           000000    49 	G$screen_test_screen_load$0$0	= .
+                                     50 	.globl	G$screen_test_screen_load$0$0
+                           000000    51 	C$test_screen.c$6$0_0$2	= .
+                                     52 	.globl	C$test_screen.c$6$0_0$2
+                                     53 ;test_screen.c:6: void screen_test_screen_load()
+                                     54 ;	---------------------------------
+                                     55 ; Function screen_test_screen_load
+                                     56 ; ---------------------------------
+      000000                         57 _screen_test_screen_load::
+                           000000    58 	C$test_screen.c$8$1_0$2	= .
+                                     59 	.globl	C$test_screen.c$8$1_0$2
+                                     60 ;test_screen.c:8: engine_scroll_manager_load();
+                           000000    61 	C$test_screen.c$9$1_0$2	= .
+                                     62 	.globl	C$test_screen.c$9$1_0$2
+                                     63 ;test_screen.c:9: }
+                           000000    64 	C$test_screen.c$9$1_0$2	= .
+                                     65 	.globl	C$test_screen.c$9$1_0$2
+                           000000    66 	XG$screen_test_screen_load$0$0	= .
+                                     67 	.globl	XG$screen_test_screen_load$0$0
+      000000 C3r00r00         [10]   68 	jp	_engine_scroll_manager_load
+                           000003    69 	G$screen_test_screen_update$0$0	= .
+                                     70 	.globl	G$screen_test_screen_update$0$0
+                           000003    71 	C$test_screen.c$11$1_0$4	= .
+                                     72 	.globl	C$test_screen.c$11$1_0$4
+                                     73 ;test_screen.c:11: void screen_test_screen_update( unsigned char *screen_type )
+                                     74 ;	---------------------------------
+                                     75 ; Function screen_test_screen_update
+                                     76 ; ---------------------------------
+      000003                         77 _screen_test_screen_update::
+                           000003    78 	C$test_screen.c$14$1_0$4	= .
+                                     79 	.globl	C$test_screen.c$14$1_0$4
+                                     80 ;test_screen.c:14: input = engine_input_manager_move_right();
+      000003 CDr00r00         [17]   81 	call	_engine_input_manager_move_right
+      000006 7D               [ 4]   82 	ld	a, l
+                           000007    83 	C$test_screen.c$15$1_0$4	= .
+                                     84 	.globl	C$test_screen.c$15$1_0$4
+                                     85 ;test_screen.c:15: if( input )
+      000007 B7               [ 4]   86 	or	a, a
+      000008 28 05            [12]   87 	jr	Z, 00104$
+                           00000A    88 	C$test_screen.c$17$2_0$5	= .
+                                     89 	.globl	C$test_screen.c$17$2_0$5
+                                     90 ;test_screen.c:17: engine_scroll_manager_update_right();
+      00000A CDr00r00         [17]   91 	call	_engine_scroll_manager_update_right
+      00000D 18 0A            [12]   92 	jr	00105$
+      00000F                         93 00104$:
+                           00000F    94 	C$test_screen.c$21$2_0$6	= .
+                                     95 	.globl	C$test_screen.c$21$2_0$6
+                                     96 ;test_screen.c:21: input = engine_input_manager_move_left();
+      00000F CDr00r00         [17]   97 	call	_engine_input_manager_move_left
+      000012 7D               [ 4]   98 	ld	a, l
+                           000013    99 	C$test_screen.c$22$2_0$6	= .
+                                    100 	.globl	C$test_screen.c$22$2_0$6
+                                    101 ;test_screen.c:22: if( input )
+      000013 B7               [ 4]  102 	or	a, a
+      000014 28 03            [12]  103 	jr	Z, 00105$
+                           000016   104 	C$test_screen.c$24$3_0$7	= .
+                                    105 	.globl	C$test_screen.c$24$3_0$7
+                                    106 ;test_screen.c:24: engine_scroll_manager_update_left();
+      000016 CDr00r00         [17]  107 	call	_engine_scroll_manager_update_left
+      000019                        108 00105$:
+                           000019   109 	C$test_screen.c$28$1_0$4	= .
+                                    110 	.globl	C$test_screen.c$28$1_0$4
+                                    111 ;test_screen.c:28: *screen_type = screen_type_test;
+      000019 C1               [10]  112 	pop	bc
+      00001A E1               [10]  113 	pop	hl
+      00001B E5               [11]  114 	push	hl
+      00001C C5               [11]  115 	push	bc
+      00001D 36 01            [10]  116 	ld	(hl), #0x01
+                           00001F   117 	C$test_screen.c$29$1_0$4	= .
+                                    118 	.globl	C$test_screen.c$29$1_0$4
+                                    119 ;test_screen.c:29: }
+                           00001F   120 	C$test_screen.c$29$1_0$4	= .
+                                    121 	.globl	C$test_screen.c$29$1_0$4
+                           00001F   122 	XG$screen_test_screen_update$0$0	= .
+                                    123 	.globl	XG$screen_test_screen_update$0$0
+      00001F C9               [10]  124 	ret
+                                    125 	.area _CODE
+                                    126 	.area _INITIALIZER
+                                    127 	.area _CABS (ABS)

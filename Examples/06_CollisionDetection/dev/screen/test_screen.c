@@ -10,9 +10,9 @@
 
 void screen_test_screen_load()
 {
-	engine_font_manager_draw_text( LOCALE_BLANK, 9, 10, 11 );
-	engine_font_manager_draw_text( LOCALE_BLANK, 9, 10, 12 );
-	engine_font_manager_draw_text( LOCALE_STATUS, 6, 4, 21 );
+	engine_font_manager_draw_text( LOCALE_BLANK, 10, 11 );
+	engine_font_manager_draw_text( LOCALE_BLANK, 10, 12 );
+	engine_font_manager_draw_text( LOCALE_STATUS, 4, 21 );
 
 	engine_gamer_manager_load();
 	engine_enemy_manager_load();

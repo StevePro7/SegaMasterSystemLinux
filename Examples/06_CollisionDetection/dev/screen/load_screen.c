@@ -10,11 +10,11 @@
 
 void screen_load_screen_load()
 {
-	engine_font_manager_draw_text( LOCALE_LINE1, 9, 10, 11 );
-	engine_font_manager_draw_text( LOCALE_LINE2, 9, 10, 12 );
+	engine_font_manager_draw_text( LOCALE_LINE1, 10, 11 );
+	engine_font_manager_draw_text( LOCALE_LINE2, 10, 12 );
 
-	engine_font_manager_draw_text( LOCALE_BLANK, 9, 4, 21 );
-	engine_font_manager_draw_text( LOCALE_BLANK, 9, 15, 21 );
+	engine_font_manager_draw_text( LOCALE_BLANK, 4, 21 );
+	engine_font_manager_draw_text( LOCALE_BLANK, 15, 21 );
 }
 
 void screen_load_screen_update( unsigned char *screen_type )
