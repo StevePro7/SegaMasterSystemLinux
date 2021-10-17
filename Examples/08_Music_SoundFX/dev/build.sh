@@ -76,6 +76,18 @@ rm -f *.lst 2> /dev/null
 rm -f *.sym 2> /dev/null
 cd ..
 
+cd object
+rm -f *.asm 2> /dev/null
+rm -f *.lst 2> /dev/null
+rm -f *.sym 2> /dev/null
+cd ..
+
+cd screen
+rm -f *.asm 2> /dev/null
+rm -f *.lst 2> /dev/null
+rm -f *.sym 2> /dev/null
+cd ..
+
 rm -f *.asm 2> /dev/null
 rm -f *.ihx 2> /dev/null
 rm -f *.lk  2> /dev/null
