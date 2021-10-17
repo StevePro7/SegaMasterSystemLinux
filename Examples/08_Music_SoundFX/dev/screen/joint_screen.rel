@@ -1,5 +1,6 @@
+;!FILE joint_screen.asm
 XL2
-H 9 areas E global symbols
+H 9 areas 82 global symbols
 M joint_screen
 O -mz80
 S _devkit_PSGGetStatus Ref0000
@@ -16,8 +17,124 @@ S _engine_text_manager_title Ref0000
 S _engine_input_manager_hold_down Ref0000
 A _CODE size 8C flags 0 addr 0
 S _screen_joint_screen_load Def0000
+S XG$screen_joint_screen_load$0$0 Def000D
+S G$screen_joint_screen_update$0$0 Def000E
+S C$joint_screen.c$30$1$20 Def001D
+S A$joint_screen$101 Def000E
+S C$joint_screen.c$31$1$20 Def0022
+S C$joint_screen.c$23$1$20 Def000E
+S A$joint_screen$130 Def0021
+S A$joint_screen$112 Def0015
+S C$joint_screen.c$60$1$20 Def007A
+S C$joint_screen.c$24$1$20 Def0015
+S A$joint_screen$230 Def007B
+S A$joint_screen$212 Def006C
+S A$joint_screen$203 Def0063
+S A$joint_screen$140 Def0026
+S A$joint_screen$113 Def0016
+S C$joint_screen.c$61$1$20 Def007F
+S A$joint_screen$231 Def007E
+S A$joint_screen$222 Def0075
+S A$joint_screen$213 Def006D
+S A$joint_screen$204 Def0064
+S A$joint_screen$150 Def0035
+S A$joint_screen$141 Def0029
+S A$joint_screen$123 Def001C
+S A$joint_screen$114 Def0017
+S A$joint_screen$105 Def0011
+S C$joint_screen.c$53$1$20 Def0063
+S C$joint_screen.c$26$1$20 Def0011
+S A$joint_screen$241 Def0083
+S A$joint_screen$223 Def0076
+S A$joint_screen$214 Def0070
+S A$joint_screen$205 Def0067
+S A$joint_screen$151 Def0038
+S A$joint_screen$142 Def002B
+S A$joint_screen$106 Def0012
+S C$joint_screen.c$54$1$20 Def006C
+S C$joint_screen.c$45$1$20 Def004A
+S C$joint_screen.c$33$2$22 Def0026
 S _screen_joint_screen_update Def000E
+S A$joint_screen$242 Def0086
+S A$joint_screen$224 Def0079
+S A$joint_screen$215 Def0071
+S A$joint_screen$206 Def0068
+S A$joint_screen$143 Def002D
+S A$joint_screen$134 Def0022
+S A$joint_screen$107 Def0013
+S C$joint_screen.c$46$1$20 Def004F
+S C$joint_screen.c$40$3$24 Def0040
+S C$joint_screen.c$26$2$21 Def0019
+S A$joint_screen$216 Def0072
+S A$joint_screen$207 Def0069
+S A$joint_screen$180 Def004F
+S A$joint_screen$162 Def0040
+S A$joint_screen$144 Def0030
+S A$joint_screen$135 Def0023
+S A$joint_screen$108 Def0014
+S C$joint_screen.c$50$2$25 Def005E
+S C$joint_screen.c$41$3$24 Def0045
+S C$joint_screen.c$27$2$21 Def001C
+S C$joint_screen.c$13$1$18 Def0000
+S A$joint_screen$253 Def008B
+S A$joint_screen$235 Def007F
+S A$joint_screen$217 Def0073
+S A$joint_screen$208 Def006A
+S A$joint_screen$181 Def0050
+S A$joint_screen$163 Def0041
+S A$joint_screen$145 Def0032
+S A$joint_screen$136 Def0024
+S A$joint_screen$118 Def0019
+S C$joint_screen.c$66$1$20 Def0088
+S C$joint_screen.c$14$1$18 Def0003
+S A$joint_screen$236 Def0080
+S A$joint_screen$191 Def0059
+S A$joint_screen$182 Def0051
+S A$joint_screen$164 Def0044
+S A$joint_screen$155 Def0039
+S A$joint_screen$128 Def001D
+S A$joint_screen$119 Def001B
+S C$joint_screen.c$67$1$20 Def008B
+S C$joint_screen.c$35$3$23 Def0034
+S C$joint_screen.c$15$1$18 Def0008
+S A$joint_screen$237 Def0081
+S A$joint_screen$192 Def005A
+S A$joint_screen$174 Def004A
+S A$joint_screen$156 Def003C
+S A$joint_screen$129 Def001E
+S C$joint_screen.c$36$3$23 Def0039
+S C$joint_screen.c$16$1$18 Def000D
+S A$joint_screen$247 Def0088
+S A$joint_screen$229 Def007A
+S A$joint_screen$193 Def005D
+S A$joint_screen$175 Def004B
+S A$joint_screen$157 Def003E
+S C$joint_screen.c$11$0$0 Def0000
+S A$joint_screen$248 Def008A
+S A$joint_screen$176 Def004E
+S A$joint_screen$149 Def0034
+S C$joint_screen.c$18$1$18 Def000E
+S A$joint_screen$186 Def0053
+S A$joint_screen$168 Def0045
+S C$joint_screen.c$63$2$27 Def0083
+S A$joint_screen$187 Def0056
+S A$joint_screen$169 Def0048
+S C$joint_screen.c$56$2$26 Def0075
+S C$joint_screen.c$48$2$25 Def0053
+S A$joint_screen$197 Def005E
+S C$joint_screen.c$49$2$25 Def0059
+S A$joint_screen$198 Def0061
+S XG$screen_joint_screen_update$0$0 Def008B
+S G$screen_joint_screen_load$0$0 Def0000
+S A$joint_screen$82 Def0008
+S A$joint_screen$73 Def0000
+S A$joint_screen$83 Def000B
+S A$joint_screen$77 Def0003
+S A$joint_screen$78 Def0006
+S A$joint_screen$88 Def000D
 A _DATA size 2 flags 0 addr 0
+S Fjoint_screen$curr_play_type$0$0 Def0001
+S Fjoint_screen$prev_play_type$0$0 Def0000
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
