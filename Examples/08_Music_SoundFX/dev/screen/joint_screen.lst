@@ -1,0 +1,261 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 4.1.0 #12072 (Linux)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module joint_screen
+                                      6 	.optsdcc -mz80
+                                      7 	
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl _engine_text_manager_title
+                                     12 	.globl _engine_sound_manager_play
+                                     13 	.globl _engine_music_manager_play
+                                     14 	.globl _engine_input_manager_hold_fire2
+                                     15 	.globl _engine_input_manager_hold_right
+                                     16 	.globl _engine_input_manager_hold_left
+                                     17 	.globl _engine_input_manager_hold_down
+                                     18 	.globl _engine_input_manager_hold_up
+                                     19 	.globl _devkit_PSGGetStatus
+                                     20 	.globl _devkit_PSGResume
+                                     21 	.globl _devkit_PSGStop
+                                     22 	.globl _screen_joint_screen_load
+                                     23 	.globl _screen_joint_screen_update
+                                     24 ;--------------------------------------------------------
+                                     25 ; special function registers
+                                     26 ;--------------------------------------------------------
+                                     27 ;--------------------------------------------------------
+                                     28 ; ram data
+                                     29 ;--------------------------------------------------------
+                                     30 	.area _DATA
+                           000000    31 Fjoint_screen$prev_play_type$0_0$0==.
+      000000                         32 _prev_play_type:
+      000000                         33 	.ds 1
+                           000001    34 Fjoint_screen$curr_play_type$0_0$0==.
+      000001                         35 _curr_play_type:
+      000001                         36 	.ds 1
+                                     37 ;--------------------------------------------------------
+                                     38 ; ram data
+                                     39 ;--------------------------------------------------------
+                                     40 	.area _INITIALIZED
+                                     41 ;--------------------------------------------------------
+                                     42 ; absolute external ram data
+                                     43 ;--------------------------------------------------------
+                                     44 	.area _DABS (ABS)
+                                     45 ;--------------------------------------------------------
+                                     46 ; global & static initialisations
+                                     47 ;--------------------------------------------------------
+                                     48 	.area _HOME
+                                     49 	.area _GSINIT
+                                     50 	.area _GSFINAL
+                                     51 	.area _GSINIT
+                                     52 ;--------------------------------------------------------
+                                     53 ; Home
+                                     54 ;--------------------------------------------------------
+                                     55 	.area _HOME
+                                     56 	.area _HOME
+                                     57 ;--------------------------------------------------------
+                                     58 ; code
+                                     59 ;--------------------------------------------------------
+                                     60 	.area _CODE
+                           000000    61 	G$screen_joint_screen_load$0$0	= .
+                                     62 	.globl	G$screen_joint_screen_load$0$0
+                           000000    63 	C$joint_screen.c$11$0_0$18	= .
+                                     64 	.globl	C$joint_screen.c$11$0_0$18
+                                     65 ;joint_screen.c:11: void screen_joint_screen_load()
+                                     66 ;	---------------------------------
+                                     67 ; Function screen_joint_screen_load
+                                     68 ; ---------------------------------
+      000000                         69 _screen_joint_screen_load::
+                           000000    70 	C$joint_screen.c$13$1_0$18	= .
+                                     71 	.globl	C$joint_screen.c$13$1_0$18
+                                     72 ;joint_screen.c:13: engine_text_manager_title();
+      000000 CDr00r00         [17]   73 	call	_engine_text_manager_title
+                           000003    74 	C$joint_screen.c$14$1_0$18	= .
+                                     75 	.globl	C$joint_screen.c$14$1_0$18
+                                     76 ;joint_screen.c:14: prev_play_type = play_type_stop;
+                           000003    77 	C$joint_screen.c$15$1_0$18	= .
+                                     78 	.globl	C$joint_screen.c$15$1_0$18
+                                     79 ;joint_screen.c:15: curr_play_type = play_type_stop;
+      000003 3E 04            [ 7]   80 	ld	a,#0x04
+      000005 32r00r00         [13]   81 	ld	(#_prev_play_type),a
+      000008 32r01r00         [13]   82 	ld	(#_curr_play_type), a
+                           00000B    83 	C$joint_screen.c$16$1_0$18	= .
+                                     84 	.globl	C$joint_screen.c$16$1_0$18
+                                     85 ;joint_screen.c:16: }
+                           00000B    86 	C$joint_screen.c$16$1_0$18	= .
+                                     87 	.globl	C$joint_screen.c$16$1_0$18
+                           00000B    88 	XG$screen_joint_screen_load$0$0	= .
+                                     89 	.globl	XG$screen_joint_screen_load$0$0
+      00000B C9               [10]   90 	ret
+                           00000C    91 	G$screen_joint_screen_update$0$0	= .
+                                     92 	.globl	G$screen_joint_screen_update$0$0
+                           00000C    93 	C$joint_screen.c$18$1_0$20	= .
+                                     94 	.globl	C$joint_screen.c$18$1_0$20
+                                     95 ;joint_screen.c:18: void screen_joint_screen_update( unsigned char *screen_type )
+                                     96 ;	---------------------------------
+                                     97 ; Function screen_joint_screen_update
+                                     98 ; ---------------------------------
+      00000C                         99 _screen_joint_screen_update::
+                           00000C   100 	C$joint_screen.c$23$1_0$20	= .
+                                    101 	.globl	C$joint_screen.c$23$1_0$20
+                                    102 ;joint_screen.c:23: input = engine_input_manager_hold_fire2();
+      00000C CDr00r00         [17]  103 	call	_engine_input_manager_hold_fire2
+                           00000F   104 	C$joint_screen.c$26$1_0$20	= .
+                                    105 	.globl	C$joint_screen.c$26$1_0$20
+                                    106 ;joint_screen.c:26: *screen_type = screen_type_sound;
+      00000F D1               [10]  107 	pop	de
+      000010 C1               [10]  108 	pop	bc
+      000011 C5               [11]  109 	push	bc
+      000012 D5               [11]  110 	push	de
+                           000013   111 	C$joint_screen.c$24$1_0$20	= .
+                                    112 	.globl	C$joint_screen.c$24$1_0$20
+                                    113 ;joint_screen.c:24: if( input )
+      000013 7D               [ 4]  114 	ld	a, l
+      000014 B7               [ 4]  115 	or	a, a
+      000015 28 04            [12]  116 	jr	Z, 00102$
+                           000017   117 	C$joint_screen.c$26$2_0$21	= .
+                                    118 	.globl	C$joint_screen.c$26$2_0$21
+                                    119 ;joint_screen.c:26: *screen_type = screen_type_sound;
+      000017 3E 03            [ 7]  120 	ld	a, #0x03
+      000019 02               [ 7]  121 	ld	(bc), a
+                           00001A   122 	C$joint_screen.c$27$2_0$21	= .
+                                    123 	.globl	C$joint_screen.c$27$2_0$21
+                                    124 ;joint_screen.c:27: return;
+      00001A C9               [10]  125 	ret
+      00001B                        126 00102$:
+                           00001B   127 	C$joint_screen.c$30$1_0$20	= .
+                                    128 	.globl	C$joint_screen.c$30$1_0$20
+                                    129 ;joint_screen.c:30: input = engine_input_manager_hold_left();
+      00001B C5               [11]  130 	push	bc
+      00001C CDr00r00         [17]  131 	call	_engine_input_manager_hold_left
+      00001F 7D               [ 4]  132 	ld	a, l
+      000020 C1               [10]  133 	pop	bc
+                           000021   134 	C$joint_screen.c$31$1_0$20	= .
+                                    135 	.globl	C$joint_screen.c$31$1_0$20
+                                    136 ;joint_screen.c:31: if( input )
+      000021 B7               [ 4]  137 	or	a, a
+      000022 28 24            [12]  138 	jr	Z, 00108$
+                           000024   139 	C$joint_screen.c$33$2_0$22	= .
+                                    140 	.globl	C$joint_screen.c$33$2_0$22
+                                    141 ;joint_screen.c:33: if( play_type_stop == prev_play_type && play_type_stop == curr_play_type )
+      000024 3Ar00r00         [13]  142 	ld	a,(#_prev_play_type + 0)
+      000027 D6 04            [ 7]  143 	sub	a, #0x04
+      000029 20 13            [12]  144 	jr	NZ, 00104$
+      00002B 3Ar01r00         [13]  145 	ld	a,(#_curr_play_type + 0)
+      00002E D6 04            [ 7]  146 	sub	a, #0x04
+      000030 20 0C            [12]  147 	jr	NZ, 00104$
+                           000032   148 	C$joint_screen.c$35$3_0$23	= .
+                                    149 	.globl	C$joint_screen.c$35$3_0$23
+                                    150 ;joint_screen.c:35: engine_music_manager_play();
+      000032 C5               [11]  151 	push	bc
+      000033 CDr00r00         [17]  152 	call	_engine_music_manager_play
+      000036 C1               [10]  153 	pop	bc
+                           000037   154 	C$joint_screen.c$36$3_0$23	= .
+                                    155 	.globl	C$joint_screen.c$36$3_0$23
+                                    156 ;joint_screen.c:36: curr_play_type = play_type_start;
+      000037 21r01r00         [10]  157 	ld	hl, #_curr_play_type
+      00003A 36 01            [10]  158 	ld	(hl), #0x01
+      00003C 18 0A            [12]  159 	jr	00108$
+      00003E                        160 00104$:
+                           00003E   161 	C$joint_screen.c$40$3_0$24	= .
+                                    162 	.globl	C$joint_screen.c$40$3_0$24
+                                    163 ;joint_screen.c:40: devkit_PSGResume();
+      00003E C5               [11]  164 	push	bc
+      00003F CDr00r00         [17]  165 	call	_devkit_PSGResume
+      000042 C1               [10]  166 	pop	bc
+                           000043   167 	C$joint_screen.c$41$3_0$24	= .
+                                    168 	.globl	C$joint_screen.c$41$3_0$24
+                                    169 ;joint_screen.c:41: curr_play_type = play_type_resume;
+      000043 21r01r00         [10]  170 	ld	hl, #_curr_play_type
+      000046 36 03            [10]  171 	ld	(hl), #0x03
+      000048                        172 00108$:
+                           000048   173 	C$joint_screen.c$45$1_0$20	= .
+                                    174 	.globl	C$joint_screen.c$45$1_0$20
+                                    175 ;joint_screen.c:45: input = engine_input_manager_hold_right();
+      000048 C5               [11]  176 	push	bc
+      000049 CDr00r00         [17]  177 	call	_engine_input_manager_hold_right
+      00004C 7D               [ 4]  178 	ld	a, l
+      00004D C1               [10]  179 	pop	bc
+                           00004E   180 	C$joint_screen.c$46$1_0$20	= .
+                                    181 	.globl	C$joint_screen.c$46$1_0$20
+                                    182 ;joint_screen.c:46: if( input )
+      00004E B7               [ 4]  183 	or	a, a
+      00004F 28 10            [12]  184 	jr	Z, 00110$
+                           000051   185 	C$joint_screen.c$48$2_0$25	= .
+                                    186 	.globl	C$joint_screen.c$48$2_0$25
+                                    187 ;joint_screen.c:48: prev_play_type = curr_play_type;
+      000051 3Ar01r00         [13]  188 	ld	a,(#_curr_play_type + 0)
+      000054 32r00r00         [13]  189 	ld	(#_prev_play_type),a
+                           000057   190 	C$joint_screen.c$49$2_0$25	= .
+                                    191 	.globl	C$joint_screen.c$49$2_0$25
+                                    192 ;joint_screen.c:49: devkit_PSGStop();
+      000057 C5               [11]  193 	push	bc
+      000058 CDr00r00         [17]  194 	call	_devkit_PSGStop
+      00005B C1               [10]  195 	pop	bc
+                           00005C   196 	C$joint_screen.c$50$2_0$25	= .
+                                    197 	.globl	C$joint_screen.c$50$2_0$25
+                                    198 ;joint_screen.c:50: curr_play_type = play_type_pause;
+      00005C 21r01r00         [10]  199 	ld	hl, #_curr_play_type
+      00005F 36 02            [10]  200 	ld	(hl), #0x02
+      000061                        201 00110$:
+                           000061   202 	C$joint_screen.c$53$1_0$20	= .
+                                    203 	.globl	C$joint_screen.c$53$1_0$20
+                                    204 ;joint_screen.c:53: if( engine_input_manager_hold_up() ||
+      000061 C5               [11]  205 	push	bc
+      000062 CDr00r00         [17]  206 	call	_engine_input_manager_hold_up
+      000065 7D               [ 4]  207 	ld	a, l
+      000066 C1               [10]  208 	pop	bc
+      000067 B7               [ 4]  209 	or	a, a
+      000068 20 09            [12]  210 	jr	NZ, 00111$
+                           00006A   211 	C$joint_screen.c$54$1_0$20	= .
+                                    212 	.globl	C$joint_screen.c$54$1_0$20
+                                    213 ;joint_screen.c:54: engine_input_manager_hold_down() )
+      00006A C5               [11]  214 	push	bc
+      00006B CDr00r00         [17]  215 	call	_engine_input_manager_hold_down
+      00006E 7D               [ 4]  216 	ld	a, l
+      00006F C1               [10]  217 	pop	bc
+      000070 B7               [ 4]  218 	or	a, a
+      000071 28 05            [12]  219 	jr	Z, 00112$
+      000073                        220 00111$:
+                           000073   221 	C$joint_screen.c$56$2_0$26	= .
+                                    222 	.globl	C$joint_screen.c$56$2_0$26
+                                    223 ;joint_screen.c:56: engine_sound_manager_play();
+      000073 C5               [11]  224 	push	bc
+      000074 CDr00r00         [17]  225 	call	_engine_sound_manager_play
+      000077 C1               [10]  226 	pop	bc
+      000078                        227 00112$:
+                           000078   228 	C$joint_screen.c$60$1_0$20	= .
+                                    229 	.globl	C$joint_screen.c$60$1_0$20
+                                    230 ;joint_screen.c:60: sound = devkit_PSGGetStatus();
+      000078 C5               [11]  231 	push	bc
+      000079 CDr00r00         [17]  232 	call	_devkit_PSGGetStatus
+      00007C 7D               [ 4]  233 	ld	a, l
+      00007D C1               [10]  234 	pop	bc
+                           00007E   235 	C$joint_screen.c$61$1_0$20	= .
+                                    236 	.globl	C$joint_screen.c$61$1_0$20
+                                    237 ;joint_screen.c:61: if( !sound )
+      00007E B7               [ 4]  238 	or	a, a
+      00007F 20 05            [12]  239 	jr	NZ, 00115$
+                           000081   240 	C$joint_screen.c$63$2_0$27	= .
+                                    241 	.globl	C$joint_screen.c$63$2_0$27
+                                    242 ;joint_screen.c:63: curr_play_type = play_type_stop;
+      000081 3E 04            [ 7]  243 	ld	a, #0x04
+      000083 32r01r00         [13]  244 	ld	(#_curr_play_type), a
+      000086                        245 00115$:
+                           000086   246 	C$joint_screen.c$66$1_0$20	= .
+                                    247 	.globl	C$joint_screen.c$66$1_0$20
+                                    248 ;joint_screen.c:66: *screen_type = screen_type_joint;
+      000086 3E 04            [ 7]  249 	ld	a, #0x04
+      000088 02               [ 7]  250 	ld	(bc), a
+                           000089   251 	C$joint_screen.c$67$1_0$20	= .
+                                    252 	.globl	C$joint_screen.c$67$1_0$20
+                                    253 ;joint_screen.c:67: }
+                           000089   254 	C$joint_screen.c$67$1_0$20	= .
+                                    255 	.globl	C$joint_screen.c$67$1_0$20
+                           000089   256 	XG$screen_joint_screen_update$0$0	= .
+                                    257 	.globl	XG$screen_joint_screen_update$0$0
+      000089 C9               [10]  258 	ret
+                                    259 	.area _CODE
+                                    260 	.area _INITIALIZER
+                                    261 	.area _CABS (ABS)

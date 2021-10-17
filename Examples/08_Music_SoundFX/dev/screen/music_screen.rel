@@ -1,133 +1,132 @@
 ;!FILE music_screen.asm
-XL2
-H 9 areas 7B global symbols
+XL3
+H 9 areas 7A global symbols
 M music_screen
 O -mz80
-S _devkit_PSGSFXStop Ref0000
-S _devkit_PSGGetStatus Ref0000
-S _devkit_PSGStop Ref0000
-S _engine_input_manager_hold_fire1 Ref0000
-S .__.ABS. Def0000
-S _devkit_PSGResume Ref0000
-S _engine_input_manager_hold_right Ref0000
-S _engine_music_manager_play Ref0000
-S _engine_input_manager_hold_left Ref0000
-S _engine_text_manager_music Ref0000
-A _CODE size 8B flags 0 addr 0
-S XG$screen_music_screen_load$0$0 Def0013
-S G$screen_music_screen_update$0$0 Def0014
-S C$music_screen.c$30$1$20 Def0017
-S A$music_screen$200 Def0065
-S A$music_screen$210 Def006F
-S A$music_screen$201 Def0067
-S A$music_screen$120 Def001D
-S A$music_screen$111 Def0017
-S C$music_screen.c$50$1$20 Def005A
-S C$music_screen.c$30$2$21 Def0024
-S A$music_screen$211 Def0070
-S A$music_screen$130 Def0024
-S A$music_screen$112 Def0018
-S C$music_screen.c$31$2$21 Def0027
-S A$music_screen$230 Def0080
-S A$music_screen$212 Def0073
-S A$music_screen$140 Def0028
-S A$music_screen$131 Def0026
-S A$music_screen$113 Def0019
-S C$music_screen.c$61$1$20 Def0079
-S C$music_screen.c$34$1$20 Def0028
-S A$music_screen$240 Def0087
-S A$music_screen$222 Def0079
-S A$music_screen$141 Def0029
-S A$music_screen$114 Def001A
-S C$music_screen.c$62$1$20 Def007E
-S C$music_screen.c$35$1$20 Def002D
-S C$music_screen.c$26$1$20 Def0014
-S A$music_screen$241 Def0089
-S A$music_screen$223 Def007A
-S A$music_screen$205 Def0069
-S A$music_screen$142 Def002C
-S A$music_screen$124 Def001F
-S C$music_screen.c$40$3$23 Def0044
-S C$music_screen.c$27$1$20 Def001B
-S _screen_music_screen_update Def0014
-S A$music_screen$224 Def007D
-S A$music_screen$206 Def006C
-S A$music_screen$161 Def003F
-S A$music_screen$152 Def0031
-S A$music_screen$125 Def0020
-S A$music_screen$107 Def0014
-S C$music_screen.c$21$1$18 Def0014
-S A$music_screen$234 Def0082
-S A$music_screen$216 Def0074
-S A$music_screen$180 Def0050
-S A$music_screen$162 Def0040
-S A$music_screen$153 Def0034
-S A$music_screen$135 Def0027
-S A$music_screen$126 Def0023
-S C$music_screen.c$13$1$18 Def0000
-S A$music_screen$235 Def0085
-S A$music_screen$217 Def0077
-S A$music_screen$181 Def0053
-S A$music_screen$163 Def0043
-S A$music_screen$154 Def0036
-S A$music_screen$118 Def001B
-S C$music_screen.c$14$1$18 Def0003
-S A$music_screen$155 Def0038
-S A$music_screen$146 Def002D
-S A$music_screen$119 Def001C
-S C$music_screen.c$67$1$20 Def0087
-S C$music_screen.c$52$2$25 Def005E
-S C$music_screen.c$49$1$20 Def0055
-S C$music_screen.c$37$2$22 Def0031
-S C$music_screen.c$29$2$21 Def001F
-S A$music_screen$246 Def008A
-S A$music_screen$228 Def007E
-S A$music_screen$192 Def005A
-S A$music_screen$174 Def004B
-S A$music_screen$156 Def003B
-S A$music_screen$147 Def002E
-S C$music_screen.c$68$1$20 Def008A
-S C$music_screen.c$44$3$24 Def004B
-S C$music_screen.c$16$1$18 Def0006
-S A$music_screen$229 Def007F
-S A$music_screen$193 Def005B
-S A$music_screen$175 Def004C
-S A$music_screen$157 Def003D
-S A$music_screen$148 Def002F
-S C$music_screen.c$45$3$24 Def0050
-S C$music_screen.c$17$1$18 Def0009
-S C$music_screen.c$11$0$0 Def0000
-S A$music_screen$194 Def005C
-S A$music_screen$176 Def004F
-S A$music_screen$167 Def0044
-S C$music_screen.c$18$1$18 Def000E
-S A$music_screen$186 Def0055
-S A$music_screen$168 Def0047
-S C$music_screen.c$54$3$26 Def0069
-S C$music_screen.c$39$3$23 Def003F
-S C$music_screen.c$19$1$18 Def0013
-S A$music_screen$187 Def0056
-S A$music_screen$169 Def0049
-S C$music_screen.c$64$2$27 Def0082
-S C$music_screen.c$55$3$26 Def006F
-S A$music_screen$188 Def0059
-S C$music_screen.c$56$3$26 Def0074
-S A$music_screen$198 Def005E
-S A$music_screen$199 Def0062
-S XG$screen_music_screen_update$0$0 Def008A
-S A$music_screen$71 Def0000
-S G$screen_music_screen_load$0$0 Def0000
-S A$music_screen$83 Def0009
-S A$music_screen$84 Def000C
-S A$music_screen$75 Def0003
-S A$music_screen$94 Def0013
-S A$music_screen$88 Def000E
-S A$music_screen$79 Def0006
-S A$music_screen$89 Def0011
-S _screen_music_screen_load Def0000
+S _devkit_PSGSFXStop Ref000000
+S _devkit_PSGGetStatus Ref000000
+S _devkit_PSGStop Ref000000
+S _engine_input_manager_hold_fire1 Ref000000
+S .__.ABS. Def000000
+S _devkit_PSGResume Ref000000
+S _engine_input_manager_hold_right Ref000000
+S _engine_music_manager_play Ref000000
+S _engine_input_manager_hold_left Ref000000
+S _engine_text_manager_music Ref000000
+A _CODE size 89 flags 0 addr 0
+S XG$screen_music_screen_load$0$0 Def000011
+S G$screen_music_screen_update$0$0 Def000012
+S A$music_screen$200 Def00005C
+S A$music_screen$201 Def000060
+S A$music_screen$120 Def000019
+S A$music_screen$202 Def000063
+S A$music_screen$121 Def00001A
+S A$music_screen$212 Def00006D
+S A$music_screen$203 Def000065
+S A$music_screen$122 Def00001B
+S A$music_screen$113 Def000015
+S A$music_screen$231 Def00007D
+S A$music_screen$213 Def00006E
+S A$music_screen$150 Def00002D
+S A$music_screen$132 Def000022
+S A$music_screen$114 Def000016
+S A$music_screen$232 Def00007E
+S A$music_screen$214 Def000071
+S A$music_screen$142 Def000026
+S A$music_screen$133 Def000024
+S A$music_screen$115 Def000017
+S _screen_music_screen_update Def000012
+S A$music_screen$251 Def000088
+S A$music_screen$242 Def000085
+S A$music_screen$224 Def000077
+S A$music_screen$170 Def000045
+S A$music_screen$143 Def000027
+S A$music_screen$116 Def000018
+S A$music_screen$243 Def000087
+S A$music_screen$225 Def000078
+S A$music_screen$207 Def000067
+S A$music_screen$171 Def000047
+S A$music_screen$144 Def00002A
+S A$music_screen$126 Def00001D
+S A$music_screen$226 Def00007B
+S A$music_screen$208 Def00006A
+S A$music_screen$190 Def000057
+S A$music_screen$163 Def00003D
+S A$music_screen$154 Def00002F
+S A$music_screen$145 Def00002B
+S A$music_screen$127 Def00001E
+S A$music_screen$109 Def000012
+S A$music_screen$236 Def000080
+S A$music_screen$227 Def00007C
+S A$music_screen$218 Def000072
+S A$music_screen$191 Def000058
+S A$music_screen$182 Def00004E
+S A$music_screen$164 Def00003E
+S A$music_screen$155 Def000032
+S A$music_screen$137 Def000025
+S A$music_screen$128 Def000021
+S A$music_screen$237 Def000082
+S A$music_screen$219 Def000075
+S A$music_screen$183 Def000051
+S A$music_screen$165 Def000041
+S A$music_screen$156 Def000034
+S A$music_screen$157 Def000036
+S A$music_screen$176 Def000049
+S A$music_screen$158 Def000039
+S A$music_screen$149 Def00002C
+S A$music_screen$195 Def000059
+S A$music_screen$177 Def00004A
+S A$music_screen$159 Def00003B
+S A$music_screen$196 Def00005A
+S A$music_screen$178 Def00004D
+S A$music_screen$169 Def000042
+S C$music_screen.c$30$1_0$20 Def000015
+S C$music_screen.c$21$1_0$20 Def000012
+S A$music_screen$188 Def000053
+S A$music_screen$189 Def000054
+S C$music_screen.c$50$1_0$20 Def000059
+S C$music_screen.c$30$2_0$21 Def000022
+S XG$screen_music_screen_update$0$0 Def000088
+S C$music_screen.c$31$2_0$21 Def000025
+S C$music_screen.c$61$1_0$20 Def000077
+S C$music_screen.c$34$1_0$20 Def000026
+S C$music_screen.c$62$1_0$20 Def00007D
+S C$music_screen.c$35$1_0$20 Def00002C
+S C$music_screen.c$26$1_0$20 Def000012
+S C$music_screen.c$11$0_0$18 Def000000
+S C$music_screen.c$40$3_0$23 Def000042
+S C$music_screen.c$27$1_0$20 Def000019
+S A$music_screen$71 Def000000
+S C$music_screen.c$13$1_0$18 Def000000
+S G$screen_music_screen_load$0$0 Def000000
+S C$music_screen.c$14$1_0$18 Def000003
+S C$music_screen.c$67$1_0$20 Def000085
+S C$music_screen.c$52$2_0$25 Def00005C
+S C$music_screen.c$49$1_0$20 Def000053
+S C$music_screen.c$37$2_0$22 Def00002F
+S C$music_screen.c$29$2_0$21 Def00001D
+S C$music_screen.c$68$1_0$20 Def000088
+S C$music_screen.c$44$3_0$24 Def000049
+S C$music_screen.c$16$1_0$18 Def000006
+S A$music_screen$75 Def000003
+S C$music_screen.c$45$3_0$24 Def00004E
+S C$music_screen.c$17$1_0$18 Def000009
+S C$music_screen.c$18$1_0$18 Def000009
+S A$music_screen$86 Def000009
+S C$music_screen.c$54$3_0$26 Def000067
+S C$music_screen.c$39$3_0$23 Def00003D
+S C$music_screen.c$19$1_0$18 Def000011
+S A$music_screen$96 Def000011
+S A$music_screen$87 Def00000B
+S C$music_screen.c$64$2_0$27 Def000080
+S C$music_screen.c$55$3_0$26 Def00006D
+S A$music_screen$88 Def00000E
+S A$music_screen$79 Def000006
+S C$music_screen.c$56$3_0$26 Def000072
+S _screen_music_screen_load Def000000
 A _DATA size 2 flags 0 addr 0
-S Fmusic_screen$curr_play_type$0$0 Def0001
-S Fmusic_screen$prev_play_type$0$0 Def0000
+S Fmusic_screen$curr_play_type$0_0$0 Def000001
+S Fmusic_screen$prev_play_type$0_0$0 Def000000
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
@@ -135,51 +134,53 @@ A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
 A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
-T 00 00
+T 00 00 00
 R 00 00 01 00
-T 00 00
+T 00 00 00
 R 00 00 01 00
-T 01 00
+T 01 00 00
 R 00 00 01 00
-T 01 00
+T 01 00 00
 R 00 00 01 00
-T 00 00
+T 00 00 00
 R 00 00 00 00
-T 00 00 CD 00 00 CD 00 00 CD 00 00 21
-R 00 00 00 00 02 03 02 00 02 06 00 00 02 09 09 00
-T 0A 00 00 00 36 04 21 01 00 36 04 C9
-R 00 00 00 00 00 02 01 00 00 07 01 00
-T 14 00
+T 00 00 00 CD 00 00 CD 00 00 CD 00 00 3E 04 32
+R 00 00 00 00 02 04 02 00 02 07 00 00 02 0A 09 00
+T 0C 00 00 00 00 32 01 00 C9
+R 00 00 00 00 00 03 01 00 00 06 01 00
+T 12 00 00
 R 00 00 00 00
-T 14 00 CD 00 00 D1 C1 C5 D5 7D B7 28 09 C5 CD
-R 00 00 00 00 02 03 03 00
-T 21 00 00 00 C1 3E 03 02 C9
-R 00 00 00 00 02 02 02 00
-T 28 00
+T 12 00 00 CD 00 00 D1 C1 C5 D5 7D B7 28 09 C5 CD
+R 00 00 00 00 02 04 03 00
+T 1F 00 00 00 00 C1 3E 03 02 C9
+R 00 00 00 00 02 03 02 00
+T 26 00 00
 R 00 00 00 00
-T 28 00 C5 CD 00 00 C1 7D B7 28 24 3A 00 00 D6 04
-R 00 00 00 00 02 04 08 00 00 0C 01 00
-T 36 00 20 13 3A 01 00 D6 04 20 0C C5 CD 00 00 C1
-R 00 00 00 00 00 05 01 00 02 0D 07 00
-T 44 00 21 01 00 36 01 18 0A
+T 26 00 00 C5 CD 00 00 7D C1 B7 28 24 3A 00 00 D6
+R 00 00 00 00 02 05 08 00 00 0D 01 00
+T 33 00 00 04 20 13 3A 01 00 D6 04 20 0C C5 CD
+R 00 00 00 00 00 07 01 00
+T 3F 00 00 00 00 C1 21 01 00 36 01 18 0A
+R 00 00 00 00 02 03 07 00 00 07 01 00
+T 49 00 00
+R 00 00 00 00
+T 49 00 00 C5 CD 00 00 C1 21 01 00 36 03
+R 00 00 00 00 02 05 05 00 00 09 01 00
+T 53 00 00
+R 00 00 00 00
+T 53 00 00 C5 CD 00 00 7D C1 B7 28 1B FD 21 01 00
+R 00 00 00 00 02 05 06 00 00 0E 01 00
+T 60 00 00 FD 7E 00 D6 02 28 10 FD 7E 00 32 00 00
+R 00 00 00 00 00 0E 01 00
+T 6D 00 00 C5 CD 00 00 C1 21 01 00 36 02
+R 00 00 00 00 02 05 02 00 00 09 01 00
+T 77 00 00
+R 00 00 00 00
+T 77 00 00 C5 CD 00 00 7D C1 B7 20 05 3E 04 32
+R 00 00 00 00 02 05 01 00
+T 83 00 00 01 00
 R 00 00 00 00 00 03 01 00
-T 4B 00
+T 85 00 00
 R 00 00 00 00
-T 4B 00 C5 CD 00 00 C1 21 01 00 36 03
-R 00 00 00 00 02 04 05 00 00 08 01 00
-T 55 00
-R 00 00 00 00
-T 55 00 C5 CD 00 00 C1 7D B7 28 1B FD 21 01 00 FD
-R 00 00 00 00 02 04 06 00 00 0D 01 00
-T 63 00 7E 00 D6 02 28 10 FD 7E 00 32 00 00 C5 CD
-R 00 00 00 00 00 0C 01 00
-T 71 00 00 00 C1 21 01 00 36 02
-R 00 00 00 00 02 02 02 00 00 06 01 00
-T 79 00
-R 00 00 00 00
-T 79 00 C5 CD 00 00 C1 7D B7 20 05 21 01 00 36 04
-R 00 00 00 00 02 04 01 00 00 0C 01 00
-T 87 00
-R 00 00 00 00
-T 87 00 3E 02 02 C9
+T 85 00 00 3E 02 02 C9
 R 00 00 00 00

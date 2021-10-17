@@ -3,11 +3,11 @@
 #include "enum_manager.h"
 
 // Screens
-#include "..\screen\none_screen.h"
-#include "..\screen\start_screen.h"
-#include "..\screen\music_screen.h"
-#include "..\screen\sound_screen.h"
-#include "..\screen\joint_screen.h"
+#include "../screen/none_screen.h"
+#include "../screen/start_screen.h"
+#include "../screen/music_screen.h"
+#include "../screen/sound_screen.h"
+#include "../screen/joint_screen.h"
 
 static void( *load_method[ MAX_SCREEENS ] )();
 static void( *update_method[ MAX_SCREEENS ] )( unsigned char *screen_type );

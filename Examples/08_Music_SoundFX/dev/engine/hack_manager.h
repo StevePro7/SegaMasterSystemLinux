@@ -1,7 +1,7 @@
 #ifndef _HACK_MANAGER_H_
 #define _HACK_MANAGER_H_
 
-#include "..\object\hack_object.h"
+#include "../object/hack_object.h"
 
 void engine_hack_manager_init();
 void engine_hack_manager_update();

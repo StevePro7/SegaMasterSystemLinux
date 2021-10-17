@@ -1,9 +1,9 @@
 #include "music_screen.h"
-#include "..\devkit\_snd_manager.h"
-#include "..\engine\enum_manager.h"
-#include "..\engine\input_manager.h"
-#include "..\engine\sound_manager.h"
-#include "..\engine\text_manager.h"
+#include "../devkit/_snd_manager.h"
+#include "../engine/enum_manager.h"
+#include "../engine/input_manager.h"
+#include "../engine/sound_manager.h"
+#include "../engine/text_manager.h"
 
 static unsigned char prev_play_type;
 static unsigned char curr_play_type;
