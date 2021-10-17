@@ -1,0 +1,55 @@
+XL2
+H 9 areas C global symbols
+M sound_screen
+O -mz80
+S _devkit_PSGSFXStop Ref0000
+S _engine_input_manager_hold_fire1 Ref0000
+S _engine_input_manager_hold_fire2 Ref0000
+S .__.ABS. Def0000
+S _engine_input_manager_hold_right Ref0000
+S _engine_input_manager_hold_up Ref0000
+S _engine_sound_manager_play Ref0000
+S _engine_input_manager_hold_left Ref0000
+S _engine_input_manager_hold_down Ref0000
+S _engine_text_manager_sound Ref0000
+A _CODE size 50 flags 0 addr 0
+S _screen_sound_screen_load Def0000
+S _screen_sound_screen_update Def0003
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 C3 00 00
+R 00 00 00 00 02 03 09 00
+T 03 00
+R 00 00 00 00
+T 03 00 CD 00 00 4D D1 E1 E5 D5 79 B7 28 08 E5 CD
+R 00 00 00 00 02 03 01 00
+T 11 00 00 00 E1 36 04 C9
+R 00 00 00 00 02 02 00 00
+T 17 00
+R 00 00 00 00
+T 17 00 E5 CD 00 00 7D E1 B7 28 03 36 02 C9
+R 00 00 00 00 02 04 02 00
+T 23 00
+R 00 00 00 00
+T 23 00 E5 CD 00 00 5D E1 7B B7 20 1B E5 CD 00 00
+R 00 00 00 00 02 04 07 00 02 0E 04 00
+T 31 00 7D E1 B7 20 12 E5 CD 00 00 7D E1 B7 20 09
+R 00 00 00 00 02 09 05 00
+T 3F 00 E5 CD 00 00 7D E1 B7 28 05
+R 00 00 00 00 02 04 08 00
+T 48 00
+R 00 00 00 00
+T 48 00 E5 CD 00 00 E1
+R 00 00 00 00 02 04 06 00
+T 4D 00
+R 00 00 00 00
+T 4D 00 36 03 C9
+R 00 00 00 00
