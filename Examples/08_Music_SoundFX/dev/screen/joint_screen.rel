@@ -1,139 +1,140 @@
 ;!FILE joint_screen.asm
-XL3
-H 9 areas 81 global symbols
+XL2
+H 9 areas 82 global symbols
 M joint_screen
 O -mz80
-S _devkit_PSGGetStatus Ref000000
-S _devkit_PSGStop Ref000000
-S _engine_input_manager_hold_fire2 Ref000000
-S .__.ABS. Def000000
-S _devkit_PSGResume Ref000000
-S _engine_input_manager_hold_right Ref000000
-S _engine_music_manager_play Ref000000
-S _engine_input_manager_hold_up Ref000000
-S _engine_sound_manager_play Ref000000
-S _engine_input_manager_hold_left Ref000000
-S _engine_text_manager_title Ref000000
-S _engine_input_manager_hold_down Ref000000
-A _CODE size 8A flags 0 addr 0
-S _screen_joint_screen_load Def000000
-S XG$screen_joint_screen_load$0$0 Def00000B
-S G$screen_joint_screen_update$0$0 Def00000C
-S A$joint_screen$200 Def00005F
-S A$joint_screen$110 Def000012
-S A$joint_screen$210 Def000068
-S A$joint_screen$120 Def000017
-S A$joint_screen$130 Def00001B
-S A$joint_screen$121 Def000019
-S A$joint_screen$103 Def00000C
-S A$joint_screen$131 Def00001C
-S A$joint_screen$231 Def000078
-S A$joint_screen$132 Def00001F
-S A$joint_screen$114 Def000013
-S A$joint_screen$250 Def000088
-S A$joint_screen$232 Def000079
-S A$joint_screen$214 Def00006A
-S A$joint_screen$205 Def000061
-S A$joint_screen$151 Def000032
-S A$joint_screen$142 Def000024
-S A$joint_screen$133 Def000020
-S A$joint_screen$115 Def000014
-S _screen_joint_screen_update Def00000C
-S A$joint_screen$233 Def00007C
-S A$joint_screen$224 Def000073
-S A$joint_screen$215 Def00006B
-S A$joint_screen$206 Def000062
-S A$joint_screen$170 Def000043
-S A$joint_screen$152 Def000033
-S A$joint_screen$143 Def000027
-S A$joint_screen$125 Def00001A
-S A$joint_screen$116 Def000015
-S A$joint_screen$107 Def00000F
-S A$joint_screen$243 Def000081
-S A$joint_screen$234 Def00007D
-S A$joint_screen$225 Def000074
-S A$joint_screen$216 Def00006E
-S A$joint_screen$207 Def000065
-S A$joint_screen$171 Def000046
-S A$joint_screen$153 Def000036
-S A$joint_screen$144 Def000029
-S A$joint_screen$108 Def000010
-S A$joint_screen$244 Def000083
-S A$joint_screen$226 Def000077
-S A$joint_screen$217 Def00006F
-S A$joint_screen$208 Def000066
-S A$joint_screen$145 Def00002B
-S A$joint_screen$109 Def000011
-S A$joint_screen$218 Def000070
-S A$joint_screen$209 Def000067
-S A$joint_screen$164 Def00003E
-S A$joint_screen$146 Def00002E
-S A$joint_screen$137 Def000021
-S A$joint_screen$219 Def000071
-S A$joint_screen$183 Def00004E
-S A$joint_screen$165 Def00003F
-S A$joint_screen$147 Def000030
-S A$joint_screen$138 Def000022
-S A$joint_screen$238 Def00007E
-S A$joint_screen$193 Def000057
-S A$joint_screen$184 Def00004F
-S A$joint_screen$166 Def000042
-S A$joint_screen$157 Def000037
-S A$joint_screen$239 Def00007F
-S A$joint_screen$194 Def000058
-S A$joint_screen$176 Def000048
-S A$joint_screen$158 Def00003A
-S A$joint_screen$258 Def000089
-S A$joint_screen$249 Def000086
-S A$joint_screen$195 Def00005B
-S A$joint_screen$177 Def000049
-S A$joint_screen$159 Def00003C
-S A$joint_screen$178 Def00004C
-S C$joint_screen.c$30$1_0$20 Def00001B
-S A$joint_screen$188 Def000051
-S A$joint_screen$179 Def00004D
-S C$joint_screen.c$31$1_0$20 Def000021
-S A$joint_screen$189 Def000054
-S C$joint_screen.c$23$1_0$20 Def00000C
-S A$joint_screen$199 Def00005C
-S XG$screen_joint_screen_update$0$0 Def000089
-S C$joint_screen.c$60$1_0$20 Def000078
-S C$joint_screen.c$24$1_0$20 Def000013
-S C$joint_screen.c$61$1_0$20 Def00007E
-S C$joint_screen.c$53$1_0$20 Def000061
-S C$joint_screen.c$26$1_0$20 Def00000F
-S C$joint_screen.c$11$0_0$18 Def000000
-S C$joint_screen.c$54$1_0$20 Def00006A
-S C$joint_screen.c$45$1_0$20 Def000048
-S C$joint_screen.c$33$2_0$22 Def000024
-S C$joint_screen.c$18$1_0$20 Def00000C
-S C$joint_screen.c$46$1_0$20 Def00004E
-S C$joint_screen.c$40$3_0$24 Def00003E
-S C$joint_screen.c$26$2_0$21 Def000017
-S A$joint_screen$80 Def000003
-S C$joint_screen.c$50$2_0$25 Def00005C
-S C$joint_screen.c$41$3_0$24 Def000043
-S C$joint_screen.c$27$2_0$21 Def00001A
-S C$joint_screen.c$13$1_0$18 Def000000
-S G$screen_joint_screen_load$0$0 Def000000
-S A$joint_screen$90 Def00000B
-S A$joint_screen$81 Def000005
-S C$joint_screen.c$66$1_0$20 Def000086
-S C$joint_screen.c$14$1_0$18 Def000003
-S A$joint_screen$82 Def000008
-S A$joint_screen$73 Def000000
-S C$joint_screen.c$67$1_0$20 Def000089
-S C$joint_screen.c$35$3_0$23 Def000032
-S C$joint_screen.c$15$1_0$18 Def000003
-S C$joint_screen.c$36$3_0$23 Def000037
-S C$joint_screen.c$16$1_0$18 Def00000B
-S C$joint_screen.c$63$2_0$27 Def000081
-S C$joint_screen.c$56$2_0$26 Def000073
-S C$joint_screen.c$48$2_0$25 Def000051
-S C$joint_screen.c$49$2_0$25 Def000057
+S _devkit_PSGGetStatus Ref0000
+S _devkit_PSGStop Ref0000
+S _engine_input_manager_hold_fire2 Ref0000
+S .__.ABS. Def0000
+S _devkit_PSGResume Ref0000
+S _engine_input_manager_hold_right Ref0000
+S _engine_music_manager_play Ref0000
+S _engine_input_manager_hold_up Ref0000
+S _engine_sound_manager_play Ref0000
+S _engine_input_manager_hold_left Ref0000
+S _engine_text_manager_title Ref0000
+S _engine_input_manager_hold_down Ref0000
+A _CODE size 8C flags 0 addr 0
+S _screen_joint_screen_load Def0000
+S XG$screen_joint_screen_load$0$0 Def000D
+S G$screen_joint_screen_update$0$0 Def000E
+S C$joint_screen.c$30$1$20 Def001D
+S A$joint_screen$101 Def000E
+S C$joint_screen.c$31$1$20 Def0022
+S C$joint_screen.c$23$1$20 Def000E
+S A$joint_screen$130 Def0021
+S A$joint_screen$112 Def0015
+S C$joint_screen.c$60$1$20 Def007A
+S C$joint_screen.c$24$1$20 Def0015
+S A$joint_screen$230 Def007B
+S A$joint_screen$212 Def006C
+S A$joint_screen$203 Def0063
+S A$joint_screen$140 Def0026
+S A$joint_screen$113 Def0016
+S C$joint_screen.c$61$1$20 Def007F
+S A$joint_screen$231 Def007E
+S A$joint_screen$222 Def0075
+S A$joint_screen$213 Def006D
+S A$joint_screen$204 Def0064
+S A$joint_screen$150 Def0035
+S A$joint_screen$141 Def0029
+S A$joint_screen$123 Def001C
+S A$joint_screen$114 Def0017
+S A$joint_screen$105 Def0011
+S C$joint_screen.c$53$1$20 Def0063
+S C$joint_screen.c$26$1$20 Def0011
+S A$joint_screen$241 Def0083
+S A$joint_screen$223 Def0076
+S A$joint_screen$214 Def0070
+S A$joint_screen$205 Def0067
+S A$joint_screen$151 Def0038
+S A$joint_screen$142 Def002B
+S A$joint_screen$106 Def0012
+S C$joint_screen.c$54$1$20 Def006C
+S C$joint_screen.c$45$1$20 Def004A
+S C$joint_screen.c$33$2$22 Def0026
+S _screen_joint_screen_update Def000E
+S A$joint_screen$242 Def0086
+S A$joint_screen$224 Def0079
+S A$joint_screen$215 Def0071
+S A$joint_screen$206 Def0068
+S A$joint_screen$143 Def002D
+S A$joint_screen$134 Def0022
+S A$joint_screen$107 Def0013
+S C$joint_screen.c$46$1$20 Def004F
+S C$joint_screen.c$40$3$24 Def0040
+S C$joint_screen.c$26$2$21 Def0019
+S A$joint_screen$216 Def0072
+S A$joint_screen$207 Def0069
+S A$joint_screen$180 Def004F
+S A$joint_screen$162 Def0040
+S A$joint_screen$144 Def0030
+S A$joint_screen$135 Def0023
+S A$joint_screen$108 Def0014
+S C$joint_screen.c$50$2$25 Def005E
+S C$joint_screen.c$41$3$24 Def0045
+S C$joint_screen.c$27$2$21 Def001C
+S C$joint_screen.c$13$1$18 Def0000
+S A$joint_screen$253 Def008B
+S A$joint_screen$235 Def007F
+S A$joint_screen$217 Def0073
+S A$joint_screen$208 Def006A
+S A$joint_screen$181 Def0050
+S A$joint_screen$163 Def0041
+S A$joint_screen$145 Def0032
+S A$joint_screen$136 Def0024
+S A$joint_screen$118 Def0019
+S C$joint_screen.c$66$1$20 Def0088
+S C$joint_screen.c$14$1$18 Def0003
+S A$joint_screen$236 Def0080
+S A$joint_screen$191 Def0059
+S A$joint_screen$182 Def0051
+S A$joint_screen$164 Def0044
+S A$joint_screen$155 Def0039
+S A$joint_screen$128 Def001D
+S A$joint_screen$119 Def001B
+S C$joint_screen.c$67$1$20 Def008B
+S C$joint_screen.c$35$3$23 Def0034
+S C$joint_screen.c$15$1$18 Def0008
+S A$joint_screen$237 Def0081
+S A$joint_screen$192 Def005A
+S A$joint_screen$174 Def004A
+S A$joint_screen$156 Def003C
+S A$joint_screen$129 Def001E
+S C$joint_screen.c$36$3$23 Def0039
+S C$joint_screen.c$16$1$18 Def000D
+S A$joint_screen$247 Def0088
+S A$joint_screen$229 Def007A
+S A$joint_screen$193 Def005D
+S A$joint_screen$175 Def004B
+S A$joint_screen$157 Def003E
+S C$joint_screen.c$11$0$0 Def0000
+S A$joint_screen$248 Def008A
+S A$joint_screen$176 Def004E
+S A$joint_screen$149 Def0034
+S C$joint_screen.c$18$1$18 Def000E
+S A$joint_screen$186 Def0053
+S A$joint_screen$168 Def0045
+S C$joint_screen.c$63$2$27 Def0083
+S A$joint_screen$187 Def0056
+S A$joint_screen$169 Def0048
+S C$joint_screen.c$56$2$26 Def0075
+S C$joint_screen.c$48$2$25 Def0053
+S A$joint_screen$197 Def005E
+S C$joint_screen.c$49$2$25 Def0059
+S A$joint_screen$198 Def0061
+S XG$screen_joint_screen_update$0$0 Def008B
+S G$screen_joint_screen_load$0$0 Def0000
+S A$joint_screen$82 Def0008
+S A$joint_screen$73 Def0000
+S A$joint_screen$83 Def000B
+S A$joint_screen$77 Def0003
+S A$joint_screen$78 Def0006
+S A$joint_screen$88 Def000D
 A _DATA size 2 flags 0 addr 0
-S Fjoint_screen$curr_play_type$0_0$0 Def000001
-S Fjoint_screen$prev_play_type$0_0$0 Def000000
+S Fjoint_screen$curr_play_type$0$0 Def0001
+S Fjoint_screen$prev_play_type$0$0 Def0000
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
@@ -141,59 +142,57 @@ A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
 A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
-T 00 00 00
+T 00 00
 R 00 00 01 00
-T 00 00 00
+T 00 00
 R 00 00 01 00
-T 01 00 00
+T 01 00
 R 00 00 01 00
-T 01 00 00
+T 01 00
 R 00 00 01 00
-T 00 00 00
+T 00 00
 R 00 00 00 00
-T 00 00 00 CD 00 00 3E 04 32 00 00 32 01 00 C9
-R 00 00 00 00 02 04 0A 00 00 09 01 00 00 0C 01 00
-T 0C 00 00
+T 00 00 CD 00 00 21 00 00 36 04 21 01 00 36 04 C9
+R 00 00 00 00 02 03 0A 00 00 06 01 00 00 0B 01 00
+T 0E 00
 R 00 00 00 00
-T 0C 00 00 CD 00 00 D1 C1 C5 D5 7D B7 28 04 3E 03
-R 00 00 00 00 02 04 02 00
-T 19 00 00 02 C9
+T 0E 00 CD 00 00 D1 C1 C5 D5 7D B7 28 04 3E 03 02
+R 00 00 00 00 02 03 02 00
+T 1C 00 C9
 R 00 00 00 00
-T 1B 00 00
+T 1D 00
 R 00 00 00 00
-T 1B 00 00 C5 CD 00 00 7D C1 B7 28 24 3A 00 00 D6
-R 00 00 00 00 02 05 09 00 00 0D 01 00
-T 28 00 00 04 20 13 3A 01 00 D6 04 20 0C C5 CD
-R 00 00 00 00 00 07 01 00
-T 34 00 00 00 00 C1 21 01 00 36 01 18 0A
-R 00 00 00 00 02 03 06 00 00 07 01 00
-T 3E 00 00
-R 00 00 00 00
-T 3E 00 00 C5 CD 00 00 C1 21 01 00 36 03
-R 00 00 00 00 02 05 04 00 00 09 01 00
-T 48 00 00
-R 00 00 00 00
-T 48 00 00 C5 CD 00 00 7D C1 B7 28 10 3A 01 00 32
-R 00 00 00 00 02 05 05 00 00 0D 01 00
-T 55 00 00 00 00 C5 CD 00 00 C1 21 01 00 36 02
-R 00 00 00 00 00 03 01 00 02 07 01 00 00 0B 01 00
-T 61 00 00
-R 00 00 00 00
-T 61 00 00 C5 CD 00 00 7D C1 B7 20 09 C5 CD 00 00
-R 00 00 00 00 02 05 07 00 02 0E 0B 00
-T 6E 00 00 7D C1 B7 28 05
-R 00 00 00 00
-T 73 00 00
-R 00 00 00 00
-T 73 00 00 C5 CD 00 00 C1
-R 00 00 00 00 02 05 08 00
-T 78 00 00
-R 00 00 00 00
-T 78 00 00 C5 CD 00 00 7D C1 B7 20 05 3E 04 32
-R 00 00 00 00 02 05 00 00
-T 84 00 00 01 00
+T 1D 00 C5 CD 00 00 C1 7D B7 28 24 3A 00 00 D6 04
+R 00 00 00 00 02 04 09 00 00 0C 01 00
+T 2B 00 20 13 3A 01 00 D6 04 20 0C C5 CD 00 00 C1
+R 00 00 00 00 00 05 01 00 02 0D 06 00
+T 39 00 21 01 00 36 01 18 0A
 R 00 00 00 00 00 03 01 00
-T 86 00 00
+T 40 00
 R 00 00 00 00
-T 86 00 00 3E 04 02 C9
+T 40 00 C5 CD 00 00 C1 21 01 00 36 03
+R 00 00 00 00 02 04 04 00 00 08 01 00
+T 4A 00
+R 00 00 00 00
+T 4A 00 C5 CD 00 00 C1 7D B7 28 10 3A 01 00 32
+R 00 00 00 00 02 04 05 00 00 0C 01 00
+T 57 00 00 00 C5 CD 00 00 C1 21 01 00 36 02
+R 00 00 00 00 00 02 01 00 02 06 01 00 00 0A 01 00
+T 63 00
+R 00 00 00 00
+T 63 00 C5 CD 00 00 C1 7D B7 20 09 C5 CD 00 00 C1
+R 00 00 00 00 02 04 07 00 02 0D 0B 00
+T 71 00 7D B7 28 05
+R 00 00 00 00
+T 75 00
+R 00 00 00 00
+T 75 00 C5 CD 00 00 C1
+R 00 00 00 00 02 04 08 00
+T 7A 00
+R 00 00 00 00
+T 7A 00 C5 CD 00 00 C1 7D B7 20 05 21 01 00 36 04
+R 00 00 00 00 02 04 00 00 00 0C 01 00
+T 88 00
+R 00 00 00 00
+T 88 00 3E 04 02 C9
 R 00 00 00 00
