@@ -16,9 +16,9 @@ S:Lplay_screen.screen_play_screen_update$check$1$25({1}SC:U),R,0,0,[l]
 S:Lplay_screen.screen_play_screen_update$idx$1$25({1}SC:U),B,1,-4
 S:Lplay_screen.screen_play_screen_update$evt$1$25({1}SC:U),R,0,0,[]
 S:Lplay_screen.screen_play_screen_update$coll_diff$1$25({2}SI:S),R,0,0,[e,d]
-S:Lplay_screen.screen_play_screen_update$sloc0$1$0({1}SC:U),B,1,-1
-S:Lplay_screen.screen_play_screen_update$sloc1$1$0({1}SC:S),B,1,-3
-S:Lplay_screen.screen_play_screen_update$sloc2$1$0({1}SC:S),B,1,-2
+S:Lplay_screen.screen_play_screen_update$sloc0$1$0({1}SC:U),B,1,-3
+S:Lplay_screen.screen_play_screen_update$sloc1$1$0({1}SC:S),B,1,-2
+S:Lplay_screen.screen_play_screen_update$sloc2$1$0({1}SC:S),B,1,-1
 F:Fplay_screen$increase_lives$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lplay_screen.increase_lives$so$1$50({2}DG,STtag_struct_score_object:S),R,0,0,[]
 F:Fplay_screen$ground_collision$0$0({2}DF,SC:U),Z,0,4,0,0,0
