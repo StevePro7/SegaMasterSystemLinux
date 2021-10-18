@@ -16,11 +16,11 @@ S:Lenemy_manager.engine_enemyX_manager_update$em$1$44({2}DG,STtag_struct_enemy_m
 S:Lenemy_manager.engine_enemyX_manager_update$eo$1$44({2}DG,STtag_struct_enemy_object:S),R,0,0,[e,d]
 S:Lenemy_manager.engine_enemyX_manager_update$idx$1$44({1}SC:U),B,1,-10
 S:Lenemy_manager.engine_enemyX_manager_update$deltaX$1$44({1}SC:S),B,1,-11
-S:Lenemy_manager.engine_enemyX_manager_update$sloc0$1$0({2}DG,SC:U),B,1,-4
-S:Lenemy_manager.engine_enemyX_manager_update$sloc1$1$0({1}SC:U),B,1,-5
-S:Lenemy_manager.engine_enemyX_manager_update$sloc2$1$0({2}DG,SC:U),B,1,-2
-S:Lenemy_manager.engine_enemyX_manager_update$sloc3$1$0({2}DG,SC:U),B,1,-9
-S:Lenemy_manager.engine_enemyX_manager_update$sloc4$1$0({2}DG,SC:U),B,1,-7
+S:Lenemy_manager.engine_enemyX_manager_update$sloc0$1$0({2}DG,SC:U),B,1,-2
+S:Lenemy_manager.engine_enemyX_manager_update$sloc1$1$0({1}SC:U),B,1,-3
+S:Lenemy_manager.engine_enemyX_manager_update$sloc2$1$0({2}DG,SC:U),B,1,-5
+S:Lenemy_manager.engine_enemyX_manager_update$sloc3$1$0({2}DG,SC:U),B,1,-7
+S:Lenemy_manager.engine_enemyX_manager_update$sloc4$1$0({2}DG,SC:U),B,1,-9
 F:G$engine_enemyX_manager_draw_enemys$0$0({2}DF,SV:S),Z,0,2,0,0,0
 S:Lenemy_manager.engine_enemyX_manager_draw_enemys$em$1$62({2}DG,STtag_struct_enemy_master:S),R,0,0,[]
 S:Lenemy_manager.engine_enemyX_manager_draw_enemys$eo$1$62({2}DG,STtag_struct_enemy_object:S),B,1,-2
