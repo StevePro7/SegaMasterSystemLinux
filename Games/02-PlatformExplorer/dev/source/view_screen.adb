@@ -5,9 +5,9 @@ F:G$screen_view_screen_update$0$0({2}DF,SV:S),Z,0,6,0,0,0
 S:Lview_screen.screen_view_screen_update$screen_type$1$33({2}DG,SC:U),B,1,4
 S:Lview_screen.screen_view_screen_update$go$1$34({2}DG,STtag_struct_game_object:S),R,0,0,[c,b]
 S:Lview_screen.screen_view_screen_update$test$1$34({6}DA6d,SC:U),B,1,-16
-S:Lview_screen.screen_view_screen_update$sloc0$1$0({2}DD,SC:U),B,1,-8
-S:Lview_screen.screen_view_screen_update$sloc1$1$0({2}DD,SC:U),B,1,-10
-S:Lview_screen.screen_view_screen_update$sloc2$1$0({2}DD,SC:U),B,1,-6
+S:Lview_screen.screen_view_screen_update$sloc0$1$0({2}DD,SC:U),B,1,-10
+S:Lview_screen.screen_view_screen_update$sloc1$1$0({2}DD,SC:U),B,1,-6
+S:Lview_screen.screen_view_screen_update$sloc2$1$0({2}DD,SC:U),B,1,-8
 S:Lview_screen.screen_view_screen_update$sloc3$1$0({2}DD,SC:U),B,1,-4
 S:Lview_screen.screen_view_screen_update$sloc4$1$0({2}DD,SC:U),B,1,-2
 F:Fview_screen$load_screen$0$0({2}DF,SV:S),Z,0,0,0,0,0
