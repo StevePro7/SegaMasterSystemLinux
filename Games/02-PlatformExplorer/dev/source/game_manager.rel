@@ -1,21 +1,117 @@
+;!FILE game_manager.asm
 XL2
-H 9 areas 6 global symbols
+H 9 areas 65 global symbols
 M game_manager
 O -mz80
 S _engine_font_manager_draw_text Ref0000
 S .__.ABS. Def0000
 S _count_text Ref0000
 A _CODE size 89 flags 0 addr 0
+S C$game_manager.c$21$1$5 Def0015
+S C$game_manager.c$14$1$5 Def0000
+S C$game_manager.c$23$1$6 Def0015
+S C$game_manager.c$15$1$5 Def0000
+S C$game_manager.c$24$1$6 Def0015
+S C$game_manager.c$16$1$5 Def0005
+S A$game_manager$72 Def0005
+S C$game_manager.c$17$1$5 Def000A
+S A$game_manager$82 Def000F
+S A$game_manager$73 Def0008
+S C$game_manager.c$35$1$6 Def0060
+S C$game_manager.c$32$2$8 Def0044
+S C$game_manager.c$26$1$6 Def002F
+S C$game_manager.c$18$1$5 Def000F
+S A$game_manager$83 Def0012
+S C$game_manager.c$36$1$6 Def007B
+S C$game_manager.c$19$1$5 Def0014
+S G$engine_game_manager_draw$0$0 Def0015
+S A$game_manager$67 Def0000
+S A$game_manager$77 Def000A
+S A$game_manager$68 Def0003
+S C$game_manager.c$28$2$7 Def0035
+S A$game_manager$78 Def000D
+S Fgame_manager$__str_0$0$0 Def007C
+S A$game_manager$88 Def0014
+S Fgame_manager$__str_1$0$0 Def007F
+S Fgame_manager$__str_2$0$0 Def0084
+S G$engine_game_manager_init$0$0 Def0000
 S _engine_game_manager_draw Def0015
 S _engine_game_manager_init Def0000
+S XG$engine_game_manager_draw$0$0 Def007B
+S XG$engine_game_manager_init$0$0 Def0014
+S A$game_manager$110 Def0020
+S A$game_manager$120 Def002E
+S A$game_manager$111 Def0021
+S A$game_manager$130 Def0035
+S A$game_manager$112 Def0022
+S A$game_manager$131 Def0038
+S A$game_manager$113 Def0023
+S A$game_manager$104 Def0015
+S A$game_manager$150 Def0053
+S A$game_manager$132 Def0039
+S A$game_manager$114 Def0024
+S A$game_manager$105 Def0018
+S A$game_manager$151 Def0054
+S A$game_manager$142 Def0044
+S A$game_manager$133 Def003C
+S A$game_manager$124 Def002F
+S A$game_manager$115 Def0025
+S A$game_manager$106 Def001B
+S A$game_manager$170 Def006F
+S A$game_manager$152 Def0055
+S A$game_manager$143 Def0047
+S A$game_manager$134 Def003D
+S A$game_manager$125 Def0032
+S A$game_manager$116 Def0028
+S A$game_manager$107 Def001C
+S A$game_manager$171 Def0070
+S A$game_manager$153 Def0056
+S A$game_manager$144 Def004A
+S A$game_manager$135 Def0040
+S A$game_manager$126 Def0033
+S A$game_manager$117 Def0029
+S A$game_manager$108 Def001D
+S A$game_manager$172 Def0071
+S A$game_manager$163 Def0060
+S A$game_manager$154 Def0059
+S A$game_manager$145 Def004B
+S A$game_manager$136 Def0041
+S A$game_manager$118 Def002A
+S A$game_manager$109 Def001E
+S A$game_manager$182 Def007B
+S A$game_manager$173 Def0074
+S A$game_manager$164 Def0064
+S A$game_manager$155 Def005A
+S A$game_manager$146 Def004C
+S A$game_manager$137 Def0042
+S A$game_manager$119 Def002D
+S A$game_manager$174 Def0075
+S A$game_manager$165 Def0067
+S A$game_manager$156 Def005B
+S A$game_manager$147 Def004E
+S A$game_manager$175 Def0076
+S A$game_manager$166 Def0069
+S A$game_manager$157 Def005E
+S A$game_manager$148 Def004F
+S A$game_manager$176 Def0079
+S A$game_manager$167 Def006A
+S A$game_manager$158 Def005F
+S A$game_manager$149 Def0052
+S C$game_manager.c$12$0$0 Def0000
+S A$game_manager$177 Def007A
+S A$game_manager$168 Def006D
+S A$game_manager$169 Def006E
 A _DATA size 7 flags 0 addr 0
+S G$global_game_object$0$0 Def0000
 S _global_game_object Def0000
 A _INITIALIZED size 4 flags 0 addr 0
+S Fgame_manager$diff_text$0$0 Def0000
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
 A _INITIALIZER size 4 flags 0 addr 0
+S Fgame_manager$__xinit_diff_text$0$0 Def0000
 A _CABS size 0 flags 8 addr 0
 T 00 00
 R 00 00 01 00

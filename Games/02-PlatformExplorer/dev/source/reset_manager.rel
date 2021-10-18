@@ -1,13 +1,67 @@
+;!FILE reset_manager.asm
 XL2
-H 9 areas 5 global symbols
+H 9 areas 3A global symbols
 M reset_manager
 O -mz80
 S .__.ABS. Def0000
 A _CODE size 31 flags 0 addr 0
+S A$reset_manager$145 Def002F
+S A$reset_manager$127 Def0024
+S A$reset_manager$118 Def001C
+S A$reset_manager$128 Def0026
+S A$reset_manager$119 Def001D
+S A$reset_manager$129 Def0027
+S A$reset_manager$139 Def002D
+S G$engine_reset_manager_load$0$0 Def0000
+S G$engine_reset_manager_reset$0$0 Def0010
+S C$reset_manager.c$10$1$7 Def0000
+S C$reset_manager.c$11$1$7 Def0000
+S C$reset_manager.c$12$1$7 Def000D
+S C$reset_manager.c$21$1$8 Def0016
+S C$reset_manager.c$13$1$7 Def000D
+S C$reset_manager.c$15$1$7 Def0010
+S A$reset_manager$64 Def0000
+S C$reset_manager.c$23$1$9 Def0016
 S _engine_reset_manager_load Def0000
+S A$reset_manager$92 Def0010
+S A$reset_manager$65 Def0003
+S C$reset_manager.c$33$1$9 Def002F
+S A$reset_manager$93 Def0013
+S A$reset_manager$66 Def0007
+S C$reset_manager.c$34$1$9 Def0030
+S C$reset_manager.c$17$1$8 Def0010
+S A$reset_manager$76 Def000D
+S A$reset_manager$67 Def0009
+S C$reset_manager.c$26$1$9 Def0016
+S C$reset_manager.c$18$1$8 Def0010
 S _engine_reset_manager_reset Def0010
+S A$reset_manager$68 Def000C
+S C$reset_manager.c$27$1$9 Def001E
+S C$reset_manager.c$19$1$8 Def0015
+S C$reset_manager.c$28$1$9 Def0029
+S A$reset_manager$98 Def0015
+S C$reset_manager.c$8$0$0 Def0000
+S XG$engine_reset_manager_load$0$0 Def000D
+S XG$engine_reset_manager_reset$0$0 Def0015
+S G$engine_reset_manager_update$0$0 Def0016
 S _engine_reset_manager_update Def0016
+S C$reset_manager.c$30$2$10 Def002D
+S A$reset_manager$140 Def002E
+S A$reset_manager$150 Def0030
+S A$reset_manager$123 Def001E
+S A$reset_manager$114 Def0016
+S A$reset_manager$133 Def0029
+S A$reset_manager$124 Def0021
+S A$reset_manager$115 Def0019
+S A$reset_manager$134 Def002A
+S A$reset_manager$125 Def0022
+S A$reset_manager$116 Def001A
+S A$reset_manager$135 Def002B
+S A$reset_manager$126 Def0023
+S A$reset_manager$117 Def001B
+S XG$engine_reset_manager_update$0$0 Def0030
 A _DATA size 3 flags 0 addr 0
+S G$global_reset_object$0$0 Def0000
 S _global_reset_object Def0000
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0

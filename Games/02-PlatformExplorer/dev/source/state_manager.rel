@@ -1,5 +1,6 @@
+;!FILE state_manager.asm
 XL2
-H 9 areas 14 global symbols
+H 9 areas 1AE global symbols
 M state_manager
 O -mz80
 S __divuint Ref0000
@@ -20,9 +21,419 @@ S _global_enemy_master Ref0000
 S __modsint Ref0000
 S _engine_hack_manager_invert Ref0000
 S __moduint Ref0000
-A _CODE size 280 flags 0 addr 0
+A _CODE size 284 flags 0 addr 0
+S A$state_manager$606 Def0281
+S A$state_manager$543 Def0237
+S A$state_manager$534 Def022A
+S A$state_manager$525 Def021C
+S A$state_manager$516 Def0215
+S A$state_manager$507 Def0212
+S A$state_manager$480 Def01EA
+S A$state_manager$453 Def01D6
+S A$state_manager$444 Def01D1
+S A$state_manager$435 Def01C3
+S A$state_manager$426 Def01B4
+S A$state_manager$408 Def019C
+S A$state_manager$390 Def0181
+S A$state_manager$381 Def0172
+S A$state_manager$354 Def0154
+S A$state_manager$345 Def0143
+S A$state_manager$336 Def0139
+S A$state_manager$327 Def0128
+S A$state_manager$309 Def0116
+S A$state_manager$291 Def00FE
+S A$state_manager$282 Def00EF
+S A$state_manager$273 Def00E6
+S A$state_manager$255 Def00C8
+S A$state_manager$246 Def00BB
+S A$state_manager$237 Def00B0
+S A$state_manager$228 Def00A1
+S A$state_manager$219 Def0097
+S A$state_manager$192 Def0071
+S A$state_manager$174 Def0057
+S A$state_manager$147 Def004B
+S A$state_manager$129 Def0041
+S C$state_manager.c$83$2$31 Def023D
+S C$state_manager.c$81$3$32 Def016B
+S C$state_manager.c$72$3$32 Def0121
+S C$state_manager.c$50$1$29 Def0050
+S C$state_manager.c$41$1$29 Def0050
+S C$state_manager.c$33$1$28 Def0042
+S C$state_manager.c$24$1$28 Def000F
+S A$state_manager$544 Def023A
+S A$state_manager$535 Def022C
+S A$state_manager$526 Def021D
+S A$state_manager$517 Def0217
+S A$state_manager$508 Def0213
+S A$state_manager$490 Def01F6
+S A$state_manager$472 Def01E1
+S A$state_manager$454 Def01D8
+S A$state_manager$436 Def01C4
+S A$state_manager$427 Def01B5
+S A$state_manager$409 Def019E
+S A$state_manager$391 Def0183
+S A$state_manager$382 Def0175
+S A$state_manager$355 Def0155
+S A$state_manager$346 Def0144
+S A$state_manager$337 Def013B
+S A$state_manager$328 Def012A
+S A$state_manager$292 Def0100
+S A$state_manager$283 Def00F0
+S A$state_manager$274 Def00E7
+S A$state_manager$265 Def00D5
+S A$state_manager$256 Def00CA
+S A$state_manager$247 Def00BC
+S A$state_manager$238 Def00B1
+S A$state_manager$229 Def00A4
+S A$state_manager$193 Def0072
+S A$state_manager$175 Def0058
+S A$state_manager$148 Def004E
+S C$state_manager.c$91$3$32 Def01A9
+S C$state_manager.c$64$3$32 Def00AB
+S C$state_manager.c$11$0$0 Def0000
+S A$state_manager$590 Def026B
+S A$state_manager$572 Def0254
+S A$state_manager$545 Def023B
+S A$state_manager$536 Def022F
+S A$state_manager$518 Def0218
+S A$state_manager$509 Def0214
+S A$state_manager$491 Def01F7
+S A$state_manager$473 Def01E4
+S A$state_manager$464 Def01DB
+S A$state_manager$437 Def01C6
+S A$state_manager$428 Def01B8
+S A$state_manager$392 Def0185
+S A$state_manager$383 Def0176
+S A$state_manager$374 Def016B
+S A$state_manager$365 Def015B
+S A$state_manager$356 Def0156
+S A$state_manager$347 Def0147
+S A$state_manager$338 Def013C
+S A$state_manager$329 Def012B
+S A$state_manager$293 Def0102
+S A$state_manager$284 Def00F3
+S A$state_manager$275 Def00E8
+S A$state_manager$266 Def00D8
+S A$state_manager$257 Def00CC
+S A$state_manager$248 Def00BF
+S A$state_manager$239 Def00B2
+S A$state_manager$194 Def0073
+S A$state_manager$185 Def0062
+S A$state_manager$176 Def0059
+S A$state_manager$149 Def004F
+S C$state_manager.c$92$3$32 Def01D2
+S C$state_manager.c$62$4$34 Def009D
+S C$state_manager.c$61$1$29 Def0091
+S C$state_manager.c$43$1$29 Def0050
+S C$state_manager.c$35$1$28 Def0043
+S G$engine_state_manager_load$0$0 Def0043
+S C$state_manager.c$17$1$28 Def0000
+S A$state_manager$591 Def026C
+S A$state_manager$582 Def0261
+S A$state_manager$573 Def0257
+S A$state_manager$555 Def0244
+S A$state_manager$537 Def0232
+S A$state_manager$519 Def021A
+S A$state_manager$492 Def01FA
+S A$state_manager$474 Def01E5
+S A$state_manager$465 Def01DD
+S A$state_manager$438 Def01C8
+S A$state_manager$429 Def01BB
+S A$state_manager$393 Def0186
+S A$state_manager$384 Def0179
+S A$state_manager$375 Def016C
+S A$state_manager$366 Def015E
+S A$state_manager$348 Def0149
+S A$state_manager$339 Def013D
+S A$state_manager$294 Def0103
+S A$state_manager$285 Def00F5
+S A$state_manager$276 Def00E9
+S A$state_manager$267 Def00DB
+S A$state_manager$258 Def00CD
+S A$state_manager$195 Def0074
+S A$state_manager$186 Def0065
+S A$state_manager$177 Def005C
+S C$state_manager.c$66$3$32 Def00C2
+S C$state_manager.c$18$1$28 Def0003
+S A$state_manager$592 Def026F
+S A$state_manager$583 Def0262
+S A$state_manager$574 Def025A
+S A$state_manager$565 Def024D
+S A$state_manager$556 Def0245
+S A$state_manager$538 Def0235
+S A$state_manager$493 Def01FD
+S A$state_manager$466 Def01DE
+S A$state_manager$448 Def01D2
+S A$state_manager$439 Def01C9
+S A$state_manager$394 Def0189
+S A$state_manager$385 Def017A
+S A$state_manager$376 Def016D
+S A$state_manager$367 Def0160
+S A$state_manager$349 Def014A
+S A$state_manager$295 Def0104
+S A$state_manager$286 Def00F6
+S A$state_manager$268 Def00DC
+S A$state_manager$259 Def00CE
+S A$state_manager$187 Def0068
+S C$state_manager.c$67$3$32 Def00D5
+S C$state_manager.c$28$1$28 Def0012
+S A$state_manager$593 Def0270
+S A$state_manager$584 Def0263
+S A$state_manager$575 Def025B
+S A$state_manager$566 Def0250
+S A$state_manager$557 Def0246
+S A$state_manager$494 Def01FE
+S A$state_manager$485 Def01EB
+S A$state_manager$467 Def01E0
+S A$state_manager$449 Def01D4
+S A$state_manager$395 Def018A
+S A$state_manager$386 Def017B
+S A$state_manager$368 Def0163
+S A$state_manager$296 Def0105
+S A$state_manager$287 Def00F9
+S A$state_manager$269 Def00DE
+S A$state_manager$188 Def006B
+S C$state_manager.c$86$3$32 Def0195
+S C$state_manager.c$83$4$34 Def016F
+S C$state_manager.c$77$3$32 Def0125
+S C$state_manager.c$68$3$32 Def00EA
+S C$state_manager.c$37$1$29 Def0050
+S C$state_manager.c$29$1$28 Def001B
+S A$state_manager$594 Def0271
+S A$state_manager$576 Def025C
+S A$state_manager$567 Def0251
+S A$state_manager$558 Def0248
+S A$state_manager$549 Def023D
+S A$state_manager$495 Def01FF
+S A$state_manager$486 Def01EE
+S A$state_manager$459 Def01D9
+S A$state_manager$396 Def018C
+S A$state_manager$387 Def017C
+S A$state_manager$369 Def0166
+S A$state_manager$297 Def0106
+S A$state_manager$288 Def00FA
+S A$state_manager$189 Def006C
+S C$state_manager.c$96$3$32 Def01D9
+S C$state_manager.c$78$3$32 Def013E
+S C$state_manager.c$69$3$32 Def0107
+S C$state_manager.c$56$1$29 Def0062
+S C$state_manager.c$38$1$29 Def0050
+S A$state_manager$595 Def0272
+S A$state_manager$577 Def025F
+S A$state_manager$568 Def0252
+S A$state_manager$559 Def0249
+S A$state_manager$496 Def0200
+S A$state_manager$487 Def01F0
+S A$state_manager$478 Def01E7
+S A$state_manager$397 Def018D
+S A$state_manager$388 Def017E
+S A$state_manager$289 Def00FB
+S A$state_manager$199 Def0078
+S C$state_manager.c$57$1$29 Def0078
+S C$state_manager.c$39$1$29 Def0050
+S A$state_manager$596 Def0275
+S A$state_manager$578 Def0260
+S A$state_manager$497 Def0201
+S A$state_manager$488 Def01F1
+S A$state_manager$479 Def01E8
+S A$state_manager$398 Def018E
+S A$state_manager$389 Def0180
+S C$state_manager.c$58$1$29 Def008C
+S A$state_manager$597 Def0278
+S A$state_manager$588 Def0265
+S A$state_manager$498 Def0203
+S A$state_manager$489 Def01F4
+S A$state_manager$399 Def0191
+S C$state_manager.c$94$4$36 Def01D6
+S A$state_manager$589 Def0268
+S A$state_manager$499 Def0205
+S C$state_manager.c$88$4$35 Def01A1
+S A$state_manager$81 Def0009
+S A$state_manager$73 Def0003
+S C$state_manager.c$98$4$37 Def01DB
 S _engine_state_manager_load Def0043
+S A$state_manager$93 Def0012
+S A$state_manager$94 Def0015
+S A$state_manager$85 Def000C
+S A$state_manager$95 Def0016
+S A$state_manager$77 Def0006
+S A$state_manager$96 Def0017
+S A$state_manager$69 Def0000
+S A$state_manager$97 Def001A
+S A$state_manager$89 Def000F
+S G$engine_state_manager_init$0$0 Def0000
+S XG$engine_state_manager_load$0$0 Def0283
 S _engine_state_manager_init Def0000
+S C$state_manager.c$101$3$32 Def01E1
+S C$state_manager.c$121$4$41 Def0244
+S C$state_manager.c$113$3$32 Def021B
+S C$state_manager.c$115$4$40 Def021F
+S XG$engine_state_manager_init$0$0 Def0042
+S C$state_manager.c$136$2$31 Def0283
+S C$state_manager.c$123$5$42 Def024D
+S C$state_manager.c$108$3$32 Def01EB
+S C$state_manager.c$109$3$32 Def0215
+S C$state_manager.c$119$3$32 Def0237
+S C$state_manager.c$111$4$39 Def0215
+S C$state_manager.c$103$4$38 Def01E7
+S C$state_manager.c$125$6$43 Def0254
+S C$state_manager.c$126$6$43 Def0261
+S A$state_manager$200 Def007C
+S A$state_manager$110 Def0025
+S A$state_manager$101 Def001B
+S A$state_manager$201 Def007F
+S A$state_manager$120 Def0030
+S A$state_manager$111 Def0028
+S A$state_manager$102 Def001E
+S A$state_manager$400 Def0194
+S A$state_manager$310 Def0117
+S A$state_manager$301 Def0107
+S A$state_manager$220 Def0098
+S A$state_manager$202 Def0080
+S A$state_manager$121 Def0033
+S A$state_manager$112 Def002B
+S A$state_manager$103 Def0021
+S A$state_manager$500 Def0206
+S A$state_manager$410 Def019F
+S A$state_manager$311 Def0119
+S A$state_manager$302 Def010A
+S A$state_manager$230 Def00A7
+S A$state_manager$221 Def0099
+S A$state_manager$212 Def008C
+S A$state_manager$203 Def0081
+S A$state_manager$122 Def0037
+S A$state_manager$113 Def002C
+S A$state_manager$104 Def0022
+S C$state_manager.c$128$7$44 Def0265
+S A$state_manager$501 Def0208
+S A$state_manager$330 Def012E
+S A$state_manager$321 Def0121
+S A$state_manager$312 Def011B
+S A$state_manager$303 Def010C
+S A$state_manager$240 Def00B3
+S A$state_manager$231 Def00A8
+S A$state_manager$222 Def009C
+S A$state_manager$213 Def008F
+S A$state_manager$204 Def0084
+S A$state_manager$123 Def003A
+S A$state_manager$114 Def002D
+S A$state_manager$105 Def0023
+S A$state_manager$502 Def020A
+S A$state_manager$430 Def01BC
+S A$state_manager$421 Def01A9
+S A$state_manager$331 Def0130
+S A$state_manager$322 Def0122
+S A$state_manager$313 Def011C
+S A$state_manager$304 Def010D
+S A$state_manager$241 Def00B4
+S A$state_manager$205 Def0085
+S A$state_manager$115 Def002E
+S A$state_manager$106 Def0024
+S C$state_manager.c$52$2$30 Def005F
+S A$state_manager$611 Def0283
+S A$state_manager$602 Def0279
+S A$state_manager$530 Def021F
+S A$state_manager$503 Def020B
+S A$state_manager$440 Def01CC
+S A$state_manager$431 Def01BD
+S A$state_manager$422 Def01AC
+S A$state_manager$350 Def014C
+S A$state_manager$332 Def0131
+S A$state_manager$314 Def011D
+S A$state_manager$305 Def0110
+S A$state_manager$260 Def00D1
+S A$state_manager$242 Def00B5
+S A$state_manager$206 Def0086
+S A$state_manager$134 Def0042
+S A$state_manager$116 Def002F
+S A$state_manager$603 Def027C
+S A$state_manager$531 Def0222
+S A$state_manager$504 Def020E
+S A$state_manager$441 Def01CD
+S A$state_manager$432 Def01BE
+S A$state_manager$423 Def01AE
+S A$state_manager$414 Def01A1
+S A$state_manager$405 Def0195
+S A$state_manager$360 Def0157
+S A$state_manager$351 Def014F
+S A$state_manager$333 Def0133
+S A$state_manager$315 Def011E
+S A$state_manager$306 Def0112
+S A$state_manager$270 Def00E1
+S A$state_manager$261 Def00D4
+S A$state_manager$252 Def00C2
+S A$state_manager$243 Def00B6
+S A$state_manager$207 Def0087
+S A$state_manager$171 Def0050
+S A$state_manager$144 Def0043
+S C$state_manager.c$62$2$31 Def0279
+S C$state_manager.c$30$1$28 Def0025
+S C$state_manager.c$21$1$28 Def0006
+S A$state_manager$550 Def0240
+S A$state_manager$532 Def0224
+S A$state_manager$505 Def020F
+S A$state_manager$460 Def01DA
+S A$state_manager$442 Def01CF
+S A$state_manager$433 Def01BF
+S A$state_manager$424 Def01AF
+S A$state_manager$415 Def01A4
+S A$state_manager$406 Def0198
+S A$state_manager$370 Def0168
+S A$state_manager$361 Def015A
+S A$state_manager$352 Def0150
+S A$state_manager$343 Def013E
+S A$state_manager$334 Def0136
+S A$state_manager$316 Def011F
+S A$state_manager$307 Def0113
+S A$state_manager$280 Def00EA
+S A$state_manager$271 Def00E2
+S A$state_manager$253 Def00C4
+S A$state_manager$244 Def00B7
+S A$state_manager$235 Def00AB
+S A$state_manager$226 Def009D
+S A$state_manager$217 Def0091
+S A$state_manager$208 Def0088
+S A$state_manager$190 Def006D
+S A$state_manager$181 Def005F
+S A$state_manager$172 Def0053
+S A$state_manager$145 Def0045
+S A$state_manager$127 Def003B
+S C$state_manager.c$31$1$28 Def0030
+S C$state_manager.c$22$1$28 Def0009
+S C$state_manager.c$13$1$28 Def0000
+S A$state_manager$605 Def027F
+S A$state_manager$560 Def024B
+S A$state_manager$551 Def0243
+S A$state_manager$533 Def0227
+S A$state_manager$524 Def021B
+S A$state_manager$506 Def0211
+S A$state_manager$443 Def01D0
+S A$state_manager$434 Def01C1
+S A$state_manager$425 Def01B2
+S A$state_manager$416 Def01A7
+S A$state_manager$407 Def019B
+S A$state_manager$380 Def016F
+S A$state_manager$353 Def0152
+S A$state_manager$344 Def0141
+S A$state_manager$335 Def0137
+S A$state_manager$326 Def0125
+S A$state_manager$317 Def0120
+S A$state_manager$308 Def0115
+S A$state_manager$290 Def00FD
+S A$state_manager$281 Def00ED
+S A$state_manager$272 Def00E4
+S A$state_manager$254 Def00C7
+S A$state_manager$245 Def00B8
+S A$state_manager$236 Def00AE
+S A$state_manager$218 Def0094
+S A$state_manager$191 Def0070
+S A$state_manager$173 Def0054
+S A$state_manager$146 Def0049
+S A$state_manager$128 Def003E
+S C$state_manager.c$40$1$29 Def0050
+S C$state_manager.c$32$1$28 Def003B
+S C$state_manager.c$23$1$28 Def000C
+S C$state_manager.c$14$1$28 Def0000
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -47,11 +458,11 @@ T 3B 00 01 06 00 FD 7E 05 02 C9
 R 00 00 00 00 02 03 0A 00
 T 43 00
 R 00 00 00 00
-T 43 00 DD E5 DD 21 00 00 DD 39 21 F6 FF 39 F9 21
+T 43 00 DD E5 DD 21 00 00 DD 39 21 F8 FF 39 F9 21
 R 00 00 00 00
-T 51 00 82 01 7E DD 77 FC 23 7E DD 77 FD DD B6 FC
+T 51 00 82 01 7E DD 77 FB 23 7E DD 77 FC DD B6 FB
 R 00 00 00 00 02 02 08 00
-T 5F 00 CA 7B 02 2A 87 01 DD 4E FC DD 46 FD C5 E5
+T 5F 00 CA 7F 02 2A 87 01 DD 4E FB DD 46 FC C5 E5
 R 00 00 00 00 00 03 00 00 02 06 08 00
 T 6D 00 CD 00 00 F1 F1 4D 44 ED 43 03 00 ED 4B
 R 00 00 00 00 02 03 00 00 02 0B 03 00
@@ -59,111 +470,109 @@ T 7A 00 87 01 2A 82 01 E5 C5 CD 00 00 F1 F1 4D 44
 R 00 00 00 00 02 02 08 00 02 05 08 00 02 0A 11 00
 T 88 00 ED 43 01 00 21 36 00 36 05 21 00 00 11
 R 00 00 00 00 02 04 03 00 02 07 03 00 02 0C 08 00
-T 95 00 A9 01 19 4E 21 00 00 71 DD 36 F8 00 DD 36
+T 95 00 A9 01 19 4E 21 00 00 71 DD 36 F8 00
 R 00 00 00 00 02 07 0E 00
-T A3 00 FC 00 DD 36 FD 00
+T A1 00
 R 00 00 00 00
-T A9 00
-R 00 00 00 00
-T A9 00 21 00 00 DD 7E F8 96 D2 7B 02 3E 00 00 DD
-R 00 00 00 00 02 03 0E 00 00 0A 00 00 0B 0D 04 00
-T B6 00 86 FC 4F 3E 00 00 DD 8E FD 47 33 33 C5 3E
-R 00 00 00 00 8B 06 04 00
-T C3 00 99 01 DD 86 F8 6F 3E 99 01 CE 00 67 4E E1
-R 00 00 00 00 0B 02 08 00 8B 09 08 00
-T CF 00 E5 71 D1 D5 13 3E A5 01 DD 86 F8 6F 3E
+T A1 00 21 00 00 DD 7E F8 96 D2 7F 02 DD 4E F8 06
+R 00 00 00 00 02 03 0E 00 00 0A 00 00
+T AF 00 00 69 60 29 29 09 29 29 09 11 00 00 19 DD
+R 00 00 00 00 02 0C 04 00
+T BD 00 75 F9 DD 74 FA 3E 99 01 DD 86 F8 6F 3E
 R 00 00 00 00 0B 08 08 00
-T DB 00 A5 01 CE 00 67 46 78 12 DD 7E F6 C6 05 5F
+T C9 00 99 01 CE 00 67 4E DD 6E F9 DD 66 FA 71 DD
 R 00 00 00 00 8B 02 08 00
-T E8 00 DD 7E F7 CE 00 57 DD 7E F8 87 4F C6 91 01
+T D6 00 5E F9 DD 56 FA 13 3E A5 01 DD 86 F8 6F 3E
+R 00 00 00 00 0B 09 08 00
+T E3 00 A5 01 CE 00 67 46 78 12 DD 7E F9 C6 05 5F
+R 00 00 00 00 8B 02 08 00
+T F0 00 DD 7E FA CE 00 57 DD 7E F8 87 4F C6 91 01
 R 00 00 00 00 0B 0E 08 00
-T F5 00 6F 3E 91 01 CE 00 67 7E 23 66 12 DD 7E F6
+T FD 00 6F 3E 91 01 CE 00 67 7E 23 66 12 DD 7E F9
 R 00 00 00 00 8B 04 08 00
-T 02 01 C6 04 5F DD 7E F7 CE 00 57 3E 89 01 81 6F
+T 0A 01 C6 04 5F DD 7E FA CE 00 57 3E 89 01 81 6F
 R 00 00 00 00 0B 0C 08 00
-T 0F 01 3E 89 01 CE 00 67 4E 23 6E 79 12 05 CA
+T 17 01 3E 89 01 CE 00 67 4E 23 6E 79 12 05 CA
 R 00 00 00 00 8B 03 08 00
-T 1B 01 65 02 DD 7E F6 C6 0D 4F DD 7E F7 CE 00 47
+T 23 01 79 02 DD 7E F9 C6 0D 4F DD 7E FA CE 00 47
 R 00 00 00 00 00 02 00 00
-T 29 01 3E 9D 01 DD 86 F8 5F 3E 9D 01 CE 00 57 1A
+T 31 01 3E 9D 01 DD 86 F8 5F 3E 9D 01 CE 00 57 1A
 R 00 00 00 00 0B 03 08 00 8B 0A 08 00
-T 35 01 02 DD 7E F6 C6 0E 4F DD 7E F7 CE 00 47 3E
+T 3D 01 02 DD 7E F9 C6 0E 4F DD 7E FA CE 00 47 3E
 R 00 00 00 00
-T 43 01 A1 01 DD 86 F8 5F 3E A1 01 CE 00 57 1A 02
+T 4B 01 A1 01 DD 86 F8 5F 3E A1 01 CE 00 57 1A 02
 R 00 00 00 00 0B 02 08 00 8B 09 08 00
-T 4F 01 21 08 00 4E DD 7E F6 C6 0F DD 77 FA DD 7E
+T 57 01 21 08 00 4E DD 7E F9 C6 0F DD 77 FB DD 7E
 R 00 00 00 00 02 03 07 00
-T 5D 01 F7 CE 00 DD 77 FB 79 B7 28 22 E1 E5 7E DD
+T 65 01 FA CE 00 DD 77 FC 79 B7 28 26 DD 6E F9 DD
 R 00 00 00 00
-T 6B 01 77 F9 07 07 07 E6 F8 C6 02 00 4F 3E 02 00
-R 00 00 00 00 0B 0A 0D 00 8B 0E 0D 00
-T 77 01 CE 00 47 21 05 00 6E 26 00 09 4E DD 6E FA
-R 00 00 00 00 02 06 0A 00
-T 85 01 DD 66 FB 71
+T 73 01 66 FA 7E DD 77 FD 07 07 07 E6 F8 C6 02 00
+R 00 00 00 00 0B 0E 0D 00
+T 80 01 4F 3E 02 00 CE 00 47 21 05 00 6E 26 00 09
+R 00 00 00 00 8B 04 0D 00 02 0A 0A 00
+T 8D 01 4E DD 6E FB DD 66 FC 71
 R 00 00 00 00
-T 89 01
+T 95 01
 R 00 00 00 00
-T 89 01 DD 6E FA DD 66 FB 4E 3E 04 91 30 08 DD 6E
+T 95 01 DD 6E FB DD 66 FC 4E 3E 04 91 30 08 DD 6E
 R 00 00 00 00
-T 97 01 FA DD 66 FB 36 04
+T A3 01 FB DD 66 FC 36 04
 R 00 00 00 00
-T 9D 01
+T A9 01
 R 00 00 00 00
-T 9D 01 DD 7E F6 C6 10 4F DD 7E F7 CE 00 47 E1 E5
+T A9 01 DD 7E F9 C6 10 4F DD 7E FA CE 00 47 DD 6E
 R 00 00 00 00
-T AB 01 7E 07 07 07 E6 F8 C6 22 00 5F 3E 22 00 CE
-R 00 00 00 00 0B 09 0D 00 8B 0D 0D 00
-T B7 01 00 57 21 05 00 6E 26 00 19 5E 7B 02 7B D6
-R 00 00 00 00 02 05 0A 00
-T C5 01 19 30 03 3E 19 02
+T B7 01 F9 DD 66 FA 7E 07 07 07 E6 F8 C6 22 00 5F
+R 00 00 00 00 0B 0D 0D 00
+T C4 01 3E 22 00 CE 00 57 21 05 00 6E 26 00 19 7E
+R 00 00 00 00 8B 03 0D 00 02 09 0A 00
+T D1 01 02 D6 19 30 03 3E 19 02
 R 00 00 00 00
-T CB 01
+T D9 01
 R 00 00 00 00
-T CB 01 0A 5F 3E FA 93 30 03 3E FA 02
+T D9 01 0A 5F 3E FA BB 30 01 02
 R 00 00 00 00
-T D5 01
+T E1 01
 R 00 00 00 00
-T D5 01 3A 02 00 3D 20 04 0A C6 E7 02
+T E1 01 3A 02 00 3D 20 04 0A C6 E7 02
 R 00 00 00 00 02 03 0A 00
-T DF 01
+T EB 01
 R 00 00 00 00
-T DF 01 DD 7E F6 C6 12 5F DD 7E F7 CE 00 57 E1 E5
+T EB 01 DD 7E F9 C6 12 5F DD 7E FA CE 00 57 DD 6E
 R 00 00 00 00
-T ED 01 7E 07 07 07 E6 F8 C6 42 00 4F 3E 42 00 CE
-R 00 00 00 00 0B 09 0D 00 8B 0D 0D 00
-T F9 01 00 47 21 05 00 6E 26 00 09 4E 79 12 3E 80
-R 00 00 00 00 02 05 0A 00
-T 07 02 B9 30 01 12
+T F9 01 F9 DD 66 FA 7E 07 07 07 E6 F8 C6 42 00 4F
+R 00 00 00 00 0B 0D 0D 00
+T 06 02 3E 42 00 CE 00 47 21 05 00 6E 26 00 09 4E
+R 00 00 00 00 8B 03 0D 00 02 09 0A 00
+T 13 02 79 12 3E 80 B9 30 01 12
 R 00 00 00 00
-T 0B 02
+T 1B 02
 R 00 00 00 00
-T 0B 02 1A B7 20 18 DD 7E F6 C6 14 DD 77 FE DD 7E
+T 1B 02 1A B7 20 18 DD 7E F9 C6 14 DD 77 FE DD 7E
 R 00 00 00 00
-T 19 02 F7 CE 00 DD 77 FF DD 6E FE DD 66 FF 36 01
+T 29 02 FA CE 00 DD 77 FF DD 6E FE DD 66 FF 36 01
 R 00 00 00 00
-T 27 02
+T 37 02
 R 00 00 00 00
-T 27 02 3A 08 00 B7 28 38 E1 E5 4E 79 3D 28 05 79
+T 37 02 3A 08 00 B7 28 3C DD 6E F9 DD 66 FA 4E 79
 R 00 00 00 00 02 03 07 00
-T 35 02 D6 03 20 2C
+T 45 02 3D 28 05 79 D6 03 20 2C
 R 00 00 00 00
-T 39 02
+T 4D 02
 R 00 00 00 00
-T 39 02 21 02 00 4E 0D 20 25 CD 00 00 01 02 00 C5
+T 4D 02 21 02 00 4E 0D 20 25 CD 00 00 01 02 00 C5
 R 00 00 00 00 02 03 0A 00 02 0A 01 00
-T 47 02 E5 CD 00 00 F1 F1 7D B7 20 14 DD 6E FA DD
+T 5B 02 E5 CD 00 00 F1 F1 7D B7 20 14 DD 6E FB DD
 R 00 00 00 00 02 04 0F 00
-T 55 02 66 FB 4E 21 02 00 46 79 80 DD 6E FA DD 66
+T 69 02 66 FC 4E 21 02 00 46 79 80 DD 6E FB DD 66
 R 00 00 00 00 02 06 0A 00
-T 63 02 FB 77
+T 77 02 FC 77
 R 00 00 00 00
-T 65 02
+T 79 02
 R 00 00 00 00
-T 65 02 DD 7E FC C6 15 DD 77 FC DD 7E FD CE 00 DD
+T 79 02 DD 34 F8 C3 A1 00
+R 00 00 00 00 00 06 00 00
+T 7F 02
 R 00 00 00 00
-T 73 02 77 FD DD 34 F8 C3 A9 00
-R 00 00 00 00 00 08 00 00
-T 7B 02
-R 00 00 00 00
-T 7B 02 DD F9 DD E1 C9
+T 7F 02 DD F9 DD E1 C9
 R 00 00 00 00
