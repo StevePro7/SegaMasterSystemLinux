@@ -2,9 +2,9 @@
 #include "_sms_manager.h"
 #include "global_manager.h"
 #include "enum_manager.h"
-#include "..\banks\bank2.h"
-#include "..\banks\bank3.h"
-#include "..\gfx.h"
+#include "../banks/bank2.h"
+#include "../banks/bank3.h"
+#include "../gfx.h"
 
 #define BACK_TILES_OFFSET		0
 #define MISC_TILES_OFFSET		128

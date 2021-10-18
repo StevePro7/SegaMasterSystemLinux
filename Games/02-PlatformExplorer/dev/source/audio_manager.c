@@ -3,7 +3,7 @@
 #include "_sms_manager.h"
 #include "_snd_manager.h"
 #include "hack_manager.h"
-#include "..\psg.h"
+#include "../psg.h"
 
 // IMPORTANT disable compiler warning 110
 #ifdef _CONSOLE

@@ -10,8 +10,8 @@
 struct_level_object global_level_object;
 
 #define CRlf	2				// char
-#define CR		'\r'			// 0x0d
-#define LF		'\n'			// 0x0a
+#define CR		'/r'			// 0x0d
+#define LF		'/n'			// 0x0a
 
 // Private helper methods.
 static void load_level( const unsigned char *data, const unsigned char bank, const unsigned char size, unsigned char invincible, unsigned char difficulty );

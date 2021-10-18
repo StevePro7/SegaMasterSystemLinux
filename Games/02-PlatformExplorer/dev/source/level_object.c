@@ -1,8 +1,8 @@
 #include "level_object.h"
 
-#include "..\banks\bank3.h"
-#include "..\banks\bank4.h"
-#include "..\banks\bank5.h"
+#include "../banks/bank3.h"
+#include "../banks/bank4.h"
+#include "../banks/bank5.h"
 
 const unsigned char *tutorialdata[] =
 {

@@ -1,9 +1,9 @@
 #include "audio_object.h"
 
-#include "..\banks\bank6.h"
-#include "..\banks\bank7.h"
-#include "..\banks\bank8.h"
-#include "..\banks\bank9.h"
+#include "../banks/bank6.h"
+#include "../banks/bank7.h"
+#include "../banks/bank8.h"
+#include "../banks/bank9.h"
 
 // Game.
 const unsigned char *game_audio_data[] = 

@@ -13,7 +13,7 @@
 #include "input_manager.h"
 #include "anim_manager.h"
 #include "audio_manager.h"
-#include "..\engine\asm_manager.h"
+#include "../engine/asm_manager.h"
 #include <stdlib.h>
 
 #define INTRO_SCREEN_DELAY		3600
