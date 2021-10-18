@@ -38,6 +38,12 @@ sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 t
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 tree_manager.c
 cd ..
 
+cd object
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 enemy_object.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 gamer_object.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 path_object.c
+cd ..
+
 cd screen
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 none_screen.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 start_screen.c
@@ -79,6 +85,9 @@ engine/sound_manager.rel ^
 engine/sprite_manager.rel ^
 engine/text_manager.rel ^
 engine/tree_manager.rel ^
+object/enemy_object.rel ^
+object/gamer_object.rel ^
+object/path_object.rel ^
 screen/none_screen.rel ^
 screen/start_screen.rel ^
 screen/title_screen.rel ^
@@ -98,6 +107,12 @@ if exist "*.sym" del "*.sym" > nul
 cd ..
 
 cd engine
+if exist "*.asm" del "*.asm" > nul
+if exist "*.lst" del "*.lst" > nul
+if exist "*.sym" del "*.sym" > nul
+cd ..
+
+cd object
 if exist "*.asm" del "*.asm" > nul
 if exist "*.lst" del "*.lst" > nul
 if exist "*.sym" del "*.sym" > nul
