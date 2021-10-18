@@ -1,5 +1,5 @@
 #include "input_manager.h"
-#include "..\devkit\_sms_manager.h"
+#include "../devkit/_sms_manager.h"
 
 // Must be static to persist values!
 static unsigned int curr_joypad1 = 0;

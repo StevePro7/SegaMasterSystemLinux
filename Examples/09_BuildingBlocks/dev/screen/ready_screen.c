@@ -1,13 +1,13 @@
 #include "ready_screen.h"
-#include "..\devkit\_sms_manager.h"
-#include "..\devkit\_snd_manager.h"
-#include "..\engine\content_manager.h"
-#include "..\engine\enemy_manager.h"
-#include "..\engine\enum_manager.h"
-#include "..\engine\gamer_manager.h"
-#include "..\engine\input_manager.h"
-#include "..\engine\sound_manager.h"
-#include "..\engine\text_manager.h"
+#include "../devkit/_sms_manager.h"
+#include "../devkit/_snd_manager.h"
+#include "../engine/content_manager.h"
+#include "../engine/enemy_manager.h"
+#include "../engine/enum_manager.h"
+#include "../engine/gamer_manager.h"
+#include "../engine/input_manager.h"
+#include "../engine/sound_manager.h"
+#include "../engine/text_manager.h"
 #include <stdlib.h>
 
 void screen_ready_screen_load()

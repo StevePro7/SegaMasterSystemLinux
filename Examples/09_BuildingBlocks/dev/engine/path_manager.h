@@ -1,7 +1,7 @@
 #ifndef _PATH_MANAGER_H_
 #define _PATH_MANAGER_H_
 
-#include "..\object\path_object.h"
+#include "../object/path_object.h"
 
 void engine_path_manager_init();
 

@@ -3,11 +3,11 @@
 #include "enum_manager.h"
 
 // Screens
-#include "..\screen\none_screen.h"
-#include "..\screen\start_screen.h"
-#include "..\screen\title_screen.h"
-#include "..\screen\ready_screen.h"
-#include "..\screen\play_screen.h"
+#include "../screen/none_screen.h"
+#include "../screen/start_screen.h"
+#include "../screen/title_screen.h"
+#include "../screen/ready_screen.h"
+#include "../screen/play_screen.h"
 
 #define MAX_SCREEENS		5
 

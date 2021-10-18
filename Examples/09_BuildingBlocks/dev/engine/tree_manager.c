@@ -1,6 +1,6 @@
 #include "tree_manager.h"
-#include "..\devkit\_sms_manager.h"
-#include "..\gfx.h"
+#include "../devkit/_sms_manager.h"
+#include "../gfx.h"
 
 // Private helper functions.
 static void draw( unsigned char x, unsigned char y );

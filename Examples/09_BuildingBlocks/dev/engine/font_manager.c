@@ -1,6 +1,6 @@
 #include "font_manager.h"
-#include "..\devkit\_sms_manager.h"
-#include "..\gfx.h"
+#include "../devkit/_sms_manager.h"
+#include "../gfx.h"
 
 #define TEXT_ROOT	32		// 32 is " " in ASCII.
 #define DATA_ROOT	16		// 16 is "0" (48=16+32)
@@ -20,7 +20,7 @@ void engine_font_manager_draw_text( unsigned char *text, unsigned char x, unsign
 	const unsigned char *pnt = font_tiles__tilemap__bin;
 	unsigned char idx = 0;
 
-	while( '\0' != text[idx] )
+	while( '/0' != text[idx] )
 	{
 		signed char tile = text[idx] - TEXT_ROOT;
 		devkit_SMS_setNextTileatXY( x++, y );

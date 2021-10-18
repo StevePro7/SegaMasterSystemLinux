@@ -1,7 +1,7 @@
 #ifndef _PATH_OBJECT_H_
 #define _PATH_OBJECT_H_
 
-#include "..\engine\global_manager.h"
+#include "../engine/global_manager.h"
 
 typedef struct tag_struct_path_object
 {

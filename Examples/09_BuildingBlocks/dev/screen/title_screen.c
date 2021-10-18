@@ -1,12 +1,12 @@
 #include "title_screen.h"
-#include "..\devkit\_sms_manager.h"
-#include "..\engine\asm_manager.h"
-#include "..\engine\content_manager.h"
-#include "..\engine\enum_manager.h"
-#include "..\engine\input_manager.h"
-#include "..\engine\path_manager.h"
-#include "..\engine\text_manager.h"
-#include "..\engine\tree_manager.h"
+#include "../devkit/_sms_manager.h"
+#include "../engine/asm_manager.h"
+#include "../engine/content_manager.h"
+#include "../engine/enum_manager.h"
+#include "../engine/input_manager.h"
+#include "../engine/path_manager.h"
+#include "../engine/text_manager.h"
+#include "../engine/tree_manager.h"
 
 void screen_title_screen_load()
 {

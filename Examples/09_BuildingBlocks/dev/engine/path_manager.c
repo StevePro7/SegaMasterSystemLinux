@@ -1,5 +1,5 @@
 #include "path_manager.h"
-#include "..\engine\global_manager.h"
+#include "../engine/global_manager.h"
 
 // Global variable.
 struct_path_object global_path_object;

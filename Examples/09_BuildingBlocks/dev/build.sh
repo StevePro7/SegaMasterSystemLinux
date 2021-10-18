@@ -34,30 +34,30 @@ cd ..
 sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
 
 # Link
-sdcc --debug -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-loc 0xC000 \
-../crt0/crt0_sms.rel main.rel \
-../lib/SMSlib.lib \
-../lib/PSGlib.rel \
-devkit/_sms_manager.rel \
-devkit/_snd_manager.rel \
-engine/asm_manager.rel \
-engine/content_manager.rel \
-engine/enemy_manager.rel \
-engine/font_manager.rel \
-engine/gamer_manager.rel \
-engine/hack_manager.rel \
-engine/input_manager.rel \
-engine/screen_manager.rel \
-engine/sound_manager.rel \
-engine/sprite_manager.rel \
-engine/text_manager.rel \
-engine/tree_manager.rel \
-screen/none_screen.rel \
-screen/start_screen.rel \
-screen/music_screen.rel \
-screen/sound_screen.rel \
-screen/joint_screen.rel \
-gfx.rel \
+sdcc --debug -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-loc 0xC000 /
+../crt0/crt0_sms.rel main.rel /
+../lib/SMSlib.lib /
+../lib/PSGlib.rel /
+devkit/_sms_manager.rel /
+devkit/_snd_manager.rel /
+engine/asm_manager.rel /
+engine/content_manager.rel /
+engine/enemy_manager.rel /
+engine/font_manager.rel /
+engine/gamer_manager.rel /
+engine/hack_manager.rel /
+engine/input_manager.rel /
+engine/screen_manager.rel /
+engine/sound_manager.rel /
+engine/sprite_manager.rel /
+engine/text_manager.rel /
+engine/tree_manager.rel /
+screen/none_screen.rel /
+screen/start_screen.rel /
+screen/music_screen.rel /
+screen/sound_screen.rel /
+screen/joint_screen.rel /
+gfx.rel /
 psg.rel
 
 
