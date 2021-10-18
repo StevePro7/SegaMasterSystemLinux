@@ -4,9 +4,9 @@ F:G$screen_diff_screen_update$0$0({2}DF,SV:S),Z,0,5,0,0,0
 S:Ldiff_screen.screen_diff_screen_update$screen_type$1$9({2}DG,SC:U),B,1,4
 S:Ldiff_screen.screen_diff_screen_update$go$1$10({2}DG,STtag_struct_game_object:S),R,0,0,[]
 S:Ldiff_screen.screen_diff_screen_update$test$1$10({5}DA5d,SC:U),B,1,-11
-S:Ldiff_screen.screen_diff_screen_update$sloc0$1$0({2}DD,SC:U),B,1,-6
+S:Ldiff_screen.screen_diff_screen_update$sloc0$1$0({2}DD,SC:U),B,1,-2
 S:Ldiff_screen.screen_diff_screen_update$sloc1$1$0({2}DD,SC:U),B,1,-4
-S:Ldiff_screen.screen_diff_screen_update$sloc2$1$0({2}DD,SC:U),B,1,-2
+S:Ldiff_screen.screen_diff_screen_update$sloc2$1$0({2}DD,SC:U),B,1,-6
 F:Fdiff_screen$display_cursor$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Ldiff_screen.display_cursor$go$1$18({2}DG,STtag_struct_game_object:S),R,0,0,[]
 T:Fdiff_screen$tag_struct_game_object[({0}S:S$invincible$0$0({1}SC:U),Z,0,0)({1}S:S$localcheat$0$0({1}SC:U),Z,0,0)({2}S:S$difficulty$0$0({1}SC:U),Z,0,0)({3}S:S$game_speed$0$0({1}SC:U),Z,0,0)({4}S:S$tutorial$0$0({1}SC:U),Z,0,0)({5}S:S$world_no$0$0({1}SC:U),Z,0,0)({6}S:S$round_no$0$0({1}SC:U),Z,0,0)]

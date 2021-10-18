@@ -12,6 +12,13 @@ REM bank*.bat
 REM gfx.bat
 REM psg.bat
 
+:: Content
+::folder2c ../gfx gfx
+sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 gfx.c
+
+::folder2c ../psg psg
+sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 psg.c
+
 cd engine
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 asm_manager.c
 cd ..
@@ -72,7 +79,7 @@ sdcc --debug -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 s
 cd ..
 
 REM echo Build main
-sdcc --debug -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
+::sdcc --debug -c-mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
 
 
 :: Calculate the difference in cSeconds

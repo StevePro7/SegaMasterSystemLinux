@@ -5,8 +5,8 @@ F:G$screen_test_screen_update$0$0({2}DF,SV:S),Z,0,4,0,0,0
 S:Ltest_screen.screen_test_screen_update$screen_type$1$26({2}DG,SC:U),B,1,4
 S:Ltest_screen.screen_test_screen_update$test$1$27({4}DA4d,SC:U),B,1,-8
 S:Ltest_screen.screen_test_screen_update$status$1$27({1}SC:U),R,0,0,[l]
-S:Ltest_screen.screen_test_screen_update$sloc0$1$0({2}DD,SC:U),B,1,-2
-S:Ltest_screen.screen_test_screen_update$sloc1$1$0({2}DD,SC:U),B,1,-4
+S:Ltest_screen.screen_test_screen_update$sloc0$1$0({2}DD,SC:U),B,1,-4
+S:Ltest_screen.screen_test_screen_update$sloc1$1$0({2}DD,SC:U),B,1,-2
 S:G$count_text$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$lives_text$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$devkit_PSGPlay$0$0({2}DF,SV:S),C,0,0
