@@ -6,11 +6,6 @@ sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 gfx.
 sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 psg.c
 
 # Compile
-cd devkit
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _sms_manager.c
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _snd_manager.c
-cd ..
-
 cd engine
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 asm_manager.c
 cd ..
@@ -178,6 +173,13 @@ rm -f *.lst 2> /dev/null
 rm -f *.sym 2> /dev/null
 cd ..
 
+rm -f *.asm 2> /dev/null
+rm -f *.ihx 2> /dev/null
+rm -f *.lk 2> /dev/null
+rm -f *.lst 2> /dev/null
+rm -f *.noi 2> /dev/null
+rm -f *.sym 2> /dev/null
+
 
 # Run
-# java -jar ~/Sega/Emulicious/Emulicious.jar output.sms
+java -jar ~/Sega/Emulicious/Emulicious.jar output.sms
