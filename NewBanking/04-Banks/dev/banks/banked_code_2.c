@@ -1,6 +1,6 @@
 #include "banked_code_2.h"
 
-int bar()
+int bar() __banked
 {
 	return 2;
 }
