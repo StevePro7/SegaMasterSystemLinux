@@ -12,6 +12,11 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 gfx.c
 
 :: Compile
+cd banks
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 banked_code_1.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 banked_code_2.c
+cd ..
+
 cd devkit
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _sms_manager.c
 cd ..
@@ -41,6 +46,8 @@ echo.
 sdcc --debug -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-loc 0xC000 ^
 ../crt0/crt0_sms.rel main.rel ^
 ../lib/SMSlib.lib ^
+banks/banked_code_1.rel ^
+banks/banked_code_2.rel ^
 devkit/_sms_manager.rel ^
 engine/asm_manager.rel ^
 engine/content_manager.rel ^
@@ -54,6 +61,12 @@ ihx2sms output.ihx output.sms
 
 
 :: Delete
+cd banks
+if exist "*.asm" del "*.asm" > nul
+if exist "*.lst" del "*.lst" > nul
+if exist "*.sym" del "*.sym" > nul
+cd ..
+
 cd devkit
 if exist "*.asm" del "*.asm" > nul
 if exist "*.lst" del "*.lst" > nul
