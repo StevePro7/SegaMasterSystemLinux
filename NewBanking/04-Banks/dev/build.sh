@@ -6,8 +6,8 @@ sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 gfx.
 
 # Compile
 cd banks
-sdcc -c -mz80 --codeseg BANK1 banked_code_1.c
-sdcc -c -mz80 --codeseg BANK2 banked_code_2.c
+sdcc --debug -c -mz80 --codeseg BANK1 banked_code_1.c
+sdcc --debug -c -mz80 --codeseg BANK2 banked_code_2.c
 cd ..
 
 cd devkit
@@ -26,9 +26,9 @@ sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main
 
 # Link
 sdcc --debug -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-loc 0xC000 \
--Wl-b_BANK1=0x14000 ^ 
--Wl-b_BANK2=0x24000 ^
-../crt0/crt0_sms.rel main.rel \
+-Wl-b_BANK1=0x14000 \
+-Wl-b_BANK2=0x24000 \
+../crt0/crt0b_sms.rel main.rel \
 ../lib/SMSlib.lib \
 banks/banked_code_1.rel \
 banks/banked_code_2.rel \
@@ -41,7 +41,8 @@ engine/screen_manager.rel \
 gfx.rel
 
 # Execute
-ihx2sms output.ihx output.sms
+#ihx2sms output.ihx output.sms
+makesms output.ihx output.sms
 
 cd banks
 rm -f *.asm 2> /dev/null

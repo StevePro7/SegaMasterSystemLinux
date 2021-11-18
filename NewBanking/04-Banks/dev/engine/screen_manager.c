@@ -32,6 +32,6 @@ void engine_screen_manager_update()
 	input = engine_input_manager_hold_fire1();
 	if( input )
 	{
-		engine_font_manager_draw_char( ' ', 10, 12 );
+		engine_font_manager_draw_text( "  ", 9, 12 );
 	}
 }
