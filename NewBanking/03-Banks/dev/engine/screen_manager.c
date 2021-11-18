@@ -28,4 +28,10 @@ void engine_screen_manager_update()
 		value = bar();
 		engine_font_manager_draw_data( value, 10, 12 );
 	}
+
+	input = engine_input_manager_hold_fire1();
+	if( input )
+	{
+		engine_font_manager_draw_char( ' ', 10, 12 );
+	}
 }
