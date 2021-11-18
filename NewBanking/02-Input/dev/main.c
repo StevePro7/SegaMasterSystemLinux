@@ -17,6 +17,7 @@ void main( void )
 	for( ;; )
 	{
 		devkit_SMS_initSprites();
+		engine_input_manager_update();
 		engine_screen_manager_update();
 
 		devkit_SMS_finalizeSprites();
