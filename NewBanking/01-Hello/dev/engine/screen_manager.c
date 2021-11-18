@@ -1,6 +1,5 @@
 #include "screen_manager.h"
 #include "font_manager.h"
-#include "sprite_manager.h"
 
 void engine_screen_manager_init()
 {
@@ -9,5 +8,4 @@ void engine_screen_manager_init()
 
 void engine_screen_manager_update()
 {
-	engine_sprite_manager_draw( 64, 64, 256 );
 }
