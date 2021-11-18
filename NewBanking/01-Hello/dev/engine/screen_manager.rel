@@ -1,32 +1,32 @@
 ;!FILE screen_manager.asm
-XL2
+XL3
 H 9 areas 17 global symbols
 M screen_manager
 O -mz80
-S _engine_font_manager_draw_text Ref0000
-S .__.ABS. Def0000
+S _engine_font_manager_draw_text Ref000000
+S .__.ABS. Def000000
 A _CODE size 1B flags 0 addr 0
-S _engine_screen_manager_init Def0000
-S G$engine_screen_manager_update$0$0 Def001A
-S XG$engine_screen_manager_init$0$0 Def000D
-S _engine_screen_manager_update Def001A
-S XG$engine_screen_manager_update$0$0 Def001A
-S C$screen_manager.c$11$1$5 Def001A
-S A$screen_manager$60 Def0007
-S A$screen_manager$61 Def0008
-S A$screen_manager$62 Def000B
-S A$screen_manager$63 Def000C
-S A$screen_manager$57 Def0000
-S A$screen_manager$58 Def0003
-S A$screen_manager$68 Def000D
-S A$screen_manager$59 Def0004
-S Fscreen_manager$__str_0$0$0 Def000E
-S C$screen_manager.c$4$0$0 Def0000
-S A$screen_manager$89 Def001A
-S G$engine_screen_manager_init$0$0 Def0000
-S C$screen_manager.c$6$1$5 Def0000
-S C$screen_manager.c$7$1$5 Def000D
-S C$screen_manager.c$9$1$5 Def001A
+S Fscreen_manager$__str_0$0_0$0 Def00000E
+S _engine_screen_manager_init Def000000
+S G$engine_screen_manager_update$0$0 Def00001A
+S C$screen_manager.c$4$0_0$5 Def000000
+S C$screen_manager.c$6$1_0$5 Def000000
+S C$screen_manager.c$7$1_0$5 Def00000D
+S XG$engine_screen_manager_init$0$0 Def00000D
+S C$screen_manager.c$9$1_0$7 Def00001A
+S _engine_screen_manager_update Def00001A
+S XG$engine_screen_manager_update$0$0 Def00001A
+S A$screen_manager$60 Def000007
+S A$screen_manager$61 Def000008
+S A$screen_manager$71 Def00000D
+S A$screen_manager$62 Def00000B
+S A$screen_manager$63 Def00000C
+S A$screen_manager$92 Def00001A
+S A$screen_manager$57 Def000000
+S A$screen_manager$58 Def000003
+S A$screen_manager$59 Def000004
+S G$engine_screen_manager_init$0$0 Def000000
+S C$screen_manager.c$11$1_0$7 Def00001A
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -35,15 +35,17 @@ A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
 A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
-T 00 00
+T 00 00 00
 R 00 00 00 00
-T 00 00 21 0A 0A E5 21 0E 00 E5 CD 00 00 F1 F1 C9
-R 00 00 00 00 00 07 00 00 02 0B 00 00
-T 0E 00
+T 00 00 00 11 0A 0A D5 21 0E 00 E5 CD 00 00 F1 F1
+R 00 00 00 00 00 08 00 00 02 0C 00 00
+T 0D 00 00 C9
 R 00 00 00 00
-T 0E 00 48 45 4C 4C 4F 20 57 4F 52 4C 44 00
+T 0E 00 00
 R 00 00 00 00
-T 1A 00
+T 0E 00 00 48 45 4C 4C 4F 20 57 4F 52 4C 44 00
 R 00 00 00 00
-T 1A 00 C9
+T 1A 00 00
+R 00 00 00 00
+T 1A 00 00 C9
 R 00 00 00 00
