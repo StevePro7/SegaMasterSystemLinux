@@ -8,6 +8,7 @@ sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 gfx.
 cd banks
 sdcc --debug -c -mz80 --codeseg BANK1 banked_code_1.c
 sdcc --debug -c -mz80 --codeseg BANK2 banked_code_2.c
+sdcc --debug -c -mz80 --codeseg BANK3 banked_code_3.c
 cd ..
 
 cd devkit
@@ -28,6 +29,7 @@ sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main
 sdcc --debug -o output.ihx -mz80 --no-std-crt0 --data-loc 0xC000 \
 -Wl-b_BANK1=0x14000 \
 -Wl-b_BANK2=0x24000 \
+-Wl-b_BANK3=0x34000 \
 ../crt0/crt0b_sms.rel \
 ../lib/SMSlib.lib \
 main.rel \

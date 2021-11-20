@@ -3,6 +3,7 @@
 #include "input_manager.h"
 #include "../banks/banked_code_1.h"
 #include "../banks/banked_code_2.h"
+#include "../banks/banked_code_3.h"
 
 void engine_screen_manager_init()
 {
@@ -33,5 +34,12 @@ void engine_screen_manager_update()
 	if( input )
 	{
 		engine_font_manager_draw_text( "  ", 9, 12 );
+	}
+	
+	input = engine_input_manager_hold_fire2();
+	if( input )
+	{
+		value = sgb();
+		engine_font_manager_draw_data( value, 10, 12 );
 	}
 }
