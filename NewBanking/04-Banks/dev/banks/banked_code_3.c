@@ -2,5 +2,5 @@
 
 int sgb() __banked
 {
-	return 99;
+	return 3;
 }

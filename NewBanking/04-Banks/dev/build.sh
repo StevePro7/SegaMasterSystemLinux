@@ -35,6 +35,7 @@ sdcc --debug -o output.ihx -mz80 --no-std-crt0 --data-loc 0xC000 \
 main.rel \
 banks/banked_code_1.rel \
 banks/banked_code_2.rel \
+banks/banked_code_3.rel \
 devkit/_sms_manager.rel \
 engine/asm_manager.rel \
 engine/content_manager.rel \

@@ -2,5 +2,5 @@
 
 int foo() __banked
 {
-	return 44;
+	return 1;
 }
