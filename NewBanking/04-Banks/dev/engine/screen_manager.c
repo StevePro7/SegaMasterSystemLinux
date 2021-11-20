@@ -7,7 +7,7 @@
 
 void engine_screen_manager_init()
 {
-	engine_font_manager_draw_text("CODE BANKING", 10, 10);
+	engine_font_manager_draw_text("CODE BANKING II", 10, 10);
 }
 
 void engine_screen_manager_update()
@@ -20,20 +20,20 @@ void engine_screen_manager_update()
 	if( input )
 	{
 		value = foo();
-		engine_font_manager_draw_data( value, 10, 12 );
+		engine_font_manager_draw_data( value, 10, 14 );
 	}
 
 	input = engine_input_manager_hold_right();
 	if( input )
 	{
 		value = bar();
-		engine_font_manager_draw_data( value, 10, 12 );
+		engine_font_manager_draw_data( value, 10, 14 );
 	}
 
 	input = engine_input_manager_hold_fire1();
 	if( input )
 	{
-		engine_font_manager_draw_text( "  ", 9, 12 );
+		engine_font_manager_draw_text( "  ", 9, 14 );
 	}
 	
 	input = engine_input_manager_hold_fire2();

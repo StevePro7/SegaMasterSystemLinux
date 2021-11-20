@@ -2,5 +2,5 @@
 
 int bar() __banked
 {
-	return 77;
+	return 88;
 }
