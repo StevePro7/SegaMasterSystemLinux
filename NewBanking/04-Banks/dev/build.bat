@@ -12,7 +12,7 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 gfx.c
 
 :: Compile
-# Compile
+:: Compile
 cd banks
 sdcc --debug -c -mz80 --codeseg BANK1 banked_code_1.c
 sdcc --debug -c -mz80 --codeseg BANK2 banked_code_2.c
