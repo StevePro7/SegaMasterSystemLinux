@@ -1,6 +1,11 @@
 M:main
 F:G$main$0$0({2}DF,SV:S),C,0,0,0,0,0
+F:G$lineScrollHandler$0$0({2}DF,SV:S),C,0,0,0,0,0
+F:G$init_scroll_title_screen$0$0({2}DF,SV:S),Z,0,0,0,0,0
+F:G$scroll_title_screen$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:G$bank_to_be_mapped_on_slot2$0$0({1}SC:U),E,0,0
+S:G$scroll_x$0$0({12}DA6d,SI:U),E,0,0
+S:G$lineCnt$0$0({1}SC:U),E,0,0
 S:G$SMS_init$0$0({2}DF,SV:S),C,0,0
 S:G$SMS_VDPturnOnFeature$0$0({2}DF,SV:S),C,0,0
 S:G$SMS_VDPturnOffFeature$0$0({2}DF,SV:S),C,0,0
@@ -49,6 +54,7 @@ S:G$UNSAFE_SMS_VRAMmemcpy128$0$0({2}DF,SV:S),C,0,0
 S:G$SMS_isr$0$0({2}DF,SV:S),C,0,0
 S:G$SMS_nmi_isr$0$0({2}DF,SV:S),C,0,0
 S:G$main$0$0({2}DF,SV:S),C,0,0
+S:G$lineScrollHandler$0$0({2}DF,SV:S),C,0,0
 S:Fmain$__str_0$0$0({17}DA17d,SC:S),Z,0,0
 S:Fmain$__str_1$0$0({12}DA12d,SC:S),Z,0,0
 S:Fmain$__str_2$0$0({55}DA55d,SC:S),Z,0,0
