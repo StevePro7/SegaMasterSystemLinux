@@ -70,13 +70,13 @@ void init_scroll_title_screen()
 void scroll_title_screen()
 {
   const unsigned char h1 = 128;
-  const unsigned char h2 = 128;
+  const unsigned char h2 = 144;
   scroll_x[0] = scroll_x[0] - h1; // 128;                             // 0.5<<8
-  scroll_x[1] = scroll_x[1] - h2; // 160; // 0.5<<8 + (0.125<<8)
+  scroll_x[1] = scroll_x[1] - h1; // 160; // 0.5<<8 + (0.125<<8)
   scroll_x[2] = scroll_x[2] - h2; // 160;
   scroll_x[3] = scroll_x[3] - h2; // 160;
   scroll_x[4] = scroll_x[4] - h2; // 160;
-  // scroll_x[5] = scroll_x[5] - 1;
+  // scroll_x[5] = scroll_x[5] - 200;
 
   lineCnt = 0;
 }
