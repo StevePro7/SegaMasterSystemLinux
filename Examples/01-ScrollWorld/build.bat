@@ -3,7 +3,10 @@ echo Build
 sdcc --debug -c -mz80 --std-sdcc99 main.c
 
 echo Link
-sdcc --debug -mz80 --no-std-crt0 --data-loc 0xC000 -o output.ihx crt0_sms.rel main.rel SMSlib.lib
+sdcc --debug  -o output.ihx -mz80 --no-std-crt0 --data-loc 0xC000 ^
+crt0_sms.rel main.rel ^
+SMSlib.lib ^
+gfx.rel
 
 echo Run
 ihx2sms output.ihx output.sms
