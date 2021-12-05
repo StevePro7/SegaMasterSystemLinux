@@ -19,9 +19,9 @@ void main(void)
   SMS_init();
   SMS_displayOff();
   // SMS_setSpritePaletteColor(0, RGB(3, 3, 3));
-  SMS_loadPSGaidencompressedTiles(splash__tiles__psgcompr, SPLASH_TILES_OFFSET);
-  SMS_loadSTMcompressedTileMap(0, 0, (void *)splash__tilemap__stmcompr);
-  SMS_loadBGPalette((void *)splash__palette__bin);
+  // SMS_loadPSGaidencompressedTiles(splash__tiles__psgcompr, SPLASH_TILES_OFFSET);
+  // SMS_loadSTMcompressedTileMap(0, 0, (void *)splash__tilemap__stmcompr);
+  // SMS_loadBGPalette((void *)splash__palette__bin);
   SMS_displayOn();
 
   init_scroll_title_screen();
