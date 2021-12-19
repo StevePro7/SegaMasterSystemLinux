@@ -1,4 +1,4 @@
 M:gfx
-S:G$splash__palette__bin$0$0({16}DA16d,SC:U),D,0,0
-S:G$splash__tilemap__stmcompr$0$0({269}DA269d,SC:U),D,0,0
-S:G$splash__tiles__psgcompr$0$0({9701}DA9701d,SC:U),D,0,0
+S:G$back_tiles__palette__bin$0$0({16}DA16d,SC:U),D,0,0
+S:G$back_tiles__tilemap__bin$0$0({256}DA256d,SC:U),D,0,0
+S:G$back_tiles__tiles__psgcompr$0$0({1921}DA1921d,SC:U),D,0,0

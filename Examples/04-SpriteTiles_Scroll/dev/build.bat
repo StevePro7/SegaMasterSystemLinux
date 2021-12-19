@@ -9,7 +9,7 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 
 :: Content
 ::folder2c ../gfx gfx
-::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 gfx.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 gfx.c
 
 :: Compile
 cd devkit
@@ -38,7 +38,7 @@ echo.
 
 
 :: Link
-sdcc --debug -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-loc 0xC000 ^
+sdcc --debug -o output.ihx -mz80 --no-std-crt0 --data-loc 0xC000 ^
 ../crt0/crt0_sms.rel main.rel ^
 ../lib/SMSlib.lib ^
 devkit/_sms_manager.rel ^
