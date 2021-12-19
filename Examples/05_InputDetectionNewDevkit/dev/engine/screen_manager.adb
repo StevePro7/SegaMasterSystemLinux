@@ -1,9 +1,7 @@
 M:screen_manager
 F:G$engine_screen_manager_init$0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lscreen_manager.engine_screen_manager_init$i$1$7({1}SC:U),R,0,0,[b]
 F:G$engine_screen_manager_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lscreen_manager.engine_screen_manager_update$input$1$8({1}SC:U),R,0,0,[l]
-S:Lscreen_manager.engine_screen_manager_update$dx$1$8({1}SC:S),R,0,0,[c]
-S:Lscreen_manager.engine_screen_manager_update$dy$1$8({1}SC:S),R,0,0,[b]
 T:Fscreen_manager$tag_struct_gamer_object[({0}S:S$gamerX$0$0({1}SC:U),Z,0,0)({1}S:S$gamerY$0$0({1}SC:U),Z,0,0)({2}S:S$velocity$0$0({1}SC:U),Z,0,0)({3}S:S$tile$0$0({2}SI:U),Z,0,0)]
 S:G$global_gamer_object$0$0({5}STtag_struct_gamer_object:S),E,0,0
 S:G$engine_font_manager_draw_char$0$0({2}DF,SV:S),C,0,0

@@ -6,48 +6,14 @@
 
 void engine_screen_manager_init()
 {
-	engine_gamer_manager_init( 104, 88, 2, 256 );
-	engine_tree_manager_draw();
+	unsigned char i;
+	for( i = 0; i < 24; i++ )
+	{
+		engine_font_manager_draw_text( "SCROLL", 10, i );
+	}
 }
 
 void engine_screen_manager_update()
 {
-	unsigned char input;
-	signed char dx = 0;
-	signed char dy = 0;
-
-	input = engine_input_manager_move_left();
-	if( input )
-	{
-		dx = -1;
-	}
-	else
-	{
-		input = engine_input_manager_move_right();
-		if( input )
-		{
-			dx = 1;
-		}
-	}
-
-	input = engine_input_manager_move_up();
-	if( input )
-	{
-		dy = -1;
-	}
-	else
-	{
-		input = engine_input_manager_move_down();
-		if( input )
-		{
-			dy = 1;
-		}
-	}
-
-	if( 0 != dx || 0 != dy )
-	{
-		engine_gamer_manager_update( dx, dy );
-	}
-
-	engine_gamer_manager_draw();
+	
 }
