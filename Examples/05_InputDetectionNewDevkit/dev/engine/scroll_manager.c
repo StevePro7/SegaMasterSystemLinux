@@ -1,6 +1,11 @@
 #include "scroll_manager.h"
 #include "../devkit/_sms_manager.h"
 
+#ifdef _CONSOLE
+#else
+#pragma disable_warning 158
+#endif
+
 unsigned int scroll_x[ 6 ];
 unsigned char lineCnt;
 
@@ -16,7 +21,7 @@ void engine_scroll_manager_init()
 	scroll_x[ 5 ] = 255 << 8;
 	lineCnt = 0;
 
-	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_LEFTCOLBLANK() );
+	
 	devkit_SMS_setLineInterruptHandler( &lineScrollHandler );
 	devkit_SMS_setLineCounter( 31 ); /* we're updating every 32 scanlines... */
 	devkit_SMS_enableLineInterrupt();
