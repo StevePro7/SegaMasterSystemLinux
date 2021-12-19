@@ -7,6 +7,6 @@
 void engine_content_manager_load_back_tiles()
 {
 	// Back tiles.
-	SMS_loadPSGaidencompressedTiles( back_tiles__tiles__psgcompr, BACK_TILES_OFFSET );
-	SMS_loadBGPalette( ( void * ) back_tiles__palette__bin );
+	devkit_SMS_loadPSGaidencompressedTiles( back_tiles__tiles__psgcompr, BACK_TILES_OFFSET );
+	devkit_SMS_loadBGPalette( ( void * ) back_tiles__palette__bin );
 }
