@@ -32,7 +32,6 @@ void engine_scroll_manager_update()
 	scroll_x[ 3 ] = scroll_x[ 3 ] - h2; // 160;
 	scroll_x[ 4 ] = scroll_x[ 4 ] - h2; // 160;
 	// scroll_x[5] = scroll_x[5] - 200;
-
 	lineCnt = 0;
 }
 
