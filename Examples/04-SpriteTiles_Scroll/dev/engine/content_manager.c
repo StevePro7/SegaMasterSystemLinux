@@ -2,25 +2,11 @@
 #include "../devkit/_sms_manager.h"
 #include "../gfx.h"
 
-#define TREE_TILES		64
-#define FONT_TILES		0
-#define SPRITE_TILES	256
+#define BACK_TILES_OFFSET 0
 
-void engine_content_manager_load_tiles()
+void engine_content_manager_load_back_tiles()
 {
-	// Tree tiles.
-	devkit_SMS_loadPSGaidencompressedTiles( tree_avoid__tiles__psgcompr, TREE_TILES );
-	devkit_SMS_loadBGPalette( ( void * ) tree_avoid__palette__bin );
-
-	// Font tiles.
-	devkit_SMS_loadPSGaidencompressedTiles( font_tiles__tiles__psgcompr, FONT_TILES );
-	devkit_SMS_loadBGPalette( ( void * ) font_tiles__palette__bin );
-
-}
-
-void engine_content_manager_load_sprites()
-{
-	// Sprite tiles.
-	devkit_SMS_loadPSGaidencompressedTiles( sprites__tiles__psgcompr, SPRITE_TILES );
-	devkit_SMS_loadSpritePalette( ( void * ) sprites__palette__bin );
+	// Back tiles.
+	SMS_loadPSGaidencompressedTiles( back_tiles__tiles__psgcompr, BACK_TILES_OFFSET );
+	SMS_loadBGPalette( ( void * ) back_tiles__palette__bin );
 }
