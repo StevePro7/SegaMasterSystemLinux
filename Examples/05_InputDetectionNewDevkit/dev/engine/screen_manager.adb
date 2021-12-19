@@ -24,4 +24,5 @@ S:G$engine_input_manager_move_fire2$0$0({2}DF,SC:U),C,0,0
 S:G$engine_gamer_manager_init$0$0({2}DF,SV:S),C,0,0
 S:G$engine_gamer_manager_update$0$0({2}DF,SV:S),C,0,0
 S:G$engine_gamer_manager_draw$0$0({2}DF,SV:S),C,0,0
-S:G$engine_tree_manager_draw$0$0({2}DF,SV:S),C,0,0
+S:G$engine_scroll_manager_init$0$0({2}DF,SV:S),C,0,0
+S:G$engine_scroll_manager_update$0$0({2}DF,SV:S),C,0,0
