@@ -1,5 +1,11 @@
-M:content_manager
-F:G$engine_content_manager_load_back_tiles$0$0({2}DF,SV:S),Z,0,0,0,0,0
+M:scroll_manager
+F:G$engine_scroll_manager_init$0$0({2}DF,SV:S),Z,0,0,0,0,0
+F:G$engine_scroll_manager_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lscroll_manager.engine_scroll_manager_update$h1$1$83({1}SC:U),R,0,0,[]
+S:Lscroll_manager.engine_scroll_manager_update$h2$1$83({1}SC:U),R,0,0,[]
+F:Fscroll_manager$lineScrollHandler$0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:G$scroll_x$0$0({12}DA6d,SI:U),E,0,0
+S:G$lineCnt$0$0({1}SC:U),E,0,0
 S:G$devkit_SMS_init$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOnFeature$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOffFeature$0$0({2}DF,SV:S),C,0,0

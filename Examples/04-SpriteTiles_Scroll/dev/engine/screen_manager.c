@@ -1,5 +1,6 @@
 #include "screen_manager.h"
 #include "font_manager.h"
+#include "scroll_manager.h"
 
 void engine_screen_manager_init()
 {
@@ -12,4 +13,5 @@ void engine_screen_manager_init()
 
 void engine_screen_manager_update()
 {
+	engine_scroll_manager_update();
 }
