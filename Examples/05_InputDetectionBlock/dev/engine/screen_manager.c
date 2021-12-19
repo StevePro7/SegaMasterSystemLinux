@@ -3,12 +3,15 @@
 #include "font_manager.h"
 #include "input_manager.h"
 #include "gamer_manager.h"
+#include "tile_manager.h"
 #include "tree_manager.h"
 
 void engine_screen_manager_init()
 {
-	engine_gamer_manager_init( 104, 88, 2, 256 );
+	engine_gamer_manager_init( 48, 48, 2, 256 );
 	engine_tree_manager_draw();
+	engine_tile_manager_draw_sides( 8, 6 );
+	engine_font_manager_draw_text( "TEST", 2, 0 );
 }
 
 void engine_screen_manager_update()
