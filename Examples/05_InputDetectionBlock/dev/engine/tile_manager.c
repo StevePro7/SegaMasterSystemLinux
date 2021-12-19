@@ -1,6 +1,7 @@
 #include "tile_manager.h"
+#include "tile_manager.h"
 #include "../devkit/_sms_manager.h"
-#include "..\gfx.h"
+#include "../gfx.h"
 
 #define BASE_TILES_OFFSET	26
 
@@ -8,6 +9,11 @@ static void draw_tile( unsigned char offset, unsigned char x, unsigned char y );
 static void draw_tile_priority( unsigned char offset, unsigned char x, unsigned char y );
 static void comm_tile( const unsigned char *pnt, unsigned char offset, unsigned int priority, unsigned char x, unsigned char y );
 
+void engine_tile_manager_draw_trees( unsigned char type, unsigned char x, unsigned char y )
+{
+	unsigned char offset = type * 2;
+	draw_tile( offset, x, y );
+}
 
 static void draw_tile( unsigned char offset, unsigned char x, unsigned char y )
 {
