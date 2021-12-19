@@ -1,4 +1,5 @@
 #include "tile_manager.h"
+#include "../devkit/_sms_manager.h"
 #include "..\gfx.h"
 
 #define BASE_TILES_OFFSET	26

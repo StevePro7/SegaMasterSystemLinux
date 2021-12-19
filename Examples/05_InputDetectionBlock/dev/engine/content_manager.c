@@ -13,7 +13,6 @@ void engine_content_manager_load_tiles_font()
 	devkit_SMS_loadPSGaidencompressedTiles( font_tiles__tiles__psgcompr, FONT_TILES );
 	devkit_SMS_loadBGPalette( ( void * ) font_tiles__palette__bin );
 }
-
 void engine_content_manager_load_tiles_game()
 {
 	// Game tiles.

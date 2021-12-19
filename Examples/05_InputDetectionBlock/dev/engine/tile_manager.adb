@@ -1,0 +1,11 @@
+M:tile_manager
+F:Ftile_manager$draw_tile$0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Ltile_manager.draw_tile$offset$1$4({1}SC:U),B,1,4
+S:Ltile_manager.draw_tile$x$1$4({1}SC:U),B,1,5
+S:Ltile_manager.draw_tile$y$1$4({1}SC:U),B,1,6
+S:Ltile_manager.draw_tile$priority$1$5({1}SC:U),R,0,0,[]
+F:Ftile_manager$draw_tile_priority$0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Ltile_manager.draw_tile_priority$offset$1$6({1}SC:U),B,1,4
+S:Ltile_manager.draw_tile_priority$x$1$6({1}SC:U),B,1,5
+S:Ltile_manager.draw_tile_priority$y$1$6({1}SC:U),B,1,6
+S:Ltile_manager.draw_tile_priority$priority$1$7({2}SI:U),R,0,0,[c,b]

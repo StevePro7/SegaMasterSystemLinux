@@ -1,4 +1,5 @@
 #include "screen_manager.h"
+#include "enum_manager.h"
 #include "font_manager.h"
 #include "input_manager.h"
 #include "gamer_manager.h"
@@ -16,28 +17,28 @@ void engine_screen_manager_update()
 	signed char dx = 0;
 	signed char dy = 0;
 
-	input = engine_input_manager_move_left();
+	input = engine_input_manager_move( input_type_left );
 	if( input )
 	{
 		dx = -1;
 	}
 	else
 	{
-		input = engine_input_manager_move_right();
+		input = engine_input_manager_move( input_type_right );
 		if( input )
 		{
 			dx = 1;
 		}
 	}
 
-	input = engine_input_manager_move_up();
+	input = engine_input_manager_move( input_type_up );
 	if( input )
 	{
 		dy = -1;
 	}
 	else
 	{
-		input = engine_input_manager_move_down();
+		input = engine_input_manager_move( input_type_down );
 		if( input )
 		{
 			dy = 1;
