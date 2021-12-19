@@ -1,103 +1,94 @@
 ;!FILE gamer_manager.asm
 XL2
-H 9 areas 78 global symbols
+H 9 areas 6F global symbols
 M gamer_manager
 O -mz80
 S _engine_sprite_manager_draw Ref0000
 S .__.ABS. Def0000
-A _CODE size 97 flags 0 addr 0
+A _CODE size 8E flags 0 addr 0
 S A$gamer_manager$98 Def0032
 S A$gamer_manager$89 Def0023
 S A$gamer_manager$99 Def0033
 S G$engine_gamer_manager_init$0$0 Def0000
-S C$gamer_manager.c$9$0$0 Def0000
 S _engine_gamer_manager_draw Def0079
 S _engine_gamer_manager_init Def0000
 S G$engine_gamer_manager_update$0$0 Def0038
-S XG$engine_gamer_manager_draw$0$0 Def0096
+S XG$engine_gamer_manager_draw$0$0 Def008D
 S XG$engine_gamer_manager_init$0$0 Def0037
 S _engine_gamer_manager_update Def0038
-S C$gamer_manager.c$20$1$20 Def0040
 S A$gamer_manager$100 Def0036
-S C$gamer_manager.c$21$1$20 Def0043
-S A$gamer_manager$200 Def008B
-S C$gamer_manager.c$22$1$20 Def005C
-S A$gamer_manager$201 Def008C
-S C$gamer_manager.c$23$1$20 Def0078
-S A$gamer_manager$202 Def008D
+S C$gamer_manager.c$30$1$21 Def0079
+S C$gamer_manager.c$22$1$20 Def0040
+S C$gamer_manager.c$31$1$21 Def008D
+S C$gamer_manager.c$23$1$20 Def0043
 S A$gamer_manager$130 Def004A
 S A$gamer_manager$121 Def0040
-S A$gamer_manager$203 Def008E
+S C$gamer_manager.c$24$1$20 Def005C
 S A$gamer_manager$140 Def0058
 S A$gamer_manager$131 Def004D
-S C$gamer_manager.c$25$1$20 Def0079
-S A$gamer_manager$213 Def0096
-S A$gamer_manager$204 Def008F
+S C$gamer_manager.c$25$1$20 Def0078
+S A$gamer_manager$204 Def008D
 S A$gamer_manager$150 Def005F
 S A$gamer_manager$141 Def0059
 S A$gamer_manager$132 Def004F
 S A$gamer_manager$105 Def0037
-S A$gamer_manager$205 Def0090
 S A$gamer_manager$160 Def006F
 S A$gamer_manager$151 Def0062
 S A$gamer_manager$142 Def005A
 S A$gamer_manager$133 Def0050
 S A$gamer_manager$115 Def0038
-S C$gamer_manager.c$11$1$18 Def0000
-S A$gamer_manager$206 Def0091
+S C$gamer_manager.c$27$1$20 Def0079
+S C$gamer_manager.c$20$1$18 Def0038
 S A$gamer_manager$152 Def0063
 S A$gamer_manager$143 Def005B
 S A$gamer_manager$125 Def0043
 S A$gamer_manager$116 Def003A
-S C$gamer_manager.c$27$1$21 Def0079
-S C$gamer_manager.c$12$1$18 Def0003
-S A$gamer_manager$207 Def0094
 S A$gamer_manager$162 Def0070
 S A$gamer_manager$153 Def0064
 S A$gamer_manager$135 Def0052
 S A$gamer_manager$126 Def0044
 S A$gamer_manager$117 Def003E
-S C$gamer_manager.c$28$1$21 Def0079
 S XG$engine_gamer_manager_update$0$0 Def0078
-S C$gamer_manager.c$13$1$18 Def0009
-S A$gamer_manager$208 Def0095
+S C$gamer_manager.c$13$1$18 Def0000
 S A$gamer_manager$190 Def007D
 S A$gamer_manager$172 Def0078
 S A$gamer_manager$163 Def0072
 S A$gamer_manager$154 Def0067
 S A$gamer_manager$136 Def0053
 S A$gamer_manager$127 Def0045
-S C$gamer_manager.c$29$1$21 Def0096
-S C$gamer_manager.c$14$1$18 Def0016
+S C$gamer_manager.c$29$1$21 Def0079
+S C$gamer_manager.c$14$1$18 Def0003
 S A$gamer_manager$191 Def007E
 S A$gamer_manager$164 Def0073
 S A$gamer_manager$155 Def0069
 S A$gamer_manager$137 Def0055
 S A$gamer_manager$128 Def0048
-S C$gamer_manager.c$15$1$18 Def0023
-S A$gamer_manager$192 Def007F
+S C$gamer_manager.c$15$1$18 Def0009
+S A$gamer_manager$192 Def0081
 S A$gamer_manager$165 Def0074
 S A$gamer_manager$156 Def006A
 S A$gamer_manager$147 Def005C
 S A$gamer_manager$129 Def0049
-S C$gamer_manager.c$16$1$18 Def0037
-S A$gamer_manager$193 Def0080
+S C$gamer_manager.c$16$1$18 Def0016
+S A$gamer_manager$193 Def0082
 S A$gamer_manager$166 Def0075
 S A$gamer_manager$148 Def005D
 S A$gamer_manager$139 Def0056
-S A$gamer_manager$194 Def0081
+S C$gamer_manager.c$17$1$18 Def0023
+S C$gamer_manager.c$11$0$0 Def0000
+S A$gamer_manager$194 Def0085
 S A$gamer_manager$167 Def0076
 S A$gamer_manager$158 Def006C
 S A$gamer_manager$149 Def005E
-S C$gamer_manager.c$18$1$18 Def0038
-S A$gamer_manager$195 Def0082
+S C$gamer_manager.c$18$1$18 Def0037
+S A$gamer_manager$195 Def0086
 S A$gamer_manager$159 Def006D
-S A$gamer_manager$196 Def0085
-S A$gamer_manager$197 Def0086
+S A$gamer_manager$196 Def0087
+S A$gamer_manager$197 Def0088
 S A$gamer_manager$188 Def0079
-S A$gamer_manager$198 Def0087
+S A$gamer_manager$198 Def008B
 S A$gamer_manager$189 Def007C
-S A$gamer_manager$199 Def008A
+S A$gamer_manager$199 Def008C
 S A$gamer_manager$62 Def0000
 S A$gamer_manager$90 Def0024
 S A$gamer_manager$81 Def0016
@@ -174,9 +165,7 @@ T 70 00 10 FA D1 79 85 12 DD E1 C9
 R 00 00 00 00
 T 79 00
 R 00 00 00 00
-T 79 00 21 00 00 23 23 23 4E 23 46 21 00 00 23 5E
-R 00 00 00 00 00 03 01 00 00 0C 01 00
-T 87 00 21 00 00 56 C5 7B F5 33 D5 33 CD 00 00 F1
-R 00 00 00 00 00 03 01 00 02 0D 00 00
-T 95 00 F1 C9
-R 00 00 00 00
+T 79 00 21 00 00 23 46 21 00 00 56 21 60 01 E5 4A
+R 00 00 00 00 00 03 01 00 00 08 01 00
+T 87 00 C5 CD 00 00 F1 F1 C9
+R 00 00 00 00 02 04 00 00
