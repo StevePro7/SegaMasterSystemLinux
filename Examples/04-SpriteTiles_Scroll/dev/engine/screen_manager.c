@@ -3,7 +3,11 @@
 
 void engine_screen_manager_init()
 {
-	engine_font_manager_draw_text("STEVEPRO", 10, 10);
+	unsigned char i;
+	for( i = 0; i < 24; i++ )
+	{
+		engine_font_manager_draw_text( "HELLO", 10, i );
+	}
 }
 
 void engine_screen_manager_update()
