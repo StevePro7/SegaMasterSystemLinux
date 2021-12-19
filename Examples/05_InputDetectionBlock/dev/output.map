@@ -36,27 +36,27 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000008  l__INITIALIZED                  
      00000008  l__INITIALIZER                  
      00000009  l__HEADER1                      
+     0000000A  l__CABS2                        
      0000000A  l__HEADER2                      
      0000000E  l__CABS1                        
      0000000F  l__GSINIT                       
      00000010  l__CABS0                        
-     00000010  l__CABS2                        
      00000010  l__CABS4                        
-     00000038  l__CABS3                        
+     00000033  l__CABS3                        
      000000F0  l__DATA                         
      0000012A  l__HEADER5                      
      00000200  s__CODE                         
-     000018EF  l__CODE                         
-     00001AEF  s__HOME                         
-     00001AEF  s__INITIALIZER                  
-     00001AF7  s__GSINIT                       
-     00001B06  s__GSFINAL                      
-     00008000  _SMS_SRAM                          SMSlib_loadTileMap
+     00001737  l__CODE                         
+     00001937  s__HOME                         
+     00001937  s__INITIALIZER                  
+     0000193F  s__GSINIT                       
+     0000194E  s__GSFINAL                      
+     00008000  G$SMS_SRAM$0$0                     _sms_manager
+     00008000  _SMS_SRAM                          SMSlib_PSGaiden
      0000C000  s__DATA                         
      0000C0F0  s__INITIALIZED                  
      0000C0F8  s__BSEG                         
      0000C0F8  s__BSS                          
-     0000C0F8  s__HEAP                         
 ASxxxx Linker V03.00 + NoICE + sdld,  page 2.
 Hexadecimal  [32-Bits]
 
@@ -66,172 +66,1162 @@ Area                                    Addr        Size        Decimal Bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     0000FFFC  _SRAM_bank_to_be_mapped_on_slot2   SMSlib_loadTileMap
-     0000FFFF  _ROM_bank_to_be_mapped_on_slot2    SMSlib_loadTileMap
+     0000C0F8  s__HEAP                         
+     0000FFFC  G$SRAM_bank_to_be_mapped_on_slot   _sms_manager
+     0000FFFC  _SRAM_bank_to_be_mapped_on_slot2   SMSlib_PSGaiden
+     0000FFFF  G$ROM_bank_to_be_mapped_on_slot2   _sms_manager
+     0000FFFF  _ROM_bank_to_be_mapped_on_slot2    SMSlib_PSGaiden
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 3.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    000018EF =        6383. bytes (REL,CON)
+_CODE                               00000200    00001737 =        5943. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
      00000200  __clock                            crt0
      00000204  _exit                              crt0
+     0000020A  A$main$74                          main
+     0000020A  C$main.c$3$0$0                     main
+     0000020A  C$main.c$5$1$41                    main
+     0000020A  G$main$0$0                         main
      0000020A  _main                              main
-     0000024B  _devkit_SMS_init                   _sms_manager
-     0000024E  _devkit_SMS_displayOn              _sms_manager
-     00000254  _devkit_SMS_displayOff             _sms_manager
-     0000025A  _devkit_SMS_mapROMBank             _sms_manager
-     00000263  _devkit_SMS_setBGScrollX           _sms_manager
-     0000026F  _devkit_SMS_setBGScrollY           _sms_manager
-     0000027B  _devkit_SMS_enableSRAM             _sms_manager
-     00000281  _devkit_SMS_enableSRAMBank         _sms_manager
-     00000290  _devkit_SMS_disableSRAM            _sms_manager
-     00000296  _devkit_SMS_setSpriteMode          _sms_manager
-     000002A2  _devkit_SMS_useFirstHalfTilesfor   _sms_manager
-     000002A7  _devkit_SMS_useFirstHalfTilesfor   _sms_manager
-     000002AC  _devkit_SMS_VDPturnOnFeature       _sms_manager
-     000002B3  _devkit_SMS_loadPSGaidencompress   _sms_manager
-     000002C9  _devkit_SMS_loadSTMcompressedTil   _sms_manager
-     000002EA  _devkit_SMS_loadBGPalette          _sms_manager
-     000002F1  _devkit_SMS_loadSpritePalette      _sms_manager
-     000002F8  _devkit_SMS_setSpritePaletteColo   _sms_manager
-     00000320  _devkit_SMS_setNextTileatXY        _sms_manager
-     00000349  _devkit_SMS_setTile                _sms_manager
-     00000357  _devkit_SMS_loadTileMap            _sms_manager
-     0000037F  _devkit_SMS_addSprite              _sms_manager
-     0000039A  _devkit_SMS_addSprite_bulk8        _sms_manager
-     00000476  _devkit_SMS_addSprite_bulk12       _sms_manager
-     00000579  _devkit_SMS_initSprites            _sms_manager
-     0000057C  _devkit_SMS_finalizeSprites        _sms_manager
-     0000057F  _devkit_SMS_waitForVBlank          _sms_manager
-     00000582  _devkit_SMS_copySpritestoSAT       _sms_manager
-     00000585  _devkit_UNSAFE_SMS_copySpritesto   _sms_manager
-     00000588  _devkit_SMS_queryPauseRequested    _sms_manager
-     0000058B  _devkit_SMS_resetPauseRequest      _sms_manager
-     0000058E  _devkit_isCollisionDetected        _sms_manager
-     00000595  _devkit_SMS_getKeysStatus          _sms_manager
-     00000598  _devkit_PORT_A_KEY_UP              _sms_manager
-     0000059C  _devkit_PORT_A_KEY_DOWN            _sms_manager
-     000005A0  _devkit_PORT_A_KEY_LEFT            _sms_manager
-     000005A4  _devkit_PORT_A_KEY_RIGHT           _sms_manager
-     000005A8  _devkit_PORT_A_KEY_1               _sms_manager
-     000005AC  _devkit_PORT_A_KEY_2               _sms_manager
-     000005B0  _devkit_SPRITEMODE_NORMAL          _sms_manager
-     000005B3  _devkit_VDPFEATURE_HIDEFIRSTCOL    _sms_manager
-     0000060D  _engine_asm_manager_clear_VRAM     asm_manager
-     00000623  _engine_content_manager_load_til   content_manager
-     00000639  _engine_content_manager_load_til   content_manager
-     0000064F  _engine_content_manager_load_spr   content_manager
-     00000665  _engine_font_manager_draw_char     font_manager
-     0000068C  _engine_font_manager_draw_text     font_manager
+     0000020D  A$main$78                          main
+     0000020D  C$main.c$6$1$41                    main
+     00000210  A$main$82                          main
+     00000210  C$main.c$7$1$41                    main
+     00000213  A$main$86                          main
+     00000213  C$main.c$9$1$41                    main
+     00000216  A$main$87                          main
+     00000217  A$main$88                          main
+     00000218  A$main$89                          main
+     00000219  A$main$90                          main
+     0000021C  A$main$91                          main
+     0000021D  A$main$95                          main
+     0000021D  C$main.c$10$1$41                   main
+     00000220  A$main$99                          main
+     00000220  C$main.c$11$1$41                   main
+     00000223  A$main$100                         main
+     00000224  A$main$101                         main
+     00000227  A$main$102                         main
+     00000228  A$main$106                         main
+     00000228  C$main.c$13$1$41                   main
+     0000022B  A$main$110                         main
+     0000022B  C$main.c$14$1$41                   main
+     0000022E  A$main$114                         main
+     0000022E  C$main.c$15$1$41                   main
+     00000231  A$main$118                         main
+     00000231  C$main.c$16$1$41                   main
+     00000234  A$main$122                         main
+     00000234  C$main.c$18$1$41                   main
+     00000237  A$main$127                         main
+     00000237  C$main.c$21$3$43                   main
+     0000023A  A$main$131                         main
+     0000023A  C$main.c$22$3$43                   main
+     0000023D  A$main$135                         main
+     0000023D  C$main.c$23$3$43                   main
+     00000240  A$main$139                         main
+     00000240  C$main.c$25$3$43                   main
+     00000243  A$main$143                         main
+     00000243  C$main.c$26$3$43                   main
+     00000246  A$main$147                         main
+     00000246  C$main.c$27$3$43                   main
+     00000249  A$main$152                         main
+     00000249  C$main.c$29$2$42                   main
+     00000249  XG$main$0$0                        main
 ASxxxx Linker V03.00 + NoICE + sdld,  page 4.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    000018EF =        6383. bytes (REL,CON)
+_CODE                               00000200    00001737 =        5943. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     000006D2  _engine_font_manager_draw_data     font_manager
-     0000077D  _engine_font_manager_draw_data_Z   font_manager
-     00000804  _engine_gamer_manager_init         gamer_manager
-     0000083C  _engine_gamer_manager_update       gamer_manager
-     0000087D  _engine_gamer_manager_draw         gamer_manager
-     0000089B  _engine_input_manager_update       input_manager
-     000008A8  _engine_input_manager_hold_up      input_manager
-     000008B1  _engine_input_manager_hold_down    input_manager
-     000008BA  _engine_input_manager_hold_left    input_manager
-     000008C3  _engine_input_manager_hold_right   input_manager
-     000008CC  _engine_input_manager_hold_fire1   input_manager
-     000008D5  _engine_input_manager_hold_fire2   input_manager
-     000008DE  _engine_input_manager_move_up      input_manager
-     000008E7  _engine_input_manager_move_down    input_manager
-     000008F0  _engine_input_manager_move_left    input_manager
-     000008F9  _engine_input_manager_move_right   input_manager
-     00000902  _engine_input_manager_move_fire1   input_manager
-     0000090B  _engine_input_manager_move_fire2   input_manager
-     0000095E  _engine_screen_manager_init        screen_manager
-     00000973  _engine_screen_manager_update      screen_manager
-     000009B6  _engine_sprite_manager_draw        sprite_manager
-     00000A20  _engine_tree_manager_draw          tree_manager
-     00000A9D  G$font_tiles__palette__bin$0$0     gfx
-     00000A9D  _font_tiles__palette__bin          gfx
-     00000AAD  G$font_tiles__tilemap__bin$0$0     gfx
-     00000AAD  _font_tiles__tilemap__bin          gfx
-     00000B2D  G$font_tiles__tiles__psgcompr$0$   gfx
-     00000B2D  _font_tiles__tiles__psgcompr       gfx
-     00000DC4  G$game_tiles__palette__bin$0$0     gfx
-     00000DC4  _game_tiles__palette__bin          gfx
-     00000DD4  G$game_tiles__tilemap__bin$0$0     gfx
-     00000DD4  _game_tiles__tilemap__bin          gfx
-     00000EA4  G$game_tiles__tiles__psgcompr$0$   gfx
-     00000EA4  _game_tiles__tiles__psgcompr       gfx
-     00001404  G$sprites__palette__bin$0$0        gfx
-     00001404  _sprites__palette__bin             gfx
-     00001414  G$sprites__tiles__psgcompr$0$0     gfx
-     00001414  _sprites__tiles__psgcompr          gfx
-     00001452  __divuint                          
-     0000145A  __divuchar                         
-     00001461  __divu8                            
-     00001464  __divu16                           
-     00001493  _UNSAFE_SMS_copySpritestoSAT       SMSlib_UNSAFE
-     000014AB  _UNSAFE_SMS_VRAMmemcpy32           SMSlib_UNSAFE
-     000014C8  _UNSAFE_SMS_VRAMmemcpy64           SMSlib_UNSAFE
-     000014E5  _UNSAFE_SMS_VRAMmemcpy128          SMSlib_UNSAFE
-     00001502  _SMS_init                          SMSlib
-     00001556  _VDPReg_init                       SMSlib
-     00001561  _SMS_VDPType                       SMSlib
-     00001569  _SMS_VDPturnOnFeature              SMSlib
-     00001580  _SMS_VDPturnOffFeature             SMSlib
+     0000024B  A$_sms_manager$126                 _sms_manager
+     0000024B  C$_sms_manager.c$11$0$0            _sms_manager
+     0000024B  C$_sms_manager.c$13$1$71           _sms_manager
+     0000024B  C$_sms_manager.c$14$1$71           _sms_manager
+     0000024B  G$devkit_SMS_init$0$0              _sms_manager
+     0000024B  XG$devkit_SMS_init$0$0             _sms_manager
+     0000024B  _devkit_SMS_init                   _sms_manager
+     0000024E  A$_sms_manager$139                 _sms_manager
+     0000024E  C$_sms_manager.c$15$1$71           _sms_manager
+     0000024E  C$_sms_manager.c$17$1$72           _sms_manager
+     0000024E  G$devkit_SMS_displayOn$0$0         _sms_manager
+     0000024E  _devkit_SMS_displayOn              _sms_manager
+     00000251  A$_sms_manager$144                 _sms_manager
+     00000251  C$_sms_manager.c$18$1$72           _sms_manager
+     00000251  XG$devkit_SMS_displayOn$0$0        _sms_manager
+     00000254  A$_sms_manager$157                 _sms_manager
+     00000254  C$_sms_manager.c$19$1$72           _sms_manager
+     00000254  C$_sms_manager.c$21$1$73           _sms_manager
+     00000254  G$devkit_SMS_displayOff$0$0        _sms_manager
+     00000254  _devkit_SMS_displayOff             _sms_manager
+     00000257  A$_sms_manager$162                 _sms_manager
+     00000257  C$_sms_manager.c$22$1$73           _sms_manager
+     00000257  XG$devkit_SMS_displayOff$0$0       _sms_manager
+     0000025A  A$_sms_manager$175                 _sms_manager
+     0000025A  C$_sms_manager.c$23$1$73           _sms_manager
+     0000025A  C$_sms_manager.c$25$1$75           _sms_manager
+     0000025A  G$devkit_SMS_mapROMBank$0$0        _sms_manager
+     0000025A  _devkit_SMS_mapROMBank             _sms_manager
+     0000025D  A$_sms_manager$176                 _sms_manager
+     0000025E  A$_sms_manager$177                 _sms_manager
+     0000025F  A$_sms_manager$178                 _sms_manager
+     00000262  A$_sms_manager$183                 _sms_manager
+     00000262  C$_sms_manager.c$26$1$75           _sms_manager
+     00000262  XG$devkit_SMS_mapROMBank$0$0       _sms_manager
+     00000263  A$_sms_manager$196                 _sms_manager
+     00000263  C$_sms_manager.c$28$1$75           _sms_manager
+     00000263  C$_sms_manager.c$30$1$76           _sms_manager
+     00000263  G$devkit_SMS_enableSRAM$0$0        _sms_manager
+     00000263  _devkit_SMS_enableSRAM             _sms_manager
+     00000266  A$_sms_manager$197                 _sms_manager
+     00000268  A$_sms_manager$202                 _sms_manager
+     00000268  C$_sms_manager.c$31$1$76           _sms_manager
+     00000268  XG$devkit_SMS_enableSRAM$0$0       _sms_manager
+     00000269  A$_sms_manager$215                 _sms_manager
+     00000269  C$_sms_manager.c$32$1$76           _sms_manager
+     00000269  C$_sms_manager.c$34$1$78           _sms_manager
+     00000269  G$devkit_SMS_enableSRAMBank$0$0    _sms_manager
+     00000269  _devkit_SMS_enableSRAMBank         _sms_manager
+     0000026C  A$_sms_manager$216                 _sms_manager
+     0000026D  A$_sms_manager$217                 _sms_manager
+     0000026E  A$_sms_manager$218                 _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 5.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    000018EF =        6383. bytes (REL,CON)
+_CODE                               00000200    00001737 =        5943. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00001599  _SMS_setBGScrollX                  SMSlib
-     000015A3  _SMS_setBGScrollY                  SMSlib
-     000015AD  _SMS_setBackdropColor              SMSlib
-     000015B7  _SMS_useFirstHalfTilesforSprites   SMSlib
-     000015CB  _SMS_setSpriteMode                 SMSlib
-     00001610  _SMS_setBGPaletteColor             SMSlib
-     00001624  _SMS_setSpritePaletteColor         SMSlib
-     00001638  _SMS_loadBGPalette                 SMSlib
-     0000164C  _SMS_loadSpritePalette             SMSlib
-     00001660  _SMS_setColor                      SMSlib
-     00001664  _SMS_initSprites                   SMSlib
-     0000166A  _SMS_addSprite                     SMSlib
-     000016BF  _SMS_finalizeSprites               SMSlib
-     000016D1  _SMS_copySpritestoSAT              SMSlib
-     000016FA  _SMS_waitForVBlank                 SMSlib
-     00001707  _SMS_getKeysStatus                 SMSlib
-     0000170B  _SMS_getKeysPressed                SMSlib
-     00001728  _SMS_getKeysHeld                   SMSlib
-     0000173F  _SMS_getKeysReleased               SMSlib
-     0000175C  _SMS_queryPauseRequested           SMSlib
-     00001764  _SMS_resetPauseRequest             SMSlib
-     0000176A  _SMS_setLineInterruptHandler       SMSlib
-     0000177B  _SMS_setLineCounter                SMSlib
-     0000178A  _SMS_getVCount                     SMSlib
-     0000178E  _SMS_getHCount                     SMSlib
-     00001792  _SMS_isr                           SMSlib
-     000017C8  _SMS_nmi_isr                       SMSlib
-     000017DB  _SMS_loadSTMcompressedTileMapAre   SMSlib_STMcomp
-     000019BC  ___sdcc_call_hl                    
-     000019BD  _SMS_loadPSGaidencompressedTiles   SMSlib_PSGaiden
-     00001A9F  _SMS_loadTileMap                   SMSlib_loadTileMap
-     00001AD8  __moduchar                         
-     00001AE4  __moduint                          
-
+     0000026F  A$_sms_manager$219                 _sms_manager
+     00000270  A$_sms_manager$220                 _sms_manager
+     00000272  A$_sms_manager$221                 _sms_manager
+     00000274  A$_sms_manager$222                 _sms_manager
+     00000277  A$_sms_manager$227                 _sms_manager
+     00000277  C$_sms_manager.c$35$1$78           _sms_manager
+     00000277  XG$devkit_SMS_enableSRAMBank$0$0   _sms_manager
+     00000278  A$_sms_manager$240                 _sms_manager
+     00000278  C$_sms_manager.c$36$1$78           _sms_manager
+     00000278  C$_sms_manager.c$38$1$79           _sms_manager
+     00000278  G$devkit_SMS_disableSRAM$0$0       _sms_manager
+     00000278  _devkit_SMS_disableSRAM            _sms_manager
+     0000027B  A$_sms_manager$241                 _sms_manager
+     0000027D  A$_sms_manager$246                 _sms_manager
+     0000027D  C$_sms_manager.c$39$1$79           _sms_manager
+     0000027D  XG$devkit_SMS_disableSRAM$0$0      _sms_manager
+     0000027E  A$_sms_manager$259                 _sms_manager
+     0000027E  C$_sms_manager.c$40$1$79           _sms_manager
+     0000027E  C$_sms_manager.c$42$1$80           _sms_manager
+     0000027E  G$devkit_SMS_SRAM$0$0              _sms_manager
+     0000027E  _devkit_SMS_SRAM                   _sms_manager
+     00000281  A$_sms_manager$264                 _sms_manager
+     00000281  C$_sms_manager.c$43$1$80           _sms_manager
+     00000281  XG$devkit_SMS_SRAM$0$0             _sms_manager
+     00000282  A$_sms_manager$277                 _sms_manager
+     00000282  C$_sms_manager.c$46$1$80           _sms_manager
+     00000282  C$_sms_manager.c$48$1$82           _sms_manager
+     00000282  G$devkit_SMS_setSpriteMode$0$0     _sms_manager
+     00000282  _devkit_SMS_setSpriteMode          _sms_manager
+     00000286  A$_sms_manager$278                 _sms_manager
+     00000288  A$_sms_manager$279                 _sms_manager
+     0000028B  A$_sms_manager$284                 _sms_manager
+     0000028B  C$_sms_manager.c$49$1$82           _sms_manager
+     0000028B  XG$devkit_SMS_setSpriteMode$0$0    _sms_manager
+     0000028E  A$_sms_manager$297                 _sms_manager
+     0000028E  C$_sms_manager.c$50$1$82           _sms_manager
+     0000028E  C$_sms_manager.c$52$1$83           _sms_manager
+     0000028E  G$devkit_SMS_useFirstHalfTilesfo   _sms_manager
+     0000028E  _devkit_SMS_useFirstHalfTilesfor   _sms_manager
+     00000290  A$_sms_manager$302                 _sms_manager
+     00000290  C$_sms_manager.c$53$1$83           _sms_manager
+     00000290  XG$devkit_SMS_useFirstHalfTilesf   _sms_manager
+     00000293  A$_sms_manager$315                 _sms_manager
+     00000293  C$_sms_manager.c$54$1$83           _sms_manager
+     00000293  C$_sms_manager.c$56$1$84           _sms_manager
+     00000293  G$devkit_SMS_useFirstHalfTilesfo   _sms_manager
+     00000293  _devkit_SMS_useFirstHalfTilesfor   _sms_manager
+     00000295  A$_sms_manager$320                 _sms_manager
+     00000295  C$_sms_manager.c$57$1$84           _sms_manager
+     00000295  XG$devkit_SMS_useFirstHalfTilesf   _sms_manager
+     00000298  A$_sms_manager$333                 _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 6.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001737 =        5943. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000298  C$_sms_manager.c$58$1$84           _sms_manager
+     00000298  C$_sms_manager.c$60$1$86           _sms_manager
+     00000298  G$devkit_SMS_VDPturnOnFeature$0$   _sms_manager
+     00000298  _devkit_SMS_VDPturnOnFeature       _sms_manager
+     00000299  A$_sms_manager$334                 _sms_manager
+     0000029A  A$_sms_manager$335                 _sms_manager
+     0000029B  A$_sms_manager$336                 _sms_manager
+     0000029C  A$_sms_manager$341                 _sms_manager
+     0000029C  C$_sms_manager.c$61$1$86           _sms_manager
+     0000029C  XG$devkit_SMS_VDPturnOnFeature$0   _sms_manager
+     0000029F  A$_sms_manager$354                 _sms_manager
+     0000029F  C$_sms_manager.c$63$1$86           _sms_manager
+     0000029F  C$_sms_manager.c$65$1$88           _sms_manager
+     0000029F  G$devkit_SMS_loadPSGaidencompres   _sms_manager
+     0000029F  _devkit_SMS_loadPSGaidencompress   _sms_manager
+     000002A2  A$_sms_manager$355                 _sms_manager
+     000002A3  A$_sms_manager$356                 _sms_manager
+     000002A4  A$_sms_manager$357                 _sms_manager
+     000002A5  A$_sms_manager$358                 _sms_manager
+     000002A6  A$_sms_manager$359                 _sms_manager
+     000002A7  A$_sms_manager$360                 _sms_manager
+     000002AA  A$_sms_manager$361                 _sms_manager
+     000002AB  A$_sms_manager$362                 _sms_manager
+     000002AC  A$_sms_manager$363                 _sms_manager
+     000002AD  A$_sms_manager$364                 _sms_manager
+     000002AE  A$_sms_manager$365                 _sms_manager
+     000002AF  A$_sms_manager$366                 _sms_manager
+     000002B2  A$_sms_manager$367                 _sms_manager
+     000002B3  A$_sms_manager$368                 _sms_manager
+     000002B4  A$_sms_manager$373                 _sms_manager
+     000002B4  C$_sms_manager.c$66$1$88           _sms_manager
+     000002B4  XG$devkit_SMS_loadPSGaidencompre   _sms_manager
+     000002B5  A$_sms_manager$386                 _sms_manager
+     000002B5  C$_sms_manager.c$67$1$88           _sms_manager
+     000002B5  C$_sms_manager.c$69$1$90           _sms_manager
+     000002B5  G$devkit_SMS_loadSTMcompressedTi   _sms_manager
+     000002B5  _devkit_SMS_loadSTMcompressedTil   _sms_manager
+     000002B7  A$_sms_manager$387                 _sms_manager
+     000002B8  A$_sms_manager$388                 _sms_manager
+     000002B9  A$_sms_manager$389                 _sms_manager
+     000002BC  A$_sms_manager$390                 _sms_manager
+     000002BD  A$_sms_manager$391                 _sms_manager
+     000002BE  A$_sms_manager$392                 _sms_manager
+     000002BF  A$_sms_manager$393                 _sms_manager
+     000002C0  A$_sms_manager$394                 _sms_manager
+     000002C1  A$_sms_manager$395                 _sms_manager
+     000002C4  A$_sms_manager$396                 _sms_manager
+     000002C5  A$_sms_manager$397                 _sms_manager
+     000002C6  A$_sms_manager$398                 _sms_manager
+     000002C7  A$_sms_manager$399                 _sms_manager
+     000002C8  A$_sms_manager$400                 _sms_manager
+ASxxxx Linker V03.00 + NoICE + sdld,  page 7.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001737 =        5943. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000002CB  A$_sms_manager$401                 _sms_manager
+     000002CC  A$_sms_manager$402                 _sms_manager
+     000002CD  A$_sms_manager$403                 _sms_manager
+     000002CE  A$_sms_manager$404                 _sms_manager
+     000002CF  A$_sms_manager$405                 _sms_manager
+     000002D2  A$_sms_manager$406                 _sms_manager
+     000002D3  A$_sms_manager$407                 _sms_manager
+     000002D4  A$_sms_manager$408                 _sms_manager
+     000002D5  A$_sms_manager$413                 _sms_manager
+     000002D5  C$_sms_manager.c$70$1$90           _sms_manager
+     000002D5  XG$devkit_SMS_loadSTMcompressedT   _sms_manager
+     000002D6  A$_sms_manager$426                 _sms_manager
+     000002D6  C$_sms_manager.c$72$1$90           _sms_manager
+     000002D6  C$_sms_manager.c$74$1$92           _sms_manager
+     000002D6  G$devkit_SMS_loadBGPalette$0$0     _sms_manager
+     000002D6  _devkit_SMS_loadBGPalette          _sms_manager
+     000002D7  A$_sms_manager$427                 _sms_manager
+     000002D8  A$_sms_manager$428                 _sms_manager
+     000002D9  A$_sms_manager$429                 _sms_manager
+     000002DA  A$_sms_manager$434                 _sms_manager
+     000002DA  C$_sms_manager.c$75$1$92           _sms_manager
+     000002DA  XG$devkit_SMS_loadBGPalette$0$0    _sms_manager
+     000002DD  A$_sms_manager$447                 _sms_manager
+     000002DD  C$_sms_manager.c$76$1$92           _sms_manager
+     000002DD  C$_sms_manager.c$78$1$94           _sms_manager
+     000002DD  G$devkit_SMS_loadSpritePalette$0   _sms_manager
+     000002DD  _devkit_SMS_loadSpritePalette      _sms_manager
+     000002DE  A$_sms_manager$448                 _sms_manager
+     000002DF  A$_sms_manager$449                 _sms_manager
+     000002E0  A$_sms_manager$450                 _sms_manager
+     000002E1  A$_sms_manager$455                 _sms_manager
+     000002E1  C$_sms_manager.c$79$1$94           _sms_manager
+     000002E1  XG$devkit_SMS_loadSpritePalette$   _sms_manager
+     000002E4  A$_sms_manager$468                 _sms_manager
+     000002E4  C$_sms_manager.c$80$1$94           _sms_manager
+     000002E4  C$_sms_manager.c$82$1$96           _sms_manager
+     000002E4  G$devkit_SMS_setSpritePaletteCol   _sms_manager
+     000002E4  _devkit_SMS_setSpritePaletteColo   _sms_manager
+     000002E7  A$_sms_manager$469                 _sms_manager
+     000002E8  A$_sms_manager$470                 _sms_manager
+     000002E9  A$_sms_manager$471                 _sms_manager
+     000002EA  A$_sms_manager$472                 _sms_manager
+     000002EB  A$_sms_manager$473                 _sms_manager
+     000002EE  A$_sms_manager$474                 _sms_manager
+     000002EF  A$_sms_manager$475                 _sms_manager
+     000002F0  A$_sms_manager$476                 _sms_manager
+     000002F1  A$_sms_manager$477                 _sms_manager
+     000002F4  A$_sms_manager$478                 _sms_manager
+     000002F5  A$_sms_manager$479                 _sms_manager
+     000002F6  A$_sms_manager$480                 _sms_manager
+     000002F7  A$_sms_manager$481                 _sms_manager
+ASxxxx Linker V03.00 + NoICE + sdld,  page 8.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001737 =        5943. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000002F8  A$_sms_manager$482                 _sms_manager
+     000002F9  A$_sms_manager$483                 _sms_manager
+     000002FA  A$_sms_manager$484                 _sms_manager
+     000002FC  A$_sms_manager$485                 _sms_manager
+     000002FD  A$_sms_manager$486                 _sms_manager
+     000002FE  A$_sms_manager$490                 _sms_manager
+     000002FE  C$_sms_manager.c$83$1$96           _sms_manager
+     000002FF  A$_sms_manager$491                 _sms_manager
+     00000300  A$_sms_manager$492                 _sms_manager
+     00000303  A$_sms_manager$493                 _sms_manager
+     00000304  A$_sms_manager$494                 _sms_manager
+     00000305  A$_sms_manager$495                 _sms_manager
+     00000306  A$_sms_manager$496                 _sms_manager
+     00000307  A$_sms_manager$497                 _sms_manager
+     0000030A  A$_sms_manager$498                 _sms_manager
+     0000030B  A$_sms_manager$503                 _sms_manager
+     0000030B  C$_sms_manager.c$84$1$96           _sms_manager
+     0000030B  XG$devkit_SMS_setSpritePaletteCo   _sms_manager
+     0000030C  A$_sms_manager$513                 _sms_manager
+     0000030C  C$_sms_manager.c$86$1$96           _sms_manager
+     0000030C  G$devkit_SMS_setNextTileatXY$0$0   _sms_manager
+     0000030C  _devkit_SMS_setNextTileatXY        _sms_manager
+     0000030F  A$_sms_manager$517                 _sms_manager
+     0000030F  C$_sms_manager.c$88$1$98           _sms_manager
+     00000312  A$_sms_manager$518                 _sms_manager
+     00000314  A$_sms_manager$519                 _sms_manager
+     00000315  A$_sms_manager$520                 _sms_manager
+     00000316  A$_sms_manager$521                 _sms_manager
+     00000317  A$_sms_manager$522                 _sms_manager
+     00000318  A$_sms_manager$523                 _sms_manager
+     00000319  A$_sms_manager$524                 _sms_manager
+     0000031A  A$_sms_manager$525                 _sms_manager
+     0000031B  A$_sms_manager$526                 _sms_manager
+     0000031C  A$_sms_manager$527                 _sms_manager
+     0000031E  A$_sms_manager$528                 _sms_manager
+     0000031F  A$_sms_manager$529                 _sms_manager
+     00000322  A$_sms_manager$530                 _sms_manager
+     00000324  A$_sms_manager$531                 _sms_manager
+     00000325  A$_sms_manager$532                 _sms_manager
+     00000326  A$_sms_manager$533                 _sms_manager
+     00000327  A$_sms_manager$534                 _sms_manager
+     00000328  A$_sms_manager$535                 _sms_manager
+     00000329  A$_sms_manager$536                 _sms_manager
+     0000032A  A$_sms_manager$537                 _sms_manager
+     0000032B  A$_sms_manager$542                 _sms_manager
+     0000032B  C$_sms_manager.c$89$1$98           _sms_manager
+     0000032B  XG$devkit_SMS_setNextTileatXY$0$   _sms_manager
+     0000032D  A$_sms_manager$543                 _sms_manager
+     00000330  A$_sms_manager$556                 _sms_manager
+     00000330  C$_sms_manager.c$90$1$98           _sms_manager
+     00000330  C$_sms_manager.c$92$1$100          _sms_manager
+ASxxxx Linker V03.00 + NoICE + sdld,  page 9.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001737 =        5943. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000330  G$devkit_SMS_setTile$0$0           _sms_manager
+     00000330  _devkit_SMS_setTile                _sms_manager
+     00000331  A$_sms_manager$557                 _sms_manager
+     00000332  A$_sms_manager$558                 _sms_manager
+     00000333  A$_sms_manager$559                 _sms_manager
+     00000334  A$_sms_manager$564                 _sms_manager
+     00000334  C$_sms_manager.c$93$1$100          _sms_manager
+     00000334  XG$devkit_SMS_setTile$0$0          _sms_manager
+     00000337  A$_sms_manager$577                 _sms_manager
+     00000337  C$_sms_manager.c$94$1$100          _sms_manager
+     00000337  C$_sms_manager.c$96$1$102          _sms_manager
+     00000337  G$devkit_SMS_setTilePriority$0$0   _sms_manager
+     00000337  _devkit_SMS_setTilePriority        _sms_manager
+     0000033B  A$_sms_manager$578                 _sms_manager
+     0000033D  A$_sms_manager$579                 _sms_manager
+     00000340  A$_sms_manager$580                 _sms_manager
+     00000342  A$_sms_manager$581                 _sms_manager
+     00000344  A$_sms_manager$582                 _sms_manager
+     00000345  A$_sms_manager$587                 _sms_manager
+     00000345  C$_sms_manager.c$97$1$102          _sms_manager
+     00000345  XG$devkit_SMS_setTilePriority$0$   _sms_manager
+     00000348  A$_sms_manager$600                 _sms_manager
+     00000348  C$_sms_manager.c$101$1$104         _sms_manager
+     00000348  C$_sms_manager.c$99$1$102          _sms_manager
+     00000348  G$devkit_SMS_addSprite$0$0         _sms_manager
+     00000348  _devkit_SMS_addSprite              _sms_manager
+     0000034B  A$_sms_manager$601                 _sms_manager
+     0000034C  A$_sms_manager$602                 _sms_manager
+     0000034D  A$_sms_manager$603                 _sms_manager
+     0000034E  A$_sms_manager$604                 _sms_manager
+     0000034F  A$_sms_manager$605                 _sms_manager
+     00000352  A$_sms_manager$606                 _sms_manager
+     00000353  A$_sms_manager$607                 _sms_manager
+     00000354  A$_sms_manager$608                 _sms_manager
+     00000355  A$_sms_manager$609                 _sms_manager
+     00000356  A$_sms_manager$610                 _sms_manager
+     00000359  A$_sms_manager$611                 _sms_manager
+     0000035A  A$_sms_manager$612                 _sms_manager
+     0000035B  A$_sms_manager$613                 _sms_manager
+     0000035C  A$_sms_manager$614                 _sms_manager
+     0000035D  A$_sms_manager$615                 _sms_manager
+     00000360  A$_sms_manager$616                 _sms_manager
+     00000361  A$_sms_manager$617                 _sms_manager
+     00000362  A$_sms_manager$622                 _sms_manager
+     00000362  C$_sms_manager.c$102$1$104         _sms_manager
+     00000362  XG$devkit_SMS_addSprite$0$0        _sms_manager
+     00000363  A$_sms_manager$639                 _sms_manager
+     00000363  C$_sms_manager.c$143$1$104         _sms_manager
+     00000363  C$_sms_manager.c$145$1$105         _sms_manager
+     00000363  C$_sms_manager.c$146$1$105         _sms_manager
+     00000363  G$devkit_SMS_initSprites$0$0       _sms_manager
+ASxxxx Linker V03.00 + NoICE + sdld,  page 10.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001737 =        5943. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000363  XG$devkit_SMS_initSprites$0$0      _sms_manager
+     00000363  _devkit_SMS_initSprites            _sms_manager
+     00000366  A$_sms_manager$656                 _sms_manager
+     00000366  C$_sms_manager.c$147$1$105         _sms_manager
+     00000366  C$_sms_manager.c$149$1$106         _sms_manager
+     00000366  C$_sms_manager.c$150$1$106         _sms_manager
+     00000366  G$devkit_SMS_finalizeSprites$0$0   _sms_manager
+     00000366  XG$devkit_SMS_finalizeSprites$0$   _sms_manager
+     00000366  _devkit_SMS_finalizeSprites        _sms_manager
+     00000369  A$_sms_manager$673                 _sms_manager
+     00000369  C$_sms_manager.c$151$1$106         _sms_manager
+     00000369  C$_sms_manager.c$153$1$107         _sms_manager
+     00000369  C$_sms_manager.c$154$1$107         _sms_manager
+     00000369  G$devkit_SMS_waitForVBlank$0$0     _sms_manager
+     00000369  XG$devkit_SMS_waitForVBlank$0$0    _sms_manager
+     00000369  _devkit_SMS_waitForVBlank          _sms_manager
+     0000036C  A$_sms_manager$690                 _sms_manager
+     0000036C  C$_sms_manager.c$155$1$107         _sms_manager
+     0000036C  C$_sms_manager.c$157$1$108         _sms_manager
+     0000036C  C$_sms_manager.c$158$1$108         _sms_manager
+     0000036C  G$devkit_SMS_copySpritestoSAT$0$   _sms_manager
+     0000036C  XG$devkit_SMS_copySpritestoSAT$0   _sms_manager
+     0000036C  _devkit_SMS_copySpritestoSAT       _sms_manager
+     0000036F  A$_sms_manager$707                 _sms_manager
+     0000036F  C$_sms_manager.c$159$1$108         _sms_manager
+     0000036F  C$_sms_manager.c$161$1$109         _sms_manager
+     0000036F  C$_sms_manager.c$162$1$109         _sms_manager
+     0000036F  G$devkit_UNSAFE_SMS_copySpritest   _sms_manager
+     0000036F  XG$devkit_UNSAFE_SMS_copySprites   _sms_manager
+     0000036F  _devkit_UNSAFE_SMS_copySpritesto   _sms_manager
+     00000372  A$_sms_manager$724                 _sms_manager
+     00000372  C$_sms_manager.c$164$1$109         _sms_manager
+     00000372  C$_sms_manager.c$166$1$110         _sms_manager
+     00000372  C$_sms_manager.c$167$1$110         _sms_manager
+     00000372  G$devkit_SMS_queryPauseRequested   _sms_manager
+     00000372  XG$devkit_SMS_queryPauseRequeste   _sms_manager
+     00000372  _devkit_SMS_queryPauseRequested    _sms_manager
+     00000375  A$_sms_manager$741                 _sms_manager
+     00000375  C$_sms_manager.c$168$1$110         _sms_manager
+     00000375  C$_sms_manager.c$170$1$111         _sms_manager
+     00000375  C$_sms_manager.c$171$1$111         _sms_manager
+     00000375  G$devkit_SMS_resetPauseRequest$0   _sms_manager
+     00000375  XG$devkit_SMS_resetPauseRequest$   _sms_manager
+     00000375  _devkit_SMS_resetPauseRequest      _sms_manager
+     00000378  A$_sms_manager$754                 _sms_manager
+     00000378  C$_sms_manager.c$174$1$111         _sms_manager
+     00000378  C$_sms_manager.c$176$1$112         _sms_manager
+     00000378  G$devkit_isCollisionDetected$0$0   _sms_manager
+     00000378  _devkit_isCollisionDetected        _sms_manager
+     0000037B  A$_sms_manager$755                 _sms_manager
+     0000037D  A$_sms_manager$756                 _sms_manager
+ASxxxx Linker V03.00 + NoICE + sdld,  page 11.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001737 =        5943. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     0000037E  A$_sms_manager$761                 _sms_manager
+     0000037E  C$_sms_manager.c$177$1$112         _sms_manager
+     0000037E  XG$devkit_isCollisionDetected$0$   _sms_manager
+     0000037F  A$_sms_manager$778                 _sms_manager
+     0000037F  C$_sms_manager.c$180$1$112         _sms_manager
+     0000037F  C$_sms_manager.c$182$1$113         _sms_manager
+     0000037F  C$_sms_manager.c$183$1$113         _sms_manager
+     0000037F  G$devkit_SMS_getKeysStatus$0$0     _sms_manager
+     0000037F  XG$devkit_SMS_getKeysStatus$0$0    _sms_manager
+     0000037F  _devkit_SMS_getKeysStatus          _sms_manager
+     00000382  A$_sms_manager$791                 _sms_manager
+     00000382  C$_sms_manager.c$186$1$113         _sms_manager
+     00000382  C$_sms_manager.c$188$1$114         _sms_manager
+     00000382  G$devkit_SPRITEMODE_NORMAL$0$0     _sms_manager
+     00000382  _devkit_SPRITEMODE_NORMAL          _sms_manager
+     00000384  A$_sms_manager$796                 _sms_manager
+     00000384  C$_sms_manager.c$189$1$114         _sms_manager
+     00000384  XG$devkit_SPRITEMODE_NORMAL$0$0    _sms_manager
+     00000385  A$_sms_manager$809                 _sms_manager
+     00000385  C$_sms_manager.c$190$1$114         _sms_manager
+     00000385  C$_sms_manager.c$192$1$115         _sms_manager
+     00000385  G$devkit_VDPFEATURE_HIDEFIRSTCOL   _sms_manager
+     00000385  _devkit_VDPFEATURE_HIDEFIRSTCOL    _sms_manager
+     00000388  A$_sms_manager$814                 _sms_manager
+     00000388  C$_sms_manager.c$193$1$115         _sms_manager
+     00000388  XG$devkit_VDPFEATURE_HIDEFIRSTCO   _sms_manager
+     00000389  A$_sms_manager$827                 _sms_manager
+     00000389  C$_sms_manager.c$194$1$115         _sms_manager
+     00000389  C$_sms_manager.c$196$1$116         _sms_manager
+     00000389  G$devkit_TILE_PRIORITY$0$0         _sms_manager
+     00000389  _devkit_TILE_PRIORITY              _sms_manager
+     0000038C  A$_sms_manager$832                 _sms_manager
+     0000038C  C$_sms_manager.c$197$1$116         _sms_manager
+     0000038C  XG$devkit_TILE_PRIORITY$0$0        _sms_manager
+     0000038D  A$_sms_manager$845                 _sms_manager
+     0000038D  C$_sms_manager.c$198$1$116         _sms_manager
+     0000038D  C$_sms_manager.c$200$1$117         _sms_manager
+     0000038D  G$devkit_TILE_USE_SPRITE_PALETTE   _sms_manager
+     0000038D  _devkit_TILE_USE_SPRITE_PALETTE    _sms_manager
+     00000390  A$_sms_manager$850                 _sms_manager
+     00000390  C$_sms_manager.c$201$1$117         _sms_manager
+     00000390  XG$devkit_TILE_USE_SPRITE_PALETT   _sms_manager
+     00000391  F_sms_manager$__str_0$0$0          _sms_manager
+     0000039F  F_sms_manager$__str_1$0$0          _sms_manager
+     000003A9  F_sms_manager$__str_2$0$0          _sms_manager
+     000003DC  _engine_asm_manager_clear_VRAM     asm_manager
+     000003F2  _engine_content_manager_load_til   content_manager
+     00000408  _engine_content_manager_load_til   content_manager
+     0000041E  _engine_content_manager_load_spr   content_manager
+     00000434  _engine_font_manager_draw_char     font_manager
+     0000045B  _engine_font_manager_draw_text     font_manager
+ASxxxx Linker V03.00 + NoICE + sdld,  page 12.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001737 =        5943. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000004A1  _engine_font_manager_draw_data     font_manager
+     0000054C  _engine_font_manager_draw_data_Z   font_manager
+     000005D3  _engine_gamer_manager_init         gamer_manager
+     0000060B  _engine_gamer_manager_update       gamer_manager
+     0000064C  _engine_gamer_manager_draw         gamer_manager
+     0000066A  A$input_manager$64                 input_manager
+     0000066A  C$input_manager.c$10$0$0           input_manager
+     0000066A  C$input_manager.c$12$1$16          input_manager
+     0000066A  G$engine_input_manager_update$0$   input_manager
+     0000066A  _engine_input_manager_update       input_manager
+     0000066D  A$input_manager$65                 input_manager
+     00000670  A$input_manager$69                 input_manager
+     00000670  C$input_manager.c$13$1$16          input_manager
+     00000673  A$input_manager$70                 input_manager
+     00000676  A$input_manager$75                 input_manager
+     00000676  C$input_manager.c$14$1$16          input_manager
+     00000676  XG$engine_input_manager_update$0   input_manager
+     00000677  A$input_manager$88                 input_manager
+     00000677  C$input_manager.c$17$1$16          input_manager
+     00000677  C$input_manager.c$19$1$18          input_manager
+     00000677  G$engine_input_manager_hold$0$0    input_manager
+     00000677  _engine_input_manager_hold         input_manager
+     0000067A  A$input_manager$89                 input_manager
+     0000067B  A$input_manager$90                 input_manager
+     0000067C  A$input_manager$91                 input_manager
+     0000067E  A$input_manager$92                 input_manager
+     00000682  A$input_manager$93                 input_manager
+     00000685  A$input_manager$94                 input_manager
+     00000686  A$input_manager$95                 input_manager
+     00000687  A$input_manager$96                 input_manager
+     0000068A  A$input_manager$97                 input_manager
+     0000068B  A$input_manager$98                 input_manager
+     0000068C  A$input_manager$99                 input_manager
+     0000068E  A$input_manager$100                input_manager
+     0000068F  A$input_manager$101                input_manager
+     00000693  A$input_manager$102                input_manager
+     00000696  A$input_manager$103                input_manager
+     00000697  A$input_manager$104                input_manager
+     00000698  A$input_manager$105                input_manager
+     0000069B  A$input_manager$106                input_manager
+     0000069C  A$input_manager$107                input_manager
+     0000069E  A$input_manager$109                input_manager
+     000006A0  A$input_manager$110                input_manager
+     000006A1  A$input_manager$112                input_manager
+     000006A3  A$input_manager$117                input_manager
+     000006A3  C$input_manager.c$20$1$18          input_manager
+     000006A3  XG$engine_input_manager_hold$0$0   input_manager
+     000006A4  A$input_manager$130                input_manager
+     000006A4  C$input_manager.c$22$1$18          input_manager
+     000006A4  C$input_manager.c$24$1$20          input_manager
+     000006A4  G$engine_input_manager_move$0$0    input_manager
+ASxxxx Linker V03.00 + NoICE + sdld,  page 13.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001737 =        5943. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000006A4  _engine_input_manager_move         input_manager
+     000006A7  A$input_manager$131                input_manager
+     000006A8  A$input_manager$132                input_manager
+     000006A9  A$input_manager$133                input_manager
+     000006AC  A$input_manager$134                input_manager
+     000006AD  A$input_manager$135                input_manager
+     000006AE  A$input_manager$140                input_manager
+     000006AE  C$input_manager.c$25$1$20          input_manager
+     000006AE  XG$engine_input_manager_move$0$0   input_manager
+     000006AF  A$screen_manager$61                screen_manager
+     000006AF  C$screen_manager.c$10$1$9          screen_manager
+     000006AF  C$screen_manager.c$8$0$0           screen_manager
+     000006AF  G$engine_screen_manager_init$0$0   screen_manager
+     000006AF  _engine_screen_manager_init        screen_manager
+     000006B2  A$screen_manager$62                screen_manager
+     000006B3  A$screen_manager$63                screen_manager
+     000006B6  A$screen_manager$64                screen_manager
+     000006B7  A$screen_manager$65                screen_manager
+     000006B9  A$screen_manager$66                screen_manager
+     000006BA  A$screen_manager$67                screen_manager
+     000006BB  A$screen_manager$68                screen_manager
+     000006BE  A$screen_manager$69                screen_manager
+     000006BF  A$screen_manager$70                screen_manager
+     000006C0  A$screen_manager$71                screen_manager
+     000006C1  A$screen_manager$79                screen_manager
+     000006C1  C$screen_manager.c$11$1$9          screen_manager
+     000006C1  C$screen_manager.c$12$1$9          screen_manager
+     000006C1  XG$engine_screen_manager_init$0$   screen_manager
+     000006C4  A$screen_manager$95                screen_manager
+     000006C4  C$screen_manager.c$14$1$9          screen_manager
+     000006C4  C$screen_manager.c$17$1$9          screen_manager
+     000006C4  C$screen_manager.c$18$1$9          screen_manager
+     000006C4  G$engine_screen_manager_update$0   screen_manager
+     000006C4  _engine_screen_manager_update      screen_manager
+     000006C7  A$screen_manager$99                screen_manager
+     000006C7  C$screen_manager.c$20$1$10         screen_manager
+     000006C8  A$screen_manager$100               screen_manager
+     000006CA  A$screen_manager$101               screen_manager
+     000006CB  A$screen_manager$102               screen_manager
+     000006CC  A$screen_manager$103               screen_manager
+     000006CF  A$screen_manager$104               screen_manager
+     000006D0  A$screen_manager$105               screen_manager
+     000006D1  A$screen_manager$109               screen_manager
+     000006D1  C$screen_manager.c$21$1$10         screen_manager
+     000006D2  A$screen_manager$110               screen_manager
+     000006D3  A$screen_manager$111               screen_manager
+     000006D5  A$screen_manager$115               screen_manager
+     000006D5  C$screen_manager.c$23$2$11         screen_manager
+     000006D7  A$screen_manager$116               screen_manager
+     000006D9  A$screen_manager$121               screen_manager
+     000006D9  C$screen_manager.c$27$2$12         screen_manager
+ASxxxx Linker V03.00 + NoICE + sdld,  page 14.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001737 =        5943. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000006DA  A$screen_manager$122               screen_manager
+     000006DC  A$screen_manager$123               screen_manager
+     000006DD  A$screen_manager$124               screen_manager
+     000006DE  A$screen_manager$125               screen_manager
+     000006E1  A$screen_manager$126               screen_manager
+     000006E2  A$screen_manager$127               screen_manager
+     000006E3  A$screen_manager$131               screen_manager
+     000006E3  C$screen_manager.c$28$2$12         screen_manager
+     000006E4  A$screen_manager$132               screen_manager
+     000006E5  A$screen_manager$133               screen_manager
+     000006E7  A$screen_manager$137               screen_manager
+     000006E7  C$screen_manager.c$30$3$13         screen_manager
+     000006E9  A$screen_manager$142               screen_manager
+     000006E9  C$screen_manager.c$34$1$10         screen_manager
+     000006EA  A$screen_manager$143               screen_manager
+     000006EC  A$screen_manager$144               screen_manager
+     000006ED  A$screen_manager$145               screen_manager
+     000006EE  A$screen_manager$146               screen_manager
+     000006F1  A$screen_manager$147               screen_manager
+     000006F2  A$screen_manager$148               screen_manager
+     000006F3  A$screen_manager$152               screen_manager
+     000006F3  C$screen_manager.c$35$1$10         screen_manager
+     000006F4  A$screen_manager$153               screen_manager
+     000006F5  A$screen_manager$154               screen_manager
+     000006F7  A$screen_manager$158               screen_manager
+     000006F7  C$screen_manager.c$37$2$14         screen_manager
+     000006F9  A$screen_manager$159               screen_manager
+     000006FB  A$screen_manager$164               screen_manager
+     000006FB  C$screen_manager.c$41$2$15         screen_manager
+     000006FC  A$screen_manager$165               screen_manager
+     000006FE  A$screen_manager$166               screen_manager
+     000006FF  A$screen_manager$167               screen_manager
+     00000700  A$screen_manager$168               screen_manager
+     00000703  A$screen_manager$169               screen_manager
+     00000704  A$screen_manager$170               screen_manager
+     00000705  A$screen_manager$174               screen_manager
+     00000705  C$screen_manager.c$42$2$15         screen_manager
+     00000706  A$screen_manager$175               screen_manager
+     00000707  A$screen_manager$176               screen_manager
+     00000709  A$screen_manager$180               screen_manager
+     00000709  C$screen_manager.c$44$3$16         screen_manager
+     0000070B  A$screen_manager$185               screen_manager
+     0000070B  C$screen_manager.c$48$1$10         screen_manager
+     0000070C  A$screen_manager$186               screen_manager
+     0000070D  A$screen_manager$187               screen_manager
+     0000070F  A$screen_manager$188               screen_manager
+     00000710  A$screen_manager$189               screen_manager
+     00000713  A$screen_manager$194               screen_manager
+     00000713  C$screen_manager.c$50$2$17         screen_manager
+     00000714  A$screen_manager$195               screen_manager
+     00000717  A$screen_manager$196               screen_manager
+ASxxxx Linker V03.00 + NoICE + sdld,  page 15.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001737 =        5943. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000718  A$screen_manager$204               screen_manager
+     00000718  C$screen_manager.c$53$1$10         screen_manager
+     00000718  C$screen_manager.c$54$1$10         screen_manager
+     00000718  XG$engine_screen_manager_update$   screen_manager
+     0000071B  _engine_sprite_manager_draw        sprite_manager
+     00000785  A$tile_manager$58                  tile_manager
+     00000785  C$tile_manager.c$12$0$0            tile_manager
+     00000785  C$tile_manager.c$15$1$18           tile_manager
+     00000785  Ftile_manager$draw_tile$0$0        tile_manager
+     00000788  A$tile_manager$59                  tile_manager
+     00000789  A$tile_manager$60                  tile_manager
+     0000078A  A$tile_manager$61                  tile_manager
+     0000078B  A$tile_manager$62                  tile_manager
+     0000078C  A$tile_manager$63                  tile_manager
+     0000078F  A$tile_manager$64                  tile_manager
+     00000790  A$tile_manager$65                  tile_manager
+     00000791  A$tile_manager$66                  tile_manager
+     00000792  A$tile_manager$67                  tile_manager
+     00000793  A$tile_manager$68                  tile_manager
+     00000796  A$tile_manager$69                  tile_manager
+     00000797  A$tile_manager$70                  tile_manager
+     0000079A  A$tile_manager$71                  tile_manager
+     0000079B  A$tile_manager$72                  tile_manager
+     0000079C  A$tile_manager$73                  tile_manager
+     0000079D  A$tile_manager$74                  tile_manager
+     0000079E  A$tile_manager$75                  tile_manager
+     000007A1  A$tile_manager$76                  tile_manager
+     000007A2  A$tile_manager$77                  tile_manager
+     000007A5  A$tile_manager$78                  tile_manager
+     000007A8  A$tile_manager$79                  tile_manager
+     000007A9  A$tile_manager$80                  tile_manager
+     000007AA  A$tile_manager$85                  tile_manager
+     000007AA  C$tile_manager.c$16$1$18           tile_manager
+     000007AA  XFtile_manager$draw_tile$0$0       tile_manager
+     000007AB  A$tile_manager$95                  tile_manager
+     000007AB  C$tile_manager.c$18$1$18           tile_manager
+     000007AB  Ftile_manager$draw_tile_priority   tile_manager
+     000007AD  A$tile_manager$96                  tile_manager
+     000007B1  A$tile_manager$97                  tile_manager
+     000007B3  A$tile_manager$101                 tile_manager
+     000007B3  C$tile_manager.c$20$1$20           tile_manager
+     000007B6  A$tile_manager$102                 tile_manager
+     000007B7  A$tile_manager$103                 tile_manager
+     000007BA  A$tile_manager$104                 tile_manager
+     000007BB  A$tile_manager$105                 tile_manager
+     000007BC  A$tile_manager$106                 tile_manager
+     000007BD  A$tile_manager$107                 tile_manager
+     000007BE  A$tile_manager$108                 tile_manager
+     000007BF  A$tile_manager$109                 tile_manager
+     000007C0  A$tile_manager$110                 tile_manager
+     000007C1  A$tile_manager$114                 tile_manager
+ASxxxx Linker V03.00 + NoICE + sdld,  page 16.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001737 =        5943. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000007C1  C$tile_manager.c$21$1$20           tile_manager
+     000007C4  A$tile_manager$115                 tile_manager
+     000007C7  A$tile_manager$116                 tile_manager
+     000007C8  A$tile_manager$117                 tile_manager
+     000007C9  A$tile_manager$118                 tile_manager
+     000007CC  A$tile_manager$119                 tile_manager
+     000007CD  A$tile_manager$120                 tile_manager
+     000007CE  A$tile_manager$121                 tile_manager
+     000007D1  A$tile_manager$122                 tile_manager
+     000007D2  A$tile_manager$123                 tile_manager
+     000007D5  A$tile_manager$124                 tile_manager
+     000007D8  A$tile_manager$125                 tile_manager
+     000007D9  A$tile_manager$126                 tile_manager
+     000007DA  A$tile_manager$127                 tile_manager
+     000007DC  A$tile_manager$132                 tile_manager
+     000007DC  C$tile_manager.c$22$1$20           tile_manager
+     000007DC  XFtile_manager$draw_tile_priorit   tile_manager
+     000007DD  A$tile_manager$142                 tile_manager
+     000007DD  C$tile_manager.c$25$1$20           tile_manager
+     000007DD  Ftile_manager$comm_tile$0$0        tile_manager
+     000007DF  A$tile_manager$143                 tile_manager
+     000007E3  A$tile_manager$144                 tile_manager
+     000007E5  A$tile_manager$145                 tile_manager
+     000007E6  A$tile_manager$149                 tile_manager
+     000007E6  C$tile_manager.c$27$1$22           tile_manager
+     000007E9  A$tile_manager$150                 tile_manager
+     000007EC  A$tile_manager$151                 tile_manager
+     000007ED  A$tile_manager$152                 tile_manager
+     000007F0  A$tile_manager$153                 tile_manager
+     000007F1  A$tile_manager$154                 tile_manager
+     000007F4  A$tile_manager$155                 tile_manager
+     000007F7  A$tile_manager$156                 tile_manager
+     000007FA  A$tile_manager$157                 tile_manager
+     000007FD  A$tile_manager$158                 tile_manager
+     000007FE  A$tile_manager$159                 tile_manager
+     000007FF  A$tile_manager$160                 tile_manager
+     00000800  A$tile_manager$161                 tile_manager
+     00000802  A$tile_manager$162                 tile_manager
+     00000805  A$tile_manager$163                 tile_manager
+     00000807  A$tile_manager$164                 tile_manager
+     00000808  A$tile_manager$165                 tile_manager
+     00000809  A$tile_manager$166                 tile_manager
+     0000080C  A$tile_manager$167                 tile_manager
+     0000080D  A$tile_manager$168                 tile_manager
+     0000080E  A$tile_manager$169                 tile_manager
+     00000811  A$tile_manager$170                 tile_manager
+     00000812  A$tile_manager$171                 tile_manager
+     00000813  A$tile_manager$172                 tile_manager
+     00000814  A$tile_manager$173                 tile_manager
+     00000817  A$tile_manager$174                 tile_manager
+     00000818  A$tile_manager$175                 tile_manager
+ASxxxx Linker V03.00 + NoICE + sdld,  page 17.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001737 =        5943. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000819  A$tile_manager$179                 tile_manager
+     00000819  C$tile_manager.c$28$1$22           tile_manager
+     0000081C  A$tile_manager$180                 tile_manager
+     0000081D  A$tile_manager$181                 tile_manager
+     0000081E  A$tile_manager$182                 tile_manager
+     0000081F  A$tile_manager$183                 tile_manager
+     00000822  A$tile_manager$184                 tile_manager
+     00000823  A$tile_manager$185                 tile_manager
+     00000826  A$tile_manager$186                 tile_manager
+     00000827  A$tile_manager$187                 tile_manager
+     00000828  A$tile_manager$188                 tile_manager
+     00000829  A$tile_manager$189                 tile_manager
+     0000082A  A$tile_manager$190                 tile_manager
+     0000082B  A$tile_manager$191                 tile_manager
+     0000082C  A$tile_manager$192                 tile_manager
+     0000082E  A$tile_manager$193                 tile_manager
+     0000082F  A$tile_manager$194                 tile_manager
+     00000830  A$tile_manager$195                 tile_manager
+     00000831  A$tile_manager$196                 tile_manager
+     00000834  A$tile_manager$197                 tile_manager
+     00000835  A$tile_manager$198                 tile_manager
+     00000836  A$tile_manager$199                 tile_manager
+     00000839  A$tile_manager$200                 tile_manager
+     0000083A  A$tile_manager$201                 tile_manager
+     0000083B  A$tile_manager$202                 tile_manager
+     0000083C  A$tile_manager$203                 tile_manager
+     0000083D  A$tile_manager$204                 tile_manager
+     00000840  A$tile_manager$205                 tile_manager
+     00000841  A$tile_manager$206                 tile_manager
+     00000842  A$tile_manager$207                 tile_manager
+     00000843  A$tile_manager$211                 tile_manager
+     00000843  C$tile_manager.c$29$1$22           tile_manager
+     00000846  A$tile_manager$212                 tile_manager
+     00000847  A$tile_manager$213                 tile_manager
+     00000848  A$tile_manager$214                 tile_manager
+     00000849  A$tile_manager$215                 tile_manager
+     0000084A  A$tile_manager$216                 tile_manager
+     0000084B  A$tile_manager$217                 tile_manager
+     0000084E  A$tile_manager$218                 tile_manager
+     0000084F  A$tile_manager$219                 tile_manager
+     00000850  A$tile_manager$220                 tile_manager
+     00000853  A$tile_manager$221                 tile_manager
+     00000854  A$tile_manager$222                 tile_manager
+     00000855  A$tile_manager$223                 tile_manager
+     00000856  A$tile_manager$224                 tile_manager
+     00000857  A$tile_manager$225                 tile_manager
+     00000858  A$tile_manager$226                 tile_manager
+     00000859  A$tile_manager$227                 tile_manager
+     0000085B  A$tile_manager$228                 tile_manager
+     0000085C  A$tile_manager$229                 tile_manager
+     0000085D  A$tile_manager$230                 tile_manager
+ASxxxx Linker V03.00 + NoICE + sdld,  page 18.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001737 =        5943. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000860  A$tile_manager$231                 tile_manager
+     00000861  A$tile_manager$232                 tile_manager
+     00000862  A$tile_manager$233                 tile_manager
+     00000863  A$tile_manager$234                 tile_manager
+     00000866  A$tile_manager$235                 tile_manager
+     00000867  A$tile_manager$236                 tile_manager
+     00000868  A$tile_manager$237                 tile_manager
+     0000086B  A$tile_manager$238                 tile_manager
+     0000086C  A$tile_manager$239                 tile_manager
+     0000086D  A$tile_manager$240                 tile_manager
+     0000086E  A$tile_manager$241                 tile_manager
+     0000086F  A$tile_manager$242                 tile_manager
+     00000872  A$tile_manager$243                 tile_manager
+     00000873  A$tile_manager$244                 tile_manager
+     00000876  A$tile_manager$245                 tile_manager
+     00000877  A$tile_manager$246                 tile_manager
+     00000878  A$tile_manager$247                 tile_manager
+     00000879  A$tile_manager$248                 tile_manager
+     0000087A  A$tile_manager$249                 tile_manager
+     0000087B  A$tile_manager$250                 tile_manager
+     0000087D  A$tile_manager$251                 tile_manager
+     0000087E  A$tile_manager$252                 tile_manager
+     00000881  A$tile_manager$253                 tile_manager
+     00000882  A$tile_manager$254                 tile_manager
+     00000883  A$tile_manager$255                 tile_manager
+     00000886  A$tile_manager$256                 tile_manager
+     00000887  A$tile_manager$257                 tile_manager
+     00000888  A$tile_manager$258                 tile_manager
+     0000088B  A$tile_manager$259                 tile_manager
+     0000088C  A$tile_manager$260                 tile_manager
+     0000088D  A$tile_manager$261                 tile_manager
+     00000890  A$tile_manager$262                 tile_manager
+     00000892  A$tile_manager$263                 tile_manager
+     00000894  A$tile_manager$268                 tile_manager
+     00000894  C$tile_manager.c$31$1$22           tile_manager
+     00000894  XFtile_manager$comm_tile$0$0       tile_manager
+     00000895  A$tree_manager$57                  tree_manager
+     00000895  C$tree_manager.c$12$2$18           tree_manager
+     00000895  C$tree_manager.c$7$0$0             tree_manager
+     00000895  G$engine_tree_manager_draw$0$0     tree_manager
+     00000895  _engine_tree_manager_draw          tree_manager
+     00000897  A$tree_manager$62                  tree_manager
+     00000897  C$tree_manager.c$14$3$17           tree_manager
+     00000898  A$tree_manager$63                  tree_manager
+     00000899  A$tree_manager$64                  tree_manager
+     0000089A  A$tree_manager$65                  tree_manager
+     0000089B  A$tree_manager$66                  tree_manager
+     0000089C  A$tree_manager$67                  tree_manager
+     0000089D  A$tree_manager$68                  tree_manager
+     000008A0  A$tree_manager$69                  tree_manager
+     000008A1  A$tree_manager$70                  tree_manager
+ASxxxx Linker V03.00 + NoICE + sdld,  page 19.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001737 =        5943. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000008A2  A$tree_manager$74                  tree_manager
+     000008A2  C$tree_manager.c$15$3$17           tree_manager
+     000008A3  A$tree_manager$75                  tree_manager
+     000008A5  A$tree_manager$76                  tree_manager
+     000008A6  A$tree_manager$77                  tree_manager
+     000008A7  A$tree_manager$78                  tree_manager
+     000008A8  A$tree_manager$79                  tree_manager
+     000008A9  A$tree_manager$80                  tree_manager
+     000008AC  A$tree_manager$81                  tree_manager
+     000008AD  A$tree_manager$82                  tree_manager
+     000008AE  A$tree_manager$86                  tree_manager
+     000008AE  C$tree_manager.c$12$2$16           tree_manager
+     000008AF  A$tree_manager$87                  tree_manager
+     000008B0  A$tree_manager$88                  tree_manager
+     000008B1  A$tree_manager$89                  tree_manager
+     000008B3  A$tree_manager$90                  tree_manager
+     000008B5  A$tree_manager$94                  tree_manager
+     000008B7  A$tree_manager$99                  tree_manager
+     000008B7  C$tree_manager.c$20$3$19           tree_manager
+     000008B8  A$tree_manager$100                 tree_manager
+     000008B9  A$tree_manager$101                 tree_manager
+     000008BA  A$tree_manager$102                 tree_manager
+     000008BC  A$tree_manager$103                 tree_manager
+     000008BD  A$tree_manager$104                 tree_manager
+     000008BE  A$tree_manager$105                 tree_manager
+     000008C1  A$tree_manager$106                 tree_manager
+     000008C2  A$tree_manager$107                 tree_manager
+     000008C3  A$tree_manager$111                 tree_manager
+     000008C3  C$tree_manager.c$21$3$19           tree_manager
+     000008C4  A$tree_manager$112                 tree_manager
+     000008C5  A$tree_manager$113                 tree_manager
+     000008C6  A$tree_manager$114                 tree_manager
+     000008C8  A$tree_manager$115                 tree_manager
+     000008C9  A$tree_manager$116                 tree_manager
+     000008CA  A$tree_manager$117                 tree_manager
+     000008CD  A$tree_manager$118                 tree_manager
+     000008CE  A$tree_manager$119                 tree_manager
+     000008CF  A$tree_manager$123                 tree_manager
+     000008CF  C$tree_manager.c$18$2$18           tree_manager
+     000008D0  A$tree_manager$124                 tree_manager
+     000008D1  A$tree_manager$125                 tree_manager
+     000008D2  A$tree_manager$126                 tree_manager
+     000008D4  A$tree_manager$127                 tree_manager
+     000008D6  A$tree_manager$132                 tree_manager
+     000008D6  C$tree_manager.c$23$2$18           tree_manager
+     000008D6  XG$engine_tree_manager_draw$0$0    tree_manager
+     000008D7  A$tree_manager$148                 tree_manager
+     000008D7  C$tree_manager.c$25$2$18           tree_manager
+     000008D7  C$tree_manager.c$27$1$18           tree_manager
+     000008D7  C$tree_manager.c$29$1$21           tree_manager
+     000008D7  Ftree_manager$draw$0$0             tree_manager
+ASxxxx Linker V03.00 + NoICE + sdld,  page 20.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001737 =        5943. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000008DA  A$tree_manager$149                 tree_manager
+     000008DB  A$tree_manager$150                 tree_manager
+     000008DC  A$tree_manager$151                 tree_manager
+     000008DD  A$tree_manager$152                 tree_manager
+     000008DE  A$tree_manager$153                 tree_manager
+     000008E1  A$tree_manager$154                 tree_manager
+     000008E2  A$tree_manager$155                 tree_manager
+     000008E3  A$tree_manager$156                 tree_manager
+     000008E4  A$tree_manager$157                 tree_manager
+     000008E5  A$tree_manager$158                 tree_manager
+     000008E8  A$tree_manager$159                 tree_manager
+     000008E9  A$tree_manager$160                 tree_manager
+     000008EC  A$tree_manager$161                 tree_manager
+     000008ED  A$tree_manager$162                 tree_manager
+     000008EF  A$tree_manager$163                 tree_manager
+     000008F0  A$tree_manager$164                 tree_manager
+     000008F3  A$tree_manager$165                 tree_manager
+     000008F4  A$tree_manager$169                 tree_manager
+     000008F4  C$tree_manager.c$30$1$21           tree_manager
+     000008F7  A$tree_manager$170                 tree_manager
+     000008F8  A$tree_manager$171                 tree_manager
+     000008F9  A$tree_manager$172                 tree_manager
+     000008FA  A$tree_manager$173                 tree_manager
+     000008FD  A$tree_manager$174                 tree_manager
+     000008FE  A$tree_manager$175                 tree_manager
+     000008FF  A$tree_manager$176                 tree_manager
+     00000900  A$tree_manager$177                 tree_manager
+     00000901  A$tree_manager$178                 tree_manager
+     00000902  A$tree_manager$179                 tree_manager
+     00000903  A$tree_manager$180                 tree_manager
+     00000906  A$tree_manager$181                 tree_manager
+     00000907  A$tree_manager$182                 tree_manager
+     0000090A  A$tree_manager$183                 tree_manager
+     0000090B  A$tree_manager$184                 tree_manager
+     0000090D  A$tree_manager$185                 tree_manager
+     0000090E  A$tree_manager$186                 tree_manager
+     0000090F  A$tree_manager$187                 tree_manager
+     00000912  A$tree_manager$188                 tree_manager
+     00000913  A$tree_manager$193                 tree_manager
+     00000913  C$tree_manager.c$33$1$21           tree_manager
+     00000913  XFtree_manager$draw$0$0            tree_manager
+     00000914  G$font_tiles__palette__bin$0$0     gfx
+     00000914  _font_tiles__palette__bin          gfx
+     00000924  G$font_tiles__tilemap__bin$0$0     gfx
+     00000924  _font_tiles__tilemap__bin          gfx
+     000009A4  G$font_tiles__tiles__psgcompr$0$   gfx
+     000009A4  _font_tiles__tiles__psgcompr       gfx
+     00000C3B  G$game_tiles__palette__bin$0$0     gfx
+     00000C3B  _game_tiles__palette__bin          gfx
+     00000C4B  G$game_tiles__tilemap__bin$0$0     gfx
+     00000C4B  _game_tiles__tilemap__bin          gfx
+ASxxxx Linker V03.00 + NoICE + sdld,  page 21.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001737 =        5943. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000D1B  G$game_tiles__tiles__psgcompr$0$   gfx
+     00000D1B  _game_tiles__tiles__psgcompr       gfx
+     0000127B  G$sprites__palette__bin$0$0        gfx
+     0000127B  _sprites__palette__bin             gfx
+     0000128B  G$sprites__tiles__psgcompr$0$0     gfx
+     0000128B  _sprites__tiles__psgcompr          gfx
+     000012C9  __divuint                          
+     000012D1  __divuchar                         
+     000012D8  __divu8                            
+     000012DB  __divu16                           
+     0000130A  _UNSAFE_SMS_copySpritestoSAT       SMSlib_UNSAFE
+     00001322  _UNSAFE_SMS_VRAMmemcpy32           SMSlib_UNSAFE
+     0000133F  _UNSAFE_SMS_VRAMmemcpy64           SMSlib_UNSAFE
+     0000135C  _UNSAFE_SMS_VRAMmemcpy128          SMSlib_UNSAFE
+     00001379  _SMS_init                          SMSlib
+     000013CD  _VDPReg_init                       SMSlib
+     000013D8  _SMS_VDPType                       SMSlib
+     000013E0  _SMS_VDPturnOnFeature              SMSlib
+     000013F7  _SMS_VDPturnOffFeature             SMSlib
+     00001410  _SMS_setBGScrollX                  SMSlib
+     0000141A  _SMS_setBGScrollY                  SMSlib
+     00001424  _SMS_setBackdropColor              SMSlib
+     0000142E  _SMS_useFirstHalfTilesforSprites   SMSlib
+     00001442  _SMS_setSpriteMode                 SMSlib
+     00001487  _SMS_setBGPaletteColor             SMSlib
+     0000149B  _SMS_setSpritePaletteColor         SMSlib
+     000014AF  _SMS_loadBGPalette                 SMSlib
+     000014C3  _SMS_loadSpritePalette             SMSlib
+     000014D7  _SMS_setColor                      SMSlib
+     000014DB  _SMS_initSprites                   SMSlib
+     000014E1  _SMS_addSprite                     SMSlib
+     00001536  _SMS_finalizeSprites               SMSlib
+     00001548  _SMS_copySpritestoSAT              SMSlib
+     00001571  _SMS_waitForVBlank                 SMSlib
+     0000157E  _SMS_getKeysStatus                 SMSlib
+     00001582  _SMS_getKeysPressed                SMSlib
+     0000159F  _SMS_getKeysHeld                   SMSlib
+     000015B6  _SMS_getKeysReleased               SMSlib
+     000015D3  _SMS_queryPauseRequested           SMSlib
+     000015DB  _SMS_resetPauseRequest             SMSlib
+     000015E1  _SMS_setLineInterruptHandler       SMSlib
+     000015F2  _SMS_setLineCounter                SMSlib
+     00001601  _SMS_getVCount                     SMSlib
+     00001605  _SMS_getHCount                     SMSlib
+     00001609  _SMS_isr                           SMSlib
+     0000163F  _SMS_nmi_isr                       SMSlib
+     00001652  _SMS_loadSTMcompressedTileMapAre   SMSlib_STMcomp
+     00001833  ___sdcc_call_hl                    
+     00001834  _SMS_loadPSGaidencompressedTiles   SMSlib_PSGaiden
+     00001916  ___sdcc_enter_ix                   
+     00001920  __moduchar                         
+ASxxxx Linker V03.00 + NoICE + sdld,  page 22.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001737 =        5943. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     0000192C  __moduint                          
+ASxxxx Linker V03.00 + NoICE + sdld,  page 23.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -242,7 +1232,7 @@ _HEADER0                            00000000    00000006 =           6. bytes (A
       -----  --------------------------------   ------------------------
      00000006  _SMS_crt0_RST08                    crt0
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 7.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 24.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -253,7 +1243,7 @@ _HEADER1                            00000000    00000009 =           9. bytes (A
       -----  --------------------------------   ------------------------
      00000011  _SMS_crt0_RST18                    crt0
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 8.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 25.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -262,7 +1252,7 @@ _HEADER2                            00000000    0000000A =          10. bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-ASxxxx Linker V03.00 + NoICE + sdld,  page 9.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 26.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -271,7 +1261,7 @@ _HEADER3                            00000000    00000003 =           3. bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-ASxxxx Linker V03.00 + NoICE + sdld,  page 10.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 27.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -280,7 +1270,7 @@ _HEADER4                            00000000    00000003 =           3. bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-ASxxxx Linker V03.00 + NoICE + sdld,  page 11.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 28.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -294,36 +1284,39 @@ _HEADER5                            00000000    0000012A =         298. bytes (A
      00000159  _OUTI32                            crt0
      00000199  _outi_block                        crt0
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 12.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 29.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_INITIALIZER                        00001AEF    00000008 =           8. bytes (REL,CON)
+_INITIALIZER                        00001937    00000008 =           8. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-ASxxxx Linker V03.00 + NoICE + sdld,  page 13.
+     00001937  Finput_manager$__xinit_curr_joyp   input_manager
+     00001939  Finput_manager$__xinit_prev_joyp   input_manager
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 30.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSINIT                             00001AF7    0000000F =          15. bytes (REL,CON)
+_GSINIT                             0000193F    0000000F =          15. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00001AF7  gsinit                             crt0
+     0000193F  gsinit                             crt0
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 14.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 31.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSFINAL                            00001B06    00000001 =           1. bytes (REL,CON)
+_GSFINAL                            0000194E    00000001 =           1. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-ASxxxx Linker V03.00 + NoICE + sdld,  page 15.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 32.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -344,7 +1337,7 @@ _DATA                               0000C000    000000F0 =         240. bytes (R
      0000C0CD  _SpriteNextFree                    SMSlib
      0000C0CE  _SMS_theLineInterruptHandler       SMSlib
      0000C0D0  _decompBuffer                      SMSlib_PSGaiden
-ASxxxx Linker V03.00 + NoICE + sdld,  page 16.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 33.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -353,10 +1346,13 @@ _INITIALIZED                        0000C0F0    00000008 =           8. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     0000C0F0  Finput_manager$curr_joypad1$0$0    input_manager
+     0000C0F2  Finput_manager$prev_joypad1$0$0    input_manager
      0000C0F4  _VDPReg                            SMSlib
      0000C0F6  _spritesHeight                     SMSlib
      0000C0F7  _spritesWidth                      SMSlib
-ASxxxx Linker V03.00 + NoICE + sdld,  page 17.
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 34.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -365,9 +1361,10 @@ _CABS0                              00000000    00000010 =          16. bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00007FF0  G$__SMS__SEGA_signature$0$0        _sms_manager
      00007FF0  ___SMS__SEGA_signature             _sms_manager
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 18.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 35.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -376,31 +1373,34 @@ _CABS1                              00000000    0000000E =          14. bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00007FD2  G$__SMS__SDSC_author$0$0           _sms_manager
      00007FD2  ___SMS__SDSC_author                _sms_manager
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 19.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 36.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CABS2                              00000000    00000010 =          16. bytes (ABS,CON)
+_CABS2                              00000000    0000000A =          10. bytes (ABS,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00007FC2  ___SMS__SDSC_name                  _sms_manager
+     00007FC8  G$__SMS__SDSC_name$0$0             _sms_manager
+     00007FC8  ___SMS__SDSC_name                  _sms_manager
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 20.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 37.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CABS3                              00000000    00000038 =          56. bytes (ABS,CON)
+_CABS3                              00000000    00000033 =          51. bytes (ABS,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00007F8A  ___SMS__SDSC_descr                 _sms_manager
+     00007F95  G$__SMS__SDSC_descr$0$0            _sms_manager
+     00007F95  ___SMS__SDSC_descr                 _sms_manager
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 21.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 38.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -409,9 +1409,10 @@ _CABS4                              00000000    00000010 =          16. bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00007FE0  G$__SMS__SDSC_signature$0$0        _sms_manager
      00007FE0  ___SMS__SDSC_signature             _sms_manager
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 22.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 39.
 
 Files Linked                              [ module(s) ]
 
@@ -425,6 +1426,7 @@ engine/gamer_manager.rel                  [ gamer_manager ]
 engine/input_manager.rel                  [ input_manager ]
 engine/screen_manager.rel                 [ screen_manager ]
 engine/sprite_manager.rel                 [ sprite_manager ]
+engine/tile_manager.rel                   [ tile_manager ]
 engine/tree_manager.rel                   [ tree_manager ]
 gfx.rel                                   [ gfx ]
 
@@ -439,11 +1441,12 @@ C:\Program Files\SDCC\bin\..\lib\z80/z80.lib
 C:\Program Files\SDCC\bin\..\lib\z80/z80.lib
                                           [ __sdcc_call_hl.rel ]
 ../lib/SMSlib.lib                         [ SMSlib_PSGaiden.rel ]
-../lib/SMSlib.lib                         [ SMSlib_loadTileMap.rel ]
+C:\Program Files\SDCC\bin\..\lib\z80/z80.lib
+                                          [ crtenter.rel ]
 C:\Program Files\SDCC\bin\..\lib\z80/z80.lib
                                           [ modunsigned.rel ]
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 23.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 40.
 
 User Base Address Definitions
 

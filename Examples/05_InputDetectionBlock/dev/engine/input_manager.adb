@@ -4,12 +4,6 @@ F:G$engine_input_manager_hold$0$0({2}DF,SC:U),Z,0,0,0,0,0
 S:Linput_manager.engine_input_manager_hold$data$1$17({1}SC:U),B,1,4
 F:G$engine_input_manager_move$0$0({2}DF,SC:U),Z,0,0,0,0,0
 S:Linput_manager.engine_input_manager_move$data$1$19({1}SC:U),B,1,4
-F:G$engine_input_manager_direction$0$0({2}DF,SC:U),Z,0,0,0,0,0
-S:Linput_manager.engine_input_manager_direction$direction$1$21({1}SC:U),R,0,0,[c]
-S:Linput_manager.engine_input_manager_direction$upxx$1$21({1}SC:U),R,0,0,[b]
-S:Linput_manager.engine_input_manager_direction$down$1$21({1}SC:U),R,0,0,[e]
-S:Linput_manager.engine_input_manager_direction$left$1$21({1}SC:U),R,0,0,[d]
-S:Linput_manager.engine_input_manager_direction$rght$1$21({1}SC:U),R,0,0,[l]
 S:Finput_manager$curr_joypad1$0$0({2}SI:U),E,0,0
 S:Finput_manager$prev_joypad1$0$0({2}SI:U),E,0,0
 S:G$devkit_SMS_init$0$0({2}DF,SV:S),C,0,0
