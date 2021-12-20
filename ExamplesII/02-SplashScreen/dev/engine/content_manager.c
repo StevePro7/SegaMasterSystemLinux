@@ -2,11 +2,11 @@
 #include "../../lib/SMSlib.h"
 #include "../gfx.h"
 
-#define SPLASH_TILES_OFFSET		128
+#define SPLASH_TILES_OFFSET		16
 
 void engine_content_manager_load_sprite_palette()
 {
-	SMS_setSpritePaletteColor( RGB( 0, 0, 0 ), 0 );
+	//SMS_setSpritePaletteColor( RGB( 0, 0, 0 ), 0 );
 }
 
 void engine_content_manager_load_splash_screen()
