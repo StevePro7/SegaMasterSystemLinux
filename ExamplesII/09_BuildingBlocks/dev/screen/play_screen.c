@@ -1,13 +1,13 @@
 #include "play_screen.h"
-#include "../devkit/_sms_manager.h"
-#include "../devkit/_snd_manager.h"
+#include "../engine/audio_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/enemy_manager.h"
 #include "../engine/gamer_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/path_manager.h"
-#include "../engine/sound_manager.h"
 #include "../engine/text_manager.h"
+#include "../devkit/_sms_manager.h"
+#include "../devkit/_snd_manager.h"
 
 void screen_play_screen_load()
 {
