@@ -1,12 +1,12 @@
 extern const unsigned char	mus_beat_psg[];
 #define				mus_beat_psg_size 1573
 
-extern const unsigned char	sfx_accept_psg[];
-#define				sfx_accept_psg_size 32
+extern const unsigned char	sfx_cheat_psg[];
+#define				sfx_cheat_psg_size 35
 
-extern const unsigned char	sfx_over_psg[];
-#define				sfx_over_psg_size 64
+extern const unsigned char	sfx_right_psg[];
+#define				sfx_right_psg_size 32
 
-extern const unsigned char	sfx_reset_psg[];
-#define				sfx_reset_psg_size 35
+extern const unsigned char	sfx_wrong_psg[];
+#define				sfx_wrong_psg_size 35
 
