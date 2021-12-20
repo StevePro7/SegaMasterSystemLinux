@@ -28,8 +28,8 @@ S:Lenemy_manager.toggle_frame$eo$1$26({2}DG,STtag_struct_enemy_object:S),R,0,0,[
 F:Fenemy_manager$calculate_tile$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lenemy_manager.calculate_tile$idx$1$27({1}SC:U),B,1,4
 S:Lenemy_manager.calculate_tile$eo$1$28({2}DG,STtag_struct_enemy_object:S),R,0,0,[e,d]
-S:Lenemy_manager.calculate_tile$sloc0$1$0({2}DG,SI:U),B,1,-2
-S:Lenemy_manager.calculate_tile$sloc1$1$0({2}SI:S),B,1,-4
+S:Lenemy_manager.calculate_tile$sloc0$1$0({2}DG,SI:U),B,1,-4
+S:Lenemy_manager.calculate_tile$sloc1$1$0({2}SI:S),B,1,-2
 T:Fenemy_manager$tag_struct_hack_object[({0}S:S$hack_steps$0$0({1}SC:U),Z,0,0)({1}S:S$hack_delay$0$0({1}SC:U),Z,0,0)({2}S:S$hack_hands$0$0({1}SC:U),Z,0,0)({3}S:S$hack_music$0$0({1}SC:U),Z,0,0)({4}S:S$hack_sound$0$0({1}SC:U),Z,0,0)({5}S:S$hack_paths$0$0({1}SC:U),Z,0,0)]
 T:Fenemy_manager$tag_struct_enemy_object[({0}S:S$index$0$0({1}SC:U),Z,0,0)({1}S:S$enemyX$0$0({1}SC:U),Z,0,0)({2}S:S$enemyY$0$0({1}SC:U),Z,0,0)({3}S:S$color$0$0({1}SC:U),Z,0,0)({4}S:S$frame$0$0({1}SC:U),Z,0,0)({5}S:S$delay$0$0({1}SC:U),Z,0,0)({6}S:S$timer$0$0({1}SC:U),Z,0,0)({7}S:S$base$0$0({2}SI:U),Z,0,0)({9}S:S$tile$0$0({2}SI:U),Z,0,0)]
 S:G$global_hack_object$0$0({6}STtag_struct_hack_object:S),E,0,0
