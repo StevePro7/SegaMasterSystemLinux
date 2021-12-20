@@ -61,8 +61,6 @@ sdcc --debug -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-
 ../crt0/crt0_sms.rel main.rel ^
 ../lib/SMSlib.lib ^
 ../lib/PSGlib.rel ^
-devkit/_sms_manager.rel ^
-devkit/_snd_manager.rel ^
 engine/asm_manager.rel ^
 engine/audio_manager.rel ^
 engine/content_manager.rel ^
@@ -84,8 +82,10 @@ screen/start_screen.rel ^
 screen/title_screen.rel ^
 screen/ready_screen.rel ^
 screen/play_screen.rel ^
-gfx.rel ^
-psg.rel
+devkit/_sms_manager.rel ^
+devkit/_snd_manager.rel ^
+content/gfx.rel ^
+content/psg.rel
 
 :: Execute
 ihx2sms output.ihx output.sms
@@ -123,5 +123,5 @@ if exist "*.noi" del "*.noi" > nul
 if exist "*.sym" del "*.sym" > nul
 
 :: Run
-java -jar C:/SEGA/Emulicious/Emulicious.jar output.sms
-::output.sms
+::java -jar C:/SEGA/Emulicious/Emulicious.jar output.sms
+output.sms
