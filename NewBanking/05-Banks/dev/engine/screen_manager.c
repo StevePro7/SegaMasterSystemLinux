@@ -7,8 +7,8 @@
 
 void engine_screen_manager_init()
 {
-	engine_font_manager_draw_text("PRESS LEFT, RIGHT OR DOWN", 4, 8);
-	engine_font_manager_draw_text("PRESS FIRE1 TO CLEAR DATA", 4, 9);
+	engine_font_manager_draw_text("PRESS LEFT, RIGHT OR DOWN?", 4, 8);
+	engine_font_manager_draw_text("PRESS FIRE1 TO CLEAR DATA!", 4, 9);
 }
 
 void engine_screen_manager_update()
