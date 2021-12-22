@@ -1,0 +1,458 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 4.1.0 #12072 (MINGW64)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module input_manager
+                                      6 	.optsdcc -mz80
+                                      7 	
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl _devkit_SMS_getKeysStatus
+                                     12 	.globl _engine_input_manager_update
+                                     13 	.globl _engine_input_manager_hold_up
+                                     14 	.globl _engine_input_manager_hold_down
+                                     15 	.globl _engine_input_manager_hold_left
+                                     16 	.globl _engine_input_manager_hold_right
+                                     17 	.globl _engine_input_manager_hold_fire1
+                                     18 	.globl _engine_input_manager_hold_fire2
+                                     19 	.globl _engine_input_manager_move_up
+                                     20 	.globl _engine_input_manager_move_down
+                                     21 	.globl _engine_input_manager_move_left
+                                     22 	.globl _engine_input_manager_move_right
+                                     23 	.globl _engine_input_manager_move_fire1
+                                     24 	.globl _engine_input_manager_move_fire2
+                                     25 ;--------------------------------------------------------
+                                     26 ; special function registers
+                                     27 ;--------------------------------------------------------
+                                     28 ;--------------------------------------------------------
+                                     29 ; ram data
+                                     30 ;--------------------------------------------------------
+                                     31 	.area _DATA
+                                     32 ;--------------------------------------------------------
+                                     33 ; ram data
+                                     34 ;--------------------------------------------------------
+                                     35 	.area _INITIALIZED
+                           000000    36 Finput_manager$curr_joypad1$0_0$0==.
+      000000                         37 _curr_joypad1:
+      000000                         38 	.ds 2
+                           000002    39 Finput_manager$prev_joypad1$0_0$0==.
+      000002                         40 _prev_joypad1:
+      000002                         41 	.ds 2
+                                     42 ;--------------------------------------------------------
+                                     43 ; absolute external ram data
+                                     44 ;--------------------------------------------------------
+                                     45 	.area _DABS (ABS)
+                                     46 ;--------------------------------------------------------
+                                     47 ; global & static initialisations
+                                     48 ;--------------------------------------------------------
+                                     49 	.area _HOME
+                                     50 	.area _GSINIT
+                                     51 	.area _GSFINAL
+                                     52 	.area _GSINIT
+                                     53 ;--------------------------------------------------------
+                                     54 ; Home
+                                     55 ;--------------------------------------------------------
+                                     56 	.area _HOME
+                                     57 	.area _HOME
+                                     58 ;--------------------------------------------------------
+                                     59 ; code
+                                     60 ;--------------------------------------------------------
+                                     61 	.area _CODE
+                           000000    62 	G$engine_input_manager_update$0$0	= .
+                                     63 	.globl	G$engine_input_manager_update$0$0
+                           000000    64 	C$input_manager.c$13$0_0$19	= .
+                                     65 	.globl	C$input_manager.c$13$0_0$19
+                                     66 ;input_manager.c:13: void engine_input_manager_update()
+                                     67 ;	---------------------------------
+                                     68 ; Function engine_input_manager_update
+                                     69 ; ---------------------------------
+      000000                         70 _engine_input_manager_update::
+                           000000    71 	C$input_manager.c$15$1_0$19	= .
+                                     72 	.globl	C$input_manager.c$15$1_0$19
+                                     73 ;input_manager.c:15: prev_joypad1 = curr_joypad1;
+      000000 2Ar00r00         [16]   74 	ld	hl, (_curr_joypad1)
+      000003 22r02r00         [16]   75 	ld	(_prev_joypad1), hl
+                           000006    76 	C$input_manager.c$16$1_0$19	= .
+                                     77 	.globl	C$input_manager.c$16$1_0$19
+                                     78 ;input_manager.c:16: curr_joypad1 = devkit_SMS_getKeysStatus();
+      000006 CDr00r00         [17]   79 	call	_devkit_SMS_getKeysStatus
+      000009 22r00r00         [16]   80 	ld	(_curr_joypad1), hl
+                           00000C    81 	C$input_manager.c$17$1_0$19	= .
+                                     82 	.globl	C$input_manager.c$17$1_0$19
+                                     83 ;input_manager.c:17: }
+                           00000C    84 	C$input_manager.c$17$1_0$19	= .
+                                     85 	.globl	C$input_manager.c$17$1_0$19
+                           00000C    86 	XG$engine_input_manager_update$0$0	= .
+                                     87 	.globl	XG$engine_input_manager_update$0$0
+      00000C C9               [10]   88 	ret
+                           00000D    89 	G$engine_input_manager_hold_up$0$0	= .
+                                     90 	.globl	G$engine_input_manager_hold_up$0$0
+                           00000D    91 	C$input_manager.c$20$1_0$20	= .
+                                     92 	.globl	C$input_manager.c$20$1_0$20
+                                     93 ;input_manager.c:20: unsigned char engine_input_manager_hold_up()
+                                     94 ;	---------------------------------
+                                     95 ; Function engine_input_manager_hold_up
+                                     96 ; ---------------------------------
+      00000D                         97 _engine_input_manager_hold_up::
+                           00000D    98 	C$input_manager.c$22$1_0$20	= .
+                                     99 	.globl	C$input_manager.c$22$1_0$20
+                                    100 ;input_manager.c:22: return engine_input_manager_hold( devkit_PORT_A_KEY_UP() );
+      00000D CDr00r00         [17]  101 	call	_devkit_PORT_A_KEY_UP
+      000010 E5               [11]  102 	push	hl
+      000011 CDr79r00         [17]  103 	call	_engine_input_manager_hold
+      000014 F1               [10]  104 	pop	af
+                           000015   105 	C$input_manager.c$23$1_0$20	= .
+                                    106 	.globl	C$input_manager.c$23$1_0$20
+                                    107 ;input_manager.c:23: }
+                           000015   108 	C$input_manager.c$23$1_0$20	= .
+                                    109 	.globl	C$input_manager.c$23$1_0$20
+                           000015   110 	XG$engine_input_manager_hold_up$0$0	= .
+                                    111 	.globl	XG$engine_input_manager_hold_up$0$0
+      000015 C9               [10]  112 	ret
+                           000016   113 	G$engine_input_manager_hold_down$0$0	= .
+                                    114 	.globl	G$engine_input_manager_hold_down$0$0
+                           000016   115 	C$input_manager.c$24$1_0$21	= .
+                                    116 	.globl	C$input_manager.c$24$1_0$21
+                                    117 ;input_manager.c:24: unsigned char engine_input_manager_hold_down()
+                                    118 ;	---------------------------------
+                                    119 ; Function engine_input_manager_hold_down
+                                    120 ; ---------------------------------
+      000016                        121 _engine_input_manager_hold_down::
+                           000016   122 	C$input_manager.c$26$1_0$21	= .
+                                    123 	.globl	C$input_manager.c$26$1_0$21
+                                    124 ;input_manager.c:26: return engine_input_manager_hold( devkit_PORT_A_KEY_DOWN() );
+      000016 CDr00r00         [17]  125 	call	_devkit_PORT_A_KEY_DOWN
+      000019 E5               [11]  126 	push	hl
+      00001A CDr79r00         [17]  127 	call	_engine_input_manager_hold
+      00001D F1               [10]  128 	pop	af
+                           00001E   129 	C$input_manager.c$27$1_0$21	= .
+                                    130 	.globl	C$input_manager.c$27$1_0$21
+                                    131 ;input_manager.c:27: }
+                           00001E   132 	C$input_manager.c$27$1_0$21	= .
+                                    133 	.globl	C$input_manager.c$27$1_0$21
+                           00001E   134 	XG$engine_input_manager_hold_down$0$0	= .
+                                    135 	.globl	XG$engine_input_manager_hold_down$0$0
+      00001E C9               [10]  136 	ret
+                           00001F   137 	G$engine_input_manager_hold_left$0$0	= .
+                                    138 	.globl	G$engine_input_manager_hold_left$0$0
+                           00001F   139 	C$input_manager.c$28$1_0$22	= .
+                                    140 	.globl	C$input_manager.c$28$1_0$22
+                                    141 ;input_manager.c:28: unsigned char engine_input_manager_hold_left()
+                                    142 ;	---------------------------------
+                                    143 ; Function engine_input_manager_hold_left
+                                    144 ; ---------------------------------
+      00001F                        145 _engine_input_manager_hold_left::
+                           00001F   146 	C$input_manager.c$30$1_0$22	= .
+                                    147 	.globl	C$input_manager.c$30$1_0$22
+                                    148 ;input_manager.c:30: return engine_input_manager_hold( devkit_PORT_A_KEY_LEFT() );
+      00001F CDr00r00         [17]  149 	call	_devkit_PORT_A_KEY_LEFT
+      000022 E5               [11]  150 	push	hl
+      000023 CDr79r00         [17]  151 	call	_engine_input_manager_hold
+      000026 F1               [10]  152 	pop	af
+                           000027   153 	C$input_manager.c$31$1_0$22	= .
+                                    154 	.globl	C$input_manager.c$31$1_0$22
+                                    155 ;input_manager.c:31: }
+                           000027   156 	C$input_manager.c$31$1_0$22	= .
+                                    157 	.globl	C$input_manager.c$31$1_0$22
+                           000027   158 	XG$engine_input_manager_hold_left$0$0	= .
+                                    159 	.globl	XG$engine_input_manager_hold_left$0$0
+      000027 C9               [10]  160 	ret
+                           000028   161 	G$engine_input_manager_hold_right$0$0	= .
+                                    162 	.globl	G$engine_input_manager_hold_right$0$0
+                           000028   163 	C$input_manager.c$32$1_0$23	= .
+                                    164 	.globl	C$input_manager.c$32$1_0$23
+                                    165 ;input_manager.c:32: unsigned char engine_input_manager_hold_right()
+                                    166 ;	---------------------------------
+                                    167 ; Function engine_input_manager_hold_right
+                                    168 ; ---------------------------------
+      000028                        169 _engine_input_manager_hold_right::
+                           000028   170 	C$input_manager.c$34$1_0$23	= .
+                                    171 	.globl	C$input_manager.c$34$1_0$23
+                                    172 ;input_manager.c:34: return engine_input_manager_hold( devkit_PORT_A_KEY_RIGHT() );
+      000028 CDr00r00         [17]  173 	call	_devkit_PORT_A_KEY_RIGHT
+      00002B E5               [11]  174 	push	hl
+      00002C CDr79r00         [17]  175 	call	_engine_input_manager_hold
+      00002F F1               [10]  176 	pop	af
+                           000030   177 	C$input_manager.c$35$1_0$23	= .
+                                    178 	.globl	C$input_manager.c$35$1_0$23
+                                    179 ;input_manager.c:35: }
+                           000030   180 	C$input_manager.c$35$1_0$23	= .
+                                    181 	.globl	C$input_manager.c$35$1_0$23
+                           000030   182 	XG$engine_input_manager_hold_right$0$0	= .
+                                    183 	.globl	XG$engine_input_manager_hold_right$0$0
+      000030 C9               [10]  184 	ret
+                           000031   185 	G$engine_input_manager_hold_fire1$0$0	= .
+                                    186 	.globl	G$engine_input_manager_hold_fire1$0$0
+                           000031   187 	C$input_manager.c$36$1_0$24	= .
+                                    188 	.globl	C$input_manager.c$36$1_0$24
+                                    189 ;input_manager.c:36: unsigned char engine_input_manager_hold_fire1()
+                                    190 ;	---------------------------------
+                                    191 ; Function engine_input_manager_hold_fire1
+                                    192 ; ---------------------------------
+      000031                        193 _engine_input_manager_hold_fire1::
+                           000031   194 	C$input_manager.c$38$1_0$24	= .
+                                    195 	.globl	C$input_manager.c$38$1_0$24
+                                    196 ;input_manager.c:38: return engine_input_manager_hold( devkit_PORT_A_KEY_1() );
+      000031 CDr00r00         [17]  197 	call	_devkit_PORT_A_KEY_1
+      000034 E5               [11]  198 	push	hl
+      000035 CDr79r00         [17]  199 	call	_engine_input_manager_hold
+      000038 F1               [10]  200 	pop	af
+                           000039   201 	C$input_manager.c$39$1_0$24	= .
+                                    202 	.globl	C$input_manager.c$39$1_0$24
+                                    203 ;input_manager.c:39: }
+                           000039   204 	C$input_manager.c$39$1_0$24	= .
+                                    205 	.globl	C$input_manager.c$39$1_0$24
+                           000039   206 	XG$engine_input_manager_hold_fire1$0$0	= .
+                                    207 	.globl	XG$engine_input_manager_hold_fire1$0$0
+      000039 C9               [10]  208 	ret
+                           00003A   209 	G$engine_input_manager_hold_fire2$0$0	= .
+                                    210 	.globl	G$engine_input_manager_hold_fire2$0$0
+                           00003A   211 	C$input_manager.c$40$1_0$25	= .
+                                    212 	.globl	C$input_manager.c$40$1_0$25
+                                    213 ;input_manager.c:40: unsigned char engine_input_manager_hold_fire2()
+                                    214 ;	---------------------------------
+                                    215 ; Function engine_input_manager_hold_fire2
+                                    216 ; ---------------------------------
+      00003A                        217 _engine_input_manager_hold_fire2::
+                           00003A   218 	C$input_manager.c$42$1_0$25	= .
+                                    219 	.globl	C$input_manager.c$42$1_0$25
+                                    220 ;input_manager.c:42: return engine_input_manager_hold( devkit_PORT_A_KEY_2() );
+      00003A CDr00r00         [17]  221 	call	_devkit_PORT_A_KEY_2
+      00003D E5               [11]  222 	push	hl
+      00003E CDr79r00         [17]  223 	call	_engine_input_manager_hold
+      000041 F1               [10]  224 	pop	af
+                           000042   225 	C$input_manager.c$43$1_0$25	= .
+                                    226 	.globl	C$input_manager.c$43$1_0$25
+                                    227 ;input_manager.c:43: }
+                           000042   228 	C$input_manager.c$43$1_0$25	= .
+                                    229 	.globl	C$input_manager.c$43$1_0$25
+                           000042   230 	XG$engine_input_manager_hold_fire2$0$0	= .
+                                    231 	.globl	XG$engine_input_manager_hold_fire2$0$0
+      000042 C9               [10]  232 	ret
+                           000043   233 	G$engine_input_manager_move_up$0$0	= .
+                                    234 	.globl	G$engine_input_manager_move_up$0$0
+                           000043   235 	C$input_manager.c$46$1_0$26	= .
+                                    236 	.globl	C$input_manager.c$46$1_0$26
+                                    237 ;input_manager.c:46: unsigned char engine_input_manager_move_up()
+                                    238 ;	---------------------------------
+                                    239 ; Function engine_input_manager_move_up
+                                    240 ; ---------------------------------
+      000043                        241 _engine_input_manager_move_up::
+                           000043   242 	C$input_manager.c$48$1_0$26	= .
+                                    243 	.globl	C$input_manager.c$48$1_0$26
+                                    244 ;input_manager.c:48: return engine_input_manager_move( devkit_PORT_A_KEY_UP() );
+      000043 CDr00r00         [17]  245 	call	_devkit_PORT_A_KEY_UP
+      000046 E5               [11]  246 	push	hl
+      000047 CDrB7r00         [17]  247 	call	_engine_input_manager_move
+      00004A F1               [10]  248 	pop	af
+                           00004B   249 	C$input_manager.c$49$1_0$26	= .
+                                    250 	.globl	C$input_manager.c$49$1_0$26
+                                    251 ;input_manager.c:49: }
+                           00004B   252 	C$input_manager.c$49$1_0$26	= .
+                                    253 	.globl	C$input_manager.c$49$1_0$26
+                           00004B   254 	XG$engine_input_manager_move_up$0$0	= .
+                                    255 	.globl	XG$engine_input_manager_move_up$0$0
+      00004B C9               [10]  256 	ret
+                           00004C   257 	G$engine_input_manager_move_down$0$0	= .
+                                    258 	.globl	G$engine_input_manager_move_down$0$0
+                           00004C   259 	C$input_manager.c$50$1_0$27	= .
+                                    260 	.globl	C$input_manager.c$50$1_0$27
+                                    261 ;input_manager.c:50: unsigned char engine_input_manager_move_down()
+                                    262 ;	---------------------------------
+                                    263 ; Function engine_input_manager_move_down
+                                    264 ; ---------------------------------
+      00004C                        265 _engine_input_manager_move_down::
+                           00004C   266 	C$input_manager.c$52$1_0$27	= .
+                                    267 	.globl	C$input_manager.c$52$1_0$27
+                                    268 ;input_manager.c:52: return engine_input_manager_move( devkit_PORT_A_KEY_DOWN() );
+      00004C CDr00r00         [17]  269 	call	_devkit_PORT_A_KEY_DOWN
+      00004F E5               [11]  270 	push	hl
+      000050 CDrB7r00         [17]  271 	call	_engine_input_manager_move
+      000053 F1               [10]  272 	pop	af
+                           000054   273 	C$input_manager.c$53$1_0$27	= .
+                                    274 	.globl	C$input_manager.c$53$1_0$27
+                                    275 ;input_manager.c:53: }
+                           000054   276 	C$input_manager.c$53$1_0$27	= .
+                                    277 	.globl	C$input_manager.c$53$1_0$27
+                           000054   278 	XG$engine_input_manager_move_down$0$0	= .
+                                    279 	.globl	XG$engine_input_manager_move_down$0$0
+      000054 C9               [10]  280 	ret
+                           000055   281 	G$engine_input_manager_move_left$0$0	= .
+                                    282 	.globl	G$engine_input_manager_move_left$0$0
+                           000055   283 	C$input_manager.c$54$1_0$28	= .
+                                    284 	.globl	C$input_manager.c$54$1_0$28
+                                    285 ;input_manager.c:54: unsigned char engine_input_manager_move_left()
+                                    286 ;	---------------------------------
+                                    287 ; Function engine_input_manager_move_left
+                                    288 ; ---------------------------------
+      000055                        289 _engine_input_manager_move_left::
+                           000055   290 	C$input_manager.c$56$1_0$28	= .
+                                    291 	.globl	C$input_manager.c$56$1_0$28
+                                    292 ;input_manager.c:56: return engine_input_manager_move( devkit_PORT_A_KEY_LEFT() );
+      000055 CDr00r00         [17]  293 	call	_devkit_PORT_A_KEY_LEFT
+      000058 E5               [11]  294 	push	hl
+      000059 CDrB7r00         [17]  295 	call	_engine_input_manager_move
+      00005C F1               [10]  296 	pop	af
+                           00005D   297 	C$input_manager.c$57$1_0$28	= .
+                                    298 	.globl	C$input_manager.c$57$1_0$28
+                                    299 ;input_manager.c:57: }
+                           00005D   300 	C$input_manager.c$57$1_0$28	= .
+                                    301 	.globl	C$input_manager.c$57$1_0$28
+                           00005D   302 	XG$engine_input_manager_move_left$0$0	= .
+                                    303 	.globl	XG$engine_input_manager_move_left$0$0
+      00005D C9               [10]  304 	ret
+                           00005E   305 	G$engine_input_manager_move_right$0$0	= .
+                                    306 	.globl	G$engine_input_manager_move_right$0$0
+                           00005E   307 	C$input_manager.c$58$1_0$29	= .
+                                    308 	.globl	C$input_manager.c$58$1_0$29
+                                    309 ;input_manager.c:58: unsigned char engine_input_manager_move_right()
+                                    310 ;	---------------------------------
+                                    311 ; Function engine_input_manager_move_right
+                                    312 ; ---------------------------------
+      00005E                        313 _engine_input_manager_move_right::
+                           00005E   314 	C$input_manager.c$60$1_0$29	= .
+                                    315 	.globl	C$input_manager.c$60$1_0$29
+                                    316 ;input_manager.c:60: return engine_input_manager_move( devkit_PORT_A_KEY_RIGHT() );
+      00005E CDr00r00         [17]  317 	call	_devkit_PORT_A_KEY_RIGHT
+      000061 E5               [11]  318 	push	hl
+      000062 CDrB7r00         [17]  319 	call	_engine_input_manager_move
+      000065 F1               [10]  320 	pop	af
+                           000066   321 	C$input_manager.c$61$1_0$29	= .
+                                    322 	.globl	C$input_manager.c$61$1_0$29
+                                    323 ;input_manager.c:61: }
+                           000066   324 	C$input_manager.c$61$1_0$29	= .
+                                    325 	.globl	C$input_manager.c$61$1_0$29
+                           000066   326 	XG$engine_input_manager_move_right$0$0	= .
+                                    327 	.globl	XG$engine_input_manager_move_right$0$0
+      000066 C9               [10]  328 	ret
+                           000067   329 	G$engine_input_manager_move_fire1$0$0	= .
+                                    330 	.globl	G$engine_input_manager_move_fire1$0$0
+                           000067   331 	C$input_manager.c$62$1_0$30	= .
+                                    332 	.globl	C$input_manager.c$62$1_0$30
+                                    333 ;input_manager.c:62: unsigned char engine_input_manager_move_fire1()
+                                    334 ;	---------------------------------
+                                    335 ; Function engine_input_manager_move_fire1
+                                    336 ; ---------------------------------
+      000067                        337 _engine_input_manager_move_fire1::
+                           000067   338 	C$input_manager.c$64$1_0$30	= .
+                                    339 	.globl	C$input_manager.c$64$1_0$30
+                                    340 ;input_manager.c:64: return engine_input_manager_move( devkit_PORT_A_KEY_1() );
+      000067 CDr00r00         [17]  341 	call	_devkit_PORT_A_KEY_1
+      00006A E5               [11]  342 	push	hl
+      00006B CDrB7r00         [17]  343 	call	_engine_input_manager_move
+      00006E F1               [10]  344 	pop	af
+                           00006F   345 	C$input_manager.c$65$1_0$30	= .
+                                    346 	.globl	C$input_manager.c$65$1_0$30
+                                    347 ;input_manager.c:65: }
+                           00006F   348 	C$input_manager.c$65$1_0$30	= .
+                                    349 	.globl	C$input_manager.c$65$1_0$30
+                           00006F   350 	XG$engine_input_manager_move_fire1$0$0	= .
+                                    351 	.globl	XG$engine_input_manager_move_fire1$0$0
+      00006F C9               [10]  352 	ret
+                           000070   353 	G$engine_input_manager_move_fire2$0$0	= .
+                                    354 	.globl	G$engine_input_manager_move_fire2$0$0
+                           000070   355 	C$input_manager.c$66$1_0$31	= .
+                                    356 	.globl	C$input_manager.c$66$1_0$31
+                                    357 ;input_manager.c:66: unsigned char engine_input_manager_move_fire2()
+                                    358 ;	---------------------------------
+                                    359 ; Function engine_input_manager_move_fire2
+                                    360 ; ---------------------------------
+      000070                        361 _engine_input_manager_move_fire2::
+                           000070   362 	C$input_manager.c$68$1_0$31	= .
+                                    363 	.globl	C$input_manager.c$68$1_0$31
+                                    364 ;input_manager.c:68: return engine_input_manager_move( devkit_PORT_A_KEY_2() );
+      000070 CDr00r00         [17]  365 	call	_devkit_PORT_A_KEY_2
+      000073 E5               [11]  366 	push	hl
+      000074 CDrB7r00         [17]  367 	call	_engine_input_manager_move
+      000077 F1               [10]  368 	pop	af
+                           000078   369 	C$input_manager.c$69$1_0$31	= .
+                                    370 	.globl	C$input_manager.c$69$1_0$31
+                                    371 ;input_manager.c:69: }
+                           000078   372 	C$input_manager.c$69$1_0$31	= .
+                                    373 	.globl	C$input_manager.c$69$1_0$31
+                           000078   374 	XG$engine_input_manager_move_fire2$0$0	= .
+                                    375 	.globl	XG$engine_input_manager_move_fire2$0$0
+      000078 C9               [10]  376 	ret
+                           000079   377 	Finput_manager$engine_input_manager_hold$0$0	= .
+                                    378 	.globl	Finput_manager$engine_input_manager_hold$0$0
+                           000079   379 	C$input_manager.c$72$1_0$33	= .
+                                    380 	.globl	C$input_manager.c$72$1_0$33
+                                    381 ;input_manager.c:72: static unsigned char engine_input_manager_hold( unsigned int data )
+                                    382 ;	---------------------------------
+                                    383 ; Function engine_input_manager_hold
+                                    384 ; ---------------------------------
+      000079                        385 _engine_input_manager_hold:
+                           000079   386 	C$input_manager.c$74$1_0$33	= .
+                                    387 	.globl	C$input_manager.c$74$1_0$33
+                                    388 ;input_manager.c:74: return curr_joypad1 & data && !( prev_joypad1 & data );
+      000079 3Ar00r00         [13]  389 	ld	a,(#_curr_joypad1 + 0)
+      00007C FD 21 02 00      [14]  390 	ld	iy, #2
+      000080 FD 39            [15]  391 	add	iy, sp
+      000082 FD A6 00         [19]  392 	and	a, 0 (iy)
+      000085 4F               [ 4]  393 	ld	c, a
+      000086 3Ar01r00         [13]  394 	ld	a,(#_curr_joypad1 + 1)
+      000089 FD 21 02 00      [14]  395 	ld	iy, #2
+      00008D FD 39            [15]  396 	add	iy, sp
+      00008F FD A6 01         [19]  397 	and	a, 1 (iy)
+      000092 B1               [ 4]  398 	or	a, c
+      000093 28 1C            [12]  399 	jr	Z, 00103$
+      000095 3Ar02r00         [13]  400 	ld	a,(#_prev_joypad1 + 0)
+      000098 FD 21 02 00      [14]  401 	ld	iy, #2
+      00009C FD 39            [15]  402 	add	iy, sp
+      00009E FD A6 00         [19]  403 	and	a, 0 (iy)
+      0000A1 4F               [ 4]  404 	ld	c, a
+      0000A2 3Ar03r00         [13]  405 	ld	a,(#_prev_joypad1 + 1)
+      0000A5 FD 21 02 00      [14]  406 	ld	iy, #2
+      0000A9 FD 39            [15]  407 	add	iy, sp
+      0000AB FD A6 01         [19]  408 	and	a, 1 (iy)
+      0000AE B1               [ 4]  409 	or	a, c
+      0000AF 28 03            [12]  410 	jr	Z, 00104$
+      0000B1                        411 00103$:
+      0000B1 2E 00            [ 7]  412 	ld	l, #0x00
+      0000B3 C9               [10]  413 	ret
+      0000B4                        414 00104$:
+      0000B4 2E 01            [ 7]  415 	ld	l, #0x01
+                           0000B6   416 	C$input_manager.c$75$1_0$33	= .
+                                    417 	.globl	C$input_manager.c$75$1_0$33
+                                    418 ;input_manager.c:75: }
+                           0000B6   419 	C$input_manager.c$75$1_0$33	= .
+                                    420 	.globl	C$input_manager.c$75$1_0$33
+                           0000B6   421 	XFinput_manager$engine_input_manager_hold$0$0	= .
+                                    422 	.globl	XFinput_manager$engine_input_manager_hold$0$0
+      0000B6 C9               [10]  423 	ret
+                           0000B7   424 	Finput_manager$engine_input_manager_move$0$0	= .
+                                    425 	.globl	Finput_manager$engine_input_manager_move$0$0
+                           0000B7   426 	C$input_manager.c$76$1_0$35	= .
+                                    427 	.globl	C$input_manager.c$76$1_0$35
+                                    428 ;input_manager.c:76: static unsigned char engine_input_manager_move( unsigned int data )
+                                    429 ;	---------------------------------
+                                    430 ; Function engine_input_manager_move
+                                    431 ; ---------------------------------
+      0000B7                        432 _engine_input_manager_move:
+                           0000B7   433 	C$input_manager.c$78$1_0$35	= .
+                                    434 	.globl	C$input_manager.c$78$1_0$35
+                                    435 ;input_manager.c:78: return curr_joypad1 & data;
+      0000B7 3Ar00r00         [13]  436 	ld	a,(#_curr_joypad1 + 0)
+      0000BA FD 21 02 00      [14]  437 	ld	iy, #2
+      0000BE FD 39            [15]  438 	add	iy, sp
+      0000C0 FD 4E 00         [19]  439 	ld	c, 0 (iy)
+      0000C3 A1               [ 4]  440 	and	a, c
+      0000C4 6F               [ 4]  441 	ld	l, a
+                           0000C5   442 	C$input_manager.c$79$1_0$35	= .
+                                    443 	.globl	C$input_manager.c$79$1_0$35
+                                    444 ;input_manager.c:79: }
+                           0000C5   445 	C$input_manager.c$79$1_0$35	= .
+                                    446 	.globl	C$input_manager.c$79$1_0$35
+                           0000C5   447 	XFinput_manager$engine_input_manager_move$0$0	= .
+                                    448 	.globl	XFinput_manager$engine_input_manager_move$0$0
+      0000C5 C9               [10]  449 	ret
+                                    450 	.area _CODE
+                                    451 	.area _INITIALIZER
+                           000000   452 Finput_manager$__xinit_curr_joypad1$0_0$0 == .
+      000000                        453 __xinit__curr_joypad1:
+      000000 00 00                  454 	.dw #0x0000
+                           000002   455 Finput_manager$__xinit_prev_joypad1$0_0$0 == .
+      000002                        456 __xinit__prev_joypad1:
+      000002 00 00                  457 	.dw #0x0000
+                                    458 	.area _CABS (ABS)

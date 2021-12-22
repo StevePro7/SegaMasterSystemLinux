@@ -1,0 +1,81 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 4.1.0 #12072 (MINGW64)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module asm_manager
+                                      6 	.optsdcc -mz80
+                                      7 	
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl _engine_asm_manager_clear_VRAM
+                                     12 ;--------------------------------------------------------
+                                     13 ; special function registers
+                                     14 ;--------------------------------------------------------
+                           0000BF    15 G$VDPControlPort$0_0$0 == 0x00bf
+                           0000BF    16 _VDPControlPort	=	0x00bf
+                           0000BE    17 G$VDPDataPort$0_0$0 == 0x00be
+                           0000BE    18 _VDPDataPort	=	0x00be
+                                     19 ;--------------------------------------------------------
+                                     20 ; ram data
+                                     21 ;--------------------------------------------------------
+                                     22 	.area _DATA
+                                     23 ;--------------------------------------------------------
+                                     24 ; ram data
+                                     25 ;--------------------------------------------------------
+                                     26 	.area _INITIALIZED
+                                     27 ;--------------------------------------------------------
+                                     28 ; absolute external ram data
+                                     29 ;--------------------------------------------------------
+                                     30 	.area _DABS (ABS)
+                                     31 ;--------------------------------------------------------
+                                     32 ; global & static initialisations
+                                     33 ;--------------------------------------------------------
+                                     34 	.area _HOME
+                                     35 	.area _GSINIT
+                                     36 	.area _GSFINAL
+                                     37 	.area _GSINIT
+                                     38 ;--------------------------------------------------------
+                                     39 ; Home
+                                     40 ;--------------------------------------------------------
+                                     41 	.area _HOME
+                                     42 	.area _HOME
+                                     43 ;--------------------------------------------------------
+                                     44 ; code
+                                     45 ;--------------------------------------------------------
+                                     46 	.area _CODE
+                           000000    47 	G$engine_asm_manager_clear_VRAM$0$0	= .
+                                     48 	.globl	G$engine_asm_manager_clear_VRAM$0$0
+                           000000    49 	C$asm_manager.c$11$0_0$1	= .
+                                     50 	.globl	C$asm_manager.c$11$0_0$1
+                                     51 ;asm_manager.c:11: void engine_asm_manager_clear_VRAM()
+                                     52 ;	---------------------------------
+                                     53 ; Function engine_asm_manager_clear_VRAM
+                                     54 ; ---------------------------------
+      000000                         55 _engine_asm_manager_clear_VRAM::
+                           000000    56 	C$asm_manager.c$30$1_0$1	= .
+                                     57 	.globl	C$asm_manager.c$30$1_0$1
+                                     58 ;asm_manager.c:30: __endasm;
+      000000 3E 00            [ 7]   59 	ld	a, #0x00
+      000002 D3 BF            [11]   60 	out(	_VDPControlPort ), a
+      000004 3E 40            [ 7]   61 	ld	a, #0x40
+      000006 D3 BF            [11]   62 	out(	_VDPControlPort ), a
+      000008 01 00 40         [10]   63 	ld	bc, #0x4000
+      00000B                         64 	  ClearVRAMLoop:
+      00000B 3E 00            [ 7]   65 	ld	a, #0x00
+      00000D D3 BE            [11]   66 	out(	_VDPDataPort ), a
+      00000F 0B               [ 6]   67 	dec	bc
+      000010 78               [ 4]   68 	ld	a, b
+      000011 B1               [ 4]   69 	or	c
+      000012 C2r0Br00         [10]   70 	jp	nz, ClearVRAMLoop
+                           000015    71 	C$asm_manager.c$33$1_0$1	= .
+                                     72 	.globl	C$asm_manager.c$33$1_0$1
+                                     73 ;asm_manager.c:33: }
+                           000015    74 	C$asm_manager.c$33$1_0$1	= .
+                                     75 	.globl	C$asm_manager.c$33$1_0$1
+                           000015    76 	XG$engine_asm_manager_clear_VRAM$0$0	= .
+                                     77 	.globl	XG$engine_asm_manager_clear_VRAM$0$0
+      000015 C9               [10]   78 	ret
+                                     79 	.area _CODE
+                                     80 	.area _INITIALIZER
+                                     81 	.area _CABS (ABS)
