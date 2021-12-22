@@ -1,4 +1,4 @@
-#include "SMSlib.h"
+#include "../lib/SMSlib.h"
 
 void main(void)
 {

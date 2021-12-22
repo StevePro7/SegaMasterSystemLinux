@@ -21,9 +21,6 @@ echo.
 
 echo Link
 sdcc --debug -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-loc 0xC000 ^
-crt0_sms.rel main.rel SMSlib.lib
-
-sdcc --debug -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-loc 0xC000 ^
 ../crt0/crt0_sms.rel main.rel ^
 ../lib/SMSlib.lib ^
 content/gfx.rel
@@ -41,4 +38,4 @@ if exist "*.noi" del "*.noi" > nul
 if exist "*.sym" del "*.sym" > nul
 
 ::java -jar C:/SEGA/Emulicious/Emulicious.jar output.sms
-::output.sms
+output.sms
