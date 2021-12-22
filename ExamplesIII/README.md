@@ -11,4 +11,25 @@ but upgrade to latest devkitSMS SMSlib.h and SMSlib.lib will cause issues??
 https://code.visualstudio.com/docs/cpp/customize-default-settings-cpp
 https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/vscode.md
 
+Reference:
+~\GitHub\StevePro7\Blogger\Linux\MyCCpp
+
 Create folder	HelloWorld
+
+
+tasks.json
+"./build.bat"	cross platform
+
+launch.json
+"preLaunchTask": "./build.bat"
+
+settings.json
+"C_Cpp.errorSquiggles": "Disabled"
+
+
+Ctrl+F5		Run
+F5			Debug
+
+Warning
+vscode expected a type specifier
+just disable C++ squiggles above
