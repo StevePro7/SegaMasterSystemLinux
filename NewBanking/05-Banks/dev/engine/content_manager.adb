@@ -33,6 +33,12 @@ S:G$devkit_SMS_queryPauseRequested$0_0$0({2}DF,SC:U),C,0,0
 S:G$devkit_SMS_resetPauseRequest$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_isCollisionDetected$0_0$0({2}DF,SC:U),C,0,0
 S:G$devkit_SMS_getKeysStatus$0_0$0({2}DF,SI:U),C,0,0
+S:G$devkit_PORT_A_KEY_UP$0_0$0({2}DF,SI:U),C,0,0
+S:G$devkit_PORT_A_KEY_DOWN$0_0$0({2}DF,SI:U),C,0,0
+S:G$devkit_PORT_A_KEY_LEFT$0_0$0({2}DF,SI:U),C,0,0
+S:G$devkit_PORT_A_KEY_RIGHT$0_0$0({2}DF,SI:U),C,0,0
+S:G$devkit_PORT_A_KEY_1$0_0$0({2}DF,SI:U),C,0,0
+S:G$devkit_PORT_A_KEY_2$0_0$0({2}DF,SI:U),C,0,0
 S:G$devkit_SPRITEMODE_NORMAL$0_0$0({2}DF,SC:U),C,0,0
 S:G$devkit_VDPFEATURE_HIDEFIRSTCOL$0_0$0({2}DF,SI:U),C,0,0
 S:G$devkit_TILE_PRIORITY$0_0$0({2}DF,SI:U),C,0,0
