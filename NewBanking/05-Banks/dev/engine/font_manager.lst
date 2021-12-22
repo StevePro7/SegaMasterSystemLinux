@@ -1,0 +1,453 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 4.1.0 #12072 (MINGW64)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module font_manager
+                                      6 	.optsdcc -mz80
+                                      7 	
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl _devkit_SMS_setTile
+                                     12 	.globl _devkit_SMS_setNextTileatXY
+                                     13 	.globl _engine_font_manager_draw_char
+                                     14 	.globl _engine_font_manager_draw_text
+                                     15 	.globl _engine_font_manager_draw_data
+                                     16 	.globl _engine_font_manager_draw_data_ZERO
+                                     17 ;--------------------------------------------------------
+                                     18 ; special function registers
+                                     19 ;--------------------------------------------------------
+                                     20 ;--------------------------------------------------------
+                                     21 ; ram data
+                                     22 ;--------------------------------------------------------
+                                     23 	.area _DATA
+                                     24 ;--------------------------------------------------------
+                                     25 ; ram data
+                                     26 ;--------------------------------------------------------
+                                     27 	.area _INITIALIZED
+                                     28 ;--------------------------------------------------------
+                                     29 ; absolute external ram data
+                                     30 ;--------------------------------------------------------
+                                     31 	.area _DABS (ABS)
+                                     32 ;--------------------------------------------------------
+                                     33 ; global & static initialisations
+                                     34 ;--------------------------------------------------------
+                                     35 	.area _HOME
+                                     36 	.area _GSINIT
+                                     37 	.area _GSFINAL
+                                     38 	.area _GSINIT
+                                     39 ;--------------------------------------------------------
+                                     40 ; Home
+                                     41 ;--------------------------------------------------------
+                                     42 	.area _HOME
+                                     43 	.area _HOME
+                                     44 ;--------------------------------------------------------
+                                     45 ; code
+                                     46 ;--------------------------------------------------------
+                                     47 	.area _CODE
+                           000000    48 	G$engine_font_manager_draw_char$0$0	= .
+                                     49 	.globl	G$engine_font_manager_draw_char$0$0
+                           000000    50 	C$font_manager.c$10$0_0$22	= .
+                                     51 	.globl	C$font_manager.c$10$0_0$22
+                                     52 ;font_manager.c:10: void engine_font_manager_draw_char(unsigned char ch, unsigned char x, unsigned char y)
+                                     53 ;	---------------------------------
+                                     54 ; Function engine_font_manager_draw_char
+                                     55 ; ---------------------------------
+      000000                         56 _engine_font_manager_draw_char::
+      000000 DD E5            [15]   57 	push	ix
+      000002 DD 21 00 00      [14]   58 	ld	ix,#0
+      000006 DD 39            [15]   59 	add	ix,sp
+                           000008    60 	C$font_manager.c$12$2_0$22	= .
+                                     61 	.globl	C$font_manager.c$12$2_0$22
+                                     62 ;font_manager.c:12: const unsigned char *pnt = font__tilemap__bin;
+                           000008    63 	C$font_manager.c$13$1_0$22	= .
+                                     64 	.globl	C$font_manager.c$13$1_0$22
+                                     65 ;font_manager.c:13: unsigned char tile = ch - TEXT_ROOT;
+      000008 DD 7E 04         [19]   66 	ld	a, 4 (ix)
+      00000B C6 E0            [ 7]   67 	add	a, #0xe0
+      00000D 4F               [ 4]   68 	ld	c, a
+                           00000E    69 	C$font_manager.c$14$1_0$22	= .
+                                     70 	.globl	C$font_manager.c$14$1_0$22
+                                     71 ;font_manager.c:14: devkit_SMS_setNextTileatXY(x, y);
+      00000E C5               [11]   72 	push	bc
+      00000F DD 66 06         [19]   73 	ld	h, 6 (ix)
+      000012 DD 6E 05         [19]   74 	ld	l, 5 (ix)
+      000015 E5               [11]   75 	push	hl
+      000016 CDr00r00         [17]   76 	call	_devkit_SMS_setNextTileatXY
+      000019 F1               [10]   77 	pop	af
+      00001A C1               [10]   78 	pop	bc
+                           00001B    79 	C$font_manager.c$15$1_0$22	= .
+                                     80 	.globl	C$font_manager.c$15$1_0$22
+                                     81 ;font_manager.c:15: devkit_SMS_setTile(*pnt + tile);
+      00001B 3Ar00r00         [13]   82 	ld	a, (#_font__tilemap__bin + 0)
+      00001E 6F               [ 4]   83 	ld	l, a
+      00001F 26 00            [ 7]   84 	ld	h, #0x00
+      000021 06 00            [ 7]   85 	ld	b, #0x00
+      000023 09               [11]   86 	add	hl, bc
+      000024 E5               [11]   87 	push	hl
+      000025 CDr00r00         [17]   88 	call	_devkit_SMS_setTile
+      000028 F1               [10]   89 	pop	af
+                           000029    90 	C$font_manager.c$16$1_0$22	= .
+                                     91 	.globl	C$font_manager.c$16$1_0$22
+                                     92 ;font_manager.c:16: }
+      000029 DD E1            [14]   93 	pop	ix
+                           00002B    94 	C$font_manager.c$16$1_0$22	= .
+                                     95 	.globl	C$font_manager.c$16$1_0$22
+                           00002B    96 	XG$engine_font_manager_draw_char$0$0	= .
+                                     97 	.globl	XG$engine_font_manager_draw_char$0$0
+      00002B C9               [10]   98 	ret
+                           00002C    99 	G$engine_font_manager_draw_text$0$0	= .
+                                    100 	.globl	G$engine_font_manager_draw_text$0$0
+                           00002C   101 	C$font_manager.c$18$1_0$24	= .
+                                    102 	.globl	C$font_manager.c$18$1_0$24
+                                    103 ;font_manager.c:18: void engine_font_manager_draw_text(unsigned char *text, unsigned char x, unsigned char y)
+                                    104 ;	---------------------------------
+                                    105 ; Function engine_font_manager_draw_text
+                                    106 ; ---------------------------------
+      00002C                        107 _engine_font_manager_draw_text::
+      00002C DD E5            [15]  108 	push	ix
+      00002E DD 21 00 00      [14]  109 	ld	ix,#0
+      000032 DD 39            [15]  110 	add	ix,sp
+      000034 3B               [ 6]  111 	dec	sp
+                           000035   112 	C$font_manager.c$20$2_0$24	= .
+                                    113 	.globl	C$font_manager.c$20$2_0$24
+                                    114 ;font_manager.c:20: const unsigned char *pnt = font__tilemap__bin;
+                           000035   115 	C$font_manager.c$22$1_0$24	= .
+                                    116 	.globl	C$font_manager.c$22$1_0$24
+                                    117 ;font_manager.c:22: while ( '\0' != text[idx] )
+      000035 DD 7E 06         [19]  118 	ld	a, 6 (ix)
+      000038 DD 77 FF         [19]  119 	ld	-1 (ix), a
+      00003B 0E 00            [ 7]  120 	ld	c, #0x00
+      00003D                        121 00101$:
+      00003D DD 6E 04         [19]  122 	ld	l, 4 (ix)
+      000040 DD 66 05         [19]  123 	ld	h, 5 (ix)
+      000043 06 00            [ 7]  124 	ld	b, #0x00
+      000045 09               [11]  125 	add	hl, bc
+      000046 7E               [ 7]  126 	ld	a, (hl)
+      000047 B7               [ 4]  127 	or	a, a
+      000048 28 30            [12]  128 	jr	Z, 00104$
+                           00004A   129 	C$font_manager.c$24$2_0$25	= .
+                                    130 	.globl	C$font_manager.c$24$2_0$25
+                                    131 ;font_manager.c:24: unsigned char ch = text[idx];
+                           00004A   132 	C$font_manager.c$25$2_0$25	= .
+                                    133 	.globl	C$font_manager.c$25$2_0$25
+                                    134 ;font_manager.c:25: unsigned char tile = ch - TEXT_ROOT;
+      00004A C6 E0            [ 7]  135 	add	a, #0xe0
+      00004C 47               [ 4]  136 	ld	b, a
+                           00004D   137 	C$font_manager.c$26$2_0$25	= .
+                                    138 	.globl	C$font_manager.c$26$2_0$25
+                                    139 ;font_manager.c:26: devkit_SMS_setNextTileatXY(x++, y);
+      00004D DD 56 FF         [19]  140 	ld	d, -1 (ix)
+      000050 DD 34 FF         [23]  141 	inc	-1 (ix)
+      000053 DD 7E FF         [19]  142 	ld	a, -1 (ix)
+      000056 DD 77 06         [19]  143 	ld	6 (ix), a
+      000059 C5               [11]  144 	push	bc
+      00005A DD 7E 07         [19]  145 	ld	a, 7 (ix)
+      00005D F5               [11]  146 	push	af
+      00005E 33               [ 6]  147 	inc	sp
+      00005F D5               [11]  148 	push	de
+      000060 33               [ 6]  149 	inc	sp
+      000061 CDr00r00         [17]  150 	call	_devkit_SMS_setNextTileatXY
+      000064 F1               [10]  151 	pop	af
+      000065 C1               [10]  152 	pop	bc
+                           000066   153 	C$font_manager.c$27$2_0$25	= .
+                                    154 	.globl	C$font_manager.c$27$2_0$25
+                                    155 ;font_manager.c:27: devkit_SMS_setTile(*pnt + tile);
+      000066 3Ar00r00         [13]  156 	ld	a, (#_font__tilemap__bin + 0)
+      000069 5F               [ 4]  157 	ld	e, a
+      00006A 16 00            [ 7]  158 	ld	d, #0x00
+      00006C 68               [ 4]  159 	ld	l, b
+      00006D 26 00            [ 7]  160 	ld	h, #0x00
+      00006F 19               [11]  161 	add	hl, de
+      000070 C5               [11]  162 	push	bc
+      000071 E5               [11]  163 	push	hl
+      000072 CDr00r00         [17]  164 	call	_devkit_SMS_setTile
+      000075 F1               [10]  165 	pop	af
+      000076 C1               [10]  166 	pop	bc
+                           000077   167 	C$font_manager.c$28$2_0$25	= .
+                                    168 	.globl	C$font_manager.c$28$2_0$25
+                                    169 ;font_manager.c:28: idx++;
+      000077 0C               [ 4]  170 	inc	c
+      000078 18 C3            [12]  171 	jr	00101$
+      00007A                        172 00104$:
+                           00007A   173 	C$font_manager.c$30$1_0$24	= .
+                                    174 	.globl	C$font_manager.c$30$1_0$24
+                                    175 ;font_manager.c:30: }
+      00007A 33               [ 6]  176 	inc	sp
+      00007B DD E1            [14]  177 	pop	ix
+                           00007D   178 	C$font_manager.c$30$1_0$24	= .
+                                    179 	.globl	C$font_manager.c$30$1_0$24
+                           00007D   180 	XG$engine_font_manager_draw_text$0$0	= .
+                                    181 	.globl	XG$engine_font_manager_draw_text$0$0
+      00007D C9               [10]  182 	ret
+                           00007E   183 	G$engine_font_manager_draw_data$0$0	= .
+                                    184 	.globl	G$engine_font_manager_draw_data$0$0
+                           00007E   185 	C$font_manager.c$32$1_0$28	= .
+                                    186 	.globl	C$font_manager.c$32$1_0$28
+                                    187 ;font_manager.c:32: void engine_font_manager_draw_data(unsigned int data, unsigned char x, unsigned char y)
+                                    188 ;	---------------------------------
+                                    189 ; Function engine_font_manager_draw_data
+                                    190 ; ---------------------------------
+      00007E                        191 _engine_font_manager_draw_data::
+      00007E DD E5            [15]  192 	push	ix
+      000080 DD 21 00 00      [14]  193 	ld	ix,#0
+      000084 DD 39            [15]  194 	add	ix,sp
+      000086 21 F7 FF         [10]  195 	ld	hl, #-9
+      000089 39               [11]  196 	add	hl, sp
+      00008A F9               [ 6]  197 	ld	sp, hl
+                           00008B   198 	C$font_manager.c$34$2_0$28	= .
+                                    199 	.globl	C$font_manager.c$34$2_0$28
+                                    200 ;font_manager.c:34: const unsigned char *pnt = font__tilemap__bin;
+                           00008B   201 	C$font_manager.c$43$3_0$29	= .
+                                    202 	.globl	C$font_manager.c$43$3_0$29
+                                    203 ;font_manager.c:43: for (idx = 0; idx < DATA_LONG; ++idx)
+      00008B 21 00 00         [10]  204 	ld	hl, #0
+      00008E 39               [11]  205 	add	hl, sp
+      00008F 4D               [ 4]  206 	ld	c, l
+      000090 44               [ 4]  207 	ld	b, h
+      000091 DD 7E 06         [19]  208 	ld	a, 6 (ix)
+      000094 DD 77 FE         [19]  209 	ld	-2 (ix), a
+      000097 DD 36 FF 00      [19]  210 	ld	-1 (ix), #0
+      00009B                        211 00106$:
+                           00009B   212 	C$font_manager.c$45$2_0$28	= .
+                                    213 	.globl	C$font_manager.c$45$2_0$28
+                                    214 ;font_manager.c:45: quotient = data / UNIT_ROOT;
+      00009B C5               [11]  215 	push	bc
+      00009C 21 0A 00         [10]  216 	ld	hl, #0x000a
+      00009F E5               [11]  217 	push	hl
+      0000A0 DD 6E 04         [19]  218 	ld	l, 4 (ix)
+      0000A3 DD 66 05         [19]  219 	ld	h, 5 (ix)
+      0000A6 E5               [11]  220 	push	hl
+      0000A7 CDr00r00         [17]  221 	call	__divuint
+      0000AA F1               [10]  222 	pop	af
+      0000AB F1               [10]  223 	pop	af
+      0000AC EB               [ 4]  224 	ex	de, hl
+      0000AD C1               [10]  225 	pop	bc
+      0000AE DD 73 FB         [19]  226 	ld	-5 (ix), e
+      0000B1 DD 72 FC         [19]  227 	ld	-4 (ix), d
+                           0000B4   228 	C$font_manager.c$46$2_0$28	= .
+                                    229 	.globl	C$font_manager.c$46$2_0$28
+                                    230 ;font_manager.c:46: remainder = data % UNIT_ROOT;
+      0000B4 C5               [11]  231 	push	bc
+      0000B5 D5               [11]  232 	push	de
+      0000B6 21 0A 00         [10]  233 	ld	hl, #0x000a
+      0000B9 E5               [11]  234 	push	hl
+      0000BA DD 6E 04         [19]  235 	ld	l, 4 (ix)
+      0000BD DD 66 05         [19]  236 	ld	h, 5 (ix)
+      0000C0 E5               [11]  237 	push	hl
+      0000C1 CDr00r00         [17]  238 	call	__moduint
+      0000C4 F1               [10]  239 	pop	af
+      0000C5 F1               [10]  240 	pop	af
+      0000C6 D1               [10]  241 	pop	de
+      0000C7 C1               [10]  242 	pop	bc
+      0000C8 DD 75 FD         [19]  243 	ld	-3 (ix), l
+                           0000CB   244 	C$font_manager.c$48$3_0$29	= .
+                                    245 	.globl	C$font_manager.c$48$3_0$29
+                                    246 ;font_manager.c:48: hold[idx] = remainder;
+      0000CB DD 6E FF         [19]  247 	ld	l, -1 (ix)
+      0000CE 26 00            [ 7]  248 	ld	h, #0x00
+      0000D0 09               [11]  249 	add	hl, bc
+      0000D1 DD 7E FD         [19]  250 	ld	a, -3 (ix)
+      0000D4 77               [ 7]  251 	ld	(hl), a
+                           0000D5   252 	C$font_manager.c$49$3_0$29	= .
+                                    253 	.globl	C$font_manager.c$49$3_0$29
+                                    254 ;font_manager.c:49: data /= UNIT_ROOT;
+      0000D5 DD 73 04         [19]  255 	ld	4 (ix), e
+      0000D8 DD 72 05         [19]  256 	ld	5 (ix), d
+                           0000DB   257 	C$font_manager.c$51$3_0$29	= .
+                                    258 	.globl	C$font_manager.c$51$3_0$29
+                                    259 ;font_manager.c:51: tile = hold[idx] + DATA_ROOT;
+      0000DB DD 7E FD         [19]  260 	ld	a, -3 (ix)
+      0000DE C6 10            [ 7]  261 	add	a, #0x10
+      0000E0 5F               [ 4]  262 	ld	e, a
+                           0000E1   263 	C$font_manager.c$52$3_0$29	= .
+                                    264 	.globl	C$font_manager.c$52$3_0$29
+                                    265 ;font_manager.c:52: if (0 == quotient && 0 == remainder && idx > 0)
+      0000E1 DD 7E FC         [19]  266 	ld	a, -4 (ix)
+      0000E4 DD B6 FB         [19]  267 	or	a, -5 (ix)
+      0000E7 20 0E            [12]  268 	jr	NZ, 00102$
+      0000E9 DD 7E FD         [19]  269 	ld	a, -3 (ix)
+      0000EC B7               [ 4]  270 	or	a, a
+      0000ED 20 08            [12]  271 	jr	NZ, 00102$
+      0000EF DD 7E FF         [19]  272 	ld	a, -1 (ix)
+      0000F2 B7               [ 4]  273 	or	a, a
+      0000F3 28 02            [12]  274 	jr	Z, 00102$
+                           0000F5   275 	C$font_manager.c$55$4_0$30	= .
+                                    276 	.globl	C$font_manager.c$55$4_0$30
+                                    277 ;font_manager.c:55: tile = 0;
+      0000F5 1E 00            [ 7]  278 	ld	e, #0x00
+      0000F7                        279 00102$:
+                           0000F7   280 	C$font_manager.c$58$3_0$29	= .
+                                    281 	.globl	C$font_manager.c$58$3_0$29
+                                    282 ;font_manager.c:58: devkit_SMS_setNextTileatXY(x--, y);
+      0000F7 DD 56 FE         [19]  283 	ld	d, -2 (ix)
+      0000FA DD 35 FE         [23]  284 	dec	-2 (ix)
+      0000FD DD 7E FE         [19]  285 	ld	a, -2 (ix)
+      000100 DD 77 06         [19]  286 	ld	6 (ix), a
+      000103 C5               [11]  287 	push	bc
+      000104 D5               [11]  288 	push	de
+      000105 DD 7E 07         [19]  289 	ld	a, 7 (ix)
+      000108 F5               [11]  290 	push	af
+      000109 33               [ 6]  291 	inc	sp
+      00010A D5               [11]  292 	push	de
+      00010B 33               [ 6]  293 	inc	sp
+      00010C CDr00r00         [17]  294 	call	_devkit_SMS_setNextTileatXY
+      00010F F1               [10]  295 	pop	af
+      000110 D1               [10]  296 	pop	de
+      000111 C1               [10]  297 	pop	bc
+                           000112   298 	C$font_manager.c$59$3_0$29	= .
+                                    299 	.globl	C$font_manager.c$59$3_0$29
+                                    300 ;font_manager.c:59: devkit_SMS_setTile(*pnt + tile);
+      000112 3Ar00r00         [13]  301 	ld	a, (#_font__tilemap__bin + 0)
+      000115 6F               [ 4]  302 	ld	l, a
+      000116 16 00            [ 7]  303 	ld	d, #0x00
+      000118 7B               [ 4]  304 	ld	a, e
+      000119 17               [ 4]  305 	rla
+      00011A 9F               [ 4]  306 	sbc	a, a
+      00011B 67               [ 4]  307 	ld	h, a
+      00011C 19               [11]  308 	add	hl, de
+      00011D C5               [11]  309 	push	bc
+      00011E E5               [11]  310 	push	hl
+      00011F CDr00r00         [17]  311 	call	_devkit_SMS_setTile
+      000122 F1               [10]  312 	pop	af
+      000123 C1               [10]  313 	pop	bc
+                           000124   314 	C$font_manager.c$43$2_0$28	= .
+                                    315 	.globl	C$font_manager.c$43$2_0$28
+                                    316 ;font_manager.c:43: for (idx = 0; idx < DATA_LONG; ++idx)
+      000124 DD 34 FF         [23]  317 	inc	-1 (ix)
+      000127 DD 7E FF         [19]  318 	ld	a, -1 (ix)
+      00012A D6 04            [ 7]  319 	sub	a, #0x04
+      00012C DAr9Br00         [10]  320 	jp	C, 00106$
+                           00012F   321 	C$font_manager.c$61$2_0$28	= .
+                                    322 	.globl	C$font_manager.c$61$2_0$28
+                                    323 ;font_manager.c:61: }
+      00012F DD F9            [10]  324 	ld	sp, ix
+      000131 DD E1            [14]  325 	pop	ix
+                           000133   326 	C$font_manager.c$61$2_0$28	= .
+                                    327 	.globl	C$font_manager.c$61$2_0$28
+                           000133   328 	XG$engine_font_manager_draw_data$0$0	= .
+                                    329 	.globl	XG$engine_font_manager_draw_data$0$0
+      000133 C9               [10]  330 	ret
+                           000134   331 	G$engine_font_manager_draw_data_ZERO$0$0	= .
+                                    332 	.globl	G$engine_font_manager_draw_data_ZERO$0$0
+                           000134   333 	C$font_manager.c$63$2_0$33	= .
+                                    334 	.globl	C$font_manager.c$63$2_0$33
+                                    335 ;font_manager.c:63: void engine_font_manager_draw_data_ZERO(unsigned int data, unsigned char x, unsigned char y)
+                                    336 ;	---------------------------------
+                                    337 ; Function engine_font_manager_draw_data_ZERO
+                                    338 ; ---------------------------------
+      000134                        339 _engine_font_manager_draw_data_ZERO::
+      000134 DD E5            [15]  340 	push	ix
+      000136 DD 21 00 00      [14]  341 	ld	ix,#0
+      00013A DD 39            [15]  342 	add	ix,sp
+      00013C 21 F9 FF         [10]  343 	ld	hl, #-7
+      00013F 39               [11]  344 	add	hl, sp
+      000140 F9               [ 6]  345 	ld	sp, hl
+                           000141   346 	C$font_manager.c$65$2_0$33	= .
+                                    347 	.globl	C$font_manager.c$65$2_0$33
+                                    348 ;font_manager.c:65: const unsigned char *pnt = font__tilemap__bin;
+                           000141   349 	C$font_manager.c$72$3_0$34	= .
+                                    350 	.globl	C$font_manager.c$72$3_0$34
+                                    351 ;font_manager.c:72: for (idx = 0; idx < DATA_LONG; ++idx)
+      000141 21 00 00         [10]  352 	ld	hl, #0
+      000144 39               [11]  353 	add	hl, sp
+      000145 DD 75 FD         [19]  354 	ld	-3 (ix), l
+      000148 DD 74 FE         [19]  355 	ld	-2 (ix), h
+      00014B DD 7E 06         [19]  356 	ld	a, 6 (ix)
+      00014E DD 77 FF         [19]  357 	ld	-1 (ix), a
+      000151 0E 00            [ 7]  358 	ld	c, #0x00
+      000153                        359 00102$:
+                           000153   360 	C$font_manager.c$74$3_0$34	= .
+                                    361 	.globl	C$font_manager.c$74$3_0$34
+                                    362 ;font_manager.c:74: hold[idx] = data % UNIT_ROOT;
+      000153 DD 6E FD         [19]  363 	ld	l, -3 (ix)
+      000156 DD 66 FE         [19]  364 	ld	h, -2 (ix)
+      000159 06 00            [ 7]  365 	ld	b, #0x00
+      00015B 09               [11]  366 	add	hl, bc
+      00015C E5               [11]  367 	push	hl
+      00015D C5               [11]  368 	push	bc
+      00015E 11 0A 00         [10]  369 	ld	de, #0x000a
+      000161 D5               [11]  370 	push	de
+      000162 DD 5E 04         [19]  371 	ld	e, 4 (ix)
+      000165 DD 56 05         [19]  372 	ld	d, 5 (ix)
+      000168 D5               [11]  373 	push	de
+      000169 CDr00r00         [17]  374 	call	__moduint
+      00016C F1               [10]  375 	pop	af
+      00016D F1               [10]  376 	pop	af
+      00016E EB               [ 4]  377 	ex	de, hl
+      00016F C1               [10]  378 	pop	bc
+      000170 E1               [10]  379 	pop	hl
+      000171 43               [ 4]  380 	ld	b, e
+      000172 70               [ 7]  381 	ld	(hl), b
+                           000173   382 	C$font_manager.c$75$2_0$33	= .
+                                    383 	.globl	C$font_manager.c$75$2_0$33
+                                    384 ;font_manager.c:75: data /= UNIT_ROOT;
+      000173 C5               [11]  385 	push	bc
+      000174 21 0A 00         [10]  386 	ld	hl, #0x000a
+      000177 E5               [11]  387 	push	hl
+      000178 DD 6E 04         [19]  388 	ld	l, 4 (ix)
+      00017B DD 66 05         [19]  389 	ld	h, 5 (ix)
+      00017E E5               [11]  390 	push	hl
+      00017F CDr00r00         [17]  391 	call	__divuint
+      000182 F1               [10]  392 	pop	af
+      000183 F1               [10]  393 	pop	af
+      000184 C1               [10]  394 	pop	bc
+      000185 DD 75 04         [19]  395 	ld	4 (ix), l
+      000188 DD 74 05         [19]  396 	ld	5 (ix), h
+                           00018B   397 	C$font_manager.c$77$3_0$34	= .
+                                    398 	.globl	C$font_manager.c$77$3_0$34
+                                    399 ;font_manager.c:77: tile = hold[idx] + DATA_ROOT;
+      00018B 78               [ 4]  400 	ld	a, b
+      00018C C6 10            [ 7]  401 	add	a, #0x10
+      00018E 5F               [ 4]  402 	ld	e, a
+                           00018F   403 	C$font_manager.c$79$3_0$34	= .
+                                    404 	.globl	C$font_manager.c$79$3_0$34
+                                    405 ;font_manager.c:79: devkit_SMS_setNextTileatXY(x--, y);
+      00018F DD 46 FF         [19]  406 	ld	b, -1 (ix)
+      000192 DD 35 FF         [23]  407 	dec	-1 (ix)
+      000195 DD 7E FF         [19]  408 	ld	a, -1 (ix)
+      000198 DD 77 06         [19]  409 	ld	6 (ix), a
+      00019B C5               [11]  410 	push	bc
+      00019C D5               [11]  411 	push	de
+      00019D DD 7E 07         [19]  412 	ld	a, 7 (ix)
+      0001A0 F5               [11]  413 	push	af
+      0001A1 33               [ 6]  414 	inc	sp
+      0001A2 C5               [11]  415 	push	bc
+      0001A3 33               [ 6]  416 	inc	sp
+      0001A4 CDr00r00         [17]  417 	call	_devkit_SMS_setNextTileatXY
+      0001A7 F1               [10]  418 	pop	af
+      0001A8 D1               [10]  419 	pop	de
+      0001A9 C1               [10]  420 	pop	bc
+                           0001AA   421 	C$font_manager.c$80$3_0$34	= .
+                                    422 	.globl	C$font_manager.c$80$3_0$34
+                                    423 ;font_manager.c:80: devkit_SMS_setTile(*pnt + tile);
+      0001AA 3Ar00r00         [13]  424 	ld	a, (#_font__tilemap__bin + 0)
+      0001AD 6F               [ 4]  425 	ld	l, a
+      0001AE 26 00            [ 7]  426 	ld	h, #0x00
+      0001B0 16 00            [ 7]  427 	ld	d, #0x00
+      0001B2 19               [11]  428 	add	hl, de
+      0001B3 C5               [11]  429 	push	bc
+      0001B4 E5               [11]  430 	push	hl
+      0001B5 CDr00r00         [17]  431 	call	_devkit_SMS_setTile
+      0001B8 F1               [10]  432 	pop	af
+      0001B9 C1               [10]  433 	pop	bc
+                           0001BA   434 	C$font_manager.c$72$2_0$33	= .
+                                    435 	.globl	C$font_manager.c$72$2_0$33
+                                    436 ;font_manager.c:72: for (idx = 0; idx < DATA_LONG; ++idx)
+      0001BA 0C               [ 4]  437 	inc	c
+      0001BB 79               [ 4]  438 	ld	a, c
+      0001BC D6 04            [ 7]  439 	sub	a, #0x04
+      0001BE 38 93            [12]  440 	jr	C, 00102$
+                           0001C0   441 	C$font_manager.c$82$2_0$33	= .
+                                    442 	.globl	C$font_manager.c$82$2_0$33
+                                    443 ;font_manager.c:82: }
+      0001C0 DD F9            [10]  444 	ld	sp, ix
+      0001C2 DD E1            [14]  445 	pop	ix
+                           0001C4   446 	C$font_manager.c$82$2_0$33	= .
+                                    447 	.globl	C$font_manager.c$82$2_0$33
+                           0001C4   448 	XG$engine_font_manager_draw_data_ZERO$0$0	= .
+                                    449 	.globl	XG$engine_font_manager_draw_data_ZERO$0$0
+      0001C4 C9               [10]  450 	ret
+                                    451 	.area _CODE
+                                    452 	.area _INITIALIZER
+                                    453 	.area _CABS (ABS)

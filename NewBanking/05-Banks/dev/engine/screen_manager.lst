@@ -1,0 +1,251 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 4.1.0 #12072 (MINGW64)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module screen_manager
+                                      6 	.optsdcc -mz80
+                                      7 	
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl b_sgb
+                                     12 	.globl _sgb
+                                     13 	.globl b_bar
+                                     14 	.globl _bar
+                                     15 	.globl b_foo
+                                     16 	.globl _foo
+                                     17 	.globl _engine_input_manager_hold_fire1
+                                     18 	.globl _engine_input_manager_hold_right
+                                     19 	.globl _engine_input_manager_hold_left
+                                     20 	.globl _engine_input_manager_hold_down
+                                     21 	.globl _engine_font_manager_draw_data
+                                     22 	.globl _engine_font_manager_draw_text
+                                     23 	.globl _engine_screen_manager_init
+                                     24 	.globl _engine_screen_manager_update
+                                     25 ;--------------------------------------------------------
+                                     26 ; special function registers
+                                     27 ;--------------------------------------------------------
+                                     28 ;--------------------------------------------------------
+                                     29 ; ram data
+                                     30 ;--------------------------------------------------------
+                                     31 	.area _DATA
+                                     32 ;--------------------------------------------------------
+                                     33 ; ram data
+                                     34 ;--------------------------------------------------------
+                                     35 	.area _INITIALIZED
+                                     36 ;--------------------------------------------------------
+                                     37 ; absolute external ram data
+                                     38 ;--------------------------------------------------------
+                                     39 	.area _DABS (ABS)
+                                     40 ;--------------------------------------------------------
+                                     41 ; global & static initialisations
+                                     42 ;--------------------------------------------------------
+                                     43 	.area _HOME
+                                     44 	.area _GSINIT
+                                     45 	.area _GSFINAL
+                                     46 	.area _GSINIT
+                                     47 ;--------------------------------------------------------
+                                     48 ; Home
+                                     49 ;--------------------------------------------------------
+                                     50 	.area _HOME
+                                     51 	.area _HOME
+                                     52 ;--------------------------------------------------------
+                                     53 ; code
+                                     54 ;--------------------------------------------------------
+                                     55 	.area _CODE
+                           000000    56 	G$engine_screen_manager_init$0$0	= .
+                                     57 	.globl	G$engine_screen_manager_init$0$0
+                           000000    58 	C$screen_manager.c$8$0_0$5	= .
+                                     59 	.globl	C$screen_manager.c$8$0_0$5
+                                     60 ;screen_manager.c:8: void engine_screen_manager_init()
+                                     61 ;	---------------------------------
+                                     62 ; Function engine_screen_manager_init
+                                     63 ; ---------------------------------
+      000000                         64 _engine_screen_manager_init::
+                           000000    65 	C$screen_manager.c$10$1_0$5	= .
+                                     66 	.globl	C$screen_manager.c$10$1_0$5
+                                     67 ;screen_manager.c:10: engine_font_manager_draw_text("PRESS LEFT, RIGHT OR DOWN", 4, 8);
+      000000 11 04 08         [10]   68 	ld	de, #0x0804
+      000003 D5               [11]   69 	push	de
+      000004 21r1Br00         [10]   70 	ld	hl, #___str_0
+      000007 E5               [11]   71 	push	hl
+      000008 CDr00r00         [17]   72 	call	_engine_font_manager_draw_text
+      00000B F1               [10]   73 	pop	af
+      00000C F1               [10]   74 	pop	af
+                           00000D    75 	C$screen_manager.c$11$1_0$5	= .
+                                     76 	.globl	C$screen_manager.c$11$1_0$5
+                                     77 ;screen_manager.c:11: engine_font_manager_draw_text("PRESS FIRE1 TO CLEAR DATA", 4, 9);
+      00000D 11 04 09         [10]   78 	ld	de, #0x0904
+      000010 D5               [11]   79 	push	de
+      000011 21r35r00         [10]   80 	ld	hl, #___str_1
+      000014 E5               [11]   81 	push	hl
+      000015 CDr00r00         [17]   82 	call	_engine_font_manager_draw_text
+      000018 F1               [10]   83 	pop	af
+      000019 F1               [10]   84 	pop	af
+                           00001A    85 	C$screen_manager.c$12$1_0$5	= .
+                                     86 	.globl	C$screen_manager.c$12$1_0$5
+                                     87 ;screen_manager.c:12: }
+                           00001A    88 	C$screen_manager.c$12$1_0$5	= .
+                                     89 	.globl	C$screen_manager.c$12$1_0$5
+                           00001A    90 	XG$engine_screen_manager_init$0$0	= .
+                                     91 	.globl	XG$engine_screen_manager_init$0$0
+      00001A C9               [10]   92 	ret
+                           00001B    93 Fscreen_manager$__str_0$0_0$0 == .
+      00001B                         94 ___str_0:
+      00001B 50 52 45 53 53 20 4C    95 	.ascii "PRESS LEFT, RIGHT OR DOWN"
+             45 46 54 2C 20 52 49
+             47 48 54 20 4F 52 20
+             44 4F 57 4E
+      000034 00                      96 	.db 0x00
+                           000035    97 Fscreen_manager$__str_1$0_0$0 == .
+      000035                         98 ___str_1:
+      000035 50 52 45 53 53 20 46    99 	.ascii "PRESS FIRE1 TO CLEAR DATA"
+             49 52 45 31 20 54 4F
+             20 43 4C 45 41 52 20
+             44 41 54 41
+      00004E 00                     100 	.db 0x00
+                           00004F   101 	G$engine_screen_manager_update$0$0	= .
+                                    102 	.globl	G$engine_screen_manager_update$0$0
+                           00004F   103 	C$screen_manager.c$14$1_0$6	= .
+                                    104 	.globl	C$screen_manager.c$14$1_0$6
+                                    105 ;screen_manager.c:14: void engine_screen_manager_update()
+                                    106 ;	---------------------------------
+                                    107 ; Function engine_screen_manager_update
+                                    108 ; ---------------------------------
+      00004F                        109 _engine_screen_manager_update::
+                           00004F   110 	C$screen_manager.c$20$1_0$6	= .
+                                    111 	.globl	C$screen_manager.c$20$1_0$6
+                                    112 ;screen_manager.c:20: input = engine_input_manager_hold_left();
+      00004F CDr00r00         [17]  113 	call	_engine_input_manager_hold_left
+      000052 7D               [ 4]  114 	ld	a, l
+                           000053   115 	C$screen_manager.c$21$1_0$6	= .
+                                    116 	.globl	C$screen_manager.c$21$1_0$6
+                                    117 ;screen_manager.c:21: if( input )
+      000053 B7               [ 4]  118 	or	a, a
+      000054 28 14            [12]  119 	jr	Z, 00102$
+                           000056   120 	C$screen_manager.c$23$2_0$7	= .
+                                    121 	.globl	C$screen_manager.c$23$2_0$7
+                                    122 ;screen_manager.c:23: value = foo();
+      000056 1Er00            [ 7]  123 	ld	e, #b_foo
+      000058 21r00r00         [10]  124 	ld	hl, #_foo
+      00005B CDr00r00         [17]  125 	call	___sdcc_bcall_ehl
+                           00005E   126 	C$screen_manager.c$24$2_0$7	= .
+                                    127 	.globl	C$screen_manager.c$24$2_0$7
+                                    128 ;screen_manager.c:24: engine_font_manager_draw_data( value, 10, 12 );
+      00005E 26 00            [ 7]  129 	ld	h, #0x00
+      000060 11 0A 0C         [10]  130 	ld	de, #0x0c0a
+      000063 D5               [11]  131 	push	de
+      000064 E5               [11]  132 	push	hl
+      000065 CDr00r00         [17]  133 	call	_engine_font_manager_draw_data
+      000068 F1               [10]  134 	pop	af
+      000069 F1               [10]  135 	pop	af
+      00006A                        136 00102$:
+                           00006A   137 	C$screen_manager.c$27$1_0$6	= .
+                                    138 	.globl	C$screen_manager.c$27$1_0$6
+                                    139 ;screen_manager.c:27: input = engine_input_manager_hold_right();
+      00006A CDr00r00         [17]  140 	call	_engine_input_manager_hold_right
+      00006D 7D               [ 4]  141 	ld	a, l
+                           00006E   142 	C$screen_manager.c$28$1_0$6	= .
+                                    143 	.globl	C$screen_manager.c$28$1_0$6
+                                    144 ;screen_manager.c:28: if( input )
+      00006E B7               [ 4]  145 	or	a, a
+      00006F 28 14            [12]  146 	jr	Z, 00104$
+                           000071   147 	C$screen_manager.c$30$2_0$8	= .
+                                    148 	.globl	C$screen_manager.c$30$2_0$8
+                                    149 ;screen_manager.c:30: value = bar();
+      000071 1Er00            [ 7]  150 	ld	e, #b_bar
+      000073 21r00r00         [10]  151 	ld	hl, #_bar
+      000076 CDr00r00         [17]  152 	call	___sdcc_bcall_ehl
+                           000079   153 	C$screen_manager.c$31$2_0$8	= .
+                                    154 	.globl	C$screen_manager.c$31$2_0$8
+                                    155 ;screen_manager.c:31: engine_font_manager_draw_data( value, 10, 13 );
+      000079 26 00            [ 7]  156 	ld	h, #0x00
+      00007B 11 0A 0D         [10]  157 	ld	de, #0x0d0a
+      00007E D5               [11]  158 	push	de
+      00007F E5               [11]  159 	push	hl
+      000080 CDr00r00         [17]  160 	call	_engine_font_manager_draw_data
+      000083 F1               [10]  161 	pop	af
+      000084 F1               [10]  162 	pop	af
+      000085                        163 00104$:
+                           000085   164 	C$screen_manager.c$34$1_0$6	= .
+                                    165 	.globl	C$screen_manager.c$34$1_0$6
+                                    166 ;screen_manager.c:34: input = engine_input_manager_hold_down();
+      000085 CDr00r00         [17]  167 	call	_engine_input_manager_hold_down
+      000088 7D               [ 4]  168 	ld	a, l
+                           000089   169 	C$screen_manager.c$35$1_0$6	= .
+                                    170 	.globl	C$screen_manager.c$35$1_0$6
+                                    171 ;screen_manager.c:35: if( input )
+      000089 B7               [ 4]  172 	or	a, a
+      00008A 28 14            [12]  173 	jr	Z, 00106$
+                           00008C   174 	C$screen_manager.c$37$2_0$9	= .
+                                    175 	.globl	C$screen_manager.c$37$2_0$9
+                                    176 ;screen_manager.c:37: value = sgb();
+      00008C 1Er00            [ 7]  177 	ld	e, #b_sgb
+      00008E 21r00r00         [10]  178 	ld	hl, #_sgb
+      000091 CDr00r00         [17]  179 	call	___sdcc_bcall_ehl
+                           000094   180 	C$screen_manager.c$38$2_0$9	= .
+                                    181 	.globl	C$screen_manager.c$38$2_0$9
+                                    182 ;screen_manager.c:38: engine_font_manager_draw_data( value, 10, 14 );
+      000094 26 00            [ 7]  183 	ld	h, #0x00
+      000096 11 0A 0E         [10]  184 	ld	de, #0x0e0a
+      000099 D5               [11]  185 	push	de
+      00009A E5               [11]  186 	push	hl
+      00009B CDr00r00         [17]  187 	call	_engine_font_manager_draw_data
+      00009E F1               [10]  188 	pop	af
+      00009F F1               [10]  189 	pop	af
+      0000A0                        190 00106$:
+                           0000A0   191 	C$screen_manager.c$41$1_0$6	= .
+                                    192 	.globl	C$screen_manager.c$41$1_0$6
+                                    193 ;screen_manager.c:41: input = engine_input_manager_hold_fire1();
+      0000A0 CDr00r00         [17]  194 	call	_engine_input_manager_hold_fire1
+      0000A3 7D               [ 4]  195 	ld	a, l
+                           0000A4   196 	C$screen_manager.c$42$1_0$6	= .
+                                    197 	.globl	C$screen_manager.c$42$1_0$6
+                                    198 ;screen_manager.c:42: if( input )
+      0000A4 B7               [ 4]  199 	or	a, a
+      0000A5 C8               [11]  200 	ret	Z
+                           0000A6   201 	C$screen_manager.c$44$2_0$10	= .
+                                    202 	.globl	C$screen_manager.c$44$2_0$10
+                                    203 ;screen_manager.c:44: engine_font_manager_draw_text( "  ", 9, 12 );
+      0000A6 11 09 0C         [10]  204 	ld	de, #0x0c09
+      0000A9 D5               [11]  205 	push	de
+      0000AA 21rCEr00         [10]  206 	ld	hl, #___str_2
+      0000AD E5               [11]  207 	push	hl
+      0000AE CDr00r00         [17]  208 	call	_engine_font_manager_draw_text
+      0000B1 F1               [10]  209 	pop	af
+      0000B2 F1               [10]  210 	pop	af
+                           0000B3   211 	C$screen_manager.c$45$2_0$10	= .
+                                    212 	.globl	C$screen_manager.c$45$2_0$10
+                                    213 ;screen_manager.c:45: engine_font_manager_draw_text( "  ", 9, 13 );
+      0000B3 11 09 0D         [10]  214 	ld	de, #0x0d09
+      0000B6 D5               [11]  215 	push	de
+      0000B7 21rCEr00         [10]  216 	ld	hl, #___str_2
+      0000BA E5               [11]  217 	push	hl
+      0000BB CDr00r00         [17]  218 	call	_engine_font_manager_draw_text
+      0000BE F1               [10]  219 	pop	af
+      0000BF F1               [10]  220 	pop	af
+                           0000C0   221 	C$screen_manager.c$46$2_0$10	= .
+                                    222 	.globl	C$screen_manager.c$46$2_0$10
+                                    223 ;screen_manager.c:46: engine_font_manager_draw_text( "  ", 9, 14 );
+      0000C0 11 09 0E         [10]  224 	ld	de, #0x0e09
+      0000C3 D5               [11]  225 	push	de
+      0000C4 21rCEr00         [10]  226 	ld	hl, #___str_2
+      0000C7 E5               [11]  227 	push	hl
+      0000C8 CDr00r00         [17]  228 	call	_engine_font_manager_draw_text
+      0000CB F1               [10]  229 	pop	af
+      0000CC F1               [10]  230 	pop	af
+                           0000CD   231 	C$screen_manager.c$49$1_0$6	= .
+                                    232 	.globl	C$screen_manager.c$49$1_0$6
+                                    233 ;screen_manager.c:49: }
+                           0000CD   234 	C$screen_manager.c$49$1_0$6	= .
+                                    235 	.globl	C$screen_manager.c$49$1_0$6
+                           0000CD   236 	XG$engine_screen_manager_update$0$0	= .
+                                    237 	.globl	XG$engine_screen_manager_update$0$0
+      0000CD C9               [10]  238 	ret
+                           0000CE   239 Fscreen_manager$__str_2$0_0$0 == .
+      0000CE                        240 ___str_2:
+      0000CE 20 20                  241 	.ascii "  "
+      0000D0 00                     242 	.db 0x00
+                                    243 	.area _CODE
+                                    244 	.area _INITIALIZER
+                                    245 	.area _CABS (ABS)
