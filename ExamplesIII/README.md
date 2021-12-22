@@ -33,3 +33,12 @@ F5			Debug
 Warning
 vscode expected a type specifier
 just disable C++ squiggles above
+
+
+Check 
+build.bat
+build.sh
+
+
+Could either Ctrl+Shift+B and build + run during dev cycle
+OR comment out launch and F5 to have launch depend on task
