@@ -1,8 +1,8 @@
-#include "../lib/SMSlib.h"
+#include "main.h"
 
 void main(void)
 {
-  SMS_setSpritePaletteColor(0, RGB(0, 0, 0));
+  SMS_setSpritePaletteColor(0, RGB(3, 3, 0));
   SMS_displayOn();
   for (;;)
   {
