@@ -28,3 +28,6 @@ just need to retro fit the devkitSMS libs
 
 Only problem
 ?ASlink-Warning-Undefined Global '_SMS_Port3EBIOSvalue' referenced by module 'crt0'
+
+If I remove then program stops working
+I bet that if I replace with the SMSlib then won't work
