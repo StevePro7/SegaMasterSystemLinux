@@ -25,6 +25,10 @@ sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 t
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 tree_manager.c
 cd ..
 
+cd object
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 hack_object.c
+cd ..
+
 cd screen
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 none_screen.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 start_screen.c
@@ -65,13 +69,14 @@ engine/sound_manager.rel ^
 engine/sprite_manager.rel ^
 engine/text_manager.rel ^
 engine/tree_manager.rel ^
+object/hack_object.rel ^
 screen/none_screen.rel ^
 screen/start_screen.rel ^
 screen/music_screen.rel ^
 screen/sound_screen.rel ^
 screen/joint_screen.rel ^
-gfx.rel ^
-psg.rel
+content/gfx.rel ^
+content/psg.rel
 
 
 :: Execute
@@ -85,6 +90,12 @@ if exist "*.sym" del "*.sym" > nul
 cd ..
 
 cd engine
+if exist "*.asm" del "*.asm" > nul
+if exist "*.lst" del "*.lst" > nul
+if exist "*.sym" del "*.sym" > nul
+cd ..
+
+cd object
 if exist "*.asm" del "*.asm" > nul
 if exist "*.lst" del "*.lst" > nul
 if exist "*.sym" del "*.sym" > nul
