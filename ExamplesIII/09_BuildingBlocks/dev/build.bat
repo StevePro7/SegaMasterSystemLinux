@@ -32,6 +32,7 @@ cd ..
 cd object
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 enemy_object.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 gamer_object.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 hack_object.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 path_object.c
 cd ..
 
@@ -76,6 +77,7 @@ engine/text_manager.rel ^
 engine/tree_manager.rel ^
 object/enemy_object.rel ^
 object/gamer_object.rel ^
+object/hack_object.rel ^
 object/path_object.rel ^
 screen/none_screen.rel ^
 screen/start_screen.rel ^
