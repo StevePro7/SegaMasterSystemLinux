@@ -1,0 +1,101 @@
+;!FILE ready_screen.asm
+XL3
+H 9 areas 41 global symbols
+M ready_screen
+O -mz80
+S _rand Ref000000
+S _engine_gamer_manager_draw Ref000000
+S _engine_enemy_manager_load Ref000000
+S _engine_enemy_manager_draw Ref000000
+S _engine_gamer_manager_toggle_color Ref000000
+S _engine_input_manager_hold_fire1 Ref000000
+S _engine_input_manager_hold_fire2 Ref000000
+S .__.ABS. Def000000
+S _engine_text_manager_names Ref000000
+S _engine_enemy_manager_toggle_color Ref000000
+S _engine_sound_manager_play Ref000000
+S _engine_gamer_manager_load Ref000000
+A _CODE size 34 flags 0 addr 0
+S G$screen_ready_screen_update$0$0 Def000009
+S C$ready_screen.c$20$1_0$111 Def000009
+S C$ready_screen.c$31$1_0$111 Def000018
+S A$ready_screen$120 Def00001C
+S A$ready_screen$111 Def000015
+S C$ready_screen.c$32$1_0$111 Def00001C
+S A$ready_screen$130 Def000022
+S A$ready_screen$121 Def00001D
+S A$ready_screen$103 Def00000F
+S C$ready_screen.c$24$1_0$111 Def000009
+S A$ready_screen$131 Def000025
+S C$ready_screen.c$43$1_0$111 Def000031
+S C$ready_screen.c$40$2_0$113 Def000030
+S C$ready_screen.c$25$1_0$111 Def00000C
+S C$ready_screen.c$44$1_0$111 Def000033
+S A$ready_screen$142 Def00002A
+S A$ready_screen$115 Def000018
+S C$ready_screen.c$36$1_0$111 Def000022
+S C$ready_screen.c$34$2_0$112 Def00001F
+S C$ready_screen.c$27$1_0$111 Def00000F
+S _screen_ready_screen_update Def000009
+S A$ready_screen$152 Def000030
+S A$ready_screen$143 Def00002B
+S A$ready_screen$125 Def00001F
+S A$ready_screen$116 Def00001B
+S A$ready_screen$107 Def000012
+S C$ready_screen.c$37$1_0$111 Def00002A
+S C$ready_screen.c$28$1_0$111 Def000012
+S C$ready_screen.c$13$0_0$109 Def000000
+S A$ready_screen$144 Def00002C
+S A$ready_screen$135 Def000026
+S C$ready_screen.c$29$1_0$111 Def000015
+S A$ready_screen$136 Def000027
+S C$ready_screen.c$39$1_0$111 Def000026
+S A$ready_screen$137 Def000028
+S C$ready_screen.c$15$1_0$109 Def000000
+S A$ready_screen$165 Def000033
+S A$ready_screen$138 Def000029
+S C$ready_screen.c$16$1_0$109 Def000003
+S A$ready_screen$157 Def000031
+S A$ready_screen$148 Def00002E
+S C$ready_screen.c$39$2_0$113 Def00002E
+S C$ready_screen.c$17$1_0$109 Def000006
+S C$ready_screen.c$18$1_0$109 Def000006
+S XG$screen_ready_screen_update$0$0 Def000033
+S A$ready_screen$71 Def000003
+S G$screen_ready_screen_load$0$0 Def000000
+S A$ready_screen$82 Def000006
+S A$ready_screen$67 Def000000
+S A$ready_screen$95 Def000009
+S A$ready_screen$99 Def00000C
+S _screen_ready_screen_load Def000000
+S XG$screen_ready_screen_load$0$0 Def000006
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 CD 00 00 CD 00 00 C3 00 00
+R 00 00 00 00 02 04 08 00 02 07 0B 00 02 0A 02 00
+T 09 00 00
+R 00 00 00 00
+T 09 00 00 CD 00 00 CD 00 00 CD 00 00 CD
+R 00 00 00 00 02 04 01 00 02 07 03 00 02 0A 00 00
+T 13 00 00 00 00 CD 00 00 CD 00 00 7D B7 28 03 CD
+R 00 00 00 00 02 03 04 00 02 06 09 00 02 09 06 00
+T 20 00 00 00 00
+R 00 00 00 00 02 03 0A 00
+T 22 00 00
+R 00 00 00 00
+T 22 00 00 CD 00 00 4D D1 E1 E5 D5 79 B7 28 03 36
+R 00 00 00 00 02 04 05 00
+T 2F 00 00 04 C9
+R 00 00 00 00
+T 31 00 00
+R 00 00 00 00
+T 31 00 00 36 03 C9
+R 00 00 00 00

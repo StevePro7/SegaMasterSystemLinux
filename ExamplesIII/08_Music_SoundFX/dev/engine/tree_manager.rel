@@ -1,0 +1,264 @@
+;!FILE tree_manager.asm
+XL3
+H 9 areas BE global symbols
+M tree_manager
+O -mz80
+S _devkit_SMS_setNextTileatXY Ref000000
+S _game_tiles__tilemap__bin Ref000000
+S .__.ABS. Def000000
+S _devkit_SMS_setTile Ref000000
+A _CODE size F0 flags 0 addr 0
+S XFtree_manager$draw$0$0 Def0000EF
+S A$tree_manager$100 Def000016
+S A$tree_manager$110 Def00001F
+S A$tree_manager$101 Def000017
+S A$tree_manager$300 Def0000C8
+S A$tree_manager$210 Def000068
+S A$tree_manager$111 Def000020
+S A$tree_manager$102 Def000018
+S A$tree_manager$310 Def0000D9
+S A$tree_manager$301 Def0000C9
+S A$tree_manager$220 Def000072
+S A$tree_manager$211 Def000069
+S A$tree_manager$112 Def000021
+S A$tree_manager$103 Def000019
+S A$tree_manager$320 Def0000EC
+S A$tree_manager$311 Def0000DA
+S A$tree_manager$302 Def0000CA
+S A$tree_manager$230 Def00007C
+S A$tree_manager$221 Def000075
+S A$tree_manager$212 Def00006C
+S A$tree_manager$203 Def000063
+S A$tree_manager$113 Def000022
+S A$tree_manager$104 Def00001A
+S A$tree_manager$312 Def0000DD
+S A$tree_manager$303 Def0000CD
+S A$tree_manager$222 Def000076
+S A$tree_manager$213 Def00006D
+S A$tree_manager$141 Def00003A
+S A$tree_manager$132 Def000031
+S A$tree_manager$123 Def000028
+S A$tree_manager$114 Def000024
+S A$tree_manager$105 Def00001D
+S A$tree_manager$313 Def0000DE
+S A$tree_manager$304 Def0000CE
+S A$tree_manager$250 Def000085
+S A$tree_manager$142 Def00003B
+S A$tree_manager$133 Def000032
+S A$tree_manager$124 Def000029
+S A$tree_manager$106 Def00001E
+S A$tree_manager$314 Def0000E1
+S A$tree_manager$305 Def0000D0
+S A$tree_manager$260 Def00008E
+S A$tree_manager$143 Def00003C
+S A$tree_manager$134 Def000034
+S A$tree_manager$125 Def00002B
+S A$tree_manager$324 Def0000ED
+S A$tree_manager$315 Def0000E3
+S A$tree_manager$306 Def0000D3
+S A$tree_manager$261 Def000091
+S A$tree_manager$171 Def000044
+S A$tree_manager$153 Def000041
+S A$tree_manager$144 Def00003D
+S A$tree_manager$135 Def000035
+S A$tree_manager$126 Def00002C
+S A$tree_manager$316 Def0000E4
+S A$tree_manager$307 Def0000D4
+S A$tree_manager$280 Def0000AE
+S A$tree_manager$271 Def00009D
+S A$tree_manager$262 Def000092
+S A$tree_manager$226 Def000077
+S A$tree_manager$217 Def00006E
+S A$tree_manager$208 Def000065
+S A$tree_manager$190 Def00005A
+S A$tree_manager$172 Def000045
+S A$tree_manager$145 Def00003F
+S A$tree_manager$136 Def000038
+S A$tree_manager$127 Def00002F
+S A$tree_manager$118 Def000026
+S A$tree_manager$317 Def0000E7
+S A$tree_manager$308 Def0000D5
+S A$tree_manager$281 Def0000AF
+S A$tree_manager$272 Def0000A0
+S A$tree_manager$263 Def000095
+S A$tree_manager$227 Def000078
+S A$tree_manager$218 Def00006F
+S A$tree_manager$209 Def000066
+S A$tree_manager$191 Def00005B
+S A$tree_manager$173 Def000047
+S A$tree_manager$137 Def000039
+S A$tree_manager$128 Def000030
+S A$tree_manager$318 Def0000E8
+S A$tree_manager$309 Def0000D6
+S A$tree_manager$291 Def0000B9
+S A$tree_manager$282 Def0000B1
+S A$tree_manager$273 Def0000A1
+S A$tree_manager$264 Def000096
+S A$tree_manager$228 Def000079
+S A$tree_manager$219 Def000071
+S A$tree_manager$183 Def000050
+S A$tree_manager$174 Def000048
+S A$tree_manager$319 Def0000E9
+S A$tree_manager$292 Def0000BC
+S A$tree_manager$283 Def0000B2
+S A$tree_manager$274 Def0000A2
+S A$tree_manager$265 Def000098
+S A$tree_manager$238 Def00007E
+S A$tree_manager$229 Def00007A
+S A$tree_manager$184 Def000051
+S A$tree_manager$175 Def000049
+S A$tree_manager$166 Def000042
+S A$tree_manager$329 Def0000EF
+S A$tree_manager$293 Def0000BD
+S A$tree_manager$284 Def0000B3
+S A$tree_manager$275 Def0000A5
+S A$tree_manager$266 Def000099
+S A$tree_manager$257 Def000087
+S A$tree_manager$248 Def00007F
+S A$tree_manager$185 Def000053
+S A$tree_manager$176 Def00004A
+S A$tree_manager$294 Def0000BE
+S A$tree_manager$285 Def0000B4
+S A$tree_manager$276 Def0000A6
+S A$tree_manager$267 Def00009C
+S A$tree_manager$258 Def00008A
+S A$tree_manager$249 Def000081
+S A$tree_manager$195 Def00005C
+S A$tree_manager$186 Def000054
+S A$tree_manager$177 Def00004B
+S A$tree_manager$295 Def0000BF
+S A$tree_manager$286 Def0000B7
+S A$tree_manager$277 Def0000A9
+S A$tree_manager$259 Def00008D
+S A$tree_manager$196 Def00005D
+S A$tree_manager$187 Def000055
+S A$tree_manager$178 Def00004E
+S A$tree_manager$296 Def0000C0
+S A$tree_manager$287 Def0000B8
+S A$tree_manager$278 Def0000AA
+S A$tree_manager$197 Def00005E
+S A$tree_manager$188 Def000056
+S A$tree_manager$179 Def00004F
+S A$tree_manager$297 Def0000C3
+S A$tree_manager$279 Def0000AB
+S A$tree_manager$198 Def00005F
+S A$tree_manager$189 Def000057
+S A$tree_manager$298 Def0000C4
+S A$tree_manager$199 Def000061
+S A$tree_manager$299 Def0000C5
+S C$tree_manager.c$30$3_0$71 Def000028
+S A$tree_manager$90 Def00000C
+S A$tree_manager$81 Def000006
+S C$tree_manager.c$31$3_0$71 Def000031
+S C$tree_manager.c$12$0_0$66 Def000000
+S A$tree_manager$91 Def00000D
+S A$tree_manager$92 Def00000E
+S A$tree_manager$93 Def000011
+S A$tree_manager$57 Def000000
+S C$tree_manager.c$14$1_0$66 Def000000
+S G$engine_tree_manager_draw$0$0 Def000000
+S A$tree_manager$94 Def000012
+S C$tree_manager.c$41$3_0$74 Def000044
+S C$tree_manager.c$35$2_0$72 Def000042
+S C$tree_manager.c$28$2_0$70 Def00003A
+S C$tree_manager.c$15$1_0$66 Def000003
+S A$tree_manager$86 Def000008
+S A$tree_manager$68 Def000003
+S C$tree_manager.c$42$3_0$74 Def000050
+S C$tree_manager.c$22$2_0$68 Def00001F
+S C$tree_manager.c$16$1_0$66 Def000003
+S A$tree_manager$87 Def000009
+S C$tree_manager.c$33$2_0$67 Def000041
+S A$tree_manager$88 Def00000A
+S C$tree_manager.c$44$2_0$75 Def000077
+S Ftree_manager$engine_tree_manager_draw_inside$0$0 Def000042
+S A$tree_manager$98 Def000013
+S A$tree_manager$89 Def00000B
+S C$tree_manager.c$51$2_0$78 Def00007F
+S C$tree_manager.c$18$1_0$67 Def000006
+S A$tree_manager$99 Def000014
+S C$tree_manager.c$49$2_0$72 Def00007E
+S C$tree_manager.c$39$2_0$73 Def00005C
+S C$tree_manager.c$24$3_0$69 Def000008
+S Ftree_manager$engine_tree_manager_draw_border$0$0 Def000006
+S C$tree_manager.c$53$2_0$78 Def000087
+S C$tree_manager.c$25$3_0$69 Def000013
+S C$tree_manager.c$55$1_0$78 Def000087
+S C$tree_manager.c$46$3_0$76 Def000065
+S C$tree_manager.c$56$1_0$78 Def00009D
+S C$tree_manager.c$47$3_0$76 Def00006E
+S C$tree_manager.c$57$1_0$78 Def0000B9
+S Ftree_manager$draw$0$0 Def00007F
+S C$tree_manager.c$59$1_0$78 Def0000EF
+S _engine_tree_manager_draw Def000000
+S XG$engine_tree_manager_draw$0$0 Def000003
+S XFtree_manager$engine_tree_manager_draw_inside$0$0 Def00007E
+S XFtree_manager$engine_tree_manager_draw_border$0$0 Def000041
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 CD 06 00 C3 42 00
+R 00 00 00 00 00 04 00 00 00 07 00 00
+T 06 00 00
+R 00 00 00 00
+T 06 00 00 06 02
+R 00 00 00 00
+T 08 00 00
+R 00 00 00 00
+T 08 00 00 C5 AF F5 33 C5 33 CD 7F 00 F1 C1 C5 3E
+R 00 00 00 00 00 0A 00 00
+T 15 00 00 16 F5 33 C5 33 CD 7F 00 F1 C1 04 04 78
+R 00 00 00 00 00 09 00 00
+T 22 00 00 D6 1A 38 E2 06 02
+R 00 00 00 00
+T 28 00 00
+R 00 00 00 00
+T 28 00 00 C5 0E 02 C5 CD 7F 00 F1 C1 C5 0E 18 C5
+R 00 00 00 00 00 08 00 00
+T 35 00 00 CD 7F 00 F1 C1 04 04 78 D6 16 38 E7 C9
+R 00 00 00 00 00 04 00 00
+T 42 00 00
+R 00 00 00 00
+T 42 00 00 06 08
+R 00 00 00 00
+T 44 00 00
+R 00 00 00 00
+T 44 00 00 C5 3E 08 F5 33 C5 33 CD 7F 00 F1 C1 C5
+R 00 00 00 00 00 0B 00 00
+T 51 00 00 3E 0E F5 33 C5 33 CD 7F 00 F1 C1 04 04
+R 00 00 00 00 00 0A 00 00
+T 5E 00 00 78 D6 14 38 E1 06 0A
+R 00 00 00 00
+T 65 00 00
+R 00 00 00 00
+T 65 00 00 C5 0E 08 C5 CD 7F 00 F1 C1 C5 0E 12 C5
+R 00 00 00 00 00 08 00 00
+T 72 00 00 CD 7F 00 F1 C1 04 04 78 D6 0E 38 E7 C9
+R 00 00 00 00 00 04 00 00
+T 7F 00 00
+R 00 00 00 00
+T 7F 00 00 DD E5 DD 21 00 00 DD 39 DD 66 05 DD 6E
+R 00 00 00 00
+T 8C 00 00 04 E5 CD 00 00 F1 3A 00 00 4F 06 00 C5
+R 00 00 00 00 02 06 00 00 02 0A 01 00
+T 99 00 00 CD 00 00 F1 DD 4E 04 0C C5 DD 46 05 C5
+R 00 00 00 00 02 04 03 00
+T A6 00 00 CD 00 00 F1 C1 3A 00 00 5F 16 00 13 C5
+R 00 00 00 00 02 04 00 00 02 09 01 00
+T B3 00 00 D5 CD 00 00 F1 C1 DD 46 05 04 C5 C5 33
+R 00 00 00 00 02 05 03 00
+T C0 00 00 DD 7E 04 F5 33 CD 00 00 F1 C1 3A 00 00
+R 00 00 00 00 02 09 00 00 02 0E 01 00
+T CD 00 00 5F 16 00 21 1A 00 19 C5 E5 CD 00 00 F1
+R 00 00 00 00 02 0D 03 00
+T DA 00 00 CD 00 00 F1 3A 00 00 26 00 6F 11 1B 00
+R 00 00 00 00 02 04 00 00 02 08 01 00
+T E7 00 00 19 E5 CD 00 00 F1 DD E1 C9
+R 00 00 00 00 02 06 03 00
