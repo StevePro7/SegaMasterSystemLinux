@@ -3,9 +3,15 @@ F:G$engine_music_manager_play$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lsound_manager.engine_music_manager_play$ho$1$37({2}DG,STtag_struct_hack_object:S),R,0,0,[]
 F:G$engine_sound_manager_play$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lsound_manager.engine_sound_manager_play$ho$1$39({2}DG,STtag_struct_hack_object:S),R,0,0,[]
-S:Lsound_manager.engine_sound_manager_play$sound$1$39({1}SC:U),R,0,0,[c]
+S:Lsound_manager.engine_sound_manager_play$sound$1$39({1}SC:U),R,0,0,[e]
+S:Lsound_manager.engine_sound_manager_play$sfx$1$39({2}DG,SV:S),R,0,0,[c,b]
 T:Fsound_manager$tag_struct_hack_object[({0}S:S$hack_steps$0$0({1}SC:U),Z,0,0)({1}S:S$hack_delay$0$0({1}SC:U),Z,0,0)({2}S:S$hack_hands$0$0({1}SC:U),Z,0,0)({3}S:S$hack_music$0$0({1}SC:U),Z,0,0)({4}S:S$hack_sound$0$0({1}SC:U),Z,0,0)({5}S:S$hack_paths$0$0({1}SC:U),Z,0,0)]
 S:G$global_hack_object$0$0({6}STtag_struct_hack_object:S),E,0,0
+S:G$devkit_PSG_STOPPED$0$0({2}DF,SC:U),C,0,0
+S:G$devkit_PSG_PLAYING$0$0({2}DF,SC:U),C,0,0
+S:G$devkit_SFX_CHANNEL2$0$0({2}DF,SC:U),C,0,0
+S:G$devkit_SFX_CHANNEL3$0$0({2}DF,SC:U),C,0,0
+S:G$devkit_SFX_CHANNELS2AND3$0$0({2}DF,SC:U),C,0,0
 S:G$devkit_PSGPlay$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_PSGCancelLoop$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_PSGPlayNoRepeat$0$0({2}DF,SV:S),C,0,0
@@ -22,9 +28,6 @@ S:G$devkit_PSGSilenceChannels$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_PSGRestoreVolumes$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_PSGFrame$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_PSGSFXFrame$0$0({2}DF,SV:S),C,0,0
-S:G$devkit_SFX_CHANNEL2$0$0({2}DF,SC:U),C,0,0
-S:G$devkit_SFX_CHANNEL3$0$0({2}DF,SC:U),C,0,0
-S:G$devkit_SFX_CHANNELS2AND3$0$0({2}DF,SC:U),C,0,0
 S:G$engine_hack_manager_init$0$0({2}DF,SV:S),C,0,0
 S:G$engine_hack_manager_update$0$0({2}DF,SV:S),C,0,0
 S:G$atof$0$0({2}DF,SF:S),C,0,0
