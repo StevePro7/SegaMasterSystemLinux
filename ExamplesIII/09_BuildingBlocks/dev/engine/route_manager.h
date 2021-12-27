@@ -1,0 +1,1 @@
+extern const unsigned char	gamer_route0[];
