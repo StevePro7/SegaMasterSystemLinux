@@ -58,7 +58,7 @@ void engine_gamer_manager_toggle_color()
 		return;
 	}
 
-	go->kidColor = ( 1 - go->kidColor );
+	go->kidColor = ( 1 - go->kidColor ) * 2;
 	kid_calculate_tile();
 }
 
@@ -132,5 +132,5 @@ void engine_gamer_manager_draw()
 static void kid_calculate_tile()
 {
 	struct_gamer_object *go = &global_gamer_object;
-	go->kidTile = SPRITE_TILES_GAMER + ( ( go->kidColor * 2 ) + go->kidFrame ) * 2;
+	go->kidTile = SPRITE_TILES_GAMER + ( ( go->kidColor * 2 ) + ( go->kidFrame * 2 ) );
 }
