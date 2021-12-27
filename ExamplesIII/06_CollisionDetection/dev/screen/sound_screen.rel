@@ -1,0 +1,134 @@
+;!FILE sound_screen.asm
+XL2
+H 9 areas 5A global symbols
+M sound_screen
+O -mz80
+S _devkit_PSGSFXStop Ref0000
+S _engine_input_manager_hold_fire1 Ref0000
+S _engine_input_manager_hold_fire2 Ref0000
+S .__.ABS. Def0000
+S _engine_input_manager_hold_right Ref0000
+S _engine_input_manager_hold_up Ref0000
+S _engine_sound_manager_play Ref0000
+S _engine_input_manager_hold_left Ref0000
+S _engine_input_manager_hold_down Ref0000
+S _engine_text_manager_sound Ref0000
+A _CODE size 50 flags 0 addr 0
+S A$sound_screen$96 Def000D
+S A$sound_screen$87 Def0007
+S A$sound_screen$69 Def0000
+S A$sound_screen$88 Def0008
+S A$sound_screen$89 Def0009
+S C$sound_screen.c$8$0$0 Def0000
+S _screen_sound_screen_load Def0000
+S XG$screen_sound_screen_load$0$0 Def0000
+S G$screen_sound_screen_update$0$0 Def0003
+S A$sound_screen$100 Def000F
+S C$sound_screen.c$30$1$20 Def0023
+S A$sound_screen$110 Def0016
+S A$sound_screen$101 Def0010
+S C$sound_screen.c$31$1$20 Def002D
+S C$sound_screen.c$20$2$21 Def0016
+S A$sound_screen$102 Def0013
+S C$sound_screen.c$32$1$20 Def0036
+S C$sound_screen.c$23$1$20 Def0017
+S C$sound_screen.c$33$1$20 Def003F
+S C$sound_screen.c$24$1$20 Def001D
+S C$sound_screen.c$15$1$20 Def0003
+S A$sound_screen$140 Def0029
+S A$sound_screen$131 Def0022
+S A$sound_screen$122 Def001D
+S C$sound_screen.c$16$1$20 Def000B
+S A$sound_screen$150 Def0033
+S A$sound_screen$141 Def002A
+S A$sound_screen$123 Def001E
+S C$sound_screen.c$10$1$18 Def0000
+S A$sound_screen$160 Def003D
+S A$sound_screen$151 Def0034
+S A$sound_screen$142 Def002B
+S A$sound_screen$115 Def0017
+S A$sound_screen$106 Def0014
+S C$sound_screen.c$11$1$18 Def0000
+S _screen_sound_screen_update Def0003
+S A$sound_screen$116 Def0018
+S C$sound_screen.c$19$1$20 Def0007
+S A$sound_screen$117 Def001B
+S C$sound_screen.c$38$1$20 Def004D
+S C$sound_screen.c$26$2$22 Def0020
+S C$sound_screen.c$18$2$21 Def000F
+S C$sound_screen.c$13$1$18 Def0003
+S A$sound_screen$181 Def004D
+S A$sound_screen$136 Def0023
+S A$sound_screen$127 Def0020
+S A$sound_screen$118 Def001C
+S C$sound_screen.c$39$1$20 Def004F
+S C$sound_screen.c$35$2$23 Def0048
+S C$sound_screen.c$27$2$22 Def0022
+S C$sound_screen.c$19$2$21 Def0014
+S A$sound_screen$164 Def003F
+S A$sound_screen$155 Def0036
+S A$sound_screen$146 Def002D
+S A$sound_screen$137 Def0024
+S A$sound_screen$174 Def0048
+S A$sound_screen$165 Def0040
+S A$sound_screen$156 Def0037
+S A$sound_screen$147 Def002E
+S A$sound_screen$138 Def0027
+S A$sound_screen$175 Def0049
+S A$sound_screen$166 Def0043
+S A$sound_screen$157 Def003A
+S A$sound_screen$148 Def0031
+S A$sound_screen$139 Def0028
+S A$sound_screen$176 Def004C
+S A$sound_screen$167 Def0044
+S A$sound_screen$158 Def003B
+S A$sound_screen$149 Def0032
+S A$sound_screen$186 Def004F
+S A$sound_screen$168 Def0045
+S A$sound_screen$159 Def003C
+S A$sound_screen$169 Def0046
+S XG$screen_sound_screen_update$0$0 Def004F
+S G$screen_sound_screen_load$0$0 Def0000
+S A$sound_screen$90 Def000A
+S A$sound_screen$82 Def0003
+S A$sound_screen$83 Def0006
+S A$sound_screen$94 Def000B
+S A$sound_screen$95 Def000C
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 C3 00 00
+R 00 00 00 00 02 03 09 00
+T 03 00
+R 00 00 00 00
+T 03 00 CD 00 00 4D D1 E1 E5 D5 79 B7 28 08 E5 CD
+R 00 00 00 00 02 03 01 00
+T 11 00 00 00 E1 36 04 C9
+R 00 00 00 00 02 02 00 00
+T 17 00
+R 00 00 00 00
+T 17 00 E5 CD 00 00 7D E1 B7 28 03 36 02 C9
+R 00 00 00 00 02 04 02 00
+T 23 00
+R 00 00 00 00
+T 23 00 E5 CD 00 00 5D E1 7B B7 20 1B E5 CD 00 00
+R 00 00 00 00 02 04 07 00 02 0E 04 00
+T 31 00 7D E1 B7 20 12 E5 CD 00 00 7D E1 B7 20 09
+R 00 00 00 00 02 09 05 00
+T 3F 00 E5 CD 00 00 7D E1 B7 28 05
+R 00 00 00 00 02 04 08 00
+T 48 00
+R 00 00 00 00
+T 48 00 E5 CD 00 00 E1
+R 00 00 00 00 02 04 06 00
+T 4D 00
+R 00 00 00 00
+T 4D 00 36 03 C9
+R 00 00 00 00
