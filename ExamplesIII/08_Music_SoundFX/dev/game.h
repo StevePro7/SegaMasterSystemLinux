@@ -6,11 +6,11 @@
 
 #define verMaj		1
 #define verMin		0
-#define dateYear	2021
+#define dateYear	2019
 #define dateMonth	12
-#define dateDay		25
+#define dateDay		6
 #define author		"Steven Boland"
-#define name		"Building Blocks"
+#define name		"Music + Sound"
 #define descr		"Simple Sega Master System demo to run on real hardware!"
 
 #endif//_GAME_H_

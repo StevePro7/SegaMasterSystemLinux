@@ -60,7 +60,7 @@ void engine_font_manager_draw_data( unsigned int data, unsigned char x, unsigned
 	}
 }
 
-void engine_font_manager_draw_data_ZERO( unsigned int data, unsigned char x, unsigned char y )
+void engine_font_manager_draw_zero( unsigned int data, unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = font_tiles__tilemap__bin;
 
