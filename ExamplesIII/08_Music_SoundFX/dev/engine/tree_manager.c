@@ -2,6 +2,8 @@
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
 
+#define BASE_TILES_OFFSET	26
+
 static void draw( unsigned char x, unsigned char y );
 
 void engine_tree_manager_draw()
@@ -28,6 +30,6 @@ static void draw( unsigned char x, unsigned char y )
 
 	devkit_SMS_setNextTileatXY( x + 0, y + 0 ); devkit_SMS_setTile( *pnt + 0 );
 	devkit_SMS_setNextTileatXY( x + 1, y + 0 ); devkit_SMS_setTile( *pnt + 1 );
-	devkit_SMS_setNextTileatXY( x + 0, y + 1 ); devkit_SMS_setTile( *pnt + 2 );
-	devkit_SMS_setNextTileatXY( x + 1, y + 1 ); devkit_SMS_setTile( *pnt + 3 );
+	devkit_SMS_setNextTileatXY( x + 0, y + 1 ); devkit_SMS_setTile( *pnt + BASE_TILES_OFFSET + 0 );
+	devkit_SMS_setNextTileatXY( x + 1, y + 1 ); devkit_SMS_setTile( *pnt + BASE_TILES_OFFSET + 1 );
 }

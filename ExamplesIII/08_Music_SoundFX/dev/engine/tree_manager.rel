@@ -1,47 +1,46 @@
 ;!FILE tree_manager.asm
 XL2
-H 9 areas 8B global symbols
+H 9 areas 88 global symbols
 M tree_manager
 O -mz80
 S _devkit_SMS_setNextTileatXY Ref0000
 S _game_tiles__tilemap__bin Ref0000
 S .__.ABS. Def0000
 S _devkit_SMS_setTile Ref0000
-A _CODE size B2 flags 0 addr 0
-S XFtree_manager$draw$0$0 Def00B1
+A _CODE size B3 flags 0 addr 0
+S XFtree_manager$draw$0$0 Def00B2
 S A$tree_manager$100 Def0023
-S A$tree_manager$200 Def0094
+S A$tree_manager$200 Def0096
 S A$tree_manager$101 Def0024
-S A$tree_manager$210 Def00A5
-S A$tree_manager$201 Def0095
+S A$tree_manager$210 Def00A7
+S A$tree_manager$201 Def0097
 S A$tree_manager$111 Def002E
 S A$tree_manager$102 Def0025
-S A$tree_manager$211 Def00A6
-S A$tree_manager$202 Def0096
+S A$tree_manager$220 Def00B2
+S A$tree_manager$211 Def00AA
+S A$tree_manager$202 Def0098
 S A$tree_manager$112 Def002F
 S A$tree_manager$103 Def0027
-S A$tree_manager$212 Def00A7
-S A$tree_manager$203 Def0097
+S A$tree_manager$212 Def00AB
+S A$tree_manager$203 Def0099
 S A$tree_manager$113 Def0030
 S A$tree_manager$104 Def0028
-S A$tree_manager$213 Def00A8
-S A$tree_manager$204 Def009A
+S A$tree_manager$213 Def00AC
+S A$tree_manager$204 Def009C
 S A$tree_manager$132 Def0041
 S A$tree_manager$123 Def003A
 S A$tree_manager$114 Def0031
 S A$tree_manager$105 Def0029
-S A$tree_manager$223 Def00B1
-S A$tree_manager$214 Def00A9
-S A$tree_manager$205 Def009B
+S A$tree_manager$214 Def00AF
+S A$tree_manager$205 Def009D
 S A$tree_manager$160 Def005C
 S A$tree_manager$151 Def004A
 S A$tree_manager$142 Def0042
 S A$tree_manager$124 Def003B
 S A$tree_manager$115 Def0033
 S A$tree_manager$106 Def002C
-S C$tree_manager.c$20$3$70 Def0022
-S A$tree_manager$215 Def00AA
-S A$tree_manager$206 Def009E
+S A$tree_manager$215 Def00B0
+S A$tree_manager$206 Def00A0
 S A$tree_manager$170 Def0069
 S A$tree_manager$161 Def005F
 S A$tree_manager$152 Def004D
@@ -49,32 +48,30 @@ S A$tree_manager$143 Def0044
 S A$tree_manager$125 Def003C
 S A$tree_manager$116 Def0034
 S A$tree_manager$107 Def002D
-S C$tree_manager.c$30$1$72 Def0060
-S C$tree_manager.c$21$3$70 Def002E
-S A$tree_manager$216 Def00AB
-S A$tree_manager$207 Def009F
+S A$tree_manager$207 Def00A1
 S A$tree_manager$180 Def007A
 S A$tree_manager$171 Def006C
 S A$tree_manager$153 Def0050
 S A$tree_manager$144 Def0048
 S A$tree_manager$126 Def003D
 S A$tree_manager$117 Def0035
-S C$tree_manager.c$31$1$72 Def007C
-S A$tree_manager$217 Def00AE
-S A$tree_manager$208 Def00A2
+S C$tree_manager.c$31$1$72 Def004A
+S C$tree_manager.c$22$3$70 Def0022
+S A$tree_manager$208 Def00A4
 S A$tree_manager$190 Def0083
 S A$tree_manager$181 Def007B
 S A$tree_manager$172 Def006D
 S A$tree_manager$154 Def0051
 S A$tree_manager$127 Def003F
 S A$tree_manager$118 Def0038
-S A$tree_manager$218 Def00AF
-S A$tree_manager$209 Def00A3
+S C$tree_manager.c$32$1$72 Def0060
+S C$tree_manager.c$23$3$70 Def002E
+S A$tree_manager$209 Def00A5
 S A$tree_manager$191 Def0086
 S A$tree_manager$173 Def006E
 S A$tree_manager$155 Def0054
 S A$tree_manager$119 Def0039
-S C$tree_manager.c$33$1$72 Def00B1
+S C$tree_manager.c$33$1$72 Def007C
 S A$tree_manager$192 Def0087
 S A$tree_manager$174 Def0071
 S A$tree_manager$165 Def0060
@@ -83,35 +80,35 @@ S A$tree_manager$193 Def0088
 S A$tree_manager$175 Def0072
 S A$tree_manager$166 Def0063
 S A$tree_manager$157 Def0058
-S C$tree_manager.c$12$2$67 Def0019
+S C$tree_manager.c$35$1$72 Def00B2
 S A$tree_manager$194 Def008B
 S A$tree_manager$185 Def007C
 S A$tree_manager$176 Def0074
 S A$tree_manager$167 Def0064
 S A$tree_manager$158 Def0059
+S C$tree_manager.c$20$2$69 Def003A
 S A$tree_manager$195 Def008C
 S A$tree_manager$186 Def007F
 S A$tree_manager$177 Def0075
 S A$tree_manager$168 Def0065
 S A$tree_manager$159 Def005B
-S C$tree_manager.c$12$2$69 Def0000
+S C$tree_manager.c$14$2$67 Def0019
 S A$tree_manager$196 Def008D
 S A$tree_manager$187 Def0080
 S A$tree_manager$178 Def0076
 S A$tree_manager$169 Def0068
-S C$tree_manager.c$29$1$72 Def004A
 S A$tree_manager$197 Def0090
 S A$tree_manager$188 Def0081
 S A$tree_manager$179 Def0077
-S C$tree_manager.c$23$2$69 Def0041
-S C$tree_manager.c$14$3$68 Def0002
+S C$tree_manager.c$14$2$69 Def0000
 S A$tree_manager$198 Def0091
 S A$tree_manager$189 Def0082
-S C$tree_manager.c$15$3$68 Def000D
 S A$tree_manager$199 Def0093
-S C$tree_manager.c$25$2$69 Def0042
-S C$tree_manager.c$27$1$69 Def004A
-S C$tree_manager.c$18$2$69 Def003A
+S C$tree_manager.c$25$2$69 Def0041
+S C$tree_manager.c$16$3$68 Def0002
+S C$tree_manager.c$17$3$68 Def000D
+S C$tree_manager.c$27$2$69 Def0042
+S C$tree_manager.c$29$1$69 Def004A
 S A$tree_manager$70 Def000C
 S A$tree_manager$80 Def0014
 S A$tree_manager$62 Def0002
@@ -139,7 +136,7 @@ S A$tree_manager$88 Def001B
 S A$tree_manager$79 Def0013
 S A$tree_manager$89 Def001C
 S A$tree_manager$99 Def0022
-S C$tree_manager.c$7$0$0 Def0000
+S C$tree_manager.c$9$0$0 Def0000
 S Ftree_manager$draw$0$0 Def0042
 S _engine_tree_manager_draw Def0000
 S XG$engine_tree_manager_draw$0$0 Def0041
@@ -183,11 +180,11 @@ T 6A 00 00 00 F1 C1 21 00 00 5E 16 00 13 C5 D5 CD
 R 00 00 00 00 02 02 00 00 02 07 01 00
 T 78 00 00 00 F1 C1 DD 46 05 04 C5 C5 33 DD 7E 04
 R 00 00 00 00 02 02 03 00
-T 86 00 F5 33 CD 00 00 F1 C1 21 00 00 5E 16 00 13
+T 86 00 F5 33 CD 00 00 F1 C1 21 00 00 5E 16 00 21
 R 00 00 00 00 02 05 00 00 02 0A 01 00
-T 94 00 13 C5 D5 CD 00 00 F1 CD 00 00 F1 21 00 00
-R 00 00 00 00 02 06 03 00 02 0A 00 00 02 0E 01 00
-T A2 00 4E 06 00 03 03 03 60 69 E5 CD 00 00 F1 DD
-R 00 00 00 00 02 0C 03 00
-T B0 00 E1 C9
+T 94 00 1A 00 19 C5 E5 CD 00 00 F1 CD 00 00 F1 21
+R 00 00 00 00 02 08 03 00 02 0C 00 00
+T A2 00 00 00 4E 06 00 21 1B 00 09 E5 CD 00 00 F1
+R 00 00 00 00 02 02 01 00 02 0D 03 00
+T B0 00 DD E1 C9
 R 00 00 00 00
