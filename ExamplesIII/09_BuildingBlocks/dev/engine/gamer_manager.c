@@ -6,8 +6,6 @@
 #include "sprite_manager.h"
 #include <stdlib.h>
 
-#define SPRITE_TILES_GAMER	256 + 96
-
 // Global variable.
 struct_gamer_object global_gamer_object;
 
@@ -58,7 +56,7 @@ void engine_gamer_manager_toggle_color()
 		return;
 	}
 
-	go->kidColor = ( 1 - go->kidColor ) * 2;
+	go->kidColor = ( 1 - go->kidColor );
 	kid_calculate_tile();
 }
 
@@ -132,5 +130,5 @@ void engine_gamer_manager_draw()
 static void kid_calculate_tile()
 {
 	struct_gamer_object *go = &global_gamer_object;
-	go->kidTile = SPRITE_TILES_GAMER + ( ( go->kidColor * 2 ) + ( go->kidFrame * 2 ) );
+	go->kidTile = SPRITE_TILES + ( ( go->kidColor * 2 ) + go->kidFrame ) * 2;
 }

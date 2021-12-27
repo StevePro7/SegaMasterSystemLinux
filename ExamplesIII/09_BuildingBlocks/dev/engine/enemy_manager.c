@@ -5,8 +5,6 @@
 #include "global_manager.h"
 #include "sprite_manager.h"
 
-#define SPRITE_TILES_ENEMY	256 + 48
-
 // Global variables.
 struct_enemy_object global_enemy_objects[ MAX_ENEMIES ];
 
