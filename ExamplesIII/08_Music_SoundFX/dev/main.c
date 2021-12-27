@@ -18,7 +18,7 @@ void main( void )
 	engine_hack_manager_update();
 
 	open_screen_type = screen_type_start;
-	//open_screen_type = screen_type_title;
+	//open_screen_type = screen_type_music;
 	engine_screen_manager_init( open_screen_type );
 
 	devkit_SMS_displayOn();
@@ -30,12 +30,12 @@ void main( void )
 			global_pause = !global_pause;
 			if( global_pause )
 			{
-				engine_font_manager_draw_text( LOCALE_PAUSED, 10, 12 );
+				engine_font_manager_draw_text( LOCALE_PAUSED, 10, 13 );
 				devkit_PSGSilenceChannels();
 			}
 			else
 			{
-				engine_font_manager_draw_text( LOCALE_TITLE2, 10, 12 );
+				engine_font_manager_draw_text( LOCALE_SPACES, 10, 13 );
 				devkit_PSGRestoreVolumes();
 			}
 		}

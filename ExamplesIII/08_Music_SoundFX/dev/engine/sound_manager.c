@@ -4,11 +4,10 @@
 #include "../content/psg.h"
 #include <stdlib.h>
 
-#define MUSIC_PSG			music_psg
-#define PHONE_PSG			phone_psg
-#define SOUND1_PSG			sound1_psg
-#define SOUND2_PSG			sound2_psg
-#define SOUND3_PSG			sound3_psg
+#define MUSIC_PSG			mus_beat_psg
+#define SOUND1_PSG			sfx_cheat_psg
+#define SOUND2_PSG			sfx_right_psg
+#define SOUND3_PSG			sfx_wrong_psg
 #define SOUNDS_MAX			3
 
 void engine_music_manager_play()
@@ -19,7 +18,7 @@ void engine_music_manager_play()
 		return;
 	}
 
-	devkit_PSGPlayNoRepeat( ( unsigned char* ) PHONE_PSG );
+	devkit_PSGPlayNoRepeat( ( unsigned char* ) MUSIC_PSG );
 }
 
 void engine_sound_manager_play()
