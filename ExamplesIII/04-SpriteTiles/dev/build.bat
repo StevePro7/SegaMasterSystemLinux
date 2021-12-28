@@ -21,7 +21,7 @@ sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 s
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 sprite_manager.c
 cd ..
 
-::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
 
 
 :: Time build -END-
@@ -44,12 +44,8 @@ devkit/_snd_manager.rel ^
 engine/asm_manager.rel ^
 engine/content_manager.rel ^
 engine/font_manager.rel ^
-engine/gamer_manager.rel ^
-engine/input_manager.rel ^
 engine/screen_manager.rel ^
 engine/sprite_manager.rel ^
-engine/tree_manager.rel ^
-object/gamer_object.rel ^
 content/gfx.rel
 
 
