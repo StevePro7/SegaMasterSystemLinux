@@ -2,24 +2,16 @@
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
 
-#define FONT_TILES		0
-#define GAME_TILES		64
-#define SPRITE_TILES	256
+#define SPLASH_TILES_OFFSET		128
 
-void engine_content_manager_load_tiles()
+void engine_content_manager_load_sprite_palette()
 {
-	// Font tiles.
-	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) font_tiles__tiles__psgcompr, FONT_TILES );
-	devkit_SMS_loadBGPalette( ( void * ) font_tiles__palette__bin );
-
-	// Game tiles.
-	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) game_tiles__tiles__psgcompr, GAME_TILES );
-	devkit_SMS_loadBGPalette( ( void * ) game_tiles__palette__bin );
+	devkit_SMS_setSpritePaletteColor( 0, devkit_RGB( 0, 0, 0 ) );
 }
 
-void engine_content_manager_load_sprites()
+void engine_content_manager_load_splash_screen()
 {
-	// Sprite tiles.
-	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) sprites__tiles__psgcompr, SPRITE_TILES );
-	devkit_SMS_loadSpritePalette( ( void * ) sprites__palette__bin );
+	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char* ) splash__tiles__psgcompr, SPLASH_TILES_OFFSET );
+	devkit_SMS_loadSTMcompressedTileMap( 0, 0, ( void * ) splash__tilemap__stmcompr );
+	devkit_SMS_loadBGPalette( ( void * ) splash__palette__bin );
 }
