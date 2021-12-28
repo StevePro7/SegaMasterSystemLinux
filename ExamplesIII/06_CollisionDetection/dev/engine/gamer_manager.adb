@@ -10,7 +10,7 @@ S:Lgamer_manager.engine_gamer_manager_update$delta$1$23({1}SC:U),R,0,0,[c]
 S:Lgamer_manager.engine_gamer_manager_update$dx$1$23({1}SC:S),R,0,0,[e]
 S:Lgamer_manager.engine_gamer_manager_update$dy$1$23({1}SC:S),B,1,-1
 F:G$engine_gamer_manager_draw$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lgamer_manager.engine_gamer_manager_draw$go$1$38({2}DG,STtag_struct_gamer_object:S),R,0,0,[c,b]
+S:Lgamer_manager.engine_gamer_manager_draw$go$1$38({2}DG,STtag_struct_gamer_object:S),R,0,0,[]
 F:Fgamer_manager$calculate_tile$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lgamer_manager.calculate_tile$go$1$39({2}DG,STtag_struct_gamer_object:S),R,0,0,[]
 T:Fgamer_manager$tag_struct_gamer_object[({0}S:S$gamerX$0$0({1}SC:U),Z,0,0)({1}S:S$gamerY$0$0({1}SC:U),Z,0,0)({2}S:S$minX$0$0({1}SC:U),Z,0,0)({3}S:S$minY$0$0({1}SC:U),Z,0,0)({4}S:S$maxX$0$0({1}SC:U),Z,0,0)({5}S:S$maxY$0$0({1}SC:U),Z,0,0)({6}S:S$velocity$0$0({1}SC:U),Z,0,0)({7}S:S$color$0$0({1}SC:U),Z,0,0)({8}S:S$frame$0$0({1}SC:U),Z,0,0)({9}S:S$base$0$0({2}SI:U),Z,0,0)({11}S:S$tile$0$0({2}SI:U),Z,0,0)]

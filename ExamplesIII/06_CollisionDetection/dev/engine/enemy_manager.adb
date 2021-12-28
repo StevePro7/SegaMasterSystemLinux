@@ -1,9 +1,9 @@
 M:enemy_manager
 F:G$engine_enemy_manager_load$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lenemy_manager.engine_enemy_manager_load$idx$1$4({1}SC:U),R,0,0,[b]
-F:G$engine_enemy_manager_draw$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lenemy_manager.engine_enemy_manager_draw$eo$1$7({2}DG,STtag_struct_enemy_object:S),R,0,0,[e,d]
-S:Lenemy_manager.engine_enemy_manager_draw$idx$1$7({1}SC:U),R,0,0,[c]
+F:G$engine_enemy_manager_draw$0$0({2}DF,SV:S),Z,0,1,0,0,0
+S:Lenemy_manager.engine_enemy_manager_draw$eo$1$7({2}DG,STtag_struct_enemy_object:S),R,0,0,[c,b]
+S:Lenemy_manager.engine_enemy_manager_draw$idx$1$7({1}SC:U),B,1,-1
 F:Fenemy_manager$construction$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lenemy_manager.construction$idx$1$10({1}SC:U),B,1,4
 S:Lenemy_manager.construction$x$1$10({1}SC:U),B,1,5
