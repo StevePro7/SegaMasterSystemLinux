@@ -1,6 +1,5 @@
 #include "content_manager.h"
 #include "../devkit/_sms_manager.h"
-#include "../engine/global_manager.h"
 #include "../content/gfx.h"
 
 #define FONT_TILES		0

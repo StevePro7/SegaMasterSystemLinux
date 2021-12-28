@@ -1,58 +1,53 @@
 #include "screen_manager.h"
-#include "enum_manager.h"
+#include "font_manager.h"
+#include "input_manager.h"
+#include "gamer_manager.h"
+#include "tree_manager.h"
 
-#define MAX_SCREEENS		4
-
-// Screens
-#include "../screen/none_screen.h"
-#include "../screen/init_screen.h"
-#include "../screen/load_screen.h"
-#include "../screen/test_screen.h"
-
-static unsigned char curr_screen_type;
-static unsigned char next_screen_type;
-
-void engine_screen_manager_init( unsigned char open_screen_type )
+void engine_screen_manager_init()
 {
-	curr_screen_type = screen_type_none;
-	next_screen_type = open_screen_type;
+	engine_gamer_manager_init( 104, 88, 2, 256 );
+	engine_tree_manager_draw();
 }
 
 void engine_screen_manager_update()
 {
-	if( curr_screen_type != next_screen_type )
+	unsigned char input;
+	signed char dx = 0;
+	signed char dy = 0;
+
+	input = engine_input_manager_move_left();
+	if( input )
 	{
-		curr_screen_type = next_screen_type;
-		switch( curr_screen_type )
+		dx = -1;
+	}
+	else
+	{
+		input = engine_input_manager_move_right();
+		if( input )
 		{
-		case screen_type_none:
-			screen_none_screen_load();
-			break;
-		case screen_type_init:
-			screen_init_screen_load();
-			break;
-		case screen_type_load:
-			screen_load_screen_load();
-			break;
-		case screen_type_test:
-			screen_test_screen_load();
-			break;
+			dx = 1;
 		}
 	}
 
-	switch( curr_screen_type )
+	input = engine_input_manager_move_up();
+	if( input )
 	{
-	case screen_type_none:
-		screen_none_screen_update( &next_screen_type );
-		break;
-	case screen_type_init:
-		screen_init_screen_update( &next_screen_type );
-		break;
-	case screen_type_load:
-		screen_load_screen_update( &next_screen_type );
-		break;
-	case screen_type_test:
-		screen_test_screen_update( &next_screen_type );
-		break;
+		dy = -1;
 	}
+	else
+	{
+		input = engine_input_manager_move_down();
+		if( input )
+		{
+			dy = 1;
+		}
+	}
+
+	if( 0 != dx || 0 != dy )
+	{
+		engine_gamer_manager_update( dx, dy );
+	}
+
+	engine_gamer_manager_draw();
 }
