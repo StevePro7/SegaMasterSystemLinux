@@ -1,0 +1,2 @@
+M:gamer_object
+T:Fgamer_object$tag_struct_gamer_object[({0}S:S$gamerX$0$0({1}SC:U),Z,0,0)({1}S:S$gamerY$0$0({1}SC:U),Z,0,0)({2}S:S$minX$0$0({1}SC:U),Z,0,0)({3}S:S$minY$0$0({1}SC:U),Z,0,0)({4}S:S$maxX$0$0({1}SC:U),Z,0,0)({5}S:S$maxY$0$0({1}SC:U),Z,0,0)({6}S:S$velocity$0$0({1}SC:U),Z,0,0)({7}S:S$color$0$0({1}SC:U),Z,0,0)({8}S:S$frame$0$0({1}SC:U),Z,0,0)({9}S:S$base$0$0({2}SI:U),Z,0,0)({11}S:S$tile$0$0({2}SI:U),Z,0,0)]
