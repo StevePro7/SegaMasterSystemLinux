@@ -10,7 +10,7 @@ S:Lgamer_manager.engine_gamer_manager_update$dx$1$70({1}SC:U),B,1,4
 S:Lgamer_manager.engine_gamer_manager_update$dy$1$70({1}SC:U),B,1,5
 S:Lgamer_manager.engine_gamer_manager_update$go$1$71({2}DG,STtag_struct_gamer_object:S),R,0,0,[e,d]
 F:G$engine_gamer_manager_draw$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lgamer_manager.engine_gamer_manager_draw$go$1$72({2}DG,STtag_struct_gamer_object:S),R,0,0,[c,b]
+S:Lgamer_manager.engine_gamer_manager_draw$go$1$72({2}DG,STtag_struct_gamer_object:S),R,0,0,[]
 T:Fgamer_manager$tag_struct_gamer_object[({0}S:S$gamerX$0$0({1}SC:U),Z,0,0)({1}S:S$gamerY$0$0({1}SC:U),Z,0,0)({2}S:S$minX$0$0({1}SC:U),Z,0,0)({3}S:S$minY$0$0({1}SC:U),Z,0,0)({4}S:S$maxX$0$0({1}SC:U),Z,0,0)({5}S:S$maxY$0$0({1}SC:U),Z,0,0)({6}S:S$velocity$0$0({1}SC:U),Z,0,0)({7}S:S$color$0$0({1}SC:U),Z,0,0)({8}S:S$frame$0$0({1}SC:U),Z,0,0)({9}S:S$base$0$0({2}SI:U),Z,0,0)({11}S:S$tile$0$0({2}SI:U),Z,0,0)]
 S:G$global_gamer_object$0$0({13}STtag_struct_gamer_object:S),E,0,0
 S:G$devkit_SMS_init$0$0({2}DF,SV:S),C,0,0
