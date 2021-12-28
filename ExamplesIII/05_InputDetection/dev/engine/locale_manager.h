@@ -1,0 +1,9 @@
+#ifndef _LOCALE_MANAGER_H_
+#define _LOCALE_MANAGER_H_
+
+#define LOCALE_BLANK		"         "
+#define LOCALE_LINE1		"COLLISION"
+#define LOCALE_LINE2		"DETECTION"
+#define LOCALE_STATUS		"STATUS"
+
+#endif//_LOCALE_MANAGER_H_
