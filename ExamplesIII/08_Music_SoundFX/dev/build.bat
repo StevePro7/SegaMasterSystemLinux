@@ -15,6 +15,7 @@ cd ..
 
 cd engine
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 asm_manager.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 audio_manager.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 content_manager.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 enum_manager.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 font_manager.c
@@ -23,7 +24,6 @@ sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 h
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 input_manager.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 locale_manager.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 screen_manager.c
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 sound_manager.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 text_manager.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 tree_manager.c
 cd ..
@@ -61,6 +61,7 @@ sdcc --debug -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-
 devkit/_sms_manager.rel ^
 devkit/_snd_manager.rel ^
 engine/asm_manager.rel ^
+engine/audio_manager.rel ^
 engine/content_manager.rel ^
 engine/enum_manager.rel ^
 engine/font_manager.rel ^
@@ -69,7 +70,6 @@ engine/hack_manager.rel ^
 engine/input_manager.rel ^
 engine/locale_manager.rel ^
 engine/screen_manager.rel ^
-engine/sound_manager.rel ^
 engine/text_manager.rel ^
 engine/tree_manager.rel ^
 object/hack_object.rel ^

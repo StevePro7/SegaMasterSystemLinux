@@ -1,4 +1,4 @@
-#include "sound_manager.h"
+#include "audio_manager.h"
 #include "../devkit/_snd_manager.h"
 #include "../engine/hack_manager.h"
 #include "../content/psg.h"
