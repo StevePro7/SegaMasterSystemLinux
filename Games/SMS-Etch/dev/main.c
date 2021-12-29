@@ -81,18 +81,21 @@ __sfr __at 0xBE VDPDataPort;
 // 5 ok << chosen for safety
 // 4 ok
 // 3 not ok
-#define WAIT_VRAM __asm nop \
-	nop                     \
-		nop                 \
-			nop             \
-				nop __endasm
+#define WAIT_VRAM __asm \
+		nop 			\
+		nop             \
+		nop             \
+		nop             \
+		nop				\
+	__endasm;
 
 static void blitTile(uint8_t *data, uint16_t tilefrom, unsigned char n_tiles)
 {
 	uint8_t i, v;
 
-	__asm di
-		__endasm;
+	__asm
+		di
+	__endasm;
 
 	SMS_setAddr(0x4000 | (tilefrom * 32));
 
@@ -109,8 +112,9 @@ static void blitTile(uint8_t *data, uint16_t tilefrom, unsigned char n_tiles)
 		WAIT_VRAM;
 	}
 
-	__asm ei
-		__endasm;
+	__asm 
+		ei
+	__endasm;
 }
 
 static void syncDisplay(void)
@@ -713,7 +717,7 @@ void inputDiag_inlib(void)
 	SMS_setNextTileatXY(1, 1);
 	printf("Input device diagnostic ");
 	SMS_setNextTileatXY(1, 3);
-	printf("SMS-A-SKETCH V" VERSION_STR);
+	printf("SMS-A-SKETCH V", "1.0");
 	SMS_waitForVBlank();
 
 	inlib_init();
@@ -914,10 +918,10 @@ void main(void)
 	// If the ROM is too small, Meka also assumes there is no mapper. But this is
 	// wrong in this case as SRAM is used... So data_bank2.c and data_bank3.c are there
 	// to bump the size up to 64kB...
-	__asm 
+	__asm
 		push af
 		ld a, #2
-		ld(0xFFFF), a 
+		ld (0xFFFF), a
 		pop af 
 	__endasm;
 	SMS_mapROMBank(2);
@@ -1250,4 +1254,4 @@ void main(void)
 }
 
 SMS_EMBED_SEGA_ROM_HEADER(9999, 0);
-SMS_EMBED_SDSC_HEADER_AUTO_DATE(VERSION_MAJ, VERSION_MIN, "raphnet.", "SMS-a-sketch", "\"Etch a sketch\"(tm) style drawing for SMS");
+SMS_EMBED_SDSC_HEADER(1, 0, 2017, 9, 15, "StevePro Studios", "Hello World", "Simple Sega Master System demo to run on real hardware");

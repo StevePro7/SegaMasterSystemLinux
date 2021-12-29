@@ -20,8 +20,8 @@ S:Lflash.flash_programBytes$buffer$1$100({2}DG,SC:U),B,1,4
 S:Lflash.flash_programBytes$size$1$100({2}SI:S),B,1,6
 S:Lflash.flash_programBytes$sector$1$100({1}SC:U),B,1,8
 S:Lflash.flash_programBytes$offset$1$100({2}SI:U),B,1,9
-S:Lflash.flash_programBytes$sloc0$1$0({2}SI:U),B,1,-2
-S:Lflash.flash_programBytes$sloc1$1$0({1}SC:U),B,1,-3
+S:Lflash.flash_programBytes$sloc0$1$0({2}SI:U),B,1,-3
+S:Lflash.flash_programBytes$sloc1$1$0({1}SC:U),B,1,-1
 F:G$flash_readByte$0$0({2}DF,SC:U),Z,0,31,0,0,0
 S:Lflash.flash_readByte$sector$1$103({1}SC:U),B,1,4
 S:Lflash.flash_readByte$offset$1$103({2}SI:U),B,1,5
