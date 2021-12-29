@@ -558,8 +558,8 @@ _clearDisplay:
 	.globl	C$main.c$146$1$150
 ;main.c:146: for (i = 0; i < DRAWAREA_TILES * 8; i += 4)
 00127$:
-	ld	hl, #0x0000
-	ex	(sp), hl
+	ld	-6 (ix), #0x00
+	ld	-5 (ix), #0x00
 00113$:
 	C$main.c$148$4$154	= .
 	.globl	C$main.c$148$4$154
@@ -568,10 +568,10 @@ _clearDisplay:
 	and	a, #0x03
 	ld	e, a
 	ld	d, #0x00
-	ld	a, -10 (ix)
+	ld	a, -6 (ix)
 	add	a, e
 	ld	c, a
-	ld	a, -9 (ix)
+	ld	a, -5 (ix)
 	adc	a, d
 	ld	b, a
 	ld	iy, #_drawbuf
@@ -588,10 +588,10 @@ _clearDisplay:
 	C$main.c$151$4$154	= .
 	.globl	C$main.c$151$4$154
 ;main.c:151: if ((i & 0x1ff) == 0)
-	ld	a, -10 (ix)
+	ld	a, -6 (ix)
 	or	a, a
 	jr	NZ,00114$
-	bit	0, -9 (ix)
+	bit	0, -5 (ix)
 	jr	NZ,00114$
 	C$main.c$153$5$155	= .
 	.globl	C$main.c$153$5$155
@@ -609,15 +609,15 @@ _clearDisplay:
 	C$main.c$146$3$153	= .
 	.globl	C$main.c$146$3$153
 ;main.c:146: for (i = 0; i < DRAWAREA_TILES * 8; i += 4)
-	ld	a, -10 (ix)
+	ld	a, -6 (ix)
 	add	a, #0x04
-	ld	-10 (ix), a
-	ld	a, -9 (ix)
+	ld	-6 (ix), a
+	ld	a, -5 (ix)
 	adc	a, #0x00
-	ld	-9 (ix), a
-	ld	a, -10 (ix)
+	ld	-5 (ix), a
+	ld	a, -6 (ix)
 	sub	a, #0x40
-	ld	a, -9 (ix)
+	ld	a, -5 (ix)
 	rla
 	ccf
 	rra
@@ -633,8 +633,8 @@ _clearDisplay:
 	C$main.c$160$1$150	= .
 	.globl	C$main.c$160$1$150
 ;main.c:160: for (i = 0; i < DRAWAREA_TILES * 8; i += 4)
-	ld	hl, #0x0000
-	ex	(sp), hl
+	ld	-6 (ix), #0x00
+	ld	-5 (ix), #0x00
 00115$:
 	C$main.c$162$4$157	= .
 	.globl	C$main.c$162$4$157
@@ -648,10 +648,10 @@ _clearDisplay:
 	and	a, #0x03
 	ld	e, a
 	ld	d, #0x00
-	ld	a, -10 (ix)
+	ld	a, -6 (ix)
 	add	a, e
 	ld	c, a
-	ld	a, -9 (ix)
+	ld	a, -5 (ix)
 	adc	a, d
 	ld	b, a
 	ld	iy, #_drawbuf
@@ -668,10 +668,10 @@ _clearDisplay:
 	C$main.c$165$4$157	= .
 	.globl	C$main.c$165$4$157
 ;main.c:165: if ((i & 0x1ff) == 0)
-	ld	a, -10 (ix)
+	ld	a, -6 (ix)
 	or	a, a
 	jr	NZ,00116$
-	bit	0, -9 (ix)
+	bit	0, -5 (ix)
 	jr	NZ,00116$
 	C$main.c$167$5$158	= .
 	.globl	C$main.c$167$5$158
@@ -689,15 +689,15 @@ _clearDisplay:
 	C$main.c$160$3$156	= .
 	.globl	C$main.c$160$3$156
 ;main.c:160: for (i = 0; i < DRAWAREA_TILES * 8; i += 4)
-	ld	a, -10 (ix)
+	ld	a, -6 (ix)
 	add	a, #0x04
-	ld	-10 (ix), a
-	ld	a, -9 (ix)
+	ld	-6 (ix), a
+	ld	a, -5 (ix)
 	adc	a, #0x00
-	ld	-9 (ix), a
-	ld	a, -10 (ix)
+	ld	-5 (ix), a
+	ld	a, -6 (ix)
 	sub	a, #0x40
-	ld	a, -9 (ix)
+	ld	a, -5 (ix)
 	rla
 	ccf
 	rra
@@ -712,8 +712,8 @@ _clearDisplay:
 	.globl	C$main.c$175$1$150
 ;main.c:175: for (y = 0; y < DRAWAREA_TILES_H; y++)
 00134$:
-	ld	-4 (ix), #0x00
-	ld	-3 (ix), #0x00
+	ld	-8 (ix), #0x00
+	ld	-7 (ix), #0x00
 00119$:
 	C$main.c$177$3$160	= .
 	.globl	C$main.c$177$3$160
@@ -734,8 +734,8 @@ _clearDisplay:
 	C$main.c$183$3$160	= .
 	.globl	C$main.c$183$3$160
 ;main.c:183: DRAWAREA_FIRST_TID + y * DRAWAREA_TILES_W,
-	ld	c,-4 (ix)
-	ld	b,-3 (ix)
+	ld	c,-8 (ix)
+	ld	b,-7 (ix)
 	ld	l, c
 	ld	h, b
 	add	hl, hl
@@ -751,8 +751,8 @@ _clearDisplay:
 	C$main.c$182$3$160	= .
 	.globl	C$main.c$182$3$160
 ;main.c:182: blitTile(drawbuf + (y * DRAWAREA_TILES_W) * 8,
-	ld	c,-4 (ix)
-	ld	b,-3 (ix)
+	ld	c,-8 (ix)
+	ld	b,-7 (ix)
 	ld	l, c
 	ld	h, b
 	add	hl, hl
@@ -814,34 +814,33 @@ _clearDisplay:
 	C$main.c$195$3$160	= .
 	.globl	C$main.c$195$3$160
 ;main.c:195: ye = (y & 3) << 2;
-	ld	a, -4 (ix)
+	ld	a, -8 (ix)
 	and	a, #0x03
 	ld	l, a
 	ld	h, #0x00
 	add	hl, hl
 	add	hl, hl
-	ld	-6 (ix), l
-	ld	-5 (ix), h
+	ex	(sp), hl
 	C$main.c$196$3$160	= .
 	.globl	C$main.c$196$3$160
 ;main.c:196: SMS_setBGScrollY(ye);
-	ld	l, -6 (ix)
+	ld	l, -10 (ix)
 	call	_SMS_setBGScrollY
 	C$main.c$197$3$160	= .
 	.globl	C$main.c$197$3$160
 ;main.c:197: xe = (y & 1) << 2;
-	ld	a, -4 (ix)
+	ld	a, -8 (ix)
 	and	a, #0x01
 	ld	l, a
 	ld	h, #0x00
 	add	hl, hl
 	add	hl, hl
-	ld	-8 (ix), l
-	ld	-7 (ix), h
+	ld	-4 (ix), l
+	ld	-3 (ix), h
 	C$main.c$198$3$160	= .
 	.globl	C$main.c$198$3$160
 ;main.c:198: SMS_setBGScrollX(xe);
-	ld	l, -8 (ix)
+	ld	l, -4 (ix)
 	call	_SMS_setBGScrollX
 	C$main.c$200$1$150	= .
 	.globl	C$main.c$200$1$150
@@ -851,11 +850,11 @@ _clearDisplay:
 	C$main.c$202$5$162	= .
 	.globl	C$main.c$202$5$162
 ;main.c:202: tempMoveSprite(i, xe, -ye);
-	ld	e, -6 (ix)
+	ld	e, -10 (ix)
 	xor	a, a
 	sub	a, e
 	ld	h, a
-	ld	d, -8 (ix)
+	ld	d, -4 (ix)
 	ld	a, c
 	push	bc
 	push	hl
@@ -881,13 +880,13 @@ _clearDisplay:
 	C$main.c$175$2$159	= .
 	.globl	C$main.c$175$2$159
 ;main.c:175: for (y = 0; y < DRAWAREA_TILES_H; y++)
-	inc	-4 (ix)
+	inc	-8 (ix)
 	jr	NZ,00186$
-	inc	-3 (ix)
+	inc	-7 (ix)
 00186$:
-	ld	a, -4 (ix)
+	ld	a, -8 (ix)
 	sub	a, #0x0f
-	ld	a, -3 (ix)
+	ld	a, -7 (ix)
 	rla
 	ccf
 	rra
@@ -1245,8 +1244,8 @@ _drawLine:
 	ld	e, a
 	ld	a, #0x00
 	sbc	a, h
-	ld	-6 (ix), e
-	ld	-5 (ix), a
+	ld	-10 (ix), e
+	ld	-9 (ix), a
 	C$main.c$261$1$177	= .
 	.globl	C$main.c$261$1$177
 ;main.c:261: int8_t sx = x0 < x1 ? 1 : -1;
@@ -1280,15 +1279,15 @@ _drawLine:
 00117$:
 	ld	e, #0xff
 00118$:
-	ld	-13 (ix), e
+	ld	-8 (ix), e
 	C$main.c$263$1$177	= .
 	.globl	C$main.c$263$1$177
 ;main.c:263: int err = dx + dy;
-	ld	l,-6 (ix)
-	ld	h,-5 (ix)
+	ld	l,-10 (ix)
+	ld	h,-9 (ix)
 	add	hl, bc
-	ld	-11 (ix), l
-	ld	-10 (ix), h
+	ld	-6 (ix), l
+	ld	-5 (ix), h
 	C$main.c$268$1$177	= .
 	.globl	C$main.c$268$1$177
 ;main.c:268: modified_tile = (x0 >> 3) + (y0 >> 3) * DRAWAREA_TILES_W;
@@ -1318,8 +1317,8 @@ _drawLine:
 	add	hl, hl
 	pop	de
 	add	hl, de
-	ld	-9 (ix), l
-	ld	-8 (ix), h
+	ld	-12 (ix), l
+	ld	-11 (ix), h
 	C$main.c$270$1$177	= .
 	.globl	C$main.c$270$1$177
 ;main.c:270: while (1)
@@ -1358,37 +1357,37 @@ _drawLine:
 	C$main.c$274$2$178	= .
 	.globl	C$main.c$274$2$178
 ;main.c:274: if (modified_tile != next_tile)
-	ld	a, -9 (ix)
+	ld	a, -12 (ix)
 	sub	a, e
 	jr	NZ,00149$
-	ld	a, -8 (ix)
+	ld	a, -11 (ix)
 	sub	a, d
 	jr	Z,00102$
 00149$:
 	C$main.c$276$3$179	= .
 	.globl	C$main.c$276$3$179
 ;main.c:276: blitTile(drawbuf + (modified_tile << 3), DRAWAREA_FIRST_TID + modified_tile, 1);
-	ld	a, -9 (ix)
+	ld	a, -12 (ix)
 	add	a, #0x48
-	ld	-4 (ix), a
-	ld	a, -8 (ix)
-	adc	a, #0x00
-	ld	-3 (ix), a
-	ld	a, -9 (ix)
 	ld	-2 (ix), a
-	ld	a, -8 (ix)
+	ld	a, -11 (ix)
+	adc	a, #0x00
 	ld	-1 (ix), a
+	ld	a, -12 (ix)
+	ld	-4 (ix), a
+	ld	a, -11 (ix)
+	ld	-3 (ix), a
 	ld	a, #0x03+1
 	jr	00151$
 00150$:
-	sla	-2 (ix)
-	rl	-1 (ix)
+	sla	-4 (ix)
+	rl	-3 (ix)
 00151$:
 	dec	a
 	jr	NZ,00150$
 	push	hl
-	ld	l, -2 (ix)
-	ld	h, -1 (ix)
+	ld	l, -4 (ix)
+	ld	h, -3 (ix)
 	push	hl
 	pop	iy
 	pop	hl
@@ -1399,8 +1398,8 @@ _drawLine:
 	ld	a, #0x01
 	push	af
 	inc	sp
-	ld	l,-4 (ix)
-	ld	h,-3 (ix)
+	ld	l,-2 (ix)
+	ld	h,-1 (ix)
 	push	hl
 	push	iy
 	call	_blitTile
@@ -1413,31 +1412,31 @@ _drawLine:
 	C$main.c$278$2$178	= .
 	.globl	C$main.c$278$2$178
 ;main.c:278: modified_tile = next_tile;
-	ld	-9 (ix), e
-	ld	-8 (ix), d
+	ld	-12 (ix), e
+	ld	-11 (ix), d
 	C$main.c$280$1$177	= .
 	.globl	C$main.c$280$1$177
 ;main.c:280: bit = 0x80 >> (x0 & 7);
 	ld	a, 4 (ix)
 	and	a, #0x07
-	ld	-12 (ix), #0x80
+	ld	-13 (ix), #0x80
 	inc	a
 	jr	00153$
 00152$:
-	srl	-12 (ix)
+	srl	-13 (ix)
 00153$:
 	dec	a
 	jr	NZ, 00152$
 	C$main.c$281$2$178	= .
 	.globl	C$main.c$281$2$178
 ;main.c:281: drawbuf[(modified_tile << 3) + (y0 & 0x7)] |= bit;
-	ld	-2 (ix), e
-	ld	-1 (ix), d
+	ld	-4 (ix), e
+	ld	-3 (ix), d
 	ld	a, #0x03+1
 	jr	00155$
 00154$:
-	sla	-2 (ix)
-	rl	-1 (ix)
+	sla	-4 (ix)
+	rl	-3 (ix)
 00155$:
 	dec	a
 	jr	NZ,00154$
@@ -1448,14 +1447,14 @@ _drawLine:
 	push	hl
 	pop	iy
 	push	bc
-	ld	c,-2 (ix)
-	ld	b,-1 (ix)
+	ld	c,-4 (ix)
+	ld	b,-3 (ix)
 	add	iy, bc
 	ld	bc, (_drawbuf)
 	add	iy, bc
 	pop	bc
 	ld	a, 0 (iy)
-	or	a, -12 (ix)
+	or	a, -13 (ix)
 	ld	0 (iy), a
 	C$main.c$283$2$178	= .
 	.globl	C$main.c$283$2$178
@@ -1480,18 +1479,16 @@ _drawLine:
 	C$main.c$285$2$178	= .
 	.globl	C$main.c$285$2$178
 ;main.c:285: e2 = err * 2;
-	pop	de
-	pop	hl
-	push	hl
-	push	de
+	ld	l,-6 (ix)
+	ld	h,-5 (ix)
 	add	hl, hl
 	C$main.c$286$2$178	= .
 	.globl	C$main.c$286$2$178
 ;main.c:286: if (e2 >= dy)
 	ld	a, l
-	sub	a, -6 (ix)
+	sub	a, -10 (ix)
 	ld	a, h
-	sbc	a, -5 (ix)
+	sbc	a, -9 (ix)
 	jp	PO, 00159$
 	xor	a, #0x80
 00159$:
@@ -1499,12 +1496,12 @@ _drawLine:
 	C$main.c$288$3$180	= .
 	.globl	C$main.c$288$3$180
 ;main.c:288: err += dy;
-	ld	a, -11 (ix)
-	add	a, -6 (ix)
-	ld	-11 (ix), a
-	ld	a, -10 (ix)
-	adc	a, -5 (ix)
-	ld	-10 (ix), a
+	ld	a, -6 (ix)
+	add	a, -10 (ix)
+	ld	-6 (ix), a
+	ld	a, -5 (ix)
+	adc	a, -9 (ix)
+	ld	-5 (ix), a
 	C$main.c$289$3$180	= .
 	.globl	C$main.c$289$3$180
 ;main.c:289: x0 += sx;
@@ -1534,17 +1531,17 @@ _drawLine:
 	C$main.c$293$3$181	= .
 	.globl	C$main.c$293$3$181
 ;main.c:293: err += dx;
-	ld	a, -11 (ix)
+	ld	a, -6 (ix)
 	add	a, c
-	ld	-11 (ix), a
-	ld	a, -10 (ix)
+	ld	-6 (ix), a
+	ld	a, -5 (ix)
 	adc	a, b
-	ld	-10 (ix), a
+	ld	-5 (ix), a
 	C$main.c$294$3$181	= .
 	.globl	C$main.c$294$3$181
 ;main.c:294: y0 += sy;
-	ld	e, -13 (ix)
-	ld	a, -13 (ix)
+	ld	e, -8 (ix)
+	ld	a, -8 (ix)
 	rla
 	sbc	a, a
 	ld	d, a
@@ -1562,8 +1559,8 @@ _drawLine:
 	ld	hl, #0x0048
 	add	hl, de
 	ld	iy, (_drawbuf)
-	ld	e,-2 (ix)
-	ld	d,-1 (ix)
+	ld	e,-4 (ix)
+	ld	d,-3 (ix)
 	add	iy, de
 	ld	a, #0x01
 	push	af
@@ -1624,8 +1621,8 @@ _drawLineSync:
 	ld	e, a
 	ld	a, #0x00
 	sbc	a, h
-	ld	-8 (ix), e
-	ld	-7 (ix), a
+	ld	-11 (ix), e
+	ld	-10 (ix), a
 	C$main.c$305$1$183	= .
 	.globl	C$main.c$305$1$183
 ;main.c:305: int8_t sx = x0 < x1 ? 1 : -1;
@@ -1659,15 +1656,15 @@ _drawLineSync:
 00117$:
 	ld	e, #0xff
 00118$:
-	ld	-9 (ix), e
+	ld	-13 (ix), e
 	C$main.c$307$1$183	= .
 	.globl	C$main.c$307$1$183
 ;main.c:307: int err = dx + dy;
-	ld	l,-8 (ix)
-	ld	h,-7 (ix)
+	ld	l,-11 (ix)
+	ld	h,-10 (ix)
 	add	hl, bc
-	ld	-11 (ix), l
-	ld	-10 (ix), h
+	ld	-8 (ix), l
+	ld	-7 (ix), h
 	C$main.c$312$1$183	= .
 	.globl	C$main.c$312$1$183
 ;main.c:312: modified_tile = (x0 >> 3) + (y0 >> 3) * DRAWAREA_TILES_W;
@@ -1800,11 +1797,11 @@ _drawLineSync:
 ;main.c:326: bit = 0x80 >> (x0 & 7);
 	ld	a, 4 (ix)
 	and	a, #0x07
-	ld	-13 (ix), #0x80
+	ld	-9 (ix), #0x80
 	inc	a
 	jr	00153$
 00152$:
-	srl	-13 (ix)
+	srl	-9 (ix)
 00153$:
 	dec	a
 	jr	NZ, 00152$
@@ -1835,7 +1832,7 @@ _drawLineSync:
 	add	iy, bc
 	pop	bc
 	ld	a, 0 (iy)
-	or	a, -13 (ix)
+	or	a, -9 (ix)
 	ld	0 (iy), a
 	C$main.c$329$2$184	= .
 	.globl	C$main.c$329$2$184
@@ -1860,18 +1857,16 @@ _drawLineSync:
 	C$main.c$331$2$184	= .
 	.globl	C$main.c$331$2$184
 ;main.c:331: e2 = err * 2;
-	pop	de
-	pop	hl
-	push	hl
-	push	de
+	ld	l,-8 (ix)
+	ld	h,-7 (ix)
 	add	hl, hl
 	C$main.c$332$2$184	= .
 	.globl	C$main.c$332$2$184
 ;main.c:332: if (e2 >= dy)
 	ld	a, l
-	sub	a, -8 (ix)
+	sub	a, -11 (ix)
 	ld	a, h
-	sbc	a, -7 (ix)
+	sbc	a, -10 (ix)
 	jp	PO, 00159$
 	xor	a, #0x80
 00159$:
@@ -1879,12 +1874,12 @@ _drawLineSync:
 	C$main.c$334$3$186	= .
 	.globl	C$main.c$334$3$186
 ;main.c:334: err += dy;
-	ld	a, -11 (ix)
-	add	a, -8 (ix)
-	ld	-11 (ix), a
-	ld	a, -10 (ix)
-	adc	a, -7 (ix)
-	ld	-10 (ix), a
+	ld	a, -8 (ix)
+	add	a, -11 (ix)
+	ld	-8 (ix), a
+	ld	a, -7 (ix)
+	adc	a, -10 (ix)
+	ld	-7 (ix), a
 	C$main.c$335$3$186	= .
 	.globl	C$main.c$335$3$186
 ;main.c:335: x0 += sx;
@@ -1914,17 +1909,17 @@ _drawLineSync:
 	C$main.c$339$3$187	= .
 	.globl	C$main.c$339$3$187
 ;main.c:339: err += dx;
-	ld	a, -11 (ix)
+	ld	a, -8 (ix)
 	add	a, c
-	ld	-11 (ix), a
-	ld	a, -10 (ix)
+	ld	-8 (ix), a
+	ld	a, -7 (ix)
 	adc	a, b
-	ld	-10 (ix), a
+	ld	-7 (ix), a
 	C$main.c$340$3$187	= .
 	.globl	C$main.c$340$3$187
 ;main.c:340: y0 += sy;
-	ld	e, -9 (ix)
-	ld	a, -9 (ix)
+	ld	e, -13 (ix)
+	ld	a, -13 (ix)
 	rla
 	sbc	a, a
 	ld	d, a
@@ -2358,8 +2353,8 @@ _effect2::
 	C$main.c$435$1$202	= .
 	.globl	C$main.c$435$1$202
 ;main.c:435: y = prev_y = 50;
-	ld	-8 (ix), #0x32
-	ld	-7 (ix), #0x00
+	ld	-6 (ix), #0x32
+	ld	-5 (ix), #0x00
 	C$main.c$437$2$203	= .
 	.globl	C$main.c$437$2$203
 ;main.c:437: for (i = 0; i < 512 && !start_pressed; i++)
@@ -2378,10 +2373,10 @@ _effect2::
 	ld	h, d
 	srl	h
 	rr	l
-	ld	-2 (ix), l
+	ld	-4 (ix), l
 	push	bc
 	push	de
-	ld	a, -2 (ix)
+	ld	a, -4 (ix)
 	push	af
 	inc	sp
 	call	_cheapSin
@@ -2397,10 +2392,10 @@ _effect2::
 	ld	h, a
 	ld	a, l
 	add	a, #0x5f
-	ld	-4 (ix), a
+	ld	-3 (ix), a
 	ld	a, h
 	adc	a, #0x00
-	ld	-3 (ix), a
+	ld	-2 (ix), a
 	ld	-1 (ix), e
 	ld	a, e
 	add	a, a
@@ -2423,19 +2418,17 @@ _effect2::
 	rlc	a
 	sbc	a, a
 	ld	h, a
-	ld	a, -4 (ix)
+	ld	a, -3 (ix)
 	add	a, l
 	ld	l, a
-	ld	a, -3 (ix)
+	ld	a, -2 (ix)
 	adc	a, h
-	ld	h, a
-	inc	sp
-	inc	sp
-	push	hl
+	ld	-8 (ix), l
+	ld	-7 (ix), a
 	C$main.c$441$3$204	= .
 	.globl	C$main.c$441$3$204
 ;main.c:441: y = MAX_PY / 2 + (-cheapCos(i / 2 + i) >> 11) + (cheapSin(i * 5) >> 12);
-	ld	a, -2 (ix)
+	ld	a, -4 (ix)
 	add	a, -1 (ix)
 	ld	h, a
 	push	bc
@@ -2459,10 +2452,10 @@ _effect2::
 	ld	h, a
 	ld	a, l
 	add	a, #0x3b
-	ld	-4 (ix), a
+	ld	-3 (ix), a
 	ld	a, h
 	adc	a, #0x00
-	ld	-3 (ix), a
+	ld	-2 (ix), a
 	push	de
 	ld	a, -1 (ix)
 	ld	e, a
@@ -2488,13 +2481,15 @@ _effect2::
 	rlc	a
 	sbc	a, a
 	ld	h, a
-	ld	a, -4 (ix)
+	ld	a, -3 (ix)
 	add	a, l
 	ld	l, a
-	ld	a, -3 (ix)
+	ld	a, -2 (ix)
 	adc	a, h
-	ld	-6 (ix), l
-	ld	-5 (ix), a
+	ld	h, a
+	inc	sp
+	inc	sp
+	push	hl
 	C$main.c$443$3$204	= .
 	.globl	C$main.c$443$3$204
 ;main.c:443: if (i)
@@ -2508,14 +2503,14 @@ _effect2::
 	ld	a, #0x01
 	push	af
 	inc	sp
-	ld	l,-6 (ix)
-	ld	h,-5 (ix)
-	push	hl
 	ld	l,-10 (ix)
 	ld	h,-9 (ix)
 	push	hl
 	ld	l,-8 (ix)
 	ld	h,-7 (ix)
+	push	hl
+	ld	l,-6 (ix)
+	ld	h,-5 (ix)
 	push	hl
 	push	bc
 	call	_updateDisplay
@@ -2527,15 +2522,15 @@ _effect2::
 	C$main.c$448$3$204	= .
 	.globl	C$main.c$448$3$204
 ;main.c:448: prev_x = x;
-	pop	bc
-	push	bc
+	ld	c,-8 (ix)
+	ld	b,-7 (ix)
 	C$main.c$449$3$204	= .
 	.globl	C$main.c$449$3$204
 ;main.c:449: prev_y = y;
-	ld	a, -6 (ix)
-	ld	-8 (ix), a
-	ld	a, -5 (ix)
-	ld	-7 (ix), a
+	ld	a, -10 (ix)
+	ld	-6 (ix), a
+	ld	a, -9 (ix)
+	ld	-5 (ix), a
 	C$main.c$437$2$203	= .
 	.globl	C$main.c$437$2$203
 ;main.c:437: for (i = 0; i < 512 && !start_pressed; i++)
@@ -2571,8 +2566,8 @@ _effect3::
 	C$main.c$462$1$207	= .
 	.globl	C$main.c$462$1$207
 ;main.c:462: y = prev_y = 50;
-	ld	hl, #0x0032
-	ex	(sp), hl
+	ld	-8 (ix), #0x32
+	ld	-7 (ix), #0x00
 	C$main.c$464$2$208	= .
 	.globl	C$main.c$464$2$208
 ;main.c:464: for (i = 0; i < 512 && !start_pressed; i++)
@@ -2587,10 +2582,10 @@ _effect3::
 	C$main.c$467$3$209	= .
 	.globl	C$main.c$467$3$209
 ;main.c:467: x = MAX_PX / 2 + ((cheapSin(i) >> 11) + (cheapCos(i * 3 + i / 2) >> 10));
-	ld	-4 (ix), e
+	ld	-1 (ix), e
 	push	bc
 	push	de
-	ld	a, -4 (ix)
+	ld	a, -1 (ix)
 	push	af
 	inc	sp
 	call	_cheapSin
@@ -2601,27 +2596,27 @@ _effect3::
 	sra	a
 	sra	a
 	sra	a
-	ld	-2 (ix), a
+	ld	-4 (ix), a
 	rlc	a
 	sbc	a, a
-	ld	-1 (ix), a
+	ld	-3 (ix), a
 	push	de
-	ld	a, -4 (ix)
+	ld	a, -1 (ix)
 	ld	e, a
 	add	a, a
 	add	a, e
 	pop	de
-	ld	-3 (ix), a
+	ld	-2 (ix), a
 	ld	l, e
 	ld	h, d
 	srl	h
 	rr	l
-	ld	a, -3 (ix)
+	ld	a, -2 (ix)
 	add	a, l
-	ld	-3 (ix), a
+	ld	-2 (ix), a
 	push	bc
 	push	de
-	ld	a, -3 (ix)
+	ld	a, -2 (ix)
 	push	af
 	inc	sp
 	call	_cheapCos
@@ -2635,24 +2630,24 @@ _effect3::
 	rlc	a
 	sbc	a, a
 	ld	h, a
-	ld	a, -2 (ix)
+	ld	a, -4 (ix)
 	add	a, l
 	ld	l, a
-	ld	a, -1 (ix)
+	ld	a, -3 (ix)
 	adc	a, h
 	ld	h, a
 	ld	a, l
 	add	a, #0x5f
-	ld	-8 (ix), a
+	ld	-10 (ix), a
 	ld	a, h
 	adc	a, #0x00
-	ld	-7 (ix), a
+	ld	-9 (ix), a
 	C$main.c$468$3$209	= .
 	.globl	C$main.c$468$3$209
 ;main.c:468: y = MAX_PY / 2 + ((cheapCos(i) >> 11) + (cheapSin(i * 3 + i / 2) >> 10));
 	push	bc
 	push	de
-	ld	a, -4 (ix)
+	ld	a, -1 (ix)
 	push	af
 	inc	sp
 	call	_cheapCos
@@ -2663,13 +2658,13 @@ _effect3::
 	sra	a
 	sra	a
 	sra	a
-	ld	-2 (ix), a
+	ld	-4 (ix), a
 	rlc	a
 	sbc	a, a
-	ld	-1 (ix), a
+	ld	-3 (ix), a
 	push	bc
 	push	de
-	ld	a, -3 (ix)
+	ld	a, -2 (ix)
 	push	af
 	inc	sp
 	call	_cheapSin
@@ -2683,10 +2678,10 @@ _effect3::
 	rlc	a
 	sbc	a, a
 	ld	h, a
-	ld	a, -2 (ix)
+	ld	a, -4 (ix)
 	add	a, l
 	ld	l, a
-	ld	a, -1 (ix)
+	ld	a, -3 (ix)
 	adc	a, h
 	ld	h, a
 	ld	a, l
@@ -2711,11 +2706,11 @@ _effect3::
 	ld	l,-6 (ix)
 	ld	h,-5 (ix)
 	push	hl
-	ld	l,-8 (ix)
-	ld	h,-7 (ix)
-	push	hl
 	ld	l,-10 (ix)
 	ld	h,-9 (ix)
+	push	hl
+	ld	l,-8 (ix)
+	ld	h,-7 (ix)
 	push	hl
 	push	bc
 	call	_updateDisplay
@@ -2727,15 +2722,15 @@ _effect3::
 	C$main.c$475$3$209	= .
 	.globl	C$main.c$475$3$209
 ;main.c:475: prev_x = x;
-	ld	c,-8 (ix)
-	ld	b,-7 (ix)
+	pop	bc
+	push	bc
 	C$main.c$476$3$209	= .
 	.globl	C$main.c$476$3$209
 ;main.c:476: prev_y = y;
 	ld	a, -6 (ix)
-	ld	-10 (ix), a
+	ld	-8 (ix), a
 	ld	a, -5 (ix)
-	ld	-9 (ix), a
+	ld	-7 (ix), a
 	C$main.c$464$2$208	= .
 	.globl	C$main.c$464$2$208
 ;main.c:464: for (i = 0; i < 512 && !start_pressed; i++)
@@ -2772,8 +2767,8 @@ _effect4::
 	C$main.c$489$1$212	= .
 	.globl	C$main.c$489$1$212
 ;main.c:489: y = prev_y = 50;
-	ld	hl, #0x0032
-	ex	(sp), hl
+	ld	-2 (ix), #0x32
+	ld	-1 (ix), #0x00
 	C$main.c$491$2$213	= .
 	.globl	C$main.c$491$2$213
 ;main.c:491: for (i = 0; i < 2048; i++)
@@ -2808,10 +2803,10 @@ _effect4::
 	ld	h, a
 	ld	a, l
 	add	a, #0x5f
-	ld	-2 (ix), a
+	ld	-6 (ix), a
 	ld	a, h
 	adc	a, #0x00
-	ld	-1 (ix), a
+	ld	-5 (ix), a
 	C$main.c$495$3$214	= .
 	.globl	C$main.c$495$3$214
 ;main.c:495: y = MAX_PY / 2 + ((cheapSin(i * 7) >> 10));
@@ -2848,11 +2843,11 @@ _effect4::
 	push	hl
 	push	bc
 	push	hl
-	ld	e,-2 (ix)
-	ld	d,-1 (ix)
-	push	de
 	ld	e,-6 (ix)
 	ld	d,-5 (ix)
+	push	de
+	ld	e,-2 (ix)
+	ld	d,-1 (ix)
 	push	de
 	ld	e,-4 (ix)
 	ld	d,-3 (ix)
@@ -2867,16 +2862,15 @@ _effect4::
 	C$main.c$502$3$214	= .
 	.globl	C$main.c$502$3$214
 ;main.c:502: prev_x = x;
-	ld	a, -2 (ix)
+	ld	a, -6 (ix)
 	ld	-4 (ix), a
-	ld	a, -1 (ix)
+	ld	a, -5 (ix)
 	ld	-3 (ix), a
 	C$main.c$503$3$214	= .
 	.globl	C$main.c$503$3$214
 ;main.c:503: prev_y = y;
-	inc	sp
-	inc	sp
-	push	hl
+	ld	-2 (ix), l
+	ld	-1 (ix), h
 	C$main.c$491$2$213	= .
 	.globl	C$main.c$491$2$213
 ;main.c:491: for (i = 0; i < 2048; i++)
@@ -2909,39 +2903,39 @@ _effect1::
 	C$main.c$509$1$213	= .
 	.globl	C$main.c$509$1$213
 ;main.c:509: int x1 = 0, y1 = 30, x2 = MAX_PX, y2 = MAX_PY - 30;
-	ld	-12 (ix), #0x00
-	ld	-11 (ix), #0x00
-	ld	hl, #0x001e
+	ld	-16 (ix), #0x00
+	ld	-15 (ix), #0x00
+	ld	-6 (ix), #0x1e
+	ld	-5 (ix), #0x00
+	ld	hl, #0x00bf
 	ex	(sp), hl
-	ld	-4 (ix), #0xbf
-	ld	-3 (ix), #0x00
-	ld	-14 (ix), #0x59
-	ld	-13 (ix), #0x00
+	ld	-12 (ix), #0x59
+	ld	-11 (ix), #0x00
 	C$main.c$510$1$213	= .
 	.globl	C$main.c$510$1$213
 ;main.c:510: int x1i = 0, y1i = 5, x2i = -0, y2i = -5;
-	ld	-2 (ix), #0x00
-	ld	-1 (ix), #0x00
+	ld	-10 (ix), #0x00
+	ld	-9 (ix), #0x00
 	ld	-8 (ix), #0x05
 	ld	-7 (ix), #0x00
-	ld	-6 (ix), #0x00
-	ld	-5 (ix), #0x00
-	ld	-16 (ix), #0xfb
-	ld	-15 (ix), #0xff
+	ld	-14 (ix), #0x00
+	ld	-13 (ix), #0x00
+	ld	-2 (ix), #0xfb
+	ld	-1 (ix), #0xff
 	C$main.c$513$2$218	= .
 	.globl	C$main.c$513$2$218
 ;main.c:513: for (i = 0; i < 10; i++)
-	ld	-10 (ix), #0x00
-	ld	-9 (ix), #0x00
+	ld	-4 (ix), #0x00
+	ld	-3 (ix), #0x00
 00102$:
 	C$main.c$516$3$219	= .
 	.globl	C$main.c$516$3$219
 ;main.c:516: stepIt(&x1, &x1i, MAX_PX);
-	ld	hl, #0x0010
+	ld	hl, #0x0008
 	add	hl, sp
 	ld	c, l
 	ld	b, h
-	ld	hl, #0x0006
+	ld	hl, #0x0002
 	add	hl, sp
 	ld	de, #0x00bf
 	push	de
@@ -2954,11 +2948,11 @@ _effect1::
 	C$main.c$517$3$219	= .
 	.globl	C$main.c$517$3$219
 ;main.c:517: stepIt(&x2, &x2i, MAX_PX);
-	ld	hl, #0x000c
+	ld	hl, #0x0004
 	add	hl, sp
 	ld	c, l
 	ld	b, h
-	ld	hl, #0x000e
+	ld	hl, #0x0000
 	add	hl, sp
 	ld	de, #0x00bf
 	push	de
@@ -2975,7 +2969,7 @@ _effect1::
 	add	hl, sp
 	ld	c, l
 	ld	b, h
-	ld	hl, #0x0000
+	ld	hl, #0x000c
 	add	hl, sp
 	ld	de, #0x0077
 	push	de
@@ -2984,15 +2978,15 @@ _effect1::
 	call	_stepIt
 	ld	hl, #6
 	add	hl, sp
+	ld	sp, hl
 	C$main.c$519$3$219	= .
 	.globl	C$main.c$519$3$219
 ;main.c:519: stepIt(&y2, &y2i, MAX_PY);
-	ld	sp, hl
-	inc	hl
-	inc	hl
+	ld	hl, #0x0010
+	add	hl, sp
 	ld	c, l
 	ld	b, h
-	ld	hl, #0x0004
+	ld	hl, #0x0006
 	add	hl, sp
 	ld	de, #0x0077
 	push	de
@@ -3005,17 +2999,17 @@ _effect1::
 	C$main.c$521$3$219	= .
 	.globl	C$main.c$521$3$219
 ;main.c:521: drawLineSync(x1, y1, x2, y2);
-	ld	l,-14 (ix)
-	ld	h,-13 (ix)
+	ld	c, -12 (ix)
+	ld	b, -11 (ix)
+	pop	hl
 	push	hl
-	ld	l,-4 (ix)
-	ld	h,-3 (ix)
+	push	bc
 	push	hl
-	ld	l,-18 (ix)
-	ld	h,-17 (ix)
+	ld	l,-6 (ix)
+	ld	h,-5 (ix)
 	push	hl
-	ld	l,-12 (ix)
-	ld	h,-11 (ix)
+	ld	l,-16 (ix)
+	ld	h,-15 (ix)
 	push	hl
 	call	_drawLineSync
 	ld	hl, #8
@@ -3024,13 +3018,13 @@ _effect1::
 	C$main.c$513$2$218	= .
 	.globl	C$main.c$513$2$218
 ;main.c:513: for (i = 0; i < 10; i++)
-	inc	-10 (ix)
+	inc	-4 (ix)
 	jr	NZ,00111$
-	inc	-9 (ix)
+	inc	-3 (ix)
 00111$:
-	ld	a, -10 (ix)
+	ld	a, -4 (ix)
 	sub	a, #0x0a
-	ld	a, -9 (ix)
+	ld	a, -3 (ix)
 	rla
 	ccf
 	rra
@@ -3381,31 +3375,30 @@ _inputDiag_printDevice:
 	ld	c,7 (ix)
 	ld	b,8 (ix)
 	ld	a, (bc)
-	ld	-7 (ix), a
+	ld	-3 (ix), a
 	ld	a, #0x05
-	sub	a, -7 (ix)
+	sub	a, -3 (ix)
 	jr	C,00101$
 	C$main.c$655$1$230	= .
 	.globl	C$main.c$655$1$230
 ;main.c:655: SMS_setNextTileatXY(startcol, 11);
 	ld	a, e
 	or	a, #0xc0
-	ld	-4 (ix), a
+	ld	-2 (ix), a
 	ld	a, d
 	or	a, #0x7a
-	ld	-3 (ix), a
+	ld	-1 (ix), a
 	C$main.c$656$1$230	= .
 	.globl	C$main.c$656$1$230
 ;main.c:656: printf("Btn: %02x", dat->sms.buttons);
 	ld	hl, #0x0001
 	add	hl,bc
-	ld	-2 (ix), l
-	ld	-1 (ix), h
+	ex	(sp), hl
 	C$main.c$648$1$230	= .
 	.globl	C$main.c$648$1$230
 ;main.c:648: switch (dat->type)
 	push	de
-	ld	e, -7 (ix)
+	ld	e, -3 (ix)
 	ld	d, #0x00
 	ld	hl, #00115$
 	add	hl, de
@@ -3449,14 +3442,14 @@ _inputDiag_printDevice:
 	C$main.c$655$2$231	= .
 	.globl	C$main.c$655$2$231
 ;main.c:655: SMS_setNextTileatXY(startcol, 11);
-	ld	l,-4 (ix)
-	ld	h,-3 (ix)
+	ld	l,-2 (ix)
+	ld	h,-1 (ix)
 	rst	#0x08
 	C$main.c$656$2$231	= .
 	.globl	C$main.c$656$2$231
 ;main.c:656: printf("Btn: %02x", dat->sms.buttons);
-	ld	l,-2 (ix)
-	ld	h,-1 (ix)
+	pop	hl
+	push	hl
 	ld	c, (hl)
 	ld	b, #0x00
 	push	bc
@@ -3483,22 +3476,22 @@ _inputDiag_printDevice:
 	call	_printf
 	pop	af
 	pop	de
-	ld	l,-4 (ix)
-	ld	h,-3 (ix)
+	ld	l,-2 (ix)
+	ld	h,-1 (ix)
 	rst	#0x08
 	pop	bc
 	C$main.c$661$2$231	= .
 	.globl	C$main.c$661$2$231
 ;main.c:661: printf("Btn: %02x", dat->paddle.buttons);
-	ld	l,-2 (ix)
-	ld	h,-1 (ix)
+	pop	hl
+	push	hl
 	ld	l, (hl)
-	ld	-6 (ix), l
-	ld	-5 (ix), #0x00
+	ld	-5 (ix), l
+	ld	-4 (ix), #0x00
 	push	bc
 	push	de
-	ld	l,-6 (ix)
-	ld	h,-5 (ix)
+	ld	l,-5 (ix)
+	ld	h,-4 (ix)
 	push	hl
 	ld	hl, #___str_2
 	push	hl
@@ -3549,22 +3542,22 @@ _inputDiag_printDevice:
 	call	_printf
 	pop	af
 	pop	de
-	ld	l,-4 (ix)
-	ld	h,-3 (ix)
+	ld	l,-2 (ix)
+	ld	h,-1 (ix)
 	rst	#0x08
 	pop	bc
 	C$main.c$668$2$231	= .
 	.globl	C$main.c$668$2$231
 ;main.c:668: printf("Btn: %02x", dat->mdmouse.buttons);
-	ld	l,-2 (ix)
-	ld	h,-1 (ix)
+	pop	hl
+	push	hl
 	ld	l, (hl)
-	ld	-6 (ix), l
-	ld	-5 (ix), #0x00
+	ld	-5 (ix), l
+	ld	-4 (ix), #0x00
 	push	bc
 	push	de
-	ld	l,-6 (ix)
-	ld	h,-5 (ix)
+	ld	l,-5 (ix)
+	ld	h,-4 (ix)
 	push	hl
 	ld	hl, #___str_2
 	push	hl
@@ -3592,14 +3585,14 @@ _inputDiag_printDevice:
 	inc	hl
 	inc	hl
 	ld	a, (hl)
-	ld	-6 (ix), a
+	ld	-5 (ix), a
 	rla
 	sbc	a, a
-	ld	-5 (ix), a
+	ld	-4 (ix), a
 	push	bc
 	push	de
-	ld	l,-6 (ix)
-	ld	h,-5 (ix)
+	ld	l,-5 (ix)
+	ld	h,-4 (ix)
 	push	hl
 	ld	hl, #___str_6
 	push	hl
@@ -3649,22 +3642,22 @@ _inputDiag_printDevice:
 	call	_printf
 	pop	af
 	pop	de
-	ld	l,-4 (ix)
-	ld	h,-3 (ix)
+	ld	l,-2 (ix)
+	ld	h,-1 (ix)
 	rst	#0x08
 	pop	bc
 	C$main.c$677$2$231	= .
 	.globl	C$main.c$677$2$231
 ;main.c:677: printf("Btn: %02x", dat->gfx2.buttons);
-	ld	l,-2 (ix)
-	ld	h,-1 (ix)
+	pop	hl
+	push	hl
 	ld	l, (hl)
-	ld	-6 (ix), l
-	ld	-5 (ix), #0x00
+	ld	-5 (ix), l
+	ld	-4 (ix), #0x00
 	push	bc
 	push	de
-	ld	l,-6 (ix)
-	ld	h,-5 (ix)
+	ld	l,-5 (ix)
+	ld	h,-4 (ix)
 	push	hl
 	ld	hl, #___str_2
 	push	hl
@@ -3692,12 +3685,12 @@ _inputDiag_printDevice:
 	inc	hl
 	inc	hl
 	ld	l, (hl)
-	ld	-6 (ix), l
-	ld	-5 (ix), #0x00
+	ld	-5 (ix), l
+	ld	-4 (ix), #0x00
 	push	bc
 	push	de
-	ld	l,-6 (ix)
-	ld	h,-5 (ix)
+	ld	l,-5 (ix)
+	ld	h,-4 (ix)
 	push	hl
 	ld	hl, #___str_6
 	push	hl
@@ -3724,12 +3717,12 @@ _inputDiag_printDevice:
 	push	bc
 	pop	iy
 	ld	l, 4 (iy)
-	ld	-6 (ix), l
-	ld	-5 (ix), #0x00
+	ld	-5 (ix), l
+	ld	-4 (ix), #0x00
 	push	bc
 	push	de
-	ld	l,-6 (ix)
-	ld	h,-5 (ix)
+	ld	l,-5 (ix)
+	ld	h,-4 (ix)
 	push	hl
 	ld	hl, #___str_7
 	push	hl
@@ -3781,22 +3774,22 @@ _inputDiag_printDevice:
 	call	_printf
 	pop	af
 	pop	de
-	ld	l,-4 (ix)
-	ld	h,-3 (ix)
+	ld	l,-2 (ix)
+	ld	h,-1 (ix)
 	rst	#0x08
 	pop	bc
 	C$main.c$688$2$231	= .
 	.globl	C$main.c$688$2$231
 ;main.c:688: printf("Btn: %02x", dat->spad.buttons);
-	ld	l,-2 (ix)
-	ld	h,-1 (ix)
+	pop	hl
+	push	hl
 	ld	l, (hl)
-	ld	-6 (ix), l
-	ld	-5 (ix), #0x00
+	ld	-5 (ix), l
+	ld	-4 (ix), #0x00
 	push	bc
 	push	de
-	ld	l,-6 (ix)
-	ld	h,-5 (ix)
+	ld	l,-5 (ix)
+	ld	h,-4 (ix)
 	push	hl
 	ld	hl, #___str_2
 	push	hl
@@ -3824,14 +3817,14 @@ _inputDiag_printDevice:
 	inc	hl
 	inc	hl
 	ld	a, (hl)
-	ld	-6 (ix), a
+	ld	-5 (ix), a
 	rla
 	sbc	a, a
-	ld	-5 (ix), a
+	ld	-4 (ix), a
 	push	bc
 	push	de
-	ld	l,-6 (ix)
-	ld	h,-5 (ix)
+	ld	l,-5 (ix)
+	ld	h,-4 (ix)
 	push	hl
 	ld	hl, #___str_6
 	push	hl
@@ -3866,7 +3859,7 @@ _inputDiag_printDevice:
 	C$main.c$693$2$231	= .
 	.globl	C$main.c$693$2$231
 ;main.c:693: break;
-	jp	00109$
+	jr	00109$
 	C$main.c$694$2$231	= .
 	.globl	C$main.c$694$2$231
 ;main.c:694: case INLIB_TYPE_LIGHT_PHASER:
@@ -3881,22 +3874,22 @@ _inputDiag_printDevice:
 	call	_printf
 	pop	af
 	pop	de
-	ld	l,-4 (ix)
-	ld	h,-3 (ix)
+	ld	l,-2 (ix)
+	ld	h,-1 (ix)
 	rst	#0x08
 	pop	bc
 	C$main.c$697$2$231	= .
 	.globl	C$main.c$697$2$231
 ;main.c:697: printf("Btn: %02x", dat->phaser.buttons);
-	ld	l,-2 (ix)
-	ld	h,-1 (ix)
+	pop	hl
+	push	hl
 	ld	l, (hl)
-	ld	-6 (ix), l
-	ld	-5 (ix), #0x00
+	ld	-5 (ix), l
+	ld	-4 (ix), #0x00
 	push	bc
 	push	de
-	ld	l,-6 (ix)
-	ld	h,-5 (ix)
+	ld	l,-5 (ix)
+	ld	h,-4 (ix)
 	push	hl
 	ld	hl, #___str_2
 	push	hl
@@ -3923,12 +3916,12 @@ _inputDiag_printDevice:
 	inc	hl
 	inc	hl
 	ld	l, (hl)
-	ld	-6 (ix), l
-	ld	-5 (ix), #0x00
+	ld	-5 (ix), l
+	ld	-4 (ix), #0x00
 	push	bc
 	push	de
-	ld	l,-6 (ix)
-	ld	h,-5 (ix)
+	ld	l,-5 (ix)
+	ld	h,-4 (ix)
 	push	hl
 	ld	hl, #___str_6
 	push	hl
@@ -6063,18 +6056,15 @@ _main::
 	.area _CODE
 Fmain$__str_29$0$0 == .
 __str_29:
-	.ascii "raphnet."
+	.ascii "StevePro Studios"
 	.db 0x00
 Fmain$__str_30$0$0 == .
 __str_30:
-	.ascii "SMS-a-sketch"
+	.ascii "Hello World"
 	.db 0x00
 Fmain$__str_31$0$0 == .
 __str_31:
-	.db 0x22
-	.ascii "Etch a sketch"
-	.db 0x22
-	.ascii "(tm) style drawing for SMS"
+	.ascii "Simple Sega Master System demo to run on real hardware"
 	.db 0x00
 Fmain$__str_32$0$0 == .
 ___str_32:
@@ -6364,23 +6354,20 @@ ___SMS__SEGA_signature:
 	.db #0x99	; 153
 	.db #0x00	; 0
 	.db #0x4c	; 76	'L'
-	.org 0x7FD7
+	.org 0x7FCF
 G$__SMS__SDSC_author$0$0 == .
 ___SMS__SDSC_author:
-	.ascii "raphnet."
+	.ascii "StevePro Studios"
 	.db 0x00
-	.org 0x7FCA
+	.org 0x7FC3
 G$__SMS__SDSC_name$0$0 == .
 ___SMS__SDSC_name:
-	.ascii "SMS-a-sketch"
+	.ascii "Hello World"
 	.db 0x00
-	.org 0x7FA0
+	.org 0x7F8C
 G$__SMS__SDSC_descr$0$0 == .
 ___SMS__SDSC_descr:
-	.db 0x22
-	.ascii "Etch a sketch"
-	.db 0x22
-	.ascii "(tm) style drawing for SMS"
+	.ascii "Simple Sega Master System demo to run on real hardware"
 	.db 0x00
 	.org 0x7FE0
 G$__SMS__SDSC_signature$0$0 == .
@@ -6389,15 +6376,15 @@ ___SMS__SDSC_signature:
 	.db #0x44	; 68	'D'
 	.db #0x53	; 83	'S'
 	.db #0x43	; 67	'C'
+	.db #0x01	; 1
 	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0xd7	; 215
+	.db #0x15	; 21
+	.db #0x09	; 9
+	.db #0x17	; 23
+	.db #0x20	; 32
+	.db #0xcf	; 207
 	.db #0x7f	; 127
-	.db #0xca	; 202
+	.db #0xc3	; 195
 	.db #0x7f	; 127
-	.db #0xa0	; 160
+	.db #0x8c	; 140
 	.db #0x7f	; 127

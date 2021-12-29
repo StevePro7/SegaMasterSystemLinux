@@ -20,8 +20,8 @@ S:Lflash.flash_programBytes$buffer$1$100({2}DG,SC:U),B,1,4
 S:Lflash.flash_programBytes$size$1$100({2}SI:S),B,1,6
 S:Lflash.flash_programBytes$sector$1$100({1}SC:U),B,1,8
 S:Lflash.flash_programBytes$offset$1$100({2}SI:U),B,1,9
-S:Lflash.flash_programBytes$sloc0$1$0({2}SI:U),B,1,-3
-S:Lflash.flash_programBytes$sloc1$1$0({1}SC:U),B,1,-1
+S:Lflash.flash_programBytes$sloc0$1$0({2}SI:U),B,1,-2
+S:Lflash.flash_programBytes$sloc1$1$0({1}SC:U),B,1,-3
 F:G$flash_readByte$0$0({2}DF,SC:U),Z,0,31,0,0,0
 S:Lflash.flash_readByte$sector$1$103({1}SC:U),B,1,4
 S:Lflash.flash_readByte$offset$1$103({2}SI:U),B,1,5
@@ -40,8 +40,8 @@ S:Lflash.flash_compareBytes$size$1$108({2}SI:S),B,1,6
 S:Lflash.flash_compareBytes$sector$1$108({1}SC:U),B,1,8
 S:Lflash.flash_compareBytes$offset$1$108({2}SI:U),B,1,9
 S:Lflash.flash_compareBytes$tmp$1$109({1}SC:U),B,1,-4
-S:Lflash.flash_compareBytes$sloc0$1$0({2}DG,SC:U),B,1,-3
-S:Lflash.flash_compareBytes$sloc1$1$0({1}SC:U),B,1,-1
+S:Lflash.flash_compareBytes$sloc0$1$0({2}DG,SC:U),B,1,-2
+S:Lflash.flash_compareBytes$sloc1$1$0({1}SC:U),B,1,-3
 S:G$ROM_bank_to_be_mapped_on_slot2$0$0({1}SC:U),E,0,0
 S:G$SRAM_bank_to_be_mapped_on_slot2$0$0({1}SC:U),E,0,0
 S:G$SMS_SRAM$0$0({0}DA0d,SC:U),E,0,0

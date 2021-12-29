@@ -41,8 +41,8 @@ S:Linlib.readGraphics2$tmp$1$111({1}SC:U),R,0,0,[d]
 S:Linlib.readGraphics2$buf$1$111({3}DA3d,SC:U),B,1,-7
 S:Linlib.readGraphics2$btn$1$111({1}SC:U),B,1,-8
 S:Linlib.readGraphics2$has_data$1$111({1}SC:U),R,0,0,[e]
-S:Linlib.readGraphics2$sloc0$1$0({2}DD,SC:U),B,1,-4
-S:Linlib.readGraphics2$sloc1$1$0({2}DD,SC:U),B,1,-2
+S:Linlib.readGraphics2$sloc0$1$0({2}DD,SC:U),B,1,-2
+S:Linlib.readGraphics2$sloc1$1$0({2}DD,SC:U),B,1,-4
 F:Finlib$readMouse$0$0({2}DF,SV:S),C,0,0,0,0,0
 S:Linlib.readMouse$dst$1$115({2}DG,SC:U),B,1,4
 S:Linlib.readMouse$i$1$116({1}SC:U),R,0,0,[c]
