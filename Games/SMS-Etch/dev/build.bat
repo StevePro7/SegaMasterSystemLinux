@@ -37,7 +37,18 @@ sdcc --debug -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-
 ../crt0/crt0_sms.rel main.rel ^
 ../lib/SMSlib.lib ^
 ../lib/PSGlib.rel ^
-
+data.rel ^
+data_bank2.rel ^
+data_bank3.rel ^
+flash.rel ^
+inlib.rel ^
+knob.rel ^
+main.rel ^
+savedata.rel ^
+savestruct.rel ^
+sinlut.rel ^
+util.rel ^
+vfont.rel
 
 
 :: Execute
