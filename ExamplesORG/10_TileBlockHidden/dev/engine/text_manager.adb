@@ -1,0 +1,9 @@
+M:text_manager
+F:G$engine_text_manager_draw$0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Ltext_manager.engine_text_manager_draw$move$1$5({1}SC:U),R,0,0,[]
+F:G$engine_text_manager_names$0$0({2}DF,SV:S),Z,0,0,0,0,0
+F:G$engine_text_manager_space$0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:G$engine_font_manager_draw_char$0$0({2}DF,SV:S),C,0,0
+S:G$engine_font_manager_draw_text$0$0({2}DF,SV:S),C,0,0
+S:G$engine_font_manager_draw_data$0$0({2}DF,SV:S),C,0,0
+S:G$engine_font_manager_draw_zero$0$0({2}DF,SV:S),C,0,0
