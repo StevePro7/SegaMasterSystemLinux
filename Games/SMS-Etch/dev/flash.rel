@@ -1,0 +1,562 @@
+;!FILE flash.asm
+XL2
+H 9 areas 17A global symbols
+M flash
+O -mz80
+S G$ROM_bank_to_be_mapped_on_slot2$0$0 DefFFFF
+S G$SRAM_bank_to_be_mapped_on_slot2$0$0 DefFFFC
+S _ROM_bank_to_be_mapped_on_slot2 DefFFFF
+S G$SMS_SRAM$0$0 Def8000
+S _SRAM_bank_to_be_mapped_on_slot2 DefFFFC
+S .__.ABS. Def0000
+S _SMS_SRAM Def8000
+S ___sdcc_call_hl Ref0000
+A _CODE size 2CE flags 0 addr 0
+S A$flash$81 Def0013
+S A$flash$72 Def000B
+S A$flash$82 Def0014
+S A$flash$73 Def000C
+S A$flash$83 Def0015
+S A$flash$84 Def0016
+S A$flash$94 Def001F
+S A$flash$85 Def0019
+S A$flash$95 Def0022
+S A$flash$86 Def001C
+S A$flash$77 Def000D
+S A$flash$68 Def0000
+S A$flash$96 Def0023
+S A$flash$87 Def001E
+S A$flash$78 Def0010
+S A$flash$69 Def0002
+S XG$flash_compareBytes$0$0 Def02CD
+S Fflash$ll_read_byte$0$0 Def00C6
+S _flash_readSiliconID Def00E5
+S A$flash$97 Def0024
+S A$flash$79 Def0011
+S A$flash$98 Def0025
+S XG$flash_readByte$0$0 Def0219
+S A$flash$99 Def0026
+S _flash_programBytes Def0175
+S C$flash.c$400$1$104 Def01FA
+S G$flash_programByte$0$0 Def010C
+S C$flash.c$401$1$104 Def01FF
+S C$flash.c$411$1$104 Def021A
+S C$flash.c$432$2$110 Def0294
+S C$flash.c$403$1$104 Def0207
+S C$flash.c$433$2$110 Def02A6
+S C$flash.c$404$1$104 Def0219
+S C$flash.c$371$1$101 Def017F
+S Fflash$ll_readSiliconID$0$0 Def0031
+S C$flash.c$413$1$106 Def0223
+S XG$flash_readSiliconID$0$0 Def010B
+S C$flash.c$437$2$110 Def02BC
+S C$flash.c$435$3$111 Def02B8
+S C$flash.c$430$1$109 Def0275
+S C$flash.c$373$2$102 Def019E
+S C$flash.c$438$2$110 Def02BD
+S C$flash.c$385$1$101 Def01C9
+S C$flash.c$374$2$102 Def01B9
+S G$flash_erase64kSector$0$0 Def0000
+S C$flash.c$441$1$109 Def02C7
+S C$flash.c$426$1$106 Def026B
+S C$flash.c$415$2$107 Def0251
+S C$flash.c$392$1$104 Def01D6
+S C$flash.c$377$1$101 Def01C8
+S C$flash.c$375$2$102 Def01BA
+S G$flash_isKnownId$0$0 Def0162
+S Fflash$ll_sector_erase$0$0 Def004D
+S C$flash.c$442$1$109 Def02CD
+S C$flash.c$416$2$107 Def0262
+S C$flash.c$393$1$104 Def01E8
+S XG$flash_programBytes$0$0 Def01C8
+S C$flash.c$419$1$106 Def026A
+S C$flash.c$417$2$107 Def0263
+S _flash_programByte Def010C
+S C$flash.c$396$1$104 Def01E8
+S C$flash.c$397$1$104 Def01EE
+S _flash_erase64kSector Def0000
+S C$flash.c$310$1$92 Def00E5
+S Fflash$ll_program_byte$0$0 Def008A
+S _flash_isKnownId Def0162
+S G$flash_readBytes$0$0 Def021A
+S XG$flash_programByte$0$0 Def0161
+S C$flash.c$320$1$94 Def010B
+S A$flash$100 Def0027
+S A$flash$101 Def0028
+S C$flash.c$340$1$96 Def0131
+S A$flash$102 Def0029
+S C$flash.c$316$1$94 Def00F2
+S A$flash$400 Def0145
+S A$flash$310 Def00ED
+S A$flash$103 Def002C
+S C$flash.c$317$1$94 Def0104
+S A$flash$500 Def01A7
+S A$flash$410 Def0153
+S A$flash$401 Def0147
+S A$flash$320 Def00F8
+S A$flash$311 Def00F0
+S A$flash$104 Def002E
+S C$flash.c$343$1$96 Def013D
+S C$flash.c$293$1$92 Def000D
+S A$flash$600 Def0212
+S A$flash$501 Def01AA
+S A$flash$411 Def0156
+S A$flash$321 Def00FB
+S A$flash$312 Def00F1
+S C$flash.c$360$1$98 Def0165
+S C$flash.c$344$1$96 Def0142
+S C$flash.c$335$1$96 Def0119
+S C$flash.c$319$1$94 Def0104
+S XG$flash_erase64kSector$0$0 Def0030
+S C$flash.c$294$1$92 Def001F
+S A$flash$700 Def0287
+S A$flash$601 Def0215
+S A$flash$520 Def01C2
+S A$flash$502 Def01AB
+S A$flash$412 Def0157
+S A$flash$340 Def010B
+S A$flash$322 Def00FC
+S G$flash_compareBytes$0$0 Def026B
+S XG$flash_isKnownId$0$0 Def0174
+S C$flash.c$336$1$96 Def012B
+S C$flash.c$329$1$94 Def010C
+S A$flash$701 Def028A
+S A$flash$620 Def0222
+S A$flash$602 Def0217
+S A$flash$503 Def01AE
+S A$flash$440 Def0166
+S A$flash$422 Def0161
+S A$flash$413 Def0158
+S A$flash$350 Def010C
+S A$flash$323 Def00FD
+S _flash_readBytes Def021A
+S A$flash$720 Def02A0
+S A$flash$630 Def0235
+S A$flash$540 Def01CF
+S A$flash$522 Def01C4
+S A$flash$513 Def01B9
+S A$flash$504 Def01B1
+S A$flash$441 Def0168
+S A$flash$414 Def0159
+S A$flash$405 Def014A
+S A$flash$360 Def011C
+S A$flash$351 Def010E
+S A$flash$333 Def0104
+S A$flash$324 Def00FE
+S G$flash_readByte$0$0 Def01C9
+S C$flash.c$356$1$96 Def0162
+S C$flash.c$347$1$96 Def014A
+S C$flash.c$297$1$92 Def001F
+S A$flash$730 Def02AD
+S A$flash$721 Def02A1
+S A$flash$712 Def0294
+S A$flash$703 Def028D
+S A$flash$640 Def024A
+S A$flash$631 Def0238
+S A$flash$550 Def01DB
+S A$flash$541 Def01D1
+S A$flash$523 Def01C6
+S A$flash$505 Def01B2
+S A$flash$442 Def016A
+S A$flash$415 Def015A
+S A$flash$406 Def014B
+S A$flash$361 Def011D
+S A$flash$352 Def0112
+S A$flash$334 Def0107
+S A$flash$325 Def0101
+S A$flash$316 Def00F2
+S A$flash$307 Def00E5
+S A$flash$109 Def0030
+S C$flash.c$362$2$99 Def016F
+S C$flash.c$348$1$96 Def0161
+S C$flash.c$339$1$96 Def012B
+S C$flash.c$298$1$92 Def0030
+S A$flash$731 Def02B0
+S A$flash$722 Def02A2
+S A$flash$713 Def0295
+S A$flash$704 Def028E
+S A$flash$650 Def0254
+S A$flash$641 Def024D
+S A$flash$551 Def01DC
+S A$flash$542 Def01D4
+S A$flash$506 Def01B5
+S A$flash$470 Def0177
+S A$flash$443 Def016B
+S A$flash$416 Def015D
+S A$flash$407 Def014C
+S A$flash$362 Def011E
+S A$flash$353 Def0114
+S A$flash$335 Def0109
+S A$flash$326 Def0103
+S A$flash$317 Def00F5
+S A$flash$308 Def00E7
+S C$flash.c$365$1$98 Def0172
+S A$flash$750 Def02C5
+S A$flash$732 Def02B3
+S A$flash$723 Def02A3
+S A$flash$714 Def0296
+S A$flash$705 Def028F
+S A$flash$651 Def0257
+S A$flash$642 Def024E
+S A$flash$633 Def023B
+S A$flash$624 Def0223
+S A$flash$552 Def01DD
+S A$flash$543 Def01D5
+S A$flash$507 Def01B6
+S A$flash$480 Def0188
+S A$flash$471 Def017B
+S A$flash$444 Def016D
+S A$flash$435 Def0162
+S A$flash$417 Def015F
+S A$flash$408 Def014F
+S A$flash$390 Def013C
+S A$flash$363 Def011F
+S A$flash$354 Def0117
+S A$flash$318 Def00F6
+S A$flash$309 Def00EB
+S C$flash.c$366$1$98 Def0174
+S C$flash.c$287$0$0 Def0000
+S A$flash$733 Def02B6
+S A$flash$715 Def0297
+S A$flash$706 Def0290
+S A$flash$670 Def0266
+S A$flash$652 Def0258
+S A$flash$643 Def024F
+S A$flash$634 Def023C
+S A$flash$625 Def0226
+S A$flash$607 Def0219
+S A$flash$571 Def01EE
+S A$flash$553 Def01DE
+S A$flash$517 Def01BA
+S A$flash$508 Def01B7
+S A$flash$490 Def019B
+S A$flash$481 Def018B
+S A$flash$472 Def017D
+S A$flash$454 Def0172
+S A$flash$409 Def0152
+S A$flash$364 Def0120
+S A$flash$355 Def0118
+S A$flash$319 Def00F7
+S C$flash.c$358$1$98 Def0162
+S A$flash$743 Def02BC
+S A$flash$716 Def029A
+S A$flash$707 Def0291
+S A$flash$671 Def0268
+S A$flash$653 Def0259
+S A$flash$635 Def023D
+S A$flash$626 Def0229
+S A$flash$617 Def021A
+S A$flash$572 Def01F1
+S A$flash$554 Def01DF
+S A$flash$518 Def01BD
+S A$flash$509 Def01B8
+S A$flash$491 Def019C
+S A$flash$482 Def018E
+S A$flash$473 Def017E
+S A$flash$383 Def0131
+S A$flash$365 Def0121
+S A$flash$717 Def029B
+S A$flash$708 Def0292
+S A$flash$690 Def0274
+S A$flash$663 Def0262
+S A$flash$654 Def025C
+S A$flash$636 Def0240
+S A$flash$627 Def022C
+S A$flash$618 Def021C
+S A$flash$582 Def01FA
+S A$flash$573 Def01F2
+S A$flash$564 Def01E8
+S A$flash$555 Def01E2
+S A$flash$528 Def01C8
+S A$flash$519 Def01BF
+S A$flash$483 Def0191
+S A$flash$384 Def0134
+S A$flash$366 Def0122
+S C$flash.c$369$1$98 Def0175
+S A$flash$763 Def02CD
+S A$flash$727 Def02A6
+S A$flash$718 Def029C
+S A$flash$655 Def025D
+S A$flash$637 Def0242
+S A$flash$628 Def022F
+S A$flash$619 Def0220
+S A$flash$583 Def01FD
+S A$flash$574 Def01F3
+S A$flash$565 Def01EB
+S A$flash$556 Def01E5
+S A$flash$547 Def01D6
+S A$flash$538 Def01C9
+S A$flash$484 Def0194
+S A$flash$448 Def016F
+S A$flash$439 Def0165
+S A$flash$394 Def013D
+S A$flash$385 Def0135
+S A$flash$376 Def012B
+S A$flash$367 Def0125
+S A$flash$755 Def02C7
+S A$flash$737 Def02B8
+S A$flash$728 Def02A9
+S A$flash$719 Def029F
+S A$flash$656 Def025E
+S A$flash$647 Def0251
+S A$flash$638 Def0245
+S A$flash$629 Def0232
+S A$flash$593 Def0207
+S A$flash$575 Def01F5
+S A$flash$566 Def01EC
+S A$flash$557 Def01E7
+S A$flash$548 Def01D9
+S A$flash$539 Def01CB
+S A$flash$449 Def0171
+S A$flash$395 Def0140
+S A$flash$386 Def0136
+S A$flash$377 Def012E
+S A$flash$368 Def0128
+S A$flash$359 Def0119
+S A$flash$747 Def02BD
+S A$flash$738 Def02BA
+S A$flash$729 Def02AC
+S A$flash$657 Def025F
+S A$flash$648 Def0252
+S A$flash$639 Def0248
+S A$flash$594 Def0208
+S A$flash$576 Def01F6
+S A$flash$567 Def01ED
+S A$flash$549 Def01DA
+S A$flash$495 Def019E
+S A$flash$486 Def0197
+S A$flash$477 Def017F
+S A$flash$459 Def0174
+S A$flash$387 Def0138
+S A$flash$378 Def012F
+S A$flash$369 Def012A
+S A$flash$757 Def02C9
+S A$flash$748 Def02C0
+S A$flash$694 Def0275
+S A$flash$676 Def026A
+S A$flash$667 Def0263
+S A$flash$658 Def0260
+S A$flash$649 Def0253
+S A$flash$595 Def0209
+S A$flash$577 Def01F8
+S A$flash$496 Def019F
+S A$flash$487 Def0198
+S A$flash$478 Def0182
+S A$flash$469 Def0175
+S A$flash$388 Def0139
+S A$flash$379 Def0130
+S G$flash_readSiliconID$0$0 Def00E5
+S _flash_compareBytes Def026B
+S A$flash$758 Def02CB
+S A$flash$749 Def02C2
+S A$flash$695 Def0278
+S A$flash$686 Def026B
+S A$flash$668 Def0264
+S A$flash$659 Def0261
+S A$flash$596 Def020C
+S A$flash$587 Def01FF
+S A$flash$578 Def01F9
+S A$flash$497 Def01A2
+S A$flash$488 Def0199
+S A$flash$479 Def0185
+S A$flash$389 Def013B
+S XG$flash_readBytes$0$0 Def026A
+S A$flash$696 Def027B
+S A$flash$687 Def026D
+S A$flash$597 Def020F
+S A$flash$588 Def0202
+S A$flash$498 Def01A3
+S A$flash$489 Def019A
+S A$flash$399 Def0142
+S _flash_readByte Def01C9
+S A$flash$697 Def027E
+S A$flash$688 Def0271
+S A$flash$598 Def0210
+S A$flash$589 Def0204
+S A$flash$499 Def01A4
+S A$flash$698 Def0281
+S A$flash$689 Def0273
+S A$flash$599 Def0211
+S A$flash$70 Def0006
+S A$flash$699 Def0284
+S A$flash$80 Def0012
+S A$flash$71 Def0008
+S G$flash_programBytes$0$0 Def0175
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 DD E5 DD 21 00 00 DD 39 21 C3 FF 39 F9 21
+R 00 00 00 00
+T 0E 00 00 00 39 4D 44 59 50 C5 21 4D 00 01 3D 00
+R 00 00 00 00 00 0B 00 00
+T 1C 00 ED B0 C1 DD 7E 04 87 87 57 D5 33 69 60 CD
+R 00 00 00 00
+T 2A 00 00 00 DD F9 DD E1 C9
+R 00 00 00 00 02 02 07 00
+T 31 00
+R 00 00 00 00
+T 31 00 F3 21 55 05 36 AA 21 AA 02 36 55 21 55 05
+R 00 00 00 00
+T 3F 00 36 90 2A 00 00 E5 21 00 00 36 F0 E1 FB C9
+R 00 00 00 00
+T 4D 00
+R 00 00 00 00
+T 4D 00 F3 21 FF FF 4E FD 21 02 00 FD 39 FD 46 00
+R 00 00 00 00
+T 5B 00 70 21 55 05 36 AA 21 AA 02 36 55 21 55 05
+R 00 00 00 00
+T 69 00 36 80 21 55 05 36 AA 21 AA 02 36 55 21 00
+R 00 00 00 00
+T 77 00 80 36 30 7E E6 80 28 FB 21 00 00 36 F0 21
+R 00 00 00 00
+T 85 00 FF FF 71 FB C9
+R 00 00 00 00
+T 8A 00
+R 00 00 00 00
+T 8A 00 F3 21 FF FF 4E FD 21 02 00 FD 39 FD 46 03
+R 00 00 00 00
+T 98 00 70 21 55 05 36 AA 21 AA 02 36 55 21 55 05
+R 00 00 00 00
+T A6 00 36 A0 FD 7E 00 FD 6E 01 FD 66 02 77 E6 80
+R 00 00 00 00
+T B4 00 57 7E E6 80 BA 20 FA 21 00 00 36 F0 21 FF
+R 00 00 00 00
+T C2 00 FF 71 FB C9
+R 00 00 00 00
+T C6 00
+R 00 00 00 00
+T C6 00 F3 21 FF FF 4E FD 21 02 00 FD 39 FD 46 02
+R 00 00 00 00
+T D4 00 70 FD 6E 00 FD 66 01 6E FD 21 FF FF FD 71
+R 00 00 00 00
+T E2 00 00 FB C9
+R 00 00 00 00
+T E5 00
+R 00 00 00 00
+T E5 00 DD E5 DD 21 00 00 DD 39 21 E4 FF 39 F9 21
+R 00 00 00 00
+T F3 00 00 00 39 5D 54 01 31 00 E5 69 60 01 1C 00
+R 00 00 00 00 00 08 00 00
+T 01 01 ED B0 E1 CD 00 00 DD F9 DD E1 C9
+R 00 00 00 00 02 06 07 00
+T 0C 01
+R 00 00 00 00
+T 0C 01 DD E5 DD 21 00 00 DD 39 21 C4 FF 39 F9 21
+R 00 00 00 00
+T 1A 01 00 00 39 4D 44 59 50 C5 21 8A 00 01 3C 00
+R 00 00 00 00 00 0B 00 00
+T 28 01 ED B0 C1 DD 7E 05 87 87 6F DD 7E 07 07 07
+R 00 00 00 00
+T 36 01 E6 03 5F 16 00 19 55 DD 7E 07 E6 3F DD 77
+R 00 00 00 00
+T 44 01 07 CB FF DD 77 07 D5 33 DD 6E 06 DD 66 07
+R 00 00 00 00
+T 52 01 E5 DD 7E 04 F5 33 69 60 CD 00 00 DD F9 DD
+R 00 00 00 00 02 0B 07 00
+T 60 01 E1 C9
+R 00 00 00 00
+T 62 01
+R 00 00 00 00
+T 62 01 CD E5 00 7D D6 C2 20 08 7C D6 A4 20 03 2E
+R 00 00 00 00 00 03 00 00
+T 70 01 01 C9
+R 00 00 00 00
+T 72 01
+R 00 00 00 00
+T 72 01 2E 00 C9
+R 00 00 00 00
+T 75 01
+R 00 00 00 00
+T 75 01 DD E5 DD 21 00 00 DD 39 F5 3B DD 5E 04 DD
+R 00 00 00 00
+T 83 01 56 05 DD 7E 09 DD 77 FE DD 7E 0A DD 77 FF
+R 00 00 00 00
+T 91 01 DD 4E 06 DD 46 07
+R 00 00 00 00
+T 97 01
+R 00 00 00 00
+T 97 01 69 60 0B 7C B5 28 26 1A DD 77 FD C5 D5 DD
+R 00 00 00 00
+T A5 01 6E FE DD 66 FF E5 DD 66 08 DD 6E FD E5 CD
+R 00 00 00 00
+T B3 01 0C 01 F1 F1 D1 C1 13 DD 34 FE 20 D8 DD 34
+R 00 00 00 00 00 02 00 00
+T C1 01 FF 18 D3
+R 00 00 00 00
+T C4 01
+R 00 00 00 00
+T C4 01 DD F9 DD E1 C9
+R 00 00 00 00
+T C9 01
+R 00 00 00 00
+T C9 01 DD E5 DD 21 00 00 DD 39 21 E1 FF 39 F9 21
+R 00 00 00 00
+T D7 01 00 00 39 4D 44 59 50 C5 21 C6 00 01 1F 00
+R 00 00 00 00 00 0B 00 00
+T E5 01 ED B0 C1 DD 7E 04 87 87 6F DD 7E 06 07 07
+R 00 00 00 00
+T F3 01 E6 03 5F 16 00 19 55 DD 7E 06 E6 3F DD 77
+R 00 00 00 00
+T 01 02 06 CB FF DD 77 06 D5 33 DD 6E 05 DD 66 06
+R 00 00 00 00
+T 0F 02 E5 69 60 CD 00 00 DD F9 DD E1 C9
+R 00 00 00 00 02 06 07 00
+T 1A 02
+R 00 00 00 00
+T 1A 02 DD E5 DD 21 00 00 DD 39 F5 DD 4E 04 DD 46
+R 00 00 00 00
+T 28 02 05 DD 5E 09 DD 56 0A DD 7E 06 DD 77 FE DD
+R 00 00 00 00
+T 36 02 7E 07 DD 77 FF
+R 00 00 00 00
+T 3B 02
+R 00 00 00 00
+T 3B 02 E1 E5 DD 7E FE C6 FF DD 77 FE DD 7E FF CE
+R 00 00 00 00
+T 49 02 FF DD 77 FF 7C B5 28 15 C5 D5 D5 DD 7E 08
+R 00 00 00 00
+T 57 02 F5 33 CD C9 01 F1 33 7D D1 C1 02 03 13 18
+R 00 00 00 00 00 05 00 00
+T 65 02 D5
+R 00 00 00 00
+T 66 02
+R 00 00 00 00
+T 66 02 DD F9 DD E1 C9
+R 00 00 00 00
+T 6B 02
+R 00 00 00 00
+T 6B 02 DD E5 DD 21 00 00 DD 39 F5 F5 DD 4E 09 DD
+R 00 00 00 00
+T 79 02 46 0A DD 7E 04 DD 77 FD DD 7E 05 DD 77 FE
+R 00 00 00 00
+T 87 02 DD 5E 06 DD 56 07
+R 00 00 00 00
+T 8D 02
+R 00 00 00 00
+T 8D 02 6B 62 1B 7C B5 28 33 C5 D5 C5 DD 7E 08 F5
+R 00 00 00 00
+T 9B 02 33 CD C9 01 F1 33 D1 C1 DD 75 FC DD 6E FD
+R 00 00 00 00 00 04 00 00
+T A9 02 DD 66 FE 7E DD 77 FF DD 7E FC DD 96 FF 28
+R 00 00 00 00
+T B7 02 04 2E 01 18 0D
+R 00 00 00 00
+T BC 02
+R 00 00 00 00
+T BC 02 03 DD 34 FD 20 CB DD 34 FE 18 C6
+R 00 00 00 00
+T C7 02
+R 00 00 00 00
+T C7 02 2E 00
+R 00 00 00 00
+T C9 02
+R 00 00 00 00
+T C9 02 DD F9 DD E1 C9
+R 00 00 00 00

@@ -7,6 +7,17 @@ set /a _hours=100%_time:~0,2%%%100,_min=100%_time:~3,2%%%100,_sec=100%_time:~6,2
 set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 
 
+sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 data.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 data_bank2.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 data_bank3.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 flash.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 inlib.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 knob.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 savedata.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 savestruct.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 sinlut.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 util.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 vfont.c
 
 sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
 

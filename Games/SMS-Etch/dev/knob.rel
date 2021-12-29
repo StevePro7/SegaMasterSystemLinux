@@ -1,0 +1,96 @@
+;!FILE knob.asm
+XL2
+H 9 areas 30 global symbols
+M knob
+O -mz80
+S .__.ABS. Def0000
+A _CODE size BD flags 0 addr 0
+S G$addRotatedXY$0$0 Def0000
+S A$knob$102 Def003C
+S _addRotatedXY Def0000
+S Fknob$knobsteps$0$0 Def003D
+S C$knob.c$71$0$0 Def0000
+S XG$addRotatedXY$0$0 Def003C
+S A$knob$60 Def000D
+S A$knob$70 Def0018
+S A$knob$61 Def000E
+S A$knob$52 Def0000
+S A$knob$71 Def001A
+S A$knob$53 Def0002
+S A$knob$90 Def0031
+S A$knob$72 Def001B
+S A$knob$54 Def0006
+S A$knob$91 Def0033
+S A$knob$82 Def0024
+S A$knob$73 Def001D
+S A$knob$92 Def0035
+S A$knob$83 Def0027
+S A$knob$74 Def001F
+S A$knob$65 Def000F
+S C$knob.c$75$1$3 Def0008
+S A$knob$93 Def0036
+S A$knob$84 Def002A
+S A$knob$75 Def0020
+S A$knob$66 Def0012
+S C$knob.c$76$1$3 Def000F
+S A$knob$94 Def0037
+S A$knob$85 Def002B
+S A$knob$76 Def0021
+S A$knob$67 Def0015
+S A$knob$58 Def0008
+S C$knob.c$77$1$3 Def0024
+S A$knob$95 Def0038
+S A$knob$86 Def002C
+S A$knob$77 Def0022
+S A$knob$68 Def0016
+S A$knob$59 Def000B
+S C$knob.c$78$1$3 Def003C
+S A$knob$96 Def0039
+S A$knob$87 Def002D
+S A$knob$78 Def0023
+S A$knob$69 Def0017
+S A$knob$97 Def003A
+S A$knob$88 Def002F
+S A$knob$89 Def0030
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 DD E5 DD 21 00 00 DD 39 DD 7E 04 E6 3F 87
+R 00 00 00 00
+T 0E 00 5F DD 4E 05 DD 46 06 0A 57 7B C6 3D 00 6F
+R 00 00 00 00 09 0D 00 00
+T 1B 00 3E 00 CE 3D 00 67 6E 7A 85 02 DD 4E 07 DD
+R 00 00 00 00 89 05 00 00
+T 28 00 46 08 0A 57 1C 3E 3D 00 83 6F 3E 3D 00 CE
+R 00 00 00 00 09 08 00 00 89 0D 00 00
+T 34 00 00 67 5E 7A 83 02 DD E1 C9
+R 00 00 00 00
+T 3D 00
+R 00 00 00 00
+T 3D 00 09 00 08 00 08 01 08 02 08 03 07 04 07 05
+R 00 00 00 00
+T 4B 00 06 05 06 06 05 06 05 07 04 07 03 08 02 08
+R 00 00 00 00
+T 59 00 01 08 00 08 00 09 00 08 FF 08 FE 08 FD 08
+R 00 00 00 00
+T 67 00 FC 07 FB 07 FB 06 FA 06 FA 05 F9 05 F9 04
+R 00 00 00 00
+T 75 00 F8 03 F8 02 F8 01 F8 00 F7 00 F8 00 F8 FF
+R 00 00 00 00
+T 83 00 F8 FE F8 FD F9 FC F9 FB FA FB FA FA FB FA
+R 00 00 00 00
+T 91 00 FB F9 FC F9 FD F8 FE F8 FF F8 00 F8 00 F7
+R 00 00 00 00
+T 9F 00 00 F8 01 F8 02 F8 03 F8 04 F9 05 F9 05 FA
+R 00 00 00 00
+T AD 00 06 FA 06 FB 07 FB 07 FC 08 FD 08 FE 08 FF
+R 00 00 00 00
+T BB 00 08 00
+R 00 00 00 00

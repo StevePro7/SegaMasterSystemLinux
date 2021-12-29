@@ -1,43 +1,46 @@
-#include "SMSlib.h"
+#include "../lib/SMSlib.h"
 #include "inlib.h"
 
 // Bits for port 3F.
-#define PORTB_TH_HIGH	0x80
-#define PORTB_TR_HIGH	0x40
-#define PORTA_TH_HIGH	0x20
-#define PORTA_TR_HIGH	0x10
-#define PORTB_TH_INPUT	0x08
-#define PORTB_TR_INPUT	0x04
-#define PORTA_TH_INPUT	0x02
-#define PORTA_TR_INPUT	0x01 // input when set
+#define PORTB_TH_HIGH 0x80
+#define PORTB_TR_HIGH 0x40
+#define PORTA_TH_HIGH 0x20
+#define PORTA_TR_HIGH 0x10
+#define PORTB_TH_INPUT 0x08
+#define PORTB_TR_INPUT 0x04
+#define PORTA_TH_INPUT 0x02
+#define PORTA_TR_INPUT 0x01 // input when set
 
 // https://www.smspower.org/Development/Paddle
 // https://www.smspower.org/Development/PeripheralPorts
 //
-#define DETECT_MIN	0x60
-#define DETECT_MAX	0xA0
-#define READ_TIMEOUT	32
+#define DETECT_MIN 0x60
+#define DETECT_MAX 0xA0
+#define READ_TIMEOUT 32
 
 __sfr __at 0x3F port3F;
 __sfr __at 0xDC portDC;
 __sfr __at 0xDD portDD;
 
-
 inlib_data inlib_port1, inlib_port2;
 
 char SMS_detectPaddleA(void)
 {
-	unsigned char i,c;
+	unsigned char i, c;
 
-	for (i=1, c=0; i; i++) {
-		if (portDC & 0x20) {
+	for (i = 1, c = 0; i; i++)
+	{
+		if (portDC & 0x20)
+		{
 			c++;
 		}
 	}
-	if (c < DETECT_MIN) {
+	if (c < DETECT_MIN)
+	{
 		return 0;
 	}
-	if (c > DETECT_MAX) {
+	if (c > DETECT_MAX)
+	{
 		return 0;
 	}
 
@@ -46,22 +49,25 @@ char SMS_detectPaddleA(void)
 
 char SMS_detectPaddleB(void)
 {
-	unsigned char i,c;
+	unsigned char i, c;
 
-	for (i=1, c=0; i; i++) {
-		if (portDD & 0x08) {
+	for (i = 1, c = 0; i; i++)
+	{
+		if (portDD & 0x08)
+		{
 			c++;
 		}
 	}
-	if (c < DETECT_MIN) {
+	if (c < DETECT_MIN)
+	{
 		return 0;
 	}
-	if (c > DETECT_MAX) {
+	if (c > DETECT_MAX)
+	{
 		return 0;
 	}
 
 	return 1;
-
 }
 
 int SMS_paddleReadA(void)
@@ -79,19 +85,23 @@ int SMS_paddleReadA(void)
 	 * the nibble first, and then sets key 2 to high. Or does
 	 * both simultaneously.
 	 */
-	do {
+	do
+	{
 		tmp = portDC;
 		t--;
-		if (!t) {
+		if (!t)
+		{
 			return -1;
 		}
 	} while (!(tmp & 0x20));
 
 	/* Now wait until key 2 is low, receive the low nibble. */
-	do {
+	do
+	{
 		tmp = portDC;
 		t--;
-		if (!t) {
+		if (!t)
+		{
 			return -1;
 		}
 	} while (tmp & 0x20);
@@ -99,10 +109,12 @@ int SMS_paddleReadA(void)
 	val = tmp & 0xf;
 
 	/* Now wait until key 2 is high to receive the high nibble. */
-	do {
+	do
+	{
 		tmp = portDC;
 		t--;
-		if (!t) {
+		if (!t)
+		{
 			return -1;
 		}
 	} while (!(tmp & 0x20));
@@ -118,17 +130,21 @@ int SMS_paddleReadB(void)
 	unsigned int t = READ_TIMEOUT;
 
 	/* Sync */
-	while (!(portDD & 0x08)) {
+	while (!(portDD & 0x08))
+	{
 		t--;
-		if (!t) {
+		if (!t)
+		{
 			return -1;
 		}
 	}
 
 	/* Wait for low nibble */
-	while ((portDD & 0x08)) {
+	while ((portDD & 0x08))
+	{
 		t--;
-		if (!t) {
+		if (!t)
+		{
 			return -1;
 		}
 	}
@@ -136,9 +152,11 @@ int SMS_paddleReadB(void)
 	val = tmp;
 
 	/* Wait for high nibble */
-	while (!(portDD & 0x08)) {
+	while (!(portDD & 0x08))
+	{
 		t--;
-		if (!t) {
+		if (!t)
+		{
 			return -1;
 		}
 	}
@@ -148,7 +166,6 @@ int SMS_paddleReadB(void)
 
 	return val;
 }
-
 
 static void SMS_paddle_meka_workaround(void)
 {
@@ -160,39 +177,36 @@ static void SMS_paddle_undo_meka_workaround(void)
 	port3F = 0xFF;
 }
 
-
 static void TH_TR_outputmode()
 {
 	// Port A TH and TR pins output
 	port3F = 0xFC;
 }
 
-#define GET_TL()	((portDC) & 0x10)
+#define GET_TL() ((portDC)&0x10)
 
-#define TH_LOW_TR_HIGH()	port3F = 0x1C
-#define TH_LOW_TR_LOW()		port3F = 0x0C
-#define TH_HIGH_TR_HIGH()	port3F = 0x3C
+#define TH_LOW_TR_HIGH() port3F = 0x1C
+#define TH_LOW_TR_LOW() port3F = 0x0C
+#define TH_HIGH_TR_HIGH() port3F = 0x3C
 
-#define TH_HIGH_TR_LOW()	port3F = 0x20
+#define TH_HIGH_TR_LOW() port3F = 0x20
 
 static void _delayN(uint16_t c)
 {
 	volatile uint16_t r = c;
 
-	while (r--) {
-		__asm
-		nop
-		__endasm;
+	while (r--)
+	{
+		__asm nop
+			__endasm;
 	}
 }
-
-
 
 static void sportsPad_read(uint8_t *dst)
 {
 	uint8_t tmp;
 	const uint8_t TH_HIGH = 0x0D; // PORTA_TH_HIGH | PORTB_TR_INPUT | PORTB_TH_INPUT;
-	const uint8_t TH_LOW = 0x2D; // PORTB_TR_INPUT | PORTB_TH_INPUT;
+	const uint8_t TH_LOW = 0x2D;  // PORTB_TR_INPUT | PORTB_TH_INPUT;
 
 	port3F = TH_HIGH;
 	_delayN(8);
@@ -213,7 +227,6 @@ static void sportsPad_read(uint8_t *dst)
 	tmp |= (portDC & 0xf);
 
 	dst[1] = tmp;
-
 }
 
 static char detectSportsPad()
@@ -224,7 +237,8 @@ static char detectSportsPad()
 	// TH as output on both ports
 	port3F = PORTB_TH_HIGH | PORTA_TH_HIGH | PORTB_TR_INPUT | PORTB_TH_INPUT;
 
-	for (j=0; j<10; j++) {
+	for (j = 0; j < 10; j++)
+	{
 
 		SMS_waitForVBlank();
 		SMS_waitForVBlank();
@@ -233,17 +247,17 @@ static char detectSportsPad()
 
 		// Not sure how to detect this... If the data appears to change between nibbles, assume it's a sports pad?
 		// No, does not work. The sports pad returns zeros when there is no movement.
-		for (i=1; i<2; i++) {
-			if ((data[i] & 0xf) == (data[i] >> 4)) {
+		for (i = 1; i < 2; i++)
+		{
+			if ((data[i] & 0xf) == (data[i] >> 4))
+			{
 				return 0;
 			}
 		}
-
 	}
 
 	return 1;
 }
-
 
 static char detectMouse()
 {
@@ -255,9 +269,11 @@ static char detectMouse()
 
 	TH_LOW_TR_LOW();
 	t = 1024;
-	while (GET_TL()) {
+	while (GET_TL())
+	{
 		t--;
-		if (!t) {
+		if (!t)
+		{
 			port3F = 0xff;
 			return 0;
 		}
@@ -265,14 +281,15 @@ static char detectMouse()
 
 	TH_LOW_TR_HIGH();
 	t = 1024;
-	while (!GET_TL()) {
+	while (!GET_TL())
+	{
 		t--;
-		if (!t) {
+		if (!t)
+		{
 			port3F = 0xff;
 			return 0;
 		}
 	}
-
 
 	TH_HIGH_TR_HIGH();
 
@@ -296,7 +313,7 @@ static void readGraphics2(gfxv2_data *dst)
 {
 	unsigned char i;
 	unsigned char tmp;
-	uint8_t buf[3] = { 0, 0, 0 };
+	uint8_t buf[3] = {0, 0, 0};
 	uint8_t btn;
 	uint8_t has_data;
 
@@ -307,9 +324,11 @@ static void readGraphics2(gfxv2_data *dst)
 	_delayN(8);
 	btn = portDC & 0xf;
 
-	if (has_data) {
+	if (has_data)
+	{
 
-		for (i=0; i<3; i++) {
+		for (i = 0; i < 3; i++)
+		{
 
 			TH_LOW_TR_LOW();
 			_delayN(8);
@@ -335,7 +354,6 @@ static void readGraphics2(gfxv2_data *dst)
 	TH_HIGH_TR_HIGH();
 }
 
-
 static void readMouse(uint8_t *dst)
 {
 	unsigned char i;
@@ -343,17 +361,22 @@ static void readMouse(uint8_t *dst)
 
 	TH_LOW_TR_HIGH();
 
-	for (i=0; i<4; i++) {
+	for (i = 0; i < 4; i++)
+	{
 
 		// Receive upper nibble
 		TH_LOW_TR_LOW();
-		while (GET_TL()) { }
+		while (GET_TL())
+		{
+		}
 		tmp = portDC & 0xf;
 		tmp <<= 4;
 
 		// Receive lower nibble
 		TH_LOW_TR_HIGH();
-		while (!GET_TL()) { }
+		while (!GET_TL())
+		{
+		}
 		tmp |= portDC & 0xf;
 
 		// Store
@@ -362,8 +385,6 @@ static void readMouse(uint8_t *dst)
 
 	TH_HIGH_TR_HIGH();
 }
-
-
 
 void inlib_init()
 {
@@ -375,19 +396,23 @@ void inlib_init()
 
 	// Step 1 : Japanese paddle detection (passive test)
 	SMS_waitForVBlank();
-	if (SMS_detectPaddleA()) {
+	if (SMS_detectPaddleA())
+	{
 		inlib_port1.type = INLIB_TYPE_PADDLE;
 	}
-	if (SMS_detectPaddleB()) {
+	if (SMS_detectPaddleB())
+	{
 		inlib_port2.type = INLIB_TYPE_PADDLE;
 	}
-	if (	(inlib_port1.type != INLIB_TYPE_PADDLE) &&
-			(inlib_port2.type != INLIB_TYPE_PADDLE) ) {
+	if ((inlib_port1.type != INLIB_TYPE_PADDLE) &&
+		(inlib_port2.type != INLIB_TYPE_PADDLE))
+	{
 		SMS_paddle_undo_meka_workaround();
 	}
 	SMS_waitForVBlank();
 
-	if (detectMouse()) {
+	if (detectMouse())
+	{
 		inlib_port1.type = INLIB_TYPE_MD_MOUSE;
 	}
 }
@@ -403,43 +428,54 @@ void readLightPhaser1()
 	SMS_paddle_undo_meka_workaround();
 	trig = (portDC & 0x10) ? 0 : LIGHTPHASER_TRIG; // Port A TL
 
-	if (trig) {
+	if (trig)
+	{
 
 		// Normally called during vblank. Wait until vblank ends...
-		do {
+		do
+		{
 			vc = SMS_getVCount();
 		} while ((vc > 192));
 
 		// Monitor TH during the active display area
-		do {
+		do
+		{
 			vc = SMS_getVCount();
 
-			if (!(portDD & 0x40)) { // Port A TH
+			if (!(portDD & 0x40))
+			{ // Port A TH
 				// Light detected!
 
 				// Record the minimum x and y seen.
-				if (first) {
+				if (first)
+				{
 					x = SMS_getHCount();
 					y = vc;
 					first = 0;
-				} else {
-					if (SMS_getHCount() < x) {
+				}
+				else
+				{
+					if (SMS_getHCount() < x)
+					{
 						x = SMS_getHCount();
 					}
-					if (vc < y) {
+					if (vc < y)
+					{
 						y = vc;
 					}
 				}
 			}
 
 		} while (vc < 192);
-
 	}
 
-	// The H counter is 9 bits, and reading it returns the upper 8 bits. 
-	if (x > 0x7f) {
+	// The H counter is 9 bits, and reading it returns the upper 8 bits.
+	if (x > 0x7f)
+	{
 		inlib_port1.phaser.x = 0xff;
-	} else {
+	}
+	else
+	{
 		inlib_port1.phaser.x = x << 1;
 	}
 	inlib_port1.phaser.y = y;
@@ -451,17 +487,20 @@ void inlib_poll()
 	uint8_t tmpdata[4];
 	uint8_t now;
 
-	if (inlib_port1.type == INLIB_TYPE_LIGHT_PHASER) {
+	if (inlib_port1.type == INLIB_TYPE_LIGHT_PHASER)
+	{
 		readLightPhaser1();
 		return;
 	}
 
-	if (inlib_port1.type == INLIB_TYPE_GFX_V2) {
+	if (inlib_port1.type == INLIB_TYPE_GFX_V2)
+	{
 		readGraphics2(&inlib_port1.gfx2);
 		return;
 	}
 
-	if (inlib_port1.type == INLIB_TYPE_MD_MOUSE) {
+	if (inlib_port1.type == INLIB_TYPE_MD_MOUSE)
+	{
 		readMouse(tmpdata);
 		inlib_port1.mdmouse.buttons = tmpdata[1] & 0xf;
 		// TODO : In fact, tmpdata[1] & 1 is a 9th bit for X,
@@ -471,31 +510,39 @@ void inlib_poll()
 		return;
 	}
 
-	if (inlib_port1.type == INLIB_TYPE_PADDLE) {
+	if (inlib_port1.type == INLIB_TYPE_PADDLE)
+	{
 		now = (SMS_getKeysStatus() & PORT_A_KEY_1) ? PADDLE_BUTTON : 0;
 		inlib_port1.paddle.pressed = now & ~inlib_port1.paddle.buttons;
 		inlib_port1.paddle.buttons = now;
 		inlib_port1.paddle.value = SMS_paddleReadA();
-	} else if (inlib_port1.type == INLIB_TYPE_SPORTSPAD) {
+	}
+	else if (inlib_port1.type == INLIB_TYPE_SPORTSPAD)
+	{
 		now = (SMS_getKeysStatus() >> 4) & 3;
 		sportsPad_read(tmpdata);
 		inlib_port1.spad.pressed = now & ~inlib_port1.spad.buttons;
 		inlib_port1.spad.buttons = now;
 		inlib_port1.spad.x = tmpdata[0];
 		inlib_port1.spad.y = tmpdata[1];
-	} else {
-		now =  SMS_getKeysStatus();
+	}
+	else
+	{
+		now = SMS_getKeysStatus();
 		inlib_port1.sms.pressed = now & ~inlib_port1.sms.buttons;
 		inlib_port1.sms.buttons = now;
 	}
 
-	if (inlib_port2.type == INLIB_TYPE_PADDLE) {
+	if (inlib_port2.type == INLIB_TYPE_PADDLE)
+	{
 		now = (SMS_getKeysStatus() & PORT_B_KEY_1) ? PADDLE_BUTTON : 0;
 		inlib_port2.paddle.pressed = now & ~inlib_port2.paddle.buttons;
 		inlib_port2.paddle.buttons = now;
 		inlib_port2.paddle.value = SMS_paddleReadB();
-	} else {
-		now =  SMS_getKeysStatus() >> 6;
+	}
+	else
+	{
+		now = SMS_getKeysStatus() >> 6;
 		inlib_port2.sms.pressed = now & ~inlib_port2.sms.buttons;
 		inlib_port2.sms.buttons = now;
 	}

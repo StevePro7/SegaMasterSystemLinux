@@ -1,0 +1,186 @@
+;!FILE savedata.asm
+XL2
+H 9 areas 7C global symbols
+M savedata
+O -mz80
+S G$ROM_bank_to_be_mapped_on_slot2$0$0 DefFFFF
+S _flash_programBytes Ref0000
+S G$SRAM_bank_to_be_mapped_on_slot2$0$0 DefFFFC
+S _ROM_bank_to_be_mapped_on_slot2 DefFFFF
+S G$SMS_SRAM$0$0 Def8000
+S _SRAM_bank_to_be_mapped_on_slot2 DefFFFC
+S .__.ABS. Def0000
+S _flash_erase64kSector Ref0000
+S _flash_isKnownId Ref0000
+S _SMS_SRAM Def8000
+S _flash_readBytes Ref0000
+S _flash_compareBytes Ref0000
+A _CODE size A3 flags 0 addr 0
+S A$savedata$95 Def001A
+S A$savedata$86 Def000A
+S A$savedata$96 Def001D
+S A$savedata$87 Def000B
+S A$savedata$78 Def0000
+S A$savedata$97 Def001E
+S A$savedata$88 Def000D
+S A$savedata$79 Def0003
+S A$savedata$89 Def000E
+S G$savedata_commit$0$0 Def0042
+S XG$savedata_init$0$0 Def0041
+S _savedata_commit Def0042
+S XG$savedata_commit$0$0 Def00A2
+S A$savedata$200 Def0088
+S A$savedata$101 Def001F
+S A$savedata$210 Def009B
+S A$savedata$201 Def0089
+S A$savedata$120 Def0038
+S A$savedata$102 Def0022
+S A$savedata$211 Def009C
+S A$savedata$202 Def008B
+S A$savedata$130 Def0041
+S A$savedata$103 Def0024
+S A$savedata$221 Def00A0
+S A$savedata$203 Def008C
+S A$savedata$113 Def002D
+S A$savedata$204 Def008D
+S A$savedata$150 Def004C
+S A$savedata$114 Def0030
+S A$savedata$205 Def0090
+S A$savedata$124 Def003C
+S A$savedata$115 Def0033
+S A$savedata$215 Def009D
+S A$savedata$206 Def0091
+S A$savedata$161 Def005B
+S A$savedata$143 Def0042
+S A$savedata$125 Def003F
+S A$savedata$116 Def0036
+S A$savedata$216 Def009F
+S A$savedata$207 Def0094
+S A$savedata$180 Def0072
+S A$savedata$171 Def0062
+S A$savedata$144 Def0045
+S A$savedata$108 Def0025
+S A$savedata$226 Def00A2
+S A$savedata$208 Def0095
+S A$savedata$181 Def0075
+S A$savedata$172 Def0065
+S A$savedata$154 Def0050
+S A$savedata$145 Def0046
+S A$savedata$109 Def0029
+S A$savedata$209 Def0098
+S A$savedata$191 Def007D
+S A$savedata$182 Def0076
+S A$savedata$173 Def0066
+S A$savedata$155 Def0053
+S A$savedata$192 Def007F
+S A$savedata$183 Def0077
+S A$savedata$174 Def0068
+S A$savedata$165 Def005F
+S A$savedata$156 Def0056
+S C$savedata.c$42$1$91 Def0062
+S C$savedata.c$33$1$91 Def0042
+S C$savedata.c$24$2$90 Def0025
+S A$savedata$193 Def0080
+S A$savedata$184 Def0078
+S A$savedata$175 Def0069
+S A$savedata$166 Def0061
+S A$savedata$157 Def0059
+S C$savedata.c$52$1$91 Def00A0
+S C$savedata.c$25$2$90 Def002D
+S G$savedata_init$0$0 Def0000
+S A$savedata$194 Def0081
+S A$savedata$185 Def0079
+S A$savedata$176 Def006A
+S A$savedata$149 Def0048
+S C$savedata.c$53$1$91 Def00A2
+S C$savedata.c$50$2$93 Def009D
+S C$savedata.c$26$2$90 Def0038
+S C$savedata.c$12$0$0 Def0000
+S A$savedata$195 Def0084
+S A$savedata$186 Def007A
+S A$savedata$177 Def006D
+S C$savedata.c$27$2$90 Def003C
+S A$savedata$187 Def007B
+S A$savedata$178 Def006E
+S C$savedata.c$35$2$92 Def0048
+S C$savedata.c$31$1$88 Def0042
+S C$savedata.c$20$2$89 Def001F
+S A$savedata$179 Def0071
+S C$savedata.c$36$2$92 Def0050
+S C$savedata.c$14$1$88 Def0000
+S C$savedata.c$37$2$92 Def005B
+S A$savedata$199 Def0085
+S C$savedata.c$46$2$93 Def007D
+S C$savedata.c$38$2$92 Def005F
+S C$savedata.c$47$2$93 Def0085
+S C$savedata.c$16$2$89 Def0007
+S C$savedata.c$29$1$88 Def0041
+S A$savedata$80 Def0004
+S A$savedata$90 Def000F
+S A$savedata$81 Def0005
+S _savedata_init Def0000
+S A$savedata$91 Def0012
+S A$savedata$92 Def0013
+S A$savedata$93 Def0016
+S A$savedata$94 Def0017
+S A$savedata$85 Def0007
+A _DATA size B46 flags 0 addr 0
+S G$savedata_is_sram_based$0$0 Def0B45
+S _savedata_is_sram_based Def0B45
+S G$g_savedata$0$0 Def0000
+S _g_savedata Def0000
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 01 00
+T 00 00
+R 00 00 01 00
+T 45 0B
+R 00 00 01 00
+T 45 0B
+R 00 00 01 00
+T 00 00
+R 00 00 00 00
+T 00 00 CD 00 00 7D B7 28 1E 21 00 00 E5 3E 01 F5
+R 00 00 00 00 02 03 08 00
+T 0E 00 33 21 45 0B E5 21 00 00 E5 CD 00 00 21
+R 00 00 00 00 00 08 01 00 02 0C 0A 00
+T 1B 00 07 00 39 F9 21 45 0B 36 00 C9
+R 00 00 00 00 00 07 01 00
+T 25 00
+R 00 00 00 00
+T 25 00 FD 21 FC FF FD 36 00 08 11 00 00 21 00 80
+R 00 00 00 00 00 0B 01 00
+T 33 00 01 45 0B ED B0 FD 36 00 00 21 45 0B 36 01
+R 00 00 00 00 00 0C 01 00
+T 41 00 C9
+R 00 00 00 00
+T 42 00
+R 00 00 00 00
+T 42 00 3A 45 0B B7 28 1A FD 21 FC FF FD 36 00 08
+R 00 00 00 00 00 03 01 00
+T 50 00 11 00 80 21 00 00 01 45 0B ED B0 FD 36 00
+R 00 00 00 00 00 06 01 00
+T 5E 00 00 2E 01 C9
+R 00 00 00 00
+T 62 00
+R 00 00 00 00
+T 62 00 21 00 00 E5 3E 01 F5 33 21 45 0B E5 21
+R 00 00 00 00
+T 6F 00 00 00 E5 CD 00 00 F1 F1 F1 33 7D B7 28 23
+R 00 00 00 00 00 02 01 00 02 06 0B 00
+T 7D 00 3E 01 F5 33 CD 00 00 33 21 00 00 E5 3E 01
+R 00 00 00 00 02 07 07 00
+T 8B 00 F5 33 21 45 0B E5 21 00 00 E5 CD 00 00 21
+R 00 00 00 00 00 09 01 00 02 0D 01 00
+T 99 00 07 00 39 F9 2E 01 C9
+R 00 00 00 00
+T A0 00
+R 00 00 00 00
+T A0 00 2E 00 C9
+R 00 00 00 00
