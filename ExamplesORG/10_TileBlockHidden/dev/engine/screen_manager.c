@@ -8,9 +8,9 @@
 
 void engine_screen_manager_init()
 {
-	engine_gamer_manager_init( 48, 48, 1, 256 );
+	engine_gamer_manager_init(48, 48, 1, 256);
 	engine_tree_manager_draw();
-	engine_tile_manager_draw_sides( 8, 6 );
+	engine_tile_manager_draw_sides(8, 6);
 }
 
 void engine_screen_manager_update()
@@ -19,37 +19,37 @@ void engine_screen_manager_update()
 	signed char dx = 0;
 	signed char dy = 0;
 
-	input = engine_input_manager_hold_left();
-	if( input )
+	input = engine_input_manager_move_left();
+	if (input)
 	{
 		dx = -1;
 	}
 	else
 	{
-		input = engine_input_manager_hold_right();
-		if( input )
+		input = engine_input_manager_move_right();
+		if (input)
 		{
 			dx = 1;
 		}
 	}
 
-	input = engine_input_manager_hold_up();
-	if( input )
+	input = engine_input_manager_move_up();
+	if (input)
 	{
 		dy = -1;
 	}
 	else
 	{
-		input = engine_input_manager_hold_down();
-		if( input )
+		input = engine_input_manager_move_down();
+		if (input)
 		{
 			dy = 1;
 		}
 	}
 
-	if( 0 != dx || 0 != dy )
+	if (0 != dx || 0 != dy)
 	{
-		engine_gamer_manager_update( dx, dy );
+		engine_gamer_manager_update(dx, dy);
 	}
 
 	engine_gamer_manager_draw();

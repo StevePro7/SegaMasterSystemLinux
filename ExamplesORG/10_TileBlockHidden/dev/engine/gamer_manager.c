@@ -3,12 +3,12 @@
 #include "../engine/gamer_manager.h"
 #include "../engine/sprite_manager.h"
 
-#define SPRITE_TILES_GAMER	256 + 96
+#define SPRITE_TILES_GAMER 256 + 48
 
 // Global variable.
 struct_gamer_object global_gamer_object;
 
-void engine_gamer_manager_init( unsigned char px, unsigned char py, unsigned char vel, unsigned int tile )
+void engine_gamer_manager_init(unsigned char px, unsigned char py, unsigned char vel, unsigned int tile)
 {
 	struct_gamer_object *go = &global_gamer_object;
 	go->gamerX = px;
@@ -17,7 +17,7 @@ void engine_gamer_manager_init( unsigned char px, unsigned char py, unsigned cha
 	go->tile = tile;
 }
 
-void engine_gamer_manager_update( char dx, char dy )
+void engine_gamer_manager_update(char dx, char dy)
 {
 	struct_gamer_object *go = &global_gamer_object;
 	go->gamerX += dx * go->velocity;
@@ -27,5 +27,5 @@ void engine_gamer_manager_update( char dx, char dy )
 void engine_gamer_manager_draw()
 {
 	struct_gamer_object *go = &global_gamer_object;
-	engine_sprite_manager_draw( go->gamerX, go->gamerY, SPRITE_TILES_GAMER );
+	engine_sprite_manager_draw(go->gamerX, go->gamerY, SPRITE_TILES_GAMER);
 }
