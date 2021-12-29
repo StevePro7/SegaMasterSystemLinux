@@ -1,49 +1,56 @@
 #include "screen_manager.h"
-#include "global_manager.h"
 #include "enum_manager.h"
+#include "font_manager.h"
+#include "input_manager.h"
+#include "gamer_manager.h"
+#include "tile_manager.h"
+#include "tree_manager.h"
 
-// Screens
-#include "../screen/none_screen.h"
-#include "../screen/start_screen.h"
-#include "../screen/title_screen.h"
-#include "../screen/ready_screen.h"
-#include "../screen/play_screen.h"
-
-#define MAX_SCREEENS		5
-
-static void( *load_method[ MAX_SCREEENS ] )();
-static void( *update_method[ MAX_SCREEENS ] )( unsigned char *screen_type );
-
-static unsigned char curr_screen_type;
-static unsigned char next_screen_type;
-
-void engine_screen_manager_init( unsigned char open_screen_type )
+void engine_screen_manager_init()
 {
-	curr_screen_type = screen_type_none;
-	next_screen_type = open_screen_type;
-
-	// Set load methods.
-	load_method[ screen_type_none ] = screen_none_screen_load;
-	load_method[ screen_type_start ] = screen_start_screen_load;
-	load_method[ screen_type_title ] = screen_title_screen_load;
-	load_method[screen_type_ready ] = screen_ready_screen_load;
-	load_method[screen_type_play ] = screen_play_screen_load;
-
-	// Set update methods.
-	update_method[ screen_type_none ] = screen_none_screen_update;
-	update_method[ screen_type_start ] = screen_start_screen_update;
-	update_method[ screen_type_title ] = screen_title_screen_update;
-	update_method[ screen_type_ready ] = screen_ready_screen_update;
-	update_method[ screen_type_play ] = screen_play_screen_update;
+	engine_gamer_manager_init( 48, 48, 1, 256 );
+	engine_tree_manager_draw();
+	engine_tile_manager_draw_sides( 8, 6 );
 }
 
 void engine_screen_manager_update()
 {
-	if( curr_screen_type != next_screen_type )
+	unsigned char input;
+	signed char dx = 0;
+	signed char dy = 0;
+
+	input = engine_input_manager_hold_left();
+	if( input )
 	{
-		curr_screen_type = next_screen_type;
-		load_method[ curr_screen_type ]();
+		dx = -1;
+	}
+	else
+	{
+		input = engine_input_manager_hold_right();
+		if( input )
+		{
+			dx = 1;
+		}
 	}
 
-	update_method[ curr_screen_type ]( &next_screen_type );
+	input = engine_input_manager_hold_up();
+	if( input )
+	{
+		dy = -1;
+	}
+	else
+	{
+		input = engine_input_manager_hold_down();
+		if( input )
+		{
+			dy = 1;
+		}
+	}
+
+	if( 0 != dx || 0 != dy )
+	{
+		engine_gamer_manager_update( dx, dy );
+	}
+
+	engine_gamer_manager_draw();
 }

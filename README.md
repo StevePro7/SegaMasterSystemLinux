@@ -36,3 +36,7 @@ SCROLL
 SegaMasterSystemLinux\Examples\05_InputDetectionNewDevkit
 This example replicates Gotris title screen scrolling
 also using the latest devkitSMS library in devkitSMScode
+
+
+Input Manager	stream line
+E:\GitHub\StevePro7\SegaMasterSystemLinux\Examples\05_InputDetectionBlock\dev\engine\input_manager.c
