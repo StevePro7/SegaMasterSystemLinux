@@ -7,11 +7,6 @@ set /a _hours=100%_time:~0,2%%%100,_min=100%_time:~3,2%%%100,_sec=100%_time:~6,2
 set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 
 
-:: Compile
-cd devkit
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _sms_manager.c
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _snd_manager.c
-cd ..
 
 sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
 
@@ -39,12 +34,6 @@ devkit/_snd_manager.rel
 ihx2sms output.ihx output.sms
 
 :: Delete
-cd devkit
-if exist "*.asm" del "*.asm" > nul
-if exist "*.lst" del "*.lst" > nul
-if exist "*.sym" del "*.sym" > nul
-cd ..
-
 if exist "*.asm" del "*.asm" > nul
 if exist "*.ihx" del "*.ihx" > nul
 if exist "*.lk"  del "*.lk"  > nul
