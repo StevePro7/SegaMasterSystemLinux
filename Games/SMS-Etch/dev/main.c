@@ -914,9 +914,12 @@ void main(void)
 	// If the ROM is too small, Meka also assumes there is no mapper. But this is
 	// wrong in this case as SRAM is used... So data_bank2.c and data_bank3.c are there
 	// to bump the size up to 64kB...
-	__asm push af
-		ld a,
-		#2 ld(0xFFFF), a pop af __endasm;
+	__asm 
+		push af
+		ld a, #2
+		ld(0xFFFF), a 
+		pop af 
+	__endasm;
 	SMS_mapROMBank(2);
 
 	setupSprite(POINTER_SID, 0, 0, POINTER_TID);
