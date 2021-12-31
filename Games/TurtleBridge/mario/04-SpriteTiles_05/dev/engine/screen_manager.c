@@ -42,7 +42,7 @@ void engine_screen_manager_update()
 		{
 			z = 0;
 			index++;
-			if( index > 3 )
+			if( index >= 3 )
 			{
 				index = 0;
 			}
