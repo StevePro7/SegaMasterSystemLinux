@@ -1,6 +1,6 @@
 ;--------------------------------------------------------
 ; File Created by SDCC : free open source ANSI-C Compiler
-; Version 3.6.9 #9960 (MINGW64)
+; Version 4.1.0 #12072 (MINGW64)
 ;--------------------------------------------------------
 	.module gfx
 	.optsdcc -mz80
@@ -45,9 +45,9 @@
 ;--------------------------------------------------------
 	.area _CODE
 	.area _CODE
-G$font_tiles__palette__bin$0$0 == .
+G$font_tiles__palette__bin$0_0$0 == .
 _font_tiles__palette__bin:
-	.db #0x00	; 0
+	.db #0x3f	; 63
 	.db #0x02	; 2
 	.db #0x08	; 8
 	.db #0x0a	; 10
@@ -63,7 +63,7 @@ _font_tiles__palette__bin:
 	.db #0x33	; 51	'3'
 	.db #0x3c	; 60
 	.db #0x3f	; 63
-G$font_tiles__tilemap__bin$0$0 == .
+G$font_tiles__tilemap__bin$0_0$0 == .
 _font_tiles__tilemap__bin:
 	.db #0x00	; 0
 	.db #0x00	; 0
@@ -193,7 +193,7 @@ _font_tiles__tilemap__bin:
 	.db #0x00	; 0
 	.db #0x3f	; 63
 	.db #0x00	; 0
-G$font_tiles__tiles__psgcompr$0$0 == .
+G$font_tiles__tiles__psgcompr$0_0$0 == .
 _font_tiles__tiles__psgcompr:
 	.db #0x40	; 64
 	.db #0x00	; 0
@@ -858,9 +858,9 @@ _font_tiles__tiles__psgcompr:
 	.db #0x00	; 0
 	.db #0x00	; 0
 	.db #0x00	; 0
-G$sprites__palette__bin$0$0 == .
+G$sprites__palette__bin$0_0$0 == .
 _sprites__palette__bin:
-	.db #0x00	; 0
+	.db #0x39	; 57	'9'
 	.db #0x30	; 48	'0'
 	.db #0x02	; 2
 	.db #0x38	; 56	'8'
@@ -876,7 +876,7 @@ _sprites__palette__bin:
 	.db #0x00	; 0
 	.db #0x00	; 0
 	.db #0x00	; 0
-G$sprites__tiles__psgcompr$0$0 == .
+G$sprites__tiles__psgcompr$0_0$0 == .
 _sprites__tiles__psgcompr:
 	.db #0x10	; 16
 	.db #0x00	; 0
