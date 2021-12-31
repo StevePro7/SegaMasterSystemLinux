@@ -1,46 +1,71 @@
 ;!FILE main.asm
 XL2
-H 9 areas 26 global symbols
+H 9 areas 3F global symbols
 M main
 O -mz80
 S _devkit_SMS_displayOn Ref0000
 S _devkit_SMS_init Ref0000
+S _log_close Ref0000
 S .__.ABS. Def0000
 S _devkit_RGB Ref0000
 S _devkit_SMS_displayOff Ref0000
 S _devkit_SMS_setSpritePaletteColor Ref0000
+S _log_info Ref0000
 S _devkit_SMS_waitForVBlank Ref0000
-A _CODE size 25 flags 0 addr 0
+S _log_open Ref0000
+A _CODE size 49 flags 0 addr 0
+S A$main$110 Def0031
+S A$main$120 Def0039
+S A$main$130 Def003E
+S A$main$121 Def003A
+S A$main$122 Def003C
+S A$main$104 Def0025
+S A$main$114 Def0032
+S A$main$105 Def0026
 S _main Def0000
-S C$main.c$13$2$87 Def0023
-S C$main.c$11$3$88 Def0020
-S XG$main$0$0 Def0023
-S A$main$70 Def0009
-S A$main$61 Def0000
-S A$main$80 Def0016
-S A$main$71 Def000A
-S A$main$81 Def0017
-S A$main$72 Def000C
-S A$main$82 Def0018
-S A$main$73 Def000D
-S A$main$83 Def0019
-S A$main$74 Def000E
-S A$main$65 Def0003
-S A$main$93 Def0020
-S A$main$84 Def001C
-S A$main$75 Def0011
-S A$main$76 Def0012
-S A$main$77 Def0013
+S A$main$115 Def0033
+S A$main$106 Def0029
+S A$main$116 Def0034
+S A$main$107 Def002A
+S A$main$117 Def0036
+S A$main$108 Def002D
+S C$main.c$12$2$90 Def0032
+S A$main$118 Def0037
+S A$main$109 Def002E
+S A$main$119 Def0038
+S C$main.c$12$3$91 Def0022
+S C$main.c$14$3$91 Def0025
+S C$main.c$11$1$89 Def001F
+S XG$main$0$0 Def003E
+S C$main.c$17$1$89 Def003E
+S C$main.c$18$1$89 Def003E
+S A$main$80 Def0012
+S A$main$81 Def0013
+S A$main$72 Def0006
+S A$main$91 Def001C
+S A$main$82 Def0014
+S A$main$73 Def0009
+S A$main$64 Def0000
+S A$main$83 Def0015
+S A$main$74 Def000A
+S A$main$84 Def0016
+S A$main$75 Def000B
+S A$main$85 Def0017
+S A$main$76 Def000C
+S A$main$95 Def001F
+S A$main$86 Def0018
+S A$main$77 Def000D
+S A$main$68 Def0003
 S C$main.c$3$0$0 Def0000
-S A$main$78 Def0014
-S A$main$69 Def0006
-S C$main.c$5$1$86 Def0000
-S A$main$88 Def001D
-S A$main$79 Def0015
-S C$main.c$6$1$86 Def0003
-S A$main$98 Def0023
-S C$main.c$7$1$86 Def0006
-S C$main.c$8$1$86 Def001D
+S A$main$87 Def001B
+S A$main$78 Def0010
+S Fmain$__str_0$0$0 Def0041
+S A$main$79 Def0011
+S A$main$99 Def0022
+S C$main.c$6$1$89 Def0000
+S C$main.c$7$1$89 Def0003
+S C$main.c$8$1$89 Def0006
+S C$main.c$9$1$89 Def001C
 S G$main$0$0 Def0000
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
@@ -52,13 +77,19 @@ A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00
 R 00 00 00 00
-T 00 00 CD 00 00 CD 00 00 21 03 02 E5 3E 03 F5 33
-R 00 00 00 00 02 03 01 00 02 06 04 00
-T 0E 00 CD 00 00 F1 33 45 C5 33 AF F5 33 CD 00 00
-R 00 00 00 00 02 03 03 00 02 0E 05 00
-T 1C 00 F1 CD 00 00
-R 00 00 00 00 02 04 00 00
-T 20 00
+T 00 00 CD 00 00 CD 00 00 21 00 03 E5 AF F5 33 CD
+R 00 00 00 00 02 03 01 00 02 06 05 00
+T 0E 00 00 00 F1 33 45 C5 33 AF F5 33 CD 00 00 F1
+R 00 00 00 00 02 02 04 00 02 0D 06 00
+T 1C 00 CD 00 00 CD 00 00 01 00 00
+R 00 00 00 00 02 03 00 00 02 06 09 00
+T 25 00
 R 00 00 00 00
-T 20 00 CD 00 00 18 FB
-R 00 00 00 00 02 03 06 00
+T 25 00 C5 21 41 00 E5 CD 00 00 F1 CD 00 00 C1 03
+R 00 00 00 00 00 04 00 00 02 08 07 00 02 0C 08 00
+T 33 00 79 D6 0A 78 17 3F 1F DE 80 38 E7 C3 00 00
+R 00 00 00 00 02 0E 02 00
+T 41 00
+R 00 00 00 00
+T 41 00 61 64 72 69 61 6E 61 00
+R 00 00 00 00

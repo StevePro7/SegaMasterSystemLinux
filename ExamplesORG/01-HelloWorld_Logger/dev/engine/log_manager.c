@@ -11,7 +11,10 @@
 
 // Private helper objects.
 static void log_format( const char* tag, const char* message, va_list args );
+#ifdef _CONSOLE
 static FILE *file;
+#endif
+
 
 void log_open()
 {
@@ -39,32 +42,26 @@ void log_close()
 
 void log_debug( const char* message, ... )
 {
-#ifdef _CONSOLE
 	va_list args;
 	va_start( args, message );
 	log_format( "debug", message, args );
 	va_end( args );
-#endif
 }
 
 void log_info( const char* message, ... )
 {
-#ifdef _CONSOLE
 	va_list args;
 	va_start( args, message );
 	log_format( "info", message, args );
 	va_end( args );
-#endif
 }
 
 void log_error( const char* message, ... )
 {
-#ifdef _CONSOLE
 	va_list args;
 	va_start( args, message );
 	log_format( "error", message, args );
 	va_end( args );
-#endif
 }
 
 

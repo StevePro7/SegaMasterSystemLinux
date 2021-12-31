@@ -1,5 +1,6 @@
 M:main
 F:G$main$0$0({2}DF,SV:S),C,0,0,0,0,0
+S:Lmain.main$i$1$89({2}SI:S),R,0,0,[c,b]
 S:G$atof$0$0({2}DF,SF:S),C,0,0
 S:G$atoi$0$0({2}DF,SI:S),C,0,0
 S:G$atol$0$0({2}DF,SL:S),C,0,0
@@ -142,4 +143,9 @@ S:G$devkit_SMS_addSprite_bulk8$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_addSprite_bulk12$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_setTilePriority$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_isCollisionDetected$0$0({2}DF,SC:U),C,0,0
+S:G$log_open$0$0({2}DF,SV:S),C,0,0
+S:G$log_close$0$0({2}DF,SV:S),C,0,0
+S:G$log_debug$0$0({2}DF,SV:S),C,0,0
+S:G$log_info$0$0({2}DF,SV:S),C,0,0
+S:G$log_error$0$0({2}DF,SV:S),C,0,0
 S:G$main$0$0({2}DF,SV:S),C,0,0
