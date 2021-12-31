@@ -1,4 +1,5 @@
 #include "screen_manager.h"
+#include "audio_manager.h"
 #include "content_manager.h"
 #include "font_manager.h"
 #include "global_manager.h"
@@ -8,11 +9,20 @@
 void engine_screen_manager_init()
 {
 	engine_font_manager_draw_text( "STEVEPRO STUDIOS()", 4, 4 );
+	
 }
 
 void engine_screen_manager_update()
 {
 	unsigned char input;
+	input = engine_input_manager_hold_fire1();
+	if( input )
+	{
+		engine_font_manager_draw_text( "MUSIC TUNES", 4, 15 );
+		engine_music_manager_play();
+		engine_font_manager_draw_text( "MUSIC TUNES", 4, 16 );
+	}
+
 	input = engine_input_manager_hold_up();
 	if( input )
 	{
