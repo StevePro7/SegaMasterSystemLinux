@@ -15,6 +15,18 @@ void engine_content_manager_load_tiles()
 void engine_content_manager_load_sprites()
 {
 	// Sprite tiles.
-	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) mario01__tiles__psgcompr, SPRITE_TILES );
+	//devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) mario01__tiles__psgcompr, SPRITE_TILES );
 	devkit_SMS_loadSpritePalette( ( void * ) mario01__palette__bin );
+}
+
+void engine_content_manager_load_sprites01()
+{
+	// Sprite tiles.
+	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) mario01__tiles__psgcompr, SPRITE_TILES );
+}
+
+void engine_content_manager_load_sprites02()
+{
+	// Sprite tiles.
+	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) mario02__tiles__psgcompr, SPRITE_TILES );
 }

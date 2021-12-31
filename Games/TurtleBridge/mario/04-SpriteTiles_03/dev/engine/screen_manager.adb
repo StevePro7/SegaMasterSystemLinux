@@ -4,6 +4,8 @@ F:G$engine_screen_manager_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lscreen_manager.engine_screen_manager_update$input$1$7({1}SC:U),R,0,0,[l]
 S:G$engine_content_manager_load_tiles$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_sprites$0$0({2}DF,SV:S),C,0,0
+S:G$engine_content_manager_load_sprites01$0$0({2}DF,SV:S),C,0,0
+S:G$engine_content_manager_load_sprites02$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_char$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_text$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_data$0$0({2}DF,SV:S),C,0,0

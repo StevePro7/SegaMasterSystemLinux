@@ -7,17 +7,25 @@
 
 void engine_screen_manager_init()
 {
-	engine_font_manager_draw_text( "STEVEPRO STUDIOS", 4, 4 );
+	engine_font_manager_draw_text( "STEVEPRO STUDIOS()", 4, 4 );
 }
 
 void engine_screen_manager_update()
 {
 	unsigned char input;
+	input = engine_input_manager_hold_up();
+	if( input )
+	{
+		engine_font_manager_draw_text( "STEVEPRO STUDIOS??", 4, 5 );
+		engine_content_manager_load_sprites01();
+		engine_font_manager_draw_text( "STEVEPRO STUDIOS??", 4, 7 );
+	}
+
 	input = engine_input_manager_hold_down();
 	if( input )
 	{
 		engine_font_manager_draw_text( "STEVEPRO STUDIOS!!", 4, 6 );
-		engine_content_manager_load_sprites();
+		engine_content_manager_load_sprites02();
 		engine_font_manager_draw_text( "STEVEPRO STUDIOS!!", 4, 8 );
 	}
 
