@@ -7,6 +7,8 @@
 
 #ifdef _CONSOLE
 #pragma warning( disable : 4996 )
+#else
+#pragma disable_warning 85
 #endif
 
 // Private helper objects.
