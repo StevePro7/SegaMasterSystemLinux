@@ -8,7 +8,8 @@ void main( void )
 
 	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_NORMAL() );
 	devkit_SMS_useFirstHalfTilesforSprites( false );
-	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );
+	//devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );
+	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_ZOOMSPRITES() );
 
 	engine_content_manager_load_tiles();
 	engine_content_manager_load_sprites();

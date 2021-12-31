@@ -15,20 +15,22 @@ void engine_screen_manager_init()
 void engine_screen_manager_update()
 {
 	unsigned char input;
-	input = engine_input_manager_hold_fire1();
-	if( input )
-	{
-		engine_font_manager_draw_text( "MUSIC TUNES", 4, 15 );
-		engine_music_manager_play();
-		engine_font_manager_draw_text( "MUSIC TUNES", 4, 16 );
-	}
+	//input = engine_input_manager_hold_fire1();
+	//if( input )
+	//{
+	//	engine_font_manager_draw_text( "MUSIC TUNES", 4, 15 );
+	//	//engine_music_manager_play();
+	//	devkit_SMS_VRAMmemcpy( 0x100, 0x3f, 32 );
+	//	
+	//	engine_font_manager_draw_text( "MUSIC TUNES", 4, 16 );
+	//}
 
 	input = engine_input_manager_hold_up();
 	if( input )
 	{
-		engine_font_manager_draw_text( "STEVEPRO STUDIOS??", 4, 5 );
+		engine_font_manager_draw_text( "STEVEPRO STUDIOSXX", 4, 5 );
 		engine_content_manager_load_sprites01();
-		engine_font_manager_draw_text( "STEVEPRO STUDIOS??", 4, 7 );
+		engine_font_manager_draw_text( "STEVEPRO STUDIOSXX", 4, 7 );
 	}
 
 	input = engine_input_manager_hold_down();
