@@ -6,5 +6,6 @@
 
 // LIBRARIES.
 #include "devkit/_sms_manager.h"
+#include "engine/log_manager.h"
 
 #endif//__MAIN__
