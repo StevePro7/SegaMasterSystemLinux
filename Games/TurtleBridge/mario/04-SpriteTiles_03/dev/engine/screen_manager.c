@@ -12,6 +12,7 @@ static unsigned char z = 0;
 
 void engine_screen_manager_init()
 {
+	engine_music_manager_play();
 	engine_font_manager_draw_text( "STEVEPRO STUDIOS()", 4, 4 );
 	index = 0;
 	x = 96;
