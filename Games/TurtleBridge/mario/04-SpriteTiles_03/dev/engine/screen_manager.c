@@ -7,42 +7,42 @@
 #include "sprite_manager.h"
 
 static unsigned char index = 0;
+static unsigned char x = 32;
+
 void engine_screen_manager_init()
 {
 	engine_font_manager_draw_text( "STEVEPRO STUDIOS()", 4, 4 );
 	index = 0;
+	x = 32;
 }
 
 void engine_screen_manager_update()
 {
-	unsigned char input;
-	//input = engine_input_manager_hold_fire1();
-	//if( input )
-	//{
-	//	engine_font_manager_draw_text( "MUSIC TUNES", 4, 15 );
-	//	//engine_music_manager_play();
-	//	devkit_SMS_VRAMmemcpy( 0x100, 0x3f, 32 );
-	//	
-	//	engine_font_manager_draw_text( "MUSIC TUNES", 4, 16 );
-	//}
-
+	unsigned char input = 0;
 	input = engine_input_manager_hold_up();
 	if( input )
 	{
-		engine_font_manager_draw_text( "STEVEPRO STUDIOSXX", 4, 5 );
-		engine_content_manager_load_sprites01();
 		index = 0;
-		engine_font_manager_draw_text( "STEVEPRO STUDIOSXX", 4, 7 );
 	}
-
+	input = engine_input_manager_hold_right();
+	if( input )
+	{
+		index = 1;
+	}
 	input = engine_input_manager_hold_down();
 	if( input )
 	{
-		engine_font_manager_draw_text( "STEVEPRO STUDIOS!!", 4, 6 );
-		engine_content_manager_load_sprites02();
-		index = 1;
-		engine_font_manager_draw_text( "STEVEPRO STUDIOS!!", 4, 8 );
+		index = 2;
+	}
+	input = engine_input_manager_hold_left();
+	if( input )
+	{
+		index = 3;
 	}
 
-	engine_sprite_manager_draw( 32, 96, SPRITE_TILES + index * 4 );
+	if( input != 0 )
+	{
+		x++;
+	}
+	engine_sprite_manager_draw( x, 96, SPRITE_TILES + index * 4 );
 }
