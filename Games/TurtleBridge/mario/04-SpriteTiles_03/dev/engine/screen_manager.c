@@ -6,10 +6,11 @@
 #include "input_manager.h"
 #include "sprite_manager.h"
 
+static unsigned char index = 0;
 void engine_screen_manager_init()
 {
 	engine_font_manager_draw_text( "STEVEPRO STUDIOS()", 4, 4 );
-	
+	index = 0;
 }
 
 void engine_screen_manager_update()
@@ -30,6 +31,7 @@ void engine_screen_manager_update()
 	{
 		engine_font_manager_draw_text( "STEVEPRO STUDIOSXX", 4, 5 );
 		engine_content_manager_load_sprites01();
+		index = 0;
 		engine_font_manager_draw_text( "STEVEPRO STUDIOSXX", 4, 7 );
 	}
 
@@ -38,8 +40,9 @@ void engine_screen_manager_update()
 	{
 		engine_font_manager_draw_text( "STEVEPRO STUDIOS!!", 4, 6 );
 		engine_content_manager_load_sprites02();
+		index = 1;
 		engine_font_manager_draw_text( "STEVEPRO STUDIOS!!", 4, 8 );
 	}
 
-	engine_sprite_manager_draw( 32, 96, SPRITE_TILES );
+	engine_sprite_manager_draw( 32, 96, SPRITE_TILES + index * 4 );
 }
