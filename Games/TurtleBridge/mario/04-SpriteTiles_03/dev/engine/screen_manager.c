@@ -21,17 +21,18 @@ void engine_screen_manager_init()
 void engine_screen_manager_update()
 {
 	unsigned char input = 0;
-	//input = engine_input_manager_hold_up();
-	//if( input )
-	//{
-	//	index = 0;
-	//}
+	unsigned char diff = 1;
+	input = engine_input_manager_move_fire1();
+	if( input )
+	{
+		diff = 2;
+	}
 	input = engine_input_manager_move_right();
 	//input = engine_input_manager_hold_right();
 	if( input )
 	{
 		//x++;
-		z++;
+		z += diff;
 		if( z >= 16 )
 		{
 			z = 0;

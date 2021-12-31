@@ -2,6 +2,7 @@ M:screen_manager
 F:G$engine_screen_manager_init$0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_screen_manager_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lscreen_manager.engine_screen_manager_update$input$1$7({1}SC:U),R,0,0,[l]
+S:Lscreen_manager.engine_screen_manager_update$diff$1$7({1}SC:U),R,0,0,[c]
 S:Fscreen_manager$index$0$0({1}SC:U),E,0,0
 S:Fscreen_manager$x$0$0({1}SC:U),E,0,0
 S:Fscreen_manager$z$0$0({1}SC:U),E,0,0
