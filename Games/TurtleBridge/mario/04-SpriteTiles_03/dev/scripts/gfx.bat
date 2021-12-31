@@ -9,7 +9,8 @@ cd gfx
 bmp2tile.exe raw/font_tiles.bmp -savetiles "font_tiles (tiles).psgcompr" -noremovedupes -planar -tileoffset 0  -savetilemap "font_tiles (tilemap).bin" -savepalette "font_tiles (palette).bin" -fullpalette -exit
 
 :: Sprites
-bmp2tile.exe raw/mario.png -savetiles "sprites (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 0 -savepalette "sprites (palette).bin" -fullpalette  -spritepalette -exit
+bmp2tile.exe raw/mario01.png -savetiles "mario01 (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 0 -savepalette "mario01 (palette).bin" -fullpalette  -spritepalette -exit
+bmp2tile.exe raw/mario02.png -savetiles "mario02 (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 0 -savepalette "mario02 (palette).bin" -fullpalette  -spritepalette -exit
 
 cd ..
 folder2c gfx gfx
