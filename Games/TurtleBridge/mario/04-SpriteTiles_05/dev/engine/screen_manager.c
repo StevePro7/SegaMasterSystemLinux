@@ -42,7 +42,7 @@ void engine_screen_manager_update()
 		{
 			z = 0;
 			index++;
-			if( index >= 3 )
+			if( index > 3 )
 			{
 				index = 0;
 			}
@@ -82,5 +82,6 @@ void engine_screen_manager_update()
 	//	x++;
 	//}
 
+	engine_font_manager_draw_data( index, 10, 7 );
 	engine_sprite_manager_draw( x, 96, SPRITE_TILES + index * 4 );
 }
