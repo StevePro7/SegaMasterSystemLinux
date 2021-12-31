@@ -9,8 +9,15 @@ cd gfx
 bmp2tile.exe raw/font_tiles.bmp -savetiles "font_tiles (tiles).psgcompr" -noremovedupes -planar -tileoffset 0  -savetilemap "font_tiles (tilemap).bin" -savepalette "font_tiles (palette).bin" -fullpalette -exit
 
 :: Sprites
-bmp2tile.exe raw/mario01.png -savetiles "mario01 (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 0 -savepalette "mario01 (palette).bin" -fullpalette  -spritepalette -exit
-bmp2tile.exe raw/mario02.png -savetiles "mario02 (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 0 -savepalette "mario02 (palette).bin" -fullpalette  -spritepalette -exit
+bmp2tile.exe raw/left01.png -savetiles "left01 (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 0 -savepalette "left01 (palette).bin" -fullpalette  -spritepalette -exit
+bmp2tile.exe raw/left02.png -savetiles "left02 (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 0 -savepalette "left02 (palette).bin" -fullpalette  -spritepalette -exit
+bmp2tile.exe raw/left03.png -savetiles "left03 (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 0 -savepalette "left03 (palette).bin" -fullpalette  -spritepalette -exit
+bmp2tile.exe raw/left04.png -savetiles "left04 (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 0 -savepalette "left04 (palette).bin" -fullpalette  -spritepalette -exit
+
+bmp2tile.exe raw/rght01.png -savetiles "rght01 (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 0 -savepalette "rght01 (palette).bin" -fullpalette  -spritepalette -exit
+bmp2tile.exe raw/rght02.png -savetiles "rght02 (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 0 -savepalette "rght02 (palette).bin" -fullpalette  -spritepalette -exit
+bmp2tile.exe raw/rght03.png -savetiles "rght03 (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 0 -savepalette "rght03 (palette).bin" -fullpalette  -spritepalette -exit
+bmp2tile.exe raw/rght04.png -savetiles "rght04 (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 0 -savepalette "rght04 (palette).bin" -fullpalette  -spritepalette -exit
 
 cd ..
 folder2c gfx gfx
