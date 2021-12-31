@@ -13,6 +13,10 @@ sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _snd_manager.c
 cd ..
 
+cd engine
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 log_manager.c
+cd ..
+
 sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
 
 
@@ -32,7 +36,8 @@ sdcc --debug -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-
 ../lib/SMSlib.lib ^
 ../lib/PSGlib.rel ^
 devkit/_sms_manager.rel ^
-devkit/_snd_manager.rel
+devkit/_snd_manager.rel ^
+engine/log_manager.rel
 
 
 :: Execute
@@ -40,6 +45,12 @@ ihx2sms output.ihx output.sms
 
 :: Delete
 cd devkit
+if exist "*.asm" del "*.asm" > nul
+if exist "*.lst" del "*.lst" > nul
+if exist "*.sym" del "*.sym" > nul
+cd ..
+
+cd engine
 if exist "*.asm" del "*.asm" > nul
 if exist "*.lst" del "*.lst" > nul
 if exist "*.sym" del "*.sym" > nul

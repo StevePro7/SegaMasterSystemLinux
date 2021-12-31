@@ -11,8 +11,8 @@ void main( void )
 	log_open();
 	for( i = 0; i < 10; i++ )
 	{
-		log_info( "stevepro studios!!" );
+		log_info( "adriana" );
 		devkit_SMS_waitForVBlank();
 	}
-	//log_close();
+	log_close();
 }
