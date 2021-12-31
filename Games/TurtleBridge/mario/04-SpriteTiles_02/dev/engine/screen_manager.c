@@ -9,5 +9,5 @@ void engine_screen_manager_init()
 
 void engine_screen_manager_update()
 {
-	engine_sprite_manager_draw( 64, 64, 256 );
+	engine_sprite_manager_draw( 32, 64, 432);
 }

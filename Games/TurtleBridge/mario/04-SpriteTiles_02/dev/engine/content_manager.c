@@ -3,7 +3,7 @@
 #include "../content/gfx.h"
 
 #define FONT_TILES		0
-#define SPRITE_TILES	256
+#define SPRITE_TILES	432
 
 void engine_content_manager_load_tiles()
 {
