@@ -18,7 +18,7 @@ static FILE *file;
 #endif
 
 
-void log_open()
+void engine_log_manager_open()
 {
 #ifdef _CONSOLE
 	if( ( file = fopen( "stevepro.log", "w" ) ) == NULL )
@@ -29,7 +29,7 @@ void log_open()
 #endif
 }
 
-void log_close()
+void engine_log_manager_close()
 {
 #ifdef _CONSOLE
 
@@ -42,7 +42,7 @@ void log_close()
 #endif
 }
 
-void log_debug( const char* message, ... )
+void engine_log_manager_debug( const char* message, ... )
 {
 	va_list args;
 	va_start( args, message );
@@ -50,15 +50,15 @@ void log_debug( const char* message, ... )
 	va_end( args );
 }
 
-void log_info( const char* message, ... )
+void engine_log_manager_infos( const char* message, ... )
 {
 	va_list args;
 	va_start( args, message );
-	log_format( "info", message, args );
+	log_format( "infos", message, args );
 	va_end( args );
 }
 
-void log_error( const char* message, ... )
+void engine_log_manager_error( const char* message, ... )
 {
 	va_list args;
 	va_start( args, message );

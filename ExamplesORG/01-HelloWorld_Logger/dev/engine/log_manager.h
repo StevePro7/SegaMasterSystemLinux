@@ -1,11 +1,11 @@
 #ifndef _LOG_MANAGER_H_
 #define _LOG_MANAGER_H_
 
-void log_open();
-void log_close();
-void log_debug( const char* message, ... );
-void log_info( const char* message, ... );
-void log_error( const char* message, ... );
+void engine_log_manager_open();
+void engine_log_manager_close();
+void engine_log_manager_debug( const char* message, ... );
+void engine_log_manager_infos( const char* message, ... );
+void engine_log_manager_error( const char* message, ... );
 
 
 #endif//_LOG_MANAGER_H_

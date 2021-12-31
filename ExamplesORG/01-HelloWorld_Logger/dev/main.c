@@ -8,11 +8,13 @@ void main( void )
 	devkit_SMS_setSpritePaletteColor( 0, devkit_RGB( 3, 0, 0 ) );
 	devkit_SMS_displayOn();
 
-	log_open();
-	for( i = 0; i < 10; i++ )
+	engine_log_manager_open();
+	for( i = 0; i < 20; i++ )
 	{
-		log_info( "testing" );
+		engine_log_manager_debug( "check?" );
+		engine_log_manager_infos( "testing" );
+		engine_log_manager_error( "uh-oh" );
 		devkit_SMS_waitForVBlank();
 	}
-	log_close();
+	engine_log_manager_close();
 }
