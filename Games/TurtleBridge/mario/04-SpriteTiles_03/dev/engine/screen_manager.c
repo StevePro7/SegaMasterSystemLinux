@@ -34,49 +34,46 @@ void engine_screen_manager_update()
 	{
 		//x++;
 		z += diff;
-		if( z >= 16 )
+		if( z >= 8 )
 		{
 			z = 0;
 			index++;
-			if( index >= 3 )
+			if( index > 3 )
 			{
 				index = 0;
 			}
 		}
 	}
 
-	//input = engine_input_manager_move_left();
-	////input = engine_input_manager_hold_left();
-	//if( input )
-	//{
-	//	x--;
-	//	z--;
-	//	if( z <= 0 )
-	//	{
-	//		z = 4;
-	//		index--;
-	//		if( index >= 3 )
-	//		{
-	//			index = 0;
-	//		}
-	//	}
-	//}
-
-	//input = engine_input_manager_hold_down();
-	//if( input )
-	//{
-	//	index = 2;
-	//}
-	//input = engine_input_manager_hold_left();
-	//if( input )
-	//{
-	//	index = 3;
-	//}
-
-	//if( input != 0 )
-	//{
-	//	x++;
-	//}
-
 	engine_sprite_manager_draw( x, 96, SPRITE_TILES + index * 4 );
 }
+
+
+//void engine_screen_manager_update2()
+//{
+//	unsigned char input = 0;
+//	unsigned char diff = 1;
+//	input = engine_input_manager_move_fire1();
+//	if( input )
+//	{
+//		diff = 2;
+//	}
+//	input = engine_input_manager_move_right();
+//	//input = engine_input_manager_hold_right();
+//	if( input )
+//	{
+//		//x++;
+//		z += diff;
+//		if( z >= 8 )
+//		{
+//			z = 0;
+//			index++;
+//			if( index > 3 )
+//			{
+//				index = 0;
+//			}
+//		}
+//	}
+//
+//	engine_sprite_manager_draw( x, 96, SPRITE_TILES + index * 4 );
+//}

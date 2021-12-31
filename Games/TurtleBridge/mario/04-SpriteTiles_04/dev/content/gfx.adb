@@ -7,7 +7,7 @@ S:G$left02__tiles__psgcompr$0$0({82}DA82d,SC:U),D,0,0
 S:G$left03__tiles__psgcompr$0$0({81}DA81d,SC:U),D,0,0
 S:G$left04__tiles__psgcompr$0$0({82}DA82d,SC:U),D,0,0
 S:G$mario01__palette__bin$0$0({16}DA16d,SC:U),D,0,0
-S:G$rght01__tiles__psgcompr$0$0({84}DA84d,SC:U),D,0,0
+S:G$rght01__tiles__psgcompr$0$0({80}DA80d,SC:U),D,0,0
 S:G$rght02__tiles__psgcompr$0$0({84}DA84d,SC:U),D,0,0
 S:G$rght03__tiles__psgcompr$0$0({80}DA80d,SC:U),D,0,0
 S:G$rght04__tiles__psgcompr$0$0({84}DA84d,SC:U),D,0,0

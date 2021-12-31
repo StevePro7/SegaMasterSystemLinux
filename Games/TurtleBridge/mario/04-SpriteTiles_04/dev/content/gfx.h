@@ -23,7 +23,7 @@ extern const unsigned char	mario01__palette__bin[];
 #define				mario01__palette__bin_size 16
 
 extern const unsigned char	rght01__tiles__psgcompr[];
-#define				rght01__tiles__psgcompr_size 84
+#define				rght01__tiles__psgcompr_size 80
 
 extern const unsigned char	rght02__tiles__psgcompr[];
 #define				rght02__tiles__psgcompr_size 84

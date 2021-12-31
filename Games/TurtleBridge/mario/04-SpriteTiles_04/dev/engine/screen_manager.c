@@ -25,6 +25,11 @@ void engine_screen_manager_update()
 	input = engine_input_manager_move_fire1();
 	if( input )
 	{
+		diff = 4;
+	}
+	input = engine_input_manager_move_fire2();
+	if( input )
+	{
 		diff = 2;
 	}
 	input = engine_input_manager_move_right();
@@ -37,7 +42,7 @@ void engine_screen_manager_update()
 		{
 			z = 0;
 			index++;
-			if( index >= 3 )
+			if( index > 3 )
 			{
 				index = 0;
 			}
