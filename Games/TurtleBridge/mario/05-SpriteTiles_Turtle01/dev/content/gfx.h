@@ -11,5 +11,5 @@ extern const unsigned char	turtle__palette__bin[];
 #define				turtle__palette__bin_size 16
 
 extern const unsigned char	turtle__tiles__psgcompr[];
-#define				turtle__tiles__psgcompr_size 193
+#define				turtle__tiles__psgcompr_size 199
 
