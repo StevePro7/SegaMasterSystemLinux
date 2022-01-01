@@ -4,9 +4,10 @@
 // Player.
 const unsigned char *player_anim_data[] =
 {
-	left01__tiles__psgcompr,
-	left02__tiles__psgcompr,
-	left03__tiles__psgcompr,
+	turtle__tiles__psgcompr,
+	//left01__tiles__psgcompr,
+	//left02__tiles__psgcompr,
+	//left03__tiles__psgcompr,
 	//left04__tiles__psgcompr,
 	//rght01__tiles__psgcompr,
 	//rght02__tiles__psgcompr,

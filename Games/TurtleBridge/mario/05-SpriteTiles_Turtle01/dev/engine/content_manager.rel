@@ -1,55 +1,32 @@
 ;!FILE content_manager.asm
 XL2
-H 9 areas 44 global symbols
+H 9 areas 2D global symbols
 M content_manager
 O -mz80
+S _turtle__tiles__psgcompr Ref0000
 S _devkit_SMS_loadBGPalette Ref0000
 S _devkit_SMS_loadPSGaidencompressedTiles Ref0000
 S _font_tiles__tiles__psgcompr Ref0000
 S .__.ABS. Def0000
-S _left01__tiles__psgcompr Ref0000
-S _left02__tiles__psgcompr Ref0000
-S _left03__tiles__psgcompr Ref0000
+S _turtle__palette__bin Ref0000
 S _font_tiles__palette__bin Ref0000
-S _mario01__palette__bin Ref0000
 S _devkit_SMS_loadSpritePalette Ref0000
-A _CODE size 4F flags 0 addr 0
+A _CODE size 2B flags 0 addr 0
 S G$engine_content_manager_load_sprites$0$0 Def0016
 S A$content_manager$100 Def0025
-S A$content_manager$110 Def0034
 S A$content_manager$101 Def0028
+S A$content_manager$102 Def0029
 S _engine_content_manager_load_sprites Def0016
-S A$content_manager$123 Def0041
-S A$content_manager$114 Def0035
-S A$content_manager$105 Def0029
-S A$content_manager$124 Def0044
-S A$content_manager$115 Def0038
-S A$content_manager$106 Def002C
-S A$content_manager$134 Def004E
-S A$content_manager$125 Def0045
-S A$content_manager$116 Def0039
-S A$content_manager$107 Def002D
-S A$content_manager$126 Def0048
-S A$content_manager$117 Def003C
-S A$content_manager$108 Def0030
+S A$content_manager$107 Def002A
 S C$content_manager.c$11$1$65 Def0000
-S A$content_manager$127 Def0049
-S A$content_manager$118 Def003D
-S A$content_manager$109 Def0031
+S C$content_manager.c$20$1$66 Def001D
 S C$content_manager.c$12$1$65 Def000D
-S A$content_manager$128 Def004C
-S A$content_manager$119 Def0040
+S C$content_manager.c$21$1$66 Def002A
 S C$content_manager.c$13$1$65 Def0015
-S A$content_manager$129 Def004D
-S C$content_manager.c$31$1$66 Def004E
 S C$content_manager.c$15$1$65 Def0016
 S G$engine_content_manager_load_tiles$0$0 Def0000
-S XG$engine_content_manager_load_sprites$0$0 Def004E
-S C$content_manager.c$26$1$66 Def001D
-S C$content_manager.c$27$1$66 Def0029
-S C$content_manager.c$28$1$66 Def0035
+S XG$engine_content_manager_load_sprites$0$0 Def002A
 S C$content_manager.c$19$1$66 Def0016
-S C$content_manager.c$29$1$66 Def0041
 S A$content_manager$60 Def0003
 S A$content_manager$70 Def0010
 S A$content_manager$61 Def0004
@@ -83,18 +60,12 @@ A _CABS size 0 flags 8 addr 0
 T 00 00
 R 00 00 00 00
 T 00 00 21 00 00 E5 21 00 00 E5 CD 00 00 F1 F1 01
-R 00 00 00 00 02 07 02 00 02 0B 01 00
+R 00 00 00 00 02 07 03 00 02 0B 02 00
 T 0E 00 00 00 C5 CD 00 00 F1 C9
-R 00 00 00 00 02 02 07 00 02 06 00 00
+R 00 00 00 00 02 02 06 00 02 06 01 00
 T 16 00
 R 00 00 00 00
 T 16 00 01 00 00 C5 CD 00 00 21 00 01 E3 21 00 00
-R 00 00 00 00 02 03 08 00 02 07 09 00 02 0E 04 00
-T 24 00 E5 CD 00 00 F1 21 04 01 E3 21 00 00 E5 CD
-R 00 00 00 00 02 04 01 00 02 0C 05 00
-T 32 00 00 00 F1 21 08 01 E3 21 00 00 E5 CD 00 00
-R 00 00 00 00 02 02 01 00 02 0A 04 00 02 0E 01 00
-T 40 00 F1 21 0C 01 E3 21 00 00 E5 CD 00 00 F1 F1
-R 00 00 00 00 02 08 06 00 02 0C 01 00
-T 4E 00 C9
-R 00 00 00 00
+R 00 00 00 00 02 03 05 00 02 07 07 00 02 0E 00 00
+T 24 00 E5 CD 00 00 F1 F1 C9
+R 00 00 00 00 02 04 02 00
