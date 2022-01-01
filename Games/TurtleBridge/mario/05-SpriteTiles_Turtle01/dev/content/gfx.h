@@ -7,15 +7,9 @@ extern const unsigned char	font_tiles__tilemap__bin[];
 extern const unsigned char	font_tiles__tiles__psgcompr[];
 #define				font_tiles__tiles__psgcompr_size 663
 
-extern const unsigned char	left01__tiles__psgcompr[];
-#define				left01__tiles__psgcompr_size 88
+extern const unsigned char	turtle__palette__bin[];
+#define				turtle__palette__bin_size 16
 
-extern const unsigned char	left02__tiles__psgcompr[];
-#define				left02__tiles__psgcompr_size 86
-
-extern const unsigned char	left03__tiles__psgcompr[];
-#define				left03__tiles__psgcompr_size 86
-
-extern const unsigned char	mario01__palette__bin[];
-#define				mario01__palette__bin_size 16
+extern const unsigned char	turtle__tiles__psgcompr[];
+#define				turtle__tiles__psgcompr_size 193
 
