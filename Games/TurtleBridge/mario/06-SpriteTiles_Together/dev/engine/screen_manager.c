@@ -9,11 +9,14 @@
 static unsigned char x = 88;
 static unsigned char y = 96;
 
+static void print_coords();
+
 void engine_screen_manager_init()
 {
-	engine_font_manager_draw_text( "STEVEPRO STUDIOS()", 4, 4 );
+	engine_font_manager_draw_text( "STEVEPRO STUDIOS", 4, 4 );
 	x = 88;
 	y = 96;
+	print_coords();
 }
 
 void engine_screen_manager_update()
@@ -46,6 +49,13 @@ void engine_screen_manager_update()
 		y++;
 	}
 
+	print_coords();
 	engine_sprite_manager_draw( x, y, SPRITE_TILES );
 	engine_sprite_manager_draw( 88, 144, SPRITE_TILES + 48 );
+}
+
+static void print_coords()
+{
+	engine_font_manager_draw_data( x, 14, 6 );
+	engine_font_manager_draw_data( y, 14, 7 );
 }

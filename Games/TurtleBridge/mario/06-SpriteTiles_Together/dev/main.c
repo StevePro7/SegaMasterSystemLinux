@@ -14,7 +14,7 @@ void main( void )
 	engine_content_manager_load_tiles();
 	engine_content_manager_load_sprites();
 
-	devkit_SMS_setBGPaletteColor( 0, devkit_RGB( 3, 3, 3 ) );		// white				all bg
+	//devkit_SMS_setBGPaletteColor( 0, devkit_RGB( 3, 3, 3 ) );		// white				all bg
 	devkit_SMS_setBGPaletteColor( 16, devkit_RGB( 1, 2, 3 ) );		// cornflower blue		sky
 	devkit_SMS_setSpritePaletteColor( 7, devkit_RGB( 3, 2, 2 ) );	// set turtle feet manually to teal.
 	engine_screen_manager_init();
