@@ -1,0 +1,786 @@
+<!DOCTYPE
+  HTML PUBLIC 
+  "-//W3C//DTD HTML 4.01//EN" 
+  "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Palette - How To Program - Maxim’s World of Stuff</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel='stylesheet' title="Maxim's theme" href='https://www.smspower.org/maxim/pub/skins/maxim/maxim.css' type='text/css'>
+<link rel='stylesheet' title="Print view" href='https://www.smspower.org/maxim/pub/skins/maxim/print.css' type='text/css' media="print">
+<style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  .editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><meta http-equiv='Content-Type' content='text/html; charset=utf-8' /><link rel='alternate' title='Maxim’s World of Stuff RSS' href="https://www.smspower.org/maxim/RecentChanges?action=rss" type='application/rss+xml' />
+<link rel='stylesheet' type='text/css' href="https://www.smspower.org/pub/attachtable/attachtable.css" /> <meta name='robots' content='index,follow' />
+<link rel='stylesheet' type='text/css' href="https://www.smspower.org/maxim/pub/highslide/highslide.css" />
+<script type="e84ff124982c47eca094b5e2-text/javascript">
+		<!-- //
+		
+		isIE = 0;
+		browser_type = navigator.appName;
+		if (browser_type == "Microsoft Internet Explorer") { 
+			document.write("<link href='https://www.smspower.org/maxim/pub/skins/maxim/maxim-ie.css' rel='stylesheet' type='text/css'>"); 
+			isIE = 1;
+		}
+
+        // -->
+        </script>
+</head>
+<body>
+<div id="header" style="background: url(https://www.smspower.org/maxim/pub/skins/maxim/image/Box-Top-39.png) no-repeat; ">
+<div id="page-title"><a href="https://www.smspower.org/maxim">Maxim’s World of Stuff</a></div>
+<div id="page-subtitle"><a href="https://www.smspower.org/maxim/HowToProgram" title='How To Program Home'>How To Program</a> :: Palette</div>
+</div>
+<div id="main">
+<div class="content-mat">
+<div id="content">
+
+<div id='wikitext'>
+<div style='border:2px solid gray; -webkit-border-radius: 1em; -moz-border-radius: 1em;  border-radius: 1em; text-align:center; padding:1em; background-color:#eee;'>
+<table border='0'><tr><td rowspan='2' valign='middle' align='left' width='1'>
+<div><img src="https://www.smspower.org/maxim/uploads/HowToProgram/info.png" alt='' title='' /></div>
+</td><td align='center' valign='top'>
+<h2>This is a sidebar page</h2>
+</td></tr><tr><td align='center' valign='top'>
+<p>It provides more detailed information but you don't need to read it to follow the tutorial. You might want to come back to it later.
+</p></td></tr></table>
+</div>
+<div class='vspace'></div><h2>Palette</h2>
+<p>The palette defines which colours we can use. There are actually two palettes - one for the background, and one for the sprites. (The sprite palette can be used by the background too.) Each palette contains 16 entries. Here's the palette window in Meka:
+</p>
+<div class='vspace'></div><div style='text-align: center;'><img src="https://www.smspower.org/maxim/uploads/HowToProgram/palette.png" alt='' title='' /></div>
+<p class='vspace'>The first sixteen colours are the background palette, the second sixteen are the sprite palette.
+</p>
+<p class='vspace'>Each pixel of each tile is represented by four bits, giving a number between 0 and 15. This number is used to select which colour to use. It's a lot like "Paint By Number":
+</p>
+<div class='vspace'></div><div style='text-align: center;'><img src="https://www.smspower.org/maxim/uploads/HowToProgram/palette-apply.png" alt='' title='' /></div>
+<p class='vspace'>Each palette entry is one of the 64 possible colours on the Master System:
+</p>
+<div class='vspace'></div><div style='text-align: center;'><img src="https://www.smspower.org/maxim/uploads/HowToProgram/64colours.png" alt='' title='' /></div>
+<p class='vspace'>To pick a colour, you must choose a number between 0 and 3 for each of the red, green and blue colour channels. Then combine them in a byte:
+</p>
+<div class='vspace'></div>
+<table border='1' width='1'><tr><td valign='top'>Bit:
+</td><td valign='top'>7
+</td><td valign='top'>6
+</td><td valign='top'>5
+</td><td valign='top'>4
+</td><td valign='top'>3
+</td><td valign='top'>2
+</td><td valign='top'>1
+</td><td valign='top'>0
+</td></tr><tr><td align='right' valign='top'>%
+</td><td colspan='2' valign='top'>Unused
+</td><td colspan='2' bgcolor='blue' valign='top'><span style='color: white;'>Blue</span>
+</td><td colspan='2' bgcolor='green' valign='top'><span style='color: white;'>Green</span>
+</td><td colspan='2' bgcolor='red' valign='top'><span style='color: white;'>Red</span>
+</td></tr></table>
+<p class='vspace'>So, for example, if there was a little blue, no green and a lot of red, the colour would be <code>%00010011</code>. Here are all of the colours:
+</p>
+<div class='vspace'></div>
+<table border='1'><tr><td rowspan='2' valign='top'>Colour
+</td><td colspan='3' valign='top'>SMS colour index
+</td><td colspan='3' valign='top'>RGB
+</td><td rowspan='2' valign='top'>HTML
+</td></tr><tr><td valign='top'>Hex
+</td><td valign='top'>Dec
+</td><td valign='top'>Binary
+</td><td bgcolor='red' valign='top'><span style='color: white;'>Red</span>
+</td><td bgcolor='green' valign='top'><span style='color: white;'>Green</span>
+</td><td bgcolor='blue' valign='top'><span style='color: white;'>Blue</span>
+</td></tr><tr><td bgcolor='#000000' valign='top'>
+</td><td valign='top'>$00
+</td><td valign='top'>0
+</td><td valign='top'>%00000000
+</td><td valign='top'>0
+</td><td valign='top'>0
+</td><td valign='top'>0
+</td><td valign='top'>#000000
+</td></tr><tr><td bgcolor='#550000' valign='top'>
+</td><td valign='top'>$01
+</td><td valign='top'>1
+</td><td valign='top'>%00000001
+</td><td valign='top'>85
+</td><td valign='top'>0
+</td><td valign='top'>0
+</td><td valign='top'>#550000
+</td></tr><tr><td bgcolor='#aa0000' valign='top'>
+</td><td valign='top'>$02
+</td><td valign='top'>2
+</td><td valign='top'>%00000010
+</td><td valign='top'>170
+</td><td valign='top'>0
+</td><td valign='top'>0
+</td><td valign='top'>#aa0000
+</td></tr><tr><td bgcolor='#ff0000' valign='top'>
+</td><td valign='top'>$03
+</td><td valign='top'>3
+</td><td valign='top'>%00000011
+</td><td valign='top'>255
+</td><td valign='top'>0
+</td><td valign='top'>0
+</td><td valign='top'>#ff0000
+</td></tr><tr><td bgcolor='#005500' valign='top'>
+</td><td valign='top'>$04
+</td><td valign='top'>4
+</td><td valign='top'>%00000100
+</td><td valign='top'>0
+</td><td valign='top'>85
+</td><td valign='top'>0
+</td><td valign='top'>#005500
+</td></tr><tr><td bgcolor='#555500' valign='top'>
+</td><td valign='top'>$05
+</td><td valign='top'>5
+</td><td valign='top'>%00000101
+</td><td valign='top'>85
+</td><td valign='top'>85
+</td><td valign='top'>0
+</td><td valign='top'>#555500
+</td></tr><tr><td bgcolor='#aa5500' valign='top'>
+</td><td valign='top'>$06
+</td><td valign='top'>6
+</td><td valign='top'>%00000110
+</td><td valign='top'>170
+</td><td valign='top'>85
+</td><td valign='top'>0
+</td><td valign='top'>#aa5500
+</td></tr><tr><td bgcolor='#ff5500' valign='top'>
+</td><td valign='top'>$07
+</td><td valign='top'>7
+</td><td valign='top'>%00000111
+</td><td valign='top'>255
+</td><td valign='top'>85
+</td><td valign='top'>0
+</td><td valign='top'>#ff5500
+</td></tr><tr><td bgcolor='#00aa00' valign='top'>
+</td><td valign='top'>$08
+</td><td valign='top'>8
+</td><td valign='top'>%00001000
+</td><td valign='top'>0
+</td><td valign='top'>170
+</td><td valign='top'>0
+</td><td valign='top'>#00aa00
+</td></tr><tr><td bgcolor='#55aa00' valign='top'>
+</td><td valign='top'>$09
+</td><td valign='top'>9
+</td><td valign='top'>%00001001
+</td><td valign='top'>85
+</td><td valign='top'>170
+</td><td valign='top'>0
+</td><td valign='top'>#55aa00
+</td></tr><tr><td bgcolor='#aaaa00' valign='top'>
+</td><td valign='top'>$0a
+</td><td valign='top'>10
+</td><td valign='top'>%00001010
+</td><td valign='top'>170
+</td><td valign='top'>170
+</td><td valign='top'>0
+</td><td valign='top'>#aaaa00
+</td></tr><tr><td bgcolor='#ffaa00' valign='top'>
+</td><td valign='top'>$0b
+</td><td valign='top'>11
+</td><td valign='top'>%00001011
+</td><td valign='top'>255
+</td><td valign='top'>170
+</td><td valign='top'>0
+</td><td valign='top'>#ffaa00
+</td></tr><tr><td bgcolor='#00ff00' valign='top'>
+</td><td valign='top'>$0c
+</td><td valign='top'>12
+</td><td valign='top'>%00001100
+</td><td valign='top'>0
+</td><td valign='top'>255
+</td><td valign='top'>0
+</td><td valign='top'>#00ff00
+</td></tr><tr><td bgcolor='#55ff00' valign='top'>
+</td><td valign='top'>$0d
+</td><td valign='top'>13
+</td><td valign='top'>%00001101
+</td><td valign='top'>85
+</td><td valign='top'>255
+</td><td valign='top'>0
+</td><td valign='top'>#55ff00
+</td></tr><tr><td bgcolor='#aaff00' valign='top'>
+</td><td valign='top'>$0e
+</td><td valign='top'>14
+</td><td valign='top'>%00001110
+</td><td valign='top'>170
+</td><td valign='top'>255
+</td><td valign='top'>0
+</td><td valign='top'>#aaff00
+</td></tr><tr><td bgcolor='#ffff00' valign='top'>
+</td><td valign='top'>$0f
+</td><td valign='top'>15
+</td><td valign='top'>%00001111
+</td><td valign='top'>255
+</td><td valign='top'>255
+</td><td valign='top'>0
+</td><td valign='top'>#ffff00
+</td></tr><tr><td bgcolor='#000055' valign='top'>
+</td><td valign='top'>$10
+</td><td valign='top'>16
+</td><td valign='top'>%00010000
+</td><td valign='top'>0
+</td><td valign='top'>0
+</td><td valign='top'>85
+</td><td valign='top'>#000055
+</td></tr><tr><td bgcolor='#550055' valign='top'>
+</td><td valign='top'>$11
+</td><td valign='top'>17
+</td><td valign='top'>%00010001
+</td><td valign='top'>85
+</td><td valign='top'>0
+</td><td valign='top'>85
+</td><td valign='top'>#550055
+</td></tr><tr><td bgcolor='#aa0055' valign='top'>
+</td><td valign='top'>$12
+</td><td valign='top'>18
+</td><td valign='top'>%00010010
+</td><td valign='top'>170
+</td><td valign='top'>0
+</td><td valign='top'>85
+</td><td valign='top'>#aa0055
+</td></tr><tr><td bgcolor='#ff0055' valign='top'>
+</td><td valign='top'>$13
+</td><td valign='top'>19
+</td><td valign='top'>%00010011
+</td><td valign='top'>255
+</td><td valign='top'>0
+</td><td valign='top'>85
+</td><td valign='top'>#ff0055
+</td></tr><tr><td bgcolor='#005555' valign='top'>
+</td><td valign='top'>$14
+</td><td valign='top'>20
+</td><td valign='top'>%00010100
+</td><td valign='top'>0
+</td><td valign='top'>85
+</td><td valign='top'>85
+</td><td valign='top'>#005555
+</td></tr><tr><td bgcolor='#555555' valign='top'>
+</td><td valign='top'>$15
+</td><td valign='top'>21
+</td><td valign='top'>%00010101
+</td><td valign='top'>85
+</td><td valign='top'>85
+</td><td valign='top'>85
+</td><td valign='top'>#555555
+</td></tr><tr><td bgcolor='#aa5555' valign='top'>
+</td><td valign='top'>$16
+</td><td valign='top'>22
+</td><td valign='top'>%00010110
+</td><td valign='top'>170
+</td><td valign='top'>85
+</td><td valign='top'>85
+</td><td valign='top'>#aa5555
+</td></tr><tr><td bgcolor='#ff5555' valign='top'>
+</td><td valign='top'>$17
+</td><td valign='top'>23
+</td><td valign='top'>%00010111
+</td><td valign='top'>255
+</td><td valign='top'>85
+</td><td valign='top'>85
+</td><td valign='top'>#ff5555
+</td></tr><tr><td bgcolor='#00aa55' valign='top'>
+</td><td valign='top'>$18
+</td><td valign='top'>24
+</td><td valign='top'>%00011000
+</td><td valign='top'>0
+</td><td valign='top'>170
+</td><td valign='top'>85
+</td><td valign='top'>#00aa55
+</td></tr><tr><td bgcolor='#55aa55' valign='top'>
+</td><td valign='top'>$19
+</td><td valign='top'>25
+</td><td valign='top'>%00011001
+</td><td valign='top'>85
+</td><td valign='top'>170
+</td><td valign='top'>85
+</td><td valign='top'>#55aa55
+</td></tr><tr><td bgcolor='#aaaa55' valign='top'>
+</td><td valign='top'>$1a
+</td><td valign='top'>26
+</td><td valign='top'>%00011010
+</td><td valign='top'>170
+</td><td valign='top'>170
+</td><td valign='top'>85
+</td><td valign='top'>#aaaa55
+</td></tr><tr><td bgcolor='#ffaa55' valign='top'>
+</td><td valign='top'>$1b
+</td><td valign='top'>27
+</td><td valign='top'>%00011011
+</td><td valign='top'>255
+</td><td valign='top'>170
+</td><td valign='top'>85
+</td><td valign='top'>#ffaa55
+</td></tr><tr><td bgcolor='#00ff55' valign='top'>
+</td><td valign='top'>$1c
+</td><td valign='top'>28
+</td><td valign='top'>%00011100
+</td><td valign='top'>0
+</td><td valign='top'>255
+</td><td valign='top'>85
+</td><td valign='top'>#00ff55
+</td></tr><tr><td bgcolor='#55ff55' valign='top'>
+</td><td valign='top'>$1d
+</td><td valign='top'>29
+</td><td valign='top'>%00011101
+</td><td valign='top'>85
+</td><td valign='top'>255
+</td><td valign='top'>85
+</td><td valign='top'>#55ff55
+</td></tr><tr><td bgcolor='#aaff55' valign='top'>
+</td><td valign='top'>$1e
+</td><td valign='top'>30
+</td><td valign='top'>%00011110
+</td><td valign='top'>170
+</td><td valign='top'>255
+</td><td valign='top'>85
+</td><td valign='top'>#aaff55
+</td></tr><tr><td bgcolor='#ffff55' valign='top'>
+</td><td valign='top'>$1f
+</td><td valign='top'>31
+</td><td valign='top'>%00011111
+</td><td valign='top'>255
+</td><td valign='top'>255
+</td><td valign='top'>85
+</td><td valign='top'>#ffff55
+</td></tr><tr><td bgcolor='#0000aa' valign='top'>
+</td><td valign='top'>$20
+</td><td valign='top'>32
+</td><td valign='top'>%00100000
+</td><td valign='top'>0
+</td><td valign='top'>0
+</td><td valign='top'>170
+</td><td valign='top'>#0000aa
+</td></tr><tr><td bgcolor='#5500aa' valign='top'>
+</td><td valign='top'>$21
+</td><td valign='top'>33
+</td><td valign='top'>%00100001
+</td><td valign='top'>85
+</td><td valign='top'>0
+</td><td valign='top'>170
+</td><td valign='top'>#5500aa
+</td></tr><tr><td bgcolor='#aa00aa' valign='top'>
+</td><td valign='top'>$22
+</td><td valign='top'>34
+</td><td valign='top'>%00100010
+</td><td valign='top'>170
+</td><td valign='top'>0
+</td><td valign='top'>170
+</td><td valign='top'>#aa00aa
+</td></tr><tr><td bgcolor='#ff00aa' valign='top'>
+</td><td valign='top'>$23
+</td><td valign='top'>35
+</td><td valign='top'>%00100011
+</td><td valign='top'>255
+</td><td valign='top'>0
+</td><td valign='top'>170
+</td><td valign='top'>#ff00aa
+</td></tr><tr><td bgcolor='#0055aa' valign='top'>
+</td><td valign='top'>$24
+</td><td valign='top'>36
+</td><td valign='top'>%00100100
+</td><td valign='top'>0
+</td><td valign='top'>85
+</td><td valign='top'>170
+</td><td valign='top'>#0055aa
+</td></tr><tr><td bgcolor='#5555aa' valign='top'>
+</td><td valign='top'>$25
+</td><td valign='top'>37
+</td><td valign='top'>%00100101
+</td><td valign='top'>85
+</td><td valign='top'>85
+</td><td valign='top'>170
+</td><td valign='top'>#5555aa
+</td></tr><tr><td bgcolor='#aa55aa' valign='top'>
+</td><td valign='top'>$26
+</td><td valign='top'>38
+</td><td valign='top'>%00100110
+</td><td valign='top'>170
+</td><td valign='top'>85
+</td><td valign='top'>170
+</td><td valign='top'>#aa55aa
+</td></tr><tr><td bgcolor='#ff55aa' valign='top'>
+</td><td valign='top'>$27
+</td><td valign='top'>39
+</td><td valign='top'>%00100111
+</td><td valign='top'>255
+</td><td valign='top'>85
+</td><td valign='top'>170
+</td><td valign='top'>#ff55aa
+</td></tr><tr><td bgcolor='#00aaaa' valign='top'>
+</td><td valign='top'>$28
+</td><td valign='top'>40
+</td><td valign='top'>%00101000
+</td><td valign='top'>0
+</td><td valign='top'>170
+</td><td valign='top'>170
+</td><td valign='top'>#00aaaa
+</td></tr><tr><td bgcolor='#55aaaa' valign='top'>
+</td><td valign='top'>$29
+</td><td valign='top'>41
+</td><td valign='top'>%00101001
+</td><td valign='top'>85
+</td><td valign='top'>170
+</td><td valign='top'>170
+</td><td valign='top'>#55aaaa
+</td></tr><tr><td bgcolor='#aaaaaa' valign='top'>
+</td><td valign='top'>$2a
+</td><td valign='top'>42
+</td><td valign='top'>%00101010
+</td><td valign='top'>170
+</td><td valign='top'>170
+</td><td valign='top'>170
+</td><td valign='top'>#aaaaaa
+</td></tr><tr><td bgcolor='#ffaaaa' valign='top'>
+</td><td valign='top'>$2b
+</td><td valign='top'>43
+</td><td valign='top'>%00101011
+</td><td valign='top'>255
+</td><td valign='top'>170
+</td><td valign='top'>170
+</td><td valign='top'>#ffaaaa
+</td></tr><tr><td bgcolor='#00ffaa' valign='top'>
+</td><td valign='top'>$2c
+</td><td valign='top'>44
+</td><td valign='top'>%00101100
+</td><td valign='top'>0
+</td><td valign='top'>255
+</td><td valign='top'>170
+</td><td valign='top'>#00ffaa
+</td></tr><tr><td bgcolor='#55ffaa' valign='top'>
+</td><td valign='top'>$2d
+</td><td valign='top'>45
+</td><td valign='top'>%00101101
+</td><td valign='top'>85
+</td><td valign='top'>255
+</td><td valign='top'>170
+</td><td valign='top'>#55ffaa
+</td></tr><tr><td bgcolor='#aaffaa' valign='top'>
+</td><td valign='top'>$2e
+</td><td valign='top'>46
+</td><td valign='top'>%00101110
+</td><td valign='top'>170
+</td><td valign='top'>255
+</td><td valign='top'>170
+</td><td valign='top'>#aaffaa
+</td></tr><tr><td bgcolor='#ffffaa' valign='top'>
+</td><td valign='top'>$2f
+</td><td valign='top'>47
+</td><td valign='top'>%00101111
+</td><td valign='top'>255
+</td><td valign='top'>255
+</td><td valign='top'>170
+</td><td valign='top'>#ffffaa
+</td></tr><tr><td bgcolor='#0000ff' valign='top'>
+</td><td valign='top'>$30
+</td><td valign='top'>48
+</td><td valign='top'>%00110000
+</td><td valign='top'>0
+</td><td valign='top'>0
+</td><td valign='top'>255
+</td><td valign='top'>#0000ff
+</td></tr><tr><td bgcolor='#5500ff' valign='top'>
+</td><td valign='top'>$31
+</td><td valign='top'>49
+</td><td valign='top'>%00110001
+</td><td valign='top'>85
+</td><td valign='top'>0
+</td><td valign='top'>255
+</td><td valign='top'>#5500ff
+</td></tr><tr><td bgcolor='#aa00ff' valign='top'>
+</td><td valign='top'>$32
+</td><td valign='top'>50
+</td><td valign='top'>%00110010
+</td><td valign='top'>170
+</td><td valign='top'>0
+</td><td valign='top'>255
+</td><td valign='top'>#aa00ff
+</td></tr><tr><td bgcolor='#ff00ff' valign='top'>
+</td><td valign='top'>$33
+</td><td valign='top'>51
+</td><td valign='top'>%00110011
+</td><td valign='top'>255
+</td><td valign='top'>0
+</td><td valign='top'>255
+</td><td valign='top'>#ff00ff
+</td></tr><tr><td bgcolor='#0055ff' valign='top'>
+</td><td valign='top'>$34
+</td><td valign='top'>52
+</td><td valign='top'>%00110100
+</td><td valign='top'>0
+</td><td valign='top'>85
+</td><td valign='top'>255
+</td><td valign='top'>#0055ff
+</td></tr><tr><td bgcolor='#5555ff' valign='top'>
+</td><td valign='top'>$35
+</td><td valign='top'>53
+</td><td valign='top'>%00110101
+</td><td valign='top'>85
+</td><td valign='top'>85
+</td><td valign='top'>255
+</td><td valign='top'>#5555ff
+</td></tr><tr><td bgcolor='#aa55ff' valign='top'>
+</td><td valign='top'>$36
+</td><td valign='top'>54
+</td><td valign='top'>%00110110
+</td><td valign='top'>170
+</td><td valign='top'>85
+</td><td valign='top'>255
+</td><td valign='top'>#aa55ff
+</td></tr><tr><td bgcolor='#ff55ff' valign='top'>
+</td><td valign='top'>$37
+</td><td valign='top'>55
+</td><td valign='top'>%00110111
+</td><td valign='top'>255
+</td><td valign='top'>85
+</td><td valign='top'>255
+</td><td valign='top'>#ff55ff
+</td></tr><tr><td bgcolor='#00aaff' valign='top'>
+</td><td valign='top'>$38
+</td><td valign='top'>56
+</td><td valign='top'>%00111000
+</td><td valign='top'>0
+</td><td valign='top'>170
+</td><td valign='top'>255
+</td><td valign='top'>#00aaff
+</td></tr><tr><td bgcolor='#55aaff' valign='top'>
+</td><td valign='top'>$39
+</td><td valign='top'>57
+</td><td valign='top'>%00111001
+</td><td valign='top'>85
+</td><td valign='top'>170
+</td><td valign='top'>255
+</td><td valign='top'>#55aaff
+</td></tr><tr><td bgcolor='#aaaaff' valign='top'>
+</td><td valign='top'>$3a
+</td><td valign='top'>58
+</td><td valign='top'>%00111010
+</td><td valign='top'>170
+</td><td valign='top'>170
+</td><td valign='top'>255
+</td><td valign='top'>#aaaaff
+</td></tr><tr><td bgcolor='#ffaaff' valign='top'>
+</td><td valign='top'>$3b
+</td><td valign='top'>59
+</td><td valign='top'>%00111011
+</td><td valign='top'>255
+</td><td valign='top'>170
+</td><td valign='top'>255
+</td><td valign='top'>#ffaaff
+</td></tr><tr><td bgcolor='#00ffff' valign='top'>
+</td><td valign='top'>$3c
+</td><td valign='top'>60
+</td><td valign='top'>%00111100
+</td><td valign='top'>0
+</td><td valign='top'>255
+</td><td valign='top'>255
+</td><td valign='top'>#00ffff
+</td></tr><tr><td bgcolor='#55ffff' valign='top'>
+</td><td valign='top'>$3d
+</td><td valign='top'>61
+</td><td valign='top'>%00111101
+</td><td valign='top'>85
+</td><td valign='top'>255
+</td><td valign='top'>255
+</td><td valign='top'>#55ffff
+</td></tr><tr><td bgcolor='#aaffff' valign='top'>
+</td><td valign='top'>$3e
+</td><td valign='top'>62
+</td><td valign='top'>%00111110
+</td><td valign='top'>170
+</td><td valign='top'>255
+</td><td valign='top'>255
+</td><td valign='top'>#aaffff
+</td></tr><tr><td bgcolor='#ffffff' valign='top'>
+</td><td valign='top'>$3f
+</td><td valign='top'>63
+</td><td valign='top'>%00111111
+</td><td valign='top'>255
+</td><td valign='top'>255
+</td><td valign='top'>255
+</td><td valign='top'>#ffffff
+</td></tr></table>
+<p class='vspace'>So there are 64 possible colours on the Master System, but you have to select 16 of them (for each palette) - you can't use more without using special tricks.
+</p>
+<div class='vspace'></div><h2>Writing to the palette</h2>
+<p>To write to the palette, set the address using the VDP control port, with the two high bits set (i.e. address ORed with $c000). If you set an address higher than 32, the address wraps.
+</p>
+<div class='vspace'></div><h2>Transparency </h2>
+<p>Palette index 0 is special. For sprites, it is always transparent - the colour you choose is never used (for sprites, it can be used for other things). For background tiles, it is drawn but when the tile is set to be drawn in front of sprites (see <a class='wikilink' href="https://www.smspower.org/maxim/HowToProgram/Tilemap">Tilemap</a>), it is drawn behind sprites while the other palette entries are drawn in front, so it again has a sort of transparency.
+</p>
+<div class='vspace'></div><h2>Game Gear differences</h2>
+<p>The Game Gear palette is exactly the same as the Master System, except:
+</p>
+<div class='vspace'></div><ul><li>Each colour channel has four bits, not two, giving 2<sup>12</sup> = 4096 possible colours.
+</li><li>Each palette entry then takes up two bytes
+<ul><li>So there are 64 bytes of colour RAM instead of 32
+</li><li>Each entry takes up two consecutive bytes, in the format:
+</li></ul></li></ul>
+<table border='1' width='1'><tr><td valign='top'>Byte:
+</td><td colspan='8' valign='top'>1
+</td><td colspan='8' valign='top'>0
+</td></tr><tr><td valign='top'>Bit:
+</td><td valign='top'>7
+</td><td valign='top'>6
+</td><td valign='top'>5
+</td><td valign='top'>4
+</td><td valign='top'>3
+</td><td valign='top'>2
+</td><td valign='top'>1
+</td><td valign='top'>0
+</td><td valign='top'>7
+</td><td valign='top'>6
+</td><td valign='top'>5
+</td><td valign='top'>4
+</td><td valign='top'>3
+</td><td valign='top'>2
+</td><td valign='top'>1
+</td><td valign='top'>0
+</td></tr><tr><td align='right' valign='top'>%
+</td><td colspan='4' valign='top'>Unused
+</td><td colspan='4' bgcolor='blue' valign='top'><span style='color: white;'>Blue</span>
+</td><td colspan='4' bgcolor='green' valign='top'><span style='color: white;'>Green</span>
+</td><td colspan='4' bgcolor='red' valign='top'><span style='color: white;'>Red</span>
+</td></tr></table>
+<hr />
+<p><span class='wikitrail'>&lt; <a class='wikilink' href="https://www.smspower.org/maxim/HowToProgram/SettingUpTheGraphics">Setting up the graphics</a> | <a class='wikilink' href="https://www.smspower.org/maxim/HowToProgram/Lesson1">Lesson 1</a> | <a class='wikilink' href="https://www.smspower.org/maxim/HowToProgram/Tiles">Tiles</a> &gt;</span>
+</p>
+</div>
+<div id='sidebar'><div class='fpltemplate'><h2><a class='wikilink' href="https://www.smspower.org/maxim/">Blag</a></h2>
+<ul><li><a class='wikilink' href="https://www.smspower.org/maxim/Mountainous">Mountainous</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/XanderMingxuanZhao">Xander Mingxuan Zhao</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/ImNotDead">I’m Not Dead</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/WonderBoyInMonsterLandSphinxQuestions">Wonder Boy In Monster Land Sphinx Questions</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/StatueInARestaurant">Statue In A Restaurant</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/Archive">Older...</a> <a class='wikilink' href="https://www.smspower.org/maxim/RSS"><img src="https://www.smspower.org/maxim/uploads/Site/rss.png" alt='RSS' title='RSS' /></a>
+</li></ul>
+</div>
+<div class='vspace'></div><div class='fpltemplate'><h2><a class='wikilink' href="https://www.smspower.org/maxim/Software/Index">Software</a></h2>
+<ul><li><a class='wikilink' href="https://www.smspower.org/maxim/Software/BMP2Tile">BMP2Tile</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/Software/GBAVGMPlayer">GBA VGM Player</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/Software/HeaderReader">Header Reader</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/Software/MekaConfigurator">Meka Configurator</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/Software/ScreenshotAutostitcher">Screenshot Autostitcher</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/Software/SMSChecker">SMS Checker</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/Software/SMSOffsetConvertor">SMS Offset Convertor</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/Software/SMSReader">SMS Reader</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/Software/TileDecoder">Tile Decoder</a>
+</li></ul>
+</div>
+<div class='vspace'></div><div class='fpltemplate'><h2><a class='wikilink' href="https://www.smspower.org/maxim/SMSSoftware/Index">SMS Software</a></h2>
+<ul><li><a class='wikilink' href="https://www.smspower.org/maxim/SMSSoftware/BocksBirthday2002">Bock's Birthday 2002</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/SMSSoftware/BocksBirthday2003">Bock's Birthday 2003</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/SMSSoftware/BocksBirthday2004">Bock's Birthday 2004</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/SMSSoftware/Chip8">Chip 8</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/SMSSoftware/Compressors">Compressors</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/SMSSoftware/NotOnlyWordsPrettyPhoto">Not Only Words / Pretty Photo</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/SMSSoftware/Ono">ono</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/SMSSoftware/Picross">Picross</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/SMSSoftware/VGMPlayer">VGM Player</a>
+</li></ul>
+</div>
+<div class='vspace'></div><div class='fpltemplate'><h2><a class='wikilink' href="https://www.smspower.org/maxim/HowToProgram/Index">How To Program</a></h2>
+<ul><li><a class='wikilink' href="https://www.smspower.org/maxim/HowToProgram/Lesson1">Lesson 1</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/HowToProgram/Lesson2">Lesson 2</a>
+</li></ul>
+</div>
+<div class='vspace'></div><div class='fpltemplate'><h2><a class='wikilink' href="https://www.smspower.org/maxim/Maps/Index">Maps</a></h2>
+<ul><li><a class='wikilink' href="https://www.smspower.org/maxim/Maps/WIP">WIP</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/Maps/WonderBoyIIITheDragonsTrap">Wonder Boy III: The Dragon's Trap</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/Maps/EnduroRacer">Enduro Racer</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/Maps/Aleste">Aleste</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/Maps/SonicTheHedgehog">Sonic the Hedgehog</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/Maps/LuckyDimeCaper">The Lucky Dime Caper</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/Maps/AsterixAndTheGreatRescue">Asterix And The Great Rescue</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/Maps/PrinceOfPersia">Prince of Persia</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/Maps/CoolSpot">Cool Spot</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/Maps/AlexKiddInShinobiWorld">Alex Kidd In Shinobi World</a>
+</li></ul>
+</div>
+<ul><li><a class='wikilink' href="https://www.smspower.org/maxim/Maps/Index">More...</a>
+</li></ul><div class='vspace'></div><div class='fpltemplate'><h2><a class='wikilink' href="https://www.smspower.org/maxim/Documents/Index">Documents</a></h2>
+<ul><li><a class='wikilink' href="https://www.smspower.org/maxim/Documents/JapaneseSMSPCB">Japanese SMS PCB</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/Documents/MusicEngineAdvancedHacking">Music Engine Advanced Hacking</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/Documents/MusicEngineTriggerHacking">Music Engine Trigger Hacking</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/Documents/PauseHack">Pause Hack</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/Documents/Pinouts">Pinouts</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/Documents/SN76489">SN76489</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/Documents/YM2413ApplicationManual">YM2413 Application Manual</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/Documents/YM2612">YM2612</a>
+</li></ul>
+</div>
+<div class='vspace'></div><div class='fpltemplate'><h2><a class='wikilink' href="https://www.smspower.org/maxim/Winamp/Index">Winamp</a></h2>
+<ul><li><a class='wikilink' href="https://www.smspower.org/maxim/Winamp/InVgm">in_vgm</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/Winamp/RegionTxtGenerator">region.txt Generator</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/Winamp/Skins">Skins</a>
+</li></ul>
+</div>
+<div class='vspace'></div><div class='fpltemplate'><h2><a class='wikilink' href="https://www.smspower.org/maxim/Misc/Index">Misc</a></h2>
+<ul><li><a class='wikilink' href="https://www.smspower.org/maxim/Misc/16-Bit">16-Bit</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/Misc/OtherStuff">Other Stuff</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/Misc/POV-RayBox">POV-Ray Box</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/Misc/Software">Software</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/Misc/TripleHeadWallpaper">Triple Head Wallpaper</a>
+</li></ul>
+</div>
+<div class='vspace'></div><h2>Meta</h2>
+<ul><li><a class='wikilink' href="https://www.smspower.org/maxim/Site/Contact">Contact</a>
+</li><li><a class='wikilink' href="https://www.smspower.org/maxim/HowToProgram/Palette?action=print">Print</a>
+</li></ul>
+</div>
+</div>
+<div class="clearer"></div>
+</div>
+</div>
+<div id="footer">
+<div id="copyright">
+<span style="float: left; padding-left: 20px;">
+
+<script type="e84ff124982c47eca094b5e2-text/javascript" src="https://www.sitemeter.com/js/counter.js?site=sm5smscheck">
+<noscript>
+<a href="http://sm5.sitemeter.com/stats.asp?site=sm5smscheck">
+<img src="http://sm5.sitemeter.com/meter.asp?site=sm5smscheck" alt="Site Meter">
+</a>
+</noscript>
+<!-- Copyright (c)2009 Site Meter -->
+</script>
+</span>
+<span style="float: right; display: block; padding-right: 20px;">
+Powered by Z80A
+</span>
+</div>
+</div>
+
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="e84ff124982c47eca094b5e2-|49" defer=""></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"6c6ed55c4fe9e638","version":"2021.12.0","r":1,"token":"0677fdfcf4eb4d9f827812472a80b085","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>
