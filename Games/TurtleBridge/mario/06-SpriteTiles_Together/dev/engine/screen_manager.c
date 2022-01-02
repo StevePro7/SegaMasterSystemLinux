@@ -22,4 +22,5 @@ void engine_screen_manager_update()
 	}
 
 	engine_sprite_manager_draw( 88, 96, SPRITE_TILES );
+	engine_sprite_manager_draw( 88, 144, SPRITE_TILES + 48 );
 }
