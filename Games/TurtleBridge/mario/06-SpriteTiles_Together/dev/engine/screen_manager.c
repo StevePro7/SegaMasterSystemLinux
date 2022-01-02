@@ -6,21 +6,46 @@
 #include "input_manager.h"
 #include "sprite_manager.h"
 
+static unsigned char x = 88;
+static unsigned char y = 96;
+
 void engine_screen_manager_init()
 {
 	engine_font_manager_draw_text( "STEVEPRO STUDIOS()", 4, 4 );
+	x = 88;
+	y = 96;
 }
 
 void engine_screen_manager_update()
 {
 	unsigned char input = 0;
-	unsigned char diff = 1;
 	input = engine_input_manager_move_fire1();
 	if( input )
 	{
 		engine_font_manager_draw_text( "STEVEPRO STUDIOS()", 4, 7 );
 	}
 
-	engine_sprite_manager_draw( 88, 96, SPRITE_TILES );
+	input = engine_input_manager_move_left();
+	if( input )
+	{
+		x--;
+	}
+	input = engine_input_manager_move_right();
+	if( input )
+	{
+		x++;
+	}
+	input = engine_input_manager_move_up();
+	if( input )
+	{
+		y--;
+	}
+	input = engine_input_manager_move_down();
+	if( input )
+	{
+		y++;
+	}
+
+	engine_sprite_manager_draw( x, y, SPRITE_TILES );
 	engine_sprite_manager_draw( 88, 144, SPRITE_TILES + 48 );
 }
