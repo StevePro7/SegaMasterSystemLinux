@@ -2,16 +2,10 @@
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
 
-//void engine_sprite_manager_draw( unsigned char x, unsigned char y, unsigned int tile )
-void engine_sprite_manager_draw()
+void engine_sprite_manager_draw( unsigned char x, unsigned char y)
 {
 	const unsigned char *pnt = turtle_tiles__tilemap__bin;
-	unsigned char x;
-	unsigned char y;
-	//const unsigned char *pnt = font_tiles__tilemap__bin;
 
-	x = 1;
-	y = 1;
 	devkit_SMS_setNextTileatXY( x + 0, y + 0 );	devkit_SMS_setTile( *pnt + 4 );
 	devkit_SMS_setNextTileatXY( x + 1, y + 0 );	devkit_SMS_setTile( *pnt + 5 );
 	devkit_SMS_setNextTileatXY( x + 2, y + 0 );	devkit_SMS_setTile( *pnt + 6 );
