@@ -9,10 +9,10 @@ void main( void )
 	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_NORMAL() );
 	devkit_SMS_useFirstHalfTilesforSprites( false );
 	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );
-	//devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_ZOOMSPRITES() );
+	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_ZOOMSPRITES() );
 
 	engine_content_manager_load_tiles();
-	//engine_content_manager_load_sprites();
+	engine_content_manager_load_sprites();
 	engine_content_manager_load_turtle();
 
 	devkit_SMS_setBGPaletteColor( 3, devkit_RGB( 3, 2, 2 ) );	// set turtle feet manually to teal.
@@ -23,7 +23,6 @@ void main( void )
 	devkit_SMS_setBGPaletteColor( 15, devkit_RGB( 3, 3, 3 ) );		// white
 	devkit_SMS_setBGPaletteColor( 15, devkit_RGB( 0, 0, 0 ) );		// black
 
-	//
 	devkit_SMS_setBGPaletteColor( 16, devkit_RGB( 1, 2, 3 ) );		// cornflower blue		sky
 	engine_screen_manager_init();
 

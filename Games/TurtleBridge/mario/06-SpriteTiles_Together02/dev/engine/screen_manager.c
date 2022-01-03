@@ -11,12 +11,11 @@ void engine_screen_manager_init()
 	unsigned char y = 16;
 	engine_font_manager_draw_text( "STEVEPRO STUDIOS", 4, 4 );
 
-	//engine_sprite_manager_draw( 0, 0, TURTLE_TILES );
-	engine_sprite_manager_draw( 2, y );
-	engine_sprite_manager_draw( 8, y + 1 );
-	engine_sprite_manager_draw( 14, y );
-	engine_sprite_manager_draw( 20, y );
-	engine_sprite_manager_draw( 26, y );
+	engine_turtle_manager_draw( 2, y );
+	engine_turtle_manager_draw( 8, y + 1 );
+	engine_turtle_manager_draw( 14, y );
+	engine_turtle_manager_draw( 20, y - 1 );
+	engine_turtle_manager_draw( 26, y );
 
 }
 
@@ -30,5 +29,5 @@ void engine_screen_manager_update()
 		engine_font_manager_draw_text( "STEVEPRO STUDIOS!!", 4, 7 );
 	}
 
-
+	engine_sprite_manager_draw( 88, 88, SPRITE_TILES );
 }
