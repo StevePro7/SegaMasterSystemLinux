@@ -7,9 +7,8 @@ cd gfx
 
 :: Tiles
 bmp2tile.exe raw/font_tiles.bmp -savetiles "font_tiles (tiles).psgcompr" -noremovedupes -planar -tileoffset 0  -savetilemap "font_tiles (tilemap).bin" -savepalette "font_tiles (palette).bin" -fullpalette -exit
+bmp2tile.exe raw/turtle_tiles.png -savetiles "turtle_tiles (tiles).psgcompr" -noremovedupes -planar -tileoffset 64  -savetilemap "turtle_tiles (tilemap).bin" -savepalette "turtle_tiles (palette).bin" -fullpalette -exit
 
-:: Sprites
-bmp2tile.exe raw/turtle.png -savetiles "turtle (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 0 -savepalette "turtle (palette).bin" -fullpalette  -spritepalette -exit
 
 cd ..
 folder2c gfx gfx
