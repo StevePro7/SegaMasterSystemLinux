@@ -8,7 +8,11 @@
 
 void engine_screen_manager_init()
 {
-	engine_font_manager_draw_text( "STEVEPRO STUDIOS()", 4, 4 );
+	engine_font_manager_draw_text( "STEVEPRO STUDIOS", 4, 14 );
+
+	//engine_sprite_manager_draw( 0, 0, TURTLE_TILES );
+	engine_sprite_manager_draw();
+
 }
 
 void engine_screen_manager_update()
@@ -18,8 +22,8 @@ void engine_screen_manager_update()
 	input = engine_input_manager_move_fire1();
 	if( input )
 	{
-		engine_font_manager_draw_text( "STEVEPRO STUDIOS()", 4, 7 );
+		engine_font_manager_draw_text( "STEVEPRO STUDIOS!!", 4, 17 );
 	}
 
-	engine_sprite_manager_draw( 88, 96, SPRITE_TILES );
+
 }
