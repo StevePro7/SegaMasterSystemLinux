@@ -34,12 +34,21 @@ extern const unsigned char	rght03__tiles__psgcompr[];
 extern const unsigned char	rght04__tiles__psgcompr[];
 #define				rght04__tiles__psgcompr_size 77
 
-extern const unsigned char	turtle_tiles__palette__bin[];
-#define				turtle_tiles__palette__bin_size 16
+extern const unsigned char	turtle_tiles_01__palette__bin[];
+#define				turtle_tiles_01__palette__bin_size 16
 
-extern const unsigned char	turtle_tiles__tilemap__bin[];
-#define				turtle_tiles__tilemap__bin_size 32
+extern const unsigned char	turtle_tiles_01__tilemap__bin[];
+#define				turtle_tiles_01__tilemap__bin_size 32
 
-extern const unsigned char	turtle_tiles__tiles__psgcompr[];
-#define				turtle_tiles__tiles__psgcompr_size 199
+extern const unsigned char	turtle_tiles_01__tiles__psgcompr[];
+#define				turtle_tiles_01__tiles__psgcompr_size 199
+
+extern const unsigned char	turtle_tiles_02__palette__bin[];
+#define				turtle_tiles_02__palette__bin_size 16
+
+extern const unsigned char	turtle_tiles_02__tilemap__bin[];
+#define				turtle_tiles_02__tilemap__bin_size 32
+
+extern const unsigned char	turtle_tiles_02__tiles__psgcompr[];
+#define				turtle_tiles_02__tiles__psgcompr_size 195
 

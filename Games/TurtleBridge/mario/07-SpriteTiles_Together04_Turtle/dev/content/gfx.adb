@@ -11,6 +11,9 @@ S:G$rght01__tiles__psgcompr$0$0({80}DA80d,SC:U),D,0,0
 S:G$rght02__tiles__psgcompr$0$0({80}DA80d,SC:U),D,0,0
 S:G$rght03__tiles__psgcompr$0$0({80}DA80d,SC:U),D,0,0
 S:G$rght04__tiles__psgcompr$0$0({77}DA77d,SC:U),D,0,0
-S:G$turtle_tiles__palette__bin$0$0({16}DA16d,SC:U),D,0,0
-S:G$turtle_tiles__tilemap__bin$0$0({32}DA32d,SC:U),D,0,0
-S:G$turtle_tiles__tiles__psgcompr$0$0({199}DA199d,SC:U),D,0,0
+S:G$turtle_tiles_01__palette__bin$0$0({16}DA16d,SC:U),D,0,0
+S:G$turtle_tiles_01__tilemap__bin$0$0({32}DA32d,SC:U),D,0,0
+S:G$turtle_tiles_01__tiles__psgcompr$0$0({199}DA199d,SC:U),D,0,0
+S:G$turtle_tiles_02__palette__bin$0$0({16}DA16d,SC:U),D,0,0
+S:G$turtle_tiles_02__tilemap__bin$0$0({32}DA32d,SC:U),D,0,0
+S:G$turtle_tiles_02__tiles__psgcompr$0$0({195}DA195d,SC:U),D,0,0

@@ -8,7 +8,7 @@ cd gfx
 :: Tiles
 bmp2tile.exe raw/font_tiles.bmp -savetiles "font_tiles (tiles).psgcompr" -noremovedupes -planar -tileoffset 0  -savetilemap "font_tiles (tilemap).bin" -savepalette "font_tiles (palette).bin" -fullpalette -exit
 bmp2tile.exe raw/turtle_tiles_01.png -savetiles "turtle_tiles_01 (tiles).psgcompr" -noremovedupes -planar -tileoffset 64  -savetilemap "turtle_tiles_01 (tilemap).bin" -savepalette "turtle_tiles_01 (palette).bin" -fullpalette -exit
-bmp2tile.exe raw/turtle_tiles_02.png -savetiles "turtle_tiles_02 (tiles).psgcompr" -noremovedupes -planar -tileoffset 80  -savetilemap "turtle_tiles_01 (tilemap).bin" -savepalette "turtle_tiles_02 (palette).bin" -fullpalette -exit
+bmp2tile.exe raw/turtle_tiles_02.png -savetiles "turtle_tiles_02 (tiles).psgcompr" -noremovedupes -planar -tileoffset 80  -savetilemap "turtle_tiles_02 (tilemap).bin" -savepalette "turtle_tiles_02 (palette).bin" -fullpalette -exit
 
 :: Sprites
 bmp2tile.exe raw/left01.png -savetiles "left01 (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 0 -savepalette "mario01 (palette).bin" -fullpalette  -spritepalette -exit
