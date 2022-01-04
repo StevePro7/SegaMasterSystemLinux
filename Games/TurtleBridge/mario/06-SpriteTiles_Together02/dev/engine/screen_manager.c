@@ -17,7 +17,7 @@ void engine_screen_manager_init()
 
 	//engine_turtle_manager_draw( 2, y );
 	//engine_turtle_manager_draw( 6, y );
-	engine_turtle_manager_draw( 22, 16 );
+	engine_turtle_manager_draw( 11, 18 );
 	//engine_turtle_manager_draw( 18, y );
 	//engine_turtle_manager_draw( 24, y );
 	//engine_turtle_manager_draw( 38, y );
