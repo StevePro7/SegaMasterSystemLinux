@@ -25,8 +25,8 @@ void engine_screen_manager_update()
 	unsigned char test;
 	rand();
 
-	test = rand() % 10;
-	if( 4 == test )
+	test = rand() % 20;
+	if( 1 == test )
 	{
 		test = rand() % 6;
 		flag[ test ] = 1 - flag[ test ];
