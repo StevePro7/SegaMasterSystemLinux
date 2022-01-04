@@ -6,28 +6,60 @@
 #include "input_manager.h"
 #include "sprite_manager.h"
 
+static unsigned char x = 88;
+static unsigned char y = 96;
+
+static void print_coords();
+
 void engine_screen_manager_init()
 {
-	unsigned char y = 16;
 	engine_font_manager_draw_text( "STEVEPRO STUDIOS", 4, 4 );
 
-	engine_turtle_manager_draw( 2, y );
-	engine_turtle_manager_draw( 8, y + 1 );
-	engine_turtle_manager_draw( 14, y );
-	engine_turtle_manager_draw( 20, y - 1 );
-	engine_turtle_manager_draw( 26, y );
-
+	//engine_turtle_manager_draw( 2, y );
+	//engine_turtle_manager_draw( 6, y );
+	engine_turtle_manager_draw( 22, 16 );
+	//engine_turtle_manager_draw( 18, y );
+	//engine_turtle_manager_draw( 24, y );
+	//engine_turtle_manager_draw( 38, y );
 }
 
 void engine_screen_manager_update()
 {
 	unsigned char input = 0;
-	unsigned char diff = 1;
 	input = engine_input_manager_move_fire1();
 	if( input )
 	{
-		engine_font_manager_draw_text( "STEVEPRO STUDIOS!!", 4, 7 );
+		engine_font_manager_draw_text( "STEVEPRO STUDIOS()", 4, 7 );
 	}
 
-	engine_sprite_manager_draw( 88, 88, SPRITE_TILES );
+	input = engine_input_manager_move_left();
+	if( input )
+	{
+		x--;
+	}
+	input = engine_input_manager_move_right();
+	if( input )
+	{
+		x++;
+	}
+	input = engine_input_manager_move_up();
+	if( input )
+	{
+		y--;
+	}
+	input = engine_input_manager_move_down();
+	if( input )
+	{
+		y++;
+	}
+
+	print_coords();
+
+	engine_sprite_manager_draw( x, y, SPRITE_TILES );
+}
+
+static void print_coords()
+{
+	engine_font_manager_draw_data( x, 14, 6 );
+	engine_font_manager_draw_data( y, 14, 7 );
 }
