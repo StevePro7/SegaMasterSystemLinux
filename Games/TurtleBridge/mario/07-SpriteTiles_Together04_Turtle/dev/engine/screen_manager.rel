@@ -1,213 +1,240 @@
 ;!FILE screen_manager.asm
 XL2
-H 9 areas 81 global symbols
+H 9 areas 9C global symbols
 M screen_manager
 O -mz80
-S _engine_input_manager_move_down Ref0000
+S _rand Ref0000
 S _engine_sprite_manager_draw Ref0000
 S _engine_font_manager_draw_text Ref0000
-S _engine_turtle_manager_draw Ref0000
+S _engine_turtle_manager_draw_01 Ref0000
+S _engine_turtle_manager_draw_02 Ref0000
 S .__.ABS. Def0000
-S _engine_input_manager_move_fire1 Ref0000
-S _engine_font_manager_draw_data Ref0000
-S _engine_input_manager_move_right Ref0000
-S _engine_input_manager_move_up Ref0000
-S _engine_input_manager_move_left Ref0000
-A _CODE size B1 flags 0 addr 0
+S _engine_music_manager_play Ref0000
+S __modsint Ref0000
+A _CODE size C0 flags 0 addr 0
 S _engine_screen_manager_init Def0000
-S G$engine_screen_manager_update$0$0 Def0026
-S XG$engine_screen_manager_init$0$0 Def0014
-S _engine_screen_manager_update Def0026
-S A$screen_manager$200 Def0075
-S A$screen_manager$110 Def002A
-S A$screen_manager$201 Def0076
-S A$screen_manager$120 Def0038
-S A$screen_manager$111 Def002B
-S A$screen_manager$202 Def0077
-S A$screen_manager$130 Def003D
-S A$screen_manager$121 Def0039
-S A$screen_manager$230 Def0099
-S A$screen_manager$203 Def007A
-S A$screen_manager$131 Def003E
-S A$screen_manager$240 Def00A4
-S A$screen_manager$231 Def009A
-S A$screen_manager$204 Def007B
-S A$screen_manager$132 Def003F
-S A$screen_manager$105 Def0026
-S C$screen_manager.c$43$2$11 Def004C
-S A$screen_manager$241 Def00A6
-S A$screen_manager$232 Def009B
-S A$screen_manager$142 Def0045
-S A$screen_manager$115 Def002D
-S A$screen_manager$251 Def00B0
-S A$screen_manager$242 Def00A9
-S A$screen_manager$233 Def009E
-S A$screen_manager$152 Def004C
-S A$screen_manager$116 Def0030
-S A$screen_manager$243 Def00AA
-S A$screen_manager$234 Def009F
-S A$screen_manager$180 Def0060
-S A$screen_manager$162 Def0053
-S A$screen_manager$153 Def004F
-S A$screen_manager$126 Def003A
-S A$screen_manager$117 Def0031
-S XG$engine_screen_manager_update$0$0 Def007C
-S C$screen_manager.c$53$2$13 Def0062
-S C$screen_manager.c$38$2$10 Def0041
-S A$screen_manager$244 Def00AB
-S A$screen_manager$226 Def0090
-S A$screen_manager$190 Def0066
-S A$screen_manager$163 Def0054
-S A$screen_manager$136 Def0041
-S A$screen_manager$118 Def0034
-S A$screen_manager$109 Def0029
-S C$screen_manager.c$63$1$14 Def0090
-S A$screen_manager$245 Def00AE
-S A$screen_manager$227 Def0093
-S A$screen_manager$209 Def007C
-S A$screen_manager$164 Def0055
-S A$screen_manager$146 Def0048
-S A$screen_manager$137 Def0044
-S A$screen_manager$119 Def0035
-S C$screen_manager.c$64$1$14 Def00A0
-S A$screen_manager$246 Def00AF
-S A$screen_manager$228 Def0094
-S A$screen_manager$174 Def005B
-S A$screen_manager$147 Def0049
-S C$screen_manager.c$65$1$14 Def00B0
-S C$screen_manager.c$48$2$12 Def0057
-S A$screen_manager$238 Def00A0
-S A$screen_manager$229 Def0096
-S A$screen_manager$184 Def0062
-S A$screen_manager$148 Def004A
-S A$screen_manager$239 Def00A3
-S A$screen_manager$194 Def0069
-S A$screen_manager$185 Def0065
-S A$screen_manager$158 Def0050
-S A$screen_manager$195 Def006C
-S A$screen_manager$168 Def0057
-S Fscreen_manager$print_coords$0$0 Def0090
-S A$screen_manager$196 Def006D
-S A$screen_manager$178 Def005E
-S A$screen_manager$169 Def005A
-S C$screen_manager.c$14$0$0 Def0000
-S A$screen_manager$197 Def0070
-S A$screen_manager$179 Def005F
-S A$screen_manager$198 Def0071
-S A$screen_manager$199 Def0072
-S C$screen_manager.c$20$1$7 Def000C
-S C$screen_manager.c$30$1$8 Def0029
-S A$screen_manager$80 Def000C
-S A$screen_manager$71 Def0000
-S C$screen_manager.c$40$1$8 Def0045
-S A$screen_manager$81 Def000F
-S A$screen_manager$72 Def0003
-S C$screen_manager.c$50$1$8 Def005B
-S C$screen_manager.c$41$1$8 Def0048
-S C$screen_manager.c$24$1$7 Def0014
-S A$screen_manager$82 Def0010
-S A$screen_manager$73 Def0004
-S C$screen_manager.c$51$1$8 Def005E
-S C$screen_manager.c$16$1$7 Def0000
-S A$screen_manager$83 Def0013
-S A$screen_manager$74 Def0007
-S C$screen_manager.c$61$1$8 Def0090
-S C$screen_manager.c$32$2$9 Def002D
-S C$screen_manager.c$26$1$7 Def0026
-S A$screen_manager$75 Def0008
-S C$screen_manager.c$35$1$8 Def003A
-S A$screen_manager$76 Def000B
-S C$screen_manager.c$45$1$8 Def0050
-S C$screen_manager.c$36$1$8 Def003D
-S C$screen_manager.c$46$1$8 Def0053
-S C$screen_manager.c$56$1$8 Def0066
-S C$screen_manager.c$29$1$8 Def0026
-S Fscreen_manager$__str_0$0$0 Def0015
-S A$screen_manager$88 Def0014
-S Fscreen_manager$__str_1$0$0 Def007D
-S C$screen_manager.c$58$1$8 Def0069
-S C$screen_manager.c$59$1$8 Def007C
+S XFscreen_manager$draw_turtles$0$0 Def007A
+S G$engine_screen_manager_update$0$0 Def0024
+S XG$engine_screen_manager_init$0$0 Def0010
+S _engine_screen_manager_update Def0024
+S XFscreen_manager$draw_turtle$0$0 Def00BF
+S A$screen_manager$110 Def002E
+S A$screen_manager$111 Def002F
+S A$screen_manager$220 Def0083
+S A$screen_manager$202 Def007A
+S A$screen_manager$130 Def0046
+S A$screen_manager$112 Def0032
+S A$screen_manager$103 Def0024
+S A$screen_manager$230 Def008E
+S A$screen_manager$221 Def0085
+S A$screen_manager$140 Def0050
+S A$screen_manager$113 Def0033
+S C$screen_manager.c$31$2$31 Def0039
+S A$screen_manager$240 Def009D
+S A$screen_manager$231 Def0091
+S A$screen_manager$222 Def0087
+S A$screen_manager$150 Def0058
+S A$screen_manager$141 Def0051
+S A$screen_manager$123 Def0039
+S C$screen_manager.c$32$2$31 Def0047
+S A$screen_manager$241 Def009E
+S A$screen_manager$232 Def0092
+S A$screen_manager$223 Def0088
+S A$screen_manager$160 Def0064
+S A$screen_manager$151 Def005B
+S A$screen_manager$142 Def0052
+S A$screen_manager$124 Def003C
+S C$screen_manager.c$33$2$31 Def0056
+S C$screen_manager.c$26$1$30 Def0024
+S A$screen_manager$260 Def00B4
+S A$screen_manager$251 Def00A6
+S A$screen_manager$242 Def009F
+S A$screen_manager$233 Def0093
+S A$screen_manager$224 Def0089
+S A$screen_manager$215 Def007B
+S A$screen_manager$161 Def0067
+S A$screen_manager$143 Def0054
+S A$screen_manager$134 Def0047
+S A$screen_manager$125 Def003F
+S A$screen_manager$107 Def0027
+S C$screen_manager.c$36$1$30 Def005C
+S A$screen_manager$261 Def00B5
+S A$screen_manager$252 Def00A8
+S A$screen_manager$243 Def00A0
+S A$screen_manager$234 Def0094
+S A$screen_manager$225 Def008A
+S A$screen_manager$216 Def007D
+S A$screen_manager$180 Def006A
+S A$screen_manager$162 Def0068
+S A$screen_manager$144 Def0055
+S A$screen_manager$135 Def0049
+S A$screen_manager$126 Def0040
+S A$screen_manager$117 Def0034
+S A$screen_manager$108 Def002A
+S C$screen_manager.c$42$2$33 Def0074
+S XG$engine_screen_manager_update$0$0 Def0069
+S C$screen_manager.c$37$1$30 Def0069
+S C$screen_manager.c$28$1$30 Def0027
+S C$screen_manager.c$20$1$29 Def0010
+S A$screen_manager$262 Def00B7
+S A$screen_manager$253 Def00AB
+S A$screen_manager$244 Def00A1
+S A$screen_manager$235 Def0096
+S A$screen_manager$217 Def0080
+S A$screen_manager$190 Def0073
+S A$screen_manager$136 Def004A
+S A$screen_manager$127 Def0041
+S A$screen_manager$118 Def0035
+S A$screen_manager$109 Def002D
+S C$screen_manager.c$29$1$30 Def0034
+S C$screen_manager.c$21$1$29 Def0010
+S A$screen_manager$272 Def00BF
+S A$screen_manager$263 Def00B8
+S A$screen_manager$254 Def00AC
+S A$screen_manager$245 Def00A4
+S A$screen_manager$236 Def0098
+S A$screen_manager$218 Def0081
+S A$screen_manager$137 Def004B
+S A$screen_manager$128 Def0044
+S A$screen_manager$119 Def0037
+S C$screen_manager.c$39$1$30 Def006A
+S A$screen_manager$264 Def00B9
+S A$screen_manager$255 Def00AD
+S A$screen_manager$246 Def00A5
+S A$screen_manager$237 Def0099
+S A$screen_manager$219 Def0082
+S A$screen_manager$156 Def005C
+S A$screen_manager$138 Def004D
+S A$screen_manager$129 Def0045
+S C$screen_manager.c$23$1$29 Def0024
+S A$screen_manager$265 Def00BA
+S A$screen_manager$256 Def00AE
+S A$screen_manager$238 Def009A
+S A$screen_manager$229 Def008C
+S A$screen_manager$157 Def005F
+S A$screen_manager$148 Def0056
+S A$screen_manager$139 Def004F
+S C$screen_manager.c$51$2$37 Def008C
+S C$screen_manager.c$46$2$33 Def007A
+S C$screen_manager.c$44$3$34 Def006C
+S A$screen_manager$266 Def00BB
+S A$screen_manager$257 Def00B0
+S A$screen_manager$239 Def009B
+S A$screen_manager$194 Def0074
+S A$screen_manager$185 Def006C
+S A$screen_manager$167 Def0069
+S A$screen_manager$158 Def0060
+S A$screen_manager$149 Def0057
+S C$screen_manager.c$47$2$33 Def007B
+S A$screen_manager$267 Def00BE
+S A$screen_manager$258 Def00B2
+S A$screen_manager$195 Def0075
+S A$screen_manager$186 Def006D
+S A$screen_manager$159 Def0063
+S C$screen_manager.c$17$1$29 Def0000
+S A$screen_manager$259 Def00B3
+S A$screen_manager$196 Def0076
+S A$screen_manager$187 Def006E
+S C$screen_manager.c$18$1$29 Def000D
+S A$screen_manager$197 Def0078
+S A$screen_manager$188 Def006F
+S C$screen_manager.c$57$1$36 Def00BF
+S C$screen_manager.c$15$0$0 Def0000
+S A$screen_manager$189 Def0072
+S C$screen_manager.c$55$2$38 Def00A6
+S C$screen_manager.c$49$1$36 Def007B
+S A$screen_manager$70 Def0004
+S A$screen_manager$71 Def0007
+S A$screen_manager$72 Def0008
+S Fscreen_manager$draw_turtles$0$0 Def006A
+S A$screen_manager$73 Def000B
+S A$screen_manager$74 Def000C
+S A$screen_manager$86 Def0010
+S A$screen_manager$68 Def0000
+S A$screen_manager$78 Def000D
+S A$screen_manager$69 Def0003
+S Fscreen_manager$__str_0$0$0 Def0013
 S G$engine_screen_manager_init$0$0 Def0000
-S XFscreen_manager$print_coords$0$0 Def00B0
+S Fscreen_manager$draw_turtle$0$0 Def007B
 A _DATA size 0 flags 0 addr 0
-A _INITIALIZED size 2 flags 0 addr 0
-S Fscreen_manager$x$0$0 Def0000
-S Fscreen_manager$y$0$0 Def0001
+A _INITIALIZED size C flags 0 addr 0
+S Fscreen_manager$flag$0$0 Def0000
+S Fscreen_manager$wide$0$0 Def0006
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
-A _INITIALIZER size 2 flags 0 addr 0
-S Fscreen_manager$__xinit_x$0$0 Def0000
-S Fscreen_manager$__xinit_y$0$0 Def0001
+A _INITIALIZER size C flags 0 addr 0
+S Fscreen_manager$__xinit_flag$0$0 Def0000
+S Fscreen_manager$__xinit_wide$0$0 Def0006
 A _CABS size 0 flags 8 addr 0
 T 00 00
 R 00 00 02 00
 T 00 00
 R 00 00 02 00
-T 01 00
+T 06 00
 R 00 00 02 00
-T 01 00
+T 06 00
 R 00 00 02 00
 T 00 00
 R 00 00 00 00
-T 00 00 21 04 04 E5 21 15 00 E5 CD 00 00 F1 21
+T 00 00 21 04 04 E5 21 13 00 E5 CD 00 00 F1 F1 CD
 R 00 00 00 00 00 07 00 00 02 0B 02 00
-T 0D 00 0B 12 E3 CD 00 00 F1 C9
-R 00 00 00 00 02 06 03 00
-T 15 00
+T 0E 00 6A 00 C3 00 00
+R 00 00 00 00 00 02 00 00 02 05 06 00
+T 13 00
 R 00 00 00 00
-T 15 00 53 54 45 56 45 50 52 4F 20 53 54 55 44 49
+T 13 00 53 54 45 56 45 50 52 4F 20 53 54 55 44 49
 R 00 00 00 00
-T 23 00 4F 53 00
+T 21 00 4F 53 00
 R 00 00 00 00
-T 26 00
+T 24 00
 R 00 00 00 00
-T 26 00 CD 00 00 7D B7 28 0D 21 04 07 E5 21 7D 00
-R 00 00 00 00 02 03 05 00 00 0E 00 00
-T 34 00 E5 CD 00 00 F1 F1
-R 00 00 00 00 02 04 02 00
-T 3A 00
+T 24 00 CD 00 00 CD 00 00 01 0A 00 C5 E5 CD 00 00
+R 00 00 00 00 02 03 00 00 02 06 00 00 02 0E 07 00
+T 32 00 F1 F1 7D D6 04 20 23 CD 00 00 01 06 00 C5
+R 00 00 00 00 02 0A 00 00
+T 40 00 E5 CD 00 00 F1 F1 45 3E 00 00 80 5F 3E
+R 00 00 00 00 02 04 07 00 09 0A 02 00
+T 4C 00 00 00 CE 00 57 1A 4F 3E 01 91 12 C5 33 CD
+R 00 00 00 00 89 02 02 00
+T 59 00 7B 00 33
+R 00 00 00 00 00 02 00 00
+T 5C 00
 R 00 00 00 00
-T 3A 00 CD 00 00 7D B7 28 04 21 00 00 35
-R 00 00 00 00 02 03 09 00 00 0A 02 00
-T 45 00
+T 5C 00 21 00 01 E5 21 58 40 E5 CD 00 00 F1 F1 C9
+R 00 00 00 00 02 0B 01 00
+T 6A 00
 R 00 00 00 00
-T 45 00 CD 00 00 7D B7 28 04 21 00 00 34
-R 00 00 00 00 02 03 07 00 00 0A 02 00
-T 50 00
+T 6A 00 06 00
 R 00 00 00 00
-T 50 00 CD 00 00 7D B7 28 04 21 01 00 35
-R 00 00 00 00 02 03 08 00 00 0A 02 00
-T 5B 00
+T 6C 00
 R 00 00 00 00
-T 5B 00 CD 00 00 7D B7 28 04 21 01 00 34
-R 00 00 00 00 02 03 00 00 00 0A 02 00
-T 66 00
+T 6C 00 C5 C5 33 CD 7B 00 33 C1 04 78 D6 06 38 F2
+R 00 00 00 00 00 06 00 00
+T 7A 00 C9
 R 00 00 00 00
-T 66 00 CD 90 00 21 00 01 E5 3A 01 00 F5 33 3A
-R 00 00 00 00 00 03 00 00 00 0A 02 00
-T 73 00 00 00 F5 33 CD 00 00 F1 F1 C9
-R 00 00 00 00 00 02 02 00 02 07 01 00
-T 7D 00
+T 7B 00
 R 00 00 00 00
-T 7D 00 53 54 45 56 45 50 52 4F 20 53 54 55 44 49
+T 7B 00 3E 00 00 21 02 00 39 86 4F 3E 00 00 CE 00
+R 00 00 00 00 09 03 02 00 89 0C 02 00
+T 87 00 47 0A B7 20 1A 3E 06 00 21 02 00 39 86 4F
+R 00 00 00 00 09 08 02 00
+T 94 00 3E 06 00 CE 00 47 0A 47 3E 12 F5 33 C5 33
+R 00 00 00 00 89 03 02 00
+T A1 00 CD 00 00 F1 C9
+R 00 00 00 00 02 03 03 00
+T A6 00
 R 00 00 00 00
-T 8B 00 4F 53 28 29 00
-R 00 00 00 00
-T 90 00
-R 00 00 00 00
-T 90 00 21 00 00 4E 06 00 21 0E 06 E5 C5 CD 00 00
-R 00 00 00 00 00 03 02 00 02 0E 06 00
-T 9E 00 F1 F1 21 01 00 4E 06 00 21 0E 07 E5 C5 CD
-R 00 00 00 00 00 05 02 00
-T AC 00 00 00 F1 F1 C9
-R 00 00 00 00 02 02 06 00
+T A6 00 3E 06 00 21 02 00 39 86 4F 3E 06 00 CE 00
+R 00 00 00 00 09 03 02 00 89 0C 02 00
+T B2 00 47 0A 47 3E 12 F5 33 C5 33 CD 00 00 F1 C9
+R 00 00 00 00 02 0C 04 00
 T 00 00
 R 00 00 07 00
-T 00 00 58
+T 00 00 00 00 00 00 00 00
 R 00 00 07 00
-T 01 00
+T 06 00
 R 00 00 07 00
-T 01 00 60
+T 06 00 02 07 0C 11 16 1B
 R 00 00 07 00
