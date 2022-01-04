@@ -51,7 +51,7 @@ void engine_screen_manager_update()
 
 	print_coords();
 	engine_sprite_manager_draw( x, y, SPRITE_TILES );
-	engine_sprite_manager_draw( x + 40, y, SPRITE_TILES );
+	//engine_sprite_manager_draw( x + 40, y, SPRITE_TILES );
 	//engine_sprite_manager_draw( x + 80, y, SPRITE_TILES );
 	//engine_sprite_manager_draw( x + 80, y -16, SPRITE_TILES );
 	engine_sprite_manager_draw( 88, 144, SPRITE_TILES + 48 );
