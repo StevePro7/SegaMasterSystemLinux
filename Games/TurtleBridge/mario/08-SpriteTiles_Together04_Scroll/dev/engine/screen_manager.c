@@ -5,12 +5,15 @@
 #include "global_manager.h"
 #include "input_manager.h"
 #include "sprite_manager.h"
+#include "../devkit/_sms_manager.h"
 #include <stdlib.h>
 
 static void draw_turtles();
 static void draw_turtle( unsigned char i );
 static unsigned char flag[ 6 ] = { 0,0,0,0,0 };
 static unsigned char wide[ 6 ] = { 2, 7, 12, 17, 22, 27 };
+static unsigned char scrollX;
+static unsigned char y;
 
 void engine_screen_manager_init()
 {
@@ -18,22 +21,40 @@ void engine_screen_manager_init()
 	draw_turtles();
 
 	engine_music_manager_play();
+	scrollX = 0;
+	y = 96;
 }
 
 void engine_screen_manager_update()
 {
-	unsigned char test;
-	rand();
-
-	test = rand() % 20;
-	if( 1 == test )
+	unsigned char input;
+	input = engine_input_manager_move_left();
+	if( input )
 	{
-		test = rand() % 6;
-		flag[ test ] = 1 - flag[ test ];
-		draw_turtle( test );
+		engine_font_manager_draw_data( scrollX, 10, 16 );
+		devkit_SMS_setBGScrollX( scrollX++ );
+		engine_font_manager_draw_data( scrollX, 10, 17 );
+	}
+	input = engine_input_manager_move_right();
+	if( input )
+	{
+		engine_font_manager_draw_data( scrollX, 10, 16 );
+		devkit_SMS_setBGScrollX( scrollX-- );
+		engine_font_manager_draw_data( scrollX, 10, 17 );
 	}
 
-	engine_sprite_manager_draw( 88, 64, SPRITE_TILES );
+	input = engine_input_manager_move_up();
+	if( input )
+	{
+		y--;
+	}
+	input = engine_input_manager_move_down();
+	if( input )
+	{
+		y++;
+	}
+
+	engine_sprite_manager_draw( 88, y, SPRITE_TILES );
 }
 
 static void draw_turtles()
