@@ -2,6 +2,9 @@ M:gfx
 S:G$font_tiles__palette__bin$0$0({16}DA16d,SC:U),D,0,0
 S:G$font_tiles__tilemap__bin$0$0({128}DA128d,SC:U),D,0,0
 S:G$font_tiles__tiles__psgcompr$0$0({663}DA663d,SC:U),D,0,0
+S:G$game_tiles__palette__bin$0$0({16}DA16d,SC:U),D,0,0
+S:G$game_tiles__tilemap__bin$0$0({64}DA64d,SC:U),D,0,0
+S:G$game_tiles__tiles__psgcompr$0$0({403}DA403d,SC:U),D,0,0
 S:G$left01__tiles__psgcompr$0$0({80}DA80d,SC:U),D,0,0
 S:G$left02__tiles__psgcompr$0$0({78}DA78d,SC:U),D,0,0
 S:G$left03__tiles__psgcompr$0$0({81}DA81d,SC:U),D,0,0
@@ -11,9 +14,3 @@ S:G$rght01__tiles__psgcompr$0$0({80}DA80d,SC:U),D,0,0
 S:G$rght02__tiles__psgcompr$0$0({80}DA80d,SC:U),D,0,0
 S:G$rght03__tiles__psgcompr$0$0({80}DA80d,SC:U),D,0,0
 S:G$rght04__tiles__psgcompr$0$0({77}DA77d,SC:U),D,0,0
-S:G$turtle_tiles_01__palette__bin$0$0({16}DA16d,SC:U),D,0,0
-S:G$turtle_tiles_01__tilemap__bin$0$0({32}DA32d,SC:U),D,0,0
-S:G$turtle_tiles_01__tiles__psgcompr$0$0({199}DA199d,SC:U),D,0,0
-S:G$turtle_tiles_02__palette__bin$0$0({16}DA16d,SC:U),D,0,0
-S:G$turtle_tiles_02__tilemap__bin$0$0({32}DA32d,SC:U),D,0,0
-S:G$turtle_tiles_02__tiles__psgcompr$0$0({195}DA195d,SC:U),D,0,0
