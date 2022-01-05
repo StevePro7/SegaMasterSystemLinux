@@ -48,10 +48,10 @@ static void draw_turtle( unsigned char i )
 {
 	if( 0 == i )
 	{
-		engine_turtle_manager_draw_01( 10, 18 );
+		engine_turtle_manager_draw_01( 10, 20 );
 	}
 	else
 	{
-		engine_turtle_manager_draw_02( 10, 18 );
+		engine_turtle_manager_draw_02( 10, 20 );
 	}
 }

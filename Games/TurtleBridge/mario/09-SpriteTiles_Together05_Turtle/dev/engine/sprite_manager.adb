@@ -3,8 +3,8 @@ F:G$engine_turtle_manager_draw_01$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lsprite_manager.engine_turtle_manager_draw_01$x$1$68({1}SC:U),B,1,4
 S:Lsprite_manager.engine_turtle_manager_draw_01$y$1$68({1}SC:U),B,1,5
 S:Lsprite_manager.engine_turtle_manager_draw_01$pnt$1$69({2}DG,SC:U),R,0,0,[]
-S:Lsprite_manager.engine_turtle_manager_draw_01$sloc0$1$0({1}SC:U),B,1,-2
-S:Lsprite_manager.engine_turtle_manager_draw_01$sloc1$1$0({1}SC:U),B,1,-1
+S:Lsprite_manager.engine_turtle_manager_draw_01$sloc0$1$0({1}SC:U),B,1,-1
+S:Lsprite_manager.engine_turtle_manager_draw_01$sloc1$1$0({1}SC:U),B,1,-2
 F:G$engine_turtle_manager_draw_02$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lsprite_manager.engine_turtle_manager_draw_02$x$1$70({1}SC:U),B,1,4
 S:Lsprite_manager.engine_turtle_manager_draw_02$y$1$70({1}SC:U),B,1,5
