@@ -4,7 +4,7 @@
 #include "../gfx.h"
 
 // 400px wide / 8px tiles
-unsigned int BG_TILE_WIDTH = 50;
+unsigned int BG_TILE_WIDTH = 50;		// Hockey = 400 x 192	i.e. 50 x 8 tiles wide
 unsigned int X_TILE_MAX = 32;
 unsigned int Y_TILE_MAX = 24;
 
@@ -20,7 +20,7 @@ void engine_scroll_manager_load()
 	for( ytile = 0; ytile < Y_TILE_MAX; ytile++ )
 	{
 		// 32 tiles * 2 bytes each.
-		unsigned char *src = ( void * ) &hockey__tilemap__bin[ BG_TILE_WIDTH*ytile * 2 ];
+		unsigned char *src = ( void * ) &hockey__tilemap__bin[ BG_TILE_WIDTH * ytile * 2 ];
 		int size = X_TILE_MAX * 2;
 
 		devkit_SMS_loadTileMap( 0, ytile, src, size );
