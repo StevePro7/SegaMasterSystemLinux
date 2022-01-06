@@ -21,6 +21,8 @@ void main( void )
 	//devkit_SMS_setBGPaletteColor( 2, devkit_RGB( 3, 2, 1 ) );	// set turtle shell outer	$1b
 
 	devkit_SMS_setBGPaletteColor( 0, devkit_RGB( 3, 3, 3 ) );
+	//devkit_SMS_setBGPaletteColor( 0, devkit_RGB( 1, 2, 3 ) );
+
 	devkit_SMS_setBGPaletteColor( 15, devkit_RGB( 0, 0, 0 ) );
 	//devkit_SMS_setBGPaletteColor( 0, devkit_RGB( 1, 2, 3 ) );
 	//devkit_SMS_setBGPaletteColor( 15, devkit_RGB( 3, 3, 3 ) );		// white
