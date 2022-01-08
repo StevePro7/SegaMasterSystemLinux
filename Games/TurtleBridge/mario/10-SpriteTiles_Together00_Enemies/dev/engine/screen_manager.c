@@ -8,20 +8,29 @@
 //#include <stdlib.h>
 
 //static void draw_turtles();
-static void draw_turtle( unsigned char i );
+//static void draw_turtle( unsigned char i );
 //static unsigned char flag[ 6 ] = { 0,0,0,0,0 };
 //static unsigned char wide[ 6 ] = { 2, 7, 12, 17, 22, 27 };
+static unsigned char flag = 0;
 
 void engine_screen_manager_init()
 {
 	engine_font_manager_draw_text( "STEVEPRO STUDIOS!!", 4, 4 );
-	draw_turtle( 1 );
+	//draw_turtle( 1 );
 
 	//engine_music_manager_play();
+	flag = 0;
 }
 
 void engine_screen_manager_update()
 {
+	unsigned char input;
+	input = engine_input_manager_hold_fire1();
+	if( input )
+	{
+		flag = 1 - flag;
+	}
+
 	/*	unsigned char test;
 		rand();
 
@@ -33,7 +42,7 @@ void engine_screen_manager_update()
 			draw_turtle( test );
 		*/
 
-	engine_sprite_manager_draw( 88, 64, SPRITE_TILES + 8 );
+	engine_sprite_manager_draw( 88, 64, SPRITE_TILES + ( flag * 4 ) );
 }
 
 //static void draw_turtles()
@@ -44,14 +53,14 @@ void engine_screen_manager_update()
 //		draw_turtle( i );
 //	}
 //}
-static void draw_turtle( unsigned char i )
-{
-	if( 0 == i )
-	{
-		engine_turtle_manager_draw_01( 10, 20 );
-	}
-	else
-	{
-		engine_turtle_manager_draw_02( 10, 20 );
-	}
-}
+//static void draw_turtle( unsigned char i )
+//{
+//	if( 0 == i )
+//	{
+//		engine_turtle_manager_draw_01( 10, 20 );
+//	}
+//	else
+//	{
+//		engine_turtle_manager_draw_02( 10, 20 );
+//	}
+//}

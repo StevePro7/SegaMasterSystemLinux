@@ -1,15 +1,12 @@
 M:sprite_manager
-F:G$engine_turtle_manager_draw_01$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lsprite_manager.engine_turtle_manager_draw_01$x$1$68({1}SC:U),B,1,4
-S:Lsprite_manager.engine_turtle_manager_draw_01$y$1$68({1}SC:U),B,1,5
-F:G$engine_turtle_manager_draw_02$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lsprite_manager.engine_turtle_manager_draw_02$x$1$70({1}SC:U),B,1,4
-S:Lsprite_manager.engine_turtle_manager_draw_02$y$1$70({1}SC:U),B,1,5
+F:G$engine_turtle_manager_draw_02$0$0({2}DF,SV:S),C,0,0,0,0,0
+S:Lsprite_manager.engine_turtle_manager_draw_02$x$1$66({1}SC:U),B,1,4
+S:Lsprite_manager.engine_turtle_manager_draw_02$y$1$66({1}SC:U),B,1,5
 F:G$engine_sprite_manager_draw$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lsprite_manager.engine_sprite_manager_draw$x$1$72({1}SC:U),B,1,4
-S:Lsprite_manager.engine_sprite_manager_draw$y$1$72({1}SC:U),B,1,5
-S:Lsprite_manager.engine_sprite_manager_draw$tile$1$72({2}SI:U),B,1,6
-S:Lsprite_manager.engine_sprite_manager_draw$size$1$73({1}SC:U),R,0,0,[]
+S:Lsprite_manager.engine_sprite_manager_draw$x$1$68({1}SC:U),B,1,4
+S:Lsprite_manager.engine_sprite_manager_draw$y$1$68({1}SC:U),B,1,5
+S:Lsprite_manager.engine_sprite_manager_draw$tile$1$68({2}SI:U),B,1,6
+S:Lsprite_manager.engine_sprite_manager_draw$size$1$69({1}SC:U),R,0,0,[]
 S:G$devkit_SMS_init$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOnFeature$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOffFeature$0$0({2}DF,SV:S),C,0,0
@@ -132,3 +129,4 @@ S:G$devkit_SMS_addSprite_bulk8$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_addSprite_bulk12$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_setTilePriority$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_isCollisionDetected$0$0({2}DF,SC:U),C,0,0
+S:G$engine_turtle_manager_draw_02$0$0({2}DF,SV:S),C,0,0
