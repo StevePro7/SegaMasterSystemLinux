@@ -6,7 +6,6 @@ S:Lscreen_manager.draw_turtle$i$1$11({1}SC:U),B,1,4
 S:G$engine_music_manager_play$0$0({2}DF,SV:S),C,0,0
 S:G$engine_sound_manager_play$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_tiles$0$0({2}DF,SV:S),C,0,0
-S:G$engine_content_manager_load_turtle$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_sprites$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_char$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_text$0$0({2}DF,SV:S),C,0,0
