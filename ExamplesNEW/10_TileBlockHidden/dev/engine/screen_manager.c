@@ -8,7 +8,7 @@
 
 void engine_screen_manager_init()
 {
-	engine_gamer_manager_init(48, 48, 1, 256);
+	engine_gamer_manager_init(56, 48, 1, 256);
 	engine_tree_manager_draw();
 	engine_tile_manager_draw_sides(8, 6);
 }
