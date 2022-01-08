@@ -25,10 +25,18 @@ void engine_screen_manager_init()
 void engine_screen_manager_update()
 {
 	unsigned char input;
+	unsigned char value;
 	input = engine_input_manager_hold_fire1();
 	if( input )
 	{
 		flag = 1 - flag;
+	}
+
+	value = 0;
+	input = engine_input_manager_move_fire2();
+	if( input )
+	{
+		value = 1;
 	}
 
 	/*	unsigned char test;
@@ -42,7 +50,14 @@ void engine_screen_manager_update()
 			draw_turtle( test );
 		*/
 
-	engine_sprite_manager_draw( 88, 64, SPRITE_TILES + ( flag * 4 ) );
+	if( value == 0 )
+	{
+		engine_sprite_manager_draw( 88, 64, SPRITE_TILES + ( flag * 4 ) );
+	}
+	else
+	{
+		engine_sprite_manager_draw( 88, 64, SPRITE_TILES + 8 );
+	}
 }
 
 //static void draw_turtles()
