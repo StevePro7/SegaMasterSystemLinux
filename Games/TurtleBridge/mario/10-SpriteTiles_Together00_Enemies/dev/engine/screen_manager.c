@@ -58,6 +58,8 @@ void engine_screen_manager_update()
 	{
 		engine_sprite_manager_draw( 88, 64, SPRITE_TILES + 8 );
 	}
+
+	engine_sprite_manager_draw( 48, 64, SPRITE_TILES + 12 );
 }
 
 //static void draw_turtles()
