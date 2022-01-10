@@ -6,8 +6,8 @@ cd content
 cd gfx
 
 :: Tiles
-bmp2tile.exe Tiles\font_tiles.bmp -savetiles "font_tiles (tiles).psgcompr" -removedupes -planar -tileoffset  0 -savetilemap "font_tiles (tilemap).bin" -savepalette "font_tiles (palette).bin"
-bmp2tile.exe Tiles\back_tiles.bmp -savetiles "back_tiles (tiles).psgcompr" -removedupes -planar -tileoffset 64 -savetilemap "back_tiles (tilemap).bin" -savepalette "back_tiles (palette).bin" -fullpalette
+bmp2tile.exe raw/font_tiles.bmp -savetiles "font_tiles (tiles).psgcompr" -removedupes -planar -tileoffset  0 -savetilemap "font_tiles (tilemap).bin" -savepalette "font_tiles (palette).bin" --exit
+bmp2tile.exe raw/back_tiles.bmp -savetiles "back_tiles (tiles).psgcompr" -removedupes -planar -tileoffset 64 -savetilemap "back_tiles (tilemap).bin" -savepalette "back_tiles (palette).bin" -fullpalette --exit
 
 
 cd ..
