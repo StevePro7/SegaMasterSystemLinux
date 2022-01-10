@@ -13,6 +13,12 @@ void engine_tile_manager_draw( unsigned char x, unsigned char y )
 	devkit_SMS_setNextTileatXY( x + 1, y + 1 );	devkit_SMS_setTile( *pnt + 3 );
 }
 
+void engine_tile_manager_tile( unsigned char x, unsigned char y, unsigned char i )
+{
+	const unsigned char *pnt = back_tiles__tilemap__bin;
+	devkit_SMS_loadTileMap( x, y, ( void * ) pnt[ i ], 2 );  // 32 tiles * 2 bytes each 
+}
+
 //void engine_turtle_manager_draw_02( unsigned char x, unsigned char y )
 //{
 //	const unsigned char *pnt = game_tiles__tilemap__bin;

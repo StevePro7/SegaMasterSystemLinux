@@ -20,14 +20,21 @@ unsigned int scrollRightDivided8 = 0;
 unsigned int xtile = 0;
 unsigned int ytile = 0;
 
-
 void engine_screen_manager_init()
 {
+	unsigned char xx, yy;
+
 	engine_font_manager_draw_text( "STEVEPRO STUDIOS!!", 4, 4 );
 	//draw_turtle( 1 );
 
 	//engine_music_manager_play();
-	engine_tile_manager_draw( 10, 10 );
+	//engine_tile_manager_draw( 32, 10 );
+
+	for( xx = 24; xx < 32; xx += 2 )
+	{
+		yy = 18;
+		engine_tile_manager_draw( xx, yy );
+	}
 }
 
 void engine_screen_manager_update()
@@ -36,7 +43,7 @@ void engine_screen_manager_update()
 	unsigned char input;
 	//unsigned char value;
 	input = engine_input_manager_hold_right();
-	if( input )
+	if( input && ( ( scrollRightDivided8 < ( BG_TILE_WIDTH - X_TILE_MAX ) ) /*|| (scroll == 0)*/ ) )
 	{
 		engine_font_manager_draw_text( "STEVEPRO STUDIOS!!", 4, 5 );
 
@@ -47,7 +54,14 @@ void engine_screen_manager_update()
 
 		if( ( scrollRight % 8 ) == delta )
 		{
-			engine_font_manager_draw_text( "STEVEPRO STUDIOS!!", 4, 6 );
+			engine_font_manager_draw_text( "STEVEPRO STUDIOS!!", 4, 7 );
+			test = scrollRightDivided8 % 2;
+			engine_font_manager_draw_data( test, 4, 8 );
+
+			//test = 1 - test;
+			//engine_tile_manager_tile( X_TILE_MAX + scrollRightDivided8, ytile + 10, test * 2 + 0 );
+			engine_tile_manager_tile( 20 + scrollRightDivided8, ytile + 10, test * 2 + 0 );
+			//engine_tile_manager_tile( X_TILE_MAX + scrollRightDivided8, ytile - 0, 1 );
 		}
 	}
 
