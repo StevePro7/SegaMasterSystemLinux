@@ -5,13 +5,21 @@
 #include "global_manager.h"
 #include "input_manager.h"
 #include "sprite_manager.h"
-//#include <stdlib.h>
+#include "../devkit/_sms_manager.h"
 
-//static void draw_turtles();
-//static void draw_turtle( unsigned char i );
-//static unsigned char flag[ 6 ] = { 0,0,0,0,0 };
-//static unsigned char wide[ 6 ] = { 2, 7, 12, 17, 22, 27 };
-static unsigned char flag = 0;
+unsigned int BG_TILE_WIDTH = 64;
+unsigned int X_TILE_MAX = 32;
+unsigned int Y_TILE_MAX = 24;
+
+unsigned int test = 0;
+unsigned int test2 = 0;
+unsigned int scroll = 0;
+unsigned int scrollDivided8 = 0;
+unsigned int scrollRight = 0;
+unsigned int scrollRightDivided8 = 0;
+unsigned int xtile = 0;
+unsigned int ytile = 0;
+
 
 void engine_screen_manager_init()
 {
@@ -19,37 +27,28 @@ void engine_screen_manager_init()
 	//draw_turtle( 1 );
 
 	//engine_music_manager_play();
-	flag = 0;
-
 	engine_tile_manager_draw( 10, 10 );
 }
 
 void engine_screen_manager_update()
 {
+	const unsigned char delta = 1;
 	unsigned char input;
-	unsigned char value;
-	input = engine_input_manager_hold_fire1();
+	//unsigned char value;
+	input = engine_input_manager_hold_right();
 	if( input )
 	{
-		flag = 1 - flag;
-	}
+		engine_font_manager_draw_text( "STEVEPRO STUDIOS!!", 4, 5 );
 
-	value = 0;
-	input = engine_input_manager_move_fire2();
-	if( input )
-	{
-		value = 1;
-	}
+		scroll -= delta;
+		scrollRight += delta;
+		scrollRightDivided8 = scrollRight / 8;
+		devkit_SMS_setBGScrollX( scroll );
 
-	/*	unsigned char test;
-		rand();
-
-		test = rand() % 20;
-		if( 1 == test )
+		if( ( scrollRight % 8 ) == delta )
 		{
-			test = rand() % 6;
-			flag[ test ] = 1 - flag[ test ];
-			draw_turtle( test );
-		*/
+			engine_font_manager_draw_text( "STEVEPRO STUDIOS!!", 4, 6 );
+		}
+	}
 
 }
