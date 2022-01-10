@@ -22,6 +22,6 @@ void engine_content_manager_load_tiles()
 void engine_content_manager_load_sprites()
 {
 	// Sprite tiles.
-	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) game_tiles__tiles__psgcompr, SPRITE_TILES + ( 0 * 4 ) );
-	devkit_SMS_loadSpritePalette( ( void * ) game_tiles__palette__bin );
+	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) back_tiles__tiles__psgcompr, SPRITE_TILES + ( 0 * 4 ) );
+	devkit_SMS_loadSpritePalette( ( void * ) back_tiles__palette__bin );
 }
