@@ -20,6 +20,8 @@ void engine_screen_manager_init()
 
 	//engine_music_manager_play();
 	flag = 0;
+
+	engine_tile_manager_draw( 10, 10 );
 }
 
 void engine_screen_manager_update()
@@ -50,34 +52,4 @@ void engine_screen_manager_update()
 			draw_turtle( test );
 		*/
 
-	if( value == 0 )
-	{
-		engine_sprite_manager_draw( 88, 64, SPRITE_TILES + ( flag * 4 ) );
-	}
-	else
-	{
-		engine_sprite_manager_draw( 88, 64, SPRITE_TILES + 8 );
-	}
-
-	engine_sprite_manager_draw( 48, 64, SPRITE_TILES + 12 );
 }
-
-//static void draw_turtles()
-//{
-//	unsigned char i;
-//	for( i = 0; i < 6; i++ )
-//	{
-//		draw_turtle( i );
-//	}
-//}
-//static void draw_turtle( unsigned char i )
-//{
-//	if( 0 == i )
-//	{
-//		engine_turtle_manager_draw_01( 10, 20 );
-//	}
-//	else
-//	{
-//		engine_turtle_manager_draw_02( 10, 20 );
-//	}
-//}

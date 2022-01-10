@@ -182,6 +182,11 @@ S:G$engine_input_manager_move_left$0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_right$0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire1$0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire2$0$0({2}DF,SC:U),C,0,0
+S:G$engine_log_manager_open$0$0({2}DF,SV:S),C,0,0
+S:G$engine_log_manager_close$0$0({2}DF,SV:S),C,0,0
+S:G$engine_log_manager_debug$0$0({2}DF,SV:S),C,0,0
+S:G$engine_log_manager_infos$0$0({2}DF,SV:S),C,0,0
+S:G$engine_log_manager_error$0$0({2}DF,SV:S),C,0,0
 S:G$engine_screen_manager_init$0$0({2}DF,SV:S),C,0,0
 S:G$engine_screen_manager_update$0$0({2}DF,SV:S),C,0,0
 S:G$main$0$0({2}DF,SV:S),C,0,0
