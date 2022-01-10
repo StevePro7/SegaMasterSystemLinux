@@ -30,10 +30,13 @@ void engine_screen_manager_init()
 	//engine_music_manager_play();
 	//engine_tile_manager_draw( 32, 10 );
 
-	for( xx = 24; xx < 32; xx += 2 )
+	for( xx = 1; xx < 32; xx += 2 )
 	{
-		yy = 18;
-		engine_tile_manager_draw( xx, yy );
+		yy = 8;
+		engine_content_manager_draw_tileX( xx, yy + 0 );
+		engine_content_manager_draw_tileX( xx, yy + 2 );
+		engine_content_manager_draw_tileX( xx, yy + 4 );
+		//engine_content_manager_draw_tileX(BlockA0__tilemap__bin, xx, yy + 6);
 	}
 }
 
@@ -60,7 +63,7 @@ void engine_screen_manager_update()
 
 			//test = 1 - test;
 			//engine_tile_manager_tile( X_TILE_MAX + scrollRightDivided8, ytile + 10, test * 2 + 0 );
-			engine_tile_manager_tile( 20 + scrollRightDivided8, ytile + 10, test * 2 + 0 );
+//			engine_tile_manager_tile( 20 + scrollRightDivided8, ytile + 10, test * 2 + 0 );
 			//engine_tile_manager_tile( X_TILE_MAX + scrollRightDivided8, ytile - 0, 1 );
 		}
 	}

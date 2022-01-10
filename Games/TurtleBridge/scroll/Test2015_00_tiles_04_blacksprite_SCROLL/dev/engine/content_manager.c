@@ -8,12 +8,11 @@
 
 void engine_content_manager_load_tiles()
 {
-	// Font tiles.
-	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) font_tiles__tiles__psgcompr, FONT_TILES );
-	devkit_SMS_loadBGPalette( ( void * ) font_tiles__palette__bin );
+	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char* ) BlockA0__tiles__psgcompr, 16 );
+	//SMS_loadBGPalette((void *)BlockA0__palette__bin);
 
-	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) back_tiles__tiles__psgcompr, BACK_TILES );
-	devkit_SMS_loadBGPalette( ( void * ) back_tiles__palette__bin );
+	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char* ) Platform__tiles__psgcompr, 20 );
+	devkit_SMS_loadBGPalette( ( void * ) Platform__palette__bin );
 }
 
 //void engine_content_manager_load_turtle()
