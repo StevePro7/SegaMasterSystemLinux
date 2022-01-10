@@ -3,6 +3,7 @@
 
 void engine_log_manager_open();
 void engine_log_manager_close();
+//void engine_log_manager_datas( unsigned char values, ... );
 void engine_log_manager_debug( const char* message, ... );
 void engine_log_manager_infos( const char* message, ... );
 void engine_log_manager_error( const char* message, ... );

@@ -6,6 +6,8 @@
 #include <time.h>
 
 #ifdef _CONSOLE
+#pragma warning( disable : 4024 )
+#pragma warning( disable : 4047 )
 #pragma warning( disable : 4996 )
 #else
 #pragma disable_warning 85
@@ -41,6 +43,25 @@ void engine_log_manager_close()
 	file = NULL;
 #endif
 }
+
+//void engine_log_manager_datas( unsigned char values, ... )
+//{
+//	char data[ 2 ] = { 0, 0 };
+//	unsigned int quotient = 0;
+//	unsigned char remainder = 0;
+//	va_list args;
+//
+//	quotient = values / 10;
+//	remainder = values % 10;
+//	data[ 0 ] = remainder;
+//	data[ 1 ] = quotient;
+//
+//	const char* message = data;
+//
+//	va_start( args, message );
+//	log_format( "value", message, args );
+//	va_end( args );
+//}
 
 void engine_log_manager_debug( const char* message, ... )
 {

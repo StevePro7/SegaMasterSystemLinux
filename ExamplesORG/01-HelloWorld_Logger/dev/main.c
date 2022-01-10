@@ -9,11 +9,12 @@ void main( void )
 	devkit_SMS_displayOn();
 
 	engine_log_manager_open();
-	for( i = 0; i < 20; i++ )
+	for( i = 0; i < 1; i++ )
 	{
 		engine_log_manager_debug( "check?" );
+		//engine_log_manager_datas( 18 );
 		engine_log_manager_infos( "testing" );
-		engine_log_manager_error( "uh-oh" );
+		//engine_log_manager_error( "uh-oh" );
 		devkit_SMS_waitForVBlank();
 	}
 	engine_log_manager_close();

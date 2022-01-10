@@ -7,5 +7,4 @@ void engine_log_manager_debug( const char* message, ... );
 void engine_log_manager_infos( const char* message, ... );
 void engine_log_manager_error( const char* message, ... );
 
-
 #endif//_LOG_MANAGER_H_
