@@ -16,6 +16,7 @@ S:G$scrollRight$0$0({2}SI:U),E,0,0
 S:G$scrollRightDivided8$0$0({2}SI:U),E,0,0
 S:G$xtile$0$0({2}SI:U),E,0,0
 S:G$ytile$0$0({2}SI:U),E,0,0
+S:G$yDelta$0$0({2}SI:U),E,0,0
 S:G$engine_music_manager_play$0$0({2}DF,SV:S),C,0,0
 S:G$engine_sound_manager_play$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_tiles$0$0({2}DF,SV:S),C,0,0
@@ -36,8 +37,8 @@ S:G$engine_input_manager_move_left$0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_right$0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire1$0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire2$0$0({2}DF,SC:U),C,0,0
-S:G$engine_tile_manager_draw$0$0({2}DF,SV:S),C,0,0
-S:G$engine_tile_manager_tile$0$0({2}DF,SV:S),C,0,0
+S:G$engine_content_manager_draw_tileX$0$0({2}DF,SV:S),C,0,0
+S:G$engine_content_manager_draw_tile$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_init$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOnFeature$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOffFeature$0$0({2}DF,SV:S),C,0,0

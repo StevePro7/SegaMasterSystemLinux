@@ -19,6 +19,7 @@ unsigned int scrollRight = 0;
 unsigned int scrollRightDivided8 = 0;
 unsigned int xtile = 0;
 unsigned int ytile = 0;
+unsigned int yDelta = 0;
 
 void engine_screen_manager_init()
 {
@@ -30,7 +31,7 @@ void engine_screen_manager_init()
 	//engine_music_manager_play();
 	//engine_tile_manager_draw( 32, 10 );
 
-	for( xx = 1; xx < 32; xx += 2 )
+	for( xx = 0; xx < 32; xx += 2 )
 	{
 		yy = 8;
 		engine_content_manager_draw_tileX( xx, yy + 0 );
@@ -38,6 +39,8 @@ void engine_screen_manager_init()
 		engine_content_manager_draw_tileX( xx, yy + 4 );
 		//engine_content_manager_draw_tileX(BlockA0__tilemap__bin, xx, yy + 6);
 	}
+
+	yDelta = 2;
 }
 
 void engine_screen_manager_update()
@@ -48,23 +51,24 @@ void engine_screen_manager_update()
 	input = engine_input_manager_hold_right();
 	if( input && ( ( scrollRightDivided8 < ( BG_TILE_WIDTH - X_TILE_MAX ) ) /*|| (scroll == 0)*/ ) )
 	{
-		engine_font_manager_draw_text( "STEVEPRO STUDIOS!!", 4, 5 );
-
 		scroll -= delta;
 		scrollRight += delta;
 		scrollRightDivided8 = scrollRight / 8;
 		devkit_SMS_setBGScrollX( scroll );
 
+		// This works but does not update the top row
 		if( ( scrollRight % 8 ) == delta )
 		{
-			engine_font_manager_draw_text( "STEVEPRO STUDIOS!!", 4, 7 );
-			test = scrollRightDivided8 % 2;
-			engine_font_manager_draw_data( test, 4, 8 );
+			// This works except the top row which doesn't seem to scroll.
+			for( ytile = 4; ytile < Y_TILE_MAX - yDelta; ytile += 2 )
+			{
+				test = scrollRightDivided8 % 2;
+				//test = 1 - test;
+				engine_content_manager_draw_tile( X_TILE_MAX + scrollRightDivided8, ytile - 1, test * 2 + 0 );
+				engine_content_manager_draw_tile( X_TILE_MAX + scrollRightDivided8, ytile - 0, test * 2 + 4 );
+			}
 
-			//test = 1 - test;
-			//engine_tile_manager_tile( X_TILE_MAX + scrollRightDivided8, ytile + 10, test * 2 + 0 );
-//			engine_tile_manager_tile( 20 + scrollRightDivided8, ytile + 10, test * 2 + 0 );
-			//engine_tile_manager_tile( X_TILE_MAX + scrollRightDivided8, ytile - 0, 1 );
+			
 		}
 	}
 
