@@ -33,7 +33,7 @@ void engine_screen_manager_init()
 
 	for( xx = 0; xx < 32; xx += 2 )
 	{
-		yy = 8;
+		yy = 18;
 		engine_content_manager_draw_tileX( xx, yy + 0 );
 		engine_content_manager_draw_tileX( xx, yy + 2 );
 		engine_content_manager_draw_tileX( xx, yy + 4 );
@@ -60,7 +60,7 @@ void engine_screen_manager_update()
 		if( ( scrollRight % 8 ) == delta )
 		{
 			// This works except the top row which doesn't seem to scroll.
-			for( ytile = 4; ytile < Y_TILE_MAX - yDelta; ytile += 2 )
+			for( ytile = 14; ytile < Y_TILE_MAX - yDelta; ytile += 2 )
 			{
 				test = scrollRightDivided8 % 2;
 				//test = 1 - test;
