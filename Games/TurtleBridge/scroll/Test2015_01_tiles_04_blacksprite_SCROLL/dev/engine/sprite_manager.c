@@ -4,7 +4,7 @@
 
 void engine_content_manager_draw_tileX( unsigned char x, unsigned char y )
 {
-	const unsigned char *pnt = BlockA0__tilemap__bin;
+	const unsigned char *pnt = Platform__tilemap__bin;
 
 	devkit_SMS_setNextTileatXY( x + 0, y + 0 );	devkit_SMS_setTile( *pnt + 0 );
 	devkit_SMS_setNextTileatXY( x + 1, y + 0 );	devkit_SMS_setTile( *pnt + 1 );
