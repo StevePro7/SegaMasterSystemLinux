@@ -8,9 +8,11 @@
 
 void engine_content_manager_load_tiles()
 {
-	//devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char* ) BlockA0__tiles__psgcompr, 16 );
-	//SMS_loadBGPalette((void *)BlockA0__palette__bin);
+	// Font tiles.
+	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) font_tiles__tiles__psgcompr, FONT_TILES );
+	devkit_SMS_loadBGPalette( ( void * ) font_tiles__palette__bin );
 
+	// Platform tiles
 	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char* ) Platform__tiles__psgcompr, 64 );
 	devkit_SMS_loadBGPalette( ( void * ) Platform__palette__bin );
 }

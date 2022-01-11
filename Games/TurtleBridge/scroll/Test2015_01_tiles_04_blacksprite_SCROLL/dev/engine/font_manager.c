@@ -9,74 +9,74 @@
 
 void engine_font_manager_draw_char( unsigned char ch, unsigned char x, unsigned char y )
 {
-	//const unsigned char *pnt = font_tiles__tilemap__bin;
-	//unsigned char tile = ch - TEXT_ROOT;
-	//devkit_SMS_setNextTileatXY( x, y );
-	//devkit_SMS_setTile( *pnt + tile );
+	const unsigned char *pnt = font_tiles__tilemap__bin;
+	unsigned char tile = ch - TEXT_ROOT;
+	devkit_SMS_setNextTileatXY( x, y );
+	devkit_SMS_setTile( *pnt + tile );
 }
 
 void engine_font_manager_draw_text( unsigned char *text, unsigned char x, unsigned char y )
 {
-	//const unsigned char *pnt = font_tiles__tilemap__bin;
-	//unsigned char idx = 0;
+	const unsigned char *pnt = font_tiles__tilemap__bin;
+	unsigned char idx = 0;
 
-	//while( '\0' != text[idx] )
-	//{
-	//	signed char tile = text[idx] - TEXT_ROOT;
-	//	devkit_SMS_setNextTileatXY( x++, y );
-	//	devkit_SMS_setTile( *pnt + tile );
-	//	idx++;
-	//}
+	while( '\0' != text[idx] )
+	{
+		signed char tile = text[idx] - TEXT_ROOT;
+		devkit_SMS_setNextTileatXY( x++, y );
+		devkit_SMS_setTile( *pnt + tile );
+		idx++;
+	}
 }
 
 void engine_font_manager_draw_data( unsigned int data, unsigned char x, unsigned char y )
 {
-	//const unsigned char *pnt = font_tiles__tilemap__bin;
+	const unsigned char *pnt = font_tiles__tilemap__bin;
 
-	//unsigned char idx;
-	//signed char tile;
+	unsigned char idx;
+	signed char tile;
 
-	//unsigned int quotient = 0;
-	//unsigned char remainder = 0;
+	unsigned int quotient = 0;
+	unsigned char remainder = 0;
 
-	//char hold[DATA_LONG];
-	//for( idx = 0; idx < DATA_LONG; ++idx )
-	//{
-	//	quotient = data / UNIT_ROOT;
-	//	remainder = data % UNIT_ROOT;
+	char hold[DATA_LONG];
+	for( idx = 0; idx < DATA_LONG; ++idx )
+	{
+		quotient = data / UNIT_ROOT;
+		remainder = data % UNIT_ROOT;
 
-	//	hold[idx] = remainder;
-	//	data /= UNIT_ROOT;
+		hold[idx] = remainder;
+		data /= UNIT_ROOT;
 
-	//	tile = hold[idx] + DATA_ROOT;
-	//	if( 0 == quotient && 0 == remainder && idx > 0 )
-	//	{
-	//		// Replace with space!
-	//		tile = 0;
-	//	}
+		tile = hold[idx] + DATA_ROOT;
+		if( 0 == quotient && 0 == remainder && idx > 0 )
+		{
+			// Replace with space!
+			tile = 0;
+		}
 
-	//	devkit_SMS_setNextTileatXY( x--, y );
-	//	devkit_SMS_setTile( *pnt + tile );
-	//}
+		devkit_SMS_setNextTileatXY( x--, y );
+		devkit_SMS_setTile( *pnt + tile );
+	}
 }
 
 void engine_font_manager_draw_zero( unsigned int data, unsigned char x, unsigned char y )
 {
-	//const unsigned char *pnt = font_tiles__tilemap__bin;
+	const unsigned char *pnt = font_tiles__tilemap__bin;
 
-	//unsigned char idx;
-	////signed char tile;
-	//unsigned char tile;
+	unsigned char idx;
+	//signed char tile;
+	unsigned char tile;
 
-	//char hold[DATA_LONG];
-	//for( idx = 0; idx < DATA_LONG; ++idx )
-	//{
-	//	hold[idx] = data % UNIT_ROOT;
-	//	data /= UNIT_ROOT;
+	char hold[DATA_LONG];
+	for( idx = 0; idx < DATA_LONG; ++idx )
+	{
+		hold[idx] = data % UNIT_ROOT;
+		data /= UNIT_ROOT;
 
-	//	tile = hold[idx] + DATA_ROOT;
+		tile = hold[idx] + DATA_ROOT;
 
-	//	devkit_SMS_setNextTileatXY( x--, y );
-	//	devkit_SMS_setTile( *pnt + tile );
-	//}
+		devkit_SMS_setNextTileatXY( x--, y );
+		devkit_SMS_setTile( *pnt + tile );
+	}
 }
