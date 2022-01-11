@@ -6,6 +6,7 @@
 #include "input_manager.h"
 #include "sprite_manager.h"
 #include "../devkit/_sms_manager.h"
+#include <stdlib.h>
 
 unsigned int BG_TILE_WIDTH = 64;
 unsigned int X_TILE_MAX = 32;
@@ -26,21 +27,17 @@ void engine_screen_manager_init()
 	unsigned char xx, yy;
 
 	engine_font_manager_draw_text( "STEVEPRO STUDIOS!!", 4, 4 );
-	//draw_turtle( 1 );
-
-	//engine_music_manager_play();
-	//engine_tile_manager_draw( 32, 10 );
-
+	engine_font_manager_draw_data( test, 30, yDelta++ );
 	for( xx = 0; xx < 32; xx += 2 )
 	{
 		yy = 18;
 		engine_content_manager_draw_tileX( xx, yy + 0 );
 		engine_content_manager_draw_tileX( xx, yy + 2 );
 		engine_content_manager_draw_tileX( xx, yy + 4 );
-		//engine_content_manager_draw_tileX(BlockA0__tilemap__bin, xx, yy + 6);
 	}
 
-	yDelta = 2;
+	//engine_music_manager_play();
+	//yDelta = 2;
 }
 
 void engine_screen_manager_update()
@@ -59,16 +56,24 @@ void engine_screen_manager_update()
 		// This works but does not update the top row
 		if( ( scrollRight % 8 ) == delta )
 		{
+			//test = scrollRightDivided8 % 2;
+			test = 2;
+			//if( 0 == test )
+			//{
+			//	test2 = rand() % 10;
+			//	engine_font_manager_draw_data( test2, 30, 12 );
+			//	test += test2;
+			//	engine_font_manager_draw_data( test, 30, yDelta++ );
+			//}
+
 			// This works except the top row which doesn't seem to scroll.
-			for( ytile = 14; ytile < Y_TILE_MAX - yDelta; ytile += 2 )
+			for( ytile = 14; ytile < Y_TILE_MAX; ytile += 2 )
 			{
-				test = scrollRightDivided8 % 2;
-				//test = 1 - test;
 				engine_content_manager_draw_tile( X_TILE_MAX + scrollRightDivided8, ytile - 1, test * 2 + 0 );
 				engine_content_manager_draw_tile( X_TILE_MAX + scrollRightDivided8, ytile - 0, test * 2 + 4 );
 			}
 
-			
+			engine_font_manager_draw_data( test, 30, yDelta++ );
 		}
 	}
 
