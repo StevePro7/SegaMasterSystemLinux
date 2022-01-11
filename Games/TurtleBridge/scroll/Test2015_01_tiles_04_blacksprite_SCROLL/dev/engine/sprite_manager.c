@@ -4,7 +4,7 @@
 
 void engine_content_manager_draw_tileX( unsigned char x, unsigned char y )
 {
-	const unsigned char *pnt = Platform__tilemap__bin;
+	const unsigned char *pnt = back_tiles__tilemap__bin;
 
 	devkit_SMS_setNextTileatXY( x + 0, y + 0 );	devkit_SMS_setTile( *pnt + 0 );
 	devkit_SMS_setNextTileatXY( x + 1, y + 0 );	devkit_SMS_setTile( *pnt + 1 );
@@ -14,7 +14,7 @@ void engine_content_manager_draw_tileX( unsigned char x, unsigned char y )
 
 void engine_content_manager_draw_tile( unsigned char x, unsigned char y, unsigned char i )
 {
-	devkit_SMS_loadTileMap( x, y, ( void * ) &Platform__tilemap__bin[ i ], 2 );  // 32 tiles * 2 bytes each 
+	devkit_SMS_loadTileMap( x, y, ( void * ) &back_tiles__tilemap__bin[ i ], 2 );  // 32 tiles * 2 bytes each 
 }
 
 //void engine_tile_manager_draw( unsigned char x, unsigned char y )

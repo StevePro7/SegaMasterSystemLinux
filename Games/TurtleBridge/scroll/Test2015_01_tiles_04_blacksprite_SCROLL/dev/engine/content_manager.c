@@ -13,8 +13,8 @@ void engine_content_manager_load_tiles()
 	devkit_SMS_loadBGPalette( ( void * ) font_tiles__palette__bin );
 
 	// Platform tiles
-	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char* ) Platform__tiles__psgcompr, 64 );
-	devkit_SMS_loadBGPalette( ( void * ) Platform__palette__bin );
+	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char* ) back_tiles__tiles__psgcompr, 64 );
+	devkit_SMS_loadBGPalette( ( void * ) back_tiles__palette__bin );
 }
 
 //void engine_content_manager_load_turtle()
