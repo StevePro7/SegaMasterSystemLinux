@@ -10,15 +10,15 @@
 
 unsigned int BG_TILE_WIDTH = 64;
 unsigned int X_TILE_MAX = 32;
-unsigned int X_TILE_DIFF = 4; // 64 - 32;
+unsigned int X_TILE_DIFF = 6; // 64 - 32;
 unsigned int Y_TILE_MAX = 24;
 
-unsigned int test = 0;
+unsigned char test = 0;
 unsigned int test2 = 0;
-unsigned int scroll = 0;
+unsigned char scroll = 0;
 //unsigned int scrollDivided8 = 0;
-unsigned int scrollRight = 0;
-unsigned int scrollRightDivided8 = 0;
+unsigned char scrollRight = 0;
+unsigned char scrollRightDivided8 = 0;
 //unsigned int xtile = 0;
 unsigned int ytile = 0;
 unsigned int yDelta = 0;
@@ -51,13 +51,13 @@ void engine_screen_manager_update()
 	const unsigned char delta = 1;
 	unsigned char input;
 	//unsigned char value;
-	input = engine_input_manager_hold_right();
+	input = engine_input_manager_move_right();
 	//if( input && ( ( scrollRightDivided8 < ( BG_TILE_WIDTH - X_TILE_MAX ) ) /*|| (scroll == 0)*/ ) )
 	//if( input && ( ( scrollRightDivided8 < ( X_TILE_DIFF ) ) /*|| (scroll == 0)*/ ) )
 	if( input )
 	{
-		if( scrollRightDivided8 < X_TILE_DIFF )
-		{
+		//if( scrollRightDivided8 < X_TILE_DIFF )
+		//{
 			scroll -= delta;
 			scrollRight += delta;
 			scrollRightDivided8 = scrollRight / 8;
@@ -79,14 +79,15 @@ void engine_screen_manager_update()
 				// This works except the top row which doesn't seem to scroll.
 				for( ytile = 14; ytile < Y_TILE_MAX; ytile += 2 )
 				{
-					engine_content_manager_draw_tile( X_TILE_MAX + scrollRightDivided8, ytile - 1, test * 2 + 0 );
-					engine_content_manager_draw_tile( X_TILE_MAX + scrollRightDivided8, ytile - 0, test * 2 + 4 );
+					engine_content_manager_draw_tile( X_TILE_MAX + scrollRightDivided8, ytile - 1, (test+40) * 2 + 0 );
+					engine_content_manager_draw_tile( X_TILE_MAX + scrollRightDivided8, ytile - 0, (test+40) * 2 + 4 );
 				}
 
-				//engine_font_manager_draw_data( test, 30, yDelta++ );
+				test2 = ( test + 48 ) * 2 + 4;
+				engine_font_manager_draw_data( test2, 30, yDelta+2 );
 				printout();
 			}
-		}
+		//}
 	}
 
 }
@@ -94,8 +95,8 @@ void engine_screen_manager_update()
 static void printout()
 {
 	engine_font_manager_draw_data( test, 10, yDelta );
-	engine_font_manager_draw_data( scrollRight, 15, yDelta );
+	//engine_font_manager_draw_data( scrollRight, 15, yDelta );
 	engine_font_manager_draw_data( scrollRightDivided8, 20, yDelta );
-	engine_font_manager_draw_data( scroll, 30, yDelta );
-	yDelta++;
+	//engine_font_manager_draw_data( scroll, 30, yDelta );
+	//yDelta++;
 }

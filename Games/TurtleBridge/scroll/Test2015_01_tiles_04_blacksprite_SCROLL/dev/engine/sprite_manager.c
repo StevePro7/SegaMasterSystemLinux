@@ -12,7 +12,7 @@ void engine_content_manager_draw_tileX( unsigned char x, unsigned char y )
 	devkit_SMS_setNextTileatXY( x + 1, y + 1 );	devkit_SMS_setTile( *pnt + 3 );
 }
 
-void engine_content_manager_draw_tile( unsigned char x, unsigned char y, unsigned char i )
+void engine_content_manager_draw_tile( unsigned char x, unsigned char y, unsigned int i )
 {
 	devkit_SMS_loadTileMap( x, y, ( void * ) &back_tiles__tilemap__bin[ i ], 2 );  // 32 tiles * 2 bytes each 
 }
