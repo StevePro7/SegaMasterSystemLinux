@@ -1,6 +1,9 @@
 #include "sprite_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
+#include <stdlib.h>
+
+static unsigned int offset;
 
 void engine_content_manager_draw_tileX( unsigned char x, unsigned char y )
 {
@@ -15,6 +18,23 @@ void engine_content_manager_draw_tileX( unsigned char x, unsigned char y )
 void engine_content_manager_draw_tile( unsigned char x, unsigned char y, unsigned int i )
 {
 	devkit_SMS_loadTileMap( x, y, ( void * ) &back_tiles__tilemap__bin[ i ], 2 );  // 32 tiles * 2 bytes each 
+}
+
+void engine_tilemap_manager_draw_tile( unsigned char x, unsigned char y )
+{
+	const unsigned char *pnt = back_tiles__tilemap__bin;
+	unsigned int index = 0;
+	void *src = NULL;
+
+	index = offset * 2 + 0;
+	src = ( unsigned char * ) &pnt[ index ];
+	devkit_SMS_loadTileMap( x, y - 0, ( void * ) src, 2 );  // 32 tiles * 2 bytes each 
+
+	index = offset * 2 + 4;
+	src = ( unsigned char * ) &pnt[ index ];
+	devkit_SMS_loadTileMap( x, y + 1, ( void * ) src, 2 );  // 32 tiles * 2 bytes each 
+	
+	offset = 1 - offset;
 }
 
 //void engine_tile_manager_draw( unsigned char x, unsigned char y )

@@ -4,6 +4,8 @@
 void engine_content_manager_draw_tileX( unsigned char x, unsigned char y );
 void engine_content_manager_draw_tile( unsigned char x, unsigned char y, unsigned int i );
 
+void engine_tilemap_manager_draw_tile( unsigned char x, unsigned char y );
+
 //void engine_tile_manager_draw( unsigned char x, unsigned char y );
 //void engine_tile_manager_tile( unsigned char x, unsigned char y, unsigned char i );
 

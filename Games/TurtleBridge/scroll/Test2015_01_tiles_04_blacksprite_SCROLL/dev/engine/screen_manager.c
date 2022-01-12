@@ -67,25 +67,26 @@ void engine_screen_manager_update()
 			if( ( scrollRight % 8 ) == delta )
 			{
 				test = scrollRightDivided8 % 2;
-				//test = 2;
-				//if( 0 == test )
-				//{
-				//	test2 = rand() % 10;
-				//	engine_font_manager_draw_data( test2, 30, 12 );
-				//	test += test2;
-				//	engine_font_manager_draw_data( test, 30, yDelta++ );
-				//}
+				
 
 				// This works except the top row which doesn't seem to scroll.
-				for( ytile = 14; ytile < Y_TILE_MAX; ytile += 2 )
-				{
-					engine_content_manager_draw_tile( X_TILE_MAX + scrollRightDivided8, ytile - 1, (test+40) * 2 + 0 );
-					engine_content_manager_draw_tile( X_TILE_MAX + scrollRightDivided8, ytile - 0, (test+40) * 2 + 4 );
-				}
+				//for( ytile = 14; ytile < Y_TILE_MAX; ytile += 2 )
+				//{
+					//engine_content_manager_draw_tile( X_TILE_MAX + scrollRightDivided8, ytile - 1, (test+0) * 2 + 0 );
+					//engine_content_manager_draw_tile( X_TILE_MAX + scrollRightDivided8, ytile - 0, (test+0) * 2 + 4 );
+				//}
 
-				test2 = ( test + 48 ) * 2 + 4;
-				engine_font_manager_draw_data( test2, 30, yDelta+2 );
-				printout();
+				ytile = 12;
+				//engine_content_manager_draw_tile( X_TILE_MAX + scrollRightDivided8, ytile - 1, ( test + 0 ) * 2 + 0 );
+
+				engine_tilemap_manager_draw_tile( X_TILE_MAX + scrollRightDivided8, ytile - 1 );
+
+				engine_font_manager_draw_text( "HI", 30, ytile );
+				test2 = ( test + 0 ) * 2 + 0;
+				engine_font_manager_draw_data( test2, 10, yDelta+2 );
+				test2 = ( test + 0 ) * 2 + 4;
+				engine_font_manager_draw_data( test2, 20, yDelta + 2 );
+				//printout();
 			}
 		//}
 	}
@@ -94,9 +95,9 @@ void engine_screen_manager_update()
 
 static void printout()
 {
-	engine_font_manager_draw_data( test, 10, yDelta );
+	//engine_font_manager_draw_data( test, 10, yDelta );
 	//engine_font_manager_draw_data( scrollRight, 15, yDelta );
-	engine_font_manager_draw_data( scrollRightDivided8, 20, yDelta );
+	//engine_font_manager_draw_data( scrollRightDivided8, 20, yDelta );
 	//engine_font_manager_draw_data( scroll, 30, yDelta );
 	//yDelta++;
 }
