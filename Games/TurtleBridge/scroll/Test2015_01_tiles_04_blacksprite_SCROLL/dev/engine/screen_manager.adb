@@ -5,6 +5,7 @@ S:Lscreen_manager.engine_screen_manager_init$yy$1$91({1}SC:U),R,0,0,[]
 F:G$engine_screen_manager_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lscreen_manager.engine_screen_manager_update$delta$1$94({1}SC:U),R,0,0,[]
 S:Lscreen_manager.engine_screen_manager_update$input$1$94({1}SC:U),R,0,0,[l]
+F:Fscreen_manager$printout$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:G$BG_TILE_WIDTH$0$0({2}SI:U),E,0,0
 S:G$X_TILE_MAX$0$0({2}SI:U),E,0,0
 S:G$X_TILE_DIFF$0$0({2}SI:U),E,0,0
@@ -12,10 +13,8 @@ S:G$Y_TILE_MAX$0$0({2}SI:U),E,0,0
 S:G$test$0$0({2}SI:U),E,0,0
 S:G$test2$0$0({2}SI:U),E,0,0
 S:G$scroll$0$0({2}SI:U),E,0,0
-S:G$scrollDivided8$0$0({2}SI:U),E,0,0
 S:G$scrollRight$0$0({2}SI:U),E,0,0
 S:G$scrollRightDivided8$0$0({2}SI:U),E,0,0
-S:G$xtile$0$0({2}SI:U),E,0,0
 S:G$ytile$0$0({2}SI:U),E,0,0
 S:G$yDelta$0$0({2}SI:U),E,0,0
 S:G$engine_music_manager_play$0$0({2}DF,SV:S),C,0,0
