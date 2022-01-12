@@ -12,12 +12,12 @@ S:Lsprite_manager.engine_tilemap_manager_draw_tile$x$1$92({1}SC:U),B,1,4
 S:Lsprite_manager.engine_tilemap_manager_draw_tile$y$1$92({1}SC:U),B,1,5
 S:Lsprite_manager.engine_tilemap_manager_draw_tile$pnt$1$93({2}DG,SC:U),R,0,0,[]
 S:Lsprite_manager.engine_tilemap_manager_draw_tile$index$1$93({2}SI:U),R,0,0,[l,h]
-S:Lsprite_manager.engine_tilemap_manager_draw_tile$src$1$93({2}DG,SV:S),R,0,0,[l,h]
+S:Lsprite_manager.engine_tilemap_manager_draw_tile$src$1$93({2}DG,DG,SC:U),R,0,0,[l,h]
 F:G$engine_sprite_manager_draw$0$0({2}DF,SV:S),C,0,0,0,0,0
-S:Lsprite_manager.engine_sprite_manager_draw$x$1$94({1}SC:U),B,1,4
-S:Lsprite_manager.engine_sprite_manager_draw$y$1$94({1}SC:U),B,1,5
-S:Lsprite_manager.engine_sprite_manager_draw$tile$1$94({2}SI:U),B,1,6
-S:Lsprite_manager.engine_sprite_manager_draw$size$1$95({1}SC:U),R,0,0,[]
+S:Lsprite_manager.engine_sprite_manager_draw$x$1$95({1}SC:U),B,1,4
+S:Lsprite_manager.engine_sprite_manager_draw$y$1$95({1}SC:U),B,1,5
+S:Lsprite_manager.engine_sprite_manager_draw$tile$1$95({2}SI:U),B,1,6
+S:Lsprite_manager.engine_sprite_manager_draw$size$1$96({1}SC:U),R,0,0,[]
 S:Fsprite_manager$offset$0$0({2}SI:U),E,0,0
 S:G$devkit_SMS_init$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOnFeature$0$0({2}DF,SV:S),C,0,0
