@@ -10,6 +10,7 @@
 
 unsigned int BG_TILE_WIDTH = 64;
 unsigned int X_TILE_MAX = 32;
+unsigned int X_TILE_DIFF = 4; // 64 - 32;
 unsigned int Y_TILE_MAX = 24;
 
 unsigned int test = 0;
@@ -45,35 +46,41 @@ void engine_screen_manager_update()
 	const unsigned char delta = 1;
 	unsigned char input;
 	//unsigned char value;
-	input = engine_input_manager_hold_right();
-	if( input && ( ( scrollRightDivided8 < ( BG_TILE_WIDTH - X_TILE_MAX ) ) /*|| (scroll == 0)*/ ) )
+	input = engine_input_manager_move_right();
+	//if( input && ( ( scrollRightDivided8 < ( BG_TILE_WIDTH - X_TILE_MAX ) ) /*|| (scroll == 0)*/ ) )
+	//if( input && ( ( scrollRightDivided8 < ( X_TILE_DIFF ) ) /*|| (scroll == 0)*/ ) )
+	if( input )
 	{
-		scroll -= delta;
-		scrollRight += delta;
-		scrollRightDivided8 = scrollRight / 8;
-		devkit_SMS_setBGScrollX( scroll );
-
-		// This works but does not update the top row
-		if( ( scrollRight % 8 ) == delta )
+		if( scrollRightDivided8 < X_TILE_DIFF )
 		{
-			//test = scrollRightDivided8 % 2;
-			test = 2;
-			//if( 0 == test )
-			//{
-			//	test2 = rand() % 10;
-			//	engine_font_manager_draw_data( test2, 30, 12 );
-			//	test += test2;
-			//	engine_font_manager_draw_data( test, 30, yDelta++ );
-			//}
+			scroll -= delta;
+			scrollRight += delta;
+			scrollRightDivided8 = scrollRight / 8;
+			devkit_SMS_setBGScrollX( scroll );
 
-			// This works except the top row which doesn't seem to scroll.
-			for( ytile = 14; ytile < Y_TILE_MAX; ytile += 2 )
+			// This works but does not update the top row
+			if( ( scrollRight % 8 ) == delta )
 			{
-				engine_content_manager_draw_tile( X_TILE_MAX + scrollRightDivided8, ytile - 1, test * 2 + 0 );
-				engine_content_manager_draw_tile( X_TILE_MAX + scrollRightDivided8, ytile - 0, test * 2 + 4 );
-			}
+				test = scrollRightDivided8 % 2;
+				//test = 2;
+				//if( 0 == test )
+				//{
+				//	test2 = rand() % 10;
+				//	engine_font_manager_draw_data( test2, 30, 12 );
+				//	test += test2;
+				//	engine_font_manager_draw_data( test, 30, yDelta++ );
+				//}
 
-			engine_font_manager_draw_data( test, 30, yDelta++ );
+				// This works except the top row which doesn't seem to scroll.
+				for( ytile = 14; ytile < Y_TILE_MAX; ytile += 2 )
+				{
+					engine_content_manager_draw_tile( X_TILE_MAX + scrollRightDivided8, ytile - 1, test * 2 + 0 );
+					engine_content_manager_draw_tile( X_TILE_MAX + scrollRightDivided8, ytile - 0, test * 2 + 4 );
+				}
+
+				engine_font_manager_draw_data( test, 30, yDelta++ );
+
+			}
 		}
 	}
 

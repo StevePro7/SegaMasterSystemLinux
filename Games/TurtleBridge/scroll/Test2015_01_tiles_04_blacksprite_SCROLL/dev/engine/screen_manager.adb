@@ -7,6 +7,7 @@ S:Lscreen_manager.engine_screen_manager_update$delta$1$94({1}SC:U),R,0,0,[]
 S:Lscreen_manager.engine_screen_manager_update$input$1$94({1}SC:U),R,0,0,[l]
 S:G$BG_TILE_WIDTH$0$0({2}SI:U),E,0,0
 S:G$X_TILE_MAX$0$0({2}SI:U),E,0,0
+S:G$X_TILE_DIFF$0$0({2}SI:U),E,0,0
 S:G$Y_TILE_MAX$0$0({2}SI:U),E,0,0
 S:G$test$0$0({2}SI:U),E,0,0
 S:G$test2$0$0({2}SI:U),E,0,0
