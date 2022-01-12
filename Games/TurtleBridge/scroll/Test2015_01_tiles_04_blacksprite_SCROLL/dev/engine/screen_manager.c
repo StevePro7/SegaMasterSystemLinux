@@ -76,16 +76,16 @@ void engine_screen_manager_update()
 					//engine_content_manager_draw_tile( X_TILE_MAX + scrollRightDivided8, ytile - 0, (test+0) * 2 + 4 );
 				//}
 
-				ytile = 12;
+				ytile = 18;
 				//engine_content_manager_draw_tile( X_TILE_MAX + scrollRightDivided8, ytile - 1, ( test + 0 ) * 2 + 0 );
 
 				engine_tilemap_manager_draw_tile( X_TILE_MAX + scrollRightDivided8, ytile - 1 );
 
-				engine_font_manager_draw_text( "HI", 30, ytile );
-				test2 = ( test + 0 ) * 2 + 0;
-				engine_font_manager_draw_data( test2, 10, yDelta+2 );
-				test2 = ( test + 0 ) * 2 + 4;
-				engine_font_manager_draw_data( test2, 20, yDelta + 2 );
+				//engine_font_manager_draw_text( "HI", 30, ytile );
+				//test2 = ( test + 0 ) * 2 + 0;
+				//engine_font_manager_draw_data( test2, 10, yDelta+2 );
+				//test2 = ( test + 0 ) * 2 + 4;
+				//engine_font_manager_draw_data( test2, 20, yDelta + 2 );
 				//printout();
 			}
 		//}
