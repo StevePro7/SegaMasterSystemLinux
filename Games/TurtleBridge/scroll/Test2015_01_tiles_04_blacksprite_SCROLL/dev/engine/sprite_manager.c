@@ -24,15 +24,17 @@ void engine_tilemap_manager_draw_tile( unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = back_tiles__tilemap__bin;
 	unsigned int index = 0;
-	unsigned char * *src = NULL;
+	//unsigned char * *src = NULL;
 
 	index = offset * 2 + 0;
-	src = ( unsigned char * ) &pnt[ index ];
-	devkit_SMS_loadTileMap( x, y - 0, ( void * ) src, 2 );  // 32 tiles * 2 bytes each 
+	//src = ( const unsigned char * ) &pnt[ index ];
+	//devkit_SMS_loadTileMap( x, y - 0, ( const unsigned char * ) src, 2 );  // 32 tiles * 2 bytes each 
+	devkit_SMS_loadTileMap( x, y - 0, ( void * ) &pnt[ index ], 2 );  // 32 tiles * 2 bytes each 
 
 	index = offset * 2 + 4;
-	src = ( unsigned char * ) &pnt[ index ];
-	devkit_SMS_loadTileMap( x, y + 1, ( void * ) src, 2 );  // 32 tiles * 2 bytes each 
+	//src = ( const unsigned char * ) &pnt[ index ];
+	//devkit_SMS_loadTileMap( x, y + 1, src, 2 );  // 32 tiles * 2 bytes each 
+	devkit_SMS_loadTileMap( x, y + 1, ( void * ) &pnt[ index ], 2 );  // 32 tiles * 2 bytes each 
 	
 	offset++;
 	if( offset >= 2 )
