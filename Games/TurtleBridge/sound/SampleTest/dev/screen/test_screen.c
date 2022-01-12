@@ -6,19 +6,18 @@
 
 void screen_test_screen_load()
 {
-	engine_font_manager_draw_text( "PRESS UP OR", 10, 5 );
-	engine_font_manager_draw_text( "PRESS DOWN!", 10, 6 );
+	engine_font_manager_draw_text( "PRESS FIRE!", 10, 6 );
 }
 
 void screen_test_screen_update( unsigned char *screen_type )
 {	
-	unsigned char input = engine_input_manager_hold( input_type_up );
+	unsigned char input = engine_input_manager_hold( input_type_fire1 );
 	if( input )
 	{
-		engine_font_manager_draw_text( "PLAY RIGHT1", 10, 8 );
+		engine_font_manager_draw_text( "PLAY SOUND FX", 10, 8 );
 		engine_riff_manager_play( 0 );
 	}
-	else
+	/*else
 	{
 		input = engine_input_manager_hold( input_type_down );
 		if( input )
@@ -62,7 +61,7 @@ void screen_test_screen_update( unsigned char *screen_type )
 				}
 			}
 		}
-	}
+	}*/
 
 	*screen_type = screen_type_test;
 }

@@ -1,8 +1,8 @@
 echo start
 :: Setup.
 cd ../banks/bank2/raw
-pcmenc -rto 1 -dt1 12 -dt2 12 -dt3 423 right01.wav
-mv right01.wav.pcmenc ../
+pcmenc -rto 1 -dt1 12 -dt2 12 -dt3 423 SoundFx.wav
+mv SoundFx.wav.pcmenc ../
 
 :: Convert.
 cd ../..
