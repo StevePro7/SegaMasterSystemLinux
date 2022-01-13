@@ -32,12 +32,13 @@ void engine_screen_manager_init()
 	//engine_font_manager_draw_text( "STEVEPRO STUDIOS!!", 4, 4 );
 	//engine_font_manager_draw_data( test, 30, yDelta++ );
 
-	for( xx = 0; xx < 32; xx += 2 )
+	//for( xx = 0; xx < 32; xx += 2 )
 	{
+		xx = 24;
 		yy = 18;
 		engine_content_manager_draw_tileX( xx, yy + 0 );
-		engine_content_manager_draw_tileX( xx, yy + 2 );
-		engine_content_manager_draw_tileX( xx, yy + 4 );
+		//engine_content_manager_draw_tileX( xx, yy + 2 );
+		//engine_content_manager_draw_tileX( xx, yy + 4 );
 	}
 
 	//engine_music_manager_play();

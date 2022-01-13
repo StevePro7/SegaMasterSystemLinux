@@ -3,6 +3,9 @@ F:G$engine_content_manager_draw_tileX$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lsprite_manager.engine_content_manager_draw_tileX$x$1$88({1}SC:U),B,1,4
 S:Lsprite_manager.engine_content_manager_draw_tileX$y$1$88({1}SC:U),B,1,5
 S:Lsprite_manager.engine_content_manager_draw_tileX$pnt$1$89({2}DG,SC:U),R,0,0,[]
+S:Lsprite_manager.engine_content_manager_draw_tileX$offset$1$89({1}SC:U),R,0,0,[]
+S:Lsprite_manager.engine_content_manager_draw_tileX$sloc0$1$0({1}SC:U),B,1,-1
+S:Lsprite_manager.engine_content_manager_draw_tileX$sloc1$1$0({1}SC:U),B,1,-2
 F:G$engine_content_manager_draw_tile$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lsprite_manager.engine_content_manager_draw_tile$x$1$90({1}SC:U),B,1,4
 S:Lsprite_manager.engine_content_manager_draw_tile$y$1$90({1}SC:U),B,1,5
