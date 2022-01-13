@@ -15,7 +15,7 @@ void screen_test_screen_update( unsigned char *screen_type )
 	if( input )
 	{
 		engine_font_manager_draw_text( "PLAY SOUND FX 03", 10, 8 );
-		engine_riff_manager_play( 1 );
+		engine_riff_manager_play( 0 );
 	}
 	else
 	{
