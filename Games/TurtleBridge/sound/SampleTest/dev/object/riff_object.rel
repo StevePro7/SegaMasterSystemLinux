@@ -1,19 +1,20 @@
 XL2
-H 9 areas 4 global symbols
+H 9 areas 5 global symbols
 M riff_object
 O -mz80
+S _SoundFx03_wav_pcmenc Ref0000
 S .__.ABS. Def0000
 S _SoundFx_wav_pcmenc Ref0000
-A _CODE size 1 flags 0 addr 0
+A _CODE size 2 flags 0 addr 0
 S _riff_sample_bank Def0000
 A _DATA size 0 flags 0 addr 0
-A _INITIALIZED size 2 flags 0 addr 0
+A _INITIALIZED size 4 flags 0 addr 0
 S _riff_sample_data Def0000
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
-A _INITIALIZER size 2 flags 0 addr 0
+A _INITIALIZER size 4 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00
 R 00 00 02 00
@@ -21,9 +22,9 @@ T 00 00
 R 00 00 02 00
 T 00 00
 R 00 00 00 00
-T 00 00 02
+T 00 00 02 03
 R 00 00 00 00
 T 00 00
 R 00 00 07 00
-T 00 00 00 00
-R 00 00 07 00 02 02 01 00
+T 00 00 00 00 00 00
+R 00 00 07 00 02 02 02 00 02 04 00 00
