@@ -1,10 +1,10 @@
 M:screen_manager
 F:G$engine_screen_manager_init$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lscreen_manager.engine_screen_manager_init$xx$1$92({1}SC:U),R,0,0,[]
-S:Lscreen_manager.engine_screen_manager_init$yy$1$92({1}SC:U),R,0,0,[]
+S:Lscreen_manager.engine_screen_manager_init$xx$1$91({1}SC:U),R,0,0,[]
+S:Lscreen_manager.engine_screen_manager_init$yy$1$91({1}SC:U),R,0,0,[]
 F:G$engine_screen_manager_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lscreen_manager.engine_screen_manager_update$delta$1$94({1}SC:U),R,0,0,[]
-S:Lscreen_manager.engine_screen_manager_update$input$1$94({1}SC:U),R,0,0,[l]
+S:Lscreen_manager.engine_screen_manager_update$delta$1$93({1}SC:U),R,0,0,[]
+S:Lscreen_manager.engine_screen_manager_update$input$1$93({1}SC:U),R,0,0,[l]
 F:Fscreen_manager$printout$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:G$BG_TILE_WIDTH$0$0({2}SI:U),E,0,0
 S:G$X_TILE_MAX$0$0({2}SI:U),E,0,0
@@ -38,7 +38,6 @@ S:G$engine_input_manager_move_right$0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire1$0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire2$0$0({2}DF,SC:U),C,0,0
 S:G$engine_content_manager_draw_tileX$0$0({2}DF,SV:S),C,0,0
-S:G$engine_content_manager_draw_tile$0$0({2}DF,SV:S),C,0,0
 S:G$engine_tilemap_manager_draw_tile$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_init$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOnFeature$0$0({2}DF,SV:S),C,0,0
