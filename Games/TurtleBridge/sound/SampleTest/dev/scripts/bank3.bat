@@ -1,16 +1,24 @@
-REM bank12
-@echo off
-
+echo start
+:: Setup.
 cd ..
 cd banks
+cd bank3
+cd raw
 
+pcmenc -rto 1 -dt1 12 -dt2 12 -dt3 423 SoundFx03.wav
+mv SoundFx03.wav.pcmenc ../
+
+:: Convert.
+cd ../..
 folder2c bank3 bank3 3
 
-sdcc -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK3 bank3.c
+:: Compile
+sdcc --debug -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK3 bank3.c
 
-del *.asm > nul
-del *.lst > nul
-del *.sym > nul
+:: Cleanup
+if exist "*.asm" del "*.asm" > nul; 
+if exist "*.lst" del "*.lst" > nul; 
+if exist "*.sym" del "*.sym" > nul;
 
-cd ..
-cd scripts
+cd ../scripts
+echo -end-
