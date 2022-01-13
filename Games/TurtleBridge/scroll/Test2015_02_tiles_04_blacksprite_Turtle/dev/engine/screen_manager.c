@@ -36,12 +36,12 @@ void engine_screen_manager_init()
 	{
 		xx = 24;
 		yy = 18;
-		engine_content_manager_draw_tileX( xx, yy + 0 );
+		engine_content_manager_draw_tile( xx, yy + 0 );
 		//engine_content_manager_draw_tileX( xx, yy + 2 );
 		//engine_content_manager_draw_tileX( xx, yy + 4 );
 	}
 
-	//engine_music_manager_play();
+	engine_music_manager_play();
 	//yDelta = 2;
 
 	printout();
@@ -50,8 +50,26 @@ void engine_screen_manager_init()
 void engine_screen_manager_update()
 {
 	const unsigned char delta = 1;
+	unsigned char xx, yy;
 	unsigned char input;
 	//unsigned char value;
+
+	input = engine_input_manager_hold_fire1();
+	if( input )
+	{
+		xx = 24;
+		yy = 12;
+		engine_content_manager_draw_tile2( xx, yy + 0 );
+	}
+	input = engine_input_manager_hold_fire2();
+	if( input )
+	{
+		xx = 24;
+		yy = 12;
+		engine_content_manager_draw_tile( xx, yy + 0 );
+	}
+
+
 	input = engine_input_manager_move_right();
 	//if( input && ( ( scrollRightDivided8 < ( BG_TILE_WIDTH - X_TILE_MAX ) ) /*|| (scroll == 0)*/ ) )
 	//if( input && ( ( scrollRightDivided8 < ( X_TILE_DIFF ) ) /*|| (scroll == 0)*/ ) )
