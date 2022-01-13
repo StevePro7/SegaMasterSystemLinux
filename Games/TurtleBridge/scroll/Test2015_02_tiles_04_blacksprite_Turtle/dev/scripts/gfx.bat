@@ -14,7 +14,7 @@ bmp2tile.exe raw/turtle_tiles_02.png -savetiles "turtle_tiles_02 (tiles).psgcomp
 cd ..
 folder2c gfx gfx
 
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 gfx.c
+sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 gfx.c
 
 if exist "*.asm" del "*.asm" > nul
 if exist "*.lst" del "*.lst" > nul
