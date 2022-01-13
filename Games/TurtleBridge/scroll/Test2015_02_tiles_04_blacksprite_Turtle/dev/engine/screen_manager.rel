@@ -1,6 +1,5 @@
-;!FILE screen_manager.asm
 XL2
-H 9 areas 70 global symbols
+H 9 areas 12 global symbols
 M screen_manager
 O -mz80
 S _engine_content_manager_draw_tileX Ref0000
@@ -10,119 +9,25 @@ S _devkit_SMS_setBGScrollX Ref0000
 S _engine_tilemap_manager_draw_tile Ref0000
 A _CODE size 5B flags 0 addr 0
 S _engine_screen_manager_init Def0000
-S G$engine_screen_manager_update$0$0 Def000B
-S XG$engine_screen_manager_init$0$0 Def0008
-S C$screen_manager.c$104$1$93 Def005A
 S _engine_screen_manager_update Def000B
-S Fscreen_manager$printout$0$0 Def005A
-S A$screen_manager$200 Def0059
-S A$screen_manager$104 Def0000
-S A$screen_manager$150 Def0020
-S A$screen_manager$132 Def000E
-S A$screen_manager$105 Def0003
-S A$screen_manager$160 Def002C
-S A$screen_manager$151 Def0021
-S A$screen_manager$133 Def000F
-S A$screen_manager$115 Def0008
-S A$screen_manager$106 Def0004
-S A$screen_manager$161 Def002F
-S A$screen_manager$152 Def0022
-S A$screen_manager$143 Def0015
-S A$screen_manager$134 Def0010
-S A$screen_manager$107 Def0007
-S A$screen_manager$153 Def0024
-S A$screen_manager$144 Def0019
-S XG$engine_screen_manager_update$0$0 Def0059
-S A$screen_manager$217 Def005A
-S A$screen_manager$190 Def0051
-S A$screen_manager$172 Def0037
-S A$screen_manager$191 Def0052
-S A$screen_manager$173 Def003A
-S A$screen_manager$128 Def000B
-S C$screen_manager.c$50$1$91 Def000B
-S A$screen_manager$192 Def0053
-S A$screen_manager$183 Def0045
-S A$screen_manager$174 Def003C
-S A$screen_manager$165 Def0030
-S A$screen_manager$138 Def0011
-S A$screen_manager$193 Def0054
-S A$screen_manager$184 Def0048
-S A$screen_manager$166 Def0033
-S A$screen_manager$157 Def0027
-S A$screen_manager$148 Def001C
-S A$screen_manager$139 Def0014
-S A$screen_manager$194 Def0055
-S A$screen_manager$185 Def0049
-S A$screen_manager$167 Def0035
-S A$screen_manager$158 Def002A
-S A$screen_manager$149 Def001F
-S A$screen_manager$195 Def0058
-S A$screen_manager$186 Def004A
-S A$screen_manager$168 Def0036
-S A$screen_manager$159 Def002B
-S A$screen_manager$187 Def004D
-S A$screen_manager$178 Def003F
-S A$screen_manager$188 Def004E
-S A$screen_manager$179 Def0042
-S C$screen_manager.c$47$1$91 Def0008
-S A$screen_manager$189 Def004F
-S C$screen_manager.c$62$2$94 Def0011
-S C$screen_manager.c$55$1$93 Def000B
-S C$screen_manager.c$48$1$91 Def0008
-S C$screen_manager.c$70$3$95 Def0037
-S C$screen_manager.c$63$2$94 Def0015
-S C$screen_manager.c$80$3$95 Def003F
-S C$screen_manager.c$64$2$94 Def001C
-S C$screen_manager.c$39$2$92 Def0000
-S C$screen_manager.c$65$2$94 Def0027
-S C$screen_manager.c$58$1$93 Def000E
-S C$screen_manager.c$28$0$0 Def0000
-S XFscreen_manager$printout$0$0 Def005A
-S C$screen_manager.c$95$1$93 Def0059
-S C$screen_manager.c$83$3$95 Def0045
-S C$screen_manager.c$97$1$93 Def005A
-S C$screen_manager.c$68$2$94 Def0030
-S G$engine_screen_manager_init$0$0 Def0000
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 12 flags 0 addr 0
 S _yDelta Def0010
-S G$test2$0$0 Def0009
 S _ytile Def000E
-S G$BG_TILE_WIDTH$0$0 Def0000
 S _X_TILE_MAX Def0002
 S _Y_TILE_MAX Def0006
-S G$scrollRightDivided8$0$0 Def000D
 S _test2 Def0009
-S G$test$0$0 Def0008
 S _BG_TILE_WIDTH Def0000
 S _scrollRightDivided8 Def000D
 S _test Def0008
-S G$scrollRight$0$0 Def000C
-S G$scroll$0$0 Def000B
 S _scrollRight Def000C
 S _scroll Def000B
-S G$X_TILE_DIFF$0$0 Def0004
-S G$yDelta$0$0 Def0010
-S G$ytile$0$0 Def000E
 S _X_TILE_DIFF Def0004
-S G$X_TILE_MAX$0$0 Def0002
-S G$Y_TILE_MAX$0$0 Def0006
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
 A _INITIALIZER size 12 flags 0 addr 0
-S Fscreen_manager$__xinit_Y_TILE_MAX$0$0 Def0006
-S Fscreen_manager$__xinit_test2$0$0 Def0009
-S Fscreen_manager$__xinit_BG_TILE_WIDTH$0$0 Def0000
-S Fscreen_manager$__xinit_scrollRightDivided8$0$0 Def000D
-S Fscreen_manager$__xinit_test$0$0 Def0008
-S Fscreen_manager$__xinit_scrollRight$0$0 Def000C
-S Fscreen_manager$__xinit_scroll$0$0 Def000B
-S Fscreen_manager$__xinit_X_TILE_DIFF$0$0 Def0004
-S Fscreen_manager$__xinit_yDelta$0$0 Def0010
-S Fscreen_manager$__xinit_ytile$0$0 Def000E
-S Fscreen_manager$__xinit_X_TILE_MAX$0$0 Def0002
 A _CABS size 0 flags 8 addr 0
 T 00 00
 R 00 00 02 00

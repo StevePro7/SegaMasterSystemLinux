@@ -13,11 +13,10 @@ void main( void )
 	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );
 	//devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_ZOOMSPRITES() );
 
+	engine_content_manager_load_tiles();
 	devkit_SMS_setBGPaletteColor( 15, devkit_RGB( 3, 3, 3 ) );
 
-	engine_content_manager_load_tiles();
 	engine_screen_manager_init();
-
 	devkit_SMS_displayOn();
 	for( ;; )
 	{
