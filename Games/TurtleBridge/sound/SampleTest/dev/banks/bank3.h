@@ -1,4 +1,8 @@
-extern const unsigned char	bank3_txt[];
-#define				bank3_txt_size 5
-#define				bank3_txt_bank 3
+extern const unsigned char	SoundFx_wav_pcmenc[];
+#define				SoundFx_wav_pcmenc_size 7523
+#define				SoundFx_wav_pcmenc_bank 3
+
+extern const unsigned char	SoundFx03_wav_pcmenc[];
+#define				SoundFx03_wav_pcmenc_size 7523
+#define				SoundFx03_wav_pcmenc_bank 3
 
