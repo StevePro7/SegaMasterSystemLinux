@@ -17,15 +17,15 @@ void screen_test_screen_update( unsigned char *screen_type )
 		engine_font_manager_draw_text( "PLAY SOUND FX 03", 10, 8 );
 		engine_riff_manager_play( 1 );
 	}
-	/*else
+	else
 	{
-		input = engine_input_manager_hold( input_type_down );
+		input = engine_input_manager_hold( input_type_fire2 );
 		if( input )
 		{
-			engine_font_manager_draw_text( "PLAY RIGHT2", 10, 9 );
-			engine_riff_manager_play( 1 );
+			engine_font_manager_draw_text( "PLAY SOUND FX 02", 10, 8 );
+			engine_riff_manager_play( 0 );
 		}
-		else
+		/*else
 		{
 			input = engine_input_manager_hold( input_type_left );
 			if( input )
@@ -60,8 +60,8 @@ void screen_test_screen_update( unsigned char *screen_type )
 					}
 				}
 			}
-		}
-	}*/
+		}*/
+	}
 
 	*screen_type = screen_type_test;
 }
