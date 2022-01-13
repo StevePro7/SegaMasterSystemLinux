@@ -8,7 +8,7 @@ static unsigned int offset;
 void engine_content_manager_draw_tileX( unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = back_tiles__tilemap__bin;
-	const unsigned char offset = 12;
+	const unsigned char offset = 0;
 
 	devkit_SMS_setNextTileatXY( x + 0, y + 0 );	devkit_SMS_setTile( *pnt + offset + 0 );
 	devkit_SMS_setNextTileatXY( x + 1, y + 0 );	devkit_SMS_setTile( *pnt + offset + 1 );
