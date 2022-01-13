@@ -33,33 +33,33 @@ void screen_test_screen_update( unsigned char *screen_type )
 				engine_font_manager_draw_text( "PLAY SOUND FX 03", 10, 10 );
 				engine_riff_manager_play( 3 );
 			}
-			/*else
+			else
 			{
 				input = engine_input_manager_hold( input_type_right );
 				if( input )
 				{
-					engine_font_manager_draw_text( "PLAY WRONG1", 10, 12 );
-					engine_riff_manager_play( 3 );
+					//engine_font_manager_draw_text( "PLAY WRONG1", 10, 12 );
+					//engine_riff_manager_play( 3 );
 				}
 				else
 				{
 					input = engine_input_manager_hold( input_type_fire1 );
 					if( input )
 					{
-						engine_font_manager_draw_text( "PLAY WRONG2", 10, 13 );
-						engine_riff_manager_play( 4 );
+						engine_font_manager_draw_text( "PLAY SOUND FX", 10, 13 );
+						engine_riff_manager_play( 0 );
 					}
 					else
 					{
 						input = engine_input_manager_hold( input_type_fire2 );
 						if( input )
 						{
-							engine_font_manager_draw_text( "PLAY WRONG3", 10, 14 );
-							engine_riff_manager_play( 5 );
+							//engine_font_manager_draw_text( "PLAY WRONG3", 10, 14 );
+							//engine_riff_manager_play( 5 );
 						}
 					}
 				}
-			}*/
+			}
 		}
 	}
 
