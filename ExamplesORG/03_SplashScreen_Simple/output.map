@@ -7,7 +7,7 @@ Area                                    Addr        Size        Decimal Bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00000000  .__.ABS.                           
+     00000000  .__.ABS.                           SMSlib_PSGaiden
      00000000  l__BSEG                         
      00000000  l__BSS                          
      00000000  l__CABS                         
@@ -43,20 +43,20 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000010  l__CABS4                        
      00000011  l__CABS1                        
      00000037  l__CABS3                        
-     000000CB  l__DATA                         
+     000000EB  l__DATA                         
      0000012A  l__HEADER5                      
      00000200  s__CODE                         
-     0000034B  l__CODE                         
-     0000054B  s__HOME                         
-     0000054B  s__INITIALIZER                  
-     0000054F  s__GSINIT                       
-     0000055E  s__GSFINAL                      
-     00008000  _SMS_SRAM                          SMSlib
+     00000EAE  l__CODE                         
+     000010AE  s__HOME                         
+     000010AE  s__INITIALIZER                  
+     000010B2  s__GSINIT                       
+     000010C1  s__GSFINAL                      
+     00008000  _SMS_SRAM                          SMSlib_PSGaiden
      0000C000  s__DATA                         
-     0000C0CB  s__INITIALIZED                  
-     0000C0CF  s__BSEG                         
-     0000C0CF  s__BSS                          
-     0000C0CF  s__HEAP                         
+     0000C0EB  s__INITIALIZED                  
+     0000C0EF  s__BSEG                         
+     0000C0EF  s__BSS                          
+     0000C0EF  s__HEAP                         
 ASxxxx Linker V03.00 + NoICE + sdld,  page 2.
 Hexadecimal  [32-Bits]
 
@@ -66,54 +66,63 @@ Area                                    Addr        Size        Decimal Bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     0000FFFC  _SRAM_bank_to_be_mapped_on_slot2   SMSlib
-     0000FFFF  _ROM_bank_to_be_mapped_on_slot2    SMSlib
+     0000FFFC  _SRAM_bank_to_be_mapped_on_slot2   SMSlib_PSGaiden
+     0000FFFF  _ROM_bank_to_be_mapped_on_slot2    SMSlib_PSGaiden
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 3.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    0000034B =         843. bytes (REL,CON)
+_CODE                               00000200    00000EAE =        3758. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
      00000200  __clock                            crt0
      00000204  _exit                              crt0
-     0000020A  _main                              main
-     00000271  _SMS_init                          SMSlib
-     000002C5  _VDPReg_init                       SMSlib
-     000002D0  _SMS_VDPType                       SMSlib
-     000002D8  _SMS_VDPturnOnFeature              SMSlib
-     000002EF  _SMS_VDPturnOffFeature             SMSlib
-     00000308  _SMS_setBGScrollX                  SMSlib
-     00000312  _SMS_setBGScrollY                  SMSlib
-     0000031C  _SMS_setBackdropColor              SMSlib
-     00000326  _SMS_useFirstHalfTilesforSprites   SMSlib
-     0000033A  _SMS_setSpriteMode                 SMSlib
-     0000037F  _SMS_setBGPaletteColor             SMSlib
-     00000393  _SMS_setSpritePaletteColor         SMSlib
-     000003A7  _SMS_loadBGPalette                 SMSlib
-     000003BB  _SMS_loadSpritePalette             SMSlib
-     000003CF  _SMS_setColor                      SMSlib
-     000003D3  _SMS_initSprites                   SMSlib
-     000003D9  _SMS_addSprite                     SMSlib
-     0000042E  _SMS_finalizeSprites               SMSlib
-     00000440  _SMS_copySpritestoSAT              SMSlib
-     00000469  _SMS_waitForVBlank                 SMSlib
-     00000476  _SMS_getKeysStatus                 SMSlib
-     0000047A  _SMS_getKeysPressed                SMSlib
-     00000497  _SMS_getKeysHeld                   SMSlib
-     000004AE  _SMS_getKeysReleased               SMSlib
-     000004CB  _SMS_queryPauseRequested           SMSlib
-     000004D3  _SMS_resetPauseRequest             SMSlib
-     000004D9  _SMS_setLineInterruptHandler       SMSlib
-     000004EA  _SMS_setLineCounter                SMSlib
-     000004F9  _SMS_getVCount                     SMSlib
-     000004FD  _SMS_getHCount                     SMSlib
-     00000501  _SMS_isr                           SMSlib
-     00000537  _SMS_nmi_isr                       SMSlib
-     0000054A  ___sdcc_call_hl                    
+     0000020A  _engine_content_manager_load_spl   main
+     0000022F  _main                              main
+     00000291  G$splash__palette__bin$0$0         gfx
+     00000291  _splash__palette__bin              gfx
+     000002A1  G$splash__tilemap__stmcompr$0$0    gfx
+     000002A1  _splash__tilemap__stmcompr         gfx
+     000002E8  G$splash__tiles__psgcompr$0$0      gfx
+     000002E8  _splash__tiles__psgcompr           gfx
+     00000B11  _SMS_init                          SMSlib
+     00000B65  _VDPReg_init                       SMSlib
+     00000B70  _SMS_VDPType                       SMSlib
+     00000B78  _SMS_VDPturnOnFeature              SMSlib
+     00000B8F  _SMS_VDPturnOffFeature             SMSlib
+     00000BA8  _SMS_setBGScrollX                  SMSlib
+     00000BB2  _SMS_setBGScrollY                  SMSlib
+     00000BBC  _SMS_setBackdropColor              SMSlib
+     00000BC6  _SMS_useFirstHalfTilesforSprites   SMSlib
+     00000BDA  _SMS_setSpriteMode                 SMSlib
+     00000C1F  _SMS_setBGPaletteColor             SMSlib
+     00000C33  _SMS_setSpritePaletteColor         SMSlib
+     00000C47  _SMS_loadBGPalette                 SMSlib
+     00000C5B  _SMS_loadSpritePalette             SMSlib
+     00000C6F  _SMS_setColor                      SMSlib
+     00000C73  _SMS_initSprites                   SMSlib
+     00000C79  _SMS_addSprite                     SMSlib
+     00000CCE  _SMS_finalizeSprites               SMSlib
+     00000CE0  _SMS_copySpritestoSAT              SMSlib
+     00000D09  _SMS_waitForVBlank                 SMSlib
+     00000D16  _SMS_getKeysStatus                 SMSlib
+     00000D1A  _SMS_getKeysPressed                SMSlib
+     00000D37  _SMS_getKeysHeld                   SMSlib
+     00000D4E  _SMS_getKeysReleased               SMSlib
+     00000D6B  _SMS_queryPauseRequested           SMSlib
+     00000D73  _SMS_resetPauseRequest             SMSlib
+     00000D79  _SMS_setLineInterruptHandler       SMSlib
+     00000D8A  _SMS_setLineCounter                SMSlib
+     00000D99  _SMS_getVCount                     SMSlib
+     00000D9D  _SMS_getHCount                     SMSlib
+     00000DA1  _SMS_isr                           SMSlib
+     00000DD7  _SMS_nmi_isr                       SMSlib
+     00000DEA  _SMS_loadSTMcompressedTileMapAre   SMSlib_STMcomp
+     00000FCB  ___sdcc_call_hl                    
+     00000FCC  _SMS_loadPSGaidencompressedTiles   SMSlib_PSGaiden
 ASxxxx Linker V03.00 + NoICE + sdld,  page 4.
 Hexadecimal  [32-Bits]
 
@@ -182,7 +191,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_INITIALIZER                        0000054B    00000004 =           4. bytes (REL,CON)
+_INITIALIZER                        000010AE    00000004 =           4. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -191,18 +200,18 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSINIT                             0000054F    0000000F =          15. bytes (REL,CON)
+_GSINIT                             000010B2    0000000F =          15. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     0000054F  gsinit                             crt0
+     000010B2  gsinit                             crt0
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 12.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSFINAL                            0000055E    00000001 =           1. bytes (REL,CON)
+_GSFINAL                            000010C1    00000001 =           1. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -211,7 +220,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_DATA                               0000C000    000000CB =         203. bytes (REL,CON)
+_DATA                               0000C000    000000EB =         235. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -225,19 +234,20 @@ _DATA                               0000C000    000000CB =         203. bytes (R
      0000C048  _SpriteTableXN                     SMSlib
      0000C0C8  _SpriteNextFree                    SMSlib
      0000C0C9  _SMS_theLineInterruptHandler       SMSlib
+     0000C0CB  _decompBuffer                      SMSlib_PSGaiden
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 14.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_INITIALIZED                        0000C0CB    00000004 =           4. bytes (REL,CON)
+_INITIALIZED                        0000C0EB    00000004 =           4. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     0000C0CB  _VDPReg                            SMSlib
-     0000C0CD  _spritesHeight                     SMSlib
-     0000C0CE  _spritesWidth                      SMSlib
+     0000C0EB  _VDPReg                            SMSlib
+     0000C0ED  _spritesHeight                     SMSlib
+     0000C0EE  _spritesWidth                      SMSlib
 ASxxxx Linker V03.00 + NoICE + sdld,  page 15.
 Hexadecimal  [32-Bits]
 
@@ -299,13 +309,16 @@ Files Linked                              [ module(s) ]
 
 crt0_sms.rel                              [ crt0 ]
 main.rel                                  [ main ]
+gfx.rel                                   [ gfx ]
 
 
 Libraries Linked                          [ object file ]
 
 SMSlib.lib                                [ SMSlib.rel ]
+SMSlib.lib                                [ SMSlib_STMcomp.rel ]
 C:\Program Files\SDCC\bin\..\lib\z80/z80.lib
                                           [ __sdcc_call_hl.rel ]
+SMSlib.lib                                [ SMSlib_PSGaiden.rel ]
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 21.
 

@@ -4,7 +4,7 @@ sdcc  -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
 
 echo Link
 sdcc --debug -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-loc 0xC000 ^
-crt0_sms.rel main.rel SMSlib.lib
+crt0_sms.rel main.rel SMSlib.lib gfx.rel
 
 echo Run
 ihx2sms output.ihx output.sms
