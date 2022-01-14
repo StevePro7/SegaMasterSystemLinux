@@ -1,21 +1,19 @@
 #include "SMSlib.h"
 #include "gfx.h"
 
-#define SPLASH_TILES_OFFSET		128
+#define SPLASH_TILES_OFFSET 128
 
 void engine_content_manager_load_splash_screen()
 {
-	SMS_loadPSGaidencompressedTiles( ( unsigned char* ) splash__tiles__psgcompr, SPLASH_TILES_OFFSET );
-	SMS_loadSTMcompressedTileMap( 0, 0, ( void * ) splash__tilemap__stmcompr );
-	SMS_loadBGPalette( ( void * ) splash__palette__bin );
+  SMS_loadPSGaidencompressedTiles((unsigned char *)splash__tiles__psgcompr, SPLASH_TILES_OFFSET);
+  SMS_loadSTMcompressedTileMap(0, 0, (void *)splash__tilemap__stmcompr);
+  SMS_loadBGPalette((void *)splash__palette__bin);
 }
 
 void main(void)
 {
-  //SMS_setSpritePaletteColor(0, RGB(1, 3, 3));
- 
-	engine_content_manager_load_splash_screen();
-	SMS_displayOn();
+  engine_content_manager_load_splash_screen();
+  SMS_displayOn();
   for (;;)
   {
     SMS_waitForVBlank();
