@@ -1,4 +1,5 @@
 #include "scroll_manager.h"
+#include "font_manager.h"
 #include "../devkit/_sms_manager.h"
 
 #ifdef _CONSOLE
@@ -13,6 +14,7 @@ static void lineScrollHandler(void);
 
 void engine_scroll_manager_init()
 {
+	engine_font_manager_draw_text( "SCROLL", 10, 3 );
 	//scroll_x[0] = 255 << 8;
 	//scroll_x[1] = 255 << 8;
 	//scroll_x[2] = 255 << 8;

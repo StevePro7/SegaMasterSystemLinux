@@ -17,6 +17,7 @@ void main( void )
 	devkit_SMS_setBGPaletteColor( 15, devkit_RGB( 3, 3, 3 ) );
 
 	engine_screen_manager_init();
+	engine_scroll_manager_init();
 	devkit_SMS_displayOn();
 	for( ;; )
 	{

@@ -14,5 +14,6 @@
 #include "engine/input_manager.h"
 #include "engine/log_manager.h"
 #include "engine/screen_manager.h"
+#include "engine/scroll_manager.h"
 
 #endif//__MAIN__
