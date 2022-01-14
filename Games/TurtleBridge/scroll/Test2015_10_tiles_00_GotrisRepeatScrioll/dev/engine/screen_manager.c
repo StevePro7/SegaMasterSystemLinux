@@ -51,6 +51,9 @@ void engine_screen_manager_init()
 void engine_screen_manager_update()
 {
 	const unsigned char delta = 1;
+	unsigned char h1 = 144;
+	unsigned char h2 = 144;
+
 	unsigned char xx, yy;
 	unsigned char input;
 	//unsigned char value;
@@ -74,10 +77,14 @@ void engine_screen_manager_update()
 	input = engine_input_manager_move_right();
 	//if( input && ( ( scrollRightDivided8 < ( BG_TILE_WIDTH - X_TILE_MAX ) ) /*|| (scroll == 0)*/ ) )
 	//if( input && ( ( scrollRightDivided8 < ( X_TILE_DIFF ) ) /*|| (scroll == 0)*/ ) )
-	engine_scroll_manager_update();
+
+	h1 = 0;
+	h2 = 0;
 	if( input )
 	{
-		
+		h1 = 160;
+		h2 = 160;
+
 		//if( scrollRightDivided8 < X_TILE_DIFF )
 		//{
 			//scroll -= delta;
@@ -111,6 +118,13 @@ void engine_screen_manager_update()
 			//	//printout();
 			//}
 		//}
+	}
+
+	engine_scroll_manager_update( h1, h2 );
+
+	if( input )
+	{
+		engine_scroll_manager_update2();
 	}
 
 }
