@@ -29,7 +29,7 @@ void engine_screen_manager_init()
 {
 	unsigned char xx, yy;
 
-	//engine_font_manager_draw_text( "STEVEPRO STUDIOS!!", 4, 4 );
+	engine_font_manager_draw_text( "STEVEPRO STUDIOS", 10, 2 );
 	//engine_font_manager_draw_data( test, 30, yDelta++ );
 
 	//for( xx = 0; xx < 32; xx += 2 )
