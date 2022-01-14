@@ -59,14 +59,14 @@ void engine_screen_manager_update()
 	if( input )
 	{
 		xx = 24;
-		yy = 12;
+		yy = 6;
 		engine_content_manager_draw_tile2( xx, yy + 0 );
 	}
 	input = engine_input_manager_hold_fire2();
 	if( input )
 	{
 		xx = 24;
-		yy = 12;
+		yy = 6;
 		engine_content_manager_draw_tile( xx, yy + 0 );
 	}
 
@@ -74,9 +74,10 @@ void engine_screen_manager_update()
 	input = engine_input_manager_move_right();
 	//if( input && ( ( scrollRightDivided8 < ( BG_TILE_WIDTH - X_TILE_MAX ) ) /*|| (scroll == 0)*/ ) )
 	//if( input && ( ( scrollRightDivided8 < ( X_TILE_DIFF ) ) /*|| (scroll == 0)*/ ) )
+	engine_scroll_manager_update();
 	if( input )
 	{
-		engine_scroll_manager_update();
+		
 		//if( scrollRightDivided8 < X_TILE_DIFF )
 		//{
 			//scroll -= delta;
