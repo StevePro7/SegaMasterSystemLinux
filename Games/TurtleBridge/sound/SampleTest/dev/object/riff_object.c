@@ -3,6 +3,8 @@
 #include "../banks/bank3.h"
 #include "../banks/bank4.h"
 #include "../banks/bank5.h"
+#include "../banks/bank6.h"
+#include "../banks/bank7.h"
 
 const unsigned char *riff_sample_data[] =
 {
@@ -10,6 +12,8 @@ const unsigned char *riff_sample_data[] =
 	SoundFx03_wav_pcmenc,
 	SoundFx04_wav_pcmenc,
 	SoundFx05_wav_pcmenc,
+	SoundFx06_wav_pcmenc,
+	SoundFx07_wav_pcmenc,
 };
 
 const unsigned char riff_sample_bank[] =
@@ -18,4 +22,6 @@ const unsigned char riff_sample_bank[] =
 	SoundFx03_wav_pcmenc_bank,
 	SoundFx04_wav_pcmenc_bank,
 	SoundFx05_wav_pcmenc_bank,
+	SoundFx06_wav_pcmenc_bank,
+	SoundFx07_wav_pcmenc_bank,
 };
