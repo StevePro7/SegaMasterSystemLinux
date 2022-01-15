@@ -55,8 +55,8 @@ void screen_test_screen_update( unsigned char *screen_type )
 						if( input )
 						{
 							engine_font_manager_draw_text( "PLAY GAME OVER", 10, 14 );
-							engine_riff_manager_play( 6 );
-							engine_riff_manager_play( 7 );
+							engine_riff_manager_play( 4 );
+							engine_riff_manager_play( 5 );
 						}
 					}
 				}
