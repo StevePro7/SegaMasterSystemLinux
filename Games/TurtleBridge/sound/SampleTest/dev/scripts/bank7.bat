@@ -13,7 +13,7 @@ cd ../..
 folder2c bank7 bank7 7
 
 :: Compile
-sdcc -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK7 bank7.c
+sdcc --debug -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK7 bank7.c
 
 :: Cleanup
 if exist "*.asm" del "*.asm" > nul; 
