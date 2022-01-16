@@ -1,8 +1,8 @@
 @echo off
 ::gfx		Commonly used gfx	not banked
 
-cd ..
-cd content
+::cd ..
+::cd content
 cd gfx
 
 :: Splash
@@ -18,5 +18,5 @@ if exist "*.lst" del "*.lst" > nul
 if exist "*.sym" del "*.sym" > nul
 
 
-cd ..
-cd scripts
+::cd ..
+::cd scripts
