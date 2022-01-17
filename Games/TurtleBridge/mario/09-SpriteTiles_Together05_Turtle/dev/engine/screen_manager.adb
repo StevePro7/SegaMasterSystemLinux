@@ -1,8 +1,10 @@
 M:screen_manager
 F:G$engine_screen_manager_init$0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_screen_manager_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
-F:Fscreen_manager$draw_turtle$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lscreen_manager.draw_turtle$i$1$13({1}SC:U),B,1,4
+S:Lscreen_manager.engine_screen_manager_update$input$1$11({1}SC:U),R,0,0,[l]
+F:Fscreen_manager$draw_turtles$0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Fscreen_manager$tx$0$0({1}SC:U),E,0,0
+S:Fscreen_manager$ty$0$0({1}SC:U),E,0,0
 S:G$engine_music_manager_play$0$0({2}DF,SV:S),C,0,0
 S:G$engine_sound_manager_play$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_tiles$0$0({2}DF,SV:S),C,0,0
