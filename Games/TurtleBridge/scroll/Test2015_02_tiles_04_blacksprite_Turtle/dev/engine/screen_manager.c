@@ -34,7 +34,7 @@ void engine_screen_manager_init()
 
 	//for( xx = 0; xx < 32; xx += 2 )
 	{
-		xx = 24;
+		xx = 28;
 		yy = 18;
 		engine_content_manager_draw_tile( xx, yy + 0 );
 		//engine_content_manager_draw_tileX( xx, yy + 2 );
@@ -45,6 +45,7 @@ void engine_screen_manager_init()
 	//yDelta = 2;
 
 	printout();
+	test2 = 0;
 }
 
 void engine_screen_manager_update()
@@ -70,17 +71,27 @@ void engine_screen_manager_update()
 	}
 
 
-	input = engine_input_manager_move_right();
+	//input = engine_input_manager_move_right();
+	input = engine_input_manager_hold_right();
+
 	//if( input && ( ( scrollRightDivided8 < ( BG_TILE_WIDTH - X_TILE_MAX ) ) /*|| (scroll == 0)*/ ) )
 	//if( input && ( ( scrollRightDivided8 < ( X_TILE_DIFF ) ) /*|| (scroll == 0)*/ ) )
 	if( input )
 	{
+		test2++;
+		if (test2 > 0)
 		//if( scrollRightDivided8 < X_TILE_DIFF )
-		//{
+		{
+			test2 = 0;
+
 			scroll -= delta;
 			scrollRight += delta;
 			scrollRightDivided8 = scrollRight / 8;
 			devkit_SMS_setBGScrollX( scroll );
+
+			//engine_font_manager_draw_data( scroll, 10, 11 );
+			engine_font_manager_draw_data( scrollRight, 10, 10 );
+			engine_font_manager_draw_data( scrollRightDivided8, 10, 12 );
 
 			// This works but does not update the top row
 			if( ( scrollRight % 8 ) == delta )
@@ -102,12 +113,12 @@ void engine_screen_manager_update()
 
 				//engine_font_manager_draw_text( "HI", 30, ytile );
 				//test2 = ( test + 0 ) * 2 + 0;
-				//engine_font_manager_draw_data( test2, 10, yDelta+2 );
+				
 				//test2 = ( test + 0 ) * 2 + 4;
 				//engine_font_manager_draw_data( test2, 20, yDelta + 2 );
 				//printout();
 			}
-		//}
+		}
 	}
 
 }
