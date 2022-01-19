@@ -9,7 +9,7 @@
 
 static unsigned char tx;
 static unsigned char ty;
-static void draw_turtles();
+static void draw_waves();
 //static void draw_turtle( unsigned char i );
 //static unsigned char flag[ 6 ] = { 0,0,0,0,0 };
 //static unsigned char wide[ 6 ] = { 2, 7, 12, 17, 22, 27 };
@@ -19,7 +19,11 @@ void engine_screen_manager_init()
 	//engine_font_manager_draw_text( "STEVEPRO STUDIOS!!", 4, 1 );
 	//draw_turtle( 0 );
 
+	
+
 	engine_turtle_manager_draw_sea();
+
+	engine_turtle_manager_draw_01( 10, 12 );
 
 	tx = 14;
 	ty = 12;
@@ -29,7 +33,7 @@ void engine_screen_manager_init()
 	//engine_turtle_manager_draw_04( 20, 15 );
 
 	//engine_music_manager_play();
-	draw_turtles();
+	draw_waves();
 }
 
 void engine_screen_manager_update()
@@ -82,7 +86,7 @@ void engine_screen_manager_update()
 	//engine_sprite_manager_draw( 88, 64, SPRITE_TILES );
 }
 
-static void draw_turtles()
+static void draw_waves()
 {
 	unsigned sx, sy;
 	sy = 17;
