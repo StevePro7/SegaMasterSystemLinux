@@ -94,6 +94,48 @@ static void draw_turtles()
 		engine_sprite_manager_tile( sx + 3, sy + 0, 36 );
 	}
 
+	for( sx = 0; sx < 32; sx += 4 )
+	{
+		sy = 18;
+		engine_sprite_manager_tile( sx + 0, sy + 0, 38 );
+		engine_sprite_manager_tile( sx + 1, sy + 0, 33 );
+		engine_sprite_manager_tile( sx + 2, sy + 0, 33 );
+		engine_sprite_manager_tile( sx + 3, sy + 0, 37 );
+
+		sy = 20;
+		engine_sprite_manager_tile( sx + 0, sy + 0, 38 );
+		engine_sprite_manager_tile( sx + 1, sy + 0, 33 );
+		engine_sprite_manager_tile( sx + 2, sy + 0, 33 );
+		engine_sprite_manager_tile( sx + 3, sy + 0, 37 );
+
+		sy = 22;
+		engine_sprite_manager_tile( sx + 0, sy + 0, 38 );
+		engine_sprite_manager_tile( sx + 1, sy + 0, 33 );
+		engine_sprite_manager_tile( sx + 2, sy + 0, 33 );
+		engine_sprite_manager_tile( sx + 3, sy + 0, 37 );
+	}
+
+	for( sx = 0; sx < 32; sx += 4 )
+	{
+		sy = 19;
+		engine_sprite_manager_tile( sx + 0, sy + 0, 33 );
+		engine_sprite_manager_tile( sx + 1, sy + 0, 33 );
+		engine_sprite_manager_tile( sx + 2, sy + 0, 41 );
+		engine_sprite_manager_tile( sx + 3, sy + 0, 33 );
+
+		sy = 21;
+		engine_sprite_manager_tile( sx + 0, sy + 0, 33 );
+		engine_sprite_manager_tile( sx + 1, sy + 0, 33 );
+		engine_sprite_manager_tile( sx + 2, sy + 0, 41 );
+		engine_sprite_manager_tile( sx + 3, sy + 0, 33 );
+
+		sy = 23;
+		engine_sprite_manager_tile( sx + 0, sy + 0, 33 );
+		engine_sprite_manager_tile( sx + 1, sy + 0, 33 );
+		engine_sprite_manager_tile( sx + 2, sy + 0, 41 );
+		engine_sprite_manager_tile( sx + 3, sy + 0, 33 );
+	}
+
 	//engine_font_manager_draw_text( "XXXXXXXX", tx, ty );
 //	unsigned char i;
 //	for( i = 0; i < 6; i++ )

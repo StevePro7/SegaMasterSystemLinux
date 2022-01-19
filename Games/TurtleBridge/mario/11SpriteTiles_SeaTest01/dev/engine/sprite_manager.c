@@ -148,7 +148,7 @@ void engine_turtle_manager_draw_sea()
 		}
 	}
 
-	for( y = 18; y < 24; y++ )
+	for( y = 22; y < 24; y++ )
 	{
 		for( x = 0; x < 32; x += 4 )
 		{

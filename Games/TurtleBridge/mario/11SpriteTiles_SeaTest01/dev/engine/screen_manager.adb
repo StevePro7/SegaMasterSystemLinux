@@ -1,8 +1,8 @@
 M:screen_manager
 F:G$engine_screen_manager_init$0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_screen_manager_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
-F:Fscreen_manager$draw_turtles$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lscreen_manager.draw_turtles$sx$1$13({2}SI:U),R,0,0,[c,b]
+F:Fscreen_manager$draw_turtles$0$0({2}DF,SV:S),Z,0,2,0,0,0
+S:Lscreen_manager.draw_turtles$sx$1$13({2}SI:U),B,1,-2
 S:Lscreen_manager.draw_turtles$sy$1$13({2}SI:U),R,0,0,[]
 S:Fscreen_manager$tx$0$0({1}SC:U),E,0,0
 S:Fscreen_manager$ty$0$0({1}SC:U),E,0,0
