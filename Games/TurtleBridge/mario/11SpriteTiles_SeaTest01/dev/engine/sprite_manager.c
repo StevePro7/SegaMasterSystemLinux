@@ -2,7 +2,7 @@
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
 
-static void draw_sea( unsigned char x, unsigned char y );
+static void draw_sea( unsigned char x, unsigned char y, unsigned char offset );
 
 //void engine_sprite_manager_draw( unsigned char x, unsigned char y, unsigned int tile )
 //{
@@ -132,22 +132,30 @@ void engine_turtle_manager_draw_sea()
 	unsigned char x;
 	unsigned char y;
 
-	for( y = 16; y < 24; y++ )
+	for( y = 0; y < 16; y++ )
 	{
 		for( x = 0; x < 32; x+=4 )
 		{
-			draw_sea( x, y );
+			draw_sea( x, y, 32 );
+		}
+	}
+
+	for( y = 18; y < 24; y++ )
+	{
+		for( x = 0; x < 32; x += 4 )
+		{
+			draw_sea( x, y, 33 );
 		}
 	}
 }
-static void draw_sea( unsigned char x, unsigned char y )
+static void draw_sea( unsigned char x, unsigned char y, unsigned char offset )
 {
 	const unsigned char *pnt = game_tiles__tilemap__bin;
 
-	devkit_SMS_setNextTileatXY( x + 0, y + 0 );	devkit_SMS_setTile( *pnt + 16 );
-	devkit_SMS_setNextTileatXY( x + 1, y + 0 );	devkit_SMS_setTile( *pnt + 17 );
-	devkit_SMS_setNextTileatXY( x + 2, y + 0 );	devkit_SMS_setTile( *pnt + 18 );
-	devkit_SMS_setNextTileatXY( x + 3, y + 0 );	devkit_SMS_setTile( *pnt + 19 );
+	devkit_SMS_setNextTileatXY( x + 0, y + 0 );	devkit_SMS_setTile( *pnt + offset );
+	devkit_SMS_setNextTileatXY( x + 1, y + 0 );	devkit_SMS_setTile( *pnt + offset );
+	devkit_SMS_setNextTileatXY( x + 2, y + 0 );	devkit_SMS_setTile( *pnt + offset );
+	devkit_SMS_setNextTileatXY( x + 3, y + 0 );	devkit_SMS_setTile( *pnt + offset );
 }
 
 // zoom sprites

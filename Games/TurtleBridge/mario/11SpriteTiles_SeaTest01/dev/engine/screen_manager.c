@@ -23,7 +23,7 @@ void engine_screen_manager_init()
 
 	tx = 14;
 	ty = 12;
-	engine_turtle_manager_draw_01( tx, ty );
+	//engine_turtle_manager_draw_01( tx, ty );
 	//engine_turtle_manager_draw_02( 8, 13 );
 	//engine_turtle_manager_draw_03( 14, 14 );
 	//engine_turtle_manager_draw_04( 20, 15 );
@@ -33,7 +33,7 @@ void engine_screen_manager_init()
 
 void engine_screen_manager_update()
 {
-	unsigned char input;
+	/*unsigned char input;
 	input = engine_input_manager_hold_down();
 	if( input )
 	{
@@ -66,7 +66,7 @@ void engine_screen_manager_update()
 			ty = 13;
 			engine_turtle_manager_draw_02( tx, ty );
 		}
-	}
+	}*/
 	/*	unsigned char test;
 		rand();
 
