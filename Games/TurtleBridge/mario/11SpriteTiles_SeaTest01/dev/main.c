@@ -12,7 +12,7 @@ void main( void )
 	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_ZOOMSPRITES() );
 
 	engine_content_manager_load_tiles();
-	engine_content_manager_load_sprites();
+	//engine_content_manager_load_sprites();
 	engine_content_manager_load_turtle();
 
 	// Turtle
