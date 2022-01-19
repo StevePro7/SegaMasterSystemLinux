@@ -4,6 +4,14 @@
 
 static void draw_sea( unsigned char x, unsigned char y, unsigned char offset );
 
+void engine_sprite_manager_tile( unsigned char x, unsigned char y, unsigned char offset )
+{
+	const unsigned char *pnt = game_tiles__tilemap__bin;
+
+	devkit_SMS_setNextTileatXY( x + 0, y + 0 );
+	devkit_SMS_setTile( *pnt + offset );
+}
+
 //void engine_sprite_manager_draw( unsigned char x, unsigned char y, unsigned int tile )
 //{
 //	devkit_SMS_addSprite( x + 0, y + 0, tile + 0 );
@@ -132,7 +140,7 @@ void engine_turtle_manager_draw_sea()
 	unsigned char x;
 	unsigned char y;
 
-	for( y = 0; y < 16; y++ )
+	for( y = 0; y <= 16; y++ )
 	{
 		for( x = 0; x < 32; x+=4 )
 		{
