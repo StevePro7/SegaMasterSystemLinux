@@ -8,8 +8,8 @@ F:G$engine_turtle_manager_draw_01$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lsprite_manager.engine_turtle_manager_draw_01$x$1$74({1}SC:U),B,1,4
 S:Lsprite_manager.engine_turtle_manager_draw_01$y$1$74({1}SC:U),B,1,5
 S:Lsprite_manager.engine_turtle_manager_draw_01$pnt$1$75({2}DG,SC:U),R,0,0,[]
-S:Lsprite_manager.engine_turtle_manager_draw_01$sloc0$1$0({1}SC:U),B,1,-2
-S:Lsprite_manager.engine_turtle_manager_draw_01$sloc1$1$0({1}SC:U),B,1,-1
+S:Lsprite_manager.engine_turtle_manager_draw_01$sloc0$1$0({1}SC:U),B,1,-1
+S:Lsprite_manager.engine_turtle_manager_draw_01$sloc1$1$0({1}SC:U),B,1,-2
 F:G$engine_turtle_manager_draw_02$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lsprite_manager.engine_turtle_manager_draw_02$x$1$76({1}SC:U),B,1,4
 S:Lsprite_manager.engine_turtle_manager_draw_02$y$1$76({1}SC:U),B,1,5
@@ -26,8 +26,8 @@ F:G$engine_turtle_manager_draw_04$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lsprite_manager.engine_turtle_manager_draw_04$x$1$80({1}SC:U),B,1,4
 S:Lsprite_manager.engine_turtle_manager_draw_04$y$1$80({1}SC:U),B,1,5
 S:Lsprite_manager.engine_turtle_manager_draw_04$pnt$1$81({2}DG,SC:U),R,0,0,[]
-S:Lsprite_manager.engine_turtle_manager_draw_04$sloc0$1$0({1}SC:U),B,1,-2
-S:Lsprite_manager.engine_turtle_manager_draw_04$sloc1$1$0({1}SC:U),B,1,-1
+S:Lsprite_manager.engine_turtle_manager_draw_04$sloc0$1$0({1}SC:U),B,1,-1
+S:Lsprite_manager.engine_turtle_manager_draw_04$sloc1$1$0({1}SC:U),B,1,-2
 F:G$engine_turtle_manager_draw_sea$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lsprite_manager.engine_turtle_manager_draw_sea$x$1$82({1}SC:U),R,0,0,[b]
 S:Lsprite_manager.engine_turtle_manager_draw_sea$y$1$82({1}SC:U),R,0,0,[c]
