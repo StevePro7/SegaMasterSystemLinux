@@ -23,7 +23,7 @@ void engine_screen_manager_init()
 
 	engine_turtle_manager_draw_sea();
 
-	engine_turtle_manager_draw_01( 10, 12 );
+	engine_turtle_manager_draw_01( 10, 14 );
 
 	tx = 14;
 	ty = 12;
@@ -92,9 +92,9 @@ static void draw_waves()
 	sy = 17;
 	for( sx = 0; sx < 32; sx += 4 )
 	{
-		engine_sprite_manager_tile( sx + 0, sy + 0, 34 );
-		engine_sprite_manager_tile( sx + 1, sy + 0, 34 );
-		engine_sprite_manager_tile( sx + 2, sy + 0, 35 );
+		engine_sprite_manager_tile( sx + 0, sy + 0, 35 );
+		engine_sprite_manager_tile( sx + 1, sy + 0, 35 );
+		engine_sprite_manager_tile( sx + 2, sy + 0, 36 );
 		engine_sprite_manager_tile( sx + 3, sy + 0, 36 );
 	}
 
