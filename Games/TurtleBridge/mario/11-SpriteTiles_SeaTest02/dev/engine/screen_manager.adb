@@ -30,8 +30,8 @@ S:G$engine_input_manager_move_fire1$0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire2$0$0({2}DF,SC:U),C,0,0
 S:G$engine_sprite_manager_tile$0$0({2}DF,SV:S),C,0,0
 S:G$engine_sprite_manager_draw$0$0({2}DF,SV:S),C,0,0
+S:G$engine_turtle_manager_draw_00$0$0({2}DF,SV:S),C,0,0
 S:G$engine_turtle_manager_draw_01$0$0({2}DF,SV:S),C,0,0
 S:G$engine_turtle_manager_draw_02$0$0({2}DF,SV:S),C,0,0
 S:G$engine_turtle_manager_draw_03$0$0({2}DF,SV:S),C,0,0
-S:G$engine_turtle_manager_draw_04$0$0({2}DF,SV:S),C,0,0
 S:G$engine_turtle_manager_draw_sea$0$0({2}DF,SV:S),C,0,0

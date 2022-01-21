@@ -23,7 +23,7 @@ void engine_screen_manager_init()
 
 	engine_turtle_manager_draw_sea();
 
-	engine_turtle_manager_draw_01( 10, 14 );
+	
 
 	tx = 14;
 	ty = 12;
@@ -34,6 +34,10 @@ void engine_screen_manager_init()
 
 	//engine_music_manager_play();
 	draw_waves();
+
+	engine_turtle_manager_draw_01( 10, 15 );
+	engine_turtle_manager_draw_02( 16, 16 );
+	engine_turtle_manager_draw_03( 22, 17 );
 }
 
 void engine_screen_manager_update()
