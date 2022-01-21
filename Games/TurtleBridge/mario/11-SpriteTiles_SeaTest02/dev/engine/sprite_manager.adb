@@ -8,8 +8,8 @@ F:Fsprite_manager$draw_bod$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lsprite_manager.draw_bod$pnt$1$75({2}DG,SC:U),B,1,4
 S:Lsprite_manager.draw_bod$x$1$75({1}SC:U),B,1,6
 S:Lsprite_manager.draw_bod$y$1$75({1}SC:U),B,1,7
-S:Lsprite_manager.draw_bod$sloc0$1$0({1}SC:U),B,1,-2
-S:Lsprite_manager.draw_bod$sloc1$1$0({1}SC:U),B,1,-1
+S:Lsprite_manager.draw_bod$sloc0$1$0({1}SC:U),B,1,-1
+S:Lsprite_manager.draw_bod$sloc1$1$0({1}SC:U),B,1,-2
 F:G$engine_turtle_manager_draw_00$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lsprite_manager.engine_turtle_manager_draw_00$x$1$77({1}SC:U),B,1,4
 S:Lsprite_manager.engine_turtle_manager_draw_00$y$1$77({1}SC:U),B,1,5

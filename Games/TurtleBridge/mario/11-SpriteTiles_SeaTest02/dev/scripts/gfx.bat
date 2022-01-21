@@ -14,6 +14,8 @@ bmp2tile.exe raw/turtle01.png -savetiles "turtle01 (tiles).psgcompr" -noremovedu
 bmp2tile.exe raw/turtle02.png -savetiles "turtle02 (tiles).psgcompr" -noremovedupes -planar -tileoffset 160  -savetilemap "turtle02 (tilemap).bin" -savepalette "turtle02 (palette).bin" -fullpalette -exit
 bmp2tile.exe raw/turtle03.png -savetiles "turtle03 (tiles).psgcompr" -noremovedupes -planar -tileoffset 176  -savetilemap "turtle03 (tilemap).bin" -savepalette "turtle03 (palette).bin" -fullpalette -exit
 
+:: Sprites
+bmp2tile.exe raw/f00_cent.png -savetiles "left01 (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 0 -savepalette "mario01 (palette).bin" -fullpalette  -spritepalette -exit
 
 
 cd ..

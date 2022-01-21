@@ -6,6 +6,7 @@ S:Lscreen_manager.draw_waves$sx$1$13({2}SI:U),B,1,-2
 S:Lscreen_manager.draw_waves$sy$1$13({2}SI:U),R,0,0,[]
 S:Fscreen_manager$tx$0$0({1}SC:U),E,0,0
 S:Fscreen_manager$ty$0$0({1}SC:U),E,0,0
+S:Fscreen_manager$sy$0$0({1}SC:U),E,0,0
 S:G$engine_music_manager_play$0$0({2}DF,SV:S),C,0,0
 S:G$engine_sound_manager_play$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_tiles$0$0({2}DF,SV:S),C,0,0

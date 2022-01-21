@@ -9,6 +9,7 @@
 
 static unsigned char tx;
 static unsigned char ty;
+static unsigned char sy;
 static void draw_waves();
 //static void draw_turtle( unsigned char i );
 //static unsigned char flag[ 6 ] = { 0,0,0,0,0 };
@@ -21,12 +22,12 @@ void engine_screen_manager_init()
 
 	
 
-	engine_turtle_manager_draw_sea();
+	//engine_turtle_manager_draw_sea();
 
 	
-
+	sy = 104;
 	tx = 14;
-	ty = 12;
+	ty = 15;
 	//engine_turtle_manager_draw_01( tx, ty );
 	//engine_turtle_manager_draw_02( 8, 13 );
 	//engine_turtle_manager_draw_03( 14, 14 );
@@ -35,47 +36,48 @@ void engine_screen_manager_init()
 	//engine_music_manager_play();
 	draw_waves();
 
-	engine_turtle_manager_draw_01( 10, 15 );
-	engine_turtle_manager_draw_02( 16, 16 );
-	engine_turtle_manager_draw_03( 22, 17 );
+	//engine_turtle_manager_draw_01( 16, 14 );
+	//engine_turtle_manager_draw_01( tx, ty );
+	//engine_turtle_manager_draw_02( 16, 16 );
+	//engine_turtle_manager_draw_03( 22, 17 );
 }
 
 void engine_screen_manager_update()
 {
-	/*unsigned char input;
-	input = engine_input_manager_hold_down();
-	if( input )
-	{
-		if( 12 == ty )
-		{
-			ty = 13;
-			engine_turtle_manager_draw_02( tx, ty );
-		}
-		else if( 13 == ty )
-		{
-			ty = 14;
-			engine_turtle_manager_draw_03( tx, ty );
-		}
-		else if( 14 == ty )
-		{
-			ty = 15;
-			engine_turtle_manager_draw_04( tx, ty );
-		}
-	}
-	input = engine_input_manager_hold_up();
-	if( input )
-	{
-		if( 15 == ty )
-		{
-			ty = 14;
-			engine_turtle_manager_draw_03( tx, ty );
-		}
-		else if( 14 == ty )
-		{
-			ty = 13;
-			engine_turtle_manager_draw_02( tx, ty );
-		}
-	}*/
+	//unsigned char input;
+	//input = engine_input_manager_hold_down();
+	//if( input )
+	//{
+	//	if( 15 == ty )
+	//	{
+	//		ty = 16;
+	//		engine_turtle_manager_draw_02( tx, ty );
+	//	}
+	//	else if( 16 == ty )
+	//	{
+	//		ty = 17;
+	//		engine_turtle_manager_draw_03( tx, ty );
+	//	}
+	//	//else if( 14 == ty )
+	//	//{
+	//	//	ty = 15;
+	//	//	engine_turtle_manager_draw_04( tx, ty );
+	//	//}
+	//}
+	//input = engine_input_manager_hold_up();
+	//if( input )
+	//{
+	//	if( 17 == ty )
+	//	{
+	//		ty = 16;
+	//		engine_turtle_manager_draw_02( tx, ty );
+	//	}
+	//	else if( 16 == ty )
+	//	{
+	//		ty = 15;
+	//		engine_turtle_manager_draw_01( tx, ty );
+	//	}
+	//}
 	/*	unsigned char test;
 		rand();
 
@@ -87,7 +89,7 @@ void engine_screen_manager_update()
 			draw_turtle( test );
 		*/
 
-	//engine_sprite_manager_draw( 88, 64, SPRITE_TILES );
+	engine_sprite_manager_draw( 88, sy, SPRITE_TILES );
 }
 
 static void draw_waves()
