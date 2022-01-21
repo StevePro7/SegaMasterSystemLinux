@@ -28,7 +28,7 @@ void engine_screen_manager_update()
 	input = engine_input_manager_hold_fire1();
 	if( input )
 	{
-		cur_value_x += 128;
+		cur_value_x += 64;
 
 		value_x = cur_value_x;
 		enemy_x = UFIX( value_x );
