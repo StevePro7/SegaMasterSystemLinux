@@ -33,19 +33,21 @@ void engine_screen_manager_init()
 	value_y = enemy_y << 8;
 	cur_value_y = value_y;
 
-	engine_font_manager_draw_data( state, 14, 5 );
-	engine_font_manager_draw_data( index, 14, 6 );
-	engine_font_manager_draw_data( enemy_y, 14, 7 );
-	engine_font_manager_draw_data( value_y, 14, 8 );
-	engine_font_manager_draw_data( cur_value_y, 14, 9 );
+	//engine_font_manager_draw_data( state, 14, 5 );
+	//engine_font_manager_draw_data( index, 14, 6 );
+	//engine_font_manager_draw_data( enemy_y, 14, 7 );
+	//engine_font_manager_draw_data( value_y, 14, 8 );
+	//engine_font_manager_draw_data( cur_value_y, 14, 9 );
+
+	engine_music_manager_play();
 }
 
 void engine_screen_manager_update()
 {
 	unsigned char input;
 	unsigned int delta;
-	input = engine_input_manager_hold_down();
-	//input = 1;
+	input = engine_input_manager_move_down();
+	input = 1;
 	if( input )
 	{
 		if( 0 == state )
@@ -56,9 +58,9 @@ void engine_screen_manager_update()
 			enemy_y = UFIX( value_y );
 			//cur_enemy_y = enemy_y;
 
-			engine_font_manager_draw_data( enemy_y, 14, 7 );
-			engine_font_manager_draw_data( value_y, 14, 8 );
-			engine_font_manager_draw_data( cur_value_y, 14, 9 );
+			//engine_font_manager_draw_data( enemy_y, 14, 7 );
+			//engine_font_manager_draw_data( value_y, 14, 8 );
+			//engine_font_manager_draw_data( cur_value_y, 14, 9 );
 
 			index++;
 			if( index >= 17 )
@@ -67,10 +69,32 @@ void engine_screen_manager_update()
 				index = 0;
 			}
 
-			engine_font_manager_draw_data( state, 14, 5 );
-			engine_font_manager_draw_data( index, 14, 6 );
+			//engine_font_manager_draw_data( state, 14, 5 );
+			//engine_font_manager_draw_data( index, 14, 6 );
 		}
 		else if( 1 == state )
+		{
+			delta = ascent[ index ];
+			cur_value_y -= delta;
+			value_y = cur_value_y;
+			enemy_y = UFIX( value_y );
+			//cur_enemy_y = enemy_y;
+
+			//engine_font_manager_draw_data( enemy_y, 14, 7 );
+			//engine_font_manager_draw_data( value_y, 14, 8 );
+			//engine_font_manager_draw_data( cur_value_y, 14, 9 );
+
+			index++;
+			if( index >= 17 )
+			{
+				state = 2;
+				index = 0;
+			}
+
+			//engine_font_manager_draw_data( state, 14, 5 );
+			//engine_font_manager_draw_data( index, 14, 6 );
+		}
+		else if( 2 == state )
 		{
 			delta = descent[ index ];
 			cur_value_y += delta;
@@ -78,9 +102,9 @@ void engine_screen_manager_update()
 			enemy_y = UFIX( value_y );
 			//cur_enemy_y = enemy_y;
 
-			engine_font_manager_draw_data( enemy_y, 14, 7 );
-			engine_font_manager_draw_data( value_y, 14, 8 );
-			engine_font_manager_draw_data( cur_value_y, 14, 9 );
+			//engine_font_manager_draw_data( enemy_y, 14, 7 );
+			//engine_font_manager_draw_data( value_y, 14, 8 );
+			//engine_font_manager_draw_data( cur_value_y, 14, 9 );
 
 			index++;
 			if( index > 7 )
@@ -97,8 +121,8 @@ void engine_screen_manager_update()
 				cur_value_y = value_y;
 			}
 
-			engine_font_manager_draw_data( state, 14, 5 );
-			engine_font_manager_draw_data( index, 14, 6 );
+			//engine_font_manager_draw_data( state, 14, 5 );
+			//engine_font_manager_draw_data( index, 14, 6 );
 		}
 	}
 	
