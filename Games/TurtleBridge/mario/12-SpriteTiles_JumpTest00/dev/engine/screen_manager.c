@@ -10,7 +10,6 @@
 static unsigned char tx;
 static unsigned char ty;
 static unsigned char sy;
-static void draw_waves();
 
 static unsigned int ascent[ 17 ] = { 2958, 2347, 1960, 1673, 1441, 1247, 1079, 930, 796, 675, 564, 461, 365, 276, 191, 112, 36 };
 
@@ -41,7 +40,6 @@ void engine_screen_manager_init()
 	//engine_turtle_manager_draw_04( 20, 15 );
 
 	//engine_music_manager_play();
-	draw_waves();
 
 	//engine_turtle_manager_draw_01( 16, 14 );
 	//engine_turtle_manager_draw_01( tx, ty );
@@ -98,76 +96,3 @@ void engine_screen_manager_update()
 
 	engine_sprite_manager_draw( 88, sy, SPRITE_TILES );
 }
-
-static void draw_waves()
-{
-	unsigned sx, sy;
-	sy = 17;
-	for( sx = 0; sx < 32; sx += 4 )
-	{
-		engine_sprite_manager_tile( sx + 0, sy + 0, 35 );
-		engine_sprite_manager_tile( sx + 1, sy + 0, 35 );
-		engine_sprite_manager_tile( sx + 2, sy + 0, 36 );
-		engine_sprite_manager_tile( sx + 3, sy + 0, 36 );
-	}
-
-	for( sx = 0; sx < 32; sx += 4 )
-	{
-		sy = 18;
-		engine_sprite_manager_tile( sx + 0, sy + 0, 38 );
-		engine_sprite_manager_tile( sx + 1, sy + 0, 33 );
-		engine_sprite_manager_tile( sx + 2, sy + 0, 33 );
-		engine_sprite_manager_tile( sx + 3, sy + 0, 37 );
-
-		sy = 20;
-		engine_sprite_manager_tile( sx + 0, sy + 0, 38 );
-		engine_sprite_manager_tile( sx + 1, sy + 0, 33 );
-		engine_sprite_manager_tile( sx + 2, sy + 0, 33 );
-		engine_sprite_manager_tile( sx + 3, sy + 0, 37 );
-
-		sy = 22;
-		engine_sprite_manager_tile( sx + 0, sy + 0, 38 );
-		engine_sprite_manager_tile( sx + 1, sy + 0, 33 );
-		engine_sprite_manager_tile( sx + 2, sy + 0, 33 );
-		engine_sprite_manager_tile( sx + 3, sy + 0, 37 );
-	}
-
-	for( sx = 0; sx < 32; sx += 4 )
-	{
-		sy = 19;
-		engine_sprite_manager_tile( sx + 0, sy + 0, 33 );
-		engine_sprite_manager_tile( sx + 1, sy + 0, 33 );
-		engine_sprite_manager_tile( sx + 2, sy + 0, 41 );
-		engine_sprite_manager_tile( sx + 3, sy + 0, 33 );
-
-		sy = 21;
-		engine_sprite_manager_tile( sx + 0, sy + 0, 33 );
-		engine_sprite_manager_tile( sx + 1, sy + 0, 33 );
-		engine_sprite_manager_tile( sx + 2, sy + 0, 41 );
-		engine_sprite_manager_tile( sx + 3, sy + 0, 33 );
-
-		sy = 23;
-		engine_sprite_manager_tile( sx + 0, sy + 0, 33 );
-		engine_sprite_manager_tile( sx + 1, sy + 0, 33 );
-		engine_sprite_manager_tile( sx + 2, sy + 0, 41 );
-		engine_sprite_manager_tile( sx + 3, sy + 0, 33 );
-	}
-
-	//engine_font_manager_draw_text( "XXXXXXXX", tx, ty );
-//	unsigned char i;
-//	for( i = 0; i < 6; i++ )
-//	{
-//		draw_turtle( i );
-//	}
-}
-//static void draw_turtle( unsigned char i )
-//{
-//	if( 0 == i )
-//	{
-//		engine_turtle_manager_draw_01( 10, 20 );
-//	}
-//	else
-//	{
-//		engine_turtle_manager_draw_02( 10, 20 );
-//	}
-//}

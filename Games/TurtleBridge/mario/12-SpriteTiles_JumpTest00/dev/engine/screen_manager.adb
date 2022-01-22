@@ -1,10 +1,7 @@
 M:screen_manager
 F:G$engine_screen_manager_init$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lscreen_manager.engine_screen_manager_init$index$1$11({1}SC:U),R,0,0,[b]
+S:Lscreen_manager.engine_screen_manager_init$index$1$6({1}SC:U),R,0,0,[c]
 F:G$engine_screen_manager_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
-F:Fscreen_manager$draw_waves$0$0({2}DF,SV:S),Z,0,2,0,0,0
-S:Lscreen_manager.draw_waves$sx$1$15({2}SI:U),B,1,-2
-S:Lscreen_manager.draw_waves$sy$1$15({2}SI:U),R,0,0,[]
 S:Fscreen_manager$ascent$0$0({34}DA17d,SI:U),E,0,0
 S:Fscreen_manager$tx$0$0({1}SC:U),E,0,0
 S:Fscreen_manager$ty$0$0({1}SC:U),E,0,0
@@ -31,10 +28,4 @@ S:G$engine_input_manager_move_left$0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_right$0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire1$0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire2$0$0({2}DF,SC:U),C,0,0
-S:G$engine_sprite_manager_tile$0$0({2}DF,SV:S),C,0,0
 S:G$engine_sprite_manager_draw$0$0({2}DF,SV:S),C,0,0
-S:G$engine_turtle_manager_draw_00$0$0({2}DF,SV:S),C,0,0
-S:G$engine_turtle_manager_draw_01$0$0({2}DF,SV:S),C,0,0
-S:G$engine_turtle_manager_draw_02$0$0({2}DF,SV:S),C,0,0
-S:G$engine_turtle_manager_draw_03$0$0({2}DF,SV:S),C,0,0
-S:G$engine_turtle_manager_draw_sea$0$0({2}DF,SV:S),C,0,0
