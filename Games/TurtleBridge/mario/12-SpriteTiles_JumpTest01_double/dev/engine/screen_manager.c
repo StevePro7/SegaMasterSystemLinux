@@ -39,7 +39,7 @@ void engine_screen_manager_init()
 	//engine_font_manager_draw_data( value_y, 14, 8 );
 	//engine_font_manager_draw_data( cur_value_y, 14, 9 );
 
-	engine_music_manager_play();
+	//engine_music_manager_play();
 }
 
 void engine_screen_manager_update()

@@ -33,7 +33,7 @@ void engine_screen_manager_update()
 			draw_turtle( test );
 		*/
 
-	engine_sprite_manager_draw( 88, 64, SPRITE_TILES );
+	engine_sprite_manager_draw( 80, 64, SPRITE_TILES );
 }
 
 //static void draw_turtles()
