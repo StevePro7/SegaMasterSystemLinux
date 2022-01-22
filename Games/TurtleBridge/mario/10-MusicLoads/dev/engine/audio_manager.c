@@ -3,9 +3,9 @@
 #include "../content/psg.h"
 #include <stdlib.h>
 
-//#define mus_game_psg			mus_game_psg
+#define mus_game_psg			mus_game_psg
 //#define mus_game_psg			usas_jubaruins_psg
-#define mus_game_psg			mohenjodaro_usas_psg
+//#define mus_game_psg			mohenjodaro_usas_psg
 
 void engine_music_manager_play()
 {
