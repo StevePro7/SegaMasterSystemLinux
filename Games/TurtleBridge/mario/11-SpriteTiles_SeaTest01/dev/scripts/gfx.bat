@@ -10,6 +10,9 @@ cd gfx
 bmp2tile.exe raw/game_tiles.png -savetiles "game_tiles (tiles).psgcompr" -noremovedupes -planar -tileoffset 0  -savetilemap "game_tiles (tilemap).bin" -savepalette "game_tiles (palette).bin" -fullpalette -exit
 
 
+:: Sprites
+bmp2tile.exe raw/f00_cent.png -savetiles "left01 (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 0 -savepalette "mario01 (palette).bin" -fullpalette  -spritepalette -exit
+
 cd ..
 folder2c gfx gfx
 

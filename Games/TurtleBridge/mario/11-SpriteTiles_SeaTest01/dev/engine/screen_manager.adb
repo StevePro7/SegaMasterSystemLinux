@@ -1,8 +1,8 @@
 M:screen_manager
 F:G$engine_screen_manager_init$0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_screen_manager_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
-F:Fscreen_manager$draw_waves$0$0({2}DF,SV:S),Z,0,2,0,0,0
-S:Lscreen_manager.draw_waves$sx$1$13({2}SI:U),B,1,-2
+F:Fscreen_manager$draw_waves$0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lscreen_manager.draw_waves$sx$1$13({2}SI:U),R,0,0,[c,b]
 S:Lscreen_manager.draw_waves$sy$1$13({2}SI:U),R,0,0,[]
 S:Fscreen_manager$tx$0$0({1}SC:U),E,0,0
 S:Fscreen_manager$ty$0$0({1}SC:U),E,0,0
@@ -34,4 +34,4 @@ S:G$engine_turtle_manager_draw_01$0$0({2}DF,SV:S),C,0,0
 S:G$engine_turtle_manager_draw_02$0$0({2}DF,SV:S),C,0,0
 S:G$engine_turtle_manager_draw_03$0$0({2}DF,SV:S),C,0,0
 S:G$engine_turtle_manager_draw_04$0$0({2}DF,SV:S),C,0,0
-S:G$engine_turtle_manager_draw_sea$0$0({2}DF,SV:S),C,0,0
+S:G$engine_turtle_manager_draw_sky$0$0({2}DF,SV:S),C,0,0

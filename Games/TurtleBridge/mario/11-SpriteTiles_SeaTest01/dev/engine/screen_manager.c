@@ -21,9 +21,9 @@ void engine_screen_manager_init()
 
 	
 
-	engine_turtle_manager_draw_sea();
+	engine_turtle_manager_draw_sky();
 
-	engine_turtle_manager_draw_01( 10, 14 );
+	
 
 	tx = 14;
 	ty = 12;
@@ -34,6 +34,11 @@ void engine_screen_manager_init()
 
 	//engine_music_manager_play();
 	draw_waves();
+
+	//engine_turtle_manager_draw_01( 10, 18 );
+	engine_turtle_manager_draw_01( 16, 19 );
+	engine_turtle_manager_draw_01( 22, 20 );
+	engine_turtle_manager_draw_01( 28, 21 );
 }
 
 void engine_screen_manager_update()
@@ -84,12 +89,15 @@ void engine_screen_manager_update()
 		*/
 
 	//engine_sprite_manager_draw( 88, 64, SPRITE_TILES );
+	ty = 144 - 24 + 16;
+	engine_sprite_manager_draw( 22 * 8 + 8, ty, SPRITE_TILES );
+	engine_sprite_manager_draw( 28 * 8, 160-24+8, SPRITE_TILES );
 }
 
 static void draw_waves()
 {
 	unsigned sx, sy;
-	sy = 17;
+	sy = 21;
 	for( sx = 0; sx < 32; sx += 4 )
 	{
 		engine_sprite_manager_tile( sx + 0, sy + 0, 35 );
@@ -100,17 +108,17 @@ static void draw_waves()
 
 	for( sx = 0; sx < 32; sx += 4 )
 	{
-		sy = 18;
-		engine_sprite_manager_tile( sx + 0, sy + 0, 38 );
-		engine_sprite_manager_tile( sx + 1, sy + 0, 33 );
-		engine_sprite_manager_tile( sx + 2, sy + 0, 33 );
-		engine_sprite_manager_tile( sx + 3, sy + 0, 37 );
+		//sy = 18;
+		//engine_sprite_manager_tile( sx + 0, sy + 0, 38 );
+		//engine_sprite_manager_tile( sx + 1, sy + 0, 33 );
+		//engine_sprite_manager_tile( sx + 2, sy + 0, 33 );
+		//engine_sprite_manager_tile( sx + 3, sy + 0, 37 );
 
-		sy = 20;
-		engine_sprite_manager_tile( sx + 0, sy + 0, 38 );
-		engine_sprite_manager_tile( sx + 1, sy + 0, 33 );
-		engine_sprite_manager_tile( sx + 2, sy + 0, 33 );
-		engine_sprite_manager_tile( sx + 3, sy + 0, 37 );
+		//sy = 20;
+		//engine_sprite_manager_tile( sx + 0, sy + 0, 38 );
+		//engine_sprite_manager_tile( sx + 1, sy + 0, 33 );
+		//engine_sprite_manager_tile( sx + 2, sy + 0, 33 );
+		//engine_sprite_manager_tile( sx + 3, sy + 0, 37 );
 
 		sy = 22;
 		engine_sprite_manager_tile( sx + 0, sy + 0, 38 );
@@ -121,17 +129,17 @@ static void draw_waves()
 
 	for( sx = 0; sx < 32; sx += 4 )
 	{
-		sy = 19;
-		engine_sprite_manager_tile( sx + 0, sy + 0, 33 );
-		engine_sprite_manager_tile( sx + 1, sy + 0, 33 );
-		engine_sprite_manager_tile( sx + 2, sy + 0, 41 );
-		engine_sprite_manager_tile( sx + 3, sy + 0, 33 );
+		//sy = 19;
+		//engine_sprite_manager_tile( sx + 0, sy + 0, 33 );
+		//engine_sprite_manager_tile( sx + 1, sy + 0, 33 );
+		//engine_sprite_manager_tile( sx + 2, sy + 0, 41 );
+		//engine_sprite_manager_tile( sx + 3, sy + 0, 33 );
 
-		sy = 21;
-		engine_sprite_manager_tile( sx + 0, sy + 0, 33 );
-		engine_sprite_manager_tile( sx + 1, sy + 0, 33 );
-		engine_sprite_manager_tile( sx + 2, sy + 0, 41 );
-		engine_sprite_manager_tile( sx + 3, sy + 0, 33 );
+		//sy = 21;
+		//engine_sprite_manager_tile( sx + 0, sy + 0, 33 );
+		//engine_sprite_manager_tile( sx + 1, sy + 0, 33 );
+		//engine_sprite_manager_tile( sx + 2, sy + 0, 41 );
+		//engine_sprite_manager_tile( sx + 3, sy + 0, 33 );
 
 		sy = 23;
 		engine_sprite_manager_tile( sx + 0, sy + 0, 33 );

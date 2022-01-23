@@ -45,7 +45,6 @@ S A$sprite_manager$689 Def035E
 S A$sprite_manager$599 Def02E2
 S A$sprite_manager$70 Def0008
 S A$sprite_manager$61 Def0000
-S XFsprite_manager$draw_sea$0$0 Def07E9
 S C$sprite_manager.c$92$1$79 Def0384
 S C$sprite_manager.c$67$1$77 Def01A2
 S A$sprite_manager$996 Def0500
@@ -87,11 +86,13 @@ S A$sprite_manager$999 Def0505
 S A$sprite_manager$92 Def0026
 S A$sprite_manager$83 Def001E
 S A$sprite_manager$74 Def0012
+S G$engine_turtle_manager_draw_sky$0$0 Def073F
 S A$sprite_manager$84 Def001F
 S G$engine_sprite_manager_draw$0$0 Def07EA
 S C$sprite_manager.c$97$1$79 Def03FA
 S G$engine_sprite_manager_tile$0$0 Def0000
 S A$sprite_manager$85 Def0020
+S Fsprite_manager$draw_sky$0$0 Def0763
 S C$sprite_manager.c$98$1$79 Def041C
 S A$sprite_manager$86 Def0023
 S C$sprite_manager.c$99$1$79 Def043A
@@ -103,6 +104,7 @@ S G$engine_turtle_manager_draw_01$0$0 Def0027
 S C$sprite_manager.c$9$1$0 Def0008
 S G$engine_turtle_manager_draw_02$0$0 Def0199
 S G$engine_turtle_manager_draw_03$0$0 Def037B
+S _engine_turtle_manager_draw_sky Def073F
 S G$engine_turtle_manager_draw_04$0$0 Def055D
 S _engine_sprite_manager_draw Def07EA
 S _engine_sprite_manager_tile Def0000
@@ -117,6 +119,7 @@ S A$sprite_manager$1101 Def058A
 S A$sprite_manager$1020 Def0522
 S A$sprite_manager$1011 Def0512
 S A$sprite_manager$1002 Def050A
+S XG$engine_turtle_manager_draw_sky$0$0 Def0762
 S _engine_turtle_manager_draw_03 Def037B
 S A$sprite_manager$1300 Def06A0
 S A$sprite_manager$1210 Def0624
@@ -138,6 +141,7 @@ S A$sprite_manager$1040 Def053C
 S A$sprite_manager$1031 Def052C
 S A$sprite_manager$1022 Def0524
 S A$sprite_manager$1013 Def0516
+S XFsprite_manager$draw_sky$0$0 Def07E9
 S A$sprite_manager$1500 Def0783
 S A$sprite_manager$1401 Def0730
 S A$sprite_manager$1320 Def06BC
@@ -425,7 +429,6 @@ S A$sprite_manager$1138 Def05C4
 S A$sprite_manager$1084 Def056D
 S A$sprite_manager$1048 Def054A
 S A$sprite_manager$1039 Def053A
-S G$engine_turtle_manager_draw_sea$0$0 Def073F
 S C$sprite_manager.c$134$1$81 Def070B
 S C$sprite_manager.c$125$1$81 Def063A
 S C$sprite_manager.c$100$1$79 Def0458
@@ -514,7 +517,6 @@ S A$sprite_manager$1149 Def05D4
 S A$sprite_manager$1095 Def057C
 S A$sprite_manager$1086 Def0571
 S C$sprite_manager.c$161$1$83 Def076B
-S Fsprite_manager$draw_sea$0$0 Def0763
 S C$sprite_manager.c$136$1$81 Def073E
 S C$sprite_manager.c$127$1$81 Def0652
 S C$sprite_manager.c$118$1$81 Def057C
@@ -811,7 +813,6 @@ S A$sprite_manager$135 Def005B
 S A$sprite_manager$117 Def003B
 S C$sprite_manager.c$166$1$88 Def07C8
 S C$sprite_manager.c$12$1$73 Def0013
-S _engine_turtle_manager_draw_sea Def073F
 S A$sprite_manager$910 Def048C
 S A$sprite_manager$901 Def047C
 S A$sprite_manager$820 Def0412
@@ -1395,7 +1396,6 @@ S A$sprite_manager$588 Def02D0
 S A$sprite_manager$579 Def02C8
 S A$sprite_manager$489 Def024B
 S A$sprite_manager$399 Def01CE
-S XG$engine_turtle_manager_draw_sea$0$0 Def0762
 S C$sprite_manager.c$83$1$77 Def0329
 S C$sprite_manager.c$74$1$77 Def0258
 S C$sprite_manager.c$49$1$75 Def00EE
@@ -1621,13 +1621,13 @@ T 5D 05 DD E5 DD 21 00 00 DD 39 F5 DD 66 05 DD 6E
 R 00 00 00 00
 T 6B 05 04 E5 CD 00 00 F1 21 00 00 4E 06 00 C5 CD
 R 00 00 00 00 02 05 00 00 02 09 01 00
-T 79 05 00 00 F1 DD 7E 04 3C DD 77 FE DD 66 05 DD
+T 79 05 00 00 F1 DD 7E 04 3C DD 77 FF DD 66 05 DD
 R 00 00 00 00 02 02 03 00
-T 87 05 6E FE E5 CD 00 00 F1 21 00 00 4E 06 00 03
+T 87 05 6E FF E5 CD 00 00 F1 21 00 00 4E 06 00 03
 R 00 00 00 00 02 06 00 00 02 0A 01 00
-T 95 05 C5 CD 00 00 F1 DD 7E 04 C6 02 DD 77 FF DD
+T 95 05 C5 CD 00 00 F1 DD 7E 04 C6 02 DD 77 FE DD
 R 00 00 00 00 02 04 03 00
-T A3 05 66 05 DD 6E FF E5 CD 00 00 F1 21 00 00 4E
+T A3 05 66 05 DD 6E FE E5 CD 00 00 F1 21 00 00 4E
 R 00 00 00 00 02 09 00 00 02 0D 01 00
 T B1 05 06 00 03 03 C5 CD 00 00 F1 DD 4E 04 0C 0C
 R 00 00 00 00 02 08 03 00
@@ -1639,13 +1639,13 @@ T DB 05 C1 DD 46 05 04 C5 C5 33 DD 7E 04 F5 33 CD
 R 00 00 00 00
 T E9 05 00 00 F1 C1 21 00 00 5E 16 00 21 14 00 19
 R 00 00 00 00 02 02 00 00 02 07 01 00
-T F7 05 C5 E5 CD 00 00 F1 C1 C5 C5 33 DD 7E FE F5
+T F7 05 C5 E5 CD 00 00 F1 C1 C5 C5 33 DD 7E FF F5
 R 00 00 00 00 02 05 03 00
 T 05 06 33 CD 00 00 F1 C1 21 00 00 5E 16 00 21
 R 00 00 00 00 02 04 00 00 02 09 01 00
 T 12 06 15 00 19 C5 E5 CD 00 00 F1 C1 C5 C5 33 DD
 R 00 00 00 00 02 08 03 00
-T 20 06 7E FF F5 33 CD 00 00 F1 C1 21 00 00 5E 16
+T 20 06 7E FE F5 33 CD 00 00 F1 C1 21 00 00 5E 16
 R 00 00 00 00 02 07 00 00 02 0C 01 00
 T 2E 06 00 21 16 00 19 C5 E5 CD 00 00 F1 C1 C5 C5
 R 00 00 00 00 02 0A 03 00
@@ -1657,11 +1657,11 @@ T 58 06 C5 33 DD 7E 04 F5 33 CD 00 00 F1 C1 21
 R 00 00 00 00 02 0A 00 00
 T 65 06 00 00 5E 16 00 21 18 00 19 C5 E5 CD 00 00
 R 00 00 00 00 02 02 01 00 02 0E 03 00
-T 73 06 F1 C1 C5 C5 33 DD 7E FE F5 33 CD 00 00 F1
+T 73 06 F1 C1 C5 C5 33 DD 7E FF F5 33 CD 00 00 F1
 R 00 00 00 00 02 0D 00 00
 T 81 06 C1 21 00 00 5E 16 00 21 19 00 19 C5 E5 CD
 R 00 00 00 00 02 04 01 00
-T 8F 06 00 00 F1 C1 C5 C5 33 DD 7E FF F5 33 CD
+T 8F 06 00 00 F1 C1 C5 C5 33 DD 7E FE F5 33 CD
 R 00 00 00 00 02 02 03 00
 T 9C 06 00 00 F1 C1 21 00 00 5E 16 00 21 1A 00 19
 R 00 00 00 00 02 02 00 00 02 07 01 00
@@ -1675,11 +1675,11 @@ T D3 06 7E 04 F5 33 CD 00 00 F1 C1 21 00 00 5E 16
 R 00 00 00 00 02 07 00 00 02 0C 01 00
 T E1 06 00 21 1C 00 19 C5 E5 CD 00 00 F1 C1 C5 C5
 R 00 00 00 00 02 0A 03 00
-T EF 06 33 DD 7E FE F5 33 CD 00 00 F1 C1 21 00 00
+T EF 06 33 DD 7E FF F5 33 CD 00 00 F1 C1 21 00 00
 R 00 00 00 00 02 09 00 00 02 0E 01 00
 T FD 06 5E 16 00 21 1D 00 19 C5 E5 CD 00 00 F1 C1
 R 00 00 00 00 02 0C 03 00
-T 0B 07 C5 C5 33 DD 7E FF F5 33 CD 00 00 F1 C1 21
+T 0B 07 C5 C5 33 DD 7E FE F5 33 CD 00 00 F1 C1 21
 R 00 00 00 00 02 0B 00 00
 T 19 07 00 00 5E 16 00 21 1E 00 19 C5 E5 CD 00 00
 R 00 00 00 00 02 02 01 00 02 0E 03 00
@@ -1699,7 +1699,7 @@ T 43 07
 R 00 00 00 00
 T 43 07 C5 3E 20 F5 33 79 F5 33 C5 33 CD 63 07 F1
 R 00 00 00 00 00 0D 00 00
-T 51 07 33 C1 04 04 04 04 78 D6 20 38 E7 0C 3E 10
+T 51 07 33 C1 04 04 04 04 78 D6 20 38 E7 0C 3E 14
 R 00 00 00 00
 T 5F 07 91 30 DF C9
 R 00 00 00 00

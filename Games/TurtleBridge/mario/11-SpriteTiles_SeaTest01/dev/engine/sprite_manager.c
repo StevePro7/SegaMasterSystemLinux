@@ -2,7 +2,7 @@
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
 
-static void draw_sea( unsigned char x, unsigned char y, unsigned char offset );
+static void draw_sky( unsigned char x, unsigned char y, unsigned char offset );
 
 void engine_sprite_manager_tile( unsigned char x, unsigned char y, unsigned char offset )
 {
@@ -135,16 +135,16 @@ void engine_turtle_manager_draw_04( unsigned char x, unsigned char y )
 	devkit_SMS_setNextTileatXY( x + 3, y + 3 );	devkit_SMS_setTile( *pnt + 31 );
 }
 
-void engine_turtle_manager_draw_sea()
+void engine_turtle_manager_draw_sky()
 {
 	unsigned char x;
 	unsigned char y;
 
-	for( y = 0; y <= 16; y++ )
+	for( y = 0; y <= 20; y++ )
 	{
 		for( x = 0; x < 32; x+=4 )
 		{
-			draw_sea( x, y, 32 );
+			draw_sky( x, y, 32 );
 		}
 	}
 
@@ -156,7 +156,7 @@ void engine_turtle_manager_draw_sea()
 	//	}
 	//}
 }
-static void draw_sea( unsigned char x, unsigned char y, unsigned char offset )
+static void draw_sky( unsigned char x, unsigned char y, unsigned char offset )
 {
 	const unsigned char *pnt = game_tiles__tilemap__bin;
 
