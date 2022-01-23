@@ -2,7 +2,18 @@
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
 
-static void draw_sea( unsigned char x, unsigned char y );
+void engine_turtle_manager_draw_sea()
+{
+	const unsigned char *pnt = wingup__tilemap__bin;
+	unsigned char x, y;
+	for( y = 0; y < 24; y++ )
+	{
+		for( x = 0; x < 32; x++ )
+		{
+			devkit_SMS_setNextTileatXY( x + 0, y + 0 );	devkit_SMS_setTile( *pnt + 0 );
+		}
+	}
+}
 
 
 void engine_turtle_manager_draw_01( unsigned char x, unsigned char y )
@@ -49,8 +60,8 @@ void engine_turtle_manager_draw_02( unsigned char x, unsigned char y )
 	devkit_SMS_setNextTileatXY( x + 2, y + 2 );	devkit_SMS_setTile( *pnt + 10 );
 	devkit_SMS_setNextTileatXY( x + 3, y + 2 );	devkit_SMS_setTile( *pnt + 11 );
 
-	devkit_SMS_setNextTileatXY( x + 0, y + 3 );	devkit_SMS_setTile( *pnt + 28 );
-	devkit_SMS_setNextTileatXY( x + 1, y + 3 );	devkit_SMS_setTile( *pnt + 29 );
-	devkit_SMS_setNextTileatXY( x + 2, y + 3 );	devkit_SMS_setTile( *pnt + 30 );
-	devkit_SMS_setNextTileatXY( x + 3, y + 3 );	devkit_SMS_setTile( *pnt + 31 );
+	devkit_SMS_setNextTileatXY( x + 0, y + 3 );	devkit_SMS_setTile( *pnt + 12 );
+	devkit_SMS_setNextTileatXY( x + 1, y + 3 );	devkit_SMS_setTile( *pnt + 13 );
+	devkit_SMS_setNextTileatXY( x + 2, y + 3 );	devkit_SMS_setTile( *pnt + 14 );
+	devkit_SMS_setNextTileatXY( x + 3, y + 3 );	devkit_SMS_setTile( *pnt + 15 );
 }

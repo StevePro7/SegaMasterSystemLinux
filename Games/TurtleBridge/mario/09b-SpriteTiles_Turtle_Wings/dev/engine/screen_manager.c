@@ -9,25 +9,55 @@
 
 static unsigned char tx;
 static unsigned char ty;
-//static void draw_turtle( unsigned char i );
-//static unsigned char flag[ 6 ] = { 0,0,0,0,0 };
-//static unsigned char wide[ 6 ] = { 2, 7, 12, 17, 22, 27 };
+static unsigned char flag;
+static unsigned int timer, delta;
+
+static void draw_turtle();
 
 void engine_screen_manager_init()
 {
 	//engine_font_manager_draw_text( "STEVEPRO STUDIOS!!", 4, 1 );
 
-	tx = 14;
+	tx = 10;
 	ty = 12;
-	engine_turtle_manager_draw_01( tx + 5, ty );
-	engine_turtle_manager_draw_02( tx, ty );
+	
+	engine_turtle_manager_draw_sea();
+
+	timer = 0;
+	delta = 50;
+	flag = 1;
+	draw_turtle();
+
+	//engine_turtle_manager_draw_01( tx + 5, ty + 1 );
+	//engine_turtle_manager_draw_01( tx + 10, ty + 2 );
+	engine_turtle_manager_draw_02( tx + 15, ty + 1 );
 }
 
 void engine_screen_manager_update()
 {
-	unsigned char input;
-	input = engine_input_manager_hold_down();
-	if( input )
+	//unsigned char input;
+	//input = engine_input_manager_hold_down();
+	/*if( input )
 	{
+	}*/
+
+	timer++;
+	if( timer > delta )
+	{
+		timer = 0;
+		flag = 1 - flag;
+		draw_turtle();
+	}
+}
+
+static void draw_turtle()
+{
+	if( flag )
+	{
+		engine_turtle_manager_draw_01( tx, ty );
+	}
+	else
+	{
+		engine_turtle_manager_draw_02( tx, ty );
 	}
 }

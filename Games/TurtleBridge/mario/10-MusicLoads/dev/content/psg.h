@@ -1,3 +1,3 @@
 extern const unsigned char	mus_game_psg[];
-#define				mus_game_psg_size 13113
+#define				mus_game_psg_size 14126
 
