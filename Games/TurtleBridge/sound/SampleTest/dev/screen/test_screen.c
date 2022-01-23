@@ -47,7 +47,9 @@ void screen_test_screen_update( unsigned char *screen_type )
 					if( input )
 					{
 						engine_font_manager_draw_text( "PLAY SOUND FX", 10, 13 );
-						engine_riff_manager_play( 0 );
+						engine_riff_manager_play( 1 );
+						engine_riff_manager_play( 2 );
+						engine_riff_manager_play( 3 );
 					}
 					else
 					{
