@@ -9,6 +9,8 @@
 
 #define UFIX(x)                ((unsigned char)((x)>>8))
 
+static unsigned int	topBlock;
+static unsigned char platform;
 static unsigned char /*cur_enemy_y,*/ enemy_y;
 static unsigned int cur_value_y, value_y;
 
@@ -27,17 +29,20 @@ void engine_screen_manager_init()
 		//engine_font_manager_draw_data( ascent[ index ], 20, index );
 	}
 
-	enemy_y = 160;
+	// Prevent player jumping "through the roof"
+	topBlock = ( unsigned int ) ( 192 << 8 );
+	platform = 128;// 64 - 32;// 160 - 24;
+	enemy_y = platform;
 	state = 0;
 	index = 0;
 	value_y = enemy_y << 8;
 	cur_value_y = value_y;
 
-	//engine_font_manager_draw_data( state, 14, 5 );
-	//engine_font_manager_draw_data( index, 14, 6 );
-	//engine_font_manager_draw_data( enemy_y, 14, 7 );
-	//engine_font_manager_draw_data( value_y, 14, 8 );
-	//engine_font_manager_draw_data( cur_value_y, 14, 9 );
+	engine_font_manager_draw_data( state, 14, 5 );
+	engine_font_manager_draw_data( index, 14, 6 );
+	engine_font_manager_draw_data( enemy_y, 14, 7 );
+	engine_font_manager_draw_data( value_y, 14, 8 );
+	engine_font_manager_draw_data( cur_value_y, 14, 9 );
 
 	//engine_music_manager_play();
 }
@@ -46,21 +51,26 @@ void engine_screen_manager_update()
 {
 	unsigned char input;
 	unsigned int delta;
+	//input = engine_input_manager_hold_down();
 	input = engine_input_manager_move_down();
-	input = 1;
+	//input = 1;
 	if( input )
 	{
 		if( 0 == state )
 		{
 			delta = ascent[ index ];
 			cur_value_y -= delta;
+			if( cur_value_y >= topBlock )
+			{
+				cur_value_y = 0;
+			}
 			value_y = cur_value_y;
 			enemy_y = UFIX( value_y );
 			//cur_enemy_y = enemy_y;
 
-			//engine_font_manager_draw_data( enemy_y, 14, 7 );
-			//engine_font_manager_draw_data( value_y, 14, 8 );
-			//engine_font_manager_draw_data( cur_value_y, 14, 9 );
+			engine_font_manager_draw_data( enemy_y, 14, 7 );
+			engine_font_manager_draw_data( value_y, 14, 8 );
+			engine_font_manager_draw_data( cur_value_y, 14, 9 );
 
 			index++;
 			if( index >= 17 )
@@ -69,20 +79,24 @@ void engine_screen_manager_update()
 				index = 0;
 			}
 
-			//engine_font_manager_draw_data( state, 14, 5 );
-			//engine_font_manager_draw_data( index, 14, 6 );
+			engine_font_manager_draw_data( state, 14, 5 );
+			engine_font_manager_draw_data( index, 14, 6 );
 		}
 		else if( 1 == state )
 		{
 			delta = ascent[ index ];
 			cur_value_y -= delta;
+			if( cur_value_y >= topBlock )
+			{
+				cur_value_y = 0;
+			}
 			value_y = cur_value_y;
 			enemy_y = UFIX( value_y );
 			//cur_enemy_y = enemy_y;
 
-			//engine_font_manager_draw_data( enemy_y, 14, 7 );
-			//engine_font_manager_draw_data( value_y, 14, 8 );
-			//engine_font_manager_draw_data( cur_value_y, 14, 9 );
+			engine_font_manager_draw_data( enemy_y, 14, 7 );
+			engine_font_manager_draw_data( value_y, 14, 8 );
+			engine_font_manager_draw_data( cur_value_y, 14, 9 );
 
 			index++;
 			if( index >= 17 )
@@ -91,8 +105,8 @@ void engine_screen_manager_update()
 				index = 0;
 			}
 
-			//engine_font_manager_draw_data( state, 14, 5 );
-			//engine_font_manager_draw_data( index, 14, 6 );
+			engine_font_manager_draw_data( state, 14, 5 );
+			engine_font_manager_draw_data( index, 14, 6 );
 		}
 		else if( 2 == state )
 		{
@@ -102,9 +116,9 @@ void engine_screen_manager_update()
 			enemy_y = UFIX( value_y );
 			//cur_enemy_y = enemy_y;
 
-			//engine_font_manager_draw_data( enemy_y, 14, 7 );
-			//engine_font_manager_draw_data( value_y, 14, 8 );
-			//engine_font_manager_draw_data( cur_value_y, 14, 9 );
+			engine_font_manager_draw_data( enemy_y, 14, 7 );
+			engine_font_manager_draw_data( value_y, 14, 8 );
+			engine_font_manager_draw_data( cur_value_y, 14, 9 );
 
 			index++;
 			if( index > 7 )
@@ -112,20 +126,21 @@ void engine_screen_manager_update()
 				index = 7;
 			}
 
-			if( enemy_y >= 160 )
+			if( enemy_y >= platform )
 			{
-				enemy_y = 160;
+				enemy_y = platform;
 				state = 0;
 				index = 0;
 				value_y = enemy_y << 8;
 				cur_value_y = value_y;
 			}
 
-			//engine_font_manager_draw_data( state, 14, 5 );
-			//engine_font_manager_draw_data( index, 14, 6 );
+			engine_font_manager_draw_data( state, 14, 5 );
+			engine_font_manager_draw_data( index, 14, 6 );
 		}
 	}
 	
 
 	engine_sprite_manager_draw( 32, enemy_y, SPRITE_TILES );
+	engine_sprite_manager_draw( 32, platform + 32, SPRITE_TILES );
 }

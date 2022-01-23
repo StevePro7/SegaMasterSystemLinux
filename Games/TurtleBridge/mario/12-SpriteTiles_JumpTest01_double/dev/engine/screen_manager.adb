@@ -2,10 +2,12 @@ M:screen_manager
 F:G$engine_screen_manager_init$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lscreen_manager.engine_screen_manager_init$index$1$6({1}SC:U),R,0,0,[c]
 F:G$engine_screen_manager_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lscreen_manager.engine_screen_manager_update$input$1$9({1}SC:U),R,0,0,[]
+S:Lscreen_manager.engine_screen_manager_update$input$1$9({1}SC:U),R,0,0,[c]
 S:Lscreen_manager.engine_screen_manager_update$delta$1$9({2}SI:U),R,0,0,[c,b]
 S:Fscreen_manager$ascent$0$0({34}DA17d,SI:U),E,0,0
 S:Fscreen_manager$descent$0$0({16}DA8d,SI:U),E,0,0
+S:Fscreen_manager$topBlock$0$0({2}SI:U),E,0,0
+S:Fscreen_manager$platform$0$0({1}SC:U),E,0,0
 S:Fscreen_manager$enemy_y$0$0({1}SC:U),E,0,0
 S:Fscreen_manager$cur_value_y$0$0({2}SI:U),E,0,0
 S:Fscreen_manager$value_y$0$0({2}SI:U),E,0,0
