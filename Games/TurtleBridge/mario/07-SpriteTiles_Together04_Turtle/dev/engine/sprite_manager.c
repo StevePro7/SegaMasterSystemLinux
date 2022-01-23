@@ -65,6 +65,25 @@ void engine_turtle_manager_draw_02( unsigned char x, unsigned char y )
 	devkit_SMS_setNextTileatXY( x + 3, y + 3 );	devkit_SMS_setTile( *pnt + 15 );
 }
 
+void engine_turtle_manager_draw_03( unsigned char x, unsigned char y )
+{
+	const unsigned char *pnt = turtle_tiles_01__tilemap__bin;
+	unsigned int priority = devkit_TILE_FLIPPED_X();
+	devkit_SMS_setNextTileatXY( x + 0, y + 1 );	devkit_SMS_setTile( ( *pnt + 7) | priority );
+	devkit_SMS_setNextTileatXY( x + 1, y + 1 );	devkit_SMS_setTile( ( *pnt + 6) | priority );
+	devkit_SMS_setNextTileatXY( x + 2, y + 1 );	devkit_SMS_setTile( ( *pnt + 5) | priority );
+	devkit_SMS_setNextTileatXY( x + 3, y + 1 );	devkit_SMS_setTile( ( *pnt + 4) | priority );
+
+	devkit_SMS_setNextTileatXY( x + 0, y + 2 );	devkit_SMS_setTile( ( *pnt + 11 ) | priority );
+	devkit_SMS_setNextTileatXY( x + 1, y + 2 );	devkit_SMS_setTile( ( *pnt + 10 ) | priority );
+	devkit_SMS_setNextTileatXY( x + 2, y + 2 );	devkit_SMS_setTile( ( *pnt + 9 ) | priority );
+	devkit_SMS_setNextTileatXY( x + 3, y + 2 );	devkit_SMS_setTile( ( *pnt + 8 ) | priority );
+
+	devkit_SMS_setNextTileatXY( x + 0, y + 3 );	devkit_SMS_setTile( ( *pnt + 15 ) | priority );
+	devkit_SMS_setNextTileatXY( x + 1, y + 3 );	devkit_SMS_setTile( ( *pnt + 14 ) | priority );
+	devkit_SMS_setNextTileatXY( x + 2, y + 3 );	devkit_SMS_setTile( ( *pnt + 13 ) | priority );
+	devkit_SMS_setNextTileatXY( x + 3, y + 3 );	devkit_SMS_setTile( ( *pnt + 12 ) | priority );
+}
 
 // zoom sprites
 void engine_sprite_manager_draw( unsigned char x, unsigned char y, unsigned int tile )

@@ -17,6 +17,7 @@ void engine_screen_manager_init()
 	engine_font_manager_draw_text( "STEVEPRO STUDIOS", 4, 4 );
 	draw_turtles();
 
+	engine_turtle_manager_draw_03( 4, 6 );
 	engine_music_manager_play();
 }
 
@@ -52,6 +53,7 @@ static void draw_turtle( unsigned char i )
 	}
 	else
 	{
-		engine_turtle_manager_draw_02( wide[ i ], 18 );
+		engine_turtle_manager_draw_01( wide[ i ], 18 );
+		//engine_turtle_manager_draw_02( wide[ i ], 18 );
 	}
 }
