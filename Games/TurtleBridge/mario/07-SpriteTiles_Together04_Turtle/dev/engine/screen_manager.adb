@@ -1,11 +1,11 @@
 M:screen_manager
 F:G$engine_screen_manager_init$0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_screen_manager_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lscreen_manager.engine_screen_manager_update$test$1$31({1}SC:U),R,0,0,[b]
+S:Lscreen_manager.engine_screen_manager_update$test$1$32({1}SC:U),R,0,0,[b]
 F:Fscreen_manager$draw_turtles$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lscreen_manager.draw_turtles$i$1$33({1}SC:U),R,0,0,[b]
+S:Lscreen_manager.draw_turtles$i$1$34({1}SC:U),R,0,0,[b]
 F:Fscreen_manager$draw_turtle$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lscreen_manager.draw_turtle$i$1$36({1}SC:U),B,1,4
+S:Lscreen_manager.draw_turtle$i$1$37({1}SC:U),B,1,4
 S:Fscreen_manager$flag$0$0({6}DA6d,SC:U),E,0,0
 S:Fscreen_manager$wide$0$0({6}DA6d,SC:U),E,0,0
 S:G$engine_music_manager_play$0$0({2}DF,SV:S),C,0,0
@@ -34,6 +34,7 @@ S:G$engine_sprite_manager_draw$0$0({2}DF,SV:S),C,0,0
 S:G$engine_turtle_manager_draw_01$0$0({2}DF,SV:S),C,0,0
 S:G$engine_turtle_manager_draw_02$0$0({2}DF,SV:S),C,0,0
 S:G$engine_turtle_manager_draw_03$0$0({2}DF,SV:S),C,0,0
+S:G$engine_turtle_manager_draw_04$0$0({2}DF,SV:S),C,0,0
 S:G$atof$0$0({2}DF,SF:S),C,0,0
 S:G$atoi$0$0({2}DF,SI:S),C,0,0
 S:G$atol$0$0({2}DF,SL:S),C,0,0

@@ -18,6 +18,7 @@ void engine_screen_manager_init()
 	draw_turtles();
 
 	engine_turtle_manager_draw_03( 4, 6 );
+	engine_turtle_manager_draw_04( 4, 11 );
 	engine_music_manager_play();
 }
 
