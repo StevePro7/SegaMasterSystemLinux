@@ -19,11 +19,7 @@ void engine_screen_manager_init()
 	//engine_font_manager_draw_text( "STEVEPRO STUDIOS!!", 4, 1 );
 	//draw_turtle( 0 );
 
-	
-
 	engine_turtle_manager_draw_sky();
-
-	
 
 	tx = 14;
 	ty = 12;
@@ -36,6 +32,8 @@ void engine_screen_manager_init()
 	draw_waves();
 
 	//engine_turtle_manager_draw_01( 10, 18 );
+	engine_turtle_manager_draw_01( 10, 18 );
+	engine_turtle_manager_draw_01( 10, 21 );
 	engine_turtle_manager_draw_01( 16, 19 );
 	engine_turtle_manager_draw_01( 22, 20 );
 	engine_turtle_manager_draw_01( 28, 21 );
@@ -89,9 +87,17 @@ void engine_screen_manager_update()
 		*/
 
 	//engine_sprite_manager_draw( 88, 64, SPRITE_TILES );
+	ty = 112;
+	engine_sprite_manager_draw( 10 * 8, ty, SPRITE_TILES );
+
+	ty = 136 - 24 + 16;
+	engine_sprite_manager_draw( 16 * 8 + 4, ty, SPRITE_TILES );
+
 	ty = 144 - 24 + 16;
-	engine_sprite_manager_draw( 22 * 8 + 8, ty, SPRITE_TILES );
-	engine_sprite_manager_draw( 28 * 8, 160-24+8, SPRITE_TILES );
+	engine_sprite_manager_draw( 22 * 8, ty + 1, SPRITE_TILES );
+
+	ty = 160 - 24 + 8;
+	engine_sprite_manager_draw( 28 * 8, ty, SPRITE_TILES );
 }
 
 static void draw_waves()

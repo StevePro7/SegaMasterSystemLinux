@@ -1,0 +1,21 @@
+heights
+23/01/2022
+
+
+if I copy Wonderboy then it is 3x8 high waves
+
+3.	8	bottom - 0
+2.	8	bottom - 1
+1.	8	bottom - 2	but is 4 / 4 blue n' black diag waves
+
+if mario stand on 2. then Y = 136 and double jump = 67 + 67
+this would leave 2px off the top
+i.e.
+136 - 2 * 67 = 136 - 134 = 2
+
+
+1.	marioY	128
+2.	marioY	136	state #1	OK but state #2 1px down = 137 = dead
+3.	marioY	144
+
+but actually once marioY > 136 he is dead
