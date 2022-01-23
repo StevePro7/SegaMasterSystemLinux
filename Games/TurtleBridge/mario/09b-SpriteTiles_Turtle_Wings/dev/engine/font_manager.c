@@ -9,7 +9,7 @@
 
 void engine_font_manager_draw_char( unsigned char ch, unsigned char x, unsigned char y )
 {
-	const unsigned char *pnt = font_tiles__tilemap__bin;
+	const unsigned char *pnt = wingup__tilemap__bin;
 	unsigned char tile = ch - TEXT_ROOT;
 	devkit_SMS_setNextTileatXY( x, y );
 	devkit_SMS_setTile( *pnt + tile );
@@ -17,7 +17,7 @@ void engine_font_manager_draw_char( unsigned char ch, unsigned char x, unsigned 
 
 void engine_font_manager_draw_text( unsigned char *text, unsigned char x, unsigned char y )
 {
-	const unsigned char *pnt = font_tiles__tilemap__bin;
+	const unsigned char *pnt = wingup__tilemap__bin;
 	unsigned char idx = 0;
 
 	while( '\0' != text[idx] )
@@ -31,7 +31,7 @@ void engine_font_manager_draw_text( unsigned char *text, unsigned char x, unsign
 
 void engine_font_manager_draw_data( unsigned int data, unsigned char x, unsigned char y )
 {
-	const unsigned char *pnt = font_tiles__tilemap__bin;
+	const unsigned char *pnt = wingup__tilemap__bin;
 
 	unsigned char idx;
 	signed char tile;
@@ -62,7 +62,7 @@ void engine_font_manager_draw_data( unsigned int data, unsigned char x, unsigned
 
 void engine_font_manager_draw_zero( unsigned int data, unsigned char x, unsigned char y )
 {
-	const unsigned char *pnt = font_tiles__tilemap__bin;
+	const unsigned char *pnt = wingup__tilemap__bin;
 
 	unsigned char idx;
 	//signed char tile;

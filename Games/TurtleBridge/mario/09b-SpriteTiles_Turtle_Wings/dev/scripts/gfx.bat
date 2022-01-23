@@ -7,7 +7,7 @@ cd gfx
 
 :: Tiles
 bmp2tile.exe raw/wingdown.png -savetiles "wingdown (tiles).psgcompr" -noremovedupes -planar -tileoffset 64   -savetilemap "wingdown (tilemap).bin" -savepalette "wings (palette).bin" -fullpalette -exit
-bmp2tile.exe raw/wingup.png -savetiles "wingup (tiles).psgcompr" -noremovedupes -planar -tileoffset 80  -savetilemap "wingup (tilemap).bin" -savepalette "wings2 (palette).bin" -fullpalette -exit
+bmp2tile.exe raw/wingup.png -savetiles "wingup (tiles).psgcompr" -noremovedupes -planar -tileoffset 96  -savetilemap "wingup (tilemap).bin" -savepalette "wings2 (palette).bin" -fullpalette -exit
 
 
 cd ..
