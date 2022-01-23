@@ -2,29 +2,6 @@
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
 
-//void engine_sprite_manager_draw( unsigned char x, unsigned char y, unsigned int tile )
-//{
-//	devkit_SMS_addSprite( x + 0, y + 0, tile + 0 );
-//	devkit_SMS_addSprite( x + 8, y + 0, tile + 1 );
-//	devkit_SMS_addSprite( x + 16, y + 0, tile + 2 );
-//	devkit_SMS_addSprite( x + 24, y + 0, tile + 3 );
-//
-//	devkit_SMS_addSprite( x + 0, y + 8, tile + 4 );
-//	devkit_SMS_addSprite( x + 8, y + 8, tile + 5 );
-//	devkit_SMS_addSprite( x + 16, y + 8, tile + 6 );
-//	devkit_SMS_addSprite( x + 24, y + 8, tile + 7 );
-//
-//	devkit_SMS_addSprite( x + 0, y + 16, tile + 8 );
-//	devkit_SMS_addSprite( x + 8, y + 16, tile + 9 );
-//	devkit_SMS_addSprite( x + 16, y + 16, tile + 10 );
-//	devkit_SMS_addSprite( x + 24, y + 16, tile + 11 );
-//
-//	devkit_SMS_addSprite( x + 0, y + 24, tile + 12 );
-//	devkit_SMS_addSprite( x + 8, y + 24, tile + 13 );
-//	devkit_SMS_addSprite( x + 16, y + 24, tile + 14 );
-//	devkit_SMS_addSprite( x + 24, y + 24, tile + 15 );
-//}
-
 void engine_turtle_manager_draw_01( unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = turtle_tiles_01__tilemap__bin;
@@ -116,4 +93,16 @@ void engine_sprite_manager_draw( unsigned char x, unsigned char y, unsigned int 
 	devkit_SMS_addSprite( x + size * 8, y + size * 0, tile + 1 );
 	devkit_SMS_addSprite( x + size * 0, y + size * 8, tile + 2 );
 	devkit_SMS_addSprite( x + size * 8, y + size * 8, tile + 3 );
+}
+
+void engine_sprite_manager_drawX( unsigned char x, unsigned char y, unsigned int tile )
+{
+	// Cannot flip on sprites!
+	const unsigned char size = 2;
+	unsigned int priority = devkit_TILE_USE_SPRITE_PALETTE() | devkit_TILE_FLIPPED_Y();
+
+	devkit_SMS_addSprite( x + size * 0, y + size * 0, ( tile + 0 ) | priority );
+	devkit_SMS_addSprite( x + size * 8, y + size * 0, ( tile + 1 ) | priority );
+	devkit_SMS_addSprite( x + size * 0, y + size * 8, ( tile + 2 ) | priority );
+	devkit_SMS_addSprite( x + size * 8, y + size * 8, ( tile + 3 ) | priority );
 }
