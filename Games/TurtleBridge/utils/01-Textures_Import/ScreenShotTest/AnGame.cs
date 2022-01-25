@@ -13,31 +13,24 @@ namespace ScreenShotTest
 	/// </summary>
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		//const string file = "f02_rght";
+		const string file = "turtle";
 
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
 		RenderTarget2D renderTarget;
 		private Texture2D image;
 		private Texture2D pixel;
-		private const int offset = 0;
 
 		private bool save;
-		private string file;
 
-		private int width = 256 / 1;
-		private int height = 192 / 1;
-
-		//private IDictionary<string, Texture2D> dict = new Dictionary<string, Texture2D>();
-		//private int size = 1;
-		//private int pixl = 16;
-		//private string[] lines;
+		private int width = 32;
+		private int height = 24;
 
 		public AnGame()
 		{
 			graphics = new GraphicsDeviceManager(this);
-			graphics.PreferredBackBufferWidth = width; // pixl * size;
-			graphics.PreferredBackBufferHeight = height;// pixl * size;
+			graphics.PreferredBackBufferWidth = width;
+			graphics.PreferredBackBufferHeight = height;
 			Content.RootDirectory = "Content";
 		}
 
@@ -49,11 +42,6 @@ namespace ScreenShotTest
 		/// </summary>
 		protected override void Initialize()
 		{
-			file = "wb01a";
-			//if (null != ConfigurationManager.AppSettings["file"])
-			//{
-			//	file = Convert.ToString(ConfigurationManager.AppSettings["file"]);
-			//}
 			save = false;
 			//if (null != ConfigurationManager.AppSettings["save"])
 			//{
@@ -74,12 +62,9 @@ namespace ScreenShotTest
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 			image = Content.Load<Texture2D>(file);
 
-			//const int hole = 32;
-			//const int half = 16;
 			Color[] texColors = new Color[(width * 1) * (height * 1)];
 			Color[] newColors = new Color[(width * 1) * (height * 1)];
 			image.GetData(texColors);
-			//lines = File.ReadAllLines("mario_sprite.csv");
 
 			pixel = new Texture2D(graphics.GraphicsDevice, width, height);
 			int j = 0;
@@ -88,8 +73,6 @@ namespace ScreenShotTest
 				for (int x = 0; x < width; x++)
 				{
 					int i = j;
-					//int i = y * height + x;
-					//if (x % 2 == 0)
 					{
 						newColors[j] = texColors[i];
 						j++;
@@ -101,9 +84,6 @@ namespace ScreenShotTest
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
 			pp.BackBufferWidth = width;
 			pp.BackBufferHeight = height;
-			//width = pp.BackBufferWidth;
-			//height = pp.BackBufferHeight;
-			//renderTarget = new RenderTarget2D(GraphicsDevice, width, height, 1, GraphicsDevice.DisplayMode.Format);
 			renderTarget = new RenderTarget2D(GraphicsDevice, width, height, false, SurfaceFormat.Color, DepthFormat.Depth24);
 		}
 
@@ -145,13 +125,9 @@ namespace ScreenShotTest
 				Draw();
 				base.Draw(gameTime);
 
-				//GraphicsDevice.SetRenderTarget(0, null);
 				GraphicsDevice.SetRenderTarget(null);
-				//Texture2D resolvedTexture = renderTarget.GetTexture();
 				Texture2D resolvedTexture = (Texture2D)renderTarget;
-				//resolvedTexture.Save("00.jpg", ImageFileFormat.Jpg);
 				Stream stream = File.Create(file + ".png");
-				//resolvedTexture.SaveAsJpeg(stream, width, height);
 				resolvedTexture.SaveAsPng(stream, width, height);
 		
 				Exit();
