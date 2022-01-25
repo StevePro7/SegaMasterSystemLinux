@@ -59,7 +59,7 @@ engine/input_manager.rel ^
 engine/screen_manager.rel engine/scroll_manager.rel ^
 engine/sprite_manager.rel ^
 content/gfx.rel ^
-content/psg.rel
+content/psg.rel 
 
 
 :: Execute
@@ -86,5 +86,5 @@ if exist "*.noi" del "*.noi" > nul
 if exist "*.sym" del "*.sym" > nul
 
 :: Run
-java -jar C:/SEGA/Emulicious/Emulicious.jar output.sms
-::output.sms
+::java -jar C:/SEGA/Emulicious/Emulicious.jar output.sms
+output.sms

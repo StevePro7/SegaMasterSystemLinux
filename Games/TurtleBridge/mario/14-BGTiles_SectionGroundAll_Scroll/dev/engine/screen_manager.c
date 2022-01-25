@@ -27,18 +27,23 @@ void engine_screen_manager_init()
 {
 	//unsigned char x = 10;
 	//unsigned char y = 10;
-	//engine_tile_manager_draw( x, y );
+	engine_tile_manager_draw( 0, 18 );
 	engine_tile_manager_init();
 	test2 = 0;
 
 //	engine_font_manager_draw_data( test2, 15, 2 );
-	engine_music_manager_play();
+	//engine_music_manager_play();
 }
 
 void engine_screen_manager_update()
 {
-	const unsigned char delta = 1;
-	unsigned char input;
+	unsigned char delta = 1;
+	unsigned char input;// , input2;
+	//input2 = engine_input_manager_move_fire2();
+	//if( input2 )
+	//{
+	//	delta = 2;
+	//}
 	input = engine_input_manager_move_right();
 	//input = 1;
 	if( input )
@@ -51,7 +56,7 @@ void engine_screen_manager_update()
 
 			scroll -= delta;
 			scrollRight += delta;
-			scrollRightDivided8 = scrollRight / 8;
+			
 			devkit_SMS_setBGScrollX( scroll );
 
 			//engine_font_manager_draw_data( scroll, 10, 11 );
@@ -61,6 +66,8 @@ void engine_screen_manager_update()
 			// This works but does not update the top row
 			if( ( scrollRight % 8 ) == delta )
 			{
+				scrollRightDivided8 = scrollRight / 8;
+
 				test = scrollRightDivided8 % 2;
 
 

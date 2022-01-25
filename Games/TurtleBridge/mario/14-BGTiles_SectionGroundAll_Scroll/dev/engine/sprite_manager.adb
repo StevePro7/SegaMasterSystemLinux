@@ -1,13 +1,13 @@
 M:sprite_manager
 F:G$engine_tile_manager_init$0$0({2}DF,SV:S),Z,0,0,0,0,0
-F:G$engine_tile_manager_draw$0$0({2}DF,SV:S),Z,0,0,0,0,0
+F:G$engine_tile_manager_draw$0$0({2}DF,SV:S),Z,0,2,0,0,0
 S:Lsprite_manager.engine_tile_manager_draw$x$1$68({1}SC:U),B,1,4
 S:Lsprite_manager.engine_tile_manager_draw$y$1$68({1}SC:U),B,1,5
 S:Lsprite_manager.engine_tile_manager_draw$pnt$1$69({2}DG,SC:U),R,0,0,[]
 S:Lsprite_manager.engine_tile_manager_draw$tile$1$69({1}SC:U),R,0,0,[c]
-S:Lsprite_manager.engine_tile_manager_draw$w$1$69({1}SC:U),R,0,0,[d]
-S:Lsprite_manager.engine_tile_manager_draw$h$1$69({1}SC:U),R,0,0,[e]
-S:Lsprite_manager.engine_tile_manager_draw$sloc0$1$0({2}SI:S),B,1,-2
+S:Lsprite_manager.engine_tile_manager_draw$w$1$69({1}SC:U),B,1,-2
+S:Lsprite_manager.engine_tile_manager_draw$h$1$69({1}SC:U),B,1,-3
+S:Lsprite_manager.engine_tile_manager_draw$sloc0$1$0({1}SC:U),B,1,-1
 F:G$engine_tilemap_manager_draw_tile$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lsprite_manager.engine_tilemap_manager_draw_tile$x$1$74({1}SC:U),B,1,4
 S:Lsprite_manager.engine_tilemap_manager_draw_tile$y$1$74({1}SC:U),B,1,5
