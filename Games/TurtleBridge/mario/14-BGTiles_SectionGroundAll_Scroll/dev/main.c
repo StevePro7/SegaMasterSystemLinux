@@ -23,7 +23,7 @@ void main( void )
 	//devkit_SMS_setBGPaletteColor( 0, devkit_RGB( 3, 3, 3 ) );
 	//devkit_SMS_setBGPaletteColor( 15, devkit_RGB( 0, 0, 0 ) );
 	//devkit_SMS_setBGPaletteColor( 0, devkit_RGB( 1, 2, 3 ) );
-	//devkit_SMS_setBGPaletteColor( 15, devkit_RGB( 3, 3, 3 ) );		// white
+	devkit_SMS_setBGPaletteColor( 15, devkit_RGB( 3, 3, 3 ) );		// white			important for font tiles
 	//devkit_SMS_setBGPaletteColor( 0, devkit_RGB( 0, 0, 0 ) );		// black
 
 	//devkit_SMS_setBGPaletteColor( 16, devkit_RGB( 1, 2, 3 ) );		// cornflower blue		sky
