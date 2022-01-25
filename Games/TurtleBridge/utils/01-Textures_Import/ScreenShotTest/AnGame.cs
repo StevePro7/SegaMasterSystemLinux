@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using System.Configuration;
+using System.IO;
 
 namespace ScreenShotTest
 {
@@ -13,12 +10,13 @@ namespace ScreenShotTest
 	/// </summary>
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		const string file = "turtle";
+		const string file = "tile";
 
+		ImageManager imageManager;
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
 		RenderTarget2D renderTarget;
-		private Texture2D image;
+		//private Texture2D image;
 		private Texture2D pixel;
 
 		private bool save;
@@ -32,6 +30,8 @@ namespace ScreenShotTest
 			graphics.PreferredBackBufferWidth = width;
 			graphics.PreferredBackBufferHeight = height;
 			Content.RootDirectory = "Content";
+
+			imageManager = new ImageManager();
 		}
 
 		/// <summary>
@@ -60,11 +60,12 @@ namespace ScreenShotTest
 		{
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch(GraphicsDevice);
-			image = Content.Load<Texture2D>(file);
+			var texture = Content.Load<Texture2D>(file);
+			imageManager.LoadContent(texture);
 
 			Color[] texColors = new Color[(width * 1) * (height * 1)];
 			Color[] newColors = new Color[(width * 1) * (height * 1)];
-			image.GetData(texColors);
+			texture.GetData(texColors);
 
 			pixel = new Texture2D(graphics.GraphicsDevice, width, height);
 			int j = 0;
