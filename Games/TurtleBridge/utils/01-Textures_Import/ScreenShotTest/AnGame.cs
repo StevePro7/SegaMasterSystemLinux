@@ -12,6 +12,7 @@ namespace ScreenShotTest
 	{
 		const string file = "tile";
 
+		PaletteManager paletteManager;
 		ImageManager imageManager;
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
@@ -31,6 +32,7 @@ namespace ScreenShotTest
 			graphics.PreferredBackBufferHeight = height;
 			Content.RootDirectory = "Content";
 
+			paletteManager = new PaletteManager();
 			imageManager = new ImageManager();
 		}
 
