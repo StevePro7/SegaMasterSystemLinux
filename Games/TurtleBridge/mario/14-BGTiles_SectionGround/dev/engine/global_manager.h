@@ -4,5 +4,6 @@
 // Sprites.
 #define SPRITE_TILES		256
 #define TURTLE_TILES		64
+#define GAME_TILES			8
 
 #endif//_GLOBAL_MANAGER_H_

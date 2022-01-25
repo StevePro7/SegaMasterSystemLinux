@@ -12,10 +12,6 @@ void engine_screen_manager_init()
 	unsigned char x = 10;
 	unsigned char y = 10;
 	engine_tile_manager_draw( x + 0, y + 0, 0 );
-	engine_tile_manager_draw( x + 1, y + 0, 1 );
-	engine_tile_manager_draw( x + 2, y + 0, 2 );
-
-	engine_tile_manager_draw( x + 0, y + 1, 5 );
 }
 
 void engine_screen_manager_update()
