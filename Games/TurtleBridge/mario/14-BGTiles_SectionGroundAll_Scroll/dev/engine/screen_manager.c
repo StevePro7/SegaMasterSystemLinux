@@ -25,13 +25,14 @@ unsigned int yDelta = 0;
 
 void engine_screen_manager_init()
 {
-	unsigned char x = 10;
-	unsigned char y = 10;
-	engine_tile_manager_draw( x, y );
+	//unsigned char x = 10;
+	//unsigned char y = 10;
+	//engine_tile_manager_draw( x, y );
 	engine_tile_manager_init();
 	test2 = 0;
 
-	engine_font_manager_draw_data( test2, 15, 2 );
+//	engine_font_manager_draw_data( test2, 15, 2 );
+	engine_music_manager_play();
 }
 
 void engine_screen_manager_update()
@@ -54,8 +55,8 @@ void engine_screen_manager_update()
 			devkit_SMS_setBGScrollX( scroll );
 
 			//engine_font_manager_draw_data( scroll, 10, 11 );
-			engine_font_manager_draw_data( scrollRight, 10, 10 );
-			engine_font_manager_draw_data( scrollRightDivided8, 10, 12 );
+			//engine_font_manager_draw_data( scrollRight, 10, 10 );
+			//engine_font_manager_draw_data( scrollRightDivided8, 10, 12 );
 
 			// This works but does not update the top row
 			if( ( scrollRight % 8 ) == delta )
