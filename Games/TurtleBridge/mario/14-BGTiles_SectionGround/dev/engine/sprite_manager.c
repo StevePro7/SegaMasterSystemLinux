@@ -13,7 +13,7 @@ void engine_tile_manager_draw( unsigned char x, unsigned char y )
 
 	for( h = 0; h < 6; h++ )
 	{
-		for( w = 0; w < 6; w++ )
+		for( w = 0; w < 16; w++ )
 		{
 			devkit_SMS_setNextTileatXY( x + w, y + h );
 			devkit_SMS_setTile( *pnt + tile );

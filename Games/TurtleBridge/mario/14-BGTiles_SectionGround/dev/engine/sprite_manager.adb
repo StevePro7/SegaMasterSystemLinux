@@ -2,8 +2,11 @@ M:sprite_manager
 F:G$engine_tile_manager_draw$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lsprite_manager.engine_tile_manager_draw$x$1$66({1}SC:U),B,1,4
 S:Lsprite_manager.engine_tile_manager_draw$y$1$66({1}SC:U),B,1,5
-S:Lsprite_manager.engine_tile_manager_draw$tile$1$66({1}SC:U),B,1,6
 S:Lsprite_manager.engine_tile_manager_draw$pnt$1$67({2}DG,SC:U),R,0,0,[]
+S:Lsprite_manager.engine_tile_manager_draw$tile$1$67({1}SC:U),R,0,0,[c]
+S:Lsprite_manager.engine_tile_manager_draw$w$1$67({1}SC:U),R,0,0,[d]
+S:Lsprite_manager.engine_tile_manager_draw$h$1$67({1}SC:U),R,0,0,[e]
+S:Lsprite_manager.engine_tile_manager_draw$sloc0$1$0({2}SI:S),B,1,-2
 S:G$devkit_SMS_init$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOnFeature$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOffFeature$0$0({2}DF,SV:S),C,0,0
