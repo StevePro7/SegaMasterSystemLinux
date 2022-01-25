@@ -1,14 +1,6 @@
 M:scroll_manager
 F:G$engine_scroll_manager_init$0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_scroll_manager_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lscroll_manager.engine_scroll_manager_update$delta$1$72({1}SC:U),R,0,0,[]
-S:G$X_TILE_MAX$0$0({2}SI:U),E,0,0
-S:G$test$0$0({1}SC:U),E,0,0
-S:G$test2$0$0({2}SI:U),E,0,0
-S:G$scroll$0$0({1}SC:U),E,0,0
-S:G$scrollRight$0$0({1}SC:U),E,0,0
-S:G$scrollRightDivided8$0$0({1}SC:U),E,0,0
-S:G$ytile$0$0({2}SI:U),E,0,0
 S:G$engine_font_manager_draw_char$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_text$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_data$0$0({2}DF,SV:S),C,0,0

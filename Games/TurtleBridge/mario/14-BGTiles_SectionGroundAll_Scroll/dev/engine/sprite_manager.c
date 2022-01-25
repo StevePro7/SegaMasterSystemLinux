@@ -27,7 +27,6 @@ void engine_tile_manager_draw( unsigned char x, unsigned char y )
 			tile++;
 		}
 	}
-	
 }
 
 void engine_tilemap_manager_draw_tile( unsigned char x, unsigned char y )
@@ -37,17 +36,27 @@ void engine_tilemap_manager_draw_tile( unsigned char x, unsigned char y )
 	//unsigned char base = 12;			// down
 	unsigned char base = 0;			// up
 
-	index = ( base + offset ) * 2 + 0;
+	index = ( base + offset + 0 ) * 2;
 	devkit_SMS_loadTileMap( x, y - 0, ( void * ) &pnt[ index ], 2 );  // 32 tiles * 2 bytes each
 
-	//index = ( base + offset ) * 2 + 8;
-	//devkit_SMS_loadTileMap( x, y + 1, ( void * ) &pnt[ index ], 2 );  // 32 tiles * 2 bytes each
+	index = ( base + offset + 16 ) * 2;
+	devkit_SMS_loadTileMap( x, y + 1, ( void * ) &pnt[ index ], 2 );  // 32 tiles * 2 bytes each
 
-	//index = ( base + offset ) * 2 + 16;
-	//devkit_SMS_loadTileMap( x, y + 2, ( void * ) &pnt[ index ], 2 );  // 32 tiles * 2 bytes each
+	index = ( base + offset + 32 ) * 2;
+	devkit_SMS_loadTileMap( x, y + 2, ( void * ) &pnt[ index ], 2 );  // 32 tiles * 2 bytes each
+
+	index = ( base + offset + 48 ) * 2 + 0;
+	devkit_SMS_loadTileMap( x, y + 3, ( void * ) &pnt[ index ], 2 );  // 32 tiles * 2 bytes each
+
+	index = ( base + offset + 64 ) * 2;
+	devkit_SMS_loadTileMap( x, y + 4, ( void * ) &pnt[ index ], 2 );  // 32 tiles * 2 bytes each
+
+	index = ( base + offset + 80 ) * 2;
+	devkit_SMS_loadTileMap( x, y + 5, ( void * ) &pnt[ index ], 2 );  // 32 tiles * 2 bytes each
+
 
 	offset++;
-	if( offset >= 4 )
+	if( offset >= 16 )
 	{
 		offset = 0;
 	}
