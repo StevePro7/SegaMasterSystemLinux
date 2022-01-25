@@ -1,8 +1,7 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ScreenShotTest
 {
@@ -11,6 +10,17 @@ namespace ScreenShotTest
 		public PaletteManager()
 		{
 			PaletteDictionary = GetPaletteDictionary();
+		}
+
+		public string GetColorAtIndex(Color texColor)
+		{
+			var bytColor = new byte[3] { texColor.R, texColor.G, texColor.B };
+			var strColor = BitConverter.ToString(bytColor);
+			strColor = strColor.Replace("-", "");
+			strColor = strColor.ToLower();
+			var valColor = "#" + strColor;
+			var dictColor = PaletteDictionary.FirstOrDefault(x => x.Value == valColor);
+			return dictColor.Key;
 		}
 
 		public IDictionary<string, string> PaletteDictionary { get; private set; }
