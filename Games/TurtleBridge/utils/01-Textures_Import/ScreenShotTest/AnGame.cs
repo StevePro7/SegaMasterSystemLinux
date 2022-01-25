@@ -14,6 +14,8 @@ namespace ScreenShotTest
 
 		PaletteManager paletteManager;
 		ImageManager imageManager;
+		TileManager tileManager;
+
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
 		RenderTarget2D renderTarget;
@@ -32,8 +34,9 @@ namespace ScreenShotTest
 			graphics.PreferredBackBufferHeight = height;
 			Content.RootDirectory = "Content";
 
+			tileManager = new TileManager();
 			paletteManager = new PaletteManager();
-			imageManager = new ImageManager();
+			imageManager = new ImageManager(paletteManager);
 		}
 
 		/// <summary>
@@ -62,8 +65,10 @@ namespace ScreenShotTest
 		{
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch(GraphicsDevice);
+
 			var texture = Content.Load<Texture2D>(file);
 			imageManager.LoadContent(texture);
+			imageManager.Process();
 
 			Color[] texColors = new Color[(width * 1) * (height * 1)];
 			Color[] newColors = new Color[(width * 1) * (height * 1)];
