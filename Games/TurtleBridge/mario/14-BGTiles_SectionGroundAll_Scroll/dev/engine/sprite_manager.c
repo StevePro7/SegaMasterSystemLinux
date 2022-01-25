@@ -3,6 +3,13 @@
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
 
+static unsigned int offset;
+
+void engine_tile_manager_init()
+{
+	offset = 0;
+}
+
 void engine_tile_manager_draw( unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = game_tiles__tilemap__bin;
@@ -21,4 +28,27 @@ void engine_tile_manager_draw( unsigned char x, unsigned char y )
 		}
 	}
 	
+}
+
+void engine_tilemap_manager_draw_tile( unsigned char x, unsigned char y )
+{
+	const unsigned char *pnt = game_tiles__tilemap__bin;
+	unsigned int index = 0;
+	//unsigned char base = 12;			// down
+	unsigned char base = 0;			// up
+
+	index = ( base + offset ) * 2 + 0;
+	devkit_SMS_loadTileMap( x, y - 0, ( void * ) &pnt[ index ], 2 );  // 32 tiles * 2 bytes each
+
+	index = ( base + offset ) * 2 + 8;
+	devkit_SMS_loadTileMap( x, y + 1, ( void * ) &pnt[ index ], 2 );  // 32 tiles * 2 bytes each
+
+	index = ( base + offset ) * 2 + 16;
+	devkit_SMS_loadTileMap( x, y + 2, ( void * ) &pnt[ index ], 2 );  // 32 tiles * 2 bytes each
+
+	offset++;
+	if( offset >= 4 )
+	{
+		offset = 0;
+	}
 }
