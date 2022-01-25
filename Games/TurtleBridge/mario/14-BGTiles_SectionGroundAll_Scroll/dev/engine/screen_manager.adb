@@ -3,7 +3,7 @@ F:G$engine_screen_manager_init$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lscreen_manager.engine_screen_manager_init$x$1$7({1}SC:U),R,0,0,[]
 S:Lscreen_manager.engine_screen_manager_init$y$1$7({1}SC:U),R,0,0,[]
 F:G$engine_screen_manager_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lscreen_manager.engine_screen_manager_update$input$1$8({1}SC:U),R,0,0,[]
+S:Lscreen_manager.engine_screen_manager_update$input$1$8({1}SC:U),R,0,0,[l]
 S:G$engine_music_manager_play$0$0({2}DF,SV:S),C,0,0
 S:G$engine_sound_manager_play$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_tiles$0$0({2}DF,SV:S),C,0,0
@@ -25,6 +25,8 @@ S:G$engine_input_manager_move_left$0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_right$0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire1$0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire2$0$0({2}DF,SC:U),C,0,0
+S:G$engine_scroll_manager_init$0$0({2}DF,SV:S),C,0,0
+S:G$engine_scroll_manager_update$0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_init$0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_draw$0$0({2}DF,SV:S),C,0,0
 S:G$engine_tilemap_manager_draw_tile$0$0({2}DF,SV:S),C,0,0
