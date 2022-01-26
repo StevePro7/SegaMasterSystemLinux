@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace ScreenShotTest
@@ -78,7 +79,11 @@ namespace ScreenShotTest
 			}
 
 			var tileMapText = String.Join(",", tilemapList);
-			var tileMapArray = tilemapList.ToArray();
+			//var tileMapArray = tilemapList.ToArray();
+			if (save)
+			{
+				File.WriteAllText("output/tileMap.txt", tileMapText);
+			}
 		}
 
 	}
