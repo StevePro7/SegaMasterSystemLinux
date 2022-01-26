@@ -16,6 +16,7 @@ namespace ScreenShotTest
 		//int ix, iy;
 		Color[] texColors;
 		Color[] newColors;
+		Color[] allColors;
 
 		public ImageManager(PaletteManager paletteManager)
 		{
@@ -23,32 +24,27 @@ namespace ScreenShotTest
 			sb = new StringBuilder();
 		}
 
-		public void Process()
+		public string Process(int inp_index, int out_index)
 		{
 			sb.Length = 0;
 			int cx, cy;
 
 			Color texColor;
-			int index = 0;
-
 			for (cy = 0; cy < 8; cy++)
 			{
-				//var outLine = String.Empty;
 				for (cx = 0; cx < 8; cx++)
 				{
-					index = cy * 8 + cx;
-					texColor = texColors[index];
+					texColor = texColors[inp_index];
 					var text = paletteManager.GetColorAtIndex(texColor);
 					var data = text.Replace("$", "");
 					sb.Append(data);
-					//outLine += text + ",";
-					newColors[index] = texColors[index];
+					newColors[cy * 8 + cx] = texColors[inp_index];
+					allColors[out_index] = texColors[inp_index];
 				}
-				//outLine = outLine.Substring(0, outLine.Length - 1);
-				//outlines.Add(outLine);
 			}
 
 			string hash = sb.ToString();
+			return hash;
 		}
 
 		public void LoadContent(Texture2D texture)
@@ -58,7 +54,8 @@ namespace ScreenShotTest
 			py= texture.Height;
 
 			texColors = new Color[px * py];
-			newColors = new Color[px* py];
+			allColors = new Color[px * py];
+			newColors = new Color[8 * 8];
 
 			texture.GetData(texColors);
 

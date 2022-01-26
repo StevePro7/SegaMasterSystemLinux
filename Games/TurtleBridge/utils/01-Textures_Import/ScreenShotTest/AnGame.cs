@@ -34,9 +34,10 @@ namespace ScreenShotTest
 			graphics.PreferredBackBufferHeight = height;
 			Content.RootDirectory = "Content";
 
-			tileManager = new TileManager();
+			
 			paletteManager = new PaletteManager();
 			imageManager = new ImageManager(paletteManager);
+			tileManager = new TileManager(imageManager);
 		}
 
 		/// <summary>
@@ -67,8 +68,8 @@ namespace ScreenShotTest
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 
 			var texture = Content.Load<Texture2D>(file);
-			imageManager.LoadContent(texture);
-			imageManager.Process();
+			tileManager.LoadContent(texture);
+			tileManager.Process();
 
 			Color[] texColors = new Color[(width * 1) * (height * 1)];
 			Color[] newColors = new Color[(width * 1) * (height * 1)];
