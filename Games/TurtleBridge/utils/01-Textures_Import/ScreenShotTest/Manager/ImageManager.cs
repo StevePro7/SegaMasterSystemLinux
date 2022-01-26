@@ -8,6 +8,7 @@ namespace ScreenShotTest
 {	
 	public class ImageManager
 	{
+		GraphicsDevice graphicsDevice;
 		PaletteManager paletteManager;
 		Texture2D texture;
 		StringBuilder sb;
@@ -19,8 +20,9 @@ namespace ScreenShotTest
 		Color[] allColors;
 		RenderTarget2D renderTargetSmall, renderTargetLarge;
 
-		public ImageManager(PaletteManager paletteManager)
+		public ImageManager(GraphicsDevice graphicsDevice, PaletteManager paletteManager)
 		{
+			this.graphicsDevice = graphicsDevice;
 			this.paletteManager = paletteManager;
 			sb = new StringBuilder();
 		}

@@ -18,26 +18,21 @@ namespace ScreenShotTest
 
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
-		RenderTarget2D renderTarget;
+		//RenderTarget2D renderTarget;
 		//private Texture2D image;
-		private Texture2D pixel;
+		//private Texture2D pixel;
 
 		private bool save;
 
-		private int width = 32;
-		private int height = 24;
+		//private int width = 32;
+		//private int height = 24;
 
 		public AnGame()
 		{
 			graphics = new GraphicsDeviceManager(this);
-			graphics.PreferredBackBufferWidth = width;
-			graphics.PreferredBackBufferHeight = height;
+			//graphics.PreferredBackBufferWidth = width;
+			//graphics.PreferredBackBufferHeight = height;
 			Content.RootDirectory = "Content";
-
-			
-			paletteManager = new PaletteManager();
-			imageManager = new ImageManager(paletteManager);
-			tileManager = new TileManager(imageManager);
 		}
 
 		/// <summary>
@@ -67,9 +62,13 @@ namespace ScreenShotTest
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 
+			paletteManager = new PaletteManager();
+			imageManager = new ImageManager(GraphicsDevice, paletteManager);
+			tileManager = new TileManager(GraphicsDevice, imageManager);
+
 			var texture = Content.Load<Texture2D>(file);
-			tileManager.LoadContent(GraphicsDevice, texture);
-			tileManager.Process();
+			tileManager.LoadContent(texture);
+			//tileManager.Process(save);
 
 			//Color[] texColors = new Color[(width * 1) * (height * 1)];
 			//Color[] newColors = new Color[(width * 1) * (height * 1)];
@@ -90,10 +89,10 @@ namespace ScreenShotTest
 			//}
 			//pixel.SetData<Color>(newColors);
 
-			PresentationParameters pp = GraphicsDevice.PresentationParameters;
-			pp.BackBufferWidth = width;
-			pp.BackBufferHeight = height;
-			renderTarget = new RenderTarget2D(GraphicsDevice, width, height, false, SurfaceFormat.Color, DepthFormat.Depth24);
+			//PresentationParameters pp = GraphicsDevice.PresentationParameters;
+			//pp.BackBufferWidth = width;
+			//pp.BackBufferHeight = height;
+			//renderTarget = new RenderTarget2D(GraphicsDevice, width, height, false, SurfaceFormat.Color, DepthFormat.Depth24);
 		}
 
 		/// <summary>
@@ -125,35 +124,39 @@ namespace ScreenShotTest
 		/// <param name="gameTime">Provides a snapshot of timing values.</param>
 		protected override void Draw(GameTime gameTime)
 		{
-			if (save)
-			{
-				//GraphicsDevice.SetRenderTarget(0, renderTarget);
-				GraphicsDevice.SetRenderTarget(renderTarget);
-				GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.CornflowerBlue, 1, 0);
+			//if (save)
+			//{
+			//	//GraphicsDevice.SetRenderTarget(0, renderTarget);
+			//	GraphicsDevice.SetRenderTarget(renderTarget);
+			//	GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.CornflowerBlue, 1, 0);
 
-				Draw();
-				base.Draw(gameTime);
+			//	Draw();
+			//	base.Draw(gameTime);
 
-				GraphicsDevice.SetRenderTarget(null);
-				Texture2D resolvedTexture = (Texture2D)renderTarget;
-				Stream stream = File.Create(file + ".png");
-				resolvedTexture.SaveAsPng(stream, width, height);
-		
-				Exit();
-			}
-			else
-			{
-				Draw();
-				base.Draw(gameTime);
-			}
+			//	GraphicsDevice.SetRenderTarget(null);
+			//	Texture2D resolvedTexture = (Texture2D)renderTarget;
+			//	Stream stream = File.Create(file + ".png");
+			//	resolvedTexture.SaveAsPng(stream, width, height);
+
+			//	Exit();
+			//}
+			//else
+			//{
+			//	Draw();
+			//	base.Draw(gameTime);
+			//}
+
+			Draw(save);
+			base.Draw(gameTime);
 		}
 
-		private void Draw()
+		private void Draw(bool save)
 		{
-			graphics.GraphicsDevice.Clear(Color.Black);
-			spriteBatch.Begin();
-			spriteBatch.Draw(pixel, Vector2.Zero, Color.White);
-			spriteBatch.End();
+			tileManager.Process(save);
+			//graphics.GraphicsDevice.Clear(Color.Black);
+			//spriteBatch.Begin();
+			//spriteBatch.Draw(pixel, Vector2.Zero, Color.White);
+			// spriteBatch.End();
 		}
 
 	}

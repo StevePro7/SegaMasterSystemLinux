@@ -9,6 +9,7 @@ namespace ScreenShotTest
 {
 	public class TileManager
 	{
+		GraphicsDevice graphicsDevice;
 		ImageManager imageManager;
 		Dictionary<string, string> tilesDict;
 		List<string> tilemapList;
@@ -17,8 +18,9 @@ namespace ScreenShotTest
 		int px, py;
 		int tx, ty;
 
-		public TileManager(ImageManager imageManager)
+		public TileManager(GraphicsDevice graphicsDevice, ImageManager imageManager)
 		{
+			this.graphicsDevice = graphicsDevice;
 			this.imageManager = imageManager;
 			tilesDict = new Dictionary<string, string>();
 			tilemapList = new List<string>();
@@ -26,7 +28,7 @@ namespace ScreenShotTest
 			keyTileMap = 0;
 		}
 
-		public void LoadContent(GraphicsDevice graphicsDevice, Texture2D texture)
+		public void LoadContent(Texture2D texture)
 		{
 			imageManager.LoadContent(graphicsDevice, texture);
 			px = texture.Width;
@@ -35,7 +37,7 @@ namespace ScreenShotTest
 			ty = py / 8;
 		}
 
-		public void Process()
+		public void Process(bool save)
 		{
 			tilesDict.Clear();
 			tilemapList.Clear();
