@@ -46,35 +46,40 @@ namespace ScreenShotTest
 			ix = 0;
 			iy = 0;
 			int out_index = 0;
-			int inp_index = (iy * ty * 8) + (ix * 8);
-
-			string txtTile;
-			var hash = imageManager.Process(inp_index, out_index);
-			var dictTiles = tilesDict.FirstOrDefault(x => x.Value == hash);
-
-			var exists = null != dictTiles.Key;
-			if (exists)
+			for (iy = 0; iy < ty; iy++)
 			{
-				txtTile = dictTiles.Key;
+				for (ix = 0; ix < tx; ix++)
+				{
+					int inp_index = iy * ty + ix;
+
+					string txtTile;
+					var hash = imageManager.Process(inp_index * 64, out_index * 64);
+					var dictTiles = tilesDict.FirstOrDefault(x => x.Value == hash);
+
+					var exists = null != dictTiles.Key;
+					if (exists)
+					{
+						txtTile = dictTiles.Key;
+					}
+					else
+					{
+						txtTile = keyTile.ToString().PadLeft(2, '0');
+						tilesDict.Add(txtTile, hash);
+						keyTileMap++;
+						out_index++;
+					}
+
+					tilemapList.Add(txtTile);
+					if (!exists)
+					{
+						imageManager.Draw(save, spriteBatch, txtTile);
+					}
+				}
 			}
-			else
-			{
-				txtTile = keyTile.ToString().PadLeft(2, '0');
-				tilesDict.Add(txtTile, hash);
-				keyTileMap++;
-			}
 
-			tilemapList.Add(txtTile);
-
-
-			// TODO 
-			//graphics.PreferredBackBufferWidth = width;
-			//graphics.PreferredBackBufferHeight = height;
-
-			if (!exists)
-			{
-				imageManager.Draw(save, spriteBatch, txtTile);
-			}
+			var tileMapText = String.Join(",", tilemapList);
+			var tileMapArray = tilemapList.ToArray();
 		}
+
 	}
 }
