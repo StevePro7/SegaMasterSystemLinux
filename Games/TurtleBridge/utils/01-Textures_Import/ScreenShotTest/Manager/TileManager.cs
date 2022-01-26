@@ -73,7 +73,7 @@ namespace ScreenShotTest
 
 			if (!exists)
 			{
-				imageManager.Draw(save, spriteBatch);
+				imageManager.Draw(save, spriteBatch, txtTile);
 			}
 		}
 	}

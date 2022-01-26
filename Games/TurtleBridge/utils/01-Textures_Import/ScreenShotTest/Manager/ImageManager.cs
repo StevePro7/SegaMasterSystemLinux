@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
+using System.IO;
 using System.Text;
 
 namespace ScreenShotTest
@@ -29,9 +30,30 @@ namespace ScreenShotTest
 			tileImg = new Texture2D(graphicsDevice, 8, 8);
 		}
 
-		public void Draw(bool save, SpriteBatch spriteBatch)
+		public void Draw(bool save, SpriteBatch spriteBatch, string txtTile)
 		{
 			tileImg.SetData<Color>(newColors);
+			if (save)
+			{
+				//GraphicsDevice.SetRenderTarget(0, renderTarget);
+				graphicsDevice.SetRenderTarget(renderTargetSmall);
+				graphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.CornflowerBlue, 1, 0);
+
+				Draw(spriteBatch);
+
+				graphicsDevice.SetRenderTarget(null);
+				Texture2D resolvedTexture = (Texture2D)renderTargetSmall;
+				Stream stream = File.Create("output/" + txtTile + ".png");
+				resolvedTexture.SaveAsPng(stream, 8, 8);
+			}
+			else
+			{
+				Draw(spriteBatch);
+			}
+		}
+
+		private void Draw(SpriteBatch spriteBatch)
+		{
 			graphicsDevice.Clear(Color.Black);
 			spriteBatch.Begin();
 			spriteBatch.Draw(tileImg, Vector2.Zero, Color.White);
