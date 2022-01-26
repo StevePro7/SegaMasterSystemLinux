@@ -68,27 +68,27 @@ namespace ScreenShotTest
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 
 			var texture = Content.Load<Texture2D>(file);
-			tileManager.LoadContent(texture);
+			tileManager.LoadContent(GraphicsDevice, texture);
 			tileManager.Process();
 
-			Color[] texColors = new Color[(width * 1) * (height * 1)];
-			Color[] newColors = new Color[(width * 1) * (height * 1)];
-			texture.GetData(texColors);
+			//Color[] texColors = new Color[(width * 1) * (height * 1)];
+			//Color[] newColors = new Color[(width * 1) * (height * 1)];
+			//texture.GetData(texColors);
 
-			pixel = new Texture2D(graphics.GraphicsDevice, width, height);
-			int j = 0;
-			for (int y = 0; y < height; y++)
-			{
-				for (int x = 0; x < width; x++)
-				{
-					int i = j;
-					{
-						newColors[j] = texColors[i];
-						j++;
-					}
-				}
-			}
-			pixel.SetData<Color>(newColors);
+			//pixel = new Texture2D(graphics.GraphicsDevice, width, height);
+			//int j = 0;
+			//for (int y = 0; y < height; y++)
+			//{
+			//	for (int x = 0; x < width; x++)
+			//	{
+			//		int i = j;
+			//		{
+			//			newColors[j] = texColors[i];
+			//			j++;
+			//		}
+			//	}
+			//}
+			//pixel.SetData<Color>(newColors);
 
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
 			pp.BackBufferWidth = width;

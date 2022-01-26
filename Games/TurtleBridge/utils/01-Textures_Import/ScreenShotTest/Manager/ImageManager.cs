@@ -17,6 +17,7 @@ namespace ScreenShotTest
 		Color[] texColors;
 		Color[] newColors;
 		Color[] allColors;
+		RenderTarget2D renderTargetSmall, renderTargetLarge;
 
 		public ImageManager(PaletteManager paletteManager)
 		{
@@ -47,7 +48,7 @@ namespace ScreenShotTest
 			return hash;
 		}
 
-		public void LoadContent(Texture2D texture)
+		public void LoadContent(GraphicsDevice graphicsDevice, Texture2D texture)
 		{
 			this.texture = texture;
 			px = texture.Width;
@@ -63,6 +64,9 @@ namespace ScreenShotTest
 			ty = py / 8;
 			//sy = 0;
 			//sx = 0;
+
+			renderTargetSmall = new RenderTarget2D(graphicsDevice, 8, 8, false, SurfaceFormat.Color, DepthFormat.Depth24);
+			renderTargetLarge = new RenderTarget2D(graphicsDevice, 8, 8, false, SurfaceFormat.Color, DepthFormat.Depth24);
 		}
 	}
 }

@@ -26,9 +26,9 @@ namespace ScreenShotTest
 			keyTileMap = 0;
 		}
 
-		public void LoadContent(Texture2D texture)
+		public void LoadContent(GraphicsDevice graphicsDevice, Texture2D texture)
 		{
-			imageManager.LoadContent(texture);
+			imageManager.LoadContent(graphicsDevice, texture);
 			px = texture.Width;
 			py = texture.Height;
 			tx = px / 8;
