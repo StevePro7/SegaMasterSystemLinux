@@ -52,29 +52,30 @@ namespace ScreenShotTest
 				for (ix = 0; ix < tx; ix++)
 				{
 					int inp_index = iy * ty + ix;
+					int bob = inp_index + 0;
 
-					string txtTile;
+					//string txtTile;
 					var hash = imageManager.Process(inp_index, out_index);
-					var dictTiles = tilesDict.FirstOrDefault(x => x.Value == hash);
+					//var dictTiles = tilesDict.FirstOrDefault(x => x.Value == hash);
 
-					var exists = null != dictTiles.Key;
-					if (exists)
-					{
-						txtTile = dictTiles.Key;
-					}
-					else
-					{
-						txtTile = keyTile.ToString().PadLeft(2, '0');
-						tilesDict.Add(txtTile, hash);
-						keyTileMap++;
-						out_index++;
-					}
+					//var exists = null != dictTiles.Key;
+					//if (exists)
+					//{
+					//	txtTile = dictTiles.Key;
+					//}
+					//else
+					//{
+					//	txtTile = keyTile.ToString().PadLeft(2, '0');
+					//	tilesDict.Add(txtTile, hash);
+					//	keyTileMap++;
+					//	out_index++;
+					//}
 
-					tilemapList.Add(txtTile);
-					if (!exists)
-					{
-						imageManager.Draw(save, spriteBatch, txtTile);
-					}
+					//tilemapList.Add(txtTile);
+					//if (!exists)
+					//{
+					//	imageManager.Draw(save, spriteBatch, txtTile);
+					//}
 				}
 			}
 

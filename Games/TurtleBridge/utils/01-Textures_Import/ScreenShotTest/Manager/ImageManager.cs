@@ -63,24 +63,32 @@ namespace ScreenShotTest
 		public string Process(int inp_index, int out_index)
 		{
 			sb.Length = 0;
+			//int tmp_index;
 			int cx, cy;
 			int ix, iy;
 
-			Color texColor;
-			for (cy = 0; cy < 8; cy++)
-			{
-				for (cx = 0; cx < 8; cx++)
-				{
-					texColor = texColors[inp_index];
-					var text = paletteManager.GetColorAtIndex(texColor);
-					var data = text.Replace("$", "");
-					sb.Append(data);
-					newColors[cy * 8 + cx] = texColors[inp_index];
-					allColors[out_index] = texColors[inp_index];
-					inp_index++;
-					out_index++;
-				}
-			}
+			//tmp_index = inp_index;
+			//Color texColor;
+
+			ix = inp_index / tx;
+			iy = inp_index % ty;
+
+			//for (cy = 0; cy < 8; cy++)
+			//{
+			//	iy = cy * py;
+			//	ix = (px - 1) * 8;
+			//	for (cx = 0; cx < 8; cx++)
+			//	{
+			//		texColor = texColors[inp_index];
+			//		var text = paletteManager.GetColorAtIndex(texColor);
+			//		var data = text.Replace("$", "");
+			//		sb.Append(data);
+			//		newColors[cy * 8 + cx] = texColors[inp_index];
+			//		allColors[out_index] = texColors[inp_index];
+			//		inp_index++;
+			//		out_index++;
+			//	}
+			//}
 
 			string hash = sb.ToString();
 			return hash;
