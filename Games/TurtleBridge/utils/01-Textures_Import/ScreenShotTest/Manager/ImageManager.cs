@@ -64,6 +64,7 @@ namespace ScreenShotTest
 		{
 			sb.Length = 0;
 			int cx, cy;
+			int ix, iy;
 
 			Color texColor;
 			for (cy = 0; cy < 8; cy++)

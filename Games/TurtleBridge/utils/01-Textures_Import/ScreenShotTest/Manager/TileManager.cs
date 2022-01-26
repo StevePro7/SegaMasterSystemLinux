@@ -54,7 +54,7 @@ namespace ScreenShotTest
 					int inp_index = iy * ty + ix;
 
 					string txtTile;
-					var hash = imageManager.Process(inp_index * 64, out_index * 64);
+					var hash = imageManager.Process(inp_index, out_index);
 					var dictTiles = tilesDict.FirstOrDefault(x => x.Value == hash);
 
 					var exists = null != dictTiles.Key;
