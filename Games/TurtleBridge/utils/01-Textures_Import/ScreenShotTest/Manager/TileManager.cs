@@ -37,7 +37,7 @@ namespace ScreenShotTest
 			ty = py / 8;
 		}
 
-		public void Process(bool save)
+		public void Process(bool save, SpriteBatch spriteBatch)
 		{
 			tilesDict.Clear();
 			tilemapList.Clear();
@@ -46,23 +46,35 @@ namespace ScreenShotTest
 			ix = 0;
 			iy = 0;
 			int out_index = 0;
-			int inp_index = iy * ty + ix;
+			int inp_index = (iy * ty * 8) + (ix * 8);
 
 			string txtTile;
 			var hash = imageManager.Process(inp_index, out_index);
 			var dictTiles = tilesDict.FirstOrDefault(x => x.Value == hash);
-			if (null == dictTiles.Key)
+
+			var exists = null != dictTiles.Key;
+			if (exists)
+			{
+				txtTile = dictTiles.Key;
+			}
+			else
 			{
 				txtTile = keyTile.ToString().PadLeft(2, '0');
 				tilesDict.Add(txtTile, hash);
 				keyTileMap++;
 			}
-			else
-			{
-				txtTile = dictTiles.Key;
-			}
 
 			tilemapList.Add(txtTile);
+
+
+			// TODO 
+			//graphics.PreferredBackBufferWidth = width;
+			//graphics.PreferredBackBufferHeight = height;
+
+			if (!exists)
+			{
+				imageManager.Draw(save, spriteBatch);
+			}
 		}
 	}
 }

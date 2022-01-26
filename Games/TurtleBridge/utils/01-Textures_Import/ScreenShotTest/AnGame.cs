@@ -30,8 +30,9 @@ namespace ScreenShotTest
 		public AnGame()
 		{
 			graphics = new GraphicsDeviceManager(this);
-			//graphics.PreferredBackBufferWidth = width;
-			//graphics.PreferredBackBufferHeight = height;
+			graphics.PreferredBackBufferWidth = 8;
+			graphics.PreferredBackBufferHeight = 8;
+			graphics.ApplyChanges();
 			Content.RootDirectory = "Content";
 		}
 
@@ -148,11 +149,16 @@ namespace ScreenShotTest
 
 			Draw(save);
 			base.Draw(gameTime);
+
+			if (save)
+			{
+				Exit();
+			}
 		}
 
 		private void Draw(bool save)
 		{
-			tileManager.Process(save);
+			tileManager.Process(save, spriteBatch);
 			//graphics.GraphicsDevice.Clear(Color.Black);
 			//spriteBatch.Begin();
 			//spriteBatch.Draw(pixel, Vector2.Zero, Color.White);

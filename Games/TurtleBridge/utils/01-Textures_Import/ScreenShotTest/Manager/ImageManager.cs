@@ -11,10 +11,11 @@ namespace ScreenShotTest
 		GraphicsDevice graphicsDevice;
 		PaletteManager paletteManager;
 		Texture2D texture;
+		Texture2D tileImg;
 		StringBuilder sb;
 		int px, py;
 		int tx, ty;
-		//int ix, iy;
+
 		Color[] texColors;
 		Color[] newColors;
 		Color[] allColors;
@@ -25,6 +26,16 @@ namespace ScreenShotTest
 			this.graphicsDevice = graphicsDevice;
 			this.paletteManager = paletteManager;
 			sb = new StringBuilder();
+			tileImg = new Texture2D(graphicsDevice, 8, 8);
+		}
+
+		public void Draw(bool save, SpriteBatch spriteBatch)
+		{
+			tileImg.SetData<Color>(newColors);
+			graphicsDevice.Clear(Color.Black);
+			spriteBatch.Begin();
+			spriteBatch.Draw(tileImg, Vector2.Zero, Color.White);
+			spriteBatch.End();
 		}
 
 		public string Process(int inp_index, int out_index)
@@ -43,6 +54,8 @@ namespace ScreenShotTest
 					sb.Append(data);
 					newColors[cy * 8 + cx] = texColors[inp_index];
 					allColors[out_index] = texColors[inp_index];
+					inp_index++;
+					out_index++;
 				}
 			}
 
@@ -64,8 +77,6 @@ namespace ScreenShotTest
 
 			tx = px / 8;
 			ty = py / 8;
-			//sy = 0;
-			//sx = 0;
 
 			renderTargetSmall = new RenderTarget2D(graphicsDevice, 8, 8, false, SurfaceFormat.Color, DepthFormat.Depth24);
 			renderTargetLarge = new RenderTarget2D(graphicsDevice, 8, 8, false, SurfaceFormat.Color, DepthFormat.Depth24);
