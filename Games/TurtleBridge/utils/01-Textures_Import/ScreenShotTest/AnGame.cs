@@ -10,7 +10,7 @@ namespace ScreenShotTest
 	/// </summary>
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		const string file = "tile";
+		const string file = "yellow_16x8";
 
 		PaletteManager paletteManager;
 		ImageManager imageManager;
@@ -49,7 +49,7 @@ namespace ScreenShotTest
 			//{
 			//	save = Convert.ToBoolean(ConfigurationManager.AppSettings["save"]);
 			//}
-			save = true;
+			//save = true;
 			IsMouseVisible = true;
 			base.Initialize();
 		}
@@ -69,26 +69,6 @@ namespace ScreenShotTest
 
 			var texture = Content.Load<Texture2D>(file);
 			tileManager.LoadContent(texture);
-			//tileManager.Process(save);
-
-			//Color[] texColors = new Color[(width * 1) * (height * 1)];
-			//Color[] newColors = new Color[(width * 1) * (height * 1)];
-			//texture.GetData(texColors);
-
-			//pixel = new Texture2D(graphics.GraphicsDevice, width, height);
-			//int j = 0;
-			//for (int y = 0; y < height; y++)
-			//{
-			//	for (int x = 0; x < width; x++)
-			//	{
-			//		int i = j;
-			//		{
-			//			newColors[j] = texColors[i];
-			//			j++;
-			//		}
-			//	}
-			//}
-			//pixel.SetData<Color>(newColors);
 
 			//PresentationParameters pp = GraphicsDevice.PresentationParameters;
 			//pp.BackBufferWidth = width;
@@ -125,30 +105,8 @@ namespace ScreenShotTest
 		/// <param name="gameTime">Provides a snapshot of timing values.</param>
 		protected override void Draw(GameTime gameTime)
 		{
-			//if (save)
-			//{
-			//	//GraphicsDevice.SetRenderTarget(0, renderTarget);
-			//	GraphicsDevice.SetRenderTarget(renderTarget);
-			//	GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.CornflowerBlue, 1, 0);
-
-			//	Draw();
-			//	base.Draw(gameTime);
-
-			//	GraphicsDevice.SetRenderTarget(null);
-			//	Texture2D resolvedTexture = (Texture2D)renderTarget;
-			//	Stream stream = File.Create(file + ".png");
-			//	resolvedTexture.SaveAsPng(stream, width, height);
-
-			//	Exit();
-			//}
-			//else
-			//{
-			//	Draw();
-			//	base.Draw(gameTime);
-			//}
-
 			Draw(save);
-			base.Draw(gameTime);
+			//base.Draw(gameTime);
 
 			if (save)
 			{
@@ -159,10 +117,6 @@ namespace ScreenShotTest
 		private void Draw(bool save)
 		{
 			tileManager.Process(save, spriteBatch);
-			//graphics.GraphicsDevice.Clear(Color.Black);
-			//spriteBatch.Begin();
-			//spriteBatch.Draw(pixel, Vector2.Zero, Color.White);
-			// spriteBatch.End();
 		}
 
 	}
