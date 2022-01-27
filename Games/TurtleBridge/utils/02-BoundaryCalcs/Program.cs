@@ -8,62 +8,18 @@ namespace BinaryFileWrite
 	{
 		static void Main()
 		{
-			//var fileName = ConfigurationManager.AppSettings["fileName"];
-			Console.WriteLine("Update sections:" );
-			var fm = new FileManager();
-			fm.GetFiles();
+			int tx = 2;
+			int ty = 1;
 
-			var fileNames = fm.Files;
-			foreach (var fileName in fileNames)
-			{
-				Console.WriteLine($"{fileName}");
-				fm.Process(fileName);
+			int px = tx * 8;
+			int py = ty * 8;
 
-				var inpLines = fm.Lines;
-				var outLines = new List<string>();
+			var imageManager = new ImageManager();
+			imageManager.Init(px, py);
 
-				var firstTime = true;
-				var count = inpLines.Length;
-				for (int index = 0; index < count; index++)
-				{
-					var inpLine = inpLines[index];
-					var txtLine = inpLine;
-					var tmpLine = inpLine.Trim();
-
-					if (tmpLine.EndsWith(":"))
-					{
-						if (txtLine.StartsWith("-") || txtLine.StartsWith("+"))
-						{
-						}
-						else
-						{
-							if (firstTime)
-							{
-								firstTime = false;
-							}
-							else
-							{
-								var endLine = ".ends";
-								outLines.Add(endLine);
-								outLines.Add(String.Empty);
-							}
-
-							var section = txtLine.Substring(0, txtLine.Length - 1);
-							var sctLine = $".section \"{section}\" free";
-							outLines.Add(sctLine);
-						}
-					}
-
-					outLines.Add(txtLine);
-				}
-
-				if (!firstTime)
-				{
-					outLines.Add(".ends");
-				}
-
-				fm.Saving(outLines, fileName);
-			}
+			//int index = 0;
+			imageManager.Process(0);
+			imageManager.Process(1);
 
 			Console.WriteLine("Press [ RETURN ]");
 			Console.Read();
