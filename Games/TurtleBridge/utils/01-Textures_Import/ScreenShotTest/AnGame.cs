@@ -10,7 +10,7 @@ namespace ScreenShotTest
 	/// </summary>
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		const string file = "multi_16x16";
+		const string file = "yelred_16x8";
 
 		PaletteManager paletteManager;
 		ImageManager imageManager;
@@ -49,7 +49,7 @@ namespace ScreenShotTest
 			//{
 			//	save = Convert.ToBoolean(ConfigurationManager.AppSettings["save"]);
 			//}
-			//save = true;
+			save = true;
 			IsMouseVisible = true;
 			base.Initialize();
 		}

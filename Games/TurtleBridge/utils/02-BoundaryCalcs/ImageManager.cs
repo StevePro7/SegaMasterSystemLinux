@@ -30,7 +30,6 @@ namespace BinaryFileWrite
 		{
 			this.px = px;
 			this.py = py;
-
 			tx = px / 8;
 			ty = py / 8;
 			delta = 0;
