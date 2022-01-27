@@ -77,21 +77,41 @@ namespace ScreenShotTest
 				}
 			}
 
-			var tileMapText = String.Join(",", tilemapList);
+			//var tileMapText = String.Join(",", tilemapList);
 			//var tileMapArray = tilemapList.ToArray();
-			if (save)
-			{
-				File.WriteAllText("output/tileMap.txt", tileMapText);
-			}
+			SaveTileMap(save);
 		}
 
-		private void DeleteFiles(bool save)
+		private void SaveTileMap(bool save)
 		{
 			if (!save)
 			{
 				return;
 			}
 
+			IList<string> lines = new List<string>();
+
+			string line = String.Empty;
+			int index = 0;
+			for (int iy= 0; iy < ty; iy++)
+			{
+				for (int ix = 0; ix < tx; ix++)
+				{
+					line += tilemapList[index] + ",";
+					index++;
+				}
+				line = line.Substring(0, line.Length - 1);
+				lines.Add(line);
+			}
+
+			//tilemapList
+			File.WriteAllLines("output/tileMap.txt", lines.ToArray());
+			//var tileMapText = String.Join(",", tilemapList);
+			//File.WriteAllText("output/tileMap.txt", tileMapText);
+		}
+
+		private void DeleteFiles(bool save)
+		{
 			DirectoryInfo di = new DirectoryInfo("output");
 			foreach (FileInfo fi in di.GetFiles())
 			{

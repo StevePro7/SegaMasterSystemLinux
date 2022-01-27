@@ -10,7 +10,7 @@ namespace ScreenShotTest
 	/// </summary>
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		const string file = "multi_16x16";
+		const string file = "yellow_16x8";
 
 		PaletteManager paletteManager;
 		ImageManager imageManager;
