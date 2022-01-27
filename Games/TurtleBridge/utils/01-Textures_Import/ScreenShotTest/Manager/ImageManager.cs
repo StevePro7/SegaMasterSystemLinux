@@ -1,12 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using System;
 using System.IO;
 using System.Text;
 
 namespace ScreenShotTest
-{	
+{
 	public class ImageManager
 	{
 		GraphicsDevice graphicsDevice;
@@ -78,21 +76,12 @@ namespace ScreenShotTest
 
 			int row_index;
 			int tmp_index;
-			//tmp_index = inp_index;
 			Color texColor;
-			//int ix, iy;
-			//ix = inp_index / tx;
-			//iy = inp_index % ty;
 
-			//int cx, cy;
-			//row_index = start;
-			//tmp_index = start;
 			for (int cy = 0; cy < 8; cy++)
 			{
 				row_index = cy * delta;
 				row_index = start + row_index;
-			//	iy = cy * py;
-			//	ix = (px - 1) * 8;
 				for (int cx = 0; cx < 8; cx++)
 				{
 					tmp_index = row_index + cx;
@@ -102,7 +91,6 @@ namespace ScreenShotTest
 					sb.Append(data);
 					newColors[cy * 8 + cx] = texColors[tmp_index];
 					allColors[out_index] = texColors[tmp_index];
-			//		inp_index++;
 					out_index++;
 				}
 			}

@@ -1,6 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
+﻿using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -77,8 +75,6 @@ namespace ScreenShotTest
 				}
 			}
 
-			//var tileMapText = String.Join(",", tilemapList);
-			//var tileMapArray = tilemapList.ToArray();
 			SaveTileMap(save);
 		}
 
@@ -91,10 +87,10 @@ namespace ScreenShotTest
 
 			IList<string> lines = new List<string>();
 
-			string line = String.Empty;
 			int index = 0;
 			for (int iy= 0; iy < ty; iy++)
 			{
+				string line = String.Empty;
 				for (int ix = 0; ix < tx; ix++)
 				{
 					line += tilemapList[index] + ",";
@@ -104,10 +100,7 @@ namespace ScreenShotTest
 				lines.Add(line);
 			}
 
-			//tilemapList
 			File.WriteAllLines("output/tileMap.txt", lines.ToArray());
-			//var tileMapText = String.Join(",", tilemapList);
-			//File.WriteAllText("output/tileMap.txt", tileMapText);
 		}
 
 		private void DeleteFiles(bool save)
