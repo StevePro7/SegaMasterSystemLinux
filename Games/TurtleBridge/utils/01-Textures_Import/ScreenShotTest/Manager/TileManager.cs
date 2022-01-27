@@ -43,16 +43,12 @@ namespace ScreenShotTest
 			tilesDict.Clear();
 			tilemapList.Clear();
 
-			int ix, iy;
-			ix = 0;
-			iy = 0;
 			int out_index = 0;
-			for (iy = 0; iy < ty; iy++)
+			for (int iy = 0; iy < ty; iy++)
 			{
-				for (ix = 0; ix < tx; ix++)
+				for (int ix = 0; ix < tx; ix++)
 				{
-					int inp_index = iy * ty + ix;
-					int bob = inp_index + 0;
+					int inp_index = (iy * tx) + ix;
 
 					//string txtTile;
 					var hash = imageManager.Process(inp_index, out_index);

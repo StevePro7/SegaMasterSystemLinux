@@ -65,32 +65,47 @@ namespace ScreenShotTest
 		public string Process(int inp_index, int out_index)
 		{
 			sb.Length = 0;
-			//int tmp_index;
-			int cx, cy;
-			int ix, iy;
 
+			delta = tx * 8;
+
+			int base1 = inp_index / tx;
+			int base2 = base1 * tx;
+			int bases = base2 * 64;
+
+			int star1 = inp_index % tx;
+			int star2 = star1 * 8;
+			start = bases + star2;
+
+			int row_index;
+			int tmp_index;
 			//tmp_index = inp_index;
-			//Color texColor;
+			Color texColor;
+			//int ix, iy;
+			//ix = inp_index / tx;
+			//iy = inp_index % ty;
 
-			ix = inp_index / tx;
-			iy = inp_index % ty;
-
-			//for (cy = 0; cy < 8; cy++)
-			//{
+			//int cx, cy;
+			//row_index = start;
+			//tmp_index = start;
+			for (int cy = 0; cy < 8; cy++)
+			{
+				row_index = cy * delta;
+				row_index = start + row_index;
 			//	iy = cy * py;
 			//	ix = (px - 1) * 8;
-			//	for (cx = 0; cx < 8; cx++)
-			//	{
-			//		texColor = texColors[inp_index];
-			//		var text = paletteManager.GetColorAtIndex(texColor);
-			//		var data = text.Replace("$", "");
-			//		sb.Append(data);
-			//		newColors[cy * 8 + cx] = texColors[inp_index];
-			//		allColors[out_index] = texColors[inp_index];
+				for (int cx = 0; cx < 8; cx++)
+				{
+					tmp_index = row_index + cx;
+					texColor = texColors[tmp_index];
+					var text = paletteManager.GetColorAtIndex(texColor);
+					var data = text.Replace("$", "");
+					sb.Append(data);
+					newColors[cy * 8 + cx] = texColors[tmp_index];
+					allColors[out_index] = texColors[tmp_index];
 			//		inp_index++;
-			//		out_index++;
-			//	}
-			//}
+					out_index++;
+				}
+			}
 
 			string hash = sb.ToString();
 			return hash;
