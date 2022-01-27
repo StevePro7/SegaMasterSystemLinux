@@ -24,6 +24,9 @@ namespace BinaryFileWrite
 			int star1 = index % tx;
 			int star2 = star1 * 8; 
 			start = bases + star2;
+
+			var msg = $"Index:{index} Start:{start} Delta:{delta}";
+			System.Console.WriteLine(msg);
 		}
 
 		public void Init(int px, int py)

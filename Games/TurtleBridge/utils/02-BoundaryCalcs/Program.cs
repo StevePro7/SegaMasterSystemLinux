@@ -8,7 +8,7 @@ namespace BinaryFileWrite
 	{
 		static void Main()
 		{
-			int tx = 2;
+			int tx = 4;
 			int ty = 1;
 
 			int px = tx * 8;
@@ -17,9 +17,18 @@ namespace BinaryFileWrite
 			var imageManager = new ImageManager();
 			imageManager.Init(px, py);
 
-			//int index = 0;
-			imageManager.Process(0);
-			imageManager.Process(1);
+			for (int iy = 0; iy < ty; iy++)
+			{
+				for (int ix = 0; ix < tx; ix++)
+				{
+					//int index = (ty - 1) * iy + ix;
+					int index = (iy * tx) + ix;
+					imageManager.Process(index);
+				}
+			}
+
+			//imageManager.Process(0);
+			//imageManager.Process(1);
 
 			Console.WriteLine("Press [ RETURN ]");
 			Console.Read();
