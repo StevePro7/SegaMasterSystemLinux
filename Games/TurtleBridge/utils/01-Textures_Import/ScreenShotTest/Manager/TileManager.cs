@@ -40,6 +40,7 @@ namespace ScreenShotTest
 
 		public void Process(bool save, SpriteBatch spriteBatch)
 		{
+			DeleteFiles(save);
 			tilesDict.Clear();
 			tilemapList.Clear();
 
@@ -84,5 +85,18 @@ namespace ScreenShotTest
 			}
 		}
 
+		private void DeleteFiles(bool save)
+		{
+			if (!save)
+			{
+				return;
+			}
+
+			DirectoryInfo di = new DirectoryInfo("output");
+			foreach (FileInfo fi in di.GetFiles())
+			{
+				fi.Delete();
+			}
+		}
 	}
 }
