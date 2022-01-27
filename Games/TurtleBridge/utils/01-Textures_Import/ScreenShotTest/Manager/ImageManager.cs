@@ -16,6 +16,8 @@ namespace ScreenShotTest
 		StringBuilder sb;
 		int px, py;
 		int tx, ty;
+		int delta;
+		int start;
 
 		Color[] texColors;
 		Color[] newColors;
@@ -99,16 +101,16 @@ namespace ScreenShotTest
 			this.texture = texture;
 			px = texture.Width;
 			py= texture.Height;
+			tx = px / 8;
+			ty = py / 8;
+			delta = 0;
+			start = 0;
 
 			texColors = new Color[px * py];
 			allColors = new Color[px * py];
 			newColors = new Color[8 * 8];
 
 			texture.GetData(texColors);
-
-			tx = px / 8;
-			ty = py / 8;
-
 			renderTargetSmall = new RenderTarget2D(graphicsDevice, 8, 8, false, SurfaceFormat.Color, DepthFormat.Depth24);
 			renderTargetLarge = new RenderTarget2D(graphicsDevice, 8, 8, false, SurfaceFormat.Color, DepthFormat.Depth24);
 		}

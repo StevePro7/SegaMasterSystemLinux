@@ -5,16 +5,13 @@ namespace BinaryFileWrite
 {
 	public class ImageManager
 	{
-		int px;
-		int py;
+		int px, py;
+		int tx, ty;
 		int delta;
 		int start;
 
 		public void Process(int index)
 		{
-			int tx = px / 8;
-			int ty = py / 8;
-
 			delta = tx * 8;
 
 			int base1 = index / tx;
@@ -34,6 +31,8 @@ namespace BinaryFileWrite
 			this.px = px;
 			this.py = py;
 
+			tx = px / 8;
+			ty = py / 8;
 			delta = 0;
 			start = 0;
 		}
