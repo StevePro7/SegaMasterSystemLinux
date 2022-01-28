@@ -46,7 +46,7 @@ namespace ScreenShotTest
 			//{
 			//	save = Convert.ToBoolean(ConfigurationManager.AppSettings["save"]);
 			//}
-			//save = true;
+			save = true;
 			IsMouseVisible = true;
 			base.Initialize();
 		}
@@ -127,7 +127,7 @@ namespace ScreenShotTest
 
 		private void Draw()
 		{
-
+			Draw_Tiles();
 		}
 
 		private void Draw_Tiles()
