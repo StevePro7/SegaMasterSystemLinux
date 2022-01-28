@@ -14,8 +14,8 @@ namespace ScreenShotTest
 		StringBuilder sb;
 		int px, py;
 		int tx, ty;
-		int delta;
-		int start;
+		int inp_delta;
+		int inp_start;
 
 		Color[] texColors;
 		Color[] newColors;
@@ -106,7 +106,7 @@ namespace ScreenShotTest
 		{
 			sb.Length = 0;
 
-			delta = tx * 8;
+			inp_delta = tx * 8;
 			out_delta = tx * 8;
 
 			int base1 = inp_index / tx;
@@ -115,7 +115,7 @@ namespace ScreenShotTest
 
 			int star1 = inp_index % tx;
 			int star2 = star1 * 8;
-			start = bases + star2;
+			inp_start = bases + star2;
 
 			int row_index;
 			int tmp_index;
@@ -124,8 +124,8 @@ namespace ScreenShotTest
 
 			for (int cy = 0; cy < 8; cy++)
 			{
-				row_index = cy * delta;
-				row_index = start + row_index;
+				row_index = cy * inp_delta;
+				row_index = inp_start + row_index;
 				for (int cx = 0; cx < 8; cx++)
 				{
 					tmp_index = row_index + cx;
@@ -150,8 +150,8 @@ namespace ScreenShotTest
 			py= texture.Height;
 			tx = px / 8;
 			ty = py / 8;
-			delta = 0;
-			start = 0;
+			inp_delta = 0;
+			inp_start = 0;
 
 			texColors = new Color[px * py];
 			allColors = new Color[px * py];
