@@ -22,7 +22,7 @@ namespace ScreenShotTest
 		private bool save;
 
 		private int width = 128;
-		private int height = 96;
+		private int height = 24;
 
 		public AnGame()
 		{
@@ -127,7 +127,8 @@ namespace ScreenShotTest
 
 		private void Draw()
 		{
-			Draw_Tiles();
+			Draw_Tilemap();
+			//Draw_Tiles();
 		}
 
 		private void Draw_Tiles()
