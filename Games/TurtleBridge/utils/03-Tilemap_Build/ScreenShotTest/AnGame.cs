@@ -16,11 +16,13 @@ namespace ScreenShotTest
 		RenderTarget2D renderTarget;
 
 		Dictionary<string, Texture2D> images = new Dictionary<string, Texture2D>();
-		private int size = 42;
+		string[] lines;
+
+		private int size = 43;
 		private bool save;
 
 		private int width = 128;
-		private int height = 48;
+		private int height = 96;
 
 		public AnGame()
 		{
@@ -44,7 +46,7 @@ namespace ScreenShotTest
 			//{
 			//	save = Convert.ToBoolean(ConfigurationManager.AppSettings["save"]);
 			//}
-			save = true;
+			//save = true;
 			IsMouseVisible = true;
 			base.Initialize();
 		}
@@ -63,6 +65,7 @@ namespace ScreenShotTest
 			pp.BackBufferHeight = height;
 			renderTarget = new RenderTarget2D(GraphicsDevice, width, height, false, SurfaceFormat.Color, DepthFormat.Depth24);
 
+			lines = File.ReadAllLines("tileMap.txt");
 			for (int loop = 0; loop < size; loop++)
 			{
 				var key = loop.ToString().PadLeft(2, '0');
@@ -123,6 +126,33 @@ namespace ScreenShotTest
 		}
 
 		private void Draw()
+		{
+
+		}
+
+		private void Draw_Tiles()
+		{
+			int tx, ty;
+			int high = lines.Length;
+
+			spriteBatch.Begin();
+			for (ty = 0; ty < high; ty++)
+			{
+				var line = lines[ty];
+				var texts = line.Split(new char[] { ',' });
+				int wide = texts.Length;
+
+				for (tx = 0; tx < wide; tx++)
+				{
+					var key = texts[tx];
+					Vector2 pos = new Vector2(tx * 8, ty * 8);
+					spriteBatch.Draw(images[key], pos, Color.White);
+				}
+			}
+			spriteBatch.End();
+		}
+
+		private void Draw_Tilemap()
 		{
 			int tx, ty;
 			int wide = 16;
