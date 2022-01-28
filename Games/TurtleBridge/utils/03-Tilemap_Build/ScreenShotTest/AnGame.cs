@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Collections.Generic;
+using System.IO;
 
 namespace ScreenShotTest
 {
@@ -9,32 +11,22 @@ namespace ScreenShotTest
 	/// </summary>
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		//const string file = "yellow_16x8";
-		//const string file = "redyel_8x16";
-		//const string file = "multi_16x16";
-		const string file = "wonderboy32_01";
-		//const string file = "tile";
-
-		PaletteManager paletteManager;
-		ImageManager imageManager;
-		TileManager tileManager;
-
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
-		//RenderTarget2D renderTarget;
-		//private Texture2D image;
-		//private Texture2D pixel;
+		RenderTarget2D renderTarget;
 
+		Dictionary<string, Texture2D> images = new Dictionary<string, Texture2D>();
+		private int size = 42;
 		private bool save;
 
-		//private int width = 32;
-		//private int height = 24;
+		private int width = 128;
+		private int height = 48;
 
 		public AnGame()
 		{
 			graphics = new GraphicsDeviceManager(this);
-			graphics.PreferredBackBufferWidth = 8;
-			graphics.PreferredBackBufferHeight = 8;
+			graphics.PreferredBackBufferWidth = width;
+			graphics.PreferredBackBufferHeight = height;
 			graphics.ApplyChanges();
 			Content.RootDirectory = "Content";
 		}
@@ -66,17 +58,16 @@ namespace ScreenShotTest
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 
-			paletteManager = new PaletteManager();
-			imageManager = new ImageManager(GraphicsDevice, paletteManager);
-			tileManager = new TileManager(GraphicsDevice, imageManager);
+			PresentationParameters pp = GraphicsDevice.PresentationParameters;
+			pp.BackBufferWidth = width;
+			pp.BackBufferHeight = height;
+			renderTarget = new RenderTarget2D(GraphicsDevice, width, height, false, SurfaceFormat.Color, DepthFormat.Depth24);
 
-			var texture = Content.Load<Texture2D>(file);
-			tileManager.LoadContent(texture);
-
-			//PresentationParameters pp = GraphicsDevice.PresentationParameters;
-			//pp.BackBufferWidth = width;
-			//pp.BackBufferHeight = height;
-			//renderTarget = new RenderTarget2D(GraphicsDevice, width, height, false, SurfaceFormat.Color, DepthFormat.Depth24);
+			for (int loop = 0; loop < size; loop++)
+			{
+				var key = loop.ToString().PadLeft(2, '0');
+				images[key] = Content.Load<Texture2D>("output/" + key);
+			}
 		}
 
 		/// <summary>
@@ -108,18 +99,52 @@ namespace ScreenShotTest
 		/// <param name="gameTime">Provides a snapshot of timing values.</param>
 		protected override void Draw(GameTime gameTime)
 		{
-			Draw(save);
-			//base.Draw(gameTime);
-
 			if (save)
 			{
+				//GraphicsDevice.SetRenderTarget(0, renderTarget);
+				GraphicsDevice.SetRenderTarget(renderTarget);
+				GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.CornflowerBlue, 1, 0);
+
+				Draw();
+				base.Draw(gameTime);
+
+				GraphicsDevice.SetRenderTarget(null);
+				Texture2D resolvedTexture = (Texture2D)renderTarget;
+				Stream stream = File.Create("large" + ".png");
+				resolvedTexture.SaveAsPng(stream, width, height);
+
 				Exit();
+			}
+			else
+			{
+				Draw();
+				base.Draw(gameTime);
 			}
 		}
 
-		private void Draw(bool save)
+		private void Draw()
 		{
-			tileManager.Process(save, spriteBatch);
+			int tx, ty;
+			int wide = 16;
+			int high = size / wide + 1;
+			int loop = 0;
+
+			spriteBatch.Begin();
+			for (ty = 0; ty < high; ty++)
+			{
+				for (tx = 0; tx < wide; tx++)
+				{
+					if (loop >= size)
+					{
+						break;
+					}
+					Vector2 pos = new Vector2(tx * 8, ty * 8);
+					var key = loop.ToString().PadLeft(2, '0');
+					spriteBatch.Draw(images[key], pos, Color.White);
+					loop++;
+				}
+			}
+			spriteBatch.End();
 		}
 
 	}
