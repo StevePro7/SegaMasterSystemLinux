@@ -11,7 +11,9 @@ namespace ScreenShotTest
 	{
 		//const string file = "yellow_16x8";
 		//const string file = "redyel_8x16";
+		//const string file = "multi_16x16";
 		const string file = "wonderboy32_01";
+		//const string file = "tile";
 
 		PaletteManager paletteManager;
 		ImageManager imageManager;

@@ -14,16 +14,14 @@ namespace ScreenShotTest
 		StringBuilder sb;
 		int px, py;
 		int tx, ty;
-		int inp_delta;
-		int inp_start;
+		int inp_delta, inp_start;
+		int out_delta, out_start;
+		int out_high, out_wide;
 
 		Color[] texColors;
 		Color[] newColors;
 		Color[] allColors;
 		RenderTarget2D renderTargetSmall, renderTargetLarge;
-
-		int out_high, out_wide;
-		int out_start, out_delta;
 
 		public ImageManager(GraphicsDevice graphicsDevice, PaletteManager paletteManager)
 		{
@@ -89,53 +87,59 @@ namespace ScreenShotTest
 			spriteBatch.End();
 		}
 
-		//private int GetStart(int index)
-		//{
-		//	int base1 = index / tx;
-		//	int base2 = base1 * tx;
-		//	int bases = base2 * 64;
+		private int GetStart(int index)
+		{
+			int base1 = index / tx;
+			int base2 = base1 * tx;
+			int bases = base2 * 64;
 
-		//	int star1 = index % tx;
-		//	int star2 = star1 * 8;
-		//	start = bases + star2;
+			int star1 = index % tx;
+			int star2 = star1 * 8;
+			int start = bases + star2;
 
-		//	return start;
-		//}
+			return start;
+		}
 
 		public string Process(int inp_index, int out_index)
 		{
 			sb.Length = 0;
 
 			inp_delta = tx * 8;
-			out_delta = tx * 8;
+			out_delta = 128;
 
-			int base1 = inp_index / tx;
-			int base2 = base1 * tx;
-			int bases = base2 * 64;
+			//int base1 = inp_index / tx;
+			//int base2 = base1 * tx;
+			//int bases = base2 * 64;
 
-			int star1 = inp_index % tx;
-			int star2 = star1 * 8;
-			inp_start = bases + star2;
+			//int star1 = inp_index % tx;
+			//int star2 = star1 * 8;
+			//inp_start = bases + star2;
+			inp_start = GetStart(inp_index);
+			out_start = GetStart(out_index);
 
 			int row_index;
-			int tmp_index;
-			int all_index = out_index * 64;
+			int all_index;
+			int tmp_index, tmp2_index;
+
 			Color texColor;
 
 			for (int cy = 0; cy < 8; cy++)
 			{
 				row_index = cy * inp_delta;
 				row_index = inp_start + row_index;
+
+				all_index = cy * out_delta;
+				all_index = out_start + all_index;
 				for (int cx = 0; cx < 8; cx++)
 				{
 					tmp_index = row_index + cx;
+					tmp2_index = all_index + cx;
 					texColor = texColors[tmp_index];
 					var text = paletteManager.GetColorAtIndex(texColor);
 					var data = text.Replace("$", "");
 					sb.Append(data);
 					newColors[cy * 8 + cx] = texColors[tmp_index];
-					allColors[all_index] = texColors[tmp_index];
-					all_index++;
+					allColors[tmp2_index] = texColors[tmp_index];
 				}
 			}
 
@@ -150,18 +154,19 @@ namespace ScreenShotTest
 			py= texture.Height;
 			tx = px / 8;
 			ty = py / 8;
-			inp_delta = 0;
-			inp_start = 0;
+			inp_delta = 0; inp_start = 0;
+			out_delta = 0; out_start = 0;
 
 			texColors = new Color[px * py];
-			allColors = new Color[px * py];
+			//allColors = new Color[px * py];
 			newColors = new Color[8 * 8];
 
 			texture.GetData(texColors);
 			renderTargetSmall = new RenderTarget2D(graphicsDevice, 8, 8, false, SurfaceFormat.Color, DepthFormat.Depth24);
 
 			out_wide = 128;
-			out_high = 8;
+			out_high = 64;
+			allColors = new Color[out_wide * out_high];
 		}
 	}
 }
