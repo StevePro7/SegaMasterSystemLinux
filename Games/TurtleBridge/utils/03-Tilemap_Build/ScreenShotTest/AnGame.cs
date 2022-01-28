@@ -18,11 +18,11 @@ namespace ScreenShotTest
 		Dictionary<string, Texture2D> images = new Dictionary<string, Texture2D>();
 		string[] lines;
 
-		private int size = 23;
+		private int size = 35;
 		private bool save;
 
 		private int width = 128;
-		private int height = 16;
+		private int height = 24;
 
 		public AnGame()
 		{
