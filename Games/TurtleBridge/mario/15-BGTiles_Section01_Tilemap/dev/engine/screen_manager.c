@@ -81,7 +81,8 @@ void engine_screen_manager_update()
 				ytile = 18;
 				//engine_content_manager_draw_tile( X_TILE_MAX + scrollRightDivided8, ytile - 1, ( test + 0 ) * 2 + 0 );
 
-				engine_tilemap_manager_draw_tile( X_TILE_MAX + scrollRightDivided8, ytile - 1 );
+				// TODO fix me - the tile set is incorrect!
+				//engine_tilemap_manager_draw_tile( X_TILE_MAX + scrollRightDivided8, ytile - 1 );
 
 				//engine_font_manager_draw_text( "HI", 30, ytile );
 				//test2 = ( test + 0 ) * 2 + 0;

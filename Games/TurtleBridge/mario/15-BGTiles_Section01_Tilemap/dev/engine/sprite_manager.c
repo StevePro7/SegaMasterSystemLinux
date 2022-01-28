@@ -48,7 +48,6 @@ void engine_tile_manager_draw( unsigned char x, unsigned char y )
 		40, 40, 39, 40, 40, 40, 39, 40, 40, 40, 39, 40, 40, 40, 40, 40,
 	};
 
-
 	for( h = 0; h < TILE_HIGH; h++ )
 	{
 		for( w = 0; w < TILE_WIDE; w++ )
@@ -85,7 +84,6 @@ void engine_tilemap_manager_draw_tile( unsigned char x, unsigned char y )
 
 	//index = ( base + offset + 80 ) * 2;
 	//devkit_SMS_loadTileMap( x, y + 5, ( void * ) &pnt[ index ], 2 );  // 32 tiles * 2 bytes each
-
 
 	offset++;
 	if( offset >= 16 )
