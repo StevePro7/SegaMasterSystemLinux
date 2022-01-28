@@ -3,15 +3,15 @@
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
 
-#define TILE_HIGH	6
-#define TILE_WIDE	16
+#define TILE_HIGH	10
+#define TILE_WIDE	8
 
 static unsigned int offset;
 
 void engine_tile_manager_init()
 {
 	const unsigned char *pnt = game_tiles__tilemap__bin;
-	const unsigned char tile = 19;
+	const unsigned char tile = 47;
 
 	unsigned char w;
 	unsigned char h;
@@ -34,12 +34,16 @@ void engine_tile_manager_draw( unsigned char x, unsigned char y )
 
 	unsigned char tileMap[ TILE_HIGH * TILE_WIDE ] =
 	{
-		0,1,1,2,1,2,1,2,1,2,1,2,1,3,2,4,
-		5,6,6,7,6,7,6,7,6,7,6,7,6,7,7,8,
-		9,10,11,12,10,13,11,12,10,13,11,12,10,13,12,14,
-		15,16,17,18,15,16,17,18,15,16,17,18,15,16,17,18,
-		19,20,21,22,19,20,21,22,19,20,21,22,19,20,21,22,
-		21,21,20,21,21,21,20,21,21,21,20,21,21,21,20,21,
+		0,1,2,3,4,5,0,0,
+		6,7,8,9,10,11,12,3,
+		13,14,15,16,17,18,19,20,
+		21,22,23,24,25,26,27,28,
+		0,0,29,30,0,0,0,0,
+		0,0,29,30,0,0,0,0,
+		0,0,29,30,0,0,0,0,
+		0,0,29,30,0,0,0,0,
+		0,0,31,32,0,0,0,0,
+		0,0,33,34,0,0,0,0,
 	};
 
 	for( h = 0; h < TILE_HIGH; h++ )
@@ -54,6 +58,33 @@ void engine_tile_manager_draw( unsigned char x, unsigned char y )
 	}
 }
 
+// Section #02.
+//void engine_tile_manager_draw_02( unsigned char x, unsigned char y )
+//{
+//	const unsigned char *pnt = game_tiles__tilemap__bin;
+//	unsigned char w, h, idx, key;
+//
+//	unsigned char tileMap[ TILE_HIGH * TILE_WIDE ] =
+//	{
+//		0,1,1,2,1,2,1,2,1,2,1,2,1,3,2,4,
+//		5,6,6,7,6,7,6,7,6,7,6,7,6,7,7,8,
+//		9,10,11,12,10,13,11,12,10,13,11,12,10,13,12,14,
+//		15,16,17,18,15,16,17,18,15,16,17,18,15,16,17,18,
+//		19,20,21,22,19,20,21,22,19,20,21,22,19,20,21,22,
+//		21,21,20,21,21,21,20,21,21,21,20,21,21,21,20,21,
+//	};
+//
+//	for( h = 0; h < TILE_HIGH; h++ )
+//	{
+//		for( w = 0; w < TILE_WIDE; w++ )
+//		{
+//			idx = h * TILE_WIDE + w;
+//			key = tileMap[ idx ];
+//			devkit_SMS_setNextTileatXY( x + w, y + h );
+//			devkit_SMS_setTile( *pnt + key );
+//		}
+//	}
+//}
 
 // Section #01.
 //void engine_tile_manager_draw_01( unsigned char x, unsigned char y )
