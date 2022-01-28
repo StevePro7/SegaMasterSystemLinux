@@ -9,11 +9,9 @@ namespace ScreenShotTest
 	/// </summary>
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		//const string file = "yellow_16x8";
-		//const string file = "redyel_8x16";
-		//const string file = "multi_16x16";
 		//const string file = "wonderboy32_01";
-		const string file = "wonderboy32_02";
+		//const string file = "wonderboy32_02";
+		const string file = "wonderboy32_03";
 
 		PaletteManager paletteManager;
 		ImageManager imageManager;
