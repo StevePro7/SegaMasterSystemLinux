@@ -75,6 +75,7 @@ namespace ScreenShotTest
 				}
 			}
 
+			//imageManager.DrawLarge(save, spriteBatch);
 			SaveTileMap(save);
 		}
 

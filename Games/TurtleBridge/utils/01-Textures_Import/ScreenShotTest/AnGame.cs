@@ -1,7 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using System.IO;
 
 namespace ScreenShotTest
 {
@@ -10,9 +9,9 @@ namespace ScreenShotTest
 	/// </summary>
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		const string file = "yellow_16x8";
+		//const string file = "yellow_16x8";
 		//const string file = "redyel_8x16";
-		//const string file = "multi_16x16";
+		const string file = "wonderboy32_01";
 
 		PaletteManager paletteManager;
 		ImageManager imageManager;

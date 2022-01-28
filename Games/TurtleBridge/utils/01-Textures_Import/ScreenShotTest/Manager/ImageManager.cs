@@ -30,12 +30,38 @@ namespace ScreenShotTest
 			tileImg = new Texture2D(graphicsDevice, 8, 8);
 		}
 
+		public void DrawLarge(bool save, SpriteBatch spriteBatch)
+		{
+			renderTargetLarge = new RenderTarget2D(graphicsDevice, 32, 8, false, SurfaceFormat.Color, DepthFormat.Depth24);
+			if (save)
+			{
+				graphicsDevice.SetRenderTarget(renderTargetLarge);
+				graphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.CornflowerBlue, 1, 0);
+
+				DrawLarge(spriteBatch);
+
+				graphicsDevice.SetRenderTarget(null);
+				Texture2D resolvedTexture = (Texture2D)renderTargetLarge;
+				Stream stream = File.Create("output/large.png");
+				resolvedTexture.SaveAsPng(stream, 32, 8);
+			}
+		}
+
+		private void DrawLarge(SpriteBatch spriteBatch)
+		{
+			Texture2D pixel = new Texture2D(graphicsDevice, 32, 8);
+			pixel.SetData(allColors);
+			graphicsDevice.Clear(Color.Black);
+			spriteBatch.Begin();
+			spriteBatch.Draw(pixel, Vector2.Zero, Color.White);
+			spriteBatch.End();
+		}
+
 		public void Draw(bool save, SpriteBatch spriteBatch, string txtTile)
 		{
 			tileImg.SetData<Color>(newColors);
 			if (save)
 			{
-				//GraphicsDevice.SetRenderTarget(0, renderTarget);
 				graphicsDevice.SetRenderTarget(renderTargetSmall);
 				graphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.CornflowerBlue, 1, 0);
 
@@ -76,6 +102,7 @@ namespace ScreenShotTest
 
 			int row_index;
 			int tmp_index;
+			int all_index = out_index * 64;
 			Color texColor;
 
 			for (int cy = 0; cy < 8; cy++)
@@ -90,8 +117,8 @@ namespace ScreenShotTest
 					var data = text.Replace("$", "");
 					sb.Append(data);
 					newColors[cy * 8 + cx] = texColors[tmp_index];
-					allColors[out_index] = texColors[tmp_index];
-					out_index++;
+					allColors[all_index] = texColors[tmp_index];
+					all_index++;
 				}
 			}
 
@@ -115,7 +142,6 @@ namespace ScreenShotTest
 
 			texture.GetData(texColors);
 			renderTargetSmall = new RenderTarget2D(graphicsDevice, 8, 8, false, SurfaceFormat.Color, DepthFormat.Depth24);
-			renderTargetLarge = new RenderTarget2D(graphicsDevice, 8, 8, false, SurfaceFormat.Color, DepthFormat.Depth24);
 		}
 	}
 }
