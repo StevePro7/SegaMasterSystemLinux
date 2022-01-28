@@ -8,7 +8,7 @@ namespace BinaryFileWrite
 	{
 		static void Main()
 		{
-			int tx = 2;
+			int tx = 16;
 			int ty = 4;
 
 			int px = tx * 8;

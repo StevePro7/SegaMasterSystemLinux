@@ -22,6 +22,9 @@ namespace ScreenShotTest
 		Color[] allColors;
 		RenderTarget2D renderTargetSmall, renderTargetLarge;
 
+		int out_high, out_wide;
+		int out_start, out_delta;
+
 		public ImageManager(GraphicsDevice graphicsDevice, PaletteManager paletteManager)
 		{
 			this.graphicsDevice = graphicsDevice;
@@ -32,7 +35,7 @@ namespace ScreenShotTest
 
 		public void DrawLarge(bool save, SpriteBatch spriteBatch)
 		{
-			renderTargetLarge = new RenderTarget2D(graphicsDevice, 32, 8, false, SurfaceFormat.Color, DepthFormat.Depth24);
+			renderTargetLarge = new RenderTarget2D(graphicsDevice, out_wide, out_high, false, SurfaceFormat.Color, DepthFormat.Depth24);
 			if (save)
 			{
 				graphicsDevice.SetRenderTarget(renderTargetLarge);
@@ -43,13 +46,13 @@ namespace ScreenShotTest
 				graphicsDevice.SetRenderTarget(null);
 				Texture2D resolvedTexture = (Texture2D)renderTargetLarge;
 				Stream stream = File.Create("output/large.png");
-				resolvedTexture.SaveAsPng(stream, 32, 8);
+				resolvedTexture.SaveAsPng(stream, out_wide, out_high);
 			}
 		}
 
 		private void DrawLarge(SpriteBatch spriteBatch)
 		{
-			Texture2D pixel = new Texture2D(graphicsDevice, 32, 8);
+			Texture2D pixel = new Texture2D(graphicsDevice, out_wide, out_high);
 			pixel.SetData(allColors);
 			graphicsDevice.Clear(Color.Black);
 			spriteBatch.Begin();
@@ -86,11 +89,25 @@ namespace ScreenShotTest
 			spriteBatch.End();
 		}
 
+		//private int GetStart(int index)
+		//{
+		//	int base1 = index / tx;
+		//	int base2 = base1 * tx;
+		//	int bases = base2 * 64;
+
+		//	int star1 = index % tx;
+		//	int star2 = star1 * 8;
+		//	start = bases + star2;
+
+		//	return start;
+		//}
+
 		public string Process(int inp_index, int out_index)
 		{
 			sb.Length = 0;
 
 			delta = tx * 8;
+			out_delta = tx * 8;
 
 			int base1 = inp_index / tx;
 			int base2 = base1 * tx;
@@ -142,6 +159,9 @@ namespace ScreenShotTest
 
 			texture.GetData(texColors);
 			renderTargetSmall = new RenderTarget2D(graphicsDevice, 8, 8, false, SurfaceFormat.Color, DepthFormat.Depth24);
+
+			out_wide = 128;
+			out_high = 8;
 		}
 	}
 }
