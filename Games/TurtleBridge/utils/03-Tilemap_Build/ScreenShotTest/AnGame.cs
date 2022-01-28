@@ -18,11 +18,11 @@ namespace ScreenShotTest
 		Dictionary<string, Texture2D> images = new Dictionary<string, Texture2D>();
 		string[] lines;
 
-		private int size = 43;
+		private int size = 23;
 		private bool save;
 
 		private int width = 128;
-		private int height = 24;
+		private int height = 16;
 
 		public AnGame()
 		{
@@ -68,7 +68,8 @@ namespace ScreenShotTest
 			lines = File.ReadAllLines("tileMap.txt");
 			for (int loop = 0; loop < size; loop++)
 			{
-				var key = loop.ToString().PadLeft(2, '0');
+				//var key = loop.ToString().PadLeft(2, '0');
+				var key = loop.ToString();
 				images[key] = Content.Load<Texture2D>("output/" + key);
 			}
 		}
@@ -113,7 +114,7 @@ namespace ScreenShotTest
 
 				GraphicsDevice.SetRenderTarget(null);
 				Texture2D resolvedTexture = (Texture2D)renderTarget;
-				Stream stream = File.Create("large" + ".png");
+				Stream stream = File.Create("tileMap.png");
 				resolvedTexture.SaveAsPng(stream, width, height);
 
 				Exit();
@@ -170,7 +171,8 @@ namespace ScreenShotTest
 						break;
 					}
 					Vector2 pos = new Vector2(tx * 8, ty * 8);
-					var key = loop.ToString().PadLeft(2, '0');
+					//var key = loop.ToString().PadLeft(2, '0');
+					var key = loop.ToString();
 					spriteBatch.Draw(images[key], pos, Color.White);
 					loop++;
 				}
