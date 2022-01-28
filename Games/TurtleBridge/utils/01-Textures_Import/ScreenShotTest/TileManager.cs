@@ -60,7 +60,8 @@ namespace ScreenShotTest
 					}
 					else
 					{
-						txtTile = keyTile.ToString().PadLeft(2, '0');
+						//txtTile = keyTile.ToString().PadLeft(2, '0');
+						txtTile = keyTile.ToString();
 						tilesDict.Add(txtTile, hash);
 						keyTile++;
 						keyTileMap++;
@@ -97,7 +98,7 @@ namespace ScreenShotTest
 					line += tilemapList[index] + ",";
 					index++;
 				}
-				line = line.Substring(0, line.Length - 1);
+				//line = line.Substring(0, line.Length - 1);
 				lines.Add(line);
 			}
 
