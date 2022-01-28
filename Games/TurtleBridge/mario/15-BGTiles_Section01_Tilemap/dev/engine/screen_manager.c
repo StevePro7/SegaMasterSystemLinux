@@ -28,7 +28,7 @@ void engine_screen_manager_init()
 	//unsigned char x = 10;
 	//unsigned char y = 10;
 	engine_tile_manager_init();
-	//engine_tile_manager_draw( 0, 18 );
+	engine_tile_manager_draw( 4, 10 );
 	test2 = 0;
 
 //	engine_font_manager_draw_data( test2, 15, 2 );

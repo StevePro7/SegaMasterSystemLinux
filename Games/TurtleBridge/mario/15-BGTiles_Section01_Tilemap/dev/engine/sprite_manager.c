@@ -30,9 +30,9 @@ void engine_tile_manager_init()
 void engine_tile_manager_draw( unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = game_tiles__tilemap__bin;
-	unsigned char w, h, idx;
+	unsigned char w, h, idx, key;
 
-	unsigned char tileMap[ TILE_HIGH ][ TILE_WIDE ] =
+	unsigned char tileMap[ TILE_HIGH * TILE_WIDE ] =
 	{
 		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 		1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 5, 6,
@@ -48,13 +48,15 @@ void engine_tile_manager_draw( unsigned char x, unsigned char y )
 		40, 40, 39, 40, 40, 40, 39, 40, 40, 40, 39, 40, 40, 40, 40, 40,
 	};
 
+
 	for( h = 0; h < TILE_HIGH; h++ )
 	{
 		for( w = 0; w < TILE_WIDE; w++ )
 		{
-			idx = tileMap[ h ][ w ];
+			idx = h * TILE_WIDE + w;
+			key = tileMap[ idx ];
 			devkit_SMS_setNextTileatXY( x + w, y + h );
-			devkit_SMS_setTile( *pnt + idx );
+			devkit_SMS_setTile( *pnt + key );
 		}
 	}
 }
