@@ -3,30 +3,58 @@
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
 
+#define TILE_HIGH	12
+#define TILE_WIDE	16
+
 static unsigned int offset;
 
 void engine_tile_manager_init()
 {
+	const unsigned char *pnt = game_tiles__tilemap__bin;
+	const unsigned char tile = 19;
+
+	unsigned char w;
+	unsigned char h;
+	for( h = 0; h < 24; h++ )
+	{
+		for( w = 0; w < 32; w++ )
+		{
+			devkit_SMS_setNextTileatXY( w, h );
+			devkit_SMS_setTile( *pnt + tile );
+		}
+	}
+
 	offset = 0;
 }
 
 void engine_tile_manager_draw( unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = game_tiles__tilemap__bin;
-	unsigned char tile = 48;
+	unsigned char w, h, idx;
 
-	unsigned char w;
-	unsigned char h;
-
-	for( h = 3; h < 6; h++ )
+	unsigned char tileMap[ TILE_HIGH ][ TILE_WIDE ] =
 	{
-		for( w = 0; w < 16; w++ )
+		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+		1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 5, 6,
+		7, 8, 9, 10, 7, 8, 9, 10, 7, 8, 9, 10, 7, 11, 12, 13,
+		14, 15, 16, 17, 14, 15, 16, 17, 14, 15, 16, 17, 14, 18, 19, 19,
+		20, 21, 22, 23, 20, 21, 22, 23, 20, 21, 22, 24, 25, 13, 19, 19,
+		1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 26, 19, 19, 19, 19,
+		7, 8, 9, 10, 7, 8, 9, 10, 7, 8, 9, 27, 19, 19, 19, 19,
+		14, 15, 16, 17, 14, 15, 16, 17, 14, 15, 16, 28, 19, 19, 19, 19,
+		29, 30, 22, 23, 29, 30, 22, 23, 29, 30, 22, 31, 19, 19, 19, 19,
+		32, 33, 34, 35, 32, 33, 34, 35, 32, 33, 34, 36, 37, 37, 37, 37,
+		38, 39, 40, 41, 38, 39, 40, 41, 38, 39, 40, 41, 42, 42, 42, 42,
+		40, 40, 39, 40, 40, 40, 39, 40, 40, 40, 39, 40, 40, 40, 40, 40,
+	};
+
+	for( h = 0; h < TILE_HIGH; h++ )
+	{
+		for( w = 0; w < TILE_WIDE; w++ )
 		{
+			idx = tileMap[ h ][ w ];
 			devkit_SMS_setNextTileatXY( x + w, y + h );
-			devkit_SMS_setTile( *pnt + tile );
-			devkit_SMS_setNextTileatXY( x + w + 16, y + h );
-			devkit_SMS_setTile( *pnt + tile );
-			tile++;
+			devkit_SMS_setTile( *pnt + idx );
 		}
 	}
 }
