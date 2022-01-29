@@ -10,7 +10,7 @@ static void print();
 
 static unsigned char tiles[] =
 {
-	0, 20, 20, 20, 20, 20, 20, 20, 21, 21, 21, 21, 22, 22, 22, 22, 21, 21,21, 21, 22, 22, 22, 22, 21, 21,21, 21, 22, 22, 22, 22,
+	0, 20, 20, 20, 20, 20, 20, 20, 21, 21, 21, 21, 22, 22, 22, 22, 21, 21,21, 21, 22, 22, 22, 22, 21, 21,21, 21, 22, 22, 23, 23,
 };
 
 // Methods.
@@ -23,6 +23,8 @@ void engine_scroll_manager_init()
 	so->scroll = 0;
 	so->scrollRight = 0;
 	so->scrollRightDivided8 = 0;
+	so->offset_left = 0;
+	so->offset_right = 31;
 
 	devkit_SMS_setBGScrollX( so->scroll );
 }
@@ -46,6 +48,7 @@ void engine_scroll_manager_update()
 	so->scroll -= delta;
 	so->scrollRight += delta;
 
+	// scroll pixel by pixel
 	devkit_SMS_setBGScrollX( so->scroll );
 	print();
 
@@ -54,9 +57,17 @@ void engine_scroll_manager_update()
 		return;
 	}
 
+	// Add new tile!
 	so->scrollRightDivided8 = so->scrollRight / 8;
 	engine_font_manager_draw_text( "X", 32 + so->scrollRightDivided8, 20 );
 	print();
+}
+
+unsigned char engine_scroll_manager_getPosY( unsigned int col )
+{
+	struct_scroll_object *so = &global_scroll_object;
+	unsigned int idx = so->offset_left + col;
+	return tiles[ idx  ];
 }
 
 static void print()

@@ -10,6 +10,9 @@ typedef struct tag_struct_scroll_object
 	unsigned char scrollRight;
 	unsigned char scrollRightDivided8;
 
+	unsigned int offset_left;
+	unsigned int offset_right;
+
 } struct_scroll_object;
 
 #endif//_SCROLL_OBJECT_H_

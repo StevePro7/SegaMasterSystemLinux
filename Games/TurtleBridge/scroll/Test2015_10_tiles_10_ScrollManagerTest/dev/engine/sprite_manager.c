@@ -5,4 +5,5 @@
 
 void engine_sprite_manager_draw( unsigned char x, unsigned char y )
 {
+	devkit_SMS_addSprite( x + 0, y + 0, 256 );
 }
