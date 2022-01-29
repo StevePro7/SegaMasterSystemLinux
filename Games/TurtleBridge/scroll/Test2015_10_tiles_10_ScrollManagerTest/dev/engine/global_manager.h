@@ -2,7 +2,7 @@
 #define _GLOBAL_MANAGER_H_
 
 // Sprites.
-//#define SPRITE_TILES		256
+#define SPRITE_TILES		256
 //#define TURTLE_TILES		64
 
 #endif//_GLOBAL_MANAGER_H_

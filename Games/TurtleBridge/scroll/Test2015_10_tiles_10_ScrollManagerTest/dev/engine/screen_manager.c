@@ -50,24 +50,24 @@ void engine_screen_manager_update()
 void engine_screen_manager_updateX()
 {
 	const unsigned char delta = 1;
-	unsigned char xx, yy;
+	//unsigned char xx, yy;
 	unsigned char input;
-	//unsigned char value;
+	////unsigned char value;
 
-	input = engine_input_manager_hold_fire1();
-	if( input )
-	{
-		xx = 24;
-		yy = 12;
-		engine_content_manager_draw_tile2( xx, yy + 0 );
-	}
-	input = engine_input_manager_hold_fire2();
-	if( input )
-	{
-		xx = 24;
-		yy = 12;
-		engine_content_manager_draw_tile( xx, yy + 0 );
-	}
+	//input = engine_input_manager_hold_fire1();
+	//if( input )
+	//{
+	//	xx = 24;
+	//	yy = 12;
+	//	engine_content_manager_draw_tile2( xx, yy + 0 );
+	//}
+	//input = engine_input_manager_hold_fire2();
+	//if( input )
+	//{
+	//	xx = 24;
+	//	yy = 12;
+	//	engine_content_manager_draw_tile( xx, yy + 0 );
+	//}
 
 
 	//input = engine_input_manager_move_right();
@@ -108,7 +108,7 @@ void engine_screen_manager_updateX()
 				ytile = 18;
 				//engine_content_manager_draw_tile( X_TILE_MAX + scrollRightDivided8, ytile - 1, ( test + 0 ) * 2 + 0 );
 
-				engine_tilemap_manager_draw_tile( X_TILE_MAX + scrollRightDivided8, ytile - 1 );
+				//engine_tilemap_manager_draw_tile( X_TILE_MAX + scrollRightDivided8, ytile - 1 );
 
 				//engine_font_manager_draw_text( "HI", 30, ytile );
 				//test2 = ( test + 0 ) * 2 + 0;
