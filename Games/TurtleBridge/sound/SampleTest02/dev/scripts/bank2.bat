@@ -5,8 +5,8 @@ cd banks
 cd bank2
 cd raw
 
-pcmenc -rto 1 -dt1 12 -dt2 12 -dt3 423 SoundFx.wav
-mv SoundFx.wav.pcmenc ../
+pcmenc -rto 1 -dt1 12 -dt2 12 -dt3 423 Riff__01.wav
+mv Riff__01.wav.pcmenc ../
 
 :: Convert.
 cd ../..
