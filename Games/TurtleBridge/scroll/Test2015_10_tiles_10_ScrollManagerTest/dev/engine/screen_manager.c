@@ -5,6 +5,7 @@
 #include "global_manager.h"
 #include "input_manager.h"
 #include "sprite_manager.h"
+#include "scroll_manager.h"
 #include "../devkit/_sms_manager.h"
 #include <stdlib.h>
 
@@ -27,6 +28,8 @@ void engine_screen_manager_init()
 {
 	unsigned char xx, yy;
 
+	engine_scroll_manager_init();
+	engine_scroll_manager_load();
 	engine_font_manager_draw_text( "STEVEPRO STUDIOS", 10, 2 );
 
 	//for( xx = 0; xx < 32; xx += 2 )

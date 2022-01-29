@@ -8,7 +8,7 @@ struct_scroll_object global_scroll_object;
 void engine_scroll_manager_init()
 {
 	struct_scroll_object *so = &global_scroll_object;
-	so->scroll_left = -7;
+	so->scroll_left = 7;
 }
 
 void engine_scroll_manager_load()
