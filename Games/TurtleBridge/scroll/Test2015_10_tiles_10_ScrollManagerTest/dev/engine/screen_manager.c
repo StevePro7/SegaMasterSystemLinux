@@ -42,8 +42,8 @@ void engine_screen_manager_update()
 	unsigned char posY;
 	unsigned char col = 1;
 
-	//input = engine_input_manager_hold_right();
-	input = engine_input_manager_move_right();
+	input = engine_input_manager_hold_right();
+	//input = engine_input_manager_move_right();
 	if( input )
 	{
 		//engine_font_manager_draw_text( "BEG", 10, 1 );

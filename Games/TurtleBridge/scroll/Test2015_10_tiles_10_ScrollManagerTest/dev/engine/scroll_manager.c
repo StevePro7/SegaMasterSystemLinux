@@ -1,6 +1,7 @@
 #include "scroll_manager.h"
 #include "font_manager.h"
 #include "../devkit/_sms_manager.h"
+#include "../content/gfx.h"
 
 // Global variable.
 struct_scroll_object global_scroll_object;
@@ -11,7 +12,7 @@ static void print();
 static unsigned char tiles[] =
 {
 	0, 20, 20, 20, 20, 20, 0, 20, 21, 21, 21, 22, 22, 0, 22, 22, 21, 21,21, 0, 0, 22, 22, 22, 21, 21,0, 21, 20, 20, 20, 20,
-	18, 20, 20, 20, 20, 20, 0, 20, 21, 21, 21, 21, 22, 0, 22, 22, 21, 21,21, 0, 0, 22, 22, 22, 21, 21,0, 21, 20, 20, 20, 20,
+	19, 20, 20, 20, 18, 18, 18, 20, 21, 21, 21, 21, 22, 20, 22, 22, 21, 21,21, 20, 20, 22, 22, 22, 21, 21, 20, 21, 20, 20, 20, 20,
 };
 
 // Methods.
@@ -51,7 +52,16 @@ void engine_scroll_manager_load()
 void engine_scroll_manager_update()
 {
 	struct_scroll_object *so = &global_scroll_object;
+	const unsigned char *pnt = font_tiles__tilemap__bin;
 	unsigned int idx;
+
+	unsigned char x;
+	unsigned char y;
+	unsigned int *src;
+
+	unsigned int index = 0;
+	unsigned int offset = 0;
+	unsigned char base = 0;
 
 	so->scroll -= delta;
 	so->scrollRight += delta;
@@ -76,6 +86,16 @@ void engine_scroll_manager_update()
 	//engine_font_manager_draw_text( "D", 32 + so->scrollRightDivided8, 21 );
 
 	idx = so->offset_right;
+
+	// IMPORTANT - here 8 is tile 4 * x	remember 2x bytes for each tile loaded from the TILEMAP
+	// i.e. so 8 => 4 i.e. 8/2 = 4 and 4 is tile '$'.
+	index = ( base + offset ) * 2 + 8;
+	engine_font_manager_draw_data( index, 25, 0 );
+	x = 32 + so->scrollRightDivided8;
+	y = tiles[ idx ];
+	src = ( void * ) &pnt[ index ];
+	devkit_SMS_loadTileMap(x, y-1, src, 2 );
+
 	//engine_font_manager_draw_text( "X", 32 + so->scrollRightDivided8, tiles[ idx ] - 1);
 	print();
 }
@@ -90,7 +110,7 @@ unsigned char engine_scroll_manager_getPosY( unsigned int col )
 static void print()
 {
 	struct_scroll_object *so = &global_scroll_object;
-	engine_font_manager_draw_data( so->scroll, 25, 0 );
+	//engine_font_manager_draw_data( so->scroll, 25, 0 );
 	engine_font_manager_draw_data( so->scrollRight, 25, 1 );
 	engine_font_manager_draw_data( so->scrollRightDivided8, 25, 2 );
 	engine_font_manager_draw_data( so->scrollRight % 8, 25, 3 );
