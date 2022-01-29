@@ -8,6 +8,11 @@ struct_scroll_object global_scroll_object;
 static unsigned char delta = 1;
 static void print();
 
+static unsigned char tiles[] =
+{
+	0, 20, 20, 20, 20, 20, 20, 20, 21, 21, 21, 21, 22, 22, 22, 22, 21, 21,21, 21, 22, 22, 22, 22, 21, 21,21, 21, 22, 22, 22, 22,
+};
+
 // Methods.
 void engine_scroll_manager_init()
 {
@@ -20,13 +25,18 @@ void engine_scroll_manager_init()
 	so->scrollRightDivided8 = 0;
 
 	devkit_SMS_setBGScrollX( so->scroll );
-	//devkit_SMS_setBGScrollX( scroll );
 }
 
 void engine_scroll_manager_load()
 {
 	struct_scroll_object *so = &global_scroll_object;
+	unsigned char x;
 	print();
+
+	for( x = 0; x < 32; x++ )
+	{
+		engine_font_manager_draw_text( "X", x, tiles[x] );
+	}
 }
 
 void engine_scroll_manager_update()
