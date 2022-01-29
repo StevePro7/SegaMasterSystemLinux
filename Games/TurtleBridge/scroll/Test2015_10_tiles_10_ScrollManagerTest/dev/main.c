@@ -2,8 +2,6 @@
 
 void main( void )
 {
-	//engine_log_manager_open();
-
 	devkit_SMS_init();
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
@@ -32,6 +30,4 @@ void main( void )
 		devkit_PSGFrame();
 		devkit_PSGSFXFrame();
 	}
-
-	//engine_log_manager_close();
 }

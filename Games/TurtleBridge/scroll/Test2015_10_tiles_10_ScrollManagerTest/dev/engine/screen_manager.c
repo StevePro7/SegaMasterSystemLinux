@@ -23,14 +23,11 @@ unsigned char scrollRightDivided8 = 0;
 unsigned int ytile = 0;
 unsigned int yDelta = 0;
 
-static void printout();
-
 void engine_screen_manager_init()
 {
 	unsigned char xx, yy;
 
 	engine_font_manager_draw_text( "STEVEPRO STUDIOS", 10, 2 );
-	//engine_font_manager_draw_data( test, 30, yDelta++ );
 
 	//for( xx = 0; xx < 32; xx += 2 )
 	{
@@ -44,7 +41,6 @@ void engine_screen_manager_init()
 	engine_music_manager_play();
 	//yDelta = 2;
 
-	printout();
 	test2 = 0;
 }
 
@@ -121,13 +117,4 @@ void engine_screen_manager_update()
 		}
 	}
 
-}
-
-static void printout()
-{
-	//engine_font_manager_draw_data( test, 10, yDelta );
-	//engine_font_manager_draw_data( scrollRight, 15, yDelta );
-	//engine_font_manager_draw_data( scrollRightDivided8, 20, yDelta );
-	//engine_font_manager_draw_data( scroll, 30, yDelta );
-	//yDelta++;
 }
