@@ -13,6 +13,12 @@ static unsigned char tiles[] =
 {
 	0, 20, 20, 20, 20, 20, 0, 20, 21, 21, 21, 22, 22, 0, 22, 22, 21, 21,21, 0, 0, 22, 22, 22, 21, 21,0, 21, 20, 20, 20, 20,
 	19, 19, 18, 19, 18, 18, 18, 20, 21, 21, 21, 21, 22, 20, 22, 22, 21, 21,21, 20, 20, 22, 22, 22, 21, 21, 20, 21, 20, 20, 20, 20,
+	19, 19, 18, 19, 18, 18, 18, 20, 21, 21, 21, 21, 22, 20, 22, 22, 21, 21,21, 20, 20, 22, 22, 22, 21, 21, 20, 21, 20, 20, 20, 20,
+	19, 19, 18, 19, 18, 18, 18, 20, 21, 21, 21, 21, 22, 20, 22, 22, 21, 21,21, 20, 20, 22, 22, 22, 21, 21, 20, 21, 20, 20, 20, 20,
+	19, 19, 18, 19, 18, 18, 18, 20, 21, 21, 21, 21, 22, 20, 22, 22, 21, 21,21, 20, 20, 22, 22, 22, 21, 21, 20, 21, 20, 20, 20, 20,
+	19, 19, 18, 19, 18, 18, 18, 20, 21, 21, 21, 21, 22, 20, 22, 22, 21, 21,21, 20, 20, 22, 22, 22, 21, 21, 20, 21, 20, 20, 20, 20,
+	19, 19, 18, 19, 18, 18, 18, 20, 21, 21, 21, 21, 22, 20, 22, 22, 21, 21,21, 20, 20, 22, 22, 22, 21, 21, 20, 21, 20, 20, 20, 20,
+	19, 19, 18, 19, 18, 18, 18, 20, 21, 21, 21, 21, 22, 20, 22, 22, 21, 21,21, 20, 20, 22, 22, 22, 21, 21, 20, 21, 20, 20, 20, 20,
 };
 
 // Methods.
@@ -117,21 +123,21 @@ unsigned char engine_scroll_manager_getPosY( unsigned int col )
 
 static void print()
 {
-	struct_scroll_object *so = &global_scroll_object;
-	//engine_font_manager_draw_data( so->scroll, 25, 0 );
-	engine_font_manager_draw_data( so->scrollRight, 25, 1 );
-	engine_font_manager_draw_data( so->scrollRightDivided8, 25, 2 );
-	engine_font_manager_draw_data( so->scrollRight % 8, 25, 3 );
+	//struct_scroll_object *so = &global_scroll_object;
+	////engine_font_manager_draw_data( so->scroll, 25, 0 );
+	//engine_font_manager_draw_data( so->scrollRight, 25, 1 );
+	//engine_font_manager_draw_data( so->scrollRightDivided8, 25, 2 );
+	//engine_font_manager_draw_data( so->scrollRight % 8, 25, 3 );
 
-	engine_font_manager_draw_data( so->offset_left, 25, 5 );
-	engine_font_manager_draw_data( so->offset_right, 25, 6 );
+	//engine_font_manager_draw_data( so->offset_left, 25, 5 );
+	//engine_font_manager_draw_data( so->offset_right, 25, 6 );
 
-	engine_font_manager_draw_data( so->scroll + so->scrollRight, 25, 8 );
-	//engine_font_manager_draw_data( so->scroll, so->scroll, 1 );
+	//engine_font_manager_draw_data( so->scroll + so->scrollRight, 25, 8 );
+	////engine_font_manager_draw_data( so->scroll, so->scroll, 1 );
 
-	engine_font_manager_draw_text( "      ", 21, 9 );
-	if( ( so->scrollRight % 8 ) == delta )
-	{
-		engine_font_manager_draw_text( "SCROLL", 21, 9 );
-	}
+	//engine_font_manager_draw_text( "      ", 21, 9 );
+	//if( ( so->scrollRight % 8 ) == delta )
+	//{
+	//	engine_font_manager_draw_text( "SCROLL", 21, 9 );
+	//}
 }

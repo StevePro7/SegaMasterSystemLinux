@@ -29,7 +29,7 @@ void engine_screen_manager_init()
 	engine_scroll_manager_init();
 	engine_scroll_manager_load();
 
-//	engine_music_manager_play();
+	engine_music_manager_play();
 	test2 = 0;
 }
 
@@ -42,13 +42,11 @@ void engine_screen_manager_update()
 	unsigned char posY;
 	unsigned char col = 1;
 
-	input = engine_input_manager_hold_right();
-	//input = engine_input_manager_move_right();
+	//input = engine_input_manager_hold_right();
+	input = engine_input_manager_move_right();
 	if( input )
 	{
-		//engine_font_manager_draw_text( "BEG", 10, 1 );
 		engine_scroll_manager_update();
-		//engine_font_manager_draw_text( "END", 10, 2 );
 	}
 
 	posX = ( ( col + 0 ) * 8 ) - 0;
@@ -58,6 +56,7 @@ void engine_screen_manager_update()
 		engine_sprite_manager_draw( posX, 184 );
 		return;
 	}
+
 	engine_sprite_manager_draw( posX, (posY - 1) * 8 );
 }
 
