@@ -2,24 +2,13 @@
 #include "font_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
+#include "../banks/bank3.h"
 
 // Global variable.
 struct_scroll_object global_scroll_object;
 
 static unsigned char delta = 1;
 static void print();
-
-static unsigned char tiles[] =
-{
-	0, 20, 20, 20, 20, 20, 0, 20, 21, 21, 21, 22, 22, 0, 22, 22, 21, 21,21, 0, 0, 22, 22, 22, 21, 21,0, 21, 20, 20, 20, 20,
-	19, 19, 18, 19, 18, 18, 18, 20, 21, 21, 21, 21, 22, 20, 22, 22, 21, 21,21, 20, 20, 22, 22, 22, 21, 21, 20, 21, 20, 20, 20, 20,
-	19, 19, 18, 19, 18, 18, 18, 20, 21, 21, 21, 21, 22, 20, 22, 22, 21, 21,21, 20, 20, 22, 22, 22, 21, 21, 20, 21, 20, 20, 20, 20,
-	19, 19, 18, 19, 18, 18, 18, 20, 21, 21, 21, 21, 22, 20, 22, 22, 21, 21,21, 20, 20, 22, 22, 22, 21, 21, 20, 21, 20, 20, 20, 20,
-	19, 19, 18, 19, 18, 18, 18, 20, 21, 21, 21, 21, 22, 20, 22, 22, 21, 21,21, 20, 20, 22, 22, 22, 21, 21, 20, 21, 20, 20, 20, 20,
-	19, 19, 18, 19, 18, 18, 18, 20, 21, 21, 21, 21, 22, 20, 22, 22, 21, 21,21, 20, 20, 22, 22, 22, 21, 21, 20, 21, 20, 20, 20, 20,
-	19, 19, 18, 19, 18, 18, 18, 20, 21, 21, 21, 21, 22, 20, 22, 22, 21, 21,21, 20, 20, 22, 22, 22, 21, 21, 20, 21, 20, 20, 20, 20,
-	19, 19, 18, 19, 18, 18, 18, 20, 21, 21, 21, 21, 22, 20, 22, 22, 21, 21,21, 20, 20, 22, 22, 22, 21, 21, 20, 21, 20, 20, 20, 20,
-};
 
 // Methods.
 void engine_scroll_manager_init()
@@ -43,15 +32,16 @@ void engine_scroll_manager_load()
 	unsigned char t, x;
 	print();
 
+	devkit_SMS_mapROMBank( level0301_txt_bank );
 	for( x = 0; x < 32; x++ )
 	{
-		t = tiles[ x ];
+		t = level0301_txt[ x ];
 		if( t == 0 )
 		{
 			continue;;
 		}
 
-		engine_font_manager_draw_text( "X", x, tiles[x] );
+		engine_font_manager_draw_text( "X", x, level0301_txt[x] );
 	}
 }
 
@@ -104,13 +94,12 @@ void engine_scroll_manager_update()
 	// IMPORTANT - here 8 is tile 4 * x	remember 2x bytes for each tile loaded from the TILEMAP
 	// i.e. so 8 => 4 i.e. 8/2 = 4 and 4 is tile '$'.
 	index = ( base + offset ) * 2 + 8;
-	engine_font_manager_draw_data( index, 25, 0 );
-	
-	y = tiles[ idx ];
+	devkit_SMS_mapROMBank( level0301_txt_bank );
+	y = level0301_txt[ idx ];
 	src = ( void * ) &pnt[ index ];
 	devkit_SMS_loadTileMap(x, y-1, src, 2 );
 
-	//engine_font_manager_draw_text( "X", 32 + so->scrollRightDivided8, tiles[ idx ] - 1);
+	//engine_font_manager_draw_text( "X", 32 + so->scrollRightDivided8, level0301_txt[ idx ] - 1);
 	print();
 }
 
@@ -118,7 +107,8 @@ unsigned char engine_scroll_manager_getPosY( unsigned int col )
 {
 	struct_scroll_object *so = &global_scroll_object;
 	unsigned int idx = so->offset_left + col;
-	return tiles[ idx  ];
+	devkit_SMS_mapROMBank( level0301_txt_bank );
+	return level0301_txt[ idx  ];
 }
 
 static void print()
