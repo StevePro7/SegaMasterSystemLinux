@@ -1,26 +1,47 @@
 #include "test_screen.h"
+#include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/riff_manager.h"
+#include "../devkit/_sms_manager.h"
+
+static unsigned char check;
 
 void screen_test_screen_load()
 {
-	engine_font_manager_draw_text( "PRESS LEFT / UP / RIGHT", 4, 6 );
+	devkit_SMS_displayOff();
+	engine_content_manager_load_splash_screen();
+	devkit_SMS_displayOn();
+	//engine_font_manager_draw_text( "PRESS LEFT / UP / RIGHT", 4, 6 );
+	check = 0;
 }
 
 void screen_test_screen_update( unsigned char *screen_type )
 {
-	unsigned char input;
+	unsigned char input1;
+	unsigned char input2;
 	unsigned char value;
 	
-	input = engine_input_manager_hold( input_type_fire1 );
-	if( input )
+	input1 = engine_input_manager_hold( input_type_fire2 );
+	if( input1 )
 	{
-		engine_font_manager_draw_text( "PLAY SOUND FX!!", 10, 8 );
-		for( value = 0; value < 9; value++ )
+		if( check == 0 )
 		{
-			engine_riff_manager_play( value );
+			check = 1;
+			for( value = 0; value < 9; value++ )
+			{
+				engine_font_manager_draw_text( "RIFF", 4, value );
+				engine_font_manager_draw_data( value, 24, value );
+				engine_riff_manager_play( value );
+
+				engine_input_manager_update();
+				input2 = engine_input_manager_move( input_type_fire1 );
+				if( input2 )
+				{
+					break;
+				}
+			}
 		}
 	}
 

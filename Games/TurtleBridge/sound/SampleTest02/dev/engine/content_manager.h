@@ -3,5 +3,6 @@
 
 // Tiles.
 void engine_content_manager_load_tiles();
+void engine_content_manager_load_splash_screen();
 
 #endif//_CONTENT_MANAGER_H_
