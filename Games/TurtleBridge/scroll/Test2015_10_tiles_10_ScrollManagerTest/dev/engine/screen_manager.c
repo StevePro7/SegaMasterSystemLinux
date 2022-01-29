@@ -49,6 +49,11 @@ void engine_screen_manager_update()
 	}
 
 	posY = engine_scroll_manager_getPosY( 10 );
+	if( posY == 0 )
+	{
+		engine_sprite_manager_draw( 80, 184 );
+		return;
+	}
 	engine_sprite_manager_draw( 80, (posY - 1) * 8 );
 }
 
