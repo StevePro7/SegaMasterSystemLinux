@@ -1,18 +1,17 @@
 XL2
-H 9 areas 15 global symbols
+H 9 areas 14 global symbols
 M screen_manager
 O -mz80
 S _engine_scroll_manager_init Ref0000
 S _engine_sprite_manager_draw Ref0000
 S .__.ABS. Def0000
 S _engine_scroll_manager_update Ref0000
-S _engine_music_manager_play Ref0000
 S _engine_scroll_manager_getPosY Ref0000
 S _engine_input_manager_move_right Ref0000
 S _engine_scroll_manager_load Ref0000
-A _CODE size 43 flags 0 addr 0
+A _CODE size 40 flags 0 addr 0
 S _engine_screen_manager_init Def0000
-S _engine_screen_manager_update Def0010
+S _engine_screen_manager_update Def000D
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 12 flags 0 addr 0
 S _yDelta Def0010
@@ -78,25 +77,23 @@ T 10 00
 R 00 00 02 00
 T 00 00
 R 00 00 00 00
-T 00 00 CD 00 00 CD 00 00 CD 00 00 21 00 00 22
-R 00 00 00 00 02 03 00 00 02 06 07 00 02 09 04 00
-T 0D 00 09 00 C9
-R 00 00 00 00 00 02 02 00
-T 10 00
+T 00 00 CD 00 00 CD 00 00 21 00 00 22 09 00 C9
+R 00 00 00 00 02 03 00 00 02 06 06 00 00 0C 02 00
+T 0D 00
 R 00 00 00 00
-T 10 00 CD 00 00 7D B7 28 03 CD 00 00
-R 00 00 00 00 02 03 06 00 02 0A 03 00
-T 1A 00
+T 0D 00 CD 00 00 7D B7 28 03 CD 00 00
+R 00 00 00 00 02 03 05 00 02 0A 03 00
+T 17 00
 R 00 00 00 00
-T 1A 00 21 01 00 E5 CD 00 00 F1 7D 4F B7 20 09 21
-R 00 00 00 00 02 07 05 00
-T 28 00 08 B8 E5 CD 00 00 F1 C9
+T 17 00 21 01 00 E5 CD 00 00 F1 7D 4F B7 20 09 21
+R 00 00 00 00 02 07 04 00
+T 25 00 08 B8 E5 CD 00 00 F1 C9
 R 00 00 00 00 02 06 01 00
-T 30 00
+T 2D 00
 R 00 00 00 00
-T 30 00 0D 79 07 07 07 E6 F8 47 C5 33 3E 08 F5 33
+T 2D 00 0D 79 07 07 07 E6 F8 47 C5 33 3E 08 F5 33
 R 00 00 00 00
-T 3E 00 CD 00 00 F1 C9
+T 3B 00 CD 00 00 F1 C9
 R 00 00 00 00 02 03 01 00
 T 00 00
 R 00 00 07 00
