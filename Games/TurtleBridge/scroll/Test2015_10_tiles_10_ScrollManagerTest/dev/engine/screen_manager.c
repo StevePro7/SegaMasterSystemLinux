@@ -38,9 +38,12 @@ void engine_screen_manager_update()
 	struct_scroll_object *so = &global_scroll_object;
 	const unsigned char delta = 1;
 	unsigned char input;
+	unsigned char posX;
 	unsigned char posY;
+	unsigned char col = 1;
 
-	input = engine_input_manager_hold_right();
+	//input = engine_input_manager_hold_right();
+	input = engine_input_manager_move_right();
 	if( input )
 	{
 		//engine_font_manager_draw_text( "BEG", 10, 1 );
@@ -48,13 +51,14 @@ void engine_screen_manager_update()
 		//engine_font_manager_draw_text( "END", 10, 2 );
 	}
 
-	posY = engine_scroll_manager_getPosY( 10 );
+	posX = ( ( col + 0 ) * 8 ) - 0;
+	posY = engine_scroll_manager_getPosY( col );
 	if( posY == 0 )
 	{
-		engine_sprite_manager_draw( 80, 184 );
+		engine_sprite_manager_draw( posX, 184 );
 		return;
 	}
-	engine_sprite_manager_draw( 80, (posY - 1) * 8 );
+	engine_sprite_manager_draw( posX, (posY - 1) * 8 );
 }
 
 //void engine_screen_manager_updateX()
