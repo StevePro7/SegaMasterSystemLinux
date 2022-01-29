@@ -12,7 +12,7 @@ static void print();
 static unsigned char tiles[] =
 {
 	0, 20, 20, 20, 20, 20, 0, 20, 21, 21, 21, 22, 22, 0, 22, 22, 21, 21,21, 0, 0, 22, 22, 22, 21, 21,0, 21, 20, 20, 20, 20,
-	19, 20, 20, 20, 18, 18, 18, 20, 21, 21, 21, 21, 22, 20, 22, 22, 21, 21,21, 20, 20, 22, 22, 22, 21, 21, 20, 21, 20, 20, 20, 20,
+	19, 19, 18, 19, 18, 18, 18, 20, 21, 21, 21, 21, 22, 20, 22, 22, 21, 21,21, 20, 20, 22, 22, 22, 21, 21, 20, 21, 20, 20, 20, 20,
 };
 
 // Methods.
@@ -85,13 +85,21 @@ void engine_scroll_manager_update()
 	//engine_font_manager_draw_text( "C", 32 + so->scrollRightDivided8, 20 );
 	//engine_font_manager_draw_text( "D", 32 + so->scrollRightDivided8, 21 );
 
+	x = 32 + so->scrollRightDivided8;
+	src = ( void * ) &pnt[ 0 ];
+	devkit_SMS_loadTileMap( x, 18, src, 2 );
+	devkit_SMS_loadTileMap( x, 19, src, 2 );
+	devkit_SMS_loadTileMap( x, 20, src, 2 );
+	devkit_SMS_loadTileMap( x, 21, src, 2 );
+	devkit_SMS_loadTileMap( x, 22, src, 2 );
+
 	idx = so->offset_right;
 
 	// IMPORTANT - here 8 is tile 4 * x	remember 2x bytes for each tile loaded from the TILEMAP
 	// i.e. so 8 => 4 i.e. 8/2 = 4 and 4 is tile '$'.
 	index = ( base + offset ) * 2 + 8;
 	engine_font_manager_draw_data( index, 25, 0 );
-	x = 32 + so->scrollRightDivided8;
+	
 	y = tiles[ idx ];
 	src = ( void * ) &pnt[ index ];
 	devkit_SMS_loadTileMap(x, y-1, src, 2 );
