@@ -10,6 +10,25 @@ void screen_test_screen_load()
 }
 
 void screen_test_screen_update( unsigned char *screen_type )
+{
+	unsigned char input;
+	unsigned char value;
+	
+	input = engine_input_manager_hold( input_type_fire1 );
+	if( input )
+	{
+		engine_font_manager_draw_text( "PLAY SOUND FX!!", 10, 8 );
+		for( value = 0; value < 9; value++ )
+		{
+			engine_riff_manager_play( value );
+		}
+	}
+
+	*screen_type = screen_type_test;
+}
+
+/*
+void screen_test_screen_updateX( unsigned char *screen_type )
 {	
 	unsigned char input = engine_input_manager_hold( input_type_left );
 	if( input )
@@ -66,3 +85,4 @@ void screen_test_screen_update( unsigned char *screen_type )
 
 	*screen_type = screen_type_test;
 }
+*/
