@@ -2,7 +2,7 @@ extern const unsigned char	back_tiles__palette__bin[];
 #define				back_tiles__palette__bin_size 16
 
 extern const unsigned char	back_tiles__tiles__psgcompr[];
-#define				back_tiles__tiles__psgcompr_size 88
+#define				back_tiles__tiles__psgcompr_size 84
 
 extern const unsigned char	font_tiles__palette__bin[];
 #define				font_tiles__palette__bin_size 16
