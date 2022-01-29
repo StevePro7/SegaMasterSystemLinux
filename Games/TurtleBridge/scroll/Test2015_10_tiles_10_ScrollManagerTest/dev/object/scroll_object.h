@@ -4,6 +4,11 @@
 typedef struct tag_struct_scroll_object
 {
 	unsigned char scroll_left;
+	unsigned char scroll_right;
+
+	unsigned char scroll;
+	unsigned char scrollRight;
+	unsigned char scrollRightDivided8;
 
 } struct_scroll_object;
 

@@ -26,28 +26,28 @@ unsigned int yDelta = 0;
 
 void engine_screen_manager_init()
 {
-	unsigned char xx, yy;
-
 	engine_scroll_manager_init();
 	engine_scroll_manager_load();
-	engine_font_manager_draw_text( "STEVEPRO STUDIOS", 10, 2 );
 
-	//for( xx = 0; xx < 32; xx += 2 )
-	{
-		xx = 28;
-		yy = 18;
-		engine_content_manager_draw_tile( xx, yy + 0 );
-		//engine_content_manager_draw_tileX( xx, yy + 2 );
-		//engine_content_manager_draw_tileX( xx, yy + 4 );
-	}
-
-	engine_music_manager_play();
-	//yDelta = 2;
-
+//	engine_music_manager_play();
 	test2 = 0;
 }
 
 void engine_screen_manager_update()
+{
+	const unsigned char delta = 1;
+	unsigned char input;
+
+	input = engine_input_manager_hold_right();
+	if( input )
+	{
+		//engine_font_manager_draw_text( "BEG", 10, 1 );
+		engine_scroll_manager_update();
+		//engine_font_manager_draw_text( "END", 10, 2 );
+	}
+}
+
+void engine_screen_manager_updateX()
 {
 	const unsigned char delta = 1;
 	unsigned char xx, yy;

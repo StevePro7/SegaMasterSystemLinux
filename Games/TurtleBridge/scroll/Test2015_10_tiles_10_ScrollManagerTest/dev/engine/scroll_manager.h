@@ -9,5 +9,6 @@ extern struct_scroll_object global_scroll_object;
 // Methods.
 void engine_scroll_manager_init();
 void engine_scroll_manager_load();
+void engine_scroll_manager_update();
 
 #endif//_SCROLL_MANAGER_H_
