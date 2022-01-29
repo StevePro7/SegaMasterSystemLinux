@@ -28,11 +28,12 @@ void engine_screen_manager_init()
 	//unsigned char x = 10;
 	//unsigned char y = 10;
 	engine_tile_manager_init();
-	engine_tile_manager_draw( 0, 12 );
+	engine_tile_manager_draw( 0, 18 );
+	engine_tile_manager_draw( 16, 18 );
 	test2 = 0;
 
 //	engine_font_manager_draw_data( test2, 15, 2 );
-	//engine_music_manager_play();
+	engine_music_manager_play();
 }
 
 void engine_screen_manager_update()
