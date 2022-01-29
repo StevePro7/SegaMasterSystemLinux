@@ -7,6 +7,11 @@ set /a _hours=100%_time:~0,2%%%100,_min=100%_time:~3,2%%%100,_sec=100%_time:~6,2
 set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 
 
+cd banks
+sdcc -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK3 bank3.c
+cd ..
+
+
 :: Compile
 cd content
 ::sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 gfx.c

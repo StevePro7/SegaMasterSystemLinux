@@ -29,7 +29,7 @@ void engine_screen_manager_init()
 	engine_scroll_manager_init();
 	engine_scroll_manager_load();
 
-	//engine_music_manager_play();
+	engine_music_manager_play();
 	test2 = 0;
 }
 
