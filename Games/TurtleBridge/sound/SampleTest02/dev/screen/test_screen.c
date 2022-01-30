@@ -5,6 +5,7 @@
 #include "../engine/input_manager.h"
 #include "../engine/riff_manager.h"
 #include "../devkit/_sms_manager.h"
+#include "../devkit/_snd_manager.h"
 
 static unsigned char check;
 
@@ -19,33 +20,29 @@ void screen_test_screen_load()
 
 void screen_test_screen_update( unsigned char *screen_type )
 {
-	//unsigned char input2;
-	unsigned char input1;
+	unsigned char input;
 	unsigned char value;
 
-	//input2 = engine_input_manager_hold( input_type_fire2 );
-	//if( input2 )
+	if( check == 0 )
 	{
-		if( check == 0 )
+		check = 1;
+		for( value = 0; value < 9; value++ )
 		{
-			check = 1;
-			for( value = 0; value < 9; value++ )
-			{
 			//	engine_font_manager_draw_text( "RIFF", 4, value );
 			//	engine_font_manager_draw_data( value, 24, value );
-				engine_riff_manager_play( value );
+			engine_riff_manager_play( value );
 
-				engine_input_manager_update();
-				input1 = engine_input_manager_move( input_type_fire1 );
-				if( input1 )
-				{
-					break;
-				}
+			engine_input_manager_update();
+			input = engine_input_manager_move( input_type_fire1 );
+			if( input )
+			{
+				break;
 			}
 		}
 	}
 
-	*screen_type = screen_type_test;
+	// Sample finished... goto next.
+	*screen_type = screen_type_next;
 }
 
 

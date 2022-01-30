@@ -8,9 +8,9 @@ S .__.ABS. Def0000
 S _engine_content_manager_load_tiles Ref0000
 S _devkit_SMS_displayOff Ref0000
 S _engine_asm_manager_clear_VRAM Ref0000
-A _CODE size 2D flags 0 addr 0
+A _CODE size 30 flags 0 addr 0
 S _screen_next_screen_load Def0000
-S _screen_next_screen_update Def0026
+S _screen_next_screen_update Def0029
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -29,9 +29,11 @@ T 18 00 F1 C9
 R 00 00 00 00
 T 1A 00
 R 00 00 00 00
-T 1A 00 4E 45 58 54 20 53 43 52 45 45 4E 00
+T 1A 00 4E 45 58 54 20 53 43 52 45 45 4E 2E 2E 2E
 R 00 00 00 00
-T 26 00
+T 28 00 00
 R 00 00 00 00
-T 26 00 C1 E1 E5 C5 36 02 C9
+T 29 00
+R 00 00 00 00
+T 29 00 C1 E1 E5 C5 36 02 C9
 R 00 00 00 00
