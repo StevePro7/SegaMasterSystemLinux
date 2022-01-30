@@ -12,30 +12,24 @@ namespace ScreenShotTest
 	/// </summary>
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		const string version = "01";
-
-		string file = "linesXX_08x01";
+		string file = "output";
 
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
 		RenderTarget2D renderTarget;
-		ColorManager colorManager;
-		private const int offset = 0;
-
+		Texture2D[] images;
 		private bool save;
 
 		private int width;
 		private int height;
 
-		private int size = 1;
-		private string[] lines;
-		private string[] lines2;
+		//private int size = 1;
 
 		public AnGame()
 		{
 			graphics = new GraphicsDeviceManager(this);
-			graphics.PreferredBackBufferWidth = 32 * size;
-			graphics.PreferredBackBufferHeight = 24 * size;
+			graphics.PreferredBackBufferWidth = 128;
+			graphics.PreferredBackBufferHeight = 128;
 			Content.RootDirectory = "Content";
 		}
 
@@ -54,7 +48,6 @@ namespace ScreenShotTest
 			//}
 			save = true;
 			IsMouseVisible = true;
-			colorManager = new ColorManager();
 			base.Initialize();
 		}
 
@@ -66,10 +59,16 @@ namespace ScreenShotTest
 		{
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch(GraphicsDevice);
-			colorManager.Load(this);
-			
-			lines = File.ReadAllLines("turtleSS_32x24.csv");
-			lines2 = File.ReadAllLines("attemp" + version + ".csv");
+
+			images = new Texture2D[8];
+			images[0] = Content.Load<Texture2D>("font_tiles");
+			images[1] = Content.Load<Texture2D>("section01");
+			images[2] = Content.Load<Texture2D>("section02");
+			images[3] = Content.Load<Texture2D>("section03");
+			images[4] = Content.Load<Texture2D>("lines01");
+			images[5] = Content.Load<Texture2D>("lines02");
+			images[6] = Content.Load<Texture2D>("wave03");
+			images[7] = Content.Load<Texture2D>("wave04");
 
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
 			width = pp.BackBufferWidth;
@@ -118,7 +117,6 @@ namespace ScreenShotTest
 
 				GraphicsDevice.SetRenderTarget(null);
 				Texture2D resolvedTexture = (Texture2D)renderTarget;
-				file = file.Replace("XX", version);
 				Stream stream = File.Create(file + ".png");
 				resolvedTexture.SaveAsPng(stream, width, height);
 		
@@ -133,95 +131,22 @@ namespace ScreenShotTest
 
 		private void Draw()
 		{
-			//graphics.GraphicsDevice.Clear(Color.Black);
-			DrawTurtle();
-			DrawWing(8, 1);
-		}
+			graphics.GraphicsDevice.Clear(Color.Black);
 
-		private void DrawWing(int bx, int by)
-		{
-			int px = 0;
-			int py = 0;
-			int tx, ty = 0;
-			
 			spriteBatch.Begin();
 
-			ty = 0;
-			foreach (var line in lines2)
-			{
-				tx = 0;
-				var texts = line.Split(new char[] { ',' });
-				var len = texts.Length;
-				for (int i = 0; i < len; i++)
-				{
-					px = (bx * size) + (tx * size);
-					py = (by * size) + (ty * size);
+			spriteBatch.Draw(images[0], new Vector2(0, 0), Color.White);
+			spriteBatch.Draw(images[1], new Vector2(0, 32), Color.White);
+			spriteBatch.Draw(images[2], new Vector2(0, 56), Color.White);
+			spriteBatch.Draw(images[3], new Vector2(0, 72), Color.White);
 
-					//var text = texts[i].ToLower();
-					var text = texts[i];
-					if (text == "X")
-					{
-						text = "#01";
-					}
-					if (text == "W")
-					{
-						text = "#3f";
-					}
-					if (text.Length == 3)
-					{
-						var image = colorManager.Palette[text];
-						spriteBatch.Draw(image, new Vector2(px, py), new Rectangle(0, 0, size, size), Color.White);
-					}
-					
-					tx++;
-				}
-				ty++;
-			}
+			spriteBatch.Draw(images[6], new Vector2(0, 96), Color.White);
+			spriteBatch.Draw(images[7], new Vector2(32, 96), Color.White);
+			spriteBatch.Draw(images[4], new Vector2(64, 96), Color.White);
+			spriteBatch.Draw(images[5], new Vector2(96, 96), Color.White);
 
 			spriteBatch.End();
 		}
 
-
-		private void DrawTurtle()
-		{
-			int px = 0;
-			int py = 0;
-			int tx, ty = 0;
-			spriteBatch.Begin();
-
-			ty = 0;
-			//var line = lines[0];
-			foreach (var line in lines)
-			{
-				tx = 0;
-				var texts = line.Split(new char[] { ',' });
-				var len = texts.Length;
-				if (len != 32)
-				{
-					len = 32;
-				}
-				for (int i = 0; i < len; i++)
-				{
-					px = tx * size;
-					py = ty * size;
-
-					var text = texts[i].ToLower();
-					if (text.Length == 0)
-					{
-						text = "#39";
-					}
-					if (text.Length == 3)
-					{
-						var image = colorManager.Palette[text];
-						spriteBatch.Draw(image, new Vector2(px, py), new Rectangle(0, 0, size, size), Color.White);
-					}
-
-					tx++;
-				}
-				ty++;
-			}
-
-			spriteBatch.End();
-		}
 	}
 }
