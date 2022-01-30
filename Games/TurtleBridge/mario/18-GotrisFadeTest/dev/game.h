@@ -10,7 +10,7 @@
 #define dateMonth	12
 #define dateDay		6
 #define author		"Steven Boland"
-#define name		"Sprite Tiles"
+#define name		"Splash Screen"
 #define descr		"Simple Sega Master System demo to run on real hardware!"
 
 #endif//_GAME_H_

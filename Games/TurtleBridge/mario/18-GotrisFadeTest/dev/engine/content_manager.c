@@ -1,13 +1,17 @@
 #include "content_manager.h"
-#include "../engine/global_manager.h"
 #include "../devkit/_sms_manager.h"
-#include "../content/gfx.h"
+#include "../gfx.h"
 
-//#define GAME_TILES			0
+#define SPLASH_TILES_OFFSET		128
 
-void engine_content_manager_load_tiles()
+void engine_content_manager_load_sprite_palette()
 {
-	// Sprite tiles.
-	devkit_SMS_loadSpritePalette( ( void * ) game_tiles__palette__bin );
-	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) game_tiles__tiles__psgcompr, SPRITE_TILES );
+	devkit_SMS_setSpritePaletteColor( 0, 0, 0, 0 );
+}
+
+void engine_content_manager_load_splash_screen()
+{
+	devkit_SMS_loadPSGaidencompressedTiles( splash__tiles__psgcompr, SPLASH_TILES_OFFSET );
+	devkit_SMS_loadSTMcompressedTileMap( 0, 0, ( void * ) splash__tilemap__stmcompr );
+	devkit_SMS_loadBGPalette( ( void * ) splash__palette__bin );
 }
