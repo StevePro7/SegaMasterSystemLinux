@@ -4,7 +4,7 @@
 
 void engine_turtle_manager_draw_sea()
 {
-	const unsigned char *pnt = turtleAA_32x24__tilemap__bin;
+	const unsigned char *pnt = game_tiles__tilemap__bin;
 	unsigned char x, y;
 	for( y = 0; y < 24; y++ )
 	{
@@ -18,7 +18,7 @@ void engine_turtle_manager_draw_sea()
 
 void engine_turtle_manager_draw_01( unsigned char x, unsigned char y )
 {
-	const unsigned char *pnt = turtleAA_32x24__tilemap__bin;
+	const unsigned char *pnt = game_tiles__tilemap__bin;
 
 	devkit_SMS_setNextTileatXY( x + 0, y - 1 );	devkit_SMS_setTile( *pnt + 3 );
 	devkit_SMS_setNextTileatXY( x + 1, y - 1 );	devkit_SMS_setTile( *pnt + 3 );
@@ -54,7 +54,7 @@ void engine_turtle_manager_draw_01( unsigned char x, unsigned char y )
 
 void engine_turtle_manager_draw_02( unsigned char x, unsigned char y )
 {
-	const unsigned char *pnt = turtleBB_32x24__tilemap__bin;
+	const unsigned char *pnt = game_tiles__tilemap__bin;
 
 	devkit_SMS_setNextTileatXY( x + 0, y - 1 );	devkit_SMS_setTile( *pnt + 3 );
 	devkit_SMS_setNextTileatXY( x + 1, y - 1 );	devkit_SMS_setTile( *pnt + 3 );
