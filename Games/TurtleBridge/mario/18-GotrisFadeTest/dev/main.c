@@ -8,6 +8,8 @@ void main( void )
 	
 	engine_content_manager_load_sprite_palette();
 	engine_content_manager_load_splash_screen();
+	
+	engine_content_manager_logo_fade_in();
 
 	devkit_SMS_displayOn();
 	for( ;; )
