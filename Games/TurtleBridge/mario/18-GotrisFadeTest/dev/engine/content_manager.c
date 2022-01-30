@@ -70,6 +70,26 @@ void fadeInBGPalette( unsigned char *palette )
 		devkit_SMS_loadBGPalette( temporal_palette );
 		i++;
 	}
+	//blue
+	i = 0;
+	while( i < 4 ) {
+		j = 0;
+		while( j < 16 ) {
+			redComponent = getRedFromRGB( temporal_palette[ j ] );
+			greenComponent = getGreenFromRGB( temporal_palette[ j ] );
+			blueComponent = getBlueFromRGB( temporal_palette[ j ] );
+			if( blueComponent < getBlueFromRGB( palette[ j ] ) ) {
+				blueComponent++;
+			}
+			temporal_palette[ j ] = devkit_RGB( redComponent, greenComponent, blueComponent );
+			j++;
+		}
+		//waitForFrame();
+		devkit_SMS_waitForVBlank();
+
+		devkit_SMS_loadBGPalette( temporal_palette );
+		i++;
+	}
 }
 void engine_content_manager_logo_fade_in()
 {
