@@ -9,6 +9,7 @@
 
 static unsigned char tx;
 static unsigned char ty;
+static unsigned char tz;
 static unsigned char flag;
 static unsigned int timer, delta;
 
@@ -20,11 +21,11 @@ void engine_screen_manager_init()
 
 	tx = 10;
 	ty = 12;
-	
+	tz = 1;
 	engine_turtle_manager_draw_sea();
 
 	timer = 0;
-	delta = 50;
+	delta = 10;
 	flag = 1;
 	draw_turtle();
 
@@ -37,17 +38,35 @@ void engine_screen_manager_update()
 {
 	//unsigned char input;
 	//input = engine_input_manager_hold_down();
-	/*if( input )
-	{
-	}*/
-
-	//timer++;
-	//if( timer > delta )
+	//if( input )
 	//{
-	//	timer = 0;
-	//	flag = 1 - flag;
+	//	flag = 0;
 	//	draw_turtle();
 	//}
+	//input = engine_input_manager_hold_up();
+	//if( input )
+	//{
+	//	flag = 1;
+	//	draw_turtle();
+	//}
+
+	timer++;
+	if( timer > delta )
+	{
+		timer = 0;
+		flag = 1 - flag;
+		if( 1 == flag )
+		{
+			//ty = ty + tz;
+			ty = ty + 0;
+			if( ty >= 18 || ty <= 8 )
+			{
+				tz *= -1;
+			}
+		}
+
+		draw_turtle();
+	}
 }
 
 static void draw_turtle()

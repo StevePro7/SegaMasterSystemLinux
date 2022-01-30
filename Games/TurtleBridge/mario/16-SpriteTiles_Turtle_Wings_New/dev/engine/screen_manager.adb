@@ -4,6 +4,7 @@ F:G$engine_screen_manager_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:Fscreen_manager$draw_turtle$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Fscreen_manager$tx$0$0({1}SC:U),E,0,0
 S:Fscreen_manager$ty$0$0({1}SC:U),E,0,0
+S:Fscreen_manager$tz$0$0({1}SC:U),E,0,0
 S:Fscreen_manager$flag$0$0({1}SC:U),E,0,0
 S:Fscreen_manager$timer$0$0({2}SI:U),E,0,0
 S:Fscreen_manager$delta$0$0({2}SI:U),E,0,0
