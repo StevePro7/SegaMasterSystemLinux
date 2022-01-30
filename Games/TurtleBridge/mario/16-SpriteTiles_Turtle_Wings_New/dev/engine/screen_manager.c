@@ -25,7 +25,7 @@ void engine_screen_manager_init()
 	engine_turtle_manager_draw_sea();
 
 	timer = 0;
-	delta = 10;
+	delta = 20;
 	flag = 1;
 	draw_turtle();
 

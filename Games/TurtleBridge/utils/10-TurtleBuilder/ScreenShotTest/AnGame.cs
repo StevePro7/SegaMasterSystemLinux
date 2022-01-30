@@ -12,7 +12,9 @@ namespace ScreenShotTest
 	/// </summary>
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		const string file = "turtleTT_32x24";
+		const string version = "01";
+
+		string file = "linesXX_08x01";
 
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
@@ -25,8 +27,9 @@ namespace ScreenShotTest
 		private int width;
 		private int height;
 
-		private int size = 16;
+		private int size = 1;
 		private string[] lines;
+		private string[] lines2;
 
 		public AnGame()
 		{
@@ -49,7 +52,7 @@ namespace ScreenShotTest
 			//{
 			//	save = Convert.ToBoolean(ConfigurationManager.AppSettings["save"]);
 			//}
-			//save = true;
+			save = true;
 			IsMouseVisible = true;
 			colorManager = new ColorManager();
 			base.Initialize();
@@ -65,7 +68,8 @@ namespace ScreenShotTest
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 			colorManager.Load(this);
 			
-			lines = File.ReadAllLines(file + ".csv");
+			lines = File.ReadAllLines("turtleSS_32x24.csv");
+			lines2 = File.ReadAllLines("attemp" + version + ".csv");
 
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
 			width = pp.BackBufferWidth;
@@ -114,6 +118,7 @@ namespace ScreenShotTest
 
 				GraphicsDevice.SetRenderTarget(null);
 				Texture2D resolvedTexture = (Texture2D)renderTarget;
+				file = file.Replace("XX", version);
 				Stream stream = File.Create(file + ".png");
 				resolvedTexture.SaveAsPng(stream, width, height);
 		
@@ -128,11 +133,60 @@ namespace ScreenShotTest
 
 		private void Draw()
 		{
+			//graphics.GraphicsDevice.Clear(Color.Black);
+			DrawTurtle();
+			DrawWing(8, 1);
+		}
+
+		private void DrawWing(int bx, int by)
+		{
 			int px = 0;
 			int py = 0;
 			int tx, ty = 0;
-			graphics.GraphicsDevice.Clear(Color.Black);
-			//graphics.GraphicsDevice.Clear(Color.White);
+			
+			spriteBatch.Begin();
+
+			ty = 0;
+			foreach (var line in lines2)
+			{
+				tx = 0;
+				var texts = line.Split(new char[] { ',' });
+				var len = texts.Length;
+				for (int i = 0; i < len; i++)
+				{
+					px = (bx * size) + (tx * size);
+					py = (by * size) + (ty * size);
+
+					//var text = texts[i].ToLower();
+					var text = texts[i];
+					if (text == "X")
+					{
+						text = "#01";
+					}
+					if (text == "W")
+					{
+						text = "#3f";
+					}
+					if (text.Length == 3)
+					{
+						var image = colorManager.Palette[text];
+						spriteBatch.Draw(image, new Vector2(px, py), new Rectangle(0, 0, size, size), Color.White);
+					}
+					
+					tx++;
+				}
+				ty++;
+			}
+
+			spriteBatch.End();
+		}
+
+
+		private void DrawTurtle()
+		{
+			int px = 0;
+			int py = 0;
+			int tx, ty = 0;
 			spriteBatch.Begin();
 
 			ty = 0;
@@ -152,12 +206,16 @@ namespace ScreenShotTest
 					py = ty * size;
 
 					var text = texts[i].ToLower();
+					if (text.Length == 0)
+					{
+						text = "#39";
+					}
 					if (text.Length == 3)
 					{
 						var image = colorManager.Palette[text];
 						spriteBatch.Draw(image, new Vector2(px, py), new Rectangle(0, 0, size, size), Color.White);
 					}
-					
+
 					tx++;
 				}
 				ty++;
@@ -165,7 +223,5 @@ namespace ScreenShotTest
 
 			spriteBatch.End();
 		}
-
 	}
-
 }
