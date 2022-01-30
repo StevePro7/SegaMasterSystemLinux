@@ -37,6 +37,7 @@ cd ..
 cd screen
 sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 none_screen.c
 sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 test_screen.c
+sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 next_screen.c
 cd ..
 
 
@@ -86,6 +87,7 @@ engine/screen_manager.rel ^
 object/riff_object.rel ^
 screen/none_screen.rel ^
 screen/test_screen.rel ^
+screen/next_screen.rel ^
 content/gfx.rel
 
 REM echo Binary output
