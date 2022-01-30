@@ -5,9 +5,8 @@ cd ..
 cd content
 cd gfx
 
-:: Tiles
-bmp2tile.exe raw/game_tiles.png -savetiles "game_tiles (tiles).psgcompr" -removedupes -planar -tileoffset 0  -savetilemap "game_tiles (tilemap).bin" -savepalette "game_tiles (palette).bin" -fullpalette -exit
-
+:: Sprites
+bmp2tile.exe raw/game_tiles.png -savetiles "game_tiles (tiles).psgcompr" -removedupes -nomirror -planar -tileoffset 0 -savepalette "game_tiles (palette).bin" -fullpalette  -spritepalette -exit
 
 cd ..
 folder2c gfx gfx
