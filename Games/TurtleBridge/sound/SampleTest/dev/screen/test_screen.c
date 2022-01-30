@@ -14,7 +14,7 @@ void screen_test_screen_update( unsigned char *screen_type )
 	unsigned char input = engine_input_manager_hold( input_type_left );
 	if( input )
 	{
-		engine_font_manager_draw_text( "PLAY SOUND FX 01", 10, 8 );
+		engine_font_manager_draw_text( "PLAY SOUND FX 01!!", 10, 8 );
 		engine_riff_manager_play( 6 );
 	}
 	else
@@ -23,7 +23,7 @@ void screen_test_screen_update( unsigned char *screen_type )
 		if( input )
 		{
 			engine_font_manager_draw_text( "PLAY SOUND FX 02", 10, 9 );
-			engine_riff_manager_play( 2 );
+			engine_riff_manager_play( 0 );
 		}
 		else
 		{
