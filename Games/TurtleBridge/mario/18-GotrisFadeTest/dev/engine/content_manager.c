@@ -93,5 +93,5 @@ void fadeInBGPalette( unsigned char *palette )
 }
 void engine_content_manager_logo_fade_in()
 {
-
+	fadeInBGPalette( ( void * ) splash__palette__bin );
 }
