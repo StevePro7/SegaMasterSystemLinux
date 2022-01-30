@@ -15,11 +15,11 @@ void engine_content_manager_load_tiles()
 void engine_content_manager_load_turtle()
 {
 	// Turtle tiles.
-	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) wingdown__tiles__psgcompr, 64 );
+	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) turtleAA_32x24__tiles__psgcompr, 64 );
 
-	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) wingup__tiles__psgcompr, 96 );
+	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) turtleBB_32x24__tiles__psgcompr, 96 );
 
-	devkit_SMS_loadBGPalette( ( void * ) wings__palette__bin );
+	devkit_SMS_loadBGPalette( ( void * ) turtle__palette__bin );
 }
 
 void engine_content_manager_load_sprites()

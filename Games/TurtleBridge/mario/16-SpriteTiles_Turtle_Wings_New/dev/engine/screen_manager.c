@@ -26,11 +26,11 @@ void engine_screen_manager_init()
 	timer = 0;
 	delta = 50;
 	flag = 1;
-	draw_turtle();
+	//draw_turtle();
 
 	//engine_turtle_manager_draw_01( tx + 5, ty + 1 );
 	//engine_turtle_manager_draw_01( tx + 10, ty + 2 );
-	engine_turtle_manager_draw_02( tx + 15, ty + 1 );
+	//engine_turtle_manager_draw_02( tx + 15, ty + 1 );
 }
 
 void engine_screen_manager_update()
@@ -41,13 +41,13 @@ void engine_screen_manager_update()
 	{
 	}*/
 
-	timer++;
-	if( timer > delta )
-	{
-		timer = 0;
-		flag = 1 - flag;
-		draw_turtle();
-	}
+	//timer++;
+	//if( timer > delta )
+	//{
+	//	timer = 0;
+	//	flag = 1 - flag;
+	//	draw_turtle();
+	//}
 }
 
 static void draw_turtle()
