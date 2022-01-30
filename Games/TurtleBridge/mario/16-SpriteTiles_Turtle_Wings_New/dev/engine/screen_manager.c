@@ -26,7 +26,7 @@ void engine_screen_manager_init()
 	timer = 0;
 	delta = 50;
 	flag = 1;
-	//draw_turtle();
+	draw_turtle();
 
 	//engine_turtle_manager_draw_01( tx + 5, ty + 1 );
 	//engine_turtle_manager_draw_01( tx + 10, ty + 2 );
