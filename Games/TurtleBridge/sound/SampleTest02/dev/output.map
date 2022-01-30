@@ -46,11 +46,11 @@ Area                                    Addr        Size        Decimal Bytes (A
      0000012A  l__HEADER5                      
      00000130  l__DATA                         
      00000200  s__CODE                         
-     00001DA5  l__CODE                         
-     00001FA5  s__HOME                         
-     00001FA5  s__INITIALIZER                  
-     00001FBF  s__GSINIT                       
-     00001FCE  s__GSFINAL                      
+     00001DB3  l__CODE                         
+     00001FB3  s__HOME                         
+     00001FB3  s__INITIALIZER                  
+     00001FCD  s__GSINIT                       
+     00001FDC  s__GSFINAL                      
      00003958  l__BANK4                        
      00003984  l__BANK10                       
      00003ADD  l__BANK7                        
@@ -92,7 +92,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001DA5 =        7589. bytes (REL,CON)
+_CODE                               00000200    00001DB3 =        7603. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -151,7 +151,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001DA5 =        7589. bytes (REL,CON)
+_CODE                               00000200    00001DB3 =        7603. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -197,73 +197,75 @@ _CODE                               00000200    00001DA5 =        7589. bytes (R
      00000CF6  _screen_none_screen_load           none_screen
      00000CF7  _screen_none_screen_update         none_screen
      00000CFE  _screen_test_screen_load           test_screen
-     00000D33  _screen_test_screen_update         test_screen
-     00000D9A  G$font_tiles__palette__bin$0$0     gfx
-     00000D9A  _font_tiles__palette__bin          gfx
-     00000DAA  G$font_tiles__tilemap__bin$0$0     gfx
-     00000DAA  _font_tiles__tilemap__bin          gfx
-     00000E2A  G$font_tiles__tiles__psgcompr$0$   gfx
-     00000E2A  _font_tiles__tiles__psgcompr       gfx
-     000010C1  G$splash__palette__bin$0$0         gfx
-     000010C1  _splash__palette__bin              gfx
+     00000D0D  _screen_test_screen_update         test_screen
+     00000D41  _screen_test_screen_update_input   test_screen
+     00000DA8  G$font_tiles__palette__bin$0$0     gfx
+     00000DA8  _font_tiles__palette__bin          gfx
+     00000DB8  G$font_tiles__tilemap__bin$0$0     gfx
+     00000DB8  _font_tiles__tilemap__bin          gfx
+     00000E38  G$font_tiles__tiles__psgcompr$0$   gfx
+     00000E38  _font_tiles__tiles__psgcompr       gfx
+     000010CF  G$splash__palette__bin$0$0         gfx
 ASxxxx Linker V03.00 + NoICE + sdld,  page 5.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001DA5 =        7589. bytes (REL,CON)
+_CODE                               00000200    00001DB3 =        7603. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     000010D1  G$splash__tilemap__stmcompr$0$0    gfx
-     000010D1  _splash__tilemap__stmcompr         gfx
-     00001118  G$splash__tiles__psgcompr$0$0      gfx
-     00001118  _splash__tiles__psgcompr           gfx
-     00001941  __divuint                          
-     00001949  __divuchar                         
-     00001950  __divu8                            
-     00001953  __divu16                           
-     00001982  _UNSAFE_SMS_copySpritestoSAT       SMSlib_UNSAFE
-     0000199A  _UNSAFE_SMS_VRAMmemcpy32           SMSlib_UNSAFE
-     000019B7  _UNSAFE_SMS_VRAMmemcpy64           SMSlib_UNSAFE
-     000019D4  _UNSAFE_SMS_VRAMmemcpy128          SMSlib_UNSAFE
-     000019F1  _SMS_init                          SMSlib
-     00001A45  _VDPReg_init                       SMSlib
-     00001A50  _SMS_VDPType                       SMSlib
-     00001A58  _SMS_VDPturnOnFeature              SMSlib
-     00001A6F  _SMS_VDPturnOffFeature             SMSlib
-     00001A88  _SMS_setBGScrollX                  SMSlib
-     00001A92  _SMS_setBGScrollY                  SMSlib
-     00001A9C  _SMS_setBackdropColor              SMSlib
-     00001AA6  _SMS_useFirstHalfTilesforSprites   SMSlib
-     00001ABA  _SMS_setSpriteMode                 SMSlib
-     00001AFF  _SMS_setBGPaletteColor             SMSlib
-     00001B13  _SMS_setSpritePaletteColor         SMSlib
-     00001B27  _SMS_loadBGPalette                 SMSlib
-     00001B3B  _SMS_loadSpritePalette             SMSlib
-     00001B4F  _SMS_setColor                      SMSlib
-     00001B53  _SMS_initSprites                   SMSlib
-     00001B59  _SMS_addSprite                     SMSlib
-     00001BAE  _SMS_finalizeSprites               SMSlib
-     00001BC0  _SMS_copySpritestoSAT              SMSlib
-     00001BE9  _SMS_waitForVBlank                 SMSlib
-     00001BF6  _SMS_getKeysStatus                 SMSlib
-     00001BFA  _SMS_getKeysPressed                SMSlib
-     00001C17  _SMS_getKeysHeld                   SMSlib
-     00001C2E  _SMS_getKeysReleased               SMSlib
-     00001C4B  _SMS_queryPauseRequested           SMSlib
-     00001C53  _SMS_resetPauseRequest             SMSlib
-     00001C59  _SMS_setLineInterruptHandler       SMSlib
-     00001C6A  _SMS_setLineCounter                SMSlib
-     00001C79  _SMS_getVCount                     SMSlib
-     00001C7D  _SMS_getHCount                     SMSlib
-     00001C81  _SMS_isr                           SMSlib
-     00001CB7  _SMS_nmi_isr                       SMSlib
-     00001CCA  _SMS_loadSTMcompressedTileMapAre   SMSlib_STMcomp
-     00001EAB  ___sdcc_call_hl                    
-     00001EAC  _SMS_loadPSGaidencompressedTiles   SMSlib_PSGaiden
-     00001F8E  __moduchar                         
-     00001F9A  __moduint                          
+     000010CF  _splash__palette__bin              gfx
+     000010DF  G$splash__tilemap__stmcompr$0$0    gfx
+     000010DF  _splash__tilemap__stmcompr         gfx
+     00001126  G$splash__tiles__psgcompr$0$0      gfx
+     00001126  _splash__tiles__psgcompr           gfx
+     0000194F  __divuint                          
+     00001957  __divuchar                         
+     0000195E  __divu8                            
+     00001961  __divu16                           
+     00001990  _UNSAFE_SMS_copySpritestoSAT       SMSlib_UNSAFE
+     000019A8  _UNSAFE_SMS_VRAMmemcpy32           SMSlib_UNSAFE
+     000019C5  _UNSAFE_SMS_VRAMmemcpy64           SMSlib_UNSAFE
+     000019E2  _UNSAFE_SMS_VRAMmemcpy128          SMSlib_UNSAFE
+     000019FF  _SMS_init                          SMSlib
+     00001A53  _VDPReg_init                       SMSlib
+     00001A5E  _SMS_VDPType                       SMSlib
+     00001A66  _SMS_VDPturnOnFeature              SMSlib
+     00001A7D  _SMS_VDPturnOffFeature             SMSlib
+     00001A96  _SMS_setBGScrollX                  SMSlib
+     00001AA0  _SMS_setBGScrollY                  SMSlib
+     00001AAA  _SMS_setBackdropColor              SMSlib
+     00001AB4  _SMS_useFirstHalfTilesforSprites   SMSlib
+     00001AC8  _SMS_setSpriteMode                 SMSlib
+     00001B0D  _SMS_setBGPaletteColor             SMSlib
+     00001B21  _SMS_setSpritePaletteColor         SMSlib
+     00001B35  _SMS_loadBGPalette                 SMSlib
+     00001B49  _SMS_loadSpritePalette             SMSlib
+     00001B5D  _SMS_setColor                      SMSlib
+     00001B61  _SMS_initSprites                   SMSlib
+     00001B67  _SMS_addSprite                     SMSlib
+     00001BBC  _SMS_finalizeSprites               SMSlib
+     00001BCE  _SMS_copySpritestoSAT              SMSlib
+     00001BF7  _SMS_waitForVBlank                 SMSlib
+     00001C04  _SMS_getKeysStatus                 SMSlib
+     00001C08  _SMS_getKeysPressed                SMSlib
+     00001C25  _SMS_getKeysHeld                   SMSlib
+     00001C3C  _SMS_getKeysReleased               SMSlib
+     00001C59  _SMS_queryPauseRequested           SMSlib
+     00001C61  _SMS_resetPauseRequest             SMSlib
+     00001C67  _SMS_setLineInterruptHandler       SMSlib
+     00001C78  _SMS_setLineCounter                SMSlib
+     00001C87  _SMS_getVCount                     SMSlib
+     00001C8B  _SMS_getHCount                     SMSlib
+     00001C8F  _SMS_isr                           SMSlib
+     00001CC5  _SMS_nmi_isr                       SMSlib
+     00001CD8  _SMS_loadSTMcompressedTileMapAre   SMSlib_STMcomp
+     00001EB9  ___sdcc_call_hl                    
+     00001EBA  _SMS_loadPSGaidencompressedTiles   SMSlib_PSGaiden
+     00001F9C  __moduchar                         
+     00001FA8  __moduint                          
+
 ASxxxx Linker V03.00 + NoICE + sdld,  page 6.
 Hexadecimal  [32-Bits]
 
@@ -332,7 +334,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_INITIALIZER                        00001FA5    0000001A =          26. bytes (REL,CON)
+_INITIALIZER                        00001FB3    0000001A =          26. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -341,18 +343,18 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSINIT                             00001FBF    0000000F =          15. bytes (REL,CON)
+_GSINIT                             00001FCD    0000000F =          15. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00001FBF  gsinit                             crt0
+     00001FCD  gsinit                             crt0
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 14.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSFINAL                            00001FCE    00000001 =           1. bytes (REL,CON)
+_GSFINAL                            00001FDC    00000001 =           1. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
