@@ -53,13 +53,13 @@ void engine_turtle_manager_draw_02( unsigned char x, unsigned char y )
 	unsigned int index = 0;
 	unsigned char ax, ay;
 	unsigned char mx, my;
-
+	unsigned char row = 0;
 	mx = 4;
 	my = 3;
 
 	for( ax = 0; ax < mx; ax++ )
 	{
-		for( ay = 0; ay < my; ay++ )
+		for( ay = 0 + row; ay < my + row; ay++ )
 		{
 			index = ( ( ay * mx ) + ax ) * 2;
 			devkit_SMS_loadTileMap( x + ax, y + ay, ( void * ) &pnt[ index ], 2 );
@@ -92,4 +92,31 @@ void engine_turtle_manager_draw_03( unsigned char x, unsigned char y )
 	devkit_SMS_setNextTileatXY( x + 1, y + 2 );	devkit_SMS_setTile( *pnt + array[ index + 9 ] );
 	devkit_SMS_setNextTileatXY( x + 2, y + 2 );	devkit_SMS_setTile( *pnt + array[ index + 10 ] );
 	devkit_SMS_setNextTileatXY( x + 3, y + 2 );	devkit_SMS_setTile( *pnt + array[ index + 11 ] );
+}
+
+void engine_turtle_manager_draw_04( unsigned char x, unsigned char y )
+{
+	const unsigned char *pnt = turtleAA_32x24__tilemap__bin;
+
+	unsigned int index = 0;
+	unsigned char ax, ay;
+	unsigned char mx, my;
+	unsigned char row = 1;
+
+	mx = 4;
+	my = 3;
+
+	for( ax = 0; ax < mx; ax++ )
+	{
+		for( ay = 0 + ( row*my ); ay < my + ( row*my ); ay++ )
+		{
+			index = ( ( ay * mx ) + ax ) * 2;
+			devkit_SMS_loadTileMap( x + ax, y + ay, ( void * ) &pnt[ index ], 2 );
+		}
+	}
+
+	//col#0
+	//index = 0 * 2; 	devkit_SMS_loadTileMap( x + 0, y + 0, ( void * ) &pnt[ index ], 2 );
+	//index = 4 * 2; 	devkit_SMS_loadTileMap( x + 0, y + 1, ( void * ) &pnt[ index ], 2 );
+	//index = 8 * 2; 	devkit_SMS_loadTileMap( x + 0, y + 2, ( void * ) &pnt[ index ], 2 );
 }
