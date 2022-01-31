@@ -39,10 +39,13 @@ void engine_turtle_manager_draw_02( unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = turtleAA_32x24__tilemap__bin;
 
-	unsigned char array[ 12 ] = 
+	unsigned char array[ 24 ] = 
 	{
 		0,1,2,3,
 		4,5,6,7,
+		8,9,10,11,
+		0,12,2,3,
+		4,13,6,7,
 		8,9,10,11,
 	};
 
