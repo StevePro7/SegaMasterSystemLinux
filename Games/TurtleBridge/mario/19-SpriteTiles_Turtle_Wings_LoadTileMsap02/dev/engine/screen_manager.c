@@ -32,7 +32,7 @@ void engine_screen_manager_init()
 	engine_turtle_manager_draw_02( tx, ty );
 
 	engine_turtle_manager_draw_03( tx + 10, ty - 5 );
-	engine_turtle_manager_draw_04( tx + 12, ty );
+	engine_turtle_manager_draw_04( tx + 10, ty );
 }
 
 void engine_screen_manager_update()

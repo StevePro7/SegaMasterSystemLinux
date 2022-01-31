@@ -59,7 +59,7 @@ void engine_turtle_manager_draw_02( unsigned char x, unsigned char y )
 
 	for( ax = 0; ax < mx; ax++ )
 	{
-		for( ay = 0 + row; ay < my + row; ay++ )
+		for( ay = 0 + ( row*my ); ay < my + ( row*my ); ay++ )
 		{
 			index = ( ( ay * mx ) + ax ) * 2;
 			devkit_SMS_loadTileMap( x + ax, y + ay, ( void * ) &pnt[ index ], 2 );
