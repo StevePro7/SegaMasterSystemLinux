@@ -60,7 +60,7 @@ namespace ScreenShotTest
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 
-			images = new Texture2D[8];
+			images = new Texture2D[9];
 			images[0] = Content.Load<Texture2D>("back_00");
 			images[1] = Content.Load<Texture2D>("face_00");
 			images[2] = Content.Load<Texture2D>("left_01");
@@ -69,6 +69,7 @@ namespace ScreenShotTest
 			images[5] = Content.Load<Texture2D>("red_wboy02");
 			images[6] = Content.Load<Texture2D>("red_wboy03");
 			images[7] = Content.Load<Texture2D>("flyingfish01");
+			images[8] = Content.Load<Texture2D>("blue");
 
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
 			width = pp.BackBufferWidth;
@@ -147,7 +148,7 @@ namespace ScreenShotTest
 			spriteBatch.Draw(images[5], new Vector2(64, 16), Color.White);
 			spriteBatch.Draw(images[4], new Vector2(80, 16), Color.White);
 			spriteBatch.Draw(images[3], new Vector2(96, 16), Color.White);
-			spriteBatch.Draw(images[2], new Vector2(112, 16), Color.White);
+			spriteBatch.Draw(images[8], new Vector2(112, 16), Color.White);
 
 			spriteBatch.End();
 		}
