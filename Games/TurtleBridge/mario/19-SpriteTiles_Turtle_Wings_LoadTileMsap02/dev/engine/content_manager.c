@@ -3,7 +3,8 @@
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
 
-#define FONT_TILES			0
+//#define FONT_TILES			0
+#define GAME_TILES			0
 
 void engine_content_manager_load_tiles()
 {
@@ -15,7 +16,7 @@ void engine_content_manager_load_tiles()
 void engine_content_manager_load_turtle()
 {
 	// Turtle tiles.
-	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) turtleAA_32x24__tiles__psgcompr, 64 );
+	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) turtleAA_32x24__tiles__psgcompr, GAME_TILES );
 
 	//devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) turtleBB_32x24__tiles__psgcompr, 96 );
 
