@@ -17,7 +17,7 @@ void engine_content_manager_load_turtle()
 	// Turtle tiles.
 	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) turtleAA_32x24__tiles__psgcompr, 64 );
 
-	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) turtleBB_32x24__tiles__psgcompr, 96 );
+	//devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) turtleBB_32x24__tiles__psgcompr, 96 );
 
 	devkit_SMS_loadBGPalette( ( void * ) turtle__palette__bin );
 }

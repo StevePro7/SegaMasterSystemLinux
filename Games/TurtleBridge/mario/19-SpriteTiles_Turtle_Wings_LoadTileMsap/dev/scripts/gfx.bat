@@ -6,8 +6,8 @@ cd content
 cd gfx
 
 :: Tiles
-bmp2tile.exe raw/turtleAA_32x24.png -savetiles "turtleAA_32x24 (tiles).psgcompr" -noremovedupes -planar -tileoffset 64   -savetilemap "turtleAA_32x24 (tilemap).bin" -savepalette "turtle (palette).bin" -fullpalette -exit
-bmp2tile.exe raw/turtleBB_32x24.png -savetiles "turtleBB_32x24 (tiles).psgcompr" -noremovedupes -planar -tileoffset 96  -savetilemap "turtleBB_32x24 (tilemap).bin" -savepalette "turtle2 (palette).bin" -fullpalette -exit
+bmp2tile.exe raw/turtleAA_32x24.png -savetiles "turtleAA_32x24 (tiles).psgcompr" -removedupes -planar -tileoffset 64   -savetilemap "turtleAA_32x24 (tilemap).bin" -savepalette "turtle (palette).bin" -fullpalette -exit
+::bmp2tile.exe raw/turtleBB_32x24.png -savetiles "turtleBB_32x24 (tiles).psgcompr" -noremovedupes -planar -tileoffset 96  -savetilemap "turtleBB_32x24 (tilemap).bin" -savepalette "turtle2 (palette).bin" -fullpalette -exit
 
 
 cd ..
