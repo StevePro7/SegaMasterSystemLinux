@@ -22,7 +22,7 @@ void engine_screen_manager_init()
 	tx = 10;
 	ty = 12;
 	tz = 1;
-	engine_turtle_manager_draw_sea();
+	//engine_turtle_manager_draw_sea();
 
 	timer = 0;
 	delta = 20;
