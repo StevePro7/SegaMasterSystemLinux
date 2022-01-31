@@ -10,8 +10,8 @@ S:Lsprite_manager.engine_sprite_manager_fish$y$1$69({1}SC:U),B,1,5
 S:Lsprite_manager.engine_sprite_manager_fish$tile$1$69({2}SI:U),B,1,6
 S:Lsprite_manager.engine_sprite_manager_fish$size$1$70({1}SC:U),R,0,0,[]
 S:Lsprite_manager.engine_sprite_manager_fish$sloc0$1$0({1}SC:U),B,1,-1
-S:Lsprite_manager.engine_sprite_manager_fish$sloc1$1$0({1}SC:U),B,1,-3
-S:Lsprite_manager.engine_sprite_manager_fish$sloc2$1$0({1}SC:U),B,1,-2
+S:Lsprite_manager.engine_sprite_manager_fish$sloc1$1$0({1}SC:U),B,1,-2
+S:Lsprite_manager.engine_sprite_manager_fish$sloc2$1$0({1}SC:U),B,1,-3
 S:G$devkit_SMS_init$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOnFeature$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOffFeature$0$0({2}DF,SV:S),C,0,0
