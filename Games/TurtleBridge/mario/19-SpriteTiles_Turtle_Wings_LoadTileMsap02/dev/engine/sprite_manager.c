@@ -2,6 +2,16 @@
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
 
+unsigned char array[ 24 ] =
+{
+	0,1,2,3,
+	4,5,6,7,
+	8,9,10,11,
+	0,12,2,3,
+	4,13,6,7,
+	8,9,10,11,
+};
+
 void engine_turtle_manager_draw_sea()
 {
 	const unsigned char *pnt = turtleAA_32x24__tilemap__bin;
@@ -18,36 +28,27 @@ void engine_turtle_manager_draw_sea()
 void engine_turtle_manager_draw_01( unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = turtleAA_32x24__tilemap__bin;
+	unsigned char index = 0;
 
-	devkit_SMS_setNextTileatXY( x + 0, y + 0 );	devkit_SMS_setTile( *pnt + 0 );
-	devkit_SMS_setNextTileatXY( x + 1, y + 0 );	devkit_SMS_setTile( *pnt + 1 );
-	devkit_SMS_setNextTileatXY( x + 2, y + 0 );	devkit_SMS_setTile( *pnt + 2 );
-	devkit_SMS_setNextTileatXY( x + 3, y + 0 );	devkit_SMS_setTile( *pnt + 3 );
+	devkit_SMS_setNextTileatXY( x + 0, y + 0 );	devkit_SMS_setTile( *pnt + array[ index + 0 ] );
+	devkit_SMS_setNextTileatXY( x + 1, y + 0 );	devkit_SMS_setTile( *pnt + array[ index + 1 ] );
+	devkit_SMS_setNextTileatXY( x + 2, y + 0 );	devkit_SMS_setTile( *pnt + array[ index + 2 ] );
+	devkit_SMS_setNextTileatXY( x + 3, y + 0 );	devkit_SMS_setTile( *pnt + array[ index + 3 ] );
 
-	devkit_SMS_setNextTileatXY( x + 0, y + 1 );	devkit_SMS_setTile( *pnt + 4 );
-	devkit_SMS_setNextTileatXY( x + 1, y + 1 );	devkit_SMS_setTile( *pnt + 5 );
-	devkit_SMS_setNextTileatXY( x + 2, y + 1 );	devkit_SMS_setTile( *pnt + 6 );
-	devkit_SMS_setNextTileatXY( x + 3, y + 1 );	devkit_SMS_setTile( *pnt + 7 );
+	devkit_SMS_setNextTileatXY( x + 0, y + 1 );	devkit_SMS_setTile( *pnt + array[ index + 4 ] );
+	devkit_SMS_setNextTileatXY( x + 1, y + 1 );	devkit_SMS_setTile( *pnt + array[ index + 5 ] );
+	devkit_SMS_setNextTileatXY( x + 2, y + 1 );	devkit_SMS_setTile( *pnt + array[ index + 6 ] );
+	devkit_SMS_setNextTileatXY( x + 3, y + 1 );	devkit_SMS_setTile( *pnt + array[ index + 7 ] );
 
-	devkit_SMS_setNextTileatXY( x + 0, y + 2 );	devkit_SMS_setTile( *pnt + 8 );
-	devkit_SMS_setNextTileatXY( x + 1, y + 2 );	devkit_SMS_setTile( *pnt + 9 );
-	devkit_SMS_setNextTileatXY( x + 2, y + 2 );	devkit_SMS_setTile( *pnt + 10 );
-	devkit_SMS_setNextTileatXY( x + 3, y + 2 );	devkit_SMS_setTile( *pnt + 11 );
+	devkit_SMS_setNextTileatXY( x + 0, y + 2 );	devkit_SMS_setTile( *pnt + array[ index + 8 ] );
+	devkit_SMS_setNextTileatXY( x + 1, y + 2 );	devkit_SMS_setTile( *pnt + array[ index + 9 ] );
+	devkit_SMS_setNextTileatXY( x + 2, y + 2 );	devkit_SMS_setTile( *pnt + array[ index + 10 ] );
+	devkit_SMS_setNextTileatXY( x + 3, y + 2 );	devkit_SMS_setTile( *pnt + array[ index + 11 ] );
 }
 
 void engine_turtle_manager_draw_02( unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = turtleAA_32x24__tilemap__bin;
-
-	unsigned char array[ 24 ] = 
-	{
-		0,1,2,3,
-		4,5,6,7,
-		8,9,10,11,
-		0,12,2,3,
-		4,13,6,7,
-		8,9,10,11,
-	};
 
 	unsigned int index = 0;
 	unsigned char ax, ay;
@@ -69,4 +70,26 @@ void engine_turtle_manager_draw_02( unsigned char x, unsigned char y )
 	//index = 0 * 2; 	devkit_SMS_loadTileMap( x + 0, y + 0, ( void * ) &pnt[ index ], 2 );
 	//index = 4 * 2; 	devkit_SMS_loadTileMap( x + 0, y + 1, ( void * ) &pnt[ index ], 2 );
 	//index = 8 * 2; 	devkit_SMS_loadTileMap( x + 0, y + 2, ( void * ) &pnt[ index ], 2 );
+}
+
+
+void engine_turtle_manager_draw_03( unsigned char x, unsigned char y )
+{
+	const unsigned char *pnt = turtleAA_32x24__tilemap__bin;
+	unsigned char index = 12;
+
+	devkit_SMS_setNextTileatXY( x + 0, y + 0 );	devkit_SMS_setTile( *pnt + array[ index + 0 ] );
+	devkit_SMS_setNextTileatXY( x + 1, y + 0 );	devkit_SMS_setTile( *pnt + array[ index + 1 ] );
+	devkit_SMS_setNextTileatXY( x + 2, y + 0 );	devkit_SMS_setTile( *pnt + array[ index + 2 ] );
+	devkit_SMS_setNextTileatXY( x + 3, y + 0 );	devkit_SMS_setTile( *pnt + array[ index + 3 ] );
+
+	devkit_SMS_setNextTileatXY( x + 0, y + 1 );	devkit_SMS_setTile( *pnt + array[ index + 4 ] );
+	devkit_SMS_setNextTileatXY( x + 1, y + 1 );	devkit_SMS_setTile( *pnt + array[ index + 5 ] );
+	devkit_SMS_setNextTileatXY( x + 2, y + 1 );	devkit_SMS_setTile( *pnt + array[ index + 6 ] );
+	devkit_SMS_setNextTileatXY( x + 3, y + 1 );	devkit_SMS_setTile( *pnt + array[ index + 7 ] );
+
+	devkit_SMS_setNextTileatXY( x + 0, y + 2 );	devkit_SMS_setTile( *pnt + array[ index + 8 ] );
+	devkit_SMS_setNextTileatXY( x + 1, y + 2 );	devkit_SMS_setTile( *pnt + array[ index + 9 ] );
+	devkit_SMS_setNextTileatXY( x + 2, y + 2 );	devkit_SMS_setTile( *pnt + array[ index + 10 ] );
+	devkit_SMS_setNextTileatXY( x + 3, y + 2 );	devkit_SMS_setTile( *pnt + array[ index + 11 ] );
 }
