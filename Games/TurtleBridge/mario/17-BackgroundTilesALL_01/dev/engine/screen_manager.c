@@ -17,17 +17,17 @@ static void draw_turtle();
 
 void engine_screen_manager_init()
 {
-	//engine_font_manager_draw_text( "STEVEPRO STUDIOS!!", 4, 1 );
+	engine_font_manager_draw_text( "STEVEPRO STUDIOS!!", 4, 1 );
 
 	tx = 10;
 	ty = 12;
 	tz = 1;
-	engine_turtle_manager_draw_sea();
+	//engine_turtle_manager_draw_sea();
 
 	timer = 0;
 	delta = 20;
 	flag = 1;
-	draw_turtle();
+	//draw_turtle();
 
 	//engine_turtle_manager_draw_01( tx + 5, ty + 1 );
 	//engine_turtle_manager_draw_01( tx + 10, ty + 2 );
@@ -65,7 +65,7 @@ void engine_screen_manager_update()
 			}
 		}
 
-		draw_turtle();
+		//draw_turtle();
 	}
 }
 
