@@ -29,7 +29,7 @@ namespace ScreenShotTest
 		{
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = 128;
-			graphics.PreferredBackBufferHeight = 32;
+			graphics.PreferredBackBufferHeight = 128;
 			Content.RootDirectory = "Content";
 		}
 
@@ -46,7 +46,7 @@ namespace ScreenShotTest
 			//{
 			//	save = Convert.ToBoolean(ConfigurationManager.AppSettings["save"]);
 			//}
-			save = true;
+			//save = true;
 			IsMouseVisible = true;
 			base.Initialize();
 		}
@@ -60,16 +60,22 @@ namespace ScreenShotTest
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 
-			images = new Texture2D[9];
-			images[0] = Content.Load<Texture2D>("back_00");
-			images[1] = Content.Load<Texture2D>("face_00");
-			images[2] = Content.Load<Texture2D>("left_01");
-			images[3] = Content.Load<Texture2D>("rght_01");
-			images[4] = Content.Load<Texture2D>("red_wboy01");
-			images[5] = Content.Load<Texture2D>("red_wboy02");
-			images[6] = Content.Load<Texture2D>("red_wboy03");
-			images[7] = Content.Load<Texture2D>("flyingfish01");
-			images[8] = Content.Load<Texture2D>("blue");
+			images = new Texture2D[15];
+			images[0] = Content.Load<Texture2D>("cloud01_32x48");
+			images[1] = Content.Load<Texture2D>("cloud02_96x48");
+			images[2] = Content.Load<Texture2D>("flying_turtle01_32x24");
+			images[3] = Content.Load<Texture2D>("flying_turtle02_32x24");
+			images[4] = Content.Load<Texture2D>("font_tiles");
+			images[5] = Content.Load<Texture2D>("sea_turtleAA01_32x24");
+			images[6] = Content.Load<Texture2D>("sea_turtleAA02_32x24");
+			images[7] = Content.Load<Texture2D>("sea_turtleAA03_32x24");
+			images[8] = Content.Load<Texture2D>("sea_turtleBB01_32x24");
+			images[9] = Content.Load<Texture2D>("sea_turtleBB02_32x24");
+			images[10] = Content.Load<Texture2D>("sea_turtleBB03_32x24");
+			images[11] = Content.Load<Texture2D>("wave_strip");
+			images[12] = Content.Load<Texture2D>("wonderboy32_01");
+			images[13] = Content.Load<Texture2D>("wonderboy32_02");
+			images[14] = Content.Load<Texture2D>("wonderboy32_03");
 
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
 			width = pp.BackBufferWidth;
