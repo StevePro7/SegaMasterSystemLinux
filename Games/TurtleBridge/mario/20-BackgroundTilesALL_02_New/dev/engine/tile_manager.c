@@ -5,7 +5,8 @@
 void engine_tile_manager_turtle01( unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = game_tiles__tilemap__bin;
-	unsigned int array[ 24 ] = { 152,154,156,0,256,186,260,262,216,218,220,294, };
+	//unsigned int array[ 24 ] = { 152,154,156,0,256,186,260,262,216,218,220,294, };
+	unsigned int array[ 24 ] = { 128,250,132,0,160,282,164,166,304,306,308,310, };
 
 	//unsigned char array[ 24 ] = { 64,65,66,0,73,74,75,76,87,88,89,90, };		// high sea
 	//unsigned char array[ 24 ] = { 64,101,66,0,73,109,75,76,111,112,113,114, };	// low fly
@@ -31,7 +32,8 @@ void engine_tile_manager_turtle01( unsigned char x, unsigned char y )
 void engine_tile_manager_turtle02( unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = game_tiles__tilemap__bin;
-	unsigned int array[ 24 ] = { 152,154,156,0,256,186,260,262,216,218,220,294, };
+	//unsigned int array[ 24 ] = { 152,154,156,0,256,186,260,262,216,218,220,294, };
+	unsigned int array[ 24 ] = { 128,250,132,0,160,282,164,166,304,306,308,310, };
 
 	unsigned char idx;
 	unsigned int val;
