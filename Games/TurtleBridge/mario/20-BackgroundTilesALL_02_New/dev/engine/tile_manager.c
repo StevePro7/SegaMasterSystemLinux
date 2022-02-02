@@ -29,6 +29,28 @@ void engine_tile_manager_turtle04( unsigned char x, unsigned char y )
 }
 
 
+void engine_tile_manager_turtle05( unsigned char x, unsigned char y )
+{
+	unsigned int array[ 24 ] = { 152,154,156,0,256,186,260,262,216,218,220,294, };
+	draw_turtle_method_one( array, x, y );
+}
+void engine_tile_manager_turtle06( unsigned char x, unsigned char y )
+{
+	unsigned int array[ 24 ] = { 232,234,236,124,264,186,268,270,216,218,220,294, };
+	draw_turtle_method_one( array, x, y );
+}
+void engine_tile_manager_turtle07( unsigned char x, unsigned char y )
+{
+	unsigned int array[ 24 ] = { 128,242,132,0,160,274,164,166,304,306,308,310, };
+	draw_turtle_method_one( array, x, y );
+}
+void engine_tile_manager_turtle08( unsigned char x, unsigned char y )
+{
+	unsigned int array[ 24 ] = { 128,250,132,0,160,282,164,166,304,306,308,310, };
+	draw_turtle_method_one( array, x, y );
+}
+
+
 static void draw_turtle_method_one( unsigned int *array, unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = game_tiles__tilemap__bin;
