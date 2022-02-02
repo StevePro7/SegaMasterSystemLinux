@@ -64,6 +64,9 @@ void engine_tile_manager_turtle02( unsigned char x, unsigned char y )
 	//val = array[ 9 ];	devkit_SMS_loadTileMap( x + 1, y + 2, ( void * ) &pnt[ val ], 2 );
 	//val = array[ 10 ];	devkit_SMS_loadTileMap( x + 2, y + 2, ( void * ) &pnt[ val ], 2 );
 	//val = array[ 11 ];	devkit_SMS_loadTileMap( x + 3, y + 2, ( void * ) &pnt[ val ], 2 );
+}
 
-	
+void engine_tile_manager_cloud01( unsigned char x, unsigned char y )
+{
+
 }
