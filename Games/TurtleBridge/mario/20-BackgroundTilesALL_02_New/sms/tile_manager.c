@@ -2,11 +2,6 @@
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
 
-static void draw_turtle_method_one( unsigned int *array, unsigned char x, unsigned char y );
-static void draw_turtle_method_two( unsigned int *array, unsigned char x, unsigned char y );
-
-
-
 void engine_tile_manager_turtle01( unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = game_tiles__tilemap__bin;
@@ -34,7 +29,6 @@ void engine_tile_manager_turtle01( unsigned char x, unsigned char y )
 	}
 }
 
-
 void engine_tile_manager_turtle02( unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = game_tiles__tilemap__bin;
@@ -56,12 +50,31 @@ void engine_tile_manager_turtle02( unsigned char x, unsigned char y )
 		}
 	}
 
+	//val = array[ 0 ];	devkit_SMS_loadTileMap( x + 0, y + 0, ( void * ) &pnt[ val ], 2 );
+	//val = array[ 1 ];	devkit_SMS_loadTileMap( x + 1, y + 0, ( void * ) &pnt[ val ], 2 );
+	//val = array[ 2 ];	devkit_SMS_loadTileMap( x + 2, y + 0, ( void * ) &pnt[ val ], 2 );
+	//val = array[ 3 ];	devkit_SMS_loadTileMap( x + 3, y + 0, ( void * ) &pnt[ val ], 2 );
+
+	//val = array[ 4 ];	devkit_SMS_loadTileMap( x + 0, y + 1, ( void * ) &pnt[ val ], 2 );
+	//val = array[ 5 ];	devkit_SMS_loadTileMap( x + 1, y + 1, ( void * ) &pnt[ val ], 2 );
+	//val = array[ 6 ];	devkit_SMS_loadTileMap( x + 2, y + 1, ( void * ) &pnt[ val ], 2 );
+	//val = array[ 7 ];	devkit_SMS_loadTileMap( x + 3, y + 1, ( void * ) &pnt[ val ], 2 );
+
+	//val = array[ 8 ];	devkit_SMS_loadTileMap( x + 0, y + 2, ( void * ) &pnt[ val ], 2 );
+	//val = array[ 9 ];	devkit_SMS_loadTileMap( x + 1, y + 2, ( void * ) &pnt[ val ], 2 );
+	//val = array[ 10 ];	devkit_SMS_loadTileMap( x + 2, y + 2, ( void * ) &pnt[ val ], 2 );
+	//val = array[ 11 ];	devkit_SMS_loadTileMap( x + 3, y + 2, ( void * ) &pnt[ val ], 2 );
 }
 
-
-static void draw_turtle_method_one( unsigned int *array, unsigned char x, unsigned char y )
+void engine_tile_manager_cloud01( unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = game_tiles__tilemap__bin;
+	//unsigned int array[ 24 ] = { 152,154,156,0,256,186,260,262,216,218,220,294, };
+	unsigned int array[ 24 ] = { 320,322,324,326,354,358,358,360,386,388,392,0, };
+
+	//unsigned char array[ 24 ] = { 64,65,66,0,73,74,75,76,87,88,89,90, };		// high sea
+	//unsigned char array[ 24 ] = { 64,101,66,0,73,109,75,76,111,112,113,114, };	// low fly
+
 	unsigned char idx;
 	unsigned int val;
 	unsigned char tmp;
@@ -80,9 +93,14 @@ static void draw_turtle_method_one( unsigned int *array, unsigned char x, unsign
 	}
 }
 
-static void draw_turtle_method_two( unsigned int *array, unsigned char x, unsigned char y )
+void engine_tile_manager_cloud02( unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = game_tiles__tilemap__bin;
+	//unsigned int array[ 24 ] = { 152,154,156,0,256,186,260,262,216,218,220,294, };
+	//unsigned int array[ 24 ] = { 232,234,236,124,264,186,268,270,216,218,220,294, };	// submerged turtle low
+	unsigned int array[ 24 ] = { 320,322,324,326,354,358,358,360,386,388,392,0, };
+	
+
 	unsigned char idx;
 	unsigned int val;
 	unsigned char ix, iy;
