@@ -26,4 +26,9 @@ S:G$engine_turtle_manager_draw_01$0$0({2}DF,SV:S),C,0,0
 S:G$engine_turtle_manager_draw_02$0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_turtle01$0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_turtle02$0$0({2}DF,SV:S),C,0,0
-S:G$engine_tile_manager_cloud01$0$0({2}DF,SV:S),C,0,0
+S:G$engine_tile_manager_turtle03$0$0({2}DF,SV:S),C,0,0
+S:G$engine_tile_manager_turtle04$0$0({2}DF,SV:S),C,0,0
+S:G$engine_tile_manager_turtle05$0$0({2}DF,SV:S),C,0,0
+S:G$engine_tile_manager_turtle06$0$0({2}DF,SV:S),C,0,0
+S:G$engine_tile_manager_turtle07$0$0({2}DF,SV:S),C,0,0
+S:G$engine_tile_manager_turtle08$0$0({2}DF,SV:S),C,0,0

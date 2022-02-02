@@ -9,9 +9,22 @@
 
 void engine_screen_manager_init()
 {
-	engine_font_manager_draw_text( "STEVEPRO STUDIOS..!!", 4, 1 );
+	engine_font_manager_draw_text( "STEVEPRO STUDIOS??!!", 4, 1 );
 
 	//engine_tile_manager_turtle01( 10, 10 );
+	//engine_tile_manager_turtle01( 10, 10 );
+
+	engine_tile_manager_turtle01( 5, 5 );
+	engine_tile_manager_turtle04( 9, 5 );
+
+	engine_tile_manager_turtle01( 5, 10 );
+	engine_tile_manager_turtle02( 10, 11 );
+	engine_tile_manager_turtle03( 15, 12 );
+
+	engine_tile_manager_turtle04( 5, 16 );
+	engine_tile_manager_turtle05( 10, 17 );
+	engine_tile_manager_turtle06( 15, 18 );
+
 	//engine_tile_manager_turtle02( 20, 10 );
 
 	//engine_tile_manager_cloud01( 4, 4 );
