@@ -33,7 +33,7 @@ void engine_screen_manager_init()
 	//engine_turtle_manager_draw_01( tx + 10, ty + 2 );
 	//engine_turtle_manager_draw_02( tx + 15, ty + 1 );
 
-	//engine_tile_manager_turtle01( 10, 10 );
+	engine_tile_manager_turtle01( 10, 10 );
 	engine_tile_manager_turtle02( 20, 10 );
 }
 

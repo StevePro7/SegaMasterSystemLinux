@@ -5,11 +5,15 @@
 void engine_tile_manager_turtle01( unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = game_tiles__tilemap__bin;
-	//unsigned char array[ 24 ] = { 64,65,66,0,73,74,75,76,87,88,89,90, };		// high sea
-	unsigned char array[ 24 ] = { 64,101,66,0,73,109,75,76,111,112,113,114, };	// low fly
+	unsigned int array[ 24 ] = { 152,154,156,0,256,186,260,262,216,218,220,294, };
 
+	//unsigned char array[ 24 ] = { 64,65,66,0,73,74,75,76,87,88,89,90, };		// high sea
+	//unsigned char array[ 24 ] = { 64,101,66,0,73,109,75,76,111,112,113,114, };	// low fly
+
+	unsigned char idx;
+	unsigned int val;
+	unsigned char tmp;
 	unsigned char ix, iy;
-	unsigned char idx, val;
 
 	for( iy = 0; iy < 3; iy++ )
 	{
@@ -17,9 +21,9 @@ void engine_tile_manager_turtle01( unsigned char x, unsigned char y )
 		{
 			idx = iy * 4 + ix;
 			val = array[ idx ];
-
+			tmp = ( unsigned char ) pnt[ val ];
 			devkit_SMS_setNextTileatXY( x + ix, y + iy );
-			devkit_SMS_setTile( *pnt + val );
+			devkit_SMS_setTile( *pnt + tmp );
 		}
 	}
 }
