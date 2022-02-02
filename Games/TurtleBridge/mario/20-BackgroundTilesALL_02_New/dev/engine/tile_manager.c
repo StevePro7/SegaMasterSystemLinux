@@ -5,7 +5,9 @@
 void engine_tile_manager_turtle01( unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = game_tiles__tilemap__bin;
-	unsigned char array[ 24 ] = { 64,65,66,0,67,68,69,70,71,72,73,74,0, };
+	//unsigned char array[ 24 ] = { 64,65,66,0,73,74,75,76,87,88,89,90, };		// high sea
+	unsigned char array[ 24 ] = { 64,101,66,0,73,109,75,76,111,112,113,114, };	// low fly
+
 	unsigned char ix, iy;
 	unsigned char idx, val;
 
@@ -32,24 +34,24 @@ void engine_tile_manager_turtle02( unsigned char x, unsigned char y )
 	ax = 0;
 	ay = 0;
 
-	idx = 0;
-	val = array[ idx ] * 2;
-	devkit_SMS_loadTileMap( x + ax, y + ay, ( void * ) &pnt[ val ], 2 );
+	//idx = 0;
+	//val = 128;// val = array[ idx ] * 2;
+	//devkit_SMS_loadTileMap( x + ax, y + ay, ( void * ) &pnt[ val ], 2 );
 
-	ax = 1;
-	idx = 1;
-	val = array[ idx ] * 2;
-	devkit_SMS_loadTileMap( x + ax, y + ay, ( void * ) &pnt[ val ], 2 );
-	ax = 2;
-	idx = 2;
-	val = array[ idx ] * 2;
-	devkit_SMS_loadTileMap( x + ax, y + ay, ( void * ) &pnt[ val ], 2 );
+	//ax = 1;
+	//idx = 1;
+	//val = array[ idx ] * 2;
+	//devkit_SMS_loadTileMap( x + ax, y + ay, ( void * ) &pnt[ val ], 2 );
+	//ax = 2;
+	//idx = 2;
+	//val = array[ idx ] * 2;
+	//devkit_SMS_loadTileMap( x + ax, y + ay, ( void * ) &pnt[ val ], 2 );
 
 	ax = 0;
 	ay = 1;
 	idx = 4;
 	val = array[ idx ] * 2;
-	val = 160;
+	val = 11 * 16;
 	devkit_SMS_loadTileMap( x + ax, y + ay, ( void * ) &pnt[ val ], 2 );
 
 	/*ax = 1;
