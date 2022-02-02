@@ -8,7 +8,7 @@ void engine_tile_manager_turtle01( unsigned char x, unsigned char y )
 
 	unsigned char start = 0;
 	unsigned char index = 0;
-	unsigned char count = 72;
+	unsigned char count = 64;
 
 	unsigned char ax, ay;
 	unsigned char mx, my;

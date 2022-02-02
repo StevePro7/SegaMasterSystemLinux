@@ -29,7 +29,7 @@ namespace ScreenShotTest
 		{
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = 128;
-			graphics.PreferredBackBufferHeight = 296;
+			graphics.PreferredBackBufferHeight = 56;// 296;
 			Content.RootDirectory = "Content";
 		}
 
@@ -46,7 +46,7 @@ namespace ScreenShotTest
 			//{
 			//	save = Convert.ToBoolean(ConfigurationManager.AppSettings["save"]);
 			//}
-			//save = true;
+			save = true;
 			IsMouseVisible = true;
 			base.Initialize();
 		}
@@ -145,9 +145,20 @@ namespace ScreenShotTest
 
 		private void Draw()
 		{
-			graphics.GraphicsDevice.Clear(Color.White);
+			graphics.GraphicsDevice.Clear(Color.Black);
 
 			spriteBatch.Begin();
+
+			int x, y;
+			for (y = 0; y < height / 8; y++)
+			{
+				for (x = 0; x < width / 8; x++)
+				{
+					Vector2 pos = new Vector2(x * 8, y * 8);
+					spriteBatch.Draw(images[15], pos, Color.White);
+				}
+			}
+
 
 			spriteBatch.Draw(images[4], new Vector2(0, 0), Color.White);
 			spriteBatch.Draw(images[15], new Vector2(0, 0), Color.White);
@@ -158,25 +169,25 @@ namespace ScreenShotTest
 			spriteBatch.Draw(images[19], new Vector2(112, 24), Color.White);
 			spriteBatch.Draw(images[20], new Vector2(120, 24), Color.White);
 
-			//spriteBatch.Draw(images[11], new Vector2(0, 32), Color.White);
+			////spriteBatch.Draw(images[11], new Vector2(0, 32), Color.White);
 
 			spriteBatch.Draw(images[5], new Vector2(0, 32), Color.White);
-			spriteBatch.Draw(images[6], new Vector2(32, 32), Color.White);
-			spriteBatch.Draw(images[7], new Vector2(64, 32), Color.White);
-			spriteBatch.Draw(images[8], new Vector2(96, 32), Color.White);
+			////spriteBatch.Draw(images[6], new Vector2(32, 32), Color.White);
+			////spriteBatch.Draw(images[7], new Vector2(64, 32), Color.White);
+			////spriteBatch.Draw(images[8], new Vector2(96, 32), Color.White);
 
-			spriteBatch.Draw(images[9], new Vector2(0, 56), Color.White);
-			spriteBatch.Draw(images[10], new Vector2(32, 56), Color.White);
-			spriteBatch.Draw(images[2], new Vector2(64, 56), Color.White);
-			spriteBatch.Draw(images[3], new Vector2(96, 56), Color.White);
+			////spriteBatch.Draw(images[9], new Vector2(0, 56), Color.White);
+			////spriteBatch.Draw(images[10], new Vector2(32, 56), Color.White);
+			////spriteBatch.Draw(images[2], new Vector2(64, 56), Color.White);
+			////spriteBatch.Draw(images[3], new Vector2(96, 56), Color.White);
 
-			spriteBatch.Draw(images[0], new Vector2(0, 80), Color.White);
-			spriteBatch.Draw(images[1], new Vector2(32, 80), Color.White);
-			spriteBatch.Draw(images[1], new Vector2(80, 80), Color.White);
+			////spriteBatch.Draw(images[0], new Vector2(0, 80), Color.White);
+			////spriteBatch.Draw(images[1], new Vector2(32, 80), Color.White);
+			////spriteBatch.Draw(images[1], new Vector2(80, 80), Color.White);
 
-			spriteBatch.Draw(images[12], new Vector2(0, 104), Color.White);
-			spriteBatch.Draw(images[13], new Vector2(0, 184), Color.White);
-			spriteBatch.Draw(images[14], new Vector2(0, 216), Color.White);
+			////spriteBatch.Draw(images[12], new Vector2(0, 104), Color.White);
+			////spriteBatch.Draw(images[13], new Vector2(0, 184), Color.White);
+			////spriteBatch.Draw(images[14], new Vector2(0, 216), Color.White);
 
 			spriteBatch.End();
 		}
