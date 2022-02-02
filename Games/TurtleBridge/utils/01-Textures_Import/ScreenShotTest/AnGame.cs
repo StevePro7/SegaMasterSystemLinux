@@ -11,7 +11,7 @@ namespace ScreenShotTest
 	{
 		//const string file = "wonderboy32_01";
 		//const string file = "wonderboy32_02";
-		const string file = "sea_turtle_4bpp";
+		const string file = "game_tiles";
 
 		PaletteManager paletteManager;
 		ImageManager imageManager;

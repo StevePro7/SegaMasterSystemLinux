@@ -139,7 +139,7 @@ namespace ScreenShotTest
 					var data = text.Replace("$", "");
 					sb.Append(data);
 					newColors[cy * 8 + cx] = texColors[tmp_index];
-					allColors[tmp2_index] = texColors[tmp_index];
+					//allColors[tmp2_index] = texColors[tmp_index];
 				}
 			}
 
