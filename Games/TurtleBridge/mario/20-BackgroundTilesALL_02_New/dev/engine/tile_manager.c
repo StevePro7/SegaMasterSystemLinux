@@ -68,5 +68,51 @@ void engine_tile_manager_turtle02( unsigned char x, unsigned char y )
 
 void engine_tile_manager_cloud01( unsigned char x, unsigned char y )
 {
+	const unsigned char *pnt = game_tiles__tilemap__bin;
+	//unsigned int array[ 24 ] = { 152,154,156,0,256,186,260,262,216,218,220,294, };
+	unsigned int array[ 24 ] = { 320,322,324,326,354,358,358,360,386,388,392,0, };
 
+	//unsigned char array[ 24 ] = { 64,65,66,0,73,74,75,76,87,88,89,90, };		// high sea
+	//unsigned char array[ 24 ] = { 64,101,66,0,73,109,75,76,111,112,113,114, };	// low fly
+
+	unsigned char idx;
+	unsigned int val;
+	unsigned char tmp;
+	unsigned char ix, iy;
+
+	for( iy = 0; iy < 3; iy++ )
+	{
+		for( ix = 0; ix < 4; ix++ )
+		{
+			idx = iy * 4 + ix;
+			val = array[ idx ];
+			tmp = ( unsigned char ) pnt[ val ];
+			devkit_SMS_setNextTileatXY( x + ix, y + iy );
+			devkit_SMS_setTile( *pnt + tmp );
+		}
+	}
+}
+
+void engine_tile_manager_cloud02( unsigned char x, unsigned char y )
+{
+	const unsigned char *pnt = game_tiles__tilemap__bin;
+	//unsigned int array[ 24 ] = { 152,154,156,0,256,186,260,262,216,218,220,294, };
+	//unsigned int array[ 24 ] = { 232,234,236,124,264,186,268,270,216,218,220,294, };	// submerged turtle low
+	unsigned int array[ 24 ] = { 320,322,324,326,354,358,358,360,386,388,392,0, };
+	
+
+	unsigned char idx;
+	unsigned int val;
+	unsigned char ix, iy;
+
+	for( iy = 0; iy < 3; iy++ )
+	{
+		for( ix = 0; ix < 4; ix++ )
+		{
+			idx = iy * 4 + ix;
+			val = array[ idx ];
+
+			devkit_SMS_loadTileMap( x + ix, y + iy, ( void * ) &pnt[ val ], 2 );
+		}
+	}
 }

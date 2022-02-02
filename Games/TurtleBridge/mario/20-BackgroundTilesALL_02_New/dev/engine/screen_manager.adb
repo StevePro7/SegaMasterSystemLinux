@@ -26,3 +26,4 @@ S:G$engine_turtle_manager_draw_01$0$0({2}DF,SV:S),C,0,0
 S:G$engine_turtle_manager_draw_02$0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_turtle01$0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_turtle02$0$0({2}DF,SV:S),C,0,0
+S:G$engine_tile_manager_cloud01$0$0({2}DF,SV:S),C,0,0

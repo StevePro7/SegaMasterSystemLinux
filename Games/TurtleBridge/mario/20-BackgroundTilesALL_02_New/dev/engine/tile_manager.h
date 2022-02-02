@@ -3,5 +3,6 @@
 
 void engine_tile_manager_turtle01( unsigned char x, unsigned char y );
 void engine_tile_manager_turtle02( unsigned char x, unsigned char y );
+void engine_tile_manager_cloud01( unsigned char x, unsigned char y );
 
 #endif//_TILE_MANAGER_H_
