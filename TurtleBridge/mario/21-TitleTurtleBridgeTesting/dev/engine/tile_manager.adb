@@ -41,8 +41,8 @@ S:Ltile_manager.draw_turtle_method_one$val$1$92({2}SI:U),R,0,0,[e,d]
 S:Ltile_manager.draw_turtle_method_one$tmp$1$92({1}SC:U),R,0,0,[e]
 S:Ltile_manager.draw_turtle_method_one$ix$1$92({1}SC:U),R,0,0,[b]
 S:Ltile_manager.draw_turtle_method_one$iy$1$92({1}SC:U),R,0,0,[c]
-S:Ltile_manager.draw_turtle_method_one$sloc0$1$0({1}SC:U),B,1,-1
-S:Ltile_manager.draw_turtle_method_one$sloc1$1$0({1}SC:U),B,1,-2
+S:Ltile_manager.draw_turtle_method_one$sloc0$1$0({1}SC:U),B,1,-2
+S:Ltile_manager.draw_turtle_method_one$sloc1$1$0({1}SC:U),B,1,-1
 F:Ftile_manager$draw_turtle_method_two$0$0({2}DF,SV:S),Z,0,1,0,0,0
 S:Ltile_manager.draw_turtle_method_two$array$1$97({2}DG,SI:U),B,1,4
 S:Ltile_manager.draw_turtle_method_two$x$1$97({1}SC:U),B,1,6
