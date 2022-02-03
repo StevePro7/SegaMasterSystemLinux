@@ -9,8 +9,8 @@
 
 void engine_screen_manager_init()
 {
-	engine_turtle_manager_draw_sea();
-	engine_turtle_manager_draw_01( 2, 2 );
+	//engine_turtle_manager_draw_sea();
+	//engine_turtle_manager_draw_01( 2, 2 );
 
 	//engine_font_manager_draw_text( "ADRIANA", 2, 2 );
 
