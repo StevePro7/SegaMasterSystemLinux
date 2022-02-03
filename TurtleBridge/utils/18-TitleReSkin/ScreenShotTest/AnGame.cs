@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -19,17 +20,19 @@ namespace ScreenShotTest
 		RenderTarget2D renderTarget;
 		Texture2D[] images;
 		Texture2D[] colors;
+		Texture2D pixel;
 		private bool save;
 
 		private int width;
 		private int height;
 
+		IDictionary<string, int> colorDict = new Dictionary<string, int>();
 		//private int size = 1;
 
 		public AnGame()
 		{
 			graphics = new GraphicsDeviceManager(this);
-			graphics.PreferredBackBufferWidth = 176;
+			graphics.PreferredBackBufferWidth = 184;
 			graphics.PreferredBackBufferHeight = 88;
 			Content.RootDirectory = "Content";
 		}
@@ -47,7 +50,7 @@ namespace ScreenShotTest
 			//{
 			//	save = Convert.ToBoolean(ConfigurationManager.AppSettings["save"]);
 			//}
-			//save = true;
+			save = true;
 			IsMouseVisible = true;
 			base.Initialize();
 		}
@@ -67,17 +70,80 @@ namespace ScreenShotTest
 			images[2] = Content.Load<Texture2D>("turtlebridge02");
 			images[3] = Content.Load<Texture2D>("turtlebridge04");
 
+			colors = new Texture2D[5];
 			colors[0] = Content.Load<Texture2D>("00_000000");
 			colors[1] = Content.Load<Texture2D>("02_aa0000");
 			colors[2] = Content.Load<Texture2D>("03_aa0000");
 			colors[3] = Content.Load<Texture2D>("39_55aaff");
 			colors[4] = Content.Load<Texture2D>("3f_ffffff");
 
+			Texture2D image = images[3];
+			width = image.Width;
+			height = image.Height;
+
+			Color[] texColors = new Color[width * height];
+			Color[] newColors = new Color[width * height];
+			image.GetData(texColors);
+
+			Color[] bluColors = new Color[16 * 16];
+			Color[] redColors = new Color[16 * 16];
+			Texture2D bluColor = colors[3];
+			Texture2D redColor = colors[1];
+			bluColor.GetData(bluColors);
+			redColor.GetData(redColors);
+
+			pixel = new Texture2D(graphics.GraphicsDevice, width, height);
+
+			int i = 0;
+			int j = 0;
+			for (int y = 0; y < height; y++)
+			{
+				var outLine = String.Empty;
+				for (int x = 0; x < width; x++)
+				{
+					i = j;
+					var text = GetColorAtIndex(texColors, i);
+					if (!colorDict.ContainsKey(text))
+					{
+						colorDict.Add(text, 0);
+					}
+					else
+					{
+						colorDict[text]++;
+					}
+
+					if (text == "000000")
+					{
+						newColors[i] = bluColors[0];
+					}
+					else if (text == "ff0000")
+					{
+						newColors[i] = redColors[0];
+					}
+					j++;
+				}
+			}
+
+			pixel.SetData<Color>(newColors);
+
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
 			width = pp.BackBufferWidth;
 			height = pp.BackBufferHeight;
 			//renderTarget = new RenderTarget2D(GraphicsDevice, width, height, 1, GraphicsDevice.DisplayMode.Format);
 			renderTarget = new RenderTarget2D(GraphicsDevice, width, height, false, SurfaceFormat.Color, DepthFormat.Depth24);
+		}
+
+		private string GetColorAtIndex(Color[] texColors, int index)
+		{
+			var texColor = texColors[index];
+			var bytColor = new byte[3] { texColor.R, texColor.G, texColor.B };
+			var strColor = BitConverter.ToString(bytColor);
+			strColor = strColor.Replace("-", "");
+			strColor = strColor.ToLower();
+			//var valColor = "#" + strColor;
+			//var dictColor = colorDict.FirstOrDefault(x => x.Value == valColor);
+			//return dictColor.Key;
+			return strColor;
 		}
 
 		/// <summary>
@@ -137,7 +203,7 @@ namespace ScreenShotTest
 			graphics.GraphicsDevice.Clear(Color.White);
 
 			spriteBatch.Begin();
-
+			spriteBatch.Draw(pixel, Vector2.Zero, Color.White);
 			spriteBatch.End();
 		}
 
