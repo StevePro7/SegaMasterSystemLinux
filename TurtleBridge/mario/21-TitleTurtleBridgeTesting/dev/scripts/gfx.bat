@@ -11,10 +11,10 @@ bmp2tile.exe raw/D.bmp -savetiles "game_tilesD (tiles).psgcompr" -noremovedupes 
 bmp2tile.exe raw/E.bmp -savetiles "game_tilesE (tiles).psgcompr" -noremovedupes -planar -tileoffset 24  -savetilemap "game_tilesE (tilemap).bin" -savepalette "game_tilesE (palette).bin" -fullpalette -exit
 bmp2tile.exe raw/G.bmp -savetiles "game_tilesG (tiles).psgcompr" -noremovedupes -planar -tileoffset 28  -savetilemap "game_tilesG (tilemap).bin" -savepalette "game_tilesG (palette).bin" -fullpalette -exit
 bmp2tile.exe raw/I.bmp -savetiles "game_tilesI (tiles).psgcompr" -noremovedupes -planar -tileoffset 32  -savetilemap "game_tilesI (tilemap).bin" -savepalette "game_tilesI (palette).bin" -fullpalette -exit
-bmp2tile.exe raw/L.bmp -savetiles "game_tilesL (tiles).psgcompr" -noremovedupes -planar -tileoffset 40  -savetilemap "game_tilesL (tilemap).bin" -savepalette "game_tilesL (palette).bin" -fullpalette -exit
-bmp2tile.exe raw/R.bmp -savetiles "game_tilesR (tiles).psgcompr" -noremovedupes -planar -tileoffset 44  -savetilemap "game_tilesR (tilemap).bin" -savepalette "game_tilesR (palette).bin" -fullpalette -exit
-bmp2tile.exe raw/T.bmp -savetiles "game_tilesT (tiles).psgcompr" -noremovedupes -planar -tileoffset 48  -savetilemap "game_tilesT (tilemap).bin" -savepalette "game_tilesT (palette).bin" -fullpalette -exit
-bmp2tile.exe raw/U.bmp -savetiles "game_tilesU (tiles).psgcompr" -noremovedupes -planar -tileoffset 52  -savetilemap "game_tilesU (tilemap).bin" -savepalette "game_tilesU (palette).bin" -fullpalette -exit
+bmp2tile.exe raw/L.bmp -savetiles "game_tilesL (tiles).psgcompr" -noremovedupes -planar -tileoffset 36  -savetilemap "game_tilesL (tilemap).bin" -savepalette "game_tilesL (palette).bin" -fullpalette -exit
+bmp2tile.exe raw/R.bmp -savetiles "game_tilesR (tiles).psgcompr" -noremovedupes -planar -tileoffset 40  -savetilemap "game_tilesR (tilemap).bin" -savepalette "game_tilesR (palette).bin" -fullpalette -exit
+bmp2tile.exe raw/T.bmp -savetiles "game_tilesT (tiles).psgcompr" -noremovedupes -planar -tileoffset 44  -savetilemap "game_tilesT (tilemap).bin" -savepalette "game_tilesT (palette).bin" -fullpalette -exit
+bmp2tile.exe raw/U.bmp -savetiles "game_tilesU (tiles).psgcompr" -noremovedupes -planar -tileoffset 48  -savetilemap "game_tilesU (tilemap).bin" -savepalette "game_tilesU (palette).bin" -fullpalette -exit
 
 
 cd ..
