@@ -22,8 +22,7 @@ S:G$engine_input_manager_move_right$0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire1$0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire2$0$0({2}DF,SC:U),C,0,0
 S:G$engine_turtle_manager_draw_sea$0$0({2}DF,SV:S),C,0,0
-S:G$engine_turtle_manager_draw_01$0$0({2}DF,SV:S),C,0,0
-S:G$engine_turtle_manager_draw_02$0$0({2}DF,SV:S),C,0,0
+S:G$engine_turtle_manager_draw_title$0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_turtle01$0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_turtle02$0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_turtle03$0$0({2}DF,SV:S),C,0,0
