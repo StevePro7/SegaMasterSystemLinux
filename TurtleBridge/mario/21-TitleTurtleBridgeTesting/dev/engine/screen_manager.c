@@ -9,6 +9,7 @@
 
 void engine_screen_manager_init()
 {
+	engine_turtle_manager_draw_02( 10, 10 );
 	//engine_turtle_manager_draw_sea();
 	//engine_turtle_manager_draw_01( 2, 2 );
 

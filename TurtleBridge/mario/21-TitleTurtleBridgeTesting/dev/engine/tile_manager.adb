@@ -52,8 +52,8 @@ S:Ltile_manager.draw_turtle_method_two$idx$1$98({1}SC:U),R,0,0,[l]
 S:Ltile_manager.draw_turtle_method_two$val$1$98({2}SI:U),R,0,0,[e,d]
 S:Ltile_manager.draw_turtle_method_two$ix$1$98({1}SC:U),B,1,-3
 S:Ltile_manager.draw_turtle_method_two$iy$1$98({1}SC:U),R,0,0,[c]
-S:Ltile_manager.draw_turtle_method_two$sloc0$1$0({1}SC:U),B,1,-2
-S:Ltile_manager.draw_turtle_method_two$sloc1$1$0({1}SC:U),B,1,-1
+S:Ltile_manager.draw_turtle_method_two$sloc0$1$0({1}SC:U),B,1,-1
+S:Ltile_manager.draw_turtle_method_two$sloc1$1$0({1}SC:U),B,1,-2
 S:G$devkit_SMS_init$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOnFeature$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOffFeature$0$0({2}DF,SV:S),C,0,0
