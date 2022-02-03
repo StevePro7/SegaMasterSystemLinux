@@ -18,6 +18,7 @@ namespace ScreenShotTest
 		SpriteBatch spriteBatch;
 		RenderTarget2D renderTarget;
 		Texture2D[] images;
+		Texture2D[] colors;
 		private bool save;
 
 		private int width;
@@ -28,8 +29,8 @@ namespace ScreenShotTest
 		public AnGame()
 		{
 			graphics = new GraphicsDeviceManager(this);
-			graphics.PreferredBackBufferWidth = 128;
-			graphics.PreferredBackBufferHeight = 32;
+			graphics.PreferredBackBufferWidth = 176;
+			graphics.PreferredBackBufferHeight = 88;
 			Content.RootDirectory = "Content";
 		}
 
@@ -46,7 +47,7 @@ namespace ScreenShotTest
 			//{
 			//	save = Convert.ToBoolean(ConfigurationManager.AppSettings["save"]);
 			//}
-			save = true;
+			//save = true;
 			IsMouseVisible = true;
 			base.Initialize();
 		}
@@ -60,16 +61,17 @@ namespace ScreenShotTest
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 
-			images = new Texture2D[9];
-			images[0] = Content.Load<Texture2D>("back_00");
-			images[1] = Content.Load<Texture2D>("face_00");
-			images[2] = Content.Load<Texture2D>("left_01");
-			images[3] = Content.Load<Texture2D>("rght_01");
-			images[4] = Content.Load<Texture2D>("red_wboy01");
-			images[5] = Content.Load<Texture2D>("red_wboy02");
-			images[6] = Content.Load<Texture2D>("red_wboy03");
-			images[7] = Content.Load<Texture2D>("flyingfish01");
-			images[8] = Content.Load<Texture2D>("blue");
+			images = new Texture2D[4];
+			images[0] = Content.Load<Texture2D>("turtlebridge00");
+			images[1] = Content.Load<Texture2D>("turtlebridge01");
+			images[2] = Content.Load<Texture2D>("turtlebridge02");
+			images[3] = Content.Load<Texture2D>("turtlebridge04");
+
+			colors[0] = Content.Load<Texture2D>("00_000000");
+			colors[1] = Content.Load<Texture2D>("02_aa0000");
+			colors[2] = Content.Load<Texture2D>("03_aa0000");
+			colors[3] = Content.Load<Texture2D>("39_55aaff");
+			colors[4] = Content.Load<Texture2D>("3f_ffffff");
 
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
 			width = pp.BackBufferWidth;
@@ -135,20 +137,6 @@ namespace ScreenShotTest
 			graphics.GraphicsDevice.Clear(Color.White);
 
 			spriteBatch.Begin();
-
-			spriteBatch.Draw(images[7], new Vector2(0, 0), Color.White);
-			spriteBatch.Draw(images[1], new Vector2(48, 0), Color.White);
-			spriteBatch.Draw(images[2], new Vector2(64, 0), Color.White);
-			spriteBatch.Draw(images[3], new Vector2(80, 0), Color.White);
-			spriteBatch.Draw(images[4], new Vector2(96, 0), Color.White);
-			spriteBatch.Draw(images[5], new Vector2(112, 0), Color.White);
-
-			spriteBatch.Draw(images[7], new Vector2(0, 16), Color.White);
-			spriteBatch.Draw(images[6], new Vector2(48, 16), Color.White);
-			spriteBatch.Draw(images[5], new Vector2(64, 16), Color.White);
-			spriteBatch.Draw(images[4], new Vector2(80, 16), Color.White);
-			spriteBatch.Draw(images[3], new Vector2(96, 16), Color.White);
-			spriteBatch.Draw(images[8], new Vector2(112, 16), Color.White);
 
 			spriteBatch.End();
 		}
