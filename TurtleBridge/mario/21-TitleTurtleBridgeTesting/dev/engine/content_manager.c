@@ -3,7 +3,7 @@
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
 
-#define GAME_TILES			16
+#define GAME_TILES			32
 
 void engine_content_manager_load_tiles()
 {

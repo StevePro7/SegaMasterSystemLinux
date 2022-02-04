@@ -31,7 +31,7 @@ void engine_turtle_manager_draw_01( unsigned char x, unsigned char y )
 			val = game_tiles__tilemap__bin[ idx ];
 			idx += 2;
 
-			devkit_SMS_loadTileMap( x + ix, y + iy, ( void * ) &pnt[ val ], 2 );
+			//devkit_SMS_loadTileMap( x + ix, y + iy, ( void * ) &pnt[ val ], 2 );
 			//devkit_SMS_setNextTileatXY( x + a, y + b );	
 			//devkit_SMS_setTile( *pnt + idx );
 			//idx++;
@@ -79,10 +79,10 @@ void engine_turtle_manager_draw_02( unsigned char x, unsigned char y )
 	//devkit_SMS_setNextTileatXY( x + 2, y - 1 );	devkit_SMS_setTile( *pnt + 3 );
 	//devkit_SMS_setNextTileatXY( x + 3, y - 1 );	devkit_SMS_setTile( *pnt + 3 );
 
-	devkit_SMS_setNextTileatXY( x + 0, y + 0 );	devkit_SMS_setTile( *pnt + 0 );
-	devkit_SMS_setNextTileatXY( x + 1, y + 0 );	devkit_SMS_setTile( *pnt + 1 );
-	devkit_SMS_setNextTileatXY( x + 2, y + 0 );	devkit_SMS_setTile( *pnt + 2 );
-	devkit_SMS_setNextTileatXY( x + 3, y + 0 );	devkit_SMS_setTile( *pnt + 3 );
+	//devkit_SMS_setNextTileatXY( x + 0, y + 0 );	devkit_SMS_setTile( *pnt + 0 );
+	//devkit_SMS_setNextTileatXY( x + 1, y + 0 );	devkit_SMS_setTile( *pnt + 1 );
+	//devkit_SMS_setNextTileatXY( x + 2, y + 0 );	devkit_SMS_setTile( *pnt + 2 );
+	//devkit_SMS_setNextTileatXY( x + 3, y + 0 );	devkit_SMS_setTile( *pnt + 3 );
 
 	//devkit_SMS_setNextTileatXY( x + 0, y + 1 );	devkit_SMS_setTile( *pnt + 4 );
 	//devkit_SMS_setNextTileatXY( x + 1, y + 1 );	devkit_SMS_setTile( *pnt + 5 );
