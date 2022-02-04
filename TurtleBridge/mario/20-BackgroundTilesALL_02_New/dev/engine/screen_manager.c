@@ -9,11 +9,11 @@
 
 void engine_screen_manager_init()
 {
-	//engine_font_manager_draw_text( "ADRIANA", 2, 2 );
+	engine_font_manager_draw_text( "ADRIANA", 2, 2 );
 
-	engine_turtle_manager_draw_title( 6, 2 );
+	//engine_turtle_manager_draw_title( 6, 2 );
 
-	//engine_tile_manager_turtle01( 5, 5 );
+	engine_tile_manager_turtle01( 5, 15 );
 	//engine_tile_manager_turtle04( 9, 5 );
 
 	//engine_tile_manager_turtle01( 5, 10 );

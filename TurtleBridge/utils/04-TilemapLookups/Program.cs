@@ -15,7 +15,7 @@ namespace AutomateSections
 			tm.Init();
 
 			int x = 0;
-			int y = 4;
+			int y = 7;
 			int w = 4;
 			int h = 3;
 			tm.Extract(x, y, w, h);

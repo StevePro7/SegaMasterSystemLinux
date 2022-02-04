@@ -49,7 +49,7 @@ namespace AutomateSections
 				var texts = line.Split(new char[] { ',' });
 				foreach (var text in texts)
 				{
-					Console.WriteLine(count);
+					//Console.WriteLine(count);
 					count++;
 
 					if (text.Length == 0)

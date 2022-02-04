@@ -10,7 +10,8 @@ static void draw_turtle_method_two( unsigned int *array, unsigned char x, unsign
 void engine_tile_manager_turtle01( unsigned char x, unsigned char y )
 {
 	unsigned int array[ 24 ] = { 128,130,132,0,160,162,164,166,192,194,196,198, };
-	draw_turtle_method_one( array, x, y );
+	//draw_turtle_method_one( array, x, y );
+	draw_turtle_method_two( array, x, y );
 }
 void engine_tile_manager_turtle02( unsigned char x, unsigned char y )
 {
@@ -27,7 +28,6 @@ void engine_tile_manager_turtle04( unsigned char x, unsigned char y )
 	unsigned int array[ 24 ] = { 152,154,156,0,184,186,188,190,216,218,220,222, };
 	draw_turtle_method_one( array, x, y );
 }
-
 
 void engine_tile_manager_turtle05( unsigned char x, unsigned char y )
 {
