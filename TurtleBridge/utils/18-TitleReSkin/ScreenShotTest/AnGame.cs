@@ -20,20 +20,21 @@ namespace ScreenShotTest
 		RenderTarget2D renderTarget;
 		Texture2D[] images;
 		Texture2D[] colors;
-		Texture2D pixel;
+		//Texture2D pixel;
 		private bool save;
 
 		private int width;
 		private int height;
 
+		IDictionary<string, Texture2D> imagetDict = new Dictionary<string, Texture2D>();
 		IDictionary<string, int> colorDict = new Dictionary<string, int>();
 		//private int size = 1;
 
 		public AnGame()
 		{
 			graphics = new GraphicsDeviceManager(this);
-			graphics.PreferredBackBufferWidth = 184;
-			graphics.PreferredBackBufferHeight = 88;
+			graphics.PreferredBackBufferWidth = 96;// 184;
+			graphics.PreferredBackBufferHeight = 32;// 88;
 			Content.RootDirectory = "Content";
 		}
 
@@ -77,54 +78,60 @@ namespace ScreenShotTest
 			colors[3] = Content.Load<Texture2D>("39_55aaff");
 			colors[4] = Content.Load<Texture2D>("3f_ffffff");
 
-			Texture2D image = images[3];
-			width = image.Width;
-			height = image.Height;
+			imagetDict = new Dictionary<string, Texture2D>();
+			imagetDict["B"] = Content.Load<Texture2D>("B"); imagetDict["D"] = Content.Load<Texture2D>("D");
+			imagetDict["E"] = Content.Load<Texture2D>("E"); imagetDict["G"] = Content.Load<Texture2D>("G");
+			imagetDict["I"] = Content.Load<Texture2D>("I"); imagetDict["L"] = Content.Load<Texture2D>("L");
+			imagetDict["R"] = Content.Load<Texture2D>("R"); imagetDict["T"] = Content.Load<Texture2D>("T");
+			imagetDict["U"] = Content.Load<Texture2D>("U");
+			//Texture2D image = images[3];
+			//width = image.Width;
+			//height = image.Height;
 
-			Color[] texColors = new Color[width * height];
-			Color[] newColors = new Color[width * height];
-			image.GetData(texColors);
+			//Color[] texColors = new Color[width * height];
+			//Color[] newColors = new Color[width * height];
+			//image.GetData(texColors);
 
-			Color[] bluColors = new Color[16 * 16];
-			Color[] redColors = new Color[16 * 16];
-			Texture2D bluColor = colors[3];
-			Texture2D redColor = colors[1];
-			bluColor.GetData(bluColors);
-			redColor.GetData(redColors);
+			//Color[] bluColors = new Color[16 * 16];
+			//Color[] redColors = new Color[16 * 16];
+			//Texture2D bluColor = colors[3];
+			//Texture2D redColor = colors[1];
+			//bluColor.GetData(bluColors);
+			//redColor.GetData(redColors);
 
-			pixel = new Texture2D(graphics.GraphicsDevice, width, height);
+			//pixel = new Texture2D(graphics.GraphicsDevice, width, height);
 
-			int i = 0;
-			int j = 0;
-			for (int y = 0; y < height; y++)
-			{
-				var outLine = String.Empty;
-				for (int x = 0; x < width; x++)
-				{
-					i = j;
-					var text = GetColorAtIndex(texColors, i);
-					if (!colorDict.ContainsKey(text))
-					{
-						colorDict.Add(text, 0);
-					}
-					else
-					{
-						colorDict[text]++;
-					}
+			//int i = 0;
+			//int j = 0;
+			//for (int y = 0; y < height; y++)
+			//{
+			//	var outLine = String.Empty;
+			//	for (int x = 0; x < width; x++)
+			//	{
+			//		i = j;
+			//		var text = GetColorAtIndex(texColors, i);
+			//		if (!colorDict.ContainsKey(text))
+			//		{
+			//			colorDict.Add(text, 0);
+			//		}
+			//		else
+			//		{
+			//			colorDict[text]++;
+			//		}
 
-					if (text == "000000")
-					{
-						newColors[i] = bluColors[0];
-					}
-					else if (text == "ff0000")
-					{
-						newColors[i] = redColors[0];
-					}
-					j++;
-				}
-			}
+			//		if (text == "000000")
+			//		{
+			//			newColors[i] = bluColors[0];
+			//		}
+			//		else if (text == "ff0000")
+			//		{
+			//			newColors[i] = redColors[0];
+			//		}
+			//		j++;
+			//	}
+			//}
 
-			pixel.SetData<Color>(newColors);
+			//pixel.SetData<Color>(newColors);
 
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
 			width = pp.BackBufferWidth;
@@ -203,7 +210,19 @@ namespace ScreenShotTest
 			graphics.GraphicsDevice.Clear(Color.White);
 
 			spriteBatch.Begin();
-			spriteBatch.Draw(pixel, Vector2.Zero, Color.White);
+			spriteBatch.Draw(imagetDict["T"], new Vector2(0, 0), Color.White);
+			spriteBatch.Draw(imagetDict["U"], new Vector2(16, 0), Color.White);
+			spriteBatch.Draw(imagetDict["R"], new Vector2(32, 0), Color.White);
+			spriteBatch.Draw(imagetDict["T"], new Vector2(48, 0), Color.White);
+			spriteBatch.Draw(imagetDict["L"], new Vector2(64, 0), Color.White);
+			spriteBatch.Draw(imagetDict["E"], new Vector2(80, 0), Color.White);
+
+			spriteBatch.Draw(imagetDict["B"], new Vector2(0, 16), Color.White);
+			spriteBatch.Draw(imagetDict["R"], new Vector2(16, 16), Color.White);
+			spriteBatch.Draw(imagetDict["I"], new Vector2(32, 16), Color.White);
+			spriteBatch.Draw(imagetDict["D"], new Vector2(48, 16), Color.White);
+			spriteBatch.Draw(imagetDict["G"], new Vector2(64, 16), Color.White);
+			spriteBatch.Draw(imagetDict["E"], new Vector2(80, 16), Color.White);
 			spriteBatch.End();
 		}
 
