@@ -1,89 +1,33 @@
 ;!FILE content_manager.asm
 XL2
-H 9 areas 50 global symbols
+H 9 areas 18 global symbols
 M content_manager
 O -mz80
 S _devkit_SMS_loadBGPalette Ref0000
 S _devkit_SMS_loadPSGaidencompressedTiles Ref0000
-S _game_tilesB__tilemap__bin Ref0000
+S _game_tiles__tilemap__bin Ref0000
+S _game_tiles__palette__bin Ref0000
 S .__.ABS. Def0000
-S _game_tilesU__palette__bin Ref0000
-A _CODE size 76 flags 0 addr 0
-S A$content_manager$120 Def0054
-S A$content_manager$111 Def0048
-S A$content_manager$102 Def003C
-S A$content_manager$130 Def0063
-S A$content_manager$121 Def0057
-S A$content_manager$112 Def004B
-S A$content_manager$103 Def003F
-S A$content_manager$140 Def0070
-S A$content_manager$131 Def0064
-S A$content_manager$122 Def0058
-S A$content_manager$113 Def004C
-S A$content_manager$104 Def0040
-S A$content_manager$141 Def0071
-S A$content_manager$132 Def0067
-S A$content_manager$123 Def005B
-S A$content_manager$114 Def004F
-S A$content_manager$105 Def0043
-S A$content_manager$142 Def0074
-S A$content_manager$133 Def0068
-S A$content_manager$124 Def005C
-S A$content_manager$115 Def0050
-S A$content_manager$106 Def0044
-S A$content_manager$134 Def006B
-S A$content_manager$125 Def005F
-S A$content_manager$116 Def0053
-S A$content_manager$107 Def0047
-S A$content_manager$135 Def006C
-S C$content_manager.c$20$1$65 Def0054
+A _CODE size 16 flags 0 addr 0
 S C$content_manager.c$11$1$65 Def0000
-S C$content_manager.c$21$1$65 Def0060
-S C$content_manager.c$12$1$65 Def000C
-S C$content_manager.c$13$1$65 Def0018
-S A$content_manager$147 Def0075
-S A$content_manager$129 Def0060
-S C$content_manager.c$23$1$65 Def006D
-S A$content_manager$139 Def006D
-S C$content_manager.c$24$1$65 Def0075
-S C$content_manager.c$15$1$65 Def0024
-S C$content_manager.c$16$1$65 Def0030
+S C$content_manager.c$12$1$65 Def000D
+S C$content_manager.c$13$1$65 Def0015
 S G$engine_content_manager_load_tiles$0$0 Def0000
-S C$content_manager.c$17$1$65 Def003C
-S C$content_manager.c$19$1$65 Def0048
 S A$content_manager$60 Def0007
 S A$content_manager$70 Def0014
 S A$content_manager$61 Def0008
-S A$content_manager$80 Def0023
-S A$content_manager$71 Def0017
 S A$content_manager$62 Def000B
+S A$content_manager$63 Def000C
 S _engine_content_manager_load_tiles Def0000
-S A$content_manager$93 Def0030
-S A$content_manager$84 Def0024
-S A$content_manager$75 Def0018
-S A$content_manager$66 Def000C
+S A$content_manager$75 Def0015
 S A$content_manager$57 Def0000
-S A$content_manager$94 Def0033
-S A$content_manager$85 Def0027
-S A$content_manager$76 Def001B
-S A$content_manager$67 Def000F
+S A$content_manager$67 Def000D
 S A$content_manager$58 Def0003
-S A$content_manager$95 Def0034
-S A$content_manager$86 Def0028
-S A$content_manager$77 Def001C
 S A$content_manager$68 Def0010
 S A$content_manager$59 Def0004
-S A$content_manager$96 Def0037
-S A$content_manager$87 Def002B
-S A$content_manager$78 Def001F
-S A$content_manager$69 Def0013
-S A$content_manager$97 Def0038
-S A$content_manager$88 Def002C
-S A$content_manager$79 Def0020
-S A$content_manager$98 Def003B
-S A$content_manager$89 Def002F
+S A$content_manager$69 Def0011
 S C$content_manager.c$8$0$0 Def0000
-S XG$engine_content_manager_load_tiles$0$0 Def0075
+S XG$engine_content_manager_load_tiles$0$0 Def0015
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -94,21 +38,7 @@ A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00
 R 00 00 00 00
-T 00 00 21 10 00 E5 21 00 00 E5 CD 00 00 F1 21
+T 00 00 21 10 00 E5 21 00 00 E5 CD 00 00 F1 F1 01
 R 00 00 00 00 02 07 02 00 02 0B 01 00
-T 0D 00 14 00 E3 21 00 00 E5 CD 00 00 F1 21 18 00
-R 00 00 00 00 02 06 02 00 02 0A 01 00
-T 1B 00 E3 21 00 00 E5 CD 00 00 F1 21 1C 00 E3 21
-R 00 00 00 00 02 04 02 00 02 08 01 00
-T 29 00 00 00 E5 CD 00 00 F1 21 20 00 E3 21 00 00
-R 00 00 00 00 02 02 02 00 02 06 01 00 02 0E 02 00
-T 37 00 E5 CD 00 00 F1 21 24 00 E3 21 00 00 E5 CD
-R 00 00 00 00 02 04 01 00 02 0C 02 00
-T 45 00 00 00 F1 21 28 00 E3 21 00 00 E5 CD 00 00
-R 00 00 00 00 02 02 01 00 02 0A 02 00 02 0E 01 00
-T 53 00 F1 21 2C 00 E3 21 00 00 E5 CD 00 00 F1 21
-R 00 00 00 00 02 08 02 00 02 0C 01 00
-T 61 00 30 00 E3 21 00 00 E5 CD 00 00 F1 F1 01
-R 00 00 00 00 02 06 02 00 02 0A 01 00
-T 6E 00 00 00 C5 CD 00 00 F1 C9
-R 00 00 00 00 02 02 04 00 02 06 00 00
+T 0E 00 00 00 C5 CD 00 00 F1 C9
+R 00 00 00 00 02 02 03 00 02 06 00 00

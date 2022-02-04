@@ -53,7 +53,7 @@ void engine_tile_manager_turtle08( unsigned char x, unsigned char y )
 
 static void draw_turtle_method_one( unsigned int *array, unsigned char x, unsigned char y )
 {
-	const unsigned char *pnt = game_tilesB__tilemap__bin;
+	const unsigned char *pnt = game_tiles__tilemap__bin;
 	unsigned char idx;
 	unsigned int val;
 	unsigned char tmp;
@@ -74,7 +74,7 @@ static void draw_turtle_method_one( unsigned int *array, unsigned char x, unsign
 
 static void draw_turtle_method_two( unsigned int *array, unsigned char x, unsigned char y )
 {
-	const unsigned char *pnt = game_tilesB__tilemap__bin;
+	const unsigned char *pnt = game_tiles__tilemap__bin;
 	unsigned char idx;
 	unsigned int val;
 	unsigned char ix, iy;
