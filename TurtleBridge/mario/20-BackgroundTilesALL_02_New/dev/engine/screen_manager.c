@@ -25,6 +25,8 @@ void engine_screen_manager_init()
 	//engine_tile_manager_turtle06( 15, 18 );
 	//engine_tile_manager_turtle07( 25, 10 );
 	//engine_tile_manager_turtle08( 25, 16 );
+
+	engine_tile_manager_ground( 2, 2 );
 }
 
 void engine_screen_manager_update()
