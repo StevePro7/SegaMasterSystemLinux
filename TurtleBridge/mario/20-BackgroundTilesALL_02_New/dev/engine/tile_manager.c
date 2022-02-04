@@ -5,23 +5,6 @@
 static void draw_turtle_method_one( unsigned int *array, unsigned char x, unsigned char y );
 static void draw_turtle_method_two( unsigned int *array, unsigned char x, unsigned char y );
 
-void engine_tile_manager_ground03( unsigned char x, unsigned char y )
-{
-	const unsigned char *pnt = game_tiles__tilemap__bin;
-	unsigned char idx;
-	unsigned int val;
-	unsigned char ix, iy;
-
-	ix = 0; iy = 0; idx = 0; val = 0;	devkit_SMS_loadTileMap( x + ix, y + iy, ( void * ) &pnt[ val ], 2 );
-	ix = 1; iy = 0; idx = 0; val = 2;	devkit_SMS_loadTileMap( x + ix, y + iy, ( void * ) &pnt[ val ], 2 );
-	
-	ix = 0; iy = 1; idx = 0; val = 10;	devkit_SMS_loadTileMap( x + ix, y + iy, ( void * ) &pnt[ val ], 2 );
-
-	ix = 0; iy = 2; idx = 0; val = 18;	devkit_SMS_loadTileMap( x + ix, y + iy, ( void * ) &pnt[ val ], 2 );
-
-	ix = 0; iy = 3; idx = 0; val = 30;	devkit_SMS_loadTileMap( x + ix, y + iy, ( void * ) &pnt[ val ], 2 );
-}
-
 void engine_tile_manager_ground02( unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = game_tiles__tilemap__bin;
@@ -47,6 +30,23 @@ void engine_tile_manager_ground02( unsigned char x, unsigned char y )
 			devkit_SMS_loadTileMap( x + i, y + j, ( void * ) &pnt[ tmp ], 2 );
 		}
 	}
+}
+
+void engine_tile_manager_ground03( unsigned char x, unsigned char y )
+{
+	const unsigned char *pnt = game_tiles__tilemap__bin;
+	unsigned char idx;
+	unsigned int val;
+	unsigned char ix, iy;
+
+	ix = 0; iy = 0; idx = 0; val = 0;	devkit_SMS_loadTileMap( x + ix, y + iy, ( void * ) &pnt[ val ], 2 );
+	ix = 1; iy = 0; idx = 0; val = 2;	devkit_SMS_loadTileMap( x + ix, y + iy, ( void * ) &pnt[ val ], 2 );
+	
+	ix = 0; iy = 1; idx = 0; val = 10;	devkit_SMS_loadTileMap( x + ix, y + iy, ( void * ) &pnt[ val ], 2 );
+
+	ix = 0; iy = 2; idx = 0; val = 18;	devkit_SMS_loadTileMap( x + ix, y + iy, ( void * ) &pnt[ val ], 2 );
+
+	ix = 0; iy = 3; idx = 0; val = 30;	devkit_SMS_loadTileMap( x + ix, y + iy, ( void * ) &pnt[ val ], 2 );
 }
 
 void engine_tile_manager_ground01( unsigned char x, unsigned char y )
