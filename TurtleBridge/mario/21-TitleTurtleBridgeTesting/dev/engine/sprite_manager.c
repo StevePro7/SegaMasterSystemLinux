@@ -16,27 +16,27 @@ void engine_turtle_manager_draw_sea()
 }
 
 
-void engine_turtle_manager_draw_01( unsigned char x, unsigned char y )
-{
-	const unsigned char *pnt = game_tiles__tilemap__bin;
-	unsigned char ix, iy;
-	unsigned char idx;
-	unsigned int val;
-	idx = 0;
-	for( iy = 0; iy < 11; iy++ )
-	{
-		for( ix = 0; ix < 23; ix++ )
-		{
-			//idx = iy * 4 + ix;
-			val = game_tiles__tilemap__bin[ idx ];
-			idx += 2;
+//void engine_turtle_manager_draw_01( unsigned char x, unsigned char y )
+//{
+	//const unsigned char *pnt = game_tiles__tilemap__bin;
+	//unsigned char ix, iy;
+	//unsigned char idx;
+	//unsigned int val;
+	//idx = 0;
+	//for( iy = 0; iy < 11; iy++ )
+	//{
+	//	for( ix = 0; ix < 23; ix++ )
+	//	{
+	//		idx = iy * 4 + ix;
+	//		val = game_tiles__tilemap__bin[ idx ];
+	//		idx += 2;
 
-			//devkit_SMS_loadTileMap( x + ix, y + iy, ( void * ) &pnt[ val ], 2 );
-			//devkit_SMS_setNextTileatXY( x + a, y + b );	
-			//devkit_SMS_setTile( *pnt + idx );
-			//idx++;
-		}
-	}
+	//		devkit_SMS_loadTileMap( x + ix, y + iy, ( void * ) &pnt[ val ], 2 );
+	//		devkit_SMS_setNextTileatXY( x + a, y + b );	
+	//		devkit_SMS_setTile( *pnt + idx );
+	//		idx++;
+	//	}
+	//}
 
 	//devkit_SMS_setNextTileatXY( x + 0, y - 1 );	devkit_SMS_setTile( *pnt + 3 );
 	//devkit_SMS_setNextTileatXY( x + 1, y - 1 );	devkit_SMS_setTile( *pnt + 3 );
@@ -67,8 +67,7 @@ void engine_turtle_manager_draw_01( unsigned char x, unsigned char y )
 	//devkit_SMS_setNextTileatXY( x + 1, y + 3 );	devkit_SMS_setTile( *pnt + 3 );
 	//devkit_SMS_setNextTileatXY( x + 2, y + 3 );	devkit_SMS_setTile( *pnt + 3 );
 	//devkit_SMS_setNextTileatXY( x + 3, y + 3 );	devkit_SMS_setTile( *pnt + 3 );
-
-}
+//}
 
 void engine_turtle_manager_draw_02( unsigned char x, unsigned char y )
 {
