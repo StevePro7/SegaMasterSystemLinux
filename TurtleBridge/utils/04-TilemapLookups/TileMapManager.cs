@@ -20,8 +20,23 @@ namespace AutomateSections
 
 		public void Extract(int x, int y, int w, int h)
 		{
+			string line = String.Empty;
+			int start = y * 16 + x;
+			for (int b = 0; b < h; b++)
+			{
+				for (int a = 0; a < w; a++)
+				{
+					int index = start + ((b * 16) +  a);
+					int data = outTiles[index];
+					line += data.ToString() + ",";
+				}
+			}
 
+			line = line.Substring(0, line.Length - 1);
+			Console.WriteLine(line);
+			File.WriteAllText("array.txt", line);
 		}
+
 		public void Init()
 		{
 			int count = 1;

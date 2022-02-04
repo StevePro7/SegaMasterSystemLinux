@@ -14,8 +14,8 @@ namespace AutomateSections
 			var tm = new TileMapManager(gm);
 			tm.Init();
 
-			int x = 4;
-			int y = 0;
+			int x = 0;
+			int y = 4;
 			int w = 4;
 			int h = 3;
 			tm.Extract(x, y, w, h);
