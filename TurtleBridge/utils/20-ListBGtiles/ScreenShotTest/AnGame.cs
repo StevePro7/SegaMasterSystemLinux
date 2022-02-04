@@ -29,7 +29,7 @@ namespace ScreenShotTest
 		{
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = 128;
-			graphics.PreferredBackBufferHeight = 296 - 80 - 32;
+			graphics.PreferredBackBufferHeight = 64;// 296;
 			Content.RootDirectory = "Content";
 		}
 
@@ -46,7 +46,7 @@ namespace ScreenShotTest
 			//{
 			//	save = Convert.ToBoolean(ConfigurationManager.AppSettings["save"]);
 			//}
-			save = true;
+			//save = true;
 			IsMouseVisible = true;
 			base.Initialize();
 		}
@@ -151,6 +151,17 @@ namespace ScreenShotTest
 			graphics.GraphicsDevice.Clear(Color.Black);
 
 			spriteBatch.Begin();
+			spriteBatch.Draw(images[4], new Vector2(0, 0), Color.White);
+			spriteBatch.Draw(images[13], new Vector2(0, 32), Color.White);
+			spriteBatch.End();
+		}
+
+		// original layout
+		private void DrawX()
+		{
+			graphics.GraphicsDevice.Clear(Color.Black);
+
+			spriteBatch.Begin();
 
 			int x, y;
 			for (y = 0; y < height / 8; y++)
@@ -161,7 +172,6 @@ namespace ScreenShotTest
 					spriteBatch.Draw(images[15], pos, Color.White);
 				}
 			}
-
 
 			spriteBatch.Draw(images[4], new Vector2(0, 0), Color.White);
 			spriteBatch.Draw(images[15], new Vector2(0, 0), Color.White);

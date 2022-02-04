@@ -18,7 +18,7 @@ namespace ScreenShotTest
 		Dictionary<string, Texture2D> images = new Dictionary<string, Texture2D>();
 		string[] lines;
 
-		private int size = 35;
+		private int size = 19;
 		private bool save;
 
 		private int width = 128;

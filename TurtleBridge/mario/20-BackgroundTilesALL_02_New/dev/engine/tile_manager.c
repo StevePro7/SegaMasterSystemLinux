@@ -5,6 +5,22 @@
 static void draw_turtle_method_one( unsigned int *array, unsigned char x, unsigned char y );
 static void draw_turtle_method_two( unsigned int *array, unsigned char x, unsigned char y );
 
+void engine_tile_manager_cloud01( unsigned char x, unsigned char y )
+{
+	const unsigned char *pnt = game_tiles__tilemap__bin;
+	devkit_SMS_setNextTileatXY( x + 0, y + 0 );	devkit_SMS_setTile( *pnt + 115 );
+	devkit_SMS_setNextTileatXY( x + 1, y + 0 );	devkit_SMS_setTile( *pnt + 116 );
+	devkit_SMS_setNextTileatXY( x + 2, y + 0 );	devkit_SMS_setTile( *pnt + 117 );
+	devkit_SMS_setNextTileatXY( x + 3, y + 0 );	devkit_SMS_setTile( *pnt + 118 );
+
+	//devkit_SMS_setNextTileatXY( x + 0, y + 1 );	devkit_SMS_setTile( *pnt + 131 );
+	devkit_SMS_setNextTileatXY( x + 1, y + 1 );	devkit_SMS_setTile( *pnt + 131 );
+	devkit_SMS_setNextTileatXY( x + 2, y + 1 );	devkit_SMS_setTile( *pnt + 131 );
+	//devkit_SMS_setNextTileatXY( x + 3, y + 1 );	devkit_SMS_setTile( *pnt + 133 );
+	//unsigned int array[ 24 ] = { 320,322,324,326,354,358,358,360,386,388,392,0, };
+	//draw_turtle_method_one( array, x, y );
+	////draw_turtle_method_two( array, x, y );
+}
 
 
 void engine_tile_manager_turtle01( unsigned char x, unsigned char y )
@@ -47,7 +63,8 @@ void engine_tile_manager_turtle07( unsigned char x, unsigned char y )
 void engine_tile_manager_turtle08( unsigned char x, unsigned char y )
 {
 	unsigned int array[ 24 ] = { 128,250,132,0,160,282,164,166,304,306,308,310, };
-	draw_turtle_method_one( array, x, y );
+	//draw_turtle_method_one( array, x, y );
+	draw_turtle_method_two( array, x, y );
 }
 
 

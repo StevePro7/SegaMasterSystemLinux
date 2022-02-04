@@ -15,12 +15,10 @@ namespace AutomateSections
 			tm.Init();
 
 			int x = 0;
-			int y = 7;
+			int y = 10;
 			int w = 4;
 			int h = 3;
 			tm.Extract(x, y, w, h);
-
-			//var cm = new ConvertManager();
 
 			Console.WriteLine("Press [ RETURN ]");
 			Console.Read();
