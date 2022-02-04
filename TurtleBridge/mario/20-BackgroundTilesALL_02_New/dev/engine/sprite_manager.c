@@ -10,7 +10,7 @@ void engine_turtle_manager_draw_sea()
 	{
 		for( x = 0; x < 32; x++ )
 		{
-			devkit_SMS_setNextTileatXY( x + 0, y + 0 );	devkit_SMS_setTile( *pnt + 3 );
+			devkit_SMS_setNextTileatXY( x + 0, y + 0 );	devkit_SMS_setTile( *pnt + 19 );
 		}
 	}
 }

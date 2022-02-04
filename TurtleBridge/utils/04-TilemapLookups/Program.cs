@@ -15,9 +15,9 @@ namespace AutomateSections
 			tm.Init();
 
 			int x = 0;
-			int y = 10;
-			int w = 4;
-			int h = 3;
+			int y = 0;
+			int w = 128/8;
+			int h = 32/8;
 			tm.Extract(x, y, w, h);
 
 			Console.WriteLine("Press [ RETURN ]");

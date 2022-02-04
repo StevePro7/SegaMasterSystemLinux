@@ -33,7 +33,7 @@ namespace AutomateSections
 			}
 
 			int delta = finsh - start;
-			for (int i = start; i < delta; i++)
+			for (int i = start; i < start + delta; i++)
 			{
 				//if (73==delta)
 				//{
@@ -47,7 +47,8 @@ namespace AutomateSections
 					{
 						continue;
 					}
-					if (!Position.ContainsKey(text))
+					var data = text.Trim().Replace("\t", String.Empty);
+					if (!Position.ContainsKey(data))
 					{
 						Position.Add(text, count);
 					}
