@@ -29,7 +29,7 @@ namespace ScreenShotTest
 		{
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = 128;
-			graphics.PreferredBackBufferHeight = 296-80;
+			graphics.PreferredBackBufferHeight = 296 - 80 - 32;
 			Content.RootDirectory = "Content";
 		}
 
@@ -192,7 +192,7 @@ namespace ScreenShotTest
 			spriteBatch.Draw(images[22], new Vector2(104, 80), Color.White);
 
 			spriteBatch.Draw(images[12], new Vector2(0, 104), Color.White);
-			spriteBatch.Draw(images[13], new Vector2(0, 184), Color.White);
+			//spriteBatch.Draw(images[13], new Vector2(0, 184), Color.White);
 			//spriteBatch.Draw(images[14], new Vector2(0, 216), Color.White);
 
 			spriteBatch.End();
