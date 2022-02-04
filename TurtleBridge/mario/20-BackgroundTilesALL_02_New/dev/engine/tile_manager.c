@@ -20,9 +20,9 @@ void engine_tile_manager_ground02( unsigned char x, unsigned char y )
 	unsigned char val;
 	unsigned char tmp;
 	unsigned char i, j;
-	for( j = 0; j < 4; j++ )
+	for( i = 0; i < 16; i++ )
 	{
-		for( i = 0; i < 16; i++ )
+		for( j = 0; j < 4; j++ )
 		{
 			idx = j * 16 + i;
 			val = array[ idx ];
