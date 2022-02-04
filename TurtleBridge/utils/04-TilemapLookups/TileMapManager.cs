@@ -9,13 +9,19 @@ namespace AutomateSections
 	public class TileMapManager
 	{
 		GaphicsManager gm;
+		int[] outTiles;
 
 		public TileMapManager(GaphicsManager gm)
 		{
 			this.gm = gm;
 			OutLines = new List<string>();
+			OutTiles = new List<int>();
 		}
 
+		public void Extract(int x, int y, int w, int h)
+		{
+
+		}
 		public void Init()
 		{
 			int count = 1;
@@ -41,14 +47,22 @@ namespace AutomateSections
 					key = "0x" + key.PadLeft(2, '0');
 
 					int find = gm.Find(key);
+					//if (-1 == find)
+					//{
+					//	int z = 7;
+					//}
 					outLine += find + ",";
+					OutTiles.Add(find);
 				}
 				OutLines.Add(outLine);
 			}
 
 			File.WriteAllLines("stevepro.txt", OutLines.ToArray());
+
+			outTiles = OutTiles.ToArray();
 		}
 
 		public IList<string> OutLines { get; private set; }
+		public IList<int> OutTiles { get; private set; }
 	}
 }

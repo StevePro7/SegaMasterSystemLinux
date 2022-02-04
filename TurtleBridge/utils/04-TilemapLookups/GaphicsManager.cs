@@ -14,8 +14,32 @@ namespace AutomateSections
 
 			var count = 0;
 			var lines = File.ReadAllLines("gfx.c");
-			foreach (var line in lines)
+
+			int start = 0;
+			int finsh = 0;
+			for (int i = 0; i < lines.Length; i++)
 			{
+				var line = lines[i];
+				if (line.Contains("game_tiles__tilemap__bin"))
+				{
+					start = i;
+					start += 1;
+				}
+				if (line.Contains("game_tiles__tiles__psgcompr"))
+				{
+					finsh = i;
+					finsh -= 1;
+				}
+			}
+
+			int delta = finsh - start;
+			for (int i = start; i < delta; i++)
+			{
+				//if (73==delta)
+				//{
+				//	int z = 7;
+				//}
+				var line = lines[i];
 				var texts = line.Split(new char[] { ',' });
 				foreach (var text in texts)
 				{
@@ -34,7 +58,13 @@ namespace AutomateSections
 
 		public int Find(string key)
 		{
-			return Position[key];
+			int value;
+			bool result = Position.TryGetValue(key, out value);
+			if (!result)
+			{
+				value = 0;
+			}
+			return value;
 		}
 
 		public IDictionary<string, int> Position { get; private set; }
