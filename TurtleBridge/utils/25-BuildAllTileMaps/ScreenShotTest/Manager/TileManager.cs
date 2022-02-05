@@ -6,19 +6,48 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-
 namespace ScreenShotTest
 {
 	public class TileManager
 	{
-		public void Initialize()
+		PaletteManager paletteManager;
+		StringBuilder sb;
+		Color[] newColors;
+
+		public void Initialize(PaletteManager paletteManager)
 		{
+			this.paletteManager = paletteManager;
 			TileBank = new List<Tile>();
 			TileDictionary = new Dictionary<string, string>();
+			sb = new StringBuilder();
 		}
 
-		public void Process(SpriteBatch spriteBatch, Texture2D image)
+		public string ProcessTile(Color[] texColors, int inp_start, int inp_delta)
 		{
+			newColors = new Color[8 * 8];
+			sb.Clear();
+
+			int row_index;
+			int tmp_index;
+
+			for (int cy = 0; cy < 8; cy++)
+			{
+				row_index = cy * inp_delta;
+				row_index = inp_start + row_index;
+
+				for (int cx = 0; cx < 8; cx++)
+				{
+					tmp_index = row_index + cx;
+					var texColor = texColors[tmp_index];
+					var text = paletteManager.GetColorAtIndex(texColor);
+					var data = text.Replace("$", "");
+					sb.Append(data);
+					newColors[cy * 8 + cx] = texColors[tmp_index];
+				}
+			}
+
+			string hash = sb.ToString();
+			return hash;
 		}
 
 		public void Save()

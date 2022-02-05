@@ -40,9 +40,9 @@ namespace ScreenShotTest
 		public void Initialize(GraphicsDevice graphicsDevice)
 		{
 			fileManager.Initialize(files);
-			//imageManager.Initialize(graphicsDevice, paletteManager);
+			imageManager.Initialize(paletteManager, tileManager, tilemapManager);
 			paletteManager.Initialize();
-			tileManager.Initialize();
+			tileManager.Initialize(paletteManager);
 		}
 
 		public void LoadContent(ContentManager content)
