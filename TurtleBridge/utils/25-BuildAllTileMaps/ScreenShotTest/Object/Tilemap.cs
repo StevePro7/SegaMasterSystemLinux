@@ -46,7 +46,7 @@ namespace ScreenShotTest
 			Lines.Add(header);
 
 			var code = $"const unsigned char array[] = ";
-			Lines.Add("code");
+			Lines.Add(code);
 			Lines.Add("{");
 			foreach (var data in datas)
 			{

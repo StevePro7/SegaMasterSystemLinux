@@ -16,7 +16,7 @@ static void draw_image( const unsigned char *array, unsigned char x, unsigned ch
 	{
 		for( j = 0; j < h; j++ )
 		{
-			idx = j * 16 + i;
+			idx = j * w + i;
 			val = array[ idx ];
 			tmp = val * 2;
 			devkit_SMS_loadTileMap( x + i, y + j, ( void * ) &pnt[ tmp ], 2 );
@@ -168,18 +168,45 @@ void engine_tile_manager_ground01( unsigned char x, unsigned char y )
 void engine_tile_manager_cloud01( unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = game_tiles__tilemap__bin;
-	devkit_SMS_setNextTileatXY( x + 0, y + 0 );	devkit_SMS_setTile( *pnt + 115 );
-	devkit_SMS_setNextTileatXY( x + 1, y + 0 );	devkit_SMS_setTile( *pnt + 116 );
-	devkit_SMS_setNextTileatXY( x + 2, y + 0 );	devkit_SMS_setTile( *pnt + 117 );
-	devkit_SMS_setNextTileatXY( x + 3, y + 0 );	devkit_SMS_setTile( *pnt + 118 );
+	// cloud01_32x24_array : 4 x 3 = 12
+	const unsigned char array[] =
+	{
+		64,65,66,67,
+		68,69,69,70,
+		71,72,73,74,
+	};
 
-	//devkit_SMS_setNextTileatXY( x + 0, y + 1 );	devkit_SMS_setTile( *pnt + 131 );
-	devkit_SMS_setNextTileatXY( x + 1, y + 1 );	devkit_SMS_setTile( *pnt + 131 );
-	devkit_SMS_setNextTileatXY( x + 2, y + 1 );	devkit_SMS_setTile( *pnt + 131 );
-	//devkit_SMS_setNextTileatXY( x + 3, y + 1 );	devkit_SMS_setTile( *pnt + 133 );
-	//unsigned int array[ 24 ] = { 320,322,324,326,354,358,358,360,386,388,392,0, };
-	//draw_turtle_method_one( array, x, y );
-	////draw_turtle_method_two( array, x, y );
+	unsigned char idx;
+	unsigned char val;
+	unsigned char i, j;
+	unsigned char w, h;
+	w = 4;
+	h = 3;
+	for( j = 0; j < h; j++ )
+	{
+		for( i = 0; i < w; i++ )
+		{
+			idx = j * w + i;
+			val = array[ idx ];
+
+			devkit_SMS_setNextTileatXY( x + i, y + j );
+			devkit_SMS_setTile( *pnt + val );
+		}
+	}
+}
+void engine_tile_manager_cloud02( unsigned char x, unsigned char y )
+{
+	const unsigned char *pnt = game_tiles__tilemap__bin;
+	unsigned char w = 4;
+	unsigned char h = 3;
+	const unsigned char array[] =
+	{
+		64,65,66,67,
+		68,69,69,70,
+		71,72,73,74,
+	};
+
+	draw_image( array, x, y, w, h );
 }
 
 

@@ -28,6 +28,7 @@ S:G$engine_tile_manager_section02$0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_ground01$0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_ground02$0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_cloud01$0$0({2}DF,SV:S),C,0,0
+S:G$engine_tile_manager_cloud02$0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_turtle01$0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_turtle02$0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_turtle03$0$0({2}DF,SV:S),C,0,0
