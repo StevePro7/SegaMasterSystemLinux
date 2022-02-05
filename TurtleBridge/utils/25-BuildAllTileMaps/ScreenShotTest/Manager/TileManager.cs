@@ -13,6 +13,8 @@ namespace ScreenShotTest
 		PaletteManager paletteManager;
 		StringBuilder sb;
 		Color[] newColors;
+		string hash;
+		int counter;
 
 		public void Initialize(PaletteManager paletteManager)
 		{
@@ -20,11 +22,13 @@ namespace ScreenShotTest
 			TileBank = new List<Tile>();
 			TileDictionary = new Dictionary<string, string>();
 			sb = new StringBuilder();
+			counter = 0;
 		}
 
-		public string ProcessTile(Color[] texColors, int inp_start, int inp_delta)
+		public void ProcessTile(Color[] texColors, int inp_start, int inp_delta)
 		{
 			newColors = new Color[8 * 8];
+			hash = String.Empty;
 			sb.Clear();
 
 			int row_index;
@@ -46,8 +50,24 @@ namespace ScreenShotTest
 				}
 			}
 
-			string hash = sb.ToString();
-			return hash;
+			hash = sb.ToString();
+
+			// Check if tile exists.
+			string name;
+			var dictTiles = TileDictionary.FirstOrDefault(x => x.Value == hash);
+			var exists = null != dictTiles.Key;
+			if (exists)
+			{
+				name = dictTiles.Key;
+			}
+			else
+			{
+				name = counter.ToString().PadLeft(3, '0');
+				TileDictionary.Add(name, hash);
+
+				var tile = new Tile(name, hash, newColors);
+				counter++;
+			}
 		}
 
 		public void Save()
