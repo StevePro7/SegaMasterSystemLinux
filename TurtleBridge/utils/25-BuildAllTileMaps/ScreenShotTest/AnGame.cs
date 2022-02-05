@@ -9,7 +9,7 @@ namespace ScreenShotTest
 	/// </summary>
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		string[] files = { "font_tiles", "wave_strip" };
+		string[] files = { "font_tiles", "wonderboy32_02" };
 		//string[] files = { "font_tiles" };
 		//string[] files = { "wave_strip" };
 

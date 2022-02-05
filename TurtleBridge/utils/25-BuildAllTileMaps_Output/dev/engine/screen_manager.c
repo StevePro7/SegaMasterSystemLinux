@@ -9,8 +9,8 @@
 
 void engine_screen_manager_init()
 {
-	engine_turtle_manager_draw_sea();
-	//engine_font_manager_draw_text( "ADRIANA", 2, 2 );
+	//engine_turtle_manager_draw_sea();
+	engine_font_manager_draw_text( "NEW TEST 3", 2, 2 );
 
 	//engine_tile_manager_cloud01( 10, 10 );
 	//engine_turtle_manager_draw_title( 6, 2 );
@@ -26,7 +26,7 @@ void engine_screen_manager_init()
 	//engine_tile_manager_turtle07( 25, 10 );
 	//engine_tile_manager_turtle08( 25, 16 );
 
-	//engine_tile_manager_ground01( 2, 2 );
+	engine_tile_manager_ground01( 5, 5 );
 	engine_tile_manager_ground02( 4, 14 );
 }
 

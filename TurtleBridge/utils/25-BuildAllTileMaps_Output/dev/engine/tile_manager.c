@@ -10,10 +10,10 @@ void engine_tile_manager_ground02( unsigned char x, unsigned char y )
 	const unsigned char *pnt = game_tiles__tilemap__bin;
 	unsigned char array[ 64 ] =
 	{
-		0,1,1,2,1,2,1,2,1,2,1,2,1,3,2,4,
-		5,6,6,7,6,7,6,7,6,7,6,7,6,7,7,8,
-		9,10,11,12,10,13,11,12,10,13,11,12,10,13,12,14,
-		15,16,17,18,15,16,17,18,15,16,17,18,15,16,17,18,
+		64,65,65,66,65,66,65,66,65,66,65,66,65,67,66,68,
+		69,70,70,71,70,71,70,71,70,71,70,71,70,71,71,72,
+		73,74,75,76,74,77,75,76,74,77,75,76,74,77,76,78,
+		79,80,81,82,79,80,81,82,79,80,81,82,79,80,81,82,
 	};
 
 	unsigned char idx;
@@ -52,12 +52,12 @@ void engine_tile_manager_ground03( unsigned char x, unsigned char y )
 void engine_tile_manager_ground01( unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = game_tiles__tilemap__bin;
-	unsigned char array[ 64 ] = 
+	unsigned char array[ 64 ] =
 	{
-		0,1,1,2,1,2,1,2,1,2,1,2,1,3,2,4,
-		5,6,6,7,6,7,6,7,6,7,6,7,6,7,7,8,
-		9,10,11,12,10,13,11,12,10,13,11,12,10,13,12,14,
-		15,16,17,18,15,16,17,18,15,16,17,18,15,16,17,18,
+		64,65,65,66,65,66,65,66,65,66,65,66,65,67,66,68,
+		69,70,70,71,70,71,70,71,70,71,70,71,70,71,71,72,
+		73,74,75,76,74,77,75,76,74,77,75,76,74,77,76,78,
+		79,80,81,82,79,80,81,82,79,80,81,82,79,80,81,82,
 	};
 
 	unsigned char idx;
@@ -72,13 +72,8 @@ void engine_tile_manager_ground01( unsigned char x, unsigned char y )
 
 			devkit_SMS_setNextTileatXY( x + i, y + j );
 			devkit_SMS_setTile( *pnt + val );
-
 		}
 	}
-	//devkit_SMS_setNextTileatXY( x + 0, y + 0 );	devkit_SMS_setTile( *pnt + 115 );
-	//devkit_SMS_setNextTileatXY( x + 1, y + 0 );	devkit_SMS_setTile( *pnt + 116 );
-	//devkit_SMS_setNextTileatXY( x + 2, y + 0 );	devkit_SMS_setTile( *pnt + 117 );
-	//devkit_SMS_setNextTileatXY( x + 3, y + 0 );	devkit_SMS_setTile( *pnt + 118 );
 }
 
 void engine_tile_manager_cloud01( unsigned char x, unsigned char y )
