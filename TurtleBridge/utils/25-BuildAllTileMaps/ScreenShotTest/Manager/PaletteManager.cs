@@ -7,7 +7,7 @@ namespace ScreenShotTest
 {
 	public class PaletteManager
 	{
-		public PaletteManager()
+		public void Initialize()
 		{
 			PaletteDictionary = GetPaletteDictionary();
 		}

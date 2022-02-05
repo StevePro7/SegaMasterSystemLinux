@@ -23,6 +23,10 @@ namespace ScreenShotTest
 		private int width = 8;
 		private int height = 8;
 
+		FileManager fileManager;
+		PaletteManager paletteManager;
+		ImageManager imageManager;
+		//TileManager tileManager;
 		ResourceManager resourceManager;
 		MyController controller;
 
@@ -46,8 +50,19 @@ namespace ScreenShotTest
 			//save = true;
 			IsMouseVisible = true;
 
+			fileManager = new FileManager();
+			imageManager = new ImageManager();
+			paletteManager = new PaletteManager();
 			resourceManager = new ResourceManager();
-			controller = new MyController(resourceManager);
+			
+			controller = new MyController(
+				fileManager,
+				imageManager,
+				paletteManager, 
+				resourceManager
+			);
+			controller.Initialize(files);
+
 			base.Initialize();
 		}
 

@@ -23,7 +23,7 @@ namespace ScreenShotTest
 		Color[] allColors;
 		RenderTarget2D renderTargetSmall, renderTargetLarge;
 
-		public ImageManager(GraphicsDevice graphicsDevice, PaletteManager paletteManager)
+		public void Initialize(GraphicsDevice graphicsDevice, PaletteManager paletteManager)
 		{
 			this.graphicsDevice = graphicsDevice;
 			this.paletteManager = paletteManager;
