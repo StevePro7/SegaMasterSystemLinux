@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
-namespace ScreenShotTest.Object
+namespace ScreenShotTest
 {
 	public struct Tile
 	{
 		public string Name { get; private set; }
-		public int Wide { get; private set; }
-		public int High { get; private set; }
+		public string Hash { get; private set; }
+		public Color[] TexColors { get; private set; }
 	}
 }
