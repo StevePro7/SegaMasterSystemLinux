@@ -43,6 +43,7 @@ namespace ScreenShotTest
 			imageManager.Initialize(paletteManager, tileManager, tilemapManager);
 			paletteManager.Initialize();
 			tileManager.Initialize(paletteManager);
+			tilemapManager.Initialize();
 		}
 
 		public void LoadContent(ContentManager content)
@@ -54,8 +55,7 @@ namespace ScreenShotTest
 		{
 			string file = files[0];
 			Texture2D image = resourceManager.Resources[file];
-			imageManager.Process(spriteBatch, image);
-
+			imageManager.Process(spriteBatch, image, file);
 			//resourceManager.LoadContent(content, files);
 		}
 	}

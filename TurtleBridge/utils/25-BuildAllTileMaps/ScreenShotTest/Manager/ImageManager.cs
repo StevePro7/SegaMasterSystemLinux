@@ -22,27 +22,29 @@ namespace ScreenShotTest
 			this.tilemapManager = tilemapManager;
 		}
 
-		public void Process(SpriteBatch spriteBatch, Texture2D image)
+		public void Process(SpriteBatch spriteBatch, Texture2D image, string file)
 		{
 			int px = image.Width;
 			int py = image.Height;
 
+			
 			var texColors = new Color[px * py];
 			image.GetData(texColors);
 
 			int tx = px / 8;
 			int ty = py / 8;
+			tilemapManager.SetupTilemap(file, tx, ty);
 
 			int inp_delta = px;// tx * 8;
-			for (int iy = 0; iy < ty; iy++)
+			for (int row = 0; row < ty; row++)
 			{
-				for (int ix = 0; ix < tx; ix++)
+				for (int col = 0; col < tx; col++)
 				{
-					int inp_index = (iy * tx) + ix;
+					int inp_index = (row * tx) + col;
 					int inp_start = GetStart(inp_index, tx, ty);
 
 					int key = tileManager.ProcessTile(texColors, inp_start, inp_delta);
-					//tilemapManager.ProcessTilemap(ix, iy, key);
+					tilemapManager.UpdateTilemap(file, col, row, key);
 				}
 			}
 		}

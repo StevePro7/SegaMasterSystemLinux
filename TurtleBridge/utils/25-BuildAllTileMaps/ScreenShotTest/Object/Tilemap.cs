@@ -7,8 +7,16 @@ namespace ScreenShotTest
 {
 	public class Tilemap
 	{
-		public Tilemap(int wide, int high)
+		string name;
+		int wide;
+		int high;
+
+		public Tilemap(string name, int wide, int high)
 		{
+			this.name = name;
+			this.wide = wide;
+			this.high = high;
+
 			Grid = new int[high, wide];
 		}
 
