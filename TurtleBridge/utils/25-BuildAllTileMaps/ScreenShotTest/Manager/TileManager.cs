@@ -105,7 +105,7 @@ namespace ScreenShotTest
 				graphicsDevice.SetRenderTarget(null);
 				Texture2D resolvedTexture = (Texture2D)renderTarget;
 
-				var path = $"{fileMananger.OutputDirectory}/{tile.Name}.png";
+				var path = $"{fileMananger.OutputDirectory}/{fileMananger.TilesDirectory}/{tile.Name}.png";
 				Stream stream = File.Create(path);
 				resolvedTexture.SaveAsPng(stream, 8, 8);
 			}

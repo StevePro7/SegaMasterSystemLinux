@@ -13,30 +13,6 @@ namespace ScreenShotTest
 		{
 			InitPath(outputDirectory);
 			InitPath(outputDirectory + "/" + tilesDirectory);
-			//if (Directory.Exists(OutputDirectory))
-			//{
-			//	DirectoryInfo di = new DirectoryInfo("output");
-			//	foreach (FileInfo fi in di.GetFiles())
-			//	{
-			//		fi.Delete();
-			//	}
-			//}
-			//else
-			//{
-			//	Directory.CreateDirectory(outputDirectory);
-			//}
-			//if (Directory.Exists(outputDirectory + "/" + tilesDirectory))
-			//{
-			//	DirectoryInfo di = new DirectoryInfo("output");
-			//	foreach (FileInfo fi in di.GetFiles())
-			//	{
-			//		fi.Delete();
-			//	}
-			//}
-			//else
-			//{
-			//	Directory.CreateDirectory(OutputDirectory);
-			//}
 		}
 
 		private void InitPath(string path)
@@ -51,7 +27,7 @@ namespace ScreenShotTest
 			}
 			else
 			{
-				Directory.CreateDirectory(outputDirectory);
+				Directory.CreateDirectory(path);
 			}
 		}
 
