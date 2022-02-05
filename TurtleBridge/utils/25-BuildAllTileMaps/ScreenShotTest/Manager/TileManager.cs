@@ -91,8 +91,7 @@ namespace ScreenShotTest
 		public void Save(GraphicsDevice graphicsDevice, SpriteBatch spriteBatch)
 		{
 			Texture2D texture = new Texture2D(graphicsDevice, 8, 8);
-			var tile = TileBank[0];
-			//foreach (var tile in TileBank)
+			foreach (var tile in TileBank)
 			{
 				var texColors = tile.TexColors;
 				texture.SetData(texColors);

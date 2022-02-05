@@ -9,9 +9,9 @@ namespace ScreenShotTest
 	/// </summary>
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		//string[] files = { "font_tiles", "wave_strip" };
+		string[] files = { "font_tiles", "wave_strip" };
 		//string[] files = { "font_tiles" };
-		string[] files = { "wave_strip" };
+		//string[] files = { "wave_strip" };
 
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
