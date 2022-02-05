@@ -112,37 +112,14 @@ namespace ScreenShotTest
 		/// <param name="gameTime">Provides a snapshot of timing values.</param>
 		protected override void Draw(GameTime gameTime)
 		{
-			//if (save)
-			//{
-			//	//GraphicsDevice.SetRenderTarget(0, renderTarget);
-			//	GraphicsDevice.SetRenderTarget(renderTarget);
-			//	GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.CornflowerBlue, 1, 0);
-
-			//	Draw();
-			//	base.Draw(gameTime);
-
-			//	GraphicsDevice.SetRenderTarget(null);
-			//	Texture2D resolvedTexture = (Texture2D)renderTarget;
-			//	Stream stream = File.Create(+ ".png");
-			//	resolvedTexture.SaveAsPng(stream, width, height);
-		
-			//	Exit();
-			//}
-			//else
-			//{
-			//	Draw();
-			//	base.Draw(gameTime);
-			//}
+			Draw();
+			base.Draw(gameTime);
 		}
 
 		private void Draw()
 		{
-			//graphics.GraphicsDevice.Clear(Color.Black);
-
-			//spriteBatch.Begin();
-			//spriteBatch.Draw(images[4], new Vector2(0, 0), Color.White);
-			//spriteBatch.Draw(images[13], new Vector2(0, 32), Color.White);
-			//spriteBatch.End();
+			controller.Draw(spriteBatch);
+		
 		}
 
 		

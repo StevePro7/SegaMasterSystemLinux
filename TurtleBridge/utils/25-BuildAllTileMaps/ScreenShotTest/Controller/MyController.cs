@@ -43,5 +43,10 @@ namespace ScreenShotTest
 		{
 			resourceManager.LoadContent(content, files);
 		}
+
+		public void Draw(SpriteBatch spriteBatch)
+		{
+			resourceManager.LoadContent(content, files);
+		}
 	}
 }
