@@ -4,25 +4,33 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
+using System.IO;
 
 namespace ScreenShotTest
 {
 	public class TileManager
 	{
+		RenderTarget2D renderTarget;
+		FileManager fileMananger;
 		PaletteManager paletteManager;
 		StringBuilder sb;
 		Color[] newColors;
 		string hash;
 		int counter;
 
-		public void Initialize(PaletteManager paletteManager)
+		public void Initialize(FileManager fileMananger, PaletteManager paletteManager)
 		{
+			this.fileMananger = fileMananger;
 			this.paletteManager = paletteManager;
 			TileBank = new List<Tile>();
 			TileDictionary = new Dictionary<int, string>();
 			sb = new StringBuilder();
 			counter = 0;
+		}
+
+		public void LoadContent(GraphicsDevice graphicsDevice)
+		{
+			renderTarget = new RenderTarget2D(graphicsDevice, 8, 8, false, SurfaceFormat.Color, DepthFormat.Depth24);
 		}
 
 		public int Process(Color[] texColors, int inp_start, int inp_delta)
@@ -73,14 +81,42 @@ namespace ScreenShotTest
 
 				var name = key.ToString().PadLeft(3, '0');
 				var tile = new Tile(key, name, hash, newColors);
+				TileBank.Add(tile);
 				counter++;
 			}
 
 			return key;
 		}
 
-		public void Save()
+		public void Save(GraphicsDevice graphicsDevice, SpriteBatch spriteBatch)
 		{
+			Texture2D texture = new Texture2D(graphicsDevice, 8, 8);
+			var tile = TileBank[0];
+			//foreach (var tile in TileBank)
+			{
+				var texColors = tile.TexColors;
+				texture.SetData(texColors);
+
+				graphicsDevice.SetRenderTarget(renderTarget);
+				graphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.CornflowerBlue, 1, 0);
+
+				Draw(graphicsDevice, spriteBatch, texture);
+
+				graphicsDevice.SetRenderTarget(null);
+				Texture2D resolvedTexture = (Texture2D)renderTarget;
+
+				var path = $"{fileMananger.OutputDirectory}/{tile.Name}.png";
+				Stream stream = File.Create(path);
+				resolvedTexture.SaveAsPng(stream, 8, 8);
+			}
+		}
+
+		private void Draw(GraphicsDevice graphicsDevice, SpriteBatch spriteBatch, Texture2D texture)
+		{
+			graphicsDevice.Clear(Color.Black);
+			spriteBatch.Begin();
+			spriteBatch.Draw(texture, Vector2.Zero, Color.White);
+			spriteBatch.End();
 		}
 
 		public List<Tile> TileBank{ get; private set; }

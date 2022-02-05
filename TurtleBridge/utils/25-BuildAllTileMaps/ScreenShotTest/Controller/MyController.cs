@@ -39,19 +39,20 @@ namespace ScreenShotTest
 
 		public void Initialize(GraphicsDevice graphicsDevice)
 		{
-			fileManager.Initialize(files);
+			fileManager.Initialize();
 			imageManager.Initialize(paletteManager, tileManager, tilemapManager);
 			paletteManager.Initialize();
-			tileManager.Initialize(paletteManager);
+			tileManager.Initialize(fileManager, paletteManager);
 			tilemapManager.Initialize(fileManager);
 		}
 
-		public void LoadContent(ContentManager content)
+		public void LoadContent(ContentManager content, GraphicsDevice graphicsDevice)
 		{
 			resourceManager.LoadContent(content, files);
+			tileManager.LoadContent(graphicsDevice);
 		}
 
-		public void Draw(SpriteBatch spriteBatch)
+		public void Draw(GraphicsDevice graphicsDevice, SpriteBatch spriteBatch)
 		{
 			//string file = files[0];
 			foreach (var file in files)
@@ -59,6 +60,8 @@ namespace ScreenShotTest
 				Texture2D image = resourceManager.Resources[file];
 				imageManager.Process(spriteBatch, image, file);
 			}
+
+			tileManager.Save(graphicsDevice, spriteBatch);
 		}
 	}
 }

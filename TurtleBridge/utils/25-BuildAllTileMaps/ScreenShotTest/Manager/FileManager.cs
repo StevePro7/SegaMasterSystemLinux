@@ -6,33 +6,53 @@ namespace ScreenShotTest
 {
 	public class FileManager
 	{
-		private const string OutputDirectory = "output";
+		private const string outputDirectory = "output";
+		private const string tilesDirectory = "tiles";
 
-		public void Initialize(string[] files)
+		public void Initialize()
 		{
-			if (Directory.Exists(OutputDirectory))
+			InitPath(outputDirectory);
+			InitPath(outputDirectory + "/" + tilesDirectory);
+			//if (Directory.Exists(OutputDirectory))
+			//{
+			//	DirectoryInfo di = new DirectoryInfo("output");
+			//	foreach (FileInfo fi in di.GetFiles())
+			//	{
+			//		fi.Delete();
+			//	}
+			//}
+			//else
+			//{
+			//	Directory.CreateDirectory(outputDirectory);
+			//}
+			//if (Directory.Exists(outputDirectory + "/" + tilesDirectory))
+			//{
+			//	DirectoryInfo di = new DirectoryInfo("output");
+			//	foreach (FileInfo fi in di.GetFiles())
+			//	{
+			//		fi.Delete();
+			//	}
+			//}
+			//else
+			//{
+			//	Directory.CreateDirectory(OutputDirectory);
+			//}
+		}
+
+		private void InitPath(string path)
+		{
+			if (Directory.Exists(path))
 			{
-				DirectoryInfo di = new DirectoryInfo("output");
+				DirectoryInfo di = new DirectoryInfo(path);
 				foreach (FileInfo fi in di.GetFiles())
 				{
 					fi.Delete();
 				}
-
-				//Directory.Delete(OutputDirectory);
 			}
 			else
 			{
-				Directory.CreateDirectory(OutputDirectory);
+				Directory.CreateDirectory(outputDirectory);
 			}
-
-			//foreach(var file in files)
-			//{
-			//	var directory = $"{OutputDirectory}_file";
-			//	if (Directory.Exists(directory))
-			//	{
-			//		Directory.Delete(directory);
-			//	}
-			//}
 		}
 
 		public void SaveTilemap(IList<string> lines, string file)
@@ -41,5 +61,8 @@ namespace ScreenShotTest
 			var content = lines.ToArray();
 			File.WriteAllLines(path, content);
 		}
+
+		public string OutputDirectory { get { return outputDirectory; } }
+		public string TilesDirectory { get { return tilesDirectory; } }
 	}
 }

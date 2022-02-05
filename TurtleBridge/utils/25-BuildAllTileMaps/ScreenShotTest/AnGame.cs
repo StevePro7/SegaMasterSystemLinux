@@ -9,9 +9,9 @@ namespace ScreenShotTest
 	/// </summary>
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		string[] files = { "font_tiles", "wave_strip" };
+		//string[] files = { "font_tiles", "wave_strip" };
 		//string[] files = { "font_tiles" };
-		//string[] files = { "wave_strip" };
+		string[] files = { "wave_strip" };
 
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
@@ -78,7 +78,7 @@ namespace ScreenShotTest
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 
-			controller.LoadContent(Content);
+			controller.LoadContent(Content, GraphicsDevice);
 
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
 			width = pp.BackBufferWidth;
@@ -123,7 +123,7 @@ namespace ScreenShotTest
 
 		private void Draw()
 		{
-			controller.Draw(spriteBatch);
+			controller.Draw(GraphicsDevice, spriteBatch);
 		}
 
 	}
