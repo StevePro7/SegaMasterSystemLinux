@@ -43,19 +43,12 @@ namespace ScreenShotTest
 				datas[row] = line;
 			}
 
-			string header = $"// {file}_array : {wide} x {high}";
+			var total = wide * high;
+			string header = $"// {file}_array : {wide} x {high} = {total}";
 			Lines.Add(header);
 
-			//string footer = String.Empty;
-			//foreach (var data in datas)
-			//{
-			//	footer += data;
-			//}
-			//Lines.Add(footer);
-
-			//Lines.Add(String.Empty);
-			//Lines.Add(String.Empty);
-			Lines.Add("array =");
+			var code = $"unsigned char array[ {total} ] = ";
+			Lines.Add("code");
 			Lines.Add("{");
 			foreach (var data in datas)
 			{
