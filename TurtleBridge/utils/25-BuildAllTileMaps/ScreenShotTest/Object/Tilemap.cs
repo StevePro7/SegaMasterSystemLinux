@@ -28,6 +28,9 @@ namespace ScreenShotTest
 
 		public void Save()
 		{
+			var datas = new string[high];
+
+			Lines.Clear();
 			for (int row = 0; row < high; row++)
 			{
 				string line = String.Empty;
@@ -37,8 +40,28 @@ namespace ScreenShotTest
 					line += key + ",";
 				}
 
-				Lines.Add(line);
+				datas[row] = line;
 			}
+
+			string header = $"// {file}_array : {wide} x {high}";
+			Lines.Add(header);
+
+			//string footer = String.Empty;
+			//foreach (var data in datas)
+			//{
+			//	footer += data;
+			//}
+			//Lines.Add(footer);
+
+			//Lines.Add(String.Empty);
+			//Lines.Add(String.Empty);
+			Lines.Add("array =");
+			Lines.Add("{");
+			foreach (var data in datas)
+			{
+				Lines.Add("	" + data);
+			}
+			Lines.Add("};");
 		}
 
 		public int[,] Grid { get; private set; }

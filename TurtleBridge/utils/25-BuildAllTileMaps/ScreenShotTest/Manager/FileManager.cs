@@ -15,14 +15,16 @@ namespace ScreenShotTest
 				Directory.Delete(OutputDirectory);
 			}
 
-			foreach(var file in files)
-			{
-				var directory = $"{OutputDirectory}_file";
-				if (Directory.Exists(directory))
-				{
-					Directory.Delete(directory);
-				}
-			}
+			//foreach(var file in files)
+			//{
+			//	var directory = $"{OutputDirectory}_file";
+			//	if (Directory.Exists(directory))
+			//	{
+			//		Directory.Delete(directory);
+			//	}
+			//}
+
+			Directory.CreateDirectory(OutputDirectory);
 		}
 
 		public void SaveTilemap(IList<string> lines, string file)
