@@ -27,13 +27,12 @@ namespace ScreenShotTest
 			int px = image.Width;
 			int py = image.Height;
 
-			
 			var texColors = new Color[px * py];
 			image.GetData(texColors);
 
 			int tx = px / 8;
 			int ty = py / 8;
-			tilemapManager.SetupTilemap(file, tx, ty);
+			tilemapManager.Setup(file, tx, ty);
 
 			int inp_delta = px;// tx * 8;
 			for (int row = 0; row < ty; row++)
@@ -43,13 +42,13 @@ namespace ScreenShotTest
 					int inp_index = (row * tx) + col;
 					int inp_start = GetStart(inp_index, tx, ty);
 
-					int key = tileManager.ProcessTile(texColors, inp_start, inp_delta);
-					tilemapManager.UpdateTilemap(file, col, row, key);
+					int key = tileManager.Process(texColors, inp_start, inp_delta);
+					tilemapManager.Update(file, col, row, key);
 				}
 			}
-		}
 
-		
+			tilemapManager.Save(file);
+		}
 
 		private int GetStart(int index, int tx, int yy)
 		{

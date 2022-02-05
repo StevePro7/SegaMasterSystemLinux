@@ -25,7 +25,7 @@ namespace ScreenShotTest
 			counter = 0;
 		}
 
-		public int ProcessTile(Color[] texColors, int inp_start, int inp_delta)
+		public int Process(Color[] texColors, int inp_start, int inp_delta)
 		{
 			int key = 0;
 
@@ -81,7 +81,6 @@ namespace ScreenShotTest
 
 		public void Save()
 		{
-
 		}
 
 		public List<Tile> TileBank{ get; private set; }
