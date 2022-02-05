@@ -113,6 +113,8 @@ namespace ScreenShotTest
 				Texture2D resolvedTexture = (Texture2D)renderTarget;
 				Stream stream = File.Create("game_tiles_org.png");
 				resolvedTexture.SaveAsPng(stream, width, height);
+				Stream stream2 = File.Create("game_tiles.png");
+				resolvedTexture.SaveAsPng(stream2, width, height);
 
 				Exit();
 			}
