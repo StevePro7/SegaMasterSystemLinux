@@ -9,7 +9,7 @@ namespace ScreenShotTest
 	/// </summary>
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		string[] files = { "font_tiles", "wonderboy32_01", "wonderboy32_02" };
+		//string[] files = { "font_tiles", "wonderboy32_01", "wonderboy32_02" };
 		//string[] files = { "font_tiles" };
 		//string[] files = { "wave_strip" };
 
@@ -20,6 +20,7 @@ namespace ScreenShotTest
 		private int width = 8;
 		private int height = 8;
 
+		ConfigurationManager configurationManager;
 		FileManager fileManager;
 		PaletteManager paletteManager;
 		ImageManager imageManager;
@@ -48,6 +49,7 @@ namespace ScreenShotTest
 			//save = true;
 			IsMouseVisible = true;
 
+			configurationManager = new ConfigurationManager();
 			fileManager = new FileManager();
 			imageManager = new ImageManager();
 			paletteManager = new PaletteManager();
@@ -56,13 +58,13 @@ namespace ScreenShotTest
 			tilemapManager = new TilemapManager();
 
 			controller = new MyController(
+				configurationManager,
 				fileManager,
 				imageManager,
 				paletteManager, 
 				resourceManager,
 				tileManager,
-				tilemapManager,
-				files
+				tilemapManager
 			);
 
 			controller.Initialize(GraphicsDevice);

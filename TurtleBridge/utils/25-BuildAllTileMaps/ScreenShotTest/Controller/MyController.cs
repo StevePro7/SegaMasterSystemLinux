@@ -5,6 +5,7 @@ namespace ScreenShotTest
 {
 	public class MyController
 	{
+		ConfigurationManager configurationManager;
 		FileManager fileManager;
 		PaletteManager paletteManager;
 		ImageManager imageManager;
@@ -14,31 +15,34 @@ namespace ScreenShotTest
 		string[] files;
 
 		public MyController(
+			ConfigurationManager configurationManager,
 			FileManager fileManager,
 			ImageManager imageManager,
 			PaletteManager paletteManager, 
 			ResourceManager resourceManager,
 			TileManager tileManager,
-			TilemapManager tilemapManager,
-			string[] files
+			TilemapManager tilemapManager
 			)
 		{
+			this.configurationManager = configurationManager;
 			this.fileManager = fileManager;
 			this.imageManager = imageManager;
 			this.paletteManager = paletteManager;
 			this.resourceManager = resourceManager;
 			this.tileManager = tileManager;
 			this.tilemapManager = tilemapManager;
-			this.files = files;
+			
 		}
 
 		public void Initialize(GraphicsDevice graphicsDevice)
 		{
+			configurationManager.Initialize();
 			fileManager.Initialize();
 			imageManager.Initialize(paletteManager, tileManager, tilemapManager);
 			paletteManager.Initialize();
 			tileManager.Initialize(fileManager, paletteManager);
 			tilemapManager.Initialize(fileManager);
+			files = configurationManager.Files;
 		}
 
 		public void LoadContent(ContentManager content, GraphicsDevice graphicsDevice)
