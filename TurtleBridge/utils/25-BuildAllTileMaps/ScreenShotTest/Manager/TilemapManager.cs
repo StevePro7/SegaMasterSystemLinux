@@ -8,5 +8,6 @@ namespace ScreenShotTest
 {
 	public class TilemapManager
 	{
+		public List<Tilemap> TilemapList { get; private set; }
 	}
 }

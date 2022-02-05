@@ -41,7 +41,8 @@ namespace ScreenShotTest
 					int inp_index = (iy * tx) + ix;
 					int inp_start = GetStart(inp_index, tx, ty);
 
-					tileManager.ProcessTile(texColors, inp_start, inp_delta);
+					int key = tileManager.ProcessTile(texColors, inp_start, inp_delta);
+					//tilemapManager.ProcessTilemap(ix, iy, key);
 				}
 			}
 		}

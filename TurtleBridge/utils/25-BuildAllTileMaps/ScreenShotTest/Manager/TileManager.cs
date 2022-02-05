@@ -20,13 +20,15 @@ namespace ScreenShotTest
 		{
 			this.paletteManager = paletteManager;
 			TileBank = new List<Tile>();
-			TileDictionary = new Dictionary<string, string>();
+			TileDictionary = new Dictionary<int, string>();
 			sb = new StringBuilder();
 			counter = 0;
 		}
 
-		public void ProcessTile(Color[] texColors, int inp_start, int inp_delta)
+		public int ProcessTile(Color[] texColors, int inp_start, int inp_delta)
 		{
+			int key = 0;
+
 			newColors = new Color[8 * 8];
 			hash = String.Empty;
 			sb.Clear();
@@ -53,21 +55,28 @@ namespace ScreenShotTest
 			hash = sb.ToString();
 
 			// Check if tile exists.
-			string name;
+			bool exists = false;
 			var dictTiles = TileDictionary.FirstOrDefault(x => x.Value == hash);
-			var exists = null != dictTiles.Key;
+			if (TileDictionary.Keys.Count != 0)
+			{
+				exists = null != dictTiles.Value;
+			}
+
 			if (exists)
 			{
-				name = dictTiles.Key;
+				key = dictTiles.Key;
 			}
 			else
 			{
-				name = counter.ToString().PadLeft(3, '0');
-				TileDictionary.Add(name, hash);
+				key = counter;
+				TileDictionary.Add(key, hash);
 
-				var tile = new Tile(name, hash, newColors);
+				var name = key.ToString().PadLeft(3, '0');
+				var tile = new Tile(key, name, hash, newColors);
 				counter++;
 			}
+
+			return key;
 		}
 
 		public void Save()
@@ -76,6 +85,6 @@ namespace ScreenShotTest
 		}
 
 		public List<Tile> TileBank{ get; private set; }
-		public Dictionary<string, string> TileDictionary{ get; private set; }
+		public Dictionary<int, string> TileDictionary{ get; private set; }
 	}
 }
