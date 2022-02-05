@@ -197,13 +197,13 @@ void engine_tile_manager_cloud01( unsigned char x, unsigned char y )
 void engine_tile_manager_cloud02( unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = game_tiles__tilemap__bin;
-	unsigned char w = 4;
+	unsigned char w = 6;
 	unsigned char h = 3;
 	const unsigned char array[] =
 	{
-		64,65,66,67,
-		68,69,69,70,
-		71,72,73,74,
+		75,76,77,78,79,80,
+		81,69,69,69,82,83,
+		84,85,86,87,88,89,
 	};
 
 	draw_image( array, x, y, w, h );

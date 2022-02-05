@@ -2,8 +2,8 @@ extern const unsigned char	game_tiles__palette__bin[];
 #define				game_tiles__palette__bin_size 16
 
 extern const unsigned char	game_tiles__tilemap__bin[];
-#define				game_tiles__tilemap__bin_size 160
+#define				game_tiles__tilemap__bin_size 192
 
 extern const unsigned char	game_tiles__tiles__psgcompr[];
-#define				game_tiles__tiles__psgcompr_size 631
+#define				game_tiles__tiles__psgcompr_size 756
 
