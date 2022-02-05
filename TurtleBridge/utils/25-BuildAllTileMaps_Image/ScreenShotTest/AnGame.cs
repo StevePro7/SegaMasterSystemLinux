@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Collections.Generic;
 
 namespace ScreenShotTest
 {
@@ -9,27 +10,23 @@ namespace ScreenShotTest
 	/// </summary>
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		string[] files = { "font_tiles", "wave_strip" };
-		//string[] files = { "font_tiles" };
-		//string[] files = { "wave_strip" };
-
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
 		//RenderTarget2D renderTarget;
 
-		private int width = 8;
-		private int height = 8;
-
-		FileManager fileManager;
-		PaletteManager paletteManager;
-		ImageManager imageManager;
-		ResourceManager resourceManager;
-		TileManager tileManager;
-		TilemapManager tilemapManager;
-		MyController controller;
+		private IDictionary<string, Texture2D> dictionary;
+		private int width;
+		private int height;
+		private int length;
 
 		public AnGame()
 		{
+			var files = System.IO.Directory.GetFiles("Content/tiles", "*", System.IO.SearchOption.TopDirectoryOnly);
+			length = files.Length;
+
+			width = 128;
+			height = ((length / 16) + 1) * 8;
+
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = width;
 			graphics.PreferredBackBufferHeight = height;
@@ -47,25 +44,6 @@ namespace ScreenShotTest
 			//save = false;
 			//save = true;
 			IsMouseVisible = true;
-
-			fileManager = new FileManager();
-			imageManager = new ImageManager();
-			paletteManager = new PaletteManager();
-			resourceManager = new ResourceManager();
-			tileManager = new TileManager();
-			tilemapManager = new TilemapManager();
-
-			controller = new MyController(
-				fileManager,
-				imageManager,
-				paletteManager, 
-				resourceManager,
-				tileManager,
-				tilemapManager,
-				files
-			);
-
-			controller.Initialize(GraphicsDevice);
 			base.Initialize();
 		}
 
@@ -78,7 +56,12 @@ namespace ScreenShotTest
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 
-			controller.LoadContent(Content, GraphicsDevice);
+			dictionary = new Dictionary<string, Texture2D>();
+			for (int i = 0; i < length; i++)
+			{
+				var file = i.ToString().PadLeft(3, '0');
+				dictionary[file] = Content.Load<Texture2D>("tiles/" + file);
+			}
 
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
 			width = pp.BackBufferWidth;
@@ -118,12 +101,33 @@ namespace ScreenShotTest
 		{
 			Draw();
 			base.Draw(gameTime);
-			Exit();
 		}
 
 		private void Draw()
 		{
-			controller.Draw(GraphicsDevice, spriteBatch);
+			graphics.GraphicsDevice.Clear(Color.Black);
+			spriteBatch.Begin();
+			int index = 0;
+			for (int row = 0; row < height; row++)
+			{
+				for (int col = 0; col < 16; col++)
+				{
+					if (index >= length)
+					{
+						continue;
+					}
+
+					Vector2 pos = new Vector2(col * 8, row * 8);
+
+					string file = index.ToString().PadLeft(3, '0');
+					Texture2D image = dictionary[file];
+
+					spriteBatch.Draw(image, pos, Color.White);
+					index++;
+				}
+			}
+
+			spriteBatch.End();
 		}
 
 	}
