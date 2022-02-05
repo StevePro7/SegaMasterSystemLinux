@@ -16,9 +16,7 @@ namespace ScreenShotTest
 
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
-		RenderTarget2D renderTarget;
-		//Texture2D[] images;
-		//private bool save;
+		//RenderTarget2D renderTarget;
 
 		private int width = 8;
 		private int height = 8;
@@ -33,8 +31,8 @@ namespace ScreenShotTest
 		public AnGame()
 		{
 			graphics = new GraphicsDeviceManager(this);
-			graphics.PreferredBackBufferWidth = 128;
-			graphics.PreferredBackBufferHeight = 64;// 296;
+			graphics.PreferredBackBufferWidth = width;
+			graphics.PreferredBackBufferHeight = height;
 			Content.RootDirectory = "Content";
 		}
 
@@ -59,10 +57,11 @@ namespace ScreenShotTest
 				fileManager,
 				imageManager,
 				paletteManager, 
-				resourceManager
+				resourceManager,
+				files
 			);
-			controller.Initialize(files);
 
+			controller.Initialize(GraphicsDevice);
 			base.Initialize();
 		}
 
@@ -75,13 +74,13 @@ namespace ScreenShotTest
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 
-			controller.LoadContent(Content, files);
+			controller.LoadContent(Content);
 
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
 			width = pp.BackBufferWidth;
 			height = pp.BackBufferHeight;
 			//renderTarget = new RenderTarget2D(GraphicsDevice, width, height, 1, GraphicsDevice.DisplayMode.Format);
-			renderTarget = new RenderTarget2D(GraphicsDevice, width, height, false, SurfaceFormat.Color, DepthFormat.Depth24);
+			//renderTarget = new RenderTarget2D(GraphicsDevice, width, height, false, SurfaceFormat.Color, DepthFormat.Depth24);
 		}
 
 		/// <summary>

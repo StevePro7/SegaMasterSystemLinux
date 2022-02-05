@@ -15,27 +15,31 @@ namespace ScreenShotTest
 		ImageManager imageManager;
 		//TileManager tileManager;
 		ResourceManager resourceManager;
+		string[] files;
 
 		public MyController(
 			FileManager fileManager,
 			ImageManager imageManager,
 			PaletteManager paletteManager, 
-			ResourceManager resourceManager
+			ResourceManager resourceManager,
+			string[] files
 			)
 		{
 			this.fileManager = fileManager;
 			this.imageManager = imageManager;
 			this.paletteManager = paletteManager;
 			this.resourceManager = resourceManager;
+			this.files = files;
 		}
 
-		public void Initialize(string[] files)
+		public void Initialize(GraphicsDevice graphicsDevice)
 		{
 			fileManager.Initialize(files);
+			imageManager.Initialize(graphicsDevice, paletteManager);
 			paletteManager.Initialize();
 		}
 
-		public void LoadContent(ContentManager content, string[] files)
+		public void LoadContent(ContentManager content)
 		{
 			resourceManager.LoadContent(content, files);
 		}
