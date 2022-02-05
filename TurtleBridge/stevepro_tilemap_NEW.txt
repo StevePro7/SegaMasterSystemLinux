@@ -1,0 +1,66 @@
+stevepro tileamp new
+05/01/2022
+
+Content
+E:\GitHub\StevePro8\SegaMasterSystemLinux\TurtleBridge\utils\01-Textures_Import\ScreenShotTest\Content
+
+E:\GitHub\StevePro8\SegaMasterSystemLinux\TurtleBridge\utils\20-ListBGtiles\ScreenShotTest\Content
+
+
+
+Testing
+E:\GitHub\StevePro8\SegaMasterSystemLinux\TurtleBridge\mario\20-BackgroundTilesALL_02_New\dev
+
+
+METHOD
+array of image files to process
+
+load each image
+extract info:
+- name
+- wide
+- high
+
+set start counter
+
+iterate over image w x h
+extract each 8x8 px tile
+determine if in image dict
+if not then save image 
+get tilemap idx
+update tilemap for image
+
+set finsh counter
+save image tileMap
+file output above
+save overall tileMap array
+
+
+
+
+images = new Texture2D[23];
+			images[0] = Content.Load<Texture2D>("cloud01_32x24");
+			images[1] = Content.Load<Texture2D>("cloud02_48x24");
+			images[2] = Content.Load<Texture2D>("flying_turtle01_32x24");
+			images[3] = Content.Load<Texture2D>("flying_turtle02_32x24");
+			images[4] = Content.Load<Texture2D>("font_tiles");
+			images[5] = Content.Load<Texture2D>("sea_turtleAA01_32x24");
+			images[6] = Content.Load<Texture2D>("sea_turtleAA02_32x24");
+			images[7] = Content.Load<Texture2D>("sea_turtleAA03_32x24");
+			images[8] = Content.Load<Texture2D>("sea_turtleBB01_32x24");
+			images[9] = Content.Load<Texture2D>("sea_turtleBB02_32x24");
+			images[10] = Content.Load<Texture2D>("sea_turtleBB03_32x24");
+			images[11] = Content.Load<Texture2D>("wave_strip");
+			images[12] = Content.Load<Texture2D>("wonderboy32_01");
+			images[13] = Content.Load<Texture2D>("wonderboy32_02");
+			images[14] = Content.Load<Texture2D>("wonderboy32_03");
+
+			images[15] = Content.Load<Texture2D>("39");
+			images[16] = Content.Load<Texture2D>("23");
+			images[17] = Content.Load<Texture2D>("84");
+			images[18] = Content.Load<Texture2D>("86");
+			images[19] = Content.Load<Texture2D>("87");
+			images[20] = Content.Load<Texture2D>("98");
+
+			images[21] = Content.Load<Texture2D>("goal_sign");
+			images[22] = Content.Load<Texture2D>("sign02");
