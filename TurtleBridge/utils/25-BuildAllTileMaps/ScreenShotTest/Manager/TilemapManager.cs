@@ -7,8 +7,11 @@ namespace ScreenShotTest
 {
 	public class TilemapManager
 	{
-		public void Initialize()
+		FileManager fileManager;
+
+		public void Initialize(FileManager fileManager)
 		{
+			this.fileManager = fileManager;
 			TilemapList = new Dictionary<string, Tilemap>();
 		}
 
@@ -28,6 +31,9 @@ namespace ScreenShotTest
 		{
 			Tilemap tilemap = TilemapList[file];
 			tilemap.Save();
+
+			IList<string> lines = tilemap.Lines;
+			fileManager.SaveTilemap(lines, file);
 		}
 
 		public Dictionary<string, Tilemap> TilemapList { get; private set; }

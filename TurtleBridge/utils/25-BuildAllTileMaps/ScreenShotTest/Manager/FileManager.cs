@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 namespace ScreenShotTest
 {
@@ -21,7 +23,13 @@ namespace ScreenShotTest
 					Directory.Delete(directory);
 				}
 			}
+		}
 
+		public void SaveTilemap(IList<string> lines, string file)
+		{
+			var path = $"{OutputDirectory}/{file}.txt";
+			var content = lines.ToArray();
+			File.WriteAllLines(path, content);
 		}
 	}
 }
