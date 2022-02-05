@@ -24,8 +24,9 @@ namespace ScreenShotTest
 		FileManager fileManager;
 		PaletteManager paletteManager;
 		ImageManager imageManager;
-		//TileManager tileManager;
 		ResourceManager resourceManager;
+		TileManager tileManager;
+		TilemapManager tilemapManager;
 		MyController controller;
 
 		public AnGame()
@@ -52,12 +53,16 @@ namespace ScreenShotTest
 			imageManager = new ImageManager();
 			paletteManager = new PaletteManager();
 			resourceManager = new ResourceManager();
-			
+			tileManager = new TileManager();
+			tilemapManager = new TilemapManager();
+
 			controller = new MyController(
 				fileManager,
 				imageManager,
 				paletteManager, 
 				resourceManager,
+				tileManager,
+				tilemapManager,
 				files
 			);
 

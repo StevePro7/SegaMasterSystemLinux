@@ -13,8 +13,9 @@ namespace ScreenShotTest
 		FileManager fileManager;
 		PaletteManager paletteManager;
 		ImageManager imageManager;
-		//TileManager tileManager;
 		ResourceManager resourceManager;
+		TileManager tileManager;
+		TilemapManager tilemapManager;
 		string[] files;
 
 		public MyController(
@@ -22,6 +23,8 @@ namespace ScreenShotTest
 			ImageManager imageManager,
 			PaletteManager paletteManager, 
 			ResourceManager resourceManager,
+			TileManager tileManager,
+			TilemapManager tilemapManager,
 			string[] files
 			)
 		{
@@ -29,13 +32,15 @@ namespace ScreenShotTest
 			this.imageManager = imageManager;
 			this.paletteManager = paletteManager;
 			this.resourceManager = resourceManager;
+			this.tileManager = tileManager;
+			this.tilemapManager = tilemapManager;
 			this.files = files;
 		}
 
 		public void Initialize(GraphicsDevice graphicsDevice)
 		{
 			fileManager.Initialize(files);
-			imageManager.Initialize(graphicsDevice, paletteManager);
+			//imageManager.Initialize(graphicsDevice, paletteManager);
 			paletteManager.Initialize();
 		}
 
@@ -46,7 +51,8 @@ namespace ScreenShotTest
 
 		public void Draw(SpriteBatch spriteBatch)
 		{
-			resourceManager.LoadContent(content, files);
+			string file = files[0];
+			//resourceManager.LoadContent(content, files);
 		}
 	}
 }
