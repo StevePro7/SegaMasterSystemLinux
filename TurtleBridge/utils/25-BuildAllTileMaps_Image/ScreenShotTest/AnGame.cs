@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
+using System.IO;
 
 namespace ScreenShotTest
 {
@@ -12,12 +13,13 @@ namespace ScreenShotTest
 	{
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
-		//RenderTarget2D renderTarget;
+		RenderTarget2D renderTarget;
 
 		private IDictionary<string, Texture2D> dictionary;
 		private int width;
 		private int height;
 		private int length;
+		private bool save;
 
 		public AnGame()
 		{
@@ -41,8 +43,8 @@ namespace ScreenShotTest
 		/// </summary>
 		protected override void Initialize()
 		{
-			//save = false;
-			//save = true;
+			save = false;
+			save = true;
 			IsMouseVisible = true;
 			base.Initialize();
 		}
@@ -67,7 +69,7 @@ namespace ScreenShotTest
 			width = pp.BackBufferWidth;
 			height = pp.BackBufferHeight;
 			//renderTarget = new RenderTarget2D(GraphicsDevice, width, height, 1, GraphicsDevice.DisplayMode.Format);
-			//renderTarget = new RenderTarget2D(GraphicsDevice, width, height, false, SurfaceFormat.Color, DepthFormat.Depth24);
+			renderTarget = new RenderTarget2D(GraphicsDevice, width, height, false, SurfaceFormat.Color, DepthFormat.Depth24);
 		}
 
 		/// <summary>
@@ -99,8 +101,26 @@ namespace ScreenShotTest
 		/// <param name="gameTime">Provides a snapshot of timing values.</param>
 		protected override void Draw(GameTime gameTime)
 		{
-			Draw();
-			base.Draw(gameTime);
+			if (save)
+			{
+				GraphicsDevice.SetRenderTarget(renderTarget);
+				GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.CornflowerBlue, 1, 0);
+
+				Draw();
+				base.Draw(gameTime);
+
+				GraphicsDevice.SetRenderTarget(null);
+				Texture2D resolvedTexture = (Texture2D)renderTarget;
+				Stream stream = File.Create("game_tiles_org.png");
+				resolvedTexture.SaveAsPng(stream, width, height);
+
+				Exit();
+			}
+			else
+			{
+				Draw();
+				base.Draw(gameTime);
+			}
 		}
 
 		private void Draw()
