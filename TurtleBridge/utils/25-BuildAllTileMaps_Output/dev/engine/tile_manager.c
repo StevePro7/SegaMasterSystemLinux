@@ -5,7 +5,7 @@
 static void draw_turtle_method_one( unsigned int *array, unsigned char x, unsigned char y );
 static void draw_turtle_method_two( unsigned int *array, unsigned char x, unsigned char y );
 
-static void draw_image( unsigned char *array, unsigned char x, unsigned char y, unsigned char w, unsigned char h )
+static void draw_image( const unsigned char *array, unsigned char x, unsigned char y, unsigned char w, unsigned char h )
 {
 	const unsigned char *pnt = game_tiles__tilemap__bin;
 	unsigned char idx;
@@ -64,7 +64,7 @@ void engine_tile_manager_section01( unsigned char x, unsigned char y )
 void engine_tile_manager_section02( unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = game_tiles__tilemap__bin;
-	unsigned char array[ 160 ] =
+	const unsigned char array[ 160 ] =
 	{
 		64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,
 		65,66,67,68,69,70,67,68,69,70,67,68,69,70,67,68,

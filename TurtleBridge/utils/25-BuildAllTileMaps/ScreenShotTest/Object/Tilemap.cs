@@ -47,7 +47,7 @@ namespace ScreenShotTest
 			string header = $"// {file}_array : {wide} x {high} = {total}";
 			Lines.Add(header);
 
-			var code = $"unsigned char array[ {total} ] = ";
+			var code = $"const unsigned char array[] = ";
 			Lines.Add("code");
 			Lines.Add("{");
 			foreach (var data in datas)
