@@ -12,7 +12,17 @@ namespace ScreenShotTest
 		{
 			if (Directory.Exists(OutputDirectory))
 			{
-				Directory.Delete(OutputDirectory);
+				DirectoryInfo di = new DirectoryInfo("output");
+				foreach (FileInfo fi in di.GetFiles())
+				{
+					fi.Delete();
+				}
+
+				//Directory.Delete(OutputDirectory);
+			}
+			else
+			{
+				Directory.CreateDirectory(OutputDirectory);
 			}
 
 			//foreach(var file in files)
@@ -23,8 +33,6 @@ namespace ScreenShotTest
 			//		Directory.Delete(directory);
 			//	}
 			//}
-
-			Directory.CreateDirectory(OutputDirectory);
 		}
 
 		public void SaveTilemap(IList<string> lines, string file)

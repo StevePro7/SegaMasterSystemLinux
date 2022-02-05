@@ -53,9 +53,12 @@ namespace ScreenShotTest
 
 		public void Draw(SpriteBatch spriteBatch)
 		{
-			string file = files[0];
-			Texture2D image = resourceManager.Resources[file];
-			imageManager.Process(spriteBatch, image, file);
+			//string file = files[0];
+			foreach (var file in files)
+			{
+				Texture2D image = resourceManager.Resources[file];
+				imageManager.Process(spriteBatch, image, file);
+			}
 		}
 	}
 }
