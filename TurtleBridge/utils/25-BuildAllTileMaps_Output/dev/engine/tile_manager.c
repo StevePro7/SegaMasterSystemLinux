@@ -5,10 +5,31 @@
 static void draw_turtle_method_one( unsigned int *array, unsigned char x, unsigned char y );
 static void draw_turtle_method_two( unsigned int *array, unsigned char x, unsigned char y );
 
+static void draw_image( unsigned char *array, unsigned char x, unsigned char y, unsigned char w, unsigned char h )
+{
+	const unsigned char *pnt = game_tiles__tilemap__bin;
+	unsigned char idx;
+	unsigned char val;
+	unsigned char tmp;
+	unsigned char i, j;
+	for( i = 0; i < w; i++ )
+	{
+		for( j = 0; j < h; j++ )
+		{
+			idx = j * 16 + i;
+			val = array[ idx ];
+			tmp = val * 2;
+			devkit_SMS_loadTileMap( x + i, y + j, ( void * ) &pnt[ tmp ], 2 );
+		}
+	}
+}
+
 void engine_tile_manager_section01( unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = game_tiles__tilemap__bin;
-	unsigned char array[ 160 ] =
+	unsigned char w = 16;
+	unsigned char h = 10;
+	unsigned char array[] =
 	{
 		64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,
 		65,66,67,68,69,70,67,68,69,70,67,68,69,70,67,68,
@@ -22,20 +43,22 @@ void engine_tile_manager_section01( unsigned char x, unsigned char y )
 		96,96,96,96,97,98,99,100,101,98,99,100,101,98,99,100,
 	};
 
-	unsigned char idx;
-	unsigned char val;
-	unsigned char tmp;
-	unsigned char i, j;
-	for( i = 0; i < 16; i++ )
-	{
-		for( j = 0; j < 10; j++ )
-		{
-			idx = j * 16 + i;
-			val = array[ idx ];
-			tmp = val * 2;
-			devkit_SMS_loadTileMap( x + i, y + j, ( void * ) &pnt[ tmp ], 2 );
-		}
-	}
+	draw_image( array, x, y, w, h );
+
+	//unsigned char idx;
+	//unsigned char val;
+	//unsigned char tmp;
+	//unsigned char i, j;
+	//for( i = 0; i < 16; i++ )
+	//{
+	//	for( j = 0; j < 10; j++ )
+	//	{
+	//		idx = j * 16 + i;
+	//		val = array[ idx ];
+	//		tmp = val * 2;
+	//		devkit_SMS_loadTileMap( x + i, y + j, ( void * ) &pnt[ tmp ], 2 );
+	//	}
+	//}
 }
 
 void engine_tile_manager_section02( unsigned char x, unsigned char y )
