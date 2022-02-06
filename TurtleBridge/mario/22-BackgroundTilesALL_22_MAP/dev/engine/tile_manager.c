@@ -111,17 +111,18 @@ void engine_tile_manager_turtle01( unsigned char x, unsigned char y )
 
 	unsigned char idx;
 	unsigned char val;
-	unsigned char tmp;
-	unsigned char i, j;
-	//unsigned char i, j;
-	for( i = 0; i < 4; i++ )
+	unsigned char row, col;
+	unsigned char w, h;
+	w = 4;
+	h = 3;
+	for( row = 0; row < h; row++ )
 	{
-		for( j = 0; j < 3; j++ )
+		for( col = 0; col < w; col++ )
 		{
-			idx = j * 4 + i;
+			idx = row * w + col;
 			val = array[ idx ];
-			tmp = val * 2;
-			devkit_SMS_loadTileMap( x + i, y + j, ( void * ) &pnt[ tmp ], 2 );
+			idx = val * 2;
+			devkit_SMS_loadTileMap( x + col, y + row, ( void * ) &pnt[ idx ], 2 );
 		}
 	}
 }
