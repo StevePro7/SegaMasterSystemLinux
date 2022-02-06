@@ -5,9 +5,8 @@ void engine_tile_manager_turtle( unsigned char type, unsigned char x, unsigned c
 void engine_tile_manager_cloud( unsigned char type, unsigned char x, unsigned char y );
 void engine_tile_manager_sign( unsigned char type, unsigned char x, unsigned char y );
 
-void engine_tile_manager_ground01( unsigned char x, unsigned char y );
-void engine_tile_manager_ground02( unsigned char x, unsigned char y );
-
-//void engine_tile_manager_cloud01( unsigned char x, unsigned char y );
+void engine_tile_manager_section01( unsigned char x, unsigned char y );
+void engine_tile_manager_section02( unsigned char x, unsigned char y );
+void engine_tile_manager_section03( unsigned char x, unsigned char y );
 
 #endif//_TILE_MANAGER_H_

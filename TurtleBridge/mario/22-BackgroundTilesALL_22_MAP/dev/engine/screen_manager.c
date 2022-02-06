@@ -20,15 +20,11 @@ void engine_screen_manager_init()
 	//engine_tile_manager_cloud( tile_type_cloud01, 18, 2 );
 	//engine_tile_manager_cloud( tile_type_cloud02, 24, 2 );
 
-	engine_tile_manager_sign( tile_type_sign_goal, 10, 12 );
-	engine_tile_manager_sign( tile_type_sign_numb, 14, 12 );
+	//engine_tile_manager_sign( tile_type_sign_goal, 10, 12 );
+	//engine_tile_manager_sign( tile_type_sign_numb, 14, 12 );
 
-	//engine_tile_manager_cloud01( 10, 10 );
-	//engine_turtle_manager_draw_title( 6, 2 );
 
-	
-
-	//engine_tile_manager_ground01( 2, 2 );
+	engine_tile_manager_section01( 2, 2 );
 	//engine_tile_manager_ground02( 4, 14 );
 }
 

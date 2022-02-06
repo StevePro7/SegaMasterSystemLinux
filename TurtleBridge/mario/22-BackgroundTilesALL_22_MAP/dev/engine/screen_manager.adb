@@ -26,5 +26,6 @@ S:G$engine_turtle_manager_draw_title$0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_turtle$0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_cloud$0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_sign$0$0({2}DF,SV:S),C,0,0
-S:G$engine_tile_manager_ground01$0$0({2}DF,SV:S),C,0,0
-S:G$engine_tile_manager_ground02$0$0({2}DF,SV:S),C,0,0
+S:G$engine_tile_manager_section01$0$0({2}DF,SV:S),C,0,0
+S:G$engine_tile_manager_section02$0$0({2}DF,SV:S),C,0,0
+S:G$engine_tile_manager_section03$0$0({2}DF,SV:S),C,0,0
