@@ -1,6 +1,7 @@
 #include "screen_manager.h"
 #include "audio_manager.h"
 #include "content_manager.h"
+#include "enum_manager.h"
 #include "font_manager.h"
 #include "global_manager.h"
 #include "input_manager.h"
@@ -10,12 +11,14 @@
 void engine_screen_manager_init()
 {
 	//engine_turtle_manager_draw_sea();
-	//engine_font_manager_draw_text( "ADRIANA", 2, 2 );
+	engine_font_manager_draw_text( "ADRIANA!!", 2, 2 );
+
+	//engine_tile_manager_turtle( tile_type_sea_turtleA1, 7, 7 );
 
 	//engine_tile_manager_cloud01( 10, 10 );
 	//engine_turtle_manager_draw_title( 6, 2 );
 
-	engine_tile_manager_turtle01( 5, 15 );
+	//engine_tile_manager_turtle01( 5, 15 );
 	//engine_tile_manager_turtle04( 9, 5 );
 	//engine_tile_manager_turtle01( 5, 10 );
 	//engine_tile_manager_turtle02( 10, 11 );

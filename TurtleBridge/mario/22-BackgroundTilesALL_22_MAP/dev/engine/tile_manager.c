@@ -1,9 +1,33 @@
 #include "tile_manager.h"
+#include "../object/tile_object.h"
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
 
 static void draw_turtle_method_one( unsigned int *array, unsigned char x, unsigned char y );
 static void draw_turtle_method_two( unsigned int *array, unsigned char x, unsigned char y );
+
+void engine_tile_manager_turtle( unsigned char type, unsigned char x, unsigned char y )
+{
+	const unsigned char *tiles = game_tiles__tilemap__bin;
+	const unsigned char *array = tile_object_data[ type ];
+	unsigned char idx;
+	unsigned char val;
+	unsigned char row, col;
+	unsigned char w, h;
+	w = 4;
+	h = 3;
+
+	for ( row = 0; row < h; row++ )
+	{
+		for( col = 0; col < w; col++ )
+		{
+			idx = row * w + col;
+			val = array[ idx ];
+			idx = val * 2;
+			devkit_SMS_loadTileMap( x + col, y + row, ( void * ) &tiles[ idx ], 2 );
+		}
+	}
+}
 
 void engine_tile_manager_ground02( unsigned char x, unsigned char y )
 {
