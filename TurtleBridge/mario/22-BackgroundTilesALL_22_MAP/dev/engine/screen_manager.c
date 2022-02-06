@@ -10,10 +10,10 @@
 
 void engine_screen_manager_init()
 {
-	//engine_turtle_manager_draw_sea();
-	engine_font_manager_draw_text( "ADRIANA4", 2, 2 );
+	engine_tile_manager_sky();
 
-	//engine_tile_manager_turtle( tile_type_fly_turtle01, 4, 8 );
+	engine_font_manager_draw_text( "ADRIANA7", 2, 2 );
+
 	//engine_tile_manager_turtle( tile_type_fly_turtle02, 8, 8 );
 	//engine_tile_manager_turtle( tile_type_sea_turtleB3, 12, 9 );
 
@@ -25,8 +25,8 @@ void engine_screen_manager_init()
 
 
 	//engine_tile_manager_section01( 2, 2 );
-	engine_tile_manager_section02( 2, 12 );
-	engine_tile_manager_section03( 4, 2 );
+	//engine_tile_manager_section02( 2, 12 );
+	//engine_tile_manager_section03( 4, 2 );
 }
 
 void engine_screen_manager_update()
