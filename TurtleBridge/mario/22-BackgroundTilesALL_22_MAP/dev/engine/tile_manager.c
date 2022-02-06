@@ -4,30 +4,12 @@
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
 
-static void draw_tile_full01( const unsigned char *array, unsigned char x, unsigned char y, unsigned char w, unsigned char h )
-{
-	const unsigned char *tiles = game_tiles__tilemap__bin;
-	unsigned char idx;
-	unsigned char val;
-	unsigned char row, col;
-
-	for( row = 0; row < h; row++ )
-	{
-		for( col = 0; col < w; col++ )
-		{
-			idx = row * w + col;
-			val = array[ idx ];
-			idx = val * 2;
-			devkit_SMS_loadTileMap( x + col, y + row, ( void * ) &tiles[ idx ], 2 );
-		}
-	}
-}
-
 static void draw_tile_full( const unsigned char *array, unsigned char x, unsigned char y, unsigned char w, unsigned char h )
 {
 	const unsigned char *tiles = game_tiles__tilemap__bin;
 	unsigned char idx;
 	unsigned char val;
+	unsigned int off;
 	unsigned char row, col;
 
 	for( row = 0; row < h; row++ )
@@ -36,11 +18,30 @@ static void draw_tile_full( const unsigned char *array, unsigned char x, unsigne
 		{
 			idx = row * w + col;
 			val = array[ idx ];
-			devkit_SMS_setNextTileatXY( x + col, y + row );
-			devkit_SMS_setTile( *tiles + val );
+			off = val * 2;
+			devkit_SMS_loadTileMap( x + col, y + row, ( void * ) &tiles[ off ], 2 );
 		}
 	}
 }
+
+//static void draw_tile_full02( const unsigned char *array, unsigned char x, unsigned char y, unsigned char w, unsigned char h )
+//{
+//	const unsigned char *tiles = game_tiles__tilemap__bin;
+//	unsigned char idx;
+//	unsigned int val;
+//	unsigned char row, col;
+//
+//	for( row = 0; row < h; row++ )
+//	{
+//		for( col = 0; col < w; col++ )
+//		{
+//			idx = row * w + col;
+//			val = array[ idx ];
+//			devkit_SMS_setNextTileatXY( x + col, y + row );
+//			devkit_SMS_setTile( *tiles + val );
+//		}
+//	}
+//}
 
 void engine_tile_manager_turtle( unsigned char type, unsigned char x, unsigned char y )
 {
@@ -53,9 +54,13 @@ void engine_tile_manager_turtle( unsigned char type, unsigned char x, unsigned c
 void engine_tile_manager_cloud( unsigned char type, unsigned char x, unsigned char y )
 {
 	const unsigned char *array = tile_object_data[ type ];
-	unsigned char w = 4;
 	const unsigned char h = 3;
-	draw_tile_full01( array, x, y, w, h );
+	unsigned char w = 4;
+	if( type == tile_type_cloud02 )
+	{
+		w = 6;
+	}
+	draw_tile_full( array, x, y, w, h );
 }
 
 void engine_tile_manager_ground02( unsigned char x, unsigned char y )
