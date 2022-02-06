@@ -24,8 +24,9 @@ void engine_screen_manager_init()
 	//engine_tile_manager_sign( tile_type_sign_numb, 14, 12 );
 
 
-	engine_tile_manager_section01( 2, 2 );
-	//engine_tile_manager_ground02( 4, 14 );
+	//engine_tile_manager_section01( 2, 2 );
+	engine_tile_manager_section02( 2, 12 );
+	engine_tile_manager_section03( 4, 2 );
 }
 
 void engine_screen_manager_update()
