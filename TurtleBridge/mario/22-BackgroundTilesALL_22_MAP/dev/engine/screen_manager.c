@@ -15,7 +15,7 @@ void engine_screen_manager_init()
 	//engine_tile_manager_cloud01( 10, 10 );
 	//engine_turtle_manager_draw_title( 6, 2 );
 
-	//engine_tile_manager_turtle01( 5, 15 );
+	engine_tile_manager_turtle01( 5, 15 );
 	//engine_tile_manager_turtle04( 9, 5 );
 	//engine_tile_manager_turtle01( 5, 10 );
 	//engine_tile_manager_turtle02( 10, 11 );

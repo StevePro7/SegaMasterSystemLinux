@@ -101,9 +101,29 @@ void engine_tile_manager_cloud01( unsigned char x, unsigned char y )
 
 void engine_tile_manager_turtle01( unsigned char x, unsigned char y )
 {
-	unsigned int array[ 24 ] = { 128,130,132,0,160,162,164,166,192,194,196,198, };
-	//draw_turtle_method_one( array, x, y );
-	draw_turtle_method_two( array, x, y );
+	const unsigned char *pnt = game_tiles__tilemap__bin;
+	unsigned char array[] =
+	{
+		72,73,74,64,
+		75,76,77,78,
+		79,80,81,82,
+	};
+
+	unsigned char idx;
+	unsigned char val;
+	unsigned char tmp;
+	unsigned char i, j;
+	//unsigned char i, j;
+	for( i = 0; i < 4; i++ )
+	{
+		for( j = 0; j < 3; j++ )
+		{
+			idx = j * 4 + i;
+			val = array[ idx ];
+			tmp = val * 2;
+			devkit_SMS_loadTileMap( x + i, y + j, ( void * ) &pnt[ tmp ], 2 );
+		}
+	}
 }
 void engine_tile_manager_turtle02( unsigned char x, unsigned char y )
 {
