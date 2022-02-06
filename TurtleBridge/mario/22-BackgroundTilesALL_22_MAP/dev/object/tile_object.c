@@ -1,4 +1,4 @@
-//#include "sprite_object.h"
+#include "tile_object.h"
 //#include "../content/gfx.h"
 //
 //// Player.
