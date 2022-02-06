@@ -1,5 +1,5 @@
 M:tile_object
-S:G$tile_object_data$0$0({16}DA8d,DG,SC:U),E,0,0
+S:G$tile_object_data$0$0({20}DA10d,DG,SC:U),E,0,0
 S:G$sea_turtleA1_array$0$0({0}DA0d,SC:U),D,0,0
 S:G$sea_turtleA2_array$0$0({0}DA0d,SC:U),D,0,0
 S:G$sea_turtleA3_array$0$0({0}DA0d,SC:U),D,0,0
@@ -8,3 +8,5 @@ S:G$sea_turtleB2_array$0$0({0}DA0d,SC:U),D,0,0
 S:G$sea_turtleB3_array$0$0({0}DA0d,SC:U),D,0,0
 S:G$fly_turtle01_array$0$0({0}DA0d,SC:U),D,0,0
 S:G$fly_turtle02_array$0$0({0}DA0d,SC:U),D,0,0
+S:G$cloud01_array$0$0({0}DA0d,SC:U),D,0,0
+S:G$cloud02_array$0$0({0}DA0d,SC:U),D,0,0

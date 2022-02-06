@@ -8,3 +8,6 @@ extern const unsigned char sea_turtleB3_array[];
 
 extern const unsigned char fly_turtle01_array[];
 extern const unsigned char fly_turtle02_array[];
+
+extern const unsigned char cloud01_array[];
+extern const unsigned char cloud02_array[];

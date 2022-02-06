@@ -1,5 +1,5 @@
 XL2
-H 9 areas C global symbols
+H 9 areas E global symbols
 M tile_object
 O -mz80
 S _sea_turtleA1_array Ref0000
@@ -10,17 +10,19 @@ S _fly_turtle02_array Ref0000
 S _sea_turtleB2_array Ref0000
 S _sea_turtleA3_array Ref0000
 S _sea_turtleB3_array Ref0000
+S _cloud01_array Ref0000
+S _cloud02_array Ref0000
 S .__.ABS. Def0000
 A _CODE size 0 flags 0 addr 0
 A _DATA size 0 flags 0 addr 0
-A _INITIALIZED size 10 flags 0 addr 0
+A _INITIALIZED size 14 flags 0 addr 0
 S G$tile_object_data$0$0 Def0000
 S _tile_object_data Def0000
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
-A _INITIALIZER size 10 flags 0 addr 0
+A _INITIALIZER size 14 flags 0 addr 0
 S Ftile_object$__xinit_tile_object_data$0$0 Def0000
 A _CABS size 0 flags 8 addr 0
 T 00 00
@@ -33,5 +35,7 @@ T 00 00 00 00 00 00 00 00
 R 00 00 07 00 02 02 00 00 02 04 03 00 02 06 06 00
 T 06 00 00 00 00 00 00 00
 R 00 00 07 00 02 02 02 00 02 04 05 00 02 06 07 00
-T 0C 00 00 00 00 00
-R 00 00 07 00 02 02 01 00 02 04 04 00
+T 0C 00 00 00 00 00 00 00
+R 00 00 07 00 02 02 01 00 02 04 04 00 02 06 08 00
+T 12 00 00 00
+R 00 00 07 00 02 02 09 00

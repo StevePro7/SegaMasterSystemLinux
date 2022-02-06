@@ -12,4 +12,6 @@ const unsigned char *tile_object_data[] =
 	sea_turtleB3_array,
 	fly_turtle01_array,
 	fly_turtle02_array,
+	cloud01_array,
+	cloud02_array,
 };
