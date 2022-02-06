@@ -9,13 +9,8 @@ namespace ScreenShotTest
 	/// </summary>
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		//string[] files = { "font_tiles", "wonderboy32_01", "wonderboy32_02" };
-		//string[] files = { "font_tiles" };
-		//string[] files = { "wave_strip" };
-
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
-		//RenderTarget2D renderTarget;
 
 		private int width = 8;
 		private int height = 8;
@@ -45,8 +40,6 @@ namespace ScreenShotTest
 		/// </summary>
 		protected override void Initialize()
 		{
-			//save = false;
-			//save = true;
 			IsMouseVisible = true;
 
 			configurationManager = new ConfigurationManager();
@@ -85,8 +78,6 @@ namespace ScreenShotTest
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
 			width = pp.BackBufferWidth;
 			height = pp.BackBufferHeight;
-			//renderTarget = new RenderTarget2D(GraphicsDevice, width, height, 1, GraphicsDevice.DisplayMode.Format);
-			//renderTarget = new RenderTarget2D(GraphicsDevice, width, height, false, SurfaceFormat.Color, DepthFormat.Depth24);
 		}
 
 		/// <summary>
