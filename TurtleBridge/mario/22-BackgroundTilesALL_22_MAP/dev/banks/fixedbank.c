@@ -23,4 +23,15 @@ const unsigned char sea_turtleB1_array[] =
 	97,98,99,100,
 	101,102,103,104,
 };
-
+const unsigned char sea_turtleB2_array[] =
+{
+	94,95,96,64,
+	105,98,106,107,
+	101,102,103,108,
+};
+const unsigned char sea_turtleB3_array[] =
+{
+	109,110,111,68,
+	112,98,113,114,
+	101,102,103,108,
+};

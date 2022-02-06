@@ -1,17 +1,21 @@
 XL2
-H 9 areas 9 global symbols
+H 9 areas D global symbols
 M fixedbank
 O -mz80
 S .__.ABS. Def0000
-A _CODE size 30 flags 0 addr 0
+A _CODE size 48 flags 0 addr 0
 S _sea_turtleA1_array Def0000
 S _sea_turtleA2_array Def000C
 S _sea_turtleB1_array Def0024
 S _sea_turtleA3_array Def0018
+S _sea_turtleB2_array Def0030
+S _sea_turtleB3_array Def003C
 S G$sea_turtleA1_array$0$0 Def0000
 S G$sea_turtleB1_array$0$0 Def0024
 S G$sea_turtleA2_array$0$0 Def000C
+S G$sea_turtleB2_array$0$0 Def0030
 S G$sea_turtleA3_array$0$0 Def0018
+S G$sea_turtleB3_array$0$0 Def003C
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -35,4 +39,12 @@ R 00 00 00 00
 T 24 00
 R 00 00 00 00
 T 24 00 5E 5F 60 40 61 62 63 64 65 66 67 68
+R 00 00 00 00
+T 30 00
+R 00 00 00 00
+T 30 00 5E 5F 60 40 69 62 6A 6B 65 66 67 6C
+R 00 00 00 00
+T 3C 00
+R 00 00 00 00
+T 3C 00 6D 6E 6F 44 70 62 71 72 65 66 67 6C
 R 00 00 00 00

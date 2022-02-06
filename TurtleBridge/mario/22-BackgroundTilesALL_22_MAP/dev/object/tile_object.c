@@ -8,4 +8,6 @@ const unsigned char *tile_object_data[] =
 	sea_turtleA2_array,
 	sea_turtleA3_array,
 	sea_turtleB1_array,
+	sea_turtleB2_array,
+	sea_turtleB3_array,
 };
