@@ -14,4 +14,6 @@ const unsigned char *tile_object_data[] =
 	fly_turtle02_array,
 	cloud01_array,
 	cloud02_array,
+	sign_goal_array,
+	sign_numb_array,
 };

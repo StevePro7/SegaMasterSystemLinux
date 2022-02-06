@@ -9,3 +9,5 @@ S:G$fly_turtle01_array$0$0({12}DA12d,SC:U),D,0,0
 S:G$fly_turtle02_array$0$0({12}DA12d,SC:U),D,0,0
 S:G$cloud01_array$0$0({12}DA12d,SC:U),D,0,0
 S:G$cloud02_array$0$0({18}DA18d,SC:U),D,0,0
+S:G$sign_goal_array$0$0({9}DA9d,SC:U),D,0,0
+S:G$sign_numb_array$0$0({9}DA9d,SC:U),D,0,0

@@ -61,3 +61,16 @@ const unsigned char cloud02_array[] =
 	139,128,128,128,140,141,
 	142,143,144,145,146,147,
 };
+
+extern const unsigned char sign_goal_array[] =
+{
+	148,149,150,
+	151,152,153,
+	154,155,156,
+};
+extern const unsigned char sign_numb_array[] =
+{
+	157,158,159,
+	160,161,162,
+	64,163,64,
+};

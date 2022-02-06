@@ -63,6 +63,14 @@ void engine_tile_manager_cloud( unsigned char type, unsigned char x, unsigned ch
 	draw_tile_full( array, x, y, w, h );
 }
 
+void engine_tile_manager_sign( unsigned char type, unsigned char x, unsigned char y )
+{
+	const unsigned char *array = tile_object_data[ type ];
+	const unsigned char w = 3;
+	const unsigned char h = 3;
+	draw_tile_full( array, x, y, w, h );
+}
+
 void engine_tile_manager_ground02( unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = game_tiles__tilemap__bin;

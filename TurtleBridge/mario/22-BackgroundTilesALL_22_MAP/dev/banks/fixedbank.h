@@ -11,3 +11,6 @@ extern const unsigned char fly_turtle02_array[];
 
 extern const unsigned char cloud01_array[];
 extern const unsigned char cloud02_array[];
+
+extern const unsigned char sign_goal_array[];
+extern const unsigned char sign_numb_array[];
