@@ -11,8 +11,8 @@ S:Ltile_manager.engine_tile_manager_turtle$row$1$80({1}SC:U),R,0,0,[c]
 S:Ltile_manager.engine_tile_manager_turtle$col$1$80({1}SC:U),R,0,0,[b]
 S:Ltile_manager.engine_tile_manager_turtle$w$1$80({1}SC:U),R,0,0,[]
 S:Ltile_manager.engine_tile_manager_turtle$h$1$80({1}SC:U),R,0,0,[]
-S:Ltile_manager.engine_tile_manager_turtle$sloc0$1$0({1}SC:U),B,1,-1
-S:Ltile_manager.engine_tile_manager_turtle$sloc1$1$0({1}SC:U),B,1,-2
+S:Ltile_manager.engine_tile_manager_turtle$sloc0$1$0({1}SC:U),B,1,-2
+S:Ltile_manager.engine_tile_manager_turtle$sloc1$1$0({1}SC:U),B,1,-1
 S:Ltile_manager.engine_tile_manager_turtle$sloc2$1$0({1}SC:U),B,1,-3
 F:G$engine_tile_manager_ground02$0$0({2}DF,SV:S),Z,0,64,0,0,0
 S:Ltile_manager.engine_tile_manager_ground02$x$1$85({1}SC:U),B,1,4
@@ -24,8 +24,8 @@ S:Ltile_manager.engine_tile_manager_ground02$val$1$86({1}SC:U),R,0,0,[l]
 S:Ltile_manager.engine_tile_manager_ground02$tmp$1$86({1}SC:U),R,0,0,[l]
 S:Ltile_manager.engine_tile_manager_ground02$i$1$86({1}SC:U),R,0,0,[e]
 S:Ltile_manager.engine_tile_manager_ground02$j$1$86({1}SC:U),R,0,0,[d]
-S:Ltile_manager.engine_tile_manager_ground02$sloc0$1$0({1}SC:U),B,1,-1
-S:Ltile_manager.engine_tile_manager_ground02$sloc1$1$0({2}DG,SV:S),B,1,-3
+S:Ltile_manager.engine_tile_manager_ground02$sloc0$1$0({1}SC:U),B,1,-3
+S:Ltile_manager.engine_tile_manager_ground02$sloc1$1$0({2}DG,SV:S),B,1,-2
 S:Ltile_manager.engine_tile_manager_ground02$sloc2$1$0({1}SC:U),B,1,-4
 F:G$engine_tile_manager_ground03$0$0({2}DF,SV:S),C,0,0,0,0,0
 S:Ltile_manager.engine_tile_manager_ground03$x$1$91({1}SC:U),B,1,4
@@ -43,8 +43,8 @@ S:Ltile_manager.engine_tile_manager_ground01$pnt$1$94({2}DG,SC:U),R,0,0,[]
 S:Ltile_manager.engine_tile_manager_ground01$array$1$94({64}DA64d,SC:U),B,1,-68
 S:Ltile_manager.engine_tile_manager_ground01$idx$1$94({1}SC:U),R,0,0,[e]
 S:Ltile_manager.engine_tile_manager_ground01$val$1$94({1}SC:U),R,0,0,[e]
-S:Ltile_manager.engine_tile_manager_ground01$i$1$94({1}SC:U),B,1,-3
-S:Ltile_manager.engine_tile_manager_ground01$j$1$94({1}SC:U),B,1,-4
+S:Ltile_manager.engine_tile_manager_ground01$i$1$94({1}SC:U),B,1,-4
+S:Ltile_manager.engine_tile_manager_ground01$j$1$94({1}SC:U),B,1,-3
 S:Ltile_manager.engine_tile_manager_ground01$sloc0$1$0({1}SC:U),B,1,-1
 S:Ltile_manager.engine_tile_manager_ground01$sloc1$1$0({1}SC:U),B,1,-2
 F:G$engine_tile_manager_cloud01$0$0({2}DF,SV:S),Z,0,0,0,0,0
@@ -62,10 +62,10 @@ S:Ltile_manager.engine_tile_manager_turtle01$row$1$102({1}SC:U),R,0,0,[c]
 S:Ltile_manager.engine_tile_manager_turtle01$col$1$102({1}SC:U),R,0,0,[b]
 S:Ltile_manager.engine_tile_manager_turtle01$w$1$102({1}SC:U),R,0,0,[]
 S:Ltile_manager.engine_tile_manager_turtle01$h$1$102({1}SC:U),R,0,0,[]
-S:Ltile_manager.engine_tile_manager_turtle01$sloc0$1$0({1}SC:U),B,1,-4
+S:Ltile_manager.engine_tile_manager_turtle01$sloc0$1$0({1}SC:U),B,1,-3
 S:Ltile_manager.engine_tile_manager_turtle01$sloc1$1$0({1}SC:U),B,1,-1
-S:Ltile_manager.engine_tile_manager_turtle01$sloc2$1$0({2}DG,SV:S),B,1,-3
-S:Ltile_manager.engine_tile_manager_turtle01$sloc3$1$0({1}SC:U),B,1,-5
+S:Ltile_manager.engine_tile_manager_turtle01$sloc2$1$0({2}DG,SV:S),B,1,-5
+S:Ltile_manager.engine_tile_manager_turtle01$sloc3$1$0({1}SC:U),B,1,-2
 F:G$engine_tile_manager_turtle02$0$0({2}DF,SV:S),Z,0,48,0,0,0
 S:Ltile_manager.engine_tile_manager_turtle02$x$1$107({1}SC:U),B,1,4
 S:Ltile_manager.engine_tile_manager_turtle02$y$1$107({1}SC:U),B,1,5
@@ -115,8 +115,8 @@ S:Ltile_manager.draw_turtle_method_two$idx$1$128({1}SC:U),R,0,0,[l]
 S:Ltile_manager.draw_turtle_method_two$val$1$128({2}SI:U),R,0,0,[e,d]
 S:Ltile_manager.draw_turtle_method_two$ix$1$128({1}SC:U),B,1,-3
 S:Ltile_manager.draw_turtle_method_two$iy$1$128({1}SC:U),R,0,0,[c]
-S:Ltile_manager.draw_turtle_method_two$sloc0$1$0({1}SC:U),B,1,-2
-S:Ltile_manager.draw_turtle_method_two$sloc1$1$0({1}SC:U),B,1,-1
+S:Ltile_manager.draw_turtle_method_two$sloc0$1$0({1}SC:U),B,1,-1
+S:Ltile_manager.draw_turtle_method_two$sloc1$1$0({1}SC:U),B,1,-2
 S:G$tile_object_data$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$devkit_SMS_init$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOnFeature$0$0({2}DF,SV:S),C,0,0
