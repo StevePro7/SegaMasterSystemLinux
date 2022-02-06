@@ -35,3 +35,16 @@ const unsigned char sea_turtleB3_array[] =
 	112,98,113,114,
 	101,102,103,108,
 };
+
+const unsigned char fly_turtle01_array[] =
+{
+	72,115,74,64,
+	75,116,77,78,
+	117,118,119,120,
+};
+const unsigned char fly_turtle02_array[] =
+{
+	72,121,74,64,
+	75,122,77,78,
+	117,118,119,120,
+};
