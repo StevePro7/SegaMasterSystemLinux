@@ -234,13 +234,14 @@ static void draw_tile_next( const unsigned char *array, unsigned char x, unsigne
 	unsigned int flip = devkit_TILE_FLIPPED_X();
 	for( row = 0; row < h; row++ )
 	{
-		for( tmp = w; tmp > 0; tmp-- )
+		for( tmp = 0; tmp < w; tmp++ )
 		{
-			col = tmp - 1;
+			col = w - tmp - 1;
 			idx = row * w + col;
 			val = array[ idx ];
-			devkit_SMS_setNextTileatXY( x + col, y + row );
+			devkit_SMS_setNextTileatXY( x + tmp, y + row );
 			devkit_SMS_setTile( ( *tiles + val ) | flip );
+			//devkit_SMS_setTile( ( *tiles + val ));
 		}
 	}
 }
