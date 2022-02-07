@@ -229,16 +229,18 @@ static void draw_tile_next( const unsigned char *array, unsigned char x, unsigne
 	const unsigned char *tiles = game_tiles__tilemap__bin;
 	unsigned char idx;
 	unsigned int val;
-	unsigned char row, col;
+	unsigned char row, col, tmp;
 
+	unsigned int flip = devkit_TILE_FLIPPED_X();
 	for( row = 0; row < h; row++ )
 	{
-		for( col = 0; col < w; col++ )
+		for( tmp = w; tmp > 0; tmp-- )
 		{
+			col = tmp - 1;
 			idx = row * w + col;
 			val = array[ idx ];
 			devkit_SMS_setNextTileatXY( x + col, y + row );
-			devkit_SMS_setTile( *tiles + val );
+			devkit_SMS_setTile( ( *tiles + val ) | flip );
 		}
 	}
 }
