@@ -6,6 +6,7 @@
 #include "../content/gfx.h"
 
 static void draw_tile_full( const unsigned char *array, unsigned char x, unsigned char y, unsigned char w, unsigned char h );
+static void draw_tile_next( const unsigned char *array, unsigned char x, unsigned char y, unsigned char w, unsigned char h );
 static void draw_tile_scroll( const unsigned char *array, unsigned char x, unsigned char y, unsigned char w, unsigned char h, unsigned char col );
 
 void engine_tile_manager_sky()
@@ -22,6 +23,15 @@ void engine_tile_manager_sky()
 			devkit_SMS_setTile( *tiles + idx );
 		}
 	}
+}
+
+void engine_tile_manager_section01( unsigned char x, unsigned char y )
+{
+	const unsigned char *array = tile_object_data[ tile_type_section01 ];
+	const unsigned char w = 16;
+	const unsigned char h = 10;
+//	draw_tile_full( array, x, y, w, h );
+	draw_tile_next( array, x, y, w, h );
 }
 
 void engine_tile_manager_turtle( unsigned char type, unsigned char x, unsigned char y )
@@ -52,13 +62,7 @@ void engine_tile_manager_sign( unsigned char type, unsigned char x, unsigned cha
 	draw_tile_full( array, x, y, w, h );
 }
 
-void engine_tile_manager_section01( unsigned char x, unsigned char y )
-{
-	const unsigned char *array = tile_object_data[ tile_type_section01 ];
-	const unsigned char w = 16;
-	const unsigned char h = 10;
-	draw_tile_full( array, x, y, w, h );
-}
+
 
 //void engine_tile_manager_section01_left( unsigned char x, unsigned char y )
 //{
@@ -219,21 +223,22 @@ static void draw_tile_full( const unsigned char *array, unsigned char x, unsigne
 	}
 }
 
-//static void draw_tile_full02( const unsigned char *array, unsigned char x, unsigned char y, unsigned char w, unsigned char h )
-//{
-//	const unsigned char *tiles = game_tiles__tilemap__bin;
-//	unsigned char idx;
-//	unsigned int val;
-//	unsigned char row, col;
-//
-//	for( row = 0; row < h; row++ )
-//	{
-//		for( col = 0; col < w; col++ )
-//		{
-//			idx = row * w + col;
-//			val = array[ idx ];
-//			devkit_SMS_setNextTileatXY( x + col, y + row );
-//			devkit_SMS_setTile( *tiles + val );
-//		}
-//	}
-//}
+
+static void draw_tile_next( const unsigned char *array, unsigned char x, unsigned char y, unsigned char w, unsigned char h )
+{
+	const unsigned char *tiles = game_tiles__tilemap__bin;
+	unsigned char idx;
+	unsigned int val;
+	unsigned char row, col;
+
+	for( row = 0; row < h; row++ )
+	{
+		for( col = 0; col < w; col++ )
+		{
+			idx = row * w + col;
+			val = array[ idx ];
+			devkit_SMS_setNextTileatXY( x + col, y + row );
+			devkit_SMS_setTile( *tiles + val );
+		}
+	}
+}

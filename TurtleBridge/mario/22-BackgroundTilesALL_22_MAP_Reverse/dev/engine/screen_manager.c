@@ -13,20 +13,20 @@ static unsigned char col;
 void engine_screen_manager_init()
 {
 	engine_tile_manager_sky();
-	engine_font_manager_draw_text( "PRESS RIGHT", 2, 2 );
-	engine_tile_manager_section01_left( 2, 4 );
+	engine_font_manager_draw_text( "REVERSE", 2, 2 );
+	engine_tile_manager_section01( 2, 7 );
 	col = 0;
 }
 
 void engine_screen_manager_update()
 {
-	unsigned char input;
-	input = engine_input_manager_hold_right();
-	if( input )
-	{
-		engine_tile_manager_scroll_test( 10, 14, col );
-		col++;
-	}
+	//unsigned char input;
+	//input = engine_input_manager_hold_right();
+	//if( input )
+	//{
+	//	engine_tile_manager_scroll_test( 10, 14, col );
+	//	col++;
+	//}
 }
 
 
