@@ -22,6 +22,8 @@ namespace ScreenShotTest
 				"font_tiles",
 				"wave_strip",
 				"wonderboy32_01",
+				"wonderboy32_02",
+				"wonderboy32_03",
 			};
 
 //			Files = new string[17]
