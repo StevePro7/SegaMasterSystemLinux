@@ -14,7 +14,8 @@ void engine_screen_manager_init()
 {
 	engine_tile_manager_sky();
 	engine_font_manager_draw_text( "REVERSE", 2, 2 );
-	engine_tile_manager_section01( 2, 7 );
+	engine_tile_manager_section01_left( 0, 14 );
+	engine_tile_manager_section01( 16, 14 );
 	col = 0;
 }
 
