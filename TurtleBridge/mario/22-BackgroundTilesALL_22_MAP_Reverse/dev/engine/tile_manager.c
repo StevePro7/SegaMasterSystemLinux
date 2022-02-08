@@ -90,8 +90,8 @@ void engine_tile_manager_section03( unsigned char x, unsigned char y )
 	const unsigned char w = 8;
 	const unsigned char h = 10;
 	//	draw_tile_full( array, x, y, w, h );
-	draw_tile_next( array, x, y, w, h );
-	//draw_tile_flip( array, x, y, w, h );
+	//draw_tile_next( array, x, y, w, h );
+	draw_tile_flip( array, x, y, w, h );
 }
 
 

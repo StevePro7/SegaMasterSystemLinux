@@ -81,8 +81,8 @@ S:Ltile_manager.draw_tile_full$val$1$104({1}SC:U),R,0,0,[l]
 S:Ltile_manager.draw_tile_full$off$1$104({2}SI:U),R,0,0,[l,h]
 S:Ltile_manager.draw_tile_full$row$1$104({1}SC:U),R,0,0,[c]
 S:Ltile_manager.draw_tile_full$col$1$104({1}SC:U),B,1,-3
-S:Ltile_manager.draw_tile_full$sloc0$1$0({1}SC:U),B,1,-1
-S:Ltile_manager.draw_tile_full$sloc1$1$0({1}SC:U),B,1,-2
+S:Ltile_manager.draw_tile_full$sloc0$1$0({1}SC:U),B,1,-2
+S:Ltile_manager.draw_tile_full$sloc1$1$0({1}SC:U),B,1,-1
 F:Ftile_manager$draw_tile_flip$0$0({2}DF,SV:S),Z,0,2,0,0,0
 S:Ltile_manager.draw_tile_flip$array$1$109({2}DG,SC:U),B,1,4
 S:Ltile_manager.draw_tile_flip$x$1$109({1}SC:U),B,1,6
@@ -110,8 +110,8 @@ S:Ltile_manager.draw_tile_next$idx$1$116({1}SC:U),R,0,0,[e]
 S:Ltile_manager.draw_tile_next$val$1$116({1}SC:U),R,0,0,[e]
 S:Ltile_manager.draw_tile_next$row$1$116({1}SC:U),R,0,0,[c]
 S:Ltile_manager.draw_tile_next$col$1$116({1}SC:U),R,0,0,[b]
-S:Ltile_manager.draw_tile_next$sloc0$1$0({1}SC:U),B,1,-2
-S:Ltile_manager.draw_tile_next$sloc1$1$0({1}SC:U),B,1,-1
+S:Ltile_manager.draw_tile_next$sloc0$1$0({1}SC:U),B,1,-1
+S:Ltile_manager.draw_tile_next$sloc1$1$0({1}SC:U),B,1,-2
 S:G$tile_object_data$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$devkit_SMS_init$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOnFeature$0$0({2}DF,SV:S),C,0,0
