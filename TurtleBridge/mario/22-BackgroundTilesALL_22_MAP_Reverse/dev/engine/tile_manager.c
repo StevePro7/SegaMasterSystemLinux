@@ -34,6 +34,7 @@ void engine_tile_manager_turtle( unsigned char type, unsigned char x, unsigned c
 	const unsigned char w = 4;
 	const unsigned char h = 3;
 	draw_tile_full( array, x, y, w, h );
+	//draw_tile_next( array, x, y, w, h );
 }
 
 void engine_tile_manager_cloud( unsigned char type, unsigned char x, unsigned char y )

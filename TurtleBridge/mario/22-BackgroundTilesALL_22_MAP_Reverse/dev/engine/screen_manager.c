@@ -24,6 +24,14 @@ void engine_screen_manager_init()
 	engine_tile_manager_cloud( tile_type_cloud01, 10, 4 );
 	engine_tile_manager_cloud( tile_type_cloud02, 20, 4 );
 
+	engine_tile_manager_turtle( tile_type_sea_turtleA1, 4, 10 );
+	//engine_tile_manager_turtle( tile_type_sea_turtleA2, 8, 11 );
+	//engine_tile_manager_turtle( tile_type_sea_turtleA3, 12, 12 );
+
+	engine_tile_manager_turtle( tile_type_sea_turtleB1, 8, 10 );
+	//engine_tile_manager_turtle( tile_type_sea_turtleB2, 24, 11 );
+	//engine_tile_manager_turtle( tile_type_sea_turtleB3, 28, 12 );
+
 	col = 0;
 }
 
