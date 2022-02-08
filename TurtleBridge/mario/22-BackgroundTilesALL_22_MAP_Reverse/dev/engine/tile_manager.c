@@ -39,12 +39,8 @@ void engine_tile_manager_turtle( unsigned char type, unsigned char x, unsigned c
 void engine_tile_manager_cloud( unsigned char type, unsigned char x, unsigned char y )
 {
 	const unsigned char *array = tile_object_data[ type ];
-	const unsigned char h = 3;
-	unsigned char w = 4;
-	if( type == tile_type_cloud02 )
-	{
-		w = 6;
-	}
+	const unsigned char w = tile_object_wide[ type ];
+	const unsigned char h = tile_object_high[ type ];
 	draw_tile_full( array, x, y, w, h );
 }
 

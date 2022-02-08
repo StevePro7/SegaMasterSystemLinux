@@ -13,13 +13,16 @@ static unsigned char col;
 void engine_screen_manager_init()
 {
 	engine_tile_manager_sky();
-	engine_font_manager_draw_text( "REVERSE!!", 2, 2 );
+	engine_font_manager_draw_text( "REVERSE", 2, 2 );
 
 	//engine_tile_manager_section01_left( -8, 14 );
 	//engine_tile_manager_section01( 24, 14 );
 
 	//engine_tile_manager_section02( 10, 4 );
-	engine_tile_manager_section03( 10, 4 );
+	//engine_tile_manager_section03( 10, 4 );
+
+	engine_tile_manager_cloud( tile_type_cloud01, 10, 4 );
+	engine_tile_manager_cloud( tile_type_cloud02, 20, 4 );
 
 	col = 0;
 }

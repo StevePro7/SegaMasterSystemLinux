@@ -21,5 +21,5 @@ const unsigned char *tile_object_data[] =
 	sign_numb_array,
 };
 
-extern const unsigned char tile_object_wide[] = { 16, 16, 8 };
-extern const unsigned char tile_object_high[] = { 10, 4, 10 };
+extern const unsigned char tile_object_wide[] = { 16, 16, 8, 4, 6 };
+extern const unsigned char tile_object_high[] = { 10, 4, 10, 3, 3 };
