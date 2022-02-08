@@ -83,9 +83,9 @@ S:Ltile_manager.draw_tile_side$val$1$105({1}SC:U),R,0,0,[l]
 S:Ltile_manager.draw_tile_side$off$1$105({2}SI:U),R,0,0,[l,h]
 S:Ltile_manager.draw_tile_side$row$1$105({1}SC:U),R,0,0,[e]
 S:Ltile_manager.draw_tile_side$col$1$105({1}SC:U),R,0,0,[]
-S:Ltile_manager.draw_tile_side$sloc0$1$0({1}SC:U),B,1,-2
+S:Ltile_manager.draw_tile_side$sloc0$1$0({1}SC:U),B,1,-3
 S:Ltile_manager.draw_tile_side$sloc1$1$0({1}SC:U),B,1,-1
-S:Ltile_manager.draw_tile_side$sloc2$1$0({1}SC:U),B,1,-3
+S:Ltile_manager.draw_tile_side$sloc2$1$0({1}SC:U),B,1,-2
 F:Ftile_manager$draw_tile_fl02$0$0({2}DF,SV:S),Z,0,3,0,0,0
 S:Ltile_manager.draw_tile_fl02$array$1$110({2}DG,SC:U),B,1,4
 S:Ltile_manager.draw_tile_fl02$x$1$110({1}SC:U),B,1,6
@@ -97,10 +97,10 @@ S:Ltile_manager.draw_tile_fl02$f$1$110({1}SC:U),B,1,11
 S:Ltile_manager.draw_tile_fl02$tiles$1$111({2}DG,SC:U),R,0,0,[]
 S:Ltile_manager.draw_tile_fl02$idx$1$111({1}SC:U),R,0,0,[e]
 S:Ltile_manager.draw_tile_fl02$val$1$111({2}SI:U),R,0,0,[e,d]
-S:Ltile_manager.draw_tile_fl02$row$1$111({1}SC:U),B,1,-6
+S:Ltile_manager.draw_tile_fl02$row$1$111({1}SC:U),B,1,-4
 S:Ltile_manager.draw_tile_fl02$col$1$111({1}SC:U),R,0,0,[b]
 S:Ltile_manager.draw_tile_fl02$tmp$1$111({1}SC:U),R,0,0,[]
-S:Ltile_manager.draw_tile_fl02$flip$1$111({2}SI:U),B,1,-5
+S:Ltile_manager.draw_tile_fl02$flip$1$111({2}SI:U),B,1,-6
 S:Ltile_manager.draw_tile_fl02$sloc0$1$0({1}SC:U),B,1,-3
 S:Ltile_manager.draw_tile_fl02$sloc1$1$0({1}SC:U),B,1,-1
 S:Ltile_manager.draw_tile_fl02$sloc2$1$0({1}SC:U),B,1,-2
@@ -116,8 +116,8 @@ S:Ltile_manager.draw_tile_full$val$1$118({1}SC:U),R,0,0,[l]
 S:Ltile_manager.draw_tile_full$off$1$118({2}SI:U),R,0,0,[l,h]
 S:Ltile_manager.draw_tile_full$row$1$118({1}SC:U),R,0,0,[c]
 S:Ltile_manager.draw_tile_full$col$1$118({1}SC:U),B,1,-3
-S:Ltile_manager.draw_tile_full$sloc0$1$0({1}SC:U),B,1,-1
-S:Ltile_manager.draw_tile_full$sloc1$1$0({1}SC:U),B,1,-2
+S:Ltile_manager.draw_tile_full$sloc0$1$0({1}SC:U),B,1,-2
+S:Ltile_manager.draw_tile_full$sloc1$1$0({1}SC:U),B,1,-1
 F:Ftile_manager$draw_tile_flip$0$0({2}DF,SV:S),Z,0,2,0,0,0
 S:Ltile_manager.draw_tile_flip$array$1$123({2}DG,SC:U),B,1,4
 S:Ltile_manager.draw_tile_flip$x$1$123({1}SC:U),B,1,6
@@ -131,8 +131,8 @@ S:Ltile_manager.draw_tile_flip$row$1$124({1}SC:U),R,0,0,[c]
 S:Ltile_manager.draw_tile_flip$col$1$124({1}SC:U),R,0,0,[e]
 S:Ltile_manager.draw_tile_flip$tmp$1$124({1}SC:U),R,0,0,[b]
 S:Ltile_manager.draw_tile_flip$flip$1$124({2}SI:U),B,1,-5
-S:Ltile_manager.draw_tile_flip$sloc0$1$0({1}SC:U),B,1,-2
-S:Ltile_manager.draw_tile_flip$sloc1$1$0({1}SC:U),B,1,-1
+S:Ltile_manager.draw_tile_flip$sloc0$1$0({1}SC:U),B,1,-1
+S:Ltile_manager.draw_tile_flip$sloc1$1$0({1}SC:U),B,1,-2
 S:Ltile_manager.draw_tile_flip$sloc2$1$0({1}SC:U),B,1,-3
 F:Ftile_manager$draw_tile_next$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Ltile_manager.draw_tile_next$array$1$129({2}DG,SC:U),B,1,4
