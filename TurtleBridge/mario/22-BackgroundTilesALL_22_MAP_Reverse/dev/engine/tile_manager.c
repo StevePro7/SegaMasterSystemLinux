@@ -28,26 +28,6 @@ void engine_tile_manager_sky()
 	}
 }
 
-void engine_tile_manager_section01( unsigned char x, unsigned char y )
-{
-	const unsigned char *array = tile_object_data[ tile_type_section01 ];
-	const unsigned char w = 16;
-	const unsigned char h = 10;
-//	draw_tile_full( array, x, y, w, h );
-	//draw_tile_next( array, x, y, w, h );
-	draw_tile_side( array, x, y, w, h, 0, 8 );
-}
-
-void engine_tile_manager_section01_left( unsigned char x, unsigned char y )
-{
-	const unsigned char *array = tile_object_data[ tile_type_section01 ];
-	const unsigned char w = 16;
-	const unsigned char h = 10;
-	//	draw_tile_full( array, x, y, w, h );
-	//	draw_tile_next( array, x, y, w, h );
-	draw_tile_fl02( array, x, y, w, h, 8, 16 );
-}
-
 void engine_tile_manager_turtle( unsigned char type, unsigned char x, unsigned char y )
 {
 	const unsigned char *array = tile_object_data[ type ];
@@ -76,12 +56,31 @@ void engine_tile_manager_sign( unsigned char type, unsigned char x, unsigned cha
 	draw_tile_full( array, x, y, w, h );
 }
 
+void engine_tile_manager_section01( unsigned char x, unsigned char y )
+{
+	const unsigned char *array = tile_object_data[ tile_type_section01 ];
+	const unsigned char w = tile_object_wide[ tile_type_section01 ];
+	const unsigned char h = tile_object_high[ tile_type_section01 ];
+	//	draw_tile_full( array, x, y, w, h );
+	//draw_tile_next( array, x, y, w, h );
+	draw_tile_side( array, x, y, w, h, 0, 8 );
+}
+
+void engine_tile_manager_section01_left( unsigned char x, unsigned char y )
+{
+	const unsigned char *array = tile_object_data[ tile_type_section01 ];
+	const unsigned char w = tile_object_wide[ tile_type_section01 ];
+	const unsigned char h = tile_object_high[ tile_type_section01 ];
+	//	draw_tile_full( array, x, y, w, h );
+	//	draw_tile_next( array, x, y, w, h );
+	draw_tile_fl02( array, x, y, w, h, 8, 16 );
+}
 
 void engine_tile_manager_section02( unsigned char x, unsigned char y )
 {
 	const unsigned char *array = tile_object_data[ tile_type_section02 ];
-	const unsigned char w = 16;
-	const unsigned char h = 4;
+	const unsigned char w = tile_object_wide[ tile_type_section02 ];
+	const unsigned char h = tile_object_high[ tile_type_section02 ];
 	//draw_tile_full( array, x, y, w, h );
 	draw_tile_next( array, x, y, w, h );
 }
@@ -89,19 +88,19 @@ void engine_tile_manager_section02( unsigned char x, unsigned char y )
 void engine_tile_manager_section03( unsigned char x, unsigned char y )
 {
 	const unsigned char *array = tile_object_data[ tile_type_section03 ];
-	const unsigned char w = 8;
-	const unsigned char h = 10;
-	//	draw_tile_full( array, x, y, w, h );
-	//draw_tile_next( array, x, y, w, h );
-	draw_tile_flip( array, x, y, w, h );
+	const unsigned char w = tile_object_wide[ tile_type_section03 ];
+	const unsigned char h = tile_object_high[ tile_type_section03 ];
+	//draw_tile_full( array, x, y, w, h );
+	draw_tile_next( array, x, y, w, h );
+	//draw_tile_flip( array, x, y, w, h );
 }
 
 
 void engine_tile_manager_scroll_test( unsigned char x, unsigned char y, unsigned char col )
 {
 	const unsigned char *array = tile_object_data[ tile_type_section01 ];
-	const unsigned char w = 16;
-	const unsigned char h = 10;
+	const unsigned char w = tile_object_wide[ tile_type_section01 ];
+	const unsigned char h = tile_object_high[ tile_type_section01 ];
 	draw_tile_scroll( array, x, y, w, h, col );
 }
 
@@ -122,7 +121,6 @@ static void draw_tile_scroll( const unsigned char *array, unsigned char x, unsig
 		devkit_SMS_loadTileMap( x + col, y + row, ( void * ) &tiles[ off ], 2 );
 	}
 }
-
 
 static void draw_tile_side( const unsigned char *array, unsigned char x, unsigned char y, unsigned char w, unsigned char h, unsigned char s, unsigned char f )
 {

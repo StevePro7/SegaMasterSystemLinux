@@ -15,3 +15,5 @@ S:G$sign_numb_array$0$0({0}DA0d,SC:U),D,0,0
 S:G$section01_array$0$0({0}DA0d,SC:U),D,0,0
 S:G$section02_array$0$0({0}DA0d,SC:U),D,0,0
 S:G$section03_array$0$0({0}DA0d,SC:U),D,0,0
+S:G$tile_object_wide$0$0({3}DA3d,SC:U),D,0,0
+S:G$tile_object_high$0$0({3}DA3d,SC:U),D,0,0
