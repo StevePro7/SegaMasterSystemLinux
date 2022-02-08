@@ -13,29 +13,30 @@ static unsigned char col;
 void engine_screen_manager_init()
 {
 	engine_tile_manager_sky();
+	engine_tile_manager_sea();
 	//engine_font_manager_draw_text( "REVERSE", 2, 2 );
 
-	engine_tile_manager_section01_left( -8, 12 );
-	engine_tile_manager_section01( 24, 12 );
+	//engine_tile_manager_section01_left( -8, 12 );
+	//engine_tile_manager_section01( 24, 12 );
 
-	//engine_tile_manager_section02( 10, 4 );
-	//engine_tile_manager_section03( 10, 4 );
+	////engine_tile_manager_section02( 10, 4 );
+	////engine_tile_manager_section03( 10, 4 );
 
-	engine_tile_manager_cloud( tile_type_cloud01, 10, 4 );
-	engine_tile_manager_cloud( tile_type_cloud02, 20, 4 );
+	//engine_tile_manager_cloud( tile_type_cloud01, 10, 4 );
+	//engine_tile_manager_cloud( tile_type_cloud02, 20, 4 );
 
-	engine_tile_manager_turtle( tile_type_sea_turtleA1, 8, 19 );
-	//engine_tile_manager_turtle( tile_type_sea_turtleA2, 8, 11 );
-	engine_tile_manager_turtle( tile_type_sea_turtleA3, 12, 21 );
+	//engine_tile_manager_turtle( tile_type_sea_turtleA1, 8, 19 );
+	////engine_tile_manager_turtle( tile_type_sea_turtleA2, 8, 11 );
+	//engine_tile_manager_turtle( tile_type_sea_turtleA3, 12, 21 );
 
-	engine_tile_manager_turtle( tile_type_sea_turtleB1, 16, 19 );
-	engine_tile_manager_turtle( tile_type_sea_turtleB2, 20, 20 );
-	//engine_tile_manager_turtle( tile_type_sea_turtleB3, 28, 12 );
+	//engine_tile_manager_turtle( tile_type_sea_turtleB1, 16, 19 );
+	//engine_tile_manager_turtle( tile_type_sea_turtleB2, 20, 20 );
+	////engine_tile_manager_turtle( tile_type_sea_turtleB3, 28, 12 );
 
-	//engine_tile_manager_turtle( tile_type_fly_turtle01, 18, 8 );
-	//engine_tile_manager_turtle( tile_type_fly_turtle02, 25, 8 );
+	////engine_tile_manager_turtle( tile_type_fly_turtle01, 18, 8 );
+	////engine_tile_manager_turtle( tile_type_fly_turtle02, 25, 8 );
 
-	engine_tile_manager_sign( tile_type_sign_numb, 26, 9 );
+	//engine_tile_manager_sign( tile_type_sign_numb, 26, 9 );
 
 	col = 0;
 }
