@@ -27,7 +27,8 @@ namespace ScreenShotTest
 			length = files.Length;
 
 			width = 128;
-			height = ((length / 16) + 1) * 8;
+			int offset = 0 == length % 16 ? 0 : 1;
+			height = ((length / 16) + offset) * 8;
 
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = width;
