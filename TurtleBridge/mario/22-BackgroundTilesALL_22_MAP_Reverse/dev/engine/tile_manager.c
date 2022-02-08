@@ -52,6 +52,27 @@ void engine_tile_manager_sea()
 		devkit_SMS_setNextTileatXY( col + 2, row );	devkit_SMS_setTile( *tiles + idx + 1 );
 		devkit_SMS_setNextTileatXY( col + 3, row );	devkit_SMS_setTile( *tiles + idx + 2 );
 	}
+
+	idx = 73;
+	row = 22;
+	for( col = 0; col < SCREEN_WIDE; col += 4 )
+	{
+		devkit_SMS_setNextTileatXY( col + 3, row ); devkit_SMS_setTile( *tiles + idx + 0 );
+		//devkit_SMS_setNextTileatXY( col + 2, row ); devkit_SMS_setTile( *tiles + idx + 1 );
+	}
+	
+	//devkit_SMS_setNextTileatXY( 30, row );	devkit_SMS_setTile( *tiles + 70 );
+	//devkit_SMS_setNextTileatXY( 29, row );	devkit_SMS_setTile( *tiles + 69 );
+
+	idx = 69;
+	row = 23;
+	for( col = 0; col < SCREEN_WIDE; col += 4 )
+	{
+		devkit_SMS_setNextTileatXY( col + 1, row ); devkit_SMS_setTile( *tiles + idx + 0 );
+		devkit_SMS_setNextTileatXY( col + 2, row ); devkit_SMS_setTile( *tiles + idx + 1 );
+	}
+
+	//devkit_SMS_setNextTileatXY( 31, row );	devkit_SMS_setTile( *tiles + 73 + 0 );
 }
 
 void engine_tile_manager_turtle( unsigned char type, unsigned char x, unsigned char y )
