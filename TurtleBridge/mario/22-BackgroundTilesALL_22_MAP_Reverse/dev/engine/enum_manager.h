@@ -16,8 +16,8 @@ typedef enum tag_enum_tile_type
 	tile_type_sea_turtleB3 = 10,
 	tile_type_fly_turtle01 = 11,
 	tile_type_fly_turtle02 = 12,
-	tile_type_sign_goal = 13,
-	tile_type_sign_numb = 14,
+	tile_type_sign_numb = 13,
+	tile_type_sign_goal = 14,
 
 } enum_tile_type;
 

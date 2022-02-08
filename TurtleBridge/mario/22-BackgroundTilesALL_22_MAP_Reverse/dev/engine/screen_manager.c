@@ -35,6 +35,8 @@ void engine_screen_manager_init()
 	//engine_tile_manager_turtle( tile_type_fly_turtle01, 18, 8 );
 	//engine_tile_manager_turtle( tile_type_fly_turtle02, 25, 8 );
 
+	engine_tile_manager_sign( tile_type_sign_numb, 26, 9 );
+
 	col = 0;
 }
 

@@ -17,8 +17,8 @@ const unsigned char *tile_object_data[] =
 	sea_turtleB3_array,
 	fly_turtle01_array,
 	fly_turtle02_array,
-	sign_goal_array,
 	sign_numb_array,
+	sign_goal_array,
 };
 
 extern const unsigned char tile_object_wide[] = { 16, 16, 8, 4, 6 };
