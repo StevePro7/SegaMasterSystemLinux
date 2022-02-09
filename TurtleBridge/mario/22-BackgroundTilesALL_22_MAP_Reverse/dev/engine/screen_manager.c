@@ -19,11 +19,11 @@ void engine_screen_manager_init()
 	engine_tile_manager_section01_left( -8, 12 );
 	engine_tile_manager_section01( 24, 12 );
 
-	////engine_tile_manager_section02( 10, 4 );
-	////engine_tile_manager_section03( 10, 4 );
+	engine_tile_manager_section02( 8, 18 );
+	engine_tile_manager_section03( 24, 2 );
 
-	//engine_tile_manager_cloud( tile_type_cloud01, 10, 4 );
-	//engine_tile_manager_cloud( tile_type_cloud02, 20, 4 );
+	engine_tile_manager_cloud( tile_type_cloud01, 6, 2 );
+	engine_tile_manager_cloud( tile_type_cloud02, 15, 1 );
 
 	//engine_tile_manager_turtle( tile_type_sea_turtleA1, 8, 19 );
 	////engine_tile_manager_turtle( tile_type_sea_turtleA2, 8, 11 );
