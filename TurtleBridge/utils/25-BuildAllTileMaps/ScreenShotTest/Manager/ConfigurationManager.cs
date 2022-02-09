@@ -34,8 +34,8 @@ namespace ScreenShotTest
 				"sea_turtleBB03_32x24",
 				"flying_turtle01_32x24",
 				"flying_turtle02_32x24",
-				"sign02",
-				"goal_sign",
+				"sign_send",
+				"sign_goal",
 			};
 
 //			Files = new string[17]
