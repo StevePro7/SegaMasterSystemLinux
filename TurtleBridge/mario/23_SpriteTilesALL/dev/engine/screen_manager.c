@@ -6,7 +6,7 @@
 #include "input_manager.h"
 #include "sprite_manager.h"
 
-static unsigned char x = 88;
+static unsigned char x = 48;
 static unsigned char y = 96;
 
 //static void print_coords();
@@ -25,6 +25,7 @@ void engine_screen_manager_init()
 
 void engine_screen_manager_update()
 {
+	unsigned char delta = 0;
 	unsigned char input = 0;
 	input = engine_input_manager_move_fire1();
 	if( input )
@@ -55,7 +56,10 @@ void engine_screen_manager_update()
 
 	//print_coords();
 
-	engine_sprite_manager_draw( x, y, SPRITE_TILES );
+	engine_sprite_manager_draw( x + 0, y, delta + 0 );
+	engine_sprite_manager_draw( x + 40, y, delta + 1 );
+	engine_sprite_manager_draw( x + 80, y, delta + 2 );
+	engine_sprite_manager_draw( x + 120, y, delta + 3 );
 }
 
 static void print_coords()
