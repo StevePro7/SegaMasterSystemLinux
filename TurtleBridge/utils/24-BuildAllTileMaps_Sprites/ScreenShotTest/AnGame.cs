@@ -11,7 +11,7 @@ namespace ScreenShotTest
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
 		private ImageManager imageManager;
-		const string file = "sprites";
+		const string file = "sprites_org";
 
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
