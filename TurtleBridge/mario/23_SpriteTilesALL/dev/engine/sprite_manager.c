@@ -4,12 +4,6 @@
 #include "../content/gfx.h"
 
 
-void engine_turtle_manager_draw( unsigned char x, unsigned char y )
-{
-	
-}
-
-
 // zoom sprites
 void engine_sprite_manager_draw( unsigned char x, unsigned char y, unsigned int tile )
 {
@@ -20,4 +14,13 @@ void engine_sprite_manager_draw( unsigned char x, unsigned char y, unsigned int 
 	devkit_SMS_addSprite( x + size * 8, y + size * 0, tile + 1 );
 	devkit_SMS_addSprite( x + size * 0, y + size * 8, tile + 2 );
 	devkit_SMS_addSprite( x + size * 8, y + size * 8, tile + 3 );
+}
+
+
+void engine_sprite_manager_fish( unsigned char x, unsigned char y )
+{
+	unsigned int tile;
+	tile = 20; engine_sprite_manager_draw( x + 0, y, tile );
+	tile = 21; engine_sprite_manager_draw( x + 32, y, tile );
+	tile = 22; engine_sprite_manager_draw( x + 64, y, tile );
 }
