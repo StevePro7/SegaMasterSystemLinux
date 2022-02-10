@@ -128,13 +128,16 @@ namespace ScreenShotTest
 
 		private void Draw()
 		{
+			int y = 0;
 			graphics.GraphicsDevice.Clear(Color.Black);
 			spriteBatch.Begin();
 
 			foreach (var image in imageManager.Images)
 			{
-				spriteBatch.Draw(image.Value, Vector2.Zero, Color.White);
+				spriteBatch.Draw(image.Value, new Vector2(0, y), Color.White);
+				y += 16;
 			}
+
 			spriteBatch.End();
 		}
 

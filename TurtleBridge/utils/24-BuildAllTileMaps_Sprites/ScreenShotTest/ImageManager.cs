@@ -1,9 +1,6 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
-using System.IO;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
+
 namespace ScreenShotTest
 {
 	public class ImageManager
@@ -11,11 +8,39 @@ namespace ScreenShotTest
 		public void LoadContent(Microsoft.Xna.Framework.Content.ContentManager myContentManager)
 		{
 			Images = new Dictionary<string, Texture2D>();
-			//var files = GetFiles();
-			var file = "back_00";
-			Images[file] = myContentManager.Load<Texture2D>(file);
+			var files = GetFiles();
+			foreach (var file in files)
+			{
+				Images[file] = myContentManager.Load<Texture2D>(file);
+			}
 		}
 
+		private string[] GetFiles()
+		{
+			return new string[]
+			{
+				"rght_01",
+				"rght_02",
+				"rght_03",
+				"flip_R1",
+				"flip_R2",
+				"flip_R3",
+				"left_01",
+				"left_02",
+				"left_03",
+				"flip_L1",
+				"flip_L2",
+				"flip_L3",
+				"back_00",
+				"face_01",
+				"face_02",
+				"face_03",
+				"blue",
+				"red_wboy01",
+				"red_wboy02",
+				"red_wboy03",
+			};
+		}
 		public IDictionary<string, Texture2D> Images { get; private set; }
 	}
 }
