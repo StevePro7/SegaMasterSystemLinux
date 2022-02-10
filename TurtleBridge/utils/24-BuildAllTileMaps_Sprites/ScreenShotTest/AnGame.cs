@@ -27,7 +27,7 @@ namespace ScreenShotTest
 		{
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = 16;
-			graphics.PreferredBackBufferHeight = 320;
+			graphics.PreferredBackBufferHeight = 320 + 48;
 			Content.RootDirectory = "Content";
 		}
 

@@ -35,10 +35,13 @@ namespace ScreenShotTest
 				"face_01",
 				"face_02",
 				"face_03",
-				"blue",
-				"red_wboy01",
-				"red_wboy02",
-				"red_wboy03",
+				"splash",
+				"octopus01",
+				"octopus02",
+				"octopus03",
+				"flyingfish01",
+				"flyingfish02",
+				"flyingfish03",
 			};
 		}
 		public IDictionary<string, Texture2D> Images { get; private set; }
