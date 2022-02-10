@@ -12,13 +12,12 @@ namespace ScreenShotTest
 	/// </summary>
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		const string file = "turtle01_together";
+		private ImageManager imageManager;
+		const string file = "sprites";
 
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
 		RenderTarget2D renderTarget;
-		private Texture2D image01;
-		private Texture2D image02;
 		private const int offset = 0;
 
 		private bool save;
@@ -26,15 +25,11 @@ namespace ScreenShotTest
 		private int width;
 		private int height;
 
-		private IDictionary<string, Texture2D> dict = new Dictionary<string, Texture2D>();
-		private int size = 1;
-		private int pixl = 32;
-
 		public AnGame()
 		{
 			graphics = new GraphicsDeviceManager(this);
-			graphics.PreferredBackBufferWidth = pixl * size;
-			graphics.PreferredBackBufferHeight = pixl * size * 2;
+			graphics.PreferredBackBufferWidth = 16;
+			graphics.PreferredBackBufferHeight = 320;
 			Content.RootDirectory = "Content";
 		}
 
@@ -51,7 +46,7 @@ namespace ScreenShotTest
 			//{
 			//	save = Convert.ToBoolean(ConfigurationManager.AppSettings["save"]);
 			//}
-			save = true;
+			//save = true;
 			IsMouseVisible = true;
 			base.Initialize();
 		}
@@ -64,8 +59,9 @@ namespace ScreenShotTest
 		{
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch(GraphicsDevice);
-			image01 = Content.Load<Texture2D>("turtle01_32x32");
-			image02 = Content.Load<Texture2D>("turtleSS_32x32");
+
+			imageManager = new ImageManager();
+			imageManager.LoadContent(Content);
 
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
 			width = pp.BackBufferWidth;
@@ -135,9 +131,10 @@ namespace ScreenShotTest
 			graphics.GraphicsDevice.Clear(Color.Black);
 			spriteBatch.Begin();
 
-			spriteBatch.Draw(image01, new Vector2(0, 0), Color.White);
-			spriteBatch.Draw(image02, new Vector2(0, 32), Color.White);
-
+			foreach (var image in imageManager.Images)
+			{
+				spriteBatch.Draw(image.Value, Vector2.Zero, Color.White);
+			}
 			spriteBatch.End();
 		}
 
