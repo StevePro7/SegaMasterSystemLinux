@@ -9,7 +9,7 @@
 static unsigned char x = 88;
 static unsigned char y = 96;
 
-static void print_coords();
+//static void print_coords();
 
 void engine_screen_manager_init()
 {
@@ -17,7 +17,7 @@ void engine_screen_manager_init()
 
 	//engine_turtle_manager_draw( 2, y );
 	//engine_turtle_manager_draw( 6, y );
-	engine_turtle_manager_draw( 11, 18 );
+	//engine_turtle_manager_draw( 11, 18 );
 	//engine_turtle_manager_draw( 18, y );
 	//engine_turtle_manager_draw( 24, y );
 	//engine_turtle_manager_draw( 38, y );
@@ -29,7 +29,7 @@ void engine_screen_manager_update()
 	input = engine_input_manager_move_fire1();
 	if( input )
 	{
-		engine_font_manager_draw_text( "STEVEPRO STUDIOS()", 4, 7 );
+		//engine_font_manager_draw_text( "STEVEPRO STUDIOS()", 4, 7 );
 	}
 
 	input = engine_input_manager_move_left();
@@ -53,13 +53,13 @@ void engine_screen_manager_update()
 		y++;
 	}
 
-	print_coords();
+	//print_coords();
 
 	engine_sprite_manager_draw( x, y, SPRITE_TILES );
 }
 
 static void print_coords()
 {
-	engine_font_manager_draw_data( x, 14, 6 );
-	engine_font_manager_draw_data( y, 14, 7 );
+//	engine_font_manager_draw_data( x, 14, 6 );
+//	engine_font_manager_draw_data( y, 14, 7 );
 }
