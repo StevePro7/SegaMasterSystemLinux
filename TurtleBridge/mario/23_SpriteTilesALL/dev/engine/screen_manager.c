@@ -48,10 +48,10 @@ void engine_screen_manager_update()
 	//print_coords();
 
 	// fish
-	engine_sprite_manager_draw( x + 72, y, delta + 0 );
-/*	engine_sprite_manager_draw( x + 40, y, delta + 20 );
-	engine_sprite_manager_draw( x + 80, y, delta + 21 );
-	engine_sprite_manager_draw( x + 120, y, delta + 22 )*/;
+	engine_sprite_manager_draw( x + 0, y, delta + 17 );
+	engine_sprite_manager_draw( x + 40, y, delta + 18 );
+	engine_sprite_manager_draw( x + 80, y, delta + 19 );
+	//engine_sprite_manager_draw( x + 120, y, delta + 22 )
 
-	engine_sprite_manager_fish( x + 96, y );
+	//engine_sprite_manager_fish( x + 96, y );
 }
