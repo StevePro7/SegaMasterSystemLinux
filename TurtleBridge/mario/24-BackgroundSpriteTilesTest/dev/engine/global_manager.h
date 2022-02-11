@@ -4,4 +4,7 @@
 // Sprites.
 #define SPRITE_TILES		256
 
+#define SCREEN_WIDE			32
+#define SCREEN_HIGH			24
+
 #endif//_GLOBAL_MANAGER_H_
