@@ -5,6 +5,7 @@
 #include "global_manager.h"
 #include "input_manager.h"
 #include "sprite_manager.h"
+#include "tile_manager.h"
 
 static unsigned char x = 48;
 static unsigned char y = 96;
@@ -12,6 +13,9 @@ static unsigned char y = 96;
 void engine_screen_manager_init()
 {
 	engine_font_manager_draw_text( "STEVEPRO STUDIOS", 4, 4 );
+
+	//engine_tile_manager_section01( 2, 10 );
+	engine_tile_manager_section01_left( 2, 10 );
 }
 
 void engine_screen_manager_update()
@@ -48,9 +52,9 @@ void engine_screen_manager_update()
 	//print_coords();
 
 	// fish
-	engine_sprite_manager_draw( x + 0, y, delta + 17 );
-	engine_sprite_manager_draw( x + 40, y, delta + 18 );
-	engine_sprite_manager_draw( x + 80, y, delta + 19 );
+	//engine_sprite_manager_draw( x + 0, y, delta + 17 );
+	//engine_sprite_manager_draw( x + 40, y, delta + 18 );
+	//engine_sprite_manager_draw( x + 80, y, delta + 19 );
 	//engine_sprite_manager_draw( x + 120, y, delta + 22 )
 
 	//engine_sprite_manager_fish( x + 96, y );
