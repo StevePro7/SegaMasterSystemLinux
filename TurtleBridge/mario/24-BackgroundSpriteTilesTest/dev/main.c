@@ -11,12 +11,11 @@ void main( void )
 	//devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );
 	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_ZOOMSPRITES() );
 
-	//engine_content_manager_load_tiles();
+	engine_content_manager_load_bgtiles();
 	engine_content_manager_load_sprites();
-	//engine_content_manager_load_turtle();
 
-	devkit_SMS_setBGPaletteColor( 0, devkit_RGB( 1, 2, 3 ) );
-	devkit_SMS_setBGPaletteColor( 16, devkit_RGB( 1, 2, 3 ) );		// cornflower blue		sky
+	//devkit_SMS_setBGPaletteColor( 0, devkit_RGB( 1, 2, 3 ) );
+	//devkit_SMS_setBGPaletteColor( 16, devkit_RGB( 1, 2, 3 ) );		// cornflower blue		sky
 	engine_screen_manager_init();
 
 	devkit_SMS_displayOn();
