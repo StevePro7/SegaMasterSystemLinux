@@ -77,23 +77,23 @@ void engine_tile_manager_turtle( unsigned char type, unsigned char x, unsigned c
 	engine_tile_manager_draw_norm( type, x, y, wide, high, 0, wide );
 }
 
-
-
-void engine_tile_manager_cloud( unsigned char type, unsigned char x, unsigned char y )
-{
-	const unsigned char *array = tile_object_data[ type ];
-	const unsigned char w = tile_object_wide[ type ];
-	const unsigned char h = tile_object_high[ type ];
-	draw_tile_next( array, x, y, w, h );
-}
-
 void engine_tile_manager_sign( unsigned char type, unsigned char x, unsigned char y )
 {
-	const unsigned char *array = tile_object_data[ type ];
-	const unsigned char w = 3;
-	const unsigned char h = 3;
-	draw_tile_next( array, x, y, w, h );
+	const unsigned char wide = 3;
+	const unsigned char high = 3;
+	engine_tile_manager_draw_norm( type, x, y, wide, high, 0, wide );
 }
+
+
+//void engine_tile_manager_cloud( unsigned char type, unsigned char x, unsigned char y )
+//{
+//	const unsigned char *array = tile_object_data[ type ];
+//	const unsigned char w = tile_object_wide[ type ];
+//	const unsigned char h = tile_object_high[ type ];
+//	draw_tile_next( array, x, y, w, h );
+//}
+
+
 
 void engine_tile_manager_section01( unsigned char x, unsigned char y )
 {
