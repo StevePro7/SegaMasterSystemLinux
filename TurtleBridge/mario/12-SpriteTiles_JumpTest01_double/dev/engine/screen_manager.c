@@ -19,6 +19,10 @@ static unsigned char index, count, state;
 static unsigned int ascent[ 17 ] = { 2958, 2347, 1960, 1673, 1441, 1247, 1079, 930, 796, 675, 564, 461, 365, 276, 191, 112, 36 };
 static unsigned int descent[ 8 ] = { 348, 522, 696, 870, 1044, 1219, 1393, 1408 };
 
+// half jump - not great!
+//static unsigned int ascent[ 17 ] = { 1479, 1173, 980, 836, 720, 623, 539, 465, 398, 337, 282, 230, 182, 138, 95, 56, 18 };
+//static unsigned int descent[ 8 ] = { 174, 261, 348, 435, 522, 609, 696, 704 };
+
 void engine_screen_manager_init()
 {
 	//engine_font_manager_draw_text( "STEVEPRO STUDIOS!!", 4, 1 );

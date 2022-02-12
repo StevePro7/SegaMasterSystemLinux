@@ -9,7 +9,7 @@
 #include "tile_manager.h"
 
 static unsigned char x = 16;
-static unsigned char y = 64;
+static unsigned char y = 128-32;// 64;
 
 static void bonus_level();
 
@@ -81,8 +81,13 @@ static void bonus_level()
 	engine_tile_manager_sky();
 	engine_tile_manager_sea();
 
-	engine_tile_manager_draw_flip( tile_type_section01,  0, 12, 16, 10, 6, 16 );
+	engine_tile_manager_draw_flip( tile_type_section01,  0, 16, 16, 10, 6, 16 );
 	engine_tile_manager_draw_norm( tile_type_section01, 23, 12, 16, 10, 0, 9 );
+
+	
+	//engine_tile_manager_draw_tile( tile_type_section02, 2, 18);
+	//engine_tile_manager_turtle( tile_type_sea_turtleA1, 2, 19 );
+
 
 	//engine_tile_manager_turtle( tile_type_fly_turtle01, 11, y );
 	//engine_tile_manager_turtle( tile_type_fly_turtle01, 14, y );
@@ -94,8 +99,8 @@ static void bonus_level()
 
 	//engine_font_manager_draw_text( "123456789ABCD", 10, 12 );
 
-	engine_tile_manager_sign( tile_type_sign_numb, 8, 9 );
-	engine_tile_manager_sign( tile_type_sign_goal, 28, 9 );
+	//engine_tile_manager_sign( tile_type_sign_numb, 8, 9 );
+	//engine_tile_manager_sign( tile_type_sign_goal, 28, 9 );
 }
 
 static void bonus_level_org()
