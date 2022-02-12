@@ -30,7 +30,7 @@ S:G$engine_sprite_manager_draw$0$0({2}DF,SV:S),C,0,0
 S:G$engine_sprite_manager_fish$0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_sky$0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_sea$0$0({2}DF,SV:S),C,0,0
-S:G$engine_tile_manager_draw_impl$0$0({2}DF,SV:S),C,0,0
+S:G$engine_tile_manager_draw_norm$0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_turtle$0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_cloud$0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_sign$0$0({2}DF,SV:S),C,0,0

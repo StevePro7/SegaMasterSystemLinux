@@ -20,9 +20,10 @@ void engine_screen_manager_init()
 	//engine_tile_manager_draw_impl()
 
 	//engine_tile_manager_section01( 2, 10 );
-	engine_tile_manager_section01_left( 2, 10 );
+	//engine_tile_manager_section01_left( 2, 10 );
 
-	//engine_tile_manager_draw_impl( tile_type_sea_turtleA3, 10, 10, 4, 3, 4, 3, 0 );
+	//engine_tile_manager_draw_norm( tile_type_sea_turtleA3, 10, 10, 4, 3, 0, 4 );
+	engine_tile_manager_draw_norm( tile_type_section01, 4, 5, 16, 10, 0, 8 );
 }
 
 void engine_screen_manager_update()
