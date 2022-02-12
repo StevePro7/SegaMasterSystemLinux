@@ -16,7 +16,12 @@ static void bonus_level();
 void engine_screen_manager_init()
 {
 //	engine_font_manager_draw_text( "STEVEPRO STUDIOS", 4, 4 );
-	bonus_level();
+	//bonus_level();
+
+	//engine_tile_manager_turtle( tile_type_fly_turtle01, 10, y );
+
+	engine_tile_manager_draw_flip( tile_type_fly_turtle02, 10, 10, 4, 3, 0, 4 );
+	//engine_tile_manager_draw_flip( tile_type_section01, 0, 12, 16, 10, 6, 16 );
 }
 
 void engine_screen_manager_update()

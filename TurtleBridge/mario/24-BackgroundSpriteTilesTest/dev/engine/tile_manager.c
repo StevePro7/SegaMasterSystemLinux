@@ -59,8 +59,6 @@ void engine_tile_manager_draw_flip( unsigned char type, unsigned char x, unsigne
 	}
 }
 
-
-
 void engine_tile_manager_sky()
 {
 	const unsigned char *tiles = bggame_tiles__tilemap__bin;
@@ -83,6 +81,8 @@ void engine_tile_manager_turtle( unsigned char type, unsigned char x, unsigned c
 	const unsigned char high = 3;
 	engine_tile_manager_draw_norm( type, x, y, wide, high, 0, wide );
 }
+
+
 
 void engine_tile_manager_cloud( unsigned char type, unsigned char x, unsigned char y )
 {
@@ -273,3 +273,12 @@ static void draw_tile_next( const unsigned char *array, unsigned char x, unsigne
 		}
 	}
 }
+
+
+// Flip
+//void engine_tile_manager_turtle_flip( unsigned char type, unsigned char x, unsigned char y )
+//{
+//	const unsigned char wide = 4;
+//	const unsigned char high = 3;
+//	engine_tile_manager_draw_flip( type, x, y, wide, high, 0, wide );
+//}

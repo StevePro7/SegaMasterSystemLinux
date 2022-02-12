@@ -43,3 +43,20 @@ also using the latest devkitSMS library in devkitSMScode
 
 Input Manager	stream line
 E:\GitHub\StevePro7\SegaMasterSystemLinux\Examples\05_InputDetectionBlock\dev\engine\input_manager.c
+
+
+Sections
+12/02/2022
+
+Reference:
+E:\GitHub\StevePro8\SegaMasterSystemLinux\TurtleBridge\mario\24-BackgroundSpriteTilesTest\dev\engine\tile_manager.c
+	engine_tile_manager_draw_flip( tile_type_section01,  0, 12, 16, 10, 6, 16 );
+	engine_tile_manager_draw_norm( tile_type_section01, 23, 12, 16, 10, 0, 9 );
+
+i.e.
+section01 is 16x tiles wide but make the bonus level 9x wide
+i.e. 10x but less 1x tile for the hidden left column 	16- 6	10	but 0 col is hidden
+then mirror 9x on the other side						0 - 9	9
+
+that means there are 13x ttiles in between
+1 + 9 + 13 + 9 = 32
