@@ -4,6 +4,7 @@
 // Tiles.
 const unsigned char *tile_object_data[] =
 {
+	sea_tiles_array,
 	section01_array,
 	section02_array,
 	section03_array,
@@ -21,5 +22,5 @@ const unsigned char *tile_object_data[] =
 	sign_goal_array,
 };
 
-extern const unsigned char tile_object_wide[] = { 16, 16, 8, 4, 6 };
-extern const unsigned char tile_object_high[] = { 10, 4, 10, 3, 3 };
+extern const unsigned char tile_object_wide[] = { 32, 16, 16, 8, 4, 6 };
+extern const unsigned char tile_object_high[] = { 3, 10, 4, 10, 3, 3 };

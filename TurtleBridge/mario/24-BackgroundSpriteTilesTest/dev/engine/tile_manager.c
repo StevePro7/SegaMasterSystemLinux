@@ -125,41 +125,25 @@ void engine_tile_manager_scroll_test( unsigned char x, unsigned char y, unsigned
 void engine_tile_manager_sea()
 {
 	const unsigned char *tiles = bggame_tiles__tilemap__bin;
-	unsigned char idx = 65;
-
+	const unsigned char *array = tile_object_data[ tile_type_sea_tiles ];
+	const unsigned char wide = tile_object_wide[ tile_type_sea_tiles ];
+	const unsigned char high = tile_object_high[ tile_type_sea_tiles ];
+	
+	unsigned char idx;
+	unsigned char val;
 	unsigned char row, col;
-	for( row = 22; row < 24; row++ )
+
+	unsigned char x = 0;
+	unsigned char y = 20;
+	for( row = 0; row < high; row++ )
 	{
-		for( col = 0; col < SCREEN_WIDE; col++ )
+		for( col = 0; col < wide; col++ )
 		{
-			devkit_SMS_setNextTileatXY( col, row );
-			devkit_SMS_setTile( *tiles + idx );
+			idx = row * wide + col;
+			val = array[ idx ];
+			devkit_SMS_setNextTileatXY( x + col, y + row ); 
+			devkit_SMS_setTile( ( *tiles + val ) );
 		}
-	}
-
-	idx = 66;
-	row = 21;
-	for( col = 0; col < SCREEN_WIDE; col += 4 )
-	{
-		devkit_SMS_setNextTileatXY( col + 0, row );	devkit_SMS_setTile( *tiles + idx + 0 );
-		devkit_SMS_setNextTileatXY( col + 1, row );	devkit_SMS_setTile( *tiles + idx + 0 );
-		devkit_SMS_setNextTileatXY( col + 2, row );	devkit_SMS_setTile( *tiles + idx + 1 );
-		devkit_SMS_setNextTileatXY( col + 3, row );	devkit_SMS_setTile( *tiles + idx + 2 );
-	}
-
-	idx = 73;
-	row = 22;
-	for( col = 0; col < SCREEN_WIDE; col += 4 )
-	{
-		devkit_SMS_setNextTileatXY( col + 3, row ); devkit_SMS_setTile( *tiles + idx + 0 );
-	}
-
-	idx = 69;
-	row = 23;
-	for( col = 0; col < SCREEN_WIDE; col += 4 )
-	{
-		devkit_SMS_setNextTileatXY( col + 1, row ); devkit_SMS_setTile( *tiles + idx + 0 );
-		devkit_SMS_setNextTileatXY( col + 2, row ); devkit_SMS_setTile( *tiles + idx + 1 );
 	}
 }
 
