@@ -3,7 +3,7 @@
 
 void engine_tile_manager_sky();
 void engine_tile_manager_sea();
-void engine_tile_manager_draw_impl( unsigned char type, unsigned char x, unsigned char y, unsigned char wide, unsigned char high, unsigned char beg, unsigned char end, unsigned char priority );
+void engine_tile_manager_draw_impl( unsigned char type, unsigned char x, unsigned char y, unsigned char wide, unsigned char high, unsigned char beg, unsigned char end, unsigned int priority );
 void engine_tile_manager_turtle( unsigned char type, unsigned char x, unsigned char y );
 void engine_tile_manager_cloud( unsigned char type, unsigned char x, unsigned char y );
 void engine_tile_manager_sign( unsigned char type, unsigned char x, unsigned char y );
