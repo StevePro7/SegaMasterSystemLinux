@@ -21,4 +21,13 @@ typedef enum tag_enum_tile_type
 
 } enum_tile_type;
 
+typedef enum tag_enum_tile_flip
+{
+	tile_type_none = 0,
+	tile_type_dirX = 1,
+	//tile_type_dirY = 2,
+	//tile_type_both = 3,
+
+} enum_tile_flip;
+
 #endif//_ENUM_MANAGER_H_
