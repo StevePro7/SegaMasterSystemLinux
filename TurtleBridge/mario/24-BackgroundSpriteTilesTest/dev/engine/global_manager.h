@@ -7,4 +7,6 @@
 #define SCREEN_WIDE			32
 #define SCREEN_HIGH			24
 
+#define WAVES_HIGH			21
+
 #endif//_GLOBAL_MANAGER_H_

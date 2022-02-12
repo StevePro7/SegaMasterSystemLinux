@@ -11,19 +11,12 @@
 static unsigned char x = 48;
 static unsigned char y = 96;
 
+static void bonus_level();
+
 void engine_screen_manager_init()
 {
-	engine_font_manager_draw_text( "STEVEPRO STUDIOS", 4, 4 );
-
-	//engine_tile_manager_sea();
-
-	//engine_tile_manager_draw_impl()
-
-	//engine_tile_manager_section01( 2, 10 );
-	//engine_tile_manager_section01_left( 2, 10 );
-
-	//engine_tile_manager_draw_norm( tile_type_sea_turtleA3, 10, 10, 4, 3, 0, 4 );
-	engine_tile_manager_draw_norm( tile_type_section01, 4, 5, 16, 10, 0, 8 );
+//	engine_font_manager_draw_text( "STEVEPRO STUDIOS", 4, 4 );
+	bonus_level();
 }
 
 void engine_screen_manager_update()
@@ -66,4 +59,13 @@ void engine_screen_manager_update()
 	//engine_sprite_manager_draw( x + 120, y, delta + 22 )
 
 	//engine_sprite_manager_fish( x + 96, y );
+}
+
+static void bonus_level()
+{
+	engine_tile_manager_sky();
+	engine_tile_manager_sea();
+
+	engine_tile_manager_draw_flip( tile_type_section01,  0, 12, 16, 10, 6, 16 );
+	engine_tile_manager_draw_norm( tile_type_section01, 24, 12, 16, 10, 0, 8 );
 }
