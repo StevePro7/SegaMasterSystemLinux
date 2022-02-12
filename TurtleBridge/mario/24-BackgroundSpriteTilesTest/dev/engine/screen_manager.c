@@ -20,8 +20,10 @@ void engine_screen_manager_init()
 
 	//engine_tile_manager_turtle( tile_type_fly_turtle01, 10, y );
 
-	engine_tile_manager_draw_flip( tile_type_fly_turtle02, 10, 10, 4, 3, 0, 4 );
-	//engine_tile_manager_draw_flip( tile_type_section01, 0, 12, 16, 10, 6, 16 );
+	//engine_tile_manager_draw_flip( tile_type_fly_turtle02, 10, 10, 4, 3, 0, 4 );
+		//engine_tile_manager_draw_flip( tile_type_section01, 0, 12, 16, 10, 6, 16 );
+
+	engine_tile_manager_draw_tile( tile_type_cloud02, 4, 4 );
 }
 
 void engine_screen_manager_update()
@@ -58,7 +60,7 @@ void engine_screen_manager_update()
 	//print_coords();
 
 	// fish
-	engine_sprite_manager_draw( x + 0, y, delta + 0 );
+	//engine_sprite_manager_draw( x + 0, y, delta + 0 );
 	//engine_sprite_manager_draw( x + 40, y, delta + 18 );
 	//engine_sprite_manager_draw( x + 80, y, delta + 19 );
 	//engine_sprite_manager_draw( x + 120, y, delta + 22 )
