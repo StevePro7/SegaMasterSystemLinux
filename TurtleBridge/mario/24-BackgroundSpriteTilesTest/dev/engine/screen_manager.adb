@@ -4,6 +4,8 @@ F:G$engine_screen_manager_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lscreen_manager.engine_screen_manager_update$delta$1$18({1}SC:U),R,0,0,[]
 S:Lscreen_manager.engine_screen_manager_update$input$1$18({1}SC:U),R,0,0,[l]
 F:Fscreen_manager$bonus_level$0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lscreen_manager.bonus_level$y$1$24({1}SC:U),R,0,0,[]
+F:Fscreen_manager$bonus_level_org$0$0({2}DF,SV:S),C,0,0,0,0,0
 S:Fscreen_manager$x$0$0({1}SC:U),E,0,0
 S:Fscreen_manager$y$0$0({1}SC:U),E,0,0
 S:G$engine_music_manager_play$0$0({2}DF,SV:S),C,0,0
@@ -41,3 +43,4 @@ S:G$engine_tile_manager_section01_left$0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_section02$0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_section03$0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_scroll_test$0$0({2}DF,SV:S),C,0,0
+S:Fscreen_manager$bonus_level_org$0$0({2}DF,SV:S),C,0,0
