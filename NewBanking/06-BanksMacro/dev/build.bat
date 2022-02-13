@@ -6,6 +6,7 @@ cd banks
 sdcc --debug -c -mz80 --codeseg BANK1 banked_code_1.c
 sdcc --debug -c -mz80 --codeseg BANK2 banked_code_2.c
 sdcc --debug -c -mz80 --codeseg BANK3 banked_code_3.c
+sdcc --debug -c -mz80 --codeseg BANK3 banked_code_4.c
 cd ..
 
 cd devkit
@@ -28,6 +29,7 @@ sdcc --debug -o output.ihx -mz80 --no-std-crt0 --data-loc 0xC000 ^
 -Wl-b_BANK1=0x14000 ^
 -Wl-b_BANK2=0x24000 ^
 -Wl-b_BANK3=0x34000 ^
+-Wl-b_BANK4=0x34000 ^
 ../crt0/crt0b_sms.rel ^
 ../lib/SMSlib.lib ^
 ../lib/PSGlib.rel ^
@@ -71,7 +73,7 @@ if exist "*.asm" del "*.asm" > nul
 if exist "*.ihx" del "*.ihx" > nul
 if exist "*.lk"  del "*.lk"  > nul
 if exist "*.lst" del "*.lst" > nul
-if exist "*.noi" del "*.noi" > nul
+::if exist "*.noi" del "*.noi" > nul
 if exist "*.sym" del "*.sym" > nul
 
 :: Run

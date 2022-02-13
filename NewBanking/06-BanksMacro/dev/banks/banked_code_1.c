@@ -6,5 +6,5 @@ int foo()
 int foo() __banked
 #endif
 {
-	return 1;
+	return 2;
 }

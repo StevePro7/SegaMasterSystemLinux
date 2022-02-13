@@ -1,10 +1,10 @@
 #include "banked_code_3.h"
 
 #ifdef _CONSOLE
-int sgb()
+int adi()
 #else
-int sgb() __banked
+int adi() __banked
 #endif
 {
-	return 6;
+	return 8;
 }

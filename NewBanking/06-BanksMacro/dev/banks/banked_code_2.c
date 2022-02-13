@@ -6,5 +6,5 @@ int bar()
 int bar() __banked
 #endif
 {
-	return 2;
+	return 4;
 }

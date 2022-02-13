@@ -4,6 +4,7 @@
 #include "../banks/banked_code_1.h"
 #include "../banks/banked_code_2.h"
 #include "../banks/banked_code_3.h"
+#include "../banks/banked_code_4.h"
 
 void engine_screen_manager_init()
 {
@@ -31,11 +32,17 @@ void engine_screen_manager_update()
 		engine_font_manager_draw_data( value, 10, 13 );
 	}
 
-	input = engine_input_manager_hold_down();
+	input = engine_input_manager_hold_up();
 	if( input )
 	{
 		value = sgb();
 		engine_font_manager_draw_data( value, 10, 14 );
+	}
+	input = engine_input_manager_hold_down();
+	if( input )
+	{
+		value = adi();
+		engine_font_manager_draw_data( value, 10, 15 );
 	}
 
 	input = engine_input_manager_hold_fire1();
@@ -44,6 +51,7 @@ void engine_screen_manager_update()
 		engine_font_manager_draw_text( "  ", 9, 12 );
 		engine_font_manager_draw_text( "  ", 9, 13 );
 		engine_font_manager_draw_text( "  ", 9, 14 );
+		engine_font_manager_draw_text( "  ", 9, 15 );
 	}
 	
 }
