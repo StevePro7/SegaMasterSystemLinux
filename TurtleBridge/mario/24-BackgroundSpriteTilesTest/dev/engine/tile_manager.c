@@ -26,7 +26,7 @@ void engine_tile_manager_draw_pipe( unsigned char type, unsigned int x, unsigned
 		idx = row * wide + col;
 		val = array[ idx ];
 		off = val * 2;
-		devkit_SMS_loadTileMap( x + col, y + row, ( void * ) &tiles[ off ], 2 );
+		devkit_SMS_loadTileMap( x, y + row, ( void * ) &tiles[ off ], 2 );
 	}
 }
 

@@ -38,27 +38,31 @@ void engine_screen_manager_update()
 	input = engine_input_manager_hold_fire1();
 	if( input )
 	{
-		engine_tile_manager_draw_pipe( tile_type_sea_turtleA2, 12, 19, 4, 3, 0 );
+		
 	}
 
 	input = engine_input_manager_move_left();
 	if( input )
 	{
+		engine_tile_manager_draw_pipe( tile_type_sea_turtleA1, 4, 19, 4, 3, 0 );
 		x--;
 	}
 	input = engine_input_manager_move_right();
 	if( input )
 	{
+		engine_tile_manager_draw_pipe( tile_type_sea_turtleA1, 5, 19, 4, 3, 1 );
 		x++;
 	}
 	input = engine_input_manager_move_up();
 	if( input )
 	{
+		engine_tile_manager_draw_pipe( tile_type_sea_turtleA1, 6, 19, 4, 3, 2 );
 		y--;
 	}
 	input = engine_input_manager_move_down();
 	if( input )
 	{
+		engine_tile_manager_draw_pipe( tile_type_sea_turtleA1, 7, 19, 4, 3, 3 );
 		y++;
 	}
 
