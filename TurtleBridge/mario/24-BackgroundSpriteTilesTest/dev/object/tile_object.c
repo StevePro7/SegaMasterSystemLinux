@@ -8,6 +8,7 @@ const unsigned char *tile_object_data[] =
 	section01_array,
 	section01b_array,
 	section02_array,
+	section02b_array,
 	section03_array,
 	cloud01_array,
 	cloud02_array,
@@ -23,5 +24,5 @@ const unsigned char *tile_object_data[] =
 	sign_goal_array,
 };
 
-extern const unsigned char tile_object_wide[] = { 32, 16, 16, 16, 8, 4, 6 };
-extern const unsigned char tile_object_high[] = { 3, 10, 6, 4, 10, 3, 3 };
+extern const unsigned char tile_object_wide[] = { 32, 16, 16, 16, 2, 8, 4, 6 };
+extern const unsigned char tile_object_high[] = { 3, 10, 6, 4, 4, 10, 3, 3 };

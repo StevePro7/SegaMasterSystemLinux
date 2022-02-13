@@ -3,6 +3,7 @@ extern const unsigned char sea_tiles_array[];
 extern const unsigned char section01_array[];
 extern const unsigned char section01b_array[];
 extern const unsigned char section02_array[];
+extern const unsigned char section02b_array[];
 extern const unsigned char section03_array[];
 
 extern const unsigned char cloud01_array[];
