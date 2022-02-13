@@ -81,7 +81,8 @@ void engine_scroll_manager_update()
 	//engine_font_manager_draw_text( "C", 32 + so->scrollRightDivided8, 20 );
 	//engine_font_manager_draw_text( "D", 32 + so->scrollRightDivided8, 21 );
 
-	x = 32 + so->scrollRightDivided8;
+	//x = 32 + so->scrollRightDivided8;
+	x = so->offset_right;
 	src = ( void * ) &pnt[ 0 ];
 	devkit_SMS_loadTileMap( x, 18, src, 2 );
 	devkit_SMS_loadTileMap( x, 19, src, 2 );
@@ -113,21 +114,21 @@ unsigned char engine_scroll_manager_getPosY( unsigned int col )
 
 static void print()
 {
-	//struct_scroll_object *so = &global_scroll_object;
-	////engine_font_manager_draw_data( so->scroll, 25, 0 );
-	//engine_font_manager_draw_data( so->scrollRight, 25, 1 );
-	//engine_font_manager_draw_data( so->scrollRightDivided8, 25, 2 );
-	//engine_font_manager_draw_data( so->scrollRight % 8, 25, 3 );
+	struct_scroll_object *so = &global_scroll_object;
+	engine_font_manager_draw_data( so->scroll, 25, 0 );
+	engine_font_manager_draw_data( so->scrollRight, 25, 1 );
+	engine_font_manager_draw_data( so->scrollRightDivided8, 25, 2 );
+	engine_font_manager_draw_data( so->scrollRight % 8, 25, 3 );
 
-	//engine_font_manager_draw_data( so->offset_left, 25, 5 );
-	//engine_font_manager_draw_data( so->offset_right, 25, 6 );
+	engine_font_manager_draw_data( so->offset_left, 25, 5 );
+	engine_font_manager_draw_data( so->offset_right, 25, 6 );
 
-	//engine_font_manager_draw_data( so->scroll + so->scrollRight, 25, 8 );
-	////engine_font_manager_draw_data( so->scroll, so->scroll, 1 );
+	engine_font_manager_draw_data( so->scroll + so->scrollRight, 25, 8 );
+	//engine_font_manager_draw_data( so->scroll, so->scroll, 1 );
 
-	//engine_font_manager_draw_text( "      ", 21, 9 );
-	//if( ( so->scrollRight % 8 ) == delta )
-	//{
-	//	engine_font_manager_draw_text( "SCROLL", 21, 9 );
-	//}
+	engine_font_manager_draw_text( "      ", 21, 9 );
+	if( ( so->scrollRight % 8 ) == delta )
+	{
+		engine_font_manager_draw_text( "SCROLL", 21, 9 );
+	}
 }

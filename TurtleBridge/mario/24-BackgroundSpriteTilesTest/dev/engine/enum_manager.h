@@ -21,17 +21,16 @@ typedef enum tag_enum_tile_type
 	tile_type_fly_turtle02 = 15,
 	tile_type_sign_numb = 16,
 	tile_type_sign_goal = 17,
-	
 
 } enum_tile_type;
 
-typedef enum tag_enum_tile_flip
-{
-	tile_type_none = 0,
-	tile_type_dirX = 1,
-	//tile_type_dirY = 2,
-	//tile_type_both = 3,
-
-} enum_tile_flip;
+//typedef enum tag_enum_tile_flip
+//{
+//	tile_type_none = 0,
+//	tile_type_dirX = 1,
+//	//tile_type_dirY = 2,
+//	//tile_type_both = 3,
+//
+//} enum_tile_flip;
 
 #endif//_ENUM_MANAGER_H_

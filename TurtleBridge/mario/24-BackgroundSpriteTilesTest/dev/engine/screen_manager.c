@@ -35,10 +35,10 @@ void engine_screen_manager_update()
 {
 	unsigned char delta = 0;
 	unsigned char input = 0;
-	input = engine_input_manager_move_fire1();
+	input = engine_input_manager_hold_fire1();
 	if( input )
 	{
-		//engine_font_manager_draw_text( "STEVEPRO STUDIOS()", 4, 7 );
+		engine_tile_manager_draw_pipe( tile_type_sea_turtleA2, 12, 19, 4, 3, 0 );
 	}
 
 	input = engine_input_manager_move_left();
@@ -77,7 +77,7 @@ void engine_screen_manager_update()
 static void bonus_level()
 {
 	unsigned char y = 11;
-	engine_tile_manager_sky();
+//	engine_tile_manager_sky();
 	engine_tile_manager_sea();
 
 	// ORG
@@ -93,18 +93,21 @@ static void bonus_level()
 	//engine_tile_manager_sign( tile_type_sign_goal, 28, 13 );
 
 
-	//engine_tile_manager_draw_tile( tile_type_section02b, 8, 18);
-	//engine_tile_manager_draw_tile( tile_type_section03, 9, 8 );
+	engine_tile_manager_draw_tile( tile_type_section02b, 18, 18);
+	engine_tile_manager_draw_tile( tile_type_section03, 19, 8 );
 
 	// Clouds
-	engine_tile_manager_draw_norm( tile_type_cloud01, 3, 1, 4, 3, 0, 4 );
-	engine_tile_manager_draw_flip( tile_type_cloud01, 27, 2, 4, 3, 0, 4 );
-
-	engine_tile_manager_draw_norm( tile_type_cloud02, 19, 4, 6, 3, 0, 6 );
-	engine_tile_manager_draw_flip( tile_type_cloud02, 10, 2, 6, 3, 0, 6 );
+	//engine_tile_manager_draw_norm( tile_type_cloud01, 3, 1, 4, 3, 0, 4 );
+	//engine_tile_manager_draw_flip( tile_type_cloud01, 27, 2, 4, 3, 0, 4 );
+	//engine_tile_manager_draw_norm( tile_type_cloud02, 19, 4, 6, 3, 0, 6 );
+	//engine_tile_manager_draw_flip( tile_type_cloud02, 10, 2, 6, 3, 0, 6 );
 
 	//engine_tile_manager_draw_flip( tile_type_section01b, 0, 16, 16, 6, 6, 16 );
 	
+	for( y = 0; y < 20; y++ )
+	{
+		//engine_font_manager_draw_data( y, 17, y );
+	}
 	
 	//engine_tile_manager_turtle( tile_type_sea_turtleA1, 2, 19 );
 
