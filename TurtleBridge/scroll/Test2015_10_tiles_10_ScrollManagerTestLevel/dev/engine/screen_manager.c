@@ -49,6 +49,17 @@ void engine_screen_manager_update()
 		engine_scroll_manager_update();
 	}
 
+	input = engine_input_manager_hold_down();
+	if( input )
+	{
+		engine_font_manager_draw_text( "X", 2, 15 );
+	}
+	input = engine_input_manager_hold_up();
+	if( input )
+	{
+		engine_font_manager_draw_text( " ", 2, 15 );
+	}
+
 	posX = ( ( col + 0 ) * 8 ) - 0;
 	posY = engine_scroll_manager_getPosY( col );
 	if( posY == 0 )
