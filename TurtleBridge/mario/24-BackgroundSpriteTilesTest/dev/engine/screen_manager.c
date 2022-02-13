@@ -62,11 +62,9 @@ void engine_screen_manager_update()
 		y++;
 	}
 
-	//print_coords();
+	engine_sprite_manager_draw( x + 0, y, delta + 0 );
 
 	// fish
-	//engine_sprite_manager_draw( x + 0, y, delta + 0 );
-
 	//engine_sprite_manager_draw( x + 40, y, delta + 18 );
 	//engine_sprite_manager_draw( x + 80, y, delta + 19 );
 	//engine_sprite_manager_draw( x + 120, y, delta + 22 )
@@ -83,10 +81,10 @@ static void bonus_level()
 	engine_tile_manager_sea();
 
 	// ORG
-	engine_tile_manager_draw_flip( tile_type_section01, 0, 12, 16, 10, 6, 16 );
-	engine_tile_manager_draw_norm( tile_type_section01, 23, 12, 16, 10, 0, 9 );
-	engine_tile_manager_sign( tile_type_sign_numb, 8, 9 );
-	engine_tile_manager_sign( tile_type_sign_goal, 28, 9 );
+	//engine_tile_manager_draw_flip( tile_type_section01, 0, 12, 16, 10, 6, 16 );
+	//engine_tile_manager_draw_norm( tile_type_section01, 23, 12, 16, 10, 0, 9 );
+	//engine_tile_manager_sign( tile_type_sign_numb, 8, 9 );
+	//engine_tile_manager_sign( tile_type_sign_goal, 28, 9 );
 
 	// NEW
 	//engine_tile_manager_draw_flip( tile_type_section01b, 0, 16, 16, 6, 6, 16 );
@@ -94,7 +92,9 @@ static void bonus_level()
 	//engine_tile_manager_sign( tile_type_sign_numb, 8, 13 );
 	//engine_tile_manager_sign( tile_type_sign_goal, 28, 13 );
 
-	//engine_tile_manager_draw_tile( tile_type_section02, 2, 18);
+
+	engine_tile_manager_draw_tile( tile_type_section02b, 8, 18);
+	engine_tile_manager_draw_tile( tile_type_section03, 9, 8 );
 	//engine_tile_manager_turtle( tile_type_sea_turtleA1, 2, 19 );
 
 
