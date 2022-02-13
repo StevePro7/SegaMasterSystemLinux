@@ -3,8 +3,10 @@
 #include <stdbool.h>
 
 #ifdef _CONSOLE
+//#define  BANKED_MACRO()	""
 #include "../../tmp/SMSlib.h"
 #else
+//#define  BANKED_MACRO	"__banked"
 #include "../../lib/SMSlib.h"
 #endif
 
