@@ -4,7 +4,6 @@ F:G$engine_screen_manager_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lscreen_manager.engine_screen_manager_update$delta$1$15({1}SC:U),R,0,0,[]
 S:Lscreen_manager.engine_screen_manager_update$input$1$15({1}SC:U),R,0,0,[l]
 F:Fscreen_manager$bonus_level$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lscreen_manager.bonus_level$y$1$21({1}SC:U),R,0,0,[c]
 F:Fscreen_manager$bonus_level_org$0$0({2}DF,SV:S),C,0,0,0,0,0
 S:Fscreen_manager$x$0$0({1}SC:U),E,0,0
 S:Fscreen_manager$y$0$0({1}SC:U),E,0,0

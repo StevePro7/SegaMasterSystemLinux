@@ -76,8 +76,8 @@ void engine_screen_manager_update()
 
 static void bonus_level()
 {
-	unsigned char y = 11;
-//	engine_tile_manager_sky();
+//	unsigned char y = 11;
+	engine_tile_manager_sky();
 	engine_tile_manager_sea();
 
 	// ORG
@@ -93,8 +93,8 @@ static void bonus_level()
 	//engine_tile_manager_sign( tile_type_sign_goal, 28, 13 );
 
 
-	engine_tile_manager_draw_tile( tile_type_section02b, 18, 18);
-	engine_tile_manager_draw_tile( tile_type_section03, 19, 8 );
+	engine_tile_manager_draw_tile( tile_type_section02, 16, 18);
+	engine_tile_manager_draw_tile( tile_type_section03, 24, 8 );
 
 	// Clouds
 	//engine_tile_manager_draw_norm( tile_type_cloud01, 3, 1, 4, 3, 0, 4 );

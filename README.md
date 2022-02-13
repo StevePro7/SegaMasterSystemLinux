@@ -60,3 +60,17 @@ then mirror 9x on the other side						0 - 9	9
 
 that means there are 13x ttiles in between
 1 + 9 + 13 + 9 = 32
+
+
+Section 02 + 03
+if 8px wide			 0
+draw section 02		16
+draw section 03		16-16	i.e.	0 = 8 - 8
+
+if 12px wide		 4
+draw section 02		16
+draw section 03		16-20	i.e.	4 = 12 - 8
+
+if 16px wide		 8
+draw section 02		16
+draw section 03		16-24	i.e.	8 = 16 - 8
