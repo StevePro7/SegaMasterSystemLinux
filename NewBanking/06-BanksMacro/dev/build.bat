@@ -6,7 +6,7 @@ cd banks
 sdcc --debug -c -mz80 --codeseg BANK1 banked_code_1.c
 sdcc --debug -c -mz80 --codeseg BANK2 banked_code_2.c
 sdcc --debug -c -mz80 --codeseg BANK3 banked_code_3.c
-sdcc --debug -c -mz80 --codeseg BANK3 banked_code_4.c
+sdcc --debug -c -mz80 --codeseg BANK4 banked_code_4.c
 cd ..
 
 cd devkit
@@ -29,7 +29,7 @@ sdcc --debug -o output.ihx -mz80 --no-std-crt0 --data-loc 0xC000 ^
 -Wl-b_BANK1=0x14000 ^
 -Wl-b_BANK2=0x24000 ^
 -Wl-b_BANK3=0x34000 ^
--Wl-b_BANK4=0x34000 ^
+-Wl-b_BANK4=0x44000 ^
 ../crt0/crt0b_sms.rel ^
 ../lib/SMSlib.lib ^
 ../lib/PSGlib.rel ^
@@ -37,6 +37,7 @@ main.rel ^
 banks/banked_code_1.rel ^
 banks/banked_code_2.rel ^
 banks/banked_code_3.rel ^
+banks/banked_code_4.rel ^
 devkit/_sms_manager.rel ^
 devkit/_snd_manager.rel ^
 engine/asm_manager.rel ^
