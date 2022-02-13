@@ -33,7 +33,6 @@ S:G$devkit_SMS_setBGScrollY$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_enableSRAM$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_enableSRAMBank$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_disableSRAM$0_0$0({2}DF,SV:S),C,0,0
-S:G$devkit_SMS_SRAM$0_0$0({2}DF,DG,SC:U),C,0,0
 S:G$devkit_SMS_setSpriteMode$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_useFirstHalfTilesforSprites_False$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_useFirstHalfTilesforSprites_True$0_0$0({2}DF,SV:S),C,0,0
@@ -42,12 +41,13 @@ S:G$devkit_SMS_loadPSGaidencompressedTiles$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_loadSTMcompressedTileMap$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_loadBGPalette$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_loadSpritePalette$0_0$0({2}DF,SV:S),C,0,0
-S:G$devkit_SMS_setBGPaletteColor$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_setSpritePaletteColor$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_setNextTileatXY$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_setTile$0_0$0({2}DF,SV:S),C,0,0
-S:G$devkit_SMS_setTilePriority$0_0$0({2}DF,SV:S),C,0,0
+S:G$devkit_SMS_loadTileMap$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_addSprite$0_0$0({2}DF,SV:S),C,0,0
+S:G$devkit_SMS_addSprite_bulk8$0_0$0({2}DF,SV:S),C,0,0
+S:G$devkit_SMS_addSprite_bulk12$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_initSprites$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_finalizeSprites$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_waitForVBlank$0_0$0({2}DF,SV:S),C,0,0
@@ -65,8 +65,6 @@ S:G$devkit_PORT_A_KEY_1$0_0$0({2}DF,SI:U),C,0,0
 S:G$devkit_PORT_A_KEY_2$0_0$0({2}DF,SI:U),C,0,0
 S:G$devkit_SPRITEMODE_NORMAL$0_0$0({2}DF,SC:U),C,0,0
 S:G$devkit_VDPFEATURE_HIDEFIRSTCOL$0_0$0({2}DF,SI:U),C,0,0
-S:G$devkit_TILE_PRIORITY$0_0$0({2}DF,SI:U),C,0,0
-S:G$devkit_TILE_USE_SPRITE_PALETTE$0_0$0({2}DF,SI:U),C,0,0
 S:G$engine_asm_manager_clear_VRAM$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_tiles$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_char$0_0$0({2}DF,SV:S),C,0,0
