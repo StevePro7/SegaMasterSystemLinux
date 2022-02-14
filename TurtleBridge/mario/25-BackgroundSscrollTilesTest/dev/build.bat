@@ -69,10 +69,10 @@ engine/content_manager.rel ^
 engine/enum_manager.rel engine/font_manager.rel ^
 engine/global_manager.rel ^
 engine/input_manager.rel ^
-engine/screen_manager.rel ^
+engine/scroll_manager.rel engine/screen_manager.rel ^
 engine/sprite_manager.rel ^
 engine/tile_manager.rel ^
-object/tile_object.rel ^
+object/scroll_object.rel object/tile_object.rel ^
 content/gfx.rel ^
 content/psg.rel
 
@@ -109,5 +109,5 @@ if exist "*.lst" del "*.lst" > nul
 if exist "*.sym" del "*.sym" > nul
 
 :: Run
-::java -jar C:/SEGA/Emulicious/Emulicious.jar output.sms
-output.sms
+java -jar C:/SEGA/Emulicious/Emulicious.jar output.sms
+::output.sms
