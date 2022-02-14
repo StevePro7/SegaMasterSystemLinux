@@ -88,6 +88,8 @@ static void bonus_level()
 	//engine_tile_manager_draw_tile( tile_type_section05, 24, 8 );
 
 
+	engine_tile_manager_section03( 4, 10, WAVES_HIGH - 3 );
+
 	// ORG
 	//engine_tile_manager_draw_flip( tile_type_section01, 0, 12, 16, 10, 6, 16 );
 	//engine_tile_manager_draw_norm( tile_type_section01, 23, 12, 16, 10, 0, 9 );
