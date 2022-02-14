@@ -1,12 +1,14 @@
 M:screen_manager
 F:G$engine_screen_manager_init$0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_screen_manager_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lscreen_manager.engine_screen_manager_update$delta$1$16({1}SC:U),R,0,0,[]
-S:Lscreen_manager.engine_screen_manager_update$input$1$16({1}SC:U),R,0,0,[]
+S:Lscreen_manager.engine_screen_manager_update$delta$1$17({1}SC:U),R,0,0,[]
+S:Lscreen_manager.engine_screen_manager_update$input$1$17({1}SC:U),R,0,0,[l]
 F:Fscreen_manager$bonus_level$0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:Fscreen_manager$bonus_level_org$0$0({2}DF,SV:S),C,0,0,0,0,0
+T:Fscreen_manager$tag_struct_scroll_object[({0}S:S$scroll_left$0$0({1}SC:U),Z,0,0)({1}S:S$scroll_right$0$0({1}SC:U),Z,0,0)({2}S:S$scroll$0$0({1}SC:U),Z,0,0)({3}S:S$scrollRight$0$0({1}SC:U),Z,0,0)({4}S:S$scrollRightDivided8$0$0({1}SC:U),Z,0,0)({5}S:S$offset_left$0$0({2}SI:U),Z,0,0)({7}S:S$offset_right$0$0({2}SI:U),Z,0,0)]
 S:Fscreen_manager$x$0$0({1}SC:U),E,0,0
 S:Fscreen_manager$y$0$0({1}SC:U),E,0,0
+S:G$global_scroll_object$0$0({9}STtag_struct_scroll_object:S),E,0,0
 S:G$engine_music_manager_play$0$0({2}DF,SV:S),C,0,0
 S:G$engine_sound_manager_play$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_bgtiles$0$0({2}DF,SV:S),C,0,0
@@ -28,6 +30,10 @@ S:G$engine_input_manager_move_left$0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_right$0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire1$0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire2$0$0({2}DF,SC:U),C,0,0
+S:G$engine_scroll_manager_init$0$0({2}DF,SV:S),C,0,0
+S:G$engine_scroll_manager_load$0$0({2}DF,SV:S),C,0,0
+S:G$engine_scroll_manager_update$0$0({2}DF,SV:S),C,0,0
+S:G$engine_scroll_manager_getPosY$0$0({2}DF,SC:U),C,0,0
 S:G$engine_sprite_manager_draw$0$0({2}DF,SV:S),C,0,0
 S:G$engine_sprite_manager_fish$0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_sky$0$0({2}DF,SV:S),C,0,0

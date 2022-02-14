@@ -5,6 +5,7 @@
 #include "font_manager.h"
 #include "global_manager.h"
 #include "input_manager.h"
+#include "scroll_manager.h"
 #include "sprite_manager.h"
 #include "tile_manager.h"
 
@@ -28,17 +29,17 @@ void engine_screen_manager_init()
 	//engine_tile_manager_draw_flip( tile_type_section05, 4, 4, 8, 10, 0, 8 );		// flip tree
 
 	//engine_tile_manager_sign( tile_type_sign_numb, 4, 4 );
-	
+	engine_music_manager_play();
 }
 
 void engine_screen_manager_update()
 {
 	unsigned char delta = 0;
 	unsigned char input = 0;
-	input = engine_input_manager_hold_fire1();
+	input = engine_input_manager_move_right();
 	if( input )
 	{
-		
+		engine_scroll_manager_update();
 	}
 
 	//input = engine_input_manager_move_left();
@@ -66,7 +67,7 @@ void engine_screen_manager_update()
 	//	y++;
 	//}
 
-	//engine_sprite_manager_draw( x + 0, y, delta + 0 );
+	engine_sprite_manager_draw( x + 0, y, delta + 0 );
 
 	// fish
 	//engine_sprite_manager_draw( x + 40, y, delta + 18 );
