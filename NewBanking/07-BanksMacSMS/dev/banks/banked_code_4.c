@@ -6,5 +6,5 @@ int adi()
 int adi() __banked
 #endif
 {
-	return 8;
+	return 7;
 }
