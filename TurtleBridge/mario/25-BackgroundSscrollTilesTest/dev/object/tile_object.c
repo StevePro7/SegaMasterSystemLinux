@@ -9,7 +9,6 @@ const unsigned char *tile_object_data[] =
 	section02_array,
 	section03_array,
 	section04_array,
-	section05_array,
 	cloud01_array,
 	cloud02_array,
 	sea_turtleA1_array,

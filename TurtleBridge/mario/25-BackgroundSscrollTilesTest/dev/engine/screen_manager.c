@@ -106,10 +106,10 @@ static void bonus_level()
 
 
 	// Clouds
-	//engine_tile_manager_draw_norm( tile_type_cloud01, 3, 1, 4, 3, 0, 4 );
-	//engine_tile_manager_draw_flip( tile_type_cloud01, 27, 2, 4, 3, 0, 4 );
-	//engine_tile_manager_draw_norm( tile_type_cloud02, 19, 4, 6, 3, 0, 6 );
-	//engine_tile_manager_draw_flip( tile_type_cloud02, 10, 2, 6, 3, 0, 6 );
+	engine_tile_manager_draw_norm( tile_type_cloud01, 3, 1, 4, 3, 0, 4 );
+	engine_tile_manager_draw_flip( tile_type_cloud01, 27, 2, 4, 3, 0, 4 );
+	engine_tile_manager_draw_norm( tile_type_cloud02, 19, 4, 6, 3, 0, 6 );
+	engine_tile_manager_draw_flip( tile_type_cloud02, 10, 2, 6, 3, 0, 6 );
 
 	//engine_tile_manager_draw_flip( tile_type_section02, 0, 16, 16, 6, 6, 16 );
 	

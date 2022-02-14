@@ -1,45 +1,43 @@
 XL2
-H 9 areas 25 global symbols
+H 9 areas 23 global symbols
 M fixedbank
 O -mz80
 S .__.ABS. Def0000
-A _CODE size 23C flags 0 addr 0
-S G$sign_goal_array$0$0 Def0233
-S _sea_turtleA1_array Def01CA
-S _sea_turtleA2_array Def01D6
-S _sea_turtleB1_array Def01EE
-S _fly_turtle01_array Def0212
-S G$cloud01_array$0$0 Def01AC
-S _sea_turtleA3_array Def01E2
-S _sea_turtleB2_array Def01FA
-S _fly_turtle02_array Def021E
-S G$cloud02_array$0$0 Def01B8
+A _CODE size 20C flags 0 addr 0
+S G$sign_goal_array$0$0 Def0203
+S _sea_turtleA1_array Def019A
+S _sea_turtleA2_array Def01A6
+S _sea_turtleB1_array Def01BE
+S _fly_turtle01_array Def01E2
+S G$cloud01_array$0$0 Def017C
+S _sea_turtleA3_array Def01B2
+S _sea_turtleB2_array Def01CA
+S _fly_turtle02_array Def01EE
+S G$cloud02_array$0$0 Def0188
 S G$sea_tiles_array$0$0 Def0000
-S _sea_turtleB3_array Def0206
-S _sign_goal_array Def0233
-S G$sign_numb_array$0$0 Def022A
-S _cloud01_array Def01AC
+S _sea_turtleB3_array Def01D6
+S _sign_goal_array Def0203
+S G$sign_numb_array$0$0 Def01FA
+S _cloud01_array Def017C
 S _sea_tiles_array Def0000
-S _cloud02_array Def01B8
-S _sign_numb_array Def022A
+S _cloud02_array Def0188
+S _sign_numb_array Def01FA
 S G$section01_array$0$0 Def000C
 S G$section02_array$0$0 Def00AC
 S G$section03_array$0$0 Def010C
 S G$section04_array$0$0 Def012C
-S G$section05_array$0$0 Def015C
 S _section01_array Def000C
 S _section02_array Def00AC
 S _section03_array Def010C
 S _section04_array Def012C
-S _section05_array Def015C
-S G$sea_turtleA1_array$0$0 Def01CA
-S G$fly_turtle01_array$0$0 Def0212
-S G$sea_turtleB1_array$0$0 Def01EE
-S G$sea_turtleA2_array$0$0 Def01D6
-S G$fly_turtle02_array$0$0 Def021E
-S G$sea_turtleB2_array$0$0 Def01FA
-S G$sea_turtleA3_array$0$0 Def01E2
-S G$sea_turtleB3_array$0$0 Def0206
+S G$sea_turtleA1_array$0$0 Def019A
+S G$fly_turtle01_array$0$0 Def01E2
+S G$sea_turtleB1_array$0$0 Def01BE
+S G$sea_turtleA2_array$0$0 Def01A6
+S G$fly_turtle02_array$0$0 Def01EE
+S G$sea_turtleB2_array$0$0 Def01CA
+S G$sea_turtleA3_array$0$0 Def01B2
+S G$sea_turtleB3_array$0$0 Def01D6
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -104,75 +102,65 @@ T 28 01 7E 7F 80 81
 R 00 00 00 00
 T 2C 01
 R 00 00 00 00
-T 2C 01 6F 70 70 71 70 71 70 71 70 71 71 73 74 75
+T 2C 01 40 82 83 84 85 86 40 40 87 88 89 8A 8B 8C
 R 00 00 00 00
-T 3A 01 75 76 75 76 75 76 75 76 76 77 78 79 7A 7B
+T 3A 01 8D 84 8E 8F 90 91 92 93 94 95 96 97 98 99
 R 00 00 00 00
-T 48 01 79 7C 7A 7B 79 7C 7B 7D 7E 7F 80 81 7E 7F
+T 48 01 9A 9B 9C 9D 40 40 9E 9F 40 40 40 40 40 40
 R 00 00 00 00
-T 56 01 80 81 7E 7F 80 81
+T 56 01 9E 9F 40 40 40 40 40 40 9E 9F 40 40 40 40
 R 00 00 00 00
-T 5C 01
+T 64 01 40 40 9E 9F 40 40 40 40 40 40 A0 A1 40 40
 R 00 00 00 00
-T 5C 01 40 82 83 84 85 86 40 40 87 88 89 8A 8B 8C
+T 72 01 40 40 40 40 A2 A3 40 40 40 40
 R 00 00 00 00
-T 6A 01 8D 84 8E 8F 90 91 92 93 94 95 96 97 98 99
+T 7C 01
 R 00 00 00 00
-T 78 01 9A 9B 9C 9D 40 40 9E 9F 40 40 40 40 40 40
+T 7C 01 A4 A5 A6 A7 A8 A9 A9 AA AB AC AD 40
 R 00 00 00 00
-T 86 01 9E 9F 40 40 40 40 40 40 9E 9F 40 40 40 40
+T 88 01
 R 00 00 00 00
-T 94 01 40 40 9E 9F 40 40 40 40 40 40 A0 A1 40 40
+T 88 01 AE AF B0 B1 B2 B3 B4 A9 A9 A9 B5 B6 B7 B8
 R 00 00 00 00
-T A2 01 40 40 40 40 A2 A3 40 40 40 40
+T 96 01 B9 BA BB BC
 R 00 00 00 00
-T AC 01
+T 9A 01
 R 00 00 00 00
-T AC 01 A4 A5 A6 A7 A8 A9 A9 AA AB AC AD 40
+T 9A 01 BD BE BF 40 C0 C1 C2 C3 C4 C5 C6 C7
 R 00 00 00 00
-T B8 01
+T A6 01
 R 00 00 00 00
-T B8 01 AE AF B0 B1 B2 B3 B4 A9 A9 A9 B5 B6 B7 B8
+T A6 01 BD BE BF 40 C8 C1 C9 CA CB C5 C6 CC
 R 00 00 00 00
-T C6 01 B9 BA BB BC
+T B2 01
+R 00 00 00 00
+T B2 01 CD CE CF 44 D0 C1 D1 D2 CB C5 C6 CC
+R 00 00 00 00
+T BE 01
+R 00 00 00 00
+T BE 01 D3 D4 D5 40 D6 D7 D8 D9 DA DB DC DD
 R 00 00 00 00
 T CA 01
 R 00 00 00 00
-T CA 01 BD BE BF 40 C0 C1 C2 C3 C4 C5 C6 C7
+T CA 01 D3 D4 D5 40 DE D7 DF E0 DA DB DC E1
 R 00 00 00 00
 T D6 01
 R 00 00 00 00
-T D6 01 BD BE BF 40 C8 C1 C9 CA CB C5 C6 CC
+T D6 01 E2 E3 E4 44 E5 D7 E6 E7 DA DB DC E1
 R 00 00 00 00
 T E2 01
 R 00 00 00 00
-T E2 01 CD CE CF 44 D0 C1 D1 D2 CB C5 C6 CC
+T E2 01 BD E8 BF 40 C0 E9 C2 C3 EA EB EC ED
 R 00 00 00 00
 T EE 01
 R 00 00 00 00
-T EE 01 D3 D4 D5 40 D6 D7 D8 D9 DA DB DC DD
+T EE 01 BD EE BF 40 C0 EF C2 C3 EA EB EC ED
 R 00 00 00 00
 T FA 01
 R 00 00 00 00
-T FA 01 D3 D4 D5 40 DE D7 DF E0 DA DB DC E1
+T FA 01 F0 F1 F2 F3 F4 F5 40 F6 40
 R 00 00 00 00
-T 06 02
+T 03 02
 R 00 00 00 00
-T 06 02 E2 E3 E4 44 E5 D7 E6 E7 DA DB DC E1
-R 00 00 00 00
-T 12 02
-R 00 00 00 00
-T 12 02 BD E8 BF 40 C0 E9 C2 C3 EA EB EC ED
-R 00 00 00 00
-T 1E 02
-R 00 00 00 00
-T 1E 02 BD EE BF 40 C0 EF C2 C3 EA EB EC ED
-R 00 00 00 00
-T 2A 02
-R 00 00 00 00
-T 2A 02 F0 F1 F2 F3 F4 F5 40 F6 40
-R 00 00 00 00
-T 33 02
-R 00 00 00 00
-T 33 02 F7 F8 F9 FA FB FC FD FE FF
+T 03 02 F7 F8 F9 FA FB FC FD FE FF
 R 00 00 00 00

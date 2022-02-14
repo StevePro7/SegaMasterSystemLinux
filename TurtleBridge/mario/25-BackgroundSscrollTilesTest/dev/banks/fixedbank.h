@@ -4,7 +4,6 @@ extern const unsigned char section01_array[];
 extern const unsigned char section02_array[];
 extern const unsigned char section03_array[];
 extern const unsigned char section04_array[];
-extern const unsigned char section05_array[];
 
 extern const unsigned char cloud01_array[];
 extern const unsigned char cloud02_array[];
