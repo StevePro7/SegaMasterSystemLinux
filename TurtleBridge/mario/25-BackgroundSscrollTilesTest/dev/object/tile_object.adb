@@ -17,5 +17,5 @@ S:G$fly_turtle01_array$0$0({0}DA0d,SC:U),D,0,0
 S:G$fly_turtle02_array$0$0({0}DA0d,SC:U),D,0,0
 S:G$sign_numb_array$0$0({0}DA0d,SC:U),D,0,0
 S:G$sign_goal_array$0$0({0}DA0d,SC:U),D,0,0
-S:G$tile_object_wide$0$0({8}DA8d,SC:U),D,0,0
-S:G$tile_object_high$0$0({8}DA8d,SC:U),D,0,0
+S:G$tile_object_wide$0$0({7}DA7d,SC:U),D,0,0
+S:G$tile_object_high$0$0({7}DA7d,SC:U),D,0,0

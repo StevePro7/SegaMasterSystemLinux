@@ -85,7 +85,7 @@ static void bonus_level()
 	engine_tile_manager_sea();
 
 	//engine_tile_manager_draw_tile( tile_type_section03, 16, 18);
-	//engine_tile_manager_draw_tile( tile_type_section05, 24, 8 );
+	engine_tile_manager_draw_tile( tile_type_section04, 24, 8 );
 
 
 	engine_tile_manager_section03( 4, 10, WAVES_HIGH - 3 );

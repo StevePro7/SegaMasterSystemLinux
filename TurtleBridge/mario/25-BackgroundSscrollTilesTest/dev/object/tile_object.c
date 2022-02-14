@@ -28,8 +28,9 @@ const unsigned char tile_object_wide[] =
 	4,		// sea_tiles
 	16,		// section01
 	16,		// section02
-	8,		// section03
-	12, 8, 4, 6
+	8,		// section03	ground
+	8,		// section04	tree
+	4, 6
 };
 const unsigned char tile_object_high[] = 
 {
@@ -37,5 +38,6 @@ const unsigned char tile_object_high[] =
 	10, 
 	6, 
 	4, 
-	4, 10, 3, 3
+	10, 
+	3, 3
 };
