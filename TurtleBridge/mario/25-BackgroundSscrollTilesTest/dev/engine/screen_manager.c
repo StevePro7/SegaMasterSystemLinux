@@ -24,8 +24,8 @@ void engine_screen_manager_init()
 	//engine_tile_manager_draw_flip( tile_type_section01, 0, 12, 16, 10, 6, 16 );
 
 	//engine_tile_manager_draw_tile( tile_type_cloud02, 4, 4 );
-	//engine_tile_manager_draw_tile( tile_type_section03, 4, 4 );
-	//engine_tile_manager_draw_flip( tile_type_section03, 4, 4, 8, 10, 0, 8 );		// flip tree
+	//engine_tile_manager_draw_tile( tile_type_section05, 4, 4 );
+	//engine_tile_manager_draw_flip( tile_type_section05, 4, 4, 8, 10, 0, 8 );		// flip tree
 
 	//engine_tile_manager_sign( tile_type_sign_numb, 4, 4 );
 	
@@ -85,7 +85,7 @@ static void bonus_level()
 	engine_tile_manager_sea();
 
 	//engine_tile_manager_draw_tile( tile_type_section02, 16, 18);
-	//engine_tile_manager_draw_tile( tile_type_section03, 24, 8 );
+	//engine_tile_manager_draw_tile( tile_type_section05, 24, 8 );
 
 
 	// ORG

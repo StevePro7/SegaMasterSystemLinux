@@ -8,7 +8,7 @@ typedef enum tag_enum_tile_type
 	tile_type_section01b = 2,
 	tile_type_section02 = 3,
 	tile_type_section02b = 4,
-	tile_type_section03 = 5,
+	tile_type_section05 = 5,
 	tile_type_cloud01 = 6,
 	tile_type_cloud02 = 7,
 	tile_type_sea_turtleA1 = 8,
