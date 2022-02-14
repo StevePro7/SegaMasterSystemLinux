@@ -6,5 +6,5 @@ int sgb()
 int sgb() __banked
 #endif
 {
-	return 6;
+	return 9;
 }
