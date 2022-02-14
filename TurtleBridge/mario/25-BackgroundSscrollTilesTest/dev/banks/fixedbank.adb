@@ -1,10 +1,10 @@
 M:fixedbank
 S:G$sea_tiles_array$0$0({12}DA12d,SC:U),D,0,0
 S:G$section01_array$0$0({160}DA160d,SC:U),D,0,0
-S:G$section01b_array$0$0({96}DA96d,SC:U),D,0,0
-S:G$section02_array$0$0({64}DA64d,SC:U),D,0,0
-S:G$section02b_array$0$0({48}DA48d,SC:U),D,0,0
-S:G$section03_array$0$0({80}DA80d,SC:U),D,0,0
+S:G$section02_array$0$0({96}DA96d,SC:U),D,0,0
+S:G$section03_array$0$0({64}DA64d,SC:U),D,0,0
+S:G$section04_array$0$0({48}DA48d,SC:U),D,0,0
+S:G$section05_array$0$0({80}DA80d,SC:U),D,0,0
 S:G$cloud01_array$0$0({12}DA12d,SC:U),D,0,0
 S:G$cloud02_array$0$0({18}DA18d,SC:U),D,0,0
 S:G$sea_turtleA1_array$0$0({12}DA12d,SC:U),D,0,0

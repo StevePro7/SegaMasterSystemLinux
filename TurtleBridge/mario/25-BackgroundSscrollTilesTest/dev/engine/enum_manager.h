@@ -5,9 +5,9 @@ typedef enum tag_enum_tile_type
 {
 	tile_type_sea_tiles = 0,
 	tile_type_section01 = 1,
-	tile_type_section01b = 2,
-	tile_type_section02 = 3,
-	tile_type_section02b = 4,
+	tile_type_section02 = 2,
+	tile_type_section03 = 3,
+	tile_type_section04 = 4,
 	tile_type_section05 = 5,
 	tile_type_cloud01 = 6,
 	tile_type_cloud02 = 7,
