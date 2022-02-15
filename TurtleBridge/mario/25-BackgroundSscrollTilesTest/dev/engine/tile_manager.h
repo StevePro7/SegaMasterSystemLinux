@@ -16,6 +16,6 @@ void engine_tile_manager_section03( unsigned char sect, unsigned char x, unsigne
 //void engine_tile_manager_cloud( unsigned char type, unsigned char x, unsigned char y );
 void engine_tile_manager_sign( unsigned char type, unsigned char x, unsigned char y );
 
-void engine_tile_manager_scroll_test( unsigned char x, unsigned char y, unsigned char col );
+//void engine_tile_manager_scroll_test( unsigned char x, unsigned char y, unsigned char col );
 
 #endif//_TILE_MANAGER_H_

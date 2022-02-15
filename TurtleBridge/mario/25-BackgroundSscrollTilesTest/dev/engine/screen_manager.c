@@ -99,7 +99,7 @@ static void bonus_level()
 	//engine_tile_manager_draw_tile( tile_type_section04, 10, 10);
 	//engine_tile_manager_draw_tile( tile_type_section04, 24, TREES_HIGH );
 	//engine_tile_manager_draw_flip( tile_type_section04, 24, TREES_HIGH, 8, 10, 0, 8 );
-	//engine_tile_manager_section03( 4, 10, EARTH_HIGH );
+	engine_tile_manager_section03( 4, 10, EARTH_HIGH );
 
 	// ORG
 	//engine_tile_manager_draw_flip( tile_type_section01, 0, 12, 16, 10, 6, 16 );
