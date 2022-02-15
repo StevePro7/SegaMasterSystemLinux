@@ -28,7 +28,7 @@ namespace ScreenShotTest
 			length = files.Length;
 
 			width = 96;
-			height = 80;
+			height = 48;
 
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = width;
@@ -45,7 +45,7 @@ namespace ScreenShotTest
 		protected override void Initialize()
 		{
 			save = false;
-			//save = true;
+			save = true;
 			IsMouseVisible = true;
 			base.Initialize();
 		}
@@ -66,7 +66,7 @@ namespace ScreenShotTest
 				dictionary[file] = Content.Load<Texture2D>("tiles/" + file);
 			}
 
-			lines = File.ReadAllLines("01.csv");
+			lines = File.ReadAllLines("02.csv");
 
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
 			width = pp.BackBufferWidth;
@@ -133,7 +133,7 @@ namespace ScreenShotTest
 			graphics.GraphicsDevice.Clear(Color.Black);
 			spriteBatch.Begin();
 
-			for (int row = 0; row < 10; row++)
+			for (int row = 0; row < 6; row++)
 			{
 				var line = lines[row];
 				var texts = line.Split(new char[] { ',' });
