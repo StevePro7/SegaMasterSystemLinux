@@ -27,8 +27,8 @@ namespace ScreenShotTest
 			var files = System.IO.Directory.GetFiles("Content/tiles", "*", System.IO.SearchOption.TopDirectoryOnly);
 			length = files.Length;
 
-			width = 96;
-			height = 48;
+			width = 64;
+			height = 32;
 
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = width;
@@ -66,7 +66,7 @@ namespace ScreenShotTest
 				dictionary[file] = Content.Load<Texture2D>("tiles/" + file);
 			}
 
-			lines = File.ReadAllLines("02.csv");
+			lines = File.ReadAllLines("03.csv");
 
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
 			width = pp.BackBufferWidth;
@@ -133,11 +133,11 @@ namespace ScreenShotTest
 			graphics.GraphicsDevice.Clear(Color.Black);
 			spriteBatch.Begin();
 
-			for (int row = 0; row < 6; row++)
+			for (int row = 0; row < 4; row++)
 			{
 				var line = lines[row];
 				var texts = line.Split(new char[] { ',' });
-				for (int col = 0; col < 12; col++)
+				for (int col = 0; col < 8; col++)
 				{
 					var text = texts[col];
 					var file = text.PadLeft(3, '0');
