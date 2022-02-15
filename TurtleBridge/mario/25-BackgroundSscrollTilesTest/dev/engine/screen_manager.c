@@ -67,7 +67,7 @@ void engine_screen_manager_update()
 	//	y++;
 	//}
 
-	engine_sprite_manager_draw( x + 0, y, delta + 0 );
+	//engine_sprite_manager_draw( x + 0, y, delta + 0 );
 
 	// fish
 	//engine_sprite_manager_draw( x + 40, y, delta + 18 );
@@ -84,6 +84,17 @@ static void bonus_level()
 //	unsigned char y = 11;
 	engine_tile_manager_sky();
 	engine_tile_manager_sea();
+
+	// new turtles
+	engine_tile_manager_draw_offset( tile_type_sea_turtles, 4, 10, 4, 3, 0, 4, 0 );
+	engine_tile_manager_draw_offset( tile_type_sea_turtles, 8, 10, 4, 3, 0, 4, 1 );
+	engine_tile_manager_draw_offset( tile_type_sea_turtles, 12, 11, 4, 3, 0, 4, 2 );
+	engine_tile_manager_draw_offset( tile_type_sea_turtles, 16, 11, 4, 3, 0, 4, 3 );
+	engine_tile_manager_draw_offset( tile_type_sea_turtles, 20, 12, 4, 3, 0, 4, 4 );
+	engine_tile_manager_draw_offset( tile_type_sea_turtles, 24, 13, 4, 3, 0, 4, 5 );
+
+	engine_tile_manager_draw_offset( tile_type_fly_turtles, 4, 16, 4, 3, 0, 4, 0 );
+	engine_tile_manager_draw_offset( tile_type_fly_turtles, 8, 16, 4, 3, 0, 4, 1 );
 
 	//engine_tile_manager_draw_tile( tile_type_section04, 10, 10);
 	//engine_tile_manager_draw_tile( tile_type_section04, 24, TREES_HIGH );

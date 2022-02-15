@@ -1,8 +1,8 @@
 M:screen_manager
 F:G$engine_screen_manager_init$0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_screen_manager_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lscreen_manager.engine_screen_manager_update$delta$1$17({1}SC:U),R,0,0,[]
-S:Lscreen_manager.engine_screen_manager_update$input$1$17({1}SC:U),R,0,0,[l]
+S:Lscreen_manager.engine_screen_manager_update$delta$1$18({1}SC:U),R,0,0,[]
+S:Lscreen_manager.engine_screen_manager_update$input$1$18({1}SC:U),R,0,0,[l]
 F:Fscreen_manager$bonus_level$0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:Fscreen_manager$bonus_level_org$0$0({2}DF,SV:S),C,0,0,0,0,0
 T:Fscreen_manager$tag_struct_scroll_object[({0}S:S$scroll_left$0$0({1}SC:U),Z,0,0)({1}S:S$scroll_right$0$0({1}SC:U),Z,0,0)({2}S:S$scroll$0$0({1}SC:U),Z,0,0)({3}S:S$scrollRight$0$0({1}SC:U),Z,0,0)({4}S:S$scrollRightDivided8$0$0({1}SC:U),Z,0,0)({5}S:S$offset_left$0$0({2}SI:U),Z,0,0)({7}S:S$offset_right$0$0({2}SI:U),Z,0,0)]
@@ -42,6 +42,7 @@ S:G$engine_tile_manager_draw_pipe$0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_draw_tile$0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_draw_norm$0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_draw_flip$0$0({2}DF,SV:S),C,0,0
+S:G$engine_tile_manager_draw_offset$0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_turtle$0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_section03$0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_sign$0$0({2}DF,SV:S),C,0,0
