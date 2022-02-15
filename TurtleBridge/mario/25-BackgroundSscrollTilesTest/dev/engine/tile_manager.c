@@ -84,8 +84,8 @@ void engine_tile_manager_draw_tile( unsigned char type, unsigned char x, unsigne
 
 void engine_tile_manager_turtle( unsigned char type, unsigned char x, unsigned char y )
 {
-	const unsigned char wide = 4;
-	const unsigned char high = 3;
+	const unsigned char wide = tile_object_wide[ type ];
+	const unsigned char high = tile_object_high[ type ];
 	engine_tile_manager_draw_norm( type, x, y, wide, high, 0, wide );
 }
 
@@ -114,8 +114,8 @@ void engine_tile_manager_section03( unsigned char sect, unsigned char x, unsigne
 
 void engine_tile_manager_sign( unsigned char type, unsigned char x, unsigned char y )
 {
-	const unsigned char wide = 3;
-	const unsigned char high = 3;
+	const unsigned char wide = tile_object_wide[ type ];
+	const unsigned char high = tile_object_high[ type ];
 	engine_tile_manager_draw_norm( type, x, y, wide, high, 0, wide );
 }
 
