@@ -16,6 +16,7 @@ namespace ScreenShotTest
 		RenderTarget2D renderTarget;
 
 		private IDictionary<string, Texture2D> dictionary;
+		private string[] lines;
 		private int width;
 		private int height;
 		private int length;
@@ -26,9 +27,8 @@ namespace ScreenShotTest
 			var files = System.IO.Directory.GetFiles("Content/tiles", "*", System.IO.SearchOption.TopDirectoryOnly);
 			length = files.Length;
 
-			width = 128;
-			int offset = 0 == length % 16 ? 0 : 1;
-			height = ((length / 16) + offset) * 8;
+			width = 96;
+			height = 80;
 
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = width;
@@ -65,6 +65,8 @@ namespace ScreenShotTest
 				var file = i.ToString().PadLeft(3, '0');
 				dictionary[file] = Content.Load<Texture2D>("tiles/" + file);
 			}
+
+			lines = File.ReadAllLines("01.csv");
 
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
 			width = pp.BackBufferWidth;
@@ -130,23 +132,20 @@ namespace ScreenShotTest
 		{
 			graphics.GraphicsDevice.Clear(Color.Black);
 			spriteBatch.Begin();
-			int index = 0;
-			for (int row = 0; row < height; row++)
+
+			for (int row = 0; row < 10; row++)
 			{
-				for (int col = 0; col < 16; col++)
+				var line = lines[row];
+				var texts = line.Split(new char[] { ',' });
+				for (int col = 0; col < 12; col++)
 				{
-					if (index >= length)
-					{
-						continue;
-					}
+					var text = texts[col];
+					var file = text.PadLeft(3, '0');
 
 					Vector2 pos = new Vector2(col * 8, row * 8);
-
-					string file = index.ToString().PadLeft(3, '0');
 					Texture2D image = dictionary[file];
 
 					spriteBatch.Draw(image, pos, Color.White);
-					index++;
 				}
 			}
 
