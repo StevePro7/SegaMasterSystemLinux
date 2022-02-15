@@ -26,8 +26,8 @@ const unsigned char *tile_object_data[] =
 const unsigned char tile_object_wide[] =
 {
 	4,		// sea_tiles
-	16,		// section01
-	16,		// section02
+	12,		// section01
+	12,		// section02
 	8,		// section03	ground
 	8,		// section04	tree
 	4, 6

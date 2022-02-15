@@ -1,7 +1,7 @@
 M:fixedbank
 S:G$sea_tiles_array$0$0({12}DA12d,SC:U),D,0,0
-S:G$section01_array$0$0({160}DA160d,SC:U),D,0,0
-S:G$section02_array$0$0({96}DA96d,SC:U),D,0,0
+S:G$section01_array$0$0({120}DA120d,SC:U),D,0,0
+S:G$section02_array$0$0({72}DA72d,SC:U),D,0,0
 S:G$section03_array$0$0({32}DA32d,SC:U),D,0,0
 S:G$section04_array$0$0({80}DA80d,SC:U),D,0,0
 S:G$cloud01_array$0$0({12}DA12d,SC:U),D,0,0
