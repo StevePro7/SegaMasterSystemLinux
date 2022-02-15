@@ -10,33 +10,33 @@ typedef enum tag_enum_tile_type
 	tile_type_section04 = 4,
 	tile_type_cloud01 = 5,
 	tile_type_cloud02 = 6,
-	tile_type_sea_turtleA1 = 7,
-	tile_type_sea_turtleA2 = 8,
-	tile_type_sea_turtleA3 = 9,
-	tile_type_sea_turtleB1 = 10,
-	tile_type_sea_turtleB2 = 11,
-	tile_type_sea_turtleB3 = 12,
-	tile_type_fly_turtle01 = 13,
-	tile_type_fly_turtle02 = 14,
-	tile_type_sign_numb = 15,
-	tile_type_sign_goal = 16,
+	tile_type_sea_turtles = 7,
+	tile_type_fly_turtles = 8,
+	//tile_type_sea_turtleA2 = 8,
+	//tile_type_sea_turtleA3 = 9,
+	//tile_type_sea_turtleB1 = 10,
+	//tile_type_sea_turtleB2 = 11,
+	//tile_type_sea_turtleB3 = 12,
+	//tile_type_fly_turtle01 = 13,
+	//tile_type_fly_turtle02 = 14,
+	tile_type_sign_numb = 9,
+	tile_type_sign_goal = 10,
 
 } enum_tile_type;
 
-typedef enum tag_enum_tile_size
-{
-	tile_size_sea_tiles = 0,
-	tile_size_section01 = 1,
-	tile_size_section02 = 2,
-	tile_size_section03 = 3,
-	tile_size_section04 = 4,
-	tile_size_cloud01 = 5,
-	tile_size_cloud02 = 6,
-	tile_size_turtles = 7,
-	tile_size_signs = 8,
-	
-
-} enum_tile_size;
+//typedef enum tag_enum_tile_size
+//{
+//	tile_size_sea_tiles = 0,
+//	tile_size_section01 = 1,
+//	tile_size_section02 = 2,
+//	tile_size_section03 = 3,
+//	tile_size_section04 = 4,
+//	tile_size_cloud01 = 5,
+//	tile_size_cloud02 = 6,
+//	tile_size_turtles = 7,
+//	tile_size_signs = 8,
+//
+//} enum_tile_size;
 
 //typedef enum tag_enum_tile_flip
 //{

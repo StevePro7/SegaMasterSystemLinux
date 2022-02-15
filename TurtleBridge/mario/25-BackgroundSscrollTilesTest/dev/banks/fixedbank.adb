@@ -6,13 +6,7 @@ S:G$section03_array$0$0({32}DA32d,SC:U),D,0,0
 S:G$section04_array$0$0({80}DA80d,SC:U),D,0,0
 S:G$cloud01_array$0$0({12}DA12d,SC:U),D,0,0
 S:G$cloud02_array$0$0({18}DA18d,SC:U),D,0,0
-S:G$sea_turtleA1_array$0$0({12}DA12d,SC:U),D,0,0
-S:G$sea_turtleA2_array$0$0({12}DA12d,SC:U),D,0,0
-S:G$sea_turtleA3_array$0$0({12}DA12d,SC:U),D,0,0
-S:G$sea_turtleB1_array$0$0({12}DA12d,SC:U),D,0,0
-S:G$sea_turtleB2_array$0$0({12}DA12d,SC:U),D,0,0
-S:G$sea_turtleB3_array$0$0({12}DA12d,SC:U),D,0,0
-S:G$fly_turtle01_array$0$0({12}DA12d,SC:U),D,0,0
-S:G$fly_turtle02_array$0$0({12}DA12d,SC:U),D,0,0
+S:G$sea_turtles_array$0$0({72}DA72d,SC:U),D,0,0
+S:G$fly_turtles_array$0$0({24}DA24d,SC:U),D,0,0
 S:G$sign_numb_array$0$0({9}DA9d,SC:U),D,0,0
 S:G$sign_goal_array$0$0({9}DA9d,SC:U),D,0,0

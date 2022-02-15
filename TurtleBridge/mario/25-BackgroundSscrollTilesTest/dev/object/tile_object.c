@@ -11,14 +11,15 @@ const unsigned char *tile_object_data[] =
 	section04_array,
 	cloud01_array,
 	cloud02_array,
-	sea_turtleA1_array,
-	sea_turtleA2_array,
-	sea_turtleA3_array,
-	sea_turtleB1_array,
-	sea_turtleB2_array,
-	sea_turtleB3_array,
-	fly_turtle01_array,
-	fly_turtle02_array,
+	sea_turtles_array,
+	//sea_turtleA2_array,
+	//sea_turtleA3_array,
+	//sea_turtleB1_array,
+	//sea_turtleB2_array,
+	//sea_turtleB3_array,
+	fly_turtles_array,
+	//fly_turtle01_array,
+	//fly_turtle02_array,
 	sign_numb_array,
 	sign_goal_array,
 };
@@ -30,7 +31,10 @@ const unsigned char tile_object_wide[] =
 	12,		// section02
 	8,		// section03	ground
 	8,		// section04	tree
-	4, 6
+	4,		// sea_turtles
+	4,		// fly_turtles
+	6,		// sign numb
+	6,		// sign goal
 };
 const unsigned char tile_object_high[] = 
 {
@@ -39,5 +43,8 @@ const unsigned char tile_object_high[] =
 	6, 
 	4, 
 	10, 
-	3, 3
+	3,
+	3,
+	3,
+	3
 };

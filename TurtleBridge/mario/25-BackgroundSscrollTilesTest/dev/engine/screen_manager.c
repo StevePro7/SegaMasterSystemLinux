@@ -85,7 +85,7 @@ static void bonus_level()
 	engine_tile_manager_sky();
 	engine_tile_manager_sea();
 
-	engine_tile_manager_draw_tile( tile_type_section04, 10, 10);
+	//engine_tile_manager_draw_tile( tile_type_section04, 10, 10);
 	//engine_tile_manager_draw_tile( tile_type_section04, 24, TREES_HIGH );
 	//engine_tile_manager_draw_flip( tile_type_section04, 24, TREES_HIGH, 8, 10, 0, 8 );
 	//engine_tile_manager_section03( 4, 10, EARTH_HIGH );
@@ -103,10 +103,10 @@ static void bonus_level()
 	//engine_tile_manager_sign( tile_type_sign_goal, 28, 13 );
 
 	// Clouds
-	//engine_tile_manager_draw_norm( tile_type_cloud01, 3, 1, 4, 3, 0, 4 );
-	//engine_tile_manager_draw_flip( tile_type_cloud01, 27, 2, 4, 3, 0, 4 );
-	//engine_tile_manager_draw_norm( tile_type_cloud02, 19, 4, 6, 3, 0, 6 );
-	//engine_tile_manager_draw_flip( tile_type_cloud02, 10, 2, 6, 3, 0, 6 );
+	engine_tile_manager_draw_norm( tile_type_cloud01, 3, 1, 4, 3, 0, 4 );
+	engine_tile_manager_draw_flip( tile_type_cloud01, 27, 2, 4, 3, 0, 4 );
+	engine_tile_manager_draw_norm( tile_type_cloud02, 19, 4, 6, 3, 0, 6 );
+	engine_tile_manager_draw_flip( tile_type_cloud02, 10, 2, 6, 3, 0, 6 );
 
 	//engine_tile_manager_turtle( tile_type_sea_turtleA1, 4, WAVES_HIGH - 2 );
 	//engine_tile_manager_turtle( tile_type_sea_turtleA2, 8, WAVES_HIGH - 1 );
@@ -148,7 +148,7 @@ static void bonus_level_org()
 	engine_tile_manager_draw_flip( tile_type_section01, 0, 12, 16, 10, 6, 16 );
 	engine_tile_manager_draw_norm( tile_type_section01, 24, 12, 16, 10, 0, 8 );
 
-	engine_tile_manager_turtle( tile_type_fly_turtle01, 10, 10 );
-	engine_tile_manager_turtle( tile_type_fly_turtle01, 15, 10 );
-	engine_tile_manager_turtle( tile_type_fly_turtle01, 20, 10 );
+	//engine_tile_manager_turtle( tile_type_fly_turtle01, 10, 10 );
+	//engine_tile_manager_turtle( tile_type_fly_turtle01, 15, 10 );
+	//engine_tile_manager_turtle( tile_type_fly_turtle01, 20, 10 );
 }
