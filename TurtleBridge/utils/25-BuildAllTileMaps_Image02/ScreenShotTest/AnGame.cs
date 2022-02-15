@@ -45,7 +45,7 @@ namespace ScreenShotTest
 		protected override void Initialize()
 		{
 			save = false;
-			save = true;
+			//save = true;
 			IsMouseVisible = true;
 			base.Initialize();
 		}
