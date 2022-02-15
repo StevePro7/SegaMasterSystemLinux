@@ -33,8 +33,8 @@ const unsigned char tile_object_wide[] =
 	8,		// section04	tree
 	4,		// sea_turtles
 	4,		// fly_turtles
-	6,		// sign numb
-	6,		// sign goal
+	6,		// sign_numb
+	6,		// sign_goal
 };
 const unsigned char tile_object_high[] = 
 {
