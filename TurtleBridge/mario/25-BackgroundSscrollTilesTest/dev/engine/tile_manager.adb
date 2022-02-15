@@ -48,8 +48,8 @@ S:Ltile_manager.engine_tile_manager_draw_flip$col$1$85({1}SC:U),R,0,0,[e]
 S:Ltile_manager.engine_tile_manager_draw_flip$spc$1$85({1}SC:U),R,0,0,[b]
 S:Ltile_manager.engine_tile_manager_draw_flip$tmp$1$85({1}SC:U),R,0,0,[]
 S:Ltile_manager.engine_tile_manager_draw_flip$flip$1$85({2}SI:U),B,1,-7
-S:Ltile_manager.engine_tile_manager_draw_flip$sloc0$1$0({1}SC:U),B,1,-3
-S:Ltile_manager.engine_tile_manager_draw_flip$sloc1$1$0({1}SC:U),B,1,-2
+S:Ltile_manager.engine_tile_manager_draw_flip$sloc0$1$0({1}SC:U),B,1,-2
+S:Ltile_manager.engine_tile_manager_draw_flip$sloc1$1$0({1}SC:U),B,1,-3
 S:Ltile_manager.engine_tile_manager_draw_flip$sloc2$1$0({1}SC:U),B,1,-1
 F:G$engine_tile_manager_draw_tile$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Ltile_manager.engine_tile_manager_draw_tile$type$1$90({1}SC:U),B,1,4
@@ -95,8 +95,8 @@ S:Ltile_manager.engine_tile_manager_sky$col$1$104({1}SC:U),R,0,0,[b]
 F:G$engine_tile_manager_sea$0$0({2}DF,SV:S),Z,0,4,0,0,0
 S:Ltile_manager.engine_tile_manager_sea$tiles$1$109({2}DG,SC:U),R,0,0,[]
 S:Ltile_manager.engine_tile_manager_sea$array$1$109({2}DG,SC:U),R,0,0,[c,b]
-S:Ltile_manager.engine_tile_manager_sea$wide$1$109({1}SC:U),B,1,-7
-S:Ltile_manager.engine_tile_manager_sea$high$1$109({1}SC:U),B,1,-6
+S:Ltile_manager.engine_tile_manager_sea$wide$1$109({1}SC:U),B,1,-6
+S:Ltile_manager.engine_tile_manager_sea$high$1$109({1}SC:U),B,1,-7
 S:Ltile_manager.engine_tile_manager_sea$idx$1$109({1}SC:U),R,0,0,[l]
 S:Ltile_manager.engine_tile_manager_sea$val$1$109({1}SC:U),B,1,-8
 S:Ltile_manager.engine_tile_manager_sea$row$1$109({1}SC:U),R,0,0,[e]
@@ -104,8 +104,8 @@ S:Ltile_manager.engine_tile_manager_sea$col$1$109({1}SC:U),R,0,0,[d]
 S:Ltile_manager.engine_tile_manager_sea$mul$1$109({1}SC:U),B,1,-9
 S:Ltile_manager.engine_tile_manager_sea$x$1$109({1}SC:U),R,0,0,[]
 S:Ltile_manager.engine_tile_manager_sea$y$1$109({1}SC:U),R,0,0,[]
-S:Ltile_manager.engine_tile_manager_sea$sloc0$1$0({1}SC:U),B,1,-3
-S:Ltile_manager.engine_tile_manager_sea$sloc1$1$0({1}SC:U),B,1,-4
+S:Ltile_manager.engine_tile_manager_sea$sloc0$1$0({1}SC:U),B,1,-4
+S:Ltile_manager.engine_tile_manager_sea$sloc1$1$0({1}SC:U),B,1,-3
 S:Ltile_manager.engine_tile_manager_sea$sloc2$1$0({1}SC:U),B,1,-5
 S:Ltile_manager.engine_tile_manager_sea$sloc3$1$0({2}SI:S),B,1,-2
 F:Ftile_manager$draw_tile_scroll$0$0({2}DF,SV:S),Z,0,0,0,0,0
