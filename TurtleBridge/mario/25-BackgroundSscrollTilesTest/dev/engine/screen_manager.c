@@ -122,11 +122,9 @@ static void bonus_level()
 	//engine_tile_manager_turtle( tile_type_sea_turtleA1, 4, WAVES_HIGH - 2 );
 	//engine_tile_manager_turtle( tile_type_sea_turtleA2, 8, WAVES_HIGH - 1 );
 	//engine_tile_manager_turtle( tile_type_sea_turtleA3, 12, WAVES_HIGH - 0 );
-
 	//engine_tile_manager_turtle( tile_type_sea_turtleB1, 18, WAVES_HIGH - 2 );
 	//engine_tile_manager_turtle( tile_type_sea_turtleB2, 22, WAVES_HIGH - 1 );
 	//engine_tile_manager_turtle( tile_type_sea_turtleB3, 26, WAVES_HIGH - 0 );
-
 
 	//engine_tile_manager_draw_flip( tile_type_section02, 0, 16, 16, 6, 6, 16 );
 	

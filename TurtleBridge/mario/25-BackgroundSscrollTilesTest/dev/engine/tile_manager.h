@@ -8,8 +8,10 @@ void engine_tile_manager_draw_pipe( unsigned char type, unsigned int x, unsigned
 void engine_tile_manager_draw_tile( unsigned char type, unsigned char x, unsigned char y );
 void engine_tile_manager_draw_norm( unsigned char type, unsigned char x, unsigned char y, unsigned char wide, unsigned char high, unsigned char beg, unsigned char end );
 void engine_tile_manager_draw_flip( unsigned char type, unsigned char x, unsigned char y, unsigned char wide, unsigned char high, unsigned char beg, unsigned char end );
-
 void engine_tile_manager_draw_offset( unsigned char type, unsigned char x, unsigned char y, unsigned char wide, unsigned char high, unsigned char beg, unsigned char end, unsigned char off );
+
+//void engine_tile_manager_draw_norm2( unsigned char type, unsigned char x, unsigned char y );
+//void engine_tile_manager_draw_size2( unsigned char type, unsigned char x, unsigned char y );
 
 void engine_tile_manager_turtle( unsigned char type, unsigned char x, unsigned char y );
 void engine_tile_manager_section03( unsigned char sect, unsigned char x, unsigned char y );
