@@ -13,7 +13,8 @@ void engine_tile_manager_draw_offset( unsigned char type, unsigned char x, unsig
 //void engine_tile_manager_draw_norm2( unsigned char type, unsigned char x, unsigned char y );
 //void engine_tile_manager_draw_size2( unsigned char type, unsigned char x, unsigned char y );
 
-void engine_tile_manager_turtle( unsigned char type, unsigned char x, unsigned char y );
+void engine_tile_manager_sea_turtle( unsigned char turtle, unsigned char x, unsigned char y );
+void engine_tile_manager_fly_turtle( unsigned char turtle, unsigned char x, unsigned char y );
 void engine_tile_manager_section03( unsigned char sect, unsigned char x, unsigned char y );
 //void engine_tile_manager_cloud( unsigned char type, unsigned char x, unsigned char y );
 void engine_tile_manager_sign( unsigned char type, unsigned char x, unsigned char y );

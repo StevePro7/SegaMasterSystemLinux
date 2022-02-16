@@ -27,28 +27,29 @@ void engine_tile_manager_draw_pipe( unsigned char type, unsigned int x, unsigned
 
 void engine_tile_manager_draw_norm2( unsigned char type, unsigned char x, unsigned char y )
 {
-	const unsigned char *tiles = bggame_tiles__tilemap__bin;
-	const unsigned char *array = tile_object_data[ type ];
-	const unsigned char wide = tile_object_wide[ type ];
-	const unsigned char high = tile_object_high[ type ];
+	//const unsigned char *tiles = bggame_tiles__tilemap__bin;
+	//const unsigned char *array = tile_object_data[ type ];
+	//const unsigned char wide = tile_object_wide[ type ];
+	//const unsigned char high = tile_object_high[ type ];
 
-	unsigned char idx;
-	unsigned char val;
-	unsigned char row, col;
-	unsigned char spc;
+	//unsigned char idx;
+	//unsigned char val;
+	//unsigned char row, col;
+	//unsigned char spc;
 
-	for( row = 0; row < high; row++ )
-	{
-		spc = 0;
-		for( col = 0; col < wide; col++ )
-		{
-			idx = row * wide + col;
-			val = array[ idx ];
-			devkit_SMS_setNextTileatXY( x + spc, y + row );
-			devkit_SMS_setTile( ( *tiles + val ) );
-			spc++;
-		}
-	}
+	//for( row = 0; row < high; row++ )
+	//{
+	//	spc = 0;
+	//	for( col = 0; col < wide; col++ )
+	//	{
+	//		idx = row * wide + col;
+	//		val = array[ idx ];
+	//		devkit_SMS_setNextTileatXY( x + spc, y + row );
+	//		devkit_SMS_setTile( ( *tiles + val ) );
+	//		spc++;
+	//	}
+	//}
+	engine_tile_manager_draw_offset2( type, 0, x, y );
 }
 
 void engine_tile_manager_draw_offset2( unsigned char type, unsigned char offset, unsigned char x, unsigned char y )
@@ -189,11 +190,13 @@ void engine_tile_manager_draw_tile( unsigned char type, unsigned char x, unsigne
 	engine_tile_manager_draw_norm( type, x, y, wide, high, 0, wide );
 }
 
-void engine_tile_manager_turtle( unsigned char type, unsigned char x, unsigned char y )
+void engine_tile_manager_sea_turtle( unsigned char turtle, unsigned char x, unsigned char y )
 {
-	const unsigned char wide = tile_object_wide[ type ];
-	const unsigned char high = tile_object_high[ type ];
-	engine_tile_manager_draw_norm( type, x, y, wide, high, 0, wide );
+	engine_tile_manager_draw_offset2( tile_type_sea_turtles, turtle, x, y );
+}
+void engine_tile_manager_fly_turtle( unsigned char turtle, unsigned char x, unsigned char y )
+{
+	engine_tile_manager_draw_offset2( tile_type_fly_turtles, turtle, x, y );
 }
 
 void engine_tile_manager_sign( unsigned char type, unsigned char x, unsigned char y )

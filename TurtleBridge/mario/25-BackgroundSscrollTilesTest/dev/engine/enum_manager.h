@@ -17,7 +17,7 @@ typedef enum tag_enum_tile_type
 
 } enum_tile_type;
 
-typedef enum tag_enum_turtle_type
+typedef enum tag_enum_turtle_type_sea
 {
 	turtle_type_sea_turtleA1 = 0,
 	turtle_type_sea_turtleB1 = 1,
@@ -26,7 +26,14 @@ typedef enum tag_enum_turtle_type
 	turtle_type_sea_turtleA3 = 4,
 	turtle_type_sea_turtleA4 = 5,
 
-} enum_turtle_type;
+} enum_turtle_type_sea;
+
+typedef enum tag_enum_turtle_type_fly
+{
+	turtle_type_fly_turtle01 = 0,
+	turtle_type_fly_turtle02 = 1,
+
+} enum_turtle_type_fly;
 
 //typedef enum tag_enum_tile_size
 //{
