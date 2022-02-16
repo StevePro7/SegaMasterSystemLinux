@@ -74,3 +74,8 @@ draw section 03		16-20	i.e.	4 = 12 - 8
 if 16px wide		 8
 draw section 02		16
 draw section 03		16-24	i.e.	8 = 16 - 8
+
+
+TODO
+want the sea to have dynamic height
+2, 3, 4, 5

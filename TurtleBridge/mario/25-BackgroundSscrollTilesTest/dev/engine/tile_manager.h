@@ -20,4 +20,8 @@ void engine_tile_manager_sign( unsigned char type, unsigned char x, unsigned cha
 
 //void engine_tile_manager_scroll_test( unsigned char x, unsigned char y, unsigned char col );
 
+void engine_tile_manager_draw_flip2( unsigned char type, unsigned char x, unsigned char y );
+void engine_tile_manager_draw_norm2( unsigned char type, unsigned char x, unsigned char y );
+void engine_tile_manager_draw_offset2( unsigned char type, unsigned char offset, unsigned char x, unsigned char y );
+
 #endif//_TILE_MANAGER_H_

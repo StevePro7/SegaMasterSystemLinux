@@ -11,5 +11,5 @@ S:G$sea_turtles_array$0$0({0}DA0d,SC:U),D,0,0
 S:G$fly_turtles_array$0$0({0}DA0d,SC:U),D,0,0
 S:G$sign_numb_array$0$0({0}DA0d,SC:U),D,0,0
 S:G$sign_goal_array$0$0({0}DA0d,SC:U),D,0,0
-S:G$tile_object_wide$0$0({9}DA9d,SC:U),D,0,0
-S:G$tile_object_high$0$0({9}DA9d,SC:U),D,0,0
+S:G$tile_object_wide$0$0({11}DA11d,SC:U),D,0,0
+S:G$tile_object_high$0$0({11}DA11d,SC:U),D,0,0

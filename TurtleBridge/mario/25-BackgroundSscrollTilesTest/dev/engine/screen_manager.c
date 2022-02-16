@@ -81,6 +81,31 @@ void engine_screen_manager_update()
 
 static void bonus_level()
 {
+	//engine_tile_manager_sky();
+	//engine_tile_manager_sea();
+
+	//engine_tile_manager_draw_flip( tile_type_cloud01, 27, 2, 4, 3, 0, 4 );
+	//engine_tile_manager_draw_flip2( tile_type_cloud01, 27, 6 );
+	//engine_tile_manager_draw_norm( tile_type_cloud01, 3, 1, 4, 3, 0, 4 );
+	//engine_tile_manager_draw_norm2( tile_type_cloud01, 3, 5 );
+
+	engine_tile_manager_draw_offset( tile_type_sea_turtles, 4, 7, 4, 3, 0, 4, 0 );
+	engine_tile_manager_draw_offset( tile_type_sea_turtles, 8, 7, 4, 3, 0, 4, 1 );
+	engine_tile_manager_draw_offset( tile_type_sea_turtles, 12, 8, 4, 3, 0, 4, 2 );
+	engine_tile_manager_draw_offset( tile_type_sea_turtles, 16, 8, 4, 3, 0, 4, 3 );
+	engine_tile_manager_draw_offset( tile_type_sea_turtles, 20, 9, 4, 3, 0, 4, 4 );
+	engine_tile_manager_draw_offset( tile_type_sea_turtles, 24, 9, 4, 3, 0, 4, 5 );
+
+	engine_tile_manager_draw_offset2( tile_type_sea_turtles, turtle_type_sea_turtleA1, 4, 14);
+	//engine_tile_manager_draw_offset2( tile_type_sea_turtles, turtle_type_sea_turtleB1, 8, 14);
+	//engine_tile_manager_draw_offset2( tile_type_sea_turtles, turtle_type_sea_turtleA2, 12, 15);
+	//engine_tile_manager_draw_offset2( tile_type_sea_turtles, turtle_type_sea_turtleB2, 16, 15);
+	//engine_tile_manager_draw_offset2( tile_type_sea_turtles, turtle_type_sea_turtleA3, 20, 16);
+	//engine_tile_manager_draw_offset2( tile_type_sea_turtles, turtle_type_sea_turtleA4, 24, 16);
+}
+
+static void bonus_levelX()
+{
 //	unsigned char y = 11;
 	engine_tile_manager_sky();
 	engine_tile_manager_sea();
