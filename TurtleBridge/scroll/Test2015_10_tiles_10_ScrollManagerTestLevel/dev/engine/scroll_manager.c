@@ -31,7 +31,7 @@ void engine_scroll_manager_load()
 {
 	struct_scroll_object *so = &global_scroll_object;
 	unsigned char t, x;
-	//print();
+	print();
 
 	devkit_SMS_mapROMBank( level0301_txt_bank );
 	for( x = 0; x < 32; x++ )
@@ -65,7 +65,7 @@ void engine_scroll_manager_update()
 
 	// scroll pixel by pixel
 	devkit_SMS_setBGScrollX( so->scroll );
-	//print();
+	print();
 
 	if( ( so->scrollRight % 8 ) != delta )
 	{
@@ -98,13 +98,15 @@ void engine_scroll_manager_update()
 	src = ( void * ) &pnt[ 16 ];				// 8 == "$"
 	devkit_SMS_loadTileMap(x, y-0, src, 2 );
 
-	//print();
+	print();
 }
 
 unsigned char engine_scroll_manager_getPosY( unsigned int col )
 {
 	struct_scroll_object *so = &global_scroll_object;
-	unsigned int idx = so->offset_left + col;
+	// should be the the same either left = 0 or right = 31 i.e. SCREEN_WIDE - 1
+	//unsigned int idx = so->offset_left + col;
+	unsigned int idx = so->offset_right - ( SCREEN_WIDE - 1  ) + col;
 	devkit_SMS_mapROMBank( level0301_txt_bank );
 	return level0301_txt[ idx  ];
 }
