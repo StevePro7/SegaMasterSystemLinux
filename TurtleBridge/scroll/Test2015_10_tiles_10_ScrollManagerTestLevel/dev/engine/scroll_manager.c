@@ -1,5 +1,6 @@
 #include "scroll_manager.h"
 #include "font_manager.h"
+#include "global_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
 #include "../banks/bank3.h"
@@ -24,6 +25,10 @@ void engine_scroll_manager_init()
 	so->offset_right = 31;
 
 	devkit_SMS_setBGScrollX( so->scroll );
+
+	engine_font_manager_draw_text( "1", 10, 8 );
+	engine_font_manager_draw_text( "2", 42, 8 );
+
 }
 
 void engine_scroll_manager_load()
@@ -82,8 +87,9 @@ void engine_scroll_manager_update()
 	//engine_font_manager_draw_text( "D", 32 + so->scrollRightDivided8, 21 );
 
 	//x = 32 + so->scrollRightDivided8;
-	x = so->offset_right;
-	src = ( void * ) &pnt[ 0 ];
+	x = so->offset_right % SCREEN_WIDE;
+	//x = so->offset_right;
+	src = ( void * ) &pnt[ 0 ];	// space
 	devkit_SMS_loadTileMap( x, 18, src, 2 );
 	devkit_SMS_loadTileMap( x, 19, src, 2 );
 	devkit_SMS_loadTileMap( x, 20, src, 2 );
@@ -98,7 +104,7 @@ void engine_scroll_manager_update()
 	devkit_SMS_mapROMBank( level0301_txt_bank );
 	y = level0301_txt[ idx ];
 	src = ( void * ) &pnt[ index ];
-	devkit_SMS_loadTileMap(x, y-1, src, 2 );
+	devkit_SMS_loadTileMap(x, y-0, src, 2 );
 
 	//engine_font_manager_draw_text( "X", 32 + so->scrollRightDivided8, level0301_txt[ idx ] - 1);
 	print();

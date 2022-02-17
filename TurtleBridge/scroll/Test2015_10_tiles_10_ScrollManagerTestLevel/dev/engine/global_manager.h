@@ -5,4 +5,7 @@
 #define SPRITE_TILES		256
 //#define TURTLE_TILES		64
 
+#define SCREEN_WIDE			32
+#define SCREEN_HIGH			24
+
 #endif//_GLOBAL_MANAGER_H_

@@ -13,6 +13,7 @@ void main( void )
 
 	engine_content_manager_load_tiles();
 	devkit_SMS_setBGPaletteColor( 15, devkit_RGB( 3, 3, 3 ) );
+	devkit_SMS_setSpritePaletteColor( 0, devkit_RGB( 0, 2, 3 ) );
 
 	engine_screen_manager_init();
 	devkit_SMS_displayOn();
