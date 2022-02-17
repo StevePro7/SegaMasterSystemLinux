@@ -6,23 +6,6 @@
 #include "input_manager.h"
 #include "sprite_manager.h"
 #include "scroll_manager.h"
-#include "../devkit/_sms_manager.h"
-#include <stdlib.h>
-
-unsigned int BG_TILE_WIDTH = 64;
-unsigned int X_TILE_MAX = 32;
-unsigned int X_TILE_DIFF = 6; // 64 - 32;
-unsigned int Y_TILE_MAX = 24;
-
-unsigned char test = 0;
-unsigned int test2 = 0;
-unsigned char scroll = 0;
-//unsigned int scrollDivided8 = 0;
-unsigned char scrollRight = 0;
-unsigned char scrollRightDivided8 = 0;
-//unsigned int xtile = 0;
-unsigned int ytile = 0;
-unsigned int yDelta = 0;
 
 void engine_screen_manager_init()
 {
@@ -30,7 +13,7 @@ void engine_screen_manager_init()
 	engine_scroll_manager_load();
 
 	engine_music_manager_play();
-	test2 = 0;
+	//test2 = 0;
 }
 
 void engine_screen_manager_update()
@@ -42,6 +25,7 @@ void engine_screen_manager_update()
 	unsigned char posY;
 	unsigned char col = 1;
 
+	posX = 64;
 	//input = engine_input_manager_hold_right();
 	input = engine_input_manager_move_right();
 	if( input )
@@ -60,7 +44,8 @@ void engine_screen_manager_update()
 		engine_font_manager_draw_text( " ", 2, 15 );
 	}
 
-	posX = ( ( col + 0 ) * 8 ) - 0;
+	col = posX / 4;
+	//posX = ( ( col + 0 ) * 8 ) - 0;
 	posY = engine_scroll_manager_getPosY( col );
 	if( posY == 0 )
 	{

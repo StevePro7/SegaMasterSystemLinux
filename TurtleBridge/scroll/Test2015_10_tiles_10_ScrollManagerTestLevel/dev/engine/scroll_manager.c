@@ -25,10 +25,6 @@ void engine_scroll_manager_init()
 	so->offset_right = 31;
 
 	devkit_SMS_setBGScrollX( so->scroll );
-
-	engine_font_manager_draw_text( "1", 10, 8 );
-	engine_font_manager_draw_text( "2", 42, 8 );
-
 }
 
 void engine_scroll_manager_load()
@@ -60,7 +56,7 @@ void engine_scroll_manager_update()
 	unsigned char y;
 	unsigned int *src;
 
-	unsigned int index = 0;
+	//unsigned int index = 0;
 	unsigned int offset = 0;
 	unsigned char base = 0;
 
@@ -81,14 +77,10 @@ void engine_scroll_manager_update()
 	so->offset_left++;
 	so->offset_right++;
 
-	//engine_font_manager_draw_text( "A", 32 + so->scrollRightDivided8, 18 );
-	//engine_font_manager_draw_text( "B", 32 + so->scrollRightDivided8, 19 );
-	//engine_font_manager_draw_text( "C", 32 + so->scrollRightDivided8, 20 );
-	//engine_font_manager_draw_text( "D", 32 + so->scrollRightDivided8, 21 );
 
-	//x = 32 + so->scrollRightDivided8;
 	x = so->offset_right % SCREEN_WIDE;
-	//x = so->offset_right;
+	//x = so->offset_right;					// will wrap every 32 down 1x forever
+	//x = 32 + so->scrollRightDivided8;		// will wrap every 32 only once as is % 32 i.e. 32 + (0-31)
 	src = ( void * ) &pnt[ 0 ];	// space
 	devkit_SMS_loadTileMap( x, 18, src, 2 );
 	devkit_SMS_loadTileMap( x, 19, src, 2 );
@@ -100,13 +92,12 @@ void engine_scroll_manager_update()
 
 	// IMPORTANT - here 8 is tile 4 * x	remember 2x bytes for each tile loaded from the TILEMAP
 	// i.e. so 8 => 4 i.e. 8/2 = 4 and 4 is tile '$'.
-	index = ( base + offset ) * 2 + 8;
 	devkit_SMS_mapROMBank( level0301_txt_bank );
 	y = level0301_txt[ idx ];
-	src = ( void * ) &pnt[ index ];
+	//src = ( void * ) &pnt[ index ];
+	src = ( void * ) &pnt[ 16 ];				// 8 == "$"
 	devkit_SMS_loadTileMap(x, y-0, src, 2 );
 
-	//engine_font_manager_draw_text( "X", 32 + so->scrollRightDivided8, level0301_txt[ idx ] - 1);
 	print();
 }
 
@@ -124,7 +115,6 @@ static void print()
 	engine_font_manager_draw_data( so->scroll, 25, 0 );
 	engine_font_manager_draw_data( so->scrollRight, 25, 1 );
 	engine_font_manager_draw_data( so->scrollRightDivided8, 25, 2 );
-	engine_font_manager_draw_data( so->scrollRight % 8, 25, 3 );
 
 	engine_font_manager_draw_data( so->offset_left, 25, 5 );
 	engine_font_manager_draw_data( so->offset_right, 25, 6 );
