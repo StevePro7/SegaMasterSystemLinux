@@ -23,7 +23,7 @@ void engine_screen_manager_update()
 	unsigned char input;
 	unsigned char posX;
 	unsigned char posY;
-	unsigned char col = 1;
+	unsigned char col = 8;
 
 	posX = 64;
 	//input = engine_input_manager_hold_right();
@@ -44,7 +44,7 @@ void engine_screen_manager_update()
 		engine_font_manager_draw_text( " ", 2, 15 );
 	}
 
-	col = posX / 4;
+	col = posX / 8;
 	//posX = ( ( col + 0 ) * 8 ) - 0;
 	posY = engine_scroll_manager_getPosY( col );
 	if( posY == 0 )
