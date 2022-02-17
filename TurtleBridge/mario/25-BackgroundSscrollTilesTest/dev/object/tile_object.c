@@ -4,6 +4,7 @@
 // Tiles.
 const unsigned char *tile_object_data[] =
 {
+	no_tiles_array,
 	sea_tiles_array,
 	section01_array,
 	section02_array,
@@ -19,6 +20,7 @@ const unsigned char *tile_object_data[] =
 
 const unsigned char tile_object_wide[] =
 {
+	1,		// no_tiles
 	4,		// sea_tiles
 	12,		// section01
 	12,		// section02
@@ -33,6 +35,7 @@ const unsigned char tile_object_wide[] =
 };
 const unsigned char tile_object_high[] = 
 {
+	1,		// no_tiles
 	3,		// sea_tiles
 	10,		// section01
 	6,		// section02

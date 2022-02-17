@@ -1,3 +1,5 @@
+const unsigned char no_tiles_array[] = { 0 };
+
 const unsigned char sea_tiles_array[] =
 {
 	66, 66, 67, 68,

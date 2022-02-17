@@ -1,3 +1,4 @@
+extern const unsigned char no_tiles_array[];
 extern const unsigned char sea_tiles_array[];
 
 extern const unsigned char section01_array[];

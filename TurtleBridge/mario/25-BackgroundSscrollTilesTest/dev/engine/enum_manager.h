@@ -3,17 +3,18 @@
 
 typedef enum tag_enum_tile_type
 {
-	tile_type_sea_tiles = 0,
-	tile_type_section01 = 1,
-	tile_type_section02 = 2,
-	tile_type_section03 = 3,
-	tile_type_section04 = 4,
-	tile_type_cloud01 = 5,
-	tile_type_cloud02 = 6,
-	tile_type_sea_turtles = 7,
-	tile_type_fly_turtles = 8,
-	tile_type_sign_numb = 9,
-	tile_type_sign_goal = 10,
+	tile_type_no_tiles = 0,
+	tile_type_sea_tiles = 1,
+	tile_type_section01 = 2,
+	tile_type_section02 = 3,
+	tile_type_section03 = 4,
+	tile_type_section04 = 5,
+	tile_type_cloud01 = 6,
+	tile_type_cloud02 = 7,
+	tile_type_sea_turtles = 8,
+	tile_type_fly_turtles = 9,
+	tile_type_sign_numb = 10,
+	tile_type_sign_goal = 11,
 
 } enum_tile_type;
 
