@@ -1,7 +1,7 @@
 M:main
 F:G$main$0$0({2}DF,SV:S),C,0,0,0,0,0
-T:Fmain$tag_struct_scroll_object[({0}S:S$scroll_left$0$0({1}SC:U),Z,0,0)({1}S:S$scroll_right$0$0({1}SC:U),Z,0,0)({2}S:S$scroll$0$0({1}SC:U),Z,0,0)({3}S:S$scrollRight$0$0({1}SC:U),Z,0,0)({4}S:S$scrollRightDivided8$0$0({1}SC:U),Z,0,0)({5}S:S$offset_left$0$0({2}SI:U),Z,0,0)({7}S:S$offset_right$0$0({2}SI:U),Z,0,0)]
-S:G$global_scroll_object$0$0({9}STtag_struct_scroll_object:S),E,0,0
+T:Fmain$tag_struct_scroll_object[({0}S:S$scrollleft$0$0({1}SC:U),Z,0,0)({1}S:S$scrollRight$0$0({1}SC:U),Z,0,0)({2}S:S$scrollRightDivided8$0$0({1}SC:U),Z,0,0)({3}S:S$column_X$0$0({1}SC:U),Z,0,0)({4}S:S$scroll_X$0$0({2}SI:U),Z,0,0)]
+S:G$global_scroll_object$0$0({6}STtag_struct_scroll_object:S),E,0,0
 S:G$atof$0$0({2}DF,SF:S),C,0,0
 S:G$atoi$0$0({2}DF,SI:S),C,0,0
 S:G$atol$0$0({2}DF,SL:S),C,0,0

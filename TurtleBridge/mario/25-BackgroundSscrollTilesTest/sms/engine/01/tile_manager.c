@@ -7,25 +7,10 @@
 
 //static void draw_tile_scroll( const unsigned char *array, unsigned char x, unsigned char y, unsigned char w, unsigned char h, unsigned char col );
 
-void engine_tile_manager_blank_column( unsigned char col )
-{
-	const unsigned char *tiles = bggame_tiles__tilemap__bin;
-	unsigned char row;
-
-	void *src = ( void * ) &tiles[ SKYBLUE_TILE * 2 ];
-	for( row = 0; row < SCREEN_HIGH; row++ )
-	{
-		devkit_SMS_loadTileMap( col, row, src, 2 );
-	}
-
-}
-
-void engine_tile_manager_draw_pipe( unsigned char type, unsigned int x, unsigned char y, unsigned char col )
+void engine_tile_manager_draw_pipe( unsigned char type, unsigned int x, unsigned char y, unsigned char wide, unsigned char high, unsigned char col )
 {
 	const unsigned char *tiles = bggame_tiles__tilemap__bin;
 	const unsigned char *array = tile_object_data[ type ];
-	const unsigned char wide = tile_object_wide[ type ];
-	const unsigned char high = tile_object_high[ type ];
 	unsigned char idx;
 	unsigned char val;
 	unsigned int off;
@@ -39,10 +24,6 @@ void engine_tile_manager_draw_pipe( unsigned char type, unsigned int x, unsigned
 		devkit_SMS_loadTileMap( x, y + row, ( void * ) &tiles[ off ], 2 );
 	}
 }
-
-//void engine_tile_manager_draw_pipe2( unsigned char type, unsigned int x, unsigned char y, unsigned char wide, unsigned char high, unsigned char col )
-//{
-//}
 
 void engine_tile_manager_draw_norm2( unsigned char type, unsigned char x, unsigned char y )
 {
@@ -230,21 +211,23 @@ void engine_tile_manager_section03( unsigned char sect, unsigned char x, unsigne
 {
 	const unsigned char *tiles = bggame_tiles__tilemap__bin;
 	const unsigned char *array = tile_object_data[ tile_type_section03 ];
+	const unsigned char wide = tile_object_wide[ tile_type_section03 ];
+	const unsigned char high = tile_object_high[ tile_type_section03 ];
 
 	unsigned char idx, col;
 	unsigned char spc = 0;
 
-	engine_tile_manager_draw_pipe( tile_type_section03, x + spc++, y, 0 );
-	engine_tile_manager_draw_pipe( tile_type_section03, x + spc++, y, 1 );
+	engine_tile_manager_draw_pipe( tile_type_section03, x + spc++, y, wide, high, 0 );
+	engine_tile_manager_draw_pipe( tile_type_section03, x + spc++, y, wide, high, 1 );
 	for( idx = 0; idx < sect; idx++ )
 	{
 		for( col = 2; col < 6; col++ )
 		{
-			engine_tile_manager_draw_pipe( tile_type_section03, x + spc++, y, col );
+			engine_tile_manager_draw_pipe( tile_type_section03, x + spc++, y, wide, high, col );
 		}
 	}
-	engine_tile_manager_draw_pipe( tile_type_section03, x + spc++, y, 6 );
-	engine_tile_manager_draw_pipe( tile_type_section03, x + spc++, y, 7 );
+	engine_tile_manager_draw_pipe( tile_type_section03, x + spc++, y, wide, high, 6 );
+	engine_tile_manager_draw_pipe( tile_type_section03, x + spc++, y, wide, high, 7 );
 }
 
 

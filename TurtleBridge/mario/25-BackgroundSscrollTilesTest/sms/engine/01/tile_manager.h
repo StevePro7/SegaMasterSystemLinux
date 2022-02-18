@@ -4,10 +4,7 @@
 void engine_tile_manager_sky();
 void engine_tile_manager_sea();
 
-void engine_tile_manager_blank_column( unsigned char col );
-
-void engine_tile_manager_draw_pipe( unsigned char type, unsigned int x, unsigned char y, unsigned char col );
-//void engine_tile_manager_draw_pipe2( unsigned char type, unsigned int x, unsigned char y, unsigned char wide, unsigned char high, unsigned char col );
+void engine_tile_manager_draw_pipe( unsigned char type, unsigned int x, unsigned char y, unsigned char wide, unsigned char high, unsigned char col );
 void engine_tile_manager_draw_tile( unsigned char type, unsigned char x, unsigned char y );
 void engine_tile_manager_draw_norm( unsigned char type, unsigned char x, unsigned char y, unsigned char wide, unsigned char high, unsigned char beg, unsigned char end );
 void engine_tile_manager_draw_flip( unsigned char type, unsigned char x, unsigned char y, unsigned char wide, unsigned char high, unsigned char beg, unsigned char end );
