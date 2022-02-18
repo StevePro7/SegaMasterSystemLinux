@@ -31,15 +31,6 @@ void engine_scroll_manager_load()
 void engine_scroll_manager_update()
 {
 	struct_scroll_object *so = &global_scroll_object;
-	//unsigned int idx;
-
-	//unsigned char x;
-	//unsigned char y;
-	//unsigned int *src;
-
-	//unsigned int index = 0;
-	//unsigned int offset = 0;
-	//unsigned char base = 0;
 
 	so->scroll -= delta;
 	so->scrollRight += delta;

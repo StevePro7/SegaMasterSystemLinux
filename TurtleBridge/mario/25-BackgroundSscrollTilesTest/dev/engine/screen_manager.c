@@ -29,45 +29,21 @@ void engine_screen_manager_init()
 	//engine_tile_manager_draw_flip( tile_type_section05, 4, 4, 8, 10, 0, 8 );		// flip tree
 
 	//engine_tile_manager_sign( tile_type_sign_numb, 4, 4 );
-	engine_music_manager_play();
+	//engine_music_manager_play();
 }
 
 void engine_screen_manager_update()
 {
 	unsigned char delta = 0;
 	unsigned char input = 0;
-	input = engine_input_manager_move_right();
+	//input = engine_input_manager_move_right();
+	input = engine_input_manager_hold_right();
 	if( input )
 	{
 		engine_scroll_manager_update();
 	}
 
-	//input = engine_input_manager_move_left();
-	//if( input )
-	//{
-	//	engine_tile_manager_draw_pipe( tile_type_sea_turtleA1, 4, 19, 4, 3, 0 );
-	//	x--;
-	//}
-	//input = engine_input_manager_move_right();
-	//if( input )
-	//{
-	//	engine_tile_manager_draw_pipe( tile_type_sea_turtleA1, 5, 19, 4, 3, 1 );
-	//	x++;
-	//}
-	//input = engine_input_manager_move_up();
-	//if( input )
-	//{
-	//	engine_tile_manager_draw_pipe( tile_type_sea_turtleA1, 6, 19, 4, 3, 2 );
-	//	y--;
-	//}
-	//input = engine_input_manager_move_down();
-	//if( input )
-	//{
-	//	engine_tile_manager_draw_pipe( tile_type_sea_turtleA1, 7, 19, 4, 3, 3 );
-	//	y++;
-	//}
-
-	//engine_sprite_manager_draw( x + 0, y, delta + 0 );
+	engine_sprite_manager_draw( x + 0, y, delta + 0 );
 
 	// fish
 	//engine_sprite_manager_draw( x + 40, y, delta + 18 );
