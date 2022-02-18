@@ -7,6 +7,7 @@ typedef struct tag_struct_level_object
 
 } struct_level_object;
 
+extern const unsigned char level_object_type[];
 extern const unsigned char level_object_sect[];
 
 #endif//_LEVEL_OBJECT_H_

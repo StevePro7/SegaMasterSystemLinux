@@ -3,7 +3,9 @@ F:G$engine_level_manager_init$0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_level_manager_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Llevel_manager.engine_level_manager_update$column_X$1$16({1}SC:U),B,1,4
 S:Llevel_manager.engine_level_manager_update$scroll_X$1$16({2}SI:U),B,1,5
-S:Llevel_manager.engine_level_manager_update$sect$1$17({1}SC:U),R,0,0,[d]
+S:Llevel_manager.engine_level_manager_update$type$1$17({1}SC:U),R,0,0,[c]
+S:Llevel_manager.engine_level_manager_update$sect$1$17({1}SC:U),R,0,0,[b]
+S:Llevel_manager.engine_level_manager_update$four$1$17({1}SC:U),R,0,0,[b]
 T:Flevel_manager$tag_struct_level_object[({0}S:S$byte$0$0({1}SC:U),Z,0,0)]
 S:G$global_level_object$0$0({1}STtag_struct_level_object:S),E,0,0
 S:G$engine_tile_manager_sky$0$0({2}DF,SV:S),C,0,0
