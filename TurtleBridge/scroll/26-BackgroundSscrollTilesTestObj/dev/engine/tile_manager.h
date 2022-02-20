@@ -4,7 +4,7 @@
 void engine_tile_manager_sky();
 void engine_tile_manager_sea();
 
-void engine_tile_manager_blank_column( unsigned char col );
+void engine_tile_manager_blank_column( unsigned char column_X, unsigned char column_Y );
 
 void engine_tile_manager_draw_pipe( unsigned char type, unsigned int x, unsigned char y, unsigned char col );
 //void engine_tile_manager_draw_pipe2( unsigned char type, unsigned int x, unsigned char y, unsigned char wide, unsigned char high, unsigned char col );

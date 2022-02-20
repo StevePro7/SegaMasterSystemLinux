@@ -1,13 +1,19 @@
 XL2
-H 9 areas 5 global symbols
+H 9 areas B global symbols
 M level_object
 O -mz80
 S .__.ABS. Def0000
-A _CODE size A0 flags 0 addr 0
-S G$level_object_sect$0$0 Def0050
-S _level_object_sect Def0050
-S G$level_object_type$0$0 Def0000
-S _level_object_type Def0000
+A _CODE size A4 flags 0 addr 0
+S G$level_object_sect$0$0 Def0054
+S G$level_object_object$0$0 Def0002
+S _level_object_sect Def0054
+S G$level_object_metadata$0$0 Def0003
+S G$level_object_type$0$0 Def0004
+S _level_object_object Def0002
+S _level_object_metadata Def0003
+S G$level_object_column$0$0 Def0000
+S _level_object_type Def0004
+S _level_object_column Def0000
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -18,29 +24,41 @@ A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00
 R 00 00 00 00
-T 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+T 00 00 84 00
 R 00 00 00 00
-T 0E 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+T 02 00
 R 00 00 00 00
-T 1C 00 00 00 00 00 01 01 01 01 01 01 01 01 01 01
+T 02 00 08
 R 00 00 00 00
-T 2A 00 01 01 01 01 01 01 00 00 00 00 00 00 00 00
+T 03 00
 R 00 00 00 00
-T 38 00 01 01 01 01 01 01 01 01 01 01 01 01 01 01
+T 03 00 0A
 R 00 00 00 00
-T 46 00 01 01 00 00 00 00 00 00 00 00
+T 04 00
 R 00 00 00 00
-T 50 00
+T 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 R 00 00 00 00
-T 50 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+T 12 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 R 00 00 00 00
-T 5E 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+T 20 00 00 00 00 00 01 01 01 01 01 01 01 01 01 01
 R 00 00 00 00
-T 6C 00 00 00 00 00 00 01 02 03 04 05 02 03 04 05
+T 2E 00 01 01 01 01 01 01 00 00 00 00 00 00 00 00
 R 00 00 00 00
-T 7A 00 02 03 04 05 06 07 00 00 00 00 00 00 00 00
+T 3C 00 01 01 01 01 01 01 01 01 01 01 01 01 01 01
 R 00 00 00 00
-T 88 00 00 01 02 03 04 05 02 03 04 05 02 03 04 05
+T 4A 00 01 01 00 00 00 00 00 00 00 00
 R 00 00 00 00
-T 96 00 06 07 00 00 00 00 00 00 00 00
+T 54 00
+R 00 00 00 00
+T 54 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+R 00 00 00 00
+T 62 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+R 00 00 00 00
+T 70 00 00 00 00 00 00 01 02 03 04 05 02 03 04 05
+R 00 00 00 00
+T 7E 00 02 03 04 05 06 07 00 00 00 00 00 00 00 00
+R 00 00 00 00
+T 8C 00 00 01 02 03 04 05 02 03 04 05 02 03 04 05
+R 00 00 00 00
+T 9A 00 06 07 00 00 00 00 00 00 00 00
 R 00 00 00 00

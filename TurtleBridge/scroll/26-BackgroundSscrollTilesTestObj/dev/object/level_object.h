@@ -3,9 +3,16 @@
 
 typedef struct tag_struct_level_object
 {
-	unsigned char byte;
+	unsigned char level_index;
+	unsigned char planeA_type;
+	unsigned char planeB_type;
 
 } struct_level_object;
+
+extern const unsigned int level_object_column[];
+extern const unsigned char level_object_object[];
+extern const unsigned char level_object_metadata[];
+
 
 extern const unsigned char level_object_type[];
 extern const unsigned char level_object_sect[];

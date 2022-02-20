@@ -26,8 +26,8 @@ void engine_screen_manager_update()
 {
 	unsigned char delta = 0;
 	unsigned char input = 0;
-	input = engine_input_manager_move_right();
-	//input = engine_input_manager_hold_right();
+	//input = engine_input_manager_move_right();
+	input = engine_input_manager_hold_right();
 	if( input )
 	{
 		engine_scroll_manager_update();
@@ -59,4 +59,5 @@ static void bonus_level()
 {
 	engine_tile_manager_sky();
 	engine_tile_manager_sea();
+	engine_tile_manager_sea_turtle( 0, 0, 19 );
 }
