@@ -34,9 +34,17 @@ void engine_level_manager_update( unsigned char column_X, unsigned int scroll_X 
 	if( scroll_X == planeA_column )
 	{
 		lo->planeA_count = 0;
+		lo->planeA_total = 0;
 		lo->planeA_type = planeA_object_object[ lo->planeA_index ];
 		lo->planeA_data = planeA_object_metadata[ lo->planeA_index ];
+		lo->planeA_wide = tile_object_wide[ lo->planeA_type ];
+		lo->planeA_repeat = 0;
 		lo->planeA_index++;
+
+		if( tile_type_section03 == lo->planeA_type )
+		{
+			lo->planeA_wide += lo->planeA_data * GENTILE_WIDE;
+		}
 	}
 
 	if( scroll_X == planeB_column )
@@ -62,13 +70,27 @@ void engine_level_manager_update( unsigned char column_X, unsigned int scroll_X 
 		}
 	}
 
-	// Draw existing planeB.
+	// Draw existing planeA.
 	if( lo->planeA_type != tile_type_no_tiles )
 	{
-		engine_tile_manager_draw_pipe( lo->planeA_type, column_X, lo->planeA_data, lo->planeA_count );
-		lo->planeA_count++;
+		if( tile_type_section03 == lo->planeA_type )
+		{
+			if( lo->planeA_repeat < lo->planeA_data )
+			{
+				if( lo->planeA_count > 5 )
+				{
+					lo->planeA_count = 2;
+					lo->planeA_repeat++;
+				}
+			}
+		}
 
-		if( lo->planeA_count >= tile_object_wide[ lo->planeA_type ] )
+		// TODO - high relative to sea level.
+		engine_tile_manager_draw_pipe( lo->planeA_type, column_X, 18, lo->planeA_count );
+		lo->planeA_count++;
+		lo->planeA_total++;
+
+		if( lo->planeA_total >= lo->planeA_wide )
 		{
 			lo->planeA_type = tile_type_no_tiles;
 		}
@@ -80,23 +102,4 @@ void engine_level_manager_update( unsigned char column_X, unsigned int scroll_X 
 	// Draw sea wave at a minimum.
 	four = column_X % 4;
 	engine_tile_manager_draw_pipe( tile_type_sea_tiles, column_X, WAVES_HIGH, four );
-
-
-	//unsigned char type;
-	//unsigned char sect;
-	//unsigned char four;
-
-
-	//type = level_object_type[ scroll_X ];
-	//sect = level_object_sect[ scroll_X ];
-
-	//if( type == 0 )
-	//{
-	//	four = column_X % 4;
-	//	engine_tile_manager_draw_pipe( tile_type_sea_tiles, column_X, WAVES_HIGH, four );
-	//}
-	//else
-	//{
-	//	engine_tile_manager_draw_pipe( tile_type_section03, column_X, WAVES_HIGH - 3, sect );
-	//}
 }

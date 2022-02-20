@@ -4,6 +4,7 @@
 // Sprites.
 #define SPRITE_TILES		256
 #define SKYBLUE_TILE		64
+#define GENTILE_WIDE		4
 
 #define SCREEN_WIDE			32
 #define SCREEN_HIGH			24

@@ -5,8 +5,12 @@ typedef struct tag_struct_level_object
 {
 	unsigned char planeA_index;
 	unsigned char planeA_count;
+	unsigned char planeA_total;
 	unsigned char planeA_type;
 	unsigned char planeA_data;
+	unsigned char planeA_wide;
+	unsigned char planeA_repeat;
+	unsigned char planeA_section;
 	
 	unsigned char planeB_index;
 	unsigned char planeB_count;
