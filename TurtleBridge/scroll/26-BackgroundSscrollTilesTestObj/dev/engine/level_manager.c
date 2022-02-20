@@ -10,35 +10,43 @@ struct_level_object global_level_object;
 void engine_level_manager_init()
 {
 	struct_level_object *lo = &global_level_object;
-	lo->level_index = 0;
+	lo->planeA_index = 0;
 	lo->planeA_type = tile_type_no_tiles;
 	lo->planeB_type = tile_type_no_tiles;
-	lo->planeA_index = 0;
+	lo->planeA_count = 0;
 }
 
 void engine_level_manager_update( unsigned char column_X, unsigned int scroll_X )
 {
 	struct_level_object *lo = &global_level_object;
-	unsigned char index;
+	//unsigned char index;
 	unsigned char four;
 	unsigned char column_Y;
 
 	unsigned int planeA_column;
+//	unsigned int planeB_column;
 	//unsigned char planeA_object;
 	//unsigned char planeA_metadata;
 
-	index = lo->level_index;
-	planeA_column = planeA_object_column[ index ];
+	//index = lo->planeA_index;
+	planeA_column = planeA_object_column[ lo->planeA_index ];
 
 	// Set column.
 	if( scroll_X == planeA_column )
 	{
-		lo->planeA_index = 0;
-		lo->planeA_type = planeA_object_object[ index ];
-		lo->planeA_data = planeA_object_metadata[ index ];
-		index++;
-		lo->level_index = index;
+		lo->planeA_count = 0;
+		lo->planeA_type = planeA_object_object[ lo->planeA_index ];
+		lo->planeA_data = planeA_object_metadata[ lo->planeA_index ];
+		lo->planeA_index++;
 	}
+	//if( scroll_X == planeB_column )
+	//{
+	//	lo->planeA_count = 0;
+	//	lo->planeA_type = planeA_object_object[ index ];
+	//	lo->planeA_data = planeA_object_metadata[ index ];
+	//	index++;
+	//	lo->planeA_index = index;
+	//}
 
 	column_Y = WAVES_HIGH;
 	engine_tile_manager_blank_column( column_X, column_Y );
@@ -51,10 +59,10 @@ void engine_level_manager_update( unsigned char column_X, unsigned int scroll_X 
 	// Draw existing planeB.
 	if( lo->planeA_type != tile_type_no_tiles )
 	{
-		engine_tile_manager_draw_pipe( lo->planeA_type, column_X, lo->planeA_data, lo->planeA_index );
-		lo->planeA_index++;
+		engine_tile_manager_draw_pipe( lo->planeA_type, column_X, lo->planeA_data, lo->planeA_count );
+		lo->planeA_count++;
 
-		if( lo->planeA_index >= tile_object_wide[ lo->planeA_type ] )
+		if( lo->planeA_count >= tile_object_wide[ lo->planeA_type ] )
 		{
 			lo->planeA_type = tile_type_no_tiles;
 		}

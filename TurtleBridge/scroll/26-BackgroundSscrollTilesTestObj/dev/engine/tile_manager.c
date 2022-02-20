@@ -12,8 +12,8 @@ void engine_tile_manager_blank_column( unsigned char column_X, unsigned char col
 	const unsigned char *tiles = bggame_tiles__tilemap__bin;
 	unsigned char row;
 
-	void *src = ( void * ) &tiles[ SKYBLUE_TILE * 2 ];
-	//void *src = ( void * ) &tiles[ 8 ];
+	//void *src = ( void * ) &tiles[ SKYBLUE_TILE * 2 ];
+	void *src = ( void * ) &tiles[ 8 ];
 	for( row = 8; row < column_Y; row++ )
 	{
 		devkit_SMS_loadTileMap( column_X, row, src, 2 );

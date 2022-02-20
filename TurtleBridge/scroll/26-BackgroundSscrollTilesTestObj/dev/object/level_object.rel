@@ -1,19 +1,25 @@
 XL2
-H 9 areas B global symbols
+H 9 areas 11 global symbols
 M level_object
 O -mz80
 S .__.ABS. Def0000
-A _CODE size A8 flags 0 addr 0
-S G$level_object_sect$0$0 Def0058
-S G$planeA_object_object$0$0 Def0004
-S G$planeA_object_metadata$0$0 Def0006
-S _level_object_sect Def0058
-S _planeA_object_object Def0004
-S G$level_object_type$0$0 Def0008
-S _planeA_object_metadata Def0006
+A _CODE size B4 flags 0 addr 0
+S G$level_object_sect$0$0 Def0064
+S G$planeA_object_object$0$0 Def0008
+S G$planeB_object_object$0$0 Def0012
+S G$planeA_object_metadata$0$0 Def000C
+S G$planeB_object_metadata$0$0 Def0013
+S _level_object_sect Def0064
+S _planeA_object_object Def0008
+S _planeB_object_object Def0012
+S G$level_object_type$0$0 Def0014
+S _planeA_object_metadata Def000C
 S G$planeA_object_column$0$0 Def0000
-S _level_object_type Def0008
+S _planeB_object_metadata Def0013
+S G$planeB_object_column$0$0 Def0010
+S _level_object_type Def0014
 S _planeA_object_column Def0000
+S _planeB_object_column Def0010
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -24,41 +30,53 @@ A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00
 R 00 00 00 00
-T 00 00 20 00 25 00
-R 00 00 00 00
-T 04 00
-R 00 00 00 00
-T 04 00 08 09
-R 00 00 00 00
-T 06 00
-R 00 00 00 00
-T 06 00 12 0C
+T 00 00 20 00 28 00 30 00 38 00
 R 00 00 00 00
 T 08 00
 R 00 00 00 00
-T 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+T 08 00 04 04 04 04
 R 00 00 00 00
-T 16 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+T 0C 00
 R 00 00 00 00
-T 24 00 00 00 00 00 01 01 01 01 01 01 01 01 01 01
+T 0C 00 12 12 12 12
 R 00 00 00 00
-T 32 00 01 01 01 01 01 01 00 00 00 00 00 00 00 00
+T 10 00
 R 00 00 00 00
-T 40 00 01 01 01 01 01 01 01 01 01 01 01 01 01 01
+T 10 00 22 00
 R 00 00 00 00
-T 4E 00 01 01 00 00 00 00 00 00 00 00
+T 12 00
 R 00 00 00 00
-T 58 00
+T 12 00 05
 R 00 00 00 00
-T 58 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+T 13 00
 R 00 00 00 00
-T 66 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+T 13 00 08
 R 00 00 00 00
-T 74 00 00 00 00 00 00 01 02 03 04 05 02 03 04 05
+T 14 00
 R 00 00 00 00
-T 82 00 02 03 04 05 06 07 00 00 00 00 00 00 00 00
+T 14 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 R 00 00 00 00
-T 90 00 00 01 02 03 04 05 02 03 04 05 02 03 04 05
+T 22 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 R 00 00 00 00
-T 9E 00 06 07 00 00 00 00 00 00 00 00
+T 30 00 00 00 00 00 01 01 01 01 01 01 01 01 01 01
+R 00 00 00 00
+T 3E 00 01 01 01 01 01 01 00 00 00 00 00 00 00 00
+R 00 00 00 00
+T 4C 00 01 01 01 01 01 01 01 01 01 01 01 01 01 01
+R 00 00 00 00
+T 5A 00 01 01 00 00 00 00 00 00 00 00
+R 00 00 00 00
+T 64 00
+R 00 00 00 00
+T 64 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+R 00 00 00 00
+T 72 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+R 00 00 00 00
+T 80 00 00 00 00 00 00 01 02 03 04 05 02 03 04 05
+R 00 00 00 00
+T 8E 00 02 03 04 05 06 07 00 00 00 00 00 00 00 00
+R 00 00 00 00
+T 9C 00 00 01 02 03 04 05 02 03 04 05 02 03 04 05
+R 00 00 00 00
+T AA 00 06 07 00 00 00 00 00 00 00 00
 R 00 00 00 00
