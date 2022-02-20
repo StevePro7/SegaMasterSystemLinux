@@ -1,19 +1,19 @@
 #include "level_object.h"
 #include "../engine/enum_manager.h"
 
-const unsigned int level_object_column[] = 
+const unsigned int planeA_object_column[] = 
 {
-	132, 
+	32, 
 }; 
 
-const unsigned char level_object_object[] =
+const unsigned char planeA_object_object[] =
 {
 	tile_type_sea_turtles
 };
 
-const unsigned char level_object_metadata[] =
+const unsigned char planeA_object_metadata[] =
 {
-	10,
+	18,
 };
 
 const unsigned char level_object_type[] =
