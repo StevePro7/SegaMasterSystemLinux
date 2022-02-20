@@ -102,56 +102,6 @@ const unsigned char fly_turtles_array[] =
 	231,232,233,234,
 };
 
-//const unsigned char sea_turtleA1_array[] =
-//{
-//	189,190,191,64,
-//	192,193,194,195,
-//	196,197,198,199,
-//};
-//const unsigned char sea_turtleA2_array[] =
-//{
-//	189,190,191,64,
-//	200,193,201,202,
-//	203,197,198,204,
-//};
-//const unsigned char sea_turtleA3_array[] =
-//{
-//	205,206,207,68,
-//	208,193,209,210,
-//	203,197,198,204,
-//};
-//const unsigned char sea_turtleB1_array[] =
-//{
-//	211,212,213,64,
-//	214,215,216,217,
-//	218,219,220,221,
-//};
-//const unsigned char sea_turtleB2_array[] =
-//{
-//	211,212,213,64,
-//	222,215,223,224,
-//	218,219,220,225,
-//};
-//const unsigned char sea_turtleB3_array[] =
-//{
-//	226,227,228,68,
-//	229,215,230,231,
-//	218,219,220,225,
-//};
-
-//const unsigned char fly_turtle01_array[] =
-//{
-//	189,232,191,64,
-//	192,233,194,195,
-//	234,235,236,237,
-//};
-//const unsigned char fly_turtle02_array[] =
-//{
-//	189,238,191,64,
-//	192,239,194,195,
-//	234,235,236,237,
-//};
-
 const unsigned char sign_numb_array[] =
 {
 	237,238,239,

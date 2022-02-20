@@ -60,4 +60,6 @@ static void bonus_level()
 	engine_tile_manager_sky();
 	engine_tile_manager_sea();
 	engine_tile_manager_sea_turtle( 0, 0, 19 );
+	//engine_tile_manager_section03( 2, 4, 18 );
+	//engine_tile_manager_fly_turtle( 0, 16, 12 );
 }
