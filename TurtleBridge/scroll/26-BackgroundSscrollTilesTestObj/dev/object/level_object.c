@@ -15,22 +15,22 @@ const unsigned char planeA_object_object[] =
 
 const unsigned char planeA_object_metadata[] =
 {
-	1, //18, 18, 18
+	2, //18, 18, 18
 };
 
 const unsigned int planeB_object_column[] =
 {
-	236,
+	40,
 };
 
 const unsigned char planeB_object_object[] =
 {
-	tile_type_sign_numb,
+	tile_type_sign_goal,
 };
 
 const unsigned char planeB_object_metadata[] =
 {
-	15,
+	9,
 };
 
 
