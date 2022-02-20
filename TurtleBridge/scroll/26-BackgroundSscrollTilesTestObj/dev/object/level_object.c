@@ -3,24 +3,24 @@
 
 const unsigned int planeA_object_column[] = 
 {
-	32, //40, 48, 56
+	32, 50, 55, //160,
 }; 
 
 const unsigned char planeA_object_object[] =
 {
-	tile_type_section02,
+	//tile_type_section02,
 	//tile_type_section03,
-	//tile_type_section03, tile_type_section03, tile_type_section03, //tile_type_sea_turtles, tile_type_fly_turtles
+	tile_type_section03, tile_type_sea_turtles, tile_type_section03, //tile_type_section03, //tile_type_sea_turtles, tile_type_fly_turtles
 };
 
 const unsigned char planeA_object_metadata[] =
 {
-	4, //18, 18, 18
+	2, 18, 6, //2,//18, 18, 18
 };
 
 const unsigned int planeB_object_column[] =
 {
-	44,
+	944,
 };
 
 const unsigned char planeB_object_object[] =
