@@ -41,7 +41,7 @@ void engine_level_manager_update( unsigned char column_X, unsigned int scroll_X 
 		lo->planeA_repeat = 0;
 		lo->planeA_index++;
 
-		if( tile_type_section03 == lo->planeA_type )
+		if( tile_type_section01 == lo->planeA_type || tile_type_section02 == lo->planeA_type || tile_type_section03 == lo->planeA_type )
 		{
 			lo->planeA_wide += lo->planeA_data * GENTILE_WIDE;
 		}
@@ -84,9 +84,21 @@ void engine_level_manager_update( unsigned char column_X, unsigned int scroll_X 
 				}
 			}
 		}
+		else if( tile_type_section01 == lo->planeA_type || tile_type_section02 == lo->planeA_type )
+		{
+			if( lo->planeA_repeat < lo->planeA_data )
+			{
+				if( lo->planeA_count > 9 )
+				{
+					lo->planeA_count = 6;
+					lo->planeA_repeat++;
+				}
+			}
+		}
 
 		// TODO - high relative to sea level.
-		engine_tile_manager_draw_pipe( lo->planeA_type, column_X, 18, lo->planeA_count );
+		//engine_tile_manager_draw_pipe( lo->planeA_type, column_X, 18, lo->planeA_count );	// section03
+		engine_tile_manager_draw_pipe( lo->planeA_type, column_X, 12, lo->planeA_count );	// section01
 		lo->planeA_count++;
 		lo->planeA_total++;
 
