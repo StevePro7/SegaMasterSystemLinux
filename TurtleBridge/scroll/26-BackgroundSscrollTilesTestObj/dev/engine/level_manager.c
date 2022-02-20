@@ -36,6 +36,8 @@ void engine_level_manager_update( unsigned char column_X, unsigned int scroll_X 
 		lo->planeA_index = 0;
 		lo->planeA_type = planeA_object_object[ index ];
 		lo->planeA_data = planeA_object_metadata[ index ];
+		index++;
+		lo->level_index = index;
 	}
 
 	column_Y = WAVES_HIGH;

@@ -3,17 +3,17 @@
 
 const unsigned int planeA_object_column[] = 
 {
-	32, 
+	32, 37, 
 }; 
 
 const unsigned char planeA_object_object[] =
 {
-	tile_type_sea_turtles
+	tile_type_sea_turtles, tile_type_fly_turtles
 };
 
 const unsigned char planeA_object_metadata[] =
 {
-	18,
+	18, 12,
 };
 
 const unsigned char level_object_type[] =
