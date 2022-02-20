@@ -27,7 +27,7 @@ void engine_scroll_manager_init()
 	so->scroll_X = 31;
 	
 	devkit_SMS_setBGScrollX( so->column_X );
-	print();
+	//print();
 }
 
 void engine_scroll_manager_load()
@@ -43,7 +43,7 @@ void engine_scroll_manager_update()
 
 	// scroll pixel by pixel
 	devkit_SMS_setBGScrollX( so->scrollleft );
-	print();
+	//print();
 
 	if( ( so->scrollRight % 8 ) != delta )
 	{
@@ -70,7 +70,7 @@ void engine_scroll_manager_update()
 	//devkit_SMS_loadTileMap(x, y-1, src, 2 );
 
 	////engine_font_manager_draw_text( "X", 32 + so->scrollRightDivided8, tiles[ idx ] - 1);
-	print();
+	//print();
 }
 
 unsigned char engine_scroll_manager_getPosY( unsigned int col )

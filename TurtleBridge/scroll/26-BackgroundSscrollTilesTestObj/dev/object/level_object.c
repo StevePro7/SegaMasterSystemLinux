@@ -3,7 +3,7 @@
 
 const unsigned int planeA_object_column[] = 
 {
-	32, 50, 55, //160,
+	32, 50, 60, //160,
 }; 
 
 const unsigned char planeA_object_object[] =
@@ -20,17 +20,17 @@ const unsigned char planeA_object_metadata[] =
 
 const unsigned int planeB_object_column[] =
 {
-	944,
+	73,
 };
 
 const unsigned char planeB_object_object[] =
 {
-	tile_type_sign_goal,
+	tile_type_sign_numb,
 };
 
 const unsigned char planeB_object_metadata[] =
 {
-	13,
+	15,
 };
 
 
