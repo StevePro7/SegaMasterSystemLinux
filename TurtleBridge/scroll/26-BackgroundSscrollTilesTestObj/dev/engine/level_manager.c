@@ -98,7 +98,8 @@ void engine_level_manager_update( unsigned char column_X, unsigned int scroll_X 
 
 		// TODO - high relative to sea level.
 		//engine_tile_manager_draw_pipe( lo->planeA_type, column_X, 18, lo->planeA_count );	// section03
-		engine_tile_manager_draw_pipe( lo->planeA_type, column_X, 12, lo->planeA_count );	// section01
+		//engine_tile_manager_draw_pipe( lo->planeA_type, column_X, 12, lo->planeA_count );	// section01	sign = 9
+		engine_tile_manager_draw_pipe( lo->planeA_type, column_X, 16, lo->planeA_count );	// section01	sign = 13
 		lo->planeA_count++;
 		lo->planeA_total++;
 

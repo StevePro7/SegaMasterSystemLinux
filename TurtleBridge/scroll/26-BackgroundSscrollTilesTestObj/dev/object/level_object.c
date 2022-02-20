@@ -8,19 +8,19 @@ const unsigned int planeA_object_column[] =
 
 const unsigned char planeA_object_object[] =
 {
-	tile_type_section01,
+	tile_type_section02,
 	//tile_type_section03,
 	//tile_type_section03, tile_type_section03, tile_type_section03, //tile_type_sea_turtles, tile_type_fly_turtles
 };
 
 const unsigned char planeA_object_metadata[] =
 {
-	2, //18, 18, 18
+	4, //18, 18, 18
 };
 
 const unsigned int planeB_object_column[] =
 {
-	40,
+	44,
 };
 
 const unsigned char planeB_object_object[] =
@@ -30,7 +30,7 @@ const unsigned char planeB_object_object[] =
 
 const unsigned char planeB_object_metadata[] =
 {
-	9,
+	13,
 };
 
 
