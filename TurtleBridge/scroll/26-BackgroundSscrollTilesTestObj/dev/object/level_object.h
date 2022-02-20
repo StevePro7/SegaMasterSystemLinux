@@ -8,7 +8,7 @@ typedef struct tag_struct_level_object
 	unsigned char planeA_type;
 	unsigned char planeA_data;
 	
-	//unsigned char planeB_index;
+	unsigned char planeB_index;
 	unsigned char planeB_count;
 	unsigned char planeB_type;
 	unsigned char planeB_data;
