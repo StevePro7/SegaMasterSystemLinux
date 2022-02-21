@@ -6,7 +6,7 @@ const unsigned char sea_tiles_array[] =
 	65, 65, 65, 73,
 	65, 69, 70, 65,
 	70, 65, 65, 69,
-	71, 72, 71, 72,
+	65, 73, 65, 65,
 };
 
 const unsigned char section01_array[] =

@@ -11,6 +11,6 @@
 
 #define TREES_HIGH			8
 #define EARTH_HIGH			18
-#define WAVES_HIGH			20
+#define WAVES_HIGH			19
 
 #endif//_GLOBAL_MANAGER_H_
