@@ -1,6 +1,6 @@
 M:fixedbank
 S:G$no_tiles_array$0$0({1}DA1d,SC:U),D,0,0
-S:G$sea_tiles_array$0$0({24}DA24d,SC:U),D,0,0
+S:G$sea_tiles_array$0$0({20}DA20d,SC:U),D,0,0
 S:G$section01_array$0$0({120}DA120d,SC:U),D,0,0
 S:G$section02_array$0$0({72}DA72d,SC:U),D,0,0
 S:G$section03_array$0$0({32}DA32d,SC:U),D,0,0
