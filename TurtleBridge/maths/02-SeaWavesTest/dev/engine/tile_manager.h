@@ -28,4 +28,6 @@ void engine_tile_manager_draw_flip2( unsigned char type, unsigned char x, unsign
 void engine_tile_manager_draw_norm2( unsigned char type, unsigned char x, unsigned char y );
 void engine_tile_manager_draw_offset2( unsigned char type, unsigned char offset, unsigned char x, unsigned char y );
 
+void engine_tile_manager_draw_clouds();
+
 #endif//_TILE_MANAGER_H_

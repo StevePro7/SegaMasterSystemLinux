@@ -4,6 +4,7 @@
 #include "../object/tile_object.h"
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
+#include <stdlib.h>
 
 //static void draw_tile_scroll( const unsigned char *array, unsigned char x, unsigned char y, unsigned char w, unsigned char h, unsigned char col );
 
@@ -319,3 +320,45 @@ void engine_tile_manager_sea()
 //		devkit_SMS_loadTileMap( x + col, y + row, ( void * ) &tiles[ off ], 2 );
 //	}
 //}
+
+void engine_tile_manager_draw_clouds()
+{
+	unsigned char cloudX, cloudY;
+	unsigned char index;
+	unsigned char flip;
+	unsigned char type;
+
+	index = 0;
+	cloudX = index * 8 + 1;
+	cloudY = 0;
+	//for( index = 0; index < 4; index++ )
+	{
+		type = rand() % 2;
+		type = 0;
+		if( type )
+		{
+			type = tile_type_cloud01;
+			cloudX += 1;
+		}
+		else
+		{
+			type = tile_type_cloud02;
+		}
+
+		cloudY = rand() % 3;
+		cloudY += 1;
+
+		flip = rand() % 2;
+		flip = 0;
+		if( flip )
+		{
+			engine_tile_manager_draw_flip2( type, cloudX, cloudY );
+		}
+		else
+		{
+			engine_tile_manager_draw_tile( type, cloudX, cloudY );
+		}
+		
+		
+	}
+}

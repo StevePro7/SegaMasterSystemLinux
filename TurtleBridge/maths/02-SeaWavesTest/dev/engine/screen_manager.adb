@@ -50,3 +50,4 @@ S:G$engine_tile_manager_sign$0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_draw_flip2$0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_draw_norm2$0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_draw_offset2$0$0({2}DF,SV:S),C,0,0
+S:G$engine_tile_manager_draw_clouds$0$0({2}DF,SV:S),C,0,0
