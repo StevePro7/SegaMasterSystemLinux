@@ -328,13 +328,13 @@ void engine_tile_manager_draw_clouds()
 	unsigned char flip;
 	unsigned char type;
 
-	index = 0;
-	cloudX = index * 8 + 1;
-	cloudY = 0;
-	//for( index = 0; index < 4; index++ )
+	for( index = 0; index < 4; index++ )
 	{
+		cloudX = index * 8 + 1;
+		cloudY = 0;
+
 		type = rand() % 2;
-		type = 0;
+		//type = 1;
 		if( type )
 		{
 			type = tile_type_cloud01;
@@ -345,11 +345,11 @@ void engine_tile_manager_draw_clouds()
 			type = tile_type_cloud02;
 		}
 
-		cloudY = rand() % 3;
+		cloudY = rand() % 4;
 		cloudY += 1;
 
 		flip = rand() % 2;
-		flip = 0;
+		//flip = 1;
 		if( flip )
 		{
 			engine_tile_manager_draw_flip2( type, cloudX, cloudY );
@@ -358,7 +358,5 @@ void engine_tile_manager_draw_clouds()
 		{
 			engine_tile_manager_draw_tile( type, cloudX, cloudY );
 		}
-		
-		
 	}
 }
