@@ -19,7 +19,7 @@ void engine_screen_manager_init()
 //	engine_font_manager_draw_text( "STEVEPRO STUDIOS", 4, 4 );
 	bonus_level();
 
-//	engine_tile_manager_draw_clouds();
+	engine_tile_manager_draw_clouds();
 	engine_music_manager_play();
 }
 
@@ -65,6 +65,7 @@ static void bonus_level()
 	//engine_tile_manager_draw_flip2( 2, 0, 12 );
 	//engine_tile_manager_fly_turtle( 0, 16, 12 );
 
-	engine_tile_manager_draw_flip2( 2, 0, 10 );
-	engine_tile_manager_section03( 2, 16, 16 );
+	engine_tile_manager_draw_flip2( tile_type_section01, 0, 10 );
+	engine_tile_manager_section03( 3, 16, 16 );
+	engine_tile_manager_draw_norm2( tile_type_section04, 24, 6 );
 }
