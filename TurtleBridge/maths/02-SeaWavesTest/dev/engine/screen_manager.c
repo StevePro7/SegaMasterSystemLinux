@@ -68,6 +68,6 @@ static void bonus_level()
 	//engine_tile_manager_fly_turtle( 0, 16, 12 );
 
 	engine_tile_manager_draw_flip2( tile_type_section01, 0, high + 4 );
-	engine_tile_manager_section03( 0, 16, high + 10 );
+	engine_tile_manager_section03( 3, 16, high + 10 );
 	engine_tile_manager_draw_norm2( tile_type_section04, 24, high + 0 );
 }
