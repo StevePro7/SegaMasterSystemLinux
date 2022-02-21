@@ -9,9 +9,9 @@ S:Llevel_manager.engine_level_manager_update$four$1$17({1}SC:U),R,0,0,[]
 S:Llevel_manager.engine_level_manager_update$column_Y$1$17({1}SC:U),R,0,0,[]
 S:Llevel_manager.engine_level_manager_update$planeA_column$1$17({2}SI:U),R,0,0,[e,d]
 S:Llevel_manager.engine_level_manager_update$planeB_column$1$17({2}SI:U),B,1,-5
-S:Llevel_manager.engine_level_manager_update$sloc0$1$0({1}SC:U),B,1,-2
-S:Llevel_manager.engine_level_manager_update$sloc1$1$0({1}SC:U),B,1,-1
-S:Llevel_manager.engine_level_manager_update$sloc2$1$0({1}SC:U),B,1,-3
+S:Llevel_manager.engine_level_manager_update$sloc0$1$0({1}SC:U),B,1,-1
+S:Llevel_manager.engine_level_manager_update$sloc1$1$0({1}SC:U),B,1,-3
+S:Llevel_manager.engine_level_manager_update$sloc2$1$0({1}SC:U),B,1,-2
 T:Flevel_manager$tag_struct_level_object[({0}S:S$planeA_index$0$0({1}SC:U),Z,0,0)({1}S:S$planeA_count$0$0({1}SC:U),Z,0,0)({2}S:S$planeA_total$0$0({1}SC:U),Z,0,0)({3}S:S$planeA_type$0$0({1}SC:U),Z,0,0)({4}S:S$planeA_data$0$0({1}SC:U),Z,0,0)({5}S:S$planeA_wide$0$0({1}SC:U),Z,0,0)({6}S:S$planeA_repeat$0$0({1}SC:U),Z,0,0)({7}S:S$planeA_section$0$0({1}SC:U),Z,0,0)({8}S:S$planeB_index$0$0({1}SC:U),Z,0,0)({9}S:S$planeB_count$0$0({1}SC:U),Z,0,0)({10}S:S$planeB_type$0$0({1}SC:U),Z,0,0)({11}S:S$planeB_data$0$0({1}SC:U),Z,0,0)]
 S:G$tile_object_data$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$global_level_object$0$0({12}STtag_struct_level_object:S),E,0,0
