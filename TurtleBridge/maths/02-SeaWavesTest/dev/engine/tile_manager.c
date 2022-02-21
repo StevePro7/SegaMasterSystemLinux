@@ -331,10 +331,7 @@ void engine_tile_manager_draw_clouds()
 	for( index = 0; index < 4; index++ )
 	{
 		cloudX = index * 8 + 1;
-		cloudY = 0;
-
 		type = rand() % 2;
-		//type = 1;
 		if( type )
 		{
 			type = tile_type_cloud01;
@@ -349,7 +346,6 @@ void engine_tile_manager_draw_clouds()
 		cloudY += 1;
 
 		flip = rand() % 2;
-		//flip = 1;
 		if( flip )
 		{
 			engine_tile_manager_draw_flip2( type, cloudX, cloudY );

@@ -19,8 +19,7 @@ void engine_screen_manager_init()
 //	engine_font_manager_draw_text( "STEVEPRO STUDIOS", 4, 4 );
 	bonus_level();
 
-	engine_tile_manager_draw_clouds();
-
+//	engine_tile_manager_draw_clouds();
 	engine_music_manager_play();
 }
 
