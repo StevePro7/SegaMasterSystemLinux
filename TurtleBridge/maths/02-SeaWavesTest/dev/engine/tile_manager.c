@@ -237,6 +237,11 @@ void engine_tile_manager_section03( unsigned char sect, unsigned char x, unsigne
 
 	engine_tile_manager_draw_pipe( tile_type_section03, x + spc++, y, 0 );
 	engine_tile_manager_draw_pipe( tile_type_section03, x + spc++, y, 1 );
+
+	if( 0 == sect )
+	{
+		sect = 1;
+	}
 	for( idx = 0; idx < sect; idx++ )
 	{
 		for( col = 2; col < 6; col++ )
@@ -329,7 +334,7 @@ void engine_tile_manager_draw_clouds()
 	unsigned char type;
 	// 2 = sea high 5 max
 	// 4 = sea high 2 min
-	const unsigned char high = 2;
+	const unsigned char high = 4;
 
 	for( index = 0; index < 4; index++ )
 	{

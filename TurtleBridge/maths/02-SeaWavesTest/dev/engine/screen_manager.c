@@ -59,13 +59,15 @@ void engine_screen_manager_update()
 
 static void bonus_level()
 {
+	unsigned char high = 9;
+
 	engine_tile_manager_sky();
 	engine_tile_manager_sea();
 	//engine_tile_manager_sea_turtle( 0, 0, 19 );
 	//engine_tile_manager_draw_flip2( 2, 0, 12 );
 	//engine_tile_manager_fly_turtle( 0, 16, 12 );
 
-	engine_tile_manager_draw_flip2( tile_type_section01, 0, 10 );
-	engine_tile_manager_section03( 3, 16, 16 );
-	engine_tile_manager_draw_norm2( tile_type_section04, 24, 6 );
+	engine_tile_manager_draw_flip2( tile_type_section01, 0, high + 4 );
+	engine_tile_manager_section03( 0, 16, high + 10 );
+	engine_tile_manager_draw_norm2( tile_type_section04, 24, high + 0 );
 }

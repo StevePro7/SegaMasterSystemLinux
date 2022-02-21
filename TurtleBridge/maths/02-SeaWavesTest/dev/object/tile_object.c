@@ -36,7 +36,7 @@ const unsigned char tile_object_wide[] =
 const unsigned char tile_object_high[] = 
 {
 	1,		// no_tiles
-	5,		// sea_tiles
+	2,		// sea_tiles
 	10,		// section01
 	6,		// section02
 	4,		// section03	ground
