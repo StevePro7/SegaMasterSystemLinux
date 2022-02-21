@@ -57,19 +57,7 @@ void engine_scroll_manager_update()
 	so->scroll_X++;
 	so->column_X = so->scroll_X % SCREEN_WIDE;
 
-	//engine_tile_manager_blank_column( so->column_X, so->scroll_X );
-	engine_level_manager_update( so->column_X, so->scroll_X );
-
-	//// IMPORTANT - here 8 is tile 4 * x	remember 2x bytes for each tile loaded from the TILEMAP
-	//// i.e. so 8 => 4 i.e. 8/2 = 4 and 4 is tile '$'.
-	//index = ( base + offset ) * 2 + 8;
-	//engine_font_manager_draw_data( index, 25, 0 );
-	//
-	//y = tiles[ idx ];
-	//src = ( void * ) &pnt[ index ];
-	//devkit_SMS_loadTileMap(x, y-1, src, 2 );
-
-	////engine_font_manager_draw_text( "X", 32 + so->scrollRightDivided8, tiles[ idx ] - 1);
+	//engine_level_manager_update( so->column_X, so->scroll_X );
 	//print();
 }
 
