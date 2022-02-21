@@ -10,7 +10,7 @@
 #include "tile_manager.h"
 
 static unsigned char x = 16;
-static unsigned char y = 128-32;// 64;
+static unsigned char y = 48;// 64;
 
 static void bonus_level();
 
@@ -45,7 +45,7 @@ void engine_screen_manager_update()
 		engine_font_manager_draw_text( "X", 0, 14 );
 	}
 
-	//engine_sprite_manager_draw( x + 0, y, delta + 0 );
+	engine_sprite_manager_draw( x + 0, y, delta + 0 );
 
 	// fish
 	//engine_sprite_manager_draw( x + 40, y, delta + 18 );
@@ -64,4 +64,7 @@ static void bonus_level()
 	//engine_tile_manager_sea_turtle( 0, 0, 19 );
 	//engine_tile_manager_draw_flip2( 2, 0, 12 );
 	//engine_tile_manager_fly_turtle( 0, 16, 12 );
+
+	engine_tile_manager_draw_flip2( 2, 0, 10 );
+	engine_tile_manager_section03( 2, 16, 16 );
 }
