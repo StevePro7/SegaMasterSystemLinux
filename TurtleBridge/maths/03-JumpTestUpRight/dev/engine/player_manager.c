@@ -20,11 +20,13 @@ static unsigned int gravityZZ[ MAX_GRAVITY_ZZ ] = { 348, 522, 696, 870, 1044, 12
 static void coord();
 static void print();
 
+static unsigned char platform = 160;
+
 void engine_player_manager_init()
 {
 	struct_player_object *po = &global_player_object;
 	po->posnX = 16;
-	po->posnY = 160;
+	po->posnY = platform;
 	po->prevY = po->posnY;
 	po->valuY = po->posnY << 8;
 	po->currY = po->valuY;
@@ -47,8 +49,6 @@ void engine_player_manager_jumping()
 
 	if( 0 == po->state )
 	{
-		engine_font_manager_draw_text( "WORLD", 10, 10 );
-
 		deltaX = velocityXair[ po->dataX ];
 		po->posnX += deltaX;
 		po->totalX += deltaX;
@@ -59,9 +59,10 @@ void engine_player_manager_jumping()
 		po->valuY = po->currY;
 		po->posnY = UFIX( po->valuY );
 		po->totalY += ( po->prevY - po->posnY );
+		po->prevY = po->posnY;
 
 		po->dataX++;
-		if( po->dataX >= MAX_VELOCITY_X - 1 )
+		if( po->dataX >= MAX_VELOCITY_X )
 		{
 			po->dataX = MAX_VELOCITY_X - 1;
 		}
@@ -70,6 +71,42 @@ void engine_player_manager_jumping()
 		if( po->dataY >= MAX_VELOCITY_Y )
 		{
 			po->state = 1;
+			po->dataY = 0;
+		}
+	}
+	else if( 1 == po->state )
+	{
+		deltaX = velocityXair[ po->dataX ];
+		po->posnX += deltaX;
+		po->totalX += deltaX;
+
+		deltaY = gravityZZ[ po->dataY ];
+		po->currY += deltaY;
+
+		po->valuY = po->currY;
+		po->posnY = UFIX( po->valuY );
+		po->totalY += ( po->posnY - po->prevY );
+		po->prevY = po->posnY;
+
+		po->dataX++;
+		if( po->dataX >= MAX_VELOCITY_X )
+		{
+			po->dataX = MAX_VELOCITY_X - 1;
+		}
+
+		po->dataY++;
+		if( po->dataY >= MAX_GRAVITY_ZZ )
+		{
+			po->dataY = MAX_GRAVITY_ZZ - 1;
+		}
+
+		if( po->posnY >= platform )
+		{
+			po->posnY = platform;
+			po->valuY = po->posnY << 8;
+			po->currY = po->valuY;
+			po->state = 0;
+			po->dataX = 0;
 			po->dataY = 0;
 		}
 	}
@@ -123,5 +160,5 @@ static void print()
 	engine_font_manager_draw_data( po->posnY, 20, 1 );	engine_font_manager_draw_data( po->posnX, 10, 1 );
 	engine_font_manager_draw_data( po->currY, 20, 2 );
 	engine_font_manager_draw_data( po->valuY, 20, 3 );
-	engine_font_manager_draw_data( po->totalX, 10, 4 ); engine_font_manager_draw_data( po->totalY, 20, 4 );
+	engine_font_manager_draw_data( po->totalY, 20, 4 );	engine_font_manager_draw_data( po->totalX, 10, 4 );
 }

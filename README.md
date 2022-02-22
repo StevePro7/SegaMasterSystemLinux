@@ -79,3 +79,16 @@ draw section 03		16-24	i.e.	8 = 16 - 8
 TODO
 want the sea to have dynamic height
 2, 3, 4, 5
+
+
+Jumping
+22/02/2022
+16	46
+
+state = up#1
+17x frames
+1, 2, 2, 2, 3, 3, 3... 3 = 46
+
+state = up#1
+17x frames
+3, 3, 3, 3, 3, 3, 3... 3 = 51
