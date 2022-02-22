@@ -58,7 +58,8 @@ void engine_screen_manager_update()
 {
 	unsigned char input;
 	//unsigned int delta;
-	input = engine_input_manager_hold_fire2();
+	//input = engine_input_manager_hold_fire2();
+	input = engine_input_manager_move_fire2();
 	if( input )
 	{
 		engine_player_manager_jumping();

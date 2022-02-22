@@ -105,7 +105,7 @@ void engine_player_manager_jumping()
 			po->posnY = platform;
 			po->valuY = po->posnY << 8;
 			po->currY = po->valuY;
-			po->state = 0;
+			po->state = 2;// 0;
 			po->dataX = 0;
 			po->dataY = 0;
 		}
