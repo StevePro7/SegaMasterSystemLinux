@@ -8,6 +8,8 @@ extern struct_player_object global_player_object;
 
 // Methods.
 void engine_player_manager_init();
+void engine_player_manager_jumping();
+
 //void engine_player_manager_load();
 //void engine_player_manager_get_input();
 //void engine_player_manager_apply_physics();

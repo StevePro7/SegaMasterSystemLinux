@@ -19,15 +19,24 @@ static unsigned int gravityZZ[ MAX_GRAVITY_ZZ ] = { 348, 522, 696, 870, 1044, 12
 void engine_player_manager_init()
 {
 	struct_player_object *po = &global_player_object;
-	po->posnX = 96;
+	po->posnX = 16;
 	po->posnY = 160;
-	//po->posnY = 33;
+	po->valuY = po->posnY << 8;
+	po->currY = po->valuY;
+	//po->posnY = 32;
 
 	po->drawX = po->posnX;
 	po->drawY = po->posnY - 32;
 
+	engine_font_manager_draw_data( po->drawY, 20, 0 );
 	engine_font_manager_draw_data( po->posnY, 20, 1 );
-	engine_font_manager_draw_data( po->drawY, 20, 2 );
+	engine_font_manager_draw_data( po->currY, 20, 2 );
+	engine_font_manager_draw_data( po->valuY, 20, 3 );
+}
+
+void engine_player_manager_jumping()
+{
+
 }
 
 void engine_player_manager_update()

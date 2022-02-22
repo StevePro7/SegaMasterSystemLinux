@@ -58,18 +58,24 @@ void engine_screen_manager_update()
 {
 	unsigned char input;
 	//unsigned int delta;
-	//input = engine_input_manager_hold_down();
-	input = engine_input_manager_hold_up();
+	input = engine_input_manager_hold_fire2();
 	if( input )
 	{
-		engine_player_manager_update();
+
 	}
 
-	input = engine_input_manager_hold_down();
-	if( input )
-	{
-		engine_player_manager_update2();
-	}
+	//input = engine_input_manager_hold_down();
+	//input = engine_input_manager_hold_up();
+	//if( input )
+	//{
+	//	engine_player_manager_update();
+	//}
+
+	//input = engine_input_manager_hold_down();
+	//if( input )
+	//{
+	//	engine_player_manager_update2();
+	//}
 	//input = 1;
 	
 	//{
