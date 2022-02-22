@@ -1,0 +1,31 @@
+;!FILE player_manager.asm
+XL2
+H 9 areas 9 global symbols
+M player_manager
+O -mz80
+S .__.ABS. Def0000
+A _CODE size 1 flags 0 addr 0
+S C$player_manager.c$7$0$0 Def0000
+S G$engine_player_manager_init$0$0 Def0000
+S _engine_player_manager_init Def0000
+S XG$engine_player_manager_init$0$0 Def0000
+S C$player_manager.c$10$0$0 Def0000
+S A$player_manager$63 Def0000
+A _DATA size 3 flags 0 addr 0
+S G$global_player_object$0$0 Def0000
+S _global_player_object Def0000
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 01 00
+T 00 00
+R 00 00 01 00
+T 00 00
+R 00 00 00 00
+T 00 00 C9
+R 00 00 00 00
