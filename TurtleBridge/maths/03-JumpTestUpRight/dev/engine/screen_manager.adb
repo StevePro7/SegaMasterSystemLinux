@@ -37,5 +37,6 @@ S:G$engine_input_manager_move_fire1$0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire2$0$0({2}DF,SC:U),C,0,0
 S:G$engine_player_manager_init$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_update$0$0({2}DF,SV:S),C,0,0
+S:G$engine_player_manager_update2$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_draw$0$0({2}DF,SV:S),C,0,0
 S:G$engine_sprite_manager_draw$0$0({2}DF,SV:S),C,0,0

@@ -64,6 +64,12 @@ void engine_screen_manager_update()
 	{
 		engine_player_manager_update();
 	}
+
+	input = engine_input_manager_hold_down();
+	if( input )
+	{
+		engine_player_manager_update2();
+	}
 	//input = 1;
 	
 	//{

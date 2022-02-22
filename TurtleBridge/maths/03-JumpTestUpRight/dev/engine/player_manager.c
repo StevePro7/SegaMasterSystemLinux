@@ -20,11 +20,14 @@ void engine_player_manager_init()
 {
 	struct_player_object *po = &global_player_object;
 	po->posnX = 96;
-	//po->posnY = 160;
-	po->posnY = 33;
+	po->posnY = 160;
+	//po->posnY = 33;
 
 	po->drawX = po->posnX;
 	po->drawY = po->posnY - 32;
+
+	engine_font_manager_draw_data( po->posnY, 20, 1 );
+	engine_font_manager_draw_data( po->drawY, 20, 2 );
 }
 
 void engine_player_manager_update()
@@ -32,17 +35,30 @@ void engine_player_manager_update()
 	struct_player_object *po = &global_player_object;
 	po->posnY--;
 	po->drawY = po->posnY - 32;
+
+	engine_font_manager_draw_data( po->posnY, 20, 1 );
+	engine_font_manager_draw_data( po->drawY, 20, 2 );
+}
+
+void engine_player_manager_update2()
+{
+	struct_player_object *po = &global_player_object;
+	po->posnY++;
+	po->drawY = po->posnY - 32;
+
+	engine_font_manager_draw_data( po->posnY, 20, 1 );
+	engine_font_manager_draw_data( po->drawY, 20, 2 );
 }
 
 void engine_player_manager_draw()
 {
 	struct_player_object *po = &global_player_object;
-	//unsigned int tile;
 
 	// If Player jumps though "ceiling" then don't draw!
-	//if( po->posnY < 0 )
-	//{
-	//
+	if( po->posnY <= 0 || po->drawY >= PIXLES_HIGH )
+	{
+		return;
+	}
 
 	engine_sprite_manager_draw( po->drawX, po->drawY, SPRITE_TILES );
 }

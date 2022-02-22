@@ -14,6 +14,7 @@ void engine_player_manager_init();
 //void engine_player_manager_handle_collisions();
 //void engine_player_manager_cleanup();
 void engine_player_manager_update();
+void engine_player_manager_update2();
 void engine_player_manager_draw();
 //void engine_player_manager_hide();
 
