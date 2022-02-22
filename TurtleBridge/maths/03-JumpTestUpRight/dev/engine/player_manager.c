@@ -54,21 +54,19 @@ void engine_player_manager_jumping()
 	if( 0 == po->state )
 	{
 		deltaX = velocityXair[ po->dataX ];
-
-
 		po->posnX += deltaX;
 		po->totalX += deltaX;
-
-
-		engine_font_manager_draw_data( frame, 10, 0 );
-		engine_font_manager_draw_data( deltaX, 20, 0 );
-
 
 		deltaY = velocityY[ po->dataY ];
 		po->currY -= deltaY;
 		
 		po->valuY = po->currY;
 		po->posnY = UFIX( po->valuY );
+
+		deltaY = po->prevY - po->posnY;
+		engine_font_manager_draw_data( frame, 10, 0 );
+		engine_font_manager_draw_data( deltaY, 20, 0 );
+
 		po->totalY += ( po->prevY - po->posnY );
 		po->prevY = po->posnY;
 
@@ -78,33 +76,35 @@ void engine_player_manager_jumping()
 			po->dataX = MAX_VELOCITY_X - 1;
 		}
 
-		
-
 		po->dataY++;
 		if( po->dataY >= MAX_VELOCITY_Y )
 		{
-			po->state = 1;
+			po->state = 2;
 			po->dataY = 0;
 
 			frame = 0;
 		}
-
-		
 	}
 	else if( 1 == po->state )
+	{
+
+	}
+	else if( 2 == po->state )
 	{
 		deltaX = velocityXair[ po->dataX ];
 		po->posnX += deltaX;
 		po->totalX += deltaX;
-
-		engine_font_manager_draw_data( frame, 10, 0 );
-		engine_font_manager_draw_data( deltaX, 20, 0 );
 
 		deltaY = gravityZZ[ po->dataY ];
 		po->currY += deltaY;
 
 		po->valuY = po->currY;
 		po->posnY = UFIX( po->valuY );
+
+		deltaY = po->posnY - po->prevY;
+		engine_font_manager_draw_data( frame, 10, 0 );
+		engine_font_manager_draw_data( deltaY, 20, 0 );
+
 		po->totalY += ( po->posnY - po->prevY );
 		po->prevY = po->posnY;
 
@@ -125,14 +125,14 @@ void engine_player_manager_jumping()
 			po->posnY = platform;
 			po->valuY = po->posnY << 8;
 			po->currY = po->valuY;
-			po->state = 2;// 0;
+			po->state = 3;// 0;
 			po->dataX = 0;
 			po->dataY = 0;
 		}
 	}
 
 	coord();
-	print();
+	//print();
 }
 
 void engine_player_manager_update()
