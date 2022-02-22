@@ -27,6 +27,7 @@ void main( void )
 	//devkit_SMS_setBGPaletteColor( 0, devkit_RGB( 0, 0, 0 ) );		// black
 
 	//devkit_SMS_setBGPaletteColor( 16, devkit_RGB( 1, 2, 3 ) );		// cornflower blue		sky
+	devkit_SMS_setBGPaletteColor( 16, devkit_RGB( 3, 3, 3 ) );		// white
 	engine_screen_manager_init();
 
 	devkit_SMS_displayOn();

@@ -1,11 +1,11 @@
 M:screen_manager
 F:G$engine_screen_manager_init$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lscreen_manager.engine_screen_manager_init$index$1$6({1}SC:U),R,0,0,[c]
 F:G$engine_screen_manager_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lscreen_manager.engine_screen_manager_update$input$1$9({1}SC:U),R,0,0,[c]
-S:Lscreen_manager.engine_screen_manager_update$delta$1$9({2}SI:U),R,0,0,[c,b]
+S:Lscreen_manager.engine_screen_manager_update$input$1$7({1}SC:U),R,0,0,[l]
+T:Fscreen_manager$tag_struct_player_object[({0}S:S$posnX$0$0({2}SI:S),Z,0,0)({2}S:S$posnY$0$0({2}SI:S),Z,0,0)({4}S:S$drawX$0$0({2}SI:S),Z,0,0)({6}S:S$drawY$0$0({2}SI:S),Z,0,0)({8}S:S$isOnGround$0$0({1}:S),Z,0,0)({9}S:S$isJumping$0$0({1}:S),Z,0,0)({10}S:S$wasJumping$0$0({1}:S),Z,0,0)]
 S:Fscreen_manager$ascent$0$0({34}DA17d,SI:U),E,0,0
 S:Fscreen_manager$descent$0$0({16}DA8d,SI:U),E,0,0
+S:G$global_player_object$0$0({11}STtag_struct_player_object:S),E,0,0
 S:Fscreen_manager$topBlock$0$0({2}SI:U),E,0,0
 S:Fscreen_manager$platform$0$0({1}SC:U),E,0,0
 S:Fscreen_manager$enemy_y$0$0({1}SC:U),E,0,0
@@ -35,4 +35,7 @@ S:G$engine_input_manager_move_left$0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_right$0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire1$0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire2$0$0({2}DF,SC:U),C,0,0
+S:G$engine_player_manager_init$0$0({2}DF,SV:S),C,0,0
+S:G$engine_player_manager_update$0$0({2}DF,SV:S),C,0,0
+S:G$engine_player_manager_draw$0$0({2}DF,SV:S),C,0,0
 S:G$engine_sprite_manager_draw$0$0({2}DF,SV:S),C,0,0

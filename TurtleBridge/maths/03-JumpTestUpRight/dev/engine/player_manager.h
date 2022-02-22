@@ -13,7 +13,8 @@ void engine_player_manager_init();
 //void engine_player_manager_apply_physics();
 //void engine_player_manager_handle_collisions();
 //void engine_player_manager_cleanup();
-//void engine_player_manager_draw();
+void engine_player_manager_update();
+void engine_player_manager_draw();
 //void engine_player_manager_hide();
 
 #endif//_PLAYER_MANAGER_H_

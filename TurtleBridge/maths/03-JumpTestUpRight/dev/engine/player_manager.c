@@ -1,4 +1,7 @@
 #include "player_manager.h"
+#include "font_manager.h"
+#include "global_manager.h"
+#include "sprite_manager.h"
 
 // Global variable.
 struct_player_object global_player_object;
@@ -15,5 +18,31 @@ static unsigned int gravityZZ[ MAX_GRAVITY_ZZ ] = { 348, 522, 696, 870, 1044, 12
 
 void engine_player_manager_init()
 {
+	struct_player_object *po = &global_player_object;
+	po->posnX = 96;
+	//po->posnY = 160;
+	po->posnY = 33;
 
+	po->drawX = po->posnX;
+	po->drawY = po->posnY - 32;
+}
+
+void engine_player_manager_update()
+{
+	struct_player_object *po = &global_player_object;
+	po->posnY--;
+	po->drawY = po->posnY - 32;
+}
+
+void engine_player_manager_draw()
+{
+	struct_player_object *po = &global_player_object;
+	//unsigned int tile;
+
+	// If Player jumps though "ceiling" then don't draw!
+	//if( po->posnY < 0 )
+	//{
+	//
+
+	engine_sprite_manager_draw( po->drawX, po->drawY, SPRITE_TILES );
 }
