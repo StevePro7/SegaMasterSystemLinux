@@ -2,10 +2,10 @@ M:screen_manager
 F:G$engine_screen_manager_init$0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_screen_manager_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lscreen_manager.engine_screen_manager_update$input$1$7({1}SC:U),R,0,0,[]
-T:Fscreen_manager$tag_struct_player_object[({0}S:S$currY$0$0({2}SI:U),Z,0,0)({2}S:S$valuY$0$0({2}SI:U),Z,0,0)({4}S:S$posnX$0$0({1}SC:U),Z,0,0)({5}S:S$posnY$0$0({1}SC:U),Z,0,0)({6}S:S$drawX$0$0({1}SC:U),Z,0,0)({7}S:S$drawY$0$0({1}SC:U),Z,0,0)({8}S:S$dataX$0$0({1}SC:U),Z,0,0)({9}S:S$dataY$0$0({1}SC:U),Z,0,0)({10}S:S$isOnGround$0$0({1}:S),Z,0,0)({11}S:S$isJumping$0$0({1}:S),Z,0,0)({12}S:S$wasJumping$0$0({1}:S),Z,0,0)]
+T:Fscreen_manager$tag_struct_player_object[({0}S:S$currY$0$0({2}SI:U),Z,0,0)({2}S:S$valuY$0$0({2}SI:U),Z,0,0)({4}S:S$posnX$0$0({1}SC:U),Z,0,0)({5}S:S$posnY$0$0({1}SC:U),Z,0,0)({6}S:S$drawX$0$0({1}SC:U),Z,0,0)({7}S:S$drawY$0$0({1}SC:U),Z,0,0)({8}S:S$dataX$0$0({1}SC:U),Z,0,0)({9}S:S$dataY$0$0({1}SC:U),Z,0,0)({10}S:S$state$0$0({1}SC:U),Z,0,0)({11}S:S$totalX$0$0({1}SC:U),Z,0,0)({12}S:S$totalY$0$0({1}SC:U),Z,0,0)({13}S:S$prevY$0$0({1}SC:U),Z,0,0)({14}S:S$isOnGround$0$0({1}:S),Z,0,0)({15}S:S$isJumping$0$0({1}:S),Z,0,0)({16}S:S$wasJumping$0$0({1}:S),Z,0,0)]
 S:Fscreen_manager$ascent$0$0({34}DA17d,SI:U),E,0,0
 S:Fscreen_manager$descent$0$0({16}DA8d,SI:U),E,0,0
-S:G$global_player_object$0$0({13}STtag_struct_player_object:S),E,0,0
+S:G$global_player_object$0$0({17}STtag_struct_player_object:S),E,0,0
 S:Fscreen_manager$topBlock$0$0({2}SI:U),E,0,0
 S:Fscreen_manager$platform$0$0({1}SC:U),E,0,0
 S:Fscreen_manager$enemy_y$0$0({1}SC:U),E,0,0

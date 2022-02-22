@@ -10,6 +10,10 @@ typedef struct tag_struct_player_object
 	unsigned char posnX, posnY;
 	unsigned char drawX, drawY;
 	unsigned char dataX, dataY;
+	unsigned char state;
+	unsigned char totalX;
+	unsigned char totalY;
+	unsigned char prevY;
 
 	//int collX, collY;
 	//int prevX, prevY;
