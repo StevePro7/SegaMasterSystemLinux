@@ -3,7 +3,7 @@ F:G$engine_player_manager_init$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lplayer_manager.engine_player_manager_init$po$1$6({2}DG,STtag_struct_player_object:S),R,0,0,[]
 F:G$engine_player_manager_jumping$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lplayer_manager.engine_player_manager_jumping$po$1$7({2}DG,STtag_struct_player_object:S),R,0,0,[]
-S:Lplayer_manager.engine_player_manager_jumping$deltaX$1$7({1}SC:U),R,0,0,[e]
+S:Lplayer_manager.engine_player_manager_jumping$deltaX$1$7({1}SC:U),R,0,0,[c]
 S:Lplayer_manager.engine_player_manager_jumping$deltaY$1$7({2}SI:U),R,0,0,[e,d]
 F:G$engine_player_manager_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lplayer_manager.engine_player_manager_update$po$1$15({2}DG,STtag_struct_player_object:S),R,0,0,[]
@@ -22,6 +22,7 @@ S:Fplayer_manager$velocityY$0$0({34}DA17d,SI:U),E,0,0
 S:Fplayer_manager$gravityZZ$0$0({16}DA8d,SI:U),E,0,0
 S:Fplayer_manager$platform$0$0({1}SC:U),E,0,0
 S:G$global_player_object$0$0({17}STtag_struct_player_object:S),E,0,0
+S:Fplayer_manager$frame$0$0({2}SI:U),E,0,0
 S:G$engine_font_manager_draw_char$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_text$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_data$0$0({2}DF,SV:S),C,0,0

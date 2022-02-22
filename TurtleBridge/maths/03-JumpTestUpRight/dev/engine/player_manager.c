@@ -20,6 +20,7 @@ static unsigned int gravityZZ[ MAX_GRAVITY_ZZ ] = { 348, 522, 696, 870, 1044, 12
 static void coord();
 static void print();
 
+static unsigned int frame;
 static unsigned char platform = 160;
 
 void engine_player_manager_init()
@@ -38,7 +39,8 @@ void engine_player_manager_init()
 	po->dataY = 0;
 	po->state = 0;
 
-	print();
+	//print();
+	frame = 0;
 }
 
 void engine_player_manager_jumping()
@@ -47,11 +49,20 @@ void engine_player_manager_jumping()
 	unsigned char deltaX;
 	unsigned int deltaY;
 
+	frame++;
+
 	if( 0 == po->state )
 	{
 		deltaX = velocityXair[ po->dataX ];
+
+
 		po->posnX += deltaX;
 		po->totalX += deltaX;
+
+
+		engine_font_manager_draw_data( frame, 10, 0 );
+		engine_font_manager_draw_data( deltaX, 20, 0 );
+
 
 		deltaY = velocityY[ po->dataY ];
 		po->currY -= deltaY;
@@ -67,18 +78,27 @@ void engine_player_manager_jumping()
 			po->dataX = MAX_VELOCITY_X - 1;
 		}
 
+		
+
 		po->dataY++;
 		if( po->dataY >= MAX_VELOCITY_Y )
 		{
 			po->state = 1;
 			po->dataY = 0;
+
+			frame = 0;
 		}
+
+		
 	}
 	else if( 1 == po->state )
 	{
 		deltaX = velocityXair[ po->dataX ];
 		po->posnX += deltaX;
 		po->totalX += deltaX;
+
+		engine_font_manager_draw_data( frame, 10, 0 );
+		engine_font_manager_draw_data( deltaX, 20, 0 );
 
 		deltaY = gravityZZ[ po->dataY ];
 		po->currY += deltaY;
