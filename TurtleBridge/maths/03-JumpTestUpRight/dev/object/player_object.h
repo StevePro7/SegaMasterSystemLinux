@@ -6,9 +6,11 @@
 typedef struct tag_struct_player_object
 {
 	//int spotX, spotY;
-	int currY, valuY;
-	char posnX, posnY;
-	char drawX, drawY;
+	unsigned int currY, valuY;
+	unsigned char posnX, posnY;
+	unsigned char drawX, drawY;
+	unsigned char dataX, dataY;
+
 	//int collX, collY;
 	//int prevX, prevY;
 	//int commX, commY;
