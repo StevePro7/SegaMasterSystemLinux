@@ -11,7 +11,7 @@ namespace ScreenShotTest
 	/// </summary>
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		const string file = "04-sea";
+		const string file = "01";
 
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
@@ -29,8 +29,8 @@ namespace ScreenShotTest
 			var files = System.IO.Directory.GetFiles("Content/tiles", "*", System.IO.SearchOption.TopDirectoryOnly);
 			length = files.Length;
 
-			width = 32;
-			height = 40;
+			width = 64;
+			height = 80;
 
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = width;
