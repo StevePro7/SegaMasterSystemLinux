@@ -170,4 +170,12 @@ void engine_screen_manager_update()
 	engine_player_manager_draw();
 	engine_sprite_manager_draw( 16, PLATFORM, SPRITE_TILES );
 	engine_sprite_manager_draw( 194, PLATFORM, SPRITE_TILES );
+
+
+	engine_sprite_manager_draw( 224, 192 - ( 1 * 32 ), SPRITE_TILES );
+	engine_sprite_manager_draw( 224, 192 - ( 2 * 32 ), SPRITE_TILES );
+	engine_sprite_manager_draw( 224, 192 - ( 3 * 32 ), SPRITE_TILES );
+	engine_sprite_manager_draw( 224, 192 - ( 4 * 32 ), SPRITE_TILES );
+	engine_sprite_manager_draw( 224, 192 - ( 5 * 32 ), SPRITE_TILES );
+	engine_sprite_manager_draw( 224, 192 - ( 6 * 32 ), SPRITE_TILES );
 }

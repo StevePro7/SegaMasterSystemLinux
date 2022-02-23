@@ -206,6 +206,7 @@ static void coord()
 static void print()
 {
 	struct_player_object *po = &global_player_object;
+
 	engine_font_manager_draw_data( po->drawY, 20, 0 );
 	engine_font_manager_draw_data( po->posnY, 20, 1 );	engine_font_manager_draw_data( po->posnX, 10, 1 );
 	engine_font_manager_draw_data( po->currY, 20, 2 );
