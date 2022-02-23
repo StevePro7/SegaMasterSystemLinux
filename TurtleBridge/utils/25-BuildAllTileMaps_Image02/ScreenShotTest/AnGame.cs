@@ -11,7 +11,7 @@ namespace ScreenShotTest
 	/// </summary>
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		const string file = "02";
+		const string file = "03";
 
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
@@ -30,7 +30,7 @@ namespace ScreenShotTest
 			length = files.Length;
 
 			width = 64;
-			height = 48;
+			height = 32;
 
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = width;
