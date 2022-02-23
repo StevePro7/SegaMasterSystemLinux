@@ -11,6 +11,8 @@ namespace ScreenShotTest
 	/// </summary>
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
+		const string file = "04-sea";
+
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
 		RenderTarget2D renderTarget;
@@ -27,8 +29,8 @@ namespace ScreenShotTest
 			var files = System.IO.Directory.GetFiles("Content/tiles", "*", System.IO.SearchOption.TopDirectoryOnly);
 			length = files.Length;
 
-			width = 64;
-			height = 32;
+			width = 32;
+			height = 40;
 
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = width;
@@ -66,7 +68,7 @@ namespace ScreenShotTest
 				dictionary[file] = Content.Load<Texture2D>("tiles/" + file);
 			}
 
-			lines = File.ReadAllLines("03.csv");
+			lines = File.ReadAllLines(file + ".csv");
 
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
 			width = pp.BackBufferWidth;
@@ -114,9 +116,9 @@ namespace ScreenShotTest
 
 				GraphicsDevice.SetRenderTarget(null);
 				Texture2D resolvedTexture = (Texture2D)renderTarget;
-				Stream stream = File.Create("game_tiles_org.png");
-				resolvedTexture.SaveAsPng(stream, width, height);
-				Stream stream2 = File.Create("game_tiles.png");
+				//Stream stream = File.Create(file + "_org.png");
+				//resolvedTexture.SaveAsPng(stream, width, height);
+				Stream stream2 = File.Create(file + ".png");
 				resolvedTexture.SaveAsPng(stream2, width, height);
 
 				Exit();
@@ -133,11 +135,13 @@ namespace ScreenShotTest
 			graphics.GraphicsDevice.Clear(Color.Black);
 			spriteBatch.Begin();
 
-			for (int row = 0; row < 4; row++)
+			int rows = height / 8;
+			int cols = width / 8;
+			for (int row = 0; row < rows; row++)
 			{
 				var line = lines[row];
 				var texts = line.Split(new char[] { ',' });
-				for (int col = 0; col < 8; col++)
+				for (int col = 0; col < cols; col++)
 				{
 					var text = texts[col];
 					var file = text.PadLeft(3, '0');
