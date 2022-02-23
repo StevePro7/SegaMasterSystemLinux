@@ -7,22 +7,22 @@
 #include "player_manager.h"
 #include "sprite_manager.h"
 //#include <stdlib.h>
-
-#define UFIX(x)                ((unsigned char)((x)>>8))
-
-static unsigned int	topBlock;
-static unsigned char platform;
-static unsigned char /*cur_enemy_y,*/ enemy_y;
-static unsigned int cur_value_y, value_y;
-
-static unsigned char index, count, state;
-
-static unsigned int ascent[ 17 ] = { 2958, 2347, 1960, 1673, 1441, 1247, 1079, 930, 796, 675, 564, 461, 365, 276, 191, 112, 36 };
-static unsigned int descent[ 8 ] = { 348, 522, 696, 870, 1044, 1219, 1393, 1408 };
-
-// half jump - not great!
-//static unsigned int ascent[ 17 ] = { 1479, 1173, 980, 836, 720, 623, 539, 465, 398, 337, 282, 230, 182, 138, 95, 56, 18 };
-//static unsigned int descent[ 8 ] = { 174, 261, 348, 435, 522, 609, 696, 704 };
+//
+//#define UFIX(x)                ((unsigned char)((x)>>8))
+//
+//static unsigned int	topBlock;
+//static unsigned char platform;
+//static unsigned char /*cur_enemy_y,*/ enemy_y;
+//static unsigned int cur_value_y, value_y;
+//
+//static unsigned char index, count, state;
+//
+//static unsigned int ascent[ 17 ] = { 2958, 2347, 1960, 1673, 1441, 1247, 1079, 930, 796, 675, 564, 461, 365, 276, 191, 112, 36 };
+//static unsigned int descent[ 8 ] = { 348, 522, 696, 870, 1044, 1219, 1393, 1408 };
+//
+//// half jump - not great!
+////static unsigned int ascent[ 17 ] = { 1479, 1173, 980, 836, 720, 623, 539, 465, 398, 337, 282, 230, 182, 138, 95, 56, 18 };
+////static unsigned int descent[ 8 ] = { 174, 261, 348, 435, 522, 609, 696, 704 };
 
 void engine_screen_manager_init()
 {
@@ -168,5 +168,6 @@ void engine_screen_manager_update()
 	//engine_sprite_manager_draw( 32, enemy_y, SPRITE_TILES );
 
 	engine_player_manager_draw();
-	engine_sprite_manager_draw( 64, 160, SPRITE_TILES );
+	engine_sprite_manager_draw( 16, PLATFORM, SPRITE_TILES );
+	engine_sprite_manager_draw( 194, PLATFORM, SPRITE_TILES );
 }

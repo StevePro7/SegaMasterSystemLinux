@@ -11,4 +11,6 @@
 #define PIXLES_WIDE			256
 #define PIXLES_HIGH			192
 
+#define PLATFORM			160
+
 #endif//_GLOBAL_MANAGER_H_

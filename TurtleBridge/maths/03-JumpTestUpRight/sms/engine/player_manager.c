@@ -21,7 +21,7 @@ static void coord();
 static void print();
 
 static unsigned int frame;
-static unsigned char platform = PLATFORM;
+static unsigned char platform = 160;
 
 void engine_player_manager_init()
 {
@@ -39,7 +39,7 @@ void engine_player_manager_init()
 	po->dataY = 0;
 	po->state = 0;
 
-	print();
+	//print();
 	frame = 0;
 }
 
@@ -65,40 +65,7 @@ void engine_player_manager_jumping()
 
 		deltaY = po->prevY - po->posnY;
 		engine_font_manager_draw_data( frame, 10, 0 );
-		engine_font_manager_draw_data( deltaX, 20, 0 );
-
-		po->totalY += ( po->prevY - po->posnY );
-		po->prevY = po->posnY;
-
-		po->dataX++;
-		if( po->dataX >= MAX_VELOCITY_X )
-		{
-			po->dataX = MAX_VELOCITY_X - 1;
-		}
-
-		po->dataY++;
-		if( po->dataY >= MAX_VELOCITY_Y )
-		{
-			po->state = 1;
-			po->dataY = 0;
-			frame = 0;
-		}
-	}
-	else if( 1 == po->state )
-	{
-		deltaX = velocityXair[ po->dataX ];
-		po->posnX += deltaX;
-		po->totalX += deltaX;
-
-		deltaY = velocityY[ po->dataY ];
-		po->currY -= deltaY;
-
-		po->valuY = po->currY;
-		po->posnY = UFIX( po->valuY );
-
-		deltaY = po->prevY - po->posnY;
-		engine_font_manager_draw_data( frame, 10, 0 );
-		engine_font_manager_draw_data( deltaX, 20, 0 );
+		engine_font_manager_draw_data( deltaY, 20, 0 );
 
 		po->totalY += ( po->prevY - po->posnY );
 		po->prevY = po->posnY;
@@ -114,8 +81,13 @@ void engine_player_manager_jumping()
 		{
 			po->state = 2;
 			po->dataY = 0;
+
 			frame = 0;
 		}
+	}
+	else if( 1 == po->state )
+	{
+
 	}
 	else if( 2 == po->state )
 	{
@@ -131,7 +103,7 @@ void engine_player_manager_jumping()
 
 		deltaY = po->posnY - po->prevY;
 		engine_font_manager_draw_data( frame, 10, 0 );
-		engine_font_manager_draw_data( deltaX, 20, 0 );
+		engine_font_manager_draw_data( deltaY, 20, 0 );
 
 		po->totalY += ( po->posnY - po->prevY );
 		po->prevY = po->posnY;
@@ -160,7 +132,7 @@ void engine_player_manager_jumping()
 	}
 
 	coord();
-	print();
+	//print();
 }
 
 void engine_player_manager_update()
@@ -186,7 +158,7 @@ void engine_player_manager_draw()
 	struct_player_object *po = &global_player_object;
 
 	// If Player jumps though "ceiling" then don't draw!
-	if( po->posnY <= 0 ) //|| po->drawY >= PIXLES_HIGH )
+	if( po->posnY <= 0 || po->drawY >= PIXLES_HIGH )
 	{
 		return;
 	}
