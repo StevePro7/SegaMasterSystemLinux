@@ -186,7 +186,9 @@ void engine_player_manager_draw()
 	struct_player_object *po = &global_player_object;
 
 	// If Player jumps though "ceiling" then don't draw!
-	if( po->posnY <= 0 ) //|| po->drawY >= PIXLES_HIGH )
+	//if( po->posnY <= 0 ) //|| po->drawY >= PIXLES_HIGH )		// NO!! as going to bottom causes ceiling to hide
+	//if( po->posnY <= 0 || po->posnY >= PIXLES_HIGH )			// TODO check.??
+	if( po->posnY <= 0 )
 	{
 		return;
 	}

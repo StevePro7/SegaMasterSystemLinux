@@ -92,3 +92,8 @@ state = up#1
 state = up#1
 17x frames
 3, 3, 3, 3, 3, 3, 3... 3 = 51
+
+
+Jumping
+double jump	178	= 194 - 16
+single jump	 91 = 107 - 16
