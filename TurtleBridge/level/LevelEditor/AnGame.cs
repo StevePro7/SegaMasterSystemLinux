@@ -13,9 +13,8 @@ namespace LevelEditor
 		SpriteBatch spriteBatch;
 
 		AssetManager assetManager;
-		private BoardManager boardManager;
-		
-		//private bool save;
+		BoardManager boardManager;
+		ConfigManager configManager;
 
 		private int width;
 		private int height;
@@ -24,13 +23,13 @@ namespace LevelEditor
 		public AnGame()
 		{
 			graphics = new GraphicsDeviceManager(this);
-			graphics.PreferredBackBufferWidth = 32;//pixl * size / 2;
-			graphics.PreferredBackBufferHeight = 32 * 4;// pixl * size;
+			
 			Content.RootDirectory = "Content";
 			Logger.Initialize();
 
 			assetManager = new AssetManager();
 			boardManager = new BoardManager();
+			configManager = new ConfigManager();
 		}
 
 		/// <summary>
@@ -49,7 +48,12 @@ namespace LevelEditor
 			//save = true;
 			IsMouseVisible = true;
 
-			assetManager.Init();
+			assetManager.Initialize();
+
+			graphics.PreferredBackBufferWidth = 1024;
+			graphics.PreferredBackBufferHeight = 192;
+			graphics.ApplyChanges();
+
 			base.Initialize();
 		}
 
@@ -62,7 +66,7 @@ namespace LevelEditor
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 
-			assetManager.Load(Content);
+			assetManager.LoadContent(Content);
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
 			width = pp.BackBufferWidth;
 			height = pp.BackBufferHeight;
@@ -127,7 +131,7 @@ namespace LevelEditor
 
 		private void Draw()
 		{
-			graphics.GraphicsDevice.Clear(Color.Black);
+			graphics.GraphicsDevice.Clear(Color.CornflowerBlue);
 			spriteBatch.Begin();
 			spriteBatch.End();
 		}

@@ -21,4 +21,10 @@
 		LineVertically,
 		ErrorRoundBlob,
 	}
+
+	public enum WavesType
+	{
+		HighTide = 0,
+		LowsTide = 1,
+	}
 }

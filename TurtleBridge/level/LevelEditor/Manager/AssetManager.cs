@@ -6,12 +6,12 @@ namespace LevelEditor
 {
 	public class AssetManager
 	{
-		public void Init()
+		public void Initialize()
 		{
 			Assets = new Dictionary<AssetType, Texture2D>();
 		}
 
-		public void Load(ContentManager content)
+		public void LoadContent(ContentManager content)
 		{
 			Assets.Clear();
 			Assets[AssetType.LargeStripMidd] = content.Load<Texture2D>("01-AA");
