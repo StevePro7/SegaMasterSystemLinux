@@ -27,9 +27,9 @@ namespace LevelEditor
 			Content.RootDirectory = "Content";
 			Logger.Initialize();
 
-			assetManager = new AssetManager();
-			boardManager = new BoardManager();
 			configManager = new ConfigManager();
+			assetManager = new AssetManager();
+			boardManager = new BoardManager(assetManager, configManager);
 		}
 
 		/// <summary>
@@ -134,6 +134,7 @@ namespace LevelEditor
 		{
 			graphics.GraphicsDevice.Clear(Color.CornflowerBlue);
 			spriteBatch.Begin();
+			boardManager.Draw(spriteBatch);
 			spriteBatch.End();
 		}
 
