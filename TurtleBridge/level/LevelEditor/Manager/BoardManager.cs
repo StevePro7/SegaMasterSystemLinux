@@ -33,17 +33,15 @@ namespace LevelEditor
 
 			int screens = 0;
 
-
 			for (int y = 0; y < gridY; y++)
 			{
 				spriteBatch.Draw(assetManager.Assets[AssetType.LineHorizontal], new Vector2(0, y * size), Color.White);
-				if (wideX > 512)
+				for (int z = 0; z < wideX / 512; z++)
 				{
-					spriteBatch.Draw(assetManager.Assets[AssetType.LineHorizontal], new Vector2(512, y * size), Color.White);
-				}
-				if (wideX > 1024)
-				{
-					spriteBatch.Draw(assetManager.Assets[AssetType.LineHorizontal], new Vector2(1024, y * size), Color.White);
+					if (wideX > z * 512)
+					{
+						spriteBatch.Draw(assetManager.Assets[AssetType.LineHorizontal], new Vector2(z * 512, y * size), Color.White);
+					}
 				}
 			}
 
