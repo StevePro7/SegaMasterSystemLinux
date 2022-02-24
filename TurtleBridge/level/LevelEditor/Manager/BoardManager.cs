@@ -13,6 +13,11 @@ namespace LevelEditor
 		private AssetManager assetManager;
 		private ConfigManager configManager;
 
+		private readonly IList<String> lines;
+		int wideX;
+		int gridX, gridY;
+		int size;
+
 		public BoardManager(
 			AssetManager assetManager,
 			ConfigManager configManager
@@ -20,20 +25,38 @@ namespace LevelEditor
 		{
 			this.assetManager = assetManager;
 			this.configManager = configManager;
+			lines = new List<string>(gridY);
+		}
+
+		public void Initialize()
+		{
+			wideX = configManager.ScreenWide;
+			gridX = configManager.GridsXWide;
+			gridY = configManager.GridsYHigh;
+			size = configManager.ScreenSize;
+
+			Tiles = new string[gridY, gridX];
+			for (int row = 0; row < gridY; row++)
+			{
+				for (int col = 0; col < gridX; col++)
+				{
+					string tile = Constants.TileEmpty;
+					if ((gridY - 1) == row)
+					{
+						tile = Constants.TileWaves;
+					}
+
+					Tiles[row, col] = tile;
+				}
+			}
 		}
 
 		public void Draw(SpriteBatch spriteBatch)
 		{
 			//Texture2D texture;
-
-			int wideX = configManager.ScreenWide;
-			int gridX = configManager.GridsXWide;
-			int gridY = configManager.GridsYHigh;
-			int size = configManager.ScreenSize;
-
 			int screens = 0;
 
-
+			// Draw sea [constant].
 			for (int x = 0; x < gridX; x++)
 			{
 				spriteBatch.Draw(assetManager.Assets[AssetType.SeaWavesHeight], new Vector2(x * size, 160), Color.White);

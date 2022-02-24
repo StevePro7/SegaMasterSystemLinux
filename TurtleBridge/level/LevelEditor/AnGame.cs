@@ -50,6 +50,7 @@ namespace LevelEditor
 
 			assetManager.Initialize();
 			configManager.Initialize();
+			boardManager.Initialize();
 
 			graphics.PreferredBackBufferWidth = configManager.ScreenWide;
 			graphics.PreferredBackBufferHeight = configManager.ScreenHigh;
