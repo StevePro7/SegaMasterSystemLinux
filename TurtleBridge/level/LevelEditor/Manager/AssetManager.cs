@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace LevelEditor.Manager
+namespace LevelEditor
 {
 	public class AssetManager
 	{
@@ -15,19 +14,24 @@ namespace LevelEditor.Manager
 		public void Load(ContentManager content)
 		{
 			Assets.Clear();
-			Assets[AssetType.LargeStripMidd] = content.Load<Texture2D>("Tiles/BlankGap");
-			Assets.ExitTexture = content.Load<Texture2D>("Tiles/Exit");
-			Assets.BlockTexture = content.Load<Texture2D>("Tiles/BlockA0");
-			Assets.PlatformTexture = content.Load<Texture2D>("Tiles/Platform");
-			Assets.GemTexture = content.Load<Texture2D>("Sprites/Gem");
-			Assets.PlayerTexture = content.Load<Texture2D>("Sprites/Player/Idle");
-			Assets.EnemyATexture = content.Load<Texture2D>("Sprites/MonsterA/Idle");
-			Assets.EnemyBTexture = content.Load<Texture2D>("Sprites/MonsterB/Idle");
-			Assets.EnemyCTexture = content.Load<Texture2D>("Sprites/MonsterC/Idle");
-			Assets.EnemyDTexture = content.Load<Texture2D>("Sprites/MonsterD/Idle");
-			Assets.HorzTexture = content.Load<Texture2D>("Tiles/StripHorz");
-			Assets.VertTexture = content.Load<Texture2D>("Tiles/StripVert");
-			Assets.ErrorTexture = content.Load<Texture2D>("Tiles/error");
+			Assets[AssetType.LargeStripMidd] = content.Load<Texture2D>("01-AA");
+			Assets[AssetType.LargeStripLeft] = content.Load<Texture2D>("01-BB");
+			Assets[AssetType.LargeStripRght] = content.Load<Texture2D>("01-CC");
+			Assets[AssetType.SmalleStripMidd] = content.Load<Texture2D>("02-AA");
+			Assets[AssetType.SmallStripLeft] = content.Load<Texture2D>("02-BB");
+			Assets[AssetType.SmallStripRght] = content.Load<Texture2D>("02-CC");
+			Assets[AssetType.GroundTextMidd] = content.Load<Texture2D>("03-AA");
+			Assets[AssetType.GroundTextLeft] = content.Load<Texture2D>("03-BB");
+			Assets[AssetType.GroundTextRght] = content.Load<Texture2D>("03-CC");
+			Assets[AssetType.TheTurtleDiver] = content.Load<Texture2D>("diver_turtle");
+			Assets[AssetType.TheTurtleHover] = content.Load<Texture2D>("hover_turtle");
+			Assets[AssetType.TheTurtleFlyer] = content.Load<Texture2D>("flyer_turtle");
+			Assets[AssetType.StevenSignGoal] = content.Load<Texture2D>("goal_sign");
+			Assets[AssetType.StevenSignSend] = content.Load<Texture2D>("sign_send");
+			Assets[AssetType.SeaWavesHeight] = content.Load<Texture2D>("04-sea");
+			Assets[AssetType.LineHorizontal] = content.Load<Texture2D>("StripHorz");
+			Assets[AssetType.LineVertically] = content.Load<Texture2D>("StripVert");
+			Assets[AssetType.ErrorRoundBlob] = content.Load<Texture2D>("error");
 		}
 
 		public IDictionary<AssetType, Texture2D> Assets { get; private set; }

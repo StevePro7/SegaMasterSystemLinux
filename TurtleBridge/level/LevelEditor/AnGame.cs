@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace ScreenShotTest
+namespace LevelEditor
 {
 	/// <summary>
 	/// This is the main type for your game
@@ -14,19 +14,13 @@ namespace ScreenShotTest
 	{
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
-		RenderTarget2D renderTarget;
-		private Texture2D[] images;
-		//private Texture2D image2;
 
-		private bool save;
+		AssetManager assetManager;
+		//private bool save;
 
 		private int width;
 		private int height;
 
-		//private IDictionary<string, Texture2D> dict = new Dictionary<string, Texture2D>();
-		//private int size = 1;
-		//private int pixl = 64;
-		//private string[] lines;
 
 		public AnGame()
 		{
@@ -34,6 +28,8 @@ namespace ScreenShotTest
 			graphics.PreferredBackBufferWidth = 32;//pixl * size / 2;
 			graphics.PreferredBackBufferHeight = 32 * 4;// pixl * size;
 			Content.RootDirectory = "Content";
+
+			assetManager = new AssetManager();
 		}
 
 		/// <summary>
@@ -44,13 +40,15 @@ namespace ScreenShotTest
 		/// </summary>
 		protected override void Initialize()
 		{
-			save = false;
+			//save = false;
 			//if (null != ConfigurationManager.AppSettings["save"])
 			//{
 			//	save = Convert.ToBoolean(ConfigurationManager.AppSettings["save"]);
 			//}
-			save = true;
+			//save = true;
 			IsMouseVisible = true;
+
+			assetManager.Init();
 			base.Initialize();
 		}
 
@@ -62,18 +60,12 @@ namespace ScreenShotTest
 		{
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch(GraphicsDevice);
-			images = new Texture2D[4];
-			images[0] = Content.Load<Texture2D>("01-right");
-			images[1] = Content.Load<Texture2D>("02-right");
-			images[2] = Content.Load<Texture2D>("03-right");
-			images[3] = Content.Load<Texture2D>("00-turtle1_32x32");
 
-
+			assetManager.Load(Content);
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
 			width = pp.BackBufferWidth;
 			height = pp.BackBufferHeight;
 			//renderTarget = new RenderTarget2D(GraphicsDevice, width, height, 1, GraphicsDevice.DisplayMode.Format);
-			renderTarget = new RenderTarget2D(GraphicsDevice, width, height, false, SurfaceFormat.Color, DepthFormat.Depth24);
 		}
 
 		/// <summary>
@@ -105,27 +97,27 @@ namespace ScreenShotTest
 		/// <param name="gameTime">Provides a snapshot of timing values.</param>
 		protected override void Draw(GameTime gameTime)
 		{
-			if (save)
-			{
-				//GraphicsDevice.SetRenderTarget(0, renderTarget);
-				GraphicsDevice.SetRenderTarget(renderTarget);
-				GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.CornflowerBlue, 1, 0);
+			//if (save)
+			//{
+			//	//GraphicsDevice.SetRenderTarget(0, renderTarget);
+			//	GraphicsDevice.SetRenderTarget(renderTarget);
+			//	GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.CornflowerBlue, 1, 0);
 
-				Draw();
-				base.Draw(gameTime);
+			//	Draw();
+			//	base.Draw(gameTime);
 
-				//GraphicsDevice.SetRenderTarget(0, null);
-				GraphicsDevice.SetRenderTarget(null);
-				//Texture2D resolvedTexture = renderTarget.GetTexture();
-				Texture2D resolvedTexture = (Texture2D)renderTarget;
-				//resolvedTexture.Save("00.jpg", ImageFileFormat.Jpg);
-				Stream stream = File.Create("test" + ".png");
-				//resolvedTexture.SaveAsJpeg(stream, width, height);
-				resolvedTexture.SaveAsPng(stream, width, height);
+			//	//GraphicsDevice.SetRenderTarget(0, null);
+			//	GraphicsDevice.SetRenderTarget(null);
+			//	//Texture2D resolvedTexture = renderTarget.GetTexture();
+			//	Texture2D resolvedTexture = (Texture2D)renderTarget;
+			//	//resolvedTexture.Save("00.jpg", ImageFileFormat.Jpg);
+			//	Stream stream = File.Create("test" + ".png");
+			//	//resolvedTexture.SaveAsJpeg(stream, width, height);
+			//	resolvedTexture.SaveAsPng(stream, width, height);
 		
-				Exit();
-			}
-			else
+			//	Exit();
+			//}
+			//else
 			{
 				Draw();
 				base.Draw(gameTime);
@@ -136,13 +128,6 @@ namespace ScreenShotTest
 		{
 			graphics.GraphicsDevice.Clear(Color.Black);
 			spriteBatch.Begin();
-
-			for (int i = 0; i < 4; i++)
-			{
-				var pos = new Vector2(0, i * 32);
-				spriteBatch.Draw(images[i], pos, Color.White);
-			}
-
 			spriteBatch.End();
 		}
 

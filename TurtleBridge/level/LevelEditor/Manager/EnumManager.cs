@@ -1,4 +1,4 @@
-﻿namespace LevelEditor.Manager
+﻿namespace LevelEditor
 {
 	public enum AssetType
 	{

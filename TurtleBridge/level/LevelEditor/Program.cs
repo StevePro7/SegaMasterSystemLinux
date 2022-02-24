@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ScreenShotTest
+namespace LevelEditor
 {
 #if WINDOWS || LINUX
     /// <summary>

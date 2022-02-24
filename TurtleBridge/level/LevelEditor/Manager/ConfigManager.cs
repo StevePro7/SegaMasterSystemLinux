@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LevelEditor.Manager
+namespace LevelEditor
 {
 	public class ConfigManager
 	{
