@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -16,6 +13,8 @@ namespace LevelEditor
 		SpriteBatch spriteBatch;
 
 		AssetManager assetManager;
+		private BoardManager boardManager;
+		
 		//private bool save;
 
 		private int width;
@@ -28,8 +27,10 @@ namespace LevelEditor
 			graphics.PreferredBackBufferWidth = 32;//pixl * size / 2;
 			graphics.PreferredBackBufferHeight = 32 * 4;// pixl * size;
 			Content.RootDirectory = "Content";
+			Logger.Initialize();
 
 			assetManager = new AssetManager();
+			boardManager = new BoardManager();
 		}
 
 		/// <summary>

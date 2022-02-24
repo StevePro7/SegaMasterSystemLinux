@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace LevelEditor
 {
-	public class GridManager
+	public class BoardManager
 	{
+		public string[,] Tiles { get; private set; }
 	}
 }
