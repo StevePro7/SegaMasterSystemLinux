@@ -49,9 +49,10 @@ namespace LevelEditor
 			IsMouseVisible = true;
 
 			assetManager.Initialize();
+			configManager.Initialize();
 
-			graphics.PreferredBackBufferWidth = 1024;
-			graphics.PreferredBackBufferHeight = 192;
+			graphics.PreferredBackBufferWidth = configManager.ScreenWide;
+			graphics.PreferredBackBufferHeight = configManager.ScreenHigh;
 			graphics.ApplyChanges();
 
 			base.Initialize();

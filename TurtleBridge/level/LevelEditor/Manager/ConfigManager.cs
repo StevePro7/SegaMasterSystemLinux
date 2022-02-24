@@ -18,7 +18,7 @@ namespace LevelEditor
 
 		private static int GetValue(string key)
 		{
-			return Convert.ToInt32(ConfigurationManager.AppSettings["key"]);
+			return Convert.ToInt32(ConfigurationManager.AppSettings[key]);
 		}
 
 		public int ScreenWide { get; private set; }
