@@ -33,6 +33,13 @@ namespace LevelEditor
 
 			int screens = 0;
 
+
+			for (int x = 0; x < gridX; x++)
+			{
+				spriteBatch.Draw(assetManager.Assets[AssetType.SeaWavesHeight], new Vector2(x * size, 160), Color.White);
+			}
+
+			// Draw lines
 			for (int y = 0; y < gridY; y++)
 			{
 				spriteBatch.Draw(assetManager.Assets[AssetType.LineHorizontal], new Vector2(0, y * size), Color.White);
