@@ -46,7 +46,7 @@ namespace LevelEditor
 					string tile = Constants.TileEmpty;
 					if ((gridY - 1) == row)
 					{
-						tile = Constants.TileLarge;
+						tile = Constants.TileTrees;
 					}
 
 					Tiles[row, col] = tile;
@@ -58,6 +58,8 @@ namespace LevelEditor
 		{
 			Texture2D texture;
 			int screens = 0;
+			int bottom;
+
 
 			// Draw board.
 			for (int row = 0; row < gridY; row++)
@@ -65,12 +67,12 @@ namespace LevelEditor
 				for (int col = 0; col < gridX; col++)
 				{
 					String tile = Tiles[row, col];
-					//texture = GetTexture(tile);
 					AssetType assetType = mappingManager.GetAssetType(tile);
 					if (assetType != AssetType.EmptyAssetDraw)
 					{
 						texture = assetManager.Assets[assetType];
-						spriteBatch.Draw(texture, new Vector2(col * size, row * size), Color.White);
+						bottom = row * size - texture.Height + size;
+						spriteBatch.Draw(texture, new Vector2(col * size, bottom), Color.White);
 					}
 				}
 			}
