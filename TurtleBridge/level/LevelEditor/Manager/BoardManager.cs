@@ -15,7 +15,7 @@ namespace LevelEditor
 		private MappingManager mappingManager;
 
 		private readonly IList<String> lines;
-		int wideX;
+		int wideX, highY;
 		int gridX, gridY;
 		int size;
 
@@ -29,11 +29,13 @@ namespace LevelEditor
 			this.configManager = configManager;
 			this.mappingManager = mappingManager;
 			lines = new List<string>(gridY);
+			Selector = Constants.TileEmpty;
 		}
 
 		public void Initialize()
 		{
 			wideX = configManager.ScreenWide;
+			highY = configManager.ScreenHigh;
 			gridX = configManager.GridsXWide;
 			gridY = configManager.GridsYHigh;
 			size = configManager.ScreenSize;
@@ -62,12 +64,13 @@ namespace LevelEditor
 
 
 			// Draw board.
+			AssetType assetType;
 			for (int row = 0; row < gridY; row++)
 			{
 				for (int col = 0; col < gridX; col++)
 				{
 					String tile = Tiles[row, col];
-					AssetType assetType = mappingManager.GetAssetType(tile);
+					assetType = mappingManager.GetAssetType(tile);
 					if (assetType != AssetType.EmptyAssetDraw)
 					{
 						texture = assetManager.Assets[assetType];
@@ -88,6 +91,14 @@ namespace LevelEditor
 			spriteBatch.Draw(assetManager.Assets[AssetType.TheTurtleFlyer], new Vector2(size * 6, bottom + size), Color.White);
 			spriteBatch.Draw(assetManager.Assets[AssetType.StevenSignSend], new Vector2(size * 7, bottom), Color.White);
 			spriteBatch.Draw(assetManager.Assets[AssetType.StevenSignGoal], new Vector2(size * 7, bottom + size), Color.White);
+
+			assetType = mappingManager.GetLegendType(Selector);
+			if (assetType != AssetType.EmptyAssetDraw)
+			{
+				texture = assetManager.Assets[assetType];
+				bottom = highY - texture.Height + size;
+				spriteBatch.Draw(texture, new Vector2(0, bottom + size), Color.White);
+			}
 
 			// Draw lines
 			for (int y = 0; y <= gridY; y++)
@@ -116,5 +127,6 @@ namespace LevelEditor
 		}
 
 		public string[,] Tiles { get; private set; }
+		public string Selector { get; private set; }
 	}
 }

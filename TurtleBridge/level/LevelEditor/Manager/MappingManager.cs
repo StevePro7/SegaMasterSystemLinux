@@ -36,6 +36,24 @@ namespace LevelEditor
 			return AssetType.EmptyAssetDraw;
 		}
 
+		public AssetType GetLegendType(string tile)
+		{
+			if (tile == Constants.TileLarge)
+			{
+				return AssetType.TheLargeLegend;
+			}
+			else if (tile == Constants.TileSmall)
+			{
+				return AssetType.TheSmallLegend;
+			}
+			else if (AssetLookup.ContainsKey(tile))
+			{
+				return AssetLookup[tile];
+			}
+
+			return AssetType.EmptyAssetDraw;
+		}
+
 		public IDictionary<string, AssetType> AssetLookup { get; private set; }
 
 	}
