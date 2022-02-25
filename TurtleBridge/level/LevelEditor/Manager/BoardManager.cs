@@ -46,7 +46,7 @@ namespace LevelEditor
 					string tile = Constants.TileEmpty;
 					if ((gridY - 1) == row)
 					{
-						tile = Constants.TileTrees;
+						tile = Constants.TileWaves;
 					}
 
 					Tiles[row, col] = tile;
@@ -77,6 +77,18 @@ namespace LevelEditor
 				}
 			}
 
+			// Draw legend
+			bottom = gridY * size;
+			spriteBatch.Draw(assetManager.Assets[AssetType.TheLargeLegend], new Vector2(size * 2, bottom), Color.White);
+			spriteBatch.Draw(assetManager.Assets[AssetType.TheSmallLegend], new Vector2(size * 4, bottom), Color.White);
+			spriteBatch.Draw(assetManager.Assets[AssetType.GroundTextMidd], new Vector2(size * 4, bottom + size), Color.White);
+			spriteBatch.Draw(assetManager.Assets[AssetType.TreeLegendDraw], new Vector2(size * 5, bottom), Color.White);
+			spriteBatch.Draw(assetManager.Assets[AssetType.TheTurtleDiver], new Vector2(size * 5, bottom + size), Color.White);
+			spriteBatch.Draw(assetManager.Assets[AssetType.TheTurtleHover], new Vector2(size * 6, bottom), Color.White);
+			spriteBatch.Draw(assetManager.Assets[AssetType.TheTurtleFlyer], new Vector2(size * 6, bottom + size), Color.White);
+			spriteBatch.Draw(assetManager.Assets[AssetType.StevenSignSend], new Vector2(size * 7, bottom), Color.White);
+			spriteBatch.Draw(assetManager.Assets[AssetType.StevenSignGoal], new Vector2(size * 7, bottom + size), Color.White);
+
 			// Draw lines
 			for (int y = 0; y <= gridY; y++)
 			{
@@ -99,6 +111,8 @@ namespace LevelEditor
 				}
 				screens += 32;
 			}
+
+			
 		}
 
 		public string[,] Tiles { get; private set; }
