@@ -23,12 +23,13 @@ namespace LevelEditor
 			Assets[AssetType.GroundTextMidd] = content.Load<Texture2D>("03-AA");
 			Assets[AssetType.GroundTextLeft] = content.Load<Texture2D>("03-BB");
 			Assets[AssetType.GroundTextRght] = content.Load<Texture2D>("03-CC");
+			Assets[AssetType.BigPalmTreeAxe] = content.Load<Texture2D>("04-DD");
 			Assets[AssetType.TheTurtleDiver] = content.Load<Texture2D>("diver_turtle");
 			Assets[AssetType.TheTurtleHover] = content.Load<Texture2D>("hover_turtle");
 			Assets[AssetType.TheTurtleFlyer] = content.Load<Texture2D>("flyer_turtle");
 			Assets[AssetType.StevenSignGoal] = content.Load<Texture2D>("goal_sign");
 			Assets[AssetType.StevenSignSend] = content.Load<Texture2D>("sign_send");
-			Assets[AssetType.SeaWavesHeight] = content.Load<Texture2D>("04-sea");
+			Assets[AssetType.SeaWavesHeight] = content.Load<Texture2D>("05-sea");
 			Assets[AssetType.LineHorizontal] = content.Load<Texture2D>("StripHorz");
 			Assets[AssetType.LineVertically] = content.Load<Texture2D>("StripVert");
 			Assets[AssetType.ErrorRoundBlob] = content.Load<Texture2D>("error");

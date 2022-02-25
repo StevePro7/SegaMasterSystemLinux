@@ -12,6 +12,7 @@
 		GroundTextMidd,
 		GroundTextLeft,
 		GroundTextRght,
+		BigPalmTreeAxe,
 		TheTurtleDiver,
 		TheTurtleHover,
 		TheTurtleFlyer,

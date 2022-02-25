@@ -15,5 +15,8 @@
 		public const string TileGoals = "G";
 		public const string TileArrow = "A";
 
+		public const string TileLarge = "L";
+		public const string TileSmall = "S";
+		public const string TileEarth = "E";
 	}
 }
