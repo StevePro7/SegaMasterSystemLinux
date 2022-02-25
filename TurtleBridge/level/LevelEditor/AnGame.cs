@@ -53,6 +53,7 @@ namespace LevelEditor
 			assetManager.Initialize();
 			configManager.Initialize();
 			boardManager.Initialize();
+			mappingManager.Initialize();
 
 			graphics.PreferredBackBufferWidth = configManager.ScreenWide;
 			graphics.PreferredBackBufferHeight = configManager.ScreenHigh + 2 * configManager.ScreenSize;
@@ -71,6 +72,7 @@ namespace LevelEditor
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 
 			assetManager.LoadContent(Content);
+			mappingManager.LoadContent();
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
 			width = pp.BackBufferWidth;
 			height = pp.BackBufferHeight;

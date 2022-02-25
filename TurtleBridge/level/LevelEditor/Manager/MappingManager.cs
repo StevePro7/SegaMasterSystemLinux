@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace LevelEditor
 {
@@ -15,22 +14,25 @@ namespace LevelEditor
 		public void LoadContent()
 		{
 			AssetLookup.Clear();
+			AssetLookup[Constants.TileLarge] = AssetType.LargeStripLeft;
+			AssetLookup[Constants.TileSmall] = AssetType.SmalleStripMid;
+			AssetLookup[Constants.TileEarth] = AssetType.GroundTextMidd;
+			AssetLookup[Constants.TileTrees] = AssetType.BigPalmTreeAxe;
+			AssetLookup[Constants.TileDiver] = AssetType.TheTurtleDiver;
+			AssetLookup[Constants.TileHover] = AssetType.TheTurtleHover;
+			AssetLookup[Constants.TileFlyer] = AssetType.TheTurtleFlyer;
+			AssetLookup[Constants.TileGoals] = AssetType.StevenSignGoal;
+			AssetLookup[Constants.TileArrow] = AssetType.StevenSignSend;
+			AssetLookup[Constants.TileWaves] = AssetType.SeaWavesHeight;
 		}
 
 		public AssetType GetAssetType(string tile)
 		{
-			if (tile == Constants.TileWaves)
+			if (AssetLookup.ContainsKey(tile))
 			{
-				return AssetType.SeaWavesHeight;
+				return AssetLookup[tile];
 			}
-			if (tile == Constants.TileDiver)
-			{
-				return AssetType.TheTurtleDiver;
-			}
-			if (tile == Constants.TileHover)
-			{
-				return AssetType.TheTurtleHover;
-			}
+
 			return AssetType.EmptyAssetDraw;
 		}
 

@@ -46,7 +46,7 @@ namespace LevelEditor
 					string tile = Constants.TileEmpty;
 					if ((gridY - 1) == row)
 					{
-						tile = Constants.TileDiver;
+						tile = Constants.TileLarge;
 					}
 
 					Tiles[row, col] = tile;
