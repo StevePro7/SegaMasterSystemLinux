@@ -5,7 +5,7 @@
 		LargeStripMidd,
 		LargeStripLeft,
 		LargeStripRght,
-		SmalleStripMidd,
+		SmalleStripMid,
 		SmallStripLeft,
 		SmallStripRght,
 		GroundTextMidd,
@@ -20,6 +20,9 @@
 		LineHorizontal,
 		LineVertically,
 		ErrorRoundBlob,
+		TreeLegendDraw,
+		TheSmallLegend,
+		TheLargeLegend,
 	}
 
 	public enum WavesType

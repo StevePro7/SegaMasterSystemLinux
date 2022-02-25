@@ -17,7 +17,7 @@ namespace LevelEditor
 			Assets[AssetType.LargeStripMidd] = content.Load<Texture2D>("01-AA");
 			Assets[AssetType.LargeStripLeft] = content.Load<Texture2D>("01-BB");
 			Assets[AssetType.LargeStripRght] = content.Load<Texture2D>("01-CC");
-			Assets[AssetType.SmalleStripMidd] = content.Load<Texture2D>("02-AA");
+			Assets[AssetType.SmalleStripMid] = content.Load<Texture2D>("02-AA");
 			Assets[AssetType.SmallStripLeft] = content.Load<Texture2D>("02-BB");
 			Assets[AssetType.SmallStripRght] = content.Load<Texture2D>("02-CC");
 			Assets[AssetType.GroundTextMidd] = content.Load<Texture2D>("03-AA");
@@ -32,6 +32,9 @@ namespace LevelEditor
 			Assets[AssetType.LineHorizontal] = content.Load<Texture2D>("StripHorz");
 			Assets[AssetType.LineVertically] = content.Load<Texture2D>("StripVert");
 			Assets[AssetType.ErrorRoundBlob] = content.Load<Texture2D>("error");
+			Assets[AssetType.TreeLegendDraw] = content.Load<Texture2D>("trees");
+			Assets[AssetType.TheSmallLegend] = content.Load<Texture2D>("small");
+			Assets[AssetType.TheLargeLegend] = content.Load<Texture2D>("large");
 		}
 
 		public IDictionary<AssetType, Texture2D> Assets { get; private set; }
