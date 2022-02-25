@@ -12,6 +12,7 @@ namespace LevelEditor
 	{
 		private AssetManager assetManager;
 		private ConfigManager configManager;
+		private MappingManager mappingManager;
 
 		private readonly IList<String> lines;
 		int wideX;
@@ -20,11 +21,13 @@ namespace LevelEditor
 
 		public BoardManager(
 			AssetManager assetManager,
-			ConfigManager configManager
+			ConfigManager configManager,
+			MappingManager mappingManager
 			)
 		{
 			this.assetManager = assetManager;
 			this.configManager = configManager;
+			this.mappingManager = mappingManager;
 			lines = new List<string>(gridY);
 		}
 
@@ -53,17 +56,27 @@ namespace LevelEditor
 
 		public void Draw(SpriteBatch spriteBatch)
 		{
-			//Texture2D texture;
+			Texture2D texture;
 			int screens = 0;
 
-			// Draw sea [constant].
-			for (int x = 0; x < gridX; x++)
+			// Draw board.
+			for (int row = 0; row < gridY; row++)
 			{
-				spriteBatch.Draw(assetManager.Assets[AssetType.SeaWavesHeight], new Vector2(x * size, 160), Color.White);
+				for (int col = 0; col < gridX; col++)
+				{
+					String tile = Tiles[row, col];
+					//texture = GetTexture(tile);
+					AssetType assetType = mappingManager.GetAssetType(tile);
+					if (assetType != AssetType.EmptyAssetDraw)
+					{
+						texture = assetManager.Assets[assetType];
+						spriteBatch.Draw(texture, new Vector2(col * size, row * size), Color.White);
+					}
+				}
 			}
 
 			// Draw lines
-			for (int y = 0; y < gridY; y++)
+			for (int y = 0; y <= gridY; y++)
 			{
 				spriteBatch.Draw(assetManager.Assets[AssetType.LineHorizontal], new Vector2(0, y * size), Color.White);
 				for (int z = 0; z < wideX / 512; z++)

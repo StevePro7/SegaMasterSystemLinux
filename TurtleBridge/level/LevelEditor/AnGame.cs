@@ -15,6 +15,7 @@ namespace LevelEditor
 		AssetManager assetManager;
 		BoardManager boardManager;
 		ConfigManager configManager;
+		MappingManager mappingManager;
 
 		private int width;
 		private int height;
@@ -29,7 +30,8 @@ namespace LevelEditor
 
 			configManager = new ConfigManager();
 			assetManager = new AssetManager();
-			boardManager = new BoardManager(assetManager, configManager);
+			mappingManager = new MappingManager();
+			boardManager = new BoardManager(assetManager, configManager, mappingManager);
 		}
 
 		/// <summary>
@@ -53,7 +55,7 @@ namespace LevelEditor
 			boardManager.Initialize();
 
 			graphics.PreferredBackBufferWidth = configManager.ScreenWide;
-			graphics.PreferredBackBufferHeight = configManager.ScreenHigh;
+			graphics.PreferredBackBufferHeight = configManager.ScreenHigh + 2 * configManager.ScreenSize;
 			graphics.ApplyChanges();
 
 			base.Initialize();

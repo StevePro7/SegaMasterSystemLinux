@@ -2,6 +2,7 @@
 {
 	public enum AssetType
 	{
+		EmptyAssetDraw,
 		LargeStripMidd,
 		LargeStripLeft,
 		LargeStripRght,
