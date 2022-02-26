@@ -38,6 +38,7 @@ namespace LevelEditor
 		public void Update(GameTime gameTime)
 		{
 			inputManager.Update();
+			boardManager.Update();
 			selectorManager.Update();
 		}
 

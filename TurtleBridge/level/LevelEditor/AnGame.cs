@@ -36,7 +36,7 @@ namespace LevelEditor
 			mappingManager = new MappingManager();
 
 			selectorManager = new SelectorManager(inputManager);
-			boardManager = new BoardManager(assetManager, configManager, mappingManager, selectorManager);
+			boardManager = new BoardManager(assetManager, configManager, inputManager, mappingManager, selectorManager);
 
 			screenManager = new ScreenManager(
 				boardManager,

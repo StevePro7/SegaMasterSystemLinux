@@ -13,6 +13,7 @@ namespace LevelEditor
 		private AssetManager assetManager;
 		private ConfigManager configManager;
 		private MappingManager mappingManager;
+		private InputManager inputManager;
 		private SelectorManager selectorManager;
 
 		private readonly IList<String> lines;
@@ -23,12 +24,14 @@ namespace LevelEditor
 		public BoardManager(
 			AssetManager assetManager,
 			ConfigManager configManager,
+			InputManager inputManager,
 			MappingManager mappingManager,
 			SelectorManager selectorManager
 			)
 		{
 			this.assetManager = assetManager;
 			this.configManager = configManager;
+			this.inputManager = inputManager;
 			this.mappingManager = mappingManager;
 			this.selectorManager = selectorManager;
 			lines = new List<string>(gridY);
@@ -55,6 +58,24 @@ namespace LevelEditor
 
 					Tiles[row, col] = tile;
 				}
+			}
+		}
+
+		public void Update()
+		{
+			int row = (int)(inputManager.MousePosition.Y);
+			int col = (int)(inputManager.MousePosition.X);
+
+			bool left = inputManager.LeftButton();
+			bool rght = inputManager.RightButton();
+			if (left)
+			{
+				if (col < 0 || col >= gridX || row < 0 || row >= gridY)
+				{
+					return;
+				}
+
+				Tiles[row, col] = selectorManager.Selector;
 			}
 		}
 
