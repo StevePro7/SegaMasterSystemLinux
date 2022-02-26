@@ -82,25 +82,36 @@ namespace LevelEditor
 				var oldTile = Tiles[row, col];
 				if (selectorManager.Selector != oldTile)
 				{
-					Logger.Info("Before stack count : " + stack.Count);
 					stack.Push(inputManager.MousePosition);
-					Logger.Info("Xafter stack count : " + stack.Count);
 				}
 
 				Tiles[row, col] = selectorManager.Selector;
 			}
 
-			if (inputManager.KeyHold(Keys.Delete))
+			if (rght)
 			{
-				if (0 == stack.Count)
+				if (col < 0 || col >= gridX || row < 0 || row >= gridY)
 				{
 					return;
 				}
 
-				Vector2 position = stack.Pop();
-				row = (int)(position.Y);
-				col = (int)(position.X);
+				if (stack.Count > 0)
+				{
+					Vector2 position = stack.Pop();
+				}
+
 				Tiles[row, col] = Constants.TileEmpty;
+			}
+
+			if (inputManager.KeyHold(Keys.Delete))
+			{
+				if (stack.Count > 0)
+				{
+					Vector2 position = stack.Pop();
+					row = (int)(position.Y);
+					col = (int)(position.X);
+					Tiles[row, col] = Constants.TileEmpty;
+				}
 			}
 		}
 
