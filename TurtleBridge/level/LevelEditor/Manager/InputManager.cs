@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.Xna.Framework.Input;
+﻿using Microsoft.Xna.Framework.Input;
 
 namespace LevelEditor
 {
@@ -15,6 +14,11 @@ namespace LevelEditor
 			mouseState = Mouse.GetState();
 			ButtonState buttonState = mouseState.LeftButton;
 			prevKeyboardState = currKeyboardState;
+		}
+
+		public bool KeyMove(Keys key)
+		{
+			return currKeyboardState.IsKeyDown(key);
 		}
 
 		public bool KeyHold(Keys key)

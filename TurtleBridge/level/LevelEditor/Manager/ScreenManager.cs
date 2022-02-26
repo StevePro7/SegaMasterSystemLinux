@@ -11,17 +11,20 @@ namespace LevelEditor
 	{
 		private BoardManager boardManager;
 		private InputManager inputManager;
+		private SelectorManager selectorManager;
 
 		GraphicsDeviceManager graphics;
 		private SpriteBatch spriteBatch;
 
 		public ScreenManager(
 			BoardManager boardManager,
-			InputManager inputManager
+			InputManager inputManager,
+			SelectorManager selectorManager
 			)
 		{
 			this.boardManager = boardManager;
 			this.inputManager = inputManager;
+			this.selectorManager = selectorManager;
 		}
 
 		public void LoadContent(
@@ -35,6 +38,7 @@ namespace LevelEditor
 		public void Update(GameTime gameTime)
 		{
 			inputManager.Update();
+			selectorManager.Update();
 		}
 
 		public void Draw()

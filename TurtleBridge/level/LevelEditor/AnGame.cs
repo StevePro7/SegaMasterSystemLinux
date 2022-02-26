@@ -40,7 +40,8 @@ namespace LevelEditor
 
 			screenManager = new ScreenManager(
 				boardManager,
-				inputManager
+				inputManager,
+				selectorManager
 				);
 		}
 
