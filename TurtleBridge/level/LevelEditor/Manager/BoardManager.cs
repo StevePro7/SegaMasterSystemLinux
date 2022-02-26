@@ -85,7 +85,11 @@ namespace LevelEditor
 					stack.Push(inputManager.MousePosition);
 				}
 
-				Tiles[row, col] = selectorManager.Selector;
+				bool isValid = ValidateTilePosition(row, col);
+				if (isValid)
+				{
+					Tiles[row, col] = selectorManager.Selector;
+				}
 			}
 
 			if (rght)
@@ -113,6 +117,12 @@ namespace LevelEditor
 					Tiles[row, col] = Constants.TileEmpty;
 				}
 			}
+		}
+
+		// TODO - validate heights
+		private bool ValidateTilePosition(int row, int col)
+		{
+			return true;
 		}
 
 		public void Draw(SpriteBatch spriteBatch)
