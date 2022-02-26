@@ -11,8 +11,8 @@
 		public const string TileDiver = "D";
 		public const string TileHover = "H";
 		public const string TileFlyer = "F";
-		public const string TileGoals = "G";
 		public const string TileArrow = "A";
+		public const string TileGoals = "G";
 		public const string TileWaves = "W";
 	}
 }

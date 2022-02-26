@@ -16,7 +16,7 @@ namespace LevelEditor
 			prevKeyboardState = currKeyboardState;
 		}
 
-		public bool KeyMove(Keys key)
+		public bool KeyDown(Keys key)
 		{
 			return currKeyboardState.IsKeyDown(key);
 		}
