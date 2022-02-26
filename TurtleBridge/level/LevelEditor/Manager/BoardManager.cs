@@ -13,6 +13,7 @@ namespace LevelEditor
 		private AssetManager assetManager;
 		private ConfigManager configManager;
 		private MappingManager mappingManager;
+		private SelectorManager selectorManager;
 
 		private readonly IList<String> lines;
 		int wideX, highY;
@@ -22,14 +23,15 @@ namespace LevelEditor
 		public BoardManager(
 			AssetManager assetManager,
 			ConfigManager configManager,
-			MappingManager mappingManager
+			MappingManager mappingManager,
+			SelectorManager selectorManager
 			)
 		{
 			this.assetManager = assetManager;
 			this.configManager = configManager;
 			this.mappingManager = mappingManager;
+			this.selectorManager = selectorManager;
 			lines = new List<string>(gridY);
-			Selector = Constants.TileEmpty;
 		}
 
 		public void Initialize()
@@ -62,7 +64,6 @@ namespace LevelEditor
 			int screens = 0;
 			int bottom;
 
-
 			// Draw board.
 			AssetType assetType;
 			for (int row = 0; row < gridY; row++)
@@ -92,7 +93,8 @@ namespace LevelEditor
 			spriteBatch.Draw(assetManager.Assets[AssetType.StevenSignSend], new Vector2(size * 7, bottom), Color.White);
 			spriteBatch.Draw(assetManager.Assets[AssetType.StevenSignGoal], new Vector2(size * 7, bottom + size), Color.White);
 
-			assetType = mappingManager.GetLegendType(Selector);
+			// Draw selector.
+			assetType = mappingManager.GetLegendType(selectorManager.Selector);
 			if (assetType != AssetType.EmptyAssetDraw)
 			{
 				texture = assetManager.Assets[assetType];
@@ -122,11 +124,9 @@ namespace LevelEditor
 				}
 				screens += 32;
 			}
-
-			
 		}
 
 		public string[,] Tiles { get; private set; }
-		public string Selector { get; private set; }
+		//public string Selector { get; private set; }
 	}
 }
