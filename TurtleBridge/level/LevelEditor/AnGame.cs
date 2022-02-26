@@ -32,7 +32,7 @@ namespace LevelEditor
 
 			assetManager = new AssetManager();
 			configManager = new ConfigManager();
-			inputManager = new InputManager();
+			inputManager = new InputManager(configManager);
 			mappingManager = new MappingManager();
 
 			selectorManager = new SelectorManager(inputManager);
@@ -64,6 +64,7 @@ namespace LevelEditor
 			assetManager.Initialize();
 			configManager.Initialize();
 			boardManager.Initialize();
+			inputManager.Initialize();
 			mappingManager.Initialize();
 			selectorManager.Initialize();
 

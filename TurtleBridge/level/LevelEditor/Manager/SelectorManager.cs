@@ -23,6 +23,7 @@ namespace LevelEditor
 
 		public void Update()
 		{
+
 			if (inputManager.KeyDown(Keys.D1))
 			{
 				Selector = Constants.TileEmpty;
