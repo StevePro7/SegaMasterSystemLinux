@@ -17,7 +17,9 @@ namespace LevelEditor
 		ConfigManager configManager;
 		InputManager inputManager;
 		MappingManager mappingManager;
-		
+		ScreenManager screenManager;
+		SelectorManager selectorManager;
+
 		private int width;
 		private int height;
 
@@ -32,6 +34,8 @@ namespace LevelEditor
 			configManager = new ConfigManager();
 			inputManager = new InputManager();
 			mappingManager = new MappingManager();
+			screenManager = new ScreenManager(inputManager);
+			selectorManager = new SelectorManager();
 			boardManager = new BoardManager(assetManager, configManager, mappingManager);
 		}
 
@@ -102,7 +106,7 @@ namespace LevelEditor
 				Exit();
 			}
 
-			inputManager.Update();
+			screenManager.Update(gameTime);
 			base.Update(gameTime);
 		}
 
