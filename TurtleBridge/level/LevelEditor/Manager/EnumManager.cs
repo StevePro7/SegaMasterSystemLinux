@@ -22,9 +22,9 @@
 		LineHorizontal,
 		LineVertically,
 		ErrorRoundBlob,
-		TreeLegendDraw,
 		TheSmallLegend,
 		TheLargeLegend,
+		TreeLegendDraw,
 	}
 
 	public enum WavesType

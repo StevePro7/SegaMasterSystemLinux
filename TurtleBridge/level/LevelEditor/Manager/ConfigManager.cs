@@ -10,6 +10,7 @@ namespace LevelEditor
 			ScreenWide = GetValue("ScreenWide");
 			ScreenHigh = GetValue("ScreenHigh");
 			ScreenSize = GetValue("ScreenSize");
+			ScreenBott = ScreenHigh + 2 * ScreenSize;
 			SeaWavesAt = GetValue("SeaWavesAt");
 
 			GridsXWide = ScreenWide / ScreenSize;
@@ -24,6 +25,7 @@ namespace LevelEditor
 		public int ScreenWide { get; private set; }
 		public int ScreenHigh { get; private set; }
 		public int ScreenSize { get; private set; }
+		public int ScreenBott { get; private set; }
 		public int SeaWavesAt { get; private set; }
 
 		public int GridsXWide { get; private set; }

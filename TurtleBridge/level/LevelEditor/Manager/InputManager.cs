@@ -6,7 +6,7 @@ namespace LevelEditor
 	public class InputManager
 	{
 		private ConfigManager configManager;
-		private int wide, high;
+		private int wide, bott;
 		private int size;
 
 		public InputManager(ConfigManager configManager)
@@ -17,7 +17,7 @@ namespace LevelEditor
 		public void Initialize()
 		{
 			wide = configManager.ScreenWide;
-			high = configManager.ScreenHigh;
+			bott = configManager.ScreenBott;
 			size = configManager.ScreenSize;
 		}
 
@@ -27,9 +27,20 @@ namespace LevelEditor
 		public void Update()
 		{
 			currKeyboardState = Keyboard.GetState();
-			mouseState = Mouse.GetState();
-			ButtonState buttonState = mouseState.LeftButton;
 			prevKeyboardState = currKeyboardState;
+
+			mouseState = Mouse.GetState();
+			MousePosition = Vector2.Zero;
+
+			int mx = mouseState.X;
+			int my = mouseState.Y;
+			if (mx >= 0 && my <= wide && my >= 0 && my <= bott)
+			{
+				int bx = mx / 32;
+				int by = my / 32;
+
+				MousePosition = new Vector2(bx, by);
+			}
 		}
 
 		public bool KeyDown(Keys key)
@@ -49,20 +60,7 @@ namespace LevelEditor
 		{
 			return ButtonState.Pressed == mouseState.RightButton;
 		}
-		public Vector2 MousePosition()
-		{
-			int mx = mouseState.X;
-			int my = mouseState.Y;
 
-			if (mx >= 0 && my <= wide && my >= 0 && my <= high)
-			{
-				int bx = mx / 32;
-				int by = my / 32;
-
-				return new Vector2(bx, by);
-			}
-
-			return Vector2.Zero;
-		}
+		public Vector2 MousePosition { get; private set; }
 	}
 }

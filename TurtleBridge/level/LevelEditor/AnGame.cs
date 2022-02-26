@@ -69,7 +69,7 @@ namespace LevelEditor
 			selectorManager.Initialize();
 
 			graphics.PreferredBackBufferWidth = configManager.ScreenWide;
-			graphics.PreferredBackBufferHeight = configManager.ScreenHigh + 2 * configManager.ScreenSize;
+			graphics.PreferredBackBufferHeight = configManager.ScreenBott;
 			graphics.ApplyChanges();
 
 			base.Initialize();

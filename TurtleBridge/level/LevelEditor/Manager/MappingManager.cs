@@ -46,6 +46,10 @@ namespace LevelEditor
 			{
 				return AssetType.TheSmallLegend;
 			}
+			else if (tile == Constants.TileTrees)
+			{
+				return AssetType.TreeLegendDraw;
+			}
 			else if (AssetLookup.ContainsKey(tile))
 			{
 				return AssetLookup[tile];
