@@ -14,7 +14,7 @@ namespace LevelEditor
 		public void LoadContent()
 		{
 			AssetLookup.Clear();
-			AssetLookup[Constants.TileLarge] = AssetType.LargeStripLeft;
+			AssetLookup[Constants.TileLarge] = AssetType.LargeStripMidd;
 			AssetLookup[Constants.TileSmall] = AssetType.SmalleStripMid;
 			AssetLookup[Constants.TileEarth] = AssetType.GroundTextMidd;
 			AssetLookup[Constants.TileTrees] = AssetType.BigPalmTreeAxe;

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 
 namespace LevelEditor
 {
@@ -16,6 +17,7 @@ namespace LevelEditor
 		private InputManager inputManager;
 		private SelectorManager selectorManager;
 
+		private Stack<Vector2> stack;
 		private readonly IList<String> lines;
 		int wideX, highY;
 		int gridX, gridY;
@@ -34,6 +36,8 @@ namespace LevelEditor
 			this.inputManager = inputManager;
 			this.mappingManager = mappingManager;
 			this.selectorManager = selectorManager;
+
+			stack = new Stack<Vector2>();
 			lines = new List<string>(gridY);
 		}
 
@@ -75,7 +79,28 @@ namespace LevelEditor
 					return;
 				}
 
+				var oldTile = Tiles[row, col];
+				if (selectorManager.Selector != oldTile)
+				{
+					Logger.Info("Before stack count : " + stack.Count);
+					stack.Push(inputManager.MousePosition);
+					Logger.Info("Xafter stack count : " + stack.Count);
+				}
+
 				Tiles[row, col] = selectorManager.Selector;
+			}
+
+			if (inputManager.KeyHold(Keys.Delete))
+			{
+				if (0 == stack.Count)
+				{
+					return;
+				}
+
+				Vector2 position = stack.Pop();
+				row = (int)(position.Y);
+				col = (int)(position.X);
+				Tiles[row, col] = Constants.TileEmpty;
 			}
 		}
 

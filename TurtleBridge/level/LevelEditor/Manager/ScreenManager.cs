@@ -40,6 +40,7 @@ namespace LevelEditor
 			inputManager.Update();
 			boardManager.Update();
 			selectorManager.Update();
+			inputManager.Reset();
 		}
 
 		public void Draw()
