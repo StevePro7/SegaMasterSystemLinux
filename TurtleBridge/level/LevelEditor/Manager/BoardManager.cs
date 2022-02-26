@@ -112,9 +112,9 @@ namespace LevelEditor
 
 			// Draw board.
 			AssetType assetType;
-			for (int row = 0; row < gridY; row++)
+			for (int row = gridY - 1; row >= 0; row--)
 			{
-				for (int col = 0; col < gridX; col++)
+				for (int col = gridX - 1; col >= 0; col--)
 				{
 					String tile = Tiles[row, col];
 					assetType = mappingManager.GetAssetType(tile);

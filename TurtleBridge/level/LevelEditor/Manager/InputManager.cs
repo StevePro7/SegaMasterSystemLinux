@@ -45,7 +45,6 @@ namespace LevelEditor
 		public void Reset()
 		{
 			prevKeyboardState = currKeyboardState;
-			//
 		}
 
 		public bool KeyDown(Keys key)
@@ -59,7 +58,6 @@ namespace LevelEditor
 
 		public bool LeftButton()
 		{
-			OldMousePosition = MousePosition;
 			return ButtonState.Pressed == mouseState.LeftButton;
 		}
 		public bool RightButton()
@@ -68,6 +66,5 @@ namespace LevelEditor
 		}
 
 		public Vector2 MousePosition { get; private set; }
-		public Vector2 OldMousePosition { get; private set; }
 	}
 }
