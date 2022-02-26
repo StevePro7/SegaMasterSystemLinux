@@ -34,9 +34,14 @@ namespace LevelEditor
 			configManager = new ConfigManager();
 			inputManager = new InputManager();
 			mappingManager = new MappingManager();
-			screenManager = new ScreenManager(inputManager);
+			
 			selectorManager = new SelectorManager();
 			boardManager = new BoardManager(assetManager, configManager, mappingManager);
+
+			screenManager = new ScreenManager(
+				boardManager,
+				inputManager
+				);
 		}
 
 		/// <summary>
@@ -78,6 +83,9 @@ namespace LevelEditor
 
 			assetManager.LoadContent(Content);
 			mappingManager.LoadContent();
+			screenManager.LoadContent(graphics, spriteBatch);
+
+
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
 			width = pp.BackBufferWidth;
 			height = pp.BackBufferHeight;
@@ -145,10 +153,7 @@ namespace LevelEditor
 
 		private void Draw()
 		{
-			graphics.GraphicsDevice.Clear(Color.CornflowerBlue);
-			spriteBatch.Begin();
-			boardManager.Draw(spriteBatch);
-			spriteBatch.End();
+			screenManager.Draw();
 		}
 
 	}

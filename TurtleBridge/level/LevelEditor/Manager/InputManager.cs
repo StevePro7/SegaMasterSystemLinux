@@ -7,7 +7,7 @@ namespace LevelEditor
 	{
 		private KeyboardState currKeyboardState, prevKeyboardState;
 		private MouseState mouseState;
-		private bool valid;
+		//private bool valid;
 
 		public void Update()
 		{
