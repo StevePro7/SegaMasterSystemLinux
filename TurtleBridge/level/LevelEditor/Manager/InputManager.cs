@@ -1,12 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.Xna.Framework.Input;
 
 namespace LevelEditor
 {
 	public class InputManager
 	{
+		private KeyboardState currKeyboardState, prevKeyboardState;
+		private MouseState mouseState;
+		private bool valid;
+
+		public void Update()
+		{
+			currKeyboardState = Keyboard.GetState();
+			mouseState = Mouse.GetState();
+			ButtonState buttonState = mouseState.LeftButton;
+			prevKeyboardState = currKeyboardState;
+		}
+
+		public bool KeyHold(Keys key)
+		{
+			return currKeyboardState.IsKeyDown(key) && prevKeyboardState.IsKeyUp(key);
+		}
 	}
 }

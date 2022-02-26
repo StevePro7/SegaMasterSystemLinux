@@ -15,11 +15,11 @@ namespace LevelEditor
 		AssetManager assetManager;
 		BoardManager boardManager;
 		ConfigManager configManager;
+		InputManager inputManager;
 		MappingManager mappingManager;
-
+		
 		private int width;
 		private int height;
-
 
 		public AnGame()
 		{
@@ -28,8 +28,9 @@ namespace LevelEditor
 			Content.RootDirectory = "Content";
 			Logger.Initialize();
 
-			configManager = new ConfigManager();
 			assetManager = new AssetManager();
+			configManager = new ConfigManager();
+			inputManager = new InputManager();
 			mappingManager = new MappingManager();
 			boardManager = new BoardManager(assetManager, configManager, mappingManager);
 		}
@@ -97,8 +98,11 @@ namespace LevelEditor
 		{
 			// Allows the game to exit
 			if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-				this.Exit();
+			{
+				Exit();
+			}
 
+			inputManager.Update();
 			base.Update(gameTime);
 		}
 
