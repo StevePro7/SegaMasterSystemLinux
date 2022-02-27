@@ -99,6 +99,16 @@ namespace LevelEditor
 					return;
 				}
 
+				if (0 == row)
+				{
+					for (int idx = 0; idx < gridY-1; idx++)
+					{
+						Tiles[idx, col] = Constants.TileEmpty;
+					}
+
+					return;
+				}
+
 				bool isValid = ValidateTilePosition(row, col, Constants.TileEmpty);
 				if (isValid)
 				{
@@ -131,7 +141,7 @@ namespace LevelEditor
 			{
 				return false;
 			}
-			if (row < 2)
+			if (row < 1)
 			{
 				// TODO should be 2 or 3?
 				return false;
