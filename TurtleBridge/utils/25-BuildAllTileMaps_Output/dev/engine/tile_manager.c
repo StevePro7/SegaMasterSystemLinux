@@ -214,6 +214,10 @@ void engine_tile_manager_sea_turtle( unsigned char turtle, unsigned char x, unsi
 {
 	engine_tile_manager_draw_offset2( tile_type_sea_turtles, turtle, x, y );
 }
+void engine_tile_manager_lie_turtle( unsigned char turtle, unsigned char x, unsigned char y )
+{
+	engine_tile_manager_draw_offset2( tile_type_lie_turtles, turtle, x, y );
+}
 void engine_tile_manager_fly_turtle( unsigned char turtle, unsigned char x, unsigned char y )
 {
 	engine_tile_manager_draw_offset2( tile_type_fly_turtles, turtle, x, y );

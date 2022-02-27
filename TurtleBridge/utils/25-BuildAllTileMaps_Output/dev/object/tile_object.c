@@ -13,6 +13,7 @@ const unsigned char *tile_object_data[] =
 	cloud01_array,
 	cloud02_array,
 	sea_turtles_array,
+	lie_turtles_array,
 	fly_turtles_array,
 	sign_numb_array,
 	sign_goal_array,
@@ -29,6 +30,7 @@ const unsigned char tile_object_wide[] =
 	4,		// cloud01
 	6,		// cloud01
 	4,		// sea_turtles
+	4,		// lie_turtles
 	4,		// fly_turtles
 	3,		// sign_numb
 	3,		// sign_goal
@@ -44,6 +46,7 @@ const unsigned char tile_object_high[] =
 	3,		// cloud01
 	3,		// cloud01
 	3,		// sea_turtles
+	3,		// lie_turtles
 	3,		// fly_turtles
 	3,		// sign_numb
 	3,		// sign_goal

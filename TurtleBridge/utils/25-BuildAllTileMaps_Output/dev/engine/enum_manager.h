@@ -12,9 +12,10 @@ typedef enum tag_enum_tile_type
 	tile_type_cloud01 = 6,
 	tile_type_cloud02 = 7,
 	tile_type_sea_turtles = 8,
-	tile_type_fly_turtles = 9,
-	tile_type_sign_numb = 10,
-	tile_type_sign_goal = 11,
+	tile_type_lie_turtles = 9,
+	tile_type_fly_turtles = 10,
+	tile_type_sign_numb = 11,
+	tile_type_sign_goal = 12,
 
 } enum_tile_type;
 
@@ -24,10 +25,18 @@ typedef enum tag_enum_turtle_type_sea
 	turtle_type_sea_turtleB1 = 1,
 	turtle_type_sea_turtleA2 = 2,
 	turtle_type_sea_turtleB2 = 3,
-	turtle_type_sea_turtleA3 = 4,
-	turtle_type_sea_turtleA4 = 5,
+	//turtle_type_sea_turtleA3 = 4,
+	//turtle_type_sea_turtleA4 = 5,
 
 } enum_turtle_type_sea;
+
+typedef enum tag_enum_turtle_type_lie
+{
+	turtle_type_lie_turtle01 = 0,
+	turtle_type_lie_turtle02 = 1,
+
+} enum_turtle_type_lie;
+
 
 typedef enum tag_enum_turtle_type_fly
 {
