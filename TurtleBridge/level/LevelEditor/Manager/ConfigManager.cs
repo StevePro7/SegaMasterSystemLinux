@@ -11,12 +11,31 @@ namespace LevelEditor
 			ScreenHigh = GetValue("ScreenHigh");
 			ScreenSize = GetValue("ScreenSize");
 			ScreenBott = ScreenHigh + 2 * ScreenSize;
+
 			SeaWavesAt = GetValue("SeaWavesAt");
+			if (SeaWavesAt < 2 || SeaWavesAt > 5)
+			{
+				SeaWavesAt = 3;
+			}
 
 			GridsXWide = ScreenWide / ScreenSize;
 			GridsYHigh = ScreenHigh / ScreenSize;
 		}
 
+		public void Increment()
+		{
+			if (SeaWavesAt < 5)
+			{
+				SeaWavesAt++;
+			}
+		}
+		public void Decrement()
+		{
+			if (SeaWavesAt > 2)
+			{
+				SeaWavesAt--;
+			}
+		}
 		private static int GetValue(string key)
 		{
 			return Convert.ToInt32(ConfigurationManager.AppSettings[key]);

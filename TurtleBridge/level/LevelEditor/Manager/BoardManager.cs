@@ -160,6 +160,8 @@ namespace LevelEditor
 			// Draw legend
 			bottom = gridY * size;
 			spriteBatch.Draw(assetManager.Assets[AssetType.TheLargeLegend], new Vector2(size * 2, bottom), Color.White);
+			spriteBatch.Draw(assetManager.Assets[AssetType.SeaWavesHeight], new Vector2(size * 3, bottom + size), Color.White);
+			spriteBatch.DrawString(assetManager.Font, configManager.SeaWavesAt.ToString(), new Vector2(size * 3, bottom), Color.Yellow);
 			spriteBatch.Draw(assetManager.Assets[AssetType.TheSmallLegend], new Vector2(size * 4, bottom), Color.White);
 			spriteBatch.Draw(assetManager.Assets[AssetType.GroundTextMidd], new Vector2(size * 4, bottom + size), Color.White);
 			spriteBatch.Draw(assetManager.Assets[AssetType.TreeLegendDraw], new Vector2(size * 5, bottom), Color.White);
