@@ -3,11 +3,15 @@
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
 
-#define GAME_TILES			0
-
-void engine_content_manager_load_tiles()
+void engine_content_manager_load_bgtiles()
 {
-	// Game tiles.
-	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) game_tiles__tiles__psgcompr, GAME_TILES );
-	devkit_SMS_loadBGPalette( ( void * ) game_tiles__palette__bin );
+	// BGgame tiles.
+	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) bggame_tiles__tiles__psgcompr, 0 );
+	devkit_SMS_loadBGPalette( ( void * ) bggame_tiles__palette__bin );
+}
+void engine_content_manager_load_sprites()
+{
+	// Sprite tiles.
+	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) sprite_tiles__tiles__psgcompr, SPRITE_TILES );
+	devkit_SMS_loadSpritePalette( ( void * ) sprite_tiles__palette__bin );
 }

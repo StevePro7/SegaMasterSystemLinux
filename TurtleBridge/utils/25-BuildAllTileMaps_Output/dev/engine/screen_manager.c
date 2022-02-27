@@ -1,41 +1,62 @@
 #include "screen_manager.h"
 #include "audio_manager.h"
 #include "content_manager.h"
+#include "enum_manager.h"
 #include "font_manager.h"
 #include "global_manager.h"
 #include "input_manager.h"
+#include "scroll_manager.h"
 #include "sprite_manager.h"
 #include "tile_manager.h"
 
+static unsigned char x = 16;
+static unsigned char y = 128-32;// 64;
+
+static void bonus_level();
+
 void engine_screen_manager_init()
 {
-	//engine_turtle_manager_draw_sea();
-	engine_font_manager_draw_text( "NEW TEST 7", 2, 0 );
+//	engine_font_manager_draw_text( "STEVEPRO STUDIOS", 4, 4 );
+	bonus_level();
 
-	engine_tile_manager_cloud01( 10, 4 );
-	engine_tile_manager_cloud02( 20, 2 );
-	//engine_turtle_manager_draw_title( 6, 2 );
-
-	//engine_tile_manager_turtle01( 5, 15 );
-	//engine_tile_manager_turtle04( 9, 5 );
-	//engine_tile_manager_turtle01( 5, 10 );
-	//engine_tile_manager_turtle02( 10, 11 );
-	//engine_tile_manager_turtle03( 15, 12 );
-	//engine_tile_manager_turtle04( 5, 16 );
-	//engine_tile_manager_turtle05( 10, 17 );
-	//engine_tile_manager_turtle06( 15, 18 );
-	//engine_tile_manager_turtle07( 25, 10 );
-	//engine_tile_manager_turtle08( 25, 16 );
-
-	//engine_tile_manager_section01( 12, 12 );
-	//engine_tile_manager_section02( 12, 2 );
-
-	//engine_tile_manager_ground01( 5, 5 );
-	//engine_tile_manager_ground02( 7, 14 );
+	engine_music_manager_play();
 }
 
 void engine_screen_manager_update()
 {
-	//unsigned char input;
-	//input = engine_input_manager_hold_down();
+	unsigned char delta = 0;
+	unsigned char input = 0;
+	input = engine_input_manager_move_right();
+	//input = engine_input_manager_hold_right();
+	if( input )
+	{
+		engine_scroll_manager_update();
+	}
+
+	input = engine_input_manager_hold_up();
+	if( input )
+	{
+		engine_font_manager_draw_text( " ", 0, 14 );
+	}
+	input = engine_input_manager_hold_down();
+	if( input )
+	{
+		engine_font_manager_draw_text( "X", 0, 14 );
+	}
+	engine_sprite_manager_draw( x + 0, y, delta + 0 );
+
+	// fish
+	//engine_sprite_manager_draw( x + 40, y, delta + 18 );
+	//engine_sprite_manager_draw( x + 80, y, delta + 19 );
+	//engine_sprite_manager_draw( x + 120, y, delta + 22 )
+
+	////engine_sprite_manager_fish( x + 96, y );
+
+	
+}
+
+static void bonus_level()
+{
+	engine_tile_manager_sky();
+	engine_tile_manager_sea();
 }
