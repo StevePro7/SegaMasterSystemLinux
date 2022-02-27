@@ -85,7 +85,7 @@ namespace LevelEditor
 					stack.Push(inputManager.MousePosition);
 				}
 
-				bool isValid = ValidateTilePosition(row, col);
+				bool isValid = ValidateTilePosition(row, col, selectorManager.Selector);
 				if (isValid)
 				{
 					Tiles[row, col] = selectorManager.Selector;
@@ -104,7 +104,7 @@ namespace LevelEditor
 					Vector2 position = stack.Pop();
 				}
 
-				bool isValid = ValidateTilePosition(row, col);
+				bool isValid = ValidateTilePosition(row, col, Constants.TileEmpty);
 				if (isValid)
 				{
 					Tiles[row, col] = Constants.TileEmpty;
@@ -124,13 +124,27 @@ namespace LevelEditor
 		}
 
 		// TODO - validate heights
-		private bool ValidateTilePosition(int row, int col)
+		private bool ValidateTilePosition(int row, int col, string select)
 		{
 			// Can't change sea waves
 			if (5 == row)
 			{
 				return false;
 			}
+
+			// Check immediately above sea waves.
+			if (Constants.TileLarge == select ||
+				Constants.TileSmall == select ||
+				Constants.TileEarth == select ||
+				Constants.TileDiver == select ||
+				Constants.TileHover == select)
+			{
+				if (4 != row)
+				{
+					return false;
+				}
+			}
+
 			return true;
 		}
 
