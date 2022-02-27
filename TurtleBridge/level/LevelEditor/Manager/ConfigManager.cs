@@ -22,13 +22,6 @@ namespace LevelEditor
 			GridsYHigh = ScreenHigh / ScreenSize;
 		}
 
-		public void Increment()
-		{
-			if (SeaWavesAt < 5)
-			{
-				SeaWavesAt++;
-			}
-		}
 		public void Decrement()
 		{
 			if (SeaWavesAt > 2)
@@ -36,6 +29,14 @@ namespace LevelEditor
 				SeaWavesAt--;
 			}
 		}
+		public void Increment()
+		{
+			if (SeaWavesAt < 5)
+			{
+				SeaWavesAt++;
+			}
+		}
+		
 		private static int GetValue(string key)
 		{
 			return Convert.ToInt32(ConfigurationManager.AppSettings[key]);

@@ -4,10 +4,12 @@ namespace LevelEditor
 {
 	public class SelectorManager
 	{
+		private ConfigManager configManager;
 		private InputManager inputManager;
 
-		public SelectorManager(InputManager inputManager)
+		public SelectorManager(ConfigManager configManager, InputManager inputManager)
 		{
+			this.configManager = configManager;
 			this.inputManager = inputManager;
 		}
 
@@ -20,6 +22,7 @@ namespace LevelEditor
 		{
 			bool left = inputManager.LeftButton();
 
+			
 			if (inputManager.KeyDown(Keys.D1) || (left && (inputManager.MousePosition.X == 0 || inputManager.MousePosition.X == 1) && (inputManager.MousePosition.Y == 6 || inputManager.MousePosition.Y == 7)))
 			{
 				Selector = Constants.TileEmpty;
@@ -27,6 +30,14 @@ namespace LevelEditor
 			if (inputManager.KeyDown(Keys.D2) || (left && inputManager.MousePosition.X == 2 && (inputManager.MousePosition.Y == 6 || inputManager.MousePosition.Y == 7)))
 			{
 				Selector = Constants.TileLarge;
+			}
+			if (inputManager.KeyHold(Keys.Up) && left && inputManager.MousePosition.X == 3 && inputManager.MousePosition.Y == 6)
+			{
+				configManager.Decrement();
+			}
+			if (inputManager.KeyHold(Keys.Down) && left && inputManager.MousePosition.X == 3 && inputManager.MousePosition.Y == 6)
+			{
+				configManager.Increment();
 			}
 			if (inputManager.KeyDown(Keys.D3) || (left && inputManager.MousePosition.X == 4 && inputManager.MousePosition.Y == 6))
 			{
