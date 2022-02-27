@@ -131,7 +131,11 @@ namespace LevelEditor
 			{
 				return false;
 			}
-
+			if (row < 2)
+			{
+				// TODO should be 2 or 3?
+				return false;
+			}
 			// Check immediately above sea waves.
 			if (Constants.TileLarge == select ||
 				Constants.TileSmall == select ||
@@ -149,10 +153,14 @@ namespace LevelEditor
 				Constants.TileArrow == select ||
 				Constants.TileGoals == select)
 			{
-				if (Tiles[row + 1, col] != Constants.TileEarth)
+				if (4 == row)
 				{
 					return false;
 				}
+				bool b1 = Tiles[row + 1, col] == Constants.TileEarth;
+				bool b2 = Tiles[row + 1, col] == Constants.TileSmall;
+				bool b3 = Tiles[row + 2, col] == Constants.TileLarge;
+				return b1 || b2 || b3;
 			}
 
 			return true;
