@@ -56,7 +56,7 @@ void engine_screen_manager_update()
 	
 }
 
-static void bonus_level()
+static void bonus_level00()
 {
 	engine_tile_manager_sky();
 	engine_tile_manager_sea();
@@ -83,7 +83,7 @@ static void bonus_level()
 	engine_tile_manager_fly_turtle( turtle_type_fly_turtle02, 26, 7 );
 }
 
-static void bonus_level01()
+static void bonus_level()
 {
 	engine_tile_manager_sky();
 	engine_tile_manager_sea();
