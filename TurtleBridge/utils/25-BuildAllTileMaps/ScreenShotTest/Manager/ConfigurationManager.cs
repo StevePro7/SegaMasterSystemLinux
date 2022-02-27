@@ -21,10 +21,8 @@ namespace ScreenShotTest
 			{
 				"font_tiles",
 				"wave_strip",
-				"section01_left_96x80",
-				//"section01_rght_96x80",
-				//"section02_left_96x48",
-				//"section02_rght_96x48",
+				"section01_rght_96x80",
+				"section02_rght_96x48",
 				"section03_norm_64x32",
 				"section04_norm_64x80",
 				"cloud01_32x24",
