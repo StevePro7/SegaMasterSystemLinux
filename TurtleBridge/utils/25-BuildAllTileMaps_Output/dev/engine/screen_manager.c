@@ -73,11 +73,11 @@ static void bonus_level()
 
 	engine_tile_manager_sea_turtle( turtle_type_sea_turtleA1, 13, 19 );
 	engine_tile_manager_sea_turtle( turtle_type_sea_turtleA2, 17, 20 );
-	//engine_tile_manager_sea_turtle( turtle_type_sea_turtleA3, 17, 11 );
-
 	engine_tile_manager_sea_turtle( turtle_type_sea_turtleB1, 22, 19 );
 	engine_tile_manager_sea_turtle( turtle_type_sea_turtleB2, 26, 20 );
-	//engine_tile_manager_sea_turtle( turtle_type_sea_turtleA4, 26, 11 );
+
+	engine_tile_manager_lie_turtle( turtle_type_lie_turtle01, 17, 11 );
+	engine_tile_manager_lie_turtle( turtle_type_lie_turtle02, 26, 11 );
 
 	engine_tile_manager_fly_turtle( turtle_type_fly_turtle01, 17, 7 );
 	engine_tile_manager_fly_turtle( turtle_type_fly_turtle02, 26, 7 );
