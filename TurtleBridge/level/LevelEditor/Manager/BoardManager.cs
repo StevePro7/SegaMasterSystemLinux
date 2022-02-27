@@ -79,15 +79,15 @@ namespace LevelEditor
 					return;
 				}
 
-				var oldTile = Tiles[row, col];
-				if (selectorManager.Selector != oldTile)
-				{
-					stack.Push(inputManager.MousePosition);
-				}
-
 				bool isValid = ValidateTilePosition(row, col, selectorManager.Selector);
 				if (isValid)
 				{
+					var oldTile = Tiles[row, col];
+					if (selectorManager.Selector != oldTile)
+					{
+						stack.Push(inputManager.MousePosition);
+					}
+
 					Tiles[row, col] = selectorManager.Selector;
 				}
 			}
@@ -99,14 +99,14 @@ namespace LevelEditor
 					return;
 				}
 
-				if (stack.Count > 0)
-				{
-					Vector2 position = stack.Pop();
-				}
-
 				bool isValid = ValidateTilePosition(row, col, Constants.TileEmpty);
 				if (isValid)
 				{
+					if (stack.Count > 0)
+					{
+						Vector2 position = stack.Pop();
+					}
+
 					Tiles[row, col] = Constants.TileEmpty;
 				}
 			}
@@ -140,6 +140,16 @@ namespace LevelEditor
 				Constants.TileHover == select)
 			{
 				if (4 != row)
+				{
+					return false;
+				}
+			}
+
+			if (Constants.TileTrees == select ||
+				Constants.TileArrow == select ||
+				Constants.TileGoals == select)
+			{
+				if (Tiles[row + 1, col] != Constants.TileEarth)
 				{
 					return false;
 				}
