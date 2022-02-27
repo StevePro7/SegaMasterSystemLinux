@@ -104,7 +104,11 @@ namespace LevelEditor
 					Vector2 position = stack.Pop();
 				}
 
-				Tiles[row, col] = Constants.TileEmpty;
+				bool isValid = ValidateTilePosition(row, col);
+				if (isValid)
+				{
+					Tiles[row, col] = Constants.TileEmpty;
+				}
 			}
 
 			if (inputManager.KeyHold(Keys.Delete))
@@ -122,6 +126,11 @@ namespace LevelEditor
 		// TODO - validate heights
 		private bool ValidateTilePosition(int row, int col)
 		{
+			// Can't change sea waves
+			if (5 == row)
+			{
+				return false;
+			}
 			return true;
 		}
 
