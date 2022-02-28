@@ -4,6 +4,7 @@
 #include "../object/tile_object.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/bank2.h"
+#include <stdlib.h>
 
 //static void draw_tile_scroll( const unsigned char *array, unsigned char x, unsigned char y, unsigned char w, unsigned char h, unsigned char col );
 
@@ -279,10 +280,10 @@ void engine_tile_manager_sky()
 
 void engine_tile_manager_sea()
 {
-	const unsigned char *tiles = bggame_tiles__tilemap__bin;
-	const unsigned char *array = tile_object_data[ tile_type_sea_tiles ];
-	const unsigned char wide = tile_object_wide[ tile_type_sea_tiles ];
-	const unsigned char high = tile_object_high[ tile_type_sea_tiles ];
+	unsigned char *tiles = NULL;
+	unsigned char *array = NULL;
+	unsigned char wide = 0;
+	unsigned char high = 0;
 	
 	unsigned char idx;
 	unsigned char val;
@@ -290,16 +291,27 @@ void engine_tile_manager_sea()
 
 	unsigned char x = 0;
 	unsigned char y = WAVES_HIGH;
+
+	devkit_SMS_mapROMBank( 2 );
+	tiles = bggame_tiles__tilemap__bin;
+	
+	array = tile_object_data[ tile_type_sea_tiles ];
+	wide = tile_object_wide[ tile_type_sea_tiles ];
+	high = tile_object_high[ tile_type_sea_tiles ];
+
+	devkit_SMS_mapROMBank( 2 );
 	for( row = 0; row < high; row++ )
 	{
 		for( col = 0; col < wide; col++ )
 		{
+			devkit_SMS_mapROMBank( 3 );
 			idx = row * wide + col;
 			val = array[ idx ];
 
 			// 8x pillars 4x tiles wide.
 			for( mul = 0; mul < 8; mul++ )
 			{
+				devkit_SMS_mapROMBank( 2 );
 				devkit_SMS_setNextTileatXY( x + col + ( mul * 4 ), y + row );
 				devkit_SMS_setTile( ( *tiles + val ) );
 			}
