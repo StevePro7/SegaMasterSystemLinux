@@ -7,17 +7,18 @@
 
 //static void draw_tile_scroll( const unsigned char *array, unsigned char x, unsigned char y, unsigned char w, unsigned char h, unsigned char col );
 
-void engine_tile_manager_blank_column( unsigned char column_X, unsigned char column_Y )
+void engine_tile_manager_blank_column( unsigned char col )
 {
 	const unsigned char *tiles = bggame_tiles__tilemap__bin;
 	unsigned char row;
 
-	void *src = ( void * ) &tiles[ SKYBLUE_TILE * 2 ];
-	//void *src = ( void * ) &tiles[ 8 ];
-	for( row = 8; row < column_Y; row++ )
+	//void *src = ( void * ) &tiles[ SKYBLUE_TILE * 2 ];
+	void *src = ( void * ) &tiles[ 16 ];
+	for( row = 10; row < WAVES_HIGH; row++ )
 	{
-		devkit_SMS_loadTileMap( column_X, row, src, 2 );
+		devkit_SMS_loadTileMap( col, row, src, 2 );
 	}
+
 }
 
 void engine_tile_manager_draw_pipe( unsigned char type, unsigned int x, unsigned char y, unsigned char col )
@@ -212,6 +213,10 @@ void engine_tile_manager_draw_tile( unsigned char type, unsigned char x, unsigne
 void engine_tile_manager_sea_turtle( unsigned char turtle, unsigned char x, unsigned char y )
 {
 	engine_tile_manager_draw_offset2( tile_type_sea_turtles, turtle, x, y );
+}
+void engine_tile_manager_lie_turtle( unsigned char turtle, unsigned char x, unsigned char y )
+{
+	engine_tile_manager_draw_offset2( tile_type_lie_turtles, turtle, x, y );
 }
 void engine_tile_manager_fly_turtle( unsigned char turtle, unsigned char x, unsigned char y )
 {

@@ -56,7 +56,7 @@ void engine_level_manager_update( unsigned char column_X, unsigned int scroll_X 
 	}
 
 	column_Y = WAVES_HIGH;
-	engine_tile_manager_blank_column( column_X, column_Y );
+	engine_tile_manager_blank_column( column_X );
 
 	// Draw existing planeB.
 	if( lo->planeB_type != tile_type_no_tiles )
