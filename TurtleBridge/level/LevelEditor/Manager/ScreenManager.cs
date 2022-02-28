@@ -38,6 +38,13 @@ namespace LevelEditor
 		public void Update(GameTime gameTime)
 		{
 			inputManager.Update();
+			//TODO - prettify this
+			//if (inputManager.KeyDown(Microsoft.Xna.Framework.Input.Keys.L))
+			//{
+			//	graphics.PreferredBackBufferWidth = 256;
+			//	//graphics.PreferredBackBufferHeight = configManager.ScreenBott;
+			//	graphics.ApplyChanges();
+			//}
 			boardManager.Update();
 			selectorManager.Update();
 			inputManager.Reset();
