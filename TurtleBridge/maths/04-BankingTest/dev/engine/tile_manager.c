@@ -3,7 +3,7 @@
 #include "global_manager.h"
 #include "../object/tile_object.h"
 #include "../devkit/_sms_manager.h"
-#include "../content/gfx.h"
+#include "../banks/bank2.h"
 
 //static void draw_tile_scroll( const unsigned char *array, unsigned char x, unsigned char y, unsigned char w, unsigned char h, unsigned char col );
 

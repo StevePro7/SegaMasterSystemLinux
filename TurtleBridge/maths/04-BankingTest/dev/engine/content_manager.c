@@ -2,6 +2,7 @@
 #include "../engine/global_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
+#include "../banks/bank2.h"
 
 void engine_content_manager_load_bgtiles()
 {
