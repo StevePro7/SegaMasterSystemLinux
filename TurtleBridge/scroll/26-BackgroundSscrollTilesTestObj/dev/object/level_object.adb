@@ -6,5 +6,3 @@ S:G$planeA_object_metadata$0$0({3}DA3d,SC:U),D,0,0
 S:G$planeB_object_column$0$0({2}DA1d,SI:U),D,0,0
 S:G$planeB_object_object$0$0({1}DA1d,SC:U),D,0,0
 S:G$planeB_object_metadata$0$0({1}DA1d,SC:U),D,0,0
-S:G$level_object_type$0$0({80}DA80d,SC:U),D,0,0
-S:G$level_object_sect$0$0({80}DA80d,SC:U),D,0,0
