@@ -37,6 +37,10 @@ void engine_scroll_manager_load()
 void engine_scroll_manager_update()
 {
 	struct_scroll_object *so = &global_scroll_object;
+	if( so->scroll_X >= 80 )
+	{
+		return;
+	}
 
 	so->scrollleft -= delta;
 	so->scrollRight += delta;

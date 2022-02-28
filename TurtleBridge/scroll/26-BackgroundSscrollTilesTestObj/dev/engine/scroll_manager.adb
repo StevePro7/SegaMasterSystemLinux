@@ -5,9 +5,9 @@ F:G$engine_scroll_manager_load$0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_scroll_manager_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lscroll_manager.engine_scroll_manager_update$so$1$73({2}DG,STtag_struct_scroll_object:S),R,0,0,[]
 F:G$engine_scroll_manager_getPosY$0$0({2}DF,SC:U),Z,0,0,0,0,0
-S:Lscroll_manager.engine_scroll_manager_getPosY$col$1$75({2}SI:U),B,1,4
+S:Lscroll_manager.engine_scroll_manager_getPosY$col$1$76({2}SI:U),B,1,4
 F:Fscroll_manager$print$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lscroll_manager.print$so$1$77({2}DG,STtag_struct_scroll_object:S),R,0,0,[]
+S:Lscroll_manager.print$so$1$78({2}DG,STtag_struct_scroll_object:S),R,0,0,[]
 T:Fscroll_manager$tag_struct_scroll_object[({0}S:S$scrollleft$0$0({1}SC:U),Z,0,0)({1}S:S$scrollRight$0$0({1}SC:U),Z,0,0)({2}S:S$scrollRightDivided8$0$0({1}SC:U),Z,0,0)({3}S:S$column_X$0$0({1}SC:U),Z,0,0)({4}S:S$scroll_X$0$0({2}SI:U),Z,0,0)]
 T:Fscroll_manager$tag_struct_level_object[({0}S:S$planeA_index$0$0({1}SC:U),Z,0,0)({1}S:S$planeA_count$0$0({1}SC:U),Z,0,0)({2}S:S$planeA_total$0$0({1}SC:U),Z,0,0)({3}S:S$planeA_type$0$0({1}SC:U),Z,0,0)({4}S:S$planeA_data$0$0({1}SC:U),Z,0,0)({5}S:S$planeA_wide$0$0({1}SC:U),Z,0,0)({6}S:S$planeA_repeat$0$0({1}SC:U),Z,0,0)({7}S:S$planeA_section$0$0({1}SC:U),Z,0,0)({8}S:S$planeB_index$0$0({1}SC:U),Z,0,0)({9}S:S$planeB_count$0$0({1}SC:U),Z,0,0)({10}S:S$planeB_type$0$0({1}SC:U),Z,0,0)({11}S:S$planeB_data$0$0({1}SC:U),Z,0,0)]
 S:Fscroll_manager$delta$0$0({1}SC:U),E,0,0
