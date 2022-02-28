@@ -97,3 +97,9 @@ state = up#1
 Jumping
 double jump	178	= 194 - 16
 single jump	 91 = 107 - 16
+
+
+
+28/02/2022
+TileManager	finalize APIs
+need override for scrolling that can draw any checkpoint in level plus one screen [32] or variable width
