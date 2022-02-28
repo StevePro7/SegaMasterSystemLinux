@@ -27,7 +27,7 @@ extern const unsigned int planeB_object_column[];
 extern const unsigned char planeB_object_object[];
 extern const unsigned char planeB_object_metadata[];
 
-extern const unsigned char level_object_type[];
-extern const unsigned char level_object_sect[];
+//extern const unsigned char level_object_type[];
+//extern const unsigned char level_object_sect[];
 
 #endif//_LEVEL_OBJECT_H_
