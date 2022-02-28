@@ -3,6 +3,6 @@ T:Flevel_object$tag_struct_level_object[({0}S:S$planeA_index$0$0({1}SC:U),Z,0,0)
 S:G$planeA_object_column$0$0({6}DA3d,SI:U),D,0,0
 S:G$planeA_object_object$0$0({3}DA3d,SC:U),D,0,0
 S:G$planeA_object_metadata$0$0({3}DA3d,SC:U),D,0,0
-S:G$planeB_object_column$0$0({2}DA1d,SI:U),D,0,0
-S:G$planeB_object_object$0$0({1}DA1d,SC:U),D,0,0
-S:G$planeB_object_metadata$0$0({1}DA1d,SC:U),D,0,0
+S:G$planeB_object_column$0$0({4}DA2d,SI:U),D,0,0
+S:G$planeB_object_object$0$0({2}DA2d,SC:U),D,0,0
+S:G$planeB_object_metadata$0$0({2}DA2d,SC:U),D,0,0

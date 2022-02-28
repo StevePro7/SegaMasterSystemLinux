@@ -8,7 +8,7 @@
 // Global variable.
 struct_scroll_object global_scroll_object;
 
-static unsigned char delta = 1;
+static unsigned char delta = 2;
 static void print();
 
 // Methods.
@@ -37,7 +37,7 @@ void engine_scroll_manager_load()
 void engine_scroll_manager_update()
 {
 	struct_scroll_object *so = &global_scroll_object;
-	if( so->scroll_X >= 80 )
+	if( so->scroll_X >= 100 )
 	{
 		return;
 	}

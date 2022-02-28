@@ -28,7 +28,7 @@ void engine_screen_manager_update()
 	unsigned char input = 0;
 	input = engine_input_manager_move_right();
 	//input = engine_input_manager_hold_right();
-	if( input )
+	//if( input )
 	{
 		engine_scroll_manager_update();
 	}
