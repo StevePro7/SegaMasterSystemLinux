@@ -19,6 +19,7 @@ namespace ScreenShotTest
 
 		private IDictionary<string, Texture2D> dictionary;
 		private string[] lines;
+		private string line;
 		private string file;
 		private int wide, width;
 		private int high, height;
@@ -32,12 +33,47 @@ namespace ScreenShotTest
 			length = files.Length;
 
 			file = ConfigurationManager.AppSettings["file"];
-			wide = Convert.ToInt32(ConfigurationManager.AppSettings["wide"]);
-			high = Convert.ToInt32(ConfigurationManager.AppSettings["high"]);
+
+			int col = 0;
+			int row = 0;
+			lines = File.ReadAllLines("files/" + file);
+			line = lines[0];
+			high = lines.Length;
+
+			if (line.EndsWith(","))
+			{
+				line = line.Substring(0, line.Length - 1);
+			}
+			var datas = line.Split(new char[] { ',' });
+			wide = datas.Length;
+
+			row = 0;
+			grid = new string[high, wide];
+			foreach (var line in lines)
+			{
+				col = 0;
+				var text = line;
+				if (line.EndsWith(","))
+				{
+					text = text.Substring(0, line.Length - 1);
+				}
+
+				datas = text.Split(new char[] { ',' });
+				foreach (var data in datas)
+				{
+					grid[row, col] = data.Trim().PadLeft(3, '0');
+					col++;
+				}
+
+				row++;
+			}
+
+			//wide = Convert.ToInt32(ConfigurationManager.AppSettings["wide"]);
+			//high = Convert.ToInt32(ConfigurationManager.AppSettings["high"]);
 
 			width = 8;
 			height = high * 8;
-			grid = new string[high, wide];
+			
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = width;
 			graphics.PreferredBackBufferHeight = height;
@@ -72,18 +108,6 @@ namespace ScreenShotTest
 			{
 				var file = i.ToString().PadLeft(3, '0');
 				dictionary[file] = Content.Load<Texture2D>("tiles/" + file);
-			}
-
-			int col = 0;
-			int row = 0;
-			lines = File.ReadAllLines(file);
-			foreach (var line in lines)
-			{
-				var datas = line.Split(new char[] { ',' });
-				foreach (var data in datas)
-				{
-					grid[row, col] = data.PadLeft(3, '0');
-				}
 			}
 
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
