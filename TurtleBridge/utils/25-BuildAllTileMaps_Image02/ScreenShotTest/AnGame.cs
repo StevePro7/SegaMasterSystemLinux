@@ -24,6 +24,7 @@ namespace ScreenShotTest
 		private int high, height;
 		private int length;
 		private bool save;
+		private string[,] grid;
 
 		public AnGame()
 		{
@@ -36,6 +37,7 @@ namespace ScreenShotTest
 
 			width = 8;
 			height = high * 8;
+			grid = new string[high, wide];
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = width;
 			graphics.PreferredBackBufferHeight = height;
@@ -72,7 +74,17 @@ namespace ScreenShotTest
 				dictionary[file] = Content.Load<Texture2D>("tiles/" + file);
 			}
 
+			int col = 0;
+			int row = 0;
 			lines = File.ReadAllLines(file);
+			foreach (var line in lines)
+			{
+				var datas = line.Split(new char[] { ',' });
+				foreach (var data in datas)
+				{
+					grid[row, col] = data.PadLeft(3, '0');
+				}
+			}
 
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
 			width = pp.BackBufferWidth;
