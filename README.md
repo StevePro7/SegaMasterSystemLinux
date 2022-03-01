@@ -103,3 +103,9 @@ single jump	 91 = 107 - 16
 28/02/2022
 TileManager	finalize APIs
 need override for scrolling that can draw any checkpoint in level plus one screen [32] or variable width
+
+
+01/03/2022
+strips
+E:\GitHub\StevePro8\SegaMasterSystemLinux\TurtleBridge\utils\25-BuildAllTileMaps_Image02\
+copy all tiles files as input and iterate and produce corresponding strips images for level output design
