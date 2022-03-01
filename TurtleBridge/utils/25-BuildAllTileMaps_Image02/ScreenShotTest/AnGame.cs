@@ -11,7 +11,7 @@ namespace ScreenShotTest
 	/// </summary>
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		const string file = "03";
+		const string file = "wave_strip.txt";
 
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
@@ -48,7 +48,7 @@ namespace ScreenShotTest
 		{
 			save = false;
 			save = true;
-			IsMouseVisible = true;
+			//IsMouseVisible = true;
 			base.Initialize();
 		}
 
@@ -116,8 +116,6 @@ namespace ScreenShotTest
 
 				GraphicsDevice.SetRenderTarget(null);
 				Texture2D resolvedTexture = (Texture2D)renderTarget;
-				//Stream stream = File.Create(file + "_org.png");
-				//resolvedTexture.SaveAsPng(stream, width, height);
 				Stream stream2 = File.Create(file + ".png");
 				resolvedTexture.SaveAsPng(stream2, width, height);
 
