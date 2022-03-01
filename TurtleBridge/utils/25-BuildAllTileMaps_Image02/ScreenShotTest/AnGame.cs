@@ -22,8 +22,8 @@ namespace ScreenShotTest
 		private string line;
 		private string file;
 		private string abbr;
-		private int wide, width;
-		private int high, height;
+		private int cols, width;
+		private int rows, height;
 		private int length;
 		private bool save;
 		private string[,] grid;
@@ -38,19 +38,19 @@ namespace ScreenShotTest
 
 			int col = 0;
 			int row = 0;
-			lines = File.ReadAllLines("files/" + file);
+			lines = File.ReadAllLines("files/" + file + ".csv");
 			line = lines[0];
-			high = lines.Length;
+			rows = lines.Length;
 
 			if (line.EndsWith(","))
 			{
 				line = line.Substring(0, line.Length - 1);
 			}
 			var datas = line.Split(new char[] { ',' });
-			wide = datas.Length;
+			cols = datas.Length;
 
 			row = 0;
-			grid = new string[high, wide];
+			grid = new string[rows, cols];
 			foreach (var line in lines)
 			{
 				col = 0;
@@ -70,11 +70,8 @@ namespace ScreenShotTest
 				row++;
 			}
 
-			//wide = Convert.ToInt32(ConfigurationManager.AppSettings["wide"]);
-			//high = Convert.ToInt32(ConfigurationManager.AppSettings["high"]);
-
 			width = 8;
-			height = high * 8;
+			height = rows * 8;
 			
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = width;
@@ -92,6 +89,11 @@ namespace ScreenShotTest
 		{
 			save = false;
 			//save = true;
+			if (null != ConfigurationManager.AppSettings["save"])
+			{
+				save = Convert.ToBoolean(ConfigurationManager.AppSettings["save"]);
+			}
+
 			IsMouseVisible = true;
 			base.Initialize();
 		}
@@ -150,47 +152,46 @@ namespace ScreenShotTest
 		{
 			if (save)
 			{
-				GraphicsDevice.SetRenderTarget(renderTarget);
-				GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.CornflowerBlue, 1, 0);
+				if (!Directory.Exists(abbr))
+				{
+					Directory.CreateDirectory("output/" + file);
+				}
+				for (int col = 0; col < cols; col++)
+				{
+					GraphicsDevice.SetRenderTarget(renderTarget);
+					GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.CornflowerBlue, 1, 0);
 
-				Draw();
-				base.Draw(gameTime);
+					Draw(col);
+					base.Draw(gameTime);
 
-				GraphicsDevice.SetRenderTarget(null);
-				Texture2D resolvedTexture = (Texture2D)renderTarget;
-				Stream stream2 = File.Create(file + ".png");
-				resolvedTexture.SaveAsPng(stream2, width, height);
+					GraphicsDevice.SetRenderTarget(null);
+					Texture2D resolvedTexture = (Texture2D)renderTarget;
+					var name = abbr + "-" + col.ToString().PadLeft(2, '0') + ".png";
+					Stream stream2 = File.Create("output/" + file + "/" + name);
+					resolvedTexture.SaveAsPng(stream2, width, height);
+				}
 
 				Exit();
 			}
 			else
 			{
-				Draw();
+				Draw(0);
 				base.Draw(gameTime);
 			}
 		}
 
-		private void Draw()
+		private void Draw(int col)
 		{
 			graphics.GraphicsDevice.Clear(Color.Black);
 			spriteBatch.Begin();
 
-			int rows = height / 8;
-			int cols = width / 8;
 			for (int row = 0; row < rows; row++)
 			{
-				var line = lines[row];
-				var texts = line.Split(new char[] { ',' });
-				for (int col = 0; col < cols; col++)
-				{
-					var text = texts[col];
-					var file = text.PadLeft(3, '0');
+				var key = grid[row, col];
+				Vector2 pos = new Vector2(0, row * 8);
+				Texture2D image = dictionary[key];
 
-					Vector2 pos = new Vector2(col * 8, row * 8);
-					Texture2D image = dictionary[file];
-
-					spriteBatch.Draw(image, pos, Color.White);
-				}
+				spriteBatch.Draw(image, pos, Color.White);
 			}
 
 			spriteBatch.End();
