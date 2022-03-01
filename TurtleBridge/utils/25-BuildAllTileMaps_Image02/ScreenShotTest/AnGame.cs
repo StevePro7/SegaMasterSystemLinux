@@ -2,7 +2,9 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
+using System;
 
 namespace ScreenShotTest
 {
@@ -11,27 +13,29 @@ namespace ScreenShotTest
 	/// </summary>
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		const string file = "wave_strip.txt";
-
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
 		RenderTarget2D renderTarget;
 
 		private IDictionary<string, Texture2D> dictionary;
 		private string[] lines;
-		private int width;
-		private int height;
+		private string file;
+		private int wide, width;
+		private int high, height;
 		private int length;
 		private bool save;
 
 		public AnGame()
 		{
-			var files = System.IO.Directory.GetFiles("Content/tiles", "*", System.IO.SearchOption.TopDirectoryOnly);
+			var files = Directory.GetFiles("Content/tiles", "*", System.IO.SearchOption.TopDirectoryOnly);
 			length = files.Length;
 
-			width = 64;
-			height = 32;
+			file = ConfigurationManager.AppSettings["file"];
+			wide = Convert.ToInt32(ConfigurationManager.AppSettings["wide"]);
+			high = Convert.ToInt32(ConfigurationManager.AppSettings["high"]);
 
+			width = 8;
+			height = high * 8;
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = width;
 			graphics.PreferredBackBufferHeight = height;
@@ -47,8 +51,8 @@ namespace ScreenShotTest
 		protected override void Initialize()
 		{
 			save = false;
-			save = true;
-			//IsMouseVisible = true;
+			//save = true;
+			IsMouseVisible = true;
 			base.Initialize();
 		}
 
@@ -68,7 +72,7 @@ namespace ScreenShotTest
 				dictionary[file] = Content.Load<Texture2D>("tiles/" + file);
 			}
 
-			lines = File.ReadAllLines(file + ".csv");
+			lines = File.ReadAllLines(file);
 
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
 			width = pp.BackBufferWidth;
