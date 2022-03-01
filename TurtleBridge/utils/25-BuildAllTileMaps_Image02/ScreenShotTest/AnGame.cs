@@ -21,6 +21,7 @@ namespace ScreenShotTest
 		private string[] lines;
 		private string line;
 		private string file;
+		private string abbr;
 		private int wide, width;
 		private int high, height;
 		private int length;
@@ -33,6 +34,7 @@ namespace ScreenShotTest
 			length = files.Length;
 
 			file = ConfigurationManager.AppSettings["file"];
+			abbr = ConfigurationManager.AppSettings["abbr"];
 
 			int col = 0;
 			int row = 0;
