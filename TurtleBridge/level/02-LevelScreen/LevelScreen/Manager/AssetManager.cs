@@ -14,7 +14,6 @@ namespace LevelScreen
 		public void LoadContent(ContentManager content)
 		{
 			Assets.Clear();
-			//Assets[(byte)AssetType.EmptySector] = content.Load<Texture2D>("01-AA");
 
 			// WaveEquator
 			Assets[(byte)AssetType.WaveEquator | 0x00] = content.Load<Texture2D>("WaveEquator/WS-00");
@@ -36,30 +35,97 @@ namespace LevelScreen
 			Assets[(byte)AssetType.LargeGround | 0x0A] = content.Load<Texture2D>("LargeGround/GL-10");
 			Assets[(byte)AssetType.LargeGround | 0x0B] = content.Load<Texture2D>("LargeGround/GL-11");
 
+			// SmallGround
+			Assets[(byte)AssetType.SmallGround | 0x00] = content.Load<Texture2D>("SmallGround/GS-00");
+			Assets[(byte)AssetType.SmallGround | 0x01] = content.Load<Texture2D>("SmallGround/GS-01");
+			Assets[(byte)AssetType.SmallGround | 0x02] = content.Load<Texture2D>("SmallGround/GS-02");
+			Assets[(byte)AssetType.SmallGround | 0x03] = content.Load<Texture2D>("SmallGround/GS-03");
+			Assets[(byte)AssetType.SmallGround | 0x04] = content.Load<Texture2D>("SmallGround/GS-04");
+			Assets[(byte)AssetType.SmallGround | 0x05] = content.Load<Texture2D>("SmallGround/GS-05");
+			Assets[(byte)AssetType.SmallGround | 0x06] = content.Load<Texture2D>("SmallGround/GS-06");
+			Assets[(byte)AssetType.SmallGround | 0x07] = content.Load<Texture2D>("SmallGround/GS-07");
+			Assets[(byte)AssetType.SmallGround | 0x08] = content.Load<Texture2D>("SmallGround/GS-08");
+			Assets[(byte)AssetType.SmallGround | 0x09] = content.Load<Texture2D>("SmallGround/GS-09");
+			Assets[(byte)AssetType.SmallGround | 0x0A] = content.Load<Texture2D>("SmallGround/GS-10");
+			Assets[(byte)AssetType.SmallGround | 0x0B] = content.Load<Texture2D>("SmallGround/GS-11");
 
+			// EarthGround
+			Assets[(byte)AssetType.EarthGround | 0x00] = content.Load<Texture2D>("EarthGround/ET-00");
+			Assets[(byte)AssetType.DiverTurtle | 0x01] = content.Load<Texture2D>("EarthGround/ET-01");
+			Assets[(byte)AssetType.DiverTurtle | 0x02] = content.Load<Texture2D>("EarthGround/ET-02");
+			Assets[(byte)AssetType.DiverTurtle | 0x03] = content.Load<Texture2D>("EarthGround/ET-03");
+			Assets[(byte)AssetType.DiverTurtle | 0x04] = content.Load<Texture2D>("EarthGround/ET-04");
+			Assets[(byte)AssetType.DiverTurtle | 0x05] = content.Load<Texture2D>("EarthGround/ET-05");
+			Assets[(byte)AssetType.DiverTurtle | 0x06] = content.Load<Texture2D>("EarthGround/ET-06");
+			Assets[(byte)AssetType.DiverTurtle | 0x07] = content.Load<Texture2D>("EarthGround/ET-07");
 
-			//Assets[AssetType.LargeStripMidd] = content.Load<Texture2D>("01-AA");
-			//Assets[AssetType.LargeStripLeft] = content.Load<Texture2D>("01-BB");
-			//Assets[AssetType.LargeStripRght] = content.Load<Texture2D>("01-CC");
-			//Assets[AssetType.SmalleStripMid] = content.Load<Texture2D>("02-AA");
-			//Assets[AssetType.SmallStripLeft] = content.Load<Texture2D>("02-BB");
-			//Assets[AssetType.SmallStripRght] = content.Load<Texture2D>("02-CC");
-			//Assets[AssetType.GroundTextMidd] = content.Load<Texture2D>("03-AA");
-			//Assets[AssetType.GroundTextLeft] = content.Load<Texture2D>("03-BB");
-			//Assets[AssetType.GroundTextRght] = content.Load<Texture2D>("03-CC");
-			//Assets[AssetType.BigPalmTreeAxe] = content.Load<Texture2D>("04-DD");
-			//Assets[AssetType.TheTurtleDiver] = content.Load<Texture2D>("diver_turtle");
-			//Assets[AssetType.TheTurtleHover] = content.Load<Texture2D>("hover_turtle");
-			//Assets[AssetType.TheTurtleFlyer] = content.Load<Texture2D>("flyer_turtle");
-			//Assets[AssetType.StevenSignGoal] = content.Load<Texture2D>("goal_sign");
-			//Assets[AssetType.StevenSignSend] = content.Load<Texture2D>("sign_send");
-			//Assets[AssetType.SeaWavesHeight] = content.Load<Texture2D>("05-sea");
-			//Assets[AssetType.LineHorizontal] = content.Load<Texture2D>("StripHorz");
-			//Assets[AssetType.LineVertically] = content.Load<Texture2D>("StripVert");
-			//Assets[AssetType.ErrorRoundBlob] = content.Load<Texture2D>("error");
-			//Assets[AssetType.TreeLegendDraw] = content.Load<Texture2D>("trees");
-			//Assets[AssetType.TheSmallLegend] = content.Load<Texture2D>("small");
-			//Assets[AssetType.TheLargeLegend] = content.Load<Texture2D>("large");
+			// DiverTurtle
+			Assets[(byte)AssetType.DiverTurtle | 0x00] = content.Load<Texture2D>("DiverTurtle/STA1-00");
+			Assets[(byte)AssetType.DiverTurtle | 0x01] = content.Load<Texture2D>("DiverTurtle/STA1-01");
+			Assets[(byte)AssetType.DiverTurtle | 0x02] = content.Load<Texture2D>("DiverTurtle/STA1-02");
+			Assets[(byte)AssetType.DiverTurtle | 0x03] = content.Load<Texture2D>("DiverTurtle/STA1-03");
+			Assets[(byte)AssetType.DiverTurtle | 0x04] = content.Load<Texture2D>("DiverTurtle/STA2-00");
+			Assets[(byte)AssetType.DiverTurtle | 0x05] = content.Load<Texture2D>("DiverTurtle/STA2-01");
+			Assets[(byte)AssetType.DiverTurtle | 0x06] = content.Load<Texture2D>("DiverTurtle/STA2-02");
+			Assets[(byte)AssetType.DiverTurtle | 0x07] = content.Load<Texture2D>("DiverTurtle/STA2-03");
+			Assets[(byte)AssetType.DiverTurtle | 0x08] = content.Load<Texture2D>("DiverTurtle/STB1-00");
+			Assets[(byte)AssetType.DiverTurtle | 0x09] = content.Load<Texture2D>("DiverTurtle/STB1-01");
+			Assets[(byte)AssetType.DiverTurtle | 0x0a] = content.Load<Texture2D>("DiverTurtle/STB1-02");
+			Assets[(byte)AssetType.DiverTurtle | 0x0B] = content.Load<Texture2D>("DiverTurtle/STB1-03");
+			Assets[(byte)AssetType.DiverTurtle | 0x0C] = content.Load<Texture2D>("DiverTurtle/STB2-00");
+			Assets[(byte)AssetType.DiverTurtle | 0x0D] = content.Load<Texture2D>("DiverTurtle/STB2-01");
+			Assets[(byte)AssetType.DiverTurtle | 0x0E] = content.Load<Texture2D>("DiverTurtle/STB2-02");
+			Assets[(byte)AssetType.DiverTurtle | 0x0F] = content.Load<Texture2D>("DiverTurtle/STB2-03");
+
+			// HoverTurtle
+			Assets[(byte)AssetType.HoverTurtle | 0x00] = content.Load<Texture2D>("HoverTurtle/HT01-00");
+			Assets[(byte)AssetType.SmallGround | 0x01] = content.Load<Texture2D>("HoverTurtle/HT01-01");
+			Assets[(byte)AssetType.SmallGround | 0x02] = content.Load<Texture2D>("HoverTurtle/HT01-02");
+			Assets[(byte)AssetType.SmallGround | 0x03] = content.Load<Texture2D>("HoverTurtle/HT01-03");
+			Assets[(byte)AssetType.HoverTurtle | 0x04] = content.Load<Texture2D>("HoverTurtle/HT02-00");
+			Assets[(byte)AssetType.HoverTurtle | 0x05] = content.Load<Texture2D>("HoverTurtle/HT02-01");
+			Assets[(byte)AssetType.HoverTurtle | 0x06] = content.Load<Texture2D>("HoverTurtle/HT02-02");
+			Assets[(byte)AssetType.HoverTurtle | 0x07] = content.Load<Texture2D>("HoverTurtle/HT02-03");
+
+			// FlyerTurtle
+			Assets[(byte)AssetType.FlyerTurtle | 0x00] = content.Load<Texture2D>("FlyerTurtle/FT01-00");
+			Assets[(byte)AssetType.SmallGround | 0x01] = content.Load<Texture2D>("FlyerTurtle/FT01-01");
+			Assets[(byte)AssetType.SmallGround | 0x02] = content.Load<Texture2D>("FlyerTurtle/FT01-02");
+			Assets[(byte)AssetType.SmallGround | 0x03] = content.Load<Texture2D>("FlyerTurtle/FT01-03");
+			Assets[(byte)AssetType.HoverTurtle | 0x04] = content.Load<Texture2D>("FlyerTurtle/FT02-00");
+			Assets[(byte)AssetType.HoverTurtle | 0x05] = content.Load<Texture2D>("FlyerTurtle/FT02-01");
+			Assets[(byte)AssetType.HoverTurtle | 0x06] = content.Load<Texture2D>("FlyerTurtle/FT02-02");
+			Assets[(byte)AssetType.FlyerTurtle | 0x07] = content.Load<Texture2D>("FlyerTurtle/FT02-03");
+
+			// TreesPlaneB
+			Assets[(byte)AssetType.TreesPlaneB | 0x00] = content.Load<Texture2D>("TreesPlaneB/TS-00");
+			Assets[(byte)AssetType.TreesPlaneB | 0x01] = content.Load<Texture2D>("TreesPlaneB/TS-01");
+			Assets[(byte)AssetType.TreesPlaneB | 0x02] = content.Load<Texture2D>("TreesPlaneB/TS-02");
+			Assets[(byte)AssetType.TreesPlaneB | 0x03] = content.Load<Texture2D>("TreesPlaneB/TS-03");
+			Assets[(byte)AssetType.TreesPlaneB | 0x04] = content.Load<Texture2D>("TreesPlaneB/TS-04");
+			Assets[(byte)AssetType.TreesPlaneB | 0x05] = content.Load<Texture2D>("TreesPlaneB/TS-05");
+			Assets[(byte)AssetType.TreesPlaneB | 0x06] = content.Load<Texture2D>("TreesPlaneB/TS-06");
+			Assets[(byte)AssetType.TreesPlaneB | 0x07] = content.Load<Texture2D>("TreesPlaneB/TS-07");
+
+			// SignSendAll
+			Assets[(byte)AssetType.SignSendAll | 0x00] = content.Load<Texture2D>("SignSendAll/SS-00");
+			Assets[(byte)AssetType.SignSendAll | 0x01] = content.Load<Texture2D>("SignSendAll/SS-01");
+			Assets[(byte)AssetType.SignSendAll | 0x02] = content.Load<Texture2D>("SignSendAll/SS-02");
+
+			// SignGoalAll
+			Assets[(byte)AssetType.SignGoalAll | 0x00] = content.Load<Texture2D>("SignGoalAll/SG-00");
+			Assets[(byte)AssetType.SignGoalAll | 0x01] = content.Load<Texture2D>("SignGoalAll/SG-01");
+			Assets[(byte)AssetType.SignGoalAll | 0x02] = content.Load<Texture2D>("SignGoalAll/SG-02");
+
+			// CloudLargeC
+			Assets[(byte)AssetType.CloudLargeC | 0x00] = content.Load<Texture2D>("CloudLargeC/CL-00");
+			Assets[(byte)AssetType.CloudLargeC | 0x01] = content.Load<Texture2D>("CloudLargeC/CL-01");
+			Assets[(byte)AssetType.CloudLargeC | 0x02] = content.Load<Texture2D>("CloudLargeC/CL-02");
+
+			// CloudSmallC
+			Assets[(byte)AssetType.CloudSmallC | 0x00] = content.Load<Texture2D>("CloudSmallC/CS-00");
+			Assets[(byte)AssetType.CloudLargeC | 0x01] = content.Load<Texture2D>("CloudSmallC/CS-01");
+			Assets[(byte)AssetType.CloudSmallC | 0x02] = content.Load<Texture2D>("CloudSmallC/CS-02");
 
 			Font = content.Load<SpriteFont>("Emulogic");
 		}
