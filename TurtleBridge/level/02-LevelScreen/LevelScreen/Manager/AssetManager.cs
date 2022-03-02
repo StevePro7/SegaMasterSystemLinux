@@ -60,8 +60,8 @@ namespace LevelScreen
 			//Assets[AssetType.TreeLegendDraw] = content.Load<Texture2D>("trees");
 			//Assets[AssetType.TheSmallLegend] = content.Load<Texture2D>("small");
 			//Assets[AssetType.TheLargeLegend] = content.Load<Texture2D>("large");
-			//Font = content.Load<SpriteFont>("Emulogic");
 
+			Font = content.Load<SpriteFont>("Emulogic");
 		}
 
 		public IDictionary<byte, Texture2D> Assets { get; private set; }
