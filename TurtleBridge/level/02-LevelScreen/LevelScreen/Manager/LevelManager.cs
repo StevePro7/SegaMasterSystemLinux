@@ -43,15 +43,14 @@ namespace LevelScreen
 
 			PlaneA = new byte[gridX];
 			PlaneB = new byte[gridX];
-			PlaneA[0] = 0x40;
-			PlaneA[1] = 0x41;
-			PlaneA[2] = 0x46;
-			PlaneA[3] = 0x47;
+			PlaneA[0] = 0x20;
+			PlaneA[1] = 0x21;
+			PlaneA[2] = 0x26;
+			PlaneA[3] = 0x27;
 
-			PlaneB[0] = 0x80;
-			PlaneB[1] = 0x81;
-			PlaneB[2] = 0x82;
-			PlaneB[3] = 0x83;
+			PlaneB[1] = 0xA0;
+			PlaneB[2] = 0xA1;
+			PlaneB[3] = 0xA2;
 		}
 
 		public void Draw(GraphicsDeviceManager graphics, SpriteBatch spriteBatch)
@@ -98,10 +97,10 @@ namespace LevelScreen
 					{
 						row -= 4 - 1;
 					}
-					else if (9 == upper || 10 == upper)
-					{
-						row -= 4 - 1;
-					}
+					//else if (9 == upper || 10 == upper)
+					//{
+					//	row -= 4 - 1;
+					//}
 
 					image = assetManager.Assets[index];
 					pos = new Vector2(col * sized, row * sized);
@@ -115,6 +114,10 @@ namespace LevelScreen
 					if (8 == upper)
 					{
 						rowB = row - 10;
+					}
+					else if (9 == upper || 10 == upper)
+					{
+						rowB = row - 3;
 					}
 
 					image = assetManager.Assets[index];
