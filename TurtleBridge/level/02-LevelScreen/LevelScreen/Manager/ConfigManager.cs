@@ -45,7 +45,7 @@ namespace LevelScreen
 		public int ScreenWide { get; private set; }
 		public int ScreenHigh { get; private set; }
 		public int ScreenSize { get; private set; }
-		public int ScreenBott { get; private set; }
+		//public int ScreenBott { get; private set; }
 		public int SeaWavesAt { get; private set; }
 
 		public int GridsXWide { get; private set; }

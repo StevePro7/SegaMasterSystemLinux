@@ -13,9 +13,10 @@ namespace LevelScreen
 		SpriteBatch spriteBatch;
 
 		AssetManager assetManager;
-		//BoardManager boardManager;
+		BoardManager boardManager;
 		ConfigManager configManager;
 		//InputManager inputManager;
+		LevelManager levelManager;
 		//MappingManager mappingManager;
 		//ScreenManager screenManager;
 		//SelectorManager selectorManager;
@@ -36,7 +37,8 @@ namespace LevelScreen
 			//mappingManager = new MappingManager();
 
 			//selectorManager = new SelectorManager(configManager, inputManager);
-			//boardManager = new BoardManager(assetManager, configManager, inputManager, mappingManager, selectorManager);
+			boardManager = new BoardManager(assetManager, configManager);//, inputManager, mappingManager, selectorManager);
+			levelManager = new LevelManager(assetManager, configManager);
 
 			//screenManager = new ScreenManager(
 			//	boardManager,
@@ -63,13 +65,14 @@ namespace LevelScreen
 
 			assetManager.Initialize();
 			configManager.Initialize();
-			//boardManager.Initialize();
+			boardManager.Initialize();
+			levelManager.Initialize();
 			//inputManager.Initialize();
 			//mappingManager.Initialize();
 			//selectorManager.Initialize();
 
 			graphics.PreferredBackBufferWidth = configManager.ScreenWide;
-			graphics.PreferredBackBufferHeight = configManager.ScreenBott;
+			graphics.PreferredBackBufferHeight = configManager.ScreenHigh;
 			graphics.ApplyChanges();
 
 			base.Initialize();
@@ -156,6 +159,7 @@ namespace LevelScreen
 
 		private void Draw()
 		{
+			levelManager.Draw(graphics, spriteBatch);
 			//screenManager.Draw();
 		}
 
