@@ -41,33 +41,37 @@ namespace LevelScreen
 			gridY = configManager.GridsYHigh;
 			earth = gridY - waves;
 
-			PlaneA = new byte[gridX];
-			PlaneB = new byte[gridX];
-			PlaneA[0] = 0x20;
-			PlaneA[1] = 0x21;
-			PlaneA[2] = 0x26;
-			PlaneA[3] = 0x27;
+			PlaneA = new byte[]
+			{
+				0x40, 0x41, 0x42, 0x43, 0x44, 0x45, 0x42, 0x43,
+				0x44, 0x45, 0x42, 0x43, 0x44, 0x45, 0x42, 0x43,
+				0x44, 0x45, 0x42, 0x43, 0x44, 0x45, 0x46, 0x47,
+				0x00, 0x00, 0x60, 0x61, 0x62, 0x63, 0x00, 0x00,
+			};
 
-			PlaneB[1] = 0xA0;
-			PlaneB[2] = 0xA1;
-			PlaneB[3] = 0xA2;
+			PlaneB = new byte[]
+			{
+				0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+				0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+				0x00, 0x90, 0x91, 0x92, 0x00, 0x00, 0x00, 0x00,
+				0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+			};
 		}
 
+		public void LoadContent()
+		{ 
+}
 		public void Draw(GraphicsDeviceManager graphics, SpriteBatch spriteBatch)
 		{
 			var color = new Color(0x55, 0xAA, 0xFF);
 			graphics.GraphicsDevice.Clear(color);
 			spriteBatch.Begin();
 			DrawWaves(spriteBatch);
-			DrawPlaneA(spriteBatch);
+			DrawTiles(spriteBatch);
 			spriteBatch.End();
 		}
 
-		private void DrawPlaneB(SpriteBatch spriteBatch)
-		{
-		}
-
-		private void DrawPlaneA(SpriteBatch spriteBatch)
+		private void DrawTiles(SpriteBatch spriteBatch)
 		{
 			int col = 0;
 			int row = 0;
@@ -78,7 +82,7 @@ namespace LevelScreen
 			byte index = 0;
 			Texture2D image = null;
 			Vector2 pos = Vector2.Zero;
-			for (col = 0; col < 4; col++)
+			for (col = 0; col < gridX; col++)
 			{
 				row = earth;
 				index = PlaneA[col];
@@ -97,10 +101,6 @@ namespace LevelScreen
 					{
 						row -= 4 - 1;
 					}
-					//else if (9 == upper || 10 == upper)
-					//{
-					//	row -= 4 - 1;
-					//}
 
 					image = assetManager.Assets[index];
 					pos = new Vector2(col * sized, row * sized);
