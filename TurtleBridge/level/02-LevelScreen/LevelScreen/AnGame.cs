@@ -12,7 +12,7 @@ namespace LevelScreen
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
 
-		//AssetManager assetManager;
+		AssetManager assetManager;
 		//BoardManager boardManager;
 		ConfigManager configManager;
 		//InputManager inputManager;
@@ -30,7 +30,7 @@ namespace LevelScreen
 			Content.RootDirectory = "Content";
 			Logger.Initialize();
 
-			//assetManager = new AssetManager();
+			assetManager = new AssetManager();
 			configManager = new ConfigManager();
 			//inputManager = new InputManager(configManager);
 			//mappingManager = new MappingManager();
@@ -61,7 +61,7 @@ namespace LevelScreen
 			//save = true;
 			IsMouseVisible = true;
 
-			//assetManager.Initialize();
+			assetManager.Initialize();
 			configManager.Initialize();
 			//boardManager.Initialize();
 			//inputManager.Initialize();
@@ -84,7 +84,7 @@ namespace LevelScreen
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 
-			//assetManager.LoadContent(Content);
+			assetManager.LoadContent(Content);
 			//mappingManager.LoadContent();
 			//screenManager.LoadContent(graphics, spriteBatch);
 

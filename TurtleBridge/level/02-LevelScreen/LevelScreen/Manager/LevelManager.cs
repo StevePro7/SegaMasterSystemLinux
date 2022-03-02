@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LevelScreen.Manager
 {
-	public class FileManager
+	public class LevelManager
 	{
 	}
 }
