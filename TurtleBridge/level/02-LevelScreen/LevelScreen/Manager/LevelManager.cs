@@ -41,18 +41,53 @@ namespace LevelScreen
 			gridY = configManager.GridsYHigh;
 			earth = gridY - waves;
 
-			Tiles = new byte[gridY, gridX];
+			Tiles = new byte[gridX];
+			Tiles[0] = 0x82;
 		}
 
 		public void Draw(GraphicsDeviceManager graphics, SpriteBatch spriteBatch)
 		{
 			graphics.GraphicsDevice.Clear(Color.CornflowerBlue);
 			spriteBatch.Begin();
-			DrawSea(spriteBatch);
+			DrawWaves(spriteBatch);
+			DrawTiles(spriteBatch);
 			spriteBatch.End();
 		}
 
-		private void DrawSea(SpriteBatch spriteBatch)
+		private void DrawTiles(SpriteBatch spriteBatch)
+		{
+			int col = 0;
+			int row = 0;
+
+			byte upper = 0;
+			byte lower = 0;
+
+			Texture2D image = null;
+			Vector2 pos = Vector2.Zero;
+
+			row = earth;
+			byte index = Tiles[col];
+			functionManager.ConvertByteToNibbles(index, ref upper, ref lower);
+			if (2 == upper || 8 == upper)
+			{
+				row -= 10 - 1;
+			}
+			else if (3 == upper)
+			{
+				row -= 6 - 1;
+			}
+			else if (4 == upper || 5 == upper || 6 == upper || 7 == upper)
+			{
+				row -= 4 - 1;
+			}
+
+
+			image = assetManager.Assets[index];
+			pos = new Vector2(col * sized, row * sized);
+			spriteBatch.Draw(image, pos, Color.White);
+		}
+
+		private void DrawWaves(SpriteBatch spriteBatch)
 		{
 			byte index = 0;
 			byte upper = (byte)AssetType.WaveEquator;
@@ -71,6 +106,6 @@ namespace LevelScreen
 			}
 		}
 
-		public byte[,] Tiles { get; private set; }
+		public byte[] Tiles { get; private set; }
 	}
 }

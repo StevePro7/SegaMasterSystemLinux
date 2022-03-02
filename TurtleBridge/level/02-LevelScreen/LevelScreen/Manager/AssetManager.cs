@@ -51,13 +51,13 @@ namespace LevelScreen
 
 			// EarthGround
 			Assets[(byte)AssetType.EarthGround | 0x00] = content.Load<Texture2D>("EarthGround/ET-00");
-			Assets[(byte)AssetType.DiverTurtle | 0x01] = content.Load<Texture2D>("EarthGround/ET-01");
-			Assets[(byte)AssetType.DiverTurtle | 0x02] = content.Load<Texture2D>("EarthGround/ET-02");
-			Assets[(byte)AssetType.DiverTurtle | 0x03] = content.Load<Texture2D>("EarthGround/ET-03");
-			Assets[(byte)AssetType.DiverTurtle | 0x04] = content.Load<Texture2D>("EarthGround/ET-04");
-			Assets[(byte)AssetType.DiverTurtle | 0x05] = content.Load<Texture2D>("EarthGround/ET-05");
-			Assets[(byte)AssetType.DiverTurtle | 0x06] = content.Load<Texture2D>("EarthGround/ET-06");
-			Assets[(byte)AssetType.DiverTurtle | 0x07] = content.Load<Texture2D>("EarthGround/ET-07");
+			Assets[(byte)AssetType.EarthGround | 0x01] = content.Load<Texture2D>("EarthGround/ET-01");
+			Assets[(byte)AssetType.EarthGround | 0x02] = content.Load<Texture2D>("EarthGround/ET-02");
+			Assets[(byte)AssetType.EarthGround | 0x03] = content.Load<Texture2D>("EarthGround/ET-03");
+			Assets[(byte)AssetType.EarthGround | 0x04] = content.Load<Texture2D>("EarthGround/ET-04");
+			Assets[(byte)AssetType.EarthGround | 0x05] = content.Load<Texture2D>("EarthGround/ET-05");
+			Assets[(byte)AssetType.EarthGround | 0x06] = content.Load<Texture2D>("EarthGround/ET-06");
+			Assets[(byte)AssetType.EarthGround | 0x07] = content.Load<Texture2D>("EarthGround/ET-07");
 
 			// DiverTurtle
 			Assets[(byte)AssetType.DiverTurtle | 0x00] = content.Load<Texture2D>("DiverTurtle/STA1-00");
@@ -79,9 +79,9 @@ namespace LevelScreen
 
 			// HoverTurtle
 			Assets[(byte)AssetType.HoverTurtle | 0x00] = content.Load<Texture2D>("HoverTurtle/HT01-00");
-			Assets[(byte)AssetType.SmallGround | 0x01] = content.Load<Texture2D>("HoverTurtle/HT01-01");
-			Assets[(byte)AssetType.SmallGround | 0x02] = content.Load<Texture2D>("HoverTurtle/HT01-02");
-			Assets[(byte)AssetType.SmallGround | 0x03] = content.Load<Texture2D>("HoverTurtle/HT01-03");
+			Assets[(byte)AssetType.HoverTurtle | 0x01] = content.Load<Texture2D>("HoverTurtle/HT01-01");
+			Assets[(byte)AssetType.HoverTurtle | 0x02] = content.Load<Texture2D>("HoverTurtle/HT01-02");
+			Assets[(byte)AssetType.HoverTurtle | 0x03] = content.Load<Texture2D>("HoverTurtle/HT01-03");
 			//Assets[(byte)AssetType.HoverTurtle | 0x04] = content.Load<Texture2D>("HoverTurtle/HT02-00");
 			//Assets[(byte)AssetType.HoverTurtle | 0x05] = content.Load<Texture2D>("HoverTurtle/HT02-01");
 			//Assets[(byte)AssetType.HoverTurtle | 0x06] = content.Load<Texture2D>("HoverTurtle/HT02-02");
@@ -89,9 +89,9 @@ namespace LevelScreen
 
 			// FlyerTurtle
 			Assets[(byte)AssetType.FlyerTurtle | 0x00] = content.Load<Texture2D>("FlyerTurtle/FT01-00");
-			Assets[(byte)AssetType.SmallGround | 0x01] = content.Load<Texture2D>("FlyerTurtle/FT01-01");
-			Assets[(byte)AssetType.SmallGround | 0x02] = content.Load<Texture2D>("FlyerTurtle/FT01-02");
-			Assets[(byte)AssetType.SmallGround | 0x03] = content.Load<Texture2D>("FlyerTurtle/FT01-03");
+			Assets[(byte)AssetType.FlyerTurtle | 0x01] = content.Load<Texture2D>("FlyerTurtle/FT01-01");
+			Assets[(byte)AssetType.FlyerTurtle | 0x02] = content.Load<Texture2D>("FlyerTurtle/FT01-02");
+			Assets[(byte)AssetType.FlyerTurtle | 0x03] = content.Load<Texture2D>("FlyerTurtle/FT01-03");
 			//Assets[(byte)AssetType.HoverTurtle | 0x04] = content.Load<Texture2D>("FlyerTurtle/FT02-00");
 			//Assets[(byte)AssetType.HoverTurtle | 0x05] = content.Load<Texture2D>("FlyerTurtle/FT02-01");
 			//Assets[(byte)AssetType.HoverTurtle | 0x06] = content.Load<Texture2D>("FlyerTurtle/FT02-02");
@@ -124,7 +124,7 @@ namespace LevelScreen
 
 			// CloudSmallC
 			Assets[(byte)AssetType.CloudSmallC | 0x00] = content.Load<Texture2D>("CloudSmallC/CS-00");
-			Assets[(byte)AssetType.CloudLargeC | 0x01] = content.Load<Texture2D>("CloudSmallC/CS-01");
+			Assets[(byte)AssetType.CloudSmallC | 0x01] = content.Load<Texture2D>("CloudSmallC/CS-01");
 			Assets[(byte)AssetType.CloudSmallC | 0x02] = content.Load<Texture2D>("CloudSmallC/CS-02");
 
 			//Font = content.Load<SpriteFont>("Emulogic");

@@ -16,10 +16,4 @@
 		CloudLargeC = 0xB0,
 		CloudSmallC = 0xC0,
 	}
-
-	public enum WavesType
-	{
-		HighTide = 0,
-		LowsTide = 1,
-	}
 }
