@@ -41,8 +41,9 @@ namespace LevelScreen
 			gridY = configManager.GridsYHigh;
 			earth = gridY - waves;
 
-			Tiles = new byte[gridX];
-			Tiles[0] = 0x82;
+			PlaneA = new byte[gridX];
+			PlaneB = new byte[gridX];
+			PlaneA[0] = 0xA1;
 		}
 
 		public void Draw(GraphicsDeviceManager graphics, SpriteBatch spriteBatch)
@@ -50,11 +51,11 @@ namespace LevelScreen
 			graphics.GraphicsDevice.Clear(Color.CornflowerBlue);
 			spriteBatch.Begin();
 			DrawWaves(spriteBatch);
-			DrawTiles(spriteBatch);
+			DrawPlaneA(spriteBatch);
 			spriteBatch.End();
 		}
 
-		private void DrawTiles(SpriteBatch spriteBatch)
+		private void DrawPlaneA(SpriteBatch spriteBatch)
 		{
 			int col = 0;
 			int row = 0;
@@ -66,7 +67,7 @@ namespace LevelScreen
 			Vector2 pos = Vector2.Zero;
 
 			row = earth;
-			byte index = Tiles[col];
+			byte index = PlaneA[col];
 			functionManager.ConvertByteToNibbles(index, ref upper, ref lower);
 			if (2 == upper || 8 == upper)
 			{
@@ -80,7 +81,10 @@ namespace LevelScreen
 			{
 				row -= 4 - 1;
 			}
-
+			else if (9 == upper || 10 == upper)
+			{
+				row -= 4 - 1;
+			}
 
 			image = assetManager.Assets[index];
 			pos = new Vector2(col * sized, row * sized);
@@ -106,6 +110,7 @@ namespace LevelScreen
 			}
 		}
 
-		public byte[] Tiles { get; private set; }
+		public byte[] PlaneA { get; private set; }
+		public byte[] PlaneB { get; private set; }
 	}
 }
