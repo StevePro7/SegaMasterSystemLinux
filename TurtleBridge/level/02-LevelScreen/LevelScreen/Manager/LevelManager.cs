@@ -56,7 +56,8 @@ namespace LevelScreen
 
 		public void Draw(GraphicsDeviceManager graphics, SpriteBatch spriteBatch)
 		{
-			graphics.GraphicsDevice.Clear(Color.CornflowerBlue);
+			var color = new Color(0x55, 0xAA, 0xFF);
+			graphics.GraphicsDevice.Clear(color);
 			spriteBatch.Begin();
 			DrawWaves(spriteBatch);
 			DrawPlaneA(spriteBatch);
