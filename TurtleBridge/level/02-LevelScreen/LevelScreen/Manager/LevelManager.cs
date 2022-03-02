@@ -68,6 +68,7 @@ namespace LevelScreen
 			spriteBatch.Begin();
 			DrawWaves(spriteBatch);
 			DrawTiles(spriteBatch);
+			//DrawLight(spriteBatch);
 			spriteBatch.End();
 		}
 
@@ -145,6 +146,10 @@ namespace LevelScreen
 				spriteBatch.Draw(image, pos, Color.White);
 			}
 		}
+
+		//private void DrawLight(spriteBatch)
+		//{
+		//}
 
 		public byte[] PlaneA { get; private set; }
 		public byte[] PlaneB { get; private set; }
