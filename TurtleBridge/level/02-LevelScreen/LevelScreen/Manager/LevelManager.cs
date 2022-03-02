@@ -43,7 +43,15 @@ namespace LevelScreen
 
 			PlaneA = new byte[gridX];
 			PlaneB = new byte[gridX];
-			PlaneA[0] = 0xA1;
+			PlaneA[0] = 0x40;
+			PlaneA[1] = 0x41;
+			PlaneA[2] = 0x46;
+			PlaneA[3] = 0x47;
+
+			PlaneB[0] = 0x80;
+			PlaneB[1] = 0x81;
+			PlaneB[2] = 0x82;
+			PlaneB[3] = 0x83;
 		}
 
 		public void Draw(GraphicsDeviceManager graphics, SpriteBatch spriteBatch)
@@ -55,40 +63,64 @@ namespace LevelScreen
 			spriteBatch.End();
 		}
 
+		private void DrawPlaneB(SpriteBatch spriteBatch)
+		{
+		}
+
 		private void DrawPlaneA(SpriteBatch spriteBatch)
 		{
 			int col = 0;
 			int row = 0;
+			int rowB = 0;
 
 			byte upper = 0;
 			byte lower = 0;
-
+			byte index = 0;
 			Texture2D image = null;
 			Vector2 pos = Vector2.Zero;
+			for (col = 0; col < 4; col++)
+			{
+				row = earth;
+				index = PlaneA[col];
+				functionManager.ConvertByteToNibbles(index, ref upper, ref lower);
+				if (0 != upper)
+				{
+					if (2 == upper)
+					{
+						row -= 10 - 1;
+					}
+					else if (3 == upper)
+					{
+						row -= 6 - 1;
+					}
+					else if (4 == upper || 5 == upper || 6 == upper || 7 == upper)
+					{
+						row -= 4 - 1;
+					}
+					else if (9 == upper || 10 == upper)
+					{
+						row -= 4 - 1;
+					}
 
-			row = earth;
-			byte index = PlaneA[col];
-			functionManager.ConvertByteToNibbles(index, ref upper, ref lower);
-			if (2 == upper || 8 == upper)
-			{
-				row -= 10 - 1;
-			}
-			else if (3 == upper)
-			{
-				row -= 6 - 1;
-			}
-			else if (4 == upper || 5 == upper || 6 == upper || 7 == upper)
-			{
-				row -= 4 - 1;
-			}
-			else if (9 == upper || 10 == upper)
-			{
-				row -= 4 - 1;
-			}
+					image = assetManager.Assets[index];
+					pos = new Vector2(col * sized, row * sized);
+					spriteBatch.Draw(image, pos, Color.White);
+				}
 
-			image = assetManager.Assets[index];
-			pos = new Vector2(col * sized, row * sized);
-			spriteBatch.Draw(image, pos, Color.White);
+				index = PlaneB[col];
+				functionManager.ConvertByteToNibbles(index, ref upper, ref lower);
+				if (0 != upper)
+				{
+					if (8 == upper)
+					{
+						rowB = row - 10;
+					}
+
+					image = assetManager.Assets[index];
+					pos = new Vector2(col * sized, rowB * sized);
+					spriteBatch.Draw(image, pos, Color.White);
+				}
+			}
 		}
 
 		private void DrawWaves(SpriteBatch spriteBatch)
