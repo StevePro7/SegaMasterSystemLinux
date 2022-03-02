@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LevelEditor
+namespace LevelScreen
 {
 #if WINDOWS || LINUX
     /// <summary>

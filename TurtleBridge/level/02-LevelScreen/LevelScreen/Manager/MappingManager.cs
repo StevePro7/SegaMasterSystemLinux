@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace LevelEditor
+namespace LevelScreen
 {
 	public class MappingManager
 	{

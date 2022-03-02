@@ -1,4 +1,4 @@
-﻿namespace LevelEditor
+﻿namespace LevelScreen
 {
 	public static class Constants
 	{

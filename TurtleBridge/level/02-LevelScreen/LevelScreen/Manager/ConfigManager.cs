@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Configuration;
 
-namespace LevelEditor
+namespace LevelScreen
 {
 	public class ConfigManager
 	{
@@ -10,7 +10,7 @@ namespace LevelEditor
 			ScreenWide = GetValue("ScreenWide");
 			ScreenHigh = GetValue("ScreenHigh");
 			ScreenSize = GetValue("ScreenSize");
-			ScreenBott = ScreenHigh + 2 * ScreenSize;
+			//ScreenBott = ScreenHigh + 2 * ScreenSize;
 
 			SeaWavesAt = GetValue("SeaWavesAt");
 			if (SeaWavesAt < 2 || SeaWavesAt > 5)
@@ -22,20 +22,20 @@ namespace LevelEditor
 			GridsYHigh = ScreenHigh / ScreenSize;
 		}
 
-		public void Decrement()
-		{
-			if (SeaWavesAt > 2)
-			{
-				SeaWavesAt--;
-			}
-		}
-		public void Increment()
-		{
-			if (SeaWavesAt < 5)
-			{
-				SeaWavesAt++;
-			}
-		}
+		//public void Decrement()
+		//{
+		//	if (SeaWavesAt > 2)
+		//	{
+		//		SeaWavesAt--;
+		//	}
+		//}
+		//public void Increment()
+		//{
+		//	if (SeaWavesAt < 5)
+		//	{
+		//		SeaWavesAt++;
+		//	}
+		//}
 		
 		private static int GetValue(string key)
 		{

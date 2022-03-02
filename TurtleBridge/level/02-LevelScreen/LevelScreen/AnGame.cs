@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace LevelEditor
+namespace LevelScreen
 {
 	/// <summary>
 	/// This is the main type for your game
@@ -12,13 +12,13 @@ namespace LevelEditor
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
 
-		AssetManager assetManager;
-		BoardManager boardManager;
+		//AssetManager assetManager;
+		//BoardManager boardManager;
 		ConfigManager configManager;
-		InputManager inputManager;
-		MappingManager mappingManager;
-		ScreenManager screenManager;
-		SelectorManager selectorManager;
+		//InputManager inputManager;
+		//MappingManager mappingManager;
+		//ScreenManager screenManager;
+		//SelectorManager selectorManager;
 
 		private int width;
 		private int height;
@@ -30,19 +30,19 @@ namespace LevelEditor
 			Content.RootDirectory = "Content";
 			Logger.Initialize();
 
-			assetManager = new AssetManager();
+			//assetManager = new AssetManager();
 			configManager = new ConfigManager();
-			inputManager = new InputManager(configManager);
-			mappingManager = new MappingManager();
+			//inputManager = new InputManager(configManager);
+			//mappingManager = new MappingManager();
 
-			selectorManager = new SelectorManager(configManager, inputManager);
-			boardManager = new BoardManager(assetManager, configManager, inputManager, mappingManager, selectorManager);
+			//selectorManager = new SelectorManager(configManager, inputManager);
+			//boardManager = new BoardManager(assetManager, configManager, inputManager, mappingManager, selectorManager);
 
-			screenManager = new ScreenManager(
-				boardManager,
-				inputManager,
-				selectorManager
-				);
+			//screenManager = new ScreenManager(
+			//	boardManager,
+			//	inputManager,
+			//	selectorManager
+			//	);
 		}
 
 		/// <summary>
@@ -61,12 +61,12 @@ namespace LevelEditor
 			//save = true;
 			IsMouseVisible = true;
 
-			assetManager.Initialize();
+			//assetManager.Initialize();
 			configManager.Initialize();
-			boardManager.Initialize();
-			inputManager.Initialize();
-			mappingManager.Initialize();
-			selectorManager.Initialize();
+			//boardManager.Initialize();
+			//inputManager.Initialize();
+			//mappingManager.Initialize();
+			//selectorManager.Initialize();
 
 			graphics.PreferredBackBufferWidth = configManager.ScreenWide;
 			graphics.PreferredBackBufferHeight = configManager.ScreenBott;
@@ -84,9 +84,9 @@ namespace LevelEditor
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 
-			assetManager.LoadContent(Content);
-			mappingManager.LoadContent();
-			screenManager.LoadContent(graphics, spriteBatch);
+			//assetManager.LoadContent(Content);
+			//mappingManager.LoadContent();
+			//screenManager.LoadContent(graphics, spriteBatch);
 
 
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
@@ -117,7 +117,7 @@ namespace LevelEditor
 				Exit();
 			}
 
-			screenManager.Update(gameTime);
+			//screenManager.Update(gameTime);
 			base.Update(gameTime);
 		}
 
@@ -156,7 +156,7 @@ namespace LevelEditor
 
 		private void Draw()
 		{
-			screenManager.Draw();
+			//screenManager.Draw();
 		}
 
 	}

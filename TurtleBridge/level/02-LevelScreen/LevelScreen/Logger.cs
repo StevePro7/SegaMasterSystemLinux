@@ -1,7 +1,7 @@
 ﻿using log4net;
 using log4net.Config;
 
-namespace LevelEditor
+namespace LevelScreen
 {
 	public static class Logger
 	{
