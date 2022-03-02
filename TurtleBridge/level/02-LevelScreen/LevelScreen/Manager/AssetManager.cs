@@ -127,7 +127,7 @@ namespace LevelScreen
 			Assets[(byte)AssetType.CloudLargeC | 0x01] = content.Load<Texture2D>("CloudSmallC/CS-01");
 			Assets[(byte)AssetType.CloudSmallC | 0x02] = content.Load<Texture2D>("CloudSmallC/CS-02");
 
-			Font = content.Load<SpriteFont>("Emulogic");
+			//Font = content.Load<SpriteFont>("Emulogic");
 		}
 
 		public IDictionary<byte, Texture2D> Assets { get; private set; }
