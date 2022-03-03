@@ -81,7 +81,7 @@ void engine_screen_manager_update()
 static void bonus_level()
 {
 	unsigned char col = 0;
-	unsigned char max = 8;
+	unsigned char max = 3;
 
 	engine_tile_manager_sky();
 	engine_tile_manager_seaX( 4 );
@@ -92,7 +92,7 @@ static void bonus_level()
 	engine_tile_manager_draw_flipX( tile_type_cloud_smallC, 25, 2 );
 
 	engine_tile_manager_draw_flipX( tile_type_large_ground, 0, 11 );
-	//engine_tile_manager_draw_flipX( tile_type_small_ground, 10, 10 );
+	engine_tile_manager_draw_normX( tile_type_small_ground, 20, 15 );
 	//engine_tile_manager_draw_normX( tile_type_trees_planeB, 10, 10 );
 	//engine_tile_manager_draw_normX( tile_type_sign_sendAll, 10, 10 );
 	//engine_tile_manager_draw_normX( tile_type_sign_goalAll, 20, 10 );
@@ -102,11 +102,11 @@ static void bonus_level()
 	// tile_type_flyer_turtle
 	for( col = 0; col < max; col++ )
 	{
-		engine_tile_manager_draw_scrollX( tile_type_trees_planeB, 20 + col, 10, col );
+		engine_tile_manager_draw_scrollX( tile_type_sign_goalAll, 20 + col, 12, col );
 	}
 
-	engine_tile_manager_draw_turtleX( tile_type_flyer_turtle, 0, 10, 8 );
-	engine_tile_manager_draw_turtleX( tile_type_flyer_turtle, 1, 20, 8 );
+	engine_tile_manager_draw_turtleX( tile_type_hover_turtle, 0, 7, 8 );
+	engine_tile_manager_draw_turtleX( tile_type_flyer_turtle, 1, 20, 7 );
 
 
 	// ORG

@@ -4,8 +4,8 @@ S:Lsprite_manager.load_variables$type$1$94({1}SC:U),B,1,4
 F:G$engine_tile_manager_seaX$0$0({2}DF,SV:S),Z,0,2,0,0,0
 S:Lsprite_manager.engine_tile_manager_seaX$equator$1$96({1}SC:U),B,1,4
 S:Lsprite_manager.engine_tile_manager_seaX$idx$1$97({1}SC:U),R,0,0,[b]
-S:Lsprite_manager.engine_tile_manager_seaX$val$1$97({1}SC:U),B,1,-4
-S:Lsprite_manager.engine_tile_manager_seaX$row$1$97({1}SC:U),B,1,-3
+S:Lsprite_manager.engine_tile_manager_seaX$val$1$97({1}SC:U),B,1,-3
+S:Lsprite_manager.engine_tile_manager_seaX$row$1$97({1}SC:U),B,1,-4
 S:Lsprite_manager.engine_tile_manager_seaX$col$1$97({1}SC:U),R,0,0,[d]
 S:Lsprite_manager.engine_tile_manager_seaX$mul$1$97({1}SC:U),R,0,0,[b]
 S:Lsprite_manager.engine_tile_manager_seaX$x$1$97({1}SC:U),R,0,0,[]
@@ -23,9 +23,9 @@ S:Lsprite_manager.engine_tile_manager_draw_flipX$idx$1$107({1}SC:U),R,0,0,[c]
 S:Lsprite_manager.engine_tile_manager_draw_flipX$val$1$107({1}SC:U),R,0,0,[c]
 S:Lsprite_manager.engine_tile_manager_draw_flipX$row$1$107({1}SC:U),R,0,0,[e]
 S:Lsprite_manager.engine_tile_manager_draw_flipX$col$1$107({1}SC:U),R,0,0,[c]
-S:Lsprite_manager.engine_tile_manager_draw_flipX$spc$1$107({1}SC:U),B,1,-4
-S:Lsprite_manager.engine_tile_manager_draw_flipX$tmp$1$107({1}SC:U),B,1,-1
-S:Lsprite_manager.engine_tile_manager_draw_flipX$flip$1$107({2}SI:U),B,1,-3
+S:Lsprite_manager.engine_tile_manager_draw_flipX$spc$1$107({1}SC:U),B,1,-3
+S:Lsprite_manager.engine_tile_manager_draw_flipX$tmp$1$107({1}SC:U),B,1,-4
+S:Lsprite_manager.engine_tile_manager_draw_flipX$flip$1$107({2}SI:U),B,1,-2
 F:G$engine_tile_manager_draw_offsetX$0$0({2}DF,SV:S),Z,0,2,0,0,0
 S:Lsprite_manager.engine_tile_manager_draw_offsetX$type$1$112({1}SC:U),B,1,4
 S:Lsprite_manager.engine_tile_manager_draw_offsetX$offset$1$112({1}SC:U),B,1,5
@@ -64,9 +64,9 @@ S:Lsprite_manager.engine_tile_manager_draw_groundX$idx$1$125({1}SC:U),R,0,0,[c]
 S:Lsprite_manager.engine_tile_manager_draw_groundX$val$1$125({1}SC:U),R,0,0,[c]
 S:Lsprite_manager.engine_tile_manager_draw_groundX$row$1$125({1}SC:U),R,0,0,[e]
 S:Lsprite_manager.engine_tile_manager_draw_groundX$col$1$125({1}SC:U),R,0,0,[c]
-S:Lsprite_manager.engine_tile_manager_draw_groundX$spc$1$125({1}SC:U),B,1,-4
+S:Lsprite_manager.engine_tile_manager_draw_groundX$spc$1$125({1}SC:U),B,1,-2
 S:Lsprite_manager.engine_tile_manager_draw_groundX$tmp$1$125({1}SC:U),R,0,0,[]
-S:Lsprite_manager.engine_tile_manager_draw_groundX$flip$1$125({2}SI:U),B,1,-3
+S:Lsprite_manager.engine_tile_manager_draw_groundX$flip$1$125({2}SI:U),B,1,-4
 S:Lsprite_manager.engine_tile_manager_draw_groundX$sloc0$1$0({1}SC:U),B,1,-1
 F:G$engine_sprite_manager_draw$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lsprite_manager.engine_sprite_manager_draw$x$1$130({1}SC:U),B,1,4
