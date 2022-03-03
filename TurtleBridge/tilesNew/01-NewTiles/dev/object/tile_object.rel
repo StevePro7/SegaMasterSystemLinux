@@ -1,5 +1,5 @@
 XL2
-H 9 areas 2A global symbols
+H 9 areas 2E global symbols
 M tile_object
 O -mz80
 S _hover_turtle_array Ref0000
@@ -34,11 +34,15 @@ S _section03_array Ref0000
 S _diver_turtle_array Ref0000
 S _empty_sector_array Ref0000
 S _flyer_turtle_array Ref0000
-A _CODE size 10 flags 0 addr 0
+A _CODE size 2A flags 0 addr 0
+S _tile_object_wideX Def0010
 S G$tile_object_high$0$0 Def0008
 S G$tile_object_wide$0$0 Def0000
 S _tile_object_high Def0008
 S _tile_object_wide Def0000
+S G$tile_object_highX$0$0 Def001D
+S G$tile_object_wideX$0$0 Def0010
+S _tile_object_highX Def001D
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 3E flags 0 addr 0
 S G$tile_object_data$0$0 Def0000
@@ -68,6 +72,14 @@ R 00 00 00 00
 T 08 00
 R 00 00 00 00
 T 08 00 03 0A 06 04 04 0A 03 03
+R 00 00 00 00
+T 10 00
+R 00 00 00 00
+T 10 00 01 04 0C 0C 08 04 04 04 08 03 03 06 04
+R 00 00 00 00
+T 1D 00
+R 00 00 00 00
+T 1D 00 01 05 0A 06 04 03 03 03 0A 03 03 03 03
 R 00 00 00 00
 T 00 00
 R 00 00 07 00

@@ -28,5 +28,5 @@ S:G$flyer_turtle_array$0$0({24}DA24d,SC:U),D,0,0
 S:G$trees_planeB_array$0$0({80}DA80d,SC:U),D,0,0
 S:G$sign_sendAll_array$0$0({9}DA9d,SC:U),D,0,0
 S:G$sign_goalAll_array$0$0({9}DA9d,SC:U),D,0,0
-S:G$cloud_largeC_array$0$0({12}DA12d,SC:U),D,0,0
-S:G$cloud_smallC_array$0$0({18}DA18d,SC:U),D,0,0
+S:G$cloud_largeC_array$0$0({18}DA18d,SC:U),D,0,0
+S:G$cloud_smallC_array$0$0({12}DA12d,SC:U),D,0,0

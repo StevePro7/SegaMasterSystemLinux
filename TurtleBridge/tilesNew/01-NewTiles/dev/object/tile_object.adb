@@ -34,5 +34,5 @@ S:G$cloud_largeC_array$0$0({0}DA0d,SC:U),D,0,0
 S:G$cloud_smallC_array$0$0({0}DA0d,SC:U),D,0,0
 S:G$tile_object_wide$0$0({8}DA8d,SC:U),D,0,0
 S:G$tile_object_high$0$0({8}DA8d,SC:U),D,0,0
-S:G$tile_object_wideX$0$0({0}DA0d,SC:U),D,0,0
-S:G$tile_object_highX$0$0({0}DA0d,SC:U),D,0,0
+S:G$tile_object_wideX$0$0({13}DA13d,SC:U),D,0,0
+S:G$tile_object_highX$0$0({13}DA13d,SC:U),D,0,0

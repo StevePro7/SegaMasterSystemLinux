@@ -82,7 +82,7 @@ static void bonus_level()
 {
 //	unsigned char y = 11;
 	engine_tile_manager_sky();
-	engine_tile_manager_sea();
+	engine_tile_manager_seaX(5);
 
 	// ORG
 	//engine_tile_manager_draw_flip( tile_type_section01, 0, 12, 16, 10, 6, 16 );
@@ -97,8 +97,8 @@ static void bonus_level()
 	//engine_tile_manager_sign( tile_type_sign_goal, 28, 13 );
 
 
-	engine_tile_manager_draw_tile( tile_type_section02, 16, 18);
-	engine_tile_manager_draw_tile( tile_type_section03, 24, 8 );
+	//engine_tile_manager_draw_tile( tile_type_section02, 16, 18);
+	//engine_tile_manager_draw_tile( tile_type_section03, 24, 8 );
 
 	// Clouds
 	//engine_tile_manager_draw_norm( tile_type_cloud01, 3, 1, 4, 3, 0, 4 );
@@ -107,11 +107,11 @@ static void bonus_level()
 	//engine_tile_manager_draw_flip( tile_type_cloud02, 10, 2, 6, 3, 0, 6 );
 
 	//engine_tile_manager_draw_flip( tile_type_section01b, 0, 16, 16, 6, 6, 16 );
-	
-	for( y = 0; y < 20; y++ )
-	{
-		//engine_font_manager_draw_data( y, 17, y );
-	}
+	//
+	//for( y = 0; y < 20; y++ )
+	//{
+	//	//engine_font_manager_draw_data( y, 17, y );
+	//}
 	
 	//engine_tile_manager_turtle( tile_type_sea_turtleA1, 2, 19 );
 
