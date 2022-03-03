@@ -15,7 +15,7 @@ namespace LevelScreen
 		AssetManager assetManager;
 		ConfigManager configManager;
 		//InputManager inputManager;
-		FileManager fileManager;
+		PlaneManager planeManager;
 		FunctionManager functionManager;
 		LevelManager levelManager;
 		
@@ -35,12 +35,12 @@ namespace LevelScreen
 			assetManager = new AssetManager();
 			configManager = new ConfigManager();
 			//inputManager = new InputManager(configManager);
-			fileManager = new FileManager(configManager);
+			planeManager = new PlaneManager(configManager);
 			functionManager = new FunctionManager();
 
 			//selectorManager = new SelectorManager(configManager, inputManager);
 			
-			levelManager = new LevelManager(assetManager, configManager, functionManager);
+			levelManager = new LevelManager(assetManager, configManager, planeManager, functionManager);
 
 			//screenManager = new ScreenManager(
 			//	boardManager,
@@ -67,7 +67,7 @@ namespace LevelScreen
 
 			assetManager.Initialize();
 			configManager.Initialize();
-			fileManager.Initialize();
+			planeManager.Initialize();
 			levelManager.Initialize();
 			//inputManager.Initialize();
 			//mappingManager.Initialize();

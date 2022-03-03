@@ -1,10 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LevelScreen
 {
@@ -12,6 +7,7 @@ namespace LevelScreen
 	{
 		private AssetManager assetManager;
 		private ConfigManager configManager;
+		private PlaneManager planeManager;
 		private FunctionManager functionManager;
 
 		//private readonly IList<String> lines;
@@ -23,11 +19,13 @@ namespace LevelScreen
 		public LevelManager(
 			AssetManager assetManager,
 			ConfigManager configManager,
+			PlaneManager planeManager,
 			FunctionManager functionManager
 			)
 		{
 			this.assetManager = assetManager;
 			this.configManager = configManager;
+			this.planeManager = planeManager;
 			this.functionManager = functionManager;
 		}
 
@@ -86,7 +84,7 @@ namespace LevelScreen
 			for (col = 0; col < gridX; col++)
 			{
 				row = earth;
-				index = PlaneA[col];
+				index = planeManager.PlaneA[col];
 				functionManager.ConvertByteToNibbles(index, ref upper, ref lower);
 				if (0 != upper)
 				{
@@ -108,7 +106,7 @@ namespace LevelScreen
 					spriteBatch.Draw(image, pos, Color.White);
 				}
 
-				index = PlaneB[col];
+				index = planeManager.PlaneB[col];
 				functionManager.ConvertByteToNibbles(index, ref upper, ref lower);
 				if (0 != upper)
 				{
@@ -151,7 +149,7 @@ namespace LevelScreen
 		//{
 		//}
 
-		public byte[] PlaneA { get; private set; }
-		public byte[] PlaneB { get; private set; }
+		//public byte[] PlaneA { get; private set; }
+		//public byte[] PlaneB { get; private set; }
 	}
 }

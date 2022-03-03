@@ -3,11 +3,11 @@ using System.IO;
 
 namespace LevelScreen
 {
-	public class FileManager
+	public class PlaneManager
 	{
 		private ConfigManager configManager;
 
-		public FileManager(ConfigManager configManager)
+		public PlaneManager(ConfigManager configManager)
 		{
 			this.configManager = configManager;
 		}
