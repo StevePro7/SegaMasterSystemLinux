@@ -42,7 +42,7 @@
     <Compile Include="AnGame.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="Manager\AssetManager.cs" />
-    <Compile Include="Manager\BoardManager.cs" />
+    <Compile Include="Manager\FileManager.cs" />
     <Compile Include="Manager\ConfigManager.cs" />
     <Compile Include="Manager\ConstManager.cs" />
     <Compile Include="Manager\EnumManager.cs" />
@@ -74,6 +74,12 @@
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="PlaneA.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PlaneB.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

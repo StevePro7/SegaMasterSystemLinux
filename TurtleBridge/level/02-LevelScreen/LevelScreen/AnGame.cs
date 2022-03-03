@@ -13,9 +13,9 @@ namespace LevelScreen
 		SpriteBatch spriteBatch;
 
 		AssetManager assetManager;
-		//BoardManager boardManager;
 		ConfigManager configManager;
 		//InputManager inputManager;
+		FileManager fileManager;
 		FunctionManager functionManager;
 		LevelManager levelManager;
 		
@@ -35,7 +35,7 @@ namespace LevelScreen
 			assetManager = new AssetManager();
 			configManager = new ConfigManager();
 			//inputManager = new InputManager(configManager);
-			//boardManager = new BoardManager(assetManager, configManager);//, inputManager, mappingManager, selectorManager);
+			fileManager = new FileManager(configManager);
 			functionManager = new FunctionManager();
 
 			//selectorManager = new SelectorManager(configManager, inputManager);
@@ -66,8 +66,8 @@ namespace LevelScreen
 			IsMouseVisible = true;
 
 			assetManager.Initialize();
-			//boardManager.Initialize();
 			configManager.Initialize();
+			fileManager.Initialize();
 			levelManager.Initialize();
 			//inputManager.Initialize();
 			//mappingManager.Initialize();
