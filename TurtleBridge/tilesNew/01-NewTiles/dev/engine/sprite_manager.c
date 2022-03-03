@@ -35,7 +35,6 @@ void engine_tile_manager_seaX( unsigned char equator )
 	}
 }
 
-
 void engine_tile_manager_draw_normX( unsigned char type, unsigned char x, unsigned char y )
 {
 	engine_tile_manager_draw_offsetX( type, 0, x, y );
@@ -69,7 +68,7 @@ void engine_tile_manager_draw_flipX( unsigned char type, unsigned char x, unsign
 	}
 }
 
-void engine_tile_manager_draw_moveX( unsigned char type, unsigned char move, unsigned char x, unsigned char y )
+void engine_tile_manager_draw_offsetX( unsigned char type, unsigned char offset, unsigned char x, unsigned char y )
 {
 	const unsigned char *tiles = bggame_tiles__tilemap__bin;
 	const unsigned char *array = tile_object_dataX[ type ];
@@ -81,7 +80,7 @@ void engine_tile_manager_draw_moveX( unsigned char type, unsigned char move, uns
 	unsigned char row, col;
 	unsigned char spc, tmp;
 
-	tmp = move * high;
+	tmp = offset * high;
 	for( row = 0; row < high; row++ )
 	{
 		spc = 0;
@@ -91,6 +90,62 @@ void engine_tile_manager_draw_moveX( unsigned char type, unsigned char move, uns
 			val = array[ idx ];
 			devkit_SMS_setNextTileatXY( x + spc, y + row );
 			devkit_SMS_setTile( ( *tiles + val ) );
+			spc++;
+		}
+	}
+}
+
+
+void engine_tile_manager_draw_scrollX( unsigned char type, unsigned int x, unsigned char y, unsigned char col )
+{
+	const unsigned char *tiles = bggame_tiles__tilemap__bin;
+	const unsigned char *array = tile_object_dataX[ type ];
+	const unsigned char wide = tile_object_wideX[ type ];
+	const unsigned char high = tile_object_highX[ type ];
+	unsigned char idx;
+	unsigned char val;
+	unsigned int off;
+	unsigned char row;
+
+	for( row = 0; row < high; row++ )
+	{
+		idx = row * wide + col;
+		val = array[ idx ];
+		off = val * 2;
+		devkit_SMS_loadTileMap( x, y + row, ( void * ) &tiles[ off ], 2 );
+	}
+}
+
+
+void engine_tile_manager_draw_turtleX( unsigned char type, unsigned char offset, unsigned int x, unsigned char y )
+{
+	engine_tile_manager_draw_offsetX( type, offset, x, y );
+}
+
+// TODO - left hand side ground large or small would be 4x repeat plus 8 so minimum 12 then 16, 20, 24 etc.
+void engine_tile_manager_draw_groundX( unsigned char type, unsigned char x, unsigned char y, unsigned char beg, unsigned char end )
+{
+	const unsigned char *tiles = bggame_tiles__tilemap__bin;
+	const unsigned char *array = tile_object_dataX[ type ];
+	const unsigned char wide = tile_object_wideX[ type ];
+	const unsigned char high = tile_object_highX[ type ];
+
+	unsigned char idx;
+	unsigned char val;
+	unsigned char row, col;
+	unsigned char spc, tmp;
+
+	unsigned int flip = devkit_TILE_FLIPPED_X();
+	for( row = 0; row < high; row++ )
+	{
+		spc = 0;
+		for( tmp = beg; tmp < end; tmp++ )
+		{
+			col = wide - tmp - 1;
+			idx = row * wide + col;
+			val = array[ idx ];
+			devkit_SMS_setNextTileatXY( x + spc, y + row );
+			devkit_SMS_setTile( ( *tiles + val ) | flip );
 			spc++;
 		}
 	}

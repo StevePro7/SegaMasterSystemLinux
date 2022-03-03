@@ -42,20 +42,20 @@ typedef enum tag_enum_tile_type
 
 } enum_tile_type;
 
-typedef enum tag_enum_tile_size
-{
-	tile_size_sea_tiles = 0,
-	tile_size_turtles = 1,
-	tile_size_signs = 1,
-	tile_size_section01 = 1,
-	tile_size_section02 = 2,
-	tile_size_section03 = 3,
-	tile_size_section04 = 4,
-	tile_size_section05 = 5,
-	tile_size_cloud01 = 6,
-	tile_size_cloud02 = 7,
-
-} enum_tile_size;
+//typedef enum tag_enum_tile_size
+//{
+//	tile_size_sea_tiles = 0,
+//	tile_size_turtles = 1,
+//	tile_size_signs = 1,
+//	tile_size_section01 = 1,
+//	tile_size_section02 = 2,
+//	tile_size_section03 = 3,
+//	tile_size_section04 = 4,
+//	tile_size_section05 = 5,
+//	tile_size_cloud01 = 6,
+//	tile_size_cloud02 = 7,
+//
+//} enum_tile_size;
 
 //typedef enum tag_enum_tile_flip
 //{
