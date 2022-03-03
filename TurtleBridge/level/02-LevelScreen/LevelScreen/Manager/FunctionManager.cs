@@ -21,8 +21,8 @@
 		}
 		public void ConvertNibblesToByte(byte upper, byte lower, ref byte b)
 		{
-			//b = (byte)(lower | (upper << 4));
-			b = (byte)(upper | lower);
+			b = (byte)(lower | (upper << 4));
+			//b = (byte)(upper | lower);
 		}
 	}
 }
