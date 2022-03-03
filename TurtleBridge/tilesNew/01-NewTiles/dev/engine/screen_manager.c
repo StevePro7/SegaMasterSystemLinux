@@ -84,6 +84,11 @@ static void bonus_level()
 	engine_tile_manager_sky();
 	engine_tile_manager_seaX(5);
 
+	engine_tile_manager_draw_normX( tile_type_cloud_smallC, 3, 2 );
+	engine_tile_manager_draw_normX( tile_type_cloud_largeC, 8, 2 );
+	engine_tile_manager_draw_flipX( tile_type_cloud_largeC, 18, 2 );
+	engine_tile_manager_draw_flipX( tile_type_cloud_smallC, 25, 2 );
+
 	// ORG
 	//engine_tile_manager_draw_flip( tile_type_section01, 0, 12, 16, 10, 6, 16 );
 	//engine_tile_manager_draw_norm( tile_type_section01, 23, 12, 16, 10, 0, 9 );

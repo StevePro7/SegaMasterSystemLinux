@@ -35,6 +35,68 @@ void engine_tile_manager_seaX( unsigned char equator )
 	}
 }
 
+
+void engine_tile_manager_draw_normX( unsigned char type, unsigned char x, unsigned char y )
+{
+	engine_tile_manager_draw_offsetX( type, 0, x, y );
+}
+
+void engine_tile_manager_draw_flipX( unsigned char type, unsigned char x, unsigned char y )
+{
+	const unsigned char *tiles = bggame_tiles__tilemap__bin;
+	const unsigned char *array = tile_object_dataX[ type ];
+	const unsigned char wide = tile_object_wideX[ type ];
+	const unsigned char high = tile_object_highX[ type ];
+
+	unsigned char idx;
+	unsigned char val;
+	unsigned char row, col;
+	unsigned char spc, tmp;
+
+	unsigned int flip = devkit_TILE_FLIPPED_X();
+	for( row = 0; row < high; row++ )
+	{
+		spc = 0;
+		for( tmp = 0; tmp < wide; tmp++ )
+		{
+			col = wide - tmp - 1;
+			idx = row * wide + col;
+			val = array[ idx ];
+			devkit_SMS_setNextTileatXY( x + spc, y + row );
+			devkit_SMS_setTile( ( *tiles + val ) | flip );
+			spc++;
+		}
+	}
+}
+
+void engine_tile_manager_draw_moveX( unsigned char type, unsigned char move, unsigned char x, unsigned char y )
+{
+	const unsigned char *tiles = bggame_tiles__tilemap__bin;
+	const unsigned char *array = tile_object_dataX[ type ];
+	const unsigned char wide = tile_object_wideX[ type ];
+	const unsigned char high = tile_object_highX[ type ];
+
+	unsigned char idx;
+	unsigned char val;
+	unsigned char row, col;
+	unsigned char spc, tmp;
+
+	tmp = move * high;
+	for( row = 0; row < high; row++ )
+	{
+		spc = 0;
+		for( col = 0; col < wide; col++ )
+		{
+			idx = ( row + tmp ) * wide + col;
+			val = array[ idx ];
+			devkit_SMS_setNextTileatXY( x + spc, y + row );
+			devkit_SMS_setTile( ( *tiles + val ) );
+			spc++;
+		}
+	}
+}
+
+
 // zoom sprites
 void engine_sprite_manager_draw( unsigned char x, unsigned char y, unsigned int tile )
 {

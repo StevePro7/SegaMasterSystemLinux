@@ -3,6 +3,10 @@
 
 void engine_tile_manager_seaX( unsigned char equator );
 
+void engine_tile_manager_draw_normX( unsigned char type, unsigned char x, unsigned char y );
+void engine_tile_manager_draw_flipX( unsigned char type, unsigned char x, unsigned char y );
+void engine_tile_manager_draw_moveX( unsigned char type, unsigned char move, unsigned char x, unsigned char y );
+
 void engine_sprite_manager_draw( unsigned char x, unsigned char y, unsigned int tile );
 void engine_sprite_manager_fish( unsigned char x, unsigned char y );
 
