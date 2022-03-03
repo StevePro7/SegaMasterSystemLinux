@@ -1,6 +1,6 @@
 #include "function_manager.h"
-#include "mask_manager.h"
-#include "..\devkit\_sms_manager.h"
+
+#define BYTE_NIBBLE_MASK	0x0F
 
 void engine_function_manager_convertXYtoZ( unsigned char divide, unsigned char x, unsigned char y, unsigned char *z )
 {

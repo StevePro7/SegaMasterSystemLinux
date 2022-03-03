@@ -23,3 +23,19 @@ extern const unsigned char fly_turtle02_array[];
 extern const unsigned char sign_numb_array[];
 extern const unsigned char sign_goal_array[];
 
+
+
+// NEW
+extern const unsigned char empty_sector_array[];
+extern const unsigned char wave_equator_array[];
+extern const unsigned char large_ground_array[];
+extern const unsigned char small_ground_array[];
+extern const unsigned char earth_ground_array[];
+extern const unsigned char diver_turtle_array[];
+extern const unsigned char hover_turtle_array[];
+extern const unsigned char flyer_turtle_array[];
+extern const unsigned char trees_planeB_array[];
+extern const unsigned char sign_sendAll_array[];
+extern const unsigned char sign_goalAll_array[];
+extern const unsigned char cloud_largeC_array[];
+extern const unsigned char cloud_smallC_array[];

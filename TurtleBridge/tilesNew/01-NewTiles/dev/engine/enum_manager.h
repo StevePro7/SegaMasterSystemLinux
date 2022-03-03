@@ -1,6 +1,24 @@
 #ifndef _ENUM_MANAGER_H_
 #define _ENUM_MANAGER_H_
 
+typedef enum tag_enum_tile_typeX
+{
+	tile_type_empty_sector = 0,
+	tile_type_wave_equator = 1,
+	tile_type_large_ground = 2,
+	tile_type_small_ground = 3,
+	tile_type_earth_ground = 4,
+	tile_type_diver_turtle = 5,
+	tile_type_hover_turtle = 6,
+	tile_type_flyer_turtle = 7,
+	tile_type_trees_planeB = 8,
+	tile_type_sign_sendAll = 9,
+	tile_type_sign_goalAll = 10,
+	tile_type_cloud_largeC = 11,
+	tile_type_cloud_smallC = 12,
+
+} enum_tile_typeX;
+
 typedef enum tag_enum_tile_type
 {
 	tile_type_sea_tiles = 0,
