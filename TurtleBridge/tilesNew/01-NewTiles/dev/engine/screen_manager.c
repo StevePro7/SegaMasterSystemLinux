@@ -84,7 +84,7 @@ static void bonus_level()
 	unsigned char max = 8;
 
 	engine_tile_manager_sky();
-	engine_tile_manager_seaX(2);
+	engine_tile_manager_seaX( 4 );
 
 	engine_tile_manager_draw_normX( tile_type_cloud_smallC, 3, 2 );
 	engine_tile_manager_draw_normX( tile_type_cloud_largeC, 8, 2 );

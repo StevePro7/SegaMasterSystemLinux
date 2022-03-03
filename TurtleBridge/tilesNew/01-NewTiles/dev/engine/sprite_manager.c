@@ -4,22 +4,34 @@
 #include "../object/tile_object.h"
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
+#include <stdlib.h>
 
 const unsigned char *tiles = bggame_tiles__tilemap__bin;
+unsigned char *array = NULL;
+unsigned char wide = 0;
+unsigned char high = 0;
+
+static void load_variables( unsigned char type )
+{
+	array = ( unsigned char * ) tile_object_dataX[ type ];
+	wide = tile_object_wideX[ type ];
+	high = tile_object_highX[ type ];
+}
 
 void engine_tile_manager_seaX( unsigned char equator )
 {
 	//const unsigned char *tiles = bggame_tiles__tilemap__bin;
-	const unsigned char *array = tile_object_dataX[ tile_type_wave_equator ];
-	const unsigned char wide = tile_object_wideX[ tile_type_wave_equator ];
-	const unsigned char high = tile_object_highX[ tile_type_wave_equator ];
-
+	//const unsigned char *array = tile_object_dataX[ tile_type_wave_equator ];
+	//const unsigned char wide = tile_object_wideX[ tile_type_wave_equator ];
+	//const unsigned char high = tile_object_highX[ tile_type_wave_equator ];
 	unsigned char idx;
 	unsigned char val;
 	unsigned char row, col, mul;
 
 	unsigned char x = 0;
 	unsigned char y = SCREEN_HIGH - equator;
+
+	load_variables( tile_type_wave_equator );
 	for( row = 0; row < equator; row++ )
 	{
 		for( col = 0; col < wide; col++ )
@@ -45,9 +57,9 @@ void engine_tile_manager_draw_normX( unsigned char type, unsigned char x, unsign
 void engine_tile_manager_draw_flipX( unsigned char type, unsigned char x, unsigned char y )
 {
 	//const unsigned char *tiles = bggame_tiles__tilemap__bin;
-	const unsigned char *array = tile_object_dataX[ type ];
-	const unsigned char wide = tile_object_wideX[ type ];
-	const unsigned char high = tile_object_highX[ type ];
+	//const unsigned char *array = tile_object_dataX[ type ];
+	//const unsigned char wide = tile_object_wideX[ type ];
+	//const unsigned char high = tile_object_highX[ type ];
 
 	unsigned char idx;
 	unsigned char val;
@@ -55,6 +67,8 @@ void engine_tile_manager_draw_flipX( unsigned char type, unsigned char x, unsign
 	unsigned char spc, tmp;
 
 	unsigned int flip = devkit_TILE_FLIPPED_X();
+
+	load_variables( type );
 	for( row = 0; row < high; row++ )
 	{
 		spc = 0;
@@ -73,16 +87,17 @@ void engine_tile_manager_draw_flipX( unsigned char type, unsigned char x, unsign
 void engine_tile_manager_draw_offsetX( unsigned char type, unsigned char offset, unsigned char x, unsigned char y )
 {
 	//const unsigned char *tiles = bggame_tiles__tilemap__bin;
-	const unsigned char *array = tile_object_dataX[ type ];
-	const unsigned char wide = tile_object_wideX[ type ];
-	const unsigned char high = tile_object_highX[ type ];
+	//const unsigned char *array = tile_object_dataX[ type ];
+	//const unsigned char wide = tile_object_wideX[ type ];
+	//const unsigned char high = tile_object_highX[ type ];
 
 	unsigned char idx;
 	unsigned char val;
 	unsigned char row, col;
 	unsigned char spc, tmp;
-
 	tmp = offset * high;
+
+	load_variables( type );
 	for( row = 0; row < high; row++ )
 	{
 		spc = 0;
@@ -101,14 +116,15 @@ void engine_tile_manager_draw_offsetX( unsigned char type, unsigned char offset,
 void engine_tile_manager_draw_scrollX( unsigned char type, unsigned int x, unsigned char y, unsigned char col )
 {
 	//const unsigned char *tiles = bggame_tiles__tilemap__bin;
-	const unsigned char *array = tile_object_dataX[ type ];
-	const unsigned char wide = tile_object_wideX[ type ];
-	const unsigned char high = tile_object_highX[ type ];
+	//const unsigned char *array = tile_object_dataX[ type ];
+	//const unsigned char wide = tile_object_wideX[ type ];
+	//const unsigned char high = tile_object_highX[ type ];
 	unsigned char idx;
 	unsigned char val;
 	unsigned int off;
 	unsigned char row;
 
+	load_variables( type );
 	for( row = 0; row < high; row++ )
 	{
 		idx = row * wide + col;
@@ -128,16 +144,16 @@ void engine_tile_manager_draw_turtleX( unsigned char type, unsigned char offset,
 void engine_tile_manager_draw_groundX( unsigned char type, unsigned char x, unsigned char y, unsigned char beg, unsigned char end )
 {
 	//const unsigned char *tiles = bggame_tiles__tilemap__bin;
-	const unsigned char *array = tile_object_dataX[ type ];
-	const unsigned char wide = tile_object_wideX[ type ];
-	const unsigned char high = tile_object_highX[ type ];
-
+	//const unsigned char *array = tile_object_dataX[ type ];
+	//const unsigned char wide = tile_object_wideX[ type ];
+	//const unsigned char high = tile_object_highX[ type ];
 	unsigned char idx;
 	unsigned char val;
 	unsigned char row, col;
 	unsigned char spc, tmp;
-
 	unsigned int flip = devkit_TILE_FLIPPED_X();
+
+	load_variables( type );
 	for( row = 0; row < high; row++ )
 	{
 		spc = 0;
