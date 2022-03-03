@@ -5,9 +5,11 @@
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
 
+const unsigned char *tiles = bggame_tiles__tilemap__bin;
+
 void engine_tile_manager_seaX( unsigned char equator )
 {
-	const unsigned char *tiles = bggame_tiles__tilemap__bin;
+	//const unsigned char *tiles = bggame_tiles__tilemap__bin;
 	const unsigned char *array = tile_object_dataX[ tile_type_wave_equator ];
 	const unsigned char wide = tile_object_wideX[ tile_type_wave_equator ];
 	const unsigned char high = tile_object_highX[ tile_type_wave_equator ];
@@ -42,7 +44,7 @@ void engine_tile_manager_draw_normX( unsigned char type, unsigned char x, unsign
 
 void engine_tile_manager_draw_flipX( unsigned char type, unsigned char x, unsigned char y )
 {
-	const unsigned char *tiles = bggame_tiles__tilemap__bin;
+	//const unsigned char *tiles = bggame_tiles__tilemap__bin;
 	const unsigned char *array = tile_object_dataX[ type ];
 	const unsigned char wide = tile_object_wideX[ type ];
 	const unsigned char high = tile_object_highX[ type ];
@@ -70,7 +72,7 @@ void engine_tile_manager_draw_flipX( unsigned char type, unsigned char x, unsign
 
 void engine_tile_manager_draw_offsetX( unsigned char type, unsigned char offset, unsigned char x, unsigned char y )
 {
-	const unsigned char *tiles = bggame_tiles__tilemap__bin;
+	//const unsigned char *tiles = bggame_tiles__tilemap__bin;
 	const unsigned char *array = tile_object_dataX[ type ];
 	const unsigned char wide = tile_object_wideX[ type ];
 	const unsigned char high = tile_object_highX[ type ];
@@ -98,7 +100,7 @@ void engine_tile_manager_draw_offsetX( unsigned char type, unsigned char offset,
 
 void engine_tile_manager_draw_scrollX( unsigned char type, unsigned int x, unsigned char y, unsigned char col )
 {
-	const unsigned char *tiles = bggame_tiles__tilemap__bin;
+	//const unsigned char *tiles = bggame_tiles__tilemap__bin;
 	const unsigned char *array = tile_object_dataX[ type ];
 	const unsigned char wide = tile_object_wideX[ type ];
 	const unsigned char high = tile_object_highX[ type ];
@@ -125,7 +127,7 @@ void engine_tile_manager_draw_turtleX( unsigned char type, unsigned char offset,
 // TODO - left hand side ground large or small would be 4x repeat plus 8 so minimum 12 then 16, 20, 24 etc.
 void engine_tile_manager_draw_groundX( unsigned char type, unsigned char x, unsigned char y, unsigned char beg, unsigned char end )
 {
-	const unsigned char *tiles = bggame_tiles__tilemap__bin;
+	//const unsigned char *tiles = bggame_tiles__tilemap__bin;
 	const unsigned char *array = tile_object_dataX[ type ];
 	const unsigned char wide = tile_object_wideX[ type ];
 	const unsigned char high = tile_object_highX[ type ];
