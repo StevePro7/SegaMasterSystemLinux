@@ -17,3 +17,16 @@ S:G$fly_turtle01_array$0$0({12}DA12d,SC:U),D,0,0
 S:G$fly_turtle02_array$0$0({12}DA12d,SC:U),D,0,0
 S:G$sign_numb_array$0$0({9}DA9d,SC:U),D,0,0
 S:G$sign_goal_array$0$0({9}DA9d,SC:U),D,0,0
+S:G$empty_sector_array$0$0({1}DA1d,SC:U),D,0,0
+S:G$wave_equator_array$0$0({20}DA20d,SC:U),D,0,0
+S:G$large_ground_array$0$0({120}DA120d,SC:U),D,0,0
+S:G$small_ground_array$0$0({72}DA72d,SC:U),D,0,0
+S:G$earth_ground_array$0$0({32}DA32d,SC:U),D,0,0
+S:G$diver_turtle_array$0$0({48}DA48d,SC:U),D,0,0
+S:G$hover_turtle_array$0$0({24}DA24d,SC:U),D,0,0
+S:G$flyer_turtle_array$0$0({24}DA24d,SC:U),D,0,0
+S:G$trees_planeB_array$0$0({80}DA80d,SC:U),D,0,0
+S:G$sign_sendAll_array$0$0({9}DA9d,SC:U),D,0,0
+S:G$sign_goalAll_array$0$0({9}DA9d,SC:U),D,0,0
+S:G$cloud_largeC_array$0$0({12}DA12d,SC:U),D,0,0
+S:G$cloud_smallC_array$0$0({18}DA18d,SC:U),D,0,0

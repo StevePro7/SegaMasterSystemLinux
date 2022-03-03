@@ -189,13 +189,82 @@ const unsigned char earth_ground_array[] =
 
 const unsigned char diver_turtle_array[] = 
 {
-	0
+	189,190,191,64,
+	192,193,194,195,
+	196,197,198,199,
+
+	200,201,202,64,
+	203,204,205,206,
+	207,208,209,210,
+
+	189,190,191,64,
+	211,193,212,213,
+	214,197,198,215,
+
+	200,201,202,64,
+	216,204,217,218,
+	207,208,209,219,
 };
 
-const unsigned char hover_turtle_array[] = { 0 };
-const unsigned char flyer_turtle_array[] = { 0 };
-const unsigned char trees_planeB_array[] = { 0 };
-const unsigned char sign_sendAll_array[] = { 0 };
-const unsigned char sign_goalAll_array[] = { 0 };
-const unsigned char cloud_largeC_array[] = { 0 };
-const unsigned char cloud_smallC_array[] = { 0 };
+const unsigned char hover_turtle_array[] = 
+{
+	189,190,191,64,
+	192,193,194,195,
+	220,221,222,223,
+
+	200,201,202,64,
+	203,204,205,206,
+	224,225,226,227,
+};
+
+const unsigned char flyer_turtle_array[] = 
+{
+	189,228,191,64,
+	192,229,194,195,
+	220,221,222,223,
+
+	189,230,191,64,
+	192,231,194,195,
+	220,221,222,223,
+};
+
+const unsigned char trees_planeB_array[] =
+{
+	64,130,131,132,133,134,64,64,
+	135,136,137,138,139,140,141,132,
+	142,143,144,145,146,147,148,149,
+	150,151,152,153,154,155,156,157,
+	64,64,158,159,64,64,64,64,
+	64,64,158,159,64,64,64,64,
+	64,64,158,159,64,64,64,64,
+	64,64,158,159,64,64,64,64,
+	64,64,160,161,64,64,64,64,
+	64,64,162,163,64,64,64,64,
+};
+
+const unsigned char sign_sendAll_array[] =
+{
+	232,233,234,
+	235,236,237,
+	64,238,64,
+};
+const unsigned char sign_goalAll_array[] =
+{
+	239,240,241,
+	242,243,244,
+	245,246,247,
+};
+
+const unsigned char cloud_largeC_array[] =
+{
+	174,175,176,177,178,179,
+	180,169,169,169,181,182,
+	183,184,185,186,187,188,
+};
+
+const unsigned char cloud_smallC_array[] = 
+{
+	164,165,166,167,
+	168,169,169,170,
+	171,172,173,64,
+};

@@ -28,9 +28,9 @@ S:Ltile_manager.engine_tile_manager_draw_norm$val$1$81({1}SC:U),R,0,0,[e]
 S:Ltile_manager.engine_tile_manager_draw_norm$row$1$81({1}SC:U),R,0,0,[c]
 S:Ltile_manager.engine_tile_manager_draw_norm$col$1$81({1}SC:U),R,0,0,[]
 S:Ltile_manager.engine_tile_manager_draw_norm$spc$1$81({1}SC:U),R,0,0,[b]
-S:Ltile_manager.engine_tile_manager_draw_norm$sloc0$1$0({1}SC:U),B,1,-3
+S:Ltile_manager.engine_tile_manager_draw_norm$sloc0$1$0({1}SC:U),B,1,-1
 S:Ltile_manager.engine_tile_manager_draw_norm$sloc1$1$0({1}SC:U),B,1,-2
-S:Ltile_manager.engine_tile_manager_draw_norm$sloc2$1$0({1}SC:U),B,1,-1
+S:Ltile_manager.engine_tile_manager_draw_norm$sloc2$1$0({1}SC:U),B,1,-3
 F:G$engine_tile_manager_draw_flip$0$0({2}DF,SV:S),Z,0,4,0,0,0
 S:Ltile_manager.engine_tile_manager_draw_flip$type$1$86({1}SC:U),B,1,4
 S:Ltile_manager.engine_tile_manager_draw_flip$x$1$86({1}SC:U),B,1,5
@@ -48,8 +48,8 @@ S:Ltile_manager.engine_tile_manager_draw_flip$col$1$87({1}SC:U),R,0,0,[e]
 S:Ltile_manager.engine_tile_manager_draw_flip$spc$1$87({1}SC:U),R,0,0,[b]
 S:Ltile_manager.engine_tile_manager_draw_flip$tmp$1$87({1}SC:U),R,0,0,[]
 S:Ltile_manager.engine_tile_manager_draw_flip$flip$1$87({2}SI:U),B,1,-5
-S:Ltile_manager.engine_tile_manager_draw_flip$sloc0$1$0({1}SC:U),B,1,-3
-S:Ltile_manager.engine_tile_manager_draw_flip$sloc1$1$0({1}SC:U),B,1,-1
+S:Ltile_manager.engine_tile_manager_draw_flip$sloc0$1$0({1}SC:U),B,1,-1
+S:Ltile_manager.engine_tile_manager_draw_flip$sloc1$1$0({1}SC:U),B,1,-3
 S:Ltile_manager.engine_tile_manager_draw_flip$sloc2$1$0({1}SC:U),B,1,-2
 F:G$engine_tile_manager_draw_tile$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Ltile_manager.engine_tile_manager_draw_tile$type$1$92({1}SC:U),B,1,4
@@ -84,8 +84,8 @@ S:Ltile_manager.engine_tile_manager_sky$col$1$100({1}SC:U),R,0,0,[b]
 F:G$engine_tile_manager_sea$0$0({2}DF,SV:S),Z,0,3,0,0,0
 S:Ltile_manager.engine_tile_manager_sea$tiles$1$105({2}DG,SC:U),R,0,0,[]
 S:Ltile_manager.engine_tile_manager_sea$array$1$105({2}DG,SC:U),R,0,0,[c,b]
-S:Ltile_manager.engine_tile_manager_sea$wide$1$105({1}SC:U),B,1,-6
-S:Ltile_manager.engine_tile_manager_sea$high$1$105({1}SC:U),B,1,-5
+S:Ltile_manager.engine_tile_manager_sea$wide$1$105({1}SC:U),B,1,-5
+S:Ltile_manager.engine_tile_manager_sea$high$1$105({1}SC:U),B,1,-6
 S:Ltile_manager.engine_tile_manager_sea$idx$1$105({1}SC:U),R,0,0,[l]
 S:Ltile_manager.engine_tile_manager_sea$val$1$105({1}SC:U),B,1,-7
 S:Ltile_manager.engine_tile_manager_sea$row$1$105({1}SC:U),R,0,0,[e]
@@ -93,8 +93,8 @@ S:Ltile_manager.engine_tile_manager_sea$col$1$105({1}SC:U),R,0,0,[d]
 S:Ltile_manager.engine_tile_manager_sea$x$1$105({1}SC:U),R,0,0,[]
 S:Ltile_manager.engine_tile_manager_sea$y$1$105({1}SC:U),R,0,0,[]
 S:Ltile_manager.engine_tile_manager_sea$sloc0$1$0({1}SC:U),B,1,-4
-S:Ltile_manager.engine_tile_manager_sea$sloc1$1$0({1}SC:U),B,1,-1
-S:Ltile_manager.engine_tile_manager_sea$sloc2$1$0({2}SI:S),B,1,-3
+S:Ltile_manager.engine_tile_manager_sea$sloc1$1$0({1}SC:U),B,1,-3
+S:Ltile_manager.engine_tile_manager_sea$sloc2$1$0({2}SI:S),B,1,-2
 F:Ftile_manager$draw_tile_scroll$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Ltile_manager.draw_tile_scroll$array$1$110({2}DG,SC:U),B,1,4
 S:Ltile_manager.draw_tile_scroll$x$1$110({1}SC:U),B,1,6
@@ -123,8 +123,8 @@ S:Ltile_manager.draw_tile_fl02$row$1$115({1}SC:U),R,0,0,[e]
 S:Ltile_manager.draw_tile_fl02$col$1$115({1}SC:U),R,0,0,[c]
 S:Ltile_manager.draw_tile_fl02$tmp$1$115({1}SC:U),R,0,0,[]
 S:Ltile_manager.draw_tile_fl02$flip$1$115({2}SI:U),B,1,-5
-S:Ltile_manager.draw_tile_fl02$sloc0$1$0({1}SC:U),B,1,-2
-S:Ltile_manager.draw_tile_fl02$sloc1$1$0({1}SC:U),B,1,-1
+S:Ltile_manager.draw_tile_fl02$sloc0$1$0({1}SC:U),B,1,-1
+S:Ltile_manager.draw_tile_fl02$sloc1$1$0({1}SC:U),B,1,-2
 S:Ltile_manager.draw_tile_fl02$sloc2$1$0({1}SC:U),B,1,-3
 F:Ftile_manager$draw_tile_flip$0$0({2}DF,SV:S),Z,0,2,0,0,0
 S:Ltile_manager.draw_tile_flip$array$1$120({2}DG,SC:U),B,1,4
@@ -139,8 +139,8 @@ S:Ltile_manager.draw_tile_flip$row$1$121({1}SC:U),R,0,0,[c]
 S:Ltile_manager.draw_tile_flip$col$1$121({1}SC:U),R,0,0,[e]
 S:Ltile_manager.draw_tile_flip$tmp$1$121({1}SC:U),R,0,0,[b]
 S:Ltile_manager.draw_tile_flip$flip$1$121({2}SI:U),B,1,-5
-S:Ltile_manager.draw_tile_flip$sloc0$1$0({1}SC:U),B,1,-1
-S:Ltile_manager.draw_tile_flip$sloc1$1$0({1}SC:U),B,1,-3
+S:Ltile_manager.draw_tile_flip$sloc0$1$0({1}SC:U),B,1,-3
+S:Ltile_manager.draw_tile_flip$sloc1$1$0({1}SC:U),B,1,-1
 S:Ltile_manager.draw_tile_flip$sloc2$1$0({1}SC:U),B,1,-2
 F:Ftile_manager$draw_tile_next$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Ltile_manager.draw_tile_next$array$1$126({2}DG,SC:U),B,1,4
@@ -156,6 +156,7 @@ S:Ltile_manager.draw_tile_next$col$1$127({1}SC:U),R,0,0,[b]
 S:Ltile_manager.draw_tile_next$sloc0$1$0({1}SC:U),B,1,-2
 S:Ltile_manager.draw_tile_next$sloc1$1$0({1}SC:U),B,1,-1
 S:G$tile_object_data$0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$tile_object_dataX$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$devkit_SMS_init$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOnFeature$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOffFeature$0$0({2}DF,SV:S),C,0,0

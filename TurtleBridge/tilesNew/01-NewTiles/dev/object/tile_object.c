@@ -45,5 +45,36 @@ extern const unsigned char *tile_object_dataX[] =
 	cloud_smallC_array,
 };
 
-extern const unsigned char tile_object_wideX[];
-extern const unsigned char tile_object_highX[];
+extern const unsigned char tile_object_wideX[] =
+{
+	1,		// empty_sector
+	4,		// wave_equator
+	12,		// large_ground
+	12,		// small_ground
+	8,		// earth_ground
+	4,		// diver_turtle
+	4,		// hover_turtle
+	4,		// flyer_turtle
+	8,		// trees_planeB
+	3,		// sign_sendAll
+	3,		// sign_goalAll
+	6,		// cloud_smallC
+	4,		// 	cloud_largeC
+};
+
+extern const unsigned char tile_object_highX[] =
+{
+	1,		// empty_sector
+	5,		// wave_equator
+	10,		// large_ground
+	6,		// small_ground
+	4,		// earth_ground
+	3,		// diver_turtle
+	3,		// hover_turtle
+	3,		// flyer_turtle
+	10,		// trees_planeB
+	3,		// sign_sendAll
+	3,		// sign_goalAll
+	3,		// cloud_smallC
+	3,		// 	cloud_largeC
+};

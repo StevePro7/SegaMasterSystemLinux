@@ -1,7 +1,8 @@
 XL2
-H 9 areas 1A global symbols
+H 9 areas 2A global symbols
 M tile_object
 O -mz80
+S _hover_turtle_array Ref0000
 S _sea_turtleA1_array Ref0000
 S _fly_turtle01_array Ref0000
 S _sea_turtleB1_array Ref0000
@@ -13,33 +14,52 @@ S _sea_turtleB3_array Ref0000
 S _sign_goal_array Ref0000
 S _cloud01_array Ref0000
 S _section01b_array Ref0000
+S _large_ground_array Ref0000
 S _cloud02_array Ref0000
 S _section02b_array Ref0000
 S _sea_tiles_array Ref0000
 S .__.ABS. Def0000
+S _earth_ground_array Ref0000
 S _sign_numb_array Ref0000
+S _cloud_largeC_array Ref0000
+S _small_ground_array Ref0000
+S _sign_goalAll_array Ref0000
+S _cloud_smallC_array Ref0000
+S _sign_sendAll_array Ref0000
+S _wave_equator_array Ref0000
+S _trees_planeB_array Ref0000
 S _section01_array Ref0000
 S _section02_array Ref0000
 S _section03_array Ref0000
+S _diver_turtle_array Ref0000
+S _empty_sector_array Ref0000
+S _flyer_turtle_array Ref0000
 A _CODE size 10 flags 0 addr 0
 S G$tile_object_high$0$0 Def0008
 S G$tile_object_wide$0$0 Def0000
 S _tile_object_high Def0008
 S _tile_object_wide Def0000
 A _DATA size 0 flags 0 addr 0
-A _INITIALIZED size 24 flags 0 addr 0
+A _INITIALIZED size 3E flags 0 addr 0
 S G$tile_object_data$0$0 Def0000
 S _tile_object_data Def0000
+S G$tile_object_dataX$0$0 Def0024
+S _tile_object_dataX Def0024
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
-A _INITIALIZER size 24 flags 0 addr 0
+A _INITIALIZER size 3E flags 0 addr 0
 S Ftile_object$__xinit_tile_object_data$0$0 Def0000
+S Ftile_object$__xinit_tile_object_dataX$0$0 Def0024
 A _CABS size 0 flags 8 addr 0
 T 00 00
 R 00 00 02 00
 T 00 00
+R 00 00 02 00
+T 24 00
+R 00 00 02 00
+T 24 00
 R 00 00 02 00
 T 00 00
 R 00 00 00 00
@@ -52,14 +72,26 @@ R 00 00 00 00
 T 00 00
 R 00 00 07 00
 T 00 00 00 00 00 00 00 00
-R 00 00 07 00 02 02 0D 00 02 04 10 00 02 06 0A 00
+R 00 00 07 00 02 02 0F 00 02 04 1A 00 02 06 0B 00
 T 06 00 00 00 00 00 00 00
-R 00 00 07 00 02 02 11 00 02 04 0C 00 02 06 12 00
+R 00 00 07 00 02 02 1B 00 02 04 0E 00 02 06 1C 00
 T 0C 00 00 00 00 00 00 00
-R 00 00 07 00 02 02 09 00 02 04 0B 00 02 06 00 00
+R 00 00 07 00 02 02 0A 00 02 04 0D 00 02 06 01 00
 T 12 00 00 00 00 00 00 00
-R 00 00 07 00 02 02 03 00 02 04 06 00 02 06 02 00
+R 00 00 07 00 02 02 04 00 02 04 07 00 02 06 03 00
 T 18 00 00 00 00 00 00 00
-R 00 00 07 00 02 02 05 00 02 04 07 00 02 06 01 00
+R 00 00 07 00 02 02 06 00 02 04 08 00 02 06 02 00
 T 1E 00 00 00 00 00 00 00
-R 00 00 07 00 02 02 04 00 02 04 0F 00 02 06 08 00
+R 00 00 07 00 02 02 05 00 02 04 12 00 02 06 09 00
+T 24 00
+R 00 00 07 00
+T 24 00 00 00 00 00 00 00
+R 00 00 07 00 02 02 1E 00 02 04 18 00 02 06 0C 00
+T 2A 00 00 00 00 00 00 00
+R 00 00 07 00 02 02 14 00 02 04 11 00 02 06 1D 00
+T 30 00 00 00 00 00 00 00
+R 00 00 07 00 02 02 00 00 02 04 1F 00 02 06 19 00
+T 36 00 00 00 00 00 00 00
+R 00 00 07 00 02 02 17 00 02 04 15 00 02 06 13 00
+T 3C 00 00 00
+R 00 00 07 00 02 02 16 00

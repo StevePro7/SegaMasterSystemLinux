@@ -1,5 +1,6 @@
 M:tile_object
 S:G$tile_object_data$0$0({36}DA18d,DG,SC:U),E,0,0
+S:G$tile_object_dataX$0$0({26}DA13d,DG,SC:U),E,0,0
 S:G$sea_tiles_array$0$0({0}DA0d,SC:U),D,0,0
 S:G$section01_array$0$0({0}DA0d,SC:U),D,0,0
 S:G$section01b_array$0$0({0}DA0d,SC:U),D,0,0
@@ -18,5 +19,20 @@ S:G$fly_turtle01_array$0$0({0}DA0d,SC:U),D,0,0
 S:G$fly_turtle02_array$0$0({0}DA0d,SC:U),D,0,0
 S:G$sign_numb_array$0$0({0}DA0d,SC:U),D,0,0
 S:G$sign_goal_array$0$0({0}DA0d,SC:U),D,0,0
+S:G$empty_sector_array$0$0({0}DA0d,SC:U),D,0,0
+S:G$wave_equator_array$0$0({0}DA0d,SC:U),D,0,0
+S:G$large_ground_array$0$0({0}DA0d,SC:U),D,0,0
+S:G$small_ground_array$0$0({0}DA0d,SC:U),D,0,0
+S:G$earth_ground_array$0$0({0}DA0d,SC:U),D,0,0
+S:G$diver_turtle_array$0$0({0}DA0d,SC:U),D,0,0
+S:G$hover_turtle_array$0$0({0}DA0d,SC:U),D,0,0
+S:G$flyer_turtle_array$0$0({0}DA0d,SC:U),D,0,0
+S:G$trees_planeB_array$0$0({0}DA0d,SC:U),D,0,0
+S:G$sign_sendAll_array$0$0({0}DA0d,SC:U),D,0,0
+S:G$sign_goalAll_array$0$0({0}DA0d,SC:U),D,0,0
+S:G$cloud_largeC_array$0$0({0}DA0d,SC:U),D,0,0
+S:G$cloud_smallC_array$0$0({0}DA0d,SC:U),D,0,0
 S:G$tile_object_wide$0$0({8}DA8d,SC:U),D,0,0
 S:G$tile_object_high$0$0({8}DA8d,SC:U),D,0,0
+S:G$tile_object_wideX$0$0({0}DA0d,SC:U),D,0,0
+S:G$tile_object_highX$0$0({0}DA0d,SC:U),D,0,0

@@ -163,7 +163,7 @@ void engine_tile_manager_scroll_test( unsigned char x, unsigned char y, unsigned
 void engine_tile_manager_sky()
 {
 	const unsigned char *tiles = bggame_tiles__tilemap__bin;
-	const unsigned char idx = 64;
+	const unsigned char idx = 64;		// TODO
 
 	unsigned char row, col;
 	for( row = 0; row < SCREEN_HIGH; row++ )
