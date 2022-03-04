@@ -1,4 +1,10 @@
 M:main
+F:G$engine_font_manager_draw_char$0$0({2}DF,SV:S),C,0,0,0,0,0
+S:Lmain.engine_font_manager_draw_char$ch$1$33({1}SC:U),B,1,4
+S:Lmain.engine_font_manager_draw_char$x$1$33({1}SC:U),B,1,5
+S:Lmain.engine_font_manager_draw_char$y$1$33({1}SC:U),B,1,6
+S:Lmain.engine_font_manager_draw_char$pnt$1$34({2}DG,SC:U),R,0,0,[]
+S:Lmain.engine_font_manager_draw_char$tile$1$34({1}SC:U),R,0,0,[c]
 F:G$main$0$0({2}DF,SV:S),C,0,0,0,0,0
 S:G$SG_init$0$0({2}DF,SV:S),C,0,0
 S:G$SG_VDPturnOnFeature$0$0({2}DF,SV:S),C,0,0
@@ -32,4 +38,5 @@ S:G$SG_VRAMmemset$0$0({2}DF,SV:S),C,0,0
 S:G$SG_VRAMmemsetW$0$0({2}DF,SV:S),C,0,0
 S:G$SG_isr$0$0({2}DF,SV:S),C,0,0
 S:G$SG_nmi_isr$0$0({2}DF,SV:S),C,0,0
+S:G$engine_font_manager_draw_char$0$0({2}DF,SV:S),C,0,0
 S:G$main$0$0({2}DF,SV:S),C,0,0

@@ -5,7 +5,7 @@ sdcc --debug -c -mz80 --std-sdcc99 main.c
 ::sdcc -c -mz80 --std-sdcc99 main.c
 
 echo Link
-sdcc --debug -mz80 --no-std-crt0 --data-loc 0xC000 -o output.ihx crt0_sg.rel main.rel SGlib.rel
+sdcc --debug -mz80 --no-std-crt0 --data-loc 0xC000 -o output.ihx crt0_sg.rel main.rel SGlib.rel gfx.rel
 ::sdcc -mz80 --no-std-crt0 --data-loc 0xC000 -o output.ihx crt0_sg.rel main.rel SGlib.rel
 
 echo Run

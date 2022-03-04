@@ -7,7 +7,7 @@ Area                                    Addr        Size        Decimal Bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00000000  .__.ABS.                           SGlib
+     00000000  .__.ABS.                           gfx
      00000000  l__BSEG                         
      00000000  l__BSS                          
      00000000  l__CABS                         
@@ -32,11 +32,11 @@ Area                                    Addr        Size        Decimal Bytes (A
      0000008B  l__DATA                         
      0000011E  l__HEADER3                      
      00000200  s__CODE                         
-     0000067B  l__CODE                         
-     0000087B  s__HOME                         
-     0000087B  s__INITIALIZER                  
-     00000881  s__GSINIT                       
-     00000890  s__GSFINAL                      
+     000009E8  l__CODE                         
+     00000BE8  s__HOME                         
+     00000BE8  s__INITIALIZER                  
+     00000BEE  s__GSINIT                       
+     00000BFD  s__GSFINAL                      
      0000C000  s__DATA                         
      0000C08B  s__INITIALIZED                  
      0000C091  s__BSEG                         
@@ -48,77 +48,143 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    0000067B =        1659. bytes (REL,CON)
+_CODE                               00000200    000009E8 =        2536. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
      00000200  __clock                            crt0
      00000204  _exit                              crt0
-     0000020A  A$main$59                          main
-     0000020A  C$main.c$3$0$0                     main
-     0000020A  C$main.c$5$1$34                    main
-     0000020A  G$main$0$0                         main
-     0000020A  _main                              main
-     0000020D  A$main$63                          main
-     0000020D  C$main.c$7$1$34                    main
-     0000020F  A$main$64                          main
-     00000210  A$main$65                          main
-     00000211  A$main$66                          main
-     00000214  A$main$67                          main
-     00000215  A$main$71                          main
-     00000215  C$main.c$8$1$34                    main
-     00000218  A$main$72                          main
-     00000219  A$main$73                          main
-     0000021C  A$main$74                          main
-     0000021D  A$main$79                          main
-     0000021D  C$main.c$11$3$36                   main
+     0000020A  A$main$66                          main
+     0000020A  C$main.c$4$0$0                     main
+     0000020A  C$main.c$6$1$0                     main
+     0000020A  C$main.c$7$1$34                    main
+     0000020A  G$engine_font_manager_draw_char$   main
+     0000020A  _engine_font_manager_draw_char     main
+     0000020D  A$main$67                          main
+     0000020E  A$main$68                          main
+     0000020F  A$main$69                          main
+     00000211  A$main$70                          main
+     00000212  A$main$74                          main
+     00000212  C$main.c$8$1$34                    main
+     00000213  A$main$75                          main
+     00000216  A$main$76                          main
+     00000217  A$main$77                          main
+     00000218  A$main$78                          main
+     00000219  A$main$79                          main
+     0000021A  A$main$80                          main
+     0000021D  A$main$81                          main
+     0000021E  A$main$82                          main
+     0000021F  A$main$83                          main
      00000220  A$main$84                          main
-     00000220  C$main.c$13$2$35                   main
-     00000220  XG$main$0$0                        main
-     00000222  _SG_VDPturnOnFeature               SGlib
-     0000025C  _VDPReg_init                       SGlib
-     00000264  _SG_VDPturnOffFeature              SGlib
-     00000295  _SG_init                           SGlib
-     000002C4  _SG_setBackdropColor               SGlib
-     000002D8  _SG_setSpriteMode                  SGlib
-     00000343  _SG_loadTilePatterns               SGlib
-     00000384  _SG_loadTileColours                SGlib
-     000003C9  _SG_loadSpritePatterns             SGlib
-     0000040E  _SG_setTileatXY                    SGlib
-     0000044D  _SG_setNextTileatXY                SGlib
-     00000487  _SG_setTile                        SGlib
-     0000048F  _SG_loadTileMap                    SGlib
-     000004E2  _SG_loadTileMapArea                SGlib
-     00000569  _SG_initSprites                    SGlib
-     0000056F  _SG_addSprite                      SGlib
-     000005C7  _SG_setClippingWindow              SGlib
-     000005E8  _SG_addSpriteClipping              SGlib
-     000006B3  _SG_finalizeSprites                SGlib
-     000006C5  _SG_copySpritestoSAT               SGlib
-     000006DB  _SG_waitForVBlank                  SGlib
-     000006E8  _SG_getKeysStatus                  SGlib
-     000006EC  _SG_getKeysPressed                 SGlib
-     00000701  _SG_getKeysHeld                    SGlib
-     00000718  _SG_getKeysReleased                SGlib
-     00000735  _SG_queryPauseRequested            SGlib
-     0000073D  _SG_resetPauseRequest              SGlib
+     00000221  A$main$85                          main
+     00000224  A$main$86                          main
+     00000225  A$main$87                          main
+     00000226  A$main$91                          main
+     00000226  C$main.c$9$1$34                    main
+     00000229  A$main$92                          main
+     0000022A  A$main$93                          main
+     0000022B  A$main$94                          main
+     0000022C  A$main$95                          main
+     0000022F  A$main$96                          main
+     00000230  A$main$101                         main
+     00000230  C$main.c$10$1$34                   main
+     00000230  XG$engine_font_manager_draw_char   main
+     00000231  A$main$114                         main
+     00000231  C$main.c$12$1$34                   main
+     00000231  C$main.c$14$1$36                   main
+     00000231  G$main$0$0                         main
+     00000231  _main                              main
+     00000234  A$main$118                         main
+     00000234  C$main.c$16$1$36                   main
+     00000237  A$main$119                         main
+     00000238  A$main$120                         main
+     0000023B  A$main$121                         main
+     0000023C  A$main$122                         main
+     0000023F  A$main$123                         main
+     00000240  A$main$124                         main
 ASxxxx Linker V03.00 + NoICE + sdld,  page 3.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    0000067B =        1659. bytes (REL,CON)
+_CODE                               00000200    000009E8 =        2536. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00000743  _SG_VRAMmemcpy                     SGlib
-     00000778  _SG_VRAMmemcpy_brief               SGlib
-     000007A2  _SG_VRAMmemset                     SGlib
-     000007CE  _SG_VRAMmemsetW                    SGlib
-     00000815  _SG_isr                            SGlib
-     00000868  _SG_nmi_isr                        SGlib
-
+     00000243  A$main$125                         main
+     00000246  A$main$126                         main
+     00000247  A$main$127                         main
+     00000248  A$main$131                         main
+     00000248  C$main.c$17$1$36                   main
+     0000024B  A$main$132                         main
+     0000024C  A$main$133                         main
+     0000024E  A$main$134                         main
+     0000024F  A$main$135                         main
+     00000252  A$main$136                         main
+     00000253  A$main$137                         main
+     00000256  A$main$138                         main
+     00000259  A$main$139                         main
+     0000025A  A$main$140                         main
+     0000025B  A$main$144                         main
+     0000025B  C$main.c$20$1$36                   main
+     0000025E  A$main$145                         main
+     0000025F  A$main$146                         main
+     00000262  A$main$147                         main
+     00000263  A$main$152                         main
+     00000263  C$main.c$23$3$38                   main
+     00000266  A$main$157                         main
+     00000266  C$main.c$25$2$37                   main
+     00000266  XG$main$0$0                        main
+     00000268  _SG_VDPturnOnFeature               SGlib
+     000002A2  _VDPReg_init                       SGlib
+     000002AA  _SG_VDPturnOffFeature              SGlib
+     000002DB  _SG_init                           SGlib
+     0000030A  _SG_setBackdropColor               SGlib
+     0000031E  _SG_setSpriteMode                  SGlib
+     00000389  _SG_loadTilePatterns               SGlib
+     000003CA  _SG_loadTileColours                SGlib
+     0000040F  _SG_loadSpritePatterns             SGlib
+     00000454  _SG_setTileatXY                    SGlib
+     00000493  _SG_setNextTileatXY                SGlib
+     000004CD  _SG_setTile                        SGlib
+     000004D5  _SG_loadTileMap                    SGlib
+     00000528  _SG_loadTileMapArea                SGlib
+     000005AF  _SG_initSprites                    SGlib
+     000005B5  _SG_addSprite                      SGlib
+     0000060D  _SG_setClippingWindow              SGlib
+     0000062E  _SG_addSpriteClipping              SGlib
+     000006F9  _SG_finalizeSprites                SGlib
+     0000070B  _SG_copySpritestoSAT               SGlib
+     00000721  _SG_waitForVBlank                  SGlib
+     0000072E  _SG_getKeysStatus                  SGlib
+     00000732  _SG_getKeysPressed                 SGlib
+     00000747  _SG_getKeysHeld                    SGlib
+     0000075E  _SG_getKeysReleased                SGlib
+     0000077B  _SG_queryPauseRequested            SGlib
+     00000783  _SG_resetPauseRequest              SGlib
 ASxxxx Linker V03.00 + NoICE + sdld,  page 4.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    000009E8 =        2536. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000789  _SG_VRAMmemcpy                     SGlib
+     000007BE  _SG_VRAMmemcpy_brief               SGlib
+     000007E8  _SG_VRAMmemset                     SGlib
+     00000814  _SG_VRAMmemsetW                    SGlib
+     0000085B  _SG_isr                            SGlib
+     000008AE  _SG_nmi_isr                        SGlib
+     000008C1  G$font_tiles__tilemap__bin$0$0     gfx
+     000008C1  _font_tiles__tilemap__bin          gfx
+     00000941  G$font_tiles__palette__bin$0$0     gfx
+     00000941  _font_tiles__palette__bin          gfx
+     00000951  G$font_tiles__tiles__psgcompr$0$   gfx
+     00000951  _font_tiles__tiles__psgcompr       gfx
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 5.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -127,7 +193,7 @@ _HEADER0                            00000000    00000006 =           6. bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-ASxxxx Linker V03.00 + NoICE + sdld,  page 5.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 6.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -136,7 +202,7 @@ _HEADER1                            00000000    00000003 =           3. bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-ASxxxx Linker V03.00 + NoICE + sdld,  page 6.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 7.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -145,7 +211,7 @@ _HEADER2                            00000000    00000003 =           3. bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-ASxxxx Linker V03.00 + NoICE + sdld,  page 7.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 8.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -156,36 +222,36 @@ _HEADER3                            00000000    0000011E =         286. bytes (A
       -----  --------------------------------   ------------------------
      0000018D  _outi_block                        crt0
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 8.
-Hexadecimal  [32-Bits]
-
-Area                                    Addr        Size        Decimal Bytes (Attributes)
---------------------------------        ----        ----        ------- ----- ------------
-_INITIALIZER                        0000087B    00000006 =           6. bytes (REL,CON)
-
-      Value  Global                              Global Defined In Module
-      -----  --------------------------------   ------------------------
 ASxxxx Linker V03.00 + NoICE + sdld,  page 9.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSINIT                             00000881    0000000F =          15. bytes (REL,CON)
+_INITIALIZER                        00000BE8    00000006 =           6. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00000881  gsinit                             crt0
-
 ASxxxx Linker V03.00 + NoICE + sdld,  page 10.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSFINAL                            00000890    00000001 =           1. bytes (REL,CON)
+_GSINIT                             00000BEE    0000000F =          15. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000BEE  gsinit                             crt0
+
 ASxxxx Linker V03.00 + NoICE + sdld,  page 11.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_GSFINAL                            00000BFD    00000001 =           1. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 12.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -205,7 +271,7 @@ _DATA                               0000C000    0000008B =         139. bytes (R
      0000C00A  _SpriteTable                       SGlib
      0000C08A  _SpriteNextFree                    SGlib
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 12.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 13.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -217,15 +283,16 @@ _INITIALIZED                        0000C08B    00000006 =           6. bytes (R
      0000C08B  _VDPReg                            SGlib
      0000C08D  _spritesHeight                     SGlib
      0000C08F  _spritesWidth                      SGlib
-ASxxxx Linker V03.00 + NoICE + sdld,  page 13.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 14.
 
 Files Linked                              [ module(s) ]
 
 crt0_sg.rel                               [ crt0 ]
 main.rel                                  [ main ]
 SGlib.rel                                 [ SGlib ]
+gfx.rel                                   [ gfx ]
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 14.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 15.
 
 User Base Address Definitions
 
