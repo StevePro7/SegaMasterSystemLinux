@@ -1,5 +1,6 @@
 @echo off
 echo Build
+sdcc --debug -c -mz80 --std-sdcc99 gfx.c
 sdcc --debug -c -mz80 --std-sdcc99 main.c
 ::sdcc -c -mz80 --std-sdcc99 main.c
 
