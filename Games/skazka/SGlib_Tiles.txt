@@ -1,0 +1,56 @@
+SG lib tiles
+05/03/2022
+
+https://www.smspower.org/forums/18020-TheAssetWorkflowForCreatingGraphicsForSG1000
+
+https://github.com/mojontwins/loves_the_sg1000/tree/master/examples/01_cheril_perils_classic
+
+D:\Github\mojontwins\loves_the_sg1000
+
+
+
+PNG
+D:\Github\mojontwins\loves_the_sg1000\examples\04_che_man\gfx
+
+pipeline
+cut_patterns.spt
+/d/Github/mojontwins/loves_the_sg1000/src/gfx
+
+write patterns tsfont_patterns_c tsfont_colours_c packed
+
+# Title uses extra patterns
+open title.png
+set patterns 64
+nametablerle
+write nametablerle title_rle
+write patterns tstitle_patterns_c tstitle_colours_c r:64:* packed
+
+
+pres.h
+/d/Github/mojontwins/loves_the_sg1000/src/dev/my
+void title (void) {
+	unpack_bg_patterns (tstitle_patterns_c, tstitle_colours_c, 64*8, 7);
+
+
+game.c
+/d/Github/mojontwins/loves_the_sg1000/src/dev
+
+	// Unpack font
+	unpack_bg_patterns (tsFONT_patterns_c, tsFONT_colours_c, 0, 7);
+
+	credits ();
+
+	// Unpack everything else
+	unpack_bg_patterns (tsALL_patterns_c, tsALL_colours_c, 64*8, 7);
+	aPLib_depack_VRAM (SGT_BASE, ssALL_patterns_c);
+	
+
+
+
+PSG
+D:\Github\mojontwins\loves_the_sg1000\examples\04_che_man\ogt\pal
+
+
+
+mkts_om.exe
+D:\Github\mojontwins\loves_the_sg1000\src\utils>mkts_om.exe platform=sg1000 pal=D:\Github\mojontwins\loves_the_sg1000\examples\04_che_man\gfx\sg1000pal.png in=D:\Github\mojontwins\loves_the_sg1000\examples\04_che_man\gfx\font.png out=D:\Steven\bob.bin mode=mode
