@@ -1,62 +1,131 @@
 ;!FILE text_manager.asm
 XL2
-H 9 areas 35 global symbols
+H 9 areas 7A global symbols
 M text_manager
 O -mz80
+S _engine_font_manager_data Ref0000
 S .__.ABS. Def0000
 S _engine_font_manager_char Ref0000
-A _CODE size 3F flags 0 addr 0
-S _engine_text_manager_draw Def0000
-S XG$engine_text_manager_draw$0$0 Def003E
-S A$text_manager$100 Def0034
-S A$text_manager$120 Def003E
-S C$text_manager.c$21$2$12 Def003B
-S C$text_manager.c$14$2$10 Def0036
-S C$text_manager.c$22$2$12 Def003E
-S A$text_manager$104 Def0035
-S C$text_manager.c$14$2$12 Def0011
-S A$text_manager$114 Def003B
-S A$text_manager$115 Def003C
-S C$text_manager.c$16$3$11 Def001D
-S C$text_manager.c$17$3$11 Def0022
-S A$text_manager$108 Def0036
-S C$text_manager.c$18$3$11 Def0035
-S A$text_manager$109 Def0039
-S A$text_manager$60 Def0009
+A _CODE size 8E flags 0 addr 0
+S _engine_text_manager_draw Def004F
+S G$engine_text_manager_text$0$0 Def0000
+S XG$engine_text_manager_draw$0$0 Def008D
+S _engine_text_manager_text Def0000
+S A$text_manager$100 Def0030
+S C$text_manager.c$20$2$11 Def0047
+S A$text_manager$110 Def0037
+S A$text_manager$101 Def0031
+S A$text_manager$210 Def008B
+S A$text_manager$120 Def0044
+S A$text_manager$111 Def0039
+S A$text_manager$102 Def0032
+S A$text_manager$130 Def0048
+S A$text_manager$121 Def0045
+S A$text_manager$112 Def003A
+S A$text_manager$103 Def0033
+S C$text_manager.c$33$1$11 Def0058
+S A$text_manager$203 Def0085
+S A$text_manager$113 Def003B
+S A$text_manager$104 Def0034
+S C$text_manager.c$22$3$12 Def0017
+S A$text_manager$204 Def0088
+S A$text_manager$150 Def0055
+S A$text_manager$132 Def004A
+S A$text_manager$114 Def003C
+S A$text_manager$105 Def0035
+S C$text_manager.c$23$3$12 Def002A
+S A$text_manager$160 Def005E
+S A$text_manager$151 Def0057
+S A$text_manager$133 Def004C
+S A$text_manager$115 Def003D
+S C$text_manager.c$24$3$12 Def0036
+S C$text_manager.c$18$2$10 Def0009
+S A$text_manager$215 Def008D
+S A$text_manager$161 Def005F
+S A$text_manager$125 Def0046
+S A$text_manager$116 Def003E
+S C$text_manager.c$27$2$11 Def004E
+S C$text_manager.c$25$3$12 Def0046
+S A$text_manager$117 Def003F
+S A$text_manager$190 Def007C
+S A$text_manager$181 Def0071
+S A$text_manager$118 Def0040
+S A$text_manager$109 Def0036
+S C$text_manager.c$40$3$17 Def006C
+S C$text_manager.c$29$2$11 Def004F
+S A$text_manager$209 Def008A
+S A$text_manager$191 Def007D
+S A$text_manager$182 Def0072
+S A$text_manager$173 Def006C
+S A$text_manager$155 Def0058
+S A$text_manager$119 Def0043
+S C$text_manager.c$41$3$17 Def0071
+S XG$engine_text_manager_text$0$0 Def004E
+S A$text_manager$192 Def0080
+S A$text_manager$183 Def0073
+S A$text_manager$174 Def006D
+S A$text_manager$165 Def0060
+S A$text_manager$138 Def004E
+S A$text_manager$129 Def0047
+S C$text_manager.c$42$3$17 Def0084
+S C$text_manager.c$36$2$15 Def005B
+S A$text_manager$193 Def0081
+S A$text_manager$184 Def0076
+S A$text_manager$175 Def006E
+S A$text_manager$148 Def004F
+S A$text_manager$194 Def0082
+S A$text_manager$185 Def0077
+S A$text_manager$176 Def006F
+S A$text_manager$167 Def0064
+S A$text_manager$149 Def0051
+S A$text_manager$195 Def0083
+S A$text_manager$186 Def0078
+S A$text_manager$177 Def0070
+S A$text_manager$168 Def0067
+S A$text_manager$159 Def005B
+S C$text_manager.c$45$2$18 Def008A
+S C$text_manager.c$38$2$16 Def0085
+S A$text_manager$187 Def0079
+S A$text_manager$169 Def006A
+S C$text_manager.c$46$2$18 Def008D
+S A$text_manager$188 Def007A
+S C$text_manager.c$38$2$18 Def0060
+S A$text_manager$189 Def007B
+S A$text_manager$199 Def0084
 S A$text_manager$70 Def0011
-S A$text_manager$80 Def001F
-S A$text_manager$53 Def0000
-S A$text_manager$90 Def0028
-S A$text_manager$81 Def0020
+S A$text_manager$80 Def001C
+S A$text_manager$71 Def0012
+S A$text_manager$62 Def0009
+S A$text_manager$90 Def0029
+S A$text_manager$81 Def001E
 S A$text_manager$72 Def0015
-S A$text_manager$54 Def0002
-S C$text_manager.c$12$2$9 Def000C
-S A$text_manager$91 Def0029
-S A$text_manager$82 Def0021
-S A$text_manager$73 Def0018
-S A$text_manager$64 Def000C
-S A$text_manager$55 Def0006
-S A$text_manager$92 Def002A
-S A$text_manager$74 Def001B
-S A$text_manager$65 Def000F
-S A$text_manager$56 Def0008
-S A$text_manager$93 Def002B
-S A$text_manager$66 Def0010
-S G$engine_text_manager_draw$0$0 Def0000
-S A$text_manager$94 Def002C
-S A$text_manager$95 Def002D
-S A$text_manager$86 Def0022
-S A$text_manager$96 Def002E
-S A$text_manager$87 Def0023
-S A$text_manager$78 Def001D
-S A$text_manager$97 Def0031
-S A$text_manager$88 Def0024
-S A$text_manager$79 Def001E
+S A$text_manager$63 Def000C
+S A$text_manager$82 Def001F
+S A$text_manager$64 Def000D
+S A$text_manager$55 Def0000
+S A$text_manager$83 Def0020
+S A$text_manager$56 Def0002
+S A$text_manager$84 Def0021
+S A$text_manager$57 Def0006
+S G$engine_text_manager_draw$0$0 Def004F
+S A$text_manager$94 Def002A
+S A$text_manager$85 Def0022
+S A$text_manager$76 Def0017
+S A$text_manager$58 Def0008
+S A$text_manager$95 Def002B
+S A$text_manager$86 Def0023
+S A$text_manager$77 Def0018
+S A$text_manager$68 Def000E
+S A$text_manager$96 Def002C
+S A$text_manager$87 Def0024
+S A$text_manager$78 Def001A
+S A$text_manager$97 Def002D
+S A$text_manager$88 Def0027
+S A$text_manager$79 Def001B
 S C$text_manager.c$5$0$0 Def0000
-S A$text_manager$98 Def0032
-S A$text_manager$89 Def0027
-S A$text_manager$99 Def0033
-S C$text_manager.c$9$1$0 Def0009
+S A$text_manager$98 Def002E
+S A$text_manager$89 Def0028
+S A$text_manager$99 Def002F
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -67,19 +136,41 @@ A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00
 R 00 00 00 00
-T 00 00 DD E5 DD 21 00 00 DD 39 3B DD 4E 04 21
+T 00 00 DD E5 DD 21 00 00 DD 39 F5 21 07 00 39 E3
 R 00 00 00 00
-T 0D 00 08 00 39 EB DD 36 FF 00
+T 0E 00 01 00 0A
 R 00 00 00 00
-T 15 00
+T 11 00
 R 00 00 00 00
-T 15 00 DD 7E FF DD 96 06 30 1E 13 6B 62 2B 46 C5
+T 11 00 79 DD 96 04 30 33 79 C6 05 67 59 16 00 C5
 R 00 00 00 00
-T 23 00 D5 DD 7E 05 F5 33 79 F5 33 C5 33 CD 00 00
-R 00 00 00 00 02 0E 01 00
-T 31 00 F1 33 D1 C1 0C DD 34 FF 18 DA
+T 1F 00 E5 33 C5 33 D5 CD 00 00 F1 F1 C1 E1 E5 23
+R 00 00 00 00 02 08 00 00
+T 2D 00 23 33 33 E5 2B 2B 5E 23 56 C5 3E 01 F5 33
 R 00 00 00 00
-T 3B 00
+T 3B 00 C5 33 7B F5 33 CD 00 00 F1 33 C1 04 0C 18
+R 00 00 00 00 02 08 02 00
+T 49 00 C7
 R 00 00 00 00
-T 3B 00 33 DD E1 C9
+T 4A 00
+R 00 00 00 00
+T 4A 00 DD F9 DD E1 C9
+R 00 00 00 00
+T 4F 00
+R 00 00 00 00
+T 4F 00 DD E5 DD 21 00 00 DD 39 3B DD 4E 04 21
+R 00 00 00 00
+T 5C 00 08 00 39 EB DD 36 FF 00
+R 00 00 00 00
+T 64 00
+R 00 00 00 00
+T 64 00 DD 7E FF DD 96 06 30 1E 13 6B 62 2B 46 C5
+R 00 00 00 00
+T 72 00 D5 DD 7E 05 F5 33 79 F5 33 C5 33 CD 00 00
+R 00 00 00 00 02 0E 02 00
+T 80 00 F1 33 D1 C1 0C DD 34 FF 18 DA
+R 00 00 00 00
+T 8A 00
+R 00 00 00 00
+T 8A 00 33 DD E1 C9
 R 00 00 00 00
