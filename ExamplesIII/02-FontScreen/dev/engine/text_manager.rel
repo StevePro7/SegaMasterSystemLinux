@@ -1,97 +1,102 @@
 ;!FILE text_manager.asm
 XL2
-H 9 areas 7A global symbols
+H 9 areas 7F global symbols
 M text_manager
 O -mz80
 S _engine_font_manager_data Ref0000
 S .__.ABS. Def0000
 S _engine_font_manager_char Ref0000
-A _CODE size 8E flags 0 addr 0
+A _CODE size 93 flags 0 addr 0
 S _engine_text_manager_draw Def004F
 S G$engine_text_manager_text$0$0 Def0000
-S XG$engine_text_manager_draw$0$0 Def008D
+S XG$engine_text_manager_draw$0$0 Def0092
 S _engine_text_manager_text Def0000
 S A$text_manager$100 Def0030
 S C$text_manager.c$20$2$11 Def0047
+S A$text_manager$200 Def0088
 S A$text_manager$110 Def0037
 S A$text_manager$101 Def0031
-S A$text_manager$210 Def008B
 S A$text_manager$120 Def0044
 S A$text_manager$111 Def0039
 S A$text_manager$102 Def0032
+S A$text_manager$220 Def0092
 S A$text_manager$130 Def0048
 S A$text_manager$121 Def0045
 S A$text_manager$112 Def003A
 S A$text_manager$103 Def0033
 S C$text_manager.c$33$1$11 Def0058
-S A$text_manager$203 Def0085
 S A$text_manager$113 Def003B
 S A$text_manager$104 Def0034
 S C$text_manager.c$22$3$12 Def0017
-S A$text_manager$204 Def0088
+S A$text_manager$204 Def0089
 S A$text_manager$150 Def0055
 S A$text_manager$132 Def004A
 S A$text_manager$114 Def003C
 S A$text_manager$105 Def0035
 S C$text_manager.c$23$3$12 Def002A
+S A$text_manager$214 Def008F
 S A$text_manager$160 Def005E
 S A$text_manager$151 Def0057
 S A$text_manager$133 Def004C
 S A$text_manager$115 Def003D
 S C$text_manager.c$24$3$12 Def0036
 S C$text_manager.c$18$2$10 Def0009
-S A$text_manager$215 Def008D
+S A$text_manager$215 Def0090
 S A$text_manager$161 Def005F
 S A$text_manager$125 Def0046
 S A$text_manager$116 Def003E
 S C$text_manager.c$27$2$11 Def004E
 S C$text_manager.c$25$3$12 Def0046
+S A$text_manager$180 Def0073
 S A$text_manager$117 Def003F
+S A$text_manager$208 Def008A
 S A$text_manager$190 Def007C
-S A$text_manager$181 Def0071
+S A$text_manager$181 Def0074
 S A$text_manager$118 Def0040
 S A$text_manager$109 Def0036
 S C$text_manager.c$40$3$17 Def006C
 S C$text_manager.c$29$2$11 Def004F
-S A$text_manager$209 Def008A
+S A$text_manager$209 Def008D
 S A$text_manager$191 Def007D
-S A$text_manager$182 Def0072
+S A$text_manager$182 Def0075
 S A$text_manager$173 Def006C
 S A$text_manager$155 Def0058
 S A$text_manager$119 Def0043
-S C$text_manager.c$41$3$17 Def0071
+S C$text_manager.c$41$3$17 Def0076
 S XG$engine_text_manager_text$0$0 Def004E
-S A$text_manager$192 Def0080
-S A$text_manager$183 Def0073
+S A$text_manager$192 Def007E
 S A$text_manager$174 Def006D
 S A$text_manager$165 Def0060
 S A$text_manager$138 Def004E
 S A$text_manager$129 Def0047
-S C$text_manager.c$42$3$17 Def0084
+S C$text_manager.c$42$3$17 Def0089
 S C$text_manager.c$36$2$15 Def005B
-S A$text_manager$193 Def0081
-S A$text_manager$184 Def0076
+S A$text_manager$193 Def007F
 S A$text_manager$175 Def006E
 S A$text_manager$148 Def004F
-S A$text_manager$194 Def0082
-S A$text_manager$185 Def0077
+S A$text_manager$194 Def0080
 S A$text_manager$176 Def006F
 S A$text_manager$167 Def0064
 S A$text_manager$149 Def0051
-S A$text_manager$195 Def0083
-S A$text_manager$186 Def0078
+S A$text_manager$195 Def0081
+S A$text_manager$186 Def0076
 S A$text_manager$177 Def0070
 S A$text_manager$168 Def0067
 S A$text_manager$159 Def005B
-S C$text_manager.c$45$2$18 Def008A
-S C$text_manager.c$38$2$16 Def0085
-S A$text_manager$187 Def0079
+S C$text_manager.c$45$2$18 Def008F
+S C$text_manager.c$38$2$16 Def008A
+S A$text_manager$196 Def0082
+S A$text_manager$187 Def0077
+S A$text_manager$178 Def0071
 S A$text_manager$169 Def006A
-S C$text_manager.c$46$2$18 Def008D
-S A$text_manager$188 Def007A
+S C$text_manager.c$46$2$18 Def0092
+S A$text_manager$197 Def0085
+S A$text_manager$188 Def0078
+S A$text_manager$179 Def0072
 S C$text_manager.c$38$2$18 Def0060
+S A$text_manager$198 Def0086
 S A$text_manager$189 Def007B
-S A$text_manager$199 Def0084
+S A$text_manager$199 Def0087
 S A$text_manager$70 Def0011
 S A$text_manager$80 Def001C
 S A$text_manager$71 Def0012
@@ -164,13 +169,15 @@ T 5C 00 08 00 39 EB DD 36 FF 00
 R 00 00 00 00
 T 64 00
 R 00 00 00 00
-T 64 00 DD 7E FF DD 96 06 30 1E 13 6B 62 2B 46 C5
+T 64 00 DD 7E FF DD 96 06 30 23 13 13 6B 62 2B 2B
 R 00 00 00 00
-T 72 00 D5 DD 7E 05 F5 33 79 F5 33 C5 33 CD 00 00
-R 00 00 00 00 02 0E 02 00
-T 80 00 F1 33 D1 C1 0C DD 34 FF 18 DA
+T 72 00 7E 23 66 47 C5 D5 DD 7E 05 F5 33 79 F5 33
 R 00 00 00 00
-T 8A 00
+T 80 00 C5 33 CD 00 00 F1 33 D1 C1 0C DD 34 FF 18
+R 00 00 00 00 02 05 02 00
+T 8E 00 D5
 R 00 00 00 00
-T 8A 00 33 DD E1 C9
+T 8F 00
+R 00 00 00 00
+T 8F 00 33 DD E1 C9
 R 00 00 00 00

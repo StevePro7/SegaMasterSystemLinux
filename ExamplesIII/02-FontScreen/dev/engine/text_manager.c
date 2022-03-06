@@ -28,7 +28,7 @@ void engine_text_manager_text( unsigned char num, ... )
 
 void engine_text_manager_draw( unsigned char x, unsigned char y, unsigned char num, ... )
 {
-	char ch;
+	unsigned char ch;
 	unsigned char idx;
 	unsigned char col = x;
 
@@ -37,7 +37,7 @@ void engine_text_manager_draw( unsigned char x, unsigned char y, unsigned char n
 
 	for( idx = 0; idx < num; idx++ )
 	{
-		ch = va_arg( arglist, unsigned char );
+		ch = va_arg( arglist, int );
 		engine_font_manager_char( ch, col, y );
 		col++;
 	}
