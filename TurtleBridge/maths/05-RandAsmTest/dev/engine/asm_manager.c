@@ -27,7 +27,7 @@ void engine_asm_manager_clear_VRAM()
 		ld a, b
 		or c
 		jp nz, ClearVRAMLoop
-		__endasm;
+	__endasm;
 
 #endif
 }
