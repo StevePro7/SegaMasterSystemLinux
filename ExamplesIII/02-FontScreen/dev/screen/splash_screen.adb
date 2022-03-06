@@ -1,10 +1,16 @@
 M:splash_screen
-F:G$screen_splash_screen_load$0$0({2}DF,SV:S),Z,0,12,0,0,0
-S:Lsplash_screen.screen_splash_screen_load$text$1$7({12}DA12d,SC:U),B,1,-12
-S:Lsplash_screen.screen_splash_screen_load$x$1$7({1}SC:U),R,0,0,[e]
+F:G$Add$0$0({2}DF,SI:S),C,0,2,0,0,0
+S:Lsplash_screen.Add$x$1$7({2}SI:S),B,1,4
+S:Lsplash_screen.Add$arglist$1$8({2}DG,SC:U),B,1,-2
+S:Lsplash_screen.Add$i$1$8({2}SI:S),R,0,0,[e,d]
+S:Lsplash_screen.Add$result$1$8({2}SI:S),R,0,0,[c,b]
+F:G$screen_splash_screen_load$0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lsplash_screen.screen_splash_screen_load$a$1$13({2}SI:S),R,0,0,[]
+S:Lsplash_screen.screen_splash_screen_load$b$1$13({2}SI:S),R,0,0,[]
+S:Lsplash_screen.screen_splash_screen_load$c$1$13({2}SI:S),R,0,0,[l,h]
 F:G$screen_splash_screen_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lsplash_screen.screen_splash_screen_update$screen_type$1$10({2}DG,SC:U),B,1,4
-S:Lsplash_screen.screen_splash_screen_update$input$1$11({1}SC:U),R,0,0,[l]
+S:Lsplash_screen.screen_splash_screen_update$screen_type$1$14({2}DG,SC:U),B,1,4
+S:Lsplash_screen.screen_splash_screen_update$input$1$15({1}SC:U),R,0,0,[l]
 S:G$engine_font_manager_asci$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_char$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0$0({2}DF,SV:S),C,0,0
@@ -23,3 +29,4 @@ S:G$engine_input_manager_move_left$0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_right$0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire1$0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire2$0$0({2}DF,SC:U),C,0,0
+S:G$Add$0$0({2}DF,SI:S),C,0,2
