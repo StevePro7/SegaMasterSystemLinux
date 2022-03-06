@@ -16,10 +16,10 @@ S:Ltext_manager.engine_text_manager_draw$arglist$1$15({2}DG,SC:U),B,1,-2
 F:G$engine_text_manager_arry$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Ltext_manager.engine_text_manager_arry$x$1$20({1}SC:U),B,1,4
 S:Ltext_manager.engine_text_manager_arry$y$1$20({1}SC:U),B,1,5
-S:Ltext_manager.engine_text_manager_arry$arr$1$20({2}DG,SC:U),B,1,6
+S:Ltext_manager.engine_text_manager_arry$num$1$20({1}SC:U),B,1,6
+S:Ltext_manager.engine_text_manager_arry$arr$1$20({2}DG,SC:U),B,1,7
 S:Ltext_manager.engine_text_manager_arry$ch$1$21({1}SC:U),R,0,0,[e]
 S:Ltext_manager.engine_text_manager_arry$idx$1$21({1}SC:U),R,0,0,[b]
-S:Ltext_manager.engine_text_manager_arry$num$1$21({1}SC:U),R,0,0,[]
 S:G$engine_font_manager_asci$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_char$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0$0({2}DF,SV:S),C,0,0

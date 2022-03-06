@@ -12,7 +12,7 @@ void screen_func_screen_load()
 	engine_text_manager_draw( 2, 7, 12, 0x86, 0x81, 0x81, 0x81, 0x81, 0x81, 0x81, 0x81, 0x81, 0x81, 0x81, 0x88 );
 	//engine_text_manager_draw( 2, 8, 12, code );
 
-	engine_text_manager_arry( 2, 8, code );
+	engine_text_manager_arry( 2, 8, 12, code );
 
 	//engine_text_manager_text( 5, 0x87, 0x81, 0x81, 0x81, 0x89 );
 

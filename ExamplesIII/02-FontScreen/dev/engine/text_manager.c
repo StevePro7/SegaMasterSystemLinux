@@ -46,14 +46,10 @@ void engine_text_manager_draw( unsigned char x, unsigned char y, unsigned char n
 	va_end( arglist );
 }	
 
-void engine_text_manager_arry( unsigned char x, unsigned char y, unsigned char *arr )
+void engine_text_manager_arry( unsigned char x, unsigned char y, unsigned char num, unsigned char *arr )
 {
 	unsigned char ch;
 	unsigned char idx;
-	unsigned char num = sizeof( arr );
-	//unsigned char num = sizeof( unsigned char );
-
-	engine_font_manager_data( num, 20, 20 );
 
 	for( idx = 0; idx < num; idx++ )
 	{
