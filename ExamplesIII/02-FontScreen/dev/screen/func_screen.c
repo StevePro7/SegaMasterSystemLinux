@@ -8,7 +8,7 @@ void screen_func_screen_load()
 	//engine_font_manager_text( "FUNC SCREEN...!!", 2, 10 );
 
 	//engine_text_manager_draw( 2, 7, 2, 0x80, 0x81 );
-	engine_text_manager_text( 2, 0x80, 0x81 );
+	engine_text_manager_text( 5, 0x87, 0x81, 0x81, 0x81, 0x89 );
 	//engine_text_manager_draw( 2, 0, 2, 0x41, 0x42 );
 	//engine_text_manager_text( 3, 0x41, 0x42, 0x44 );
 	//engine_text_manager_draw( 2, 2, 1, 0x43 );
