@@ -4,7 +4,7 @@
 
 void engine_screen_manager_init()
 {
-	engine_font_manager_text("STEVEPRO STUDIOs", 10, 10);
+	engine_font_manager_text("STEVEPRO STUDIO!!", 10, 10);
 	engine_font_manager_asci( 112, 10, 14 );
 	engine_font_manager_data( 89, 10, 16 );
 }

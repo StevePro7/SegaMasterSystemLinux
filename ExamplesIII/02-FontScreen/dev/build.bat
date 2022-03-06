@@ -62,9 +62,7 @@ screen/record_screen.rel screen/detail_screen.rel screen/test_screen.rel screen/
 gfx.rel
 
 :: Execute
-::ihx2sms output.ihx output.sms
-ihx2sms output.ihx output.sg
-ihx2sms output.ihx output.sc
+ihx2sms output.ihx output.sms
 
 
 :: Delete
@@ -75,6 +73,12 @@ if exist "*.sym" del "*.sym" > nul
 cd ..
 
 cd engine
+if exist "*.asm" del "*.asm" > nul
+if exist "*.lst" del "*.lst" > nul
+if exist "*.sym" del "*.sym" > nul
+cd ..
+
+cd screen
 if exist "*.asm" del "*.asm" > nul
 if exist "*.lst" del "*.lst" > nul
 if exist "*.sym" del "*.sym" > nul
