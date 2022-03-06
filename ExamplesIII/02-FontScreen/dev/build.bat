@@ -21,18 +21,19 @@ cd engine
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 input_manager.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 screen_manager.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 sprite_manager.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 text_manager.c
 cd ..
 
 cd screen
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 none_screen.c
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 splash_screen.c
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 splash_screen.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 title_screen.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 scroll_screen.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 select_screen.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 record_screen.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 detail_screen.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 test_screen.c
-::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 func_screen.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 func_screen.c
 cd ..
 
 sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
@@ -57,7 +58,7 @@ engine/asm_manager.rel ^
 engine/content_manager.rel engine/enum_manager.rel ^
 engine/font_manager.rel engine/global_manager.rel engine/input_manager.rel ^
 engine/screen_manager.rel ^
-engine/sprite_manager.rel ^
+engine/sprite_manager.rel engine/text_manager.rel ^
 screen/none_screen.rel screen/splash_screen.rel screen/title_screen.rel screen/scroll_screen.rel screen/select_screen.rel ^
 screen/record_screen.rel screen/detail_screen.rel screen/test_screen.rel screen/func_screen.rel ^
 gfx.rel
