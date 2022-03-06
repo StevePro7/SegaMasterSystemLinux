@@ -64,10 +64,11 @@ S:G$devkit_VDPFEATURE_HIDEFIRSTCOL$0$0({2}DF,SI:U),C,0,0
 S:G$engine_asm_manager_clear_VRAM$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_tiles$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_sprites$0$0({2}DF,SV:S),C,0,0
+S:G$engine_font_manager_draw_asci$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_char$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_text$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_data$0$0({2}DF,SV:S),C,0,0
-S:G$engine_font_manager_draw_data_ZERO$0$0({2}DF,SV:S),C,0,0
+S:G$engine_font_manager_draw_zero$0$0({2}DF,SV:S),C,0,0
 S:G$engine_screen_manager_init$0$0({2}DF,SV:S),C,0,0
 S:G$engine_screen_manager_update$0$0({2}DF,SV:S),C,0,0
 S:G$main$0$0({2}DF,SV:S),C,0,0

@@ -7,6 +7,14 @@
 #define UNIT_ROOT 10 // 10 is decimal
 #define DATA_LONG 4	 // 4 placeholder
 
+void engine_font_manager_draw_asci( unsigned char ch, unsigned char x, unsigned char y )
+{
+	const unsigned char *pnt = font_tiles__tilemap__bin;
+	unsigned char tile = ch;
+	devkit_SMS_setNextTileatXY( x, y );
+	devkit_SMS_setTile( *pnt + tile );
+}
+
 void engine_font_manager_draw_char(unsigned char ch, unsigned char x, unsigned char y)
 {
 	const unsigned char *pnt = font_tiles__tilemap__bin;
@@ -60,7 +68,7 @@ void engine_font_manager_draw_data(unsigned int data, unsigned char x, unsigned 
 	}
 }
 
-void engine_font_manager_draw_data_ZERO(unsigned int data, unsigned char x, unsigned char y)
+void engine_font_manager_draw_zero(unsigned int data, unsigned char x, unsigned char y)
 {
 	const unsigned char *pnt = font_tiles__tilemap__bin;
 
