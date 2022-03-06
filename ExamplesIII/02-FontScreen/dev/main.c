@@ -12,7 +12,7 @@ void main( void )
 	
 	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_NORMAL() );
 	devkit_SMS_useFirstHalfTilesforSprites_False();
-	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );
+	//devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );
 
 	engine_content_manager_load_tiles();
 	engine_content_manager_load_sprites();
@@ -25,6 +25,7 @@ void main( void )
 	for( ;; )
 	{
 		devkit_SMS_initSprites();
+		engine_input_manager_update();
 		engine_screen_manager_update();
 
 		devkit_SMS_finalizeSprites();
