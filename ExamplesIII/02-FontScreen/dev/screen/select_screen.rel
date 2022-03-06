@@ -1,11 +1,37 @@
+;!FILE select_screen.asm
 XL2
-H 9 areas 4 global symbols
+H 9 areas 1D global symbols
 M select_screen
 O -mz80
 S _engine_font_manager_text Ref0000
 S .__.ABS. Def0000
 A _CODE size 25 flags 0 addr 0
+S XG$screen_select_screen_update$0$0 Def0024
+S C$select_screen.c$10$1$7 Def001E
+S A$select_screen$60 Def0007
+S A$select_screen$61 Def0008
+S A$select_screen$62 Def000B
+S C$select_screen.c$12$1$9 Def001E
+S G$screen_select_screen_load$0$0 Def0000
+S A$select_screen$63 Def000C
+S C$select_screen.c$13$1$9 Def0024
+S A$select_screen$57 Def0000
+S A$select_screen$94 Def0024
+S A$select_screen$85 Def001E
+S A$select_screen$58 Def0003
+S A$select_screen$86 Def001F
+S A$select_screen$68 Def000D
+S A$select_screen$59 Def0004
+S A$select_screen$87 Def0020
+S Fselect_screen$__str_0$0$0 Def000E
+S A$select_screen$88 Def0021
+S C$select_screen.c$5$0$0 Def0000
+S A$select_screen$89 Def0022
 S _screen_select_screen_load Def0000
+S C$select_screen.c$7$1$7 Def0000
+S C$select_screen.c$8$1$7 Def000D
+S XG$screen_select_screen_load$0$0 Def000D
+S G$screen_select_screen_update$0$0 Def001E
 S _screen_select_screen_update Def001E
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
