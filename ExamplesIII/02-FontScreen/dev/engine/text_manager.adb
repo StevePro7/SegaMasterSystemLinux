@@ -3,9 +3,10 @@ F:G$engine_text_manager_draw$0$0({2}DF,SV:S),Z,0,1,0,0,0
 S:Ltext_manager.engine_text_manager_draw$x$1$7({1}SC:U),B,1,4
 S:Ltext_manager.engine_text_manager_draw$y$1$7({1}SC:U),B,1,5
 S:Ltext_manager.engine_text_manager_draw$num$1$7({1}SC:U),B,1,6
-S:Ltext_manager.engine_text_manager_draw$idx$1$8({2}SI:S),R,0,0,[e,d]
-S:Ltext_manager.engine_text_manager_draw$arglist$1$8({2}DG,SC:U),R,0,0,[c,b]
-S:Ltext_manager.engine_text_manager_draw$ch$3$11({1}SC:U),B,1,-1
+S:Ltext_manager.engine_text_manager_draw$ch$1$8({1}SC:U),R,0,0,[b]
+S:Ltext_manager.engine_text_manager_draw$idx$1$8({1}SC:U),B,1,-1
+S:Ltext_manager.engine_text_manager_draw$col$1$8({1}SC:U),R,0,0,[]
+S:Ltext_manager.engine_text_manager_draw$arglist$1$8({2}DG,SC:U),R,0,0,[e,d]
 S:G$engine_font_manager_asci$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_char$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0$0({2}DF,SV:S),C,0,0
