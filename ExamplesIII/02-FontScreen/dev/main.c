@@ -2,6 +2,10 @@
 
 void main( void )
 {
+	// Global variables.
+	//static bool global_pause;
+	unsigned char open_screen_type;
+
 	devkit_SMS_init();
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
@@ -12,8 +16,11 @@ void main( void )
 
 	engine_content_manager_load_tiles();
 	engine_content_manager_load_sprites();
-	engine_screen_manager_init();
 
+	open_screen_type = screen_type_splash;
+	//open_screen_type = screen_type_begin;
+
+	engine_screen_manager_init( open_screen_type );
 	devkit_SMS_displayOn();
 	for( ;; )
 	{
