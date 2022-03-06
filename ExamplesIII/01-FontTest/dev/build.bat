@@ -50,7 +50,9 @@ engine/sprite_manager.rel ^
 gfx.rel
 
 :: Execute
-ihx2sms output.ihx output.sms
+::ihx2sms output.ihx output.sms
+ihx2sms output.ihx output.sg
+ihx2sms output.ihx output.sc
 
 
 :: Delete
