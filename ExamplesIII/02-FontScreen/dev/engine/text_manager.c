@@ -30,7 +30,7 @@ void engine_text_manager_draw( unsigned char x, unsigned char y, unsigned char n
 {
 	unsigned char ch;
 	unsigned char idx;
-	unsigned char col = x;
+	//unsigned char col = x;
 
 	va_list arglist;
 	va_start( arglist, num );
@@ -38,9 +38,26 @@ void engine_text_manager_draw( unsigned char x, unsigned char y, unsigned char n
 	for( idx = 0; idx < num; idx++ )
 	{
 		ch = va_arg( arglist, int );
-		engine_font_manager_char( ch, col, y );
-		col++;
+		//engine_font_manager_char( ch, col, y );
+		engine_font_manager_char( ch, x++, y );
+		//col++;
 	}
 
 	va_end( arglist );
 }	
+
+void engine_text_manager_arry( unsigned char x, unsigned char y, unsigned char *arr )
+{
+	unsigned char ch;
+	unsigned char idx;
+	unsigned char num = sizeof( arr );
+	//unsigned char num = sizeof( unsigned char );
+
+	engine_font_manager_data( num, 20, 20 );
+
+	for( idx = 0; idx < num; idx++ )
+	{
+		ch = arr[ idx ];
+		engine_font_manager_char( ch, x++, y );
+	}
+}

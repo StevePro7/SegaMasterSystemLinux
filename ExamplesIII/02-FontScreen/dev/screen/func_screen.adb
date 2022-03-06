@@ -1,7 +1,8 @@
 M:func_screen
-F:G$screen_func_screen_load$0$0({2}DF,SV:S),Z,0,0,0,0,0
+F:G$screen_func_screen_load$0$0({2}DF,SV:S),Z,0,12,0,0,0
+S:Lfunc_screen.screen_func_screen_load$code$1$10({12}DA12d,SC:U),B,1,-12
 F:G$screen_func_screen_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lfunc_screen.screen_func_screen_update$screen_type$1$10({2}DG,SC:U),B,1,4
+S:Lfunc_screen.screen_func_screen_update$screen_type$1$11({2}DG,SC:U),B,1,4
 S:G$engine_font_manager_asci$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_char$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0$0({2}DF,SV:S),C,0,0
@@ -9,3 +10,4 @@ S:G$engine_font_manager_data$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_zero$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_text$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_draw$0$0({2}DF,SV:S),C,0,0
+S:G$engine_text_manager_arry$0$0({2}DF,SV:S),C,0,0
