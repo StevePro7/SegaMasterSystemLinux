@@ -9,12 +9,14 @@
 static void section01();
 static void section02();
 static void section03();
+static void section04();
 
 void screen_detail_screen_load()
 {
-	section01();
-	section02();
-	section03();
+	//section01();
+	//section02();
+	//section03();
+	section04();
 
 	//engine_font_manager_text( "DETAIL SCREEN!!", 2, 20 );
 }
@@ -22,6 +24,30 @@ void screen_detail_screen_load()
 void screen_detail_screen_update( unsigned char *screen_type )
 {
 	*screen_type = screen_type_detail;
+}
+
+// 13000 REM TITLE SCREEN
+static void section04()
+{
+	//unsigned char index;
+	unsigned char row, col;
+
+	engine_font_manager_char( 0x8A, LEFT_X + 0,  1 );
+	engine_font_manager_char( 0x8C, LEFT_X + 31, 1 );
+	engine_font_manager_char( 0x8B, LEFT_X + 0, 20 );
+	engine_font_manager_char( 0x8D, LEFT_X + 31, 20 );
+
+	for( col = 1; col <= 30; col++ )
+	{
+		engine_font_manager_char( 0x81, LEFT_X + col, 1 );
+		engine_font_manager_char( 0x81, LEFT_X + col, 20 );
+	}
+
+	for( row = 2; row <= 19; row++ )
+	{
+		engine_font_manager_char( 0x80, LEFT_X + 0, row );
+		engine_font_manager_char( 0x80, LEFT_X + 31, row );
+	}
 }
 
 // 350 CURSOR 13,10:PRINT"WHAT SHALL WE DO?"

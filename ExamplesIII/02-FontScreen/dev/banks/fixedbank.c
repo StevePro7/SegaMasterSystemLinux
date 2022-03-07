@@ -27,3 +27,21 @@ const unsigned char *forests_texts[] =
 	"YOUR HP -            ",
 	"ENEMY HP -           ",
 };
+
+const unsigned char *allover_texts[] =
+{
+	"CONGLATURATION!!!",
+	"YOU HAVE COMPLETED A GREAT GAME",
+	"AND PROVED THE JUSTICE OF OUR CULTURE.",
+	"NOW GO AND REST OUR HERO!",
+	"PRESS ANY KEY TO END THE GAME",
+};
+
+const unsigned char *handler_texts[] =
+{
+	"THIS IS THE MOST IMPORTANT BATTLE OF  YOUR LIFE.",
+	"ARE YOU SURE YOU CAN HANDLE IT?",
+	"1)YES",
+	"2)NO",
+	"SO YOU HAVE COME TO CALLENGE ME,      FOOLISH MORTAL? VERY WELL.",
+};
