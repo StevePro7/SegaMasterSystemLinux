@@ -1,0 +1,9 @@
+M:fixedbank
+S:G$options_texts$0$0({14}DA7d,DG,SC:U),E,0,0
+S:Ffixedbank$__str_0$0$0({22}DA22d,SC:S),D,0,0
+S:Ffixedbank$__str_1$0$0({22}DA22d,SC:S),D,0,0
+S:Ffixedbank$__str_2$0$0({22}DA22d,SC:S),D,0,0
+S:Ffixedbank$__str_3$0$0({22}DA22d,SC:S),D,0,0
+S:Ffixedbank$__str_4$0$0({22}DA22d,SC:S),D,0,0
+S:Ffixedbank$__str_5$0$0({22}DA22d,SC:S),D,0,0
+S:Ffixedbank$__str_6$0$0({22}DA22d,SC:S),D,0,0

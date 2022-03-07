@@ -8,6 +8,10 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 
 
 :: Compile
+cd banks
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 fixedbank.c
+cd ..
+
 cd devkit
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _sms_manager.c
 cd ..
@@ -62,6 +66,7 @@ engine/screen_manager.rel ^
 engine/sprite_manager.rel engine/text_manager.rel ^
 screen/none_screen.rel screen/splash_screen.rel screen/title_screen.rel screen/scroll_screen.rel screen/select_screen.rel ^
 screen/record_screen.rel screen/detail_screen.rel screen/test_screen.rel screen/func_screen.rel ^
+banks/fixedbank.rel ^
 gfx.rel
 
 :: Execute
@@ -69,6 +74,12 @@ ihx2sms output.ihx output.sms
 
 
 :: Delete
+cd banks
+if exist "*.asm" del "*.asm" > nul
+if exist "*.lst" del "*.lst" > nul
+if exist "*.sym" del "*.sym" > nul
+cd ..
+
 cd devkit
 if exist "*.asm" del "*.asm" > nul
 if exist "*.lst" del "*.lst" > nul

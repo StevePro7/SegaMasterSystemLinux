@@ -4,14 +4,17 @@
 #include "../engine/global_manager.h"
 #include "../engine/locale_manager.h"
 #include "../engine/text_manager.h"
+#include "../banks/fixedbank.h"
 
 static void section01();
 static void section02();
+static void section03();
 
 void screen_detail_screen_load()
 {
-	section01();
-	section02();
+	//section01();
+	//section02();
+	section03();
 
 	//engine_font_manager_text( "DETAIL SCREEN!!", 2, 20 );
 }
@@ -19,6 +22,22 @@ void screen_detail_screen_load()
 void screen_detail_screen_update( unsigned char *screen_type )
 {
 	*screen_type = screen_type_detail;
+}
+
+// 350 CURSOR 13,10:PRINT"WHAT SHALL WE DO?"
+static void section03()
+{
+	unsigned char index;
+	unsigned char row;
+
+	engine_font_manager_text( ( unsigned char* ) options_texts[ 0 ], LEFT_X + 13, 10 );
+	engine_font_manager_text( ( unsigned char* ) options_texts[ 6 ], LEFT_X + 13, 22 );
+
+	row = 10;
+	for( index = 1; index <= 5; index++ )
+	{
+		engine_font_manager_text( ( unsigned char* ) options_texts[ index ], LEFT_X + 13, row++ );
+	}
 }
 
 // 300 CURSOR 16,0:PRINT"OLD VILLAGE"
