@@ -33,9 +33,12 @@ static void section01()
 		engine_font_manager_char( 0x80, LEFT_X + 11, row );
 	}
 
-	// TODO statistics etc.
 	engine_font_manager_text( LOCALE_STATISTICS, LEFT_X + 1, 1 );
-	
+	engine_font_manager_text( LOCALE_HP, LEFT_X + 1, 2 );
+	engine_font_manager_text( LOCALE_XP, LEFT_X + 1, 3 );
+	engine_font_manager_text( LOCALE_GOLD, LEFT_X + 1, 4 );
+	engine_font_manager_text( LOCALE_YOU_HAVE, LEFT_X + 2, 5 );
+	engine_font_manager_text( LOCALE_YOUR_LVL, LEFT_X + 2, 21 );
 
 	engine_text_manager_args( LEFT_X, 12, 8, 0x20, 0x20, 0x20, 0x20, 0x20, 0x8A, 0x81, 0x8C );
 	engine_text_manager_args( LEFT_X, 13, 8, 0x20, 0x20, 0x20, 0x20, 0x20, 0x80, 0x20, 0x80 );
