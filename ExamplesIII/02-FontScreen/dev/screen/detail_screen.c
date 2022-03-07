@@ -12,8 +12,8 @@ static void section03();
 
 void screen_detail_screen_load()
 {
-	//section01();
-	//section02();
+	section01();
+	section02();
 	section03();
 
 	//engine_font_manager_text( "DETAIL SCREEN!!", 2, 20 );
@@ -31,12 +31,12 @@ static void section03()
 	unsigned char row;
 
 	engine_font_manager_text( ( unsigned char* ) options_texts[ 0 ], LEFT_X + 13, 10 );
-	engine_font_manager_text( ( unsigned char* ) options_texts[ 6 ], LEFT_X + 13, 22 );
+	engine_font_manager_text( ( unsigned char* ) options_texts[ 6 ], LEFT_X + 12, 22 );
 
-	row = 10;
+	row = 12;
 	for( index = 1; index <= 5; index++ )
 	{
-		engine_font_manager_text( ( unsigned char* ) options_texts[ index ], LEFT_X + 13, row++ );
+		engine_font_manager_text( ( unsigned char* ) options_texts[ index ], LEFT_X + 12, row++ );
 	}
 }
 
