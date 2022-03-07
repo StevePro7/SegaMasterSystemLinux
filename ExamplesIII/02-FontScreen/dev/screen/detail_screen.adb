@@ -1,9 +1,13 @@
 M:detail_screen
 F:G$screen_detail_screen_load$0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_detail_screen_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Ldetail_screen.screen_detail_screen_update$screen_type$1$8({2}DG,SC:U),B,1,4
+S:Ldetail_screen.screen_detail_screen_update$screen_type$1$10({2}DG,SC:U),B,1,4
+F:Fdetail_screen$section01$0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Ldetail_screen.section01$row$1$12({1}SC:U),R,0,0,[b]
 S:G$engine_font_manager_asci$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_char$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_zero$0$0({2}DF,SV:S),C,0,0
+S:G$engine_text_manager_args$0$0({2}DF,SV:S),C,0,0
+S:G$engine_text_manager_list$0$0({2}DF,SV:S),C,0,0
