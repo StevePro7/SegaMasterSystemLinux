@@ -10,10 +10,10 @@ static void section02();
 
 void screen_detail_screen_load()
 {
+	section01();
 	section02();
-	//section01();
 
-	engine_font_manager_text( "DETAIL SCREEN!!", 2, 20 );
+	//engine_font_manager_text( "DETAIL SCREEN!!", 2, 20 );
 }
 
 void screen_detail_screen_update( unsigned char *screen_type )
@@ -63,5 +63,5 @@ static void section01()
 	engine_text_manager_args( LEFT_X, 17, 11, 0x20, 0x20, 0x20, 0x20, 0x20, 0x87, 0x83, 0x89, 0x8B, 0x81, 0x8D );
 
 	engine_text_manager_args( LEFT_X, 18, 8, 0x20, 0x20, 0x20, 0x20, 0x20, 0x93, 0x20, 0x94 );
-	engine_text_manager_args( LEFT_X, 19, 8, 0x20, 0x20, 0x20, 0x20, 0x20, 0x93, 0x20, 0x94 );
+	engine_text_manager_args( LEFT_X, 19, 9, 0x20, 0x20, 0x20, 0x20, 0x93, 0x20, 0x20, 0x20, 0x94 );
 }
