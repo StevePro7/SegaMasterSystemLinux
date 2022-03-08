@@ -10,13 +10,15 @@ static void section01();
 static void section02();
 static void section03();
 static void section04();
+static void section05();
 
 void screen_detail_screen_load()
 {
 	//section01();
 	//section02();
 	//section03();
-	section04();
+	//section04();
+	section05();
 
 	//engine_font_manager_text( "DETAIL SCREEN!!", 2, 20 );
 }
@@ -24,6 +26,16 @@ void screen_detail_screen_load()
 void screen_detail_screen_update( unsigned char *screen_type )
 {
 	*screen_type = screen_type_detail;
+}
+
+// 11120 CURSOR 11,1
+static void section05()
+{
+	engine_text_manager_args( LEFT_X + 11, 1, 7, 0x20, 0x20, 0x20, 0x20, 0x20, 0x95, 0x96 );
+	engine_text_manager_args( LEFT_X + 11, 2, 11, 0x20, 0x95, 0x96, 0x20, 0x20, 0xE5, 0xE5, 0x20, 0x20, 0x95, 0x96 );
+	engine_text_manager_args( LEFT_X + 11, 3, 11, 0x20, 0xE5, 0xE5, 0x96, 0x95, 0xE5, 0xE5, 0x96, 0x95, 0xE5, 0xE5 );
+	engine_text_manager_args( LEFT_X + 11, 4, 12, 0x96, 0xE5, 0xE5, 0x96, 0xE5, 0x98, 0x97, 0xE5, 0x95, 0xE5, 0xE5, 0x95 );
+	engine_text_manager_args( LEFT_X + 11, 5, 12, 0xE5, 0xE5, 0xE5, 0xE5, 0xE5, 0x96, 0x95, 0xE5, 0xE5, 0xE5, 0xE5, 0xE5 );
 }
 
 // 13000 REM TITLE SCREEN
