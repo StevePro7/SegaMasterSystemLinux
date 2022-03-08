@@ -14,9 +14,9 @@ static void section04();
 void screen_detail_screen_load()
 {
 	//section01();
-	//section02();
+	section02();
 	//section03();
-	section04();
+	//section04();
 
 	//engine_font_manager_text( "DETAIL SCREEN!!", 2, 20 );
 }
