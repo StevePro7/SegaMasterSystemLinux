@@ -6,14 +6,14 @@
 
 void screen_select_screen_load()
 {
-	engine_font_manager_text( "SELECT SCREEN??", 2, 2 );
-	engine_font_manager_text( "1", 12, 12 );
-	engine_font_manager_text( "2", 12, 13 );
-	engine_font_manager_text( "3", 12, 14 );
-	engine_font_manager_text( "4", 12, 15 );
+	//engine_font_manager_text( "SELECT SCREEN??", 2, 2 );
+	//engine_font_manager_text( "1", 12, 12 );
+	//engine_font_manager_text( "2", 12, 13 );
+	//engine_font_manager_text( "3", 12, 14 );
+	//engine_font_manager_text( "4", 12, 15 );
 
 
-	engine_select_manager_load( select_type_option, 10, 12, 12, 15 );
+	engine_select_manager_load( select_type_option, 10, 2, 7 );
 }
 
 void screen_select_screen_update( unsigned char *screen_type )

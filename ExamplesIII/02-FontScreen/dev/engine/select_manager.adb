@@ -6,8 +6,7 @@ F:G$engine_select_manager_load$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lselect_manager.engine_select_manager_load$index$1$10({1}SC:U),B,1,4
 S:Lselect_manager.engine_select_manager_load$x$1$10({1}SC:U),B,1,5
 S:Lselect_manager.engine_select_manager_load$y$1$10({1}SC:U),B,1,6
-S:Lselect_manager.engine_select_manager_load$min$1$10({1}SC:U),B,1,7
-S:Lselect_manager.engine_select_manager_load$max$1$10({1}SC:U),B,1,8
+S:Lselect_manager.engine_select_manager_load$option$1$10({1}SC:U),B,1,7
 S:Lselect_manager.engine_select_manager_load$so$1$11({2}DG,STtag_struct_aelect_object:S),R,0,0,[]
 F:G$engine_select_manager_update$0$0({2}DF,SC:U),Z,0,0,0,0,0
 S:Lselect_manager.engine_select_manager_update$index$1$12({1}SC:U),B,1,4

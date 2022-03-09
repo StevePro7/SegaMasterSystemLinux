@@ -26,13 +26,13 @@ void engine_select_manager_init()
 	so->select_max = 0;
 }
 
-void engine_select_manager_load( unsigned char index, unsigned char x, unsigned char y, unsigned char min, unsigned char max )
+void engine_select_manager_load( unsigned char index, unsigned char x, unsigned char y, unsigned char option )
 {
 	struct_select_object *so = &global_select_object;
 	so->select_X = x;
 	so->select_Y = y + so->select_index[ index ];
-	so->select_min = min;
-	so->select_max = max;
+	so->select_min = y;
+	so->select_max = y + option - 1;
 	draw_arrows();
 }
 
