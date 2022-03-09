@@ -17,7 +17,7 @@ void engine_select_manager_init()
 
 	for( index = 0; index < MAX_SELECTS; index++ )
 	{
-		so->select_index[ index ] = 2;
+		so->select_index[ index ] = 0;
 	}
 
 	so->select_X = 0;
@@ -66,6 +66,9 @@ unsigned char engine_select_manager_update( unsigned char index )
 		so->select_Y++;
 		draw_arrows();
 	}
+
+	// Updates select index unconditionally.
+	so->select_index[ index ] = so->select_Y - so->select_min;
 
 	input = engine_input_manager_hold_fire1();
 	if (input)
