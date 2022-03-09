@@ -1,10 +1,16 @@
 #ifndef __SELECT_OBJECT_H__
 #define __SELECT_OBJECT_H__
 
+#include "../engine/global_manager.h"
+
 typedef struct tag_struct_aelect_object
 {
 	// TODO put max in global MGR
-	unsigned char select_index[ 3 ];
+	unsigned char select_index[ MAX_SELECTS ];
+	unsigned char select_X;
+	unsigned char select_Y;
+	unsigned char select_min;
+	unsigned char select_max;
 
 } struct_select_object;
 
