@@ -7,25 +7,25 @@
 
 void screen_sound_screen_load()
 {
-	engine_text_manager_sound();
+	engine_text_manager_title();
 }
 
 void screen_sound_screen_update( unsigned char *screen_type )
 {
 	unsigned char input = engine_input_manager_hold_fire1();
-	if( input )
-	{
-		devkit_PSGSFXStop();
-		*screen_type = screen_type_joint;
-		return;
-	}
+	//if( input )
+	//{
+	//	devkit_PSGSFXStop();
+	//	*screen_type = screen_type_joint;
+	//	return;
+	//}
 
-	input = engine_input_manager_hold_fire2();
-	if( input )
-	{
-		*screen_type = screen_type_music;
-		return;
-	}
+	//input = engine_input_manager_hold_fire2();
+	//if( input )
+	//{
+	//	*screen_type = screen_type_music;
+	//	return;
+	//}
 
 	if( engine_input_manager_hold_left() ||
 		engine_input_manager_hold_right() ||

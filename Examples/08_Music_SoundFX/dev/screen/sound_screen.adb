@@ -2,7 +2,7 @@ M:sound_screen
 F:G$screen_sound_screen_load$0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_sound_screen_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lsound_screen.screen_sound_screen_update$screen_type$1$19({2}DG,SC:U),B,1,4
-S:Lsound_screen.screen_sound_screen_update$input$1$20({1}SC:U),R,0,0,[c]
+S:Lsound_screen.screen_sound_screen_update$input$1$20({1}SC:U),R,0,0,[]
 S:G$devkit_PSGPlay$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_PSGCancelLoop$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_PSGPlayNoRepeat$0$0({2}DF,SV:S),C,0,0

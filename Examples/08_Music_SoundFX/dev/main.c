@@ -17,8 +17,10 @@ void main( void )
 	engine_hack_manager_init();
 	engine_hack_manager_update();
 
-	open_screen_type = screen_type_start;
-	//open_screen_type = screen_type_music;
+	engine_content_manager_load_tiles();
+
+	//open_screen_type = screen_type_start;
+	open_screen_type = screen_type_sound;
 	engine_screen_manager_init( open_screen_type );
 
 	devkit_SMS_displayOn();
