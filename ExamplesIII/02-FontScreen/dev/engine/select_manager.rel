@@ -1,0 +1,51 @@
+;!FILE select_manager.asm
+XL2
+H 9 areas 15 global symbols
+M select_manager
+O -mz80
+S .__.ABS. Def0000
+A _CODE size 3 flags 0 addr 0
+S _engine_select_manager_init Def0000
+S G$engine_select_manager_update$0$0 Def0002
+S XG$engine_select_manager_init$0$0 Def0000
+S _engine_select_manager_update Def0002
+S XG$engine_select_manager_update$0$0 Def0002
+S C$select_manager.c$10$0$0 Def0001
+S C$select_manager.c$12$0$0 Def0001
+S G$engine_select_manager_load$0$0 Def0001
+S C$select_manager.c$14$0$0 Def0002
+S C$select_manager.c$17$0$0 Def0002
+S A$select_manager$82 Def0001
+S _engine_select_manager_load Def0001
+S A$select_manager$65 Def0000
+S C$select_manager.c$6$0$0 Def0000
+S A$select_manager$99 Def0002
+S G$engine_select_manager_init$0$0 Def0000
+S C$select_manager.c$8$0$0 Def0000
+S XG$engine_select_manager_load$0$0 Def0001
+A _DATA size 3 flags 0 addr 0
+S _global_select_object Def0000
+S G$global_select_object$0$0 Def0000
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 01 00
+T 00 00
+R 00 00 01 00
+T 00 00
+R 00 00 00 00
+T 00 00 C9
+R 00 00 00 00
+T 01 00
+R 00 00 00 00
+T 01 00 C9
+R 00 00 00 00
+T 02 00
+R 00 00 00 00
+T 02 00 C9
+R 00 00 00 00

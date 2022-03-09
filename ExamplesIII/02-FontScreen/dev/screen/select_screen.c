@@ -4,7 +4,7 @@
 
 void screen_select_screen_load()
 {
-	engine_font_manager_text( "SELECT SCREEN!!", 2, 10 );
+	engine_font_manager_text( "SELECT SCREEN..!!", 2, 10 );
 }
 
 void screen_select_screen_update( unsigned char *screen_type )
