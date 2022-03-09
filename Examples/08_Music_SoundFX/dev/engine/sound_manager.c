@@ -9,7 +9,9 @@
 #define SOUND1_PSG			sound1_psg
 #define SOUND2_PSG			sound2_psg
 #define SOUND3_PSG			sound3_psg
-#define SOUNDS_MAX			3
+#define SOUND4_PSG			m_gover_psg
+#define SOUND5_PSG			m_title_psg
+#define SOUNDS_MAX			5
 
 void engine_music_manager_play()
 {
@@ -36,15 +38,15 @@ void engine_sound_manager_play()
 	sound = rand() % SOUNDS_MAX;
 	if( 0 == sound )
 	{
-		sfx = ( unsigned char* ) SOUND1_PSG;
+		sfx = ( unsigned char* ) SOUND5_PSG;
 	}
 	else if( 1 == sound )
 	{
-		sfx = ( unsigned char* ) SOUND2_PSG;
+		sfx = ( unsigned char* ) SOUND5_PSG;
 	}
 	else
 	{
-		sfx = ( unsigned char* ) SOUND3_PSG;
+		sfx = ( unsigned char* ) SOUND5_PSG;
 	}
 
 	devkit_PSGSFXPlay( sfx, devkit_SFX_CHANNEL2() );
