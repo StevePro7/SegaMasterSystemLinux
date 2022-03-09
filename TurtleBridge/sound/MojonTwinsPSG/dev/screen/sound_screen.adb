@@ -1,8 +1,8 @@
 M:sound_screen
 F:G$screen_sound_screen_load$0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_sound_screen_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lsound_screen.screen_sound_screen_update$screen_type$1$19({2}DG,SC:U),B,1,4
-S:Lsound_screen.screen_sound_screen_update$input$1$20({1}SC:U),R,0,0,[c]
+S:Lsound_screen.screen_sound_screen_update$screen_type$1$23({2}DG,SC:U),B,1,4
+S:Lsound_screen.screen_sound_screen_update$input$1$24({1}SC:U),R,0,0,[l]
 S:G$devkit_PSGPlay$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_PSGCancelLoop$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_PSGPlayNoRepeat$0$0({2}DF,SV:S),C,0,0
@@ -22,6 +22,10 @@ S:G$devkit_PSGSFXFrame$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SFX_CHANNEL2$0$0({2}DF,SC:U),C,0,0
 S:G$devkit_SFX_CHANNEL3$0$0({2}DF,SC:U),C,0,0
 S:G$devkit_SFX_CHANNELS2AND3$0$0({2}DF,SC:U),C,0,0
+S:G$engine_font_manager_draw_char$0$0({2}DF,SV:S),C,0,0
+S:G$engine_font_manager_draw_text$0$0({2}DF,SV:S),C,0,0
+S:G$engine_font_manager_draw_data$0$0({2}DF,SV:S),C,0,0
+S:G$engine_font_manager_draw_data_ZERO$0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_update$0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_hold_up$0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_hold_down$0$0({2}DF,SC:U),C,0,0
@@ -37,6 +41,3 @@ S:G$engine_input_manager_move_fire1$0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire2$0$0({2}DF,SC:U),C,0,0
 S:G$engine_music_manager_play$0$0({2}DF,SV:S),C,0,0
 S:G$engine_sound_manager_play$0$0({2}DF,SV:S),C,0,0
-S:G$engine_text_manager_title$0$0({2}DF,SV:S),C,0,0
-S:G$engine_text_manager_music$0$0({2}DF,SV:S),C,0,0
-S:G$engine_text_manager_sound$0$0({2}DF,SV:S),C,0,0

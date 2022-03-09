@@ -10,7 +10,7 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 
 :: Content
 ::folder2c ../gfx gfx
-sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 gfx.c
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 gfx.c
 
 
 :: Compile
@@ -27,16 +27,11 @@ sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 h
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 input_manager.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 screen_manager.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 sound_manager.c
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 text_manager.c
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 tree_manager.c
 cd ..
 
 cd screen
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 none_screen.c
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 start_screen.c
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 music_screen.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 sound_screen.c
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 joint_screen.c
 cd ..
 
 sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
@@ -61,21 +56,13 @@ devkit/_sms_manager.rel ^
 devkit/_snd_manager.rel ^
 engine/asm_manager.rel ^
 engine/content_manager.rel ^
-engine/enemy_manager.rel ^
 engine/font_manager.rel ^
-engine/gamer_manager.rel ^
 engine/hack_manager.rel ^
 engine/input_manager.rel ^
 engine/screen_manager.rel ^
 engine/sound_manager.rel ^
-engine/sprite_manager.rel ^
-engine/text_manager.rel ^
-engine/tree_manager.rel ^
 screen/none_screen.rel ^
-screen/start_screen.rel ^
-screen/music_screen.rel ^
 screen/sound_screen.rel ^
-screen/joint_screen.rel ^
 gfx.rel ^
 psg.rel
 

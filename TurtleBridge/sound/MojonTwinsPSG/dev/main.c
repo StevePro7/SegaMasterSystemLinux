@@ -17,8 +17,7 @@ void main( void )
 	engine_hack_manager_init();
 	engine_hack_manager_update();
 
-	open_screen_type = screen_type_start;
-	//open_screen_type = screen_type_music;
+	open_screen_type = screen_type_sound;
 	engine_screen_manager_init( open_screen_type );
 
 	devkit_SMS_displayOn();
@@ -45,13 +44,8 @@ void main( void )
 			continue;
 		}
 
-		devkit_SMS_initSprites();
 		engine_input_manager_update();
 		engine_screen_manager_update();
-
-		devkit_SMS_finalizeSprites();
-		devkit_SMS_waitForVBlank();
-		devkit_SMS_copySpritestoSAT();
 
 		devkit_PSGFrame();
 		devkit_PSGSFXFrame();
