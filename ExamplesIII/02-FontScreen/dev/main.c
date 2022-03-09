@@ -25,6 +25,7 @@ void main( void )
 	//open_screen_type = screen_type_detail;
 	open_screen_type = screen_type_select;
 
+	engine_select_manager_init();
 	engine_screen_manager_init( open_screen_type );
 	devkit_SMS_displayOn();
 	for( ;; )
