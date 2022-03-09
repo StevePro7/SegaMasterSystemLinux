@@ -26,17 +26,17 @@ void engine_select_manager_init()
 	so->select_max = 0;
 }
 
-void engine_select_manager_load( unsigned char x, unsigned char y, unsigned char min, unsigned char max )
+void engine_select_manager_load( unsigned char index, unsigned char x, unsigned char y, unsigned char min, unsigned char max )
 {
 	struct_select_object *so = &global_select_object;
 	so->select_X = x;
-	so->select_Y = y;
+	so->select_Y = y + so->select_index[ index ];
 	so->select_min = min;
 	so->select_max = max;
 	draw_arrows();
 }
 
-signed char engine_select_manager_update( unsigned char index )
+unsigned char engine_select_manager_update( unsigned char index )
 {
 	struct_select_object *so = &global_select_object;
 	unsigned char input;
@@ -70,7 +70,7 @@ signed char engine_select_manager_update( unsigned char index )
 	input = engine_input_manager_hold_fire1();
 	if (input)
 	{
-		return ( signed char ) so->select_index[ index ];
+		return so->select_index[ index ];
 	}
 
 	return INVALID_INDEX;

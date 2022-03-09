@@ -7,6 +7,6 @@
 
 #define LEFT_X					0
 
-#define INVALID_INDEX			-1
+#define INVALID_INDEX			255
 
 #endif//_GLOBAL_MANAGER_H_

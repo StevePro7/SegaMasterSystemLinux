@@ -13,7 +13,7 @@ void screen_select_screen_load()
 	engine_font_manager_text( "4", 12, 15 );
 
 
-	engine_select_manager_load( 10, 12, 12, 15 );
+	engine_select_manager_load( select_type_option, 10, 12, 12, 15 );
 }
 
 void screen_select_screen_update( unsigned char *screen_type )
@@ -21,10 +21,10 @@ void screen_select_screen_update( unsigned char *screen_type )
 	char selection;
 
 	selection = engine_select_manager_update( select_type_option );
-	//if( INVALID_INDEX != selection )
-	//{
-	//	engine_font_manager_data( selection, 15, 18 );
-	//}
+	if( INVALID_INDEX != selection )
+	{
+		engine_font_manager_data( selection, 15, 18 );
+	}
 
 	*screen_type = screen_type_select;
 }
