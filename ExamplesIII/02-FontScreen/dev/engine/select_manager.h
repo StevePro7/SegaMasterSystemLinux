@@ -7,7 +7,7 @@
 extern struct_select_object global_select_object;
 
 void engine_select_manager_init();
-void engine_select_manager_load();
-void engine_select_manager_update();
+void engine_select_manager_load( unsigned char x, unsigned char y, unsigned char min, unsigned char max );
+void engine_select_manager_update( unsigned char index );
 
 #endif//_SELECT_MANAGER_H_
