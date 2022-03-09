@@ -1,0 +1,14 @@
+M:text_manager
+F:G$engine_text_manager_title$0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Ltext_manager.engine_text_manager_title$x$1$5({1}SC:U),R,0,0,[]
+S:Ltext_manager.engine_text_manager_title$y$1$5({1}SC:U),R,0,0,[]
+F:G$engine_text_manager_music$0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Ltext_manager.engine_text_manager_music$x$1$6({1}SC:U),R,0,0,[]
+S:Ltext_manager.engine_text_manager_music$y$1$6({1}SC:U),R,0,0,[]
+F:G$engine_text_manager_sound$0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Ltext_manager.engine_text_manager_sound$x$1$7({1}SC:U),R,0,0,[]
+S:Ltext_manager.engine_text_manager_sound$y$1$7({1}SC:U),R,0,0,[]
+S:G$engine_font_manager_draw_char$0$0({2}DF,SV:S),C,0,0
+S:G$engine_font_manager_draw_text$0$0({2}DF,SV:S),C,0,0
+S:G$engine_font_manager_draw_data$0$0({2}DF,SV:S),C,0,0
+S:G$engine_font_manager_draw_data_ZERO$0$0({2}DF,SV:S),C,0,0
