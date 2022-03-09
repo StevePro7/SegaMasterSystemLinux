@@ -24,31 +24,31 @@ void main( void )
 	devkit_SMS_displayOn();
 	for( ;; )
 	{
-		if( devkit_SMS_queryPauseRequested() )
-		{
-			devkit_SMS_resetPauseRequest();
-			global_pause = !global_pause;
-			if( global_pause )
-			{
-				engine_font_manager_draw_text( LOCALE_PAUSED, 10, 13 );
-				devkit_PSGSilenceChannels();
-			}
-			else
-			{
-				engine_font_manager_draw_text( LOCALE_SPACES, 10, 13 );
-				devkit_PSGRestoreVolumes();
-			}
-		}
+		//if( devkit_SMS_queryPauseRequested() )
+		//{
+		//	devkit_SMS_resetPauseRequest();
+		//	global_pause = !global_pause;
+		//	if( global_pause )
+		//	{
+		//		engine_font_manager_draw_text( LOCALE_PAUSED, 10, 13 );
+		//		devkit_PSGSilenceChannels();
+		//	}
+		//	else
+		//	{
+		//		engine_font_manager_draw_text( LOCALE_SPACES, 10, 13 );
+		//		devkit_PSGRestoreVolumes();
+		//	}
+		//}
 
-		if( global_pause )
-		{
-			continue;
-		}
+		//if( global_pause )
+		//{
+		//	continue;
+		//}
 
 		engine_input_manager_update();
 		engine_screen_manager_update();
 
-		devkit_PSGFrame();
+		//devkit_PSGFrame();
 		devkit_PSGSFXFrame();
 	}
 }
