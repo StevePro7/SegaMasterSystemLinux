@@ -15,7 +15,8 @@ void screen_sound_screen_update( unsigned char *screen_type )
 	unsigned char input = engine_input_manager_hold_fire1();
 	if( input )
 	{
-		engine_font_manager_draw_text( "PLAY", 10, 10 );
+		engine_font_manager_draw_text( "PLAY!", 10, 10 );
+		engine_sound_manager_play( 4 );
 	}
 
 	*screen_type = screen_type_sound;

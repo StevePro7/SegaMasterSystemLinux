@@ -22,18 +22,18 @@ void engine_music_manager_play()
 	devkit_PSGPlayNoRepeat( ( unsigned char* ) PHONE_PSG );
 }
 
-void engine_sound_manager_play()
+void engine_sound_manager_play(unsigned char sound)
 {
-	struct_hack_object *ho = &global_hack_object;
-	unsigned char sound;
+	//struct_hack_object *ho = &global_hack_object;
+	//unsigned char sound;
 	void *sfx;
 
-	if( !ho->hack_sound )
-	{
-		return;
-	}
+	//if( !ho->hack_sound )
+	//{
+	//	return;
+	//}
 
-	sound = rand() % SOUNDS_MAX;
+	//sound = rand() % SOUNDS_MAX;
 	if( 0 == sound )
 	{
 		sfx = ( unsigned char* ) SOUND1_PSG;
