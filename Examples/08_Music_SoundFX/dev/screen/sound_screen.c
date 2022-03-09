@@ -13,12 +13,10 @@ void screen_sound_screen_load()
 void screen_sound_screen_update( unsigned char *screen_type )
 {
 	unsigned char input = engine_input_manager_hold_fire1();
-	//if( input )
-	//{
-	//	devkit_PSGSFXStop();
-	//	*screen_type = screen_type_joint;
-	//	return;
-	//}
+	if( input )
+	{
+		engine_sound_manager_play();
+	}
 
 	//input = engine_input_manager_hold_fire2();
 	//if( input )
@@ -27,13 +25,13 @@ void screen_sound_screen_update( unsigned char *screen_type )
 	//	return;
 	//}
 
-	if( engine_input_manager_hold_left() ||
-		engine_input_manager_hold_right() ||
-		engine_input_manager_hold_up() ||
-		engine_input_manager_hold_down() )
-	{
-		engine_sound_manager_play();
-	}
+	//if( engine_input_manager_hold_left() ||
+	//	engine_input_manager_hold_right() ||
+	//	engine_input_manager_hold_up() ||
+	//	engine_input_manager_hold_down() )
+	//{
+	//	engine_sound_manager_play();
+	//}
 
 	*screen_type = screen_type_sound;
 }
