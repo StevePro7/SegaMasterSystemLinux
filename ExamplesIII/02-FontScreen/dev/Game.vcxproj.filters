@@ -21,12 +21,6 @@
     <Filter Include="Source Files\engine">
       <UniqueIdentifier>{741adb6f-8ef6-4422-953c-1a6aa5238433}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\output">
-      <UniqueIdentifier>{87b1fc85-9cd8-4f69-a39a-75bd87f4a81c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\output">
-      <UniqueIdentifier>{cfb2b2df-6766-4430-834a-9be77cbcff2b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
@@ -43,6 +37,18 @@
     <Filter Include="Source Files\banks">
       <UniqueIdentifier>{01b82bdc-54a4-4fcb-b092-6c42c370fbfb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\object">
+      <UniqueIdentifier>{786896d1-a9d3-441d-aeba-9cb0bd355f8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\object">
+      <UniqueIdentifier>{9270fca4-8922-4aa4-8cd6-5767c3ed980a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\content">
+      <UniqueIdentifier>{cfb2b2df-6766-4430-834a-9be77cbcff2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\content">
+      <UniqueIdentifier>{87b1fc85-9cd8-4f69-a39a-75bd87f4a81c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
@@ -55,7 +61,7 @@
       <Filter>Source Files\devkit</Filter>
     </ClCompile>
     <ClCompile Include="gfx.c">
-      <Filter>Source Files\output</Filter>
+      <Filter>Source Files\content</Filter>
     </ClCompile>
     <ClCompile Include="engine\content_manager.c">
       <Filter>Source Files\engine</Filter>
@@ -117,6 +123,12 @@
     <ClCompile Include="banks\fixedbank.c">
       <Filter>Source Files\banks</Filter>
     </ClCompile>
+    <ClCompile Include="engine\select_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="object\select_object.c">
+      <Filter>Source Files\object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="build.bat">
@@ -134,7 +146,7 @@
       <Filter>Header Files\devkit</Filter>
     </ClInclude>
     <ClInclude Include="gfx.h">
-      <Filter>Header Files\output</Filter>
+      <Filter>Header Files\content</Filter>
     </ClInclude>
     <ClInclude Include="engine\content_manager.h">
       <Filter>Header Files\engine</Filter>
@@ -195,6 +207,12 @@
     </ClInclude>
     <ClInclude Include="banks\fixedbank.h">
       <Filter>Header Files\banks</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\select_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="object\select_object.h">
+      <Filter>Header Files\object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

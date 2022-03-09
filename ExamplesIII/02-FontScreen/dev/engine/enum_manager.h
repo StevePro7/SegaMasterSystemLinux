@@ -15,4 +15,13 @@ typedef enum tag_enum_screen_type
 
 } enum_screen_type;
 
+typedef enum tag_enum_select_type
+{
+	select_type_main = 0,
+	select_type_option = 1,
+	select_type_play = 1,
+	select_type_battle = 2,
+
+} enum_select_type;
+
 #endif//_ENUM_MANAGER_H_
