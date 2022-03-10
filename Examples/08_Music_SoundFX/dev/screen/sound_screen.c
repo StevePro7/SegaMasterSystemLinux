@@ -36,7 +36,7 @@ void screen_sound_screen_update( unsigned char *screen_type )
 	if( input )
 	{
 		index++;
-		if( index >= MAX_EFFECTS - 1 )
+		if( index >= MAX_EFFECTS )
 		{
 			index = 0;
 		}
@@ -48,7 +48,10 @@ void screen_sound_screen_update( unsigned char *screen_type )
 	input = engine_input_manager_hold_fire1();
 	if( input )
 	{
-		engine_audio_manager_play( index );
+		if( !devkit_PSGSFXGetStatus() )
+		{
+			engine_audio_manager_play( index );
+		}
 	}
 
 	input = engine_input_manager_hold_fire2();
