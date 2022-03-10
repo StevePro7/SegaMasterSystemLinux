@@ -1,16 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Text;
 
 namespace BinaryFileWrite
 {
 	public class FileManager
 	{
-		const int buffer = 16 * 1024;		// 16KB
+		const int buffer = 16 * 1024;       // 16KB
+
+		private IList<string> lines;
+		private StringBuilder sb;
 
 		public FileManager()
 		{
-			ByteObjectList = new List<ByteObject>();
+			//ByteObjectList = new List<ByteObject>();
+			lines = new List<string>();
+			sb = new StringBuilder();
 		}
 
 		public void Process(string fileName)
@@ -27,27 +34,51 @@ namespace BinaryFileWrite
 
 				for (var loop = 0; loop < looper; loop++)
 				{
+					var outName = (loop+1).ToString().PadLeft(2, '0');
+					var outBank = loop + 2;
+
+					lines.Clear();
+					var line = "const unsigned char Riff__" + outName + "_wav_pcmenc[] = {";
+					lines.Add(line);
+
+					sb.Clear();
+
 					int count = 0;
-					for (int idx = 0; idx < buffer; idx++)
-					{
-						outArray[idx] = 0;
-					}
+					int bytes = 0;
 
 					b.BaseStream.Seek(start, SeekOrigin.Begin);
 					while (start < length && count < buffer)
 					{
 						byte y = b.ReadByte();
+						string s = Convert.ToString(y, 16).PadLeft(2, '0');
+						string hex = $"0x{s},";
+						sb.Append(hex);
+						bytes++;
+						if (16 == bytes)
+						{
+							line = sb.ToString();
+							lines.Add(line);
+							sb.Clear();
+							bytes = 0;
+						}
+
 						outArray[count] = y;
 						start++;
-						//count++;
+						count++;
 					}
 
-					var outName = loop.ToString().PadLeft(2, '0');
-					var outFile = $"output/{outName}.dat";
-					var fs = new FileStream(outFile, FileMode.Create, FileAccess.ReadWrite);
-					BinaryWriter bw = new BinaryWriter(fs);
-					bw.Write(outArray);
-					bw.Close();
+					if (bytes > 0)
+					{
+						line = sb.ToString();
+						lines.Add(line);
+						sb.Clear();
+						bytes = 0;
+					}
+					lines.Add("};");
+
+					var contents = lines.ToArray();
+					File.WriteAllLines("output/bank" + outBank + ".c", contents);
+
 				}
 			}
 		}
