@@ -38,7 +38,8 @@ namespace BinaryFileWrite
 					var outBank = loop + 2;
 
 					lines.Clear();
-					var line = "const unsigned char Riff__" + outName + "_wav_pcmenc[] = {";
+					var text = "Riff__" + outName + "_wav_pcmenc";
+					var line = "const unsigned char " + text + "[] = {";
 					lines.Add(line);
 
 					sb.Clear();
@@ -76,9 +77,20 @@ namespace BinaryFileWrite
 					}
 					lines.Add("};");
 
+					// bankX.c
 					var contents = lines.ToArray();
 					File.WriteAllLines("output/bank" + outBank + ".c", contents);
 
+					// bankX.h
+					lines.Clear();
+					line = "extern const unsigned char " + text + "[];";
+					lines.Add(line);
+					line = "#define\t\t\t\t" + text + "_size " + count;
+					lines.Add(line);
+					line = "#define\t\t\t\t" + text + "_bank " + outBank;
+					lines.Add(line);
+					contents = lines.ToArray();
+					File.WriteAllLines("output/bank" + outBank + ".h", contents);
 				}
 			}
 		}
