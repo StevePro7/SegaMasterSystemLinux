@@ -1,6 +1,6 @@
 ;!FILE sound_screen.asm
 XL2
-H 9 areas 60 global symbols
+H 9 areas 72 global symbols
 M sound_screen
 O -mz80
 S _devkit_PSGSFXStop Ref0000
@@ -12,93 +12,111 @@ S _devkit_PSGSilenceChannels Ref0000
 S .__.ABS. Def0000
 S _engine_input_manager_hold_up Ref0000
 S _engine_font_manager_draw_data Ref0000
-A _CODE size 6C flags 0 addr 0
-S A$sound_screen$78 Def0010
-S A$sound_screen$69 Def0004
+S _engine_input_manager_hold_down Ref0000
+A _CODE size 88 flags 0 addr 0
+S A$sound_screen$87 Def0012
+S A$sound_screen$78 Def000D
+S A$sound_screen$69 Def0003
 S Fsound_screen$__str_0$0$0 Def0015
+S A$sound_screen$79 Def0010
 S _screen_sound_screen_load Def0000
 S XG$screen_sound_screen_load$0$0 Def0012
-S XFsound_screen$draw_index$0$0 Def006B
+S XFsound_screen$draw_index$0$0 Def0087
 S G$screen_sound_screen_update$0$0 Def001B
-S A$sound_screen$200 Def0065
-S A$sound_screen$201 Def0066
-S A$sound_screen$120 Def002C
-S A$sound_screen$202 Def0069
-S A$sound_screen$130 Def0034
-S A$sound_screen$103 Def001B
-S A$sound_screen$203 Def006A
-S A$sound_screen$140 Def003B
-S A$sound_screen$113 Def0022
-S A$sound_screen$141 Def003C
-S A$sound_screen$114 Def0026
-S C$sound_screen.c$70$1$30 Def006B
+S A$sound_screen$200 Def006D
+S A$sound_screen$110 Def0020
+S A$sound_screen$121 Def002C
+S A$sound_screen$230 Def007D
+S A$sound_screen$140 Def003A
+S A$sound_screen$131 Def0034
+S A$sound_screen$104 Def001B
+S A$sound_screen$240 Def0087
+S A$sound_screen$231 Def0080
+S A$sound_screen$141 Def003B
+S A$sound_screen$114 Def0022
+S C$sound_screen.c$51$2$30 Def005A
 S C$sound_screen.c$14$1$23 Def0000
-S A$sound_screen$160 Def004C
-S A$sound_screen$115 Def0029
+S A$sound_screen$232 Def0081
+S A$sound_screen$214 Def0076
+S A$sound_screen$205 Def0070
+S A$sound_screen$151 Def0045
+S A$sound_screen$142 Def003C
+S A$sound_screen$115 Def0026
 S C$sound_screen.c$15$1$23 Def000D
 S _screen_sound_screen_update Def001B
-S A$sound_screen$125 Def0030
-S A$sound_screen$116 Def002A
-S A$sound_screen$107 Def001E
+S A$sound_screen$233 Def0082
+S A$sound_screen$206 Def0071
+S A$sound_screen$152 Def0048
+S A$sound_screen$116 Def0029
 S C$sound_screen.c$23$1$25 Def001B
 S C$sound_screen.c$16$1$23 Def0012
-S A$sound_screen$135 Def0037
-S A$sound_screen$126 Def0033
-S A$sound_screen$108 Def001F
-S C$sound_screen.c$42$1$25 Def0047
+S A$sound_screen$234 Def0085
+S A$sound_screen$207 Def0072
+S A$sound_screen$180 Def005F
+S A$sound_screen$171 Def0056
+S A$sound_screen$162 Def0050
+S A$sound_screen$153 Def004A
+S A$sound_screen$126 Def0030
+S A$sound_screen$117 Def002A
+S A$sound_screen$108 Def001E
 S C$sound_screen.c$31$2$26 Def0030
 S C$sound_screen.c$24$1$25 Def001E
 S C$sound_screen.c$17$1$23 Def0012
-S A$sound_screen$208 Def006B
-S A$sound_screen$154 Def0047
-S A$sound_screen$145 Def003E
-S A$sound_screen$109 Def0020
-S C$sound_screen.c$43$1$25 Def004A
+S A$sound_screen$235 Def0086
+S A$sound_screen$208 Def0073
+S A$sound_screen$190 Def0066
+S A$sound_screen$181 Def0062
+S A$sound_screen$172 Def0057
+S A$sound_screen$136 Def0037
+S A$sound_screen$127 Def0033
+S A$sound_screen$109 Def001F
+S C$sound_screen.c$81$1$32 Def0077
 S C$sound_screen.c$32$2$26 Def0034
-S A$sound_screen$182 Def005A
-S A$sound_screen$173 Def0054
-S A$sound_screen$164 Def004E
-S A$sound_screen$146 Def0041
+S A$sound_screen$227 Def0077
+S A$sound_screen$209 Def0074
+S A$sound_screen$191 Def0067
+S A$sound_screen$173 Def0058
+S A$sound_screen$146 Def003E
+S C$sound_screen.c$82$1$32 Def0087
+S C$sound_screen.c$35$1$25 Def0037
 S C$sound_screen.c$19$1$23 Def001B
-S A$sound_screen$174 Def0055
+S A$sound_screen$228 Def007A
+S A$sound_screen$192 Def0068
 S A$sound_screen$147 Def0042
-S C$sound_screen.c$36$1$25 Def0037
-S A$sound_screen$175 Def0056
-S A$sound_screen$148 Def0043
-S A$sound_screen$139 Def003A
-S C$sound_screen.c$64$1$25 Def0054
-S C$sound_screen.c$37$1$25 Def003A
+S C$sound_screen.c$54$1$25 Def0063
+S C$sound_screen.c$36$1$25 Def003A
+S A$sound_screen$229 Def007B
+S A$sound_screen$157 Def004C
+S C$sound_screen.c$57$2$31 Def006A
+S C$sound_screen.c$55$1$25 Def0066
 S C$sound_screen.c$26$2$26 Def0022
-S A$sound_screen$176 Def0057
-S A$sound_screen$158 Def004A
-S A$sound_screen$149 Def0046
-S C$sound_screen.c$69$1$30 Def005B
-S C$sound_screen.c$65$1$25 Def005A
+S A$sound_screen$167 Def0053
+S C$sound_screen.c$58$2$31 Def006D
+S C$sound_screen.c$41$3$29 Def004C
 S C$sound_screen.c$12$0$0 Def0000
-S A$sound_screen$195 Def005B
-S A$sound_screen$177 Def0058
-S A$sound_screen$168 Def0051
-S A$sound_screen$159 Def004B
-S A$sound_screen$196 Def005E
-S C$sound_screen.c$67$1$25 Def005B
-S A$sound_screen$197 Def005F
-S C$sound_screen.c$45$2$29 Def004E
+S A$sound_screen$186 Def0063
+S A$sound_screen$177 Def005A
+S C$sound_screen.c$48$1$25 Def0053
+S C$sound_screen.c$44$2$28 Def0050
+S A$sound_screen$196 Def006A
+S A$sound_screen$178 Def005D
+S C$sound_screen.c$76$1$25 Def0070
+S C$sound_screen.c$49$1$25 Def0056
+S A$sound_screen$179 Def005E
+S C$sound_screen.c$77$1$25 Def0076
 S C$sound_screen.c$28$3$27 Def002C
-S A$sound_screen$198 Def0061
-S C$sound_screen.c$46$2$29 Def0051
-S A$sound_screen$199 Def0064
-S XG$screen_sound_screen_update$0$0 Def005A
-S C$sound_screen.c$39$2$28 Def003E
-S A$sound_screen$70 Def0007
-S A$sound_screen$71 Def0008
+S C$sound_screen.c$38$2$28 Def003E
+S C$sound_screen.c$79$1$25 Def0077
+S XG$screen_sound_screen_update$0$0 Def0076
+S C$sound_screen.c$39$2$28 Def0045
+S A$sound_screen$70 Def0004
+S A$sound_screen$71 Def0007
 S G$screen_sound_screen_load$0$0 Def0000
-S A$sound_screen$72 Def000B
-S A$sound_screen$73 Def000C
-S A$sound_screen$67 Def0000
-S A$sound_screen$86 Def0012
-S A$sound_screen$77 Def000D
-S A$sound_screen$68 Def0003
-S Fsound_screen$draw_index$0$0 Def005B
+S A$sound_screen$72 Def0008
+S A$sound_screen$73 Def000B
+S A$sound_screen$74 Def000C
+S A$sound_screen$68 Def0000
+S Fsound_screen$draw_index$0$0 Def0077
 A _DATA size 1 flags 0 addr 0
 S Fsound_screen$index$0$0 Def0000
 A _INITIALIZED size 0 flags 0 addr 0
@@ -116,7 +134,7 @@ T 00 00
 R 00 00 00 00
 T 00 00 21 0A 02 E5 21 15 00 E5 CD 00 00 F1 F1 21
 R 00 00 00 00 00 07 00 00 02 0B 02 00
-T 0E 00 00 00 36 00 C3 5B 00
+T 0E 00 00 00 36 03 C3 77 00
 R 00 00 00 00 00 02 01 00 00 07 00 00
 T 15 00
 R 00 00 00 00
@@ -130,25 +148,35 @@ T 29 00 B7 20 04 FD 36 00 04
 R 00 00 00 00
 T 30 00
 R 00 00 00 00
-T 30 00 21 00 00 35 CD 5B 00
+T 30 00 21 00 00 35 CD 77 00
 R 00 00 00 00 00 03 01 00 00 07 00 00
 T 37 00
 R 00 00 00 00
-T 37 00 CD 00 00 7D B7 28 09 3A 00 00 F5 33 CD
+T 37 00 CD 00 00 7D B7 28 15 FD 21 00 00 FD 34 00
+R 00 00 00 00 02 03 09 00 00 0B 01 00
+T 45 00 FD 7E 00 D6 03 38 04 FD 36 00 00
+R 00 00 00 00
+T 50 00
+R 00 00 00 00
+T 50 00 CD 77 00
+R 00 00 00 00 00 03 00 00
+T 53 00
+R 00 00 00 00
+T 53 00 CD 00 00 7D B7 28 09 3A 00 00 F5 33 CD
 R 00 00 00 00 02 03 03 00 00 0A 01 00
-T 44 00 00 00 33
+T 60 00 00 00 33
 R 00 00 00 00 02 02 01 00
-T 47 00
+T 63 00
 R 00 00 00 00
-T 47 00 CD 00 00 7D B7 28 06 CD 00 00 CD 00 00
+T 63 00 CD 00 00 7D B7 28 06 CD 00 00 CD 00 00
 R 00 00 00 00 02 03 04 00 02 0A 00 00 02 0D 05 00
-T 54 00
+T 70 00
 R 00 00 00 00
-T 54 00 C1 E1 E5 C5 36 03 C9
+T 70 00 C1 E1 E5 C5 36 03 C9
 R 00 00 00 00
-T 5B 00
+T 77 00
 R 00 00 00 00
-T 5B 00 21 00 00 4E 06 00 21 14 02 E5 C5 CD 00 00
+T 77 00 21 00 00 4E 06 00 21 14 02 E5 C5 CD 00 00
 R 00 00 00 00 00 03 01 00 02 0E 08 00
-T 69 00 F1 F1 C9
+T 85 00 F1 F1 C9
 R 00 00 00 00

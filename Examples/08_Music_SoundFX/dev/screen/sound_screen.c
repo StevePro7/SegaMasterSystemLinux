@@ -12,7 +12,7 @@ static void draw_index();
 void screen_sound_screen_load()
 {
 	engine_font_manager_draw_text( "AUDIO", 10, 2 );
-	index = 0;
+	index = 3;
 	draw_index();
 }
 
@@ -29,6 +29,18 @@ void screen_sound_screen_update( unsigned char *screen_type )
 		}
 
 		index--;
+		draw_index();
+	}
+
+	input = engine_input_manager_hold_down();
+	if( input )
+	{
+		index++;
+		if( index >= MAX_EFFECTS - 1 )
+		{
+			index = 0;
+		}
+
 		draw_index();
 	}
 
