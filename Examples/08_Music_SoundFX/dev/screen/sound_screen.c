@@ -15,7 +15,7 @@ void screen_sound_screen_update( unsigned char *screen_type )
 	unsigned char input = engine_input_manager_hold_fire1();
 	if( input )
 	{
-		engine_audio_manager_play( 0 );
+		engine_audio_manager_play( 1 );
 	}
 
 	//input = engine_input_manager_hold_fire2();
