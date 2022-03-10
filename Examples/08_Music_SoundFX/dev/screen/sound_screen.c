@@ -1,13 +1,13 @@
 #include "sound_screen.h"
 #include "../devkit/_snd_manager.h"
+#include "../engine/audio_manager.h"
 #include "../engine/enum_manager.h"
+#include "../engine/font_manager.h"
 #include "../engine/input_manager.h"
-#include "../engine/sound_manager.h"
-#include "../engine/text_manager.h"
 
 void screen_sound_screen_load()
 {
-	engine_text_manager_title();
+	engine_font_manager_draw_text( "AUDIO", 10, 2 );
 }
 
 void screen_sound_screen_update( unsigned char *screen_type )
@@ -15,7 +15,7 @@ void screen_sound_screen_update( unsigned char *screen_type )
 	unsigned char input = engine_input_manager_hold_fire1();
 	if( input )
 	{
-		engine_sound_manager_play();
+		engine_audio_manager_play( 0 );
 	}
 
 	//input = engine_input_manager_hold_fire2();
