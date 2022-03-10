@@ -12,11 +12,11 @@ namespace BinaryFileWrite
 
 			var fm = new FileManager();
 			fm.Setup(fileName);
-			fm.Process(fileName, ".asm");
+			fm.Process(fileName);
 
-			var byteObjectList = fm.ByteObjectList;
-			var dm = new DataManager();
-			dm.Process(fileName, byteObjectList);
+			//var byteObjectList = fm.ByteObjectList;
+			//var dm = new DataManager();
+			//dm.Process(fileName, byteObjectList);
 
 			Console.WriteLine("Press [ RETURN ]");
 			Console.Read();

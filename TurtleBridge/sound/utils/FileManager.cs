@@ -6,65 +6,50 @@ namespace BinaryFileWrite
 {
 	public class FileManager
 	{
+		const int buffer = 16 * 1024;		// 16KB
+
 		public FileManager()
 		{
 			ByteObjectList = new List<ByteObject>();
 		}
 
-		public void Process(string fileName, string extension)
+		public void Process(string fileName)
 		{
-			ByteObjectList.Clear();
+			var path = $"input/{fileName}";
+			var file = File.Open(path, FileMode.Open);
 
-			var inpFile = fileName + extension;
-			var outFile = "main" + extension;
-
-			var lines = File.ReadAllLines("input/" + inpFile);
-			var count = 0;
-			for (int index = 0; index < lines.Length; index++)
+			int start = 0;
+			var outArray = new byte[buffer];
+			using (BinaryReader b = new BinaryReader(file))
 			{
-				var line = lines[index];
-				if (line.Contains("incbin ..."))
-				{
-					var info = String.Empty;
-					if (lines[index - 2].Trim().EndsWith(":") && lines[index - 2].Contains("$"))
-					{
-						info = lines[index - 3];
-					}
-					else if (lines[index-1].Contains("_DATA_"))
-					{
-						info = lines[index - 2];
-					}
-					else
-					{
-						info = lines[index - 1];
-					}
-					
-					ByteObject obj = CalcByteObject(info, count++);
-					ByteObjectList.Add(obj);
+				int length = (int)b.BaseStream.Length;
+				int looper = length / buffer + 1;
 
-					var destFile = String.Format(@"""data/{0}""", obj.ByteString);
-					line = line.Replace("...", destFile);
-					lines[index] = line;
+				for (var loop = 0; loop < looper; loop++)
+				{
+					int count = 0;
+					for (int idx = 0; idx < buffer; idx++)
+					{
+						outArray[idx] = 0;
+					}
+
+					b.BaseStream.Seek(start, SeekOrigin.Begin);
+					while (start < length && count < buffer)
+					{
+						byte y = b.ReadByte();
+						outArray[count] = y;
+						start++;
+						//count++;
+					}
+
+					var outName = loop.ToString().PadLeft(2, '0');
+					var outFile = $"output/{outName}.dat";
+					var fs = new FileStream(outFile, FileMode.Create, FileAccess.ReadWrite);
+					BinaryWriter bw = new BinaryWriter(fs);
+					bw.Write(outArray);
+					bw.Close();
 				}
 			}
-
-			string path = $"output/{fileName}/{outFile}";
-			File.WriteAllLines(path, lines);
-		}
-
-		public ByteObject CalcByteObject(string info, int count)
-		{
-			var data = info.Split(new char[] { ' ' });
-			var starts = data[3];
-			var finish = data[5];
-
-			var filename = String.Format("File{0}_{1}_{2}.dat", count.ToString("D2"), starts.PadLeft(5, '0'), finish.PadLeft(5, '0'));
-			return new ByteObject
-			{
-				ByteStarts = starts,
-				ByteFinish = finish,
-				ByteString = filename
-			};
 		}
 
 		public void Setup(string fileName)
@@ -74,15 +59,12 @@ namespace BinaryFileWrite
 				Directory.CreateDirectory("output");
 			}
 
-			var path = $"output/{fileName}";
-			if (!Directory.Exists(path))
-			{
-				Directory.CreateDirectory(path);
-			}
-			if (!Directory.Exists(path + "/data"))
-			{
-				Directory.CreateDirectory(path + "/data");
-			}
+			//var name = fileName.Replace(".", "_");
+			//var path = $"output/{name}";
+			//if (!Directory.Exists(path))
+			//{
+			//	Directory.CreateDirectory(path);
+			//}
 		}
 
 		public IList<ByteObject> ByteObjectList { get; private set; }
