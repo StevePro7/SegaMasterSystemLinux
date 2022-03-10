@@ -12,7 +12,7 @@ static void draw_index();
 void screen_sound_screen_load()
 {
 	engine_font_manager_draw_text( "AUDIO", 10, 2 );
-	index = 3;
+	index = 0;
 	draw_index();
 }
 
@@ -61,25 +61,10 @@ void screen_sound_screen_update( unsigned char *screen_type )
 		devkit_PSGSilenceChannels();
 	}
 
-	//input = engine_input_manager_hold_fire2();
-	//if( input )
-	//{
-	//	*screen_type = screen_type_music;
-	//	return;
-	//}
-
-	//if( engine_input_manager_hold_left() ||
-	//	engine_input_manager_hold_right() ||
-	//	engine_input_manager_hold_up() ||
-	//	engine_input_manager_hold_down() )
-	//{
-	//	engine_sound_manager_play();
-	//}
-
 	*screen_type = screen_type_sound;
 }
 
 static void draw_index()
 {
-	engine_font_manager_draw_data( index, 20, 2 );
+	engine_font_manager_draw_data( index + 1, 20, 2 );
 }

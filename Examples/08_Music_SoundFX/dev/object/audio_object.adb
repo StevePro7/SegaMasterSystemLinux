@@ -1,5 +1,5 @@
 M:audio_object
-S:G$audio_effect$0$0({8}DA4d,DG,SC:U),E,0,0
+S:G$audio_effect$0$0({52}DA26d,DG,SC:U),E,0,0
 S:G$music_psg$0$0({0}DA0d,SC:U),D,0,0
 S:G$m_gover_psg$0$0({0}DA0d,SC:U),D,0,0
 S:G$m_title_psg$0$0({0}DA0d,SC:U),D,0,0
