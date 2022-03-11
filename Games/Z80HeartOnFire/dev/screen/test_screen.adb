@@ -9,7 +9,6 @@ S:G$engine_font_manager_draw_data$0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_update$0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_hold$0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move$0$0({2}DF,SC:U),C,0,0
-S:G$engine_riff_manager_init$0$0({2}DF,SV:S),C,0,0
 S:G$engine_riff_manager_play$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_PSG_STOPPED$0$0({2}DF,SC:U),C,0,0
 S:G$devkit_PSG_PLAYING$0$0({2}DF,SC:U),C,0,0

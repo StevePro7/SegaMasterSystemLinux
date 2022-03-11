@@ -15,7 +15,7 @@ void main(void)
 	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );
 
 	engine_content_manager_load_tiles();
-	engine_riff_manager_init();
+//	engine_riff_manager_init();
 
 	open_screen_type = screen_type_test;
 	engine_screen_manager_init( open_screen_type );

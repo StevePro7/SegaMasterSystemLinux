@@ -1,4 +1,4 @@
-    @echo off
+@echo off
 
 REM https://stackoverflow.com/questions/673523/how-do-i-measure-execution-time-of-a-command-on-the-windows-command-line
 :: Calculate the start timestamp
@@ -7,26 +7,20 @@ set /a _hours=100%_time:~0,2%%%100,_min=100%_time:~3,2%%%100,_sec=100%_time:~6,2
 set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 
 
-REM build.bat assumes the following scripts been re-run and REL files cached:
-REM bank*.bat
-REM gfx.bat
-REM psg.bat
-
-
 cd devkit
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _sms_manager.c
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _snd_manager.c
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _sms_manager.c
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _snd_manager.c
 cd ..
 
 cd engine
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 asm_manager.c
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 asm_manager.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 content_manager.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 enum_manager.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 font_manager.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 global_manager.c
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 input_manager.c
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 input_manager.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 riff_manager.c
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 sample_manager.c
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 sample_manager.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 screen_manager.c
 cd ..
 
@@ -77,7 +71,6 @@ engine/enum_manager.rel ^
 engine/font_manager.rel ^
 engine/input_manager.rel ^
 engine/riff_manager.rel ^
-engine/sample_manager.rel ^
 engine/screen_manager.rel ^
 object/riff_object.rel ^
 screen/none_screen.rel ^

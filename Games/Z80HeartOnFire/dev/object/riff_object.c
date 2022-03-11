@@ -5,14 +5,14 @@
 
 const unsigned char *riff_sample_data[] =
 {
-	Riff__01_wav_pcmenc,
-	Riff__02_wav_pcmenc,
-	Riff__03_wav_pcmenc,
+	z80_heart_on_fire_01,
+	z80_heart_on_fire_02,
+	z80_heart_on_fire_03,
 };
 
 const unsigned char riff_sample_bank[] =
 {
-	Riff__01_wav_pcmenc_bank,
-	Riff__02_wav_pcmenc_bank,
-	Riff__03_wav_pcmenc_bank,
+	z80_heart_on_fire_01_bank,
+	z80_heart_on_fire_02_bank,
+	z80_heart_on_fire_03_bank,
 };
