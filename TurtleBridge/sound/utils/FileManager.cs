@@ -38,7 +38,7 @@ namespace BinaryFileWrite
 					var outBank = loop + 2;
 
 					lines.Clear();
-					var text = "Riff__" + outName + "_wav_pcmenc";
+					var text = outCode; //"Riff__" + outName + "_wav_pcmenc";
 					var line = "const unsigned char " + text + "[] = {";
 					lines.Add(line);
 

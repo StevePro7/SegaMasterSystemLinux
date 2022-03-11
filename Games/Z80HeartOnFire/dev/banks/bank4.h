@@ -1,3 +1,3 @@
-extern const unsigned char Riff__03_wav_pcmenc[];
-#define				Riff__03_wav_pcmenc_size 7656
-#define				Riff__03_wav_pcmenc_bank 4
+extern const unsigned char z80_heart_on_fire_03[];
+#define				z80_heart_on_fire_03_size 7656
+#define				z80_heart_on_fire_03_bank 4

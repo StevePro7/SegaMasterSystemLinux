@@ -1,16 +1,8 @@
 echo start
+
 :: Setup.
 cd ..
 cd banks
-cd bank4
-cd raw
-
-pcmenc -rto 1 -dt1 12 -dt2 12 -dt3 423 SoundFx04.wav
-mv SoundFx04.wav.pcmenc ../
-
-:: Convert.
-cd ../..
-folder2c bank4 bank4 4
 
 :: Compile
 sdcc --debug -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK4 bank4.c
