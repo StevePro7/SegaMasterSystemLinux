@@ -1,5 +1,6 @@
+;!FILE test_screen.asm
 XL2
-H 9 areas 7 global symbols
+H 9 areas 45 global symbols
 M test_screen
 O -mz80
 S _devkit_PSGSFXGetStatus Ref0000
@@ -8,7 +9,69 @@ S .__.ABS. Def0000
 S _engine_riff_manager_play Ref0000
 S _engine_font_manager_draw_data Ref0000
 A _CODE size 60 flags 0 addr 0
+S A$test_screen$107 Def0030
+S A$test_screen$108 Def0031
+S A$test_screen$109 Def0032
+S C$test_screen.c$24$1$26 Def0021
+S A$test_screen$146 Def0051
+S A$test_screen$137 Def004B
+S A$test_screen$128 Def0043
+S A$test_screen$119 Def0037
+S C$test_screen.c$25$1$26 Def0024
+S A$test_screen$138 Def004C
+S A$test_screen$129 Def0045
+S C$test_screen.c$26$1$26 Def0033
+S A$test_screen$139 Def004D
+S C$test_screen.c$28$2$27 Def0037
+S C$test_screen.c$85$1$26 Def004B
+S C$test_screen.c$29$2$27 Def0043
+S C$test_screen.c$86$1$26 Def0051
+S XG$screen_test_screen_update$0$0 Def0051
+S A$test_screen$60 Def0000
+S A$test_screen$70 Def000D
+S A$test_screen$61 Def0003
+S A$test_screen$71 Def000E
+S A$test_screen$62 Def0004
+S G$screen_test_screen_load$0$0 Def0000
+S A$test_screen$72 Def000F
+S A$test_screen$63 Def0007
+S A$test_screen$73 Def0010
+S A$test_screen$64 Def0008
+S A$test_screen$74 Def0013
+S A$test_screen$65 Def000B
+S A$test_screen$66 Def000C
+S A$test_screen$96 Def0021
+S Ftest_screen$__str_0$0$0 Def0015
+S A$test_screen$79 Def0014
+S Ftest_screen$__str_1$0$0 Def0052
+S C$test_screen.c$8$0$0 Def0000
 S _screen_test_screen_load Def0000
+S XG$screen_test_screen_load$0$0 Def0014
+S G$screen_test_screen_update$0$0 Def0021
+S A$test_screen$100 Def0024
+S A$test_screen$101 Def0025
+S A$test_screen$120 Def003A
+S A$test_screen$102 Def0027
+S C$test_screen.c$10$1$24 Def0000
+S A$test_screen$130 Def0046
+S A$test_screen$121 Def003B
+S A$test_screen$103 Def0028
+S C$test_screen.c$11$1$24 Def000D
+S A$test_screen$140 Def004E
+S A$test_screen$131 Def0047
+S A$test_screen$122 Def003E
+S A$test_screen$113 Def0033
+S A$test_screen$104 Def002B
+S C$test_screen.c$12$1$24 Def0014
+S A$test_screen$141 Def004F
+S A$test_screen$132 Def004A
+S A$test_screen$123 Def003F
+S A$test_screen$114 Def0034
+S A$test_screen$105 Def002C
+S A$test_screen$124 Def0042
+S A$test_screen$115 Def0035
+S A$test_screen$106 Def002D
+S C$test_screen.c$14$1$24 Def0021
 S _screen_test_screen_update Def0021
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
