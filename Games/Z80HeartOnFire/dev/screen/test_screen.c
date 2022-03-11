@@ -1,14 +1,17 @@
 #include "test_screen.h"
+#include "../engine/audio_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/input_manager.h"
-#include "../engine/riff_manager.h"
 #include "../devkit/_snd_manager.h"
+
+static unsigned char index;
 
 void screen_test_screen_load()
 {
 	engine_font_manager_draw_text( "PRESS FIRE1..!", 4, 6 );
-	engine_riff_manager_play( 0 );
+	index = 0;
+	engine_audio_manager_play( index );
 }
 
 void screen_test_screen_update( unsigned char *screen_type )
@@ -27,7 +30,8 @@ void screen_test_screen_update( unsigned char *screen_type )
 	if( 0 == value )
 	{
 		engine_font_manager_draw_text( "PRESS FIRE2!!", 4, 8 );
-		engine_riff_manager_play( 1 );
+		index++;
+		engine_audio_manager_play( index );
 	}
 	//if( input )
 	//{

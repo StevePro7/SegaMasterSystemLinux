@@ -14,13 +14,12 @@ cd ..
 
 cd engine
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 asm_manager.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 audio_manager.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 content_manager.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 enum_manager.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 font_manager.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 global_manager.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 input_manager.c
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 riff_manager.c
-::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 sample_manager.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 screen_manager.c
 cd ..
 
@@ -66,11 +65,11 @@ banks/bank2.rel banks/bank3.rel banks/bank4.rel ^
 devkit/_sms_manager.rel ^
 devkit/_snd_manager.rel ^
 engine/asm_manager.rel ^
+engine/audio_manager.rel ^
 engine/content_manager.rel ^
 engine/enum_manager.rel ^
 engine/font_manager.rel ^
 engine/input_manager.rel ^
-engine/riff_manager.rel ^
 engine/screen_manager.rel ^
 object/riff_object.rel ^
 screen/none_screen.rel ^
