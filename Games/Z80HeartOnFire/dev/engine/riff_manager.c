@@ -16,16 +16,16 @@
 
 void engine_riff_manager_play( unsigned char index )
 {
-	//void *song;
-	void *data;
+	void *song;
+	//void *data;
 	unsigned char bank;
 
-	//song = ( void* ) riff_sample_data[ index ];
-	data = ( void* ) riff_sample_data[ index ];
+	song = ( void* ) riff_sample_data[ index ];
+	//data = ( void* ) riff_sample_data[ index ];
 	bank = riff_sample_bank[ index ];
 
 	devkit_SMS_mapROMBank( bank );
 	//engine_sample_manager_play( data );
-	devkit_PSGSFXPlay( data, devkit_SFX_CHANNEL2() );
-	//devkit_PSGPlayNoRepeat( song )		// TODOD
+	//devkit_PSGSFXPlay( data, devkit_SFX_CHANNEL2() );
+	devkit_PSGPlayNoRepeat( song );		// TODOD
 }

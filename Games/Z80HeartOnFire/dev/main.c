@@ -41,15 +41,15 @@ void main(void)
 			continue;
 		}
 
-		devkit_SMS_initSprites();
+		//devkit_SMS_initSprites();
 		engine_input_manager_update();
 		engine_screen_manager_update();
 
-		devkit_SMS_finalizeSprites();
+		//devkit_SMS_finalizeSprites();
 		devkit_SMS_waitForVBlank();
-		devkit_SMS_copySpritestoSAT();
+		//devkit_SMS_copySpritestoSAT();
 
 		devkit_PSGFrame();
-		devkit_PSGSFXFrame();
+		//devkit_PSGSFXFrame();
 	}
 }

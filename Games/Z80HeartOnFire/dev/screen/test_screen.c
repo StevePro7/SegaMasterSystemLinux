@@ -8,7 +8,7 @@
 void screen_test_screen_load()
 {
 	engine_font_manager_draw_text( "PRESS FIRE1..!", 4, 6 );
-	engine_riff_manager_play( 1 );
+	engine_riff_manager_play( 0 );
 }
 
 void screen_test_screen_update( unsigned char *screen_type )
@@ -21,7 +21,8 @@ void screen_test_screen_update( unsigned char *screen_type )
 	//	engine_riff_manager_play( 0 );
 	//}
 	
-	value = devkit_PSGSFXGetStatus();
+	//value = devkit_PSGSFXGetStatus();
+	value = devkit_PSGGetStatus();
 	engine_font_manager_draw_data( value, 4, 10 );
 	if( 0 == value )
 	{
