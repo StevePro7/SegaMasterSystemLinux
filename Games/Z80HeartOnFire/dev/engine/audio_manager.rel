@@ -1,0 +1,62 @@
+;!FILE audio_manager.asm
+XL2
+H 9 areas 26 global symbols
+M audio_manager
+O -mz80
+S .__.ABS. Def0000
+S _riff_sample_data Ref0000
+S _riff_sample_bank Ref0000
+S _devkit_PSGPlayNoRepeat Ref0000
+S _devkit_SMS_mapROMBank Ref0000
+A _CODE size 2D flags 0 addr 0
+S A$audio_manager$83 Def0025
+S A$audio_manager$74 Def001D
+S A$audio_manager$65 Def0012
+S A$audio_manager$56 Def0006
+S A$audio_manager$84 Def0026
+S A$audio_manager$75 Def001E
+S A$audio_manager$66 Def0013
+S A$audio_manager$85 Def0029
+S A$audio_manager$67 Def0014
+S A$audio_manager$86 Def002A
+S A$audio_manager$79 Def001F
+S C$audio_manager.c$6$0$0 Def0000
+S G$engine_audio_manager_play$0$0 Def0000
+S _engine_audio_manager_play Def0000
+S XG$engine_audio_manager_play$0$0 Def002C
+S C$audio_manager.c$20$1$83 Def002C
+S C$audio_manager.c$12$1$83 Def0008
+S C$audio_manager.c$14$1$83 Def0015
+S C$audio_manager.c$16$1$83 Def001F
+S A$audio_manager$60 Def0008
+S A$audio_manager$61 Def000B
+S A$audio_manager$80 Def0020
+S A$audio_manager$71 Def0015
+S A$audio_manager$62 Def000E
+S A$audio_manager$81 Def0021
+S A$audio_manager$72 Def0018
+S A$audio_manager$63 Def0010
+S A$audio_manager$54 Def0000
+S A$audio_manager$91 Def002C
+S A$audio_manager$82 Def0022
+S A$audio_manager$73 Def001B
+S A$audio_manager$64 Def0011
+S A$audio_manager$55 Def0002
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 DD E5 DD 21 00 00 DD 39 01 00 00 DD 6E 04
+R 00 00 00 00 02 0B 01 00
+T 0E 00 26 00 29 09 4E 23 46 11 00 00 DD 6E 04 26
+R 00 00 00 00 02 0A 02 00
+T 1C 00 00 19 56 C5 D5 33 CD 00 00 33 CD 00 00 F1
+R 00 00 00 00 02 09 04 00 02 0D 03 00
+T 2A 00 DD E1 C9
+R 00 00 00 00
