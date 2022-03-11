@@ -34,6 +34,7 @@ namespace BinaryFileWrite
 				for (var loop = 0; loop < looper; loop++)
 				{
 					var outName = (loop+1).ToString().PadLeft(2, '0');
+					var outCode = $"{fileName}_{outName}";
 					var outBank = loop + 2;
 
 					lines.Clear();
@@ -92,7 +93,7 @@ namespace BinaryFileWrite
 					File.WriteAllLines("output/bank" + outBank + ".h", contents);
 
 					// PSG file
-					var outFile = $"output/{fileName}_{outName}.psg";
+					var outFile = $"output/{outCode}.psg";
 					var fs = new FileStream(outFile, FileMode.Create, FileAccess.ReadWrite);
 					BinaryWriter bw = new BinaryWriter(fs);
 					bw.Write(outArray);
