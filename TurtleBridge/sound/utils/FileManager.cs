@@ -15,14 +15,13 @@ namespace BinaryFileWrite
 
 		public FileManager()
 		{
-			//ByteObjectList = new List<ByteObject>();
 			lines = new List<string>();
 			sb = new StringBuilder();
 		}
 
 		public void Process(string fileName)
 		{
-			var path = $"input/{fileName}";
+			var path = $"input/{fileName}.psg";
 			var file = File.Open(path, FileMode.Open);
 
 			int start = 0;
@@ -91,6 +90,13 @@ namespace BinaryFileWrite
 					lines.Add(line);
 					contents = lines.ToArray();
 					File.WriteAllLines("output/bank" + outBank + ".h", contents);
+
+					// PSG file
+					var outFile = $"output/{fileName}_{outName}.psg";
+					var fs = new FileStream(outFile, FileMode.Create, FileAccess.ReadWrite);
+					BinaryWriter bw = new BinaryWriter(fs);
+					bw.Write(outArray);
+					bw.Close();
 				}
 			}
 		}
@@ -102,14 +108,7 @@ namespace BinaryFileWrite
 				Directory.CreateDirectory("output");
 			}
 
-			//var name = fileName.Replace(".", "_");
-			//var path = $"output/{name}";
-			//if (!Directory.Exists(path))
-			//{
-			//	Directory.CreateDirectory(path);
-			//}
 		}
 
-		public IList<ByteObject> ByteObjectList { get; private set; }
 	}
 }
