@@ -1,20 +1,16 @@
 #include "audio_manager.h"
-#include "../object/riff_object.h"
+#include "../object/audio_object.h"
 #include "../devkit/_sms_manager.h"
 #include "../devkit/_snd_manager.h"
 
 void engine_audio_manager_play( unsigned char index )
 {
-	void *song;
-	//void *data;
+	void *data;
 	unsigned char bank;
 
-	song = ( void* ) riff_sample_data[ index ];
-	//data = ( void* ) riff_sample_data[ index ];
-	bank = riff_sample_bank[ index ];
+	data = ( void* ) audio_sample_data[ index ];
+	bank = audio_sample_bank[ index ];
 
 	devkit_SMS_mapROMBank( bank );
-	//engine_sample_manager_play( data );
-	//devkit_PSGSFXPlay( data, devkit_SFX_CHANNEL2() );
-	devkit_PSGPlayNoRepeat( song );		// TODOD
+	devkit_PSGPlayNoRepeat( data );
 }

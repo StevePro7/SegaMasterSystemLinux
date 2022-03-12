@@ -45,8 +45,8 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000012  l__INITIALIZER                  
      000000BE  G$VDPDataPort$0$0                  asm_manager
      000000BF  G$VDPControlPort$0$0               asm_manager
+     0000011C  l__DATA                         
      0000012A  l__HEADER5                      
-     00000130  l__DATA                         
      00000200  s__CODE                         
      00001D48  l__CODE                         
      00001DE8  l__BANK4                        
@@ -71,10 +71,10 @@ Area                                    Addr        Size        Decimal Bytes (A
      00008000  s__BANK3                        
      00008000  s__BANK4                        
      0000C000  s__DATA                         
-     0000C130  s__INITIALIZED                  
-     0000C142  s__BSEG                         
-     0000C142  s__BSS                          
-     0000C142  s__HEAP                         
+     0000C11C  s__INITIALIZED                  
+     0000C12E  s__BSEG                         
+     0000C12E  s__BSS                          
+     0000C12E  s__HEAP                         
      0000FFFC  G$SRAM_bank_to_be_mapped_on_slot   _sms_manager
      0000FFFC  _SRAM_bank_to_be_mapped_on_slot2   SMSlib_loadTileMap
      0000FFFF  G$ROM_bank_to_be_mapped_on_slot2   _sms_manager
@@ -2744,7 +2744,7 @@ _CODE                               00000200    00001D48 =        7496. bytes (R
      00000FF8  A$audio_manager$55                 audio_manager
      00000FFC  A$audio_manager$56                 audio_manager
      00000FFE  A$audio_manager$60                 audio_manager
-     00000FFE  C$audio_manager.c$12$1$83          audio_manager
+     00000FFE  C$audio_manager.c$11$1$83          audio_manager
      00001001  A$audio_manager$61                 audio_manager
      00001004  A$audio_manager$62                 audio_manager
      00001006  A$audio_manager$63                 audio_manager
@@ -2753,13 +2753,13 @@ _CODE                               00000200    00001D48 =        7496. bytes (R
      00001009  A$audio_manager$66                 audio_manager
      0000100A  A$audio_manager$67                 audio_manager
      0000100B  A$audio_manager$71                 audio_manager
-     0000100B  C$audio_manager.c$14$1$83          audio_manager
+     0000100B  C$audio_manager.c$12$1$83          audio_manager
      0000100E  A$audio_manager$72                 audio_manager
      00001011  A$audio_manager$73                 audio_manager
      00001013  A$audio_manager$74                 audio_manager
      00001014  A$audio_manager$75                 audio_manager
      00001015  A$audio_manager$79                 audio_manager
-     00001015  C$audio_manager.c$16$1$83          audio_manager
+     00001015  C$audio_manager.c$14$1$83          audio_manager
      00001016  A$audio_manager$80                 audio_manager
      00001017  A$audio_manager$81                 audio_manager
      00001018  A$audio_manager$82                 audio_manager
@@ -2768,7 +2768,7 @@ _CODE                               00000200    00001D48 =        7496. bytes (R
      0000101F  A$audio_manager$85                 audio_manager
      00001020  A$audio_manager$86                 audio_manager
      00001022  A$audio_manager$91                 audio_manager
-     00001022  C$audio_manager.c$20$1$83          audio_manager
+     00001022  C$audio_manager.c$16$1$83          audio_manager
      00001022  XG$engine_audio_manager_play$0$0   audio_manager
      00001023  A$content_manager$57               content_manager
      00001023  C$content_manager.c$11$1$65        content_manager
@@ -3156,8 +3156,8 @@ _CODE                               00000200    00001D48 =        7496. bytes (R
      000011EF  A$screen_manager$164               screen_manager
      000011EF  C$screen_manager.c$38$1$7          screen_manager
      000011EF  XG$engine_screen_manager_update$   screen_manager
-     000011F0  G$riff_sample_bank$0$0             riff_object
-     000011F0  _riff_sample_bank                  riff_object
+     000011F0  G$audio_sample_bank$0$0            audio_object
+     000011F0  _audio_sample_bank                 audio_object
      000011F3  A$none_screen$60                   none_screen
      000011F3  C$none_screen.c$4$0$0              none_screen
      000011F3  C$none_screen.c$6$0$0              none_screen
@@ -3417,7 +3417,7 @@ _INITIALIZER                        00001F48    00000012 =          18. bytes (R
       -----  --------------------------------   ------------------------
      00001F48  Finput_manager$__xinit_curr_joyp   input_manager
      00001F4A  Finput_manager$__xinit_prev_joyp   input_manager
-     00001F4C  Friff_object$__xinit_riff_sample   riff_object
+     00001F4C  Faudio_object$__xinit_audio_samp   audio_object
 ASxxxx Linker V03.00 + NoICE + sdld,  page 65.
 Hexadecimal  [32-Bits]
 
@@ -3443,7 +3443,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_DATA                               0000C000    00000130 =         304. bytes (REL,CON)
+_DATA                               0000C000    0000011C =         284. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -3480,40 +3480,40 @@ _DATA                               0000C000    00000130 =         304. bytes (R
      0000C026  Fscreen_manager$curr_screen_type   screen_manager
      0000C027  Fscreen_manager$next_screen_type   screen_manager
      0000C028  Fscreen_manager$load_method$0$0    screen_manager
-     0000C036  Fscreen_manager$update_method$0$   screen_manager
-     0000C044  Ftest_screen$index$0$0             test_screen
-     0000C045  _VDPBlank                          SMSlib
-     0000C046  _SMS_VDPFlags                      SMSlib
-     0000C047  _PauseRequested                    SMSlib
-     0000C048  _VDPType                           SMSlib
-     0000C049  _KeysStatus                        SMSlib
-     0000C04B  _PreviousKeysStatus                SMSlib
-     0000C04D  _SpriteTableY                      SMSlib
-     0000C08D  _SpriteTableXN                     SMSlib
-     0000C10D  _SpriteNextFree                    SMSlib
-     0000C10E  _SMS_theLineInterruptHandler       SMSlib
-     0000C110  _decompBuffer                      SMSlib_PSGaiden
+     0000C02C  Fscreen_manager$update_method$0$   screen_manager
+     0000C030  Ftest_screen$index$0$0             test_screen
+     0000C031  _VDPBlank                          SMSlib
+     0000C032  _SMS_VDPFlags                      SMSlib
+     0000C033  _PauseRequested                    SMSlib
+     0000C034  _VDPType                           SMSlib
+     0000C035  _KeysStatus                        SMSlib
+     0000C037  _PreviousKeysStatus                SMSlib
+     0000C039  _SpriteTableY                      SMSlib
+     0000C079  _SpriteTableXN                     SMSlib
+     0000C0F9  _SpriteNextFree                    SMSlib
+     0000C0FA  _SMS_theLineInterruptHandler       SMSlib
+     0000C0FC  _decompBuffer                      SMSlib_PSGaiden
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 68.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_INITIALIZED                        0000C130    00000012 =          18. bytes (REL,CON)
+_INITIALIZED                        0000C11C    00000012 =          18. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     0000C130  Finput_manager$curr_joypad1$0$0    input_manager
-     0000C132  Finput_manager$prev_joypad1$0$0    input_manager
-     0000C134  G$riff_sample_data$0$0             riff_object
-     0000C134  _riff_sample_data                  riff_object
-     0000C13A  _VDPReg                            SMSlib
-     0000C13C  _spritesHeight                     SMSlib
-     0000C13D  _spritesWidth                      SMSlib
-     0000C13E  _clipWin_x0                        SMSlib_spriteClip
-     0000C13F  _clipWin_y0                        SMSlib_spriteClip
-     0000C140  _clipWin_x1                        SMSlib_spriteClip
-     0000C141  _clipWin_y1                        SMSlib_spriteClip
+     0000C11C  Finput_manager$curr_joypad1$0$0    input_manager
+     0000C11E  Finput_manager$prev_joypad1$0$0    input_manager
+     0000C120  G$audio_sample_data$0$0            audio_object
+     0000C120  _audio_sample_data                 audio_object
+     0000C126  _VDPReg                            SMSlib
+     0000C128  _spritesHeight                     SMSlib
+     0000C129  _spritesWidth                      SMSlib
+     0000C12A  _clipWin_x0                        SMSlib_spriteClip
+     0000C12B  _clipWin_y0                        SMSlib_spriteClip
+     0000C12C  _clipWin_x1                        SMSlib_spriteClip
+     0000C12D  _clipWin_y1                        SMSlib_spriteClip
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 69.
 Hexadecimal  [32-Bits]
@@ -3630,7 +3630,7 @@ engine/enum_manager.rel                   [ enum_manager ]
 engine/font_manager.rel                   [ font_manager ]
 engine/input_manager.rel                  [ input_manager ]
 engine/screen_manager.rel                 [ screen_manager ]
-object/riff_object.rel                    [ riff_object ]
+object/audio_object.rel                   [ audio_object ]
 screen/none_screen.rel                    [ none_screen ]
 screen/test_screen.rel                    [ test_screen ]
 content/gfx.rel                           [ gfx ]

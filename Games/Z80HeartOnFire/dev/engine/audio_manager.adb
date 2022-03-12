@@ -1,9 +1,9 @@
 M:audio_manager
 F:G$engine_audio_manager_play$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Laudio_manager.engine_audio_manager_play$index$1$82({1}SC:U),B,1,4
-S:Laudio_manager.engine_audio_manager_play$song$1$83({2}DG,SV:S),R,0,0,[c,b]
+S:Laudio_manager.engine_audio_manager_play$data$1$83({2}DG,SV:S),R,0,0,[c,b]
 S:Laudio_manager.engine_audio_manager_play$bank$1$83({1}SC:U),R,0,0,[d]
-S:G$riff_sample_data$0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$audio_sample_data$0$0({6}DA3d,DG,SC:U),E,0,0
 S:G$devkit_SMS_init$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOnFeature$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOffFeature$0$0({2}DF,SV:S),C,0,0

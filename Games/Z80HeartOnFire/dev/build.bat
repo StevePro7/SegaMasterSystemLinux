@@ -24,7 +24,7 @@ sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 s
 cd ..
 
 cd object
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 riff_object.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 audio_object.c
 cd ..
 
 cd screen
@@ -71,7 +71,7 @@ engine/enum_manager.rel ^
 engine/font_manager.rel ^
 engine/input_manager.rel ^
 engine/screen_manager.rel ^
-object/riff_object.rel ^
+object/audio_object.rel ^
 screen/none_screen.rel ^
 screen/test_screen.rel ^
 content/gfx.rel

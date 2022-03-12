@@ -3,9 +3,9 @@ XL2
 H 9 areas 26 global symbols
 M audio_manager
 O -mz80
+S _audio_sample_data Ref0000
+S _audio_sample_bank Ref0000
 S .__.ABS. Def0000
-S _riff_sample_data Ref0000
-S _riff_sample_bank Ref0000
 S _devkit_PSGPlayNoRepeat Ref0000
 S _devkit_SMS_mapROMBank Ref0000
 A _CODE size 2D flags 0 addr 0
@@ -24,10 +24,10 @@ S C$audio_manager.c$6$0$0 Def0000
 S G$engine_audio_manager_play$0$0 Def0000
 S _engine_audio_manager_play Def0000
 S XG$engine_audio_manager_play$0$0 Def002C
-S C$audio_manager.c$20$1$83 Def002C
-S C$audio_manager.c$12$1$83 Def0008
-S C$audio_manager.c$14$1$83 Def0015
-S C$audio_manager.c$16$1$83 Def001F
+S C$audio_manager.c$11$1$83 Def0008
+S C$audio_manager.c$12$1$83 Def0015
+S C$audio_manager.c$14$1$83 Def001F
+S C$audio_manager.c$16$1$83 Def002C
 S A$audio_manager$60 Def0008
 S A$audio_manager$61 Def000B
 S A$audio_manager$80 Def0020
@@ -53,9 +53,9 @@ A _CABS size 0 flags 8 addr 0
 T 00 00
 R 00 00 00 00
 T 00 00 DD E5 DD 21 00 00 DD 39 01 00 00 DD 6E 04
-R 00 00 00 00 02 0B 01 00
+R 00 00 00 00 02 0B 00 00
 T 0E 00 26 00 29 09 4E 23 46 11 00 00 DD 6E 04 26
-R 00 00 00 00 02 0A 02 00
+R 00 00 00 00 02 0A 01 00
 T 1C 00 00 19 56 C5 D5 33 CD 00 00 33 CD 00 00 F1
 R 00 00 00 00 02 09 04 00 02 0D 03 00
 T 2A 00 DD E1 C9
