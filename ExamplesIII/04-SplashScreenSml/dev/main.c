@@ -12,6 +12,7 @@ void main( void )
 	engine_content_manager_load_title_screen();
 	devkit_SMS_useFirstHalfTilesforSprites( true );
 
+	engine_font_manager_zero( 246, 10, 18 );
 	engine_font_manager_text( "HELLO WORLD..!!", 10, 20 );
 	engine_font_manager_char( '!', 20, 22 );
 	erase_lines();

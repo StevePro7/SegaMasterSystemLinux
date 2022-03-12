@@ -66,7 +66,7 @@ void engine_font_manager_data(unsigned int data, unsigned char x, unsigned char 
 		hold[idx] = remainder;
 		data /= UNIT_ROOT;
 
-		tile = hold[idx] + DATA_ROOT;
+		tile = hold[idx] + DATA_ROOT + BASE_ROOT;
 		if (0 == quotient && 0 == remainder && idx > 0)
 		{
 			// Replace with space!
@@ -92,7 +92,7 @@ void engine_font_manager_zero(unsigned int data, unsigned char x, unsigned char 
 		hold[idx] = data % UNIT_ROOT;
 		data /= UNIT_ROOT;
 
-		tile = hold[idx] + DATA_ROOT;
+		tile = hold[ idx ] + DATA_ROOT + BASE_ROOT;
 
 		devkit_SMS_setNextTileatXY(x--, y);
 		devkit_SMS_setTile(*pnt + tile);
