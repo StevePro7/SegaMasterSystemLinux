@@ -15,15 +15,36 @@
 //	devkit_SMS_setNextTileatXY( x, y );
 //	devkit_SMS_setTile( *pnt + tile );
 //}
+static unsigned char get_tile( unsigned char ch )
+{
+	unsigned char tile = ch;
+	if( ' ' == ch )
+	{
+		return tile;
+	}
+
+	// Last section
+	if( tile >= 0xF5 )
+	{
+		tile -= 12;
+	}
+
+	//tile = ch - TEXT_ROOT;
+
+	//tile += BASE_ROOT;
+
+	return tile;
+}
 
 void engine_font_manager_char(unsigned char ch, unsigned char x, unsigned char y)
 {
 	const unsigned char *pnt = font_tiles__tilemap__bin;
-	unsigned int tile = ch - TEXT_ROOT;
-	if( ' ' != ch )
-	{
-		tile += BASE_ROOT;
-	}
+	unsigned char tile = get_tile( ch );
+	//unsigned int tile = ch - TEXT_ROOT;
+	//if( ' ' != ch )
+	//{
+	//	tile += BASE_ROOT;
+	//}
 
 	devkit_SMS_setNextTileatXY(x, y);
 	devkit_SMS_setTile(*pnt + tile);

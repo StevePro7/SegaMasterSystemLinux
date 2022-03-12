@@ -14,13 +14,13 @@ void main( void )
 	engine_content_manager_load_title_screen();
 	devkit_SMS_useFirstHalfTilesforSprites( false );
 
-	engine_font_manager_zero( 0123, 10, 14 );
-	engine_font_manager_zero( 4567, 10, 15 );
-	engine_font_manager_zero( 89, 10, 16 );
-	engine_font_manager_text( "HELLO WORLD..!!", 10, 20 );
-	engine_font_manager_char( 33, 20, 22 );
-	engine_font_manager_char( 34, 20, 23 );
-	//erase_lines();
+	//engine_font_manager_zero( 0123, 10, 14 );
+	//engine_font_manager_zero( 4567, 10, 15 );
+	//engine_font_manager_zero( 89, 10, 16 );
+	//engine_font_manager_text( "HELLO WORLD..!!", 10, 20 );
+	//engine_font_manager_char( 33, 20, 22 );
+	//engine_font_manager_char( 35, 20, 23 );
+	erase_lines();
 	devkit_SMS_displayOn();
 	for( ;; )
 	{
@@ -44,12 +44,12 @@ static void erase_lines()
 	{
 		for( row = 0; row < 10; row++ )
 		{
-			engine_font_manager_char( spc, col, row+11 );
+			//engine_font_manager_char( spc, col, row+11 );
 			spc++;
 		}
 	}
 
-	engine_font_manager_char( 245, 30, 20 );
+	engine_font_manager_char( 0xF6, 30, 20 );
 
 	//arr[ 0 ] = 242;
 	//arr[ 1 ] = 0x20;
