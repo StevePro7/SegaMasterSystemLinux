@@ -2,8 +2,10 @@ M:test_screen
 F:G$screen_test_screen_load$0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_test_screen_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Ltest_screen.screen_test_screen_update$screen_type$1$25({2}DG,SC:U),B,1,4
-S:Ltest_screen.screen_test_screen_update$value$1$26({1}SC:U),R,0,0,[l]
+S:Ltest_screen.screen_test_screen_update$value$1$26({1}SC:U),R,0,0,[c]
+S:Ltest_screen.screen_test_screen_update$input$1$26({1}SC:U),R,0,0,[c]
 S:Ftest_screen$index$0$0({1}SC:U),E,0,0
+S:Ftest_screen$start$0$0({1}SC:U),E,0,0
 S:G$engine_audio_manager_play$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_char$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_text$0$0({2}DF,SV:S),C,0,0
@@ -32,3 +34,4 @@ S:G$devkit_PSGSilenceChannels$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_PSGRestoreVolumes$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_PSGFrame$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_PSGSFXFrame$0$0({2}DF,SV:S),C,0,0
+S:G$devkit_PSGSStop$2$28({2}DF,SI:S),C,0,0
