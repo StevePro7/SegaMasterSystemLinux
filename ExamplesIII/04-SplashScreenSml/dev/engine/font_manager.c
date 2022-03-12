@@ -20,6 +20,7 @@ static unsigned char get_tile( unsigned char ch )
 	unsigned char tile = ch;
 	if( ' ' == ch )
 	{
+		tile = ch - TEXT_ROOT;
 		return tile;
 	}
 
@@ -32,10 +33,15 @@ static unsigned char get_tile( unsigned char ch )
 	{
 		tile -= 5;
 	}
-
-	//tile = ch - TEXT_ROOT;
-
-	//tile += BASE_ROOT;
+	else 
+	{
+		tile = ch - TEXT_ROOT;
+		tile += BASE_ROOT;
+		if( tile >= 0x80 )
+		{
+			tile -= 1;
+		}
+	}
 
 	return tile;
 }
