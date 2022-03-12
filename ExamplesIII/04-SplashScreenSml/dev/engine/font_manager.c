@@ -18,6 +18,16 @@
 static unsigned char get_tile( unsigned char ch )
 {
 	unsigned char tile = ch;
+
+	// Awful hacks!
+	if( 0xEE == ch )
+	{
+		return 0xE8;
+	}
+	if( 0xEF == ch )
+	{
+		return 0x16;
+	}
 	if( ' ' == ch )
 	{
 		tile = ch - TEXT_ROOT;
