@@ -1,7 +1,8 @@
 M:main
 F:G$main$0$0({2}DF,SV:S),C,0,0,0,0,0
-F:Fmain$erase_lines$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lmain.erase_lines$idx$1$93({1}SC:U),R,0,0,[b]
+F:Fmain$erase_lines$0$0({2}DF,SV:S),Z,0,4,0,0,0
+S:Lmain.erase_lines$arr$1$95({4}DA2d,SI:U),B,1,-4
+S:Lmain.erase_lines$idx$1$95({1}SC:U),R,0,0,[c]
 S:G$atof$0$0({2}DF,SF:S),C,0,0
 S:G$atoi$0$0({2}DF,SI:S),C,0,0
 S:G$atol$0$0({2}DF,SL:S),C,0,0
@@ -151,4 +152,6 @@ S:G$engine_font_manager_char$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_zero$0$0({2}DF,SV:S),C,0,0
+S:G$engine_text_manager_args$0$0({2}DF,SV:S),C,0,0
+S:G$engine_text_manager_list$0$0({2}DF,SV:S),C,0,0
 S:G$main$0$0({2}DF,SV:S),C,0,0

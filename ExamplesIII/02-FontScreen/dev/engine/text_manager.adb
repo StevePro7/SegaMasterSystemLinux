@@ -3,7 +3,7 @@ F:G$engine_text_manager_args$0$0({2}DF,SV:S),Z,0,2,0,0,0
 S:Ltext_manager.engine_text_manager_args$x$1$7({1}SC:U),B,1,4
 S:Ltext_manager.engine_text_manager_args$y$1$7({1}SC:U),B,1,5
 S:Ltext_manager.engine_text_manager_args$num$1$7({1}SC:U),B,1,6
-S:Ltext_manager.engine_text_manager_args$ch$1$8({1}SC:U),R,0,0,[e]
+S:Ltext_manager.engine_text_manager_args$ch$1$8({2}SI:U),R,0,0,[l,h]
 S:Ltext_manager.engine_text_manager_args$idx$1$8({1}SC:U),R,0,0,[b]
 S:Ltext_manager.engine_text_manager_args$arglist$1$8({2}DG,SC:U),B,1,-2
 F:G$engine_text_manager_list$0$0({2}DF,SV:S),Z,0,0,0,0,0
