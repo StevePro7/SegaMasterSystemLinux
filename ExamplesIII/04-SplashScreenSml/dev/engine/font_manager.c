@@ -2,7 +2,7 @@
 #include "../devkit/_sms_manager.h"
 #include "../gfx.h"
 
-#define BASE_ROOT 93 // 93 is title starts.
+#define BASE_ROOT 44 // 44 is title starts.
 #define TEXT_ROOT 32 // 32 is " " in ASCII.
 #define DATA_ROOT 16 // 16 is "0" (48=16+32)
 #define UNIT_ROOT 10 // 10 is decimal
