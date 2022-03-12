@@ -13,6 +13,7 @@ cd engine
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 asm_manager.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 content_manager.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 font_manager.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 text_manager.c
 cd ..
 
 sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
@@ -25,6 +26,7 @@ devkit\_sms_manager.rel ^
 engine\asm_manager.rel ^
 engine\content_manager.rel ^
 engine\font_manager.rel ^
+engine\text_manager.rel ^
 gfx.rel
 
 :: Execute
