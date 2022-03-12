@@ -58,6 +58,6 @@ void screen_test_screen_update( unsigned char *screen_type )
 			start = 0;
 		}
 	}
-	        
+
 	*screen_type = screen_type_test;
 }
