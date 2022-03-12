@@ -26,8 +26,8 @@ void main( void )
 static void erase_lines()
 {
 	unsigned char idx;
-	for( idx = 4; idx < 8; idx++ )
+	for( idx = 4; idx < 11; idx++ )
 	{
-		engine_font_manager_text( "         ", 0, idx );
+		engine_font_manager_text( "                                ", 0, idx );
 	}
 }
