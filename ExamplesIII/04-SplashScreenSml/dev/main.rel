@@ -1,6 +1,6 @@
 ;!FILE main.asm
 XL2
-H 9 areas 50 global symbols
+H 9 areas 52 global symbols
 M main
 O -mz80
 S _engine_content_manager_load_title_screen Ref0000
@@ -14,56 +14,58 @@ S _devkit_SMS_displayOff Ref0000
 S _engine_asm_manager_clear_VRAM Ref0000
 S _engine_content_manager_load_sprite_palette Ref0000
 S _devkit_SMS_waitForVBlank Ref0000
-A _CODE size 6B flags 0 addr 0
+A _CODE size 6E flags 0 addr 0
 S A$main$102 Def0023
-S Fmain$erase_lines$0$0 Def0048
+S Fmain$erase_lines$0$0 Def004B
 S A$main$103 Def0026
-S A$main$140 Def0048
+S A$main$122 Def0036
 S A$main$113 Def0030
 S A$main$104 Def0027
-S A$main$150 Def004F
-S A$main$123 Def0036
+S A$main$150 Def004E
 S A$main$105 Def0029
 S _main Def0000
-S A$main$160 Def005A
-S A$main$151 Def0050
+S A$main$160 Def005C
+S A$main$151 Def004F
 S A$main$106 Def002A
 S C$main.c$11$1$90 Def0009
-S A$main$161 Def005B
-S A$main$152 Def0053
+S A$main$152 Def0050
 S A$main$107 Def002B
 S C$main.c$12$1$90 Def000C
-S A$main$162 Def005C
-S A$main$153 Def0054
+S A$main$153 Def0051
+S A$main$144 Def004B
+S A$main$117 Def0033
 S A$main$108 Def002E
 S C$main.c$13$1$90 Def000F
-S A$main$163 Def005E
-S A$main$154 Def0057
-S A$main$145 Def004A
-S A$main$118 Def0033
+S A$main$172 Def0063
+S A$main$154 Def0052
+S A$main$127 Def0039
 S A$main$109 Def002F
-S A$main$155 Def0058
-S A$main$146 Def004B
-S A$main$156 Def0059
-S A$main$147 Def004C
-S C$main.c$16$1$90 Def0017
-S A$main$148 Def004D
-S C$main.c$24$2$91 Def0036
-S C$main.c$22$3$92 Def0033
-S C$main.c$17$1$90 Def0023
-S A$main$149 Def004E
-S A$main$168 Def0060
-S C$main.c$26$2$91 Def0048
-S C$main.c$19$1$90 Def0030
-S C$main.c$33$2$94 Def0060
-S C$main.c$31$3$95 Def004A
-S XG$main$0$0 Def0036
-S C$main.c$29$2$94 Def005A
-S C$main.c$29$3$95 Def0048
+S A$main$164 Def005D
+S A$main$155 Def0053
+S C$main.c$15$1$90 Def0017
+S A$main$165 Def005E
+S A$main$156 Def0056
+S C$main.c$23$2$91 Def0039
+S C$main.c$21$3$92 Def0036
+S C$main.c$16$1$90 Def0023
+S A$main$166 Def005F
+S A$main$157 Def0057
+S C$main.c$17$1$90 Def0030
+S A$main$167 Def0061
+S A$main$158 Def005A
+S A$main$149 Def004D
+S C$main.c$25$2$91 Def004B
+S C$main.c$18$1$90 Def0033
+S A$main$159 Def005B
+S C$main.c$32$2$94 Def0063
+S C$main.c$30$3$95 Def004D
+S XG$main$0$0 Def0039
+S C$main.c$28$2$94 Def005D
+S C$main.c$28$3$95 Def004B
 S A$main$81 Def000C
 S A$main$73 Def0006
 S A$main$65 Def0000
-S XFmain$erase_lines$0$0 Def0060
+S XFmain$erase_lines$0$0 Def0063
 S A$main$93 Def0017
 S C$main.c$7$1$90 Def0000
 S A$main$94 Def001A
@@ -76,10 +78,10 @@ S C$main.c$9$1$90 Def0006
 S A$main$96 Def001E
 S A$main$87 Def0012
 S A$main$69 Def0003
-S Fmain$__str_0$0$0 Def0038
+S Fmain$__str_0$0$0 Def003B
 S A$main$97 Def001F
 S A$main$88 Def0013
-S Fmain$__str_1$0$0 Def0061
+S Fmain$__str_1$0$0 Def0064
 S C$main.c$5$0$0 Def0000
 S A$main$98 Def0022
 S A$main$89 Def0016
@@ -98,31 +100,33 @@ T 00 00 CD 00 00 CD 00 00 CD 00 00 CD
 R 00 00 00 00 02 03 03 00 02 06 07 00 02 09 08 00
 T 0A 00 00 00 CD 00 00 3E 01 F5 33 CD 00 00 33 21
 R 00 00 00 00 02 02 09 00 02 05 00 00 02 0C 04 00
-T 18 00 0A 14 E5 21 38 00 E5 CD 00 00 F1 21 14 16
+T 18 00 0A 14 E5 21 3B 00 E5 CD 00 00 F1 21 14 16
 R 00 00 00 00 00 06 00 00 02 0A 01 00
-T 26 00 E3 3E 21 F5 33 CD 00 00 F1 33 CD 00 00
-R 00 00 00 00 02 08 06 00 02 0D 02 00
-T 33 00
+T 26 00 E3 3E 21 F5 33 CD 00 00 F1 33 CD 4B 00 CD
+R 00 00 00 00 02 08 06 00 00 0D 00 00
+T 34 00 00 00
+R 00 00 00 00 02 02 02 00
+T 36 00
 R 00 00 00 00
-T 33 00 CD 00 00 18 FB
+T 36 00 CD 00 00 18 FB
 R 00 00 00 00 02 03 0A 00
-T 38 00
+T 3B 00
 R 00 00 00 00
-T 38 00 48 45 4C 4C 4F 20 57 4F 52 4C 44 2E 2E 21
+T 3B 00 48 45 4C 4C 4F 20 57 4F 52 4C 44 2E 2E 21
 R 00 00 00 00
-T 46 00 21 00
+T 49 00 21 00
 R 00 00 00 00
-T 48 00
+T 4B 00
 R 00 00 00 00
-T 48 00 06 04
+T 4B 00 06 04
 R 00 00 00 00
-T 4A 00
+T 4D 00
 R 00 00 00 00
-T 4A 00 C5 C5 33 AF F5 33 21 61 00 E5 CD 00 00 F1
+T 4D 00 C5 C5 33 AF F5 33 21 64 00 E5 CD 00 00 F1
 R 00 00 00 00 00 09 00 00 02 0D 01 00
-T 58 00 F1 C1 04 78 D6 08 38 EA C9
+T 5B 00 F1 C1 04 78 D6 08 38 EA C9
 R 00 00 00 00
-T 61 00
+T 64 00
 R 00 00 00 00
-T 61 00 20 20 20 20 20 20 20 20 20 00
+T 64 00 20 20 20 20 20 20 20 20 20 00
 R 00 00 00 00
