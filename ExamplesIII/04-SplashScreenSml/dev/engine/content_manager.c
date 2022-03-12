@@ -7,13 +7,13 @@
 
 void engine_content_manager_load_sprite_palette()
 {
-	devkit_SMS_setSpritePaletteColor( 0, 0, 0, 0 );
+	//devkit_SMS_setSpritePaletteColor( 0, 0, 0, 0 );
 }
 
 void engine_content_manager_load_title_screen()
 {
 	// Title.
-	devkit_SMS_loadPSGaidencompressedTiles( title__tiles__psgcompr, title_TILES_OFFSET );
+	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) title__tiles__psgcompr, title_TILES_OFFSET );
 	devkit_SMS_loadSTMcompressedTileMap( 0, 0, ( void * ) title__tilemap__stmcompr );
 	devkit_SMS_loadBGPalette( ( void * ) title__palette__bin );
 
