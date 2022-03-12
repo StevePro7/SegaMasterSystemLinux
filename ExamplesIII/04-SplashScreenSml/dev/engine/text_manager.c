@@ -28,7 +28,7 @@
 
 void engine_text_manager_args( unsigned char x, unsigned char y, unsigned char num, ... )
 {
-	unsigned int ch;
+	unsigned char ch;
 	unsigned char idx;
 	//unsigned char col = x;
 
@@ -48,7 +48,7 @@ void engine_text_manager_args( unsigned char x, unsigned char y, unsigned char n
 
 void engine_text_manager_list( unsigned char x, unsigned char y, unsigned char num, unsigned int *arr )
 {
-	unsigned int ch;
+	unsigned char ch;
 	unsigned char idx;
 
 	for( idx = 0; idx < num; idx++ )

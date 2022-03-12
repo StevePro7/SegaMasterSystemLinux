@@ -18,7 +18,8 @@ void main( void )
 	engine_font_manager_zero( 4567, 10, 15 );
 	engine_font_manager_zero( 89, 10, 16 );
 	engine_font_manager_text( "HELLO WORLD..!!", 10, 20 );
-	engine_font_manager_char( '!', 20, 22 );
+	engine_font_manager_char( 33, 20, 22 );
+	engine_font_manager_char( 34, 20, 23 );
 	//erase_lines();
 	devkit_SMS_displayOn();
 	for( ;; )
@@ -29,17 +30,32 @@ void main( void )
 
 static void erase_lines()
 {
-	unsigned int arr[ 2 ];
+	//unsigned int arr[ 3 ];
 	unsigned char idx;
+	unsigned char row, col, spc;
 	for( idx = 4; idx < 11; idx++ )
 	{
 		//engine_font_manager_text( "                                ", 0, idx );
 	}
 
-	arr[ 0 ] = 291;
-	arr[ 1 ] = 66;
+	//for (row = 0; row <  )
+	spc = 33;
+	for( col = 0; col < 20; col++ )
+	{
+		for( row = 0; row < 10; row++ )
+		{
+			engine_font_manager_char( spc, col, row+11 );
+			spc++;
+		}
+	}
 
-	//engine_text_manager_list( 20, 20, 2, arr );
+	engine_font_manager_char( 245, 30, 20 );
+
+	//arr[ 0 ] = 242;
+	//arr[ 1 ] = 0x20;
+	//arr[ 2 ] = 0x96;
+
+	//engine_text_manager_list( 20, 20, 3, arr );
 
 	//engine_text_manager_args( LEFT_X + 11, 1, 7, 0x20, 0x20, 0x20, 0x20, 0x20, 0x95, 0x96 );
 	//engine_text_manager_args( LEFT_X + 11, 2, 11, 0x20, 0x95, 0x96, 0x20, 0x20, 0xEF, 0xEF, 0x20, 0x20, 0x95, 0x96 );
