@@ -63,5 +63,9 @@ S:G$devkit_SPRITEMODE_NORMAL$0$0({2}DF,SC:U),C,0,0
 S:G$devkit_VDPFEATURE_HIDEFIRSTCOL$0$0({2}DF,SI:U),C,0,0
 S:G$engine_asm_manager_clear_VRAM$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_sprite_palette$0$0({2}DF,SV:S),C,0,0
-S:G$engine_content_manager_load_splash_screen$0$0({2}DF,SV:S),C,0,0
+S:G$engine_content_manager_load_title_screen$0$0({2}DF,SV:S),C,0,0
+S:G$engine_font_manager_char$0$0({2}DF,SV:S),C,0,0
+S:G$engine_font_manager_text$0$0({2}DF,SV:S),C,0,0
+S:G$engine_font_manager_data$0$0({2}DF,SV:S),C,0,0
+S:G$engine_font_manager_zero$0$0({2}DF,SV:S),C,0,0
 S:G$main$0$0({2}DF,SV:S),C,0,0
