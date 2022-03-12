@@ -23,10 +23,14 @@ static unsigned char get_tile( unsigned char ch )
 		return tile;
 	}
 
-	// Last section
+	// Last section.
 	if( tile >= 0xF5 )
 	{
 		tile -= 12;
+	}
+	else if( tile >= 0xE0 )
+	{
+		tile -= 5;
 	}
 
 	//tile = ch - TEXT_ROOT;

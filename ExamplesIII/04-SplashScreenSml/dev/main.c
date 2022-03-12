@@ -49,7 +49,7 @@ static void erase_lines()
 		}
 	}
 
-	engine_font_manager_char( 0xF6, 30, 20 );
+	engine_font_manager_char( 0xEA, 30, 20 );
 
 	//arr[ 0 ] = 242;
 	//arr[ 1 ] = 0x20;
