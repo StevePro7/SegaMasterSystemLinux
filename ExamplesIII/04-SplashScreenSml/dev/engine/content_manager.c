@@ -3,7 +3,7 @@
 #include "../gfx.h"
 
 #define title_TILES_OFFSET		0
-#define FONT_TILES				96
+#define FONT_TILES				128
 
 void engine_content_manager_load_sprite_palette()
 {

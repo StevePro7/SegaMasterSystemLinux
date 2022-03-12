@@ -11,8 +11,8 @@ extern const unsigned char	title__palette__bin[];
 #define				title__palette__bin_size 16
 
 extern const unsigned char	title__tilemap__stmcompr[];
-#define				title__tilemap__stmcompr_size 39
+#define				title__tilemap__stmcompr_size 41
 
 extern const unsigned char	title__tiles__psgcompr[];
-#define				title__tiles__psgcompr_size 2100
+#define				title__tiles__psgcompr_size 2194
 
