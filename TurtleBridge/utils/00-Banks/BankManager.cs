@@ -15,7 +15,22 @@ namespace BinaryFileWrite
 
 		public void Update(int lastBank)
 		{
-			int bank = 2;
+			for (var bank = 2; bank <= lastBank; bank++)
+			{
+				OutputBank(bank);
+				ScriptBank(bank);
+			}
+		}
+
+		private void OutputBank(int bank)
+		{
+			var text = "bank" + bank;
+			var file = $"{BANKS}/{BANK}{bank}/bank{bank}.txt";
+			File.WriteAllText(file, text);
+		}
+
+		private void ScriptBank(int bank)
+		{
 			lines.Clear();
 			lines.Add("@echo off");
 			lines.Add("");
@@ -26,7 +41,7 @@ namespace BinaryFileWrite
 			lines.Add(":: Command");
 			lines.Add("");
 			lines.Add("cd ..");
-			lines.Add($"cd folder2c bank{bank} bank{bank} {bank}");
+			lines.Add($"folder2c bank{bank} bank{bank} {bank}");
 			lines.Add("");
 			lines.Add($"sdcc --debug -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK{bank} bank{bank}.c");
 			lines.Add("");
@@ -34,6 +49,10 @@ namespace BinaryFileWrite
 			lines.Add("");
 			lines.Add("cd ..");
 			lines.Add("cd scripts");
+
+			var content = lines.ToArray();
+			var file = $"{SCRIPTS}/bank{bank}.bat";
+			File.WriteAllLines(file, content);
 		}
 
 		public void Init(int lastBank)

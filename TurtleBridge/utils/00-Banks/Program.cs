@@ -12,7 +12,7 @@ namespace BinaryFileWrite
 
 			var bm = new BankManager();
 			bm.Init(lastBank);
-			//bm.Update(lastBank);
+			bm.Update(lastBank);
 
 			Console.WriteLine("Press [ RETURN ]");
 			Console.Read();

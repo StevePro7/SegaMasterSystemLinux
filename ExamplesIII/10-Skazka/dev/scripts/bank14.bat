@@ -1,9 +1,12 @@
-REM bank14
 @echo off
 
 cd ..
 cd banks
+cd bank14
 
+:: Command
+
+cd ..
 folder2c bank14 bank14 14
 
 sdcc --debug -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK14 bank14.c
