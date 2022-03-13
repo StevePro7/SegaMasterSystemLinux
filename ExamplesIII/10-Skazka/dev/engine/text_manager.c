@@ -1,6 +1,16 @@
 #include "text_manager.h"
 #include "font_manager.h"
+#include "locale_manager.h"
 #include <stdarg.h>
+
+void engine_text_manager_clear( unsigned char start, unsigned char stop )
+{
+	unsigned char row;
+	for( row = start; row <= stop; row++ )
+	{
+		engine_font_manager_text( LOCALE_32_SPCS, 0, row );
+	}
+}
 
 //void engine_text_manager_text( unsigned char num, ... )
 //{

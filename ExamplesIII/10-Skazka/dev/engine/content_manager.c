@@ -9,12 +9,16 @@
 void engine_content_manager_load_tiles()
 {
 	// Font tiles.
+	devkit_SMS_mapROMBank( font_tiles__tilemap__bin_bank );
 	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char* ) font_tiles__tiles__psgcompr, FONT_TILES );
 	devkit_SMS_loadBGPalette( ( void * ) font_tiles__palette__bin );
-
 }
 
-void engine_content_manager_load_sprites()
+void engine_content_manager_load_title( unsigned char y )
 {
-	// Sprite tiles.
+	// Title tiles.
+	devkit_SMS_mapROMBank( font_tiles__tilemap__bin_bank );
+	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char* ) font_tiles__tiles__psgcompr, FONT_TILES );
+	devkit_SMS_loadSTMcompressedTileMap( 0, y, ( void * ) font_tiles__tilemap__stmcompr );
+	devkit_SMS_loadBGPalette( ( void * ) font_tiles__palette__bin );
 }

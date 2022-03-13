@@ -1,6 +1,7 @@
 M:content_manager
 F:G$engine_content_manager_load_tiles$0$0({2}DF,SV:S),Z,0,0,0,0,0
-F:G$engine_content_manager_load_sprites$0$0({2}DF,SV:S),Z,0,0,0,0,0
+F:G$engine_content_manager_load_title$0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lcontent_manager.engine_content_manager_load_title$y$1$67({1}SC:U),B,1,4
 S:G$devkit_SMS_init$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOnFeature$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOffFeature$0$0({2}DF,SV:S),C,0,0

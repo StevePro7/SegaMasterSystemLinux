@@ -12,10 +12,10 @@ void main( void )
 	
 	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_NORMAL() );
 	devkit_SMS_useFirstHalfTilesforSprites( false );
-	//devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );
+	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );
 
 	engine_content_manager_load_tiles();
-	engine_content_manager_load_sprites();
+	//engine_content_manager_load_sprites();
 
 	// Blue background
 	//devkit_SMS_setBGPaletteColor( 0, devkit_RGB( 0, 0, 3 ) );
@@ -23,8 +23,9 @@ void main( void )
 	//open_screen_type = screen_type_splash;
 	//open_screen_type = screen_type_func;
 	//open_screen_type = screen_type_detail;
-	//open_screen_type = screen_type_select;
-	open_screen_type = screen_type_record;
+	open_screen_type = screen_type_select;
+	//open_screen_type = screen_type_record;
+	//open_screen_type = screen_type_title;
 
 	engine_select_manager_init();
 	engine_screen_manager_init( open_screen_type );
