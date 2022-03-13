@@ -7,16 +7,12 @@ namespace BinaryFileWrite
 	{
 		static void Main()
 		{
-			var fileName = ConfigurationManager.AppSettings["fileName"];
-			Console.WriteLine($"Processing '{fileName}'");
+			var lastBank = Convert.ToInt32(ConfigurationManager.AppSettings["lastBank"]);
+			Console.WriteLine($"Banks 2-'{lastBank}'");
 
-			var fm = new FileManager();
-			fm.Setup(fileName);
-			fm.Process(fileName);
-
-			//var byteObjectList = fm.ByteObjectList;
-			//var dm = new DataManager();
-			//dm.Process(fileName, byteObjectList);
+			var bm = new BankManager();
+			bm.Init(lastBank);
+			//bm.Update(lastBank);
 
 			Console.WriteLine("Press [ RETURN ]");
 			Console.Read();
