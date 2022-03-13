@@ -1,11 +1,11 @@
 M:main
 F:G$main$0$0({2}DF,SV:S),C,0,0,0,0,0
 F:Fmain$erase_lines$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lmain.erase_lines$idx$1$95({1}SC:U),R,0,0,[b]
+S:Lmain.erase_lines$idx$1$95({1}SC:U),R,0,0,[c]
 S:Lmain.erase_lines$y$1$95({1}SC:U),R,0,0,[]
-S:Lmain.erase_lines$row$1$95({1}SC:U),R,0,0,[c]
-S:Lmain.erase_lines$col$1$95({1}SC:U),R,0,0,[b]
-S:Lmain.erase_lines$spc$1$95({1}SC:U),R,0,0,[e]
+S:Lmain.erase_lines$row$1$95({1}SC:U),R,0,0,[b]
+S:Lmain.erase_lines$col$1$95({1}SC:U),R,0,0,[c]
+S:Lmain.erase_lines$spc$1$95({1}SC:U),R,0,0,[b]
 S:G$atof$0$0({2}DF,SF:S),C,0,0
 S:G$atoi$0$0({2}DF,SI:S),C,0,0
 S:G$atol$0$0({2}DF,SL:S),C,0,0

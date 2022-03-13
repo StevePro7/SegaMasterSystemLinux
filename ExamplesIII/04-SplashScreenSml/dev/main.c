@@ -17,7 +17,7 @@ void main( void )
 	//engine_font_manager_zero( 0123, 10, 14 );
 	//engine_font_manager_zero( 4567, 10, 15 );
 	//engine_font_manager_zero( 89, 10, 16 );
-	//engine_font_manager_text( "HELLO WORLD..!!", 10, 20 );
+	engine_font_manager_text( "HELLO WORLD..!!", 10, 20 );
 	//engine_font_manager_char( 33, 20, 22 );
 	//engine_font_manager_char( 35, 20, 23 );
 	erase_lines();
@@ -32,11 +32,16 @@ static void erase_lines()
 {
 	//unsigned int arr[ 3 ];
 	unsigned char idx;
-	unsigned char y = 2;
+	unsigned char y = 3;
 	unsigned char row, col, spc;
 	for( idx = 2; idx < 11; idx++ )
 	{
-		engine_font_manager_text( "                                ", 0, idx );
+		//engine_font_manager_text( "                                ", 10, idx );
+	}
+
+	for( row = 0; row < 10; row++ )
+	{
+		engine_font_manager_data( row, 1, row );
 	}
 
 	//for (row = 0; row <  )

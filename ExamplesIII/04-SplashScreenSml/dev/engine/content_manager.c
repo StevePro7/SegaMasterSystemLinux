@@ -13,6 +13,6 @@ void engine_content_manager_load_title_screen()
 {
 	// Font tiles.
 	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char* ) font_tiles__tiles__psgcompr, FONT_TILES );
-	devkit_SMS_loadSTMcompressedTileMap( 0, 0, ( void * ) font_tiles__tilemap__stmcompr );
+	devkit_SMS_loadSTMcompressedTileMap( 0, 2, ( void * ) font_tiles__tilemap__stmcompr );
 	devkit_SMS_loadBGPalette( ( void * ) font_tiles__palette__bin );
 }
