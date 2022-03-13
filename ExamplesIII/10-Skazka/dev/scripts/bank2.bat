@@ -4,7 +4,8 @@ cd ..
 cd banks
 cd bank2
 
-:: Command
+:: Tiles
+bmp2tile.exe raw\font_tiles.bmp -savetiles "font_tiles (tiles).psgcompr" -removedupes -nomirror -planar -tileoffset 0 -savetilemap "font_tiles (tilemap).stmcompr" -savepalette "font_tiles (palette).bin" -fullpalette -exit
 
 cd ..
 folder2c bank2 bank2 2

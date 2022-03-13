@@ -1,2 +1,4 @@
 M:bank2
-S:G$bank2_txt$0$0({5}DA5d,SC:U),D,0,0
+S:G$font_tiles__palette__bin$0$0({16}DA16d,SC:U),D,0,0
+S:G$font_tiles__tilemap__stmcompr$0$0({49}DA49d,SC:U),D,0,0
+S:G$font_tiles__tiles__psgcompr$0$0({3142}DA3142d,SC:U),D,0,0
