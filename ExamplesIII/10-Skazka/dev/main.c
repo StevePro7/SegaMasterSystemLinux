@@ -3,7 +3,7 @@
 void main( void )
 {
 	// Global variables.
-	//static bool global_pause;
+	static bool global_pause;
 	unsigned char open_screen_type;
 
 	devkit_SMS_init();
@@ -35,6 +35,25 @@ void main( void )
 	devkit_SMS_displayOn();
 	for( ;; )
 	{
+		if( devkit_SMS_queryPauseRequested() )
+		{
+			devkit_SMS_resetPauseRequest();
+			global_pause = !global_pause;
+			if( global_pause )
+			{
+				devkit_PSGSilenceChannels();
+			}
+			else
+			{
+				devkit_PSGRestoreVolumes();
+			}
+		}
+
+		if( global_pause )
+		{
+			continue;
+		}
+
 		engine_input_manager_update();
 		engine_screen_manager_update();
 		devkit_SMS_waitForVBlank();

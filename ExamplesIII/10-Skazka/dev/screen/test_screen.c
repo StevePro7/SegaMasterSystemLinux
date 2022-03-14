@@ -18,6 +18,12 @@ void screen_test_screen_update( unsigned char *screen_type )
 	if( input )
 	{
 		engine_font_manager_text( "BEG!", 2, 12 );
+		// Intro.
+		for( index = 0; index < 5; index++ )
+		{
+			engine_sound_manager_play( index );
+		}
+		// Boss.
 		for( index = 5; index < 8; index++ )
 		{
 			engine_sound_manager_play( index );
