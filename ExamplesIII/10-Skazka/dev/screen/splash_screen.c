@@ -2,12 +2,15 @@
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/input_manager.h"
+#include "../engine/timer_manager.h"
 #include "../devkit/_sms_manager.h"
 
 #define SPLASH_SCREEN_DELAY		150
 
 void screen_splash_screen_load()
 {
+	engine_timer_manager_load( SPLASH_SCREEN_DELAY );
+
 	devkit_SMS_displayOff();
 	engine_content_manager_load_splash();
 	devkit_SMS_displayOn();
