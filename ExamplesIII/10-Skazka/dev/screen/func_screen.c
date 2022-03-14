@@ -1,4 +1,5 @@
 #include "func_screen.h"
+#include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/global_manager.h"
@@ -28,6 +29,8 @@ static void section04()
 	//unsigned char index;
 	unsigned char row, col;
 
+	engine_content_manager_load_title( 1 );
+
 	engine_font_manager_char( 0x8A, LEFT_X + 1, 0 );
 	engine_font_manager_char( 0x8C, LEFT_X + 31, 0 );
 	engine_font_manager_char( 0x8B, LEFT_X + 1, 23 );
@@ -44,4 +47,6 @@ static void section04()
 		engine_font_manager_char( 0x80, LEFT_X + 1, row );
 		engine_font_manager_char( 0x80, LEFT_X + 31, row );
 	}
+
+	devkit_SMS_setBGPaletteColor( 0, devkit_RGB( 0, 0, 3 ) );
 }
