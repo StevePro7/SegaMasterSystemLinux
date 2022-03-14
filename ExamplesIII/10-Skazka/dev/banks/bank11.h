@@ -1,4 +1,4 @@
-extern const unsigned char	bank11_txt[];
-#define				bank11_txt_size 6
-#define				bank11_txt_bank 11
+extern const unsigned char	Boss03_wav_pcmenc[];
+#define				Boss03_wav_pcmenc_size 8741
+#define				Boss03_wav_pcmenc_bank 11
 

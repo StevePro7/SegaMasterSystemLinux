@@ -14,6 +14,7 @@ void main( void )
 	devkit_SMS_useFirstHalfTilesforSprites( false );
 	//devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );
 
+	engine_content_manager_load_tiles();
 	// TODO - this will be in the title screen!
 	engine_content_manager_load_tiles();
 

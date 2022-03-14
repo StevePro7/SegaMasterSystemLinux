@@ -1,2 +1,2 @@
 M:bank10
-S:G$bank10_txt$0$0({6}DA6d,SC:U),D,0,0
+S:G$Boss02_wav_pcmenc$0$0({10380}DA10380d,SC:U),D,0,0
