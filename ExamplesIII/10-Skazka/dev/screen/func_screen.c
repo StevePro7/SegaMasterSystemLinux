@@ -33,11 +33,11 @@ static void section04()
 	engine_font_manager_char( 0x8B, LEFT_X + 1, 23 );
 	engine_font_manager_char( 0x8D, LEFT_X + 31, 23 );
 
-	//for( col = LEFT_X + 1; col <= LEFT_X + 31; col++ )
-	//{
-	//	engine_font_manager_char( 0x81, LEFT_X + col, 1 );
-	//	engine_font_manager_char( 0x81, LEFT_X + col, 20 );
-	//}
+	for( col = LEFT_X + 2; col <= LEFT_X + 30; col++ )
+	{
+		engine_font_manager_char( 0x81, LEFT_X + col, 0 );
+		engine_font_manager_char( 0x81, LEFT_X + col, 23 );
+	}
 
 	for( row = 1; row <= 22; row++ )
 	{

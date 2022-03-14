@@ -1,11 +1,11 @@
 ;!FILE func_screen.asm
 XL2
-H 9 areas 55 global symbols
+H 9 areas 78 global symbols
 M func_screen
 O -mz80
 S .__.ABS. Def0000
 S _engine_font_manager_char Ref0000
-A _CODE size 5E flags 0 addr 0
+A _CODE size 87 flags 0 addr 0
 S A$func_screen$75 Def0004
 S A$func_screen$76 Def0005
 S A$func_screen$77 Def0006
@@ -17,71 +17,106 @@ S A$func_screen$98 Def000E
 S A$func_screen$99 Def0010
 S C$func_screen.c$9$0$0 Def0000
 S _screen_func_screen_load Def0000
-S XFfunc_screen$section04$0$0 Def005D
+S XFfunc_screen$section04$0$0 Def0086
 S XG$screen_func_screen_load$0$0 Def0000
 S G$screen_func_screen_update$0$0 Def0003
 S A$func_screen$100 Def0011
+S A$func_screen$200 Def0075
 S A$func_screen$110 Def001D
 S A$func_screen$101 Def0012
 S C$func_screen.c$22$1$11 Def0003
+S A$func_screen$210 Def0080
+S A$func_screen$201 Def0076
 S A$func_screen$120 Def0029
 S A$func_screen$111 Def001E
 S C$func_screen.c$31$1$12 Def000A
 S C$func_screen.c$23$1$11 Def0009
+S A$func_screen$211 Def0081
+S A$func_screen$202 Def0079
 S A$func_screen$130 Def0035
 S A$func_screen$121 Def002A
 S C$func_screen.c$32$1$12 Def0015
+S A$func_screen$212 Def0083
+S A$func_screen$203 Def007A
 S A$func_screen$131 Def0036
 S C$func_screen.c$33$1$12 Def0021
-S A$func_screen$150 Def0049
+S A$func_screen$213 Def0084
+S A$func_screen$204 Def007D
+S A$func_screen$150 Def0046
 S A$func_screen$132 Def0039
 S A$func_screen$105 Def0015
 S C$func_screen.c$34$1$12 Def002D
 S C$func_screen.c$26$1$11 Def000A
-S A$func_screen$160 Def0054
+S A$func_screen$205 Def007E
+S A$func_screen$160 Def0050
+S A$func_screen$151 Def0047
 S A$func_screen$142 Def003D
 S A$func_screen$133 Def003A
 S A$func_screen$115 Def0021
 S A$func_screen$106 Def0016
-S C$func_screen.c$42$2$13 Def0057
 S _screen_func_screen_update Def0003
-S A$func_screen$161 Def0055
+S A$func_screen$206 Def007F
+S A$func_screen$170 Def005D
+S A$func_screen$161 Def0051
+S A$func_screen$152 Def004A
 S A$func_screen$143 Def003E
 S A$func_screen$125 Def002D
 S A$func_screen$116 Def0022
 S A$func_screen$107 Def0019
-S A$func_screen$162 Def0056
+S A$func_screen$162 Def0052
+S A$func_screen$153 Def004B
 S A$func_screen$144 Def003F
 S A$func_screen$126 Def002E
 S A$func_screen$117 Def0025
 S A$func_screen$108 Def001A
-S A$func_screen$154 Def004A
+S C$func_screen.c$42$2$15 Def0080
+S A$func_screen$190 Def006C
+S A$func_screen$181 Def0064
+S A$func_screen$163 Def0053
+S A$func_screen$154 Def004C
 S A$func_screen$145 Def0040
 S A$func_screen$127 Def0031
 S A$func_screen$118 Def0026
 S A$func_screen$109 Def001C
-S A$func_screen$155 Def004B
-S A$func_screen$146 Def0043
+S C$func_screen.c$36$2$13 Def005E
+S A$func_screen$218 Def0086
+S A$func_screen$191 Def006D
+S A$func_screen$164 Def0054
+S A$func_screen$146 Def0041
 S A$func_screen$137 Def003B
 S A$func_screen$128 Def0032
 S A$func_screen$119 Def0028
-S C$func_screen.c$44$3$14 Def003D
-S A$func_screen$174 Def005D
-S A$func_screen$156 Def004C
-S A$func_screen$147 Def0044
+S A$func_screen$192 Def0070
+S A$func_screen$174 Def005E
+S A$func_screen$165 Def0056
+S A$func_screen$147 Def0042
 S A$func_screen$129 Def0034
-S C$func_screen.c$47$2$13 Def005D
-S C$func_screen.c$45$3$14 Def004A
+S C$func_screen.c$36$2$15 Def003B
+S A$func_screen$193 Def0071
+S A$func_screen$175 Def005F
 S A$func_screen$166 Def0057
-S A$func_screen$157 Def004D
-S A$func_screen$148 Def0047
+S A$func_screen$148 Def0043
+S C$func_screen.c$44$3$16 Def0066
+S A$func_screen$194 Def0072
+S A$func_screen$176 Def0061
 S A$func_screen$167 Def0058
-S A$func_screen$158 Def0050
-S A$func_screen$149 Def0048
-S A$func_screen$168 Def005A
-S A$func_screen$159 Def0051
-S A$func_screen$169 Def005B
+S A$func_screen$158 Def004D
+S A$func_screen$149 Def0045
+S C$func_screen.c$47$2$15 Def0086
+S C$func_screen.c$45$3$16 Def0073
+S C$func_screen.c$38$3$14 Def003D
+S A$func_screen$186 Def0066
+S A$func_screen$177 Def0062
+S A$func_screen$168 Def005B
+S A$func_screen$159 Def004E
+S C$func_screen.c$39$3$14 Def004D
+S A$func_screen$187 Def0067
+S A$func_screen$169 Def005C
+S A$func_screen$188 Def0068
+S A$func_screen$198 Def0073
+S A$func_screen$189 Def0069
 S Ffunc_screen$section04$0$0 Def000A
+S A$func_screen$199 Def0074
 S XG$screen_func_screen_update$0$0 Def0009
 S A$func_screen$61 Def0000
 S C$func_screen.c$20$1$9 Def0003
@@ -113,13 +148,21 @@ T 17 00 1F 00 E3 3E 8C F5 33 CD 00 00 33 21 01 17
 R 00 00 00 00 02 0A 01 00
 T 25 00 E3 3E 8B F5 33 CD 00 00 33 21 1F 17 E3 3E
 R 00 00 00 00 02 08 01 00
-T 33 00 8D F5 33 CD 00 00 F1 33 06 01
+T 33 00 8D F5 33 CD 00 00 F1 33 06 02
 R 00 00 00 00 02 06 01 00
 T 3D 00
 R 00 00 00 00
-T 3D 00 C5 C5 33 21 80 01 E5 CD 00 00 F1 33 C1 C5
+T 3D 00 C5 AF F5 33 C5 33 3E 81 F5 33 CD 00 00 F1
+R 00 00 00 00 02 0D 01 00
+T 4B 00 33 C1 C5 3E 17 F5 33 C5 33 3E 81 F5 33 CD
+R 00 00 00 00
+T 59 00 00 00 F1 33 C1 04 3E 1E 90 30 D9 06 01
+R 00 00 00 00 02 02 01 00
+T 66 00
+R 00 00 00 00
+T 66 00 C5 C5 33 21 80 01 E5 CD 00 00 F1 33 C1 C5
 R 00 00 00 00 02 0A 01 00
-T 4B 00 C5 33 21 80 1F E5 CD 00 00 F1 33 C1 04 3E
+T 74 00 C5 33 21 80 1F E5 CD 00 00 F1 33 C1 04 3E
 R 00 00 00 00 02 09 01 00
-T 59 00 16 90 30 E0 C9
+T 82 00 16 90 30 E0 C9
 R 00 00 00 00
