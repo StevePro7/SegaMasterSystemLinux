@@ -1,6 +1,8 @@
 #include "text_manager.h"
 #include "font_manager.h"
+#include "global_manager.h"
 #include "locale_manager.h"
+#include "../devkit/_sms_manager.h"
 #include <stdarg.h>
 
 void engine_text_manager_clear( unsigned char start, unsigned char stop )
@@ -8,7 +10,29 @@ void engine_text_manager_clear( unsigned char start, unsigned char stop )
 	unsigned char row;
 	for( row = start; row <= stop; row++ )
 	{
-		engine_font_manager_text( LOCALE_32_SPCS, 0, row );
+		engine_font_manager_text( LOCALE_29_SPCS, LEFT_X + 2, row );
+	}
+}
+
+void engine_text_manager_border()
+{
+	unsigned char row, col;
+
+	engine_font_manager_char( 0x8A, LEFT_X + 1, 0 );
+	engine_font_manager_char( 0x8C, LEFT_X + 31, 0 );
+	engine_font_manager_char( 0x8B, LEFT_X + 1, 23 );
+	engine_font_manager_char( 0x8D, LEFT_X + 31, 23 );
+
+	for( col = LEFT_X + 2; col <= LEFT_X + 30; col++ )
+	{
+		engine_font_manager_char( 0x81, LEFT_X + col, 0 );
+		engine_font_manager_char( 0x81, LEFT_X + col, 23 );
+	}
+
+	for( row = 1; row <= 22; row++ )
+	{
+		engine_font_manager_char( 0x80, LEFT_X + 1, row );
+		engine_font_manager_char( 0x80, LEFT_X + 31, row );
 	}
 }
 

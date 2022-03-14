@@ -3,7 +3,9 @@
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/global_manager.h"
+#include "../engine/locale_manager.h"
 #include "../engine/text_manager.h"
+#include "../devkit/_sms_manager.h"
 
 static void section04();
 
@@ -27,26 +29,16 @@ void screen_func_screen_update( unsigned char *screen_type )
 static void section04()
 {
 	//unsigned char index;
-	unsigned char row, col;
+	unsigned char row;
 
-	engine_content_manager_load_title( 1 );
+	row = 1;
+	engine_content_manager_load_title( row );
+	engine_text_manager_clear( row + 2, row + 9 );
+	engine_text_manager_border();
+	//for( idx = row + 2; idx < row + 9; idx++ )
+	//{
+	//	engine_font_manager_text( LOCALE_29_SPCS, LEFT_X + 2, idx );
+	//}
 
-	engine_font_manager_char( 0x8A, LEFT_X + 1, 0 );
-	engine_font_manager_char( 0x8C, LEFT_X + 31, 0 );
-	engine_font_manager_char( 0x8B, LEFT_X + 1, 23 );
-	engine_font_manager_char( 0x8D, LEFT_X + 31, 23 );
-
-	for( col = LEFT_X + 2; col <= LEFT_X + 30; col++ )
-	{
-		engine_font_manager_char( 0x81, LEFT_X + col, 0 );
-		engine_font_manager_char( 0x81, LEFT_X + col, 23 );
-	}
-
-	for( row = 1; row <= 22; row++ )
-	{
-		engine_font_manager_char( 0x80, LEFT_X + 1, row );
-		engine_font_manager_char( 0x80, LEFT_X + 31, row );
-	}
-
-	devkit_SMS_setBGPaletteColor( 0, devkit_RGB( 0, 0, 3 ) );
+	
 }

@@ -26,7 +26,7 @@ void screen_splash_screen_update( unsigned char *screen_type )
 
 	if( input || timer )
 	{
-		*screen_type = screen_type_scroll;
+		*screen_type = screen_type_title;
 		return;
 	}
 

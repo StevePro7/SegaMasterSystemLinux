@@ -26,7 +26,7 @@
 #define LOCALE_ARROWS			">>"
 #define LOCALE_2_SPCS			"  "
 #define LOCALE_6_SPCS			"      "
-#define LOCALE_32_SPCS			"                                "
+#define LOCALE_29_SPCS			"                             "
 #define LOCALE_SLASH			"/"
 
 #endif//_LOCALE_MANAGER_H_

@@ -11,7 +11,8 @@ void screen_title_screen_load()
 
 	devkit_SMS_displayOff();
 	engine_content_manager_load_title( row );
-	engine_text_manager_clear( row + 2, row + 12 );
+	engine_text_manager_clear( row + 2, row + 9 );
+	engine_text_manager_border();
 	devkit_SMS_displayOn();
 }
 

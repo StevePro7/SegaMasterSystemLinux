@@ -13,6 +13,7 @@ S:G$engine_font_manager_zero$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_args$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_list$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_clear$0$0({2}DF,SV:S),C,0,0
+S:G$engine_text_manager_border$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_init$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOnFeature$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOffFeature$0$0({2}DF,SV:S),C,0,0
