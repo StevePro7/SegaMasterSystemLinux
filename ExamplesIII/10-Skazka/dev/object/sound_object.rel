@@ -1,0 +1,43 @@
+XL2
+H 9 areas E global symbols
+M sound_object
+O -mz80
+S _Intro01_wav_pcmenc Ref0000
+S _Intro02_wav_pcmenc Ref0000
+S _Intro03_wav_pcmenc Ref0000
+S _Intro04_wav_pcmenc Ref0000
+S _Intro05_wav_pcmenc Ref0000
+S _Boss01_wav_pcmenc Ref0000
+S _Boss02_wav_pcmenc Ref0000
+S _Boss03_wav_pcmenc Ref0000
+S .__.ABS. Def0000
+A _CODE size 8 flags 0 addr 0
+S G$sound_sample_bank$0$0 Def0000
+S _sound_sample_bank Def0000
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 10 flags 0 addr 0
+S G$sound_sample_data$0$0 Def0000
+S _sound_sample_data Def0000
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 10 flags 0 addr 0
+S Fsound_object$__xinit_sound_sample_data$0$0 Def0000
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 02 00
+T 00 00
+R 00 00 02 00
+T 00 00
+R 00 00 00 00
+T 00 00 04 05 06 07 08 09 0A 0B
+R 00 00 00 00
+T 00 00
+R 00 00 07 00
+T 00 00 00 00 00 00 00 00
+R 00 00 07 00 02 02 00 00 02 04 01 00 02 06 02 00
+T 06 00 00 00 00 00 00 00
+R 00 00 07 00 02 02 03 00 02 04 04 00 02 06 05 00
+T 0C 00 00 00 00 00
+R 00 00 07 00 02 02 06 00 02 04 07 00

@@ -1,0 +1,11 @@
+M:sound_object
+S:G$sound_sample_data$0$0({16}DA8d,DG,SC:U),E,0,0
+S:G$Intro01_wav_pcmenc$0$0({0}DA0d,SC:U),D,0,0
+S:G$Intro02_wav_pcmenc$0$0({0}DA0d,SC:U),D,0,0
+S:G$Intro03_wav_pcmenc$0$0({0}DA0d,SC:U),D,0,0
+S:G$Intro04_wav_pcmenc$0$0({0}DA0d,SC:U),D,0,0
+S:G$Intro05_wav_pcmenc$0$0({0}DA0d,SC:U),D,0,0
+S:G$Boss01_wav_pcmenc$0$0({0}DA0d,SC:U),D,0,0
+S:G$Boss02_wav_pcmenc$0$0({0}DA0d,SC:U),D,0,0
+S:G$Boss03_wav_pcmenc$0$0({0}DA0d,SC:U),D,0,0
+S:G$sound_sample_bank$0$0({8}DA8d,SC:U),D,0,0

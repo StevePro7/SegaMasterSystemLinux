@@ -14,5 +14,6 @@
 #include "engine/input_manager.h"
 #include "engine/screen_manager.h"
 #include "engine/select_manager.h"
+#include "engine/sound_manager.h"
 
 #endif//__MAIN__~
