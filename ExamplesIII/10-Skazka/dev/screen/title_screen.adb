@@ -3,6 +3,7 @@ F:G$screen_title_screen_load$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Ltitle_screen.screen_title_screen_load$row$1$74({1}SC:U),R,0,0,[]
 F:G$screen_title_screen_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Ltitle_screen.screen_title_screen_update$screen_type$1$75({2}DG,SC:U),B,1,4
+S:G$engine_content_manager_load_splash$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_tiles$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_title$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_char$0$0({2}DF,SV:S),C,0,0
