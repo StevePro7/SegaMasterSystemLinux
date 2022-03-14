@@ -1,9 +1,10 @@
 #include "splash_screen.h"
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
-#include "../engine/font_manager.h"
 #include "../engine/input_manager.h"
 #include "../devkit/_sms_manager.h"
+
+#define SPLASH_SCREEN_DELAY		150
 
 void screen_splash_screen_load()
 {

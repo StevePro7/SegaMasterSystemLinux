@@ -1,4 +1,5 @@
 #include "select_manager.h"
+#include "enum_manager.h"
 #include "font_manager.h"
 #include "input_manager.h"
 #include "locale_manager.h"
@@ -41,7 +42,7 @@ unsigned char engine_select_manager_update( unsigned char index )
 	struct_select_object *so = &global_select_object;
 	unsigned char input;
 
-	input = engine_input_manager_hold_up();
+	input = engine_input_manager_hold( input_type_up );
 	if( input )
 	{
 		draw_spaces();
@@ -54,7 +55,7 @@ unsigned char engine_select_manager_update( unsigned char index )
 		draw_arrows();
 	}
 
-	input = engine_input_manager_hold_down();
+	input = engine_input_manager_hold( input_type_down );
 	if( input )
 	{
 		draw_spaces();
@@ -70,7 +71,7 @@ unsigned char engine_select_manager_update( unsigned char index )
 	// Updates select index unconditionally.
 	so->select_index[ index ] = so->select_Y - so->select_min;
 
-	input = engine_input_manager_hold_fire1();
+	input = engine_input_manager_hold( input_type_fire1 );
 	if (input)
 	{
 		return so->select_index[ index ];
