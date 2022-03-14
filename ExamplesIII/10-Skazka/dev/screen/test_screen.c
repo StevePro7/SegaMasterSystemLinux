@@ -2,6 +2,7 @@
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/input_manager.h"
+#include "../engine/sound_manager.h"
 
 void screen_test_screen_load()
 {
@@ -11,11 +12,17 @@ void screen_test_screen_load()
 void screen_test_screen_update( unsigned char *screen_type )
 {
 	unsigned char input;
+	unsigned char index;
 
 	input = engine_input_manager_hold( input_type_down );
 	if( input )
 	{
-		engine_font_manager_text( "FIRE SCREEN!!", 2, 12 );
+		engine_font_manager_text( "BEG!", 2, 12 );
+		for( index = 5; index < 8; index++ )
+		{
+			engine_sound_manager_play( index );
+		}
+		engine_font_manager_text( "END!!", 2, 14 );
 	}
 
 	*screen_type = screen_type_test;
