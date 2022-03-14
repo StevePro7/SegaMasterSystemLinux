@@ -18,12 +18,17 @@ void screen_splash_screen_load()
 
 void screen_splash_screen_update( unsigned char *screen_type )
 {
-	/*unsigned char input;
-	input = engine_input_manager_hold_down();
-	if( input )
+	unsigned char input;
+	unsigned char timer;
+
+	input = engine_input_manager_hold( input_type_fire1 );
+	timer = engine_timer_manager_update();
+
+	if( input || timer )
 	{
-		engine_font_manager_text( "HELLO??", 10, 15 );
+		*screen_type = screen_type_scroll;
+		return;
 	}
-*/
+
 	*screen_type = screen_type_splash;
 }
