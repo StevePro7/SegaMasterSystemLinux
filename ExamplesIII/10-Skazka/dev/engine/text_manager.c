@@ -73,7 +73,6 @@ void engine_text_manager_args( unsigned char x, unsigned char y, unsigned char n
 {
 	unsigned char ch;
 	unsigned char idx;
-	//unsigned char col = x;
 
 	va_list arglist;
 	va_start( arglist, num );
@@ -81,9 +80,7 @@ void engine_text_manager_args( unsigned char x, unsigned char y, unsigned char n
 	for( idx = 0; idx < num; idx++ )
 	{
 		ch = va_arg( arglist, int );
-		//engine_font_manager_char( ch, col, y );
 		engine_font_manager_char( ch, x++, y );
-		//col++;
 	}
 
 	va_end( arglist );

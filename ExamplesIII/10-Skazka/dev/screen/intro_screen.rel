@@ -8,11 +8,12 @@ S _devkit_SMS_displayOn Ref0000
 S _engine_text_manager_border Ref0000
 S _engine_text_manager_clear Ref0000
 S .__.ABS. Def0000
+S _intro_texts Ref0000
 S _devkit_SMS_displayOff Ref0000
 S _engine_content_manager_load_title Ref0000
 S _engine_text_manager_title Ref0000
 S _devkit_SMS_mapROMBank Ref0000
-A _CODE size 49 flags 0 addr 0
+A _CODE size 3D flags 0 addr 0
 S A$intro_screen$76 Def000B
 S A$intro_screen$95 Def001E
 S A$intro_screen$77 Def000E
@@ -21,7 +22,6 @@ S A$intro_screen$96 Def0020
 S A$intro_screen$87 Def0016
 S A$intro_screen$78 Def000F
 S A$intro_screen$69 Def0005
-S Fintro_screen$__str_0$0$0 Def0036
 S A$intro_screen$97 Def0021
 S A$intro_screen$88 Def0018
 S A$intro_screen$79 Def0012
@@ -30,33 +30,33 @@ S A$intro_screen$89 Def0019
 S A$intro_screen$99 Def0025
 S _screen_intro_screen_load Def0000
 S XG$screen_intro_screen_load$0$0 Def0033
-S G$screen_intro_screen_update$0$0 Def0042
+S G$screen_intro_screen_update$0$0 Def0036
 S A$intro_screen$110 Def002E
 S A$intro_screen$120 Def0033
 S A$intro_screen$111 Def0031
 S A$intro_screen$112 Def0032
-S A$intro_screen$140 Def0045
-S A$intro_screen$141 Def0046
-S A$intro_screen$106 Def0026
-S _screen_intro_screen_update Def0042
+S A$intro_screen$103 Def0026
+S A$intro_screen$142 Def003C
+S A$intro_screen$133 Def0036
+S _screen_intro_screen_update Def0036
+S A$intro_screen$134 Def0037
 S A$intro_screen$107 Def0029
-S A$intro_screen$108 Def002A
+S A$intro_screen$135 Def0038
+S A$intro_screen$108 Def002C
+S A$intro_screen$136 Def0039
 S A$intro_screen$109 Def002D
-S A$intro_screen$146 Def0048
-S A$intro_screen$137 Def0042
-S A$intro_screen$138 Def0043
+S A$intro_screen$137 Def003A
 S C$intro_screen.c$20$1$95 Def0013
-S A$intro_screen$139 Def0044
-S C$intro_screen.c$31$1$95 Def0042
+S C$intro_screen.c$31$1$95 Def0036
 S C$intro_screen.c$22$1$95 Def0016
 S C$intro_screen.c$12$0$0 Def0000
 S C$intro_screen.c$23$1$95 Def001E
-S C$intro_screen.c$25$1$95 Def0026
-S C$intro_screen.c$33$1$97 Def0042
-S C$intro_screen.c$26$1$95 Def0026
+S C$intro_screen.c$24$1$95 Def0026
+S C$intro_screen.c$33$1$97 Def0036
+S C$intro_screen.c$26$1$95 Def0029
 S C$intro_screen.c$17$1$95 Def0000
-S XG$screen_intro_screen_update$0$0 Def0048
-S C$intro_screen.c$34$1$97 Def0048
+S XG$screen_intro_screen_update$0$0 Def003C
+S C$intro_screen.c$34$1$97 Def003C
 S C$intro_screen.c$18$1$95 Def0003
 S C$intro_screen.c$28$1$95 Def0033
 S C$intro_screen.c$19$1$95 Def000B
@@ -80,18 +80,14 @@ A _CABS size 0 flags 8 addr 0
 T 00 00
 R 00 00 00 00
 T 00 00 CD 00 00 3E 01 F5 33 CD 00 00 33 21 01 0A
-R 00 00 00 00 02 03 05 00 02 0A 06 00
+R 00 00 00 00 02 03 06 00 02 0A 07 00
 T 0E 00 E5 CD 00 00 F1 CD 00 00 3E 03 F5 33 CD
 R 00 00 00 00 02 04 03 00 02 08 02 00
-T 1B 00 00 00 33 3E 0F F5 33 CD 00 00 33 21 02 0A
-R 00 00 00 00 02 02 07 00 02 0A 08 00
-T 29 00 E5 21 36 00 E5 CD 00 00 F1 F1 C3 00 00
-R 00 00 00 00 00 04 00 00 02 08 00 00 02 0D 01 00
+T 1B 00 00 00 33 3E 0F F5 33 CD 00 00 33 2A 04 00
+R 00 00 00 00 02 02 08 00 02 0A 09 00 02 0E 05 00
+T 29 00 01 02 0A C5 E5 CD 00 00 F1 F1 C3 00 00
+R 00 00 00 00 02 08 00 00 02 0D 01 00
 T 36 00
 R 00 00 00 00
-T 36 00 48 45 4C 4C 4F 20 57 4F 52 4C 44 00
-R 00 00 00 00
-T 42 00
-R 00 00 00 00
-T 42 00 C1 E1 E5 C5 36 03 C9
+T 36 00 C1 E1 E5 C5 36 03 C9
 R 00 00 00 00

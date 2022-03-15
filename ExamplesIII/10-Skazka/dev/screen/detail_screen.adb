@@ -10,6 +10,7 @@ S:Ldetail_screen.section03$row$1$15({1}SC:U),R,0,0,[c]
 F:Fdetail_screen$section02$0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:Fdetail_screen$section01$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Ldetail_screen.section01$row$1$19({1}SC:U),R,0,0,[b]
+S:G$intro_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$options_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$main_menus$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$forests_texts$0$0({0}DA0d,DG,SC:U),E,0,0

@@ -20,9 +20,9 @@ void screen_intro_screen_load()
 	engine_text_manager_border();
 
 	engine_text_manager_title( row + 2 );
-	devkit_SMS_mapROMBank( FIXED_BANK );
-	text = ( unsigned char * ) intro_texts[ 0 ];
-	text = "HELLO WORLD";
+	devkit_SMS_mapROMBank( 15 );
+	text = ( unsigned char * ) intro_texts[ 2 ];
+	//text = "HELLO WORLD";
 	engine_font_manager_text( text, LEFT_X + 2, 10 );
 
 	devkit_SMS_displayOn();
