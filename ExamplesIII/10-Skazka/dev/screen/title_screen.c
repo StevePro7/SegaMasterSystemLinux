@@ -26,5 +26,6 @@ void screen_title_screen_load()
 
 void screen_title_screen_update( unsigned char *screen_type )
 {
+	// TODO music intro yes or no.
 	*screen_type = screen_type_title;
 }
