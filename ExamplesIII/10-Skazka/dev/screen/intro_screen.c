@@ -7,20 +7,19 @@
 #include "../engine/text_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
-#include <stdlib.h>
 
 void screen_intro_screen_load()
 {
-	unsigned char row = 1;
+	unsigned char row;
 	unsigned char idx;
-	unsigned char *text = NULL;
 
+	row = 1;
 	devkit_SMS_displayOff();
 	engine_content_manager_load_title( row );
 	engine_text_manager_clear( row + 0, row + 9 );
 	engine_text_manager_border();
 
-	// SKAZKA
+	// SKAZKA.
 	engine_text_manager_title( row + 2 );
 
 	// Instructions.

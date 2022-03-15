@@ -16,7 +16,7 @@ void screen_title_screen_load()
 	engine_text_manager_clear( row + 0, row + 9 );
 	engine_text_manager_border();
 
-	// SKAZKA
+	// SKAZKA.
 	engine_text_manager_title( row + 2 );
 	engine_font_manager_text( LOCALE_TITLE_MSG1, LEFT_X + 7, 12 );
 	engine_font_manager_text( LOCALE_TITLE_MSG2, LEFT_X + 3, 17 );

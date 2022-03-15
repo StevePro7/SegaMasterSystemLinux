@@ -1,16 +1,30 @@
 #include "record_screen.h"
+#include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
+#include "../engine/global_manager.h"
+#include "../engine/locale_manager.h"
+#include "../engine/text_manager.h"
+#include "../devkit/_sms_manager.h"
+#include "../banks/fixedbank.h"
 
 void screen_record_screen_load()
 {
-	engine_font_manager_text( "HELLO WORLD", 2, 10 );
-	engine_font_manager_char( 'A', 2, 12 );
+	// TODO this is the fight intro screen!
+	// need to move this or rename this....
+	unsigned char row;
+	unsigned char idx;
 
-	engine_font_manager_data( 1234, 12, 14 );
-	engine_font_manager_data( 5678, 12, 15 );
-	engine_font_manager_data( 1234, 12, 16 );
-	engine_font_manager_zero( 90, 12, 17 );
+	row = 1;
+	devkit_SMS_displayOff();
+	engine_content_manager_load_title( row );
+	engine_text_manager_clear( row + 0, row + 9 );
+	engine_text_manager_border();
+
+	// SKAZKA.
+	engine_text_manager_title( row + 2 );
+
+	devkit_SMS_displayOn();
 }
 
 void screen_record_screen_update( unsigned char *screen_type )
