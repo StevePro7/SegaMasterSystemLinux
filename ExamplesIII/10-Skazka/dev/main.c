@@ -24,8 +24,8 @@ void main( void )
 
 	//open_screen_type = screen_type_splash;
 	//open_screen_type = screen_type_title;
-	//open_screen_type = screen_type_intro;
-	open_screen_type = screen_type_rest;
+	open_screen_type = screen_type_intro;
+	//open_screen_type = screen_type_rest;
 	//open_screen_type = screen_type_detail;
 	//open_screen_type = screen_type_select;
 	//open_screen_type = screen_type_record;
