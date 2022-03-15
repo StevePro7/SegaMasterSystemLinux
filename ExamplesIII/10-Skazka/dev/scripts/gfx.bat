@@ -9,6 +9,9 @@ bmp2tile.exe raw/font_tiles.bmp -savetiles "font_tiles (tiles).psgcompr" -remove
 
 cd ../dev
 folder2c ../gfx gfx
+mv gfx.h content
+mv gfx.c content
+cd content
 
 sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 gfx.c
 

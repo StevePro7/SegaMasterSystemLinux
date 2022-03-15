@@ -1,7 +1,6 @@
 #include "font_manager.h"
 #include "../devkit/_sms_manager.h"
-//#include "../banks/bank2.h"
-#include "../gfx.h"
+#include "../content/gfx.h"
 
 #define BASE_ROOT 44 // 44 is title starts.
 #define TEXT_ROOT 32 // 32 is " " in ASCII.

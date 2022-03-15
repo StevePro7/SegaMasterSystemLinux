@@ -53,7 +53,7 @@ sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 i
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 stats_screen.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 forest_screen.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 shop_screen.c
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 rest_screen.c
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 rest_screen.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 talk_screen.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 fight_screen.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 menu_screen.c
@@ -105,7 +105,7 @@ screen/intro_screen.rel screen/stats_screen.rel screen/forest_screen.rel ^
 screen/shop_screen.rel screen/rest_screen.rel screen/talk_screen.rel ^
 screen/fight_screen.rel screen/menu_screen.rel screen/over_screen.rel ^
 screen/detail_screen.rel screen/record_screen.rel screen/select_screen.rel screen/test_screen.rel screen/func_screen.rel ^
-gfx.rel
+content/gfx.rel
 
 :: Execute
 ihx2sms output.ihx output.sms

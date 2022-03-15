@@ -1,9 +1,8 @@
 #include "content_manager.h"
 #include "global_manager.h"
 #include "../devkit/_sms_manager.h"
-//#include "../banks/bank2.h"
+#include "../content/gfx.h"
 #include "../banks/bank3.h"
-#include "../gfx.h"
 
 #define LOAD_TILES		0
 
