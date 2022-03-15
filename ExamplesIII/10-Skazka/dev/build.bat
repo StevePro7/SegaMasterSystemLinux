@@ -102,7 +102,7 @@ engine/sound_manager.rel engine/text_manager.rel engine/timer_manager.rel ^
 object/game_object.rel object/hack_object.rel object/player_object.rel ^
 object/select_object.rel object/sound_object.rel object/timer_object.rel ^
 screen/none_screen.rel screen/splash_screen.rel screen/title_screen.rel ^
-screen/intro_screen.rel screen/stats_screen.rel screen/forest_screen.rel
+screen/intro_screen.rel screen/stats_screen.rel screen/forest_screen.rel ^
 screen/shop_screen.rel screen/rest_screen.rel screen/talk_screen.rel ^
 screen/fight_screen.rel screen/menu_screen.rel screen/over_screen.rel ^
 screen/detail_screen.rel screen/record_screen.rel screen/select_screen.rel screen/test_screen.rel screen/func_screen.rel
