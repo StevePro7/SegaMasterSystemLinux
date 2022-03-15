@@ -1,7 +1,7 @@
 #ifndef _GLOBAL_MANAGER_H_
 #define _GLOBAL_MANAGER_H_
 
-#define MAX_SCREEENS			9
+#define MAX_SCREEENS			17
 
 #define MAX_SELECTS				3
 
