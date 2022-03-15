@@ -7,5 +7,6 @@ void engine_text_manager_list( unsigned char x, unsigned char y, unsigned char n
 
 void engine_text_manager_clear( unsigned char start, unsigned char stop );
 void engine_text_manager_border();
+void engine_text_manager_title( unsigned char row );
 
 #endif//_TEXT_MANAGER_H_

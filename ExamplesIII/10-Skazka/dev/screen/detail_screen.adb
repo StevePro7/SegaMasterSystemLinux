@@ -1,17 +1,15 @@
 M:detail_screen
 F:G$screen_detail_screen_load$0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_detail_screen_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Ldetail_screen.screen_detail_screen_update$screen_type$1$10({2}DG,SC:U),B,1,4
+S:Ldetail_screen.screen_detail_screen_update$screen_type$1$11({2}DG,SC:U),B,1,4
 F:Fdetail_screen$section05$0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:Fdetail_screen$section04$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Ldetail_screen.section04$row$1$13({1}SC:U),R,0,0,[b]
-S:Ldetail_screen.section04$col$1$13({1}SC:U),R,0,0,[b]
 F:Fdetail_screen$section03$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Ldetail_screen.section03$index$1$18({1}SC:U),R,0,0,[b]
-S:Ldetail_screen.section03$row$1$18({1}SC:U),R,0,0,[c]
+S:Ldetail_screen.section03$index$1$15({1}SC:U),R,0,0,[b]
+S:Ldetail_screen.section03$row$1$15({1}SC:U),R,0,0,[c]
 F:Fdetail_screen$section02$0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:Fdetail_screen$section01$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Ldetail_screen.section01$row$1$22({1}SC:U),R,0,0,[b]
+S:Ldetail_screen.section01$row$1$19({1}SC:U),R,0,0,[b]
 S:G$options_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$main_menus$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$forests_texts$0$0({0}DA0d,DG,SC:U),E,0,0
@@ -25,3 +23,4 @@ S:G$engine_text_manager_args$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_list$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_clear$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_border$0$0({2}DF,SV:S),C,0,0
+S:G$engine_text_manager_title$0$0({2}DF,SV:S),C,0,0

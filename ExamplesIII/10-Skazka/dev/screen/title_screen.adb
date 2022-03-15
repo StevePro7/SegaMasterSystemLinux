@@ -1,8 +1,8 @@
 M:title_screen
 F:G$screen_title_screen_load$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Ltitle_screen.screen_title_screen_load$row$1$74({1}SC:U),R,0,0,[]
+S:Ltitle_screen.screen_title_screen_load$row$1$75({1}SC:U),R,0,0,[]
 F:G$screen_title_screen_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Ltitle_screen.screen_title_screen_update$screen_type$1$75({2}DG,SC:U),B,1,4
+S:Ltitle_screen.screen_title_screen_update$screen_type$1$76({2}DG,SC:U),B,1,4
 S:G$engine_content_manager_load_splash$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_tiles$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_title$0$0({2}DF,SV:S),C,0,0
@@ -14,6 +14,7 @@ S:G$engine_text_manager_args$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_list$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_clear$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_border$0$0({2}DF,SV:S),C,0,0
+S:G$engine_text_manager_title$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_init$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOnFeature$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOffFeature$0$0({2}DF,SV:S),C,0,0
