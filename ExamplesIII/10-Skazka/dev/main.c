@@ -22,15 +22,15 @@ void main( void )
 	// Blue background
 	//devkit_SMS_setBGPaletteColor( 0, devkit_RGB( 0, 0, 3 ) );
 
-	open_screen_type = screen_type_splash;
+	//open_screen_type = screen_type_splash;
 	//open_screen_type = screen_type_title;
-	//open_screen_type = screen_type_intro;
+	open_screen_type = screen_type_intro;
 	//open_screen_type = screen_type_rest;
 	//open_screen_type = screen_type_detail;
 	//open_screen_type = screen_type_select;
 	//open_screen_type = screen_type_record;
 	//open_screen_type = screen_type_func;
-	open_screen_type = screen_type_over;
+	//open_screen_type = screen_type_over;
 
 	engine_select_manager_init();
 	engine_screen_manager_init( open_screen_type );
