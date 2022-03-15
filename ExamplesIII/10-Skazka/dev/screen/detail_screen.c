@@ -14,10 +14,11 @@ static void section05();
 
 void screen_detail_screen_load()
 {
+	//engine_font_manager_text( "STEVEPRO", 5, 0 );
 	//section01();
-	//section02();
+	section02();
 	//section03();
-	section04();
+	//section04();
 	//section05();
 
 	//engine_font_manager_text( "DETAIL SCREEN!!", 2, 20 );

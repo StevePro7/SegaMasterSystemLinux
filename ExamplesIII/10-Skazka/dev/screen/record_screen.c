@@ -13,16 +13,16 @@ void screen_record_screen_load()
 	// TODO this is the fight intro screen!
 	// need to move this or rename this....
 	unsigned char row;
-	unsigned char idx;
+	//unsigned char idx;
 
 	row = 1;
 	devkit_SMS_displayOff();
 	engine_content_manager_load_title( row );
-	engine_text_manager_clear( row + 0, row + 9 );
+	engine_text_manager_clear( row + 2, row + 9 );
 	engine_text_manager_border();
 
 	// SKAZKA.
-	engine_text_manager_title( row + 2 );
+	//engine_text_manager_title( row + 2 );
 
 	devkit_SMS_displayOn();
 }

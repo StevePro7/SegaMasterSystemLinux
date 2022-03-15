@@ -13,8 +13,8 @@ mv gfx.h content
 mv gfx.c content
 cd content
 
-sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 gfx.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 gfx.c
 
 del *.asm > nul; del *.lst > nul; del *.sym > nul
 
-cd scripts
+cd ../scripts

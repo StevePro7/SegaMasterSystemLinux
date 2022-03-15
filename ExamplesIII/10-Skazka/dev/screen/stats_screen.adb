@@ -1,8 +1,14 @@
 M:stats_screen
 F:G$screen_stats_screen_load$0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_stats_screen_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lstats_screen.screen_stats_screen_update$screen_type$1$7({2}DG,SC:U),B,1,4
+S:Lstats_screen.screen_stats_screen_update$screen_type$1$11({2}DG,SC:U),B,1,4
+F:Fstats_screen$print_village$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:G$engine_font_manager_char$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_zero$0$0({2}DF,SV:S),C,0,0
+S:G$engine_text_manager_args$0$0({2}DF,SV:S),C,0,0
+S:G$engine_text_manager_list$0$0({2}DF,SV:S),C,0,0
+S:G$engine_text_manager_clear$0$0({2}DF,SV:S),C,0,0
+S:G$engine_text_manager_border$0$0({2}DF,SV:S),C,0,0
+S:G$engine_text_manager_title$0$0({2}DF,SV:S),C,0,0
