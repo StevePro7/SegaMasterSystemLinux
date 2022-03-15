@@ -4,7 +4,7 @@ F:G$engine_sound_manager_play$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lsound_manager.engine_sound_manager_play$index$1$69({1}SC:U),B,1,4
 S:Lsound_manager.engine_sound_manager_play$ho$1$70({2}DG,STtag_struct_hack_object:S),R,0,0,[]
 S:Lsound_manager.engine_sound_manager_play$data$1$70({2}DG,SC:U),R,0,0,[c,b]
-S:Lsound_manager.engine_sound_manager_play$bank$1$70({1}SC:U),R,0,0,[e]
+S:Lsound_manager.engine_sound_manager_play$bank$1$70({1}SC:U),R,0,0,[d]
 T:Fsound_manager$tag_struct_hack_object[({0}S:S$hack_delay$0$0({1}SC:U),Z,0,0)({1}S:S$hack_sound$0$0({1}SC:U),Z,0,0)]
 S:G$global_hack_object$0$0({2}STtag_struct_hack_object:S),E,0,0
 S:G$sound_sample_data$0$0({0}DA0d,DG,SC:U),E,0,0

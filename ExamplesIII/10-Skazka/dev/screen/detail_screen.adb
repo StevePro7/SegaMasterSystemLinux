@@ -24,3 +24,4 @@ S:G$engine_font_manager_zero$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_args$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_list$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_clear$0$0({2}DF,SV:S),C,0,0
+S:G$engine_text_manager_border$0$0({2}DF,SV:S),C,0,0
