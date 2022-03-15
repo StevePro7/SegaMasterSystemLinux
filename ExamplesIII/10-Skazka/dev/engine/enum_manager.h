@@ -15,9 +15,9 @@ typedef enum tag_enum_screen_type
 	screen_type_fight = 9,
 	screen_type_menu = 10,
 	screen_type_over = 11,
-	screen_type_select = 12,
+	screen_type_detail = 12,
 	screen_type_record = 13,
-	screen_type_detail = 14,
+	screen_type_select = 14,
 	screen_type_test = 15,
 	screen_type_func = 16,
 
