@@ -1,14 +1,17 @@
 const unsigned char *intro_texts[] =
 {
-	"12345678901234567890123456789",
-	"YOU ARE A YOUNG HERO WHO",
-	"WISHES TO RID THE LAND FROM ",
-	"A TERRIFYING CREATURE   ",
-	"KNOWN AS KOSCHEY THE IMMORTAL.        ",
-	"RIGHT NOW ALL YOU HAVE IS YOUR DAGGER ",
-	"AND YOUR WHITS.                       ",
-	"YOU ENTER A VILLAGE TO BEGIN YOUR     ",
-	"ADVENTURE.                            ",
+//	"12345678901234567890123456789",	// TODO remove this!!
+	"",
+	"    YOU ARE A YOUNG HERO WHO ",
+	" WISHES TO RID THE LAND FROM ",
+	" A TERRIFYING CREATURE KNOWN ",
+	" AS KOSCHEY THE IMMORTAL.    ",
+	"",
+	"   RIGHT NOW ALL YOU HAVE IS ",
+	" YOUR DAGGER AND YOUR WHITS. ",
+	"",
+	" YOU ENTER A VILLAGE TO BEGIN",
+	" YOUR ADVENTURE.             ",
 };
 
 const unsigned char *options_texts[] =

@@ -12,7 +12,7 @@
 void screen_intro_screen_load()
 {
 	unsigned char row = 1;
-	unsigned char idx = 1;
+	unsigned char idx;
 	unsigned char *text = NULL;
 
 	devkit_SMS_displayOff();
@@ -20,11 +20,18 @@ void screen_intro_screen_load()
 	engine_text_manager_clear( row + 0, row + 9 );
 	engine_text_manager_border();
 
+	// SKAZKA
 	engine_text_manager_title( row + 2 );
-	devkit_SMS_mapROMBank( FIXED_BANK );
-	engine_font_manager_text( intro_texts[ 0 ], LEFT_X + 2, 10 );
-	//engine_font_manager_text( intro_texts[ 1 ], LEFT_X + 3, 11 );
 
+	// Instructions.
+	row = 9;
+	devkit_SMS_mapROMBank( FIXED_BANK );
+	for( idx = 0; idx < 11; idx++ )
+	{
+		engine_font_manager_text( ( unsigned char * ) intro_texts[ idx ], LEFT_X + 2, row++ );
+	}
+
+	engine_font_manager_text( LOCALE_FIRE1_CONT, LEFT_X + 5, 22 );
 	devkit_SMS_displayOn();
 }
 
