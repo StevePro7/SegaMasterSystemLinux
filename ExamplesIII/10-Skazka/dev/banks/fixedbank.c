@@ -15,14 +15,25 @@ const unsigned char *intro_texts[] =
 
 const unsigned char *options_texts[] =
 {
-	"WHAT SHALL WE DO?   ",
-	"1) FOREST PATROL    ",
-	"2) VISIT THE SHOP   ",
-	"3) REST             ",
-	"4) TALK TO VILLAGERS",
-	"5) FIGHT THE KOSCHEY",
-	"PRESS FIRE1 FOR MENU",
+	"  WHAT SHALL WE DO?",
+	"1) GO FOREST PATROL",
+	"2) PURCHASE AT SHOP",
+	"3) REST BY THE WELL",
+	"4) TALK TO VILLAGER",
+	"5) BEAT THE KOSCHEY",
+	"6) RETURN MAIN MENU",
 };
+
+//const unsigned char *options_texts[] =
+//{
+//	"WHAT SHALL WE DO?   ",
+//	"1) FOREST PATROL    ",
+//	"2) VISIT THE SHOP   ",
+//	"3) REST             ",
+//	"4) TALK TO VILLAGERS",
+//	"5) FIGHT THE KOSCHEY",
+//	"PRESS FIRE1 FOR MENU",
+//};
 
 const unsigned char *main_menus[] =
 {
