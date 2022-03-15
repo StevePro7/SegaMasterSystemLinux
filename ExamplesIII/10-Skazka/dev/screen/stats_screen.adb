@@ -6,6 +6,7 @@ S:Lstats_screen.screen_stats_screen_update$screen_type$1$76({2}DG,SC:U),B,1,4
 F:Fstats_screen$print_village$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lstats_screen.print_village$row$1$78({1}SC:U),R,0,0,[]
 F:Fstats_screen$print_player$0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lstats_screen.print_player$row$1$79({1}SC:U),R,0,0,[]
 S:G$engine_content_manager_load_splash$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_tiles$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_title$0$0({2}DF,SV:S),C,0,0
