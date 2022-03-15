@@ -12,6 +12,7 @@
 void screen_intro_screen_load()
 {
 	unsigned char row = 1;
+	unsigned char idx = 1;
 	unsigned char *text = NULL;
 
 	devkit_SMS_displayOff();
@@ -21,9 +22,8 @@ void screen_intro_screen_load()
 
 	engine_text_manager_title( row + 2 );
 	devkit_SMS_mapROMBank( FIXED_BANK );
-	text = ( unsigned char * ) intro_texts[ 3 ];
-	//text = "HELLO WORLD";
-	engine_font_manager_text( text, LEFT_X + 2, 10 );
+	engine_font_manager_text( intro_texts[ 0 ], LEFT_X + 2, 10 );
+	//engine_font_manager_text( intro_texts[ 1 ], LEFT_X + 3, 11 );
 
 	devkit_SMS_displayOn();
 }

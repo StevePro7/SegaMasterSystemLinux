@@ -1,7 +1,8 @@
 M:intro_screen
 F:G$screen_intro_screen_load$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lintro_screen.screen_intro_screen_load$row$1$95({1}SC:U),R,0,0,[]
-S:Lintro_screen.screen_intro_screen_load$text$1$95({2}DG,SC:U),R,0,0,[l,h]
+S:Lintro_screen.screen_intro_screen_load$idx$1$95({1}SC:U),R,0,0,[]
+S:Lintro_screen.screen_intro_screen_load$text$1$95({2}DG,SC:U),R,0,0,[]
 F:G$screen_intro_screen_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lintro_screen.screen_intro_screen_update$screen_type$1$96({2}DG,SC:U),B,1,4
 S:G$intro_texts$0$0({0}DA0d,DG,SC:U),E,0,0
