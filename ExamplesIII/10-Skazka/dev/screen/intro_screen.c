@@ -24,9 +24,9 @@ void screen_intro_screen_load()
 	engine_text_manager_title( row + 2 );
 
 	// Instructions.
-	row = 9;
+	row = 10;
 	devkit_SMS_mapROMBank( FIXED_BANK );
-	for( idx = 0; idx < 11; idx++ )
+	for( idx = 0; idx < 10; idx++ )
 	{
 		engine_font_manager_text( ( unsigned char * ) intro_texts[ idx ], LEFT_X + 2, row++ );
 	}

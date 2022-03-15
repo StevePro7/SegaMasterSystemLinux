@@ -1,7 +1,6 @@
 const unsigned char *intro_texts[] =
 {
 //	"12345678901234567890123456789",	// TODO remove this!!
-	"",
 	"    YOU ARE A YOUNG HERO WHO ",
 	" WISHES TO RID THE LAND FROM ",
 	" A TERRIFYING CREATURE KNOWN ",
