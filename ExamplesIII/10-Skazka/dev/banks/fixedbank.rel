@@ -1,11 +1,11 @@
 XL2
-H A areas 6A global symbols
+H A areas 6D global symbols
 M fixedbank
 O -mz80
 S .__.ABS. Def0000
 A _CODE size 0 flags 0 addr 0
 A _DATA size 0 flags 0 addr 0
-A _INITIALIZED size 92 flags 0 addr 0
+A _INITIALIZED size 98 flags 0 addr 0
 S G$villager_texts$0$0 Def0080
 S _weapon_texts Def0024
 S G$handler_texts$0$0 Def0076
@@ -38,7 +38,7 @@ A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
-A _BANK15 size 517 flags 0 addr 0
+A _BANK15 size 56C flags 0 addr 0
 S Ffixedbank$__str_10$0$0 Def0105
 S Ffixedbank$__str_20$0$0 Def01A1
 S Ffixedbank$__str_11$0$0 Def0119
@@ -72,16 +72,19 @@ S Ffixedbank$__str_44$0$0 Def02FA
 S Ffixedbank$__str_35$0$0 Def025F
 S Ffixedbank$__str_26$0$0 Def01FF
 S Ffixedbank$__str_17$0$0 Def0186
+S Ffixedbank$__str_63$0$0 Def0518
 S Ffixedbank$__str_54$0$0 Def040E
 S Ffixedbank$__str_45$0$0 Def0310
 S Ffixedbank$__str_36$0$0 Def0264
 S Ffixedbank$__str_27$0$0 Def020B
 S Ffixedbank$__str_18$0$0 Def018F
+S Ffixedbank$__str_64$0$0 Def0534
 S Ffixedbank$__str_55$0$0 Def0413
 S Ffixedbank$__str_46$0$0 Def0326
 S Ffixedbank$__str_37$0$0 Def0271
 S Ffixedbank$__str_28$0$0 Def0217
 S Ffixedbank$__str_19$0$0 Def0198
+S Ffixedbank$__str_65$0$0 Def0550
 S Ffixedbank$__str_56$0$0 Def0454
 S Ffixedbank$__str_47$0$0 Def0338
 S Ffixedbank$__str_38$0$0 Def027E
@@ -102,7 +105,7 @@ S Ffixedbank$__str_6$0$0 Def0097
 S Ffixedbank$__str_7$0$0 Def00B5
 S Ffixedbank$__str_8$0$0 Def00D3
 S Ffixedbank$__str_9$0$0 Def00F1
-A _INITIALIZER size 92 flags 0 addr 0
+A _INITIALIZER size 98 flags 0 addr 0
 S Ffixedbank$__xinit_menus_texts$0$0 Def0056
 S Ffixedbank$__xinit_intro_texts$0$0 Def0000
 S Ffixedbank$__xinit_stats_texts$0$0 Def0014
@@ -538,7 +541,25 @@ T FC 04
 R 00 00 07 00
 T FC 04 4B 4F 4C 43 48 55 47 41 20 49 53 20 4D 41
 R 00 00 07 00
-T 0A 05 44 45 20 4F 46 20 53 54 45 45 4C 3F 00
+T 0A 05 44 45 20 4F 46 20 53 54 45 45 4C 3F 20 00
+R 00 00 07 00
+T 18 05
+R 00 00 07 00
+T 18 05 20 20 54 52 55 4C 59 20 54 48 45 20 41 58
+R 00 00 07 00
+T 26 05 45 20 49 53 20 54 48 45 20 20 20 20 20 00
+R 00 00 07 00
+T 34 05
+R 00 00 07 00
+T 34 05 20 20 47 52 45 41 54 45 53 54 20 57 45 41
+R 00 00 07 00
+T 42 05 50 4F 4E 20 20 4F 46 20 4F 55 52 20 20 00
+R 00 00 07 00
+T 50 05
+R 00 00 07 00
+T 50 05 20 20 50 45 4F 50 4C 45 21 20 20 20 20 20
+R 00 00 07 00
+T 5E 05 20 20 20 20 20 20 20 20 20 20 20 20 20 00
 R 00 00 07 00
 T 00 00
 R 00 00 08 00
@@ -625,4 +646,6 @@ R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
 T 86 00 70 04 8C 04 A8 04
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
 T 8C 00 C4 04 E0 04 FC 04
+R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
+T 92 00 18 05 34 05 50 05
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00

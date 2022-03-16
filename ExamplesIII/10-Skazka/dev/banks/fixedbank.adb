@@ -12,7 +12,7 @@ S:G$menus_texts$0$0({8}DA4d,DG,SC:U),E,0,0
 S:G$forests_texts$0$0({14}DA7d,DG,SC:U),E,0,0
 S:G$allover_texts$0$0({10}DA5d,DG,SC:U),E,0,0
 S:G$handler_texts$0$0({10}DA5d,DG,SC:U),E,0,0
-S:G$villager_texts$0$0({18}DA9d,DG,SC:U),E,0,0
+S:G$villager_texts$0$0({24}DA12d,DG,SC:U),E,0,0
 S:Ffixedbank$__str_0$0$0({30}DA30d,SC:S),D,0,0
 S:Ffixedbank$__str_1$0$0({30}DA30d,SC:S),D,0,0
 S:Ffixedbank$__str_2$0$0({30}DA30d,SC:S),D,0,0
@@ -75,4 +75,7 @@ S:Ffixedbank$__str_58$0$0({28}DA28d,SC:S),D,0,0
 S:Ffixedbank$__str_59$0$0({28}DA28d,SC:S),D,0,0
 S:Ffixedbank$__str_60$0$0({28}DA28d,SC:S),D,0,0
 S:Ffixedbank$__str_61$0$0({28}DA28d,SC:S),D,0,0
-S:Ffixedbank$__str_62$0$0({27}DA27d,SC:S),D,0,0
+S:Ffixedbank$__str_62$0$0({28}DA28d,SC:S),D,0,0
+S:Ffixedbank$__str_63$0$0({28}DA28d,SC:S),D,0,0
+S:Ffixedbank$__str_64$0$0({28}DA28d,SC:S),D,0,0
+S:Ffixedbank$__str_65$0$0({28}DA28d,SC:S),D,0,0

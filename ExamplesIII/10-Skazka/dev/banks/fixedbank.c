@@ -124,5 +124,8 @@ const unsigned char *villager_texts[] =
 	" AT A TIME?                ",
 	"DID YOU KNOW THAT A TEGILAY",
 	"IS MADE OF LEATHER, AND THE",
-	"KOLCHUGA IS MADE OF STEEL?"
+	"KOLCHUGA IS MADE OF STEEL? ",
+	"  TRULY THE AXE IS THE     ",
+	"  GREATEST WEAPON  OF OUR  ",
+	"  PEOPLE!                  ",
 };

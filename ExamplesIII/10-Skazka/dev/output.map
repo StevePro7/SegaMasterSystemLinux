@@ -47,12 +47,12 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000015  l__CABS3                        
      000000BE  G$VDPDataPort$0$0                  asm_manager
      000000BF  G$VDPControlPort$0$0               asm_manager
-     000000C6  l__INITIALIZED                  
-     000000C6  l__INITIALIZER                  
+     000000CC  l__INITIALIZED                  
+     000000CC  l__INITIALIZER                  
      0000012A  l__HEADER5                      
      00000178  l__DATA                         
      00000200  s__CODE                         
-     00000517  l__BANK15                       
+     0000056C  l__BANK15                       
      000020EB  l__BANK8                        
      00002225  l__BANK11                       
      00002370  l__BANK9                        
@@ -74,8 +74,8 @@ Area                                    Addr        Size        Decimal Bytes (A
      00004741  l__CODE                         
      00004941  s__HOME                         
      00004941  s__INITIALIZER                  
-     00004A07  s__GSINIT                       
-     00004A16  s__GSFINAL                      
+     00004A0D  s__GSINIT                       
+     00004A1C  s__GSFINAL                      
      00008000  G$SMS_SRAM$0$0                     _sms_manager
      00008000  _SMS_SRAM                          SMSlib_loadTileMap
      00008000  s__BANK10                       
@@ -94,9 +94,9 @@ Area                                    Addr        Size        Decimal Bytes (A
      00008000  s__BANK9                        
      0000C000  s__DATA                         
      0000C178  s__INITIALIZED                  
-     0000C23E  s__BSEG                         
-     0000C23E  s__BSS                          
-     0000C23E  s__HEAP                         
+     0000C244  s__BSEG                         
+     0000C244  s__BSS                          
+     0000C244  s__HEAP                         
      0000FFFC  G$SRAM_bank_to_be_mapped_on_slot   _sms_manager
      0000FFFC  _SRAM_bank_to_be_mapped_on_slot2   SMSlib_loadTileMap
      0000FFFF  G$ROM_bank_to_be_mapped_on_slot2   _sms_manager
@@ -8702,7 +8702,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_INITIALIZER                        00004941    000000C6 =         198. bytes (REL,CON)
+_INITIALIZER                        00004941    000000CC =         204. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -8720,30 +8720,30 @@ _INITIALIZER                        00004941    000000C6 =         198. bytes (R
      000049AD  Ffixedbank$__xinit_allover_texts   fixedbank
      000049B7  Ffixedbank$__xinit_handler_texts   fixedbank
      000049C1  Ffixedbank$__xinit_villager_text   fixedbank
-     000049D3  Fenemy_manager$__xinit_hplo_num$   enemy_manager
-     000049D8  Fenemy_manager$__xinit_ax_num$0$   enemy_manager
-     000049DD  Fenemy_manager$__xinit_gldo_num$   enemy_manager
-     000049E2  Fenemy_manager$__xinit_xpo_num$0   enemy_manager
-     000049E7  Finput_manager$__xinit_curr_joyp   input_manager
-     000049E9  Finput_manager$__xinit_prev_joyp   input_manager
-     000049EB  Fsound_object$__xinit_sound_samp   sound_object
+     000049D9  Fenemy_manager$__xinit_hplo_num$   enemy_manager
+     000049DE  Fenemy_manager$__xinit_ax_num$0$   enemy_manager
+     000049E3  Fenemy_manager$__xinit_gldo_num$   enemy_manager
+     000049E8  Fenemy_manager$__xinit_xpo_num$0   enemy_manager
+     000049ED  Finput_manager$__xinit_curr_joyp   input_manager
+     000049EF  Finput_manager$__xinit_prev_joyp   input_manager
+     000049F1  Fsound_object$__xinit_sound_samp   sound_object
 ASxxxx Linker V03.00 + NoICE + sdld,  page 153.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSINIT                             00004A07    0000000F =          15. bytes (REL,CON)
+_GSINIT                             00004A0D    0000000F =          15. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00004A07  gsinit                             crt0
+     00004A0D  gsinit                             crt0
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 154.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSFINAL                            00004A16    00000001 =           1. bytes (REL,CON)
+_GSFINAL                            00004A1C    00000001 =           1. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -8829,7 +8829,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_INITIALIZED                        0000C178    000000C6 =         198. bytes (REL,CON)
+_INITIALIZED                        0000C178    000000CC =         204. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -8861,25 +8861,25 @@ _INITIALIZED                        0000C178    000000C6 =         198. bytes (R
      0000C1EE  _handler_texts                     fixedbank
      0000C1F8  G$villager_texts$0$0               fixedbank
      0000C1F8  _villager_texts                    fixedbank
-     0000C20A  G$hplo_num$0$0                     enemy_manager
-     0000C20A  _hplo_num                          enemy_manager
-     0000C20F  G$ax_num$0$0                       enemy_manager
-     0000C20F  _ax_num                            enemy_manager
-     0000C214  G$gldo_num$0$0                     enemy_manager
-     0000C214  _gldo_num                          enemy_manager
-     0000C219  G$xpo_num$0$0                      enemy_manager
-     0000C219  _xpo_num                           enemy_manager
-     0000C21E  Finput_manager$curr_joypad1$0$0    input_manager
-     0000C220  Finput_manager$prev_joypad1$0$0    input_manager
-     0000C222  G$sound_sample_data$0$0            sound_object
-     0000C222  _sound_sample_data                 sound_object
-     0000C232  _VDPReg                            SMSlib
-     0000C234  _spritesHeight                     SMSlib
-     0000C235  _spritesWidth                      SMSlib
-     0000C23A  _clipWin_x0                        SMSlib_spriteClip
-     0000C23B  _clipWin_y0                        SMSlib_spriteClip
-     0000C23C  _clipWin_x1                        SMSlib_spriteClip
-     0000C23D  _clipWin_y1                        SMSlib_spriteClip
+     0000C210  G$hplo_num$0$0                     enemy_manager
+     0000C210  _hplo_num                          enemy_manager
+     0000C215  G$ax_num$0$0                       enemy_manager
+     0000C215  _ax_num                            enemy_manager
+     0000C21A  G$gldo_num$0$0                     enemy_manager
+     0000C21A  _gldo_num                          enemy_manager
+     0000C21F  G$xpo_num$0$0                      enemy_manager
+     0000C21F  _xpo_num                           enemy_manager
+     0000C224  Finput_manager$curr_joypad1$0$0    input_manager
+     0000C226  Finput_manager$prev_joypad1$0$0    input_manager
+     0000C228  G$sound_sample_data$0$0            sound_object
+     0000C228  _sound_sample_data                 sound_object
+     0000C238  _VDPReg                            SMSlib
+     0000C23A  _spritesHeight                     SMSlib
+     0000C23B  _spritesWidth                      SMSlib
+     0000C240  _clipWin_x0                        SMSlib_spriteClip
+     0000C241  _clipWin_y0                        SMSlib_spriteClip
+     0000C242  _clipWin_x1                        SMSlib_spriteClip
+     0000C243  _clipWin_y1                        SMSlib_spriteClip
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 158.
 Hexadecimal  [32-Bits]
@@ -9045,7 +9045,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK15                             00008000    00000517 =        1303. bytes (REL,CON)
+_BANK15                             00008000    0000056C =        1388. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -9104,7 +9104,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK15                             00008000    00000517 =        1303. bytes (REL,CON)
+_BANK15                             00008000    0000056C =        1388. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -9121,6 +9121,9 @@ _BANK15                             00008000    00000517 =        1303. bytes (R
      000084C4  Ffixedbank$__str_60$0$0            fixedbank
      000084E0  Ffixedbank$__str_61$0$0            fixedbank
      000084FC  Ffixedbank$__str_62$0$0            fixedbank
+     00008518  Ffixedbank$__str_63$0$0            fixedbank
+     00008534  Ffixedbank$__str_64$0$0            fixedbank
+     00008550  Ffixedbank$__str_65$0$0            fixedbank
 ASxxxx Linker V03.00 + NoICE + sdld,  page 173.
 Hexadecimal  [32-Bits]
 

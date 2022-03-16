@@ -28,7 +28,7 @@ void screen_talk_screen_load()
 	engine_text_manager_clear( row + 2, row + 9 );
 
 	val = rand() % MAX_RANDOM;
-	val = 1;
+	val = 3;
 	beg = val * MAX_CHAT;
 	end = beg + MAX_CHAT;
 
