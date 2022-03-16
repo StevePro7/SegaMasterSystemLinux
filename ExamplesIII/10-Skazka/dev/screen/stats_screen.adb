@@ -21,10 +21,9 @@ S:G$armor_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$life_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$forest_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$fight_texts$0$0({0}DA0d,DG,SC:U),E,0,0
-S:G$enemy_names$0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$enemy_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$shop_texts$0$0({0}DA0d,DG,SC:U),E,0,0
-S:G$main_menus$0$0({0}DA0d,DG,SC:U),E,0,0
-S:G$forests_texts$0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$menus_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$allover_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$handler_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$engine_content_manager_load_splash$0$0({2}DF,SV:S),C,0,0

@@ -1,10 +1,10 @@
 #include "forest_screen.h"
 #include "../engine/content_manager.h"
+#include "../engine/enemy_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/locale_manager.h"
-#include "../engine/player_manager.h"
 #include "../engine/select_manager.h"
 #include "../engine/text_manager.h"
 #include "../devkit/_sms_manager.h"
@@ -17,7 +17,7 @@ void screen_forest_screen_load()
 	unsigned char idx;
 
 	row = 1;
-	engine_player_manager_calc();
+	engine_enemy_manager_load();
 
 	devkit_SMS_displayOff();
 	engine_content_manager_load_title( row );
@@ -40,6 +40,7 @@ void screen_forest_screen_load()
 	row = 11;
 	engine_select_manager_load( select_type_forest, LEFT_X + 3, row, 2 );
 
+	engine_enemy_manager_draw();
 	devkit_SMS_displayOn();
 }
 

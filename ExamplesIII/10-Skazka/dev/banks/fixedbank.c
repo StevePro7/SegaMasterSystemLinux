@@ -58,11 +58,11 @@ const unsigned char *fight_texts[] =
 
 const unsigned char *enemy_texts[] =
 {
-	"RAZBOYNIK",
+	"  RAZBOYNIK",
 	"HUNGRY WOLF",
-	"KIKIMORA",
-	"LESHY",
-	"BABA YAGA",
+	"   KIKIMORA",
+	"      LESHY",
+	"  BABA YAGA",
 };
 
 const unsigned char *shop_texts[] =

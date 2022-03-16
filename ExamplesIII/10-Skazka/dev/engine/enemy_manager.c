@@ -26,7 +26,8 @@ void engine_enemy_manager_load()
 	struct_enemy_object *eo = &global_enemy_object;
 	unsigned char index = rand() % MAX_ENEMIES;
 
-	index = 0;
+	index = 1;
+
 	eo->index = index;
 	eo->hplo = hplo_num[ index ];
 	eo->ax = ax_num[ index ];
@@ -37,5 +38,5 @@ void engine_enemy_manager_load()
 void engine_enemy_manager_draw()
 {
 	struct_enemy_object *eo = &global_enemy_object;
-	engine_font_manager_text( ( unsigned char * ) enemy_texts[ eo->index ], LEFT_X + 4, STATS_ROW + 7 );
+	engine_font_manager_text( ( unsigned char * ) enemy_texts[ eo->index ], LEFT_X + 16, ENEMY_ROW );
 }

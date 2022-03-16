@@ -6,9 +6,9 @@ S:G$armor_texts$0$0({8}DA4d,DG,SC:U),E,0,0
 S:G$life_texts$0$0({4}DA2d,DG,SC:U),E,0,0
 S:G$forest_texts$0$0({4}DA2d,DG,SC:U),E,0,0
 S:G$fight_texts$0$0({6}DA3d,DG,SC:U),E,0,0
-S:G$enemy_names$0$0({10}DA5d,DG,SC:U),E,0,0
+S:G$enemy_texts$0$0({10}DA5d,DG,SC:U),E,0,0
 S:G$shop_texts$0$0({12}DA6d,DG,SC:U),E,0,0
-S:G$main_menus$0$0({8}DA4d,DG,SC:U),E,0,0
+S:G$menus_texts$0$0({8}DA4d,DG,SC:U),E,0,0
 S:G$forests_texts$0$0({14}DA7d,DG,SC:U),E,0,0
 S:G$allover_texts$0$0({10}DA5d,DG,SC:U),E,0,0
 S:G$handler_texts$0$0({10}DA5d,DG,SC:U),E,0,0
@@ -38,11 +38,11 @@ S:Ffixedbank$__str_22$0$0({24}DA24d,SC:S),D,0,0
 S:Ffixedbank$__str_23$0$0({20}DA20d,SC:S),D,0,0
 S:Ffixedbank$__str_24$0$0({9}DA9d,SC:S),D,0,0
 S:Ffixedbank$__str_25$0$0({9}DA9d,SC:S),D,0,0
-S:Ffixedbank$__str_26$0$0({10}DA10d,SC:S),D,0,0
+S:Ffixedbank$__str_26$0$0({12}DA12d,SC:S),D,0,0
 S:Ffixedbank$__str_27$0$0({12}DA12d,SC:S),D,0,0
-S:Ffixedbank$__str_28$0$0({9}DA9d,SC:S),D,0,0
-S:Ffixedbank$__str_29$0$0({6}DA6d,SC:S),D,0,0
-S:Ffixedbank$__str_30$0$0({10}DA10d,SC:S),D,0,0
+S:Ffixedbank$__str_28$0$0({12}DA12d,SC:S),D,0,0
+S:Ffixedbank$__str_29$0$0({12}DA12d,SC:S),D,0,0
+S:Ffixedbank$__str_30$0$0({12}DA12d,SC:S),D,0,0
 S:Ffixedbank$__str_31$0$0({9}DA9d,SC:S),D,0,0
 S:Ffixedbank$__str_32$0$0({9}DA9d,SC:S),D,0,0
 S:Ffixedbank$__str_33$0$0({9}DA9d,SC:S),D,0,0
