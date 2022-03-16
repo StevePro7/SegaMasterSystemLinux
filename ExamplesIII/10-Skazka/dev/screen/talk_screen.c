@@ -44,7 +44,7 @@ void screen_talk_screen_load()
 	for( idx = beg; idx < end; idx++ )
 	{
 	//	engine_font_manager_text( "SPLAT", LEFT_X + 4, row++ );
-		engine_font_manager_text( ( unsigned char * ) villager_texts[ idx ], LEFT_X + 4, row );
+		engine_font_manager_text( ( unsigned char * ) villager_texts[ idx ], LEFT_X + 3, row );
 		row++;
 	}
 
