@@ -2,8 +2,10 @@
 #include "../engine/content_manager.h"
 #include "../engine/enemy_manager.h"
 #include "../engine/enum_manager.h"
+#include "../engine/fight_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/global_manager.h"
+#include "../engine/input_manager.h"
 #include "../engine/locale_manager.h"
 #include "../engine/player_manager.h"
 #include "../engine/select_manager.h"
@@ -11,10 +13,11 @@
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
 
+static unsigned char event_stage;
+
 void screen_forest_screen_load()
 {
 	struct_player_object *po = &global_player_object;
-	// TODO make more efficient
 	unsigned char row;
 	unsigned char idx;
 
@@ -33,7 +36,6 @@ void screen_forest_screen_load()
 		engine_font_manager_text( ( unsigned char * ) forest_texts[ idx ], LEFT_X + 5, row++ );
 	}
 
-	// TODO push one row down?
 	row = 11;
 	for( idx = 0; idx < 3; idx++ )
 	{
@@ -53,15 +55,32 @@ void screen_forest_screen_load()
 	engine_enemy_manager_hplo();
 
 	devkit_SMS_displayOn();
+	event_stage = fight_type_start;
 }
 
 void screen_forest_screen_update( unsigned char *screen_type )
 {
-	unsigned char selection = engine_select_manager_update( select_type_stats );
-	if( NO_SELECTION == selection )
+	unsigned char input;
+	unsigned char selection;
+
+	if( fight_type_run == event_stage )
 	{
-		*screen_type = screen_type_forest;
-		return;
+
+	}
+	else if( fight_type_start == event_stage )
+	{
+		input = engine_input_manager_hold( input_type_fire2 );
+		if( input )
+		{
+
+		}
+
+		selection = engine_select_manager_update( select_type_stats );
+		if( NO_SELECTION == selection )
+		{
+			*screen_type = screen_type_forest;
+			return;
+		}
 	}
 
 	*screen_type = screen_type_forest;

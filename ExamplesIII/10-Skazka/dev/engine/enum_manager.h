@@ -90,4 +90,11 @@ typedef enum tag_enum_enemy_type
 
 } enum_enum_enemy_type;
 
+typedef enum tag_enum_fight_type
+{
+	fight_type_start = 0,
+	fight_type_run = 1,
+
+} enum_stage_type;
+
 #endif//_ENUM_MANAGER_H_
