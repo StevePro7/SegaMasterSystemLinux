@@ -73,8 +73,6 @@ void engine_player_manager_stats( unsigned char row )
 
 	if( po->xp > 60 )
 	{
-
+		engine_font_manager_text( LOCALE_HERO, LEFT_X + 15, row + 20 );
 	}
-
-	engine_font_manager_text( LOCALE_HERO, LEFT_X + 15, row + 20 );
 }
