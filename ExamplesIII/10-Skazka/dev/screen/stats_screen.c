@@ -25,8 +25,8 @@ void screen_stats_screen_load()
 
 	devkit_SMS_displayOff();
 	engine_content_manager_load_title( row );
-	engine_text_manager_clear( row + 2, row + 9 );
 	engine_text_manager_border();
+	engine_text_manager_clear( row + 2, row + 9 );
 
 	print_stats();
 	print_village();

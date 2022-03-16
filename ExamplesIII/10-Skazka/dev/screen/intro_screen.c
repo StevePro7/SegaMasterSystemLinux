@@ -16,8 +16,8 @@ void screen_intro_screen_load()
 	row = 1;
 	devkit_SMS_displayOff();
 	engine_content_manager_load_title( row );
-	engine_text_manager_clear( row + 0, row + 9 );
 	engine_text_manager_border();
+	engine_text_manager_clear( row + 0, row + 9 );
 
 	// SKAZKA.
 	engine_text_manager_title( row + 2 );
