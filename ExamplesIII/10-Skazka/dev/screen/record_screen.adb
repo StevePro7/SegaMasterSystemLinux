@@ -4,7 +4,7 @@ S:Lrecord_screen.screen_record_screen_load$row$1$75({1}SC:U),R,0,0,[]
 F:G$screen_record_screen_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lrecord_screen.screen_record_screen_update$screen_type$1$76({2}DG,SC:U),B,1,4
 S:G$intro_texts$0$0({0}DA0d,DG,SC:U),E,0,0
-S:G$options_texts$0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$stats_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$main_menus$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$forests_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$allover_texts$0$0({0}DA0d,DG,SC:U),E,0,0
