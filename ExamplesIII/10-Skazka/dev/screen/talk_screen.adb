@@ -1,9 +1,10 @@
 M:talk_screen
 F:G$screen_talk_screen_load$0$0({2}DF,SV:S),Z,0,1,0,0,0
-S:Ltalk_screen.screen_talk_screen_load$row$1$97({1}SC:U),R,0,0,[c]
-S:Ltalk_screen.screen_talk_screen_load$idx$1$97({1}SC:U),B,1,-1
+S:Ltalk_screen.screen_talk_screen_load$row$1$97({1}SC:U),B,1,-1
+S:Ltalk_screen.screen_talk_screen_load$idx$1$97({1}SC:U),R,0,0,[c]
 S:Ltalk_screen.screen_talk_screen_load$val$1$97({1}SC:U),R,0,0,[]
 S:Ltalk_screen.screen_talk_screen_load$beg$1$97({1}SC:U),R,0,0,[]
+S:Ltalk_screen.screen_talk_screen_load$end$1$97({1}SC:U),R,0,0,[]
 F:G$screen_talk_screen_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Ltalk_screen.screen_talk_screen_update$screen_type$1$100({2}DG,SC:U),B,1,4
 T:Ftalk_screen$tag_struct_player_object[({0}S:S$xp$0$0({1}SC:U),Z,0,0)({1}S:S$hp$0$0({1}SC:U),Z,0,0)({2}S:S$gold$0$0({2}SI:U),Z,0,0)({4}S:S$weapon$0$0({1}SC:U),Z,0,0)({5}S:S$armor$0$0({1}SC:U),Z,0,0)({6}S:S$life$0$0({1}SC:U),Z,0,0)({7}S:S$level$0$0({1}SC:U),Z,0,0)({8}S:S$max_hp$0$0({1}SC:U),Z,0,0)({9}S:S$max_xp$0$0({1}SC:U),Z,0,0)]
