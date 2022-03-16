@@ -1,38 +1,49 @@
 ;!FILE fight_screen.asm
 XL2
-H 9 areas 1D global symbols
+H 9 areas 28 global symbols
 M fight_screen
 O -mz80
-S _engine_font_manager_text Ref0000
+S _devkit_SMS_displayOn Ref0000
+S _engine_text_manager_border Ref0000
+S _engine_text_manager_clear Ref0000
 S .__.ABS. Def0000
-A _CODE size 24 flags 0 addr 0
-S G$screen_fight_screen_update$0$0 Def001D
-S _screen_fight_screen_update Def001D
-S XG$screen_fight_screen_update$0$0 Def0023
-S C$fight_screen.c$10$1$6 Def001D
-S A$fight_screen$60 Def0007
-S A$fight_screen$61 Def0008
-S C$fight_screen.c$12$1$8 Def001D
-S A$fight_screen$62 Def000B
-S C$fight_screen.c$13$1$8 Def0023
+S _devkit_SMS_displayOff Ref0000
+S _engine_content_manager_load_title Ref0000
+A _CODE size 20 flags 0 addr 0
+S G$screen_fight_screen_update$0$0 Def0019
+S A$fight_screen$110 Def001F
+S A$fight_screen$101 Def0019
+S A$fight_screen$102 Def001A
+S A$fight_screen$103 Def001B
+S A$fight_screen$104 Def001C
+S A$fight_screen$105 Def001D
+S _screen_fight_screen_update Def0019
+S C$fight_screen.c$20$1$76 Def0000
+S C$fight_screen.c$21$1$76 Def0003
+S C$fight_screen.c$22$1$76 Def000B
+S C$fight_screen.c$11$0$0 Def0000
+S C$fight_screen.c$30$1$78 Def0019
+S C$fight_screen.c$23$1$76 Def000E
+S C$fight_screen.c$31$1$78 Def001F
+S C$fight_screen.c$25$1$76 Def0016
+S C$fight_screen.c$26$1$76 Def0016
+S XG$screen_fight_screen_update$0$0 Def001F
+S C$fight_screen.c$28$1$76 Def0019
+S A$fight_screen$61 Def0000
+S A$fight_screen$80 Def0015
 S G$screen_fight_screen_load$0$0 Def0000
-S A$fight_screen$63 Def000C
-S A$fight_screen$57 Def0000
-S A$fight_screen$94 Def0023
-S A$fight_screen$85 Def001D
-S A$fight_screen$58 Def0003
-S A$fight_screen$86 Def001E
-S A$fight_screen$68 Def000D
-S A$fight_screen$59 Def0004
-S A$fight_screen$87 Def001F
-S Ffight_screen$__str_0$0$0 Def000E
-S A$fight_screen$88 Def0020
-S C$fight_screen.c$5$0$0 Def0000
-S A$fight_screen$89 Def0021
+S A$fight_screen$73 Def000B
+S A$fight_screen$65 Def0003
+S A$fight_screen$66 Def0005
+S A$fight_screen$67 Def0006
+S A$fight_screen$77 Def000E
+S A$fight_screen$68 Def0007
+S A$fight_screen$78 Def0011
+S A$fight_screen$69 Def000A
+S A$fight_screen$88 Def0016
+S A$fight_screen$79 Def0012
 S _screen_fight_screen_load Def0000
-S C$fight_screen.c$7$1$6 Def0000
-S C$fight_screen.c$8$1$6 Def000D
-S XG$screen_fight_screen_load$0$0 Def000D
+S XG$screen_fight_screen_load$0$0 Def0016
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -43,15 +54,11 @@ A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00
 R 00 00 00 00
-T 00 00 21 0A 02 E5 21 0E 00 E5 CD 00 00 F1 F1 C9
-R 00 00 00 00 00 07 00 00 02 0B 00 00
-T 0E 00
+T 00 00 CD 00 00 3E 01 F5 33 CD 00 00 33 CD 00 00
+R 00 00 00 00 02 03 04 00 02 0A 05 00 02 0E 01 00
+T 0E 00 21 03 0A E5 CD 00 00 F1 C3 00 00
+R 00 00 00 00 02 07 02 00 02 0B 00 00
+T 19 00
 R 00 00 00 00
-T 0E 00 46 49 47 48 54 20 53 43 52 45 45 4E 21 21
-R 00 00 00 00
-T 1C 00 00
-R 00 00 00 00
-T 1D 00
-R 00 00 00 00
-T 1D 00 C1 E1 E5 C5 36 09 C9
+T 19 00 C1 E1 E5 C5 36 09 C9
 R 00 00 00 00

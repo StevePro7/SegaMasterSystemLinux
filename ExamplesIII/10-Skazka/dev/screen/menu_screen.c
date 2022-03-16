@@ -47,7 +47,7 @@ void screen_menu_screen_update( unsigned char *screen_type )
 		*screen_type = screen_type_title;
 		break;
 	case menu_type_restart:
-		*screen_type = screen_type_title;
+		*screen_type = screen_type_intro;
 		break;
 	case menu_type_continue:
 		*screen_type = screen_type_stats;
