@@ -13,12 +13,14 @@ S:G$stats_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$weapon_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$armor_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$life_texts$0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$forest_texts$0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$fight_texts$0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$enemy_names$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$shop_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$main_menus$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$forests_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$allover_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$handler_texts$0$0({0}DA0d,DG,SC:U),E,0,0
-S:G$enemy_names$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$global_player_object$0$0({9}STtag_struct_player_object:S),E,0,0
 S:G$engine_font_manager_char$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0$0({2}DF,SV:S),C,0,0

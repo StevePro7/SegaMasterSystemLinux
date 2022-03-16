@@ -38,14 +38,14 @@ typedef enum tag_enum_select_type
 {
 	select_type_main = 0,
 	select_type_stats = 1,
-	select_type_play = 1,
-	select_type_battle = 2,
+	select_type_forest = 2,
+	select_type_battle = 3,
 
 } enum_select_type;
 
 typedef enum tag_enum_action_type
 {
-	action_type_fight = 0,
+	action_type_forest = 0,
 	action_type_shop = 1,
 	action_type_rest = 2,
 	action_type_talk = 3,
@@ -82,12 +82,11 @@ typedef enum tag_enum_life_type
 
 typedef enum tag_enum_enemy_type
 {
-	enemy_type_none = 0,
-	enemy_type_razboynik = 1,
-	enemy_type_hungry_wolf = 2,
-	enemy_type_kikimora = 3,
-	enemy_type_leshy = 4,
-	enemy_type_baby_yaga = 5,
+	enemy_type_razboynik = 0,
+	enemy_type_hungry_wolf = 1,
+	enemy_type_kikimora = 2,
+	enemy_type_leshy = 3,
+	enemy_type_baby_yaga = 4,
 
 } enum_enum_enemy_type;
 

@@ -6,6 +6,7 @@
 #define MAX_SCREEENS			17
 
 #define MAX_SELECTS				3
+#define MAX_ENEMIES				5
 
 #define LEFT_X					0
 #define STATS_ROW				2

@@ -46,24 +46,26 @@ void screen_stats_screen_load()
 
 void screen_stats_screen_update( unsigned char *screen_type )
 {
-	//unsigned char input;
-	unsigned char selection;
-
-	selection = engine_select_manager_update( select_type_stats );
+	unsigned char selection = engine_select_manager_update( select_type_stats );
 	if( NO_SELECTION == selection )
 	{
 		*screen_type = screen_type_stats;
 		return;
 	}
 
+	engine_font_manager_data(selection+1, 28, 22 );
+
 	switch( selection )
 	{
+	case action_type_forest:
+		break;
 	case action_type_rest:
 		engine_player_manager_rest();
 		break;
 	default:
 		break;
 	}
+
 	*screen_type = screen_type_stats;
 }
 

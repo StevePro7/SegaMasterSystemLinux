@@ -43,6 +43,28 @@ const unsigned char *life_texts[] =
 	" +1 LIFE",
 };
 
+const unsigned char *forest_texts[] =
+{
+	"YOU ARE IN THE FOREST!",
+	"YOU ENCOUNTERED ENEMY: "
+};
+
+const unsigned char *fight_texts[] =
+{
+	"WHAT WILL YOU DO?  ",
+	"",
+	"1) RUN  ",
+	"2) FIGHT",
+};
+
+const unsigned char *enemy_names[] =
+{
+	"RAZBOYNIK",
+	"HUNGRY WOLF",
+	"KIKIMORA",
+	"LESHY",
+	"BABA YAGA",
+};
 
 const unsigned char *shop_texts[] =
 {
@@ -91,12 +113,3 @@ const unsigned char *handler_texts[] =
 	"SO YOU HAVE COME TO CALLENGE ME,      FOOLISH MORTAL? VERY WELL.",
 };
 
-const unsigned char *enemy_names[] =
-{
-	"",
-	"RAZBOYNIK",
-	"HUNGRY WOLF",
-	"KIKIMORA",
-	"LESHY",
-	"BABA YAGA",
-};
