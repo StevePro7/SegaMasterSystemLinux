@@ -34,17 +34,21 @@ void screen_forest_screen_load()
 	}
 
 	// TODO push one row down?
-	row = 10;
+	row = 11;
 	for( idx = 0; idx < 3; idx++ )
 	{
 		engine_font_manager_text( ( unsigned char * ) fight_texts[ idx ], LEFT_X + 5, row++ );
 	}
 
-	row = 11;
+	row = 12;
 	engine_select_manager_load( select_type_forest, LEFT_X + 3, row, 2 );
 
 	engine_enemy_manager_draw();
 	engine_player_manager_draw();
+
+	row = 21;
+	engine_font_manager_text( LOCALE_FIGHT_MSG1, LEFT_X + 3, row );
+	engine_font_manager_text( LOCALE_FIGHT_MSG2, LEFT_X + 17, row );
 	devkit_SMS_displayOn();
 }
 
