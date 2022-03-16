@@ -43,4 +43,30 @@ typedef enum tag_enum_select_type
 
 } enum_select_type;
 
+typedef enum tag_enum_weapon_type
+{
+	weapon_type_none = 0,
+	weapon_type_sword = 1,
+	weapon_type_axe = 2,
+	weapon_type_kolchuga = 3,
+	weapon_type_tegilay = 4,
+	weapon_type_life = 5,
+
+} enum_weapon_type;
+
+typedef enum tag_enum_armor_type
+{
+	armor_type_none = 0,
+	armor_type_tegilay = 1,
+	armor_type_kolchuga = 2,
+
+} enum_armor_type;
+
+typedef enum tag_enum_life_type
+{
+	life_type_none = 0,
+	life_type_oneup = 1,
+
+} enum_enum_life_type;
+
 #endif//_ENUM_MANAGER_H_

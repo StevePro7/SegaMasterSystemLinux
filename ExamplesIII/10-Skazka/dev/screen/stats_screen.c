@@ -28,7 +28,7 @@ void screen_stats_screen_load()
 	print_stats();
 	print_village();
 	print_player();
-	engine_font_manager_text( LOCALE_YOUR_LVL, LEFT_X + 3, 22 );
+	
 
 	row = 12;
 	devkit_SMS_mapROMBank( FIXED_BANK );
@@ -57,7 +57,17 @@ void screen_stats_screen_update( unsigned char *screen_type )
 
 static void print_stats()
 {
-	// TODO 
+	unsigned char row = 2;
+	engine_font_manager_text( LOCALE_STATISTICS, LEFT_X + 2, row + 2 );
+	engine_font_manager_text( LOCALE_HP, LEFT_X + 2, row + 3 );
+	engine_font_manager_text( LOCALE_XP, LEFT_X + 2, row + 4 );
+	engine_font_manager_text( LOCALE_GOLD, LEFT_X + 2, row + 5 );
+	engine_font_manager_text( LOCALE_YOU_HAVE, LEFT_X + 4, row + 6 );
+
+	engine_font_manager_text( "KOLCHUGA", LEFT_X + 4, row + 8 );
+	engine_font_manager_text( "   SWORD", LEFT_X + 4, row + 8 );
+
+	engine_font_manager_text( LOCALE_YOUR_LVL, LEFT_X + 3, 22 );
 }
 
 static void print_village()

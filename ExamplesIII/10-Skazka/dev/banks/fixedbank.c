@@ -1,6 +1,5 @@
 const unsigned char *intro_texts[] =
 {
-//	"12345678901234567890123456789",	// TODO remove this!!
 	"    YOU ARE A YOUNG HERO WHO ",
 	" WISHES TO RID THE LAND FROM ",
 	" A TERRIFYING CREATURE KNOWN ",
@@ -25,16 +24,25 @@ const unsigned char *stats_texts[] =
 	"6) RETURN MAIN MENU",
 };
 
-//const unsigned char *stats_texts[] =
-//{
-//	"WHAT SHALL WE DO?   ",
-//	"1) FOREST PATROL    ",
-//	"2) VISIT THE SHOP   ",
-//	"3) REST             ",
-//	"4) TALK TO VILLAGERS",
-//	"5) FIGHT THE KOSCHEY",
-//	"PRESS FIRE1 FOR MENU",
-//};
+const unsigned char *weapon_texts[] =
+{
+	"",
+	"   SWORD",
+	"     AXE",
+	"KOLCHUGA",
+	" TEGILAY",
+	"    LIFE",
+};
+
+const unsigned char *shop_texts[] =
+{
+	"",
+	"SWORD   ",
+	"AXE     ",
+	"TEGILAY ",
+	"KOLCHUGA",
+	"LIFE    ",
+};
 
 const unsigned char *main_menus[] =
 {
