@@ -10,9 +10,15 @@ void engine_player_manager_init()
 	struct_player_object *po = &global_player_object;
 	po->hp = 10;
 	po->xp = 0;
-	po->weapon = weapon_type_none;
+	po->gold = 10;
+	po->weapon = weapon_type_none;		// ATK
 	po->armor = armor_type_none;
 	po->life = life_type_none;
+}
+
+void engine_player_manager_calc()
+{
+
 }
 
 void engine_player_manager_stats()

@@ -69,4 +69,15 @@ typedef enum tag_enum_life_type
 
 } enum_enum_life_type;
 
+typedef enum tag_enum_enemy_type
+{
+	enemy_type_none = 0,
+	enemy_type_razboynik = 1,
+	enemy_type_hungry_wolf = 2,
+	enemy_type_kikimora = 3,
+	enemy_type_leshy = 4,
+	enemy_type_baby_yaga = 5,
+
+} enum_enum_enemy_type;
+
 #endif//_ENUM_MANAGER_H_

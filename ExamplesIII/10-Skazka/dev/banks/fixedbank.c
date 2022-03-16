@@ -80,3 +80,13 @@ const unsigned char *handler_texts[] =
 	"2)NO",
 	"SO YOU HAVE COME TO CALLENGE ME,      FOOLISH MORTAL? VERY WELL.",
 };
+
+const unsigned char *enemy_names[] =
+{
+	"",
+	"RAZBOYNIK",
+	"HUNGRY WOLF",
+	"KIKIMORA",
+	"LESHY",
+	"BABA YAGA",
+};

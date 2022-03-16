@@ -13,4 +13,6 @@ extern const unsigned char *forests_texts[];
 extern const unsigned char *allover_texts[];
 extern const unsigned char *handler_texts[];
 
+extern const unsigned char *enemy_names[];
+
 #endif//_FIXEDBANK_H_
