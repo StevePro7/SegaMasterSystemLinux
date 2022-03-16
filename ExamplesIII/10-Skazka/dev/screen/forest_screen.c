@@ -37,7 +37,7 @@ void screen_forest_screen_load()
 		engine_font_manager_text( ( unsigned char * ) fight_texts[ idx ], LEFT_X + 5, row++ );
 	}
 
-	row = 12;
+	row = 11;
 	engine_select_manager_load( select_type_forest, LEFT_X + 3, row, 2 );
 
 	devkit_SMS_displayOn();

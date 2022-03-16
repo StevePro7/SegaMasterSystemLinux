@@ -10,6 +10,7 @@
 
 #define LEFT_X					0
 #define STATS_ROW				2
+#define ENEMY_ROW				5
 
 #define NO_SELECTION			255
 

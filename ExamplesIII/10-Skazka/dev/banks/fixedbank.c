@@ -56,7 +56,7 @@ const unsigned char *fight_texts[] =
 	"2) FIGHT",
 };
 
-const unsigned char *enemy_names[] =
+const unsigned char *enemy_texts[] =
 {
 	"RAZBOYNIK",
 	"HUNGRY WOLF",
@@ -75,7 +75,7 @@ const unsigned char *shop_texts[] =
 	"LIFE    ",
 };
 
-const unsigned char *main_menus[] =
+const unsigned char *menus_texts[] =
 {
 	"MENU",
 	"1) EXIT GAME",

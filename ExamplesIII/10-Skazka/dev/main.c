@@ -35,6 +35,7 @@ void main( void )
 	//open_screen_type = screen_type_menu;
 	//open_screen_type = screen_type_test;
 
+	engine_enemy_manager_init();
 	engine_player_manager_init();
 	engine_player_manager_calc();
 

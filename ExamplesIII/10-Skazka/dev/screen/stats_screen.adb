@@ -34,8 +34,8 @@ S:G$engine_font_manager_char$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_zero$0$0({2}DF,SV:S),C,0,0
-S:G$engine_player_manager_calc$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_init$0$0({2}DF,SV:S),C,0,0
+S:G$engine_player_manager_calc$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_stats$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_rest$0$0({2}DF,SV:S),C,0,0
 S:G$engine_select_manager_init$0$0({2}DF,SV:S),C,0,0
