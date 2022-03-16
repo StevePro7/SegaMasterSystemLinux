@@ -5,7 +5,7 @@
 
 #define MAX_SCREEENS			17
 
-#define MAX_SELECTS				4
+#define MAX_SELECTS				5
 #define MAX_ENEMIES				5
 #define MAX_RANDOM				10
 #define MAX_GOLD				999

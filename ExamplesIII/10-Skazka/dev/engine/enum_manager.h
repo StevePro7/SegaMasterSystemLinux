@@ -40,6 +40,7 @@ typedef enum tag_enum_select_type
 	select_type_stats = 1,
 	select_type_forest = 2,
 	select_type_menu = 3,
+	select_type_boss = 4,
 
 } enum_select_type;
 

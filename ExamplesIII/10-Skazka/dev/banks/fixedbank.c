@@ -147,3 +147,16 @@ const unsigned char *villager_texts[] =
 	"",
 	"",
 };
+
+extern const unsigned char *prep_texts[] =
+{
+	" THIS IS THE MOST IMPORTANT",
+	" BATTLE OF YOUR LIFE.      ",
+	"",
+	"",
+	" CAN YOU HANDLE THE BATTLE?",
+	"",
+	"",
+	"     1)  YES",
+	"     2)  NO",
+};

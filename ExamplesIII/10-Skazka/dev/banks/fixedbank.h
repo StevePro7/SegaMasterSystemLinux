@@ -20,4 +20,6 @@ extern const unsigned char *menus_texts[];
 extern const unsigned char *allover_texts[];
 extern const unsigned char *handler_texts[];
 
+extern const unsigned char *prep_texts[];
+
 #endif//_FIXEDBANK_H_

@@ -1,12 +1,11 @@
 M:fight_screen
 F:G$screen_fight_screen_load$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lfight_screen.screen_fight_screen_load$row$1$76({1}SC:U),R,0,0,[]
-S:Lfight_screen.screen_fight_screen_load$idx$1$76({1}SC:U),R,0,0,[]
-S:Lfight_screen.screen_fight_screen_load$val$1$76({1}SC:U),B,1,-3
-S:Lfight_screen.screen_fight_screen_load$beg$1$76({1}SC:U),R,0,0,[]
-S:Lfight_screen.screen_fight_screen_load$txt$1$76({1}SC:U),R,0,0,[]
+S:Lfight_screen.screen_fight_screen_load$row$1$78({1}SC:U),R,0,0,[c]
+S:Lfight_screen.screen_fight_screen_load$idx$1$78({1}SC:U),R,0,0,[b]
 F:G$screen_fight_screen_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lfight_screen.screen_fight_screen_update$screen_type$1$77({2}DG,SC:U),B,1,4
+S:Lfight_screen.screen_fight_screen_update$screen_type$1$81({2}DG,SC:U),B,1,4
+T:Ffight_screen$tag_struct_aelect_object[({0}S:S$select_index$0$0({5}DA5d,SC:U),Z,0,0)({5}S:S$select_X$0$0({1}SC:U),Z,0,0)({6}S:S$select_Y$0$0({1}SC:U),Z,0,0)({7}S:S$select_min$0$0({1}SC:U),Z,0,0)({8}S:S$select_max$0$0({1}SC:U),Z,0,0)]
+S:G$global_select_object$0$0({9}STtag_struct_aelect_object:S),E,0,0
 S:G$intro_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$stats_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$weapon_texts$0$0({0}DA0d,DG,SC:U),E,0,0
@@ -20,6 +19,7 @@ S:G$villager_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$menus_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$allover_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$handler_texts$0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$prep_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$engine_content_manager_load_splash$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_tiles$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_title$0$0({2}DF,SV:S),C,0,0
@@ -30,6 +30,9 @@ S:G$engine_font_manager_zero$0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_update$0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_hold$0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move$0$0({2}DF,SC:U),C,0,0
+S:G$engine_select_manager_init$0$0({2}DF,SV:S),C,0,0
+S:G$engine_select_manager_load$0$0({2}DF,SV:S),C,0,0
+S:G$engine_select_manager_update$0$0({2}DF,SC:U),C,0,0
 S:G$engine_text_manager_clear$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_border$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_title$0$0({2}DF,SV:S),C,0,0

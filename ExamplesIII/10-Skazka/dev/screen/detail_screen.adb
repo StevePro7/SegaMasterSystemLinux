@@ -23,6 +23,7 @@ S:G$villager_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$menus_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$allover_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$handler_texts$0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$prep_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$engine_font_manager_char$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0$0({2}DF,SV:S),C,0,0
