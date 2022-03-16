@@ -23,7 +23,7 @@ void main( void )
 	//devkit_SMS_setBGPaletteColor( 0, devkit_RGB( 0, 0, 3 ) );
 
 	//open_screen_type = screen_type_splash;
-	//open_screen_type = screen_type_title;
+	open_screen_type = screen_type_title;
 	open_screen_type = screen_type_intro;
 	//open_screen_type = screen_type_rest;
 	open_screen_type = screen_type_stats;
