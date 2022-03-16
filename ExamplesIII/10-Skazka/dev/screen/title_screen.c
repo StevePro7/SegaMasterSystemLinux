@@ -25,7 +25,7 @@ void screen_title_screen_load()
 	engine_text_manager_title( row + 2 );
 	engine_font_manager_text( LOCALE_TITLE_MSG1, LEFT_X + 7, 12 );
 	engine_font_manager_text( LOCALE_TITLE_MSG2, LEFT_X + 3, 17 );
-	engine_font_manager_text( LOCALE_FIRE1_CONT, LEFT_X + 5, 22 );
+	engine_text_manager_fire();
 	devkit_SMS_displayOn();
 }
 

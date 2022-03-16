@@ -14,6 +14,8 @@ extern const unsigned char *enemy_texts[];
 
 extern const unsigned char *shop_texts[];
 
+extern const unsigned char *villager_texts[];
+
 extern const unsigned char *menus_texts[];
 extern const unsigned char *allover_texts[];
 extern const unsigned char *handler_texts[];

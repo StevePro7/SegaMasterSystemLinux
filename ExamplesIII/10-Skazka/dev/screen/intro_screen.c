@@ -36,7 +36,7 @@ void screen_intro_screen_load()
 		engine_font_manager_text( ( unsigned char * ) intro_texts[ idx ], LEFT_X + 2, row++ );
 	}
 
-	engine_font_manager_text( LOCALE_FIRE1_CONT, LEFT_X + 5, 22 );
+	engine_text_manager_fire();
 	devkit_SMS_displayOn();
 }
 

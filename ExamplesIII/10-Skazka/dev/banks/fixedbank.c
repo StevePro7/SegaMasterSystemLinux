@@ -112,3 +112,13 @@ const unsigned char *handler_texts[] =
 	"SO YOU HAVE COME TO CALLENGE ME,      FOOLISH MORTAL? VERY WELL.",
 };
 
+
+extern const unsigned char *villager_texts[] =
+{
+	"DID YOU KNOW THAT YOU CAN ONLY HAVE",
+	"ONE LIFE POTION AT A TIME?",
+	"",
+	"DID YOU KNOW THAT A TEGILAY IS MADE",
+	"OF LEATHER, AND A KOLCHUGA IS MADE",
+	"MADE OF STEEL?"
+};

@@ -20,6 +20,7 @@ S:G$forest_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$fight_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$enemy_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$shop_texts$0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$villager_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$menus_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$allover_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$handler_texts$0$0({0}DA0d,DG,SC:U),E,0,0
@@ -31,6 +32,7 @@ S:G$engine_font_manager_zero$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_clear$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_border$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_title$0$0({2}DF,SV:S),C,0,0
+S:G$engine_text_manager_fire$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_args$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_init$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOnFeature$0$0({2}DF,SV:S),C,0,0
