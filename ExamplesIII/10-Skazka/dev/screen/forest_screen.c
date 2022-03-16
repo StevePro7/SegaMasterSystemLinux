@@ -5,6 +5,7 @@
 #include "../engine/font_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/locale_manager.h"
+#include "../engine/player_manager.h"
 #include "../engine/select_manager.h"
 #include "../engine/text_manager.h"
 #include "../devkit/_sms_manager.h"
@@ -12,12 +13,13 @@
 
 void screen_forest_screen_load()
 {
+	struct_player_object *po = &global_player_object;
 	// TODO make more efficient
 	unsigned char row;
 	unsigned char idx;
 
 	row = 1;
-	engine_enemy_manager_load();
+	engine_enemy_manager_load( po->level );
 
 	devkit_SMS_displayOff();
 	engine_content_manager_load_title( row );
