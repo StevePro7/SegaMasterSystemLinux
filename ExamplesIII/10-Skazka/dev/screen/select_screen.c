@@ -13,14 +13,14 @@ void screen_select_screen_load()
 	engine_font_manager_text( "4", 12, 15 );
 
 
-	engine_select_manager_load( select_type_option, 10, 12, 4 );
+	engine_select_manager_load( select_type_stats, 10, 12, 4 );
 }
 
 void screen_select_screen_update( unsigned char *screen_type )
 {
 	unsigned char selection;
 
-	selection = engine_select_manager_update( select_type_option );
+	selection = engine_select_manager_update( select_type_stats );
 	if( INVALID_INDEX != selection )
 	{
 		engine_font_manager_data( selection + 1, 15, 18 );
