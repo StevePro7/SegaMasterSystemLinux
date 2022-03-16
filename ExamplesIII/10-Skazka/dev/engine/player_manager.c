@@ -3,6 +3,7 @@
 #include "font_manager.h"
 #include "global_manager.h"
 #include "locale_manager.h"
+#include "text_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
 
@@ -88,4 +89,12 @@ void engine_player_manager_rest()
 	struct_player_object *po = &global_player_object;
 	po->hp = po->max_hp;
 	engine_font_manager_data( po->hp, LEFT_X + 6, STATS_ROW + 3 );
+}
+
+void engine_player_manager_draw()
+{
+	unsigned char row = 18;
+	engine_text_manager_args( LEFT_X + 11, row + 0, 2, 0x20, 0xBC );
+	engine_text_manager_args( LEFT_X + 11, row + 1, 3, 0x8E, 0x92, 0x29 );
+	engine_text_manager_args( LEFT_X + 11, row + 2, 2, 0x20, 0x5E );
 }

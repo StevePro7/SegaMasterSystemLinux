@@ -44,6 +44,7 @@ void screen_forest_screen_load()
 	engine_select_manager_load( select_type_forest, LEFT_X + 3, row, 2 );
 
 	engine_enemy_manager_draw();
+	engine_player_manager_draw();
 	devkit_SMS_displayOn();
 }
 

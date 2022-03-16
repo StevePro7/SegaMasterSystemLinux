@@ -45,30 +45,6 @@ void engine_text_manager_title( unsigned char row )
 	engine_text_manager_args( LEFT_X + 3, row + 4, 27, 0x90, 0x90, 0x90, 0x20, 0x90, 0x20, 0x20, 0x90, 0x20, 0x90, 0x20, 0x20, 0x90, 0x20, 0x90, 0x90, 0x90, 0x20, 0x90, 0x20, 0x20, 0x90, 0x20, 0x90, 0x20, 0x20, 0x90 );
 }
 
-//void engine_text_manager_text( unsigned char num, ... )
-//{
-//	unsigned char x;
-//	unsigned char y;
-//
-//	unsigned char ch;
-//	unsigned char idx;
-//	va_list arglist;
-//
-//	x = 10;
-//	y = 1;
-//
-//	
-//	va_start( arglist, num );
-//
-//	for( idx = 0; idx < num; idx++ )
-//	{
-//		engine_font_manager_data( idx, x, idx + 5 );
-//		ch = va_arg( arglist, int );
-//		engine_font_manager_char( ch, x, y );
-//		x++;
-//	}
-//}
-
 void engine_text_manager_args( unsigned char x, unsigned char y, unsigned char num, ... )
 {
 	unsigned char ch;
@@ -86,14 +62,14 @@ void engine_text_manager_args( unsigned char x, unsigned char y, unsigned char n
 	va_end( arglist );
 }	
 
-void engine_text_manager_list( unsigned char x, unsigned char y, unsigned char num, unsigned char *arr )
-{
-	unsigned char ch;
-	unsigned char idx;
-
-	for( idx = 0; idx < num; idx++ )
-	{
-		ch = arr[ idx ];
-		engine_font_manager_char( ch, x++, y );
-	}
-}
+//void engine_text_manager_list( unsigned char x, unsigned char y, unsigned char num, unsigned char *arr )
+//{
+//	unsigned char ch;
+//	unsigned char idx;
+//
+//	for( idx = 0; idx < num; idx++ )
+//	{
+//		ch = arr[ idx ];
+//		engine_font_manager_char( ch, x++, y );
+//	}
+//}

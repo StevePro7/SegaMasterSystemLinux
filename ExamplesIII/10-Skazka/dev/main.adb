@@ -185,6 +185,7 @@ S:G$engine_player_manager_init$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_calc$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_stats$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_rest$0$0({2}DF,SV:S),C,0,0
+S:G$engine_player_manager_draw$0$0({2}DF,SV:S),C,0,0
 S:G$engine_screen_manager_init$0$0({2}DF,SV:S),C,0,0
 S:G$engine_screen_manager_update$0$0({2}DF,SV:S),C,0,0
 S:G$engine_select_manager_init$0$0({2}DF,SV:S),C,0,0
