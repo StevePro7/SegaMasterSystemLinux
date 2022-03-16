@@ -2,11 +2,13 @@
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/input_manager.h"
+#include "../engine/player_manager.h"
 #include "../engine/sound_manager.h"
 
 void screen_test_screen_load()
 {
-	engine_font_manager_text( "TEST SCREEN!!", 2, 10 );
+	engine_player_manager_calc();
+	engine_font_manager_text( "TEST SCREEN..!!", 2, 10 );
 }
 
 void screen_test_screen_update( unsigned char *screen_type )
