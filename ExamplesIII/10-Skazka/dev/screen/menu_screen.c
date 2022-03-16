@@ -20,8 +20,15 @@ void screen_menu_screen_load()
 	engine_text_manager_border();
 	engine_text_manager_clear( row + 2, row + 9 );
 
-	row = 4;
-	engine_select_manager_load( select_type_menu, LEFT_X + 10, row, 3 );
+	row = 7;
+	devkit_SMS_mapROMBank( FIXED_BANK );
+	for( idx = 0; idx < 5; idx++ )
+	{
+		engine_font_manager_text( ( unsigned char * ) menus_texts[ idx ], LEFT_X + 10, row++ );
+	}
+
+	row = 9;
+	engine_select_manager_load( select_type_menu, LEFT_X + 8, row, 3 );
 	devkit_SMS_displayOn();
 }
 

@@ -1,9 +1,9 @@
 M:menu_screen
 F:G$screen_menu_screen_load$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lmenu_screen.screen_menu_screen_load$row$1$78({1}SC:U),R,0,0,[]
-S:Lmenu_screen.screen_menu_screen_load$idx$1$78({1}SC:U),B,1,-2
+S:Lmenu_screen.screen_menu_screen_load$row$1$78({1}SC:U),R,0,0,[c]
+S:Lmenu_screen.screen_menu_screen_load$idx$1$78({1}SC:U),R,0,0,[b]
 F:G$screen_menu_screen_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lmenu_screen.screen_menu_screen_update$screen_type$1$79({2}DG,SC:U),B,1,4
+S:Lmenu_screen.screen_menu_screen_update$screen_type$1$81({2}DG,SC:U),B,1,4
 T:Fmenu_screen$tag_struct_aelect_object[({0}S:S$select_index$0$0({4}DA4d,SC:U),Z,0,0)({4}S:S$select_X$0$0({1}SC:U),Z,0,0)({5}S:S$select_Y$0$0({1}SC:U),Z,0,0)({6}S:S$select_min$0$0({1}SC:U),Z,0,0)({7}S:S$select_max$0$0({1}SC:U),Z,0,0)]
 S:G$global_select_object$0$0({8}STtag_struct_aelect_object:S),E,0,0
 S:G$intro_texts$0$0({0}DA0d,DG,SC:U),E,0,0
