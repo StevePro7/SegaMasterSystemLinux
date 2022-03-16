@@ -1,7 +1,9 @@
 M:fixedbank
 S:G$intro_texts$0$0({20}DA10d,DG,SC:U),E,0,0
 S:G$stats_texts$0$0({16}DA8d,DG,SC:U),E,0,0
-S:G$weapon_texts$0$0({12}DA6d,DG,SC:U),E,0,0
+S:G$weapon_texts$0$0({6}DA3d,DG,SC:U),E,0,0
+S:G$armor_texts$0$0({8}DA4d,DG,SC:U),E,0,0
+S:G$life_texts$0$0({4}DA2d,DG,SC:U),E,0,0
 S:G$shop_texts$0$0({12}DA6d,DG,SC:U),E,0,0
 S:G$main_menus$0$0({8}DA4d,DG,SC:U),E,0,0
 S:G$forests_texts$0$0({14}DA7d,DG,SC:U),E,0,0

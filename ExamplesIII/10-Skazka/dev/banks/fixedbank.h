@@ -5,7 +5,9 @@ extern const unsigned char *intro_texts[];
 //extern const unsigned char *fight_texts[];
 
 extern const unsigned char *stats_texts[];
-extern const unsigned char *weapons_texts[];
+extern const unsigned char *weapon_texts[];
+extern const unsigned char *armor_texts[];
+extern const unsigned char *life_texts[];
 extern const unsigned char *shop_texts[];
 
 extern const unsigned char *main_menus[];

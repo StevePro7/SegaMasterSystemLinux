@@ -6,7 +6,7 @@
 #define TEXT_ROOT 32 // 32 is " " in ASCII.
 #define DATA_ROOT 16 // 16 is "0" (48=16+32)
 #define UNIT_ROOT 10 // 10 is decimal
-#define DATA_LONG 4	 // 4 placeholder
+#define DATA_LONG 3	 // 3 placeholder
 
 static unsigned char get_tile( unsigned char ch );
 
@@ -14,7 +14,6 @@ void engine_font_manager_char( unsigned char ch, unsigned char x, unsigned char 
 {
 	const unsigned char *pnt = font_tiles__tilemap__bin;
 	unsigned char tile = get_tile( ch );
-	//devkit_SMS_mapROMBank( font_tiles__tilemap__bin_bank );
 	devkit_SMS_setNextTileatXY(x, y);
 	devkit_SMS_setTile(*pnt + tile);
 }
@@ -24,7 +23,6 @@ void engine_font_manager_text( unsigned char *text, unsigned char x, unsigned ch
 	const unsigned char *pnt = font_tiles__tilemap__bin;
 	unsigned char idx = 0;
 
-	//devkit_SMS_mapROMBank( font_tiles__tilemap__bin_bank );
 	while ( '\0' != text[idx] )
 	{
 		unsigned char ch = text[idx];

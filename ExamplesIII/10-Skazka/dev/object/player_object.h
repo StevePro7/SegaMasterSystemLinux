@@ -1,10 +1,21 @@
 #ifndef _PLAYER_OBJECT_H_
 #define _PLAYER_OBJECT_H_
 
+// BASIC
+// Z	CURNT XP
+// N	REM CURNT HP
+// V 	REM CURNT GOLD
+// Q$ 	REM WEAPON
+// W$	REM ARMOR
+// E$ 	REM MISC
+// X	level		3
+// M	MAX HP		30
+// Y	MAX XP		99
+
 typedef struct tag_struct_player_object
 {
-	unsigned char hp;			// N
 	unsigned char xp;			// Z
+	unsigned char hp;			// N
 	unsigned char gold;			// V
 	unsigned char weapon;		// Q$	ATK
 	unsigned char armor;		// W$	ARM

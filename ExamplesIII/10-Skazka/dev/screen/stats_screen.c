@@ -4,6 +4,7 @@
 #include "../engine/font_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/locale_manager.h"
+#include "../engine/player_manager.h"
 #include "../engine/select_manager.h"
 #include "../engine/text_manager.h"
 #include "../devkit/_sms_manager.h"
@@ -20,6 +21,8 @@ void screen_stats_screen_load()
 	unsigned char idx;
 
 	row = 1;
+	engine_player_manager_calc();
+
 	devkit_SMS_displayOff();
 	engine_content_manager_load_title( row );
 	engine_text_manager_clear( row + 2, row + 9 );
@@ -28,7 +31,6 @@ void screen_stats_screen_load()
 	print_stats();
 	print_village();
 	print_player();
-	
 
 	row = 12;
 	devkit_SMS_mapROMBank( FIXED_BANK );
@@ -58,15 +60,12 @@ void screen_stats_screen_update( unsigned char *screen_type )
 static void print_stats()
 {
 	unsigned char row = 2;
+	engine_player_manager_stats( row );
 	engine_font_manager_text( LOCALE_STATISTICS, LEFT_X + 2, row + 2 );
 	engine_font_manager_text( LOCALE_HP, LEFT_X + 2, row + 3 );
 	engine_font_manager_text( LOCALE_XP, LEFT_X + 2, row + 4 );
 	engine_font_manager_text( LOCALE_GOLD, LEFT_X + 2, row + 5 );
 	engine_font_manager_text( LOCALE_YOU_HAVE, LEFT_X + 4, row + 6 );
-
-	engine_font_manager_text( "KOLCHUGA", LEFT_X + 4, row + 8 );
-	engine_font_manager_text( "   SWORD", LEFT_X + 4, row + 8 );
-
 	engine_font_manager_text( LOCALE_YOUR_LVL, LEFT_X + 3, 22 );
 }
 

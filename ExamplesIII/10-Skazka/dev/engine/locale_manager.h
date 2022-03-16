@@ -21,6 +21,7 @@
 #define LOCALE_KOLCHUGA			"KOLCHUGA"
 #define LOCALE_TEGILAY			"TEGILAY"
 #define LOCALE_LIFE				"LIFE"
+#define LOCALE_HERO				"(HERO)"
 
 #define LOCALE_NOT_ENOUGH		"NOT ENOUGH"
 

@@ -29,10 +29,20 @@ const unsigned char *weapon_texts[] =
 	"",
 	"   SWORD",
 	"     AXE",
+};
+const unsigned char *armor_texts[] =
+{
+	"",
 	"KOLCHUGA",
 	" TEGILAY",
-	"    LIFE",
+	" +1 LIFE",
 };
+const unsigned char *life_texts[] =
+{
+	"",
+	" +1 LIFE",
+};
+
 
 const unsigned char *shop_texts[] =
 {

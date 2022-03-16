@@ -1,29 +1,33 @@
 XL2
-H A areas 4F global symbols
+H A areas 55 global symbols
 M fixedbank
 O -mz80
 S .__.ABS. Def0000
 A _CODE size 0 flags 0 addr 0
 A _DATA size 0 flags 0 addr 0
-A _INITIALIZED size 72 flags 0 addr 0
+A _INITIALIZED size 78 flags 0 addr 0
 S _weapon_texts Def0024
-S G$handler_texts$0$0 Def005C
-S _main_menus Def003C
-S _handler_texts Def005C
+S G$handler_texts$0$0 Def0062
+S G$life_texts$0$0 Def0032
+S G$armor_texts$0$0 Def002A
+S _main_menus Def0042
+S _handler_texts Def0062
 S G$intro_texts$0$0 Def0000
+S _life_texts Def0032
+S _armor_texts Def002A
 S G$stats_texts$0$0 Def0014
-S G$allover_texts$0$0 Def0052
+S G$allover_texts$0$0 Def0058
 S _intro_texts Def0000
-S G$enemy_names$0$0 Def0066
-S G$shop_texts$0$0 Def0030
+S G$enemy_names$0$0 Def006C
+S G$shop_texts$0$0 Def0036
 S _stats_texts Def0014
-S _allover_texts Def0052
-S G$forests_texts$0$0 Def0044
-S _shop_texts Def0030
-S _enemy_names Def0066
+S _allover_texts Def0058
+S G$forests_texts$0$0 Def004A
+S _shop_texts Def0036
+S _enemy_names Def006C
 S G$weapon_texts$0$0 Def0024
-S _forests_texts Def0044
-S G$main_menus$0$0 Def003C
+S _forests_texts Def004A
+S G$main_menus$0$0 Def0042
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
@@ -80,16 +84,18 @@ S Ffixedbank$__str_6$0$0 Def0097
 S Ffixedbank$__str_7$0$0 Def00B5
 S Ffixedbank$__str_8$0$0 Def00D3
 S Ffixedbank$__str_9$0$0 Def00F1
-A _INITIALIZER size 72 flags 0 addr 0
+A _INITIALIZER size 78 flags 0 addr 0
 S Ffixedbank$__xinit_intro_texts$0$0 Def0000
 S Ffixedbank$__xinit_stats_texts$0$0 Def0014
-S Ffixedbank$__xinit_allover_texts$0$0 Def0052
-S Ffixedbank$__xinit_enemy_names$0$0 Def0066
-S Ffixedbank$__xinit_shop_texts$0$0 Def0030
-S Ffixedbank$__xinit_forests_texts$0$0 Def0044
+S Ffixedbank$__xinit_allover_texts$0$0 Def0058
+S Ffixedbank$__xinit_enemy_names$0$0 Def006C
+S Ffixedbank$__xinit_shop_texts$0$0 Def0036
+S Ffixedbank$__xinit_forests_texts$0$0 Def004A
 S Ffixedbank$__xinit_weapon_texts$0$0 Def0024
-S Ffixedbank$__xinit_main_menus$0$0 Def003C
-S Ffixedbank$__xinit_handler_texts$0$0 Def005C
+S Ffixedbank$__xinit_main_menus$0$0 Def0042
+S Ffixedbank$__xinit_handler_texts$0$0 Def0062
+S Ffixedbank$__xinit_life_texts$0$0 Def0032
+S Ffixedbank$__xinit_armor_texts$0$0 Def002A
 A _CABS size 0 flags 8 addr 0
 T 00 00
 R 00 00 02 00
@@ -103,29 +109,37 @@ T 24 00
 R 00 00 02 00
 T 24 00
 R 00 00 02 00
-T 30 00
+T 2A 00
 R 00 00 02 00
-T 30 00
+T 2A 00
 R 00 00 02 00
-T 3C 00
+T 32 00
 R 00 00 02 00
-T 3C 00
+T 32 00
 R 00 00 02 00
-T 44 00
+T 36 00
 R 00 00 02 00
-T 44 00
+T 36 00
 R 00 00 02 00
-T 52 00
+T 42 00
 R 00 00 02 00
-T 52 00
+T 42 00
 R 00 00 02 00
-T 5C 00
+T 4A 00
 R 00 00 02 00
-T 5C 00
+T 4A 00
 R 00 00 02 00
-T 66 00
+T 58 00
 R 00 00 02 00
-T 66 00
+T 58 00
+R 00 00 02 00
+T 62 00
+R 00 00 02 00
+T 62 00
+R 00 00 02 00
+T 6C 00
+R 00 00 02 00
+T 6C 00
 R 00 00 02 00
 T 00 00
 R 00 00 07 00
@@ -255,7 +269,7 @@ T 98 01 20 54 45 47 49 4C 41 59 00
 R 00 00 07 00
 T A1 01
 R 00 00 07 00
-T A1 01 20 20 20 20 4C 49 46 45 00
+T A1 01 20 2B 31 20 4C 49 46 45 00
 R 00 00 07 00
 T AA 01
 R 00 00 07 00
@@ -447,43 +461,51 @@ T 24 00
 R 00 00 08 00
 T 24 00 78 00 7D 01 86 01
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
-T 2A 00 8F 01 98 01 A1 01
-R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
-T 30 00
+T 2A 00
 R 00 00 08 00
-T 30 00 78 00 AA 01 B3 01
+T 2A 00 78 00 8F 01 98 01
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
-T 36 00 BC 01 8F 01 C5 01
-R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
-T 3C 00
-R 00 00 08 00
-T 3C 00 CE 01 D3 01 E0 01
-R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
-T 42 00 ED 01
+T 30 00 A1 01
 R 00 00 08 00 00 02 07 00
-T 44 00
+T 32 00
 R 00 00 08 00
-T 44 00 FB 01 11 02 27 02
+T 32 00 78 00 A1 01
+R 00 00 08 00 00 02 07 00 00 04 07 00
+T 36 00
+R 00 00 08 00
+T 36 00 78 00 AA 01 B3 01
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
-T 4A 00 3D 02 53 02 69 02
+T 3C 00 BC 01 8F 01 C5 01
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
-T 50 00 7F 02
+T 42 00
+R 00 00 08 00
+T 42 00 CE 01 D3 01 E0 01
+R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
+T 48 00 ED 01
 R 00 00 08 00 00 02 07 00
-T 52 00
+T 4A 00
 R 00 00 08 00
-T 52 00 95 02 A7 02 C7 02
+T 4A 00 FB 01 11 02 27 02
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
-T 58 00 EE 02 08 03
+T 50 00 3D 02 53 02 69 02
+R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
+T 56 00 7F 02
+R 00 00 08 00 00 02 07 00
+T 58 00
+R 00 00 08 00
+T 58 00 95 02 A7 02 C7 02
+R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
+T 5E 00 EE 02 08 03
 R 00 00 08 00 00 02 07 00 00 04 07 00
-T 5C 00
+T 62 00
 R 00 00 08 00
-T 5C 00 26 03 57 03 77 03
+T 62 00 26 03 57 03 77 03
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
-T 62 00 7D 03 82 03
+T 68 00 7D 03 82 03
 R 00 00 08 00 00 02 07 00 00 04 07 00
-T 66 00
+T 6C 00
 R 00 00 08 00
-T 66 00 78 00 C3 03 CD 03
+T 6C 00 78 00 C3 03 CD 03
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
-T 6C 00 D9 03 E2 03 E8 03
+T 72 00 D9 03 E2 03 E8 03
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
