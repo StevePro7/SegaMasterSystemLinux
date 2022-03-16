@@ -113,7 +113,7 @@ const unsigned char *handler_texts[] =
 };
 
 
-extern const unsigned char *villager_texts[] =
+const unsigned char *villager_texts[] =
 {
 	//"12345678901234567890123456789",
 	" YOU LOST SOME MONEY!",

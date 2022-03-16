@@ -28,18 +28,24 @@ void screen_talk_screen_load()
 	engine_text_manager_clear( row + 2, row + 9 );
 
 	val = rand() % MAX_RANDOM;
-	val = 0;
+	val = 1;
 	beg = val * MAX_CHAT;
 	end = beg + MAX_CHAT;
 
+	// TODO delete
 	engine_font_manager_data( beg, 20, 20 );
 	engine_font_manager_data( end, 20, 21 );
+	// TODO delete
 
-	row = 17;
+	idx = 0;
+	row = 7;
+
 	devkit_SMS_mapROMBank( FIXED_BANK );
 	for( idx = beg; idx < end; idx++ )
 	{
-		engine_font_manager_text( ( unsigned char * ) villager_texts[ idx ], LEFT_X + 4, row++ );
+	//	engine_font_manager_text( "SPLAT", LEFT_X + 4, row++ );
+		engine_font_manager_text( ( unsigned char * ) villager_texts[ idx ], LEFT_X + 4, row );
+		row++;
 	}
 
 	engine_text_manager_fire();
