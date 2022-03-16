@@ -9,11 +9,15 @@
 #include "../engine/text_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
+#include <stdlib.h>
+
+#define MAX_CHAT	3
 
 void screen_talk_screen_load()
 {
 	unsigned char row;
 	unsigned char idx;
+	unsigned char val, beg;
 
 	row = 1;
 	engine_player_manager_calc();
@@ -23,11 +27,15 @@ void screen_talk_screen_load()
 	engine_text_manager_border();
 	engine_text_manager_clear( row + 2, row + 9 );
 
-	row = 13;
+	val = rand() % MAX_RANDOM;
+	val = 0;
+	beg = val * MAX_CHAT;
+
+	row = 7;
 	devkit_SMS_mapROMBank( FIXED_BANK );
-	for( idx = 0; idx < 3; idx++ )
+	for( idx = beg; idx < beg + MAX_CHAT; idx++ )
 	{
-		engine_font_manager_text( ( unsigned char * ) villager_texts[ idx ], LEFT_X + 12, row++ );
+		engine_font_manager_text( ( unsigned char * ) villager_texts[ idx ], LEFT_X + 4, row++ );
 	}
 
 	engine_text_manager_fire();

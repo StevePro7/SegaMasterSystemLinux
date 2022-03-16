@@ -7,6 +7,8 @@
 
 #define MAX_SELECTS				3
 #define MAX_ENEMIES				5
+#define MAX_RANDOM				10
+#define MAX_GOLD				999
 
 #define LEFT_X					0
 #define STATS_ROW				2

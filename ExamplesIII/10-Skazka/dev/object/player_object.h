@@ -16,7 +16,7 @@ typedef struct tag_struct_player_object
 {
 	unsigned char xp;			// Z
 	unsigned char hp;			// N
-	unsigned char gold;			// V
+	unsigned int gold;			// V
 	unsigned char weapon;		// Q$	ATK
 	unsigned char armor;		// W$	ARM
 	unsigned char life;			// E$	UP

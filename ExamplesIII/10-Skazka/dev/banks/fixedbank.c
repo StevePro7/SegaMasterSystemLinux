@@ -115,9 +115,13 @@ const unsigned char *handler_texts[] =
 
 extern const unsigned char *villager_texts[] =
 {
-	"DID YOU KNOW THAT YOU CAN ONLY HAVE",
-	"ONE LIFE POTION AT A TIME?",
+	//"12345678901234567890123456789",
+	" YOU LOST SOME MONEY!",
 	"",
+	"",
+	"DID YOU KNOW THAT YOU CAN",
+	"ONLY HAVE ONE LIFE POTION",
+	"AT A TIME?",
 	"DID YOU KNOW THAT A TEGILAY IS MADE",
 	"OF LEATHER, AND A KOLCHUGA IS MADE",
 	"MADE OF STEEL?"

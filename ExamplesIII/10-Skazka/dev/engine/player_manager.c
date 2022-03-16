@@ -103,3 +103,17 @@ void engine_player_manager_hplo()
 	struct_player_object *po = &global_player_object;
 	engine_font_manager_data( po->hp, LEFT_X + 14, FIGHT_ROW + 3 );
 }
+
+void engine_player_manager_gold( char gold )
+{
+	struct_player_object *po = &global_player_object;
+	po->gold += gold;
+	if( po->gold <= 0 )
+	{
+		po->gold = 0;
+	}
+	if( po->gold >= MAX_GOLD )
+	{
+		po->gold = MAX_GOLD;
+	}
+}

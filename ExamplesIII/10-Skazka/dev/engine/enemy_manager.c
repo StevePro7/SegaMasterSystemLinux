@@ -26,7 +26,7 @@ void engine_enemy_manager_init()
 void engine_enemy_manager_load( unsigned char level )
 {
 	struct_enemy_object *eo = &global_enemy_object;
-	unsigned char value = rand() % 10;
+	unsigned char value = rand() % MAX_RANDOM;
 	unsigned char index = 0;
 
 	switch( level )
