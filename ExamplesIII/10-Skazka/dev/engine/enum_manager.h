@@ -43,6 +43,17 @@ typedef enum tag_enum_select_type
 
 } enum_select_type;
 
+typedef enum tag_enum_action_type
+{
+	action_type_fight = 0,
+	action_type_shop = 1,
+	action_type_rest = 2,
+	action_type_talk = 3,
+	action_type_boss = 4,
+	action_type_menu = 5,
+
+} enum_action_type;
+
 typedef enum tag_enum_weapon_type
 {
 	weapon_type_none = 0,

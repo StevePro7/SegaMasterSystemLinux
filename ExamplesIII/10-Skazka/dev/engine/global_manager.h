@@ -8,7 +8,8 @@
 #define MAX_SELECTS				3
 
 #define LEFT_X					0
+#define STATS_ROW				2
 
-#define INVALID_INDEX			255
+#define NO_SELECTION			255
 
 #endif//_GLOBAL_MANAGER_H_

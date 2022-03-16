@@ -77,7 +77,7 @@ unsigned char engine_select_manager_update( unsigned char index )
 		return so->select_index[ index ];
 	}
 
-	return INVALID_INDEX;
+	return NO_SELECTION;
 }
 
 

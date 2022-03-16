@@ -50,24 +50,31 @@ void screen_stats_screen_update( unsigned char *screen_type )
 	unsigned char selection;
 
 	selection = engine_select_manager_update( select_type_stats );
-	if( INVALID_INDEX != selection )
+	if( NO_SELECTION == selection )
 	{
-		//TODO delete
-		engine_font_manager_data( selection + 1, 10, 0 );
+		*screen_type = screen_type_stats;
+		return;
 	}
 
+	switch( selection )
+	{
+	case action_type_rest:
+		engine_player_manager_rest();
+		break;
+	default:
+		break;
+	}
 	*screen_type = screen_type_stats;
 }
 
 static void print_stats()
 {
-	unsigned char row = 2;
-	engine_player_manager_stats( row );
-	engine_font_manager_text( LOCALE_STATISTICS, LEFT_X + 2, row + 2 );
-	engine_font_manager_text( LOCALE_HP, LEFT_X + 2, row + 3 );
-	engine_font_manager_text( LOCALE_XP, LEFT_X + 2, row + 4 );
-	engine_font_manager_text( LOCALE_GOLD, LEFT_X + 2, row + 5 );
-	engine_font_manager_text( LOCALE_YOU_HAVE, LEFT_X + 4, row + 6 );
+	engine_player_manager_stats();
+	engine_font_manager_text( LOCALE_STATISTICS, LEFT_X + 2, STATS_ROW + 2 );
+	engine_font_manager_text( LOCALE_HP, LEFT_X + 2, STATS_ROW + 3 );
+	engine_font_manager_text( LOCALE_XP, LEFT_X + 2, STATS_ROW + 4 );
+	engine_font_manager_text( LOCALE_GOLD, LEFT_X + 2, STATS_ROW + 5 );
+	engine_font_manager_text( LOCALE_YOU_HAVE, LEFT_X + 4, STATS_ROW + 6 );
 	engine_font_manager_text( LOCALE_YOUR_LVL, LEFT_X + 3, 22 );
 }
 

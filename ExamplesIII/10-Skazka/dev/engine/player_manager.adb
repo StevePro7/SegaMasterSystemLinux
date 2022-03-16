@@ -1,12 +1,12 @@
 M:player_manager
 F:G$engine_player_manager_init$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lplayer_manager.engine_player_manager_init$po$1$70({2}DG,STtag_struct_player_object:S),R,0,0,[]
+S:Lplayer_manager.engine_player_manager_init$po$1$69({2}DG,STtag_struct_player_object:S),R,0,0,[]
 F:G$engine_player_manager_calc$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lplayer_manager.engine_player_manager_calc$po$1$71({2}DG,STtag_struct_player_object:S),R,0,0,[]
+S:Lplayer_manager.engine_player_manager_calc$po$1$70({2}DG,STtag_struct_player_object:S),R,0,0,[]
 F:G$engine_player_manager_stats$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lplayer_manager.engine_player_manager_stats$row$1$76({1}SC:U),B,1,4
-S:Lplayer_manager.engine_player_manager_stats$po$1$77({2}DG,STtag_struct_player_object:S),R,0,0,[]
-S:Lplayer_manager.engine_player_manager_stats$sloc0$1$0({1}SC:U),B,1,-1
+S:Lplayer_manager.engine_player_manager_stats$po$1$75({2}DG,STtag_struct_player_object:S),R,0,0,[]
+F:G$engine_player_manager_rest$0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lplayer_manager.engine_player_manager_rest$po$1$77({2}DG,STtag_struct_player_object:S),R,0,0,[]
 T:Fplayer_manager$tag_struct_player_object[({0}S:S$xp$0$0({1}SC:U),Z,0,0)({1}S:S$hp$0$0({1}SC:U),Z,0,0)({2}S:S$gold$0$0({1}SC:U),Z,0,0)({3}S:S$weapon$0$0({1}SC:U),Z,0,0)({4}S:S$armor$0$0({1}SC:U),Z,0,0)({5}S:S$life$0$0({1}SC:U),Z,0,0)({6}S:S$level$0$0({1}SC:U),Z,0,0)({7}S:S$max_hp$0$0({1}SC:U),Z,0,0)({8}S:S$max_xp$0$0({1}SC:U),Z,0,0)]
 S:G$intro_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$stats_texts$0$0({0}DA0d,DG,SC:U),E,0,0

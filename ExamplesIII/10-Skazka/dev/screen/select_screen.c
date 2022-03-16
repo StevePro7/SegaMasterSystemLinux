@@ -21,7 +21,7 @@ void screen_select_screen_update( unsigned char *screen_type )
 	unsigned char selection;
 
 	selection = engine_select_manager_update( select_type_stats );
-	if( INVALID_INDEX != selection )
+	if( NO_SELECTION != selection )
 	{
 		engine_font_manager_data( selection + 1, 15, 18 );
 	}
