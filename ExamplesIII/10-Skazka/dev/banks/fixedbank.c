@@ -13,9 +13,10 @@ const unsigned char *intro_texts[] =
 	" YOUR ADVENTURE.             ",
 };
 
-const unsigned char *options_texts[] =
+const unsigned char *stats_texts[] =
 {
-	"  WHAT SHALL WE DO?",
+	"WHAT SHALL WE DO?  ",
+	"",
 	"1) GO FOREST PATROL",
 	"2) PURCHASE AT SHOP",
 	"3) REST BY THE WELL",
@@ -24,7 +25,7 @@ const unsigned char *options_texts[] =
 	"6) RETURN MAIN MENU",
 };
 
-//const unsigned char *options_texts[] =
+//const unsigned char *stats_texts[] =
 //{
 //	"WHAT SHALL WE DO?   ",
 //	"1) FOREST PATROL    ",

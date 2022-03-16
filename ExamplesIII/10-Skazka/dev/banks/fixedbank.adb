@@ -1,6 +1,6 @@
 M:fixedbank
 S:G$intro_texts$0$0({20}DA10d,DG,SC:U),E,0,0
-S:G$options_texts$0$0({14}DA7d,DG,SC:U),E,0,0
+S:G$stats_texts$0$0({16}DA8d,DG,SC:U),E,0,0
 S:G$main_menus$0$0({8}DA4d,DG,SC:U),E,0,0
 S:G$forests_texts$0$0({14}DA7d,DG,SC:U),E,0,0
 S:G$allover_texts$0$0({10}DA5d,DG,SC:U),E,0,0

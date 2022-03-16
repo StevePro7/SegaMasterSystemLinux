@@ -6,14 +6,17 @@
 #include "../engine/locale_manager.h"
 #include "../engine/text_manager.h"
 #include "../devkit/_sms_manager.h"
+#include "../banks/fixedbank.h"
 
 // Private helper functions.
+static void print_stats();
 static void print_village();
 static void print_player();
 
 void screen_stats_screen_load()
 {
 	unsigned char row;
+	unsigned char idx;
 
 	row = 1;
 	devkit_SMS_displayOff();
@@ -21,18 +24,25 @@ void screen_stats_screen_load()
 	engine_text_manager_clear( row + 2, row + 9 );
 	engine_text_manager_border();
 
-
+	print_stats();
 	print_village();
 	print_player();
 	engine_font_manager_text( LOCALE_YOUR_LVL, LEFT_X + 3, 22 );
 
-	engine_font_manager_text( "WHAT SHALL WE DO?", 12, 12 );		// TODO remove
-	engine_font_manager_text( "1) GO FOREST PATROL", 12, 14 );		// TODO remove
-	engine_font_manager_text( "2) PURCHASE AT SHOP", 12, 15 );		// TODO remove
-	engine_font_manager_text( "3) REST BY THE WELL", 12, 16 );		// TODO remove
-	engine_font_manager_text( "4) TALK TO VILLAGER", 12, 17 );		// TODO remove
-	engine_font_manager_text( "5) BEAT THE KOSCHEY", 12, 18 );		// TODO remove
-	engine_font_manager_text( "6) RETURN MAIN MENU", 12, 19 );		// TODO remove
+	row = 12;
+	devkit_SMS_mapROMBank( FIXED_BANK );
+	for( idx = 0; idx < 8; idx++ )
+	{
+		engine_font_manager_text( ( unsigned char * ) stats_texts[ idx ], LEFT_X + 12, row++ );
+	}
+
+	//engine_font_manager_text( "WHAT SHALL WE DO?  ", 12, 12 );		// TODO remove
+	//engine_font_manager_text( "1) GO FOREST PATROL", 12, 14 );		// TODO remove
+	//engine_font_manager_text( "2) PURCHASE AT SHOP", 12, 15 );		// TODO remove
+	//engine_font_manager_text( "3) REST BY THE WELL", 12, 16 );		// TODO remove
+	//engine_font_manager_text( "4) TALK TO VILLAGER", 12, 17 );		// TODO remove
+	//engine_font_manager_text( "5) BEAT THE KOSCHEY", 12, 18 );		// TODO remove
+	//engine_font_manager_text( "6) RETURN MAIN MENU", 12, 19 );		// TODO remove
 
 	devkit_SMS_displayOn();
 }
@@ -40,6 +50,11 @@ void screen_stats_screen_load()
 void screen_stats_screen_update( unsigned char *screen_type )
 {
 	*screen_type = screen_type_stats;
+}
+
+static void print_stats()
+{
+	// TODO 
 }
 
 static void print_village()
