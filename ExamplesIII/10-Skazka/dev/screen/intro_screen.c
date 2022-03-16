@@ -3,10 +3,14 @@
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/global_manager.h"
+#include "../engine/input_manager.h"
 #include "../engine/locale_manager.h"
 #include "../engine/text_manager.h"
+#include "../engine/timer_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
+
+#define INTRO_SCREEN_DELAY		300
 
 void screen_intro_screen_load()
 {
@@ -14,6 +18,8 @@ void screen_intro_screen_load()
 	unsigned char idx;
 
 	row = 1;
+	engine_timer_manager_load( INTRO_SCREEN_DELAY );
+
 	devkit_SMS_displayOff();
 	engine_content_manager_load_title( row );
 	engine_text_manager_border();
@@ -36,5 +42,18 @@ void screen_intro_screen_load()
 
 void screen_intro_screen_update( unsigned char *screen_type )
 {
+	// TODO add delay
+	unsigned char input;
+	unsigned char timer;
+
+	input = engine_input_manager_hold( input_type_fire1 );
+	timer = engine_timer_manager_update();
+
+	if( input || timer )
+	{
+		*screen_type = screen_type_stats;
+		return;
+	}
+
 	*screen_type = screen_type_intro;
 }
