@@ -20,9 +20,9 @@ void engine_player_manager_init()
 	po->life = life_type_none;			// E$	UP
 
 	// TODO delete
-	po->weapon = 2;
-	po->armor = 2;
-	po->life = 1;
+	//po->weapon = 2;
+	//po->armor = 2;
+	//po->life = 1;
 }
 
 void engine_player_manager_calc()
