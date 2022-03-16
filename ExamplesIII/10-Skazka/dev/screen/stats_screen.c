@@ -53,7 +53,8 @@ void screen_stats_screen_update( unsigned char *screen_type )
 		return;
 	}
 
-	engine_font_manager_data(selection+1, 28, 22 );
+	//TODO delete
+	//engine_font_manager_data(selection+1, 28, 22 );
 
 	switch( selection )
 	{

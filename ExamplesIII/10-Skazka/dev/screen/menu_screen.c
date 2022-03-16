@@ -34,5 +34,23 @@ void screen_menu_screen_load()
 
 void screen_menu_screen_update( unsigned char *screen_type )
 {
-	*screen_type = screen_type_menu;
+	unsigned char selection = engine_select_manager_update( select_type_stats );
+	if( NO_SELECTION == selection )
+	{
+		*screen_type = screen_type_menu;
+		return;
+	}
+
+	switch( selection )
+	{
+	case menu_type_exit:
+		*screen_type = screen_type_title;
+		break;
+	case menu_type_restart:
+		*screen_type = screen_type_title;
+		break;
+	case menu_type_continue:
+		*screen_type = screen_type_stats;
+		break;
+	}
 }

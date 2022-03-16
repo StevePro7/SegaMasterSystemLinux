@@ -97,4 +97,12 @@ typedef enum tag_enum_fight_type
 
 } enum_stage_type;
 
+typedef enum tag_enum_menu_type
+{
+	menu_type_exit = 0,
+	menu_type_restart = 1,
+	menu_type_continue = 2,
+
+} enum_menu_type;
+
 #endif//_ENUM_MANAGER_H_
