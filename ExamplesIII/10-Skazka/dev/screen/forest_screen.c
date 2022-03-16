@@ -26,13 +26,13 @@ void screen_forest_screen_load()
 
 	row = 5;
 	devkit_SMS_mapROMBank( FIXED_BANK );
-	for( idx = 0; idx < 1; idx++ )
+	for( idx = 0; idx < 2; idx++ )
 	{
 		engine_font_manager_text( ( unsigned char * ) forest_texts[ idx ], LEFT_X + 5, row++ );
 	}
 
 	row = 10;
-	for( idx = 0; idx < 4; idx++ )
+	for( idx = 0; idx < 3; idx++ )
 	{
 		engine_font_manager_text( ( unsigned char * ) fight_texts[ idx ], LEFT_X + 5, row++ );
 	}

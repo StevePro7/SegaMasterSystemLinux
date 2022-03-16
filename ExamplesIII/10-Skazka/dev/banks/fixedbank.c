@@ -52,7 +52,6 @@ const unsigned char *forest_texts[] =
 const unsigned char *fight_texts[] =
 {
 	"WHAT WILL YOU DO?  ",
-	"",
 	"1) RUN  ",
 	"2) FIGHT",
 };

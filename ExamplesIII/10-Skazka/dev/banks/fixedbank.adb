@@ -5,7 +5,7 @@ S:G$weapon_texts$0$0({6}DA3d,DG,SC:U),E,0,0
 S:G$armor_texts$0$0({8}DA4d,DG,SC:U),E,0,0
 S:G$life_texts$0$0({4}DA2d,DG,SC:U),E,0,0
 S:G$forest_texts$0$0({4}DA2d,DG,SC:U),E,0,0
-S:G$fight_texts$0$0({8}DA4d,DG,SC:U),E,0,0
+S:G$fight_texts$0$0({6}DA3d,DG,SC:U),E,0,0
 S:G$enemy_names$0$0({10}DA5d,DG,SC:U),E,0,0
 S:G$shop_texts$0$0({12}DA6d,DG,SC:U),E,0,0
 S:G$main_menus$0$0({8}DA4d,DG,SC:U),E,0,0
