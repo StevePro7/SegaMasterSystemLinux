@@ -20,12 +20,12 @@ S:Lfont_manager.engine_font_manager_data$y$1$75({1}SC:U),B,1,7
 S:Lfont_manager.engine_font_manager_data$pnt$1$76({2}DG,SC:U),R,0,0,[]
 S:Lfont_manager.engine_font_manager_data$idx$1$76({1}SC:U),B,1,-9
 S:Lfont_manager.engine_font_manager_data$tile$1$76({2}SI:U),R,0,0,[b,e]
-S:Lfont_manager.engine_font_manager_data$quotient$1$76({2}SI:U),B,1,-4
+S:Lfont_manager.engine_font_manager_data$quotient$1$76({2}SI:U),B,1,-5
 S:Lfont_manager.engine_font_manager_data$remainder$1$76({1}SC:U),R,0,0,[c]
 S:Lfont_manager.engine_font_manager_data$hold$1$76({3}DA3d,SC:U),B,1,-8
 S:Lfont_manager.engine_font_manager_data$sloc0$1$0({2}DD,SC:U),B,1,-2
-S:Lfont_manager.engine_font_manager_data$sloc1$1$0({1}SC:U),B,1,-5
-S:Lfont_manager.engine_font_manager_data$sloc2$1$0({2}SI:U),B,1,-4
+S:Lfont_manager.engine_font_manager_data$sloc1$1$0({1}SC:U),B,1,-3
+S:Lfont_manager.engine_font_manager_data$sloc2$1$0({2}SI:U),B,1,-5
 F:G$engine_font_manager_zero$0$0({2}DF,SV:S),Z,0,4,0,0,0
 S:Lfont_manager.engine_font_manager_zero$data$1$80({2}SI:U),B,1,4
 S:Lfont_manager.engine_font_manager_zero$x$1$80({1}SC:U),B,1,6

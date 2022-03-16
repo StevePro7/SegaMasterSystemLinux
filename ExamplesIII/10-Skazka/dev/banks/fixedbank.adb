@@ -8,7 +8,7 @@ S:G$forest_texts$0$0({4}DA2d,DG,SC:U),E,0,0
 S:G$fight_texts$0$0({6}DA3d,DG,SC:U),E,0,0
 S:G$enemy_texts$0$0({10}DA5d,DG,SC:U),E,0,0
 S:G$shop_texts$0$0({12}DA6d,DG,SC:U),E,0,0
-S:G$menus_texts$0$0({8}DA4d,DG,SC:U),E,0,0
+S:G$menus_texts$0$0({10}DA5d,DG,SC:U),E,0,0
 S:G$forests_texts$0$0({14}DA7d,DG,SC:U),E,0,0
 S:G$allover_texts$0$0({10}DA5d,DG,SC:U),E,0,0
 S:G$handler_texts$0$0({10}DA5d,DG,SC:U),E,0,0
@@ -48,7 +48,7 @@ S:Ffixedbank$__str_31$0$0({9}DA9d,SC:S),D,0,0
 S:Ffixedbank$__str_32$0$0({9}DA9d,SC:S),D,0,0
 S:Ffixedbank$__str_33$0$0({9}DA9d,SC:S),D,0,0
 S:Ffixedbank$__str_34$0$0({9}DA9d,SC:S),D,0,0
-S:Ffixedbank$__str_35$0$0({5}DA5d,SC:S),D,0,0
+S:Ffixedbank$__str_35$0$0({8}DA8d,SC:S),D,0,0
 S:Ffixedbank$__str_36$0$0({13}DA13d,SC:S),D,0,0
 S:Ffixedbank$__str_37$0$0({13}DA13d,SC:S),D,0,0
 S:Ffixedbank$__str_38$0$0({14}DA14d,SC:S),D,0,0
