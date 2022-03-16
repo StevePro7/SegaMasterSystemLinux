@@ -31,6 +31,7 @@ void screen_forest_screen_load()
 		engine_font_manager_text( ( unsigned char * ) forest_texts[ idx ], LEFT_X + 5, row++ );
 	}
 
+	// TODO push one row down?
 	row = 10;
 	for( idx = 0; idx < 3; idx++ )
 	{

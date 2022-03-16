@@ -26,7 +26,7 @@ void engine_enemy_manager_load()
 	struct_enemy_object *eo = &global_enemy_object;
 	unsigned char index = rand() % MAX_ENEMIES;
 
-	index = 1;
+	index = 4;
 
 	eo->index = index;
 	eo->hplo = hplo_num[ index ];
