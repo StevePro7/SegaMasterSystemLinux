@@ -92,3 +92,9 @@ void engine_enemy_manager_draw()
 	engine_text_manager_args( LEFT_X + 23, FIGHT_ROW + 1, 3, 0x2D, 0x8E, 0x2D );
 	engine_text_manager_args( LEFT_X + 23, FIGHT_ROW + 2, 2, 0x20, 0x5E );
 }
+
+void engine_enemy_manager_hplo()
+{
+	struct_enemy_object *eo = &global_enemy_object;
+	engine_font_manager_data( eo->hplo, LEFT_X + 29, FIGHT_ROW + 3 );
+}

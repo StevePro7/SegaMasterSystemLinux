@@ -1,6 +1,6 @@
 ;!FILE forest_screen.asm
 XL2
-H 9 areas AB global symbols
+H 9 areas B1 global symbols
 M forest_screen
 O -mz80
 S _fight_texts Ref0000
@@ -9,11 +9,13 @@ S _forest_texts Ref0000
 S _engine_font_manager_text Ref0000
 S _devkit_SMS_displayOn Ref0000
 S _engine_enemy_manager_load Ref0000
+S _engine_player_manager_hplo Ref0000
 S _engine_select_manager_update Ref0000
 S _engine_text_manager_border Ref0000
 S _global_player_object Ref0000
 S _engine_enemy_manager_draw Ref0000
 S _engine_text_manager_clear Ref0000
+S _engine_enemy_manager_hplo Ref0000
 S .__.ABS. Def0000
 S _devkit_SMS_displayOff Ref0000
 S _engine_content_manager_load_title Ref0000
@@ -21,160 +23,164 @@ S _engine_select_manager_load Ref0000
 S _devkit_SMS_mapROMBank Ref0000
 A _CODE size D5 flags 0 addr 0
 S G$screen_forest_screen_update$0$0 Def00BF
-S A$forest_screen$110 Def0027
-S A$forest_screen$210 Def0090
-S A$forest_screen$120 Def0030
-S A$forest_screen$102 Def001F
-S A$forest_screen$220 Def009F
-S A$forest_screen$211 Def0093
-S A$forest_screen$202 Def0085
-S A$forest_screen$130 Def003C
-S A$forest_screen$121 Def0032
-S A$forest_screen$103 Def0021
-S A$forest_screen$221 Def00A0
-S A$forest_screen$131 Def003D
-S A$forest_screen$122 Def0033
-S A$forest_screen$104 Def0022
-S A$forest_screen$132 Def003E
-S A$forest_screen$123 Def0034
-S A$forest_screen$105 Def0023
-S A$forest_screen$250 Def00BF
-S A$forest_screen$160 Def0059
-S A$forest_screen$142 Def0048
-S A$forest_screen$133 Def0040
-S A$forest_screen$124 Def0036
-S A$forest_screen$115 Def002A
-S A$forest_screen$106 Def0026
+S A$forest_screen$100 Def001C
+S A$forest_screen$200 Def0082
+S A$forest_screen$210 Def008C
+S A$forest_screen$120 Def002D
+S A$forest_screen$220 Def009B
+S A$forest_screen$211 Def008F
+S A$forest_screen$130 Def003A
+S A$forest_screen$121 Def002F
+S A$forest_screen$112 Def0027
+S A$forest_screen$221 Def009C
+S A$forest_screen$212 Def0090
+S A$forest_screen$140 Def0047
+S A$forest_screen$131 Def003B
+S A$forest_screen$122 Def0030
+S A$forest_screen$104 Def001F
+S A$forest_screen$231 Def00A4
+S A$forest_screen$222 Def009F
+S A$forest_screen$213 Def0093
+S A$forest_screen$204 Def0085
+S A$forest_screen$132 Def003C
+S A$forest_screen$123 Def0032
+S A$forest_screen$105 Def0021
+S A$forest_screen$223 Def00A0
+S A$forest_screen$160 Def0056
+S A$forest_screen$151 Def004E
+S A$forest_screen$133 Def003D
+S A$forest_screen$124 Def0033
+S A$forest_screen$106 Def0022
 S _screen_forest_screen_update Def00BF
-S A$forest_screen$260 Def00C9
-S A$forest_screen$251 Def00C1
-S A$forest_screen$215 Def0094
-S A$forest_screen$206 Def0088
-S A$forest_screen$170 Def0064
-S A$forest_screen$161 Def005A
-S A$forest_screen$143 Def0049
-S A$forest_screen$134 Def0041
-S A$forest_screen$125 Def0037
-S A$forest_screen$116 Def002B
-S A$forest_screen$261 Def00CA
-S A$forest_screen$252 Def00C2
-S A$forest_screen$216 Def0097
-S A$forest_screen$207 Def008B
-S A$forest_screen$171 Def0065
-S A$forest_screen$162 Def005B
-S A$forest_screen$144 Def004A
-S A$forest_screen$135 Def0042
-S A$forest_screen$126 Def0038
-S A$forest_screen$117 Def002C
-S A$forest_screen$280 Def00D2
-S A$forest_screen$271 Def00CF
-S A$forest_screen$262 Def00CB
-S A$forest_screen$253 Def00C3
-S A$forest_screen$217 Def0098
-S A$forest_screen$208 Def008C
-S A$forest_screen$190 Def0079
-S A$forest_screen$181 Def006F
-S A$forest_screen$172 Def0067
-S A$forest_screen$163 Def005D
-S A$forest_screen$154 Def0051
-S A$forest_screen$145 Def004C
-S A$forest_screen$136 Def0045
-S A$forest_screen$127 Def0039
-S A$forest_screen$118 Def002D
-S A$forest_screen$254 Def00C6
-S A$forest_screen$218 Def009B
-S A$forest_screen$209 Def008F
-S A$forest_screen$191 Def007C
-S A$forest_screen$182 Def0070
-S A$forest_screen$173 Def0068
-S A$forest_screen$164 Def005E
-S A$forest_screen$155 Def0052
-S A$forest_screen$137 Def0046
-S A$forest_screen$128 Def003A
-S A$forest_screen$119 Def002F
+S A$forest_screen$260 Def00BF
+S A$forest_screen$170 Def0062
+S A$forest_screen$161 Def0057
+S A$forest_screen$134 Def003E
+S A$forest_screen$125 Def0034
+S A$forest_screen$107 Def0023
+S A$forest_screen$270 Def00C9
+S A$forest_screen$261 Def00C1
+S A$forest_screen$171 Def0063
+S A$forest_screen$162 Def0059
+S A$forest_screen$144 Def0048
+S A$forest_screen$135 Def0040
+S A$forest_screen$126 Def0036
+S A$forest_screen$117 Def002A
+S A$forest_screen$108 Def0026
+S A$forest_screen$271 Def00CA
+S A$forest_screen$262 Def00C2
+S A$forest_screen$217 Def0094
+S A$forest_screen$208 Def0088
+S A$forest_screen$190 Def0075
+S A$forest_screen$172 Def0064
+S A$forest_screen$163 Def005A
+S A$forest_screen$145 Def0049
+S A$forest_screen$136 Def0041
+S A$forest_screen$127 Def0037
+S A$forest_screen$118 Def002B
+S A$forest_screen$290 Def00D2
+S A$forest_screen$281 Def00CF
+S A$forest_screen$272 Def00CB
+S A$forest_screen$263 Def00C3
+S A$forest_screen$227 Def00A1
+S A$forest_screen$218 Def0097
+S A$forest_screen$209 Def008B
+S A$forest_screen$191 Def0078
+S A$forest_screen$173 Def0065
+S A$forest_screen$164 Def005B
+S A$forest_screen$146 Def004A
+S A$forest_screen$137 Def0042
+S A$forest_screen$128 Def0038
+S A$forest_screen$119 Def002C
 S C$forest_screen.c$40$3$81 Def0051
-S A$forest_screen$255 Def00C7
-S A$forest_screen$219 Def009C
-S A$forest_screen$192 Def007D
-S A$forest_screen$183 Def0071
-S A$forest_screen$174 Def0069
-S A$forest_screen$165 Def005F
-S A$forest_screen$156 Def0053
-S A$forest_screen$138 Def0047
-S A$forest_screen$129 Def003B
-S A$forest_screen$229 Def00A1
-S A$forest_screen$193 Def0080
-S A$forest_screen$184 Def0073
-S A$forest_screen$175 Def006C
-S A$forest_screen$166 Def0060
-S A$forest_screen$157 Def0054
-S C$forest_screen.c$60$1$83 Def00C8
+S A$forest_screen$264 Def00C6
+S A$forest_screen$219 Def0098
+S A$forest_screen$192 Def0079
+S A$forest_screen$183 Def006F
+S A$forest_screen$174 Def0067
+S A$forest_screen$165 Def005D
+S A$forest_screen$156 Def0051
+S A$forest_screen$147 Def004C
+S A$forest_screen$138 Def0045
+S A$forest_screen$129 Def0039
+S A$forest_screen$265 Def00C7
+S A$forest_screen$193 Def007C
+S A$forest_screen$184 Def0070
+S A$forest_screen$175 Def0068
+S A$forest_screen$166 Def005E
+S A$forest_screen$157 Def0052
+S A$forest_screen$139 Def0046
+S C$forest_screen.c$60$1$83 Def00BF
 S C$forest_screen.c$30$1$77 Def001F
-S A$forest_screen$275 Def00D1
-S A$forest_screen$266 Def00CC
-S A$forest_screen$194 Def0081
-S A$forest_screen$176 Def006D
-S A$forest_screen$167 Def0061
-S A$forest_screen$158 Def0056
-S A$forest_screen$149 Def004E
+S A$forest_screen$239 Def00A7
+S A$forest_screen$194 Def007D
+S A$forest_screen$185 Def0071
+S A$forest_screen$176 Def0069
+S A$forest_screen$167 Def005F
+S A$forest_screen$158 Def0053
+S C$forest_screen.c$61$1$83 Def00CC
 S C$forest_screen.c$22$1$77 Def0000
-S A$forest_screen$285 Def00D4
-S A$forest_screen$267 Def00CD
-S A$forest_screen$177 Def006E
-S A$forest_screen$168 Def0062
-S A$forest_screen$159 Def0057
-S C$forest_screen.c$60$2$84 Def00CF
-S C$forest_screen.c$50$1$77 Def0088
-S A$forest_screen$259 Def00C8
-S A$forest_screen$169 Def0063
-S C$forest_screen.c$61$2$84 Def00D1
-S C$forest_screen.c$51$1$77 Def0094
+S A$forest_screen$285 Def00D1
+S A$forest_screen$276 Def00CC
+S A$forest_screen$195 Def0080
+S A$forest_screen$186 Def0073
+S A$forest_screen$177 Def006C
+S A$forest_screen$168 Def0060
+S A$forest_screen$159 Def0054
+S C$forest_screen.c$50$1$77 Def0094
+S A$forest_screen$295 Def00D4
+S A$forest_screen$277 Def00CD
+S A$forest_screen$196 Def0081
+S A$forest_screen$178 Def006D
+S A$forest_screen$169 Def0061
+S C$forest_screen.c$63$1$83 Def00C8
 S C$forest_screen.c$38$2$80 Def006F
 S C$forest_screen.c$31$2$78 Def0048
 S C$forest_screen.c$24$1$77 Def000A
 S C$forest_screen.c$14$0$0 Def0000
-S A$forest_screen$188 Def0075
-S C$forest_screen.c$64$1$83 Def00D2
+S A$forest_screen$269 Def00C8
+S A$forest_screen$179 Def006E
 S C$forest_screen.c$52$1$77 Def00A1
 S C$forest_screen.c$25$1$77 Def000D
 S C$forest_screen.c$16$1$77 Def0000
-S A$forest_screen$198 Def0082
-S A$forest_screen$189 Def0078
-S C$forest_screen.c$65$1$83 Def00D4
-S C$forest_screen.c$53$1$77 Def00A1
+S C$forest_screen.c$63$2$84 Def00CF
+S C$forest_screen.c$53$1$77 Def00A4
 S C$forest_screen.c$44$1$77 Def0075
 S C$forest_screen.c$38$3$81 Def004E
 S C$forest_screen.c$31$3$79 Def0027
 S C$forest_screen.c$26$1$77 Def0015
 S XG$screen_forest_screen_update$0$0 Def00D4
-S C$forest_screen.c$57$1$83 Def00BF
+S C$forest_screen.c$64$2$84 Def00D1
 S C$forest_screen.c$27$1$77 Def0018
-S C$forest_screen.c$58$1$83 Def00CC
-S C$forest_screen.c$55$1$77 Def00BF
+S C$forest_screen.c$67$1$83 Def00D2
+S C$forest_screen.c$55$1$77 Def00A7
 S C$forest_screen.c$46$1$77 Def0082
 S C$forest_screen.c$33$3$79 Def002A
+S C$forest_screen.c$68$1$83 Def00D4
+S C$forest_screen.c$56$1$77 Def00A7
 S C$forest_screen.c$47$1$77 Def0085
-S A$forest_screen$80 Def000A
-S A$forest_screen$71 Def0000
+S C$forest_screen.c$58$1$77 Def00BF
+S C$forest_screen.c$49$1$77 Def0088
 S G$screen_forest_screen_load$0$0 Def0000
-S A$forest_screen$72 Def0003
-S A$forest_screen$73 Def0004
-S A$forest_screen$92 Def0015
-S A$forest_screen$74 Def0005
-S A$forest_screen$84 Def000D
-S A$forest_screen$75 Def0006
-S A$forest_screen$85 Def000F
-S A$forest_screen$76 Def0009
-S A$forest_screen$86 Def0010
-S A$forest_screen$96 Def0018
-S A$forest_screen$87 Def0011
-S Fforest_screen$__str_0$0$0 Def00A4
-S A$forest_screen$97 Def001B
-S A$forest_screen$88 Def0014
-S Fforest_screen$__str_1$0$0 Def00B1
-S A$forest_screen$98 Def001C
+S A$forest_screen$90 Def0014
+S A$forest_screen$82 Def000A
+S A$forest_screen$73 Def0000
+S A$forest_screen$74 Def0003
+S A$forest_screen$75 Def0004
+S A$forest_screen$94 Def0015
+S A$forest_screen$76 Def0005
+S A$forest_screen$86 Def000D
+S A$forest_screen$77 Def0006
+S A$forest_screen$87 Def000F
+S A$forest_screen$78 Def0009
+S Fforest_screen$__str_0$0$0 Def00AA
+S A$forest_screen$88 Def0010
+S Fforest_screen$__str_1$0$0 Def00B4
+S A$forest_screen$98 Def0018
+S A$forest_screen$89 Def0011
+S A$forest_screen$99 Def001B
 S _screen_forest_screen_load Def0000
-S XG$screen_forest_screen_load$0$0 Def00A1
+S XG$screen_forest_screen_load$0$0 Def00A7
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -186,11 +192,11 @@ A _CABS size 0 flags 8 addr 0
 T 00 00
 R 00 00 00 00
 T 00 00 21 06 00 46 C5 33 CD 00 00 33 CD 00 00 3E
-R 00 00 00 00 02 03 08 00 02 09 05 00 02 0D 0C 00
+R 00 00 00 00 02 03 09 00 02 09 05 00 02 0D 0E 00
 T 0E 00 01 F5 33 CD 00 00 33 CD 00 00 21 03 0A E5
-R 00 00 00 00 02 06 0D 00 02 0A 07 00
+R 00 00 00 00 02 06 0F 00 02 0A 08 00
 T 1C 00 CD 00 00 26 0F E3 33 CD 00 00 33 01 05 00
-R 00 00 00 00 02 03 0A 00 02 0A 0F 00
+R 00 00 00 00 02 03 0B 00 02 0A 11 00
 T 2A 00
 R 00 00 00 00
 T 2A 00 59 0C 68 26 00 29 3E 00 00 85 6F 3E 00 00
@@ -208,25 +214,25 @@ R 00 00 00 00
 T 6A 00 00 00 F1 F1 C1 04 78 D6 03 38 DC 21 0C 02
 R 00 00 00 00 02 02 03 00
 T 78 00 E5 21 02 03 E5 CD 00 00 F1 F1 CD 00 00 CD
-R 00 00 00 00 02 08 0E 00 02 0D 09 00
-T 86 00 00 00 21 03 15 E5 21 A4 00 E5 CD 00 00 F1
-R 00 00 00 00 02 02 01 00 00 09 00 00 02 0D 03 00
-T 94 00 21 11 15 E3 21 B1 00 E5 CD 00 00 F1 F1 C3
+R 00 00 00 00 02 08 10 00 02 0D 01 00
+T 86 00 00 00 21 03 15 E5 21 AA 00 E5 CD 00 00 F1
+R 00 00 00 00 02 02 0A 00 00 09 00 00 02 0D 03 00
+T 94 00 21 11 15 E3 21 B4 00 E5 CD 00 00 F1 F1 CD
 R 00 00 00 00 00 07 00 00 02 0B 03 00
-T A2 00 00 00
-R 00 00 00 00 02 02 04 00
-T A4 00
+T A2 00 00 00 CD 00 00 C3 00 00
+R 00 00 00 00 02 02 06 00 02 05 0C 00 02 08 04 00
+T AA 00
 R 00 00 00 00
-T A4 00 59 4F 55 52 20 48 50 20 2D 20 39 39 00
+T AA 00 59 4F 55 52 20 48 50 20 2D 00
 R 00 00 00 00
-T B1 00
+T B4 00
 R 00 00 00 00
-T B1 00 45 4E 45 4D 59 20 48 50 20 2D 20 36 39 00
+T B4 00 45 4E 45 4D 59 20 48 50 20 2D 00
 R 00 00 00 00
 T BF 00
 R 00 00 00 00
 T BF 00 3E 01 F5 33 CD 00 00 33 4D D1 E1 E5 D5 0C
-R 00 00 00 00 02 07 06 00
+R 00 00 00 00 02 07 07 00
 T CD 00 20 03 36 05 C9
 R 00 00 00 00
 T D2 00

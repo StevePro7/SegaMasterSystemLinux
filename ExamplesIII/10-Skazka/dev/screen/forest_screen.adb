@@ -30,6 +30,7 @@ S:G$engine_content_manager_load_title$0$0({2}DF,SV:S),C,0,0
 S:G$engine_enemy_manager_init$0$0({2}DF,SV:S),C,0,0
 S:G$engine_enemy_manager_load$0$0({2}DF,SV:S),C,0,0
 S:G$engine_enemy_manager_draw$0$0({2}DF,SV:S),C,0,0
+S:G$engine_enemy_manager_hplo$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_char$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0$0({2}DF,SV:S),C,0,0
@@ -39,6 +40,7 @@ S:G$engine_player_manager_calc$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_stats$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_rest$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_draw$0$0({2}DF,SV:S),C,0,0
+S:G$engine_player_manager_hplo$0$0({2}DF,SV:S),C,0,0
 S:G$engine_select_manager_init$0$0({2}DF,SV:S),C,0,0
 S:G$engine_select_manager_load$0$0({2}DF,SV:S),C,0,0
 S:G$engine_select_manager_update$0$0({2}DF,SC:U),C,0,0

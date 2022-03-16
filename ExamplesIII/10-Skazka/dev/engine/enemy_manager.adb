@@ -8,6 +8,8 @@ S:Lenemy_manager.engine_enemy_manager_load$value$1$31({1}SC:U),R,0,0,[l]
 S:Lenemy_manager.engine_enemy_manager_load$index$1$31({1}SC:U),R,0,0,[e]
 F:G$engine_enemy_manager_draw$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lenemy_manager.engine_enemy_manager_draw$eo$1$42({2}DG,STtag_struct_enemy_object:S),R,0,0,[]
+F:G$engine_enemy_manager_hplo$0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lenemy_manager.engine_enemy_manager_hplo$eo$1$43({2}DG,STtag_struct_enemy_object:S),R,0,0,[]
 T:Fenemy_manager$tag_struct_enemy_object[({0}S:S$index$0$0({1}SC:U),Z,0,0)({1}S:S$hplo$0$0({1}SC:U),Z,0,0)({2}S:S$ax$0$0({1}SC:U),Z,0,0)({3}S:S$gldo$0$0({1}SC:U),Z,0,0)({4}S:S$xpo$0$0({1}SC:U),Z,0,0)]
 S:G$hplo_num$0$0({5}DA5d,SC:U),E,0,0
 S:G$ax_num$0$0({5}DA5d,SC:U),E,0,0

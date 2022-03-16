@@ -43,12 +43,15 @@ void screen_forest_screen_load()
 	row = 12;
 	engine_select_manager_load( select_type_forest, LEFT_X + 3, row, 2 );
 
-	engine_enemy_manager_draw();
 	engine_player_manager_draw();
+	engine_enemy_manager_draw();
+	
+	engine_font_manager_text( LOCALE_FIGHT_MSG1, LEFT_X + 3, FIGHT_ROW + 3 );
+	engine_font_manager_text( LOCALE_FIGHT_MSG2, LEFT_X + 17, FIGHT_ROW + 3 );
 
-	row = 21;
-	engine_font_manager_text( LOCALE_FIGHT_MSG1, LEFT_X + 3, row );
-	engine_font_manager_text( LOCALE_FIGHT_MSG2, LEFT_X + 17, row );
+	engine_player_manager_hplo();
+	engine_enemy_manager_hplo();
+
 	devkit_SMS_displayOn();
 }
 

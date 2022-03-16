@@ -97,3 +97,9 @@ void engine_player_manager_draw()
 	engine_text_manager_args( LEFT_X + 8, FIGHT_ROW + 1, 3, 0x8E, 0x92, 0x29 );
 	engine_text_manager_args( LEFT_X + 8, FIGHT_ROW + 2, 2, 0x20, 0x5E );
 }
+
+void engine_player_manager_hplo()
+{
+	struct_player_object *po = &global_player_object;
+	engine_font_manager_data( po->hp, LEFT_X + 14, FIGHT_ROW + 3 );
+}

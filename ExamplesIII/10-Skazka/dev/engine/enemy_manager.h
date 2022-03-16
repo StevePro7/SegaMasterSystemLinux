@@ -9,5 +9,6 @@ extern struct_enemy_object global_enemy_object;
 void engine_enemy_manager_init();
 void engine_enemy_manager_load( unsigned char level );
 void engine_enemy_manager_draw();
+void engine_enemy_manager_hplo();
 
 #endif//_ENEMY_MANAGER_H_
