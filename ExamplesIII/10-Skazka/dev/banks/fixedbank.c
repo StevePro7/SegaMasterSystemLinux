@@ -115,7 +115,6 @@ const unsigned char *handler_texts[] =
 
 const unsigned char *villager_texts[] =
 {
-	//"12345678901234567890123456789",
 	"  YOU LOST SOME MONEY!     ",
 	"",
 	"",
@@ -126,6 +125,24 @@ const unsigned char *villager_texts[] =
 	"IS MADE OF LEATHER, AND THE",
 	"KOLCHUGA IS MADE OF STEEL? ",
 	"  TRULY THE AXE IS THE     ",
-	"  GREATEST WEAPON  OF OUR  ",
+	"  GREATEST WEAPON OF OUR   ",
 	"  PEOPLE!                  ",
+	" SOMETIMES ITS WISE TO RUN ",
+	" AWAY                      ",
+	"",
+	" YOU BETTER BE KNOWN AS A  ",
+	" HERO TO CHALLENGE KOSCHEY ",
+	"",
+	" DID YOU KNOW THAT WOLVES  ",
+	" ONLY ATTACK WHEN THEY ARE ",
+	" HUNGRY?",
+	" SOME PEOPLE SAY THEY SAW  ",
+	" BABA YAGA IN THE FOREST,  ",
+	" BUT I DON'T BELIEVE THEM  ",
+	"  CYKA, BLYAT!             ",
+	"",
+	"",
+	"  YOU FOUND SOME MONEY!   ",
+	"",
+	"",
 };

@@ -1,11 +1,11 @@
 XL2
-H A areas 6D global symbols
+H A areas 79 global symbols
 M fixedbank
 O -mz80
 S .__.ABS. Def0000
 A _CODE size 0 flags 0 addr 0
 A _DATA size 0 flags 0 addr 0
-A _INITIALIZED size 98 flags 0 addr 0
+A _INITIALIZED size BC flags 0 addr 0
 S G$villager_texts$0$0 Def0080
 S _weapon_texts Def0024
 S G$handler_texts$0$0 Def0076
@@ -38,7 +38,7 @@ A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
-A _BANK15 size 56C flags 0 addr 0
+A _BANK15 size 6A8 flags 0 addr 0
 S Ffixedbank$__str_10$0$0 Def0105
 S Ffixedbank$__str_20$0$0 Def01A1
 S Ffixedbank$__str_11$0$0 Def0119
@@ -60,41 +60,53 @@ S Ffixedbank$__str_42$0$0 Def02CE
 S Ffixedbank$__str_33$0$0 Def024D
 S Ffixedbank$__str_24$0$0 Def01ED
 S Ffixedbank$__str_15$0$0 Def0169
+S Ffixedbank$__str_70$0$0 Def05DC
 S Ffixedbank$__str_61$0$0 Def04E0
 S Ffixedbank$__str_52$0$0 Def03E8
 S Ffixedbank$__str_43$0$0 Def02E4
 S Ffixedbank$__str_34$0$0 Def0256
 S Ffixedbank$__str_25$0$0 Def01F6
 S Ffixedbank$__str_16$0$0 Def017D
+S Ffixedbank$__str_71$0$0 Def05F8
 S Ffixedbank$__str_62$0$0 Def04FC
 S Ffixedbank$__str_53$0$0 Def0408
 S Ffixedbank$__str_44$0$0 Def02FA
 S Ffixedbank$__str_35$0$0 Def025F
 S Ffixedbank$__str_26$0$0 Def01FF
 S Ffixedbank$__str_17$0$0 Def0186
+S Ffixedbank$__str_72$0$0 Def0614
 S Ffixedbank$__str_63$0$0 Def0518
 S Ffixedbank$__str_54$0$0 Def040E
 S Ffixedbank$__str_45$0$0 Def0310
 S Ffixedbank$__str_36$0$0 Def0264
 S Ffixedbank$__str_27$0$0 Def020B
 S Ffixedbank$__str_18$0$0 Def018F
+S Ffixedbank$__str_73$0$0 Def061D
 S Ffixedbank$__str_64$0$0 Def0534
 S Ffixedbank$__str_55$0$0 Def0413
 S Ffixedbank$__str_46$0$0 Def0326
 S Ffixedbank$__str_37$0$0 Def0271
 S Ffixedbank$__str_28$0$0 Def0217
 S Ffixedbank$__str_19$0$0 Def0198
+S Ffixedbank$__str_74$0$0 Def0639
 S Ffixedbank$__str_65$0$0 Def0550
 S Ffixedbank$__str_56$0$0 Def0454
 S Ffixedbank$__str_47$0$0 Def0338
 S Ffixedbank$__str_38$0$0 Def027E
 S Ffixedbank$__str_29$0$0 Def0223
+S Ffixedbank$__str_75$0$0 Def0655
+S Ffixedbank$__str_66$0$0 Def056C
 S Ffixedbank$__str_57$0$0 Def0470
 S Ffixedbank$__str_48$0$0 Def0358
 S Ffixedbank$__str_39$0$0 Def028C
+S Ffixedbank$__str_76$0$0 Def0671
+S Ffixedbank$__str_67$0$0 Def0588
 S Ffixedbank$__str_58$0$0 Def048C
 S Ffixedbank$__str_49$0$0 Def037F
+S Ffixedbank$__str_77$0$0 Def068D
+S Ffixedbank$__str_68$0$0 Def05A4
 S Ffixedbank$__str_59$0$0 Def04A8
+S Ffixedbank$__str_69$0$0 Def05C0
 S Ffixedbank$__str_0$0$0 Def0000
 S Ffixedbank$__str_1$0$0 Def001E
 S Ffixedbank$__str_2$0$0 Def003C
@@ -105,7 +117,7 @@ S Ffixedbank$__str_6$0$0 Def0097
 S Ffixedbank$__str_7$0$0 Def00B5
 S Ffixedbank$__str_8$0$0 Def00D3
 S Ffixedbank$__str_9$0$0 Def00F1
-A _INITIALIZER size 98 flags 0 addr 0
+A _INITIALIZER size BC flags 0 addr 0
 S Ffixedbank$__xinit_menus_texts$0$0 Def0056
 S Ffixedbank$__xinit_intro_texts$0$0 Def0000
 S Ffixedbank$__xinit_stats_texts$0$0 Def0014
@@ -553,13 +565,83 @@ T 34 05
 R 00 00 07 00
 T 34 05 20 20 47 52 45 41 54 45 53 54 20 57 45 41
 R 00 00 07 00
-T 42 05 50 4F 4E 20 20 4F 46 20 4F 55 52 20 20 00
+T 42 05 50 4F 4E 20 4F 46 20 4F 55 52 20 20 20 00
 R 00 00 07 00
 T 50 05
 R 00 00 07 00
 T 50 05 20 20 50 45 4F 50 4C 45 21 20 20 20 20 20
 R 00 00 07 00
 T 5E 05 20 20 20 20 20 20 20 20 20 20 20 20 20 00
+R 00 00 07 00
+T 6C 05
+R 00 00 07 00
+T 6C 05 20 53 4F 4D 45 54 49 4D 45 53 20 49 54 53
+R 00 00 07 00
+T 7A 05 20 57 49 53 45 20 54 4F 20 52 55 4E 20 00
+R 00 00 07 00
+T 88 05
+R 00 00 07 00
+T 88 05 20 41 57 41 59 20 20 20 20 20 20 20 20 20
+R 00 00 07 00
+T 96 05 20 20 20 20 20 20 20 20 20 20 20 20 20 00
+R 00 00 07 00
+T A4 05
+R 00 00 07 00
+T A4 05 20 59 4F 55 20 42 45 54 54 45 52 20 42 45
+R 00 00 07 00
+T B2 05 20 4B 4E 4F 57 4E 20 41 53 20 41 20 20 00
+R 00 00 07 00
+T C0 05
+R 00 00 07 00
+T C0 05 20 48 45 52 4F 20 54 4F 20 43 48 41 4C 4C
+R 00 00 07 00
+T CE 05 45 4E 47 45 20 4B 4F 53 43 48 45 59 20 00
+R 00 00 07 00
+T DC 05
+R 00 00 07 00
+T DC 05 20 44 49 44 20 59 4F 55 20 4B 4E 4F 57 20
+R 00 00 07 00
+T EA 05 54 48 41 54 20 57 4F 4C 56 45 53 20 20 00
+R 00 00 07 00
+T F8 05
+R 00 00 07 00
+T F8 05 20 4F 4E 4C 59 20 41 54 54 41 43 4B 20 57
+R 00 00 07 00
+T 06 06 48 45 4E 20 54 48 45 59 20 41 52 45 20 00
+R 00 00 07 00
+T 14 06
+R 00 00 07 00
+T 14 06 20 48 55 4E 47 52 59 3F 00
+R 00 00 07 00
+T 1D 06
+R 00 00 07 00
+T 1D 06 20 53 4F 4D 45 20 50 45 4F 50 4C 45 20 53
+R 00 00 07 00
+T 2B 06 41 59 20 54 48 45 59 20 53 41 57 20 20 00
+R 00 00 07 00
+T 39 06
+R 00 00 07 00
+T 39 06 20 42 41 42 41 20 59 41 47 41 20 49 4E 20
+R 00 00 07 00
+T 47 06 54 48 45 20 46 4F 52 45 53 54 2C 20 20 00
+R 00 00 07 00
+T 55 06
+R 00 00 07 00
+T 55 06 20 42 55 54 20 49 20 44 4F 4E 27 54 20 42
+R 00 00 07 00
+T 63 06 45 4C 49 45 56 45 20 54 48 45 4D 20 20 00
+R 00 00 07 00
+T 71 06
+R 00 00 07 00
+T 71 06 20 20 43 59 4B 41 2C 20 42 4C 59 41 54 21
+R 00 00 07 00
+T 7F 06 20 20 20 20 20 20 20 20 20 20 20 20 20 00
+R 00 00 07 00
+T 8D 06
+R 00 00 07 00
+T 8D 06 20 20 59 4F 55 20 46 4F 55 4E 44 20 53 4F
+R 00 00 07 00
+T 9B 06 4D 45 20 4D 4F 4E 45 59 21 20 20 20 00
 R 00 00 07 00
 T 00 00
 R 00 00 08 00
@@ -648,4 +730,16 @@ R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
 T 8C 00 C4 04 E0 04 FC 04
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
 T 92 00 18 05 34 05 50 05
+R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
+T 98 00 6C 05 88 05 78 00
+R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
+T 9E 00 A4 05 C0 05 78 00
+R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
+T A4 00 DC 05 F8 05 14 06
+R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
+T AA 00 1D 06 39 06 55 06
+R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
+T B0 00 71 06 78 00 78 00
+R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
+T B6 00 8D 06 78 00 78 00
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
