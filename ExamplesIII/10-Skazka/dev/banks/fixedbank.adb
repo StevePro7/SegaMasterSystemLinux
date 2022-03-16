@@ -1,12 +1,13 @@
 M:fixedbank
 S:G$intro_texts$0$0({20}DA10d,DG,SC:U),E,0,0
 S:G$stats_texts$0$0({16}DA8d,DG,SC:U),E,0,0
-S:G$weapons_texts$0$0({12}DA6d,DG,SC:U),E,0,0
+S:G$weapon_texts$0$0({12}DA6d,DG,SC:U),E,0,0
 S:G$shop_texts$0$0({12}DA6d,DG,SC:U),E,0,0
 S:G$main_menus$0$0({8}DA4d,DG,SC:U),E,0,0
 S:G$forests_texts$0$0({14}DA7d,DG,SC:U),E,0,0
 S:G$allover_texts$0$0({10}DA5d,DG,SC:U),E,0,0
 S:G$handler_texts$0$0({10}DA5d,DG,SC:U),E,0,0
+S:G$enemy_names$0$0({12}DA6d,DG,SC:U),E,0,0
 S:Ffixedbank$__str_0$0$0({30}DA30d,SC:S),D,0,0
 S:Ffixedbank$__str_1$0$0({30}DA30d,SC:S),D,0,0
 S:Ffixedbank$__str_2$0$0({30}DA30d,SC:S),D,0,0
@@ -53,3 +54,8 @@ S:Ffixedbank$__str_42$0$0({32}DA32d,SC:S),D,0,0
 S:Ffixedbank$__str_43$0$0({6}DA6d,SC:S),D,0,0
 S:Ffixedbank$__str_44$0$0({5}DA5d,SC:S),D,0,0
 S:Ffixedbank$__str_45$0$0({65}DA65d,SC:S),D,0,0
+S:Ffixedbank$__str_46$0$0({10}DA10d,SC:S),D,0,0
+S:Ffixedbank$__str_47$0$0({12}DA12d,SC:S),D,0,0
+S:Ffixedbank$__str_48$0$0({9}DA9d,SC:S),D,0,0
+S:Ffixedbank$__str_49$0$0({6}DA6d,SC:S),D,0,0
+S:Ffixedbank$__str_50$0$0({10}DA10d,SC:S),D,0,0

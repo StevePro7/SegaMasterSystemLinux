@@ -33,7 +33,9 @@ void main( void )
 	//open_screen_type = screen_type_func;
 	//open_screen_type = screen_type_over;
 	//open_screen_type = screen_type_menu;
+	open_screen_type = screen_type_test;
 
+	engine_player_manager_init();
 	engine_select_manager_init();
 	engine_screen_manager_init( open_screen_type );
 	devkit_SMS_displayOn();

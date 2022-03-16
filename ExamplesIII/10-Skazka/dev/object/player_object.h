@@ -9,7 +9,7 @@ typedef struct tag_struct_player_object
 	unsigned char weapon;		// Q$	ATK
 	unsigned char armor;		// W$	ARM
 	unsigned char life;			// E$
-	unsigned char calcX;		// X
+	unsigned char level;		// X
 	unsigned char max_hp;		// M
 	unsigned char max_xp;		// Y
 

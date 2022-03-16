@@ -13,6 +13,7 @@
 #include "engine/enum_manager.h"
 #include "engine/font_manager.h"
 #include "engine/input_manager.h"
+#include "engine/player_manager.h"
 #include "engine/screen_manager.h"
 #include "engine/select_manager.h"
 #include "engine/sound_manager.h"
