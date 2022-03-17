@@ -97,7 +97,6 @@ const unsigned char *forests_texts[] =
 
 const unsigned char *finish_texts[] =
 {
-	//"12345678901234567890123456789",
 	"      CONGLATURATION!!    ",
 	"", "", "",
 	"YOU HAVE COMPLETED A GREAT ",
@@ -106,16 +105,6 @@ const unsigned char *finish_texts[] =
 	"", "", "",
 	" NOW GO AND REST OUR HERO!",
 };
-
-const unsigned char *handler_texts[] =
-{
-	"THIS IS THE MOST IMPORTANT BATTLE OF  YOUR LIFE.",
-	"ARE YOU SURE YOU CAN HANDLE IT?",
-	"1)YES",
-	"2)NO",
-	"SO YOU HAVE COME TO CALLENGE ME,      FOOLISH MORTAL? VERY WELL.",
-};
-
 
 const unsigned char *villager_texts[] =
 {
@@ -162,4 +151,7 @@ extern const unsigned char *prep_texts[] =
 	"",
 	"     1)  YES",
 	"     2)  NO",
+	// TODO 
+	// "SO YOU HAVE COME TO CALLENGE ME,      FOOLISH MORTAL? VERY WELL.",
+
 };

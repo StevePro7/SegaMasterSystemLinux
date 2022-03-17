@@ -3,9 +3,7 @@
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/global_manager.h"
-#include "../engine/locale_manager.h"
-#include "../engine/player_manager.h"
-#include "../engine/select_manager.h"
+#include "../engine/input_manager.h"
 #include "../engine/text_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
@@ -14,10 +12,7 @@ static void game_over();
 
 void screen_over_screen_load()
 {
-	unsigned char row;
-
-	row = 1;
-	engine_player_manager_calc();
+	unsigned char row = 1;
 
 	devkit_SMS_displayOff();
 	engine_content_manager_load_title( row );
@@ -31,6 +26,14 @@ void screen_over_screen_load()
 
 void screen_over_screen_update( unsigned char *screen_type )
 {
+	unsigned char input1 = engine_input_manager_hold( input_type_fire1 );
+	unsigned char input2 = engine_input_manager_hold( input_type_fire2 );
+	if( input1 || input2 )
+	{
+		*screen_type = screen_type_title;
+		return;
+	}
+
 	*screen_type = screen_type_over;
 }
 
