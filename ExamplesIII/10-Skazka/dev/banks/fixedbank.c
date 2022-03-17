@@ -95,13 +95,16 @@ const unsigned char *forests_texts[] =
 	"ENEMY HP -           ",
 };
 
-const unsigned char *allover_texts[] =
+const unsigned char *finish_texts[] =
 {
-	"CONGLATURATION!!!",
-	"YOU HAVE COMPLETED A GREAT GAME",
-	"AND PROVED THE JUSTICE OF OUR CULTURE.",
-	"NOW GO AND REST OUR HERO!",
-	"PRESS ANY KEY TO END THE GAME",
+	//"12345678901234567890123456789",
+	"      CONGLATURATION!!    ",
+	"", "", "",
+	"YOU HAVE COMPLETED A GREAT ",
+	"GAME AND PROVED THE JUSTICE",
+	"OF OUR CULTURE.",
+	"", "", "",
+	" NOW GO AND REST OUR HERO!",
 };
 
 const unsigned char *handler_texts[] =
