@@ -95,17 +95,6 @@ const unsigned char *forests_texts[] =
 	"ENEMY HP -           ",
 };
 
-const unsigned char *finish_texts[] =
-{
-	"      CONGLATURATION!!    ",
-	"", "", "",
-	"YOU HAVE COMPLETED A GREAT ",
-	"GAME AND PROVED THE JUSTICE",
-	"OF OUR CULTURE.",
-	"", "", "",
-	" NOW GO AND REST OUR HERO!",
-};
-
 const unsigned char *villager_texts[] =
 {
 	"  YOU LOST SOME MONEY!     ",
@@ -154,4 +143,22 @@ extern const unsigned char *prep_texts[] =
 	// TODO 
 	// "SO YOU HAVE COME TO CALLENGE ME,      FOOLISH MORTAL? VERY WELL.",
 
+};
+
+const unsigned char *over_texts[] =
+{
+	"YOU ARE DEAD!",
+	"", "",
+	"  GAME OVER  ",
+};
+
+const unsigned char *beat_texts[] =
+{
+	"      CONGLATURATION!!    ",
+	"", "", "",
+	"YOU HAVE COMPLETED A GREAT ",
+	"GAME AND PROVED THE JUSTICE",
+	"OF OUR CULTURE.",
+	"", "", "",
+	" NOW GO AND REST OUR HERO!",
 };

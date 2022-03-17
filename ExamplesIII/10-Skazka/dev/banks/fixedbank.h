@@ -17,8 +17,10 @@ extern const unsigned char *shop_texts[];
 extern const unsigned char *villager_texts[];
 
 extern const unsigned char *menus_texts[];
-extern const unsigned char *finish_texts[];
 
 extern const unsigned char *prep_texts[];
+
+extern const unsigned char *over_texts[];
+extern const unsigned char *beat_texts[];
 
 #endif//_FIXEDBANK_H_

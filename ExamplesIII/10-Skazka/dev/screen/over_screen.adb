@@ -8,6 +8,9 @@ S:Lover_screen.screen_over_screen_update$input2$1$78({1}SC:U),R,0,0,[b]
 F:Fover_screen$game_over$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lover_screen.game_over$row$1$80({1}SC:U),R,0,0,[c]
 S:Lover_screen.game_over$idx$1$80({1}SC:U),R,0,0,[b]
+F:Fover_screen$beat_game$0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lover_screen.beat_game$row$1$83({1}SC:U),R,0,0,[c]
+S:Lover_screen.beat_game$idx$1$83({1}SC:U),R,0,0,[b]
 S:G$intro_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$stats_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$weapon_texts$0$0({0}DA0d,DG,SC:U),E,0,0
@@ -19,8 +22,9 @@ S:G$enemy_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$shop_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$villager_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$menus_texts$0$0({0}DA0d,DG,SC:U),E,0,0
-S:G$finish_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$prep_texts$0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$over_texts$0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$beat_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$engine_content_manager_load_splash$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_tiles$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_title$0$0({2}DF,SV:S),C,0,0
