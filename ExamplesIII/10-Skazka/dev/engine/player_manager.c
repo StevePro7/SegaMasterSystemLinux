@@ -118,7 +118,7 @@ void engine_player_manager_gold( char gold )
 	}
 }
 
-void engine_player_manager_hp( char hp )
+void engine_player_manager_hit( char hp )
 {
 	struct_player_object *po = &global_player_object;
 	po->hp -= hp;
@@ -130,7 +130,6 @@ void engine_player_manager_hp( char hp )
 	{
 		engine_player_manager_hplo();
 	}
-	//engine_player_manager_hplo();
 }
 
 bool engine_player_manager_dead()

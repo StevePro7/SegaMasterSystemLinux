@@ -98,3 +98,23 @@ void engine_enemy_manager_hplo()
 	struct_enemy_object *eo = &global_enemy_object;
 	engine_font_manager_data( eo->hplo, LEFT_X + 29, FIGHT_ROW + 3 );
 }
+
+void engine_enemy_manager_hit( char hp )
+{
+	struct_enemy_object *eo = &global_enemy_object;
+	eo->hplo -= hp;
+	if( eo->hplo <= 0 )
+	{
+		eo->hplo = 0;
+	}
+	else
+	{
+		engine_enemy_manager_hplo();
+	}
+}
+
+bool engine_player_manager_dead()
+{
+	struct_enemy_object *eo = &global_enemy_object;
+	return eo->hplo <= 0;
+}

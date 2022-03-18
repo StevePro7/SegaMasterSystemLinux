@@ -94,7 +94,7 @@ void screen_forest_screen_update( unsigned char *screen_type )
 			else
 			{
 				// Subtract 1x HP as cannot currently run away.
-				engine_player_manager_hp( 1 );
+				engine_player_manager_hit( 1 );
 				if( engine_player_manager_dead() )
 				{
 					*screen_type = screen_type_over;

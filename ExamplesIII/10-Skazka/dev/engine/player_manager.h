@@ -14,7 +14,7 @@ void engine_player_manager_rest();
 void engine_player_manager_draw();
 void engine_player_manager_hplo();
 void engine_player_manager_gold( char gold );
-void engine_player_manager_hp( char hp );
+void engine_player_manager_hit( char hp );
 bool engine_player_manager_dead();
 
 #endif//_PLAYER_MANAGER_H_
