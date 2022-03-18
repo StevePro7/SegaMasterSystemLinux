@@ -1,6 +1,6 @@
 ;!FILE player_manager.asm
 XL2
-H 9 areas 1AC global symbols
+H 9 areas 1AD global symbols
 M player_manager
 O -mz80
 S _weapon_texts Ref0000
@@ -11,7 +11,7 @@ S _engine_font_manager_data Ref0000
 S .__.ABS. Def0000
 S _engine_text_manager_args Ref0000
 S _devkit_SMS_mapROMBank Ref0000
-A _CODE size 242 flags 0 addr 0
+A _CODE size 243 flags 0 addr 0
 S A$player_manager$79 Def0005
 S Fplayer_manager$__str_1$0$0 Def0178
 S _engine_player_manager_gold Def01EE
@@ -28,35 +28,34 @@ S _engine_player_manager_init Def0000
 S XG$engine_player_manager_draw$0$0 Def01DC
 S XG$engine_player_manager_stats$0$0 Def0175
 S _engine_player_manager_rest Def017F
-S C$player_manager.c$130$1$90 Def0235
 S XG$engine_player_manager_hplo$0$0 Def01ED
 S C$player_manager.c$101$1$83 Def01DD
-S C$player_manager.c$131$1$90 Def0235
 S XG$engine_player_manager_init$0$0 Def001F
 S C$player_manager.c$123$1$90 Def0223
-S C$player_manager.c$133$1$90 Def0238
-S G$engine_player_manager_dead$0$0 Def0238
+S G$engine_player_manager_dead$0$0 Def0239
 S C$player_manager.c$124$1$90 Def0223
 S C$player_manager.c$110$1$86 Def01F6
 S C$player_manager.c$103$1$84 Def01DD
+S C$player_manager.c$140$1$93 Def0242
+S C$player_manager.c$134$1$90 Def0236
+S C$player_manager.c$131$2$92 Def0236
 S C$player_manager.c$125$1$90 Def022F
 S C$player_manager.c$111$1$86 Def0205
 S C$player_manager.c$104$1$84 Def01DD
 S C$player_manager.c$121$1$86 Def0223
 S C$player_manager.c$105$1$84 Def01ED
-S C$player_manager.c$135$1$92 Def0238
+S C$player_manager.c$136$1$90 Def0239
 S C$player_manager.c$107$1$84 Def01EE
 S A$player_manager$100 Def001D
-S C$player_manager.c$136$1$92 Def0238
 S C$player_manager.c$127$2$91 Def0233
 S C$player_manager.c$115$1$86 Def020F
 S C$player_manager.c$113$2$87 Def0209
 S G$engine_player_manager_calc$0$0 Def0020
 S A$player_manager$200 Def0073
-S C$player_manager.c$137$1$92 Def0241
 S A$player_manager$201 Def0075
 S A$player_manager$130 Def002E
 S A$player_manager$121 Def0020
+S C$player_manager.c$138$1$93 Def0239
 S C$player_manager.c$109$1$86 Def01F6
 S XG$engine_player_manager_rest$0$0 Def0193
 S A$player_manager$500 Def01BB
@@ -66,6 +65,7 @@ S A$player_manager$320 Def00F1
 S A$player_manager$212 Def0079
 S A$player_manager$131 Def0030
 S A$player_manager$122 Def0023
+S C$player_manager.c$139$1$93 Def0239
 S C$player_manager.c$119$1$86 Def0222
 S A$player_manager$600 Def0216
 S A$player_manager$510 Def01C8
@@ -116,7 +116,7 @@ S A$player_manager$251 Def0095
 S A$player_manager$206 Def0076
 S A$player_manager$161 Def004E
 S A$player_manager$125 Def0027
-S _engine_player_manager_dead Def0238
+S _engine_player_manager_dead Def0239
 S A$player_manager$630 Def0226
 S A$player_manager$513 Def01CC
 S A$player_manager$504 Def01C3
@@ -209,7 +209,6 @@ S A$player_manager$129 Def002C
 S C$player_manager.c$80$1$80 Def0160
 S C$player_manager.c$71$1$80 Def00E6
 S C$player_manager.c$31$1$75 Def0020
-S A$player_manager$670 Def0238
 S A$player_manager$634 Def022C
 S A$player_manager$580 Def0201
 S A$player_manager$544 Def01E1
@@ -239,7 +238,8 @@ S C$player_manager.c$50$1$75 Def0076
 S C$player_manager.c$32$1$75 Def0020
 S C$player_manager.c$15$1$74 Def0000
 S _engine_player_manager_calc Def0020
-S A$player_manager$671 Def023B
+S A$player_manager$680 Def0242
+S A$player_manager$671 Def0239
 S A$player_manager$635 Def022D
 S A$player_manager$608 Def0220
 S A$player_manager$590 Def0209
@@ -270,8 +270,7 @@ S A$player_manager$167 Def0054
 S A$player_manager$158 Def004A
 S C$player_manager.c$64$1$80 Def0099
 S C$player_manager.c$16$1$74 Def0000
-S A$player_manager$672 Def023D
-S A$player_manager$654 Def0235
+S A$player_manager$672 Def023C
 S A$player_manager$645 Def0233
 S A$player_manager$636 Def022E
 S A$player_manager$591 Def020C
@@ -303,7 +302,8 @@ S C$player_manager.c$65$1$80 Def00A6
 S C$player_manager.c$40$2$77 Def0051
 S C$player_manager.c$17$1$74 Def0005
 S C$player_manager.c$13$0$0 Def0000
-S A$player_manager$673 Def023F
+S A$player_manager$673 Def023E
+S A$player_manager$655 Def0236
 S A$player_manager$646 Def0234
 S A$player_manager$574 Def01F6
 S A$player_manager$565 Def01EE
@@ -332,6 +332,7 @@ S C$player_manager.c$41$2$77 Def0056
 S C$player_manager.c$27$1$74 Def001F
 S C$player_manager.c$18$1$74 Def000A
 S A$player_manager$674 Def0240
+S A$player_manager$647 Def0235
 S A$player_manager$629 Def0223
 S A$player_manager$584 Def0205
 S A$player_manager$575 Def01F9
@@ -354,6 +355,7 @@ S C$player_manager.c$67$1$80 Def00BA
 S C$player_manager.c$42$2$77 Def005B
 S C$player_manager.c$34$2$76 Def0033
 S C$player_manager.c$19$1$74 Def0010
+S A$player_manager$675 Def0241
 S A$player_manager$585 Def0206
 S A$player_manager$576 Def01FC
 S A$player_manager$567 Def01F4
@@ -396,7 +398,7 @@ S A$player_manager$497 Def01B5
 S A$player_manager$479 Def019B
 S A$player_manager$389 Def0153
 S A$player_manager$299 Def00D8
-S XG$engine_player_manager_dead$0$0 Def0241
+S XG$engine_player_manager_dead$0$0 Def0242
 S G$engine_player_manager_gold$0$0 Def01EE
 S C$player_manager.c$52$2$79 Def0079
 S A$player_manager$597 Def0212
@@ -404,7 +406,6 @@ S A$player_manager$579 Def0200
 S A$player_manager$498 Def01B8
 S C$player_manager.c$58$1$75 Def0089
 S C$player_manager.c$53$2$79 Def007E
-S A$player_manager$679 Def0241
 S A$player_manager$598 Def0213
 S A$player_manager$499 Def01B9
 S C$player_manager.c$96$1$83 Def0194
@@ -428,9 +429,9 @@ S A$player_manager$94 Def0015
 S A$player_manager$85 Def000D
 S G$engine_player_manager_stats$0$0 Def0089
 S A$player_manager$95 Def0018
-S XG$engine_player_manager_hp$0$0 Def0235
+S XG$engine_player_manager_hp$0$0 Def0236
 S Fplayer_manager$__str_0$0$0 Def0176
-A _DATA size A flags 0 addr 0
+A _DATA size B flags 0 addr 0
 S G$global_player_object$0$0 Def0000
 S _global_player_object Def0000
 A _INITIALIZED size 0 flags 0 addr 0
@@ -446,7 +447,7 @@ T 00 00
 R 00 00 01 00
 T 00 00
 R 00 00 00 00
-T 00 00 21 00 00 36 00 21 01 00 36 0A 21 0A 00 22
+T 00 00 21 00 00 36 00 21 01 00 36 02 21 0A 00 22
 R 00 00 00 00 00 03 01 00 00 08 01 00
 T 0E 00 02 00 21 04 00 36 00 21 05 00 36 00 21
 R 00 00 00 00 00 02 01 00 00 05 01 00 00 0A 01 00
@@ -574,9 +575,9 @@ T 23 02
 R 00 00 00 00
 T 23 02 01 01 00 0A 5F 21 02 00 39 7B 96 02 B7 C2
 R 00 00 00 00 00 03 01 00
-T 31 02 DD 01 AF 02 C3 DD 01
-R 00 00 00 00 00 02 00 00 00 07 00 00
-T 38 02
+T 31 02 DD 01 AF 02 C9 C3 DD 01
+R 00 00 00 00 00 02 00 00 00 08 00 00
+T 39 02
 R 00 00 00 00
-T 38 02 3A 01 00 D6 01 3E 00 17 6F C9
+T 39 02 3A 01 00 D6 01 3E 00 17 6F C9
 R 00 00 00 00 00 03 01 00

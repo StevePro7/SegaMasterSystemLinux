@@ -14,7 +14,7 @@ void engine_player_manager_init()
 {
 	struct_player_object *po = &global_player_object;
 	po->xp = 0;							// Z
-	po->hp = 10;						// N
+	po->hp = 2;// 10;						// N
 	po->gold = 10;						// V
 	po->weapon = weapon_type_none;		// Q$	ATK
 	po->armor = armor_type_none;		// W$	ARM
@@ -126,8 +126,11 @@ void engine_player_manager_hp( char hp )
 	{
 		po->hp = 0;
 	}
-
-	engine_player_manager_hplo();
+	else
+	{
+		engine_player_manager_hplo();
+	}
+	//engine_player_manager_hplo();
 }
 
 bool engine_player_manager_dead()

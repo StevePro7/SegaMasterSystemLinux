@@ -85,7 +85,7 @@ void screen_forest_screen_update( unsigned char *screen_type )
 		if( fight_type_run == selection )
 		{
 			value = rand() % MAX_RANDOM;
-			//value = 7;		// TODO delete
+			value = 7;		// TODO delete
 			if( value < 5 )
 			{
 				*screen_type = screen_type_stats;

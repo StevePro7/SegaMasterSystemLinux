@@ -1,11 +1,11 @@
 M:main
 F:G$main$0$0({2}DF,SV:S),C,0,0,0,0,0
 S:Lmain.main$open_screen_type$1$112({1}SC:U),R,0,0,[]
-T:Fmain$tag_struct_player_object[({0}S:S$xp$0$0({1}SC:U),Z,0,0)({1}S:S$hp$0$0({1}SC:U),Z,0,0)({2}S:S$gold$0$0({2}SI:U),Z,0,0)({4}S:S$weapon$0$0({1}SC:U),Z,0,0)({5}S:S$armor$0$0({1}SC:U),Z,0,0)({6}S:S$life$0$0({1}SC:U),Z,0,0)({7}S:S$level$0$0({1}SC:U),Z,0,0)({8}S:S$max_hp$0$0({1}SC:U),Z,0,0)({9}S:S$max_xp$0$0({1}SC:U),Z,0,0)]
-T:Fmain$tag_struct_enemy_object[({0}S:S$index$0$0({1}SC:U),Z,0,0)({1}S:S$hplo$0$0({1}SC:U),Z,0,0)({2}S:S$ax$0$0({1}SC:U),Z,0,0)({3}S:S$gldo$0$0({1}SC:U),Z,0,0)({4}S:S$xpo$0$0({1}SC:U),Z,0,0)]
+T:Fmain$tag_struct_player_object[({0}S:S$xp$0$0({1}SC:U),Z,0,0)({1}S:S$hp$0$0({1}SC:U),Z,0,0)({2}S:S$gold$0$0({2}SI:U),Z,0,0)({4}S:S$weapon$0$0({1}SC:U),Z,0,0)({5}S:S$armor$0$0({1}SC:U),Z,0,0)({6}S:S$life$0$0({1}SC:U),Z,0,0)({7}S:S$level$0$0({1}SC:U),Z,0,0)({8}S:S$max_hp$0$0({1}SC:U),Z,0,0)({9}S:S$max_xp$0$0({1}SC:U),Z,0,0)({10}S:S$damage$0$0({1}SC:U),Z,0,0)]
+T:Fmain$tag_struct_enemy_object[({0}S:S$index$0$0({1}SC:U),Z,0,0)({1}S:S$hplo$0$0({1}SC:U),Z,0,0)({2}S:S$ax$0$0({1}SC:U),Z,0,0)({3}S:S$gldo$0$0({1}SC:U),Z,0,0)({4}S:S$xpo$0$0({1}SC:U),Z,0,0)({5}S:S$damage$0$0({1}SC:U),Z,0,0)]
 T:Fmain$tag_struct_aelect_object[({0}S:S$select_index$0$0({5}DA5d,SC:U),Z,0,0)({5}S:S$select_X$0$0({1}SC:U),Z,0,0)({6}S:S$select_Y$0$0({1}SC:U),Z,0,0)({7}S:S$select_min$0$0({1}SC:U),Z,0,0)({8}S:S$select_max$0$0({1}SC:U),Z,0,0)]
-S:G$global_enemy_object$0$0({5}STtag_struct_enemy_object:S),E,0,0
-S:G$global_player_object$0$0({10}STtag_struct_player_object:S),E,0,0
+S:G$global_enemy_object$0$0({6}STtag_struct_enemy_object:S),E,0,0
+S:G$global_player_object$0$0({11}STtag_struct_player_object:S),E,0,0
 S:G$global_select_object$0$0({9}STtag_struct_aelect_object:S),E,0,0
 S:Lmain.main$global_pause$1$112({1}:S),E,0,0
 S:G$atof$0$0({2}DF,SF:S),C,0,0
