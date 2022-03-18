@@ -35,12 +35,31 @@ void screen_forest_screen_update( unsigned char *screen_type )
 	unsigned char input;
 	unsigned char selection;
 
-	input = engine_input_manager_hold( input_type_fire2 );
-	if( input )
+	//input = engine_input_manager_hold( input_type_fire2 );
+	//if( input )
+	//{
+	//	engine_font_manager_text( LOCALE_FIGHT_NOTRUN, LEFT_X + 5, FIGHT_ROW - 3 );
+	//	//engine_font_manager_text( LOCALE_FIGHT_ENEMYS, LEFT_X + 5, FIGHT_ROW - 3 );
+	//	//engine_font_manager_text( LOCALE_FIGHT_PLAYER, LEFT_X + 5, FIGHT_ROW - 2 );
+	//}
+
+	if( fight_type_select == curr_event_stage )
 	{
-		engine_font_manager_text( LOCALE_FIGHT_NOTRUN, LEFT_X + 5, FIGHT_ROW - 3 );
-		//engine_font_manager_text( LOCALE_FIGHT_ENEMYS, LEFT_X + 5, FIGHT_ROW - 3 );
-		//engine_font_manager_text( LOCALE_FIGHT_PLAYER, LEFT_X + 5, FIGHT_ROW - 2 );
+		input = engine_input_manager_hold( input_type_fire2 );
+		if( input )
+		{
+			*screen_type = screen_type_stats;
+			return;
+		}
+
+		selection = engine_select_manager_update( select_type_forest );
+		if( NO_SELECTION == selection )
+		{
+			*screen_type = screen_type_forest;
+			return;
+		}
+
+		
 	}
 
 	if( fight_type_decide == curr_event_stage )
@@ -48,26 +67,12 @@ void screen_forest_screen_update( unsigned char *screen_type )
 
 	}
 	
-	if( fight_type_select == curr_event_stage )
-	{
-		input = engine_input_manager_hold( input_type_fire2 );
-		if( input )
-		{
-
-		}
-
-		selection = engine_select_manager_update( select_type_stats );
-		if( NO_SELECTION == selection )
-		{
-			*screen_type = screen_type_forest;
-			return;
-		}
-	}
+	
 
 	*screen_type = screen_type_forest;
 }
 
-static void setup()\
+static void setup()
 {
 	unsigned char row;
 	unsigned char idx;
