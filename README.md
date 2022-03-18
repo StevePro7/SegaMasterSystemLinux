@@ -2,6 +2,19 @@
 Sega Master System code repositories for Linux
 new code added daily...!!
 
+Skazka sound effects choice
+E:\GitHub\StevePro8\SegaMasterSystemLinux\Examples\08_Music_SoundFX\dev
+
+AUDIO 
+4
+6 beep
+8	attack
+11	weird
+12	jump
+13 14 beep"
+15	hit
+16	press fire1
+22 end stage
 WavSplit
 E:\GitHub\StevePro7\Blogger\Z80\_Setup04
 
