@@ -12,8 +12,8 @@
 
 #define LEFT_X					0
 #define STATS_ROW				2
-#define ENEMY_ROW				8
-#define FIGHT_ROW				18
+#define ENEMY_ROW				9
+#define FIGHT_ROW				19
 
 #define NO_SELECTION			255
 
