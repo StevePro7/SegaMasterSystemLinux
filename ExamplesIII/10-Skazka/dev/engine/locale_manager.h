@@ -18,6 +18,7 @@
 #define LOCALE_FIGHT_MSG1		"YOUR HP -"
 #define LOCALE_FIGHT_MSG2		"ENEMY HP -"
 
+#define LOCALE_FIGHT_BLANKS		"                     "
 #define LOCALE_FIGHT_NOTRUN		"YOU COULDN'T RUN AWAY"
 #define LOCALE_FIGHT_ENEMYS		"DAMAGE TO ENEMY:     "
 #define LOCALE_FIGHT_PLAYER		"DAMAGE TO YOU:       "

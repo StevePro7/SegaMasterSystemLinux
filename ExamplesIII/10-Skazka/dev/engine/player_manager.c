@@ -117,3 +117,21 @@ void engine_player_manager_gold( char gold )
 		po->gold = MAX_GOLD;
 	}
 }
+
+void engine_player_manager_hp( char hp )
+{
+	struct_player_object *po = &global_player_object;
+	po->hp -= hp;
+	if( po->hp <= 0 )
+	{
+		po->hp = 0;
+	}
+
+	engine_player_manager_hplo();
+}
+
+bool engine_player_manager_dead()
+{
+	struct_player_object *po = &global_player_object;
+	return po->hp <= 0;
+}
