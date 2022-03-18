@@ -4,7 +4,7 @@
 #include "player_manager.h"
 #include <stdlib.h>
 
-void engine_fight_manager_fight()
+void engine_fight_manager_battle()
 {
 	struct_player_object *po = &global_player_object;
 	struct_enemy_object *eo = &global_enemy_object;

@@ -108,7 +108,12 @@ void screen_forest_screen_update( unsigned char *screen_type )
 		}
 		if( fight_type_battle == selection )
 		{
-
+			engine_fight_manager_battle();
+			if( engine_player_manager_dead() )
+			{
+				*screen_type = screen_type_over;
+				return;
+			}
 		}
 	}
 
