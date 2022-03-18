@@ -55,7 +55,7 @@ void screen_forest_screen_load()
 	engine_enemy_manager_hplo();
 
 	devkit_SMS_displayOn();
-	event_stage = fight_type_start;
+	event_stage = fight_type_select;
 }
 
 void screen_forest_screen_update( unsigned char *screen_type )
@@ -63,11 +63,12 @@ void screen_forest_screen_update( unsigned char *screen_type )
 	unsigned char input;
 	unsigned char selection;
 
-	if( fight_type_run == event_stage )
+	if( fight_type_decide == event_stage )
 	{
 
 	}
-	else if( fight_type_start == event_stage )
+	
+	if( fight_type_select == event_stage )
 	{
 		input = engine_input_manager_hold( input_type_fire2 );
 		if( input )

@@ -122,3 +122,61 @@ need override for scrolling that can draw any checkpoint in level plus one scree
 strips
 E:\GitHub\StevePro8\SegaMasterSystemLinux\TurtleBridge\utils\25-BuildAllTileMaps_Image02\
 copy all tiles files as input and iterate and produce corresponding strips images for level output design
+
+
+
+18/03/2022
+select
+decide
+advance?
+
+if event_stage == select
+
+if selection != INVALID
+event_stage = decide
+
+if event_stage == decide
+
+if selection == run
+
+if rand() % 2 == 0
+	screen = stats
+	return
+else
+	print "cant run"
+	prev_es = evt_stg
+	event_stage =  advance
+end
+
+else
+if selection == fight
+	fight_manager_update()
+
+	check if enemy dead then print msg
+	prev_es = evt_stg
+	event_stage = advance
+	
+	check if player dead then
+		screen = over
+		return
+	end
+	
+end
+
+if event_stage == advance
+	check press fire1 || fire2
+	
+
+	if fire1 || fire2 then
+		remove "cant run" text unconditionally
+			if prev_es == decide then es = select && screen = fight
+			if prev_es == fight then es = N/A && screen = stats
+end
+
+
+
+
+boss
+print text
+
+select
