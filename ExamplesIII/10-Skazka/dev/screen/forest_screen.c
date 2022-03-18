@@ -44,11 +44,11 @@ void screen_forest_screen_load()
 void screen_forest_screen_update( unsigned char *screen_type )
 {
 	unsigned char input;
-	//unsigned char value;
+	unsigned char value;
 	//unsigned char selection = 0;
 
-	unsigned char e_damage = 0;
-	unsigned char p_damage = 0;
+	//unsigned char enemys_damage = 0;
+	//unsigned char player_damage = 0;
 
 	if( forest_type_pushon == curr_event_stage )
 	{
@@ -106,7 +106,6 @@ void screen_forest_screen_update( unsigned char *screen_type )
 			return;
 		}
 
-		//engine_font_manager_data( selection, 20, 20 );
 		prev_selection = curr_selection;
 
 		prev_event_stage = curr_event_stage;
@@ -115,45 +114,45 @@ void screen_forest_screen_update( unsigned char *screen_type )
 
 	if( forest_type_decide == curr_event_stage )
 	{
-		//if( fight_type_run == curr_selection )
-		//{
-		//	value = rand() % MAX_RANDOM;
-		//	value = 7;		// TODO delete
-		//	if( value < 5 )
-		//	{
-		//		*screen_type = screen_type_stats;
-		//		return;
-		//	}
-		//	else
-		//	{
-		//		// Subtract 1x HP as cannot currently run away.
-		//		engine_player_manager_hit( 1 );
-		//		if( engine_player_manager_dead() )
-		//		{
-		//			*screen_type = screen_type_over;
-		//			return;
-		//		}
+		if( fight_type_run == curr_selection )
+		{
+			value = rand() % MAX_RANDOM;
+			value = 7;		// TODO delete
+			if( value < 5 )
+			{
+				*screen_type = screen_type_stats;
+				return;
+			}
+			else
+			{
+				// Subtract 1x HP as cannot currently run away.
+				engine_player_manager_hit( 1 );
+				if( engine_player_manager_dead() )
+				{
+					*screen_type = screen_type_over;
+					return;
+				}
 
-		//		engine_font_manager_text( LOCALE_FIGHT_NOTRUN, LEFT_X + 5, FIGHT_ROW - 3 );
-		//		prev_event_stage = curr_event_stage;
-		//		curr_event_stage = forest_type_pushon;
-		//	}
-		//}
+				engine_font_manager_text( LOCALE_FIGHT_NOTRUN, LEFT_X + 5, FIGHT_ROW - 3 );
+				prev_event_stage = curr_event_stage;
+				curr_event_stage = forest_type_pushon;
+			}
+		}
 		if( fight_type_battle == curr_selection )
 		{
-			engine_fight_manager_battle( &e_damage, &p_damage );
+			engine_fight_manager_battle( &enemys_damage, &player_damage );
 
 			engine_font_manager_text( LOCALE_FIGHT_ENEMYS, LEFT_X + 5, FIGHT_ROW - 3 );
 			engine_font_manager_text( LOCALE_FIGHT_PLAYER, LEFT_X + 5, FIGHT_ROW - 2 );
 
-			engine_font_manager_data( e_damage, LEFT_X + 23, FIGHT_ROW - 3 );
-			engine_font_manager_data( p_damage, LEFT_X + 23, FIGHT_ROW - 2 );
+			engine_font_manager_data( enemys_damage, LEFT_X + 23, FIGHT_ROW - 3 );
+			engine_font_manager_data( player_damage, LEFT_X + 23, FIGHT_ROW - 2 );
 
 			prev_event_stage = curr_event_stage;
 			curr_event_stage = forest_type_pushon;
 
-			enemys_damage = e_damage;
-			player_damage = p_damage;
+			//enemys_damage = enemys_damage;
+			//player_damage = player_damage;
 		}
 	}
 
