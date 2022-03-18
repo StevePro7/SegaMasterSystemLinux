@@ -58,8 +58,8 @@ void engine_fight_manager_battle( unsigned char *e_damage, unsigned char *p_dama
 		*p_damage = 4 + eo->ax;
 	}
 
-	*e_damage = 0;
-	*p_damage = 4;
+	*e_damage = 7;
+	*p_damage = 2;
 
 	*p_damage += po->armor;
 	//engine_enemy_manager_hit( e_damage );

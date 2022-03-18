@@ -4,7 +4,7 @@ S:Lforest_screen.screen_forest_screen_load$po$1$103({2}DG,STtag_struct_player_ob
 F:G$screen_forest_screen_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lforest_screen.screen_forest_screen_update$screen_type$1$104({2}DG,SC:U),B,1,4
 S:Lforest_screen.screen_forest_screen_update$input$1$105({1}SC:U),R,0,0,[l]
-S:Lforest_screen.screen_forest_screen_update$value$1$105({1}SC:U),R,0,0,[]
+S:Lforest_screen.screen_forest_screen_update$value$1$105({1}SC:U),R,0,0,[l]
 F:Fforest_screen$setup$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lforest_screen.setup$row$1$120({1}SC:U),R,0,0,[c]
 S:Lforest_screen.setup$idx$1$120({1}SC:U),R,0,0,[b]

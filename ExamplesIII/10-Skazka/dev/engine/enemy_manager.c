@@ -102,15 +102,26 @@ void engine_enemy_manager_hplo()
 void engine_enemy_manager_hit( char hp )
 {
 	struct_enemy_object *eo = &global_enemy_object;
-	eo->hplo -= hp;
-	if( eo->hplo <= 0 )
+	if( eo->hplo > hp )
 	{
-		eo->hplo = 0;
+		eo->hplo -= hp;
+		engine_enemy_manager_hplo();
 	}
 	else
 	{
-		engine_enemy_manager_hplo();
+		eo->hplo = 0;
 	}
+
+
+	//eo->hplo -= hp;
+	//if( eo->hplo <= 0 )
+	//{
+	//	eo->hplo = 0;
+	//}
+	//else
+	//{
+	//	engine_enemy_manager_hplo();
+	//}
 }
 
 bool engine_enemy_manager_dead()

@@ -68,6 +68,7 @@ void screen_forest_screen_update( unsigned char *screen_type )
 
 				if( engine_enemy_manager_dead() )
 				{
+					engine_font_manager_text( "ENEMY", 20, 20 );
 					//*screen_type = screen_type_over;
 					return;
 				}

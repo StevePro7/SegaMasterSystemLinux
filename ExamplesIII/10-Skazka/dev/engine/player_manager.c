@@ -131,16 +131,6 @@ void engine_player_manager_hit( char hp )
 	{
 		po->hp = 0;
 	}
-
-	//po->hp -= hp;
-	//if( po->hp < 0 )
-	//{
-	//	po->hp = 0;
-	//}
-	//else
-	//{
-	//	engine_player_manager_hplo();
-	//}
 }
 
 bool engine_player_manager_dead()
