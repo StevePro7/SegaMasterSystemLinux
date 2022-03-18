@@ -14,8 +14,13 @@
 #include "../banks/fixedbank.h"
 #include <stdlib.h>
 
+static unsigned char curr_selection;
+static unsigned char prev_selection;
+
 static unsigned char curr_event_stage;
 static unsigned char prev_event_stage;
+static unsigned char enemys_damage;
+static unsigned char player_damage;
 static void setup();
 
 void screen_forest_screen_load()
@@ -27,15 +32,23 @@ void screen_forest_screen_load()
 	setup();
 	devkit_SMS_displayOn();
 
+	curr_selection = 0;
+	prev_selection = 0;
 	curr_event_stage = forest_type_select;
 	prev_event_stage = curr_event_stage;
+
+	enemys_damage = 0;
+	player_damage = 0;
 }
 
 void screen_forest_screen_update( unsigned char *screen_type )
 {
 	unsigned char input;
-	unsigned char value;
-	unsigned char selection;
+	//unsigned char value;
+	//unsigned char selection = 0;
+
+	unsigned char e_damage = 0;
+	unsigned char p_damage = 0;
 
 	//input = engine_input_manager_hold( input_type_fire2 );
 	//if( input )
@@ -47,12 +60,37 @@ void screen_forest_screen_update( unsigned char *screen_type )
 
 	if( forest_type_pushon == curr_event_stage )
 	{
+		//engine_font_manager_data( enemys_damage, 20, 20 );
+		//engine_font_manager_data( player_damage, 20, 21 );
+
 		input = engine_input_manager_hold( input_type_fire1 );
 		if( input )
 		{
 			engine_font_manager_text( LOCALE_FIGHT_BLANKS, LEFT_X + 5, FIGHT_ROW - 3 );
-			if( forest_type_decide == prev_event_stage )
+			engine_font_manager_text( LOCALE_FIGHT_BLANKS, LEFT_X + 5, FIGHT_ROW - 2 );
+
+			if( fight_type_run == curr_selection )
 			{
+				curr_event_stage = forest_type_select;
+				*screen_type = screen_type_forest;
+				return;
+			}
+			else if( fight_type_battle == curr_selection )
+			{
+				engine_enemy_manager_hit( enemys_damage );
+				engine_player_manager_hit( player_damage );
+
+				if( engine_enemy_manager_dead() )
+				{
+					//*screen_type = screen_type_over;
+					return;
+				}
+				if( engine_player_manager_dead() )
+				{
+					*screen_type = screen_type_over;
+					return;
+				}
+
 				curr_event_stage = forest_type_select;
 				*screen_type = screen_type_forest;
 				return;
@@ -69,12 +107,15 @@ void screen_forest_screen_update( unsigned char *screen_type )
 			return;
 		}
 
-		selection = engine_select_manager_update( select_type_forest );
-		if( NO_SELECTION == selection )
+		curr_selection = engine_select_manager_update( select_type_forest );
+		if( NO_SELECTION == curr_selection )
 		{
 			*screen_type = screen_type_forest;
 			return;
 		}
+
+		//engine_font_manager_data( selection, 20, 20 );
+		prev_selection = curr_selection;
 
 		prev_event_stage = curr_event_stage;
 		curr_event_stage = forest_type_decide;
@@ -82,41 +123,47 @@ void screen_forest_screen_update( unsigned char *screen_type )
 
 	if( forest_type_decide == curr_event_stage )
 	{
-		if( fight_type_run == selection )
-		{
-			value = rand() % MAX_RANDOM;
-			value = 7;		// TODO delete
-			if( value < 5 )
-			{
-				*screen_type = screen_type_stats;
-				return;
-			}
-			else
-			{
-				// Subtract 1x HP as cannot currently run away.
-				engine_player_manager_hit( 1 );
-				if( engine_player_manager_dead() )
-				{
-					*screen_type = screen_type_over;
-					return;
-				}
+		//if( fight_type_run == curr_selection )
+		//{
+		//	value = rand() % MAX_RANDOM;
+		//	value = 7;		// TODO delete
+		//	if( value < 5 )
+		//	{
+		//		*screen_type = screen_type_stats;
+		//		return;
+		//	}
+		//	else
+		//	{
+		//		// Subtract 1x HP as cannot currently run away.
+		//		engine_player_manager_hit( 1 );
+		//		if( engine_player_manager_dead() )
+		//		{
+		//			*screen_type = screen_type_over;
+		//			return;
+		//		}
 
-				engine_font_manager_text( LOCALE_FIGHT_NOTRUN, LEFT_X + 5, FIGHT_ROW - 3 );
-				prev_event_stage = curr_event_stage;
-				curr_event_stage = forest_type_pushon;
-			}
-		}
-		if( fight_type_battle == selection )
+		//		engine_font_manager_text( LOCALE_FIGHT_NOTRUN, LEFT_X + 5, FIGHT_ROW - 3 );
+		//		prev_event_stage = curr_event_stage;
+		//		curr_event_stage = forest_type_pushon;
+		//	}
+		//}
+		if( fight_type_battle == curr_selection )
 		{
-			engine_fight_manager_battle();
-			if( engine_player_manager_dead() )
-			{
-				*screen_type = screen_type_over;
-				return;
-			}
+			engine_fight_manager_battle( &e_damage, &p_damage );
+
+			engine_font_manager_text( LOCALE_FIGHT_ENEMYS, LEFT_X + 5, FIGHT_ROW - 3 );
+			engine_font_manager_text( LOCALE_FIGHT_PLAYER, LEFT_X + 5, FIGHT_ROW - 2 );
+
+			engine_font_manager_data( e_damage, LEFT_X + 23, FIGHT_ROW - 3 );
+			engine_font_manager_data( p_damage, LEFT_X + 23, FIGHT_ROW - 2 );
+
+			prev_event_stage = curr_event_stage;
+			curr_event_stage = forest_type_pushon;
+
+			enemys_damage = e_damage;
+			player_damage = p_damage;
 		}
 	}
-
 
 	*screen_type = screen_type_forest;
 }
