@@ -113,7 +113,7 @@ void engine_enemy_manager_hit( char hp )
 	}
 }
 
-bool engine_player_manager_dead()
+bool engine_enemy_manager_dead()
 {
 	struct_enemy_object *eo = &global_enemy_object;
 	return eo->hplo <= 0;
