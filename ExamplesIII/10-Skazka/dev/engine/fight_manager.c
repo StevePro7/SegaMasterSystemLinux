@@ -66,7 +66,11 @@ void engine_fight_manager_battle( unsigned char *e_damage, unsigned char *p_dama
 	//engine_player_manager_hit( p_damage + po->armor );
 }
 
-void engine_fight_manager_draw()
+void engine_fight_manager_gold( unsigned char *p_xp, unsigned char *p_gold )
 {
+	struct_player_object *po = &global_player_object;
+	struct_enemy_object *eo = &global_enemy_object;
 
+	*p_xp = eo->xpo;
+	*p_gold = eo->gldo;
 }

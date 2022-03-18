@@ -2,8 +2,6 @@ M:func_screen
 F:G$screen_func_screen_load$0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_func_screen_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lfunc_screen.screen_func_screen_update$screen_type$1$75({2}DG,SC:U),B,1,4
-F:Ffunc_screen$section04$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lfunc_screen.section04$row$1$77({1}SC:U),R,0,0,[]
 S:G$engine_content_manager_load_splash$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_tiles$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_title$0$0({2}DF,SV:S),C,0,0
@@ -138,3 +136,4 @@ S:G$devkit_SMS_addSprite_bulk8$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_addSprite_bulk12$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_setTilePriority$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_isCollisionDetected$0$0({2}DF,SC:U),C,0,0
+S:Ffunc_screen$section04$0$0({2}DF,SV:S),C,0,0

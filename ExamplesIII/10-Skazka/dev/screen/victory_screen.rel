@@ -1,0 +1,57 @@
+;!FILE victory_screen.asm
+XL2
+H 9 areas 1D global symbols
+M victory_screen
+O -mz80
+S _engine_font_manager_text Ref0000
+S .__.ABS. Def0000
+A _CODE size 26 flags 0 addr 0
+S G$screen_victory_screen_update$0$0 Def001F
+S _screen_victory_screen_update Def001F
+S XG$screen_victory_screen_update$0$0 Def0025
+S C$victory_screen.c$10$1$6 Def001F
+S A$victory_screen$60 Def0007
+S A$victory_screen$61 Def0008
+S C$victory_screen.c$12$1$8 Def001F
+S A$victory_screen$62 Def000B
+S C$victory_screen.c$13$1$8 Def0025
+S G$screen_victory_screen_load$0$0 Def0000
+S A$victory_screen$63 Def000C
+S A$victory_screen$57 Def0000
+S A$victory_screen$94 Def0025
+S A$victory_screen$85 Def001F
+S A$victory_screen$58 Def0003
+S A$victory_screen$86 Def0020
+S A$victory_screen$68 Def000D
+S A$victory_screen$59 Def0004
+S A$victory_screen$87 Def0021
+S Fvictory_screen$__str_0$0$0 Def000E
+S A$victory_screen$88 Def0022
+S C$victory_screen.c$5$0$0 Def0000
+S A$victory_screen$89 Def0023
+S _screen_victory_screen_load Def0000
+S C$victory_screen.c$7$1$6 Def0000
+S C$victory_screen.c$8$1$6 Def000D
+S XG$screen_victory_screen_load$0$0 Def000D
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 21 0A 02 E5 21 0E 00 E5 CD 00 00 F1 F1 C9
+R 00 00 00 00 00 07 00 00 02 0B 00 00
+T 0E 00
+R 00 00 00 00
+T 0E 00 56 49 43 54 4F 52 59 20 53 43 52 45 45 4E
+R 00 00 00 00
+T 1C 00 21 21 00
+R 00 00 00 00
+T 1F 00
+R 00 00 00 00
+T 1F 00 C1 E1 E5 C5 36 06 C9
+R 00 00 00 00

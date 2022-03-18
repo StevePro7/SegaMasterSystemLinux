@@ -20,6 +20,7 @@ void engine_player_manager_init()
 	po->weapon = weapon_type_none;		// Q$	ATK
 	po->armor = armor_type_none;		// W$	ARM
 	po->life = life_type_none;			// E$	UP
+	po->won = 0;
 
 	// TODO delete
 	//po->weapon = 2;
@@ -105,9 +106,17 @@ void engine_player_manager_hplo()
 	engine_font_manager_data( po->hp, LEFT_X + 14, FIGHT_ROW + 3 );
 }
 
-void engine_player_manager_gold( char gold )
+void engine_player_manager_gold( unsigned char xp, unsigned char gold )
 {
 	struct_player_object *po = &global_player_object;
+	po->won = gold;
+
+	po->xp += xp;
+	if( po->xp >= MAX_XP )
+	{
+		po->xp = MAX_XP;
+	}
+
 	po->gold += gold;
 	if( po->gold <= 0 )
 	{

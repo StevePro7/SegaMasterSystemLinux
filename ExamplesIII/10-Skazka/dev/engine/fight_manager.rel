@@ -1,6 +1,6 @@
 ;!FILE fight_manager.asm
 XL2
-H 9 areas C3 global symbols
+H 9 areas D6 global symbols
 M fight_manager
 O -mz80
 S _rand Ref0000
@@ -8,27 +8,26 @@ S _global_player_object Ref0000
 S .__.ABS. Def0000
 S _global_enemy_object Ref0000
 S __modsint Ref0000
-A _CODE size EE flags 0 addr 0
+A _CODE size 110 flags 0 addr 0
 S A$fight_manager$92 Def0027
 S A$fight_manager$74 Def0018
 S A$fight_manager$56 Def0006
 S A$fight_manager$93 Def0028
 S A$fight_manager$75 Def0019
 S A$fight_manager$57 Def0008
-S G$engine_fight_manager_draw$0$0 Def00ED
 S A$fight_manager$85 Def0021
 S A$fight_manager$76 Def001A
 S A$fight_manager$86 Def0022
 S A$fight_manager$68 Def000C
-S C$fight_manager.c$9$1$27 Def0009
 S A$fight_manager$87 Def0024
 S A$fight_manager$69 Def000D
+S C$fight_manager.c$9$1$28 Def0009
+S _engine_fight_manager_gold Def00ED
 S A$fight_manager$98 Def002A
 S A$fight_manager$99 Def002B
 S C$fight_manager.c$7$0$0 Def0000
-S _engine_fight_manager_draw Def00ED
 S G$engine_fight_manager_battle$0$0 Def0000
-S XG$engine_fight_manager_draw$0$0 Def00ED
+S XG$engine_fight_manager_gold$0$0 Def010F
 S _engine_fight_manager_battle Def0000
 S A$fight_manager$100 Def002D
 S A$fight_manager$110 Def0037
@@ -43,15 +42,16 @@ S A$fight_manager$203 Def0099
 S A$fight_manager$140 Def0053
 S A$fight_manager$131 Def0048
 S A$fight_manager$104 Def002F
-S C$fight_manager.c$31$2$31 Def004D
-S A$fight_manager$321 Def00ED
+S C$fight_manager.c$23$2$30 Def002F
+S A$fight_manager$330 Def00FF
 S A$fight_manager$240 Def00B8
 S A$fight_manager$231 Def00B1
 S A$fight_manager$204 Def009A
 S A$fight_manager$132 Def0049
 S A$fight_manager$123 Def0040
 S A$fight_manager$105 Def0032
-S C$fight_manager.c$10$1$27 Def0009
+S C$fight_manager.c$31$2$32 Def004D
+S A$fight_manager$331 Def0102
 S A$fight_manager$304 Def00EC
 S A$fight_manager$250 Def00C1
 S A$fight_manager$232 Def00B2
@@ -62,6 +62,10 @@ S A$fight_manager$151 Def005A
 S A$fight_manager$133 Def004B
 S A$fight_manager$124 Def0043
 S A$fight_manager$106 Def0033
+S C$fight_manager.c$10$1$28 Def0009
+S A$fight_manager$332 Def0105
+S A$fight_manager$323 Def00F5
+S A$fight_manager$314 Def00ED
 S A$fight_manager$260 Def00C9
 S A$fight_manager$251 Def00C2
 S A$fight_manager$233 Def00B3
@@ -72,7 +76,9 @@ S A$fight_manager$161 Def0065
 S A$fight_manager$152 Def005D
 S A$fight_manager$125 Def0045
 S A$fight_manager$107 Def0034
-S C$fight_manager.c$21$1$27 Def002A
+S A$fight_manager$333 Def0108
+S A$fight_manager$324 Def00F8
+S A$fight_manager$315 Def00EF
 S A$fight_manager$270 Def00D2
 S A$fight_manager$252 Def00C3
 S A$fight_manager$225 Def00AB
@@ -83,9 +89,12 @@ S A$fight_manager$153 Def005F
 S A$fight_manager$126 Def0046
 S A$fight_manager$117 Def003B
 S A$fight_manager$108 Def0035
-S C$fight_manager.c$42$2$33 Def008E
-S C$fight_manager.c$40$1$27 Def0089
-S C$fight_manager.c$27$2$30 Def0040
+S C$fight_manager.c$72$1$40 Def00F5
+S C$fight_manager.c$21$1$28 Def002A
+S A$fight_manager$343 Def010F
+S A$fight_manager$334 Def0109
+S A$fight_manager$325 Def00FB
+S A$fight_manager$316 Def00F3
 S A$fight_manager$271 Def00D3
 S A$fight_manager$253 Def00C4
 S A$fight_manager$244 Def00BA
@@ -98,8 +107,11 @@ S A$fight_manager$163 Def006B
 S A$fight_manager$145 Def0055
 S A$fight_manager$118 Def003C
 S A$fight_manager$109 Def0036
-S C$fight_manager.c$50$2$35 Def00A9
-S C$fight_manager.c$35$2$32 Def005A
+S C$fight_manager.c$42$2$34 Def008E
+S C$fight_manager.c$40$1$28 Def0089
+S C$fight_manager.c$27$2$31 Def0040
+S A$fight_manager$335 Def010A
+S A$fight_manager$326 Def00FE
 S A$fight_manager$290 Def00DE
 S A$fight_manager$272 Def00D4
 S A$fight_manager$245 Def00BB
@@ -111,8 +123,10 @@ S A$fight_manager$164 Def006E
 S A$fight_manager$146 Def0056
 S A$fight_manager$137 Def004D
 S A$fight_manager$119 Def003E
-S C$fight_manager.c$42$1$27 Def007D
-S C$fight_manager.c$33$1$27 Def0055
+S C$fight_manager.c$74$1$40 Def00F5
+S C$fight_manager.c$50$2$36 Def00A9
+S C$fight_manager.c$35$2$33 Def005A
+S A$fight_manager$336 Def010B
 S A$fight_manager$291 Def00DF
 S A$fight_manager$282 Def00D8
 S A$fight_manager$264 Def00CB
@@ -124,10 +138,10 @@ S A$fight_manager$183 Def0089
 S A$fight_manager$165 Def006F
 S A$fight_manager$147 Def0058
 S A$fight_manager$138 Def0050
-S C$fight_manager.c$61$1$27 Def00D5
-S C$fight_manager.c$52$1$27 Def00B5
-S C$fight_manager.c$25$1$27 Def003B
-S C$fight_manager.c$16$1$27 Def000C
+S C$fight_manager.c$75$1$40 Def00FF
+S C$fight_manager.c$42$1$28 Def007D
+S C$fight_manager.c$33$1$28 Def0055
+S A$fight_manager$337 Def010C
 S A$fight_manager$292 Def00E2
 S A$fight_manager$283 Def00D9
 S A$fight_manager$265 Def00CC
@@ -137,10 +151,12 @@ S A$fight_manager$229 Def00AF
 S A$fight_manager$184 Def008A
 S A$fight_manager$166 Def0072
 S A$fight_manager$139 Def0052
-S C$fight_manager.c$62$1$27 Def00D8
-S C$fight_manager.c$44$1$27 Def0094
-S C$fight_manager.c$23$2$29 Def002F
-S C$fight_manager.c$17$1$27 Def0021
+S C$fight_manager.c$76$1$40 Def010F
+S C$fight_manager.c$61$1$28 Def00D5
+S C$fight_manager.c$52$1$28 Def00B5
+S C$fight_manager.c$25$1$28 Def003B
+S C$fight_manager.c$16$1$28 Def000C
+S A$fight_manager$338 Def010D
 S A$fight_manager$293 Def00E3
 S A$fight_manager$284 Def00DA
 S A$fight_manager$266 Def00CD
@@ -150,8 +166,9 @@ S A$fight_manager$185 Def008C
 S A$fight_manager$176 Def007D
 S A$fight_manager$167 Def0075
 S A$fight_manager$158 Def0060
-S C$fight_manager.c$72$1$27 Def00ED
-S C$fight_manager.c$46$2$34 Def0099
+S C$fight_manager.c$62$1$28 Def00D8
+S C$fight_manager.c$44$1$28 Def0094
+S C$fight_manager.c$17$1$28 Def0021
 S A$fight_manager$294 Def00E4
 S A$fight_manager$267 Def00CE
 S A$fight_manager$258 Def00C6
@@ -159,36 +176,38 @@ S A$fight_manager$249 Def00BF
 S A$fight_manager$177 Def0080
 S A$fight_manager$168 Def0076
 S A$fight_manager$159 Def0061
-S C$fight_manager.c$64$1$27 Def00DC
-S C$fight_manager.c$54$2$36 Def00BA
-S C$fight_manager.c$19$1$27 Def001B
+S C$fight_manager.c$46$2$35 Def0099
 S A$fight_manager$295 Def00E5
 S A$fight_manager$277 Def00D5
 S A$fight_manager$268 Def00CF
 S A$fight_manager$259 Def00C7
 S A$fight_manager$178 Def0083
 S A$fight_manager$169 Def0079
-S C$fight_manager.c$56$1$27 Def00C6
-S C$fight_manager.c$29$1$27 Def0048
+S C$fight_manager.c$64$1$28 Def00DC
+S C$fight_manager.c$54$2$37 Def00BA
+S C$fight_manager.c$19$1$28 Def001B
 S A$fight_manager$296 Def00E6
 S A$fight_manager$278 Def00D7
 S A$fight_manager$269 Def00D0
 S A$fight_manager$197 Def0094
 S A$fight_manager$179 Def0086
-S C$fight_manager.c$48$1$27 Def00A4
-S C$fight_manager.c$39$1$27 Def0060
-S C$fight_manager.c$19$2$28 Def0026
+S C$fight_manager.c$56$1$28 Def00C6
+S C$fight_manager.c$29$1$28 Def0048
 S A$fight_manager$297 Def00E7
 S A$fight_manager$288 Def00DC
 S A$fight_manager$198 Def0095
 S A$fight_manager$189 Def008E
-S C$fight_manager.c$67$1$27 Def00EC
+S C$fight_manager.c$48$1$28 Def00A4
+S C$fight_manager.c$39$1$28 Def0060
+S C$fight_manager.c$19$2$29 Def0026
 S A$fight_manager$298 Def00E8
 S A$fight_manager$289 Def00DD
 S A$fight_manager$199 Def0097
+S C$fight_manager.c$67$1$28 Def00EC
 S A$fight_manager$299 Def00EA
-S C$fight_manager.c$69$1$27 Def00ED
-S C$fight_manager.c$58$2$37 Def00CB
+S G$engine_fight_manager_gold$0$0 Def00ED
+S C$fight_manager.c$69$1$28 Def00ED
+S C$fight_manager.c$58$2$38 Def00CB
 S A$fight_manager$70 Def0010
 S A$fight_manager$80 Def001B
 S A$fight_manager$71 Def0013
@@ -275,5 +294,9 @@ T E3 00 79 83 E1 E5 77 DD F9 DD E1 C9
 R 00 00 00 00
 T ED 00
 R 00 00 00 00
-T ED 00 C9
+T ED 00 DD E5 DD 21 00 00 DD 39 DD 4E 04 DD 46 05
+R 00 00 00 00
+T FB 00 3A 04 00 02 DD 4E 06 DD 46 07 21 00 00 23
+R 00 00 00 00 02 03 03 00 02 0D 03 00
+T 09 01 23 23 7E 02 DD E1 C9
 R 00 00 00 00

@@ -18,9 +18,10 @@ static unsigned char curr_selection;
 static unsigned char prev_selection;
 
 static unsigned char curr_event_stage;
-static unsigned char prev_event_stage;
+//static unsigned char prev_event_stage;
 static unsigned char enemys_damage;
 static unsigned char player_damage;
+static unsigned char player_gold;
 static void setup();
 
 void screen_forest_screen_load()
@@ -35,16 +36,18 @@ void screen_forest_screen_load()
 	curr_selection = 0;
 	prev_selection = 0;
 	curr_event_stage = forest_type_select;
-	prev_event_stage = curr_event_stage;
+	//prev_event_stage = curr_event_stage;
 
 	enemys_damage = 0;
 	player_damage = 0;
+	player_gold = 0;
 }
 
 void screen_forest_screen_update( unsigned char *screen_type )
 {
 	unsigned char input;
 	unsigned char value;
+	unsigned char xp = 0;
 	//unsigned char selection = 0;
 
 	//unsigned char enemys_damage = 0;
@@ -68,10 +71,11 @@ void screen_forest_screen_update( unsigned char *screen_type )
 
 				if( engine_enemy_manager_dead() )
 				{
-					engine_font_manager_text( "ENEMY", 20, 20 );
-					//*screen_type = screen_type_over;
+					engine_fight_manager_gold( &xp, &player_gold );
+					*screen_type = screen_type_victory;
 					return;
 				}
+
 				if( engine_player_manager_dead() )
 				{
 					*screen_type = screen_type_over;
@@ -131,7 +135,7 @@ void screen_forest_screen_update( unsigned char *screen_type )
 
 		prev_selection = curr_selection;
 
-		prev_event_stage = curr_event_stage;
+		//prev_event_stage = curr_event_stage;
 		curr_event_stage = forest_type_decide;
 	}
 
@@ -157,7 +161,7 @@ void screen_forest_screen_update( unsigned char *screen_type )
 				}
 
 				engine_font_manager_text( LOCALE_FIGHT_NOTRUN, LEFT_X + 5, FIGHT_ROW - 3 );
-				prev_event_stage = curr_event_stage;
+				//prev_event_stage = curr_event_stage;
 				curr_event_stage = forest_type_pushon;
 			}
 		}
@@ -171,7 +175,7 @@ void screen_forest_screen_update( unsigned char *screen_type )
 			engine_font_manager_data( enemys_damage, LEFT_X + 23, FIGHT_ROW - 3 );
 			engine_font_manager_data( player_damage, LEFT_X + 23, FIGHT_ROW - 2 );
 
-			prev_event_stage = curr_event_stage;
+			//prev_event_stage = curr_event_stage;
 			curr_event_stage = forest_type_pushon;
 
 			//enemys_damage = enemys_damage;

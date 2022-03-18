@@ -23,7 +23,7 @@ typedef struct tag_struct_player_object
 	unsigned char level;		// X
 	unsigned char max_hp;		// M
 	unsigned char max_xp;		// Y
-	//unsigned char damage;
+	unsigned char won;
 
 } struct_player_object;
 
