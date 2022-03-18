@@ -61,13 +61,7 @@ void screen_forest_screen_update( unsigned char *screen_type )
 			engine_font_manager_text( LOCALE_FIGHT_BLANKS, LEFT_X + 5, FIGHT_ROW - 3 );
 			engine_font_manager_text( LOCALE_FIGHT_BLANKS, LEFT_X + 5, FIGHT_ROW - 2 );
 
-			if( fight_type_run == curr_selection )
-			{
-				curr_event_stage = forest_type_select;
-				*screen_type = screen_type_forest;
-				return;
-			}
-			else if( fight_type_battle == curr_selection )
+			if( fight_type_battle == curr_selection )
 			{
 				engine_enemy_manager_hit( enemys_damage );
 				engine_player_manager_hit( player_damage );
@@ -82,11 +76,39 @@ void screen_forest_screen_update( unsigned char *screen_type )
 					*screen_type = screen_type_over;
 					return;
 				}
-
-				curr_event_stage = forest_type_select;
-				*screen_type = screen_type_forest;
-				return;
 			}
+
+			curr_event_stage = forest_type_select;
+			*screen_type = screen_type_forest;
+			return;
+
+
+			//if( fight_type_run == curr_selection )
+			//{
+			//	curr_event_stage = forest_type_select;
+			//	*screen_type = screen_type_forest;
+			//	return;
+			//}
+			//else if( fight_type_battle == curr_selection )
+			//{
+			//	engine_enemy_manager_hit( enemys_damage );
+			//	engine_player_manager_hit( player_damage );
+
+			//	if( engine_enemy_manager_dead() )
+			//	{
+			//		//*screen_type = screen_type_over;
+			//		return;
+			//	}
+			//	if( engine_player_manager_dead() )
+			//	{
+			//		*screen_type = screen_type_over;
+			//		return;
+			//	}
+
+			//	curr_event_stage = forest_type_select;
+			//	*screen_type = screen_type_forest;
+			//	return;
+			//}
 		}
 	}
 
@@ -117,7 +139,7 @@ void screen_forest_screen_update( unsigned char *screen_type )
 		if( fight_type_run == curr_selection )
 		{
 			value = rand() % MAX_RANDOM;
-			value = 7;		// TODO delete
+			//value = 2;		// TODO delete
 			if( value < 5 )
 			{
 				*screen_type = screen_type_stats;
