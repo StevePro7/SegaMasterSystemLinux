@@ -25,6 +25,7 @@ S XG$engine_player_manager_gold$0$0 Def0222
 S G$engine_player_manager_rest$0$0 Def017F
 S _engine_player_manager_hplo Def01DD
 S _engine_player_manager_init Def0000
+S G$engine_player_manager_hit$0$0 Def0223
 S XG$engine_player_manager_draw$0$0 Def01DC
 S XG$engine_player_manager_stats$0$0 Def0175
 S _engine_player_manager_rest Def017F
@@ -33,18 +34,18 @@ S C$player_manager.c$101$1$83 Def01DD
 S XG$engine_player_manager_init$0$0 Def001F
 S C$player_manager.c$123$1$90 Def0223
 S G$engine_player_manager_dead$0$0 Def0239
+S C$player_manager.c$133$1$90 Def0236
 S C$player_manager.c$124$1$90 Def0223
 S C$player_manager.c$110$1$86 Def01F6
 S C$player_manager.c$103$1$84 Def01DD
-S C$player_manager.c$140$1$93 Def0242
-S C$player_manager.c$134$1$90 Def0236
 S C$player_manager.c$131$2$92 Def0236
 S C$player_manager.c$125$1$90 Def022F
 S C$player_manager.c$111$1$86 Def0205
 S C$player_manager.c$104$1$84 Def01DD
+S C$player_manager.c$135$1$90 Def0239
 S C$player_manager.c$121$1$86 Def0223
 S C$player_manager.c$105$1$84 Def01ED
-S C$player_manager.c$136$1$90 Def0239
+S _engine_player_manager_hit Def0223
 S C$player_manager.c$107$1$84 Def01EE
 S A$player_manager$100 Def001D
 S C$player_manager.c$127$2$91 Def0233
@@ -53,6 +54,7 @@ S C$player_manager.c$113$2$87 Def0209
 S G$engine_player_manager_calc$0$0 Def0020
 S A$player_manager$200 Def0073
 S A$player_manager$201 Def0075
+S C$player_manager.c$137$1$93 Def0239
 S A$player_manager$130 Def002E
 S A$player_manager$121 Def0020
 S C$player_manager.c$138$1$93 Def0239
@@ -65,7 +67,7 @@ S A$player_manager$320 Def00F1
 S A$player_manager$212 Def0079
 S A$player_manager$131 Def0030
 S A$player_manager$122 Def0023
-S C$player_manager.c$139$1$93 Def0239
+S C$player_manager.c$139$1$93 Def0242
 S C$player_manager.c$119$1$86 Def0222
 S A$player_manager$600 Def0216
 S A$player_manager$510 Def01C8
@@ -82,7 +84,6 @@ S A$player_manager$141 Def0038
 S A$player_manager$132 Def0031
 S A$player_manager$123 Def0024
 S A$player_manager$105 Def001F
-S G$engine_player_manager_hp$0$0 Def0223
 S C$player_manager.c$117$2$88 Def021A
 S A$player_manager$601 Def0218
 S A$player_manager$520 Def01DA
@@ -185,6 +186,7 @@ S A$player_manager$155 Def0046
 S A$player_manager$146 Def003D
 S A$player_manager$137 Def0036
 S A$player_manager$128 Def002B
+S XG$engine_player_manager_hit$0$0 Def0236
 S A$player_manager$633 Def022B
 S A$player_manager$606 Def021D
 S A$player_manager$543 Def01E0
@@ -375,7 +377,6 @@ S C$player_manager.c$77$1$80 Def012A
 S C$player_manager.c$68$1$80 Def00CA
 S C$player_manager.c$35$2$76 Def0038
 S C$player_manager.c$29$1$74 Def0020
-S _engine_player_manager_hp Def0223
 S A$player_manager$586 Def0207
 S A$player_manager$577 Def01FE
 S A$player_manager$496 Def01B4
@@ -429,9 +430,8 @@ S A$player_manager$94 Def0015
 S A$player_manager$85 Def000D
 S G$engine_player_manager_stats$0$0 Def0089
 S A$player_manager$95 Def0018
-S XG$engine_player_manager_hp$0$0 Def0236
 S Fplayer_manager$__str_0$0$0 Def0176
-A _DATA size B flags 0 addr 0
+A _DATA size A flags 0 addr 0
 S G$global_player_object$0$0 Def0000
 S _global_player_object Def0000
 A _INITIALIZED size 0 flags 0 addr 0
