@@ -14,7 +14,7 @@ void engine_player_manager_init()
 {
 	struct_player_object *po = &global_player_object;
 	po->xp = 0;							// Z
-	po->hp = 2;// 10;						// N		// TODO delete!!
+	//po->hp = 2;// 10;						// N		// TODO delete!!
 	po->hp = 10;						// N
 	po->gold = 10;						// V
 	po->weapon = weapon_type_none;		// Q$	ATK
@@ -122,20 +122,15 @@ void engine_player_manager_gold( char gold )
 void engine_player_manager_hit( char hp )
 {
 	struct_player_object *po = &global_player_object;
-	engine_font_manager_data( hp, 20, 20 );
 	po->hp -= hp;
-	engine_font_manager_data( hp, 20, 21 );
-
-	engine_player_manager_hplo();
-
-	//if( po->hp <= 0 )
-	//{
-	//	po->hp = 0;
-	//}
-	//else
-	//{
-	//	engine_player_manager_hplo();
-	//}
+	if( po->hp <= 0 )
+	{
+		po->hp = 0;
+	}
+	else
+	{
+		engine_player_manager_hplo();
+	}
 }
 
 bool engine_player_manager_dead()

@@ -50,14 +50,6 @@ void screen_forest_screen_update( unsigned char *screen_type )
 	unsigned char e_damage = 0;
 	unsigned char p_damage = 0;
 
-	//input = engine_input_manager_hold( input_type_fire2 );
-	//if( input )
-	//{
-	//	engine_font_manager_text( LOCALE_FIGHT_NOTRUN, LEFT_X + 5, FIGHT_ROW - 3 );
-	//	//engine_font_manager_text( LOCALE_FIGHT_ENEMYS, LEFT_X + 5, FIGHT_ROW - 3 );
-	//	//engine_font_manager_text( LOCALE_FIGHT_PLAYER, LEFT_X + 5, FIGHT_ROW - 2 );
-	//}
-
 	if( forest_type_pushon == curr_event_stage )
 	{
 		//engine_font_manager_data( enemys_damage, 20, 20 );
