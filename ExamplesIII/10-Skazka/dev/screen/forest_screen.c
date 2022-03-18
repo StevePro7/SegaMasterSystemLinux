@@ -26,8 +26,8 @@ void screen_forest_screen_load()
 	setup();
 	devkit_SMS_displayOn();
 
-	curr_event_stage = fight_type_select;
-	prev_event_stage = fight_type_select;
+	curr_event_stage = forest_type_select;
+	prev_event_stage = forest_type_select;
 }
 
 void screen_forest_screen_update( unsigned char *screen_type )
@@ -43,7 +43,7 @@ void screen_forest_screen_update( unsigned char *screen_type )
 	//	//engine_font_manager_text( LOCALE_FIGHT_PLAYER, LEFT_X + 5, FIGHT_ROW - 2 );
 	//}
 
-	if( fight_type_select == curr_event_stage )
+	if( forest_type_select == curr_event_stage )
 	{
 		input = engine_input_manager_hold( input_type_fire2 );
 		if( input )
@@ -59,10 +59,12 @@ void screen_forest_screen_update( unsigned char *screen_type )
 			return;
 		}
 
+		//if ( )
+
 		
 	}
 
-	if( fight_type_decide == curr_event_stage )
+	if( forest_type_decide == curr_event_stage )
 	{
 
 	}

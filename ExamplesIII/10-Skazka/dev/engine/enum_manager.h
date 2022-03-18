@@ -39,8 +39,9 @@ typedef enum tag_enum_select_type
 	select_type_main = 0,
 	select_type_stats = 1,
 	select_type_forest = 2,
-	select_type_menu = 3,
+	select_type_shop = 3,
 	select_type_boss = 4,
+	select_type_menu = 5,
 
 } enum_select_type;
 
@@ -89,14 +90,36 @@ typedef enum tag_enum_enemy_type
 	enemy_type_leshy = 3,
 	enemy_type_baby_yaga = 4,
 
-} enum_enum_enemy_type;
+} enum_enemy_type;
+
+typedef enum tag_enum_forest_type
+{
+	forest_type_select = 0,
+	forest_type_decide = 1,
+	forest_type_pushon = 2,
+
+} enum_forest_type;
 
 typedef enum tag_enum_fight_type
 {
-	fight_type_select = 0,
-	fight_type_decide = 1,
+	fight_type_run = 0,
+	fight_type_battle = 1,
 
-} enum_stage_type;
+} enum_fight_type;
+
+typedef enum tag_enum_binary_type
+{
+	binary_type_yes = 0,
+	binary_type_no = 1,
+
+} enum_binary_type;
+
+typedef enum tag_enum_boss_type
+{
+	boss_type_beg = 0,
+	boss_type_battle = 1,
+
+} enum_boss_type;
 
 typedef enum tag_enum_menu_type
 {
