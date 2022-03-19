@@ -48,16 +48,9 @@ void screen_forest_screen_update( unsigned char *screen_type )
 	unsigned char input;
 	unsigned char value;
 	unsigned char xp = 0;
-	//unsigned char selection = 0;
-
-	//unsigned char enemys_damage = 0;
-	//unsigned char player_damage = 0;
 
 	if( forest_type_pushon == curr_event_stage )
 	{
-		//engine_font_manager_data( enemys_damage, 20, 20 );
-		//engine_font_manager_data( player_damage, 20, 21 );
-
 		input = engine_input_manager_hold( input_type_fire1 );
 		if( input )
 		{
@@ -72,6 +65,8 @@ void screen_forest_screen_update( unsigned char *screen_type )
 				if( engine_enemy_manager_dead() )
 				{
 					engine_fight_manager_gold( &xp, &player_gold );
+					engine_player_manager_gold( xp, player_gold );
+
 					*screen_type = screen_type_victory;
 					return;
 				}
@@ -86,34 +81,6 @@ void screen_forest_screen_update( unsigned char *screen_type )
 			curr_event_stage = forest_type_select;
 			*screen_type = screen_type_forest;
 			return;
-
-
-			//if( fight_type_run == curr_selection )
-			//{
-			//	curr_event_stage = forest_type_select;
-			//	*screen_type = screen_type_forest;
-			//	return;
-			//}
-			//else if( fight_type_battle == curr_selection )
-			//{
-			//	engine_enemy_manager_hit( enemys_damage );
-			//	engine_player_manager_hit( player_damage );
-
-			//	if( engine_enemy_manager_dead() )
-			//	{
-			//		//*screen_type = screen_type_over;
-			//		return;
-			//	}
-			//	if( engine_player_manager_dead() )
-			//	{
-			//		*screen_type = screen_type_over;
-			//		return;
-			//	}
-
-			//	curr_event_stage = forest_type_select;
-			//	*screen_type = screen_type_forest;
-			//	return;
-			//}
 		}
 	}
 

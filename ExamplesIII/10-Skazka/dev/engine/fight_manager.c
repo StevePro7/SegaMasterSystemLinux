@@ -58,12 +58,12 @@ void engine_fight_manager_battle( unsigned char *e_damage, unsigned char *p_dama
 		*p_damage = 4 + eo->ax;
 	}
 
-	*e_damage = 7;
+	// TODO delete
+	*e_damage = 10;
 	*p_damage = 2;
+	// TODO delete
 
 	*p_damage += po->armor;
-	//engine_enemy_manager_hit( e_damage );
-	//engine_player_manager_hit( p_damage + po->armor );
 }
 
 void engine_fight_manager_gold( unsigned char *p_xp, unsigned char *p_gold )
