@@ -1,7 +1,7 @@
 M:test_screen
 F:G$screen_test_screen_load$0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_test_screen_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Ltest_screen.screen_test_screen_update$screen_type$1$12({2}DG,SC:U),B,1,4
+S:Ltest_screen.screen_test_screen_update$screen_type$1$13({2}DG,SC:U),B,1,4
 T:Ftest_screen$tag_struct_player_object[({0}S:S$xp$0$0({1}SC:U),Z,0,0)({1}S:S$hp$0$0({1}SC:U),Z,0,0)({2}S:S$gold$0$0({2}SI:U),Z,0,0)({4}S:S$weapon$0$0({1}SC:U),Z,0,0)({5}S:S$armor$0$0({1}SC:U),Z,0,0)({6}S:S$life$0$0({1}SC:U),Z,0,0)({7}S:S$level$0$0({1}SC:U),Z,0,0)({8}S:S$max_hp$0$0({1}SC:U),Z,0,0)({9}S:S$max_xp$0$0({1}SC:U),Z,0,0)({10}S:S$won$0$0({1}SC:U),Z,0,0)]
 S:G$global_player_object$0$0({11}STtag_struct_player_object:S),E,0,0
 S:G$engine_font_manager_char$0$0({2}DF,SV:S),C,0,0
@@ -17,7 +17,8 @@ S:G$engine_player_manager_stats$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_rest$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_draw$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_hplo$0$0({2}DF,SV:S),C,0,0
-S:G$engine_player_manager_gold$0$0({2}DF,SV:S),C,0,0
+S:G$engine_player_manager_dec_gold$0$0({2}DF,SV:S),C,0,0
+S:G$engine_player_manager_inc_gold$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_hit$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_dead$0$0({2}DF,:S),C,0,0
 S:G$engine_sound_manager_init$0$0({2}DF,SV:S),C,0,0
