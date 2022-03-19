@@ -1,5 +1,6 @@
 M:shop_screen
 F:G$screen_shop_screen_load$0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lshop_screen.screen_shop_screen_load$po$1$79({2}DG,STtag_struct_player_object:S),R,0,0,[]
 S:Lshop_screen.screen_shop_screen_load$row$1$79({1}SC:U),R,0,0,[c]
 S:Lshop_screen.screen_shop_screen_load$idx$1$79({1}SC:U),R,0,0,[b]
 F:G$screen_shop_screen_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
@@ -26,6 +27,7 @@ S:G$prep_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$over_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$beat_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:Fshop_screen$select_type$0$0({1}SC:U),E,0,0
+S:Fshop_screen$gold$0$0({1}SC:U),E,0,0
 S:G$engine_content_manager_load_splash$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_tiles$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_title$0$0({2}DF,SV:S),C,0,0

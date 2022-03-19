@@ -27,7 +27,7 @@
 #define LOCALE_FIGHT_PLAYER		"DAMAGE TO YOU:       "
 
 
-#define LOCALE_NOT_ENOUGH		"NOT ENOUGH"
+#define LOCALE_NOT_ENOUGH		"NOT ENOUGH GOLD!"
 
 #define LOCALE_ARROWS			">>"
 #define LOCALE_2_SPCS			"  "

@@ -11,15 +11,18 @@
 #include "../banks/fixedbank.h"
 
 static unsigned char select_type;
+static unsigned char gold;
 
 unsigned char inventory[ MAX_ITEMS ] = { 10, 20, 20, 10, 30 };
 
 void screen_shop_screen_load()
 {
+	struct_player_object *po = &global_player_object;
 	unsigned char row;
 	unsigned char idx;
 
 	select_type = select_type_shop;
+	gold = po->gold;
 	row = 1;
 
 	engine_player_manager_calc();
@@ -49,10 +52,10 @@ void screen_shop_screen_load()
 	engine_font_manager_text( LOCALE_SHOP_QUERY, LEFT_X + 7, row + 0 );
 	engine_font_manager_text( LOCALE_YOU_HAVE, LEFT_X + 7, row + 2 );
 	engine_font_manager_text( LOCALE_GOLD, LEFT_X + 16, row + 2 );
+	engine_font_manager_data( gold, LEFT_X + 24, row + 2 );
 
 	//insufficient
 	//engine_font_manager_text( LOCALE_NOT_ENOUGH, LEFT_X + 8, row + 4 );
-	//engine_font_manager_text( LOCALE_GOLD, LEFT_X + 19, row + 4 );
 
 	devkit_SMS_displayOn();
 }
