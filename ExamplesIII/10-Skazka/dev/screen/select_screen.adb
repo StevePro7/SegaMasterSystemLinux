@@ -2,7 +2,6 @@ M:select_screen
 F:G$screen_select_screen_load$0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_select_screen_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lselect_screen.screen_select_screen_update$screen_type$1$11({2}DG,SC:U),B,1,4
-S:Lselect_screen.screen_select_screen_update$selection$1$12({1}SC:U),R,0,0,[l]
 T:Fselect_screen$tag_struct_aelect_object[({0}S:S$select_index$0$0({7}DA7d,SC:U),Z,0,0)({7}S:S$select_X$0$0({1}SC:U),Z,0,0)({8}S:S$select_Y$0$0({1}SC:U),Z,0,0)({9}S:S$select_min$0$0({1}SC:U),Z,0,0)({10}S:S$select_max$0$0({1}SC:U),Z,0,0)]
 S:G$global_select_object$0$0({11}STtag_struct_aelect_object:S),E,0,0
 S:G$engine_font_manager_char$0$0({2}DF,SV:S),C,0,0
