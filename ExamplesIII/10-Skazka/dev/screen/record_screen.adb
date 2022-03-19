@@ -9,8 +9,9 @@ S:G$weapon_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$armor_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$life_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$forest_texts$0$0({0}DA0d,DG,SC:U),E,0,0
-S:G$fight_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$enemy_texts$0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$fight_texts$0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$gold_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$shop_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$villager_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$menus_texts$0$0({0}DA0d,DG,SC:U),E,0,0

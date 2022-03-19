@@ -2,9 +2,9 @@ M:stats_screen
 F:G$screen_stats_screen_load$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lstats_screen.screen_stats_screen_load$row$1$78({1}SC:U),R,0,0,[c]
 S:Lstats_screen.screen_stats_screen_load$idx$1$78({1}SC:U),R,0,0,[b]
-F:G$screen_stats_screen_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
+F:G$screen_stats_screen_update$0$0({2}DF,SV:S),Z,0,1,0,0,0
 S:Lstats_screen.screen_stats_screen_update$screen_type$1$81({2}DG,SC:U),B,1,4
-S:Lstats_screen.screen_stats_screen_update$selection$1$82({1}SC:U),R,0,0,[c]
+S:Lstats_screen.screen_stats_screen_update$selection$1$82({1}SC:U),B,1,-1
 F:Fstats_screen$print_stats$0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:Fstats_screen$print_village$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lstats_screen.print_village$row$1$86({1}SC:U),R,0,0,[]

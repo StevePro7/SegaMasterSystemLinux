@@ -26,8 +26,8 @@ S:G$screen_rest_screen_load$0$0({2}DF,SV:S),C,0,0
 S:G$screen_rest_screen_update$0$0({2}DF,SV:S),C,0,0
 S:G$screen_talk_screen_load$0$0({2}DF,SV:S),C,0,0
 S:G$screen_talk_screen_update$0$0({2}DF,SV:S),C,0,0
-S:G$screen_fight_screen_load$0$0({2}DF,SV:S),C,0,0
-S:G$screen_fight_screen_update$0$0({2}DF,SV:S),C,0,0
+S:G$screen_boss_screen_load$0$0({2}DF,SV:S),C,0,0
+S:G$screen_boss_screen_update$0$0({2}DF,SV:S),C,0,0
 S:G$screen_complete_screen_load$0$0({2}DF,SV:S),C,0,0
 S:G$screen_complete_screen_update$0$0({2}DF,SV:S),C,0,0
 S:G$screen_menu_screen_load$0$0({2}DF,SV:S),C,0,0
