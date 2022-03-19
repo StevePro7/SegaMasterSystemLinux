@@ -35,7 +35,6 @@ const unsigned char *armor_texts[] =
 	"",
 	"KOLCHUGA",
 	" TEGILAY",
-	" +1 LIFE",
 };
 const unsigned char *life_texts[] =
 {
@@ -49,13 +48,6 @@ const unsigned char *forest_texts[] =
 	"YOU ENCOUNTERED ENEMY: "
 };
 
-const unsigned char *fight_texts[] =
-{
-	"WHAT WILL YOU DO?  ",
-	"1) RUN  ",
-	"2) FIGHT",
-};
-
 const unsigned char *enemy_texts[] =
 {
 	"  RAZBOYNIK",
@@ -63,6 +55,20 @@ const unsigned char *enemy_texts[] =
 	"   KIKIMORA",
 	"      LESHY",
 	"  BABA YAGA",
+};
+
+const unsigned char *fight_texts[] =
+{
+	"WHAT WILL YOU DO?  ",
+	"1) RUN  ",
+	"2) FIGHT",
+};
+
+const unsigned char *gold_texts[] =
+{
+	"    VICTORY!  ",
+	"", "",
+	"YOU GOT GOLD -",
 };
 
 const unsigned char *shop_texts[] =
@@ -84,16 +90,6 @@ const unsigned char *menus_texts[] =
 	"3) CONTINUE  ",
 };
 
-const unsigned char *forests_texts[] =
-{
-	"YOU ARE IN THE FOREST",
-	"YOU ENCOUNTERED -    ",
-	"WHAT WILL YOU DO?    ",
-	"1) RUN               ",
-	"2) FIGHT             ",
-	"YOUR HP -            ",
-	"ENEMY HP -           ",
-};
 
 const unsigned char *villager_texts[] =
 {

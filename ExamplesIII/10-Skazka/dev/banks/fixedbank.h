@@ -9,8 +9,9 @@ extern const unsigned char *armor_texts[];
 extern const unsigned char *life_texts[];
 
 extern const unsigned char *forest_texts[];
-extern const unsigned char *fight_texts[];
 extern const unsigned char *enemy_texts[];
+extern const unsigned char *fight_texts[];
+extern const unsigned char *gold_texts[];
 
 extern const unsigned char *shop_texts[];
 

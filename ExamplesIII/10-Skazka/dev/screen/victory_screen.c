@@ -10,10 +10,12 @@
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
 
+static void victory();
+
 void screen_victory_screen_load()
 {
+	struct_player_object *po = &global_player_object;
 	unsigned char row;
-	//unsigned char idx;
 
 	row = 1;
 	engine_player_manager_calc();
@@ -23,10 +25,28 @@ void screen_victory_screen_load()
 	engine_text_manager_border();
 	engine_text_manager_clear( row + 2, row + 9 );
 
-	engine_font_manager_text( "VICTORY SCREEN!!", 10, 10 );
+	row = 12;
+	engine_font_manager_data( po->won, LEFT_X + 24, row );
+	victory();
+
+	engine_text_manager_fire();
+	devkit_SMS_displayOn();
 }
 
 void screen_victory_screen_update( unsigned char *screen_type )
 {
 	*screen_type = screen_type_victory;
+}
+
+static void victory()
+{
+	unsigned char row;
+	unsigned char idx;
+
+	row = 9;
+	devkit_SMS_mapROMBank( FIXED_BANK );
+	for( idx = 0; idx < 4; idx++ )
+	{
+		engine_font_manager_text( ( unsigned char * ) gold_texts[ idx ], LEFT_X + 8, row++ );
+	}
 }
