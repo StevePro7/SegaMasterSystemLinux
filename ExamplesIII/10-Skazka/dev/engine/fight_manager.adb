@@ -2,11 +2,11 @@ M:fight_manager
 F:G$engine_fight_manager_battle$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lfight_manager.engine_fight_manager_battle$e_damage$1$27({2}DG,SC:U),B,1,4
 S:Lfight_manager.engine_fight_manager_battle$p_damage$1$27({2}DG,SC:U),B,1,6
-S:Lfight_manager.engine_fight_manager_battle$po$1$28({2}DG,STtag_struct_player_object:S),R,0,0,[]
-S:Lfight_manager.engine_fight_manager_battle$eo$1$28({2}DG,STtag_struct_enemy_object:S),R,0,0,[c,b]
-S:Lfight_manager.engine_fight_manager_battle$enemys$1$28({1}SC:U),R,0,0,[l]
+S:Lfight_manager.engine_fight_manager_battle$po$1$28({2}DG,STtag_struct_player_object:S),R,0,0,[c,b]
+S:Lfight_manager.engine_fight_manager_battle$eo$1$28({2}DG,STtag_struct_enemy_object:S),R,0,0,[]
+S:Lfight_manager.engine_fight_manager_battle$enemys$1$28({1}SC:U),R,0,0,[]
 S:Lfight_manager.engine_fight_manager_battle$player$1$28({1}SC:U),R,0,0,[l]
-S:Lfight_manager.engine_fight_manager_battle$sloc0$1$0({2}SI:S),B,1,-2
+S:Lfight_manager.engine_fight_manager_battle$sloc0$1$0({1}SC:U),B,1,-1
 F:G$engine_fight_manager_gold$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lfight_manager.engine_fight_manager_gold$p_xp$1$39({2}DG,SC:U),B,1,4
 S:Lfight_manager.engine_fight_manager_gold$p_gold$1$39({2}DG,SC:U),B,1,6

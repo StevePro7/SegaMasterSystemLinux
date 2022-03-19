@@ -59,8 +59,8 @@ void engine_fight_manager_battle( unsigned char *e_damage, unsigned char *p_dama
 	}
 
 	// TODO delete
-	*e_damage = 10;
-	*p_damage = 2;
+	//*e_damage = 10;
+	//*p_damage = 2;
 	// TODO delete
 
 	*p_damage += po->armor;
