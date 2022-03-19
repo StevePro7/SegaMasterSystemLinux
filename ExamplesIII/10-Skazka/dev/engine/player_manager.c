@@ -105,7 +105,20 @@ void engine_player_manager_hplo()
 	engine_font_manager_data( po->hp, LEFT_X + 14, FIGHT_ROW + 3 );
 }
 
-void engine_player_manager_gold( unsigned char xp, unsigned char gold )
+void engine_player_manager_dec_gold( unsigned char gold )
+{
+	struct_player_object *po = &global_player_object;
+	if( po->gold > gold )
+	{
+		po->gold -= gold;
+	}
+	else
+	{
+		po->gold = 0;
+	}
+}
+
+void engine_player_manager_inc_gold( unsigned char xp, unsigned char gold )
 {
 	struct_player_object *po = &global_player_object;
 	po->won = gold;
@@ -117,10 +130,6 @@ void engine_player_manager_gold( unsigned char xp, unsigned char gold )
 	}
 
 	po->gold += gold;
-	if( po->gold <= 0 )
-	{
-		po->gold = 0;
-	}
 	if( po->gold >= MAX_GOLD )
 	{
 		po->gold = MAX_GOLD;

@@ -1,13 +1,15 @@
 ;!FILE talk_screen.asm
 XL2
-H 9 areas 97 global symbols
+H 9 areas B0 global symbols
 M talk_screen
 O -mz80
 S _rand Ref0000
 S _engine_font_manager_text Ref0000
 S _devkit_SMS_displayOn Ref0000
+S _engine_player_manager_dec_gold Ref0000
 S _villager_texts Ref0000
 S _engine_text_manager_border Ref0000
+S _engine_player_manager_inc_gold Ref0000
 S _engine_text_manager_clear Ref0000
 S .__.ABS. Def0000
 S _engine_input_manager_hold Ref0000
@@ -16,145 +18,168 @@ S _engine_content_manager_load_title Ref0000
 S _engine_text_manager_fire Ref0000
 S __modsint Ref0000
 S _devkit_SMS_mapROMBank Ref0000
-A _CODE size A0 flags 0 addr 0
-S A$talk_screen$93 Def001E
-S A$talk_screen$84 Def0012
-S A$talk_screen$66 Def0000
-S A$talk_screen$94 Def0021
-S A$talk_screen$85 Def0015
-S A$talk_screen$95 Def0022
-S A$talk_screen$96 Def0023
-S A$talk_screen$78 Def000B
-S A$talk_screen$89 Def0016
+A _CODE size BD flags 0 addr 0
+S A$talk_screen$93 Def001C
+S A$talk_screen$84 Def000E
+S A$talk_screen$75 Def0007
+S A$talk_screen$94 Def001D
+S A$talk_screen$85 Def0011
+S A$talk_screen$76 Def000A
+S A$talk_screen$95 Def001E
+S A$talk_screen$86 Def0012
+S A$talk_screen$68 Def0000
+S A$talk_screen$96 Def0021
+S A$talk_screen$87 Def0015
+S A$talk_screen$97 Def0022
+S A$talk_screen$98 Def0023
 S _screen_talk_screen_load Def0000
-S Ftalk_screen$print$0$0 Def0055
-S XG$screen_talk_screen_load$0$0 Def002D
-S C$talk_screen.c$60$1$102 Def0067
-S C$talk_screen.c$43$2$100 Def004F
-S C$talk_screen.c$44$2$100 Def0051
-S C$talk_screen.c$61$2$103 Def0096
-S C$talk_screen.c$61$3$104 Def006F
-S C$talk_screen.c$57$1$102 Def005E
-S G$screen_talk_screen_update$0$0 Def0030
-S C$talk_screen.c$63$3$104 Def0073
-S C$talk_screen.c$64$3$104 Def0078
-S XFtalk_screen$print$0$0 Def009F
-S C$talk_screen.c$67$2$103 Def009F
-S C$talk_screen.c$65$3$104 Def0095
-S A$talk_screen$100 Def0024
-S A$talk_screen$101 Def0025
-S A$talk_screen$102 Def0026
-S A$talk_screen$211 Def006F
-S A$talk_screen$130 Def0033
-S A$talk_screen$103 Def0029
-S A$talk_screen$230 Def0082
-S A$talk_screen$212 Def0071
-S A$talk_screen$203 Def0067
-S A$talk_screen$140 Def003D
-S A$talk_screen$131 Def0034
-S A$talk_screen$240 Def008D
-S A$talk_screen$231 Def0083
-S A$talk_screen$204 Def0069
-S A$talk_screen$150 Def0046
-S A$talk_screen$141 Def003E
-S A$talk_screen$132 Def0037
-S A$talk_screen$241 Def008E
-S A$talk_screen$232 Def0084
-S A$talk_screen$223 Def0078
-S A$talk_screen$205 Def006A
-S A$talk_screen$151 Def0047
-S A$talk_screen$142 Def0041
-S A$talk_screen$133 Def0038
-S A$talk_screen$115 Def002D
-S _screen_talk_screen_update Def0030
-S A$talk_screen$242 Def0091
-S A$talk_screen$233 Def0085
-S A$talk_screen$224 Def007A
-S A$talk_screen$206 Def006B
-S A$talk_screen$143 Def0042
-S A$talk_screen$107 Def002A
-S A$talk_screen$243 Def0092
-S A$talk_screen$234 Def0086
-S A$talk_screen$225 Def007B
-S A$talk_screen$207 Def006E
-S A$talk_screen$144 Def0043
-S A$talk_screen$253 Def0096
-S A$talk_screen$244 Def0093
-S A$talk_screen$235 Def0087
-S A$talk_screen$226 Def007D
-S A$talk_screen$217 Def0073
-S A$talk_screen$190 Def005B
-S A$talk_screen$263 Def009F
-S A$talk_screen$254 Def0097
-S A$talk_screen$245 Def0094
-S A$talk_screen$236 Def0088
-S A$talk_screen$227 Def007E
-S A$talk_screen$218 Def0076
-S A$talk_screen$191 Def005D
-S A$talk_screen$173 Def0052
+S XFtalk_screen$display_msg$0$0 Def00BC
+S XG$screen_talk_screen_load$0$0 Def004A
+S C$talk_screen.c$30$1$100 Def0024
+S C$talk_screen.c$42$1$100 Def0047
+S C$talk_screen.c$33$1$100 Def002C
+S C$talk_screen.c$24$1$100 Def0000
+S C$talk_screen.c$43$1$100 Def004A
+S C$talk_screen.c$25$1$100 Def0003
+S C$talk_screen.c$44$1$100 Def004A
+S C$talk_screen.c$26$1$100 Def000B
+S C$talk_screen.c$50$1$104 Def0065
+S C$talk_screen.c$27$1$100 Def000E
+S C$talk_screen.c$46$1$100 Def004D
+S C$talk_screen.c$37$1$100 Def003A
+S C$talk_screen.c$35$2$101 Def0030
+S C$talk_screen.c$52$1$104 Def0061
+S C$talk_screen.c$29$1$100 Def0016
+S C$talk_screen.c$52$2$105 Def006C
+S C$talk_screen.c$53$2$105 Def006E
+S G$screen_talk_screen_update$0$0 Def004D
+S C$talk_screen.c$56$1$104 Def006F
+S C$talk_screen.c$39$2$102 Def003F
+S C$talk_screen.c$70$2$108 Def00B3
+S C$talk_screen.c$57$1$104 Def0071
+S C$talk_screen.c$48$1$104 Def004D
+S C$talk_screen.c$49$1$104 Def0056
+S C$talk_screen.c$70$3$109 Def008C
+S C$talk_screen.c$59$1$104 Def0072
+S C$talk_screen.c$66$1$107 Def007B
+S C$talk_screen.c$72$3$109 Def0090
+S C$talk_screen.c$73$3$109 Def0095
+S A$talk_screen$120 Def0034
+S A$talk_screen$111 Def002C
+S A$talk_screen$102 Def0024
+S C$talk_screen.c$76$2$108 Def00BC
+S C$talk_screen.c$74$3$109 Def00B2
+S C$talk_screen.c$69$1$107 Def0084
+S A$talk_screen$130 Def003D
+S A$talk_screen$121 Def0035
+S A$talk_screen$112 Def002D
+S A$talk_screen$103 Def0025
+S A$talk_screen$230 Def007B
+S A$talk_screen$203 Def006E
+S A$talk_screen$122 Def0038
+S A$talk_screen$113 Def002E
+S A$talk_screen$104 Def0026
+S A$talk_screen$240 Def0087
+S A$talk_screen$231 Def007E
+S A$talk_screen$213 Def0071
+S A$talk_screen$150 Def004A
+S A$talk_screen$123 Def0039
+S A$talk_screen$105 Def0027
+S A$talk_screen$241 Def0088
+S A$talk_screen$232 Def007F
+S A$talk_screen$223 Def0072
+S A$talk_screen$142 Def0047
+S A$talk_screen$106 Def002A
+S _screen_talk_screen_update Def004D
+S A$talk_screen$260 Def0098
+S A$talk_screen$242 Def008B
+S A$talk_screen$233 Def0080
+S A$talk_screen$224 Def0074
+S A$talk_screen$134 Def003F
+S A$talk_screen$107 Def002B
+S A$talk_screen$270 Def00A4
+S A$talk_screen$261 Def009A
+S A$talk_screen$252 Def0090
+S A$talk_screen$234 Def0081
+S A$talk_screen$225 Def0078
+S A$talk_screen$135 Def0042
+S A$talk_screen$117 Def0030
+S A$talk_screen$280 Def00B1
+S A$talk_screen$271 Def00A5
+S A$talk_screen$262 Def009B
+S A$talk_screen$253 Def0093
+S A$talk_screen$226 Def007A
+S A$talk_screen$208 Def006F
+S A$talk_screen$190 Def0065
+S A$talk_screen$172 Def0056
+S A$talk_screen$163 Def004D
+S A$talk_screen$136 Def0043
+S A$talk_screen$118 Def0031
+S A$talk_screen$290 Def00B5
+S A$talk_screen$272 Def00A6
+S A$talk_screen$263 Def009C
+S A$talk_screen$254 Def0094
+S A$talk_screen$191 Def0066
+S A$talk_screen$173 Def0057
 S A$talk_screen$164 Def004F
-S A$talk_screen$155 Def0048
-S A$talk_screen$137 Def0039
-S A$talk_screen$128 Def0030
-S A$talk_screen$255 Def0098
-S A$talk_screen$237 Def0089
-S A$talk_screen$228 Def007F
-S A$talk_screen$219 Def0077
-S A$talk_screen$156 Def0049
-S A$talk_screen$138 Def003A
-S A$talk_screen$129 Def0032
-S A$talk_screen$256 Def009A
-S A$talk_screen$238 Def008A
-S A$talk_screen$229 Def0081
-S A$talk_screen$157 Def004A
-S A$talk_screen$148 Def0044
-S A$talk_screen$139 Def003C
-S A$talk_screen$257 Def009C
-S A$talk_screen$239 Def008C
-S A$talk_screen$158 Def004C
-S A$talk_screen$149 Def0045
-S A$talk_screen$258 Def009D
-S A$talk_screen$249 Def0095
-S A$talk_screen$195 Def005E
-S A$talk_screen$168 Def0051
-S A$talk_screen$159 Def004D
-S C$talk_screen.c$30$1$97 Def0016
-S A$talk_screen$196 Def0061
-S A$talk_screen$178 Def0054
-S C$talk_screen.c$31$1$97 Def0024
-S A$talk_screen$197 Def0062
-S A$talk_screen$188 Def0055
-S A$talk_screen$198 Def0063
-S A$talk_screen$189 Def0057
-S C$talk_screen.c$40$1$99 Def0039
-S C$talk_screen.c$33$1$97 Def002A
-S C$talk_screen.c$16$0$0 Def0000
-S A$talk_screen$199 Def0064
-S C$talk_screen.c$50$1$99 Def0055
-S XG$screen_talk_screen_update$0$0 Def0054
-S C$talk_screen.c$41$1$99 Def0048
-S C$talk_screen.c$34$1$97 Def002D
-S C$talk_screen.c$25$1$97 Def0000
-S C$talk_screen.c$35$1$97 Def002D
-S C$talk_screen.c$26$1$97 Def0003
-S C$talk_screen.c$43$1$99 Def0044
-S C$talk_screen.c$27$1$97 Def000B
-S C$talk_screen.c$37$1$97 Def0030
-S C$talk_screen.c$28$1$97 Def000E
-S A$talk_screen$70 Def0003
-S A$talk_screen$71 Def0005
+S A$talk_screen$137 Def0046
+S A$talk_screen$128 Def003A
+S A$talk_screen$119 Def0033
+S A$talk_screen$291 Def00B7
+S A$talk_screen$273 Def00A7
+S A$talk_screen$264 Def009E
+S A$talk_screen$246 Def008C
+S A$talk_screen$192 Def0067
+S A$talk_screen$183 Def0061
+S A$talk_screen$174 Def0059
+S A$talk_screen$165 Def0050
+S A$talk_screen$129 Def003B
+S A$talk_screen$292 Def00B9
+S A$talk_screen$274 Def00A9
+S A$talk_screen$265 Def009F
+S A$talk_screen$247 Def008E
+S A$talk_screen$238 Def0084
+S A$talk_screen$193 Def0069
+S A$talk_screen$184 Def0062
+S A$talk_screen$175 Def005A
+S A$talk_screen$166 Def0051
+S A$talk_screen$293 Def00BA
+S A$talk_screen$284 Def00B2
+S A$talk_screen$275 Def00AA
+S A$talk_screen$266 Def00A0
+S A$talk_screen$239 Def0086
+S A$talk_screen$194 Def006A
+S A$talk_screen$185 Def0063
+S A$talk_screen$176 Def005B
+S A$talk_screen$167 Def0054
+S A$talk_screen$276 Def00AB
+S A$talk_screen$267 Def00A1
+S A$talk_screen$258 Def0095
+S A$talk_screen$186 Def0064
+S A$talk_screen$177 Def005E
+S A$talk_screen$168 Def0055
+S A$talk_screen$277 Def00AE
+S A$talk_screen$268 Def00A2
+S A$talk_screen$259 Def0097
+S A$talk_screen$178 Def005F
+S A$talk_screen$278 Def00AF
+S A$talk_screen$269 Def00A3
+S A$talk_screen$179 Def0060
+S A$talk_screen$288 Def00B3
+S A$talk_screen$279 Def00B0
+S A$talk_screen$298 Def00BC
+S A$talk_screen$289 Def00B4
+S A$talk_screen$199 Def006C
+S XG$screen_talk_screen_update$0$0 Def0071
+S C$talk_screen.c$18$0$0 Def0000
+S Ftalk_screen$display_msg$0$0 Def0072
+S A$talk_screen$80 Def000B
 S G$screen_talk_screen_load$0$0 Def0000
-S A$talk_screen$90 Def0019
-S A$talk_screen$72 Def0006
-S C$talk_screen.c$47$1$99 Def0052
-S A$talk_screen$91 Def001C
-S A$talk_screen$82 Def000E
-S A$talk_screen$73 Def0007
-S C$talk_screen.c$48$1$99 Def0054
-S C$talk_screen.c$39$1$99 Def0030
-S A$talk_screen$92 Def001D
-S A$talk_screen$83 Def0011
-S A$talk_screen$74 Def000A
+S A$talk_screen$72 Def0003
+S A$talk_screen$91 Def0016
+S A$talk_screen$73 Def0005
+S A$talk_screen$92 Def0019
+S A$talk_screen$74 Def0006
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -166,44 +191,54 @@ A _CABS size 0 flags 8 addr 0
 T 00 00
 R 00 00 00 00
 T 00 00 CD 00 00 3E 01 F5 33 CD 00 00 33 CD 00 00
-R 00 00 00 00 02 03 08 00 02 0A 09 00 02 0E 04 00
+R 00 00 00 00 02 03 0A 00 02 0A 0B 00 02 0E 05 00
 T 0E 00 21 03 0A E5 CD 00 00 F1 CD 00 00 01 0A 00
-R 00 00 00 00 02 07 05 00 02 0B 00 00
-T 1C 00 C5 E5 CD 00 00 F1 F1 45 C5 33 CD 55 00 33
-R 00 00 00 00 02 05 0B 00 00 0D 00 00
-T 2A 00 CD 00 00 C3 00 00
-R 00 00 00 00 02 03 0A 00 02 06 02 00
-T 30 00
+R 00 00 00 00 02 07 07 00 02 0B 00 00
+T 1C 00 C5 E5 CD 00 00 F1 F1 45 C5 C5 33 CD 72 00
+R 00 00 00 00 02 05 0D 00 00 0E 00 00
+T 2A 00 33 C1 78 B7 20 0A C5 3E 05 F5 33 CD 00 00
+R 00 00 00 00 02 0E 03 00
+T 38 00 33 C1
 R 00 00 00 00
-T 30 00 3E 10 F5 33 CD 00 00 33 4D C5 3E 20 F5 33
-R 00 00 00 00 02 07 07 00
-T 3E 00 CD 00 00 33 C1 45 D1 E1 E5 D5 79 B7 20 03
-R 00 00 00 00 02 03 07 00
-T 4C 00 B0 28 03
+T 3A 00
 R 00 00 00 00
-T 4F 00
+T 3A 00 78 D6 09 20 08 21 00 05 E5 CD 00 00 F1
+R 00 00 00 00 02 0C 06 00
+T 47 00
 R 00 00 00 00
-T 4F 00 36 04 C9
+T 47 00 CD 00 00 C3 00 00
+R 00 00 00 00 02 03 0C 00 02 06 02 00
+T 4D 00
 R 00 00 00 00
-T 52 00
+T 4D 00 3E 10 F5 33 CD 00 00 33 4D C5 3E 20 F5 33
+R 00 00 00 00 02 07 09 00
+T 5B 00 CD 00 00 33 C1 45 D1 E1 E5 D5 79 B7 20 03
+R 00 00 00 00 02 03 09 00
+T 69 00 B0 28 03
 R 00 00 00 00
-T 52 00 36 09 C9
+T 6C 00
 R 00 00 00 00
-T 55 00
+T 6C 00 36 04 C9
 R 00 00 00 00
-T 55 00 DD E5 DD 21 00 00 DD 39 3B DD 7E 04 4F 87
+T 6F 00
 R 00 00 00 00
-T 63 00 81 DD 77 FF 3E 0F F5 33 CD 00 00 33 0E 07
-R 00 00 00 00 02 0B 0C 00
-T 71 00 1E 00
+T 6F 00 36 09 C9
 R 00 00 00 00
-T 73 00
+T 72 00
 R 00 00 00 00
-T 73 00 DD 7E FF 83 6F 26 00 29 3E 00 00 85 6F 3E
-R 00 00 00 00 0B 0B 03 00
-T 80 00 00 00 8C 67 7E 23 66 6F C5 D5 51 1E 03 D5
-R 00 00 00 00 8B 02 03 00
-T 8D 00 E5 CD 00 00 F1 F1 D1 C1 0C 1C 7B D6 03 38
+T 72 00 DD E5 DD 21 00 00 DD 39 3B DD 7E 04 4F 87
+R 00 00 00 00
+T 80 00 81 DD 77 FF 3E 0F F5 33 CD 00 00 33 0E 07
+R 00 00 00 00 02 0B 0E 00
+T 8E 00 1E 00
+R 00 00 00 00
+T 90 00
+R 00 00 00 00
+T 90 00 DD 7E FF 83 6F 26 00 29 3E 00 00 85 6F 3E
+R 00 00 00 00 0B 0B 04 00
+T 9D 00 00 00 8C 67 7E 23 66 6F C5 D5 51 1E 03 D5
+R 00 00 00 00 8B 02 04 00
+T AA 00 E5 CD 00 00 F1 F1 D1 C1 0C 1C 7B D6 03 38
 R 00 00 00 00 02 04 01 00
-T 9B 00 D7 33 DD E1 C9
+T B8 00 D7 33 DD E1 C9
 R 00 00 00 00

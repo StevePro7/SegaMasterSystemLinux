@@ -4,22 +4,21 @@
 #include "../engine/font_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/input_manager.h"
+#include "../engine/player_manager.h"
 #include "../engine/text_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
 #include <stdlib.h>
 
 #define MAX_CHAT	3
+#define NUM_GOLD	5
 
-static void print( unsigned char val );
+static void display_msg( unsigned char val );
 
 void screen_talk_screen_load()
 {
 	unsigned char row;
-	unsigned char idx = 0;
 	unsigned char val;
-	unsigned char beg = 0;
-	unsigned char txt = 0;
 
 	row = 1;
 	devkit_SMS_displayOff();
@@ -28,7 +27,17 @@ void screen_talk_screen_load()
 	engine_text_manager_clear( row + 2, row + 9 );
 
 	val = ( unsigned char ) ( rand() % MAX_RANDOM );
-	print( val );
+	display_msg( val );
+
+	// Adjust gold.
+	if( 0 == val )
+	{
+		engine_player_manager_dec_gold( NUM_GOLD );
+	}
+	if( ( MAX_RANDOM - 1 ) == val )
+	{
+		engine_player_manager_inc_gold( 0, NUM_GOLD );
+	}
 
 	engine_text_manager_fire();
 	devkit_SMS_displayOn();
@@ -47,7 +56,7 @@ void screen_talk_screen_update( unsigned char *screen_type )
 	*screen_type = screen_type_talk;
 }
 
-static void print( unsigned char val )
+static void display_msg( unsigned char val )
 {
 	unsigned char row;
 	unsigned char idx = 0;

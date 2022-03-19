@@ -3,7 +3,6 @@ XL2
 H 9 areas 1D2 global symbols
 M forest_screen
 O -mz80
-S _engine_player_manager_gold Ref0000
 S _rand Ref0000
 S _engine_fight_manager_gold Ref0000
 S _fight_texts Ref0000
@@ -17,6 +16,7 @@ S _engine_select_manager_update Ref0000
 S _engine_text_manager_border Ref0000
 S _global_player_object Ref0000
 S _engine_enemy_manager_draw Ref0000
+S _engine_player_manager_inc_gold Ref0000
 S _engine_text_manager_clear Ref0000
 S _engine_fight_manager_battle Ref0000
 S _engine_enemy_manager_hplo Ref0000
@@ -33,54 +33,55 @@ S _engine_enemy_manager_dead Ref0000
 S __modsint Ref0000
 S _devkit_SMS_mapROMBank Ref0000
 A _CODE size 2CD flags 0 addr 0
-S C$forest_screen.c$127$5$119 Def0153
-S C$forest_screen.c$50$1$104 Def003B
-S C$forest_screen.c$41$1$104 Def0022
-S C$forest_screen.c$32$1$104 Def000A
-S C$forest_screen.c$42$1$104 Def0027
-S C$forest_screen.c$33$1$104 Def000D
-S C$forest_screen.c$43$1$104 Def002C
-S C$forest_screen.c$34$1$104 Def0010
-S C$forest_screen.c$70$5$110 Def00B6
-S C$forest_screen.c$44$1$104 Def0031
-S C$forest_screen.c$90$2$112 Def00E6
-S C$forest_screen.c$71$5$110 Def00B9
-S C$forest_screen.c$52$1$106 Def0045
-S C$forest_screen.c$70$1$106 Def003F
-S C$forest_screen.c$36$1$104 Def0013
-S C$forest_screen.c$46$1$104 Def0032
+S C$forest_screen.c$176$3$126 Def0262
+S C$forest_screen.c$30$1$105 Def0000
+S C$forest_screen.c$50$1$105 Def003B
+S C$forest_screen.c$41$1$105 Def0022
+S C$forest_screen.c$32$1$105 Def000A
+S C$forest_screen.c$42$1$105 Def0027
+S C$forest_screen.c$33$1$105 Def000D
+S C$forest_screen.c$62$4$110 Def007D
+S C$forest_screen.c$43$1$105 Def002C
+S C$forest_screen.c$34$1$105 Def0010
+S C$forest_screen.c$70$5$111 Def00B6
+S C$forest_screen.c$44$1$105 Def0031
+S C$forest_screen.c$90$2$113 Def00E6
+S C$forest_screen.c$71$5$111 Def00B9
+S C$forest_screen.c$52$1$107 Def0045
+S C$forest_screen.c$70$1$107 Def003F
 S G$screen_forest_screen_update$0$0 Def0032
-S C$forest_screen.c$37$1$104 Def0018
-S C$forest_screen.c$38$1$104 Def001D
-S C$forest_screen.c$29$1$104 Def0000
-S C$forest_screen.c$60$3$108 Def0077
-S C$forest_screen.c$92$3$113 Def00EA
-S C$forest_screen.c$54$2$107 Def004D
-S C$forest_screen.c$93$3$113 Def00ED
-S C$forest_screen.c$67$5$110 Def0098
-S C$forest_screen.c$55$2$107 Def0057
-S C$forest_screen.c$96$2$112 Def00F0
-S C$forest_screen.c$81$3$108 Def00CB
-S C$forest_screen.c$76$5$111 Def00C5
-S C$forest_screen.c$97$2$112 Def0101
-S C$forest_screen.c$82$3$108 Def00D0
-S C$forest_screen.c$77$5$111 Def00C8
-S C$forest_screen.c$62$4$109 Def007D
+S C$forest_screen.c$36$1$105 Def0013
+S C$forest_screen.c$74$4$110 Def00BC
+S C$forest_screen.c$46$1$105 Def0032
+S C$forest_screen.c$37$1$105 Def0018
+S C$forest_screen.c$38$1$105 Def001D
+S C$forest_screen.c$29$1$105 Def0000
+S C$forest_screen.c$60$3$109 Def0077
+S C$forest_screen.c$92$3$114 Def00EA
+S C$forest_screen.c$54$2$108 Def004D
+S C$forest_screen.c$93$3$114 Def00ED
+S C$forest_screen.c$67$5$111 Def0098
+S C$forest_screen.c$55$2$108 Def0057
+S C$forest_screen.c$96$2$113 Def00F0
+S C$forest_screen.c$81$3$109 Def00CB
+S C$forest_screen.c$76$5$112 Def00C5
 S A$forest_screen$110 Def000A
 S A$forest_screen$101 Def0000
 S XFforest_screen$setup$0$0 Def02B5
-S C$forest_screen.c$89$2$112 Def00DC
-S C$forest_screen.c$87$1$106 Def00D6
-S C$forest_screen.c$83$3$108 Def00D3
+S C$forest_screen.c$97$2$113 Def0101
+S C$forest_screen.c$82$3$109 Def00D0
+S C$forest_screen.c$77$5$112 Def00C8
 S A$forest_screen$210 Def006D
 S A$forest_screen$201 Def005C
 S A$forest_screen$102 Def0003
-S C$forest_screen.c$57$3$108 Def005C
+S C$forest_screen.c$89$2$113 Def00DC
+S C$forest_screen.c$87$1$107 Def00D6
+S C$forest_screen.c$83$3$109 Def00D3
 S A$forest_screen$220 Def007A
 S A$forest_screen$211 Def0070
 S A$forest_screen$202 Def005D
 S A$forest_screen$103 Def0004
-S C$forest_screen.c$74$4$109 Def00BC
+S C$forest_screen.c$57$3$109 Def005C
 S A$forest_screen$302 Def00D3
 S A$forest_screen$230 Def0086
 S A$forest_screen$221 Def007B
@@ -100,7 +101,6 @@ S A$forest_screen$132 Def001D
 S A$forest_screen$123 Def0016
 S A$forest_screen$114 Def000D
 S A$forest_screen$105 Def0006
-S C$forest_screen.c$99$3$114 Def0107
 S A$forest_screen$610 Def0251
 S A$forest_screen$601 Def0247
 S A$forest_screen$511 Def01B7
@@ -115,6 +115,7 @@ S A$forest_screen$205 Def0064
 S A$forest_screen$142 Def0027
 S A$forest_screen$133 Def0020
 S A$forest_screen$106 Def0009
+S C$forest_screen.c$99$3$115 Def0107
 S _screen_forest_screen_update Def0032
 S A$forest_screen$710 Def02B5
 S A$forest_screen$620 Def025A
@@ -422,48 +423,47 @@ S Fforest_screen$__str_3$0$0 Def0208
 S Fforest_screen$__str_4$0$0 Def02B8
 S Fforest_screen$__str_5$0$0 Def02C2
 S _screen_forest_screen_load Def0000
-S C$forest_screen.c$103$2$112 Def010D
-S C$forest_screen.c$100$3$114 Def010A
-S C$forest_screen.c$111$2$115 Def011F
-S C$forest_screen.c$142$3$120 Def0196
-S C$forest_screen.c$106$2$112 Def0113
-S C$forest_screen.c$180$1$121 Def0286
-S C$forest_screen.c$162$1$121 Def021E
-S C$forest_screen.c$143$3$120 Def01A8
-S C$forest_screen.c$190$1$121 Def02B5
-S C$forest_screen.c$163$1$121 Def0226
+S C$forest_screen.c$103$2$113 Def010D
+S C$forest_screen.c$100$3$115 Def010A
+S C$forest_screen.c$111$2$116 Def011F
+S C$forest_screen.c$142$3$121 Def0196
+S C$forest_screen.c$106$2$113 Def0113
+S C$forest_screen.c$180$1$122 Def0286
+S C$forest_screen.c$162$1$122 Def021E
 S Fforest_screen$setup$0$0 Def021E
-S C$forest_screen.c$182$1$121 Def0293
-S C$forest_screen.c$164$1$121 Def0229
-S C$forest_screen.c$113$3$116 Def0125
-S C$forest_screen.c$183$1$121 Def0296
-S C$forest_screen.c$170$3$123 Def023B
-S C$forest_screen.c$153$1$106 Def01BF
-S C$forest_screen.c$146$3$120 Def01BA
-S C$forest_screen.c$137$3$120 Def016F
-S C$forest_screen.c$154$1$106 Def01C5
-S C$forest_screen.c$135$2$115 Def0169
-S C$forest_screen.c$130$4$118 Def0155
-S C$forest_screen.c$115$3$116 Def0134
-S C$forest_screen.c$109$1$106 Def0118
-S C$forest_screen.c$185$1$121 Def0299
-S C$forest_screen.c$167$1$121 Def0230
-S C$forest_screen.c$186$1$121 Def02A5
-S C$forest_screen.c$156$1$106 Def021E
-S C$forest_screen.c$132$4$118 Def0164
-S C$forest_screen.c$123$4$118 Def013F
-S C$forest_screen.c$174$2$124 Def0280
+S C$forest_screen.c$143$3$121 Def01A8
+S C$forest_screen.c$190$1$122 Def02B5
+S C$forest_screen.c$163$1$122 Def0226
+S C$forest_screen.c$182$1$122 Def0293
+S C$forest_screen.c$164$1$122 Def0229
+S C$forest_screen.c$126$5$120 Def0150
+S C$forest_screen.c$113$3$117 Def0125
+S C$forest_screen.c$183$1$122 Def0296
+S C$forest_screen.c$170$3$124 Def023B
+S C$forest_screen.c$153$1$107 Def01BF
+S C$forest_screen.c$146$3$121 Def01BA
+S C$forest_screen.c$137$3$121 Def016F
+S C$forest_screen.c$127$5$120 Def0153
+S C$forest_screen.c$154$1$107 Def01C5
+S C$forest_screen.c$135$2$116 Def0169
+S C$forest_screen.c$130$4$119 Def0155
+S C$forest_screen.c$115$3$117 Def0134
+S C$forest_screen.c$109$1$107 Def0118
+S C$forest_screen.c$185$1$122 Def0299
+S C$forest_screen.c$167$1$122 Def0230
+S C$forest_screen.c$186$1$122 Def02A5
+S C$forest_screen.c$156$1$107 Def021E
+S C$forest_screen.c$132$4$119 Def0164
+S C$forest_screen.c$123$4$119 Def013F
 S XG$screen_forest_screen_load$0$0 Def0031
-S C$forest_screen.c$188$1$121 Def02B2
-S C$forest_screen.c$168$2$122 Def0259
-S C$forest_screen.c$117$4$117 Def0139
-S C$forest_screen.c$189$1$121 Def02B5
-S C$forest_screen.c$174$3$125 Def025F
-S C$forest_screen.c$118$4$117 Def013C
-S C$forest_screen.c$168$3$123 Def0238
-S C$forest_screen.c$176$3$125 Def0262
-S C$forest_screen.c$126$5$119 Def0150
-S C$forest_screen.c$30$1$104 Def0000
+S C$forest_screen.c$174$2$125 Def0280
+S C$forest_screen.c$188$1$122 Def02B2
+S C$forest_screen.c$168$2$123 Def0259
+S C$forest_screen.c$117$4$118 Def0139
+S C$forest_screen.c$189$1$122 Def02B5
+S C$forest_screen.c$174$3$126 Def025F
+S C$forest_screen.c$118$4$118 Def013C
+S C$forest_screen.c$168$3$124 Def0238
 A _DATA size 6 flags 0 addr 0
 S Fforest_screen$player_damage$0$0 Def0004
 S Fforest_screen$enemys_damage$0$0 Def0003
@@ -505,9 +505,9 @@ R 00 00 01 00
 T 00 00
 R 00 00 00 00
 T 00 00 21 07 00 46 C5 33 CD 00 00 33 CD 00 00 CD
-R 00 00 00 00 02 03 0C 00 02 09 08 00 02 0D 16 00
+R 00 00 00 00 02 03 0B 00 02 09 07 00 02 0D 16 00
 T 0E 00 1E 02 CD 00 00 21 00 00 36 00 21
-R 00 00 00 00 00 02 00 00 02 05 07 00 00 08 01 00
+R 00 00 00 00 00 02 00 00 02 05 06 00 00 08 01 00
 T 19 00 01 00 36 00 21 02 00 36 00 21 03 00 36 00
 R 00 00 00 00 00 02 01 00 00 07 01 00 00 0C 01 00
 T 27 00 21 04 00 36 00 21 05 00 36 00 C9
@@ -521,9 +521,9 @@ R 00 00 00 00 00 08 01 00 00 0D 00 00
 T 4E 00 3E 10 F5 33 CD 00 00 33 C1 7D B7 CA D6 00
 R 00 00 00 00 02 07 14 00 00 0E 00 00
 T 5C 00 C5 21 05 10 E5 21 C6 01 E5 CD 00 00 F1 21
-R 00 00 00 00 00 08 00 00 02 0C 06 00
+R 00 00 00 00 00 08 00 00 02 0C 05 00
 T 6A 00 05 11 E3 21 C6 01 E5 CD 00 00 F1 F1 C1 3A
-R 00 00 00 00 00 06 00 00 02 0A 06 00
+R 00 00 00 00 00 06 00 00 02 0A 05 00
 T 78 00 00 00 3D 20 4E C5 3A 03 00 F5 33 CD 00 00
 R 00 00 00 00 00 02 01 00 00 09 01 00 02 0E 19 00
 T 86 00 33 3A 04 00 F5 33 CD 00 00 33 CD 00 00 C1
@@ -531,9 +531,9 @@ R 00 00 00 00 00 04 01 00 02 09 13 00 02 0D 1A 00
 T 94 00 CB 45 28 24 11 05 00 21 00 00 39 C5 D5 E5
 R 00 00 00 00 00 07 01 00
 T A2 00 CD 00 00 F1 F1 3A 05 00 F5 33 DD 7E FF F5
-R 00 00 00 00 02 03 02 00 00 08 01 00
+R 00 00 00 00 02 03 01 00 00 08 01 00
 T B0 00 33 CD 00 00 F1 C1 3E 06 02 C3 C2 01
-R 00 00 00 00 02 04 00 00 00 0C 00 00
+R 00 00 00 00 02 04 0D 00 00 0C 00 00
 T BC 00
 R 00 00 00 00
 T BC 00 C5 CD 00 00 C1 CB 45 28 06 3E 0D 02 C3
@@ -553,7 +553,7 @@ R 00 00 00 00 00 0C 00 00
 T F0 00
 R 00 00 00 00
 T F0 00 C5 3E 02 F5 33 CD 00 00 33 C1 FD 21 00 00
-R 00 00 00 00 02 08 0A 00 00 0E 01 00
+R 00 00 00 00 02 08 09 00 00 0E 01 00
 T FE 00 FD 75 00 FD 7E 00 3C 20 06 3E 05 02 C3
 R 00 00 00 00
 T 0B 01 C2 01
@@ -567,7 +567,7 @@ R 00 00 00 00
 T 18 01 3A 02 00 3D C2 BF 01 3A 00 00 B7 20 44 C5
 R 00 00 00 00 00 03 01 00 00 07 00 00 00 0A 01 00
 T 26 01 CD 00 00 11 0A 00 D5 E5 CD 00 00 F1 F1 C1
-R 00 00 00 00 02 03 01 00 02 0B 1B 00
+R 00 00 00 00 02 03 00 00 02 0B 1B 00
 T 34 01 7D D6 05 30 06 3E 04 02 C3 C2 01
 R 00 00 00 00 00 0B 00 00
 T 3F 01
@@ -579,7 +579,7 @@ R 00 00 00 00
 T 55 01
 R 00 00 00 00
 T 55 01 C5 21 05 10 E5 21 DC 01 E5 CD 00 00 F1 F1
-R 00 00 00 00 00 08 00 00 02 0C 06 00
+R 00 00 00 00 00 08 00 00 02 0C 05 00
 T 63 01 C1 21 02 00 36 02
 R 00 00 00 00 00 04 01 00
 T 69 01
@@ -589,7 +589,7 @@ R 00 00 00 00 00 03 01 00 00 0A 01 00 00 0E 01 00
 T 77 01 E5 CD 00 00 F1 21 05 10 E3 21 F2 01 E5 CD
 R 00 00 00 00 02 04 0F 00 00 0C 00 00
 T 85 01 00 00 F1 21 05 11 E3 21 08 02 E5 CD 00 00
-R 00 00 00 00 02 02 06 00 00 0A 00 00 02 0E 06 00
+R 00 00 00 00 02 02 05 00 00 0A 00 00 02 0E 05 00
 T 93 01 F1 F1 C1 21 03 00 5E 16 00 C5 21 17 10 E5
 R 00 00 00 00 00 06 01 00
 T A1 01 D5 CD 00 00 F1 F1 C1 21 04 00 5E 16 00 C5
@@ -633,7 +633,7 @@ R 00 00 00 00
 T 1E 02
 R 00 00 00 00
 T 1E 02 3E 01 F5 33 CD 00 00 33 CD 00 00 21 03 0A
-R 00 00 00 00 02 07 17 00 02 0B 0B 00
+R 00 00 00 00 02 07 17 00 02 0B 0A 00
 T 2C 02 E5 CD 00 00 26 0F E3 33 CD 00 00 33 01
 R 00 00 00 00 02 04 0E 00 02 0B 1C 00
 T 39 02 05 00
@@ -641,27 +641,27 @@ R 00 00 00 00
 T 3B 02
 R 00 00 00 00
 T 3B 02 59 0C 68 26 00 29 3E 00 00 85 6F 3E 00 00
-R 00 00 00 00 0B 09 05 00 8B 0E 05 00
+R 00 00 00 00 0B 09 04 00 8B 0E 04 00
 T 47 02 8C 67 7E 23 66 6F C5 53 1E 05 D5 E5 CD
 R 00 00 00 00
 T 54 02 00 00 F1 F1 C1 04 78 D6 02 38 DC 01 0B 00
-R 00 00 00 00 02 02 06 00
+R 00 00 00 00 02 02 05 00
 T 62 02
 R 00 00 00 00
 T 62 02 59 0C 68 26 00 29 3E 00 00 85 6F 3E 00 00
-R 00 00 00 00 0B 09 03 00 8B 0E 03 00
+R 00 00 00 00 0B 09 02 00 8B 0E 02 00
 T 6E 02 8C 67 7E 23 66 6F C5 53 1E 05 D5 E5 CD
 R 00 00 00 00
 T 7B 02 00 00 F1 F1 C1 04 78 D6 03 38 DC 21 0C 02
-R 00 00 00 00 02 02 06 00
+R 00 00 00 00 02 02 05 00
 T 89 02 E5 21 02 03 E5 CD 00 00 F1 F1 CD 00 00 CD
-R 00 00 00 00 02 08 18 00 02 0D 04 00
+R 00 00 00 00 02 08 18 00 02 0D 03 00
 T 97 02 00 00 21 03 16 E5 21 B8 02 E5 CD 00 00 F1
-R 00 00 00 00 02 02 0D 00 00 09 00 00 02 0D 06 00
+R 00 00 00 00 02 02 0C 00 00 09 00 00 02 0D 05 00
 T A5 02 21 11 16 E3 21 C2 02 E5 CD 00 00 F1 F1 CD
-R 00 00 00 00 00 07 00 00 02 0B 06 00
+R 00 00 00 00 00 07 00 00 02 0B 05 00
 T B3 02 00 00 C3 00 00
-R 00 00 00 00 02 02 09 00 02 05 10 00
+R 00 00 00 00 02 02 08 00 02 05 10 00
 T B8 02
 R 00 00 00 00
 T B8 02 59 4F 55 52 20 48 50 20 2D 00

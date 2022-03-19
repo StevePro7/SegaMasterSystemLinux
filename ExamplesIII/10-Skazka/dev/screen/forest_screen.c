@@ -65,7 +65,7 @@ void screen_forest_screen_update( unsigned char *screen_type )
 				if( engine_enemy_manager_dead() )
 				{
 					engine_fight_manager_gold( &xp, &player_gold );
-					engine_player_manager_gold( xp, player_gold );
+					engine_player_manager_inc_gold( xp, player_gold );
 
 					*screen_type = screen_type_victory;
 					return;
