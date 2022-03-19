@@ -56,18 +56,31 @@ void screen_stats_screen_update( unsigned char *screen_type )
 	//TODO delete
 	//engine_font_manager_data(selection+1, 28, 22 );
 
+	*screen_type = screen_type_stats;
 	switch( selection )
 	{
 	case action_type_forest:
+		*screen_type = screen_type_forest;
+		break;
+	case action_type_shop:
+		*screen_type = screen_type_shop;
 		break;
 	case action_type_rest:
+		// TODO sound effect?
 		engine_player_manager_rest();
+		break;
+	case action_type_talk:
+		*screen_type = screen_type_talk;
+		break;
+	case action_type_boss:
+		*screen_type = screen_type_boss;
+		break;
+	case action_type_menu:
+		*screen_type = screen_type_menu;
 		break;
 	default:
 		break;
 	}
-
-	*screen_type = screen_type_stats;
 }
 
 static void print_stats()

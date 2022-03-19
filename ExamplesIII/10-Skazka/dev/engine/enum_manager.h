@@ -13,7 +13,7 @@ typedef enum tag_enum_screen_type
 	screen_type_shop = 7,
 	screen_type_rest = 8,
 	screen_type_talk = 9,
-	screen_type_fight = 10,
+	screen_type_boss = 10,
 	screen_type_complete = 11,
 	screen_type_menu = 12,
 	screen_type_over = 13,

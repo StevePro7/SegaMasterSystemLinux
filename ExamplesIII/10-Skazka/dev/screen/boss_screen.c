@@ -1,4 +1,4 @@
-#include "fight_screen.h"
+#include "boss_screen.h"
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
@@ -9,7 +9,7 @@
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
 
-void screen_fight_screen_load()
+void screen_boss_screen_load()
 {
 	unsigned char row;
 	unsigned char idx;
@@ -32,7 +32,7 @@ void screen_fight_screen_load()
 	devkit_SMS_displayOn();
 }
 
-void screen_fight_screen_update( unsigned char *screen_type )
+void screen_boss_screen_update( unsigned char *screen_type )
 {
-	*screen_type = screen_type_fight;
+	*screen_type = screen_type_boss;
 }
