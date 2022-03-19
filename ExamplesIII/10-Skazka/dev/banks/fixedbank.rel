@@ -5,19 +5,19 @@ O -mz80
 S .__.ABS. Def0000
 A _CODE size 0 flags 0 addr 0
 A _DATA size 0 flags 0 addr 0
-A _INITIALIZED size D2 flags 0 addr 0
-S G$villager_texts$0$0 Def0066
+A _INITIALIZED size D4 flags 0 addr 0
+S G$villager_texts$0$0 Def0068
 S _weapon_texts Def0024
-S G$beat_texts$0$0 Def00BC
+S G$beat_texts$0$0 Def00BE
 S G$enemy_texts$0$0 Def0038
 S _fight_texts Def0042
 S _forest_texts Def0034
 S G$life_texts$0$0 Def0030
 S G$armor_texts$0$0 Def002A
-S _villager_texts Def0066
+S _villager_texts Def0068
 S G$gold_texts$0$0 Def0048
 S G$menus_texts$0$0 Def005C
-S _beat_texts Def00BC
+S _beat_texts Def00BE
 S _enemy_texts Def0038
 S G$intro_texts$0$0 Def0000
 S _life_texts Def0030
@@ -25,14 +25,14 @@ S _armor_texts Def002A
 S G$stats_texts$0$0 Def0014
 S _gold_texts Def0048
 S _menus_texts Def005C
-S G$prep_texts$0$0 Def00A2
+S G$prep_texts$0$0 Def00A4
 S _intro_texts Def0000
 S G$shop_texts$0$0 Def0050
 S _stats_texts Def0014
-S G$over_texts$0$0 Def00B4
-S _prep_texts Def00A2
+S G$over_texts$0$0 Def00B6
+S _prep_texts Def00A4
 S _shop_texts Def0050
-S _over_texts Def00B4
+S _over_texts Def00B6
 S G$weapon_texts$0$0 Def0024
 S G$fight_texts$0$0 Def0042
 S G$forest_texts$0$0 Def0034
@@ -116,19 +116,19 @@ S Ffixedbank$__str_6$0$0 Def0097
 S Ffixedbank$__str_7$0$0 Def00B5
 S Ffixedbank$__str_8$0$0 Def00D3
 S Ffixedbank$__str_9$0$0 Def00F1
-A _INITIALIZER size D2 flags 0 addr 0
+A _INITIALIZER size D4 flags 0 addr 0
 S Ffixedbank$__xinit_gold_texts$0$0 Def0048
 S Ffixedbank$__xinit_menus_texts$0$0 Def005C
 S Ffixedbank$__xinit_intro_texts$0$0 Def0000
 S Ffixedbank$__xinit_stats_texts$0$0 Def0014
-S Ffixedbank$__xinit_prep_texts$0$0 Def00A2
+S Ffixedbank$__xinit_prep_texts$0$0 Def00A4
 S Ffixedbank$__xinit_shop_texts$0$0 Def0050
-S Ffixedbank$__xinit_over_texts$0$0 Def00B4
+S Ffixedbank$__xinit_over_texts$0$0 Def00B6
 S Ffixedbank$__xinit_weapon_texts$0$0 Def0024
 S Ffixedbank$__xinit_fight_texts$0$0 Def0042
 S Ffixedbank$__xinit_forest_texts$0$0 Def0034
-S Ffixedbank$__xinit_villager_texts$0$0 Def0066
-S Ffixedbank$__xinit_beat_texts$0$0 Def00BC
+S Ffixedbank$__xinit_villager_texts$0$0 Def0068
+S Ffixedbank$__xinit_beat_texts$0$0 Def00BE
 S Ffixedbank$__xinit_enemy_texts$0$0 Def0038
 S Ffixedbank$__xinit_life_texts$0$0 Def0030
 S Ffixedbank$__xinit_armor_texts$0$0 Def002A
@@ -177,21 +177,21 @@ T 5C 00
 R 00 00 02 00
 T 5C 00
 R 00 00 02 00
-T 66 00
+T 68 00
 R 00 00 02 00
-T 66 00
+T 68 00
 R 00 00 02 00
-T A2 00
+T A4 00
 R 00 00 02 00
-T A2 00
+T A4 00
 R 00 00 02 00
-T B4 00
+T B6 00
 R 00 00 02 00
-T B4 00
+T B6 00
 R 00 00 02 00
-T BC 00
+T BE 00
 R 00 00 02 00
-T BC 00
+T BE 00
 R 00 00 02 00
 T 00 00
 R 00 00 07 00
@@ -665,53 +665,53 @@ T 56 00 6B 02 8F 01 74 02
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
 T 5C 00
 R 00 00 08 00
-T 5C 00 7D 02 78 00 85 02
+T 5C 00 7D 02 78 00 78 00
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
-T 62 00 92 02 9F 02
-R 00 00 08 00 00 02 07 00 00 04 07 00
-T 66 00
+T 62 00 85 02 92 02 9F 02
+R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
+T 68 00
 R 00 00 08 00
-T 66 00 AD 02 78 00 78 00
+T 68 00 AD 02 78 00 78 00
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
-T 6C 00 C9 02 E5 02 01 03
+T 6E 00 C9 02 E5 02 01 03
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
-T 72 00 1D 03 39 03 55 03
+T 74 00 1D 03 39 03 55 03
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
-T 78 00 71 03 8D 03 A9 03
+T 7A 00 71 03 8D 03 A9 03
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
-T 7E 00 C5 03 E1 03 78 00
+T 80 00 C5 03 E1 03 78 00
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
-T 84 00 FD 03 19 04 78 00
+T 86 00 FD 03 19 04 78 00
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
-T 8A 00 35 04 51 04 6D 04
+T 8C 00 35 04 51 04 6D 04
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
-T 90 00 76 04 92 04 AE 04
+T 92 00 76 04 92 04 AE 04
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
-T 96 00 CA 04 78 00 78 00
+T 98 00 CA 04 78 00 78 00
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
-T 9C 00 E6 04 78 00 78 00
+T 9E 00 E6 04 78 00 78 00
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
-T A2 00
+T A4 00
 R 00 00 08 00
-T A2 00 01 05 1D 05 78 00
+T A4 00 01 05 1D 05 78 00
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
-T A8 00 78 00 39 05 78 00
+T AA 00 78 00 39 05 78 00
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
-T AE 00 78 00 55 05 62 05
+T B0 00 78 00 55 05 62 05
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
-T B4 00
+T B6 00
 R 00 00 08 00
-T B4 00 6E 05 78 00 78 00
+T B6 00 6E 05 78 00 78 00
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
-T BA 00 7C 05
+T BC 00 7C 05
 R 00 00 08 00 00 02 07 00
-T BC 00
+T BE 00
 R 00 00 08 00
-T BC 00 8A 05 78 00 78 00
+T BE 00 8A 05 78 00 78 00
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
-T C2 00 78 00 A5 05 C1 05
+T C4 00 78 00 A5 05 C1 05
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
-T C8 00 DD 05 78 00 78 00
+T CA 00 DD 05 78 00 78 00
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
-T CE 00 78 00 ED 05
+T D0 00 78 00 ED 05
 R 00 00 08 00 00 02 07 00 00 04 07 00

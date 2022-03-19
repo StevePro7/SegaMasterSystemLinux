@@ -9,7 +9,7 @@ S:G$enemy_texts$0$0({10}DA5d,DG,SC:U),E,0,0
 S:G$fight_texts$0$0({6}DA3d,DG,SC:U),E,0,0
 S:G$gold_texts$0$0({8}DA4d,DG,SC:U),E,0,0
 S:G$shop_texts$0$0({12}DA6d,DG,SC:U),E,0,0
-S:G$menus_texts$0$0({10}DA5d,DG,SC:U),E,0,0
+S:G$menus_texts$0$0({12}DA6d,DG,SC:U),E,0,0
 S:G$villager_texts$0$0({60}DA30d,DG,SC:U),E,0,0
 S:G$prep_texts$0$0({18}DA9d,DG,SC:U),E,0,0
 S:G$over_texts$0$0({8}DA4d,DG,SC:U),E,0,0
