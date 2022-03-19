@@ -18,7 +18,7 @@ void engine_select_manager_init()
 
 	for( index = 0; index < MAX_SELECTS; index++ )
 	{
-		so->select_index[ index ] = 3;		// TODO should be 0..!
+		so->select_index[ index ] = 0;		// TODO should be 0..!
 	}
 
 	so->select_X = 0;
