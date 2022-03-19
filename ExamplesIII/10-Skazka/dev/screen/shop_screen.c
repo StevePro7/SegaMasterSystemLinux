@@ -44,6 +44,12 @@ void screen_shop_screen_load()
 
 	row = 10;
 	engine_select_manager_load( select_type, LEFT_X + 7, row, 5 );
+
+	row = 18;
+	engine_font_manager_text( LOCALE_SHOP_QUERY, LEFT_X + 7, row + 0 );
+	engine_font_manager_text( LOCALE_YOU_HAVE, LEFT_X + 7, row + 2 );
+	engine_font_manager_text( LOCALE_GOLD, LEFT_X + 16, row + 2 );
+
 	devkit_SMS_displayOn();
 }
 
