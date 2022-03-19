@@ -13,6 +13,7 @@
 #include "../screen/shop_screen.h"
 #include "../screen/rest_screen.h"
 #include "../screen/talk_screen.h"
+#include "../screen/prep_screen.h"
 #include "../screen/boss_screen.h"
 #include "../screen/complete_screen.h"
 #include "../screen/menu_screen.h"
@@ -45,6 +46,7 @@ void engine_screen_manager_init( unsigned char open_screen_type )
 	load_method[ screen_type_shop ] = screen_shop_screen_load;
 	load_method[ screen_type_rest ] = screen_rest_screen_load;
 	load_method[ screen_type_talk ] = screen_talk_screen_load;
+	load_method[ screen_type_prep ] = screen_prep_screen_load;
 	load_method[ screen_type_boss ] = screen_boss_screen_load;
 	load_method[ screen_type_complete ] = screen_complete_screen_load;
 	load_method[ screen_type_menu ] = screen_menu_screen_load;
@@ -66,6 +68,7 @@ void engine_screen_manager_init( unsigned char open_screen_type )
 	update_method[ screen_type_shop ] = screen_shop_screen_update;
 	update_method[ screen_type_rest ] = screen_rest_screen_update;
 	update_method[ screen_type_talk ] = screen_talk_screen_update;
+	update_method[ screen_type_prep ] = screen_prep_screen_update;
 	update_method[ screen_type_boss ] = screen_boss_screen_update;
 	update_method[ screen_type_complete ] = screen_complete_screen_update;
 	update_method[ screen_type_menu ] = screen_menu_screen_update;

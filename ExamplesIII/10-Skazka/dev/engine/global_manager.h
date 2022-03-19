@@ -1,7 +1,7 @@
 #ifndef _GLOBAL_MANAGER_H_
 #define _GLOBAL_MANAGER_H_
 
-#define MAX_SCREEENS			19
+#define MAX_SCREEENS			20
 #define MAX_SELECTS				5
 #define MAX_ENEMIES				5
 #define MAX_RANDOM				10

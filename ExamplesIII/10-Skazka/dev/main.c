@@ -32,8 +32,8 @@ void main( void )
 	//open_screen_type = screen_type_record;
 	//open_screen_type = screen_type_func;
 	//open_screen_type = screen_type_over;
-	open_screen_type = screen_type_talk;
-	//open_screen_type = screen_type_fight;
+	//open_screen_type = screen_type_talk;
+	open_screen_type = screen_type_boss;
 	//open_screen_type = screen_type_victory;
 
 	// TODO  init player + enemy again before start new game!
