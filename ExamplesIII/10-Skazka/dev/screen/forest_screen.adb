@@ -36,6 +36,7 @@ S:Fforest_screen$curr_event_stage$0$0({1}SC:U),E,0,0
 S:Fforest_screen$enemys_damage$0$0({1}SC:U),E,0,0
 S:Fforest_screen$player_damage$0$0({1}SC:U),E,0,0
 S:Fforest_screen$player_gold$0$0({1}SC:U),E,0,0
+S:Fforest_screen$select_type$0$0({1}SC:U),E,0,0
 S:G$engine_content_manager_load_splash$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_tiles$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_title$0$0({2}DF,SV:S),C,0,0

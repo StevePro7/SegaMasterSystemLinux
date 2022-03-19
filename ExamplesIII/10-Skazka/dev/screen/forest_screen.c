@@ -22,11 +22,14 @@ static unsigned char curr_event_stage;
 static unsigned char enemys_damage;
 static unsigned char player_damage;
 static unsigned char player_gold;
+static unsigned char select_type;
 static void setup();
 
 void screen_forest_screen_load()
 {
 	struct_player_object *po = &global_player_object;
+	select_type = select_type_forest;
+
 	engine_enemy_manager_load( po->level );
 
 	devkit_SMS_displayOff();
@@ -93,7 +96,7 @@ void screen_forest_screen_update( unsigned char *screen_type )
 			return;
 		}
 
-		curr_selection = engine_select_manager_update( select_type_forest );
+		curr_selection = engine_select_manager_update( select_type );
 		if( NO_SELECTION == curr_selection )
 		{
 			*screen_type = screen_type_forest;
@@ -177,7 +180,7 @@ static void setup()
 	}
 
 	row = 12;
-	engine_select_manager_load( select_type_forest, LEFT_X + 3, row, 2 );
+	engine_select_manager_load( select_type, LEFT_X + 3, row, 2 );
 
 	engine_player_manager_draw();
 	engine_enemy_manager_draw();

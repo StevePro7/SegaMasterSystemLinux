@@ -80,13 +80,6 @@ unsigned char engine_select_manager_update( unsigned char index )
 	return NO_SELECTION;
 }
 
-
-//unsigned char engine_select_manager_get_select( unsigned char index )
-//{
-//	struct_select_object *so = &global_select_object;
-//	return so->select_index[ index ];
-//}
-
 static void draw_arrows()
 {
 	struct_select_object *so = &global_select_object;

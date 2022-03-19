@@ -14,13 +14,16 @@
 static void print_stats();
 static void print_village();
 static void print_player();
+static unsigned char select_type;
 
 void screen_stats_screen_load()
 {
 	unsigned char row;
 	unsigned char idx;
 
+	select_type = select_type_stats;
 	row = 1;
+
 	engine_player_manager_calc();
 
 	devkit_SMS_displayOff();
@@ -40,21 +43,18 @@ void screen_stats_screen_load()
 	}
 
 	row = 15;
-	engine_select_manager_load( select_type_stats, LEFT_X + 10, row, 6 );
+	engine_select_manager_load( select_type, LEFT_X + 10, row, 6 );
 	devkit_SMS_displayOn();
 }
 
 void screen_stats_screen_update( unsigned char *screen_type )
 {
-	unsigned char selection = engine_select_manager_update( select_type_stats );
+	unsigned char selection = engine_select_manager_update( select_type );
 	if( NO_SELECTION == selection )
 	{
 		*screen_type = screen_type_stats;
 		return;
 	}
-
-	//TODO delete
-	//engine_font_manager_data(selection+1, 28, 22 );
 
 	*screen_type = screen_type_stats;
 	switch( selection )

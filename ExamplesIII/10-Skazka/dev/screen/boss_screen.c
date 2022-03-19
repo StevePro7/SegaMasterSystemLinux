@@ -9,11 +9,14 @@
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
 
+static unsigned char select_type;
+
 void screen_boss_screen_load()
 {
 	unsigned char row;
 //	unsigned char idx;
 
+	select_type = select_type_boss;
 	row = 1;
 	devkit_SMS_displayOff();
 	engine_content_manager_load_title( row );
@@ -21,7 +24,7 @@ void screen_boss_screen_load()
 	engine_text_manager_clear( row + 2, row + 9 );
 
 	engine_font_manager_text( "BOSS SCREEN!!", 4, 10 );
-	//engine_select_manager_load( select_type_boss, LEFT_X + 5, row, 2 );
+	//engine_select_manager_load( select_type, LEFT_X + 5, row, 2 );
 	devkit_SMS_displayOn();
 }
 

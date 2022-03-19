@@ -15,13 +15,5 @@ void screen_select_screen_load()
 
 void screen_select_screen_update( unsigned char *screen_type )
 {
-	//unsigned char selection;
-
-	//selection = engine_select_manager_update( select_type_stats );
-	//if( NO_SELECTION != selection )
-	//{
-	//	engine_font_manager_data( selection + 1, 15, 18 );
-	//}
-
 	*screen_type = screen_type_select;
 }

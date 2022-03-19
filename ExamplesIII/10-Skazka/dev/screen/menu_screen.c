@@ -9,11 +9,14 @@
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
 
+static unsigned char select_type;
+
 void screen_menu_screen_load()
 {
 	unsigned char row;
 	unsigned char idx;
 
+	select_type = select_type_menu;
 	row = 1;
 	devkit_SMS_displayOff();
 	engine_content_manager_load_title( row );
@@ -28,13 +31,13 @@ void screen_menu_screen_load()
 	}
 
 	row = 9;
-	engine_select_manager_load( select_type_menu, LEFT_X + 8, row, 3 );
+	engine_select_manager_load( select_type, LEFT_X + 8, row, 3 );
 	devkit_SMS_displayOn();
 }
 
 void screen_menu_screen_update( unsigned char *screen_type )
 {
-	unsigned char selection = engine_select_manager_update( select_type_stats );
+	unsigned char selection = engine_select_manager_update( select_type );
 	if( NO_SELECTION == selection )
 	{
 		*screen_type = screen_type_menu;
