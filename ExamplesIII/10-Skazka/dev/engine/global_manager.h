@@ -4,6 +4,7 @@
 #define MAX_SCREEENS			20
 #define MAX_SELECTS				7
 #define MAX_ENEMIES				5
+#define MAX_ITEMS				5
 #define MAX_RANDOM				10
 #define HLF_RANDOM				5
 #define MAX_XP					99
