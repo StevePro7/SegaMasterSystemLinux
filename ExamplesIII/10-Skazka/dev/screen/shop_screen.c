@@ -50,6 +50,10 @@ void screen_shop_screen_load()
 	engine_font_manager_text( LOCALE_YOU_HAVE, LEFT_X + 7, row + 2 );
 	engine_font_manager_text( LOCALE_GOLD, LEFT_X + 16, row + 2 );
 
+	//insufficient
+	//engine_font_manager_text( LOCALE_NOT_ENOUGH, LEFT_X + 8, row + 4 );
+	//engine_font_manager_text( LOCALE_GOLD, LEFT_X + 19, row + 4 );
+
 	devkit_SMS_displayOn();
 }
 
