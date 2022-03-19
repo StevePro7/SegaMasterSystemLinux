@@ -1,6 +1,7 @@
 #include "boss_screen.h"
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
+#include "../engine/fight_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/input_manager.h"
@@ -21,10 +22,12 @@ void screen_boss_screen_load()
 	devkit_SMS_displayOff();
 	engine_content_manager_load_title( row );
 	engine_text_manager_border();
-	engine_text_manager_clear( row + 2, row + 9 );
+	engine_text_manager_clear( row + 0, row + 9 );
 
-	engine_font_manager_text( "BOSS SCREEN!!", 4, 10 );
+	//engine_font_manager_text( "BOSS SCREEN!!", 4, 10 );
 	//engine_select_manager_load( select_type, LEFT_X + 5, row, 2 );
+
+	engine_boss_manager_draw( 10, 1 );
 	devkit_SMS_displayOn();
 }
 

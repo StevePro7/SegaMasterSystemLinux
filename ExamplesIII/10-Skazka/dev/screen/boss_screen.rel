@@ -1,22 +1,19 @@
 ;!FILE boss_screen.asm
 XL2
-H 9 areas 35 global symbols
+H 9 areas 31 global symbols
 M boss_screen
 O -mz80
-S _engine_font_manager_text Ref0000
 S _devkit_SMS_displayOn Ref0000
 S _engine_text_manager_border Ref0000
 S _engine_text_manager_clear Ref0000
 S .__.ABS. Def0000
 S _devkit_SMS_displayOff Ref0000
 S _engine_content_manager_load_title Ref0000
-A _CODE size 3F flags 0 addr 0
-S C$boss_screen.c$24$1$78 Def0013
-S XG$screen_boss_screen_update$0$0 Def003E
-S C$boss_screen.c$26$1$78 Def001A
-S C$boss_screen.c$28$1$78 Def0027
-S C$boss_screen.c$19$1$78 Def0000
-S C$boss_screen.c$29$1$78 Def0027
+S _engine_boss_manager_draw Ref0000
+A _CODE size 2C flags 0 addr 0
+S C$boss_screen.c$37$1$83 Def002B
+S C$boss_screen.c$15$0$0 Def0000
+S XG$screen_boss_screen_update$0$0 Def002B
 S A$boss_screen$70 Def0005
 S G$screen_boss_screen_load$0$0 Def0000
 S A$boss_screen$82 Def0010
@@ -31,31 +28,30 @@ S A$boss_screen$76 Def000B
 S A$boss_screen$95 Def0021
 S A$boss_screen$86 Def0013
 S A$boss_screen$77 Def000C
-S A$boss_screen$96 Def0022
 S A$boss_screen$87 Def0016
 S A$boss_screen$78 Def000F
-S Fboss_screen$__str_0$0$0 Def002A
-S A$boss_screen$97 Def0025
 S A$boss_screen$88 Def0017
-S A$boss_screen$98 Def0026
 S _screen_boss_screen_load Def0000
-S XG$screen_boss_screen_load$0$0 Def0027
-S G$screen_boss_screen_update$0$0 Def0038
-S A$boss_screen$132 Def003E
-S A$boss_screen$123 Def0038
-S A$boss_screen$124 Def0039
-S A$boss_screen$106 Def0027
-S _screen_boss_screen_update Def0038
-S A$boss_screen$125 Def003A
-S A$boss_screen$126 Def003B
-S A$boss_screen$127 Def003C
-S C$boss_screen.c$33$1$80 Def0038
-S C$boss_screen.c$34$1$80 Def003E
-S C$boss_screen.c$21$1$78 Def0005
-S C$boss_screen.c$31$1$78 Def0038
-S C$boss_screen.c$22$1$78 Def0008
-S C$boss_screen.c$23$1$78 Def0010
-S C$boss_screen.c$14$0$0 Def0000
+S XG$screen_boss_screen_load$0$0 Def0022
+S G$screen_boss_screen_update$0$0 Def0025
+S A$boss_screen$120 Def0029
+S A$boss_screen$103 Def0022
+S C$boss_screen.c$20$1$81 Def0000
+S _screen_boss_screen_update Def0025
+S A$boss_screen$125 Def002B
+S A$boss_screen$116 Def0025
+S C$boss_screen.c$30$1$81 Def001A
+S A$boss_screen$117 Def0026
+S C$boss_screen.c$31$1$81 Def0022
+S C$boss_screen.c$22$1$81 Def0005
+S A$boss_screen$118 Def0027
+S C$boss_screen.c$32$1$81 Def0022
+S C$boss_screen.c$23$1$81 Def0008
+S A$boss_screen$119 Def0028
+S C$boss_screen.c$24$1$81 Def0010
+S C$boss_screen.c$34$1$81 Def0025
+S C$boss_screen.c$25$1$81 Def0013
+S C$boss_screen.c$36$1$83 Def0025
 A _DATA size 1 flags 0 addr 0
 S Fboss_screen$select_type$0$0 Def0000
 A _INITIALIZED size 0 flags 0 addr 0
@@ -72,18 +68,12 @@ R 00 00 01 00
 T 00 00
 R 00 00 00 00
 T 00 00 21 00 00 36 05 CD 00 00 3E 01 F5 33 CD
-R 00 00 00 00 00 03 01 00 02 08 05 00
-T 0D 00 00 00 33 CD 00 00 21 03 0A E5 CD 00 00 21
-R 00 00 00 00 02 02 06 00 02 06 02 00 02 0D 03 00
-T 1B 00 04 0A E3 21 2A 00 E5 CD 00 00 F1 F1 C3
-R 00 00 00 00 00 06 00 00 02 0A 00 00
-T 28 00 00 00
-R 00 00 00 00 02 02 01 00
-T 2A 00
+R 00 00 00 00 00 03 01 00 02 08 04 00
+T 0D 00 00 00 33 CD 00 00 21 01 0A E5 CD 00 00 21
+R 00 00 00 00 02 02 05 00 02 06 01 00 02 0D 02 00
+T 1B 00 0B 01 E3 CD 00 00 F1 C3 00 00
+R 00 00 00 00 02 06 06 00 02 0A 00 00
+T 25 00
 R 00 00 00 00
-T 2A 00 42 4F 53 53 20 53 43 52 45 45 4E 21 21 00
-R 00 00 00 00
-T 38 00
-R 00 00 00 00
-T 38 00 C1 E1 E5 C5 36 0B C9
+T 25 00 C1 E1 E5 C5 36 0B C9
 R 00 00 00 00
