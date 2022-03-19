@@ -1,11 +1,13 @@
 M:shop_screen
 F:G$screen_shop_screen_load$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lshop_screen.screen_shop_screen_load$po$1$79({2}DG,STtag_struct_player_object:S),R,0,0,[]
-S:Lshop_screen.screen_shop_screen_load$row$1$79({1}SC:U),R,0,0,[c]
-S:Lshop_screen.screen_shop_screen_load$idx$1$79({1}SC:U),R,0,0,[b]
 F:G$screen_shop_screen_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lshop_screen.screen_shop_screen_update$screen_type$1$84({2}DG,SC:U),B,1,4
-S:Lshop_screen.screen_shop_screen_update$selection$1$85({1}SC:U),R,0,0,[c]
+S:Lshop_screen.screen_shop_screen_update$screen_type$1$80({2}DG,SC:U),B,1,4
+S:Lshop_screen.screen_shop_screen_update$value$1$81({1}SC:U),R,0,0,[c]
+S:Lshop_screen.screen_shop_screen_update$selection$1$81({1}SC:U),R,0,0,[c]
+F:Fshop_screen$setup$0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lshop_screen.setup$row$1$84({1}SC:U),R,0,0,[c]
+S:Lshop_screen.setup$idx$1$84({1}SC:U),R,0,0,[b]
 T:Fshop_screen$tag_struct_player_object[({0}S:S$xp$0$0({1}SC:U),Z,0,0)({1}S:S$hp$0$0({1}SC:U),Z,0,0)({2}S:S$gold$0$0({2}SI:U),Z,0,0)({4}S:S$weapon$0$0({1}SC:U),Z,0,0)({5}S:S$armor$0$0({1}SC:U),Z,0,0)({6}S:S$life$0$0({1}SC:U),Z,0,0)({7}S:S$level$0$0({1}SC:U),Z,0,0)({8}S:S$max_hp$0$0({1}SC:U),Z,0,0)({9}S:S$max_xp$0$0({1}SC:U),Z,0,0)({10}S:S$won$0$0({1}SC:U),Z,0,0)]
 T:Fshop_screen$tag_struct_aelect_object[({0}S:S$select_index$0$0({7}DA7d,SC:U),Z,0,0)({7}S:S$select_X$0$0({1}SC:U),Z,0,0)({8}S:S$select_Y$0$0({1}SC:U),Z,0,0)({9}S:S$select_min$0$0({1}SC:U),Z,0,0)({10}S:S$select_max$0$0({1}SC:U),Z,0,0)]
 S:G$inventory$0$0({5}DA5d,SC:U),E,0,0
@@ -26,6 +28,7 @@ S:G$menus_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$prep_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$over_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$beat_texts$0$0({0}DA0d,DG,SC:U),E,0,0
+S:Fshop_screen$event_stage$0$0({1}SC:U),E,0,0
 S:Fshop_screen$select_type$0$0({1}SC:U),E,0,0
 S:Fshop_screen$gold$0$0({1}SC:U),E,0,0
 S:G$engine_content_manager_load_splash$0$0({2}DF,SV:S),C,0,0

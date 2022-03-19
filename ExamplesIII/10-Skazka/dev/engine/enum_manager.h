@@ -65,9 +65,6 @@ typedef enum tag_enum_weapon_type
 	weapon_type_none = 0,
 	weapon_type_sword = 1,
 	weapon_type_axe = 2,
-	weapon_type_kolchuga = 3,
-	weapon_type_tegilay = 4,
-	weapon_type_life = 5,
 
 } enum_weapon_type;
 
