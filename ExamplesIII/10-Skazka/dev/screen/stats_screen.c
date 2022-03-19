@@ -73,7 +73,7 @@ void screen_stats_screen_update( unsigned char *screen_type )
 		*screen_type = screen_type_talk;
 		break;
 	case action_type_boss:
-		*screen_type = screen_type_boss;
+		*screen_type = screen_type_prep;
 		break;
 	case action_type_menu:
 		*screen_type = screen_type_menu;
