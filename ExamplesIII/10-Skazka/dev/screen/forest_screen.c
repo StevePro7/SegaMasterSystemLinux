@@ -63,18 +63,19 @@ void screen_forest_screen_update( unsigned char *screen_type )
 				engine_enemy_manager_hit( enemys_damage );
 				engine_player_manager_hit( player_damage );
 
+				// If both you and enemy have 0 HP then you get game over first!
+				if( engine_player_manager_dead() )
+				{
+					*screen_type = screen_type_over;
+					return;
+				}
+
 				if( engine_enemy_manager_dead() )
 				{
 					engine_fight_manager_gold( &xp, &player_gold );
 					engine_player_manager_inc_gold( xp, player_gold );
 
 					*screen_type = screen_type_victory;
-					return;
-				}
-
-				if( engine_player_manager_dead() )
-				{
-					*screen_type = screen_type_over;
 					return;
 				}
 			}

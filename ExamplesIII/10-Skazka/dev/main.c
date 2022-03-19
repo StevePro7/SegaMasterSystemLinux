@@ -36,7 +36,7 @@ void main( void )
 	//open_screen_type = screen_type_prep;
 	//open_screen_type = screen_type_boss;
 	//open_screen_type = screen_type_victory;
-	open_screen_type = screen_type_load;
+	//open_screen_type = screen_type_load;
 
 	engine_enemy_manager_init();
 
