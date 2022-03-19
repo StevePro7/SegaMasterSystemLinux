@@ -10,7 +10,7 @@
 // Global variable.
 struct_player_object global_player_object;
 
-void engine_player_manager_init()
+void engine_player_manager_load()
 {
 	struct_player_object *po = &global_player_object;
 	po->xp = 0;							// Z

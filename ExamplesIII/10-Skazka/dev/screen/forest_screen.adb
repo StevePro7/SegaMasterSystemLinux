@@ -32,7 +32,7 @@ S:G$over_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$beat_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:Fforest_screen$curr_selection$0$0({1}SC:U),E,0,0
 S:Fforest_screen$prev_selection$0$0({1}SC:U),E,0,0
-S:Fforest_screen$curr_event_stage$0$0({1}SC:U),E,0,0
+S:Fforest_screen$event_stage$0$0({1}SC:U),E,0,0
 S:Fforest_screen$enemys_damage$0$0({1}SC:U),E,0,0
 S:Fforest_screen$player_damage$0$0({1}SC:U),E,0,0
 S:Fforest_screen$player_gold$0$0({1}SC:U),E,0,0
@@ -55,7 +55,7 @@ S:G$engine_font_manager_zero$0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_update$0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_hold$0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move$0$0({2}DF,SC:U),C,0,0
-S:G$engine_player_manager_init$0$0({2}DF,SV:S),C,0,0
+S:G$engine_player_manager_load$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_calc$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_stats$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_rest$0$0({2}DF,SV:S),C,0,0

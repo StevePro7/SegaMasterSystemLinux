@@ -14,6 +14,8 @@ S:G$screen_title_screen_load$0$0({2}DF,SV:S),C,0,0
 S:G$screen_title_screen_update$0$0({2}DF,SV:S),C,0,0
 S:G$screen_intro_screen_load$0$0({2}DF,SV:S),C,0,0
 S:G$screen_intro_screen_update$0$0({2}DF,SV:S),C,0,0
+S:G$screen_load_screen_load$0$0({2}DF,SV:S),C,0,0
+S:G$screen_load_screen_update$0$0({2}DF,SV:S),C,0,0
 S:G$screen_stats_screen_load$0$0({2}DF,SV:S),C,0,0
 S:G$screen_stats_screen_update$0$0({2}DF,SV:S),C,0,0
 S:G$screen_forest_screen_load$0$0({2}DF,SV:S),C,0,0
@@ -22,8 +24,6 @@ S:G$screen_victory_screen_load$0$0({2}DF,SV:S),C,0,0
 S:G$screen_victory_screen_update$0$0({2}DF,SV:S),C,0,0
 S:G$screen_shop_screen_load$0$0({2}DF,SV:S),C,0,0
 S:G$screen_shop_screen_update$0$0({2}DF,SV:S),C,0,0
-S:G$screen_rest_screen_load$0$0({2}DF,SV:S),C,0,0
-S:G$screen_rest_screen_update$0$0({2}DF,SV:S),C,0,0
 S:G$screen_talk_screen_load$0$0({2}DF,SV:S),C,0,0
 S:G$screen_talk_screen_update$0$0({2}DF,SV:S),C,0,0
 S:G$screen_prep_screen_load$0$0({2}DF,SV:S),C,0,0

@@ -36,11 +36,14 @@ void main( void )
 	//open_screen_type = screen_type_prep;
 	//open_screen_type = screen_type_boss;
 	//open_screen_type = screen_type_victory;
+	open_screen_type = screen_type_load;
 
-	// TODO  init player + enemy again before start new game!
 	engine_enemy_manager_init();
-	engine_player_manager_init();
+
+	// TODO - remove this at the end because will be in the load screen before new game anyway
+	engine_player_manager_load();
 	engine_player_manager_calc();
+	// TODO - remove this at the end because will be in the load screen before new game anyway
 
 	engine_select_manager_init();
 	engine_screen_manager_init( open_screen_type );

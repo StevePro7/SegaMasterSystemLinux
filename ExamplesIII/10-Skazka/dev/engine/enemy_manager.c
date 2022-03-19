@@ -17,6 +17,7 @@ unsigned char xpo_num[ MAX_ENEMIES ] = { 2, 2, 4, 4, 10 };
 void engine_enemy_manager_init()
 {
 	struct_enemy_object *eo = &global_enemy_object;
+	eo->index = 0;
 	eo->hplo = 0;
 	eo->ax = 0;
 	eo->gldo = 0;
