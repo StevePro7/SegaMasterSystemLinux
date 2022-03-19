@@ -34,7 +34,7 @@ void main( void )
 	//open_screen_type = screen_type_over;
 	//open_screen_type = screen_type_menu;
 	//open_screen_type = screen_type_fight;
-	//open_screen_type = screen_type_complete;
+	open_screen_type = screen_type_victory;
 
 	// TODO  init player + enemy again before start new game!
 	engine_enemy_manager_init();
