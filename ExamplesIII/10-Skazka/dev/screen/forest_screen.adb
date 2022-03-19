@@ -11,10 +11,10 @@ S:Lforest_screen.setup$row$1$122({1}SC:U),R,0,0,[c]
 S:Lforest_screen.setup$idx$1$122({1}SC:U),R,0,0,[b]
 T:Fforest_screen$tag_struct_player_object[({0}S:S$xp$0$0({1}SC:U),Z,0,0)({1}S:S$hp$0$0({1}SC:U),Z,0,0)({2}S:S$gold$0$0({2}SI:U),Z,0,0)({4}S:S$weapon$0$0({1}SC:U),Z,0,0)({5}S:S$armor$0$0({1}SC:U),Z,0,0)({6}S:S$life$0$0({1}SC:U),Z,0,0)({7}S:S$level$0$0({1}SC:U),Z,0,0)({8}S:S$max_hp$0$0({1}SC:U),Z,0,0)({9}S:S$max_xp$0$0({1}SC:U),Z,0,0)({10}S:S$won$0$0({1}SC:U),Z,0,0)]
 T:Fforest_screen$tag_struct_enemy_object[({0}S:S$index$0$0({1}SC:U),Z,0,0)({1}S:S$hplo$0$0({1}SC:U),Z,0,0)({2}S:S$ax$0$0({1}SC:U),Z,0,0)({3}S:S$gldo$0$0({1}SC:U),Z,0,0)({4}S:S$xpo$0$0({1}SC:U),Z,0,0)]
-T:Fforest_screen$tag_struct_aelect_object[({0}S:S$select_index$0$0({5}DA5d,SC:U),Z,0,0)({5}S:S$select_X$0$0({1}SC:U),Z,0,0)({6}S:S$select_Y$0$0({1}SC:U),Z,0,0)({7}S:S$select_min$0$0({1}SC:U),Z,0,0)({8}S:S$select_max$0$0({1}SC:U),Z,0,0)]
+T:Fforest_screen$tag_struct_aelect_object[({0}S:S$select_index$0$0({7}DA7d,SC:U),Z,0,0)({7}S:S$select_X$0$0({1}SC:U),Z,0,0)({8}S:S$select_Y$0$0({1}SC:U),Z,0,0)({9}S:S$select_min$0$0({1}SC:U),Z,0,0)({10}S:S$select_max$0$0({1}SC:U),Z,0,0)]
 S:G$global_enemy_object$0$0({5}STtag_struct_enemy_object:S),E,0,0
 S:G$global_player_object$0$0({11}STtag_struct_player_object:S),E,0,0
-S:G$global_select_object$0$0({9}STtag_struct_aelect_object:S),E,0,0
+S:G$global_select_object$0$0({11}STtag_struct_aelect_object:S),E,0,0
 S:G$intro_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$stats_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$weapon_texts$0$0({0}DA0d,DG,SC:U),E,0,0

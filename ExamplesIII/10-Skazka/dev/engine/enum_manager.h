@@ -43,8 +43,9 @@ typedef enum tag_enum_select_type
 	select_type_stats = 1,
 	select_type_forest = 2,
 	select_type_shop = 3,
-	select_type_boss = 4,
-	select_type_menu = 5,
+	select_type_prep = 4,
+	select_type_boss = 5,
+	select_type_menu = 6,
 
 } enum_select_type;
 
