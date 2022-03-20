@@ -1,6 +1,6 @@
 ;!FILE test_screen.asm
 XL2
-H 9 areas 6E global symbols
+H 9 areas 77 global symbols
 M test_screen
 O -mz80
 S _engine_font_manager_text Ref0000
@@ -9,7 +9,7 @@ S .__.ABS. Def0000
 S _engine_input_manager_hold Ref0000
 S _engine_player_manager_calc Ref0000
 S _engine_effect_manager_play Ref0000
-A _CODE size 94 flags 0 addr 0
+A _CODE size A7 flags 0 addr 0
 S A$test_screen$170 Def0076
 S A$test_screen$134 Def004A
 S A$test_screen$116 Def0037
@@ -20,22 +20,22 @@ S A$test_screen$135 Def004C
 S A$test_screen$117 Def0038
 S C$test_screen.c$31$2$17 Def0062
 S C$test_screen.c$18$1$13 Def0034
-S A$test_screen$208 Def0093
 S A$test_screen$190 Def0084
 S A$test_screen$154 Def005F
 S A$test_screen$145 Def0056
 S A$test_screen$136 Def004F
 S A$test_screen$118 Def003B
-S C$test_screen.c$53$1$15 Def008D
 S C$test_screen.c$35$1$15 Def0078
 S C$test_screen.c$32$2$17 Def0069
+S A$test_screen$218 Def00A0
+S A$test_screen$209 Def009A
 S A$test_screen$191 Def0087
 S A$test_screen$164 Def0069
 S A$test_screen$155 Def0060
 S A$test_screen$146 Def0058
 S A$test_screen$137 Def0050
 S A$test_screen$128 Def0040
-S C$test_screen.c$54$1$15 Def0093
+S C$test_screen.c$54$1$15 Def009A
 S C$test_screen.c$36$1$15 Def0080
 S C$test_screen.c$25$2$16 Def0040
 S A$test_screen$192 Def0088
@@ -43,10 +43,11 @@ S A$test_screen$165 Def006C
 S A$test_screen$147 Def0059
 S A$test_screen$138 Def0051
 S A$test_screen$129 Def0044
+S C$test_screen.c$55$1$15 Def00A0
 S C$test_screen.c$28$1$15 Def0056
 S C$test_screen.c$26$2$16 Def0047
 S C$test_screen.c$10$0$0 Def0000
-S A$test_screen$193 Def0089
+S A$test_screen$193 Def008B
 S A$test_screen$184 Def0080
 S A$test_screen$166 Def006E
 S A$test_screen$148 Def005A
@@ -57,16 +58,18 @@ S A$test_screen$185 Def0081
 S A$test_screen$176 Def0078
 S A$test_screen$167 Def0071
 S A$test_screen$149 Def005D
+S A$test_screen$195 Def008F
 S A$test_screen$186 Def0082
 S A$test_screen$177 Def007A
 S A$test_screen$168 Def0072
 S A$test_screen$159 Def0062
+S A$test_screen$196 Def0090
 S A$test_screen$178 Def007B
 S A$test_screen$169 Def0073
 S A$test_screen$179 Def007C
 S C$test_screen.c$38$2$18 Def0084
-S A$test_screen$199 Def008D
-S XG$screen_test_screen_update$0$0 Def0093
+S C$test_screen.c$39$2$18 Def0091
+S XG$screen_test_screen_update$0$0 Def00A0
 S A$test_screen$70 Def0005
 S A$test_screen$80 Def0014
 S G$screen_test_screen_load$0$0 Def0000
@@ -88,19 +91,25 @@ S Ftest_screen$__str_0$0$0 Def0026
 S A$test_screen$97 Def0025
 S A$test_screen$88 Def001E
 S A$test_screen$79 Def0013
+S Ftest_screen$__str_1$0$0 Def00A1
 S A$test_screen$89 Def001F
 S _screen_test_screen_load Def0000
 S XG$screen_test_screen_load$0$0 Def0025
 S G$screen_test_screen_update$0$0 Def0034
-S A$test_screen$200 Def008E
-S A$test_screen$201 Def008F
+S A$test_screen$200 Def0091
+S A$test_screen$210 Def009B
+S A$test_screen$201 Def0094
 S C$test_screen.c$12$1$13 Def0000
-S A$test_screen$202 Def0090
+S A$test_screen$211 Def009C
+S A$test_screen$202 Def0095
 S C$test_screen.c$13$1$13 Def0005
-S A$test_screen$203 Def0091
+S A$test_screen$212 Def009D
+S A$test_screen$203 Def0096
 S A$test_screen$140 Def0055
 S A$test_screen$122 Def003C
 S C$test_screen.c$14$1$13 Def0008
+S A$test_screen$213 Def009E
+S A$test_screen$204 Def0099
 S A$test_screen$123 Def003D
 S A$test_screen$114 Def0034
 S C$test_screen.c$22$1$15 Def0034
@@ -156,11 +165,17 @@ T 72 00 C5 CD 00 00 F1 F1
 R 00 00 00 00 02 04 01 00
 T 78 00
 R 00 00 00 00
-T 78 00 3E 10 F5 33 CD 00 00 33 7D B7 28 09 3A
+T 78 00 3E 10 F5 33 CD 00 00 33 7D B7 28 16 21
 R 00 00 00 00 02 07 03 00
-T 85 00 00 00 F5 33 CD 00 00 33
+T 85 00 14 14 E5 21 A1 00 E5 CD 00 00 F1 F1 3A
+R 00 00 00 00 00 06 00 00 02 0A 00 00
+T 92 00 00 00 F5 33 CD 00 00 33
 R 00 00 00 00 00 02 01 00 02 07 05 00
-T 8D 00
+T 9A 00
 R 00 00 00 00
-T 8D 00 C1 E1 E5 C5 36 12 C9
+T 9A 00 C1 E1 E5 C5 36 12 C9
+R 00 00 00 00
+T A1 00
+R 00 00 00 00
+T A1 00 48 45 4C 4C 4F 00
 R 00 00 00 00

@@ -44,7 +44,7 @@ void engine_effect_manager_play( unsigned char index )
 
 	if( !ho->hack_sound )
 	{
-		return;
+		//return;
 	}
 
 	devkit_SMS_mapROMBank( bank );

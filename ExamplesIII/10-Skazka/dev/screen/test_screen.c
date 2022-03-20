@@ -35,6 +35,7 @@ void screen_test_screen_update( unsigned char *screen_type )
 	input = engine_input_manager_hold( input_type_fire1 );
 	if( input )
 	{
+		engine_font_manager_text( "HELLO", 20, 20 );
 		engine_effect_manager_play( index );
 	//	engine_font_manager_text( "BEG!", 2, 12 );
 	//	// Intro.
