@@ -12,11 +12,13 @@
 #include "../engine/text_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
+#include <stdlib.h>
 
 static unsigned char select_type;
 static unsigned char event_stage;
 static unsigned char enemys_damage;
 static unsigned char player_damage;
+static void laugh( unsigned char selection );
 
 void screen_boss_screen_load()
 {
@@ -58,7 +60,7 @@ void screen_boss_screen_load()
 	engine_enemy_manager_hplo();
 
 	engine_boss_manager_draw( 10, 0 );
-	engine_font_manager_text( "HA HA HA", LEFT_X + 22, FIGHT_ROW - 6 );
+	
 
 	row = 19;
 	engine_select_manager_load( select_type, LEFT_X + 5, row, 2 );
@@ -84,10 +86,13 @@ void screen_boss_screen_update( unsigned char *screen_type )
 
 	if( forest_type_decide == event_stage )
 	{
+		laugh( selection );
 		if( boss_type_beg == selection )
 		{
-			engine_font_manager_text( "HA HA HA", LEFT_X + 23, FIGHT_ROW - 13 );
+			
 		}
+
+		event_stage = forest_type_select;
 	}
 
 	*screen_type = screen_type_boss;
@@ -108,3 +113,15 @@ void screen_boss_screen_update( unsigned char *screen_type )
 //	engine_font_manager_text( ( unsigned char* ) query_texts[ 0 ], LEFT_X + 3, row );
 //	//engine_font_manager_text( "SO YOU HAVE COME TO CALLENGE", LEFT_X + 3, row );
 //}
+
+static void laugh( unsigned char selection )
+{
+	devkit_SMS_mapROMBank( FIXED_BANK );
+	if( boss_type_battle == selection )
+	{
+		selection = rand() % 2;
+		selection += 1;
+	}
+
+	engine_font_manager_text( ( unsigned char* ) laugh_texts[ selection ], LEFT_X + 22, FIGHT_ROW - 6 );
+}

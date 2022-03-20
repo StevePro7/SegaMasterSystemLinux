@@ -1,14 +1,15 @@
 XL2
-H A areas 85 global symbols
+H A areas 8B global symbols
 M fixedbank
 O -mz80
 S .__.ABS. Def0000
 A _CODE size 0 flags 0 addr 0
 A _DATA size 0 flags 0 addr 0
-A _INITIALIZED size E0 flags 0 addr 0
+A _INITIALIZED size E6 flags 0 addr 0
 S G$villager_texts$0$0 Def006C
 S _weapon_texts Def0024
-S G$beat_texts$0$0 Def00CA
+S G$beat_texts$0$0 Def00D0
+S _laugh_texts Def00C2
 S G$enemy_texts$0$0 Def0038
 S _fight_texts Def0042
 S _forest_texts Def0034
@@ -17,7 +18,7 @@ S G$armor_texts$0$0 Def002A
 S _villager_texts Def006C
 S G$gold_texts$0$0 Def0048
 S G$menus_texts$0$0 Def0060
-S _beat_texts Def00CA
+S _beat_texts Def00D0
 S _enemy_texts Def0038
 S G$intro_texts$0$0 Def0000
 S _life_texts Def0030
@@ -25,26 +26,27 @@ S _armor_texts Def002A
 S G$stats_texts$0$0 Def0014
 S _gold_texts Def0048
 S _menus_texts Def0060
-S G$query_texts$0$0 Def00BA
-S G$boss_texts$0$0 Def00BE
+S G$query_texts$0$0 Def00BE
+S G$boss_texts$0$0 Def00BA
 S G$prep_texts$0$0 Def00A8
 S _intro_texts Def0000
 S G$shop_texts$0$0 Def0050
 S _stats_texts Def0014
-S G$over_texts$0$0 Def00C2
-S _query_texts Def00BA
+S G$over_texts$0$0 Def00C8
+S _query_texts Def00BE
 S _prep_texts Def00A8
-S _boss_texts Def00BE
+S _boss_texts Def00BA
 S _shop_texts Def0050
-S _over_texts Def00C2
+S _over_texts Def00C8
 S G$weapon_texts$0$0 Def0024
+S G$laugh_texts$0$0 Def00C2
 S G$fight_texts$0$0 Def0042
 S G$forest_texts$0$0 Def0034
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
-A _BANK15 size 691 flags 0 addr 0
+A _BANK15 size 6AC flags 0 addr 0
 S Ffixedbank$__str_10$0$0 Def0105
 S Ffixedbank$__str_20$0$0 Def01A1
 S Ffixedbank$__str_11$0$0 Def0119
@@ -73,49 +75,52 @@ S Ffixedbank$__str_43$0$0 Def02D2
 S Ffixedbank$__str_34$0$0 Def0266
 S Ffixedbank$__str_25$0$0 Def01F1
 S Ffixedbank$__str_16$0$0 Def017D
-S Ffixedbank$__str_80$0$0 Def0676
-S Ffixedbank$__str_71$0$0 Def05B0
+S Ffixedbank$__str_80$0$0 Def0649
+S Ffixedbank$__str_71$0$0 Def05A8
 S Ffixedbank$__str_62$0$0 Def04D3
 S Ffixedbank$__str_53$0$0 Def03EA
 S Ffixedbank$__str_44$0$0 Def02EE
 S Ffixedbank$__str_35$0$0 Def0272
 S Ffixedbank$__str_26$0$0 Def01FD
 S Ffixedbank$__str_17$0$0 Def0186
-S Ffixedbank$__str_72$0$0 Def05CD
+S Ffixedbank$__str_81$0$0 Def0665
+S Ffixedbank$__str_72$0$0 Def05BD
 S Ffixedbank$__str_63$0$0 Def04EF
 S Ffixedbank$__str_54$0$0 Def0406
 S Ffixedbank$__str_45$0$0 Def030A
 S Ffixedbank$__str_36$0$0 Def027E
 S Ffixedbank$__str_27$0$0 Def0209
 S Ffixedbank$__str_18$0$0 Def018F
-S Ffixedbank$__str_73$0$0 Def05E2
+S Ffixedbank$__str_82$0$0 Def0681
+S Ffixedbank$__str_73$0$0 Def05DA
 S Ffixedbank$__str_64$0$0 Def050B
 S Ffixedbank$__str_55$0$0 Def0422
 S Ffixedbank$__str_46$0$0 Def0326
 S Ffixedbank$__str_37$0$0 Def028A
 S Ffixedbank$__str_28$0$0 Def0215
 S Ffixedbank$__str_19$0$0 Def0198
+S Ffixedbank$__str_83$0$0 Def0691
 S Ffixedbank$__str_74$0$0 Def05F7
 S Ffixedbank$__str_65$0$0 Def0526
 S Ffixedbank$__str_56$0$0 Def043E
 S Ffixedbank$__str_47$0$0 Def0342
 S Ffixedbank$__str_38$0$0 Def0296
 S Ffixedbank$__str_29$0$0 Def0229
-S Ffixedbank$__str_75$0$0 Def0605
+S Ffixedbank$__str_75$0$0 Def0600
 S Ffixedbank$__str_66$0$0 Def0542
 S Ffixedbank$__str_57$0$0 Def045A
 S Ffixedbank$__str_48$0$0 Def035E
 S Ffixedbank$__str_39$0$0 Def02A2
-S Ffixedbank$__str_76$0$0 Def0613
+S Ffixedbank$__str_76$0$0 Def0609
 S Ffixedbank$__str_67$0$0 Def055E
 S Ffixedbank$__str_58$0$0 Def0476
 S Ffixedbank$__str_49$0$0 Def037A
-S Ffixedbank$__str_77$0$0 Def062E
+S Ffixedbank$__str_77$0$0 Def0612
 S Ffixedbank$__str_68$0$0 Def057A
 S Ffixedbank$__str_59$0$0 Def0492
-S Ffixedbank$__str_78$0$0 Def064A
+S Ffixedbank$__str_78$0$0 Def0620
 S Ffixedbank$__str_69$0$0 Def0587
-S Ffixedbank$__str_79$0$0 Def0666
+S Ffixedbank$__str_79$0$0 Def062E
 S Ffixedbank$__str_0$0$0 Def0000
 S Ffixedbank$__str_1$0$0 Def001E
 S Ffixedbank$__str_2$0$0 Def003C
@@ -126,21 +131,22 @@ S Ffixedbank$__str_6$0$0 Def0097
 S Ffixedbank$__str_7$0$0 Def00B5
 S Ffixedbank$__str_8$0$0 Def00D3
 S Ffixedbank$__str_9$0$0 Def00F1
-A _INITIALIZER size E0 flags 0 addr 0
+A _INITIALIZER size E6 flags 0 addr 0
 S Ffixedbank$__xinit_gold_texts$0$0 Def0048
 S Ffixedbank$__xinit_menus_texts$0$0 Def0060
 S Ffixedbank$__xinit_intro_texts$0$0 Def0000
 S Ffixedbank$__xinit_stats_texts$0$0 Def0014
-S Ffixedbank$__xinit_query_texts$0$0 Def00BA
-S Ffixedbank$__xinit_boss_texts$0$0 Def00BE
+S Ffixedbank$__xinit_query_texts$0$0 Def00BE
+S Ffixedbank$__xinit_boss_texts$0$0 Def00BA
 S Ffixedbank$__xinit_prep_texts$0$0 Def00A8
 S Ffixedbank$__xinit_shop_texts$0$0 Def0050
-S Ffixedbank$__xinit_over_texts$0$0 Def00C2
+S Ffixedbank$__xinit_over_texts$0$0 Def00C8
 S Ffixedbank$__xinit_weapon_texts$0$0 Def0024
+S Ffixedbank$__xinit_laugh_texts$0$0 Def00C2
 S Ffixedbank$__xinit_fight_texts$0$0 Def0042
 S Ffixedbank$__xinit_forest_texts$0$0 Def0034
 S Ffixedbank$__xinit_villager_texts$0$0 Def006C
-S Ffixedbank$__xinit_beat_texts$0$0 Def00CA
+S Ffixedbank$__xinit_beat_texts$0$0 Def00D0
 S Ffixedbank$__xinit_enemy_texts$0$0 Def0038
 S Ffixedbank$__xinit_life_texts$0$0 Def0030
 S Ffixedbank$__xinit_armor_texts$0$0 Def002A
@@ -209,9 +215,13 @@ T C2 00
 R 00 00 02 00
 T C2 00
 R 00 00 02 00
-T CA 00
+T C8 00
 R 00 00 02 00
-T CA 00
+T C8 00
+R 00 00 02 00
+T D0 00
+R 00 00 02 00
+T D0 00
 R 00 00 02 00
 T 00 00
 R 00 00 07 00
@@ -599,69 +609,81 @@ T 87 05 20 20 20 20 20 32 29 20 20 4E 4F 00
 R 00 00 07 00
 T 93 05
 R 00 00 07 00
-T 93 05 53 4F 20 59 4F 55 20 48 41 56 45 20 43 4F
+T 93 05 31 29 20 42 45 47 20 46 4F 52 20 59 4F 55
 R 00 00 07 00
-T A1 05 4D 45 20 54 4F 20 43 41 4C 4C 45 4E 47 45
+T A1 05 52 20 4C 49 46 45 00
 R 00 00 07 00
-T AF 05 00
+T A8 05
 R 00 00 07 00
-T B0 05
+T A8 05 32 29 20 46 49 47 48 54 21 21 20 20 20 20
 R 00 00 07 00
-T B0 05 4D 45 20 46 4F 4F 4C 49 53 48 20 4D 4F 52
+T B6 05 20 20 20 20 20 20 00
 R 00 00 07 00
-T BE 05 54 41 4C 3F 20 56 45 52 59 20 57 45 4C 4C
+T BD 05
 R 00 00 07 00
-T CC 05 00
+T BD 05 53 4F 20 59 4F 55 20 48 41 56 45 20 43 4F
 R 00 00 07 00
-T CD 05
+T CB 05 4D 45 20 54 4F 20 43 41 4C 4C 45 4E 47 45
 R 00 00 07 00
-T CD 05 31 29 20 42 45 47 20 46 4F 52 20 59 4F 55
+T D9 05 00
 R 00 00 07 00
-T DB 05 52 20 4C 49 46 45 00
+T DA 05
 R 00 00 07 00
-T E2 05
+T DA 05 4D 45 20 46 4F 4F 4C 49 53 48 20 4D 4F 52
 R 00 00 07 00
-T E2 05 32 29 20 46 49 47 48 54 21 21 20 20 20 20
+T E8 05 54 41 4C 3F 20 56 45 52 59 20 57 45 4C 4C
 R 00 00 07 00
-T F0 05 20 20 20 20 20 20 00
+T F6 05 00
 R 00 00 07 00
 T F7 05
 R 00 00 07 00
-T F7 05 59 4F 55 20 41 52 45 20 44 45 41 44 21 00
+T F7 05 48 41 20 48 41 20 48 41 00
 R 00 00 07 00
-T 05 06
+T 00 06
 R 00 00 07 00
-T 05 06 20 20 47 41 4D 45 20 4F 56 45 52 20 20 00
+T 00 06 59 4F 55 20 44 49 45 21 00
 R 00 00 07 00
-T 13 06
+T 09 06
 R 00 00 07 00
-T 13 06 20 20 20 20 20 20 43 4F 4E 47 4C 41 54 55
+T 09 06 59 4F 55 20 46 4F 4F 4C 00
 R 00 00 07 00
-T 21 06 52 41 54 49 4F 4E 21 21 20 20 20 20 00
+T 12 06
+R 00 00 07 00
+T 12 06 59 4F 55 20 41 52 45 20 44 45 41 44 21 00
+R 00 00 07 00
+T 20 06
+R 00 00 07 00
+T 20 06 20 20 47 41 4D 45 20 4F 56 45 52 20 20 00
 R 00 00 07 00
 T 2E 06
 R 00 00 07 00
-T 2E 06 59 4F 55 20 48 41 56 45 20 43 4F 4D 50 4C
+T 2E 06 20 20 20 20 20 20 43 4F 4E 47 4C 41 54 55
 R 00 00 07 00
-T 3C 06 45 54 45 44 20 41 20 47 52 45 41 54 20 00
+T 3C 06 52 41 54 49 4F 4E 21 21 20 20 20 20 00
 R 00 00 07 00
-T 4A 06
+T 49 06
 R 00 00 07 00
-T 4A 06 47 41 4D 45 20 41 4E 44 20 50 52 4F 56 45
+T 49 06 59 4F 55 20 48 41 56 45 20 43 4F 4D 50 4C
 R 00 00 07 00
-T 58 06 44 20 54 48 45 20 4A 55 53 54 49 43 45 00
+T 57 06 45 54 45 44 20 41 20 47 52 45 41 54 20 00
 R 00 00 07 00
-T 66 06
+T 65 06
 R 00 00 07 00
-T 66 06 4F 46 20 4F 55 52 20 43 55 4C 54 55 52 45
+T 65 06 47 41 4D 45 20 41 4E 44 20 50 52 4F 56 45
 R 00 00 07 00
-T 74 06 2E 00
+T 73 06 44 20 54 48 45 20 4A 55 53 54 49 43 45 00
 R 00 00 07 00
-T 76 06
+T 81 06
 R 00 00 07 00
-T 76 06 20 4E 4F 57 20 47 4F 20 41 4E 44 20 52 45
+T 81 06 4F 46 20 4F 55 52 20 43 55 4C 54 55 52 45
 R 00 00 07 00
-T 84 06 53 54 20 4F 55 52 20 48 45 52 4F 21 00
+T 8F 06 2E 00
+R 00 00 07 00
+T 91 06
+R 00 00 07 00
+T 91 06 20 4E 4F 57 20 47 4F 20 41 4E 44 20 52 45
+R 00 00 07 00
+T 9F 06 53 54 20 4F 55 52 20 48 45 52 4F 21 00
 R 00 00 07 00
 T 00 00
 R 00 00 08 00
@@ -759,25 +781,29 @@ T B4 00 78 00 7A 05 87 05
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
 T BA 00
 R 00 00 08 00
-T BA 00 93 05 B0 05
+T BA 00 93 05 A8 05
 R 00 00 08 00 00 02 07 00 00 04 07 00
 T BE 00
 R 00 00 08 00
-T BE 00 CD 05 E2 05
+T BE 00 BD 05 DA 05
 R 00 00 08 00 00 02 07 00 00 04 07 00
 T C2 00
 R 00 00 08 00
-T C2 00 F7 05 78 00 78 00
+T C2 00 F7 05 00 06 09 06
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
-T C8 00 05 06
-R 00 00 08 00 00 02 07 00
-T CA 00
+T C8 00
 R 00 00 08 00
-T CA 00 13 06 78 00 78 00
+T C8 00 12 06 78 00 78 00
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
-T D0 00 78 00 2E 06 4A 06
+T CE 00 20 06
+R 00 00 08 00 00 02 07 00
+T D0 00
+R 00 00 08 00
+T D0 00 2E 06 78 00 78 00
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
-T D6 00 66 06 78 00 78 00
+T D6 00 78 00 49 06 65 06
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
-T DC 00 78 00 76 06
+T DC 00 81 06 78 00 78 00
+R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
+T E2 00 78 00 91 06
 R 00 00 08 00 00 02 07 00 00 04 07 00
