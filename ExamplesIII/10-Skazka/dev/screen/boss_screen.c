@@ -22,7 +22,7 @@ static unsigned char player_damage;
 void screen_boss_screen_load()
 {
 	unsigned char row;
-//	unsigned char idx;
+	unsigned char idx;
 
 	select_type = select_type_boss;
 	row = 1;
@@ -30,13 +30,17 @@ void screen_boss_screen_load()
 	engine_boss_manager_load();
 	engine_player_manager_boss();
 
-	devkit_SMS_displayOff();
+	//devkit_SMS_displayOff();
 	engine_content_manager_load_title( row );
 	engine_text_manager_border();
 	engine_text_manager_clear( row + 0, row + 9 );
 
-	//engine_font_manager_text( "BOSS SCREEN!!", 4, 10 );
-	//engine_select_manager_load( select_type, LEFT_X + 5, row, 2 );
+	row = 10;
+	for( idx = 0; idx < 2; idx++ )
+	{
+		engine_font_manager_text( ( unsigned char* ) query_texts[ idx ], LEFT_X + 3, row );
+		row++;
+	}
 
 	engine_font_manager_text( LOCALE_FIGHT_MSG1, LEFT_X + 3, FIGHT_ROW + 3 );
 	engine_font_manager_text( LOCALE_BOSSX_MSG2, LEFT_X + 17, FIGHT_ROW + 3 );
@@ -44,8 +48,8 @@ void screen_boss_screen_load()
 	engine_player_manager_hplo();
 	engine_enemy_manager_hplo();
 
-	engine_boss_manager_draw( 10, 1 );
-	devkit_SMS_displayOn();
+	//engine_boss_manager_draw( 10, 1 );
+//	devkit_SMS_displayOn();
 
 	
 }

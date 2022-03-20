@@ -17,9 +17,11 @@ extern const unsigned char *shop_texts[];
 
 extern const unsigned char *villager_texts[];
 
-extern const unsigned char *menus_texts[];
-
 extern const unsigned char *prep_texts[];
+extern const unsigned char *query_texts[];
+extern const unsigned char *boss_texts[];
+
+extern const unsigned char *menus_texts[];
 
 extern const unsigned char *over_texts[];
 extern const unsigned char *beat_texts[];

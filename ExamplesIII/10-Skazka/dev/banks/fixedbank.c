@@ -126,6 +126,7 @@ const unsigned char *villager_texts[] =
 	"",
 };
 
+
 extern const unsigned char *prep_texts[] =
 {
 	" THIS IS THE MOST IMPORTANT",
@@ -140,6 +141,18 @@ extern const unsigned char *prep_texts[] =
 	// TODO 
 	// "SO YOU HAVE COME TO CALLENGE ME,      FOOLISH MORTAL? VERY WELL.",
 
+};
+
+const unsigned char *query_texts[] =
+{
+	"SO YOU HAVE COME TO CALLENGE",
+	"ME FOOLISH MORTAL? VERY WELL!"
+};
+
+const unsigned char *boss_texts[] =
+{
+	"1) BEG FOR YOUR LIFE",
+	"2) FIGHT"
 };
 
 const unsigned char *over_texts[] =
