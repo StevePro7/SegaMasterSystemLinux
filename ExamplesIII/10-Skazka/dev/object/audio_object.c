@@ -9,7 +9,7 @@
 #include "../banks/bank11.h"
 #include "../banks/bank12.h"
 
-const unsigned char *sound_sample_data[] =
+const unsigned char *music_sample_data[] =
 {
 	Intro01_wav_pcmenc,
 	Intro02_wav_pcmenc,
@@ -21,7 +21,7 @@ const unsigned char *sound_sample_data[] =
 	Boss03_wav_pcmenc,
 };
 
-const unsigned char sound_sample_bank[] =
+const unsigned char music_sample_bank[] =
 {
 	Intro01_wav_pcmenc_bank,
 	Intro02_wav_pcmenc_bank,
@@ -33,7 +33,7 @@ const unsigned char sound_sample_bank[] =
 	Boss03_wav_pcmenc_bank,
 };
 
-const unsigned char *effect_sample_data[] =
+const unsigned char *sound_sample_data[] =
 {
 	sound0_psg,
 	sound1_psg,
@@ -51,7 +51,7 @@ const unsigned char *effect_sample_data[] =
 	sound13_psg,
 };
 
-const unsigned char effect_sample_bank[] =
+const unsigned char sound_sample_bank[] =
 {
 	sound0_psg_bank,
 	sound1_psg_bank,

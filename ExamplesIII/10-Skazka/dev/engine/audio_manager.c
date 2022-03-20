@@ -21,8 +21,8 @@ void engine_sound_manager_play( unsigned char index )
 	const unsigned char *data;
 	unsigned char bank;
 
-	data = effect_sample_data[ index ];
-	bank = effect_sample_bank[ index ];
+	data = sound_sample_data[ index ];
+	bank = sound_sample_bank[ index ];
 
 	if( !ho->hack_sounds )
 	{
@@ -40,8 +40,8 @@ void engine_music_manager_play( unsigned char index )
 	const unsigned char *data;
 	unsigned char bank;
 
-	data = sound_sample_data[ index ];
-	bank = sound_sample_bank[ index ];
+	data = music_sample_data[ index ];
+	bank = music_sample_bank[ index ];
 
 	if( !ho->hack_musics )
 	{
