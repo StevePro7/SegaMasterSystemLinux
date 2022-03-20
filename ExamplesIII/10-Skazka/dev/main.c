@@ -38,6 +38,7 @@ void main( void )
 	//open_screen_type = screen_type_test;
 
 	engine_hack_manager_init();
+	engine_hack_manager_load();
 	engine_hack_manager_invert();
 
 	engine_enemy_manager_init();

@@ -15,6 +15,7 @@ S:G$global_hack_object$0$0({9}STtag_struct_hack_object:S),E,0,0
 S:G$music_sample_data$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$sound_sample_data$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$engine_hack_manager_init$0$0({2}DF,SV:S),C,0,0
+S:G$engine_hack_manager_load$0$0({2}DF,SV:S),C,0,0
 S:G$engine_hack_manager_invert$0$0({2}DF,SV:S),C,0,0
 S:G$engine_sample_manager_init$0$0({2}DF,SV:S),C,0,0
 S:G$engine_sample_manager_play$0$0({2}DF,SV:S),C,0,0
