@@ -5,11 +5,14 @@
 #include "../engine/global_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/locale_manager.h"
+#include "../engine/sound_manager.h"
 #include "../engine/text_manager.h"
 #include "../engine/timer_manager.h"
 #include "../devkit/_sms_manager.h"
 
 #define TITLE_SCREEN_DELAY		300
+
+static void intro_music();
 
 void screen_title_screen_load()
 {
@@ -25,8 +28,11 @@ void screen_title_screen_load()
 	engine_text_manager_title( row + 2 );
 	engine_font_manager_text( LOCALE_TITLE_MSG1, LEFT_X + 7, 12 );
 	engine_font_manager_text( LOCALE_TITLE_MSG2, LEFT_X + 3, 17 );
-	engine_text_manager_fire();
+	
 	devkit_SMS_displayOn();
+
+	intro_music();
+	engine_text_manager_fire();
 }
 
 void screen_title_screen_update( unsigned char *screen_type )
@@ -45,4 +51,13 @@ void screen_title_screen_update( unsigned char *screen_type )
 	}
 
 	*screen_type = screen_type_title;
+}
+
+static void intro_music()
+{
+	unsigned char index;
+	for( index = 0; index < 5; index++ )
+	{
+		engine_sound_manager_play( index );
+	}
 }

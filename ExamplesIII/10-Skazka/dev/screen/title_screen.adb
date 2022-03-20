@@ -1,10 +1,12 @@
 M:title_screen
 F:G$screen_title_screen_load$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Ltitle_screen.screen_title_screen_load$row$1$77({1}SC:U),R,0,0,[]
+S:Ltitle_screen.screen_title_screen_load$row$1$79({1}SC:U),R,0,0,[]
 F:G$screen_title_screen_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Ltitle_screen.screen_title_screen_update$screen_type$1$78({2}DG,SC:U),B,1,4
-S:Ltitle_screen.screen_title_screen_update$input$1$79({1}SC:U),R,0,0,[c]
-S:Ltitle_screen.screen_title_screen_update$timer$1$79({1}SC:U),R,0,0,[b]
+S:Ltitle_screen.screen_title_screen_update$screen_type$1$80({2}DG,SC:U),B,1,4
+S:Ltitle_screen.screen_title_screen_update$input$1$81({1}SC:U),R,0,0,[c]
+S:Ltitle_screen.screen_title_screen_update$timer$1$81({1}SC:U),R,0,0,[b]
+F:Ftitle_screen$intro_music$0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Ltitle_screen.intro_music$index$1$83({1}SC:U),R,0,0,[b]
 T:Ftitle_screen$tag_struct_timer_object[({0}S:S$timer_count$0$0({2}SI:U),Z,0,0)({2}S:S$timer_value$0$0({2}SI:U),Z,0,0)]
 S:G$global_timer_object$0$0({4}STtag_struct_timer_object:S),E,0,0
 S:G$engine_content_manager_load_splash$0$0({2}DF,SV:S),C,0,0
@@ -17,6 +19,9 @@ S:G$engine_font_manager_zero$0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_update$0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_hold$0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move$0$0({2}DF,SC:U),C,0,0
+S:G$engine_sound_manager_init$0$0({2}DF,SV:S),C,0,0
+S:G$engine_sound_manager_play$0$0({2}DF,SV:S),C,0,0
+S:G$engine_effect_manager_play$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_clear$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_border$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_title$0$0({2}DF,SV:S),C,0,0

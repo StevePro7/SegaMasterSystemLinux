@@ -23,7 +23,7 @@ void main( void )
 	//devkit_SMS_setBGPaletteColor( 0, devkit_RGB( 0, 0, 3 ) );
 
 	//open_screen_type = screen_type_splash;
-	//open_screen_type = screen_type_title;
+	open_screen_type = screen_type_title;
 	//open_screen_type = screen_type_intro;
 	//open_screen_type = screen_type_rest;
 	//open_screen_type = screen_type_stats;
@@ -32,12 +32,12 @@ void main( void )
 	//open_screen_type = screen_type_record;
 	//open_screen_type = screen_type_func;
 	//open_screen_type = screen_type_over;
-	open_screen_type = screen_type_shop;
+	//open_screen_type = screen_type_shop;
 	//open_screen_type = screen_type_prep;
-	open_screen_type = screen_type_boss;
+	//open_screen_type = screen_type_boss;
 	//open_screen_type = screen_type_victory;
 	//open_screen_type = screen_type_detail;
-	open_screen_type = screen_type_test;
+	//open_screen_type = screen_type_test;
 
 	engine_enemy_manager_init();
 
