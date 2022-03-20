@@ -1,6 +1,6 @@
 M:bank12
-S:G$sound0_psg$0$0({43}DA43d,SC:U),D,0,0
-S:G$sound1_psg$0$0({32}DA32d,SC:U),D,0,0
+S:G$sound0_psg$0$0({32}DA32d,SC:U),D,0,0
+S:G$sound1_psg$0$0({35}DA35d,SC:U),D,0,0
 S:G$sound10_psg$0$0({34}DA34d,SC:U),D,0,0
 S:G$sound11_psg$0$0({21}DA21d,SC:U),D,0,0
 S:G$sound12_psg$0$0({19}DA19d,SC:U),D,0,0

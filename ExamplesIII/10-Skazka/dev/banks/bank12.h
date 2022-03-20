@@ -1,9 +1,9 @@
 extern const unsigned char	sound0_psg[];
-#define				sound0_psg_size 43
+#define				sound0_psg_size 32
 #define				sound0_psg_bank 12
 
 extern const unsigned char	sound1_psg[];
-#define				sound1_psg_size 32
+#define				sound1_psg_size 35
 #define				sound1_psg_bank 12
 
 extern const unsigned char	sound10_psg[];
