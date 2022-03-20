@@ -15,7 +15,7 @@
 
 static unsigned char select_type;
 static unsigned char event_stage;
-static unsigned char boss_damage;
+static unsigned char enemys_damage;
 static unsigned char player_damage;
 
 void screen_boss_screen_load()
@@ -58,17 +58,41 @@ void screen_boss_screen_load()
 	engine_enemy_manager_hplo();
 
 	engine_boss_manager_draw( 10, 0 );
+	engine_font_manager_text( "HA HA HA", LEFT_X + 22, FIGHT_ROW - 6 );
 
 	row = 19;
 	engine_select_manager_load( select_type, LEFT_X + 5, row, 2 );
 	devkit_SMS_displayOn();
+
+	event_stage = forest_type_select;
 }
 
 void screen_boss_screen_update( unsigned char *screen_type )
 {
+	unsigned char selection = 0;
+	if( forest_type_select == event_stage )
+	{
+		selection = engine_select_manager_update( select_type );
+		if( NO_SELECTION == selection )
+		{
+			*screen_type = screen_type_boss;
+			return;
+		}
+
+		event_stage = forest_type_decide;
+	}
+
+	if( forest_type_decide == event_stage )
+	{
+		if( boss_type_beg == selection )
+		{
+			engine_font_manager_text( "HA HA HA", LEFT_X + 23, FIGHT_ROW - 13 );
+		}
+	}
+
 	*screen_type = screen_type_boss;
 }
-//
+
 //static void print_intro()
 //{
 //	unsigned char row;

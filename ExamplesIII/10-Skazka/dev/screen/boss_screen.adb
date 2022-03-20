@@ -4,6 +4,7 @@ S:Lboss_screen.screen_boss_screen_load$row$1$86({1}SC:U),R,0,0,[d]
 S:Lboss_screen.screen_boss_screen_load$idx$1$86({1}SC:U),R,0,0,[e]
 F:G$screen_boss_screen_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lboss_screen.screen_boss_screen_update$screen_type$1$89({2}DG,SC:U),B,1,4
+S:Lboss_screen.screen_boss_screen_update$selection$1$90({1}SC:U),R,0,0,[c]
 T:Fboss_screen$tag_struct_player_object[({0}S:S$xp$0$0({1}SC:U),Z,0,0)({1}S:S$hp$0$0({1}SC:U),Z,0,0)({2}S:S$gold$0$0({2}SI:U),Z,0,0)({4}S:S$weapon$0$0({1}SC:U),Z,0,0)({5}S:S$armor$0$0({1}SC:U),Z,0,0)({6}S:S$life$0$0({1}SC:U),Z,0,0)({7}S:S$level$0$0({1}SC:U),Z,0,0)({8}S:S$max_hp$0$0({1}SC:U),Z,0,0)({9}S:S$max_xp$0$0({1}SC:U),Z,0,0)({10}S:S$won$0$0({1}SC:U),Z,0,0)]
 T:Fboss_screen$tag_struct_enemy_object[({0}S:S$index$0$0({1}SC:U),Z,0,0)({1}S:S$hplo$0$0({1}SC:U),Z,0,0)({2}S:S$ax$0$0({1}SC:U),Z,0,0)({3}S:S$gldo$0$0({1}SC:U),Z,0,0)({4}S:S$xpo$0$0({1}SC:U),Z,0,0)]
 T:Fboss_screen$tag_struct_aelect_object[({0}S:S$select_index$0$0({7}DA7d,SC:U),Z,0,0)({7}S:S$select_X$0$0({1}SC:U),Z,0,0)({8}S:S$select_Y$0$0({1}SC:U),Z,0,0)({9}S:S$select_min$0$0({1}SC:U),Z,0,0)({10}S:S$select_max$0$0({1}SC:U),Z,0,0)]
@@ -29,7 +30,7 @@ S:G$over_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$beat_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:Fboss_screen$select_type$0$0({1}SC:U),E,0,0
 S:Fboss_screen$event_stage$0$0({1}SC:U),E,0,0
-S:Fboss_screen$boss_damage$0$0({1}SC:U),E,0,0
+S:Fboss_screen$enemys_damage$0$0({1}SC:U),E,0,0
 S:Fboss_screen$player_damage$0$0({1}SC:U),E,0,0
 S:G$engine_content_manager_load_splash$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_tiles$0$0({2}DF,SV:S),C,0,0
