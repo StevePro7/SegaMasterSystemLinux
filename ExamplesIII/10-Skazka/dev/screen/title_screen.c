@@ -9,10 +9,12 @@
 #include "../engine/text_manager.h"
 #include "../engine/timer_manager.h"
 #include "../devkit/_sms_manager.h"
+#include <stdbool.h>
 
-#define TITLE_SCREEN_DELAY		300
+#define TITLE_SCREEN_DELAY		150
 
-static void intro_music();
+//static void intro_music();
+static bool first_time;
 
 void screen_title_screen_load()
 {
@@ -30,9 +32,9 @@ void screen_title_screen_load()
 	engine_font_manager_text( LOCALE_TITLE_MSG2, LEFT_X + 3, 17 );
 	
 	devkit_SMS_displayOn();
-
-	intro_music();
-	engine_text_manager_fire();
+	first_time = true;
+	//intro_music();
+	//engine_text_manager_fire();
 }
 
 void screen_title_screen_update( unsigned char *screen_type )
@@ -40,6 +42,25 @@ void screen_title_screen_update( unsigned char *screen_type )
 	// TODO music intro yes or no.
 	unsigned char input;
 	unsigned char timer;
+	unsigned char index;
+
+	if( first_time )
+	{
+		first_time = false;
+		for( index = 0; index < 5; index++ )
+		{
+			input = engine_input_manager_hold( input_type_fire1 );
+			if( input )
+			{
+				*screen_type = screen_type_intro;
+				return;
+			}
+
+			engine_sound_manager_play( index );
+		}
+
+		engine_text_manager_fire();
+	}
 
 	input = engine_input_manager_hold( input_type_fire1 );
 	timer = engine_timer_manager_update();
@@ -52,12 +73,12 @@ void screen_title_screen_update( unsigned char *screen_type )
 
 	*screen_type = screen_type_title;
 }
-
-static void intro_music()
-{
-	unsigned char index;
-	for( index = 0; index < 5; index++ )
-	{
-		engine_sound_manager_play( index );
-	}
-}
+//
+//static void intro_music()
+//{
+//	unsigned char index;
+//	for( index = 0; index < 5; index++ )
+//	{
+//		engine_sound_manager_play( index );
+//	}
+//}
