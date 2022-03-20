@@ -5,6 +5,10 @@ new code added daily...!!
 Skazka sound effects choice
 E:\GitHub\StevePro8\SegaMasterSystemLinux\Examples\08_Music_SoundFX\dev
 
+IMPORTANT
+splash screen
+E:\GitHub\StevePro8\SegaMasterSystemLinux\TurtleBridge\sound\SampleTest02
+
 AUDIO 
 4
 6 beep

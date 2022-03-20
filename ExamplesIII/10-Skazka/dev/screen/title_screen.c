@@ -49,14 +49,15 @@ void screen_title_screen_update( unsigned char *screen_type )
 		first_time = false;
 		for( index = 0; index < 5; index++ )
 		{
-			input = engine_input_manager_hold( input_type_fire1 );
+			engine_sound_manager_play( index );
+
+			engine_input_manager_update();
+			input = engine_input_manager_move( input_type_fire1 );
 			if( input )
 			{
 				*screen_type = screen_type_intro;
 				return;
 			}
-
-			engine_sound_manager_play( index );
 		}
 
 		engine_text_manager_fire();
