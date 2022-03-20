@@ -4,7 +4,8 @@ S:Lprep_screen.screen_prep_screen_load$row$1$78({1}SC:U),R,0,0,[c]
 S:Lprep_screen.screen_prep_screen_load$idx$1$78({1}SC:U),R,0,0,[b]
 F:G$screen_prep_screen_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lprep_screen.screen_prep_screen_update$screen_type$1$81({2}DG,SC:U),B,1,4
-S:Lprep_screen.screen_prep_screen_update$selection$1$82({1}SC:U),R,0,0,[c]
+S:Lprep_screen.screen_prep_screen_update$input$1$82({1}SC:U),R,0,0,[l]
+S:Lprep_screen.screen_prep_screen_update$selection$1$82({1}SC:U),R,0,0,[l]
 T:Fprep_screen$tag_struct_aelect_object[({0}S:S$select_index$0$0({7}DA7d,SC:U),Z,0,0)({7}S:S$select_X$0$0({1}SC:U),Z,0,0)({8}S:S$select_Y$0$0({1}SC:U),Z,0,0)({9}S:S$select_min$0$0({1}SC:U),Z,0,0)({10}S:S$select_max$0$0({1}SC:U),Z,0,0)]
 S:G$global_select_object$0$0({11}STtag_struct_aelect_object:S),E,0,0
 S:G$intro_texts$0$0({0}DA0d,DG,SC:U),E,0,0
@@ -19,8 +20,9 @@ S:G$gold_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$shop_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$villager_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$prep_texts$0$0({0}DA0d,DG,SC:U),E,0,0
-S:G$query_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$boss_texts$0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$query_texts$0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$laugh_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$menus_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$over_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$beat_texts$0$0({0}DA0d,DG,SC:U),E,0,0
