@@ -6,6 +6,7 @@ typedef struct tag_struct_hack_object
 	unsigned char hack_delays;
 	unsigned char hack_nodead;
 	unsigned char hack_currxp;
+	unsigned char hack_currhp;
 	unsigned char hack_goldno;
 	unsigned char hack_weapon;
 	unsigned char hack_armors;

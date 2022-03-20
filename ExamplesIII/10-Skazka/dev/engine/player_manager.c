@@ -10,17 +10,35 @@
 // Global variable.
 struct_player_object global_player_object;
 
+void engine_player_manager_init()
+{
+	struct_player_object *po = &global_player_object;
+	po->def_xp = 0;							// Z
+	po->def_hp = 10;						// N
+	po->def_gold = 10;						// V
+	po->def_weapon = weapon_type_none;		// Q$	ATK
+	po->def_armor = armor_type_none;		// W$	ARM
+	po->def_life = life_type_none;			// E$	UP
+}
+
 void engine_player_manager_load()
 {
 	struct_player_object *po = &global_player_object;
-	po->xp = 0;							// Z
-	//po->hp = 2;// 10;						// N		// TODO delete!!
-	po->hp = 10;						// N
-	po->gold = 10;						// V
-	po->weapon = weapon_type_none;		// Q$	ATK
-	po->armor = armor_type_none;		// W$	ARM
-	po->life = life_type_none;			// E$	UP
-	po->won = 0;
+	po->xp = po->def_xp;					// Z
+	po->hp = po->def_hp;					// N
+	po->gold = po->def_gold;				// V
+	po->weapon = po->def_weapon;			// Q$	ATK
+	po->armor = po->def_armor;				// W$	ARM
+	po->life = po->life;					// E$	UP
+
+	//po->xp = 0;							// Z
+	////po->hp = 2;// 10;						// N		// TODO delete!!
+	//po->hp = 10;						// N
+	//po->gold = 10;						// V
+	//po->weapon = weapon_type_none;		// Q$	ATK
+	//po->armor = armor_type_none;		// W$	ARM
+	//po->life = life_type_none;			// E$	UP
+	//po->won = 0;
 
 	// TODO delete
 	//po->weapon = 2;
@@ -165,4 +183,35 @@ void engine_player_manager_boss()
 		po->weapon += 1;		// Q$	ATK
 		po->armor +=1;			// W$	ARM
 	}
+}
+
+void engine_player_manager_set_currxp( unsigned currxp )
+{
+	struct_player_object *po = &global_player_object;
+	po->def_xp = currxp;
+}
+void engine_player_manager_set_currhp( unsigned currhp )
+{
+	struct_player_object *po = &global_player_object;
+	po->def_hp = currhp;
+}
+void engine_player_manager_set_goldno( unsigned goldno )
+{
+	struct_player_object *po = &global_player_object;
+	po->def_gold = goldno;
+}
+void engine_player_manager_set_weapon( unsigned weapon )
+{
+	struct_player_object *po = &global_player_object;
+	po->def_weapon = weapon;
+}
+void engine_player_manager_set_armors( unsigned armors )
+{
+	struct_player_object *po = &global_player_object;
+	po->def_armor = armors;
+}
+void engine_player_manager_set_oneups( unsigned oneups )
+{
+	struct_player_object *po = &global_player_object;
+	po->def_life = oneups;
 }

@@ -8,6 +8,7 @@
 #define MAX_RANDOM				10
 #define HLF_RANDOM				5
 #define MAX_XP					99
+#define MAX_HP					30
 #define MAX_GOLD				999
 
 #define FIXED_BANK				15
