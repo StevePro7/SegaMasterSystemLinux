@@ -2,6 +2,7 @@
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
+#include "../engine/game_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/select_manager.h"
@@ -47,10 +48,12 @@ void screen_menu_screen_update( unsigned char *screen_type )
 	switch( selection )
 	{
 	case menu_type_exit:
+		engine_game_manager_intro_on();
 		*screen_type = screen_type_title;
 		break;
 	case menu_type_restart:
-		*screen_type = screen_type_intro;
+		engine_game_manager_intro_off();
+		*screen_type = screen_type_title;
 		break;
 	case menu_type_continue:
 		*screen_type = screen_type_stats;
