@@ -5,6 +5,112 @@
 #include "text_manager.h"
 #include <stdlib.h>
 
+void engine_fight_manager_player_to_enemy( unsigned char *e_damage )
+{
+	// Damage to enemy.
+	struct_player_object *po = &global_player_object;
+	struct_enemy_object *eo = &global_enemy_object;
+
+	unsigned char damage;
+	unsigned char random;
+	unsigned char extra;
+
+	extra = po->weapon;
+	random = rand() % MAX_RANDOM;
+	if( random < 1 )
+	{
+		damage = 0;
+	}
+	else if( random < 4 )
+	{
+		damage = 1;
+	}
+	else if( random < 7 )
+	{
+		damage = 2;
+	}
+	else if( random < 9 )
+	{
+		damage = 3;
+	}
+	else if( random == 9 )
+	{
+		damage = 4 + extra;
+	}
+
+	*e_damage = damage + extra;
+}
+
+void engine_fight_manager_enemy_to_player( unsigned char *p_damage )
+{
+	// Damage to player.
+	struct_player_object *po = &global_player_object;
+	struct_enemy_object *eo = &global_enemy_object;
+
+	unsigned char damage;
+	unsigned char random;
+
+	random = rand() % MAX_RANDOM;
+	if( random < 1 )
+	{
+		damage = 0;
+	}
+	else if( random < 4 )
+	{
+		damage = 1;
+	}
+	else if( random < 7 )
+	{
+		damage = 2;
+	}
+	else if( random < 9 )
+	{
+		damage = 3;
+	}
+	else if( random == 9 )
+	{
+		damage = 4;
+	}
+
+	*p_damage = damage + eo->ax + po->armor;
+}
+
+void engine_fight_manager_boss_to_player( unsigned char *p_damage )
+{
+	// Damage to player.
+	struct_player_object *po = &global_player_object;
+	struct_enemy_object *eo = &global_enemy_object;
+
+	unsigned char damage;
+	unsigned char random;
+	unsigned char extra;
+
+	extra = eo->ax;
+	random = rand() % MAX_RANDOM;
+	if( random < 1 )
+	{
+		damage = 0;
+	}
+	else if( random < 4 )
+	{
+		damage = 1;
+	}
+	else if( random < 7 )
+	{
+		damage = 2;
+	}
+	else if( random < 9 )
+	{
+		damage = 3;
+	}
+	else if( random == 9 )
+	{
+		damage = 4 + extra;
+	}
+
+	*p_damage = damage - po->armor + eo->ax;
+}
+
 void engine_fight_manager_battle( unsigned char *e_damage, unsigned char *p_damage )
 {
 	struct_player_object *po = &global_player_object;
@@ -33,7 +139,7 @@ void engine_fight_manager_battle( unsigned char *e_damage, unsigned char *p_dama
 	}
 	else if( enemys == 9 )
 	{
-		*e_damage = 4 + po->weapon;
+		*e_damage = 4 + po->weapon + po->weapon;
 	}
 
 	// Damage to player.

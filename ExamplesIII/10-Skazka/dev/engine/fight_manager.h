@@ -4,5 +4,6 @@
 void engine_fight_manager_battle( unsigned char *e_damage, unsigned char *p_damage );
 void engine_fight_manager_gold( unsigned char *p_xp, unsigned char *p_gold );
 void engine_boss_manager_draw( unsigned char x, unsigned char y );
+void engine_boss_manager_battle( unsigned char *e_damage, unsigned char *p_damage );
 
 #endif//_FIGHT_MANAGER_H_
