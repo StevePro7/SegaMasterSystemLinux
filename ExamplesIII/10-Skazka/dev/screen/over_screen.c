@@ -2,6 +2,7 @@
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
+#include "../engine/game_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/text_manager.h"
@@ -33,6 +34,7 @@ void screen_over_screen_update( unsigned char *screen_type )
 	unsigned char input2 = engine_input_manager_hold( input_type_fire2 );
 	if( input1 || input2 )
 	{
+		engine_game_manager_intro_off();
 		*screen_type = screen_type_title;
 		return;
 	}

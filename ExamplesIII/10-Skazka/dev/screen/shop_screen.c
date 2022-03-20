@@ -3,6 +3,7 @@
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/global_manager.h"
+#include "../engine/input_manager.h"
 #include "../engine/locale_manager.h"
 #include "../engine/player_manager.h"
 #include "../engine/select_manager.h"
@@ -30,8 +31,18 @@ void screen_shop_screen_load()
 
 void screen_shop_screen_update( unsigned char *screen_type )
 {
+	unsigned char input;
 	unsigned char value;
-	unsigned char selection = engine_select_manager_update( select_type );
+	unsigned char selection;
+
+	input = engine_input_manager_hold( input_type_fire2 );
+	if( input )
+	{
+		*screen_type = screen_type_stats;
+		return;
+	}
+
+	selection = engine_select_manager_update( select_type );
 	if( NO_SELECTION == selection )
 	{
 		*screen_type = screen_type_shop;

@@ -11,6 +11,8 @@ S:Lover_screen.game_over$idx$1$80({1}SC:U),R,0,0,[b]
 F:Fover_screen$beat_game$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lover_screen.beat_game$row$1$83({1}SC:U),R,0,0,[c]
 S:Lover_screen.beat_game$idx$1$83({1}SC:U),R,0,0,[b]
+T:Fover_screen$tag_struct_game_object[({0}S:S$play_intro$0$0({1}:S),Z,0,0)]
+S:G$global_game_object$0$0({1}STtag_struct_game_object:S),E,0,0
 S:G$intro_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$stats_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$weapon_texts$0$0({0}DA0d,DG,SC:U),E,0,0
@@ -23,8 +25,9 @@ S:G$gold_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$shop_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$villager_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$prep_texts$0$0({0}DA0d,DG,SC:U),E,0,0
-S:G$query_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$boss_texts$0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$query_texts$0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$laugh_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$menus_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$over_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$beat_texts$0$0({0}DA0d,DG,SC:U),E,0,0
@@ -35,6 +38,9 @@ S:G$engine_font_manager_char$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_zero$0$0({2}DF,SV:S),C,0,0
+S:G$engine_game_manager_init$0$0({2}DF,SV:S),C,0,0
+S:G$engine_game_manager_intro_on$0$0({2}DF,SV:S),C,0,0
+S:G$engine_game_manager_intro_off$0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_update$0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_hold$0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move$0$0({2}DF,SC:U),C,0,0

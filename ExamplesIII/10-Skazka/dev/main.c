@@ -32,9 +32,9 @@ void main( void )
 	//open_screen_type = screen_type_record;
 	//open_screen_type = screen_type_func;
 	//open_screen_type = screen_type_over;
-	//open_screen_type = screen_type_shop;
+	open_screen_type = screen_type_shop;
 	//open_screen_type = screen_type_prep;
-	open_screen_type = screen_type_boss;
+	//open_screen_type = screen_type_boss;
 	//open_screen_type = screen_type_victory;
 	//open_screen_type = screen_type_detail;
 	//open_screen_type = screen_type_test;

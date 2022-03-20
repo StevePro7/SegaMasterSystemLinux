@@ -89,7 +89,12 @@ void screen_boss_screen_update( unsigned char *screen_type )
 		laugh( selection );
 		if( boss_type_beg == selection )
 		{
-			
+			engine_player_manager_hit( 2 );
+			if( engine_player_manager_dead() )
+			{
+				*screen_type = screen_type_over;
+				return;
+			}
 		}
 
 		event_stage = forest_type_select;
