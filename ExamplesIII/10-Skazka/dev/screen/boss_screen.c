@@ -67,6 +67,8 @@ void screen_boss_screen_load()
 	devkit_SMS_displayOn();
 
 	event_stage = forest_type_select;
+	enemys_damage = 0;
+	player_damage = 0;
 }
 
 void screen_boss_screen_update( unsigned char *screen_type )
@@ -89,10 +91,32 @@ void screen_boss_screen_update( unsigned char *screen_type )
 		laugh( selection );
 		if( boss_type_beg == selection )
 		{
+			// Subtract 2x HP if you beg.
 			engine_player_manager_hit( 2 );
 			if( engine_player_manager_dead() )
 			{
 				*screen_type = screen_type_over;
+				return;
+			}
+		}
+		if( boss_type_battle == selection )
+		{
+			engine_fight_manager_player_to_enemy( &enemys_damage );
+			engine_fight_manager_enemy_to_player( &player_damage );
+
+			engine_enemy_manager_hit( enemys_damage );
+			engine_player_manager_hit( player_damage );
+
+			// If both you and enemy have 0 HP then you get game over first!
+			if( engine_player_manager_dead() )
+			{
+				*screen_type = screen_type_over;
+				return;
+			}
+
+			if( engine_enemy_manager_dead() )
+			{
+				*screen_type = screen_type_complete;
 				return;
 			}
 		}
