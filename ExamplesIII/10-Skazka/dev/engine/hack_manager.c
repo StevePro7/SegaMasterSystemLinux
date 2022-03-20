@@ -60,27 +60,27 @@ void engine_hack_manager_invert()
 
 	if( ho->hack_currxp > 0 && ho->hack_currxp <= MAX_XP )
 	{
-		engine_player_manager_set_currxp( ho->hack_currxp );
+		engine_player_manager_def_currxp( ho->hack_currxp );
 	}
 	if( ho->hack_currhp > 0 && ho->hack_currhp <= MAX_HP )
 	{
-		engine_player_manager_set_currhp( ho->hack_currhp );
+		engine_player_manager_def_currhp( ho->hack_currhp );
 	}
 	if( ho->hack_goldno > 0 )
 	{
-		engine_player_manager_set_goldno( ho->hack_goldno );
+		engine_player_manager_def_goldno( ho->hack_goldno );
 	}
 	if( ho->hack_weapon > 0 && ho->hack_weapon <= weapon_type_axe )
 	{
-		engine_player_manager_set_weapon( ho->hack_weapon );
+		engine_player_manager_def_weapon( ho->hack_weapon );
 	}
 	if( ho->hack_armors > 0 && ho->hack_armors <= armor_type_kolchuga )
 	{
-		engine_player_manager_set_armors( ho->hack_armors );
+		engine_player_manager_def_armors( ho->hack_armors );
 	}
 	if( ho->hack_oneups > 0 && ho->hack_oneups <= life_type_oneup )
 	{
-		engine_player_manager_set_oneups( ho->hack_oneups );
+		engine_player_manager_def_oneups( ho->hack_oneups );
 	}
 
 	// Invert default values.

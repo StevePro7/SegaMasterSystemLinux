@@ -185,33 +185,49 @@ void engine_player_manager_boss()
 	}
 }
 
-void engine_player_manager_set_currxp( unsigned currxp )
+void engine_player_manager_def_currxp( unsigned currxp )
 {
 	struct_player_object *po = &global_player_object;
 	po->def_xp = currxp;
 }
-void engine_player_manager_set_currhp( unsigned currhp )
+void engine_player_manager_def_currhp( unsigned currhp )
 {
 	struct_player_object *po = &global_player_object;
 	po->def_hp = currhp;
 }
-void engine_player_manager_set_goldno( unsigned goldno )
+void engine_player_manager_def_goldno( unsigned goldno )
 {
 	struct_player_object *po = &global_player_object;
 	po->def_gold = goldno;
 }
-void engine_player_manager_set_weapon( unsigned weapon )
+void engine_player_manager_def_weapon( unsigned weapon )
 {
 	struct_player_object *po = &global_player_object;
 	po->def_weapon = weapon;
 }
-void engine_player_manager_set_armors( unsigned armors )
+void engine_player_manager_def_armors( unsigned armors )
 {
 	struct_player_object *po = &global_player_object;
 	po->def_armor = armors;
 }
-void engine_player_manager_set_oneups( unsigned oneups )
+void engine_player_manager_def_oneups( unsigned oneups )
 {
 	struct_player_object *po = &global_player_object;
 	po->def_life = oneups;
+}
+
+void engine_player_manager_set_weapon( unsigned weapon )
+{
+	struct_player_object *po = &global_player_object;
+	po->weapon = weapon;
+}
+void engine_player_manager_set_armors( unsigned armors )
+{
+	struct_player_object *po = &global_player_object;
+	po->armor = armors;
+}
+void engine_player_manager_set_oneups( unsigned oneups )
+{
+	struct_player_object *po = &global_player_object;
+	po->life = oneups;
 }

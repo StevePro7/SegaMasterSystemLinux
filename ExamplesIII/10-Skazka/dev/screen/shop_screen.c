@@ -53,9 +53,34 @@ void screen_shop_screen_update( unsigned char *screen_type )
 	if( value > gold )
 	{
 		engine_font_manager_text( LOCALE_NOT_ENOUGH, LEFT_X + 8, SHOP_ROW + 4 );
+		*screen_type = screen_type_shop;
+		return;
 	}
 
-	*screen_type = screen_type_shop;
+	if( shop_type_sword == selection )
+	{
+		engine_player_manager_set_weapon( weapon_type_sword );
+	}
+	else if( shop_type_axe == selection )
+	{
+		engine_player_manager_set_weapon( weapon_type_axe );
+	}
+	else if( shop_type_kolchuga == selection )
+	{
+		engine_player_manager_set_armors( armor_type_kolchuga );
+	}
+	else if( shop_type_tegilay == selection )
+	{
+		engine_player_manager_set_armors( armor_type_tegilay );
+	}
+	else if( shop_type_life == selection )
+	{
+		engine_player_manager_set_oneups( life_type_oneup );
+	}
+
+	// TODO sound effect??
+	engine_player_manager_dec_gold( value );
+	*screen_type = screen_type_stats;
 }
 
 static void setup()

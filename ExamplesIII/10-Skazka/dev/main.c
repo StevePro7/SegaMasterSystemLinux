@@ -21,16 +21,16 @@ void main( void )
 	//devkit_SMS_setBGPaletteColor( 0, devkit_RGB( 0, 0, 3 ) );
 
 	//open_screen_type = screen_type_splash;
-	open_screen_type = screen_type_title;
+	//open_screen_type = screen_type_title;
 	//open_screen_type = screen_type_intro;
 	//open_screen_type = screen_type_rest;
-	..open_screen_type = screen_type_stats;
+	open_screen_type = screen_type_stats;
 	//open_screen_type = screen_type_forest;
 	//open_screen_type = screen_type_select;
 	//open_screen_type = screen_type_record;
 	//open_screen_type = screen_type_func;
 	//open_screen_type = screen_type_over;
-	open_screen_type = screen_type_shop;
+	//open_screen_type = screen_type_shop;
 	//open_screen_type = screen_type_prep;
 	//open_screen_type = screen_type_boss;
 	//open_screen_type = screen_type_complete;

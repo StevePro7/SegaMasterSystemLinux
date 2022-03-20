@@ -109,6 +109,16 @@ typedef enum tag_enum_fight_type
 
 } enum_fight_type;
 
+typedef enum tag_enum_shop_type
+{
+	shop_type_sword = 0,
+	shop_type_axe = 1,
+	shop_type_kolchuga = 2,
+	shop_type_tegilay = 4,
+	shop_type_life = 5,
+
+} enum_shop_type;
+
 typedef enum tag_enum_binary_type
 {
 	binary_type_yes = 0,

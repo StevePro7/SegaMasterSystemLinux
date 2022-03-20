@@ -1,6 +1,6 @@
 M:main
 F:G$main$0$0({2}DF,SV:S),C,0,0,0,0,0
-S:Lmain.main$open_screen_type$1$121({1}SC:U),R,0,0,[]
+S:Lmain.main$open_screen_type$1$124({1}SC:U),R,0,0,[]
 T:Fmain$tag_struct_player_object[({0}S:S$xp$0$0({1}SC:U),Z,0,0)({1}S:S$hp$0$0({1}SC:U),Z,0,0)({2}S:S$gold$0$0({2}SI:U),Z,0,0)({4}S:S$weapon$0$0({1}SC:U),Z,0,0)({5}S:S$armor$0$0({1}SC:U),Z,0,0)({6}S:S$life$0$0({1}SC:U),Z,0,0)({7}S:S$level$0$0({1}SC:U),Z,0,0)({8}S:S$max_hp$0$0({1}SC:U),Z,0,0)({9}S:S$max_xp$0$0({1}SC:U),Z,0,0)({10}S:S$won$0$0({1}SC:U),Z,0,0)({11}S:S$def_xp$0$0({1}SC:U),Z,0,0)({12}S:S$def_hp$0$0({1}SC:U),Z,0,0)({13}S:S$def_gold$0$0({2}SI:U),Z,0,0)({15}S:S$def_weapon$0$0({1}SC:U),Z,0,0)({16}S:S$def_armor$0$0({1}SC:U),Z,0,0)({17}S:S$def_life$0$0({1}SC:U),Z,0,0)]
 T:Fmain$tag_struct_hack_object[({0}S:S$hack_delays$0$0({1}SC:U),Z,0,0)({1}S:S$hack_nodead$0$0({1}SC:U),Z,0,0)({2}S:S$hack_currxp$0$0({1}SC:U),Z,0,0)({3}S:S$hack_currhp$0$0({1}SC:U),Z,0,0)({4}S:S$hack_goldno$0$0({1}SC:U),Z,0,0)({5}S:S$hack_weapon$0$0({1}SC:U),Z,0,0)({6}S:S$hack_armors$0$0({1}SC:U),Z,0,0)({7}S:S$hack_oneups$0$0({1}SC:U),Z,0,0)({8}S:S$hack_musics$0$0({1}SC:U),Z,0,0)({9}S:S$hack_sounds$0$0({1}SC:U),Z,0,0)]
 T:Fmain$tag_struct_game_object[({0}S:S$play_intro$0$0({1}:S),Z,0,0)]
@@ -11,7 +11,7 @@ S:G$global_game_object$0$0({1}STtag_struct_game_object:S),E,0,0
 S:G$global_hack_object$0$0({10}STtag_struct_hack_object:S),E,0,0
 S:G$global_player_object$0$0({18}STtag_struct_player_object:S),E,0,0
 S:G$global_select_object$0$0({11}STtag_struct_aelect_object:S),E,0,0
-S:Lmain.main$global_pause$1$121({1}:S),E,0,0
+S:Lmain.main$global_pause$1$124({1}:S),E,0,0
 S:G$atof$0$0({2}DF,SF:S),C,0,0
 S:G$atoi$0$0({2}DF,SI:S),C,0,0
 S:G$atol$0$0({2}DF,SL:S),C,0,0
@@ -210,9 +210,12 @@ S:G$engine_player_manager_inc_gold$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_hit$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_dead$0$0({2}DF,:S),C,0,0
 S:G$engine_player_manager_boss$0$0({2}DF,SV:S),C,0,0
-S:G$engine_player_manager_set_currxp$0$0({2}DF,SV:S),C,0,0
-S:G$engine_player_manager_set_currhp$0$0({2}DF,SV:S),C,0,0
-S:G$engine_player_manager_set_goldno$0$0({2}DF,SV:S),C,0,0
+S:G$engine_player_manager_def_currxp$0$0({2}DF,SV:S),C,0,0
+S:G$engine_player_manager_def_currhp$0$0({2}DF,SV:S),C,0,0
+S:G$engine_player_manager_def_goldno$0$0({2}DF,SV:S),C,0,0
+S:G$engine_player_manager_def_weapon$0$0({2}DF,SV:S),C,0,0
+S:G$engine_player_manager_def_armors$0$0({2}DF,SV:S),C,0,0
+S:G$engine_player_manager_def_oneups$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_set_weapon$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_set_armors$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_set_oneups$0$0({2}DF,SV:S),C,0,0
