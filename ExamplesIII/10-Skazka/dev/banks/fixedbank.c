@@ -146,7 +146,7 @@ extern const unsigned char *prep_texts[] =
 const unsigned char *query_texts[] =
 {
 	"SO YOU HAVE COME TO CALLENGE",
-	"ME FOOLISH MORTAL? VERY WELL!"
+	"ME FOOLISH MORTAL? VERY WELL"
 };
 
 const unsigned char *boss_texts[] =

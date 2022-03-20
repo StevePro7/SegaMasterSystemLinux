@@ -25,8 +25,10 @@ S:G$fight_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$gold_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$shop_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$villager_texts$0$0({0}DA0d,DG,SC:U),E,0,0
-S:G$menus_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$prep_texts$0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$query_texts$0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$boss_texts$0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$menus_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$over_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$beat_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$engine_content_manager_load_splash$0$0({2}DF,SV:S),C,0,0
@@ -49,6 +51,7 @@ S:G$engine_player_manager_dec_gold$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_inc_gold$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_hit$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_dead$0$0({2}DF,:S),C,0,0
+S:G$engine_player_manager_boss$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_clear$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_border$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_title$0$0({2}DF,SV:S),C,0,0

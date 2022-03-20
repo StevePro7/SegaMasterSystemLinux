@@ -23,6 +23,7 @@ S:G$engine_player_manager_dec_gold$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_inc_gold$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_hit$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_dead$0$0({2}DF,:S),C,0,0
+S:G$engine_player_manager_boss$0$0({2}DF,SV:S),C,0,0
 S:G$engine_sound_manager_init$0$0({2}DF,SV:S),C,0,0
 S:G$engine_sound_manager_play$0$0({2}DF,SV:S),C,0,0
 S:G$engine_effect_manager_play$0$0({2}DF,SV:S),C,0,0

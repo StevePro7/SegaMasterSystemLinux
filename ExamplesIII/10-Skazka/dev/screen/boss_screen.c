@@ -14,7 +14,6 @@
 #include "../banks/fixedbank.h"
 
 static unsigned char select_type;
-
 static unsigned char event_stage;
 static unsigned char boss_damage;
 static unsigned char player_damage;
@@ -30,12 +29,13 @@ void screen_boss_screen_load()
 	engine_boss_manager_load();
 	engine_player_manager_boss();
 
-	//devkit_SMS_displayOff();
+	devkit_SMS_displayOff();
 	engine_content_manager_load_title( row );
 	engine_text_manager_border();
 	engine_text_manager_clear( row + 0, row + 9 );
 
-	row = 10;
+	row = 19;
+	devkit_SMS_mapROMBank( FIXED_BANK );
 	for( idx = 0; idx < 2; idx++ )
 	{
 		engine_font_manager_text( ( unsigned char* ) query_texts[ idx ], LEFT_X + 3, row );
@@ -48,8 +48,8 @@ void screen_boss_screen_load()
 	engine_player_manager_hplo();
 	engine_enemy_manager_hplo();
 
-	//engine_boss_manager_draw( 10, 1 );
-//	devkit_SMS_displayOn();
+	engine_boss_manager_draw( 10, 0 );
+	devkit_SMS_displayOn();
 
 	
 }
@@ -58,3 +58,19 @@ void screen_boss_screen_update( unsigned char *screen_type )
 {
 	*screen_type = screen_type_boss;
 }
+//
+//static void print_intro()
+//{
+//	unsigned char row;
+//	//unsigned char idx;
+//
+//
+//	row = 10;
+//	//for( idx = 0; idx < 2; idx++ )
+//	//{
+//	//	engine_font_manager_text( ( unsigned char* ) query_texts[ idx ], LEFT_X + 3, row );
+//	//	row++;
+//	//}
+//	engine_font_manager_text( ( unsigned char* ) query_texts[ 0 ], LEFT_X + 3, row );
+//	//engine_font_manager_text( "SO YOU HAVE COME TO CALLENGE", LEFT_X + 3, row );
+//}

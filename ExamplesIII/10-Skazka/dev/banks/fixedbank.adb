@@ -87,7 +87,7 @@ S:Ffixedbank$__str_67$0$0({28}DA28d,SC:S),D,0,0
 S:Ffixedbank$__str_68$0$0({13}DA13d,SC:S),D,0,0
 S:Ffixedbank$__str_69$0$0({12}DA12d,SC:S),D,0,0
 S:Ffixedbank$__str_70$0$0({29}DA29d,SC:S),D,0,0
-S:Ffixedbank$__str_71$0$0({30}DA30d,SC:S),D,0,0
+S:Ffixedbank$__str_71$0$0({29}DA29d,SC:S),D,0,0
 S:Ffixedbank$__str_72$0$0({21}DA21d,SC:S),D,0,0
 S:Ffixedbank$__str_73$0$0({14}DA14d,SC:S),D,0,0
 S:Ffixedbank$__str_74$0$0({14}DA14d,SC:S),D,0,0
