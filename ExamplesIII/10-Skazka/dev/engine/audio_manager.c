@@ -1,7 +1,7 @@
-#include "sound_manager.h"
+#include "audio_manager.h"
 #include "hack_manager.h"
 #include "sample_manager.h"
-#include "../object/sound_object.h"
+#include "../object/audio_object.h"
 #include "../devkit/_sms_manager.h"
 #include "../devkit/_snd_manager.h"
 
@@ -21,29 +21,10 @@ void engine_sound_manager_play( unsigned char index )
 	const unsigned char *data;
 	unsigned char bank;
 
-	data = sound_sample_data[ index ];
-	bank = sound_sample_bank[ index ];
-
-	if( !ho->hack_sound )
-	{
-		// TODO - integrate hack
-		//return;
-	}
-
-	devkit_SMS_mapROMBank( bank );
-	engine_sample_manager_play( data );
-}
-
-void engine_effect_manager_play( unsigned char index )
-{
-	struct_hack_object *ho = &global_hack_object;
-	const unsigned char *data;
-	unsigned char bank;
-
 	data = effect_sample_data[ index ];
 	bank = effect_sample_bank[ index ];
 
-	if( !ho->hack_sound )
+	if( !ho->hack_sounds )
 	{
 		// TODO - integrate hack
 		return;
@@ -51,4 +32,23 @@ void engine_effect_manager_play( unsigned char index )
 
 	devkit_SMS_mapROMBank( bank );
 	devkit_PSGSFXPlay( ( void * ) data, devkit_SFX_CHANNEL2() );
+}
+
+void engine_music_manager_play( unsigned char index )
+{
+	struct_hack_object *ho = &global_hack_object;
+	const unsigned char *data;
+	unsigned char bank;
+
+	data = sound_sample_data[ index ];
+	bank = sound_sample_bank[ index ];
+
+	if( !ho->hack_musics )
+	{
+		// TODO - integrate hack
+		//return;
+	}
+
+	devkit_SMS_mapROMBank( bank );
+	engine_sample_manager_play( data );
 }

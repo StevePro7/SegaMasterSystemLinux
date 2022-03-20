@@ -1,4 +1,5 @@
 #include "title_screen.h"
+#include "../engine/audio_manager.h"
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
@@ -6,7 +7,6 @@
 #include "../engine/global_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/locale_manager.h"
-#include "../engine/sound_manager.h"
 #include "../engine/text_manager.h"
 #include "../engine/timer_manager.h"
 #include "../devkit/_sms_manager.h"
@@ -50,7 +50,7 @@ void screen_title_screen_update( unsigned char *screen_type )
 		{
 			for( index = 0; index < 5; index++ )
 			{
-				engine_sound_manager_play( index );
+				engine_music_manager_play( index );
 
 				engine_input_manager_update();
 				input = engine_input_manager_move( input_type_fire1 );

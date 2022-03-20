@@ -19,6 +19,7 @@ cd ..
 
 cd engine
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 asm_manager.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 audio_manager.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 content_manager.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 enemy_manager.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 enum_manager.c
@@ -32,18 +33,17 @@ cd engine
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 sample_manager.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 screen_manager.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 select_manager.c
-::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 sound_manager.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 text_manager.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 timer_manager.c
 cd ..
 
 cd object
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 audio_object.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 enemy_object.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 game_object.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 hack_object.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 player_object.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 select_object.c
-::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 sound_object.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 timer_object.c
 cd ..
 
@@ -97,14 +97,14 @@ banks\bank6.rel  banks\bank7.rel  banks\bank8.rel  banks\bank9.rel ^
 banks\bank10.rel banks\bank11.rel banks\bank12.rel banks\bank13.rel ^
 banks\bank14.rel banks\fixedbank.rel ^
 devkit/_sms_manager.rel devkit/_snd_manager.rel ^
-engine/asm_manager.rel ^
+engine/asm_manager.rel engine/audio_manager.rel ^
 engine/content_manager.rel engine/enum_manager.rel engine/enemy_manager.rel engine/fight_manager.rel ^
 engine/font_manager.rel engine/game_manager.rel engine/global_manager.rel engine/hack_manager.rel ^
 engine/input_manager.rel engine/player_manager.rel ^
 engine/sample_manager.rel engine/screen_manager.rel engine/select_manager.rel ^
-engine/sound_manager.rel engine/text_manager.rel engine/timer_manager.rel ^
-object/enemy_object.rel object/game_object.rel object/hack_object.rel object/player_object.rel ^
-object/select_object.rel object/sound_object.rel object/timer_object.rel ^
+engine/text_manager.rel engine/timer_manager.rel ^
+object/audio_object.rel object/enemy_object.rel object/game_object.rel object/hack_object.rel ^
+object/player_object.rel object/select_object.rel object/timer_object.rel ^
 screen/none_screen.rel screen/splash_screen.rel screen/title_screen.rel screen/intro_screen.rel ^
 screen/load_screen.rel screen/stats_screen.rel screen/forest_screen.rel screen/victory_screen.rel ^
 screen/shop_screen.rel  screen/talk_screen.rel screen/prep_screen.rel ^

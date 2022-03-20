@@ -1,4 +1,4 @@
-#include "sound_object.h"
+#include "audio_object.h"
 #include "../banks/bank4.h"
 #include "../banks/bank5.h"
 #include "../banks/bank6.h"

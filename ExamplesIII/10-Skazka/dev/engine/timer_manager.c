@@ -12,7 +12,7 @@ void engine_timer_manager_load( unsigned int delay )
 	dObj->timer_value = delay;
 
 	// Used for testing so no wait.
-	if( ho->hack_delay )
+	if( ho->hack_delays )
 	{
 		dObj->timer_value = 0;
 	}

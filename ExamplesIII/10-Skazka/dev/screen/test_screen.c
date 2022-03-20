@@ -1,9 +1,9 @@
 #include "test_screen.h"
+#include "../engine/audio_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/player_manager.h"
-#include "../engine/sound_manager.h"
 
 unsigned char index;
 
@@ -36,7 +36,7 @@ void screen_test_screen_update( unsigned char *screen_type )
 	if( input )
 	{
 		engine_font_manager_text( "HELLO", 20, 20 );
-		engine_effect_manager_play( index );
+		engine_sound_manager_play( index );
 	//	engine_font_manager_text( "BEG!", 2, 12 );
 	//	// Intro.
 	//	for( index = 0; index < 5; index++ )

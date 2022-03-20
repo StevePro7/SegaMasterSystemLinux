@@ -14,8 +14,6 @@ void main( void )
 	devkit_SMS_useFirstHalfTilesforSprites( false );
 	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );
 
-	engine_sound_manager_init();
-
 	// TODO - this will be in the title screen!
 	engine_content_manager_load_tiles();
 
@@ -41,6 +39,7 @@ void main( void )
 
 	engine_enemy_manager_init();
 	engine_game_manager_init();
+	engine_sound_manager_init();
 
 	// TODO - remove this at the end because will be in the load screen before new game anyway
 	engine_player_manager_load();

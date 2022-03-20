@@ -3,8 +3,11 @@
 
 typedef struct tag_struct_hack_object
 {
-	unsigned char hack_delay;
-	unsigned char hack_sound;
+	unsigned char hack_delays;
+	//unsigned char hack_delay;
+
+	unsigned char hack_musics;
+	unsigned char hack_sounds;
 
 } struct_hack_object;
 
