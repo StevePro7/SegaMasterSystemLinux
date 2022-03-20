@@ -20,6 +20,7 @@
 
 #define LOCALE_FIGHT_MSG1		"YOUR HP -"
 #define LOCALE_FIGHT_MSG2		"ENEMY HP -"
+#define LOCALE_BOSSX_MSG2		"KOSCHEYS -"
 
 #define LOCALE_FIGHT_BLANKS		"                     "
 #define LOCALE_FIGHT_NOTRUN		"YOU COULDN'T RUN AWAY"

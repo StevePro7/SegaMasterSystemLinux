@@ -155,3 +155,14 @@ bool engine_player_manager_dead()
 	struct_player_object *po = &global_player_object;
 	return po->hp <= 0;
 }
+
+void engine_player_manager_boss()
+{
+	// Function called once just before final battle.
+	struct_player_object *po = &global_player_object;
+	if( po->xp > 60 )
+	{
+		po->weapon += 1;		// Q$	ATK
+		po->armor +=1;			// W$	ARM
+	}
+}

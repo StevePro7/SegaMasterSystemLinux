@@ -19,6 +19,7 @@ T:Ffight_manager$tag_struct_player_object[({0}S:S$xp$0$0({1}SC:U),Z,0,0)({1}S:S$
 T:Ffight_manager$tag_struct_enemy_object[({0}S:S$index$0$0({1}SC:U),Z,0,0)({1}S:S$hplo$0$0({1}SC:U),Z,0,0)({2}S:S$ax$0$0({1}SC:U),Z,0,0)({3}S:S$gldo$0$0({1}SC:U),Z,0,0)({4}S:S$xpo$0$0({1}SC:U),Z,0,0)]
 S:G$global_enemy_object$0$0({5}STtag_struct_enemy_object:S),E,0,0
 S:G$global_player_object$0$0({11}STtag_struct_player_object:S),E,0,0
+S:G$engine_boss_manager_load$0$0({2}DF,SV:S),C,0,0
 S:G$engine_enemy_manager_init$0$0({2}DF,SV:S),C,0,0
 S:G$engine_enemy_manager_load$0$0({2}DF,SV:S),C,0,0
 S:G$engine_enemy_manager_draw$0$0({2}DF,SV:S),C,0,0
@@ -35,6 +36,7 @@ S:G$engine_player_manager_dec_gold$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_inc_gold$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_hit$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_dead$0$0({2}DF,:S),C,0,0
+S:G$engine_player_manager_boss$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_clear$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_border$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_title$0$0({2}DF,SV:S),C,0,0

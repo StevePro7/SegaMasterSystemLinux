@@ -7,6 +7,8 @@
 // Global variable.
 extern struct_enemy_object global_enemy_object;
 
+void engine_boss_manager_load();
+
 void engine_enemy_manager_init();
 void engine_enemy_manager_load( unsigned char level );
 void engine_enemy_manager_draw();

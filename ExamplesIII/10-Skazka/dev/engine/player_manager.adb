@@ -23,6 +23,8 @@ S:Lplayer_manager.engine_player_manager_hit$hp$1$94({1}SC:U),B,1,4
 S:Lplayer_manager.engine_player_manager_hit$po$1$95({2}DG,STtag_struct_player_object:S),R,0,0,[]
 F:G$engine_player_manager_dead$0$0({2}DF,:S),Z,0,0,0,0,0
 S:Lplayer_manager.engine_player_manager_dead$po$1$98({2}DG,STtag_struct_player_object:S),R,0,0,[]
+F:G$engine_player_manager_boss$0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lplayer_manager.engine_player_manager_boss$po$1$99({2}DG,STtag_struct_player_object:S),R,0,0,[]
 T:Fplayer_manager$tag_struct_player_object[({0}S:S$xp$0$0({1}SC:U),Z,0,0)({1}S:S$hp$0$0({1}SC:U),Z,0,0)({2}S:S$gold$0$0({2}SI:U),Z,0,0)({4}S:S$weapon$0$0({1}SC:U),Z,0,0)({5}S:S$armor$0$0({1}SC:U),Z,0,0)({6}S:S$life$0$0({1}SC:U),Z,0,0)({7}S:S$level$0$0({1}SC:U),Z,0,0)({8}S:S$max_hp$0$0({1}SC:U),Z,0,0)({9}S:S$max_xp$0$0({1}SC:U),Z,0,0)({10}S:S$won$0$0({1}SC:U),Z,0,0)]
 S:G$intro_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$stats_texts$0$0({0}DA0d,DG,SC:U),E,0,0

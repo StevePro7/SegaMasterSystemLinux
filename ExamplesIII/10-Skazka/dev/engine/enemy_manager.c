@@ -9,10 +9,12 @@
 // Global variable.
 struct_enemy_object global_enemy_object;
 
-unsigned char hplo_num[ MAX_ENEMIES ] = { 10, 10, 25, 25, 35 };
-unsigned char ax_num[ MAX_ENEMIES ] = { 1, 1, 2, 2, 3 };
-unsigned char gldo_num[ MAX_ENEMIES ] = { 5, 5, 10, 10, 15 };
-unsigned char xpo_num[ MAX_ENEMIES ] = { 2, 2, 4, 4, 10 };
+static void enemy_load( unsigned char index );
+
+unsigned char hplo_num[ MAX_ENEMIES ] = { 10, 10, 25, 25, 35, 50 };
+unsigned char ax_num[ MAX_ENEMIES ] = { 1, 1, 2, 2, 3, 4 };
+unsigned char gldo_num[ MAX_ENEMIES ] = { 5, 5, 10, 10, 15, 0 };
+unsigned char xpo_num[ MAX_ENEMIES ] = { 2, 2, 4, 4, 10, 0 };
 
 void engine_enemy_manager_init()
 {
@@ -24,9 +26,14 @@ void engine_enemy_manager_init()
 	eo->xpo = 0;
 }
 
+void engine_boss_manager_load()
+{
+	enemy_load( enemy_type_koschey );
+}
+
 void engine_enemy_manager_load( unsigned char level )
 {
-	struct_enemy_object *eo = &global_enemy_object;
+	
 	unsigned char value = rand() % MAX_RANDOM;
 	unsigned char index = 0;
 
@@ -77,6 +84,12 @@ void engine_enemy_manager_load( unsigned char level )
 		break;
 	}
 
+	enemy_load( index );
+}
+
+static void enemy_load( unsigned char index )
+{
+	struct_enemy_object *eo = &global_enemy_object;
 	eo->index = index;
 	eo->hplo = hplo_num[ index ];
 	eo->ax = ax_num[ index ];

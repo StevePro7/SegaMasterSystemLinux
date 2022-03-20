@@ -90,6 +90,7 @@ typedef enum tag_enum_enemy_type
 	enemy_type_kikimora = 2,
 	enemy_type_leshy = 3,
 	enemy_type_baby_yaga = 4,
+	enemy_type_koschey = 5,
 
 } enum_enemy_type;
 
