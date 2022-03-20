@@ -3,6 +3,7 @@
 #include "sample_manager.h"
 #include "../object/sound_object.h"
 #include "../devkit/_sms_manager.h"
+#include "../devkit/_snd_manager.h"
 
 const unsigned char psgInit[] =
 {
@@ -30,4 +31,22 @@ void engine_sound_manager_play( unsigned char index )
 
 	devkit_SMS_mapROMBank( bank );
 	engine_sample_manager_play( data );
+}
+
+void engine_effect_manager_play( unsigned char index )
+{
+	struct_hack_object *ho = &global_hack_object;
+	const unsigned char *data;
+	unsigned char bank;
+
+	data = effect_sample_data[ index ];
+	bank = effect_sample_bank[ index ];
+
+	if( !ho->hack_sound )
+	{
+		return;
+	}
+
+	devkit_SMS_mapROMBank( bank );
+	devkit_PSGSFXPlay( ( void * ) data, devkit_SFX_CHANNEL2() );
 }

@@ -3,5 +3,6 @@
 
 void engine_sound_manager_init();
 void engine_sound_manager_play( unsigned char index );
+void engine_effect_manager_play( unsigned char index );
 
 #endif//_SOUND_MANAGER_H_

@@ -37,6 +37,7 @@ void main( void )
 	open_screen_type = screen_type_boss;
 	//open_screen_type = screen_type_victory;
 	//open_screen_type = screen_type_detail;
+	open_screen_type = screen_type_test;
 
 	engine_enemy_manager_init();
 
@@ -72,5 +73,8 @@ void main( void )
 		engine_input_manager_update();
 		engine_screen_manager_update();
 		devkit_SMS_waitForVBlank();
+
+		devkit_PSGFrame();
+		devkit_PSGSFXFrame();
 	}
 }

@@ -7,6 +7,7 @@
 #include "../banks/bank9.h"
 #include "../banks/bank10.h"
 #include "../banks/bank11.h"
+#include "../banks/bank12.h"
 
 const unsigned char *sound_sample_data[] =
 {
@@ -30,4 +31,40 @@ const unsigned char sound_sample_bank[] =
 	Boss01_wav_pcmenc_bank,
 	Boss02_wav_pcmenc_bank,
 	Boss03_wav_pcmenc_bank,
+};
+
+const unsigned char *effect_sample_data[] =
+{
+	sound0_psg,
+	sound1_psg,
+	sound2_psg,
+	sound3_psg,
+	sound4_psg,
+	sound5_psg,
+	sound6_psg,
+	sound7_psg,
+	sound8_psg,
+	sound9_psg,
+	sound10_psg,
+	sound11_psg,
+	sound12_psg,
+	sound13_psg,
+};
+
+const unsigned char effect_sample_bank[] =
+{
+	sound0_psg_bank,
+	sound1_psg_bank,
+	sound2_psg_bank,
+	sound3_psg_bank,
+	sound4_psg_bank,
+	sound5_psg_bank,
+	sound6_psg_bank,
+	sound7_psg_bank,
+	sound8_psg_bank,
+	sound9_psg_bank,
+	sound10_psg_bank,
+	sound11_psg_bank,
+	sound12_psg_bank,
+	sound13_psg_bank,
 };

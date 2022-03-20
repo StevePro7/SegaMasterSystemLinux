@@ -3,5 +3,7 @@
 
 extern const unsigned char *sound_sample_data[];
 extern const unsigned char sound_sample_bank[];
+extern const unsigned char *effect_sample_data[];
+extern const unsigned char effect_sample_bank[];
 
 #endif//_SOUND_OBJECT_H_
