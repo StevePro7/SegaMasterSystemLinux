@@ -26,6 +26,7 @@ void engine_sound_manager_play( unsigned char index )
 
 	if( !ho->hack_sound )
 	{
+		// TODO - integrate hack
 		return;
 	}
 
@@ -44,7 +45,8 @@ void engine_effect_manager_play( unsigned char index )
 
 	if( !ho->hack_sound )
 	{
-		//return;
+		// TODO - integrate hack
+		return;
 	}
 
 	devkit_SMS_mapROMBank( bank );
