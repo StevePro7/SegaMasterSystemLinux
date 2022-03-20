@@ -12,6 +12,9 @@ T:Ftitle_screen$tag_struct_timer_object[({0}S:S$timer_count$0$0({2}SI:U),Z,0,0)(
 S:G$global_game_object$0$0({1}STtag_struct_game_object:S),E,0,0
 S:G$global_timer_object$0$0({4}STtag_struct_timer_object:S),E,0,0
 S:Ftitle_screen$first_time$0$0({1}:S),E,0,0
+S:G$engine_sound_manager_init$0$0({2}DF,SV:S),C,0,0
+S:G$engine_sound_manager_play$0$0({2}DF,SV:S),C,0,0
+S:G$engine_music_manager_play$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_splash$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_tiles$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_title$0$0({2}DF,SV:S),C,0,0
@@ -25,9 +28,6 @@ S:G$engine_game_manager_intro_off$0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_update$0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_hold$0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move$0$0({2}DF,SC:U),C,0,0
-S:G$engine_sound_manager_init$0$0({2}DF,SV:S),C,0,0
-S:G$engine_sound_manager_play$0$0({2}DF,SV:S),C,0,0
-S:G$engine_effect_manager_play$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_clear$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_border$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_title$0$0({2}DF,SV:S),C,0,0

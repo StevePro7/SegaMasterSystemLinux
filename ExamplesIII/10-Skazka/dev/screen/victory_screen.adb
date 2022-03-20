@@ -23,8 +23,9 @@ S:G$gold_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$shop_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$villager_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$prep_texts$0$0({0}DA0d,DG,SC:U),E,0,0
-S:G$query_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$boss_texts$0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$query_texts$0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$laugh_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$menus_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$over_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$beat_texts$0$0({0}DA0d,DG,SC:U),E,0,0
