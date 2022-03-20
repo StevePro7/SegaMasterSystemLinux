@@ -1,151 +1,211 @@
 ;!FILE hack_manager.asm
 XL2
-H 9 areas 90 global symbols
+H 9 areas CC global symbols
 M hack_manager
 O -mz80
+S _engine_player_manager_set_goldno Ref0000
+S _engine_player_manager_set_weapon Ref0000
 S _engine_player_manager_set_currhp Ref0000
+S _engine_player_manager_set_armors Ref0000
 S .__.ABS. Def0000
+S _engine_player_manager_set_oneups Ref0000
 S _engine_player_manager_set_currxp Ref0000
-A _CODE size BF flags 0 addr 0
-S A$hack_manager$71 Def0005
-S A$hack_manager$81 Def000F
-S A$hack_manager$72 Def0008
-S A$hack_manager$91 Def0019
-S A$hack_manager$82 Def0012
+A _CODE size 10D flags 0 addr 0
+S A$hack_manager$70 Def0000
+S A$hack_manager$80 Def000A
+S A$hack_manager$71 Def0003
+S A$hack_manager$90 Def0014
+S A$hack_manager$81 Def000D
+S A$hack_manager$91 Def0017
 S _engine_hack_manager_load Def0033
-S A$hack_manager$92 Def001C
-S A$hack_manager$66 Def0000
-S A$hack_manager$76 Def000A
-S A$hack_manager$67 Def0003
-S A$hack_manager$86 Def0014
-S A$hack_manager$77 Def000D
-S XG$engine_hack_manager_invert$0$0 Def00BE
-S A$hack_manager$96 Def001E
-S A$hack_manager$87 Def0017
-S A$hack_manager$97 Def0021
+S A$hack_manager$75 Def0005
+S A$hack_manager$85 Def000F
+S A$hack_manager$76 Def0008
+S A$hack_manager$95 Def0019
+S A$hack_manager$86 Def0012
+S XG$engine_hack_manager_invert$0$0 Def010C
+S A$hack_manager$96 Def001C
 S G$engine_hack_manager_init$0$0 Def0000
 S XG$engine_hack_manager_load$0$0 Def007A
 S _engine_hack_manager_init Def0000
 S XG$engine_hack_manager_init$0$0 Def0032
-S C$hack_manager.c$30$1$10 Def001E
-S C$hack_manager.c$31$1$10 Def0023
-S C$hack_manager.c$22$1$10 Def0000
-S A$hack_manager$101 Def0023
-S C$hack_manager.c$32$1$10 Def0028
-S A$hack_manager$111 Def002D
-S A$hack_manager$102 Def0026
-S C$hack_manager.c$50$1$11 Def006C
-S C$hack_manager.c$33$1$10 Def002D
-S C$hack_manager.c$24$1$10 Def0000
-S A$hack_manager$220 Def0086
-S A$hack_manager$211 Def007B
-S A$hack_manager$112 Def0030
-S C$hack_manager.c$51$1$11 Def0073
-S C$hack_manager.c$42$1$11 Def0033
-S C$hack_manager.c$34$1$10 Def0032
-S C$hack_manager.c$25$1$10 Def0005
-S A$hack_manager$230 Def0091
-S A$hack_manager$221 Def0087
-S A$hack_manager$212 Def007E
-S A$hack_manager$140 Def003B
-S C$hack_manager.c$60$1$12 Def007B
-S C$hack_manager.c$43$1$11 Def003B
-S C$hack_manager.c$26$1$10 Def000A
-S A$hack_manager$240 Def009B
-S A$hack_manager$231 Def0092
-S A$hack_manager$222 Def0088
-S A$hack_manager$141 Def003E
+S C$hack_manager.c$30$1$10 Def0019
+S A$hack_manager$100 Def001E
+S C$hack_manager.c$31$1$10 Def001E
+S A$hack_manager$110 Def0028
+S A$hack_manager$101 Def0021
+S C$hack_manager.c$32$1$10 Def0023
+S C$hack_manager.c$23$1$10 Def0000
+S A$hack_manager$300 Def00D4
+S A$hack_manager$111 Def002B
+S C$hack_manager.c$50$1$11 Def0065
+S C$hack_manager.c$33$1$10 Def0028
+S A$hack_manager$310 Def00DF
+S A$hack_manager$301 Def00D5
+S A$hack_manager$220 Def0080
+S A$hack_manager$121 Def0032
+S C$hack_manager.c$51$1$11 Def006C
+S C$hack_manager.c$34$1$10 Def002D
+S C$hack_manager.c$25$1$10 Def0000
+S A$hack_manager$320 Def00E9
+S A$hack_manager$311 Def00E0
+S A$hack_manager$302 Def00D6
+S A$hack_manager$221 Def0083
+S A$hack_manager$140 Def003A
+S C$hack_manager.c$52$1$11 Def0073
+S C$hack_manager.c$43$1$11 Def0033
+S C$hack_manager.c$35$1$10 Def0032
+S C$hack_manager.c$26$1$10 Def0005
+S A$hack_manager$330 Def00F4
+S A$hack_manager$321 Def00EA
+S A$hack_manager$312 Def00E3
+S A$hack_manager$303 Def00D8
+S A$hack_manager$222 Def0084
+S A$hack_manager$150 Def0042
+S A$hack_manager$105 Def0023
 S G$engine_hack_manager_invert$0$0 Def007B
-S C$hack_manager.c$44$1$11 Def0042
-S C$hack_manager.c$36$1$10 Def0033
-S C$hack_manager.c$27$1$10 Def000F
-S A$hack_manager$250 Def00A6
-S A$hack_manager$241 Def009C
-S A$hack_manager$232 Def0095
-S A$hack_manager$223 Def008A
-S A$hack_manager$160 Def0056
-S A$hack_manager$142 Def0041
-S A$hack_manager$133 Def0033
-S A$hack_manager$106 Def0028
-S C$hack_manager.c$62$1$12 Def0080
-S C$hack_manager.c$54$1$11 Def007A
-S C$hack_manager.c$45$1$11 Def0049
-S C$hack_manager.c$28$1$10 Def0014
-S A$hack_manager$260 Def00B2
-S A$hack_manager$251 Def00A9
-S A$hack_manager$242 Def009E
-S A$hack_manager$224 Def008C
-S A$hack_manager$170 Def005E
-S A$hack_manager$152 Def0049
-S A$hack_manager$134 Def0036
-S A$hack_manager$107 Def002B
-S C$hack_manager.c$72$1$12 Def00AA
-S C$hack_manager.c$46$1$11 Def0050
-S C$hack_manager.c$29$1$10 Def0019
-S A$hack_manager$270 Def00BD
-S A$hack_manager$261 Def00B3
-S A$hack_manager$243 Def00A0
-S A$hack_manager$225 Def008D
-S A$hack_manager$216 Def0080
-S A$hack_manager$171 Def0061
-S A$hack_manager$153 Def004C
-S A$hack_manager$135 Def0037
-S A$hack_manager$117 Def0032
-S C$hack_manager.c$73$1$12 Def00B4
-S C$hack_manager.c$56$1$11 Def007B
-S C$hack_manager.c$47$1$11 Def0057
-S C$hack_manager.c$38$1$11 Def0033
-S A$hack_manager$244 Def00A1
-S A$hack_manager$217 Def0083
-S A$hack_manager$190 Def0079
-S A$hack_manager$172 Def0064
-S A$hack_manager$154 Def004F
-S A$hack_manager$136 Def003A
-S C$hack_manager.c$74$1$12 Def00BE
-S C$hack_manager.c$48$1$11 Def005E
-S A$hack_manager$218 Def0084
-S A$hack_manager$182 Def006C
-S A$hack_manager$164 Def0057
-S A$hack_manager$146 Def0042
-S C$hack_manager.c$66$1$12 Def0096
-S C$hack_manager.c$64$2$13 Def008F
-S C$hack_manager.c$49$1$11 Def0065
-S A$hack_manager$237 Def0096
-S A$hack_manager$219 Def0085
-S A$hack_manager$183 Def006F
-S A$hack_manager$165 Def005A
-S A$hack_manager$147 Def0045
-S C$hack_manager.c$58$1$12 Def007B
-S A$hack_manager$265 Def00B4
-S A$hack_manager$256 Def00AA
-S A$hack_manager$238 Def0099
-S A$hack_manager$229 Def008F
-S A$hack_manager$184 Def0072
-S A$hack_manager$166 Def005D
-S A$hack_manager$148 Def0048
-S C$hack_manager.c$20$0$0 Def0000
-S A$hack_manager$275 Def00BE
-S A$hack_manager$266 Def00B7
-S A$hack_manager$257 Def00AD
-S A$hack_manager$248 Def00A3
-S A$hack_manager$239 Def009A
-S A$hack_manager$176 Def0065
-S A$hack_manager$158 Def0050
+S C$hack_manager.c$44$1$11 Def003B
+S C$hack_manager.c$27$1$10 Def000A
+S A$hack_manager$340 Def0100
+S A$hack_manager$331 Def00F7
+S A$hack_manager$322 Def00EC
+S A$hack_manager$304 Def00DA
+S A$hack_manager$250 Def00A3
+S A$hack_manager$241 Def0096
+S A$hack_manager$223 Def0085
+S A$hack_manager$151 Def0045
+S A$hack_manager$115 Def002D
+S A$hack_manager$106 Def0026
+S C$hack_manager.c$80$1$12 Def00D0
+S C$hack_manager.c$62$1$12 Def007B
+S C$hack_manager.c$45$1$11 Def0042
+S C$hack_manager.c$37$1$10 Def0033
+S C$hack_manager.c$28$1$10 Def000F
+S A$hack_manager$350 Def010B
+S A$hack_manager$341 Def0101
+S A$hack_manager$323 Def00EE
+S A$hack_manager$305 Def00DB
+S A$hack_manager$251 Def00A4
+S A$hack_manager$242 Def0099
+S A$hack_manager$233 Def008F
+S A$hack_manager$224 Def0086
+S A$hack_manager$215 Def007B
+S A$hack_manager$170 Def005D
+S A$hack_manager$152 Def0048
+S A$hack_manager$116 Def0030
+S C$hack_manager.c$90$1$12 Def00F8
+S C$hack_manager.c$72$1$12 Def00AD
+S C$hack_manager.c$55$1$11 Def007A
+S C$hack_manager.c$46$1$11 Def0049
+S C$hack_manager.c$29$1$10 Def0014
+S A$hack_manager$324 Def00EF
+S A$hack_manager$243 Def009A
+S A$hack_manager$234 Def0091
+S A$hack_manager$225 Def0087
+S A$hack_manager$216 Def007E
+S A$hack_manager$180 Def0065
+S A$hack_manager$162 Def0050
+S A$hack_manager$144 Def003B
+S C$hack_manager.c$91$1$12 Def0102
+S C$hack_manager.c$70$2$14 Def00A6
+S C$hack_manager.c$64$1$12 Def0080
+S C$hack_manager.c$47$1$11 Def0050
+S A$hack_manager$280 Def00BF
+S A$hack_manager$271 Def00B5
+S A$hack_manager$244 Def009B
+S A$hack_manager$235 Def0092
+S A$hack_manager$226 Def0088
+S A$hack_manager$181 Def0068
+S A$hack_manager$163 Def0053
+S A$hack_manager$145 Def003E
+S C$hack_manager.c$92$1$12 Def010C
+S C$hack_manager.c$57$1$11 Def007B
+S C$hack_manager.c$48$1$11 Def0057
+S C$hack_manager.c$39$1$11 Def0033
+S A$hack_manager$317 Def00E4
+S A$hack_manager$290 Def00C9
+S A$hack_manager$281 Def00C0
+S A$hack_manager$272 Def00B7
+S A$hack_manager$263 Def00AD
+S A$hack_manager$245 Def009C
+S A$hack_manager$236 Def0095
+S A$hack_manager$227 Def008A
+S A$hack_manager$182 Def006B
+S A$hack_manager$164 Def0056
+S A$hack_manager$146 Def0041
+S A$hack_manager$137 Def0033
+S C$hack_manager.c$84$1$12 Def00E4
+S C$hack_manager.c$49$1$11 Def005E
+S A$hack_manager$345 Def0102
+S A$hack_manager$336 Def00F8
+S A$hack_manager$318 Def00E7
+S A$hack_manager$309 Def00DD
+S A$hack_manager$291 Def00CB
+S A$hack_manager$282 Def00C1
+S A$hack_manager$273 Def00B8
+S A$hack_manager$264 Def00B0
+S A$hack_manager$255 Def00A6
+S A$hack_manager$246 Def009D
+S A$hack_manager$228 Def008C
+S A$hack_manager$192 Def0073
+S A$hack_manager$174 Def005E
+S A$hack_manager$156 Def0049
+S A$hack_manager$138 Def0036
+S C$hack_manager.c$76$1$12 Def00BC
+S A$hack_manager$355 Def010C
+S A$hack_manager$346 Def0105
+S A$hack_manager$337 Def00FB
+S A$hack_manager$328 Def00F1
+S A$hack_manager$319 Def00E8
+S A$hack_manager$292 Def00CC
+S A$hack_manager$283 Def00C2
+S A$hack_manager$274 Def00BB
+S A$hack_manager$265 Def00B1
+S A$hack_manager$256 Def00A8
+S A$hack_manager$247 Def009E
+S A$hack_manager$229 Def008D
+S A$hack_manager$193 Def0076
+S A$hack_manager$175 Def0061
+S A$hack_manager$157 Def004C
+S A$hack_manager$139 Def0037
+S C$hack_manager.c$68$1$12 Def0096
+S C$hack_manager.c$66$2$13 Def008F
+S C$hack_manager.c$59$1$12 Def007B
+S A$hack_manager$347 Def0106
+S A$hack_manager$338 Def00FC
+S A$hack_manager$329 Def00F3
+S A$hack_manager$293 Def00CF
+S A$hack_manager$284 Def00C4
+S A$hack_manager$266 Def00B2
+S A$hack_manager$257 Def00A9
+S A$hack_manager$248 Def009F
+S A$hack_manager$194 Def0079
+S A$hack_manager$176 Def0064
+S A$hack_manager$158 Def004F
+S C$hack_manager.c$74$2$15 Def00B5
 S G$engine_hack_manager_load$0$0 Def0033
-S A$hack_manager$267 Def00B8
-S A$hack_manager$258 Def00AE
-S A$hack_manager$249 Def00A5
-S A$hack_manager$195 Def007A
-S A$hack_manager$177 Def0068
-S A$hack_manager$159 Def0053
-S A$hack_manager$268 Def00BA
-S A$hack_manager$259 Def00B0
-S A$hack_manager$178 Def006B
-S C$hack_manager.c$68$2$14 Def00A3
-S A$hack_manager$269 Def00BC
-S A$hack_manager$188 Def0073
-S A$hack_manager$189 Def0076
+S C$hack_manager.c$21$0$0 Def0000
+S A$hack_manager$348 Def0108
+S A$hack_manager$339 Def00FE
+S A$hack_manager$285 Def00C6
+S A$hack_manager$267 Def00B3
+S A$hack_manager$258 Def00AC
+S A$hack_manager$249 Def00A1
+S A$hack_manager$186 Def006C
+S A$hack_manager$168 Def0057
+S C$hack_manager.c$82$2$17 Def00DD
+S A$hack_manager$349 Def010A
+S A$hack_manager$286 Def00C7
+S A$hack_manager$187 Def006F
+S A$hack_manager$169 Def005A
+S A$hack_manager$188 Def0072
+S A$hack_manager$279 Def00BC
 S _engine_hack_manager_invert Def007B
+S A$hack_manager$298 Def00D0
+S A$hack_manager$199 Def007A
+S C$hack_manager.c$78$2$16 Def00C9
+S A$hack_manager$299 Def00D3
+S C$hack_manager.c$86$2$18 Def00F1
 A _DATA size A flags 0 addr 0
 S G$global_hack_object$0$0 Def0000
 S _global_hack_object Def0000
@@ -186,19 +246,43 @@ T 79 00 02 C9
 R 00 00 00 00
 T 7B 00
 R 00 00 00 00
-T 7B 00 21 03 00 36 1D 21 00 00 23 23 4E 79 B7 28
+T 7B 00 21 07 00 36 01 21 00 00 23 23 4E 79 B7 28
 R 00 00 00 00 00 03 01 00 00 08 01 00
 T 89 00 0C 3E 63 91 38 07 06 00 C5 CD 00 00 F1
-R 00 00 00 00 02 0C 02 00
+R 00 00 00 00 02 0C 06 00
 T 96 00
 R 00 00 00 00
-T 96 00 21 03 00 4E 79 B7 28 0C 3E 1E 91 38 07 06
+T 96 00 21 00 00 23 23 23 4E 79 B7 28 0C 3E 1E 91
 R 00 00 00 00 00 03 01 00
-T A4 00 00 C5 CD 00 00 F1
-R 00 00 00 00 02 05 00 00
-T AA 00
+T A4 00 38 07 06 00 C5 CD 00 00 F1
+R 00 00 00 00 02 08 02 00
+T AD 00
 R 00 00 00 00
-T AA 00 01 08 00 0A D6 01 3E 00 17 02 01 09 00 0A
+T AD 00 21 04 00 4E 79 B7 28 07 06 00 C5 CD 00 00
+R 00 00 00 00 00 03 01 00 02 0E 00 00
+T BB 00 F1
+R 00 00 00 00
+T BC 00
+R 00 00 00 00
+T BC 00 21 05 00 4E 79 B7 28 0C 3E 02 91 38 07 06
+R 00 00 00 00 00 03 01 00
+T CA 00 00 C5 CD 00 00 F1
+R 00 00 00 00 02 05 01 00
+T D0 00
+R 00 00 00 00
+T D0 00 21 06 00 4E 79 B7 28 0C 3E 02 91 38 07 06
+R 00 00 00 00 00 03 01 00
+T DE 00 00 C5 CD 00 00 F1
+R 00 00 00 00 02 05 03 00
+T E4 00
+R 00 00 00 00
+T E4 00 21 07 00 4E 79 B7 28 0C 3E 01 91 38 07 06
+R 00 00 00 00 00 03 01 00
+T F2 00 00 C5 CD 00 00 F1
+R 00 00 00 00 02 05 05 00
+T F8 00
+R 00 00 00 00
+T F8 00 01 08 00 0A D6 01 3E 00 17 02 01 09 00 0A
 R 00 00 00 00 00 03 01 00 00 0D 01 00
-T B8 00 D6 01 3E 00 17 02 C9
+T 06 01 D6 01 3E 00 17 02 C9
 R 00 00 00 00

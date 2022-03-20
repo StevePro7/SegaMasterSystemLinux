@@ -102,7 +102,7 @@ void screen_boss_screen_update( unsigned char *screen_type )
 		if( boss_type_battle == selection )
 		{
 			engine_fight_manager_player_to_enemy( &enemys_damage );
-			engine_fight_manager_enemy_to_player( &player_damage );
+			engine_fight_manager_boss_to_player( &player_damage );
 
 			engine_enemy_manager_hit( enemys_damage );
 			engine_player_manager_hit( player_damage );

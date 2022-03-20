@@ -29,7 +29,7 @@ void engine_player_manager_load()
 	po->gold = po->def_gold;				// V
 	po->weapon = po->def_weapon;			// Q$	ATK
 	po->armor = po->def_armor;				// W$	ARM
-	po->life = po->life;					// E$	UP
+	po->life = po->def_life;				// E$	UP
 
 	//po->xp = 0;							// Z
 	////po->hp = 2;// 10;						// N		// TODO delete!!

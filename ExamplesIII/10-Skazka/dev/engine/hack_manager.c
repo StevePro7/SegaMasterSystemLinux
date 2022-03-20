@@ -58,7 +58,8 @@ void engine_hack_manager_invert()
 {
 	struct_hack_object *ho = &global_hack_object;
 
-	ho->hack_currhp = 29;
+	//ho->hack_weapon = 2;
+	ho->hack_oneups = 1;
 
 	if( ho->hack_currxp > 0 && ho->hack_currxp <= MAX_XP )
 	{
