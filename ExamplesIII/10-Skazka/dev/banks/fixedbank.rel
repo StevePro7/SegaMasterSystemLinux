@@ -1,5 +1,5 @@
 XL2
-H A areas 84 global symbols
+H A areas 85 global symbols
 M fixedbank
 O -mz80
 S .__.ABS. Def0000
@@ -44,7 +44,7 @@ A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
-A _BANK15 size 67C flags 0 addr 0
+A _BANK15 size 691 flags 0 addr 0
 S Ffixedbank$__str_10$0$0 Def0105
 S Ffixedbank$__str_20$0$0 Def01A1
 S Ffixedbank$__str_11$0$0 Def0119
@@ -73,6 +73,7 @@ S Ffixedbank$__str_43$0$0 Def02D2
 S Ffixedbank$__str_34$0$0 Def0266
 S Ffixedbank$__str_25$0$0 Def01F1
 S Ffixedbank$__str_16$0$0 Def017D
+S Ffixedbank$__str_80$0$0 Def0676
 S Ffixedbank$__str_71$0$0 Def05B0
 S Ffixedbank$__str_62$0$0 Def04D3
 S Ffixedbank$__str_53$0$0 Def03EA
@@ -94,27 +95,27 @@ S Ffixedbank$__str_46$0$0 Def0326
 S Ffixedbank$__str_37$0$0 Def028A
 S Ffixedbank$__str_28$0$0 Def0215
 S Ffixedbank$__str_19$0$0 Def0198
-S Ffixedbank$__str_74$0$0 Def05F0
+S Ffixedbank$__str_74$0$0 Def05F7
 S Ffixedbank$__str_65$0$0 Def0526
 S Ffixedbank$__str_56$0$0 Def043E
 S Ffixedbank$__str_47$0$0 Def0342
 S Ffixedbank$__str_38$0$0 Def0296
 S Ffixedbank$__str_29$0$0 Def0229
-S Ffixedbank$__str_75$0$0 Def05FE
+S Ffixedbank$__str_75$0$0 Def0605
 S Ffixedbank$__str_66$0$0 Def0542
 S Ffixedbank$__str_57$0$0 Def045A
 S Ffixedbank$__str_48$0$0 Def035E
 S Ffixedbank$__str_39$0$0 Def02A2
-S Ffixedbank$__str_76$0$0 Def0619
+S Ffixedbank$__str_76$0$0 Def0613
 S Ffixedbank$__str_67$0$0 Def055E
 S Ffixedbank$__str_58$0$0 Def0476
 S Ffixedbank$__str_49$0$0 Def037A
-S Ffixedbank$__str_77$0$0 Def0635
+S Ffixedbank$__str_77$0$0 Def062E
 S Ffixedbank$__str_68$0$0 Def057A
 S Ffixedbank$__str_59$0$0 Def0492
-S Ffixedbank$__str_78$0$0 Def0651
+S Ffixedbank$__str_78$0$0 Def064A
 S Ffixedbank$__str_69$0$0 Def0587
-S Ffixedbank$__str_79$0$0 Def0661
+S Ffixedbank$__str_79$0$0 Def0666
 S Ffixedbank$__str_0$0$0 Def0000
 S Ffixedbank$__str_1$0$0 Def001E
 S Ffixedbank$__str_2$0$0 Def003C
@@ -620,41 +621,47 @@ T DB 05 52 20 4C 49 46 45 00
 R 00 00 07 00
 T E2 05
 R 00 00 07 00
-T E2 05 59 4F 55 20 41 52 45 20 44 45 41 44 21 00
+T E2 05 32 29 20 46 49 47 48 54 21 21 20 20 20 20
 R 00 00 07 00
-T F0 05
+T F0 05 20 20 20 20 20 20 00
 R 00 00 07 00
-T F0 05 20 20 47 41 4D 45 20 4F 56 45 52 20 20 00
+T F7 05
 R 00 00 07 00
-T FE 05
+T F7 05 59 4F 55 20 41 52 45 20 44 45 41 44 21 00
 R 00 00 07 00
-T FE 05 20 20 20 20 20 20 43 4F 4E 47 4C 41 54 55
+T 05 06
 R 00 00 07 00
-T 0C 06 52 41 54 49 4F 4E 21 21 20 20 20 20 00
+T 05 06 20 20 47 41 4D 45 20 4F 56 45 52 20 20 00
 R 00 00 07 00
-T 19 06
+T 13 06
 R 00 00 07 00
-T 19 06 59 4F 55 20 48 41 56 45 20 43 4F 4D 50 4C
+T 13 06 20 20 20 20 20 20 43 4F 4E 47 4C 41 54 55
 R 00 00 07 00
-T 27 06 45 54 45 44 20 41 20 47 52 45 41 54 20 00
+T 21 06 52 41 54 49 4F 4E 21 21 20 20 20 20 00
 R 00 00 07 00
-T 35 06
+T 2E 06
 R 00 00 07 00
-T 35 06 47 41 4D 45 20 41 4E 44 20 50 52 4F 56 45
+T 2E 06 59 4F 55 20 48 41 56 45 20 43 4F 4D 50 4C
 R 00 00 07 00
-T 43 06 44 20 54 48 45 20 4A 55 53 54 49 43 45 00
+T 3C 06 45 54 45 44 20 41 20 47 52 45 41 54 20 00
 R 00 00 07 00
-T 51 06
+T 4A 06
 R 00 00 07 00
-T 51 06 4F 46 20 4F 55 52 20 43 55 4C 54 55 52 45
+T 4A 06 47 41 4D 45 20 41 4E 44 20 50 52 4F 56 45
 R 00 00 07 00
-T 5F 06 2E 00
+T 58 06 44 20 54 48 45 20 4A 55 53 54 49 43 45 00
 R 00 00 07 00
-T 61 06
+T 66 06
 R 00 00 07 00
-T 61 06 20 4E 4F 57 20 47 4F 20 41 4E 44 20 52 45
+T 66 06 4F 46 20 4F 55 52 20 43 55 4C 54 55 52 45
 R 00 00 07 00
-T 6F 06 53 54 20 4F 55 52 20 48 45 52 4F 21 00
+T 74 06 2E 00
+R 00 00 07 00
+T 76 06
+R 00 00 07 00
+T 76 06 20 4E 4F 57 20 47 4F 20 41 4E 44 20 52 45
+R 00 00 07 00
+T 84 06 53 54 20 4F 55 52 20 48 45 52 4F 21 00
 R 00 00 07 00
 T 00 00
 R 00 00 08 00
@@ -756,21 +763,21 @@ T BA 00 93 05 B0 05
 R 00 00 08 00 00 02 07 00 00 04 07 00
 T BE 00
 R 00 00 08 00
-T BE 00 CD 05 32 02
+T BE 00 CD 05 E2 05
 R 00 00 08 00 00 02 07 00 00 04 07 00
 T C2 00
 R 00 00 08 00
-T C2 00 E2 05 78 00 78 00
+T C2 00 F7 05 78 00 78 00
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
-T C8 00 F0 05
+T C8 00 05 06
 R 00 00 08 00 00 02 07 00
 T CA 00
 R 00 00 08 00
-T CA 00 FE 05 78 00 78 00
+T CA 00 13 06 78 00 78 00
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
-T D0 00 78 00 19 06 35 06
+T D0 00 78 00 2E 06 4A 06
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
-T D6 00 51 06 78 00 78 00
+T D6 00 66 06 78 00 78 00
 R 00 00 08 00 00 02 07 00 00 04 07 00 00 06 07 00
-T DC 00 78 00 61 06
+T DC 00 78 00 76 06
 R 00 00 08 00 00 02 07 00 00 04 07 00

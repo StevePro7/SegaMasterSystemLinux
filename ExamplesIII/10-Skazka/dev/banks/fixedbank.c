@@ -138,9 +138,6 @@ extern const unsigned char *prep_texts[] =
 	"",
 	"     1)  YES",
 	"     2)  NO",
-	// TODO 
-	// "SO YOU HAVE COME TO CALLENGE ME,      FOOLISH MORTAL? VERY WELL.",
-
 };
 
 const unsigned char *query_texts[] =
@@ -152,7 +149,7 @@ const unsigned char *query_texts[] =
 const unsigned char *boss_texts[] =
 {
 	"1) BEG FOR YOUR LIFE",
-	"2) FIGHT"
+	"2) FIGHT!!          ",
 };
 
 const unsigned char *over_texts[] =

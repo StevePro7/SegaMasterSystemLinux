@@ -34,11 +34,20 @@ void screen_boss_screen_load()
 	engine_text_manager_border();
 	engine_text_manager_clear( row + 0, row + 9 );
 
+	// query text...
+	//row = 19;
+	//devkit_SMS_mapROMBank( FIXED_BANK );
+	//for( idx = 0; idx < 2; idx++ )
+	//{
+	//	engine_font_manager_text( ( unsigned char* ) query_texts[ idx ], LEFT_X + 3, row );
+	//	row++;
+	//}
+
 	row = 19;
 	devkit_SMS_mapROMBank( FIXED_BANK );
 	for( idx = 0; idx < 2; idx++ )
 	{
-		engine_font_manager_text( ( unsigned char* ) query_texts[ idx ], LEFT_X + 3, row );
+		engine_font_manager_text( ( unsigned char* ) boss_texts[ idx ], LEFT_X + 7, row );
 		row++;
 	}
 
@@ -49,9 +58,10 @@ void screen_boss_screen_load()
 	engine_enemy_manager_hplo();
 
 	engine_boss_manager_draw( 10, 0 );
-	devkit_SMS_displayOn();
 
-	
+	row = 19;
+	engine_select_manager_load( select_type, LEFT_X + 5, row, 2 );
+	devkit_SMS_displayOn();
 }
 
 void screen_boss_screen_update( unsigned char *screen_type )
