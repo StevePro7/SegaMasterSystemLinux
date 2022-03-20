@@ -94,13 +94,13 @@ typedef enum tag_enum_enemy_type
 
 } enum_enemy_type;
 
-typedef enum tag_enum_forest_type
+typedef enum tag_enum_scene_type
 {
-	forest_type_select = 0,
-	forest_type_decide = 1,
-	forest_type_pushon = 2,
+	scene_type_select = 0,
+	scene_type_decide = 1,
+	scene_type_pushon = 2,
 
-} enum_forest_type;
+} enum_scene_type;
 
 typedef enum tag_enum_fight_type
 {

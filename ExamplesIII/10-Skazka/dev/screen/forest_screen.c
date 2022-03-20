@@ -37,7 +37,7 @@ void screen_forest_screen_load()
 
 	curr_selection = 0;
 	prev_selection = 0;
-	event_stage = forest_type_select;
+	event_stage = scene_type_select;
 
 	enemys_damage = 0;
 	player_damage = 0;
@@ -50,7 +50,7 @@ void screen_forest_screen_update( unsigned char *screen_type )
 	unsigned char value;
 	unsigned char xp = 0;
 
-	if( forest_type_pushon == event_stage )
+	if( scene_type_pushon == event_stage )
 	{
 		input = engine_input_manager_hold( input_type_fire1 );
 		if( input )
@@ -80,13 +80,13 @@ void screen_forest_screen_update( unsigned char *screen_type )
 				}
 			}
 
-			event_stage = forest_type_select;
+			event_stage = scene_type_select;
 			*screen_type = screen_type_forest;
 			return;
 		}
 	}
 
-	if( forest_type_select == event_stage )
+	if( scene_type_select == event_stage )
 	{
 		input = engine_input_manager_hold( input_type_fire2 );
 		if( input )
@@ -103,10 +103,10 @@ void screen_forest_screen_update( unsigned char *screen_type )
 		}
 
 		prev_selection = curr_selection;
-		event_stage = forest_type_decide;
+		event_stage = scene_type_decide;
 	}
 
-	if( forest_type_decide == event_stage )
+	if( scene_type_decide == event_stage )
 	{
 		if( fight_type_run == curr_selection )
 		{
@@ -127,7 +127,7 @@ void screen_forest_screen_update( unsigned char *screen_type )
 				}
 
 				engine_font_manager_text( LOCALE_FIGHT_NOTRUN, LEFT_X + 5, FIGHT_ROW - 3 );
-				event_stage = forest_type_pushon;
+				event_stage = scene_type_pushon;
 			}
 		}
 		if( fight_type_battle == curr_selection )
@@ -142,7 +142,7 @@ void screen_forest_screen_update( unsigned char *screen_type )
 			engine_font_manager_data( enemys_damage, LEFT_X + 23, FIGHT_ROW - 3 );
 			engine_font_manager_data( player_damage, LEFT_X + 23, FIGHT_ROW - 2 );
 
-			event_stage = forest_type_pushon;
+			event_stage = scene_type_pushon;
 		}
 	}
 

@@ -18,7 +18,7 @@ static unsigned char select_type;
 static unsigned char event_stage;
 static unsigned char enemys_damage;
 static unsigned char player_damage;
-static void laugh( unsigned char selection );
+static void boss_laugh( unsigned char selection );
 
 void screen_boss_screen_load()
 {
@@ -66,7 +66,7 @@ void screen_boss_screen_load()
 	engine_select_manager_load( select_type, LEFT_X + 5, row, 2 );
 	devkit_SMS_displayOn();
 
-	event_stage = forest_type_select;
+	event_stage = scene_type_select;
 	enemys_damage = 0;
 	player_damage = 0;
 }
@@ -74,7 +74,7 @@ void screen_boss_screen_load()
 void screen_boss_screen_update( unsigned char *screen_type )
 {
 	unsigned char selection = 0;
-	if( forest_type_select == event_stage )
+	if( scene_type_select == event_stage )
 	{
 		selection = engine_select_manager_update( select_type );
 		if( NO_SELECTION == selection )
@@ -83,12 +83,12 @@ void screen_boss_screen_update( unsigned char *screen_type )
 			return;
 		}
 
-		event_stage = forest_type_decide;
+		event_stage = scene_type_decide;
 	}
 
-	if( forest_type_decide == event_stage )
+	if( scene_type_decide == event_stage )
 	{
-		laugh( selection );
+		boss_laugh( selection );
 		if( boss_type_beg == selection )
 		{
 			// Subtract 2x HP if you beg.
@@ -107,7 +107,7 @@ void screen_boss_screen_update( unsigned char *screen_type )
 			engine_enemy_manager_hit( enemys_damage );
 			engine_player_manager_hit( player_damage );
 
-			// If both you and enemy have 0 HP then you get game over first!
+			// If both you and boss have 0 HP then you get game over first!
 			if( engine_player_manager_dead() )
 			{
 				*screen_type = screen_type_over;
@@ -121,29 +121,13 @@ void screen_boss_screen_update( unsigned char *screen_type )
 			}
 		}
 
-		event_stage = forest_type_select;
+		event_stage = scene_type_select;
 	}
 
 	*screen_type = screen_type_boss;
 }
 
-//static void print_intro()
-//{
-//	unsigned char row;
-//	//unsigned char idx;
-//
-//
-//	row = 10;
-//	//for( idx = 0; idx < 2; idx++ )
-//	//{
-//	//	engine_font_manager_text( ( unsigned char* ) query_texts[ idx ], LEFT_X + 3, row );
-//	//	row++;
-//	//}
-//	engine_font_manager_text( ( unsigned char* ) query_texts[ 0 ], LEFT_X + 3, row );
-//	//engine_font_manager_text( "SO YOU HAVE COME TO CALLENGE", LEFT_X + 3, row );
-//}
-
-static void laugh( unsigned char selection )
+static void boss_laugh( unsigned char selection )
 {
 	devkit_SMS_mapROMBank( FIXED_BANK );
 	if( boss_type_battle == selection )
