@@ -4,8 +4,12 @@
 typedef struct tag_struct_hack_object
 {
 	unsigned char hack_delays;
-	//unsigned char hack_delay;
-
+	unsigned char hack_nodead;
+	unsigned char hack_currxp;
+	unsigned char hack_goldno;
+	unsigned char hack_weapon;
+	unsigned char hack_armors;
+	unsigned char hack_oneups;
 	unsigned char hack_musics;
 	unsigned char hack_sounds;
 
