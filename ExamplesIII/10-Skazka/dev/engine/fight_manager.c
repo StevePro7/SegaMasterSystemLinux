@@ -15,6 +15,7 @@ void engine_fight_manager_player_to_enemy( unsigned char *e_damage )
 	unsigned char random;
 	unsigned char extra;
 
+	damage = 0;
 	extra = po->weapon;
 	random = rand() % MAX_RANDOM;
 	if( random < 1 )
@@ -39,6 +40,7 @@ void engine_fight_manager_player_to_enemy( unsigned char *e_damage )
 	}
 
 	*e_damage = damage + extra;
+	*e_damage = 15;
 }
 
 void engine_fight_manager_enemy_to_player( unsigned char *p_damage )
@@ -50,6 +52,7 @@ void engine_fight_manager_enemy_to_player( unsigned char *p_damage )
 	unsigned char damage;
 	unsigned char random;
 
+	damage = 0;
 	random = rand() % MAX_RANDOM;
 	if( random < 1 )
 	{
@@ -73,6 +76,7 @@ void engine_fight_manager_enemy_to_player( unsigned char *p_damage )
 	}
 
 	*p_damage = damage + eo->ax + po->armor;
+	*p_damage = 1;
 }
 
 void engine_fight_manager_boss_to_player( unsigned char *p_damage )
@@ -85,6 +89,7 @@ void engine_fight_manager_boss_to_player( unsigned char *p_damage )
 	unsigned char random;
 	unsigned char extra;
 
+	damage = 0;
 	extra = eo->ax;
 	random = rand() % MAX_RANDOM;
 	if( random < 1 )
