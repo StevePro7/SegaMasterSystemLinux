@@ -174,6 +174,9 @@ S:G$devkit_PSGRestoreVolumes$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_PSGFrame$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_PSGSFXFrame$0$0({2}DF,SV:S),C,0,0
 S:G$engine_asm_manager_clear_VRAM$0$0({2}DF,SV:S),C,0,0
+S:G$engine_sound_manager_init$0$0({2}DF,SV:S),C,0,0
+S:G$engine_sound_manager_play$0$0({2}DF,SV:S),C,0,0
+S:G$engine_music_manager_play$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_splash$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_tiles$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_title$0$0({2}DF,SV:S),C,0,0
@@ -206,7 +209,4 @@ S:G$engine_screen_manager_update$0$0({2}DF,SV:S),C,0,0
 S:G$engine_select_manager_init$0$0({2}DF,SV:S),C,0,0
 S:G$engine_select_manager_load$0$0({2}DF,SV:S),C,0,0
 S:G$engine_select_manager_update$0$0({2}DF,SC:U),C,0,0
-S:G$engine_sound_manager_init$0$0({2}DF,SV:S),C,0,0
-S:G$engine_sound_manager_play$0$0({2}DF,SV:S),C,0,0
-S:G$engine_effect_manager_play$0$0({2}DF,SV:S),C,0,0
 S:G$main$0$0({2}DF,SV:S),C,0,0
