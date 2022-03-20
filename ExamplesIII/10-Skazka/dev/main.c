@@ -40,6 +40,7 @@ void main( void )
 	//open_screen_type = screen_type_test;
 
 	engine_enemy_manager_init();
+	engine_game_manager_init();
 
 	// TODO - remove this at the end because will be in the load screen before new game anyway
 	engine_player_manager_load();

@@ -1,12 +1,15 @@
 M:title_screen
 F:G$screen_title_screen_load$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Ltitle_screen.screen_title_screen_load$row$1$79({1}SC:U),R,0,0,[]
-F:G$screen_title_screen_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
+F:G$screen_title_screen_update$0$0({2}DF,SV:S),Z,0,1,0,0,0
 S:Ltitle_screen.screen_title_screen_update$screen_type$1$80({2}DG,SC:U),B,1,4
-S:Ltitle_screen.screen_title_screen_update$input$1$81({1}SC:U),R,0,0,[b]
+S:Ltitle_screen.screen_title_screen_update$go$1$81({2}DG,STtag_struct_game_object:S),R,0,0,[]
+S:Ltitle_screen.screen_title_screen_update$input$1$81({1}SC:U),B,1,-1
 S:Ltitle_screen.screen_title_screen_update$timer$1$81({1}SC:U),R,0,0,[c]
 S:Ltitle_screen.screen_title_screen_update$index$1$81({1}SC:U),R,0,0,[b]
+T:Ftitle_screen$tag_struct_game_object[({0}S:S$play_intro$0$0({1}:S),Z,0,0)]
 T:Ftitle_screen$tag_struct_timer_object[({0}S:S$timer_count$0$0({2}SI:U),Z,0,0)({2}S:S$timer_value$0$0({2}SI:U),Z,0,0)]
+S:G$global_game_object$0$0({1}STtag_struct_game_object:S),E,0,0
 S:G$global_timer_object$0$0({4}STtag_struct_timer_object:S),E,0,0
 S:Ftitle_screen$first_time$0$0({1}:S),E,0,0
 S:G$engine_content_manager_load_splash$0$0({2}DF,SV:S),C,0,0
@@ -16,6 +19,9 @@ S:G$engine_font_manager_char$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_zero$0$0({2}DF,SV:S),C,0,0
+S:G$engine_game_manager_init$0$0({2}DF,SV:S),C,0,0
+S:G$engine_game_manager_intro_on$0$0({2}DF,SV:S),C,0,0
+S:G$engine_game_manager_intro_off$0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_update$0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_hold$0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move$0$0({2}DF,SC:U),C,0,0

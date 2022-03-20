@@ -2,6 +2,7 @@
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
+#include "../engine/game_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/locale_manager.h"
@@ -33,13 +34,11 @@ void screen_title_screen_load()
 	
 	devkit_SMS_displayOn();
 	first_time = true;
-	//intro_music();
-	//engine_text_manager_fire();
 }
 
 void screen_title_screen_update( unsigned char *screen_type )
 {
-	// TODO music intro yes or no.
+	struct_game_object *go = &global_game_object;
 	unsigned char input;
 	unsigned char timer;
 	unsigned char index;
@@ -47,16 +46,19 @@ void screen_title_screen_update( unsigned char *screen_type )
 	if( first_time )
 	{
 		first_time = false;
-		for( index = 0; index < 5; index++ )
+		if( go->play_intro )
 		{
-			engine_sound_manager_play( index );
-
-			engine_input_manager_update();
-			input = engine_input_manager_move( input_type_fire1 );
-			if( input )
+			for( index = 0; index < 5; index++ )
 			{
-				*screen_type = screen_type_intro;
-				return;
+				engine_sound_manager_play( index );
+
+				engine_input_manager_update();
+				input = engine_input_manager_move( input_type_fire1 );
+				if( input )
+				{
+					*screen_type = screen_type_intro;
+					return;
+				}
 			}
 		}
 
