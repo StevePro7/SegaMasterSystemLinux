@@ -66,15 +66,3 @@ void engine_text_manager_args( unsigned char x, unsigned char y, unsigned char n
 
 	va_end( arglist );
 }	
-
-//void engine_text_manager_list( unsigned char x, unsigned char y, unsigned char num, unsigned char *arr )
-//{
-//	unsigned char ch;
-//	unsigned char idx;
-//
-//	for( idx = 0; idx < num; idx++ )
-//	{
-//		ch = arr[ idx ];
-//		engine_font_manager_char( ch, x++, y );
-//	}
-//}

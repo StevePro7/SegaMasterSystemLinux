@@ -35,7 +35,7 @@ void main( void )
 	//open_screen_type = screen_type_shop;
 	//open_screen_type = screen_type_prep;
 	open_screen_type = screen_type_boss;
-	//open_screen_type = screen_type_complete;
+	open_screen_type = screen_type_complete;
 	//open_screen_type = screen_type_detail;
 	//open_screen_type = screen_type_test;
 
