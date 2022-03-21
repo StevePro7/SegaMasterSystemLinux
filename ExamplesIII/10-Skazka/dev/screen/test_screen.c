@@ -19,36 +19,41 @@ void screen_test_screen_update( unsigned char *screen_type )
 {
 	unsigned char input;
 
-	input = engine_input_manager_hold( input_type_up );
-	if( input )
-	{
-		index--;
-		engine_font_manager_data( index, 10, 14 );
-	}
-	input = engine_input_manager_hold( input_type_down );
-	if( input )
-	{
-		index++;
-		engine_font_manager_data( index, 10, 14 );
-	}
+	//input = engine_input_manager_hold( input_type_up );
+	//if( input )
+	//{
+	//	index--;
+	//	engine_font_manager_data( index, 10, 14 );
+	//}
+	//input = engine_input_manager_hold( input_type_down );
+	//if( input )
+	//{
+	//	index++;
+	//	engine_font_manager_data( index, 10, 14 );
+	//}
 
 	input = engine_input_manager_hold( input_type_fire1 );
 	if( input )
 	{
-		engine_font_manager_text( "HELLO", 20, 20 );
-		engine_sound_manager_play( index );
-	//	engine_font_manager_text( "BEG!", 2, 12 );
-	//	// Intro.
-	//	for( index = 0; index < 5; index++ )
-	//	{
-	//		engine_sound_manager_play( index );
-	//	}
-	//	// Boss.
-	//	for( index = 5; index < 8; index++ )
-	//	{
-	//		engine_sound_manager_play( index );
-	//	}
-	//	engine_font_manager_text( "END!!", 2, 14 );
+		//engine_font_manager_text( "HELLO", 20, 20 );
+		//engine_sound_manager_play( index );
+		engine_font_manager_text( "BEG!", 2, 12 );
+		// Intro.
+		//for( index = 0; index < 5; index++ )
+		//{
+		//	engine_music_manager_play( index );
+		//}
+		// Boss.
+		//for( index = 5; index < 8; index++ )
+		//{
+		//	engine_music_manager_play( index );
+		//}
+		// Over.
+		for( index = 8; index < 10; index++ )
+		{
+			engine_music_manager_play( index );
+		}
+		engine_font_manager_text( "END!!", 2, 14 );
 	}
 
 	*screen_type = screen_type_test;

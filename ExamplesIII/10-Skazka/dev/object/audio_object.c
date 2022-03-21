@@ -8,6 +8,8 @@
 #include "../banks/bank10.h"
 #include "../banks/bank11.h"
 #include "../banks/bank12.h"
+#include "../banks/bank13.h"
+#include "../banks/bank14.h"
 
 const unsigned char *music_sample_data[] =
 {
@@ -19,6 +21,8 @@ const unsigned char *music_sample_data[] =
 	Boss01_wav_pcmenc,
 	Boss02_wav_pcmenc,
 	Boss03_wav_pcmenc,
+	Over01_wav_pcmenc,
+	Over02_wav_pcmenc,
 };
 
 const unsigned char music_sample_bank[] =
@@ -31,6 +35,8 @@ const unsigned char music_sample_bank[] =
 	Boss01_wav_pcmenc_bank,
 	Boss02_wav_pcmenc_bank,
 	Boss03_wav_pcmenc_bank,
+	Over01_wav_pcmenc_bank,
+	Over02_wav_pcmenc_bank,
 };
 
 const unsigned char *sound_sample_data[] =
