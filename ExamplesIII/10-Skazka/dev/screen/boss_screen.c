@@ -67,11 +67,25 @@ void screen_boss_screen_update( unsigned char *screen_type )
 
 	if( first_time )
 	{
-		input = engine_input_manager_hold( input_type_fire2 );
-		if( input )
-		{
+		//input = engine_input_manager_hold( input_type_fire2 );
+		//if( input )
+		//{
 
 			first_time = false;
+
+			// Play boss music.
+			for( idx = 5; idx < 8; idx++ )
+			{
+				engine_music_manager_play( idx );
+				rand();
+
+				engine_input_manager_update();
+				input = engine_input_manager_move( input_type_fire2 );
+				if( input )
+				{
+					idx = 8;
+				}
+			}
 
 			engine_font_manager_text( LOCALE_29_SPCS, LEFT_X + 2, FIGHT_ROW + 0 );
 			engine_font_manager_text( LOCALE_29_SPCS, LEFT_X + 2, FIGHT_ROW + 1 );
@@ -84,18 +98,7 @@ void screen_boss_screen_update( unsigned char *screen_type )
 				row++;
 			}
 
-			// Play boss music.
-			//for( idx = 5; idx < 8; idx++ )
-			//{
-			//	engine_music_manager_play( idx );
-			//	rand();
 
-			//	engine_input_manager_update();
-			//	input = engine_input_manager_move( input_type_fire2 );
-			//	if( input )
-			//	{
-			//	}
-			//}
 
 			//engine_font_manager_text( "12345678901234567890123456789", LEFT_X + 2, FIGHT_ROW + 0 );
 			//engine_font_manager_text( "12345678901234567890123456789", LEFT_X + 2, FIGHT_ROW + 1 );
@@ -109,7 +112,7 @@ void screen_boss_screen_update( unsigned char *screen_type )
 
 			row = 19;
 			engine_select_manager_load( select_type, LEFT_X + 5, row, 2 );
-		}
+		//}
 		
 	}
 
