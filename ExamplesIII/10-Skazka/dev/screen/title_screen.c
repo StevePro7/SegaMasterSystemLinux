@@ -11,10 +11,10 @@
 #include "../engine/timer_manager.h"
 #include "../devkit/_sms_manager.h"
 #include <stdbool.h>
+#include <stdlib.h>
 
 #define TITLE_SCREEN_DELAY		150
 
-//static void intro_music();
 static bool first_time;
 
 void screen_title_screen_load()
@@ -51,6 +51,7 @@ void screen_title_screen_update( unsigned char *screen_type )
 			for( index = 0; index < 5; index++ )
 			{
 				engine_music_manager_play( index );
+				rand();
 
 				engine_input_manager_update();
 				input = engine_input_manager_move( input_type_fire1 );
@@ -74,14 +75,6 @@ void screen_title_screen_update( unsigned char *screen_type )
 		return;
 	}
 
+	rand();
 	*screen_type = screen_type_title;
 }
-//
-//static void intro_music()
-//{
-//	unsigned char index;
-//	for( index = 0; index < 5; index++ )
-//	{
-//		engine_sound_manager_play( index );
-//	}
-//}

@@ -9,6 +9,7 @@
 #include "../engine/timer_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
+#include <stdlib.h>
 
 #define INTRO_SCREEN_DELAY		300
 
@@ -55,5 +56,6 @@ void screen_intro_screen_update( unsigned char *screen_type )
 		return;
 	}
 
+	rand();
 	*screen_type = screen_type_intro;
 }
