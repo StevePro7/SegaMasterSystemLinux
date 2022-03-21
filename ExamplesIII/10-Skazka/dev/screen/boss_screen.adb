@@ -2,9 +2,9 @@ M:boss_screen
 F:G$screen_boss_screen_load$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lboss_screen.screen_boss_screen_load$row$1$120({1}SC:U),R,0,0,[d]
 S:Lboss_screen.screen_boss_screen_load$idx$1$120({1}SC:U),R,0,0,[e]
-F:G$screen_boss_screen_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
+F:G$screen_boss_screen_update$0$0({2}DF,SV:S),Z,0,1,0,0,0
 S:Lboss_screen.screen_boss_screen_update$screen_type$1$123({2}DG,SC:U),B,1,4
-S:Lboss_screen.screen_boss_screen_update$selection$1$124({1}SC:U),R,0,0,[b]
+S:Lboss_screen.screen_boss_screen_update$selection$1$124({1}SC:U),B,1,-1
 S:Lboss_screen.screen_boss_screen_update$input$1$124({1}SC:U),R,0,0,[l]
 S:Lboss_screen.screen_boss_screen_update$idx$1$124({1}SC:U),R,0,0,[b]
 S:Lboss_screen.screen_boss_screen_update$row$1$124({1}SC:U),R,0,0,[b]
