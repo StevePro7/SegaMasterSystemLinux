@@ -1,4 +1,5 @@
 #include "over_screen.h"
+#include "../engine/audio_manager.h"
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
@@ -8,8 +9,10 @@
 #include "../engine/text_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
+#include <stdbool.h>
 
 static void game_over();
+static bool first_time;
 
 void screen_over_screen_load()
 {
@@ -23,15 +26,41 @@ void screen_over_screen_load()
 	game_over();
 	engine_text_manager_fire();
 	devkit_SMS_displayOn();
+	first_time = true;
 }
 
 void screen_over_screen_update( unsigned char *screen_type )
 {
-	unsigned char input1 = engine_input_manager_hold( input_type_fire1 );
-	unsigned char input2 = engine_input_manager_hold( input_type_fire2 );
+	unsigned char input1;
+	unsigned char input2;
+	unsigned char index;
+
+	if( first_time )
+	{
+		first_time = false;
+		engine_game_manager_intro_off();
+
+		// Play over music.
+		for( index = 8; index < 10; index++ )
+		{
+			engine_music_manager_play( index );
+			engine_input_manager_update();
+
+			input1 = engine_input_manager_move( input_type_fire1 );
+			input2 = engine_input_manager_move( input_type_fire2 );
+			if( input1 || input2 )
+			{
+				*screen_type = screen_type_title;
+				return;
+			}
+		}
+	}
+
+	input1 = engine_input_manager_hold( input_type_fire1 );
+	input2 = engine_input_manager_hold( input_type_fire2 );
 	if( input1 || input2 )
 	{
-		engine_game_manager_intro_off();
+		
 		*screen_type = screen_type_title;
 		return;
 	}
