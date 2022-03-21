@@ -45,11 +45,11 @@ S:G$engine_enemy_manager_draw$0$0({2}DF,SV:S),C,0,0
 S:G$engine_enemy_manager_hplo$0$0({2}DF,SV:S),C,0,0
 S:G$engine_enemy_manager_hit$0$0({2}DF,SV:S),C,0,0
 S:G$engine_enemy_manager_dead$0$0({2}DF,:S),C,0,0
-S:G$engine_fight_manager_gold$0$0({2}DF,SV:S),C,0,0
-S:G$engine_boss_manager_draw$0$0({2}DF,SV:S),C,0,0
 S:G$engine_fight_manager_player_to_enemy$0$0({2}DF,SV:S),C,0,0
 S:G$engine_fight_manager_enemy_to_player$0$0({2}DF,SV:S),C,0,0
 S:G$engine_fight_manager_boss_to_player$0$0({2}DF,SV:S),C,0,0
+S:G$engine_fight_manager_gold$0$0({2}DF,SV:S),C,0,0
+S:G$engine_boss_manager_draw$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_char$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0$0({2}DF,SV:S),C,0,0

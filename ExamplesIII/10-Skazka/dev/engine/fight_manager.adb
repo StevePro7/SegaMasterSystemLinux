@@ -14,8 +14,8 @@ F:G$engine_fight_manager_boss_to_player$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lfight_manager.engine_fight_manager_boss_to_player$p_damage$1$48({2}DG,SC:U),B,1,4
 S:Lfight_manager.engine_fight_manager_boss_to_player$po$1$49({2}DG,STtag_struct_player_object:S),R,0,0,[]
 S:Lfight_manager.engine_fight_manager_boss_to_player$eo$1$49({2}DG,STtag_struct_enemy_object:S),R,0,0,[]
-S:Lfight_manager.engine_fight_manager_boss_to_player$damage$1$49({1}SC:U),R,0,0,[]
-S:Lfight_manager.engine_fight_manager_boss_to_player$extra$1$49({1}SC:U),R,0,0,[]
+S:Lfight_manager.engine_fight_manager_boss_to_player$damage$1$49({1}SC:U),R,0,0,[e]
+S:Lfight_manager.engine_fight_manager_boss_to_player$extra$1$49({1}SC:U),R,0,0,[b]
 F:Ffight_manager$get_damage$0$0({2}DF,SC:U),Z,0,0,0,0,0
 S:Lfight_manager.get_damage$extra$1$50({1}SC:U),B,1,4
 S:Lfight_manager.get_damage$damage$1$51({1}SC:U),R,0,0,[c]
