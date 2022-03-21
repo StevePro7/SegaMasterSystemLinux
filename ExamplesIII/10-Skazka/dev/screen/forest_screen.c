@@ -60,16 +60,15 @@ void screen_forest_screen_update( unsigned char *screen_type )
 
 			if( fight_type_battle == curr_selection )
 			{
-				engine_enemy_manager_hit( enemys_damage );
-				engine_player_manager_hit( player_damage );
-
 				// If both you and enemy have 0 HP then you get game over first!
+				engine_player_manager_hit( player_damage );
 				if( engine_player_manager_dead() )
 				{
 					*screen_type = screen_type_over;
 					return;
 				}
 
+				engine_enemy_manager_hit( enemys_damage );
 				if( engine_enemy_manager_dead() )
 				{
 					engine_fight_manager_gold( &xp, &player_gold );
