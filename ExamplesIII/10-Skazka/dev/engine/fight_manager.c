@@ -5,6 +5,120 @@
 #include "text_manager.h"
 #include <stdlib.h>
 
+static unsigned char get_damage( unsigned char extra );
+
+void engine_fight_manager_player_to_enemy( unsigned char *e_damage )
+{
+	// Damage to enemy.
+	struct_player_object *po = &global_player_object;
+	struct_enemy_object *eo = &global_enemy_object;
+
+	unsigned char damage;
+	//unsigned char random;
+	unsigned char extra;
+
+	extra = po->weapon;
+	//damage = 0;
+	damage = get_damage( extra );
+	/*random = rand() % MAX_RANDOM;
+	if( random < 1 )
+	{
+		damage = 0;
+	}
+	else if( random < 4 )
+	{
+		damage = 1;
+	}
+	else if( random < 7 )
+	{
+		damage = 2;
+	}
+	else if( random < 9 )
+	{
+		damage = 3;
+	}
+	else if( random == 9 )
+	{
+		damage = 4 + extra;
+	}*/
+
+	*e_damage = damage + extra;
+}
+
+void engine_fight_manager_enemy_to_player( unsigned char *p_damage )
+{
+	// Damage to player.
+	struct_player_object *po = &global_player_object;
+	struct_enemy_object *eo = &global_enemy_object;
+
+	unsigned char damage;
+	//unsigned char random;
+
+	//damage = 0;
+	damage = get_damage( 0 );
+	/*random = rand() % MAX_RANDOM;
+	if( random < 1 )
+	{
+		damage = 0;
+	}
+	else if( random < 4 )
+	{
+		damage = 1;
+	}
+	else if( random < 7 )
+	{
+		damage = 2;
+	}
+	else if( random < 9 )
+	{
+		damage = 3;
+	}
+	else if( random == 9 )
+	{
+		damage = 4;
+	}*/
+
+	*p_damage = damage + eo->ax + po->armor;
+}
+
+void engine_fight_manager_boss_to_player( unsigned char *p_damage )
+{
+	// Damage to player.
+	struct_player_object *po = &global_player_object;
+	struct_enemy_object *eo = &global_enemy_object;
+
+	unsigned char damage;
+	//unsigned char random;
+	unsigned char extra;
+
+	damage = 0;
+	extra = eo->ax;
+	//damage = get_damage( extra );
+	/*random = rand() % MAX_RANDOM;
+	if( random < 1 )
+	{
+		damage = 0;
+	}
+	else if( random < 4 )
+	{
+		damage = 1;
+	}
+	else if( random < 7 )
+	{
+		damage = 2;
+	}
+	else if( random < 9 )
+	{
+		damage = 3;
+	}
+	else if( random == 9 )
+	{
+		damage = 4 + extra;
+	}
+*/
+	*p_damage = damage + eo->ax - po->armor;
+}
+
 static unsigned char get_damage( unsigned char extra )
 {
 	unsigned char damage;
@@ -36,116 +150,6 @@ static unsigned char get_damage( unsigned char extra )
 	return damage;
 }
 
-void engine_fight_manager_player_to_enemy( unsigned char *e_damage )
-{
-	// Damage to enemy.
-	struct_player_object *po = &global_player_object;
-	struct_enemy_object *eo = &global_enemy_object;
-
-	unsigned char damage;
-	unsigned char random;
-	unsigned char extra;
-
-	damage = 0;
-	extra = po->weapon;
-	random = rand() % MAX_RANDOM;
-	if( random < 1 )
-	{
-		damage = 0;
-	}
-	else if( random < 4 )
-	{
-		damage = 1;
-	}
-	else if( random < 7 )
-	{
-		damage = 2;
-	}
-	else if( random < 9 )
-	{
-		damage = 3;
-	}
-	else if( random == 9 )
-	{
-		damage = 4 + extra;
-	}
-
-	*e_damage = damage + extra;
-	*e_damage = 15;
-}
-
-void engine_fight_manager_enemy_to_player( unsigned char *p_damage )
-{
-	// Damage to player.
-	struct_player_object *po = &global_player_object;
-	struct_enemy_object *eo = &global_enemy_object;
-
-	unsigned char damage;
-	unsigned char random;
-
-	damage = 0;
-	random = rand() % MAX_RANDOM;
-	if( random < 1 )
-	{
-		damage = 0;
-	}
-	else if( random < 4 )
-	{
-		damage = 1;
-	}
-	else if( random < 7 )
-	{
-		damage = 2;
-	}
-	else if( random < 9 )
-	{
-		damage = 3;
-	}
-	else if( random == 9 )
-	{
-		damage = 4;
-	}
-
-	*p_damage = damage + eo->ax + po->armor;
-	*p_damage = 1;
-}
-
-void engine_fight_manager_boss_to_player( unsigned char *p_damage )
-{
-	// Damage to player.
-	struct_player_object *po = &global_player_object;
-	struct_enemy_object *eo = &global_enemy_object;
-
-	unsigned char damage;
-	unsigned char random;
-	unsigned char extra;
-
-	damage = 0;
-	extra = eo->ax;
-	random = rand() % MAX_RANDOM;
-	if( random < 1 )
-	{
-		damage = 0;
-	}
-	else if( random < 4 )
-	{
-		damage = 1;
-	}
-	else if( random < 7 )
-	{
-		damage = 2;
-	}
-	else if( random < 9 )
-	{
-		damage = 3;
-	}
-	else if( random == 9 )
-	{
-		damage = 4 + extra;
-	}
-
-	*p_damage = damage - po->armor + eo->ax;
-}
 
 //void engine_fight_manager_battle( unsigned char *e_damage, unsigned char *p_damage )
 //{

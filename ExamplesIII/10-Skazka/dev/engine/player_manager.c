@@ -30,20 +30,6 @@ void engine_player_manager_load()
 	po->weapon = po->def_weapon;			// Q$	ATK
 	po->armor = po->def_armor;				// W$	ARM
 	po->life = po->def_life;				// E$	UP
-
-	//po->xp = 0;							// Z
-	////po->hp = 2;// 10;						// N		// TODO delete!!
-	//po->hp = 10;						// N
-	//po->gold = 10;						// V
-	//po->weapon = weapon_type_none;		// Q$	ATK
-	//po->armor = armor_type_none;		// W$	ARM
-	//po->life = life_type_none;			// E$	UP
-	//po->won = 0;
-
-	// TODO delete
-	//po->weapon = 2;
-	//po->armor = 2;
-	//po->life = 1;
 }
 
 void engine_player_manager_calc()
