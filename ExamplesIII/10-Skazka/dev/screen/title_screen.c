@@ -48,6 +48,7 @@ void screen_title_screen_update( unsigned char *screen_type )
 		first_time = false;
 		if( go->play_intro )
 		{
+			// Play intro music.
 			for( index = 0; index < 5; index++ )
 			{
 				engine_music_manager_play( index );
