@@ -9,7 +9,6 @@
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
 
-static void beat_game();
 static void game_over();
 
 void screen_over_screen_load()
@@ -21,9 +20,7 @@ void screen_over_screen_load()
 	engine_text_manager_border();
 	engine_text_manager_clear( row + 2, row + 9 );
 
-	//beat_game();
 	game_over();
-
 	engine_text_manager_fire();
 	devkit_SMS_displayOn();
 }
@@ -52,18 +49,5 @@ static void game_over()
 	for( idx = 0; idx < 4; idx++ )
 	{
 		engine_font_manager_text( ( unsigned char * ) over_texts[ idx ], LEFT_X + 10, row++ );
-	}
-}
-
-static void beat_game()
-{
-	unsigned char row;
-	unsigned char idx;
-
-	row = 7;
-	devkit_SMS_mapROMBank( FIXED_BANK );
-	for( idx = 0; idx < 11; idx++ )
-	{
-		engine_font_manager_text( ( unsigned char * ) beat_texts[ idx ], LEFT_X + 3, row++ );
 	}
 }

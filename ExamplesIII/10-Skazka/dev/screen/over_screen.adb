@@ -8,9 +8,6 @@ S:Lover_screen.screen_over_screen_update$input2$1$78({1}SC:U),R,0,0,[b]
 F:Fover_screen$game_over$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lover_screen.game_over$row$1$80({1}SC:U),R,0,0,[c]
 S:Lover_screen.game_over$idx$1$80({1}SC:U),R,0,0,[b]
-F:Fover_screen$beat_game$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lover_screen.beat_game$row$1$83({1}SC:U),R,0,0,[c]
-S:Lover_screen.beat_game$idx$1$83({1}SC:U),R,0,0,[b]
 T:Fover_screen$tag_struct_game_object[({0}S:S$play_intro$0$0({1}:S),Z,0,0)]
 S:G$global_game_object$0$0({1}STtag_struct_game_object:S),E,0,0
 S:G$intro_texts$0$0({0}DA0d,DG,SC:U),E,0,0
