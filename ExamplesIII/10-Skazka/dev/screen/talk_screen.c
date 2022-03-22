@@ -33,12 +33,12 @@ void screen_talk_screen_load()
 	// Adjust gold.
 	if( 0 == val )
 	{
-		engine_sound_manager_play( sound_type_1 );
+		engine_sound_manager_play( sound_type_6 );
 		engine_player_manager_dec_gold( NUM_GOLD );
 	}
 	if( ( MAX_RANDOM - 1 ) == val )
 	{
-		engine_sound_manager_play( sound_type_2 );
+		engine_sound_manager_play( sound_type_7 );
 		engine_player_manager_inc_gold( 0, NUM_GOLD );
 	}
 
