@@ -1,6 +1,7 @@
 #include "fight_manager.h"
 #include "enemy_manager.h"
 #include "global_manager.h"
+#include "hack_manager.h"
 #include "player_manager.h"
 #include "text_manager.h"
 #include <stdlib.h>
@@ -27,10 +28,16 @@ void engine_fight_manager_enemy_to_player( unsigned char *p_damage )
 	// Damage to player.
 	struct_player_object *po = &global_player_object;
 	struct_enemy_object *eo = &global_enemy_object;
+	struct_hack_object *ho = &global_hack_object;
 
 	unsigned char damage;
-	damage = get_damage( 0 );
+	if( ho->hack_nodead )
+	{
+		*p_damage = 0;
+		return;
+	}
 
+	damage = get_damage( 0 );
 	*p_damage = damage + eo->ax + po->armor;
 }
 
@@ -39,9 +46,16 @@ void engine_fight_manager_boss_to_player( unsigned char *p_damage )
 	// Damage to player.
 	struct_player_object *po = &global_player_object;
 	struct_enemy_object *eo = &global_enemy_object;
+	struct_hack_object *ho = &global_hack_object;
 
 	unsigned char damage;
 	unsigned char extra;
+
+	if( ho->hack_nodead )
+	{
+		*p_damage = 0;
+		return;
+	}
 
 	extra = eo->ax;
 	damage = get_damage( extra );

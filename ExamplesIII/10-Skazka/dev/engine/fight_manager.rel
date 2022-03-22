@@ -1,15 +1,17 @@
 ;!FILE fight_manager.asm
 XL2
-H 9 areas 317 global symbols
+H 9 areas 33D global symbols
 M fight_manager
 O -mz80
 S _rand Ref0000
 S _global_player_object Ref0000
+S _global_hack_object Ref0000
 S .__.ABS. Def0000
 S _global_enemy_object Ref0000
 S __modsint Ref0000
 S _engine_text_manager_args Ref0000
-A _CODE size 475 flags 0 addr 0
+A _CODE size 4A3 flags 0 addr 0
+S A$fight_manager$999 Def0464
 S A$fight_manager$83 Def0011
 S A$fight_manager$74 Def000B
 S A$fight_manager$65 Def0003
@@ -17,784 +19,820 @@ S A$fight_manager$84 Def0012
 S A$fight_manager$75 Def000C
 S A$fight_manager$85 Def0013
 S A$fight_manager$69 Def0004
-S _engine_fight_manager_boss_to_player Def003E
+S _engine_fight_manager_boss_to_player Def005B
 S A$fight_manager$79 Def000D
-S _engine_fight_manager_gold Def00A8
-S XG$engine_fight_manager_boss_to_player$0$0 Def0066
-S XG$engine_fight_manager_gold$0$0 Def00CA
-S C$fight_manager.c$100$1$60 Def01B4
-S C$fight_manager.c$110$1$60 Def040B
-S C$fight_manager.c$101$1$60 Def01F2
-S C$fight_manager.c$111$1$60 Def0440
-S C$fight_manager.c$102$1$60 Def0230
-S C$fight_manager.c$112$1$60 Def0474
-S C$fight_manager.c$103$1$60 Def026B
-S C$fight_manager.c$104$1$60 Def02A9
-S Ffight_manager$get_damage$0$0 Def0067
-S C$fight_manager.c$105$1$60 Def02E7
-S C$fight_manager.c$106$1$60 Def0325
-S C$fight_manager.c$107$1$60 Def0360
+S _engine_fight_manager_gold Def00D6
+S XG$engine_fight_manager_boss_to_player$0$0 Def0094
+S XG$engine_fight_manager_gold$0$0 Def00F8
+S A$fight_manager$1000 Def0465
+S A$fight_manager$1010 Def0473
+S A$fight_manager$1001 Def0466
+S A$fight_manager$1020 Def0483
+S A$fight_manager$1011 Def0474
+S A$fight_manager$1002 Def0469
+S C$fight_manager.c$100$1$60 Def00DE
+S A$fight_manager$1030 Def0491
+S A$fight_manager$1021 Def0484
+S A$fight_manager$1012 Def0477
+S A$fight_manager$1003 Def046C
+S A$fight_manager$1031 Def0492
+S A$fight_manager$1022 Def0486
+S A$fight_manager$1013 Def0478
+S A$fight_manager$1004 Def046D
+S C$fight_manager.c$102$1$60 Def00DE
+S A$fight_manager$1032 Def0493
+S A$fight_manager$1023 Def0487
+S A$fight_manager$1014 Def047A
+S C$fight_manager.c$110$1$62 Def0101
+S C$fight_manager.c$103$1$60 Def00E8
+S A$fight_manager$1033 Def0496
+S A$fight_manager$1024 Def0489
+S A$fight_manager$1015 Def047B
+S C$fight_manager.c$120$1$62 Def0353
+S C$fight_manager.c$111$1$62 Def012E
+S C$fight_manager.c$104$1$60 Def00F8
+S Ffight_manager$get_damage$0$0 Def0095
+S A$fight_manager$1034 Def0497
+S A$fight_manager$1025 Def048A
+S A$fight_manager$1016 Def047D
+S C$fight_manager.c$121$1$62 Def038E
+S C$fight_manager.c$112$1$62 Def0168
+S A$fight_manager$1044 Def04A2
+S A$fight_manager$1035 Def0498
+S A$fight_manager$1026 Def048C
+S A$fight_manager$1017 Def047E
+S A$fight_manager$1008 Def046E
+S C$fight_manager.c$122$1$62 Def03C6
+S C$fight_manager.c$113$1$62 Def01A3
+S C$fight_manager.c$106$1$60 Def00F9
+S A$fight_manager$1036 Def049B
+S A$fight_manager$1027 Def048D
+S A$fight_manager$1018 Def0480
+S A$fight_manager$1009 Def0471
+S C$fight_manager.c$123$1$62 Def0401
+S C$fight_manager.c$114$1$62 Def01E2
 S G$engine_fight_manager_enemy_to_player$0$0 Def0015
 S G$engine_fight_manager_player_to_enemy$0$0 Def0000
-S C$fight_manager.c$108$1$60 Def0398
-S C$fight_manager.c$109$1$60 Def03D3
+S A$fight_manager$1037 Def049E
+S A$fight_manager$1028 Def048F
+S A$fight_manager$1019 Def0481
+S C$fight_manager.c$124$1$62 Def0439
+S C$fight_manager.c$115$1$62 Def0220
+S A$fight_manager$1038 Def049F
+S A$fight_manager$1029 Def0490
+S C$fight_manager.c$125$1$62 Def046E
+S C$fight_manager.c$116$1$62 Def025E
+S A$fight_manager$1039 Def04A0
+S C$fight_manager.c$126$1$62 Def04A2
+S C$fight_manager.c$117$1$62 Def0299
+S C$fight_manager.c$118$1$62 Def02D7
+S C$fight_manager.c$119$1$62 Def0315
 S A$fight_manager$100 Def0015
-S G$engine_boss_manager_draw$0$0 Def00CB
+S G$engine_boss_manager_draw$0$0 Def00F9
 S A$fight_manager$101 Def0017
-S A$fight_manager$300 Def00AE
-S A$fight_manager$210 Def0069
 S A$fight_manager$102 Def001B
-S A$fight_manager$400 Def0129
-S A$fight_manager$310 Def00B9
-S A$fight_manager$211 Def006A
-S A$fight_manager$130 Def0034
-S A$fight_manager$121 Def0025
-S A$fight_manager$112 Def001D
-S A$fight_manager$500 Def01B7
-S A$fight_manager$410 Def0139
-S A$fight_manager$401 Def012A
-S A$fight_manager$320 Def00C6
+S A$fight_manager$301 Def00AF
+S A$fight_manager$202 Def0063
+S A$fight_manager$130 Def0030
+S A$fight_manager$121 Def0022
+S A$fight_manager$103 Def001D
+S A$fight_manager$500 Def0186
+S A$fight_manager$410 Def0101
+S A$fight_manager$302 Def00B1
 S A$fight_manager$212 Def006D
-S A$fight_manager$140 Def003D
-S A$fight_manager$131 Def0037
-S A$fight_manager$122 Def0028
-S A$fight_manager$113 Def001E
-S A$fight_manager$600 Def024C
-S A$fight_manager$510 Def01C7
-S A$fight_manager$501 Def01B9
-S A$fight_manager$420 Def0144
-S A$fight_manager$402 Def012B
-S A$fight_manager$321 Def00C7
-S A$fight_manager$240 Def0087
-S A$fight_manager$213 Def0070
-S A$fight_manager$150 Def003E
-S A$fight_manager$132 Def0038
-S A$fight_manager$123 Def002B
-S A$fight_manager$114 Def001F
+S A$fight_manager$203 Def0066
+S A$fight_manager$140 Def0036
+S A$fight_manager$122 Def0025
+S A$fight_manager$600 Def0217
+S A$fight_manager$510 Def0194
+S A$fight_manager$501 Def0187
+S A$fight_manager$420 Def0112
+S A$fight_manager$411 Def0104
+S A$fight_manager$312 Def00B7
+S A$fight_manager$240 Def0082
+S A$fight_manager$213 Def006E
+S A$fight_manager$150 Def003F
+S A$fight_manager$123 Def0028
 S _engine_fight_manager_enemy_to_player Def0015
 S _engine_fight_manager_player_to_enemy Def0000
-S A$fight_manager$700 Def02DF
-S A$fight_manager$610 Def025B
-S A$fight_manager$601 Def024E
-S A$fight_manager$520 Def01D6
-S A$fight_manager$511 Def01C9
-S A$fight_manager$502 Def01BA
-S A$fight_manager$430 Def0153
-S A$fight_manager$421 Def0146
-S A$fight_manager$403 Def012C
-S A$fight_manager$322 Def00C8
-S A$fight_manager$250 Def008D
-S A$fight_manager$223 Def0079
-S A$fight_manager$214 Def0071
-S A$fight_manager$151 Def0040
-S A$fight_manager$133 Def0039
-S A$fight_manager$124 Def002E
-S A$fight_manager$115 Def0020
-S C$fight_manager.c$20$1$45 Def0004
-S A$fight_manager$800 Def0373
-S A$fight_manager$710 Def02ED
-S A$fight_manager$701 Def02E2
-S A$fight_manager$611 Def025C
-S A$fight_manager$602 Def024F
-S A$fight_manager$530 Def01E4
-S A$fight_manager$521 Def01D8
-S A$fight_manager$512 Def01CA
-S A$fight_manager$503 Def01BD
-S A$fight_manager$440 Def0162
-S A$fight_manager$431 Def0155
-S A$fight_manager$422 Def0147
-S A$fight_manager$404 Def012D
-S A$fight_manager$350 Def00E0
-S A$fight_manager$314 Def00BA
+S A$fight_manager$700 Def02AB
+S A$fight_manager$610 Def0225
+S A$fight_manager$601 Def0218
+S A$fight_manager$511 Def0195
+S A$fight_manager$502 Def0189
+S A$fight_manager$430 Def0120
+S A$fight_manager$421 Def0114
+S A$fight_manager$412 Def0105
+S A$fight_manager$340 Def00CE
+S A$fight_manager$313 Def00B9
+S A$fight_manager$250 Def008C
+S A$fight_manager$241 Def0083
+S A$fight_manager$223 Def0073
+S A$fight_manager$214 Def006F
+S A$fight_manager$160 Def0048
+S A$fight_manager$124 Def002B
+S C$fight_manager.c$60$1$50 Def0075
+S C$fight_manager.c$20$1$45 Def0000
+S A$fight_manager$800 Def033F
+S A$fight_manager$710 Def02BA
+S A$fight_manager$701 Def02AC
+S A$fight_manager$620 Def0235
+S A$fight_manager$611 Def0226
+S A$fight_manager$602 Def021B
+S A$fight_manager$530 Def01B0
+S A$fight_manager$512 Def0196
+S A$fight_manager$503 Def018A
+S A$fight_manager$431 Def0121
+S A$fight_manager$422 Def0115
+S A$fight_manager$413 Def0108
+S A$fight_manager$404 Def00F9
+S A$fight_manager$350 Def00D4
+S A$fight_manager$341 Def00CF
+S A$fight_manager$323 Def00BF
+S A$fight_manager$260 Def0094
 S A$fight_manager$251 Def008F
-S A$fight_manager$224 Def007B
-S A$fight_manager$215 Def0072
-S A$fight_manager$206 Def0067
-S A$fight_manager$170 Def004D
-S A$fight_manager$152 Def0044
-S A$fight_manager$134 Def003A
-S A$fight_manager$125 Def002F
-S A$fight_manager$116 Def0023
-S A$fight_manager$900 Def0409
-S A$fight_manager$810 Def0382
-S A$fight_manager$801 Def0375
-S A$fight_manager$720 Def02FD
-S A$fight_manager$711 Def02F0
-S A$fight_manager$702 Def02E5
-S A$fight_manager$630 Def0278
-S A$fight_manager$612 Def025D
-S A$fight_manager$603 Def0251
-S A$fight_manager$531 Def01E5
-S A$fight_manager$522 Def01D9
-S A$fight_manager$513 Def01CC
-S A$fight_manager$504 Def01BE
-S A$fight_manager$450 Def0173
-S A$fight_manager$441 Def0164
-S A$fight_manager$432 Def0156
-S A$fight_manager$423 Def0149
-S A$fight_manager$414 Def013A
-S A$fight_manager$405 Def0130
-S A$fight_manager$360 Def00EF
-S A$fight_manager$351 Def00E1
-S A$fight_manager$315 Def00BD
-S A$fight_manager$261 Def0095
-S A$fight_manager$234 Def0081
-S A$fight_manager$216 Def0075
-S A$fight_manager$180 Def005A
-S A$fight_manager$171 Def0050
-S A$fight_manager$162 Def0046
-S A$fight_manager$135 Def003B
-S A$fight_manager$126 Def0030
-S A$fight_manager$117 Def0024
-S C$fight_manager.c$22$1$45 Def000D
-S C$fight_manager.c$13$1$45 Def0000
-S A$fight_manager$910 Def0415
-S A$fight_manager$901 Def040A
-S A$fight_manager$820 Def0390
-S A$fight_manager$811 Def0384
-S A$fight_manager$802 Def0376
-S A$fight_manager$730 Def030C
-S A$fight_manager$721 Def02FF
-S A$fight_manager$712 Def02F1
-S A$fight_manager$703 Def02E6
-S A$fight_manager$640 Def0287
-S A$fight_manager$631 Def027A
-S A$fight_manager$613 Def025E
-S A$fight_manager$604 Def0252
-S A$fight_manager$550 Def0202
-S A$fight_manager$541 Def01F2
-S A$fight_manager$532 Def01E8
-S A$fight_manager$523 Def01DB
-S A$fight_manager$514 Def01CD
-S A$fight_manager$505 Def01C0
-S A$fight_manager$460 Def017C
-S A$fight_manager$451 Def0174
-S A$fight_manager$442 Def0165
-S A$fight_manager$433 Def0158
-S A$fight_manager$424 Def014A
-S A$fight_manager$415 Def013D
-S A$fight_manager$406 Def0131
-S A$fight_manager$370 Def00FF
-S A$fight_manager$361 Def00F0
-S A$fight_manager$352 Def00E3
-S A$fight_manager$343 Def00D3
-S A$fight_manager$316 Def00C0
-S A$fight_manager$307 Def00B0
-S A$fight_manager$262 Def0097
-S A$fight_manager$235 Def0083
-S A$fight_manager$217 Def0076
-S A$fight_manager$181 Def005B
-S A$fight_manager$172 Def0051
-S A$fight_manager$163 Def0049
-S A$fight_manager$127 Def0031
-S C$fight_manager.c$80$1$51 Def00A6
-S C$fight_manager.c$71$1$51 Def0091
-S C$fight_manager.c$23$1$45 Def0014
-S A$fight_manager$920 Def0424
-S A$fight_manager$911 Def0417
-S A$fight_manager$830 Def039E
-S A$fight_manager$821 Def0393
-S A$fight_manager$812 Def0385
-S A$fight_manager$803 Def0378
-S A$fight_manager$740 Def031B
-S A$fight_manager$731 Def030E
-S A$fight_manager$722 Def0300
-S A$fight_manager$713 Def02F3
-S A$fight_manager$650 Def0296
-S A$fight_manager$641 Def0289
-S A$fight_manager$632 Def027B
-S A$fight_manager$623 Def026B
-S A$fight_manager$614 Def0261
-S A$fight_manager$605 Def0254
-S A$fight_manager$560 Def0211
-S A$fight_manager$551 Def0204
-S A$fight_manager$542 Def01F5
-S A$fight_manager$533 Def01E9
-S A$fight_manager$524 Def01DC
-S A$fight_manager$515 Def01CF
-S A$fight_manager$506 Def01C1
-S A$fight_manager$470 Def018C
-S A$fight_manager$461 Def017F
-S A$fight_manager$443 Def0166
-S A$fight_manager$434 Def0159
-S A$fight_manager$425 Def014C
-S A$fight_manager$416 Def013E
-S A$fight_manager$407 Def0132
-S A$fight_manager$380 Def010B
-S A$fight_manager$362 Def00F1
-S A$fight_manager$353 Def00E4
-S A$fight_manager$344 Def00D6
-S A$fight_manager$317 Def00C3
-S A$fight_manager$308 Def00B3
-S A$fight_manager$272 Def009D
-S A$fight_manager$245 Def0089
-S A$fight_manager$218 Def0077
-S A$fight_manager$182 Def005C
-S A$fight_manager$173 Def0052
-S A$fight_manager$128 Def0032
-S C$fight_manager.c$81$1$51 Def00A7
-S C$fight_manager.c$63$1$51 Def0081
-S C$fight_manager.c$61$2$52 Def007D
-S A$fight_manager$930 Def0432
-S A$fight_manager$921 Def0426
-S A$fight_manager$912 Def0418
-S A$fight_manager$840 Def03AE
-S A$fight_manager$831 Def03A1
-S A$fight_manager$822 Def0396
-S A$fight_manager$813 Def0387
-S A$fight_manager$804 Def0379
-S A$fight_manager$750 Def0328
-S A$fight_manager$741 Def031C
-S A$fight_manager$732 Def030F
-S A$fight_manager$723 Def0302
-S A$fight_manager$714 Def02F4
-S A$fight_manager$660 Def02A7
-S A$fight_manager$651 Def0298
-S A$fight_manager$642 Def028A
-S A$fight_manager$633 Def027D
-S A$fight_manager$624 Def026E
-S A$fight_manager$615 Def0262
-S A$fight_manager$606 Def0255
-S A$fight_manager$570 Def0220
-S A$fight_manager$561 Def0213
-S A$fight_manager$552 Def0205
-S A$fight_manager$543 Def01F7
-S A$fight_manager$534 Def01EA
-S A$fight_manager$525 Def01DE
-S A$fight_manager$516 Def01D0
-S A$fight_manager$507 Def01C3
-S A$fight_manager$480 Def019B
-S A$fight_manager$471 Def018E
-S A$fight_manager$462 Def0180
-S A$fight_manager$444 Def0167
-S A$fight_manager$435 Def015B
-S A$fight_manager$426 Def014D
-S A$fight_manager$417 Def013F
-S A$fight_manager$408 Def0135
-S A$fight_manager$390 Def011A
-S A$fight_manager$381 Def010C
-S A$fight_manager$363 Def00F2
-S A$fight_manager$354 Def00E6
-S A$fight_manager$345 Def00D7
-S A$fight_manager$327 Def00CA
-S A$fight_manager$318 Def00C4
-S A$fight_manager$309 Def00B6
-S A$fight_manager$273 Def00A0
-S A$fight_manager$246 Def008B
-S A$fight_manager$228 Def007D
-S A$fight_manager$219 Def0078
-S A$fight_manager$183 Def005D
-S A$fight_manager$129 Def0033
-S C$fight_manager.c$32$1$47 Def001D
-S C$fight_manager.c$25$1$45 Def0015
-S C$fight_manager.c$10$0$0 Def0000
-S A$fight_manager$931 Def0433
-S A$fight_manager$922 Def0427
-S A$fight_manager$913 Def041A
-S A$fight_manager$850 Def03BD
-S A$fight_manager$841 Def03B0
-S A$fight_manager$832 Def03A2
-S A$fight_manager$823 Def0397
-S A$fight_manager$814 Def0388
-S A$fight_manager$805 Def037B
-S A$fight_manager$760 Def0338
-S A$fight_manager$751 Def032A
-S A$fight_manager$742 Def031D
-S A$fight_manager$733 Def0311
-S A$fight_manager$724 Def0303
-S A$fight_manager$715 Def02F6
-S A$fight_manager$670 Def02B3
-S A$fight_manager$661 Def02A8
-S A$fight_manager$652 Def0299
-S A$fight_manager$643 Def028C
-S A$fight_manager$634 Def027E
-S A$fight_manager$625 Def0270
-S A$fight_manager$616 Def0263
-S A$fight_manager$607 Def0257
-S A$fight_manager$571 Def0221
-S A$fight_manager$562 Def0214
-S A$fight_manager$553 Def0207
-S A$fight_manager$544 Def01F8
-S A$fight_manager$535 Def01ED
-S A$fight_manager$526 Def01DF
-S A$fight_manager$517 Def01D2
-S A$fight_manager$508 Def01C4
-S A$fight_manager$490 Def01AA
-S A$fight_manager$481 Def019D
-S A$fight_manager$472 Def018F
-S A$fight_manager$463 Def0182
-S A$fight_manager$445 Def0168
-S A$fight_manager$436 Def015C
-S A$fight_manager$427 Def014F
-S A$fight_manager$418 Def0140
-S A$fight_manager$409 Def0138
-S A$fight_manager$391 Def011B
-S A$fight_manager$382 Def010E
-S A$fight_manager$364 Def00F3
-S A$fight_manager$355 Def00E7
-S A$fight_manager$346 Def00DA
-S A$fight_manager$337 Def00CB
-S A$fight_manager$319 Def00C5
-S A$fight_manager$283 Def00A6
-S A$fight_manager$274 Def00A1
-S A$fight_manager$256 Def0091
-S A$fight_manager$229 Def007F
-S A$fight_manager$193 Def0066
-S A$fight_manager$184 Def0060
-S C$fight_manager.c$83$1$51 Def00A8
-S C$fight_manager.c$40$1$49 Def0046
-S _engine_boss_manager_draw Def00CB
-S A$fight_manager$950 Def0450
-S A$fight_manager$941 Def0440
-S A$fight_manager$932 Def0436
-S A$fight_manager$923 Def0429
-S A$fight_manager$914 Def041B
-S A$fight_manager$905 Def040B
-S A$fight_manager$860 Def03CB
-S A$fight_manager$851 Def03BF
-S A$fight_manager$842 Def03B1
-S A$fight_manager$833 Def03A4
-S A$fight_manager$815 Def0389
-S A$fight_manager$806 Def037C
-S A$fight_manager$770 Def0347
-S A$fight_manager$761 Def033A
-S A$fight_manager$752 Def032B
-S A$fight_manager$743 Def0320
-S A$fight_manager$734 Def0312
-S A$fight_manager$725 Def0305
-S A$fight_manager$716 Def02F7
-S A$fight_manager$707 Def02E7
-S A$fight_manager$680 Def02C2
-S A$fight_manager$671 Def02B5
-S A$fight_manager$653 Def029A
-S A$fight_manager$644 Def028D
-S A$fight_manager$635 Def0280
-S A$fight_manager$626 Def0271
-S A$fight_manager$617 Def0266
-S A$fight_manager$608 Def0258
-S A$fight_manager$590 Def023D
-S A$fight_manager$572 Def0222
-S A$fight_manager$563 Def0216
-S A$fight_manager$554 Def0208
-S A$fight_manager$545 Def01FB
-S A$fight_manager$536 Def01F0
-S A$fight_manager$527 Def01E1
-S A$fight_manager$518 Def01D3
-S A$fight_manager$509 Def01C6
-S A$fight_manager$491 Def01AB
-S A$fight_manager$482 Def019E
-S A$fight_manager$473 Def0191
-S A$fight_manager$464 Def0183
-S A$fight_manager$455 Def0175
-S A$fight_manager$446 Def016B
-S A$fight_manager$437 Def015E
-S A$fight_manager$428 Def0150
-S A$fight_manager$419 Def0143
-S A$fight_manager$392 Def011D
-S A$fight_manager$383 Def010F
-S A$fight_manager$374 Def0100
-S A$fight_manager$365 Def00F6
-S A$fight_manager$356 Def00E9
-S A$fight_manager$347 Def00DB
-S A$fight_manager$338 Def00CD
-S A$fight_manager$275 Def00A2
-S A$fight_manager$257 Def0093
-S A$fight_manager$239 Def0085
-S A$fight_manager$185 Def0061
-S A$fight_manager$167 Def004A
-S C$fight_manager.c$75$1$51 Def0099
-S C$fight_manager.c$57$1$51 Def0067
-S C$fight_manager.c$50$1$49 Def0066
-S C$fight_manager.c$41$1$49 Def0046
-S C$fight_manager.c$34$1$47 Def0025
-S A$fight_manager$960 Def045F
-S A$fight_manager$951 Def0452
-S A$fight_manager$942 Def0443
-S A$fight_manager$933 Def0437
-S A$fight_manager$924 Def042A
-S A$fight_manager$915 Def041D
-S A$fight_manager$906 Def040E
-S A$fight_manager$870 Def03D9
-S A$fight_manager$861 Def03CE
-S A$fight_manager$852 Def03C0
-S A$fight_manager$843 Def03B3
-S A$fight_manager$834 Def03A5
-S A$fight_manager$816 Def038A
-S A$fight_manager$807 Def037E
-S A$fight_manager$780 Def0356
-S A$fight_manager$771 Def0349
-S A$fight_manager$762 Def033B
-S A$fight_manager$753 Def032E
-S A$fight_manager$744 Def0323
-S A$fight_manager$735 Def0314
-S A$fight_manager$726 Def0306
-S A$fight_manager$717 Def02F9
-S A$fight_manager$708 Def02EA
-S A$fight_manager$690 Def02D1
-S A$fight_manager$681 Def02C4
-S A$fight_manager$672 Def02B6
-S A$fight_manager$654 Def029B
-S A$fight_manager$645 Def028F
-S A$fight_manager$636 Def0281
-S A$fight_manager$627 Def0274
-S A$fight_manager$618 Def0269
-S A$fight_manager$609 Def025A
-S A$fight_manager$591 Def023F
-S A$fight_manager$573 Def0223
-S A$fight_manager$564 Def0217
-S A$fight_manager$555 Def020A
-S A$fight_manager$546 Def01FC
-S A$fight_manager$537 Def01F1
-S A$fight_manager$528 Def01E2
-S A$fight_manager$519 Def01D5
-S A$fight_manager$492 Def01AC
-S A$fight_manager$483 Def01A0
-S A$fight_manager$474 Def0192
-S A$fight_manager$465 Def0185
-S A$fight_manager$456 Def0178
-S A$fight_manager$447 Def016C
-S A$fight_manager$438 Def015F
-S A$fight_manager$429 Def0152
-S A$fight_manager$393 Def011E
-S A$fight_manager$384 Def0111
-S A$fight_manager$375 Def0103
-S A$fight_manager$366 Def00F7
-S A$fight_manager$357 Def00EA
-S A$fight_manager$348 Def00DD
-S A$fight_manager$339 Def00D1
-S A$fight_manager$276 Def00A3
-S A$fight_manager$267 Def0099
-S A$fight_manager$186 Def0062
-S A$fight_manager$177 Def0053
-S A$fight_manager$168 Def004B
-S XFfight_manager$get_damage$0$0 Def00A7
-S C$fight_manager.c$67$1$51 Def0089
-S C$fight_manager.c$58$1$51 Def0069
-S C$fight_manager.c$35$1$47 Def003D
-S C$fight_manager.c$19$1$45 Def0000
-S A$fight_manager$970 Def0470
-S A$fight_manager$961 Def0461
-S A$fight_manager$952 Def0453
-S A$fight_manager$943 Def0445
-S A$fight_manager$934 Def0438
-S A$fight_manager$925 Def042C
-S A$fight_manager$916 Def041E
-S A$fight_manager$907 Def0410
-S A$fight_manager$880 Def03E9
-S A$fight_manager$871 Def03DC
-S A$fight_manager$862 Def03D1
-S A$fight_manager$853 Def03C2
-S A$fight_manager$844 Def03B4
-S A$fight_manager$835 Def03A7
-S A$fight_manager$817 Def038B
-S A$fight_manager$808 Def037F
-S A$fight_manager$790 Def0363
-S A$fight_manager$781 Def0357
-S A$fight_manager$772 Def034A
-S A$fight_manager$763 Def033D
-S A$fight_manager$754 Def032F
-S A$fight_manager$745 Def0324
-S A$fight_manager$736 Def0315
-S A$fight_manager$727 Def0308
-S A$fight_manager$718 Def02FA
-S A$fight_manager$709 Def02EC
-S A$fight_manager$691 Def02D3
-S A$fight_manager$682 Def02C5
-S A$fight_manager$673 Def02B8
-S A$fight_manager$655 Def029C
-S A$fight_manager$646 Def0290
-S A$fight_manager$637 Def0283
-S A$fight_manager$628 Def0275
-S A$fight_manager$619 Def026A
-S A$fight_manager$592 Def0240
-S A$fight_manager$583 Def0230
-S A$fight_manager$574 Def0226
-S A$fight_manager$565 Def0219
-S A$fight_manager$556 Def020B
-S A$fight_manager$547 Def01FE
-S A$fight_manager$529 Def01E3
-S A$fight_manager$493 Def01AF
-S A$fight_manager$484 Def01A1
-S A$fight_manager$475 Def0194
-S A$fight_manager$466 Def0186
-S A$fight_manager$457 Def0179
-S A$fight_manager$448 Def016D
-S A$fight_manager$439 Def0161
-S A$fight_manager$394 Def0120
-S A$fight_manager$385 Def0112
-S A$fight_manager$376 Def0104
-S A$fight_manager$367 Def00F8
-S A$fight_manager$358 Def00EC
-S A$fight_manager$349 Def00DE
-S A$fight_manager$277 Def00A4
-S A$fight_manager$268 Def009B
-S A$fight_manager$187 Def0063
-S A$fight_manager$178 Def0056
-S A$fight_manager$169 Def004C
-S C$fight_manager.c$65$2$53 Def0085
-S C$fight_manager.c$59$1$51 Def0079
-S C$fight_manager.c$52$1$49 Def0067
-S A$fight_manager$971 Def0471
-S A$fight_manager$962 Def0462
-S A$fight_manager$953 Def0455
-S A$fight_manager$944 Def0446
-S A$fight_manager$935 Def043B
-S A$fight_manager$926 Def042D
-S A$fight_manager$917 Def0420
-S A$fight_manager$908 Def0411
-S A$fight_manager$890 Def03F8
-S A$fight_manager$881 Def03EB
-S A$fight_manager$872 Def03DD
-S A$fight_manager$863 Def03D2
-S A$fight_manager$854 Def03C3
-S A$fight_manager$845 Def03B6
-S A$fight_manager$836 Def03A8
-S A$fight_manager$827 Def0398
-S A$fight_manager$818 Def038E
-S A$fight_manager$809 Def0381
-S A$fight_manager$791 Def0365
-S A$fight_manager$782 Def0358
-S A$fight_manager$773 Def034C
-S A$fight_manager$764 Def033E
-S A$fight_manager$755 Def0331
-S A$fight_manager$737 Def0316
-S A$fight_manager$728 Def0309
-S A$fight_manager$719 Def02FC
-S A$fight_manager$692 Def02D4
-S A$fight_manager$683 Def02C7
-S A$fight_manager$674 Def02B9
-S A$fight_manager$665 Def02A9
-S A$fight_manager$656 Def029F
-S A$fight_manager$647 Def0292
-S A$fight_manager$638 Def0284
-S A$fight_manager$629 Def0277
-S A$fight_manager$593 Def0242
-S A$fight_manager$584 Def0233
-S A$fight_manager$575 Def0227
-S A$fight_manager$566 Def021A
-S A$fight_manager$557 Def020D
-S A$fight_manager$548 Def01FF
-S A$fight_manager$494 Def01B2
-S A$fight_manager$485 Def01A3
-S A$fight_manager$476 Def0195
-S A$fight_manager$467 Def0188
-S A$fight_manager$458 Def017A
-S A$fight_manager$449 Def0170
-S A$fight_manager$395 Def0121
-S A$fight_manager$386 Def0114
-S A$fight_manager$377 Def0105
-S A$fight_manager$368 Def00FB
-S A$fight_manager$359 Def00ED
-S A$fight_manager$278 Def00A5
-S A$fight_manager$188 Def0064
-S A$fight_manager$179 Def0059
-S C$fight_manager.c$96$1$60 Def00D3
-S C$fight_manager.c$73$2$55 Def0095
-S C$fight_manager.c$37$1$47 Def003E
-S C$fight_manager.c$28$1$47 Def001D
-S A$fight_manager$972 Def0472
-S A$fight_manager$963 Def0463
-S A$fight_manager$954 Def0456
-S A$fight_manager$945 Def0449
-S A$fight_manager$936 Def043E
-S A$fight_manager$927 Def042F
-S A$fight_manager$918 Def0421
-S A$fight_manager$909 Def0414
-S A$fight_manager$891 Def03FA
-S A$fight_manager$882 Def03EC
-S A$fight_manager$873 Def03DF
-S A$fight_manager$855 Def03C4
-S A$fight_manager$846 Def03B7
-S A$fight_manager$837 Def03AA
-S A$fight_manager$828 Def039B
-S A$fight_manager$819 Def038F
-S A$fight_manager$792 Def0366
-S A$fight_manager$783 Def035B
-S A$fight_manager$774 Def034D
-S A$fight_manager$765 Def0340
-S A$fight_manager$756 Def0332
-S A$fight_manager$738 Def0317
-S A$fight_manager$729 Def030B
-S A$fight_manager$693 Def02D6
-S A$fight_manager$684 Def02C8
-S A$fight_manager$675 Def02BB
-S A$fight_manager$666 Def02AC
-S A$fight_manager$657 Def02A0
-S A$fight_manager$648 Def0293
-S A$fight_manager$639 Def0286
-S A$fight_manager$594 Def0243
-S A$fight_manager$585 Def0235
-S A$fight_manager$576 Def0228
-S A$fight_manager$567 Def021C
-S A$fight_manager$558 Def020E
-S A$fight_manager$549 Def0201
-S A$fight_manager$495 Def01B3
-S A$fight_manager$486 Def01A4
-S A$fight_manager$477 Def0197
-S A$fight_manager$468 Def0189
-S A$fight_manager$459 Def017B
-S A$fight_manager$396 Def0123
-S A$fight_manager$387 Def0115
-S A$fight_manager$378 Def0108
-S A$fight_manager$369 Def00FE
-S A$fight_manager$288 Def00A7
-S C$fight_manager.c$97$1$60 Def0100
-S C$fight_manager.c$90$1$58 Def00CA
-S XG$engine_fight_manager_enemy_to_player$0$0 Def003D
-S C$fight_manager.c$29$1$47 Def001D
+S A$fight_manager$233 Def0079
+S A$fight_manager$161 Def0049
+S A$fight_manager$134 Def0032
+S A$fight_manager$116 Def001E
+S C$fight_manager.c$61$1$50 Def0079
+S C$fight_manager.c$21$1$45 Def0004
+S A$fight_manager$900 Def03D2
+S A$fight_manager$810 Def034E
+S A$fight_manager$801 Def0340
+S A$fight_manager$720 Def02C8
+S A$fight_manager$711 Def02BB
+S A$fight_manager$702 Def02AE
+S A$fight_manager$630 Def0244
+S A$fight_manager$621 Def0236
+S A$fight_manager$612 Def0229
+S A$fight_manager$603 Def021E
+S A$fight_manager$540 Def01BF
+S A$fight_manager$531 Def01B1
+S A$fight_manager$522 Def01A3
+S A$fight_manager$513 Def0199
+S A$fight_manager$504 Def018C
+S A$fight_manager$450 Def013D
+S A$fight_manager$441 Def012E
+S A$fight_manager$432 Def0124
+S A$fight_manager$423 Def0117
+S A$fight_manager$414 Def0109
+S A$fight_manager$405 Def00FB
+S A$fight_manager$342 Def00D0
+S A$fight_manager$324 Def00C1
+S A$fight_manager$306 Def00B3
+S A$fight_manager$252 Def0090
+S A$fight_manager$234 Def007A
+S A$fight_manager$207 Def0067
+S A$fight_manager$171 Def0056
+S A$fight_manager$162 Def004C
+S A$fight_manager$135 Def0033
+S A$fight_manager$117 Def0021
+S A$fight_manager$910 Def03E1
+S A$fight_manager$901 Def03D3
+S A$fight_manager$820 Def035C
+S A$fight_manager$811 Def0351
+S A$fight_manager$802 Def0342
+S A$fight_manager$721 Def02C9
+S A$fight_manager$712 Def02BD
+S A$fight_manager$703 Def02AF
+S A$fight_manager$640 Def0251
+S A$fight_manager$631 Def0245
+S A$fight_manager$622 Def0238
+S A$fight_manager$613 Def022A
+S A$fight_manager$604 Def021F
+S A$fight_manager$550 Def01CE
+S A$fight_manager$541 Def01C0
+S A$fight_manager$532 Def01B3
+S A$fight_manager$523 Def01A6
+S A$fight_manager$514 Def019A
+S A$fight_manager$505 Def018D
+S A$fight_manager$460 Def014C
+S A$fight_manager$451 Def013F
+S A$fight_manager$442 Def0131
+S A$fight_manager$433 Def0125
+S A$fight_manager$424 Def0118
+S A$fight_manager$415 Def010B
+S A$fight_manager$406 Def00FF
+S A$fight_manager$343 Def00D1
+S A$fight_manager$334 Def00C7
+S A$fight_manager$307 Def00B5
+S A$fight_manager$280 Def009E
+S A$fight_manager$253 Def0091
+S A$fight_manager$235 Def007B
+S A$fight_manager$208 Def006A
+S A$fight_manager$172 Def0058
+S A$fight_manager$163 Def004F
+S A$fight_manager$154 Def0040
+S A$fight_manager$145 Def0038
+S A$fight_manager$136 Def0034
+S C$fight_manager.c$63$1$50 Def0084
+S C$fight_manager.c$54$1$50 Def006D
+S C$fight_manager.c$30$1$47 Def001E
+S C$fight_manager.c$23$1$45 Def000D
+S C$fight_manager.c$14$1$45 Def0000
+S A$fight_manager$920 Def03F0
+S A$fight_manager$911 Def03E2
+S A$fight_manager$902 Def03D5
+S A$fight_manager$830 Def036B
+S A$fight_manager$821 Def035D
+S A$fight_manager$812 Def0352
+S A$fight_manager$803 Def0343
+S A$fight_manager$740 Def02E6
+S A$fight_manager$722 Def02CA
+S A$fight_manager$713 Def02BE
+S A$fight_manager$704 Def02B1
+S A$fight_manager$650 Def025E
+S A$fight_manager$641 Def0254
+S A$fight_manager$632 Def0247
+S A$fight_manager$623 Def0239
+S A$fight_manager$614 Def022C
+S A$fight_manager$560 Def01DD
+S A$fight_manager$551 Def01CF
+S A$fight_manager$542 Def01C2
+S A$fight_manager$533 Def01B4
+S A$fight_manager$524 Def01A7
+S A$fight_manager$515 Def019B
+S A$fight_manager$506 Def018F
+S A$fight_manager$470 Def015A
+S A$fight_manager$461 Def014E
+S A$fight_manager$452 Def0140
+S A$fight_manager$443 Def0132
+S A$fight_manager$434 Def0126
+S A$fight_manager$425 Def011A
+S A$fight_manager$416 Def010C
+S A$fight_manager$344 Def00D2
+S A$fight_manager$335 Def00C9
+S A$fight_manager$317 Def00BB
+S A$fight_manager$290 Def00A7
+S A$fight_manager$281 Def009F
+S A$fight_manager$245 Def0084
+S A$fight_manager$236 Def007C
+S A$fight_manager$218 Def0071
+S A$fight_manager$164 Def0050
+S A$fight_manager$155 Def0043
+S A$fight_manager$146 Def0039
+S A$fight_manager$128 Def002E
+S C$fight_manager.c$64$1$50 Def0094
+S C$fight_manager.c$40$1$47 Def0038
+S C$fight_manager.c$31$1$47 Def001E
+S C$fight_manager.c$24$1$45 Def0014
+S A$fight_manager$930 Def0400
+S A$fight_manager$921 Def03F1
+S A$fight_manager$912 Def03E4
+S A$fight_manager$903 Def03D6
+S A$fight_manager$840 Def037A
+S A$fight_manager$831 Def036C
+S A$fight_manager$822 Def035F
+S A$fight_manager$804 Def0344
+S A$fight_manager$750 Def02F5
+S A$fight_manager$741 Def02E7
+S A$fight_manager$732 Def02D7
+S A$fight_manager$723 Def02CD
+S A$fight_manager$714 Def02C0
+S A$fight_manager$705 Def02B2
+S A$fight_manager$660 Def0270
+S A$fight_manager$651 Def0261
+S A$fight_manager$642 Def0255
+S A$fight_manager$633 Def0248
+S A$fight_manager$624 Def023B
+S A$fight_manager$615 Def022D
+S A$fight_manager$570 Def01EB
+S A$fight_manager$561 Def01E0
+S A$fight_manager$552 Def01D1
+S A$fight_manager$543 Def01C3
+S A$fight_manager$534 Def01B6
+S A$fight_manager$525 Def01A8
+S A$fight_manager$516 Def019E
+S A$fight_manager$507 Def0190
+S A$fight_manager$471 Def015B
+S A$fight_manager$462 Def014F
+S A$fight_manager$453 Def0142
+S A$fight_manager$444 Def0133
+S A$fight_manager$435 Def0129
+S A$fight_manager$426 Def011B
+S A$fight_manager$417 Def010E
+S A$fight_manager$381 Def00E8
+S A$fight_manager$345 Def00D3
+S A$fight_manager$318 Def00BD
+S A$fight_manager$291 Def00A9
+S A$fight_manager$282 Def00A0
+S A$fight_manager$273 Def0095
+S A$fight_manager$255 Def0092
+S A$fight_manager$246 Def0085
+S A$fight_manager$237 Def007D
+S A$fight_manager$228 Def0075
+S A$fight_manager$219 Def0072
+S A$fight_manager$165 Def0051
+S A$fight_manager$156 Def0044
+S A$fight_manager$147 Def003A
+S A$fight_manager$129 Def002F
+S C$fight_manager.c$71$1$53 Def0095
+S C$fight_manager.c$56$1$50 Def0067
+S C$fight_manager.c$47$1$50 Def0063
+S C$fight_manager.c$41$1$47 Def0040
+S A$fight_manager$940 Def040D
+S A$fight_manager$922 Def03F2
+S A$fight_manager$913 Def03E5
+S A$fight_manager$904 Def03D8
+S A$fight_manager$850 Def0389
+S A$fight_manager$841 Def037B
+S A$fight_manager$832 Def036E
+S A$fight_manager$823 Def0360
+S A$fight_manager$805 Def0345
+S A$fight_manager$760 Def0304
+S A$fight_manager$751 Def02F6
+S A$fight_manager$742 Def02E9
+S A$fight_manager$733 Def02DA
+S A$fight_manager$724 Def02CE
+S A$fight_manager$715 Def02C1
+S A$fight_manager$706 Def02B4
+S A$fight_manager$670 Def027F
+S A$fight_manager$661 Def0271
+S A$fight_manager$652 Def0263
+S A$fight_manager$643 Def0256
+S A$fight_manager$634 Def024A
+S A$fight_manager$625 Def023C
+S A$fight_manager$616 Def022F
+S A$fight_manager$580 Def01FA
+S A$fight_manager$571 Def01EC
+S A$fight_manager$562 Def01E1
+S A$fight_manager$553 Def01D2
+S A$fight_manager$544 Def01C5
+S A$fight_manager$535 Def01B7
+S A$fight_manager$526 Def01A9
+S A$fight_manager$517 Def01A1
+S A$fight_manager$508 Def0192
+S A$fight_manager$490 Def0177
+S A$fight_manager$481 Def0168
+S A$fight_manager$472 Def015E
+S A$fight_manager$463 Def0151
+S A$fight_manager$454 Def0143
+S A$fight_manager$445 Def0136
+S A$fight_manager$436 Def012C
+S A$fight_manager$427 Def011D
+S A$fight_manager$418 Def010F
+S A$fight_manager$382 Def00EB
+S A$fight_manager$355 Def00D5
+S A$fight_manager$328 Def00C3
+S A$fight_manager$283 Def00A3
+S A$fight_manager$247 Def0086
+S A$fight_manager$238 Def0080
+S A$fight_manager$229 Def0078
+S A$fight_manager$166 Def0052
+S A$fight_manager$157 Def0045
+S A$fight_manager$148 Def003B
+S C$fight_manager.c$81$1$53 Def00B7
+S C$fight_manager.c$72$1$53 Def0097
+S C$fight_manager.c$66$1$50 Def0095
+S C$fight_manager.c$48$1$50 Def0063
+S C$fight_manager.c$42$1$47 Def005A
+S C$fight_manager.c$26$1$45 Def0015
+S C$fight_manager.c$11$0$0 Def0000
+S _engine_boss_manager_draw Def00F9
+S A$fight_manager$950 Def041C
+S A$fight_manager$941 Def040E
+S A$fight_manager$923 Def03F3
+S A$fight_manager$914 Def03E7
+S A$fight_manager$905 Def03D9
+S A$fight_manager$860 Def0397
+S A$fight_manager$851 Def038C
+S A$fight_manager$842 Def037D
+S A$fight_manager$833 Def036F
+S A$fight_manager$824 Def0362
+S A$fight_manager$806 Def0346
+S A$fight_manager$770 Def0314
+S A$fight_manager$761 Def0305
+S A$fight_manager$752 Def02F8
+S A$fight_manager$743 Def02EA
+S A$fight_manager$734 Def02DC
+S A$fight_manager$725 Def02CF
+S A$fight_manager$716 Def02C3
+S A$fight_manager$707 Def02B5
+S A$fight_manager$680 Def028C
+S A$fight_manager$671 Def0280
+S A$fight_manager$662 Def0273
+S A$fight_manager$653 Def0264
+S A$fight_manager$644 Def0259
+S A$fight_manager$635 Def024B
+S A$fight_manager$626 Def023E
+S A$fight_manager$617 Def0230
+S A$fight_manager$608 Def0220
+S A$fight_manager$590 Def0209
+S A$fight_manager$581 Def01FB
+S A$fight_manager$572 Def01EE
+S A$fight_manager$554 Def01D3
+S A$fight_manager$545 Def01C6
+S A$fight_manager$536 Def01B9
+S A$fight_manager$527 Def01AA
+S A$fight_manager$518 Def01A2
+S A$fight_manager$509 Def0193
+S A$fight_manager$491 Def0178
+S A$fight_manager$482 Def016B
+S A$fight_manager$473 Def015F
+S A$fight_manager$464 Def0152
+S A$fight_manager$455 Def0145
+S A$fight_manager$446 Def0137
+S A$fight_manager$437 Def012D
+S A$fight_manager$428 Def011E
+S A$fight_manager$419 Def0111
+S A$fight_manager$383 Def00EE
+S A$fight_manager$374 Def00DE
+S A$fight_manager$365 Def00D6
+S A$fight_manager$329 Def00C5
+S A$fight_manager$284 Def00A4
+S A$fight_manager$248 Def0087
+S A$fight_manager$239 Def0081
+S A$fight_manager$167 Def0053
+S A$fight_manager$158 Def0046
+S A$fight_manager$149 Def003E
+S C$fight_manager.c$73$1$53 Def00A7
+S C$fight_manager.c$56$2$51 Def0071
+S C$fight_manager.c$49$1$50 Def0063
+S C$fight_manager.c$34$1$47 Def002E
+S A$fight_manager$960 Def042A
+S A$fight_manager$951 Def041D
+S A$fight_manager$942 Def0410
+S A$fight_manager$924 Def03F4
+S A$fight_manager$915 Def03E8
+S A$fight_manager$906 Def03DB
+S A$fight_manager$870 Def03A6
+S A$fight_manager$861 Def0398
+S A$fight_manager$852 Def038D
+S A$fight_manager$843 Def037E
+S A$fight_manager$834 Def0371
+S A$fight_manager$825 Def0363
+S A$fight_manager$816 Def0353
+S A$fight_manager$807 Def0349
+S A$fight_manager$780 Def0321
+S A$fight_manager$762 Def0306
+S A$fight_manager$753 Def02F9
+S A$fight_manager$744 Def02EC
+S A$fight_manager$735 Def02DD
+S A$fight_manager$726 Def02D2
+S A$fight_manager$717 Def02C4
+S A$fight_manager$708 Def02B7
+S A$fight_manager$690 Def0299
+S A$fight_manager$681 Def028F
+S A$fight_manager$672 Def0282
+S A$fight_manager$663 Def0274
+S A$fight_manager$654 Def0267
+S A$fight_manager$645 Def025C
+S A$fight_manager$636 Def024D
+S A$fight_manager$627 Def023F
+S A$fight_manager$618 Def0232
+S A$fight_manager$609 Def0223
+S A$fight_manager$591 Def020A
+S A$fight_manager$582 Def01FD
+S A$fight_manager$573 Def01EF
+S A$fight_manager$555 Def01D4
+S A$fight_manager$546 Def01C8
+S A$fight_manager$537 Def01BA
+S A$fight_manager$528 Def01AD
+S A$fight_manager$492 Def017A
+S A$fight_manager$483 Def016C
+S A$fight_manager$474 Def0160
+S A$fight_manager$465 Def0154
+S A$fight_manager$456 Def0146
+S A$fight_manager$447 Def0139
+S A$fight_manager$429 Def011F
+S A$fight_manager$384 Def00F1
+S A$fight_manager$375 Def00E1
+S A$fight_manager$366 Def00D8
+S A$fight_manager$339 Def00CB
+S A$fight_manager$285 Def00A5
+S A$fight_manager$249 Def0088
+S A$fight_manager$177 Def005A
+S A$fight_manager$168 Def0054
+S A$fight_manager$159 Def0047
+S XFfight_manager$get_damage$0$0 Def00D5
+S C$fight_manager.c$57$2$51 Def0073
+S C$fight_manager.c$44$1$47 Def005B
+S A$fight_manager$961 Def042B
+S A$fight_manager$952 Def041F
+S A$fight_manager$943 Def0411
+S A$fight_manager$934 Def0401
+S A$fight_manager$925 Def03F7
+S A$fight_manager$916 Def03EA
+S A$fight_manager$907 Def03DC
+S A$fight_manager$880 Def03B5
+S A$fight_manager$871 Def03A7
+S A$fight_manager$862 Def039A
+S A$fight_manager$844 Def037F
+S A$fight_manager$835 Def0372
+S A$fight_manager$826 Def0365
+S A$fight_manager$817 Def0356
+S A$fight_manager$808 Def034A
+S A$fight_manager$790 Def0330
+S A$fight_manager$781 Def0322
+S A$fight_manager$763 Def0307
+S A$fight_manager$754 Def02FB
+S A$fight_manager$745 Def02ED
+S A$fight_manager$736 Def02E0
+S A$fight_manager$727 Def02D5
+S A$fight_manager$718 Def02C6
+S A$fight_manager$709 Def02B8
+S A$fight_manager$691 Def029C
+S A$fight_manager$682 Def0290
+S A$fight_manager$673 Def0283
+S A$fight_manager$664 Def0276
+S A$fight_manager$655 Def0268
+S A$fight_manager$646 Def025D
+S A$fight_manager$637 Def024E
+S A$fight_manager$628 Def0241
+S A$fight_manager$619 Def0233
+S A$fight_manager$592 Def020C
+S A$fight_manager$583 Def01FE
+S A$fight_manager$574 Def01F1
+S A$fight_manager$556 Def01D5
+S A$fight_manager$547 Def01C9
+S A$fight_manager$538 Def01BC
+S A$fight_manager$529 Def01AE
+S A$fight_manager$493 Def017B
+S A$fight_manager$484 Def016D
+S A$fight_manager$475 Def0163
+S A$fight_manager$466 Def0155
+S A$fight_manager$457 Def0148
+S A$fight_manager$448 Def013A
+S A$fight_manager$394 Def00F8
+S A$fight_manager$385 Def00F2
+S A$fight_manager$376 Def00E4
+S A$fight_manager$367 Def00DC
+S A$fight_manager$295 Def00AB
+S A$fight_manager$286 Def00A6
+S A$fight_manager$277 Def0097
+S A$fight_manager$187 Def005B
+S A$fight_manager$169 Def0055
+S C$fight_manager.c$36$1$47 Def0022
+S A$fight_manager$980 Def0448
+S A$fight_manager$962 Def042C
+S A$fight_manager$953 Def0420
+S A$fight_manager$944 Def0413
+S A$fight_manager$935 Def0404
+S A$fight_manager$926 Def03F8
+S A$fight_manager$917 Def03EB
+S A$fight_manager$908 Def03DE
+S A$fight_manager$890 Def03C5
+S A$fight_manager$881 Def03B6
+S A$fight_manager$872 Def03A9
+S A$fight_manager$863 Def039B
+S A$fight_manager$845 Def0380
+S A$fight_manager$836 Def0374
+S A$fight_manager$827 Def0366
+S A$fight_manager$818 Def0358
+S A$fight_manager$809 Def034B
+S A$fight_manager$791 Def0331
+S A$fight_manager$782 Def0324
+S A$fight_manager$764 Def0308
+S A$fight_manager$755 Def02FC
+S A$fight_manager$746 Def02EF
+S A$fight_manager$737 Def02E1
+S A$fight_manager$728 Def02D6
+S A$fight_manager$719 Def02C7
+S A$fight_manager$692 Def029E
+S A$fight_manager$683 Def0291
+S A$fight_manager$674 Def0285
+S A$fight_manager$665 Def0277
+S A$fight_manager$656 Def026A
+S A$fight_manager$638 Def024F
+S A$fight_manager$629 Def0242
+S A$fight_manager$593 Def020D
+S A$fight_manager$584 Def0200
+S A$fight_manager$575 Def01F2
+S A$fight_manager$566 Def01E2
+S A$fight_manager$557 Def01D8
+S A$fight_manager$548 Def01CB
+S A$fight_manager$539 Def01BD
+S A$fight_manager$494 Def017D
+S A$fight_manager$485 Def016E
+S A$fight_manager$476 Def0166
+S A$fight_manager$467 Def0157
+S A$fight_manager$458 Def0149
+S A$fight_manager$449 Def013C
+S A$fight_manager$386 Def00F3
+S A$fight_manager$377 Def00E7
+S A$fight_manager$296 Def00AD
+S A$fight_manager$278 Def0098
+S A$fight_manager$188 Def005D
+S C$fight_manager.c$94$1$53 Def00D4
+S C$fight_manager.c$85$1$53 Def00BF
+S A$fight_manager$990 Def0457
+S A$fight_manager$981 Def0449
+S A$fight_manager$972 Def0439
+S A$fight_manager$963 Def042F
+S A$fight_manager$954 Def0422
+S A$fight_manager$945 Def0414
+S A$fight_manager$936 Def0406
+S A$fight_manager$927 Def03F9
+S A$fight_manager$918 Def03ED
+S A$fight_manager$909 Def03DF
+S A$fight_manager$882 Def03B7
+S A$fight_manager$873 Def03AA
+S A$fight_manager$864 Def039D
+S A$fight_manager$846 Def0381
+S A$fight_manager$837 Def0375
+S A$fight_manager$828 Def0368
+S A$fight_manager$819 Def0359
+S A$fight_manager$792 Def0333
+S A$fight_manager$783 Def0325
+S A$fight_manager$774 Def0315
+S A$fight_manager$765 Def030B
+S A$fight_manager$756 Def02FE
+S A$fight_manager$747 Def02F0
+S A$fight_manager$738 Def02E3
+S A$fight_manager$693 Def029F
+S A$fight_manager$684 Def0294
+S A$fight_manager$675 Def0286
+S A$fight_manager$666 Def0279
+S A$fight_manager$657 Def026B
+S A$fight_manager$639 Def0250
+S A$fight_manager$594 Def020F
+S A$fight_manager$585 Def0201
+S A$fight_manager$576 Def01F4
+S A$fight_manager$567 Def01E5
+S A$fight_manager$558 Def01D9
+S A$fight_manager$549 Def01CC
+S A$fight_manager$495 Def017E
+S A$fight_manager$486 Def0171
+S A$fight_manager$477 Def0167
+S A$fight_manager$468 Def0158
+S A$fight_manager$459 Def014B
+S A$fight_manager$387 Def00F4
+S A$fight_manager$279 Def009B
+S A$fight_manager$189 Def0061
+S C$fight_manager.c$95$1$53 Def00D5
+S C$fight_manager.c$77$1$53 Def00AF
+S C$fight_manager.c$75$2$54 Def00AB
+S XG$engine_fight_manager_enemy_to_player$0$0 Def005A
+S C$fight_manager.c$36$2$48 Def0032
+S C$fight_manager.c$29$1$47 Def001E
 S XG$engine_fight_manager_player_to_enemy$0$0 Def0014
-S A$fight_manager$964 Def0464
-S A$fight_manager$955 Def0458
-S A$fight_manager$946 Def044A
-S A$fight_manager$937 Def043F
-S A$fight_manager$928 Def0430
-S A$fight_manager$919 Def0423
-S A$fight_manager$892 Def03FB
-S A$fight_manager$883 Def03EE
-S A$fight_manager$874 Def03E0
-S A$fight_manager$856 Def03C5
-S A$fight_manager$847 Def03B9
-S A$fight_manager$838 Def03AB
-S A$fight_manager$829 Def039D
-S A$fight_manager$793 Def0369
-S A$fight_manager$784 Def035E
-S A$fight_manager$775 Def034F
-S A$fight_manager$766 Def0341
-S A$fight_manager$757 Def0334
-S A$fight_manager$739 Def0318
-S A$fight_manager$694 Def02D7
-S A$fight_manager$685 Def02CA
-S A$fight_manager$676 Def02BC
-S A$fight_manager$667 Def02AE
-S A$fight_manager$658 Def02A1
-S A$fight_manager$649 Def0295
-S A$fight_manager$595 Def0245
-S A$fight_manager$586 Def0236
-S A$fight_manager$577 Def022B
-S A$fight_manager$568 Def021D
-S A$fight_manager$559 Def0210
-S A$fight_manager$487 Def01A5
-S A$fight_manager$478 Def0198
-S A$fight_manager$469 Def018B
-S A$fight_manager$397 Def0124
-S A$fight_manager$388 Def0117
-S A$fight_manager$379 Def0109
-S A$fight_manager$298 Def00A8
-S C$fight_manager.c$98$1$60 Def013A
-S C$fight_manager.c$46$1$49 Def0046
-S G$engine_fight_manager_boss_to_player$0$0 Def003E
-S A$fight_manager$965 Def0465
-S A$fight_manager$956 Def0459
-S A$fight_manager$947 Def044C
-S A$fight_manager$929 Def0431
-S A$fight_manager$893 Def03FC
-S A$fight_manager$884 Def03EF
-S A$fight_manager$875 Def03E2
-S A$fight_manager$857 Def03C6
-S A$fight_manager$848 Def03BA
-S A$fight_manager$839 Def03AD
-S A$fight_manager$794 Def036A
-S A$fight_manager$785 Def035F
-S A$fight_manager$776 Def0350
-S A$fight_manager$767 Def0343
-S A$fight_manager$758 Def0335
-S A$fight_manager$749 Def0325
-S A$fight_manager$695 Def02D8
-S A$fight_manager$686 Def02CB
-S A$fight_manager$677 Def02BE
-S A$fight_manager$668 Def02AF
-S A$fight_manager$659 Def02A4
-S A$fight_manager$596 Def0246
-S A$fight_manager$587 Def0239
-S A$fight_manager$578 Def022E
-S A$fight_manager$569 Def021F
-S A$fight_manager$488 Def01A6
-S A$fight_manager$479 Def019A
-S A$fight_manager$398 Def0126
-S A$fight_manager$389 Def0118
-S A$fight_manager$299 Def00AA
-S C$fight_manager.c$99$1$60 Def0175
-S C$fight_manager.c$92$1$58 Def00CB
-S G$engine_fight_manager_gold$0$0 Def00A8
-S C$fight_manager.c$47$1$49 Def004A
-S A$fight_manager$966 Def0468
-S A$fight_manager$957 Def045B
-S A$fight_manager$948 Def044D
-S A$fight_manager$894 Def03FD
-S A$fight_manager$885 Def03F1
-S A$fight_manager$876 Def03E3
-S A$fight_manager$867 Def03D3
-S A$fight_manager$858 Def03C9
-S A$fight_manager$849 Def03BC
-S A$fight_manager$795 Def036C
-S A$fight_manager$777 Def0351
-S A$fight_manager$768 Def0344
-S A$fight_manager$759 Def0337
-S A$fight_manager$696 Def02D9
-S A$fight_manager$687 Def02CD
-S A$fight_manager$678 Def02BF
-S A$fight_manager$669 Def02B2
-S A$fight_manager$597 Def0248
-S A$fight_manager$588 Def023A
-S A$fight_manager$579 Def022F
-S A$fight_manager$489 Def01A7
-S A$fight_manager$399 Def0127
-S C$fight_manager.c$69$2$54 Def008D
-S A$fight_manager$967 Def0469
-S A$fight_manager$958 Def045C
-S A$fight_manager$949 Def044F
-S A$fight_manager$895 Def03FE
-S A$fight_manager$886 Def03F2
-S A$fight_manager$877 Def03E5
-S A$fight_manager$868 Def03D6
-S A$fight_manager$859 Def03CA
-S A$fight_manager$796 Def036D
-S A$fight_manager$778 Def0352
-S A$fight_manager$769 Def0346
-S A$fight_manager$697 Def02DA
-S A$fight_manager$688 Def02CE
-S A$fight_manager$679 Def02C1
-S A$fight_manager$598 Def0249
-S A$fight_manager$589 Def023C
-S A$fight_manager$499 Def01B4
-S C$fight_manager.c$77$2$56 Def009D
-S C$fight_manager.c$49$1$49 Def0053
-S A$fight_manager$977 Def0474
-S A$fight_manager$968 Def046A
-S A$fight_manager$959 Def045E
-S A$fight_manager$896 Def0401
-S A$fight_manager$887 Def03F4
-S A$fight_manager$878 Def03E6
-S A$fight_manager$869 Def03D8
-S A$fight_manager$797 Def036F
-S A$fight_manager$779 Def0353
-S A$fight_manager$698 Def02DD
-S A$fight_manager$689 Def02D0
-S A$fight_manager$599 Def024B
+S A$fight_manager$991 Def0458
+S A$fight_manager$982 Def044B
+S A$fight_manager$973 Def043C
+S A$fight_manager$964 Def0430
+S A$fight_manager$955 Def0423
+S A$fight_manager$946 Def0416
+S A$fight_manager$937 Def0407
+S A$fight_manager$928 Def03FC
+S A$fight_manager$919 Def03EE
+S A$fight_manager$883 Def03B8
+S A$fight_manager$874 Def03AC
+S A$fight_manager$865 Def039E
+S A$fight_manager$856 Def038E
+S A$fight_manager$847 Def0384
+S A$fight_manager$838 Def0377
+S A$fight_manager$829 Def0369
+S A$fight_manager$793 Def0334
+S A$fight_manager$784 Def0327
+S A$fight_manager$775 Def0318
+S A$fight_manager$766 Def030C
+S A$fight_manager$757 Def02FF
+S A$fight_manager$748 Def02F2
+S A$fight_manager$739 Def02E4
+S A$fight_manager$694 Def02A2
+S A$fight_manager$685 Def0297
+S A$fight_manager$676 Def0288
+S A$fight_manager$667 Def027A
+S A$fight_manager$658 Def026D
+S A$fight_manager$595 Def0210
+S A$fight_manager$586 Def0203
+S A$fight_manager$577 Def01F5
+S A$fight_manager$568 Def01E7
+S A$fight_manager$559 Def01DA
+S A$fight_manager$496 Def0180
+S A$fight_manager$487 Def0172
+S A$fight_manager$469 Def0159
+S A$fight_manager$388 Def00F5
+S C$fight_manager.c$83$2$56 Def00BB
+S G$engine_fight_manager_boss_to_player$0$0 Def005B
+S C$fight_manager.c$37$2$48 Def0036
+S A$fight_manager$992 Def045A
+S A$fight_manager$983 Def044C
+S A$fight_manager$974 Def043E
+S A$fight_manager$965 Def0431
+S A$fight_manager$956 Def0425
+S A$fight_manager$947 Def0417
+S A$fight_manager$938 Def040A
+S A$fight_manager$929 Def03FF
+S A$fight_manager$884 Def03B9
+S A$fight_manager$875 Def03AD
+S A$fight_manager$866 Def03A0
+S A$fight_manager$857 Def0391
+S A$fight_manager$848 Def0385
+S A$fight_manager$839 Def0378
+S A$fight_manager$794 Def0336
+S A$fight_manager$785 Def0328
+S A$fight_manager$776 Def031A
+S A$fight_manager$767 Def030D
+S A$fight_manager$758 Def0301
+S A$fight_manager$749 Def02F3
+S A$fight_manager$695 Def02A3
+S A$fight_manager$686 Def0298
+S A$fight_manager$677 Def0289
+S A$fight_manager$668 Def027C
+S A$fight_manager$659 Def026E
+S A$fight_manager$596 Def0211
+S A$fight_manager$587 Def0204
+S A$fight_manager$578 Def01F7
+S A$fight_manager$569 Def01E8
+S A$fight_manager$497 Def0181
+S A$fight_manager$488 Def0174
+S A$fight_manager$389 Def00F6
+S C$fight_manager.c$97$1$53 Def00D6
+S G$engine_fight_manager_gold$0$0 Def00D6
+S C$fight_manager.c$91$2$58 Def00CB
+S A$fight_manager$993 Def045B
+S A$fight_manager$984 Def044E
+S A$fight_manager$975 Def043F
+S A$fight_manager$966 Def0434
+S A$fight_manager$957 Def0426
+S A$fight_manager$948 Def0419
+S A$fight_manager$939 Def040B
+S A$fight_manager$894 Def03C6
+S A$fight_manager$885 Def03BC
+S A$fight_manager$876 Def03AF
+S A$fight_manager$867 Def03A1
+S A$fight_manager$858 Def0393
+S A$fight_manager$849 Def0386
+S A$fight_manager$795 Def0337
+S A$fight_manager$786 Def032A
+S A$fight_manager$777 Def031B
+S A$fight_manager$768 Def0310
+S A$fight_manager$759 Def0302
+S A$fight_manager$696 Def02A5
+S A$fight_manager$678 Def028A
+S A$fight_manager$669 Def027D
+S A$fight_manager$597 Def0212
+S A$fight_manager$588 Def0206
+S A$fight_manager$579 Def01F8
+S A$fight_manager$498 Def0183
+S A$fight_manager$489 Def0175
+S C$fight_manager.c$89$1$53 Def00C7
+S A$fight_manager$994 Def045D
+S A$fight_manager$985 Def044F
+S A$fight_manager$976 Def0442
+S A$fight_manager$967 Def0437
+S A$fight_manager$958 Def0428
+S A$fight_manager$949 Def041A
+S A$fight_manager$895 Def03C9
+S A$fight_manager$886 Def03BD
+S A$fight_manager$877 Def03B0
+S A$fight_manager$868 Def03A3
+S A$fight_manager$859 Def0394
+S A$fight_manager$796 Def0339
+S A$fight_manager$787 Def032B
+S A$fight_manager$778 Def031E
+S A$fight_manager$769 Def0313
+S A$fight_manager$697 Def02A6
+S A$fight_manager$679 Def028B
+S A$fight_manager$598 Def0213
+S A$fight_manager$589 Def0207
+S A$fight_manager$499 Def0184
+S A$fight_manager$995 Def045E
+S A$fight_manager$986 Def0451
+S A$fight_manager$977 Def0443
+S A$fight_manager$968 Def0438
+S A$fight_manager$959 Def0429
+S A$fight_manager$896 Def03CB
+S A$fight_manager$887 Def03BE
+S A$fight_manager$878 Def03B2
+S A$fight_manager$869 Def03A4
+S A$fight_manager$797 Def033A
+S A$fight_manager$788 Def032D
+S A$fight_manager$779 Def031F
+S A$fight_manager$698 Def02A8
+S A$fight_manager$599 Def0216
 S A$fight_manager$70 Def0005
-S C$fight_manager.c$86$1$58 Def00B0
-S A$fight_manager$969 Def046D
-S A$fight_manager$897 Def0402
-S A$fight_manager$888 Def03F5
-S A$fight_manager$879 Def03E8
-S A$fight_manager$798 Def0370
-S A$fight_manager$789 Def0360
-S A$fight_manager$699 Def02DE
+S C$fight_manager.c$79$2$55 Def00B3
+S A$fight_manager$996 Def045F
+S A$fight_manager$987 Def0452
+S A$fight_manager$978 Def0445
+S A$fight_manager$897 Def03CC
+S A$fight_manager$888 Def03C1
+S A$fight_manager$879 Def03B3
+S A$fight_manager$798 Def033C
+S A$fight_manager$789 Def032E
+S A$fight_manager$699 Def02A9
 S A$fight_manager$80 Def000E
 S A$fight_manager$71 Def0006
-S A$fight_manager$898 Def0403
-S A$fight_manager$889 Def03F7
-S A$fight_manager$799 Def0372
+S C$fight_manager.c$87$2$57 Def00C3
+S A$fight_manager$997 Def0460
+S A$fight_manager$988 Def0454
+S A$fight_manager$979 Def0446
+S A$fight_manager$898 Def03CF
+S A$fight_manager$889 Def03C4
+S A$fight_manager$799 Def033D
 S A$fight_manager$90 Def0014
 S A$fight_manager$81 Def000F
 S A$fight_manager$72 Def0007
-S XG$engine_boss_manager_draw$0$0 Def0474
-S C$fight_manager.c$88$1$58 Def00B0
-S A$fight_manager$899 Def0406
+S XG$engine_boss_manager_draw$0$0 Def04A2
+S A$fight_manager$998 Def0461
+S A$fight_manager$989 Def0455
+S A$fight_manager$899 Def03D0
 S A$fight_manager$82 Def0010
 S A$fight_manager$73 Def000A
 S A$fight_manager$64 Def0000
-S C$fight_manager.c$89$1$58 Def00BA
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -805,195 +843,217 @@ A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00
 R 00 00 00 00
-T 00 00 21 04 00 46 C5 C5 33 CD 67 00 33 C1 4D D1
+T 00 00 21 04 00 46 C5 C5 33 CD 95 00 33 C1 4D D1
 R 00 00 00 00 02 03 01 00 00 0A 00 00
 T 0E 00 E1 E5 D5 79 80 77 C9
 R 00 00 00 00
 T 15 00
 R 00 00 00 00
-T 15 00 DD E5 DD 21 00 00 DD 39 AF F5 33 CD 67 00
-R 00 00 00 00 00 0E 00 00
-T 23 00 33 5D DD 4E 04 DD 46 05 21 00 00 23 23 6E
-R 00 00 00 00 02 0B 03 00
-T 31 00 7B 85 5F 21 05 00 56 7B 82 02 DD E1 C9
+T 15 00 DD E5 DD 21 00 00 DD 39 F5 21 01 00 4E DD
+R 00 00 00 00 02 0C 02 00
+T 23 00 7E 04 DD 77 FE DD 7E 05 DD 77 FF 79 B7 28
+R 00 00 00 00
+T 31 00 06 E1 E5 36 00 18 1E
+R 00 00 00 00
+T 38 00
+R 00 00 00 00
+T 38 00 AF F5 33 CD 95 00 33 4D 21 00 00 23 23 5E
+R 00 00 00 00 00 06 00 00 02 0B 04 00
+T 46 00 79 83 4F 21 00 00 11 05 00 19 46 79 80 E1
 R 00 00 00 00 02 06 01 00
-T 3E 00
+T 54 00 E5 77
 R 00 00 00 00
-T 3E 00 DD E5 DD 21 00 00 DD 39 21 02 00 46 E5 C5
-R 00 00 00 00 02 0B 03 00
-T 4C 00 33 CD 67 00 33 5D E1 DD 4E 04 DD 46 05 6E
-R 00 00 00 00 00 04 00 00
-T 5A 00 7B 85 5F 21 05 00 56 7B 92 02 DD E1 C9
-R 00 00 00 00 02 06 01 00
-T 67 00
+T 56 00
 R 00 00 00 00
-T 67 00 0E 00 C5 CD 00 00 11 0A 00 D5 E5 CD 00 00
-R 00 00 00 00 02 06 00 00 02 0E 04 00
-T 75 00 F1 F1 C1 7D FE 01 30 04 0E 00 18 25
+T 56 00 DD F9 DD E1 C9
 R 00 00 00 00
-T 81 00
+T 5B 00
 R 00 00 00 00
-T 81 00 FE 04 30 04 0E 01 18 1D
+T 5B 00 DD E5 DD 21 00 00 DD 39 21 01 00 5E DD 4E
+R 00 00 00 00 02 0B 02 00
+T 69 00 04 DD 46 05 7B B7 28 04 AF 02 18 1D
 R 00 00 00 00
-T 89 00
+T 75 00
 R 00 00 00 00
-T 89 00 FE 07 30 04 0E 02 18 15
+T 75 00 21 02 00 56 E5 C5 D5 33 CD 95 00 33 5D C1
+R 00 00 00 00 02 03 04 00 00 0B 00 00
+T 83 00 E1 56 7B 82 5F FD 21 00 00 FD 6E 05 7B 95
+R 00 00 00 00 02 09 01 00
+T 91 00 02
 R 00 00 00 00
-T 91 00
+T 92 00
 R 00 00 00 00
-T 91 00 FE 09 30 04 0E 03 18 0D
+T 92 00 DD E1 C9
 R 00 00 00 00
-T 99 00
+T 95 00
 R 00 00 00 00
-T 99 00 D6 09 20 09 21 02 00 39 4E 0C 0C 0C 0C
+T 95 00 0E 00 C5 CD 00 00 11 0A 00 D5 E5 CD 00 00
+R 00 00 00 00 02 06 00 00 02 0E 05 00
+T A3 00 F1 F1 C1 7D FE 01 30 04 0E 00 18 25
 R 00 00 00 00
-T A6 00
+T AF 00
 R 00 00 00 00
-T A6 00 69 C9
+T AF 00 FE 04 30 04 0E 01 18 1D
 R 00 00 00 00
-T A8 00
+T B7 00
 R 00 00 00 00
-T A8 00 DD E5 DD 21 00 00 DD 39 DD 4E 04 DD 46 05
+T B7 00 FE 07 30 04 0E 02 18 15
 R 00 00 00 00
-T B6 00 3A 04 00 02 DD 4E 06 DD 46 07 21 00 00 23
-R 00 00 00 00 02 03 03 00 02 0D 03 00
-T C4 00 23 23 7E 02 DD E1 C9
+T BF 00
 R 00 00 00 00
-T CB 00
+T BF 00 FE 09 30 04 0E 03 18 0D
 R 00 00 00 00
-T CB 00 DD E5 DD 21 00 00 DD 39 DD 46 05 04 21
+T C7 00
 R 00 00 00 00
-T D8 00 96 00 E5 2E 95 E5 2E 20 E5 2E 20 E5 2E 20
+T C7 00 D6 09 20 09 21 02 00 39 4E 0C 0C 0C 0C
 R 00 00 00 00
-T E6 00 E5 2E 20 E5 2E 20 E5 3E 07 F5 33 C5 33 DD
+T D4 00
 R 00 00 00 00
-T F4 00 7E 04 F5 33 CD 00 00 21 11 00 39 F9 DD 46
-R 00 00 00 00 02 07 05 00
-T 02 01 05 04 04 21 96 00 E5 2E 95 E5 2E 20 E5 2E
+T D4 00 69 C9
 R 00 00 00 00
-T 10 01 20 E5 2E EF E5 2E EF E5 2E 20 E5 2E 20 E5
+T D6 00
 R 00 00 00 00
-T 1E 01 2E 96 E5 2E 95 E5 2E 20 E5 3E 0B F5 33 C5
+T D6 00 DD E5 DD 21 00 00 DD 39 DD 4E 04 DD 46 05
 R 00 00 00 00
-T 2C 01 33 DD 7E 04 F5 33 CD 00 00 21 19 00 39 F9
-R 00 00 00 00 02 09 05 00
-T 3A 01 DD 46 05 04 04 04 21 EF 00 E5 2E EF E5 2E
+T E4 00 3A 04 00 02 DD 4E 06 DD 46 07 21 00 00 23
+R 00 00 00 00 02 03 04 00 02 0D 04 00
+T F2 00 23 23 7E 02 DD E1 C9
 R 00 00 00 00
-T 48 01 95 E5 2E 96 E5 2E EF E5 2E EF E5 2E 95 E5
+T F9 00
 R 00 00 00 00
-T 56 01 2E 96 E5 2E EF E5 2E EF E5 2E 20 E5 3E 0B
+T F9 00 DD E5 DD 21 00 00 DD 39 DD 46 05 04 21
 R 00 00 00 00
-T 64 01 F5 33 C5 33 DD 7E 04 F5 33 CD 00 00 21
-R 00 00 00 00 02 0C 05 00
-T 71 01 19 00 39 F9 DD 46 05 04 04 04 04 21 95 00
+T 06 01 96 00 E5 2E 95 E5 2E 20 E5 2E 20 E5 2E 20
 R 00 00 00 00
-T 7F 01 E5 2E EF E5 2E EF E5 2E 95 E5 2E EF E5 2E
+T 14 01 E5 2E 20 E5 2E 20 E5 3E 07 F5 33 C5 33 DD
 R 00 00 00 00
-T 8D 01 97 E5 2E 98 E5 2E EF E5 2E 96 E5 2E EF E5
+T 22 01 7E 04 F5 33 CD 00 00 21 11 00 39 F9 DD 46
+R 00 00 00 00 02 07 06 00
+T 30 01 05 04 04 21 96 00 E5 2E 95 E5 2E 20 E5 2E
 R 00 00 00 00
-T 9B 01 2E EF E5 2E 96 E5 3E 0C F5 33 C5 33 DD 7E
+T 3E 01 20 E5 2E EF E5 2E EF E5 2E 20 E5 2E 20 E5
 R 00 00 00 00
-T A9 01 04 F5 33 CD 00 00 21 1B 00 39 F9 DD 7E 05
-R 00 00 00 00 02 06 05 00
-T B7 01 C6 05 47 21 EF 00 E5 2E EF E5 2E EF E5 2E
+T 4C 01 2E 96 E5 2E 95 E5 2E 20 E5 3E 0B F5 33 C5
 R 00 00 00 00
-T C5 01 EF E5 2E EF E5 2E 95 E5 2E 96 E5 2E EF E5
+T 5A 01 33 DD 7E 04 F5 33 CD 00 00 21 19 00 39 F9
+R 00 00 00 00 02 09 06 00
+T 68 01 DD 46 05 04 04 04 21 EF 00 E5 2E EF E5 2E
 R 00 00 00 00
-T D3 01 2E EF E5 2E EF E5 2E EF E5 2E EF E5 3E 0C
+T 76 01 95 E5 2E 96 E5 2E EF E5 2E EF E5 2E 95 E5
 R 00 00 00 00
-T E1 01 F5 33 C5 33 DD 7E 04 F5 33 CD 00 00 21
-R 00 00 00 00 02 0C 05 00
-T EE 01 1B 00 39 F9 DD 7E 05 C6 06 47 21 98 00 E5
+T 84 01 2E 96 E5 2E EF E5 2E EF E5 2E 20 E5 3E 0B
 R 00 00 00 00
-T FC 01 2E 97 E5 2E 96 E5 2E 20 E5 2E 90 E5 2E 20
+T 92 01 F5 33 C5 33 DD 7E 04 F5 33 CD 00 00 21
+R 00 00 00 00 02 0C 06 00
+T 9F 01 19 00 39 F9 DD 46 05 04 04 04 04 21 95 00
 R 00 00 00 00
-T 0A 02 E5 2E 20 E5 2E 90 E5 2E 20 E5 2E 95 E5 2E
+T AD 01 E5 2E EF E5 2E EF E5 2E 95 E5 2E EF E5 2E
 R 00 00 00 00
-T 18 02 98 E5 2E 97 E5 3E 0C F5 33 C5 33 DD 7E 04
+T BB 01 97 E5 2E 98 E5 2E EF E5 2E 96 E5 2E EF E5
 R 00 00 00 00
-T 26 02 F5 33 CD 00 00 21 1B 00 39 F9 DD 7E 05 C6
-R 00 00 00 00 02 05 05 00
-T 34 02 07 47 21 97 00 E5 2E 98 E5 2E 95 E5 2E 20
+T C9 01 2E EF E5 2E 96 E5 3E 0C F5 33 C5 33 DD 7E
 R 00 00 00 00
-T 42 02 E5 2E 90 E5 2E 90 E5 2E 20 E5 2E 96 E5 2E
+T D7 01 04 F5 33 CD 00 00 21 1B 00 39 F9 DD 7E 05
+R 00 00 00 00 02 06 06 00
+T E5 01 C6 05 47 21 EF 00 E5 2E EF E5 2E EF E5 2E
 R 00 00 00 00
-T 50 02 97 E5 2E 98 E5 2E 20 E5 3E 0B F5 33 C5 33
+T F3 01 EF E5 2E EF E5 2E 95 E5 2E 96 E5 2E EF E5
 R 00 00 00 00
-T 5E 02 DD 7E 04 F5 33 CD 00 00 21 19 00 39 F9 DD
-R 00 00 00 00 02 08 05 00
-T 6C 02 7E 05 C6 08 47 21 95 00 E5 2E E4 E5 2E 98
+T 01 02 2E EF E5 2E EF E5 2E EF E5 2E EF E5 3E 0C
 R 00 00 00 00
-T 7A 02 E5 2E F7 E5 2E 98 E5 2E 97 E5 2E 98 E5 2E
+T 0F 02 F5 33 C5 33 DD 7E 04 F5 33 CD 00 00 21
+R 00 00 00 00 02 0C 06 00
+T 1C 02 1B 00 39 F9 DD 7E 05 C6 06 47 21 98 00 E5
 R 00 00 00 00
-T 88 02 97 E5 2E F7 E5 2E 97 E5 2E 9F E5 2E 96 E5
+T 2A 02 2E 97 E5 2E 96 E5 2E 20 E5 2E 90 E5 2E 20
 R 00 00 00 00
-T 96 02 3E 0C F5 33 C5 33 DD 7E 04 F5 33 CD 00 00
-R 00 00 00 00 02 0E 05 00
-T A4 02 21 1B 00 39 F9 DD 7E 05 C6 09 47 21 EF 00
+T 38 02 E5 2E 20 E5 2E 90 E5 2E 20 E5 2E 95 E5 2E
 R 00 00 00 00
-T B2 02 E5 2E 98 E5 2E 20 E5 2E 20 E5 2E 97 E5 2E
+T 46 02 98 E5 2E 97 E5 3E 0C F5 33 C5 33 DD 7E 04
 R 00 00 00 00
-T C0 02 20 E5 2E 20 E5 2E 98 E5 2E 20 E5 2E 20 E5
+T 54 02 F5 33 CD 00 00 21 1B 00 39 F9 DD 7E 05 C6
+R 00 00 00 00 02 05 06 00
+T 62 02 07 47 21 97 00 E5 2E 98 E5 2E 95 E5 2E 20
 R 00 00 00 00
-T CE 02 2E 97 E5 2E EF E5 3E 0C F5 33 C5 33 DD 7E
+T 70 02 E5 2E 90 E5 2E 90 E5 2E 20 E5 2E 96 E5 2E
 R 00 00 00 00
-T DC 02 04 F5 33 CD 00 00 21 1B 00 39 F9 DD 7E 05
-R 00 00 00 00 02 06 05 00
-T EA 02 C6 0A 47 21 98 00 E5 2E 20 E5 2E 98 E5 2E
+T 7E 02 97 E5 2E 98 E5 2E 20 E5 3E 0B F5 33 C5 33
 R 00 00 00 00
-T F8 02 90 E5 2E 20 E5 2E EE E5 2E EE E5 2E 20 E5
+T 8C 02 DD 7E 04 F5 33 CD 00 00 21 19 00 39 F9 DD
+R 00 00 00 00 02 08 06 00
+T 9A 02 7E 05 C6 08 47 21 95 00 E5 2E E4 E5 2E 98
 R 00 00 00 00
-T 06 03 2E 90 E5 2E 97 E5 2E 20 E5 2E 97 E5 3E 0C
+T A8 02 E5 2E F7 E5 2E 98 E5 2E 97 E5 2E 98 E5 2E
 R 00 00 00 00
-T 14 03 F5 33 C5 33 DD 7E 04 F5 33 CD 00 00 21
-R 00 00 00 00 02 0C 05 00
-T 21 03 1B 00 39 F9 DD 7E 05 C6 0B 47 21 98 00 E5
+T B6 02 97 E5 2E F7 E5 2E 97 E5 2E 9F E5 2E 96 E5
 R 00 00 00 00
-T 2F 03 2E 20 E5 2E 90 E5 2E 20 E5 2E E2 E5 2E E1
+T C4 02 3E 0C F5 33 C5 33 DD 7E 04 F5 33 CD 00 00
+R 00 00 00 00 02 0E 06 00
+T D2 02 21 1B 00 39 F9 DD 7E 05 C6 09 47 21 EF 00
 R 00 00 00 00
-T 3D 03 E5 2E 20 E5 2E 90 E5 2E 20 E5 2E 97 E5 2E
+T E0 02 E5 2E 98 E5 2E 20 E5 2E 20 E5 2E 97 E5 2E
 R 00 00 00 00
-T 4B 03 20 E5 3E 0B F5 33 C5 33 DD 7E 04 F5 33 CD
+T EE 02 20 E5 2E 20 E5 2E 98 E5 2E 20 E5 2E 20 E5
 R 00 00 00 00
-T 59 03 00 00 21 19 00 39 F9 DD 7E 05 C6 0C 47 21
-R 00 00 00 00 02 02 05 00
-T 67 03 90 00 E5 2E 20 E5 2E 20 E5 2E 20 E5 2E 20
+T FC 02 2E 97 E5 2E EF E5 3E 0C F5 33 C5 33 DD 7E
 R 00 00 00 00
-T 75 03 E5 2E 20 E5 2E 20 E5 2E 90 E5 2E 20 E5 2E
+T 0A 03 04 F5 33 CD 00 00 21 1B 00 39 F9 DD 7E 05
+R 00 00 00 00 02 06 06 00
+T 18 03 C6 0A 47 21 98 00 E5 2E 20 E5 2E 98 E5 2E
 R 00 00 00 00
-T 83 03 20 E5 3E 0A F5 33 C5 33 DD 7E 04 F5 33 CD
+T 26 03 90 E5 2E 20 E5 2E EE E5 2E EE E5 2E 20 E5
 R 00 00 00 00
-T 91 03 00 00 21 17 00 39 F9 DD 7E 05 C6 0D 47 21
-R 00 00 00 00 02 02 05 00
-T 9F 03 96 00 E5 2E 90 E5 2E 20 E5 2E E2 E5 2E EE
+T 34 03 2E 90 E5 2E 97 E5 2E 20 E5 2E 97 E5 3E 0C
 R 00 00 00 00
-T AD 03 E5 2E EE E5 2E E1 E5 2E 20 E5 2E 90 E5 2E
+T 42 03 F5 33 C5 33 DD 7E 04 F5 33 CD 00 00 21
+R 00 00 00 00 02 0C 06 00
+T 4F 03 1B 00 39 F9 DD 7E 05 C6 0B 47 21 98 00 E5
 R 00 00 00 00
-T BB 03 95 E5 2E 20 E5 3E 0B F5 33 C5 33 DD 7E 04
+T 5D 03 2E 20 E5 2E 90 E5 2E 20 E5 2E E2 E5 2E E1
 R 00 00 00 00
-T C9 03 F5 33 CD 00 00 21 19 00 39 F9 DD 7E 05 C6
-R 00 00 00 00 02 05 05 00
-T D7 03 0E 47 21 98 00 E5 2E 90 E5 2E 20 E5 2E 20
+T 6B 03 E5 2E 20 E5 2E 90 E5 2E 20 E5 2E 97 E5 2E
 R 00 00 00 00
-T E5 03 E5 2E 20 E5 2E 20 E5 2E 90 E5 2E 97 E5 2E
+T 79 03 20 E5 3E 0B F5 33 C5 33 DD 7E 04 F5 33 CD
 R 00 00 00 00
-T F3 03 20 E5 2E 20 E5 3E 0A F5 33 C5 33 DD 7E 04
+T 87 03 00 00 21 19 00 39 F9 DD 7E 05 C6 0C 47 21
+R 00 00 00 00 02 02 06 00
+T 95 03 90 00 E5 2E 20 E5 2E 20 E5 2E 20 E5 2E 20
 R 00 00 00 00
-T 01 04 F5 33 CD 00 00 21 17 00 39 F9 DD 7E 05 C6
-R 00 00 00 00 02 05 05 00
-T 0F 04 0F 47 21 98 00 E5 2E 97 E5 2E 90 E5 2E 90
+T A3 03 E5 2E 20 E5 2E 20 E5 2E 90 E5 2E 20 E5 2E
 R 00 00 00 00
-T 1D 04 E5 2E 98 E5 2E 97 E5 2E 20 E5 2E 20 E5 2E
+T B1 03 20 E5 3E 0A F5 33 C5 33 DD 7E 04 F5 33 CD
 R 00 00 00 00
-T 2B 04 20 E5 3E 09 F5 33 C5 33 DD 7E 04 F5 33 CD
+T BF 03 00 00 21 17 00 39 F9 DD 7E 05 C6 0D 47 21
+R 00 00 00 00 02 02 06 00
+T CD 03 96 00 E5 2E 90 E5 2E 20 E5 2E E2 E5 2E EE
 R 00 00 00 00
-T 39 04 00 00 21 15 00 39 F9 DD 7E 05 C6 10 47 21
-R 00 00 00 00 02 02 05 00
-T 47 04 98 00 E5 2E 97 E5 2E 98 E5 2E 97 E5 2E 20
+T DB 03 E5 2E EE E5 2E E1 E5 2E 20 E5 2E 90 E5 2E
 R 00 00 00 00
-T 55 04 E5 2E 20 E5 2E 20 E5 2E 20 E5 3E 08 F5 33
+T E9 03 95 E5 2E 20 E5 3E 0B F5 33 C5 33 DD 7E 04
 R 00 00 00 00
-T 63 04 C5 33 DD 7E 04 F5 33 CD 00 00 21 13 00 39
-R 00 00 00 00 02 0A 05 00
-T 71 04 F9 DD E1 C9
+T F7 03 F5 33 CD 00 00 21 19 00 39 F9 DD 7E 05 C6
+R 00 00 00 00 02 05 06 00
+T 05 04 0E 47 21 98 00 E5 2E 90 E5 2E 20 E5 2E 20
+R 00 00 00 00
+T 13 04 E5 2E 20 E5 2E 20 E5 2E 90 E5 2E 97 E5 2E
+R 00 00 00 00
+T 21 04 20 E5 2E 20 E5 3E 0A F5 33 C5 33 DD 7E 04
+R 00 00 00 00
+T 2F 04 F5 33 CD 00 00 21 17 00 39 F9 DD 7E 05 C6
+R 00 00 00 00 02 05 06 00
+T 3D 04 0F 47 21 98 00 E5 2E 97 E5 2E 90 E5 2E 90
+R 00 00 00 00
+T 4B 04 E5 2E 98 E5 2E 97 E5 2E 20 E5 2E 20 E5 2E
+R 00 00 00 00
+T 59 04 20 E5 3E 09 F5 33 C5 33 DD 7E 04 F5 33 CD
+R 00 00 00 00
+T 67 04 00 00 21 15 00 39 F9 DD 7E 05 C6 10 47 21
+R 00 00 00 00 02 02 06 00
+T 75 04 98 00 E5 2E 97 E5 2E 98 E5 2E 97 E5 2E 20
+R 00 00 00 00
+T 83 04 E5 2E 20 E5 2E 20 E5 2E 20 E5 3E 08 F5 33
+R 00 00 00 00
+T 91 04 C5 33 DD 7E 04 F5 33 CD 00 00 21 13 00 39
+R 00 00 00 00 02 0A 06 00
+T 9F 04 F9 DD E1 C9
 R 00 00 00 00

@@ -4,6 +4,7 @@
 #include "../engine/enum_manager.h"
 #include "../engine/fight_manager.h"
 #include "../engine/font_manager.h"
+#include "../engine/hack_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/locale_manager.h"
@@ -46,6 +47,7 @@ void screen_forest_screen_load()
 
 void screen_forest_screen_update( unsigned char *screen_type )
 {
+	struct_hack_object *ho = &global_hack_object;
 	unsigned char input;
 	unsigned char value;
 	unsigned char xp = 0;
@@ -109,6 +111,12 @@ void screen_forest_screen_update( unsigned char *screen_type )
 	{
 		if( fight_type_run == curr_selection )
 		{
+			if( ho->hack_nodead )
+			{
+				*screen_type = screen_type_stats;
+				return;
+			}
+
 			value = rand() % MAX_RANDOM;
 			if( value < HLF_RANDOM )
 			{
