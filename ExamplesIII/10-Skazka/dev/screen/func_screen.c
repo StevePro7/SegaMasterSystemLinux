@@ -7,6 +7,7 @@
 #include "../engine/text_manager.h"
 #include "../devkit/_sms_manager.h"
 
+// TODO delete!!
 static void section04();
 
 void screen_func_screen_load()

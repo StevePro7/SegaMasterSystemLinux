@@ -43,7 +43,6 @@ void screen_intro_screen_load()
 
 void screen_intro_screen_update( unsigned char *screen_type )
 {
-	// TODO add delay
 	unsigned char input;
 	unsigned char timer;
 

@@ -8,6 +8,7 @@
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
 
+// TODO delete!!
 void screen_record_screen_load()
 {
 	// TODO this is the fight intro screen!

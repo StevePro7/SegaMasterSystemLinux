@@ -6,6 +6,7 @@
 #include "../engine/text_manager.h"
 #include "../banks/fixedbank.h"
 
+// TODO delete!!
 static void section01();
 static void section02();
 static void section03();

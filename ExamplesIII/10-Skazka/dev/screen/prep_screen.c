@@ -32,7 +32,6 @@ void screen_prep_screen_load()
 	}
 
 	row = 14;
-	
 	engine_select_manager_load( select_type, LEFT_X + 5, row, 2 );
 	devkit_SMS_displayOn();
 }

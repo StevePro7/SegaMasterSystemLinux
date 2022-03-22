@@ -133,7 +133,6 @@ void screen_forest_screen_update( unsigned char *screen_type )
 		{
 			engine_fight_manager_player_to_enemy( &enemys_damage );
 			engine_fight_manager_enemy_to_player( &player_damage );
-			//engine_fight_manager_battle( &enemys_damage, &player_damage );
 
 			engine_font_manager_text( LOCALE_FIGHT_ENEMYS, LEFT_X + 5, FIGHT_ROW - 3 );
 			engine_font_manager_text( LOCALE_FIGHT_PLAYER, LEFT_X + 5, FIGHT_ROW - 2 );

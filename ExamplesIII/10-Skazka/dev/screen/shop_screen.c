@@ -113,7 +113,4 @@ static void setup()
 	engine_font_manager_text( LOCALE_YOU_HAVE, LEFT_X + 7, SHOP_ROW + 2 );
 	engine_font_manager_text( LOCALE_GOLD, LEFT_X + 16, SHOP_ROW + 2 );
 	engine_font_manager_data( gold, LEFT_X + 24, SHOP_ROW + 2 );
-
-	//insufficient
-	//engine_font_manager_text( LOCALE_NOT_ENOUGH, LEFT_X + 8, row + 4 );
 }

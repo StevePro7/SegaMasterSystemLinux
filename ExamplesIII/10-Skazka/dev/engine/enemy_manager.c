@@ -33,7 +33,6 @@ void engine_boss_manager_load()
 
 void engine_enemy_manager_load( unsigned char level )
 {
-	
 	unsigned char value = rand() % MAX_RANDOM;
 	unsigned char index = 0;
 
@@ -125,17 +124,6 @@ void engine_enemy_manager_hit( char hp )
 	{
 		eo->hplo = 0;
 	}
-
-
-	//eo->hplo -= hp;
-	//if( eo->hplo <= 0 )
-	//{
-	//	eo->hplo = 0;
-	//}
-	//else
-	//{
-	//	engine_enemy_manager_hplo();
-	//}
 }
 
 bool engine_enemy_manager_dead()
