@@ -4,8 +4,8 @@
 #include "../engine/enum_manager.h"
 #include "../engine/fight_manager.h"
 #include "../engine/font_manager.h"
-#include "../engine/hack_manager.h"
 #include "../engine/global_manager.h"
+#include "../engine/hack_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/locale_manager.h"
 #include "../engine/player_manager.h"
@@ -111,6 +111,7 @@ void screen_forest_screen_update( unsigned char *screen_type )
 	{
 		if( fight_type_run == curr_selection )
 		{
+			// If invincible then run away.
 			if( ho->hack_nodead )
 			{
 				*screen_type = screen_type_stats;

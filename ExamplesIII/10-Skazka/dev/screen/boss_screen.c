@@ -6,6 +6,7 @@
 #include "../engine/fight_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/global_manager.h"
+#include "../engine/hack_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/locale_manager.h"
 #include "../engine/player_manager.h"
@@ -60,6 +61,7 @@ void screen_boss_screen_load()
 
 void screen_boss_screen_update( unsigned char *screen_type )
 {
+	struct_hack_object *ho = &global_hack_object;
 	unsigned char selection;
 	unsigned char input;
 	unsigned char idx;
@@ -123,12 +125,16 @@ void screen_boss_screen_update( unsigned char *screen_type )
 	{
 		if( boss_type_beg == selection )
 		{
-			// Subtract 2x HP if you beg.
-			engine_player_manager_hit( 2 );
-			if( engine_player_manager_dead() )
+			// If not invincible.
+			if( !ho->hack_nodead )
 			{
-				*screen_type = screen_type_over;
-				return;
+				// Subtract 2x HP if you beg.
+				engine_player_manager_hit( 2 );
+				if( engine_player_manager_dead() )
+				{
+					*screen_type = screen_type_over;
+					return;
+				}
 			}
 		}
 		if( boss_type_battle == selection )
