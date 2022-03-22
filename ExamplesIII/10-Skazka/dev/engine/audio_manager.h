@@ -3,6 +3,7 @@
 
 void engine_sound_manager_init();
 void engine_sound_manager_play( unsigned char index );
+void engine_sound_manager_fight();
 void engine_music_manager_play( unsigned char index );
 
 #endif//_AUDIO_MANAGER_H_

@@ -142,6 +142,8 @@ void screen_forest_screen_update( unsigned char *screen_type )
 		}
 		if( fight_type_battle == curr_selection )
 		{
+			engine_sound_manager_fight();
+
 			engine_fight_manager_player_to_enemy( &enemys_damage );
 			engine_fight_manager_enemy_to_player( &player_damage );
 

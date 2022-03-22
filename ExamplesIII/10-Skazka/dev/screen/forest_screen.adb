@@ -6,7 +6,8 @@ S:Lforest_screen.screen_forest_screen_update$screen_type$1$120({2}DG,SC:U),B,1,4
 S:Lforest_screen.screen_forest_screen_update$ho$1$121({2}DG,STtag_struct_hack_object:S),R,0,0,[]
 S:Lforest_screen.screen_forest_screen_update$input$1$121({1}SC:U),R,0,0,[l]
 S:Lforest_screen.screen_forest_screen_update$value$1$121({1}SC:U),R,0,0,[l]
-S:Lforest_screen.screen_forest_screen_update$xp$1$121({1}SC:U),B,1,-1
+S:Lforest_screen.screen_forest_screen_update$xp$1$121({1}SC:U),B,1,-3
+S:Lforest_screen.screen_forest_screen_update$sloc0$1$0({2}DG,SC:U),B,1,-2
 F:Fforest_screen$setup$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lforest_screen.setup$row$1$137({1}SC:U),R,0,0,[c]
 S:Lforest_screen.setup$idx$1$137({1}SC:U),R,0,0,[b]
@@ -45,6 +46,7 @@ S:Fforest_screen$player_gold$0$0({1}SC:U),E,0,0
 S:Fforest_screen$select_type$0$0({1}SC:U),E,0,0
 S:G$engine_sound_manager_init$0$0({2}DF,SV:S),C,0,0
 S:G$engine_sound_manager_play$0$0({2}DF,SV:S),C,0,0
+S:G$engine_sound_manager_fight$0$0({2}DF,SV:S),C,0,0
 S:G$engine_music_manager_play$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_splash$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_tiles$0$0({2}DF,SV:S),C,0,0

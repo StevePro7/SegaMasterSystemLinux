@@ -1,9 +1,11 @@
 #include "audio_manager.h"
+#include "enum_manager.h"
 #include "hack_manager.h"
 #include "sample_manager.h"
 #include "../object/audio_object.h"
 #include "../devkit/_sms_manager.h"
 #include "../devkit/_snd_manager.h"
+#include <stdlib.h>
 
 const unsigned char psgInit[] =
 {
@@ -31,6 +33,38 @@ void engine_sound_manager_play( unsigned char index )
 
 	devkit_SMS_mapROMBank( bank );
 	devkit_PSGSFXPlay( ( void * ) data, devkit_SFX_CHANNEL2() );
+}
+
+void engine_sound_manager_fight()
+{
+	struct_hack_object *ho = &global_hack_object;
+	unsigned char index;
+	unsigned char value;
+
+	index = 0;
+	value = rand() % 5;
+	if( 0 == value )
+	{
+		index = sound_type_4;
+	}
+	else if( 1 == value )
+	{
+		index = sound_type_6;
+	} 
+	else if( 2 == value )
+	{
+		index = sound_type_9;
+	}
+	else if( 3 == value )
+	{
+		index = sound_type_10;
+	}
+	else if( 4 == value )
+	{
+		index = sound_type_11;
+	}
+
+	engine_sound_manager_play( index );
 }
 
 void engine_music_manager_play( unsigned char index )
