@@ -32,6 +32,7 @@ S:G$beat_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:Fover_screen$first_time$0$0({1}:S),E,0,0
 S:G$engine_sound_manager_init$0$0({2}DF,SV:S),C,0,0
 S:G$engine_sound_manager_play$0$0({2}DF,SV:S),C,0,0
+S:G$engine_sound_manager_fight$0$0({2}DF,SV:S),C,0,0
 S:G$engine_music_manager_play$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_splash$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_tiles$0$0({2}DF,SV:S),C,0,0

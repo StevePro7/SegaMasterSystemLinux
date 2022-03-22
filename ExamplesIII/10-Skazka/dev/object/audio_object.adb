@@ -1,6 +1,6 @@
 M:audio_object
 S:G$music_sample_data$0$0({20}DA10d,DG,SC:U),E,0,0
-S:G$sound_sample_data$0$0({28}DA14d,DG,SC:U),E,0,0
+S:G$sound_sample_data$0$0({24}DA12d,DG,SC:U),E,0,0
 S:G$Intro01_wav_pcmenc$0$0({0}DA0d,SC:U),D,0,0
 S:G$Intro02_wav_pcmenc$0$0({0}DA0d,SC:U),D,0,0
 S:G$Intro03_wav_pcmenc$0$0({0}DA0d,SC:U),D,0,0
@@ -15,8 +15,6 @@ S:G$sound0_psg$0$0({0}DA0d,SC:U),D,0,0
 S:G$sound1_psg$0$0({0}DA0d,SC:U),D,0,0
 S:G$sound10_psg$0$0({0}DA0d,SC:U),D,0,0
 S:G$sound11_psg$0$0({0}DA0d,SC:U),D,0,0
-S:G$sound12_psg$0$0({0}DA0d,SC:U),D,0,0
-S:G$sound13_psg$0$0({0}DA0d,SC:U),D,0,0
 S:G$sound2_psg$0$0({0}DA0d,SC:U),D,0,0
 S:G$sound3_psg$0$0({0}DA0d,SC:U),D,0,0
 S:G$sound4_psg$0$0({0}DA0d,SC:U),D,0,0
@@ -26,4 +24,4 @@ S:G$sound7_psg$0$0({0}DA0d,SC:U),D,0,0
 S:G$sound8_psg$0$0({0}DA0d,SC:U),D,0,0
 S:G$sound9_psg$0$0({0}DA0d,SC:U),D,0,0
 S:G$music_sample_bank$0$0({10}DA10d,SC:U),D,0,0
-S:G$sound_sample_bank$0$0({14}DA14d,SC:U),D,0,0
+S:G$sound_sample_bank$0$0({12}DA12d,SC:U),D,0,0
