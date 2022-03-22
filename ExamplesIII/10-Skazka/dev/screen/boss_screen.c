@@ -159,6 +159,7 @@ void screen_boss_screen_update( unsigned char *screen_type )
 		}
 
 		boss_laugh( selection );
+		engine_sound_manager_fight();
 		event_stage = scene_type_select;
 	}
 
