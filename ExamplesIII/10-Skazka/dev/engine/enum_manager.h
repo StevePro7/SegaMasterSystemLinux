@@ -141,4 +141,26 @@ typedef enum tag_enum_menu_type
 
 } enum_menu_type;
 
+typedef enum tag_enum_sound_type
+{
+	sound_type_0 = 0,
+	sound_type_1 = 1,
+	sound_type_2 = 2,
+	sound_type_3 = 3,
+	sound_type_4 = 4,
+	sound_type_5 = 5,
+	sound_type_6 = 6,
+	sound_type_7 = 7,
+	sound_type_8 = 8,
+	sound_type_9 = 9,
+	sound_type_10 = 10,
+	sound_type_11 = 11,
+	sound_type_12 = 12,
+	sound_type_13 = 13,
+	sound_type_14 = 14,
+	sound_type_15 = 15,
+	sound_type_16 = 16,
+
+} enum_sound_type;
+
 #endif//_ENUM_MANAGER_H_

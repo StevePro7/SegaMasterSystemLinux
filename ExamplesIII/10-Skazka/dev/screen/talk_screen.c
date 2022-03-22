@@ -1,4 +1,5 @@
 #include "talk_screen.h"
+#include "../engine/audio_manager.h"
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
@@ -32,10 +33,12 @@ void screen_talk_screen_load()
 	// Adjust gold.
 	if( 0 == val )
 	{
+		engine_sound_manager_play( sound_type_1 );
 		engine_player_manager_dec_gold( NUM_GOLD );
 	}
 	if( ( MAX_RANDOM - 1 ) == val )
 	{
+		engine_sound_manager_play( sound_type_2 );
 		engine_player_manager_inc_gold( 0, NUM_GOLD );
 	}
 

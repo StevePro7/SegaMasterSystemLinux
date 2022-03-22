@@ -11,7 +11,6 @@ struct_hack_object global_hack_object;
 
 #define HACKER_START		0x0050
 
-// TODO delete this - set only during debugging / play testing
 #ifdef _CONSOLE
 #else
 #pragma disable_warning 110
