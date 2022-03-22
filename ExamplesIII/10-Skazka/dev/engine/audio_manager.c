@@ -45,27 +45,6 @@ void engine_sound_manager_fight()
 		return;
 	}
 
-	//if( 0 == value )
-	//{
-	//	index = sound_type_0;
-	//}
-	//else if( 1 == value )
-	//{
-	//	index = sound_type_1;
-	//} 
-	//else if( 2 == value )
-	//{
-	//	index = sound_type_2;
-	//}
-	//else if( 3 == value )
-	//{
-	//	index = sound_type_10;
-	//}
-	//else if( 4 == value )
-	//{
-	//	index = sound_type_11;
-	//}
-
 	engine_sound_manager_play( index );
 }
 

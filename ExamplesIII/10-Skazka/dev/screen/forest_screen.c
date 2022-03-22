@@ -135,7 +135,7 @@ void screen_forest_screen_update( unsigned char *screen_type )
 					return;
 				}
 
-				engine_sound_manager_play( sound_type_8 );
+				engine_sound_manager_play( sound_type_10 );
 				engine_font_manager_text( LOCALE_FIGHT_NOTRUN, LEFT_X + 5, FIGHT_ROW - 3 );
 				event_stage = scene_type_pushon;
 			}

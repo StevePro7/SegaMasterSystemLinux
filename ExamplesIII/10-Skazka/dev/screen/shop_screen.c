@@ -75,7 +75,7 @@ void screen_shop_screen_update( unsigned char *screen_type )
 	value = inventory[ selection ];
 	if( value > gold )
 	{
-		engine_sound_manager_play( sound_type_1 );
+		engine_sound_manager_play( sound_type_6 );
 		engine_font_manager_text( LOCALE_NOT_ENOUGH, LEFT_X + 8, SHOP_ROW + 4 );
 		*screen_type = screen_type_shop;
 		return;
@@ -105,8 +105,9 @@ void screen_shop_screen_update( unsigned char *screen_type )
 	gold -= value;
 	engine_player_manager_dec_gold( value );
 
+	engine_font_manager_text( LOCALE_29_SPCS, LEFT_X + 2, SHOP_ROW + 4 );
 	engine_font_manager_data( gold, LEFT_X + 24, SHOP_ROW + 2 );
-	engine_sound_manager_play( sound_type_0 );
+	engine_sound_manager_play( sound_type_5 );
 
 	event_stage = event_stage_pause;
 	*screen_type = screen_type_shop;
