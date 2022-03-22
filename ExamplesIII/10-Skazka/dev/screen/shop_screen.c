@@ -11,6 +11,7 @@
 #include "../engine/text_manager.h"
 #include "../engine/timer_manager.h"
 #include "../devkit/_sms_manager.h"
+#include "../devkit/_snd_manager.h"
 #include "../banks/fixedbank.h"
 
 #define SHOP_SCREEN_DELAY1	50
@@ -56,8 +57,12 @@ void screen_shop_screen_update( unsigned char *screen_type )
 	input = engine_input_manager_hold( input_type_fire2 );
 	if( input )
 	{
-		*screen_type = screen_type_stats;
-		return;
+		// Check edge case "Not enough gold" SFX!
+		if( !devkit_PSGSFXGetStatus() )
+		{
+			*screen_type = screen_type_stats;
+			return;
+		}
 	}
 
 	selection = engine_select_manager_update( select_type );
@@ -70,6 +75,7 @@ void screen_shop_screen_update( unsigned char *screen_type )
 	value = inventory[ selection ];
 	if( value > gold )
 	{
+		engine_sound_manager_play( sound_type_1 );
 		engine_font_manager_text( LOCALE_NOT_ENOUGH, LEFT_X + 8, SHOP_ROW + 4 );
 		*screen_type = screen_type_shop;
 		return;

@@ -1,4 +1,5 @@
 #include "forest_screen.h"
+#include "../engine/audio_manager.h"
 #include "../engine/content_manager.h"
 #include "../engine/enemy_manager.h"
 #include "../engine/enum_manager.h"
@@ -134,6 +135,7 @@ void screen_forest_screen_update( unsigned char *screen_type )
 					return;
 				}
 
+				engine_sound_manager_play( sound_type_8 );
 				engine_font_manager_text( LOCALE_FIGHT_NOTRUN, LEFT_X + 5, FIGHT_ROW - 3 );
 				event_stage = scene_type_pushon;
 			}
