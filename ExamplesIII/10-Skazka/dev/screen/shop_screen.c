@@ -1,4 +1,5 @@
 #include "shop_screen.h"
+#include "../engine/audio_manager.h"
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
@@ -8,8 +9,11 @@
 #include "../engine/player_manager.h"
 #include "../engine/select_manager.h"
 #include "../engine/text_manager.h"
+#include "../engine/timer_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
+
+#define SHOP_SCREEN_DELAY1	50
 
 static unsigned char event_stage;
 static unsigned char select_type;
@@ -27,13 +31,27 @@ void screen_shop_screen_load()
 	devkit_SMS_displayOff();
 	setup();
 	devkit_SMS_displayOn();
+
+	engine_timer_manager_load( SHOP_SCREEN_DELAY1 );
+	event_stage = event_stage_start;
 }
 
 void screen_shop_screen_update( unsigned char *screen_type )
 {
 	unsigned char input;
 	unsigned char value;
+	unsigned char timer;
 	unsigned char selection;
+
+	if( event_stage_pause == event_stage )
+	{
+		timer = engine_timer_manager_update();
+		if( timer )
+		{
+			*screen_type = screen_type_stats;
+			return;
+		}
+	}
 
 	input = engine_input_manager_hold( input_type_fire2 );
 	if( input )
@@ -78,9 +96,14 @@ void screen_shop_screen_update( unsigned char *screen_type )
 		engine_player_manager_set_oneups( life_type_oneup );
 	}
 
-	// TODO sound effect??
+	gold -= value;
 	engine_player_manager_dec_gold( value );
-	*screen_type = screen_type_stats;
+
+	engine_font_manager_data( gold, LEFT_X + 24, SHOP_ROW + 2 );
+	engine_sound_manager_play( sound_type_0 );
+
+	event_stage = event_stage_pause;
+	*screen_type = screen_type_shop;
 }
 
 static void setup()

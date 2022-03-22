@@ -72,6 +72,8 @@ void screen_title_screen_update( unsigned char *screen_type )
 
 	if( input || timer )
 	{
+		// TODO pause
+		//engine_sound_manager_play( sound_type_3 );
 		*screen_type = screen_type_intro;
 		return;
 	}
