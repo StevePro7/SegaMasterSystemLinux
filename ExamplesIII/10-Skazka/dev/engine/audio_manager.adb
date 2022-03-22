@@ -8,12 +8,11 @@ S:Laudio_manager.engine_sound_manager_play$bank$1$107({1}SC:U),R,0,0,[c]
 F:G$engine_sound_manager_fight$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Laudio_manager.engine_sound_manager_fight$ho$1$109({2}DG,STtag_struct_hack_object:S),R,0,0,[]
 S:Laudio_manager.engine_sound_manager_fight$index$1$109({1}SC:U),R,0,0,[b]
-S:Laudio_manager.engine_sound_manager_fight$value$1$109({1}SC:U),R,0,0,[c]
 F:G$engine_music_manager_play$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Laudio_manager.engine_music_manager_play$index$1$116({1}SC:U),B,1,4
-S:Laudio_manager.engine_music_manager_play$ho$1$117({2}DG,STtag_struct_hack_object:S),R,0,0,[]
-S:Laudio_manager.engine_music_manager_play$data$1$117({2}DG,SC:U),R,0,0,[c,b]
-S:Laudio_manager.engine_music_manager_play$bank$1$117({1}SC:U),R,0,0,[e]
+S:Laudio_manager.engine_music_manager_play$index$1$111({1}SC:U),B,1,4
+S:Laudio_manager.engine_music_manager_play$ho$1$112({2}DG,STtag_struct_hack_object:S),R,0,0,[]
+S:Laudio_manager.engine_music_manager_play$data$1$112({2}DG,SC:U),R,0,0,[c,b]
+S:Laudio_manager.engine_music_manager_play$bank$1$112({1}SC:U),R,0,0,[e]
 T:Faudio_manager$tag_struct_hack_object[({0}S:S$hack_delays$0$0({1}SC:U),Z,0,0)({1}S:S$hack_nodead$0$0({1}SC:U),Z,0,0)({2}S:S$hack_currxp$0$0({1}SC:U),Z,0,0)({3}S:S$hack_currhp$0$0({1}SC:U),Z,0,0)({4}S:S$hack_goldno$0$0({1}SC:U),Z,0,0)({5}S:S$hack_weapon$0$0({1}SC:U),Z,0,0)({6}S:S$hack_armors$0$0({1}SC:U),Z,0,0)({7}S:S$hack_oneups$0$0({1}SC:U),Z,0,0)({8}S:S$hack_musics$0$0({1}SC:U),Z,0,0)({9}S:S$hack_sounds$0$0({1}SC:U),Z,0,0)]
 S:G$global_hack_object$0$0({10}STtag_struct_hack_object:S),E,0,0
 S:G$music_sample_data$0$0({0}DA0d,DG,SC:U),E,0,0

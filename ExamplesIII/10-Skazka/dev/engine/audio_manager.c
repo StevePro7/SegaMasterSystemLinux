@@ -38,37 +38,33 @@ void engine_sound_manager_play( unsigned char index )
 void engine_sound_manager_fight()
 {
 	struct_hack_object *ho = &global_hack_object;
-	unsigned char index;
-	unsigned char value;
+	unsigned char index = rand() % 5;
 
-	index = 0;
-	value = rand() % 5;
-
-	if( !ho->hack_musics )
+	if( !ho->hack_sounds )
 	{
 		return;
 	}
 
-	if( 0 == value )
-	{
-		index = sound_type_4;
-	}
-	else if( 1 == value )
-	{
-		index = sound_type_6;
-	} 
-	else if( 2 == value )
-	{
-		index = sound_type_9;
-	}
-	else if( 3 == value )
-	{
-		index = sound_type_10;
-	}
-	else if( 4 == value )
-	{
-		index = sound_type_11;
-	}
+	//if( 0 == value )
+	//{
+	//	index = sound_type_0;
+	//}
+	//else if( 1 == value )
+	//{
+	//	index = sound_type_1;
+	//} 
+	//else if( 2 == value )
+	//{
+	//	index = sound_type_2;
+	//}
+	//else if( 3 == value )
+	//{
+	//	index = sound_type_10;
+	//}
+	//else if( 4 == value )
+	//{
+	//	index = sound_type_11;
+	//}
 
 	engine_sound_manager_play( index );
 }
