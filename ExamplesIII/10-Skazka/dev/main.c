@@ -24,7 +24,7 @@ void main( void )
 	//open_screen_type = screen_type_title;
 	//open_screen_type = screen_type_intro;
 	//open_screen_type = screen_type_rest;
-	//open_screen_type = screen_type_stats;
+	open_screen_type = screen_type_stats;
 	//open_screen_type = screen_type_forest;
 	//open_screen_type = screen_type_select;
 	//open_screen_type = screen_type_record;
@@ -32,7 +32,7 @@ void main( void )
 	//open_screen_type = screen_type_over;
 	//open_screen_type = screen_type_shop;
 	//open_screen_type = screen_type_prep;
-	open_screen_type = screen_type_boss;
+	//open_screen_type = screen_type_boss;
 	//open_screen_type = screen_type_complete;
 	//open_screen_type = screen_type_detail;
 	//open_screen_type = screen_type_test;
