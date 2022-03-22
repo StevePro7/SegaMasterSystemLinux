@@ -114,8 +114,8 @@ typedef enum tag_enum_shop_type
 	shop_type_sword = 0,
 	shop_type_axe = 1,
 	shop_type_kolchuga = 2,
-	shop_type_tegilay = 4,
-	shop_type_life = 5,
+	shop_type_tegilay = 3,
+	shop_type_life = 4,
 
 } enum_shop_type;
 
