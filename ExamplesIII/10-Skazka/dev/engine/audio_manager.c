@@ -43,6 +43,12 @@ void engine_sound_manager_fight()
 
 	index = 0;
 	value = rand() % 5;
+
+	if( !ho->hack_musics )
+	{
+		return;
+	}
+
 	if( 0 == value )
 	{
 		index = sound_type_4;
