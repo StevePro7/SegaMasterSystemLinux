@@ -8,6 +8,7 @@
 #include "../engine/player_manager.h"
 #include "../engine/text_manager.h"
 #include "../devkit/_sms_manager.h"
+#include "../devkit/_snd_manager.h"
 #include "../banks/fixedbank.h"
 #include <stdlib.h>
 
@@ -52,8 +53,11 @@ void screen_talk_screen_update( unsigned char *screen_type )
 	unsigned char input2 = engine_input_manager_hold( input_type_fire2 );
 	if( input1 || input2 )
 	{
-		*screen_type = screen_type_stats;
-		return;
+		if( !devkit_PSGSFXGetStatus() )
+		{
+			*screen_type = screen_type_stats;
+			return;
+		}
 	}
 
 	*screen_type = screen_type_talk;
