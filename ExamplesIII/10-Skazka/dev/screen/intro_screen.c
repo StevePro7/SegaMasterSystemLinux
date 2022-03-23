@@ -19,8 +19,6 @@ void screen_intro_screen_load()
 	unsigned char idx;
 
 	row = 1;
-	engine_timer_manager_load( INTRO_SCREEN_DELAY );
-
 	devkit_SMS_displayOff();
 	engine_content_manager_load_title( row );
 	engine_text_manager_border();
@@ -39,6 +37,8 @@ void screen_intro_screen_load()
 
 	engine_text_manager_fire();
 	devkit_SMS_displayOn();
+
+	engine_timer_manager_load( INTRO_SCREEN_DELAY );
 }
 
 void screen_intro_screen_update( unsigned char *screen_type )

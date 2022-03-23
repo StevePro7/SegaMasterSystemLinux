@@ -7,9 +7,12 @@
 #include "../engine/global_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/text_manager.h"
+#include "../engine/timer_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
 #include <stdbool.h>
+
+#define OVER_SCREEN_DELAY		200
 
 static void game_over();
 static bool first_time;
@@ -26,6 +29,8 @@ void screen_over_screen_load()
 	game_over();
 	engine_text_manager_fire();
 	devkit_SMS_displayOn();
+
+	engine_timer_manager_load( OVER_SCREEN_DELAY );
 	first_time = true;
 }
 
@@ -33,6 +38,7 @@ void screen_over_screen_update( unsigned char *screen_type )
 {
 	unsigned char input1;
 	unsigned char input2;
+	unsigned char timer;
 	unsigned char index;
 
 	if( first_time )
@@ -59,7 +65,8 @@ void screen_over_screen_update( unsigned char *screen_type )
 
 	input1 = engine_input_manager_hold( input_type_fire1 );
 	input2 = engine_input_manager_hold( input_type_fire2 );
-	if( input1 || input2 )
+	timer = engine_timer_manager_update();
+	if( input1 || input2 || timer )
 	{
 		
 		*screen_type = screen_type_title;

@@ -29,7 +29,7 @@ void main( void )
 	//open_screen_type = screen_type_select;
 	//open_screen_type = screen_type_record;
 	//open_screen_type = screen_type_func;
-	//open_screen_type = screen_type_over;
+	open_screen_type = screen_type_over;
 	//open_screen_type = screen_type_relive;
 	//open_screen_type = screen_type_shop;
 	//open_screen_type = screen_type_prep;
