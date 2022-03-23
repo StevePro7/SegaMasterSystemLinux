@@ -49,7 +49,7 @@ void screen_title_screen_update( unsigned char *screen_type )
 	if( first_time )
 	{
 		first_time = false;
-		if( go->play_intro )
+		if( go->play_music )
 		{
 			// Play intro music.
 			for( index = 0; index < 5; index++ )

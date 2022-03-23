@@ -46,7 +46,7 @@ void screen_complete_screen_update( unsigned char *screen_type )
 	if( input1 || input2 || timer )
 	{
 		devkit_PSGStop();
-		engine_game_manager_intro_off();
+		engine_game_manager_music_off();
 		*screen_type = screen_type_title;
 		return;
 	}

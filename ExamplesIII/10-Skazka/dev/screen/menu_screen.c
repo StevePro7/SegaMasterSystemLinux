@@ -58,11 +58,11 @@ void screen_menu_screen_update( unsigned char *screen_type )
 	switch( selection )
 	{
 	case menu_type_exit:
-		engine_game_manager_intro_on();
+		engine_game_manager_music_on();
 		*screen_type = screen_type_title;
 		break;
 	case menu_type_restart:
-		engine_game_manager_intro_off();
+		engine_game_manager_music_off();
 		*screen_type = screen_type_title;
 		break;
 	case menu_type_continue:

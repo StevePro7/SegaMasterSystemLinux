@@ -5,7 +5,8 @@
 
 typedef struct tag_struct_game_object
 {
-	bool play_intro;
+	bool play_music;
+	bool intro_once;
 
 } struct_game_object;
 
