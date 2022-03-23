@@ -18,6 +18,7 @@ void engine_player_manager_dec_gold( unsigned char gold );
 void engine_player_manager_inc_gold( unsigned char xp, unsigned char gold );
 void engine_player_manager_hit( char hp );
 bool engine_player_manager_dead();
+bool engine_player_manager_life();
 void engine_player_manager_boss();
 
 // Hack manager allows player to override default values.

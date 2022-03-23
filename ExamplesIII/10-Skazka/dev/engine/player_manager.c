@@ -160,6 +160,12 @@ bool engine_player_manager_dead()
 	return po->hp <= 0;
 }
 
+bool engine_player_manager_life()
+{
+	struct_player_object *po = &global_player_object;
+	return life_type_oneup == po->life;
+}
+
 void engine_player_manager_boss()
 {
 	// Function called once just before final battle.
