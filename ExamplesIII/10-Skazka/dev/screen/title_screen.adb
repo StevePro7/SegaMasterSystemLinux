@@ -9,7 +9,7 @@ S:Ltitle_screen.screen_title_screen_update$input$1$101({1}SC:U),R,0,0,[l]
 S:Ltitle_screen.screen_title_screen_update$timer$1$101({1}SC:U),R,0,0,[l]
 S:Ltitle_screen.screen_title_screen_update$index$1$101({1}SC:U),R,0,0,[d]
 T:Ftitle_screen$tag_struct_hack_object[({0}S:S$hack_delays$0$0({1}SC:U),Z,0,0)({1}S:S$hack_nodead$0$0({1}SC:U),Z,0,0)({2}S:S$hack_currxp$0$0({1}SC:U),Z,0,0)({3}S:S$hack_currhp$0$0({1}SC:U),Z,0,0)({4}S:S$hack_goldno$0$0({1}SC:U),Z,0,0)({5}S:S$hack_weapon$0$0({1}SC:U),Z,0,0)({6}S:S$hack_armors$0$0({1}SC:U),Z,0,0)({7}S:S$hack_oneups$0$0({1}SC:U),Z,0,0)({8}S:S$hack_musics$0$0({1}SC:U),Z,0,0)({9}S:S$hack_sounds$0$0({1}SC:U),Z,0,0)]
-T:Ftitle_screen$tag_struct_game_object[({0}S:S$play_music$0$0({1}:S),Z,0,0)({1}S:S$intro_once$0$0({1}:S),Z,0,0)]
+T:Ftitle_screen$tag_struct_game_object[({0}S:S$intro_once$0$0({1}:S),Z,0,0)({1}S:S$play_music$0$0({1}:S),Z,0,0)]
 T:Ftitle_screen$tag_struct_timer_object[({0}S:S$timer_count$0$0({2}SI:U),Z,0,0)({2}S:S$timer_value$0$0({2}SI:U),Z,0,0)]
 S:G$global_game_object$0$0({2}STtag_struct_game_object:S),E,0,0
 S:G$global_hack_object$0$0({10}STtag_struct_hack_object:S),E,0,0
@@ -29,6 +29,8 @@ S:G$engine_font_manager_text$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_zero$0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_init$0$0({2}DF,SV:S),C,0,0
+S:G$engine_game_manager_intro_on$0$0({2}DF,SV:S),C,0,0
+S:G$engine_game_manager_intro_off$0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_music_on$0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_music_off$0$0({2}DF,SV:S),C,0,0
 S:G$engine_hack_manager_init$0$0({2}DF,SV:S),C,0,0

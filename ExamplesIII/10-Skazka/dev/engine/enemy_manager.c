@@ -9,6 +9,8 @@
 // Global variable.
 struct_enemy_object global_enemy_object;
 
+#define ENEMY_ROW				8
+
 static void enemy_load( unsigned char index );
 
 unsigned char hplo_num[ MAX_ENEMIES ] = { 10, 10, 25, 25, 35, 50 };
