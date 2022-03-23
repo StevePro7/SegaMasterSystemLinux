@@ -26,6 +26,7 @@
 #define LOCALE_FIGHT_NOTRUN		"YOU COULDN'T RUN AWAY"
 #define LOCALE_FIGHT_ENEMYS		"DAMAGE TO ENEMY:     "
 #define LOCALE_FIGHT_PLAYER		"DAMAGE TO YOU:       "
+#define LOCALE_REVITALISING		"REVITALIZING..."
 
 
 #define LOCALE_NOT_ENOUGH		"NOT ENOUGH GOLD!"
@@ -36,5 +37,6 @@
 #define LOCALE_29_SPCS			"                             "
 #define LOCALE_SLASH			"/"
 #define LOCALE_HYPHEN			"-"
+#define LOCALE_DOT			"."
 
 #endif//_LOCALE_MANAGER_H_

@@ -1,4 +1,4 @@
-#include "record_screen.h"
+#include "relive_screen.h"
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
@@ -9,7 +9,7 @@
 #include "../banks/fixedbank.h"
 
 // TODO delete!!
-void screen_record_screen_load()
+void screen_relive_screen_load()
 {
 	// TODO this is the fight intro screen!
 	// need to move this or rename this....
@@ -24,11 +24,12 @@ void screen_record_screen_load()
 
 	// SKAZKA.
 	//engine_text_manager_title( row + 2 );
-
+	row = 12;
+	engine_font_manager_text( LOCALE_REVITALISING, LEFT_X + 9, row );
 	devkit_SMS_displayOn();
 }
 
-void screen_record_screen_update( unsigned char *screen_type )
+void screen_relive_screen_update( unsigned char *screen_type )
 {
-	*screen_type = screen_type_record;
+	*screen_type = screen_type_relive;
 }

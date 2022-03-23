@@ -10,6 +10,7 @@ S:G$engine_sound_manager_init$0$0({2}DF,SV:S),C,0,0
 S:G$engine_sound_manager_play$0$0({2}DF,SV:S),C,0,0
 S:G$engine_sound_manager_fight$0$0({2}DF,SV:S),C,0,0
 S:G$engine_music_manager_play$0$0({2}DF,SV:S),C,0,0
+S:G$engine_music_manager_beat$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_char$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0$0({2}DF,SV:S),C,0,0
