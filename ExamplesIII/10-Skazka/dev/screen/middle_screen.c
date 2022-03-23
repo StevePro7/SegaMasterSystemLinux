@@ -1,4 +1,4 @@
-#include "detail_screen.h"
+#include "middle_screen.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/global_manager.h"
@@ -13,7 +13,7 @@ static void section03();
 static void section04();
 static void section05();
 
-void screen_detail_screen_load()
+void screen_middle_screen_load()
 {
 	//engine_font_manager_text( "STEVEPRO", 5, 0 );
 	//section01();
@@ -25,9 +25,9 @@ void screen_detail_screen_load()
 	//engine_font_manager_text( "DETAIL SCREEN!!", 2, 20 );
 }
 
-void screen_detail_screen_update( unsigned char *screen_type )
+void screen_middle_screen_update( unsigned char *screen_type )
 {
-	*screen_type = screen_type_detail;
+	*screen_type = screen_type_middle;
 }
 
 // 11120 CURSOR 11,1

@@ -19,7 +19,7 @@ typedef enum tag_enum_screen_type
 	screen_type_menu = 13,
 	screen_type_relive = 14,
 	screen_type_over = 15,
-	screen_type_detail = 16,
+	screen_type_middle = 16,
 	screen_type_select = 17,
 	screen_type_test = 18,
 	screen_type_func = 19,
