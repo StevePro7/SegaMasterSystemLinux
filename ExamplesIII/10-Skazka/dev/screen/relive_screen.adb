@@ -1,9 +1,9 @@
 M:relive_screen
 F:G$screen_relive_screen_load$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lrelive_screen.screen_relive_screen_load$row$1$87({1}SC:U),R,0,0,[]
+S:Lrelive_screen.screen_relive_screen_load$row$1$89({1}SC:U),R,0,0,[]
 F:G$screen_relive_screen_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lrelive_screen.screen_relive_screen_update$screen_type$1$88({2}DG,SC:U),B,1,4
-S:Lrelive_screen.screen_relive_screen_update$timer$1$89({1}SC:U),R,0,0,[l]
+S:Lrelive_screen.screen_relive_screen_update$screen_type$1$90({2}DG,SC:U),B,1,4
+S:Lrelive_screen.screen_relive_screen_update$timer$1$91({1}SC:U),R,0,0,[l]
 T:Frelive_screen$tag_struct_player_object[({0}S:S$xp$0$0({1}SC:U),Z,0,0)({1}S:S$hp$0$0({1}SC:U),Z,0,0)({2}S:S$gold$0$0({2}SI:U),Z,0,0)({4}S:S$weapon$0$0({1}SC:U),Z,0,0)({5}S:S$armor$0$0({1}SC:U),Z,0,0)({6}S:S$life$0$0({1}SC:U),Z,0,0)({7}S:S$level$0$0({1}SC:U),Z,0,0)({8}S:S$max_hp$0$0({1}SC:U),Z,0,0)({9}S:S$max_xp$0$0({1}SC:U),Z,0,0)({10}S:S$won$0$0({1}SC:U),Z,0,0)({11}S:S$def_xp$0$0({1}SC:U),Z,0,0)({12}S:S$def_hp$0$0({1}SC:U),Z,0,0)({13}S:S$def_gold$0$0({2}SI:U),Z,0,0)({15}S:S$def_weapon$0$0({1}SC:U),Z,0,0)({16}S:S$def_armor$0$0({1}SC:U),Z,0,0)({17}S:S$def_life$0$0({1}SC:U),Z,0,0)]
 T:Frelive_screen$tag_struct_timer_object[({0}S:S$timer_count$0$0({2}SI:U),Z,0,0)({2}S:S$timer_value$0$0({2}SI:U),Z,0,0)]
 S:G$global_player_object$0$0({18}STtag_struct_player_object:S),E,0,0
@@ -27,6 +27,11 @@ S:G$menus_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$over_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$beat_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:Frelive_screen$count$0$0({1}SC:U),E,0,0
+S:G$engine_sound_manager_init$0$0({2}DF,SV:S),C,0,0
+S:G$engine_sound_manager_play$0$0({2}DF,SV:S),C,0,0
+S:G$engine_sound_manager_fight$0$0({2}DF,SV:S),C,0,0
+S:G$engine_music_manager_play$0$0({2}DF,SV:S),C,0,0
+S:G$engine_music_manager_beat$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_splash$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_tiles$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_title$0$0({2}DF,SV:S),C,0,0
