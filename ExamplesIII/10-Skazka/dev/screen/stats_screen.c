@@ -87,13 +87,13 @@ void screen_stats_screen_update( unsigned char *screen_type )
 
 static void print_stats()
 {
+	// IMPORTANT: "YOUR LVL" tightly coupled with the player level value.
 	engine_player_manager_stats();
 	engine_font_manager_text( LOCALE_STATISTICS, LEFT_X + 2, STATS_ROW + 2 );
 	engine_font_manager_text( LOCALE_HP, LEFT_X + 2, STATS_ROW + 3 );
 	engine_font_manager_text( LOCALE_XP, LEFT_X + 2, STATS_ROW + 4 );
 	engine_font_manager_text( LOCALE_GOLD, LEFT_X + 2, STATS_ROW + 5 );
 	engine_font_manager_text( LOCALE_YOU_HAVE, LEFT_X + 4, STATS_ROW + 6 );
-	engine_font_manager_text( LOCALE_YOUR_LVL, LEFT_X + 3, 22 );
 }
 
 static void print_village()

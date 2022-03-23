@@ -87,6 +87,9 @@ void engine_player_manager_stats()
 	{
 		engine_font_manager_text( LOCALE_HERO, LEFT_X + 15, STATS_ROW + 20 );
 	}
+
+	// Must render this here to cover the po->level spacing...!
+	engine_font_manager_text( LOCALE_YOUR_LVL, LEFT_X + 3, 22 );
 }
 
 void engine_player_manager_rest()
