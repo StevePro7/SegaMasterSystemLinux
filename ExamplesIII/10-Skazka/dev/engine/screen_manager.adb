@@ -38,8 +38,8 @@ S:G$screen_relive_screen_load$0$0({2}DF,SV:S),C,0,0
 S:G$screen_relive_screen_update$0$0({2}DF,SV:S),C,0,0
 S:G$screen_over_screen_load$0$0({2}DF,SV:S),C,0,0
 S:G$screen_over_screen_update$0$0({2}DF,SV:S),C,0,0
-S:G$screen_detail_screen_load$0$0({2}DF,SV:S),C,0,0
-S:G$screen_detail_screen_update$0$0({2}DF,SV:S),C,0,0
+S:G$screen_middle_screen_load$0$0({2}DF,SV:S),C,0,0
+S:G$screen_middle_screen_update$0$0({2}DF,SV:S),C,0,0
 S:G$screen_select_screen_load$0$0({2}DF,SV:S),C,0,0
 S:G$screen_select_screen_update$0$0({2}DF,SV:S),C,0,0
 S:G$screen_test_screen_load$0$0({2}DF,SV:S),C,0,0
