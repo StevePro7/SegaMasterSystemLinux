@@ -65,3 +65,22 @@ void engine_music_manager_play( unsigned char index )
 	devkit_SMS_mapROMBank( bank );
 	engine_sample_manager_play( data );
 }
+
+void engine_music_manager_beat()
+{
+	struct_hack_object *ho = &global_hack_object;
+	const unsigned char *data;
+	unsigned char bank;
+
+	// Beat screen music although in sound bank!
+	data = sound_sample_data[ sound_type_11 ];
+	bank = sound_sample_bank[ sound_type_11 ];
+
+	if( !ho->hack_musics )
+	{
+		return;
+	}
+
+	devkit_SMS_mapROMBank( bank );
+	devkit_PSGPlayNoRepeat( ( void * ) data );
+}
