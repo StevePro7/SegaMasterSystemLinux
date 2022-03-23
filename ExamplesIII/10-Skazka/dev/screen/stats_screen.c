@@ -67,8 +67,9 @@ void screen_stats_screen_update( unsigned char *screen_type )
 		*screen_type = screen_type_shop;
 		break;
 	case action_type_rest:
-		engine_sound_manager_play( sound_type_9 );
 		engine_player_manager_rest();
+		engine_player_manager_stats();
+		engine_sound_manager_play( sound_type_9 );
 		break;
 	case action_type_talk:
 		*screen_type = screen_type_talk;

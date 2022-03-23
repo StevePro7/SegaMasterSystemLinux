@@ -93,7 +93,6 @@ void engine_player_manager_rest()
 {
 	struct_player_object *po = &global_player_object;
 	po->hp = po->max_hp;
-	engine_font_manager_data( po->hp, LEFT_X + 6, STATS_ROW + 3 );
 }
 
 void engine_player_manager_draw()

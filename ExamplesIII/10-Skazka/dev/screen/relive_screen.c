@@ -18,12 +18,8 @@ static unsigned char count;
 
 void screen_relive_screen_load()
 {
-	// TODO this is the fight intro screen!
-	// need to move this or rename this....
-	unsigned char row;
-	//unsigned char idx;
+	unsigned char row = 1;
 
-	row = 1;
 	devkit_SMS_displayOff();
 	engine_content_manager_load_title( row );
 	engine_text_manager_clear( row + 2, row + 9 );
@@ -57,6 +53,8 @@ void screen_relive_screen_update( unsigned char *screen_type )
 		count++;
 		if( count > 3 )
 		{
+			// Replenish HP and remove +1.
+			engine_player_manager_rest();
 			engine_player_manager_set_oneups( life_type_none );
 			*screen_type = screen_type_stats;
 			return;
