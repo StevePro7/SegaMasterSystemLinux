@@ -1,60 +1,131 @@
 ;!FILE relive_screen.asm
 XL2
-H 9 areas 32 global symbols
+H 9 areas 79 global symbols
 M relive_screen
 O -mz80
 S _engine_font_manager_text Ref0000
 S _devkit_SMS_displayOn Ref0000
+S _engine_timer_manager_load Ref0000
 S _engine_text_manager_border Ref0000
 S _engine_text_manager_clear Ref0000
 S .__.ABS. Def0000
+S _engine_player_manager_set_oneups Ref0000
 S _devkit_SMS_displayOff Ref0000
 S _engine_content_manager_load_title Ref0000
-A _CODE size 3D flags 0 addr 0
-S A$relive_screen$120 Def003A
-S _screen_relive_screen_update Def0036
-S A$relive_screen$125 Def003C
-S A$relive_screen$116 Def0036
-S A$relive_screen$117 Def0037
-S C$relive_screen.c$20$1$74 Def0000
-S A$relive_screen$118 Def0038
-S C$relive_screen.c$30$1$74 Def0023
-S C$relive_screen.c$21$1$74 Def0003
-S A$relive_screen$119 Def0039
-S C$relive_screen.c$22$1$74 Def000B
-S C$relive_screen.c$32$1$74 Def0036
-S C$relive_screen.c$23$1$74 Def0013
-S C$relive_screen.c$12$0$0 Def0000
-S C$relive_screen.c$34$1$76 Def0036
-S C$relive_screen.c$35$1$76 Def003C
-S C$relive_screen.c$28$1$74 Def0016
-S C$relive_screen.c$29$1$74 Def0023
-S XG$screen_relive_screen_update$0$0 Def003C
-S A$relive_screen$70 Def000A
-S A$relive_screen$62 Def0000
+S _engine_timer_manager_update Ref0000
+A _CODE size A7 flags 0 addr 0
+S A$relive_screen$200 Def0091
+S A$relive_screen$101 Def0023
+S A$relive_screen$201 Def0094
+S A$relive_screen$202 Def0095
+S A$relive_screen$112 Def002E
+S A$relive_screen$221 Def00A2
+S A$relive_screen$203 Def0098
+S A$relive_screen$113 Def0031
+S A$relive_screen$213 Def009D
+S A$relive_screen$204 Def0099
+S A$relive_screen$132 Def0041
+S A$relive_screen$105 Def0026
+S A$relive_screen$142 Def004C
+S A$relive_screen$133 Def0043
+S A$relive_screen$106 Def0029
+S _screen_relive_screen_update Def0041
+S A$relive_screen$170 Def006E
+S A$relive_screen$143 Def004F
+S A$relive_screen$134 Def0047
+S A$relive_screen$107 Def002A
+S A$relive_screen$180 Def007C
+S A$relive_screen$171 Def0070
+S A$relive_screen$162 Def0060
+S A$relive_screen$153 Def0056
+S A$relive_screen$108 Def002D
+S A$relive_screen$226 Def00A4
+S A$relive_screen$208 Def009A
+S A$relive_screen$181 Def007F
+S A$relive_screen$172 Def0071
+S A$relive_screen$163 Def0064
+S A$relive_screen$154 Def0057
+S A$relive_screen$118 Def0033
+S A$relive_screen$218 Def009F
+S A$relive_screen$209 Def009C
+S A$relive_screen$182 Def0080
+S A$relive_screen$173 Def0072
+S A$relive_screen$164 Def0067
+S A$relive_screen$155 Def005A
+S A$relive_screen$219 Def00A1
+S A$relive_screen$183 Def0081
+S A$relive_screen$174 Def0074
+S A$relive_screen$165 Def0069
+S A$relive_screen$156 Def005B
+S A$relive_screen$147 Def0052
+S A$relive_screen$138 Def0049
+S C$relive_screen.c$51$2$90 Def0082
+S A$relive_screen$193 Def0089
+S A$relive_screen$175 Def0075
+S A$relive_screen$157 Def005E
+S A$relive_screen$148 Def0053
+S C$relive_screen.c$52$2$90 Def0089
+S A$relive_screen$194 Def008B
+S A$relive_screen$176 Def0076
+S A$relive_screen$158 Def005F
+S A$relive_screen$149 Def0054
+S A$relive_screen$195 Def008E
+S A$relive_screen$177 Def0077
+S C$relive_screen.c$45$2$90 Def0056
+S C$relive_screen.c$31$1$87 Def0016
+S A$relive_screen$178 Def0078
+S A$relive_screen$169 Def006B
+S C$relive_screen.c$46$2$90 Def0060
+S C$relive_screen.c$32$1$87 Def0023
+S A$relive_screen$188 Def0082
+S A$relive_screen$179 Def007B
+S A$relive_screen$189 Def0086
+S C$relive_screen.c$54$3$92 Def0090
+S C$relive_screen.c$34$1$87 Def0026
+S A$relive_screen$199 Def0090
+S XG$screen_relive_screen_update$0$0 Def00A4
+S C$relive_screen.c$55$3$92 Def009A
+S C$relive_screen.c$42$1$89 Def0049
+S C$relive_screen.c$35$1$87 Def002E
+S C$relive_screen.c$26$1$87 Def0000
+S C$relive_screen.c$61$1$89 Def009F
+S C$relive_screen.c$56$3$92 Def009D
+S C$relive_screen.c$48$3$91 Def006B
+S C$relive_screen.c$43$1$89 Def0052
+S C$relive_screen.c$36$1$87 Def0033
+S C$relive_screen.c$27$1$87 Def0003
+S C$relive_screen.c$18$0$0 Def0000
+S C$relive_screen.c$62$1$89 Def00A4
+S C$relive_screen.c$28$1$87 Def000B
+S C$relive_screen.c$38$1$87 Def0041
+S C$relive_screen.c$29$1$87 Def0013
+S C$relive_screen.c$55$1$89 Def004C
+S A$relive_screen$80 Def000B
 S G$screen_relive_screen_load$0$0 Def0000
-S A$relive_screen$90 Def0021
-S A$relive_screen$81 Def0013
-S A$relive_screen$91 Def0022
-S A$relive_screen$74 Def000B
-S A$relive_screen$75 Def000E
-S A$relive_screen$66 Def0003
-S A$relive_screen$85 Def0016
-S A$relive_screen$76 Def000F
-S A$relive_screen$67 Def0005
-S A$relive_screen$86 Def0019
-S A$relive_screen$77 Def0012
-S A$relive_screen$68 Def0006
-S A$relive_screen$87 Def001A
-S A$relive_screen$69 Def0007
-S Frelive_screen$__str_0$0$0 Def0026
-S A$relive_screen$88 Def001D
-S A$relive_screen$89 Def001E
-S A$relive_screen$99 Def0023
+S A$relive_screen$81 Def000E
+S A$relive_screen$72 Def0003
+S A$relive_screen$91 Def0016
+S A$relive_screen$82 Def000F
+S A$relive_screen$73 Def0005
+S A$relive_screen$92 Def0019
+S A$relive_screen$83 Def0012
+S A$relive_screen$74 Def0006
+S A$relive_screen$93 Def001A
+S A$relive_screen$75 Def0007
+S A$relive_screen$94 Def001D
+S A$relive_screen$76 Def000A
+S A$relive_screen$95 Def001E
+S A$relive_screen$68 Def0000
+S A$relive_screen$96 Def0021
+S A$relive_screen$87 Def0013
+S Frelive_screen$__str_0$0$0 Def0034
+S A$relive_screen$97 Def0022
+S Frelive_screen$__str_1$0$0 Def00A5
 S _screen_relive_screen_load Def0000
-S XG$screen_relive_screen_load$0$0 Def0023
-S G$screen_relive_screen_update$0$0 Def0036
-A _DATA size 0 flags 0 addr 0
+S XG$screen_relive_screen_load$0$0 Def0033
+S G$screen_relive_screen_update$0$0 Def0041
+A _DATA size 1 flags 0 addr 0
+S Frelive_screen$count$0$0 Def0000
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
@@ -63,20 +134,52 @@ A _GSFINAL size 0 flags 0 addr 0
 A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00
+R 00 00 01 00
+T 00 00
+R 00 00 01 00
+T 00 00
 R 00 00 00 00
 T 00 00 CD 00 00 3E 01 F5 33 CD 00 00 33 21 03 0A
-R 00 00 00 00 02 03 05 00 02 0A 06 00
+R 00 00 00 00 02 03 07 00 02 0A 08 00
 T 0E 00 E5 CD 00 00 F1 CD 00 00 21 09 0C E5 21
-R 00 00 00 00 02 04 03 00 02 08 02 00
-T 1B 00 26 00 E5 CD 00 00 F1 F1 C3 00 00
+R 00 00 00 00 02 04 04 00 02 08 03 00
+T 1B 00 34 00 E5 CD 00 00 F1 F1 CD 00 00 21 19 00
 R 00 00 00 00 00 02 00 00 02 06 00 00 02 0B 01 00
-T 26 00
+T 29 00 E5 CD 00 00 F1 21 00 00 36 00 C9
+R 00 00 00 00 02 04 02 00 00 08 01 00
+T 34 00
 R 00 00 00 00
-T 26 00 52 45 56 49 54 41 4C 49 5A 49 4E 47 2E 2E
+T 34 00 52 45 56 49 54 41 4C 49 5A 49 4E 47 00
 R 00 00 00 00
-T 34 00 2E 00
+T 41 00
 R 00 00 00 00
-T 36 00
+T 41 00 DD E5 DD 21 00 00 DD 39 CD 00 00 DD 4E 04
+R 00 00 00 00 02 0B 09 00
+T 4F 00 DD 46 05 7D B7 28 49 C5 21 19 00 E5 CD
 R 00 00 00 00
-T 36 00 C1 E1 E5 C5 36 0E C9
+T 5C 00 00 00 F1 C1 FD 21 00 00 FD 7E 00 D6 03 28
+R 00 00 00 00 02 02 02 00 00 08 01 00
+T 6A 00 17 FD 7E 00 C6 15 57 C5 3E 0C F5 33 D5 33
+R 00 00 00 00
+T 78 00 21 A5 00 E5 CD 00 00 F1 F1 C1
+R 00 00 00 00 00 03 00 00 02 07 00 00
+T 82 00
+R 00 00 00 00
+T 82 00 FD 21 00 00 FD 34 00 3E 03 FD 96 00 30 0F
+R 00 00 00 00 00 04 01 00
+T 90 00 C5 21 00 00 E5 CD 00 00 F1 C1 3E 05 02 18
+R 00 00 00 00 02 08 06 00
+T 9E 00 03
+R 00 00 00 00
+T 9F 00
+R 00 00 00 00
+T 9F 00 3E 0E 02
+R 00 00 00 00
+T A2 00
+R 00 00 00 00
+T A2 00 DD E1 C9
+R 00 00 00 00
+T A5 00
+R 00 00 00 00
+T A5 00 2E 00
 R 00 00 00 00

@@ -4,11 +4,17 @@
 #include "../engine/font_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/locale_manager.h"
+#include "../engine/player_manager.h"
 #include "../engine/text_manager.h"
+#include "../engine/timer_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
 
-// TODO delete!!
+#define RELIVE_SCREEN_DELAY		25
+#define RELIVE_ROW				12
+
+static unsigned char count;
+
 void screen_relive_screen_load()
 {
 	// TODO this is the fight intro screen!
@@ -22,14 +28,35 @@ void screen_relive_screen_load()
 	engine_text_manager_clear( row + 2, row + 9 );
 	engine_text_manager_border();
 
-	// SKAZKA.
-	//engine_text_manager_title( row + 2 );
-	row = 12;
-	engine_font_manager_text( LOCALE_REVITALISING, LEFT_X + 9, row );
+	engine_font_manager_text( LOCALE_REVITALISING, LEFT_X + 9, RELIVE_ROW );
 	devkit_SMS_displayOn();
+
+	engine_timer_manager_load( RELIVE_SCREEN_DELAY );
+	count = 0;
 }
 
 void screen_relive_screen_update( unsigned char *screen_type )
 {
+	unsigned char timer;
+
+	timer = engine_timer_manager_update();
+	if( timer )
+	{
+		engine_timer_manager_load( RELIVE_SCREEN_DELAY );
+		if( count != 3 )
+		{
+			engine_font_manager_text( LOCALE_DOT, LEFT_X + 21 + count, RELIVE_ROW );
+		}
+
+		count++;
+		if( count > 3 )
+		{
+			engine_player_manager_set_oneups( life_type_none );
+			*screen_type = screen_type_stats;
+			return;
+		}
+		
+	}
+
 	*screen_type = screen_type_relive;
 }
