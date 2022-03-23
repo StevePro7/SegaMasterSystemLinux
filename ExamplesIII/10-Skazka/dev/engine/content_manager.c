@@ -7,6 +7,7 @@
 
 void engine_content_manager_load_splash()
 {
+	// Splash tiles.
 	devkit_SMS_mapROMBank( splash__tilemap__stmcompr_bank );
 	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char* ) splash__tiles__psgcompr, LOAD_TILES );
 	devkit_SMS_loadSTMcompressedTileMap( 0, 0, ( void * ) splash__tilemap__stmcompr );

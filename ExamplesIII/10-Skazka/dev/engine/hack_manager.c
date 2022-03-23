@@ -92,5 +92,5 @@ void engine_hack_manager_invert()
 	// TODO remove lines!
 	//ho->hack_musics = 0;
 	//ho->hack_sounds = 0;
-	ho->hack_nodead = 1;
+	//ho->hack_nodead = 1;
 }
