@@ -13,14 +13,15 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-#define TITLE_SCREEN_DELAY		150
+#define TITLE_FLASH_DELAY	50
 
 static bool first_time;
+static unsigned char flash_count;
 
 void screen_title_screen_load()
 {
 	unsigned char row = 1;
-	engine_timer_manager_load( TITLE_SCREEN_DELAY );
+	engine_timer_manager_load( TITLE_FLASH_DELAY );
 
 	devkit_SMS_displayOff();
 	engine_content_manager_load_title( row );
@@ -31,9 +32,10 @@ void screen_title_screen_load()
 	engine_text_manager_title( row + 2 );
 	engine_font_manager_text( LOCALE_TITLE_MSG1, LEFT_X + 7, 12 );
 	engine_font_manager_text( LOCALE_TITLE_MSG2, LEFT_X + 3, 17 );
-	
+
 	devkit_SMS_displayOn();
 	first_time = true;
+	flash_count = 0;
 }
 
 void screen_title_screen_update( unsigned char *screen_type )
@@ -43,6 +45,7 @@ void screen_title_screen_update( unsigned char *screen_type )
 	unsigned char timer;
 	unsigned char index;
 
+	rand();
 	if( first_time )
 	{
 		first_time = false;
@@ -67,13 +70,23 @@ void screen_title_screen_update( unsigned char *screen_type )
 		engine_text_manager_fire();
 	}
 
-	input = engine_input_manager_hold( input_type_fire1 );
 	timer = engine_timer_manager_update();
-
-	if( input || timer )
+	if( timer )
 	{
-		// TODO pause
-		//engine_sound_manager_play( sound_type_3 );
+		flash_count = 1 - flash_count;
+		if( flash_count )
+		{
+			engine_font_manager_text( LOCALE_6_SPCS, LEFT_X + 11, FIRE1_ROW );
+		}
+		else
+		{
+			engine_font_manager_text( LOCALE_FIRE1_WORD, LEFT_X + 11, FIRE1_ROW );
+		}
+	}
+
+	input = engine_input_manager_hold( input_type_fire1 );
+	if( input )
+	{
 		*screen_type = screen_type_intro;
 		return;
 	}

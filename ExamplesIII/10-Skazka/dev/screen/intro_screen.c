@@ -11,7 +11,7 @@
 #include "../banks/fixedbank.h"
 #include <stdlib.h>
 
-#define INTRO_SCREEN_DELAY		300
+#define INTRO_SCREEN_DELAY		600
 
 void screen_intro_screen_load()
 {

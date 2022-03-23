@@ -47,7 +47,7 @@ void engine_text_manager_title( unsigned char row )
 
 void engine_text_manager_fire()
 {
-	engine_font_manager_text( LOCALE_FIRE1_CONT, LEFT_X + 5, 22 );
+	engine_font_manager_text( LOCALE_FIRE1_CONT, LEFT_X + 5, FIRE1_ROW );
 }
 
 void engine_text_manager_args( unsigned char x, unsigned char y, unsigned char num, ... )
