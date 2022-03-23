@@ -57,9 +57,6 @@ void engine_hack_manager_invert()
 {
 	struct_hack_object *ho = &global_hack_object;
 
-	//TODO delete
-	//ho->hack_delays = 1;
-
 	if( ho->hack_currxp > 0 && ho->hack_currxp <= MAX_XP )
 	{
 		engine_player_manager_def_currxp( ho->hack_currxp );
