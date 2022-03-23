@@ -4,6 +4,7 @@
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/game_manager.h"
+#include "../engine/hack_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/locale_manager.h"
@@ -40,6 +41,7 @@ void screen_title_screen_load()
 
 void screen_title_screen_update( unsigned char *screen_type )
 {
+	struct_hack_object *ho = &global_hack_object;
 	struct_game_object *go = &global_game_object;
 	unsigned char input;
 	unsigned char timer;
@@ -57,12 +59,15 @@ void screen_title_screen_update( unsigned char *screen_type )
 				engine_music_manager_play( index );
 				rand();
 
-				engine_input_manager_update();
-				input = engine_input_manager_move( input_type_fire1 );
-				if( input )
+				if( ho->hack_delays )
 				{
-					*screen_type = screen_type_intro;
-					return;
+					engine_input_manager_update();
+					input = engine_input_manager_move( input_type_fire2 );
+					if( input )
+					{
+						*screen_type = screen_type_intro;
+						return;
+					}
 				}
 			}
 		}
@@ -73,7 +78,11 @@ void screen_title_screen_update( unsigned char *screen_type )
 	timer = engine_timer_manager_update();
 	if( timer )
 	{
-		flash_count = 1 - flash_count;
+		if( !ho->hack_delays )
+		{
+			flash_count = 1 - flash_count;
+		}
+
 		if( flash_count )
 		{
 			engine_font_manager_text( LOCALE_6_SPCS, LEFT_X + 11, FIRE1_ROW );
@@ -87,8 +96,17 @@ void screen_title_screen_update( unsigned char *screen_type )
 	input = engine_input_manager_hold( input_type_fire1 );
 	if( input )
 	{
-		*screen_type = screen_type_intro;
-		return;
+		if( go->intro_once )
+		{
+			engine_game_manager_intro_off();
+			*screen_type = screen_type_intro;
+			return;
+		}
+		else
+		{
+			*screen_type = screen_type_load;
+			return;
+		}
 	}
 
 	rand();

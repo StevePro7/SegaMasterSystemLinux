@@ -38,6 +38,7 @@ void screen_over_screen_update( unsigned char *screen_type )
 	if( first_time )
 	{
 		first_time = false;
+		engine_game_manager_intro_off();
 		engine_game_manager_music_off();
 
 		// Play over music.

@@ -57,7 +57,7 @@ void engine_hack_manager_invert()
 {
 	struct_hack_object *ho = &global_hack_object;
 
-	ho->hack_oneups = 1;
+	//ho->hack_delays = 1;
 
 	if( ho->hack_currxp > 0 && ho->hack_currxp <= MAX_XP )
 	{
@@ -89,8 +89,7 @@ void engine_hack_manager_invert()
 	ho->hack_sounds = !ho->hack_sounds;
 
 	// TODO remove lines!
-	ho->hack_musics = 0;
+	//ho->hack_musics = 0;
 	//ho->hack_sounds = 0;
 	//ho->hack_nodead = 1;
-	
 }

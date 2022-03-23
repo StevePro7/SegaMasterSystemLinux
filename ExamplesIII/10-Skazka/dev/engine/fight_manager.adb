@@ -58,6 +58,7 @@ S:G$engine_player_manager_dec_gold$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_inc_gold$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_hit$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_dead$0$0({2}DF,:S),C,0,0
+S:G$engine_player_manager_life$0$0({2}DF,:S),C,0,0
 S:G$engine_player_manager_boss$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_def_currxp$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_def_currhp$0$0({2}DF,SV:S),C,0,0
