@@ -15,8 +15,10 @@
 #include <stdlib.h>
 
 #define TITLE_FLASH_DELAY	50
+#define TITLE_SOUND_DELAY	50
 
 static bool first_time;
+static unsigned char event_stage;
 static unsigned char flash_count;
 
 void screen_title_screen_load()
@@ -36,6 +38,7 @@ void screen_title_screen_load()
 
 	devkit_SMS_displayOn();
 	first_time = true;
+	event_stage = event_stage_start;
 	flash_count = 0;
 }
 
@@ -48,64 +51,79 @@ void screen_title_screen_update( unsigned char *screen_type )
 	unsigned char index;
 
 	rand();
-	if( first_time )
+	if( event_stage_pause == event_stage )
 	{
-		first_time = false;
-		if( go->play_music )
+		timer = engine_timer_manager_update();
+		if( timer )
 		{
-			// Play intro music.
-			for( index = 0; index < 5; index++ )
+			if( go->intro_once )
 			{
-				engine_music_manager_play( index );
-				rand();
-
-				engine_input_manager_update();
-				input = engine_input_manager_move( input_type_fire2 );
-				if( input )
+				engine_game_manager_intro_off();
+				*screen_type = screen_type_intro;
+				return;
+			}
+			else
+			{
+				*screen_type = screen_type_load;
+				return;
+			}
+		}
+	}
+	else
+	{
+		if( first_time )
+		{
+			first_time = false;
+			if( go->play_music )
+			{
+				// Play intro music.
+				for( index = 0; index < 5; index++ )
 				{
-					index = 5;
+					engine_music_manager_play( index );
+					rand();
+
+					engine_input_manager_update();
+					input = engine_input_manager_move( input_type_fire2 );
+					if( input )
+					{
+						index = 5;
+					}
+
 				}
-				
+			}
+
+			engine_text_manager_fire();
+		}
+
+		timer = engine_timer_manager_update();
+		if( timer )
+		{
+			if( !ho->hack_delays )
+			{
+				flash_count = 1 - flash_count;
+			}
+
+			if( flash_count )
+			{
+				engine_font_manager_text( LOCALE_6_SPCS, LEFT_X + 11, FIRE1_ROW );
+			}
+			else
+			{
+				engine_font_manager_text( LOCALE_FIRE1_WORD, LEFT_X + 11, FIRE1_ROW );
 			}
 		}
 
-		engine_text_manager_fire();
-	}
-
-	timer = engine_timer_manager_update();
-	if( timer )
-	{
-		if( !ho->hack_delays )
-		{
-			flash_count = 1 - flash_count;
-		}
-
-		if( flash_count )
-		{
-			engine_font_manager_text( LOCALE_6_SPCS, LEFT_X + 11, FIRE1_ROW );
-		}
-		else
+		input = engine_input_manager_hold( input_type_fire1 );
+		if( input )
 		{
 			engine_font_manager_text( LOCALE_FIRE1_WORD, LEFT_X + 11, FIRE1_ROW );
+			engine_timer_manager_load( TITLE_SOUND_DELAY );
+			engine_sound_manager_play( sound_type_5 );
+			event_stage = event_stage_pause;
 		}
+
+		rand();
 	}
 
-	input = engine_input_manager_hold( input_type_fire1 );
-	if( input )
-	{
-		if( go->intro_once )
-		{
-			engine_game_manager_intro_off();
-			*screen_type = screen_type_intro;
-			return;
-		}
-		else
-		{
-			*screen_type = screen_type_load;
-			return;
-		}
-	}
-
-	rand();
 	*screen_type = screen_type_title;
 }

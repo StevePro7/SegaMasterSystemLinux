@@ -15,6 +15,7 @@ S:G$global_game_object$0$0({2}STtag_struct_game_object:S),E,0,0
 S:G$global_hack_object$0$0({10}STtag_struct_hack_object:S),E,0,0
 S:G$global_timer_object$0$0({4}STtag_struct_timer_object:S),E,0,0
 S:Ftitle_screen$first_time$0$0({1}:S),E,0,0
+S:Ftitle_screen$event_stage$0$0({1}SC:U),E,0,0
 S:Ftitle_screen$flash_count$0$0({1}SC:U),E,0,0
 S:G$engine_sound_manager_init$0$0({2}DF,SV:S),C,0,0
 S:G$engine_sound_manager_play$0$0({2}DF,SV:S),C,0,0
