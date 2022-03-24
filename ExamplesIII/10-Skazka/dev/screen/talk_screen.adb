@@ -8,9 +8,9 @@ S:Ltalk_screen.screen_talk_screen_update$input1$1$128({1}SC:U),R,0,0,[l]
 S:Ltalk_screen.screen_talk_screen_update$input2$1$128({1}SC:U),R,0,0,[l]
 F:Ftalk_screen$display_msg$0$0({2}DF,SV:S),Z,0,2,0,0,0
 S:Ltalk_screen.display_msg$row$1$135({1}SC:U),R,0,0,[b]
-S:Ltalk_screen.display_msg$val$1$135({1}SC:U),B,1,-2
+S:Ltalk_screen.display_msg$val$1$135({1}SC:U),B,1,-1
 S:Ltalk_screen.display_msg$idx$1$135({1}SC:U),R,0,0,[c]
-S:Ltalk_screen.display_msg$beg$1$135({1}SC:U),B,1,-1
+S:Ltalk_screen.display_msg$beg$1$135({1}SC:U),B,1,-2
 S:Ltalk_screen.display_msg$txt$1$135({1}SC:U),R,0,0,[l]
 T:Ftalk_screen$tag_struct_player_object[({0}S:S$xp$0$0({1}SC:U),Z,0,0)({1}S:S$hp$0$0({1}SC:U),Z,0,0)({2}S:S$gold$0$0({2}SI:U),Z,0,0)({4}S:S$weapon$0$0({1}SC:U),Z,0,0)({5}S:S$armor$0$0({1}SC:U),Z,0,0)({6}S:S$life$0$0({1}SC:U),Z,0,0)({7}S:S$level$0$0({1}SC:U),Z,0,0)({8}S:S$max_hp$0$0({1}SC:U),Z,0,0)({9}S:S$max_xp$0$0({1}SC:U),Z,0,0)({10}S:S$won$0$0({1}SC:U),Z,0,0)({11}S:S$def_xp$0$0({1}SC:U),Z,0,0)({12}S:S$def_hp$0$0({1}SC:U),Z,0,0)({13}S:S$def_gold$0$0({2}SI:U),Z,0,0)({15}S:S$def_weapon$0$0({1}SC:U),Z,0,0)({16}S:S$def_armor$0$0({1}SC:U),Z,0,0)({17}S:S$def_life$0$0({1}SC:U),Z,0,0)]
 T:Ftalk_screen$tag_struct_hack_object[({0}S:S$hack_delays$0$0({1}SC:U),Z,0,0)({1}S:S$hack_nodead$0$0({1}SC:U),Z,0,0)({2}S:S$hack_currxp$0$0({1}SC:U),Z,0,0)({3}S:S$hack_currhp$0$0({1}SC:U),Z,0,0)({4}S:S$hack_goldno$0$0({1}SC:U),Z,0,0)({5}S:S$hack_weapon$0$0({1}SC:U),Z,0,0)({6}S:S$hack_armors$0$0({1}SC:U),Z,0,0)({7}S:S$hack_oneups$0$0({1}SC:U),Z,0,0)({8}S:S$hack_talker$0$0({1}SC:U),Z,0,0)({9}S:S$hack_musics$0$0({1}SC:U),Z,0,0)({10}S:S$hack_sounds$0$0({1}SC:U),Z,0,0)]
