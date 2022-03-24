@@ -25,12 +25,12 @@ void screen_test_screen_load()
 
 	// forest screen	enemy damage calculated depending on player weapon
 	//player_to_enemy();
-
+		
 	// boss screen		enemy damage calculated depending on player weapon
 	//player_to_boss();
 
 	// forest screen	player damage calculated depending on enemy attack
-	engine_target_manager_load( enemy_type_hungry_wolf );
+	engine_target_manager_load( enemy_type_baby_yaga );
 	engine_font_manager_text( "ENEMY AX", 15, 2 );
 	engine_font_manager_data( eo->ax, 25, 2 );
 	enemy_to_player();

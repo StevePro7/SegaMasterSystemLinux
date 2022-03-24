@@ -145,6 +145,9 @@ void engine_player_manager_inc_gold( unsigned char xp, unsigned char gold )
 void engine_player_manager_hit( char hp )
 {
 	struct_player_object *po = &global_player_object;
+
+	// TODO want to add armor to hp first before deducting hit so never go into negative
+	po->hp += po->armor;
 	if( po->hp > hp )
 	{
 		po->hp -= hp;
