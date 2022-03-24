@@ -60,6 +60,7 @@ void engine_fight_manager_boss_to_player( unsigned char *p_damage )
 	extra = eo->ax;
 	damage = get_damage( extra );
 
+	// TODO check
 	*p_damage = damage + eo->ax - po->armor;
 }
 
