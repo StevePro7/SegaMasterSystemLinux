@@ -109,6 +109,7 @@ void engine_fight_manager_boss_to_player( unsigned char *p_damage, unsigned char
 		damage += extra;
 	}
 
+	damage += extra;
 	*p_damage = damage;
 	//*p_damage = damage + eo->ax - po->armor;
 }

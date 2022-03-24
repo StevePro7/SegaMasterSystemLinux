@@ -23,7 +23,7 @@ S:Lfight_manager.engine_fight_manager_boss_to_player$p_damage$1$58({2}DG,SC:U),B
 S:Lfight_manager.engine_fight_manager_boss_to_player$random$1$58({1}SC:U),B,1,6
 S:Lfight_manager.engine_fight_manager_boss_to_player$eo$1$59({2}DG,STtag_struct_enemy_object:S),R,0,0,[]
 S:Lfight_manager.engine_fight_manager_boss_to_player$ho$1$59({2}DG,STtag_struct_hack_object:S),R,0,0,[]
-S:Lfight_manager.engine_fight_manager_boss_to_player$damage$1$59({1}SC:U),R,0,0,[b]
+S:Lfight_manager.engine_fight_manager_boss_to_player$damage$1$59({1}SC:U),R,0,0,[]
 S:Lfight_manager.engine_fight_manager_boss_to_player$extra$1$59({1}SC:U),R,0,0,[c]
 F:Ffight_manager$get_damage$0$0({2}DF,SC:U),Z,0,0,0,0,0
 S:Lfight_manager.get_damage$random$1$62({1}SC:U),B,1,4
