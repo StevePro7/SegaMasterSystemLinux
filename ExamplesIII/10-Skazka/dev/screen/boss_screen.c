@@ -149,7 +149,7 @@ void screen_boss_screen_update( unsigned char *screen_type )
 		if( boss_type_battle == selection )
 		{
 			random = engine_random_manager_next();
-			engine_fight_manager_player_to_enemy( &enemys_damage, random );
+			engine_fight_manager_player_to_boss( &enemys_damage, random );
 
 			//random = engine_random_manager_next();
 			engine_fight_manager_boss_to_player( &player_damage );

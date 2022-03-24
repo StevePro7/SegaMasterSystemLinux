@@ -9,6 +9,7 @@
 #include "../engine/random_manager.h"
 
 static void player_to_enemy();
+static void player_to_boss();
 //unsigned char index;
 
 void screen_test_screen_load()
@@ -19,7 +20,10 @@ void screen_test_screen_load()
 	engine_font_manager_data( po->weapon, 10, 4 );
 
 	// forest screen	enemy damage calculated depending on player weapon
-	player_to_enemy();
+	//player_to_enemy();
+
+	// boss screen		enemy damage calculated depending on player weapon
+	player_to_boss();
 }
 
 void screen_test_screen_update( unsigned char *screen_type )
@@ -66,6 +70,22 @@ void screen_test_screen_update( unsigned char *screen_type )
 	*screen_type = screen_type_test;
 }
 
+static void player_to_boss()
+{
+	// boss screen		enemy damage calculated depending on player weapon
+	unsigned char damage;
+	unsigned char random;
+
+	//random = engine_random_manager_next();
+	for( random = 0; random < MAX_RANDOM; random++ )
+	{
+		engine_font_manager_data( random, 10, random + 10 );
+		damage = 0;
+
+		engine_fight_manager_player_to_boss( &damage, random );
+		engine_font_manager_data( damage, 20, random + 10 );
+	}
+}
 
 static void player_to_enemy()
 {

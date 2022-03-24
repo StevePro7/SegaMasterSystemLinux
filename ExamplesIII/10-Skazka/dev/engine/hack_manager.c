@@ -58,7 +58,7 @@ void engine_hack_manager_invert()
 	struct_hack_object *ho = &global_hack_object;
 
 	// TODO delete
-	ho->hack_weapon = 0;
+	ho->hack_weapon = 2;
 	ho->hack_armors = 0;
 	// TODO delete
 
