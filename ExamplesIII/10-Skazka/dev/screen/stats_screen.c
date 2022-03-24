@@ -45,6 +45,7 @@ void screen_stats_screen_load()
 
 	row = 15;
 	engine_select_manager_load( select_type, LEFT_X + 10, row, 6 );
+	engine_font_manager_text( LOCALE_BUILD_VER, LEFT_X + 27, FIRE1_ROW );
 	devkit_SMS_displayOn();
 }
 

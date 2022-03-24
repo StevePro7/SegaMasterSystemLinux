@@ -1,6 +1,6 @@
 ;!FILE player_manager.asm
 XL2
-H 9 areas 2B0 global symbols
+H 9 areas 2BA global symbols
 M player_manager
 O -mz80
 S _weapon_texts Ref0000
@@ -11,163 +11,165 @@ S _engine_font_manager_data Ref0000
 S .__.ABS. Def0000
 S _engine_text_manager_args Ref0000
 S _devkit_SMS_mapROMBank Ref0000
-A _CODE size 365 flags 0 addr 0
+A _CODE size 377 flags 0 addr 0
 S A$player_manager$97 Def000A
 S A$player_manager$88 Def0003
-S G$engine_player_manager_def_currxp$0$0 Def0302
+S G$engine_player_manager_def_currxp$0$0 Def0314
 S Fplayer_manager$__str_1$0$0 Def01C6
 S A$player_manager$98 Def000D
 S G$engine_player_manager_hplo$0$0 Def0227
 S Fplayer_manager$__str_2$0$0 Def01CD
 S C$player_manager.c$130$1$101 Def0287
 S G$engine_player_manager_init$0$0 Def0000
-S _engine_player_manager_def_oneups Def033D
-S G$engine_player_manager_set_weapon$0$0 Def0347
+S _engine_player_manager_def_oneups Def034F
+S G$engine_player_manager_set_weapon$0$0 Def0359
+S C$player_manager.c$210$1$121 Def034F
 S C$player_manager.c$132$1$101 Def028E
-S C$player_manager.c$210$1$123 Def033D
-S G$engine_player_manager_boss$0$0 Def02ED
+S G$engine_player_manager_boss$0$0 Def02FF
 S C$player_manager.c$133$1$101 Def0294
-S C$player_manager.c$211$1$123 Def0346
-S C$player_manager.c$204$1$121 Def0333
-S XG$engine_player_manager_life$0$0 Def02EC
+S XG$engine_player_manager_life$0$0 Def02FE
 S C$player_manager.c$143$1$101 Def02BA
 S XG$engine_player_manager_load$0$0 Def005F
-S C$player_manager.c$205$1$121 Def0333
-S C$player_manager.c$180$1$110 Def0301
+S C$player_manager.c$212$1$123 Def034F
+S C$player_manager.c$200$1$117 Def033B
 S C$player_manager.c$141$2$103 Def02B2
-S C$player_manager.c$213$1$123 Def0347
-S XG$engine_player_manager_def_armors$0$0 Def033C
-S C$player_manager.c$206$1$121 Def033C
-S XG$engine_player_manager_def_currhp$0$0 Def0315
+S C$player_manager.c$220$1$125 Def0362
+S C$player_manager.c$213$1$123 Def034F
+S XG$engine_player_manager_def_armors$0$0 Def034E
+S XG$engine_player_manager_def_currhp$0$0 Def0327
+S C$player_manager.c$150$1$105 Def02C3
 S C$player_manager.c$145$1$101 Def02BB
 S _engine_player_manager_draw Def01DE
-S C$player_manager.c$207$1$121 Def033D
-S C$player_manager.c$200$1$119 Def0329
-S C$player_manager.c$182$1$110 Def0302
+S C$player_manager.c$221$1$125 Def0363
+S C$player_manager.c$214$1$123 Def0358
+S C$player_manager.c$207$1$121 Def0345
+S C$player_manager.c$180$2$111 Def0307
+S C$player_manager.c$160$1$105 Def02E6
+S C$player_manager.c$151$1$105 Def02D0
 S C$player_manager.c$135$2$102 Def0298
 S _engine_player_manager_stats Def00C9
-S C$player_manager.c$220$1$127 Def0351
-S C$player_manager.c$201$1$119 Def0332
-S C$player_manager.c$174$1$110 Def02ED
-S C$player_manager.c$150$2$106 Def02C8
+S C$player_manager.c$208$1$121 Def0345
+S C$player_manager.c$183$1$110 Def0313
+S C$player_manager.c$181$2$111 Def030D
 S C$player_manager.c$138$1$101 Def029B
 S C$player_manager.c$129$1$101 Def0284
-S C$player_manager.c$221$1$127 Def0351
-S C$player_manager.c$202$1$119 Def0333
-S C$player_manager.c$175$1$110 Def02ED
-S C$player_manager.c$151$2$106 Def02CF
+S C$player_manager.c$216$1$123 Def0359
+S C$player_manager.c$209$1$121 Def034E
+S C$player_manager.c$202$1$119 Def033B
+S C$player_manager.c$190$1$113 Def031E
+S C$player_manager.c$162$1$105 Def02E7
 S C$player_manager.c$139$1$101 Def02AA
 S _engine_player_manager_dec_gold Def0238
-S C$player_manager.c$222$1$127 Def035A
-S C$player_manager.c$215$1$125 Def0347
+S C$player_manager.c$203$1$119 Def033B
+S C$player_manager.c$185$1$110 Def0314
 S G$engine_player_manager_rest$0$0 Def01D6
-S _engine_player_manager_def_currxp Def0302
-S C$player_manager.c$223$1$127 Def035B
-S G$engine_player_manager_set_armors$0$0 Def0351
-S C$player_manager.c$216$1$125 Def0347
-S C$player_manager.c$209$1$123 Def033D
-S C$player_manager.c$190$1$115 Def030C
-S C$player_manager.c$161$1$108 Def02D5
+S _engine_player_manager_def_currxp Def0314
+S C$player_manager.c$230$1$129 Def0376
+S C$player_manager.c$223$1$127 Def0363
+S G$engine_player_manager_set_armors$0$0 Def0363
+S C$player_manager.c$204$1$119 Def0344
+S C$player_manager.c$177$1$110 Def02FF
+S C$player_manager.c$153$2$106 Def02D8
 S G$engine_player_manager_inc_gold$0$0 Def027C
 S _engine_player_manager_hplo Def0227
-S C$player_manager.c$217$1$125 Def0350
-S XG$engine_player_manager_def_oneups$0$0 Def0346
-S C$player_manager.c$191$1$115 Def0315
-S C$player_manager.c$184$1$113 Def0302
-S C$player_manager.c$162$1$108 Def02D5
-S C$player_manager.c$147$1$105 Def02BB
+S C$player_manager.c$224$1$127 Def0363
+S XG$engine_player_manager_def_oneups$0$0 Def0358
+S C$player_manager.c$205$1$119 Def0345
+S C$player_manager.c$178$1$110 Def02FF
+S C$player_manager.c$170$1$109 Def02F1
+S C$player_manager.c$154$2$106 Def02DD
+S C$player_manager.c$147$1$105 Def02C3
 S _engine_player_manager_init Def0000
-S C$player_manager.c$218$1$125 Def0351
-S C$player_manager.c$192$1$115 Def0316
-S C$player_manager.c$185$1$113 Def0302
-S C$player_manager.c$177$2$111 Def02F5
-S C$player_manager.c$171$1$109 Def02ED
-S C$player_manager.c$163$1$108 Def02DE
-S C$player_manager.c$157$1$105 Def02D4
-S C$player_manager.c$148$1$105 Def02BB
-S _engine_player_manager_set_weapon Def0347
-S C$player_manager.c$186$1$113 Def030B
-S C$player_manager.c$178$2$111 Def02FB
-S C$player_manager.c$155$2$107 Def02D2
-S C$player_manager.c$225$1$129 Def035B
-S C$player_manager.c$187$1$113 Def030C
-S C$player_manager.c$165$1$108 Def02DF
-S C$player_manager.c$159$1$105 Def02D5
-S _engine_player_manager_boss Def02ED
-S C$player_manager.c$226$1$129 Def035B
-S C$player_manager.c$227$1$129 Def0364
-S G$engine_player_manager_set_oneups$0$0 Def035B
-S C$player_manager.c$194$1$117 Def0316
+S C$player_manager.c$225$1$127 Def036C
+S C$player_manager.c$218$1$125 Def0359
+S C$player_manager.c$192$1$115 Def031E
+S C$player_manager.c$171$1$109 Def02F1
+S _engine_player_manager_set_weapon Def0359
+S C$player_manager.c$226$1$127 Def036D
+S C$player_manager.c$219$1$125 Def0359
+S C$player_manager.c$193$1$115 Def031E
+S C$player_manager.c$172$1$109 Def02FE
+S C$player_manager.c$164$1$108 Def02E7
+S C$player_manager.c$194$1$115 Def0327
+S C$player_manager.c$187$1$113 Def0314
+S C$player_manager.c$165$1$108 Def02E7
+S _engine_player_manager_boss Def02FF
+S C$player_manager.c$195$1$115 Def0328
+S C$player_manager.c$188$1$113 Def0314
+S C$player_manager.c$174$1$109 Def02FF
+S C$player_manager.c$166$1$108 Def02F0
+S A$player_manager$1020 Def0341
+S A$player_manager$1002 Def033A
+S G$engine_player_manager_set_oneups$0$0 Def036D
+S C$player_manager.c$189$1$113 Def031D
+S C$player_manager.c$158$2$107 Def02E2
 S G$engine_player_manager_hit$0$0 Def02BB
-S A$player_manager$1030 Def0333
-S C$player_manager.c$195$1$117 Def0316
-S C$player_manager.c$167$1$109 Def02DF
+S A$player_manager$1120 Def0369
+S A$player_manager$1102 Def0362
+S A$player_manager$1021 Def0342
+S C$player_manager.c$228$1$129 Def036D
+S C$player_manager.c$168$1$108 Def02F1
 S XG$engine_player_manager_draw$0$0 Def0226
-S A$player_manager$1130 Def035B
-S A$player_manager$1031 Def0336
-S C$player_manager.c$196$1$117 Def0328
-S C$player_manager.c$189$1$115 Def030C
-S C$player_manager.c$168$1$109 Def02DF
+S A$player_manager$1121 Def036A
+S A$player_manager$1022 Def0343
+S C$player_manager.c$229$1$129 Def036D
 S XG$engine_player_manager_stats$0$0 Def01C3
-S A$player_manager$1131 Def035E
-S A$player_manager$1032 Def0339
-S A$player_manager$1014 Def0332
-S A$player_manager$1005 Def0329
-S C$player_manager.c$197$1$117 Def0329
-S C$player_manager.c$169$1$109 Def02EC
-S A$player_manager$1132 Def0361
-S A$player_manager$1114 Def035A
-S A$player_manager$1105 Def0351
-S A$player_manager$1033 Def033A
-S A$player_manager$1006 Def032C
+S A$player_manager$1122 Def036B
+S C$player_manager.c$197$1$117 Def0328
+S C$player_manager.c$198$1$117 Def0328
 S XG$engine_player_manager_dec_gold$0$0 Def027B
-S A$player_manager$1133 Def0362
-S A$player_manager$1106 Def0354
-S A$player_manager$1034 Def033B
-S A$player_manager$1007 Def032F
-S XG$engine_player_manager_def_currxp$0$0 Def030B
+S A$player_manager$1070 Def0355
+S A$player_manager$1052 Def034E
+S A$player_manager$1043 Def0345
+S C$player_manager.c$199$1$117 Def033A
+S XG$engine_player_manager_def_currxp$0$0 Def031D
 S _engine_player_manager_rest Def01D6
-S A$player_manager$1134 Def0363
-S A$player_manager$1107 Def0357
-S A$player_manager$1080 Def0347
-S A$player_manager$1008 Def0330
+S A$player_manager$1152 Def0376
+S A$player_manager$1143 Def036D
+S A$player_manager$1071 Def0356
+S A$player_manager$1044 Def0348
 S XG$engine_player_manager_hplo$0$0 Def0237
-S _engine_player_manager_set_armors Def0351
+S _engine_player_manager_set_armors Def0363
 S _engine_player_manager_inc_gold Def027C
-S A$player_manager$1108 Def0358
-S A$player_manager$1081 Def034A
-S A$player_manager$1009 Def0331
-S C$player_manager.c$199$1$119 Def0329
+S A$player_manager$1144 Def0370
+S A$player_manager$1072 Def0357
+S A$player_manager$1045 Def034B
+S A$player_manager$1027 Def0344
+S A$player_manager$1018 Def033B
 S C$player_manager.c$101$1$93 Def01DE
 S XG$engine_player_manager_init$0$0 Def001F
-S A$player_manager$1109 Def0359
-S A$player_manager$1082 Def034D
-S A$player_manager$1064 Def0346
-S A$player_manager$1055 Def033D
-S XG$engine_player_manager_set_weapon$0$0 Def0350
-S A$player_manager$1083 Def034E
-S A$player_manager$1056 Def0340
-S G$engine_player_manager_dead$0$0 Def02D5
+S A$player_manager$1145 Def0373
+S A$player_manager$1127 Def036C
+S A$player_manager$1118 Def0363
+S A$player_manager$1046 Def034C
+S A$player_manager$1019 Def033E
+S XG$engine_player_manager_set_weapon$0$0 Def0362
+S A$player_manager$1146 Def0374
+S A$player_manager$1119 Def0366
+S A$player_manager$1047 Def034D
+S G$engine_player_manager_dead$0$0 Def02E7
 S C$player_manager.c$110$1$95 Def0227
-S A$player_manager$1084 Def034F
-S A$player_manager$1057 Def0343
-S A$player_manager$1039 Def033C
-S XG$engine_player_manager_boss$0$0 Def0301
+S A$player_manager$1147 Def0375
+S A$player_manager$1093 Def0359
+S XG$engine_player_manager_boss$0$0 Def0313
 S C$player_manager.c$111$1$95 Def0227
 S C$player_manager.c$103$1$94 Def01DE
-S A$player_manager$1139 Def0364
-S A$player_manager$1058 Def0344
+S A$player_manager$1094 Def035C
 S C$player_manager.c$112$1$95 Def0237
 S C$player_manager.c$104$1$94 Def01F5
-S A$player_manager$1059 Def0345
-S G$engine_player_manager_def_goldno$0$0 Def0316
+S A$player_manager$1095 Def035F
+S A$player_manager$1077 Def0358
+S A$player_manager$1068 Def034F
+S G$engine_player_manager_def_goldno$0$0 Def0328
 S C$player_manager.c$105$1$94 Def020F
-S _engine_player_manager_set_oneups Def035B
+S _engine_player_manager_set_oneups Def036D
 S _engine_player_manager_hit Def02BB
+S A$player_manager$1096 Def0360
+S A$player_manager$1069 Def0352
 S C$player_manager.c$114$1$95 Def0238
 S C$player_manager.c$106$1$94 Def0226
+S A$player_manager$1097 Def0361
 S G$engine_player_manager_calc$0$0 Def0060
-S A$player_manager$1089 Def0350
 S C$player_manager.c$108$1$94 Def0227
 S A$player_manager$300 Def00BE
 S A$player_manager$210 Def006A
@@ -187,7 +189,7 @@ S A$player_manager$230 Def0080
 S A$player_manager$212 Def006C
 S A$player_manager$131 Def0020
 S A$player_manager$113 Def001D
-S XG$engine_player_manager_set_armors$0$0 Def035A
+S XG$engine_player_manager_set_armors$0$0 Def036C
 S XG$engine_player_manager_inc_gold$0$0 Def02BA
 S C$player_manager.c$123$2$99 Def0271
 S C$player_manager.c$117$1$97 Def0241
@@ -199,7 +201,7 @@ S A$player_manager$240 Def0089
 S A$player_manager$231 Def0082
 S A$player_manager$213 Def006E
 S A$player_manager$204 Def0060
-S G$engine_player_manager_def_weapon$0$0 Def0329
+S G$engine_player_manager_def_weapon$0$0 Def033B
 S C$player_manager.c$127$1$97 Def027C
 S A$player_manager$601 Def0219
 S A$player_manager$430 Def014F
@@ -212,7 +214,6 @@ S A$player_manager$241 Def008A
 S A$player_manager$214 Def0070
 S A$player_manager$205 Def0063
 S A$player_manager$142 Def002A
-S A$player_manager$800 Def02CC
 S A$player_manager$701 Def027B
 S A$player_manager$602 Def021A
 S A$player_manager$503 Def01B6
@@ -233,8 +234,8 @@ S A$player_manager$206 Def0064
 S A$player_manager$152 Def0034
 S A$player_manager$143 Def002B
 S A$player_manager$107 Def0015
-S _engine_player_manager_dead Def02D5
-S A$player_manager$801 Def02CD
+S _engine_player_manager_dead Def02E7
+S A$player_manager$810 Def02D8
 S A$player_manager$711 Def027C
 S A$player_manager$630 Def022A
 S A$player_manager$603 Def021C
@@ -260,8 +261,10 @@ S A$player_manager$144 Def002C
 S A$player_manager$135 Def0023
 S A$player_manager$108 Def0018
 S C$player_manager.c$119$2$98 Def025C
-S A$player_manager$811 Def02D2
-S A$player_manager$802 Def02CE
+S A$player_manager$910 Def030A
+S A$player_manager$901 Def02FF
+S A$player_manager$811 Def02D9
+S A$player_manager$802 Def02D0
 S A$player_manager$730 Def0293
 S A$player_manager$721 Def0287
 S A$player_manager$712 Def027E
@@ -291,8 +294,11 @@ S A$player_manager$145 Def002D
 S A$player_manager$136 Def0024
 S A$player_manager$118 Def001F
 S C$player_manager.c$20$1$84 Def0015
-S A$player_manager$911 Def0301
-S A$player_manager$812 Def02D3
+S A$player_manager$911 Def030B
+S A$player_manager$902 Def0302
+S A$player_manager$830 Def02E6
+S A$player_manager$812 Def02DC
+S A$player_manager$803 Def02D1
 S A$player_manager$740 Def029A
 S A$player_manager$722 Def028A
 S A$player_manager$713 Def0282
@@ -325,12 +331,14 @@ S A$player_manager$164 Def0042
 S A$player_manager$155 Def0039
 S A$player_manager$146 Def002E
 S A$player_manager$137 Def0026
-S XG$engine_player_manager_set_oneups$0$0 Def0364
-S XG$engine_player_manager_hit$0$0 Def02D4
+S XG$engine_player_manager_set_oneups$0$0 Def0376
+S XG$engine_player_manager_hit$0$0 Def02E6
 S C$player_manager.c$21$1$84 Def001A
-S _engine_player_manager_def_goldno Def0316
-S A$player_manager$930 Def0309
-S A$player_manager$903 Def02FB
+S _engine_player_manager_def_goldno Def0328
+S A$player_manager$912 Def030C
+S A$player_manager$903 Def0303
+S A$player_manager$822 Def02E2
+S A$player_manager$804 Def02D2
 S A$player_manager$750 Def02A5
 S A$player_manager$723 Def028D
 S A$player_manager$642 Def0237
@@ -368,8 +376,11 @@ S A$player_manager$138 Def0029
 S C$player_manager.c$60$2$90 Def00C3
 S C$player_manager.c$30$1$85 Def0041
 S C$player_manager.c$22$1$84 Def001F
-S A$player_manager$931 Def030A
-S A$player_manager$904 Def02FE
+S A$player_manager$940 Def0314
+S A$player_manager$904 Def0305
+S A$player_manager$850 Def02EF
+S A$player_manager$823 Def02E3
+S A$player_manager$805 Def02D5
 S A$player_manager$751 Def02A6
 S A$player_manager$670 Def0252
 S A$player_manager$652 Def0238
@@ -399,11 +410,9 @@ S A$player_manager$148 Def0033
 S C$player_manager.c$70$1$91 Def00D9
 S C$player_manager.c$31$1$85 Def004B
 S _engine_player_manager_calc Def0060
-S A$player_manager$905 Def02FF
-S A$player_manager$860 Def02E3
-S A$player_manager$842 Def02DE
-S A$player_manager$833 Def02D5
-S A$player_manager$806 Def02CF
+S A$player_manager$941 Def0317
+S A$player_manager$905 Def0306
+S A$player_manager$806 Def02D6
 S A$player_manager$734 Def0294
 S A$player_manager$680 Def0261
 S A$player_manager$671 Def0253
@@ -428,15 +437,16 @@ S A$player_manager$266 Def00A1
 S A$player_manager$239 Def0088
 S A$player_manager$167 Def004A
 S A$player_manager$158 Def003C
-S G$engine_player_manager_life$0$0 Def02DF
+S G$engine_player_manager_life$0$0 Def02F1
 S C$player_manager.c$71$1$91 Def00E6
 S C$player_manager.c$32$1$85 Def0055
 S C$player_manager.c$24$1$84 Def0020
 S G$engine_player_manager_load$0$0 Def0020
 S C$player_manager.c$15$1$84 Def0000
-S A$player_manager$906 Def0300
-S A$player_manager$861 Def02E4
-S A$player_manager$834 Def02D8
+S A$player_manager$942 Def031A
+S A$player_manager$924 Def0313
+S A$player_manager$825 Def02E4
+S A$player_manager$816 Def02DD
 S A$player_manager$771 Def02BA
 S A$player_manager$735 Def0296
 S A$player_manager$717 Def0284
@@ -465,12 +475,13 @@ S C$player_manager.c$50$1$86 Def00A1
 S C$player_manager.c$33$1$85 Def005F
 S C$player_manager.c$16$1$84 Def0000
 S C$player_manager.c$13$0$0 Def0000
-S A$player_manager$961 Def0315
-S A$player_manager$952 Def030C
-S A$player_manager$862 Def02E6
-S A$player_manager$835 Def02DA
-S A$player_manager$817 Def02D4
-S A$player_manager$790 Def02C0
+S A$player_manager$943 Def031B
+S A$player_manager$916 Def030D
+S A$player_manager$880 Def02FD
+S A$player_manager$871 Def02F1
+S A$player_manager$817 Def02E0
+S A$player_manager$790 Def02C3
+S A$player_manager$781 Def02BB
 S A$player_manager$763 Def02B2
 S A$player_manager$745 Def029B
 S A$player_manager$727 Def028E
@@ -498,19 +509,17 @@ S A$player_manager$295 Def00B9
 S A$player_manager$277 Def00AB
 S A$player_manager$268 Def00A4
 S A$player_manager$259 Def009B
-S G$engine_player_manager_def_armors$0$0 Def0333
-S G$engine_player_manager_def_currhp$0$0 Def030C
+S G$engine_player_manager_def_armors$0$0 Def0345
+S G$engine_player_manager_def_currhp$0$0 Def031E
 S C$player_manager.c$82$1$91 Def014F
 S C$player_manager.c$73$1$91 Def00FA
 S C$player_manager.c$40$2$87 Def0073
 S C$player_manager.c$17$1$84 Def0005
-S A$player_manager$980 Def031F
-S A$player_manager$953 Def030F
-S A$player_manager$890 Def02F1
-S A$player_manager$872 Def02EC
-S A$player_manager$863 Def02E8
-S A$player_manager$836 Def02DC
-S A$player_manager$791 Def02C3
+S A$player_manager$944 Def031C
+S A$player_manager$917 Def0310
+S A$player_manager$872 Def02F4
+S A$player_manager$791 Def02C6
+S A$player_manager$782 Def02BD
 S A$player_manager$764 Def02B5
 S A$player_manager$755 Def02AA
 S A$player_manager$746 Def029E
@@ -543,13 +552,14 @@ S C$player_manager.c$41$2$87 Def0078
 S C$player_manager.c$35$1$85 Def0060
 S C$player_manager.c$26$1$85 Def0020
 S C$player_manager.c$18$1$84 Def000A
-S A$player_manager$981 Def0322
-S A$player_manager$954 Def0312
-S A$player_manager$936 Def030B
-S A$player_manager$927 Def0302
-S A$player_manager$891 Def02F3
-S A$player_manager$837 Def02DD
-S A$player_manager$792 Def02C4
+S A$player_manager$990 Def0328
+S A$player_manager$918 Def0311
+S A$player_manager$909 Def0307
+S A$player_manager$873 Def02F5
+S A$player_manager$855 Def02F0
+S A$player_manager$846 Def02E7
+S A$player_manager$792 Def02C7
+S A$player_manager$783 Def02C1
 S A$player_manager$756 Def02AB
 S A$player_manager$747 Def02A1
 S A$player_manager$729 Def0290
@@ -577,13 +587,12 @@ S C$player_manager.c$44$1$86 Def0083
 S C$player_manager.c$42$2$87 Def007D
 S C$player_manager.c$27$1$85 Def0023
 S C$player_manager.c$19$1$84 Def0010
-S _engine_player_manager_def_weapon Def0329
-S A$player_manager$982 Def0323
-S A$player_manager$955 Def0313
-S A$player_manager$928 Def0305
-S A$player_manager$892 Def02F4
-S A$player_manager$865 Def02EA
-S A$player_manager$793 Def02C5
+S _engine_player_manager_def_weapon Def033B
+S A$player_manager$991 Def032B
+S A$player_manager$919 Def0312
+S A$player_manager$874 Def02F6
+S A$player_manager$847 Def02EA
+S A$player_manager$793 Def02C8
 S A$player_manager$766 Def02B8
 S A$player_manager$757 Def02AD
 S A$player_manager$748 Def02A3
@@ -602,10 +611,12 @@ S A$player_manager$379 Def0113
 S A$player_manager$289 Def00B6
 S C$player_manager.c$58$2$90 Def00B9
 S C$player_manager.c$28$1$85 Def002A
-S A$player_manager$983 Def0324
-S A$player_manager$956 Def0314
-S A$player_manager$929 Def0308
-S A$player_manager$794 Def02C6
+S A$player_manager$992 Def032F
+S A$player_manager$974 Def0327
+S A$player_manager$965 Def031E
+S A$player_manager$875 Def02F8
+S A$player_manager$848 Def02EC
+S A$player_manager$794 Def02CB
 S A$player_manager$758 Def02AE
 S A$player_manager$749 Def02A4
 S A$player_manager$695 Def0277
@@ -620,7 +631,7 @@ S A$player_manager$488 Def01A7
 S A$player_manager$479 Def019E
 S A$player_manager$398 Def012A
 S A$player_manager$389 Def0120
-S XG$engine_player_manager_dead$0$0 Def02DE
+S XG$engine_player_manager_dead$0$0 Def02F0
 S C$player_manager.c$95$1$91 Def01D6
 S C$player_manager.c$86$1$91 Def01A0
 S C$player_manager.c$77$1$91 Def0126
@@ -628,9 +639,12 @@ S C$player_manager.c$64$1$86 Def00C9
 S C$player_manager.c$59$2$90 Def00BE
 S C$player_manager.c$37$1$86 Def0060
 S C$player_manager.c$29$1$85 Def0034
-S A$player_manager$984 Def0327
-S A$player_manager$867 Def02EB
-S A$player_manager$858 Def02DF
+S A$player_manager$993 Def0331
+S A$player_manager$966 Def0321
+S A$player_manager$885 Def02FE
+S A$player_manager$876 Def02FA
+S A$player_manager$849 Def02EE
+S A$player_manager$795 Def02CC
 S A$player_manager$759 Def02B0
 S A$player_manager$696 Def0279
 S A$player_manager$687 Def026F
@@ -646,47 +660,43 @@ S C$player_manager.c$69$1$91 Def00C9
 S C$player_manager.c$56$1$86 Def00B6
 S C$player_manager.c$52$2$89 Def00A6
 S C$player_manager.c$38$1$86 Def0060
-S A$player_manager$859 Def02E2
-S A$player_manager$787 Def02BB
+S A$player_manager$994 Def0334
+S A$player_manager$967 Def0324
+S A$player_manager$949 Def031D
+S A$player_manager$796 Def02CD
 S A$player_manager$679 Def025F
 S A$player_manager$598 Def0213
 S A$player_manager$589 Def0207
-S G$engine_player_manager_def_oneups$0$0 Def033D
+S G$engine_player_manager_def_oneups$0$0 Def034F
 S C$player_manager.c$53$2$89 Def00AB
-S A$player_manager$977 Def0316
-S A$player_manager$896 Def02F5
-S A$player_manager$788 Def02BE
+S A$player_manager$995 Def0335
+S A$player_manager$968 Def0325
+S A$player_manager$878 Def02FC
+S A$player_manager$797 Def02CE
 S A$player_manager$599 Def0215
-S XG$engine_player_manager_def_goldno$0$0 Def0328
+S XG$engine_player_manager_def_goldno$0$0 Def033A
 S C$player_manager.c$54$2$89 Def00B0
 S C$player_manager.c$46$2$88 Def0091
-S A$player_manager$978 Def0319
-S A$player_manager$897 Def02F8
-S A$player_manager$888 Def02ED
-S A$player_manager$798 Def02C8
-S A$player_manager$789 Def02BF
+S A$player_manager$996 Def0336
+S A$player_manager$969 Def0326
+S A$player_manager$798 Def02CF
 S C$player_manager.c$97$1$93 Def01D6
 S C$player_manager.c$88$2$92 Def01A9
 S C$player_manager.c$47$2$88 Def0096
-S A$player_manager$979 Def031D
-S A$player_manager$898 Def02F9
-S A$player_manager$889 Def02F0
-S A$player_manager$799 Def02CB
+S A$player_manager$997 Def0339
 S C$player_manager.c$98$1$93 Def01D6
 S XG$engine_player_manager_calc$0$0 Def00C8
 S C$player_manager.c$48$2$88 Def009B
-S A$player_manager$989 Def0328
-S A$player_manager$899 Def02FA
 S C$player_manager.c$99$1$93 Def01DD
-S _engine_player_manager_life Def02DF
+S _engine_player_manager_life Def02F1
 S _engine_player_manager_load Def0020
 S A$player_manager$92 Def0005
 S A$player_manager$93 Def0008
 S G$engine_player_manager_draw$0$0 Def01DE
-S _engine_player_manager_def_armors Def0333
-S _engine_player_manager_def_currhp Def030C
+S _engine_player_manager_def_armors Def0345
+S _engine_player_manager_def_currhp Def031E
 S G$engine_player_manager_stats$0$0 Def00C9
-S XG$engine_player_manager_def_weapon$0$0 Def0332
+S XG$engine_player_manager_def_weapon$0$0 Def0344
 S A$player_manager$87 Def0000
 S G$engine_player_manager_dec_gold$0$0 Def0238
 S Fplayer_manager$__str_0$0$0 Def01C4
@@ -872,71 +882,77 @@ T B8 02 DD E1 C9
 R 00 00 00 00
 T BB 02
 R 00 00 00 00
-T BB 02 01 01 00 0A 5F 21 02 00 39 7E 93 30 0A 21
-R 00 00 00 00 00 03 01 00
-T C9 02 02 00 39 7B 96 02 C3 27 02
+T BB 02 DD E5 DD 21 00 00 DD 39 01 01 00 0A 5F 21
+R 00 00 00 00 00 0B 01 00
+T C9 02 05 00 56 7B 82 57 02 0A 5F DD 7E 04 92 30
+R 00 00 00 00 00 02 01 00
+T D7 02 0A 7B DD 96 04 02 CD 27 02 18 02
 R 00 00 00 00 00 09 00 00
-T D2 02
+T E2 02
 R 00 00 00 00
-T D2 02 AF 02 C9
+T E2 02 AF 02
 R 00 00 00 00
-T D5 02
+T E4 02
 R 00 00 00 00
-T D5 02 3A 01 00 D6 01 3E 00 17 6F C9
+T E4 02 DD E1 C9
+R 00 00 00 00
+T E7 02
+R 00 00 00 00
+T E7 02 3A 01 00 D6 01 3E 00 17 6F C9
 R 00 00 00 00 00 03 01 00
-T DF 02
+T F1 02
 R 00 00 00 00
-T DF 02 21 06 00 4E 0D 20 04 3E 01 18 01
+T F1 02 21 06 00 4E 0D 20 04 3E 01 18 01
 R 00 00 00 00 00 03 01 00
-T EA 02
+T FC 02
 R 00 00 00 00
-T EA 02 AF
+T FC 02 AF
 R 00 00 00 00
-T EB 02
+T FD 02
 R 00 00 00 00
-T EB 02 6F C9
+T FD 02 6F C9
 R 00 00 00 00
-T ED 02
+T FF 02
 R 00 00 00 00
-T ED 02 21 00 00 4E 3E 3C 91 D0 01 04 00 0A 3C 02
+T FF 02 21 00 00 4E 3E 3C 91 D0 01 04 00 0A 3C 02
 R 00 00 00 00 00 03 01 00 00 0B 01 00
-T FB 02 01 05 00 0A 3C 02 C9
+T 0D 03 01 05 00 0A 3C 02 C9
 R 00 00 00 00 00 03 01 00
-T 02 03
+T 14 03
 R 00 00 00 00
-T 02 03 01 0B 00 21 02 00 39 7E 02 C9
+T 14 03 01 0B 00 21 02 00 39 7E 02 C9
 R 00 00 00 00 00 03 01 00
-T 0C 03
+T 1E 03
 R 00 00 00 00
-T 0C 03 01 0C 00 21 02 00 39 7E 02 C9
+T 1E 03 01 0C 00 21 02 00 39 7E 02 C9
 R 00 00 00 00 00 03 01 00
-T 16 03
+T 28 03
 R 00 00 00 00
-T 16 03 21 0D 00 FD 21 02 00 FD 39 FD 7E 00 77 23
+T 28 03 21 0D 00 FD 21 02 00 FD 39 FD 7E 00 77 23
 R 00 00 00 00 00 03 01 00
-T 24 03 FD 7E 01 77 C9
+T 36 03 FD 7E 01 77 C9
 R 00 00 00 00
-T 29 03
+T 3B 03
 R 00 00 00 00
-T 29 03 01 0F 00 21 02 00 39 7E 02 C9
+T 3B 03 01 0F 00 21 02 00 39 7E 02 C9
 R 00 00 00 00 00 03 01 00
-T 33 03
+T 45 03
 R 00 00 00 00
-T 33 03 01 10 00 21 02 00 39 7E 02 C9
+T 45 03 01 10 00 21 02 00 39 7E 02 C9
 R 00 00 00 00 00 03 01 00
-T 3D 03
+T 4F 03
 R 00 00 00 00
-T 3D 03 01 11 00 21 02 00 39 7E 02 C9
+T 4F 03 01 11 00 21 02 00 39 7E 02 C9
 R 00 00 00 00 00 03 01 00
-T 47 03
+T 59 03
 R 00 00 00 00
-T 47 03 01 04 00 21 02 00 39 7E 02 C9
+T 59 03 01 04 00 21 02 00 39 7E 02 C9
 R 00 00 00 00 00 03 01 00
-T 51 03
+T 63 03
 R 00 00 00 00
-T 51 03 01 05 00 21 02 00 39 7E 02 C9
+T 63 03 01 05 00 21 02 00 39 7E 02 C9
 R 00 00 00 00 00 03 01 00
-T 5B 03
+T 6D 03
 R 00 00 00 00
-T 5B 03 01 06 00 21 02 00 39 7E 02 C9
+T 6D 03 01 06 00 21 02 00 39 7E 02 C9
 R 00 00 00 00 00 03 01 00
