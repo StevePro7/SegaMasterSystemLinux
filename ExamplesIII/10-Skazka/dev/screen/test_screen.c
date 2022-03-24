@@ -8,28 +8,18 @@
 #include "../engine/player_manager.h"
 #include "../engine/random_manager.h"
 
-unsigned char index;
+static void player_to_enemy();
+//unsigned char index;
 
 void screen_test_screen_load()
 {
 	struct_player_object *po = &global_player_object;
-	unsigned char damage;
-	unsigned char random;
-	//index = 0;
-	//engine_player_manager_calc();
-	engine_font_manager_text( "TEST SCREEN!!", 2, 2 );
-	//engine_font_manager_data( index, 10, 14 );
-
+	engine_font_manager_text( "TEST SCREEN!!", 2, 0 );
+	engine_font_manager_text( "WEAPON", 4, 2 );
 	engine_font_manager_data( po->weapon, 10, 4 );
 
-	damage = 0;
-	random = engine_random_manager_next();
-
-	engine_font_manager_data( damage, 10, 6 );
-
-	engine_fight_manager_player_to_enemy( &damage, random );
-
-	engine_font_manager_data( damage, 10, 8 );
+	// forest screen	enemy damage calculated depending on player weapon
+	player_to_enemy();
 }
 
 void screen_test_screen_update( unsigned char *screen_type )
@@ -74,4 +64,22 @@ void screen_test_screen_update( unsigned char *screen_type )
 	//}
 
 	*screen_type = screen_type_test;
+}
+
+
+static void player_to_enemy()
+{
+	// forest screen	enemy damage calculated depending on player weapon
+	unsigned char damage;
+	unsigned char random;
+
+	//random = engine_random_manager_next();
+	for( random = 0; random < MAX_RANDOM; random++ )
+	{
+		engine_font_manager_data( random, 10, random + 10 );
+		damage = 0;
+
+		engine_fight_manager_player_to_enemy( &damage, random );
+		engine_font_manager_data( damage, 20, random + 10 );
+	}
 }
