@@ -29,6 +29,7 @@ void engine_hack_manager_init()
 	ho->hack_weapon = 0;
 	ho->hack_armors = 0;
 	ho->hack_oneups = 0;
+	ho->hack_talker = 0;
 	ho->hack_musics = 0;
 	ho->hack_sounds = 0;
 }
@@ -47,8 +48,9 @@ void engine_hack_manager_load()
 	ho->hack_weapon = PEEK( HACKER_START + 3 );			// 0x0053		// Set value to 1 or 2 for stock else 0.
 	ho->hack_armors = PEEK( HACKER_START + 4 );			// 0x0054		// Set value to 1 or 2 for armor else 0.
 	ho->hack_oneups = PEEK( HACKER_START + 5 );			// 0x0055		// Set value to 1=Life otherwise 0=None.
-	ho->hack_musics = PEEK( HACKER_START + 6 );			// 0x0056		// Set 0=Music to play otherwise silent.
-	ho->hack_sounds = PEEK( HACKER_START + 7 );			// 0x0057		// Set 0=Sound to play otherwise silent.
+	ho->hack_talker = PEEK( HACKER_START + 6 );			// 0x0056		// Set value to 1=repeat villagers talk.
+	ho->hack_musics = PEEK( HACKER_START + 7 );			// 0x0056		// Set 0=Music to play otherwise silent.
+	ho->hack_sounds = PEEK( HACKER_START + 8 );			// 0x0057		// Set 0=Sound to play otherwise silent.
 
 #endif
 }

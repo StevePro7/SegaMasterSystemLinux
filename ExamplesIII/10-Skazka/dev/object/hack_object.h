@@ -11,6 +11,7 @@ typedef struct tag_struct_hack_object
 	unsigned char hack_weapon;
 	unsigned char hack_armors;
 	unsigned char hack_oneups;
+	unsigned char hack_talker;
 	unsigned char hack_musics;
 	unsigned char hack_sounds;
 
