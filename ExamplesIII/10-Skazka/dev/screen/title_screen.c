@@ -59,16 +59,13 @@ void screen_title_screen_update( unsigned char *screen_type )
 				engine_music_manager_play( index );
 				rand();
 
-				if( ho->hack_delays )
+				engine_input_manager_update();
+				input = engine_input_manager_move( input_type_fire2 );
+				if( input )
 				{
-					engine_input_manager_update();
-					input = engine_input_manager_move( input_type_fire2 );
-					if( input )
-					{
-						*screen_type = screen_type_intro;
-						return;
-					}
+					index = 5;
 				}
+				
 			}
 		}
 
