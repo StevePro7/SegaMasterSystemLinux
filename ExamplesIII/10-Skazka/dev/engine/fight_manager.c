@@ -12,8 +12,6 @@ void engine_fight_manager_player_to_enemy( unsigned char *e_damage, unsigned cha
 {
 	// Damage to enemy.
 	struct_player_object *po = &global_player_object;
-	//struct_enemy_object *eo = &global_enemy_object;
-
 	unsigned char damage;
 	unsigned char extra;
 
@@ -26,7 +24,6 @@ void engine_fight_manager_player_to_enemy( unsigned char *e_damage, unsigned cha
 	}
 	else if( 0 == damage )
 	{
-		// TODO { else if easy mode then damage += extra; }
 		damage += 0;
 	}
 	else
@@ -41,8 +38,6 @@ void engine_fight_manager_player_to_boss( unsigned char *b_damage, unsigned char
 {
 	// Damage to enemy.
 	struct_player_object *po = &global_player_object;
-	//struct_enemy_object *eo = &global_enemy_object;
-
 	unsigned char damage;
 	unsigned char extra;
 
@@ -61,7 +56,6 @@ void engine_fight_manager_player_to_boss( unsigned char *b_damage, unsigned char
 void engine_fight_manager_enemy_to_player( unsigned char *p_damage, unsigned char random )
 {
 	// Damage to player.
-	//struct_player_object *po = &global_player_object;
 	struct_enemy_object *eo = &global_enemy_object;
 	struct_hack_object *ho = &global_hack_object;
 
@@ -82,13 +76,11 @@ void engine_fight_manager_enemy_to_player( unsigned char *p_damage, unsigned cha
 	}
 
 	*p_damage = damage;
-	//*p_damage = damage + eo->ax + po->armor;
 }
 
 void engine_fight_manager_boss_to_player( unsigned char *p_damage, unsigned char random )
 {
 	// Damage to player.
-	//struct_player_object *po = &global_player_object;
 	struct_enemy_object *eo = &global_enemy_object;
 	struct_hack_object *ho = &global_hack_object;
 
@@ -111,7 +103,6 @@ void engine_fight_manager_boss_to_player( unsigned char *p_damage, unsigned char
 
 	damage += extra;
 	*p_damage = damage;
-	//*p_damage = damage + eo->ax - po->armor;
 }
 
 static unsigned char get_damage( unsigned char random )
@@ -152,8 +143,6 @@ void engine_fight_manager_gold( unsigned char *p_xp, unsigned char *p_gold )
 
 void engine_boss_manager_draw( unsigned char x, unsigned char y )
 {
-	// x = 11.
-	// y = 1
 	engine_text_manager_args( LEFT_X + x, y + 1, 7, 0x20, 0x20, 0x20, 0x20, 0x20, 0x95, 0x96 );
 	engine_text_manager_args( LEFT_X + x, y + 2, 11, 0x20, 0x95, 0x96, 0x20, 0x20, 0xEF, 0xEF, 0x20, 0x20, 0x95, 0x96 );
 	engine_text_manager_args( LEFT_X + x, y + 3, 11, 0x20, 0xEF, 0xEF, 0x96, 0x95, 0xEF, 0xEF, 0x96, 0x95, 0xEF, 0xEF );
