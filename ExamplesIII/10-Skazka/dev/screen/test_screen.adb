@@ -1,8 +1,9 @@
 M:test_screen
-F:G$screen_test_screen_load$0$0({2}DF,SV:S),Z,0,0,0,0,0
+F:G$screen_test_screen_load$0$0({2}DF,SV:S),Z,0,1,0,0,0
+S:Ltest_screen.screen_test_screen_load$po$1$27({2}DG,STtag_struct_player_object:S),R,0,0,[]
+S:Ltest_screen.screen_test_screen_load$damage$1$27({1}SC:U),B,1,-1
 F:G$screen_test_screen_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Ltest_screen.screen_test_screen_update$screen_type$1$23({2}DG,SC:U),B,1,4
-S:Ltest_screen.screen_test_screen_update$input$1$24({1}SC:U),R,0,0,[l]
+S:Ltest_screen.screen_test_screen_update$screen_type$1$28({2}DG,SC:U),B,1,4
 T:Ftest_screen$tag_struct_player_object[({0}S:S$xp$0$0({1}SC:U),Z,0,0)({1}S:S$hp$0$0({1}SC:U),Z,0,0)({2}S:S$gold$0$0({2}SI:U),Z,0,0)({4}S:S$weapon$0$0({1}SC:U),Z,0,0)({5}S:S$armor$0$0({1}SC:U),Z,0,0)({6}S:S$life$0$0({1}SC:U),Z,0,0)({7}S:S$level$0$0({1}SC:U),Z,0,0)({8}S:S$max_hp$0$0({1}SC:U),Z,0,0)({9}S:S$max_xp$0$0({1}SC:U),Z,0,0)({10}S:S$won$0$0({1}SC:U),Z,0,0)({11}S:S$def_xp$0$0({1}SC:U),Z,0,0)({12}S:S$def_hp$0$0({1}SC:U),Z,0,0)({13}S:S$def_gold$0$0({2}SI:U),Z,0,0)({15}S:S$def_weapon$0$0({1}SC:U),Z,0,0)({16}S:S$def_armor$0$0({1}SC:U),Z,0,0)({17}S:S$def_life$0$0({1}SC:U),Z,0,0)]
 S:G$global_player_object$0$0({18}STtag_struct_player_object:S),E,0,0
 S:G$index$0$0({1}SC:U),E,0,0
@@ -15,6 +16,11 @@ S:G$engine_font_manager_char$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_zero$0$0({2}DF,SV:S),C,0,0
+S:G$engine_fight_manager_player_to_enemy$0$0({2}DF,SV:S),C,0,0
+S:G$engine_fight_manager_enemy_to_player$0$0({2}DF,SV:S),C,0,0
+S:G$engine_fight_manager_boss_to_player$0$0({2}DF,SV:S),C,0,0
+S:G$engine_fight_manager_gold$0$0({2}DF,SV:S),C,0,0
+S:G$engine_boss_manager_draw$0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_update$0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_hold$0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move$0$0({2}DF,SC:U),C,0,0

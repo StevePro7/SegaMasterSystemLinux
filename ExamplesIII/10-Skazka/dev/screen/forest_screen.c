@@ -10,6 +10,7 @@
 #include "../engine/input_manager.h"
 #include "../engine/locale_manager.h"
 #include "../engine/player_manager.h"
+#include "../engine/random_manager.h"
 #include "../engine/select_manager.h"
 #include "../engine/text_manager.h"
 #include "../devkit/_sms_manager.h"
@@ -49,6 +50,7 @@ void screen_forest_screen_load()
 void screen_forest_screen_update( unsigned char *screen_type )
 {
 	struct_hack_object *ho = &global_hack_object;
+	unsigned char random;
 	unsigned char input;
 	unsigned char value;
 	unsigned char xp = 0;
@@ -151,7 +153,9 @@ void screen_forest_screen_update( unsigned char *screen_type )
 		{
 			engine_sound_manager_fight();
 
-			engine_fight_manager_player_to_enemy( &enemys_damage );
+			random = engine_random_manager_next();
+			engine_fight_manager_player_to_enemy( &enemys_damage, random );
+
 			engine_fight_manager_enemy_to_player( &player_damage );
 
 			engine_font_manager_text( LOCALE_FIGHT_ENEMYS, LEFT_X + 5, FIGHT_ROW - 3 );

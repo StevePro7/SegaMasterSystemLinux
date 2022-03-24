@@ -10,6 +10,7 @@
 #include "../engine/input_manager.h"
 #include "../engine/locale_manager.h"
 #include "../engine/player_manager.h"
+#include "../engine/random_manager.h"
 #include "../engine/select_manager.h"
 #include "../engine/text_manager.h"
 #include "../devkit/_sms_manager.h"
@@ -63,6 +64,7 @@ void screen_boss_screen_update( unsigned char *screen_type )
 {
 	struct_hack_object *ho = &global_hack_object;
 	unsigned char selection;
+	unsigned char random;
 	unsigned char input;
 	unsigned char idx;
 	unsigned char row;
@@ -146,7 +148,10 @@ void screen_boss_screen_update( unsigned char *screen_type )
 		}
 		if( boss_type_battle == selection )
 		{
-			engine_fight_manager_player_to_enemy( &enemys_damage );
+			random = engine_random_manager_next();
+			engine_fight_manager_player_to_enemy( &enemys_damage, random );
+
+			//random = engine_random_manager_next();
 			engine_fight_manager_boss_to_player( &player_damage );
 
 			// If both you and boss have 0 HP then you get game over first!

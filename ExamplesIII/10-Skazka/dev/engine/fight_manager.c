@@ -6,9 +6,9 @@
 #include "text_manager.h"
 #include <stdlib.h>
 
-static unsigned char get_damage( unsigned char extra );
+static unsigned char get_damage( unsigned char random );
 
-void engine_fight_manager_player_to_enemy( unsigned char *e_damage )
+void engine_fight_manager_player_to_enemy( unsigned char *e_damage, unsigned char random )
 {
 	// Damage to enemy.
 	struct_player_object *po = &global_player_object;
@@ -18,9 +18,23 @@ void engine_fight_manager_player_to_enemy( unsigned char *e_damage )
 	unsigned char extra;
 
 	extra = po->weapon;
-	damage = get_damage( extra );
+	damage = get_damage( random );
 
-	*e_damage = damage + extra;
+	if( 4 == damage )
+	{
+		damage += extra + extra;
+	}
+	else if( 0 == damage )
+	{
+		// TODO { else if easy mode then damage += extra; }
+		damage += 0;
+	}
+	else
+	{
+		damage += extra;
+	}
+
+	*e_damage = damage;
 }
 
 void engine_fight_manager_enemy_to_player( unsigned char *p_damage )
@@ -37,7 +51,8 @@ void engine_fight_manager_enemy_to_player( unsigned char *p_damage )
 		return;
 	}
 
-	damage = get_damage( 0 );
+	//TODO	rand() % MAX_RANDOM;
+	damage = get_damage(0);
 	*p_damage = damage + eo->ax + po->armor;
 }
 
@@ -58,19 +73,17 @@ void engine_fight_manager_boss_to_player( unsigned char *p_damage )
 	}
 
 	extra = eo->ax;
-	damage = get_damage( extra );
+
+	//TODO	rand() % MAX_RANDOM;
+	damage = get_damage(0);
 
 	// TODO check
 	*p_damage = damage + eo->ax - po->armor;
 }
 
-static unsigned char get_damage( unsigned char extra )
+static unsigned char get_damage( unsigned char random )
 {
-	unsigned char damage;
-	unsigned char random;
-
-	damage = 0;
-	random = rand() % MAX_RANDOM;
+	unsigned char damage = 0;
 	if( random < 1 )
 	{
 		damage = 0;
@@ -89,7 +102,7 @@ static unsigned char get_damage( unsigned char extra )
 	}
 	else if( random == 9 )
 	{
-		damage = 4 + extra;
+		damage = 4;
 	}
 
 	return damage;
