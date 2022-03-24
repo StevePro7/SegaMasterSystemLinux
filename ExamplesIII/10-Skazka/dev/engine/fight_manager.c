@@ -61,7 +61,7 @@ void engine_fight_manager_player_to_boss( unsigned char *b_damage, unsigned char
 void engine_fight_manager_enemy_to_player( unsigned char *p_damage, unsigned char random )
 {
 	// Damage to player.
-	struct_player_object *po = &global_player_object;
+	//struct_player_object *po = &global_player_object;
 	struct_enemy_object *eo = &global_enemy_object;
 	struct_hack_object *ho = &global_hack_object;
 
@@ -85,10 +85,10 @@ void engine_fight_manager_enemy_to_player( unsigned char *p_damage, unsigned cha
 	//*p_damage = damage + eo->ax + po->armor;
 }
 
-void engine_fight_manager_boss_to_player( unsigned char *p_damage )
+void engine_fight_manager_boss_to_player( unsigned char *p_damage, unsigned char random )
 {
 	// Damage to player.
-	struct_player_object *po = &global_player_object;
+	//struct_player_object *po = &global_player_object;
 	struct_enemy_object *eo = &global_enemy_object;
 	struct_hack_object *ho = &global_hack_object;
 
@@ -102,12 +102,15 @@ void engine_fight_manager_boss_to_player( unsigned char *p_damage )
 	}
 
 	extra = eo->ax;
+	damage = get_damage( random );
 
-	//TODO	rand() % MAX_RANDOM;
-	damage = get_damage(0);
+	if( 4 == damage )
+	{
+		damage += extra;
+	}
 
-	// TODO check
-	*p_damage = damage + eo->ax - po->armor;
+	*p_damage = damage;
+	//*p_damage = damage + eo->ax - po->armor;
 }
 
 static unsigned char get_damage( unsigned char random )

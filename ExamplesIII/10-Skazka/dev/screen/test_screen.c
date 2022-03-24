@@ -13,6 +13,7 @@ static void player_to_enemy();
 static void player_to_boss();
 
 static void enemy_to_player();
+static void boss_to_player();
 //unsigned char index;
 
 void screen_test_screen_load()
@@ -30,10 +31,16 @@ void screen_test_screen_load()
 	//player_to_boss();
 
 	// forest screen	player damage calculated depending on enemy attack
-	engine_target_manager_load( enemy_type_baby_yaga );
-	engine_font_manager_text( "ENEMY AX", 15, 2 );
+	//engine_target_manager_load( enemy_type_baby_yaga );
+	//engine_font_manager_text( "ENEMY AX", 15, 2 );
+	//engine_font_manager_data( eo->ax, 25, 2 );
+	//enemy_to_player();
+
+	// boss screen		player damage calculated depending on enemy attack
+	engine_target_manager_load( enemy_type_koschey );
+	engine_font_manager_text( "BOSS! AX", 15, 2 );
 	engine_font_manager_data( eo->ax, 25, 2 );
-	enemy_to_player();
+	boss_to_player();
 }
 
 void screen_test_screen_update( unsigned char *screen_type )
@@ -78,6 +85,23 @@ void screen_test_screen_update( unsigned char *screen_type )
 	//}
 
 	*screen_type = screen_type_test;
+}
+
+static void boss_to_player()
+{
+	// forest screen	player damage calculated depending on enemy attack
+	unsigned char damage;
+	unsigned char random;
+
+	//random = engine_random_manager_next();
+	for( random = 0; random < MAX_RANDOM; random++ )
+	{
+		engine_font_manager_data( random, 10, random + 10 );
+		damage = 0;
+
+		engine_fight_manager_boss_to_player( &damage, random );
+		engine_font_manager_data( damage, 20, random + 10 );
+	}
 }
 
 static void enemy_to_player()

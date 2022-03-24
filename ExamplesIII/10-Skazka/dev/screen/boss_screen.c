@@ -151,8 +151,8 @@ void screen_boss_screen_update( unsigned char *screen_type )
 			random = engine_random_manager_next();
 			engine_fight_manager_player_to_boss( &enemys_damage, random );
 
-			//random = engine_random_manager_next();
-			engine_fight_manager_boss_to_player( &player_damage );
+			random = engine_random_manager_next();
+			engine_fight_manager_boss_to_player( &player_damage, rand() );
 
 			// If both you and boss have 0 HP then you get game over first!
 			engine_player_manager_hit( player_damage );
