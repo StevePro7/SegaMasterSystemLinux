@@ -14,6 +14,7 @@
 #include "../engine/select_manager.h"
 #include "../engine/text_manager.h"
 #include "../devkit/_sms_manager.h"
+#include "../devkit/_snd_manager.h"
 #include "../banks/fixedbank.h"
 #include <stdbool.h>
 #include <stdlib.h>
@@ -41,6 +42,11 @@ void screen_boss_screen_load()
 	engine_content_manager_load_title( row );
 	engine_text_manager_border();
 	engine_text_manager_clear( row + 0, row + 9 );
+
+	//devkit_PSGStop();
+	//devkit_PSGSFXStop();
+	//devkit_PSGSilenceChannels();
+	//devkit_PSGRestoreVolumes();
 
 	row = 19;
 	devkit_SMS_mapROMBank( FIXED_BANK );
@@ -74,11 +80,10 @@ void screen_boss_screen_update( unsigned char *screen_type )
 		first_time = false;
 
 		// Play boss music.
+		engine_sound_manager_init();
 		for( idx = 5; idx < 8; idx++ )
 		{
 			engine_music_manager_play( idx );
-			rand();
-
 			engine_input_manager_update();
 			input = engine_input_manager_move( input_type_fire2 );
 			if( input )
@@ -152,7 +157,7 @@ void screen_boss_screen_update( unsigned char *screen_type )
 			engine_fight_manager_player_to_boss( &enemys_damage, random );
 
 			random = engine_random_manager_next();
-			engine_fight_manager_boss_to_player( &player_damage, rand() );
+			engine_fight_manager_boss_to_player( &player_damage, random );
 
 			// If both you and boss have 0 HP then you get game over first!
 			engine_player_manager_hit( player_damage );

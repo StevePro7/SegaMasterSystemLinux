@@ -80,8 +80,6 @@ void screen_title_screen_update( unsigned char *screen_type )
 				for( index = 0; index < 5; index++ )
 				{
 					engine_music_manager_play( index );
-					rand();
-
 					engine_input_manager_update();
 					input = engine_input_manager_move( input_type_fire2 );
 					if( input )
