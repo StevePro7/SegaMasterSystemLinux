@@ -88,13 +88,13 @@ void screen_title_screen_update( unsigned char *screen_type )
 					{
 						index = 5;
 					}
-
 				}
 			}
 
 			engine_text_manager_fire();
 		}
 
+		rand();
 		timer = engine_timer_manager_update();
 		if( timer )
 		{
