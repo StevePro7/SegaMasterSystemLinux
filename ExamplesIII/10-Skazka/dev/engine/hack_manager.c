@@ -58,8 +58,8 @@ void engine_hack_manager_invert()
 	struct_hack_object *ho = &global_hack_object;
 
 	// TODO delete
-	ho->hack_weapon = 0;
-	ho->hack_armors = 0;
+	//ho->hack_weapon = 0;
+	//ho->hack_armors = 0;
 	// TODO delete
 
 	if( ho->hack_currxp > 0 && ho->hack_currxp <= MAX_XP )
