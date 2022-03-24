@@ -53,63 +53,66 @@ void screen_shop_screen_update( unsigned char *screen_type )
 			return;
 		}
 	}
-
-	input = engine_input_manager_hold( input_type_fire2 );
-	if( input )
+	else
 	{
-		// Check edge case "Not enough gold" SFX!
-		if( !devkit_PSGSFXGetStatus() )
+		input = engine_input_manager_hold( input_type_fire2 );
+		if( input )
 		{
-			*screen_type = screen_type_stats;
+			// Check edge case "Not enough gold" SFX!
+			if( !devkit_PSGSFXGetStatus() )
+			{
+				*screen_type = screen_type_stats;
+				return;
+			}
+		}
+
+		selection = engine_select_manager_update( select_type );
+		if( NO_SELECTION == selection )
+		{
+			*screen_type = screen_type_shop;
 			return;
 		}
+
+		value = inventory[ selection ];
+		if( value > gold )
+		{
+			engine_sound_manager_play( sound_type_6 );
+			engine_font_manager_text( LOCALE_NOT_ENOUGH, LEFT_X + 8, SHOP_ROW + 4 );
+			*screen_type = screen_type_shop;
+			return;
+		}
+
+		if( shop_type_sword == selection )
+		{
+			engine_player_manager_set_weapon( weapon_type_sword );
+		}
+		else if( shop_type_axe == selection )
+		{
+			engine_player_manager_set_weapon( weapon_type_axe );
+		}
+		else if( shop_type_kolchuga == selection )
+		{
+			engine_player_manager_set_armors( armor_type_kolchuga );
+		}
+		else if( shop_type_tegilay == selection )
+		{
+			engine_player_manager_set_armors( armor_type_tegilay );
+		}
+		else if( shop_type_life == selection )
+		{
+			engine_player_manager_set_oneups( life_type_oneup );
+		}
+
+		gold -= value;
+		engine_player_manager_dec_gold( value );
+
+		engine_font_manager_text( LOCALE_29_SPCS, LEFT_X + 2, SHOP_ROW + 4 );
+		engine_font_manager_data( gold, LEFT_X + 24, SHOP_ROW + 2 );
+		engine_sound_manager_play( sound_type_5 );
+
+		event_stage = event_stage_pause;
 	}
 
-	selection = engine_select_manager_update( select_type );
-	if( NO_SELECTION == selection )
-	{
-		*screen_type = screen_type_shop;
-		return;
-	}
-
-	value = inventory[ selection ];
-	if( value > gold )
-	{
-		engine_sound_manager_play( sound_type_6 );
-		engine_font_manager_text( LOCALE_NOT_ENOUGH, LEFT_X + 8, SHOP_ROW + 4 );
-		*screen_type = screen_type_shop;
-		return;
-	}
-
-	if( shop_type_sword == selection )
-	{
-		engine_player_manager_set_weapon( weapon_type_sword );
-	}
-	else if( shop_type_axe == selection )
-	{
-		engine_player_manager_set_weapon( weapon_type_axe );
-	}
-	else if( shop_type_kolchuga == selection )
-	{
-		engine_player_manager_set_armors( armor_type_kolchuga );
-	}
-	else if( shop_type_tegilay == selection )
-	{
-		engine_player_manager_set_armors( armor_type_tegilay );
-	}
-	else if( shop_type_life == selection )
-	{
-		engine_player_manager_set_oneups( life_type_oneup );
-	}
-
-	gold -= value;
-	engine_player_manager_dec_gold( value );
-
-	engine_font_manager_text( LOCALE_29_SPCS, LEFT_X + 2, SHOP_ROW + 4 );
-	engine_font_manager_data( gold, LEFT_X + 24, SHOP_ROW + 2 );
-	engine_sound_manager_play( sound_type_5 );
-
-	event_stage = event_stage_pause;
 	*screen_type = screen_type_shop;
 }
 
