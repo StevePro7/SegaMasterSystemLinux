@@ -11,8 +11,6 @@ struct_enemy_object global_enemy_object;
 
 #define ENEMY_ROW				8
 
-static void enemy_load( unsigned char index );
-
 unsigned char hplo_num[ MAX_ENEMIES ] = { 10, 10, 25, 25, 35, 50 };
 unsigned char ax_num[ MAX_ENEMIES ] = { 1, 1, 2, 2, 3, 4 };
 unsigned char gldo_num[ MAX_ENEMIES ] = { 5, 5, 10, 10, 15, 0 };
@@ -26,11 +24,6 @@ void engine_enemy_manager_init()
 	eo->ax = 0;
 	eo->gldo = 0;
 	eo->xpo = 0;
-}
-
-void engine_boss_manager_load()
-{
-	enemy_load( enemy_type_koschey );
 }
 
 void engine_enemy_manager_load( unsigned char level )
@@ -85,10 +78,10 @@ void engine_enemy_manager_load( unsigned char level )
 		break;
 	}
 
-	enemy_load( index );
+	engine_target_manager_load( index );
 }
 
-static void enemy_load( unsigned char index )
+void engine_target_manager_load( unsigned char index )
 {
 	struct_enemy_object *eo = &global_enemy_object;
 	eo->index = index;

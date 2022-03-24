@@ -1,6 +1,7 @@
 #include "test_screen.h"
 #include "../engine/audio_manager.h"
 #include "../engine/enum_manager.h"
+#include "../engine/enemy_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/fight_manager.h"
 #include "../engine/global_manager.h"
@@ -10,20 +11,29 @@
 
 static void player_to_enemy();
 static void player_to_boss();
+
+static void enemy_to_player();
 //unsigned char index;
 
 void screen_test_screen_load()
 {
 	struct_player_object *po = &global_player_object;
+	struct_enemy_object *eo = &global_enemy_object;
 	engine_font_manager_text( "TEST SCREEN!!", 2, 0 );
-	engine_font_manager_text( "WEAPON", 4, 2 );
-	engine_font_manager_data( po->weapon, 10, 4 );
+	engine_font_manager_text( "WEAPON", 2, 2 );
+	engine_font_manager_data( po->weapon, 10, 2 );
 
 	// forest screen	enemy damage calculated depending on player weapon
 	//player_to_enemy();
 
 	// boss screen		enemy damage calculated depending on player weapon
-	player_to_boss();
+	//player_to_boss();
+
+	// forest screen	player damage calculated depending on enemy attack
+	engine_target_manager_load( enemy_type_hungry_wolf );
+	engine_font_manager_text( "ENEMY AX", 15, 2 );
+	engine_font_manager_data( eo->ax, 25, 2 );
+	enemy_to_player();
 }
 
 void screen_test_screen_update( unsigned char *screen_type )
@@ -68,6 +78,23 @@ void screen_test_screen_update( unsigned char *screen_type )
 	//}
 
 	*screen_type = screen_type_test;
+}
+
+static void enemy_to_player()
+{
+	// forest screen	player damage calculated depending on enemy attack
+	unsigned char damage;
+	unsigned char random;
+
+	//random = engine_random_manager_next();
+	for( random = 0; random < MAX_RANDOM; random++ )
+	{
+		engine_font_manager_data( random, 10, random + 10 );
+		damage = 0;
+
+		engine_fight_manager_enemy_to_player( &damage, random );
+		engine_font_manager_data( damage, 20, random + 10 );
+	}
 }
 
 static void player_to_boss()

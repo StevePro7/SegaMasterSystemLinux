@@ -3,7 +3,7 @@
 
 void engine_fight_manager_player_to_enemy( unsigned char *e_damage, unsigned char random );
 void engine_fight_manager_player_to_boss( unsigned char *e_damage, unsigned char random );
-void engine_fight_manager_enemy_to_player( unsigned char *p_damage );
+void engine_fight_manager_enemy_to_player( unsigned char *p_damage, unsigned char random );
 void engine_fight_manager_boss_to_player( unsigned char *p_damage );
 
 void engine_fight_manager_gold( unsigned char *p_xp, unsigned char *p_gold );

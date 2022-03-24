@@ -34,7 +34,7 @@ void screen_boss_screen_load()
 	select_type = select_type_boss;
 	row = 1;
 
-	engine_boss_manager_load();
+	engine_target_manager_load( enemy_type_koschey );
 	engine_player_manager_boss();
 
 	devkit_SMS_displayOff();

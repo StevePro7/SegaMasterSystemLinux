@@ -156,7 +156,8 @@ void screen_forest_screen_update( unsigned char *screen_type )
 			random = engine_random_manager_next();
 			engine_fight_manager_player_to_enemy( &enemys_damage, random );
 
-			engine_fight_manager_enemy_to_player( &player_damage );
+			random = engine_random_manager_next();
+			engine_fight_manager_enemy_to_player( &player_damage, random );
 
 			engine_font_manager_text( LOCALE_FIGHT_ENEMYS, LEFT_X + 5, FIGHT_ROW - 3 );
 			engine_font_manager_text( LOCALE_FIGHT_PLAYER, LEFT_X + 5, FIGHT_ROW - 2 );
