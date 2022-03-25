@@ -46,8 +46,8 @@ void screen_stats_screen_load()
 	//	engine_font_manager_text( ( unsigned char * ) stats_texts[ idx ], LEFT_X + 12, row++ );
 	//}
 
-	row = 15;
-	engine_select_manager_load( select_type, LEFT_X + 10, row, 6 );
+	//row = 15;
+	engine_select_manager_load( select_type, LEFT_X + 10, OPTION_ROW, 6 );
 
 	devkit_SMS_displayOn();
 }

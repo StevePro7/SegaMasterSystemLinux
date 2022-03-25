@@ -9,8 +9,13 @@
 #include "../engine/player_manager.h"
 #include "../engine/select_manager.h"
 #include "../engine/text_manager.h"
+#include "../engine/timer_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
+
+#define FLASH_TOTAL		3
+static unsigned char flash_index;
+static unsigned char flash_count;
 
 void screen_start_screen_load()
 {
@@ -41,6 +46,9 @@ void screen_start_screen_load()
 	engine_font_manager_text( "START SCREEN!!", 10, 0 );
 
 	devkit_SMS_displayOn();
+
+	flash_index = 0;
+	flash_count = 0;
 }
 
 void screen_start_screen_update( unsigned char *screen_type )

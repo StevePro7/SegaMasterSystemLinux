@@ -1,14 +1,16 @@
 M:start_screen
 F:G$screen_start_screen_load$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lstart_screen.screen_start_screen_load$row$1$90({1}SC:U),R,0,0,[]
+S:Lstart_screen.screen_start_screen_load$row$1$91({1}SC:U),R,0,0,[]
 F:G$screen_start_screen_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lstart_screen.screen_start_screen_update$screen_type$1$91({2}DG,SC:U),B,1,4
+S:Lstart_screen.screen_start_screen_update$screen_type$1$92({2}DG,SC:U),B,1,4
 T:Fstart_screen$tag_struct_player_object[({0}S:S$xp$0$0({1}SC:U),Z,0,0)({1}S:S$hp$0$0({1}SC:U),Z,0,0)({2}S:S$gold$0$0({2}SI:U),Z,0,0)({4}S:S$weapon$0$0({1}SC:U),Z,0,0)({5}S:S$armor$0$0({1}SC:U),Z,0,0)({6}S:S$life$0$0({1}SC:U),Z,0,0)({7}S:S$level$0$0({1}SC:U),Z,0,0)({8}S:S$max_hp$0$0({1}SC:U),Z,0,0)({9}S:S$max_xp$0$0({1}SC:U),Z,0,0)({10}S:S$won$0$0({1}SC:U),Z,0,0)({11}S:S$def_xp$0$0({1}SC:U),Z,0,0)({12}S:S$def_hp$0$0({1}SC:U),Z,0,0)({13}S:S$def_gold$0$0({2}SI:U),Z,0,0)({15}S:S$def_weapon$0$0({1}SC:U),Z,0,0)({16}S:S$def_armor$0$0({1}SC:U),Z,0,0)({17}S:S$def_life$0$0({1}SC:U),Z,0,0)]
 T:Fstart_screen$tag_struct_game_object[({0}S:S$intro_once$0$0({1}:S),Z,0,0)({1}S:S$play_music$0$0({1}:S),Z,0,0)]
+T:Fstart_screen$tag_struct_timer_object[({0}S:S$timer_count$0$0({2}SI:U),Z,0,0)({2}S:S$timer_value$0$0({2}SI:U),Z,0,0)]
 T:Fstart_screen$tag_struct_aelect_object[({0}S:S$select_index$0$0({7}DA7d,SC:U),Z,0,0)({7}S:S$select_X$0$0({1}SC:U),Z,0,0)({8}S:S$select_Y$0$0({1}SC:U),Z,0,0)({9}S:S$select_min$0$0({1}SC:U),Z,0,0)({10}S:S$select_max$0$0({1}SC:U),Z,0,0)]
 S:G$global_game_object$0$0({2}STtag_struct_game_object:S),E,0,0
 S:G$global_player_object$0$0({18}STtag_struct_player_object:S),E,0,0
 S:G$global_select_object$0$0({11}STtag_struct_aelect_object:S),E,0,0
+S:G$global_timer_object$0$0({4}STtag_struct_timer_object:S),E,0,0
 S:G$intro_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$stats_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$weapon_texts$0$0({0}DA0d,DG,SC:U),E,0,0
@@ -27,6 +29,8 @@ S:G$laugh_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$menus_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$over_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$beat_texts$0$0({0}DA0d,DG,SC:U),E,0,0
+S:Fstart_screen$flash_index$0$0({1}SC:U),E,0,0
+S:Fstart_screen$flash_count$0$0({1}SC:U),E,0,0
 S:G$engine_sound_manager_init$0$0({2}DF,SV:S),C,0,0
 S:G$engine_sound_manager_play$0$0({2}DF,SV:S),C,0,0
 S:G$engine_sound_manager_fight$0$0({2}DF,SV:S),C,0,0
@@ -79,6 +83,8 @@ S:G$engine_text_manager_border$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_title$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_fire$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_args$0$0({2}DF,SV:S),C,0,0
+S:G$engine_timer_manager_load$0$0({2}DF,SV:S),C,0,0
+S:G$engine_timer_manager_update$0$0({2}DF,SC:U),C,0,0
 S:G$devkit_SMS_init$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOnFeature$0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOffFeature$0$0({2}DF,SV:S),C,0,0
