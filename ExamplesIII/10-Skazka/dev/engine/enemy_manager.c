@@ -113,7 +113,7 @@ void engine_enemy_manager_hit( char hp )
 	if( eo->hplo > hp )
 	{
 		eo->hplo -= hp;
-		engine_enemy_manager_hplo();
+		//engine_enemy_manager_hplo();
 	}
 	else
 	{

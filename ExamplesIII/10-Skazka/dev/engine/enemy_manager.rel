@@ -1,6 +1,6 @@
 ;!FILE enemy_manager.asm
 XL2
-H 9 areas 13C global symbols
+H 9 areas 13B global symbols
 M enemy_manager
 O -mz80
 S _rand Ref0000
@@ -10,8 +10,7 @@ S _engine_font_manager_data Ref0000
 S .__.ABS. Def0000
 S __modsint Ref0000
 S _engine_text_manager_args Ref0000
-A _CODE size 17E flags 0 addr 0
-S A$enemy_manager$537 Def017C
+A _CODE size 17C flags 0 addr 0
 S A$enemy_manager$492 Def0163
 S A$enemy_manager$465 Def0157
 S A$enemy_manager$429 Def0138
@@ -41,6 +40,7 @@ S C$enemy_manager.c$60$3$39 Def0076
 S C$enemy_manager.c$57$2$34 Def0071
 S C$enemy_manager.c$48$2$34 Def0064
 S C$enemy_manager.c$39$2$34 Def0052
+S A$enemy_manager$539 Def017B
 S A$enemy_manager$494 Def0165
 S A$enemy_manager$458 Def0149
 S A$enemy_manager$395 Def0107
@@ -66,7 +66,7 @@ S A$enemy_manager$379 Def00F3
 S C$enemy_manager.c$86$1$45 Def00A6
 S A$enemy_manager$488 Def015D
 S A$enemy_manager$398 Def010D
-S XG$engine_enemy_manager_dead$0$0 Def017D
+S XG$engine_enemy_manager_dead$0$0 Def017B
 S C$enemy_manager.c$87$1$45 Def00A6
 S A$enemy_manager$498 Def0167
 S A$enemy_manager$489 Def015E
@@ -94,7 +94,7 @@ S _engine_enemy_manager_hplo Def0149
 S _engine_enemy_manager_init Def0000
 S G$engine_enemy_manager_hit$0$0 Def015A
 S XG$engine_enemy_manager_draw$0$0 Def0148
-S C$enemy_manager.c$120$2$51 Def0171
+S C$enemy_manager.c$120$2$51 Def016F
 S C$enemy_manager.c$100$1$46 Def0117
 S G$engine_target_manager_load$0$0 Def009E
 S C$enemy_manager.c$101$1$46 Def0131
@@ -102,20 +102,19 @@ S C$enemy_manager.c$115$2$50 Def0167
 S C$enemy_manager.c$110$1$47 Def015A
 S XG$engine_enemy_manager_hplo$0$0 Def0159
 S C$enemy_manager.c$102$1$46 Def0148
-S C$enemy_manager.c$116$2$50 Def016E
 S XG$engine_enemy_manager_init$0$0 Def0019
 S C$enemy_manager.c$104$1$46 Def0149
-S C$enemy_manager.c$126$1$52 Def0174
-S G$engine_enemy_manager_dead$0$0 Def0174
-S C$enemy_manager.c$127$1$52 Def0174
+S C$enemy_manager.c$126$1$52 Def0172
+S G$engine_enemy_manager_dead$0$0 Def0172
+S C$enemy_manager.c$127$1$52 Def0172
 S C$enemy_manager.c$112$1$49 Def015A
-S C$enemy_manager.c$128$1$52 Def017D
-S C$enemy_manager.c$122$1$49 Def0173
+S C$enemy_manager.c$128$1$52 Def017B
+S C$enemy_manager.c$122$1$49 Def0171
 S C$enemy_manager.c$113$1$49 Def015A
 S C$enemy_manager.c$106$1$47 Def0149
 S C$enemy_manager.c$107$1$47 Def0149
 S _engine_enemy_manager_hit Def015A
-S C$enemy_manager.c$124$1$49 Def0174
+S C$enemy_manager.c$124$1$49 Def0172
 S C$enemy_manager.c$108$1$47 Def0159
 S A$enemy_manager$300 Def009E
 S C$enemy_manager.c$21$1$31 Def0000
@@ -151,7 +150,6 @@ S A$enemy_manager$132 Def0025
 S A$enemy_manager$114 Def0019
 S C$enemy_manager.c$31$1$33 Def001A
 S C$enemy_manager.c$24$1$31 Def000A
-S A$enemy_manager$511 Def0171
 S A$enemy_manager$502 Def016D
 S A$enemy_manager$430 Def013B
 S A$enemy_manager$421 Def0130
@@ -168,7 +166,8 @@ S A$enemy_manager$142 Def002D
 S A$enemy_manager$133 Def0026
 S C$enemy_manager.c$32$1$33 Def0027
 S C$enemy_manager.c$25$1$31 Def000F
-S A$enemy_manager$512 Def0172
+S A$enemy_manager$530 Def0172
+S A$enemy_manager$503 Def016E
 S A$enemy_manager$431 Def013C
 S A$enemy_manager$413 Def0121
 S A$enemy_manager$350 Def00E3
@@ -181,7 +180,8 @@ S A$enemy_manager$152 Def0043
 S A$enemy_manager$143 Def002F
 S C$enemy_manager.c$40$2$34 Def0052
 S C$enemy_manager.c$26$1$31 Def0014
-S _engine_enemy_manager_dead Def0174
+S _engine_enemy_manager_dead Def0172
+S A$enemy_manager$531 Def0175
 S A$enemy_manager$432 Def013E
 S A$enemy_manager$414 Def0124
 S A$enemy_manager$351 Def00E4
@@ -193,6 +193,8 @@ S A$enemy_manager$144 Def0032
 S A$enemy_manager$108 Def0014
 S C$enemy_manager.c$34$1$33 Def0029
 S C$enemy_manager.c$27$1$31 Def0019
+S A$enemy_manager$532 Def0177
+S A$enemy_manager$514 Def0171
 S A$enemy_manager$460 Def014D
 S A$enemy_manager$442 Def0148
 S A$enemy_manager$433 Def013F
@@ -209,9 +211,7 @@ S A$enemy_manager$163 Def004A
 S A$enemy_manager$145 Def0033
 S A$enemy_manager$127 Def001A
 S A$enemy_manager$109 Def0017
-S A$enemy_manager$542 Def017D
-S A$enemy_manager$533 Def0174
-S A$enemy_manager$506 Def016E
+S A$enemy_manager$533 Def0179
 S A$enemy_manager$461 Def014F
 S A$enemy_manager$434 Def0140
 S A$enemy_manager$425 Def0131
@@ -232,11 +232,11 @@ S A$enemy_manager$164 Def004C
 S A$enemy_manager$146 Def0035
 S A$enemy_manager$137 Def0027
 S A$enemy_manager$128 Def001D
-S XG$engine_enemy_manager_hit$0$0 Def0173
+S XG$engine_enemy_manager_hit$0$0 Def0171
 S C$enemy_manager.c$81$1$33 Def0097
 S C$enemy_manager.c$70$2$34 Def008C
 S C$enemy_manager.c$29$1$31 Def001A
-S A$enemy_manager$534 Def0177
+S A$enemy_manager$534 Def017A
 S A$enemy_manager$471 Def0159
 S A$enemy_manager$462 Def0152
 S A$enemy_manager$435 Def0143
@@ -260,8 +260,7 @@ S C$enemy_manager.c$64$3$40 Def007F
 S C$enemy_manager.c$62$2$34 Def007A
 S C$enemy_manager.c$44$2$34 Def005B
 S C$enemy_manager.c$42$3$35 Def0057
-S A$enemy_manager$535 Def0179
-S A$enemy_manager$517 Def0173
+S A$enemy_manager$508 Def016F
 S A$enemy_manager$490 Def015F
 S A$enemy_manager$463 Def0153
 S A$enemy_manager$436 Def0146
@@ -285,7 +284,7 @@ S A$enemy_manager$148 Def003A
 S C$enemy_manager.c$72$3$42 Def0091
 S C$enemy_manager.c$50$3$37 Def0069
 S C$enemy_manager.c$36$2$34 Def0045
-S A$enemy_manager$536 Def017B
+S A$enemy_manager$509 Def0170
 S A$enemy_manager$491 Def0162
 S A$enemy_manager$464 Def0154
 S A$enemy_manager$437 Def0147
@@ -450,17 +449,17 @@ T 57 01 F1 F1 C9
 R 00 00 00 00
 T 5A 01
 R 00 00 00 00
-T 5A 01 01 01 00 0A 5F 21 02 00 39 7E 93 30 0A 21
+T 5A 01 01 01 00 0A 5F 21 02 00 39 7E 93 30 08 21
 R 00 00 00 00 00 03 01 00
-T 68 01 02 00 39 7B 96 02 C3 49 01
-R 00 00 00 00 00 09 00 00
-T 71 01
+T 68 01 02 00 39 7B 96 02 C9
 R 00 00 00 00
-T 71 01 AF 02 C9
+T 6F 01
 R 00 00 00 00
-T 74 01
+T 6F 01 AF 02 C9
 R 00 00 00 00
-T 74 01 3A 01 00 D6 01 3E 00 17 6F C9
+T 72 01
+R 00 00 00 00
+T 72 01 3A 01 00 D6 01 3E 00 17 6F C9
 R 00 00 00 00 00 03 01 00
 T 00 00
 R 00 00 07 00

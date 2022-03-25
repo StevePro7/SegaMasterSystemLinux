@@ -148,7 +148,7 @@ void engine_player_manager_hit( char hp )
 	if( po->hp > hp )
 	{
 		po->hp -= hp;
-		engine_player_manager_hplo();
+		//engine_player_manager_hplo();
 	}
 	else
 	{

@@ -91,6 +91,10 @@ void screen_forest_screen_update( unsigned char *screen_type )
 				}
 			}
 
+			// Display updated HP after checking deaths.
+			engine_player_manager_hplo();
+			engine_enemy_manager_hplo();
+
 			event_stage = scene_type_select;
 			*screen_type = screen_type_forest;
 			return;
