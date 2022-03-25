@@ -4,6 +4,8 @@
 #include "locale_manager.h"
 #include "player_manager.h"
 #include "text_manager.h"
+#include "../devkit/_sms_manager.h"
+#include "../banks/fixedbank.h"
 
 // Global variable.
 struct_game_object global_game_object;
@@ -76,4 +78,16 @@ void engine_game_manager_print_player()
 void engine_game_manager_print_version()
 {
 	engine_font_manager_text( LOCALE_BUILD_VER, LEFT_X + 27, FIRE1_ROW );
+}
+
+void engine_game_manager_print_texts()
+{
+	unsigned char row = 13;
+	unsigned char idx;
+
+	devkit_SMS_mapROMBank( FIXED_BANK );
+	for( idx = 0; idx < 8; idx++ )
+	{
+		engine_font_manager_text( ( unsigned char * ) stats_texts[ idx ], LEFT_X + 12, row++ );
+	}
 }

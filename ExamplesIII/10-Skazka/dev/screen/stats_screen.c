@@ -21,7 +21,7 @@ static unsigned char select_type;
 void screen_stats_screen_load()
 {
 	unsigned char row;
-	unsigned char idx;
+	//unsigned char idx;
 
 	select_type = select_type_stats;
 	row = 1;
@@ -37,13 +37,14 @@ void screen_stats_screen_load()
 	engine_game_manager_print_village();
 	engine_game_manager_print_player();
 	engine_game_manager_print_version();
+	engine_game_manager_print_texts();
 
-	row = 13;
-	devkit_SMS_mapROMBank( FIXED_BANK );
-	for( idx = 0; idx < 8; idx++ )
-	{
-		engine_font_manager_text( ( unsigned char * ) stats_texts[ idx ], LEFT_X + 12, row++ );
-	}
+	//row = 13;
+	//devkit_SMS_mapROMBank( FIXED_BANK );
+	//for( idx = 0; idx < 8; idx++ )
+	//{
+	//	engine_font_manager_text( ( unsigned char * ) stats_texts[ idx ], LEFT_X + 12, row++ );
+	//}
 
 	row = 15;
 	engine_select_manager_load( select_type, LEFT_X + 10, row, 6 );

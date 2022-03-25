@@ -3,6 +3,7 @@
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
+#include "../engine/game_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/locale_manager.h"
 #include "../engine/player_manager.h"
@@ -14,7 +15,7 @@
 void screen_start_screen_load()
 {
 	unsigned char row;
-	unsigned char idx;
+//	unsigned char idx;
 
 	row = 1;
 	devkit_SMS_displayOff();
@@ -22,12 +23,18 @@ void screen_start_screen_load()
 	engine_text_manager_border();
 	engine_text_manager_clear( row + 2, row + 9 );
 
-	row = 13;
-	devkit_SMS_mapROMBank( FIXED_BANK );
-	for( idx = 0; idx < 8; idx++ )
-	{
-		engine_font_manager_text( ( unsigned char * ) stats_texts[ idx ], LEFT_X + 12, row++ );
-	}
+	engine_game_manager_print_stats();
+	engine_game_manager_print_village();
+	engine_game_manager_print_player();
+	engine_game_manager_print_version();
+	engine_game_manager_print_texts();
+
+	//row = 13;
+	//devkit_SMS_mapROMBank( FIXED_BANK );
+	//for( idx = 0; idx < 8; idx++ )
+	//{
+	//	engine_font_manager_text( ( unsigned char * ) stats_texts[ idx ], LEFT_X + 12, row++ );
+	//}
 
 	//engine_font_manager_text( LOCALE_BUILD_VER, LEFT_X + 27, FIRE1_ROW );
 
