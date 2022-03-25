@@ -28,6 +28,7 @@ void engine_content_manager_load_title( unsigned char y )
 	devkit_SMS_loadSTMcompressedTileMap( 0, y, ( void * ) font_tiles__tilemap__stmcompr );
 	devkit_SMS_loadBGPalette( ( void * ) font_tiles__palette__bin );
 
-	devkit_SMS_setBGPaletteColor( 0, devkit_RGB( 1, 0, 3 ) );
-	devkit_SMS_setSpritePaletteColor( 0, devkit_RGB( 1, 0, 3 ) );
+	// TODO hack in splash screen
+	//devkit_SMS_setBGPaletteColor( 0, devkit_RGB( 1, 0, 3 ) );
+	//devkit_SMS_setSpritePaletteColor( 0, devkit_RGB( 1, 0, 3 ) );
 }

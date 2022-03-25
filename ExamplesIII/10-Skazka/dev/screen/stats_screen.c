@@ -95,6 +95,7 @@ static void print_stats()
 	engine_font_manager_text( LOCALE_XP, LEFT_X + 2, STATS_ROW + 4 );
 	engine_font_manager_text( LOCALE_GOLD, LEFT_X + 2, STATS_ROW + 5 );
 	engine_font_manager_text( LOCALE_YOU_HAVE, LEFT_X + 4, STATS_ROW + 6 );
+	engine_font_manager_text( LOCALE_YOUR_LVL, LEFT_X + 2, 22 );
 }
 
 static void print_village()

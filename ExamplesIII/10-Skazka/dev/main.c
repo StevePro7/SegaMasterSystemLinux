@@ -24,7 +24,7 @@ void main( void )
 	open_screen_type = screen_type_title;
 	//open_screen_type = screen_type_start;
 	//open_screen_type = screen_type_intro;
-	//open_screen_type = screen_type_stats;
+	open_screen_type = screen_type_stats;
 	//open_screen_type = screen_type_forest;
 	//open_screen_type = screen_type_shop;
 	//open_screen_type = screen_type_talk;
