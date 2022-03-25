@@ -12,4 +12,9 @@ void engine_game_manager_intro_off();
 void engine_game_manager_music_on();
 void engine_game_manager_music_off();
 
+void engine_game_manager_print_stats();
+void engine_game_manager_print_village();
+void engine_game_manager_print_player();
+void engine_game_manager_print_version();
+
 #endif//_GAME_MANAGER_H_
