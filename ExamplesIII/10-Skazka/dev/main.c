@@ -4,7 +4,7 @@ void main( void )
 {
 	// Global variables.
 	static bool global_pause;
-	unsigned char open_screen_type;
+	unsigned char open_screen_type;	
 
 	devkit_SMS_init();
 	devkit_SMS_displayOff();
@@ -20,11 +20,11 @@ void main( void )
 	// Blue background
 	//devkit_SMS_setBGPaletteColor( 0, devkit_RGB( 0, 0, 3 ) );
 
-	//open_screen_type = screen_type_splash;
+	open_screen_type = screen_type_splash;
 	//open_screen_type = screen_type_title;
 	//open_screen_type = screen_type_start;
 	//open_screen_type = screen_type_intro;
-	open_screen_type = screen_type_stats;
+	//open_screen_type = screen_type_stats;
 	//open_screen_type = screen_type_start;
 	//open_screen_type = screen_type_forest;
 	//open_screen_type = screen_type_shop;
