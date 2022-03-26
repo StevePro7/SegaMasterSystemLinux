@@ -10,7 +10,6 @@ typedef struct tag_struct_enemy_object
 	unsigned char ax;
 	unsigned char gldo;
 	unsigned char xpo;
-	//unsigned char damage;
 
 } struct_enemy_object;
 

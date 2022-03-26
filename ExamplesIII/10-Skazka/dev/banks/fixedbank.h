@@ -14,7 +14,6 @@ extern const unsigned char *fight_texts[];
 extern const unsigned char *gold_texts[];
 
 extern const unsigned char *shop_texts[];
-
 extern const unsigned char *villager_texts[];
 
 extern const unsigned char *prep_texts[];

@@ -5,7 +5,6 @@
 
 typedef struct tag_struct_aelect_object
 {
-	// Update MAX SELECTS in Global MGR
 	unsigned char select_index[ MAX_SELECTS ];
 	unsigned char select_X;
 	unsigned char select_Y;

@@ -6,9 +6,9 @@ F:G$screen_menu_screen_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lmenu_screen.screen_menu_screen_update$screen_type$1$81({2}DG,SC:U),B,1,4
 S:Lmenu_screen.screen_menu_screen_update$input$1$82({1}SC:U),R,0,0,[l]
 S:Lmenu_screen.screen_menu_screen_update$selection$1$82({1}SC:U),R,0,0,[]
-T:Fmenu_screen$tag_struct_game_object[({0}S:S$blue_screen$0$0({1}:S),Z,0,0)({1}S:S$intro_once$0$0({1}:S),Z,0,0)({2}S:S$play_music$0$0({1}:S),Z,0,0)]
+T:Fmenu_screen$tag_struct_game_object[({0}S:S$blue_screen$0$0({1}:S),Z,0,0)({1}S:S$intro_once$0$0({1}:S),Z,0,0)({2}S:S$play_music$0$0({1}:S),Z,0,0)({3}S:S$flash_arrow$0$0({1}:S),Z,0,0)]
 T:Fmenu_screen$tag_struct_aelect_object[({0}S:S$select_index$0$0({7}DA7d,SC:U),Z,0,0)({7}S:S$select_X$0$0({1}SC:U),Z,0,0)({8}S:S$select_Y$0$0({1}SC:U),Z,0,0)({9}S:S$select_min$0$0({1}SC:U),Z,0,0)({10}S:S$select_max$0$0({1}SC:U),Z,0,0)]
-S:G$global_game_object$0$0({3}STtag_struct_game_object:S),E,0,0
+S:G$global_game_object$0$0({4}STtag_struct_game_object:S),E,0,0
 S:G$global_select_object$0$0({11}STtag_struct_aelect_object:S),E,0,0
 S:G$intro_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$stats_texts$0$0({0}DA0d,DG,SC:U),E,0,0
@@ -43,6 +43,8 @@ S:G$engine_game_manager_intro_on$0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_intro_off$0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_music_on$0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_music_off$0$0({2}DF,SV:S),C,0,0
+S:G$engine_game_manager_flash_on$0$0({2}DF,SV:S),C,0,0
+S:G$engine_game_manager_flash_off$0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_print_stats$0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_print_village$0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_print_player$0$0({2}DF,SV:S),C,0,0

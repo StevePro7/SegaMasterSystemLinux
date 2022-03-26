@@ -10,7 +10,7 @@ static unsigned char get_damage( unsigned char random );
 
 void engine_fight_manager_player_to_enemy( unsigned char *e_damage, unsigned char random )
 {
-	// Damage to enemy.
+	// Damage to enemy from player.
 	struct_player_object *po = &global_player_object;
 	unsigned char damage;
 	unsigned char extra;
@@ -36,7 +36,7 @@ void engine_fight_manager_player_to_enemy( unsigned char *e_damage, unsigned cha
 
 void engine_fight_manager_player_to_boss( unsigned char *b_damage, unsigned char random )
 {
-	// Damage to enemy.
+	// Damage to boss from player.
 	struct_player_object *po = &global_player_object;
 	unsigned char damage;
 	unsigned char extra;
@@ -55,7 +55,7 @@ void engine_fight_manager_player_to_boss( unsigned char *b_damage, unsigned char
 
 void engine_fight_manager_enemy_to_player( unsigned char *p_damage, unsigned char random )
 {
-	// Damage to player.
+	// Damage to player from enemy.
 	struct_enemy_object *eo = &global_enemy_object;
 	struct_hack_object *ho = &global_hack_object;
 
@@ -80,7 +80,7 @@ void engine_fight_manager_enemy_to_player( unsigned char *p_damage, unsigned cha
 
 void engine_fight_manager_boss_to_player( unsigned char *p_damage, unsigned char random )
 {
-	// Damage to player.
+	// Damage to player from boss.
 	struct_enemy_object *eo = &global_enemy_object;
 	struct_hack_object *ho = &global_hack_object;
 

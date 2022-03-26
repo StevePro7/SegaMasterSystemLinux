@@ -21,10 +21,8 @@ static void display_msg();
 
 void screen_talk_screen_load()
 {
-	unsigned char row;
-	//unsigned char val;
+	unsigned char row = 1;
 
-	row = 1;
 	devkit_SMS_displayOff();
 	engine_content_manager_load_title( row );
 	engine_text_manager_border();

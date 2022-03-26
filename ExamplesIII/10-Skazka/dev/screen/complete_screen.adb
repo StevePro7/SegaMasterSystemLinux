@@ -9,9 +9,9 @@ S:Lcomplete_screen.screen_complete_screen_update$timer$1$97({1}SC:U),R,0,0,[c]
 F:Fcomplete_screen$beat_game$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lcomplete_screen.beat_game$row$1$99({1}SC:U),R,0,0,[c]
 S:Lcomplete_screen.beat_game$idx$1$99({1}SC:U),R,0,0,[b]
-T:Fcomplete_screen$tag_struct_game_object[({0}S:S$blue_screen$0$0({1}:S),Z,0,0)({1}S:S$intro_once$0$0({1}:S),Z,0,0)({2}S:S$play_music$0$0({1}:S),Z,0,0)]
+T:Fcomplete_screen$tag_struct_game_object[({0}S:S$blue_screen$0$0({1}:S),Z,0,0)({1}S:S$intro_once$0$0({1}:S),Z,0,0)({2}S:S$play_music$0$0({1}:S),Z,0,0)({3}S:S$flash_arrow$0$0({1}:S),Z,0,0)]
 T:Fcomplete_screen$tag_struct_timer_object[({0}S:S$timer_count$0$0({2}SI:U),Z,0,0)({2}S:S$timer_value$0$0({2}SI:U),Z,0,0)]
-S:G$global_game_object$0$0({3}STtag_struct_game_object:S),E,0,0
+S:G$global_game_object$0$0({4}STtag_struct_game_object:S),E,0,0
 S:G$global_timer_object$0$0({4}STtag_struct_timer_object:S),E,0,0
 S:G$intro_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$stats_texts$0$0({0}DA0d,DG,SC:U),E,0,0
@@ -50,6 +50,8 @@ S:G$engine_game_manager_intro_on$0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_intro_off$0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_music_on$0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_music_off$0$0({2}DF,SV:S),C,0,0
+S:G$engine_game_manager_flash_on$0$0({2}DF,SV:S),C,0,0
+S:G$engine_game_manager_flash_off$0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_print_stats$0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_print_village$0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_print_player$0$0({2}DF,SV:S),C,0,0

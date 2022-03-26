@@ -64,7 +64,6 @@ void engine_game_manager_flash_off()
 }
 
 
-
 // Common game rendering functions.
 void engine_game_manager_print_stats()
 {
