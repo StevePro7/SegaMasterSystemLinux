@@ -29,7 +29,6 @@ void screen_func_screen_load()
 	// Forest screen.
 	engine_target_manager_load( 2 );
 	random = engine_random_manager_next();
-	//random = 9;
 	engine_fight_manager_player_to_enemy( &enemys_damage, random );
 
 	random = engine_random_manager_next();
