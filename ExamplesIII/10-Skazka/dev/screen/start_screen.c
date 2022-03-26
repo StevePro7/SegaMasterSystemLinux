@@ -22,10 +22,8 @@ static unsigned char flash_count;
 
 void screen_start_screen_load()
 {
-	unsigned char row;
-//	unsigned char idx;
+	unsigned char row = 1;
 
-	row = 1;
 	devkit_SMS_displayOff();
 	engine_content_manager_load_title( row );
 	engine_text_manager_border();
@@ -36,16 +34,6 @@ void screen_start_screen_load()
 	engine_game_manager_print_player();
 	engine_game_manager_print_version();
 	engine_game_manager_print_texts();
-
-	//row = 13;
-	//devkit_SMS_mapROMBank( FIXED_BANK );
-	//for( idx = 0; idx < 8; idx++ )
-	//{
-	//	engine_font_manager_text( ( unsigned char * ) stats_texts[ idx ], LEFT_X + 12, row++ );
-	//}
-
-	//engine_font_manager_text( LOCALE_BUILD_VER, LEFT_X + 27, FIRE1_ROW );
-	//engine_font_manager_text( "START SCREEN!!", 10, 0 );
 
 	engine_font_manager_text( LOCALE_ARROWS, LEFT_X + 10, OPTION_ROW );
 	devkit_SMS_displayOn();
