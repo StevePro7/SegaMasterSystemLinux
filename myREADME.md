@@ -40,30 +40,23 @@ Download and dump CandyKid.sms into Hex Editor, e.g. HxD, and modify the bytes:
 - 0x0058	Sound Off		Set 0=Sound to play otherwise silent.
 
 ###### ENEMIES
-There are 5x different enemies in order of increasing difficulty: Razboynik, Hungry Wolf, Kikimora, Leshy, Baby Yaga
-<br />
-Defeat final boss Koschey to beat the game!
+- There are 5x different enemies in order of increasing difficulty: Razboynik, Hungry Wolf, Kikimora, Leshy, Baby Yaga
+- Defeat final boss Koschey to beat the game!
 
 ###### LEVELS
-There are 3x levels: 1, 2, 3.  Maximum player HP = 30 and maximum player XP = 99
+- There are 3x levels: 1, 2, 3.  Maximum player HP = 30 and maximum player XP = 99
 
 ###### HINTS
-Try to buy the weapon "Sword" or armor "Tegilay" with your initial gold before entering any forest fights
-<br />
-After completing each forest fight, ensure you "Rest" at the main screen to replenish all HP
-<br />
-In the shop, if you buy an item you already have then the gold will be deducted unconditionally so be aware - there is no validation!
-<br />
-Try to get "+1 Life" just in case you lose a fight or the final boss battle so you do not have to restart game
-<br />
-Maximize player HP + XP and get the best weapon "Axe" and the best armor "Kolchuga" before attempting to beat the boss.  
-<br />
-Once you fight the boss you cannot "Run away".  Try to fight boss once you have > 60 XP because your weapon and armor will be slightly more powerful!
+- Try to buy the weapon "Sword" or armor "Tegilay" with your initial gold before entering any forest fights
+- After completing each forest fight, ensure you "Rest" at the main screen to replenish all HP
+- In the shop, if you buy an item you already have then the gold will be deducted unconditionally so be aware - there is no validation!
+- Try to get "+1 Life" just in case you lose a fight or the final boss battle so you do not have to restart game
+- Maximize player HP + XP and get the best weapon "Axe" and the best armor "Kolchuga" before attempting to beat the boss.  
+- Once you fight the boss you cannot "Run away".  Try to fight boss once you have > 60 XP because your weapon and armor will be slightly more powerful!
 
 ###### CHEATS
-On splash screen, hold joystick down and press button 2 to change default background color.
-<br />
-In forest screen, press fire2 to "Run away" without risking losing any HPs.
+- On splash screen, hold joystick down and press button 2 to change default background color.
+- In forest screen, press fire2 to "Run away" without risking losing any HPs.
 
 ###### CREDITS
 Extra special thanks to: sverx for [devkitSMS](https://github.com/sverx/devkitSMS) and Calindro for their 24/7 Tech Support!
