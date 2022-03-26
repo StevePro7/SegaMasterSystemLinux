@@ -1,17 +1,21 @@
 #include "diff_screen.h"
+#include "../engine/audio_manager.h"
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/game_manager.h"
 #include "../engine/global_manager.h"
+#include "../engine/hack_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/locale_manager.h"
 #include "../engine/select_manager.h"
 #include "../engine/text_manager.h"
+#include "../engine/timer_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
 
-#define  DIFFICULTY_ROW		17
+#define DIFFICULTY_ROW		17
+#define DIFF_SOUND_DELAY	50
 
 static unsigned char event_stage;
 static unsigned char select_type;
@@ -37,27 +41,33 @@ void screen_diff_screen_load()
 	engine_select_manager_load( select_type, LEFT_X + 12, DIFFICULTY_ROW, 2 );
 	devkit_SMS_displayOn();
 
+	engine_timer_manager_load( DIFF_SOUND_DELAY );
 	event_stage = event_stage_start;
 }
 
 void screen_diff_screen_update( unsigned char *screen_type )
 {
+	struct_hack_object *ho = &global_hack_object;
 	struct_game_object *go = &global_game_object;
 
 	unsigned char selection;
-
+	unsigned char timer;
 	if( event_stage_pause == event_stage )
 	{
-		if( go->intro_once )
+		timer = engine_timer_manager_update();
+		if( timer )
 		{
-			engine_game_manager_intro_off();
-			*screen_type = screen_type_intro;
-			return;
-		}
-		else
-		{
-			*screen_type = screen_type_load;
-			return;
+			if( go->intro_once )
+			{
+				engine_game_manager_intro_off();
+				*screen_type = screen_type_intro;
+				return;
+			}
+			else
+			{
+				*screen_type = screen_type_load;
+				return;
+			}
 		}
 	}
 	else
@@ -68,7 +78,13 @@ void screen_diff_screen_update( unsigned char *screen_type )
 			*screen_type = screen_type_diff;
 			return;
 		}
+
+		event_stage = event_stage_pause;
+		if( !ho->hack_delays )
+		{
+			engine_sound_manager_play( sound_type_5 );
+		}
 	}
 
-	event_stage = event_stage_pause;
+	
 }

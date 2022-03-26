@@ -166,4 +166,11 @@ typedef enum tag_enum_sound_type
 
 } enum_sound_type;
 
+typedef enum tag_enum_diff_type
+{
+	diff_type_easy = 0,
+	diff_type_hard = 1,
+
+} enum_diff_type;
+
 #endif//_ENUM_MANAGER_H_
