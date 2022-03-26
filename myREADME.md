@@ -61,6 +61,10 @@ Download and dump CandyKid.sms into Hex Editor, e.g. HxD, and modify the bytes:
 - On title screen, hold fire2 to skip intro music.  Same applies on boss and over screens.
 - In forest screen, press fire2 to "Run away" without risking losing any HPs.
 
+###### DEBUGGING
+- On Windows you should be able to debug the source code directly from Visual Studio Code after pressing F5
+- On Linux you can the source code directly from Visual Studio Code also but launch Emulicious first
+
 ###### CREDITS
 Extra special thanks to: sverx for [devkitSMS](https://github.com/sverx/devkitSMS) and Calindro for their 24/7 Tech Support!
 <br />
