@@ -1,11 +1,11 @@
 M:stats_screen
 F:G$screen_stats_screen_load$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lstats_screen.screen_stats_screen_load$go$1$90({2}DG,STtag_struct_game_object:S),R,0,0,[]
-S:Lstats_screen.screen_stats_screen_load$flash_arrow$1$90({1}:S),R,0,0,[c]
-S:Lstats_screen.screen_stats_screen_load$row$1$90({1}SC:U),R,0,0,[]
+S:Lstats_screen.screen_stats_screen_load$go$1$86({2}DG,STtag_struct_game_object:S),R,0,0,[]
+S:Lstats_screen.screen_stats_screen_load$flash_arrow$1$86({1}:S),R,0,0,[c]
+S:Lstats_screen.screen_stats_screen_load$row$1$86({1}SC:U),R,0,0,[]
 F:G$screen_stats_screen_update$0$0({2}DF,SV:S),Z,0,1,0,0,0
-S:Lstats_screen.screen_stats_screen_update$screen_type$1$92({2}DG,SC:U),B,1,4
-S:Lstats_screen.screen_stats_screen_update$selection$1$93({1}SC:U),B,1,-1
+S:Lstats_screen.screen_stats_screen_update$screen_type$1$88({2}DG,SC:U),B,1,4
+S:Lstats_screen.screen_stats_screen_update$selection$1$89({1}SC:U),B,1,-1
 T:Fstats_screen$tag_struct_player_object[({0}S:S$xp$0$0({1}SC:U),Z,0,0)({1}S:S$hp$0$0({1}SC:U),Z,0,0)({2}S:S$gold$0$0({2}SI:U),Z,0,0)({4}S:S$weapon$0$0({1}SC:U),Z,0,0)({5}S:S$armor$0$0({1}SC:U),Z,0,0)({6}S:S$life$0$0({1}SC:U),Z,0,0)({7}S:S$level$0$0({1}SC:U),Z,0,0)({8}S:S$max_hp$0$0({1}SC:U),Z,0,0)({9}S:S$max_xp$0$0({1}SC:U),Z,0,0)({10}S:S$won$0$0({1}SC:U),Z,0,0)({11}S:S$def_xp$0$0({1}SC:U),Z,0,0)({12}S:S$def_hp$0$0({1}SC:U),Z,0,0)({13}S:S$def_gold$0$0({2}SI:U),Z,0,0)({15}S:S$def_weapon$0$0({1}SC:U),Z,0,0)({16}S:S$def_armor$0$0({1}SC:U),Z,0,0)({17}S:S$def_life$0$0({1}SC:U),Z,0,0)]
 T:Fstats_screen$tag_struct_game_object[({0}S:S$blue_screen$0$0({1}:S),Z,0,0)({1}S:S$intro_once$0$0({1}:S),Z,0,0)({2}S:S$play_music$0$0({1}:S),Z,0,0)({3}S:S$flash_arrow$0$0({1}:S),Z,0,0)]
 T:Fstats_screen$tag_struct_aelect_object[({0}S:S$select_index$0$0({7}DA7d,SC:U),Z,0,0)({7}S:S$select_X$0$0({1}SC:U),Z,0,0)({8}S:S$select_Y$0$0({1}SC:U),Z,0,0)({9}S:S$select_min$0$0({1}SC:U),Z,0,0)({10}S:S$select_max$0$0({1}SC:U),Z,0,0)]
@@ -38,10 +38,6 @@ S:G$engine_music_manager_play$0$0({2}DF,SV:S),C,0,0
 S:G$engine_music_manager_beat$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_splash$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_title$0$0({2}DF,SV:S),C,0,0
-S:G$engine_font_manager_char$0$0({2}DF,SV:S),C,0,0
-S:G$engine_font_manager_text$0$0({2}DF,SV:S),C,0,0
-S:G$engine_font_manager_data$0$0({2}DF,SV:S),C,0,0
-S:G$engine_font_manager_zero$0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_init$0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_black$0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_blue$0$0({2}DF,SV:S),C,0,0

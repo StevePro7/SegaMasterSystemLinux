@@ -5,7 +5,6 @@
 #include "../engine/game_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/input_manager.h"
-#include "../engine/locale_manager.h"
 #include "../engine/text_manager.h"
 #include "../engine/timer_manager.h"
 #include "../devkit/_sms_manager.h"
