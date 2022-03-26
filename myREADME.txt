@@ -79,3 +79,8 @@ align the build.sh with build.bat
 cechk if this will work on both
 sdcc 3.6.9
 sdcc 4.1.0
+
+
+
+
+Hi Kirils - quick Q : your code listing did not specify any color scheme but I saw the SG-1000 port had white on blue background whereas I have defaulted to white on black - do you have any preference?   I have a cheat where you can 
