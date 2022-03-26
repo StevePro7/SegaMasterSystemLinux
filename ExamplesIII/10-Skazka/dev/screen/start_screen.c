@@ -6,6 +6,7 @@
 #include "../engine/game_manager.h"
 #include "../engine/hack_manager.h"
 #include "../engine/global_manager.h"
+#include "../engine/input_manager.h"
 #include "../engine/locale_manager.h"
 #include "../engine/player_manager.h"
 #include "../engine/select_manager.h"
@@ -44,8 +45,7 @@ void screen_start_screen_load()
 	//}
 
 	//engine_font_manager_text( LOCALE_BUILD_VER, LEFT_X + 27, FIRE1_ROW );
-
-	engine_font_manager_text( "START SCREEN!!", 10, 0 );
+	//engine_font_manager_text( "START SCREEN!!", 10, 0 );
 
 	engine_font_manager_text( LOCALE_ARROWS, LEFT_X + 10, OPTION_ROW );
 	devkit_SMS_displayOn();
@@ -59,7 +59,11 @@ void screen_start_screen_update( unsigned char *screen_type )
 {
 	struct_hack_object *ho = &global_hack_object;
 	unsigned char timer;
+	unsigned char input1;
+	unsigned char input2;
+	unsigned char nextr;
 
+	nextr = 0;
 	timer = engine_timer_manager_update();
 	if( timer )
 	{
@@ -75,14 +79,24 @@ void screen_start_screen_update( unsigned char *screen_type )
 		else
 		{
 			engine_font_manager_text( LOCALE_ARROWS, LEFT_X + 10, OPTION_ROW );
+			flash_index++;
+
+			if( flash_index >= START_FLASH_TOTAL )
+			{
+				nextr = 1;
+			}
 		}
 	}
 
-	if( devkit_SMS_getKeysStatus() )
+	input1 = engine_input_manager_move( input_type_left );
+	input2 = engine_input_manager_move( input_type_right );
+	if( !nextr )
 	{
-		engine_font_manager_text( LOCALE_ARROWS, LEFT_X + 10, OPTION_ROW );
-		engine_font_manager_text( "12345", LEFT_X + 10, 23);
+		nextr = input1 || input2;
+	}
 
+	if( nextr )
+	{
 		*screen_type = screen_type_stats;
 		return;
 	}

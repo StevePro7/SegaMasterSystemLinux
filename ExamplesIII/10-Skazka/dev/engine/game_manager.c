@@ -15,6 +15,7 @@ void engine_game_manager_init()
 	engine_game_manager_black();
 	engine_game_manager_intro_on();
 	engine_game_manager_music_on();
+	engine_game_manager_flash_on();
 }
 
 
@@ -50,6 +51,18 @@ void engine_game_manager_music_off()
 	struct_game_object *go = &global_game_object;
 	go->play_music = false;
 }
+
+void engine_game_manager_flash_on()
+{
+	struct_game_object *go = &global_game_object;
+	go->flash_arrow = true;
+}
+void engine_game_manager_flash_off()
+{
+	struct_game_object *go = &global_game_object;
+	go->flash_arrow = false;
+}
+
 
 
 // Common game rendering functions.

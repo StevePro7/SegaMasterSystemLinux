@@ -11,6 +11,7 @@
 #include "../engine/text_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
+#include <stdbool.h>
 
 // Private helper functions.
 //static void print_stats();
@@ -20,6 +21,9 @@ static unsigned char select_type;
 
 void screen_stats_screen_load()
 {
+	struct_game_object *go = &global_game_object;
+	bool flash_arrow = go->flash_arrow;
+
 	unsigned char row;
 	//unsigned char idx;
 
@@ -27,29 +31,24 @@ void screen_stats_screen_load()
 	row = 1;
 
 	engine_player_manager_calc();
+	if( !flash_arrow )
+	{
+		devkit_SMS_displayOff();
+		engine_content_manager_load_title( row );
+		engine_text_manager_border();
+		engine_text_manager_clear( row + 2, row + 9 );
 
-	devkit_SMS_displayOff();
-	engine_content_manager_load_title( row );
-	engine_text_manager_border();
-	engine_text_manager_clear( row + 2, row + 9 );
+		engine_game_manager_print_stats();
+		engine_game_manager_print_village();
+		engine_game_manager_print_player();
+		engine_game_manager_print_version();
+		engine_game_manager_print_texts();
 
-	engine_game_manager_print_stats();
-	engine_game_manager_print_village();
-	engine_game_manager_print_player();
-	engine_game_manager_print_version();
-	engine_game_manager_print_texts();
+		devkit_SMS_displayOn();
+	}
 
-	//row = 13;
-	//devkit_SMS_mapROMBank( FIXED_BANK );
-	//for( idx = 0; idx < 8; idx++ )
-	//{
-	//	engine_font_manager_text( ( unsigned char * ) stats_texts[ idx ], LEFT_X + 12, row++ );
-	//}
-
-	//row = 15;
 	engine_select_manager_load( select_type, LEFT_X + 10, OPTION_ROW, 6 );
-
-	devkit_SMS_displayOn();
+	engine_game_manager_flash_off();
 }
 
 void screen_stats_screen_update( unsigned char *screen_type )
