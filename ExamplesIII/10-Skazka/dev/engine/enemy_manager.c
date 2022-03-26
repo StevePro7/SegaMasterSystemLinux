@@ -11,10 +11,10 @@ struct_enemy_object global_enemy_object;
 
 #define ENEMY_ROW				8
 
-unsigned char hplo_num[ MAX_ENEMIES ] = { 10, 10, 25, 25, 35, 50 };
-unsigned char ax_num[ MAX_ENEMIES ] = { 1, 1, 2, 2, 3, 4 };
-unsigned char gldo_num[ MAX_ENEMIES ] = { 5, 5, 10, 10, 15, 0 };
-unsigned char xpo_num[ MAX_ENEMIES ] = { 2, 2, 4, 4, 10, 0 };
+unsigned char hplo_num[ MAX_ENEMIES ] =	{ 10, 10, 25, 25, 35, 50 };
+unsigned char ax_num[ MAX_ENEMIES ] =	{  1,  1,  2,  2,  3,  4 };
+unsigned char gldo_num[ MAX_ENEMIES ] = {  5,  5, 10, 10, 15,  0 };
+unsigned char xpo_num[ MAX_ENEMIES ] =	{  2,  2,  4,  4, 10,  0 };
 
 void engine_enemy_manager_init()
 {

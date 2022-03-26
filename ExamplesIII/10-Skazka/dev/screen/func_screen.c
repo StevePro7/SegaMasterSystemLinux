@@ -1,24 +1,48 @@
 #include "func_screen.h"
-#include "../engine/content_manager.h"
+#include "../engine/enemy_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
-#include "../engine/global_manager.h"
-#include "../engine/locale_manager.h"
-#include "../engine/text_manager.h"
-#include "../devkit/_sms_manager.h"
+#include "../engine/fight_manager.h"
+#include "../engine/player_manager.h"
+#include "../engine/random_manager.h"
 
-// TODO delete!!
-static void section04();
+static void player();
+static void enemy( unsigned char index );
+
+static unsigned char enemys_damage;
+static unsigned char player_damage;
 
 void screen_func_screen_load()
 {
-//	section04();
-//
-//	//unsigned char code[] = { 0x87, 0x81, 0x81, 0x81, 0x81, 0x81, 0x81, 0x81, 0x81, 0x81, 0x81, 0x89 };
-//	//engine_font_manager_text( "FUNC SCREEN...!!", 2, 10 );
-//
-//	//engine_text_manager_args( 2, 7, 12, 0x86, 0x81, 0x81, 0x81, 0x81, 0x81, 0x81, 0x81, 0x81, 0x81, 0x81, 0x88 );
-//	//engine_text_manager_list( 2, 8, 12, code );
+	unsigned char random;
+	unsigned char index;
+	engine_font_manager_text( "FUNC SCREEN...!!", 2, 0 );
+
+	player();
+	for( index = 0; index < 6; index++ )
+	{
+		engine_target_manager_load( index );
+		enemy( index );
+	}
+
+
+	// Forest screen.
+	engine_target_manager_load( 2 );
+	random = engine_random_manager_next();
+	//random = 9;
+	engine_fight_manager_player_to_enemy( &enemys_damage, random );
+
+	random = engine_random_manager_next();
+	engine_fight_manager_enemy_to_player( &player_damage, random );
+
+
+	// Boss screen.
+	engine_target_manager_load( 5 );
+	random = engine_random_manager_next();
+	engine_fight_manager_player_to_boss( &enemys_damage, random );
+
+	random = engine_random_manager_next();
+	engine_fight_manager_boss_to_player( &player_damage, random );
 }
 
 void screen_func_screen_update( unsigned char *screen_type )
@@ -26,18 +50,21 @@ void screen_func_screen_update( unsigned char *screen_type )
 	*screen_type = screen_type_func;
 }
 
-// 13000 REM TITLE SCREEN
-//static void section04()
-//{
-//	//unsigned char index;
-//	unsigned char row;
-//
-//	row = 1;
-//	engine_content_manager_load_title( row );
-//	engine_text_manager_clear( row + 2, row + 9 );
-//	engine_text_manager_border();
-//	//for( idx = row + 2; idx < row + 9; idx++ )
-//	//{
-//	//	engine_font_manager_text( LOCALE_29_SPCS, LEFT_X + 2, idx );
-//	//}
-//}
+static void player()
+{
+	struct_player_object *po = &global_player_object;
+	po->weapon = 1;
+	engine_font_manager_data( po->hp, 5, 2 );
+	engine_font_manager_data( po->xp, 10, 2 );
+	engine_font_manager_data( po->weapon, 15, 2 );
+	engine_font_manager_data( po->armor, 20, 2 );
+}
+static void enemy( unsigned char index )
+{
+	struct_enemy_object *eo = &global_enemy_object;
+	engine_font_manager_data( eo->index, 5, index + 4 );
+	engine_font_manager_data( eo->hplo, 10, index + 4 );
+	engine_font_manager_data( eo->ax, 15, index + 4 );
+	engine_font_manager_data( eo->gldo, 20, index + 4 );
+	engine_font_manager_data( eo->xpo, 25, index + 4 );
+}
