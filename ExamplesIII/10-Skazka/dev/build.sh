@@ -131,11 +131,11 @@ rm -f *.asm 2> /dev/null && rm -f *.lst 2> /dev/null && rm -f *.sym 2> /dev/null
 cd ..
 
 cd object
-if exist "*.asm" del "*.asm" > nul; if exist "*.lst" del "*.lst" > nul; if exist "*.sym" del "*.sym" > nul
+rm -f *.asm 2> /dev/null && rm -f *.lst 2> /dev/null && rm -f *.sym 2> /dev/null
 cd ..
 
 cd screen
-if exist "*.asm" del "*.asm" > nul; if exist "*.lst" del "*.lst" > nul; if exist "*.sym" del "*.sym" > nul
+rm -f *.asm 2> /dev/null && rm -f *.lst 2> /dev/null && rm -f *.sym 2> /dev/null
 cd ..
 
 rm -f *.asm 2> /dev/null && rm -f *.ihx 2> /dev/null
