@@ -1,13 +1,13 @@
 M:splash_screen
 F:G$screen_splash_screen_load$0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_splash_screen_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lsplash_screen.screen_splash_screen_update$screen_type$1$71({2}DG,SC:U),B,1,4
-S:Lsplash_screen.screen_splash_screen_update$input1$1$72({1}SC:U),R,0,0,[c]
-S:Lsplash_screen.screen_splash_screen_update$input2$1$72({1}SC:U),R,0,0,[c]
-S:Lsplash_screen.screen_splash_screen_update$timer$1$72({1}SC:U),R,0,0,[b]
-T:Fsplash_screen$tag_struct_game_object[({0}S:S$blue_screen$0$0({1}:S),Z,0,0)({1}S:S$intro_once$0$0({1}:S),Z,0,0)({2}S:S$play_music$0$0({1}:S),Z,0,0)({3}S:S$flash_arrow$0$0({1}:S),Z,0,0)]
+S:Lsplash_screen.screen_splash_screen_update$screen_type$1$72({2}DG,SC:U),B,1,4
+S:Lsplash_screen.screen_splash_screen_update$input1$1$73({1}SC:U),R,0,0,[c]
+S:Lsplash_screen.screen_splash_screen_update$input2$1$73({1}SC:U),R,0,0,[c]
+S:Lsplash_screen.screen_splash_screen_update$timer$1$73({1}SC:U),R,0,0,[b]
+T:Fsplash_screen$tag_struct_game_object[({0}S:S$blue_screen$0$0({1}:S),Z,0,0)({1}S:S$intro_once$0$0({1}:S),Z,0,0)({2}S:S$play_music$0$0({1}:S),Z,0,0)({3}S:S$flash_arrow$0$0({1}:S),Z,0,0)({4}S:S$difficulty$0$0({1}SC:U),Z,0,0)]
 T:Fsplash_screen$tag_struct_timer_object[({0}S:S$timer_count$0$0({2}SI:U),Z,0,0)({2}S:S$timer_value$0$0({2}SI:U),Z,0,0)]
-S:G$global_game_object$0$0({4}STtag_struct_game_object:S),E,0,0
+S:G$global_game_object$0$0({5}STtag_struct_game_object:S),E,0,0
 S:G$global_timer_object$0$0({4}STtag_struct_timer_object:S),E,0,0
 S:Fsplash_screen$first_time$0$0({1}:S),E,0,0
 S:G$engine_content_manager_load_splash$0$0({2}DF,SV:S),C,0,0
@@ -21,6 +21,7 @@ S:G$engine_game_manager_music_on$0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_music_off$0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_flash_on$0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_flash_off$0$0({2}DF,SV:S),C,0,0
+S:G$engine_game_manager_difficulty$0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_print_stats$0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_print_village$0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_print_player$0$0({2}DF,SV:S),C,0,0

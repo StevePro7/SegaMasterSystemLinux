@@ -37,8 +37,8 @@ S:G$engine_font_manager_text$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_zero$0$0({2}DF,SV:S),C,0,0
 S:G$engine_fight_manager_player_to_enemy$0$0({2}DF,SV:S),C,0,0
-S:G$engine_fight_manager_player_to_boss$0$0({2}DF,SV:S),C,0,0
 S:G$engine_fight_manager_enemy_to_player$0$0({2}DF,SV:S),C,0,0
+S:G$engine_fight_manager_player_to_boss$0$0({2}DF,SV:S),C,0,0
 S:G$engine_fight_manager_boss_to_player$0$0({2}DF,SV:S),C,0,0
 S:G$engine_fight_manager_gold$0$0({2}DF,SV:S),C,0,0
 S:G$engine_boss_manager_draw$0$0({2}DF,SV:S),C,0,0

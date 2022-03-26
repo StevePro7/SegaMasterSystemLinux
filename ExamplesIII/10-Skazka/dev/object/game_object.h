@@ -9,6 +9,7 @@ typedef struct tag_struct_game_object
 	bool intro_once;
 	bool play_music;
 	bool flash_arrow;
+	unsigned char difficulty;
 
 } struct_game_object;
 

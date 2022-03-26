@@ -19,6 +19,8 @@ void engine_game_manager_music_off();
 void engine_game_manager_flash_on();
 void engine_game_manager_flash_off();
 
+void engine_game_manager_difficulty( unsigned char difficulty );
+
 void engine_game_manager_print_stats();
 void engine_game_manager_print_village();
 void engine_game_manager_print_player();

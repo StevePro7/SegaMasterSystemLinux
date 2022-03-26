@@ -16,7 +16,8 @@ void main( void )
 
 
 	open_screen_type = screen_type_splash;
-	//open_screen_type = screen_type_title;
+	open_screen_type = screen_type_title;
+	open_screen_type = screen_type_diff;
 
 
 	// Initialize player first!

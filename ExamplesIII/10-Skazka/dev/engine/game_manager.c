@@ -62,6 +62,12 @@ void engine_game_manager_flash_off()
 	go->flash_arrow = false;
 }
 
+void engine_game_manager_difficulty( unsigned char difficulty )
+{
+	struct_game_object *go = &global_game_object;
+	go->difficulty = difficulty;
+}
+
 
 // Common game rendering functions.
 void engine_game_manager_print_stats()
@@ -115,3 +121,4 @@ void engine_game_manager_print_texts()
 		engine_font_manager_text( ( unsigned char * ) stats_texts[ idx ], LEFT_X + 12, row++ );
 	}
 }
+

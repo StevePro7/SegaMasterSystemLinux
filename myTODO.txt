@@ -1,6 +1,30 @@
 TODO
 24/03/2022
 
+engine_fight_manager_enemy_to_player
+
+
+extra = eo->ax;
+damage = get_damage( random );
+
+if( 4 == damage )
+{
+	damage += extra;
+
+	// if hard then damage += extra;
+}
+else if( 3 == damage )
+{
+	damage += extra;
+}
+else if( 2 == damage || 1 == damage )
+{
+	// if hard then damage += extra;
+}
+
+	*p_damage = damage;
+
+
 Easy vs. Hard
 engine_fight_manager_enemy_to_player()
 

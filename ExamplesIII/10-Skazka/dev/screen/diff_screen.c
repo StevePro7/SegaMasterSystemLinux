@@ -79,6 +79,9 @@ void screen_diff_screen_update( unsigned char *screen_type )
 			return;
 		}
 
+		// Set difficulty.
+		engine_game_manager_difficulty( selection );
+
 		event_stage = event_stage_pause;
 		if( !ho->hack_delays )
 		{
