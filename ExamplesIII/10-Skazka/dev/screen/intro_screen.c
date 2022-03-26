@@ -14,10 +14,11 @@
 
 #define INTRO_SCREEN_DELAY		900
 
+static void print_intro();
+
 void screen_intro_screen_load()
 {
 	unsigned char row;
-	unsigned char idx;
 
 	row = 1;
 	devkit_SMS_displayOff();
@@ -29,12 +30,7 @@ void screen_intro_screen_load()
 	engine_text_manager_title( row + 2 );
 
 	// Instructions.
-	row = 10;
-	devkit_SMS_mapROMBank( FIXED_BANK );
-	for( idx = 0; idx < 10; idx++ )
-	{
-		engine_font_manager_text( ( unsigned char * ) intro_texts[ idx ], LEFT_X + 2, row++ );
-	}
+	print_intro();
 
 	engine_text_manager_fire();
 	devkit_SMS_displayOn();
@@ -59,4 +55,19 @@ void screen_intro_screen_update( unsigned char *screen_type )
 
 	rand();
 	*screen_type = screen_type_intro;
+}
+
+static void print_intro()
+{
+	unsigned char row;
+	unsigned char idx;
+
+	row = 10;
+	devkit_SMS_mapROMBank( FIXED_BANK );
+	for( idx = 0; idx < 10; idx++ )
+	{
+		engine_font_manager_text( ( unsigned char * ) intro_texts[ idx ], LEFT_X + 2, row );
+		row++;
+	}
+
 }
