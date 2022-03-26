@@ -8,7 +8,9 @@ Sunday, 27th March 2022
 Skazka is a Slavic RGP Adventure game originally written by Kirils Skrabe in BASIC for the Sega SC-3000 and posted to the SC-3000 Survivors [Facebook](https://bit.ly/3De1P4E) group on March 3rd 2022.  Original source code can be found [here](https://bit.ly/3tGV9J3).
 
 ###### PORTS
-Saverio Russo ported the game to the SG-1000 using a custom "SC3K DevKit" which I believed is based on "Dear imGUI".  Here is the Sega Master System port using the devkitSMS.
+Saverio Russo ported the game to the SG-1000 using a custom "SC3K DevKit" which I believed is based on "Dear imGUI".
+<br />
+Here is the Sega Master System port using the [devkitSMS](https://github.com/sverx/devkitSMS).
 
 ###### TOOLS
 - Programming:	devkitSMS
