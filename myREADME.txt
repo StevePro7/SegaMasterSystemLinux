@@ -7,10 +7,14 @@ sword		1
 axe		2
 
 ARMOR
-kolch		1
-teligay		2
+kolchuga		1
+tegilay		2
 
-
+max hp		30
+max xp		99
+3x levels
+5x enemies	razboynik, hungry_wolf, kikimora, leshy, baby_yaga
+1x boss		koschey
 Tips
 buy sword OR buy kolchuga first with 10x gold
 and fight to gain XP and more gold
