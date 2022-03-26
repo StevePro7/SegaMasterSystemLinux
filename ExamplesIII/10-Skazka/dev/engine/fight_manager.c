@@ -40,7 +40,6 @@ void engine_fight_manager_player_to_enemy( unsigned char *e_damage, unsigned cha
 
 	*e_damage = damage;
 }
-
 //3600 G = INT( RND( 1 ) * 10 )
 //3610 IF G = 0 THEN S = 0
 //3620 IF G = 1 OR G = 2 OR G = 3 THEN S = 1 + ATKLO:N = N - S + ARM
