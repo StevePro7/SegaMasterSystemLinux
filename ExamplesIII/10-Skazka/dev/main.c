@@ -18,8 +18,8 @@ void main( void )
 	engine_content_manager_load_tiles();
 
 
-	//open_screen_type = screen_type_splash;
-	open_screen_type = screen_type_title;
+	open_screen_type = screen_type_splash;
+	//open_screen_type = screen_type_title;
 
 	// Initialize player first!
 	engine_player_manager_init();

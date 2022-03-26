@@ -12,12 +12,11 @@ struct_game_object global_game_object;
 
 void engine_game_manager_init()
 {
-	engine_game_manager_black();
+	engine_game_manager_blue();
 	engine_game_manager_intro_on();
 	engine_game_manager_music_on();
 	engine_game_manager_flash_on();
 }
-
 
 void engine_game_manager_black()
 {

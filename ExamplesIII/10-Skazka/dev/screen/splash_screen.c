@@ -33,7 +33,7 @@ void screen_splash_screen_update( unsigned char *screen_type )
 		input2 = engine_input_manager_move( input_type_fire2 );
 		if( input1 && input2 )
 		{
-			engine_game_manager_blue();
+			engine_game_manager_black();
 		}
 	}
 	
