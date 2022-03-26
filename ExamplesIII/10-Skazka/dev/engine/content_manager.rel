@@ -1,6 +1,6 @@
 ;!FILE content_manager.asm
 XL2
-H 9 areas 92 global symbols
+H 9 areas 83 global symbols
 M content_manager
 O -mz80
 S _splash__tilemap__stmcompr Ref0000
@@ -10,7 +10,6 @@ S _devkit_SMS_loadBGPalette Ref0000
 S _devkit_SMS_loadPSGaidencompressedTiles Ref0000
 S _font_tiles__tiles__psgcompr Ref0000
 S .__.ABS. Def0000
-S _global_game_object Ref0000
 S _devkit_RGB Ref0000
 S _devkit_SMS_setSpritePaletteColor Ref0000
 S _splash__tiles__psgcompr Ref0000
@@ -18,111 +17,97 @@ S _font_tiles__tilemap__stmcompr Ref0000
 S _font_tiles__palette__bin Ref0000
 S _devkit_SMS_setBGPaletteColor Ref0000
 S _devkit_SMS_mapROMBank Ref0000
-A _CODE size AD flags 0 addr 0
+A _CODE size 96 flags 0 addr 0
 S G$engine_content_manager_load_splash$0$0 Def0000
 S A$content_manager$100 Def002A
-S A$content_manager$200 Def0086
-S A$content_manager$201 Def0089
-S A$content_manager$220 Def00A0
-S A$content_manager$202 Def008A
+S A$content_manager$200 Def0089
+S A$content_manager$201 Def008A
+S A$content_manager$202 Def008B
 S _engine_content_manager_load_splash Def0000
-S A$content_manager$230 Def00AB
-S A$content_manager$221 Def00A1
-S A$content_manager$203 Def008B
+S A$content_manager$203 Def008C
 S A$content_manager$131 Def0040
 S A$content_manager$113 Def002B
-S A$content_manager$222 Def00A2
-S A$content_manager$213 Def0094
-S A$content_manager$204 Def008C
-S A$content_manager$150 Def0049
-S A$content_manager$141 Def0041
+S A$content_manager$204 Def008D
+S A$content_manager$150 Def004D
 S A$content_manager$123 Def0038
 S A$content_manager$114 Def002E
-S A$content_manager$223 Def00A3
-S A$content_manager$214 Def0097
-S A$content_manager$205 Def008D
-S A$content_manager$160 Def0059
-S A$content_manager$151 Def004B
+S A$content_manager$214 Def0095
+S A$content_manager$205 Def008E
+S A$content_manager$160 Def0058
 S A$content_manager$124 Def003B
 S A$content_manager$115 Def002F
-S A$content_manager$224 Def00A4
-S A$content_manager$215 Def0098
-S A$content_manager$206 Def008E
-S A$content_manager$170 Def0064
-S A$content_manager$161 Def005A
+S A$content_manager$206 Def008F
+S A$content_manager$170 Def0061
+S A$content_manager$161 Def0059
 S A$content_manager$125 Def003C
 S A$content_manager$116 Def0032
-S C$content_manager.c$40$2$70 Def0094
-S A$content_manager$225 Def00A5
-S A$content_manager$216 Def009A
-S A$content_manager$207 Def008F
-S A$content_manager$171 Def0065
+S C$content_manager.c$40$2$70 Def007E
+S A$content_manager$207 Def0090
+S A$content_manager$180 Def006F
+S A$content_manager$171 Def0064
+S A$content_manager$162 Def005A
+S A$content_manager$144 Def0041
 S A$content_manager$126 Def003F
 S A$content_manager$117 Def0033
-S A$content_manager$235 Def00AC
-S A$content_manager$226 Def00A6
-S A$content_manager$217 Def009B
-S A$content_manager$208 Def0090
-S A$content_manager$190 Def007A
-S A$content_manager$181 Def006E
-S A$content_manager$172 Def0066
+S A$content_manager$208 Def0091
+S A$content_manager$190 Def007B
+S A$content_manager$181 Def0070
+S A$content_manager$172 Def0065
+S A$content_manager$163 Def005B
+S A$content_manager$154 Def004E
+S A$content_manager$145 Def0044
 S A$content_manager$118 Def0036
-S A$content_manager$227 Def00A7
-S A$content_manager$218 Def009C
-S A$content_manager$209 Def0091
-S A$content_manager$191 Def007C
-S A$content_manager$182 Def0071
-S A$content_manager$173 Def0067
-S A$content_manager$155 Def004E
+S C$content_manager.c$42$2$70 Def0095
+S A$content_manager$209 Def0094
+S A$content_manager$182 Def0073
+S A$content_manager$164 Def005C
+S A$content_manager$155 Def0051
+S A$content_manager$146 Def0045
 S A$content_manager$119 Def0037
-S A$content_manager$228 Def00AA
-S A$content_manager$219 Def009F
-S A$content_manager$183 Def0072
-S A$content_manager$174 Def0068
-S A$content_manager$165 Def005B
-S A$content_manager$156 Def0051
+S A$content_manager$183 Def0074
+S A$content_manager$165 Def005F
+S A$content_manager$156 Def0052
+S A$content_manager$147 Def0048
 S C$content_manager.c$13$1$66 Def0000
 S C$content_manager.c$10$0$0 Def0000
 S A$content_manager$184 Def0075
-S A$content_manager$175 Def0069
-S A$content_manager$166 Def005E
-S A$content_manager$157 Def0052
-S A$content_manager$148 Def0042
+S A$content_manager$166 Def0060
+S A$content_manager$157 Def0055
+S A$content_manager$148 Def0049
 S C$content_manager.c$22$1$67 Def002B
 S C$content_manager.c$14$1$66 Def0008
-S A$content_manager$176 Def006C
-S A$content_manager$167 Def005F
-S A$content_manager$158 Def0055
-S A$content_manager$149 Def0045
-S C$content_manager.c$30$1$69 Def0042
+S A$content_manager$194 Def007E
+S A$content_manager$185 Def0076
+S A$content_manager$176 Def0068
+S A$content_manager$158 Def0056
+S A$content_manager$149 Def004C
 S C$content_manager.c$23$1$67 Def0038
 S G$engine_content_manager_load_tiles$0$0 Def002B
 S C$content_manager.c$15$1$66 Def0015
-S A$content_manager$195 Def007E
-S A$content_manager$177 Def006D
-S A$content_manager$168 Def0062
-S A$content_manager$159 Def0056
+S A$content_manager$195 Def0081
+S A$content_manager$186 Def0077
+S A$content_manager$177 Def006B
+S A$content_manager$159 Def0057
 S G$engine_content_manager_load_title$0$0 Def0041
 S C$content_manager.c$24$1$67 Def0040
 S C$content_manager.c$16$1$66 Def0022
-S A$content_manager$196 Def0081
-S A$content_manager$169 Def0063
-S C$content_manager.c$39$2$70 Def007E
-S C$content_manager.c$32$1$69 Def004E
+S A$content_manager$196 Def0082
+S A$content_manager$187 Def0078
+S A$content_manager$178 Def006C
+S C$content_manager.c$39$2$70 Def0068
+S C$content_manager.c$32$1$69 Def0041
 S XG$engine_content_manager_load_splash$0$0 Def002A
 S C$content_manager.c$17$1$66 Def002A
-S A$content_manager$197 Def0082
-S A$content_manager$188 Def0076
-S C$content_manager.c$42$1$69 Def00AC
-S C$content_manager.c$33$1$69 Def005B
+S A$content_manager$197 Def0084
+S A$content_manager$188 Def0079
+S A$content_manager$179 Def006E
+S C$content_manager.c$33$1$69 Def004E
 S C$content_manager.c$26$1$67 Def0041
-S A$content_manager$198 Def0084
-S A$content_manager$189 Def0079
-S C$content_manager.c$34$1$69 Def006E
+S A$content_manager$198 Def0085
+S A$content_manager$189 Def007A
+S C$content_manager.c$34$1$69 Def0061
 S C$content_manager.c$19$1$66 Def002B
-S A$content_manager$199 Def0085
-S C$content_manager.c$37$1$69 Def0076
-S C$content_manager.c$29$1$69 Def0042
+S A$content_manager$199 Def0086
 S A$content_manager$72 Def0008
 S A$content_manager$82 Def0015
 S A$content_manager$73 Def000B
@@ -149,7 +134,7 @@ S A$content_manager$87 Def0020
 S A$content_manager$78 Def0014
 S A$content_manager$88 Def0021
 S XG$engine_content_manager_load_tiles$0$0 Def0040
-S XG$engine_content_manager_load_title$0$0 Def00AC
+S XG$engine_content_manager_load_title$0$0 Def0095
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -161,9 +146,9 @@ A _CABS size 0 flags 8 addr 0
 T 00 00
 R 00 00 00 00
 T 00 00 3E 03 F5 33 CD 00 00 33 21 00 00 E5 21
-R 00 00 00 00 02 07 0E 00
+R 00 00 00 00 02 07 0D 00
 T 0D 00 00 00 E5 CD 00 00 F1 F1 01 00 00 C5 21
-R 00 00 00 00 02 02 0A 00 02 06 04 00 02 0B 00 00
+R 00 00 00 00 02 02 09 00 02 06 04 00 02 0B 00 00
 T 1A 00 00 00 E5 CD 00 00 F1 F1 01 00 00 C5 CD
 R 00 00 00 00 02 06 01 00 02 0B 02 00
 T 27 00 00 00 F1 C9
@@ -173,26 +158,20 @@ R 00 00 00 00
 T 2B 00 21 00 00 E5 21 00 00 E5 CD 00 00 F1 F1 01
 R 00 00 00 00 02 07 05 00 02 0B 04 00
 T 39 00 00 00 C5 CD 00 00 F1 C9
-R 00 00 00 00 02 02 0C 00 02 06 03 00
+R 00 00 00 00 02 02 0B 00 02 06 03 00
 T 41 00
 R 00 00 00 00
-T 41 00 3B 3A 00 00 FD 21 00 00 FD 39 FD 77 00 21
-R 00 00 00 00 02 04 07 00
-T 4F 00 00 00 E5 21 00 00 E5 CD 00 00 F1 F1 01
-R 00 00 00 00 02 06 05 00 02 0A 04 00
-T 5C 00 00 00 C5 21 05 00 39 7E F5 33 AF F5 33 CD
-R 00 00 00 00 02 02 0B 00
-T 6A 00 00 00 F1 F1 01 00 00 C5 CD 00 00 F1 21
-R 00 00 00 00 02 02 01 00 02 07 0C 00 02 0B 03 00
-T 77 00 00 00 39 CB 46 28 2D 21 00 03 E5 3E 01 F5
-R 00 00 00 00
-T 85 00 33 CD 00 00 F1 33 45 C5 33 AF F5 33 CD
-R 00 00 00 00 02 04 08 00
-T 92 00 00 00 21 00 03 E3 3E 01 F5 33 CD 00 00 F1
-R 00 00 00 00 02 02 0D 00 02 0D 08 00
-T A0 00 33 45 C5 33 AF F5 33 CD 00 00 F1
-R 00 00 00 00 02 0A 09 00
-T AB 00
-R 00 00 00 00
-T AB 00 33 C9
+T 41 00 21 00 00 E5 21 00 00 E5 CD 00 00 F1 F1 01
+R 00 00 00 00 02 07 05 00 02 0B 04 00
+T 4F 00 00 00 C5 21 04 00 39 7E F5 33 AF F5 33 CD
+R 00 00 00 00 02 02 0A 00
+T 5D 00 00 00 F1 F1 01 00 00 C5 CD 00 00 21 00 03
+R 00 00 00 00 02 02 01 00 02 07 0B 00 02 0B 03 00
+T 6B 00 E3 3E 01 F5 33 CD 00 00 F1 33 45 C5 33 AF
+R 00 00 00 00 02 08 07 00
+T 79 00 F5 33 CD 00 00 21 00 03 E3 3E 01 F5 33 CD
+R 00 00 00 00 02 05 0C 00
+T 87 00 00 00 F1 33 45 C5 33 AF F5 33 CD 00 00 F1
+R 00 00 00 00 02 02 07 00 02 0D 08 00
+T 95 00 C9
 R 00 00 00 00

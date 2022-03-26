@@ -61,7 +61,7 @@ void engine_enemy_manager_load( unsigned char level )
 		}
 		else if( value < 2 )
 		{
-			index = enemy_type_hungry_wolf;;
+			index = enemy_type_hungry_wolf;
 		}
 		else if( value < 5 )
 		{
