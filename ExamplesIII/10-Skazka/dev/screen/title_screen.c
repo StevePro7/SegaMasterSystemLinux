@@ -116,7 +116,12 @@ void screen_title_screen_update( unsigned char *screen_type )
 		{
 			engine_font_manager_text( LOCALE_FIRE1_WORD, LEFT_X + 11, FIRE1_ROW );
 			engine_timer_manager_load( TITLE_SOUND_DELAY );
-			engine_sound_manager_play( sound_type_5 );
+
+			if( !ho->hack_delays )
+			{
+				engine_sound_manager_play( sound_type_5 );
+			}
+
 			event_stage = event_stage_pause;
 		}
 
