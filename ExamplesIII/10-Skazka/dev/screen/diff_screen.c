@@ -2,6 +2,7 @@
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
+#include "../engine/game_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/locale_manager.h"
@@ -12,6 +13,7 @@
 
 #define  DIFFICULTY_ROW		17
 
+static unsigned char event_stage;
 static unsigned char select_type;
 
 void screen_diff_screen_load()
@@ -34,9 +36,39 @@ void screen_diff_screen_load()
 
 	engine_select_manager_load( select_type, LEFT_X + 12, DIFFICULTY_ROW, 2 );
 	devkit_SMS_displayOn();
+
+	event_stage = event_stage_start;
 }
 
 void screen_diff_screen_update( unsigned char *screen_type )
 {
-	*screen_type = screen_type_diff;
+	struct_game_object *go = &global_game_object;
+
+	unsigned char selection;
+
+	if( event_stage_pause == event_stage )
+	{
+		if( go->intro_once )
+		{
+			engine_game_manager_intro_off();
+			*screen_type = screen_type_intro;
+			return;
+		}
+		else
+		{
+			*screen_type = screen_type_load;
+			return;
+		}
+	}
+	else
+	{
+		selection = engine_select_manager_update( select_type );
+		if( NO_SELECTION == selection )
+		{
+			*screen_type = screen_type_diff;
+			return;
+		}
+	}
+
+	event_stage = event_stage_pause;
 }

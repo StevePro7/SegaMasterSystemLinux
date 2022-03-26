@@ -5,12 +5,12 @@ T:Fmain$tag_struct_player_object[({0}S:S$xp$0$0({1}SC:U),Z,0,0)({1}S:S$hp$0$0({1
 T:Fmain$tag_struct_hack_object[({0}S:S$hack_delays$0$0({1}SC:U),Z,0,0)({1}S:S$hack_nodead$0$0({1}SC:U),Z,0,0)({2}S:S$hack_currxp$0$0({1}SC:U),Z,0,0)({3}S:S$hack_currhp$0$0({1}SC:U),Z,0,0)({4}S:S$hack_goldno$0$0({1}SC:U),Z,0,0)({5}S:S$hack_weapon$0$0({1}SC:U),Z,0,0)({6}S:S$hack_armors$0$0({1}SC:U),Z,0,0)({7}S:S$hack_oneups$0$0({1}SC:U),Z,0,0)({8}S:S$hack_talker$0$0({1}SC:U),Z,0,0)({9}S:S$hack_musics$0$0({1}SC:U),Z,0,0)({10}S:S$hack_sounds$0$0({1}SC:U),Z,0,0)]
 T:Fmain$tag_struct_game_object[({0}S:S$blue_screen$0$0({1}:S),Z,0,0)({1}S:S$intro_once$0$0({1}:S),Z,0,0)({2}S:S$play_music$0$0({1}:S),Z,0,0)({3}S:S$flash_arrow$0$0({1}:S),Z,0,0)]
 T:Fmain$tag_struct_enemy_object[({0}S:S$index$0$0({1}SC:U),Z,0,0)({1}S:S$hplo$0$0({1}SC:U),Z,0,0)({2}S:S$ax$0$0({1}SC:U),Z,0,0)({3}S:S$gldo$0$0({1}SC:U),Z,0,0)({4}S:S$xpo$0$0({1}SC:U),Z,0,0)]
-T:Fmain$tag_struct_aelect_object[({0}S:S$select_index$0$0({7}DA7d,SC:U),Z,0,0)({7}S:S$select_X$0$0({1}SC:U),Z,0,0)({8}S:S$select_Y$0$0({1}SC:U),Z,0,0)({9}S:S$select_min$0$0({1}SC:U),Z,0,0)({10}S:S$select_max$0$0({1}SC:U),Z,0,0)]
+T:Fmain$tag_struct_aelect_object[({0}S:S$select_index$0$0({8}DA8d,SC:U),Z,0,0)({8}S:S$select_X$0$0({1}SC:U),Z,0,0)({9}S:S$select_Y$0$0({1}SC:U),Z,0,0)({10}S:S$select_min$0$0({1}SC:U),Z,0,0)({11}S:S$select_max$0$0({1}SC:U),Z,0,0)]
 S:G$global_enemy_object$0$0({5}STtag_struct_enemy_object:S),E,0,0
 S:G$global_game_object$0$0({4}STtag_struct_game_object:S),E,0,0
 S:G$global_hack_object$0$0({11}STtag_struct_hack_object:S),E,0,0
 S:G$global_player_object$0$0({18}STtag_struct_player_object:S),E,0,0
-S:G$global_select_object$0$0({11}STtag_struct_aelect_object:S),E,0,0
+S:G$global_select_object$0$0({12}STtag_struct_aelect_object:S),E,0,0
 S:Lmain.main$global_pause$1$125({1}:S),E,0,0
 S:G$atof$0$0({2}DF,SF:S),C,0,0
 S:G$atoi$0$0({2}DF,SI:S),C,0,0

@@ -12,10 +12,10 @@ S:Lshop_screen.setup$row$1$124({1}SC:U),R,0,0,[c]
 S:Lshop_screen.setup$idx$1$124({1}SC:U),R,0,0,[b]
 T:Fshop_screen$tag_struct_player_object[({0}S:S$xp$0$0({1}SC:U),Z,0,0)({1}S:S$hp$0$0({1}SC:U),Z,0,0)({2}S:S$gold$0$0({2}SI:U),Z,0,0)({4}S:S$weapon$0$0({1}SC:U),Z,0,0)({5}S:S$armor$0$0({1}SC:U),Z,0,0)({6}S:S$life$0$0({1}SC:U),Z,0,0)({7}S:S$level$0$0({1}SC:U),Z,0,0)({8}S:S$max_hp$0$0({1}SC:U),Z,0,0)({9}S:S$max_xp$0$0({1}SC:U),Z,0,0)({10}S:S$won$0$0({1}SC:U),Z,0,0)({11}S:S$def_xp$0$0({1}SC:U),Z,0,0)({12}S:S$def_hp$0$0({1}SC:U),Z,0,0)({13}S:S$def_gold$0$0({2}SI:U),Z,0,0)({15}S:S$def_weapon$0$0({1}SC:U),Z,0,0)({16}S:S$def_armor$0$0({1}SC:U),Z,0,0)({17}S:S$def_life$0$0({1}SC:U),Z,0,0)]
 T:Fshop_screen$tag_struct_timer_object[({0}S:S$timer_count$0$0({2}SI:U),Z,0,0)({2}S:S$timer_value$0$0({2}SI:U),Z,0,0)]
-T:Fshop_screen$tag_struct_aelect_object[({0}S:S$select_index$0$0({7}DA7d,SC:U),Z,0,0)({7}S:S$select_X$0$0({1}SC:U),Z,0,0)({8}S:S$select_Y$0$0({1}SC:U),Z,0,0)({9}S:S$select_min$0$0({1}SC:U),Z,0,0)({10}S:S$select_max$0$0({1}SC:U),Z,0,0)]
+T:Fshop_screen$tag_struct_aelect_object[({0}S:S$select_index$0$0({8}DA8d,SC:U),Z,0,0)({8}S:S$select_X$0$0({1}SC:U),Z,0,0)({9}S:S$select_Y$0$0({1}SC:U),Z,0,0)({10}S:S$select_min$0$0({1}SC:U),Z,0,0)({11}S:S$select_max$0$0({1}SC:U),Z,0,0)]
 S:G$inventory$0$0({5}DA5d,SC:U),E,0,0
 S:G$global_player_object$0$0({18}STtag_struct_player_object:S),E,0,0
-S:G$global_select_object$0$0({11}STtag_struct_aelect_object:S),E,0,0
+S:G$global_select_object$0$0({12}STtag_struct_aelect_object:S),E,0,0
 S:G$global_timer_object$0$0({4}STtag_struct_timer_object:S),E,0,0
 S:G$intro_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$diff_texts$0$0({0}DA0d,DG,SC:U),E,0,0
