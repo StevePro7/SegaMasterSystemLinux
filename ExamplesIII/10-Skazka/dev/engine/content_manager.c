@@ -16,13 +16,6 @@ void engine_content_manager_load_splash()
 	devkit_SMS_loadBGPalette( ( void * ) splash__palette__bin );
 }
 
-void engine_content_manager_load_tiles()
-{
-	// Font tiles.
-	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char* ) font_tiles__tiles__psgcompr, LOAD_TILES );
-	devkit_SMS_loadBGPalette( ( void * ) font_tiles__palette__bin );
-}
-
 void engine_content_manager_load_title( unsigned char y )
 {
 	// Title tiles.

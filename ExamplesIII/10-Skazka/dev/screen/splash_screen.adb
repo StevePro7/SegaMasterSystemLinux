@@ -11,7 +11,6 @@ S:G$global_game_object$0$0({4}STtag_struct_game_object:S),E,0,0
 S:G$global_timer_object$0$0({4}STtag_struct_timer_object:S),E,0,0
 S:Fsplash_screen$first_time$0$0({1}:S),E,0,0
 S:G$engine_content_manager_load_splash$0$0({2}DF,SV:S),C,0,0
-S:G$engine_content_manager_load_tiles$0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_title$0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_init$0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_black$0$0({2}DF,SV:S),C,0,0

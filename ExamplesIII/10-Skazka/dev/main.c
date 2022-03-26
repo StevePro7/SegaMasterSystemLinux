@@ -14,12 +14,11 @@ void main( void )
 	devkit_SMS_useFirstHalfTilesforSprites( false );
 	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );
 
-	// TODO - this will be in the title screen!
-	engine_content_manager_load_tiles();
 
-
-	open_screen_type = screen_type_splash;
+	//open_screen_type = screen_type_splash;
 	//open_screen_type = screen_type_title;
+	open_screen_type = screen_type_load;		// TODO only leave for last minute testing
+
 
 	// Initialize player first!
 	engine_player_manager_init();
@@ -30,11 +29,6 @@ void main( void )
 	engine_enemy_manager_init();
 	engine_game_manager_init();
 	engine_sound_manager_init();
-
-	// TODO - remove this at the end because will be in the load screen before new game anyway
-	engine_player_manager_load();
-	engine_player_manager_calc();
-	// TODO - remove this at the end because will be in the load screen before new game anyway
 
 	engine_select_manager_init();
 	engine_screen_manager_init( open_screen_type );
