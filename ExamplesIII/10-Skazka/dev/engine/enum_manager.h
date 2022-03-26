@@ -21,10 +21,8 @@ typedef enum tag_enum_screen_type
 	screen_type_menu = 15,
 	screen_type_relive = 16,
 	screen_type_over = 17,
-	screen_type_middle = 18,
-	screen_type_select = 19,
-	screen_type_test = 20,
-	screen_type_func = 21,
+	screen_type_test = 18,
+	screen_type_func = 19,
 
 } enum_screen_type;
 

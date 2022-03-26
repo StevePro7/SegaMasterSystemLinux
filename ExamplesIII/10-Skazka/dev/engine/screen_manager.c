@@ -21,8 +21,6 @@
 #include "../screen/menu_screen.h"
 #include "../screen/relive_screen.h"
 #include "../screen/over_screen.h"
-#include "../screen/middle_screen.h"
-#include "../screen/select_screen.h"
 #include "../screen/test_screen.h"
 #include "../screen/func_screen.h"
 
@@ -56,8 +54,6 @@ void engine_screen_manager_init( unsigned char open_screen_type )
 	load_method[ screen_type_menu ] = screen_menu_screen_load;
 	load_method[ screen_type_relive ] = screen_relive_screen_load;
 	load_method[ screen_type_over ] = screen_over_screen_load;
-	load_method[ screen_type_middle ] = screen_middle_screen_load;
-	load_method[ screen_type_select ] = screen_select_screen_load;
 	load_method[ screen_type_test ] = screen_test_screen_load;
 	load_method[ screen_type_func ] = screen_func_screen_load;
 
@@ -80,8 +76,6 @@ void engine_screen_manager_init( unsigned char open_screen_type )
 	update_method[ screen_type_menu ] = screen_menu_screen_update;
 	update_method[ screen_type_relive ] = screen_relive_screen_update;
 	update_method[ screen_type_over ] = screen_over_screen_update;
-	update_method[ screen_type_middle ] = screen_middle_screen_update;
-	update_method[ screen_type_select ] = screen_select_screen_update;
 	update_method[ screen_type_test ] = screen_test_screen_update;
 	update_method[ screen_type_func ] = screen_func_screen_update;
 }
