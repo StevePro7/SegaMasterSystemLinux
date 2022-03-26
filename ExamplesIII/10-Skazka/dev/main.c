@@ -15,9 +15,8 @@ void main( void )
 	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );
 
 
-	//open_screen_type = screen_type_splash;
+	open_screen_type = screen_type_splash;
 	//open_screen_type = screen_type_title;
-	open_screen_type = screen_type_load;		// TODO only leave for last minute testing
 
 
 	// Initialize player first!
