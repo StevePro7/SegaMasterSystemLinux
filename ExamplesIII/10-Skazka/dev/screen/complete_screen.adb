@@ -3,8 +3,8 @@ F:G$screen_complete_screen_load$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lcomplete_screen.screen_complete_screen_load$row$1$95({1}SC:U),R,0,0,[]
 F:G$screen_complete_screen_update$0$0({2}DF,SV:S),Z,0,2,0,0,0
 S:Lcomplete_screen.screen_complete_screen_update$screen_type$1$96({2}DG,SC:U),B,1,4
-S:Lcomplete_screen.screen_complete_screen_update$input1$1$97({1}SC:U),B,1,-1
-S:Lcomplete_screen.screen_complete_screen_update$input2$1$97({1}SC:U),B,1,-2
+S:Lcomplete_screen.screen_complete_screen_update$input1$1$97({1}SC:U),B,1,-2
+S:Lcomplete_screen.screen_complete_screen_update$input2$1$97({1}SC:U),B,1,-1
 S:Lcomplete_screen.screen_complete_screen_update$timer$1$97({1}SC:U),R,0,0,[c]
 F:Fcomplete_screen$beat_game$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lcomplete_screen.beat_game$row$1$99({1}SC:U),R,0,0,[c]
@@ -14,6 +14,7 @@ T:Fcomplete_screen$tag_struct_timer_object[({0}S:S$timer_count$0$0({2}SI:U),Z,0,
 S:G$global_game_object$0$0({4}STtag_struct_game_object:S),E,0,0
 S:G$global_timer_object$0$0({4}STtag_struct_timer_object:S),E,0,0
 S:G$intro_texts$0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$diff_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$stats_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$weapon_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$armor_texts$0$0({0}DA0d,DG,SC:U),E,0,0

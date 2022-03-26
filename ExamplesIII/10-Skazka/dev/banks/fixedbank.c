@@ -12,6 +12,12 @@ const unsigned char *intro_texts[] =
 	" YOUR ADVENTURE.             ",
 };
 
+const unsigned char *diff_texts[] =
+{
+	"EASY",
+	"HARD",
+};
+
 const unsigned char *stats_texts[] =
 {
 	"WHAT SHALL WE DO?  ",

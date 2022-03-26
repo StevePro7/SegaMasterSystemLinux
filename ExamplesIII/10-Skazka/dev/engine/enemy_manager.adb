@@ -23,6 +23,7 @@ S:G$ax_num$0$0({6}DA6d,SC:U),E,0,0
 S:G$gldo_num$0$0({6}DA6d,SC:U),E,0,0
 S:G$xpo_num$0$0({6}DA6d,SC:U),E,0,0
 S:G$intro_texts$0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$diff_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$stats_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$weapon_texts$0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$armor_texts$0$0({0}DA0d,DG,SC:U),E,0,0

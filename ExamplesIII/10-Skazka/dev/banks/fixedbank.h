@@ -2,6 +2,7 @@
 #define _FIXEDBANK_H_
 
 extern const unsigned char *intro_texts[];
+extern const unsigned char *diff_texts[];
 
 extern const unsigned char *stats_texts[];
 extern const unsigned char *weapon_texts[];

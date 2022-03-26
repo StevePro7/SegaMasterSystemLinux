@@ -46,6 +46,7 @@ typedef enum tag_enum_select_type
 	select_type_prep = 4,
 	select_type_boss = 5,
 	select_type_menu = 6,
+	select_type_diff = 7,
 
 } enum_select_type;
 

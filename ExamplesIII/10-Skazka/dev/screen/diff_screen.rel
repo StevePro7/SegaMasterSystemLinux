@@ -1,39 +1,105 @@
 ;!FILE diff_screen.asm
 XL2
-H 9 areas 1D global symbols
+H 9 areas 5F global symbols
 M diff_screen
 O -mz80
 S _engine_font_manager_text Ref0000
+S _devkit_SMS_displayOn Ref0000
+S _diff_texts Ref0000
+S _engine_text_manager_border Ref0000
+S _engine_text_manager_clear Ref0000
 S .__.ABS. Def0000
-A _CODE size 23 flags 0 addr 0
-S XG$screen_diff_screen_load$0$0 Def000D
-S G$screen_diff_screen_update$0$0 Def001C
-S _screen_diff_screen_update Def001C
-S XG$screen_diff_screen_update$0$0 Def0022
-S C$diff_screen.c$10$1$6 Def001C
-S A$diff_screen$60 Def0007
-S A$diff_screen$61 Def0008
-S C$diff_screen.c$12$1$8 Def001C
-S A$diff_screen$62 Def000B
-S C$diff_screen.c$13$1$8 Def0022
+S _devkit_SMS_displayOff Ref0000
+S _engine_content_manager_load_title Ref0000
+S _engine_select_manager_load Ref0000
+S _engine_text_manager_title Ref0000
+S _devkit_SMS_mapROMBank Ref0000
+A _CODE size 7D flags 0 addr 0
+S XG$screen_diff_screen_load$0$0 Def0061
+S G$screen_diff_screen_update$0$0 Def0076
+S A$diff_screen$120 Def0036
+S A$diff_screen$130 Def0043
+S A$diff_screen$121 Def0039
+S A$diff_screen$112 Def002E
+S A$diff_screen$103 Def0022
+S A$diff_screen$140 Def0052
+S A$diff_screen$131 Def0046
+S A$diff_screen$122 Def003C
+S A$diff_screen$113 Def0030
+S A$diff_screen$104 Def0025
+S A$diff_screen$141 Def0053
+S A$diff_screen$132 Def0049
+S A$diff_screen$123 Def003D
+S A$diff_screen$114 Def0031
+S A$diff_screen$105 Def0026
+S A$diff_screen$142 Def0055
+S A$diff_screen$133 Def004A
+S A$diff_screen$124 Def003E
+S A$diff_screen$115 Def0032
+S A$diff_screen$106 Def0029
+S _screen_diff_screen_update Def0076
+S A$diff_screen$143 Def0056
+S A$diff_screen$134 Def004B
+S A$diff_screen$125 Def0041
+S A$diff_screen$116 Def0035
+S A$diff_screen$107 Def002A
+S A$diff_screen$144 Def0057
+S A$diff_screen$135 Def004E
+S A$diff_screen$126 Def0042
+S A$diff_screen$108 Def002D
+S C$diff_screen.c$41$1$80 Def0076
+S A$diff_screen$145 Def005A
+S C$diff_screen.c$42$1$80 Def007C
+S A$diff_screen$146 Def005B
+S A$diff_screen$183 Def007C
+S A$diff_screen$174 Def0076
+S A$diff_screen$147 Def005C
+S A$diff_screen$175 Def0077
+S A$diff_screen$157 Def0061
+S A$diff_screen$148 Def005F
+S A$diff_screen$139 Def004F
+S C$diff_screen.c$20$1$78 Def0000
+S A$diff_screen$176 Def0078
+S A$diff_screen$149 Def0060
+S A$diff_screen$177 Def0079
+S C$diff_screen.c$31$1$78 Def002E
+S C$diff_screen.c$22$1$78 Def0005
+S A$diff_screen$178 Def007A
+S C$diff_screen.c$32$1$78 Def0036
+S C$diff_screen.c$23$1$78 Def0008
+S C$diff_screen.c$33$1$78 Def0043
+S C$diff_screen.c$24$1$78 Def0010
+S C$diff_screen.c$25$1$78 Def0013
+S XG$screen_diff_screen_update$0$0 Def007C
+S C$diff_screen.c$35$1$78 Def004F
+S C$diff_screen.c$17$0$0 Def0000
+S C$diff_screen.c$36$1$78 Def0061
+S C$diff_screen.c$37$1$78 Def0061
+S C$diff_screen.c$28$1$78 Def001A
+S C$diff_screen.c$29$1$78 Def0022
+S C$diff_screen.c$39$1$78 Def0076
+S A$diff_screen$80 Def000C
 S G$screen_diff_screen_load$0$0 Def0000
-S A$diff_screen$63 Def000C
-S A$diff_screen$57 Def0000
-S A$diff_screen$94 Def0022
-S A$diff_screen$85 Def001C
-S A$diff_screen$58 Def0003
-S A$diff_screen$86 Def001D
-S A$diff_screen$68 Def000D
-S A$diff_screen$59 Def0004
-S A$diff_screen$87 Def001E
-S Fdiff_screen$__str_0$0$0 Def000E
-S A$diff_screen$88 Def001F
-S C$diff_screen.c$5$0$0 Def0000
-S A$diff_screen$89 Def0020
+S A$diff_screen$90 Def0016
+S A$diff_screen$81 Def000F
+S A$diff_screen$91 Def0017
+S A$diff_screen$73 Def0005
+S A$diff_screen$85 Def0010
+S A$diff_screen$95 Def001A
+S A$diff_screen$77 Def0008
+S A$diff_screen$68 Def0000
+S A$diff_screen$96 Def001C
+S A$diff_screen$78 Def000A
+S A$diff_screen$69 Def0003
+S Fdiff_screen$__str_0$0$0 Def0064
+S A$diff_screen$97 Def001D
+S A$diff_screen$79 Def000B
+S A$diff_screen$98 Def001E
+S A$diff_screen$89 Def0013
+S A$diff_screen$99 Def0021
 S _screen_diff_screen_load Def0000
-S C$diff_screen.c$7$1$6 Def0000
-S C$diff_screen.c$8$1$6 Def000D
-A _DATA size 0 flags 0 addr 0
+A _DATA size 1 flags 0 addr 0
+S Fdiff_screen$select_type$0$0 Def0000
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
@@ -42,14 +108,34 @@ A _GSFINAL size 0 flags 0 addr 0
 A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00
+R 00 00 01 00
+T 00 00
+R 00 00 01 00
+T 00 00
 R 00 00 00 00
-T 00 00 21 0A 02 E5 21 0E 00 E5 CD 00 00 F1 F1 C9
-R 00 00 00 00 00 07 00 00 02 0B 00 00
-T 0E 00
+T 00 00 21 00 00 36 07 CD 00 00 3E 01 F5 33 CD
+R 00 00 00 00 00 03 01 00 02 08 06 00
+T 0D 00 00 00 33 CD 00 00 21 01 0A E5 CD 00 00 26
+R 00 00 00 00 02 02 07 00 02 06 03 00 02 0D 04 00
+T 1B 00 03 E3 33 CD 00 00 33 21 08 0C E5 21 64 00
+R 00 00 00 00 02 06 09 00 00 0E 00 00
+T 29 00 E5 CD 00 00 F1 26 0F E3 33 CD 00 00 33 2A
+R 00 00 00 00 02 04 00 00 02 0C 0A 00
+T 37 00 00 00 01 0F 11 C5 E5 CD 00 00 F1 F1 2A
+R 00 00 00 00 02 02 02 00 02 0A 00 00
+T 44 00 02 00 01 0F 12 C5 E5 CD 00 00 F1 21 11 02
+R 00 00 00 00 02 02 02 00 02 0A 00 00
+T 52 00 E3 3E 0C F5 33 3A 00 00 F5 33 CD 00 00 F1
+R 00 00 00 00 00 08 01 00 02 0D 08 00
+T 60 00 F1 C3 00 00
+R 00 00 00 00 02 04 01 00
+T 64 00
 R 00 00 00 00
-T 0E 00 44 49 46 46 20 53 43 52 45 45 4E 21 21 00
+T 64 00 53 45 4C 45 43 54 20 44 49 46 46 49 43 55
 R 00 00 00 00
-T 1C 00
+T 72 00 4C 54 59 00
 R 00 00 00 00
-T 1C 00 C1 E1 E5 C5 36 04 C9
+T 76 00
+R 00 00 00 00
+T 76 00 C1 E1 E5 C5 36 04 C9
 R 00 00 00 00
