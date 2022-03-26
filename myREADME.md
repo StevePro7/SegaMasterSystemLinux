@@ -58,6 +58,7 @@ Download and dump CandyKid.sms into Hex Editor, e.g. HxD, and modify the bytes:
 
 ###### CHEATS
 - On splash screen, hold joystick down and press button 2 to change default background color.
+- On stats screen, move joystick left or right to skip over the flashing arrows indication.
 - On title screen, hold fire2 to skip intro music.  Same applies on boss and over screens.
 - In forest screen, press fire2 to "Run away" without risking losing any HPs.
 
