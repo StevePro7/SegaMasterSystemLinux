@@ -43,11 +43,6 @@ void screen_boss_screen_load()
 	engine_text_manager_border();
 	engine_text_manager_clear( row + 0, row + 9 );
 
-	//devkit_PSGStop();
-	//devkit_PSGSFXStop();
-	//devkit_PSGSilenceChannels();
-	//devkit_PSGRestoreVolumes();
-
 	row = 19;
 	devkit_SMS_mapROMBank( FIXED_BANK );
 	for( idx = 0; idx < 2; idx++ )

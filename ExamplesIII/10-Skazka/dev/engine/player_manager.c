@@ -37,27 +37,27 @@ void engine_player_manager_calc()
 	struct_player_object *po = &global_player_object;
 	if( po->xp > 34 && po->xp <= 60 )
 	{
-		po->level = 3;					// X
-		po->max_hp = 30;				// M
-		po->max_xp = 60;				// Y
+		po->level = 3;						// X
+		po->max_hp = 30;					// M
+		po->max_xp = 60;					// Y
 	}
 	else if( po->xp > 11 && po->xp <= 34 )
 	{
-		po->level = 2;					// X
-		po->max_hp = 20;				// M
-		po->max_xp = 34;				// Y
+		po->level = 2;						// X
+		po->max_hp = 20;					// M
+		po->max_xp = 34;					// Y
 	}
 	else if( po->xp > 60  )
 	{
-		po->level = 3;					// X
-		po->max_hp = 30;				// M
-		po->max_xp = 99;				// Y
+		po->level = 3;						// X
+		po->max_hp = 30;					// M
+		po->max_xp = 99;					// Y
 	}
 	else if( po->xp <= 11 )
 	{
-		po->level = 1;					// X
-		po->max_hp = 10;				// M
-		po->max_xp = 11;				// Y
+		po->level = 1;						// X
+		po->max_hp = 10;					// M
+		po->max_xp = 11;					// Y
 	}
 }
 
@@ -143,12 +143,10 @@ void engine_player_manager_hit( char hp )
 {
 	struct_player_object *po = &global_player_object;
 
-	// TODO want to add armor to hp first before deducting hit so never go into negative
 	po->hp += po->armor;
 	if( po->hp > hp )
 	{
 		po->hp -= hp;
-		//engine_player_manager_hplo();
 	}
 	else
 	{
@@ -174,8 +172,8 @@ void engine_player_manager_boss()
 	struct_player_object *po = &global_player_object;
 	if( po->xp > 60 )
 	{
-		po->weapon += 1;		// Q$	ATK
-		po->armor +=1;			// W$	ARM
+		po->weapon += 1;				// Q$	ATK
+		po->armor +=1;					// W$	ARM
 	}
 }
 
