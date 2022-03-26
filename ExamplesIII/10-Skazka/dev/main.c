@@ -19,9 +19,9 @@ void main( void )
 
 
 	open_screen_type = screen_type_splash;
-	//open_screen_type = screen_type_title;
+	open_screen_type = screen_type_title;
 	//open_screen_type = screen_type_intro;
-	open_screen_type = screen_type_start;
+	//open_screen_type = screen_type_start;
 	//open_screen_type = screen_type_stats;
 	//open_screen_type = screen_type_start;
 	//open_screen_type = screen_type_forest;
