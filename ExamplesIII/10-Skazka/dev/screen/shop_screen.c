@@ -3,6 +3,7 @@
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
+#include "../engine/hack_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/locale_manager.h"
@@ -39,6 +40,7 @@ void screen_shop_screen_load()
 
 void screen_shop_screen_update( unsigned char *screen_type )
 {
+	struct_hack_object *ho = &global_hack_object;
 	unsigned char input;
 	unsigned char value;
 	unsigned char timer;
@@ -108,7 +110,12 @@ void screen_shop_screen_update( unsigned char *screen_type )
 
 		engine_font_manager_text( LOCALE_29_SPCS, LEFT_X + 2, SHOP_ROW + 4 );
 		engine_font_manager_data( gold, LEFT_X + 24, SHOP_ROW + 2 );
-		engine_sound_manager_play( sound_type_5 );
+
+		if( !ho->hack_delays )
+		{
+			engine_sound_manager_play( sound_type_5 );
+		}
+		
 
 		event_stage = event_stage_pause;
 	}
