@@ -262,7 +262,7 @@ static bool calc_add_armor()
 	bool add_armor = true;
 	if( diff_type_hard == go->difficulty )
 	{
-		if( po->level > 2 )
+		if( po->level >= 2 )
 		{
 			// For weaker enemies on hard difficulty do not factor in armor.
 			if( enemy_type_razboynik == eo->index || enemy_type_hungry_wolf == eo->index )
