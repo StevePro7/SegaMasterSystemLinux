@@ -73,13 +73,14 @@ void screen_forest_screen_update( unsigned char *screen_type )
 
 			if( fight_type_battle == curr_selection )
 			{
-				// If both you and enemy have 0 HP then you get game over first!
+				// Calculate whether to add armor on hard difficulty.
 				add_armor = calc_add_armor();
 				if( add_armor )
 				{
 					engine_player_manager_armor( po->armor );
 				}
 
+				// If both you and enemy have 0 HP then you get game over first!
 				engine_player_manager_hit( player_damage );
 				if( engine_player_manager_dead() )
 				{
