@@ -68,6 +68,7 @@ void screen_title_screen_update( unsigned char *screen_type )
 			if( go->play_music )
 			{
 				// Play intro music.
+				engine_sound_manager_init();
 				for( index = 0; index < 5; index++ )
 				{
 					engine_music_manager_play( index );
