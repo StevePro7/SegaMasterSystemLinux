@@ -54,6 +54,10 @@ void screen_forest_screen_load()
 	player_damage = 0;
 	player_gold = 0;
 	run_away_val = run_away_hit[ go->difficulty ];
+	if( po->level == 1 && go->difficulty == diff_type_hard )
+	{
+		run_away_val = 1;
+	}
 }
 
 void screen_forest_screen_update( unsigned char *screen_type )
