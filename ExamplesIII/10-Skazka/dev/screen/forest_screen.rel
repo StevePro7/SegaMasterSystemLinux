@@ -1,6 +1,6 @@
 ;!FILE forest_screen.asm
 XL2
-H 9 areas 25F global symbols
+H 9 areas 261 global symbols
 M forest_screen
 O -mz80
 S _rand Ref0000
@@ -42,7 +42,7 @@ S _engine_player_manager_life Ref0000
 S _engine_player_manager_armor Ref0000
 S __modsint Ref0000
 S _devkit_SMS_mapROMBank Ref0000
-A _CODE size 3A0 flags 0 addr 0
+A _CODE size 3A2 flags 0 addr 0
 S C$forest_screen.c$247$1$147 Def0377
 S C$forest_screen.c$238$1$147 Def0340
 S C$forest_screen.c$225$3$149 Def02E0
@@ -51,7 +51,7 @@ S C$forest_screen.c$185$4$143 Def01F5
 S C$forest_screen.c$193$3$146 Def0207
 S C$forest_screen.c$169$4$143 Def01B4
 S C$forest_screen.c$40$1$124 Def0005
-S C$forest_screen.c$266$3$156 Def0396
+S C$forest_screen.c$266$3$156 Def0399
 S C$forest_screen.c$259$3$154 Def0388
 S C$forest_screen.c$195$3$146 Def0212
 S C$forest_screen.c$175$6$145 Def01CA
@@ -299,7 +299,6 @@ S A$forest_screen$238 Def0079
 S A$forest_screen$229 Def006D
 S A$forest_screen$157 Def002C
 S A$forest_screen$148 Def0025
-S A$forest_screen$950 Def0398
 S A$forest_screen$932 Def0388
 S A$forest_screen$914 Def0377
 S A$forest_screen$860 Def034A
@@ -334,8 +333,6 @@ S A$forest_screen$275 Def009F
 S A$forest_screen$266 Def0096
 S A$forest_screen$239 Def007A
 S A$forest_screen$158 Def002F
-S A$forest_screen$951 Def0399
-S A$forest_screen$942 Def0392
 S A$forest_screen$933 Def038B
 S A$forest_screen$924 Def037F
 S A$forest_screen$870 Def0357
@@ -370,8 +367,7 @@ S A$forest_screen$276 Def00A2
 S A$forest_screen$267 Def0099
 S A$forest_screen$195 Def0041
 S A$forest_screen$168 Def0036
-S A$forest_screen$952 Def039C
-S A$forest_screen$943 Def0394
+S A$forest_screen$943 Def0393
 S A$forest_screen$934 Def038C
 S A$forest_screen$925 Def0382
 S A$forest_screen$871 Def035A
@@ -405,7 +401,8 @@ S A$forest_screen$385 Def0114
 S A$forest_screen$376 Def010F
 S A$forest_screen$286 Def00AA
 S A$forest_screen$178 Def0037
-S A$forest_screen$953 Def039D
+S A$forest_screen$962 Def03A0
+S A$forest_screen$953 Def0399
 S A$forest_screen$935 Def038D
 S A$forest_screen$926 Def0383
 S A$forest_screen$872 Def035B
@@ -435,7 +432,7 @@ S A$forest_screen$395 Def0121
 S A$forest_screen$386 Def0117
 S A$forest_screen$287 Def00AD
 S A$forest_screen$179 Def0039
-S A$forest_screen$963 Def039F
+S A$forest_screen$954 Def039A
 S A$forest_screen$936 Def038E
 S A$forest_screen$927 Def0385
 S A$forest_screen$918 Def0379
@@ -460,6 +457,7 @@ S A$forest_screen$387 Def0118
 S A$forest_screen$369 Def0104
 S A$forest_screen$288 Def00AF
 S C$forest_screen.c$34$0$0 Def0000
+S A$forest_screen$955 Def039B
 S A$forest_screen$937 Def0390
 S A$forest_screen$928 Def0386
 S A$forest_screen$919 Def037C
@@ -481,6 +479,8 @@ S A$forest_screen$469 Def016C
 S A$forest_screen$298 Def00B9
 S A$forest_screen$199 Def0045
 S XG$screen_forest_screen_update$0$0 Def026A
+S A$forest_screen$956 Def039E
+S A$forest_screen$938 Def0391
 S A$forest_screen$884 Def035F
 S A$forest_screen$866 Def034F
 S A$forest_screen$857 Def0343
@@ -495,7 +495,8 @@ S A$forest_screen$668 Def0244
 S A$forest_screen$569 Def01D5
 S A$forest_screen$488 Def0182
 S Fforest_screen$calc_add_armor$0$0 Def0377
-S A$forest_screen$948 Def0396
+S A$forest_screen$957 Def039F
+S A$forest_screen$948 Def0395
 S A$forest_screen$876 Def035C
 S A$forest_screen$867 Def0352
 S A$forest_screen$858 Def0346
@@ -508,7 +509,7 @@ S A$forest_screen$678 Def0252
 S A$forest_screen$669 Def0247
 S A$forest_screen$588 Def01E8
 S A$forest_screen$399 Def0122
-S A$forest_screen$958 Def039E
+S A$forest_screen$967 Def03A1
 S A$forest_screen$949 Def0397
 S A$forest_screen$868 Def0353
 S A$forest_screen$859 Def0347
@@ -543,16 +544,16 @@ S C$forest_screen.c$231$3$151 Def0307
 S C$forest_screen.c$161$3$140 Def01A4
 S C$forest_screen.c$110$3$128 Def0101
 S C$forest_screen.c$103$5$133 Def00F3
-S XFforest_screen$calc_add_armor$0$0 Def039F
+S XFforest_screen$calc_add_armor$0$0 Def03A1
 S C$forest_screen.c$251$1$152 Def0377
 S C$forest_screen.c$201$3$146 Def0239
 S C$forest_screen.c$131$3$135 Def0138
 S C$forest_screen.c$104$5$133 Def00FB
-S C$forest_screen.c$270$1$152 Def039E
+S C$forest_screen.c$270$1$152 Def03A0
 S C$forest_screen.c$202$3$146 Def0249
 S C$forest_screen.c$154$3$140 Def0184
 S C$forest_screen.c$112$3$128 Def0104
-S C$forest_screen.c$271$1$152 Def039F
+S C$forest_screen.c$271$1$152 Def03A1
 S C$forest_screen.c$253$1$152 Def0377
 S C$forest_screen.c$240$1$147 Def0343
 S C$forest_screen.c$222$1$147 Def02D5
@@ -580,6 +581,7 @@ S C$forest_screen.c$151$2$139 Def017E
 S C$forest_screen.c$142$3$138 Def0169
 S C$forest_screen.c$138$2$134 Def014B
 S C$forest_screen.c$133$4$137 Def0140
+S C$forest_screen.c$264$2$153 Def0395
 S C$forest_screen.c$244$1$147 Def035F
 S C$forest_screen.c$235$1$147 Def032B
 S C$forest_screen.c$229$3$151 Def0304
@@ -589,7 +591,7 @@ S C$forest_screen.c$157$4$141 Def0194
 S C$forest_screen.c$139$2$134 Def015B
 S C$forest_screen.c$134$4$137 Def0148
 S C$forest_screen.c$126$4$136 Def012D
-S C$forest_screen.c$261$4$155 Def0392
+S C$forest_screen.c$261$4$155 Def0393
 S C$forest_screen.c$256$2$153 Def037F
 S C$forest_screen.c$249$1$152 Def0377
 S C$forest_screen.c$245$1$147 Def035F
@@ -857,19 +859,19 @@ T 6C 03 45 4E 45 4D 59 20 48 50 20 2D 00
 R 00 00 00 00
 T 77 03
 R 00 00 00 00
-T 77 03 0E 01 21 04 00 46 10 1F 21 07 00 5E 3E 02
+T 77 03 0E 01 3A 04 00 3D 20 21 21 07 00 46 3E 02
 R 00 00 00 00 02 05 15 00 02 0B 0D 00
-T 85 03 93 30 0E 21 00 00 46 78 B7 28 02 10 0C
+T 85 03 90 30 0D 21 00 00 5E 7B B7 28 03 1D 20 02
 R 00 00 00 00 02 06 17 00
-T 92 03
+T 93 03
 R 00 00 00 00
-T 92 03 0E 00 18 08
+T 93 03 0E 00
 R 00 00 00 00
-T 96 03
+T 95 03
 R 00 00 00 00
-T 96 03 7B F5 33 CD 00 00 33 4D
-R 00 00 00 00 02 06 19 00
-T 9E 03
+T 95 03 CB 41 28 07 C5 33 CD 00 00 33 4D
+R 00 00 00 00 02 09 19 00
+T A0 03
 R 00 00 00 00
-T 9E 03 69 C9
+T A0 03 69 C9
 R 00 00 00 00

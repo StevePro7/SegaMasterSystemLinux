@@ -261,7 +261,7 @@ static bool calc_add_armor()
 				add_armor = false;
 			}
 		}
-		else
+		if( add_armor )
 		{
 			add_armor = engine_random_manager_diff( po->level );
 		}

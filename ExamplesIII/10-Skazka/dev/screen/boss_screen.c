@@ -5,6 +5,7 @@
 #include "../engine/enum_manager.h"
 #include "../engine/fight_manager.h"
 #include "../engine/font_manager.h"
+#include "../engine/game_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/hack_manager.h"
 #include "../engine/input_manager.h"
@@ -32,6 +33,7 @@ static void boss_laugh( unsigned char selection );
 
 void screen_boss_screen_load()
 {
+	struct_game_object *go = &global_game_object;
 	unsigned char row;
 	unsigned char idx;
 
@@ -65,7 +67,13 @@ void screen_boss_screen_load()
 	//engine_player_manager_boss();
 	//engine_player_manager_boss();
 	boss_init( &player_weapon, &player_armor );
-	//boss_stats( &player_weapon, &player_armor );
+	boss_stats( &player_weapon, &player_armor );
+
+	// Easy mode gets increases weapon + armor.
+	if( diff_type_hard != go->difficulty )
+	{
+		boss_stats( &player_weapon, &player_armor );
+	}
 	//boss_stats( &player_weapon, &player_armor );
 	//boss_stats( &player_weapon, &player_armor );
 	//boss_stats( &player_weapon, &player_armor );

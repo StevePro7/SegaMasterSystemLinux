@@ -1,4 +1,5 @@
 #include "random_manager.h"
+#include "font_manager.h"
 #include "global_manager.h"
 #include <stdlib.h>
 
@@ -10,5 +11,5 @@ unsigned char engine_random_manager_next()
 bool engine_random_manager_diff( unsigned char level )
 {
 	unsigned char value = rand() % HLF_RANDOM;
-	return level < value;
+	return level <= value;
 }
