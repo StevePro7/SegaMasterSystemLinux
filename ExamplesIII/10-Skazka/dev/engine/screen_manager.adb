@@ -12,14 +12,14 @@ S:G$screen_splash_screen_load$0$0({2}DF,SV:S),C,0,0
 S:G$screen_splash_screen_update$0$0({2}DF,SV:S),C,0,0
 S:G$screen_title_screen_load$0$0({2}DF,SV:S),C,0,0
 S:G$screen_title_screen_update$0$0({2}DF,SV:S),C,0,0
-S:G$screen_start_screen_load$0$0({2}DF,SV:S),C,0,0
-S:G$screen_start_screen_update$0$0({2}DF,SV:S),C,0,0
 S:G$screen_diff_screen_load$0$0({2}DF,SV:S),C,0,0
 S:G$screen_diff_screen_update$0$0({2}DF,SV:S),C,0,0
 S:G$screen_intro_screen_load$0$0({2}DF,SV:S),C,0,0
 S:G$screen_intro_screen_update$0$0({2}DF,SV:S),C,0,0
 S:G$screen_load_screen_load$0$0({2}DF,SV:S),C,0,0
 S:G$screen_load_screen_update$0$0({2}DF,SV:S),C,0,0
+S:G$screen_start_screen_load$0$0({2}DF,SV:S),C,0,0
+S:G$screen_start_screen_update$0$0({2}DF,SV:S),C,0,0
 S:G$screen_stats_screen_load$0$0({2}DF,SV:S),C,0,0
 S:G$screen_stats_screen_update$0$0({2}DF,SV:S),C,0,0
 S:G$screen_forest_screen_load$0$0({2}DF,SV:S),C,0,0

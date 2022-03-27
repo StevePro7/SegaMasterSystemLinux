@@ -78,6 +78,7 @@ S:G$engine_text_manager_clear$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_border$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_title$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_fire$0$0({2}DF,SV:S),C,0,0
+S:G$engine_text_manager_diff$0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_args$0$0({2}DF,SV:S),C,0,0
 S:G$atof$0$0({2}DF,SF:S),C,0,0
 S:G$atoi$0$0({2}DF,SI:S),C,0,0

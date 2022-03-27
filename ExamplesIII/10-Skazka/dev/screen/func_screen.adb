@@ -1,14 +1,14 @@
 M:func_screen
 F:G$screen_func_screen_load$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lfunc_screen.screen_func_screen_load$random$1$28({1}SC:U),R,0,0,[b]
-S:Lfunc_screen.screen_func_screen_load$index$1$28({1}SC:U),R,0,0,[b]
+S:Lfunc_screen.screen_func_screen_load$random$1$29({1}SC:U),R,0,0,[b]
+S:Lfunc_screen.screen_func_screen_load$index$1$29({1}SC:U),R,0,0,[b]
 F:G$screen_func_screen_update$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lfunc_screen.screen_func_screen_update$screen_type$1$31({2}DG,SC:U),B,1,4
+S:Lfunc_screen.screen_func_screen_update$screen_type$1$32({2}DG,SC:U),B,1,4
 F:Ffunc_screen$player$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lfunc_screen.player$po$1$33({2}DG,STtag_struct_player_object:S),R,0,0,[]
+S:Lfunc_screen.player$po$1$34({2}DG,STtag_struct_player_object:S),R,0,0,[]
 F:Ffunc_screen$enemy$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lfunc_screen.enemy$index$1$34({1}SC:U),B,1,4
-S:Lfunc_screen.enemy$eo$1$35({2}DG,STtag_struct_enemy_object:S),R,0,0,[]
+S:Lfunc_screen.enemy$index$1$35({1}SC:U),B,1,4
+S:Lfunc_screen.enemy$eo$1$36({2}DG,STtag_struct_enemy_object:S),R,0,0,[]
 T:Ffunc_screen$tag_struct_player_object[({0}S:S$xp$0$0({1}SC:U),Z,0,0)({1}S:S$hp$0$0({1}SC:U),Z,0,0)({2}S:S$gold$0$0({2}SI:U),Z,0,0)({4}S:S$weapon$0$0({1}SC:U),Z,0,0)({5}S:S$armor$0$0({1}SC:U),Z,0,0)({6}S:S$life$0$0({1}SC:U),Z,0,0)({7}S:S$level$0$0({1}SC:U),Z,0,0)({8}S:S$max_hp$0$0({1}SC:U),Z,0,0)({9}S:S$max_xp$0$0({1}SC:U),Z,0,0)({10}S:S$won$0$0({1}SC:U),Z,0,0)({11}S:S$def_xp$0$0({1}SC:U),Z,0,0)({12}S:S$def_hp$0$0({1}SC:U),Z,0,0)({13}S:S$def_gold$0$0({2}SI:U),Z,0,0)({15}S:S$def_weapon$0$0({1}SC:U),Z,0,0)({16}S:S$def_armor$0$0({1}SC:U),Z,0,0)({17}S:S$def_life$0$0({1}SC:U),Z,0,0)]
 T:Ffunc_screen$tag_struct_enemy_object[({0}S:S$index$0$0({1}SC:U),Z,0,0)({1}S:S$hplo$0$0({1}SC:U),Z,0,0)({2}S:S$ax$0$0({1}SC:U),Z,0,0)({3}S:S$gldo$0$0({1}SC:U),Z,0,0)({4}S:S$xpo$0$0({1}SC:U),Z,0,0)]
 S:G$global_enemy_object$0$0({5}STtag_struct_enemy_object:S),E,0,0
@@ -55,3 +55,4 @@ S:G$engine_player_manager_set_weapon$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_set_armors$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_set_oneups$0$0({2}DF,SV:S),C,0,0
 S:G$engine_random_manager_next$0$0({2}DF,SC:U),C,0,0
+S:G$engine_random_manager_diff$0$0({2}DF,:S),C,0,0
