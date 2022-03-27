@@ -10,7 +10,6 @@ F:G$engine_text_manager_title$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Ltext_manager.engine_text_manager_title$row$1$82({1}SC:U),B,1,4
 F:G$engine_text_manager_fire$0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_text_manager_diff$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Ltext_manager.engine_text_manager_diff$go$1$85({2}DG,STtag_struct_game_object:S),R,0,0,[]
 F:G$engine_text_manager_args$0$0({2}DF,SV:S),Z,0,2,0,0,0
 S:Ltext_manager.engine_text_manager_args$x$1$86({1}SC:U),B,1,4
 S:Ltext_manager.engine_text_manager_args$y$1$86({1}SC:U),B,1,5

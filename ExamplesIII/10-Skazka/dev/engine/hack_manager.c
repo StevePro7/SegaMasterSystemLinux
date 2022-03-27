@@ -60,12 +60,12 @@ void engine_hack_manager_invert()
 	struct_hack_object *ho = &global_hack_object;
 
 	// TODO delete
-	ho->hack_currxp = 99;
-	ho->hack_currhp = 30;
-	ho->hack_weapon = 2;
-	ho->hack_armors = 2;// armor_type_kolchuga;
-	ho->hack_oneups = 1;
-	ho->hack_goldno = 100;
+	//ho->hack_currxp = 99;
+	//ho->hack_currhp = 30;
+	//ho->hack_weapon = 2;
+	//ho->hack_armors = 2;// armor_type_kolchuga;
+	//ho->hack_oneups = 1;
+	//ho->hack_goldno = 100;
 	// TODO delete
 
 	if( ho->hack_currxp > 0 && ho->hack_currxp <= MAX_XP )
@@ -99,9 +99,9 @@ void engine_hack_manager_invert()
 
 
 	// TODO delete
-	ho->hack_delays = 1;
-	ho->hack_musics = 0;
-	ho->hack_sounds = 0;
-	//ho->hack_nodead = 1;
+	//ho->hack_delays = 1;
+	//ho->hack_musics = 0;
+	//ho->hack_sounds = 0;
+	////ho->hack_nodead = 1;
 	// TODO delete
 }

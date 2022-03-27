@@ -3,8 +3,8 @@ F:G$screen_complete_screen_load$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lcomplete_screen.screen_complete_screen_load$row$1$96({1}SC:U),R,0,0,[]
 F:G$screen_complete_screen_update$0$0({2}DF,SV:S),Z,0,2,0,0,0
 S:Lcomplete_screen.screen_complete_screen_update$screen_type$1$97({2}DG,SC:U),B,1,4
-S:Lcomplete_screen.screen_complete_screen_update$input1$1$98({1}SC:U),B,1,-2
-S:Lcomplete_screen.screen_complete_screen_update$input2$1$98({1}SC:U),B,1,-1
+S:Lcomplete_screen.screen_complete_screen_update$input1$1$98({1}SC:U),B,1,-1
+S:Lcomplete_screen.screen_complete_screen_update$input2$1$98({1}SC:U),B,1,-2
 S:Lcomplete_screen.screen_complete_screen_update$timer$1$98({1}SC:U),R,0,0,[c]
 F:Fcomplete_screen$beat_game$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lcomplete_screen.beat_game$row$1$100({1}SC:U),R,0,0,[c]
