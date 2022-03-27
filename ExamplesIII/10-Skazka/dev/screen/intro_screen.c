@@ -68,5 +68,4 @@ static void print_intro()
 		engine_font_manager_text( ( unsigned char * ) intro_texts[ idx ], LEFT_X + 2, row );
 		row++;
 	}
-
 }
