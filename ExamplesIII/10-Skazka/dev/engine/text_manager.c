@@ -1,8 +1,10 @@
 #include "text_manager.h"
 #include "font_manager.h"
+#include "game_manager.h"
 #include "global_manager.h"
 #include "locale_manager.h"
 #include "../devkit/_sms_manager.h"
+#include "../banks/fixedbank.h"
 #include <stdarg.h>
 
 void engine_text_manager_clear( unsigned char start, unsigned char stop )
@@ -48,6 +50,15 @@ void engine_text_manager_title( unsigned char row )
 void engine_text_manager_fire()
 {
 	engine_font_manager_text( LOCALE_FIRE1_CONT, LEFT_X + 5, FIRE1_ROW );
+}
+
+void engine_text_manager_diff()
+{
+	struct_game_object *go = &global_game_object;
+	devkit_SMS_mapROMBank( FIXED_BANK );
+
+	engine_font_manager_text( ( unsigned char * ) diff_texts[ go->difficulty ], LEFT_X + 27, LINES_ROW + 4 );
+	engine_font_manager_text( LOCALE_MODES_WORD, LEFT_X + 27, LINES_ROW + 5 );
 }
 
 void engine_text_manager_args( unsigned char x, unsigned char y, unsigned char num, ... )

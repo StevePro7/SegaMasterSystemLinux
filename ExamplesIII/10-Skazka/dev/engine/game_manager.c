@@ -20,7 +20,9 @@ void engine_game_manager_init()
 	engine_game_manager_intro_on();
 	engine_game_manager_music_on();
 	engine_game_manager_flash_on();
+
 	engine_game_manager_difficulty( diff_type_easy );
+	//engine_game_manager_difficulty( diff_type_hard );
 }
 
 void engine_game_manager_black()
@@ -89,7 +91,7 @@ void engine_game_manager_print_stats()
 void engine_game_manager_print_village()
 {
 	unsigned char row = 2;
-	engine_font_manager_text( LOCALE_OLD_VILLAGE, LEFT_X + 16, row + 2 );
+	engine_font_manager_text( LOCALE_OLD_VILLAGE, LEFT_X + 15, row + 2 );		// TODO move + 16 if no difficulty rendered
 	engine_text_manager_args( LEFT_X + 13, row + 5, 15, 0x20, 0x20, 0xE1, 0x20, 0xE4, 0xE9, 0xE9, 0x20, 0x20, 0x20, 0xE0, 0x20, 0x20, 0x20, 0xE8 );
 	engine_text_manager_args( LEFT_X + 13, row + 6, 16, 0x95, 0xEF, 0xEF, 0xEF, 0xEF, 0xEF, 0x96, 0x20, 0x20, 0x95, 0xEF, 0x96, 0x20, 0xE8, 0x90, 0xE8 );
 	engine_text_manager_args( LEFT_X + 13, row + 7, 16, 0xEF, 0xE5, 0xEF, 0xE5, 0xEF, 0xE5, 0xEF, 0x20, 0x20, 0xEF, 0xE5, 0xEF, 0x20, 0x90, 0x90, 0x90 );

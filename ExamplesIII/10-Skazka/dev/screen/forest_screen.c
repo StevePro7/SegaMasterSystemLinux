@@ -144,6 +144,7 @@ void screen_forest_screen_update( unsigned char *screen_type )
 				engine_player_manager_hit( 1 );
 				if( engine_player_manager_dead() )
 				{
+					// TODO - need relive!!
 					*screen_type = screen_type_over;
 					return;
 				}

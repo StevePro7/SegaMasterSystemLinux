@@ -34,6 +34,7 @@ void screen_stats_screen_load()
 		engine_game_manager_print_player();
 		engine_game_manager_print_version();
 		engine_game_manager_print_texts();
+		engine_text_manager_diff();
 
 		devkit_SMS_displayOn();
 	}
