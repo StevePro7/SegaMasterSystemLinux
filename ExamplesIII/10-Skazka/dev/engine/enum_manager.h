@@ -37,6 +37,14 @@ typedef enum tag_enum_input_type
 
 } enum_input_type;
 
+typedef enum tag_enum_diff_type
+{
+	diff_type_easy = 0,
+	diff_type_hard = 1,
+	diff_type_test = 2,
+
+} enum_diff_type;
+
 typedef enum tag_enum_select_type
 {
 	select_type_main = 0,
@@ -165,13 +173,5 @@ typedef enum tag_enum_sound_type
 	sound_type_11 = 11,
 
 } enum_sound_type;
-
-typedef enum tag_enum_diff_type
-{
-	diff_type_easy = 0,
-	diff_type_hard = 1,
-	diff_type_test = 2,
-
-} enum_diff_type;
 
 #endif//_ENUM_MANAGER_H_

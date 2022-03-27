@@ -8,6 +8,7 @@
 #include "../engine/select_manager.h"
 #include "../engine/text_manager.h"
 #include "../devkit/_sms_manager.h"
+#include "../devkit/_snd_manager.h"
 #include "../banks/fixedbank.h"
 #include <stdbool.h>
 
@@ -52,7 +53,13 @@ void screen_stats_screen_update( unsigned char *screen_type )
 		return;
 	}
 
+	// Wait until SFX completed...
 	*screen_type = screen_type_stats;
+	if( devkit_PSGSFXGetStatus() )
+	{
+		return;
+	}
+
 	switch( selection )
 	{
 	case action_type_forest:

@@ -55,6 +55,7 @@ void engine_fight_manager_enemy_to_player( unsigned char *p_damage, unsigned cha
 	struct_enemy_object *eo = &global_enemy_object;
 	struct_hack_object *ho = &global_hack_object;
 	struct_game_object *go = &global_game_object;
+	struct_player_object *po = &global_player_object;
 
 	unsigned char damage;
 	unsigned char extra;
@@ -75,7 +76,11 @@ void engine_fight_manager_enemy_to_player( unsigned char *p_damage, unsigned cha
 	// Inflict more damage to player in hard mode. 
 	if( diff_type_hard == go->difficulty )
 	{
-		if( 4 == damage || 2 == damage || 1 == damage )
+		if( po->level > 2 && 2 == damage )
+		{
+			damage += extra;
+		}
+		if( po->level > 1 && 1 == damage )
 		{
 			damage += extra;
 		}
