@@ -18,7 +18,7 @@ Here is the Sega Master System port using the [devkitSMS](https://github.com/sve
 - Languages:	C / Z80
 - Visual Studio 2015
 - Graphics:		BMP2Tile 0.43 / GIMP2 / paint.net
-- Music:		Mod2Psg2 / VGM2PSG
+- Music:		pcmenc / VGM2PSG
 - Assembler:	WLA-DX
 - Emulators:	Emulicious / Fusion / Meka
 - Debuggers:	VS Code Emulicious Debugger
@@ -28,7 +28,7 @@ http://github.com/SteveProXNA/SkazkaSMS
 
 ###### ROM HACKING
 You can hack this ROM!  
-Download and dump CandyKid.sms into Hex Editor, e.g. HxD, and modify the bytes:
+Download and dump Skazka.sms into Hex Editor, e.g. HxD, and modify the bytes:
 - 0x004E	Delay			Used to speed through any game delay.
 - 0x004F	Invincible		Non-zero value enables invincibility.
 - 0x0050	Current XP		Non-zero sets current experience pts.
@@ -54,13 +54,13 @@ Download and dump CandyKid.sms into Hex Editor, e.g. HxD, and modify the bytes:
 - In the shop, if you buy an item you already have then the gold will be deducted unconditionally so be aware - there is no validation!
 - Try to get "+1 Life" just in case you lose a fight or the final boss battle so you do not have to restart game
 - Maximize player HP + XP and get the best weapon "Axe" and the best armor "Kolchuga" before attempting to beat the boss.  
-- Once you fight the boss you cannot "Run away".  Try to fight boss once you have > 60 XP because your weapon and armor will be slightly more powerful!
+- Once you fight the boss you cannot "Run away".  Try to fight boss once you have > 60 XP because your weapon and armor may be slightly more powerful!
 
 ###### CHEATS
 - On splash screen, hold joystick down and press button 2 to change default background color.
 - On stats screen, move joystick left or right to skip over the flashing arrows indication.
 - On title screen, hold fire2 to skip intro music.  Same applies on boss and over screens.
-- In forest screen, press fire2 to "Run away" without risking losing any HPs.
+- In forest screen, press fire2 to "Run away" without risking losing any HPs [Easy mode].
 
 ###### DEBUGGING
 - On Windows you should be able to debug the source code directly from Visual Studio Code after pressing F5
