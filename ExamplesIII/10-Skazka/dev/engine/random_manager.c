@@ -10,5 +10,5 @@ unsigned char engine_random_manager_next()
 bool engine_random_manager_diff( unsigned char level )
 {
 	unsigned char value = rand() % HLF_RANDOM;
-	return value < level;
+	return level < value;
 }

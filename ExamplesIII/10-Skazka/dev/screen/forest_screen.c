@@ -17,6 +17,7 @@
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
 #include <stdlib.h>
+#include <stdbool.h>
 
 static unsigned char curr_selection;
 static unsigned char prev_selection;
@@ -26,11 +27,14 @@ static unsigned char enemys_damage;
 static unsigned char player_damage;
 static unsigned char player_gold;
 static unsigned char select_type;
+
 static void setup();
+static bool calc_add_armor();
 
 void screen_forest_screen_load()
 {
 	struct_player_object *po = &global_player_object;
+	struct_game_object *go = &global_game_object;
 	select_type = select_type_forest;
 
 	engine_enemy_manager_load( po->level );
@@ -57,6 +61,7 @@ void screen_forest_screen_update( unsigned char *screen_type )
 	unsigned char input;
 	unsigned char value;
 	unsigned char xp = 0;
+	bool add_armor = true;
 
 	if( scene_type_pushon == event_stage )
 	{
@@ -69,7 +74,12 @@ void screen_forest_screen_update( unsigned char *screen_type )
 			if( fight_type_battle == curr_selection )
 			{
 				// If both you and enemy have 0 HP then you get game over first!
-				engine_player_manager_armor( po->armor );
+				add_armor = calc_add_armor();
+				if( add_armor )
+				{
+					engine_player_manager_armor( po->armor );
+				}
+
 				engine_player_manager_hit( player_damage );
 				if( engine_player_manager_dead() )
 				{
@@ -232,4 +242,30 @@ static void setup()
 
 	engine_player_manager_hplo();
 	engine_enemy_manager_hplo();
+}
+
+static bool calc_add_armor()
+{
+	struct_game_object *go = &global_game_object;
+	struct_enemy_object *eo = &global_enemy_object;
+	struct_player_object *po = &global_player_object;
+
+	bool add_armor = true;
+	if( diff_type_hard == go->difficulty )
+	{
+		if( po->level > 2 )
+		{
+			// For weaker enemies on hard difficulty do not factor in armor.
+			if( enemy_type_razboynik == eo->index || enemy_type_hungry_wolf == eo->index )
+			{
+				add_armor = false;
+			}
+		}
+		else
+		{
+			add_armor = engine_random_manager_diff( po->level );
+		}
+	}
+
+	return add_armor;
 }
