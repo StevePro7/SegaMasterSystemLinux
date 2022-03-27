@@ -48,6 +48,7 @@ void screen_over_screen_update( unsigned char *screen_type )
 		engine_game_manager_music_off();
 
 		// Play over music.
+		engine_sound_manager_init();
 		for( index = 8; index < 10; index++ )
 		{
 			engine_music_manager_play( index );
