@@ -22,7 +22,7 @@ static unsigned char select_type;
 static unsigned char gold;
 static void setup();
 
-unsigned char inventory[ MAX_ITEMS ] = { 10, 20, 20, 10, 30 };
+unsigned char inventory[ MAX_ITEMS ] = { 10, 20, 10, 20, 30 };
 
 void screen_shop_screen_load()
 {

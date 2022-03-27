@@ -3,8 +3,8 @@ F:G$screen_over_screen_load$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lover_screen.screen_over_screen_load$row$1$80({1}SC:U),R,0,0,[]
 F:G$screen_over_screen_update$0$0({2}DF,SV:S),Z,0,2,0,0,0
 S:Lover_screen.screen_over_screen_update$screen_type$1$81({2}DG,SC:U),B,1,4
-S:Lover_screen.screen_over_screen_update$input1$1$82({1}SC:U),B,1,-2
-S:Lover_screen.screen_over_screen_update$input2$1$82({1}SC:U),B,1,-1
+S:Lover_screen.screen_over_screen_update$input1$1$82({1}SC:U),B,1,-1
+S:Lover_screen.screen_over_screen_update$input2$1$82({1}SC:U),B,1,-2
 S:Lover_screen.screen_over_screen_update$timer$1$82({1}SC:U),R,0,0,[c]
 S:Lover_screen.screen_over_screen_update$index$1$82({1}SC:U),R,0,0,[b]
 F:Fover_screen$game_over$0$0({2}DF,SV:S),Z,0,0,0,0,0

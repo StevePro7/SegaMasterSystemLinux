@@ -79,14 +79,15 @@ void engine_fight_manager_enemy_to_player( unsigned char *p_damage, unsigned cha
 //11705 IF U = 4 OR U = 5 OR U = 6 THEN UU = 2
 //11710 D = UU + ATK
 //11720 HPC = HPC - D
-void engine_fight_manager_player_to_boss( unsigned char *b_damage, unsigned char random )
+void engine_fight_manager_player_to_boss( unsigned char *b_damage, unsigned char random, unsigned char weapon )
 {
 	// Damage to boss from player.
 	struct_player_object *po = &global_player_object;
 	unsigned char damage;
 	unsigned char extra;
 
-	extra = po->weapon;
+	//extra = po->weapon;
+	extra = weapon;
 	damage = get_damage( random );
 
 	if( 4 == damage )

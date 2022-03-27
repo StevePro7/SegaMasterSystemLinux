@@ -38,7 +38,7 @@ void screen_func_screen_load()
 	// Boss screen.
 	engine_target_manager_load( 5 );
 	random = engine_random_manager_next();
-	engine_fight_manager_player_to_boss( &enemys_damage, random );
+	engine_fight_manager_player_to_boss( &enemys_damage, random, weapon_type_axe );
 
 	random = engine_random_manager_next();
 	engine_fight_manager_boss_to_player( &player_damage, random );
