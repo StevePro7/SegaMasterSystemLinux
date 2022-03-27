@@ -13,6 +13,7 @@
 #include "../engine/timer_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
+#include <stdlib.h>
 
 #define DIFFICULTY_ROW		17
 #define DIFF_SOUND_DELAY	50
@@ -52,6 +53,8 @@ void screen_diff_screen_update( unsigned char *screen_type )
 
 	unsigned char selection;
 	unsigned char timer;
+
+	rand();
 	if( event_stage_pause == event_stage )
 	{
 		timer = engine_timer_manager_update();
@@ -88,6 +91,4 @@ void screen_diff_screen_update( unsigned char *screen_type )
 			engine_sound_manager_play( sound_type_5 );
 		}
 	}
-
-	
 }
