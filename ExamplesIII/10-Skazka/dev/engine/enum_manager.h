@@ -170,6 +170,7 @@ typedef enum tag_enum_diff_type
 {
 	diff_type_easy = 0,
 	diff_type_hard = 1,
+	diff_type_test = 2,
 
 } enum_diff_type;
 

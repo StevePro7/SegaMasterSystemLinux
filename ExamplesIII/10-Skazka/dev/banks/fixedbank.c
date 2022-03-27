@@ -16,6 +16,7 @@ const unsigned char *diff_texts[] =
 {
 	"EASY",
 	"HARD",
+	"TEST",
 };
 
 const unsigned char *stats_texts[] =

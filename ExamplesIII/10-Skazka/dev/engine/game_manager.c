@@ -1,4 +1,5 @@
 #include "game_manager.h"
+#include "enum_manager.h"
 #include "font_manager.h"
 #include "global_manager.h"
 #include "locale_manager.h"
@@ -16,6 +17,7 @@ void engine_game_manager_init()
 	engine_game_manager_intro_on();
 	engine_game_manager_music_on();
 	engine_game_manager_flash_on();
+	engine_game_manager_difficulty( diff_type_easy );
 }
 
 void engine_game_manager_black()

@@ -1,5 +1,8 @@
 M:random_manager
 F:G$engine_random_manager_next$0$0({2}DF,SC:U),Z,0,0,0,0,0
+F:G$engine_random_manager_diff$0$0({2}DF,:S),Z,0,0,0,0,0
+S:Lrandom_manager.engine_random_manager_diff$level$1$23({1}SC:U),B,1,4
+S:Lrandom_manager.engine_random_manager_diff$value$1$24({1}SC:U),R,0,0,[c]
 S:G$atof$0$0({2}DF,SF:S),C,0,0
 S:G$atoi$0$0({2}DF,SI:S),C,0,0
 S:G$atol$0$0({2}DF,SL:S),C,0,0

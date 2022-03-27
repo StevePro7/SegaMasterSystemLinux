@@ -19,6 +19,7 @@
 #define SHOP_ROW				18
 #define FIGHT_ROW				19
 #define FIRE1_ROW				22
+#define LINES_ROW				1
 
 #define NO_SELECTION			255
 
