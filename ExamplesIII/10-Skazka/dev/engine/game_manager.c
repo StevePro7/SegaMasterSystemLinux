@@ -22,7 +22,7 @@ void engine_game_manager_init()
 	engine_game_manager_flash_on();
 
 	engine_game_manager_difficulty( diff_type_easy );
-	//engine_game_manager_difficulty( diff_type_hard );
+	engine_game_manager_difficulty( diff_type_hard );
 	//engine_game_manager_difficulty( diff_type_test );
 }
 

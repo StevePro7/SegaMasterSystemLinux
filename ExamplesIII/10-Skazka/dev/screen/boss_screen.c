@@ -25,11 +25,14 @@ static unsigned char enemys_damage;
 static unsigned char player_damage;
 static unsigned char player_weapon;
 static unsigned char player_armor;
+static unsigned char beg_boss_val;
 static bool first_time;
 
 static void boss_init( unsigned char *p_weapon, unsigned char *p_armor );
 static void boss_stats( unsigned char *p_weapon, unsigned char *p_armor );
 static void boss_laugh( unsigned char selection );
+
+unsigned char beg_boss_hit[ MAX_ENEMIES ] = { 2, 4, 2 };
 
 void screen_boss_screen_load()
 {
@@ -65,20 +68,16 @@ void screen_boss_screen_load()
 	player_weapon = 0;
 	player_armor = 0;
 
+	// Easy mode gets increases weapon + armor.
 	boss_init( &player_weapon, &player_armor );
 	boss_stats( &player_weapon, &player_armor );
 
-	// Easy mode gets increases weapon + armor.
 	if( diff_type_hard != go->difficulty )
 	{
-		engine_font_manager_text( "MORE", 20, 23 );
 		boss_stats( &player_weapon, &player_armor );
 	}
-	//boss_stats( &player_weapon, &player_armor );
-	//boss_stats( &player_weapon, &player_armor );
-	//boss_stats( &player_weapon, &player_armor );
-	//boss_stats();
 
+	beg_boss_val = beg_boss_hit[ go->difficulty ];
 	first_time = true;
 }
 
@@ -152,8 +151,8 @@ void screen_boss_screen_update( unsigned char *screen_type )
 			// If not invincible.
 			if( !ho->hack_nodead )
 			{
-				// Subtract 2x HP if you beg.
-				engine_player_manager_hit( 2 );
+				// Subtract HP if you beg.
+				engine_player_manager_hit( beg_boss_val );
 				if( engine_player_manager_dead() )
 				{
 					// Check if player has extra life!
