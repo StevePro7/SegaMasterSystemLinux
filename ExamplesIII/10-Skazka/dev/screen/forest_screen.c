@@ -110,12 +110,15 @@ void screen_forest_screen_update( unsigned char *screen_type )
 		input = engine_input_manager_hold( input_type_fire2 );
 		if( input )
 		{
+			// If difficulty not hard then cheat and run away unconditionally.
 			if( diff_type_hard != go->difficulty )
 			{
 				*screen_type = screen_type_stats;
 				return;
 			}
-			else if( ho->hack_nodead )
+
+			// If invincible then run away.
+			if( ho->hack_nodead )
 			{
 				*screen_type = screen_type_stats;
 				return;
