@@ -64,7 +64,7 @@ void engine_hack_manager_invert()
 	//ho->hack_currhp = 20;
 	//ho->hack_weapon = 2;
 	//ho->hack_armors = 2;// armor_type_kolchuga;
-	ho->hack_oneups = 1;
+	//ho->hack_oneups = 1;
 	//ho->hack_goldno = 100;
 	// TODO delete
 

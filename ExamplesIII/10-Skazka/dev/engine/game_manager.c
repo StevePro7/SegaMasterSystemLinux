@@ -24,7 +24,7 @@ void engine_game_manager_init()
 	engine_game_manager_difficulty( diff_type_easy );
 
 	// TDOD delete
-	engine_game_manager_difficulty( diff_type_hard );
+	//engine_game_manager_difficulty( diff_type_hard );
 	//engine_game_manager_difficulty( diff_type_test );
 }
 

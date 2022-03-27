@@ -55,11 +55,11 @@ void engine_text_manager_fire()
 void engine_text_manager_diff()
 {
 	// TODO uncomment out!!
-	struct_game_object *go = &global_game_object;
-	devkit_SMS_mapROMBank( FIXED_BANK );
+	//struct_game_object *go = &global_game_object;
+	//devkit_SMS_mapROMBank( FIXED_BANK );
 
-	engine_font_manager_text( ( unsigned char * ) diff_texts[ go->difficulty ], LEFT_X + 27, LINES_ROW + 4 );
-	engine_font_manager_text( LOCALE_MODES_WORD, LEFT_X + 27, LINES_ROW + 5 );
+	//engine_font_manager_text( ( unsigned char * ) diff_texts[ go->difficulty ], LEFT_X + 27, LINES_ROW + 4 );
+	//engine_font_manager_text( LOCALE_MODES_WORD, LEFT_X + 27, LINES_ROW + 5 );
 }
 
 void engine_text_manager_args( unsigned char x, unsigned char y, unsigned char num, ... )
