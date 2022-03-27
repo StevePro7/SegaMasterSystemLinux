@@ -6,10 +6,10 @@ typedef enum tag_enum_screen_type
 	screen_type_none = 0,
 	screen_type_splash = 1,
 	screen_type_title = 2,
-	screen_type_start = 3,
-	screen_type_diff = 4,
-	screen_type_intro = 5,
-	screen_type_load = 6,
+	screen_type_diff = 3,
+	screen_type_intro = 4,
+	screen_type_load = 5,
+	screen_type_start = 6,
 	screen_type_stats = 7,
 	screen_type_forest = 8,
 	screen_type_victory = 9,
@@ -114,8 +114,8 @@ typedef enum tag_enum_shop_type
 {
 	shop_type_sword = 0,
 	shop_type_axe = 1,
-	shop_type_kolchuga = 2,
-	shop_type_tegilay = 3,
+	shop_type_tegilay = 2,
+	shop_type_kolchuga = 3,
 	shop_type_life = 4,
 
 } enum_shop_type;
@@ -170,6 +170,7 @@ typedef enum tag_enum_diff_type
 {
 	diff_type_easy = 0,
 	diff_type_hard = 1,
+	diff_type_test = 2,
 
 } enum_diff_type;
 

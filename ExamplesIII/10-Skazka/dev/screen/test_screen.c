@@ -133,7 +133,7 @@ static void player_to_boss()
 		engine_font_manager_data( random, 10, random + 10 );
 		damage = 0;
 
-		engine_fight_manager_player_to_boss( &damage, random );
+		engine_fight_manager_player_to_boss( &damage, random, weapon_type_axe );
 		engine_font_manager_data( damage, 20, random + 10 );
 	}
 }

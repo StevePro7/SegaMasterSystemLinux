@@ -16,6 +16,7 @@ const unsigned char *diff_texts[] =
 {
 	"EASY",
 	"HARD",
+	"TEST",
 };
 
 const unsigned char *stats_texts[] =
@@ -39,8 +40,8 @@ const unsigned char *weapon_texts[] =
 const unsigned char *armor_texts[] =
 {
 	"",
-	"KOLCHUGA",
 	" TEGILAY",
+	"KOLCHUGA",
 };
 const unsigned char *life_texts[] =
 {

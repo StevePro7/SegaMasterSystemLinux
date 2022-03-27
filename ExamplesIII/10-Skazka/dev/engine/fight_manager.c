@@ -1,5 +1,8 @@
 #include "fight_manager.h"
+#include "font_manager.h"
 #include "enemy_manager.h"
+#include "enum_manager.h"
+#include "game_manager.h"
 #include "global_manager.h"
 #include "hack_manager.h"
 #include "player_manager.h"
@@ -51,6 +54,7 @@ void engine_fight_manager_enemy_to_player( unsigned char *p_damage, unsigned cha
 	// Damage to player from enemy.
 	struct_enemy_object *eo = &global_enemy_object;
 	struct_hack_object *ho = &global_hack_object;
+	struct_game_object *go = &global_game_object;
 
 	unsigned char damage;
 	unsigned char extra;
@@ -68,6 +72,15 @@ void engine_fight_manager_enemy_to_player( unsigned char *p_damage, unsigned cha
 		damage += extra;
 	}
 
+	// Inflict more damage to player in hard mode. 
+	if( diff_type_hard == go->difficulty )
+	{
+		if( 4 == damage || 2 == damage || 1 == damage )
+		{
+			damage += extra;
+		}
+	}
+
 	*p_damage = damage;
 }
 
@@ -79,14 +92,15 @@ void engine_fight_manager_enemy_to_player( unsigned char *p_damage, unsigned cha
 //11705 IF U = 4 OR U = 5 OR U = 6 THEN UU = 2
 //11710 D = UU + ATK
 //11720 HPC = HPC - D
-void engine_fight_manager_player_to_boss( unsigned char *b_damage, unsigned char random )
+void engine_fight_manager_player_to_boss( unsigned char *b_damage, unsigned char random, unsigned char weapon )
 {
 	// Damage to boss from player.
 	struct_player_object *po = &global_player_object;
 	unsigned char damage;
 	unsigned char extra;
 
-	extra = po->weapon;
+	//extra = po->weapon;
+	extra = weapon;
 	damage = get_damage( random );
 
 	if( 4 == damage )

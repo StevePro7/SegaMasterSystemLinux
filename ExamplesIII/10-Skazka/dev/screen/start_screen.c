@@ -31,6 +31,7 @@ void screen_start_screen_load()
 	engine_game_manager_print_player();
 	engine_game_manager_print_version();
 	engine_game_manager_print_texts();
+	engine_text_manager_diff();
 
 	engine_font_manager_text( LOCALE_ARROWS, LEFT_X + 10, OPTION_ROW );
 	devkit_SMS_displayOn();
