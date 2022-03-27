@@ -60,11 +60,11 @@ void engine_hack_manager_invert()
 	struct_hack_object *ho = &global_hack_object;
 
 	// TODO delete
-	ho->hack_currxp = 20;
-	ho->hack_currhp = 20;
+	//ho->hack_currxp = 20;
+	//ho->hack_currhp = 20;
 	//ho->hack_weapon = 2;
 	//ho->hack_armors = 2;// armor_type_kolchuga;
-	//ho->hack_oneups = 1;
+	ho->hack_oneups = 1;
 	//ho->hack_goldno = 100;
 	// TODO delete
 
