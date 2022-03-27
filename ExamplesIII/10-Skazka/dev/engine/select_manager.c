@@ -8,23 +8,42 @@
 struct_select_object global_select_object;
 
 // Private helper function.
+static void initialize( unsigned char maxim );
 static void draw_arrows();
 static void draw_spaces();
 
 void engine_select_manager_init()
 {
-	struct_select_object *so = &global_select_object;
-	unsigned char index;
+	initialize( MAX_SELECTS );
+	//struct_select_object *so = &global_select_object;
+	//unsigned char index;
 
-	for( index = 0; index < MAX_SELECTS; index++ )
-	{
-		so->select_index[ index ] = 0;
-	}
+	//for( index = 0; index < MAX_SELECTS; index++ )
+	//{
+	//	so->select_index[ index ] = 0;
+	//}
 
-	so->select_X = 0;
-	so->select_Y = 0;
-	so->select_min = 0;
-	so->select_max = 0;
+	//so->select_X = 0;
+	//so->select_Y = 0;
+	//so->select_min = 0;
+	//so->select_max = 0;
+}
+
+void engine_select_manager_once()
+{
+	initialize( MAX_SELECTS - 1 );
+	//struct_select_object *so = &global_select_object;
+	//unsigned char index;
+
+	//for( index = 0; index < MAX_SELECTS - 1; index++ )
+	//{
+	//	so->select_index[ index ] = 0;
+	//}
+
+	//so->select_X = 0;
+	//so->select_Y = 0;
+	//so->select_min = 0;
+	//so->select_max = 0;
 }
 
 void engine_select_manager_load( unsigned char index, unsigned char x, unsigned char y, unsigned char option )
@@ -78,6 +97,22 @@ unsigned char engine_select_manager_update( unsigned char index )
 	}
 
 	return NO_SELECTION;
+}
+
+static void initialize( unsigned char maxim )
+{
+	struct_select_object *so = &global_select_object;
+	unsigned char index;
+
+	for( index = 0; index < maxim; index++ )
+	{
+		so->select_index[ index ] = 0;
+	}
+
+	so->select_X = 0;
+	so->select_Y = 0;
+	so->select_min = 0;
+	so->select_max = 0;
 }
 
 static void draw_arrows()

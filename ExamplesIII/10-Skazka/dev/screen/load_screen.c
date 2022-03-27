@@ -9,7 +9,7 @@ void screen_load_screen_load()
 	engine_player_manager_load();
 	engine_player_manager_calc();
 
-	engine_select_manager_init();
+	engine_select_manager_once();
 }
 
 void screen_load_screen_update( unsigned char *screen_type )

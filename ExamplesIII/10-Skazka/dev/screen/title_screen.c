@@ -56,17 +56,19 @@ void screen_title_screen_update( unsigned char *screen_type )
 		timer = engine_timer_manager_update();
 		if( timer )
 		{
-			if( go->intro_once )
-			{
-				engine_game_manager_intro_off();
-				*screen_type = screen_type_intro;
-				return;
-			}
-			else
-			{
-				*screen_type = screen_type_load;
-				return;
-			}
+			*screen_type = screen_type_diff;
+			return;
+			//if( go->intro_once )
+			//{
+			//	engine_game_manager_intro_off();
+			//	*screen_type = screen_type_intro;
+			//	return;
+			//}
+			//else
+			//{
+			//	*screen_type = screen_type_load;
+			//	return;
+			//}
 		}
 	}
 	else

@@ -1,7 +1,6 @@
 M:select_manager
 F:G$engine_select_manager_init$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lselect_manager.engine_select_manager_init$so$1$9({2}DG,STtag_struct_aelect_object:S),R,0,0,[]
-S:Lselect_manager.engine_select_manager_init$index$1$9({1}SC:U),R,0,0,[c]
+F:G$engine_select_manager_once$0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_select_manager_load$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lselect_manager.engine_select_manager_load$index$1$12({1}SC:U),B,1,4
 S:Lselect_manager.engine_select_manager_load$x$1$12({1}SC:U),B,1,5
@@ -12,10 +11,14 @@ F:G$engine_select_manager_update$0$0({2}DF,SC:U),Z,0,0,0,0,0
 S:Lselect_manager.engine_select_manager_update$index$1$14({1}SC:U),B,1,4
 S:Lselect_manager.engine_select_manager_update$so$1$15({2}DG,STtag_struct_aelect_object:S),R,0,0,[]
 S:Lselect_manager.engine_select_manager_update$input$1$15({1}SC:U),R,0,0,[l]
+F:Fselect_manager$initialize$0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lselect_manager.initialize$maxim$1$21({1}SC:U),B,1,4
+S:Lselect_manager.initialize$so$1$22({2}DG,STtag_struct_aelect_object:S),R,0,0,[c,b]
+S:Lselect_manager.initialize$index$1$22({1}SC:U),R,0,0,[e]
 F:Fselect_manager$draw_arrows$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lselect_manager.draw_arrows$so$1$21({2}DG,STtag_struct_aelect_object:S),R,0,0,[]
+S:Lselect_manager.draw_arrows$so$1$25({2}DG,STtag_struct_aelect_object:S),R,0,0,[]
 F:Fselect_manager$draw_spaces$0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lselect_manager.draw_spaces$so$1$22({2}DG,STtag_struct_aelect_object:S),R,0,0,[]
+S:Lselect_manager.draw_spaces$so$1$26({2}DG,STtag_struct_aelect_object:S),R,0,0,[]
 T:Fselect_manager$tag_struct_aelect_object[({0}S:S$select_index$0$0({8}DA8d,SC:U),Z,0,0)({8}S:S$select_X$0$0({1}SC:U),Z,0,0)({9}S:S$select_Y$0$0({1}SC:U),Z,0,0)({10}S:S$select_min$0$0({1}SC:U),Z,0,0)({11}S:S$select_max$0$0({1}SC:U),Z,0,0)]
 S:G$global_select_object$0$0({12}STtag_struct_aelect_object:S),E,0,0
 S:G$engine_font_manager_char$0$0({2}DF,SV:S),C,0,0

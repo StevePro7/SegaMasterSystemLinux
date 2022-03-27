@@ -20,7 +20,6 @@ void engine_player_manager_hit( char hp );
 void engine_player_manager_armor( unsigned char armor );
 bool engine_player_manager_dead();
 bool engine_player_manager_life();
-//void engine_player_manager_boss();
 
 // Hack manager allows player to override default values.
 void engine_player_manager_def_currxp( unsigned currxp );

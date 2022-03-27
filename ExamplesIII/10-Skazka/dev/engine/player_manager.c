@@ -83,11 +83,6 @@ void engine_player_manager_stats()
 	engine_font_manager_text( ( unsigned char * ) armor_texts[ po->armor ], LEFT_X + 4, STATS_ROW + 8 );
 	engine_font_manager_text( ( unsigned char * ) life_texts[ po->life ], LEFT_X + 4, STATS_ROW + 9 );
 
-	// TODO delete
-	//engine_font_manager_data(po->weapon, LEFT_X + 4, STATS_ROW + 7 );
-	//engine_font_manager_data(po->armor, LEFT_X + 4, STATS_ROW + 8 );
-	//engine_font_manager_data(po->life, LEFT_X + 4, STATS_ROW + 9 );
-
 	if( po->xp > 60 )
 	{
 		engine_font_manager_text( LOCALE_HERO, LEFT_X + 15, STATS_ROW + 20 );
@@ -147,10 +142,6 @@ void engine_player_manager_inc_gold( unsigned char xp, unsigned char gold )
 void engine_player_manager_hit( char hp )
 {
 	struct_player_object *po = &global_player_object;
-
-	// TODO delete
-	//po->hp += po->armor;
-	// TODO delete
 	if( po->hp > hp )
 	{
 		po->hp -= hp;
@@ -178,18 +169,6 @@ bool engine_player_manager_life()
 	struct_player_object *po = &global_player_object;
 	return life_type_oneup == po->life;
 }
-
-// TODO delete
-//void engine_player_manager_boss()
-//{
-//	// Function called once just before final battle.
-//	struct_player_object *po = &global_player_object;
-//	if( po->xp > 60 )
-//	{
-//		po->weapon += 1;				// Q$	ATK
-//		po->armor +=1;					// W$	ARM
-//	}
-//}
 
 void engine_player_manager_def_currxp( unsigned currxp )
 {

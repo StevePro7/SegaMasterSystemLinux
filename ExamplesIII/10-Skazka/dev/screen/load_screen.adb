@@ -48,5 +48,6 @@ S:G$engine_player_manager_set_weapon$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_set_armors$0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_set_oneups$0$0({2}DF,SV:S),C,0,0
 S:G$engine_select_manager_init$0$0({2}DF,SV:S),C,0,0
+S:G$engine_select_manager_once$0$0({2}DF,SV:S),C,0,0
 S:G$engine_select_manager_load$0$0({2}DF,SV:S),C,0,0
 S:G$engine_select_manager_update$0$0({2}DF,SC:U),C,0,0
