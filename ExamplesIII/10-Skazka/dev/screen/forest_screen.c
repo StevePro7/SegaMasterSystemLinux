@@ -27,9 +27,12 @@ static unsigned char enemys_damage;
 static unsigned char player_damage;
 static unsigned char player_gold;
 static unsigned char select_type;
+static unsigned char run_away_val;
 
 static void setup();
 static bool calc_add_armor();
+
+unsigned char run_away_hit[ MAX_ENEMIES ] = { 1, 2, 1 };
 
 void screen_forest_screen_load()
 {
@@ -50,6 +53,7 @@ void screen_forest_screen_load()
 	enemys_damage = 0;
 	player_damage = 0;
 	player_gold = 0;
+	run_away_val = run_away_hit[ go->difficulty ];
 }
 
 void screen_forest_screen_update( unsigned char *screen_type )
@@ -166,8 +170,8 @@ void screen_forest_screen_update( unsigned char *screen_type )
 			}
 			else
 			{
-				// Subtract 1x HP as cannot currently run away.
-				engine_player_manager_hit( 1 );
+				// Subtract HP as cannot currently run away.
+				engine_player_manager_hit( run_away_val );
 				if( engine_player_manager_dead() )
 				{
 					// Check if player has extra life!
