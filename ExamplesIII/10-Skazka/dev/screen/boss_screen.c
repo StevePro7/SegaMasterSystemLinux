@@ -64,14 +64,14 @@ void screen_boss_screen_load()
 	engine_target_manager_load( enemy_type_koschey );
 	player_weapon = 0;
 	player_armor = 0;
-	//engine_player_manager_boss();
-	//engine_player_manager_boss();
+
 	boss_init( &player_weapon, &player_armor );
 	boss_stats( &player_weapon, &player_armor );
 
 	// Easy mode gets increases weapon + armor.
 	if( diff_type_hard != go->difficulty )
 	{
+		engine_font_manager_text( "MORE", 20, 23 );
 		boss_stats( &player_weapon, &player_armor );
 	}
 	//boss_stats( &player_weapon, &player_armor );
