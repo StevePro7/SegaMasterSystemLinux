@@ -5,6 +5,7 @@
 #include "../engine/enum_manager.h"
 #include "../engine/fight_manager.h"
 #include "../engine/font_manager.h"
+#include "../engine/game_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/hack_manager.h"
 #include "../engine/input_manager.h"
@@ -51,6 +52,7 @@ void screen_forest_screen_update( unsigned char *screen_type )
 {
 	struct_player_object *po = &global_player_object;
 	struct_hack_object *ho = &global_hack_object;
+	struct_game_object *go = &global_game_object;
 	unsigned char random;
 	unsigned char input;
 	unsigned char value;
@@ -108,8 +110,16 @@ void screen_forest_screen_update( unsigned char *screen_type )
 		input = engine_input_manager_hold( input_type_fire2 );
 		if( input )
 		{
-			*screen_type = screen_type_stats;
-			return;
+			if( diff_type_hard != go->difficulty )
+			{
+				*screen_type = screen_type_stats;
+				return;
+			}
+			else if( ho->hack_nodead )
+			{
+				*screen_type = screen_type_stats;
+				return;
+			}
 		}
 
 		curr_selection = engine_select_manager_update( select_type );
