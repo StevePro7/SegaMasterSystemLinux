@@ -16,8 +16,8 @@
 #include "../engine/text_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
-#include <stdlib.h>
 #include <stdbool.h>
+#include <stdlib.h>
 
 static unsigned char curr_selection;
 static unsigned char prev_selection;

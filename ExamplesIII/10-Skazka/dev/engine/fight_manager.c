@@ -104,7 +104,6 @@ void engine_fight_manager_player_to_boss( unsigned char *b_damage, unsigned char
 	unsigned char damage;
 	unsigned char extra;
 
-	//extra = po->weapon;
 	extra = weapon;
 	damage = get_damage( random );
 
