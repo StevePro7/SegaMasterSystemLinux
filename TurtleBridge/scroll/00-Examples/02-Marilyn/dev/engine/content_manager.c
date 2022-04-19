@@ -8,6 +8,7 @@
 
 void engine_content_manager_load_tiles()
 {
-	devkit_SMS_loadPSGaidencompressedTiles( hockey__tiles__psgcompr, 0 );
-	devkit_SMS_loadBGPalette( ( void * ) hockey__palette__bin );
+	devkit_SMS_loadPSGaidencompressedTiles( marilyn__tiles__psgcompr, 0 );
+	devkit_SMS_loadTileMap( 0, 0, ( unsigned char * ) marilyn__tilemap__bin, 32 * 25 * 2 );
+	devkit_SMS_loadBGPalette( ( void * ) marilyn__palette__bin );
 }

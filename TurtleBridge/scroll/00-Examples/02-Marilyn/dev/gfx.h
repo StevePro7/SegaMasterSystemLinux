@@ -1,9 +1,9 @@
-extern const unsigned char	hockey__palette__bin[];
-#define				hockey__palette__bin_size 12
+extern const unsigned char	marilyn__palette__bin[];
+#define				marilyn__palette__bin_size 16
 
-extern const unsigned char	hockey__tilemap__bin[];
-#define				hockey__tilemap__bin_size 2400
+extern const unsigned char	marilyn__tilemap__bin[];
+#define				marilyn__tilemap__bin_size 3584
 
-extern const unsigned char	hockey__tiles__psgcompr[];
-#define				hockey__tiles__psgcompr_size 7526
+extern const unsigned char	marilyn__tiles__psgcompr[];
+#define				marilyn__tiles__psgcompr_size 7775
 

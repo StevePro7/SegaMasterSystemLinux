@@ -17,7 +17,7 @@ void main( void )
 	open_screen_type = screen_type_test;
 	engine_screen_manager_init( open_screen_type );
 	engine_content_manager_load_tiles();
-	engine_scroll_manager_load();
+	//engine_scroll_manager_load();
 
 	devkit_SMS_displayOn();
 	for( ;; )
