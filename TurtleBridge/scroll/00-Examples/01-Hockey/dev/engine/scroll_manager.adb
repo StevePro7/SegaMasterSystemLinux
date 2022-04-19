@@ -18,7 +18,7 @@ S:Lscroll_manager.engine_scroll_manager_update_right$src$1_0$52({2}DG,SC:U),R,0,
 S:Lscroll_manager.engine_scroll_manager_update_right$ytile$1_0$52({1}SC:U),B,1,-1
 S:Lscroll_manager.engine_scroll_manager_update_right$index$1_0$52({2}SI:U),R,0,0,[l,h]
 S:Lscroll_manager.engine_scroll_manager_update_right$size$1_0$52({2}SI:U),R,0,0,[]
-S:Lscroll_manager.engine_scroll_manager_update_right$x$1_0$52({2}SI:U),B,1,-4
+S:Lscroll_manager.engine_scroll_manager_update_right$x$1_0$52({2}SI:U),R,0,0,[e,d]
 S:Lscroll_manager.engine_scroll_manager_update_right$y$1_0$52({1}SC:U),B,1,-2
 S:Lscroll_manager.engine_scroll_manager_update_right$sloc0$0_1$0({1}SC:U),B,1,-1
 S:Lscroll_manager.engine_scroll_manager_update_right$sloc1$0_1$0({2}SI:U),B,1,-4
@@ -31,6 +31,7 @@ S:Fscroll_manager$scroll$0_0$0({2}SI:U),E,0,0
 S:Fscroll_manager$scrollDivided8$0_0$0({2}SI:U),E,0,0
 S:Fscroll_manager$scrollRight$0_0$0({2}SI:U),E,0,0
 S:Fscroll_manager$scrollRightDivided8$0_0$0({2}SI:U),E,0,0
+S:Fscroll_manager$scrollWidth$0_0$0({2}SI:U),E,0,0
 S:G$engine_content_manager_load_tiles$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_displayOn$0_0$0({2}DF,SV:S),C,0,0
