@@ -6,6 +6,9 @@
 
 // LIBRARIES.
 #include "devkit/_sms_manager.h"
+#include "engine/content_manager.h"
+#include "engine/debug_manager.h"
+#include "engine/font_manager.h"
 #include "engine/process_manager.h"
 
 #endif//__MAIN__
