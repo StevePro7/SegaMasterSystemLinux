@@ -1,8 +1,10 @@
 M:test_screen
 F:G$screen_test_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_test_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Ltest_screen.screen_test_screen_update$screen_type$1_0$3({2}DG,SC:U),B,1,4
-S:Ltest_screen.screen_test_screen_update$input$1_0$4({1}SC:U),R,0,0,[a]
+S:Ltest_screen.screen_test_screen_update$screen_type$1_0$5({2}DG,SC:U),B,1,4
+S:Ltest_screen.screen_test_screen_update$input$1_0$6({1}SC:U),R,0,0,[a]
+S:Ltest_screen.screen_test_screen_update$delta$1_0$6({1}SC:U),R,0,0,[c]
+S:Ltest_screen.screen_test_screen_update$loops$1_0$6({1}SC:U),R,0,0,[b]
 S:G$engine_input_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_hold_up$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_hold_down$0_0$0({2}DF,SC:U),C,0,0
