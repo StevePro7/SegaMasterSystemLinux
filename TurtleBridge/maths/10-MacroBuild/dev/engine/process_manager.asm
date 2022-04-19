@@ -52,7 +52,7 @@ _Bar::
 	C$process_manager.c$12$1_0$1	= .
 	.globl	C$process_manager.c$12$1_0$1
 ;process_manager.c:12: return test;
-	ld	hl, #0x0000
+	ld	hl, #0x0003
 	C$process_manager.c$13$1_0$1	= .
 	.globl	C$process_manager.c$13$1_0$1
 ;process_manager.c:13: }
