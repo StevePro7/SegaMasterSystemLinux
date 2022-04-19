@@ -5,10 +5,10 @@ M test_screen
 O -mz80
 S _engine_scroll_manager_update_right Ref000000
 S .__.ABS. Def000000
-S _engine_input_manager_hold_right Ref000000
 S _engine_scroll_manager_update_left Ref000000
-S _engine_input_manager_hold_left Ref000000
+S _engine_input_manager_move_right Ref000000
 S _engine_scroll_manager_load Ref000000
+S _engine_input_manager_move_left Ref000000
 A _CODE size 20 flags 0 addr 0
 S A$test_screen$116 Def00001D
 S A$test_screen$107 Def000016
@@ -57,15 +57,15 @@ A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
 T 00 00 00 C3 00 00
-R 00 00 00 00 02 04 05 00
+R 00 00 00 00 02 04 04 00
 T 03 00 00
 R 00 00 00 00
 T 03 00 00 CD 00 00 7D B7 28 05 CD 00 00 18 0A
-R 00 00 00 00 02 04 02 00 02 0B 00 00
+R 00 00 00 00 02 04 03 00 02 0B 00 00
 T 0F 00 00
 R 00 00 00 00
 T 0F 00 00 CD 00 00 7D B7 28 03 CD 00 00
-R 00 00 00 00 02 04 04 00 02 0B 03 00
+R 00 00 00 00 02 04 05 00 02 0B 02 00
 T 19 00 00
 R 00 00 00 00
 T 19 00 00 C1 E1 E5 C5 36 01 C9
