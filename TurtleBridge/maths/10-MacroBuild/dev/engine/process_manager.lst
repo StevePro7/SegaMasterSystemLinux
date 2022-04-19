@@ -42,22 +42,22 @@
                                      42 	.area _CODE
                            000000    43 	G$Bar$0$0	= .
                                      44 	.globl	G$Bar$0$0
-                           000000    45 	C$process_manager.c$3$0_0$1	= .
-                                     46 	.globl	C$process_manager.c$3$0_0$1
-                                     47 ;process_manager.c:3: int Bar()
+                           000000    45 	C$process_manager.c$4$0_0$1	= .
+                                     46 	.globl	C$process_manager.c$4$0_0$1
+                                     47 ;process_manager.c:4: int Bar()
                                      48 ;	---------------------------------
                                      49 ; Function Bar
                                      50 ; ---------------------------------
       000000                         51 _Bar::
-                           000000    52 	C$process_manager.c$5$1_0$1	= .
-                                     53 	.globl	C$process_manager.c$5$1_0$1
-                                     54 ;process_manager.c:5: return 3;
-      000000 21 03 00         [10]   55 	ld	hl, #0x0003
-                           000003    56 	C$process_manager.c$6$1_0$1	= .
-                                     57 	.globl	C$process_manager.c$6$1_0$1
-                                     58 ;process_manager.c:6: }
-                           000003    59 	C$process_manager.c$6$1_0$1	= .
-                                     60 	.globl	C$process_manager.c$6$1_0$1
+                           000000    52 	C$process_manager.c$12$1_0$1	= .
+                                     53 	.globl	C$process_manager.c$12$1_0$1
+                                     54 ;process_manager.c:12: return test;
+      000000 21 00 00         [10]   55 	ld	hl, #0x0000
+                           000003    56 	C$process_manager.c$13$1_0$1	= .
+                                     57 	.globl	C$process_manager.c$13$1_0$1
+                                     58 ;process_manager.c:13: }
+                           000003    59 	C$process_manager.c$13$1_0$1	= .
+                                     60 	.globl	C$process_manager.c$13$1_0$1
                            000003    61 	XG$Bar$0$0	= .
                                      62 	.globl	XG$Bar$0$0
       000003 C9               [10]   63 	ret

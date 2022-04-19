@@ -42,22 +42,22 @@
 	.area _CODE
 	G$Bar$0$0	= .
 	.globl	G$Bar$0$0
-	C$process_manager.c$3$0_0$1	= .
-	.globl	C$process_manager.c$3$0_0$1
-;process_manager.c:3: int Bar()
+	C$process_manager.c$4$0_0$1	= .
+	.globl	C$process_manager.c$4$0_0$1
+;process_manager.c:4: int Bar()
 ;	---------------------------------
 ; Function Bar
 ; ---------------------------------
 _Bar::
-	C$process_manager.c$5$1_0$1	= .
-	.globl	C$process_manager.c$5$1_0$1
-;process_manager.c:5: return 3;
-	ld	hl, #0x0003
-	C$process_manager.c$6$1_0$1	= .
-	.globl	C$process_manager.c$6$1_0$1
-;process_manager.c:6: }
-	C$process_manager.c$6$1_0$1	= .
-	.globl	C$process_manager.c$6$1_0$1
+	C$process_manager.c$12$1_0$1	= .
+	.globl	C$process_manager.c$12$1_0$1
+;process_manager.c:12: return test;
+	ld	hl, #0x0000
+	C$process_manager.c$13$1_0$1	= .
+	.globl	C$process_manager.c$13$1_0$1
+;process_manager.c:13: }
+	C$process_manager.c$13$1_0$1	= .
+	.globl	C$process_manager.c$13$1_0$1
 	XG$Bar$0$0	= .
 	.globl	XG$Bar$0$0
 	ret
