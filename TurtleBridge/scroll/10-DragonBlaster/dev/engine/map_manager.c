@@ -6,6 +6,7 @@
 struct_map_object global_map_object;
 
 static void decompress_map_row( char *buffer );
+static void draw_map_row();
 
 void engine_map_manager_init( char *level_data )
 {
@@ -28,13 +29,18 @@ void engine_map_manager_draw_map_screen()
 
 	while( map_data->background_y < SCREEN_CHAR_H )
 	{
-		engine_map_manager_draw_map_row();
+		draw_map_row();
 	}
 
-	engine_map_manager_draw_map_row();
+	draw_map_row();
 }
 
-void engine_map_manager_draw_map_row()
+void engine_map_manager_draw_map()
+{
+
+}
+
+static void draw_map_row()
 {
 	struct_map_object *map_data = &global_map_object;
 	char i, j;

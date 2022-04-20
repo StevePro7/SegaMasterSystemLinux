@@ -191,7 +191,7 @@ S:G$engine_input_manager_move_fire2$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_map_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_map_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_map_manager_draw_map_screen$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_map_manager_draw_map_row$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_map_manager_draw_map$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_screen_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_screen_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_init$0_0$0({2}DF,SV:S),C,0,0
