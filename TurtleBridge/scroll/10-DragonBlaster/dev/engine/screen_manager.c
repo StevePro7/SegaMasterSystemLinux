@@ -4,25 +4,19 @@
 #include "font_manager.h"
 #include "global_manager.h"
 #include "input_manager.h"
+#include "map_manager.h"
 #include "scroll_manager.h"
 #include "sprite_manager.h"
-
-static unsigned char x = 16;
-static unsigned char y = 128-32;// 64;
-
-static void bonus_level();
+#include "../content/gfx.h"
 
 void engine_screen_manager_init()
 {
-	engine_font_manager_draw_text( "STEVEPRO STUDIOS", 4, 4 );
+	engine_map_manager_init( ( unsigned char * ) level1_bin );
+	engine_map_manager_draw_map_screen();
 }
 
 void engine_screen_manager_update()
 {
 
 	
-}
-
-static void bonus_level()
-{
 }

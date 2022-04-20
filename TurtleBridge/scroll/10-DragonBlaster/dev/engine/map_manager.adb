@@ -1,5 +1,10 @@
 M:map_manager
 F:G$engine_map_manager_init$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lmap_manager.engine_map_manager_init$level_data$1_0$2({2}DG,SC:U),B,1,4
+S:Lmap_manager.engine_map_manager_init$map_data$1_0$3({2}DG,STtag_struct_map_object:S),R,0,0,[]
 F:G$engine_map_manager_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-T:Fmap_manager$tag_struct_map_object[({0}S:S$byte$0_0$0({1}SC:U),Z,0,0)]
-S:G$global_map_object$0_0$0({1}STtag_struct_map_object:S),E,0,0
+F:G$engine_map_manager_draw_map_screen$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lmap_manager.engine_map_manager_draw_map_screen$map_data$1_0$6({2}DG,STtag_struct_map_object:S),R,0,0,[]
+F:G$engine_map_manager_draw_map_row$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+T:Fmap_manager$tag_struct_map_object[({0}S:S$level_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$next_row$0_0$0({2}DG,SC:U),Z,0,0)({4}S:S$background_y$0_0$0({1}SC:U),Z,0,0)({5}S:S$lines_before_next$0_0$0({1}SC:U),Z,0,0)({6}S:S$scroll_y$0_0$0({1}SC:U),Z,0,0)]
+S:G$global_map_object$0_0$0({7}STtag_struct_map_object:S),E,0,0
