@@ -2,6 +2,12 @@
 #include "global_manager.h"
 #include "../devkit/_sms_manager.h"
 
+#ifdef _CONSOLE
+#else
+#pragma disable_warning 158
+#endif
+
+
 // Global variable.
 struct_map_object global_map_object;
 
