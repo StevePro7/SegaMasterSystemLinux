@@ -3,13 +3,11 @@ F:G$engine_scroll_manager_init$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lscroll_manager.engine_scroll_manager_init$so$1_0$69({2}DG,STtag_struct_scroll_object:S),R,0,0,[]
 F:G$engine_scroll_manager_up$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lscroll_manager.engine_scroll_manager_up$so$1_0$70({2}DG,STtag_struct_scroll_object:S),R,0,0,[]
-S:Lscroll_manager.engine_scroll_manager_up$blah$1_0$70({2}SI:U),R,0,0,[]
 S:Lscroll_manager.engine_scroll_manager_up$index$1_0$70({2}SI:U),R,0,0,[e,d]
 S:Lscroll_manager.engine_scroll_manager_up$y$1_0$70({2}SI:U),B,1,-2
 S:Lscroll_manager.engine_scroll_manager_up$sloc0$0_1$0({2}SI:U),B,1,-2
 F:G$engine_scroll_manager_down$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lscroll_manager.engine_scroll_manager_down$so$1_0$73({2}DG,STtag_struct_scroll_object:S),R,0,0,[]
-S:Lscroll_manager.engine_scroll_manager_down$blah$1_0$73({2}SI:U),R,0,0,[]
 S:Lscroll_manager.engine_scroll_manager_down$index$1_0$73({2}SI:U),R,0,0,[e,d]
 S:Lscroll_manager.engine_scroll_manager_down$y$1_0$73({2}SI:U),B,1,-2
 S:Lscroll_manager.engine_scroll_manager_down$sloc0$0_1$0({2}SI:U),B,1,-2

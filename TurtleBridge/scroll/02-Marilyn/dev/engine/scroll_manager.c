@@ -21,7 +21,7 @@ void engine_scroll_manager_init()
 void engine_scroll_manager_up()
 {
 	struct_scroll_object *so = &global_scroll_object;
-	unsigned int blah;
+	//unsigned int test;
 	unsigned int index;
 	unsigned int y;
 
@@ -32,8 +32,8 @@ void engine_scroll_manager_up()
 
 		if( ( so->scroll % 8 ) == 0 )
 		{
-			blah = ( ( so->scroll / 8 ) - 1 );
-			blah = blah * 32 * 2;
+			//test = ( ( so->scroll / 8 ) - 1 );
+			//test = test * 32 * 2;
 
 			y = ( 27 + ( so->scroll / 8 ) ) % 28;
 			index = ( ( so->scroll / 8 ) - 1 ) * 32 * 2;
@@ -45,7 +45,7 @@ void engine_scroll_manager_up()
 void engine_scroll_manager_down()
 {
 	struct_scroll_object *so = &global_scroll_object;
-	unsigned int blah;
+	//unsigned int test;
 	unsigned int index;
 	unsigned int y;
 
@@ -56,8 +56,8 @@ void engine_scroll_manager_down()
 
 		if( ( so->scroll % 8 ) == 0 )
 		{
-			blah = ( 24 + ( so->scroll / 8 ) );
-			blah = blah * 32 * 2;
+			//test = ( 24 + ( so->scroll / 8 ) );
+			//test = test * 32 * 2;
 
 			y = ( 24 + ( so->scroll / 8 ) ) % 28;
 			index = ( 24 + ( so->scroll / 8 ) ) * 32 * 2;
