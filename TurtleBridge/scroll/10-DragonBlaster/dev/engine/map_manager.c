@@ -37,7 +37,25 @@ void engine_map_manager_draw_map_screen()
 
 void engine_map_manager_draw_map()
 {
+	struct_map_object *map_data = &global_map_object;
+	if( map_data->lines_before_next ) 
+	{
+		map_data->lines_before_next--;
+	}
+	else 
+	{
+		draw_map_row();
+	}
 
+	devkit_SMS_setBGScrollY( map_data->scroll_y );
+	if( map_data->scroll_y ) 
+	{
+		map_data->scroll_y--;
+	}
+	else 
+	{
+		map_data->scroll_y = SCROLL_H - 1;
+	}
 }
 
 static void draw_map_row()
