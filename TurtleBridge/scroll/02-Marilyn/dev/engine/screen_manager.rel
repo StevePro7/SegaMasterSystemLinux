@@ -3,22 +3,20 @@ XL3
 H 9 areas 16 global symbols
 M screen_manager
 O -mz80
-S _engine_map_manager_draw_map Ref000000
+S _engine_scroll_manager_down Ref000000
 S .__.ABS. Def000000
-S _engine_input_manager_move_fire1 Ref000000
+S _engine_input_manager_hold_down Ref000000
 A _CODE size A flags 0 addr 0
 S _engine_screen_manager_init Def000000
 S G$engine_screen_manager_update$0$0 Def000001
 S XG$engine_screen_manager_init$0$0 Def000000
 S _engine_screen_manager_update Def000001
 S XG$engine_screen_manager_update$0$0 Def000009
-S C$screen_manager.c$13$0_0$10 Def000000
-S C$screen_manager.c$21$1_0$11 Def000001
-S C$screen_manager.c$22$1_0$11 Def000005
-S C$screen_manager.c$16$0_0$10 Def000000
-S C$screen_manager.c$24$2_0$12 Def000006
-S C$screen_manager.c$18$0_0$11 Def000001
-S C$screen_manager.c$27$1_0$11 Def000009
+S C$screen_manager.c$21$1_0$10 Def000001
+S C$screen_manager.c$22$1_0$10 Def000005
+S C$screen_manager.c$24$2_0$11 Def000006
+S C$screen_manager.c$18$0_0$10 Def000001
+S C$screen_manager.c$27$1_0$10 Def000009
 S A$screen_manager$80 Def000005
 S A$screen_manager$62 Def000000
 S A$screen_manager$92 Def000009
@@ -26,6 +24,8 @@ S A$screen_manager$84 Def000006
 S A$screen_manager$75 Def000001
 S A$screen_manager$76 Def000004
 S G$engine_screen_manager_init$0$0 Def000000
+S C$screen_manager.c$13$0_0$9 Def000000
+S C$screen_manager.c$16$0_0$9 Def000000
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0

@@ -1,40 +1,104 @@
 ;!FILE scroll_manager.asm
 XL3
-H 9 areas 20 global symbols
+H 9 areas 60 global symbols
 M scroll_manager
 O -mz80
+S _MM__tilemap__bin Ref000000
 S .__.ABS. Def000000
-A _CODE size D flags 0 addr 0
-S A$scroll_manager$86 Def000001
-S C$scroll_manager.c$15$1_0$67 Def000000
-S A$scroll_manager$69 Def000000
-S C$scroll_manager.c$17$1_0$69 Def000001
+S _devkit_SMS_loadTileMap Ref000000
+S _devkit_SMS_setBGScrollY Ref000000
+S __moduint Ref000000
+A _CODE size 6A flags 0 addr 0
+S C$scroll_manager.c$13$1_0$69 Def000000
+S C$scroll_manager.c$29$1_0$72 Def00000D
+S C$scroll_manager.c$14$1_0$69 Def000000
+S _engine_scroll_manager_up Def00000C
+S A$scroll_manager$97 Def00000C
+S C$scroll_manager.c$15$1_0$69 Def000006
+S C$scroll_manager.c$16$1_0$69 Def00000B
 S G$engine_scroll_manager_init$0$0 Def000000
-S C$scroll_manager.c$19$1_0$69 Def000001
-S XG$engine_scroll_manager_load$0$0 Def000001
+S G$engine_scroll_manager_down$0$0 Def00000D
+S XG$engine_scroll_manager_up$0$0 Def00000C
 S _engine_scroll_manager_init Def000000
-S G$engine_scroll_manager_update$0$0 Def000002
-S G$engine_scroll_manager_getPosY$0$0 Def000003
-S XG$engine_scroll_manager_init$0$0 Def000000
-S _engine_scroll_manager_update Def000002
-S A$scroll_manager$103 Def000002
-S _engine_scroll_manager_getPosY Def000003
-S A$scroll_manager$116 Def000003
-S A$scroll_manager$126 Def00000C
-S A$scroll_manager$117 Def000007
-S XG$engine_scroll_manager_update$0$0 Def000002
-S A$scroll_manager$118 Def000009
-S G$engine_scroll_manager_load$0$0 Def000001
-S XG$engine_scroll_manager_getPosY$0$0 Def00000C
-S C$scroll_manager.c$21$1_0$71 Def000002
-S C$scroll_manager.c$31$1_0$73 Def000003
-S C$scroll_manager.c$24$1_0$71 Def000002
-S C$scroll_manager.c$11$0_0$67 Def000000
-S C$scroll_manager.c$32$1_0$73 Def00000C
-S _engine_scroll_manager_load Def000001
-S C$scroll_manager.c$13$1_0$67 Def000000
-S C$scroll_manager.c$26$1_0$73 Def000003
-A _DATA size 6 flags 0 addr 0
+S _engine_scroll_manager_down Def00000D
+S XG$engine_scroll_manager_init$0$0 Def00000B
+S XG$engine_scroll_manager_down$0$0 Def000069
+S A$scroll_manager$130 Def000020
+S A$scroll_manager$131 Def000021
+S A$scroll_manager$113 Def00000D
+S A$scroll_manager$150 Def00003C
+S A$scroll_manager$132 Def000024
+S A$scroll_manager$123 Def000019
+S A$scroll_manager$114 Def000011
+S A$scroll_manager$160 Def000048
+S A$scroll_manager$151 Def00003F
+S A$scroll_manager$124 Def00001A
+S A$scroll_manager$115 Def000014
+S A$scroll_manager$170 Def000056
+S A$scroll_manager$161 Def000049
+S A$scroll_manager$152 Def000040
+S A$scroll_manager$143 Def00002D
+S A$scroll_manager$116 Def000015
+S A$scroll_manager$180 Def000064
+S A$scroll_manager$171 Def000057
+S A$scroll_manager$162 Def00004A
+S A$scroll_manager$153 Def000041
+S A$scroll_manager$144 Def000030
+S A$scroll_manager$117 Def000016
+S A$scroll_manager$190 Def000069
+S A$scroll_manager$181 Def000067
+S A$scroll_manager$172 Def00005A
+S A$scroll_manager$163 Def00004D
+S A$scroll_manager$154 Def000042
+S A$scroll_manager$145 Def000032
+S A$scroll_manager$136 Def000025
+S A$scroll_manager$118 Def000017
+S A$scroll_manager$182 Def000068
+S A$scroll_manager$173 Def00005B
+S A$scroll_manager$164 Def00004E
+S A$scroll_manager$155 Def000043
+S A$scroll_manager$146 Def000034
+S A$scroll_manager$137 Def000029
+S A$scroll_manager$128 Def00001E
+S A$scroll_manager$119 Def000018
+S A$scroll_manager$174 Def00005C
+S A$scroll_manager$165 Def00004F
+S A$scroll_manager$156 Def000044
+S A$scroll_manager$147 Def000036
+S A$scroll_manager$138 Def00002A
+S A$scroll_manager$129 Def00001F
+S A$scroll_manager$175 Def00005D
+S A$scroll_manager$166 Def000052
+S A$scroll_manager$157 Def000045
+S A$scroll_manager$148 Def000038
+S A$scroll_manager$139 Def00002C
+S A$scroll_manager$176 Def00005E
+S A$scroll_manager$167 Def000053
+S A$scroll_manager$158 Def000046
+S A$scroll_manager$149 Def00003A
+S A$scroll_manager$177 Def00005F
+S A$scroll_manager$168 Def000054
+S A$scroll_manager$159 Def000047
+S A$scroll_manager$178 Def000060
+S A$scroll_manager$169 Def000055
+S A$scroll_manager$179 Def000061
+S G$engine_scroll_manager_up$0$0 Def00000C
+S C$scroll_manager.c$21$1_0$71 Def00000C
+S A$scroll_manager$80 Def00000B
+S A$scroll_manager$71 Def000006
+S A$scroll_manager$72 Def000008
+S C$scroll_manager.c$23$1_0$72 Def00000D
+S C$scroll_manager.c$31$2_0$73 Def000019
+S C$scroll_manager.c$32$2_0$73 Def00001E
+S C$scroll_manager.c$25$1_0$72 Def00000D
+S C$scroll_manager.c$11$0_0$69 Def000000
+S A$scroll_manager$66 Def000000
+S C$scroll_manager.c$44$1_0$72 Def000069
+S C$scroll_manager.c$18$1_0$71 Def00000C
+S A$scroll_manager$67 Def000003
+S C$scroll_manager.c$41$3_0$74 Def00002D
+S C$scroll_manager.c$34$2_0$73 Def000025
+A _DATA size A flags 0 addr 0
 S _global_scroll_object Def000000
 S G$global_scroll_object$0_0$0 Def000000
 A _INITIALIZED size 0 flags 0 addr 0
@@ -50,17 +114,27 @@ T 00 00 00
 R 00 00 01 00
 T 00 00 00
 R 00 00 00 00
-T 00 00 00 C9
+T 00 00 00 21 00 00 22 00 00 2E FF 22 02 00 C9
+R 00 00 00 00 00 07 01 00 00 0C 01 00
+T 0C 00 00
 R 00 00 00 00
-T 01 00 00
+T 0C 00 00 C9
 R 00 00 00 00
-T 01 00 00 C9
+T 0D 00 00
 R 00 00 00 00
-T 02 00 00
+T 0D 00 00 ED 4B 00 00 2A 02 00 79 95 78 9C D0 03
+R 00 00 00 00 00 05 01 00 00 08 01 00
+T 1A 00 00 ED 43 00 00 79 F5 33 CD 00 00 33 ED 5B
+R 00 00 00 00 00 05 01 00 02 0B 03 00
+T 27 00 00 00 00 7B E6 07 C0 01 00 00 CB 3A CB 1B
+R 00 00 00 00 00 03 01 00 02 0A 00 00
+T 34 00 00 CB 3A CB 1B CB 3A CB 1B 21 18 00 19 5D
 R 00 00 00 00
-T 02 00 00 C9
+T 41 00 00 54 29 29 29 29 29 29 09 E5 01 1C 00 C5
 R 00 00 00 00
-T 03 00 00
-R 00 00 00 00
-T 03 00 00 FD 21 02 00 FD 39 FD 6E 00 C9
+T 4E 00 00 D5 CD 00 00 F1 F1 EB E1 7B 11 40 00 D5
+R 00 00 00 00 02 05 04 00
+T 5B 00 00 E5 F5 33 AF F5 33 CD 00 00 21 06 00 39
+R 00 00 00 00 02 0A 02 00
+T 68 00 00 F9 C9
 R 00 00 00 00

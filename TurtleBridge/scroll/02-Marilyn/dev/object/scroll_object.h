@@ -5,6 +5,9 @@ typedef struct tag_struct_scroll_object
 {
 	//unsigned char scroll_left;
 	//unsigned char scroll_right;
+	unsigned int scroll;
+	unsigned int test;
+
 
 	unsigned char scrollleft;
 	unsigned char scrollRight;

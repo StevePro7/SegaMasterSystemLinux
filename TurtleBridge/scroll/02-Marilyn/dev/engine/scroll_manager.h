@@ -8,8 +8,7 @@ extern struct_scroll_object global_scroll_object;
 
 // Methods.
 void engine_scroll_manager_init();
-void engine_scroll_manager_load();
-void engine_scroll_manager_update();
-unsigned char engine_scroll_manager_getPosY( unsigned int col );
+void engine_scroll_manager_up();
+void engine_scroll_manager_down();
 
 #endif//_SCROLL_MANAGER_H_
