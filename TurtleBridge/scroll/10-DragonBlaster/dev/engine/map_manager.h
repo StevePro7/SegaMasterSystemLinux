@@ -6,7 +6,7 @@
 // Global variable.
 extern struct_map_object global_map_object;
 
-void engine_map_manager_init();
+void engine_map_manager_init( char *level_data );
 void engine_map_manager_update();
 
 #endif//_MAP_MANAGER_H_
