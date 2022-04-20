@@ -4,6 +4,8 @@
 // Global variable.
 struct_map_object global_map_object;
 
+static void decompress_map_row( char *buffer );
+
 void engine_map_manager_init( char *level_data )
 {
 	struct_map_object *map_data = &global_map_object;
@@ -32,4 +34,38 @@ void engine_map_manager_draw_map_screen()
 void engine_map_manager_draw_map_row()
 {
 
+}
+
+static void decompress_map_row( char *buffer )
+{
+	struct_map_object *map_data = &global_map_object;
+	char *o, *d;
+	char remaining, ch, repeat;
+
+	o = map_data->next_row;
+	d = buffer;
+	for( remaining = 16; remaining; ) {
+		ch = *o;
+		o++;
+
+		if( ch & 0x80 ) {
+			// Has repeat flag: repeat n times
+			repeat = ch & 0x7F;
+			ch = *o;
+			o++;
+
+			for( ; repeat && remaining; repeat--, remaining-- ) {
+				*d = ch;
+				d++;
+			}
+		}
+		else {
+			// Just use the char
+			*d = ch;
+			d++;
+			remaining--;
+		}
+	}
+
+	map_data->next_row = o;
 }
