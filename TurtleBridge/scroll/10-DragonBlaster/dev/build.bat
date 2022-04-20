@@ -66,7 +66,7 @@ engine/scroll_manager.rel engine/screen_manager.rel ^
 engine/sprite_manager.rel ^
 object/map_object.rel object/scroll_object.rel ^
 content/gfx.rel ^
-content/psg.rel ^
+content/psg.rel
 
 
 :: Execute
@@ -97,5 +97,5 @@ if exist "*.lst" del "*.lst" > nul
 if exist "*.sym" del "*.sym" > nul
 
 :: Run
-java -jar C:/SEGA/Emulicious/Emulicious.jar output.sms
-::output.sms
+::java -jar C:/SEGA/Emulicious/Emulicious.jar output.sms
+output.sms
