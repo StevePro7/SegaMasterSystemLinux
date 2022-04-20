@@ -1,5 +1,6 @@
 #include "map_manager.h"
 #include "global_manager.h"
+#include "../devkit/_sms_manager.h"
 
 // Global variable.
 struct_map_object global_map_object;
@@ -33,7 +34,42 @@ void engine_map_manager_draw_map_screen()
 
 void engine_map_manager_draw_map_row()
 {
+	struct_map_object *map_data = &global_map_object;
+	char i, j;
+	char y;
+	char *map_char;
+	unsigned int base_tile, tile;
+	char buffer[ 16 ];
 
+	decompress_map_row( buffer );
+	for( i = 2, y = map_data->background_y, base_tile = 256; i; i--, y++, base_tile++ ) 
+	{
+		devkit_SMS_setNextTileatXY( 0, y );
+		for( j = 16, map_char = buffer; j; j--, map_char++ ) 
+		{
+			tile = base_tile + ( *map_char << 2 );
+			devkit_SMS_setTile( tile );
+			devkit_SMS_setTile( tile + 2 );
+		}
+	}
+
+	//map_data->next_row += 16;
+	if( *map_data->next_row == 0xFF ) 
+	{
+		// Reached the end of the map; reset
+		map_data->next_row = map_data->level_data;
+	}
+
+	if( map_data->background_y ) 
+	{
+		map_data->background_y -= 2;
+	}
+	else
+	{
+		map_data->background_y = SCROLL_CHAR_H - 2;
+	}
+
+	map_data->lines_before_next = 15;
 }
 
 static void decompress_map_row( char *buffer )
