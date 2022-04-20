@@ -10,14 +10,17 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 :: Compile
 cd content
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 gfx.c
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 psg.c
 cd ..
 
 cd devkit
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _sms_manager.c
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _snd_manager.c
 cd ..
 
 cd engine
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 asm_manager.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 audio_manager.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 content_manager.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 font_manager.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 enum_manager.c
@@ -54,7 +57,7 @@ sdcc --debug -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-
 ../lib/PSGlib.rel ^
 devkit/_sms_manager.rel ^
 devkit/_snd_manager.rel ^
-engine/asm_manager.rel ^
+engine/asm_manager.rel engine/audio_manager.rel ^
 engine/content_manager.rel ^
 engine/enum_manager.rel engine/font_manager.rel ^
 engine/global_manager.rel ^
@@ -62,7 +65,8 @@ engine/input_manager.rel engine/map_manager.rel ^
 engine/scroll_manager.rel engine/screen_manager.rel ^
 engine/sprite_manager.rel ^
 object/map_object.rel object/scroll_object.rel ^
-content/gfx.rel
+content/gfx.rel ^
+content/psg.rel ^
 
 
 :: Execute
