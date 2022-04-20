@@ -12,7 +12,7 @@ void engine_scroll_manager_init()
 {
 	struct_scroll_object *so = &global_scroll_object;
 	so->scroll = 0;
-	so->test = 32 * 8 - 1;
+	so->height = 32 * 8 - 1;
 
 	// 32 tiles * 2 bytes each 
 	so->size = 32 * 2;
@@ -49,7 +49,7 @@ void engine_scroll_manager_down()
 	unsigned int index;
 	unsigned int y;
 
-	if( so->scroll < so->test )
+	if( so->scroll < so->height )
 	{
 		so->scroll++;
 		devkit_SMS_setBGScrollY( so->scroll );

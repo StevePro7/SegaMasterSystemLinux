@@ -2,7 +2,7 @@ M:screen_manager
 F:G$engine_screen_manager_init$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_screen_manager_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lscreen_manager.engine_screen_manager_update$input$1_0$10({1}SC:U),R,0,0,[a]
-T:Fscreen_manager$tag_struct_scroll_object[({0}S:S$scroll$0_0$0({2}SI:U),Z,0,0)({2}S:S$test$0_0$0({2}SI:U),Z,0,0)({4}S:S$size$0_0$0({2}SI:U),Z,0,0)({6}S:S$scrollleft$0_0$0({1}SC:U),Z,0,0)({7}S:S$scrollRight$0_0$0({1}SC:U),Z,0,0)({8}S:S$scrollRightDivided8$0_0$0({1}SC:U),Z,0,0)({9}S:S$column_X$0_0$0({1}SC:U),Z,0,0)({10}S:S$scroll_X$0_0$0({2}SI:U),Z,0,0)]
+T:Fscreen_manager$tag_struct_scroll_object[({0}S:S$scroll$0_0$0({2}SI:U),Z,0,0)({2}S:S$height$0_0$0({2}SI:U),Z,0,0)({4}S:S$size$0_0$0({2}SI:U),Z,0,0)({6}S:S$scrollleft$0_0$0({1}SC:U),Z,0,0)({7}S:S$scrollRight$0_0$0({1}SC:U),Z,0,0)({8}S:S$scrollRightDivided8$0_0$0({1}SC:U),Z,0,0)({9}S:S$column_X$0_0$0({1}SC:U),Z,0,0)({10}S:S$scroll_X$0_0$0({2}SI:U),Z,0,0)]
 T:Fscreen_manager$tag_struct_map_object[({0}S:S$level_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$next_row$0_0$0({2}DG,SC:U),Z,0,0)({4}S:S$background_y$0_0$0({1}SC:U),Z,0,0)({5}S:S$lines_before_next$0_0$0({1}SC:U),Z,0,0)({6}S:S$scroll_y$0_0$0({1}SC:U),Z,0,0)]
 S:G$global_map_object$0_0$0({7}STtag_struct_map_object:S),E,0,0
 S:G$global_scroll_object$0_0$0({12}STtag_struct_scroll_object:S),E,0,0

@@ -4,10 +4,10 @@ H 9 areas 20 global symbols
 M screen_manager
 O -mz80
 S _engine_scroll_manager_up Ref000000
+S _engine_input_manager_move_down Ref000000
 S _engine_scroll_manager_down Ref000000
 S .__.ABS. Def000000
-S _engine_input_manager_hold_up Ref000000
-S _engine_input_manager_hold_down Ref000000
+S _engine_input_manager_move_up Ref000000
 A _CODE size 14 flags 0 addr 0
 S _engine_screen_manager_init Def000000
 S G$engine_screen_manager_update$0$0 Def000001
@@ -51,8 +51,8 @@ R 00 00 00 00
 T 01 00 00
 R 00 00 00 00
 T 01 00 00 CD 00 00 7D B7 28 03 CD 00 00
-R 00 00 00 00 02 04 04 00 02 0B 01 00
+R 00 00 00 00 02 04 01 00 02 0B 02 00
 T 0B 00 00
 R 00 00 00 00
 T 0B 00 00 CD 00 00 7D B7 C2 00 00 C9
-R 00 00 00 00 02 04 03 00 02 09 00 00
+R 00 00 00 00 02 04 04 00 02 09 00 00

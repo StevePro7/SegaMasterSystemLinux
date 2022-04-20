@@ -18,13 +18,13 @@ void engine_screen_manager_init()
 void engine_screen_manager_update()
 {
 	unsigned char input;
-	input = engine_input_manager_hold_down();
+	input = engine_input_manager_move_down();
 	if( input )
 	{
 		engine_scroll_manager_down();
 	}
 	
-	input = engine_input_manager_hold_up();
+	input = engine_input_manager_move_up();
 	if( input )
 	{
 		engine_scroll_manager_up();
