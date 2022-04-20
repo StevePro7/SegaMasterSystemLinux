@@ -1,94 +1,25 @@
 ;!FILE level_manager.asm
-XL2
-H 9 areas 54 global symbols
+XL3
+H 9 areas F global symbols
 M level_manager
 O -mz80
-S _level_object_sect Ref0000
-S .__.ABS. Def0000
-S _level_object_type Ref0000
-S _engine_tile_manager_draw_pipe Ref0000
-A _CODE size 58 flags 0 addr 0
-S A$level_manager$80 Def0006
-S A$level_manager$81 Def0007
-S A$level_manager$82 Def0008
-S A$level_manager$92 Def0010
-S A$level_manager$83 Def0009
-S A$level_manager$65 Def0000
-S A$level_manager$93 Def0012
-S A$level_manager$84 Def000B
-S A$level_manager$94 Def0015
-S A$level_manager$85 Def000C
-S A$level_manager$95 Def0016
-S A$level_manager$86 Def000D
-S A$level_manager$96 Def0017
-S A$level_manager$87 Def000E
-S A$level_manager$78 Def0001
-S A$level_manager$97 Def0018
-S A$level_manager$88 Def000F
-S A$level_manager$79 Def0003
-S A$level_manager$98 Def001A
-S A$level_manager$99 Def001B
-S G$engine_level_manager_init$0$0 Def0000
-S C$level_manager.c$9$0$0 Def0000
-S _engine_level_manager_init Def0000
-S G$engine_level_manager_update$0$0 Def0001
-S XG$engine_level_manager_init$0$0 Def0000
-S _engine_level_manager_update Def0001
-S A$level_manager$100 Def001C
-S A$level_manager$101 Def001D
-S A$level_manager$120 Def0031
-S A$level_manager$102 Def001E
-S A$level_manager$130 Def003A
-S A$level_manager$121 Def0033
-S A$level_manager$131 Def003B
-S A$level_manager$113 Def002A
-S A$level_manager$150 Def004F
-S A$level_manager$132 Def003D
-S A$level_manager$114 Def002B
-S C$level_manager.c$20$1$17 Def0001
-S A$level_manager$160 Def0057
-S A$level_manager$151 Def0050
-S A$level_manager$133 Def003E
-S A$level_manager$115 Def002C
-S A$level_manager$106 Def001F
-S C$level_manager.c$21$1$17 Def0010
-S A$level_manager$152 Def0051
-S A$level_manager$143 Def0046
-S A$level_manager$134 Def003F
-S A$level_manager$125 Def0034
-S A$level_manager$107 Def0023
-S A$level_manager$153 Def0054
-S A$level_manager$144 Def0047
-S A$level_manager$135 Def0042
-S A$level_manager$126 Def0035
-S A$level_manager$108 Def0025
-S XG$engine_level_manager_update$0$0 Def0057
-S C$level_manager.c$32$1$17 Def0057
-S C$level_manager.c$23$1$17 Def002A
-S A$level_manager$154 Def0055
-S A$level_manager$145 Def0048
-S A$level_manager$136 Def0043
-S A$level_manager$127 Def0036
-S A$level_manager$109 Def0028
-S C$level_manager.c$30$2$19 Def0046
-S A$level_manager$155 Def0056
-S A$level_manager$146 Def004A
-S A$level_manager$137 Def0044
-S A$level_manager$128 Def0038
-S A$level_manager$119 Def002E
-S A$level_manager$147 Def004B
-S A$level_manager$138 Def0045
-S A$level_manager$129 Def0039
-S C$level_manager.c$26$1$17 Def001F
-S A$level_manager$148 Def004C
-S C$level_manager.c$25$2$18 Def002E
-S C$level_manager.c$11$0$0 Def0000
-S A$level_manager$149 Def004D
-S C$level_manager.c$26$2$18 Def0034
-S C$level_manager.c$13$0$0 Def0001
+S .__.ABS. Def000000
+A _CODE size 2 flags 0 addr 0
+S A$level_manager$81 Def000001
+S A$level_manager$64 Def000000
+S C$level_manager.c$10$0_0$3 Def000000
+S G$engine_level_manager_init$0$0 Def000000
+S C$level_manager.c$12$0_0$6 Def000001
+S C$level_manager.c$31$0_0$6 Def000001
+S _engine_level_manager_init Def000000
+S G$engine_level_manager_update$0$0 Def000001
+S C$level_manager.c$8$0_0$3 Def000000
+S XG$engine_level_manager_init$0$0 Def000000
+S _engine_level_manager_update Def000001
+S XG$engine_level_manager_update$0$0 Def000001
 A _DATA size 1 flags 0 addr 0
-S G$global_level_object$0$0 Def0000
-S _global_level_object Def0000
+S _global_level_object Def000000
+S G$global_level_object$0_0$0 Def000000
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
@@ -96,31 +27,15 @@ A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
 A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
-T 00 00
+T 00 00 00
 R 00 00 01 00
-T 00 00
+T 00 00 00
 R 00 00 01 00
-T 00 00
+T 00 00 00
 R 00 00 00 00
-T 00 00 C9
+T 00 00 00 C9
 R 00 00 00 00
-T 01 00
+T 01 00 00
 R 00 00 00 00
-T 01 00 3E 00 00 21 03 00 39 86 4F 3E 00 00 23 8E
-R 00 00 00 00 0B 03 02 00 8B 0C 02 00
-T 0D 00 47 0A 4F 3E 00 00 21 03 00 39 86 47 3E
-R 00 00 00 00 0B 06 00 00
-T 19 00 00 00 23 8E 67 68 46 FD 21 02 00 FD 39 FD
-R 00 00 00 00 8B 02 00 00
-T 26 00 5E 00 16 00 79 B7 20 18 FD 7E 00 E6 03 47
-R 00 00 00 00
-T 34 00 C5 33 3E 15 F5 33 D5 3E 01 F5 33 CD 00 00
-R 00 00 00 00 02 0E 03 00
-T 42 00 F1 F1 33 C9
-R 00 00 00 00
-T 46 00
-R 00 00 00 00
-T 46 00 C5 33 3E 12 F5 33 D5 3E 04 F5 33 CD 00 00
-R 00 00 00 00 02 0E 03 00
-T 54 00 F1 F1 33 C9
+T 01 00 00 C9
 R 00 00 00 00

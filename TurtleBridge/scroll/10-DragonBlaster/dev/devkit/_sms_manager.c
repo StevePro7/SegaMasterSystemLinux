@@ -170,18 +170,18 @@ void devkit_SMS_loadPSGaidencompressedTiles( void *src, unsigned int tilefrom )
 }
 
 /* functions for the tilemap */
-void devkit_SMS_loadTileMap( unsigned char x, unsigned char y, void *src, unsigned int size )
-{
-	SMS_loadTileMap( x, y, src, size );
-}
-void devkit_SMS_loadSTMcompressedTileMapArea( unsigned char x, unsigned char y, unsigned char *src /*, unsigned char w*/ )
-{
-	SMS_loadSTMcompressedTileMapArea( x, y, src, 0 /*, w*/ );
-}
-void devkit_SMS_loadTileMapArea( unsigned char x, unsigned char y, void *src, unsigned char width, unsigned char height )
-{
-	SMS_loadTileMapArea( x, y, src, width, height );
-}
+//void devkit_SMS_loadTileMap( unsigned char x, unsigned char y, void *src, unsigned int size )
+//{
+//	SMS_loadTileMap( x, y, src, size );
+//}
+//void devkit_SMS_loadSTMcompressedTileMapArea( unsigned char x, unsigned char y, unsigned char *src /*, unsigned char w*/ )
+//{
+//	SMS_loadSTMcompressedTileMapArea( x, y, src, 0 /*, w*/ );
+//}
+//void devkit_SMS_loadTileMapArea( unsigned char x, unsigned char y, void *src, unsigned char width, unsigned char height )
+//{
+//	SMS_loadTileMapArea( x, y, src, width, height );
+//}
 
 // turning SMS_loadSTMcompressedTileMap into a define
 //#define devkit_SMS_loadSTMcompressedTileMap(x,y,src)     SMS_loadSTMcompressedTileMapArea(x,y,src,32)

@@ -73,9 +73,9 @@ void SMS_loadTiles( void *src, unsigned int tilefrom, unsigned int size ) {}
 void SMS_loadPSGaidencompressedTiles( const void *src, unsigned int tilefrom ) {}
 
 /* functions for the tilemap */
-void SMS_loadTileMap( unsigned char x, unsigned char y, void *src, unsigned int size ) {}
-void SMS_loadSTMcompressedTileMapArea( unsigned char x, unsigned char y, unsigned char *src, unsigned char width ) {}
-void SMS_loadTileMapArea( unsigned char x, unsigned char y, void *src, unsigned char width, unsigned char height ) {}
+//void SMS_loadTileMap( unsigned char x, unsigned char y, void *src, unsigned int size ) {}
+//void SMS_loadSTMcompressedTileMapArea( unsigned char x, unsigned char y, unsigned char *src, unsigned char width ) {}
+//void SMS_loadTileMapArea( unsigned char x, unsigned char y, void *src, unsigned char width, unsigned char height ) {}
 
 // turning SMS_loadSTMcompressedTileMap into a define
 // void SMS_loadSTMcompressedTileMap (unsigned char x, unsigned char y, unsigned char *src);
