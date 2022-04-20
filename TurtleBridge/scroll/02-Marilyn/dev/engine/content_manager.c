@@ -6,13 +6,12 @@
 void engine_content_manager_load_bgtiles()
 {
 	// BGgame tiles.
-	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char* ) tileset_tiles_psgcompr, 256 );
-	devkit_SMS_loadBGPalette( ( unsigned char* ) tileset_palette_bin );
+	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) MM__tiles__psgcompr, 0 );
+	devkit_SMS_loadTileMap( 0, 0, ( void * ) MM__tilemap__bin, 32 * 25 * 2 );     // 32 tiles * 25 lines * 2 bytes each 
+	devkit_SMS_loadBGPalette( ( void * ) MM__palette__bin );
 }
+
 void engine_content_manager_load_sprites()
 {
 	// Sprite tiles.
-	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char* ) sprites_tiles_psgcompr, 0 );
-	devkit_SMS_loadSpritePalette( ( unsigned char* ) sprites_palette_bin );
-	devkit_SMS_setSpritePaletteColor( 0, 0 );
 }

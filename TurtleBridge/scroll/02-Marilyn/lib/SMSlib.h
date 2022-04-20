@@ -19,23 +19,23 @@ void SMS_VDPturnOffFeature (unsigned int feature)__z88dk_fastcall;
 /* feature can be one of the following: */
 
 /* group 0 */
-#define VDPFEATURE_EXTRAHEIGHT      0x0002     /* needed for 224-240 lines modes */
+#define VDPFEATURE_EXTRAHEIGHT      0x0002
 #define VDPFEATURE_SHIFTSPRITES     0x0008
 #define VDPFEATURE_HIDEFIRSTCOL     0x0020
-#define VDPFEATURE_LEFTCOLBLANK     0x0020     /* probably a better name */
+#define VDPFEATURE_LEFTCOLBLANK     0x0020     /* a better name */
 #define VDPFEATURE_LOCKHSCROLL      0x0040
 #define VDPFEATURE_LOCKVSCROLL      0x0080
 
 /* group 1 */
-#define VDPFEATURE_ZOOMSPRITES      0x0101     /* (use SMS_setSpriteMode instead) */
-#define VDPFEATURE_USETALLSPRITES   0x0102     /* (use SMS_setSpriteMode instead) */
-#define VDPFEATURE_240LINES         0x0108     /*  SMS II only! PAL only! */
-#define VDPFEATURE_224LINES         0x0110     /*  SMS II only! */
+#define VDPFEATURE_ZOOMSPRITES      0x0101
+#define VDPFEATURE_USETALLSPRITES   0x0102
+#define VDPFEATURE_240LINES         0x0108
+#define VDPFEATURE_224LINES         0x0110
 #define VDPFEATURE_FRAMEIRQ         0x0120
 #define VDPFEATURE_SHOWDISPLAY      0x0140
 
 /* (it's possible to combine (OR) them if they belong to the same group) */
-/* example: VDPFEATURE_LEFTCOLBLANK|VDPFEATURE_LOCKHSCROLL */
+/* example: VDPFEATURE_ZOOMSPRITES|VDPFEATURE_USETALLSPRITES */
 
 /* handy macros :) */
 #define SMS_displayOn()   SMS_VDPturnOnFeature(VDPFEATURE_SHOWDISPLAY)   /* turns on display */
@@ -68,6 +68,19 @@ __at (0x8000) unsigned char SMS_SRAM[];
 /* wait until next VBlank starts */
 void SMS_waitForVBlank (void);
 
+/* functions to load tiles into VRAM */
+void SMS_loadTiles (void *src, unsigned int tilefrom, unsigned int size);
+void SMS_loadPSGaidencompressedTiles (void *src, unsigned int tilefrom);
+
+/* functions for the tilemap */
+void SMS_loadTileMap (unsigned char x, unsigned char y, void *src, unsigned int size);
+void SMS_loadSTMcompressedTileMapArea (unsigned char x, unsigned char y, unsigned char *src, unsigned char width);
+void SMS_loadTileMapArea (unsigned char x, unsigned char y, void *src, unsigned char width, unsigned char height);
+
+// turning SMS_loadSTMcompressedTileMap into a define
+// void SMS_loadSTMcompressedTileMap (unsigned char x, unsigned char y, unsigned char *src);
+#define SMS_loadSTMcompressedTileMap(x,y,src)     SMS_loadSTMcompressedTileMapArea(x,y,src,32)
+
 void SMS_crt0_RST08(unsigned int addr) __z88dk_fastcall __preserves_regs(a,b,d,e,h,l,iyh,iyl);
 void SMS_crt0_RST18(unsigned int tile) __z88dk_fastcall __preserves_regs(b,c,d,e,h,l,iyh,iyl);
 
@@ -78,15 +91,11 @@ void SMS_crt0_RST18(unsigned int tile) __z88dk_fastcall __preserves_regs(b,c,d,e
 /* PNT define (has address and VDP flags) */
 #define SMS_PNTAddress            0x7800
 /* macro for turning x,y into VRAM addr */
-#define XYtoADDR(x,y)             (SMS_PNTAddress|((((unsigned int)(y)<<5)+((unsigned char)(x)))<<1))
+#define XYtoADDR(x,y)             (SMS_PNTAddress|((unsigned int)(y)<<6)|((unsigned char)(x)<<1))
 #define SMS_setNextTileatXY(x,y)  SMS_setAddr(XYtoADDR((x),(y)))
 #define SMS_setNextTileatLoc(loc) SMS_setAddr(SMS_PNTAddress|((unsigned int)(loc)<<1))
 #define SMS_setNextTileatAddr(a)  SMS_setAddr(a)
-#define SMS_setTileatXY(x,y,tile) do{SMS_setAddr(XYtoADDR((x),(y)));SMS_setTile(tile);}while(0)
-
-#define SMS_VDPVRAMWrite          0x4000
-/* macro for turning tile numbers into VRAM addr for writing */
-#define TILEtoADDR(tile)          (SMS_VDPVRAMWrite|((tile)*32))
+#define SMS_setTileatXY(x,y,tile) {SMS_setAddr(XYtoADDR((x),(y)));SMS_setTile(tile);}
 
 /* handy defines for tilemaps entry */
 #define TILE_FLIPPED_X            0x0200
@@ -94,45 +103,16 @@ void SMS_crt0_RST18(unsigned int tile) __z88dk_fastcall __preserves_regs(b,c,d,e
 #define TILE_USE_SPRITE_PALETTE   0x0800
 #define TILE_PRIORITY             0x1000
 
-/* functions to load tiles into VRAM */
-void SMS_loadTiles (void *src, unsigned int tilefrom, unsigned int size);
-void SMS_load1bppTiles (void *src, unsigned int tilefrom, unsigned int size, unsigned char color0, unsigned char color1);
-
-/* functions to load compressed tiles into VRAM */
-void SMS_loadPSGaidencompressedTilesatAddr (void *src, unsigned int dst);
-#define SMS_loadPSGaidencompressedTiles(src,tilefrom) SMS_loadPSGaidencompressedTilesatAddr((src),TILEtoADDR(tilefrom))
-
-/* UNSAFE functions to load compressed tiles into VRAM */
-void UNSAFE_SMS_loadZX7compressedTilesatAddr (void *src, unsigned int dst);
-#define UNSAFE_SMS_loadZX7compressedTiles(src,tilefrom) UNSAFE_SMS_loadZX7compressedTilesatAddr((src),TILEtoADDR(tilefrom))
-void UNSAFE_SMS_loadaPLibcompressedTilesatAddr (void *src, unsigned int dst);
-#define UNSAFE_SMS_loadaPLibcompressedTiles(src,tilefrom) UNSAFE_SMS_loadaPLibcompressedTilesatAddr((src),TILEtoADDR(tilefrom))
-
-/* functions for the tilemap */
-#define SMS_loadTileMap(x,y,src,size)            SMS_VRAMmemcpy (XYtoADDR((x),(y)),(src),(size))
-void SMS_loadTileMapArea (unsigned char x, unsigned char y, void *src, unsigned char width, unsigned char height);
-
-void SMS_loadSTMcompressedTileMapatAddr (unsigned int dst, void* src);
-#define SMS_loadSTMcompressedTileMap(x,y,src)       SMS_loadSTMcompressedTileMapatAddr(XYtoADDR((x),(y)),(src))
-#define SMS_loadSTMcompressedTileMapArea(x,y,src,w) SMS_loadSTMcompressedTileMapatAddr(XYtoADDR((x),(y)),(src))
-// SMS_loadSTMcompressedTileMapArea *DEPRECATED* - will be dropped at some point in 2018
-
 /* functions for sprites handling */
 void SMS_initSprites (void);
-#ifdef NO_SPRITE_CHECKS
-void SMS_addSprite (unsigned char x, unsigned char y, unsigned char tile) __naked __preserves_regs(iyh,iyl);
-#else
-signed char SMS_addSprite (unsigned char x, unsigned char y, unsigned char tile) __naked __preserves_regs(iyh,iyl);  /* returns -1 if no more sprites are available, -2 if invalid Y coord */
-#endif
-void SMS_addTwoAdjoiningSprites (unsigned char x, unsigned char y, unsigned char tile) __naked __preserves_regs(iyh,iyl);     /* doesn't return anything */
-void SMS_addThreeAdjoiningSprites (unsigned char x, unsigned char y, unsigned char tile) __naked __preserves_regs(iyh,iyl);   /* doesn't return anything */
+signed char SMS_addSprite (unsigned char x, unsigned char y, unsigned char tile);  /* returns -1 if no more sprites are available */
 signed char SMS_reserveSprite (void);
 void SMS_updateSpritePosition (signed char sprite, unsigned char x, unsigned char y);
 void SMS_updateSpriteImage (signed char sprite, unsigned char image);
 void SMS_hideSprite (signed char sprite);
 void SMS_setClippingWindow (unsigned char x0, unsigned char y0, unsigned char x1, unsigned char y1);
 signed char SMS_addSpriteClipping (int x, int y, unsigned char tile);   /* returns -1 if no more sprites are available or sprite clipped */
-void SMS_finalizeSprites (void);     // *DEPRECATED* - will be dropped at some point in 2018
+void SMS_finalizeSprites (void);
 void SMS_copySpritestoSAT (void);
 
 /* ***************************************************************** */
@@ -150,6 +130,7 @@ void GG_loadBGPalette (void *palette) __z88dk_fastcall;
 void GG_loadSpritePalette (void *palette) __z88dk_fastcall;
 #define GG_setNextBGColoratIndex(i)       SMS_setAddr(SMS_CRAMAddress|((i)<<1))
 #define GG_setNextSpriteColoratIndex(i)   SMS_setAddr(SMS_CRAMAddress|0x20|((i)<<1))
+// void GG_setColor (unsigned int color) __z88dk_fastcall __preserves_regs(b,c,d,e,h,l,iyh,iyl);
 #define GG_setColor(color)       SMS_crt0_RST18(color)
 /* GG macros for colors */
 #define RGB(r,g,b)        ((r)|((g)<<4)|((b)<<8))
@@ -173,13 +154,6 @@ void SMS_loadSpritePaletteHalfBrightness (void *palette) __z88dk_fastcall;
 void SMS_zeroBGPalette (void);
 void SMS_zeroSpritePalette (void);
 #endif
-
-/* text renderer */
-void SMS_configureTextRenderer (signed int ascii_to_tile_offset) __z88dk_fastcall;
-void SMS_autoSetUpTextRenderer (void);
-
-/* decompress ZX7-compressed data to RAM */
-void SMS_decompressZX7 (void *src, void *dst);
 
 /* functions to read joypad(s) */
 unsigned int SMS_getKeysStatus (void);
@@ -234,38 +208,26 @@ unsigned int SMS_getMDKeysReleased (void);
 #endif
 
 #ifndef TARGET_GG
-/* paddle controller handling (SMS only) */
-#define PORT_A      0
-#define PORT_B      1
-_Bool SMS_detectPaddle (unsigned char port) __z88dk_fastcall __naked;
-unsigned char SMS_readPaddle (unsigned char port) __z88dk_fastcall __naked;
-#endif
-
-#ifndef TARGET_GG
 /* pause handling (SMS only) */
 _Bool SMS_queryPauseRequested (void);
 void SMS_resetPauseRequest (void);
 #endif
 
 #ifndef TARGET_GG
-#ifdef  VDPTYPE_DETECTION
 /* VDPType handling (SMS only) */
 unsigned char SMS_VDPType (void);
 /* WARNING: these constants may change value later, please use defines */
 #define VDP_PAL                 0x80
 #define VDP_NTSC                0x40
 #endif
-#endif
 
 extern volatile unsigned char SMS_VDPFlags;
 #define VDPFLAG_SPRITEOVERFLOW  0x40
 #define VDPFLAG_SPRITECOLLISION 0x20
 
-extern unsigned char SMS_Port3EBIOSvalue;
-
 /* line interrupt */
-void SMS_setLineInterruptHandler (void (*theHandlerFunction)(void)) __z88dk_fastcall;
-void SMS_setLineCounter (unsigned char count) __z88dk_fastcall;
+void SMS_setLineInterruptHandler (void (*theHandlerFunction)(void));
+void SMS_setLineCounter (unsigned char count);
 #define SMS_enableLineInterrupt()   SMS_VDPturnOnFeature(0x0010)   /* turns on line IRQ */
 #define SMS_disableLineInterrupt()  SMS_VDPturnOffFeature(0x0010)  /* turns off line IRQ */
 
@@ -324,45 +286,16 @@ void UNSAFE_SMS_VRAMmemcpy128 (unsigned int dst, void *src);
                                         (0x7fe0-sizeof(author)-sizeof(name)-sizeof(descr))>>8}
 /* pretty nice, isn't it? :) */
 
-/* SEGA header for 16KB ROM */
-#ifndef TARGET_GG
-/* "SMS Export" (16KB) */
-#define SMS_EMBED_SEGA_ROM_HEADER_16KB_REGION_CODE  0x4B
-#else
-/* "GG international" (16KB) */
-#define SMS_EMBED_SEGA_ROM_HEADER_16KB_REGION_CODE  0x7B
-#endif
-
-#define SMS_EMBED_SEGA_ROM_HEADER_16KB(productCode,revision)                                   \
- const __at (0x3ff0) unsigned char __SMS__SEGA_signature[16]={'T','M','R',' ','S','E','G','A', \
-                                                                          0xFF,0xFF,0xFF,0xFF, \
-                  SMS_BYTE_TO_BCD((productCode)%100),SMS_BYTE_TO_BCD(((productCode)/100)%100), \
-      (((productCode)/10000)<<4)|((revision)&0x0f),SMS_EMBED_SEGA_ROM_HEADER_16KB_REGION_CODE}
-
-#define SMS_EMBED_SDSC_HEADER_16KB(verMaj,verMin,dateYear,dateMonth,dateDay,author,name,descr) \
-                          const __at (0x3fe0-sizeof(author)) char __SMS__SDSC_author[]=author; \
-                 const __at (0x3fe0-sizeof(author)-sizeof(name)) char __SMS__SDSC_name[]=name; \
- const __at (0x3fe0-sizeof(author)-sizeof(name)-sizeof(descr)) char __SMS__SDSC_descr[]=descr; \
-                          const __at (0x3fe0) char __SMS__SDSC_signature[16]={'S','D','S','C', \
-                                              SMS_BYTE_TO_BCD(verMaj),SMS_BYTE_TO_BCD(verMin), \
-                                          SMS_BYTE_TO_BCD(dateDay),SMS_BYTE_TO_BCD(dateMonth), \
-                              SMS_BYTE_TO_BCD((dateYear)%100),SMS_BYTE_TO_BCD((dateYear)/100), \
-                                                                  (0x3fe0-sizeof(author))%256, \
-                                                                   (0x3fe0-sizeof(author))>>8, \
-                                                     (0x3fe0-sizeof(author)-sizeof(name))%256, \
-                                                      (0x3fe0-sizeof(author)-sizeof(name))>>8, \
-                                       (0x3fe0-sizeof(author)-sizeof(name)-sizeof(descr))%256, \
-                                        (0x3fe0-sizeof(author)-sizeof(name)-sizeof(descr))>>8}
-
 /* to set SDSC header date to 0000-00-00 so that ihx2sms updates that with compilation date */
 #define SMS_EMBED_SDSC_HEADER_AUTO_DATE(verMaj,verMin,author,name,descr)                       \
                         SMS_EMBED_SDSC_HEADER((verMaj),(verMin),0,0,0,(author),(name),(descr))
 
-#define SMS_EMBED_SDSC_HEADER_AUTO_DATE_16KB(verMaj,verMin,author,name,descr)                  \
-                  SMS_EMBED_SDSC_HEADER_16KB((verMaj),(verMin),0,0,0,(author),(name),(descr))
-
 /* the Interrupt Service Routines (do not modify) */
-void SMS_isr (void) __naked;
-void SMS_nmi_isr (void) __naked;
+void SMS_isr (void) __interrupt;
+void SMS_nmi_isr (void) __critical __interrupt;
 
-/* EOF */
+/* STILL MISSING
+void SMS_VDPSetSATLocation (unsigned int location);
+void SMS_VDPSetPNTLocation (unsigned int location);
+void SMS_VDPSetSpritesLocation (unsigned int location);
+*/
