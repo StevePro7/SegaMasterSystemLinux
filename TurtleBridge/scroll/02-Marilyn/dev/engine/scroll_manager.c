@@ -22,6 +22,7 @@ void engine_scroll_manager_up()
 {
 	struct_scroll_object *so = &global_scroll_object;
 	unsigned int blah;
+	unsigned int index;
 	unsigned int y;
 
 	if( so->scroll > 0 )
@@ -35,7 +36,8 @@ void engine_scroll_manager_up()
 			blah = blah * 32 * 2;
 
 			y = ( 27 + ( so->scroll / 8 ) ) % 28;
-			devkit_SMS_loadTileMap( 0, y, ( void * ) &MM__tilemap__bin[ ( ( so->scroll / 8 ) - 1 ) * 32 * 2 ], so->size );
+			index = ( ( so->scroll / 8 ) - 1 ) * 32 * 2;
+			devkit_SMS_loadTileMap( 0, y, ( void * ) &MM__tilemap__bin[ index ], so->size );
 		}
 	}
 }
@@ -44,6 +46,7 @@ void engine_scroll_manager_down()
 {
 	struct_scroll_object *so = &global_scroll_object;
 	unsigned int blah;
+	unsigned int index;
 	unsigned int y;
 
 	if( so->scroll < so->test )
@@ -57,8 +60,8 @@ void engine_scroll_manager_down()
 			blah = blah * 32 * 2;
 
 			y = ( 24 + ( so->scroll / 8 ) ) % 28;
-			
-			devkit_SMS_loadTileMap( 0, y, ( void * ) &MM__tilemap__bin[ ( 24 + ( so->scroll / 8 ) ) * 32 * 2 ], so->size );  
+			index = ( 24 + ( so->scroll / 8 ) ) * 32 * 2;
+			devkit_SMS_loadTileMap( 0, y, ( void * ) &MM__tilemap__bin[ index ], so->size );  
 		}
 	}
 }
