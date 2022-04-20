@@ -1,69 +1,242 @@
 ;!FILE map_manager.asm
 XL3
-H 9 areas 3F global symbols
+H 9 areas EC global symbols
 M map_manager
 O -mz80
+S _devkit_SMS_setNextTileatXY Ref000000
 S .__.ABS. Def000000
-A _CODE size 40 flags 0 addr 0
-S G$engine_map_manager_draw_map_row$0$0 Def00003F
-S XG$engine_map_manager_draw_map_screen$0$0 Def00003D
+S _devkit_SMS_setTile Ref000000
+A _CODE size 134 flags 0 addr 0
+S G$engine_map_manager_draw_map_row$0$0 Def000041
+S XG$engine_map_manager_draw_map_screen$0$0 Def00003F
 S G$engine_map_manager_update$0$0 Def00002E
-S C$map_manager.c$7$0_0$3 Def000000
-S C$map_manager.c$9$1_0$3 Def000000
 S XG$engine_map_manager_init$0$0 Def00002D
-S _engine_map_manager_draw_map_row Def00003F
+S _engine_map_manager_draw_map_row Def000041
 S _engine_map_manager_update Def00002E
-S A$map_manager$121 Def00002E
-S A$map_manager$104 Def00002D
-S A$map_manager$143 Def000034
-S XG$engine_map_manager_draw_map_row$0$0 Def00003F
-S A$map_manager$144 Def000037
+S A$map_manager$200 Def000065
+S Fmap_manager$decompress_map_row$0$0 Def0000F8
+S A$map_manager$210 Def000075
+S A$map_manager$201 Def000068
+S A$map_manager$310 Def0000E9
+S A$map_manager$301 Def0000E2
+S A$map_manager$220 Def000083
+S A$map_manager$211 Def000076
+S A$map_manager$202 Def00006C
+S A$map_manager$410 Def000122
+S A$map_manager$302 Def0000E3
+S A$map_manager$221 Def000084
+S A$map_manager$212 Def000077
+S A$map_manager$140 Def000032
+S A$map_manager$411 Def000123
+S A$map_manager$402 Def000120
+S A$map_manager$321 Def0000EE
+S A$map_manager$303 Def0000E4
+S A$map_manager$240 Def0000A2
+S A$map_manager$231 Def000095
+S A$map_manager$213 Def00007A
+S A$map_manager$204 Def00006F
+S A$map_manager$123 Def00002E
+S A$map_manager$421 Def000127
+S A$map_manager$412 Def000124
+S A$map_manager$322 Def0000F1
+S A$map_manager$250 Def0000AA
+S A$map_manager$241 Def0000A4
+S A$map_manager$232 Def000098
+S A$map_manager$214 Def00007B
+S A$map_manager$205 Def000072
+S A$map_manager$151 Def00003C
+S A$map_manager$106 Def00002D
+S A$map_manager$332 Def0000F7
+S A$map_manager$260 Def0000B3
+S A$map_manager$251 Def0000AB
+S A$map_manager$242 Def0000A5
+S A$map_manager$233 Def000099
+S A$map_manager$215 Def00007C
+S A$map_manager$206 Def000073
+S XG$engine_map_manager_draw_map_row$0$0 Def0000F7
+S A$map_manager$360 Def00010A
+S A$map_manager$351 Def000100
+S A$map_manager$342 Def0000F8
+S A$map_manager$315 Def0000EB
+S A$map_manager$261 Def0000B4
+S A$map_manager$252 Def0000AE
+S A$map_manager$243 Def0000A6
+S A$map_manager$225 Def000085
+S A$map_manager$216 Def00007D
+S A$map_manager$162 Def00003F
 S XG$engine_map_manager_update$0$0 Def00002E
-S A$map_manager$145 Def000039
-S A$map_manager$137 Def00002F
-S A$map_manager$174 Def00003F
-S A$map_manager$138 Def000032
-S A$map_manager$157 Def00003D
-S A$map_manager$149 Def00003A
-S A$map_manager$70 Def00000D
-S A$map_manager$80 Def00001A
-S A$map_manager$71 Def00000E
+S A$map_manager$451 Def000133
+S A$map_manager$442 Def00012D
+S A$map_manager$406 Def000121
+S A$map_manager$343 Def0000FA
+S A$map_manager$316 Def0000ED
+S A$map_manager$307 Def0000E6
+S A$map_manager$280 Def0000CA
+S A$map_manager$271 Def0000BD
+S A$map_manager$262 Def0000B5
+S A$map_manager$253 Def0000AF
+S A$map_manager$226 Def000088
+S A$map_manager$217 Def00007E
+S A$map_manager$190 Def000056
+S A$map_manager$172 Def000041
+S A$map_manager$145 Def000034
+S A$map_manager$425 Def000128
+S A$map_manager$344 Def0000FE
+S A$map_manager$326 Def0000F3
+S A$map_manager$308 Def0000E7
+S A$map_manager$290 Def0000D7
+S A$map_manager$281 Def0000CD
+S A$map_manager$272 Def0000C0
+S A$map_manager$263 Def0000B6
+S A$map_manager$254 Def0000B0
+S A$map_manager$227 Def00008B
+S A$map_manager$218 Def00007F
+S A$map_manager$191 Def000059
+S A$map_manager$173 Def000043
+S A$map_manager$146 Def000037
+S A$map_manager$417 Def000126
+S A$map_manager$327 Def0000F5
+S A$map_manager$309 Def0000E8
+S A$map_manager$291 Def0000D8
+S A$map_manager$282 Def0000D0
+S A$map_manager$273 Def0000C3
+S A$map_manager$264 Def0000B7
+S A$map_manager$255 Def0000B1
+S A$map_manager$237 Def00009B
+S A$map_manager$228 Def00008E
+S A$map_manager$219 Def000082
+S A$map_manager$192 Def00005A
+S A$map_manager$174 Def000047
+S A$map_manager$147 Def000039
+S A$map_manager$436 Def000129
+S A$map_manager$382 Def000114
+S A$map_manager$373 Def00010E
+S A$map_manager$355 Def000104
+S A$map_manager$283 Def0000D1
+S A$map_manager$274 Def0000C5
+S A$map_manager$265 Def0000BA
+S A$map_manager$247 Def0000A7
+S A$map_manager$238 Def00009E
+S A$map_manager$229 Def000091
+S A$map_manager$184 Def00004E
+S A$map_manager$175 Def000049
+S A$map_manager$139 Def00002F
+S A$map_manager$446 Def000131
+S A$map_manager$437 Def00012A
+S A$map_manager$383 Def000115
+S A$map_manager$374 Def000110
+S A$map_manager$365 Def00010C
+S A$map_manager$356 Def000107
+S A$map_manager$275 Def0000C8
+S A$map_manager$266 Def0000BB
+S A$map_manager$248 Def0000A8
+S A$map_manager$239 Def0000A1
+S A$map_manager$185 Def000051
+S A$map_manager$176 Def00004C
+S C$map_manager.c$102$4_0$85 Def000126
+S A$map_manager$438 Def00012B
+S A$map_manager$384 Def000116
+S A$map_manager$267 Def0000BC
+S A$map_manager$249 Def0000A9
+S A$map_manager$186 Def000052
+S A$map_manager$177 Def00004D
+S C$map_manager.c$103$4_0$85 Def000127
+S A$map_manager$394 Def000119
+S A$map_manager$385 Def000117
+S A$map_manager$295 Def0000DA
+S A$map_manager$259 Def0000B2
+S A$map_manager$196 Def00005B
+S A$map_manager$187 Def000053
+S C$map_manager.c$104$1_0$79 Def000129
+S C$map_manager.c$104$4_0$85 Def000128
+S A$map_manager$395 Def00011A
+S A$map_manager$296 Def0000DE
+S A$map_manager$197 Def00005E
+S A$map_manager$188 Def000054
+S A$map_manager$396 Def00011C
+S A$map_manager$378 Def000112
+S A$map_manager$369 Def00010D
+S A$map_manager$288 Def0000D3
+S A$map_manager$198 Def00005F
+S A$map_manager$189 Def000055
+S A$map_manager$397 Def00011D
+S A$map_manager$289 Def0000D6
+S A$map_manager$199 Def000062
+S A$map_manager$398 Def00011E
+S A$map_manager$389 Def000118
+S C$map_manager.c$108$1_0$79 Def00012D
+S C$map_manager.c$109$1_0$79 Def000133
+S C$map_manager.c$10$0_0$65 Def000000
+S A$map_manager$70 Def000009
+S A$map_manager$80 Def000018
+S A$map_manager$71 Def00000C
 S G$engine_map_manager_draw_map_screen$0$0 Def00002F
-S A$map_manager$90 Def000023
-S A$map_manager$81 Def00001D
-S A$map_manager$72 Def000011
-S A$map_manager$91 Def000026
-S A$map_manager$65 Def000000
-S A$map_manager$66 Def000003
-S A$map_manager$85 Def00001E
-S A$map_manager$76 Def000012
-S A$map_manager$67 Def000007
-S A$map_manager$95 Def000028
-S A$map_manager$86 Def000021
-S A$map_manager$77 Def000015
-S A$map_manager$68 Def000009
-S A$map_manager$96 Def00002B
-S A$map_manager$78 Def000018
-S A$map_manager$69 Def00000C
-S C$map_manager.c$10$1_0$3 Def000000
-S A$map_manager$79 Def000019
-S C$map_manager.c$11$1_0$3 Def000012
-S C$map_manager.c$12$1_0$3 Def00001E
-S C$map_manager.c$13$1_0$3 Def000023
+S A$map_manager$81 Def000019
+S A$map_manager$72 Def00000D
+S C$map_manager.c$12$1_0$65 Def000000
+S A$map_manager$82 Def00001A
+S A$map_manager$73 Def00000E
+S XFmap_manager$decompress_map_row$0$0 Def000133
+S C$map_manager.c$20$1_0$67 Def00002E
+S C$map_manager.c$13$1_0$65 Def000000
+S A$map_manager$92 Def000023
+S A$map_manager$83 Def00001D
+S A$map_manager$74 Def000011
+S C$map_manager.c$14$1_0$65 Def000012
+S A$map_manager$93 Def000026
+S C$map_manager.c$46$1_0$70 Def00004E
+S C$map_manager.c$37$1_0$70 Def000041
+S C$map_manager.c$22$1_0$67 Def00002E
+S C$map_manager.c$15$1_0$65 Def00001E
+S A$map_manager$67 Def000000
+S C$map_manager.c$74$1_0$70 Def0000EE
+S C$map_manager.c$65$1_0$70 Def0000E2
+S C$map_manager.c$50$4_0$73 Def0000BD
+S C$map_manager.c$16$1_0$65 Def000023
+S A$map_manager$68 Def000003
+S C$map_manager.c$75$1_0$70 Def0000F7
+S C$map_manager.c$39$1_0$70 Def00004E
+S C$map_manager.c$17$1_0$65 Def000028
+S A$map_manager$87 Def00001E
+S A$map_manager$78 Def000012
+S A$map_manager$69 Def000007
+S C$map_manager.c$47$2_0$71 Def0000CA
+S C$map_manager.c$31$2_0$69 Def00003C
+S C$map_manager.c$24$1_0$68 Def00002F
+S C$map_manager.c$18$1_0$65 Def00002D
+S A$map_manager$97 Def000028
+S A$map_manager$88 Def000021
+S A$map_manager$79 Def000015
+S C$map_manager.c$62$2_0$75 Def0000DA
+S C$map_manager.c$59$1_0$70 Def0000D3
+S C$map_manager.c$34$1_0$68 Def00003F
+S A$map_manager$98 Def00002B
+S C$map_manager.c$85$2_0$80 Def000129
+S C$map_manager.c$52$5_0$74 Def00009B
+S C$map_manager.c$35$1_0$68 Def00003F
+S C$map_manager.c$26$1_0$68 Def00002F
+S C$map_manager.c$91$4_0$82 Def000112
+S C$map_manager.c$71$2_0$77 Def0000EB
+S C$map_manager.c$53$5_0$74 Def0000A7
+S C$map_manager.c$27$1_0$68 Def00002F
 S G$engine_map_manager_init$0$0 Def000000
-S C$map_manager.c$14$1_0$3 Def000028
-S C$map_manager.c$30$1_0$6 Def00003D
-S C$map_manager.c$21$1_0$6 Def00002F
-S C$map_manager.c$15$1_0$3 Def00002D
+S C$map_manager.c$92$4_0$82 Def000114
+S C$map_manager.c$54$5_0$74 Def0000B2
+S C$map_manager.c$49$3_0$72 Def000075
+S C$map_manager.c$93$4_0$82 Def000118
+S C$map_manager.c$86$3_0$81 Def00010C
+S C$map_manager.c$29$1_0$68 Def000034
 S _engine_map_manager_draw_map_screen Def00002F
-S C$map_manager.c$23$1_0$6 Def00002F
-S C$map_manager.c$24$1_0$6 Def00002F
-S C$map_manager.c$17$1_0$5 Def00002E
-S C$map_manager.c$32$1_0$9 Def00003F
-S C$map_manager.c$26$1_0$6 Def000034
-S C$map_manager.c$19$1_0$5 Def00002E
-S C$map_manager.c$35$1_0$9 Def00003F
-S C$map_manager.c$28$2_0$7 Def00003A
+S C$map_manager.c$87$3_0$81 Def00010D
+S C$map_manager.c$83$1_0$79 Def000100
+S C$map_manager.c$67$2_0$76 Def0000E6
+S C$map_manager.c$89$3_0$81 Def00010E
+S C$map_manager.c$84$1_0$79 Def000104
+S C$map_manager.c$95$5_0$83 Def000122
+S C$map_manager.c$77$1_0$79 Def0000F8
+S C$map_manager.c$96$6_0$84 Def000120
+S C$map_manager.c$79$1_0$79 Def000100
+S C$map_manager.c$97$6_0$84 Def000121
 S _engine_map_manager_init Def000000
 A _DATA size 7 flags 0 addr 0
 S _global_map_object Def000000
@@ -99,9 +272,79 @@ T 2F 00 00 21 04 00 36 16
 R 00 00 00 00 00 04 01 00
 T 34 00 00
 R 00 00 00 00
-T 34 00 00 3A 04 00 D6 18 D0 CD 3F 00 18 F5
-R 00 00 00 00 00 04 01 00 00 0A 00 00
-T 3F 00 00
+T 34 00 00 3A 04 00 D6 18 D2 41 00 CD 41 00 18 F3
+R 00 00 00 00 00 04 01 00 00 09 00 00 00 0C 00 00
+T 41 00 00
 R 00 00 00 00
-T 3F 00 00 C9
+T 41 00 00 DD E5 DD 21 00 00 DD 39 21 E9 FF 39 F9
 R 00 00 00 00
+T 4E 00 00 21 00 00 39 4D 44 E5 C5 CD F8 00 F1 E1
+R 00 00 00 00 00 0C 00 00
+T 5B 00 00 01 04 00 0A DD 77 FB DD 75 F9 DD 74 FA
+R 00 00 00 00 00 04 01 00
+T 68 00 00 DD 36 FC 02 11 00 01
+R 00 00 00 00
+T 6F 00 00
+R 00 00 00 00
+T 6F 00 00 DD 7E FC B7 28 5E C5 D5 DD 7E FB F5 33
+R 00 00 00 00
+T 7C 00 00 AF F5 33 CD 00 00 F1 D1 C1 DD 7E F9 DD
+R 00 00 00 00 02 07 00 00
+T 89 00 00 77 FD DD 7E FA DD 77 FE DD 36 FF 10
+R 00 00 00 00
+T 95 00 00
+R 00 00 00 00
+T 95 00 00 DD 7E FF B7 28 2F DD 6E FD DD 66 FE 6E
+R 00 00 00 00
+T A2 00 00 26 00 29 29 19 E5 C5 D5 E5 CD 00 00 F1
+R 00 00 00 00 02 0D 02 00
+T AF 00 00 D1 C1 E1 23 23 C5 D5 E5 CD 00 00 F1 D1
+R 00 00 00 00 02 0C 02 00
+T BC 00 00 C1 DD 35 FF DD 34 FD 20 D0 DD 34 FE 18
+R 00 00 00 00
+T C9 00 00 CB
+R 00 00 00 00
+T CA 00 00
+R 00 00 00 00
+T CA 00 00 DD 35 FC DD 34 FB 13 18 9C
+R 00 00 00 00
+T D3 00 00
+R 00 00 00 00
+T D3 00 00 2A 02 00 7E 3C 20 08 ED 5B 00 00 ED 53
+R 00 00 00 00 00 04 01 00 00 0C 01 00
+T E0 00 00 02 00
+R 00 00 00 00 00 03 01 00
+T E2 00 00
+R 00 00 00 00
+T E2 00 00 0A B7 28 05 3D 3D 02 18 03
+R 00 00 00 00
+T EB 00 00
+R 00 00 00 00
+T EB 00 00 3E 1A 02
+R 00 00 00 00
+T EE 00 00
+R 00 00 00 00
+T EE 00 00 21 05 00 36 0F DD F9 DD E1 C9
+R 00 00 00 00 00 04 01 00
+T F8 00 00
+R 00 00 00 00
+T F8 00 00 DD E5 DD 21 00 00 DD 39 ED 4B 02 00 DD
+R 00 00 00 00 00 0D 01 00
+T 05 01 00 6E 04 DD 66 05 1E 10
+R 00 00 00 00
+T 0C 01 00
+R 00 00 00 00
+T 0C 01 00 0A 03 CB 7F 28 14 CB BF F5 0A 57 F1 03
+R 00 00 00 00
+T 19 01 00
+R 00 00 00 00
+T 19 01 00 B7 28 0D 1C 1D 28 09 72 23 3D 1D 18 F3
+R 00 00 00 00
+T 26 01 00
+R 00 00 00 00
+T 26 01 00 77 23 1D
+R 00 00 00 00
+T 29 01 00
+R 00 00 00 00
+T 29 01 00 7B B7 20 DF ED 43 02 00 DD E1 C9
+R 00 00 00 00 00 09 01 00

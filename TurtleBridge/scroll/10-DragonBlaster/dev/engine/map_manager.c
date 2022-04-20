@@ -30,6 +30,8 @@ void engine_map_manager_draw_map_screen()
 	{
 		engine_map_manager_draw_map_row();
 	}
+
+	engine_map_manager_draw_map_row();
 }
 
 void engine_map_manager_draw_map_row()

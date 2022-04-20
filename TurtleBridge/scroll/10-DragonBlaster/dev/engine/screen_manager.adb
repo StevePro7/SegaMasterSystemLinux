@@ -1,10 +1,9 @@
 M:screen_manager
 F:G$engine_screen_manager_init$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_screen_manager_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-F:Fscreen_manager$bonus_level$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 T:Fscreen_manager$tag_struct_scroll_object[({0}S:S$scrollleft$0_0$0({1}SC:U),Z,0,0)({1}S:S$scrollRight$0_0$0({1}SC:U),Z,0,0)({2}S:S$scrollRightDivided8$0_0$0({1}SC:U),Z,0,0)({3}S:S$column_X$0_0$0({1}SC:U),Z,0,0)({4}S:S$scroll_X$0_0$0({2}SI:U),Z,0,0)]
-S:Fscreen_manager$x$0_0$0({1}SC:U),E,0,0
-S:Fscreen_manager$y$0_0$0({1}SC:U),E,0,0
+T:Fscreen_manager$tag_struct_map_object[({0}S:S$level_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$next_row$0_0$0({2}DG,SC:U),Z,0,0)({4}S:S$background_y$0_0$0({1}SC:U),Z,0,0)({5}S:S$lines_before_next$0_0$0({1}SC:U),Z,0,0)({6}S:S$scroll_y$0_0$0({1}SC:U),Z,0,0)]
+S:G$global_map_object$0_0$0({7}STtag_struct_map_object:S),E,0,0
 S:G$global_scroll_object$0_0$0({6}STtag_struct_scroll_object:S),E,0,0
 S:G$engine_content_manager_load_bgtiles$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_sprites$0_0$0({2}DF,SV:S),C,0,0
@@ -25,6 +24,10 @@ S:G$engine_input_manager_move_left$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_right$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire1$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire2$0_0$0({2}DF,SC:U),C,0,0
+S:G$engine_map_manager_init$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_map_manager_update$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_map_manager_draw_map_screen$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_map_manager_draw_map_row$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_update$0_0$0({2}DF,SV:S),C,0,0
