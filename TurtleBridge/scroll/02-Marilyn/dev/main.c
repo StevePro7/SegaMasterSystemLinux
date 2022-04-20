@@ -6,9 +6,9 @@ void main( void )
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
 
-	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_TALL() );
-	devkit_SMS_useFirstHalfTilesforSprites( true );
-	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );
+	//devkit_SMS_setSpriteMode( devkit_SPRITEMODE_TALL() );
+	devkit_SMS_useFirstHalfTilesforSprites( false );
+	//devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );
 
 	engine_content_manager_load_bgtiles();
 	//engine_content_manager_load_sprites();

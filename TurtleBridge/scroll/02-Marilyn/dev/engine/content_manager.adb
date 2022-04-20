@@ -35,6 +35,9 @@ S:G$devkit_SMS_SRAM$0_0$0({2}DF,DG,SC:U),C,0,0
 S:G$devkit_SMS_waitForVBlank$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_loadTiles$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_loadPSGaidencompressedTiles$0_0$0({2}DF,SV:S),C,0,0
+S:G$devkit_SMS_loadTileMap$0_0$0({2}DF,SV:S),C,0,0
+S:G$devkit_SMS_loadSTMcompressedTileMapArea$0_0$0({2}DF,SV:S),C,0,0
+S:G$devkit_SMS_loadTileMapArea$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_loadSTMcompressedTileMap$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_crt0_RST08$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_crt0_RST18$0_0$0({2}DF,SV:S),C,0,0
