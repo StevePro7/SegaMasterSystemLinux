@@ -6,13 +6,13 @@ void main( void )
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
 
-	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_NORMAL() );
-	devkit_SMS_useFirstHalfTilesforSprites( false );
+	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_TALL() );
+	devkit_SMS_useFirstHalfTilesforSprites( true );
 	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );
-	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_ZOOMSPRITES() );
+	//devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_ZOOMSPRITES() );
 
 	engine_content_manager_load_bgtiles();
-	engine_content_manager_load_sprites();
+	//engine_content_manager_load_sprites();
 
 	//devkit_SMS_setBGPaletteColor( 0, devkit_RGB( 1, 2, 3 ) );
 	//devkit_SMS_setBGPaletteColor( 16, devkit_RGB( 1, 2, 3 ) );		// cornflower blue		sky
