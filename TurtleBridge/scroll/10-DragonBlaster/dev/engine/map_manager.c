@@ -110,6 +110,8 @@ static void decompress_map_row( unsigned char *buffer )
 	unsigned char *o, *d;
 	unsigned char remaining, ch, repeat;
 
+	unsigned char test;
+
 	o = map_data->next_row;
 	d = buffer;
 	for( remaining = 16; remaining; ) 
@@ -117,6 +119,7 @@ static void decompress_map_row( unsigned char *buffer )
 		ch = *o;
 		o++;
 
+		test = ch & 0x80;
 		if( ch & 0x80 )
 		{
 			// Has repeat flag: repeat n times
