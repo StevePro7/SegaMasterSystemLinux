@@ -11,10 +11,10 @@
 // Global variable.
 struct_map_object global_map_object;
 
-static void decompress_map_row( char *buffer );
+static void decompress_map_row( unsigned char *buffer );
 static void draw_map_row();
 
-void engine_map_manager_init( char *level_data )
+void engine_map_manager_init( unsigned char *level_data )
 {
 	struct_map_object *map_data = &global_map_object;
 	map_data->level_data = level_data;
@@ -67,11 +67,11 @@ void engine_map_manager_draw_map()
 static void draw_map_row()
 {
 	struct_map_object *map_data = &global_map_object;
-	char i, j;
-	char y;
-	char *map_char;
+	unsigned char i, j;
+	unsigned char y;
+	unsigned char *map_char;
 	unsigned int base_tile, tile;
-	char buffer[ 16 ];
+	unsigned char buffer[ 16 ];
 
 	decompress_map_row( buffer );
 	for( i = 2, y = map_data->background_y, base_tile = 256; i; i--, y++, base_tile++ ) 
@@ -104,19 +104,21 @@ static void draw_map_row()
 	map_data->lines_before_next = 15;
 }
 
-static void decompress_map_row( char *buffer )
+static void decompress_map_row( unsigned char *buffer )
 {
 	struct_map_object *map_data = &global_map_object;
-	char *o, *d;
-	char remaining, ch, repeat;
+	unsigned char *o, *d;
+	unsigned char remaining, ch, repeat;
 
 	o = map_data->next_row;
 	d = buffer;
-	for( remaining = 16; remaining; ) {
+	for( remaining = 16; remaining; ) 
+	{
 		ch = *o;
 		o++;
 
-		if( ch & 0x80 ) {
+		if( ch & 0x80 )
+		{
 			// Has repeat flag: repeat n times
 			repeat = ch & 0x7F;
 			ch = *o;
@@ -127,7 +129,8 @@ static void decompress_map_row( char *buffer )
 				d++;
 			}
 		}
-		else {
+		else
+		{
 			// Just use the char
 			*d = ch;
 			d++;
