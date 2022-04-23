@@ -196,7 +196,7 @@ S:G$engine_screen_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_screen_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_load$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_scroll_manager_update$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_scroll_manager_update$0_0$0({2}DF,:S),C,0,0
 S:G$engine_scroll_manager_draw$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_getPosY$0_0$0({2}DF,SC:U),C,0,0
 S:G$main$0_0$0({2}DF,SV:S),C,0,0

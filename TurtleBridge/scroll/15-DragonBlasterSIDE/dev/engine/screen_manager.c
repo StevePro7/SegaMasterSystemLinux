@@ -9,6 +9,7 @@
 #include "scroll_manager.h"
 #include "sprite_manager.h"
 #include "../content/gfx.h"
+#include <stdbool.h>
 
 void engine_screen_manager_init()
 {
@@ -23,14 +24,18 @@ void engine_screen_manager_init()
 void engine_screen_manager_update()
 {
 	unsigned char input1;
-	//unsigned char input2;
-	input1 = engine_input_manager_hold_right();
-	//input2 = engine_input_manager_move_fire1();
+	unsigned char input2;
+	bool doScroll;
+	input1 = engine_input_manager_move_right();
+	input2 = engine_input_manager_move_fire1();
 
 	if( input1 )//|| input2 )
 	{
-		engine_scroll_manager_update();
-		//engine_scroll_manager_draw();
+		doScroll = engine_scroll_manager_update();
+		if( doScroll )
+		{
+			engine_scroll_manager_draw();
+		}
 	}
 	
 }

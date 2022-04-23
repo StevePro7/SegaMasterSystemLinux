@@ -27,7 +27,7 @@ void engine_scroll_manager_init( unsigned char *level_data )
 	devkit_SMS_setBGScrollX( so->column_X );
 }
 
-void engine_scroll_manager_update()
+bool engine_scroll_manager_update()
 {
 	struct_scroll_object *so = &global_scroll_object;
 
@@ -39,7 +39,7 @@ void engine_scroll_manager_update()
 
 	if( ( so->scrollRight % 8 ) != delta )
 	{
-		return;
+		return false;
 	}
 
 	// Add new column!
@@ -47,7 +47,8 @@ void engine_scroll_manager_update()
 	so->scroll_X++;
 	so->column_X = so->scroll_X % SCREEN_WIDE;
 
-	engine_scroll_manager_draw();
+	return true;
+	//engine_scroll_manager_draw();
 }
 
 void engine_scroll_manager_draw()

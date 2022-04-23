@@ -1,7 +1,9 @@
 M:screen_manager
 F:G$engine_screen_manager_init$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_screen_manager_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lscreen_manager.engine_screen_manager_update$input1$1_0$11({1}SC:U),R,0,0,[a]
+S:Lscreen_manager.engine_screen_manager_update$input1$1_0$11({1}SC:U),R,0,0,[l]
+S:Lscreen_manager.engine_screen_manager_update$input2$1_0$11({1}SC:U),R,0,0,[]
+S:Lscreen_manager.engine_screen_manager_update$doScroll$1_0$11({1}:S),R,0,0,[l]
 T:Fscreen_manager$tag_struct_scroll_object[({0}S:S$level_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$next_row$0_0$0({2}DG,SC:U),Z,0,0)({4}S:S$background_y$0_0$0({1}SC:U),Z,0,0)({5}S:S$scrollleft$0_0$0({1}SC:U),Z,0,0)({6}S:S$scrollRight$0_0$0({1}SC:U),Z,0,0)({7}S:S$scrollRightDivided8$0_0$0({1}SC:U),Z,0,0)({8}S:S$column_X$0_0$0({1}SC:U),Z,0,0)({9}S:S$scroll_X$0_0$0({2}SI:U),Z,0,0)]
 T:Fscreen_manager$tag_struct_map_object[({0}S:S$level_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$next_row$0_0$0({2}DG,SC:U),Z,0,0)({4}S:S$background_x$0_0$0({1}SC:U),Z,0,0)({5}S:S$background_y$0_0$0({1}SC:U),Z,0,0)({6}S:S$lines_before_next$0_0$0({1}SC:U),Z,0,0)({7}S:S$lines_before_side$0_0$0({1}SC:U),Z,0,0)({8}S:S$scroll_x$0_0$0({1}SC:U),Z,0,0)({9}S:S$scroll_y$0_0$0({1}SC:U),Z,0,0)]
 S:G$global_map_object$0_0$0({10}STtag_struct_map_object:S),E,0,0
@@ -33,7 +35,7 @@ S:G$engine_map_manager_draw_map$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_map_manager_draw_map2$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_load$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_scroll_manager_update$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_scroll_manager_update$0_0$0({2}DF,:S),C,0,0
 S:G$engine_scroll_manager_draw$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_getPosY$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_sprite_manager_draw$0_0$0({2}DF,SV:S),C,0,0
