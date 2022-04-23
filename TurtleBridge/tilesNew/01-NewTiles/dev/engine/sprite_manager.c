@@ -25,7 +25,7 @@ void engine_tile_manager_seaX( unsigned char equator )
 	unsigned char row, col, mul;
 
 	unsigned char x = 0;
-	unsigned char y = SCREEN_HIGH - equator;
+	unsigned char y = SCREEN_HIGH - 3;// equator;
 
 	load_variables( tile_type_wave_equator );
 	for( row = 0; row < equator; row++ )
