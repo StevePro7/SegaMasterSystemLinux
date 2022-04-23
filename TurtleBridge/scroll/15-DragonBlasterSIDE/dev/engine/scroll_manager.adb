@@ -28,7 +28,6 @@ S:Lscroll_manager.decompress_map_row$test$1_0$81({1}SC:U),R,0,0,[]
 T:Fscroll_manager$tag_struct_scroll_object[({0}S:S$level_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$next_row$0_0$0({2}DG,SC:U),Z,0,0)({4}S:S$background_y$0_0$0({1}SC:U),Z,0,0)({5}S:S$scrollleft$0_0$0({1}SC:U),Z,0,0)({6}S:S$scrollRight$0_0$0({1}SC:U),Z,0,0)({7}S:S$scrollRightDivided8$0_0$0({1}SC:U),Z,0,0)({8}S:S$column_X$0_0$0({1}SC:U),Z,0,0)({9}S:S$scroll_X$0_0$0({2}SI:U),Z,0,0)]
 S:Fscroll_manager$delta$0_0$0({1}SC:U),E,0,0
 S:G$global_scroll_object$0_0$0({11}STtag_struct_scroll_object:S),E,0,0
-S:G$engine_scroll_manager_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_data$0_0$0({2}DF,SV:S),C,0,0
