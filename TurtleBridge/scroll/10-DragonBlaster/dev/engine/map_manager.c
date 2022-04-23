@@ -44,7 +44,11 @@ void engine_map_manager_draw_map_screen()
 void engine_map_manager_draw_map()
 {
 	struct_map_object *map_data = &global_map_object;
-	if( map_data->lines_before_next ) 
+	unsigned char lines_before_next;
+	unsigned char scroll_y;
+
+	lines_before_next = map_data->lines_before_next;
+	if( map_data->lines_before_next )
 	{
 		map_data->lines_before_next--;
 	}
@@ -53,6 +57,7 @@ void engine_map_manager_draw_map()
 		draw_map_row();
 	}
 
+	scroll_y = map_data->scroll_y;
 	devkit_SMS_setBGScrollY( map_data->scroll_y );
 	if( map_data->scroll_y ) 
 	{
@@ -62,6 +67,7 @@ void engine_map_manager_draw_map()
 	{
 		map_data->scroll_y = SCROLL_H - 1;
 	}
+	scroll_y = map_data->scroll_y;
 }
 
 static void draw_map_row()

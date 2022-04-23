@@ -29,6 +29,7 @@ S:Lmap_manager.decompress_map_row$d$1_0$84({2}DG,SC:U),R,0,0,[l,h]
 S:Lmap_manager.decompress_map_row$remaining$1_0$84({1}SC:U),R,0,0,[e]
 S:Lmap_manager.decompress_map_row$ch$1_0$84({1}SC:U),R,0,0,[d]
 S:Lmap_manager.decompress_map_row$repeat$1_0$84({1}SC:U),R,0,0,[]
+S:Lmap_manager.decompress_map_row$test$1_0$84({1}SC:U),R,0,0,[]
 T:Fmap_manager$tag_struct_map_object[({0}S:S$level_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$next_row$0_0$0({2}DG,SC:U),Z,0,0)({4}S:S$background_y$0_0$0({1}SC:U),Z,0,0)({5}S:S$lines_before_next$0_0$0({1}SC:U),Z,0,0)({6}S:S$scroll_y$0_0$0({1}SC:U),Z,0,0)]
 S:G$global_map_object$0_0$0({7}STtag_struct_map_object:S),E,0,0
 S:G$devkit_SMS_init$0_0$0({2}DF,SV:S),C,0,0
