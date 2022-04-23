@@ -28,9 +28,8 @@ void engine_screen_manager_update()
 
 	if( input1 )//|| input2 )
 	{
-		//engine_map_manager_draw_map2();
 		engine_scroll_manager_update();
-		engine_scroll_manager_draw();
+		//engine_scroll_manager_draw();
 	}
 	
 }
