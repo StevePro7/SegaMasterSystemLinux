@@ -3,8 +3,8 @@
 
 typedef struct tag_struct_scroll_object
 {
-	//unsigned char scroll_left;
-	//unsigned char scroll_right;
+	unsigned char *level_data;
+	unsigned char *next_row;
 
 	unsigned char scrollleft;
 	unsigned char scrollRight;

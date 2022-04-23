@@ -13,19 +13,19 @@ struct_map_object global_map_object;
 
 static void decompress_map_row( unsigned char *buffer );
 static void draw_map_row();
+static void draw_map_row2();
 
 void engine_map_manager_init( unsigned char *level_data )
 {
 	struct_map_object *map_data = &global_map_object;
 	map_data->level_data = level_data;
 	map_data->next_row = level_data;
+	map_data->background_x = SCREEN_CHAR_W - 0;
 	map_data->background_y = SCROLL_CHAR_H - 2;
 	map_data->lines_before_next = 0;
+	map_data->lines_before_side = 0;
+	map_data->scroll_x = 0;
 	map_data->scroll_y = 0;
-}
-
-void engine_map_manager_update()
-{
 }
 
 void engine_map_manager_draw_map_screen()
@@ -39,6 +39,15 @@ void engine_map_manager_draw_map_screen()
 	}
 
 	draw_map_row();
+}
+
+void engine_map_manager_draw_map2()
+{
+	//struct_map_object *map_data = &global_map_object;
+	//unsigned char lines_before_side;
+	//unsigned char scroll_x;
+
+	draw_map_row2();
 }
 
 void engine_map_manager_draw_map()
@@ -67,7 +76,38 @@ void engine_map_manager_draw_map()
 	{
 		map_data->scroll_y = SCROLL_H - 1;
 	}
+
 	scroll_y = map_data->scroll_y;
+}
+
+static void draw_map_row2()
+{
+	//struct_map_object *map_data = &global_map_object;
+	//unsigned char i, j;
+	//unsigned char x, y;
+	//unsigned char *map_char;
+	//unsigned int base_tile, tile;
+	//unsigned char buffer[ 16 ];
+
+	//decompress_map_row( buffer );
+	//
+	//
+
+	////for( i = 2, x = map_data->background_x, base_tile = 256; i; i--, x++, base_tile++ )
+	//{
+	//	y = 0;
+	//	for( j = 16, map_char = buffer; j; j--, map_char++ )
+	//	{
+	//		tile = base_tile + ( *map_char << 2 );
+	//		devkit_SMS_setNextTileatXY( x, y );
+	//		devkit_SMS_setTile( tile );
+	//		y++;
+
+	//		devkit_SMS_setNextTileatXY( x, y );
+	//		devkit_SMS_setTile( tile + 2 );
+	//		y++;
+	//	}
+	//}
 }
 
 static void draw_map_row()
@@ -108,6 +148,7 @@ static void draw_map_row()
 	}
 
 	map_data->lines_before_next = 15;
+	map_data->lines_before_side = 7;
 }
 
 static void decompress_map_row( unsigned char *buffer )

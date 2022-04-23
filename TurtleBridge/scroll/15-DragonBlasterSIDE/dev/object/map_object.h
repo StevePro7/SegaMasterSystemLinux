@@ -5,8 +5,11 @@ typedef struct tag_struct_map_object
 {
 	unsigned char *level_data;
 	unsigned char *next_row;
+	unsigned char background_x;
 	unsigned char background_y;
 	unsigned char lines_before_next;
+	unsigned char lines_before_side;
+	unsigned char scroll_x;
 	unsigned char scroll_y;
 
 } struct_map_object;

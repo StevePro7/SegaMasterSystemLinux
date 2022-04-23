@@ -14,7 +14,7 @@ void main( void )
 	//engine_content_manager_load_sprites();
 
 	engine_screen_manager_init();
-	engine_scroll_manager_init();
+	//engine_scroll_manager_init();
 
 	devkit_SMS_displayOn();
 	for( ;; )

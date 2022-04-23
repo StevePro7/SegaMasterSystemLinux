@@ -13,7 +13,8 @@
 void engine_screen_manager_init()
 {
 	engine_map_manager_init( ( unsigned char * ) level1_bin );
-	engine_map_manager_draw_map_screen();
+	engine_scroll_manager_init( ( unsigned char * ) level1_bin );
+	//engine_map_manager_draw_map_screen();
 
 	engine_music_manager_play();
 }
@@ -21,12 +22,15 @@ void engine_screen_manager_init()
 void engine_screen_manager_update()
 {
 	unsigned char input1;
-	unsigned char input2;
-	input1 = engine_input_manager_move_up();
-	input2 = engine_input_manager_move_fire1();
-	//if( input1 || input2 )
+	//unsigned char input2;
+	input1 = engine_input_manager_hold_right();
+	//input2 = engine_input_manager_move_fire1();
+
+	if( input1 )//|| input2 )
 	{
-		engine_map_manager_draw_map();
+		//engine_map_manager_draw_map2();
+		engine_scroll_manager_update();
+		engine_scroll_manager_draw();
 	}
 	
 }
