@@ -1,0 +1,66 @@
+;!FILE scroll_manager.asm
+XL3
+H 9 areas 20 global symbols
+M scroll_manager
+O -mz80
+S .__.ABS. Def000000
+A _CODE size D flags 0 addr 0
+S A$scroll_manager$86 Def000001
+S C$scroll_manager.c$15$1_0$67 Def000000
+S A$scroll_manager$69 Def000000
+S C$scroll_manager.c$17$1_0$69 Def000001
+S G$engine_scroll_manager_init$0$0 Def000000
+S C$scroll_manager.c$19$1_0$69 Def000001
+S XG$engine_scroll_manager_load$0$0 Def000001
+S _engine_scroll_manager_init Def000000
+S G$engine_scroll_manager_update$0$0 Def000002
+S G$engine_scroll_manager_getPosY$0$0 Def000003
+S XG$engine_scroll_manager_init$0$0 Def000000
+S _engine_scroll_manager_update Def000002
+S A$scroll_manager$103 Def000002
+S _engine_scroll_manager_getPosY Def000003
+S A$scroll_manager$116 Def000003
+S A$scroll_manager$126 Def00000C
+S A$scroll_manager$117 Def000007
+S XG$engine_scroll_manager_update$0$0 Def000002
+S A$scroll_manager$118 Def000009
+S G$engine_scroll_manager_load$0$0 Def000001
+S XG$engine_scroll_manager_getPosY$0$0 Def00000C
+S C$scroll_manager.c$21$1_0$71 Def000002
+S C$scroll_manager.c$31$1_0$73 Def000003
+S C$scroll_manager.c$24$1_0$71 Def000002
+S C$scroll_manager.c$11$0_0$67 Def000000
+S C$scroll_manager.c$32$1_0$73 Def00000C
+S _engine_scroll_manager_load Def000001
+S C$scroll_manager.c$13$1_0$67 Def000000
+S C$scroll_manager.c$26$1_0$73 Def000003
+A _DATA size 6 flags 0 addr 0
+S _global_scroll_object Def000000
+S G$global_scroll_object$0_0$0 Def000000
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 01 00
+T 00 00 00
+R 00 00 01 00
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 C9
+R 00 00 00 00
+T 01 00 00
+R 00 00 00 00
+T 01 00 00 C9
+R 00 00 00 00
+T 02 00 00
+R 00 00 00 00
+T 02 00 00 C9
+R 00 00 00 00
+T 03 00 00
+R 00 00 00 00
+T 03 00 00 FD 21 02 00 FD 39 FD 6E 00 C9
+R 00 00 00 00
