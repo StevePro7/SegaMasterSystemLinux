@@ -16,21 +16,15 @@ void engine_scroll_manager_init( unsigned char *level_data )
 	struct_scroll_object *so = &global_scroll_object;
 	so->level_data = level_data;
 	so->next_row = level_data;
+	so->background_y = SCROLL_CHAR_H - 2;
 
 	so->scrollleft = 0;
 	so->scrollRight = 0;
 	so->scrollRightDivided8 = 0;
-	//so->offset_left = 0;
-	//so->offset_right = 31;
 	so->column_X = 0;
 	so->scroll_X = 31;
 
 	devkit_SMS_setBGScrollX( so->column_X );
-	
-}
-
-void engine_scroll_manager_load()
-{
 }
 
 void engine_scroll_manager_update()
@@ -50,8 +44,6 @@ void engine_scroll_manager_update()
 
 	// Add new column!
 	so->scrollRightDivided8 = so->scrollRight / 8;
-	//so->offset_left++;
-	//so->offset_right++;
 	so->scroll_X++;
 	so->column_X = so->scroll_X % SCREEN_WIDE;
 
@@ -88,7 +80,7 @@ void engine_scroll_manager_draw()
 		devkit_SMS_setTile( tile );
 
 		devkit_SMS_setNextTileatXY( column_X, y + 1 );
-		devkit_SMS_setTile( tile + 2 );
+		devkit_SMS_setTile( tile );
 	}
 
 	if( *so->next_row == 0xFF )
@@ -105,8 +97,6 @@ unsigned char engine_scroll_manager_getPosY( unsigned int col )
 	//return tiles[ idx  ];
 	return col;
 }
-
-
 static void decompress_map_row( unsigned char *buffer )
 {
 	struct_scroll_object *so = &global_scroll_object;

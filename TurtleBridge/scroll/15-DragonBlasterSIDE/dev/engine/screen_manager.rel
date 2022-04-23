@@ -1,6 +1,6 @@
 ;!FILE screen_manager.asm
 XL3
-H 9 areas 24 global symbols
+H 9 areas 27 global symbols
 M screen_manager
 O -mz80
 S _level1_bin Ref000000
@@ -9,36 +9,39 @@ S .__.ABS. Def000000
 S _engine_scroll_manager_update Ref000000
 S _engine_input_manager_hold_right Ref000000
 S _engine_music_manager_play Ref000000
+S _engine_map_manager_draw_map_screen Ref000000
 S _engine_map_manager_init Ref000000
-A _CODE size 1B flags 0 addr 0
+A _CODE size 1E flags 0 addr 0
 S _engine_screen_manager_init Def000000
-S G$engine_screen_manager_update$0$0 Def000012
-S XG$engine_screen_manager_init$0$0 Def00000F
-S _engine_screen_manager_update Def000012
-S A$screen_manager$111 Def00001A
-S A$screen_manager$103 Def000017
-S XG$engine_screen_manager_update$0$0 Def00001A
-S C$screen_manager.c$20$1_0$10 Def00000F
+S G$engine_screen_manager_update$0$0 Def000015
+S XG$engine_screen_manager_init$0$0 Def000012
+S _engine_screen_manager_update Def000015
+S A$screen_manager$100 Def000018
+S A$screen_manager$104 Def000019
+S A$screen_manager$116 Def00001D
+S A$screen_manager$108 Def00001A
+S XG$engine_screen_manager_update$0$0 Def00001D
+S C$screen_manager.c$20$1_0$10 Def000012
+S C$screen_manager.c$21$1_0$10 Def000012
 S C$screen_manager.c$13$0_0$10 Def000000
-S C$screen_manager.c$22$1_0$11 Def000012
+S C$screen_manager.c$30$1_0$11 Def000019
+S C$screen_manager.c$23$1_0$11 Def000015
 S C$screen_manager.c$15$1_0$10 Def000000
-S C$screen_manager.c$31$2_0$12 Def000017
-S C$screen_manager.c$16$1_0$10 Def000007
-S C$screen_manager.c$35$1_0$11 Def00001A
-S C$screen_manager.c$26$1_0$11 Def000012
-S C$screen_manager.c$19$1_0$10 Def00000F
-S A$screen_manager$70 Def00000E
-S A$screen_manager$61 Def000000
-S A$screen_manager$62 Def000003
-S C$screen_manager.c$29$1_0$11 Def000016
-S A$screen_manager$81 Def00000F
-S A$screen_manager$63 Def000004
-S A$screen_manager$94 Def000012
-S A$screen_manager$67 Def000007
-S A$screen_manager$95 Def000015
-S A$screen_manager$68 Def00000A
-S A$screen_manager$69 Def00000B
-S A$screen_manager$99 Def000016
+S C$screen_manager.c$32$2_0$12 Def00001A
+S C$screen_manager.c$17$1_0$10 Def000007
+S C$screen_manager.c$18$1_0$10 Def00000F
+S C$screen_manager.c$36$1_0$11 Def00001D
+S C$screen_manager.c$27$1_0$11 Def000015
+S A$screen_manager$70 Def00000B
+S A$screen_manager$71 Def00000E
+S A$screen_manager$62 Def000000
+S A$screen_manager$63 Def000003
+S A$screen_manager$64 Def000004
+S A$screen_manager$75 Def00000F
+S A$screen_manager$86 Def000012
+S A$screen_manager$68 Def000007
+S A$screen_manager$69 Def00000A
+S A$screen_manager$99 Def000015
 S G$engine_screen_manager_init$0$0 Def000000
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
@@ -51,10 +54,10 @@ A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
 T 00 00 00 21 00 00 E5 CD 00 00 21 00 00 E3 CD
-R 00 00 00 00 02 04 00 00 02 08 06 00 02 0B 00 00
-T 0C 00 00 00 00 F1 C3 00 00
-R 00 00 00 00 02 03 01 00 02 07 05 00
-T 12 00 00
+R 00 00 00 00 02 04 00 00 02 08 01 00 02 0B 00 00
+T 0C 00 00 00 00 F1 CD 00 00 C3 00 00
+R 00 00 00 00 02 03 07 00 02 07 06 00 02 0A 05 00
+T 15 00 00
 R 00 00 00 00
-T 12 00 00 CD 00 00 7D B7 C2 00 00 C9
+T 15 00 00 CD 00 00 7D B7 C2 00 00 C9
 R 00 00 00 00 02 04 04 00 02 09 03 00
