@@ -62,5 +62,5 @@ S:G$SMS_isr$0_0$0({2}DF,SV:S),C,0,0
 S:G$SMS_nmi_isr$0_0$0({2}DF,SV:S),C,0,0
 S:G$main$0_0$0({2}DF,SV:S),C,0,0
 S:Fmain$__str_0$0_0$0({17}DA17d,SC:U),D,0,0
-S:Fmain$__str_1$0_0$0({12}DA12d,SC:U),D,0,0
+S:Fmain$__str_1$0_0$0({19}DA19d,SC:U),D,0,0
 S:Fmain$__str_2$0_0$0({55}DA55d,SC:U),D,0,0
