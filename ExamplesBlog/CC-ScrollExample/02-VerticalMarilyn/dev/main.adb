@@ -1,8 +1,6 @@
 M:main
 F:G$main$0_0$0({2}DF,SV:S),C,0,0,0,0,0
 T:Fmain$tag_struct_scroll_object[({0}S:S$scroll$0_0$0({2}SI:U),Z,0,0)({2}S:S$height$0_0$0({2}SI:U),Z,0,0)({4}S:S$size$0_0$0({2}SI:U),Z,0,0)({6}S:S$scrollleft$0_0$0({1}SC:U),Z,0,0)({7}S:S$scrollRight$0_0$0({1}SC:U),Z,0,0)({8}S:S$scrollRightDivided8$0_0$0({1}SC:U),Z,0,0)({9}S:S$column_X$0_0$0({1}SC:U),Z,0,0)({10}S:S$scroll_X$0_0$0({2}SI:U),Z,0,0)]
-T:Fmain$tag_struct_map_object[({0}S:S$level_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$next_row$0_0$0({2}DG,SC:U),Z,0,0)({4}S:S$background_y$0_0$0({1}SC:U),Z,0,0)({5}S:S$lines_before_next$0_0$0({1}SC:U),Z,0,0)({6}S:S$scroll_y$0_0$0({1}SC:U),Z,0,0)]
-S:G$global_map_object$0_0$0({7}STtag_struct_map_object:S),E,0,0
 S:G$global_scroll_object$0_0$0({12}STtag_struct_scroll_object:S),E,0,0
 S:G$atof$0_0$0({2}DF,SF:S),C,0,0
 S:G$atoi$0_0$0({2}DF,SI:S),C,0,0
@@ -152,10 +150,6 @@ S:G$devkit_SMS_setTilePriority$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_isCollisionDetected$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_asm_manager_clear_VRAM$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_bgtiles$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_font_manager_draw_char$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_font_manager_draw_text$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_font_manager_draw_data$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_font_manager_draw_zero$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_hold_up$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_hold_down$0_0$0({2}DF,SC:U),C,0,0
@@ -169,10 +163,6 @@ S:G$engine_input_manager_move_left$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_right$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire1$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire2$0_0$0({2}DF,SC:U),C,0,0
-S:G$engine_map_manager_init$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_map_manager_update$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_map_manager_draw_map_screen$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_map_manager_draw_map$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_screen_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_screen_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_init$0_0$0({2}DF,SV:S),C,0,0

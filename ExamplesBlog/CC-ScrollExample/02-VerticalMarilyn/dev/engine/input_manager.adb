@@ -13,9 +13,9 @@ F:G$engine_input_manager_move_right$0_0$0({2}DF,SC:U),Z,0,0,0,0,0
 F:G$engine_input_manager_move_fire1$0_0$0({2}DF,SC:U),Z,0,0,0,0,0
 F:G$engine_input_manager_move_fire2$0_0$0({2}DF,SC:U),Z,0,0,0,0,0
 F:Finput_manager$engine_input_manager_hold$0_0$0({2}DF,SC:U),Z,0,0,0,0,0
-S:Linput_manager.engine_input_manager_hold$data$1_0$77({2}SI:U),B,1,4
+S:Linput_manager.engine_input_manager_hold$data$1_0$80({2}SI:U),B,1,4
 F:Finput_manager$engine_input_manager_move$0_0$0({2}DF,SC:U),Z,0,0,0,0,0
-S:Linput_manager.engine_input_manager_move$data$1_0$79({2}SI:U),B,1,4
+S:Linput_manager.engine_input_manager_move$data$1_0$82({2}SI:U),B,1,4
 S:Finput_manager$curr_joypad1$0_0$0({2}SI:U),E,0,0
 S:Finput_manager$prev_joypad1$0_0$0({2}SI:U),E,0,0
 S:G$devkit_SMS_init$0_0$0({2}DF,SV:S),C,0,0
@@ -52,6 +52,9 @@ S:G$devkit_SMS_SRAM$0_0$0({2}DF,DG,SC:U),C,0,0
 S:G$devkit_SMS_waitForVBlank$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_loadTiles$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_loadPSGaidencompressedTiles$0_0$0({2}DF,SV:S),C,0,0
+S:G$devkit_SMS_loadTileMap$0_0$0({2}DF,SV:S),C,0,0
+S:G$devkit_SMS_loadSTMcompressedTileMapArea$0_0$0({2}DF,SV:S),C,0,0
+S:G$devkit_SMS_loadTileMapArea$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_loadSTMcompressedTileMap$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_crt0_RST08$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_crt0_RST18$0_0$0({2}DF,SV:S),C,0,0

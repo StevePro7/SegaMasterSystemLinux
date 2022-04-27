@@ -1,5 +1,4 @@
 #include "scroll_manager.h"
-#include "font_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
 
