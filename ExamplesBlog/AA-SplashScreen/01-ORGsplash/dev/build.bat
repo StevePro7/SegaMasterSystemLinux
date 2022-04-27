@@ -56,9 +56,9 @@ if exist "*.asm" del "*.asm" > nul; if exist "*.lst" del "*.lst" > nul; if exist
 cd ..
 
 if exist "*.asm" del "*.asm" > nul; if exist "*.ihx" del "*.ihx" > nul; if exist "*.lk"  del "*.lk"  > nul
-if exist "*.lst" del "*.lst" > nul; if exist "*.sym" del "*.sym" > nul
-::if exist "*.noi"  del "*.noi"  > nul
+if exist "*.lst" del "*.lst" > nul; if exist "*.sym" del "*.sym" > nul;
+:: if exist "*.noi"  del "*.noi"  > nul
 
 :: Run
-java -jar C:/SEGA/Emulicious/Emulicious.jar output.sms
-::output.sms
+::java -jar C:/SEGA/Emulicious/Emulicious.jar output.sms
+output.sms
