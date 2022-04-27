@@ -25,10 +25,6 @@ void main( void )
 
 		devkit_SMS_finalizeSprites();
 		devkit_SMS_waitForVBlank();
-		//devkit_SMS_copySpritestoSAT();
 		devkit_UNSAFE_SMS_copySpritestoSAT();
-
-		devkit_PSGFrame();
-		devkit_PSGSFXFrame();
 	}
 }

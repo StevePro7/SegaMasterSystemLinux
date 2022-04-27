@@ -10,8 +10,3 @@ void engine_content_manager_load_bgtiles()
 	devkit_SMS_loadTileMap( 0, 0, ( void * ) MM__tilemap__bin, 32 * 25 * 2 );     // 32 tiles * 25 lines * 2 bytes each 
 	devkit_SMS_loadBGPalette( ( void * ) MM__palette__bin );
 }
-
-void engine_content_manager_load_sprites()
-{
-	// Sprite tiles.
-}

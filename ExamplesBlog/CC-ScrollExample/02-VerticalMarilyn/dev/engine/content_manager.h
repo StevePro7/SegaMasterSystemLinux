@@ -2,6 +2,5 @@
 #define _CONTENT_MANAGER_H_
 
 void engine_content_manager_load_bgtiles();
-void engine_content_manager_load_sprites();
 
 #endif//_CONTENT_MANAGER_H_
