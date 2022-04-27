@@ -10,7 +10,7 @@
 #define dateMonth	4
 #define dateDay		1
 #define author		"Steven Boland"
-#define name		"Splash Screen ORG"
+#define name		"Devkit Hello World"
 #define descr		"Simple Sega Master System demo to run on real hardware!"
 
 #endif//_GAME_H_
