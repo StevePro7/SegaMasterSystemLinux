@@ -295,5 +295,5 @@ S:G$SMS_nmi_isr$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_getVCount$0_0$0({2}DF,SC:U),C,0,0
 S:G$devkit_SMS_getHCount$0_0$0({2}DF,SC:U),C,0,0
 S:F_sms_manager$__str_0$0_0$0({14}DA14d,SC:U),D,0,0
-S:F_sms_manager$__str_1$0_0$0({13}DA13d,SC:U),D,0,0
+S:F_sms_manager$__str_1$0_0$0({32}DA32d,SC:U),D,0,0
 S:F_sms_manager$__str_2$0_0$0({56}DA56d,SC:U),D,0,0

@@ -1,6 +1,6 @@
 #include "screen_manager.h"
 #include "content_manager.h"
-#include "global_manager.h"
+//#include "global_manager.h"
 #include "input_manager.h"
 #include "scroll_manager.h"
 	

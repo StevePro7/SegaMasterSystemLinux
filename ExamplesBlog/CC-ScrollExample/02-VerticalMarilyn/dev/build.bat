@@ -15,7 +15,6 @@ cd ..
 cd engine
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 asm_manager.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 content_manager.c
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 global_manager.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 input_manager.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 screen_manager.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 scroll_manager.c
@@ -44,16 +43,11 @@ sdcc --debug -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-
 ../lib/SMSlib.lib ^
 ../lib/PSGlib.rel ^
 devkit/_sms_manager.rel ^
-engine/asm_manager.rel engine/audio_manager.rel ^
-engine/content_manager.rel ^
-engine/enum_manager.rel engine/font_manager.rel ^
-engine/global_manager.rel ^
-engine/input_manager.rel engine/map_manager.rel ^
+engine/asm_manager.rel engine/content_manager.rel ^
+engine/input_manager.rel ^
 engine/scroll_manager.rel engine/screen_manager.rel ^
-engine/sprite_manager.rel ^
-object/map_object.rel object/scroll_object.rel ^
-content/gfx.rel ^
-content/psg.rel
+object/scroll_object.rel ^
+content/gfx.rel
 
 
 :: Execute
