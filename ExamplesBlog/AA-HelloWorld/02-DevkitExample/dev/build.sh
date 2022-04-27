@@ -39,6 +39,10 @@ cd  devkit
 rm -f *.asm 2> /dev/null; rm -f *.lst 2> /dev/null; rm -f *.sym 2> /dev/null
 cd ..
 
+cd engine
+rm -f *.asm 2> /dev/null; rm -f *.lst 2> /dev/null; rm -f *.sym 2> /dev/null
+cd ..
+
 rm -f *.asm 2> /dev/null && rm -f *.ihx 2> /dev/null; rm -f *.lk 2> /dev/null
 rm -f *.lst 2> /dev/null && rm -f *.sym 2> /dev/null;
 ## rm -f *.noi 2> /dev/null
