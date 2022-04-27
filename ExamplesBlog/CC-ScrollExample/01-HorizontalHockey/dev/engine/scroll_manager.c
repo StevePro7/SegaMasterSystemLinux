@@ -1,7 +1,7 @@
 #include "scroll_manager.h"
 #include "content_manager.h"
 #include "../devkit/_sms_manager.h"
-#include "../gfx.h"
+#include "../content/gfx.h"
 #include <stdlib.h>
 
 // 400px wide / 8px tiles
