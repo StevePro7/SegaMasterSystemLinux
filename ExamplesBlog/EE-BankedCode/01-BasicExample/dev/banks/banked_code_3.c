@@ -6,5 +6,5 @@ int banked_code_3()
 int banked_code_3() __banked
 #endif
 {
-	return 6;
+	return 3;
 }

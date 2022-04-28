@@ -20,6 +20,6 @@ S:G$engine_input_manager_move_left$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_right$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire1$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire2$0_0$0({2}DF,SC:U),C,0,0
-S:G$foo$0_0$0({2}DF,SI:S),C,0,0
-S:G$bar$0_0$0({2}DF,SI:S),C,0,0
-S:G$sgb$0_0$0({2}DF,SI:S),C,0,0
+S:G$banked_code_1$0_0$0({2}DF,SI:S),C,0,0
+S:G$banked_code_2$0_0$0({2}DF,SI:S),C,0,0
+S:G$banked_code_3$0_0$0({2}DF,SI:S),C,0,0
