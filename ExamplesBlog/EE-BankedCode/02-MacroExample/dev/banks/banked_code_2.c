@@ -1,9 +1,9 @@
 #include "banked_code_2.h"
 
 #ifdef _CONSOLE
-int bar()
+int banked_code_2()
 #else
-int bar() __banked
+int banked_code_2() __banked
 #endif
 {
 	return 4;

@@ -21,27 +21,27 @@ void engine_screen_manager_update()
 	input = engine_input_manager_hold_left();
 	if( input )
 	{
-		value = foo();
+		value = banked_code_1();
 		engine_font_manager_draw_data( value, 10, 12 );
 	}
 
 	input = engine_input_manager_hold_right();
 	if( input )
 	{
-		value = bar();
+		value = banked_code_2();
 		engine_font_manager_draw_data( value, 10, 13 );
 	}
 
 	input = engine_input_manager_hold_up();
 	if( input )
 	{
-		value = sgb();
+		value = banked_code_3();
 		engine_font_manager_draw_data( value, 10, 14 );
 	}
 	input = engine_input_manager_hold_down();
 	if( input )
 	{
-		value = adi();
+		value = banked_code_4();
 		engine_font_manager_draw_data( value, 10, 15 );
 	}
 

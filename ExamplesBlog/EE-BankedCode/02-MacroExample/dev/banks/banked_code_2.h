@@ -2,9 +2,9 @@
 #define _BANK_2_H_
 
 #ifdef _CONSOLE
-int bar();
+int banked_code_2();
 #else
-int bar() __banked;
+int banked_code_2() __banked;
 #endif
 
 #endif//_BANK_2_H_

@@ -1,6 +1,10 @@
 #include "banked_code_3.h"
 
-int sgb() __banked
+#ifdef _CONSOLE
+int banked_code_3()
+#else
+int banked_code_3() __banked
+#endif
 {
-	return 3;
+	return 6;
 }

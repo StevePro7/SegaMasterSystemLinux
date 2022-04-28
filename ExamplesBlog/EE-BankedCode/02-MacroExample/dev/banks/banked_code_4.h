@@ -2,9 +2,9 @@
 #define _BANK_4_H_
 
 #ifdef _CONSOLE
-int adi();
+int banked_code_4();
 #else
-int adi() __banked;
+int banked_code_4() __banked;
 #endif
 
 #endif//_BANK_4_H_
