@@ -8,8 +8,8 @@
 #include "sprite_manager.h"
 #include "tile_manager.h"
 
-static unsigned char x = 16;
-static unsigned char y = 128-32;// 64;
+static unsigned char x = 32;
+static unsigned char y = 128-64;// 64;
 
 static void bonus_level();
 
@@ -66,7 +66,7 @@ void engine_screen_manager_update()
 		y++;
 	}
 
-	//engine_sprite_manager_draw( x + 0, y, delta + 0 );
+	engine_sprite_manager_draw( x + 0, y, delta + 0 );
 
 	// fish
 	//engine_sprite_manager_draw( x + 40, y, delta + 18 );
@@ -86,14 +86,14 @@ static void bonus_level()
 	engine_tile_manager_sky();
 	engine_tile_manager_seaX( 4 );
 
-/*
+
 	engine_tile_manager_draw_normX( tile_type_cloud_smallC, 3, 2 );
 	engine_tile_manager_draw_normX( tile_type_cloud_largeC, 8, 2 );
 	engine_tile_manager_draw_flipX( tile_type_cloud_largeC, 18, 2 );
 	engine_tile_manager_draw_flipX( tile_type_cloud_smallC, 25, 2 );
 
-	engine_tile_manager_draw_flipX( tile_type_large_ground, 0, 11 );
-	engine_tile_manager_draw_normX( tile_type_small_ground, 20, 15 );
+	engine_tile_manager_draw_flipX( tile_type_large_ground, 0, 12 );
+	engine_tile_manager_draw_normX( tile_type_small_ground, 20, 16 );
 	//engine_tile_manager_draw_normX( tile_type_trees_planeB, 10, 10 );
 	//engine_tile_manager_draw_normX( tile_type_sign_sendAll, 10, 10 );
 	//engine_tile_manager_draw_normX( tile_type_sign_goalAll, 20, 10 );
@@ -103,13 +103,12 @@ static void bonus_level()
 	// tile_type_flyer_turtle
 	for( col = 0; col < max; col++ )
 	{
-		engine_tile_manager_draw_scrollX( tile_type_sign_goalAll, 20 + col, 12, col );
+		engine_tile_manager_draw_scrollX( tile_type_sign_goalAll, 24 + col, 13, col );
 	}
 
-	engine_tile_manager_draw_turtleX( tile_type_hover_turtle, 0, 7, 8 );
-	engine_tile_manager_draw_turtleX( tile_type_flyer_turtle, 1, 20, 7 );
+	//engine_tile_manager_draw_turtleX( tile_type_hover_turtle, 0, 7, 8 );
+	engine_tile_manager_draw_turtleX( tile_type_flyer_turtle, 0, 14, 14 );
 
-*/
 	// ORG
 	//engine_tile_manager_draw_flip( tile_type_section01, 0, 12, 16, 10, 6, 16 );
 	//engine_tile_manager_draw_norm( tile_type_section01, 23, 12, 16, 10, 0, 9 );
