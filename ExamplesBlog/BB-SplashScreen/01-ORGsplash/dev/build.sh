@@ -10,7 +10,6 @@
 ## Compile
 cd devkit
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _sms_manager.c
-##sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _snd_manager.c
 cd ..
 
 cd engine
@@ -37,7 +36,6 @@ sdcc --debug -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-
 ../lib/SMSlib.lib \
 ../lib/PSGlib.rel \
 devkit/_sms_manager.rel \
-devkit/_snd_manager.rel \
 engine/asm_manager.rel \
 engine/content_manager.rel \
 content/gfx.rel
