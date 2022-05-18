@@ -23,4 +23,3 @@ S:G$engine_input_manager_move_fire2$0_0$0({2}DF,SC:U),C,0,0
 S:G$banked_code_1$0_0$0({2}DF,SI:S),C,0,0
 S:G$banked_code_2$0_0$0({2}DF,SI:S),C,0,0
 S:G$banked_code_3$0_0$0({2}DF,SI:S),C,0,0
-S:G$banked_code_4$0_0$0({2}DF,SI:S),C,0,0
