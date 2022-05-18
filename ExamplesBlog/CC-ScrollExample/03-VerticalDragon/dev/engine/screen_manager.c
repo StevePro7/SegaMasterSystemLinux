@@ -22,5 +22,4 @@ void engine_screen_manager_update()
 	{
 		engine_map_manager_draw_map();
 	}
-	
 }

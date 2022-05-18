@@ -1,14 +1,14 @@
 #include "SMSlib.h"
 
-void main(void)
+void main( void )
 {
-  SMS_init();
-  SMS_setSpritePaletteColor(0, RGB(3, 3, 2));
-  SMS_displayOn();
-  for (;;)
-  {
-    SMS_waitForVBlank();
-  }
+	SMS_init();
+	SMS_setSpritePaletteColor( 0, RGB( 3, 3, 3 ) );
+	SMS_displayOn();
+	for( ;;)
+	{
+		SMS_waitForVBlank();
+	}
 }
 
 SMS_EMBED_SEGA_ROM_HEADER(9999, 0);
