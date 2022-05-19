@@ -21,5 +21,6 @@ void engine_audio_manager_sfx_play( unsigned char index )
 
 	data = sfx_object_data[ index ];
 	bank = sfx_object_bank[ index ];
+	devkit_SMS_mapROMBank( bank );
 	devkit_PSGSFXPlay( ( unsigned char* ) data, devkit_SFX_CHANNEL2() );
 }
