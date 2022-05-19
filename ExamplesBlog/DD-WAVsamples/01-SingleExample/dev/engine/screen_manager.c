@@ -19,23 +19,36 @@ void engine_screen_manager_update()
 	input = engine_input_manager_hold_left();
 	if( input )
 	{
+		engine_audio_manager_sfx_play( 0 );
 	}
 
 	input = engine_input_manager_hold_right();
 	if( input )
 	{
+		engine_audio_manager_sfx_play( 1 );
+	}
+
+	input = engine_input_manager_hold_up();
+	if( input )
+	{
+		engine_audio_manager_sfx_play( 2 );
 	}
 
 	input = engine_input_manager_hold_down();
 	if( input )
 	{
+		engine_audio_manager_sfx_play( 3 );
 	}
 
 	input = engine_input_manager_hold_fire1();
 	if( input )
 	{
-		engine_font_manager_draw_text( "PRESS FIRE TO PLAY SAMPLE", 4, 19 );
-		engine_audio_manager_sfx_play( 0 );
-		engine_font_manager_draw_text( "PRESS FIRE TO PLAY SAMPLE", 4, 17 );
+		engine_audio_manager_sfx_play( 4 );
+	}
+
+	input = engine_input_manager_hold_fire2();
+	if( input )
+	{
+		engine_audio_manager_sfx_play( 5 );
 	}
 }

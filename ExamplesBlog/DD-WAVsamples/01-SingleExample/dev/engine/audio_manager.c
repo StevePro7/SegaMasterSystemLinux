@@ -10,14 +10,14 @@ void engine_audio_manager_sfx_play( unsigned char index )
 {
 	const unsigned char *data;
 	unsigned char bank;
-	//unsigned char status;
+	unsigned char status;
 
 	// If sound effect already playing then return.
-	//status = devkit_PSGSFXGetStatus();
-	//if( status )
-	//{
-	//	return;
-	//}
+	status = devkit_PSGSFXGetStatus();
+	if( status )
+	{
+		return;
+	}
 
 	data = sfx_object_data[ index ];
 	bank = sfx_object_bank[ index ];
