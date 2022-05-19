@@ -8,6 +8,12 @@ Area                                    Addr        Size        Decimal Bytes (A
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
      00000000  .__.ABS.                           
+     00000000  _sfx_accept_psg                 
+     00000000  _sfx_death_psg                  
+     00000000  _sfx_gem_psg                    
+     00000000  _sfx_level_psg                  
+     00000000  _sfx_power_psg                  
+     00000000  _sfx_reset_psg                  
      00000000  l__BSEG                         
      00000000  l__BSS                          
      00000000  l__CABS                         
@@ -29,8 +35,6 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000000  s__HEADER3                      
      00000000  s__HEADER4                      
      00000001  l__GSFINAL                      
-     00000005  l__INITIALIZED                  
-     00000005  l__INITIALIZER                  
      00000008  l__HEADER0                      
      00000009  l__HEADER1                      
      0000000E  l__CABS1                        
@@ -38,25 +42,21 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000010  l__CABS0                        
      00000010  l__CABS4                        
      00000012  l__CABS2                        
+     00000015  l__INITIALIZED                  
+     00000015  l__INITIALIZER                  
      00000018  l__HEADER2                      
      0000002B  l__HEADER3                      
      00000038  l__CABS3                        
      000000BE  G$VDPDataPort$0_0$0                asm_manager
      000000BF  G$VDPControlPort$0_0$0             asm_manager
      00000104  l__HEADER4                      
-     00000119  l__DATA                         
+     0000011A  l__DATA                         
      00000200  s__CODE                         
-     00001531  l__CODE                         
-     00001731  s__HOME                         
-     00001731  s__INITIALIZER                  
-     00001736  s__GSINIT                       
-     00001745  s__GSFINAL                      
-     00008000  G$SMS_SRAM$0_0$0                   _sms_manager
-     00008000  _SMS_SRAM                          SMSlib_STMcomp
-     0000C000  s__DATA                         
-     0000C119  s__INITIALIZED                  
-     0000C11E  s__BSEG                         
-     0000C11E  s__BSS                          
+     0000162A  l__CODE                         
+     0000182A  s__HOME                         
+     0000182A  s__INITIALIZER                  
+     0000183F  s__GSINIT                       
+     0000184E  s__GSFINAL                      
 ASxxxx Linker V03.00 + NoICE + sdld,  page 2.
 Hexadecimal  [32-Bits]
 
@@ -66,7 +66,13 @@ Area                                    Addr        Size        Decimal Bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     0000C11E  s__HEAP                         
+     00008000  G$SMS_SRAM$0_0$0                   _sms_manager
+     00008000  _SMS_SRAM                          SMSlib_STMcomp
+     0000C000  s__DATA                         
+     0000C11A  s__INITIALIZED                  
+     0000C12F  s__BSEG                         
+     0000C12F  s__BSS                          
+     0000C12F  s__HEAP                         
      0000FFFC  G$SRAM_bank_to_be_mapped_on_slot   _sms_manager
      0000FFFC  _SRAM_bank_to_be_mapped_on_slot2   SMSlib_STMcomp
      0000FFFF  G$ROM_bank_to_be_mapped_on_slot2   _sms_manager
@@ -77,7 +83,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001531 =        5425. bytes (REL,CON)
+_CODE                               00000200    0000162A =        5674. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -136,7 +142,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001531 =        5425. bytes (REL,CON)
+_CODE                               00000200    0000162A =        5674. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -196,7 +202,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001531 =        5425. bytes (REL,CON)
+_CODE                               00000200    0000162A =        5674. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -256,7 +262,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001531 =        5425. bytes (REL,CON)
+_CODE                               00000200    0000162A =        5674. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -316,7 +322,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001531 =        5425. bytes (REL,CON)
+_CODE                               00000200    0000162A =        5674. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -376,7 +382,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001531 =        5425. bytes (REL,CON)
+_CODE                               00000200    0000162A =        5674. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -436,7 +442,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001531 =        5425. bytes (REL,CON)
+_CODE                               00000200    0000162A =        5674. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -496,7 +502,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001531 =        5425. bytes (REL,CON)
+_CODE                               00000200    0000162A =        5674. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -556,7 +562,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001531 =        5425. bytes (REL,CON)
+_CODE                               00000200    0000162A =        5674. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -616,7 +622,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001531 =        5425. bytes (REL,CON)
+_CODE                               00000200    0000162A =        5674. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -676,7 +682,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001531 =        5425. bytes (REL,CON)
+_CODE                               00000200    0000162A =        5674. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -736,7 +742,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001531 =        5425. bytes (REL,CON)
+_CODE                               00000200    0000162A =        5674. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -796,7 +802,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001531 =        5425. bytes (REL,CON)
+_CODE                               00000200    0000162A =        5674. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -856,7 +862,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001531 =        5425. bytes (REL,CON)
+_CODE                               00000200    0000162A =        5674. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -916,7 +922,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001531 =        5425. bytes (REL,CON)
+_CODE                               00000200    0000162A =        5674. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -976,7 +982,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001531 =        5425. bytes (REL,CON)
+_CODE                               00000200    0000162A =        5674. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -1036,7 +1042,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001531 =        5425. bytes (REL,CON)
+_CODE                               00000200    0000162A =        5674. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -1096,7 +1102,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001531 =        5425. bytes (REL,CON)
+_CODE                               00000200    0000162A =        5674. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -1156,7 +1162,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001531 =        5425. bytes (REL,CON)
+_CODE                               00000200    0000162A =        5674. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -1216,7 +1222,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001531 =        5425. bytes (REL,CON)
+_CODE                               00000200    0000162A =        5674. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -1276,7 +1282,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001531 =        5425. bytes (REL,CON)
+_CODE                               00000200    0000162A =        5674. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -1297,459 +1303,731 @@ _CODE                               00000200    00001531 =        5425. bytes (R
      00000C4C  A$asm_manager$78                   asm_manager
      00000C4C  C$asm_manager.c$33$1_0$1           asm_manager
      00000C4C  XG$engine_asm_manager_clear_VRAM   asm_manager
-     00000C4D  A$content_manager$57               content_manager
-     00000C4D  C$content_manager.c$10$1_0$18      content_manager
-     00000C4D  C$content_manager.c$7$0_0$18       content_manager
-     00000C4D  G$engine_content_manager_load_ti   content_manager
-     00000C4D  _engine_content_manager_load_til   content_manager
-     00000C50  A$content_manager$58               content_manager
-     00000C51  A$content_manager$59               content_manager
-     00000C54  A$content_manager$60               content_manager
-     00000C55  A$content_manager$61               content_manager
-     00000C58  A$content_manager$62               content_manager
-     00000C59  A$content_manager$66               content_manager
-     00000C59  C$content_manager.c$11$1_0$18      content_manager
-     00000C5C  A$content_manager$67               content_manager
-     00000C5D  A$content_manager$68               content_manager
-     00000C60  A$content_manager$69               content_manager
-     00000C61  A$content_manager$77               content_manager
-     00000C61  C$content_manager.c$12$1_0$18      content_manager
-     00000C61  XG$engine_content_manager_load_t   content_manager
-     00000C62  A$font_manager$63                  font_manager
-     00000C62  C$font_manager.c$10$0_0$23         font_manager
-     00000C62  C$font_manager.c$12$2_0$23         font_manager
-     00000C62  C$font_manager.c$13$1_0$23         font_manager
-     00000C62  G$engine_font_manager_draw_char$   font_manager
-     00000C62  _engine_font_manager_draw_char     font_manager
-     00000C66  A$font_manager$64                  font_manager
-     00000C68  A$font_manager$65                  font_manager
-     00000C6B  A$font_manager$66                  font_manager
-     00000C6D  A$font_manager$67                  font_manager
-     00000C6E  A$font_manager$71                  font_manager
-     00000C6E  C$font_manager.c$14$1_0$23         font_manager
-     00000C6F  A$font_manager$72                  font_manager
-     00000C72  A$font_manager$73                  font_manager
-     00000C74  A$font_manager$74                  font_manager
-     00000C76  A$font_manager$75                  font_manager
+     00000C4D  A$audio_manager$58                 audio_manager
+     00000C4D  C$audio_manager.c$9$0_0$33         audio_manager
+     00000C4D  G$engine_audio_manager_sfx_play$   audio_manager
+     00000C4D  _engine_audio_manager_sfx_play     audio_manager
+     00000C4F  A$audio_manager$59                 audio_manager
+     00000C53  A$audio_manager$60                 audio_manager
+     00000C55  A$audio_manager$64                 audio_manager
+     00000C55  C$audio_manager.c$16$1_0$33        audio_manager
+     00000C58  A$audio_manager$65                 audio_manager
+     00000C59  A$audio_manager$69                 audio_manager
+     00000C59  C$audio_manager.c$17$1_0$33        audio_manager
+     00000C5A  A$audio_manager$73                 audio_manager
+     00000C5A  C$audio_manager.c$19$2_0$34        audio_manager
+     00000C5C  A$audio_manager$77                 audio_manager
+     00000C5C  C$audio_manager.c$22$1_0$33        audio_manager
+     00000C5F  A$audio_manager$78                 audio_manager
+     00000C61  A$audio_manager$79                 audio_manager
+     00000C62  A$audio_manager$80                 audio_manager
+     00000C65  A$audio_manager$81                 audio_manager
+     00000C66  A$audio_manager$82                 audio_manager
+     00000C67  A$audio_manager$83                 audio_manager
+     00000C68  A$audio_manager$84                 audio_manager
+     00000C69  A$audio_manager$88                 audio_manager
+     00000C69  C$audio_manager.c$24$1_0$33        audio_manager
+     00000C6A  A$audio_manager$89                 audio_manager
+     00000C6D  A$audio_manager$90                 audio_manager
+     00000C6E  A$audio_manager$91                 audio_manager
+     00000C6F  A$audio_manager$92                 audio_manager
+     00000C70  A$audio_manager$93                 audio_manager
+     00000C71  A$audio_manager$94                 audio_manager
+     00000C72  A$audio_manager$95                 audio_manager
+     00000C75  A$audio_manager$96                 audio_manager
+     00000C76  A$audio_manager$97                 audio_manager
+     00000C77  A$audio_manager$102                audio_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 24.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001531 =        5425. bytes (REL,CON)
+_CODE                               00000200    0000162A =        5674. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00000C77  A$font_manager$76                  font_manager
-     00000C78  A$font_manager$77                  font_manager
-     00000C7B  A$font_manager$78                  font_manager
-     00000C7C  A$font_manager$79                  font_manager
-     00000C7D  A$font_manager$80                  font_manager
-     00000C80  A$font_manager$81                  font_manager
-     00000C81  A$font_manager$82                  font_manager
-     00000C82  A$font_manager$86                  font_manager
-     00000C82  C$font_manager.c$15$1_0$23         font_manager
-     00000C85  A$font_manager$87                  font_manager
-     00000C86  A$font_manager$88                  font_manager
-     00000C87  A$font_manager$89                  font_manager
-     00000C88  A$font_manager$90                  font_manager
-     00000C8B  A$font_manager$91                  font_manager
-     00000C8C  A$font_manager$99                  font_manager
-     00000C8C  C$font_manager.c$16$1_0$23         font_manager
-     00000C8C  XG$engine_font_manager_draw_char   font_manager
-     00000C8D  A$font_manager$109                 font_manager
-     00000C8D  C$font_manager.c$18$1_0$25         font_manager
-     00000C8D  G$engine_font_manager_draw_text$   font_manager
-     00000C8D  _engine_font_manager_draw_text     font_manager
-     00000C8F  A$font_manager$110                 font_manager
-     00000C93  A$font_manager$111                 font_manager
-     00000C95  A$font_manager$118                 font_manager
-     00000C95  C$font_manager.c$20$2_0$25         font_manager
-     00000C95  C$font_manager.c$22$1_0$25         font_manager
-     00000C98  A$font_manager$119                 font_manager
-     00000C9A  A$font_manager$121                 font_manager
-     00000C9D  A$font_manager$122                 font_manager
-     00000C9E  A$font_manager$123                 font_manager
-     00000C9F  A$font_manager$124                 font_manager
-     00000CA2  A$font_manager$125                 font_manager
-     00000CA4  A$font_manager$126                 font_manager
-     00000CA5  A$font_manager$127                 font_manager
-     00000CA6  A$font_manager$128                 font_manager
-     00000CA7  A$font_manager$129                 font_manager
-     00000CA9  A$font_manager$136                 font_manager
-     00000CA9  C$font_manager.c$24$2_0$26         font_manager
-     00000CA9  C$font_manager.c$25$2_0$26         font_manager
-     00000CAB  A$font_manager$137                 font_manager
-     00000CAC  A$font_manager$141                 font_manager
-     00000CAC  C$font_manager.c$26$2_0$26         font_manager
-     00000CAD  A$font_manager$142                 font_manager
-     00000CAE  A$font_manager$143                 font_manager
-     00000CB1  A$font_manager$144                 font_manager
-     00000CB2  A$font_manager$145                 font_manager
-     00000CB3  A$font_manager$146                 font_manager
-     00000CB6  A$font_manager$147                 font_manager
-     00000CB7  A$font_manager$148                 font_manager
-     00000CB8  A$font_manager$149                 font_manager
-     00000CB9  A$font_manager$150                 font_manager
+     00000C79  A$audio_manager$107                audio_manager
+     00000C79  C$audio_manager.c$25$1_0$33        audio_manager
+     00000C79  XG$engine_audio_manager_sfx_play   audio_manager
+     00000C7A  A$content_manager$57               content_manager
+     00000C7A  C$content_manager.c$10$1_0$18      content_manager
+     00000C7A  C$content_manager.c$7$0_0$18       content_manager
+     00000C7A  G$engine_content_manager_load_ti   content_manager
+     00000C7A  _engine_content_manager_load_til   content_manager
+     00000C7D  A$content_manager$58               content_manager
+     00000C7E  A$content_manager$59               content_manager
+     00000C81  A$content_manager$60               content_manager
+     00000C82  A$content_manager$61               content_manager
+     00000C85  A$content_manager$62               content_manager
+     00000C86  A$content_manager$66               content_manager
+     00000C86  C$content_manager.c$11$1_0$18      content_manager
+     00000C89  A$content_manager$67               content_manager
+     00000C8A  A$content_manager$68               content_manager
+     00000C8D  A$content_manager$69               content_manager
+     00000C8E  A$content_manager$77               content_manager
+     00000C8E  C$content_manager.c$12$1_0$18      content_manager
+     00000C8E  XG$engine_content_manager_load_t   content_manager
+     00000C8F  A$font_manager$63                  font_manager
+     00000C8F  C$font_manager.c$10$0_0$23         font_manager
+     00000C8F  C$font_manager.c$12$2_0$23         font_manager
+     00000C8F  C$font_manager.c$13$1_0$23         font_manager
+     00000C8F  G$engine_font_manager_draw_char$   font_manager
+     00000C8F  _engine_font_manager_draw_char     font_manager
+     00000C93  A$font_manager$64                  font_manager
+     00000C95  A$font_manager$65                  font_manager
+     00000C98  A$font_manager$66                  font_manager
+     00000C9A  A$font_manager$67                  font_manager
+     00000C9B  A$font_manager$71                  font_manager
+     00000C9B  C$font_manager.c$14$1_0$23         font_manager
+     00000C9C  A$font_manager$72                  font_manager
+     00000C9F  A$font_manager$73                  font_manager
+     00000CA1  A$font_manager$74                  font_manager
+     00000CA3  A$font_manager$75                  font_manager
+     00000CA4  A$font_manager$76                  font_manager
+     00000CA5  A$font_manager$77                  font_manager
+     00000CA8  A$font_manager$78                  font_manager
+     00000CA9  A$font_manager$79                  font_manager
+     00000CAA  A$font_manager$80                  font_manager
+     00000CAD  A$font_manager$81                  font_manager
+     00000CAE  A$font_manager$82                  font_manager
+     00000CAF  A$font_manager$86                  font_manager
+     00000CAF  C$font_manager.c$15$1_0$23         font_manager
+     00000CB2  A$font_manager$87                  font_manager
+     00000CB3  A$font_manager$88                  font_manager
+     00000CB4  A$font_manager$89                  font_manager
+     00000CB5  A$font_manager$90                  font_manager
+     00000CB8  A$font_manager$91                  font_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 25.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001531 =        5425. bytes (REL,CON)
+_CODE                               00000200    0000162A =        5674. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00000CBA  A$font_manager$151                 font_manager
-     00000CBD  A$font_manager$152                 font_manager
-     00000CBE  A$font_manager$153                 font_manager
-     00000CBF  A$font_manager$154                 font_manager
-     00000CC0  A$font_manager$158                 font_manager
-     00000CC0  C$font_manager.c$27$2_0$26         font_manager
-     00000CC3  A$font_manager$159                 font_manager
-     00000CC4  A$font_manager$160                 font_manager
-     00000CC5  A$font_manager$161                 font_manager
-     00000CC6  A$font_manager$162                 font_manager
-     00000CC7  A$font_manager$163                 font_manager
-     00000CCA  A$font_manager$164                 font_manager
-     00000CCB  A$font_manager$165                 font_manager
-     00000CCC  A$font_manager$169                 font_manager
-     00000CCC  C$font_manager.c$28$2_0$26         font_manager
-     00000CCD  A$font_manager$170                 font_manager
-     00000CCF  A$font_manager$175                 font_manager
-     00000CD1  A$font_manager$180                 font_manager
-     00000CD1  C$font_manager.c$30$1_0$25         font_manager
-     00000CD1  XG$engine_font_manager_draw_text   font_manager
-     00000CD2  A$font_manager$190                 font_manager
-     00000CD2  C$font_manager.c$32$1_0$29         font_manager
-     00000CD2  G$engine_font_manager_draw_data$   font_manager
-     00000CD2  _engine_font_manager_draw_data     font_manager
-     00000CD4  A$font_manager$191                 font_manager
-     00000CD8  A$font_manager$192                 font_manager
-     00000CDA  A$font_manager$193                 font_manager
-     00000CDD  A$font_manager$194                 font_manager
-     00000CDE  A$font_manager$195                 font_manager
-     00000CDF  A$font_manager$202                 font_manager
-     00000CDF  C$font_manager.c$34$2_0$29         font_manager
-     00000CDF  C$font_manager.c$43$3_0$30         font_manager
-     00000CE2  A$font_manager$203                 font_manager
-     00000CE3  A$font_manager$204                 font_manager
-     00000CE4  A$font_manager$205                 font_manager
-     00000CE5  A$font_manager$206                 font_manager
-     00000CE8  A$font_manager$207                 font_manager
-     00000CEB  A$font_manager$208                 font_manager
-     00000CEF  A$font_manager$213                 font_manager
-     00000CEF  C$font_manager.c$45$2_0$29         font_manager
-     00000CF0  A$font_manager$214                 font_manager
-     00000CF3  A$font_manager$215                 font_manager
-     00000CF4  A$font_manager$216                 font_manager
-     00000CF7  A$font_manager$217                 font_manager
-     00000CFA  A$font_manager$218                 font_manager
-     00000CFB  A$font_manager$219                 font_manager
-     00000CFE  A$font_manager$220                 font_manager
-     00000CFF  A$font_manager$221                 font_manager
-     00000D00  A$font_manager$222                 font_manager
-     00000D01  A$font_manager$223                 font_manager
-     00000D02  A$font_manager$224                 font_manager
+     00000CB9  A$font_manager$99                  font_manager
+     00000CB9  C$font_manager.c$16$1_0$23         font_manager
+     00000CB9  XG$engine_font_manager_draw_char   font_manager
+     00000CBA  A$font_manager$109                 font_manager
+     00000CBA  C$font_manager.c$18$1_0$25         font_manager
+     00000CBA  G$engine_font_manager_draw_text$   font_manager
+     00000CBA  _engine_font_manager_draw_text     font_manager
+     00000CBC  A$font_manager$110                 font_manager
+     00000CC0  A$font_manager$111                 font_manager
+     00000CC2  A$font_manager$118                 font_manager
+     00000CC2  C$font_manager.c$20$2_0$25         font_manager
+     00000CC2  C$font_manager.c$22$1_0$25         font_manager
+     00000CC5  A$font_manager$119                 font_manager
+     00000CC7  A$font_manager$121                 font_manager
+     00000CCA  A$font_manager$122                 font_manager
+     00000CCB  A$font_manager$123                 font_manager
+     00000CCC  A$font_manager$124                 font_manager
+     00000CCF  A$font_manager$125                 font_manager
+     00000CD1  A$font_manager$126                 font_manager
+     00000CD2  A$font_manager$127                 font_manager
+     00000CD3  A$font_manager$128                 font_manager
+     00000CD4  A$font_manager$129                 font_manager
+     00000CD6  A$font_manager$136                 font_manager
+     00000CD6  C$font_manager.c$24$2_0$26         font_manager
+     00000CD6  C$font_manager.c$25$2_0$26         font_manager
+     00000CD8  A$font_manager$137                 font_manager
+     00000CD9  A$font_manager$141                 font_manager
+     00000CD9  C$font_manager.c$26$2_0$26         font_manager
+     00000CDA  A$font_manager$142                 font_manager
+     00000CDB  A$font_manager$143                 font_manager
+     00000CDE  A$font_manager$144                 font_manager
+     00000CDF  A$font_manager$145                 font_manager
+     00000CE0  A$font_manager$146                 font_manager
+     00000CE3  A$font_manager$147                 font_manager
+     00000CE4  A$font_manager$148                 font_manager
+     00000CE5  A$font_manager$149                 font_manager
+     00000CE6  A$font_manager$150                 font_manager
+     00000CE7  A$font_manager$151                 font_manager
+     00000CEA  A$font_manager$152                 font_manager
+     00000CEB  A$font_manager$153                 font_manager
+     00000CEC  A$font_manager$154                 font_manager
+     00000CED  A$font_manager$158                 font_manager
+     00000CED  C$font_manager.c$27$2_0$26         font_manager
+     00000CF0  A$font_manager$159                 font_manager
+     00000CF1  A$font_manager$160                 font_manager
+     00000CF2  A$font_manager$161                 font_manager
+     00000CF3  A$font_manager$162                 font_manager
+     00000CF4  A$font_manager$163                 font_manager
+     00000CF7  A$font_manager$164                 font_manager
+     00000CF8  A$font_manager$165                 font_manager
+     00000CF9  A$font_manager$169                 font_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 26.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001531 =        5425. bytes (REL,CON)
+_CODE                               00000200    0000162A =        5674. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00000D05  A$font_manager$225                 font_manager
-     00000D08  A$font_manager$229                 font_manager
-     00000D08  C$font_manager.c$46$2_0$29         font_manager
-     00000D09  A$font_manager$230                 font_manager
-     00000D0A  A$font_manager$231                 font_manager
-     00000D0D  A$font_manager$232                 font_manager
-     00000D0E  A$font_manager$233                 font_manager
-     00000D11  A$font_manager$234                 font_manager
-     00000D14  A$font_manager$235                 font_manager
-     00000D15  A$font_manager$236                 font_manager
-     00000D18  A$font_manager$237                 font_manager
-     00000D19  A$font_manager$238                 font_manager
-     00000D1A  A$font_manager$239                 font_manager
-     00000D1B  A$font_manager$240                 font_manager
-     00000D1C  A$font_manager$241                 font_manager
-     00000D1F  A$font_manager$245                 font_manager
-     00000D1F  C$font_manager.c$48$3_0$30         font_manager
-     00000D22  A$font_manager$246                 font_manager
-     00000D24  A$font_manager$247                 font_manager
-     00000D25  A$font_manager$248                 font_manager
-     00000D28  A$font_manager$249                 font_manager
-     00000D29  A$font_manager$253                 font_manager
-     00000D29  C$font_manager.c$49$3_0$30         font_manager
-     00000D2C  A$font_manager$254                 font_manager
-     00000D2F  A$font_manager$258                 font_manager
-     00000D2F  C$font_manager.c$51$3_0$30         font_manager
-     00000D32  A$font_manager$259                 font_manager
-     00000D34  A$font_manager$260                 font_manager
-     00000D35  A$font_manager$264                 font_manager
-     00000D35  C$font_manager.c$52$3_0$30         font_manager
-     00000D38  A$font_manager$265                 font_manager
-     00000D3B  A$font_manager$266                 font_manager
-     00000D3D  A$font_manager$267                 font_manager
-     00000D40  A$font_manager$268                 font_manager
-     00000D41  A$font_manager$269                 font_manager
-     00000D43  A$font_manager$270                 font_manager
-     00000D46  A$font_manager$271                 font_manager
-     00000D47  A$font_manager$272                 font_manager
-     00000D49  A$font_manager$276                 font_manager
-     00000D49  C$font_manager.c$55$4_0$31         font_manager
-     00000D4B  A$font_manager$281                 font_manager
-     00000D4B  C$font_manager.c$58$3_0$30         font_manager
-     00000D4E  A$font_manager$282                 font_manager
-     00000D51  A$font_manager$283                 font_manager
-     00000D54  A$font_manager$284                 font_manager
-     00000D57  A$font_manager$285                 font_manager
-     00000D58  A$font_manager$286                 font_manager
-     00000D59  A$font_manager$287                 font_manager
-     00000D5C  A$font_manager$288                 font_manager
-     00000D5D  A$font_manager$289                 font_manager
-     00000D5E  A$font_manager$290                 font_manager
+     00000CF9  C$font_manager.c$28$2_0$26         font_manager
+     00000CFA  A$font_manager$170                 font_manager
+     00000CFC  A$font_manager$175                 font_manager
+     00000CFE  A$font_manager$180                 font_manager
+     00000CFE  C$font_manager.c$30$1_0$25         font_manager
+     00000CFE  XG$engine_font_manager_draw_text   font_manager
+     00000CFF  A$font_manager$190                 font_manager
+     00000CFF  C$font_manager.c$32$1_0$29         font_manager
+     00000CFF  G$engine_font_manager_draw_data$   font_manager
+     00000CFF  _engine_font_manager_draw_data     font_manager
+     00000D01  A$font_manager$191                 font_manager
+     00000D05  A$font_manager$192                 font_manager
+     00000D07  A$font_manager$193                 font_manager
+     00000D0A  A$font_manager$194                 font_manager
+     00000D0B  A$font_manager$195                 font_manager
+     00000D0C  A$font_manager$202                 font_manager
+     00000D0C  C$font_manager.c$34$2_0$29         font_manager
+     00000D0C  C$font_manager.c$43$3_0$30         font_manager
+     00000D0F  A$font_manager$203                 font_manager
+     00000D10  A$font_manager$204                 font_manager
+     00000D11  A$font_manager$205                 font_manager
+     00000D12  A$font_manager$206                 font_manager
+     00000D15  A$font_manager$207                 font_manager
+     00000D18  A$font_manager$208                 font_manager
+     00000D1C  A$font_manager$213                 font_manager
+     00000D1C  C$font_manager.c$45$2_0$29         font_manager
+     00000D1D  A$font_manager$214                 font_manager
+     00000D20  A$font_manager$215                 font_manager
+     00000D21  A$font_manager$216                 font_manager
+     00000D24  A$font_manager$217                 font_manager
+     00000D27  A$font_manager$218                 font_manager
+     00000D28  A$font_manager$219                 font_manager
+     00000D2B  A$font_manager$220                 font_manager
+     00000D2C  A$font_manager$221                 font_manager
+     00000D2D  A$font_manager$222                 font_manager
+     00000D2E  A$font_manager$223                 font_manager
+     00000D2F  A$font_manager$224                 font_manager
+     00000D32  A$font_manager$225                 font_manager
+     00000D35  A$font_manager$229                 font_manager
+     00000D35  C$font_manager.c$46$2_0$29         font_manager
+     00000D36  A$font_manager$230                 font_manager
+     00000D37  A$font_manager$231                 font_manager
+     00000D3A  A$font_manager$232                 font_manager
+     00000D3B  A$font_manager$233                 font_manager
+     00000D3E  A$font_manager$234                 font_manager
+     00000D41  A$font_manager$235                 font_manager
+     00000D42  A$font_manager$236                 font_manager
+     00000D45  A$font_manager$237                 font_manager
+     00000D46  A$font_manager$238                 font_manager
+     00000D47  A$font_manager$239                 font_manager
+     00000D48  A$font_manager$240                 font_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 27.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001531 =        5425. bytes (REL,CON)
+_CODE                               00000200    0000162A =        5674. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00000D5F  A$font_manager$291                 font_manager
-     00000D60  A$font_manager$292                 font_manager
-     00000D63  A$font_manager$293                 font_manager
-     00000D64  A$font_manager$294                 font_manager
-     00000D65  A$font_manager$295                 font_manager
-     00000D66  A$font_manager$299                 font_manager
-     00000D66  C$font_manager.c$59$3_0$30         font_manager
-     00000D69  A$font_manager$300                 font_manager
-     00000D6A  A$font_manager$301                 font_manager
-     00000D6B  A$font_manager$302                 font_manager
-     00000D6C  A$font_manager$303                 font_manager
-     00000D6D  A$font_manager$304                 font_manager
-     00000D70  A$font_manager$305                 font_manager
-     00000D71  A$font_manager$306                 font_manager
-     00000D72  A$font_manager$310                 font_manager
-     00000D72  C$font_manager.c$43$2_0$29         font_manager
-     00000D75  A$font_manager$311                 font_manager
-     00000D78  A$font_manager$312                 font_manager
-     00000D7A  A$font_manager$313                 font_manager
-     00000D7D  A$font_manager$317                 font_manager
-     00000D7F  A$font_manager$318                 font_manager
-     00000D81  A$font_manager$323                 font_manager
-     00000D81  C$font_manager.c$61$2_0$29         font_manager
-     00000D81  XG$engine_font_manager_draw_data   font_manager
-     00000D82  A$font_manager$333                 font_manager
-     00000D82  C$font_manager.c$63$2_0$34         font_manager
-     00000D82  G$engine_font_manager_draw_data_   font_manager
-     00000D82  _engine_font_manager_draw_data_Z   font_manager
-     00000D84  A$font_manager$334                 font_manager
-     00000D88  A$font_manager$335                 font_manager
-     00000D8A  A$font_manager$336                 font_manager
-     00000D8D  A$font_manager$337                 font_manager
-     00000D8E  A$font_manager$338                 font_manager
-     00000D8F  A$font_manager$345                 font_manager
-     00000D8F  C$font_manager.c$65$2_0$34         font_manager
-     00000D8F  C$font_manager.c$72$3_0$35         font_manager
-     00000D92  A$font_manager$346                 font_manager
-     00000D93  A$font_manager$347                 font_manager
-     00000D96  A$font_manager$348                 font_manager
-     00000D99  A$font_manager$349                 font_manager
-     00000D9C  A$font_manager$350                 font_manager
-     00000D9F  A$font_manager$351                 font_manager
-     00000DA1  A$font_manager$356                 font_manager
-     00000DA1  C$font_manager.c$74$3_0$35         font_manager
-     00000DA4  A$font_manager$357                 font_manager
-     00000DA7  A$font_manager$358                 font_manager
-     00000DA9  A$font_manager$359                 font_manager
-     00000DAA  A$font_manager$360                 font_manager
-     00000DAB  A$font_manager$361                 font_manager
-     00000DAC  A$font_manager$362                 font_manager
-     00000DAF  A$font_manager$363                 font_manager
+     00000D49  A$font_manager$241                 font_manager
+     00000D4C  A$font_manager$245                 font_manager
+     00000D4C  C$font_manager.c$48$3_0$30         font_manager
+     00000D4F  A$font_manager$246                 font_manager
+     00000D51  A$font_manager$247                 font_manager
+     00000D52  A$font_manager$248                 font_manager
+     00000D55  A$font_manager$249                 font_manager
+     00000D56  A$font_manager$253                 font_manager
+     00000D56  C$font_manager.c$49$3_0$30         font_manager
+     00000D59  A$font_manager$254                 font_manager
+     00000D5C  A$font_manager$258                 font_manager
+     00000D5C  C$font_manager.c$51$3_0$30         font_manager
+     00000D5F  A$font_manager$259                 font_manager
+     00000D61  A$font_manager$260                 font_manager
+     00000D62  A$font_manager$264                 font_manager
+     00000D62  C$font_manager.c$52$3_0$30         font_manager
+     00000D65  A$font_manager$265                 font_manager
+     00000D68  A$font_manager$266                 font_manager
+     00000D6A  A$font_manager$267                 font_manager
+     00000D6D  A$font_manager$268                 font_manager
+     00000D6E  A$font_manager$269                 font_manager
+     00000D70  A$font_manager$270                 font_manager
+     00000D73  A$font_manager$271                 font_manager
+     00000D74  A$font_manager$272                 font_manager
+     00000D76  A$font_manager$276                 font_manager
+     00000D76  C$font_manager.c$55$4_0$31         font_manager
+     00000D78  A$font_manager$281                 font_manager
+     00000D78  C$font_manager.c$58$3_0$30         font_manager
+     00000D7B  A$font_manager$282                 font_manager
+     00000D7E  A$font_manager$283                 font_manager
+     00000D81  A$font_manager$284                 font_manager
+     00000D84  A$font_manager$285                 font_manager
+     00000D85  A$font_manager$286                 font_manager
+     00000D86  A$font_manager$287                 font_manager
+     00000D89  A$font_manager$288                 font_manager
+     00000D8A  A$font_manager$289                 font_manager
+     00000D8B  A$font_manager$290                 font_manager
+     00000D8C  A$font_manager$291                 font_manager
+     00000D8D  A$font_manager$292                 font_manager
+     00000D90  A$font_manager$293                 font_manager
+     00000D91  A$font_manager$294                 font_manager
+     00000D92  A$font_manager$295                 font_manager
+     00000D93  A$font_manager$299                 font_manager
+     00000D93  C$font_manager.c$59$3_0$30         font_manager
+     00000D96  A$font_manager$300                 font_manager
+     00000D97  A$font_manager$301                 font_manager
+     00000D98  A$font_manager$302                 font_manager
+     00000D99  A$font_manager$303                 font_manager
+     00000D9A  A$font_manager$304                 font_manager
+     00000D9D  A$font_manager$305                 font_manager
+     00000D9E  A$font_manager$306                 font_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 28.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001531 =        5425. bytes (REL,CON)
+_CODE                               00000200    0000162A =        5674. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00000DB0  A$font_manager$364                 font_manager
-     00000DB3  A$font_manager$365                 font_manager
-     00000DB6  A$font_manager$366                 font_manager
-     00000DB7  A$font_manager$367                 font_manager
-     00000DBA  A$font_manager$368                 font_manager
-     00000DBB  A$font_manager$369                 font_manager
-     00000DBC  A$font_manager$370                 font_manager
-     00000DBD  A$font_manager$371                 font_manager
-     00000DBE  A$font_manager$372                 font_manager
-     00000DBF  A$font_manager$373                 font_manager
-     00000DC0  A$font_manager$374                 font_manager
-     00000DC1  A$font_manager$378                 font_manager
-     00000DC1  C$font_manager.c$75$2_0$34         font_manager
-     00000DC2  A$font_manager$379                 font_manager
-     00000DC5  A$font_manager$380                 font_manager
-     00000DC6  A$font_manager$381                 font_manager
-     00000DC9  A$font_manager$382                 font_manager
-     00000DCC  A$font_manager$383                 font_manager
-     00000DCD  A$font_manager$384                 font_manager
-     00000DD0  A$font_manager$385                 font_manager
-     00000DD1  A$font_manager$386                 font_manager
-     00000DD2  A$font_manager$387                 font_manager
-     00000DD3  A$font_manager$388                 font_manager
-     00000DD6  A$font_manager$389                 font_manager
-     00000DD9  A$font_manager$393                 font_manager
-     00000DD9  C$font_manager.c$77$3_0$35         font_manager
-     00000DDA  A$font_manager$394                 font_manager
-     00000DDC  A$font_manager$395                 font_manager
-     00000DDD  A$font_manager$399                 font_manager
-     00000DDD  C$font_manager.c$79$3_0$35         font_manager
-     00000DE0  A$font_manager$400                 font_manager
-     00000DE3  A$font_manager$401                 font_manager
-     00000DE6  A$font_manager$402                 font_manager
-     00000DE9  A$font_manager$403                 font_manager
-     00000DEA  A$font_manager$404                 font_manager
-     00000DED  A$font_manager$405                 font_manager
-     00000DEE  A$font_manager$406                 font_manager
-     00000DEF  A$font_manager$407                 font_manager
-     00000DF0  A$font_manager$408                 font_manager
-     00000DF1  A$font_manager$409                 font_manager
-     00000DF4  A$font_manager$410                 font_manager
-     00000DF5  A$font_manager$411                 font_manager
-     00000DF6  A$font_manager$415                 font_manager
-     00000DF6  C$font_manager.c$80$3_0$35         font_manager
-     00000DF9  A$font_manager$416                 font_manager
-     00000DFA  A$font_manager$417                 font_manager
-     00000DFB  A$font_manager$418                 font_manager
-     00000DFC  A$font_manager$419                 font_manager
-     00000DFD  A$font_manager$420                 font_manager
-     00000E00  A$font_manager$421                 font_manager
-     00000E01  A$font_manager$422                 font_manager
+     00000D9F  A$font_manager$310                 font_manager
+     00000D9F  C$font_manager.c$43$2_0$29         font_manager
+     00000DA2  A$font_manager$311                 font_manager
+     00000DA5  A$font_manager$312                 font_manager
+     00000DA7  A$font_manager$313                 font_manager
+     00000DAA  A$font_manager$317                 font_manager
+     00000DAC  A$font_manager$318                 font_manager
+     00000DAE  A$font_manager$323                 font_manager
+     00000DAE  C$font_manager.c$61$2_0$29         font_manager
+     00000DAE  XG$engine_font_manager_draw_data   font_manager
+     00000DAF  A$font_manager$333                 font_manager
+     00000DAF  C$font_manager.c$63$2_0$34         font_manager
+     00000DAF  G$engine_font_manager_draw_data_   font_manager
+     00000DAF  _engine_font_manager_draw_data_Z   font_manager
+     00000DB1  A$font_manager$334                 font_manager
+     00000DB5  A$font_manager$335                 font_manager
+     00000DB7  A$font_manager$336                 font_manager
+     00000DBA  A$font_manager$337                 font_manager
+     00000DBB  A$font_manager$338                 font_manager
+     00000DBC  A$font_manager$345                 font_manager
+     00000DBC  C$font_manager.c$65$2_0$34         font_manager
+     00000DBC  C$font_manager.c$72$3_0$35         font_manager
+     00000DBF  A$font_manager$346                 font_manager
+     00000DC0  A$font_manager$347                 font_manager
+     00000DC3  A$font_manager$348                 font_manager
+     00000DC6  A$font_manager$349                 font_manager
+     00000DC9  A$font_manager$350                 font_manager
+     00000DCC  A$font_manager$351                 font_manager
+     00000DCE  A$font_manager$356                 font_manager
+     00000DCE  C$font_manager.c$74$3_0$35         font_manager
+     00000DD1  A$font_manager$357                 font_manager
+     00000DD4  A$font_manager$358                 font_manager
+     00000DD6  A$font_manager$359                 font_manager
+     00000DD7  A$font_manager$360                 font_manager
+     00000DD8  A$font_manager$361                 font_manager
+     00000DD9  A$font_manager$362                 font_manager
+     00000DDC  A$font_manager$363                 font_manager
+     00000DDD  A$font_manager$364                 font_manager
+     00000DE0  A$font_manager$365                 font_manager
+     00000DE3  A$font_manager$366                 font_manager
+     00000DE4  A$font_manager$367                 font_manager
+     00000DE7  A$font_manager$368                 font_manager
+     00000DE8  A$font_manager$369                 font_manager
+     00000DE9  A$font_manager$370                 font_manager
+     00000DEA  A$font_manager$371                 font_manager
+     00000DEB  A$font_manager$372                 font_manager
+     00000DEC  A$font_manager$373                 font_manager
+     00000DED  A$font_manager$374                 font_manager
+     00000DEE  A$font_manager$378                 font_manager
+     00000DEE  C$font_manager.c$75$2_0$34         font_manager
+     00000DEF  A$font_manager$379                 font_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 29.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001531 =        5425. bytes (REL,CON)
+_CODE                               00000200    0000162A =        5674. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00000E02  A$font_manager$426                 font_manager
-     00000E02  C$font_manager.c$72$2_0$34         font_manager
-     00000E03  A$font_manager$427                 font_manager
-     00000E04  A$font_manager$428                 font_manager
-     00000E06  A$font_manager$429                 font_manager
-     00000E08  A$font_manager$433                 font_manager
-     00000E0A  A$font_manager$434                 font_manager
-     00000E0C  A$font_manager$439                 font_manager
-     00000E0C  C$font_manager.c$82$2_0$34         font_manager
-     00000E0C  XG$engine_font_manager_draw_data   font_manager
-     00000E0D  A$screen_manager$57                screen_manager
-     00000E0D  C$screen_manager.c$5$0_0$5         screen_manager
-     00000E0D  C$screen_manager.c$7$1_0$5         screen_manager
-     00000E0D  G$engine_screen_manager_init$0$0   screen_manager
-     00000E0D  _engine_screen_manager_init        screen_manager
-     00000E10  A$screen_manager$58                screen_manager
-     00000E11  A$screen_manager$59                screen_manager
-     00000E14  A$screen_manager$60                screen_manager
-     00000E15  A$screen_manager$61                screen_manager
-     00000E18  A$screen_manager$62                screen_manager
-     00000E19  A$screen_manager$63                screen_manager
-     00000E1A  A$screen_manager$67                screen_manager
-     00000E1A  C$screen_manager.c$8$1_0$5         screen_manager
-     00000E1D  A$screen_manager$68                screen_manager
-     00000E1E  A$screen_manager$69                screen_manager
-     00000E21  A$screen_manager$70                screen_manager
-     00000E22  A$screen_manager$71                screen_manager
-     00000E25  A$screen_manager$72                screen_manager
-     00000E26  A$screen_manager$73                screen_manager
-     00000E27  A$screen_manager$77                screen_manager
-     00000E27  C$screen_manager.c$9$1_0$5         screen_manager
-     00000E2A  A$screen_manager$78                screen_manager
-     00000E2B  A$screen_manager$79                screen_manager
-     00000E2E  A$screen_manager$80                screen_manager
-     00000E2F  A$screen_manager$81                screen_manager
-     00000E32  A$screen_manager$82                screen_manager
-     00000E33  A$screen_manager$83                screen_manager
-     00000E34  A$screen_manager$91                screen_manager
-     00000E34  C$screen_manager.c$10$1_0$5        screen_manager
-     00000E34  XG$engine_screen_manager_init$0$   screen_manager
-     00000E35  Fscreen_manager$__str_0$0_0$0      screen_manager
-     00000E4F  Fscreen_manager$__str_1$0_0$0      screen_manager
-     00000E69  Fscreen_manager$__str_2$0_0$0      screen_manager
-     00000E83  A$screen_manager$120               screen_manager
-     00000E83  C$screen_manager.c$12$1_0$7        screen_manager
-     00000E83  C$screen_manager.c$50$1_0$7        screen_manager
-     00000E83  G$engine_screen_manager_update$0   screen_manager
-     00000E83  XG$engine_screen_manager_update$   screen_manager
-     00000E83  _engine_screen_manager_update      screen_manager
-     00000E84  G$font_tiles__palette__bin$0_0$0   gfx
-     00000E84  _font_tiles__palette__bin          gfx
+     00000DF2  A$font_manager$380                 font_manager
+     00000DF3  A$font_manager$381                 font_manager
+     00000DF6  A$font_manager$382                 font_manager
+     00000DF9  A$font_manager$383                 font_manager
+     00000DFA  A$font_manager$384                 font_manager
+     00000DFD  A$font_manager$385                 font_manager
+     00000DFE  A$font_manager$386                 font_manager
+     00000DFF  A$font_manager$387                 font_manager
+     00000E00  A$font_manager$388                 font_manager
+     00000E03  A$font_manager$389                 font_manager
+     00000E06  A$font_manager$393                 font_manager
+     00000E06  C$font_manager.c$77$3_0$35         font_manager
+     00000E07  A$font_manager$394                 font_manager
+     00000E09  A$font_manager$395                 font_manager
+     00000E0A  A$font_manager$399                 font_manager
+     00000E0A  C$font_manager.c$79$3_0$35         font_manager
+     00000E0D  A$font_manager$400                 font_manager
+     00000E10  A$font_manager$401                 font_manager
+     00000E13  A$font_manager$402                 font_manager
+     00000E16  A$font_manager$403                 font_manager
+     00000E17  A$font_manager$404                 font_manager
+     00000E1A  A$font_manager$405                 font_manager
+     00000E1B  A$font_manager$406                 font_manager
+     00000E1C  A$font_manager$407                 font_manager
+     00000E1D  A$font_manager$408                 font_manager
+     00000E1E  A$font_manager$409                 font_manager
+     00000E21  A$font_manager$410                 font_manager
+     00000E22  A$font_manager$411                 font_manager
+     00000E23  A$font_manager$415                 font_manager
+     00000E23  C$font_manager.c$80$3_0$35         font_manager
+     00000E26  A$font_manager$416                 font_manager
+     00000E27  A$font_manager$417                 font_manager
+     00000E28  A$font_manager$418                 font_manager
+     00000E29  A$font_manager$419                 font_manager
+     00000E2A  A$font_manager$420                 font_manager
+     00000E2D  A$font_manager$421                 font_manager
+     00000E2E  A$font_manager$422                 font_manager
+     00000E2F  A$font_manager$426                 font_manager
+     00000E2F  C$font_manager.c$72$2_0$34         font_manager
+     00000E30  A$font_manager$427                 font_manager
+     00000E31  A$font_manager$428                 font_manager
+     00000E33  A$font_manager$429                 font_manager
+     00000E35  A$font_manager$433                 font_manager
+     00000E37  A$font_manager$434                 font_manager
+     00000E39  A$font_manager$439                 font_manager
+     00000E39  C$font_manager.c$82$2_0$34         font_manager
+     00000E39  XG$engine_font_manager_draw_data   font_manager
+     00000E3A  A$input_manager$80                 input_manager
+     00000E3A  C$input_manager.c$13$0_0$20        input_manager
+     00000E3A  C$input_manager.c$15$1_0$20        input_manager
+     00000E3A  G$engine_input_manager_update$0$   input_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 30.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001531 =        5425. bytes (REL,CON)
+_CODE                               00000200    0000162A =        5674. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00000E94  G$font_tiles__tilemap__bin$0_0$0   gfx
-     00000E94  _font_tiles__tilemap__bin          gfx
-     00000F14  G$font_tiles__tiles__psgcompr$0_   gfx
-     00000F14  _font_tiles__tiles__psgcompr       gfx
-     000011AB  __divuint                          
-     000011B3  __divuchar                         
-     000011BA  __divu8                            
-     000011BD  __divu16                           
-     000011EC  _UNSAFE_SMS_copySpritestoSAT       SMSlib_UNSAFE
-     00001233  _UNSAFE_SMS_VRAMmemcpy32           SMSlib_UNSAFE
-     00001253  _UNSAFE_SMS_VRAMmemcpy64           SMSlib_UNSAFE
-     00001273  _UNSAFE_SMS_VRAMmemcpy128          SMSlib_UNSAFE
-     00001293  _SMS_init                          SMSlib
-     000012BF  _VDPReg_init                       SMSlib
-     000012CA  _SMS_VDPturnOnFeature              SMSlib
-     000012DF  _SMS_VDPturnOffFeature             SMSlib
-     000012F7  _SMS_setBGScrollX                  SMSlib
-     00001301  _SMS_setBGScrollY                  SMSlib
-     0000130B  _SMS_setBackdropColor              SMSlib
-     00001315  _SMS_useFirstHalfTilesforSprites   SMSlib
-     0000132B  _SMS_setSpriteMode                 SMSlib
-     00001379  _SMS_setBGPaletteColor             SMSlib
-     0000138D  _SMS_setSpritePaletteColor         SMSlib
-     000013A1  _SMS_loadBGPalette                 SMSlib
-     000013B6  _SMS_loadSpritePalette             SMSlib
-     000013CB  _SMS_setColor                      SMSlib
-     000013CF  _SMS_waitForVBlank                 SMSlib
-     000013DC  _SMS_getKeysStatus                 SMSlib
-     000013E0  _SMS_getKeysPressed                SMSlib
-     000013FD  _SMS_getKeysHeld                   SMSlib
-     00001411  _SMS_getKeysReleased               SMSlib
-     0000142E  _SMS_queryPauseRequested           SMSlib
-     00001433  _SMS_resetPauseRequest             SMSlib
-     00001439  _SMS_setLineInterruptHandler       SMSlib
-     0000143D  _SMS_setLineCounter                SMSlib
-     00001447  _SMS_getVCount                     SMSlib
-     0000144B  _SMS_getHCount                     SMSlib
-     0000144F  _SMS_isr                           SMSlib
-     00001485  _SMS_nmi_isr                       SMSlib
-     0000148E  _SMS_loadPSGaidencompressedTiles   SMSlib_PSGaiden
-     00001568  _SMS_initSprites                   SMSlib_sprite
-     0000156E  _SMS_addSprite                     SMSlib_sprite
-     000015A1  _SMS_copySpritestoSAT              SMSlib_sprite
-     000015D7  ___sdcc_call_hl                    
-     000015D8  _SMS_finalizeSprites               SMSlib_deprecated
-     000015D9  _SMS_VRAMmemcpy                    SMSlib_VRAMmemcpy
-     000015F2  _SMS_loadSTMcompressedTileMapatA   SMSlib_STMcomp
-     0000171A  __moduchar                         
-     00001726  __moduint                          
+     00000E3A  _engine_input_manager_update       input_manager
+     00000E3D  A$input_manager$81                 input_manager
+     00000E40  A$input_manager$85                 input_manager
+     00000E40  C$input_manager.c$16$1_0$20        input_manager
+     00000E43  A$input_manager$86                 input_manager
+     00000E46  A$input_manager$94                 input_manager
+     00000E46  C$input_manager.c$17$1_0$20        input_manager
+     00000E46  XG$engine_input_manager_update$0   input_manager
+     00000E47  A$input_manager$107                input_manager
+     00000E47  C$input_manager.c$20$1_0$21        input_manager
+     00000E47  C$input_manager.c$22$1_0$21        input_manager
+     00000E47  G$engine_input_manager_hold_up$0   input_manager
+     00000E47  _engine_input_manager_hold_up      input_manager
+     00000E4A  A$input_manager$108                input_manager
+     00000E4B  A$input_manager$109                input_manager
+     00000E4E  A$input_manager$110                input_manager
+     00000E4F  A$input_manager$118                input_manager
+     00000E4F  C$input_manager.c$23$1_0$21        input_manager
+     00000E4F  XG$engine_input_manager_hold_up$   input_manager
+     00000E50  A$input_manager$131                input_manager
+     00000E50  C$input_manager.c$24$1_0$22        input_manager
+     00000E50  C$input_manager.c$26$1_0$22        input_manager
+     00000E50  G$engine_input_manager_hold_down   input_manager
+     00000E50  _engine_input_manager_hold_down    input_manager
+     00000E53  A$input_manager$132                input_manager
+     00000E54  A$input_manager$133                input_manager
+     00000E57  A$input_manager$134                input_manager
+     00000E58  A$input_manager$142                input_manager
+     00000E58  C$input_manager.c$27$1_0$22        input_manager
+     00000E58  XG$engine_input_manager_hold_dow   input_manager
+     00000E59  A$input_manager$155                input_manager
+     00000E59  C$input_manager.c$28$1_0$23        input_manager
+     00000E59  C$input_manager.c$30$1_0$23        input_manager
+     00000E59  G$engine_input_manager_hold_left   input_manager
+     00000E59  _engine_input_manager_hold_left    input_manager
+     00000E5C  A$input_manager$156                input_manager
+     00000E5D  A$input_manager$157                input_manager
+     00000E60  A$input_manager$158                input_manager
+     00000E61  A$input_manager$166                input_manager
+     00000E61  C$input_manager.c$31$1_0$23        input_manager
+     00000E61  XG$engine_input_manager_hold_lef   input_manager
+     00000E62  A$input_manager$179                input_manager
+     00000E62  C$input_manager.c$32$1_0$24        input_manager
+     00000E62  C$input_manager.c$34$1_0$24        input_manager
+     00000E62  G$engine_input_manager_hold_righ   input_manager
+     00000E62  _engine_input_manager_hold_right   input_manager
+     00000E65  A$input_manager$180                input_manager
+     00000E66  A$input_manager$181                input_manager
+     00000E69  A$input_manager$182                input_manager
+     00000E6A  A$input_manager$190                input_manager
+     00000E6A  C$input_manager.c$35$1_0$24        input_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 31.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    0000162A =        5674. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000E6A  XG$engine_input_manager_hold_rig   input_manager
+     00000E6B  A$input_manager$203                input_manager
+     00000E6B  C$input_manager.c$36$1_0$25        input_manager
+     00000E6B  C$input_manager.c$38$1_0$25        input_manager
+     00000E6B  G$engine_input_manager_hold_fire   input_manager
+     00000E6B  _engine_input_manager_hold_fire1   input_manager
+     00000E6E  A$input_manager$204                input_manager
+     00000E6F  A$input_manager$205                input_manager
+     00000E72  A$input_manager$206                input_manager
+     00000E73  A$input_manager$214                input_manager
+     00000E73  C$input_manager.c$39$1_0$25        input_manager
+     00000E73  XG$engine_input_manager_hold_fir   input_manager
+     00000E74  A$input_manager$227                input_manager
+     00000E74  C$input_manager.c$40$1_0$26        input_manager
+     00000E74  C$input_manager.c$42$1_0$26        input_manager
+     00000E74  G$engine_input_manager_hold_fire   input_manager
+     00000E74  _engine_input_manager_hold_fire2   input_manager
+     00000E77  A$input_manager$228                input_manager
+     00000E78  A$input_manager$229                input_manager
+     00000E7B  A$input_manager$230                input_manager
+     00000E7C  A$input_manager$238                input_manager
+     00000E7C  C$input_manager.c$43$1_0$26        input_manager
+     00000E7C  XG$engine_input_manager_hold_fir   input_manager
+     00000E7D  A$input_manager$251                input_manager
+     00000E7D  C$input_manager.c$46$1_0$27        input_manager
+     00000E7D  C$input_manager.c$48$1_0$27        input_manager
+     00000E7D  G$engine_input_manager_move_up$0   input_manager
+     00000E7D  _engine_input_manager_move_up      input_manager
+     00000E80  A$input_manager$252                input_manager
+     00000E81  A$input_manager$253                input_manager
+     00000E84  A$input_manager$254                input_manager
+     00000E85  A$input_manager$262                input_manager
+     00000E85  C$input_manager.c$49$1_0$27        input_manager
+     00000E85  XG$engine_input_manager_move_up$   input_manager
+     00000E86  A$input_manager$275                input_manager
+     00000E86  C$input_manager.c$50$1_0$28        input_manager
+     00000E86  C$input_manager.c$52$1_0$28        input_manager
+     00000E86  G$engine_input_manager_move_down   input_manager
+     00000E86  _engine_input_manager_move_down    input_manager
+     00000E89  A$input_manager$276                input_manager
+     00000E8A  A$input_manager$277                input_manager
+     00000E8D  A$input_manager$278                input_manager
+     00000E8E  A$input_manager$286                input_manager
+     00000E8E  C$input_manager.c$53$1_0$28        input_manager
+     00000E8E  XG$engine_input_manager_move_dow   input_manager
+     00000E8F  A$input_manager$299                input_manager
+     00000E8F  C$input_manager.c$54$1_0$29        input_manager
+     00000E8F  C$input_manager.c$56$1_0$29        input_manager
+     00000E8F  G$engine_input_manager_move_left   input_manager
+     00000E8F  _engine_input_manager_move_left    input_manager
+     00000E92  A$input_manager$300                input_manager
+ASxxxx Linker V03.00 + NoICE + sdld,  page 32.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    0000162A =        5674. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000E93  A$input_manager$301                input_manager
+     00000E96  A$input_manager$302                input_manager
+     00000E97  A$input_manager$310                input_manager
+     00000E97  C$input_manager.c$57$1_0$29        input_manager
+     00000E97  XG$engine_input_manager_move_lef   input_manager
+     00000E98  A$input_manager$323                input_manager
+     00000E98  C$input_manager.c$58$1_0$30        input_manager
+     00000E98  C$input_manager.c$60$1_0$30        input_manager
+     00000E98  G$engine_input_manager_move_righ   input_manager
+     00000E98  _engine_input_manager_move_right   input_manager
+     00000E9B  A$input_manager$324                input_manager
+     00000E9C  A$input_manager$325                input_manager
+     00000E9F  A$input_manager$326                input_manager
+     00000EA0  A$input_manager$334                input_manager
+     00000EA0  C$input_manager.c$61$1_0$30        input_manager
+     00000EA0  XG$engine_input_manager_move_rig   input_manager
+     00000EA1  A$input_manager$347                input_manager
+     00000EA1  C$input_manager.c$62$1_0$31        input_manager
+     00000EA1  C$input_manager.c$64$1_0$31        input_manager
+     00000EA1  G$engine_input_manager_move_fire   input_manager
+     00000EA1  _engine_input_manager_move_fire1   input_manager
+     00000EA4  A$input_manager$348                input_manager
+     00000EA5  A$input_manager$349                input_manager
+     00000EA8  A$input_manager$350                input_manager
+     00000EA9  A$input_manager$358                input_manager
+     00000EA9  C$input_manager.c$65$1_0$31        input_manager
+     00000EA9  XG$engine_input_manager_move_fir   input_manager
+     00000EAA  A$input_manager$371                input_manager
+     00000EAA  C$input_manager.c$66$1_0$32        input_manager
+     00000EAA  C$input_manager.c$68$1_0$32        input_manager
+     00000EAA  G$engine_input_manager_move_fire   input_manager
+     00000EAA  _engine_input_manager_move_fire2   input_manager
+     00000EAD  A$input_manager$372                input_manager
+     00000EAE  A$input_manager$373                input_manager
+     00000EB1  A$input_manager$374                input_manager
+     00000EB2  A$input_manager$382                input_manager
+     00000EB2  C$input_manager.c$69$1_0$32        input_manager
+     00000EB2  XG$engine_input_manager_move_fir   input_manager
+     00000EB3  A$input_manager$395                input_manager
+     00000EB3  C$input_manager.c$72$1_0$34        input_manager
+     00000EB3  C$input_manager.c$74$1_0$34        input_manager
+     00000EB3  Finput_manager$engine_input_mana   input_manager
+     00000EB6  A$input_manager$396                input_manager
+     00000EBA  A$input_manager$397                input_manager
+     00000EBC  A$input_manager$398                input_manager
+     00000EBF  A$input_manager$399                input_manager
+     00000EC0  A$input_manager$400                input_manager
+     00000EC3  A$input_manager$401                input_manager
+     00000EC7  A$input_manager$402                input_manager
+     00000EC9  A$input_manager$403                input_manager
+     00000ECC  A$input_manager$404                input_manager
+ASxxxx Linker V03.00 + NoICE + sdld,  page 33.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    0000162A =        5674. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000ECD  A$input_manager$405                input_manager
+     00000ECF  A$input_manager$406                input_manager
+     00000ED2  A$input_manager$407                input_manager
+     00000ED6  A$input_manager$408                input_manager
+     00000ED8  A$input_manager$409                input_manager
+     00000EDB  A$input_manager$410                input_manager
+     00000EDC  A$input_manager$411                input_manager
+     00000EDF  A$input_manager$412                input_manager
+     00000EE3  A$input_manager$413                input_manager
+     00000EE5  A$input_manager$414                input_manager
+     00000EE8  A$input_manager$415                input_manager
+     00000EE9  A$input_manager$416                input_manager
+     00000EEB  A$input_manager$418                input_manager
+     00000EED  A$input_manager$419                input_manager
+     00000EEE  A$input_manager$421                input_manager
+     00000EF0  A$input_manager$429                input_manager
+     00000EF0  C$input_manager.c$75$1_0$34        input_manager
+     00000EF0  XFinput_manager$engine_input_man   input_manager
+     00000EF1  A$input_manager$442                input_manager
+     00000EF1  C$input_manager.c$76$1_0$36        input_manager
+     00000EF1  C$input_manager.c$78$1_0$36        input_manager
+     00000EF1  Finput_manager$engine_input_mana   input_manager
+     00000EF4  A$input_manager$443                input_manager
+     00000EF8  A$input_manager$444                input_manager
+     00000EFA  A$input_manager$445                input_manager
+     00000EFD  A$input_manager$446                input_manager
+     00000EFE  A$input_manager$447                input_manager
+     00000EFF  A$input_manager$455                input_manager
+     00000EFF  C$input_manager.c$79$1_0$36        input_manager
+     00000EFF  XFinput_manager$engine_input_man   input_manager
+     00000F00  A$screen_manager$57                screen_manager
+     00000F00  C$screen_manager.c$5$0_0$5         screen_manager
+     00000F00  C$screen_manager.c$7$1_0$5         screen_manager
+     00000F00  G$engine_screen_manager_init$0$0   screen_manager
+     00000F00  _engine_screen_manager_init        screen_manager
+     00000F03  A$screen_manager$58                screen_manager
+     00000F04  A$screen_manager$59                screen_manager
+     00000F07  A$screen_manager$60                screen_manager
+     00000F08  A$screen_manager$61                screen_manager
+     00000F0B  A$screen_manager$62                screen_manager
+     00000F0C  A$screen_manager$63                screen_manager
+     00000F0D  A$screen_manager$67                screen_manager
+     00000F0D  C$screen_manager.c$8$1_0$5         screen_manager
+     00000F10  A$screen_manager$68                screen_manager
+     00000F11  A$screen_manager$69                screen_manager
+     00000F14  A$screen_manager$70                screen_manager
+     00000F15  A$screen_manager$71                screen_manager
+     00000F18  A$screen_manager$72                screen_manager
+     00000F19  A$screen_manager$73                screen_manager
+     00000F1A  A$screen_manager$77                screen_manager
+     00000F1A  C$screen_manager.c$9$1_0$5         screen_manager
+ASxxxx Linker V03.00 + NoICE + sdld,  page 34.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    0000162A =        5674. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000F1D  A$screen_manager$78                screen_manager
+     00000F1E  A$screen_manager$79                screen_manager
+     00000F21  A$screen_manager$80                screen_manager
+     00000F22  A$screen_manager$81                screen_manager
+     00000F25  A$screen_manager$82                screen_manager
+     00000F26  A$screen_manager$83                screen_manager
+     00000F27  A$screen_manager$91                screen_manager
+     00000F27  C$screen_manager.c$10$1_0$5        screen_manager
+     00000F27  XG$engine_screen_manager_init$0$   screen_manager
+     00000F28  Fscreen_manager$__str_0$0_0$0      screen_manager
+     00000F42  Fscreen_manager$__str_1$0_0$0      screen_manager
+     00000F5C  Fscreen_manager$__str_2$0_0$0      screen_manager
+     00000F76  A$screen_manager$120               screen_manager
+     00000F76  C$screen_manager.c$12$1_0$7        screen_manager
+     00000F76  C$screen_manager.c$50$1_0$7        screen_manager
+     00000F76  G$engine_screen_manager_update$0   screen_manager
+     00000F76  XG$engine_screen_manager_update$   screen_manager
+     00000F76  _engine_screen_manager_update      screen_manager
+     00000F77  G$sfx_object_bank$0_0$0            audio_object
+     00000F77  _sfx_object_bank                   audio_object
+     00000F7D  G$font_tiles__palette__bin$0_0$0   gfx
+     00000F7D  _font_tiles__palette__bin          gfx
+     00000F8D  G$font_tiles__tilemap__bin$0_0$0   gfx
+     00000F8D  _font_tiles__tilemap__bin          gfx
+     0000100D  G$font_tiles__tiles__psgcompr$0_   gfx
+     0000100D  _font_tiles__tiles__psgcompr       gfx
+     000012A4  __divuint                          
+     000012AC  __divuchar                         
+     000012B3  __divu8                            
+     000012B6  __divu16                           
+     000012E5  _UNSAFE_SMS_copySpritestoSAT       SMSlib_UNSAFE
+     0000132C  _UNSAFE_SMS_VRAMmemcpy32           SMSlib_UNSAFE
+     0000134C  _UNSAFE_SMS_VRAMmemcpy64           SMSlib_UNSAFE
+     0000136C  _UNSAFE_SMS_VRAMmemcpy128          SMSlib_UNSAFE
+     0000138C  _SMS_init                          SMSlib
+     000013B8  _VDPReg_init                       SMSlib
+     000013C3  _SMS_VDPturnOnFeature              SMSlib
+     000013D8  _SMS_VDPturnOffFeature             SMSlib
+     000013F0  _SMS_setBGScrollX                  SMSlib
+     000013FA  _SMS_setBGScrollY                  SMSlib
+     00001404  _SMS_setBackdropColor              SMSlib
+     0000140E  _SMS_useFirstHalfTilesforSprites   SMSlib
+     00001424  _SMS_setSpriteMode                 SMSlib
+     00001472  _SMS_setBGPaletteColor             SMSlib
+     00001486  _SMS_setSpritePaletteColor         SMSlib
+     0000149A  _SMS_loadBGPalette                 SMSlib
+     000014AF  _SMS_loadSpritePalette             SMSlib
+     000014C4  _SMS_setColor                      SMSlib
+     000014C8  _SMS_waitForVBlank                 SMSlib
+     000014D5  _SMS_getKeysStatus                 SMSlib
+     000014D9  _SMS_getKeysPressed                SMSlib
+ASxxxx Linker V03.00 + NoICE + sdld,  page 35.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    0000162A =        5674. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000014F6  _SMS_getKeysHeld                   SMSlib
+     0000150A  _SMS_getKeysReleased               SMSlib
+     00001527  _SMS_queryPauseRequested           SMSlib
+     0000152C  _SMS_resetPauseRequest             SMSlib
+     00001532  _SMS_setLineInterruptHandler       SMSlib
+     00001536  _SMS_setLineCounter                SMSlib
+     00001540  _SMS_getVCount                     SMSlib
+     00001544  _SMS_getHCount                     SMSlib
+     00001548  _SMS_isr                           SMSlib
+     0000157E  _SMS_nmi_isr                       SMSlib
+     00001587  _SMS_loadPSGaidencompressedTiles   SMSlib_PSGaiden
+     00001661  _SMS_initSprites                   SMSlib_sprite
+     00001667  _SMS_addSprite                     SMSlib_sprite
+     0000169A  _SMS_copySpritestoSAT              SMSlib_sprite
+     000016D0  ___sdcc_call_hl                    
+     000016D1  _SMS_finalizeSprites               SMSlib_deprecated
+     000016D2  _SMS_VRAMmemcpy                    SMSlib_VRAMmemcpy
+     000016EB  _SMS_loadSTMcompressedTileMapatA   SMSlib_STMcomp
+     00001813  __moduchar                         
+     0000181F  __moduint                          
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 36.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -1758,7 +2036,7 @@ _HEADER0                            00000000    00000008 =           8. bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-ASxxxx Linker V03.00 + NoICE + sdld,  page 32.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 37.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -1769,7 +2047,7 @@ _HEADER1                            00000000    00000009 =           9. bytes (A
       -----  --------------------------------   ------------------------
      00000008  _SMS_crt0_RST08                    crt0
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 33.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 38.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -1780,7 +2058,7 @@ _HEADER2                            00000000    00000018 =          24. bytes (A
       -----  --------------------------------   ------------------------
      00000018  _SMS_crt0_RST18                    crt0
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 34.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 39.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -1789,7 +2067,7 @@ _HEADER3                            00000000    0000002B =          43. bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-ASxxxx Linker V03.00 + NoICE + sdld,  page 35.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 40.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -1803,41 +2081,44 @@ _HEADER4                            00000000    00000104 =         260. bytes (A
      00000129  _OUTI32                            crt0
      00000169  _outi_block                        crt0
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 36.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 41.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_INITIALIZER                        00001731    00000005 =           5. bytes (REL,CON)
+_INITIALIZER                        0000182A    00000015 =          21. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-ASxxxx Linker V03.00 + NoICE + sdld,  page 37.
+     0000182A  Finput_manager$__xinit_curr_joyp   input_manager
+     0000182C  Finput_manager$__xinit_prev_joyp   input_manager
+     0000182E  Faudio_object$__xinit_sfx_object   audio_object
+ASxxxx Linker V03.00 + NoICE + sdld,  page 42.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSINIT                             00001736    0000000F =          15. bytes (REL,CON)
+_GSINIT                             0000183F    0000000F =          15. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00001736  gsinit                             crt0
+     0000183F  gsinit                             crt0
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 38.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 43.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSFINAL                            00001745    00000001 =           1. bytes (REL,CON)
+_GSFINAL                            0000184E    00000001 =           1. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-ASxxxx Linker V03.00 + NoICE + sdld,  page 39.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 44.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_DATA                               0000C000    00000119 =         281. bytes (REL,CON)
+_DATA                               0000C000    0000011A =         282. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -1870,40 +2151,44 @@ _DATA                               0000C000    00000119 =         281. bytes (R
      0000C021  _PSGSFXLoopFlag                    PSGlib
      0000C022  _PSGSFXSubstringLen                PSGlib
      0000C023  _PSGSFXSubstringRetAddr            PSGlib
-     0000C025  _VDPBlank                          SMSlib
-     0000C026  _SMS_VDPFlags                      SMSlib
-     0000C027  _PauseRequested                    SMSlib
-     0000C028  _SMS_Port3EBIOSvalue               SMSlib
-     0000C029  _KeysStatus                        SMSlib
-     0000C02B  _PreviousKeysStatus                SMSlib
-     0000C02D  _SMS_theLineInterruptHandler       SMSlib
-     0000C02F  _decompBuffer                      SMSlib_PSGaiden
-     0000C04F  _SpriteTableY                      SMSlib_sprite
-     0000C08F  _SpriteTableXN                     SMSlib_sprite
-     0000C10F  _SpriteNextFree                    SMSlib_sprite
-     0000C110  _STM_src                           SMSlib_STMcomp
-     0000C112  _STM_dest                          SMSlib_STMcomp
-     0000C114  _STM_HH                            SMSlib_STMcomp
-     0000C115  _STM_oldHH                         SMSlib_STMcomp
-     0000C116  _STM_needRestore                   SMSlib_STMcomp
-     0000C117  _STM_ttw                           SMSlib_STMcomp
-     0000C118  _STM_width                         SMSlib_STMcomp
-
-ASxxxx Linker V03.00 + NoICE + sdld,  page 40.
+     0000C025  Faudio_manager$music_bank$0_0$0    audio_manager
+     0000C026  _VDPBlank                          SMSlib
+     0000C027  _SMS_VDPFlags                      SMSlib
+     0000C028  _PauseRequested                    SMSlib
+     0000C029  _SMS_Port3EBIOSvalue               SMSlib
+     0000C02A  _KeysStatus                        SMSlib
+     0000C02C  _PreviousKeysStatus                SMSlib
+     0000C02E  _SMS_theLineInterruptHandler       SMSlib
+     0000C030  _decompBuffer                      SMSlib_PSGaiden
+     0000C050  _SpriteTableY                      SMSlib_sprite
+     0000C090  _SpriteTableXN                     SMSlib_sprite
+     0000C110  _SpriteNextFree                    SMSlib_sprite
+     0000C111  _STM_src                           SMSlib_STMcomp
+     0000C113  _STM_dest                          SMSlib_STMcomp
+     0000C115  _STM_HH                            SMSlib_STMcomp
+     0000C116  _STM_oldHH                         SMSlib_STMcomp
+     0000C117  _STM_needRestore                   SMSlib_STMcomp
+     0000C118  _STM_ttw                           SMSlib_STMcomp
+     0000C119  _STM_width                         SMSlib_STMcomp
+ASxxxx Linker V03.00 + NoICE + sdld,  page 45.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_INITIALIZED                        0000C119    00000005 =           5. bytes (REL,CON)
+_INITIALIZED                        0000C11A    00000015 =          21. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     0000C119  _VDPReg                            SMSlib
-     0000C11B  _spritesHeight                     SMSlib
-     0000C11C  _spritesWidth                      SMSlib
-     0000C11D  _spritesTileOffset                 SMSlib
+     0000C11A  Finput_manager$curr_joypad1$0_0$   input_manager
+     0000C11C  Finput_manager$prev_joypad1$0_0$   input_manager
+     0000C11E  G$sfx_object_data$0_0$0            audio_object
+     0000C11E  _sfx_object_data                   audio_object
+     0000C12A  _VDPReg                            SMSlib
+     0000C12C  _spritesHeight                     SMSlib
+     0000C12D  _spritesWidth                      SMSlib
+     0000C12E  _spritesTileOffset                 SMSlib
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 41.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 46.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -1915,7 +2200,7 @@ _CABS0                              00000000    00000010 =          16. bytes (A
      00007FF0  G$__SMS__SEGA_signature$0_0$0      _sms_manager
      00007FF0  ___SMS__SEGA_signature             _sms_manager
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 42.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 47.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -1927,7 +2212,7 @@ _CABS1                              00000000    0000000E =          14. bytes (A
      00007FD2  G$__SMS__SDSC_author$0_0$0         _sms_manager
      00007FD2  ___SMS__SDSC_author                _sms_manager
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 43.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 48.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -1939,7 +2224,7 @@ _CABS2                              00000000    00000012 =          18. bytes (A
      00007FC0  G$__SMS__SDSC_name$0_0$0           _sms_manager
      00007FC0  ___SMS__SDSC_name                  _sms_manager
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 44.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 49.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -1951,7 +2236,7 @@ _CABS3                              00000000    00000038 =          56. bytes (A
      00007F88  G$__SMS__SDSC_descr$0_0$0          _sms_manager
      00007F88  ___SMS__SDSC_descr                 _sms_manager
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 45.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 50.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -1963,7 +2248,7 @@ _CABS4                              00000000    00000010 =          16. bytes (A
      00007FE0  G$__SMS__SDSC_signature$0_0$0      _sms_manager
      00007FE0  ___SMS__SDSC_signature             _sms_manager
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 46.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 51.
 
 Files Linked                              [ module(s) ]
 
@@ -1973,9 +2258,12 @@ main.rel                                  [ main ]
 devkit/_sms_manager.rel                   [ _sms_manager ]
 devkit/_snd_manager.rel                   [ _snd_manager ]
 engine/asm_manager.rel                    [ asm_manager ]
+engine/audio_manager.rel                  [ audio_manager ]
 engine/content_manager.rel                [ content_manager ]
 engine/font_manager.rel                   [ font_manager ]
+engine/input_manager.rel                  [ input_manager ]
 engine/screen_manager.rel                 [ screen_manager ]
+object/audio_object.rel                   [ audio_object ]
 content/gfx.rel                           [ gfx ]
 
 
@@ -1995,7 +2283,7 @@ C:\Program Files\SDCC\bin\..\lib\z80/z80.lib
 C:\Program Files\SDCC\bin\..\lib\z80/z80.lib
                                           [ modunsigned.rel ]
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 47.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 52.
 
 User Base Address Definitions
 
@@ -2003,3 +2291,14 @@ _CODE = 0x0200
 _DATA = 0xc000
 
 
+?ASlink-Warning-Undefined Global '_sfx_level_psg' referenced by module 'audio_object'
+
+?ASlink-Warning-Undefined Global '_sfx_reset_psg' referenced by module 'audio_object'
+
+?ASlink-Warning-Undefined Global '_sfx_power_psg' referenced by module 'audio_object'
+
+?ASlink-Warning-Undefined Global '_sfx_accept_psg' referenced by module 'audio_object'
+
+?ASlink-Warning-Undefined Global '_sfx_gem_psg' referenced by module 'audio_object'
+
+?ASlink-Warning-Undefined Global '_sfx_death_psg' referenced by module 'audio_object'
