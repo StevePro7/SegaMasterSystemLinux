@@ -1,0 +1,9 @@
+M:audio_object
+S:G$sfx_object_data$0_0$0({12}DA6d,DG,SC:U),E,0,0
+S:G$sfx_accept_psg$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$sfx_death_psg$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$sfx_gem_psg$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$sfx_level_psg$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$sfx_power_psg$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$sfx_reset_psg$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$sfx_object_bank$0_0$0({6}DA6d,SC:U),D,0,0
