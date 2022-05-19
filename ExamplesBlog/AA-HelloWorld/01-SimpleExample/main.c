@@ -1,11 +1,11 @@
 #include "SMSlib.h"
 
-void main( void )
+void main(void)
 {
 	SMS_init();
-	SMS_setSpritePaletteColor( 0, RGB( 3, 3, 3 ) );
+	SMS_setSpritePaletteColor(0, RGB(3, 3, 3));
 	SMS_displayOn();
-	for( ;;)
+	for (;;)
 	{
 		SMS_waitForVBlank();
 	}
