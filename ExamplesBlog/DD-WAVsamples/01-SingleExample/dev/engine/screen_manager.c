@@ -28,27 +28,14 @@ void engine_screen_manager_update()
 		engine_audio_manager_sfx_play( 1 );
 	}
 
-	input = engine_input_manager_hold_up();
+	input = engine_input_manager_hold_down();
 	if( input )
 	{
 		engine_audio_manager_sfx_play( 2 );
 	}
 
-	input = engine_input_manager_hold_down();
-	if( input )
-	{
-		engine_audio_manager_sfx_play( 3 );
-	}
-
 	input = engine_input_manager_hold_fire1();
 	if( input )
 	{
-		engine_audio_manager_sfx_play( 4 );
-	}
-
-	input = engine_input_manager_hold_fire2();
-	if( input )
-	{
-		engine_audio_manager_sfx_play( 5 );
 	}
 }
