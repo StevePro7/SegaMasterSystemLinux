@@ -2,7 +2,7 @@ M:audio_manager
 F:G$engine_audio_manager_sfx_play$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Laudio_manager.engine_audio_manager_sfx_play$index$1_0$32({1}SC:U),B,1,4
 S:Laudio_manager.engine_audio_manager_sfx_play$data$1_0$33({2}DG,SC:U),R,0,0,[c,b]
-S:Laudio_manager.engine_audio_manager_sfx_play$bank$1_0$33({1}SC:U),R,0,0,[]
+S:Laudio_manager.engine_audio_manager_sfx_play$bank$1_0$33({1}SC:U),R,0,0,[a]
 S:Laudio_manager.engine_audio_manager_sfx_play$status$1_0$33({1}SC:U),R,0,0,[a]
 S:G$sfx_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:Faudio_manager$music_bank$0_0$0({1}SC:U),E,0,0

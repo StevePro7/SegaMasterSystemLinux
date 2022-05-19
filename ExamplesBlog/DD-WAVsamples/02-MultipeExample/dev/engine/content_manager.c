@@ -2,9 +2,7 @@
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
 
-#define TREE_TILES		64
 #define FONT_TILES		0
-#define SPRITE_TILES	256
 
 void engine_content_manager_load_tiles()
 {	

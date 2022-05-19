@@ -1,4 +1,5 @@
 #include "screen_manager.h"
+#include "audio_manager.h"
 #include "font_manager.h"
 #include "input_manager.h"
 
@@ -11,40 +12,30 @@ void engine_screen_manager_init()
 
 void engine_screen_manager_update()
 {
-	//unsigned char input;
-	//unsigned char value;
+	unsigned char input;
+	unsigned char value;
 
-	/*value = 0;
+	value = 0;
 	input = engine_input_manager_hold_left();
 	if( input )
 	{
-		value = banked_code_1();
-		engine_font_manager_draw_data( value, 10, 12 );
-		engine_font_manager_draw_text( "VALUE", 4, 12 );
+		engine_audio_manager_sfx_play( 0 );
 	}
 
 	input = engine_input_manager_hold_right();
 	if( input )
 	{
-		value = banked_code_2();
-		engine_font_manager_draw_data( value, 10, 13 );
-		engine_font_manager_draw_text( "VALUE", 4, 13 );
+		engine_audio_manager_sfx_play( 1 );
 	}
 
 	input = engine_input_manager_hold_down();
 	if( input )
 	{
-		value = banked_code_3();
-		engine_font_manager_draw_data( value, 10, 14 );
-		engine_font_manager_draw_text( "VALUE", 4, 14 );
+		engine_audio_manager_sfx_play( 2 );
 	}
 
 	input = engine_input_manager_hold_fire1();
 	if( input )
 	{
-		engine_font_manager_draw_text( "       ", 4, 12 );
-		engine_font_manager_draw_text( "       ", 4, 13 );
-		engine_font_manager_draw_text( "       ", 4, 14 );
-	}*/
-	
+	}
 }
