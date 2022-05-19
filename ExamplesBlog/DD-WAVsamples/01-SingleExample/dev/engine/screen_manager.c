@@ -1,4 +1,5 @@
 #include "screen_manager.h"
+#include "audio_manager.h"
 #include "font_manager.h"
 #include "input_manager.h"
 
@@ -33,5 +34,8 @@ void engine_screen_manager_update()
 	input = engine_input_manager_hold_fire1();
 	if( input )
 	{
+		engine_font_manager_draw_text( "PRESS FIRE TO PLAY SAMPLE", 4, 19 );
+		engine_audio_manager_sfx_play( 0 );
+		engine_font_manager_draw_text( "PRESS FIRE TO PLAY SAMPLE", 4, 17 );
 	}
 }
