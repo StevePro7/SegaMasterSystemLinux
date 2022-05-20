@@ -5,7 +5,7 @@
 
 void engine_screen_manager_init()
 {
-	engine_font_manager_draw_text( " == PCM SAMPLE TESTER == ", 4, 6 );
+	engine_font_manager_draw_text( " == PCM SAMPLE TESTER ==!", 4, 6 );
 	engine_font_manager_draw_text( "PRESS LEFT, RIGHT OR DOWN", 4, 8 );
 	engine_font_manager_draw_text( "PRESS FIRE TO PLAY SAMPLE", 4, 9 );
 }
