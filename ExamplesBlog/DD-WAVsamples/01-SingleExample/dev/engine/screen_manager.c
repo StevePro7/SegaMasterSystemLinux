@@ -14,9 +14,6 @@ void engine_screen_manager_init()
 void engine_screen_manager_update()
 {
 	unsigned char input;
-	unsigned char value;
-
-	value = 0;
 	input = engine_input_manager_hold_left();
 	if( input )
 	{

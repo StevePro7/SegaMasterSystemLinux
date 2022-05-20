@@ -10,7 +10,7 @@ mv SoundFx.wav.pcmenc ../
 
 :: Convert.
 cd ../..
-folder2c bank3 bank3 2
+folder2c bank3 bank3 3
 
 :: Compile
 sdcc --debug -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK3 bank3.c

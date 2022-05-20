@@ -100,6 +100,8 @@ S:G$engine_input_manager_move_left$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_right$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire1$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire2$0_0$0({2}DF,SC:U),C,0,0
+S:G$engine_riff_manager_init$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_riff_manager_play$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_screen_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_screen_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$main$0_0$0({2}DF,SV:S),C,0,0
