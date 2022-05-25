@@ -7,7 +7,7 @@ void main( void )
 	engine_asm_manager_clear_VRAM();
 	
 	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_NORMAL() );
-	devkit_SMS_useFirstHalfTilesforSprites_False();
+	devkit_SMS_useFirstHalfTilesforSprites( false );
 	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );
 
 	engine_content_manager_load_tiles();

@@ -7,7 +7,7 @@ S:G$engine_audio_manager_sfx_play$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_data$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_font_manager_draw_data_ZERO$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_font_manager_draw_zero$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_hold_up$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_hold_down$0_0$0({2}DF,SC:U),C,0,0
