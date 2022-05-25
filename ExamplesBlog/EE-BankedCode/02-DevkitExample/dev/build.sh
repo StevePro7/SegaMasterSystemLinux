@@ -12,7 +12,6 @@ cd banks
 sdcc --debug -c -mz80 --codeseg BANK1 banked_code_1.c
 sdcc --debug -c -mz80 --codeseg BANK2 banked_code_2.c
 sdcc --debug -c -mz80 --codeseg BANK3 banked_code_3.c
-sdcc --debug -c -mz80 --codeseg BANK4 banked_code_4.c
 cd ..
 
 cd devkit
@@ -26,7 +25,6 @@ sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 f
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 input_manager.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 screen_manager.c
 cd ..
-
 
 sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
 
@@ -46,14 +44,12 @@ sdcc --debug -o output.ihx -mz80 --no-std-crt0 --data-loc 0xC000 \
 -Wl-b_BANK1=0x14000 \
 -Wl-b_BANK2=0x24000 \
 -Wl-b_BANK3=0x34000 \
--Wl-b_BANK4=0x44000 \
 ../crt0/crt0b_sms.rel \
 ../lib/SMSlib.lib \
 main.rel \
 banks/banked_code_1.rel \
 banks/banked_code_2.rel \
 banks/banked_code_3.rel \
-banks/banked_code_4.rel \
 devkit/_sms_manager.rel \
 engine/asm_manager.rel \
 engine/content_manager.rel \
