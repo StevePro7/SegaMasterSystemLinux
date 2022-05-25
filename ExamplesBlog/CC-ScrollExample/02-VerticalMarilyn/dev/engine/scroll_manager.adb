@@ -11,8 +11,8 @@ S:Lscroll_manager.engine_scroll_manager_down$so$1_0$69({2}DG,STtag_struct_scroll
 S:Lscroll_manager.engine_scroll_manager_down$index$1_0$69({2}SI:U),R,0,0,[e,d]
 S:Lscroll_manager.engine_scroll_manager_down$y$1_0$69({2}SI:U),B,1,-2
 S:Lscroll_manager.engine_scroll_manager_down$sloc0$0_1$0({2}SI:U),B,1,-2
-T:Fscroll_manager$tag_struct_scroll_object[({0}S:S$scroll$0_0$0({2}SI:U),Z,0,0)({2}S:S$height$0_0$0({2}SI:U),Z,0,0)({4}S:S$size$0_0$0({2}SI:U),Z,0,0)({6}S:S$scrollleft$0_0$0({1}SC:U),Z,0,0)({7}S:S$scrollRight$0_0$0({1}SC:U),Z,0,0)({8}S:S$scrollRightDivided8$0_0$0({1}SC:U),Z,0,0)({9}S:S$column_X$0_0$0({1}SC:U),Z,0,0)({10}S:S$scroll_X$0_0$0({2}SI:U),Z,0,0)]
-S:G$global_scroll_object$0_0$0({12}STtag_struct_scroll_object:S),E,0,0
+T:Fscroll_manager$tag_struct_scroll_object[({0}S:S$scroll$0_0$0({2}SI:U),Z,0,0)({2}S:S$height$0_0$0({2}SI:U),Z,0,0)({4}S:S$size$0_0$0({2}SI:U),Z,0,0)({6}S:S$scrollleft$0_0$0({1}SC:U),Z,0,0)({7}S:S$scrollRight$0_0$0({1}SC:U),Z,0,0)({8}S:S$scrollRightDivided8$0_0$0({1}SC:U),Z,0,0)]
+S:G$global_scroll_object$0_0$0({9}STtag_struct_scroll_object:S),E,0,0
 S:G$devkit_SMS_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOnFeature$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOffFeature$0_0$0({2}DF,SV:S),C,0,0
