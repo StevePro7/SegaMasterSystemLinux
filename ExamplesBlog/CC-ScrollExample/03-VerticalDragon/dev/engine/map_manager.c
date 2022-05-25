@@ -24,10 +24,6 @@ void engine_map_manager_init( unsigned char *level_data )
 	map_data->scroll_y = 0;
 }
 
-void engine_map_manager_update()
-{
-}
-
 void engine_map_manager_draw_map_screen()
 {
 	struct_map_object *map_data = &global_map_object;

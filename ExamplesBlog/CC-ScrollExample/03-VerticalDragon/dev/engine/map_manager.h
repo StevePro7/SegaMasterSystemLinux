@@ -7,7 +7,6 @@
 extern struct_map_object global_map_object;
 
 void engine_map_manager_init( unsigned char *level_data );
-void engine_map_manager_update();
 void engine_map_manager_draw_map_screen();
 void engine_map_manager_draw_map();
 
