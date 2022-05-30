@@ -45,9 +45,9 @@ S:L_sms_manager.devkit_SMS_crt0_RST08$addr$1_0$186({2}SI:U),B,1,4
 F:G$devkit_SMS_crt0_RST18$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:L_sms_manager.devkit_SMS_crt0_RST18$tile$1_0$188({2}SI:U),B,1,4
 F:G$devkit_SMS_setTile$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:L_sms_manager.devkit_SMS_setTile$tile$1_0$190({1}SC:U),B,1,4
+S:L_sms_manager.devkit_SMS_setTile$tile$1_0$190({2}SI:U),B,1,4
 F:G$devkit_SMS_setAddr$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:L_sms_manager.devkit_SMS_setAddr$addr$1_0$192({1}SC:U),B,1,4
+S:L_sms_manager.devkit_SMS_setAddr$addr$1_0$192({2}SI:U),B,1,4
 F:G$devkit_XYtoADDR$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:L_sms_manager.devkit_XYtoADDR$x$1_0$194({2}SI:U),B,1,4
 S:L_sms_manager.devkit_XYtoADDR$y$1_0$194({1}SC:U),B,1,6
