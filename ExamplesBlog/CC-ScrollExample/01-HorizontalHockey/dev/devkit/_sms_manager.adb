@@ -347,5 +347,5 @@ S:G$UNSAFE_SMS_VRAMmemcpy128$0_0$0({2}DF,SV:S),C,0,0
 S:G$SMS_isr$0_0$0({2}DF,SV:S),C,0,0
 S:G$SMS_nmi_isr$0_0$0({2}DF,SV:S),C,0,0
 S:F_sms_manager$__str_0$0_0$0({14}DA14d,SC:U),D,0,0
-S:F_sms_manager$__str_1$0_0$0({14}DA14d,SC:U),D,0,0
+S:F_sms_manager$__str_1$0_0$0({33}DA33d,SC:U),D,0,0
 S:F_sms_manager$__str_2$0_0$0({56}DA56d,SC:U),D,0,0
