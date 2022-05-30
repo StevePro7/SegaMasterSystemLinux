@@ -1,10 +1,10 @@
 M:tree_manager
 F:G$engine_tree_manager_draw$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Ltree_manager.engine_tree_manager_draw$tx$1_0$84({1}SC:U),R,0,0,[b]
-S:Ltree_manager.engine_tree_manager_draw$ty$1_0$84({1}SC:U),R,0,0,[b]
+S:Ltree_manager.engine_tree_manager_draw$tx$1_0$85({1}SC:U),R,0,0,[b]
+S:Ltree_manager.engine_tree_manager_draw$ty$1_0$85({1}SC:U),R,0,0,[b]
 F:Ftree_manager$draw$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Ltree_manager.draw$x$1_0$89({1}SC:U),B,1,4
-S:Ltree_manager.draw$y$1_0$89({1}SC:U),B,1,5
+S:Ltree_manager.draw$x$1_0$90({1}SC:U),B,1,4
+S:Ltree_manager.draw$y$1_0$90({1}SC:U),B,1,5
 S:G$engine_tile_manager_draw_trees$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_draw_sides$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_init$0_0$0({2}DF,SV:S),C,0,0
@@ -146,4 +146,5 @@ S:G$dekvit_SMS_isr$0_0$0({2}DF,SV:S),C,0,0
 S:G$dekvit_SMS_nmi_isr$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_addSprite_bulk8$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_addSprite_bulk12$0_0$0({2}DF,SV:S),C,0,0
+S:G$devkit_SMS_setTilePriority$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_isCollisionDetected$0_0$0({2}DF,SC:U),C,0,0

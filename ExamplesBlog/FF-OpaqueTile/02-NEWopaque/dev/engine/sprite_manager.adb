@@ -1,8 +1,8 @@
 M:sprite_manager
 F:G$engine_sprite_manager_draw$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lsprite_manager.engine_sprite_manager_draw$x$1_0$82({1}SC:U),B,1,4
-S:Lsprite_manager.engine_sprite_manager_draw$y$1_0$82({1}SC:U),B,1,5
-S:Lsprite_manager.engine_sprite_manager_draw$tile$1_0$82({2}SI:U),B,1,6
+S:Lsprite_manager.engine_sprite_manager_draw$x$1_0$83({1}SC:U),B,1,4
+S:Lsprite_manager.engine_sprite_manager_draw$y$1_0$83({1}SC:U),B,1,5
+S:Lsprite_manager.engine_sprite_manager_draw$tile$1_0$83({2}SI:U),B,1,6
 S:G$devkit_SMS_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOnFeature$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOffFeature$0_0$0({2}DF,SV:S),C,0,0
@@ -142,4 +142,5 @@ S:G$dekvit_SMS_isr$0_0$0({2}DF,SV:S),C,0,0
 S:G$dekvit_SMS_nmi_isr$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_addSprite_bulk8$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_addSprite_bulk12$0_0$0({2}DF,SV:S),C,0,0
+S:G$devkit_SMS_setTilePriority$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_isCollisionDetected$0_0$0({2}DF,SC:U),C,0,0
