@@ -139,4 +139,5 @@ S:G$dekvit_SMS_isr$0_0$0({2}DF,SV:S),C,0,0
 S:G$dekvit_SMS_nmi_isr$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_addSprite_bulk8$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_addSprite_bulk12$0_0$0({2}DF,SV:S),C,0,0
+S:G$devkit_SMS_setTilePriority$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_isCollisionDetected$0_0$0({2}DF,SC:U),C,0,0

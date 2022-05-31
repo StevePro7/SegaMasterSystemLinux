@@ -60,8 +60,8 @@ void devkit_SMS_crt0_RST08( unsigned int addr );
 void devkit_SMS_crt0_RST18( unsigned int tile );
 
 /* function for setting tiles/moving 'cursor' */
-void devkit_SMS_setTile( const unsigned char tile );
-void devkit_SMS_setAddr( const unsigned char addr );
+void devkit_SMS_setTile( const unsigned int tile );
+void devkit_SMS_setAddr( const unsigned int addr );
 
 /* PNT define (has address and VDP flags) */
 //#define SMS_PNTAddress            0x7800

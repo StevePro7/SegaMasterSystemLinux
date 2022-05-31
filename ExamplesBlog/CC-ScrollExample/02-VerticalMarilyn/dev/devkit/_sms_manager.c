@@ -168,11 +168,11 @@ void devkit_SMS_crt0_RST18( unsigned int tile )
 }
 
 /* function for setting tiles/moving 'cursor' */
-void devkit_SMS_setTile( const unsigned char tile )
+void devkit_SMS_setTile( const unsigned int tile )
 {
 	SMS_setTile( tile );
 }
-void devkit_SMS_setAddr( const unsigned char addr )
+void devkit_SMS_setAddr( const unsigned int addr )
 {
 	SMS_setAddr( addr );
 }
@@ -697,6 +697,10 @@ void devkit_SMS_addSprite_bulk12( unsigned char x, unsigned char y, int tile )
 	SMS_addSprite( x + 16, y + 24, tile + 11 );
 }
 
+void devkit_SMS_setTilePriority( const unsigned char tile )
+{
+	SMS_setTile( tile | TILE_PRIORITY | TILE_USE_SPRITE_PALETTE );
+}
 unsigned char devkit_isCollisionDetected()
 {
 	return ( SMS_VDPFlags & VDPFLAG_SPRITECOLLISION );

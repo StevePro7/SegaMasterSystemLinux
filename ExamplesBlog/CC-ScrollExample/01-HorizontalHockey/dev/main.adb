@@ -1,7 +1,7 @@
 M:main
 F:G$main$0_0$0({2}DF,SV:S),C,0,0,0,0,0
-S:Lmain.main$open_screen_type$1_0$111({1}SC:U),R,0,0,[]
-S:Lmain.main$global_pause$1_0$111({1}:S),E,0,0
+S:Lmain.main$open_screen_type$1_0$112({1}SC:U),R,0,0,[]
+S:Lmain.main$global_pause$1_0$112({1}:S),E,0,0
 S:G$atof$0_0$0({2}DF,SF:S),C,0,0
 S:G$atoi$0_0$0({2}DF,SI:S),C,0,0
 S:G$atol$0_0$0({2}DF,SL:S),C,0,0
@@ -165,6 +165,7 @@ S:G$dekvit_SMS_isr$0_0$0({2}DF,SV:S),C,0,0
 S:G$dekvit_SMS_nmi_isr$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_addSprite_bulk8$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_addSprite_bulk12$0_0$0({2}DF,SV:S),C,0,0
+S:G$devkit_SMS_setTilePriority$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_isCollisionDetected$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_asm_manager_clear_VRAM$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_tiles$0_0$0({2}DF,SV:S),C,0,0

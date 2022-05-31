@@ -24,6 +24,8 @@ S:Ltile_manager.comm_tile$offset$1_0$94({1}SC:U),B,1,6
 S:Ltile_manager.comm_tile$priority$1_0$94({2}SI:U),B,1,7
 S:Ltile_manager.comm_tile$x$1_0$94({1}SC:U),B,1,9
 S:Ltile_manager.comm_tile$y$1_0$94({1}SC:U),B,1,10
+S:Ltile_manager.comm_tile$sloc0$0_1$0({1}SC:S),B,1,-2
+S:Ltile_manager.comm_tile$sloc1$0_1$0({1}SC:S),B,1,-1
 S:G$devkit_SMS_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOnFeature$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOffFeature$0_0$0({2}DF,SV:S),C,0,0

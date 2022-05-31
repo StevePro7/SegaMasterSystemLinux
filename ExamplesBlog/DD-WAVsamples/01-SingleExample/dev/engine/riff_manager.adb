@@ -1,9 +1,9 @@
 M:riff_manager
 F:G$engine_riff_manager_init$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_riff_manager_play$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lriff_manager.engine_riff_manager_play$index$1_0$85({1}SC:U),B,1,4
-S:Lriff_manager.engine_riff_manager_play$data$1_0$86({2}DG,SC:U),R,0,0,[e,d]
-S:Lriff_manager.engine_riff_manager_play$bank$1_0$86({1}SC:U),R,0,0,[a]
+S:Lriff_manager.engine_riff_manager_play$index$1_0$86({1}SC:U),B,1,4
+S:Lriff_manager.engine_riff_manager_play$data$1_0$87({2}DG,SC:U),R,0,0,[e,d]
+S:Lriff_manager.engine_riff_manager_play$bank$1_0$87({1}SC:U),R,0,0,[a]
 S:G$riff_sample_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$engine_sample_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_sample_manager_play$0_0$0({2}DF,SV:S),C,0,0
@@ -146,4 +146,5 @@ S:G$dekvit_SMS_isr$0_0$0({2}DF,SV:S),C,0,0
 S:G$dekvit_SMS_nmi_isr$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_addSprite_bulk8$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_addSprite_bulk12$0_0$0({2}DF,SV:S),C,0,0
+S:G$devkit_SMS_setTilePriority$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_isCollisionDetected$0_0$0({2}DF,SC:U),C,0,0
