@@ -17,7 +17,9 @@ void screen_test_screen_update( unsigned char *screen_type )
 	{
 		engine_font_manager_draw_text( "PLAY SOUNDFX..!!", 10, 13 );
 		engine_riff_manager_play( 0 );
+		engine_font_manager_draw_text( "CURR", 10, 14 );
 		engine_riff_manager_play( 1 );
+		engine_font_manager_draw_text( "NEXT", 10, 15 );
 		//engine_riff_manager_play( 2 );
 	}
 

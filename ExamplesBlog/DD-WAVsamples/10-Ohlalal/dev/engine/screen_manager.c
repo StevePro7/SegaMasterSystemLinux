@@ -34,10 +34,11 @@ void engine_screen_manager_update()
 	input = engine_input_manager_hold_fire2();
 	if( input )
 	{
-		engine_riff_manager_init();
+		
 		for( index = 0; index < 9; index++ )
 		{
-			engine_font_manager_draw_data( index, 10, 10 + index );
+			//engine_riff_manager_init();
+			engine_font_manager_draw_data( index + 1, 10, 10 + index + 1 );
 			engine_riff_manager_play( index );
 		}
 	}
