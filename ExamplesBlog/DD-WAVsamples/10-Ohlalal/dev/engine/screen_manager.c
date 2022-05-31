@@ -1,5 +1,4 @@
 #include "screen_manager.h"
-#include "audio_manager.h"
 #include "font_manager.h"
 #include "input_manager.h"
 #include "riff_manager.h"
@@ -23,24 +22,6 @@ void engine_screen_manager_update()
 	if( status )
 	{
 		return;
-	}
-
-	input = engine_input_manager_hold_left();
-	if( input )
-	{
-		engine_audio_manager_sfx_play( 0 );
-	}
-
-	input = engine_input_manager_hold_right();
-	if( input )
-	{
-		engine_audio_manager_sfx_play( 1 );
-	}
-
-	input = engine_input_manager_hold_down();
-	if( input )
-	{
-		engine_audio_manager_sfx_play( 2 );
 	}
 
 	input = engine_input_manager_hold_fire1();

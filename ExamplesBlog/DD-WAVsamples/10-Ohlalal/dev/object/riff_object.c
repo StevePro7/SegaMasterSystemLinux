@@ -1,24 +1,29 @@
 #include "riff_object.h"
+#include "../banks/bank2.h"
 #include "../banks/bank3.h"
-#include "../banks/bank4.h"
-#include "../banks/bank5.h"
-#include "../banks/bank6.h"
-#include "../banks/bank7.h"
 
 const unsigned char *riff_sample_data[] =
 {
-	SoundFx_wav_pcmenc,
-	Riff_1981_01_wav_pcmenc,
-	Riff_1981_02_wav_pcmenc,
-	Riff_1981_03_wav_pcmenc,
-	Riff_1981_04_wav_pcmenc,
+	Dead00_wav_pcmenc,
+	Dead01_wav_pcmenc,
+	Dead02_wav_pcmenc,
+	Dead03_wav_pcmenc,
+	Dead04_wav_pcmenc,
+	Dead05_wav_pcmenc,
+	Dead06_wav_pcmenc,
+	Dead07_wav_pcmenc,
+	Dead08_wav_pcmenc,
 };
 
 const unsigned char riff_sample_bank[] =
 {
-	SoundFx_wav_pcmenc_bank,
-	Riff_1981_01_wav_pcmenc_bank,
-	Riff_1981_02_wav_pcmenc_bank,
-	Riff_1981_03_wav_pcmenc_bank,
-	Riff_1981_04_wav_pcmenc_bank,
+	Dead00_wav_pcmenc_bank,
+	Dead01_wav_pcmenc_bank,
+	Dead02_wav_pcmenc_bank,
+	Dead03_wav_pcmenc_bank,
+	Dead04_wav_pcmenc_bank,
+	Dead05_wav_pcmenc_bank,
+	Dead06_wav_pcmenc_bank,
+	Dead07_wav_pcmenc_bank,
+	Dead08_wav_pcmenc_bank,
 };
