@@ -18,7 +18,7 @@ namespace SplitWAVpacking
 				if (valid)
 				{
 					CopyRemote(idx, year, bank);
-					CopyScript(bank, "bank" + (idx + bank));
+					CopyScript(idx + bank, "bank" + (idx + bank));
 				}
 			}
 		}
