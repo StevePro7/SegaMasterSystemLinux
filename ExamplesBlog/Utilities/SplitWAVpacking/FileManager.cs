@@ -53,7 +53,7 @@ namespace SplitWAVpacking
 
 		public void CopyRemote(int idx, string year, int bank)
 		{
-			var inPrefix = $"0{idx}";
+			var inPrefix = $"0{idx+1}";
 			var inRiff = inPrefix + ".wav";
 			var inConv = inRiff + ".pcmenc";
 
@@ -69,7 +69,7 @@ namespace SplitWAVpacking
 
 		public bool Process(int idx)
 		{
-			var inPrefix = $"0{idx}";
+			var inPrefix = $"0{idx+1}";
 			var inRiff = inPrefix + ".wav";
 			var inConv = inRiff + ".pcmenc";
 
