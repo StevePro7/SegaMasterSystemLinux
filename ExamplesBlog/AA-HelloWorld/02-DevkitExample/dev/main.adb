@@ -1,5 +1,8 @@
 M:main
+F:G$engine_asm_manager_clear_VRAM$0_0$0({2}DF,SV:S),C,0,0,0,0,0
 F:G$main$0_0$0({2}DF,SV:S),C,0,0,0,0,0
+S:G$VDPControlPort$0_0$0({1}SC:U),I,0,0
+S:G$VDPDataPort$0_0$0({1}SC:U),I,0,0
 S:G$devkit_SMS_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOnFeature$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOffFeature$0_0$0({2}DF,SV:S),C,0,0
@@ -141,4 +144,5 @@ S:G$devkit_SMS_addSprite_bulk8$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_addSprite_bulk12$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_setTilePriority$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_isCollisionDetected$0_0$0({2}DF,SC:U),C,0,0
+S:G$engine_asm_manager_clear_VRAM$0_0$0({2}DF,SV:S),C,0,0
 S:G$main$0_0$0({2}DF,SV:S),C,0,0
