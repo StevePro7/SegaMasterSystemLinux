@@ -7,38 +7,74 @@
 #include "input_manager.h"
 #include "sprite_manager.h"
 #include "tile_manager.h"
+#include <stdbool.h>
 
 static unsigned char x = 32;
 static unsigned char y = 128-64;// 64;
 
 static void bonus_level();
+static unsigned char dx;
+static unsigned char count;
+static unsigned char tiles;
+static unsigned char frame;
+static bool walking;
+static unsigned char frames[] = { 0, 1, 2, 1 };
 
 void engine_screen_manager_init()
 {
-//	engine_font_manager_draw_text( "STEVEPRO STUDIOS", 4, 4 );
-	bonus_level();
+	engine_font_manager_draw_text( "STEVEPRO STUDIOS", 4, 4 );
+//	bonus_level();
 
-	//engine_tile_manager_turtle( tile_type_fly_turtle01, 10, y );
-
-	//engine_tile_manager_draw_flip( tile_type_fly_turtle02, 10, 10, 4, 3, 0, 4 );
-	//engine_tile_manager_draw_flip( tile_type_section01, 0, 12, 16, 10, 6, 16 );
-
-	//engine_tile_manager_draw_tile( tile_type_cloud02, 4, 4 );
-	//engine_tile_manager_draw_tile( tile_type_section03, 4, 4 );
-	//engine_tile_manager_draw_flip( tile_type_section03, 4, 4, 8, 10, 0, 8 );		// flip tree
-
-	//engine_tile_manager_sign( tile_type_sign_numb, 4, 4 );
-	
+	count = 0;
+	tiles = 0;
+	frame = 0;
+	dx = 0;
+	walking = false;
 }
 
 void engine_screen_manager_update()
+{
+	unsigned char input = 0;
+	
+	if( !walking )
+	{
+		tiles = 0;
+		input = engine_input_manager_move_right();
+		if( input )
+		{
+			engine_font_manager_draw_text( "WALKING", 4, 5 );
+			walking = true;
+		}
+	}
+	else
+	{
+		count++;
+		if( count >= 10 )
+		{
+			dx++;
+			count = 0;
+			frame++;
+			if( frame > 2 )
+			{
+				frame = 0;
+				walking = false;
+			}
+
+			tiles = frames[ frame ];
+		}
+	}
+	
+	engine_sprite_manager_draw( x + dx, y, 0 + tiles );
+}
+
+void engine_screen_manager_updateX()
 {
 	unsigned char delta = 0;
 	unsigned char input = 0;
 	input = engine_input_manager_hold_fire1();
 	if( input )
 	{
-		
+
 	}
 
 	input = engine_input_manager_move_left();
@@ -75,7 +111,7 @@ void engine_screen_manager_update()
 
 	////engine_sprite_manager_fish( x + 96, y );
 
-	
+
 }
 
 static void bonus_level()
