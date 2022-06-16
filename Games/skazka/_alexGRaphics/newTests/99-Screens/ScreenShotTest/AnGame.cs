@@ -24,6 +24,7 @@ namespace ScreenShotTest
 		private int height;
 
 		private IDictionary<int, Texture2D> dict = new Dictionary<int, Texture2D>();
+		private Texture2D[] images = new Texture2D[2];
 
 		public AnGame()
 		{
@@ -44,7 +45,7 @@ namespace ScreenShotTest
 		protected override void Initialize()
 		{
 			save = false;
-			//save = true;
+			save = true;
 			IsMouseVisible = true;
 			base.Initialize();
 		}
@@ -59,6 +60,8 @@ namespace ScreenShotTest
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 			dict[0] = Content.Load<Texture2D>("screen_01_title");
 
+			images[0] = Content.Load<Texture2D>("Horizontal");
+			images[1] = Content.Load<Texture2D>("Vertical");
 
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
 			width = pp.BackBufferWidth;
@@ -126,10 +129,21 @@ namespace ScreenShotTest
 
 		private void Draw()
 		{
+			int x, y;
 			graphics.GraphicsDevice.Clear(Color.Black);
 			spriteBatch.Begin();
 			spriteBatch.Draw(dict[index], Vector2.Zero, Color.White);
 
+			for (y = 0; y <= 192; y += 8)
+			{
+				var pos = new Vector2(0, y);
+				spriteBatch.Draw(images[0], pos, Color.White);
+			}
+			for (x = 0; x <= 256; x += 8)
+			{
+				var pos = new Vector2(x, 0);
+				spriteBatch.Draw(images[1], pos, Color.White);
+			}
 			spriteBatch.End();
 		}
 
