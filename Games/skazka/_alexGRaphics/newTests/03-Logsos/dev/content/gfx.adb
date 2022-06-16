@@ -2,6 +2,9 @@ M:gfx
 S:G$font_tiles__palette__bin$0_0$0({16}DA16d,SC:U),D,0,0
 S:G$font_tiles__tilemap__bin$0_0$0({96}DA96d,SC:U),D,0,0
 S:G$font_tiles__tiles__psgcompr$0_0$0({385}DA385d,SC:U),D,0,0
-S:G$koschey__palette__bin$0_0$0({16}DA16d,SC:U),D,0,0
-S:G$koschey__tilemap__bin$0_0$0({360}DA360d,SC:U),D,0,0
-S:G$koschey__tiles__psgcompr$0_0$0({2680}DA2680d,SC:U),D,0,0
+S:G$logo_big__palette__bin$0_0$0({16}DA16d,SC:U),D,0,0
+S:G$logo_big__tilemap__bin$0_0$0({280}DA280d,SC:U),D,0,0
+S:G$logo_big__tiles__psgcompr$0_0$0({2032}DA2032d,SC:U),D,0,0
+S:G$logo_small__palette__bin$0_0$0({16}DA16d,SC:U),D,0,0
+S:G$logo_small__tilemap__bin$0_0$0({180}DA180d,SC:U),D,0,0
+S:G$logo_small__tiles__psgcompr$0_0$0({1196}DA1196d,SC:U),D,0,0
