@@ -2,10 +2,10 @@
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
 
-#define TEXT_ROOT	64		// 64 is " " in ASCII.
-#define DATA_ROOT	16		// 16 is "0" (48=16+32)
+#define TEXT_ROOT	64		// 64 is "A" (65-01).
+#define DATA_ROOT	27		// 27 is "0" (48-27).
 #define UNIT_ROOT	10		// 10 is decimal
-#define DATA_LONG	4		// 3 placeholder
+#define DATA_LONG	3		// 3 placeholder
 
 void engine_font_manager_draw_char( unsigned char ch, unsigned char x, unsigned char y )
 {
@@ -22,7 +22,8 @@ void engine_font_manager_draw_text( unsigned char *text, unsigned char x, unsign
 
 	while( '\0' != text[idx] )
 	{
-		signed char tile = text[idx] - TEXT_ROOT;
+		unsigned char ch = text[ idx ];
+		unsigned char tile = text[idx] - TEXT_ROOT;
 		devkit_SMS_setNextTileatXY( x++, y );
 		devkit_SMS_setTile( *pnt + tile );
 		idx++;
@@ -65,7 +66,6 @@ void engine_font_manager_draw_zero( unsigned int data, unsigned char x, unsigned
 	const unsigned char *pnt = font_tiles__tilemap__bin;
 
 	unsigned char idx;
-	//signed char tile;
 	unsigned char tile;
 
 	char hold[DATA_LONG];

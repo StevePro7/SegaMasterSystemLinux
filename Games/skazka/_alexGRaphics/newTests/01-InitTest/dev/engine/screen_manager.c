@@ -3,8 +3,11 @@
 
 void engine_screen_manager_init()
 {
-	engine_font_manager_draw_text( "STEVEPRO", 10, 10 );
-	//engine_font_manager_draw_char( 'Z', 10, 10 );
+	engine_font_manager_draw_data( 89, 10, 10 );
+	//engine_font_manager_draw_zero( 0, 10, 10 );
+
+	//engine_font_manager_draw_text( "SUZANNE", 10, 10 );
+	//engine_font_manager_draw_char( ')', 10, 10 );
 }
 
 void engine_screen_manager_update()
