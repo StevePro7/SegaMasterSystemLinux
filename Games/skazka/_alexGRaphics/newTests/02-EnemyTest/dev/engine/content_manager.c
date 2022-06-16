@@ -23,14 +23,16 @@ void engine_content_manager_draw_enemy()
 	unsigned char i, j;
 	unsigned char idx = 0;
 	unsigned int tile;
+	unsigned int palette;
 
+	palette = devkit_TILE_USE_SPRITE_PALETTE();
 	for( j = 0; j < 15; j++ )
 	{
 		for( i = 0; i < 12; i++ )
 		{
 			x = 10 + i;
 			y = 2 + j;
-			tile = 256 + idx;
+			tile = (256 + idx) | palette;
 			devkit_SMS_setNextTileatXY( x, y );
 			devkit_SMS_setTile( *pnt + tile );
 			idx++;
