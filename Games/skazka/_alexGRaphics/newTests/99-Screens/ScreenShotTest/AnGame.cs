@@ -12,30 +12,26 @@ namespace ScreenShotTest
 	/// </summary>
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		private string file = "flyingfish01";
+		private int index = 0;
+		private string[] files = { "screen_01_title" };
 
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
 		RenderTarget2D renderTarget;
-		//private Texture2D[] images;
-		//private Texture2D image2;
 
 		private bool save;
-
 		private int width;
 		private int height;
 
-		private IDictionary<string, Texture2D> dict = new Dictionary<string, Texture2D>();
-		private int size = 1;
-		private int pixl = 16;
-		private string[] lines;
-		
+		private IDictionary<int, Texture2D> dict = new Dictionary<int, Texture2D>();
 
 		public AnGame()
 		{
+			width = 256;
+			height = 192;
 			graphics = new GraphicsDeviceManager(this);
-			graphics.PreferredBackBufferWidth = pixl * 3 * size;
-			graphics.PreferredBackBufferHeight = pixl * size;
+			graphics.PreferredBackBufferWidth = width;
+			graphics.PreferredBackBufferHeight = height;
 			Content.RootDirectory = "Content";
 		}
 
@@ -48,11 +44,7 @@ namespace ScreenShotTest
 		protected override void Initialize()
 		{
 			save = false;
-			//if (null != ConfigurationManager.AppSettings["save"])
-			//{
-			//	save = Convert.ToBoolean(ConfigurationManager.AppSettings["save"]);
-			//}
-			save = true;
+			//save = true;
 			IsMouseVisible = true;
 			base.Initialize();
 		}
@@ -65,22 +57,8 @@ namespace ScreenShotTest
 		{
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch(GraphicsDevice);
-			//images = new Texture2D[4];
-			dict["#00"] = Content.Load<Texture2D>("00_000000");
-			dict["#03"] = Content.Load<Texture2D>("03_ff0000");
-			dict["#0B"] = Content.Load<Texture2D>("0b_ffaa00");
-			dict["#0F"] = Content.Load<Texture2D>("0f_ffff00");
-			dict["#01"] = Content.Load<Texture2D>("01_550000");
-			dict["#16"] = Content.Load<Texture2D>("16_aa5555");
-			dict["#19"] = Content.Load<Texture2D>("19_55aa55");
-			dict["#20"] = Content.Load<Texture2D>("20_0000aa");
-			dict["#2A"] = Content.Load<Texture2D>("2a_aaaaaa");
-			dict["#2B"] = Content.Load<Texture2D>("2b_ffaaaa");
-			dict["#39"] = Content.Load<Texture2D>("39_55aaff");
-			dict["#30"] = Content.Load<Texture2D>("30_0000ff");
-			dict["#3F"] = Content.Load<Texture2D>("3f_ffffff");
+			dict[0] = Content.Load<Texture2D>("screen_01_title");
 
-			lines = File.ReadAllLines(file + ".csv");
 
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
 			width = pp.BackBufferWidth;
@@ -132,6 +110,7 @@ namespace ScreenShotTest
 				//Texture2D resolvedTexture = renderTarget.GetTexture();
 				Texture2D resolvedTexture = (Texture2D)renderTarget;
 				//resolvedTexture.Save("00.jpg", ImageFileFormat.Jpg);
+				var file = files[index];
 				Stream stream = File.Create(file + ".png");
 				//resolvedTexture.SaveAsJpeg(stream, width, height);
 				resolvedTexture.SaveAsPng(stream, width, height);
@@ -147,42 +126,9 @@ namespace ScreenShotTest
 
 		private void Draw()
 		{
-			int px = 0;
-			int py = 0;
-			int tx, ty = 0;
-			//graphics.GraphicsDevice.Clear(Color.Black);
-			//graphics.GraphicsDevice.Clear(Color.White);
-			graphics.GraphicsDevice.Clear(Color.CornflowerBlue);
+			graphics.GraphicsDevice.Clear(Color.Black);
 			spriteBatch.Begin();
-
-			ty = 0;
-			//var line = lines[0];
-			foreach (var line in lines)
-			{
-				tx = 0;
-				var texts = line.Split(new char[] { ',' });
-				var len = texts.Length;
-				//if (len != 8)
-				//{
-				//	len = 8;
-				//}
-				for (int i = 0; i < len; i++)
-				{
-					px = tx * size;
-					py = ty * size;
-
-					var text = texts[i];
-					//if ((text != "#3F") && (text != "#01"))
-					//{
-					//	text = "#39";
-						
-					//}
-
-					spriteBatch.Draw(dict[text], new Vector2(px, py), Color.White);
-					tx++;
-				}
-				ty++;
-			}
+			spriteBatch.Draw(dict[index], Vector2.Zero, Color.White);
 
 			spriteBatch.End();
 		}
