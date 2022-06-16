@@ -2,7 +2,10 @@
 #define __MAIN__
 
 #include <stdbool.h>
+#include <stdlib.h>
+
 #include "devkit/_sms_manager.h"
+
 #include "engine/asm_manager.h"
 #include "engine/content_manager.h"
 #include "engine/screen_manager.h"
