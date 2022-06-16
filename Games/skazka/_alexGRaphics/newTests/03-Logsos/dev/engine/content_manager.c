@@ -3,6 +3,7 @@
 #include "../content/gfx.h"
 
 #define FONT_TILES		0
+#define LOGO_TILES		64
 #define SPRITE_TILES	256
 
 void engine_content_manager_load_tiles()
@@ -11,14 +12,40 @@ void engine_content_manager_load_tiles()
 	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) font_tiles__tiles__psgcompr, FONT_TILES );
 	devkit_SMS_loadBGPalette( ( void * ) font_tiles__palette__bin );
 
-	// Enemy tiles
-	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) koschey__tiles__psgcompr, SPRITE_TILES );
-	devkit_SMS_loadSpritePalette( ( void * ) koschey__palette__bin );
+	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) logo_big__tiles__psgcompr, LOGO_TILES );
+	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) logo_small__tiles__psgcompr, SPRITE_TILES );
+	devkit_SMS_loadSpritePalette( ( void * ) font_tiles__palette__bin );
 }
 
-void engine_content_manager_draw_enemy()
+void engine_content_manager_draw_logo1()
 {
-	const unsigned char *pnt = koschey__tilemap__bin;
+	const unsigned char *pnt = logo_big__tilemap__bin;
+	unsigned char x, y;
+	unsigned char i, j;
+	unsigned char idx = 0;
+	unsigned int tile;
+	//unsigned int palette;
+
+	//palette = devkit_TILE_USE_SPRITE_PALETTE();
+	j = 0;
+	i = 0;
+	for( j = 0; j < 5; j++ )
+	{
+		for( i = 0; i < 28; i++ )
+		{
+			x = 2 + i;
+			y = 2 + j;
+			tile = ( 0 + idx );// | palette;
+			devkit_SMS_setNextTileatXY( x, y );
+			devkit_SMS_setTile( *pnt + tile );
+			idx++;
+		}
+	}
+}
+
+void engine_content_manager_draw_logo2()
+{
+	const unsigned char *pnt = logo_small__tilemap__bin;
 	unsigned char x, y;
 	unsigned char i, j;
 	unsigned char idx = 0;
@@ -26,13 +53,15 @@ void engine_content_manager_draw_enemy()
 	unsigned int palette;
 
 	palette = devkit_TILE_USE_SPRITE_PALETTE();
-	for( j = 0; j < 15; j++ )
+	j = 0;
+	i = 0;
+	for( j = 0; j < 3; j++ )
 	{
-		for( i = 0; i < 12; i++ )
+		for( i = 0; i < 30; i++ )
 		{
-			x = 10 + i;
-			y = 2 + j;
-			tile = (256 + idx) | palette;
+			x = 1 + i;
+			y = 12 + j;
+			tile = ( 256 + idx ) | palette;
 			devkit_SMS_setNextTileatXY( x, y );
 			devkit_SMS_setTile( *pnt + tile );
 			idx++;
