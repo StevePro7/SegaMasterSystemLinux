@@ -13,7 +13,7 @@ void main( void )
 	engine_content_manager_load_tiles();
 	engine_content_manager_draw_enemy();
 	//engine_content_manager_load_sprites();
-	//engine_screen_manager_init();
+	engine_screen_manager_init();
 
 	devkit_SMS_displayOn();
 	for( ;; )
