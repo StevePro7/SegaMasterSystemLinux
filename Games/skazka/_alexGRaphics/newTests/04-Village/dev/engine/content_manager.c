@@ -31,7 +31,7 @@ void engine_content_manager_draw_village()
 		for( i = 0; i < 18; i++ )
 		{
 			x = 10 + i;
-			y = 2 + j;
+			y = 4 + j;
 			tile = (256 + idx) | palette;
 			devkit_SMS_setNextTileatXY( x, y );
 			devkit_SMS_setTile( *pnt + tile );

@@ -7,6 +7,19 @@
 #define UNIT_ROOT	10		// 10 is decimal
 #define DATA_LONG	3		// 3 placeholder
 
+void engine_font_manager_draw_test( unsigned char x, unsigned char y )
+{
+	const unsigned char *pnt = font_tiles__tilemap__bin;
+	unsigned char tile = 46;
+	unsigned int flipY = devkit_TILE_FLIPPED_X();
+	devkit_SMS_setNextTileatXY( x, y );
+	devkit_SMS_setTile( *pnt + ( tile | flipY ) );
+
+	engine_font_manager_draw_text( "HERO", x + 1, y );
+	devkit_SMS_setNextTileatXY( x+5, y );
+	devkit_SMS_setTile( *pnt + tile );
+}
+
 void engine_font_manager_draw_char( unsigned char ch, unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = font_tiles__tilemap__bin;
