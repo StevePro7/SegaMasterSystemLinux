@@ -6,16 +6,17 @@ O -mz80
 S _devkit_SMS_loadBGPalette Ref000000
 S _devkit_SMS_setNextTileatXY Ref000000
 S _devkit_SMS_loadPSGaidencompressedTiles Ref000000
-S _koschey__tiles__psgcompr Ref000000
+S _stats_village__tiles__psgcompr Ref000000
 S _font_tiles__tiles__psgcompr Ref000000
 S .__.ABS. Def000000
 S _devkit_TILE_USE_SPRITE_PALETTE Ref000000
 S _devkit_SMS_setTile Ref000000
-S _koschey__tilemap__bin Ref000000
-S _koschey__palette__bin Ref000000
+S _stats_village__tilemap__bin Ref000000
+S _stats_village__palette__bin Ref000000
 S _font_tiles__palette__bin Ref000000
 S _devkit_SMS_loadSpritePalette Ref000000
 A _CODE size 85 flags 0 addr 0
+S XG$engine_content_manager_draw_village$0$0 Def000084
 S A$content_manager$200 Def00007E
 S A$content_manager$110 Def000030
 S A$content_manager$210 Def000084
@@ -81,7 +82,6 @@ S C$content_manager.c$12$1_0$82 Def00000C
 S A$content_manager$81 Def00001B
 S A$content_manager$72 Def00000F
 S A$content_manager$63 Def000003
-S G$engine_content_manager_draw_enemy$0$0 Def000028
 S A$content_manager$82 Def00001E
 S A$content_manager$73 Def000010
 S A$content_manager$64 Def000004
@@ -100,6 +100,7 @@ S A$content_manager$86 Def00001F
 S A$content_manager$77 Def000013
 S A$content_manager$87 Def000022
 S A$content_manager$78 Def000016
+S G$engine_content_manager_draw_village$0$0 Def000028
 S A$content_manager$97 Def000027
 S A$content_manager$88 Def000023
 S A$content_manager$79 Def000017
@@ -110,14 +111,13 @@ S A$content_manager$89 Def000026
 S C$content_manager.c$29$2_0$83 Def000076
 S C$content_manager.c$33$5_0$87 Def000040
 S C$content_manager.c$34$5_0$87 Def000044
-S _engine_content_manager_draw_enemy Def000028
 S C$content_manager.c$35$5_0$87 Def000049
 S XG$engine_content_manager_load_tiles$0$0 Def000027
 S C$content_manager.c$36$5_0$87 Def000058
 S C$content_manager.c$37$5_0$87 Def000061
 S C$content_manager.c$38$5_0$87 Def00006F
+S _engine_content_manager_draw_village Def000028
 S C$content_manager.c$8$0_0$82 Def000000
-S XG$engine_content_manager_draw_enemy$0$0 Def000084
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -154,9 +154,9 @@ T 4D 00 00 57 7B DD B6 FD 5F 7A DD B6 FE 57 C5 D5
 R 00 00 00 00
 T 5A 00 00 E5 CD 00 00 F1 D1 C1 3A 00 00 26 00 6F
 R 00 00 00 00 02 05 01 00 02 0B 08 00
-T 67 00 00 19 C5 E5 CD 00 00 F1 C1 0C 04 78 D6 0C
+T 67 00 00 19 C5 E5 CD 00 00 F1 C1 0C 04 78 D6 12
 R 00 00 00 00 02 07 07 00
-T 74 00 00 38 CA DD 34 FF DD 7E FF D6 0F 38 BE DD
+T 74 00 00 38 CA DD 34 FF DD 7E FF D6 07 38 BE DD
 R 00 00 00 00
 T 81 00 00 F9 DD E1 C9
 R 00 00 00 00

@@ -11,14 +11,14 @@ void engine_content_manager_load_tiles()
 	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) font_tiles__tiles__psgcompr, FONT_TILES );
 	devkit_SMS_loadBGPalette( ( void * ) font_tiles__palette__bin );
 
-	// Enemy tiles
-	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) koschey__tiles__psgcompr, SPRITE_TILES );
-	devkit_SMS_loadSpritePalette( ( void * ) koschey__palette__bin );
+	// Village tiles
+	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) stats_village__tiles__psgcompr, SPRITE_TILES );
+	devkit_SMS_loadSpritePalette( ( void * ) stats_village__palette__bin );
 }
 
-void engine_content_manager_draw_enemy()
+void engine_content_manager_draw_village()
 {
-	const unsigned char *pnt = koschey__tilemap__bin;
+	const unsigned char *pnt = stats_village__tilemap__bin;
 	unsigned char x, y;
 	unsigned char i, j;
 	unsigned char idx = 0;
@@ -26,9 +26,9 @@ void engine_content_manager_draw_enemy()
 	unsigned int palette;
 
 	palette = devkit_TILE_USE_SPRITE_PALETTE();
-	for( j = 0; j < 15; j++ )
+	for( j = 0; j < 7; j++ )
 	{
-		for( i = 0; i < 12; i++ )
+		for( i = 0; i < 18; i++ )
 		{
 			x = 10 + i;
 			y = 2 + j;

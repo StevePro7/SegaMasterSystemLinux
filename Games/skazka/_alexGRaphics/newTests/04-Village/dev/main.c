@@ -11,7 +11,7 @@ void main( void )
 	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );
 
 	engine_content_manager_load_tiles();
-	engine_content_manager_draw_enemy();
+	engine_content_manager_draw_village();
 	//engine_content_manager_load_sprites();
 	engine_screen_manager_init();
 
