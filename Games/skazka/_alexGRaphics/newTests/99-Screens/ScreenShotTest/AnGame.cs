@@ -12,8 +12,8 @@ namespace ScreenShotTest
 	/// </summary>
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		private int index = 0;
-		private string[] files = { "screen_01_title" };
+		private int index = 13;
+		private string[] files = { "screen_01_title", "screen_02_difficulty", "screen_03_intro", "screen_04_stats", "screen_05_forest", "screen_5a_victory", "screen_06_shop", "screen_07_villager_talk", "screen_08a_boss_prep", "screen_08b_boss_query", "screen_08c_boss_fight", "screen_09_game_over", "screen_10_beat_game", "screen_11_menu" };
 
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
@@ -58,7 +58,11 @@ namespace ScreenShotTest
 		{
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch(GraphicsDevice);
-			dict[0] = Content.Load<Texture2D>("screen_01_title");
+			for (int i = 0; i < 14; i++)
+			{
+				dict[i] = Content.Load<Texture2D>(files[i]);
+			}
+			
 
 			images[0] = Content.Load<Texture2D>("Horizontal");
 			images[1] = Content.Load<Texture2D>("Vertical");
@@ -114,7 +118,7 @@ namespace ScreenShotTest
 				Texture2D resolvedTexture = (Texture2D)renderTarget;
 				//resolvedTexture.Save("00.jpg", ImageFileFormat.Jpg);
 				var file = files[index];
-				Stream stream = File.Create(file + ".png");
+				Stream stream = File.Create("output/" + file + ".png");
 				//resolvedTexture.SaveAsJpeg(stream, width, height);
 				resolvedTexture.SaveAsPng(stream, width, height);
 		
