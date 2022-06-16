@@ -15,3 +15,25 @@ void engine_content_manager_load_tiles()
 	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) koschey__tiles__psgcompr, SPRITE_TILES );
 	devkit_SMS_loadSpritePalette( ( void * ) koschey__palette__bin );
 }
+
+void engine_content_manager_draw_enemy()
+{
+	const unsigned char *pnt = koschey__tilemap__bin;
+	unsigned char x, y;
+	unsigned char i, j;
+	unsigned char idx = 0;
+	unsigned int tile;
+
+	for( j = 0; j < 15; j++ )
+	{
+		for( i = 0; i < 12; i++ )
+		{
+			x = 10 + i;
+			y = 2 + j;
+			tile = 256 + idx;
+			devkit_SMS_setNextTileatXY( x, y );
+			devkit_SMS_setTile( *pnt + tile );
+			idx++;
+		}
+	}
+}
