@@ -1,12 +1,14 @@
 #include "content_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
+#include "../banks/bank2.h"
+#include "../banks/bank3.h"
 
 #define FONT_TILES		0
 #define BORDER_TILES	48
 #define SPRITE_TILES	436
 
-#define LGOG_TILES		64
+#define LOGO_TILES		64
 
 void engine_content_manager_load_tiles()
 {
@@ -22,5 +24,6 @@ void engine_content_manager_load_tiles()
 
 void engine_content_manager_load_logo_big()
 {
-	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) font__tiles__psgcompr, FONT_TILES );
+	devkit_SMS_mapROMBank( logo_big__tilemap__bin_bank );
+	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) logo_big__tiles__psgcompr, LOGO_TILES );
 }
