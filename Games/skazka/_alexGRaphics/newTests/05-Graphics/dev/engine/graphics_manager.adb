@@ -1,6 +1,7 @@
 M:graphics_manager
 F:G$engine_graphics_manager_draw_border$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lgraphics_manager.engine_graphics_manager_draw_border$pnt$1_0$82({2}DG,SC:U),R,0,0,[]
+S:Lgraphics_manager.engine_graphics_manager_draw_border$idx$1_0$82({1}SC:U),R,0,0,[b]
 S:G$devkit_SMS_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOnFeature$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOffFeature$0_0$0({2}DF,SV:S),C,0,0
