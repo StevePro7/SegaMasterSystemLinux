@@ -5,14 +5,16 @@ cd banks
 cd bank3
 
 bmp2tile.exe raw/logo_big.png -savetiles "logo_big (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 64  -savetilemap "logo_big (tilemap).bin" -exit
-::bmp2tile.exe raw/logo_small.png -savetiles "logo_small (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 64  -savetilemap "logo_small (tilemap).bin" -exit
+bmp2tile.exe raw/logo_small.png -savetiles "logo_small (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 64  -savetilemap "logo_small (tilemap).bin" -exit
 
-::bmp2tile.exe raw/stats_inventory.png -savetiles "stats_inventory (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 160  -savetilemap "stats_inventory (tilemap).bin" -exit
-::bmp2tile.exe raw/stats_items.png -savetiles "stats_items (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 224  -savetilemap "stats_items (tilemap).bin" -exit
+bmp2tile.exe raw/stats_inventory.png -savetiles "stats_inventory (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 160  -savetilemap "stats_inventory (tilemap).bin" -exit
+bmp2tile.exe raw/stats_items.png -savetiles "stats_items (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 224  -savetilemap "stats_items (tilemap).bin" -exit
 
-::bmp2tile.exe raw/battle_player.png -savetiles "battle_player (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 256  -savetilemap "battle_player (tilemap).bin" -exit
-::bmp2tile.exe raw/koschey.png -savetiles "koschey (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 256  -savetilemap "koschey (tilemap).bin" -exit
-::bmp2tile.exe raw/stats_village.png -savetiles "stats_village (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 256  -savetilemap "stats_village (tilemap).bin" -exit
+bmp2tile.exe raw/battle_player.png -savetiles "battle_player (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 256  -savetilemap "battle_player (tilemap).bin" -exit
+bmp2tile.exe raw/koschey.png -savetiles "koschey (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 256  -savetilemap "koschey (tilemap).bin" -exit
+bmp2tile.exe raw/stats_village.png -savetiles "stats_village (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 256  -savetilemap "stats_village (tilemap).bin" -exit
+
+bmp2tile.exe raw/xbattle_enemies.png -savetiles "xbattle_enemies (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 64  -savetilemap "xbattle_enemies (tilemap).bin" -exit
 
 cd ..
 folder2c bank3 bank3 3

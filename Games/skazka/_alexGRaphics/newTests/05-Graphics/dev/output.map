@@ -46,17 +46,17 @@ Area                                    Addr        Size        Decimal Bytes (A
      000000F8  l__DATA                         
      00000104  l__HEADER4                      
      00000200  s__CODE                         
+     00000460  l__BANK2                        
      00001F31  l__CODE                         
      00002131  s__HOME                         
      00002131  s__INITIALIZER                  
      00002138  s__GSINIT                       
      00002147  s__GSFINAL                      
+     00003470  l__BANK3                        
      00008000  G$SMS_SRAM$0_0$0                   _sms_manager
      00008000  _SMS_SRAM                          SMSlib_autotext
-     0000C000  s__DATA                         
-     0000C0F8  s__INITIALIZED                  
-     0000C0FF  s__BSEG                         
-     0000C0FF  s__BSS                          
+     00008000  s__BANK2                        
+     00008000  s__BANK3                        
 ASxxxx Linker V03.00 + NoICE + sdld,  page 2.
 Hexadecimal  [32-Bits]
 
@@ -66,6 +66,10 @@ Area                                    Addr        Size        Decimal Bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     0000C000  s__DATA                         
+     0000C0F8  s__INITIALIZED                  
+     0000C0FF  s__BSEG                         
+     0000C0FF  s__BSS                          
      0000C0FF  s__HEAP                         
      0000FFFC  G$SRAM_bank_to_be_mapped_on_slot   _sms_manager
      0000FFFC  _SRAM_bank_to_be_mapped_on_slot2   SMSlib_autotext
@@ -3426,6 +3430,62 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
+_BANK2                              00008000    00000460 =        1120. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00008000  G$battle_enemies__tilemap__bin$0   bank2
+     00008000  _battle_enemies__tilemap__bin      bank2
+     00008078  G$battle_enemies__tiles__psgcomp   bank2
+     00008078  _battle_enemies__tiles__psgcompr   bank2
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 68.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_BANK3                              00008000    00003470 =       13424. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00008000  G$battle_player__tilemap__bin$0_   bank3
+     00008000  _battle_player__tilemap__bin       bank3
+     000080D8  G$battle_player__tiles__psgcompr   bank3
+     000080D8  _battle_player__tiles__psgcompr    bank3
+     0000885B  G$koschey__tilemap__bin$0_0$0      bank3
+     0000885B  _koschey__tilemap__bin             bank3
+     000089C3  G$koschey__tiles__psgcompr$0_0$0   bank3
+     000089C3  _koschey__tiles__psgcompr          bank3
+     0000943B  G$logo_big__tilemap__bin$0_0$0     bank3
+     0000943B  _logo_big__tilemap__bin            bank3
+     00009553  G$logo_big__tiles__psgcompr$0_0$   bank3
+     00009553  _logo_big__tiles__psgcompr         bank3
+     00009D43  G$logo_small__tilemap__bin$0_0$0   bank3
+     00009D43  _logo_small__tilemap__bin          bank3
+     00009DF7  G$logo_small__tiles__psgcompr$0_   bank3
+     00009DF7  _logo_small__tiles__psgcompr       bank3
+     0000A2A3  G$stats_inventory__tilemap__bin$   bank3
+     0000A2A3  _stats_inventory__tilemap__bin     bank3
+     0000A323  G$stats_inventory__tiles__psgcom   bank3
+     0000A323  _stats_inventory__tiles__psgcomp   bank3
+     0000A48E  G$stats_items__tilemap__bin$0_0$   bank3
+     0000A48E  _stats_items__tilemap__bin         bank3
+     0000A4BE  G$stats_items__tiles__psgcompr$0   bank3
+     0000A4BE  _stats_items__tiles__psgcompr      bank3
+     0000A6A9  G$stats_village__tilemap__bin$0_   bank3
+     0000A6A9  _stats_village__tilemap__bin       bank3
+     0000A7A5  G$stats_village__tiles__psgcompr   bank3
+     0000A7A5  _stats_village__tiles__psgcompr    bank3
+     0000B010  G$xbattle_enemies__tilemap__bin$   bank3
+     0000B010  _xbattle_enemies__tilemap__bin     bank3
+     0000B088  G$xbattle_enemies__tiles__psgcom   bank3
+     0000B088  _xbattle_enemies__tiles__psgcomp   bank3
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 69.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
 _CABS0                              00000000    00000010 =          16. bytes (ABS,CON)
 
       Value  Global                              Global Defined In Module
@@ -3433,7 +3493,7 @@ _CABS0                              00000000    00000010 =          16. bytes (A
      00007FF0  G$__SMS__SEGA_signature$0_0$0      _sms_manager
      00007FF0  ___SMS__SEGA_signature             _sms_manager
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 68.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 70.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -3445,7 +3505,7 @@ _CABS1                              00000000    0000000E =          14. bytes (A
      00007FD2  G$__SMS__SDSC_author$0_0$0         _sms_manager
      00007FD2  ___SMS__SDSC_author                _sms_manager
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 69.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 71.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -3457,7 +3517,7 @@ _CABS2                              00000000    00000013 =          19. bytes (A
      00007FBF  G$__SMS__SDSC_name$0_0$0           _sms_manager
      00007FBF  ___SMS__SDSC_name                  _sms_manager
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 70.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 72.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -3469,7 +3529,7 @@ _CABS3                              00000000    00000038 =          56. bytes (A
      00007F87  G$__SMS__SDSC_descr$0_0$0          _sms_manager
      00007F87  ___SMS__SDSC_descr                 _sms_manager
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 71.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 73.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -3481,12 +3541,14 @@ _CABS4                              00000000    00000010 =          16. bytes (A
      00007FE0  G$__SMS__SDSC_signature$0_0$0      _sms_manager
      00007FE0  ___SMS__SDSC_signature             _sms_manager
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 72.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 74.
 
 Files Linked                              [ module(s) ]
 
 ../crt0/crt0_sms.rel                      [ crt0 ]
 main.rel                                  [ main ]
+banks\bank2.rel                           [ bank2 ]
+banks\bank3.rel                           [ bank3 ]
 devkit/_sms_manager.rel                   [ _sms_manager ]
 engine/asm_manager.rel                    [ asm_manager ]
 engine/content_manager.rel                [ content_manager ]
@@ -3526,11 +3588,13 @@ C:\Program Files\SDCC\bin\..\lib\z80/z80.lib
 C:\Program Files\SDCC\bin\..\lib\z80/z80.lib
                                           [ modunsigned.rel ]
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 73.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 75.
 
 User Base Address Definitions
 
 _CODE = 0x0200
 _DATA = 0xc000
+_BANK2=0x8000
+_BANK3=0x8000
 
 
