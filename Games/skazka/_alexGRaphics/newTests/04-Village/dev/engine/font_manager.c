@@ -7,8 +7,9 @@
 #define UNIT_ROOT	10		// 10 is decimal
 #define DATA_LONG	3		// 3 placeholder
 
-void engine_font_manager_draw_test( unsigned char x, unsigned char y )
+void engine_font_manager_draw_hero( unsigned char x, unsigned char y )
 {
+	// TODO - define HERO in locale_manager
 	const unsigned char *pnt = font_tiles__tilemap__bin;
 	unsigned char tile = 46;
 	unsigned int flipY = devkit_TILE_FLIPPED_X();
@@ -20,32 +21,56 @@ void engine_font_manager_draw_test( unsigned char x, unsigned char y )
 	devkit_SMS_setTile( *pnt + tile );
 }
 
-void engine_font_manager_draw_char( unsigned char ch, unsigned char x, unsigned char y )
+static void draw_char( unsigned char tile, unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = font_tiles__tilemap__bin;
-	unsigned char tile = ch - TEXT_ROOT;
 	devkit_SMS_setNextTileatXY( x, y );
 	devkit_SMS_setTile( *pnt + tile );
 }
 
+void engine_font_manager_draw_punc( unsigned char ch, unsigned char x, unsigned char y )
+{
+	unsigned char tile = 0;
+	if( '+' == ch )
+	{
+		tile = 37;
+	}
+	else if( '?' == ch )
+	{
+		tile = 43;
+	}
+
+	draw_char( tile, x, y );
+}
+
+void engine_font_manager_draw_char( unsigned char ch, unsigned char x, unsigned char y )
+{
+	//const unsigned char *pnt = font_tiles__tilemap__bin;
+	unsigned char tile = ch - TEXT_ROOT;
+	draw_char( tile, x, y );
+	//devkit_SMS_setNextTileatXY( x, y );
+	//devkit_SMS_setTile( *pnt + tile );
+}
+
 void engine_font_manager_draw_text( unsigned char *text, unsigned char x, unsigned char y )
 {
-	const unsigned char *pnt = font_tiles__tilemap__bin;
+	//const unsigned char *pnt = font_tiles__tilemap__bin;
 	unsigned char idx = 0;
-
 	while( '\0' != text[idx] )
 	{
 		unsigned char ch = text[ idx ];
-		unsigned char tile = text[idx] - TEXT_ROOT;
-		devkit_SMS_setNextTileatXY( x++, y );
-		devkit_SMS_setTile( *pnt + tile );
+		unsigned char tile = ch - TEXT_ROOT;
+		draw_char( tile, x, y );
+		//devkit_SMS_setNextTileatXY( x++, y );
+		//devkit_SMS_setTile( *pnt + tile );
+		x++;
 		idx++;
 	}
 }
 
 void engine_font_manager_draw_data( unsigned int data, unsigned char x, unsigned char y )
 {
-	const unsigned char *pnt = font_tiles__tilemap__bin;
+	//const unsigned char *pnt = font_tiles__tilemap__bin;
 
 	unsigned char idx;
 	signed char tile;
@@ -69,14 +94,16 @@ void engine_font_manager_draw_data( unsigned int data, unsigned char x, unsigned
 			tile = 0;
 		}
 
-		devkit_SMS_setNextTileatXY( x--, y );
-		devkit_SMS_setTile( *pnt + tile );
+		draw_char( tile, x, y );
+		x--;
+		//devkit_SMS_setNextTileatXY( x--, y );
+		//devkit_SMS_setTile( *pnt + tile );
 	}
 }
 
 void engine_font_manager_draw_zero( unsigned int data, unsigned char x, unsigned char y )
 {
-	const unsigned char *pnt = font_tiles__tilemap__bin;
+	//const unsigned char *pnt = font_tiles__tilemap__bin;
 
 	unsigned char idx;
 	unsigned char tile;
@@ -88,8 +115,9 @@ void engine_font_manager_draw_zero( unsigned int data, unsigned char x, unsigned
 		data /= UNIT_ROOT;
 
 		tile = hold[idx] + DATA_ROOT;
-
-		devkit_SMS_setNextTileatXY( x--, y );
-		devkit_SMS_setTile( *pnt + tile );
+		draw_char( tile, x, y );
+		x--;
+		//devkit_SMS_setNextTileatXY( x--, y );
+		//devkit_SMS_setTile( *pnt + tile );
 	}
 }
