@@ -24,6 +24,9 @@
 
 #define NO_SELECTION			255
 
+// Content.
+#define ENEMY_TILES		256
+
 // Specific global variables.
 #define SCREEN_WIDTH			256
 #define SCREEN_HEIGHT			192

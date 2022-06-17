@@ -47,3 +47,25 @@ void engine_graphics_manager_draw_logo_big( unsigned char x, unsigned char y )
 		}
 	}
 }
+
+void engine_graphics_manager_draw_koschey( unsigned char x, unsigned char y )
+{
+	const unsigned char *pnt = koschey__tilemap__bin;
+	unsigned char wide = 12;
+	unsigned char high = 15;
+	unsigned char i, j;
+	unsigned char idx = 0;
+
+	unsigned int tile = 0;
+	unsigned int palette = devkit_TILE_USE_SPRITE_PALETTE();
+	for( j = 0; j < high; j++ )
+	{
+		for( i = 0; i < wide; i++ )
+		{
+			tile = ( ENEMY_TILES + idx) | palette;
+			devkit_SMS_setNextTileatXY( x + i, y + j );
+			devkit_SMS_setTile( *pnt + tile );
+			idx++;
+		}
+	}
+}

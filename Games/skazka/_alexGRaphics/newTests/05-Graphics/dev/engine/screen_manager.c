@@ -6,6 +6,7 @@
 #include "text_manager.h"
 
 static void draw_title();
+static void draw_boss();
 
 static void draw_text();
 static void draw_punc();
@@ -13,18 +14,26 @@ static void draw_flip();
 
 void engine_screen_manager_init()
 {
-	draw_title();		// screen_01_title
-	//draw_text();
+	//draw_title();		// screen_01_title
+	draw_boss();
 }
 
 void engine_screen_manager_update()
 {
-//	engine_sprite_manager_draw( 64, 64, 256 );
+}
+
+static void draw_boss()
+{
+	engine_graphics_manager_draw_border();
+
+	engine_content_manager_load_koschey();
+	engine_graphics_manager_draw_koschey( 10, 2 );
 }
 
 static void draw_title()
 {
 	engine_graphics_manager_draw_border();
+
 	engine_content_manager_load_logo_big();
 
 	// TODO - replace hard coded values!
