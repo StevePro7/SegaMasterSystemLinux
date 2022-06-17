@@ -11,7 +11,6 @@
 static unsigned char get_tile( unsigned char ch );
 static void draw_char( unsigned int tile, unsigned char x, unsigned char y );
 
-
 void engine_font_manager_draw_punc( unsigned char ch, unsigned char x, unsigned char y )
 {
 	unsigned char tile = get_tile( ch );
