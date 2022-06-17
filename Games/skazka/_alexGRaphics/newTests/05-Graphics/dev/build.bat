@@ -16,7 +16,8 @@ cd engine
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 content_manager.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 font_manager.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 global_manager.c
-::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 graphics_manager.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 graphics_manager.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 locale_manager.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 screen_manager.c
 cd ..
 
@@ -47,6 +48,7 @@ engine/content_manager.rel ^
 engine/font_manager.rel ^
 engine/global_manager.rel ^
 engine/graphics_manager.rel ^
+engine/locale_manager.rel ^
 engine/screen_manager.rel ^
 content/gfx.rel
 
@@ -70,5 +72,5 @@ if exist "*.lst" del "*.lst" > nul; if exist "*.sym" del "*.sym" > nul;
 :: if exist "*.noi"  del "*.noi"  > nul
 
 :: Run
-java -jar C:/SEGA/Emulicious/Emulicious.jar output.sms
-::output.sms
+::java -jar C:/SEGA/Emulicious/Emulicious.jar output.sms
+output.sms

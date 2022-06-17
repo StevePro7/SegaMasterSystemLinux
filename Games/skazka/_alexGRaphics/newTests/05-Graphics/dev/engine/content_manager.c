@@ -24,6 +24,6 @@ void engine_content_manager_load_tiles()
 
 void engine_content_manager_load_logo_big()
 {
-	devkit_SMS_mapROMBank( logo_big__tilemap__bin_bank );
+	devkit_SMS_mapROMBank( logo_big__tiles__psgcompr_bank );
 	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) logo_big__tiles__psgcompr, LOGO_TILES );
 }

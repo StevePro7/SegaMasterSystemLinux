@@ -2,5 +2,6 @@
 #define _GRAPHICS_MANAGER_H_
 
 void engine_graphics_manager_draw_border();
+void engine_graphics_manager_draw_logo_big( unsigned char x, unsigned char y );
 
 #endif//_GRAPHICS_MANAGER_H_

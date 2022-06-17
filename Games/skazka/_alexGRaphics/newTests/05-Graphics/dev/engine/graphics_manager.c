@@ -2,7 +2,8 @@
 #include "global_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
-//#include "../banks/bank3.h"
+#include "../banks/bank2.h"
+#include "../banks/bank3.h"
 
 void engine_graphics_manager_draw_border()
 {
@@ -25,5 +26,24 @@ void engine_graphics_manager_draw_border()
 	{
 		devkit_SMS_setNextTileatXY( idx, 0 ); devkit_SMS_setTile( *pnt + 2 );
 		devkit_SMS_setNextTileatXY( idx, TILES_HEIGHT - 1 ); devkit_SMS_setTile( *pnt + 2 );
+	}
+}
+
+void engine_graphics_manager_draw_logo_big( unsigned char x, unsigned char y )
+{
+	const unsigned char *pnt = logo_big__tilemap__bin;
+	unsigned char wide = 28;
+	unsigned char high = 5;
+	unsigned char i, j;
+
+	unsigned int tile = 0;
+	for( j = 0; j < high; j++ )
+	{
+		for( i = 0; i < wide; i++ )
+		{
+			devkit_SMS_setNextTileatXY( x + i, y + j );
+			devkit_SMS_setTile( *pnt + tile );
+			tile++;
+		}
 	}
 }

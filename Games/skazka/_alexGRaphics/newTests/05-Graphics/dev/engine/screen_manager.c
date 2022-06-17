@@ -1,6 +1,10 @@
 #include "screen_manager.h"
+#include "content_manager.h"
 #include "font_manager.h"
 #include "graphics_manager.h"
+#include "locale_manager.h"
+
+static void draw_title();
 
 static void draw_text();
 static void draw_punc();
@@ -8,7 +12,7 @@ static void draw_flip();
 
 void engine_screen_manager_init()
 {
-	engine_graphics_manager_draw_border();
+	draw_title();		// screen_01_title
 }
 
 void engine_screen_manager_update()
@@ -16,6 +20,17 @@ void engine_screen_manager_update()
 //	engine_sprite_manager_draw( 64, 64, 256 );
 }
 
+static void draw_title()
+{
+	engine_graphics_manager_draw_border();
+	engine_content_manager_load_logo_big();
+
+	// TODO - replace hard coded values!
+	engine_graphics_manager_draw_logo_big( 2, 3 );
+
+	engine_font_manager_draw_text( LOCALE_TITLE_MSG1, 6, 10 );
+	engine_font_manager_draw_data( 8, 16, 15 );
+}
 
 static void draw_text()
 {

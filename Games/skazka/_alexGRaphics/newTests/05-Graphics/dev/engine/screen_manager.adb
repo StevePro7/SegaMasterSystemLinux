@@ -1,11 +1,14 @@
 M:screen_manager
 F:G$engine_screen_manager_init$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_screen_manager_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+F:Fscreen_manager$draw_title$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:Fscreen_manager$draw_text$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:Fscreen_manager$draw_punc$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lscreen_manager.draw_punc$idx$1_0$11({1}SC:U),R,0,0,[]
+S:Lscreen_manager.draw_punc$idx$1_0$13({1}SC:U),R,0,0,[]
 F:Fscreen_manager$draw_flip$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lscreen_manager.draw_flip$idx$1_0$12({1}SC:U),R,0,0,[]
+S:Lscreen_manager.draw_flip$idx$1_0$14({1}SC:U),R,0,0,[]
+S:G$engine_content_manager_load_tiles$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_content_manager_load_logo_big$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_punc$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_flip$0_0$0({2}DF,SV:S),C,0,0
@@ -13,3 +16,4 @@ S:G$engine_font_manager_draw_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_data$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_zero$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_border$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_graphics_manager_draw_logo_big$0_0$0({2}DF,SV:S),C,0,0
