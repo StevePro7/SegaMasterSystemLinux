@@ -1,6 +1,10 @@
 M:screen_manager
 F:G$engine_screen_manager_init$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_screen_manager_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+F:Fscreen_manager$draw_punc$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lscreen_manager.draw_punc$idx$1_0$10({1}SC:U),R,0,0,[]
+F:Fscreen_manager$draw_flip$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lscreen_manager.draw_flip$idx$1_0$11({1}SC:U),R,0,0,[]
 S:G$engine_font_manager_draw_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_punc$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_flip$0_0$0({2}DF,SV:S),C,0,0

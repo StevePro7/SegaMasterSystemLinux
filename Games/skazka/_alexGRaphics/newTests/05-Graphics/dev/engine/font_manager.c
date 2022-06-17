@@ -7,39 +7,13 @@
 #define UNIT_ROOT	10		// 10 is decimal
 #define DATA_LONG	3		// 3 placeholder
 
-static void draw_char( unsigned char tile, unsigned char x, unsigned char y )
-{
-	const unsigned char *pnt = font__tilemap__bin;
-	devkit_SMS_setNextTileatXY( x, y );
-	devkit_SMS_setTile( *pnt + tile );
-}
+// Private helper functions.
+static unsigned char get_tile( unsigned char ch );
+static void draw_char( unsigned int tile, unsigned char x, unsigned char y );
 
-static unsigned char get_tile( unsigned char ch )
-{
-	unsigned char tile = 0;
-	if( '+' == ch )
-	{
-		tile = 37;
-	}
-	else if( '?' == ch )
-	{
-		tile = 43;
-	}
 
-	return tile;
-}
 void engine_font_manager_draw_punc( unsigned char ch, unsigned char x, unsigned char y )
 {
-	//unsigned char tile = 0;
-	//if( '+' == ch )
-	//{
-	//	tile = 37;
-	//}
-	//else if( '?' == ch )
-	//{
-	//	tile = 43;
-	//}
-
 	unsigned char tile = get_tile( ch );
 	draw_char( tile, x, y );
 }
@@ -113,4 +87,26 @@ void engine_font_manager_draw_zero( unsigned int data, unsigned char x, unsigned
 		draw_char( tile, x, y );
 		x--;
 	}
+}
+
+static unsigned char get_tile( unsigned char ch )
+{
+	if( '+' == ch ) { return 37; }
+	else if( '-' == ch ) { return 38; }
+	else if( '\'' == ch ) { return 39; }
+	else if( '.' == ch ) { return 40; }
+	else if( ',' == ch ) { return 41; }
+	else if( ':' == ch ) { return 42; }
+	else if( '?' == ch ) { return 43; }
+	else if( '!' == ch ) { return 44; }
+	else if( '/' == ch ) { return 45; }
+	else if( ')' == ch ) { return 46; }
+	else if( '>' == ch ) { return 47; }
+	return 0;
+}
+static void draw_char( unsigned int tile, unsigned char x, unsigned char y )
+{
+	const unsigned char *pnt = font__tilemap__bin;
+	devkit_SMS_setNextTileatXY( x, y );
+	devkit_SMS_setTile( *pnt + tile );
 }
