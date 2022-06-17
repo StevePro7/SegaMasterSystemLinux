@@ -4,7 +4,7 @@ cd ..
 cd banks
 cd bank2
 
-bmp2tile.exe raw/splash.bmp -savetiles "splash (tiles).psgcompr" -removedupes -nomirror -planar -tileoffset 64 -savetilemap "splash (tilemap).stmcompr" -exit
+bmp2tile.exe raw/battle_enemies.png -savetiles "battle_enemies (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 64  -savetilemap "battle_enemies (tilemap).bin" -exit
 
 cd ..
 folder2c bank2 bank2 2
