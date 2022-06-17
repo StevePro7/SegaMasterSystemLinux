@@ -1,10 +1,10 @@
 M:font_manager
-F:G$engine_font_manager_draw_test$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lfont_manager.engine_font_manager_draw_test$x$1_0$88({1}SC:U),B,1,4
-S:Lfont_manager.engine_font_manager_draw_test$y$1_0$88({1}SC:U),B,1,5
-S:Lfont_manager.engine_font_manager_draw_test$pnt$1_0$89({2}DG,SC:U),R,0,0,[]
-S:Lfont_manager.engine_font_manager_draw_test$tile$1_0$89({1}SC:U),R,0,0,[]
-S:Lfont_manager.engine_font_manager_draw_test$flipY$1_0$89({2}SI:U),R,0,0,[e,d]
+F:G$engine_font_manager_draw_hero$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lfont_manager.engine_font_manager_draw_hero$x$1_0$88({1}SC:U),B,1,4
+S:Lfont_manager.engine_font_manager_draw_hero$y$1_0$88({1}SC:U),B,1,5
+S:Lfont_manager.engine_font_manager_draw_hero$pnt$1_0$89({2}DG,SC:U),R,0,0,[]
+S:Lfont_manager.engine_font_manager_draw_hero$tile$1_0$89({1}SC:U),R,0,0,[]
+S:Lfont_manager.engine_font_manager_draw_hero$flipY$1_0$89({2}SI:U),R,0,0,[e,d]
 F:Ffont_manager$draw_char$0_0$0({2}DF,SV:S),C,0,0,0,0,0
 S:Lfont_manager.draw_char$tile$1_0$90({1}SC:U),B,1,4
 S:Lfont_manager.draw_char$x$1_0$90({1}SC:U),B,1,5
