@@ -27,7 +27,15 @@ static void draw_boss()
 	engine_graphics_manager_draw_border();
 
 	engine_content_manager_load_koschey();
+
+	// TODO - replace hard coded values!
 	engine_graphics_manager_draw_koschey( 10, 2 );
+
+	engine_font_manager_draw_text( "SO YOU VE COME TO CHALLENGE", 2, 19 );
+	engine_font_manager_draw_text( "ME FOOLISH MORTAL  VERY WELL", 2, 20 );
+
+	engine_font_manager_draw_punc( '\'', 8, 19 );
+	engine_font_manager_draw_punc( '?', 19, 20 );
 }
 
 static void draw_title()
