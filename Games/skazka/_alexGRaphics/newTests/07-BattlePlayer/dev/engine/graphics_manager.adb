@@ -3,7 +3,8 @@ F:G$engine_graphics_manager_draw_battle_player$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lgraphics_manager.engine_graphics_manager_draw_battle_player$x$1_0$86({1}SC:U),B,1,4
 S:Lgraphics_manager.engine_graphics_manager_draw_battle_player$y$1_0$86({1}SC:U),B,1,5
 S:Lgraphics_manager.engine_graphics_manager_draw_battle_player$pnt$1_0$87({2}DG,SC:U),R,0,0,[]
-S:Lgraphics_manager.engine_graphics_manager_draw_battle_player$sloc0$0_1$0({1}SC:S),B,1,-1
+S:Lgraphics_manager.engine_graphics_manager_draw_battle_player$sloc0$0_1$0({1}SC:S),B,1,-2
+S:Lgraphics_manager.engine_graphics_manager_draw_battle_player$sloc1$0_1$0({1}SC:S),B,1,-1
 F:G$engine_graphics_manager_draw_border$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lgraphics_manager.engine_graphics_manager_draw_border$pnt$1_0$88({2}DG,SC:U),R,0,0,[]
 S:Lgraphics_manager.engine_graphics_manager_draw_border$idx$1_0$88({1}SC:U),R,0,0,[b]

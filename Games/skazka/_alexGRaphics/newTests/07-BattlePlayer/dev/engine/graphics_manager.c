@@ -20,6 +20,20 @@ void engine_graphics_manager_draw_battle_player( unsigned char x, unsigned char 
 	devkit_SMS_setTile( *pnt + 6 );
 	devkit_SMS_setNextTileatXY( x + 2, y + 1 );
 	devkit_SMS_setTile( *pnt + 7 );
+
+	devkit_SMS_setNextTileatXY( x + 0, y + 2 );
+	devkit_SMS_setTile( *pnt + 0 );
+	devkit_SMS_setNextTileatXY( x + 1, y + 2 );
+	devkit_SMS_setTile( *pnt + 10 );
+	devkit_SMS_setNextTileatXY( x + 2, y + 2 );
+	devkit_SMS_setTile( *pnt + 11 );
+
+	devkit_SMS_setNextTileatXY( x + 0, y + 3 );
+	devkit_SMS_setTile( *pnt + 0 );
+	devkit_SMS_setNextTileatXY( x + 1, y + 3 );
+	devkit_SMS_setTile( *pnt + 12 );
+	devkit_SMS_setNextTileatXY( x + 2, y + 3 );
+	devkit_SMS_setTile( *pnt + 13 );
 }
 
 void engine_graphics_manager_draw_border()
