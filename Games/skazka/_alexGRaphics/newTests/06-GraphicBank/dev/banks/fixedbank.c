@@ -1,15 +1,15 @@
 const unsigned char *intro_texts[] =
 {
-	"    YOU ARE A YOUNG HERO WHO ",
-	" WISHES TO RID THE LAND FROM ",
-	" A TERRIFYING CREATURE KNOWN ",
-	" AS KOSCHEY THE IMMORTAL     ",		// TODO
+	"   YOU ARE A YOUNG HERO WHO",
+	"WISHES TO RID THE LAND FROM",
+	"A TERRIFYING CREATURE KNOWN",
+	"AS KOSCHEY THE IMMORTAL",			// TODO	"."
 	"",
-	"   RIGHT NOW ALL YOU HAVE IS ",
-	" YOUR DAGGER AND YOUR WHITS  ",		// TODO
+	"  RIGHT NOW ALL YOU HAVE IS",
+	"YOUR DAGGER AND YOUR WITS",		// TODO	"."
 	"",
-	" YOU ENTER A VILLAGE TO BEGIN",
-	" YOUR ADVENTURE              ",		// TODO
+	"YOU ENTER A VILLAGE TO BEGIN",
+	"YOUR ADVENTURE",					// TODO	"."
 };
 
 const unsigned char *diff_texts[] =

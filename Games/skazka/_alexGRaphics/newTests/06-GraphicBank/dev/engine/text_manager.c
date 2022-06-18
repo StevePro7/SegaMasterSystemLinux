@@ -5,7 +5,6 @@
 
 void engine_text_manager_cont()
 {
-	// TODO - replace hard coded values!
-	engine_font_manager_draw_text( LOCALE_FIRE1_CONT, 4, 21 );
-	engine_font_manager_draw_numb( 1, 15, 21 );
+	engine_font_manager_draw_text( LOCALE_FIRE1_CONT, LEFT_X + 4, TOP_Y + 21 );
+	engine_font_manager_draw_numb( 1, LEFT_X + 15, TOP_Y + 21 );
 }

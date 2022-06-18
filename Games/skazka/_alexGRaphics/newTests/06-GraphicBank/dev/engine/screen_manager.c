@@ -18,6 +18,8 @@ static void draw_flip();
 
 void engine_screen_manager_init()
 {
+	//engine_graphics_manager_draw_border();
+
 	//draw_title();		// screen_01_title
 	//draw_boss();
 	draw_intro();
@@ -32,6 +34,8 @@ static void draw_intro()
 	unsigned char row;
 	unsigned char idx;
 
+	engine_content_manager_load_logo_big();
+
 	row = 10;
 	devkit_SMS_mapROMBank( FIXED_BANK );
 	for( idx = 0; idx < 10; idx++ )
@@ -39,6 +43,15 @@ static void draw_intro()
 		engine_font_manager_draw_text( ( unsigned char * ) intro_texts[ idx ], LEFT_X + 2, row );
 		row++;
 	}
+
+	engine_graphics_manager_draw_border();
+	engine_graphics_manager_draw_logo_big( LEFT_X + 2, TOP_Y + 3 );
+
+	engine_text_manager_cont();
+
+	//engine_font_manager_draw_punc( '.', LEFT_X + 25, TOP_Y + 13 );
+	//engine_font_manager_draw_punc( '.', LEFT_X + 27, TOP_Y + 16 );
+	//engine_font_manager_draw_punc( '.', LEFT_X + 16, TOP_Y + 19 );
 }
 
 static void draw_boss()
@@ -64,7 +77,7 @@ static void draw_title()
 	engine_content_manager_load_logo_big();
 
 	// TODO - replace hard coded values!
-	engine_graphics_manager_draw_logo_big( 2, 3 );
+	engine_graphics_manager_draw_logo_big( LEFT_X + 2, TOP_Y + 3 );
 
 	engine_font_manager_draw_text( LOCALE_TITLE_MSG1, 6, 10 );
 	engine_font_manager_draw_text( LOCALE_TITLE_MSG2, 3, 15 );

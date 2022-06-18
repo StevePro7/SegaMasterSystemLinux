@@ -120,25 +120,25 @@ _beat_texts::
 Ffixedbank$__str_0$0_0$0 == .
 	.area _BANK3
 ___str_0:
-	.ascii "    YOU ARE A YOUNG HERO WHO "
+	.ascii "   YOU ARE A YOUNG HERO WHO"
 	.db 0x00
 	.area _CODE
 Ffixedbank$__str_1$0_0$0 == .
 	.area _BANK3
 ___str_1:
-	.ascii " WISHES TO RID THE LAND FROM "
+	.ascii "WISHES TO RID THE LAND FROM"
 	.db 0x00
 	.area _CODE
 Ffixedbank$__str_2$0_0$0 == .
 	.area _BANK3
 ___str_2:
-	.ascii " A TERRIFYING CREATURE KNOWN "
+	.ascii "A TERRIFYING CREATURE KNOWN"
 	.db 0x00
 	.area _CODE
 Ffixedbank$__str_3$0_0$0 == .
 	.area _BANK3
 ___str_3:
-	.ascii " AS KOSCHEY THE IMMORTAL     "
+	.ascii "AS KOSCHEY THE IMMORTAL"
 	.db 0x00
 	.area _CODE
 Ffixedbank$__str_4$0_0$0 == .
@@ -149,25 +149,25 @@ ___str_4:
 Ffixedbank$__str_5$0_0$0 == .
 	.area _BANK3
 ___str_5:
-	.ascii "   RIGHT NOW ALL YOU HAVE IS "
+	.ascii "  RIGHT NOW ALL YOU HAVE IS"
 	.db 0x00
 	.area _CODE
 Ffixedbank$__str_6$0_0$0 == .
 	.area _BANK3
 ___str_6:
-	.ascii " YOUR DAGGER AND YOUR WHITS  "
+	.ascii "YOUR DAGGER AND YOUR WITS"
 	.db 0x00
 	.area _CODE
 Ffixedbank$__str_7$0_0$0 == .
 	.area _BANK3
 ___str_7:
-	.ascii " YOU ENTER A VILLAGE TO BEGIN"
+	.ascii "YOU ENTER A VILLAGE TO BEGIN"
 	.db 0x00
 	.area _CODE
 Ffixedbank$__str_8$0_0$0 == .
 	.area _BANK3
 ___str_8:
-	.ascii " YOUR ADVENTURE              "
+	.ascii "YOUR ADVENTURE"
 	.db 0x00
 	.area _CODE
 Ffixedbank$__str_9$0_0$0 == .
