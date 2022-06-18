@@ -4,7 +4,48 @@
 #include "../content/gfx.h"
 #include "../banks/bank2.h"
 
-void engine_graphics_manager_draw_battle_player( unsigned char x, unsigned char y )
+// battle_player_array : 9 x 12 = 108
+const unsigned char array[] =
+{
+	0,1,2,3,1,2,4,1,2,
+	5,6,7,8,6,7,9,6,7,
+	0,10,11,0,10,11,0,10,11,
+	0,12,13,0,12,13,0,12,13,
+	0,14,15,3,14,15,4,14,15,
+	16,17,18,19,17,18,20,17,18,
+	0,21,22,0,21,22,0,21,22,
+	0,12,13,0,12,13,0,12,13,
+	0,23,24,3,23,24,4,23,24,
+	25,26,27,28,26,27,29,26,27,
+	0,30,31,0,30,31,0,30,31,
+	0,12,13,0,12,13,0,12,13,
+};
+
+
+void engine_graphics_manager_draw_battle_player( unsigned char x, unsigned char y, unsigned char w, unsigned char a )
+{
+	const unsigned char *pnt = battle_player__tilemap__bin;
+	const unsigned char wide = 3;
+	const unsigned char high = 4;
+
+	const unsigned char start = ( a * 36 ) + ( w * 3 );
+	unsigned char index = 0;
+	unsigned int tile = 0;
+	unsigned char i, j;
+
+	for( j = 0; j < high; j++ )
+	{
+		for( i = 0; i < wide; i++ )
+		{
+			index = ( j * 9 ) + i + start;
+			tile = array[ index ];
+			devkit_SMS_setNextTileatXY( x + i, y + j );
+			devkit_SMS_setTile( *pnt + tile );
+		}
+	}
+}
+
+void engine_graphics_manager_draw_battle_player1( unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = battle_player__tilemap__bin;
 	devkit_SMS_setNextTileatXY( x + 0, y + 0 );
@@ -63,8 +104,8 @@ void engine_graphics_manager_draw_border()
 void engine_graphics_manager_draw_logo_big( unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = logo_big__tilemap__bin;
-	unsigned char wide = 28;
-	unsigned char high = 5;
+	const unsigned char wide = 28;
+	const unsigned char high = 5;
 	unsigned char i, j;
 
 	unsigned int tile = 0;
@@ -82,8 +123,8 @@ void engine_graphics_manager_draw_logo_big( unsigned char x, unsigned char y )
 void engine_graphics_manager_draw_koschey( unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = koschey__tilemap__bin;
-	unsigned char wide = 12;
-	unsigned char high = 15;
+	const unsigned char wide = 12;
+	const unsigned char high = 15;
 	unsigned char i, j;
 	unsigned char idx = 0;
 
@@ -104,8 +145,8 @@ void engine_graphics_manager_draw_koschey( unsigned char x, unsigned char y )
 void engine_graphics_manager_draw_leshy( unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = battle_enemies_leshy__tilemap__bin;
-	unsigned char wide = 3;
-	unsigned char high = 4;
+	const unsigned char wide = 3;
+	const unsigned char high = 4;
 	unsigned char i, j;
 	unsigned char idx = 0;
 
