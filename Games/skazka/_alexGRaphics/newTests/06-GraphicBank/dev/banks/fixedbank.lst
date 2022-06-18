@@ -1,0 +1,972 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 4.1.0 #12072 (MINGW64)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module fixedbank
+                                      6 	.optsdcc -mz80
+                                      7 	
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl _beat_texts
+                                     12 	.globl _over_texts
+                                     13 	.globl _laugh_texts
+                                     14 	.globl _query_texts
+                                     15 	.globl _boss_texts
+                                     16 	.globl _prep_texts
+                                     17 	.globl _villager_texts
+                                     18 	.globl _menus_texts
+                                     19 	.globl _shop_texts
+                                     20 	.globl _gold_texts
+                                     21 	.globl _fight_texts
+                                     22 	.globl _enemy_texts
+                                     23 	.globl _forest_texts
+                                     24 	.globl _life_texts
+                                     25 	.globl _armor_texts
+                                     26 	.globl _weapon_texts
+                                     27 	.globl _stats_texts
+                                     28 	.globl _diff_texts
+                                     29 	.globl _intro_texts
+                                     30 ;--------------------------------------------------------
+                                     31 ; special function registers
+                                     32 ;--------------------------------------------------------
+                                     33 ;--------------------------------------------------------
+                                     34 ; ram data
+                                     35 ;--------------------------------------------------------
+                                     36 	.area _DATA
+                                     37 ;--------------------------------------------------------
+                                     38 ; ram data
+                                     39 ;--------------------------------------------------------
+                                     40 	.area _INITIALIZED
+                           000000    41 G$intro_texts$0_0$0==.
+      000000                         42 _intro_texts::
+      000000                         43 	.ds 20
+                           000014    44 G$diff_texts$0_0$0==.
+      000014                         45 _diff_texts::
+      000014                         46 	.ds 4
+                           000018    47 G$stats_texts$0_0$0==.
+      000018                         48 _stats_texts::
+      000018                         49 	.ds 16
+                           000028    50 G$weapon_texts$0_0$0==.
+      000028                         51 _weapon_texts::
+      000028                         52 	.ds 6
+                           00002E    53 G$armor_texts$0_0$0==.
+      00002E                         54 _armor_texts::
+      00002E                         55 	.ds 6
+                           000034    56 G$life_texts$0_0$0==.
+      000034                         57 _life_texts::
+      000034                         58 	.ds 4
+                           000038    59 G$forest_texts$0_0$0==.
+      000038                         60 _forest_texts::
+      000038                         61 	.ds 4
+                           00003C    62 G$enemy_texts$0_0$0==.
+      00003C                         63 _enemy_texts::
+      00003C                         64 	.ds 10
+                           000046    65 G$fight_texts$0_0$0==.
+      000046                         66 _fight_texts::
+      000046                         67 	.ds 6
+                           00004C    68 G$gold_texts$0_0$0==.
+      00004C                         69 _gold_texts::
+      00004C                         70 	.ds 8
+                           000054    71 G$shop_texts$0_0$0==.
+      000054                         72 _shop_texts::
+      000054                         73 	.ds 16
+                           000064    74 G$menus_texts$0_0$0==.
+      000064                         75 _menus_texts::
+      000064                         76 	.ds 12
+                           000070    77 G$villager_texts$0_0$0==.
+      000070                         78 _villager_texts::
+      000070                         79 	.ds 60
+                           0000AC    80 G$prep_texts$0_0$0==.
+      0000AC                         81 _prep_texts::
+      0000AC                         82 	.ds 18
+                           0000BE    83 G$boss_texts$0_0$0==.
+      0000BE                         84 _boss_texts::
+      0000BE                         85 	.ds 4
+                           0000C2    86 G$query_texts$0_0$0==.
+      0000C2                         87 _query_texts::
+      0000C2                         88 	.ds 4
+                           0000C6    89 G$laugh_texts$0_0$0==.
+      0000C6                         90 _laugh_texts::
+      0000C6                         91 	.ds 6
+                           0000CC    92 G$over_texts$0_0$0==.
+      0000CC                         93 _over_texts::
+      0000CC                         94 	.ds 8
+                           0000D4    95 G$beat_texts$0_0$0==.
+      0000D4                         96 _beat_texts::
+      0000D4                         97 	.ds 22
+                                     98 ;--------------------------------------------------------
+                                     99 ; absolute external ram data
+                                    100 ;--------------------------------------------------------
+                                    101 	.area _DABS (ABS)
+                                    102 ;--------------------------------------------------------
+                                    103 ; global & static initialisations
+                                    104 ;--------------------------------------------------------
+                                    105 	.area _HOME
+                                    106 	.area _GSINIT
+                                    107 	.area _GSFINAL
+                                    108 	.area _GSINIT
+                                    109 ;--------------------------------------------------------
+                                    110 ; Home
+                                    111 ;--------------------------------------------------------
+                                    112 	.area _HOME
+                                    113 	.area _HOME
+                                    114 ;--------------------------------------------------------
+                                    115 ; code
+                                    116 ;--------------------------------------------------------
+                                    117 	.area _CODE
+                                    118 	.area _CODE
+                                    119 	.area _BANK3
+                           000000   120 Ffixedbank$__str_0$0_0$0 == .
+                                    121 	.area _BANK3
+      000000                        122 ___str_0:
+      000000 20 20 20 20 59 4F 55   123 	.ascii "    YOU ARE A YOUNG HERO WHO "
+             20 41 52 45 20 41 20
+             59 4F 55 4E 47 20 48
+             45 52 4F 20 57 48 4F
+             20
+      00001D 00                     124 	.db 0x00
+                                    125 	.area _CODE
+                           000000   126 Ffixedbank$__str_1$0_0$0 == .
+                                    127 	.area _BANK3
+      00001E                        128 ___str_1:
+      00001E 20 57 49 53 48 45 53   129 	.ascii " WISHES TO RID THE LAND FROM "
+             20 54 4F 20 52 49 44
+             20 54 48 45 20 4C 41
+             4E 44 20 46 52 4F 4D
+             20
+      00003B 00                     130 	.db 0x00
+                                    131 	.area _CODE
+                           000000   132 Ffixedbank$__str_2$0_0$0 == .
+                                    133 	.area _BANK3
+      00003C                        134 ___str_2:
+      00003C 20 41 20 54 45 52 52   135 	.ascii " A TERRIFYING CREATURE KNOWN "
+             49 46 59 49 4E 47 20
+             43 52 45 41 54 55 52
+             45 20 4B 4E 4F 57 4E
+             20
+      000059 00                     136 	.db 0x00
+                                    137 	.area _CODE
+                           000000   138 Ffixedbank$__str_3$0_0$0 == .
+                                    139 	.area _BANK3
+      00005A                        140 ___str_3:
+      00005A 20 41 53 20 4B 4F 53   141 	.ascii " AS KOSCHEY THE IMMORTAL.    "
+             43 48 45 59 20 54 48
+             45 20 49 4D 4D 4F 52
+             54 41 4C 2E 20 20 20
+             20
+      000077 00                     142 	.db 0x00
+                                    143 	.area _CODE
+                           000000   144 Ffixedbank$__str_4$0_0$0 == .
+                                    145 	.area _BANK3
+      000078                        146 ___str_4:
+      000078 00                     147 	.db 0x00
+                                    148 	.area _CODE
+                           000000   149 Ffixedbank$__str_5$0_0$0 == .
+                                    150 	.area _BANK3
+      000079                        151 ___str_5:
+      000079 20 20 20 52 49 47 48   152 	.ascii "   RIGHT NOW ALL YOU HAVE IS "
+             54 20 4E 4F 57 20 41
+             4C 4C 20 59 4F 55 20
+             48 41 56 45 20 49 53
+             20
+      000096 00                     153 	.db 0x00
+                                    154 	.area _CODE
+                           000000   155 Ffixedbank$__str_6$0_0$0 == .
+                                    156 	.area _BANK3
+      000097                        157 ___str_6:
+      000097 20 59 4F 55 52 20 44   158 	.ascii " YOUR DAGGER AND YOUR WHITS. "
+             41 47 47 45 52 20 41
+             4E 44 20 59 4F 55 52
+             20 57 48 49 54 53 2E
+             20
+      0000B4 00                     159 	.db 0x00
+                                    160 	.area _CODE
+                           000000   161 Ffixedbank$__str_7$0_0$0 == .
+                                    162 	.area _BANK3
+      0000B5                        163 ___str_7:
+      0000B5 20 59 4F 55 20 45 4E   164 	.ascii " YOU ENTER A VILLAGE TO BEGIN"
+             54 45 52 20 41 20 56
+             49 4C 4C 41 47 45 20
+             54 4F 20 42 45 47 49
+             4E
+      0000D2 00                     165 	.db 0x00
+                                    166 	.area _CODE
+                           000000   167 Ffixedbank$__str_8$0_0$0 == .
+                                    168 	.area _BANK3
+      0000D3                        169 ___str_8:
+      0000D3 20 59 4F 55 52 20 41   170 	.ascii " YOUR ADVENTURE.             "
+             44 56 45 4E 54 55 52
+             45 2E 20 20 20 20 20
+             20 20 20 20 20 20 20
+             20
+      0000F0 00                     171 	.db 0x00
+                                    172 	.area _CODE
+                           000000   173 Ffixedbank$__str_9$0_0$0 == .
+                                    174 	.area _BANK3
+      0000F1                        175 ___str_9:
+      0000F1 45 41 53 59            176 	.ascii "EASY"
+      0000F5 00                     177 	.db 0x00
+                                    178 	.area _CODE
+                           000000   179 Ffixedbank$__str_10$0_0$0 == .
+                                    180 	.area _BANK3
+      0000F6                        181 ___str_10:
+      0000F6 48 41 52 44            182 	.ascii "HARD"
+      0000FA 00                     183 	.db 0x00
+                                    184 	.area _CODE
+                           000000   185 Ffixedbank$__str_11$0_0$0 == .
+                                    186 	.area _BANK3
+      0000FB                        187 ___str_11:
+      0000FB 57 48 41 54 20 53 48   188 	.ascii "WHAT SHALL WE DO?  "
+             41 4C 4C 20 57 45 20
+             44 4F 3F 20 20
+      00010E 00                     189 	.db 0x00
+                                    190 	.area _CODE
+                           000000   191 Ffixedbank$__str_12$0_0$0 == .
+                                    192 	.area _BANK3
+      00010F                        193 ___str_12:
+      00010F 31 29 20 47 4F 20 46   194 	.ascii "1) GO FOREST PATROL"
+             4F 52 45 53 54 20 50
+             41 54 52 4F 4C
+      000122 00                     195 	.db 0x00
+                                    196 	.area _CODE
+                           000000   197 Ffixedbank$__str_13$0_0$0 == .
+                                    198 	.area _BANK3
+      000123                        199 ___str_13:
+      000123 32 29 20 50 55 52 43   200 	.ascii "2) PURCHASE AT SHOP"
+             48 41 53 45 20 41 54
+             20 53 48 4F 50
+      000136 00                     201 	.db 0x00
+                                    202 	.area _CODE
+                           000000   203 Ffixedbank$__str_14$0_0$0 == .
+                                    204 	.area _BANK3
+      000137                        205 ___str_14:
+      000137 33 29 20 52 45 53 54   206 	.ascii "3) REST BY THE WELL"
+             20 42 59 20 54 48 45
+             20 57 45 4C 4C
+      00014A 00                     207 	.db 0x00
+                                    208 	.area _CODE
+                           000000   209 Ffixedbank$__str_15$0_0$0 == .
+                                    210 	.area _BANK3
+      00014B                        211 ___str_15:
+      00014B 34 29 20 54 41 4C 4B   212 	.ascii "4) TALK TO VILLAGER"
+             20 54 4F 20 56 49 4C
+             4C 41 47 45 52
+      00015E 00                     213 	.db 0x00
+                                    214 	.area _CODE
+                           000000   215 Ffixedbank$__str_16$0_0$0 == .
+                                    216 	.area _BANK3
+      00015F                        217 ___str_16:
+      00015F 35 29 20 42 45 41 54   218 	.ascii "5) BEAT THE KOSCHEY"
+             20 54 48 45 20 4B 4F
+             53 43 48 45 59
+      000172 00                     219 	.db 0x00
+                                    220 	.area _CODE
+                           000000   221 Ffixedbank$__str_17$0_0$0 == .
+                                    222 	.area _BANK3
+      000173                        223 ___str_17:
+      000173 36 29 20 52 45 54 55   224 	.ascii "6) RETURN MAIN MENU"
+             52 4E 20 4D 41 49 4E
+             20 4D 45 4E 55
+      000186 00                     225 	.db 0x00
+                                    226 	.area _CODE
+                           000000   227 Ffixedbank$__str_18$0_0$0 == .
+                                    228 	.area _BANK3
+      000187                        229 ___str_18:
+      000187 20 20 20 53 57 4F 52   230 	.ascii "   SWORD"
+             44
+      00018F 00                     231 	.db 0x00
+                                    232 	.area _CODE
+                           000000   233 Ffixedbank$__str_19$0_0$0 == .
+                                    234 	.area _BANK3
+      000190                        235 ___str_19:
+      000190 20 20 20 20 20 41 58   236 	.ascii "     AXE"
+             45
+      000198 00                     237 	.db 0x00
+                                    238 	.area _CODE
+                           000000   239 Ffixedbank$__str_20$0_0$0 == .
+                                    240 	.area _BANK3
+      000199                        241 ___str_20:
+      000199 20 54 45 47 49 4C 41   242 	.ascii " TEGILAY"
+             59
+      0001A1 00                     243 	.db 0x00
+                                    244 	.area _CODE
+                           000000   245 Ffixedbank$__str_21$0_0$0 == .
+                                    246 	.area _BANK3
+      0001A2                        247 ___str_21:
+      0001A2 4B 4F 4C 43 48 55 47   248 	.ascii "KOLCHUGA"
+             41
+      0001AA 00                     249 	.db 0x00
+                                    250 	.area _CODE
+                           000000   251 Ffixedbank$__str_22$0_0$0 == .
+                                    252 	.area _BANK3
+      0001AB                        253 ___str_22:
+      0001AB 20 2B 31 20 4C 49 46   254 	.ascii " +1 LIFE"
+             45
+      0001B3 00                     255 	.db 0x00
+                                    256 	.area _CODE
+                           000000   257 Ffixedbank$__str_23$0_0$0 == .
+                                    258 	.area _BANK3
+      0001B4                        259 ___str_23:
+      0001B4 59 4F 55 20 41 52 45   260 	.ascii "YOU ARE IN THE FOREST!"
+             20 49 4E 20 54 48 45
+             20 46 4F 52 45 53 54
+             21
+      0001CA 00                     261 	.db 0x00
+                                    262 	.area _CODE
+                           000000   263 Ffixedbank$__str_24$0_0$0 == .
+                                    264 	.area _BANK3
+      0001CB                        265 ___str_24:
+      0001CB 59 4F 55 20 45 4E 43   266 	.ascii "YOU ENCOUNTERED ENEMY: "
+             4F 55 4E 54 45 52 45
+             44 20 45 4E 45 4D 59
+             3A 20
+      0001E2 00                     267 	.db 0x00
+                                    268 	.area _CODE
+                           000000   269 Ffixedbank$__str_25$0_0$0 == .
+                                    270 	.area _BANK3
+      0001E3                        271 ___str_25:
+      0001E3 20 20 52 41 5A 42 4F   272 	.ascii "  RAZBOYNIK"
+             59 4E 49 4B
+      0001EE 00                     273 	.db 0x00
+                                    274 	.area _CODE
+                           000000   275 Ffixedbank$__str_26$0_0$0 == .
+                                    276 	.area _BANK3
+      0001EF                        277 ___str_26:
+      0001EF 48 55 4E 47 52 59 20   278 	.ascii "HUNGRY WOLF"
+             57 4F 4C 46
+      0001FA 00                     279 	.db 0x00
+                                    280 	.area _CODE
+                           000000   281 Ffixedbank$__str_27$0_0$0 == .
+                                    282 	.area _BANK3
+      0001FB                        283 ___str_27:
+      0001FB 20 20 20 4B 49 4B 49   284 	.ascii "   KIKIMORA"
+             4D 4F 52 41
+      000206 00                     285 	.db 0x00
+                                    286 	.area _CODE
+                           000000   287 Ffixedbank$__str_28$0_0$0 == .
+                                    288 	.area _BANK3
+      000207                        289 ___str_28:
+      000207 20 20 20 20 20 20 4C   290 	.ascii "      LESHY"
+             45 53 48 59
+      000212 00                     291 	.db 0x00
+                                    292 	.area _CODE
+                           000000   293 Ffixedbank$__str_29$0_0$0 == .
+                                    294 	.area _BANK3
+      000213                        295 ___str_29:
+      000213 20 20 42 41 42 41 20   296 	.ascii "  BABA YAGA"
+             59 41 47 41
+      00021E 00                     297 	.db 0x00
+                                    298 	.area _CODE
+                           000000   299 Ffixedbank$__str_30$0_0$0 == .
+                                    300 	.area _BANK3
+      00021F                        301 ___str_30:
+      00021F 57 48 41 54 20 57 49   302 	.ascii "WHAT WILL YOU DO?  "
+             4C 4C 20 59 4F 55 20
+             44 4F 3F 20 20
+      000232 00                     303 	.db 0x00
+                                    304 	.area _CODE
+                           000000   305 Ffixedbank$__str_31$0_0$0 == .
+                                    306 	.area _BANK3
+      000233                        307 ___str_31:
+      000233 31 29 20 52 55 4E 20   308 	.ascii "1) RUN  "
+             20
+      00023B 00                     309 	.db 0x00
+                                    310 	.area _CODE
+                           000000   311 Ffixedbank$__str_32$0_0$0 == .
+                                    312 	.area _BANK3
+      00023C                        313 ___str_32:
+      00023C 32 29 20 46 49 47 48   314 	.ascii "2) FIGHT"
+             54
+      000244 00                     315 	.db 0x00
+                                    316 	.area _CODE
+                           000000   317 Ffixedbank$__str_33$0_0$0 == .
+                                    318 	.area _BANK3
+      000245                        319 ___str_33:
+      000245 20 20 20 20 56 49 43   320 	.ascii "    VICTORY!  "
+             54 4F 52 59 21 20 20
+      000253 00                     321 	.db 0x00
+                                    322 	.area _CODE
+                           000000   323 Ffixedbank$__str_34$0_0$0 == .
+                                    324 	.area _BANK3
+      000254                        325 ___str_34:
+      000254 59 4F 55 20 47 4F 54   326 	.ascii "YOU GOT GOLD -"
+             20 47 4F 4C 44 20 2D
+      000262 00                     327 	.db 0x00
+                                    328 	.area _CODE
+                           000000   329 Ffixedbank$__str_35$0_0$0 == .
+                                    330 	.area _BANK3
+      000263                        331 ___str_35:
+      000263 56 49 4C 4C 41 47 45   332 	.ascii "VILLAGE SHOP"
+             20 53 48 4F 50
+      00026F 00                     333 	.db 0x00
+                                    334 	.area _CODE
+                           000000   335 Ffixedbank$__str_36$0_0$0 == .
+                                    336 	.area _BANK3
+      000270                        337 ___str_36:
+      000270 31 29 20 53 57 4F 52   338 	.ascii "1) SWORD   "
+             44 20 20 20
+      00027B 00                     339 	.db 0x00
+                                    340 	.area _CODE
+                           000000   341 Ffixedbank$__str_37$0_0$0 == .
+                                    342 	.area _BANK3
+      00027C                        343 ___str_37:
+      00027C 32 29 20 41 58 45 20   344 	.ascii "2) AXE     "
+             20 20 20 20
+      000287 00                     345 	.db 0x00
+                                    346 	.area _CODE
+                           000000   347 Ffixedbank$__str_38$0_0$0 == .
+                                    348 	.area _BANK3
+      000288                        349 ___str_38:
+      000288 33 29 20 54 45 47 49   350 	.ascii "3) TEGILAY "
+             4C 41 59 20
+      000293 00                     351 	.db 0x00
+                                    352 	.area _CODE
+                           000000   353 Ffixedbank$__str_39$0_0$0 == .
+                                    354 	.area _BANK3
+      000294                        355 ___str_39:
+      000294 34 29 20 4B 4F 4C 43   356 	.ascii "4) KOLCHUGA"
+             48 55 47 41
+      00029F 00                     357 	.db 0x00
+                                    358 	.area _CODE
+                           000000   359 Ffixedbank$__str_40$0_0$0 == .
+                                    360 	.area _BANK3
+      0002A0                        361 ___str_40:
+      0002A0 35 29 20 4C 49 46 45   362 	.ascii "5) LIFE    "
+             20 20 20 20
+      0002AB 00                     363 	.db 0x00
+                                    364 	.area _CODE
+                           000000   365 Ffixedbank$__str_41$0_0$0 == .
+                                    366 	.area _BANK3
+      0002AC                        367 ___str_41:
+      0002AC 20 20 20 4D 45 4E 55   368 	.ascii "   MENU"
+      0002B3 00                     369 	.db 0x00
+                                    370 	.area _CODE
+                           000000   371 Ffixedbank$__str_42$0_0$0 == .
+                                    372 	.area _BANK3
+      0002B4                        373 ___str_42:
+      0002B4 31 29 20 45 58 49 54   374 	.ascii "1) EXIT GAME"
+             20 47 41 4D 45
+      0002C0 00                     375 	.db 0x00
+                                    376 	.area _CODE
+                           000000   377 Ffixedbank$__str_43$0_0$0 == .
+                                    378 	.area _BANK3
+      0002C1                        379 ___str_43:
+      0002C1 32 29 20 52 45 53 54   380 	.ascii "2) RESTART  "
+             41 52 54 20 20
+      0002CD 00                     381 	.db 0x00
+                                    382 	.area _CODE
+                           000000   383 Ffixedbank$__str_44$0_0$0 == .
+                                    384 	.area _BANK3
+      0002CE                        385 ___str_44:
+      0002CE 33 29 20 43 4F 4E 54   386 	.ascii "3) CONTINUE  "
+             49 4E 55 45 20 20
+      0002DB 00                     387 	.db 0x00
+                                    388 	.area _CODE
+                           000000   389 Ffixedbank$__str_45$0_0$0 == .
+                                    390 	.area _BANK3
+      0002DC                        391 ___str_45:
+      0002DC 20 20 59 4F 55 20 4C   392 	.ascii "  YOU LOST SOME MONEY!     "
+             4F 53 54 20 53 4F 4D
+             45 20 4D 4F 4E 45 59
+             21 20 20 20 20 20
+      0002F7 00                     393 	.db 0x00
+                                    394 	.area _CODE
+                           000000   395 Ffixedbank$__str_46$0_0$0 == .
+                                    396 	.area _BANK3
+      0002F8                        397 ___str_46:
+      0002F8 20 44 49 44 20 59 4F   398 	.ascii " DID YOU KNOW THAT YOU CAN "
+             55 20 4B 4E 4F 57 20
+             54 48 41 54 20 59 4F
+             55 20 43 41 4E 20
+      000313 00                     399 	.db 0x00
+                                    400 	.area _CODE
+                           000000   401 Ffixedbank$__str_47$0_0$0 == .
+                                    402 	.area _BANK3
+      000314                        403 ___str_47:
+      000314 20 4F 4E 4C 59 20 48   404 	.ascii " ONLY HAVE ONE LIFE POTION "
+             41 56 45 20 4F 4E 45
+             20 4C 49 46 45 20 50
+             4F 54 49 4F 4E 20
+      00032F 00                     405 	.db 0x00
+                                    406 	.area _CODE
+                           000000   407 Ffixedbank$__str_48$0_0$0 == .
+                                    408 	.area _BANK3
+      000330                        409 ___str_48:
+      000330 20 41 54 20 41 20 54   410 	.ascii " AT A TIME?                "
+             49 4D 45 3F 20 20 20
+             20 20 20 20 20 20 20
+             20 20 20 20 20 20
+      00034B 00                     411 	.db 0x00
+                                    412 	.area _CODE
+                           000000   413 Ffixedbank$__str_49$0_0$0 == .
+                                    414 	.area _BANK3
+      00034C                        415 ___str_49:
+      00034C 44 49 44 20 59 4F 55   416 	.ascii "DID YOU KNOW THAT A TEGILAY"
+             20 4B 4E 4F 57 20 54
+             48 41 54 20 41 20 54
+             45 47 49 4C 41 59
+      000367 00                     417 	.db 0x00
+                                    418 	.area _CODE
+                           000000   419 Ffixedbank$__str_50$0_0$0 == .
+                                    420 	.area _BANK3
+      000368                        421 ___str_50:
+      000368 49 53 20 4D 41 44 45   422 	.ascii "IS MADE OF LEATHER, AND THE"
+             20 4F 46 20 4C 45 41
+             54 48 45 52 2C 20 41
+             4E 44 20 54 48 45
+      000383 00                     423 	.db 0x00
+                                    424 	.area _CODE
+                           000000   425 Ffixedbank$__str_51$0_0$0 == .
+                                    426 	.area _BANK3
+      000384                        427 ___str_51:
+      000384 4B 4F 4C 43 48 55 47   428 	.ascii "KOLCHUGA IS MADE OF STEEL? "
+             41 20 49 53 20 4D 41
+             44 45 20 4F 46 20 53
+             54 45 45 4C 3F 20
+      00039F 00                     429 	.db 0x00
+                                    430 	.area _CODE
+                           000000   431 Ffixedbank$__str_52$0_0$0 == .
+                                    432 	.area _BANK3
+      0003A0                        433 ___str_52:
+      0003A0 20 20 54 52 55 4C 59   434 	.ascii "  TRULY THE AXE IS THE     "
+             20 54 48 45 20 41 58
+             45 20 49 53 20 54 48
+             45 20 20 20 20 20
+      0003BB 00                     435 	.db 0x00
+                                    436 	.area _CODE
+                           000000   437 Ffixedbank$__str_53$0_0$0 == .
+                                    438 	.area _BANK3
+      0003BC                        439 ___str_53:
+      0003BC 20 20 47 52 45 41 54   440 	.ascii "  GREATEST WEAPON OF OUR   "
+             45 53 54 20 57 45 41
+             50 4F 4E 20 4F 46 20
+             4F 55 52 20 20 20
+      0003D7 00                     441 	.db 0x00
+                                    442 	.area _CODE
+                           000000   443 Ffixedbank$__str_54$0_0$0 == .
+                                    444 	.area _BANK3
+      0003D8                        445 ___str_54:
+      0003D8 20 20 50 45 4F 50 4C   446 	.ascii "  PEOPLE!                  "
+             45 21 20 20 20 20 20
+             20 20 20 20 20 20 20
+             20 20 20 20 20 20
+      0003F3 00                     447 	.db 0x00
+                                    448 	.area _CODE
+                           000000   449 Ffixedbank$__str_55$0_0$0 == .
+                                    450 	.area _BANK3
+      0003F4                        451 ___str_55:
+      0003F4 20 53 4F 4D 45 54 49   452 	.ascii " SOMETIMES ITS WISE TO RUN "
+             4D 45 53 20 49 54 53
+             20 57 49 53 45 20 54
+             4F 20 52 55 4E 20
+      00040F 00                     453 	.db 0x00
+                                    454 	.area _CODE
+                           000000   455 Ffixedbank$__str_56$0_0$0 == .
+                                    456 	.area _BANK3
+      000410                        457 ___str_56:
+      000410 20 41 57 41 59 20 20   458 	.ascii " AWAY                      "
+             20 20 20 20 20 20 20
+             20 20 20 20 20 20 20
+             20 20 20 20 20 20
+      00042B 00                     459 	.db 0x00
+                                    460 	.area _CODE
+                           000000   461 Ffixedbank$__str_57$0_0$0 == .
+                                    462 	.area _BANK3
+      00042C                        463 ___str_57:
+      00042C 20 59 4F 55 20 42 45   464 	.ascii " YOU BETTER BE KNOWN AS A  "
+             54 54 45 52 20 42 45
+             20 4B 4E 4F 57 4E 20
+             41 53 20 41 20 20
+      000447 00                     465 	.db 0x00
+                                    466 	.area _CODE
+                           000000   467 Ffixedbank$__str_58$0_0$0 == .
+                                    468 	.area _BANK3
+      000448                        469 ___str_58:
+      000448 20 48 45 52 4F 20 54   470 	.ascii " HERO TO CHALLENGE KOSCHEY "
+             4F 20 43 48 41 4C 4C
+             45 4E 47 45 20 4B 4F
+             53 43 48 45 59 20
+      000463 00                     471 	.db 0x00
+                                    472 	.area _CODE
+                           000000   473 Ffixedbank$__str_59$0_0$0 == .
+                                    474 	.area _BANK3
+      000464                        475 ___str_59:
+      000464 20 44 49 44 20 59 4F   476 	.ascii " DID YOU KNOW THAT WOLVES  "
+             55 20 4B 4E 4F 57 20
+             54 48 41 54 20 57 4F
+             4C 56 45 53 20 20
+      00047F 00                     477 	.db 0x00
+                                    478 	.area _CODE
+                           000000   479 Ffixedbank$__str_60$0_0$0 == .
+                                    480 	.area _BANK3
+      000480                        481 ___str_60:
+      000480 20 4F 4E 4C 59 20 41   482 	.ascii " ONLY ATTACK WHEN THEY ARE "
+             54 54 41 43 4B 20 57
+             48 45 4E 20 54 48 45
+             59 20 41 52 45 20
+      00049B 00                     483 	.db 0x00
+                                    484 	.area _CODE
+                           000000   485 Ffixedbank$__str_61$0_0$0 == .
+                                    486 	.area _BANK3
+      00049C                        487 ___str_61:
+      00049C 20 48 55 4E 47 52 59   488 	.ascii " HUNGRY?"
+             3F
+      0004A4 00                     489 	.db 0x00
+                                    490 	.area _CODE
+                           000000   491 Ffixedbank$__str_62$0_0$0 == .
+                                    492 	.area _BANK3
+      0004A5                        493 ___str_62:
+      0004A5 20 53 4F 4D 45 20 50   494 	.ascii " SOME PEOPLE SAY THEY SAW  "
+             45 4F 50 4C 45 20 53
+             41 59 20 54 48 45 59
+             20 53 41 57 20 20
+      0004C0 00                     495 	.db 0x00
+                                    496 	.area _CODE
+                           000000   497 Ffixedbank$__str_63$0_0$0 == .
+                                    498 	.area _BANK3
+      0004C1                        499 ___str_63:
+      0004C1 20 42 41 42 41 20 59   500 	.ascii " BABA YAGA IN THE FOREST,  "
+             41 47 41 20 49 4E 20
+             54 48 45 20 46 4F 52
+             45 53 54 2C 20 20
+      0004DC 00                     501 	.db 0x00
+                                    502 	.area _CODE
+                           000000   503 Ffixedbank$__str_64$0_0$0 == .
+                                    504 	.area _BANK3
+      0004DD                        505 ___str_64:
+      0004DD 20 42 55 54 20 49 20   506 	.ascii " BUT I DON'T BELIEVE THEM  "
+             44 4F 4E 27 54 20 42
+             45 4C 49 45 56 45 20
+             54 48 45 4D 20 20
+      0004F8 00                     507 	.db 0x00
+                                    508 	.area _CODE
+                           000000   509 Ffixedbank$__str_65$0_0$0 == .
+                                    510 	.area _BANK3
+      0004F9                        511 ___str_65:
+      0004F9 20 20 43 59 4B 41 2C   512 	.ascii "  CYKA, BLYAT!             "
+             20 42 4C 59 41 54 21
+             20 20 20 20 20 20 20
+             20 20 20 20 20 20
+      000514 00                     513 	.db 0x00
+                                    514 	.area _CODE
+                           000000   515 Ffixedbank$__str_66$0_0$0 == .
+                                    516 	.area _BANK3
+      000515                        517 ___str_66:
+      000515 20 20 59 4F 55 20 46   518 	.ascii "  YOU FOUND SOME MONEY!   "
+             4F 55 4E 44 20 53 4F
+             4D 45 20 4D 4F 4E 45
+             59 21 20 20 20
+      00052F 00                     519 	.db 0x00
+                                    520 	.area _CODE
+                           000000   521 Ffixedbank$__str_67$0_0$0 == .
+                                    522 	.area _BANK3
+      000530                        523 ___str_67:
+      000530 20 54 48 49 53 20 49   524 	.ascii " THIS IS THE MOST IMPORTANT"
+             53 20 54 48 45 20 4D
+             4F 53 54 20 49 4D 50
+             4F 52 54 41 4E 54
+      00054B 00                     525 	.db 0x00
+                                    526 	.area _CODE
+                           000000   527 Ffixedbank$__str_68$0_0$0 == .
+                                    528 	.area _BANK3
+      00054C                        529 ___str_68:
+      00054C 20 42 41 54 54 4C 45   530 	.ascii " BATTLE OF YOUR LIFE.      "
+             20 4F 46 20 59 4F 55
+             52 20 4C 49 46 45 2E
+             20 20 20 20 20 20
+      000567 00                     531 	.db 0x00
+                                    532 	.area _CODE
+                           000000   533 Ffixedbank$__str_69$0_0$0 == .
+                                    534 	.area _BANK3
+      000568                        535 ___str_69:
+      000568 20 43 41 4E 20 59 4F   536 	.ascii " CAN YOU HANDLE THE BATTLE?"
+             55 20 48 41 4E 44 4C
+             45 20 54 48 45 20 42
+             41 54 54 4C 45 3F
+      000583 00                     537 	.db 0x00
+                                    538 	.area _CODE
+                           000000   539 Ffixedbank$__str_70$0_0$0 == .
+                                    540 	.area _BANK3
+      000584                        541 ___str_70:
+      000584 20 20 20 20 20 31 29   542 	.ascii "     1)  YES"
+             20 20 59 45 53
+      000590 00                     543 	.db 0x00
+                                    544 	.area _CODE
+                           000000   545 Ffixedbank$__str_71$0_0$0 == .
+                                    546 	.area _BANK3
+      000591                        547 ___str_71:
+      000591 20 20 20 20 20 32 29   548 	.ascii "     2)  NO"
+             20 20 4E 4F
+      00059C 00                     549 	.db 0x00
+                                    550 	.area _CODE
+                           000000   551 Ffixedbank$__str_72$0_0$0 == .
+                                    552 	.area _BANK3
+      00059D                        553 ___str_72:
+      00059D 31 29 20 42 45 47 20   554 	.ascii "1) BEG FOR YOUR LIFE"
+             46 4F 52 20 59 4F 55
+             52 20 4C 49 46 45
+      0005B1 00                     555 	.db 0x00
+                                    556 	.area _CODE
+                           000000   557 Ffixedbank$__str_73$0_0$0 == .
+                                    558 	.area _BANK3
+      0005B2                        559 ___str_73:
+      0005B2 32 29 20 46 49 47 48   560 	.ascii "2) FIGHT!!          "
+             54 21 21 20 20 20 20
+             20 20 20 20 20 20
+      0005C6 00                     561 	.db 0x00
+                                    562 	.area _CODE
+                           000000   563 Ffixedbank$__str_74$0_0$0 == .
+                                    564 	.area _BANK3
+      0005C7                        565 ___str_74:
+      0005C7 53 4F 20 59 4F 55 20   566 	.ascii "SO YOU HAVE COME TO CALLENGE"
+             48 41 56 45 20 43 4F
+             4D 45 20 54 4F 20 43
+             41 4C 4C 45 4E 47 45
+      0005E3 00                     567 	.db 0x00
+                                    568 	.area _CODE
+                           000000   569 Ffixedbank$__str_75$0_0$0 == .
+                                    570 	.area _BANK3
+      0005E4                        571 ___str_75:
+      0005E4 4D 45 20 46 4F 4F 4C   572 	.ascii "ME FOOLISH MORTAL? VERY WELL"
+             49 53 48 20 4D 4F 52
+             54 41 4C 3F 20 56 45
+             52 59 20 57 45 4C 4C
+      000600 00                     573 	.db 0x00
+                                    574 	.area _CODE
+                           000000   575 Ffixedbank$__str_76$0_0$0 == .
+                                    576 	.area _BANK3
+      000601                        577 ___str_76:
+      000601 48 41 20 48 41 20 48   578 	.ascii "HA HA HA"
+             41
+      000609 00                     579 	.db 0x00
+                                    580 	.area _CODE
+                           000000   581 Ffixedbank$__str_77$0_0$0 == .
+                                    582 	.area _BANK3
+      00060A                        583 ___str_77:
+      00060A 59 4F 55 20 44 49 45   584 	.ascii "YOU DIE!"
+             21
+      000612 00                     585 	.db 0x00
+                                    586 	.area _CODE
+                           000000   587 Ffixedbank$__str_78$0_0$0 == .
+                                    588 	.area _BANK3
+      000613                        589 ___str_78:
+      000613 59 4F 55 20 46 4F 4F   590 	.ascii "YOU FOOL"
+             4C
+      00061B 00                     591 	.db 0x00
+                                    592 	.area _CODE
+                           000000   593 Ffixedbank$__str_79$0_0$0 == .
+                                    594 	.area _BANK3
+      00061C                        595 ___str_79:
+      00061C 59 4F 55 20 41 52 45   596 	.ascii "YOU ARE DEAD!"
+             20 44 45 41 44 21
+      000629 00                     597 	.db 0x00
+                                    598 	.area _CODE
+                           000000   599 Ffixedbank$__str_80$0_0$0 == .
+                                    600 	.area _BANK3
+      00062A                        601 ___str_80:
+      00062A 20 20 47 41 4D 45 20   602 	.ascii "  GAME OVER  "
+             4F 56 45 52 20 20
+      000637 00                     603 	.db 0x00
+                                    604 	.area _CODE
+                           000000   605 Ffixedbank$__str_81$0_0$0 == .
+                                    606 	.area _BANK3
+      000638                        607 ___str_81:
+      000638 20 20 20 20 20 20 43   608 	.ascii "      CONGLATURATION!!    "
+             4F 4E 47 4C 41 54 55
+             52 41 54 49 4F 4E 21
+             21 20 20 20 20
+      000652 00                     609 	.db 0x00
+                                    610 	.area _CODE
+                           000000   611 Ffixedbank$__str_82$0_0$0 == .
+                                    612 	.area _BANK3
+      000653                        613 ___str_82:
+      000653 59 4F 55 20 48 41 56   614 	.ascii "YOU HAVE COMPLETED A GREAT "
+             45 20 43 4F 4D 50 4C
+             45 54 45 44 20 41 20
+             47 52 45 41 54 20
+      00066E 00                     615 	.db 0x00
+                                    616 	.area _CODE
+                           000000   617 Ffixedbank$__str_83$0_0$0 == .
+                                    618 	.area _BANK3
+      00066F                        619 ___str_83:
+      00066F 47 41 4D 45 20 41 4E   620 	.ascii "GAME AND PROVED THE JUSTICE"
+             44 20 50 52 4F 56 45
+             44 20 54 48 45 20 4A
+             55 53 54 49 43 45
+      00068A 00                     621 	.db 0x00
+                                    622 	.area _CODE
+                           000000   623 Ffixedbank$__str_84$0_0$0 == .
+                                    624 	.area _BANK3
+      00068B                        625 ___str_84:
+      00068B 4F 46 20 4F 55 52 20   626 	.ascii "OF OUR CULTURE."
+             43 55 4C 54 55 52 45
+             2E
+      00069A 00                     627 	.db 0x00
+                                    628 	.area _CODE
+                           000000   629 Ffixedbank$__str_85$0_0$0 == .
+                                    630 	.area _BANK3
+      00069B                        631 ___str_85:
+      00069B 20 4E 4F 57 20 47 4F   632 	.ascii " NOW GO AND REST OUR HERO!"
+             20 41 4E 44 20 52 45
+             53 54 20 4F 55 52 20
+             48 45 52 4F 21
+      0006B5 00                     633 	.db 0x00
+                                    634 	.area _CODE
+                                    635 	.area _INITIALIZER
+                           000000   636 Ffixedbank$__xinit_intro_texts$0_0$0 == .
+      000000                        637 __xinit__intro_texts:
+      000000r00r00                  638 	.dw ___str_0
+      000002r1Er00                  639 	.dw ___str_1
+      000004r3Cr00                  640 	.dw ___str_2
+      000006r5Ar00                  641 	.dw ___str_3
+      000008r78r00                  642 	.dw ___str_4
+      00000Ar79r00                  643 	.dw ___str_5
+      00000Cr97r00                  644 	.dw ___str_6
+      00000Er78r00                  645 	.dw ___str_4
+      000010rB5r00                  646 	.dw ___str_7
+      000012rD3r00                  647 	.dw ___str_8
+                           000014   648 Ffixedbank$__xinit_diff_texts$0_0$0 == .
+      000014                        649 __xinit__diff_texts:
+      000014rF1r00                  650 	.dw ___str_9
+      000016rF6r00                  651 	.dw ___str_10
+                           000018   652 Ffixedbank$__xinit_stats_texts$0_0$0 == .
+      000018                        653 __xinit__stats_texts:
+      000018rFBr00                  654 	.dw ___str_11
+      00001Ar78r00                  655 	.dw ___str_4
+      00001Cr0Fr01                  656 	.dw ___str_12
+      00001Er23r01                  657 	.dw ___str_13
+      000020r37r01                  658 	.dw ___str_14
+      000022r4Br01                  659 	.dw ___str_15
+      000024r5Fr01                  660 	.dw ___str_16
+      000026r73r01                  661 	.dw ___str_17
+                           000028   662 Ffixedbank$__xinit_weapon_texts$0_0$0 == .
+      000028                        663 __xinit__weapon_texts:
+      000028r78r00                  664 	.dw ___str_4
+      00002Ar87r01                  665 	.dw ___str_18
+      00002Cr90r01                  666 	.dw ___str_19
+                           00002E   667 Ffixedbank$__xinit_armor_texts$0_0$0 == .
+      00002E                        668 __xinit__armor_texts:
+      00002Er78r00                  669 	.dw ___str_4
+      000030r99r01                  670 	.dw ___str_20
+      000032rA2r01                  671 	.dw ___str_21
+                           000034   672 Ffixedbank$__xinit_life_texts$0_0$0 == .
+      000034                        673 __xinit__life_texts:
+      000034r78r00                  674 	.dw ___str_4
+      000036rABr01                  675 	.dw ___str_22
+                           000038   676 Ffixedbank$__xinit_forest_texts$0_0$0 == .
+      000038                        677 __xinit__forest_texts:
+      000038rB4r01                  678 	.dw ___str_23
+      00003ArCBr01                  679 	.dw ___str_24
+                           00003C   680 Ffixedbank$__xinit_enemy_texts$0_0$0 == .
+      00003C                        681 __xinit__enemy_texts:
+      00003CrE3r01                  682 	.dw ___str_25
+      00003ErEFr01                  683 	.dw ___str_26
+      000040rFBr01                  684 	.dw ___str_27
+      000042r07r02                  685 	.dw ___str_28
+      000044r13r02                  686 	.dw ___str_29
+                           000046   687 Ffixedbank$__xinit_fight_texts$0_0$0 == .
+      000046                        688 __xinit__fight_texts:
+      000046r1Fr02                  689 	.dw ___str_30
+      000048r33r02                  690 	.dw ___str_31
+      00004Ar3Cr02                  691 	.dw ___str_32
+                           00004C   692 Ffixedbank$__xinit_gold_texts$0_0$0 == .
+      00004C                        693 __xinit__gold_texts:
+      00004Cr45r02                  694 	.dw ___str_33
+      00004Er78r00                  695 	.dw ___str_4
+      000050r78r00                  696 	.dw ___str_4
+      000052r54r02                  697 	.dw ___str_34
+                           000054   698 Ffixedbank$__xinit_shop_texts$0_0$0 == .
+      000054                        699 __xinit__shop_texts:
+      000054r63r02                  700 	.dw ___str_35
+      000056r78r00                  701 	.dw ___str_4
+      000058r78r00                  702 	.dw ___str_4
+      00005Ar70r02                  703 	.dw ___str_36
+      00005Cr7Cr02                  704 	.dw ___str_37
+      00005Er88r02                  705 	.dw ___str_38
+      000060r94r02                  706 	.dw ___str_39
+      000062rA0r02                  707 	.dw ___str_40
+                           000064   708 Ffixedbank$__xinit_menus_texts$0_0$0 == .
+      000064                        709 __xinit__menus_texts:
+      000064rACr02                  710 	.dw ___str_41
+      000066r78r00                  711 	.dw ___str_4
+      000068r78r00                  712 	.dw ___str_4
+      00006ArB4r02                  713 	.dw ___str_42
+      00006CrC1r02                  714 	.dw ___str_43
+      00006ErCEr02                  715 	.dw ___str_44
+                           000070   716 Ffixedbank$__xinit_villager_texts$0_0$0 == .
+      000070                        717 __xinit__villager_texts:
+      000070rDCr02                  718 	.dw ___str_45
+      000072r78r00                  719 	.dw ___str_4
+      000074r78r00                  720 	.dw ___str_4
+      000076rF8r02                  721 	.dw ___str_46
+      000078r14r03                  722 	.dw ___str_47
+      00007Ar30r03                  723 	.dw ___str_48
+      00007Cr4Cr03                  724 	.dw ___str_49
+      00007Er68r03                  725 	.dw ___str_50
+      000080r84r03                  726 	.dw ___str_51
+      000082rA0r03                  727 	.dw ___str_52
+      000084rBCr03                  728 	.dw ___str_53
+      000086rD8r03                  729 	.dw ___str_54
+      000088rF4r03                  730 	.dw ___str_55
+      00008Ar10r04                  731 	.dw ___str_56
+      00008Cr78r00                  732 	.dw ___str_4
+      00008Er2Cr04                  733 	.dw ___str_57
+      000090r48r04                  734 	.dw ___str_58
+      000092r78r00                  735 	.dw ___str_4
+      000094r64r04                  736 	.dw ___str_59
+      000096r80r04                  737 	.dw ___str_60
+      000098r9Cr04                  738 	.dw ___str_61
+      00009ArA5r04                  739 	.dw ___str_62
+      00009CrC1r04                  740 	.dw ___str_63
+      00009ErDDr04                  741 	.dw ___str_64
+      0000A0rF9r04                  742 	.dw ___str_65
+      0000A2r78r00                  743 	.dw ___str_4
+      0000A4r78r00                  744 	.dw ___str_4
+      0000A6r15r05                  745 	.dw ___str_66
+      0000A8r78r00                  746 	.dw ___str_4
+      0000AAr78r00                  747 	.dw ___str_4
+                           0000AC   748 Ffixedbank$__xinit_prep_texts$0_0$0 == .
+      0000AC                        749 __xinit__prep_texts:
+      0000ACr30r05                  750 	.dw ___str_67
+      0000AEr4Cr05                  751 	.dw ___str_68
+      0000B0r78r00                  752 	.dw ___str_4
+      0000B2r78r00                  753 	.dw ___str_4
+      0000B4r68r05                  754 	.dw ___str_69
+      0000B6r78r00                  755 	.dw ___str_4
+      0000B8r78r00                  756 	.dw ___str_4
+      0000BAr84r05                  757 	.dw ___str_70
+      0000BCr91r05                  758 	.dw ___str_71
+                           0000BE   759 Ffixedbank$__xinit_boss_texts$0_0$0 == .
+      0000BE                        760 __xinit__boss_texts:
+      0000BEr9Dr05                  761 	.dw ___str_72
+      0000C0rB2r05                  762 	.dw ___str_73
+                           0000C2   763 Ffixedbank$__xinit_query_texts$0_0$0 == .
+      0000C2                        764 __xinit__query_texts:
+      0000C2rC7r05                  765 	.dw ___str_74
+      0000C4rE4r05                  766 	.dw ___str_75
+                           0000C6   767 Ffixedbank$__xinit_laugh_texts$0_0$0 == .
+      0000C6                        768 __xinit__laugh_texts:
+      0000C6r01r06                  769 	.dw ___str_76
+      0000C8r0Ar06                  770 	.dw ___str_77
+      0000CAr13r06                  771 	.dw ___str_78
+                           0000CC   772 Ffixedbank$__xinit_over_texts$0_0$0 == .
+      0000CC                        773 __xinit__over_texts:
+      0000CCr1Cr06                  774 	.dw ___str_79
+      0000CEr78r00                  775 	.dw ___str_4
+      0000D0r78r00                  776 	.dw ___str_4
+      0000D2r2Ar06                  777 	.dw ___str_80
+                           0000D4   778 Ffixedbank$__xinit_beat_texts$0_0$0 == .
+      0000D4                        779 __xinit__beat_texts:
+      0000D4r38r06                  780 	.dw ___str_81
+      0000D6r78r00                  781 	.dw ___str_4
+      0000D8r78r00                  782 	.dw ___str_4
+      0000DAr78r00                  783 	.dw ___str_4
+      0000DCr53r06                  784 	.dw ___str_82
+      0000DEr6Fr06                  785 	.dw ___str_83
+      0000E0r8Br06                  786 	.dw ___str_84
+      0000E2r78r00                  787 	.dw ___str_4
+      0000E4r78r00                  788 	.dw ___str_4
+      0000E6r78r00                  789 	.dw ___str_4
+      0000E8r9Br06                  790 	.dw ___str_85
+                                    791 	.area _CABS (ABS)
