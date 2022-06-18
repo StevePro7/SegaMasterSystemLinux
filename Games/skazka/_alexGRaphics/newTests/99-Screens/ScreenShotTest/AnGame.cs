@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -12,13 +13,16 @@ namespace ScreenShotTest
 	/// </summary>
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		private int index = 13;
+		private int index = 0;
 		private string[] files = { "screen_01_title", "screen_02_difficulty", "screen_03_intro", "screen_04_stats", "screen_05_forest", "screen_5a_victory", "screen_06_shop", "screen_07_villager_talk", "screen_08a_boss_prep", "screen_08b_boss_query", "screen_08c_boss_fight", "screen_09_game_over", "screen_10_beat_game", "screen_11_menu" };
 
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
+		SpriteFont font;
 		RenderTarget2D renderTarget;
 
+		private bool data;
+		private bool line;
 		private bool save;
 		private int width;
 		private int height;
@@ -44,8 +48,28 @@ namespace ScreenShotTest
 		/// </summary>
 		protected override void Initialize()
 		{
+			index = 0;
+			if (null != ConfigurationManager.AppSettings["grid"])
+			{
+				index = Convert.ToInt32(ConfigurationManager.AppSettings["grid"]);
+			}
+			data = false;
+			if (null != ConfigurationManager.AppSettings["data"])
+			{
+				data = Convert.ToBoolean(ConfigurationManager.AppSettings["data"]);
+			}
+			line = false;
+			if (null != ConfigurationManager.AppSettings["line"])
+			{
+				line = Convert.ToBoolean(ConfigurationManager.AppSettings["line"]);
+			}
 			save = false;
-			save = true;
+			if (null != ConfigurationManager.AppSettings["save"])
+			{
+				save = Convert.ToBoolean(ConfigurationManager.AppSettings["save"]);
+			}
+			//save = true;
+			data = true;
 			IsMouseVisible = true;
 			base.Initialize();
 		}
@@ -58,11 +82,11 @@ namespace ScreenShotTest
 		{
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch(GraphicsDevice);
+			font = Content.Load<SpriteFont>("Emulogic");
 			for (int i = 0; i < 14; i++)
 			{
 				dict[i] = Content.Load<Texture2D>(files[i]);
 			}
-			
 
 			images[0] = Content.Load<Texture2D>("Horizontal");
 			images[1] = Content.Load<Texture2D>("Vertical");
@@ -138,15 +162,36 @@ namespace ScreenShotTest
 			spriteBatch.Begin();
 			spriteBatch.Draw(dict[index], Vector2.Zero, Color.White);
 
+			int idx = 0;
 			for (y = 0; y <= 192; y += 8)
 			{
 				var pos = new Vector2(0, y);
-				spriteBatch.Draw(images[0], pos, Color.White);
+				if (data)
+				{
+					int val = idx % 10;
+					spriteBatch.DrawString(font, val.ToString(), pos, Color.Yellow);
+				}
+				if (line)
+				{
+					spriteBatch.Draw(images[0], pos, Color.White);
+				}
+				idx++;
 			}
+
+			idx = 0;
 			for (x = 0; x <= 256; x += 8)
 			{
 				var pos = new Vector2(x, 0);
-				spriteBatch.Draw(images[1], pos, Color.White);
+				if (data)
+				{
+					int val = idx % 10;
+					spriteBatch.DrawString(font, val.ToString(), pos, Color.Yellow);
+				}
+				if (line)
+				{
+					spriteBatch.Draw(images[1], pos, Color.White);
+				}
+				idx++;
 			}
 			spriteBatch.End();
 		}
