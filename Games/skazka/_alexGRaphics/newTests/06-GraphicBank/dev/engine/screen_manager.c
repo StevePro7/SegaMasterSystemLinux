@@ -35,6 +35,7 @@ static void draw_intro()
 	unsigned char idx;
 
 	engine_content_manager_load_logo_big();
+	engine_graphics_manager_draw_logo_big( LEFT_X + 2, TOP_Y + 3 );
 
 	row = 10;
 	devkit_SMS_mapROMBank( FIXED_BANK );
@@ -45,13 +46,11 @@ static void draw_intro()
 	}
 
 	engine_graphics_manager_draw_border();
-	engine_graphics_manager_draw_logo_big( LEFT_X + 2, TOP_Y + 3 );
-
 	engine_text_manager_cont();
 
-	//engine_font_manager_draw_punc( '.', LEFT_X + 25, TOP_Y + 13 );
-	//engine_font_manager_draw_punc( '.', LEFT_X + 27, TOP_Y + 16 );
-	//engine_font_manager_draw_punc( '.', LEFT_X + 16, TOP_Y + 19 );
+	engine_font_manager_draw_punc( '.', LEFT_X + 25, TOP_Y + 13 );
+	engine_font_manager_draw_punc( '.', LEFT_X + 27, TOP_Y + 16 );
+	engine_font_manager_draw_punc( '.', LEFT_X + 16, TOP_Y + 19 );
 }
 
 static void draw_boss()
