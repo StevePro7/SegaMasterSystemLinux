@@ -61,7 +61,7 @@ void engine_graphics_manager_draw_koschey( unsigned char x, unsigned char y )
 	{
 		for( i = 0; i < wide; i++ )
 		{
-			tile = ( ENEMY_TILES + idx) | palette;
+			tile = ( SPRITE_TILES + idx) | palette;
 			devkit_SMS_setNextTileatXY( x + i, y + j );
 			devkit_SMS_setTile( *pnt + tile );
 			idx++;
@@ -83,7 +83,7 @@ void engine_graphics_manager_draw_leshy( unsigned char x, unsigned char y )
 	{
 		for( i = 0; i < wide; i++ )
 		{
-			tile = ( ENEMY_TILES + idx ) | palette;
+			tile = ( SPRITE_TILES + idx ) | palette;
 			devkit_SMS_setNextTileatXY( x + i, y + j );
 			devkit_SMS_setTile( *pnt + tile );
 			idx++;

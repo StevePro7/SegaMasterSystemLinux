@@ -27,8 +27,8 @@
 #define NO_SELECTION			255
 
 // Content.
-#define ENEMY_TILES		256
-#define SPRITE_TILES	436
+//#define ENEMY_TILES		256
+#define SPRITE_TILES	256
 
 // Specific global variables.
 #define SCREEN_WIDTH			256
