@@ -3,7 +3,6 @@
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
 #include "../banks/bank2.h"
-#include "../banks/bank3.h"
 
 void engine_graphics_manager_draw_border()
 {
