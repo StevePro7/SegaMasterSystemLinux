@@ -5,22 +5,21 @@
 #include "../banks/bank2.h"
 
 // battle_player_array : 9 x 12 = 108
-const unsigned char array[] =
-{
-	0,1,2,3,1,2,4,1,2,
-	5,6,7,8,6,7,9,6,7,
-	0,10,11,0,10,11,0,10,11,
-	0,12,13,0,12,13,0,12,13,
-	0,14,15,3,14,15,4,14,15,
-	16,17,18,19,17,18,20,17,18,
-	0,21,22,0,21,22,0,21,22,
-	0,12,13,0,12,13,0,12,13,
-	0,23,24,3,23,24,4,23,24,
-	25,26,27,28,26,27,29,26,27,
-	0,30,31,0,30,31,0,30,31,
-	0,12,13,0,12,13,0,12,13,
-};
-
+//const unsigned char array[] =
+//{
+//	0,1,2,3,1,2,4,1,2,
+//	5,6,7,8,6,7,9,6,7,
+//	0,10,11,0,10,11,0,10,11,
+//	0,12,13,0,12,13,0,12,13,
+//	0,14,15,3,14,15,4,14,15,
+//	16,17,18,19,17,18,20,17,18,
+//	0,21,22,0,21,22,0,21,22,
+//	0,12,13,0,12,13,0,12,13,
+//	0,23,24,3,23,24,4,23,24,
+//	25,26,27,28,26,27,29,26,27,
+//	0,30,31,0,30,31,0,30,31,
+//	0,12,13,0,12,13,0,12,13,
+//};
 
 void engine_graphics_manager_draw_battle_player( unsigned char x, unsigned char y, unsigned char w, unsigned char a )
 {
@@ -38,44 +37,44 @@ void engine_graphics_manager_draw_battle_player( unsigned char x, unsigned char 
 		for( i = 0; i < wide; i++ )
 		{
 			index = ( j * 9 ) + i + start;
-			tile = array[ index ];
+			tile = battle_player__tilemap__bin[ index * 2 ];
 			devkit_SMS_setNextTileatXY( x + i, y + j );
 			devkit_SMS_setTile( *pnt + tile );
 		}
 	}
 }
 
-void engine_graphics_manager_draw_battle_player1( unsigned char x, unsigned char y )
-{
-	const unsigned char *pnt = battle_player__tilemap__bin;
-	devkit_SMS_setNextTileatXY( x + 0, y + 0 );
-	devkit_SMS_setTile( *pnt + 0 );
-	devkit_SMS_setNextTileatXY( x + 1, y + 0 );
-	devkit_SMS_setTile( *pnt + 1 );
-	devkit_SMS_setNextTileatXY( x + 2, y + 0 );
-	devkit_SMS_setTile( *pnt + 2 );
-
-	devkit_SMS_setNextTileatXY( x + 0, y + 1 );
-	devkit_SMS_setTile( *pnt + 5 );
-	devkit_SMS_setNextTileatXY( x + 1, y + 1 );
-	devkit_SMS_setTile( *pnt + 6 );
-	devkit_SMS_setNextTileatXY( x + 2, y + 1 );
-	devkit_SMS_setTile( *pnt + 7 );
-
-	devkit_SMS_setNextTileatXY( x + 0, y + 2 );
-	devkit_SMS_setTile( *pnt + 0 );
-	devkit_SMS_setNextTileatXY( x + 1, y + 2 );
-	devkit_SMS_setTile( *pnt + 10 );
-	devkit_SMS_setNextTileatXY( x + 2, y + 2 );
-	devkit_SMS_setTile( *pnt + 11 );
-
-	devkit_SMS_setNextTileatXY( x + 0, y + 3 );
-	devkit_SMS_setTile( *pnt + 0 );
-	devkit_SMS_setNextTileatXY( x + 1, y + 3 );
-	devkit_SMS_setTile( *pnt + 12 );
-	devkit_SMS_setNextTileatXY( x + 2, y + 3 );
-	devkit_SMS_setTile( *pnt + 13 );
-}
+//void engine_graphics_manager_draw_battle_player1( unsigned char x, unsigned char y )
+//{
+//	const unsigned char *pnt = battle_player__tilemap__bin;
+//	devkit_SMS_setNextTileatXY( x + 0, y + 0 );
+//	devkit_SMS_setTile( *pnt + 0 );
+//	devkit_SMS_setNextTileatXY( x + 1, y + 0 );
+//	devkit_SMS_setTile( *pnt + 1 );
+//	devkit_SMS_setNextTileatXY( x + 2, y + 0 );
+//	devkit_SMS_setTile( *pnt + 2 );
+//
+//	devkit_SMS_setNextTileatXY( x + 0, y + 1 );
+//	devkit_SMS_setTile( *pnt + 5 );
+//	devkit_SMS_setNextTileatXY( x + 1, y + 1 );
+//	devkit_SMS_setTile( *pnt + 6 );
+//	devkit_SMS_setNextTileatXY( x + 2, y + 1 );
+//	devkit_SMS_setTile( *pnt + 7 );
+//
+//	devkit_SMS_setNextTileatXY( x + 0, y + 2 );
+//	devkit_SMS_setTile( *pnt + 0 );
+//	devkit_SMS_setNextTileatXY( x + 1, y + 2 );
+//	devkit_SMS_setTile( *pnt + 10 );
+//	devkit_SMS_setNextTileatXY( x + 2, y + 2 );
+//	devkit_SMS_setTile( *pnt + 11 );
+//
+//	devkit_SMS_setNextTileatXY( x + 0, y + 3 );
+//	devkit_SMS_setTile( *pnt + 0 );
+//	devkit_SMS_setNextTileatXY( x + 1, y + 3 );
+//	devkit_SMS_setTile( *pnt + 12 );
+//	devkit_SMS_setNextTileatXY( x + 2, y + 3 );
+//	devkit_SMS_setTile( *pnt + 13 );
+//}
 
 void engine_graphics_manager_draw_border()
 {
