@@ -1,11 +1,16 @@
 #include "screen_manager.h"
 #include "content_manager.h"
 #include "font_manager.h"
+#include "global_manager.h"
 #include "graphics_manager.h"
 #include "locale_manager.h"
 #include "text_manager.h"
+#include "../devkit/_sms_manager.h"
+#include "../banks/fixedbank.h"
 
+static void draw_leshy();
 static void draw_title();
+static void draw_intro();
 static void draw_boss();
 
 static void draw_text();
@@ -14,12 +19,46 @@ static void draw_flip();
 
 void engine_screen_manager_init()
 {
+	//engine_graphics_manager_draw_border();
+
 	//draw_title();		// screen_01_title
-	draw_boss();
+	//draw_boss();
+	//draw_intro();
+	draw_leshy();
 }
 
 void engine_screen_manager_update()
 {
+}
+
+static void draw_leshy()
+{
+	engine_graphics_manager_draw_leshy( 4, 6 );
+}
+
+// TODO - move into intro screen => DONE!
+static void draw_intro()
+{
+	unsigned char row;
+	unsigned char idx;
+
+	engine_content_manager_load_logo_big();
+	engine_graphics_manager_draw_logo_big( LEFT_X + 2, TOP_Y + 3 );
+
+	row = 10;
+	devkit_SMS_mapROMBank( FIXED_BANK );
+	for( idx = 0; idx < 10; idx++ )
+	{
+		engine_font_manager_draw_text( ( unsigned char * ) intro_texts[ idx ], LEFT_X + 2, row );
+		row++;
+	}
+
+	engine_graphics_manager_draw_border();
+	engine_text_manager_cont();
+
+	engine_font_manager_draw_punc( '.', LEFT_X + 25, TOP_Y + 13 );
+	engine_font_manager_draw_punc( '.', LEFT_X + 27, TOP_Y + 16 );
+	engine_font_manager_draw_punc( '.', LEFT_X + 16, TOP_Y + 19 );
 }
 
 static void draw_boss()
@@ -45,7 +84,7 @@ static void draw_title()
 	engine_content_manager_load_logo_big();
 
 	// TODO - replace hard coded values!
-	engine_graphics_manager_draw_logo_big( 2, 3 );
+	engine_graphics_manager_draw_logo_big( LEFT_X + 2, TOP_Y + 3 );
 
 	engine_font_manager_draw_text( LOCALE_TITLE_MSG1, 6, 10 );
 	engine_font_manager_draw_text( LOCALE_TITLE_MSG2, 3, 15 );
