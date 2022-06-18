@@ -2,7 +2,7 @@ M:bank2
 S:G$battle_enemies__tilemap__bin$0_0$0({120}DA120d,SC:U),D,0,0
 S:G$battle_enemies__tiles__psgcompr$0_0$0({1000}DA1000d,SC:U),D,0,0
 S:G$battle_player__tilemap__bin$0_0$0({216}DA216d,SC:U),D,0,0
-S:G$battle_player__tiles__psgcompr$0_0$0({1923}DA1923d,SC:U),D,0,0
+S:G$battle_player__tiles__psgcompr$0_0$0({715}DA715d,SC:U),D,0,0
 S:G$koschey__tilemap__bin$0_0$0({360}DA360d,SC:U),D,0,0
 S:G$koschey__tiles__psgcompr$0_0$0({2680}DA2680d,SC:U),D,0,0
 S:G$logo_big__tilemap__bin$0_0$0({280}DA280d,SC:U),D,0,0

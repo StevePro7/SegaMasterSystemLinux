@@ -14,8 +14,8 @@
 void engine_content_manager_load_tiles()
 {
 	// Background tiles.
-	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) font__tiles__psgcompr, FONT_TILES );
-	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) border__tiles__psgcompr, BORDER_TILES );
+	//devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) font__tiles__psgcompr, FONT_TILES );
+	//devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) border__tiles__psgcompr, BORDER_TILES );
 	devkit_SMS_loadBGPalette( ( void * ) background__palette__bin );
 
 	// Sprite tiles
@@ -33,4 +33,10 @@ void engine_content_manager_load_koschey()
 {
 	devkit_SMS_mapROMBank( koschey__tiles__psgcompr_bank );
 	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) koschey__tiles__psgcompr, SPRITE_TILES );
+}
+
+void engine_content_manager_load_battle_player()
+{
+	devkit_SMS_mapROMBank( battle_player__tiles__psgcompr_bank );
+	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) battle_player__tiles__psgcompr, FONT_TILES );
 }

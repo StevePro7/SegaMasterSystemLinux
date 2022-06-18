@@ -8,6 +8,7 @@
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
 
+static void draw_battle_player();
 static void draw_leshy();
 static void draw_title();
 static void draw_intro();
@@ -24,11 +25,17 @@ void engine_screen_manager_init()
 	//draw_title();		// screen_01_title
 	//draw_boss();
 	//draw_intro();
-	draw_leshy();
+	//draw_leshy();
+	draw_battle_player();
 }
 
 void engine_screen_manager_update()
 {
+}
+
+static void draw_battle_player()
+{
+	engine_content_manager_load_battle_player();
 }
 
 static void draw_leshy()
