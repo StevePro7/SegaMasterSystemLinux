@@ -9,6 +9,7 @@ S:Lgraphics_manager.engine_graphics_manager_draw_battle_player$wide$1_0$87({1}SC
 S:Lgraphics_manager.engine_graphics_manager_draw_battle_player$high$1_0$87({1}SC:U),R,0,0,[]
 S:Lgraphics_manager.engine_graphics_manager_draw_battle_player$start$1_0$87({1}SC:U),B,1,-2
 S:Lgraphics_manager.engine_graphics_manager_draw_battle_player$index$1_0$87({1}SC:U),R,0,0,[a]
+S:Lgraphics_manager.engine_graphics_manager_draw_battle_player$value$1_0$87({1}SC:U),R,0,0,[a]
 S:Lgraphics_manager.engine_graphics_manager_draw_battle_player$tile$1_0$87({2}SI:U),R,0,0,[e,d]
 S:Lgraphics_manager.engine_graphics_manager_draw_battle_player$i$1_0$87({1}SC:U),R,0,0,[c]
 S:Lgraphics_manager.engine_graphics_manager_draw_battle_player$j$1_0$87({1}SC:U),R,0,0,[b]

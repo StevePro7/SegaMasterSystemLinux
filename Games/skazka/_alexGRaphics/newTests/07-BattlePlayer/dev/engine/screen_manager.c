@@ -36,7 +36,7 @@ void engine_screen_manager_update()
 static void draw_battle_player()
 {
 	engine_content_manager_load_battle_player();
-	engine_graphics_manager_draw_battle_player( 10, 10, 0, 2 );
+	engine_graphics_manager_draw_battle_player( 10, 10, 0, 0 );
 }
 
 static void draw_leshy()

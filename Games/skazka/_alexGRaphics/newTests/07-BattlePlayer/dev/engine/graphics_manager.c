@@ -29,6 +29,7 @@ void engine_graphics_manager_draw_battle_player( unsigned char x, unsigned char 
 
 	const unsigned char start = ( a * 36 ) + ( w * 3 );
 	unsigned char index = 0;
+	unsigned char value = 0;
 	unsigned int tile = 0;
 	unsigned char i, j;
 
@@ -37,7 +38,9 @@ void engine_graphics_manager_draw_battle_player( unsigned char x, unsigned char 
 		for( i = 0; i < wide; i++ )
 		{
 			index = ( j * 9 ) + i + start;
-			tile = battle_player__tilemap__bin[ index * 2 ];
+			value = index * 2;
+			tile = battle_player__tilemap__bin[ value ];
+			tile -= 224;
 			devkit_SMS_setNextTileatXY( x + i, y + j );
 			devkit_SMS_setTile( *pnt + tile );
 		}

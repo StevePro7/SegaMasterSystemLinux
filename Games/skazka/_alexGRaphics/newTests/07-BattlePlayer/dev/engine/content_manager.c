@@ -37,6 +37,7 @@ void engine_content_manager_load_koschey()
 
 void engine_content_manager_load_battle_player()
 {
+	// TODO - #define 224
 	devkit_SMS_mapROMBank( battle_player__tiles__psgcompr_bank );
-	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) battle_player__tiles__psgcompr, FONT_TILES );
+	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) battle_player__tiles__psgcompr, 224 );
 }
