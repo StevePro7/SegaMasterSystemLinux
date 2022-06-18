@@ -3,13 +3,13 @@ const unsigned char *intro_texts[] =
 	"    YOU ARE A YOUNG HERO WHO ",
 	" WISHES TO RID THE LAND FROM ",
 	" A TERRIFYING CREATURE KNOWN ",
-	" AS KOSCHEY THE IMMORTAL.    ",
+	" AS KOSCHEY THE IMMORTAL     ",		// TODO
 	"",
 	"   RIGHT NOW ALL YOU HAVE IS ",
-	" YOUR DAGGER AND YOUR WHITS. ",
+	" YOUR DAGGER AND YOUR WHITS  ",		// TODO
 	"",
 	" YOU ENTER A VILLAGE TO BEGIN",
-	" YOUR ADVENTURE.             ",
+	" YOUR ADVENTURE              ",		// TODO
 };
 
 const unsigned char *diff_texts[] =

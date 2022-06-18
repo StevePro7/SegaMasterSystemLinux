@@ -1,11 +1,15 @@
 #include "screen_manager.h"
 #include "content_manager.h"
 #include "font_manager.h"
+#include "global_manager.h"
 #include "graphics_manager.h"
 #include "locale_manager.h"
 #include "text_manager.h"
+#include "../devkit/_sms_manager.h"
+#include "../banks/fixedbank.h"
 
 static void draw_title();
+static void draw_intro();
 static void draw_boss();
 
 static void draw_text();
@@ -15,11 +19,26 @@ static void draw_flip();
 void engine_screen_manager_init()
 {
 	//draw_title();		// screen_01_title
-	draw_boss();
+	//draw_boss();
+	draw_intro();
 }
 
 void engine_screen_manager_update()
 {
+}
+
+static void draw_intro()
+{
+	unsigned char row;
+	unsigned char idx;
+
+	row = 10;
+	devkit_SMS_mapROMBank( FIXED_BANK );
+	for( idx = 0; idx < 10; idx++ )
+	{
+		engine_font_manager_draw_text( ( unsigned char * ) intro_texts[ idx ], LEFT_X + 2, row );
+		row++;
+	}
 }
 
 static void draw_boss()

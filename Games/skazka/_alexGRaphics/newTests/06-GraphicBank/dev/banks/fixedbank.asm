@@ -138,7 +138,7 @@ ___str_2:
 Ffixedbank$__str_3$0_0$0 == .
 	.area _BANK3
 ___str_3:
-	.ascii " AS KOSCHEY THE IMMORTAL.    "
+	.ascii " AS KOSCHEY THE IMMORTAL     "
 	.db 0x00
 	.area _CODE
 Ffixedbank$__str_4$0_0$0 == .
@@ -155,7 +155,7 @@ ___str_5:
 Ffixedbank$__str_6$0_0$0 == .
 	.area _BANK3
 ___str_6:
-	.ascii " YOUR DAGGER AND YOUR WHITS. "
+	.ascii " YOUR DAGGER AND YOUR WHITS  "
 	.db 0x00
 	.area _CODE
 Ffixedbank$__str_7$0_0$0 == .
@@ -167,7 +167,7 @@ ___str_7:
 Ffixedbank$__str_8$0_0$0 == .
 	.area _BANK3
 ___str_8:
-	.ascii " YOUR ADVENTURE.             "
+	.ascii " YOUR ADVENTURE              "
 	.db 0x00
 	.area _CODE
 Ffixedbank$__str_9$0_0$0 == .
