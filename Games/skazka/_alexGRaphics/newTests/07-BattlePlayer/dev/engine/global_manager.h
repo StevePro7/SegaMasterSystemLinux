@@ -28,6 +28,7 @@
 
 // Content.
 //#define ENEMY_TILES		256
+#define PLAYER_TILES	224
 #define SPRITE_TILES	256
 
 // Specific global variables.

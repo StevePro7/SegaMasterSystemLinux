@@ -40,7 +40,7 @@ void engine_graphics_manager_draw_battle_player( unsigned char x, unsigned char 
 			index = ( j * 9 ) + i + start;
 			value = index * 2;
 			tile = battle_player__tilemap__bin[ value ];
-			tile -= 224;
+			tile -= PLAYER_TILES;
 			devkit_SMS_setNextTileatXY( x + i, y + j );
 			devkit_SMS_setTile( *pnt + tile );
 		}
