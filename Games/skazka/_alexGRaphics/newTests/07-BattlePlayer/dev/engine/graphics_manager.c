@@ -4,6 +4,24 @@
 #include "../content/gfx.h"
 #include "../banks/bank2.h"
 
+void engine_graphics_manager_draw_battle_player( unsigned char x, unsigned char y )
+{
+	const unsigned char *pnt = battle_player__tilemap__bin;
+	devkit_SMS_setNextTileatXY( x + 0, y + 0 );
+	devkit_SMS_setTile( *pnt + 0 );
+	devkit_SMS_setNextTileatXY( x + 1, y + 0 );
+	devkit_SMS_setTile( *pnt + 1 );
+	devkit_SMS_setNextTileatXY( x + 2, y + 0 );
+	devkit_SMS_setTile( *pnt + 2 );
+
+	devkit_SMS_setNextTileatXY( x + 0, y + 1 );
+	devkit_SMS_setTile( *pnt + 5 );
+	devkit_SMS_setNextTileatXY( x + 1, y + 1 );
+	devkit_SMS_setTile( *pnt + 6 );
+	devkit_SMS_setNextTileatXY( x + 2, y + 1 );
+	devkit_SMS_setTile( *pnt + 7 );
+}
+
 void engine_graphics_manager_draw_border()
 {
 	const unsigned char *pnt = border__tilemap__bin;
