@@ -6,7 +6,7 @@
 
 #define FONT_TILES		0
 #define BORDER_TILES	48
-#define SPRITE_TILES	436
+//#define SPRITE_TILES	436
 
 #define LOGO_TILES		64
 //#define ENEMY_TILES		256

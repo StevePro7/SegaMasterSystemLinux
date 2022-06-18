@@ -68,3 +68,25 @@ void engine_graphics_manager_draw_koschey( unsigned char x, unsigned char y )
 		}
 	}
 }
+
+void engine_graphics_manager_draw_leshy( unsigned char x, unsigned char y )
+{
+	const unsigned char *pnt = battle_enemies_leshy__tilemap__bin;
+	unsigned char wide = 3;
+	unsigned char high = 4;
+	unsigned char i, j;
+	unsigned char idx = 0;
+
+	unsigned int tile = 0;
+	unsigned int palette = devkit_TILE_USE_SPRITE_PALETTE();
+	for( j = 0; j < high; j++ )
+	{
+		for( i = 0; i < wide; i++ )
+		{
+			tile = ( SPRITE_TILES + idx ) | palette;
+			devkit_SMS_setNextTileatXY( x + i, y + j );
+			devkit_SMS_setTile( *pnt + tile );
+			idx++;
+		}
+	}
+}

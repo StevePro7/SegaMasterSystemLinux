@@ -28,6 +28,7 @@
 
 // Content.
 #define ENEMY_TILES		256
+#define SPRITE_TILES	436
 
 // Specific global variables.
 #define SCREEN_WIDTH			256

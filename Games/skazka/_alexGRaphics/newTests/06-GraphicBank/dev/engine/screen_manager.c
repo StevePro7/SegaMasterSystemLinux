@@ -8,6 +8,7 @@
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
 
+static void draw_leshy();
 static void draw_title();
 static void draw_intro();
 static void draw_boss();
@@ -22,13 +23,20 @@ void engine_screen_manager_init()
 
 	//draw_title();		// screen_01_title
 	//draw_boss();
-	draw_intro();
+	//draw_intro();
+	draw_leshy();
 }
 
 void engine_screen_manager_update()
 {
 }
 
+static void draw_leshy()
+{
+	engine_graphics_manager_draw_leshy( 4, 6 );
+}
+
+// TODO - move into intro screen => DONE!
 static void draw_intro()
 {
 	unsigned char row;
