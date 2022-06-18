@@ -4,15 +4,14 @@ S:Lgraphics_manager.engine_graphics_manager_draw_battle_player$x$1_0$86({1}SC:U)
 S:Lgraphics_manager.engine_graphics_manager_draw_battle_player$y$1_0$86({1}SC:U),B,1,5
 S:Lgraphics_manager.engine_graphics_manager_draw_battle_player$w$1_0$86({1}SC:U),B,1,6
 S:Lgraphics_manager.engine_graphics_manager_draw_battle_player$a$1_0$86({1}SC:U),B,1,7
-S:Lgraphics_manager.engine_graphics_manager_draw_battle_player$pnt$1_0$87({2}DG,SC:U),R,0,0,[]
 S:Lgraphics_manager.engine_graphics_manager_draw_battle_player$wide$1_0$87({1}SC:U),R,0,0,[]
 S:Lgraphics_manager.engine_graphics_manager_draw_battle_player$high$1_0$87({1}SC:U),R,0,0,[]
 S:Lgraphics_manager.engine_graphics_manager_draw_battle_player$start$1_0$87({1}SC:U),B,1,-2
 S:Lgraphics_manager.engine_graphics_manager_draw_battle_player$index$1_0$87({1}SC:U),R,0,0,[a]
 S:Lgraphics_manager.engine_graphics_manager_draw_battle_player$value$1_0$87({1}SC:U),R,0,0,[a]
 S:Lgraphics_manager.engine_graphics_manager_draw_battle_player$tile$1_0$87({2}SI:U),R,0,0,[e,d]
-S:Lgraphics_manager.engine_graphics_manager_draw_battle_player$i$1_0$87({1}SC:U),R,0,0,[c]
-S:Lgraphics_manager.engine_graphics_manager_draw_battle_player$j$1_0$87({1}SC:U),R,0,0,[b]
+S:Lgraphics_manager.engine_graphics_manager_draw_battle_player$i$1_0$87({1}SC:U),R,0,0,[b]
+S:Lgraphics_manager.engine_graphics_manager_draw_battle_player$j$1_0$87({1}SC:U),R,0,0,[c]
 S:Lgraphics_manager.engine_graphics_manager_draw_battle_player$sloc0$0_1$0({1}SC:U),B,1,-2
 S:Lgraphics_manager.engine_graphics_manager_draw_battle_player$sloc1$0_1$0({1}SC:U),B,1,-1
 F:G$engine_graphics_manager_draw_border$0_0$0({2}DF,SV:S),Z,0,0,0,0,0

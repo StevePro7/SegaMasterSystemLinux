@@ -23,7 +23,7 @@
 
 void engine_graphics_manager_draw_battle_player( unsigned char x, unsigned char y, unsigned char w, unsigned char a )
 {
-	const unsigned char *pnt = battle_player__tilemap__bin;
+	//const unsigned char *pnt = battle_player__tilemap__bin;
 	const unsigned char wide = 3;
 	const unsigned char high = 4;
 
@@ -40,9 +40,10 @@ void engine_graphics_manager_draw_battle_player( unsigned char x, unsigned char 
 			index = ( j * 9 ) + i + start;
 			value = index * 2;
 			tile = battle_player__tilemap__bin[ value ];
-			tile -= PLAYER_TILES;
+			//tile -= PLAYER_TILES;
 			devkit_SMS_setNextTileatXY( x + i, y + j );
-			devkit_SMS_setTile( *pnt + tile );
+			//devkit_SMS_setTile( *pnt + tile );
+			devkit_SMS_setTile( tile );
 		}
 	}
 }
