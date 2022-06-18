@@ -11,6 +11,7 @@
 static void draw_battle_player();
 static void draw_leshy();
 static void draw_title();
+static void draw_title2();
 static void draw_intro();
 static void draw_boss();
 
@@ -23,10 +24,11 @@ void engine_screen_manager_init()
 	//engine_graphics_manager_draw_border();
 
 	//draw_title();		// screen_01_title
+	draw_title2();
 	//draw_boss();
 	//draw_intro();
 	//draw_leshy();
-	draw_battle_player();
+	//draw_battle_player();
 }
 
 void engine_screen_manager_update()
@@ -85,6 +87,14 @@ static void draw_boss()
 	engine_font_manager_draw_punc( '?', 19, 20 );
 }
 
+static void draw_title2()
+{
+	engine_graphics_manager_draw_border();
+	engine_graphics_manager_draw_underline();
+
+	engine_content_manager_load_logo_small();
+	engine_graphics_manager_draw_logo_small( LEFT_X + 1, TOP_Y + 1 );
+}
 static void draw_title()
 {
 	engine_graphics_manager_draw_border();
