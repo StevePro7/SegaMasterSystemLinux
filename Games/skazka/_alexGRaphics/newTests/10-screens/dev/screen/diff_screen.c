@@ -1,10 +1,12 @@
 #include "diff_screen.h"
+#include "../engine/audio_manager.h"
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/game_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/graphics_manager.h"
+#include "../engine/hack_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/locale_manager.h"
 #include "../engine/select_manager.h"
@@ -39,22 +41,49 @@ void screen_diff_screen_load()
 
 void screen_diff_screen_update( unsigned char *screen_type )
 {
-	//struct_hack_object *ho = &global_hack_object;
-	//struct_game_object *go = &global_game_object;
+	struct_hack_object *ho = &global_hack_object;
+	struct_game_object *go = &global_game_object;
 
 	unsigned char selection;
-	//unsigned char timer;
+	unsigned char timer;
 
-	selection = engine_select_manager_update( select_type );
-	if( NO_SELECTION == selection )
+	rand();
+	if( event_stage_pause == event_stage )
 	{
-		*screen_type = screen_type_diff;
-		return;
+		timer = engine_timer_manager_update();
+		if( timer )
+		{
+			if( go->intro_once )
+			{
+				engine_game_manager_intro_off();
+				*screen_type = screen_type_intro;
+				return;
+			}
+			else
+			{
+				*screen_type = screen_type_load;
+				return;
+			}
+		}
+	}
+	else
+	{
+
+		selection = engine_select_manager_update( select_type );
+		if( NO_SELECTION == selection )
+		{
+			*screen_type = screen_type_diff;
+			return;
+		}
+
+		// Set difficulty.
+		engine_game_manager_difficulty( selection );
+
+		event_stage = event_stage_pause;
+		if( !ho->hack_delays )
+		{
+	//		engine_sound_manager_play( sound_type_5 );
+		}
 	}
 
-	// Set difficulty.
-	engine_game_manager_difficulty( selection );
-
-
-	*screen_type = screen_type_diff;
 }
