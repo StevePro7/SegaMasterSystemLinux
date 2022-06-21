@@ -1,9 +1,9 @@
 M:main
 F:G$main$0_0$0({2}DF,SV:S),C,0,0,0,0,0
-S:Lmain.main$open_screen_type$1_0$123({1}SC:U),R,0,0,[]
+S:Lmain.main$open_screen_type$1_0$125({1}SC:U),R,0,0,[]
 T:Fmain$tag_struct_player_object[({0}S:S$xp$0_0$0({1}SC:U),Z,0,0)({1}S:S$hp$0_0$0({1}SC:U),Z,0,0)({2}S:S$gold$0_0$0({2}SI:U),Z,0,0)({4}S:S$weapon$0_0$0({1}SC:U),Z,0,0)({5}S:S$armor$0_0$0({1}SC:U),Z,0,0)({6}S:S$life$0_0$0({1}SC:U),Z,0,0)({7}S:S$level$0_0$0({1}SC:U),Z,0,0)({8}S:S$max_hp$0_0$0({1}SC:U),Z,0,0)({9}S:S$max_xp$0_0$0({1}SC:U),Z,0,0)({10}S:S$won$0_0$0({1}SC:U),Z,0,0)({11}S:S$def_xp$0_0$0({1}SC:U),Z,0,0)({12}S:S$def_hp$0_0$0({1}SC:U),Z,0,0)({13}S:S$def_gold$0_0$0({2}SI:U),Z,0,0)({15}S:S$def_weapon$0_0$0({1}SC:U),Z,0,0)({16}S:S$def_armor$0_0$0({1}SC:U),Z,0,0)({17}S:S$def_life$0_0$0({1}SC:U),Z,0,0)]
 S:G$global_player_object$0_0$0({18}STtag_struct_player_object:S),E,0,0
-S:Lmain.main$global_pause$1_0$123({1}:S),E,0,0
+S:Lmain.main$global_pause$1_0$125({1}:S),E,0,0
 S:G$atof$0_0$0({2}DF,SF:S),C,0,0
 S:G$atoi$0_0$0({2}DF,SI:S),C,0,0
 S:G$atol$0_0$0({2}DF,SL:S),C,0,0
@@ -173,6 +173,9 @@ S:G$engine_asm_manager_clear_VRAM$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_tiles$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_logo_big$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_koschey$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_input_manager_update$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_input_manager_hold$0_0$0({2}DF,SC:U),C,0,0
+S:G$engine_input_manager_move$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_player_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_calc$0_0$0({2}DF,SV:S),C,0,0
