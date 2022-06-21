@@ -23,8 +23,8 @@ void engine_screen_manager_init()
 
 	//draw_title();		// screen_01_title
 	//draw_boss();
-	draw_intro();
-	//draw_leshy();
+	//draw_intro();
+	draw_leshy();
 }
 
 void engine_screen_manager_update()
