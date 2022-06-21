@@ -19,10 +19,10 @@ static void draw_flip();
 
 void engine_screen_manager_init()
 {
-	//engine_graphics_manager_draw_border();
+	engine_graphics_manager_draw_border();
 
 	//draw_title();		// screen_01_title
-	draw_boss();
+	//draw_boss();
 	//draw_intro();
 	//draw_leshy();
 }
