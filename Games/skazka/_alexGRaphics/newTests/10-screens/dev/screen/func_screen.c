@@ -26,8 +26,6 @@ void screen_func_screen_load()
 
 	engine_font_manager_draw_text( "FUNC SCREEN!!", 10, 2 );
 
-	
-
 	//draw_title();		// screen_01_title
 	//draw_boss();
 	//draw_intro();

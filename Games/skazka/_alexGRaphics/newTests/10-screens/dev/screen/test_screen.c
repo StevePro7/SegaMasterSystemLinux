@@ -5,7 +5,7 @@
 
 void screen_test_screen_load()
 {
-	engine_font_manager_draw_text( "TEST SCREEN!!", 10, 2 );
+	engine_font_manager_draw_text( "TEST SCREEN..!!", 10, 2 );
 }
 
 void screen_test_screen_update( unsigned char *screen_type )
