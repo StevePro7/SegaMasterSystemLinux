@@ -2,6 +2,7 @@ M:diff_screen
 F:G$screen_diff_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_diff_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Ldiff_screen.screen_diff_screen_update$screen_type$1_0$126({2}DG,SC:U),B,1,4
+S:Ldiff_screen.screen_diff_screen_update$selection$1_0$127({1}SC:U),R,0,0,[b]
 T:Fdiff_screen$tag_struct_game_object[({0}S:S$intro_once$0_0$0({1}:S),Z,0,0)({1}S:S$play_music$0_0$0({1}:S),Z,0,0)({2}S:S$flash_arrow$0_0$0({1}:S),Z,0,0)({3}S:S$difficulty$0_0$0({1}SC:U),Z,0,0)]
 T:Fdiff_screen$tag_struct_timer_object[({0}S:S$timer_count$0_0$0({2}SI:U),Z,0,0)({2}S:S$timer_value$0_0$0({2}SI:U),Z,0,0)]
 T:Fdiff_screen$tag_struct_aelect_object[({0}S:S$select_index$0_0$0({8}DA8d,SC:U),Z,0,0)({8}S:S$select_X$0_0$0({1}SC:U),Z,0,0)({9}S:S$select_Y$0_0$0({1}SC:U),Z,0,0)({10}S:S$select_min$0_0$0({1}SC:U),Z,0,0)({11}S:S$select_max$0_0$0({1}SC:U),Z,0,0)]

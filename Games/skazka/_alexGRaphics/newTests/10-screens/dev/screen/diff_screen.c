@@ -39,5 +39,22 @@ void screen_diff_screen_load()
 
 void screen_diff_screen_update( unsigned char *screen_type )
 {
+	//struct_hack_object *ho = &global_hack_object;
+	//struct_game_object *go = &global_game_object;
+
+	unsigned char selection;
+	//unsigned char timer;
+
+	selection = engine_select_manager_update( select_type );
+	if( NO_SELECTION == selection )
+	{
+		*screen_type = screen_type_diff;
+		return;
+	}
+
+	// Set difficulty.
+	engine_game_manager_difficulty( selection );
+
+
 	*screen_type = screen_type_diff;
 }
