@@ -17,7 +17,7 @@
 #define LOCALE_GOLD				"GOLD"
 #define LOCALE_YOU_HAVE			"YOU HAVE"
 #define LOCALE_YOUR_LVL			"YOUR LVL"
-#define LOCALE_HERO				"(HERO)"
+#define LOCALE_HERO				"(HERO)"		// TODO
 
 #define LOCALE_OLD_VILLAGE		"OLD VILLAGE"
 
@@ -36,7 +36,7 @@
 
 #define LOCALE_NOT_ENOUGH		"NOT ENOUGH GOLD!"
 
-#define LOCALE_ARROWS			">>"
+#define LOCALE_ARROWS			'>'
 #define LOCALE_2_SPCS			"  "
 #define LOCALE_6_SPCS			"      "
 #define LOCALE_29_SPCS			"                             "
