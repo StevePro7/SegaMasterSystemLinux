@@ -1,7 +1,8 @@
 M:load_screen
 F:G$screen_load_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_load_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lload_screen.screen_load_screen_update$screen_type$1_0$10({2}DG,SC:U),B,1,4
+S:Lload_screen.screen_load_screen_update$screen_type$1_0$12({2}DG,SC:U),B,1,4
+S:Lload_screen.screen_load_screen_update$input$1_0$13({1}SC:U),R,0,0,[a]
 S:G$engine_font_manager_draw_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_punc$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_flip$0_0$0({2}DF,SV:S),C,0,0
@@ -9,3 +10,6 @@ S:G$engine_font_manager_draw_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_data$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_numb$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_zero$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_input_manager_update$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_input_manager_hold$0_0$0({2}DF,SC:U),C,0,0
+S:G$engine_input_manager_move$0_0$0({2}DF,SC:U),C,0,0
