@@ -16,7 +16,7 @@
 //#include "engine/game_manager.h"
 //#include "engine/hack_manager.h"
 //#include "engine/input_manager.h"
-//#include "engine/player_manager.h"
+#include "engine/player_manager.h"
 #include "engine/screen_manager.h"
 //#include "engine/select_manager.h"
 

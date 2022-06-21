@@ -66,26 +66,26 @@ void engine_player_manager_stats()
 	struct_player_object *po = &global_player_object;
 
 	// Print HP, XP, gold, level.
-	engine_font_manager_data( po->hp, LEFT_X + 6, STATS_ROW + 3 );
-	engine_font_manager_text( LOCALE_SLASH, LEFT_X + 8, STATS_ROW + 3 );
-	engine_font_manager_data( po->max_hp, LEFT_X + 11, STATS_ROW + 3 );
+	engine_font_manager_draw_data( po->hp, LEFT_X + 6, STATS_ROW + 3 );
+	engine_font_manager_draw_text( LOCALE_SLASH, LEFT_X + 8, STATS_ROW + 3 );
+	engine_font_manager_draw_data( po->max_hp, LEFT_X + 11, STATS_ROW + 3 );
 
-	engine_font_manager_data( po->xp, LEFT_X + 6, STATS_ROW + 4 );
-	engine_font_manager_data( po->max_xp, LEFT_X + 11, STATS_ROW + 4 );
-	engine_font_manager_text( LOCALE_SLASH, LEFT_X + 8, STATS_ROW + 4 );
+	engine_font_manager_draw_data( po->xp, LEFT_X + 6, STATS_ROW + 4 );
+	engine_font_manager_draw_data( po->max_xp, LEFT_X + 11, STATS_ROW + 4 );
+	engine_font_manager_draw_text( LOCALE_SLASH, LEFT_X + 8, STATS_ROW + 4 );
 
-	engine_font_manager_data( po->gold, LEFT_X + 10, STATS_ROW + 5 );
-	engine_font_manager_data( po->level, LEFT_X + 12, STATS_ROW + 20 );
+	engine_font_manager_draw_data( po->gold, LEFT_X + 10, STATS_ROW + 5 );
+	engine_font_manager_draw_data( po->level, LEFT_X + 12, STATS_ROW + 20 );
 
 	// Print inventory.
 	devkit_SMS_mapROMBank( FIXED_BANK );
-	engine_font_manager_text( ( unsigned char * ) weapon_texts[ po->weapon ], LEFT_X + 4, STATS_ROW + 7 );
-	engine_font_manager_text( ( unsigned char * ) armor_texts[ po->armor ], LEFT_X + 4, STATS_ROW + 8 );
-	engine_font_manager_text( ( unsigned char * ) life_texts[ po->life ], LEFT_X + 4, STATS_ROW + 9 );
+	engine_font_manager_draw_text( ( unsigned char * ) weapon_texts[ po->weapon ], LEFT_X + 4, STATS_ROW + 7 );
+	engine_font_manager_draw_text( ( unsigned char * ) armor_texts[ po->armor ], LEFT_X + 4, STATS_ROW + 8 );
+	engine_font_manager_draw_text( ( unsigned char * ) life_texts[ po->life ], LEFT_X + 4, STATS_ROW + 9 );
 
 	if( po->xp > 60 )
 	{
-		engine_font_manager_text( LOCALE_HERO, LEFT_X + 15, STATS_ROW + 20 );
+		engine_font_manager_draw_text( LOCALE_HERO, LEFT_X + 15, STATS_ROW + 20 );
 	}
 }
 
@@ -97,15 +97,15 @@ void engine_player_manager_rest()
 
 void engine_player_manager_draw()
 {
-	engine_text_manager_args( LEFT_X + 8, FIGHT_ROW + 0, 2, 0x20, 0xBC );
-	engine_text_manager_args( LEFT_X + 8, FIGHT_ROW + 1, 3, 0x8E, 0x92, 0x29 );
-	engine_text_manager_args( LEFT_X + 8, FIGHT_ROW + 2, 2, 0x20, 0x5E );
+	//engine_font_manager_draw_data( LEFT_X + 8, FIGHT_ROW + 0, 2, 0x20, 0xBC );
+	//engine_font_manager_draw_data( LEFT_X + 8, FIGHT_ROW + 1, 3, 0x8E, 0x92, 0x29 );
+	//engine_font_manager_draw_data( LEFT_X + 8, FIGHT_ROW + 2, 2, 0x20, 0x5E );
 }
 
 void engine_player_manager_hplo()
 {
 	struct_player_object *po = &global_player_object;
-	engine_font_manager_data( po->hp, LEFT_X + 14, FIGHT_ROW + 3 );
+	engine_font_manager_draw_data( po->hp, LEFT_X + 14, FIGHT_ROW + 3 );
 }
 
 void engine_player_manager_dec_gold( unsigned char gold )
