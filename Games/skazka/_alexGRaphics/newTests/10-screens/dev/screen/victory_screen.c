@@ -4,7 +4,7 @@
 
 void screen_victory_screen_load()
 {
-	engine_font_manager_draw_text( "VICTORY SCREEN!!", 10, 2 );
+	engine_font_manager_draw_text( "VICTORY SCREEN", 10, 2 );
 }
 
 void screen_victory_screen_update( unsigned char *screen_type )
