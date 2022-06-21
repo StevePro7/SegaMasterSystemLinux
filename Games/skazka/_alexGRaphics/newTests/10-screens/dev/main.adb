@@ -1,7 +1,7 @@
 M:main
 F:G$main$0_0$0({2}DF,SV:S),C,0,0,0,0,0
-S:Lmain.main$open_screen_type$1_0$109({1}SC:U),R,0,0,[]
-S:Lmain.main$global_pause$1_0$109({1}:S),E,0,0
+S:Lmain.main$open_screen_type$1_0$110({1}SC:U),R,0,0,[]
+S:Lmain.main$global_pause$1_0$110({1}:S),E,0,0
 S:G$atof$0_0$0({2}DF,SF:S),C,0,0
 S:G$atoi$0_0$0({2}DF,SI:S),C,0,0
 S:G$atol$0_0$0({2}DF,SL:S),C,0,0

@@ -12,11 +12,11 @@ void main( void )
 
 	devkit_SMS_useFirstHalfTilesforSprites( false );
 
-	open_screen_type = screen_type_splash;
+	//open_screen_type = screen_type_splash;
 	//open_screen_type = screen_type_title;
 	//open_screen_type = screen_type_load;
 	//open_screen_type = screen_type_diff;
-
+	open_screen_type = screen_type_test;
 
 	// Initialize player first!
 	//engine_player_manager_init();
@@ -29,10 +29,8 @@ void main( void )
 	//engine_sound_manager_init();
 
 	//engine_select_manager_init();
-	//engine_screen_manager_init( open_screen_type );
-
+	engine_screen_manager_init( open_screen_type );
 	engine_content_manager_load_tiles();
-	engine_screen_manager_init();
 
 	devkit_SMS_displayOn();
 	for( ;; )
