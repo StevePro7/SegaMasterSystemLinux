@@ -22,9 +22,11 @@ static void draw_flip();
 
 void screen_func_screen_load()
 {
+	engine_graphics_manager_draw_border();
+
 	engine_font_manager_draw_text( "FUNC SCREEN!!", 10, 2 );
 
-	//engine_graphics_manager_draw_border();
+	
 
 	//draw_title();		// screen_01_title
 	//draw_boss();
