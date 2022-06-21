@@ -17,7 +17,7 @@ void screen_intro_screen_load()
 	unsigned char row;
 	unsigned char idx;
 
-	devkit_SMS_displayOff();
+	devkit_SMS_displayOff();		// TODO try comment this line out for smooth screen transition??
 	engine_content_manager_load_logo_big();
 	engine_graphics_manager_draw_logo_big( LEFT_X + 2, TOP_Y + 3 );
 
@@ -39,7 +39,7 @@ void screen_intro_screen_load()
 	engine_font_manager_draw_punc( '.', LEFT_X + 27, TOP_Y + 16 );
 	engine_font_manager_draw_punc( '.', LEFT_X + 16, TOP_Y + 19 );
 
-	devkit_SMS_displayOn();
+	devkit_SMS_displayOn();			// TODO try comment this line out for smooth screen transition??
 }
 
 void screen_intro_screen_update( unsigned char *screen_type )
