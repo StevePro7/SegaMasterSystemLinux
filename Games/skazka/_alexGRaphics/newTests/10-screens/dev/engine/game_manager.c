@@ -13,7 +13,7 @@ struct_game_object global_game_object;
 
 void engine_game_manager_init()
 {
-	engine_game_manager_blue();
+	//engine_game_manager_blue();
 
 	engine_game_manager_intro_on();
 	engine_game_manager_music_on();
@@ -22,16 +22,16 @@ void engine_game_manager_init()
 	engine_game_manager_difficulty( diff_type_easy );
 }
 
-void engine_game_manager_black()
-{
-	struct_game_object *go = &global_game_object;
-	go->blue_screen = false;
-}
-void engine_game_manager_blue()
-{
-	struct_game_object *go = &global_game_object;
-	go->blue_screen = true;
-}
+//void engine_game_manager_black()
+//{
+//	struct_game_object *go = &global_game_object;
+//	go->blue_screen = false;
+//}
+//void engine_game_manager_blue()
+//{
+//	struct_game_object *go = &global_game_object;
+//	go->blue_screen = true;
+//}
 
 void engine_game_manager_intro_on()
 {

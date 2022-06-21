@@ -8,8 +8,8 @@ extern struct_game_object global_game_object;
 
 void engine_game_manager_init();
 
-void engine_game_manager_black();
-void engine_game_manager_blue();
+//void engine_game_manager_black();
+//void engine_game_manager_blue();
 
 void engine_game_manager_intro_on();
 void engine_game_manager_intro_off();
