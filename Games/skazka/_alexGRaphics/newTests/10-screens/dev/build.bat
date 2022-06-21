@@ -8,8 +8,7 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 
 :: Compile
 cd banks
-::sdcc --debug -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK3 fixedbank.c
-::::sdcc --debug -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK15 fixedbank.c
+sdcc --debug -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK3 fixedbank.c
 cd ..
 
 cd devkit

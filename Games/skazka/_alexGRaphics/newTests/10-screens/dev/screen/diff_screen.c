@@ -6,6 +6,7 @@
 #include "../engine/global_manager.h"
 #include "../engine/graphics_manager.h"
 #include "../engine/input_manager.h"
+#include "../engine/locale_manager.h"
 #include "../engine/select_manager.h"
 #include "../engine/text_manager.h"
 #include "../engine/timer_manager.h"
@@ -29,6 +30,7 @@ void screen_diff_screen_load()
 	engine_font_manager_draw_text( ( unsigned char * ) diff_texts[ 0 ], LEFT_X + 14, TOP_Y + DIFFICULTY_ROW + 0 );
 	engine_font_manager_draw_text( ( unsigned char * ) diff_texts[ 1 ], LEFT_X + 14, TOP_Y + DIFFICULTY_ROW + 1 );
 
+	engine_font_manager_draw_text( LOCALE_DIFFICULTY, LEFT_X + 7, TOP_Y + 12 );
 	engine_graphics_manager_draw_border();
 
 	engine_select_manager_load( select_type, LEFT_X + 12, TOP_Y + DIFFICULTY_ROW, 2 );
