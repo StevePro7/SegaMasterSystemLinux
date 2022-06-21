@@ -14,7 +14,7 @@
 #include "engine/enum_manager.h"
 //#include "engine/enemy_manager.h"
 //#include "engine/game_manager.h"
-//#include "engine/hack_manager.h"
+#include "engine/hack_manager.h"
 #include "engine/input_manager.h"
 #include "engine/player_manager.h"
 #include "engine/screen_manager.h"

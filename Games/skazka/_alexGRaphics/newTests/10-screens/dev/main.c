@@ -22,9 +22,9 @@ void main( void )
 
 	// Initialize player first!
 	engine_player_manager_init();
-	//engine_hack_manager_init();
-	//engine_hack_manager_load();
-	//engine_hack_manager_invert();
+	engine_hack_manager_init();
+	engine_hack_manager_load();
+	engine_hack_manager_invert();
 
 	//engine_enemy_manager_init();
 	//engine_game_manager_init();
