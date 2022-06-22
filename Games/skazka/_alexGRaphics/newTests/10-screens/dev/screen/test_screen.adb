@@ -1,7 +1,7 @@
 M:test_screen
 F:G$screen_test_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_test_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Ltest_screen.screen_test_screen_update$screen_type$1_0$10({2}DG,SC:U),B,1,4
+S:Ltest_screen.screen_test_screen_update$screen_type$1_0$16({2}DG,SC:U),B,1,4
 S:G$engine_font_manager_draw_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_punc$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_flip$0_0$0({2}DF,SV:S),C,0,0
@@ -9,3 +9,10 @@ S:G$engine_font_manager_draw_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_data$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_numb$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_zero$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_graphics_manager_draw_border$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_graphics_manager_draw_borderX$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_graphics_manager_draw_underline$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_graphics_manager_draw_logo_big$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_graphics_manager_draw_logo_small$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_graphics_manager_draw_koschey$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_graphics_manager_draw_leshy$0_0$0({2}DF,SV:S),C,0,0

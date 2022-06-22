@@ -31,9 +31,14 @@
 #define SPRITE_TILES	256
 
 // Specific global variables.
-#define SCREEN_WIDTH			256
-#define SCREEN_HEIGHT			192
-#define TILES_WIDTH				32
-#define TILES_HEIGHT			24
+//#define SCREEN_WIDTH			256			// TODO delete
+//#define SCREEN_HEIGHT			192			// TODO delete
+//#define TILES_WIDTH			32			// TODO delete
+//#define TILES_HEIGHT			24			// TODO delete
+
+#define OUTER_WIDE				32
+#define OUTER_HIGH				24
+#define INNER_WIDE				32
+#define INNER_HIGH				24
 
 #endif//_GLOBAL_MANAGER_H_

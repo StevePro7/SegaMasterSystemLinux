@@ -6,38 +6,45 @@
 
 void engine_graphics_manager_draw_border()
 {
+	engine_graphics_manager_draw_borderX( 0, 0, OUTER_WIDE, OUTER_HIGH );
+	//engine_graphics_manager_draw_borderX( LEFT_X, TOP_Y, INNER_WIDE, INNER_HIGH );		// TODO tweak this for part II
+}
+
+void engine_graphics_manager_draw_borderX( unsigned char top, unsigned char left, unsigned char wide, unsigned char high )
+{
 	const unsigned char *pnt = border__tilemap__bin;
 	unsigned char idx;
 
-	devkit_SMS_setNextTileatXY( 0, 0 ); devkit_SMS_setTile( *pnt + 0 );
-	devkit_SMS_setNextTileatXY( TILES_WIDTH - 1, 0 ); devkit_SMS_setTile( *pnt + 0 );
-	devkit_SMS_setNextTileatXY( 0, TILES_HEIGHT - 1 ); devkit_SMS_setTile( *pnt + 0 );
-	devkit_SMS_setNextTileatXY( TILES_WIDTH - 1, TILES_HEIGHT - 1 ); devkit_SMS_setTile( *pnt + 0 );
+	devkit_SMS_setNextTileatXY( left, top ); devkit_SMS_setTile( *pnt + 0 );
+	devkit_SMS_setNextTileatXY( wide - 1, top ); devkit_SMS_setTile( *pnt + 0 );
+	devkit_SMS_setNextTileatXY( left, high - 1 ); devkit_SMS_setTile( *pnt + 0 );
+	devkit_SMS_setNextTileatXY( wide - 1, high - 1 ); devkit_SMS_setTile( *pnt + 0 );
 
 	// Vertical.
-	for( idx = 1; idx <= TILES_HEIGHT - 2; idx++ )
+	for( idx = top + 1; idx <= high - 2; idx++ )
 	{
-		devkit_SMS_setNextTileatXY( 0, idx ); devkit_SMS_setTile( *pnt + 1 );
-		devkit_SMS_setNextTileatXY( TILES_WIDTH - 1, idx ); devkit_SMS_setTile( *pnt + 1 );
+		devkit_SMS_setNextTileatXY( left, idx ); devkit_SMS_setTile( *pnt + 1 );
+		devkit_SMS_setNextTileatXY( wide - 1, idx ); devkit_SMS_setTile( *pnt + 1 );
 	}
 	// Horizontal.
-	for( idx = 1; idx <= TILES_WIDTH - 2; idx++ )
+	for( idx = left + 1; idx <= wide - 2; idx++ )
 	{
-		devkit_SMS_setNextTileatXY( idx, 0 ); devkit_SMS_setTile( *pnt + 2 );
-		devkit_SMS_setNextTileatXY( idx, TILES_HEIGHT - 1 ); devkit_SMS_setTile( *pnt + 2 );
+		devkit_SMS_setNextTileatXY( idx, top ); devkit_SMS_setTile( *pnt + 2 );
+		devkit_SMS_setNextTileatXY( idx, high - 1 ); devkit_SMS_setTile( *pnt + 2 );
 	}
 }
+
 
 void engine_graphics_manager_draw_underline( unsigned char y )
 {
 	const unsigned char *pnt = border__tilemap__bin;
 	unsigned char idx;
 
-	devkit_SMS_setNextTileatXY( 0, y ); devkit_SMS_setTile( *pnt + 0 );
-	devkit_SMS_setNextTileatXY( TILES_WIDTH - 1, y ); devkit_SMS_setTile( *pnt + 0 );
+	devkit_SMS_setNextTileatXY( LEFT_X, y ); devkit_SMS_setTile( *pnt + 0 );
+	devkit_SMS_setNextTileatXY( INNER_WIDE - 1, y ); devkit_SMS_setTile( *pnt + 0 );
 
 	// Horizontal.
-	for( idx = 1; idx <= TILES_WIDTH - 2; idx++ )
+	for( idx = LEFT_X + 1; idx <= INNER_WIDE - 2; idx++ )
 	{
 		devkit_SMS_setNextTileatXY( idx, y ); devkit_SMS_setTile( *pnt + 2 );
 	}
