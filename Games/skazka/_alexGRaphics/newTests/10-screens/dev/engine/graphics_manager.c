@@ -28,11 +28,45 @@ void engine_graphics_manager_draw_border()
 	}
 }
 
+void engine_graphics_manager_draw_underline( unsigned char y )
+{
+	const unsigned char *pnt = border__tilemap__bin;
+	unsigned char idx;
+
+	devkit_SMS_setNextTileatXY( 0, y ); devkit_SMS_setTile( *pnt + 0 );
+	devkit_SMS_setNextTileatXY( TILES_WIDTH - 1, y ); devkit_SMS_setTile( *pnt + 0 );
+
+	// Horizontal.
+	for( idx = 1; idx <= TILES_WIDTH - 2; idx++ )
+	{
+		devkit_SMS_setNextTileatXY( idx, y ); devkit_SMS_setTile( *pnt + 2 );
+	}
+}
+
 void engine_graphics_manager_draw_logo_big( unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = logo_big__tilemap__bin;
 	unsigned char wide = 28;
 	unsigned char high = 5;
+	unsigned char i, j;
+
+	unsigned int tile = 0;
+	for( j = 0; j < high; j++ )
+	{
+		for( i = 0; i < wide; i++ )
+		{
+			devkit_SMS_setNextTileatXY( x + i, y + j );
+			devkit_SMS_setTile( *pnt + tile );
+			tile++;
+		}
+	}
+}
+
+void engine_graphics_manager_draw_logo_small( unsigned char x, unsigned char y )
+{
+	const unsigned char *pnt = logo_small__tilemap__bin;
+	unsigned char wide = 30;
+	unsigned char high = 3;
 	unsigned char i, j;
 
 	unsigned int tile = 0;

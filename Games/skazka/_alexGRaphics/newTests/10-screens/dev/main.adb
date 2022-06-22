@@ -178,6 +178,7 @@ S:G$devkit_isCollisionDetected$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_asm_manager_clear_VRAM$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_tiles$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_logo_big$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_content_manager_load_logo_small$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_koschey$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_enemy_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_enemy_manager_load$0_0$0({2}DF,SV:S),C,0,0

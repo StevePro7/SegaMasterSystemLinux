@@ -1,38 +1,61 @@
 ;!FILE over_screen.asm
 XL3
-H 9 areas 1D global symbols
+H 9 areas 34 global symbols
 M over_screen
 O -mz80
-S _engine_font_manager_draw_text Ref000000
+S _engine_text_manager_cont Ref000000
+S _devkit_SMS_displayOn Ref000000
+S _engine_graphics_manager_draw_logo_small Ref000000
+S _engine_text_manager_clear Ref000000
 S .__.ABS. Def000000
-A _CODE size 21 flags 0 addr 0
-S C$over_screen.c$10$1_0$11 Def00001A
-S C$over_screen.c$12$1_0$11 Def00001A
-S C$over_screen.c$13$1_0$11 Def000020
-S XG$screen_over_screen_update$0$0 Def000020
-S A$over_screen$60 Def000007
-S A$over_screen$61 Def000008
-S A$over_screen$71 Def00000D
-S A$over_screen$62 Def00000B
+S _devkit_SMS_displayOff Ref000000
+S _engine_graphics_manager_draw_border Ref000000
+S _engine_content_manager_load_logo_small Ref000000
+S _engine_graphics_manager_draw_underline Ref000000
+A _CODE size 2E flags 0 addr 0
+S XG$screen_over_screen_update$0$0 Def00002D
+S A$over_screen$80 Def000011
 S G$screen_over_screen_load$0$0 Def000000
-S A$over_screen$90 Def00001C
-S A$over_screen$63 Def00000C
-S A$over_screen$91 Def00001D
-S A$over_screen$92 Def00001E
-S A$over_screen$57 Def000000
-S A$over_screen$58 Def000003
-S A$over_screen$59 Def000004
-S A$over_screen$88 Def00001A
-S A$over_screen$89 Def00001B
+S A$over_screen$90 Def000019
+S A$over_screen$81 Def000012
+S A$over_screen$72 Def000006
+S A$over_screen$91 Def00001B
+S A$over_screen$82 Def000015
+S A$over_screen$73 Def000009
+S A$over_screen$64 Def000000
+S A$over_screen$92 Def00001C
+S A$over_screen$74 Def00000A
+S A$over_screen$93 Def00001D
+S A$over_screen$75 Def00000D
+S A$over_screen$94 Def000020
+S A$over_screen$86 Def000016
+S A$over_screen$68 Def000003
+S A$over_screen$79 Def00000E
+S A$over_screen$98 Def000021
 S _screen_over_screen_load Def000000
-S Fover_screen$__str_0$0_0$0 Def00000E
-S XG$screen_over_screen_load$0$0 Def00000D
-S C$over_screen.c$5$0_0$9 Def000000
-S G$screen_over_screen_update$0$0 Def00001A
-S C$over_screen.c$7$1_0$9 Def000000
-S C$over_screen.c$8$1_0$9 Def00000D
-S A$over_screen$100 Def000020
-S _screen_over_screen_update Def00001A
+S XG$screen_over_screen_load$0$0 Def000024
+S G$screen_over_screen_update$0$0 Def000027
+S C$over_screen.c$20$1_0$100 Def00000E
+S C$over_screen.c$22$1_0$100 Def000016
+S C$over_screen.c$14$0_0$100 Def000000
+S C$over_screen.c$30$1_0$102 Def000027
+S C$over_screen.c$23$1_0$100 Def000019
+S C$over_screen.c$24$1_0$100 Def000021
+S C$over_screen.c$32$1_0$102 Def000027
+S C$over_screen.c$16$1_0$100 Def000000
+S C$over_screen.c$33$1_0$102 Def00002D
+S C$over_screen.c$17$1_0$100 Def000003
+S A$over_screen$122 Def000027
+S C$over_screen.c$27$1_0$100 Def000024
+S C$over_screen.c$18$1_0$100 Def000006
+S A$over_screen$123 Def000028
+S C$over_screen.c$28$1_0$100 Def000024
+S A$over_screen$124 Def000029
+S _screen_over_screen_update Def000027
+S A$over_screen$134 Def00002D
+S A$over_screen$125 Def00002A
+S A$over_screen$126 Def00002B
+S A$over_screen$109 Def000024
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -43,15 +66,13 @@ A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
-T 00 00 00 11 0A 02 D5 21 0E 00 E5 CD 00 00 F1 F1
-R 00 00 00 00 00 08 00 00 02 0C 00 00
-T 0D 00 00 C9
+T 00 00 00 CD 00 00 CD 00 00 11 01 01 D5 CD 00 00
+R 00 00 00 00 02 04 05 00 02 07 07 00 02 0E 02 00
+T 0D 00 00 F1 11 08 16 D5 CD 00 00 F1 CD 00 00 3E
+R 00 00 00 00 02 09 03 00 02 0D 06 00
+T 1A 00 00 04 F5 33 CD 00 00 33 CD 00 00 C3 00 00
+R 00 00 00 00 02 07 08 00 02 0B 00 00 02 0E 01 00
+T 27 00 00
 R 00 00 00 00
-T 0E 00 00
-R 00 00 00 00
-T 0E 00 00 4F 56 45 52 20 53 43 52 45 45 4E 00
-R 00 00 00 00
-T 1A 00 00
-R 00 00 00 00
-T 1A 00 00 C1 E1 E5 C5 36 11 C9
+T 27 00 00 C1 E1 E5 C5 36 11 C9
 R 00 00 00 00

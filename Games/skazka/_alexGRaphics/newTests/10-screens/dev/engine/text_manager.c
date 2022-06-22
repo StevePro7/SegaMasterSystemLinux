@@ -8,7 +8,7 @@ void engine_text_manager_clear( unsigned char start, unsigned char stop )
 	unsigned char row;
 	for( row = start; row <= stop; row++ )
 	{
-		engine_font_manager_draw_text( LOCALE_30_SPCS, LEFT_X + 1, row );
+		engine_font_manager_draw_text( LOCALE_30_SPCS, LEFT_X + 1, TOP_Y + row );
 	}
 }
 
