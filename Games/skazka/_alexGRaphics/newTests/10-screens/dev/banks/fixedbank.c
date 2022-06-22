@@ -169,7 +169,7 @@ const unsigned char *over_texts[] =
 {
 	"YOU ARE DEAD!",
 	"", "",
-	"  GAME OVER  ",
+	"GAME OVER",
 };
 
 const unsigned char *beat_texts[] =

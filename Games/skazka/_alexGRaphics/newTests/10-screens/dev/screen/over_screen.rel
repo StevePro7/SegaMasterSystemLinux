@@ -1,9 +1,10 @@
 ;!FILE over_screen.asm
 XL3
-H 9 areas 5F global symbols
+H 9 areas 69 global symbols
 M over_screen
 O -mz80
 S _engine_text_manager_cont Ref000000
+S _engine_font_manager_draw_punc Ref000000
 S _devkit_SMS_displayOn Ref000000
 S _engine_graphics_manager_draw_logo_small Ref000000
 S _engine_font_manager_draw_text Ref000000
@@ -15,90 +16,99 @@ S _engine_content_manager_load_logo_small Ref000000
 S _engine_graphics_manager_draw_underline Ref000000
 S _over_texts Ref000000
 S _devkit_SMS_mapROMBank Ref000000
-A _CODE size 6A flags 0 addr 0
-S A$over_screen$156 Def00005F
-S A$over_screen$129 Def000046
-S A$over_screen$175 Def000063
-S A$over_screen$157 Def000060
-S A$over_screen$148 Def000059
-S A$over_screen$176 Def000064
-S A$over_screen$177 Def000065
-S A$over_screen$187 Def000069
-S A$over_screen$178 Def000066
-S A$over_screen$179 Def000067
-S XG$screen_over_screen_update$0$0 Def000069
-S A$over_screen$70 Def000009
-S A$over_screen$80 Def000013
+A _CODE size 77 flags 0 addr 0
+S A$over_screen$174 Def00006F
+S A$over_screen$156 Def000065
+S A$over_screen$138 Def000051
+S A$over_screen$148 Def00005B
+S A$over_screen$139 Def000052
+S A$over_screen$168 Def00006C
+S A$over_screen$187 Def000070
+S A$over_screen$169 Def00006D
+S A$over_screen$188 Def000071
+S A$over_screen$189 Def000072
+S A$over_screen$199 Def000076
+S XG$screen_over_screen_update$0$0 Def000076
+S A$over_screen$80 Def000012
+S A$over_screen$71 Def000009
 S G$screen_over_screen_load$0$0 Def000000
-S A$over_screen$63 Def000000
-S A$over_screen$91 Def00001D
-S A$over_screen$64 Def000002
-S A$over_screen$92 Def000021
-S A$over_screen$74 Def00000C
-S A$over_screen$65 Def000006
-S A$over_screen$93 Def000022
-S A$over_screen$84 Def000016
-S A$over_screen$66 Def000008
-S A$over_screen$85 Def000018
-S A$over_screen$86 Def000019
+S A$over_screen$81 Def000013
+S A$over_screen$82 Def000016
+S A$over_screen$64 Def000000
+S A$over_screen$92 Def00001E
+S A$over_screen$65 Def000002
+S A$over_screen$93 Def000020
+S A$over_screen$75 Def00000C
+S A$over_screen$66 Def000006
+S A$over_screen$94 Def000021
+S A$over_screen$67 Def000008
+S A$over_screen$95 Def000022
+S A$over_screen$86 Def000017
 S A$over_screen$87 Def00001A
-S A$over_screen$78 Def00000F
-S A$over_screen$79 Def000012
-S A$over_screen$98 Def000024
+S A$over_screen$88 Def00001B
+S A$over_screen$79 Def00000F
 S A$over_screen$99 Def000025
 S _screen_over_screen_load Def000000
-S XG$screen_over_screen_load$0$0 Def000062
-S G$screen_over_screen_update$0$0 Def000063
+S XG$screen_over_screen_load$0$0 Def00006F
+S G$screen_over_screen_update$0$0 Def000070
 S C$over_screen.c$20$1_0$100 Def00000C
 S C$over_screen.c$21$1_0$100 Def00000F
-S C$over_screen.c$31$1_0$100 Def000046
+S C$over_screen.c$40$1_0$100 Def00006F
 S C$over_screen.c$14$0_0$100 Def000000
-S A$over_screen$100 Def000027
-S C$over_screen.c$23$1_0$100 Def000016
-S A$over_screen$110 Def000036
-S A$over_screen$101 Def000028
+S A$over_screen$100 Def000029
+S C$over_screen.c$23$1_0$100 Def000017
+S A$over_screen$110 Def000033
+S A$over_screen$101 Def00002A
 S C$over_screen.c$33$1_0$100 Def00004E
-S A$over_screen$111 Def000037
-S A$over_screen$102 Def00002B
-S C$over_screen.c$34$1_0$100 Def000051
-S A$over_screen$130 Def000049
-S A$over_screen$112 Def00003A
-S A$over_screen$103 Def00002C
-S A$over_screen$140 Def000051
-S A$over_screen$131 Def00004A
-S A$over_screen$122 Def000040
-S A$over_screen$113 Def00003B
-S A$over_screen$104 Def00002D
-S C$over_screen.c$41$1_0$104 Def000063
-S C$over_screen.c$36$1_0$100 Def000059
-S C$over_screen.c$25$2_0$101 Def000040
-S A$over_screen$141 Def000053
-S A$over_screen$132 Def00004D
-S A$over_screen$123 Def000041
-S A$over_screen$114 Def00003C
-S A$over_screen$105 Def00002E
+S A$over_screen$120 Def000042
+S A$over_screen$111 Def000034
+S C$over_screen.c$30$3_0$102 Def000045
+S A$over_screen$130 Def000048
+S A$over_screen$121 Def000043
+S A$over_screen$112 Def000035
+S C$over_screen.c$35$1_0$100 Def00005B
+S C$over_screen.c$26$1_0$100 Def00001E
+S A$over_screen$140 Def000054
+S A$over_screen$131 Def000049
+S A$over_screen$122 Def000044
+S A$over_screen$113 Def000036
+S C$over_screen.c$36$1_0$100 Def00005E
+S A$over_screen$141 Def000055
+S A$over_screen$132 Def00004A
+S A$over_screen$114 Def000037
+S C$over_screen.c$42$1_0$104 Def000070
 S C$over_screen.c$19$1_0$100 Def000009
-S A$over_screen$142 Def000054
-S A$over_screen$124 Def000042
-S A$over_screen$106 Def00002F
-S C$over_screen.c$43$1_0$104 Def000063
-S C$over_screen.c$38$1_0$100 Def00005C
-S C$over_screen.c$25$3_0$102 Def00001D
-S _screen_over_screen_update Def000063
-S A$over_screen$152 Def00005C
-S A$over_screen$143 Def000055
-S A$over_screen$125 Def000044
-S A$over_screen$107 Def000030
-S C$over_screen.c$44$1_0$104 Def000069
-S C$over_screen.c$39$1_0$100 Def000062
-S A$over_screen$162 Def000062
-S A$over_screen$144 Def000058
-S A$over_screen$108 Def000033
-S C$over_screen.c$27$3_0$102 Def000024
-S A$over_screen$136 Def00004E
-S A$over_screen$118 Def00003D
-S A$over_screen$109 Def000035
-S C$over_screen.c$28$3_0$102 Def00003D
+S A$over_screen$160 Def000066
+S A$over_screen$142 Def000056
+S A$over_screen$133 Def00004C
+S A$over_screen$115 Def000038
+S A$over_screen$106 Def00002C
+S C$over_screen.c$38$1_0$100 Def000066
+S C$over_screen.c$27$2_0$101 Def000048
+S _screen_over_screen_update Def000070
+S A$over_screen$152 Def00005E
+S A$over_screen$143 Def000059
+S A$over_screen$116 Def00003B
+S A$over_screen$107 Def00002D
+S C$over_screen.c$44$1_0$104 Def000070
+S C$over_screen.c$39$1_0$100 Def000069
+S A$over_screen$153 Def000060
+S A$over_screen$144 Def00005A
+S A$over_screen$126 Def000045
+S A$over_screen$117 Def00003D
+S A$over_screen$108 Def00002F
+S C$over_screen.c$45$1_0$104 Def000076
+S C$over_screen.c$27$3_0$102 Def000025
+S A$over_screen$190 Def000073
+S A$over_screen$154 Def000061
+S A$over_screen$118 Def00003E
+S A$over_screen$109 Def000030
+S A$over_screen$191 Def000074
+S A$over_screen$164 Def000069
+S A$over_screen$155 Def000062
+S A$over_screen$137 Def00004E
+S A$over_screen$119 Def00003F
+S C$over_screen.c$29$3_0$102 Def00002C
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -110,24 +120,28 @@ A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
 T 00 00 00 DD E5 DD 21 00 00 DD 39 3B CD 00 00 CD
-R 00 00 00 00 02 0D 06 00
-T 0D 00 00 00 00 11 01 01 D5 CD 00 00 26 03 E3 33
-R 00 00 00 00 02 03 08 00 02 0A 02 00
-T 1A 00 00 CD 00 00 DD 36 FF 09 33 0E 00
-R 00 00 00 00 02 04 0B 00
-T 24 00 00
+R 00 00 00 00 02 0D 07 00
+T 0D 00 00 00 00 11 01 01 D5 CD 00 00 F1 11 08 16
+R 00 00 00 00 02 03 09 00 02 0A 03 00
+T 1A 00 00 D5 CD 00 00 26 03 E3 33 CD 00 00 DD 36
+R 00 00 00 00 02 05 05 00 02 0C 0C 00
+T 27 00 00 FF 09 33 0E 00
 R 00 00 00 00
-T 24 00 00 69 26 00 29 11 00 00 19 5E 23 56 C5 DD
-R 00 00 00 00 02 08 0A 00
-T 31 00 00 66 FF 2E 0A E5 D5 CD 00 00 F1 F1 C1 DD
-R 00 00 00 00 02 0A 03 00
-T 3E 00 00 34 FF 0C 79 D6 04 38 DE 11 08 16 D5 CD
+T 2C 00 00
 R 00 00 00 00
-T 4B 00 00 00 00 F1 CD 00 00 3E 04 F5 33 CD 00 00
-R 00 00 00 00 02 03 04 00 02 07 07 00 02 0E 09 00
-T 58 00 00 33 CD 00 00 CD 00 00 33 DD E1 C9
-R 00 00 00 00 02 05 00 00 02 08 01 00
-T 63 00 00
+T 2C 00 00 69 26 00 29 11 00 00 19 5E 23 56 C5 DD
+R 00 00 00 00 02 08 0B 00
+T 39 00 00 66 FF 2E 09 E5 D5 CD 00 00 F1 F1 C1 DD
+R 00 00 00 00 02 0A 04 00
+T 46 00 00 34 FF 0C 79 D6 04 38 DE 11 15 09 D5 3E
 R 00 00 00 00
-T 63 00 00 C1 E1 E5 C5 36 11 C9
+T 53 00 00 21 F5 33 CD 00 00 F1 33 CD 00 00 3E 04
+R 00 00 00 00 02 07 01 00 02 0C 08 00
+T 60 00 00 F5 33 CD 00 00 33 CD 00 00 CD 00 00 33
+R 00 00 00 00 02 06 0A 00 02 0A 00 00 02 0D 02 00
+T 6D 00 00 DD E1 C9
+R 00 00 00 00
+T 70 00 00
+R 00 00 00 00
+T 70 00 00 C1 E1 E5 C5 36 11 C9
 R 00 00 00 00
