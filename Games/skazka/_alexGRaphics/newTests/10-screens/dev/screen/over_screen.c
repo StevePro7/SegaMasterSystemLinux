@@ -13,16 +13,27 @@
 
 void screen_over_screen_load()
 {
+	unsigned char row;
+	unsigned char idx;
+
 	devkit_SMS_displayOff();		// TODO try comment this line out for smooth screen transition??
 	engine_content_manager_load_logo_small();
 	engine_graphics_manager_draw_logo_small( LEFT_X + 1, TOP_Y + 1 );
+
+	devkit_SMS_mapROMBank( FIXED_BANK );
+	row = 9;
+	for( idx = 0; idx < 4; idx++ )
+	{
+		engine_font_manager_draw_text( ( unsigned char * ) over_texts[ idx ], LEFT_X + 10, TOP_Y + row );
+		row++;
+	}
 
 	engine_text_manager_clear( TOP_Y + 8, TOP_Y + 22 );
 
 	engine_graphics_manager_draw_border();
 	engine_graphics_manager_draw_underline( TOP_Y + 4 );
-	engine_text_manager_cont();
 
+	engine_text_manager_cont();
 
 	devkit_SMS_displayOn();			// TODO try comment this line out for smooth screen transition??
 }
