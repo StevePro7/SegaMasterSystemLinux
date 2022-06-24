@@ -85,7 +85,7 @@ sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main
 
 
 :: Time build -END-
-::set _time=%time: =0%
+set _time=%time: =0%
 set /a _hours=100%_time:~0,2%%%100,_min=100%_time:~3,2%%%100,_sec=100%_time:~6,2%%%100,_cs=%_time:~9,2%
 set /a _duration=_hours*60*60*100+_min*60*100+_sec*100+_cs-_started
 set /a _hours=_duration/60/60/100,_min=100+_duration/60/100%%60,_sec=100+(_duration/100%%60%%60),_cs=100+_duration%%100
