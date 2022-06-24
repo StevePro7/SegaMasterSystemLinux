@@ -31,7 +31,7 @@ void screen_boss_screen_load()
 
 	devkit_SMS_displayOff();
 	engine_content_manager_load_koschey();
-	engine_text_manager_clear( TOP_Y + 1, TOP_Y + 22 );
+	engine_text_manager_clear( TOP_Y + 2, TOP_Y + 21 );
 
 	row = 18;
 	devkit_SMS_mapROMBank( FIXED_BANK );

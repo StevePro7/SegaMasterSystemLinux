@@ -44,6 +44,7 @@ void screen_relive_screen_update( unsigned char *screen_type )
 
 	// TODO - timer is not counting!!
 	//input = engine_input_manager_hold( input_type_fire1 );
+	input = 1;
 	if( input )
 	{
 		timer = engine_timer_manager_update();
