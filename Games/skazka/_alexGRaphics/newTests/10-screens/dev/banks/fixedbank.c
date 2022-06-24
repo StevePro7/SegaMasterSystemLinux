@@ -167,9 +167,9 @@ const unsigned char *laugh_texts[] =
 
 const unsigned char *over_texts[] =
 {
-	"YOU ARE DEAD!",
+	"YOU ARE DEAD",
 	"", "",
-	"GAME OVER",
+	"  GAME OVER",
 };
 
 const unsigned char *beat_texts[] =

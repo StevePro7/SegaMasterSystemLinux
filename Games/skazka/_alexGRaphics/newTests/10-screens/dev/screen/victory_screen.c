@@ -22,13 +22,13 @@ void screen_victory_screen_load()
 	engine_content_manager_load_logo_small();
 	engine_graphics_manager_draw_logo_small( LEFT_X + 1, TOP_Y + 1 );
 
-	engine_text_manager_clear( TOP_Y + 8, TOP_Y + 22 );
+	engine_text_manager_clear( TOP_Y + 5, TOP_Y + 22 );
 
 	row = 9;
 	devkit_SMS_mapROMBank( FIXED_BANK );
 	for( idx = 0; idx < 4; idx++ )
 	{
-		engine_font_manager_draw_text( ( unsigned char * ) gold_texts[ idx ], LEFT_X + 2, TOP_Y + row );
+		engine_font_manager_draw_text( ( unsigned char * ) gold_texts[ idx ], LEFT_X + 7, TOP_Y + row );
 		row++;
 	}
 

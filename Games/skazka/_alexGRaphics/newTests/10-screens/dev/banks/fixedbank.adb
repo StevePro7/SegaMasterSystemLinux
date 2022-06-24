@@ -97,8 +97,8 @@ S:Ffixedbank$__str_75$0_0$0({29}DA29d,SC:U),D,0,0
 S:Ffixedbank$__str_76$0_0$0({9}DA9d,SC:U),D,0,0
 S:Ffixedbank$__str_77$0_0$0({9}DA9d,SC:U),D,0,0
 S:Ffixedbank$__str_78$0_0$0({9}DA9d,SC:U),D,0,0
-S:Ffixedbank$__str_79$0_0$0({14}DA14d,SC:U),D,0,0
-S:Ffixedbank$__str_80$0_0$0({10}DA10d,SC:U),D,0,0
+S:Ffixedbank$__str_79$0_0$0({13}DA13d,SC:U),D,0,0
+S:Ffixedbank$__str_80$0_0$0({12}DA12d,SC:U),D,0,0
 S:Ffixedbank$__str_81$0_0$0({27}DA27d,SC:U),D,0,0
 S:Ffixedbank$__str_82$0_0$0({28}DA28d,SC:U),D,0,0
 S:Ffixedbank$__str_83$0_0$0({28}DA28d,SC:U),D,0,0
