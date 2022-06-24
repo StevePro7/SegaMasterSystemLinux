@@ -1,79 +1,92 @@
 ;!FILE test_screen.asm
 XL3
-H 9 areas 45 global symbols
+H 9 areas 52 global symbols
 M test_screen
 O -mz80
-S _engine_graphics_manager_draw_koschey2 Ref000000
 S .__.ABS. Def000000
 S _engine_graphics_manager_draw_koschey Ref000000
+S _devkit_TILE_USE_SPRITE_PALETTE Ref000000
 S _engine_graphics_manager_draw_border Ref000000
 S _engine_input_manager_move Ref000000
 S _engine_content_manager_load_koschey Ref000000
-A _CODE size 50 flags 0 addr 0
-S A$test_screen$161 Def00004F
-S A$test_screen$152 Def00004C
-S A$test_screen$143 Def000045
-S A$test_screen$116 Def000024
-S A$test_screen$153 Def00004D
-S A$test_screen$144 Def000048
-S A$test_screen$135 Def00003A
+A _CODE size 65 flags 0 addr 0
+S A$test_screen$170 Def000062
+S A$test_screen$161 Def00005D
+S A$test_screen$143 Def000048
+S A$test_screen$134 Def00003B
+S A$test_screen$116 Def000026
+S C$test_screen.c$39$1_0$100 Def00005E
+S C$test_screen.c$28$2_0$101 Def00002B
+S A$test_screen$144 Def000049
+S A$test_screen$126 Def00002B
 S A$test_screen$117 Def000027
-S A$test_screen$136 Def00003D
-S A$test_screen$127 Def000032
-S A$test_screen$118 Def000029
-S A$test_screen$137 Def00003F
-S A$test_screen$128 Def000035
-S A$test_screen$129 Def000036
-S A$test_screen$149 Def000049
-S C$test_screen.c$20$1_0$20 Def000014
-S C$test_screen.c$22$1_0$20 Def000014
-S C$test_screen.c$30$2_0$21 Def00003A
-S C$test_screen.c$23$1_0$20 Def00001D
-S XG$screen_test_screen_update$0$0 Def00004F
-S C$test_screen.c$36$1_0$20 Def000049
-S C$test_screen.c$25$2_0$21 Def000020
-S C$test_screen.c$12$0_0$18 Def000000
-S A$test_screen$70 Def000007
-S C$test_screen.c$37$1_0$20 Def00004F
-S C$test_screen.c$32$3_0$23 Def000041
-S C$test_screen.c$26$2_0$21 Def00002C
-S A$test_screen$80 Def000010
-S A$test_screen$71 Def00000A
+S C$test_screen.c$35$3_0$103 Def000051
+S C$test_screen.c$29$2_0$101 Def000037
+S A$test_screen$127 Def00002F
+S A$test_screen$155 Def000051
+S A$test_screen$128 Def000032
+S A$test_screen$156 Def000054
+S A$test_screen$138 Def00003D
+S A$test_screen$129 Def000034
+S A$test_screen$166 Def00005E
+S A$test_screen$157 Def000055
+S A$test_screen$139 Def000040
+S A$test_screen$167 Def00005F
+S A$test_screen$158 Def000058
+S A$test_screen$149 Def00004A
+S A$test_screen$168 Def000060
+S A$test_screen$159 Def000059
+S A$test_screen$178 Def000064
+S A$test_screen$169 Def000061
+S XG$screen_test_screen_update$0$0 Def000064
+S A$test_screen$71 Def000003
 S G$screen_test_screen_load$0$0 Def000000
-S C$test_screen.c$14$1_0$18 Def000000
-S A$test_screen$64 Def000000
-S C$test_screen.c$15$1_0$18 Def000003
-S C$test_screen.c$28$3_0$22 Def000032
-S C$test_screen.c$16$1_0$18 Def00000B
+S A$test_screen$90 Def000019
+S A$test_screen$81 Def000010
+S A$test_screen$72 Def000006
+S A$test_screen$91 Def00001B
+S A$test_screen$73 Def000007
+S A$test_screen$74 Def00000A
 S A$test_screen$75 Def00000B
-S C$test_screen.c$17$1_0$18 Def00000E
-S C$test_screen.c$18$1_0$18 Def000013
-S A$test_screen$68 Def000003
-S A$test_screen$69 Def000006
-S A$test_screen$88 Def000013
-S A$test_screen$79 Def00000E
+S A$test_screen$85 Def000013
+S A$test_screen$76 Def00000E
+S A$test_screen$67 Def000000
+S A$test_screen$86 Def000016
+S A$test_screen$77 Def00000F
+S C$test_screen.c$20$1_0$98 Def000019
+S C$test_screen.c$21$1_0$98 Def00001E
+S C$test_screen.c$14$0_0$98 Def000000
+S A$test_screen$99 Def00001E
+S C$test_screen.c$16$1_0$98 Def000000
+S C$test_screen.c$17$1_0$98 Def000003
 S _screen_test_screen_load Def000000
-S XG$screen_test_screen_load$0$0 Def000013
-S G$screen_test_screen_update$0$0 Def000014
-S A$test_screen$110 Def00001D
-S A$test_screen$101 Def000014
-S A$test_screen$111 Def00001E
-S A$test_screen$102 Def000016
-S A$test_screen$130 Def000039
-S A$test_screen$103 Def000017
-S A$test_screen$122 Def00002C
-S A$test_screen$104 Def000018
-S A$test_screen$150 Def00004A
-S A$test_screen$141 Def000041
-S A$test_screen$123 Def000030
-S A$test_screen$105 Def00001B
-S A$test_screen$151 Def00004B
-S A$test_screen$142 Def000044
-S A$test_screen$115 Def000020
-S A$test_screen$106 Def00001C
-S _screen_test_screen_update Def000014
-A _DATA size 1 flags 0 addr 0
+S C$test_screen.c$18$1_0$98 Def000010
+S C$test_screen.c$19$1_0$98 Def000013
+S XG$screen_test_screen_load$0$0 Def00001E
+S G$screen_test_screen_update$0$0 Def00001F
+S C$test_screen.c$40$1_0$100 Def000064
+S C$test_screen.c$23$1_0$100 Def00001F
+S C$test_screen.c$25$1_0$100 Def00001F
+S A$test_screen$121 Def000028
+S A$test_screen$112 Def00001F
+S C$test_screen.c$33$2_0$101 Def00004A
+S C$test_screen.c$31$3_0$102 Def00003D
+S C$test_screen.c$26$1_0$100 Def000028
+S A$test_screen$140 Def000041
+S A$test_screen$122 Def000029
+S A$test_screen$113 Def000021
+S A$test_screen$150 Def00004D
+S A$test_screen$141 Def000044
+S A$test_screen$114 Def000022
+S A$test_screen$160 Def00005C
+S A$test_screen$151 Def00004F
+S A$test_screen$142 Def000045
+S A$test_screen$133 Def000037
+S A$test_screen$115 Def000023
+S _screen_test_screen_update Def00001F
+A _DATA size 3 flags 0 addr 0
 S Ftest_screen$flag$0_0$0 Def000000
+S Ftest_screen$palette$0_0$0 Def000001
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
@@ -85,27 +98,35 @@ T 00 00 00
 R 00 00 01 00
 T 00 00 00
 R 00 00 01 00
+T 01 00 00
+R 00 00 01 00
+T 01 00 00
+R 00 00 01 00
 T 00 00 00
 R 00 00 00 00
-T 00 00 00 CD 00 00 11 0A 02 D5 CD 00 00 F1 CD
-R 00 00 00 00 02 04 05 00 02 0B 02 00
-T 0C 00 00 00 00 3E 01 32 00 00 C9
-R 00 00 00 00 02 03 03 00 00 08 01 00
-T 14 00 00
+T 00 00 00 CD 00 00 CD 00 00 E5 11 0A 02 D5 CD
+R 00 00 00 00 02 04 05 00 02 07 02 00
+T 0C 00 00 00 00 F1 F1 CD 00 00 CD 00 00 22
+R 00 00 00 00 02 03 01 00 02 08 03 00 02 0B 02 00
+T 17 00 00 01 00 3E 01 32 00 00 C9
+R 00 00 00 00 00 03 01 00 00 08 01 00
+T 1F 00 00
 R 00 00 00 00
-T 14 00 00 3E 10 F5 33 CD 00 00 33 7D B7 28 29 FD
+T 1F 00 00 3E 10 F5 33 CD 00 00 33 7D B7 28 33 FD
 R 00 00 00 00 02 08 04 00
-T 21 00 00 21 00 00 FD 7E 00 EE 01 32 00 00 FD CB
+T 2C 00 00 21 00 00 FD 7E 00 EE 01 32 00 00 FD CB
 R 00 00 00 00 00 04 01 00 00 0C 01 00
-T 2E 00 00 00 46 28 08 11 0A 02 D5 CD 00 00 F1
-R 00 00 00 00 02 0C 02 00
-T 3A 00 00
+T 39 00 00 00 46 28 0D 2A 01 00 E5 11 0A 02 D5 CD
+R 00 00 00 00 00 08 01 00
+T 46 00 00 00 00 F1 F1
+R 00 00 00 00 02 03 01 00
+T 4A 00 00
 R 00 00 00 00
-T 3A 00 00 21 00 00 CB 46 20 08 11 0A 02 D5 CD
+T 4A 00 00 21 00 00 CB 46 20 0D 21 00 00 E5 11
 R 00 00 00 00 00 04 01 00
-T 46 00 00 00 00 F1
-R 00 00 00 00 02 03 00 00
-T 49 00 00
+T 56 00 00 0A 02 D5 CD 00 00 F1 F1
+R 00 00 00 00 02 07 01 00
+T 5E 00 00
 R 00 00 00 00
-T 49 00 00 C1 E1 E5 C5 36 12 C9
+T 5E 00 00 C1 E1 E5 C5 36 12 C9
 R 00 00 00 00
