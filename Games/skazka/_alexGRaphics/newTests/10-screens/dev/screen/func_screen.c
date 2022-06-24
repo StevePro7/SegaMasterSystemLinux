@@ -22,9 +22,33 @@ static void draw_flip();
 
 void screen_func_screen_load()
 {
+	unsigned char row;
+	unsigned char idx;
+
+	//select_type = select_type_boss;
+	row = 1;
+
+	devkit_SMS_displayOff();
+	engine_content_manager_load_koschey();
+	engine_text_manager_clear( TOP_Y + 1, TOP_Y + 22 );
+
+	row = 19;
+	devkit_SMS_mapROMBank( FIXED_BANK );
+	for( idx = 0; idx < 2; idx++ )
+	{
+		engine_font_manager_draw_text( ( unsigned char* ) query_texts[ idx ], LEFT_X + 2, TOP_Y + row );
+		row++;
+	}
+
+	engine_font_manager_draw_punc( '\'', LEFT_X + 8, TOP_Y + 19 );
+	engine_font_manager_draw_punc( '?', LEFT_X + 19, TOP_Y + 20 );
+
+	engine_graphics_manager_draw_koschey( LEFT_X + 10, TOP_Y + 2 );
 	engine_graphics_manager_draw_border();
 
-	engine_font_manager_draw_text( "FUNC SCREEN", 10, 2 );
+	devkit_SMS_displayOn();
+
+	//event_stage = scene_type_select;
 
 	//draw_title();		// screen_01_title
 	//draw_boss();

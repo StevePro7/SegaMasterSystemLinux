@@ -148,8 +148,8 @@ extern const unsigned char *prep_texts[] =
 
 const unsigned char *boss_texts[] =
 {
-	"1) BEG FOR YOUR LIFE",
-	"2) FIGHT!!          ",
+	"BEG FOR YOUR LIFE",
+	"FIGHT",
 };
 
 const unsigned char *query_texts[] =
