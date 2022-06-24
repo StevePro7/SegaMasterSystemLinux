@@ -135,15 +135,15 @@ const unsigned char *villager_texts[] =
 
 extern const unsigned char *prep_texts[] =
 {
-	" THIS IS THE MOST IMPORTANT",
-	" BATTLE OF YOUR LIFE.      ",
+	"THIS IS THE MOST IMPORTANT",
+	"BATTLE OF YOUR LIFE",
 	"",
 	"",
-	" CAN YOU HANDLE THE BATTLE?",
+	"CAN YOU HANDLE THE BATTLE",
 	"",
 	"",
-	"     1)  YES",
-	"     2)  NO",
+	"            YES",
+	"            NO",
 };
 
 const unsigned char *boss_texts[] =
