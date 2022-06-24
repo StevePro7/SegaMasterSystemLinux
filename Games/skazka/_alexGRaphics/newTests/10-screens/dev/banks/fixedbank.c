@@ -72,9 +72,9 @@ const unsigned char *fight_texts[] =
 
 const unsigned char *gold_texts[] =
 {
-	"    VICTORY!  ",
+	"     VICTORY",
 	"", "",
-	"YOU GOT GOLD -",
+	"YOU GOT GOLD",
 };
 
 const unsigned char *shop_texts[] =
