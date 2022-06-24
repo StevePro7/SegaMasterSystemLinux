@@ -40,15 +40,15 @@ void screen_boss_screen_load()
 		engine_font_manager_draw_text( ( unsigned char* ) boss_texts[ idx ], LEFT_X + 8, TOP_Y + row );
 		row++;
 	}
-	engine_font_manager_draw_punc( '!', LEFT_X + 13, TOP_Y + 19 );
-	engine_font_manager_draw_punc( '!', LEFT_X + 14, TOP_Y + 19 );
+	engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 13, TOP_Y + 19 );
+	engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 14, TOP_Y + 19 );
 
 	// Print fight text and reset selection.
 	engine_font_manager_draw_text( LOCALE_FIGHT_MSG1, LEFT_X + 2, TOP_Y + FIGHT_ROW + 3 );
 	engine_font_manager_draw_text( LOCALE_BOSSX_MSG2, LEFT_X + 16, TOP_Y + FIGHT_ROW + 3 );
 	engine_font_manager_draw_punc( LOCALE_HYPHEN, LEFT_X + 10, TOP_Y + FIGHT_ROW + 3 );
 	engine_font_manager_draw_punc( LOCALE_HYPHEN, LEFT_X + 26, TOP_Y + FIGHT_ROW + 3 );
-	engine_font_manager_draw_punc( '\'', LEFT_X + 23, TOP_Y + FIGHT_ROW + 3 );
+	engine_font_manager_draw_punc( LOCALE_QUOTE, LEFT_X + 23, TOP_Y + FIGHT_ROW + 3 );
 
 	engine_graphics_manager_draw_koschey( LEFT_X + 10, TOP_Y + 2 );
 	engine_graphics_manager_draw_border();
@@ -79,8 +79,8 @@ void screen_boss_screen_load()
 		row++;
 	}
 
-	engine_font_manager_draw_punc( '\'', LEFT_X + 8, TOP_Y + 19 );
-	engine_font_manager_draw_punc( '?', LEFT_X + 19, TOP_Y + 20 );
+	engine_font_manager_draw_punc( LOCALE_QUOTE, LEFT_X + 8, TOP_Y + 19 );
+	engine_font_manager_draw_punc( LOCALE_QMARK, LEFT_X + 19, TOP_Y + 20 );
 
 	engine_graphics_manager_draw_koschey( LEFT_X + 10, TOP_Y + 2 );
 	engine_graphics_manager_draw_border();

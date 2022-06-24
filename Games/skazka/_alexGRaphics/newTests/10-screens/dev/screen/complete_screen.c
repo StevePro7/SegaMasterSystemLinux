@@ -6,6 +6,7 @@
 #include "../engine/global_manager.h"
 #include "../engine/graphics_manager.h"
 #include "../engine/input_manager.h"
+#include "../engine/locale_manager.h"
 #include "../engine/text_manager.h"
 #include "../engine/timer_manager.h"
 #include "../devkit/_sms_manager.h"
@@ -30,9 +31,9 @@ void screen_complete_screen_load()
 		row++;
 	}
 
-	engine_font_manager_draw_punc( '!', LEFT_X + 22, TOP_Y + 7 );
-	engine_font_manager_draw_punc( '!', LEFT_X + 23, TOP_Y + 7 );
-	engine_font_manager_draw_punc( '!', LEFT_X + 27, TOP_Y + 17 );
+	engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 22, TOP_Y + 7 );
+	engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 23, TOP_Y + 7 );
+	engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 27, TOP_Y + 17 );
 	engine_font_manager_draw_punc( '.', LEFT_X + 16, TOP_Y + 13 );
 
 	engine_graphics_manager_draw_border();

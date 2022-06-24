@@ -33,7 +33,7 @@ void screen_victory_screen_load()
 		row++;
 	}
 
-	engine_font_manager_draw_punc( '!', LEFT_X + 19, TOP_Y + 9 );
+	engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 19, TOP_Y + 9 );
 	engine_font_manager_draw_punc( LOCALE_HYPHEN, LEFT_X + 20, TOP_Y + 12 );
 	engine_font_manager_draw_data( po->won, LEFT_X + 24, TOP_Y + 12 );
 

@@ -40,8 +40,8 @@ void screen_func_screen_load()
 		row++;
 	}
 
-	engine_font_manager_draw_punc( '\'', LEFT_X + 8, TOP_Y + 19 );
-	engine_font_manager_draw_punc( '?', LEFT_X + 19, TOP_Y + 20 );
+	engine_font_manager_draw_punc( LOCALE_QUOTE, LEFT_X + 8, TOP_Y + 19 );
+	engine_font_manager_draw_punc( LOCALE_QMARK, LEFT_X + 19, TOP_Y + 20 );
 
 	engine_graphics_manager_draw_koschey( LEFT_X + 10, TOP_Y + 2 );
 	engine_graphics_manager_draw_border();
@@ -86,9 +86,9 @@ static void draw_intro()
 	engine_graphics_manager_draw_border();
 	engine_text_manager_cont();
 
-	engine_font_manager_draw_punc( LOCALE_DOT, LEFT_X + 25, TOP_Y + 13 );
-	engine_font_manager_draw_punc( LOCALE_DOT, LEFT_X + 27, TOP_Y + 16 );
-	engine_font_manager_draw_punc( LOCALE_DOT, LEFT_X + 16, TOP_Y + 19 );
+	engine_font_manager_draw_punc( LOCALE_STOP, LEFT_X + 25, TOP_Y + 13 );
+	engine_font_manager_draw_punc( LOCALE_STOP, LEFT_X + 27, TOP_Y + 16 );
+	engine_font_manager_draw_punc( LOCALE_STOP, LEFT_X + 16, TOP_Y + 19 );
 }
 
 static void draw_boss()
@@ -103,8 +103,8 @@ static void draw_boss()
 	engine_font_manager_draw_text( "SO YOU VE COME TO CHALLENGE", 2, 19 );
 	engine_font_manager_draw_text( "ME FOOLISH MORTAL  VERY WELL", 2, 20 );
 
-	engine_font_manager_draw_punc( '\'', 8, 19 );
-	engine_font_manager_draw_punc( '?', 19, 20 );
+	engine_font_manager_draw_punc( LOCALE_QUOTE, 8, 19 );
+	engine_font_manager_draw_punc( LOCALE_QMARK, 19, 20 );
 }
 
 static void draw_title()
@@ -134,39 +134,39 @@ static void draw_text()
 
 	engine_font_manager_draw_text( "STATS VILLAGE", 10, 20 );
 	engine_font_manager_draw_char( 'X', 20, 1 );
-	engine_font_manager_draw_punc( '?', 12, 1 );
+	engine_font_manager_draw_punc( LOCALE_QMARK, 12, 1 );
 }
 
 static void draw_punc()
 {
 	unsigned char idx = 0;
 
-	engine_font_manager_draw_punc( '+', 10, idx++ );
+	engine_font_manager_draw_punc( LOCALE_PLUS, 10, idx++ );
 	engine_font_manager_draw_punc( LOCALE_HYPHEN, 10, idx++ );
-	engine_font_manager_draw_punc( '\'', 10, idx++ );
-	engine_font_manager_draw_punc( LOCALE_DOT, 10, idx++ );
-	engine_font_manager_draw_punc( ',', 10, idx++ );
-	engine_font_manager_draw_punc( ':', 10, idx++ );
-	engine_font_manager_draw_punc( '?', 10, idx++ );
-	engine_font_manager_draw_punc( '!', 10, idx++ );
+	engine_font_manager_draw_punc( LOCALE_QUOTE, 10, idx++ );
+	engine_font_manager_draw_punc( LOCALE_STOP, 10, idx++ );
+	engine_font_manager_draw_punc( LOCALE_COMMA, 10, idx++ );
+	engine_font_manager_draw_punc( LOCALE_COLON, 10, idx++ );
+	engine_font_manager_draw_punc( LOCALE_QMARK, 10, idx++ );
+	engine_font_manager_draw_punc( LOCALE_POINT, 10, idx++ );
 	engine_font_manager_draw_punc( LOCALE_SLASH, 10, idx++ );
-	engine_font_manager_draw_punc( ')', 10, idx++ );
-	engine_font_manager_draw_punc( '>', 10, idx++ );
+	//engine_font_manager_draw_punc( LOCALE_BRACKET, 10, idx++ );
+	engine_font_manager_draw_punc( LOCALE_ARROW, 10, idx++ );
 }
 
 static void draw_flip()
 {
 	unsigned char idx = 0;
 
-	engine_font_manager_draw_flip( '+', 20, idx++ );
+	engine_font_manager_draw_flip( LOCALE_PLUS, 20, idx++ );
 	engine_font_manager_draw_flip( LOCALE_HYPHEN, 20, idx++ );
-	engine_font_manager_draw_flip( '\'', 20, idx++ );
-	engine_font_manager_draw_flip( LOCALE_DOT, 20, idx++ );
-	engine_font_manager_draw_flip( ',', 20, idx++ );
-	engine_font_manager_draw_flip( ':', 20, idx++ );
-	engine_font_manager_draw_flip( '?', 20, idx++ );
-	engine_font_manager_draw_flip( '!', 20, idx++ );
+	engine_font_manager_draw_flip( LOCALE_QUOTE, 20, idx++ );
+	engine_font_manager_draw_flip( LOCALE_STOP, 20, idx++ );
+	engine_font_manager_draw_flip( LOCALE_COMMA, 20, idx++ );
+	engine_font_manager_draw_flip( LOCALE_COLON, 20, idx++ );
+	engine_font_manager_draw_flip( LOCALE_QMARK, 20, idx++ );
+	engine_font_manager_draw_flip( LOCALE_POINT, 20, idx++ );
 	engine_font_manager_draw_flip( LOCALE_SLASH, 20, idx++ );
-	engine_font_manager_draw_flip( ')', 20, idx++ );
-	engine_font_manager_draw_flip( '>', 20, idx++ );
+	//engine_font_manager_draw_flip( LOCALE_BRACKET, 20, idx++ );
+	engine_font_manager_draw_flip( LOCALE_ARROW, 20, idx++ );
 }

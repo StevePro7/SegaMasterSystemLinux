@@ -36,13 +36,22 @@
 
 #define LOCALE_NOT_ENOUGH		"NOT ENOUGH GOLD!"
 
-#define LOCALE_ARROWS			'>'
-#define LOCALE_1_SPCS			' '
 //#define LOCALE_6_SPCS			"      "					// TODO delete - not used!
 #define LOCALE_28_SPCS			"                              "
 //#define LOCALE_280_SPCS			"XXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-#define LOCALE_SLASH			'/'
+#define LOCALE_1_SPCS			' '
+
+#define LOCALE_PLUS				'+'
 #define LOCALE_HYPHEN			'-'
-#define LOCALE_DOT				'.'
+#define LOCALE_QUOTE			'\''
+
+#define LOCALE_STOP				'.'
+#define LOCALE_COMMA			','
+#define LOCALE_COLON			','
+#define LOCALE_QMARK			'?'
+#define LOCALE_POINT			'/'
+#define LOCALE_SLASH			'/'
+//#define LOCALE_BRACKET			')'
+#define LOCALE_ARROW			'>'
 
 #endif//_LOCALE_MANAGER_H_

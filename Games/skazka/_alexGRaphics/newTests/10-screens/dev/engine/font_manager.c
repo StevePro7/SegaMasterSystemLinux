@@ -1,4 +1,5 @@
 #include "font_manager.h"
+#include "locale_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
 
@@ -96,17 +97,17 @@ void engine_font_manager_draw_zero( unsigned int data, unsigned char x, unsigned
 
 static unsigned char get_tile( unsigned char ch )
 {
-	if( '+' == ch ) { return 37; }
-	else if( '-' == ch ) { return 38; }
-	else if( '\'' == ch ) { return 39; }
-	else if( '.' == ch ) { return 40; }
-	else if( ',' == ch ) { return 41; }
-	else if( ':' == ch ) { return 42; }
-	else if( '?' == ch ) { return 43; }
-	else if( '!' == ch ) { return 44; }
-	else if( '/' == ch ) { return 45; }
+	if( LOCALE_PLUS == ch ) { return 37; }
+	else if( LOCALE_HYPHEN == ch ) { return 38; }
+	else if( LOCALE_QUOTE == ch ) { return 39; }
+	else if( LOCALE_STOP == ch ) { return 40; }
+	else if( LOCALE_COMMA == ch ) { return 41; }
+	else if( LOCALE_COLON == ch ) { return 42; }
+	else if( LOCALE_QMARK == ch ) { return 43; }
+	else if( LOCALE_POINT == ch ) { return 44; }
+	else if( LOCALE_SLASH == ch ) { return 45; }
 	else if( ')' == ch ) { return 46; }
-	else if( '>' == ch ) { return 47; }
+	else if( LOCALE_ARROW == ch ) { return 47; }
 	return 0;
 }
 static void draw_char( unsigned int tile, unsigned char x, unsigned char y )

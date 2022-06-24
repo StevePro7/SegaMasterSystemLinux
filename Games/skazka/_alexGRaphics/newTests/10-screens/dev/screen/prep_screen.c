@@ -38,8 +38,8 @@ void screen_prep_screen_load()
 		row++;
 	}
 
-	engine_font_manager_draw_punc( LOCALE_DOT, LEFT_X + 22, TOP_Y + 8 );
-	engine_font_manager_draw_punc( '?', LEFT_X + 28, TOP_Y + 11 );
+	engine_font_manager_draw_punc( LOCALE_STOP, LEFT_X + 22, TOP_Y + 8 );
+	engine_font_manager_draw_punc( LOCALE_QMARK, LEFT_X + 28, TOP_Y + 11 );
 
 	engine_graphics_manager_draw_border();
 	engine_graphics_manager_draw_underline( TOP_Y + 4 );

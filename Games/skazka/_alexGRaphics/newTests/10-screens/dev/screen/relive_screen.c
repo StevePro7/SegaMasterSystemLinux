@@ -59,8 +59,8 @@ void screen_relive_screen_update( unsigned char *screen_type )
 
 			if( count != 3 )
 			{
-				//engine_font_manager_draw_text( LOCALE_DOT, LEFT_X + 21 + count, RELIVE_ROW );
-				engine_font_manager_draw_punc( LOCALE_DOT, LEFT_X + 21 + count, RELIVE_ROW );
+				//engine_font_manager_draw_text( LOCALE_STOP, LEFT_X + 21 + count, RELIVE_ROW );
+				engine_font_manager_draw_punc( LOCALE_STOP, LEFT_X + 21 + count, RELIVE_ROW );
 			}
 
 			count++;
