@@ -43,6 +43,6 @@
 //#define LOCALE_30_SPCS			"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 #define LOCALE_SLASH			"/"
 #define LOCALE_HYPHEN			"-"
-#define LOCALE_DOT				"."
+#define LOCALE_DOT				'.'
 
 #endif//_LOCALE_MANAGER_H_
