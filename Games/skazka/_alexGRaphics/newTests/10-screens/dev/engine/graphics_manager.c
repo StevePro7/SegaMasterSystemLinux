@@ -88,7 +88,7 @@ void engine_graphics_manager_draw_logo_small( unsigned char x, unsigned char y )
 	}
 }
 
-void engine_graphics_manager_draw_koschey( unsigned char x, unsigned char y )
+void engine_graphics_manager_draw_koschey( unsigned char x, unsigned char y, unsigned int palette )
 {
 	const unsigned char *pnt = koschey__tilemap__bin;
 	unsigned char wide = 12;
@@ -97,8 +97,6 @@ void engine_graphics_manager_draw_koschey( unsigned char x, unsigned char y )
 	unsigned char idx = 0;
 
 	unsigned int tile = 0;
-	unsigned int palette = devkit_TILE_USE_SPRITE_PALETTE();
-	//unsigned int palette = 0;
 	for( j = 0; j < high; j++ )
 	{
 		for( i = 0; i < wide; i++ )

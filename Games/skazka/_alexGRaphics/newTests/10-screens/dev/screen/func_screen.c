@@ -1,7 +1,6 @@
 #include "func_screen.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
-
 #include "../engine/content_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/global_manager.h"
@@ -43,7 +42,7 @@ void screen_func_screen_load()
 	engine_font_manager_draw_punc( LOCALE_QUOTE, LEFT_X + 8, TOP_Y + 19 );
 	engine_font_manager_draw_punc( LOCALE_QMARK, LEFT_X + 19, TOP_Y + 20 );
 
-	engine_graphics_manager_draw_koschey( LEFT_X + 10, TOP_Y + 2 );
+	engine_graphics_manager_draw_koschey( LEFT_X + 10, TOP_Y + 2, devkit_TILE_USE_SPRITE_PALETTE() );
 	engine_graphics_manager_draw_border();
 
 	devkit_SMS_displayOn();
@@ -98,7 +97,7 @@ static void draw_boss()
 	engine_content_manager_load_koschey();
 
 	// TODO - replace hard coded values!
-	engine_graphics_manager_draw_koschey( 10, 2 );
+	engine_graphics_manager_draw_koschey( 10, 2, devkit_TILE_USE_SPRITE_PALETTE() );
 
 	engine_font_manager_draw_text( "SO YOU VE COME TO CHALLENGE", 2, 19 );
 	engine_font_manager_draw_text( "ME FOOLISH MORTAL  VERY WELL", 2, 20 );

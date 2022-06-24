@@ -50,7 +50,7 @@ void screen_boss_screen_load()
 	engine_font_manager_draw_punc( LOCALE_HYPHEN, LEFT_X + 26, TOP_Y + FIGHT_ROW + 3 );
 	engine_font_manager_draw_punc( LOCALE_QUOTE, LEFT_X + 23, TOP_Y + FIGHT_ROW + 3 );
 
-	engine_graphics_manager_draw_koschey( LEFT_X + 10, TOP_Y + 2 );
+	engine_graphics_manager_draw_koschey( LEFT_X + 10, TOP_Y + 2, devkit_TILE_USE_SPRITE_PALETTE() );
 	engine_graphics_manager_draw_border();
 
 	engine_select_manager_load( select_type, LEFT_X + 6, TOP_Y + FIGHT_ROW, 2 );
