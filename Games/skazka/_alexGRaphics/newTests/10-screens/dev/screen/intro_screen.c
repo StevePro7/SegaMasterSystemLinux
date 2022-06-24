@@ -6,6 +6,7 @@
 #include "../engine/global_manager.h"
 #include "../engine/graphics_manager.h"
 #include "../engine/input_manager.h"
+#include "../engine/locale_manager.h"
 #include "../engine/text_manager.h"
 #include "../engine/timer_manager.h"
 #include "../devkit/_sms_manager.h"
@@ -35,9 +36,9 @@ void screen_intro_screen_load()
 	engine_graphics_manager_draw_border();
 	engine_text_manager_cont();
 
-	engine_font_manager_draw_punc( '.', LEFT_X + 25, TOP_Y + 13 );
-	engine_font_manager_draw_punc( '.', LEFT_X + 27, TOP_Y + 16 );
-	engine_font_manager_draw_punc( '.', LEFT_X + 16, TOP_Y + 19 );
+	engine_font_manager_draw_punc( LOCALE_DOT, LEFT_X + 25, TOP_Y + 13 );
+	engine_font_manager_draw_punc( LOCALE_DOT, LEFT_X + 27, TOP_Y + 16 );
+	engine_font_manager_draw_punc( LOCALE_DOT, LEFT_X + 16, TOP_Y + 19 );
 
 	devkit_SMS_displayOn();			// TODO try comment this line out for smooth screen transition??
 }

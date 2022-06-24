@@ -86,9 +86,9 @@ static void draw_intro()
 	engine_graphics_manager_draw_border();
 	engine_text_manager_cont();
 
-	engine_font_manager_draw_punc( '.', LEFT_X + 25, TOP_Y + 13 );
-	engine_font_manager_draw_punc( '.', LEFT_X + 27, TOP_Y + 16 );
-	engine_font_manager_draw_punc( '.', LEFT_X + 16, TOP_Y + 19 );
+	engine_font_manager_draw_punc( LOCALE_DOT, LEFT_X + 25, TOP_Y + 13 );
+	engine_font_manager_draw_punc( LOCALE_DOT, LEFT_X + 27, TOP_Y + 16 );
+	engine_font_manager_draw_punc( LOCALE_DOT, LEFT_X + 16, TOP_Y + 19 );
 }
 
 static void draw_boss()
@@ -144,7 +144,7 @@ static void draw_punc()
 	engine_font_manager_draw_punc( '+', 10, idx++ );
 	engine_font_manager_draw_punc( LOCALE_HYPHEN, 10, idx++ );
 	engine_font_manager_draw_punc( '\'', 10, idx++ );
-	engine_font_manager_draw_punc( '.', 10, idx++ );
+	engine_font_manager_draw_punc( LOCALE_DOT, 10, idx++ );
 	engine_font_manager_draw_punc( ',', 10, idx++ );
 	engine_font_manager_draw_punc( ':', 10, idx++ );
 	engine_font_manager_draw_punc( '?', 10, idx++ );
@@ -161,7 +161,7 @@ static void draw_flip()
 	engine_font_manager_draw_flip( '+', 20, idx++ );
 	engine_font_manager_draw_flip( LOCALE_HYPHEN, 20, idx++ );
 	engine_font_manager_draw_flip( '\'', 20, idx++ );
-	engine_font_manager_draw_flip( '.', 20, idx++ );
+	engine_font_manager_draw_flip( LOCALE_DOT, 20, idx++ );
 	engine_font_manager_draw_flip( ',', 20, idx++ );
 	engine_font_manager_draw_flip( ':', 20, idx++ );
 	engine_font_manager_draw_flip( '?', 20, idx++ );
