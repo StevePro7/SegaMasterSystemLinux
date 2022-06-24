@@ -24,6 +24,8 @@ static unsigned char select_type;
 
 void screen_diff_screen_load()
 {
+	select_type = select_type_diff;
+
 	devkit_SMS_displayOff();
 	engine_content_manager_load_logo_big();
 	engine_graphics_manager_draw_logo_big( LEFT_X + 2, TOP_Y + 3 );
@@ -37,6 +39,7 @@ void screen_diff_screen_load()
 
 	engine_select_manager_load( select_type, LEFT_X + 12, TOP_Y + DIFFICULTY_ROW, 2 );
 	devkit_SMS_displayOn();
+	event_stage = event_stage_start;
 }
 
 void screen_diff_screen_update( unsigned char *screen_type )

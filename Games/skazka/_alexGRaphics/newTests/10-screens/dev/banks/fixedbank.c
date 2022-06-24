@@ -90,11 +90,11 @@ const unsigned char *shop_texts[] =
 
 const unsigned char *menus_texts[] =
 {
-	"   MENU",
+	"  MENU",
 	"", "",
-	"1) EXIT GAME",
-	"2) RESTART  ",
-	"3) CONTINUE  ",
+	"EXIT GAME",
+	"RESTART",
+	"CONTINUE",
 };
 
 

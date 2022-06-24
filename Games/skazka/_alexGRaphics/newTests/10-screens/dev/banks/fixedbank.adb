@@ -59,10 +59,10 @@ S:Ffixedbank$__str_37$0_0$0({12}DA12d,SC:U),D,0,0
 S:Ffixedbank$__str_38$0_0$0({12}DA12d,SC:U),D,0,0
 S:Ffixedbank$__str_39$0_0$0({12}DA12d,SC:U),D,0,0
 S:Ffixedbank$__str_40$0_0$0({12}DA12d,SC:U),D,0,0
-S:Ffixedbank$__str_41$0_0$0({8}DA8d,SC:U),D,0,0
-S:Ffixedbank$__str_42$0_0$0({13}DA13d,SC:U),D,0,0
-S:Ffixedbank$__str_43$0_0$0({13}DA13d,SC:U),D,0,0
-S:Ffixedbank$__str_44$0_0$0({14}DA14d,SC:U),D,0,0
+S:Ffixedbank$__str_41$0_0$0({7}DA7d,SC:U),D,0,0
+S:Ffixedbank$__str_42$0_0$0({10}DA10d,SC:U),D,0,0
+S:Ffixedbank$__str_43$0_0$0({8}DA8d,SC:U),D,0,0
+S:Ffixedbank$__str_44$0_0$0({9}DA9d,SC:U),D,0,0
 S:Ffixedbank$__str_45$0_0$0({28}DA28d,SC:U),D,0,0
 S:Ffixedbank$__str_46$0_0$0({28}DA28d,SC:U),D,0,0
 S:Ffixedbank$__str_47$0_0$0({28}DA28d,SC:U),D,0,0

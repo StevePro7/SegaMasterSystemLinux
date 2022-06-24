@@ -32,6 +32,8 @@ void screen_title_screen_load()
 	//first_time = true;
 	//event_stage = event_stage_start;
 	//flash_count = 0;
+
+	engine_font_manager_draw_text( "TITLE SCREEN", 10, 2 );
 }
 
 void screen_title_screen_update( unsigned char *screen_type )
