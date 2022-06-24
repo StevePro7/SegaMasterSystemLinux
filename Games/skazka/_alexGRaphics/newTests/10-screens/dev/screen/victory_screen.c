@@ -6,6 +6,7 @@
 #include "../engine/global_manager.h"
 #include "../engine/graphics_manager.h"
 #include "../engine/input_manager.h"
+#include "../engine/locale_manager.h"
 #include "../engine/player_manager.h"
 #include "../engine/text_manager.h"
 #include "../engine/timer_manager.h"
@@ -33,7 +34,7 @@ void screen_victory_screen_load()
 	}
 
 	engine_font_manager_draw_punc( '!', LEFT_X + 19, TOP_Y + 9 );
-	engine_font_manager_draw_punc( '-', LEFT_X + 20, TOP_Y + 12 );
+	engine_font_manager_draw_punc( LOCALE_HYPHEN, LEFT_X + 20, TOP_Y + 12 );
 	engine_font_manager_draw_data( po->won, LEFT_X + 24, TOP_Y + 12 );
 
 	engine_graphics_manager_draw_border();

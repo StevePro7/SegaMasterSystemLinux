@@ -37,12 +37,12 @@
 #define LOCALE_NOT_ENOUGH		"NOT ENOUGH GOLD!"
 
 #define LOCALE_ARROWS			'>'
-#define LOCALE_2_SPCS			"  "
-#define LOCALE_6_SPCS			"      "
+#define LOCALE_1_SPCS			' '
+//#define LOCALE_6_SPCS			"      "					// TODO delete - not used!
 #define LOCALE_28_SPCS			"                              "
 //#define LOCALE_280_SPCS			"XXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-#define LOCALE_SLASH			"/"
-#define LOCALE_HYPHEN			"-"
+#define LOCALE_SLASH			'/'
+#define LOCALE_HYPHEN			'-'
 #define LOCALE_DOT				'.'
 
 #endif//_LOCALE_MANAGER_H_

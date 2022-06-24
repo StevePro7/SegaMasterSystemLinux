@@ -67,12 +67,12 @@ void engine_player_manager_stats()
 
 	// Print HP, XP, gold, level.
 	engine_font_manager_draw_data( po->hp, LEFT_X + 6, STATS_ROW + 3 );
-	engine_font_manager_draw_text( LOCALE_SLASH, LEFT_X + 8, STATS_ROW + 3 );
+	//engine_font_manager_draw_punc( LOCALE_SLASH, LEFT_X + 8, STATS_ROW + 3 );		// TODO use punc!
 	engine_font_manager_draw_data( po->max_hp, LEFT_X + 11, STATS_ROW + 3 );
 
 	engine_font_manager_draw_data( po->xp, LEFT_X + 6, STATS_ROW + 4 );
 	engine_font_manager_draw_data( po->max_xp, LEFT_X + 11, STATS_ROW + 4 );
-	engine_font_manager_draw_text( LOCALE_SLASH, LEFT_X + 8, STATS_ROW + 4 );
+	//engine_font_manager_draw_punc( LOCALE_SLASH, LEFT_X + 8, STATS_ROW + 4 );		// TODO use punc!
 
 	engine_font_manager_draw_data( po->gold, LEFT_X + 10, STATS_ROW + 5 );
 	engine_font_manager_draw_data( po->level, LEFT_X + 12, STATS_ROW + 20 );

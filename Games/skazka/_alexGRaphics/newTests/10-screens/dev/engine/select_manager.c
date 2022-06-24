@@ -100,5 +100,5 @@ static void draw_arrows()
 static void draw_spaces()
 {
 	struct_select_object *so = &global_select_object;
-	engine_font_manager_draw_text( LOCALE_2_SPCS, so->select_X, so->select_Y );
+	engine_font_manager_draw_char( LOCALE_1_SPCS, so->select_X, so->select_Y );
 }

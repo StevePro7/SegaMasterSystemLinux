@@ -142,14 +142,14 @@ static void draw_punc()
 	unsigned char idx = 0;
 
 	engine_font_manager_draw_punc( '+', 10, idx++ );
-	engine_font_manager_draw_punc( '-', 10, idx++ );
+	engine_font_manager_draw_punc( LOCALE_HYPHEN, 10, idx++ );
 	engine_font_manager_draw_punc( '\'', 10, idx++ );
 	engine_font_manager_draw_punc( '.', 10, idx++ );
 	engine_font_manager_draw_punc( ',', 10, idx++ );
 	engine_font_manager_draw_punc( ':', 10, idx++ );
 	engine_font_manager_draw_punc( '?', 10, idx++ );
 	engine_font_manager_draw_punc( '!', 10, idx++ );
-	engine_font_manager_draw_punc( '/', 10, idx++ );
+	engine_font_manager_draw_punc( LOCALE_SLASH, 10, idx++ );
 	engine_font_manager_draw_punc( ')', 10, idx++ );
 	engine_font_manager_draw_punc( '>', 10, idx++ );
 }
@@ -159,14 +159,14 @@ static void draw_flip()
 	unsigned char idx = 0;
 
 	engine_font_manager_draw_flip( '+', 20, idx++ );
-	engine_font_manager_draw_flip( '-', 20, idx++ );
+	engine_font_manager_draw_flip( LOCALE_HYPHEN, 20, idx++ );
 	engine_font_manager_draw_flip( '\'', 20, idx++ );
 	engine_font_manager_draw_flip( '.', 20, idx++ );
 	engine_font_manager_draw_flip( ',', 20, idx++ );
 	engine_font_manager_draw_flip( ':', 20, idx++ );
 	engine_font_manager_draw_flip( '?', 20, idx++ );
 	engine_font_manager_draw_flip( '!', 20, idx++ );
-	engine_font_manager_draw_flip( '/', 20, idx++ );
+	engine_font_manager_draw_flip( LOCALE_SLASH, 20, idx++ );
 	engine_font_manager_draw_flip( ')', 20, idx++ );
 	engine_font_manager_draw_flip( '>', 20, idx++ );
 }
