@@ -154,8 +154,8 @@ const unsigned char *boss_texts[] =
 
 const unsigned char *query_texts[] =
 {
-	"SO YOU HAVE COME TO CALLENGE",
-	"ME FOOLISH MORTAL? VERY WELL"
+	"SO YOU VE COME TO CHALLENGE",
+	"ME FOOLISH MORTAL  VERY WELL"
 };
 
 const unsigned char *laugh_texts[] =
