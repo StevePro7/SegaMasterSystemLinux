@@ -20,8 +20,6 @@ void engine_player_manager_init()
 	po->def_weapon = weapon_type_none;		// Q$	ATK
 	po->def_armor = armor_type_none;		// W$	ARM
 	po->def_life = life_type_none;			// E$	UP
-
-	po->def_life = life_type_oneup;		// Q$	ATK		// TODO - remove
 }
 
 void engine_player_manager_load()

@@ -9,7 +9,7 @@ F:G$engine_player_manager_stats$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lplayer_manager.engine_player_manager_stats$po$1_0$111({2}DG,STtag_struct_player_object:S),R,0,0,[]
 F:G$engine_player_manager_rest$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lplayer_manager.engine_player_manager_rest$po$1_0$114({2}DG,STtag_struct_player_object:S),R,0,0,[]
-F:G$engine_player_manager_draw_inventory$0_0$0({2}DF,SV:S),Z,0,-5,0,0,0
+F:G$engine_player_manager_draw_inventory$0_0$0({2}DF,SV:S),Z,0,-6,0,0,0
 S:Lplayer_manager.engine_player_manager_draw_inventory$x$1_0$115({1}SC:U),B,1,4
 S:Lplayer_manager.engine_player_manager_draw_inventory$y$1_0$115({1}SC:U),B,1,5
 S:Lplayer_manager.engine_player_manager_draw_inventory$pnt1$1_0$116({2}DG,SC:U),R,0,0,[]
@@ -31,7 +31,8 @@ S:Lplayer_manager.engine_player_manager_draw_inventory$sloc5$0_1$0({2}SI:U),B,1,
 S:Lplayer_manager.engine_player_manager_draw_inventory$sloc6$0_1$0({1}SC:U),B,1,-1
 S:Lplayer_manager.engine_player_manager_draw_inventory$sloc7$0_1$0({1}SC:S),B,1,-5
 S:Lplayer_manager.engine_player_manager_draw_inventory$sloc8$0_1$0({1}SC:U),B,1,-2
-S:Lplayer_manager.engine_player_manager_draw_inventory$sloc9$0_1$0({1}SC:U),B,1,-1
+S:Lplayer_manager.engine_player_manager_draw_inventory$sloc9$0_1$0({1}SC:U),B,1,-3
+S:Lplayer_manager.engine_player_manager_draw_inventory$sloc10$0_1$0({1}SC:U),B,1,-1
 F:G$engine_player_manager_hplo$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lplayer_manager.engine_player_manager_hplo$po$1_0$135({2}DG,STtag_struct_player_object:S),R,0,0,[]
 F:G$engine_player_manager_dec_gold$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
