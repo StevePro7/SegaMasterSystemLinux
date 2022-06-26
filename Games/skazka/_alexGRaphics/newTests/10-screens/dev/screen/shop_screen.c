@@ -5,6 +5,7 @@
 #include "../engine/game_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/graphics_manager.h"
+#include "../engine/hack_manager.h"
 #include "../engine/locale_manager.h"
 #include "../engine/player_manager.h"
 #include "../engine/select_manager.h"
@@ -43,10 +44,23 @@ void screen_shop_screen_load()
 		engine_font_manager_draw_text( ( unsigned char * ) shop_texts[ idx ], LEFT_X + 9, TOP_Y + row );
 		row++;
 	}
+	row = 10;
+	for( idx = 0; idx < MAX_ITEMS; idx++ )
+	{
+		engine_font_manager_draw_data( inventory[ idx ], LEFT_X + 24, TOP_Y + row++ );
+	}
 
 	engine_graphics_manager_draw_border();
 	engine_graphics_manager_draw_underline( TOP_Y + 4 );
 	devkit_SMS_displayOn();			// TODO try comment this line out for smooth screen transition??
+
+	row = 10;
+	engine_select_manager_load( select_type, LEFT_X + 7, TOP_Y + row, 5 );
+
+	engine_font_manager_draw_text( LOCALE_SHOP_QUERY, LEFT_X + 7, TOP_Y + 17 );
+	engine_font_manager_draw_punc(LOCALE_QMARK, LEFT_X + 24, TOP_Y + 17 );
+	engine_font_manager_draw_text( LOCALE_YOU_HAVE, LEFT_X + 7, TOP_Y + 19 );
+	engine_font_manager_draw_data( gold, LEFT_X + 24, TOP_Y + 19 );
 
 	engine_timer_manager_load( SHOP_SCREEN_DELAY1 );
 	event_stage = event_stage_start;
@@ -54,9 +68,33 @@ void screen_shop_screen_load()
 
 void screen_shop_screen_update( unsigned char *screen_type )
 {
+	//struct_hack_object *ho = &global_hack_object;
+	//unsigned char input;
+	unsigned char value;
+	//unsigned char timer;
+	unsigned char selection;
+
+	selection = engine_select_manager_update( select_type );
+	if( NO_SELECTION == selection )
+	{
+		*screen_type = screen_type_shop;
+		return;
+	}
+
+	value = inventory[ selection ];
+	if( value > gold )
+	{
+//		engine_sound_manager_play( sound_type_6 );
+		engine_font_manager_draw_text( LOCALE_NOT_ENOUGH, LEFT_X + 8, TOP_Y + 21 );
+		engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 23, TOP_Y + 21 );
+		*screen_type = screen_type_shop;
+		return;
+	}
+
 	*screen_type = screen_type_shop;
 }
 
+//TODO - delete
 static void setup()
 {
 	//unsigned char row;

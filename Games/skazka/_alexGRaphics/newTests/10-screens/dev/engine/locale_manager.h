@@ -15,13 +15,12 @@
 #define LOCALE_HP				"HP"
 #define LOCALE_XP				"XP"
 #define LOCALE_GOLD				"GOLD"
-//#define LOCALE_YOU_HAVE			"YOU HAVE"
+#define LOCALE_SHOP_QUERY		"WHAT WILL YOU BUY"
+#define LOCALE_YOU_HAVE			"YOU HAVE GOLD"
 //#define LOCALE_YOUR_LVL			"YOUR LVL"
 #define LOCALE_HERO				"HERO"		// TODO
 
 #define LOCALE_OLD_VILLAGE		"OLD VILLAGE"
-
-#define LOCALE_SHOP_QUERY		"WHAT WILL YOU BUY?"
 
 #define LOCALE_FIGHT_MSG1		"YOUR HP"
 #define LOCALE_FIGHT_MSG2		"ENEMY HP"
@@ -34,7 +33,7 @@
 #define LOCALE_REVITALISING		"REVITALIZING"
 
 
-#define LOCALE_NOT_ENOUGH		"NOT ENOUGH GOLD!"
+#define LOCALE_NOT_ENOUGH		"NOT ENOUGH GOLD"			// TODO - replace by "reject" sound FX ??
 
 //#define LOCALE_6_SPCS			"      "					// TODO delete - not used!
 #define LOCALE_28_SPCS			"                              "
