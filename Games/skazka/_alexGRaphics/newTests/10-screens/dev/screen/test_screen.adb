@@ -1,13 +1,14 @@
 M:test_screen
 F:G$screen_test_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_test_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Ltest_screen.screen_test_screen_update$screen_type$1_0$99({2}DG,SC:U),B,1,4
-S:Ltest_screen.screen_test_screen_update$input$1_0$100({1}SC:U),R,0,0,[a]
+S:Ltest_screen.screen_test_screen_update$screen_type$1_0$100({2}DG,SC:U),B,1,4
+S:Ltest_screen.screen_test_screen_update$input$1_0$101({1}SC:U),R,0,0,[a]
 S:Ftest_screen$flag$0_0$0({1}:S),E,0,0
 S:Ftest_screen$palette$0_0$0({2}SI:U),E,0,0
 S:G$engine_content_manager_load_tiles$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_logo_big$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_logo_small$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_content_manager_load_village$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_koschey$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_punc$0_0$0({2}DF,SV:S),C,0,0
@@ -24,6 +25,7 @@ S:G$engine_graphics_manager_draw_borderX$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_underline$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_logo_big$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_logo_small$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_graphics_manager_draw_village$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_koschey$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_leshy$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_init$0_0$0({2}DF,SV:S),C,0,0

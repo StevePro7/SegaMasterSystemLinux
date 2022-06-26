@@ -66,32 +66,31 @@ void engine_player_manager_stats()
 	struct_player_object *po = &global_player_object;
 
 	// Print HP, XP, gold, level.
-	engine_font_manager_draw_numb( 2, LEFT_X + 8, TOP_Y + 6 );
-	//engine_font_manager_draw_numb( po->level, LEFT_X + 9, TOP_Y + 6 );
+	//engine_font_manager_draw_numb( 0, LEFT_X + 8, TOP_Y + 6 );		// TODO - do I want this?
+	engine_font_manager_draw_numb( po->level, LEFT_X + 9, TOP_Y + 6 );
 
-	engine_font_manager_draw_data( po->hp, LEFT_X + 9, TOP_Y + 6 );
-	//engine_font_manager_draw_punc( LOCALE_SLASH, LEFT_X + 8, TOP_Y + 3 );		// TODO use punc!
-	//engine_font_manager_draw_data( po->max_hp, LEFT_X + 11, TOP_Y + 3 );
+	engine_font_manager_draw_data( po->max_hp, LEFT_X + 9, TOP_Y + 7 );
+	engine_font_manager_draw_punc( LOCALE_SLASH, LEFT_X + 7, TOP_Y + 7 );
+	engine_font_manager_draw_data( po->hp, LEFT_X + 6, TOP_Y + 7 );
 
-	//engine_font_manager_draw_data( po->xp, LEFT_X + 6, TOP_Y + 4 );
-	//engine_font_manager_draw_data( po->max_xp, LEFT_X + 11, TOP_Y + 4 );
-	////engine_font_manager_draw_punc( LOCALE_SLASH, LEFT_X + 8, TOP_Y + 4 );		// TODO use punc!
+	engine_font_manager_draw_data( po->max_xp, LEFT_X + 9, TOP_Y + 8 );
+	engine_font_manager_draw_punc( LOCALE_SLASH, LEFT_X + 7, TOP_Y + 8 );
+	engine_font_manager_draw_data( po->xp, LEFT_X + 6, TOP_Y + 8 );
 
-	//engine_font_manager_draw_data( po->gold, LEFT_X + 10, TOP_Y + 5 );
+	engine_font_manager_draw_data( po->gold, LEFT_X + 9, TOP_Y + 9 );
 
 	// Print inventory.
 	devkit_SMS_mapROMBank( FIXED_BANK );
 	engine_font_manager_draw_text( ( unsigned char * ) weapon_texts[ po->weapon ], LEFT_X + 2, TOP_Y + 11 );
 	engine_font_manager_draw_text( ( unsigned char * ) armor_texts[ po->armor ], LEFT_X + 4, TOP_Y + 12 );
-	//if( po->life )
+	if( po->life )
 	{
 		engine_font_manager_draw_punc( LOCALE_PLUS, LEFT_X + 2, TOP_Y + 13 );
 		engine_font_manager_draw_numb( 1, LEFT_X + 3, TOP_Y + 13 );
 		engine_font_manager_draw_text( ( unsigned char * ) life_texts[ po->life ], LEFT_X + 5, TOP_Y + 13 );
 	}
-	
 
-	// TODO - do I want to show this?
+	// TODO - check on this before publish!
 	if( po->xp > 60 )
 	{
 		engine_font_manager_draw_flip( LOCALE_BRACKET, LEFT_X + 7, TOP_Y + 21 );
