@@ -20,6 +20,8 @@ void engine_player_manager_init()
 	po->def_weapon = weapon_type_none;		// Q$	ATK
 	po->def_armor = armor_type_none;		// W$	ARM
 	po->def_life = life_type_none;			// E$	UP
+
+	po->def_life = life_type_oneup;		// Q$	ATK		// TODO - remove
 }
 
 void engine_player_manager_load()
@@ -83,7 +85,7 @@ void engine_player_manager_stats()
 	// Print inventory.
 	devkit_SMS_mapROMBank( FIXED_BANK );
 	engine_font_manager_draw_text( ( unsigned char * ) weapon_texts[ po->weapon ], LEFT_X + 2, TOP_Y + 11 );
-	engine_font_manager_draw_text( ( unsigned char * ) armor_texts[ po->armor ], LEFT_X + 4, TOP_Y + 12 );
+	engine_font_manager_draw_text( ( unsigned char * ) armor_texts[ po->armor ], LEFT_X + 2, TOP_Y + 12 );
 	if( po->life )
 	{
 		engine_font_manager_draw_punc( LOCALE_PLUS, LEFT_X + 2, TOP_Y + 13 );
@@ -92,7 +94,7 @@ void engine_player_manager_stats()
 	}
 
 	// TODO - check on this before publish!
-	//if( po->xp > 60 )
+	if( po->xp > 60 )
 	{
 		//engine_font_manager_draw_flip( LOCALE_BRACKET, LEFT_X + 7, TOP_Y + 21 );		// TODO REMOVE as will block arrow select
 		//engine_font_manager_draw_punc( LOCALE_BRACKET, LEFT_X + 12, TOP_Y + 21 );
@@ -110,7 +112,11 @@ void engine_player_manager_draw_inventory( unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt1 = stats_items__tilemap__bin;
 	const unsigned char *pnt2 = stats_inventory__tilemap__bin;
+
 	struct_player_object *po = &global_player_object;
+	unsigned char delta = 2;
+	unsigned char size = delta * delta;
+
 	unsigned char wide = 8;
 	unsigned char high = 8;
 	unsigned char i, j;
@@ -127,22 +133,22 @@ void engine_player_manager_draw_inventory( unsigned char x, unsigned char y )
 	}
 
 	//po->weapon
-	tile = po->weapon * 4;
-	for( j = 0; j < 2; j++ )
+	tile = po->weapon * size;
+	for( j = 0; j < delta; j++ )
 	{
-		for( i = 0; i < 2; i++ )
+		for( i = 0; i < delta; i++ )
 		{
 			devkit_SMS_setNextTileatXY( x + i, y + j + 1 );
 			devkit_SMS_setTile( *pnt2 + tile );
 			tile++;
 		}
 	}
-	//if( po->armor )
+	if( po->armor )
 	{
-		tile = po->weapon * 4;
-		for( j = 0; j < 2; j++ )
+		tile = 2 * size + po->armor * size;
+		for( j = 0; j < delta; j++ )
 		{
-			for( i = 0; i < 2; i++ )
+			for( i = 0; i < delta; i++ )
 			{
 				devkit_SMS_setNextTileatXY( x + i + 6, y + j + 3 );
 				devkit_SMS_setTile( *pnt2 + tile );
@@ -150,9 +156,9 @@ void engine_player_manager_draw_inventory( unsigned char x, unsigned char y )
 			}
 		}
 	}
-	//if( po->life )
+	if( po->life )
 	{
-		tile = po->weapon * 4;
+		tile = 4 * size + po->life * size;
 		for( j = 0; j < 2; j++ )
 		{
 			for( i = 0; i < 2; i++ )

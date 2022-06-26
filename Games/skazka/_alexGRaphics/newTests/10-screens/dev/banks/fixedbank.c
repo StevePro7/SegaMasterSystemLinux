@@ -39,7 +39,7 @@ const unsigned char *weapon_texts[] =
 const unsigned char *armor_texts[] =
 {
 	"",
-	" TEGILAY",
+	"TEGILAY",
 	"KOLCHUGA",
 };
 const unsigned char *life_texts[] =

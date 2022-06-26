@@ -39,7 +39,7 @@ S:Ffixedbank$__str_17$0_0$0({19}DA19d,SC:U),D,0,0
 S:Ffixedbank$__str_18$0_0$0({7}DA7d,SC:U),D,0,0
 S:Ffixedbank$__str_19$0_0$0({6}DA6d,SC:U),D,0,0
 S:Ffixedbank$__str_20$0_0$0({4}DA4d,SC:U),D,0,0
-S:Ffixedbank$__str_21$0_0$0({9}DA9d,SC:U),D,0,0
+S:Ffixedbank$__str_21$0_0$0({8}DA8d,SC:U),D,0,0
 S:Ffixedbank$__str_22$0_0$0({9}DA9d,SC:U),D,0,0
 S:Ffixedbank$__str_23$0_0$0({5}DA5d,SC:U),D,0,0
 S:Ffixedbank$__str_24$0_0$0({23}DA23d,SC:U),D,0,0

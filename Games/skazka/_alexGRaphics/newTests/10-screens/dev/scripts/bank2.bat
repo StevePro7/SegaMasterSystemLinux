@@ -17,9 +17,9 @@ C:\SEGA\bmp2tile043\bmp2tile.exe raw/stats_items.png     -savetiles "stats_items
 C:\SEGA\bmp2tile043\bmp2tile.exe raw/stats_village.png   -savetiles "stats_village (tiles).psgcompr"   -noremovedupes -nomirror -planar -tileoffset 256  -savetilemap "stats_village (tilemap).bin"   -exit
 
 cd ..
-"C:\Program Files\SDCC\bin\sdcc\folder2c" bank2 bank2 2
+"C:\Program Files\SDCC\bin\folder2c" bank2 bank2 2
 
-"C:\Program Files\SDCC\bin\sdcc\" --debug -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK2 bank2.c
+"C:\Program Files\SDCC\bin\sdcc" --debug -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK2 bank2.c
 
 del *.asm > nul; del *.lst > nul; del *.sym > nul
 
