@@ -108,7 +108,9 @@ void engine_player_manager_rest()
 
 void engine_player_manager_draw_inventory( unsigned char x, unsigned char y )
 {
-	const unsigned char *pnt = stats_items__tilemap__bin;
+	const unsigned char *pnt1 = stats_items__tilemap__bin;
+	const unsigned char *pnt2 = stats_inventory__tilemap__bin;
+	struct_player_object *po = &global_player_object;
 	unsigned char wide = 8;
 	unsigned char high = 8;
 	unsigned char i, j;
@@ -119,10 +121,23 @@ void engine_player_manager_draw_inventory( unsigned char x, unsigned char y )
 		for( i = 0; i < wide; i++ )
 		{
 			devkit_SMS_setNextTileatXY( x + i, y + j );
-			devkit_SMS_setTile( *pnt + tile );
+			devkit_SMS_setTile( *pnt1 + tile );
 			tile++;
 		}
 	}
+
+	//po->weapon
+	tile = po->weapon * 4;
+	for( j = 0; j < 2; j++ )
+	{
+		for( i = 0; i < 2; i++ )
+		{
+			devkit_SMS_setNextTileatXY( x + i, y + j + 1 );
+			devkit_SMS_setTile( *pnt2 + tile );
+			tile++;
+		}
+	}
+
 }
 
 void engine_player_manager_hplo()
