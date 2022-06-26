@@ -92,10 +92,10 @@ void engine_player_manager_stats()
 	}
 
 	// TODO - check on this before publish!
-	if( po->xp > 60 )
+	//if( po->xp > 60 )
 	{
-		engine_font_manager_draw_flip( LOCALE_BRACKET, LEFT_X + 7, TOP_Y + 21 );
-		engine_font_manager_draw_punc( LOCALE_BRACKET, LEFT_X + 12, TOP_Y + 21 );
+		//engine_font_manager_draw_flip( LOCALE_BRACKET, LEFT_X + 7, TOP_Y + 21 );		// TODO REMOVE as will block arrow select
+		//engine_font_manager_draw_punc( LOCALE_BRACKET, LEFT_X + 12, TOP_Y + 21 );
 		engine_font_manager_draw_text( LOCALE_HERO, LEFT_X + 8, TOP_Y + 21 );
 	}
 }
@@ -137,7 +137,32 @@ void engine_player_manager_draw_inventory( unsigned char x, unsigned char y )
 			tile++;
 		}
 	}
-
+	//if( po->armor )
+	{
+		tile = po->weapon * 4;
+		for( j = 0; j < 2; j++ )
+		{
+			for( i = 0; i < 2; i++ )
+			{
+				devkit_SMS_setNextTileatXY( x + i + 6, y + j + 3 );
+				devkit_SMS_setTile( *pnt2 + tile );
+				tile++;
+			}
+		}
+	}
+	//if( po->life )
+	{
+		tile = po->weapon * 4;
+		for( j = 0; j < 2; j++ )
+		{
+			for( i = 0; i < 2; i++ )
+			{
+				devkit_SMS_setNextTileatXY( x + i + 1, y + j + 6 );
+				devkit_SMS_setTile( *pnt2 + tile );
+				tile++;
+			}
+		}
+	}
 }
 
 void engine_player_manager_hplo()
