@@ -31,10 +31,11 @@ void main( void )
 
 	// Initialize player first!
 	engine_player_manager_init();
-	engine_player_manager_load();			// TODO MOVE TO THE LOAD SCREEN
 	engine_hack_manager_init();
 	engine_hack_manager_load();
 	engine_hack_manager_invert();
+
+	engine_player_manager_load();			// TODO MOVE TO THE LOAD SCREEN
 
 	engine_enemy_manager_init();
 	engine_game_manager_init();
