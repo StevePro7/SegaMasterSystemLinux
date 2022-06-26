@@ -1,57 +1,187 @@
 ;!FILE shop_screen.asm
 XL3
-H 9 areas 1D global symbols
+H 9 areas 79 global symbols
 M shop_screen
 O -mz80
+S _devkit_SMS_displayOn Ref000000
+S _engine_timer_manager_load Ref000000
+S _global_player_object Ref000000
+S _engine_graphics_manager_draw_logo_small Ref000000
 S _engine_font_manager_draw_text Ref000000
+S _engine_text_manager_clear Ref000000
 S .__.ABS. Def000000
-A _CODE size 21 flags 0 addr 0
-S C$shop_screen.c$10$1_0$11 Def00001A
-S C$shop_screen.c$12$1_0$11 Def00001A
-S C$shop_screen.c$13$1_0$11 Def000020
-S XG$screen_shop_screen_update$0$0 Def000020
-S A$shop_screen$60 Def000007
-S A$shop_screen$61 Def000008
-S A$shop_screen$71 Def00000D
-S A$shop_screen$62 Def00000B
+S _devkit_SMS_displayOff Ref000000
+S _engine_graphics_manager_draw_border Ref000000
+S _shop_texts Ref000000
+S _engine_content_manager_load_logo_small Ref000000
+S _engine_graphics_manager_draw_underline Ref000000
+S _devkit_SMS_mapROMBank Ref000000
+A _CODE size 81 flags 0 addr 0
+S A$shop_screen$239 Def000080
+S A$shop_screen$167 Def00005D
+S A$shop_screen$158 Def000056
+S C$shop_screen.c$47$1_0$116 Def00005A
+S C$shop_screen.c$43$3_0$118 Def000038
+S A$shop_screen$186 Def000070
+S A$shop_screen$168 Def00005F
+S A$shop_screen$159 Def000058
+S C$shop_screen.c$48$1_0$116 Def00005D
+S C$shop_screen.c$44$3_0$118 Def000051
+S A$shop_screen$187 Def000072
+S A$shop_screen$169 Def000060
+S C$shop_screen.c$49$1_0$116 Def000065
+S A$shop_screen$197 Def000078
+S A$shop_screen$179 Def000068
+S XG$screen_shop_screen_update$0$0 Def00007F
 S G$screen_shop_screen_load$0$0 Def000000
-S A$shop_screen$90 Def00001C
-S A$shop_screen$63 Def00000C
-S A$shop_screen$91 Def00001D
-S A$shop_screen$92 Def00001E
-S A$shop_screen$57 Def000000
-S A$shop_screen$58 Def000003
-S A$shop_screen$59 Def000004
-S A$shop_screen$88 Def00001A
-S A$shop_screen$89 Def00001B
+S A$shop_screen$92 Def000010
+S A$shop_screen$93 Def000013
+S A$shop_screen$76 Def000000
+S A$shop_screen$86 Def000009
+S A$shop_screen$77 Def000002
+S A$shop_screen$87 Def00000C
+S A$shop_screen$78 Def000006
+S A$shop_screen$97 Def000015
+S A$shop_screen$88 Def00000D
+S A$shop_screen$79 Def000008
 S _screen_shop_screen_load Def000000
-S Fshop_screen$__str_0$0_0$0 Def00000E
-S XG$screen_shop_screen_load$0$0 Def00000D
-S C$shop_screen.c$5$0_0$9 Def000000
-S G$screen_shop_screen_update$0$0 Def00001A
-S C$shop_screen.c$7$1_0$9 Def000000
-S C$shop_screen.c$8$1_0$9 Def00000D
-S A$shop_screen$100 Def000020
-S _screen_shop_screen_update Def00001A
-A _DATA size 0 flags 0 addr 0
-A _INITIALIZED size 0 flags 0 addr 0
+S Fshop_screen$setup$0$0 Def000080
+S XG$screen_shop_screen_load$0$0 Def000078
+S G$screen_shop_screen_update$0$0 Def000079
+S A$shop_screen$101 Def000018
+S XFshop_screen$setup$0$0 Def000080
+S A$shop_screen$210 Def000079
+S A$shop_screen$120 Def00002D
+S A$shop_screen$211 Def00007A
+S A$shop_screen$121 Def00002E
+S A$shop_screen$112 Def000023
+S A$shop_screen$212 Def00007B
+S A$shop_screen$140 Def000043
+S A$shop_screen$113 Def000026
+S A$shop_screen$222 Def00007F
+S A$shop_screen$213 Def00007C
+S A$shop_screen$141 Def000044
+S A$shop_screen$132 Def000038
+S A$shop_screen$114 Def000027
+S A$shop_screen$105 Def00001B
+S C$shop_screen.c$60$1_0$122 Def000080
+S C$shop_screen.c$30$1_0$116 Def000009
+S A$shop_screen$214 Def00007D
+S A$shop_screen$142 Def000047
+S A$shop_screen$133 Def000039
+S A$shop_screen$106 Def00001E
+S C$shop_screen.c$40$1_0$116 Def00002A
+S _screen_shop_screen_update Def000079
+S A$shop_screen$170 Def000061
+S A$shop_screen$152 Def000051
+S A$shop_screen$143 Def000049
+S A$shop_screen$134 Def00003B
+S A$shop_screen$125 Def000031
+S A$shop_screen$107 Def00001F
+S C$shop_screen.c$55$1_0$120 Def000079
+S C$shop_screen.c$32$1_0$116 Def000010
+S A$shop_screen$180 Def00006B
+S A$shop_screen$171 Def000064
+S A$shop_screen$144 Def00004A
+S A$shop_screen$135 Def00003C
+S A$shop_screen$126 Def000035
+S A$shop_screen$108 Def000022
+S C$shop_screen.c$90$1_0$122 Def000080
+S C$shop_screen.c$51$1_0$116 Def000068
+S C$shop_screen.c$33$1_0$116 Def000015
+S C$shop_screen.c$25$0_0$116 Def000000
+S A$shop_screen$181 Def00006C
+S A$shop_screen$163 Def00005A
+S A$shop_screen$145 Def00004B
+S A$shop_screen$136 Def00003F
+S A$shop_screen$127 Def000036
+S A$shop_screen$118 Def00002A
+S C$shop_screen.c$57$1_0$120 Def000079
+S C$shop_screen.c$52$1_0$116 Def000070
+S C$shop_screen.c$41$2_0$117 Def000054
+S C$shop_screen.c$34$1_0$116 Def000018
+S A$shop_screen$191 Def000075
+S A$shop_screen$182 Def00006F
+S A$shop_screen$146 Def00004E
+S A$shop_screen$137 Def000040
+S A$shop_screen$119 Def00002C
+S C$shop_screen.c$58$1_0$120 Def00007F
+S C$shop_screen.c$53$1_0$116 Def000078
+S A$shop_screen$192 Def000076
+S A$shop_screen$156 Def000054
+S A$shop_screen$147 Def00004F
+S A$shop_screen$138 Def000041
+S C$shop_screen.c$41$3_0$118 Def000031
+S C$shop_screen.c$36$1_0$116 Def00001B
+S C$shop_screen.c$27$1_0$116 Def000009
+S A$shop_screen$175 Def000065
+S A$shop_screen$157 Def000055
+S A$shop_screen$148 Def000050
+S A$shop_screen$139 Def000042
+S C$shop_screen.c$37$1_0$116 Def000023
+A _DATA size 3 flags 0 addr 0
+S Fshop_screen$event_stage$0_0$0 Def000000
+S Fshop_screen$select_type$0_0$0 Def000001
+S Fshop_screen$gold$0_0$0 Def000002
+A _INITIALIZED size 5 flags 0 addr 0
+S _inventory Def000000
+S G$inventory$0_0$0 Def000000
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
-A _INITIALIZER size 0 flags 0 addr 0
+A _INITIALIZER size 5 flags 0 addr 0
+S Fshop_screen$__xinit_inventory$0_0$0 Def000000
 A _CABS size 0 flags 8 addr 0
 T 00 00 00
+R 00 00 01 00
+T 00 00 00
+R 00 00 01 00
+T 01 00 00
+R 00 00 01 00
+T 01 00 00
+R 00 00 01 00
+T 02 00 00
+R 00 00 01 00
+T 02 00 00
+R 00 00 01 00
+T 00 00 00
+R 00 00 02 00
+T 00 00 00
+R 00 00 02 00
+T 00 00 00
 R 00 00 00 00
-T 00 00 00 11 0A 02 D5 21 0E 00 E5 CD 00 00 F1 F1
-R 00 00 00 00 00 08 00 00 02 0C 00 00
-T 0D 00 00 C9
+T 00 00 00 DD E5 DD 21 00 00 DD 39 3B 21 02 00 7E
+R 00 00 00 00 02 0D 02 00
+T 0D 00 00 32 02 00 21 01 00 36 03 CD 00 00 CD
+R 00 00 00 00 00 04 01 00 00 07 01 00 02 0C 07 00
+T 19 00 00 00 00 11 05 16 D5 CD 00 00 F1 11 01 01
+R 00 00 00 00 02 03 0A 00 02 0A 05 00
+T 26 00 00 D5 CD 00 00 26 03 E3 33 CD 00 00 DD 36
+R 00 00 00 00 02 05 03 00 02 0C 0C 00
+T 33 00 00 FF 07 33 0E 00
 R 00 00 00 00
-T 0E 00 00
+T 38 00 00
 R 00 00 00 00
-T 0E 00 00 53 48 4F 50 20 53 43 52 45 45 4E 00
+T 38 00 00 69 26 00 29 11 00 00 19 5E 23 56 C5 DD
+R 00 00 00 00 02 08 09 00
+T 45 00 00 66 FF 2E 09 E5 D5 CD 00 00 F1 F1 C1 DD
+R 00 00 00 00 02 0A 04 00
+T 52 00 00 34 FF 0C 79 D6 08 38 DE CD 00 00 3E 04
+R 00 00 00 00 02 0C 08 00
+T 5F 00 00 F5 33 CD 00 00 33 CD 00 00 21 32 00 E5
+R 00 00 00 00 02 06 0B 00 02 0A 00 00
+T 6C 00 00 CD 00 00 F1 3E 00 32 00 00 33 DD E1 C9
+R 00 00 00 00 02 04 01 00 00 0A 01 00
+T 79 00 00
 R 00 00 00 00
-T 1A 00 00
+T 79 00 00 C1 E1 E5 C5 36 0A C9
 R 00 00 00 00
-T 1A 00 00 C1 E1 E5 C5 36 0A C9
+T 80 00 00
 R 00 00 00 00
+T 80 00 00 C9
+R 00 00 00 00
+T 00 00 00
+R 00 00 07 00
+T 00 00 00 0A 14 0A 14 1E
+R 00 00 07 00

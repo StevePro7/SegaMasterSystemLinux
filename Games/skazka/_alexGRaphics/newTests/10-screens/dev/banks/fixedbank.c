@@ -79,13 +79,13 @@ const unsigned char *gold_texts[] =
 
 const unsigned char *shop_texts[] =
 {
-	"VILLAGE SHOP",
+	" VILLAGE SHOP",
 	"", "",
-	"1) SWORD   ",
-	"2) AXE     ",
-	"3) TEGILAY ",
-	"4) KOLCHUGA",
-	"5) LIFE    ",
+	"SWORD",
+	"AXE",
+	"TEGILAY",
+	"KOLCHUGA",
+	"LIFE",
 };
 
 const unsigned char *menus_texts[] =

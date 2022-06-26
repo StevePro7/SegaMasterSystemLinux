@@ -20,8 +20,9 @@ void main( void )
 	//open_screen_type = screen_type_victory;
 	//open_screen_type = screen_type_relive;	// TODO counter broken
 	//open_screen_type = screen_type_prep;
+	//open_screen_type = screen_type_stats;
+	open_screen_type = screen_type_shop;
 	//open_screen_type = screen_type_boss;
-	open_screen_type = screen_type_stats;
 	//open_screen_type = screen_type_over;
 	//open_screen_type = screen_type_complete;
 	//open_screen_type = screen_type_menu;
@@ -67,11 +68,12 @@ void main( void )
 			continue;
 		}
 
+		// TODO - do I need to begin sprites > 256 tile?
 		devkit_SMS_initSprites();
 		engine_input_manager_update();
 		engine_screen_manager_update();
 
-		devkit_SMS_finalizeSprites();
+		//devkit_SMS_finalizeSprites();
 		devkit_SMS_waitForVBlank();
 		devkit_SMS_copySpritestoSAT();
 

@@ -5,7 +5,6 @@
 #include "../engine/game_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/graphics_manager.h"
-//#include "../engine/input_manager.h"
 #include "../engine/locale_manager.h"
 #include "../engine/player_manager.h"
 #include "../engine/select_manager.h"
@@ -18,9 +17,6 @@ static unsigned char select_type;
 
 void screen_stats_screen_load()
 {
-//	draw_screen();
-	//unsigned char row;
-	//unsigned char idx;
 	select_type = select_type_stats;
 	engine_player_manager_calc();
 
