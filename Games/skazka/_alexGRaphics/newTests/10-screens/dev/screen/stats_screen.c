@@ -47,5 +47,43 @@ void screen_stats_screen_load()
 
 void screen_stats_screen_update( unsigned char *screen_type )
 {
+	unsigned char selection = engine_select_manager_update( select_type );
+	if( NO_SELECTION == selection )
+	{
+		*screen_type = screen_type_stats;
+		return;
+	}
+
+	// Wait until SFX completed...
 	*screen_type = screen_type_stats;
+	//if( devkit_PSGSFXGetStatus() )
+	//{
+	//	return;
+	//}
+
+	switch( selection )
+	{
+	case action_type_forest:
+		*screen_type = screen_type_forest;
+		break;
+	case action_type_shop:
+		*screen_type = screen_type_shop;
+		break;
+	case action_type_rest:
+		//engine_player_manager_rest();
+		//engine_player_manager_stats();
+		//engine_sound_manager_play( sound_type_9 );
+		break;
+	case action_type_talk:
+		*screen_type = screen_type_talk;
+		break;
+	case action_type_boss:
+		*screen_type = screen_type_prep;
+		break;
+	case action_type_menu:
+		*screen_type = screen_type_menu;
+		break;
+	default:
+		break;
+	}
 }

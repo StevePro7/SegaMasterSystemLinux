@@ -2,6 +2,8 @@ M:stats_screen
 F:G$screen_stats_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_stats_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lstats_screen.screen_stats_screen_update$screen_type$1_0$117({2}DG,SC:U),B,1,4
+S:Lstats_screen.screen_stats_screen_update$selection$1_0$118({1}SC:U),B,1,-1
+S:Lstats_screen.screen_stats_screen_update$sloc0$0_1$0({1}SC:U),B,1,-1
 T:Fstats_screen$tag_struct_player_object[({0}S:S$xp$0_0$0({1}SC:U),Z,0,0)({1}S:S$hp$0_0$0({1}SC:U),Z,0,0)({2}S:S$gold$0_0$0({2}SI:U),Z,0,0)({4}S:S$weapon$0_0$0({1}SC:U),Z,0,0)({5}S:S$armor$0_0$0({1}SC:U),Z,0,0)({6}S:S$life$0_0$0({1}SC:U),Z,0,0)({7}S:S$level$0_0$0({1}SC:U),Z,0,0)({8}S:S$max_hp$0_0$0({1}SC:U),Z,0,0)({9}S:S$max_xp$0_0$0({1}SC:U),Z,0,0)({10}S:S$won$0_0$0({1}SC:U),Z,0,0)({11}S:S$def_xp$0_0$0({1}SC:U),Z,0,0)({12}S:S$def_hp$0_0$0({1}SC:U),Z,0,0)({13}S:S$def_gold$0_0$0({2}SI:U),Z,0,0)({15}S:S$def_weapon$0_0$0({1}SC:U),Z,0,0)({16}S:S$def_armor$0_0$0({1}SC:U),Z,0,0)({17}S:S$def_life$0_0$0({1}SC:U),Z,0,0)]
 T:Fstats_screen$tag_struct_game_object[({0}S:S$intro_once$0_0$0({1}:S),Z,0,0)({1}S:S$play_music$0_0$0({1}:S),Z,0,0)({2}S:S$flash_arrow$0_0$0({1}:S),Z,0,0)({3}S:S$difficulty$0_0$0({1}SC:U),Z,0,0)]
 T:Fstats_screen$tag_struct_timer_object[({0}S:S$timer_count$0_0$0({2}SI:U),Z,0,0)({2}S:S$timer_value$0_0$0({2}SI:U),Z,0,0)]
