@@ -20,9 +20,12 @@
 #define NUM_GOLD	5
 
 static void display_msg();
+static unsigned char prev_msg;
 
 void screen_talk_screen_load()
 {
+	prev_msg = NO_SELECTION;
+
 	devkit_SMS_displayOff();		// TODO try comment this line out for smooth screen transition??
 	engine_content_manager_load_logo_small();
 	engine_graphics_manager_draw_logo_small( LEFT_X + 1, TOP_Y + 1 );
@@ -35,6 +38,7 @@ void screen_talk_screen_load()
 
 	engine_text_manager_cont();
 	devkit_SMS_displayOn();			// TODO try comment this line out for smooth screen transition??
+
 }
 
 void screen_talk_screen_update( unsigned char *screen_type )
@@ -80,14 +84,22 @@ void screen_talk_screen_update( unsigned char *screen_type )
 static void display_msg()
 {
 	unsigned char row;
-	unsigned char val;
+	unsigned char msg;
 	unsigned char idx = 0;
 	unsigned char beg = 0;
 	unsigned char txt = 0;
 
-	val = ( unsigned char ) ( rand() % MAX_RANDOM );
-	beg = val * MAX_CHAT;
-
+	while( 1 )
+	{
+		msg = ( unsigned char ) ( rand() % MAX_RANDOM );
+		if( msg != prev_msg )
+		{
+			prev_msg = msg;
+			break;
+		}
+	}
+	
+	beg = msg * MAX_CHAT;
 	row = 6;
 	for( idx = 0; idx < MAX_CHAT + 1; idx++ )
 	{
@@ -104,42 +116,42 @@ static void display_msg()
 		row++;
 	}
 
-	if( 0 == val )
+	if( 0 == msg )
 	{
 		engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 23, TOP_Y + 7 );
 		//engine_sound_manager_play( sound_type_6 );		// TODO play sfx
 		engine_player_manager_dec_gold( NUM_GOLD );
 	}
-	else if( 1 == val )
+	else if( 1 == msg )
 	{
 		engine_font_manager_draw_punc( LOCALE_QMARK, LEFT_X + 12, TOP_Y + 9 );
 	}
-	else if( 2 == val )
+	else if( 2 == msg )
 	{
 		engine_font_manager_draw_punc( LOCALE_QMARK, LEFT_X + 27, TOP_Y + 9 );
 	}
-	else if( 3 == val )
+	else if( 3 == msg )
 	{
 		engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 10, TOP_Y + 9 );
 	}
-	else if( 4 == val )
+	else if( 4 == msg )
 	{
 		engine_font_manager_draw_punc( LOCALE_QUOTE, LEFT_X + 15, TOP_Y + 7 );
 	}
-	else if( 6 == val )
+	else if( 6 == msg )
 	{
 		engine_font_manager_draw_punc( LOCALE_QMARK, LEFT_X + 9, TOP_Y + 9 );
 	}
-	else if( 7 == val )
+	else if( 7 == msg )
 	{
 		engine_font_manager_draw_punc( LOCALE_COMMA, LEFT_X + 26, TOP_Y + 8 );
 		engine_font_manager_draw_punc( LOCALE_QUOTE, LEFT_X + 12, TOP_Y + 9 );
 	}
-	else if( 8 == val )
+	else if( 8 == msg )
 	{
 		engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 15, TOP_Y + 7 );
 	}
-	else if( 9 == val )
+	else if( 9 == msg )
 	{
 		engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 24, TOP_Y + 7 );
 		//engine_sound_manager_play( sound_type_7 );		// TODO play sfx

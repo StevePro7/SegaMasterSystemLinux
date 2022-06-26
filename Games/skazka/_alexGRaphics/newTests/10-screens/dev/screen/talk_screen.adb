@@ -7,7 +7,7 @@ S:Ltalk_screen.screen_talk_screen_update$input1$1_0$146({1}SC:U),R,0,0,[c]
 S:Ltalk_screen.screen_talk_screen_update$input2$1_0$146({1}SC:U),R,0,0,[a]
 F:Ftalk_screen$display_msg$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Ltalk_screen.display_msg$row$1_0$153({1}SC:U),R,0,0,[b]
-S:Ltalk_screen.display_msg$val$1_0$153({1}SC:U),R,0,0,[c]
+S:Ltalk_screen.display_msg$msg$1_0$153({1}SC:U),R,0,0,[c]
 S:Ltalk_screen.display_msg$idx$1_0$153({1}SC:U),R,0,0,[e]
 S:Ltalk_screen.display_msg$beg$1_0$153({1}SC:U),B,1,-2
 S:Ltalk_screen.display_msg$txt$1_0$153({1}SC:U),R,0,0,[a]
@@ -42,6 +42,7 @@ S:G$laugh_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$menus_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$over_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$beat_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:Ftalk_screen$prev_msg$0_0$0({1}SC:U),E,0,0
 S:G$engine_content_manager_load_tiles$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_logo_big$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_logo_small$0_0$0({2}DF,SV:S),C,0,0
