@@ -123,7 +123,7 @@ const unsigned char *villager_texts[] =
 	" HUNGRY?",
 	" SOME PEOPLE SAY THEY SAW  ",
 	" BABA YAGA IN THE FOREST,  ",
-	" BUT I DON'T BELIEVE THEM  ",
+	" BUT I DON T BELIEVE THEM  ",
 	"  CYKA, BLYAT!             ",
 	"",
 	"",

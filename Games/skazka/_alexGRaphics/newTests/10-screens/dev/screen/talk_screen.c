@@ -53,7 +53,7 @@ static void display_msg()
 	unsigned char txt = 0;
 
 	val = ( unsigned char ) ( rand() % MAX_RANDOM );
-	val = 4;
+	val = 8;
 
 	beg = val * MAX_CHAT;
 	row = 7;
@@ -84,5 +84,18 @@ static void display_msg()
 	else if( 4 == val )
 	{
 		engine_font_manager_draw_punc( LOCALE_QUOTE, LEFT_X + 15, TOP_Y + 7 );
+	}
+	else if( 6 == val )
+	{
+		engine_font_manager_draw_punc( LOCALE_QMARK, LEFT_X + 9, TOP_Y + 9 );
+	}
+	else if( 7 == val )
+	{
+		engine_font_manager_draw_punc( LOCALE_COMMA, LEFT_X + 26, TOP_Y + 8 );
+		engine_font_manager_draw_punc( LOCALE_QUOTE, LEFT_X + 12, TOP_Y + 9 );
+	}
+	else if( 8 == val )
+	{
+		engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 15, TOP_Y + 7 );
 	}
 }
