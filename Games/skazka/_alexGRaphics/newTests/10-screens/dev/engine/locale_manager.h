@@ -36,8 +36,8 @@
 #define LOCALE_NOT_ENOUGH		"NOT ENOUGH GOLD"			// TODO - replace by "reject" sound FX ??
 
 //#define LOCALE_6_SPCS			"      "					// TODO delete - not used!
-#define LOCALE_28_SPCS			"                              "
-//#define LOCALE_280_SPCS			"XXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+#define LOCALE_28_SPCS			"                            "
+//#define LOCALE_28_SPCS		"XXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 #define LOCALE_1_SPCS			' '
 
 #define LOCALE_PLUS				'+'
