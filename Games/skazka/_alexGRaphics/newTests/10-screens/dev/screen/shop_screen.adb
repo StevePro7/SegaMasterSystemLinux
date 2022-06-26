@@ -8,7 +8,7 @@ S:Lshop_screen.screen_shop_screen_load$sloc1$0_1$0({1}SC:U),B,1,-1
 F:G$screen_shop_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lshop_screen.screen_shop_screen_update$screen_type$1_0$123({2}DG,SC:U),B,1,4
 S:Lshop_screen.screen_shop_screen_update$ho$1_0$124({2}DG,STtag_struct_hack_object:S),R,0,0,[]
-S:Lshop_screen.screen_shop_screen_update$input$1_0$124({1}SC:U),R,0,0,[]
+S:Lshop_screen.screen_shop_screen_update$input$1_0$124({1}SC:U),R,0,0,[a]
 S:Lshop_screen.screen_shop_screen_update$value$1_0$124({1}SC:U),B,1,-1
 S:Lshop_screen.screen_shop_screen_update$timer$1_0$124({1}SC:U),R,0,0,[a]
 S:Lshop_screen.screen_shop_screen_update$selection$1_0$124({1}SC:U),R,0,0,[e]

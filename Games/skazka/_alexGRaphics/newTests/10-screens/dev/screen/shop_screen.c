@@ -92,10 +92,10 @@ void screen_shop_screen_update( unsigned char *screen_type )
 			// TODO - SFX
 			// Check edge case "Not enough gold" SFX!
 			//if( !devkit_PSGSFXGetStatus() )
-			//{
-			//	*screen_type = screen_type_stats;
-			//	return;
-			//}
+			{
+				*screen_type = screen_type_stats;
+				return;
+			}
 		}
 
 		selection = engine_select_manager_update( select_type );
