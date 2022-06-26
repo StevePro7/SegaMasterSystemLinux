@@ -38,7 +38,6 @@ void screen_talk_screen_load()
 
 	engine_text_manager_cont();
 	devkit_SMS_displayOn();			// TODO try comment this line out for smooth screen transition??
-
 }
 
 void screen_talk_screen_update( unsigned char *screen_type )
@@ -46,6 +45,13 @@ void screen_talk_screen_update( unsigned char *screen_type )
 	struct_hack_object *ho = &global_hack_object;
 	unsigned char input1;
 	unsigned char input2;
+
+	// TODO test can't press fire when sfx play
+	//if( devkit_PSGSFXGetStatus() )
+	//{
+	//	*screen_type = screen_type_talk;
+	//	return;
+	//}
 
 	input1 = engine_input_manager_hold( input_type_fire1 );
 	if( input1 )
@@ -62,19 +68,19 @@ void screen_talk_screen_update( unsigned char *screen_type )
 	if( input2 )
 	{
 		// TODO
-		//if( ho->hack_talker )
-		if (1)
+		//if( ho->hack_talker )		// DELETE this!
+		//if (1)
 		{
 			display_msg();
 		}
-		else
+		//else
 		{
 			// TODO
 			//if( !devkit_PSGSFXGetStatus() )
-			{
-				*screen_type = screen_type_stats;
-				return;
-			}
+			//{
+			//	*screen_type = screen_type_stats;
+			//	return;
+			//}
 		}
 	}
 
@@ -92,7 +98,6 @@ static void display_msg()
 	while( 1 )
 	{
 		msg = ( unsigned char ) ( rand() % MAX_RANDOM );
-		msg = 8;
 		if( msg != prev_msg )
 		{
 			prev_msg = msg;
