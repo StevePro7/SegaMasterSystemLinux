@@ -39,6 +39,7 @@ void screen_stats_screen_load()
 	engine_font_manager_draw_punc( LOCALE_COLON, LEFT_X + 19, TOP_Y + 14 );
 	engine_font_manager_draw_punc( LOCALE_QMARK, LEFT_X + 29, TOP_Y + 14 );
 
+	engine_game_manager_print_stats();
 	engine_graphics_manager_draw_border();
 	engine_graphics_manager_draw_underline( TOP_Y + 4 );
 

@@ -32,9 +32,9 @@ const unsigned char *stats_texts[] =
 
 const unsigned char *weapon_texts[] =
 {
-	"",
-	"   SWORD",
-	"     AXE",
+	"DAGGER",
+	"SWORD",
+	"AXE",
 };
 const unsigned char *armor_texts[] =
 {
@@ -45,7 +45,7 @@ const unsigned char *armor_texts[] =
 const unsigned char *life_texts[] =
 {
 	"",
-	" +1 LIFE",
+	"LIFE",
 };
 
 const unsigned char *forest_texts[] =

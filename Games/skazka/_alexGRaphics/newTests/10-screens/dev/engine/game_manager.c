@@ -77,12 +77,12 @@ void engine_game_manager_difficulty( unsigned char difficulty )
 void engine_game_manager_print_stats()
 {
 	engine_player_manager_stats();
-	engine_font_manager_draw_text( LOCALE_STATISTICS, LEFT_X + 2, STATS_ROW + 2 );
-	engine_font_manager_draw_text( LOCALE_HP, LEFT_X + 2, STATS_ROW + 3 );
-	engine_font_manager_draw_text( LOCALE_XP, LEFT_X + 2, STATS_ROW + 4 );
-	engine_font_manager_draw_text( LOCALE_GOLD, LEFT_X + 2, STATS_ROW + 5 );
-	engine_font_manager_draw_text( LOCALE_YOU_HAVE, LEFT_X + 4, STATS_ROW + 6 );
-	engine_font_manager_draw_text( LOCALE_YOUR_LVL, LEFT_X + 2, 22 );
+	engine_font_manager_draw_text( LOCALE_STATISTICS, LEFT_X + 2, TOP_Y + 6 );
+	engine_font_manager_draw_text( LOCALE_HP, LEFT_X + 2, TOP_Y + 7 );
+	engine_font_manager_draw_text( LOCALE_XP, LEFT_X + 2, TOP_Y + 8 );
+	engine_font_manager_draw_text( LOCALE_GOLD, LEFT_X + 2, TOP_Y + 9 );
+	//engine_font_manager_draw_text( LOCALE_YOU_HAVE, LEFT_X + 4, TOP_Y + 6 );
+	//engine_font_manager_draw_text( LOCALE_YOUR_LVL, LEFT_X + 2, TOP_Y + 22 );
 }
 
 void engine_game_manager_print_village()
