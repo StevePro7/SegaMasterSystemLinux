@@ -100,15 +100,15 @@ const unsigned char *menus_texts[] =
 
 const unsigned char *villager_texts[] =
 {
-	"  YOU LOST SOME MONEY!     ",
+	"  YOU LOST SOME MONEY      ",
 	"",
 	"",
 	" DID YOU KNOW THAT YOU CAN ",
 	" ONLY HAVE ONE LIFE POTION ",
-	" AT A TIME?                ",
+	" AT A TIME                 ",
 	"DID YOU KNOW THAT A TEGILAY",
 	"IS MADE OF LEATHER, AND THE",
-	"KOLCHUGA IS MADE OF STEEL? ",
+	"KOLCHUGA IS MADE OF STEEL  ",
 	"  TRULY THE AXE IS THE     ",
 	"  GREATEST WEAPON OF OUR   ",
 	"  PEOPLE!                  ",

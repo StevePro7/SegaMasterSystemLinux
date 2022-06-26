@@ -22,13 +22,14 @@ void main( void )
 	//open_screen_type = screen_type_prep;
 	//open_screen_type = screen_type_stats;
 	open_screen_type = screen_type_shop;
+	open_screen_type = screen_type_talk;
 	//open_screen_type = screen_type_boss;
 	//open_screen_type = screen_type_over;
 	//open_screen_type = screen_type_complete;
 	//open_screen_type = screen_type_menu;
 	////open_screen_type = screen_type_load;
 	//open_screen_type = screen_type_test;
-	open_screen_type = screen_type_debug;
+	//open_screen_type = screen_type_debug;
 
 	// Initialize player first!
 	engine_player_manager_init();
