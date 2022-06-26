@@ -23,13 +23,11 @@ static void display_msg();
 
 void screen_talk_screen_load()
 {
-	
-
 	devkit_SMS_displayOff();		// TODO try comment this line out for smooth screen transition??
 	engine_content_manager_load_logo_small();
 	engine_graphics_manager_draw_logo_small( LEFT_X + 1, TOP_Y + 1 );
 
-	engine_text_manager_clear( TOP_Y + 5, TOP_Y + 22 );
+	engine_text_manager_clear( TOP_Y + 10, TOP_Y + 22 );
 	display_msg();
 
 	engine_graphics_manager_draw_border();
@@ -53,9 +51,15 @@ static void display_msg()
 	unsigned char txt = 0;
 
 	val = ( unsigned char ) ( rand() % MAX_RANDOM );
-	val = 8;
-
 	beg = val * MAX_CHAT;
+
+	row = 6;
+	for( idx = 0; idx < MAX_CHAT + 1; idx++ )
+	{
+		engine_font_manager_draw_text( LOCALE_28_SPCS, LEFT_X + 2, TOP_Y + row );
+		row++;
+	}
+
 	row = 7;
 	devkit_SMS_mapROMBank( FIXED_BANK );
 	for( idx = 0; idx < MAX_CHAT; idx++ )
@@ -68,6 +72,8 @@ static void display_msg()
 	if( 0 == val )
 	{
 		engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 23, TOP_Y + 7 );
+		//engine_sound_manager_play( sound_type_6 );		// TODO play sfx
+		engine_player_manager_dec_gold( NUM_GOLD );
 	}
 	else if( 1 == val )
 	{
@@ -97,5 +103,11 @@ static void display_msg()
 	else if( 8 == val )
 	{
 		engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 15, TOP_Y + 7 );
+	}
+	else if( 9 == val )
+	{
+		engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 24, TOP_Y + 7 );
+		//engine_sound_manager_play( sound_type_7 );		// TODO play sfx
+		engine_player_manager_inc_gold( 0, NUM_GOLD );
 	}
 }
