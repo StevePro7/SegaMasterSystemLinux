@@ -39,6 +39,41 @@ void screen_talk_screen_load()
 
 void screen_talk_screen_update( unsigned char *screen_type )
 {
+	struct_hack_object *ho = &global_hack_object;
+	unsigned char input1;
+	unsigned char input2;
+
+	input1 = engine_input_manager_hold( input_type_fire1 );
+	if( input1 )
+	{
+		// TODO
+		//if( !devkit_PSGSFXGetStatus() )
+		{
+			*screen_type = screen_type_stats;
+			return;
+		}
+	}
+
+	input2 = engine_input_manager_hold( input_type_fire2 );
+	if( input2 )
+	{
+		// TODO
+		//if( ho->hack_talker )
+		if (1)
+		{
+			display_msg();
+		}
+		else
+		{
+			// TODO
+			//if( !devkit_PSGSFXGetStatus() )
+			{
+				*screen_type = screen_type_stats;
+				return;
+			}
+		}
+	}
+
 	*screen_type = screen_type_talk;
 }
 
