@@ -25,9 +25,9 @@ void screen_stats_screen_load()
 
 	row = 14;
 	devkit_SMS_mapROMBank( FIXED_BANK );
-	for( idx = 0; idx < 4; idx++ )
+	for( idx = 0; idx < 8; idx++ )
 	{
-		engine_font_manager_draw_text( ( unsigned char * ) over_texts[ idx ], LEFT_X + 12, TOP_Y + row );
+		engine_font_manager_draw_text( ( unsigned char * ) stats_texts[ idx ], LEFT_X + 12, TOP_Y + row );
 		row++;
 	}
 
@@ -36,7 +36,6 @@ void screen_stats_screen_load()
 	engine_graphics_manager_draw_border();
 	engine_graphics_manager_draw_underline( TOP_Y + 4 );
 
-	engine_text_manager_cont();
 	devkit_SMS_displayOn();			// TODO try comment this line out for smooth screen transition??
 }
 
