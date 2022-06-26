@@ -53,7 +53,7 @@ static void display_msg()
 	unsigned char txt = 0;
 
 	val = ( unsigned char ) ( rand() % MAX_RANDOM );
-	val = 2;
+	val = 4;
 
 	beg = val * MAX_CHAT;
 	row = 7;
@@ -76,5 +76,13 @@ static void display_msg()
 	else if( 2 == val )
 	{
 		engine_font_manager_draw_punc( LOCALE_QMARK, LEFT_X + 27, TOP_Y + 9 );
+	}
+	else if( 3 == val )
+	{
+		engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 10, TOP_Y + 9 );
+	}
+	else if( 4 == val )
+	{
+		engine_font_manager_draw_punc( LOCALE_QUOTE, LEFT_X + 15, TOP_Y + 7 );
 	}
 }

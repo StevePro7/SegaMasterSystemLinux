@@ -112,7 +112,7 @@ const unsigned char *villager_texts[] =
 	"  TRULY THE AXE IS THE     ",
 	"  GREATEST WEAPON OF OUR   ",
 	"  PEOPLE!                  ",
-	" SOMETIMES ITS WISE TO RUN ",
+	" SOMETIMES IT S WISE TO RUN",
 	" AWAY                      ",
 	"",
 	" YOU BETTER BE KNOWN AS A  ",
