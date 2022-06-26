@@ -32,7 +32,7 @@ void screen_stats_screen_load()
 	engine_graphics_manager_draw_logo_small( LEFT_X + 1, TOP_Y + 1 );
 	engine_graphics_manager_draw_village( LEFT_X + 12, TOP_Y + 6 );
 
-	engine_player_manager_draw();
+	engine_player_manager_draw_inventory( LEFT_X + 2, TOP_Y + 14 );
 
 	engine_game_manager_print_stats();
 	engine_game_manager_print_texts();

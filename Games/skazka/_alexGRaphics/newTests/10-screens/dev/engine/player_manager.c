@@ -6,6 +6,7 @@
 #include "text_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
+#include "../banks/bank2.h"
 
 // Global variable.
 struct_player_object global_player_object;
@@ -105,12 +106,23 @@ void engine_player_manager_rest()
 	po->hp = po->max_hp;
 }
 
-void engine_player_manager_draw()
+void engine_player_manager_draw_inventory( unsigned char x, unsigned char y )
 {
+	const unsigned char *pnt = stats_items__tilemap__bin;
+	unsigned char wide = 8;
+	unsigned char high = 8;
+	unsigned char i, j;
 
-	//engine_font_manager_draw_data( LEFT_X + 8, FIGHT_ROW + 0, 2, 0x20, 0xBC );
-	//engine_font_manager_draw_data( LEFT_X + 8, FIGHT_ROW + 1, 3, 0x8E, 0x92, 0x29 );
-	//engine_font_manager_draw_data( LEFT_X + 8, FIGHT_ROW + 2, 2, 0x20, 0x5E );
+	unsigned int tile = 0;
+	for( j = 0; j < high; j++ )
+	{
+		for( i = 0; i < wide; i++ )
+		{
+			devkit_SMS_setNextTileatXY( x + i, y + j );
+			devkit_SMS_setTile( *pnt + tile );
+			tile++;
+		}
+	}
 }
 
 void engine_player_manager_hplo()
