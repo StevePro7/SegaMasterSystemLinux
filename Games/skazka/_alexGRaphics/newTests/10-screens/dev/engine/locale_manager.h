@@ -51,7 +51,7 @@
 #define LOCALE_QMARK			'?'
 #define LOCALE_POINT			'!'
 #define LOCALE_SLASH			'/'
-//#define LOCALE_BRACKET			')'
+#define LOCALE_BRACKET			')'
 #define LOCALE_ARROW			'>'
 
 #endif//_LOCALE_MANAGER_H_
