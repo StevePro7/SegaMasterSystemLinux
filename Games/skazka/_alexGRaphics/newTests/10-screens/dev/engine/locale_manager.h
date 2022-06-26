@@ -49,7 +49,7 @@
 #define LOCALE_COMMA			','
 #define LOCALE_COLON			','
 #define LOCALE_QMARK			'?'
-#define LOCALE_POINT			'/'
+#define LOCALE_POINT			'!'
 #define LOCALE_SLASH			'/'
 //#define LOCALE_BRACKET			')'
 #define LOCALE_ARROW			'>'

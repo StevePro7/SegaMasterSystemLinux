@@ -20,14 +20,15 @@ const unsigned char *diff_texts[] =
 
 const unsigned char *stats_texts[] =
 {
-	"WHAT SHALL WE DO?  ",
+	//"VILLAGE: WHAT NOW?",
+	"VILLAGE  WHAT NOW ",
 	"",
-	"1) GO FOREST PATROL",
-	"2) PURCHASE AT SHOP",
-	"3) REST BY THE WELL",
-	"4) TALK TO VILLAGER",
-	"5) BEAT THE KOSCHEY",
-	"6) RETURN MAIN MENU",
+	"  GO FOREST PATROL",
+	"  PURCHASE AT SHOP",
+	"  REST BY THE WELL",
+	"  TALK TO VILLAGER",
+	"  BEAT THE KOSCHEY",
+	"  RETURN MAIN MENU",
 };
 
 const unsigned char *weapon_texts[] =
