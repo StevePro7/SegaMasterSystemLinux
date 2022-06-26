@@ -18,8 +18,8 @@ static void draw_screen();
 void screen_stats_screen_load()
 {
 //	draw_screen();
-	unsigned char row;
-	 unsigned char idx;
+	//unsigned char row;
+	//unsigned char idx;
 
 	engine_player_manager_calc();
 
@@ -31,18 +31,9 @@ void screen_stats_screen_load()
 	engine_graphics_manager_draw_logo_small( LEFT_X + 1, TOP_Y + 1 );
 	engine_graphics_manager_draw_village( LEFT_X + 12, TOP_Y + 6 );
 
-	row = 14;
-	devkit_SMS_mapROMBank( FIXED_BANK );
-	for( idx = 0; idx < 8; idx++ )
-	{
-		engine_font_manager_draw_text( ( unsigned char * ) stats_texts[ idx ], LEFT_X + 12, TOP_Y + row );
-		row++;
-	}
-
-	engine_font_manager_draw_punc( LOCALE_COLON, LEFT_X + 19, TOP_Y + 14 );
-	engine_font_manager_draw_punc( LOCALE_QMARK, LEFT_X + 29, TOP_Y + 14 );
-
 	engine_game_manager_print_stats();
+	engine_game_manager_print_texts();
+
 	engine_graphics_manager_draw_border();
 	engine_graphics_manager_draw_underline( TOP_Y + 4 );
 

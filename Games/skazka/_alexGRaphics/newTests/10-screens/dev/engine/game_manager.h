@@ -22,9 +22,9 @@ void engine_game_manager_flash_off();
 void engine_game_manager_difficulty( unsigned char difficulty );
 
 void engine_game_manager_print_stats();
-void engine_game_manager_print_village();
-void engine_game_manager_print_player();
-void engine_game_manager_print_version();
+//void engine_game_manager_print_village();
+//void engine_game_manager_print_player();
+void engine_game_manager_print_version();		// TODO - move to splash or title screen
 void engine_game_manager_print_texts();
 
 #endif//_GAME_MANAGER_H_
