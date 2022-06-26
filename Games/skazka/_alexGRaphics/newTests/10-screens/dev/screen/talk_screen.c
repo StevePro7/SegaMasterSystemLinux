@@ -92,6 +92,7 @@ static void display_msg()
 	while( 1 )
 	{
 		msg = ( unsigned char ) ( rand() % MAX_RANDOM );
+		msg = 8;
 		if( msg != prev_msg )
 		{
 			prev_msg = msg;
@@ -149,6 +150,7 @@ static void display_msg()
 	}
 	else if( 8 == msg )
 	{
+		engine_font_manager_draw_punc( LOCALE_COMMA, LEFT_X + 8, TOP_Y + 7 );
 		engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 15, TOP_Y + 7 );
 	}
 	else if( 9 == msg )

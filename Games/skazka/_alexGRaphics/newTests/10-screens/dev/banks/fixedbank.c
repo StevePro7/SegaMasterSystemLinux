@@ -124,7 +124,7 @@ const unsigned char *villager_texts[] =
 	" SOME PEOPLE SAY THEY SAW  ",
 	" BABA YAGA IN THE FOREST,  ",
 	" BUT I DON T BELIEVE THEM  ",
-	"  CYKA, BLYAT!             ",
+	"  CYKA  BLYAT!             ",
 	"",
 	"",
 	"  YOU FOUND SOME MONEY!   ",
