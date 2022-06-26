@@ -20,7 +20,6 @@ const unsigned char *diff_texts[] =
 
 const unsigned char *stats_texts[] =
 {
-	//"VILLAGE: WHAT NOW?",
 	"VILLAGE  WHAT NOW ",
 	"",
 	"  GO FOREST PATROL",

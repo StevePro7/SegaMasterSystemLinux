@@ -88,6 +88,28 @@ void engine_graphics_manager_draw_logo_small( unsigned char x, unsigned char y )
 	}
 }
 
+void engine_graphics_manager_draw_village( unsigned char x, unsigned char y )
+{
+	const unsigned char *pnt = stats_village__tilemap__bin;
+	unsigned char wide = 18;
+	unsigned char high = 7;
+	unsigned char i, j;
+	unsigned char idx = 0;
+
+	unsigned int palette = devkit_TILE_USE_SPRITE_PALETTE();
+	unsigned int tile;
+	for( j = 0; j < high; j++ )
+	{
+		for( i = 0; i < wide; i++ )
+		{
+			tile = ( SPRITE_TILES + idx ) | palette;
+			devkit_SMS_setNextTileatXY( x + i, y + j );
+			devkit_SMS_setTile( *pnt + tile );
+			idx++;
+		}
+	}
+}
+
 void engine_graphics_manager_draw_koschey( unsigned char x, unsigned char y, unsigned int palette )
 {
 	const unsigned char *pnt = koschey__tilemap__bin;

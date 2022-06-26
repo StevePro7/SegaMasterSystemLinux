@@ -35,6 +35,12 @@ void engine_content_manager_load_logo_small()
 	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) logo_small__tiles__psgcompr, LOGO_TILES );
 }
 
+void engine_content_manager_load_village()
+{
+	devkit_SMS_mapROMBank( stats_village__tiles__psgcompr_bank );
+	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) stats_village__tiles__psgcompr, SPRITE_TILES );
+}
+
 void engine_content_manager_load_koschey()
 {
 	devkit_SMS_mapROMBank( koschey__tiles__psgcompr_bank );
