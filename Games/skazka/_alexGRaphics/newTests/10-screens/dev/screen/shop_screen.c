@@ -139,7 +139,7 @@ void screen_shop_screen_update( unsigned char *screen_type )
 		gold -= value;
 		engine_player_manager_dec_gold( value );
 
-		engine_font_manager_draw_text( LOCALE_30_SPCS, LEFT_X + 2, TOP_Y + 21 );
+		engine_font_manager_draw_text( LOCALE_30_SPCS, LEFT_X + 1, TOP_Y + 21 );
 		engine_font_manager_draw_data( gold, LEFT_X + 24, TOP_Y + 19 );
 
 		if( !ho->hack_delays )

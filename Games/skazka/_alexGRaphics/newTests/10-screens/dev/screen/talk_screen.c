@@ -109,7 +109,7 @@ static void display_msg()
 	row = 6;
 	for( idx = 0; idx < MAX_CHAT + 1; idx++ )
 	{
-		engine_font_manager_draw_text( LOCALE_30_SPCS, LEFT_X + 2, TOP_Y + row );
+		engine_font_manager_draw_text( LOCALE_30_SPCS, LEFT_X + 1, TOP_Y + row );
 		row++;
 	}
 
