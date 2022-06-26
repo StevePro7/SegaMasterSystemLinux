@@ -8,19 +8,20 @@
 //#include "../engine/input_manager.h"
 #include "../engine/locale_manager.h"
 #include "../engine/player_manager.h"
+#include "../engine/select_manager.h"
 #include "../engine/text_manager.h"
 #include "../engine/timer_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
 
-static void draw_screen();
+static unsigned char select_type;
 
 void screen_stats_screen_load()
 {
 //	draw_screen();
 	//unsigned char row;
 	//unsigned char idx;
-
+	select_type = select_type_stats;
 	engine_player_manager_calc();
 
 	devkit_SMS_displayOff();		// TODO try comment this line out for smooth screen transition??
@@ -40,15 +41,11 @@ void screen_stats_screen_load()
 	engine_graphics_manager_draw_border();
 	engine_graphics_manager_draw_underline( TOP_Y + 4 );
 
+	engine_select_manager_load( select_type, LEFT_X + 12, TOP_Y + OPTION_ROW, 6 );
 	devkit_SMS_displayOn();			// TODO try comment this line out for smooth screen transition??
 }
 
 void screen_stats_screen_update( unsigned char *screen_type )
 {
 	*screen_type = screen_type_stats;
-}
-
-static void draw_screen()
-{
-
 }

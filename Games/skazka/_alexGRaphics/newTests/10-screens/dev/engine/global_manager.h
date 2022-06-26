@@ -18,7 +18,7 @@
 #define LEFT_X					0
 #define TOP_Y					0
 //#define STATS_ROW				2
-#define OPTION_ROW				15
+#define OPTION_ROW				16
 #define SHOP_ROW				18
 #define FIGHT_ROW				18
 #define FIRE1_ROW				22
