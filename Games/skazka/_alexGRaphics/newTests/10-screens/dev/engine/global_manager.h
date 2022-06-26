@@ -2,7 +2,7 @@
 #define _GLOBAL_MANAGER_H_
 
 // Generic global variables.
-#define MAX_SCREEENS			22
+#define MAX_SCREEENS			23
 #define MAX_SELECTS				8
 #define MAX_ENEMIES				6
 #define MAX_ITEMS				5
