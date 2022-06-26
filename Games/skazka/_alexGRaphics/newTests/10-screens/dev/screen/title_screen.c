@@ -29,10 +29,9 @@ void screen_title_screen_load()
 	unsigned char idx;
 
 	devkit_SMS_displayOff();		// TODO try comment this line out for smooth screen transition??
+	engine_text_manager_clear( TOP_Y + 1, TOP_Y + 22 );
 	engine_content_manager_load_logo_big();
 	engine_graphics_manager_draw_logo_big( LEFT_X + 2, TOP_Y + 3 );
-
-	engine_text_manager_clear( TOP_Y + 8, TOP_Y + 22 );
 
 	row = 10;
 	devkit_SMS_mapROMBank( FIXED_BANK );
