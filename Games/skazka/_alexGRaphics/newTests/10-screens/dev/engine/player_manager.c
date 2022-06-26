@@ -107,6 +107,7 @@ void engine_player_manager_rest()
 
 void engine_player_manager_draw()
 {
+
 	//engine_font_manager_draw_data( LEFT_X + 8, FIGHT_ROW + 0, 2, 0x20, 0xBC );
 	//engine_font_manager_draw_data( LEFT_X + 8, FIGHT_ROW + 1, 3, 0x8E, 0x92, 0x29 );
 	//engine_font_manager_draw_data( LEFT_X + 8, FIGHT_ROW + 2, 2, 0x20, 0x5E );
