@@ -1,9 +1,6 @@
 extern const unsigned char	background__palette__bin[];
 #define				background__palette__bin_size 16
 
-extern const unsigned char	font_tiles__palette__bin[];
-#define				font_tiles__palette__bin_size 16
-
 extern const unsigned char	font_tiles__tilemap__bin[];
 #define				font_tiles__tilemap__bin_size 96
 

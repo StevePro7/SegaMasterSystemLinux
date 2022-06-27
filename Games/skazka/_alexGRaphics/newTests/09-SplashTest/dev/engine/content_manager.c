@@ -10,11 +10,11 @@ void engine_content_manager_load_tiles()
 {
 	// Font tiles.
 	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) font_tiles__tiles__psgcompr, FONT_TILES );
-	devkit_SMS_loadBGPalette( ( void * ) font_tiles__palette__bin );
+	devkit_SMS_loadBGPalette( ( void * ) background__palette__bin );
 
-	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) logo_big__tiles__psgcompr, LOGO_TILES );
+	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) splash__tiles__psgcompr, LOGO_TILES );
 	//devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) logo_small__tiles__psgcompr, SPRITE_TILES );
-	devkit_SMS_loadSpritePalette( ( void * ) font_tiles__palette__bin );
+	devkit_SMS_loadSpritePalette( ( void * ) background__palette__bin );
 }
 
 void engine_content_manager_draw_logo1()
@@ -39,7 +39,7 @@ void engine_content_manager_draw_logo1()
 		{
 			index = j * wide + i;
 			value = index * 2;
-			tile = logo_big__tilemap__bin[ value ];
+			tile = splash__tilemap__bin[ value ];
 			//tile = logo_big__tilemap__bin[ value ] | palette;
 			devkit_SMS_setNextTileatXY( x + i, y + j );
 			devkit_SMS_setTile( tile );
@@ -49,7 +49,7 @@ void engine_content_manager_draw_logo1()
 
 void engine_content_manager_draw_logo2()
 {
-	const unsigned char *pnt = logo_big__tilemap__bin;
+	const unsigned char *pnt = splash__tilemap__bin;
 	unsigned char x, y;
 	unsigned char i, j;
 	unsigned char idx = 0;
