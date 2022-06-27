@@ -19,16 +19,16 @@ void engine_content_manager_load_tiles()
 
 void engine_content_manager_draw_logo1()
 {
-	const unsigned char wide = 28;
-	const unsigned char high = 5;
+	const unsigned char wide = 32;
+	const unsigned char high = 24;
 	unsigned char x, y;
 	unsigned int index = 0;
 	unsigned int value = 0;
 	unsigned int tile = 0;
 	unsigned char i, j;
 
-	x = 2;
-	y = 2;
+	x = 0;
+	y = 0;
 	for( j = 0; j < high; j++ )
 	{
 		for( i = 0; i < wide; i++ )
