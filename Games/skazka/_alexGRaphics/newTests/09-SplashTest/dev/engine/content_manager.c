@@ -9,10 +9,10 @@
 void engine_content_manager_load_tiles()
 {
 	// Font tiles.
-	//devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) font_tiles__tiles__psgcompr, FONT_TILES );
-	//devkit_SMS_loadBGPalette( ( void * ) font_tiles__palette__bin );
+	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) font_tiles__tiles__psgcompr, FONT_TILES );
+	devkit_SMS_loadBGPalette( ( void * ) font_tiles__palette__bin );
 
-	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) logo_big__tiles__psgcompr, 0 );
+	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) logo_big__tiles__psgcompr, 1 );
 	//devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) logo_small__tiles__psgcompr, SPRITE_TILES );
 	devkit_SMS_loadSpritePalette( ( void * ) font_tiles__palette__bin );
 }
@@ -20,22 +20,35 @@ void engine_content_manager_load_tiles()
 void engine_content_manager_draw_logo1()
 {
 	const unsigned char wide = 32;
-	const unsigned char high = 24;
+	const unsigned char high = 22;
 	unsigned char x, y;
-	unsigned int index = 0;
+	unsigned int index0 = 0;
+	unsigned int index1 = 0;
 	unsigned int value = 0;
+	unsigned int value1 = 0;
+	unsigned int value0 = 0;
 	unsigned int tile = 0;
 	unsigned char i, j;
+	//unsigned int palette;
+	//palette = devkit_TILE_USE_SPRITE_PALETTE();
 
 	x = 0;
 	y = 0;
 	for( j = 0; j < high; j++ )
 	{
+		if( j == 21 )
+		{
+			j = 21;
+		}
 		for( i = 0; i < wide; i++ )
 		{
-			index = j * wide + i;
-			value = index * 2;
+			index0 = j * wide + i;
+			index1 = j * wide + i + 1;
+			value0 = index0 * 256;
+			value1 = index1 * 1;
+			value = value0 + value1;
 			tile = logo_big__tilemap__bin[ value ];
+			//tile = logo_big__tilemap__bin[ value ] | palette;
 			devkit_SMS_setNextTileatXY( x + i, y + j );
 			devkit_SMS_setTile( tile );
 		}
