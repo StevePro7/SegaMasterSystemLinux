@@ -5,15 +5,11 @@ S:Lcontent_manager.engine_content_manager_draw_logo1$wide$1_0$83({1}SC:U),R,0,0,
 S:Lcontent_manager.engine_content_manager_draw_logo1$high$1_0$83({1}SC:U),R,0,0,[]
 S:Lcontent_manager.engine_content_manager_draw_logo1$x$1_0$83({1}SC:U),R,0,0,[]
 S:Lcontent_manager.engine_content_manager_draw_logo1$y$1_0$83({1}SC:U),R,0,0,[]
-S:Lcontent_manager.engine_content_manager_draw_logo1$index0$1_0$83({2}SI:U),R,0,0,[e,d]
-S:Lcontent_manager.engine_content_manager_draw_logo1$index1$1_0$83({2}SI:U),R,0,0,[l,h]
+S:Lcontent_manager.engine_content_manager_draw_logo1$index$1_0$83({2}SI:U),R,0,0,[l,h]
 S:Lcontent_manager.engine_content_manager_draw_logo1$value$1_0$83({2}SI:U),R,0,0,[l,h]
-S:Lcontent_manager.engine_content_manager_draw_logo1$value1$1_0$83({2}SI:U),R,0,0,[]
-S:Lcontent_manager.engine_content_manager_draw_logo1$value0$1_0$83({2}SI:U),R,0,0,[e,d]
-S:Lcontent_manager.engine_content_manager_draw_logo1$tile$1_0$83({2}SI:U),R,0,0,[e,d]
+S:Lcontent_manager.engine_content_manager_draw_logo1$tile$1_0$83({2}SI:U),R,0,0,[l,h]
 S:Lcontent_manager.engine_content_manager_draw_logo1$i$1_0$83({1}SC:U),R,0,0,[b]
 S:Lcontent_manager.engine_content_manager_draw_logo1$j$1_0$83({1}SC:U),R,0,0,[c]
-S:Lcontent_manager.engine_content_manager_draw_logo1$sloc0$0_1$0({2}SI:S),B,1,-2
 F:G$engine_content_manager_draw_logo2$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lcontent_manager.engine_content_manager_draw_logo2$pnt$1_0$89({2}DG,SC:U),R,0,0,[]
 S:Lcontent_manager.engine_content_manager_draw_logo2$x$1_0$89({1}SC:U),R,0,0,[a]
