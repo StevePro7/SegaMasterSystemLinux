@@ -4,6 +4,7 @@ void main( void )
 {
 	devkit_SMS_init();
 	devkit_SMS_displayOff();
+	devkit_SMS_useFirstHalfTilesforSprites( false );
 	engine_asm_manager_clear_VRAM();
 
 	engine_content_manager_load_sprite_palette();

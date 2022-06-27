@@ -24,11 +24,11 @@ void engine_screen_manager_init()
 	//engine_graphics_manager_draw_border();
 
 	//draw_title();		// screen_01_title
-	draw_title2();
+	//draw_title2();
 	//draw_boss();
 	//draw_intro();
 	//draw_leshy();
-	//draw_battle_player();
+	draw_battle_player();
 }
 
 void engine_screen_manager_update()
