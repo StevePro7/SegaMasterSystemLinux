@@ -9,7 +9,6 @@ S:Lcontent_manager.engine_content_manager_draw_logo1$j$1_0$83({1}SC:U),R,0,0,[c]
 S:Lcontent_manager.engine_content_manager_draw_logo1$idx$1_0$83({1}SC:U),R,0,0,[e]
 S:Lcontent_manager.engine_content_manager_draw_logo1$tile$1_0$83({2}SI:U),B,1,-2
 S:Lcontent_manager.engine_content_manager_draw_logo1$sloc0$0_1$0({2}SI:U),B,1,-2
-S:G$engine_content_manager_draw_logo2$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOnFeature$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOffFeature$0_0$0({2}DF,SV:S),C,0,0
