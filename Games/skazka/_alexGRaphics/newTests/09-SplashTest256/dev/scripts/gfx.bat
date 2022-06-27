@@ -7,8 +7,8 @@ cd gfx
 
 :: Tiles
 bmp2tile.exe raw/font_tiles.png -savetiles "font_tiles (tiles).psgcompr" -noremovedupes -planar -tileoffset 0  -savetilemap "font_tiles (tilemap).bin" -savepalette "background (palette).bin" -fullpalette -exit
-bmp2tile.exe raw/splash.png -savetiles "splash (tiles).psgcompr" -removedupes -mirror -planar -tileoffset 64  -savetilemap "splash (tilemap).bin" -savepalette "background (palette).bin" -fullpalette -exit
-bmp2tile.exe raw/logo_big.png -savetiles "logo_big (tiles).psgcompr" -noremovedupes -planar -tileoffset 256  -savetilemap "logo_big (tilemap).bin" -savepalette "background (palette).bin" -fullpalette -exit
+bmp2tile.exe raw/splash.png -savetiles "splash (tiles).psgcompr" -removedupes -mirror -planar -tileoffset 64  -savetilemap "splash (tilemap).bin" -exit
+bmp2tile.exe raw/logo_big.png -savetiles "logo_big (tiles).psgcompr" -noremovedupes -planar -tileoffset 256  -savetilemap "logo_big (tilemap).bin" -exit
 
 
 cd ..

@@ -7,12 +7,11 @@ void main( void )
 	engine_asm_manager_clear_VRAM();
 
 	//devkit_SMS_setSpriteMode( devkit_SPRITEMODE_NORMAL() );
-	devkit_SMS_useFirstHalfTilesforSprites( true );
+	devkit_SMS_useFirstHalfTilesforSprites( false );
 	//devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );
 
 	engine_content_manager_load_tiles();
-	engine_content_manager_draw_logo1();
-	//engine_content_manager_draw_logo2();
+	//engine_content_manager_draw_logo1();
 	engine_screen_manager_init();
 
 	devkit_SMS_displayOn();
