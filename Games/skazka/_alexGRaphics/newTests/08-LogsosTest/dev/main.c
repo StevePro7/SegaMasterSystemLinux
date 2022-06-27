@@ -12,17 +12,17 @@ void main( void )
 
 	engine_content_manager_load_tiles();
 	engine_content_manager_draw_logo1();
-	engine_content_manager_draw_logo2();
+	//engine_content_manager_draw_logo2();
 	engine_screen_manager_init();
 
 	devkit_SMS_displayOn();
 	for( ;; )
 	{
-		devkit_SMS_initSprites();
+		//devkit_SMS_initSprites();
 		engine_screen_manager_update();
 
-		devkit_SMS_finalizeSprites();
+		//devkit_SMS_finalizeSprites();
 		devkit_SMS_waitForVBlank();
-		devkit_SMS_copySpritestoSAT();
+		//devkit_SMS_copySpritestoSAT();
 	}
 }
