@@ -6,7 +6,7 @@ S:Lcontent_manager.engine_content_manager_draw_logo1$high$1_0$83({1}SC:U),R,0,0,
 S:Lcontent_manager.engine_content_manager_draw_logo1$x$1_0$83({1}SC:U),R,0,0,[]
 S:Lcontent_manager.engine_content_manager_draw_logo1$y$1_0$83({1}SC:U),R,0,0,[]
 S:Lcontent_manager.engine_content_manager_draw_logo1$index$1_0$83({2}SI:U),R,0,0,[l,h]
-S:Lcontent_manager.engine_content_manager_draw_logo1$value$1_0$83({1}SC:U),R,0,0,[a]
+S:Lcontent_manager.engine_content_manager_draw_logo1$value$1_0$83({2}SI:U),R,0,0,[l,h]
 S:Lcontent_manager.engine_content_manager_draw_logo1$tile$1_0$83({2}SI:U),R,0,0,[l,h]
 S:Lcontent_manager.engine_content_manager_draw_logo1$i$1_0$83({1}SC:U),R,0,0,[b]
 S:Lcontent_manager.engine_content_manager_draw_logo1$j$1_0$83({1}SC:U),R,0,0,[c]

@@ -23,7 +23,7 @@ void engine_content_manager_draw_logo1()
 	const unsigned char high = 5;
 	unsigned char x, y;
 	unsigned int index = 0;
-	unsigned char value = 0;
+	unsigned int value = 0;
 	unsigned int tile = 0;
 	unsigned char i, j;
 
