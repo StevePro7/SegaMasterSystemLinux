@@ -2,7 +2,7 @@
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
 
-#define SPLASH_TILES_OFFSET		128
+#define SPLASH_TILES_OFFSET		0
 
 void engine_content_manager_load_sprite_palette()
 {

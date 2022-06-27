@@ -6,7 +6,7 @@ cd content
 cd gfx
 
 :: Splash
-bmp2tile.exe raw/splash.bmp -savetiles "splash (tiles).psgcompr" -removedupes -nomirror -planar -tileoffset 128 -savetilemap "splash (tilemap).stmcompr" -savepalette "splash (palette).bin" -fullpalette -exit
+bmp2tile.exe raw/splash.png -savetiles "splash (tiles).psgcompr" -removedupes -nomirror -planar -tileoffset 0 -savetilemap "splash (tilemap).stmcompr" -savepalette "splash (palette).bin" -fullpalette -exit
 
 cd ..
 folder2c gfx gfx
