@@ -11,5 +11,5 @@ extern const unsigned char	logo_big__tilemap__bin[];
 #define				logo_big__tilemap__bin_size 280
 
 extern const unsigned char	logo_big__tiles__psgcompr[];
-#define				logo_big__tiles__psgcompr_size 1338
+#define				logo_big__tiles__psgcompr_size 2032
 
