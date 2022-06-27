@@ -19,6 +19,31 @@ void engine_content_manager_load_tiles()
 
 void engine_content_manager_draw_logo1()
 {
+	const unsigned char wide = 28;
+	const unsigned char high = 5;
+	unsigned char x, y;
+	unsigned int index = 0;
+	unsigned char value = 0;
+	unsigned int tile = 0;
+	unsigned char i, j;
+
+	x = 2;
+	y = 2;
+	for( j = 0; j < high; j++ )
+	{
+		for( i = 0; i < wide; i++ )
+		{
+			index = j * wide + i;
+			value = index * 2;
+			tile = logo_big__tilemap__bin[ value ];
+			devkit_SMS_setNextTileatXY( x + i, y + j );
+			devkit_SMS_setTile( tile );
+		}
+	}
+}
+
+void engine_content_manager_draw_logo2()
+{
 	const unsigned char *pnt = logo_big__tilemap__bin;
 	unsigned char x, y;
 	unsigned char i, j;
@@ -35,7 +60,7 @@ void engine_content_manager_draw_logo1()
 		{
 			x = 2 + i;
 			y = 2 + j;
-			tile = ( 0 + idx );// | palette;
+			tile = ( 0 + idx );
 			devkit_SMS_setNextTileatXY( x, y );
 			devkit_SMS_setTile( *pnt + tile );
 			idx++;
