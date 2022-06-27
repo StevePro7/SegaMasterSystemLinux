@@ -12,7 +12,7 @@ void main( void )
 
 	engine_content_manager_load_tiles();
 	engine_content_manager_draw_logo1();
-	//engine_content_manager_draw_logo2();
+	engine_content_manager_draw_logo2();
 	engine_screen_manager_init();
 
 	devkit_SMS_displayOn();

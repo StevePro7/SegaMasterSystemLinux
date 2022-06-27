@@ -1,6 +1,6 @@
 ;!FILE main.asm
 XL3
-H 9 areas 29 global symbols
+H 9 areas 2C global symbols
 M main
 O -mz80
 S _engine_screen_manager_init Ref000000
@@ -14,36 +14,39 @@ S _engine_content_manager_load_tiles Ref000000
 S _engine_asm_manager_clear_VRAM Ref000000
 S _devkit_SMS_waitForVBlank Ref000000
 S _engine_content_manager_draw_logo1 Ref000000
-A _CODE size 24 flags 0 addr 0
+S _engine_content_manager_draw_logo2 Ref000000
+A _CODE size 27 flags 0 addr 0
+S A$main$111 Def000022
 S A$main$102 Def00001C
-S C$main.c$22$3_0$111 Def00001C
-S A$main$114 Def000022
+S C$main.c$22$3_0$111 Def00001F
 S C$main.c$10$1_0$109 Def000009
 S _main Def000000
-S A$main$106 Def00001F
-S C$main.c$25$3_0$111 Def00001F
+S C$main.c$25$3_0$111 Def000022
+S A$main$107 Def00001F
 S C$main.c$13$1_0$109 Def000010
 S C$main.c$14$1_0$109 Def000013
-S C$main.c$16$1_0$109 Def000016
-S C$main.c$18$1_0$109 Def000019
-S C$main.c$28$2_0$109 Def000022
-S XG$main$0$0 Def000022
+S A$main$119 Def000025
+S C$main.c$15$1_0$109 Def000016
+S C$main.c$16$1_0$109 Def000019
+S C$main.c$18$1_0$109 Def00001C
+S C$main.c$28$2_0$109 Def000025
+S XG$main$0$0 Def000025
+S A$main$70 Def000003
 S C$main.c$3$0_0$109 Def000000
-S A$main$80 Def00000C
-S A$main$81 Def00000F
-S A$main$73 Def000006
+S A$main$80 Def00000B
+S A$main$90 Def000013
+S A$main$81 Def00000C
+S A$main$82 Def00000F
 S C$main.c$5$1_0$109 Def000000
-S A$main$65 Def000000
+S A$main$74 Def000006
 S C$main.c$6$1_0$109 Def000003
-S A$main$93 Def000016
+S A$main$66 Def000000
 S C$main.c$7$1_0$109 Def000006
-S A$main$85 Def000010
-S A$main$77 Def000009
-S A$main$78 Def00000A
-S A$main$69 Def000003
-S A$main$97 Def000019
-S A$main$79 Def00000B
-S A$main$89 Def000013
+S A$main$94 Def000016
+S A$main$86 Def000010
+S A$main$78 Def000009
+S A$main$79 Def00000A
+S A$main$98 Def000019
 S G$main$0$0 Def000000
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
@@ -59,9 +62,9 @@ T 00 00 00 CD 00 00 CD 00 00 CD 00 00 AF F5 33 CD
 R 00 00 00 00 02 04 02 00 02 07 06 00 02 0A 08 00
 T 0D 00 00 00 00 33 CD 00 00 CD 00 00 CD
 R 00 00 00 00 02 03 04 00 02 07 07 00 02 0A 0A 00
-T 17 00 00 00 00 CD 00 00
-R 00 00 00 00 02 03 00 00 02 06 01 00
-T 1C 00 00
+T 17 00 00 00 00 CD 00 00 CD 00 00
+R 00 00 00 00 02 03 0B 00 02 06 00 00 02 09 01 00
+T 1F 00 00
 R 00 00 00 00
-T 1C 00 00 CD 00 00 CD 00 00 18 F8
+T 1F 00 00 CD 00 00 CD 00 00 18 F8
 R 00 00 00 00 02 04 03 00 02 07 09 00
