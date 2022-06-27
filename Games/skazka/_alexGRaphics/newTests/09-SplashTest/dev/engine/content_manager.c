@@ -9,10 +9,10 @@
 void engine_content_manager_load_tiles()
 {
 	// Font tiles.
-	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) font_tiles__tiles__psgcompr, FONT_TILES );
-	devkit_SMS_loadBGPalette( ( void * ) font_tiles__palette__bin );
+	//devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) font_tiles__tiles__psgcompr, FONT_TILES );
+	//devkit_SMS_loadBGPalette( ( void * ) font_tiles__palette__bin );
 
-	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) logo_big__tiles__psgcompr, LOGO_TILES );
+	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) logo_big__tiles__psgcompr, 0 );
 	//devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) logo_small__tiles__psgcompr, SPRITE_TILES );
 	devkit_SMS_loadSpritePalette( ( void * ) font_tiles__palette__bin );
 }
