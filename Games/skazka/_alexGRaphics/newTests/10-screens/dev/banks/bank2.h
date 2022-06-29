@@ -11,7 +11,7 @@ extern const unsigned char	battle_player__tilemap__bin[];
 #define				battle_player__tilemap__bin_bank 2
 
 extern const unsigned char	battle_player__tiles__psgcompr[];
-#define				battle_player__tiles__psgcompr_size 1923
+#define				battle_player__tiles__psgcompr_size 715
 #define				battle_player__tiles__psgcompr_bank 2
 
 extern const unsigned char	koschey__tilemap__bin[];

@@ -3,13 +3,13 @@
 #include "font_manager.h"
 #include "global_manager.h"
 #include "text_manager.h"
+#include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
+#include "../banks/bank2.h"
 #include <stdlib.h>
 
 // Global variable.
 struct_enemy_object global_enemy_object;
-
-#define ENEMY_ROW				8
 
 unsigned char hplo_num[ MAX_ENEMIES ] =	{ 10, 10, 25, 25, 35, 50 };
 unsigned char ax_num[ MAX_ENEMIES ] =	{  1,  1,  2,  2,  3,  4 };
@@ -78,6 +78,9 @@ void engine_enemy_manager_load( unsigned char level )
 		break;
 	}
 
+	// TODO delete
+	//index = enemy_type_hungry_wolf;
+	index = enemy_type_razboynik;
 	engine_target_manager_load( index );
 }
 
@@ -91,14 +94,32 @@ void engine_target_manager_load( unsigned char index )
 	eo->xpo = xpo_num[ index ];
 }
 
-void engine_enemy_manager_draw()
+void engine_enemy_manager_draw( unsigned char x, unsigned char y )
 {
 	struct_enemy_object *eo = &global_enemy_object;
-	engine_font_manager_draw_text( ( unsigned char * ) enemy_texts[ eo->index ], LEFT_X + 16, ENEMY_ROW );
+	const unsigned char *pnt = battle_enemies__tilemap__bin;
 
-	//engine_font_manager_draw_data( LEFT_X + 23, FIGHT_ROW + 0, 2, 0x20, 0x40 );
-	//engine_font_manager_draw_data( LEFT_X + 23, FIGHT_ROW + 1, 3, 0x2D, 0x8E, 0x2D );
-	//engine_font_manager_draw_data( LEFT_X + 23, FIGHT_ROW + 2, 2, 0x20, 0x5E );
+	unsigned char wide = 3;
+	unsigned char high = 4;
+	unsigned char i, j;
+	unsigned char idx = 0;
+
+	unsigned int tile = eo->index * ( wide * high );
+	for( j = 0; j < high; j++ )
+	{
+		for( i = 0; i < wide; i++ )
+		{
+			devkit_SMS_setNextTileatXY( x + i, y + j );
+			devkit_SMS_setTile( *pnt + tile );
+			tile++;
+		}
+	}
+}
+
+void engine_enemy_manager_text()
+{
+	struct_enemy_object *eo = &global_enemy_object;
+	engine_font_manager_draw_text( ( unsigned char * ) enemy_texts[ eo->index ], LEFT_X + 16, TOP_Y + 9 );
 }
 
 void engine_enemy_manager_hplo()
