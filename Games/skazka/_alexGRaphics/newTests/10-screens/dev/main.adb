@@ -181,6 +181,7 @@ S:G$engine_content_manager_load_logo_big$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_logo_small$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_village$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_player$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_content_manager_load_enemies$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_koschey$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_enemy_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_enemy_manager_load$0_0$0({2}DF,SV:S),C,0,0

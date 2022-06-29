@@ -6,6 +6,7 @@ void engine_content_manager_load_logo_big();
 void engine_content_manager_load_logo_small();
 void engine_content_manager_load_village();
 void engine_content_manager_load_player();
+void engine_content_manager_load_enemies();
 void engine_content_manager_load_koschey();
 
 #endif//_CONTENT_MANAGER_H_

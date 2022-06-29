@@ -20,9 +20,11 @@ void screen_forest_screen_load()
 
 	devkit_SMS_displayOff();		// TODO try comment this line out for smooth screen transition??
 	engine_content_manager_load_logo_small();
+	engine_graphics_manager_draw_logo_small( LEFT_X + 1, TOP_Y + 1 );
+
+	engine_content_manager_load_enemies();
 
 	engine_text_manager_clear( TOP_Y + 5, TOP_Y + 22 );
-	engine_graphics_manager_draw_logo_small( LEFT_X + 1, TOP_Y + 1 );
 
 	row = 6;
 	devkit_SMS_mapROMBank( FIXED_BANK );

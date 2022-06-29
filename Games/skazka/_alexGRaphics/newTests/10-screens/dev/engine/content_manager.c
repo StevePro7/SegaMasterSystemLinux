@@ -27,7 +27,7 @@ void engine_content_manager_load_logo_big()
 {
 	devkit_SMS_mapROMBank( logo_big__tiles__psgcompr_bank );
 	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) logo_big__tiles__psgcompr, LOGO_TILES );
-}
+}	
 
 void engine_content_manager_load_logo_small()
 {
@@ -48,6 +48,12 @@ void engine_content_manager_load_player()
 
 	devkit_SMS_mapROMBank( stats_inventory__tiles__psgcompr_bank );
 	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) stats_inventory__tiles__psgcompr, PLAYER_TILES + 32 );
+}
+
+void engine_content_manager_load_enemies()
+{
+	devkit_SMS_mapROMBank( battle_enemies__tiles__psgcompr_bank );
+	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) battle_enemies__tiles__psgcompr, PLAYER_TILES );
 }
 
 void engine_content_manager_load_koschey()
