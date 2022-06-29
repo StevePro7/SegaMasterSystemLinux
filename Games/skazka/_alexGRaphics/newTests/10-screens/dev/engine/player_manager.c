@@ -177,7 +177,27 @@ void engine_player_manager_hplo()
 
 void engine_player_manager_draw( unsigned char x, unsigned char y )
 {
+	struct_player_object *po = &global_player_object;
+	const unsigned char wide = 3;
+	const unsigned char high = 4;
 
+	const unsigned char start = ( po->armor * 36 ) + ( po->weapon * 3 );
+	unsigned char index = 0;
+	unsigned char value = 0;
+	unsigned int tile = 0;
+	unsigned char i, j;
+
+	for( j = 0; j < high; j++ )
+	{
+		for( i = 0; i < wide; i++ )
+		{
+			index = ( j * 9 ) + i + start;
+			value = index * 2;
+			tile = battle_player__tilemap__bin[ value ];
+			devkit_SMS_setNextTileatXY( x + i, y + j );
+			devkit_SMS_setTile( tile );
+		}
+	}
 }
 
 void engine_player_manager_dec_gold( unsigned char gold )

@@ -83,7 +83,7 @@ void engine_enemy_manager_load( unsigned char level )
 	}
 
 	// TODO delete
-	index = enemy_type_razboynik;
+	//index = enemy_type_razboynik;
 	// TODO delete
 	engine_target_manager_load( index );
 }

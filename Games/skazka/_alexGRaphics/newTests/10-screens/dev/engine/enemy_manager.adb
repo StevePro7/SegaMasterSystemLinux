@@ -4,7 +4,7 @@ S:Lenemy_manager.engine_enemy_manager_init$eo$1_0$122({2}DG,STtag_struct_enemy_o
 F:G$engine_enemy_manager_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lenemy_manager.engine_enemy_manager_load$level$1_0$123({1}SC:U),B,1,4
 S:Lenemy_manager.engine_enemy_manager_load$value$1_0$124({1}SC:U),R,0,0,[l]
-S:Lenemy_manager.engine_enemy_manager_load$index$1_0$124({1}SC:U),R,0,0,[]
+S:Lenemy_manager.engine_enemy_manager_load$index$1_0$124({1}SC:U),R,0,0,[c]
 F:G$engine_target_manager_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lenemy_manager.engine_target_manager_load$index$1_0$135({1}SC:U),B,1,4
 S:Lenemy_manager.engine_target_manager_load$eo$1_0$136({2}DG,STtag_struct_enemy_object:S),R,0,0,[]
