@@ -50,8 +50,8 @@ const unsigned char *life_texts[] =
 
 const unsigned char *forest_texts[] =
 {
-	"YOU ARE IN THE FOREST!",
-	"YOU ENCOUNTERED ENEMY: "
+	"YOU ARE IN THE FOREST",
+	"YOU ENCOUNTERED ENEMY"
 };
 
 const unsigned char *enemy_texts[] =
@@ -65,9 +65,10 @@ const unsigned char *enemy_texts[] =
 
 const unsigned char *fight_texts[] =
 {
-	"WHAT WILL YOU DO?  ",
-	"1) RUN  ",
-	"2) FIGHT",
+	"WHAT WILL YOU DO",
+	"",
+	"RUN  ",
+	"FIGHT",
 };
 
 const unsigned char *gold_texts[] =
