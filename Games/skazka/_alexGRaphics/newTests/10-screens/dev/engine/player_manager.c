@@ -20,9 +20,6 @@ void engine_player_manager_init()
 	po->def_weapon = weapon_type_dagger;	// Q$	ATK
 	po->def_armor = armor_type_none;		// W$	ARM
 	po->def_life = life_type_none;			// E$	UP
-
-	po->def_weapon = weapon_type_axe;
-	po->def_armor = armor_type_tegilay;
 }
 
 void engine_player_manager_load()
