@@ -175,6 +175,11 @@ void engine_player_manager_hplo()
 	engine_font_manager_draw_data( po->hp, LEFT_X + 14, FIGHT_ROW + 3 );
 }
 
+void engine_player_manager_draw( unsigned char x, unsigned char y )
+{
+
+}
+
 void engine_player_manager_dec_gold( unsigned char gold )
 {
 	struct_player_object *po = &global_player_object;

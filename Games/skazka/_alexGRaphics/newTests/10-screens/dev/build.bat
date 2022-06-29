@@ -29,7 +29,7 @@ cd engine
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 asm_manager.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 audio_manager.c
 "C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 content_manager.c
-"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 enemy_manager.c
+::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 enemy_manager.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 enum_manager.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 fight_manager.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 font_manager.c
@@ -39,7 +39,7 @@ cd engine
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 hack_manager.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 input_manager.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 locale_manager.c
-::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 player_manager.c
+"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 player_manager.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 random_manager.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 sample_manager.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 screen_manager.c

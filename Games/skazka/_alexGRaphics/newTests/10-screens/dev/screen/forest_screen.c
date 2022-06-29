@@ -52,7 +52,6 @@ void screen_forest_screen_update( unsigned char *screen_type )
 	*screen_type = screen_type_forest;
 }
 
-
 static void setup()
 {
 	unsigned char row;
@@ -65,9 +64,10 @@ static void setup()
 	engine_graphics_manager_draw_logo_small( LEFT_X + 1, TOP_Y + 1 );
 
 	engine_content_manager_load_enemies();
-	engine_enemy_manager_draw( LEFT_X + 27, TOP_Y + 17 );
+	engine_enemy_manager_draw( LEFT_X + 27, TOP_Y + 16 );
 
 	engine_content_manager_load_player();
+	engine_player_manager_draw( LEFT_X + 2, TOP_Y + 16 );
 
 	row = 6;
 	devkit_SMS_mapROMBank( FIXED_BANK );
