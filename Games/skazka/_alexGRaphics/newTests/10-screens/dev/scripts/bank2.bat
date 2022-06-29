@@ -4,8 +4,9 @@ cd ..
 cd banks
 cd bank2
 
-C:\SEGA\bmp2tile043\bmp2tile.exe raw/battle_enemies.png -savetiles "battle_enemies (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 160  -savetilemap "battle_enemies (tilemap).bin" -exit
-C:\SEGA\bmp2tile043\bmp2tile.exe raw/battle_player.png  -savetiles "battle_player (tiles).psgcompr"  -noremovedupes -nomirror -planar -tileoffset 224  -savetilemap "battle_player (tilemap).bin"  -exit
+C:\SEGA\bmp2tile043\bmp2tile.exe raw/battle_enemies.png -savetiles "battle_enemies (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 160 -savetilemap "battle_enemies (tilemap).bin" -exit
+C:\SEGA\bmp2tile043\bmp2tile.exe raw/battle_player.png  -savetiles "battle_player (tiles).psgcompr"    -removedupes -nomirror -planar -tileoffset 224 -savetilemap "battle_player (tilemap).bin"  -exit
+
 
 C:\SEGA\bmp2tile043\bmp2tile.exe raw/koschey.png -savetiles "koschey (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 256  -savetilemap "koschey (tilemap).bin" -exit
 

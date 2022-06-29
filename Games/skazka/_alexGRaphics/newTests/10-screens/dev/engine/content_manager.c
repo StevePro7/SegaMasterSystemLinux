@@ -53,7 +53,8 @@ void engine_content_manager_load_inventory()
 
 void engine_content_manager_load_player()
 {
-
+	devkit_SMS_mapROMBank( battle_player__tiles__psgcompr_bank );
+	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) battle_player__tiles__psgcompr, PLAYER_TILES );
 }
 
 void engine_content_manager_load_enemies()

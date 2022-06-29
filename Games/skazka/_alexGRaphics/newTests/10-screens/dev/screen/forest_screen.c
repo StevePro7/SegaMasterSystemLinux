@@ -23,7 +23,7 @@ void screen_forest_screen_load()
 	engine_graphics_manager_draw_logo_small( LEFT_X + 1, TOP_Y + 1 );
 
 	engine_content_manager_load_enemies();
-
+	engine_content_manager_load_player();
 	engine_text_manager_clear( TOP_Y + 5, TOP_Y + 22 );
 
 	row = 6;
