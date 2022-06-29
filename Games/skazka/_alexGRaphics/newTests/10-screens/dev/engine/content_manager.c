@@ -41,19 +41,25 @@ void engine_content_manager_load_village()
 	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) stats_village__tiles__psgcompr, SPRITE_TILES );
 }
 
-void engine_content_manager_load_player()
+
+void engine_content_manager_load_inventory()
 {
 	devkit_SMS_mapROMBank( stats_items__tiles__psgcompr_bank );
-	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) stats_items__tiles__psgcompr, PLAYER_TILES );
+	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) stats_items__tiles__psgcompr, OFFSET_TILES );
 
 	devkit_SMS_mapROMBank( stats_inventory__tiles__psgcompr_bank );
-	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) stats_inventory__tiles__psgcompr, PLAYER_TILES + 32 );
+	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) stats_inventory__tiles__psgcompr, OFFSET_TILES + 32 );
+}
+
+void engine_content_manager_load_player()
+{
+
 }
 
 void engine_content_manager_load_enemies()
 {
 	devkit_SMS_mapROMBank( battle_enemies__tiles__psgcompr_bank );
-	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) battle_enemies__tiles__psgcompr, PLAYER_TILES );
+	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) battle_enemies__tiles__psgcompr, OFFSET_TILES );
 }
 
 void engine_content_manager_load_koschey()

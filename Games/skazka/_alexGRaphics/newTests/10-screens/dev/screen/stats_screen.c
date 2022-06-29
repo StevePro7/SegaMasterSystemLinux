@@ -23,7 +23,7 @@ void screen_stats_screen_load()
 	devkit_SMS_displayOff();		// TODO try comment this line out for smooth screen transition??
 	engine_content_manager_load_logo_small();
 	engine_content_manager_load_village();
-	engine_content_manager_load_player();
+	engine_content_manager_load_inventory();
 
 	engine_text_manager_clear( TOP_Y + 5, TOP_Y + 22 );
 	engine_graphics_manager_draw_logo_small( LEFT_X + 1, TOP_Y + 1 );
