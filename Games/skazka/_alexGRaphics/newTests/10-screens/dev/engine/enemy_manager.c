@@ -153,7 +153,6 @@ static void draw_leshy( unsigned char x, unsigned char y )
 	}
 }
 
-
 void engine_enemy_manager_text()
 {
 	struct_enemy_object *eo = &global_enemy_object;
@@ -163,7 +162,7 @@ void engine_enemy_manager_text()
 void engine_enemy_manager_hplo()
 {
 	struct_enemy_object *eo = &global_enemy_object;
-	engine_font_manager_draw_data( eo->hplo, LEFT_X + 29, FIGHT_ROW + 3 );
+	engine_font_manager_draw_data( eo->hplo, LEFT_X + 29, TOP_Y + 21 );
 }
 
 void engine_enemy_manager_hit( char hp )

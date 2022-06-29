@@ -67,7 +67,7 @@ static void setup()
 	engine_enemy_manager_draw( LEFT_X + 27, TOP_Y + 16 );
 
 	engine_content_manager_load_player();
-	engine_player_manager_draw( LEFT_X + 2, TOP_Y + 16 );
+	engine_player_manager_draw( LEFT_X + 2, TOP_Y + 16 );		// TODO implement
 
 	row = 6;
 	devkit_SMS_mapROMBank( FIXED_BANK );
@@ -90,6 +90,20 @@ static void setup()
 
 	engine_font_manager_draw_punc( LOCALE_QMARK, LEFT_X + 23, TOP_Y + 11 );
 	engine_enemy_manager_text();
+
+	engine_font_manager_draw_text( LOCALE_FIGHT_MSG1, LEFT_X + 2, TOP_Y + 21 );
+	engine_font_manager_draw_text( LOCALE_FIGHT_MSG2, LEFT_X + 17, TOP_Y + 21 );
+	engine_font_manager_draw_punc( LOCALE_HYPHEN, LEFT_X + 10, TOP_Y + 21 );
+	engine_font_manager_draw_punc( LOCALE_HYPHEN, LEFT_X + 26, TOP_Y + 21 );
+
+	engine_player_manager_hplo();
+	engine_enemy_manager_hplo();
+
+	// TODO put in update function
+	engine_font_manager_draw_text( LOCALE_FIGHT_ENEMYS, LEFT_X + 7, TOP_Y + 17 );
+	engine_font_manager_draw_text( LOCALE_FIGHT_PLAYER, LEFT_X + 7, TOP_Y + 18 );
+	engine_font_manager_draw_data( 4, LEFT_X + 24, TOP_Y + 17 );
+	engine_font_manager_draw_data( 0, LEFT_X + 24, TOP_Y + 18 );
 
 	engine_graphics_manager_draw_border();
 	engine_graphics_manager_draw_underline( TOP_Y + 4 );

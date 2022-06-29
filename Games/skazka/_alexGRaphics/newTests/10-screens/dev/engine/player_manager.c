@@ -172,7 +172,7 @@ void engine_player_manager_draw_inventory( unsigned char x, unsigned char y )
 void engine_player_manager_hplo()
 {
 	struct_player_object *po = &global_player_object;
-	engine_font_manager_draw_data( po->hp, LEFT_X + 14, FIGHT_ROW + 3 );
+	engine_font_manager_draw_data( po->hp, LEFT_X + 13, TOP_Y + 21 );
 }
 
 void engine_player_manager_draw( unsigned char x, unsigned char y )
