@@ -4,6 +4,7 @@
 #include "global_manager.h"
 #include "text_manager.h"
 #include "../devkit/_sms_manager.h"
+#include "../content/gfx.h"
 #include "../banks/fixedbank.h"
 #include "../banks/bank2.h"
 #include <stdlib.h>
@@ -82,7 +83,8 @@ void engine_enemy_manager_load( unsigned char level )
 	}
 
 	// TODO delete
-	index = enemy_type_leshy;
+	//index = enemy_type_leshy;
+	// TODO delete
 	engine_target_manager_load( index );
 }
 
@@ -130,7 +132,25 @@ static void draw_enemy( unsigned char idx, unsigned char x, unsigned char y )
 }
 static void draw_leshy( unsigned char x, unsigned char y )
 {
+	const unsigned char *pnt = battle_enemies_leshy__tilemap__bin;
 
+	unsigned char wide = 3;
+	unsigned char high = 4;
+	unsigned char i, j;
+	unsigned char idx = 0;
+
+	unsigned int tile = 0;
+	unsigned int palette = devkit_TILE_USE_SPRITE_PALETTE();
+	for( j = 0; j < high; j++ )
+	{
+		for( i = 0; i < wide; i++ )
+		{
+			tile = ( SPRITE_TILES + idx ) | palette;
+			devkit_SMS_setNextTileatXY( x + i, y + j );
+			devkit_SMS_setTile( *pnt + tile );
+			idx++;
+		}
+	}
 }
 
 

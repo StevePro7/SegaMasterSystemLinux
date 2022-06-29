@@ -1,323 +1,456 @@
 ;!FILE enemy_manager.asm
 XL3
-H 9 areas 149 global symbols
+H 9 areas 1CE global symbols
 M enemy_manager
 O -mz80
 S _battle_enemies__tilemap__bin Ref000000
 S _rand Ref000000
+S _battle_enemies_leshy__tilemap__bin Ref000000
 S _enemy_texts Ref000000
 S _engine_font_manager_draw_text Ref000000
 S _devkit_SMS_setNextTileatXY Ref000000
 S .__.ABS. Def000000
+S _devkit_TILE_USE_SPRITE_PALETTE Ref000000
 S _engine_font_manager_draw_data Ref000000
 S _devkit_SMS_setTile Ref000000
 S __modsint Ref000000
-A _CODE size 17E flags 0 addr 0
-S A$enemy_manager$582 Def000179
-S A$enemy_manager$564 Def000173
-S A$enemy_manager$555 Def000171
-S A$enemy_manager$546 Def00016C
-S A$enemy_manager$537 Def000161
-S A$enemy_manager$474 Def000143
-S A$enemy_manager$465 Def000135
-S A$enemy_manager$384 Def00010C
-S A$enemy_manager$375 Def000101
-S A$enemy_manager$348 Def0000E2
-S A$enemy_manager$339 Def0000DB
-S A$enemy_manager$249 Def000089
-S A$enemy_manager$195 Def000059
-S A$enemy_manager$168 Def000049
-S XG$engine_target_manager_load$0$0 Def0000A7
-S C$enemy_manager.c$91$1_0$136 Def000066
-S C$enemy_manager.c$65$2_0$125 Def00004B
-S A$enemy_manager$592 Def00017D
-S A$enemy_manager$583 Def00017B
-S A$enemy_manager$556 Def000172
-S A$enemy_manager$547 Def00016D
-S A$enemy_manager$538 Def000164
-S A$enemy_manager$475 Def000144
-S A$enemy_manager$466 Def000138
-S A$enemy_manager$448 Def000131
-S A$enemy_manager$385 Def00010D
-S A$enemy_manager$349 Def0000E5
-S A$enemy_manager$259 Def000097
-S A$enemy_manager$196 Def00005C
-S C$enemy_manager.c$92$1_0$136 Def000066
-S C$enemy_manager.c$86$1_0$124 Def000055
-S A$enemy_manager$584 Def00017C
-S A$enemy_manager$548 Def00016E
-S A$enemy_manager$539 Def000165
-S A$enemy_manager$476 Def000145
-S A$enemy_manager$467 Def000139
-S A$enemy_manager$395 Def000116
-S A$enemy_manager$386 Def00010E
-S A$enemy_manager$368 Def0000F5
-S A$enemy_manager$296 Def0000AF
-S A$enemy_manager$269 Def0000A5
-S A$enemy_manager$179 Def00004B
-S C$enemy_manager.c$93$1_0$136 Def00006D
-S C$enemy_manager.c$87$1_0$124 Def00005D
-S A$enemy_manager$549 Def00016F
-S A$enemy_manager$486 Def00014A
-S A$enemy_manager$477 Def000148
-S A$enemy_manager$468 Def00013B
-S A$enemy_manager$396 Def000119
-S A$enemy_manager$387 Def00010F
-S A$enemy_manager$369 Def0000F8
-S A$enemy_manager$297 Def0000B3
-S C$enemy_manager.c$94$1_0$136 Def00007B
-S C$enemy_manager.c$59$2_0$125 Def000049
-S A$enemy_manager$478 Def000149
-S A$enemy_manager$469 Def00013C
-S A$enemy_manager$397 Def00011B
-S A$enemy_manager$388 Def000110
-S A$enemy_manager$379 Def000103
-S A$enemy_manager$298 Def0000B5
-S C$enemy_manager.c$95$1_0$136 Def000089
-S A$enemy_manager$398 Def00011C
-S A$enemy_manager$389 Def000113
-S A$enemy_manager$299 Def0000B8
-S XG$engine_enemy_manager_dead$0$0 Def00017D
-S C$enemy_manager.c$96$1_0$136 Def000097
-S A$enemy_manager$399 Def00011D
-S C$enemy_manager.c$97$1_0$136 Def0000A7
-S C$enemy_manager.c$89$1_0$136 Def00005E
-S A$enemy_manager$90 Def000000
-S C$enemy_manager.c$99$1_0$138 Def0000A8
-S A$enemy_manager$91 Def000003
+A _CODE size 238 flags 0 addr 0
+S A$enemy_manager$708 Def00020E
+S A$enemy_manager$672 Def0001F7
+S A$enemy_manager$645 Def0001E9
+S A$enemy_manager$627 Def0001DB
+S A$enemy_manager$618 Def0001D3
+S A$enemy_manager$582 Def0001A4
+S A$enemy_manager$573 Def000199
+S A$enemy_manager$555 Def000185
+S A$enemy_manager$537 Def000174
+S A$enemy_manager$492 Def00015C
+S A$enemy_manager$483 Def000152
+S A$enemy_manager$465 Def00013B
+S A$enemy_manager$456 Def000131
+S A$enemy_manager$447 Def00012B
+S A$enemy_manager$393 Def0000F6
+S A$enemy_manager$357 Def0000E0
+S A$enemy_manager$348 Def0000D5
+S A$enemy_manager$339 Def0000C9
+S A$enemy_manager$258 Def000088
+S A$enemy_manager$186 Def000057
+S A$enemy_manager$168 Def000048
+S XG$engine_target_manager_load$0$0 Def0000EA
+S C$enemy_manager.c$91$1_0$136 Def0000A1
+S C$enemy_manager.c$74$2_0$125 Def00008E
+S A$enemy_manager$736 Def000216
+S A$enemy_manager$709 Def00020F
+S A$enemy_manager$673 Def0001F8
+S A$enemy_manager$619 Def0001D4
+S A$enemy_manager$583 Def0001A5
+S A$enemy_manager$574 Def00019A
+S A$enemy_manager$538 Def000176
+S A$enemy_manager$493 Def00015E
+S A$enemy_manager$484 Def000153
+S A$enemy_manager$475 Def000146
+S A$enemy_manager$466 Def00013C
+S A$enemy_manager$448 Def00012C
+S A$enemy_manager$394 Def0000F8
+S A$enemy_manager$358 Def0000E3
+S A$enemy_manager$349 Def0000D7
+S A$enemy_manager$268 Def00008E
+S A$enemy_manager$196 Def00005D
+S A$enemy_manager$169 Def00004A
+S C$enemy_manager.c$68$3_0$131 Def000081
+S C$enemy_manager.c$66$2_0$125 Def00007C
+S C$enemy_manager.c$48$2_0$125 Def00005D
+S C$enemy_manager.c$46$3_0$126 Def000059
+S A$enemy_manager$782 Def00022E
+S A$enemy_manager$737 Def000219
+S A$enemy_manager$674 Def0001F9
+S A$enemy_manager$638 Def0001E4
+S A$enemy_manager$584 Def0001A6
+S A$enemy_manager$575 Def00019C
+S A$enemy_manager$548 Def00017E
+S A$enemy_manager$539 Def00017A
+S A$enemy_manager$494 Def00015F
+S A$enemy_manager$485 Def000156
+S A$enemy_manager$476 Def000149
+S A$enemy_manager$467 Def00013F
+S A$enemy_manager$458 Def000133
+S A$enemy_manager$449 Def00012D
+S A$enemy_manager$395 Def0000FB
+S A$enemy_manager$386 Def0000EB
+S A$enemy_manager$359 Def0000E5
+S A$enemy_manager$269 Def00008F
+S A$enemy_manager$197 Def00005E
+S C$enemy_manager.c$93$1_0$136 Def0000A9
+S C$enemy_manager.c$76$3_0$133 Def000093
+S C$enemy_manager.c$54$3_0$128 Def00006B
+S A$enemy_manager$783 Def000231
+S A$enemy_manager$747 Def000223
+S A$enemy_manager$738 Def00021A
+S A$enemy_manager$675 Def0001FA
+S A$enemy_manager$666 Def0001EC
+S A$enemy_manager$639 Def0001E5
+S A$enemy_manager$594 Def0001B1
+S A$enemy_manager$585 Def0001A7
+S A$enemy_manager$567 Def00018D
+S A$enemy_manager$495 Def000160
+S A$enemy_manager$486 Def000157
+S A$enemy_manager$477 Def00014A
+S A$enemy_manager$459 Def000134
+S A$enemy_manager$396 Def0000FC
+S A$enemy_manager$387 Def0000EE
+S A$enemy_manager$288 Def000099
+S A$enemy_manager$198 Def000060
+S C$enemy_manager.c$94$1_0$136 Def0000A9
+S C$enemy_manager.c$88$1_0$124 Def000099
+S A$enemy_manager$784 Def000233
+S A$enemy_manager$766 Def00022D
+S A$enemy_manager$757 Def00022B
+S A$enemy_manager$748 Def000226
+S A$enemy_manager$739 Def00021B
+S A$enemy_manager$676 Def0001FD
+S A$enemy_manager$667 Def0001EF
+S A$enemy_manager$595 Def0001B4
+S A$enemy_manager$586 Def0001A8
+S A$enemy_manager$568 Def000190
+S A$enemy_manager$559 Def000186
+S A$enemy_manager$496 Def000161
+S A$enemy_manager$487 Def000158
+S A$enemy_manager$478 Def00014B
+S A$enemy_manager$469 Def000141
+S A$enemy_manager$397 Def0000FD
+S A$enemy_manager$388 Def0000F0
+S A$enemy_manager$289 Def00009A
+S C$enemy_manager.c$95$1_0$136 Def0000B0
+S C$enemy_manager.c$89$1_0$124 Def0000A0
+S A$enemy_manager$794 Def000237
+S A$enemy_manager$785 Def000235
+S A$enemy_manager$758 Def00022C
+S A$enemy_manager$749 Def000227
+S A$enemy_manager$677 Def0001FE
+S A$enemy_manager$668 Def0001F2
+S A$enemy_manager$596 Def0001B5
+S A$enemy_manager$587 Def0001A9
+S A$enemy_manager$569 Def000191
+S A$enemy_manager$497 Def000162
+S A$enemy_manager$479 Def00014C
+S A$enemy_manager$398 Def000100
+S XG$engine_enemy_manager_dead$0$0 Def000237
+S C$enemy_manager.c$96$1_0$136 Def0000BE
+S A$enemy_manager$786 Def000236
+S A$enemy_manager$678 Def0001FF
+S A$enemy_manager$669 Def0001F3
+S A$enemy_manager$597 Def0001B6
+S A$enemy_manager$588 Def0001AA
+S A$enemy_manager$579 Def00019E
+S A$enemy_manager$498 Def000163
+S A$enemy_manager$399 Def000101
+S C$enemy_manager.c$97$1_0$136 Def0000CC
+S A$enemy_manager$688 Def000204
+S A$enemy_manager$679 Def000202
+S A$enemy_manager$598 Def0001B7
+S A$enemy_manager$589 Def0001AB
+S A$enemy_manager$499 Def000166
+S C$enemy_manager.c$98$1_0$136 Def0000DA
+S C$enemy_manager.c$58$3_0$129 Def00006F
+S A$enemy_manager$599 Def0001BA
+S C$enemy_manager.c$99$1_0$136 Def0000EA
+S A$enemy_manager$91 Def000000
 S _engine_enemy_manager_load Def00001A
-S G$engine_enemy_manager_draw$0$0 Def0000A8
-S A$enemy_manager$95 Def000005
-S A$enemy_manager$96 Def000008
-S G$engine_enemy_manager_hplo$0$0 Def00014B
+S A$enemy_manager$92 Def000003
+S G$engine_enemy_manager_draw$0$0 Def0000EB
+S A$enemy_manager$96 Def000005
+S A$enemy_manager$97 Def000008
+S G$engine_enemy_manager_hplo$0$0 Def000205
 S G$engine_enemy_manager_init$0$0 Def000000
-S Fenemy_manager$draw_enemy$0$0 Def0000D9
-S XG$engine_enemy_manager_load$0$0 Def00005D
-S _engine_enemy_manager_draw Def0000A8
-S Fenemy_manager$draw_leshy$0$0 Def000131
-S _engine_enemy_manager_hplo Def00014B
+S Fenemy_manager$draw_enemy$0$0 Def00011C
+S XG$engine_enemy_manager_load$0$0 Def0000A0
+S _engine_enemy_manager_draw Def0000EB
+S Fenemy_manager$draw_leshy$0$0 Def000174
+S _engine_enemy_manager_hplo Def000205
 S _engine_enemy_manager_init Def000000
-S G$engine_enemy_manager_hit$0$0 Def00015C
-S G$engine_enemy_manager_text$0$0 Def000132
-S XG$engine_enemy_manager_draw$0$0 Def0000D8
-S C$enemy_manager.c$120$1_0$142 Def0000E2
-S C$enemy_manager.c$140$1_0$150 Def000132
-S C$enemy_manager.c$141$1_0$150 Def00014A
-S C$enemy_manager.c$112$1_0$143 Def0000D9
-S G$engine_target_manager_load$0$0 Def00005E
-S C$enemy_manager.c$130$2_0$143 Def000130
-S C$enemy_manager.c$121$2_0$143 Def00012A
-S XG$engine_enemy_manager_hplo$0$0 Def00015B
-S C$enemy_manager.c$110$1_0$138 Def0000D8
-S C$enemy_manager.c$101$1_0$138 Def0000A8
-S C$enemy_manager.c$143$1_0$151 Def00014B
-S C$enemy_manager.c$114$2_0$143 Def0000E2
-S C$enemy_manager.c$108$2_0$140 Def0000C7
-S C$enemy_manager.c$102$1_0$138 Def0000A8
+S G$engine_enemy_manager_hit$0$0 Def000216
+S G$engine_enemy_manager_text$0$0 Def0001EC
+S C$enemy_manager.c$110$2_0$140 Def00010A
+S XG$engine_enemy_manager_draw$0$0 Def00011B
+S C$enemy_manager.c$122$1_0$142 Def000125
+S G$engine_target_manager_load$0$0 Def0000A1
+S XG$engine_enemy_manager_hplo$0$0 Def000215
+S C$enemy_manager.c$114$1_0$143 Def00011C
+S C$enemy_manager.c$101$1_0$138 Def0000EB
+S C$enemy_manager.c$132$2_0$143 Def000173
+S C$enemy_manager.c$123$2_0$143 Def00016D
 S XG$engine_enemy_manager_init$0$0 Def000019
-S C$enemy_manager.c$160$1_0$153 Def000173
-S C$enemy_manager.c$151$1_0$153 Def00015C
-S G$engine_enemy_manager_dead$0$0 Def000174
-S C$enemy_manager.c$152$1_0$153 Def00015C
-S C$enemy_manager.c$145$1_0$151 Def00014B
-S XFenemy_manager$draw_enemy$0$0 Def000130
-S C$enemy_manager.c$146$1_0$151 Def00014B
-S C$enemy_manager.c$137$2_0$150 Def000132
-S C$enemy_manager.c$147$1_0$151 Def00015B
-S C$enemy_manager.c$139$1_0$150 Def000132
-S C$enemy_manager.c$123$4_0$145 Def000127
-S C$enemy_manager.c$104$2_0$139 Def0000AF
-S C$enemy_manager.c$131$2_0$149 Def000131
-S _engine_enemy_manager_hit Def00015C
-S _engine_enemy_manager_text Def000132
-S C$enemy_manager.c$162$1_0$156 Def000174
-S C$enemy_manager.c$154$2_0$154 Def000169
-S C$enemy_manager.c$123$5_0$146 Def0000F5
-S A$enemy_manager$100 Def00000A
-S A$enemy_manager$110 Def000014
-S A$enemy_manager$101 Def00000D
-S C$enemy_manager.c$164$1_0$156 Def000174
-S C$enemy_manager.c$149$1_0$153 Def00015C
-S C$enemy_manager.c$134$2_0$149 Def000131
-S C$enemy_manager.c$125$5_0$146 Def000103
-S A$enemy_manager$300 Def0000B9
-S A$enemy_manager$111 Def000017
-S C$enemy_manager.c$165$1_0$156 Def000174
-S XFenemy_manager$draw_leshy$0$0 Def000131
-S C$enemy_manager.c$126$5_0$146 Def000116
-S C$enemy_manager.c$30$1_0$122 Def000019
-S C$enemy_manager.c$22$0_0$122 Def000000
-S _engine_target_manager_load Def00005E
-S A$enemy_manager$400 Def00011E
-S A$enemy_manager$301 Def0000BA
-S C$enemy_manager.c$166$1_0$156 Def00017D
-S C$enemy_manager.c$127$5_0$146 Def000126
-S A$enemy_manager$401 Def00011F
-S A$enemy_manager$320 Def0000D7
-S A$enemy_manager$302 Def0000BD
-S A$enemy_manager$230 Def000070
-S C$enemy_manager.c$158$2_0$155 Def000171
-S A$enemy_manager$510 Def00015A
-S A$enemy_manager$420 Def00012B
-S A$enemy_manager$402 Def000120
-S A$enemy_manager$303 Def0000BE
-S A$enemy_manager$240 Def00007E
-S A$enemy_manager$231 Def000073
-S A$enemy_manager$204 Def00005D
-S A$enemy_manager$150 Def00003A
-S A$enemy_manager$132 Def00001A
-S A$enemy_manager$105 Def00000F
-S C$enemy_manager.c$24$1_0$122 Def000000
-S A$enemy_manager$502 Def00014B
-S A$enemy_manager$403 Def000123
-S A$enemy_manager$340 Def0000DF
-S A$enemy_manager$304 Def0000BF
-S A$enemy_manager$250 Def00008C
-S A$enemy_manager$241 Def000081
-S A$enemy_manager$232 Def000076
-S A$enemy_manager$223 Def000066
-S A$enemy_manager$214 Def00005E
-S A$enemy_manager$151 Def00003D
-S A$enemy_manager$142 Def000027
-S A$enemy_manager$133 Def00001D
-S A$enemy_manager$106 Def000012
-S C$enemy_manager.c$32$1_0$124 Def00001A
+S C$enemy_manager.c$160$1_0$153 Def0001EC
+S C$enemy_manager.c$112$1_0$138 Def00011B
+S C$enemy_manager.c$103$1_0$138 Def0000EB
+S G$engine_enemy_manager_dead$0$0 Def00022E
+S C$enemy_manager.c$161$1_0$153 Def000204
+S XFenemy_manager$draw_enemy$0$0 Def000173
+S C$enemy_manager.c$116$2_0$143 Def000125
+S C$enemy_manager.c$104$1_0$138 Def0000EB
+S C$enemy_manager.c$150$5_0$152 Def0001C4
+S C$enemy_manager.c$151$5_0$152 Def0001DB
+S C$enemy_manager.c$163$1_0$154 Def000205
+S C$enemy_manager.c$140$2_0$149 Def00017E
+S _engine_enemy_manager_hit Def000216
+S _engine_enemy_manager_text Def0001EC
+S C$enemy_manager.c$180$1_0$156 Def00022D
+S C$enemy_manager.c$171$1_0$156 Def000216
+S C$enemy_manager.c$146$4_0$151 Def0001DE
+S C$enemy_manager.c$143$1_0$148 Def000180
+S C$enemy_manager.c$125$4_0$145 Def00016A
+S C$enemy_manager.c$106$2_0$139 Def0000F2
+S C$enemy_manager.c$172$1_0$156 Def000216
+S C$enemy_manager.c$165$1_0$154 Def000205
+S C$enemy_manager.c$133$2_0$149 Def000174
+S A$enemy_manager$101 Def00000A
+S C$enemy_manager.c$166$1_0$154 Def000205
+S C$enemy_manager.c$157$2_0$153 Def0001EC
+S C$enemy_manager.c$146$5_0$152 Def00018D
+S C$enemy_manager.c$125$5_0$146 Def000138
+S A$enemy_manager$300 Def0000A0
+S A$enemy_manager$210 Def000069
+S A$enemy_manager$120 Def000019
+S A$enemy_manager$111 Def000014
+S A$enemy_manager$102 Def00000D
+S C$enemy_manager.c$167$1_0$154 Def000215
+S C$enemy_manager.c$159$1_0$153 Def0001EC
+S XFenemy_manager$draw_leshy$0$0 Def0001EB
+S C$enemy_manager.c$144$2_0$149 Def0001E4
+S C$enemy_manager.c$135$2_0$149 Def00017E
+S C$enemy_manager.c$30$1_0$122 Def000014
+S _engine_target_manager_load Def0000A1
+S A$enemy_manager$400 Def000102
+S A$enemy_manager$310 Def0000A1
+S A$enemy_manager$220 Def00006F
+S A$enemy_manager$202 Def000062
+S A$enemy_manager$112 Def000017
+S C$enemy_manager.c$154$2_0$149 Def0001EB
+S C$enemy_manager.c$148$5_0$152 Def00019E
+S C$enemy_manager.c$127$5_0$146 Def000146
+S C$enemy_manager.c$31$1_0$122 Def000019
+S C$enemy_manager.c$23$0_0$122 Def000000
+S A$enemy_manager$500 Def000167
+S A$enemy_manager$410 Def00010A
+S A$enemy_manager$401 Def000103
+S A$enemy_manager$320 Def0000AC
+S A$enemy_manager$311 Def0000A3
+S A$enemy_manager$203 Def000064
+S C$enemy_manager.c$182$1_0$159 Def00022E
+S C$enemy_manager.c$174$2_0$157 Def000223
+S C$enemy_manager.c$149$5_0$152 Def0001B1
+S C$enemy_manager.c$128$5_0$146 Def000159
+S A$enemy_manager$600 Def0001BB
+S A$enemy_manager$510 Def00016B
+S A$enemy_manager$501 Def000168
+S A$enemy_manager$411 Def00010E
+S A$enemy_manager$402 Def000104
+S A$enemy_manager$330 Def0000BC
+S A$enemy_manager$321 Def0000AF
+S A$enemy_manager$312 Def0000A7
+S A$enemy_manager$150 Def000032
+S C$enemy_manager.c$129$5_0$146 Def000169
+S A$enemy_manager$610 Def0001C4
+S A$enemy_manager$601 Def0001BC
+S A$enemy_manager$412 Def000110
+S A$enemy_manager$403 Def000107
+S A$enemy_manager$340 Def0000CA
+S A$enemy_manager$331 Def0000BD
+S A$enemy_manager$250 Def000081
+S A$enemy_manager$232 Def000073
+S A$enemy_manager$214 Def00006B
+S A$enemy_manager$151 Def000033
+S A$enemy_manager$133 Def00001A
+S A$enemy_manager$106 Def00000F
+S C$enemy_manager.c$184$1_0$159 Def00022E
+S C$enemy_manager.c$169$1_0$156 Def000216
 S C$enemy_manager.c$25$1_0$122 Def000000
-S A$enemy_manager$503 Def00014E
-S A$enemy_manager$431 Def000130
-S A$enemy_manager$413 Def000127
-S A$enemy_manager$404 Def000124
-S A$enemy_manager$350 Def0000E7
-S A$enemy_manager$341 Def0000E1
-S A$enemy_manager$314 Def0000C7
-S A$enemy_manager$305 Def0000C0
-S A$enemy_manager$260 Def00009A
-S A$enemy_manager$251 Def00008F
-S A$enemy_manager$242 Def000084
-S A$enemy_manager$233 Def000078
-S A$enemy_manager$224 Def000069
-S A$enemy_manager$215 Def000060
-S A$enemy_manager$161 Def000043
-S A$enemy_manager$152 Def00003F
-S A$enemy_manager$143 Def00002B
-S A$enemy_manager$134 Def000020
-S C$enemy_manager.c$26$1_0$122 Def000005
-S _engine_enemy_manager_dead Def000174
-S A$enemy_manager$540 Def000166
-S A$enemy_manager$504 Def00014F
-S A$enemy_manager$414 Def000128
-S A$enemy_manager$405 Def000125
-S A$enemy_manager$360 Def0000EE
-S A$enemy_manager$351 Def0000E8
-S A$enemy_manager$315 Def0000CB
-S A$enemy_manager$306 Def0000C1
-S A$enemy_manager$261 Def00009D
-S A$enemy_manager$252 Def000092
-S A$enemy_manager$243 Def000086
-S A$enemy_manager$234 Def000079
-S A$enemy_manager$225 Def00006C
-S A$enemy_manager$216 Def000064
-S A$enemy_manager$180 Def00004C
-S A$enemy_manager$162 Def000044
-S A$enemy_manager$153 Def000041
-S A$enemy_manager$144 Def00002D
-S A$enemy_manager$135 Def000021
-S C$enemy_manager.c$34$1_0$124 Def00001A
-S C$enemy_manager.c$27$1_0$122 Def00000A
-S A$enemy_manager$550 Def000170
-S A$enemy_manager$541 Def000167
-S A$enemy_manager$505 Def000151
-S A$enemy_manager$370 Def0000F9
-S A$enemy_manager$352 Def0000E9
-S A$enemy_manager$316 Def0000CD
-S A$enemy_manager$307 Def0000C4
-S A$enemy_manager$262 Def0000A0
-S A$enemy_manager$253 Def000094
-S A$enemy_manager$244 Def000087
-S A$enemy_manager$235 Def00007A
-S A$enemy_manager$181 Def00004E
-S A$enemy_manager$163 Def000046
-S A$enemy_manager$145 Def000030
-S A$enemy_manager$136 Def000022
-S C$enemy_manager.c$60$2_0$125 Def00004B
-S C$enemy_manager.c$42$2_0$125 Def000043
-S C$enemy_manager.c$28$1_0$122 Def00000F
-S A$enemy_manager$506 Def000154
-S A$enemy_manager$470 Def00013D
-S A$enemy_manager$425 Def00012D
-S A$enemy_manager$380 Def000106
-S A$enemy_manager$371 Def0000FC
-S A$enemy_manager$362 Def0000F0
-S A$enemy_manager$353 Def0000EA
-S A$enemy_manager$317 Def0000D0
-S A$enemy_manager$308 Def0000C5
-S A$enemy_manager$290 Def0000A8
-S A$enemy_manager$263 Def0000A2
-S A$enemy_manager$254 Def000095
-S A$enemy_manager$245 Def000088
-S A$enemy_manager$182 Def000050
-S A$enemy_manager$164 Def000048
-S A$enemy_manager$146 Def000031
-S A$enemy_manager$137 Def000025
-S A$enemy_manager$119 Def000019
-S XG$engine_enemy_manager_hit$0$0 Def000173
-S XG$engine_enemy_manager_text$0$0 Def00014A
-S C$enemy_manager.c$61$2_0$125 Def00004B
-S C$enemy_manager.c$43$2_0$125 Def000043
-S C$enemy_manager.c$29$1_0$122 Def000014
-S A$enemy_manager$534 Def00015C
-S A$enemy_manager$507 Def000155
-S A$enemy_manager$471 Def00013E
-S A$enemy_manager$426 Def00012E
-S A$enemy_manager$390 Def000114
-S A$enemy_manager$381 Def000107
-S A$enemy_manager$363 Def0000F1
-S A$enemy_manager$354 Def0000EB
-S A$enemy_manager$318 Def0000D3
-S A$enemy_manager$309 Def0000C6
-S A$enemy_manager$291 Def0000AB
-S A$enemy_manager$264 Def0000A3
-S A$enemy_manager$255 Def000096
-S A$enemy_manager$192 Def000055
-S A$enemy_manager$183 Def000052
-S A$enemy_manager$147 Def000033
-S A$enemy_manager$138 Def000026
-S C$enemy_manager.c$82$1_0$124 Def000055
-S C$enemy_manager.c$37$1_0$124 Def000027
-S A$enemy_manager$580 Def000174
-S A$enemy_manager$535 Def00015F
-S A$enemy_manager$508 Def000156
-S A$enemy_manager$472 Def00013F
-S A$enemy_manager$409 Def000126
-S A$enemy_manager$391 Def000115
-S A$enemy_manager$382 Def000108
-S A$enemy_manager$373 Def0000FE
-S A$enemy_manager$364 Def0000F3
-S A$enemy_manager$355 Def0000EC
-S A$enemy_manager$328 Def0000D8
-S A$enemy_manager$319 Def0000D4
-S A$enemy_manager$292 Def0000AD
-S A$enemy_manager$274 Def0000A7
-S A$enemy_manager$265 Def0000A4
-S A$enemy_manager$229 Def00006D
-S A$enemy_manager$193 Def000057
+S A$enemy_manager$710 Def000210
+S A$enemy_manager$620 Def0001D5
+S A$enemy_manager$611 Def0001C7
+S A$enemy_manager$602 Def0001BD
+S A$enemy_manager$521 Def000170
+S A$enemy_manager$413 Def000113
+S A$enemy_manager$404 Def000108
+S A$enemy_manager$350 Def0000D8
+S A$enemy_manager$341 Def0000CB
+S A$enemy_manager$251 Def000083
+S A$enemy_manager$233 Def000074
+S A$enemy_manager$224 Def000071
+S A$enemy_manager$215 Def00006D
+S A$enemy_manager$170 Def00004D
+S A$enemy_manager$152 Def000035
+S A$enemy_manager$143 Def000027
+S A$enemy_manager$134 Def00001D
+S A$enemy_manager$107 Def000012
+S C$enemy_manager.c$185$1_0$159 Def00022E
+S C$enemy_manager.c$40$2_0$125 Def000045
+S C$enemy_manager.c$33$1_0$124 Def00001A
+S C$enemy_manager.c$26$1_0$122 Def000000
+S _engine_enemy_manager_dead Def00022E
+S A$enemy_manager$720 Def000215
+S A$enemy_manager$711 Def000213
+S A$enemy_manager$621 Def0001D8
+S A$enemy_manager$612 Def0001C9
+S A$enemy_manager$603 Def0001BE
+S A$enemy_manager$540 Def00017C
+S A$enemy_manager$522 Def000171
+S A$enemy_manager$450 Def00012E
+S A$enemy_manager$414 Def000116
+S A$enemy_manager$405 Def000109
+S A$enemy_manager$360 Def0000E6
+S A$enemy_manager$351 Def0000D9
+S A$enemy_manager$270 Def000091
+S A$enemy_manager$234 Def000076
+S A$enemy_manager$153 Def000038
+S A$enemy_manager$135 Def000020
+S C$enemy_manager.c$186$1_0$159 Def000237
+S C$enemy_manager.c$41$2_0$125 Def000045
+S C$enemy_manager.c$27$1_0$122 Def000005
+S A$enemy_manager$712 Def000214
+S A$enemy_manager$631 Def0001DE
+S A$enemy_manager$622 Def0001D9
+S A$enemy_manager$613 Def0001CC
+S A$enemy_manager$604 Def0001C1
+S A$enemy_manager$541 Def00017D
+S A$enemy_manager$505 Def000169
+S A$enemy_manager$460 Def000136
+S A$enemy_manager$451 Def00012F
+S A$enemy_manager$424 Def00011B
+S A$enemy_manager$415 Def000117
+S A$enemy_manager$370 Def0000EA
+S A$enemy_manager$361 Def0000E7
+S A$enemy_manager$325 Def0000B0
+S A$enemy_manager$280 Def000097
+S A$enemy_manager$262 Def00008A
+S A$enemy_manager$244 Def00007C
+S A$enemy_manager$208 Def000066
+S A$enemy_manager$190 Def000059
+S A$enemy_manager$172 Def00004F
+S A$enemy_manager$154 Def00003A
+S A$enemy_manager$136 Def000021
+S C$enemy_manager.c$178$2_0$158 Def00022B
+S C$enemy_manager.c$60$2_0$125 Def000071
+S C$enemy_manager.c$42$2_0$125 Def000052
+S C$enemy_manager.c$35$1_0$124 Def00001A
+S C$enemy_manager.c$28$1_0$122 Def00000A
+S A$enemy_manager$740 Def00021E
+S A$enemy_manager$704 Def000205
+S A$enemy_manager$650 Def0001EB
+S A$enemy_manager$632 Def0001DF
+S A$enemy_manager$623 Def0001DA
+S A$enemy_manager$614 Def0001CD
+S A$enemy_manager$605 Def0001C2
+S A$enemy_manager$515 Def00016D
+S A$enemy_manager$470 Def000142
+S A$enemy_manager$452 Def000130
+S A$enemy_manager$434 Def00011C
+S A$enemy_manager$416 Def00011A
+S A$enemy_manager$335 Def0000BE
+S A$enemy_manager$326 Def0000B3
+S A$enemy_manager$290 Def00009B
+S A$enemy_manager$263 Def00008C
+S A$enemy_manager$245 Def00007D
+S A$enemy_manager$209 Def000067
+S A$enemy_manager$191 Def00005B
+S A$enemy_manager$155 Def00003C
+S A$enemy_manager$137 Def000022
+S XG$engine_enemy_manager_hit$0$0 Def00022D
+S XG$engine_enemy_manager_text$0$0 Def000204
+S C$enemy_manager.c$70$2_0$125 Def000085
+S C$enemy_manager.c$64$3_0$130 Def000078
+S C$enemy_manager.c$61$2_0$125 Def000073
+S C$enemy_manager.c$52$2_0$125 Def000066
+S C$enemy_manager.c$43$2_0$125 Def000054
+S C$enemy_manager.c$36$1_0$124 Def000027
+S C$enemy_manager.c$29$1_0$122 Def00000F
+S A$enemy_manager$750 Def000228
+S A$enemy_manager$741 Def00021F
+S A$enemy_manager$705 Def000208
+S A$enemy_manager$615 Def0001CE
+S A$enemy_manager$606 Def0001C3
+S A$enemy_manager$570 Def000194
+S A$enemy_manager$561 Def000188
+S A$enemy_manager$552 Def000180
+S A$enemy_manager$516 Def00016E
+S A$enemy_manager$480 Def00014F
+S A$enemy_manager$471 Def000144
+S A$enemy_manager$444 Def000125
+S A$enemy_manager$435 Def00011E
+S A$enemy_manager$345 Def0000CC
+S A$enemy_manager$336 Def0000C1
+S A$enemy_manager$327 Def0000B6
+S A$enemy_manager$291 Def00009C
+S A$enemy_manager$246 Def00007F
+S A$enemy_manager$156 Def00003F
+S A$enemy_manager$147 Def000029
+S A$enemy_manager$138 Def000025
+S C$enemy_manager.c$72$3_0$132 Def00008A
+S C$enemy_manager.c$62$2_0$125 Def000073
+S C$enemy_manager.c$50$3_0$127 Def000062
+S C$enemy_manager.c$44$2_0$125 Def000054
+S A$enemy_manager$751 Def000229
+S A$enemy_manager$742 Def000220
+S A$enemy_manager$706 Def000209
+S A$enemy_manager$670 Def0001F5
+S A$enemy_manager$634 Def0001E1
+S A$enemy_manager$616 Def0001D1
+S A$enemy_manager$580 Def0001A1
+S A$enemy_manager$571 Def000197
+S A$enemy_manager$562 Def000189
+S A$enemy_manager$553 Def000181
+S A$enemy_manager$481 Def000150
+S A$enemy_manager$445 Def000128
+S A$enemy_manager$436 Def000122
+S A$enemy_manager$355 Def0000DA
+S A$enemy_manager$346 Def0000CF
+S A$enemy_manager$337 Def0000C4
+S A$enemy_manager$328 Def0000B9
+S A$enemy_manager$319 Def0000A9
+S A$enemy_manager$292 Def00009F
+S A$enemy_manager$274 Def000093
+S A$enemy_manager$256 Def000085
+S A$enemy_manager$238 Def000078
 S A$enemy_manager$184 Def000054
-S A$enemy_manager$148 Def000036
-S A$enemy_manager$581 Def000177
-S A$enemy_manager$545 Def000169
-S A$enemy_manager$536 Def000160
-S A$enemy_manager$518 Def00015B
-S A$enemy_manager$509 Def000159
-S A$enemy_manager$473 Def000140
-S A$enemy_manager$464 Def000132
-S A$enemy_manager$419 Def00012A
-S A$enemy_manager$383 Def000109
-S A$enemy_manager$374 Def0000FF
-S A$enemy_manager$356 Def0000ED
-S A$enemy_manager$338 Def0000D9
-S A$enemy_manager$239 Def00007B
-S A$enemy_manager$194 Def000058
-S A$enemy_manager$149 Def000038
+S A$enemy_manager$166 Def000045
+S A$enemy_manager$157 Def000041
+S A$enemy_manager$148 Def00002D
+S A$enemy_manager$139 Def000026
+S C$enemy_manager.c$83$1_0$124 Def000099
+S C$enemy_manager.c$80$3_0$134 Def000097
+S C$enemy_manager.c$38$1_0$124 Def000029
+S A$enemy_manager$752 Def00022A
+S A$enemy_manager$743 Def000221
+S A$enemy_manager$707 Def00020B
+S A$enemy_manager$680 Def000203
+S A$enemy_manager$671 Def0001F6
+S A$enemy_manager$644 Def0001E7
+S A$enemy_manager$617 Def0001D2
+S A$enemy_manager$590 Def0001AE
+S A$enemy_manager$581 Def0001A3
+S A$enemy_manager$563 Def00018B
+S A$enemy_manager$554 Def000184
+S A$enemy_manager$527 Def000173
+S A$enemy_manager$509 Def00016A
+S A$enemy_manager$491 Def000159
+S A$enemy_manager$482 Def000151
+S A$enemy_manager$464 Def000138
+S A$enemy_manager$446 Def00012A
+S A$enemy_manager$437 Def000124
+S A$enemy_manager$392 Def0000F2
+S A$enemy_manager$365 Def0000E8
+S A$enemy_manager$356 Def0000DD
+S A$enemy_manager$347 Def0000D2
+S A$enemy_manager$338 Def0000C7
+S A$enemy_manager$329 Def0000BB
+S A$enemy_manager$275 Def000095
+S A$enemy_manager$257 Def000086
+S A$enemy_manager$239 Def00007A
+S A$enemy_manager$185 Def000055
+S A$enemy_manager$176 Def000052
+S A$enemy_manager$167 Def000046
+S A$enemy_manager$158 Def000043
+S A$enemy_manager$149 Def00002F
 S G$engine_enemy_manager_load$0$0 Def00001A
 A _DATA size 5 flags 0 addr 0
 S _global_enemy_object Def000000
@@ -370,112 +503,178 @@ R 00 00 00 00 00 06 01 00 00 0B 01 00
 T 1A 00 00
 R 00 00 00 00
 T 1A 00 00 CD 00 00 11 0A 00 D5 E5 CD 00 00 F1 F1
-R 00 00 00 00 02 04 01 00 02 0C 08 00
-T 27 00 00 FD 21 02 00 FD 39 FD 7E 00 3D 28 22 FD
+R 00 00 00 00 02 04 01 00 02 0C 0A 00
+T 27 00 00 0E 00 FD 21 02 00 FD 39 FD 7E 00 3D 28
 R 00 00 00 00
-T 34 00 00 7E 00 D6 02 28 09 FD 7E 00 D6 03 28 0A
+T 34 00 00 10 FD 7E 00 D6 02 28 18 FD 7E 00 D6 03
 R 00 00 00 00
-T 41 00 00 18 12
+T 41 00 00 28 30 18 54
 R 00 00 00 00
-T 43 00 00
+T 45 00 00
 R 00 00 00 00
-T 43 00 00 7D D6 03 3E 00 17 18 0A
+T 45 00 00 7D D6 05 30 05 01 00 00 18 4A
 R 00 00 00 00
-T 4B 00 00
+T 4F 00 00
 R 00 00 00 00
-T 4B 00 00 7D FE 01 38 05 D6 02 3E 00 17
+T 4F 00 00 01 01 00 18 45
 R 00 00 00 00
-T 55 00 00
+T 54 00 00
 R 00 00 00 00
-T 55 00 00 3E 03 F5 33 CD 5E 00 33 C9
-R 00 00 00 00 00 08 00 00
-T 5E 00 00
+T 54 00 00 7D D6 03 30 04 0E 00 18 3C
 R 00 00 00 00
-T 5E 00 00 DD E5 DD 21 00 00 DD 39 21 00 00 DD 7E
+T 5D 00 00
+R 00 00 00 00
+T 5D 00 00 7D D6 06 30 04 0E 02 18 33
+R 00 00 00 00
+T 66 00 00
+R 00 00 00 00
+T 66 00 00 7D D6 08 30 04 0E 01 18 2A
+R 00 00 00 00
+T 6F 00 00
+R 00 00 00 00
+T 6F 00 00 0E 03 18 26
+R 00 00 00 00
+T 73 00 00
+R 00 00 00 00
+T 73 00 00 7D D6 01 30 04 0E 00 18 1D
+R 00 00 00 00
+T 7C 00 00
+R 00 00 00 00
+T 7C 00 00 7D D6 02 30 04 0E 01 18 14
+R 00 00 00 00
+T 85 00 00
+R 00 00 00 00
+T 85 00 00 7D D6 05 30 04 0E 02 18 0B
+R 00 00 00 00
+T 8E 00 00
+R 00 00 00 00
+T 8E 00 00 7D D6 08 30 04 0E 03 18 02
+R 00 00 00 00
+T 97 00 00
+R 00 00 00 00
+T 97 00 00 0E 04
+R 00 00 00 00
+T 99 00 00
+R 00 00 00 00
+T 99 00 00 79 F5 33 CD A1 00 33 C9
+R 00 00 00 00 00 07 00 00
+T A1 00 00
+R 00 00 00 00
+T A1 00 00 DD E5 DD 21 00 00 DD 39 21 00 00 DD 7E
 R 00 00 00 00 00 0C 01 00
-T 6B 00 00 04 77 01 01 00 11 00 00 DD 6E 04 26 00
+T AE 00 00 04 77 01 01 00 11 00 00 DD 6E 04 26 00
 R 00 00 00 00 00 06 01 00 00 09 02 00
-T 78 00 00 19 7E 02 01 02 00 11 06 00 DD 6E 04 26
+T BB 00 00 19 7E 02 01 02 00 11 06 00 DD 6E 04 26
 R 00 00 00 00 00 07 01 00 00 0A 02 00
-T 85 00 00 00 19 7E 02 01 03 00 11 0C 00 DD 6E 04
+T C8 00 00 00 19 7E 02 01 03 00 11 0C 00 DD 6E 04
 R 00 00 00 00 00 08 01 00 00 0B 02 00
-T 92 00 00 26 00 19 7E 02 01 04 00 11 12 00 DD 6E
+T D5 00 00 26 00 19 7E 02 01 04 00 11 12 00 DD 6E
 R 00 00 00 00 00 09 01 00 00 0C 02 00
-T 9F 00 00 04 26 00 19 7E 02 DD E1 C9
+T E2 00 00 04 26 00 19 7E 02 DD E1 C9
 R 00 00 00 00
-T A8 00 00
+T EB 00 00
 R 00 00 00 00
-T A8 00 00 3A 00 00 FE 03 28 18 FD 21 03 00 FD 39
+T EB 00 00 3A 00 00 FE 03 28 18 FD 21 03 00 FD 39
 R 00 00 00 00 00 04 01 00
-T B5 00 00 FD 66 00 E5 33 FD 66 FF E5 33 F5 33 CD
+T F8 00 00 FD 66 00 E5 33 FD 66 FF E5 33 F5 33 CD
 R 00 00 00 00
-T C2 00 00 D9 00 F1 33 C9
+T 05 01 00 1C 01 F1 33 C9
 R 00 00 00 00 00 03 00 00
-T C7 00 00
+T 0A 01 00
 R 00 00 00 00
-T C7 00 00 FD 21 03 00 FD 39 FD 66 00 FD 6E FF E5
+T 0A 01 00 FD 21 03 00 FD 39 FD 66 00 FD 6E FF E5
 R 00 00 00 00
-T D4 00 00 CD 31 01 F1 C9
+T 17 01 00 CD 74 01 F1 C9
 R 00 00 00 00 00 04 00 00
-T D9 00 00
+T 1C 01 00
 R 00 00 00 00
-T D9 00 00 DD E5 DD 21 00 00 DD 39 3B DD 4E 04 06
+T 1C 01 00 DD E5 DD 21 00 00 DD 39 3B DD 4E 04 06
 R 00 00 00 00
-T E6 00 00 00 69 60 29 09 29 29 EB 0E 00
+T 29 01 00 00 69 60 29 09 29 29 EB 0E 00
 R 00 00 00 00
-T F0 00 00
+T 33 01 00
 R 00 00 00 00
-T F0 00 00 79 D6 04 30 38 DD 7E 06 81 DD 77 FF 06
+T 33 01 00 79 D6 04 30 38 DD 7E 06 81 DD 77 FF 06
 R 00 00 00 00
-T FD 00 00 00
+T 40 01 00 00
 R 00 00 00 00
-T FE 00 00
+T 41 01 00
 R 00 00 00 00
-T FE 00 00 78 D6 03 30 27 DD 7E 05 80 C5 D5 DD 66
+T 41 01 00 78 D6 03 30 27 DD 7E 05 80 C5 D5 DD 66
 R 00 00 00 00
-T 0B 01 00 FF E5 33 F5 33 CD 00 00 F1 D1 C1 3A
-R 00 00 00 00 02 09 04 00
-T 17 01 00 00 00 26 00 6F 19 C5 D5 E5 CD 00 00 F1
-R 00 00 00 00 02 03 00 00 02 0D 07 00
-T 24 01 00 D1 C1 13 04 18 D4
+T 4E 01 00 FF E5 33 F5 33 CD 00 00 F1 D1 C1 3A
+R 00 00 00 00 02 09 05 00
+T 5A 01 00 00 00 26 00 6F 19 C5 D5 E5 CD 00 00 F1
+R 00 00 00 00 02 03 00 00 02 0D 09 00
+T 67 01 00 D1 C1 13 04 18 D4
 R 00 00 00 00
-T 2A 01 00
+T 6D 01 00
 R 00 00 00 00
-T 2A 01 00 0C 18 C3
+T 6D 01 00 0C 18 C3
 R 00 00 00 00
-T 2D 01 00
+T 70 01 00
 R 00 00 00 00
-T 2D 01 00 33 DD E1 C9
-R 00 00 00 00
-T 31 01 00
-R 00 00 00 00
-T 31 01 00 C9
-R 00 00 00 00
-T 32 01 00
-R 00 00 00 00
-T 32 01 00 01 00 00 3A 00 00 6F 26 00 29 09 4E 23
-R 00 00 00 00 02 04 02 00 00 07 01 00
-T 3F 01 00 46 11 10 09 D5 C5 CD 00 00 F1 F1 C9
-R 00 00 00 00 02 0A 03 00
-T 4B 01 00
-R 00 00 00 00
-T 4B 01 00 3A 01 00 4F 06 00 11 1D 15 D5 C5 CD
-R 00 00 00 00 00 04 01 00
-T 57 01 00 00 00 F1 F1 C9
-R 00 00 00 00 02 03 06 00
-T 5C 01 00
-R 00 00 00 00
-T 5C 01 00 01 01 00 0A 5F 21 02 00 39 7E 93 30 08
-R 00 00 00 00 00 04 01 00
-T 69 01 00 21 02 00 39 7B 96 02 C9
-R 00 00 00 00
-T 71 01 00
-R 00 00 00 00
-T 71 01 00 AF 02 C9
+T 70 01 00 33 DD E1 C9
 R 00 00 00 00
 T 74 01 00
 R 00 00 00 00
-T 74 01 00 3A 01 00 D6 01 3E 00 17 6F C9
+T 74 01 00 DD E5 DD 21 00 00 DD 39 F5 F5 06 00 C5
+R 00 00 00 00
+T 81 01 00 CD 00 00 EB C1 0E 00
+R 00 00 00 00 02 04 07 00
+T 88 01 00
+R 00 00 00 00
+T 88 01 00 79 D6 04 30 5A DD 7E 05 81 DD 77 FC DD
+R 00 00 00 00
+T 95 01 00 70 FF 06 00
+R 00 00 00 00
+T 99 01 00
+R 00 00 00 00
+T 99 01 00 78 D6 03 30 43 DD 6E FF 3E 00 3C F5 7D
+R 00 00 00 00
+T A6 01 00 B3 6F F1 B2 67 DD 75 FD DD 74 FE DD 7E
+R 00 00 00 00
+T B3 01 00 04 80 C5 D5 DD 66 FC E5 33 F5 33 CD
+R 00 00 00 00
+T BF 01 00 00 00 F1 D1 C1 3A 00 00 26 00 DD 86 FD
+R 00 00 00 00 02 03 05 00 02 09 02 00
+T CC 01 00 6F 7C DD 8E FE 67 C5 D5 E5 CD 00 00 F1
+R 00 00 00 00 02 0D 09 00
+T D9 01 00 D1 C1 DD 34 FF 04 18 B8
+R 00 00 00 00
+T E1 01 00
+R 00 00 00 00
+T E1 01 00 DD 46 FF 0C 18 A1
+R 00 00 00 00
+T E7 01 00
+R 00 00 00 00
+T E7 01 00 DD F9 DD E1 C9
+R 00 00 00 00
+T EC 01 00
+R 00 00 00 00
+T EC 01 00 01 00 00 3A 00 00 6F 26 00 29 09 4E 23
+R 00 00 00 00 02 04 03 00 00 07 01 00
+T F9 01 00 46 11 10 09 D5 C5 CD 00 00 F1 F1 C9
+R 00 00 00 00 02 0A 04 00
+T 05 02 00
+R 00 00 00 00
+T 05 02 00 3A 01 00 4F 06 00 11 1D 15 D5 C5 CD
+R 00 00 00 00 00 04 01 00
+T 11 02 00 00 00 F1 F1 C9
+R 00 00 00 00 02 03 08 00
+T 16 02 00
+R 00 00 00 00
+T 16 02 00 01 01 00 0A 5F 21 02 00 39 7E 93 30 08
+R 00 00 00 00 00 04 01 00
+T 23 02 00 21 02 00 39 7B 96 02 C9
+R 00 00 00 00
+T 2B 02 00
+R 00 00 00 00
+T 2B 02 00 AF 02 C9
+R 00 00 00 00
+T 2E 02 00
+R 00 00 00 00
+T 2E 02 00 3A 01 00 D6 01 3E 00 17 6F C9
 R 00 00 00 00 00 04 01 00
 T 00 00 00
 R 00 00 07 00
