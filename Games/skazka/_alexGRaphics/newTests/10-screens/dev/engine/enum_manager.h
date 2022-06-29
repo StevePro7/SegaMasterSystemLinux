@@ -73,7 +73,7 @@ typedef enum tag_enum_action_type
 
 typedef enum tag_enum_weapon_type
 {
-	weapon_type_none = 0,
+	weapon_type_dagger = 0,
 	weapon_type_sword = 1,
 	weapon_type_axe = 2,
 

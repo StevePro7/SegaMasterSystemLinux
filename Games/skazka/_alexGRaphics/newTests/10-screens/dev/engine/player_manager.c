@@ -17,9 +17,12 @@ void engine_player_manager_init()
 	po->def_xp = 0;							// Z
 	po->def_hp = 10;						// N
 	po->def_gold = 10;						// V
-	po->def_weapon = weapon_type_none;		// Q$	ATK
+	po->def_weapon = weapon_type_dagger;	// Q$	ATK
 	po->def_armor = armor_type_none;		// W$	ARM
 	po->def_life = life_type_none;			// E$	UP
+
+	po->def_weapon = weapon_type_axe;
+	po->def_armor = armor_type_tegilay;
 }
 
 void engine_player_manager_load()
