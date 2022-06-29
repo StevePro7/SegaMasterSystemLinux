@@ -19,7 +19,7 @@ void engine_content_manager_load_tiles()
 	devkit_SMS_loadBGPalette( ( void * ) background__palette__bin );
 
 	// Sprite tiles
-	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) battle_enemies_leshy__tiles__psgcompr, SPRITE_TILES );
+	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) battle_enemies_leshy__tiles__psgcompr, SPRITE_TILES + 4 );
 	devkit_SMS_loadSpritePalette( ( void * ) sprite__palette__bin );
 }
 
