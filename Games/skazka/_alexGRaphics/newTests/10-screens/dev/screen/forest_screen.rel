@@ -1,38 +1,58 @@
 ;!FILE forest_screen.asm
 XL3
-H 9 areas 1D global symbols
+H 9 areas 31 global symbols
 M forest_screen
 O -mz80
-S _engine_font_manager_draw_text Ref000000
+S _devkit_SMS_displayOn Ref000000
+S _engine_graphics_manager_draw_logo_small Ref000000
+S _engine_text_manager_clear Ref000000
 S .__.ABS. Def000000
-A _CODE size 23 flags 0 addr 0
-S C$forest_screen.c$5$0_0$9 Def000000
-S G$screen_forest_screen_update$0$0 Def00001C
-S C$forest_screen.c$7$1_0$9 Def000000
-S C$forest_screen.c$8$1_0$9 Def00000D
-S A$forest_screen$100 Def000022
-S _screen_forest_screen_update Def00001C
-S C$forest_screen.c$10$1_0$11 Def00001C
-S C$forest_screen.c$12$1_0$11 Def00001C
-S C$forest_screen.c$13$1_0$11 Def000022
-S XG$screen_forest_screen_update$0$0 Def000022
-S A$forest_screen$60 Def000007
-S A$forest_screen$61 Def000008
-S A$forest_screen$71 Def00000D
-S A$forest_screen$62 Def00000B
+S _devkit_SMS_displayOff Ref000000
+S _engine_graphics_manager_draw_border Ref000000
+S _engine_content_manager_load_logo_small Ref000000
+S _engine_graphics_manager_draw_underline Ref000000
+A _CODE size 2B flags 0 addr 0
+S G$screen_forest_screen_update$0$0 Def000024
+S A$forest_screen$120 Def000027
+S A$forest_screen$121 Def000028
+S A$forest_screen$104 Def000021
+S C$forest_screen.c$21$1_0$116 Def000006
+S C$forest_screen.c$22$1_0$116 Def00000E
+S _screen_forest_screen_update Def000024
+S C$forest_screen.c$30$1_0$118 Def000024
+S A$forest_screen$117 Def000024
+S C$forest_screen.c$24$1_0$116 Def000016
+S C$forest_screen.c$16$0_0$116 Def000000
+S A$forest_screen$118 Def000025
+S C$forest_screen.c$32$1_0$118 Def000024
+S C$forest_screen.c$25$1_0$116 Def000019
+S A$forest_screen$119 Def000026
+S C$forest_screen.c$33$1_0$118 Def00002A
+S A$forest_screen$129 Def00002A
+S C$forest_screen.c$27$1_0$116 Def000021
+S C$forest_screen.c$18$1_0$116 Def000000
+S C$forest_screen.c$28$1_0$116 Def000021
+S C$forest_screen.c$19$1_0$116 Def000003
+S XG$screen_forest_screen_update$0$0 Def00002A
+S A$forest_screen$80 Def000012
+S A$forest_screen$71 Def000006
 S G$screen_forest_screen_load$0$0 Def000000
-S A$forest_screen$90 Def00001E
-S A$forest_screen$63 Def00000C
-S A$forest_screen$91 Def00001F
-S A$forest_screen$92 Def000020
-S A$forest_screen$57 Def000000
-S A$forest_screen$58 Def000003
-S A$forest_screen$59 Def000004
-S A$forest_screen$88 Def00001C
-S A$forest_screen$89 Def00001D
+S A$forest_screen$90 Def00001B
+S A$forest_screen$81 Def000015
+S A$forest_screen$72 Def000009
+S A$forest_screen$63 Def000000
+S A$forest_screen$91 Def00001C
+S A$forest_screen$73 Def00000A
+S A$forest_screen$92 Def00001D
+S A$forest_screen$74 Def00000D
+S A$forest_screen$93 Def000020
+S A$forest_screen$85 Def000016
+S A$forest_screen$67 Def000003
+S A$forest_screen$78 Def00000E
+S A$forest_screen$79 Def000011
+S A$forest_screen$89 Def000019
 S _screen_forest_screen_load Def000000
-S Fforest_screen$__str_0$0_0$0 Def00000E
-S XG$screen_forest_screen_load$0$0 Def00000D
+S XG$screen_forest_screen_load$0$0 Def000021
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -43,17 +63,13 @@ A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
-T 00 00 00 11 0A 02 D5 21 0E 00 E5 CD 00 00 F1 F1
-R 00 00 00 00 00 08 00 00 02 0C 00 00
-T 0D 00 00 C9
+T 00 00 00 CD 00 00 CD 00 00 11 05 16 D5 CD 00 00
+R 00 00 00 00 02 04 04 00 02 07 06 00 02 0E 02 00
+T 0D 00 00 F1 11 01 01 D5 CD 00 00 F1 CD 00 00 3E
+R 00 00 00 00 02 09 01 00 02 0D 05 00
+T 1A 00 00 04 F5 33 CD 00 00 33 C3 00 00
+R 00 00 00 00 02 07 07 00 02 0B 00 00
+T 24 00 00
 R 00 00 00 00
-T 0E 00 00
-R 00 00 00 00
-T 0E 00 00 46 4F 52 45 53 54 20 53 43 52 45 45 4E
-R 00 00 00 00
-T 1B 00 00 00
-R 00 00 00 00
-T 1C 00 00
-R 00 00 00 00
-T 1C 00 00 C1 E1 E5 C5 36 08 C9
+T 24 00 00 C1 E1 E5 C5 36 08 C9
 R 00 00 00 00

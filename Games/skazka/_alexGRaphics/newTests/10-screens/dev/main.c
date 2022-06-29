@@ -13,15 +13,15 @@ void main( void )
 	devkit_SMS_useFirstHalfTilesforSprites( false );
 
 	////open_screen_type = screen_type_splash;
-	open_screen_type = screen_type_title;
-	open_screen_type = screen_type_menu;
+	//open_screen_type = screen_type_title;
+	//open_screen_type = screen_type_menu;
 
 	//open_screen_type = screen_type_diff;
 	//open_screen_type = screen_type_intro;
 	//open_screen_type = screen_type_stats;
 	//open_screen_type = screen_type_victory;
 	//open_screen_type = screen_type_relive;	// TODO counter broken
-	//open_screen_type = screen_type_prep;
+	open_screen_type = screen_type_forest;
 	//open_screen_type = screen_type_stats;
 	//open_screen_type = screen_type_shop;
 	//open_screen_type = screen_type_talk;
@@ -54,10 +54,10 @@ void main( void )
 	{
 		if( devkit_SMS_queryPauseRequested() )
 		{
-			devkit_SMS_resetPauseRequest();
-			global_pause = !global_pause;
-			if( global_pause )
-			{
+				devkit_SMS_resetPauseRequest();
+				global_pause = !global_pause;
+				if( global_pause )
+				{
 				//devkit_PSGSilenceChannels();
 			}
 			else
