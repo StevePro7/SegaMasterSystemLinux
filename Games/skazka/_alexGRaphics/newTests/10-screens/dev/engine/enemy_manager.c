@@ -82,8 +82,7 @@ void engine_enemy_manager_load( unsigned char level )
 	}
 
 	// TODO delete
-	index = enemy_type_razboynik;
-	//index = enemy_type_leshy;
+	index = enemy_type_leshy;
 	engine_target_manager_load( index );
 }
 
