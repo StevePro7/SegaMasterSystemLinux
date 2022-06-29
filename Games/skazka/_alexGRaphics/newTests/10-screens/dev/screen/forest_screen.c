@@ -29,7 +29,7 @@ static unsigned char run_away_val;
 static void setup();
 //static bool calc_add_armor();
 
-unsigned char run_away_hit[ MAX_ENEMIES ] = { 1, 2, 1 };
+unsigned char run_away_hit[ 2 ] = { 1, 2 };
 
 void screen_forest_screen_load()
 {
@@ -45,10 +45,30 @@ void screen_forest_screen_load()
 	devkit_SMS_displayOff();		// TODO try comment this line out for smooth screen transition??
 	setup();
 	devkit_SMS_displayOn();			// TODO try comment this line out for smooth screen transition??
+
+	curr_selection = 0;
+	prev_selection = 0;
+	event_stage = scene_type_select;
+
+	enemys_damage = 0;
+	player_damage = 0;
+	player_gold = 0;
+	run_away_val = run_away_hit[ go->difficulty ];
+	if( po->level == 1 && go->difficulty == diff_type_hard )
+	{
+		run_away_val = 1;
+	}
 }
 
 void screen_forest_screen_update( unsigned char *screen_type )
 {
+	curr_selection = engine_select_manager_update( select_type );
+	if( NO_SELECTION == curr_selection )
+	{
+		*screen_type = screen_type_forest;
+		return;
+	}
+
 	*screen_type = screen_type_forest;
 }
 
@@ -87,8 +107,11 @@ static void setup()
 		engine_font_manager_draw_text( ( unsigned char * ) fight_texts[ idx ], LEFT_X + 7, TOP_Y + row );
 		row++;
 	}
-
 	engine_font_manager_draw_punc( LOCALE_QMARK, LEFT_X + 23, TOP_Y + 11 );
+
+	row = 13;
+	engine_select_manager_load( select_type, LEFT_X + 5, TOP_Y + row, 2 );
+
 	engine_enemy_manager_text();
 
 	engine_font_manager_draw_text( LOCALE_FIGHT_MSG1, LEFT_X + 2, TOP_Y + 21 );
@@ -100,10 +123,11 @@ static void setup()
 	engine_enemy_manager_hplo();
 
 	// TODO put in update function
-	engine_font_manager_draw_text( LOCALE_FIGHT_ENEMYS, LEFT_X + 7, TOP_Y + 17 );
-	engine_font_manager_draw_text( LOCALE_FIGHT_PLAYER, LEFT_X + 7, TOP_Y + 18 );
-	engine_font_manager_draw_data( 4, LEFT_X + 24, TOP_Y + 17 );
-	engine_font_manager_draw_data( 0, LEFT_X + 24, TOP_Y + 18 );
+	//engine_font_manager_draw_text( LOCALE_FIGHT_ENEMYS, LEFT_X + 7, TOP_Y + 17 );
+	//engine_font_manager_draw_text( LOCALE_FIGHT_PLAYER, LEFT_X + 7, TOP_Y + 18 );
+	//engine_font_manager_draw_data( 4, LEFT_X + 24, TOP_Y + 17 );
+	//engine_font_manager_draw_data( 0, LEFT_X + 24, TOP_Y + 18 );
+	// TODO put in update function
 
 	engine_graphics_manager_draw_border();
 	engine_graphics_manager_draw_underline( TOP_Y + 4 );
