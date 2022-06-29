@@ -16,6 +16,9 @@ unsigned char ax_num[ MAX_ENEMIES ] =	{  1,  1,  2,  2,  3,  4 };
 unsigned char gldo_num[ MAX_ENEMIES ] = {  5,  5, 10, 10, 15,  0 };
 unsigned char xpo_num[ MAX_ENEMIES ] =	{  2,  2,  4,  4, 10,  0 };
 
+static void draw_enemy( unsigned char idx, unsigned char x, unsigned char y );
+static void draw_leshy( unsigned char x, unsigned char y );
+
 void engine_enemy_manager_init()
 {
 	struct_enemy_object *eo = &global_enemy_object;
@@ -79,8 +82,8 @@ void engine_enemy_manager_load( unsigned char level )
 	}
 
 	// TODO delete
-	//index = enemy_type_hungry_wolf;
 	index = enemy_type_razboynik;
+	//index = enemy_type_leshy;
 	engine_target_manager_load( index );
 }
 
@@ -97,14 +100,25 @@ void engine_target_manager_load( unsigned char index )
 void engine_enemy_manager_draw( unsigned char x, unsigned char y )
 {
 	struct_enemy_object *eo = &global_enemy_object;
+	if( enemy_type_leshy != eo->index )
+	{
+		draw_enemy( eo->index, x, y );
+	}
+	else
+	{
+		draw_leshy( x, y );
+	}
+}
+
+static void draw_enemy( unsigned char idx, unsigned char x, unsigned char y )
+{
 	const unsigned char *pnt = battle_enemies__tilemap__bin;
 
 	unsigned char wide = 3;
 	unsigned char high = 4;
 	unsigned char i, j;
-	unsigned char idx = 0;
 
-	unsigned int tile = eo->index * ( wide * high );
+	unsigned int tile = idx * ( wide * high );
 	for( j = 0; j < high; j++ )
 	{
 		for( i = 0; i < wide; i++ )
@@ -115,6 +129,11 @@ void engine_enemy_manager_draw( unsigned char x, unsigned char y )
 		}
 	}
 }
+static void draw_leshy( unsigned char x, unsigned char y )
+{
+
+}
+
 
 void engine_enemy_manager_text()
 {
