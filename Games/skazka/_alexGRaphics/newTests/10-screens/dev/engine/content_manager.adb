@@ -3,6 +3,7 @@ F:G$engine_content_manager_load_tiles$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_content_manager_load_logo_big$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_content_manager_load_logo_small$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_content_manager_load_village$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+F:G$engine_content_manager_load_inventory$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_content_manager_load_player$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_content_manager_load_enemies$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_content_manager_load_koschey$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
