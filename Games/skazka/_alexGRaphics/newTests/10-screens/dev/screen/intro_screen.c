@@ -13,6 +13,8 @@
 #include "../banks/fixedbank.h"
 #include <stdlib.h>
 
+#define INTRO_SCREEN_DELAY		900
+
 void screen_intro_screen_load()
 {
 	unsigned char row;
@@ -40,9 +42,25 @@ void screen_intro_screen_load()
 	engine_font_manager_draw_punc( LOCALE_STOP, LEFT_X + 16, TOP_Y + 19 );
 
 	devkit_SMS_displayOn();			// TODO try comment this line out for smooth screen transition??
+
+	engine_timer_manager_load( INTRO_SCREEN_DELAY );
+	engine_game_manager_flash_on();
 }
 
 void screen_intro_screen_update( unsigned char *screen_type )
 {
+	unsigned char input;
+	unsigned char timer;
+
+	input = engine_input_manager_hold( input_type_fire1 );
+	timer = engine_timer_manager_update();
+
+	if( input || timer )
+	{
+		*screen_type = screen_type_load;
+		return;
+	}
+
+	rand();
 	*screen_type = screen_type_intro;
 }
