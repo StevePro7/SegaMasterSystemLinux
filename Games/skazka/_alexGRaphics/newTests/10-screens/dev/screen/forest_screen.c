@@ -82,6 +82,15 @@ void screen_forest_screen_update( unsigned char *screen_type )
 		{
 			engine_font_manager_draw_text( LOCALE_FIGHT_BLANKS, LEFT_X + 7, TOP_Y + 17 );
 			engine_font_manager_draw_text( LOCALE_FIGHT_BLANKS, LEFT_X + 7, TOP_Y + 18 );
+
+
+			// Display updated HP after checking deaths.
+			engine_player_manager_hplo();
+			engine_enemy_manager_hplo();
+
+			event_stage = scene_type_select;
+			*screen_type = screen_type_forest;
+			return;
 		}
 	}
 
