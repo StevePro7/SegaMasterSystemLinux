@@ -20,5 +20,5 @@ extern const unsigned char	splash__tilemap__bin[];
 #define				splash__tilemap__bin_size 1536
 
 extern const unsigned char	splash__tiles__psgcompr[];
-#define				splash__tiles__psgcompr_size 2692
+#define				splash__tiles__psgcompr_size 3268
 

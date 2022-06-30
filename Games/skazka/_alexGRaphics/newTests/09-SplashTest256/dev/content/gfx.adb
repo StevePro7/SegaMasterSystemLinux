@@ -6,4 +6,4 @@ S:G$logo_big__palette__bin$0_0$0({16}DA16d,SC:U),D,0,0
 S:G$logo_big__tilemap__bin$0_0$0({280}DA280d,SC:U),D,0,0
 S:G$logo_big__tiles__psgcompr$0_0$0({2032}DA2032d,SC:U),D,0,0
 S:G$splash__tilemap__bin$0_0$0({1536}DA1536d,SC:U),D,0,0
-S:G$splash__tiles__psgcompr$0_0$0({2692}DA2692d,SC:U),D,0,0
+S:G$splash__tiles__psgcompr$0_0$0({3268}DA3268d,SC:U),D,0,0
