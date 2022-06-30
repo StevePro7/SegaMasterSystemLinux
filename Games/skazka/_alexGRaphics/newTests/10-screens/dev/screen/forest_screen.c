@@ -1,16 +1,20 @@
 #include "forest_screen.h"
+//#include "../engine/audio_manager.h"
 #include "../engine/content_manager.h"
 #include "../engine/enemy_manager.h"
 #include "../engine/enum_manager.h"
+#include "../engine/fight_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/game_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/graphics_manager.h"
+#include "../engine/hack_manager.h"
+#include "../engine/input_manager.h"
 #include "../engine/locale_manager.h"
 #include "../engine/player_manager.h"
+#include "../engine/random_manager.h"
 #include "../engine/select_manager.h"
 #include "../engine/text_manager.h"
-#include "../engine/timer_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
 #include <stdbool.h>
@@ -62,6 +66,27 @@ void screen_forest_screen_load()
 
 void screen_forest_screen_update( unsigned char *screen_type )
 {
+	struct_player_object *po = &global_player_object;
+	struct_hack_object *ho = &global_hack_object;
+	struct_game_object *go = &global_game_object;
+	unsigned char random;
+	unsigned char input;
+	unsigned char value;
+	unsigned char xp = 0;
+	bool add_armor = true;
+
+	if( scene_type_pushon == event_stage )
+	{
+	}
+
+	if( scene_type_select == event_stage )
+	{
+	}
+
+	if( scene_type_decide == event_stage )
+	{
+	}
+
 	curr_selection = engine_select_manager_update( select_type );
 	if( NO_SELECTION == curr_selection )
 	{

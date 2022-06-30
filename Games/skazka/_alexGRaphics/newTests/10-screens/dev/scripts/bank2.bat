@@ -15,7 +15,7 @@ C:\SEGA\bmp2tile043\bmp2tile.exe raw/logo_small.png -savetiles "logo_small (tile
 
 C:\SEGA\bmp2tile043\bmp2tile.exe raw/stats_inventory.png -savetiles "stats_inventory (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 160  -savetilemap "stats_inventory (tilemap).bin" -exit
 C:\SEGA\bmp2tile043\bmp2tile.exe raw/stats_items.png     -savetiles "stats_items (tiles).psgcompr"     -noremovedupes -nomirror -planar -tileoffset 192  -savetilemap "stats_items (tilemap).bin"     -exit
-C:\SEGA\bmp2tile043\bmp2tile.exe raw/stats_village.png   -savetiles "stats_village (tiles).psgcompr"   -noremovedupes -nomirror -planar -tileoffset 256  -savetilemap "stats_village (tilemap).bin"   -exit
+C:\SEGA\bmp2tile043\bmp2tile.exe raw/stats_village.png   -savetiles "stats_village (tiles).psgcompr"   -noremovedupes -nomirror -planar -tileoffset 260  -savetilemap "stats_village (tilemap).bin"   -exit
 
 cd ..
 "C:\Program Files\SDCC\bin\folder2c" bank2 bank2 2

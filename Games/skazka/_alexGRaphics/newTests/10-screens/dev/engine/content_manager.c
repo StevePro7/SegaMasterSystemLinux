@@ -38,7 +38,7 @@ void engine_content_manager_load_logo_small()
 void engine_content_manager_load_village()
 {
 	devkit_SMS_mapROMBank( stats_village__tiles__psgcompr_bank );
-	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) stats_village__tiles__psgcompr, SPRITE_TILES );
+	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) stats_village__tiles__psgcompr, SPRITE_TILES + 4 );
 }
 
 
