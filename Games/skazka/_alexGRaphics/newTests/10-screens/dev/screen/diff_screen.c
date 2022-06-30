@@ -27,6 +27,7 @@ void screen_diff_screen_load()
 	select_type = select_type_diff;
 
 	devkit_SMS_displayOff();
+	engine_text_manager_clear( TOP_Y + 8, TOP_Y + 22 );
 	engine_content_manager_load_logo_big();
 	engine_graphics_manager_draw_logo_big( LEFT_X + 2, TOP_Y + 3 );
 

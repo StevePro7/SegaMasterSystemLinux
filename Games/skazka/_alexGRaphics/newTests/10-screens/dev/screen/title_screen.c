@@ -55,6 +55,12 @@ void screen_title_screen_update( unsigned char *screen_type )
 	rand();
 	if( event_stage_pause == event_stage )
 	{
+		timer = engine_timer_manager_update();
+		if( timer )
+		{
+			*screen_type = screen_type_diff;
+			return;
+		}
 	}
 	else
 	{
