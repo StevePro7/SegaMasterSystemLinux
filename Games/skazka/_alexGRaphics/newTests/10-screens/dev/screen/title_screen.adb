@@ -77,6 +77,7 @@ S:G$engine_input_manager_hold$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_text_manager_clear$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_cont$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_text_manager_one$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_timer_manager_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_timer_manager_update$0_0$0({2}DF,SC:U),C,0,0
 S:G$devkit_SMS_init$0_0$0({2}DF,SV:S),C,0,0

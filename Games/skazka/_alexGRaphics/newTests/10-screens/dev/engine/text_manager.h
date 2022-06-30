@@ -3,5 +3,6 @@
 
 void engine_text_manager_clear( unsigned char start, unsigned char stop );
 void engine_text_manager_cont();
+void engine_text_manager_one();
 
 #endif//_TEXT_MANAGER_H_

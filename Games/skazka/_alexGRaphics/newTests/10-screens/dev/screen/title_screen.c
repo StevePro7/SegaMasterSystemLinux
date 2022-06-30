@@ -95,9 +95,26 @@ void screen_title_screen_update( unsigned char *screen_type )
 			}
 			else
 			{
-				engine_font_manager_draw_numb( 1, LEFT_X + 15, TOP_Y + 21 );
+				engine_text_manager_one();
 			}
 		}
+
+		input = engine_input_manager_hold( input_type_fire1 );
+		if( input )
+		{
+			engine_text_manager_one();
+			engine_timer_manager_load( TITLE_SOUND_DELAY );
+
+			// TODO play sfx
+			//if( !ho->hack_delays )
+			//{
+			//	engine_sound_manager_play( sound_type_5 );
+			//}
+
+			event_stage = event_stage_pause;
+		}
+
+		rand();
 	}
 
 	*screen_type = screen_type_title;
