@@ -13,8 +13,8 @@ S:Lforest_screen.screen_forest_screen_update$value$1_0$158({1}SC:U),R,0,0,[a]
 S:Lforest_screen.screen_forest_screen_update$xp$1_0$158({1}SC:U),R,0,0,[]
 S:Lforest_screen.screen_forest_screen_update$add_armor$1_0$158({1}:S),R,0,0,[]
 F:Fforest_screen$setup$0_0$0({2}DF,SV:S),Z,0,-1,0,0,0
-S:Lforest_screen.setup$row$1_0$173({1}SC:U),B,1,-1
-S:Lforest_screen.setup$idx$1_0$173({1}SC:U),R,0,0,[c]
+S:Lforest_screen.setup$row$1_0$174({1}SC:U),B,1,-1
+S:Lforest_screen.setup$idx$1_0$174({1}SC:U),R,0,0,[c]
 S:Lforest_screen.setup$sloc0$0_1$0({1}SC:U),B,1,-1
 S:Lforest_screen.setup$sloc1$0_1$0({1}SC:U),B,1,-1
 T:Fforest_screen$tag_struct_player_object[({0}S:S$xp$0_0$0({1}SC:U),Z,0,0)({1}S:S$hp$0_0$0({1}SC:U),Z,0,0)({2}S:S$gold$0_0$0({2}SI:U),Z,0,0)({4}S:S$weapon$0_0$0({1}SC:U),Z,0,0)({5}S:S$armor$0_0$0({1}SC:U),Z,0,0)({6}S:S$life$0_0$0({1}SC:U),Z,0,0)({7}S:S$level$0_0$0({1}SC:U),Z,0,0)({8}S:S$max_hp$0_0$0({1}SC:U),Z,0,0)({9}S:S$max_xp$0_0$0({1}SC:U),Z,0,0)({10}S:S$won$0_0$0({1}SC:U),Z,0,0)({11}S:S$def_xp$0_0$0({1}SC:U),Z,0,0)({12}S:S$def_hp$0_0$0({1}SC:U),Z,0,0)({13}S:S$def_gold$0_0$0({2}SI:U),Z,0,0)({15}S:S$def_weapon$0_0$0({1}SC:U),Z,0,0)({16}S:S$def_armor$0_0$0({1}SC:U),Z,0,0)({17}S:S$def_life$0_0$0({1}SC:U),Z,0,0)]

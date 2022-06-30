@@ -77,6 +77,12 @@ void screen_forest_screen_update( unsigned char *screen_type )
 
 	if( scene_type_pushon == event_stage )
 	{
+		input = engine_input_manager_hold( input_type_fire1 );
+		if( input )
+		{
+			engine_font_manager_draw_text( LOCALE_FIGHT_BLANKS, LEFT_X + 7, TOP_Y + 17 );
+			engine_font_manager_draw_text( LOCALE_FIGHT_BLANKS, LEFT_X + 7, TOP_Y + 18 );
+		}
 	}
 
 	if( scene_type_select == event_stage )
