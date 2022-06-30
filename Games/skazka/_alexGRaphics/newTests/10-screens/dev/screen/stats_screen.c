@@ -37,8 +37,10 @@ void screen_stats_screen_load()
 	engine_graphics_manager_draw_border();
 	engine_graphics_manager_draw_underline( TOP_Y + 4 );
 
-	engine_select_manager_load( select_type, LEFT_X + 12, TOP_Y + OPTION_ROW, 6 );
 	devkit_SMS_displayOn();			// TODO try comment this line out for smooth screen transition??
+
+	engine_select_manager_load( select_type, LEFT_X + 12, TOP_Y + OPTION_ROW, 6 );
+	engine_game_manager_flash_off();
 }
 
 void screen_stats_screen_update( unsigned char *screen_type )

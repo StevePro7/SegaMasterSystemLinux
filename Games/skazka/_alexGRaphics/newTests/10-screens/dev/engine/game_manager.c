@@ -19,6 +19,10 @@ void engine_game_manager_init()
 	engine_game_manager_music_on();
 	engine_game_manager_flash_on();
 
+	//TODO delete
+	engine_game_manager_flash_off();
+	//TODO delete
+
 	engine_game_manager_difficulty( diff_type_easy );
 }
 

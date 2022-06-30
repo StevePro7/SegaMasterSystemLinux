@@ -1,23 +1,27 @@
 #include "load_screen.h"
 #include "../engine/enum_manager.h"
-#include "../engine/font_manager.h"
-#include "../engine/input_manager.h"
+#include "../engine/game_manager.h"
+#include "../engine/player_manager.h"
+#include "../engine/select_manager.h"
 
 void screen_load_screen_load()
 {
-	engine_font_manager_draw_text( "LOAD SCREEN", 10, 2 );
+	engine_player_manager_load();
+	engine_player_manager_calc();
+
+	engine_select_manager_once();
 }
 
 void screen_load_screen_update( unsigned char *screen_type )
 {
-	unsigned char input;
+	struct_game_object *go = &global_game_object;
+	bool flash_arrow = go->flash_arrow;
 
-	input = engine_input_manager_hold( input_type_fire1 );
-
-	if( input )
+	if( flash_arrow )
 	{
-		engine_font_manager_draw_text( "LOAD SCREEN", 10, 4 );
+		*screen_type = screen_type_start;
+		return;
 	}
 
-	*screen_type = screen_type_load;
+	*screen_type = screen_type_stats;
 }
