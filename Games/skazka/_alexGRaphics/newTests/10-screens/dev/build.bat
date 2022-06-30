@@ -44,7 +44,7 @@ cd engine
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 sample_manager.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 screen_manager.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 select_manager.c
-"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 text_manager.c
+::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 text_manager.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 timer_manager.c
 cd ..
 
@@ -61,8 +61,8 @@ cd ..
 cd screen
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 boss_screen.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 complete_screen.c
-::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 credit_screen.c
-"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 diff_screen.c
+"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 credit_screen.c
+::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 diff_screen.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 debug_screen.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 fight_screen.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 forest_screen.c
@@ -80,7 +80,7 @@ cd screen
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 stats_screen.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 talk_screen.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 test_screen.c
-"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 title_screen.c
+::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 title_screen.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 victory_screen.c
 cd ..
 
