@@ -12,6 +12,10 @@
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
 
+#define OVER_SCREEN_DELAY		200
+
+static bool first_time;
+
 void screen_over_screen_load()
 {
 	unsigned char row;
@@ -38,9 +42,49 @@ void screen_over_screen_load()
 
 	engine_text_manager_cont();
 	devkit_SMS_displayOn();			// TODO try comment this line out for smooth screen transition??
+
+	engine_timer_manager_load( OVER_SCREEN_DELAY );
+	first_time = true;
 }
 
 void screen_over_screen_update( unsigned char *screen_type )
 {
+	unsigned char input1;
+	unsigned char input2;
+	unsigned char timer;
+	unsigned char index;
+
+	if( first_time )
+	{
+		first_time = false;
+		engine_game_manager_intro_off();
+		engine_game_manager_music_off();
+
+		// Play over music.
+		//engine_sound_manager_init();		// TODO
+		for( index = 8; index < 10; index++ )
+		{
+			//engine_music_manager_play( index );	// TODO
+			engine_input_manager_update();
+
+			input1 = engine_input_manager_move( input_type_fire1 );
+			input2 = engine_input_manager_move( input_type_fire2 );
+			if( input1 || input2 )
+			{
+				*screen_type = screen_type_title;
+				return;
+			}
+		}
+	}
+
+	input1 = engine_input_manager_hold( input_type_fire1 );
+	input2 = engine_input_manager_hold( input_type_fire2 );
+	timer = engine_timer_manager_update();
+	if( input1 || input2 || timer )
+	{
+		*screen_type = screen_type_title;
+		return;
+	}
+
 	*screen_type = screen_type_over;
 }
