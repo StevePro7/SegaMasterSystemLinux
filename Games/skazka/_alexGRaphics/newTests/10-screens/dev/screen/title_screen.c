@@ -26,9 +26,6 @@ static unsigned char flash_count;
 
 void screen_title_screen_load()
 {
-	//unsigned char row;
-	//unsigned char idx;
-
 	devkit_SMS_displayOff();		// TODO try comment this line out for smooth screen transition??
 	engine_text_manager_clear( TOP_Y + 1, TOP_Y + 22 );
 	engine_content_manager_load_logo_big();
@@ -37,25 +34,71 @@ void screen_title_screen_load()
 	engine_font_manager_draw_text( LOCALE_TITLE_MSG1, LEFT_X + 6, TOP_Y + 10 );
 	engine_font_manager_draw_text( LOCALE_TITLE_MSG2, LEFT_X + 3, TOP_Y + 15 );
 	engine_font_manager_draw_numb( 8, LEFT_X + 16, TOP_Y + 15 );
-	//row = 10;
-	//devkit_SMS_mapROMBank( FIXED_BANK );
-	//for( idx = 0; idx < 10; idx++ )
-	//{
-	//	engine_font_manager_draw_text( ( unsigned char * ) intro_texts[ idx ], LEFT_X + 2, TOP_Y + row );
-	//	row++;
-	//}
 
 	engine_graphics_manager_draw_border();
-	engine_text_manager_cont();
-
-	//engine_font_manager_draw_punc( LOCALE_STOP, LEFT_X + 25, TOP_Y + 13 );
-	//engine_font_manager_draw_punc( LOCALE_STOP, LEFT_X + 27, TOP_Y + 16 );
-	//engine_font_manager_draw_punc( LOCALE_STOP, LEFT_X + 16, TOP_Y + 19 );
-
 	devkit_SMS_displayOn();			// TODO try comment this line out for smooth screen transition??
+
+	engine_timer_manager_load( TITLE_FLASH_DELAY );
+	first_time = true;
+	event_stage = event_stage_start;
+	flash_count = 0;
 }
 
 void screen_title_screen_update( unsigned char *screen_type )
 {
+	struct_hack_object *ho = &global_hack_object;
+	struct_game_object *go = &global_game_object;
+	unsigned char input;
+	unsigned char timer;
+	unsigned char index;
+
+	rand();
+	if( event_stage_pause == event_stage )
+	{
+	}
+	else
+	{
+		if( first_time )
+		{
+			first_time = false;
+			if( go->play_music )
+			{
+				// Play intro music.
+// TODO			engine_sound_manager_init();
+				for( index = 0; index < 5; index++ )
+				{
+// TODO				engine_music_manager_play( index );
+					engine_input_manager_update();
+					input = engine_input_manager_move( input_type_fire2 );
+					if( input )
+					{
+						index = 5;
+					}
+				}
+			}
+
+			engine_text_manager_cont();
+		}
+
+		rand();
+		timer = engine_timer_manager_update();
+		if( timer )
+		{
+			if( !ho->hack_delays )
+			{
+				flash_count = 1 - flash_count;
+			}
+
+			if( flash_count )
+			{
+				engine_font_manager_draw_char( LOCALE_1_SPCS, LEFT_X + 15, TOP_Y + 21 );
+			}
+			else
+			{
+				engine_font_manager_draw_numb( 1, LEFT_X + 15, TOP_Y + 21 );
+			}
+		}
+	}
+
 	*screen_type = screen_type_title;
 }
