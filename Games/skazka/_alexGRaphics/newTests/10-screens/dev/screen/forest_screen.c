@@ -41,8 +41,9 @@ void screen_forest_screen_load()
 	struct_game_object *go = &global_game_object;
 	select_type = select_type_forest;
 
-	// TODO delete this from here
+	// TODO delete this from here !!
 	engine_player_manager_calc();
+	// TODO delete this from here !!
 
 	engine_enemy_manager_load( po->level );
 
@@ -83,6 +84,40 @@ void screen_forest_screen_update( unsigned char *screen_type )
 			engine_font_manager_draw_text( LOCALE_FIGHT_BLANKS, LEFT_X + 7, TOP_Y + 17 );
 			engine_font_manager_draw_text( LOCALE_FIGHT_BLANKS, LEFT_X + 7, TOP_Y + 18 );
 
+			if( fight_type_battle == curr_selection )
+			{
+				// Calculate whether to add armor on hard difficulty.
+				add_armor = calc_add_armor();
+				if( add_armor )
+				{
+					engine_player_manager_armor( po->armor );
+				}
+
+				// If both you and enemy have 0 HP then you get game over first!
+				engine_player_manager_hit( player_damage );
+				if( engine_player_manager_dead() )
+				{
+					// Check if player has extra life!
+					if( engine_player_manager_life() )
+					{
+						*screen_type = screen_type_relive;
+						return;
+					}
+
+					*screen_type = screen_type_over;
+					return;
+				}
+
+				engine_enemy_manager_hit( enemys_damage );
+				if( engine_enemy_manager_dead() )
+				{
+					engine_fight_manager_gold( &xp, &player_gold );
+					engine_player_manager_inc_gold( xp, player_gold );
+
+					*screen_type = screen_type_victory;
+					return;
+				}
+			}
 
 			// Display updated HP after checking deaths.
 			engine_player_manager_hplo();
