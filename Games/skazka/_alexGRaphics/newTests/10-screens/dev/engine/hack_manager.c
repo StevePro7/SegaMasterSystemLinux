@@ -86,4 +86,8 @@ void engine_hack_manager_invert()
 	// Invert default values.
 	ho->hack_musics = !ho->hack_musics;
 	ho->hack_sounds = !ho->hack_sounds;
+
+
+	// TODO delete
+	ho->hack_nodead = 1;
 }

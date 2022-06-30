@@ -1,7 +1,5 @@
 M:title_screen
 F:G$screen_title_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Ltitle_screen.screen_title_screen_load$row$1_0$128({1}SC:U),B,1,-1
-S:Ltitle_screen.screen_title_screen_load$idx$1_0$128({1}SC:U),B,1,-2
 F:G$screen_title_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Ltitle_screen.screen_title_screen_update$screen_type$1_0$129({2}DG,SC:U),B,1,4
 T:Ftitle_screen$tag_struct_hack_object[({0}S:S$hack_delays$0_0$0({1}SC:U),Z,0,0)({1}S:S$hack_nodead$0_0$0({1}SC:U),Z,0,0)({2}S:S$hack_currxp$0_0$0({1}SC:U),Z,0,0)({3}S:S$hack_currhp$0_0$0({1}SC:U),Z,0,0)({4}S:S$hack_goldno$0_0$0({1}SC:U),Z,0,0)({5}S:S$hack_weapon$0_0$0({1}SC:U),Z,0,0)({6}S:S$hack_armors$0_0$0({1}SC:U),Z,0,0)({7}S:S$hack_oneups$0_0$0({1}SC:U),Z,0,0)({8}S:S$hack_talker$0_0$0({1}SC:U),Z,0,0)({9}S:S$hack_musics$0_0$0({1}SC:U),Z,0,0)({10}S:S$hack_sounds$0_0$0({1}SC:U),Z,0,0)]

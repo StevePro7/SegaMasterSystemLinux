@@ -46,5 +46,18 @@ void screen_victory_screen_load()
 
 void screen_victory_screen_update( unsigned char *screen_type )
 {
+	unsigned char input1 = engine_input_manager_hold( input_type_fire1 );
+	unsigned char input2 = engine_input_manager_hold( input_type_fire2 );
+
+	if( input1 || input2 )
+	{
+		// TODO - implement check!
+		//if( !devkit_PSGSFXGetStatus() )
+		{
+			*screen_type = screen_type_stats;
+			return;
+		}
+	}
+
 	*screen_type = screen_type_victory;
 }

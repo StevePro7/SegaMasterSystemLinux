@@ -26,8 +26,8 @@ static unsigned char flash_count;
 
 void screen_title_screen_load()
 {
-	unsigned char row;
-	unsigned char idx;
+	//unsigned char row;
+	//unsigned char idx;
 
 	devkit_SMS_displayOff();		// TODO try comment this line out for smooth screen transition??
 	engine_text_manager_clear( TOP_Y + 1, TOP_Y + 22 );
