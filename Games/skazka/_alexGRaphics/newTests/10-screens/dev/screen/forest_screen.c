@@ -31,7 +31,7 @@ static unsigned char select_type;
 static unsigned char run_away_val;
 
 static void setup();
-//static bool calc_add_armor();
+static bool calc_add_armor();
 
 unsigned char run_away_hit[ 2 ] = { 1, 2 };
 
@@ -239,19 +239,32 @@ static void setup()
 	engine_player_manager_hplo();
 	engine_enemy_manager_hplo();
 
-	// TODO CANT RUN	put in update function
-	//engine_font_manager_draw_text( LOCALE_FIGHT_NOTRUN, LEFT_X + 7, TOP_Y + 17 );
-	//engine_font_manager_draw_punc( LOCALE_QUOTE, LEFT_X + 17, TOP_Y + 17 );
-	//engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 23, TOP_Y + 17 );
-	// TODO CANT RUN	put in update function
-
-	// TODO DAMAGE	put in update function
-	//engine_font_manager_draw_text( LOCALE_FIGHT_ENEMYS, LEFT_X + 7, TOP_Y + 17 );
-	//engine_font_manager_draw_text( LOCALE_FIGHT_PLAYER, LEFT_X + 7, TOP_Y + 18 );
-	//engine_font_manager_draw_data( 4, LEFT_X + 24, TOP_Y + 17 );
-	//engine_font_manager_draw_data( 0, LEFT_X + 24, TOP_Y + 18 );
-	// TODO DAMAGE	put in update function
-
 	engine_graphics_manager_draw_border();
 	engine_graphics_manager_draw_underline( TOP_Y + 4 );
+}
+
+static bool calc_add_armor()
+{
+	struct_game_object *go = &global_game_object;
+	struct_enemy_object *eo = &global_enemy_object;
+	struct_player_object *po = &global_player_object;
+
+	bool add_armor = true;
+	if( diff_type_hard == go->difficulty )
+	{
+		if( po->level >= 2 )
+		{
+			// For weaker enemies on hard difficulty do not factor in armor.
+			if( enemy_type_razboynik == eo->index || enemy_type_hungry_wolf == eo->index )
+			{
+				add_armor = false;
+			}
+		}
+		if( add_armor )
+		{
+			add_armor = engine_random_manager_diff( po->level );
+		}
+	}
+
+	return add_armor;
 }

@@ -18,6 +18,11 @@ S:Lforest_screen.setup$row$1_0$174({1}SC:U),B,1,-1
 S:Lforest_screen.setup$idx$1_0$174({1}SC:U),R,0,0,[c]
 S:Lforest_screen.setup$sloc0$0_1$0({1}SC:U),B,1,-1
 S:Lforest_screen.setup$sloc1$0_1$0({1}SC:U),B,1,-1
+F:Fforest_screen$calc_add_armor$0_0$0({2}DF,:S),Z,0,0,0,0,0
+S:Lforest_screen.calc_add_armor$go$1_0$179({2}DG,STtag_struct_game_object:S),R,0,0,[]
+S:Lforest_screen.calc_add_armor$eo$1_0$179({2}DG,STtag_struct_enemy_object:S),R,0,0,[]
+S:Lforest_screen.calc_add_armor$po$1_0$179({2}DG,STtag_struct_player_object:S),R,0,0,[]
+S:Lforest_screen.calc_add_armor$add_armor$1_0$179({1}:S),R,0,0,[c]
 T:Fforest_screen$tag_struct_player_object[({0}S:S$xp$0_0$0({1}SC:U),Z,0,0)({1}S:S$hp$0_0$0({1}SC:U),Z,0,0)({2}S:S$gold$0_0$0({2}SI:U),Z,0,0)({4}S:S$weapon$0_0$0({1}SC:U),Z,0,0)({5}S:S$armor$0_0$0({1}SC:U),Z,0,0)({6}S:S$life$0_0$0({1}SC:U),Z,0,0)({7}S:S$level$0_0$0({1}SC:U),Z,0,0)({8}S:S$max_hp$0_0$0({1}SC:U),Z,0,0)({9}S:S$max_xp$0_0$0({1}SC:U),Z,0,0)({10}S:S$won$0_0$0({1}SC:U),Z,0,0)({11}S:S$def_xp$0_0$0({1}SC:U),Z,0,0)({12}S:S$def_hp$0_0$0({1}SC:U),Z,0,0)({13}S:S$def_gold$0_0$0({2}SI:U),Z,0,0)({15}S:S$def_weapon$0_0$0({1}SC:U),Z,0,0)({16}S:S$def_armor$0_0$0({1}SC:U),Z,0,0)({17}S:S$def_life$0_0$0({1}SC:U),Z,0,0)]
 T:Fforest_screen$tag_struct_hack_object[({0}S:S$hack_delays$0_0$0({1}SC:U),Z,0,0)({1}S:S$hack_nodead$0_0$0({1}SC:U),Z,0,0)({2}S:S$hack_currxp$0_0$0({1}SC:U),Z,0,0)({3}S:S$hack_currhp$0_0$0({1}SC:U),Z,0,0)({4}S:S$hack_goldno$0_0$0({1}SC:U),Z,0,0)({5}S:S$hack_weapon$0_0$0({1}SC:U),Z,0,0)({6}S:S$hack_armors$0_0$0({1}SC:U),Z,0,0)({7}S:S$hack_oneups$0_0$0({1}SC:U),Z,0,0)({8}S:S$hack_talker$0_0$0({1}SC:U),Z,0,0)({9}S:S$hack_musics$0_0$0({1}SC:U),Z,0,0)({10}S:S$hack_sounds$0_0$0({1}SC:U),Z,0,0)]
 T:Fforest_screen$tag_struct_game_object[({0}S:S$intro_once$0_0$0({1}:S),Z,0,0)({1}S:S$play_music$0_0$0({1}:S),Z,0,0)({2}S:S$flash_arrow$0_0$0({1}:S),Z,0,0)({3}S:S$difficulty$0_0$0({1}SC:U),Z,0,0)]
