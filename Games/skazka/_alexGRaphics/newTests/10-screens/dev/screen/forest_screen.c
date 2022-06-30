@@ -71,7 +71,7 @@ void screen_forest_screen_update( unsigned char *screen_type )
 	struct_game_object *go = &global_game_object;
 	//unsigned char random;
 	unsigned char input;
-	//unsigned char value;
+	unsigned char value;
 	unsigned char xp = 0;
 	bool add_armor = true;
 
@@ -114,6 +114,42 @@ void screen_forest_screen_update( unsigned char *screen_type )
 	{
 		if( fight_type_run == curr_selection )
 		{
+			// If invincible then run away.
+			if( ho->hack_nodead )
+			{
+				*screen_type = screen_type_stats;
+				return;
+			}
+
+			value = rand() % MAX_RANDOM;
+			if( value < HLF_RANDOM )
+			{
+				*screen_type = screen_type_stats;
+				return;
+			}
+			else
+			{
+				// Subtract HP as cannot currently run away.
+				engine_player_manager_hit( run_away_val );
+				if( engine_player_manager_dead() )
+				{
+					// Check if player has extra life!
+					if( engine_player_manager_life() )
+					{
+						*screen_type = screen_type_relive;
+						return;
+					}
+
+					*screen_type = screen_type_over;
+					return;
+				}
+
+// TODO			engine_sound_manager_play( sound_type_10 );
+				engine_font_manager_draw_text( LOCALE_FIGHT_NOTRUN, LEFT_X + 7, TOP_Y + 17 );
+				engine_font_manager_draw_punc( LOCALE_QUOTE, LEFT_X + 17, TOP_Y + 17 );
+				engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 23, TOP_Y + 17 );
+				event_stage = scene_type_pushon;
+			}
 		}
 	}
 
