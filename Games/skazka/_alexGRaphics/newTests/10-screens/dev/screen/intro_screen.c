@@ -32,7 +32,6 @@ void screen_intro_screen_load()
 		row++;
 	}
 
-	
 	engine_graphics_manager_draw_border();
 	engine_text_manager_cont();
 
