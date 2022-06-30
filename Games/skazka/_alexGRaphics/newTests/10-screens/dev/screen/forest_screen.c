@@ -69,9 +69,9 @@ void screen_forest_screen_update( unsigned char *screen_type )
 	struct_player_object *po = &global_player_object;
 	struct_hack_object *ho = &global_hack_object;
 	struct_game_object *go = &global_game_object;
-	unsigned char random;
+	//unsigned char random;
 	unsigned char input;
-	unsigned char value;
+	//unsigned char value;
 	unsigned char xp = 0;
 	bool add_armor = true;
 
@@ -81,17 +81,40 @@ void screen_forest_screen_update( unsigned char *screen_type )
 
 	if( scene_type_select == event_stage )
 	{
+		input = engine_input_manager_hold( input_type_fire2 );
+		if( input )
+		{
+			// If difficulty not hard then cheat and run away unconditionally.
+			if( diff_type_hard != go->difficulty )
+			{
+				*screen_type = screen_type_stats;
+				return;
+			}
+
+			// If invincible then run away.
+			if( ho->hack_nodead )
+			{
+				*screen_type = screen_type_stats;
+				return;
+			}
+		}
+
+		curr_selection = engine_select_manager_update( select_type );
+		if( NO_SELECTION == curr_selection )
+		{
+			*screen_type = screen_type_forest;
+			return;
+		}
+
+		prev_selection = curr_selection;
+		event_stage = scene_type_decide;
 	}
 
 	if( scene_type_decide == event_stage )
 	{
-	}
-
-	curr_selection = engine_select_manager_update( select_type );
-	if( NO_SELECTION == curr_selection )
-	{
-		*screen_type = screen_type_forest;
-		return;
+		if( fight_type_run == curr_selection )
+		{
+		}
 	}
 
 	*screen_type = screen_type_forest;
@@ -147,12 +170,18 @@ static void setup()
 	engine_player_manager_hplo();
 	engine_enemy_manager_hplo();
 
-	// TODO put in update function
+	// TODO CANT RUN	put in update function
+	//engine_font_manager_draw_text( LOCALE_FIGHT_NOTRUN, LEFT_X + 7, TOP_Y + 17 );
+	//engine_font_manager_draw_punc( LOCALE_QUOTE, LEFT_X + 17, TOP_Y + 17 );
+	//engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 23, TOP_Y + 17 );
+	// TODO CANT RUN	put in update function
+
+	// TODO DAMAGE	put in update function
 	//engine_font_manager_draw_text( LOCALE_FIGHT_ENEMYS, LEFT_X + 7, TOP_Y + 17 );
 	//engine_font_manager_draw_text( LOCALE_FIGHT_PLAYER, LEFT_X + 7, TOP_Y + 18 );
 	//engine_font_manager_draw_data( 4, LEFT_X + 24, TOP_Y + 17 );
 	//engine_font_manager_draw_data( 0, LEFT_X + 24, TOP_Y + 18 );
-	// TODO put in update function
+	// TODO DAMAGE	put in update function
 
 	engine_graphics_manager_draw_border();
 	engine_graphics_manager_draw_underline( TOP_Y + 4 );
