@@ -86,6 +86,8 @@ void screen_title_screen_update( unsigned char *screen_type )
 			engine_text_manager_cont();
 		}
 
+		// TODO integrate credits screen!
+
 		rand();
 		timer = engine_timer_manager_update();
 		if( timer )
