@@ -34,6 +34,9 @@ void screen_title_screen_load()
 	engine_content_manager_load_logo_big();
 	engine_graphics_manager_draw_logo_big( LEFT_X + 2, TOP_Y + 3 );
 
+	engine_font_manager_draw_text( LOCALE_TITLE_MSG1, LEFT_X + 6, TOP_Y + 10 );
+	engine_font_manager_draw_text( LOCALE_TITLE_MSG2, LEFT_X + 3, TOP_Y + 15 );
+	engine_font_manager_draw_numb( 8, LEFT_X + 16, TOP_Y + 15 );
 	//row = 10;
 	//devkit_SMS_mapROMBank( FIXED_BANK );
 	//for( idx = 0; idx < 10; idx++ )
@@ -42,8 +45,8 @@ void screen_title_screen_load()
 	//	row++;
 	//}
 
-	//engine_graphics_manager_draw_border();
-	//engine_text_manager_cont();
+	engine_graphics_manager_draw_border();
+	engine_text_manager_cont();
 
 	//engine_font_manager_draw_punc( LOCALE_STOP, LEFT_X + 25, TOP_Y + 13 );
 	//engine_font_manager_draw_punc( LOCALE_STOP, LEFT_X + 27, TOP_Y + 16 );
