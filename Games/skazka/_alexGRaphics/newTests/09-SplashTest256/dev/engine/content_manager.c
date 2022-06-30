@@ -33,10 +33,10 @@ void engine_content_manager_draw_logo1()
 	y = 0;
 	for( j = 0; j < high; j++ )
 	{
-		if( j == 21 )
-		{
-			j = 21;
-		}
+		//if( j == 21 )
+		//{
+		//	j = 21;
+		//}
 		for( i = 0; i < wide; i++ )
 		{
 			index = j * wide + i;
