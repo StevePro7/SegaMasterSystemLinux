@@ -9,7 +9,7 @@ S:Lboss_screen.screen_boss_screen_update$screen_type$1_0$162({2}DG,SC:U),B,1,4
 S:Lboss_screen.screen_boss_screen_update$po$1_0$163({2}DG,STtag_struct_player_object:S),R,0,0,[]
 S:Lboss_screen.screen_boss_screen_update$ho$1_0$163({2}DG,STtag_struct_hack_object:S),R,0,0,[]
 S:Lboss_screen.screen_boss_screen_update$selection$1_0$163({1}SC:U),B,1,-1
-S:Lboss_screen.screen_boss_screen_update$random$1_0$163({1}SC:U),R,0,0,[b]
+S:Lboss_screen.screen_boss_screen_update$random$1_0$163({1}SC:U),R,0,0,[d]
 S:Lboss_screen.screen_boss_screen_update$input$1_0$163({1}SC:U),R,0,0,[a]
 S:Lboss_screen.screen_boss_screen_update$idx$1_0$163({1}SC:U),R,0,0,[c]
 S:Lboss_screen.screen_boss_screen_update$row$1_0$163({1}SC:U),R,0,0,[b]
