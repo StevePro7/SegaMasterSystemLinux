@@ -92,7 +92,7 @@ void screen_boss_screen_update( unsigned char *screen_type )
 	struct_player_object *po = &global_player_object;
 	struct_hack_object *ho = &global_hack_object;
 	unsigned char selection;
-	//unsigned char random;
+	unsigned char random;
 	unsigned char input;
 	unsigned char idx;
 	unsigned char row;
@@ -179,6 +179,34 @@ void screen_boss_screen_update( unsigned char *screen_type )
 		}
 		if( boss_type_battle == selection )
 		{
+			random = engine_random_manager_next();
+			engine_fight_manager_player_to_boss( &enemys_damage, random, player_weapon );
+
+			random = engine_random_manager_next();
+			engine_fight_manager_boss_to_player( &player_damage, random );
+
+			// If both you and boss have 0 HP then you get game over first!
+			engine_player_manager_armor( player_armor );
+			engine_player_manager_hit( player_damage );
+			if( engine_player_manager_dead() )
+			{
+				// Check if player has extra life!
+				if( engine_player_manager_life() )
+				{
+					*screen_type = screen_type_relive;
+					return;
+				}
+
+				*screen_type = screen_type_over;
+				return;
+			}
+
+			engine_enemy_manager_hit( enemys_damage );
+			if( engine_enemy_manager_dead() )
+			{
+				*screen_type = screen_type_complete;
+				return;
+			}
 		}
 
 		// Display updated HP after checking deaths.
