@@ -188,6 +188,7 @@ void screen_boss_screen_update( unsigned char *screen_type )
 			// If both you and boss have 0 HP then you get game over first!
 			engine_player_manager_armor( player_armor );
 			engine_player_manager_hit( player_damage );
+
 			if( engine_player_manager_dead() )
 			{
 				// Check if player has extra life!
