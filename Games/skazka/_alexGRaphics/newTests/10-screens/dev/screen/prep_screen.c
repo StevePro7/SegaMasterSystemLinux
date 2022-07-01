@@ -50,7 +50,15 @@ void screen_prep_screen_load()
 
 void screen_prep_screen_update( unsigned char *screen_type )
 {
+	unsigned char input;
 	unsigned char selection;
+
+	input = engine_input_manager_hold( input_type_fire2 );
+	if( input )
+	{
+		*screen_type = screen_type_stats;
+		return;
+	}
 
 	selection = engine_select_manager_update( select_type );
 	if( NO_SELECTION == selection )
@@ -59,5 +67,5 @@ void screen_prep_screen_update( unsigned char *screen_type )
 		return;
 	}
 
-	*screen_type = screen_type_prep;
+	*screen_type = binary_type_no == selection ? screen_type_stats : screen_type_boss;
 }
