@@ -39,7 +39,7 @@ cd engine
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 hack_manager.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 input_manager.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 locale_manager.c
-::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 player_manager.c
+"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 player_manager.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 random_manager.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 sample_manager.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 screen_manager.c
@@ -64,7 +64,7 @@ cd screen
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 credit_screen.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 diff_screen.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 debug_screen.c
-"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 fight_screen.c
+::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 fight_screen.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 forest_screen.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 func_screen.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 intro_screen.c

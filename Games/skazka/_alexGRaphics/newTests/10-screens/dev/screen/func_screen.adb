@@ -50,6 +50,7 @@ S:G$engine_content_manager_load_village$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_inventory$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_player$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_enemies$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_content_manager_load_leshy$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_koschey$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_border$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_borderX$0_0$0({2}DF,SV:S),C,0,0
@@ -61,6 +62,7 @@ S:G$engine_graphics_manager_draw_koschey$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_leshy$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_clear$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_cont$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_text_manager_one$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOnFeature$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOffFeature$0_0$0({2}DF,SV:S),C,0,0

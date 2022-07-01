@@ -29,6 +29,8 @@ S:G$laugh_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$menus_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$over_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$beat_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:Fstart_screen$flash_index$0_0$0({1}SC:U),E,0,0
+S:Fstart_screen$flash_count$0_0$0({1}SC:U),E,0,0
 S:G$engine_content_manager_load_tiles$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_logo_big$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_logo_small$0_0$0({2}DF,SV:S),C,0,0

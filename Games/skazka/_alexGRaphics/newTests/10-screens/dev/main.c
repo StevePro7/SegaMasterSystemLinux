@@ -43,6 +43,7 @@ void main( void )
 	engine_hack_manager_invert();
 
 	engine_player_manager_load();			// TODO MOVE TO THE LOAD SCREEN
+	engine_player_manager_calc();			// TODO MOVE TO THE LOAD SCREEN
 
 	engine_enemy_manager_init();
 	engine_game_manager_init();

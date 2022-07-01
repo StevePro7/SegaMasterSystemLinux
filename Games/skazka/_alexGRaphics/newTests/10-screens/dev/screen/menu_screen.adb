@@ -40,6 +40,7 @@ S:G$engine_content_manager_load_village$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_inventory$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_player$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_enemies$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_content_manager_load_leshy$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_koschey$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_punc$0_0$0({2}DF,SV:S),C,0,0
@@ -76,6 +77,7 @@ S:G$engine_select_manager_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_select_manager_update$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_text_manager_clear$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_text_manager_cont$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_text_manager_one$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_timer_manager_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_timer_manager_update$0_0$0({2}DF,SC:U),C,0,0
 S:G$devkit_SMS_init$0_0$0({2}DF,SV:S),C,0,0

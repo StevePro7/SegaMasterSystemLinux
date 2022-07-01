@@ -177,6 +177,17 @@ void screen_boss_screen_update( unsigned char *screen_type )
 				}
 			}
 		}
+		if( boss_type_battle == selection )
+		{
+		}
+
+		// Display updated HP after checking deaths.
+		engine_player_manager_hplo();
+		engine_enemy_manager_hplo();
+
+		boss_laugh( selection );
+//TODO	engine_sound_manager_fight();
+		event_stage = scene_type_select;
 	}
 
 	*screen_type = screen_type_boss;
