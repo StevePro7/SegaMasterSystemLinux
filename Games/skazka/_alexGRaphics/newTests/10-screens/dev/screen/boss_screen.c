@@ -91,7 +91,7 @@ void screen_boss_screen_update( unsigned char *screen_type )
 {
 	struct_player_object *po = &global_player_object;
 	struct_hack_object *ho = &global_hack_object;
-	//unsigned char selection;
+	unsigned char selection;
 	//unsigned char random;
 	unsigned char input;
 	unsigned char idx;
@@ -139,6 +139,44 @@ void screen_boss_screen_update( unsigned char *screen_type )
 		engine_enemy_manager_hplo();
 
 		engine_select_manager_load( select_type, LEFT_X + 5, TOP_Y + 18, 2 );
+	}
+
+	selection = 0;
+	if( scene_type_select == event_stage )
+	{
+		selection = engine_select_manager_update( select_type );
+		if( NO_SELECTION == selection )
+		{
+			*screen_type = screen_type_boss;
+			return;
+		}
+
+		event_stage = scene_type_decide;
+	}
+
+	if( scene_type_decide == event_stage )
+	{
+		if( boss_type_beg == selection )
+		{
+			// If not invincible.
+			if( !ho->hack_nodead )
+			{
+				// Subtract HP if you beg.
+				engine_player_manager_hit( beg_boss_val );
+				if( engine_player_manager_dead() )
+				{
+					// Check if player has extra life!
+					if( engine_player_manager_life() )
+					{
+						*screen_type = screen_type_relive;
+						return;
+					}
+
+					*screen_type = screen_type_over;
+					return;
+				}
+			}
+		}
 	}
 
 	*screen_type = screen_type_boss;
