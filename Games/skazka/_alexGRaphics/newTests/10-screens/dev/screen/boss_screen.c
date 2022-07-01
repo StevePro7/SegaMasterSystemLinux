@@ -133,7 +133,12 @@ void screen_boss_screen_update( unsigned char *screen_type )
 		engine_font_manager_draw_text( LOCALE_BOSSX_MSG2, LEFT_X + 16, TOP_Y + TOP_Y + 21 );
 		engine_font_manager_draw_punc( LOCALE_HYPHEN, LEFT_X + 10, TOP_Y + TOP_Y + 21 );
 		engine_font_manager_draw_punc( LOCALE_HYPHEN, LEFT_X + 26, TOP_Y + TOP_Y + 21 );
-		engine_font_manager_draw_punc( LOCALE_QUOTE, LEFT_X + 23, TOP_Y + FIGHT_ROW + 3 );
+		engine_font_manager_draw_punc( LOCALE_QUOTE, LEFT_X + 23, TOP_Y + TOP_Y + 21 );
+
+		engine_player_manager_hplo();
+		engine_enemy_manager_hplo();
+
+		engine_select_manager_load( select_type, LEFT_X + 5, TOP_Y + 18, 2 );
 	}
 
 	*screen_type = screen_type_boss;
@@ -166,5 +171,5 @@ static void boss_laugh( unsigned char selection )
 		selection += 1;
 	}
 
-	engine_font_manager_draw_text( ( unsigned char* ) laugh_texts[ selection ], LEFT_X + 22, FIGHT_ROW - 6 );
+	engine_font_manager_draw_text( ( unsigned char* ) laugh_texts[ selection ], LEFT_X + 22, TOP_Y + 12 );
 }

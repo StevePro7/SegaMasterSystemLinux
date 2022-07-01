@@ -44,16 +44,16 @@ void screen_fight_screen_load()
 	engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 14, TOP_Y + 19 );
 
 	// Print fight text and reset selection.
-	engine_font_manager_draw_text( LOCALE_FIGHT_MSG1, LEFT_X + 2, TOP_Y + FIGHT_ROW + 3 );
-	engine_font_manager_draw_text( LOCALE_BOSSX_MSG2, LEFT_X + 16, TOP_Y + FIGHT_ROW + 3 );
-	engine_font_manager_draw_punc( LOCALE_HYPHEN, LEFT_X + 10, TOP_Y + FIGHT_ROW + 3 );
-	engine_font_manager_draw_punc( LOCALE_HYPHEN, LEFT_X + 26, TOP_Y + FIGHT_ROW + 3 );
-	engine_font_manager_draw_punc( LOCALE_QUOTE, LEFT_X + 23, TOP_Y + FIGHT_ROW + 3 );
+	engine_font_manager_draw_text( LOCALE_FIGHT_MSG1, LEFT_X + 2, TOP_Y + TOP_Y + 21 );
+	engine_font_manager_draw_text( LOCALE_BOSSX_MSG2, LEFT_X + 16, TOP_Y + TOP_Y + 21 );
+	engine_font_manager_draw_punc( LOCALE_HYPHEN, LEFT_X + 10, TOP_Y + TOP_Y + 21 );
+	engine_font_manager_draw_punc( LOCALE_HYPHEN, LEFT_X + 26, TOP_Y + TOP_Y + 21 );
+	engine_font_manager_draw_punc( LOCALE_QUOTE, LEFT_X + 23, TOP_Y + TOP_Y + 21 );
 
 	engine_graphics_manager_draw_koschey( LEFT_X + 10, TOP_Y + 2, devkit_TILE_USE_SPRITE_PALETTE() );
 	engine_graphics_manager_draw_border();
 
-	engine_select_manager_load( select_type, LEFT_X + 6, TOP_Y + FIGHT_ROW, 2 );
+	engine_select_manager_load( select_type, LEFT_X + 6, TOP_Y + 18, 2 );
 	devkit_SMS_displayOn();
 }
 

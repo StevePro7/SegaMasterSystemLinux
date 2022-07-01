@@ -20,7 +20,7 @@
 //#define STATS_ROW				2
 #define OPTION_ROW				16
 //#define SHOP_ROW				18
-#define FIGHT_ROW				18		// TODO remove
+//#define FIGHT_ROW				18		// TODO remove
 #define FIRE1_ROW				22
 #define LINES_ROW				1
 
