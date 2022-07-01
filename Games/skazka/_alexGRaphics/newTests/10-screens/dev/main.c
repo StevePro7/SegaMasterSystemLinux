@@ -18,9 +18,10 @@ void main( void )
 	//open_screen_type = screen_type_menu;
 	//open_screen_type = screen_type_diff;
 	//open_screen_type = screen_type_intro;
-	open_screen_type = screen_type_load;
-	open_screen_type = screen_type_start;
+	//open_screen_type = screen_type_load;
+	//open_screen_type = screen_type_start;
 	//open_screen_type = screen_type_stats;
+	open_screen_type = screen_type_prep;
 	//open_screen_type = screen_type_victory;
 	//open_screen_type = screen_type_relive;
 	//open_screen_type = screen_type_forest;

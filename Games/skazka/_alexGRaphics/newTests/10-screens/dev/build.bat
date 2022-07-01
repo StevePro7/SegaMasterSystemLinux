@@ -76,7 +76,7 @@ cd screen
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 relive_screen.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 shop_screen.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 splash_screen.c
-"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 start_screen.c
+::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 start_screen.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 stats_screen.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 talk_screen.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 test_screen.c
