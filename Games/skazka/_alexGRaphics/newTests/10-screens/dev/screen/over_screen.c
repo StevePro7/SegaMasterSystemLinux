@@ -1,4 +1,5 @@
 #include "over_screen.h"
+#include "../engine/audio_manager.h"
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
@@ -61,10 +62,10 @@ void screen_over_screen_update( unsigned char *screen_type )
 		engine_game_manager_music_off();
 
 		// Play over music.
-		//engine_sound_manager_init();		// TODO
+		engine_sound_manager_init();
 		for( index = 8; index < 10; index++ )
 		{
-			//engine_music_manager_play( index );	// TODO
+			engine_music_manager_play( index );
 			engine_input_manager_update();
 
 			input1 = engine_input_manager_move( input_type_fire1 );
