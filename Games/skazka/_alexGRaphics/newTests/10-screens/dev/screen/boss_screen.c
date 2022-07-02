@@ -250,4 +250,8 @@ static void boss_laugh( unsigned char selection )
 	}
 
 	engine_font_manager_draw_text( ( unsigned char* ) laugh_texts[ selection ], LEFT_X + 22, TOP_Y + 12 );
+	if( 1 == selection )
+	{
+		engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 29, TOP_Y + 12 );
+	}
 }

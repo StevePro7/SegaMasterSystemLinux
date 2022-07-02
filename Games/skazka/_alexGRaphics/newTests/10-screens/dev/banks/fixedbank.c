@@ -3,13 +3,13 @@ const unsigned char *intro_texts[] =
 	"   YOU ARE A YOUNG HERO WHO",
 	"WISHES TO RID THE LAND FROM",
 	"A TERRIFYING CREATURE KNOWN",
-	"AS KOSCHEY THE IMMORTAL",			// TODO	"."
+	"AS KOSCHEY THE IMMORTAL",
 	"",
 	"  RIGHT NOW ALL YOU HAVE IS",
-	"YOUR DAGGER AND YOUR WITS",		// TODO	"."
+	"YOUR DAGGER AND YOUR WITS",
 	"",
 	"YOU ENTER A VILLAGE TO BEGIN",
-	"YOUR ADVENTURE",					// TODO	"."
+	"YOUR ADVENTURE",
 };
 
 const unsigned char *diff_texts[] =
@@ -162,7 +162,7 @@ const unsigned char *query_texts[] =
 const unsigned char *laugh_texts[] =
 {
 	"HA HA HA",
-	"YOU DIE!",
+	"YOU DIE ",
 	"YOU FOOL",
 };
 
