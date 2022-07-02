@@ -1,4 +1,5 @@
 #include "shop_screen.h"
+#include "../engine/audio_manager.h"
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
@@ -13,6 +14,7 @@
 #include "../engine/text_manager.h"
 #include "../engine/timer_manager.h"
 #include "../devkit/_sms_manager.h"
+#include "../devkit/_snd_manager.h"
 #include "../banks/fixedbank.h"
 
 #define SHOP_SCREEN_DELAY1	50
@@ -86,16 +88,18 @@ void screen_shop_screen_update( unsigned char *screen_type )
 	}
 	else
 	{
+		// Check edge case "Not enough gold" SFX!
+		if( devkit_PSGSFXGetStatus() )
+		{
+			*screen_type = screen_type_shop;
+			return;
+		}
+
 		input = engine_input_manager_hold( input_type_fire2 );
 		if( input )
 		{
-			// TODO - SFX
-			// Check edge case "Not enough gold" SFX!
-			//if( !devkit_PSGSFXGetStatus() )
-			{
-				*screen_type = screen_type_stats;
-				return;
-			}
+			*screen_type = screen_type_stats;
+			return;
 		}
 
 		selection = engine_select_manager_update( select_type );
@@ -108,7 +112,7 @@ void screen_shop_screen_update( unsigned char *screen_type )
 		value = inventory[ selection ];
 		if( value > gold )
 		{
-			//		engine_sound_manager_play( sound_type_6 );
+			engine_sound_manager_play( sound_type_6 );
 			engine_font_manager_draw_text( LOCALE_NOT_ENOUGH, LEFT_X + 8, TOP_Y + 21 );
 			engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 23, TOP_Y + 21 );
 			*screen_type = screen_type_shop;
@@ -144,8 +148,7 @@ void screen_shop_screen_update( unsigned char *screen_type )
 
 		if( !ho->hack_delays )
 		{
-			//TODO
-			//engine_sound_manager_play( sound_type_5 );
+			engine_sound_manager_play( sound_type_5 );
 		}
 
 		event_stage = event_stage_pause;
