@@ -21,7 +21,7 @@ void main( void )
 	//open_screen_type = screen_type_load;
 	//open_screen_type = screen_type_start;
 	//open_screen_type = screen_type_stats;
-	//open_screen_type = screen_type_victory;
+	open_screen_type = screen_type_victory;
 	//open_screen_type = screen_type_relive;
 	//open_screen_type = screen_type_forest;
 	//open_screen_type = screen_type_stats;
@@ -33,7 +33,7 @@ void main( void )
 	//open_screen_type = screen_type_over;
 	//open_screen_type = screen_type_complete;
 	//open_screen_type = screen_type_load;
-	//open_screen_type = screen_type_test;
+	open_screen_type = screen_type_test;
 	//open_screen_type = screen_type_func;
 	//open_screen_type = screen_type_debug;
 
@@ -48,9 +48,9 @@ void main( void )
 
 	engine_enemy_manager_init();
 	engine_game_manager_init();
-	//engine_sound_manager_init();
+	engine_sound_manager_init();
 
-	//engine_select_manager_init();
+	engine_select_manager_init();
 	engine_screen_manager_init( open_screen_type );
 	engine_content_manager_load_tiles();
 
@@ -85,7 +85,7 @@ void main( void )
 		devkit_SMS_waitForVBlank();
 		//devkit_SMS_copySpritestoSAT();
 
-		//devkit_PSGFrame();
-		//devkit_PSGSFXFrame();
+		devkit_PSGFrame();
+		devkit_PSGSFXFrame();
 	}
 }
