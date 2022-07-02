@@ -40,6 +40,8 @@ void screen_diff_screen_load()
 
 	engine_select_manager_load( select_type, LEFT_X + 12, TOP_Y + DIFFICULTY_ROW, 2 );
 	devkit_SMS_displayOn();
+
+	engine_timer_manager_load( DIFF_SOUND_DELAY );
 	event_stage = event_stage_start;
 }
 
@@ -72,7 +74,6 @@ void screen_diff_screen_update( unsigned char *screen_type )
 	}
 	else
 	{
-
 		selection = engine_select_manager_update( select_type );
 		if( NO_SELECTION == selection )
 		{
@@ -86,8 +87,7 @@ void screen_diff_screen_update( unsigned char *screen_type )
 		event_stage = event_stage_pause;
 		if( !ho->hack_delays )
 		{
-	//		engine_sound_manager_play( sound_type_5 );
+			engine_sound_manager_play( sound_type_5 );
 		}
 	}
-
 }

@@ -113,11 +113,10 @@ void screen_title_screen_update( unsigned char *screen_type )
 			engine_text_manager_one();
 			engine_timer_manager_load( TITLE_SOUND_DELAY );
 
-			// TODO play sfx
-			//if( !ho->hack_delays )
-			//{
-			//	engine_sound_manager_play( sound_type_5 );
-			//}
+			if( !ho->hack_delays )
+			{
+				engine_sound_manager_play( sound_type_5 );
+			}
 
 			event_stage = event_stage_pause;
 		}
