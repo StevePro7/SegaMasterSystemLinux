@@ -1,4 +1,5 @@
 #include "complete_screen.h"
+#include "../engine/audio_manager.h"
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
@@ -10,7 +11,10 @@
 #include "../engine/text_manager.h"
 #include "../engine/timer_manager.h"
 #include "../devkit/_sms_manager.h"
+#include "../devkit/_snd_manager.h"
 #include "../banks/fixedbank.h"
+
+#define BEAT_SCREEN_DELAY	900
 
 void screen_complete_screen_load()
 {
@@ -41,9 +45,29 @@ void screen_complete_screen_load()
 
 	engine_text_manager_cont();
 	devkit_SMS_displayOn();			// TODO try comment this line out for smooth screen transition??
+
+	engine_timer_manager_load( BEAT_SCREEN_DELAY );
+	engine_music_manager_beat();
 }
 
 void screen_complete_screen_update( unsigned char *screen_type )
 {
+	unsigned char input1;
+	unsigned char input2;
+	unsigned char timer;
+
+	input1 = engine_input_manager_hold( input_type_fire1 );
+	input2 = engine_input_manager_hold( input_type_fire2 );
+	timer = engine_timer_manager_update();
+
+	if( input1 || input2 || timer )
+	{
+		devkit_PSGStop();
+		engine_game_manager_intro_off();
+		engine_game_manager_music_off();
+		*screen_type = screen_type_title;
+		return;
+	}
+
 	*screen_type = screen_type_complete;
 }

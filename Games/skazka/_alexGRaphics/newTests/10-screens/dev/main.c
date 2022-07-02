@@ -31,7 +31,7 @@ void main( void )
 	//open_screen_type = screen_type_boss;
 	//open_screen_type = screen_type_fight;
 	//open_screen_type = screen_type_over;
-	//open_screen_type = screen_type_complete;
+	open_screen_type = screen_type_complete;
 	//open_screen_type = screen_type_load;
 	//open_screen_type = screen_type_test;
 	//open_screen_type = screen_type_func;
