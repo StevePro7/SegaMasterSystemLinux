@@ -1,4 +1,5 @@
 #include "talk_screen.h"
+#include "../engine/audio_manager.h"
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
@@ -13,6 +14,7 @@
 #include "../engine/text_manager.h"
 #include "../engine/timer_manager.h"
 #include "../devkit/_sms_manager.h"
+#include "../devkit/_snd_manager.h"
 #include "../banks/fixedbank.h"
 #include <stdlib.h>
 
@@ -46,41 +48,30 @@ void screen_talk_screen_update( unsigned char *screen_type )
 	unsigned char input1;
 	unsigned char input2;
 
-	// TODO test can't press fire when sfx play
-	//if( devkit_PSGSFXGetStatus() )
-	//{
-	//	*screen_type = screen_type_talk;
-	//	return;
-	//}
+	if( devkit_PSGSFXGetStatus() )
+	{
+		*screen_type = screen_type_talk;
+		return;
+	}
 
 	input1 = engine_input_manager_hold( input_type_fire1 );
 	if( input1 )
 	{
-		// TODO
-		//if( !devkit_PSGSFXGetStatus() )
-		{
-			*screen_type = screen_type_stats;
-			return;
-		}
+		*screen_type = screen_type_stats;
+		return;
 	}
 
 	input2 = engine_input_manager_hold( input_type_fire2 );
 	if( input2 )
 	{
-		// TODO
-		//if( ho->hack_talker )		// DELETE this!
-		//if (1)
+		if( ho->hack_talker )
 		{
 			display_msg();
 		}
-		//else
+		else
 		{
-			// TODO
-			//if( !devkit_PSGSFXGetStatus() )
-			//{
-			//	*screen_type = screen_type_stats;
-			//	return;
-			//}
+			*screen_type = screen_type_stats;
+			return;
 		}
 	}
 
@@ -125,7 +116,7 @@ static void display_msg()
 	if( 0 == msg )
 	{
 		engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 23, TOP_Y + 7 );
-		//engine_sound_manager_play( sound_type_6 );		// TODO play sfx
+		engine_sound_manager_play( sound_type_6 );
 		engine_player_manager_dec_gold( NUM_GOLD );
 	}
 	else if( 1 == msg )
@@ -161,7 +152,7 @@ static void display_msg()
 	else if( 9 == msg )
 	{
 		engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 24, TOP_Y + 7 );
-		//engine_sound_manager_play( sound_type_7 );		// TODO play sfx
+		engine_sound_manager_play( sound_type_7 );
 		engine_player_manager_inc_gold( 0, NUM_GOLD );
 	}
 }
