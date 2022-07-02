@@ -175,11 +175,11 @@ const unsigned char *over_texts[] =
 
 const unsigned char *beat_texts[] =
 {
-	"      CONGLATURATION!!    ",
+	"      CONGLATURATION",
 	"", "", "",
-	"YOU HAVE COMPLETED A GREAT ",
+	"YOU HAVE COMPLETED A GREAT",
 	"GAME AND PROVED THE JUSTICE",
-	"OF OUR CULTURE.",
+	"OF OUR CULTURE",
 	"", "", "",
-	" NOW GO AND REST OUR HERO!",
+	" NOW GO AND REST OUR HERO",
 };
