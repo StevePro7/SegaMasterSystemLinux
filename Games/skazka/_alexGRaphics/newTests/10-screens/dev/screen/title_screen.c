@@ -28,6 +28,8 @@ void screen_title_screen_load()
 {
 	devkit_SMS_displayOff();		// TODO try comment this line out for smooth screen transition??
 	engine_text_manager_clear( TOP_Y + 1, TOP_Y + 22 );
+
+	//engine_content_manager_load_tiles();
 	engine_content_manager_load_logo_big();
 	engine_graphics_manager_draw_logo_big( LEFT_X + 2, TOP_Y + 3 );
 
