@@ -1,5 +1,5 @@
 #include "title_screen.h"
-//#include "../engine/audio_manager.h"
+#include "../engine/audio_manager.h"
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
@@ -70,10 +70,10 @@ void screen_title_screen_update( unsigned char *screen_type )
 			if( go->play_music )
 			{
 				// Play intro music.
-// TODO			engine_sound_manager_init();
+				engine_sound_manager_init();
 				for( index = 0; index < 5; index++ )
 				{
-// TODO				engine_music_manager_play( index );
+					engine_music_manager_play( index );
 					engine_input_manager_update();
 					input = engine_input_manager_move( input_type_fire2 );
 					if( input )
