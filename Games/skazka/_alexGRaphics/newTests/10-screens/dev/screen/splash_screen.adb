@@ -1,8 +1,12 @@
 M:splash_screen
 F:G$screen_splash_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_splash_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lsplash_screen.screen_splash_screen_update$screen_type$1_0$101({2}DG,SC:U),B,1,4
-S:Lsplash_screen.screen_splash_screen_update$input$1_0$102({1}SC:U),R,0,0,[c]
+S:Lsplash_screen.screen_splash_screen_update$screen_type$1_0$95({2}DG,SC:U),B,1,4
+S:Lsplash_screen.screen_splash_screen_update$input$1_0$96({1}SC:U),B,1,-1
+S:Lsplash_screen.screen_splash_screen_update$timer$1_0$96({1}SC:U),R,0,0,[c]
+S:Lsplash_screen.screen_splash_screen_update$sloc0$0_1$0({1}SC:U),B,1,-1
+T:Fsplash_screen$tag_struct_timer_object[({0}S:S$timer_count$0_0$0({2}SI:U),Z,0,0)({2}S:S$timer_value$0_0$0({2}SI:U),Z,0,0)]
+S:G$global_timer_object$0_0$0({4}STtag_struct_timer_object:S),E,0,0
 S:G$engine_asm_manager_clear_VRAM$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_tiles$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_splash$0_0$0({2}DF,SV:S),C,0,0
@@ -14,13 +18,6 @@ S:G$engine_content_manager_load_player$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_enemies$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_leshy$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_koschey$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_font_manager_draw_char$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_font_manager_draw_punc$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_font_manager_draw_flip$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_font_manager_draw_text$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_font_manager_draw_data$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_font_manager_draw_numb$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_font_manager_draw_zero$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_border$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_borderX$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_underline$0_0$0({2}DF,SV:S),C,0,0
@@ -34,6 +31,8 @@ S:G$engine_graphics_manager_draw_leshy$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_hold$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move$0_0$0({2}DF,SC:U),C,0,0
+S:G$engine_timer_manager_load$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_timer_manager_update$0_0$0({2}DF,SC:U),C,0,0
 S:G$devkit_SMS_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOnFeature$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOffFeature$0_0$0({2}DF,SV:S),C,0,0
