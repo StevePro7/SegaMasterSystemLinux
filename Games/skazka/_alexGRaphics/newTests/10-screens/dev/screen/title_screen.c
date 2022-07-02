@@ -16,7 +16,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-// TODO - complete title screen
+// TODO - complete title screen		i.e.	integrate credits screen!
 #define TITLE_FLASH_DELAY	50
 #define TITLE_SOUND_DELAY	50
 
@@ -32,11 +32,11 @@ void screen_title_screen_load()
 	engine_content_manager_load_logo_big();
 
 	engine_text_manager_clear( TOP_Y + 1, TOP_Y + 22 );
-	//engine_graphics_manager_draw_logo_big( LEFT_X + 2, TOP_Y + 3 );
+	engine_graphics_manager_draw_logo_big( LEFT_X + 2, TOP_Y + 3 );
 
-	//engine_font_manager_draw_text( LOCALE_TITLE_MSG1, LEFT_X + 6, TOP_Y + 10 );
-	//engine_font_manager_draw_text( LOCALE_TITLE_MSG2, LEFT_X + 3, TOP_Y + 15 );
-	//engine_font_manager_draw_numb( 8, LEFT_X + 16, TOP_Y + 15 );
+	engine_font_manager_draw_text( LOCALE_TITLE_MSG1, LEFT_X + 6, TOP_Y + 10 );
+	engine_font_manager_draw_text( LOCALE_TITLE_MSG2, LEFT_X + 3, TOP_Y + 15 );
+	engine_font_manager_draw_numb( 8, LEFT_X + 16, TOP_Y + 15 );
 
 	engine_graphics_manager_draw_border();
 	devkit_SMS_displayOn();			// TODO try comment this line out for smooth screen transition??

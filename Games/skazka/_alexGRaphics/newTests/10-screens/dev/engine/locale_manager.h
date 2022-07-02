@@ -18,8 +18,8 @@
 #define LOCALE_GOLD				"GOLD"
 #define LOCALE_SHOP_QUERY		"WHAT WILL YOU BUY"
 #define LOCALE_YOU_HAVE			"YOU HAVE GOLD"
-//#define LOCALE_YOUR_LVL			"YOUR LVL"
-#define LOCALE_HERO				"HERO"		// TODO
+//#define LOCALE_YOUR_LVL			"YOUR LVL"	// TODO delete
+#define LOCALE_HERO				"HERO"		// TODO check
 
 #define LOCALE_OLD_VILLAGE		"OLD VILLAGE"
 
@@ -37,9 +37,8 @@
 
 #define LOCALE_NOT_ENOUGH		"NOT ENOUGH GOLD"			// TODO - replace by "reject" sound FX ??
 
-//#define LOCALE_6_SPCS			"      "					// TODO delete - not used!
 #define LOCALE_30_SPCS			"                              "
-//#define LOCALE_30_SPCS		"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+//#define LOCALE_30_SPCS		"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"	// TODO delete
 #define LOCALE_1_SPCS			' '
 
 #define LOCALE_PLUS				'+'
