@@ -1,5 +1,5 @@
 #include "forest_screen.h"
-//#include "../engine/audio_manager.h"
+#include "../engine/audio_manager.h"
 #include "../engine/content_manager.h"
 #include "../engine/enemy_manager.h"
 #include "../engine/enum_manager.h"
@@ -194,7 +194,7 @@ void screen_forest_screen_update( unsigned char *screen_type )
 					return;
 				}
 
-// TODO			engine_sound_manager_play( sound_type_10 );
+				engine_sound_manager_play( sound_type_10 );
 				engine_font_manager_draw_text( LOCALE_FIGHT_NOTRUN, LEFT_X + 7, TOP_Y + 17 );
 				engine_font_manager_draw_punc( LOCALE_QUOTE, LEFT_X + 17, TOP_Y + 17 );
 				engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 23, TOP_Y + 17 );
@@ -203,7 +203,7 @@ void screen_forest_screen_update( unsigned char *screen_type )
 		}
 		if( fight_type_battle == curr_selection )
 		{
-// TODO			engine_sound_manager_fight();
+			engine_sound_manager_fight();
 
 			random = engine_random_manager_next();
 			engine_fight_manager_player_to_enemy( &enemys_damage, random );
@@ -229,7 +229,6 @@ static void setup()
 	unsigned char row;
 	unsigned char idx;
 
-	devkit_SMS_displayOff();		// TODO try comment this line out for smooth screen transition??
 	engine_text_manager_clear( TOP_Y + 5, TOP_Y + 22 );
 
 	engine_content_manager_load_logo_small();
@@ -240,7 +239,7 @@ static void setup()
 	engine_enemy_manager_draw( LEFT_X + 27, TOP_Y + 16 );
 
 	engine_content_manager_load_player();
-	engine_player_manager_draw( LEFT_X + 2, TOP_Y + 16 );		// TODO implement
+	engine_player_manager_draw( LEFT_X + 2, TOP_Y + 16 );
 
 	row = 6;
 	devkit_SMS_mapROMBank( FIXED_BANK );
