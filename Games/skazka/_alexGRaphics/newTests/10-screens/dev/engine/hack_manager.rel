@@ -1,6 +1,6 @@
 ;!FILE hack_manager.asm
 XL3
-H 9 areas CC global symbols
+H 9 areas C9 global symbols
 M hack_manager
 O -mz80
 S _engine_player_manager_def_oneups Ref000000
@@ -10,7 +10,7 @@ S _engine_player_manager_def_goldno Ref000000
 S _engine_player_manager_def_weapon Ref000000
 S _engine_player_manager_def_currhp Ref000000
 S _engine_player_manager_def_armors Ref000000
-A _CODE size 112 flags 0 addr 0
+A _CODE size 10D flags 0 addr 0
 S C$hack_manager.c$31$1_0$16 Def000023
 S C$hack_manager.c$22$1_0$16 Def000000
 S A$hack_manager$70 Def000000
@@ -51,20 +51,19 @@ S C$hack_manager.c$37$1_0$17 Def000038
 S C$hack_manager.c$29$1_0$16 Def000019
 S A$hack_manager$95 Def000019
 S A$hack_manager$86 Def000012
-S XG$engine_hack_manager_invert$0$0 Def000111
+S XG$engine_hack_manager_invert$0$0 Def00010C
 S C$hack_manager.c$73$1_0$18 Def0000BC
 S C$hack_manager.c$56$1_0$17 Def000085
 S C$hack_manager.c$47$1_0$17 Def000053
 S A$hack_manager$96 Def00001C
-S C$hack_manager.c$92$1_0$18 Def00010C
 S C$hack_manager.c$65$1_0$18 Def00009A
 S C$hack_manager.c$63$2_0$19 Def000093
 S C$hack_manager.c$48$1_0$17 Def00005A
 S C$hack_manager.c$39$1_0$17 Def000038
 S C$hack_manager.c$49$1_0$17 Def000061
-S C$hack_manager.c$94$1_0$18 Def000111
 S C$hack_manager.c$79$2_0$23 Def0000DD
 S C$hack_manager.c$58$1_0$18 Def000086
+S C$hack_manager.c$95$1_0$18 Def00010C
 S C$hack_manager.c$77$1_0$18 Def0000D0
 S G$engine_hack_manager_init$0$0 Def000000
 S C$hack_manager.c$87$1_0$18 Def0000F8
@@ -108,7 +107,6 @@ S A$hack_manager$206 Def000083
 S A$hack_manager$170 Def000059
 S A$hack_manager$152 Def000044
 S A$hack_manager$116 Def000030
-S A$hack_manager$360 Def00010F
 S A$hack_manager$351 Def000105
 S A$hack_manager$342 Def0000FB
 S A$hack_manager$333 Def0000F1
@@ -151,6 +149,7 @@ S A$hack_manager$236 Def00008E
 S A$hack_manager$182 Def000067
 S A$hack_manager$164 Def000052
 S A$hack_manager$146 Def00003B
+S A$hack_manager$363 Def00010C
 S A$hack_manager$354 Def00010A
 S A$hack_manager$345 Def000100
 S A$hack_manager$336 Def0000F7
@@ -189,8 +188,6 @@ S A$hack_manager$286 Def0000C0
 S A$hack_manager$277 Def0000B7
 S A$hack_manager$187 Def00006B
 S A$hack_manager$169 Def000056
-S A$hack_manager$368 Def000111
-S A$hack_manager$359 Def00010C
 S A$hack_manager$296 Def0000CB
 S A$hack_manager$287 Def0000C1
 S A$hack_manager$278 Def0000B8
@@ -288,5 +285,5 @@ T F8 00 00
 R 00 00 00 00
 T F8 00 00 01 09 00 0A D6 01 3E 00 17 02 01 0A 00
 R 00 00 00 00 00 04 01 00 00 0E 01 00
-T 05 01 00 0A D6 01 3E 00 17 02 21 01 00 36 00 C9
-R 00 00 00 00 00 0B 01 00
+T 05 01 00 0A D6 01 3E 00 17 02 C9
+R 00 00 00 00

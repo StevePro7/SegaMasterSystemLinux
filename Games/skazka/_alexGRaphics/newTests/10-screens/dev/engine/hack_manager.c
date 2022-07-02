@@ -89,6 +89,7 @@ void engine_hack_manager_invert()
 
 
 	// TODO delete
-	ho->hack_nodead = 0;
+	//ho->hack_nodead = 0;
+	//ho->hack_talker = 1;
 	// TODO delete
 }
