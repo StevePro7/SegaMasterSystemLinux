@@ -1,5 +1,5 @@
 #include "boss_screen.h"
-//#include "../engine/audio_manager.h"
+#include "../engine/audio_manager.h"
 #include "../engine/content_manager.h"
 #include "../engine/enemy_manager.h"
 #include "../engine/enum_manager.h"
@@ -102,10 +102,10 @@ void screen_boss_screen_update( unsigned char *screen_type )
 		first_time = false;
 
 		// Play boss music.
-// TODO	engine_sound_manager_init();
+		engine_sound_manager_init();
 		for( idx = 5; idx < 8; idx++ )
 		{
-// TODO		engine_music_manager_play( idx );
+			engine_music_manager_play( idx );
 			engine_input_manager_update();
 			input = engine_input_manager_move( input_type_fire2 );
 			if( input )
@@ -215,7 +215,7 @@ void screen_boss_screen_update( unsigned char *screen_type )
 		engine_enemy_manager_hplo();
 
 		boss_laugh( selection );
-//TODO	engine_sound_manager_fight();
+		engine_sound_manager_fight();
 		event_stage = scene_type_select;
 	}
 
