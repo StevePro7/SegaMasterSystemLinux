@@ -1,14 +1,82 @@
 XL3
-H 9 areas 1 global symbols
+H 9 areas 21 global symbols
 M audio_object
 O -mz80
+S _Intro01_wav_pcmenc Ref000000
+S _Intro02_wav_pcmenc Ref000000
+S _Intro03_wav_pcmenc Ref000000
+S _Intro04_wav_pcmenc Ref000000
+S _sound10_psg Ref000000
+S _Intro05_wav_pcmenc Ref000000
+S _sound11_psg Ref000000
+S _Boss01_wav_pcmenc Ref000000
+S _Boss02_wav_pcmenc Ref000000
+S _Boss03_wav_pcmenc Ref000000
+S _Over01_wav_pcmenc Ref000000
 S .__.ABS. Def000000
-A _CODE size 0 flags 0 addr 0
+S _Over02_wav_pcmenc Ref000000
+S _sound0_psg Ref000000
+S _sound1_psg Ref000000
+S _sound2_psg Ref000000
+S _sound3_psg Ref000000
+S _sound4_psg Ref000000
+S _sound5_psg Ref000000
+S _sound6_psg Ref000000
+S _sound7_psg Ref000000
+S _sound8_psg Ref000000
+S _sound9_psg Ref000000
+A _CODE size 16 flags 0 addr 0
+S _music_sample_bank Def000000
+S G$music_sample_bank$0_0$0 Def000000
+S _sound_sample_bank Def00000A
+S G$sound_sample_bank$0_0$0 Def00000A
 A _DATA size 0 flags 0 addr 0
-A _INITIALIZED size 0 flags 0 addr 0
+A _INITIALIZED size 2C flags 0 addr 0
+S _music_sample_data Def000000
+S G$music_sample_data$0_0$0 Def000000
+S _sound_sample_data Def000014
+S G$sound_sample_data$0_0$0 Def000014
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
-A _INITIALIZER size 0 flags 0 addr 0
+A _INITIALIZER size 2C flags 0 addr 0
+S Faudio_object$__xinit_music_sample_data$0_0$0 Def000000
+S Faudio_object$__xinit_sound_sample_data$0_0$0 Def000014
 A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 02 00
+T 00 00 00
+R 00 00 02 00
+T 14 00 00
+R 00 00 02 00
+T 14 00 00
+R 00 00 02 00
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 04 05 06 07 08 09 0A 0B 0C 0D
+R 00 00 00 00
+T 0A 00 00
+R 00 00 00 00
+T 0A 00 00 0E 0E 0E 0E 0E 0E 0E 0E 0E 0E 0E 0E
+R 00 00 00 00
+T 00 00 00
+R 00 00 07 00
+T 00 00 00 00 00 00 00 00 00
+R 00 00 07 00 02 03 00 00 02 05 01 00 02 07 02 00
+T 06 00 00 00 00 00 00 00 00
+R 00 00 07 00 02 03 03 00 02 05 05 00 02 07 07 00
+T 0C 00 00 00 00 00 00 00 00
+R 00 00 07 00 02 03 08 00 02 05 09 00 02 07 0A 00
+T 12 00 00 00 00
+R 00 00 07 00 02 03 0C 00
+T 14 00 00
+R 00 00 07 00
+T 14 00 00 00 00 00 00 00 00
+R 00 00 07 00 02 03 0D 00 02 05 0E 00 02 07 0F 00
+T 1A 00 00 00 00 00 00 00 00
+R 00 00 07 00 02 03 10 00 02 05 11 00 02 07 12 00
+T 20 00 00 00 00 00 00 00 00
+R 00 00 07 00 02 03 13 00 02 05 14 00 02 07 15 00
+T 26 00 00 00 00 00 00 00 00
+R 00 00 07 00 02 03 16 00 02 05 04 00 02 07 06 00
