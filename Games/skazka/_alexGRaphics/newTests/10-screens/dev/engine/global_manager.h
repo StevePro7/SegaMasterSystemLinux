@@ -12,8 +12,8 @@
 #define MAX_HP					30
 #define MAX_GOLD				999
 
-//#define FIXED_BANK				15
-#define FIXED_BANK				3			// TODO revert back to 15
+#define FIXED_BANK				15
+//#define FIXED_BANK				3			// TODO revert back to 15
 
 #define LEFT_X					0
 #define TOP_Y					0
