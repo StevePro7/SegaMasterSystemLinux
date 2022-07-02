@@ -75,12 +75,11 @@ void engine_graphics_manager_draw_splash()
 	}
 }
 
-void engine_graphics_manager_draw_splash2()
+void engine_graphics_manager_draw_splash2( unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = logo_new__tilemap__bin;
 	unsigned char wide;
 	unsigned char high;
-	unsigned char x, y;
 	unsigned char i, j;
 	unsigned char idx = 0;
 	unsigned int tile;
@@ -89,8 +88,6 @@ void engine_graphics_manager_draw_splash2()
 	palette = devkit_TILE_USE_SPRITE_PALETTE();
 	wide = 28;
 	high = 5;
-	x = LEFT_X + 2;
-	y = TOP_Y + 2;
 	j = 0;
 	i = 0;
 	for( j = 0; j < high; j++ )

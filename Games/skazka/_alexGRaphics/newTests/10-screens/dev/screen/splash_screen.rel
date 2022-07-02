@@ -1,6 +1,6 @@
 ;!FILE splash_screen.asm
 XL3
-H 9 areas 25 global symbols
+H 9 areas 3F global symbols
 M splash_screen
 O -mz80
 S _devkit_SMS_displayOn Ref000000
@@ -9,38 +9,64 @@ S .__.ABS. Def000000
 S _engine_input_manager_hold Ref000000
 S _engine_graphics_manager_draw_splash2 Ref000000
 S _devkit_SMS_displayOff Ref000000
-A _CODE size 1B flags 0 addr 0
-S C$splash_screen.c$20$1_0$101 Def00000C
-S A$splash_screen$101 Def000014
-S A$splash_screen$102 Def000015
-S A$splash_screen$103 Def000016
-S C$splash_screen.c$25$1_0$101 Def000014
-S A$splash_screen$113 Def00001A
-S A$splash_screen$104 Def000017
-S C$splash_screen.c$26$1_0$101 Def00001A
-S A$splash_screen$105 Def000018
-S C$splash_screen.c$18$1_0$101 Def00000C
+S _engine_graphics_manager_draw_splash Ref000000
+A _CODE size 37 flags 0 addr 0
+S C$splash_screen.c$12$1_0$100 Def000000
+S C$splash_screen.c$13$1_0$100 Def000003
+S C$splash_screen.c$30$1_0$102 Def000029
+S C$splash_screen.c$21$1_0$102 Def00000C
+S C$splash_screen.c$14$1_0$100 Def000006
+S A$splash_screen$110 Def00001C
+S C$splash_screen.c$22$1_0$102 Def000015
+S A$splash_screen$120 Def000027
+S A$splash_screen$111 Def00001F
+S C$splash_screen.c$16$1_0$100 Def000009
+S A$splash_screen$121 Def000028
+S A$splash_screen$103 Def000015
+S C$splash_screen.c$30$2_0$104 Def000031
+S C$splash_screen.c$17$1_0$100 Def000009
+S A$splash_screen$104 Def000016
+S C$splash_screen.c$34$1_0$102 Def000034
+S C$splash_screen.c$31$2_0$104 Def000033
+S A$splash_screen$132 Def00002D
+S C$splash_screen.c$35$1_0$102 Def000036
+S C$splash_screen.c$24$2_0$103 Def000018
+S A$splash_screen$142 Def000033
+S A$splash_screen$133 Def00002E
+S C$splash_screen.c$27$1_0$102 Def000020
 S _screen_splash_screen_update Def00000C
-S XG$screen_splash_screen_update$0$0 Def00001A
-S A$splash_screen$61 Def000000
-S A$splash_screen$80 Def000009
+S A$splash_screen$134 Def00002F
+S A$splash_screen$125 Def000029
+S A$splash_screen$116 Def000020
+S C$splash_screen.c$28$1_0$102 Def00002D
+S C$splash_screen.c$19$1_0$102 Def00000C
+S A$splash_screen$126 Def00002A
+S A$splash_screen$117 Def000022
+S A$splash_screen$108 Def000018
+S A$splash_screen$127 Def00002B
+S A$splash_screen$118 Def000023
+S A$splash_screen$109 Def00001B
+S A$splash_screen$155 Def000036
+S A$splash_screen$128 Def00002C
+S A$splash_screen$119 Def000024
+S A$splash_screen$147 Def000034
+S A$splash_screen$138 Def000031
+S XG$screen_splash_screen_update$0$0 Def000036
+S A$splash_screen$70 Def000006
+S A$splash_screen$62 Def000000
 S G$screen_splash_screen_load$0$0 Def000000
-S A$splash_screen$65 Def000003
-S A$splash_screen$93 Def00000C
-S A$splash_screen$94 Def00000E
-S A$splash_screen$95 Def00000F
-S A$splash_screen$96 Def000010
-S A$splash_screen$69 Def000006
-S C$splash_screen.c$11$1_0$99 Def000000
-S A$splash_screen$97 Def000013
-S C$splash_screen.c$12$1_0$99 Def000003
-S C$splash_screen.c$14$1_0$99 Def000006
-S C$splash_screen.c$15$1_0$99 Def000009
-S C$splash_screen.c$16$1_0$99 Def000009
+S A$splash_screen$81 Def000009
+S A$splash_screen$66 Def000003
+S A$splash_screen$94 Def00000C
+S A$splash_screen$95 Def00000E
+S A$splash_screen$96 Def00000F
+S A$splash_screen$97 Def000010
+S A$splash_screen$98 Def000013
+S A$splash_screen$99 Def000014
 S _screen_splash_screen_load Def000000
 S XG$screen_splash_screen_load$0$0 Def000009
-S C$splash_screen.c$9$0_0$99 Def000000
 S G$screen_splash_screen_update$0$0 Def00000C
+S C$splash_screen.c$10$0_0$100 Def000000
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -52,12 +78,22 @@ A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
 T 00 00 00 CD 00 00 CD 00 00 CD 00 00 C3
-R 00 00 00 00 02 04 05 00 02 07 01 00 02 0A 04 00
+R 00 00 00 00 02 04 05 00 02 07 01 00 02 0A 06 00
 T 0A 00 00 00 00
 R 00 00 00 00 02 03 00 00
 T 0C 00 00
 R 00 00 00 00
-T 0C 00 00 3E 10 F5 33 CD 00 00 33 C1 E1 E5 C5 36
+T 0C 00 00 3E 10 F5 33 CD 00 00 7D 33 B7 28 08 11
 R 00 00 00 00 02 08 03 00
-T 19 00 00 01 C9
+T 19 00 00 02 02 D5 CD 00 00 F1
+R 00 00 00 00 02 07 04 00
+T 20 00 00
+R 00 00 00 00
+T 20 00 00 3E 20 F5 33 CD 00 00 4D 33 D1 E1 E5 D5
+R 00 00 00 00 02 08 03 00
+T 2D 00 00 79 B7 28 03 36 02 C9
+R 00 00 00 00
+T 34 00 00
+R 00 00 00 00
+T 34 00 00 36 01 C9
 R 00 00 00 00
