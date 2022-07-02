@@ -1,7 +1,7 @@
 M:credit_screen
 F:G$screen_credit_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_credit_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lcredit_screen.screen_credit_screen_update$screen_type$1_0$127({2}DG,SC:U),B,1,4
+S:Lcredit_screen.screen_credit_screen_update$screen_type$1_0$128({2}DG,SC:U),B,1,4
 S:G$intro_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$diff_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$stats_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
@@ -22,6 +22,7 @@ S:G$menus_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$over_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$beat_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$engine_content_manager_load_tiles$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_content_manager_load_splash$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_logo_big$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_logo_small$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_village$0_0$0({2}DF,SV:S),C,0,0
@@ -40,6 +41,8 @@ S:G$engine_font_manager_draw_zero$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_border$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_borderX$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_underline$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_graphics_manager_draw_splash$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_graphics_manager_draw_splash2$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_logo_big$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_logo_small$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_village$0_0$0({2}DF,SV:S),C,0,0

@@ -1,9 +1,9 @@
 M:test_screen
 F:G$screen_test_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_test_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Ltest_screen.screen_test_screen_update$screen_type$1_0$116({2}DG,SC:U),B,1,4
-S:Ltest_screen.screen_test_screen_update$input$1_0$117({1}SC:U),R,0,0,[]
-S:Ltest_screen.screen_test_screen_update$timer$1_0$117({1}SC:U),R,0,0,[a]
+S:Ltest_screen.screen_test_screen_update$screen_type$1_0$117({2}DG,SC:U),B,1,4
+S:Ltest_screen.screen_test_screen_update$input$1_0$118({1}SC:U),R,0,0,[]
+S:Ltest_screen.screen_test_screen_update$timer$1_0$118({1}SC:U),R,0,0,[a]
 T:Ftest_screen$tag_struct_timer_object[({0}S:S$timer_count$0_0$0({2}SI:U),Z,0,0)({2}S:S$timer_value$0_0$0({2}SI:U),Z,0,0)]
 S:G$global_timer_object$0_0$0({4}STtag_struct_timer_object:S),E,0,0
 S:Ftest_screen$flag$0_0$0({1}:S),E,0,0
@@ -14,6 +14,7 @@ S:G$engine_sound_manager_fight$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_music_manager_play$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_music_manager_beat$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_tiles$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_content_manager_load_splash$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_logo_big$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_logo_small$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_village$0_0$0({2}DF,SV:S),C,0,0
@@ -35,6 +36,8 @@ S:G$engine_input_manager_move$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_graphics_manager_draw_border$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_borderX$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_underline$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_graphics_manager_draw_splash$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_graphics_manager_draw_splash2$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_logo_big$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_logo_small$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_village$0_0$0({2}DF,SV:S),C,0,0

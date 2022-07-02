@@ -1,12 +1,12 @@
 M:menu_screen
 F:G$screen_menu_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lmenu_screen.screen_menu_screen_load$row$1_0$104({1}SC:U),B,1,-1
-S:Lmenu_screen.screen_menu_screen_load$idx$1_0$104({1}SC:U),R,0,0,[c]
+S:Lmenu_screen.screen_menu_screen_load$row$1_0$105({1}SC:U),B,1,-1
+S:Lmenu_screen.screen_menu_screen_load$idx$1_0$105({1}SC:U),R,0,0,[c]
 S:Lmenu_screen.screen_menu_screen_load$sloc0$0_1$0({1}SC:U),B,1,-1
 F:G$screen_menu_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lmenu_screen.screen_menu_screen_update$screen_type$1_0$107({2}DG,SC:U),B,1,4
-S:Lmenu_screen.screen_menu_screen_update$input$1_0$108({1}SC:U),R,0,0,[a]
-S:Lmenu_screen.screen_menu_screen_update$selection$1_0$108({1}SC:U),R,0,0,[a]
+S:Lmenu_screen.screen_menu_screen_update$screen_type$1_0$108({2}DG,SC:U),B,1,4
+S:Lmenu_screen.screen_menu_screen_update$input$1_0$109({1}SC:U),R,0,0,[a]
+S:Lmenu_screen.screen_menu_screen_update$selection$1_0$109({1}SC:U),R,0,0,[a]
 T:Fmenu_screen$tag_struct_game_object[({0}S:S$intro_once$0_0$0({1}:S),Z,0,0)({1}S:S$play_music$0_0$0({1}:S),Z,0,0)({2}S:S$flash_arrow$0_0$0({1}:S),Z,0,0)({3}S:S$difficulty$0_0$0({1}SC:U),Z,0,0)]
 T:Fmenu_screen$tag_struct_timer_object[({0}S:S$timer_count$0_0$0({2}SI:U),Z,0,0)({2}S:S$timer_value$0_0$0({2}SI:U),Z,0,0)]
 T:Fmenu_screen$tag_struct_aelect_object[({0}S:S$select_index$0_0$0({8}DA8d,SC:U),Z,0,0)({8}S:S$select_X$0_0$0({1}SC:U),Z,0,0)({9}S:S$select_Y$0_0$0({1}SC:U),Z,0,0)({10}S:S$select_min$0_0$0({1}SC:U),Z,0,0)({11}S:S$select_max$0_0$0({1}SC:U),Z,0,0)]
@@ -34,6 +34,7 @@ S:G$over_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$beat_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:Fmenu_screen$select_type$0_0$0({1}SC:U),E,0,0
 S:G$engine_content_manager_load_tiles$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_content_manager_load_splash$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_logo_big$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_logo_small$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_village$0_0$0({2}DF,SV:S),C,0,0
@@ -63,6 +64,8 @@ S:G$engine_game_manager_print_texts$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_border$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_borderX$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_underline$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_graphics_manager_draw_splash$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_graphics_manager_draw_splash2$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_logo_big$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_logo_small$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_village$0_0$0({2}DF,SV:S),C,0,0

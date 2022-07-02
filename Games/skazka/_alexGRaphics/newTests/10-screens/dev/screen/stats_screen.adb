@@ -1,10 +1,10 @@
 M:stats_screen
 F:G$screen_stats_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lstats_screen.screen_stats_screen_load$go$1_0$125({2}DG,STtag_struct_game_object:S),R,0,0,[]
-S:Lstats_screen.screen_stats_screen_load$flash_arrow$1_0$125({1}:S),R,0,0,[c]
+S:Lstats_screen.screen_stats_screen_load$go$1_0$126({2}DG,STtag_struct_game_object:S),R,0,0,[]
+S:Lstats_screen.screen_stats_screen_load$flash_arrow$1_0$126({1}:S),R,0,0,[c]
 F:G$screen_stats_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lstats_screen.screen_stats_screen_update$screen_type$1_0$127({2}DG,SC:U),B,1,4
-S:Lstats_screen.screen_stats_screen_update$selection$1_0$128({1}SC:U),B,1,-1
+S:Lstats_screen.screen_stats_screen_update$screen_type$1_0$128({2}DG,SC:U),B,1,4
+S:Lstats_screen.screen_stats_screen_update$selection$1_0$129({1}SC:U),B,1,-1
 S:Lstats_screen.screen_stats_screen_update$sloc0$0_1$0({1}SC:U),B,1,-1
 T:Fstats_screen$tag_struct_player_object[({0}S:S$xp$0_0$0({1}SC:U),Z,0,0)({1}S:S$hp$0_0$0({1}SC:U),Z,0,0)({2}S:S$gold$0_0$0({2}SI:U),Z,0,0)({4}S:S$weapon$0_0$0({1}SC:U),Z,0,0)({5}S:S$armor$0_0$0({1}SC:U),Z,0,0)({6}S:S$life$0_0$0({1}SC:U),Z,0,0)({7}S:S$level$0_0$0({1}SC:U),Z,0,0)({8}S:S$max_hp$0_0$0({1}SC:U),Z,0,0)({9}S:S$max_xp$0_0$0({1}SC:U),Z,0,0)({10}S:S$won$0_0$0({1}SC:U),Z,0,0)({11}S:S$def_xp$0_0$0({1}SC:U),Z,0,0)({12}S:S$def_hp$0_0$0({1}SC:U),Z,0,0)({13}S:S$def_gold$0_0$0({2}SI:U),Z,0,0)({15}S:S$def_weapon$0_0$0({1}SC:U),Z,0,0)({16}S:S$def_armor$0_0$0({1}SC:U),Z,0,0)({17}S:S$def_life$0_0$0({1}SC:U),Z,0,0)]
 T:Fstats_screen$tag_struct_game_object[({0}S:S$intro_once$0_0$0({1}:S),Z,0,0)({1}S:S$play_music$0_0$0({1}:S),Z,0,0)({2}S:S$flash_arrow$0_0$0({1}:S),Z,0,0)({3}S:S$difficulty$0_0$0({1}SC:U),Z,0,0)]
@@ -40,6 +40,7 @@ S:G$engine_sound_manager_fight$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_music_manager_play$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_music_manager_beat$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_tiles$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_content_manager_load_splash$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_logo_big$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_logo_small$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_village$0_0$0({2}DF,SV:S),C,0,0
@@ -62,6 +63,8 @@ S:G$engine_game_manager_print_texts$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_border$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_borderX$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_underline$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_graphics_manager_draw_splash$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_graphics_manager_draw_splash2$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_logo_big$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_logo_small$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_village$0_0$0({2}DF,SV:S),C,0,0

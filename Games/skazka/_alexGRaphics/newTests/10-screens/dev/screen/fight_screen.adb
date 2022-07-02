@@ -1,7 +1,7 @@
 M:fight_screen
 F:G$screen_fight_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_fight_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lfight_screen.screen_fight_screen_update$screen_type$1_0$134({2}DG,SC:U),B,1,4
+S:Lfight_screen.screen_fight_screen_update$screen_type$1_0$135({2}DG,SC:U),B,1,4
 T:Ffight_screen$tag_struct_hack_object[({0}S:S$hack_delays$0_0$0({1}SC:U),Z,0,0)({1}S:S$hack_nodead$0_0$0({1}SC:U),Z,0,0)({2}S:S$hack_currxp$0_0$0({1}SC:U),Z,0,0)({3}S:S$hack_currhp$0_0$0({1}SC:U),Z,0,0)({4}S:S$hack_goldno$0_0$0({1}SC:U),Z,0,0)({5}S:S$hack_weapon$0_0$0({1}SC:U),Z,0,0)({6}S:S$hack_armors$0_0$0({1}SC:U),Z,0,0)({7}S:S$hack_oneups$0_0$0({1}SC:U),Z,0,0)({8}S:S$hack_talker$0_0$0({1}SC:U),Z,0,0)({9}S:S$hack_musics$0_0$0({1}SC:U),Z,0,0)({10}S:S$hack_sounds$0_0$0({1}SC:U),Z,0,0)]
 T:Ffight_screen$tag_struct_game_object[({0}S:S$intro_once$0_0$0({1}:S),Z,0,0)({1}S:S$play_music$0_0$0({1}:S),Z,0,0)({2}S:S$flash_arrow$0_0$0({1}:S),Z,0,0)({3}S:S$difficulty$0_0$0({1}SC:U),Z,0,0)]
 T:Ffight_screen$tag_struct_timer_object[({0}S:S$timer_count$0_0$0({2}SI:U),Z,0,0)({2}S:S$timer_value$0_0$0({2}SI:U),Z,0,0)]
@@ -37,6 +37,7 @@ S:G$engine_sound_manager_fight$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_music_manager_play$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_music_manager_beat$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_tiles$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_content_manager_load_splash$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_logo_big$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_logo_small$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_village$0_0$0({2}DF,SV:S),C,0,0
@@ -66,6 +67,8 @@ S:G$engine_game_manager_print_texts$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_border$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_borderX$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_underline$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_graphics_manager_draw_splash$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_graphics_manager_draw_splash2$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_logo_big$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_logo_small$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_draw_village$0_0$0({2}DF,SV:S),C,0,0
