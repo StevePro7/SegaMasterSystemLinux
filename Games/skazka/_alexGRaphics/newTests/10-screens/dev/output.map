@@ -29,6 +29,7 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000000  s__HEADER3                      
      00000000  s__HEADER4                      
      00000001  l__GSFINAL                      
+     00000005  l__BANK3                        
      00000007  l__CABS2                        
      00000008  l__HEADER0                      
      00000009  l__HEADER1                      
@@ -46,17 +47,16 @@ Area                                    Addr        Size        Decimal Bytes (A
      0000011C  l__INITIALIZER                  
      000001B2  l__DATA                         
      00000200  s__CODE                         
-     0000060D  l__BANK3                        
+     0000060D  l__BANK15                       
+     000007A9  l__BANK14                       
+     000020EB  l__BANK8                        
+     00002225  l__BANK11                       
+     00002370  l__BANK9                        
+     0000246C  l__BANK13                       
+     0000288C  l__BANK10                       
      00002FB8  l__BANK2                        
-     00004BAA  l__CODE                         
-     00004DAA  s__HOME                         
-     00004DAA  s__INITIALIZER                  
-     00004EC6  s__GSINIT                       
-     00004ED5  s__GSFINAL                      
-     00008000  G$SMS_SRAM$0_0$0                   _sms_manager
-     00008000  _SMS_SRAM                          SMSlib_autotext
-     00008000  s__BANK2                        
-     00008000  s__BANK3                        
+     000033EB  l__BANK4                        
+     0000375D  l__BANK7                        
 ASxxxx Linker V03.00 + NoICE + sdld,  page 2.
 Hexadecimal  [32-Bits]
 
@@ -66,6 +66,30 @@ Area                                    Addr        Size        Decimal Bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00003833  l__BANK6                        
+     000038D9  l__BANK5                        
+     000038DD  l__BANK12                       
+     00004BAA  l__CODE                         
+     00004DAA  s__HOME                         
+     00004DAA  s__INITIALIZER                  
+     00004EC6  s__GSINIT                       
+     00004ED5  s__GSFINAL                      
+     00008000  G$SMS_SRAM$0_0$0                   _sms_manager
+     00008000  _SMS_SRAM                          SMSlib_autotext
+     00008000  s__BANK10                       
+     00008000  s__BANK11                       
+     00008000  s__BANK12                       
+     00008000  s__BANK13                       
+     00008000  s__BANK14                       
+     00008000  s__BANK15                       
+     00008000  s__BANK2                        
+     00008000  s__BANK3                        
+     00008000  s__BANK4                        
+     00008000  s__BANK5                        
+     00008000  s__BANK6                        
+     00008000  s__BANK7                        
+     00008000  s__BANK8                        
+     00008000  s__BANK9                        
      0000C000  s__DATA                         
      0000C1B2  s__INITIALIZED                  
      0000C2CE  s__BSEG                         
@@ -12942,13 +12966,178 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK3                              00008000    0000060D =        1549. bytes (REL,CON)
+_BANK3                              00008000    00000005 =           5. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00008000  G$bank3_txt$0_0$0                  bank3
+     00008000  _bank3_txt                         bank3
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 226.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_BANK4                              00008000    000033EB =       13291. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00008000  G$Intro01_wav_pcmenc$0$0           bank4
+     00008000  _Intro01_wav_pcmenc                bank4
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 227.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_BANK5                              00008000    000038D9 =       14553. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00008000  G$Intro02_wav_pcmenc$0$0           bank5
+     00008000  _Intro02_wav_pcmenc                bank5
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 228.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_BANK6                              00008000    00003833 =       14387. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00008000  G$Intro03_wav_pcmenc$0$0           bank6
+     00008000  _Intro03_wav_pcmenc                bank6
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 229.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_BANK7                              00008000    0000375D =       14173. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00008000  G$Intro04_wav_pcmenc$0$0           bank7
+     00008000  _Intro04_wav_pcmenc                bank7
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 230.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_BANK8                              00008000    000020EB =        8427. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00008000  G$Intro05_wav_pcmenc$0$0           bank8
+     00008000  _Intro05_wav_pcmenc                bank8
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 231.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_BANK9                              00008000    00002370 =        9072. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00008000  G$Boss01_wav_pcmenc$0$0            bank9
+     00008000  _Boss01_wav_pcmenc                 bank9
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 232.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_BANK10                             00008000    0000288C =       10380. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00008000  G$Boss02_wav_pcmenc$0$0            bank10
+     00008000  _Boss02_wav_pcmenc                 bank10
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 233.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_BANK11                             00008000    00002225 =        8741. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00008000  G$Boss03_wav_pcmenc$0$0            bank11
+     00008000  _Boss03_wav_pcmenc                 bank11
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 234.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_BANK12                             00008000    000038DD =       14557. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00008000  G$Over01_wav_pcmenc$0$0            bank12
+     00008000  _Over01_wav_pcmenc                 bank12
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 235.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_BANK13                             00008000    0000246C =        9324. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00008000  G$Over02_wav_pcmenc$0$0            bank13
+     00008000  _Over02_wav_pcmenc                 bank13
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 236.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_BANK14                             00008000    000007A9 =        1961. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00008000  G$sound0_psg$0$0                   bank14
+     00008000  _sound0_psg                        bank14
+     00008017  G$sound1_psg$0$0                   bank14
+     00008017  _sound1_psg                        bank14
+     0000802C  G$sound10_psg$0$0                  bank14
+     0000802C  _sound10_psg                       bank14
+     00008051  G$sound11_psg$0$0                  bank14
+     00008051  _sound11_psg                       bank14
+     00008676  G$sound2_psg$0$0                   bank14
+     00008676  _sound2_psg                        bank14
+     00008698  G$sound3_psg$0$0                   bank14
+     00008698  _sound3_psg                        bank14
+     000086BA  G$sound4_psg$0$0                   bank14
+     000086BA  _sound4_psg                        bank14
+     000086CF  G$sound5_psg$0$0                   bank14
+     000086CF  _sound5_psg                        bank14
+     000086EF  G$sound6_psg$0$0                   bank14
+     000086EF  _sound6_psg                        bank14
+     00008712  G$sound7_psg$0$0                   bank14
+     00008712  _sound7_psg                        bank14
+     00008735  G$sound8_psg$0$0                   bank14
+     00008735  _sound8_psg                        bank14
+     00008748  G$sound9_psg$0$0                   bank14
+     00008748  _sound9_psg                        bank14
+ASxxxx Linker V03.00 + NoICE + sdld,  page 237.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_BANK15                             00008000    0000060D =        1549. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
      00008000  Ffixedbank$__str_0$0_0$0           fixedbank
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 226.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 238.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -12960,7 +13149,7 @@ _CABS0                              00000000    00000010 =          16. bytes (A
      00007FF0  G$__SMS__SEGA_signature$0_0$0      _sms_manager
      00007FF0  ___SMS__SEGA_signature             _sms_manager
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 227.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 239.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -12972,7 +13161,7 @@ _CABS1                              00000000    0000000E =          14. bytes (A
      00007FD2  G$__SMS__SDSC_author$0_0$0         _sms_manager
      00007FD2  ___SMS__SDSC_author                _sms_manager
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 228.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 240.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -12984,7 +13173,7 @@ _CABS2                              00000000    00000007 =           7. bytes (A
      00007FCB  G$__SMS__SDSC_name$0_0$0           _sms_manager
      00007FCB  ___SMS__SDSC_name                  _sms_manager
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 229.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 241.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -12996,7 +13185,7 @@ _CABS3                              00000000    00000015 =          21. bytes (A
      00007FB6  G$__SMS__SDSC_descr$0_0$0          _sms_manager
      00007FB6  ___SMS__SDSC_descr                 _sms_manager
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 230.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 242.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -13008,14 +13197,26 @@ _CABS4                              00000000    00000010 =          16. bytes (A
      00007FE0  G$__SMS__SDSC_signature$0_0$0      _sms_manager
      00007FE0  ___SMS__SDSC_signature             _sms_manager
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 231.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 243.
 
 Files Linked                              [ module(s) ]
 
 ../crt0/crt0_sms.rel                      [ crt0 ]
 main.rel                                  [ main ]
-banks\bank2.rel                           [ bank2 ]
-banks\fixedbank.rel                       [ fixedbank ]
+banks/bank2.rel                           [ bank2 ]
+banks/bank3.rel                           [ bank3 ]
+banks/bank4.rel                           [ bank4 ]
+banks/bank5.rel                           [ bank5 ]
+banks/bank6.rel                           [ bank6 ]
+banks/bank7.rel                           [ bank7 ]
+banks/bank8.rel                           [ bank8 ]
+banks/bank9.rel                           [ bank9 ]
+banks/bank10.rel                          [ bank10 ]
+banks/bank11.rel                          [ bank11 ]
+banks/bank12.rel                          [ bank12 ]
+banks/bank13.rel                          [ bank13 ]
+banks/bank14.rel                          [ bank14 ]
+banks/fixedbank.rel                       [ fixedbank ]
 devkit/_sms_manager.rel                   [ _sms_manager ]
 engine/asm_manager.rel                    [ asm_manager ]
 engine/audio_manager.rel                  [ audio_manager ]
@@ -13106,7 +13307,7 @@ C:\Program Files\SDCC\bin\..\lib\z80/z80.lib
 C:\Program Files\SDCC\bin\..\lib\z80/z80.lib
                                           [ divsigned.rel ]
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 232.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 244.
 
 User Base Address Definitions
 
@@ -13114,5 +13315,17 @@ _CODE = 0x0200
 _DATA = 0xc000
 _BANK2=0x8000
 _BANK3=0x8000
+_BANK4=0x8000
+_BANK5=0x8000
+_BANK6=0x8000
+_BANK7=0x8000
+_BANK8=0x8000
+_BANK9=0x8000
+_BANK10=0x8000
+_BANK11=0x8000
+_BANK12=0x8000
+_BANK13=0x8000
+_BANK14=0x8000
+_BANK15=0x8000
 
 
