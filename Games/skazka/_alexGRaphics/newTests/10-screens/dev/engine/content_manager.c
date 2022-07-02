@@ -22,9 +22,11 @@ void engine_content_manager_load_tiles()
 
 void engine_content_manager_load_splash()
 {
+	devkit_SMS_mapROMBank( splash__tiles__psgcompr_bank );
 	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) splash__tiles__psgcompr, 0 );
 	devkit_SMS_loadBGPalette( ( void * ) splash__palette__bin );
 
+	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) font_overs__tiles__psgcompr, SPRITE_TILES );
 	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) logo_new__tiles__psgcompr, SPRITE_TILES + 16 );
 	devkit_SMS_loadSpritePalette( ( void * ) logo_new__palette__bin );
 }

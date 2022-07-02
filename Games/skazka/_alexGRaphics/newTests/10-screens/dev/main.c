@@ -52,7 +52,7 @@ void main( void )
 
 	engine_select_manager_init();
 	engine_screen_manager_init( open_screen_type );
-	engine_content_manager_load_tiles();
+	//engine_content_manager_load_tiles();
 
 	devkit_SMS_displayOn();
 	for( ;; )

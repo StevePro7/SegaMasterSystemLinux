@@ -1,10 +1,14 @@
 #include "splash_screen.h"
+#include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
+#include "../devkit/_sms_manager.h"
 
 void screen_splash_screen_load()
 {
-	engine_font_manager_draw_text( "SPLASH SCREEN", 10, 2 );
+	devkit_SMS_displayOff();		// TODO try comment this line out for smooth screen transition??
+	engine_content_manager_load_splash();
+	devkit_SMS_displayOn();			// TODO try comment this line out for smooth screen transition??
 }
 
 void screen_splash_screen_update( unsigned char *screen_type )
