@@ -3,6 +3,7 @@
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
 #include "../banks/bank2.h"
+#include "../banks/bank3.h"
 
 void engine_graphics_manager_draw_border()
 {
@@ -34,7 +35,6 @@ void engine_graphics_manager_draw_borderX( unsigned char top, unsigned char left
 	}
 }
 
-
 void engine_graphics_manager_draw_underline( unsigned char y )
 {
 	const unsigned char *pnt = border__tilemap__bin;
@@ -47,6 +47,61 @@ void engine_graphics_manager_draw_underline( unsigned char y )
 	for( idx = LEFT_X + 1; idx <= INNER_WIDE - 2; idx++ )
 	{
 		devkit_SMS_setNextTileatXY( idx, y ); devkit_SMS_setTile( *pnt + 2 );
+	}
+}
+
+void engine_graphics_manager_draw_splash()
+{
+	//const unsigned char wide = 32;
+	//const unsigned char high = 22;
+	unsigned char x, y;
+	unsigned int index = 0;
+	unsigned int value = 0;
+	unsigned int tile = 0;
+	unsigned char i, j;
+
+	x = 0;
+	y = 0;
+	for( j = 0; j < OUTER_HIGH - 2; j++ )
+	{
+		for( i = 0; i < OUTER_WIDE; i++ )
+		{
+			index = j * OUTER_WIDE + i;
+			value = index * 2;
+			tile = splash__tilemap__bin[ value ];
+			devkit_SMS_setNextTileatXY( x + i, y + j );
+			devkit_SMS_setTile( tile );
+		}
+	}
+}
+
+void engine_graphics_manager_draw_splash2()
+{
+	const unsigned char *pnt = logo_new__tilemap__bin;
+	unsigned char wide;
+	unsigned char high;
+	unsigned char x, y;
+	unsigned char i, j;
+	unsigned char idx = 0;
+	unsigned int tile;
+	unsigned int palette;
+
+	palette = devkit_TILE_USE_SPRITE_PALETTE();
+	wide = 28;
+	high = 5;
+	x = LEFT_X + 2;
+	y = TOP_Y + 2;
+	j = 0;
+	i = 0;
+	for( j = 0; j < high; j++ )
+	{
+		for( i = 0; i < wide; i++ )
+		{
+			tile = ( SPRITE_TILES + idx ) | palette;
+			devkit_SMS_setNextTileatXY( x + i, y + j );
+			devkit_SMS_setTile( *pnt + tile );
+			idx++;
+		}
 	}
 }
 
