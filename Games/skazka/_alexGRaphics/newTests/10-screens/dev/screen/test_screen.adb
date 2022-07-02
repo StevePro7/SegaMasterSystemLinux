@@ -1,9 +1,14 @@
 M:test_screen
 F:G$screen_test_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_test_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Ltest_screen.screen_test_screen_update$screen_type$1_0$100({2}DG,SC:U),B,1,4
+S:Ltest_screen.screen_test_screen_update$screen_type$1_0$102({2}DG,SC:U),B,1,4
 S:Ftest_screen$flag$0_0$0({1}:S),E,0,0
 S:Ftest_screen$palette$0_0$0({2}SI:U),E,0,0
+S:G$engine_sound_manager_init$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_sound_manager_play$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_sound_manager_fight$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_music_manager_play$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_music_manager_beat$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_tiles$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_logo_big$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_logo_small$0_0$0({2}DF,SV:S),C,0,0

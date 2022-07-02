@@ -1,4 +1,5 @@
 #include "test_screen.h"
+#include "../engine/audio_manager.h"
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
@@ -14,6 +15,7 @@ static unsigned int palette;
 void screen_test_screen_load()
 {
 	engine_font_manager_draw_text( "TEST SCREEN", LEFT_X + 12, TOP_Y + 10 );
+	engine_sound_manager_play( 12 );
 	//engine_content_manager_load_koschey();
 	//engine_graphics_manager_draw_koschey( LEFT_X + 10, TOP_Y + 2, devkit_TILE_USE_SPRITE_PALETTE() );
 	//engine_graphics_manager_draw_border();
