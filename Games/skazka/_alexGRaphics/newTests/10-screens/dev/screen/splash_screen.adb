@@ -2,7 +2,7 @@ M:splash_screen
 F:G$screen_splash_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_splash_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lsplash_screen.screen_splash_screen_update$screen_type$1_0$101({2}DG,SC:U),B,1,4
-S:Lsplash_screen.screen_splash_screen_update$input$1_0$102({1}SC:U),R,0,0,[a]
+S:Lsplash_screen.screen_splash_screen_update$input$1_0$102({1}SC:U),R,0,0,[c]
 S:G$engine_content_manager_load_tiles$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_splash$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_logo_big$0_0$0({2}DF,SV:S),C,0,0

@@ -12,7 +12,7 @@ void screen_splash_screen_load()
 	devkit_SMS_displayOff();		// TODO try comment this line out for smooth screen transition??
 	engine_content_manager_load_splash();
 	engine_graphics_manager_draw_splash();
-	
+	engine_graphics_manager_draw_splash2( LEFT_X + 2, TOP_Y + 2 );
 	devkit_SMS_displayOn();			// TODO try comment this line out for smooth screen transition??
 }
 
@@ -21,7 +21,9 @@ void screen_splash_screen_update( unsigned char *screen_type )
 	unsigned char input = engine_input_manager_hold( input_type_fire1 );
 	if( input )
 	{
-		engine_graphics_manager_draw_splash2( LEFT_X + 2, TOP_Y + 2 );
+		//engine_graphics_manager_draw_splash2( LEFT_X + 2, TOP_Y + 2 );
+		*screen_type = screen_type_title;
+		return;
 	}
 
 	input = engine_input_manager_hold( input_type_fire2 );
