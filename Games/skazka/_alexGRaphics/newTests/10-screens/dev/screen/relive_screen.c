@@ -1,4 +1,5 @@
 #include "relive_screen.h"
+#include "../engine/audio_manager.h"
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
@@ -11,6 +12,7 @@
 #include "../engine/text_manager.h"
 #include "../engine/timer_manager.h"
 #include "../devkit/_sms_manager.h"
+#include "../devkit/_snd_manager.h"
 #include "../banks/fixedbank.h"
 
 #define RELIVE_SCREEN_DELAY		30
@@ -45,12 +47,10 @@ void screen_relive_screen_update( unsigned char *screen_type )
 		engine_timer_manager_load( RELIVE_SCREEN_DELAY );
 		if( count == 0 || count == 2 )
 		{
-			//TDOD - play sound
-			//engine_sound_manager_play( sound_type_9 );
-			count = count;	//TDOD - delete this
+			engine_sound_manager_play( sound_type_9 );
 		}
 
-		if( count != 3 )
+		if( count < 3 )
 		{
 			engine_font_manager_draw_punc( LOCALE_STOP, LEFT_X + 21 + count, TOP_Y + 12 );
 		}
@@ -59,10 +59,13 @@ void screen_relive_screen_update( unsigned char *screen_type )
 		if( count > 3 )
 		{
 			// Replenish HP and remove +1.
-			engine_player_manager_rest();
-			engine_player_manager_set_oneups( life_type_none );
-			*screen_type = screen_type_stats;
-			return;
+			if( !devkit_PSGSFXGetStatus() )
+			{
+				engine_player_manager_rest();
+				engine_player_manager_set_oneups( life_type_none );
+				*screen_type = screen_type_stats;
+				return;
+			}
 		}
 	}
 
