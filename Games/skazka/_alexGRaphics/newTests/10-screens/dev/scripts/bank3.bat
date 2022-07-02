@@ -4,7 +4,9 @@ cd ..
 cd banks
 cd bank3
 
-:: Command
+:: Tiles
+bmp2tile.exe raw/splash.png   -savetiles "splash (tiles).psgcompr"     -removedupes -nomirror -planar -tileoffset   0  -savetilemap "splash (tilemap).bin"   -savepalette "splash (palette).bin"   -fullpalette -exit
+bmp2tile.exe raw/logo_big.png -savetiles "logo_big (tiles).psgcompr" -noremovedupes           -planar -tileoffset 272  -savetilemap "logo_big (tilemap).bin" -savepalette "logo_big (palette).bin" -fullpalette -exit
 
 cd ..
 folder2c bank3 bank3 3
