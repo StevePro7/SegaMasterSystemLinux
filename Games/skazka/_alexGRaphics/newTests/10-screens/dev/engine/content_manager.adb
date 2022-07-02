@@ -1,5 +1,6 @@
 M:content_manager
 F:G$engine_content_manager_load_tiles$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+F:G$engine_content_manager_load_splash$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_content_manager_load_logo_big$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_content_manager_load_logo_small$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_content_manager_load_village$0_0$0({2}DF,SV:S),Z,0,0,0,0,0

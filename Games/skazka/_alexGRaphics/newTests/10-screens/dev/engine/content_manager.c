@@ -25,8 +25,8 @@ void engine_content_manager_load_splash()
 	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) splash__tiles__psgcompr, 0 );
 	devkit_SMS_loadBGPalette( ( void * ) splash__palette__bin );
 
-	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) logo_big__tiles__psgcompr, SPRITE_TILES + 16 );
-	devkit_SMS_loadSpritePalette( ( void * ) logo_big__palette__bin );
+	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) logo_new__tiles__psgcompr, SPRITE_TILES + 16 );
+	devkit_SMS_loadSpritePalette( ( void * ) logo_new__palette__bin );
 }
 
 void engine_content_manager_load_logo_big()
