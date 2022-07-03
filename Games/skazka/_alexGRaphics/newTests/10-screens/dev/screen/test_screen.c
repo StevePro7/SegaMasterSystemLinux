@@ -24,7 +24,7 @@ void screen_test_screen_load()
 	//devkit_SMS_displayOff();		// TODO try comment this line out for smooth screen transition??
 	engine_content_manager_load_koschey();
 	engine_graphics_manager_draw_koschey( LEFT_X + 10, TOP_Y + 2, devkit_TILE_USE_SPRITE_PALETTE() );
-	engine_graphics_manager_draw_border();
+	//engine_graphics_manager_draw_border();
 	//devkit_SMS_displayOn();			// TODO try comment this line out for smooth screen transition??
 
 	//palette = devkit_TILE_USE_SPRITE_PALETTE();
