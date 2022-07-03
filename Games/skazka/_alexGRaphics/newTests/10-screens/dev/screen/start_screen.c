@@ -39,6 +39,7 @@ void screen_start_screen_load()
 	engine_graphics_manager_draw_border();
 	engine_graphics_manager_draw_underline( TOP_Y + 4 );
 
+	engine_font_manager_draw_punc( LOCALE_ARROW, LEFT_X + 12, TOP_Y + OPTION_ROW );
 	devkit_SMS_displayOn();			// TODO try comment this line out for smooth screen transition??
 
 	engine_timer_manager_load( START_FLASH_DELAY );
@@ -69,7 +70,7 @@ void screen_start_screen_update( unsigned char *screen_type )
 		}
 		else
 		{
-			engine_font_manager_draw_char( LOCALE_ARROW, LEFT_X + 12, TOP_Y + OPTION_ROW );
+			engine_font_manager_draw_punc( LOCALE_ARROW, LEFT_X + 12, TOP_Y + OPTION_ROW );
 			flash_index++;
 
 			if( flash_index >= START_FLASH_TOTAL )
