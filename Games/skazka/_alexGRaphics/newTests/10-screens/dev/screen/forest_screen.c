@@ -112,6 +112,9 @@ void screen_forest_screen_update( unsigned char *screen_type )
 				engine_enemy_manager_hit( enemys_damage );
 				if( engine_enemy_manager_dead() )
 				{
+					devkit_PSGSFXStop();
+					devkit_PSGStop();
+
 					engine_fight_manager_gold( &xp, &player_gold );
 					engine_player_manager_inc_gold( xp, player_gold );
 
