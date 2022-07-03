@@ -5,6 +5,8 @@
 #include "../engine/game_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/graphics_manager.h"
+#include "../engine/hack_manager.h"
+#include "../engine/input_manager.h"
 #include "../engine/locale_manager.h"
 #include "../engine/player_manager.h"
 #include "../engine/select_manager.h"
@@ -46,5 +48,49 @@ void screen_start_screen_load()
 
 void screen_start_screen_update( unsigned char *screen_type )
 {
+	struct_hack_object *ho = &global_hack_object;
+	unsigned char timer;
+	unsigned char input1;
+	unsigned char input2;
+	unsigned char nextr;
+
+	nextr = 0;
+	timer = engine_timer_manager_update();
+	if( timer )
+	{
+		if( !ho->hack_delays )
+		{
+			flash_count = 1 - flash_count;
+		}
+
+		if( flash_count )
+		{
+			engine_font_manager_draw_char( LOCALE_1_SPCS, LEFT_X + 12, TOP_Y + OPTION_ROW );
+		}
+		else
+		{
+			engine_font_manager_draw_char( LOCALE_ARROW, LEFT_X + 12, TOP_Y + OPTION_ROW );
+			flash_index++;
+
+			if( flash_index >= START_FLASH_TOTAL )
+			{
+				nextr = 1;
+			}
+		}
+	}
+
+	input1 = engine_input_manager_move( input_type_left );
+	input2 = engine_input_manager_move( input_type_right );
+	if( !nextr )
+	{
+		nextr = input1 || input2;
+	}
+
+	if( nextr )
+	{
+		*screen_type = screen_type_stats;
+		return;
+	}
+
 	*screen_type = screen_type_start;
 }
