@@ -65,6 +65,7 @@ S:Fboss_screen$first_time$0_0$0({1}:S),E,0,0
 S:G$engine_sound_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_sound_manager_play$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_sound_manager_fight$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_sound_manager_kill$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_music_manager_play$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_music_manager_beat$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_tiles$0_0$0({2}DF,SV:S),C,0,0

@@ -187,7 +187,8 @@ void screen_boss_screen_update( unsigned char *screen_type )
 
 			// If both you and boss have 0 HP then you get game over first!
 			engine_player_manager_armor( player_armor );
-			engine_player_manager_hit( player_damage );
+			//engine_player_manager_hit( player_damage );
+			engine_player_manager_hit( 0 );
 
 			if( engine_player_manager_dead() )
 			{
@@ -202,10 +203,13 @@ void screen_boss_screen_update( unsigned char *screen_type )
 				return;
 			}
 
-			engine_enemy_manager_hit( enemys_damage );
+			//engine_enemy_manager_hit( enemys_damage );
+			engine_enemy_manager_hit( 15 );
 			if( engine_enemy_manager_dead() )
 			{
-				*screen_type = screen_type_complete;
+				//*screen_type = screen_type_complete;
+				engine_enemy_manager_hplo();
+				*screen_type = screen_type_test;
 				return;
 			}
 		}
