@@ -7,7 +7,6 @@ S:Lsplash_screen.screen_splash_screen_update$timer$1_0$96({1}SC:U),R,0,0,[c]
 S:Lsplash_screen.screen_splash_screen_update$sloc0$0_1$0({1}SC:U),B,1,-1
 T:Fsplash_screen$tag_struct_timer_object[({0}S:S$timer_count$0_0$0({2}SI:U),Z,0,0)({2}S:S$timer_value$0_0$0({2}SI:U),Z,0,0)]
 S:G$global_timer_object$0_0$0({4}STtag_struct_timer_object:S),E,0,0
-S:G$engine_asm_manager_clear_VRAM$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_tiles$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_splash$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_logo_big$0_0$0({2}DF,SV:S),C,0,0

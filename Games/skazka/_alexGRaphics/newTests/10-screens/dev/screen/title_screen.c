@@ -1,4 +1,5 @@
 #include "title_screen.h"
+#include "../engine/asm_manager.h"
 #include "../engine/audio_manager.h"
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
@@ -28,6 +29,7 @@ void screen_title_screen_load()
 {
 	devkit_SMS_displayOff();		// TODO try comment this line out for smooth screen transition??
 
+	engine_asm_manager_clear_VRAM();
 	engine_content_manager_load_tiles();
 	engine_content_manager_load_logo_big();
 

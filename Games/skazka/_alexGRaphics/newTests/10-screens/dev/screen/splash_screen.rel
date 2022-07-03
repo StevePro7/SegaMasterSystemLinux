@@ -1,6 +1,6 @@
 ;!FILE splash_screen.asm
 XL3
-H 9 areas 4E global symbols
+H 9 areas 47 global symbols
 M splash_screen
 O -mz80
 S _devkit_SMS_displayOn Ref000000
@@ -10,76 +10,69 @@ S .__.ABS. Def000000
 S _engine_input_manager_hold Ref000000
 S _engine_graphics_manager_draw_splash2 Ref000000
 S _devkit_SMS_displayOff Ref000000
-S _engine_asm_manager_clear_VRAM Ref000000
 S _engine_timer_manager_update Ref000000
 S _engine_graphics_manager_draw_splash Ref000000
-A _CODE size 5C flags 0 addr 0
-S A$splash_screen$120 Def00002B
-S A$splash_screen$130 Def000034
-S A$splash_screen$121 Def00002D
-S A$splash_screen$140 Def000046
-S A$splash_screen$131 Def000038
-S A$splash_screen$113 Def00001E
-S A$splash_screen$150 Def000053
-S A$splash_screen$141 Def000047
-S A$splash_screen$132 Def00003A
-S A$splash_screen$114 Def000020
-S A$splash_screen$133 Def00003D
-S A$splash_screen$115 Def000021
+A _CODE size 51 flags 0 addr 0
+S A$splash_screen$120 Def00002D
+S A$splash_screen$130 Def000038
+S A$splash_screen$112 Def00001E
+S A$splash_screen$140 Def000047
+S A$splash_screen$131 Def00003A
+S A$splash_screen$113 Def000020
+S A$splash_screen$132 Def00003D
+S A$splash_screen$114 Def000021
+S A$splash_screen$124 Def000030
+S A$splash_screen$115 Def000022
 S _screen_splash_screen_update Def00001D
-S A$splash_screen$125 Def000030
-S A$splash_screen$116 Def000022
-S A$splash_screen$126 Def000033
-S A$splash_screen$117 Def000025
-S A$splash_screen$163 Def000058
-S A$splash_screen$154 Def000054
-S A$splash_screen$118 Def000026
-S A$splash_screen$109 Def00001D
-S A$splash_screen$173 Def00005B
-S A$splash_screen$146 Def000049
-S A$splash_screen$137 Def000040
-S A$splash_screen$119 Def000027
-S A$splash_screen$147 Def00004A
-S A$splash_screen$138 Def000043
-S A$splash_screen$148 Def00004D
-S A$splash_screen$139 Def000044
-S A$splash_screen$158 Def000056
-S A$splash_screen$149 Def000050
-S A$splash_screen$168 Def00005A
-S XG$screen_splash_screen_update$0$0 Def00005B
-S A$splash_screen$80 Def000010
+S A$splash_screen$125 Def000033
+S A$splash_screen$116 Def000025
+S A$splash_screen$117 Def000026
+S A$splash_screen$108 Def00001D
+S A$splash_screen$154 Def00004D
+S A$splash_screen$145 Def000049
+S A$splash_screen$136 Def000040
+S A$splash_screen$118 Def000027
+S A$splash_screen$164 Def000050
+S A$splash_screen$137 Def000043
+S A$splash_screen$119 Def00002B
+S A$splash_screen$138 Def000044
+S A$splash_screen$129 Def000034
+S A$splash_screen$139 Def000046
+S A$splash_screen$149 Def00004B
+S A$splash_screen$159 Def00004F
+S XG$screen_splash_screen_update$0$0 Def000050
 S G$screen_splash_screen_load$0$0 Def000000
-S A$splash_screen$90 Def000018
-S A$splash_screen$91 Def00001B
-S A$splash_screen$73 Def000006
-S A$splash_screen$65 Def000000
+S A$splash_screen$90 Def00001B
+S A$splash_screen$72 Def000006
+S A$splash_screen$64 Def000000
+S A$splash_screen$83 Def000011
 S C$splash_screen.c$21$1_0$94 Def000014
 S C$splash_screen.c$13$0_0$94 Def000000
-S A$splash_screen$84 Def000011
 S C$splash_screen.c$22$1_0$94 Def00001C
+S A$splash_screen$76 Def000009
 S C$splash_screen.c$30$1_0$96 Def000030
-S A$splash_screen$77 Def000009
-S C$splash_screen.c$40$1_0$96 Def000058
+S A$splash_screen$77 Def00000C
+S A$splash_screen$68 Def000003
+S C$splash_screen.c$40$1_0$96 Def00004D
 S C$splash_screen.c$31$1_0$96 Def000040
 S C$splash_screen.c$15$1_0$94 Def000000
-S A$splash_screen$78 Def00000C
-S A$splash_screen$69 Def000003
-S C$splash_screen.c$41$1_0$96 Def00005B
+S A$splash_screen$87 Def000014
+S A$splash_screen$78 Def00000D
+S C$splash_screen.c$41$1_0$96 Def000050
 S C$splash_screen.c$16$1_0$94 Def000003
-S A$splash_screen$88 Def000014
-S A$splash_screen$79 Def00000D
+S A$splash_screen$88 Def000017
+S A$splash_screen$79 Def000010
 S C$splash_screen.c$24$1_0$96 Def00001D
 S C$splash_screen.c$17$1_0$94 Def000006
-S A$splash_screen$89 Def000017
+S A$splash_screen$98 Def00001C
+S A$splash_screen$89 Def000018
 S C$splash_screen.c$18$1_0$94 Def000009
-S A$splash_screen$99 Def00001C
-S C$splash_screen.c$33$2_0$97 Def000049
 S C$splash_screen.c$19$1_0$94 Def000011
 S C$splash_screen.c$36$1_0$96 Def000034
 S _screen_splash_screen_load Def000000
-S C$splash_screen.c$36$2_0$97 Def000054
+S C$splash_screen.c$36$2_0$97 Def000049
 S C$splash_screen.c$29$1_0$96 Def00001E
-S C$splash_screen.c$37$2_0$97 Def000056
+S C$splash_screen.c$37$2_0$97 Def00004B
 S XG$screen_splash_screen_load$0$0 Def00001C
 S G$screen_splash_screen_update$0$0 Def00001D
 A _DATA size 0 flags 0 addr 0
@@ -93,7 +86,7 @@ A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
 T 00 00 00 CD 00 00 CD 00 00 CD 00 00 11 02 02 D5
-R 00 00 00 00 02 04 06 00 02 07 02 00 02 0A 09 00
+R 00 00 00 00 02 04 06 00 02 07 02 00 02 0A 08 00
 T 0D 00 00 CD 00 00 F1 CD 00 00 21 96 00 E5 CD
 R 00 00 00 00 02 04 05 00 02 08 00 00
 T 19 00 00 00 00 F1 C9
@@ -103,22 +96,20 @@ R 00 00 00 00
 T 1D 00 00 3B 3E 10 F5 33 CD 00 00 7D 33 FD 21
 R 00 00 00 00 02 09 04 00
 T 29 00 00 00 00 FD 39 FD 77 00 CD 00 00 4D FD 21
-R 00 00 00 00 02 0B 08 00
+R 00 00 00 00 02 0B 07 00
 T 36 00 00 03 00 FD 39 FD 6E 00 FD 66 01 FD 7E FD
 R 00 00 00 00
-T 43 00 00 B7 20 03 B1 28 0F
+T 43 00 00 B7 20 03 B1 28 04
 R 00 00 00 00
 T 49 00 00
 R 00 00 00 00
-T 49 00 00 E5 CD 00 00 CD 00 00 CD 00 00 E1 36 02
-R 00 00 00 00 02 05 06 00 02 08 07 00 02 0B 00 00
-T 56 00 00 18 02
+T 49 00 00 36 02 18 02
 R 00 00 00 00
-T 58 00 00
+T 4D 00 00
 R 00 00 00 00
-T 58 00 00 36 01
+T 4D 00 00 36 01
 R 00 00 00 00
-T 5A 00 00
+T 4F 00 00
 R 00 00 00 00
-T 5A 00 00 33 C9
+T 4F 00 00 33 C9
 R 00 00 00 00

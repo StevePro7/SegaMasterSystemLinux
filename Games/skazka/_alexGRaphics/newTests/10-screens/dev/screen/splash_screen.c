@@ -1,5 +1,5 @@
 #include "splash_screen.h"
-#include "../engine/asm_manager.h"
+//#include "../engine/asm_manager.h"
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/global_manager.h"
@@ -30,9 +30,9 @@ void screen_splash_screen_update( unsigned char *screen_type )
 	timer = engine_timer_manager_update();
 	if( input || timer )
 	{
-		devkit_SMS_displayOff();		// TODO try comment this line out for smooth screen transition??
-		engine_asm_manager_clear_VRAM();
-		devkit_SMS_displayOn();			// TODO try comment this line out for smooth screen transition??
+		//devkit_SMS_displayOff();		// TODO try comment this line out for smooth screen transition??
+		//engine_asm_manager_clear_VRAM();
+		//devkit_SMS_displayOn();			// TODO try comment this line out for smooth screen transition??
 		*screen_type = screen_type_title;
 		return;
 	}

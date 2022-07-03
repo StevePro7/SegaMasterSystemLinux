@@ -35,6 +35,7 @@ S:G$beat_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:Ftitle_screen$first_time$0_0$0({1}:S),E,0,0
 S:Ftitle_screen$event_stage$0_0$0({1}SC:U),E,0,0
 S:Ftitle_screen$flash_count$0_0$0({1}SC:U),E,0,0
+S:G$engine_asm_manager_clear_VRAM$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_sound_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_sound_manager_play$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_sound_manager_fight$0_0$0({2}DF,SV:S),C,0,0
