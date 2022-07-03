@@ -91,7 +91,12 @@ void screen_title_screen_update( unsigned char *screen_type )
 			engine_text_manager_cont();
 		}
 
-		// TODO integrate credits screen!
+		input = engine_input_manager_hold( input_type_fire2 );
+		if( input )
+		{
+			*screen_type = screen_type_credit;
+			return;
+		}
 
 		rand();
 		timer = engine_timer_manager_update();

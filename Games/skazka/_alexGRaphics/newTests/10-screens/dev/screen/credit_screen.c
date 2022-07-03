@@ -12,7 +12,7 @@
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
 
-#define CREDIT_SCREEN_DELAY	250
+#define CREDIT_SCREEN_DELAY		500
 static void display();
 
 void screen_credit_screen_load()
