@@ -64,11 +64,12 @@ cd screen
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 complete_screen.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 credit_screen.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 diff_screen.c
-::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 debug_screen.c
+
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 fight_screen.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 forest_screen.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 func_screen.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 intro_screen.c
+"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 kill_screen.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 load_screen.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 menu_screen.c
 ::"C:\Program Files\SDCC\bin\sdcc" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 none_screen.c
@@ -120,8 +121,8 @@ engine/player_manager.rel engine/random_manager.rel engine/sample_manager.rel en
 engine/select_manager.rel engine/text_manager.rel engine/timer_manager.rel ^
 object/audio_object.rel object/enemy_object.rel object/game_object.rel object/hack_object.rel ^
 object/player_object.rel object/select_object.rel object/timer_object.rel ^
-screen/boss_screen.rel screen/complete_screen.rel screen/credit_screen.rel screen/debug_screen.rel screen/diff_screen.rel ^
-screen/fight_screen.rel screen/forest_screen.rel screen/func_screen.rel screen/intro_screen.rel screen/load_screen.rel ^
+screen/boss_screen.rel screen/complete_screen.rel screen/credit_screen.rel screen/diff_screen.rel screen/fight_screen.rel ^
+screen/forest_screen.rel screen/func_screen.rel screen/intro_screen.rel screen/kill_screen.rel screen/load_screen.rel ^
 screen/menu_screen.rel screen/none_screen.rel screen/over_screen.rel screen/prep_screen.rel screen/relive_screen.rel ^
 screen/shop_screen.rel screen/splash_screen.rel screen/start_screen.rel screen/stats_screen.rel screen/talk_screen.rel ^
 screen/test_screen.rel screen/title_screen.rel screen/victory_screen.rel ^

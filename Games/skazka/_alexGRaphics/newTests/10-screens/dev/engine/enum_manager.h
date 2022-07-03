@@ -23,7 +23,7 @@ typedef enum tag_enum_screen_type
 	screen_type_relive = 17,
 	screen_type_over = 18,
 	screen_type_credit = 19,
-	screen_type_debug = 20,
+	screen_type_kill = 20,
 	screen_type_test = 21,
 	screen_type_func = 22,
 
