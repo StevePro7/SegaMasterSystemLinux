@@ -2,16 +2,17 @@
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
+#include "../engine/game_manager.h"
 #include "../engine/graphics_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/locale_manager.h"
 #include "../engine/text_manager.h"
+#include "../engine/timer_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
-#include <stdbool.h>
-#include <stdlib.h>
 
+#define CREDIT_SCREEN_DELAY	250
 static void display();
 
 void screen_credit_screen_load()
@@ -27,10 +28,25 @@ void screen_credit_screen_load()
 	engine_graphics_manager_draw_border();
 	engine_text_manager_cont();
 	devkit_SMS_displayOn();			// TODO try comment this line out for smooth screen transition??
+	engine_timer_manager_load( CREDIT_SCREEN_DELAY );
 }
 
 void screen_credit_screen_update( unsigned char *screen_type )
 {
+	unsigned char input1;
+	unsigned char input2;
+	unsigned char timer;
+
+	input1 = engine_input_manager_hold( input_type_fire1 );
+	input2 = engine_input_manager_hold( input_type_fire2 );
+	timer = engine_timer_manager_update();
+	if( input1 || input2 || timer )
+	{
+		engine_game_manager_music_off();
+		*screen_type = screen_type_title;
+		return;
+	}
+
 	*screen_type = screen_type_credit;
 }
 
@@ -53,19 +69,4 @@ static void display()
 		engine_font_manager_draw_text( ( unsigned char * ) credit_texts[ idx + 1 ], LEFT_X + x2, TOP_Y + row );
 		row++;
 	}
-
-	//engine_font_manager_draw_text( "PROGRAMMING", LEFT_X + x1, TOP_Y + 13 );
-	//engine_font_manager_draw_text( "STEVEPRO",    LEFT_X + x2, TOP_Y + 13 );
-
-	//engine_font_manager_draw_text( "ART GRAPHICS", LEFT_X + x1, TOP_Y + 15 );
-	//engine_font_manager_draw_text( "KAGESAN",      LEFT_X + x2, TOP_Y + 15 );
-
-	//engine_font_manager_draw_text( "PCM SAMPLING", LEFT_X + x1, TOP_Y + 16 );
-	//engine_font_manager_draw_text( "MAXIM",        LEFT_X + x2, TOP_Y + 16 );
-
-	//engine_font_manager_draw_text( "DEVKIT SMS", LEFT_X + x1, TOP_Y + 17 );
-	//engine_font_manager_draw_text( "SVERX",      LEFT_X + x2, TOP_Y + 17 );
-
-	//engine_font_manager_draw_text( "EMULICIOUS", LEFT_X + x1, TOP_Y + 18 );
-	//engine_font_manager_draw_text( "CALINDRO",   LEFT_X + x2, TOP_Y + 18 );
 }
