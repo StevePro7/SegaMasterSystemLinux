@@ -2,6 +2,9 @@ M:credit_screen
 F:G$screen_credit_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_credit_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lcredit_screen.screen_credit_screen_update$screen_type$1_0$128({2}DG,SC:U),B,1,4
+F:Fcredit_screen$display$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lcredit_screen.display$x1$1_0$130({1}SC:U),R,0,0,[]
+S:Lcredit_screen.display$x2$1_0$130({1}SC:U),R,0,0,[]
 S:G$intro_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$diff_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$stats_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
