@@ -51,9 +51,9 @@ static void display()
 	engine_font_manager_draw_text( "PCM SAMPLING", LEFT_X + x1, TOP_Y + 16 );
 	engine_font_manager_draw_text( "MAXIM",        LEFT_X + x2, TOP_Y + 16 );
 
-	engine_font_manager_draw_text( "DEVKIT SMS", LEFT_X + x1, TOP_Y + 18 );
-	engine_font_manager_draw_text( "SVERX",      LEFT_X + x2, TOP_Y + 18 );
+	engine_font_manager_draw_text( "DEVKIT SMS", LEFT_X + x1, TOP_Y + 17 );
+	engine_font_manager_draw_text( "SVERX",      LEFT_X + x2, TOP_Y + 17 );
 
-	engine_font_manager_draw_text( "EMULICIOUS", LEFT_X + x1, TOP_Y + 19 );
-	engine_font_manager_draw_text( "CALINDRO",   LEFT_X + x2, TOP_Y + 19 );
+	engine_font_manager_draw_text( "EMULICIOUS", LEFT_X + x1, TOP_Y + 18 );
+	engine_font_manager_draw_text( "CALINDRO",   LEFT_X + x2, TOP_Y + 18 );
 }
