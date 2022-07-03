@@ -2,6 +2,7 @@
 #include "../engine/audio_manager.h"
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
+#include "../engine/font_manager.h"
 #include "../engine/game_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/graphics_manager.h"
@@ -39,9 +40,12 @@ void screen_stats_screen_load()
 
 		engine_game_manager_print_stats();
 		engine_game_manager_print_texts();
+		engine_font_manager_draw_text( ( unsigned char * ) diff_texts[ go->difficulty ], LEFT_X + 8, TOP_Y + 21 );
 
 		engine_graphics_manager_draw_border();
 		engine_graphics_manager_draw_underline( TOP_Y + 4 );
+
+		//
 
 		devkit_SMS_displayOn();			// TODO try comment this line out for smooth screen transition??
 	}

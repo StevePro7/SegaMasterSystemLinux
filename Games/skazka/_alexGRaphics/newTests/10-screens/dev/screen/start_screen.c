@@ -22,6 +22,8 @@ static unsigned char flash_count;
 
 void screen_start_screen_load()
 {
+	struct_game_object *go = &global_game_object;
+
 	devkit_SMS_displayOff();		// TODO try comment this line out for smooth screen transition??
 	engine_content_manager_load_logo_small();
 	engine_content_manager_load_village();
@@ -35,6 +37,7 @@ void screen_start_screen_load()
 
 	engine_game_manager_print_stats();
 	engine_game_manager_print_texts();
+	engine_font_manager_draw_text( ( unsigned char * ) diff_texts[ go->difficulty ], LEFT_X + 8, TOP_Y + 21 );
 
 	engine_graphics_manager_draw_border();
 	engine_graphics_manager_draw_underline( TOP_Y + 4 );

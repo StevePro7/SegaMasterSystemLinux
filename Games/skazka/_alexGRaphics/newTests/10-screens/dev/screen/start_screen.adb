@@ -1,5 +1,6 @@
 M:start_screen
 F:G$screen_start_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lstart_screen.screen_start_screen_load$go$1_0$120({2}DG,STtag_struct_game_object:S),R,0,0,[]
 F:G$screen_start_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lstart_screen.screen_start_screen_update$screen_type$1_0$121({2}DG,SC:U),B,1,4
 S:Lstart_screen.screen_start_screen_update$ho$1_0$122({2}DG,STtag_struct_hack_object:S),R,0,0,[]

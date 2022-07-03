@@ -20,6 +20,13 @@ void engine_player_manager_init()
 	po->def_weapon = weapon_type_dagger;	// Q$	ATK
 	po->def_armor = armor_type_none;		// W$	ARM
 	po->def_life = life_type_none;			// E$	UP
+
+	po->def_armor = armor_type_kolchuga;		// W$	ARM
+	po->def_life = life_type_oneup;			// E$	UP
+
+	po->def_xp = 80;							// Z
+	po->def_hp = 40;						// N
+	po->def_gold = 100;						// V
 }
 
 void engine_player_manager_load()
@@ -79,6 +86,7 @@ void engine_player_manager_stats()
 	engine_font_manager_draw_data( po->xp, LEFT_X + 6, TOP_Y + 8 );
 
 	engine_font_manager_draw_data( po->gold, LEFT_X + 9, TOP_Y + 9 );
+	
 
 	// Print inventory.
 	devkit_SMS_mapROMBank( FIXED_BANK );
@@ -96,7 +104,7 @@ void engine_player_manager_stats()
 	{
 		//engine_font_manager_draw_flip( LOCALE_BRACKET, LEFT_X + 7, TOP_Y + 21 );		// TODO REMOVE as will block arrow select
 		//engine_font_manager_draw_punc( LOCALE_BRACKET, LEFT_X + 12, TOP_Y + 21 );
-		engine_font_manager_draw_text( LOCALE_HERO, LEFT_X + 8, TOP_Y + 21 );
+		engine_font_manager_draw_text( LOCALE_HERO, LEFT_X + 8, TOP_Y + 20 );
 	}
 }
 
