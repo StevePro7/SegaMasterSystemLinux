@@ -28,7 +28,7 @@ void screen_test_screen_load()
 	//palette = devkit_TILE_USE_SPRITE_PALETTE();
 	
 	engine_timer_manager_load( KILL_SCREEN_DELAY );
-	//engine_sound_manager_play( sound_type_12 );		// TODO replace sound 12
+	engine_sound_manager_kill();
 	flag = true;
 }
 
