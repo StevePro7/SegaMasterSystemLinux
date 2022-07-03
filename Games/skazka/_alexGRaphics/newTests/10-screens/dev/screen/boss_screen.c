@@ -207,7 +207,6 @@ void screen_boss_screen_update( unsigned char *screen_type )
 			engine_enemy_manager_hit( 35 );
 			if( engine_enemy_manager_dead() )
 			{
-				//*screen_type = screen_type_complete;
 				engine_enemy_manager_hplo();
 				*screen_type = screen_type_kill;
 				return;
