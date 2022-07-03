@@ -23,10 +23,6 @@ void engine_player_manager_init()
 
 	po->def_armor = armor_type_kolchuga;		// W$	ARM
 	po->def_life = life_type_oneup;			// E$	UP
-
-	po->def_xp = 80;							// Z
-	po->def_hp = 40;						// N
-	po->def_gold = 100;						// V
 }
 
 void engine_player_manager_load()

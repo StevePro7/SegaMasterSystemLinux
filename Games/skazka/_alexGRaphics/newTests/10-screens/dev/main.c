@@ -13,7 +13,7 @@ void main( void )
 	devkit_SMS_useFirstHalfTilesforSprites( false );
 
 	open_screen_type = screen_type_splash;
-	open_screen_type = screen_type_title;
+	//open_screen_type = screen_type_title;
 	//open_screen_type = screen_type_credit;
 	//open_screen_type = screen_type_menu;
 	//open_screen_type = screen_type_diff;
