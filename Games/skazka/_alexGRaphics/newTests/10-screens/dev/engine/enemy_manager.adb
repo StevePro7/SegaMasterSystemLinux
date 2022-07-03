@@ -70,6 +70,7 @@ S:G$laugh_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$menus_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$over_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$beat_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$credit_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$global_enemy_object$0_0$0({5}STtag_struct_enemy_object:S),E,0,0
 S:G$engine_font_manager_draw_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_punc$0_0$0({2}DF,SV:S),C,0,0

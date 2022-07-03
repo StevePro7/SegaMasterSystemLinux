@@ -44,6 +44,7 @@ S:G$laugh_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$menus_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$over_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$beat_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$credit_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:Fshop_screen$event_stage$0_0$0({1}SC:U),E,0,0
 S:Fshop_screen$select_type$0_0$0({1}SC:U),E,0,0
 S:Fshop_screen$gold$0_0$0({1}SC:U),E,0,0

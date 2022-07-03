@@ -8,7 +8,7 @@
 #include "../engine/timer_manager.h"
 #include "../devkit/_sms_manager.h"
 
-#define SPLASH_SCREEN_DELAY		150
+#define SPLASH_SCREEN_DELAY		250
 
 void screen_splash_screen_load()
 {
