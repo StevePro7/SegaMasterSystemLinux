@@ -18,6 +18,7 @@ S:G$query_texts$0_0$0({4}DA2d,DG,SC:U),E,0,0
 S:G$laugh_texts$0_0$0({6}DA3d,DG,SC:U),E,0,0
 S:G$over_texts$0_0$0({8}DA4d,DG,SC:U),E,0,0
 S:G$beat_texts$0_0$0({22}DA11d,DG,SC:U),E,0,0
+S:G$credit_texts$0_0$0({24}DA12d,DG,SC:U),E,0,0
 S:Ffixedbank$__str_0$0_0$0({28}DA28d,SC:U),D,0,0
 S:Ffixedbank$__str_1$0_0$0({28}DA28d,SC:U),D,0,0
 S:Ffixedbank$__str_2$0_0$0({28}DA28d,SC:U),D,0,0
@@ -99,3 +100,13 @@ S:Ffixedbank$__str_77$0_0$0({27}DA27d,SC:U),D,0,0
 S:Ffixedbank$__str_78$0_0$0({28}DA28d,SC:U),D,0,0
 S:Ffixedbank$__str_79$0_0$0({15}DA15d,SC:U),D,0,0
 S:Ffixedbank$__str_80$0_0$0({26}DA26d,SC:U),D,0,0
+S:Ffixedbank$__str_81$0_0$0({12}DA12d,SC:U),D,0,0
+S:Ffixedbank$__str_82$0_0$0({9}DA9d,SC:U),D,0,0
+S:Ffixedbank$__str_83$0_0$0({13}DA13d,SC:U),D,0,0
+S:Ffixedbank$__str_84$0_0$0({8}DA8d,SC:U),D,0,0
+S:Ffixedbank$__str_85$0_0$0({13}DA13d,SC:U),D,0,0
+S:Ffixedbank$__str_86$0_0$0({6}DA6d,SC:U),D,0,0
+S:Ffixedbank$__str_87$0_0$0({11}DA11d,SC:U),D,0,0
+S:Ffixedbank$__str_88$0_0$0({6}DA6d,SC:U),D,0,0
+S:Ffixedbank$__str_89$0_0$0({11}DA11d,SC:U),D,0,0
+S:Ffixedbank$__str_90$0_0$0({9}DA9d,SC:U),D,0,0

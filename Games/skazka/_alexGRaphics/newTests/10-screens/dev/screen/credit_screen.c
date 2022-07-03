@@ -36,24 +36,36 @@ void screen_credit_screen_update( unsigned char *screen_type )
 
 static void display()
 {
+	unsigned char row;
+	unsigned char idx;
+
 	unsigned char x1;
 	unsigned char x2;
 
 	x1 = 4;
 	x2 = 4 + 12 + 4;
 
-	engine_font_manager_draw_text( "PROGRAMMING", LEFT_X + x1, TOP_Y + 13 );
-	engine_font_manager_draw_text( "STEVEPRO",    LEFT_X + x2, TOP_Y + 13 );
+	row = 13;
+	devkit_SMS_mapROMBank( FIXED_BANK );
+	for( idx = 0; idx < 12; idx += 2 )
+	{
+		engine_font_manager_draw_text( ( unsigned char * ) credit_texts[ idx + 0 ], LEFT_X + x1, TOP_Y + row );
+		engine_font_manager_draw_text( ( unsigned char * ) credit_texts[ idx + 1 ], LEFT_X + x2, TOP_Y + row );
+		row++;
+	}
 
-	engine_font_manager_draw_text( "ART GRAPHICS", LEFT_X + x1, TOP_Y + 15 );
-	engine_font_manager_draw_text( "KAGESAN",      LEFT_X + x2, TOP_Y + 15 );
+	//engine_font_manager_draw_text( "PROGRAMMING", LEFT_X + x1, TOP_Y + 13 );
+	//engine_font_manager_draw_text( "STEVEPRO",    LEFT_X + x2, TOP_Y + 13 );
 
-	engine_font_manager_draw_text( "PCM SAMPLING", LEFT_X + x1, TOP_Y + 16 );
-	engine_font_manager_draw_text( "MAXIM",        LEFT_X + x2, TOP_Y + 16 );
+	//engine_font_manager_draw_text( "ART GRAPHICS", LEFT_X + x1, TOP_Y + 15 );
+	//engine_font_manager_draw_text( "KAGESAN",      LEFT_X + x2, TOP_Y + 15 );
 
-	engine_font_manager_draw_text( "DEVKIT SMS", LEFT_X + x1, TOP_Y + 17 );
-	engine_font_manager_draw_text( "SVERX",      LEFT_X + x2, TOP_Y + 17 );
+	//engine_font_manager_draw_text( "PCM SAMPLING", LEFT_X + x1, TOP_Y + 16 );
+	//engine_font_manager_draw_text( "MAXIM",        LEFT_X + x2, TOP_Y + 16 );
 
-	engine_font_manager_draw_text( "EMULICIOUS", LEFT_X + x1, TOP_Y + 18 );
-	engine_font_manager_draw_text( "CALINDRO",   LEFT_X + x2, TOP_Y + 18 );
+	//engine_font_manager_draw_text( "DEVKIT SMS", LEFT_X + x1, TOP_Y + 17 );
+	//engine_font_manager_draw_text( "SVERX",      LEFT_X + x2, TOP_Y + 17 );
+
+	//engine_font_manager_draw_text( "EMULICIOUS", LEFT_X + x1, TOP_Y + 18 );
+	//engine_font_manager_draw_text( "CALINDRO",   LEFT_X + x2, TOP_Y + 18 );
 }

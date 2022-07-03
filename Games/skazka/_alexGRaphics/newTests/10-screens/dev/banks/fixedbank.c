@@ -183,3 +183,13 @@ const unsigned char *beat_texts[] =
 	"", "", "",
 	" NOW GO AND REST OUR HERO",
 };
+
+const unsigned char *credit_texts[] =
+{
+	"PROGRAMMING", "STEVEPRO",
+	"", "",
+	"ART GRAPHICS", "KAGESAN",
+	"PCM SAMPLING", "MAXIM",
+	"DEVKIT SMS", "SVERX",
+	"EMULICIOUS", "CALINDRO",
+};
