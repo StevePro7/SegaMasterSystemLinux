@@ -80,9 +80,10 @@ void screen_title_screen_update( unsigned char *screen_type )
 				{
 					engine_music_manager_play( index );
 					engine_input_manager_update();
-					input = engine_input_manager_move( input_type_fire2 );
+					input = engine_input_manager_hold( input_type_fire2 );
 					if( input )
 					{
+						engine_input_manager_update();
 						index = 5;
 					}
 				}
@@ -91,6 +92,7 @@ void screen_title_screen_update( unsigned char *screen_type )
 			engine_text_manager_cont();
 		}
 
+		//engine_input_manager_update();
 		input = engine_input_manager_hold( input_type_fire2 );
 		if( input )
 		{
