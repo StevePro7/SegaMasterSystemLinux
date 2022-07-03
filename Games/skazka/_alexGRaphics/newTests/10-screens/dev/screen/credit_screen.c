@@ -69,4 +69,8 @@ static void display()
 		engine_font_manager_draw_text( ( unsigned char * ) credit_texts[ idx + 1 ], LEFT_X + x2, TOP_Y + row );
 		row++;
 	}
+
+	engine_font_manager_draw_numb( 2, LEFT_X + 28, TOP_Y + 22 );
+	engine_font_manager_draw_punc( LOCALE_STOP, LEFT_X + 29, TOP_Y + 22 );
+	engine_font_manager_draw_numb( 0, LEFT_X + 30, TOP_Y + 22 );
 }
