@@ -2,12 +2,12 @@ M:test_screen
 F:G$screen_test_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_test_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Ltest_screen.screen_test_screen_update$screen_type$1_0$117({2}DG,SC:U),B,1,4
-S:Ltest_screen.screen_test_screen_update$input$1_0$118({1}SC:U),R,0,0,[]
 S:Ltest_screen.screen_test_screen_update$timer$1_0$118({1}SC:U),R,0,0,[a]
 T:Ftest_screen$tag_struct_timer_object[({0}S:S$timer_count$0_0$0({2}SI:U),Z,0,0)({2}S:S$timer_value$0_0$0({2}SI:U),Z,0,0)]
 S:G$global_timer_object$0_0$0({4}STtag_struct_timer_object:S),E,0,0
-S:Ftest_screen$flag$0_0$0({1}:S),E,0,0
 S:Ftest_screen$palette$0_0$0({2}SI:U),E,0,0
+S:Ftest_screen$count$0_0$0({1}SC:U),E,0,0
+S:Ftest_screen$flag$0_0$0({1}:S),E,0,0
 S:G$engine_sound_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_sound_manager_play$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_sound_manager_fight$0_0$0({2}DF,SV:S),C,0,0
