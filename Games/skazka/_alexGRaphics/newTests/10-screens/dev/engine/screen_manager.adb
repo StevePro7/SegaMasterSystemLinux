@@ -46,8 +46,8 @@ S:G$screen_over_screen_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$screen_over_screen_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$screen_credit_screen_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$screen_credit_screen_update$0_0$0({2}DF,SV:S),C,0,0
-S:G$screen_debug_screen_load$0_0$0({2}DF,SV:S),C,0,0
-S:G$screen_debug_screen_update$0_0$0({2}DF,SV:S),C,0,0
+S:G$screen_kill_screen_load$0_0$0({2}DF,SV:S),C,0,0
+S:G$screen_kill_screen_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$screen_test_screen_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$screen_test_screen_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$screen_func_screen_load$0_0$0({2}DF,SV:S),C,0,0
