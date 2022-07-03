@@ -1,4 +1,5 @@
 #include "victory_screen.h"
+#include "../engine/audio_manager.h"
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
@@ -11,6 +12,7 @@
 #include "../engine/text_manager.h"
 #include "../engine/timer_manager.h"
 #include "../devkit/_sms_manager.h"
+#include "../devkit/_snd_manager.h"
 #include "../banks/fixedbank.h"
 
 void screen_victory_screen_load()
@@ -42,6 +44,8 @@ void screen_victory_screen_load()
 
 	engine_text_manager_cont();
 	devkit_SMS_displayOn();			// TODO try comment this line out for smooth screen transition??
+
+	engine_sound_manager_play( sound_type_7 );
 }
 
 void screen_victory_screen_update( unsigned char *screen_type )
@@ -51,8 +55,7 @@ void screen_victory_screen_update( unsigned char *screen_type )
 
 	if( input1 || input2 )
 	{
-		// TODO - implement check!
-		//if( !devkit_PSGSFXGetStatus() )
+		if( !devkit_PSGSFXGetStatus() )
 		{
 			*screen_type = screen_type_stats;
 			return;

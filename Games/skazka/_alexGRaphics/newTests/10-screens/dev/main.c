@@ -23,7 +23,7 @@ void main( void )
 	////open_screen_type = screen_type_stats;
 	////open_screen_type = screen_type_victory;
 	////open_screen_type = screen_type_relive;
-	//open_screen_type = screen_type_forest;
+	open_screen_type = screen_type_forest;
 	//open_screen_type = screen_type_stats;
 	//open_screen_type = screen_type_start;
 	////open_screen_type = screen_type_shop;
