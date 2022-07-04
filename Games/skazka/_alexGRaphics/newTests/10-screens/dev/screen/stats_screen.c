@@ -45,8 +45,6 @@ void screen_stats_screen_load()
 		engine_graphics_manager_draw_border();
 		engine_graphics_manager_draw_underline( TOP_Y + 4 );
 
-		//
-
 		devkit_SMS_displayOn();			// TODO try comment this line out for smooth screen transition??
 	}
 

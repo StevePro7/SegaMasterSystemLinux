@@ -88,22 +88,25 @@ void screen_shop_screen_update( unsigned char *screen_type )
 	}
 	else
 	{
-		// Check edge case "Not enough gold" SFX!
-		if( devkit_PSGSFXGetStatus() )
+		input = engine_input_manager_hold( input_type_fire2 );
+		if( input )
+		{
+			if( !devkit_PSGSFXGetStatus() )
+			{
+				*screen_type = screen_type_stats;
+				return;
+			}
+		}
+
+		selection = engine_select_manager_update( select_type );
+		if( NO_SELECTION == selection )
 		{
 			*screen_type = screen_type_shop;
 			return;
 		}
 
-		input = engine_input_manager_hold( input_type_fire2 );
-		if( input )
-		{
-			*screen_type = screen_type_stats;
-			return;
-		}
-
-		selection = engine_select_manager_update( select_type );
-		if( NO_SELECTION == selection )
+		// Check edge case "Not enough gold" SFX!
+		if( devkit_PSGSFXGetStatus() )
 		{
 			*screen_type = screen_type_shop;
 			return;
