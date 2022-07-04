@@ -8,7 +8,8 @@
 #include "../devkit/_sms_manager.h"
 #include <stdbool.h>
 
-#define KILL_SCREEN_DELAY		50
+#define KILL_SCREEN_DELAY		25
+#define KILL_FLASH_COUNT		7
 
 static unsigned int palette;
 static unsigned char count;
@@ -33,7 +34,7 @@ void screen_kill_screen_update( unsigned char *screen_type )
 	if( timer )
 	{
 		count++;
-		if( count < 5 )
+		if( count < KILL_FLASH_COUNT )
 		{
 			flag = !flag;
 			palette = flag ? devkit_TILE_USE_SPRITE_PALETTE() : 0;
@@ -41,7 +42,7 @@ void screen_kill_screen_update( unsigned char *screen_type )
 		}
 	}
 
-	if( count > 5 )
+	if( count > KILL_FLASH_COUNT )
 	{
 		*screen_type = screen_type_complete;
 		return;
