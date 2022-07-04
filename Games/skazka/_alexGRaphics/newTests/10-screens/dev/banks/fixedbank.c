@@ -101,7 +101,7 @@ const unsigned char *menus_texts[] =
 
 const unsigned char *villager_texts[] =
 {
-	"  YOU LOST SOME MONEY      ",
+	"  YOU FOUND SOME MONEY    ",
 	"",
 	"",
 	" DID YOU KNOW THAT YOU CAN ",
@@ -128,7 +128,7 @@ const unsigned char *villager_texts[] =
 	"  CYKA  BLYAT              ",
 	"",
 	"",
-	"  YOU FOUND SOME MONEY    ",
+	"  YOU LOST SOME MONEY      ",
 	"",
 	"",
 };

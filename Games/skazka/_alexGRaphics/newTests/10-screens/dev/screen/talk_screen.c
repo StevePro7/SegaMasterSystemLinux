@@ -80,22 +80,30 @@ void screen_talk_screen_update( unsigned char *screen_type )
 
 static void display_msg()
 {
+	struct_player_object *po = &global_player_object;
 	unsigned char row;
 	unsigned char msg;
 	unsigned char idx = 0;
 	unsigned char beg = 0;
 	unsigned char txt = 0;
+	unsigned char max = MAX_RANDOM;
+
+	// If no gold then can never issue "No gold chat"
+	if( 0 == po->gold )
+	{
+		max = MAX_RANDOM - 1;
+	}
 
 	while( 1 )
 	{
-		msg = ( unsigned char ) ( rand() % MAX_RANDOM );
+		msg = ( unsigned char ) ( rand() % max );
 		if( msg != prev_msg )
 		{
 			prev_msg = msg;
 			break;
 		}
 	}
-	
+
 	beg = msg * MAX_CHAT;
 	row = 6;
 	for( idx = 0; idx < MAX_CHAT + 1; idx++ )
@@ -115,9 +123,9 @@ static void display_msg()
 
 	if( 0 == msg )
 	{
-		engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 23, TOP_Y + 7 );
-		engine_sound_manager_play( sound_type_6 );
-		engine_player_manager_dec_gold( NUM_GOLD );
+		engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 24, TOP_Y + 7 );
+		engine_sound_manager_play( sound_type_7 );
+		engine_player_manager_inc_gold( 0, NUM_GOLD );
 	}
 	else if( 1 == msg )
 	{
@@ -151,8 +159,8 @@ static void display_msg()
 	}
 	else if( 9 == msg )
 	{
-		engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 24, TOP_Y + 7 );
-		engine_sound_manager_play( sound_type_7 );
-		engine_player_manager_inc_gold( 0, NUM_GOLD );
+		engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 23, TOP_Y + 7 );
+		engine_sound_manager_play( sound_type_6 );
+		engine_player_manager_dec_gold( NUM_GOLD );
 	}
 }
