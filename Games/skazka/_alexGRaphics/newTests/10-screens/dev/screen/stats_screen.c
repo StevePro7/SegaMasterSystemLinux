@@ -40,7 +40,7 @@ void screen_stats_screen_load()
 
 		engine_game_manager_print_stats();
 		engine_game_manager_print_texts();
-		engine_font_manager_draw_text( ( unsigned char * ) diff_texts[ go->difficulty ], LEFT_X + 8, TOP_Y + 21 );
+		engine_font_manager_draw_text( ( unsigned char * ) diff_texts[ go->difficulty ], LEFT_X + 7, TOP_Y + 21 );
 
 		engine_graphics_manager_draw_border();
 		engine_graphics_manager_draw_underline( TOP_Y + 4 );

@@ -97,7 +97,7 @@ void engine_player_manager_stats()
 	{
 		//engine_font_manager_draw_flip( LOCALE_BRACKET, LEFT_X + 7, TOP_Y + 21 );		// TODO REMOVE as will block arrow select
 		//engine_font_manager_draw_punc( LOCALE_BRACKET, LEFT_X + 12, TOP_Y + 21 );
-		engine_font_manager_draw_text( LOCALE_HERO, LEFT_X + 8, TOP_Y + 20 );
+		engine_font_manager_draw_text( LOCALE_HERO, LEFT_X + 7, TOP_Y + 20 );
 	}
 }
 
