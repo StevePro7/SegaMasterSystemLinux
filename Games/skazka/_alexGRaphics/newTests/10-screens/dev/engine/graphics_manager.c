@@ -8,7 +8,7 @@
 void engine_graphics_manager_draw_border()
 {
 	engine_graphics_manager_draw_borderX( 0, 0, OUTER_WIDE, OUTER_HIGH );
-	//engine_graphics_manager_draw_borderX( LEFT_X, TOP_Y, INNER_WIDE, INNER_HIGH );		// TODO tweak this for part II
+	engine_graphics_manager_draw_borderX( LEFT_X, TOP_Y, INNER_WIDE, INNER_HIGH );
 }
 
 void engine_graphics_manager_draw_borderX( unsigned char top, unsigned char left, unsigned char wide, unsigned char high )

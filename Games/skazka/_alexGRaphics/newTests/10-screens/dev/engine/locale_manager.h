@@ -18,7 +18,7 @@
 #define LOCALE_GOLD				"GOLD"
 #define LOCALE_SHOP_QUERY		"WHAT WILL YOU BUY"
 #define LOCALE_YOU_HAVE			"YOU HAVE GOLD"
-#define LOCALE_HERO				"HERO"		// TODO check
+#define LOCALE_HERO				"HERO"
 
 #define LOCALE_OLD_VILLAGE		"OLD VILLAGE"
 
