@@ -1,4 +1,4 @@
-    @echo off
+@echo off
 
 :: Time build START
 :: Reference: https://stackoverflow.com/questions/673523/how-do-i-measure-execution-time-of-a-command-on-the-windows-command-line
@@ -14,16 +14,6 @@ cd ..
 cd devkit
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _sms_manager.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _snd_manager.c
-cd ..
-
-cd object
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 audio_object.c
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 enemy_object.c
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 game_object.c
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 hack_object.c
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 player_object.c
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 select_object.c
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 timer_object.c
 cd ..
 
 cd engine
@@ -87,7 +77,6 @@ cd ..
 
 sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
 
-
 :: Time build -END-
 set _time=%time: =0%
 set /a _hours=100%_time:~0,2%%%100,_min=100%_time:~3,2%%%100,_sec=100%_time:~6,2%%%100,_cs=%_time:~9,2%
@@ -96,7 +85,6 @@ set /a _hours=_duration/60/60/100,_min=100+_duration/60/100%%60,_sec=100+(_durat
 echo.
 echo Time taken: %_sec:~-2%.%_cs:~-2% secs
 echo.
-
 
 :: Link
 sdcc --debug -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-loc 0xC000 ^
@@ -129,7 +117,7 @@ content/gfx.rel ^
 content/psg.rel
 
 :: Execute
-"C:\Program Files\SDCC\bin\ihx2sms" output.ihx output.sms
+ihx2sms" output.ihx output.sms
 
 
 :: Delete
