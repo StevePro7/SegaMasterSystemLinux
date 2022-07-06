@@ -33,7 +33,7 @@
 #define LOCALE_REVITALISING		"REVITALIZING"
 
 
-#define LOCALE_NOT_ENOUGH		"NOT ENOUGH GOLD"			// TODO - replace by "reject" sound FX ??
+#define LOCALE_NOT_ENOUGH		"NOT ENOUGH GOLD"
 
 #define LOCALE_30_SPCS			"                              "
 #define LOCALE_1_SPCS			' '
