@@ -227,7 +227,6 @@ S:G$engine_game_manager_flash_on$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_flash_off$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_difficulty$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_print_stats$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_game_manager_print_version$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_print_texts$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_hack_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_hack_manager_load$0_0$0({2}DF,SV:S),C,0,0

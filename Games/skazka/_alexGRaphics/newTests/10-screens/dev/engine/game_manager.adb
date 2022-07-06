@@ -16,10 +16,9 @@ F:G$engine_game_manager_difficulty$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lgame_manager.engine_game_manager_difficulty$difficulty$1_0$113({1}SC:U),B,1,4
 S:Lgame_manager.engine_game_manager_difficulty$go$1_0$114({2}DG,STtag_struct_game_object:S),R,0,0,[]
 F:G$engine_game_manager_print_stats$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-F:G$engine_game_manager_print_version$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_game_manager_print_texts$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lgame_manager.engine_game_manager_print_texts$row$1_0$117({1}SC:U),B,1,-1
-S:Lgame_manager.engine_game_manager_print_texts$idx$1_0$117({1}SC:U),R,0,0,[c]
+S:Lgame_manager.engine_game_manager_print_texts$row$1_0$116({1}SC:U),B,1,-1
+S:Lgame_manager.engine_game_manager_print_texts$idx$1_0$116({1}SC:U),R,0,0,[c]
 S:Lgame_manager.engine_game_manager_print_texts$sloc0$0_1$0({1}SC:U),B,1,-1
 T:Fgame_manager$tag_struct_player_object[({0}S:S$xp$0_0$0({1}SC:U),Z,0,0)({1}S:S$hp$0_0$0({1}SC:U),Z,0,0)({2}S:S$gold$0_0$0({2}SI:U),Z,0,0)({4}S:S$weapon$0_0$0({1}SC:U),Z,0,0)({5}S:S$armor$0_0$0({1}SC:U),Z,0,0)({6}S:S$life$0_0$0({1}SC:U),Z,0,0)({7}S:S$level$0_0$0({1}SC:U),Z,0,0)({8}S:S$max_hp$0_0$0({1}SC:U),Z,0,0)({9}S:S$max_xp$0_0$0({1}SC:U),Z,0,0)({10}S:S$won$0_0$0({1}SC:U),Z,0,0)({11}S:S$def_xp$0_0$0({1}SC:U),Z,0,0)({12}S:S$def_hp$0_0$0({1}SC:U),Z,0,0)({13}S:S$def_gold$0_0$0({2}SI:U),Z,0,0)({15}S:S$def_weapon$0_0$0({1}SC:U),Z,0,0)({16}S:S$def_armor$0_0$0({1}SC:U),Z,0,0)({17}S:S$def_life$0_0$0({1}SC:U),Z,0,0)]
 T:Fgame_manager$tag_struct_game_object[({0}S:S$intro_once$0_0$0({1}:S),Z,0,0)({1}S:S$play_music$0_0$0({1}:S),Z,0,0)({2}S:S$flash_arrow$0_0$0({1}:S),Z,0,0)({3}S:S$difficulty$0_0$0({1}SC:U),Z,0,0)]

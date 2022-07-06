@@ -116,7 +116,7 @@ content/gfx.rel ^
 content/psg.rel
 
 :: Execute
-ihx2sms" output.ihx output.sms
+ihx2sms output.ihx output.sms
 
 
 :: Delete
