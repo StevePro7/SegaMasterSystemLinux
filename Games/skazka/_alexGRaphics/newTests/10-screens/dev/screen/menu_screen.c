@@ -21,7 +21,7 @@ void screen_menu_screen_load()
 
 	select_type = select_type_menu;
 
-	devkit_SMS_displayOff();		// TODO try comment this line out for smooth screen transition??
+	devkit_SMS_displayOff();
 	engine_content_manager_load_logo_small();
 	engine_graphics_manager_draw_logo_small( LEFT_X + 1, TOP_Y + 1 );
 
@@ -39,7 +39,7 @@ void screen_menu_screen_load()
 	engine_graphics_manager_draw_underline( TOP_Y + 4 );
 
 	engine_select_manager_load( select_type, LEFT_X + 10, TOP_Y + 10, 3 );
-	devkit_SMS_displayOn();			// TODO try comment this line out for smooth screen transition??
+	devkit_SMS_displayOn();
 }
 
 void screen_menu_screen_update( unsigned char *screen_type )

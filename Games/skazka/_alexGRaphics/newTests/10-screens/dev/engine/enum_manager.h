@@ -17,15 +17,14 @@ typedef enum tag_enum_screen_type
 	screen_type_talk = 11,
 	screen_type_prep = 12,
 	screen_type_boss = 13,
-	screen_type_fight = 14,
-	screen_type_complete = 15,
-	screen_type_menu = 16,
-	screen_type_relive = 17,
-	screen_type_over = 18,
-	screen_type_credit = 19,
-	screen_type_kill = 20,
-	screen_type_test = 21,
-	screen_type_func = 22,
+	screen_type_complete = 14,
+	screen_type_menu = 15,
+	screen_type_relive = 16,
+	screen_type_over = 17,
+	screen_type_credit = 18,
+	screen_type_kill = 19,
+	screen_type_test = 20,
+	screen_type_func = 21,
 
 } enum_screen_type;
 

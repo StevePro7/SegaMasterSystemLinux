@@ -27,7 +27,7 @@ void screen_stats_screen_load()
 
 	if( !flash_arrow )
 	{
-		devkit_SMS_displayOff();		// TODO try comment this line out for smooth screen transition??
+		devkit_SMS_displayOff();
 		engine_content_manager_load_logo_small();
 		engine_content_manager_load_village();
 		engine_content_manager_load_inventory();
@@ -45,7 +45,7 @@ void screen_stats_screen_load()
 		engine_graphics_manager_draw_border();
 		engine_graphics_manager_draw_underline( TOP_Y + 4 );
 
-		devkit_SMS_displayOn();			// TODO try comment this line out for smooth screen transition??
+		devkit_SMS_displayOn();
 	}
 
 	engine_select_manager_load( select_type, LEFT_X + 12, TOP_Y + OPTION_ROW, 6 );

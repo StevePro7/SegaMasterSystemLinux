@@ -21,7 +21,7 @@ static unsigned char count;
 
 void screen_relive_screen_load()
 {
-	devkit_SMS_displayOff();		// TODO try comment this line out for smooth screen transition??
+	devkit_SMS_displayOff();
 	engine_content_manager_load_logo_small();
 	engine_graphics_manager_draw_logo_small( LEFT_X + 1, TOP_Y + 1 );
 
@@ -32,7 +32,7 @@ void screen_relive_screen_load()
 	engine_graphics_manager_draw_border();
 	engine_graphics_manager_draw_underline( TOP_Y + 4 );
 
-	devkit_SMS_displayOn();			// TODO try comment this line out for smooth screen transition??
+	devkit_SMS_displayOn();
 
 	engine_timer_manager_load( RELIVE_SCREEN_DELAY );
 	count = 0;

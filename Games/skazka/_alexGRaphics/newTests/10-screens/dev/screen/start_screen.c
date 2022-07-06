@@ -24,7 +24,7 @@ void screen_start_screen_load()
 {
 	struct_game_object *go = &global_game_object;
 
-	devkit_SMS_displayOff();		// TODO try comment this line out for smooth screen transition??
+	devkit_SMS_displayOff();
 	engine_content_manager_load_logo_small();
 	engine_content_manager_load_village();
 	engine_content_manager_load_inventory();
@@ -43,7 +43,7 @@ void screen_start_screen_load()
 	engine_graphics_manager_draw_underline( TOP_Y + 4 );
 
 	engine_font_manager_draw_punc( LOCALE_ARROW, LEFT_X + 12, TOP_Y + OPTION_ROW );
-	devkit_SMS_displayOn();			// TODO try comment this line out for smooth screen transition??
+	devkit_SMS_displayOn();
 
 	engine_timer_manager_load( START_FLASH_DELAY );
 	flash_index = 0;

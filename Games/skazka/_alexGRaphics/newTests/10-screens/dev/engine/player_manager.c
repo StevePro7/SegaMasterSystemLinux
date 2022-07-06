@@ -67,7 +67,6 @@ void engine_player_manager_stats()
 	struct_player_object *po = &global_player_object;
 
 	// Print HP, XP, gold, level.
-	//engine_font_manager_draw_numb( 0, LEFT_X + 8, TOP_Y + 6 );		// TODO - do I want this?
 	engine_font_manager_draw_numb( po->level, LEFT_X + 9, TOP_Y + 6 );
 
 	engine_font_manager_draw_data( po->max_hp, LEFT_X + 9, TOP_Y + 7 );
@@ -92,11 +91,8 @@ void engine_player_manager_stats()
 		engine_font_manager_draw_text( ( unsigned char * ) life_texts[ po->life ], LEFT_X + 5, TOP_Y + 13 );
 	}
 
-	// TODO - check on this before publish!
 	if( po->xp > 60 )
 	{
-		//engine_font_manager_draw_flip( LOCALE_BRACKET, LEFT_X + 7, TOP_Y + 21 );		// TODO REMOVE as will block arrow select
-		//engine_font_manager_draw_punc( LOCALE_BRACKET, LEFT_X + 12, TOP_Y + 21 );
 		engine_font_manager_draw_text( LOCALE_HERO, LEFT_X + 7, TOP_Y + 20 );
 	}
 }
@@ -131,7 +127,6 @@ void engine_player_manager_draw_inventory( unsigned char x, unsigned char y )
 		}
 	}
 
-	//po->weapon
 	tile = po->weapon * size;
 	for( j = 0; j < delta; j++ )
 	{

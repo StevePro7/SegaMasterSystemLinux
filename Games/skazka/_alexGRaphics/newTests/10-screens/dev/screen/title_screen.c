@@ -17,7 +17,6 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-// TODO - complete title screen		i.e.	integrate credits screen!
 #define TITLE_FLASH_DELAY	50
 #define TITLE_SOUND_DELAY	50
 
@@ -27,7 +26,7 @@ static unsigned char flash_count;
 
 void screen_title_screen_load()
 {
-	devkit_SMS_displayOff();		// TODO try comment this line out for smooth screen transition??
+	devkit_SMS_displayOff();
 
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_load_tiles();
@@ -41,7 +40,7 @@ void screen_title_screen_load()
 	engine_font_manager_draw_numb( 8, LEFT_X + 16, TOP_Y + 15 );
 
 	engine_graphics_manager_draw_border();
-	devkit_SMS_displayOn();			// TODO try comment this line out for smooth screen transition??
+	devkit_SMS_displayOn();
 
 	engine_timer_manager_load( TITLE_FLASH_DELAY );
 	first_time = true;
@@ -92,7 +91,7 @@ void screen_title_screen_update( unsigned char *screen_type )
 			engine_text_manager_cont();
 		}
 
-		//engine_input_manager_update();
+		// Navigate to hidden credits screen.
 		input = engine_input_manager_hold( input_type_fire2 );
 		if( input )
 		{

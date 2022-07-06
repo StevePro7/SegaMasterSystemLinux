@@ -21,7 +21,7 @@ void screen_victory_screen_load()
 	unsigned char row;
 	unsigned char idx;
 
-	devkit_SMS_displayOff();		// TODO try comment this line out for smooth screen transition??
+	devkit_SMS_displayOff();
 	engine_content_manager_load_logo_small();
 	engine_graphics_manager_draw_logo_small( LEFT_X + 1, TOP_Y + 1 );
 
@@ -43,7 +43,7 @@ void screen_victory_screen_load()
 	engine_graphics_manager_draw_underline( TOP_Y + 4 );
 
 	engine_text_manager_cont();
-	devkit_SMS_displayOn();			// TODO try comment this line out for smooth screen transition??
+	devkit_SMS_displayOn();
 
 	engine_sound_manager_play( sound_type_7 );
 }

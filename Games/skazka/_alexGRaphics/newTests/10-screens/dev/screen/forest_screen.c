@@ -42,15 +42,11 @@ void screen_forest_screen_load()
 	struct_game_object *go = &global_game_object;
 	select_type = select_type_forest;
 
-	// TODO delete this from here !!
-	engine_player_manager_calc();
-	// TODO delete this from here !!
-
 	engine_enemy_manager_load( po->level );
 
-	devkit_SMS_displayOff();		// TODO try comment this line out for smooth screen transition??
+	devkit_SMS_displayOff();
 	setup();
-	devkit_SMS_displayOn();			// TODO try comment this line out for smooth screen transition??
+	devkit_SMS_displayOn();
 
 	curr_selection = 0;
 	prev_selection = 0;

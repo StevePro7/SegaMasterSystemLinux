@@ -17,7 +17,7 @@ static void display();
 
 void screen_credit_screen_load()
 {
-	devkit_SMS_displayOff();		// TODO try comment this line out for smooth screen transition??
+	devkit_SMS_displayOff();
 	engine_text_manager_clear( TOP_Y + 8, TOP_Y + 22 );
 	engine_content_manager_load_logo_big();
 	engine_graphics_manager_draw_logo_big( LEFT_X + 2, TOP_Y + 3 );
@@ -27,7 +27,7 @@ void screen_credit_screen_load()
 
 	engine_graphics_manager_draw_border();
 	engine_text_manager_cont();
-	devkit_SMS_displayOn();			// TODO try comment this line out for smooth screen transition??
+	devkit_SMS_displayOn();
 	engine_timer_manager_load( CREDIT_SCREEN_DELAY );
 }
 

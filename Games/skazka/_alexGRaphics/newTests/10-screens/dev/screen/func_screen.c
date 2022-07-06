@@ -22,34 +22,6 @@ static void draw_flip();
 void screen_func_screen_load()
 {
 	engine_font_manager_draw_text( "FUNC SCREEN", 10, 10 );
-	//unsigned char row;
-	//unsigned char idx;
-
-	////select_type = select_type_boss;
-	//row = 1;
-
-	//devkit_SMS_displayOff();
-	//engine_content_manager_load_koschey();
-	//engine_text_manager_clear( TOP_Y + 1, TOP_Y + 22 );
-
-	//row = 19;
-	//devkit_SMS_mapROMBank( FIXED_BANK );
-	//for( idx = 0; idx < 2; idx++ )
-	//{
-	//	engine_font_manager_draw_text( ( unsigned char* ) query_texts[ idx ], LEFT_X + 2, TOP_Y + row );
-	//	row++;
-	//}
-
-	//engine_font_manager_draw_punc( LOCALE_QUOTE, LEFT_X + 8, TOP_Y + 19 );
-	//engine_font_manager_draw_punc( LOCALE_QMARK, LEFT_X + 19, TOP_Y + 20 );
-
-	//engine_graphics_manager_draw_koschey( LEFT_X + 10, TOP_Y + 2, devkit_TILE_USE_SPRITE_PALETTE() );
-	//engine_graphics_manager_draw_border();
-
-	//devkit_SMS_displayOn();
-
-	//event_stage = scene_type_select;
-
 	//draw_title();		// screen_01_title
 	//draw_boss();
 	//draw_intro();
@@ -66,7 +38,6 @@ static void draw_leshy()
 	engine_graphics_manager_draw_leshy( 4, 6 );
 }
 
-// TODO - move into intro screen => DONE!
 static void draw_intro()
 {
 	unsigned char row;
@@ -96,8 +67,6 @@ static void draw_boss()
 	engine_graphics_manager_draw_border();
 
 	engine_content_manager_load_koschey();
-
-	// TODO - replace hard coded values!
 	engine_graphics_manager_draw_koschey( 10, 2, devkit_TILE_USE_SPRITE_PALETTE() );
 
 	engine_font_manager_draw_text( "SO YOU VE COME TO CHALLENGE", 2, 19 );
@@ -112,8 +81,6 @@ static void draw_title()
 	engine_graphics_manager_draw_border();
 
 	engine_content_manager_load_logo_big();
-
-	// TODO - replace hard coded values!
 	engine_graphics_manager_draw_logo_big( LEFT_X + 2, TOP_Y + 3 );
 
 	engine_font_manager_draw_text( LOCALE_TITLE_MSG1, 6, 10 );
@@ -150,7 +117,7 @@ static void draw_punc()
 	engine_font_manager_draw_punc( LOCALE_QMARK, 10, idx++ );
 	engine_font_manager_draw_punc( LOCALE_POINT, 10, idx++ );
 	engine_font_manager_draw_punc( LOCALE_SLASH, 10, idx++ );
-	//engine_font_manager_draw_punc( LOCALE_BRACKET, 10, idx++ );
+	engine_font_manager_draw_punc( LOCALE_BRACKET, 10, idx++ );
 	engine_font_manager_draw_punc( LOCALE_ARROW, 10, idx++ );
 }
 
@@ -167,6 +134,6 @@ static void draw_flip()
 	engine_font_manager_draw_flip( LOCALE_QMARK, 20, idx++ );
 	engine_font_manager_draw_flip( LOCALE_POINT, 20, idx++ );
 	engine_font_manager_draw_flip( LOCALE_SLASH, 20, idx++ );
-	//engine_font_manager_draw_flip( LOCALE_BRACKET, 20, idx++ );
+	engine_font_manager_draw_flip( LOCALE_BRACKET, 20, idx++ );
 	engine_font_manager_draw_flip( LOCALE_ARROW, 20, idx++ );
 }

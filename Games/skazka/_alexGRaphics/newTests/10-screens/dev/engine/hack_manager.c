@@ -9,7 +9,7 @@ struct_hack_object global_hack_object;
 #define PEEK( addr)			(* ( unsigned char *)( addr ) )
 #define POKE( addr, data )	(* ( unsigned char *)( addr ) = ( data ) )
 
-#define HACKER_START		0x01A0		// TODO check still valid at the end / test / update the read me
+#define HACKER_START		0x01A0
 
 #ifdef _CONSOLE
 #else
@@ -86,11 +86,4 @@ void engine_hack_manager_invert()
 	// Invert default values.
 	ho->hack_musics = !ho->hack_musics;
 	ho->hack_sounds = !ho->hack_sounds;
-
-
-	// TODO delete
-	//ho->hack_nodead = 0;
-	//ho->hack_talker = 1;
-	//ho->hack_musics = 0;
-	// TODO delete
 }

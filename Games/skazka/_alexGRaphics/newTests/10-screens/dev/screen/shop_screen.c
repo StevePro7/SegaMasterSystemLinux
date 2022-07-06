@@ -34,7 +34,7 @@ void screen_shop_screen_load()
 	gold = po->gold;
 
 	select_type = select_type_shop;
-	devkit_SMS_displayOff();		// TODO try comment this line out for smooth screen transition??
+	devkit_SMS_displayOff();
 	engine_content_manager_load_logo_small();
 
 	engine_text_manager_clear( TOP_Y + 5, TOP_Y + 22 );
@@ -55,7 +55,7 @@ void screen_shop_screen_load()
 
 	engine_graphics_manager_draw_border();
 	engine_graphics_manager_draw_underline( TOP_Y + 4 );
-	devkit_SMS_displayOn();			// TODO try comment this line out for smooth screen transition??
+	devkit_SMS_displayOn();
 
 	row = 10;
 	engine_select_manager_load( select_type, LEFT_X + 7, TOP_Y + row, 5 );
