@@ -104,6 +104,8 @@ static void display_msg()
 		}
 	}
 
+	msg = 9;
+
 	beg = msg * MAX_CHAT;
 	row = 6;
 	for( idx = 0; idx < MAX_CHAT + 1; idx++ )
@@ -133,6 +135,7 @@ static void display_msg()
 	}
 	else if( 2 == msg )
 	{
+		engine_font_manager_draw_punc( LOCALE_COMMA, LEFT_X + 20, TOP_Y + 8 );
 		engine_font_manager_draw_punc( LOCALE_QMARK, LEFT_X + 27, TOP_Y + 9 );
 	}
 	else if( 3 == msg )

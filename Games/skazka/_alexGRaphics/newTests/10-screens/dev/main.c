@@ -14,6 +14,7 @@ void main( void )
 
 	open_screen_type = screen_type_splash;
 	//open_screen_type = screen_type_title;
+	//open_screen_type = screen_type_talk;
 
 	// Initialize player first!
 	engine_player_manager_init();
