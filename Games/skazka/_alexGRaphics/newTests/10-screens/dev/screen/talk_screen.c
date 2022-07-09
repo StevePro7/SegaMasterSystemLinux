@@ -104,8 +104,6 @@ static void display_msg()
 		}
 	}
 
-	msg = 9;
-
 	beg = msg * MAX_CHAT;
 	row = 6;
 	for( idx = 0; idx < MAX_CHAT + 1; idx++ )
