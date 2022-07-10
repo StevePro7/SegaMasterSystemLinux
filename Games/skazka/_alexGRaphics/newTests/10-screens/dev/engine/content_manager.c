@@ -68,8 +68,6 @@ void engine_content_manager_load_enemies()
 {
 	devkit_SMS_mapROMBank( battle_enemies__tiles__psgcompr_bank );
 	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) battle_enemies__tiles__psgcompr, OFFSET_TILES );
-
-
 }
 
 void engine_content_manager_load_leshy()

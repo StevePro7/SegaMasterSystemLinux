@@ -23,9 +23,9 @@
 #define NO_SELECTION			255
 
 // Content.
-#define OFFSET_TILES	160
-#define PLAYER_TILES	224
-#define SPRITE_TILES	256
+#define OFFSET_TILES			160
+#define PLAYER_TILES			224
+#define SPRITE_TILES			256
 
 // Specific global variables.
 #define OUTER_WIDE				32

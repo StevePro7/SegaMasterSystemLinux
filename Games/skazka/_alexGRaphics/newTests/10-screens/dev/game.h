@@ -8,7 +8,7 @@
 #define verMin		0
 #define dateYear	2022
 #define dateMonth	7
-#define dateDay		4
+#define dateDay		7
 #define author		"Steven Boland"
 #define name		"Skazka"
 #define descr		"Slavic RPG Adventure"

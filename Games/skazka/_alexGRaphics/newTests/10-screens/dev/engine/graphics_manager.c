@@ -52,8 +52,6 @@ void engine_graphics_manager_draw_underline( unsigned char y )
 
 void engine_graphics_manager_draw_splash()
 {
-	//const unsigned char wide = 32;
-	//const unsigned char high = 22;
 	unsigned char x, y;
 	unsigned int index = 0;
 	unsigned int value = 0;
