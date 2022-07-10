@@ -16,16 +16,6 @@ sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _snd_manager.c
 cd ..
 
-cd object
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 audio_object.c
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 enemy_object.c
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 game_object.c
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 hack_object.c
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 player_object.c
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 select_object.c
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 timer_object.c
-cd ..
-
 cd engine
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 asm_manager.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 audio_manager.c
@@ -64,7 +54,6 @@ sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 b
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 complete_screen.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 credit_screen.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 diff_screen.c
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 fight_screen.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 forest_screen.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 func_screen.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 intro_screen.c
@@ -87,7 +76,6 @@ cd ..
 
 sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
 
-
 ## Time build -END-
 ##set _time=%time: =0%
 ##set /a _hours=100%_time:~0,2%%%100,_min=100%_time:~3,2%%%100,_sec=100%_time:~6,2%%%100,_cs=%_time:~9,2%
@@ -96,7 +84,6 @@ sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main
 ##echo.
 ##echo Time taken: %_sec:~-2%.%_cs:~-2% secs
 ##echo.
-
 
 ## Link
 sdcc --debug -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-loc 0xC000 \
@@ -120,11 +107,11 @@ engine/player_manager.rel engine/random_manager.rel engine/sample_manager.rel en
 engine/select_manager.rel engine/text_manager.rel engine/timer_manager.rel \
 object/audio_object.rel object/enemy_object.rel object/game_object.rel object/hack_object.rel \
 object/player_object.rel object/select_object.rel object/timer_object.rel \
-screen/boss_screen.rel screen/complete_screen.rel screen/credit_screen.rel screen/diff_screen.rel screen/fight_screen.rel \
-screen/forest_screen.rel screen/func_screen.rel screen/intro_screen.rel screen/kill_screen.rel screen/load_screen.rel \
-screen/menu_screen.rel screen/none_screen.rel screen/over_screen.rel screen/prep_screen.rel screen/relive_screen.rel \
-screen/shop_screen.rel screen/splash_screen.rel screen/start_screen.rel screen/stats_screen.rel screen/talk_screen.rel \
-screen/test_screen.rel screen/title_screen.rel screen/victory_screen.rel \
+screen/boss_screen.rel screen/complete_screen.rel screen/credit_screen.rel screen/diff_screen.rel screen/forest_screen.rel \
+screen/func_screen.rel screen/intro_screen.rel screen/kill_screen.rel screen/load_screen.rel screen/menu_screen.rel \
+screen/none_screen.rel screen/over_screen.rel screen/prep_screen.rel screen/relive_screen.rel screen/shop_screen.rel \
+screen/splash_screen.rel screen/start_screen.rel screen/stats_screen.rel screen/talk_screen.rel screen/test_screen.rel \
+screen/title_screen.rel screen/victory_screen.rel \
 content/gfx.rel \
 content/psg.rel
 
