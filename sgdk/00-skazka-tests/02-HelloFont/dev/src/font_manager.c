@@ -13,6 +13,10 @@
 #include <genesis.h>
 #endif
 
+// Private helper functions.
+//static unsigned char get_tile( unsigned char ch );
+static void draw_char( unsigned int tile, unsigned char x, unsigned char y );
+
 void engine_font_manager_init()
 {
 	unsigned short *data = NULL;
@@ -30,7 +34,8 @@ void engine_font_manager_init()
 void engine_font_manager_char( const unsigned char ch, unsigned char x, unsigned char y )
 {
 	unsigned char tile = ch - TEXT_ROOT;
-	VDP_setMapEx( BG_A, gfx_font.tilemap, TILE_ATTR_FULL( PAL0, FALSE, FALSE, FALSE, FONT_TILES ), x, y, tile, 0, 1, 1 );
+	//VDP_setMapEx( BG_A, gfx_font.tilemap, TILE_ATTR_FULL( PAL0, FALSE, FALSE, FALSE, FONT_TILES ), x, y, tile, 0, 1, 1 );
+	draw_char( tile, x, y );
 }
 
 void engine_font_manager_text( char *text, unsigned char x, unsigned char y )
@@ -39,7 +44,63 @@ void engine_font_manager_text( char *text, unsigned char x, unsigned char y )
 	while( '\0' != text[ idx ] )
 	{
 		unsigned char tile = text[ idx ] - TEXT_ROOT;
-		VDP_setMapEx( BG_A, gfx_font.tilemap, TILE_ATTR_FULL( PAL0, FALSE, FALSE, FALSE, FONT_TILES ), x++, y, tile, 0, 1, 1 );
+		//VDP_setMapEx( BG_A, gfx_font.tilemap, TILE_ATTR_FULL( PAL0, FALSE, FALSE, FALSE, FONT_TILES ), x, y, tile, 0, 1, 1 );
+		draw_char( tile, x, y );
+		x++;
 		idx++;
 	}
+}
+
+void engine_font_manager_data( unsigned int data, unsigned char x, unsigned char y )
+{
+	unsigned char idx;
+	signed char tile;
+
+	unsigned int quotient = 0;
+	unsigned char remainder = 0;
+
+	char hold[ DATA_LONG ];
+	for( idx = 0; idx < DATA_LONG; ++idx )
+	{
+		quotient = data / UNIT_ROOT;
+		remainder = data % UNIT_ROOT;
+
+		hold[ idx ] = remainder;
+		data /= UNIT_ROOT;
+
+		tile = hold[ idx ] + DATA_ROOT;
+		if( 0 == quotient && 0 == remainder && idx > 0 )
+		{
+			// Replace with space!
+			tile = 0;
+		}
+
+		draw_char( tile, x, y );
+		x--;
+	}
+}
+
+//void engine_font_manager_zero( unsigned int data, unsigned char x, unsigned char y )
+//{
+//}
+
+
+//static unsigned char get_tile( unsigned char ch )
+//{
+//	if( LOCALE_PLUS == ch ) { return 37; }
+//	else if( LOCALE_HYPHEN == ch ) { return 38; }
+//	else if( LOCALE_QUOTE == ch ) { return 39; }
+//	else if( LOCALE_STOP == ch ) { return 40; }
+//	else if( LOCALE_COMMA == ch ) { return 41; }
+//	else if( LOCALE_COLON == ch ) { return 42; }
+//	else if( LOCALE_QMARK == ch ) { return 43; }
+//	else if( LOCALE_POINT == ch ) { return 44; }
+//	else if( LOCALE_SLASH == ch ) { return 45; }
+//	else if( ')' == ch ) { return 46; }
+//	else if( LOCALE_ARROW == ch ) { return 47; }
+//	return 0;
+//}
+static void draw_char( unsigned int tile, unsigned char x, unsigned char y )
+{
+	VDP_setMapEx( BG_A, gfx_font.tilemap, TILE_ATTR_FULL( PAL0, FALSE, FALSE, FALSE, FONT_TILES ), x, y, tile, 0, 1, 1 );
 }

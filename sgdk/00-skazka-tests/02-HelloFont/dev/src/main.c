@@ -4,11 +4,11 @@ int main()
 {
 	// Initialize.
 	engine_font_manager_init();
-	//engine_font_manager_char( 'C', 10, 10 );
-	engine_font_manager_text( "HELLO", 10, 10 );
-	engine_font_manager_text( "WORLD", 10, 11 );
-	engine_font_manager_text( "STEVEPRO STUDIOS", 1, 1 );
-	engine_font_manager_text( "ADRIANA LAPPIN BOLAND", 1, 3 );
+	engine_font_manager_char( 'X', 10, 2 );
+	engine_font_manager_text( "HELLO WORLD", 10, 10 );
+	//engine_font_manager_text( "STEVEPRO STUDIOS", 1, 1 );
+	//engine_font_manager_text( "ADRIANA LAPPIN BOLAND", 1, 3 );
+	engine_font_manager_data( 123, 15, 15 );
 	while( 1 )
 	{
 		VDP_waitVSync();
