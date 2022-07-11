@@ -38,6 +38,12 @@ void engine_font_manager_char( const unsigned char ch, unsigned char x, unsigned
 	draw_char( tile, x, y );
 }
 
+void engine_font_manager_numb( const unsigned char no, unsigned char x, unsigned char y )
+{
+	unsigned char tile = no + DATA_ROOT;
+	draw_char( tile, x, y );
+}
+
 void engine_font_manager_text( char *text, unsigned char x, unsigned char y )
 {
 	unsigned char idx = 0;
@@ -54,7 +60,7 @@ void engine_font_manager_text( char *text, unsigned char x, unsigned char y )
 void engine_font_manager_data( unsigned int data, unsigned char x, unsigned char y )
 {
 	unsigned char idx;
-	signed char tile;
+	unsigned char tile;
 
 	unsigned int quotient = 0;
 	unsigned char remainder = 0;
@@ -80,9 +86,28 @@ void engine_font_manager_data( unsigned int data, unsigned char x, unsigned char
 	}
 }
 
-//void engine_font_manager_zero( unsigned int data, unsigned char x, unsigned char y )
-//{
-//}
+void engine_font_manager_draw_numb( unsigned char numb, unsigned char x, unsigned char y )
+{
+	unsigned char tile = numb + DATA_ROOT;
+	draw_char( tile, x, y );
+}
+
+void engine_font_manager_zero( unsigned int data, unsigned char x, unsigned char y )
+{
+	unsigned char idx;
+	unsigned char tile;
+
+	char hold[ DATA_LONG ];
+	for( idx = 0; idx < DATA_LONG; ++idx )
+	{
+		hold[ idx ] = data % UNIT_ROOT;
+		data /= UNIT_ROOT;
+
+		tile = hold[ idx ] + DATA_ROOT;
+		draw_char( tile, x, y );
+		x--;
+	}
+}
 
 
 //static unsigned char get_tile( unsigned char ch )
