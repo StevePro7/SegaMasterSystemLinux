@@ -1,4 +1,5 @@
 #include "font_manager.h"
+#include "locale_manager.h"
 #include "resources.h"
 
 #define FONT_TILES	0		// 1  is graphics tile
@@ -14,7 +15,7 @@
 #endif
 
 // Private helper functions.
-//static unsigned char get_tile( unsigned char ch );
+static unsigned char get_tile( unsigned char ch );
 static void draw_char( unsigned int tile, unsigned char x, unsigned char y );
 
 void engine_font_manager_init()
@@ -34,13 +35,18 @@ void engine_font_manager_init()
 void engine_font_manager_char( const unsigned char ch, unsigned char x, unsigned char y )
 {
 	unsigned char tile = ch - TEXT_ROOT;
-	//VDP_setMapEx( BG_A, gfx_font.tilemap, TILE_ATTR_FULL( PAL0, FALSE, FALSE, FALSE, FONT_TILES ), x, y, tile, 0, 1, 1 );
 	draw_char( tile, x, y );
 }
 
-void engine_font_manager_numb( const unsigned char no, unsigned char x, unsigned char y )
+void engine_font_manager_numb( const unsigned char ch, unsigned char x, unsigned char y )
 {
-	unsigned char tile = no + DATA_ROOT;
+	unsigned char tile = ch + DATA_ROOT;
+	draw_char( tile, x, y );
+}
+
+void engine_font_manager_punc( const unsigned char ch, unsigned char x, unsigned char y )
+{
+	unsigned char tile = get_tile( ch );
 	draw_char( tile, x, y );
 }
 
@@ -50,7 +56,6 @@ void engine_font_manager_text( char *text, unsigned char x, unsigned char y )
 	while( '\0' != text[ idx ] )
 	{
 		unsigned char tile = text[ idx ] - TEXT_ROOT;
-		//VDP_setMapEx( BG_A, gfx_font.tilemap, TILE_ATTR_FULL( PAL0, FALSE, FALSE, FALSE, FONT_TILES ), x, y, tile, 0, 1, 1 );
 		draw_char( tile, x, y );
 		x++;
 		idx++;
@@ -109,22 +114,22 @@ void engine_font_manager_zero( unsigned int data, unsigned char x, unsigned char
 	}
 }
 
-
-//static unsigned char get_tile( unsigned char ch )
-//{
-//	if( LOCALE_PLUS == ch ) { return 37; }
-//	else if( LOCALE_HYPHEN == ch ) { return 38; }
-//	else if( LOCALE_QUOTE == ch ) { return 39; }
-//	else if( LOCALE_STOP == ch ) { return 40; }
-//	else if( LOCALE_COMMA == ch ) { return 41; }
-//	else if( LOCALE_COLON == ch ) { return 42; }
-//	else if( LOCALE_QMARK == ch ) { return 43; }
-//	else if( LOCALE_POINT == ch ) { return 44; }
-//	else if( LOCALE_SLASH == ch ) { return 45; }
-//	else if( ')' == ch ) { return 46; }
-//	else if( LOCALE_ARROW == ch ) { return 47; }
-//	return 0;
-//}
+// Private helper functions.
+static unsigned char get_tile( unsigned char ch )
+{
+	if( LOCALE_PLUS == ch ) { return 37; }
+	else if( LOCALE_HYPHEN == ch ) { return 38; }
+	else if( LOCALE_QUOTE == ch ) { return 39; }
+	else if( LOCALE_STOP == ch ) { return 40; }
+	else if( LOCALE_COMMA == ch ) { return 41; }
+	else if( LOCALE_COLON == ch ) { return 42; }
+	else if( LOCALE_QMARK == ch ) { return 43; }
+	else if( LOCALE_POINT == ch ) { return 44; }
+	else if( LOCALE_SLASH == ch ) { return 45; }
+	else if( LOCALE_BRACKET == ch ) { return 46; }
+	else if( LOCALE_ARROW == ch ) { return 47; }
+	return 0;
+}
 static void draw_char( unsigned int tile, unsigned char x, unsigned char y )
 {
 	VDP_setMapEx( BG_A, gfx_font.tilemap, TILE_ATTR_FULL( PAL0, FALSE, FALSE, FALSE, FONT_TILES ), x, y, tile, 0, 1, 1 );
