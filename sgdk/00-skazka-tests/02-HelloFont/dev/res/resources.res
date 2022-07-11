@@ -1,0 +1,1 @@
+IMAGE gfx_font "font.png" 0
