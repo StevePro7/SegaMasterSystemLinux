@@ -7,4 +7,6 @@
 #include <genesis.h>
 #endif
 
+#include "graphics_manager.h"
+
 #endif//__MAIN__
