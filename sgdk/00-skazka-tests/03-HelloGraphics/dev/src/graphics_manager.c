@@ -12,31 +12,32 @@ static void draw_graphics( VDPPlane plane, const Image *image, unsigned char pal
 
 void engine_graphics_manager_init()
 {
-	u16 *data = NULL;
+	u16 *pal0 = NULL;
 
 	// get the palette data of moon
 #ifndef _CONSOLE
-	data = gfx_palette0.palette->data;
+	pal0 = gfx_palette0.palette->data;
 #endif
 
-	VDP_setPalette( PAL0, data );
+	VDP_setPalette( PAL0, pal0 );
 }
 
 void engine_graphics_manager_draw_splash()
 {
-	unsigned char idx;
+	//unsigned char idx;
 
 	VDPPlane plane = BG_A;
-	const unsigned char tile = 0;
+	//const unsigned char tile = 0;
 	unsigned char palette = PAL0;
-	u16 basetile = TILE_ATTR_FULL( palette, 0, 0, 0, 1 );
+	//u16 basetile = TILE_ATTR_FULL( palette, 0, 0, 0, 1 );
 
 	draw_graphics( plane, &gfx_splash, palette, 0, 0 );
-	for( idx = 0; idx < OUTER_WIDE; idx++ )
-	{
-		VDP_setMapEx( plane, gfx_splash.tilemap, basetile, idx, 24, tile, 0, 1, 1 );
-		VDP_setMapEx( plane, gfx_splash.tilemap, basetile, idx, 25, tile, 0, 1, 1 );
-	}
+	//TODO - display off / splash / on.
+	//for( idx = 0; idx < OUTER_WIDE; idx++ )
+	//{
+	//	VDP_setMapEx( plane, gfx_splash.tilemap, basetile, idx, 24, tile, 0, 1, 1 );
+	//	VDP_setMapEx( plane, gfx_splash.tilemap, basetile, idx, 25, tile, 0, 1, 1 );
+	//}
 }
 
 
