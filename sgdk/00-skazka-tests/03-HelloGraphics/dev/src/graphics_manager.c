@@ -24,8 +24,19 @@ void engine_graphics_manager_init()
 
 void engine_graphics_manager_draw_splash()
 {
-	//VDP_drawImageEx( BG_A, &gfx_splash, TILE_ATTR_FULL( PAL0, 0, 0, 0, 1 ), 0, 0, 0, CPU );
-	draw_graphics( BG_A, &gfx_splash, PAL0, 0, 0 );
+	unsigned char idx;
+
+	VDPPlane plane = BG_A;
+	const unsigned char tile = 0;
+	unsigned char palette = PAL0;
+	u16 basetile = TILE_ATTR_FULL( palette, 0, 0, 0, 1 );
+
+	draw_graphics( plane, &gfx_splash, palette, 0, 0 );
+	for( idx = 0; idx < OUTER_WIDE; idx++ )
+	{
+		VDP_setMapEx( plane, gfx_splash.tilemap, basetile, idx, 24, tile, 0, 1, 1 );
+		VDP_setMapEx( plane, gfx_splash.tilemap, basetile, idx, 25, tile, 0, 1, 1 );
+	}
 }
 
 
