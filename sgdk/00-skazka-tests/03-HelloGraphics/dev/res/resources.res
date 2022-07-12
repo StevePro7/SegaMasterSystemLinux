@@ -1,0 +1,1 @@
+IMAGE gfx_splash "splash.png" 0
