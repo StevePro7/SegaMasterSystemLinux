@@ -4,5 +4,6 @@
 void engine_graphics_manager_init();
 void engine_graphics_manager_draw_splash();
 void engine_graphics_manager_draw_koschey( unsigned char x, unsigned char y, unsigned int palette );
+void foo();
 
 #endif//_GRAPHICS_MANAGER_H_

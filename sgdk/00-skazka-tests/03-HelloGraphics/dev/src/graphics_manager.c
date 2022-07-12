@@ -48,6 +48,11 @@ void engine_graphics_manager_draw_koschey( unsigned char x, unsigned char y, uns
 	draw_graphics( BG_A, &gfx_koschey, palette, x, y );
 }
 
+void foo()
+{
+	draw_graphics( BG_A, &gfx_battle_player, PAL0, 0, 0 );
+}
+
 static void draw_graphics( VDPPlane plane, const Image *image, unsigned char palette, unsigned char x, unsigned char y )
 {
 	u16 basetile = TILE_ATTR_FULL( palette, 0, 0, 0, 1 );

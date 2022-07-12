@@ -9,5 +9,6 @@
 
 #include "global_manager.h"
 #include "graphics_manager.h"
+#include "player_manager.h"
 
 #endif//__MAIN__

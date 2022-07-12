@@ -11,5 +11,6 @@ extern const Image gfx_palette0;
 extern const Image gfx_palette1;
 extern const Image gfx_splash;
 extern const Image gfx_koschey;
+extern const Image gfx_battle_player;
 
 #endif // _RES_RESOURCES_H_
