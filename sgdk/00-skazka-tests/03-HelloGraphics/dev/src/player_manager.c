@@ -69,10 +69,10 @@ void engine_player_manager_draw( unsigned char x, unsigned char y )
 	const unsigned char wide = 3;
 	const unsigned char high = 4;
 
-	const unsigned char weapon = 2;
-	const unsigned char armor = 2;
+	const unsigned char weapon = 1;
+	const unsigned char armor = 1;
 
-	unsigned int index = 1;
+	const unsigned int index = 1;
 
 	VDP_setTileMapEx( BG_A, gfx_battle_player.tilemap, TILE_ATTR_FULL( PAL0, FALSE, FALSE, FALSE, index ), x, y, weapon * wide, armor * high, wide, high, CPU );
 }
