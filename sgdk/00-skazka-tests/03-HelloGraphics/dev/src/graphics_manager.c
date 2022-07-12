@@ -8,6 +8,8 @@
 #include <genesis.h>
 #endif
 
+static void draw_graphics( VDPPlane plane, const Image *image, unsigned char palette, unsigned char x, unsigned char y );
+
 void engine_graphics_manager_init()
 {
 	u16 *data = NULL;
@@ -22,5 +24,13 @@ void engine_graphics_manager_init()
 
 void engine_graphics_manager_draw_splash()
 {
-	VDP_drawImageEx( BG_A, &gfx_splash, TILE_ATTR_FULL( PAL0, 0, 0, 0, 1 ), 0, 0, 0, CPU );
+	//VDP_drawImageEx( BG_A, &gfx_splash, TILE_ATTR_FULL( PAL0, 0, 0, 0, 1 ), 0, 0, 0, CPU );
+	draw_graphics( BG_A, &gfx_splash, PAL0, 0, 0 );
+}
+
+
+static void draw_graphics( VDPPlane plane, const Image *image, unsigned char palette, unsigned char x, unsigned char y )
+{
+	u16 basetile = TILE_ATTR_FULL( palette, 0, 0, 0, 1 );
+	VDP_drawImageEx( plane, image, basetile, LEFT_X + x, TOP_Y + y, 0, CPU );
 }
