@@ -66,32 +66,13 @@
 
 void engine_player_manager_draw( unsigned char x, unsigned char y )
 {
-	//const unsigned char wide = 3;
-	//const unsigned char high = 4;
+	const unsigned char wide = 3;
+	const unsigned char high = 4;
 
-	//const unsigned char armor = 0;
-	//const unsigned char weapon = 0;
+	const unsigned char weapon = 2;
+	const unsigned char armor = 2;
 
-	//const unsigned char start = ( armor * 36 ) + ( weapon * 3 );
-	//unsigned char index = 0;
-	//unsigned char value = 0;
-	unsigned int tile = 0;
-	//unsigned char i, j;
+	unsigned int index = 1;
 
-	//for( j = 0; j < high; j++ )
-	//{
-	//	for( i = 0; i < wide; i++ )
-	//	{
-	//		tile = ( j * 9 ) + i + start;
-	//		VDP_setMapEx( BG_A, gfx_battle_player.tilemap, TILE_ATTR_FULL( PAL0, FALSE, FALSE, FALSE, 0 ), x+i, y+j, tile, 0, 1, 1 );
-	//	}
-	//}
-
-	//tile = 0;	VDP_setMapEx( BG_A, gfx_battle_player.tilemap, TILE_ATTR_FULL( PAL0, FALSE, FALSE, FALSE, 0 ), x + 0, y + 0, tile, 0, 1, 1 );
-	//tile = 1;	VDP_setMapEx( BG_A, gfx_battle_player.tilemap, TILE_ATTR_FULL( PAL0, FALSE, FALSE, FALSE, 0 ), x + 1, y + 0, tile, 0, 1, 1 );
-	//tile = 2;	VDP_setMapEx( BG_A, gfx_battle_player.tilemap, TILE_ATTR_FULL( PAL0, FALSE, FALSE, FALSE, 0 ), x + 2, y + 0, tile, 0, 1, 1 );
-	//tile = 3;	VDP_setMapEx( BG_A, gfx_battle_player.tilemap, TILE_ATTR_FULL( PAL0, FALSE, FALSE, FALSE, 0 ), x + 3, y + 0, tile, 0, 1, 1 );
-	//tile = 4;	VDP_setMapEx( BG_A, gfx_battle_player.tilemap, TILE_ATTR_FULL( PAL0, FALSE, FALSE, FALSE, 0 ), x + 4, y + 0, tile, 0, 1, 1 );
-
-	VDP_setTileMapEx( BG_A, gfx_battle_player.tilemap, TILE_ATTR_FULL( PAL0, FALSE, FALSE, FALSE, 1 ), x, y, 0, 0, 3, 4, CPU );
+	VDP_setTileMapEx( BG_A, gfx_battle_player.tilemap, TILE_ATTR_FULL( PAL0, FALSE, FALSE, FALSE, index ), x, y, weapon * wide, armor * high, wide, high, CPU );
 }
