@@ -8,6 +8,8 @@
 #endif
 
 extern const Image gfx_palette0;
+extern const Image gfx_palette1;
 extern const Image gfx_splash;
+extern const Image gfx_koschey;
 
 #endif // _RES_RESOURCES_H_

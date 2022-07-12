@@ -13,13 +13,16 @@ static void draw_graphics( VDPPlane plane, const Image *image, unsigned char pal
 void engine_graphics_manager_init()
 {
 	u16 *pal0 = NULL;
+	u16 *pal1 = NULL;
 
 	// get the palette data of moon
 #ifndef _CONSOLE
 	pal0 = gfx_palette0.palette->data;
+	pal1 = gfx_palette1.palette->data;
 #endif
 
 	VDP_setPalette( PAL0, pal0 );
+	VDP_setPalette( PAL1, pal1 );
 }
 
 void engine_graphics_manager_draw_splash()
@@ -31,7 +34,7 @@ void engine_graphics_manager_draw_splash()
 	unsigned char palette = PAL0;
 	//u16 basetile = TILE_ATTR_FULL( palette, 0, 0, 0, 1 );
 
-	draw_graphics( plane, &gfx_splash, palette, 0, 0 );
+	draw_graphics( plane, &gfx_splash, palette, LEFT_X + 0, TOP_Y + 0 );
 	//TODO - display off / splash / on.
 	//for( idx = 0; idx < OUTER_WIDE; idx++ )
 	//{
@@ -40,9 +43,13 @@ void engine_graphics_manager_draw_splash()
 	//}
 }
 
+void engine_graphics_manager_draw_koschey( unsigned char x, unsigned char y, unsigned int palette )
+{
+	draw_graphics( BG_A, &gfx_koschey, palette, x, y );
+}
 
 static void draw_graphics( VDPPlane plane, const Image *image, unsigned char palette, unsigned char x, unsigned char y )
 {
 	u16 basetile = TILE_ATTR_FULL( palette, 0, 0, 0, 1 );
-	VDP_drawImageEx( plane, image, basetile, LEFT_X + x, TOP_Y + y, 0, CPU );
+	VDP_drawImageEx( plane, image, basetile, x, y, 0, CPU );
 }
