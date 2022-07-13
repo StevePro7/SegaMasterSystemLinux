@@ -1,7 +1,7 @@
 #include "audio_object.h"
 #include "resources.h"
 
-const unsigned char *audio_effect[ 12 ] =
+const unsigned char *audio_effect[ 13 ] =
 {
 	sfx_sound_type_1,
 	sfx_sound_type_2,
@@ -15,8 +15,9 @@ const unsigned char *audio_effect[ 12 ] =
 	sfx_sound_type_10,
 	sfx_sound_type_11,
 	sfx_sound_type_12,
+	sfx_sound_type_13,
 };
-const unsigned int audio_effect_size[ 12 ] =
+const unsigned int audio_effect_size[ 13 ] =
 {
 	2304,
 	2048,
@@ -30,4 +31,5 @@ const unsigned int audio_effect_size[ 12 ] =
 	3072,
 	199936,
 	49408,
+	14080,
 };

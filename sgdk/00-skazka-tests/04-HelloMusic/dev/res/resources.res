@@ -10,3 +10,4 @@ WAV sfx_sound_type_9 "sound_type_9.wav" XGM
 WAV sfx_sound_type_10 "sound_type_10.wav" XGM
 WAV sfx_sound_type_11 "sound_type_11.wav" XGM
 WAV sfx_sound_type_12 "sound_type_12.wav" XGM
+WAV sfx_sound_type_13 "sound_type_13.wav" XGM

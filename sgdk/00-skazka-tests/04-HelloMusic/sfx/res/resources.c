@@ -12,3 +12,4 @@ const u8 sfx_sound_type_9[ 12800 ] = { 0 };
 const u8 sfx_sound_type_10[ 3072 ] = { 0 };
 const u8 sfx_sound_type_11[ 199936 ] = { 0 };
 const u8 sfx_sound_type_12[ 49408 ] = { 0 };
+const u8 sfx_sound_type_13[ 14080 ] = { 0 };

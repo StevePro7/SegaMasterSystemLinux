@@ -18,7 +18,7 @@ void engine_audio_manager_init()
 	unsigned int sized;
 
 	// Initialize effects.
-	for( idx = 0; idx < 12; idx++ )
+	for( idx = 0; idx < 13; idx++ )
 	{
 		audio = audio_effect[ idx ];
 		sized = audio_effect_size[ idx ];
