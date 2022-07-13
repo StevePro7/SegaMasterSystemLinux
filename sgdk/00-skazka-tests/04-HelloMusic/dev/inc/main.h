@@ -7,4 +7,6 @@
 #include <genesis.h>
 #endif
 
+#include "audio_manager.h"
+
 #endif//__MAIN__
