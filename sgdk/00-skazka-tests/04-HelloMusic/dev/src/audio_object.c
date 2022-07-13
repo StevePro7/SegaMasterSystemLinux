@@ -1,6 +1,19 @@
 #include "audio_object.h"
 #include "resources.h"
 
+const unsigned char *audio_music[ 3 ] =
+{
+	sfx_music_intro,
+	sfx_music_boss,
+	sfx_music_over,
+};
+const unsigned int audio_music_size[ 3 ] =
+{
+	68608,
+	41216,
+	34560
+};
+
 const unsigned char *audio_effect[ 13 ] =
 {
 	sfx_sound_type_1,

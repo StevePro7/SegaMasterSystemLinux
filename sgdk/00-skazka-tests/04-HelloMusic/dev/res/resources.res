@@ -1,3 +1,6 @@
+WAV sfx_music_intro "music_intro.wav" XGM
+WAV sfx_music_boss "music_boss.wav" XGM
+WAV sfx_music_over "music_over.wav" XGM
 WAV sfx_sound_type_1 "sound_type_1.wav" XGM
 WAV sfx_sound_type_2 "sound_type_2.wav" XGM
 WAV sfx_sound_type_3 "sound_type_3.wav" XGM

@@ -7,6 +7,9 @@
 #include <genesis.h>
 #endif
 
+extern const u8 sfx_music_intro[68608];
+extern const u8 sfx_music_boss[41216];
+extern const u8 sfx_music_over[34560];
 extern const u8 sfx_sound_type_1[2304];
 extern const u8 sfx_sound_type_2[2048];
 extern const u8 sfx_sound_type_3[2048];
