@@ -4,7 +4,8 @@ int main()
 {
 	engine_audio_manager_init();
 	//engine_audio_manager_play_music( 2 );
-	engine_audio_manager_play_effect( 0 );
+	engine_audio_manager_play_effect( 4 );
+
 	VDP_drawText( "Hello Genny World..", 10, 13 );
 	while( 1 )
 	{
