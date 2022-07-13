@@ -33,4 +33,8 @@
 #define INNER_WIDE				32
 #define INNER_HIGH				24
 
+// TODO 
+#define NUM_WEAPONS				3
+#define NUM_ARMORS				2
+
 #endif//_GLOBAL_MANAGER_H_

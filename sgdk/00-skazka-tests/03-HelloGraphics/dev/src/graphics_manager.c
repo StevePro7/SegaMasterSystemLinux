@@ -8,7 +8,7 @@
 #include <genesis.h>
 #endif
 
-static void draw_graphics( VDPPlane plane, const Image *image, unsigned char palette, unsigned char x, unsigned char y );
+static void draw_graphics( VDPPlane plane, const Image *image, unsigned char palette, unsigned int index, unsigned char x, unsigned char y );
 
 void engine_graphics_manager_init()
 {
@@ -34,7 +34,7 @@ void engine_graphics_manager_draw_splash()
 	unsigned char palette = PAL0;
 	//u16 basetile = TILE_ATTR_FULL( palette, 0, 0, 0, 1 );
 
-	draw_graphics( plane, &gfx_splash, palette, LEFT_X + 0, TOP_Y + 0 );
+	draw_graphics( plane, &gfx_splash, palette, LEFT_X + 0, TOP_Y + 0, 1 );
 	//TODO - display off / splash / on.
 	//for( idx = 0; idx < OUTER_WIDE; idx++ )
 	//{
@@ -45,16 +45,24 @@ void engine_graphics_manager_draw_splash()
 
 void engine_graphics_manager_draw_koschey( unsigned char x, unsigned char y, unsigned int palette )
 {
-	draw_graphics( BG_A, &gfx_koschey, palette, x, y );
+	const unsigned int index = 256;
+	draw_graphics( BG_A, &gfx_koschey, palette, index, x, y );
+}
+
+void engine_graphics_manager_draw_inventory( unsigned char x, unsigned char y )
+{
+	const unsigned int index = 32;
+	draw_graphics( BG_A, &gfx_stats_inventory, PAL0, index, x, y );
 }
 
 void foo()
 {
-	draw_graphics( BG_A, &gfx_battle_player, PAL0, 0, 0 );
+	const unsigned int index = 256;
+	draw_graphics( BG_A, &gfx_stats_items, PAL0, index, 0, 0 );
 }
 
-static void draw_graphics( VDPPlane plane, const Image *image, unsigned char palette, unsigned char x, unsigned char y )
+static void draw_graphics( VDPPlane plane, const Image *image, unsigned char palette, unsigned int index, unsigned char x, unsigned char y )
 {
-	u16 basetile = TILE_ATTR_FULL( palette, 0, 0, 0, 1 );
+	u16 basetile = TILE_ATTR_FULL( palette, 0, 0, 0, index );
 	VDP_drawImageEx( plane, image, basetile, x, y, 0, CPU );
 }
