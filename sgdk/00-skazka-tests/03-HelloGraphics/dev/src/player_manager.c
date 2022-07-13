@@ -2,6 +2,12 @@
 #include "global_manager.h"
 #include "resources.h"
 
+#ifdef _CONSOLE
+#include "_genesis.h"
+#else
+#include <genesis.h>
+#endif
+
 void engine_player_manager_draw_inventory( unsigned char x, unsigned char y )
 {
 	const unsigned char wide = 2;

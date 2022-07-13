@@ -58,7 +58,7 @@ void engine_graphics_manager_draw_inventory( unsigned char x, unsigned char y )
 void foo()
 {
 	const unsigned int index = 256;
-	draw_graphics( BG_A, &gfx_stats_items, PAL0, index, 0, 0 );
+	draw_graphics( BG_A, &gfx_battle_enemies, PAL0, index, 0, 0 );
 }
 
 static void draw_graphics( VDPPlane plane, const Image *image, unsigned char palette, unsigned int index, unsigned char x, unsigned char y )
