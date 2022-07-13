@@ -14,3 +14,6 @@ WAV sfx_sound_type_10 "sound_type_10.wav" XGM
 WAV sfx_sound_type_11 "sound_type_11.wav" XGM
 WAV sfx_sound_type_12 "sound_type_12.wav" XGM
 WAV sfx_sound_type_13 "sound_type_13.wav" XGM
+WAV sfx_check_right "check_right.wav" XGM
+WAV sfx_check_wrong "check_wrong.wav" XGM
+WAV sfx_check_cheat "check_cheat.wav" XGM

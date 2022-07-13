@@ -23,5 +23,8 @@ extern const u8 sfx_sound_type_10[3072];
 extern const u8 sfx_sound_type_11[199936];
 extern const u8 sfx_sound_type_12[49408];
 extern const u8 sfx_sound_type_13[14080];
+extern const u8 sfx_check_right[16384];
+extern const u8 sfx_check_wrong[14592];
+extern const u8 sfx_check_cheat[13568];
 
 #endif // _RES_RESOURCES_H_

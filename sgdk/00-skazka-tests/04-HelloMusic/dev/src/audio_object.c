@@ -14,7 +14,7 @@ const unsigned int audio_music_size[ 3 ] =
 	34560
 };
 
-const unsigned char *audio_effect[ 13 ] =
+const unsigned char *audio_effect[ 16 ] =
 {
 	sfx_sound_type_1,
 	sfx_sound_type_2,
@@ -28,9 +28,12 @@ const unsigned char *audio_effect[ 13 ] =
 	sfx_sound_type_10,
 	sfx_sound_type_11,
 	sfx_sound_type_12,
-	sfx_sound_type_13,
+	sfx_sound_type_13,		// index 12 = explosion => kill screen
+	sfx_check_right,
+	sfx_check_wrong,
+	sfx_check_cheat,
 };
-const unsigned int audio_effect_size[ 13 ] =
+const unsigned int audio_effect_size[ 16 ] =
 {
 	2304,
 	2048,
@@ -45,4 +48,7 @@ const unsigned int audio_effect_size[ 13 ] =
 	199936,
 	49408,
 	14080,
+	16384,
+	14592,
+	13568,
 };
