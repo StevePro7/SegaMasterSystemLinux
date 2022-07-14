@@ -8,6 +8,7 @@
 #endif
 
 #include "enemy_manager.h"
+#include "font_manager.h"
 #include "global_manager.h"
 #include "graphics_manager.h"
 #include "player_manager.h"

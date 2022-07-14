@@ -8,6 +8,8 @@
 #include <genesis.h>
 #endif
 
+#define BORDER_TILES	48
+
 static void draw_graphics( VDPPlane plane, const Image *image, unsigned char palette, unsigned int index, unsigned char x, unsigned char y );
 
 void engine_graphics_manager_init()
@@ -23,6 +25,14 @@ void engine_graphics_manager_init()
 
 	VDP_setPalette( PAL0, pal0 );
 	VDP_setPalette( PAL1, pal1 );
+
+
+}
+
+void engine_graphics_manager_load()
+{
+	VDP_loadTileSet( gfx_font.tileset, FONT_TILES, TRUE );
+	VDP_loadTileSet( gfx_border.tileset, BORDER_TILES, TRUE );
 }
 
 void engine_graphics_manager_draw_splash()
