@@ -3,6 +3,8 @@
 
 void engine_graphics_manager_init();
 void engine_graphics_manager_load();
+void engine_graphics_manager_draw_border();
+void engine_graphics_manager_draw_borderX( unsigned char top, unsigned char left, unsigned char wide, unsigned char high );
 void engine_graphics_manager_draw_splash();
 void engine_graphics_manager_draw_koschey( unsigned char x, unsigned char y, unsigned int palette );
 void engine_graphics_manager_draw_inventory( unsigned char x, unsigned char y );

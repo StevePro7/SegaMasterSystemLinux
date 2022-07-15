@@ -17,24 +17,24 @@
 // Private helper functions.
 static unsigned char get_tile( unsigned char ch );
 static unsigned char get_punc( unsigned char ch );
-static void draw_char( unsigned int tile, unsigned char x, unsigned char y );
+static void draw_setMapEx( unsigned int tile, unsigned char x, unsigned char y );
 
 void engine_font_manager_char( const unsigned char ch, unsigned char x, unsigned char y )
 {
 	unsigned char tile = get_tile( ch );
-	draw_char( tile, x, y );
+	draw_setMapEx( tile, x, y );
 }
 
 void engine_font_manager_numb( const unsigned char ch, unsigned char x, unsigned char y )
 {
 	unsigned char tile = ch + DATA_ROOT;
-	draw_char( tile, x, y );
+	draw_setMapEx( tile, x, y );
 }
 
 void engine_font_manager_punc( const unsigned char ch, unsigned char x, unsigned char y )
 {
 	unsigned char punc = get_punc( ch );
-	draw_char( punc, x, y );
+	draw_setMapEx( punc, x, y );
 }
 
 void engine_font_manager_text( char *text, unsigned char x, unsigned char y )
@@ -44,7 +44,7 @@ void engine_font_manager_text( char *text, unsigned char x, unsigned char y )
 	while( '\0' != text[ idx ] )
 	{
 		tile = get_tile( text[ idx ] );
-		draw_char( tile, x, y );
+		draw_setMapEx( tile, x, y );
 		x++;
 		idx++;
 	}
@@ -74,7 +74,7 @@ void engine_font_manager_data( unsigned int data, unsigned char x, unsigned char
 			tile = 0;
 		}
 
-		draw_char( tile, x, y );
+		draw_setMapEx( tile, x, y );
 		x--;
 	}
 }
@@ -91,7 +91,7 @@ void engine_font_manager_zero( unsigned int data, unsigned char x, unsigned char
 		data /= UNIT_ROOT;
 
 		tile = hold[ idx ] + DATA_ROOT;
-		draw_char( tile, x, y );
+		draw_setMapEx( tile, x, y );
 		x--;
 	}
 }
@@ -122,7 +122,7 @@ static unsigned char get_punc( unsigned char ch )
 	else if( LOCALE_ARROW == ch ) { return 47; }
 	return 0;
 }
-static void draw_char( unsigned int tile, unsigned char x, unsigned char y )
+static void draw_setMapEx( unsigned int tile, unsigned char x, unsigned char y )
 {
 	VDP_setMapEx( BG_A, gfx_font.tilemap, TILE_ATTR_FULL( PAL0, 0, 0, 0, FONT_TILES ), x, y, tile, 0, 1, 1 );
 }
