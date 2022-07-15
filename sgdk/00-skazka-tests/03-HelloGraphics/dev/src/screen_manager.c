@@ -25,7 +25,7 @@ void engine_screen_manager_update()
 static void print00()
 {
 	engine_player_manager_draw( 0, 2, LEFT_X + 2, TOP_Y + 16 );
-	engine_enemy_manager_draw( 0, LEFT_X + 27, TOP_Y + 16 );
+	engine_enemy_manager_draw( 3, LEFT_X + 27, TOP_Y + 16 );
 }
 
 //static void print00()
