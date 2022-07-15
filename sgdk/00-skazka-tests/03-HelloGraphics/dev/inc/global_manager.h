@@ -40,5 +40,6 @@
 #define FONT_TILES				0		// 1  is graphics tile
 #define ITEMS_TILES				288
 #define PLAYER_TILES			128
+#define ENEMY_TILES				160
 
 #endif//_GLOBAL_MANAGER_H_

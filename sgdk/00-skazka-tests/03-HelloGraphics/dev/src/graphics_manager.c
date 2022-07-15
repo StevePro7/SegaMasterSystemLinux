@@ -39,6 +39,7 @@ void engine_graphics_manager_load()
 	VDP_loadTileSet( gfx_border.tileset, BORDER_TILES, 1 );
 	VDP_loadTileSet( gfx_stats_items.tileset, ITEMS_TILES, 1 );
 	VDP_loadTileSet( gfx_battle_player.tileset, PLAYER_TILES, 1 );
+	VDP_loadTileSet( gfx_battle_enemies.tileset, ENEMY_TILES, 1 );
 }
 
 void engine_graphics_manager_draw_border()

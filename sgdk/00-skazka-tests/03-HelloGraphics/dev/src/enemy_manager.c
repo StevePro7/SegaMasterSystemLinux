@@ -11,9 +11,9 @@
 static void draw_enemy( unsigned char enemy, unsigned char x, unsigned char y );
 //static void draw_leshy( unsigned char x, unsigned char y )
 
-void engine_enemy_manager_draw( unsigned char x, unsigned char y )
+void engine_enemy_manager_draw( unsigned char enemy, unsigned char x, unsigned char y )
 {
-	draw_enemy( 2,x,y );
+	draw_enemy( enemy, x, y );
 }
 
 static void draw_enemy( unsigned char enemy, unsigned char x, unsigned char y )
@@ -21,11 +21,10 @@ static void draw_enemy( unsigned char enemy, unsigned char x, unsigned char y )
 	const unsigned char wide = 3;
 	const unsigned char high = 4;
 
-	// TODO global_manager
-	const unsigned int index = 256;
-	//u16 basetile = TILE_ATTR_FULL( PAL0, 0, 0, 0, index );
-	VDP_setTileMapEx( BG_A, gfx_battle_enemies.tilemap, TILE_ATTR_FULL( PAL0, 0, 0, 0, index ), x, y, 0, enemy * high, wide, high, CPU );
+	u16 basetile = TILE_ATTR_FULL( PAL0, 0, 0, 0, ENEMY_TILES );
+	VDP_setTileMapEx( BG_A, gfx_battle_enemies.tilemap, basetile, x, y, 0, enemy * high, wide, high, CPU );
 }
+
 //static void draw_leshy( unsigned char x, unsigned char y )
 //{
 //
