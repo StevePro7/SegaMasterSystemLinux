@@ -42,13 +42,29 @@ void engine_graphics_manager_draw_border()
 
 void engine_graphics_manager_draw_borderX( unsigned char top, unsigned char left, unsigned char wide, unsigned char high )
 {
+	unsigned char idx;
 	unsigned char tile = 0;
-	//VDP_setMapEx( BG_A, gfx_border.tilemap, TILE_ATTR_FULL( PAL0, 0, 0, 0, BORDER_TILES + tile ), left, top, tile, 0, 1, 1 );
-	draw_setMapEx( tile, left, top );
-	draw_setMapEx( tile, wide - 1, top );
-	draw_setMapEx( tile, left, high - 1 );
+
+	draw_setMapEx( tile, left + 0, top + 0 );
+	draw_setMapEx( tile, wide - 1, top + 0 );
+	draw_setMapEx( tile, left + 0, high - 1 );
 	draw_setMapEx( tile, wide - 1, high - 1 );
 
+	// Vertical.
+	tile = 1;
+	for( idx = top + 1; idx <= high - 2; idx++ )
+	{
+		draw_setMapEx( tile, left + 0, idx );
+		draw_setMapEx( tile, wide - 1, idx );
+	}
+
+	// Horizontal.
+	tile = 2;
+	for( idx = left + 1; idx <= wide - 2; idx++ )
+	{
+		draw_setMapEx( tile, idx, top + 0 );
+		draw_setMapEx( tile, idx, high - 1 );
+	}
 }
 
 void engine_graphics_manager_draw_splash()
