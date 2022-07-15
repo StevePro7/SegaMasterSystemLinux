@@ -30,9 +30,8 @@ void engine_screen_manager_update()
 
 static void print00()
 {
-
-
-
+	//engine_graphics_manager_draw_logo_big( LEFT_X + 2, TOP_Y + 3 );
+	engine_graphics_manager_draw_logo_small( LEFT_X + 1, TOP_Y + 1 );
 }
 
 //static void print01()

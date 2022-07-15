@@ -10,8 +10,9 @@
 
 #define BORDER_TILES	56
 #define SPLASH_TILES	64
+#define LOGO_TILES		64
 
-static void drawImageEx( VDPPlane plane, const Image *image, unsigned char palette, unsigned int index, unsigned char x, unsigned char y );
+static void drawImageEx( const Image *image, unsigned char palette, unsigned int index, unsigned char x, unsigned char y );
 static void draw_setMapEx( unsigned int tile, unsigned char x, unsigned char y );
 
 void engine_graphics_manager_init()
@@ -87,14 +88,7 @@ void engine_graphics_manager_draw_underline( unsigned char y )
 
 void engine_graphics_manager_draw_splash()
 {
-	//unsigned char idx;
-
-	VDPPlane plane = BG_A;
-	unsigned char palette = PAL0;
-	//unsigned int index = 64;
-	//u16 basetile = TILE_ATTR_FULL( palette, 0, 0, 0, 1 );
-
-	drawImageEx( plane, &gfx_splash, palette, SPLASH_TILES, LEFT_X + 0, TOP_Y + 0 );
+	drawImageEx( &gfx_splash, PAL0, SPLASH_TILES, LEFT_X + 0, TOP_Y + 0 );
 	//TODO - display off / splash / on.
 	//for( idx = 0; idx < OUTER_WIDE; idx++ )
 	//{
@@ -103,28 +97,38 @@ void engine_graphics_manager_draw_splash()
 	//}
 }
 
+void engine_graphics_manager_draw_logo_big( unsigned char x, unsigned char y )
+{
+	drawImageEx( &gfx_logo_big, PAL0, LOGO_TILES, x, y );
+}
+
+void engine_graphics_manager_draw_logo_small( unsigned char x, unsigned char y )
+{
+	drawImageEx( &gfx_logo_small, PAL0, LOGO_TILES, x, y );
+}
+
 void engine_graphics_manager_draw_koschey( unsigned char x, unsigned char y, unsigned int palette )
 {
 	const unsigned int index = 256;
-	drawImageEx( BG_A, &gfx_koschey, palette, index, x, y );
+	drawImageEx( &gfx_koschey, palette, index, x, y );
 }
 
 void engine_graphics_manager_draw_inventory( unsigned char x, unsigned char y )
 {
 	const unsigned int index = 32;
-	drawImageEx( BG_A, &gfx_stats_inventory, PAL0, index, x, y );
+	drawImageEx( &gfx_stats_inventory, PAL0, index, x, y );
 }
 
 void foo()
 {
 	const unsigned int index = 256;
-	drawImageEx( BG_A, &gfx_battle_enemies, PAL0, index, 0, 0 );
+	drawImageEx( &gfx_battle_enemies, PAL0, index, 0, 0 );
 }
 
-static void drawImageEx( VDPPlane plane, const Image *image, unsigned char palette, unsigned int index, unsigned char x, unsigned char y )
+static void drawImageEx( const Image *image, unsigned char palette, unsigned int index, unsigned char x, unsigned char y )
 {
 	u16 basetile = TILE_ATTR_FULL( palette, 0, 0, 0, index );
-	VDP_drawImageEx( plane, image, basetile, x, y, 0, CPU );
+	VDP_drawImageEx( BG_A, image, basetile, x, y, 0, CPU );
 }
 static void draw_setMapEx( unsigned int tile, unsigned char x, unsigned char y )
 {
