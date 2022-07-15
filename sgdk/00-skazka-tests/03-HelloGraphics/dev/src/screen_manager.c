@@ -26,7 +26,7 @@ void engine_screen_manager_update()
 
 static void print01()
 {
-	//engine_font_manager_punc( LOCALE_QUOTE, 20, 0 );
+	engine_font_manager_punc( LOCALE_ARROW, 4, 1 );
 	engine_font_manager_data( 123, 30, 0 );
 	engine_font_manager_char( ' ', 29, 0 );
 	engine_font_manager_zero( 3, 20, 0 );
