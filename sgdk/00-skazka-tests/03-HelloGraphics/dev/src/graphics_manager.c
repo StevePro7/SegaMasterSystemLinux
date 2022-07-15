@@ -25,8 +25,6 @@ void engine_graphics_manager_init()
 
 	VDP_setPalette( PAL0, pal0 );
 	VDP_setPalette( PAL1, pal1 );
-
-
 }
 
 void engine_graphics_manager_load()
