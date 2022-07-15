@@ -91,11 +91,11 @@ void engine_font_manager_data( unsigned int data, unsigned char x, unsigned char
 	}
 }
 
-void engine_font_manager_draw_numb( unsigned char numb, unsigned char x, unsigned char y )
-{
-	unsigned char tile = numb + DATA_ROOT;
-	draw_char( tile, x, y );
-}
+//void engine_font_manager_numb( unsigned char numb, unsigned char x, unsigned char y )
+//{
+//	unsigned char tile = numb + DATA_ROOT;
+//	draw_char( tile, x, y );
+//}
 
 void engine_font_manager_zero( unsigned int data, unsigned char x, unsigned char y )
 {
