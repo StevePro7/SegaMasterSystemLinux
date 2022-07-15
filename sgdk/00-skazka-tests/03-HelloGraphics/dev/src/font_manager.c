@@ -1,7 +1,7 @@
 #include "font_manager.h"
 #include "global_manager.h"
 #include "locale_manager.h"
-#include "resources.h"
+#include "gfx.h"
 
 //#define FONT_TILES	0		// 1  is graphics tile
 #define TEXT_ROOT	64		// 64 is "A" (65-01).

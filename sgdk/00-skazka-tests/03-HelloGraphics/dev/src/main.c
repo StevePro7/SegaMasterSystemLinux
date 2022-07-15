@@ -7,7 +7,7 @@ int main()
 	//engine_font_manager_init();
 
 	engine_font_manager_punc( '>', 10, 10 );
-	engine_font_manager_text( "HELLO WORLD", 2, 8 );
+	engine_font_manager_text( "ADRIANA BOLAND", 2, 8 );
 	engine_font_manager_text( "STEVEPRO STUDIOS", 4, 18 );
 	//engine_graphics_manager_draw_splash();
 	//engine_graphics_manager_draw_koschey( LEFT_X + 10, TOP_Y + 2, PAL0 );

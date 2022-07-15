@@ -1,6 +1,6 @@
 #include "enemy_manager.h"
 #include "global_manager.h"
-#include "resources.h"
+#include "gfx.h"
 
 #ifdef _CONSOLE
 #include "_genesis.h"

@@ -13,31 +13,43 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\engine">
+      <UniqueIdentifier>{9d5cc2c9-26dc-4bfc-8e15-d5d432eb5480}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\content">
+      <UniqueIdentifier>{8465f143-06fd-4864-a744-be550be8f2ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\content">
+      <UniqueIdentifier>{7f3e78c8-4bcd-4de8-afef-7107ff61cb1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\engine">
+      <UniqueIdentifier>{9eb0cd68-4b9c-4fa2-a61e-d6efc258cf77}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\gfx\res\resources.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\graphics_manager.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\global_manager.c">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\player_manager.c">
+      <Filter>Source Files\engine</Filter>
     </ClCompile>
     <ClCompile Include="src\enemy_manager.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\player_manager.c">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\engine</Filter>
     </ClCompile>
     <ClCompile Include="src\font_manager.c">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\global_manager.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics_manager.c">
+      <Filter>Source Files\engine</Filter>
     </ClCompile>
     <ClCompile Include="src\locale_manager.c">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\gfx\res\gfx.c">
+      <Filter>Source Files\content</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -49,26 +61,26 @@
     <ClInclude Include="inc\main.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="res\resources.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="inc\graphics_manager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="inc\global_manager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="inc\enemy_manager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="inc\player_manager.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\engine</Filter>
     </ClInclude>
     <ClInclude Include="inc\font_manager.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\global_manager.h">
+      <Filter>Header Files\engine</Filter>
     </ClInclude>
     <ClInclude Include="inc\locale_manager.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\player_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="res\gfx.h">
+      <Filter>Header Files\content</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\enemy_manager.h">
+      <Filter>Header Files\engine</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

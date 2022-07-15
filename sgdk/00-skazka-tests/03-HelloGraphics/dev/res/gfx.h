@@ -1,5 +1,5 @@
-#ifndef _RES_RESOURCES_H_
-#define _RES_RESOURCES_H_
+#ifndef _RES_GFX_H_
+#define _RES_GFX_H_
 
 #ifdef _CONSOLE
 #include "_genesis.h"
@@ -22,4 +22,4 @@ extern const Image gfx_stats_inventory;
 extern const Image gfx_stats_items;
 extern const Image gfx_stats_village;
 
-#endif // _RES_RESOURCES_H_
+#endif // _RES_GFX_H_
