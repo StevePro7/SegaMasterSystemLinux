@@ -9,6 +9,7 @@
 #endif
 
 #define BORDER_TILES	56
+#define SPLASH_TILES	64
 
 static void draw_graphics( VDPPlane plane, const Image *image, unsigned char palette, unsigned int index, unsigned char x, unsigned char y );
 
@@ -39,10 +40,10 @@ void engine_graphics_manager_draw_splash()
 
 	VDPPlane plane = BG_A;
 	unsigned char palette = PAL0;
-	unsigned int index = 64;
+	//unsigned int index = 64;
 	//u16 basetile = TILE_ATTR_FULL( palette, 0, 0, 0, 1 );
 
-	draw_graphics( plane, &gfx_splash, palette, index, LEFT_X + 0, TOP_Y + 0 );
+	draw_graphics( plane, &gfx_splash, palette, SPLASH_TILES, LEFT_X + 0, TOP_Y + 0 );
 	//TODO - display off / splash / on.
 	//for( idx = 0; idx < OUTER_WIDE; idx++ )
 	//{
