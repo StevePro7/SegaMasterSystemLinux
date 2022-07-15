@@ -107,6 +107,11 @@ void engine_graphics_manager_draw_logo_small( unsigned char x, unsigned char y )
 	drawImageEx( &gfx_logo_small, PAL0, LOGO_TILES, x, y );
 }
 
+void engine_graphics_manager_draw_village( unsigned char x, unsigned char y )
+{
+	drawImageEx( &gfx_stats_village, PAL1, 128, x, y );
+}
+
 void engine_graphics_manager_draw_koschey( unsigned char x, unsigned char y, unsigned int palette )
 {
 	const unsigned int index = 256;
