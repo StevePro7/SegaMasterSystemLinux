@@ -8,7 +8,7 @@
 #include <genesis.h>
 #endif
 
-void engine_player_manager_draw_inventory( unsigned char armor, unsigned char weapon, unsigned char life, unsigned char x, unsigned char y )
+void engine_player_manager_draw_inventory( unsigned char weapon, unsigned char armor, unsigned char life, unsigned char x, unsigned char y )
 {
 	const unsigned char wide = 2;
 	const unsigned char high = 2;
@@ -24,13 +24,13 @@ void engine_player_manager_draw_inventory( unsigned char armor, unsigned char we
 
 	// Weapon
 	//VDP_setTileMapEx( BG_A, gfx_stats_items.tilemap, TILE_ATTR_FULL( PAL0, 0, 0, 0, ITEMS_TILES ), x, y, 0, 0 * high + weapon * high, wide, high, CPU );
-	VDP_setTileMapEx( BG_A, gfx_stats_items.tilemap, basetile, x, y, 0, 0 * high + weapon * high, wide, high, CPU );
+	VDP_setTileMapEx( BG_A, gfx_stats_items.tilemap, basetile, x + 0, y + 1, 0, 0 * high + weapon * high, wide, high, CPU );
 
 	// Armor
 	//VDP_setTileMapEx( BG_A, gfx_stats_items.tilemap, TILE_ATTR_FULL( PAL0, 0, 0, 0, ITEMS_TILES ), x, y, 0, NUM_WEAPONS * high + armor * high, wide, high, CPU );
-	VDP_setTileMapEx( BG_A, gfx_stats_items.tilemap, basetile, x, y, 0, NUM_WEAPONS * high + armor * high, wide, high, CPU );
+	VDP_setTileMapEx( BG_A, gfx_stats_items.tilemap, basetile, x + 6, y + 3, 0, NUM_WEAPONS * high + armor * high, wide, high, CPU );
 
-	//if( life )
+	if( life )
 	{
 		//VDP_setTileMapEx( BG_A, gfx_stats_items.tilemap, TILE_ATTR_FULL( PAL0, 0, 0, 0, index ), x + 1, y + 6, 0, ( NUM_WEAPONS + NUM_ARMORS )* high, wide, high, CPU );
 		VDP_setTileMapEx( BG_A, gfx_stats_items.tilemap, basetile, x + 1, y + 6, 0, ( NUM_WEAPONS + NUM_ARMORS )* high, wide, high, CPU );
