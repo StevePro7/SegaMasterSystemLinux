@@ -37,7 +37,7 @@ void engine_graphics_manager_load()
 
 void engine_graphics_manager_draw_border()
 {
-	//engine_graphics_manager_draw_borderX( 0, 0, OUTER_WIDE, OUTER_HIGH );
+	engine_graphics_manager_draw_borderX( 0, 0, OUTER_WIDE, OUTER_HIGH );
 	engine_graphics_manager_draw_borderX( LEFT_X, TOP_Y, LEFT_X + INNER_WIDE, TOP_Y + INNER_HIGH );
 }
 
@@ -71,17 +71,17 @@ void engine_graphics_manager_draw_borderX( unsigned char left, unsigned char top
 void engine_graphics_manager_draw_underline( unsigned char y )
 {
 	unsigned char idx;
+	unsigned char wide = LEFT_X + INNER_WIDE;
 	unsigned char tile = 0;
 
-//	draw_setMapEx( tile, LEFT_X, y );
-//	draw_setMapEx( tile, INNER_WIDE - 1, y );
+	draw_setMapEx( tile, LEFT_X, y );
+	draw_setMapEx( tile, wide - 1, y );
 
 	// Horizontal.
 	tile = 2;
-	for( idx = LEFT_X + 1; idx <= INNER_WIDE - 2; idx++ )
+	for( idx = LEFT_X + 1; idx <= wide - 2; idx++ )
 	{
 		draw_setMapEx( tile, idx, y );
-//		devkit_SMS_setNextTileatXY( idx, y ); devkit_SMS_setTile( *pnt + 2 );
 	}
 }
 
