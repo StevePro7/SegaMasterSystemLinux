@@ -23,6 +23,7 @@ static void draw_enemy( unsigned char enemy, unsigned char x, unsigned char y )
 
 	// TODO global_manager
 	const unsigned int index = 256;
+	//u16 basetile = TILE_ATTR_FULL( PAL0, 0, 0, 0, index );
 	VDP_setTileMapEx( BG_A, gfx_battle_enemies.tilemap, TILE_ATTR_FULL( PAL0, 0, 0, 0, index ), x, y, 0, enemy * high, wide, high, CPU );
 }
 //static void draw_leshy( unsigned char x, unsigned char y )

@@ -37,6 +37,7 @@
 #define NUM_WEAPONS				3
 #define NUM_ARMORS				2
 
-#define FONT_TILES	0		// 1  is graphics tile
+#define FONT_TILES				0		// 1  is graphics tile
+#define ITEMS_TILES				288
 
 #endif//_GLOBAL_MANAGER_H_

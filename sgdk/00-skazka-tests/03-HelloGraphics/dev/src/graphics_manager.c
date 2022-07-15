@@ -35,8 +35,9 @@ void engine_graphics_manager_init()
 
 void engine_graphics_manager_load()
 {
-	VDP_loadTileSet( gfx_font.tileset, FONT_TILES, TRUE );
-	VDP_loadTileSet( gfx_border.tileset, BORDER_TILES, TRUE );
+	VDP_loadTileSet( gfx_font.tileset, FONT_TILES, 1 );
+	VDP_loadTileSet( gfx_border.tileset, BORDER_TILES, 1 );
+	VDP_loadTileSet( gfx_stats_items.tileset, ITEMS_TILES, 1 );
 }
 
 void engine_graphics_manager_draw_border()

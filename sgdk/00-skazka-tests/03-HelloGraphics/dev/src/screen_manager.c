@@ -24,9 +24,6 @@ void engine_screen_manager_update()
 
 	//engine_enemy_manager_draw( 20, 0 );
 	//engine_player_manager_draw( 20, 0 );
-
-	
-	//engine_player_manager_draw_inventory( 20, 0 );// LEFT_X + 2, TOP_Y + 14 );
 }
 
 //static void print00()
@@ -36,23 +33,24 @@ void engine_screen_manager_update()
 //	engine_graphics_manager_draw_koschey( LEFT_X + 10, TOP_Y + 2, PAL1 );
 //}
 
-static void print00()
-{
-	engine_graphics_manager_draw_border();
-	engine_graphics_manager_draw_koschey( LEFT_X + 10, TOP_Y + 2, PAL1 );
-}
-
 //static void print00()
 //{
 //	engine_graphics_manager_draw_border();
-//	engine_graphics_manager_draw_underline( TOP_Y + 4 );
-//
-//	//engine_graphics_manager_draw_logo_big( LEFT_X + 2, TOP_Y + 3 );
-//
-//	engine_graphics_manager_draw_logo_small( LEFT_X + 1, TOP_Y + 1 );
-//	engine_graphics_manager_draw_village( LEFT_X + 12, TOP_Y + 6 );
-//	engine_graphics_manager_draw_inventory( LEFT_X + 2, TOP_Y + 14 );
+//	engine_graphics_manager_draw_koschey( LEFT_X + 10, TOP_Y + 2, PAL1 );
 //}
+
+static void print00()
+{
+	//engine_graphics_manager_draw_border();
+	//engine_graphics_manager_draw_underline( TOP_Y + 4 );
+
+	////engine_graphics_manager_draw_logo_big( LEFT_X + 2, TOP_Y + 3 );
+
+	//engine_graphics_manager_draw_logo_small( LEFT_X + 1, TOP_Y + 1 );
+	//engine_graphics_manager_draw_village( LEFT_X + 12, TOP_Y + 6 );
+	////engine_graphics_manager_draw_inventory( LEFT_X + 2, TOP_Y + 14 );
+	engine_player_manager_draw_inventory( 0, 1, 1, LEFT_X + 2, TOP_Y + 14 );
+}
 
 //static void print00()
 //{
