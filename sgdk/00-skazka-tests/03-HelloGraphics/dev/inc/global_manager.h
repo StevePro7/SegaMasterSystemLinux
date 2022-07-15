@@ -24,7 +24,7 @@
 
 // Content.
 #define OFFSET_TILES			160
-#define PLAYER_TILES			224
+//#define PLAYER_TILES			224
 #define SPRITE_TILES			256
 
 // Specific global variables.
@@ -39,5 +39,6 @@
 
 #define FONT_TILES				0		// 1  is graphics tile
 #define ITEMS_TILES				288
+#define PLAYER_TILES			128
 
 #endif//_GLOBAL_MANAGER_H_
