@@ -19,20 +19,6 @@
 static unsigned char get_tile( unsigned char ch );
 static void draw_char( unsigned int tile, unsigned char x, unsigned char y );
 
-//void engine_font_manager_init()
-//{
-//	//unsigned short *data = NULL;
-//	//unsigned char palette = NULL;
-//
-//	VDP_loadTileSet( gfx_font.tileset, FONT_TILES, TRUE );
-//	//if( NULL != gfx_font.palette )
-//	//{
-//	//	data = gfx_font.palette->data;
-//	//}
-//
-//	//VDP_setPalette( palette, data );
-//}
-
 void engine_font_manager_char( const unsigned char ch, unsigned char x, unsigned char y )
 {
 	unsigned char tile = ch - TEXT_ROOT;
@@ -90,12 +76,6 @@ void engine_font_manager_data( unsigned int data, unsigned char x, unsigned char
 		draw_char( tile, x, y );
 		x--;
 	}
-}
-
-void engine_font_manager_draw_numb( unsigned char numb, unsigned char x, unsigned char y )
-{
-	unsigned char tile = numb + DATA_ROOT;
-	draw_char( tile, x, y );
 }
 
 void engine_font_manager_zero( unsigned int data, unsigned char x, unsigned char y )

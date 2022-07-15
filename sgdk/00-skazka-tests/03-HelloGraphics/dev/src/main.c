@@ -4,7 +4,6 @@ int main()
 {
 	engine_graphics_manager_init();
 	engine_graphics_manager_load();
-	//engine_font_manager_init();
 
 	engine_font_manager_punc( 'X', 10, 10 );
 	engine_font_manager_text( "SUZANNE BOLAND", 2, 8 );
