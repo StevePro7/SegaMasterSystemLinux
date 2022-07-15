@@ -8,9 +8,11 @@
 #include <genesis.h>
 #endif
 
-#define BORDER_TILES	56
-#define SPLASH_TILES	64
-#define LOGO_TILES		64
+#define BORDER_TILES		56
+#define SPLASH_TILES		64
+#define LOGO_TILES			64
+#define VILLAGE_TILES		128
+#define STOCK_TILES			256
 
 static void drawImageEx( const Image *image, unsigned char palette, unsigned int index, unsigned char x, unsigned char y );
 static void draw_setMapEx( unsigned int tile, unsigned char x, unsigned char y );
@@ -109,7 +111,7 @@ void engine_graphics_manager_draw_logo_small( unsigned char x, unsigned char y )
 
 void engine_graphics_manager_draw_village( unsigned char x, unsigned char y )
 {
-	drawImageEx( &gfx_stats_village, PAL1, 128, x, y );
+	drawImageEx( &gfx_stats_village, PAL1, VILLAGE_TILES, x, y );
 }
 
 void engine_graphics_manager_draw_koschey( unsigned char x, unsigned char y, unsigned int palette )
@@ -120,8 +122,7 @@ void engine_graphics_manager_draw_koschey( unsigned char x, unsigned char y, uns
 
 void engine_graphics_manager_draw_inventory( unsigned char x, unsigned char y )
 {
-	const unsigned int index = 32;
-	drawImageEx( &gfx_stats_inventory, PAL0, index, x, y );
+	drawImageEx( &gfx_stats_inventory, PAL0, STOCK_TILES, x, y );
 }
 
 void foo()
