@@ -3,6 +3,7 @@
 #include "font_manager.h"
 #include "global_manager.h"
 #include "graphics_manager.h"
+#include "locale_manager.h"
 #include "player_manager.h"
 
 static void print01();
@@ -25,8 +26,11 @@ void engine_screen_manager_update()
 
 static void print01()
 {
-	//engine_font_manager_punc( ',', 10, 0 );
-	engine_font_manager_text( "SUZANNE BOLAND", 2, 0 );
+	//engine_font_manager_punc( LOCALE_QUOTE, 20, 0 );
+	engine_font_manager_data( 123, 30, 0 );
+	engine_font_manager_char( ' ', 29, 0 );
+	engine_font_manager_zero( 3, 20, 0 );
+	engine_font_manager_text( "SUZANNE BOLANX", 2, 0 );
 	engine_font_manager_text( "STEVEPRO STUDIOS", 14, 1 );
 }
 static void print02()
