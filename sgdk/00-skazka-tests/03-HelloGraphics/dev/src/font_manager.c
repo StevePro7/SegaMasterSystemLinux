@@ -3,7 +3,6 @@
 #include "locale_manager.h"
 #include "gfx.h"
 
-//#define FONT_TILES	0		// 1  is graphics tile
 #define TEXT_ROOT	64		// 64 is "A" (65-01).
 #define DATA_ROOT	27		// 27 is "0" (48-27).
 #define UNIT_ROOT	10		// 10 is decimal
@@ -16,14 +15,13 @@
 #endif
 
 // Private helper functions.
-static unsigned char get_lett( unsigned char ch );
 static unsigned char get_tile( unsigned char ch );
+static unsigned char get_punc( unsigned char ch );
 static void draw_char( unsigned int tile, unsigned char x, unsigned char y );
 
 void engine_font_manager_char( const unsigned char ch, unsigned char x, unsigned char y )
 {
-	//unsigned char tile = ch - TEXT_ROOT;
-	unsigned char tile = get_lett( ch );
+	unsigned char tile = get_tile( ch );
 	draw_char( tile, x, y );
 }
 
@@ -35,24 +33,17 @@ void engine_font_manager_numb( const unsigned char ch, unsigned char x, unsigned
 
 void engine_font_manager_punc( const unsigned char ch, unsigned char x, unsigned char y )
 {
-	unsigned char tile = get_tile( ch );
-	draw_char( tile, x, y );
+	unsigned char punc = get_punc( ch );
+	draw_char( punc, x, y );
 }
 
 void engine_font_manager_text( char *text, unsigned char x, unsigned char y )
 {
 	unsigned char idx = 0;
 	unsigned char tile = 0;
-	//unsigned char lett;
 	while( '\0' != text[ idx ] )
 	{
-		//tile = 0;
-		//lett = text[ idx ];
-		//if( ' ' != lett )
-		//{
-		//	tile = text[ idx ] - TEXT_ROOT;
-		//}
-		tile = get_lett( text[ idx ] );
+		tile = get_tile( text[ idx ] );
 		draw_char( tile, x, y );
 		x++;
 		idx++;
@@ -106,7 +97,7 @@ void engine_font_manager_zero( unsigned int data, unsigned char x, unsigned char
 }
 
 // Private helper functions.
-static unsigned char get_lett( unsigned char ch )
+static unsigned char get_tile( unsigned char ch )
 {
 	unsigned char lett = 0;
 	if( ' ' != ch )
@@ -116,7 +107,7 @@ static unsigned char get_lett( unsigned char ch )
 
 	return lett;
 }
-static unsigned char get_tile( unsigned char ch )
+static unsigned char get_punc( unsigned char ch )
 {
 	if( LOCALE_PLUS == ch ) { return 37; }
 	else if( LOCALE_HYPHEN == ch ) { return 38; }
