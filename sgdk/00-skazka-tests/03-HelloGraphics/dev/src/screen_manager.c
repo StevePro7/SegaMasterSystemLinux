@@ -5,11 +5,13 @@
 #include "graphics_manager.h"
 #include "player_manager.h"
 
+static void print01();
+static void print02();
+
 void engine_screen_manager_update()
 {
-	engine_font_manager_punc( ':', 10, 10 );
-	engine_font_manager_text( "SUZANNE BOLAND", 2, 8 );
-	engine_font_manager_text( "STEVEPRO STUDIOS", 4, 18 );
+	print01();
+	print02();
 	//engine_graphics_manager_draw_splash();
 	//engine_graphics_manager_draw_koschey( LEFT_X + 10, TOP_Y + 2, PAL0 );
 
@@ -19,4 +21,15 @@ void engine_screen_manager_update()
 
 	//engine_graphics_manager_draw_inventory( LEFT_X + 2, TOP_Y + 14 );
 	//engine_player_manager_draw_inventory( 20, 0 );// LEFT_X + 2, TOP_Y + 14 );
+}
+
+static void print01()
+{
+	//engine_font_manager_punc( ',', 10, 0 );
+	engine_font_manager_text( "SUZANNE BOLAND", 2, 0 );
+	engine_font_manager_text( "STEVEPRO STUDIOS", 14, 1 );
+}
+static void print02()
+{
+	engine_graphics_manager_draw_splash();
 }

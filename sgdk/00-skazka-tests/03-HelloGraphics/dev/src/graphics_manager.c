@@ -8,7 +8,7 @@
 #include <genesis.h>
 #endif
 
-#define BORDER_TILES	48
+#define BORDER_TILES	56
 
 static void draw_graphics( VDPPlane plane, const Image *image, unsigned char palette, unsigned int index, unsigned char x, unsigned char y );
 
@@ -38,11 +38,11 @@ void engine_graphics_manager_draw_splash()
 	//unsigned char idx;
 
 	VDPPlane plane = BG_A;
-	//const unsigned char tile = 0;
 	unsigned char palette = PAL0;
+	unsigned int index = 64;
 	//u16 basetile = TILE_ATTR_FULL( palette, 0, 0, 0, 1 );
 
-	draw_graphics( plane, &gfx_splash, palette, LEFT_X + 0, TOP_Y + 0, 1 );
+	draw_graphics( plane, &gfx_splash, palette, index, LEFT_X + 0, TOP_Y + 0 );
 	//TODO - display off / splash / on.
 	//for( idx = 0; idx < OUTER_WIDE; idx++ )
 	//{

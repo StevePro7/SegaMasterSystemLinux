@@ -40,9 +40,17 @@ void engine_font_manager_punc( const unsigned char ch, unsigned char x, unsigned
 void engine_font_manager_text( char *text, unsigned char x, unsigned char y )
 {
 	unsigned char idx = 0;
+	unsigned char tile = 0;
+	unsigned char lett;
 	while( '\0' != text[ idx ] )
 	{
-		unsigned char tile = text[ idx ] - TEXT_ROOT;
+		tile = 0;
+		lett = text[ idx ];
+		if( ' ' != lett )
+		{
+			tile = text[ idx ] - TEXT_ROOT;
+		}
+
 		draw_char( tile, x, y );
 		x++;
 		idx++;
