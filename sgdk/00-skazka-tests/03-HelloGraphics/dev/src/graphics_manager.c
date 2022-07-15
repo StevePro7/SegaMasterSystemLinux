@@ -12,6 +12,7 @@
 #define SPLASH_TILES		64
 #define LOGO_TILES			64
 #define VILLAGE_TILES		128
+#define BOSS_TILES			64
 #define STOCK_TILES			256
 
 static void drawImageEx( const Image *image, unsigned char palette, unsigned int index, unsigned char x, unsigned char y );
@@ -116,19 +117,12 @@ void engine_graphics_manager_draw_village( unsigned char x, unsigned char y )
 
 void engine_graphics_manager_draw_koschey( unsigned char x, unsigned char y, unsigned int palette )
 {
-	const unsigned int index = 256;
-	drawImageEx( &gfx_koschey, palette, index, x, y );
+	drawImageEx( &gfx_koschey, palette, BOSS_TILES, x, y );
 }
 
 void engine_graphics_manager_draw_inventory( unsigned char x, unsigned char y )
 {
 	drawImageEx( &gfx_stats_inventory, PAL0, STOCK_TILES, x, y );
-}
-
-void foo()
-{
-	const unsigned int index = 256;
-	drawImageEx( &gfx_battle_enemies, PAL0, index, 0, 0 );
 }
 
 static void drawImageEx( const Image *image, unsigned char palette, unsigned int index, unsigned char x, unsigned char y )
