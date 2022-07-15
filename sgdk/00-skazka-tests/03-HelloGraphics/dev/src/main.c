@@ -6,7 +6,7 @@ int main()
 	engine_graphics_manager_load();
 	//engine_font_manager_init();
 
-	engine_font_manager_punc( '?', 10, 10 );
+	engine_font_manager_punc( 'X', 10, 10 );
 	engine_font_manager_text( "SUZANNE BOLAND", 2, 8 );
 	engine_font_manager_text( "STEVEPRO STUDIOS", 4, 18 );
 	//engine_graphics_manager_draw_splash();
