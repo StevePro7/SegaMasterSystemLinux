@@ -1,14 +1,8 @@
 #ifndef _RANDOM_MANAGER_H_
 #define _RANDOM_MANAGER_H_
 
-#ifdef _CONSOLE
-#include "_genesis.h"
-#else
-#include <genesis.h>
-#endif
-
 void engine_random_manager_rand();
 unsigned char engine_random_manager_next();
-bool engine_random_manager_diff( unsigned char level );
+//bool engine_random_manager_diff( unsigned char level );
 
 #endif//_RANDOM_MANAGER_H_
