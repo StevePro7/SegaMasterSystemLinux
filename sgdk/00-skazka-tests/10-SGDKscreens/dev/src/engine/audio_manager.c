@@ -41,6 +41,12 @@ void engine_audio_manager_play_sound( unsigned char index )
 {
 	play_audio( BEG_SOUND + MAX_MUSIC + index, 1, SOUND_PCM_CH2 );
 }
+
+void engine_audio_manager_play_music( unsigned char index )
+{
+	play_audio( BEG_SOUND + index, 1, SOUND_PCM_CH1 );
+}
+
 /*
 void engine_sound_manager_play( unsigned char index )
 {

@@ -177,4 +177,12 @@ typedef enum tag_enum_sound_type
 
 } enum_sound_type;
 
+typedef enum tag_enum_music_type
+{
+	music_intro = 0,
+	music_boss = 1,
+	music_over = 2,
+
+} enum_music_type;
+
 #endif//_ENUM_MANAGER_H_
