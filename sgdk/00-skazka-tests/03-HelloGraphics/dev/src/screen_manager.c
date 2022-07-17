@@ -22,11 +22,11 @@ void engine_screen_manager_update()
 	//engine_player_manager_draw( 20, 0 );
 }
 
-static void print00()
-{
-	engine_player_manager_draw( 0, 2, LEFT_X + 2, TOP_Y + 16 );
-	engine_enemy_manager_draw( 3, LEFT_X + 27, TOP_Y + 16 );
-}
+//static void print00()
+//{
+//	engine_player_manager_draw( 0, 2, LEFT_X + 2, TOP_Y + 16 );
+//	engine_enemy_manager_draw( 3, LEFT_X + 27, TOP_Y + 16 );
+//}
 
 //static void print00()
 //{
@@ -53,10 +53,10 @@ static void print00()
 //	engine_player_manager_draw_inventory( 2, 1, 1, LEFT_X + 2, TOP_Y + 14 );
 //}
 
-//static void print00()
-//{
-//	engine_graphics_manager_draw_splash();
-//}
+static void print00()
+{
+	engine_graphics_manager_draw_splash();
+}
 
 //static void print00()
 //{

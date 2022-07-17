@@ -22,15 +22,18 @@ void engine_graphics_manager_init()
 {
 	u16 *pal0 = NULL;
 	u16 *pal1 = NULL;
+	u16 *pal2 = NULL;
 
 	// get the palette data of moon
 #ifndef _CONSOLE
 	pal0 = gfx_palette0.palette->data;
 	pal1 = gfx_palette1.palette->data;
+	pal2 = gfx_splash.palette->data;
 #endif
 
 	VDP_setPalette( PAL0, pal0 );
 	VDP_setPalette( PAL1, pal1 );
+	VDP_setPalette( PAL2, pal2 );
 }
 
 void engine_graphics_manager_load()
@@ -95,7 +98,7 @@ void engine_graphics_manager_draw_underline( unsigned char y )
 
 void engine_graphics_manager_draw_splash()
 {
-	drawImageEx( &gfx_splash, PAL0, SPLASH_TILES, LEFT_X + 0, TOP_Y + 0 );
+	drawImageEx( &gfx_splash, PAL2, SPLASH_TILES, LEFT_X + 0, TOP_Y + 0 );
 	//TODO - display off / splash / on.
 	//for( idx = 0; idx < OUTER_WIDE; idx++ )
 	//{
