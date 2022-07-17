@@ -15,6 +15,9 @@
 #include <genesis.h>
 #endif
 
+// Private helper function.
+static void play_audio( const u8 id, const u8 priority, const u16 channel );
+
 void engine_audio_manager_init()
 {
 	unsigned char idx;
@@ -36,6 +39,11 @@ void engine_audio_manager_init()
 		sized = audio_sound_size[ idx ];
 		SND_setPCM_XGM( BEG_SOUND + MAX_MUSIC + idx, audio, sized );
 	}
+}
+
+void engine_audio_manager_play_sound( unsigned char index )
+{
+	play_audio( BEG_SOUND + MAX_MUSIC + index, 1, SOUND_PCM_CH2 );
 }
 
 //const unsigned char psgInit[] =
@@ -127,3 +135,8 @@ void engine_music_manager_beat()
 	//devkit_PSGPlayNoRepeat( ( void * ) data );
 }
 */
+
+static void play_audio( const u8 id, const u8 priority, const u16 channel )
+{
+	XGM_startPlayPCM( id, priority, channel );
+}
