@@ -173,7 +173,6 @@ typedef enum tag_enum_sound_type
 	sound_type_10 = 10,
 	sound_type_11 = 11,
 	sound_type_12 = 12,
-	sound_type_13 = 13,
 
 } enum_sound_type;
 

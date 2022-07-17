@@ -1,6 +1,7 @@
 WAV sfx_music_intro 	"sfx/music_intro.wav" 	XGM
 WAV sfx_music_boss 		"sfx/music_boss.wav" 	XGM
 WAV sfx_music_over 		"sfx/music_over.wav" 	XGM
+WAV sfx_sound_type_0 	"sfx/sound_type_0.wav" 	XGM
 WAV sfx_sound_type_1 	"sfx/sound_type_1.wav" 	XGM
 WAV sfx_sound_type_2 	"sfx/sound_type_2.wav" 	XGM
 WAV sfx_sound_type_3 	"sfx/sound_type_3.wav" 	XGM
@@ -13,4 +14,3 @@ WAV sfx_sound_type_9 	"sfx/sound_type_9.wav" 	XGM
 WAV sfx_sound_type_10 	"sfx/sound_type_10.wav" XGM
 WAV sfx_sound_type_11	"sfx/sound_type_11.wav" XGM
 WAV sfx_sound_type_12 	"sfx/sound_type_12.wav" XGM
-WAV sfx_sound_type_13 	"sfx/sound_type_13.wav"	XGM
