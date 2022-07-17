@@ -1,6 +1,10 @@
 #include "audio_manager.h"
 #include "audio_object.h"
 
+#define MAX_MUSIC			3
+#define MAX_SOUND			13
+#define BEG_SOUND			65
+
 #ifdef _CONSOLE
 #include "_genesis.h"
 #else
@@ -18,19 +22,19 @@ void engine_audio_manager_init()
 	unsigned int sized;
 
 	// Initialize music.
-	for( idx = 0; idx < 3; idx++ )
+	for( idx = 0; idx < MAX_MUSIC; idx++ )
 	{
 		audio = audio_music[ idx ];
 		sized = audio_music_size[ idx ];
-		SND_setPCM_XGM( 65 + idx, audio, sized );
+		SND_setPCM_XGM( BEG_SOUND + idx, audio, sized );
 	}
 
 	// Initialize effects.
-	for( idx = 0; idx < 13; idx++ )
+	for( idx = 0; idx < MAX_SOUND; idx++ )
 	{
 		audio = audio_effect[ idx ];
 		sized = audio_effect_size[ idx ];
-		SND_setPCM_XGM( 65 + 3 + idx, audio, sized );
+		SND_setPCM_XGM( BEG_SOUND + MAX_MUSIC + idx, audio, sized );
 	}
 }
 

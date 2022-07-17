@@ -26,7 +26,7 @@ void screen_kill_screen_load()
 	engine_graphics_manager_draw_koschey( LEFT_X + 10, TOP_Y + 2, 0 );// devkit_TILE_USE_SPRITE_PALETTE() );
 
 	engine_timer_manager_load( KILL_SCREEN_DELAY );
-	engine_sound_manager_kill();
+//	engine_sound_manager_kill();
 	count = 0;
 	flag = 1;
 }

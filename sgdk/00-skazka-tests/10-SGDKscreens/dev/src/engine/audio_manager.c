@@ -1,17 +1,12 @@
 #include "audio_manager.h"
 #include "enum_manager.h"
 #include "hack_manager.h"
-//#include "../object/audio_object.h"
-//#include "../devkit/_sms_manager.h"
-//#include "../devkit/_snd_manager.h"
-//#include "../content/psg.h"
-//#include <stdlib.h>
 
 //const unsigned char psgInit[] =
 //{
 //	0x9F, 0xBF, 0xDF, 0xFF, 0x81, 0x00, 0xA1, 0x00, 0x00, 0xC1, 0x00
 //};
-
+/*
 void engine_sound_manager_init()
 {
 	//engine_sample_manager_init( psgInit );
@@ -95,3 +90,4 @@ void engine_music_manager_beat()
 	//devkit_SMS_mapROMBank( bank );
 	//devkit_PSGPlayNoRepeat( ( void * ) data );
 }
+*/
