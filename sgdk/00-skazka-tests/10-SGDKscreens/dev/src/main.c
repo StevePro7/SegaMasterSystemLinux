@@ -2,8 +2,8 @@
 
 static void print00()
 {
-	engine_player_manager_draw( 0, 2, LEFT_X + 2, TOP_Y + 16 );
-	engine_enemy_manager_draw( 3, LEFT_X + 27, TOP_Y + 16 );
+	engine_player_manager_draw( 2, 1, LEFT_X + 2, TOP_Y + 16 );
+	engine_enemy_manager_draw( 4, LEFT_X + 27, TOP_Y + 16 );
 }
 
 int main()

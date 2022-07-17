@@ -25,24 +25,16 @@ unsigned char engine_random_manager_next()
 #endif
 }
 
-//unsigned char engine_random_manager_data( unsigned char max )
-//{
-//#ifdef _CONSOLE
-//	return rand() % max;
-//#else
-//	return random() % max;
-//#endif
-//}
 
-//bool engine_random_manager_diff( unsigned char level )
-//{
-//	return level == 0 ? 0 : 1;
-////	unsigned char value = 0;
-////#ifdef _CONSOLE
-////	value = rand() % HLF_RANDOM;
-////#else
-////	value = random() % HLF_RANDOM;
-////#endif
-////
-////	return level <= value;
-//}
+bool engine_random_manager_diff( unsigned char level )
+{
+	//return level == 0 ? 0 : 1;
+	unsigned char value = 0;
+#ifdef _CONSOLE
+	value = rand() % HLF_RANDOM;
+#else
+	value = random() % HLF_RANDOM;
+#endif
+
+	return level <= value;
+}
