@@ -5,10 +5,6 @@
 
 #include "audio_object.h"
 
-#define MAX_MUSIC			3
-#define MAX_SOUND			13
-#define BEG_SOUND			65
-
 #ifdef _CONSOLE
 #include "_genesis.h"
 #else

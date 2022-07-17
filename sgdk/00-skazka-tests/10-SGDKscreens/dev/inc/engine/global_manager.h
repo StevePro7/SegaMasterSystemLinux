@@ -44,7 +44,7 @@
 #define LESHY_TILES				256
 
 #define MAX_MUSIC			3
-#define MAX_SOUND			13
+#define MAX_SOUND			14
 #define BEG_SOUND			65
 
 #endif//_GLOBAL_MANAGER_H_
