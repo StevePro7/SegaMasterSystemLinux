@@ -99,12 +99,6 @@ void engine_graphics_manager_draw_underline( unsigned char y )
 void engine_graphics_manager_draw_splash()
 {
 	drawImageEx( &gfx_splash, PAL2, SPLASH_TILES, LEFT_X + 0, TOP_Y + 0 );
-	//TODO - display off / splash / on.
-	//for( idx = 0; idx < OUTER_WIDE; idx++ )
-	//{
-	//	VDP_setMapEx( plane, gfx_splash.tilemap, basetile, idx, 24, tile, 0, 1, 1 );
-	//	VDP_setMapEx( plane, gfx_splash.tilemap, basetile, idx, 25, tile, 0, 1, 1 );
-	//}
 }
 
 void engine_graphics_manager_draw_logo_big( unsigned char x, unsigned char y )
