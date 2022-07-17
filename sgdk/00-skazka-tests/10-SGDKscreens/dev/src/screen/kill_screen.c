@@ -5,8 +5,13 @@
 #include "../engine/global_manager.h"
 #include "../engine/graphics_manager.h"
 #include "../engine/timer_manager.h"
-//#include "../devkit/_sms_manager.h"
-#include <stdbool.h>
+//#include <stdbool.h>
+
+#ifdef _CONSOLE
+#include "_genesis.h"
+#else
+#include <genesis.h>
+#endif
 
 #define KILL_SCREEN_DELAY		25
 #define KILL_FLASH_COUNT		7
@@ -23,7 +28,7 @@ void screen_kill_screen_load()
 	engine_timer_manager_load( KILL_SCREEN_DELAY );
 	engine_sound_manager_kill();
 	count = 0;
-	flag = true;
+	flag = 1;
 }
 
 void screen_kill_screen_update( unsigned char *screen_type )
