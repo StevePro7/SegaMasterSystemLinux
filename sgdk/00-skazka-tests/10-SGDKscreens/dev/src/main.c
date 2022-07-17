@@ -8,6 +8,7 @@ static void print00()
 
 int main()
 {
+	engine_audio_manager_init();
 	engine_graphics_manager_init();
 	engine_graphics_manager_load();
 

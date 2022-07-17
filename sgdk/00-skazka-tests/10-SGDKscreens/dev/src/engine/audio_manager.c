@@ -1,6 +1,42 @@
 #include "audio_manager.h"
-#include "enum_manager.h"
-#include "hack_manager.h"
+//#include "enum_manager.h"
+//#include "hack_manager.h"
+#include "global_manager.h"
+
+#include "audio_object.h"
+
+#define MAX_MUSIC			3
+#define MAX_SOUND			13
+#define BEG_SOUND			65
+
+#ifdef _CONSOLE
+#include "_genesis.h"
+#else
+#include <genesis.h>
+#endif
+
+void engine_audio_manager_init()
+{
+	unsigned char idx;
+	const unsigned char *audio;
+	unsigned int sized;
+
+	// Initialize music.
+	for( idx = 0; idx < MAX_MUSIC; idx++ )
+	{
+		audio = audio_music[ idx ];
+		sized = audio_music_size[ idx ];
+		SND_setPCM_XGM( BEG_SOUND + idx, audio, sized );
+	}
+
+	// Initialize effects.
+	for( idx = 0; idx < MAX_SOUND; idx++ )
+	{
+		audio = audio_sound[ idx ];
+		sized = audio_sound_size[ idx ];
+		SND_setPCM_XGM( BEG_SOUND + MAX_MUSIC + idx, audio, sized );
+	}
+}
 
 //const unsigned char psgInit[] =
 //{

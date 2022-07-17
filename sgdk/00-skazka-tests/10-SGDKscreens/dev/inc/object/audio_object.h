@@ -1,9 +1,12 @@
-//#ifndef _SOUND_OBJECT_H_
-//#define _SOUND_OBJECT_H_
-//
-//extern const unsigned char *music_sample_data[];
-//extern const unsigned char music_sample_bank[];
-//extern const unsigned char *sound_sample_data[];
-//extern const unsigned char sound_sample_bank[];
-//
-//#endif//_SOUND_OBJECT_H_
+#ifndef __AUDIO_OBJECT_H__
+#define __AUDIO_OBJECT_H__
+
+#include "global_manager.h"
+
+extern const unsigned char *audio_music[ MAX_MUSIC ];
+extern const unsigned char *audio_sound[ MAX_SOUND ];
+
+extern const unsigned int audio_music_size[ MAX_MUSIC ];
+extern const unsigned int audio_sound_size[ MAX_SOUND ];
+
+#endif//__AUDIO_OBJECT_H__
