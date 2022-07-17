@@ -7,6 +7,6 @@
 #include <genesis.h>
 #endif
 
-#include "play_screen.h"
+#include "graphics_manager.h"
 
 #endif//__MAIN__
