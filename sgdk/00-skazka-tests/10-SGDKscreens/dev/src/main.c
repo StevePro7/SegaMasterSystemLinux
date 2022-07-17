@@ -2,8 +2,8 @@
 
 static void print00()
 {
-	engine_graphics_manager_draw_border();
-	engine_graphics_manager_draw_koschey( LEFT_X + 10, TOP_Y + 2, PAL1 );
+	engine_player_manager_draw( 0, 2, LEFT_X + 2, TOP_Y + 16 );
+	engine_enemy_manager_draw( 3, LEFT_X + 27, TOP_Y + 16 );
 }
 
 int main()

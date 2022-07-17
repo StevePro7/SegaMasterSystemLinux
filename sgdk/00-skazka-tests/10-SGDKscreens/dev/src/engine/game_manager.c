@@ -3,7 +3,7 @@
 #include "font_manager.h"
 #include "global_manager.h"
 #include "locale_manager.h"
-#include "player_manager.h"
+//#include "player_manager.h"
 #include "text_manager.h"
 #include "fixedbank.h"
 
@@ -67,7 +67,7 @@ void engine_game_manager_difficulty( unsigned char difficulty )
 // Common game rendering functions.
 void engine_game_manager_print_stats()
 {
-	engine_player_manager_stats();
+	//engine_player_manager_stats();
 	engine_font_manager_text( LOCALE_STATISTICS, LEFT_X + 2, TOP_Y + 6 );
 	engine_font_manager_text( LOCALE_HP, LEFT_X + 2, TOP_Y + 7 );
 	engine_font_manager_text( LOCALE_XP, LEFT_X + 2, TOP_Y + 8 );
@@ -83,7 +83,7 @@ void engine_game_manager_print_texts()
 //	devkit_SMS_mapROMBank( FIXED_BANK );
 	for( idx = 0; idx < 8; idx++ )
 	{
-		engine_font_manager_text( ( unsigned char * ) stats_texts[ idx ], LEFT_X + 12, TOP_Y + row );
+		engine_font_manager_text( ( char * ) stats_texts[ idx ], LEFT_X + 12, TOP_Y + row );
 		row++;
 	}
 

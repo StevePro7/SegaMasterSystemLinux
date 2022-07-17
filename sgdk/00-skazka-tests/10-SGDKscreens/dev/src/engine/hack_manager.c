@@ -57,6 +57,7 @@ void engine_hack_manager_load()
 
 void engine_hack_manager_invert()
 {
+	/*
 	struct_hack_object *ho = &global_hack_object;
 	if( ho->hack_currxp > 0 && ho->hack_currxp <= MAX_XP )
 	{
@@ -86,4 +87,5 @@ void engine_hack_manager_invert()
 	// Invert default values.
 	ho->hack_musics = !ho->hack_musics;
 	ho->hack_sounds = !ho->hack_sounds;
+	*/
 }

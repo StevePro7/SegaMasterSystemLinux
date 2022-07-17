@@ -1,4 +1,5 @@
 #include "random_manager.h"
+#include "global_manager.h"
 
 #ifdef _CONSOLE
 #include <stdlib.h>
@@ -15,14 +16,23 @@ void engine_random_manager_rand()
 #endif
 }
 
-unsigned char engine_random_manager_data( unsigned char max )
+unsigned char engine_random_manager_next()
 {
 #ifdef _CONSOLE
-	return rand() % max;
+	return rand() % MAX_RANDOM;
 #else
-	return random() % max;
+	return random() % MAX_RANDOM;
 #endif
 }
+
+//unsigned char engine_random_manager_data( unsigned char max )
+//{
+//#ifdef _CONSOLE
+//	return rand() % max;
+//#else
+//	return random() % max;
+//#endif
+//}
 
 //bool engine_random_manager_diff( unsigned char level )
 //{
