@@ -7,7 +7,7 @@
 #include "hack_manager.h"
 #include "player_manager.h"
 #include "text_manager.h"
-#include <stdlib.h>
+//#include <stdlib.h>
 
 static unsigned char get_damage( unsigned char random );
 

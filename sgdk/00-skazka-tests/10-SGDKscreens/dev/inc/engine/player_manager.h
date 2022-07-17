@@ -1,8 +1,13 @@
 #ifndef _PLAYER_MANAGER_H_
 #define _PLAYER_MANAGER_H_
 
+#ifdef _CONSOLE
+#include "_genesis.h"
+#else
+#include <genesis.h>
+#endif
+
 #include "../object/player_object.h"
-#include <stdbool.h>
 
 // Global variable.
 extern struct_player_object global_player_object;

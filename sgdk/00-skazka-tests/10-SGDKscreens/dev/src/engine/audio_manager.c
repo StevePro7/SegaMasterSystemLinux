@@ -1,12 +1,11 @@
 #include "audio_manager.h"
 #include "enum_manager.h"
 #include "hack_manager.h"
-#include "sample_manager.h"
 //#include "../object/audio_object.h"
 //#include "../devkit/_sms_manager.h"
 //#include "../devkit/_snd_manager.h"
 //#include "../content/psg.h"
-#include <stdlib.h>
+//#include <stdlib.h>
 
 //const unsigned char psgInit[] =
 //{

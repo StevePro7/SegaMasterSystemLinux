@@ -1,204 +1,137 @@
 #include "graphics_manager.h"
 #include "global_manager.h"
-//#include "../devkit/_sms_manager.h"
-//#include "../content/gfx.h"
-//#include "../banks/bank2.h"
-//#include "../banks/bank3.h"
+#include "gfx.h"
+
+#ifdef _CONSOLE
+#include "_genesis.h"
+#else
+#include <genesis.h>
+#endif
+
+#define BORDER_TILES		56
+#define SPLASH_TILES		64
+#define LOGO_TILES			64
+#define VILLAGE_TILES		128
+#define BOSS_TILES			64
+#define STOCK_TILES			256
+
+static void drawImageEx( const Image *image, unsigned char palette, unsigned int index, unsigned char x, unsigned char y );
+static void draw_setMapEx( unsigned int tile, unsigned char x, unsigned char y );
+
+void engine_graphics_manager_init()
+{
+	u16 *pal0 = NULL;
+	u16 *pal1 = NULL;
+	u16 *pal2 = NULL;
+
+	// get the palette data of moon
+#ifndef _CONSOLE
+	pal0 = gfx_palette0.palette->data;
+	pal1 = gfx_palette1.palette->data;
+	pal2 = gfx_splash.palette->data;
+#endif
+
+	VDP_setPalette( PAL0, pal0 );
+	VDP_setPalette( PAL1, pal1 );
+	VDP_setPalette( PAL2, pal2 );
+}
+
+void engine_graphics_manager_load()
+{
+	VDP_loadTileSet( gfx_font.tileset, FONT_TILES, 1 );
+	VDP_loadTileSet( gfx_border.tileset, BORDER_TILES, 1 );
+	VDP_loadTileSet( gfx_stats_items.tileset, ITEMS_TILES, 1 );
+	VDP_loadTileSet( gfx_battle_player.tileset, PLAYER_TILES, 1 );
+	VDP_loadTileSet( gfx_battle_enemies.tileset, ENEMY_TILES, 1 );
+	VDP_loadTileSet( gfx_battle_enemies_leshy.tileset, LESHY_TILES, 1 );
+}
 
 void engine_graphics_manager_draw_border()
 {
 	engine_graphics_manager_draw_borderX( 0, 0, OUTER_WIDE, OUTER_HIGH );
-	engine_graphics_manager_draw_borderX( LEFT_X, TOP_Y, INNER_WIDE, INNER_HIGH );
+	engine_graphics_manager_draw_borderX( LEFT_X, TOP_Y, LEFT_X + INNER_WIDE, TOP_Y + INNER_HIGH );
 }
 
-void engine_graphics_manager_draw_borderX( unsigned char top, unsigned char left, unsigned char wide, unsigned char high )
+void engine_graphics_manager_draw_borderX( unsigned char left, unsigned char top, unsigned char wide, unsigned char high )
 {
-	//const unsigned char *pnt = border__tilemap__bin;
-	//unsigned char idx;
+	unsigned char idx;
+	unsigned char tile = 0;
 
-	//devkit_SMS_setNextTileatXY( left, top ); devkit_SMS_setTile( *pnt + 0 );
-	//devkit_SMS_setNextTileatXY( wide - 1, top ); devkit_SMS_setTile( *pnt + 0 );
-	//devkit_SMS_setNextTileatXY( left, high - 1 ); devkit_SMS_setTile( *pnt + 0 );
-	//devkit_SMS_setNextTileatXY( wide - 1, high - 1 ); devkit_SMS_setTile( *pnt + 0 );
+	draw_setMapEx( tile, left + 0, top + 0 );
+	draw_setMapEx( tile, wide - 1, top + 0 );
+	draw_setMapEx( tile, left + 0, high - 1 );
+	draw_setMapEx( tile, wide - 1, high - 1 );
 
-	//// Vertical.
-	//for( idx = top + 1; idx <= high - 2; idx++ )
-	//{
-	//	devkit_SMS_setNextTileatXY( left, idx ); devkit_SMS_setTile( *pnt + 1 );
-	//	devkit_SMS_setNextTileatXY( wide - 1, idx ); devkit_SMS_setTile( *pnt + 1 );
-	//}
-	//// Horizontal.
-	//for( idx = left + 1; idx <= wide - 2; idx++ )
-	//{
-	//	devkit_SMS_setNextTileatXY( idx, top ); devkit_SMS_setTile( *pnt + 2 );
-	//	devkit_SMS_setNextTileatXY( idx, high - 1 ); devkit_SMS_setTile( *pnt + 2 );
-	//}
+	// Vertical.
+	tile = 1;
+	for( idx = top + 1; idx <= high - 2; idx++ )
+	{
+		draw_setMapEx( tile, left + 0, idx );
+		draw_setMapEx( tile, wide - 1, idx );
+	}
+
+	// Horizontal.
+	tile = 2;
+	for( idx = left + 1; idx <= wide - 2; idx++ )
+	{
+		draw_setMapEx( tile, idx, top + 0 );
+		draw_setMapEx( tile, idx, high - 1 );
+	}
 }
 
 void engine_graphics_manager_draw_underline( unsigned char y )
 {
-	//const unsigned char *pnt = border__tilemap__bin;
-	//unsigned char idx;
+	unsigned char idx;
+	unsigned char wide = LEFT_X + INNER_WIDE;
+	unsigned char tile = 0;
 
-	//devkit_SMS_setNextTileatXY( LEFT_X, y ); devkit_SMS_setTile( *pnt + 0 );
-	//devkit_SMS_setNextTileatXY( INNER_WIDE - 1, y ); devkit_SMS_setTile( *pnt + 0 );
+	draw_setMapEx( tile, LEFT_X, y );
+	draw_setMapEx( tile, wide - 1, y );
 
-	//// Horizontal.
-	//for( idx = LEFT_X + 1; idx <= INNER_WIDE - 2; idx++ )
-	//{
-	//	devkit_SMS_setNextTileatXY( idx, y ); devkit_SMS_setTile( *pnt + 2 );
-	//}
+	// Horizontal.
+	tile = 2;
+	for( idx = LEFT_X + 1; idx <= wide - 2; idx++ )
+	{
+		draw_setMapEx( tile, idx, y );
+	}
 }
 
 void engine_graphics_manager_draw_splash()
 {
-	//unsigned char x, y;
-	//unsigned int index = 0;
-	//unsigned int value = 0;
-	//unsigned int tile = 0;
-	//unsigned char i, j;
-
-	//x = 0;
-	//y = 0;
-	//for( j = 0; j < OUTER_HIGH - 2; j++ )
-	//{
-	//	for( i = 0; i < OUTER_WIDE; i++ )
-	//	{
-	//		index = j * OUTER_WIDE + i;
-	//		value = index * 2;
-	//		tile = splash__tilemap__bin[ value ];
-	//		devkit_SMS_setNextTileatXY( x + i, y + j );
-	//		devkit_SMS_setTile( tile );
-	//	}
-	//}
-}
-
-void engine_graphics_manager_draw_splash2( unsigned char x, unsigned char y )
-{
-	//const unsigned char *pnt = logo_new__tilemap__bin;
-	//unsigned char wide;
-	//unsigned char high;
-	//unsigned char i, j;
-	//unsigned char idx = 0;
-	//unsigned int tile;
-	//unsigned int palette;
-
-	//palette = devkit_TILE_USE_SPRITE_PALETTE();
-	//wide = 28;
-	//high = 5;
-	//j = 0;
-	//i = 0;
-	//for( j = 0; j < high; j++ )
-	//{
-	//	for( i = 0; i < wide; i++ )
-	//	{
-	//		tile = ( SPRITE_TILES + idx ) | palette;
-	//		devkit_SMS_setNextTileatXY( x + i, y + j );
-	//		devkit_SMS_setTile( *pnt + tile );
-	//		idx++;
-	//	}
-	//}
+	drawImageEx( &gfx_splash, PAL2, SPLASH_TILES, LEFT_X + 0, TOP_Y + 0 );
 }
 
 void engine_graphics_manager_draw_logo_big( unsigned char x, unsigned char y )
 {
-	//const unsigned char *pnt = logo_big__tilemap__bin;
-	//unsigned char wide = 28;
-	//unsigned char high = 5;
-	//unsigned char i, j;
-
-	//unsigned int tile = 0;
-	//for( j = 0; j < high; j++ )
-	//{
-	//	for( i = 0; i < wide; i++ )
-	//	{
-	//		devkit_SMS_setNextTileatXY( x + i, y + j );
-	//		devkit_SMS_setTile( *pnt + tile );
-	//		tile++;
-	//	}
-	//}
+	drawImageEx( &gfx_logo_big, PAL0, LOGO_TILES, x, y );
 }
 
 void engine_graphics_manager_draw_logo_small( unsigned char x, unsigned char y )
 {
-	//const unsigned char *pnt = logo_small__tilemap__bin;
-	//unsigned char wide = 30;
-	//unsigned char high = 3;
-	//unsigned char i, j;
-
-	//unsigned int tile = 0;
-	//for( j = 0; j < high; j++ )
-	//{
-	//	for( i = 0; i < wide; i++ )
-	//	{
-	//		devkit_SMS_setNextTileatXY( x + i, y + j );
-	//		devkit_SMS_setTile( *pnt + tile );
-	//		tile++;
-	//	}
-	//}
+	drawImageEx( &gfx_logo_small, PAL0, LOGO_TILES, x, y );
 }
 
 void engine_graphics_manager_draw_village( unsigned char x, unsigned char y )
 {
-	//const unsigned char *pnt = stats_village__tilemap__bin;
-	//unsigned char wide = 18;
-	//unsigned char high = 7;
-	//unsigned char i, j;
-	//unsigned char idx = 0;
-
-	//unsigned int palette = devkit_TILE_USE_SPRITE_PALETTE();
-	//unsigned int tile;
-	//for( j = 0; j < high; j++ )
-	//{
-	//	for( i = 0; i < wide; i++ )
-	//	{
-	//		tile = ( SPRITE_TILES + idx ) | palette;
-	//		devkit_SMS_setNextTileatXY( x + i, y + j );
-	//		devkit_SMS_setTile( *pnt + tile );
-	//		idx++;
-	//	}
-	//}
+	drawImageEx( &gfx_stats_village, PAL1, VILLAGE_TILES, x, y );
 }
 
 void engine_graphics_manager_draw_koschey( unsigned char x, unsigned char y, unsigned int palette )
 {
-	//const unsigned char *pnt = koschey__tilemap__bin;
-	//unsigned char wide = 12;
-	//unsigned char high = 15;
-	//unsigned char i, j;
-	//unsigned char idx = 0;
-
-	//unsigned int tile = 0;
-	//for( j = 0; j < high; j++ )
-	//{
-	//	for( i = 0; i < wide; i++ )
-	//	{
-	//		tile = ( SPRITE_TILES + idx) | palette;
-	//		devkit_SMS_setNextTileatXY( x + i, y + j );
-	//		devkit_SMS_setTile( *pnt + tile );
-	//		idx++;
-	//	}
-	//}
+	drawImageEx( &gfx_koschey, palette, BOSS_TILES, x, y );
 }
 
-void engine_graphics_manager_draw_leshy( unsigned char x, unsigned char y )
+void engine_graphics_manager_draw_inventory( unsigned char x, unsigned char y )
 {
-	//const unsigned char *pnt = battle_enemies_leshy__tilemap__bin;
-	//unsigned char wide = 3;
-	//unsigned char high = 4;
-	//unsigned char i, j;
-	//unsigned char idx = 0;
+	drawImageEx( &gfx_stats_inventory, PAL0, STOCK_TILES, x, y );
+}
 
-	//unsigned int tile = 0;
-	//unsigned int palette = devkit_TILE_USE_SPRITE_PALETTE();
-	//for( j = 0; j < high; j++ )
-	//{
-	//	for( i = 0; i < wide; i++ )
-	//	{
-	//		tile = ( SPRITE_TILES + idx ) | palette;
-	//		devkit_SMS_setNextTileatXY( x + i, y + j );
-	//		devkit_SMS_setTile( *pnt + tile );
-	//		idx++;
-	//	}
-	//}
+static void drawImageEx( const Image *image, unsigned char palette, unsigned int index, unsigned char x, unsigned char y )
+{
+	u16 basetile = TILE_ATTR_FULL( palette, 0, 0, 0, index );
+	VDP_drawImageEx( BG_A, image, basetile, x, y, 0, CPU );
+}
+static void draw_setMapEx( unsigned int tile, unsigned char x, unsigned char y )
+{
+	VDP_setMapEx( BG_A, gfx_border.tilemap, TILE_ATTR_FULL( PAL0, 0, 0, 0, BORDER_TILES ), x, y, tile, 0, 1, 1 );
 }

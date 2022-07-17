@@ -5,8 +5,13 @@
 #include "locale_manager.h"
 #include "player_manager.h"
 #include "text_manager.h"
-//#include "../devkit/_sms_manager.h"
 #include "fixedbank.h"
+
+#ifdef _CONSOLE
+#include "_genesis.h"
+#else
+#include <genesis.h>
+#endif
 
 // Global variable.
 struct_game_object global_game_object;
@@ -23,34 +28,34 @@ void engine_game_manager_init()
 void engine_game_manager_intro_on()
 {
 	struct_game_object *go = &global_game_object;
-	go->intro_once = true;
+	go->intro_once = 1;
 }
 void engine_game_manager_intro_off()
 {
 	struct_game_object *go = &global_game_object;
-	go->intro_once = false;
+	go->intro_once = 0;
 }
 
 void engine_game_manager_music_on()
 {
 	struct_game_object *go = &global_game_object;
-	go->play_music = true;
+	go->play_music = 1;
 }
 void engine_game_manager_music_off()
 {
 	struct_game_object *go = &global_game_object;
-	go->play_music = false;
+	go->play_music = 0;
 }
 
 void engine_game_manager_flash_on()
 {
 	struct_game_object *go = &global_game_object;
-	go->flash_arrow = true;
+	go->flash_arrow = 1;
 }
 void engine_game_manager_flash_off()
 {
 	struct_game_object *go = &global_game_object;
-	go->flash_arrow = false;
+	go->flash_arrow = 0;
 }
 
 void engine_game_manager_difficulty( unsigned char difficulty )

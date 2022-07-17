@@ -1,7 +1,11 @@
 #ifndef _GAME_OBJECT_H_
 #define _GAME_OBJECT_H_
 
-#include <stdbool.h>
+#ifdef _CONSOLE
+#include "_genesis.h"
+#else
+#include <genesis.h>
+#endif
 
 typedef struct tag_struct_game_object
 {
