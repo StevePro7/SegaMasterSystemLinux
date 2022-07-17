@@ -5,7 +5,6 @@ void engine_audio_manager_init();
 void engine_audio_manager_play_sound( unsigned char index );
 //void engine_audio_manager_play_music( unsigned char index );
 /*
-void engine_sound_manager_init();
 void engine_sound_manager_play( unsigned char index );
 void engine_sound_manager_fight();
 void engine_sound_manager_kill();

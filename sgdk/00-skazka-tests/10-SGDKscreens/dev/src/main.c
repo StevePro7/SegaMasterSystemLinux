@@ -10,7 +10,7 @@ int main()
 {
 	engine_audio_manager_init();
 	engine_audio_manager_play_sound( sound_type_4 );
-	//engine_audio_manager_play_sound( 1 );
+	//engine_audio_manager_play_sound( 0 );
 
 	//engine_graphics_manager_init();
 	//engine_graphics_manager_load();

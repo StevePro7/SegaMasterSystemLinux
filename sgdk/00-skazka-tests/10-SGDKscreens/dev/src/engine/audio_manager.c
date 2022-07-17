@@ -46,16 +46,6 @@ void engine_audio_manager_play_sound( unsigned char index )
 	play_audio( BEG_SOUND + MAX_MUSIC + index, 1, SOUND_PCM_CH2 );
 }
 
-//const unsigned char psgInit[] =
-//{
-//	0x9F, 0xBF, 0xDF, 0xFF, 0x81, 0x00, 0xA1, 0x00, 0x00, 0xC1, 0x00
-//};
-/*
-void engine_sound_manager_init()
-{
-	//engine_sample_manager_init( psgInit );
-}
-
 void engine_sound_manager_play( unsigned char index )
 {
 	//struct_hack_object *ho = &global_hack_object;
@@ -134,7 +124,7 @@ void engine_music_manager_beat()
 	//devkit_SMS_mapROMBank( bank );
 	//devkit_PSGPlayNoRepeat( ( void * ) data );
 }
-*/
+
 
 static void play_audio( const u8 id, const u8 priority, const u16 channel )
 {
