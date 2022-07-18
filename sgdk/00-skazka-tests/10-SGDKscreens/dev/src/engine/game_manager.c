@@ -3,15 +3,8 @@
 #include "font_manager.h"
 #include "global_manager.h"
 #include "locale_manager.h"
-////#include "player_manager.h"
-//#include "text_manager.h"
+//#include "player_manager.h"
 #include "fixedbank.h"
-//
-//#ifdef _CONSOLE
-//#include "_genesis.h"
-//#else
-//#include <genesis.h>
-//#endif
 
 // Global variable.
 struct_game_object global_game_object;
@@ -67,6 +60,7 @@ void engine_game_manager_difficulty( unsigned char difficulty )
 // Common game rendering functions.
 void engine_game_manager_print_stats()
 {
+	// TODO
 	//engine_player_manager_stats();
 	engine_font_manager_draw_text( LOCALE_STATISTICS, LEFT_X + 2, TOP_Y + 6 );
 	engine_font_manager_draw_text( LOCALE_HP, LEFT_X + 2, TOP_Y + 7 );
@@ -80,7 +74,6 @@ void engine_game_manager_print_texts()
 	unsigned char idx;
 
 	row = 14;
-//	devkit_SMS_mapROMBank( FIXED_BANK );
 	for( idx = 0; idx < 8; idx++ )
 	{
 		engine_font_manager_draw_text( ( char * ) stats_texts[ idx ], LEFT_X + 12, TOP_Y + row );
