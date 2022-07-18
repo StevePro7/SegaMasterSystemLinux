@@ -45,5 +45,22 @@ void screen_complete_screen_load()
 
 void screen_complete_screen_update( unsigned char *screen_type )
 {
+	unsigned char input1;
+	unsigned char input2;
+	unsigned char timer;
+
+	input1 = engine_input_manager_hold_buttonA();
+	input2 = engine_input_manager_hold_buttonB();
+	timer = engine_timer_manager_update();
+
+	if( input1 || input2 || timer )
+	{
+		engine_audio_manager_stop();
+		engine_game_manager_intro_off();
+		engine_game_manager_music_off();
+		*screen_type = screen_type_title;
+		return;
+	}
+
 	*screen_type = screen_type_complete;
 }
