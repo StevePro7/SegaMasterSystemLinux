@@ -1,10 +1,12 @@
 #include "splash_screen.h"
-#include "../engine/enum_manager.h"
-#include "../engine/font_manager.h"
+#include "enum_manager.h"
+//#include "../engine/font_manager.h"
+#include "graphics_manager.h"
 
 void screen_splash_screen_load()
 {
-	engine_font_manager_text( "SPLASH SCREEN!!", 10, 2 );
+	//engine_font_manager_text( "SPLASH SCREEN!!", 10, 2 );
+	engine_graphics_manager_draw_splash();
 }
 
 void screen_splash_screen_update( unsigned char *screen_type )

@@ -1,24 +1,17 @@
 #include "main.h"
 
-//static void print00()
-//{
-//	engine_player_manager_draw( 2, 1, LEFT_X + 2, TOP_Y + 16 );
-//	engine_enemy_manager_draw( 3, LEFT_X + 27, TOP_Y + 16 );
-//}
-
 int main()
 {
-	engine_audio_manager_init();
-	//engine_audio_manager_play_sound( sound_type_13 );
-	engine_audio_manager_play_music( music_over );
+	unsigned char open_screen_type = screen_type_splash;
+	engine_screen_manager_init( open_screen_type );
 
-	//engine_graphics_manager_init();
-	//engine_graphics_manager_load();
-
-	//print00();
-	//engine_graphics_manager_draw_splash();
+	engine_graphics_manager_init();
+	engine_graphics_manager_load();
 	while( 1 )
 	{
+		engine_input_manager_update();
+		engine_screen_manager_update();
+
 		VDP_waitVSync();
 	}
 

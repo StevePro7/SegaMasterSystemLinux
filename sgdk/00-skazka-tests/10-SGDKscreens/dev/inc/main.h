@@ -7,12 +7,9 @@
 #include <genesis.h>
 #endif
 
-#include "audio_manager.h"
 #include "enum_manager.h"
-
-//#include "enemy_manager.h"
-//#include "player_manager.h"
-//#include "global_manager.h"
-//#include "graphics_manager.h"
+#include "graphics_manager.h"
+#include "input_manager.h"
+#include "screen_manager.h"
 
 #endif//__MAIN__
