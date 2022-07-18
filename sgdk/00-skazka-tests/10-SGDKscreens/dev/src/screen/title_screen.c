@@ -4,6 +4,7 @@
 #include "global_manager.h"
 #include "graphics_manager.h"
 #include "locale_manager.h"
+#include "text_manager.h"
 
 void screen_title_screen_load()
 {
@@ -13,6 +14,10 @@ void screen_title_screen_load()
 	engine_font_manager_draw_text( LOCALE_TITLE_MSG1, LEFT_X + 6, TOP_Y + 10 );
 	engine_font_manager_draw_text( LOCALE_TITLE_MSG2, LEFT_X + 3, TOP_Y + 15 );
 	engine_font_manager_draw_numb( 8, LEFT_X + 16, TOP_Y + 15 );
+
+	engine_graphics_manager_draw_border();
+
+	engine_text_manager_cont();
 }
 
 void screen_title_screen_update( unsigned char *screen_type )
