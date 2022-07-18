@@ -1,6 +1,7 @@
 #include "diff_screen.h"
 #include "enum_manager.h"
 #include "font_manager.h"
+#include "game_manager.h"
 #include "global_manager.h"
 #include "graphics_manager.h"
 #include "locale_manager.h"
@@ -31,6 +32,20 @@ void screen_diff_screen_load()
 
 void screen_diff_screen_update( unsigned char *screen_type )
 {
+	unsigned char selection;
+	//unsigned char timer;
+
 	engine_random_manager_rand();
+
+	selection = engine_select_manager_update( select_type );
+	if( NO_SELECTION == selection )
+	{
+		*screen_type = screen_type_diff;
+		return;
+	}
+
+	// Set difficulty.
+	engine_game_manager_difficulty( selection );
+
 	*screen_type = screen_type_diff;
 }

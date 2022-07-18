@@ -38,7 +38,6 @@ unsigned char engine_select_manager_update( unsigned char index )
 	struct_select_object *so = &global_select_object;
 	unsigned char input;
 
-	//input = engine_input_manager_hold( input_type_up );
 	input = engine_input_manager_hold_up();
 	if( input )
 	{
@@ -52,7 +51,6 @@ unsigned char engine_select_manager_update( unsigned char index )
 		draw_arrows();
 	}
 
-	//input = engine_input_manager_hold( input_type_down );
 	input = engine_input_manager_hold_down();
 	if( input )
 	{
@@ -69,7 +67,6 @@ unsigned char engine_select_manager_update( unsigned char index )
 	// Updates select index unconditionally.
 	so->select_index[ index ] = so->select_Y - so->select_min;
 
-	//input = engine_input_manager_hold( input_type_fire1 );
 	input = engine_input_manager_hold_buttonA();
 	if (input)
 	{

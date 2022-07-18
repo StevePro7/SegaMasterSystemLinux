@@ -3,15 +3,15 @@
 #include "font_manager.h"
 #include "global_manager.h"
 #include "locale_manager.h"
-//#include "player_manager.h"
-#include "text_manager.h"
+////#include "player_manager.h"
+//#include "text_manager.h"
 #include "fixedbank.h"
-
-#ifdef _CONSOLE
-#include "_genesis.h"
-#else
-#include <genesis.h>
-#endif
+//
+//#ifdef _CONSOLE
+//#include "_genesis.h"
+//#else
+//#include <genesis.h>
+//#endif
 
 // Global variable.
 struct_game_object global_game_object;
@@ -90,4 +90,3 @@ void engine_game_manager_print_texts()
 	engine_font_manager_draw_punc( LOCALE_COLON, LEFT_X + 19, TOP_Y + 14 );
 	engine_font_manager_draw_punc( LOCALE_QMARK, LEFT_X + 29, TOP_Y + 14 );
 }
-
