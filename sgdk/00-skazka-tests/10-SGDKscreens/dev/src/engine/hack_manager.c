@@ -11,11 +11,11 @@ struct_hack_object global_hack_object;
 
 #define HACKER_START		0x01A0
 
-#ifdef _CONSOLE
-#else
-#pragma disable_warning 110
-#pragma disable_warning 126
-#endif
+//#ifdef _CONSOLE
+//#else
+//#pragma disable_warning 110
+//#pragma disable_warning 126
+//#endif
 
 void engine_hack_manager_init()
 {
@@ -57,35 +57,35 @@ void engine_hack_manager_load()
 
 void engine_hack_manager_invert()
 {
-	/*
 	struct_hack_object *ho = &global_hack_object;
-	if( ho->hack_currxp > 0 && ho->hack_currxp <= MAX_XP )
-	{
-		engine_player_manager_def_currxp( ho->hack_currxp );
-	}
-	if( ho->hack_currhp > 0 && ho->hack_currhp <= MAX_HP )
-	{
-		engine_player_manager_def_currhp( ho->hack_currhp );
-	}
-	if( ho->hack_goldno > 0 )
-	{
-		engine_player_manager_def_goldno( ho->hack_goldno );
-	}
-	if( ho->hack_weapon > 0 && ho->hack_weapon <= weapon_type_axe )
-	{
-		engine_player_manager_def_weapon( ho->hack_weapon );
-	}
-	if( ho->hack_armors > 0 && ho->hack_armors <= armor_type_kolchuga )
-	{
-		engine_player_manager_def_armors( ho->hack_armors );
-	}
-	if( ho->hack_oneups > 0 && ho->hack_oneups <= life_type_oneup )
-	{
-		engine_player_manager_def_oneups( ho->hack_oneups );
-	}
+	//if( ho->hack_currxp > 0 && ho->hack_currxp <= MAX_XP )
+	//{
+	//	engine_player_manager_def_currxp( ho->hack_currxp );
+	//}
+	//if( ho->hack_currhp > 0 && ho->hack_currhp <= MAX_HP )
+	//{
+	//	engine_player_manager_def_currhp( ho->hack_currhp );
+	//}
+	//if( ho->hack_goldno > 0 )
+	//{
+	//	engine_player_manager_def_goldno( ho->hack_goldno );
+	//}
+	//if( ho->hack_weapon > 0 && ho->hack_weapon <= weapon_type_axe )
+	//{
+	//	engine_player_manager_def_weapon( ho->hack_weapon );
+	//}
+	//if( ho->hack_armors > 0 && ho->hack_armors <= armor_type_kolchuga )
+	//{
+	//	engine_player_manager_def_armors( ho->hack_armors );
+	//}
+	//if( ho->hack_oneups > 0 && ho->hack_oneups <= life_type_oneup )
+	//{
+	//	engine_player_manager_def_oneups( ho->hack_oneups );
+	//}
 
 	// Invert default values.
 	ho->hack_musics = !ho->hack_musics;
 	ho->hack_sounds = !ho->hack_sounds;
-	*/
+
+	ho->hack_musics = 1;
 }

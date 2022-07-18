@@ -8,6 +8,8 @@ extern struct_game_object global_game_object;
 
 void engine_game_manager_init();
 
+void engine_game_manager_lines_on();
+void engine_game_manager_lines_off();
 void engine_game_manager_intro_on();
 void engine_game_manager_intro_off();
 void engine_game_manager_music_on();

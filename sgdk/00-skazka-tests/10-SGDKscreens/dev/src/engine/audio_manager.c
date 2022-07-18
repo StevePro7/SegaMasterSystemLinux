@@ -1,8 +1,7 @@
 #include "audio_manager.h"
 #include "enum_manager.h"
-//#include "hack_manager.h"
 #include "global_manager.h"
-
+#include "hack_manager.h"
 #include "audio_object.h"
 
 #ifdef _CONSOLE
@@ -49,25 +48,8 @@ void engine_audio_manager_play_music( unsigned char index )
 	play_music( index );
 }
 
+
 /*
-void engine_sound_manager_play( unsigned char index )
-{
-	//struct_hack_object *ho = &global_hack_object;
-	//const unsigned char *data;
-	//unsigned char bank;
-
-	//data = sound_sample_data[ index ];
-	//bank = sound_sample_bank[ index ];
-
-	//if( !ho->hack_sounds )
-	//{
-	//	return;
-	//}
-
-	//devkit_SMS_mapROMBank( bank );
-	//devkit_PSGSFXPlay( ( void * ) data, devkit_SFX_CHANNEL2() );
-}
-
 void engine_sound_manager_fight()
 {
 	//struct_hack_object *ho = &global_hack_object;
@@ -143,20 +125,22 @@ unsigned char engine_audio_manager_is_playing()
 
 static void play_sound( const u8 index )
 {
-	//if( !ho->hack_sounds )
-	//{
-	//	return;
-	//}
+	struct_hack_object *ho = &global_hack_object;
+	if( !ho->hack_sounds )
+	{
+		return;
+	}
 
 	play_audio( BEG_SOUND + MAX_MUSIC + index, 1, SOUND_PCM_CH2 );
 }
 
 static void play_music( const u8 index )
 {
-	//if( !ho->hack_musics )
-	//{
-	//	return;
-	//}
+	struct_hack_object *ho = &global_hack_object;
+	if( !ho->hack_musics )
+	{
+		return;
+	}
 
 	play_audio( BEG_SOUND + index, 1, SOUND_PCM_CH1 );
 }

@@ -11,6 +11,7 @@ struct_game_object global_game_object;
 
 void engine_game_manager_init()
 {
+	engine_game_manager_lines_on();
 	engine_game_manager_intro_on();
 	engine_game_manager_music_on();
 	engine_game_manager_flash_on();
@@ -18,6 +19,16 @@ void engine_game_manager_init()
 	engine_game_manager_difficulty( diff_type_easy );
 }
 
+void engine_game_manager_lines_on()
+{
+	struct_game_object *go = &global_game_object;
+	go->lines_once = 1;
+}
+void engine_game_manager_lines_off()
+{
+	struct_game_object *go = &global_game_object;
+	go->lines_once = 10;
+}
 void engine_game_manager_intro_on()
 {
 	struct_game_object *go = &global_game_object;

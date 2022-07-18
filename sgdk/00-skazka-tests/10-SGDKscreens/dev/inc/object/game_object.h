@@ -3,6 +3,7 @@
 
 typedef struct tag_struct_game_object
 {
+	unsigned char lines_once;
 	unsigned char intro_once;
 	unsigned char play_music;
 	unsigned char flash_arrow;

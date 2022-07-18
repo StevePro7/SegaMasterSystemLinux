@@ -51,6 +51,11 @@ void engine_graphics_manager_clear_full()
 	VDP_clearTileMapRect( BG_A, 0, 0, OUTER_WIDE, OUTER_HIGH );
 }
 
+void engine_graphics_manager_clear_part()
+{
+	VDP_clearTileMapRect( BG_A, LEFT_X + 1, TOP_Y + 1, INNER_WIDE - 1, INNER_HIGH - 1 );
+}
+
 void engine_graphics_manager_draw_border()
 {
 	engine_graphics_manager_draw_borderX( 0, 0, OUTER_WIDE, OUTER_HIGH );
