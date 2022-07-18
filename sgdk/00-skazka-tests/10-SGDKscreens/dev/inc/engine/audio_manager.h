@@ -13,5 +13,7 @@ void engine_music_manager_play( unsigned char index );
 
 */
 void engine_music_manager_beat();
+void engine_audio_manager_stop();
+unsigned char engine_audio_manager_is_playing();
 
 #endif//_AUDIO_MANAGER_H_

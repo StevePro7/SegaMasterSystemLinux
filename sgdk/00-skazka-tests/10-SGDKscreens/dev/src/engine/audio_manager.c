@@ -41,13 +41,11 @@ void engine_audio_manager_init()
 
 void engine_audio_manager_play_sound( unsigned char index )
 {
-	//play_sound( BEG_SOUND + MAX_MUSIC + index, 1, SOUND_PCM_CH2 );
 	play_sound( index );
 }
 
 void engine_audio_manager_play_music( unsigned char index )
 {
-	//play_music( BEG_SOUND + index, 1, SOUND_PCM_CH1 );
 	play_music( index );
 }
 
@@ -117,6 +115,22 @@ void engine_music_manager_beat()
 	play_sound( sound_type_11 );
 }
 
+void engine_audio_manager_stop()
+{
+	if( XGM_isPlayingPCM( SOUND_PCM_CH1_MSK ) )
+	{
+		XGM_stopPlayPCM( SOUND_PCM_CH1 );
+	}
+	if( XGM_isPlayingPCM( SOUND_PCM_CH2_MSK ) )
+	{
+		XGM_stopPlayPCM( SOUND_PCM_CH2 );
+	}
+}
+
+unsigned char engine_audio_manager_is_playing()
+{
+	return XGM_isPlayingPCM( SOUND_PCM_CH1_MSK ) || XGM_isPlayingPCM( SOUND_PCM_CH2_MSK );
+}
 
 static void play_sound( const u8 index )
 {
