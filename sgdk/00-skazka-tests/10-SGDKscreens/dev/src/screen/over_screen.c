@@ -1,6 +1,6 @@
 #include "over_screen.h"
-#include "../engine/enum_manager.h"
-#include "../engine/font_manager.h"
+#include "enum_manager.h"
+#include "font_manager.h"
 
 void screen_over_screen_load()
 {

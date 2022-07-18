@@ -1,7 +1,7 @@
 #ifndef __SELECT_OBJECT_H__
 #define __SELECT_OBJECT_H__
 
-#include "../engine/global_manager.h"
+#include "global_manager.h"
 
 typedef struct tag_struct_aelect_object
 {

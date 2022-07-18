@@ -1,7 +1,7 @@
 #ifndef _SELECT_MANAGER_H_
 #define _SELECT_MANAGER_H_
 
-#include "../object/select_object.h"
+#include "select_object.h"
 
 // Global variables.
 extern struct_select_object global_select_object;

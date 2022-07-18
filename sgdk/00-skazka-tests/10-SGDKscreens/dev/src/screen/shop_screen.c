@@ -1,6 +1,6 @@
 #include "shop_screen.h"
-#include "../engine/enum_manager.h"
-#include "../engine/font_manager.h"
+#include "enum_manager.h"
+#include "font_manager.h"
 
 void screen_shop_screen_load()
 {
