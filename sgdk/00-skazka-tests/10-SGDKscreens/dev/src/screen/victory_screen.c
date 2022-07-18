@@ -38,7 +38,7 @@ void screen_victory_screen_load()
 	//engine_font_manager_data( po->won, LEFT_X + 24, TOP_Y + 12 );
 
 	//engine_graphics_manager_draw_border();
-	//engine_graphics_manager_draw_underline( TOP_Y + 4 );
+	//engine_graphics_manager_draw_underline(;
 
 	//engine_text_manager_cont();
 	////devkit_SMS_displayOn();

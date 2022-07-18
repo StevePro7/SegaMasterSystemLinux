@@ -36,7 +36,7 @@ void screen_complete_screen_load()
 	engine_font_manager_draw_punc( '.', LEFT_X + 16, TOP_Y + 13 );
 
 	
-	engine_graphics_manager_draw_underline( TOP_Y + 4 );
+	engine_graphics_manager_draw_underline();
 
 	engine_text_manager_cont();
 

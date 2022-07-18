@@ -62,6 +62,12 @@ void engine_graphics_manager_clear_part()
 void engine_graphics_manager_draw_border()
 {
 	struct_game_object *go = &global_game_object;
+	const unsigned char tile = 1;
+
+	// Draw the two underline unconditionally.
+	draw_setMapEx( tile, LEFT_X, TOP_Y + 4 );
+	draw_setMapEx( tile, LEFT_X + INNER_WIDE - 1, TOP_Y + 4 );
+
 	if( !go->lines_once )
 	{
 		return;
@@ -99,20 +105,20 @@ void engine_graphics_manager_draw_borderX( unsigned char left, unsigned char top
 	}
 }
 
-void engine_graphics_manager_draw_underline( unsigned char y )
+void engine_graphics_manager_draw_underline()
 {
 	unsigned char idx;
 	unsigned char wide = LEFT_X + INNER_WIDE;
 	unsigned char tile = 0;
 
-	draw_setMapEx( tile, LEFT_X, y );
-	draw_setMapEx( tile, wide - 1, y );
+	draw_setMapEx( tile, LEFT_X, TOP_Y + 4 );
+	draw_setMapEx( tile, wide - 1, TOP_Y + 4 );
 
 	// Horizontal.
 	tile = 2;
 	for( idx = LEFT_X + 1; idx <= wide - 2; idx++ )
 	{
-		draw_setMapEx( tile, idx, y );
+		draw_setMapEx( tile, idx, TOP_Y + 4 );
 	}
 }
 
