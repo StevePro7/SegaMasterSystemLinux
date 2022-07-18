@@ -1,4 +1,5 @@
 #include "complete_screen.h"
+#include "audio_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
 #include "game_manager.h"
@@ -39,7 +40,7 @@ void screen_complete_screen_load()
 	engine_text_manager_cont();
 
 	engine_timer_manager_load( BEAT_SCREEN_DELAY );
-	//engine_music_manager_beat();
+	engine_music_manager_beat();
 }
 
 void screen_complete_screen_update( unsigned char *screen_type )
