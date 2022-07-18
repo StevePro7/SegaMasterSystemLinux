@@ -115,6 +115,11 @@ void engine_music_manager_beat()
 	play_sound( sound_type_11 );
 }
 
+void engine_music_manager_over()
+{
+	play_music( music_over );
+}
+
 void engine_audio_manager_stop()
 {
 	if( XGM_isPlayingPCM( SOUND_PCM_CH1_MSK ) )
