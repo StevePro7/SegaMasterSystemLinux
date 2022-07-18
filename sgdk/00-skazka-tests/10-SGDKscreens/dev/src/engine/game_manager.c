@@ -27,7 +27,7 @@ void engine_game_manager_lines_on()
 void engine_game_manager_lines_off()
 {
 	struct_game_object *go = &global_game_object;
-	go->lines_once = 10;
+	go->lines_once = 0;
 }
 void engine_game_manager_intro_on()
 {

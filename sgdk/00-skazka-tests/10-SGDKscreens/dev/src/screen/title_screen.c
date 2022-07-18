@@ -21,14 +21,14 @@ static unsigned char flash_count;
 
 void screen_title_screen_load()
 {
+	engine_graphics_manager_draw_border();
 	engine_graphics_manager_clear_part();
+
 	engine_graphics_manager_draw_logo_big( LEFT_X + 2, TOP_Y + 3 );
 
 	engine_font_manager_draw_text( LOCALE_TITLE_MSG1, LEFT_X + 6, TOP_Y + 10 );
 	engine_font_manager_draw_text( LOCALE_TITLE_MSG2, LEFT_X + 3, TOP_Y + 15 );
 	engine_font_manager_draw_numb( 8, LEFT_X + 16, TOP_Y + 15 );
-
-	engine_graphics_manager_draw_border();
 
 	engine_timer_manager_load( TITLE_FLASH_DELAY );
 	first_time = 1;

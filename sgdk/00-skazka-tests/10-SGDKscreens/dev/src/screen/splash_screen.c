@@ -9,7 +9,6 @@
 
 void screen_splash_screen_load()
 {
-	engine_graphics_manager_clear_full();
 	engine_graphics_manager_draw_splash();
 
 	engine_graphics_manager_draw_borderX( 0, 0, OUTER_WIDE, OUTER_HIGH );

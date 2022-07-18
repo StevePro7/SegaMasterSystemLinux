@@ -1,5 +1,8 @@
 #include "graphics_manager.h"
+//#include "font_manager.h"
+#include "game_manager.h"
 #include "global_manager.h"
+#include "text_manager.h"
 #include "gfx.h"
 
 #ifdef _CONSOLE
@@ -53,13 +56,20 @@ void engine_graphics_manager_clear_full()
 
 void engine_graphics_manager_clear_part()
 {
-	VDP_clearTileMapRect( BG_A, LEFT_X + 1, TOP_Y + 1, INNER_WIDE - 1, INNER_HIGH - 1 );
+	VDP_clearTileMapRect( BG_A, LEFT_X + 1, TOP_Y + 1, INNER_WIDE - 2, INNER_HIGH - 2 );
 }
 
 void engine_graphics_manager_draw_border()
 {
+	struct_game_object *go = &global_game_object;
+	if( !go->lines_once )
+	{
+		return;
+	}
+
 	engine_graphics_manager_draw_borderX( 0, 0, OUTER_WIDE, OUTER_HIGH );
 	engine_graphics_manager_draw_borderX( LEFT_X, TOP_Y, LEFT_X + INNER_WIDE, TOP_Y + INNER_HIGH );
+	engine_game_manager_lines_off();
 }
 
 void engine_graphics_manager_draw_borderX( unsigned char left, unsigned char top, unsigned char wide, unsigned char high )
