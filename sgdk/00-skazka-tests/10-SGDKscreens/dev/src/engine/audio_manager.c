@@ -12,6 +12,8 @@
 #endif
 
 // Private helper function.
+static void play_sound( const u8 index );
+static void play_music( const u8 index );
 static void play_audio( const u8 id, const u8 priority, const u16 channel );
 
 void engine_audio_manager_init()
@@ -39,12 +41,14 @@ void engine_audio_manager_init()
 
 void engine_audio_manager_play_sound( unsigned char index )
 {
-	play_audio( BEG_SOUND + MAX_MUSIC + index, 1, SOUND_PCM_CH2 );
+	//play_sound( BEG_SOUND + MAX_MUSIC + index, 1, SOUND_PCM_CH2 );
+	play_sound( index );
 }
 
 void engine_audio_manager_play_music( unsigned char index )
 {
-	play_audio( BEG_SOUND + index, 1, SOUND_PCM_CH1 );
+	//play_music( BEG_SOUND + index, 1, SOUND_PCM_CH1 );
+	play_music( index );
 }
 
 /*
@@ -127,6 +131,26 @@ void engine_music_manager_beat()
 	//devkit_PSGPlayNoRepeat( ( void * ) data );
 }
 */
+
+static void play_sound( const u8 index )
+{
+	//if( !ho->hack_sounds )
+	//{
+	//	return;
+	//}
+
+	play_audio( BEG_SOUND + MAX_MUSIC + index, 1, SOUND_PCM_CH2 );
+}
+
+static void play_music( const u8 index )
+{
+	//if( !ho->hack_musics )
+	//{
+	//	return;
+	//}
+
+	play_audio( BEG_SOUND + index, 1, SOUND_PCM_CH1 );
+}
 
 static void play_audio( const u8 id, const u8 priority, const u16 channel )
 {
