@@ -17,6 +17,7 @@ void screen_title_screen_load()
 
 	engine_graphics_manager_draw_border();
 
+	// TODO update this
 	engine_text_manager_cont();
 }
 
