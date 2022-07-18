@@ -5,7 +5,6 @@
 #include "timer_manager.h"
 
 #define SPLASH_SCREEN_DELAY		250
-//#define SPLASH_SCREEN_DELAY		50
 
 void screen_splash_screen_load()
 {
