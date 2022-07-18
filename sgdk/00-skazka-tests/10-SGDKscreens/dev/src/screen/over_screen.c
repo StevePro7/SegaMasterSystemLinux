@@ -43,10 +43,9 @@ void screen_over_screen_load()
 
 void screen_over_screen_update( unsigned char *screen_type )
 {
-	//unsigned char input1;
-	//unsigned char input2;
-	//unsigned char timer;
-	//unsigned char index;
+	unsigned char input1;
+	unsigned char input2;
+	unsigned char timer;
 
 	if( first_time )
 	{
@@ -56,6 +55,16 @@ void screen_over_screen_update( unsigned char *screen_type )
 
 		// Play over music.
 		engine_music_manager_over();
+	}
+
+	input1 = engine_input_manager_hold_buttonA();
+	input2 = engine_input_manager_hold_buttonB();
+	timer = engine_timer_manager_update();
+	if( input1 || input2 || timer )
+	{
+		engine_audio_manager_stop();
+		*screen_type = screen_type_title;
+		return;
 	}
 
 	*screen_type = screen_type_over;
