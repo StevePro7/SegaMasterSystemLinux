@@ -149,7 +149,7 @@ static void draw_leshy( unsigned char x, unsigned char y )
 void engine_enemy_manager_text()
 {
 	//struct_enemy_object *eo = &global_enemy_object;
-	//engine_font_manager_text( ( unsigned char * ) enemy_texts[ eo->index ], LEFT_X + 16, TOP_Y + 9 );
+	//engine_font_manager_draw_text( ( unsigned char * ) enemy_texts[ eo->index ], LEFT_X + 16, TOP_Y + 9 );
 }
 
 void engine_enemy_manager_hplo()

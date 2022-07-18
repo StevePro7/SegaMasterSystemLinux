@@ -4,7 +4,7 @@
 
 void screen_talk_screen_load()
 {
-	engine_font_manager_text( "TALK SCREEN!!", 10, 2 );
+	engine_font_manager_draw_text( "TALK SCREEN!!", 10, 2 );
 }
 
 void screen_talk_screen_update( unsigned char *screen_type )

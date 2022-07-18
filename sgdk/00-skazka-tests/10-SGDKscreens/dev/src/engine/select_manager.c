@@ -98,11 +98,11 @@ static void initialize( unsigned char maxim )
 static void draw_arrows()
 {
 	struct_select_object *so = &global_select_object;
-	engine_font_manager_punc( LOCALE_ARROW, so->select_X, so->select_Y );
+	engine_font_manager_draw_punc( LOCALE_ARROW, so->select_X, so->select_Y );
 }
 
 static void draw_spaces()
 {
 	struct_select_object *so = &global_select_object;
-	engine_font_manager_char( LOCALE_1_SPCS, so->select_X, so->select_Y );
+	engine_font_manager_draw_char( LOCALE_1_SPCS, so->select_X, so->select_Y );
 }

@@ -3,7 +3,7 @@
 
 void engine_graphics_manager_init();
 void engine_graphics_manager_load();
-void ngine_graphics_manager_clear_full();
+void engine_graphics_manager_clear_full();
 void engine_graphics_manager_draw_border();
 void engine_graphics_manager_draw_borderX( unsigned char left, unsigned char top, unsigned char wide, unsigned char high );
 void engine_graphics_manager_draw_underline( unsigned char y );

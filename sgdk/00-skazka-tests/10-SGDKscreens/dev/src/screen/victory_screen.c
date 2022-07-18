@@ -29,12 +29,12 @@ void screen_victory_screen_load()
 	////devkit_SMS_mapROMBank( FIXED_BANK );
 	//for( idx = 0; idx < 4; idx++ )
 	//{
-	//	engine_font_manager_text( ( unsigned char * ) gold_texts[ idx ], LEFT_X + 7, TOP_Y + row );
+	//	engine_font_manager_draw_text( ( unsigned char * ) gold_texts[ idx ], LEFT_X + 7, TOP_Y + row );
 	//	row++;
 	//}
 
-	//engine_font_manager_punc( LOCALE_POINT, LEFT_X + 19, TOP_Y + 9 );
-	//engine_font_manager_punc( LOCALE_HYPHEN, LEFT_X + 20, TOP_Y + 12 );
+	//engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 19, TOP_Y + 9 );
+	//engine_font_manager_draw_punc( LOCALE_HYPHEN, LEFT_X + 20, TOP_Y + 12 );
 	//engine_font_manager_data( po->won, LEFT_X + 24, TOP_Y + 12 );
 
 	//engine_graphics_manager_draw_border();

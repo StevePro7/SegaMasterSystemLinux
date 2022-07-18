@@ -19,25 +19,25 @@ static unsigned char get_tile( unsigned char ch );
 static unsigned char get_punc( unsigned char ch );
 static void draw_setMapEx( unsigned int tile, unsigned char x, unsigned char y );
 
-void engine_font_manager_char( const unsigned char ch, unsigned char x, unsigned char y )
+void engine_font_manager_draw_char( const unsigned char ch, unsigned char x, unsigned char y )
 {
 	unsigned char tile = get_tile( ch );
 	draw_setMapEx( tile, x, y );
 }
 
-void engine_font_manager_numb( const unsigned char ch, unsigned char x, unsigned char y )
+void engine_font_manager_draw_numb( const unsigned char ch, unsigned char x, unsigned char y )
 {
 	unsigned char tile = ch + DATA_ROOT;
 	draw_setMapEx( tile, x, y );
 }
 
-void engine_font_manager_punc( const unsigned char ch, unsigned char x, unsigned char y )
+void engine_font_manager_draw_punc( const unsigned char ch, unsigned char x, unsigned char y )
 {
 	unsigned char punc = get_punc( ch );
 	draw_setMapEx( punc, x, y );
 }
 
-void engine_font_manager_text( char *text, unsigned char x, unsigned char y )
+void engine_font_manager_draw_text( char *text, unsigned char x, unsigned char y )
 {
 	unsigned char idx = 0;
 	unsigned char tile = 0;
@@ -50,7 +50,7 @@ void engine_font_manager_text( char *text, unsigned char x, unsigned char y )
 	}
 }
 
-void engine_font_manager_data( unsigned int data, unsigned char x, unsigned char y )
+void engine_font_manager_draw_data( unsigned int data, unsigned char x, unsigned char y )
 {
 	unsigned char idx;
 	unsigned char tile;
@@ -79,7 +79,7 @@ void engine_font_manager_data( unsigned int data, unsigned char x, unsigned char
 	}
 }
 
-void engine_font_manager_zero( unsigned int data, unsigned char x, unsigned char y )
+void engine_font_manager_draw_zero( unsigned int data, unsigned char x, unsigned char y )
 {
 	unsigned char idx;
 	unsigned char tile;

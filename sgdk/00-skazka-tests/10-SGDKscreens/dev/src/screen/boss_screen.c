@@ -4,7 +4,7 @@
 
 void screen_boss_screen_load()
 {
-	engine_font_manager_text( "BOSS SCREEN!!", 10, 2 );
+	engine_font_manager_draw_text( "BOSS SCREEN!!", 10, 2 );
 }
 
 void screen_boss_screen_update( unsigned char *screen_type )

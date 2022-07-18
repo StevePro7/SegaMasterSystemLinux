@@ -46,7 +46,7 @@ void engine_graphics_manager_load()
 	VDP_loadTileSet( gfx_battle_enemies_leshy.tileset, LESHY_TILES, 1 );
 }
 
-void ngine_graphics_manager_clear_full()
+void engine_graphics_manager_clear_full()
 {
 	VDP_clearTileMapRect( BG_A, 0, 0, OUTER_WIDE, OUTER_HIGH );
 }

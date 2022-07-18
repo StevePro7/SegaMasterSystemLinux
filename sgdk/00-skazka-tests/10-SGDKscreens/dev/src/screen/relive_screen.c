@@ -4,7 +4,7 @@
 
 void screen_relive_screen_load()
 {
-	engine_font_manager_text( "RELIVE SCREEN!!", 10, 2 );
+	engine_font_manager_draw_text( "RELIVE SCREEN!!", 10, 2 );
 }
 
 void screen_relive_screen_update( unsigned char *screen_type )
