@@ -18,9 +18,10 @@ void screen_complete_screen_load()
 	unsigned char row;
 	unsigned char idx;
 
-	engine_graphics_manager_draw_logo_small( LEFT_X + 1, TOP_Y + 1 );
+	engine_graphics_manager_draw_border();
+	engine_graphics_manager_clear_part();
 
-	engine_text_manager_clear( TOP_Y + 5, TOP_Y + 22 );
+	engine_graphics_manager_draw_logo_small( LEFT_X + 1, TOP_Y + 1 );
 
 	row = 7;
 	for( idx = 0; idx < 11; idx++ )
@@ -34,7 +35,7 @@ void screen_complete_screen_load()
 	engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 27, TOP_Y + 17 );
 	engine_font_manager_draw_punc( '.', LEFT_X + 16, TOP_Y + 13 );
 
-	engine_graphics_manager_draw_border();
+	
 	engine_graphics_manager_draw_underline( TOP_Y + 4 );
 
 	engine_text_manager_cont();

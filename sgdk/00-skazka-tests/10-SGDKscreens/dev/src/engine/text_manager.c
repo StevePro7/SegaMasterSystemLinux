@@ -3,6 +3,7 @@
 #include "global_manager.h"
 #include "locale_manager.h"
 
+// TODO - delete this function
 void engine_text_manager_clear( unsigned char start, unsigned char stop )
 {
 	unsigned char row;
