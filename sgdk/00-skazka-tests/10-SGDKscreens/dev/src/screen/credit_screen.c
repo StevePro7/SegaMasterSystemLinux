@@ -15,9 +15,10 @@ static void display();
 
 void screen_credit_screen_load()
 {
-	engine_graphics_manager_clear_full();
-	engine_graphics_manager_draw_logo_big( LEFT_X + 2, TOP_Y + 3 );
+	engine_graphics_manager_draw_border();
+	engine_graphics_manager_clear_part();
 
+	engine_graphics_manager_draw_logo_big( LEFT_X + 2, TOP_Y + 3 );
 	engine_font_manager_draw_text( LOCALE_CREDITS, LEFT_X + 12, TOP_Y + 10 );
 	display();
 
