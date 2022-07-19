@@ -113,6 +113,34 @@ void engine_player_manager_hplo()
 	engine_font_manager_draw_data( po->hp, LEFT_X + 13, TOP_Y + 21 );
 }
 
+void engine_player_manager_draw( unsigned char weapon, unsigned char armor, unsigned char x, unsigned char y )
+{
+	const unsigned char wide = 3;
+	const unsigned char high = 4;
+
+	u16 basetile = TILE_ATTR_FULL( PAL0, 0, 0, 0, PLAYER_TILES );
+	VDP_setTileMapEx( BG_A, gfx_battle_player.tilemap, basetile, x, y, weapon * wide, armor * high, wide, high, CPU );
+}
+
+void engine_player_manager_draw_inventory( unsigned char weapon, unsigned char armor, unsigned char life, unsigned char x, unsigned char y )
+{
+	const unsigned char wide = 2;
+	const unsigned char high = 2;
+	u16 basetile = TILE_ATTR_FULL( PAL0, 0, 0, 0, ITEMS_TILES );
+
+	// Weapon.
+	VDP_setTileMapEx( BG_A, gfx_stats_items.tilemap, basetile, x + 0, y + 1, 0, 0 * high + weapon * high, wide, high, CPU );
+
+	// Armor.
+	VDP_setTileMapEx( BG_A, gfx_stats_items.tilemap, basetile, x + 6, y + 3, 0, NUM_WEAPONS * high + armor * high, wide, high, CPU );
+
+	// Life.
+	if( life )
+	{
+		VDP_setTileMapEx( BG_A, gfx_stats_items.tilemap, basetile, x + 1, y + 6, 0, ( NUM_WEAPONS + NUM_ARMORS )* high, wide, high, CPU );
+	}
+}
+
 void engine_player_manager_dec_gold( unsigned char gold )
 {
 	struct_player_object *po = &global_player_object;
@@ -175,7 +203,6 @@ bool engine_player_manager_life()
 	return life_type_oneup == po->life;
 }
 
-
 // Hack manager allows player to override default values.
 void engine_player_manager_def_currxp( unsigned currxp )
 {
@@ -222,33 +249,4 @@ void engine_player_manager_set_oneups( unsigned oneups )
 {
 	struct_player_object *po = &global_player_object;
 	po->life = oneups;
-}
-
-
-void engine_player_manager_draw_inventory( unsigned char weapon, unsigned char armor, unsigned char life, unsigned char x, unsigned char y )
-{
-	const unsigned char wide = 2;
-	const unsigned char high = 2;
-	u16 basetile = TILE_ATTR_FULL( PAL0, 0, 0, 0, ITEMS_TILES );
-
-	// Weapon.
-	VDP_setTileMapEx( BG_A, gfx_stats_items.tilemap, basetile, x + 0, y + 1, 0, 0 * high + weapon * high, wide, high, CPU );
-
-	// Armor.
-	VDP_setTileMapEx( BG_A, gfx_stats_items.tilemap, basetile, x + 6, y + 3, 0, NUM_WEAPONS * high + armor * high, wide, high, CPU );
-
-	// Life.
-	if( life )
-	{
-		VDP_setTileMapEx( BG_A, gfx_stats_items.tilemap, basetile, x + 1, y + 6, 0, ( NUM_WEAPONS + NUM_ARMORS )* high, wide, high, CPU );
-	}
-}
-
-void engine_player_manager_draw( unsigned char weapon, unsigned char armor, unsigned char x, unsigned char y )
-{
-	const unsigned char wide = 3;
-	const unsigned char high = 4;
-
-	u16 basetile = TILE_ATTR_FULL( PAL0, 0, 0, 0, PLAYER_TILES );
-	VDP_setTileMapEx( BG_A, gfx_battle_player.tilemap, basetile, x, y, weapon * wide, armor * high, wide, high, CPU );
 }

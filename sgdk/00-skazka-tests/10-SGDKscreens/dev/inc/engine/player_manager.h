@@ -19,8 +19,8 @@ void engine_player_manager_stats();
 void engine_player_manager_rest();
 void engine_player_manager_hplo();
 
-void engine_player_manager_draw_inventory( unsigned char weapon, unsigned char armor, unsigned char life, unsigned char x, unsigned char y );
 void engine_player_manager_draw( unsigned char weapon, unsigned char armor, unsigned char x, unsigned char y );
+void engine_player_manager_draw_inventory( unsigned char weapon, unsigned char armor, unsigned char life, unsigned char x, unsigned char y );
 
 void engine_player_manager_dec_gold( unsigned char gold );
 void engine_player_manager_inc_gold( unsigned char xp, unsigned char gold );

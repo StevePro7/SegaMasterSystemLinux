@@ -7,6 +7,7 @@
 #include "graphics_manager.h"
 #include "input_manager.h"
 #include "locale_manager.h"
+#include "player_manager.h"
 #include "text_manager.h"
 #include "timer_manager.h"
 #include "fixedbank.h"
