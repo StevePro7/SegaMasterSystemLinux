@@ -86,14 +86,13 @@ void engine_player_manager_stats()
 	
 
 	// Print inventory.
-//	devkit_SMS_mapROMBank( FIXED_BANK );
-	engine_font_manager_draw_text( ( unsigned char * ) weapon_texts[ po->weapon ], LEFT_X + 2, TOP_Y + 11 );
-	engine_font_manager_draw_text( ( unsigned char * ) armor_texts[ po->armor ], LEFT_X + 2, TOP_Y + 12 );
+	engine_font_manager_draw_text( ( char * ) weapon_texts[ po->weapon ], LEFT_X + 2, TOP_Y + 11 );
+	engine_font_manager_draw_text( ( char * ) armor_texts[ po->armor ], LEFT_X + 2, TOP_Y + 12 );
 	if( po->life )
 	{
 		engine_font_manager_draw_punc( LOCALE_PLUS, LEFT_X + 2, TOP_Y + 13 );
 		engine_font_manager_draw_numb( 1, LEFT_X + 3, TOP_Y + 13 );
-		engine_font_manager_draw_text( ( unsigned char * ) life_texts[ po->life ], LEFT_X + 5, TOP_Y + 13 );
+		engine_font_manager_draw_text( ( char * ) life_texts[ po->life ], LEFT_X + 5, TOP_Y + 13 );
 	}
 
 	if( po->xp > 60 )
@@ -108,98 +107,11 @@ void engine_player_manager_rest()
 	po->hp = po->max_hp;
 }
 
-//void engine_player_manager_draw_inventory( unsigned char x, unsigned char y )
-//{
-	//const unsigned char *pnt1 = stats_items__tilemap__bin;
-	//const unsigned char *pnt2 = stats_inventory__tilemap__bin;
-
-	//struct_player_object *po = &global_player_object;
-	//unsigned char delta = 2;
-	//unsigned char size = delta * delta;
-
-	//unsigned char wide = 8;
-	//unsigned char high = 8;
-	//unsigned char i, j;
-
-	//unsigned int tile = 0;
-	//for( j = 0; j < high; j++ )
-	//{
-	//	for( i = 0; i < wide; i++ )
-	//	{
-	//		devkit_SMS_setNextTileatXY( x + i, y + j );
-	//		devkit_SMS_setTile( *pnt1 + tile );
-	//		tile++;
-	//	}
-	//}
-
-	//tile = po->weapon * size;
-	//for( j = 0; j < delta; j++ )
-	//{
-	//	for( i = 0; i < delta; i++ )
-	//	{
-	//		devkit_SMS_setNextTileatXY( x + i, y + j + 1 );
-	//		devkit_SMS_setTile( *pnt2 + tile );
-	//		tile++;
-	//	}
-	//}
-	//if( po->armor )
-	//{
-	//	tile = 2 * size + po->armor * size;
-	//	for( j = 0; j < delta; j++ )
-	//	{
-	//		for( i = 0; i < delta; i++ )
-	//		{
-	//			devkit_SMS_setNextTileatXY( x + i + 6, y + j + 3 );
-	//			devkit_SMS_setTile( *pnt2 + tile );
-	//			tile++;
-	//		}
-	//	}
-	//}
-	//if( po->life )
-	//{
-	//	tile = 4 * size + po->life * size;
-	//	for( j = 0; j < 2; j++ )
-	//	{
-	//		for( i = 0; i < 2; i++ )
-	//		{
-	//			devkit_SMS_setNextTileatXY( x + i + 1, y + j + 6 );
-	//			devkit_SMS_setTile( *pnt2 + tile );
-	//			tile++;
-	//		}
-	//	}
-	//}
-//}
-
 void engine_player_manager_hplo()
 {
 	struct_player_object *po = &global_player_object;
 	engine_font_manager_draw_data( po->hp, LEFT_X + 13, TOP_Y + 21 );
 }
-
-//void engine_player_manager_draw( unsigned char x, unsigned char y )
-//{
-//	//struct_player_object *po = &global_player_object;
-//	//const unsigned char wide = 3;
-//	//const unsigned char high = 4;
-//
-//	//const unsigned char start = ( po->armor * 36 ) + ( po->weapon * 3 );
-//	//unsigned char index = 0;
-//	//unsigned char value = 0;
-//	//unsigned int tile = 0;
-//	//unsigned char i, j;
-//
-//	//for( j = 0; j < high; j++ )
-//	//{
-//	//	for( i = 0; i < wide; i++ )
-//	//	{
-//	//		index = ( j * 9 ) + i + start;
-//	//		value = index * 2;
-//	//		tile = battle_player__tilemap__bin[ value ];
-//	//		devkit_SMS_setNextTileatXY( x + i, y + j );
-//	//		devkit_SMS_setTile( tile );
-//	//	}
-//	//}
-//}
 
 void engine_player_manager_dec_gold( unsigned char gold )
 {
@@ -263,6 +175,8 @@ bool engine_player_manager_life()
 	return life_type_oneup == po->life;
 }
 
+
+// Hack manager allows player to override default values.
 void engine_player_manager_def_currxp( unsigned currxp )
 {
 	struct_player_object *po = &global_player_object;
