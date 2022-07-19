@@ -58,7 +58,6 @@ static void display_msg()
 
 	while( 1 )
 	{
-		//msg = ( unsigned char ) ( rand() % max );
 		msg = engine_random_manager_data( max );
 		if( msg != prev_msg )
 		{
