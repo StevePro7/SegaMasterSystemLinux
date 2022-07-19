@@ -35,6 +35,7 @@ void screen_shop_screen_load()
 	engine_graphics_manager_clear_part();
 
 	engine_graphics_manager_draw_logo_small( LEFT_X + 1, TOP_Y + 1 );
+	engine_graphics_manager_draw_underline( TOP_Y + 4 );
 
 	row = 7;
 	for( idx = 0; idx < 8; idx++ )
@@ -47,8 +48,6 @@ void screen_shop_screen_load()
 	{
 		engine_font_manager_draw_data( inventory[ idx ], LEFT_X + 24, TOP_Y + row++ );
 	}
-
-	engine_graphics_manager_draw_underline( TOP_Y + 4 );
 
 	row = 10;
 	engine_select_manager_load( select_type, LEFT_X + 7, TOP_Y + row, 5 );

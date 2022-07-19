@@ -24,6 +24,7 @@ void screen_over_screen_load()
 	engine_graphics_manager_clear_part();
 
 	engine_graphics_manager_draw_logo_small( LEFT_X + 1, TOP_Y + 1 );
+	engine_graphics_manager_draw_underline();
 
 	row = 9;
 	for( idx = 0; idx < 4; idx++ )
@@ -33,7 +34,6 @@ void screen_over_screen_load()
 	}
 
 	engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 21, TOP_Y + 9 );
-	engine_graphics_manager_draw_underline();
 	engine_text_manager_cont();
 
 	engine_timer_manager_load( OVER_SCREEN_DELAY );

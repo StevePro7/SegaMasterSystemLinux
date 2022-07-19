@@ -22,9 +22,9 @@ void screen_relive_screen_load()
 	engine_graphics_manager_clear_part();
 
 	engine_graphics_manager_draw_logo_small( LEFT_X + 1, TOP_Y + 1 );
-	engine_font_manager_draw_text( LOCALE_REVITALISING, LEFT_X + 9, TOP_Y + 12 );
 	engine_graphics_manager_draw_underline( TOP_Y + 4 );
 
+	engine_font_manager_draw_text( LOCALE_REVITALISING, LEFT_X + 9, TOP_Y + 12 );
 	engine_timer_manager_load( RELIVE_SCREEN_DELAY );
 	count = 0;
 }
