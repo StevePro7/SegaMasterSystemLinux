@@ -16,7 +16,9 @@ void screen_intro_screen_load()
 	unsigned char row;
 	unsigned char idx;
 
-	engine_graphics_manager_clear_full();
+	engine_graphics_manager_draw_border();
+	engine_graphics_manager_clear_part();
+
 	engine_graphics_manager_draw_logo_big( LEFT_X + 2, TOP_Y + 3 );
 
 	row = 10;
