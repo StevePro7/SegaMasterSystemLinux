@@ -4,7 +4,9 @@
 #include "game_manager.h"
 #include "global_manager.h"
 #include "graphics_manager.h"
+#include "input_manager.h"
 #include "locale_manager.h"
+#include "random_manager.h"
 #include "text_manager.h"
 #include "timer_manager.h"
 #include "fixedbank.h"
@@ -41,5 +43,18 @@ void screen_intro_screen_load()
 
 void screen_intro_screen_update( unsigned char *screen_type )
 {
+	unsigned char input;
+	unsigned char timer;
+
+	input = engine_input_manager_hold_buttonA();
+	timer = engine_timer_manager_update();
+
+	if( input || timer )
+	{
+		*screen_type = screen_type_load;
+		return;
+	}
+
+	engine_random_manager_rand();
 	*screen_type = screen_type_intro;
 }
