@@ -3,7 +3,7 @@
 #include "font_manager.h"
 #include "global_manager.h"
 #include "locale_manager.h"
-//#include "player_manager.h"
+#include "player_manager.h"
 #include "fixedbank.h"
 
 // Global variable.
@@ -71,8 +71,8 @@ void engine_game_manager_difficulty( unsigned char difficulty )
 // Common game rendering functions.
 void engine_game_manager_print_stats()
 {
-	// TODO
-	//engine_player_manager_stats();
+	// TODO test
+	engine_player_manager_stats();
 	engine_font_manager_draw_text( LOCALE_STATISTICS, LEFT_X + 2, TOP_Y + 6 );
 	engine_font_manager_draw_text( LOCALE_HP, LEFT_X + 2, TOP_Y + 7 );
 	engine_font_manager_draw_text( LOCALE_XP, LEFT_X + 2, TOP_Y + 8 );
