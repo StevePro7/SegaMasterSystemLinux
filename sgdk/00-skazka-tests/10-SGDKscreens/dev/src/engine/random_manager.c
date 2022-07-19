@@ -25,10 +25,18 @@ unsigned char engine_random_manager_next()
 #endif
 }
 
-
-bool engine_random_manager_diff( unsigned char level )
+unsigned char engine_random_manager_data( unsigned char max )
 {
-	//return level == 0 ? 0 : 1;
+#ifdef _CONSOLE
+	return rand() % max;
+#else
+	return random() % max;
+#endif
+}
+
+unsigned char  engine_random_manager_diff( unsigned char level )
+{
+	
 	unsigned char value = 0;
 #ifdef _CONSOLE
 	value = rand() % HLF_RANDOM;
@@ -36,5 +44,7 @@ bool engine_random_manager_diff( unsigned char level )
 	value = random() % HLF_RANDOM;
 #endif
 
+	// TODO test
+	//return level == 0 ? 0 : 1;
 	return level <= value;
 }

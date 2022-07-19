@@ -14,7 +14,11 @@ void engine_game_manager_init()
 	engine_game_manager_lines_on();
 	engine_game_manager_intro_on();
 	engine_game_manager_music_on();
+	
+	// TODO revert!
 	engine_game_manager_flash_on();
+	engine_game_manager_flash_off();	// TODO delete this line!
+	// TODO revert!
 
 	engine_game_manager_difficulty( diff_type_easy );
 }

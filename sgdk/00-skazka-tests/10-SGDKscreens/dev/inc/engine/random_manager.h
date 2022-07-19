@@ -10,6 +10,7 @@
 
 void engine_random_manager_rand();
 unsigned char engine_random_manager_next();
-bool engine_random_manager_diff( unsigned char level );
+unsigned char engine_random_manager_data( unsigned char max );
+unsigned char engine_random_manager_diff( unsigned char level );
 
 #endif//_RANDOM_MANAGER_H_
