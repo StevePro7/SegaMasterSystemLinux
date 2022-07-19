@@ -7,7 +7,6 @@
 #include "hack_manager.h"
 #include "player_manager.h"
 #include "text_manager.h"
-//#include <stdlib.h>
 
 static unsigned char get_damage( unsigned char random );
 
@@ -51,42 +50,42 @@ void engine_fight_manager_player_to_enemy( unsigned char *e_damage, unsigned cha
 //3650 IF G = 9 THEN S = 4 + AX : N = N - S + ARM
 void engine_fight_manager_enemy_to_player( unsigned char *p_damage, unsigned char random )
 {
-	//// Damage to player from enemy.
-	//struct_enemy_object *eo = &global_enemy_object;
-	//struct_hack_object *ho = &global_hack_object;
-	//struct_game_object *go = &global_game_object;
-	//struct_player_object *po = &global_player_object;
+	// Damage to player from enemy.
+	struct_enemy_object *eo = &global_enemy_object;
+	struct_hack_object *ho = &global_hack_object;
+	struct_game_object *go = &global_game_object;
+	struct_player_object *po = &global_player_object;
 
-	//unsigned char damage;
-	//unsigned char extra;
-	//if( ho->hack_nodead )
-	//{
-	//	*p_damage = 0;
-	//	return;
-	//}
+	unsigned char damage;
+	unsigned char extra;
+	if( ho->hack_nodead )
+	{
+		*p_damage = 0;
+		return;
+	}
 
-	//extra = eo->ax;
-	//damage = get_damage( random );
+	extra = eo->ax;
+	damage = get_damage( random );
 
-	//if( 4 == damage || 3 == damage )
-	//{
-	//	damage += extra;
-	//}
+	if( 4 == damage || 3 == damage )
+	{
+		damage += extra;
+	}
 
-	//// Inflict more damage to player in hard mode. 
-	//if( diff_type_hard == go->difficulty )
-	//{
-	//	if( po->level > 2 && 2 == damage )
-	//	{
-	//		damage += extra;
-	//	}
-	//	if( po->level > 1 && 1 == damage )
-	//	{
-	//		damage += extra;
-	//	}
-	//}
+	// Inflict more damage to player in hard mode. 
+	if( diff_type_hard == go->difficulty )
+	{
+		if( po->level > 2 && 2 == damage )
+		{
+			damage += extra;
+		}
+		if( po->level > 1 && 1 == damage )
+		{
+			damage += extra;
+		}
+	}
 
-	//*p_damage = damage;
+	*p_damage = damage;
 }
 
 //11700 U = INT( RND( 1 ) * 10 )
@@ -99,21 +98,20 @@ void engine_fight_manager_enemy_to_player( unsigned char *p_damage, unsigned cha
 //11720 HPC = HPC - D
 void engine_fight_manager_player_to_boss( unsigned char *b_damage, unsigned char random, unsigned char weapon )
 {
-	//// Damage to boss from player.
-	//struct_player_object *po = &global_player_object;
-	//unsigned char damage;
-	//unsigned char extra;
+	// Damage to boss from player.
+	unsigned char damage;
+	unsigned char extra;
 
-	//extra = weapon;
-	//damage = get_damage( random );
+	extra = weapon;
+	damage = get_damage( random );
 
-	//if( 4 == damage )
-	//{
-	//	damage += extra;
-	//}
-	//
-	//damage += extra;
-	//*b_damage = damage;
+	if( 4 == damage )
+	{
+		damage += extra;
+	}
+
+	damage += extra;
+	*b_damage = damage;
 }
 //11730 UA = INT( RND( 1 ) * 10 )
 //11731 IF UA = 0 THEN UC = 0
@@ -125,29 +123,29 @@ void engine_fight_manager_player_to_boss( unsigned char *b_damage, unsigned char
 //11750 N = N - S
 void engine_fight_manager_boss_to_player( unsigned char *p_damage, unsigned char random )
 {
-	//// Damage to player from boss.
-	//struct_enemy_object *eo = &global_enemy_object;
-	//struct_hack_object *ho = &global_hack_object;
+	// Damage to player from boss.
+	struct_enemy_object *eo = &global_enemy_object;
+	struct_hack_object *ho = &global_hack_object;
 
-	//unsigned char damage;
-	//unsigned char extra;
+	unsigned char damage;
+	unsigned char extra;
 
-	//if( ho->hack_nodead )
-	//{
-	//	*p_damage = 0;
-	//	return;
-	//}
+	if( ho->hack_nodead )
+	{
+		*p_damage = 0;
+		return;
+	}
 
-	//extra = eo->ax;
-	//damage = get_damage( random );
+	extra = eo->ax;
+	damage = get_damage( random );
 
-	//if( 4 == damage )
-	//{
-	//	damage += extra;
-	//}
+	if( 4 == damage )
+	{
+		damage += extra;
+	}
 
-	//damage += extra;
-	//*p_damage = damage;
+	damage += extra;
+	*p_damage = damage;
 }
 
 static unsigned char get_damage( unsigned char random )
@@ -179,7 +177,6 @@ static unsigned char get_damage( unsigned char random )
 
 void engine_fight_manager_gold( unsigned char *p_xp, unsigned char *p_gold )
 {
-	struct_player_object *po = &global_player_object;
 	struct_enemy_object *eo = &global_enemy_object;
 
 	*p_xp = eo->xpo;
