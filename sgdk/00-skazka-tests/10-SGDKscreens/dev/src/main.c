@@ -15,7 +15,7 @@ int main()
 	//open_screen_type = screen_type_relive;
 	//open_screen_type = screen_type_complete;
 	//open_screen_type = screen_type_credit;
-	//open_screen_type = screen_type_test;
+	//open_screen_type = screen_type_menu;
 
 	// Initialize player first!
 	engine_player_manager_init();
