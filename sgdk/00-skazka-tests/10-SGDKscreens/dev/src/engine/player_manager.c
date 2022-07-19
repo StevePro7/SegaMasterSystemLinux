@@ -132,7 +132,10 @@ void engine_player_manager_draw_inventory( unsigned char weapon, unsigned char a
 	VDP_setTileMapEx( BG_A, gfx_stats_items.tilemap, basetile, x + 0, y + 1, 0, 0 * high + weapon * high, wide, high, CPU );
 
 	// Armor.
-	VDP_setTileMapEx( BG_A, gfx_stats_items.tilemap, basetile, x + 6, y + 3, 0, NUM_WEAPONS * high + armor * high, wide, high, CPU );
+	if( armor )
+	{
+		VDP_setTileMapEx( BG_A, gfx_stats_items.tilemap, basetile, x + 6, y + 3, 0, NUM_WEAPONS * high + ( armor - 1 ) * high, wide, high, CPU );
+	}
 
 	// Life.
 	if( life )
