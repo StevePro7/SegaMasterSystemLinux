@@ -37,7 +37,6 @@ void screen_complete_screen_load()
 
 	
 	engine_graphics_manager_draw_underline();
-
 	engine_text_manager_cont();
 
 	engine_timer_manager_load( BEAT_SCREEN_DELAY );

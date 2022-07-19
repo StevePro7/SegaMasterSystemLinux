@@ -1,11 +1,11 @@
 #ifndef _PLAYER_MANAGER_H_
 #define _PLAYER_MANAGER_H_
 
-#ifdef _CONSOLE
-#include "_genesis.h"
-#else
-#include <genesis.h>
-#endif
+//#ifdef _CONSOLE
+//#include "_genesis.h"
+//#else
+//#include <genesis.h>
+//#endif
 
 #include "player_object.h"
 

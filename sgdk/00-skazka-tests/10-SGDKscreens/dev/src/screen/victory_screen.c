@@ -53,7 +53,7 @@ void screen_victory_screen_update( unsigned char *screen_type )
 
 	//if( input1 || input2 )
 	//{
-	//	//if( !devkit_PSGSFXGetStatus() )
+	//	//if( !engine_audio_manager_is_playing() )
 	//	{
 	//		*screen_type = screen_type_stats;
 	//		return;

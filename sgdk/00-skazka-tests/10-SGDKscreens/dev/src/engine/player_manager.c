@@ -12,9 +12,10 @@
 #else
 #include <genesis.h>
 #endif
+
 // Global variable.
 struct_player_object global_player_object;
-/*
+
 void engine_player_manager_init()
 {
 	struct_player_object *po = &global_player_object;
@@ -71,17 +72,17 @@ void engine_player_manager_stats()
 	struct_player_object *po = &global_player_object;
 
 	// Print HP, XP, gold, level.
-	engine_font_manager_numb( po->level, LEFT_X + 9, TOP_Y + 6 );
+	engine_font_manager_draw_numb( po->level, LEFT_X + 9, TOP_Y + 6 );
 
-	engine_font_manager_data( po->max_hp, LEFT_X + 9, TOP_Y + 7 );
+	engine_font_manager_draw_data( po->max_hp, LEFT_X + 9, TOP_Y + 7 );
 	engine_font_manager_draw_punc( LOCALE_SLASH, LEFT_X + 7, TOP_Y + 7 );
-	engine_font_manager_data( po->hp, LEFT_X + 6, TOP_Y + 7 );
+	engine_font_manager_draw_data( po->hp, LEFT_X + 6, TOP_Y + 7 );
 
-	engine_font_manager_data( po->max_xp, LEFT_X + 9, TOP_Y + 8 );
+	engine_font_manager_draw_data( po->max_xp, LEFT_X + 9, TOP_Y + 8 );
 	engine_font_manager_draw_punc( LOCALE_SLASH, LEFT_X + 7, TOP_Y + 8 );
-	engine_font_manager_data( po->xp, LEFT_X + 6, TOP_Y + 8 );
+	engine_font_manager_draw_data( po->xp, LEFT_X + 6, TOP_Y + 8 );
 
-	engine_font_manager_data( po->gold, LEFT_X + 9, TOP_Y + 9 );
+	engine_font_manager_draw_data( po->gold, LEFT_X + 9, TOP_Y + 9 );
 	
 
 	// Print inventory.
@@ -91,7 +92,7 @@ void engine_player_manager_stats()
 	if( po->life )
 	{
 		engine_font_manager_draw_punc( LOCALE_PLUS, LEFT_X + 2, TOP_Y + 13 );
-		engine_font_manager_numb( 1, LEFT_X + 3, TOP_Y + 13 );
+		engine_font_manager_draw_numb( 1, LEFT_X + 3, TOP_Y + 13 );
 		engine_font_manager_draw_text( ( unsigned char * ) life_texts[ po->life ], LEFT_X + 5, TOP_Y + 13 );
 	}
 
@@ -107,8 +108,8 @@ void engine_player_manager_rest()
 	po->hp = po->max_hp;
 }
 
-void engine_player_manager_draw_inventory( unsigned char x, unsigned char y )
-{
+//void engine_player_manager_draw_inventory( unsigned char x, unsigned char y )
+//{
 	//const unsigned char *pnt1 = stats_items__tilemap__bin;
 	//const unsigned char *pnt2 = stats_inventory__tilemap__bin;
 
@@ -167,38 +168,38 @@ void engine_player_manager_draw_inventory( unsigned char x, unsigned char y )
 	//		}
 	//	}
 	//}
-}
+//}
 
 void engine_player_manager_hplo()
 {
 	struct_player_object *po = &global_player_object;
-	engine_font_manager_data( po->hp, LEFT_X + 13, TOP_Y + 21 );
+	engine_font_manager_draw_data( po->hp, LEFT_X + 13, TOP_Y + 21 );
 }
 
-void engine_player_manager_draw( unsigned char x, unsigned char y )
-{
-	//struct_player_object *po = &global_player_object;
-	//const unsigned char wide = 3;
-	//const unsigned char high = 4;
-
-	//const unsigned char start = ( po->armor * 36 ) + ( po->weapon * 3 );
-	//unsigned char index = 0;
-	//unsigned char value = 0;
-	//unsigned int tile = 0;
-	//unsigned char i, j;
-
-	//for( j = 0; j < high; j++ )
-	//{
-	//	for( i = 0; i < wide; i++ )
-	//	{
-	//		index = ( j * 9 ) + i + start;
-	//		value = index * 2;
-	//		tile = battle_player__tilemap__bin[ value ];
-	//		devkit_SMS_setNextTileatXY( x + i, y + j );
-	//		devkit_SMS_setTile( tile );
-	//	}
-	//}
-}
+//void engine_player_manager_draw( unsigned char x, unsigned char y )
+//{
+//	//struct_player_object *po = &global_player_object;
+//	//const unsigned char wide = 3;
+//	//const unsigned char high = 4;
+//
+//	//const unsigned char start = ( po->armor * 36 ) + ( po->weapon * 3 );
+//	//unsigned char index = 0;
+//	//unsigned char value = 0;
+//	//unsigned int tile = 0;
+//	//unsigned char i, j;
+//
+//	//for( j = 0; j < high; j++ )
+//	//{
+//	//	for( i = 0; i < wide; i++ )
+//	//	{
+//	//		index = ( j * 9 ) + i + start;
+//	//		value = index * 2;
+//	//		tile = battle_player__tilemap__bin[ value ];
+//	//		devkit_SMS_setNextTileatXY( x + i, y + j );
+//	//		devkit_SMS_setTile( tile );
+//	//	}
+//	//}
+//}
 
 void engine_player_manager_dec_gold( unsigned char gold )
 {
@@ -308,7 +309,6 @@ void engine_player_manager_set_oneups( unsigned oneups )
 	struct_player_object *po = &global_player_object;
 	po->life = oneups;
 }
-*/
 
 
 void engine_player_manager_draw_inventory( unsigned char weapon, unsigned char armor, unsigned char life, unsigned char x, unsigned char y )

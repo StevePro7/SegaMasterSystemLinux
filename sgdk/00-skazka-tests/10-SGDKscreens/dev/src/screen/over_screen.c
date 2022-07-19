@@ -34,7 +34,6 @@ void screen_over_screen_load()
 
 	engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 21, TOP_Y + 9 );
 	engine_graphics_manager_draw_underline();
-
 	engine_text_manager_cont();
 
 	engine_timer_manager_load( OVER_SCREEN_DELAY );
