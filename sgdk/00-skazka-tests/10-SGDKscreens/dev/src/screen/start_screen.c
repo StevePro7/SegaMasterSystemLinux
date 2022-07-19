@@ -5,10 +5,10 @@
 #include "game_manager.h"
 #include "global_manager.h"
 #include "graphics_manager.h"
-//#include "hack_manager.h"
+#include "hack_manager.h"
+#include "input_manager.h"
 #include "locale_manager.h"
 #include "player_manager.h"
-//#include "random_manager.h"
 #include "select_manager.h"
 #include "timer_manager.h"
 #include "text_manager.h"
@@ -39,8 +39,7 @@ void screen_start_screen_load()
 	engine_font_manager_draw_text( ( char * ) diff_texts[ go->difficulty ], LEFT_X + 7, TOP_Y + 21 );
 
 	engine_graphics_manager_draw_underline( TOP_Y + 4 );
-
-	//engine_font_manager_draw_punc( LOCALE_ARROW, LEFT_X + 12, TOP_Y + OPTION_ROW );
+	engine_font_manager_draw_punc( LOCALE_ARROW, LEFT_X + 12, TOP_Y + OPTION_ROW );
 
 	engine_timer_manager_load( START_FLASH_DELAY );
 	flash_index = 0;
@@ -49,5 +48,49 @@ void screen_start_screen_load()
 
 void screen_start_screen_update( unsigned char *screen_type )
 {
+	struct_hack_object *ho = &global_hack_object;
+	unsigned char timer;
+	unsigned char input1;
+	unsigned char input2;
+	unsigned char nextr;
+
+	nextr = 0;
+	timer = engine_timer_manager_update();
+	if( timer )
+	{
+		if( !ho->hack_delays )
+		{
+			flash_count = 1 - flash_count;
+		}
+
+		if( flash_count )
+		{
+			engine_font_manager_draw_char( LOCALE_1_SPCS, LEFT_X + 12, TOP_Y + OPTION_ROW );
+		}
+		else
+		{
+			engine_font_manager_draw_punc( LOCALE_ARROW, LEFT_X + 12, TOP_Y + OPTION_ROW );
+			flash_index++;
+
+			if( flash_index >= START_FLASH_TOTAL )
+			{
+				nextr = 1;
+			}
+		}
+	}
+
+	input1 = engine_input_manager_move_left();
+	input2 = engine_input_manager_move_right();
+	if( !nextr )
+	{
+		nextr = input1 || input2;
+	}
+
+	if( nextr )
+	{
+		*screen_type = screen_type_stats;
+		return;
+	}
+
 	*screen_type = screen_type_start;
 }
