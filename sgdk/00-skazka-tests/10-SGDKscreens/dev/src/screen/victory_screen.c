@@ -23,6 +23,7 @@ void screen_victory_screen_load()
 	engine_graphics_manager_clear_part();
 
 	engine_graphics_manager_draw_logo_small( LEFT_X + 1, TOP_Y + 1 );
+	engine_graphics_manager_draw_underline();
 
 	row = 9;
 	for( idx = 0; idx < 4; idx++ )
@@ -34,8 +35,6 @@ void screen_victory_screen_load()
 	engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 19, TOP_Y + 9 );
 	engine_font_manager_draw_punc( LOCALE_HYPHEN, LEFT_X + 20, TOP_Y + 12 );
 	engine_font_manager_draw_data( po->won, LEFT_X + 24, TOP_Y + 12 );
-
-	engine_graphics_manager_draw_underline();
 	engine_text_manager_cont();
 
 	engine_audio_manager_play_sound( sound_type_7 );

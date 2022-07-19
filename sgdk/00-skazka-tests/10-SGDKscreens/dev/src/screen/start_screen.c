@@ -29,8 +29,9 @@ void screen_start_screen_load()
 	engine_graphics_manager_clear_part();
 
 	engine_graphics_manager_draw_logo_small( LEFT_X + 1, TOP_Y + 1 );
-	engine_graphics_manager_draw_village( LEFT_X + 12, TOP_Y + 6 );
+	engine_graphics_manager_draw_underline( TOP_Y + 4 );
 
+	engine_graphics_manager_draw_village( LEFT_X + 12, TOP_Y + 6 );
 	engine_graphics_manager_draw_inventory( LEFT_X + 2, TOP_Y + 14 );
 	engine_player_manager_draw_inventory( po->weapon, po->armor, po->life, LEFT_X + 2, TOP_Y + 14 );
 
@@ -38,9 +39,7 @@ void screen_start_screen_load()
 	engine_game_manager_print_texts();
 	engine_font_manager_draw_text( ( char * ) diff_texts[ go->difficulty ], LEFT_X + 7, TOP_Y + 21 );
 
-	engine_graphics_manager_draw_underline( TOP_Y + 4 );
 	engine_font_manager_draw_punc( LOCALE_ARROW, LEFT_X + 12, TOP_Y + OPTION_ROW );
-
 	engine_timer_manager_load( START_FLASH_DELAY );
 	flash_index = 0;
 	flash_count = 0;
