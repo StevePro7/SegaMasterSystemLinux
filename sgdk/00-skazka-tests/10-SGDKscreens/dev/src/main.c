@@ -16,6 +16,7 @@ int main()
 	//open_screen_type = screen_type_complete;
 	//open_screen_type = screen_type_credit;
 	//open_screen_type = screen_type_menu;
+	open_screen_type = screen_type_victory;
 
 	// Initialize player first!
 	engine_player_manager_init();
