@@ -18,7 +18,7 @@ static unsigned char select_type;
 
 void screen_stats_screen_load()
 {
-	//struct_game_object *go = &global_game_object;
+	struct_game_object *go = &global_game_object;
 	struct_player_object *po = &global_player_object;
 //	unsigned char flash_arrow = go->flash_arrow;
 
@@ -35,7 +35,14 @@ void screen_stats_screen_load()
 	engine_graphics_manager_draw_inventory( LEFT_X + 2, TOP_Y + 14 );
 	engine_player_manager_draw_inventory( po->weapon, po->armor, po->life, LEFT_X + 2, TOP_Y + 14 );
 
+	engine_game_manager_print_stats();
+	engine_game_manager_print_texts();
+	engine_font_manager_draw_text( ( char * ) diff_texts[ go->difficulty ], LEFT_X + 7, TOP_Y + 21 );
+
 	engine_graphics_manager_draw_underline( TOP_Y + 4 );
+
+	engine_select_manager_load( select_type, LEFT_X + 12, TOP_Y + OPTION_ROW, 6 );
+	engine_game_manager_flash_off();
 }
 
 void screen_stats_screen_update( unsigned char *screen_type )
