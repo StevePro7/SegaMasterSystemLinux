@@ -1,5 +1,5 @@
 #include "talk_screen.h"
-//#include "audio_manager.h"
+#include "audio_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
 #include "game_manager.h"
@@ -79,7 +79,7 @@ static void display_msg()
 	for( idx = 0; idx < MAX_CHAT; idx++ )
 	{
 		txt = beg + idx;
-		engine_font_manager_draw_text( ( unsigned char * ) villager_texts[ txt ], LEFT_X + 2, TOP_Y + row );
+		engine_font_manager_draw_text( ( char * ) villager_texts[ txt ], LEFT_X + 2, TOP_Y + row );
 		row++;
 	}
 
