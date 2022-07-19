@@ -1,12 +1,6 @@
 #ifndef _PLAYER_MANAGER_H_
 #define _PLAYER_MANAGER_H_
 
-//#ifdef _CONSOLE
-//#include "_genesis.h"
-//#else
-//#include <genesis.h>
-//#endif
-
 #include "player_object.h"
 
 // Global variable.
@@ -26,8 +20,8 @@ void engine_player_manager_dec_gold( unsigned char gold );
 void engine_player_manager_inc_gold( unsigned char xp, unsigned char gold );
 void engine_player_manager_hit( char hp );
 void engine_player_manager_armor( unsigned char armor );
-//bool engine_player_manager_dead();
-//bool engine_player_manager_life();
+unsigned char engine_player_manager_dead();
+unsigned char engine_player_manager_life();
 
 // Hack manager allows player to override default values.
 void engine_player_manager_def_currxp( unsigned currxp );
