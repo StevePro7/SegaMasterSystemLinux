@@ -25,7 +25,6 @@ void screen_title_screen_load()
 	engine_graphics_manager_clear_part();
 
 	engine_graphics_manager_draw_logo_big( LEFT_X + 2, TOP_Y + 3 );
-
 	engine_font_manager_draw_text( LOCALE_TITLE_MSG1, LEFT_X + 6, TOP_Y + 10 );
 	engine_font_manager_draw_text( LOCALE_TITLE_MSG2, LEFT_X + 3, TOP_Y + 15 );
 	engine_font_manager_draw_numb( 8, LEFT_X + 16, TOP_Y + 15 );
@@ -42,7 +41,6 @@ void screen_title_screen_update( unsigned char *screen_type )
 	struct_game_object *go = &global_game_object;
 	unsigned char input;
 	unsigned char timer;
-//	unsigned char index;
 
 	engine_random_manager_rand();
 	if( event_stage_pause == event_stage )

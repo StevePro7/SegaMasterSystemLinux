@@ -10,8 +10,8 @@
 void screen_splash_screen_load()
 {
 	engine_graphics_manager_draw_splash();
-
 	engine_graphics_manager_draw_borderX( 0, 0, OUTER_WIDE, OUTER_HIGH );
+
 	engine_timer_manager_load( SPLASH_SCREEN_DELAY );
 }
 

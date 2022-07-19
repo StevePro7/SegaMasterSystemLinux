@@ -1,8 +1,6 @@
 #ifndef _ENEMY_OBJECT_H_
 #define _ENEMY_OBJECT_H_
 
-//#include "global_manager.h"
-
 typedef struct tag_struct_enemy_object
 {
 	unsigned char index;
