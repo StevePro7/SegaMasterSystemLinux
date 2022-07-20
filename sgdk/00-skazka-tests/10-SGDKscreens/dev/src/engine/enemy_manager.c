@@ -105,7 +105,6 @@ void engine_target_manager_load( unsigned char index )
 //	//	draw_leshy( x, y );
 //	//}
 //}
-
 //static void draw_enemy( unsigned char idx, unsigned char x, unsigned char y )
 //{
 //	//const unsigned char *pnt = battle_enemies__tilemap__bin;

@@ -18,7 +18,8 @@
 
 void screen_forest_screen_load()
 {
-	engine_font_manager_draw_text( "FOREST SCREEN!!", 10, 2 );
+	engine_graphics_manager_draw_border();
+	engine_graphics_manager_clear_part();
 }
 
 void screen_forest_screen_update( unsigned char *screen_type )
