@@ -34,7 +34,7 @@ unsigned char engine_random_manager_data( unsigned char max )
 #endif
 }
 
-unsigned char  engine_random_manager_diff( unsigned char level )
+unsigned char engine_random_manager_diff( unsigned char level )
 {
 	
 	unsigned char value = 0;
