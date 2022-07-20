@@ -2,6 +2,7 @@
 #include "enum_manager.h"
 #include "font_manager.h"
 #include "global_manager.h"
+#include "random_manager.h"
 #include "text_manager.h"
 #include "gfx.h"
 
