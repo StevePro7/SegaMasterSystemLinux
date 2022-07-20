@@ -23,7 +23,7 @@
 //static unsigned char enemys_damage;
 //static unsigned char player_damage;
 //static unsigned char player_gold;
-//static unsigned char select_type;
+static unsigned char select_type;
 //static unsigned char run_away_val;
 
 static void setup();
@@ -31,6 +31,10 @@ static void setup();
 
 void screen_forest_screen_load()
 {
+	//struct_player_object *po = &global_player_object;
+	//struct_game_object *go = &global_game_object;
+	select_type = select_type_forest;
+
 	setup();
 }
 
@@ -64,6 +68,27 @@ static void setup()
 
 	engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 26, TOP_Y + 6 );
 	engine_font_manager_draw_punc( LOCALE_COLON, LEFT_X + 26, TOP_Y + 7 );
+
+	row = 11;
+	for( idx = 0; idx < 4; idx++ )
+	{
+		engine_font_manager_draw_text( ( char * ) fight_texts[ idx ], LEFT_X + 7, TOP_Y + row );
+		row++;
+	}
+	engine_font_manager_draw_punc( LOCALE_QMARK, LEFT_X + 23, TOP_Y + 11 );
+
+	row = 13;
+	engine_select_manager_load( select_type, LEFT_X + 5, TOP_Y + row, 2 );
+
+	engine_enemy_manager_text();
+
+	engine_font_manager_draw_text( LOCALE_FIGHT_MSG1, LEFT_X + 2, TOP_Y + 21 );
+	engine_font_manager_draw_text( LOCALE_FIGHT_MSG2, LEFT_X + 17, TOP_Y + 21 );
+	engine_font_manager_draw_punc( LOCALE_HYPHEN, LEFT_X + 10, TOP_Y + 21 );
+	engine_font_manager_draw_punc( LOCALE_HYPHEN, LEFT_X + 26, TOP_Y + 21 );
+
+	engine_player_manager_hplo();
+	engine_enemy_manager_hplo();
 }
 
 //static unsigned char calc_add_armor()
