@@ -17,7 +17,7 @@
 
 static unsigned int palette;
 static unsigned char count;
-static bool flag;
+static unsigned char  flag;
 
 void screen_kill_screen_load()
 {
@@ -40,8 +40,8 @@ void screen_kill_screen_update( unsigned char *screen_type )
 		count++;
 		if( count < KILL_FLASH_COUNT )
 		{
-			flag = !flag;
-			palette = 0;// flag ? devkit_TILE_USE_SPRITE_PALETTE() : 0;
+			flag = 1 - flag;
+			palette = 1 - palette;	// TODO test!!// flag ? devkit_TILE_USE_SPRITE_PALETTE() : 0;
 			engine_graphics_manager_draw_koschey( LEFT_X + 10, TOP_Y + 2, palette );
 		}
 	}

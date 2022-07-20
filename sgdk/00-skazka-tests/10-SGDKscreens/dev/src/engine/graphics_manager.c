@@ -143,7 +143,7 @@ void engine_graphics_manager_draw_village( unsigned char x, unsigned char y )
 	drawImageEx( &gfx_stats_village, PAL1, VILLAGE_TILES, x, y );
 }
 
-void engine_graphics_manager_draw_koschey( unsigned char x, unsigned char y, unsigned int palette )
+void engine_graphics_manager_draw_koschey( unsigned char x, unsigned char y, unsigned char palette )
 {
 	drawImageEx( &gfx_koschey, palette, BOSS_TILES, x, y );
 }

@@ -13,7 +13,7 @@ void engine_graphics_manager_draw_splash();
 void engine_graphics_manager_draw_logo_big( unsigned char x, unsigned char y );
 void engine_graphics_manager_draw_logo_small( unsigned char x, unsigned char y );
 void engine_graphics_manager_draw_village( unsigned char x, unsigned char y );
-void engine_graphics_manager_draw_koschey( unsigned char x, unsigned char y, unsigned int palette );
+void engine_graphics_manager_draw_koschey( unsigned char x, unsigned char y, unsigned char palette );
 void engine_graphics_manager_draw_inventory( unsigned char x, unsigned char y );
 
 #endif//_GRAPHICS_MANAGER_H_
