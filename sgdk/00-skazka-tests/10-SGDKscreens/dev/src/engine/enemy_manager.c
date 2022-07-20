@@ -94,60 +94,6 @@ void engine_target_manager_load( unsigned char index )
 	eo->xpo = xpo_num[ index ];
 }
 
-//void engine_enemy_manager_draw( unsigned char x, unsigned char y )
-//{
-//	//struct_enemy_object *eo = &global_enemy_object;
-//	//if( enemy_type_leshy != eo->index )
-//	//{
-//	//	draw_enemy( eo->index, x, y );
-//	//}
-//	//else
-//	//{
-//	//	draw_leshy( x, y );
-//	//}
-//}
-//static void draw_enemy( unsigned char idx, unsigned char x, unsigned char y )
-//{
-//	//const unsigned char *pnt = battle_enemies__tilemap__bin;
-//
-//	//unsigned char wide = 3;
-//	//unsigned char high = 4;
-//	//unsigned char i, j;
-//
-//	//unsigned int tile = idx * ( wide * high );
-//	//for( j = 0; j < high; j++ )
-//	//{
-//	//	for( i = 0; i < wide; i++ )
-//	//	{
-//	//		devkit_SMS_setNextTileatXY( x + i, y + j );
-//	//		devkit_SMS_setTile( *pnt + tile );
-//	//		tile++;
-//	//	}
-//	//}
-//}
-//static void draw_leshy( unsigned char x, unsigned char y )
-//{
-//	//const unsigned char *pnt = battle_enemies_leshy__tilemap__bin;
-//
-//	//unsigned char wide = 3;
-//	//unsigned char high = 4;
-//	//unsigned char i, j;
-//	//unsigned char idx = 0;
-//
-//	//unsigned int tile = 0;
-//	//unsigned int palette = devkit_TILE_USE_SPRITE_PALETTE();
-//	//for( j = 0; j < high; j++ )
-//	//{
-//	//	for( i = 0; i < wide; i++ )
-//	//	{
-//	//		tile = ( SPRITE_TILES + idx ) | palette;
-//	//		devkit_SMS_setNextTileatXY( x + i, y + j );
-//	//		devkit_SMS_setTile( *pnt + tile );
-//	//		idx++;
-//	//	}
-//	//}
-//}
-
 void engine_enemy_manager_text()
 {
 	struct_enemy_object *eo = &global_enemy_object;
