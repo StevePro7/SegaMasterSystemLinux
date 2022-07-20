@@ -29,67 +29,68 @@ void engine_enemy_manager_init()
 
 void engine_enemy_manager_load( unsigned char level )
 {
-	//unsigned char value = rand() % MAX_RANDOM;
-	//unsigned char index = 0;
+	unsigned char value = 0;
+	unsigned char index = 0;
 
-	//switch( level )
-	//{
-	//case 1:
-	//	index = value < 5 ? enemy_type_razboynik : enemy_type_hungry_wolf;
-	//	break;
-	//case 2:
-	//	if( value < 3 )
-	//	{
-	//		index = enemy_type_razboynik;
-	//	}
-	//	else if( value < 6 )
-	//	{
-	//		index = enemy_type_kikimora;
-	//	}
-	//	else if( value < 8 )
-	//	{
-	//		index = enemy_type_hungry_wolf;
-	//	}
-	//	else
-	//	{
-	//		index = enemy_type_leshy;
-	//	}
-	//	break;
-	//case 3:
-	//	if( value < 1 )
-	//	{
-	//		index = enemy_type_razboynik;
-	//	}
-	//	else if( value < 2 )
-	//	{
-	//		index = enemy_type_hungry_wolf;
-	//	}
-	//	else if( value < 5 )
-	//	{
-	//		index = enemy_type_kikimora;
-	//	}
-	//	else if( value < 8 )
-	//	{
-	//		index = enemy_type_leshy;
-	//	}
-	//	else
-	//	{
-	//		index = enemy_type_baby_yaga;
-	//	}
-	//	break;
-	//}
+	value = engine_random_manager_next();
+	switch( level )
+	{
+	case 1:
+		index = value < 5 ? enemy_type_razboynik : enemy_type_hungry_wolf;
+		break;
+	case 2:
+		if( value < 3 )
+		{
+			index = enemy_type_razboynik;
+		}
+		else if( value < 6 )
+		{
+			index = enemy_type_kikimora;
+		}
+		else if( value < 8 )
+		{
+			index = enemy_type_hungry_wolf;
+		}
+		else
+		{
+			index = enemy_type_leshy;
+		}
+		break;
+	case 3:
+		if( value < 1 )
+		{
+			index = enemy_type_razboynik;
+		}
+		else if( value < 2 )
+		{
+			index = enemy_type_hungry_wolf;
+		}
+		else if( value < 5 )
+		{
+			index = enemy_type_kikimora;
+		}
+		else if( value < 8 )
+		{
+			index = enemy_type_leshy;
+		}
+		else
+		{
+			index = enemy_type_baby_yaga;
+		}
+		break;
+	}
 
-	//engine_target_manager_load( index );
+	engine_target_manager_load( index );
 }
 
 void engine_target_manager_load( unsigned char index )
 {
-	//struct_enemy_object *eo = &global_enemy_object;
-	//eo->index = index;
-	//eo->hplo = hplo_num[ index ];
-	//eo->ax = ax_num[ index ];
-	//eo->gldo = gldo_num[ index ];
-	//eo->xpo = xpo_num[ index ];
+	struct_enemy_object *eo = &global_enemy_object;
+	eo->index = index;
+	eo->hplo = hplo_num[ index ];
+	eo->ax = ax_num[ index ];
+	eo->gldo = gldo_num[ index ];
+	eo->xpo = xpo_num[ index ];
 }
 
 //void engine_enemy_manager_draw( unsigned char x, unsigned char y )
