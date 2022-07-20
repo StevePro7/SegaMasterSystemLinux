@@ -15,27 +15,45 @@
 #include "select_manager.h"
 #include "text_manager.h"
 #include "fixedbank.h"
-//
-//static unsigned char curr_selection;
-//static unsigned char prev_selection;
-//
-//static unsigned char event_stage;
-//static unsigned char enemys_damage;
-//static unsigned char player_damage;
-//static unsigned char player_gold;
+
+static unsigned char curr_selection;
+static unsigned char prev_selection;
+
+static unsigned char event_stage;
+static unsigned char enemys_damage;
+static unsigned char player_damage;
+static unsigned char player_gold;
 static unsigned char select_type;
-//static unsigned char run_away_val;
+static unsigned char run_away_val;
 
 static void setup();
 //static unsigned char calc_add_armor();
 
+unsigned char run_away_hit[ 2 ] = { 1, 2 };
+
 void screen_forest_screen_load()
 {
-	//struct_player_object *po = &global_player_object;
-	//struct_game_object *go = &global_game_object;
+	struct_player_object *po = &global_player_object;
+	struct_game_object *go = &global_game_object;
 	select_type = select_type_forest;
 
+	engine_enemy_manager_load( po->level );
+
 	setup();
+
+
+	curr_selection = 0;
+	prev_selection = 0;
+	event_stage = scene_type_select;
+
+	enemys_damage = 0;
+	player_damage = 0;
+	player_gold = 0;
+	run_away_val = run_away_hit[ go->difficulty ];
+	if( po->level == 1 && go->difficulty == diff_type_hard )
+	{
+		run_away_val = 1;
+	}
 }
 
 void screen_forest_screen_update( unsigned char *screen_type )
