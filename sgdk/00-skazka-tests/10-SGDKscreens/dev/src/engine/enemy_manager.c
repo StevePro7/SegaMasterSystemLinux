@@ -4,6 +4,7 @@
 #include "global_manager.h"
 #include "random_manager.h"
 #include "text_manager.h"
+#include "fixedbank.h"
 #include "gfx.h"
 
 // Global variable.
@@ -149,27 +150,27 @@ void engine_target_manager_load( unsigned char index )
 
 void engine_enemy_manager_text()
 {
-	//struct_enemy_object *eo = &global_enemy_object;
-	//engine_font_manager_draw_text( ( unsigned char * ) enemy_texts[ eo->index ], LEFT_X + 16, TOP_Y + 9 );
+	struct_enemy_object *eo = &global_enemy_object;
+	engine_font_manager_draw_text( ( char * ) enemy_texts[ eo->index ], LEFT_X + 16, TOP_Y + 9 );
 }
 
 void engine_enemy_manager_hplo()
 {
-	//struct_enemy_object *eo = &global_enemy_object;
-	//engine_font_manager_data( eo->hplo, LEFT_X + 29, TOP_Y + 21 );
+	struct_enemy_object *eo = &global_enemy_object;
+	engine_font_manager_draw_data( eo->hplo, LEFT_X + 29, TOP_Y + 21 );
 }
 
 void engine_enemy_manager_hit( char hp )
 {
-	//struct_enemy_object *eo = &global_enemy_object;
-	//if( eo->hplo > hp )
-	//{
-	//	eo->hplo -= hp;
-	//}
-	//else
-	//{
-	//	eo->hplo = 0;
-	//}
+	struct_enemy_object *eo = &global_enemy_object;
+	if( eo->hplo > hp )
+	{
+		eo->hplo -= hp;
+	}
+	else
+	{
+		eo->hplo = 0;
+	}
 }
 
 // TODO test
