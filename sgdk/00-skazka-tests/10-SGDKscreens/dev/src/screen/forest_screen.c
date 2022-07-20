@@ -37,6 +37,7 @@ void screen_forest_screen_load()
 	struct_game_object *go = &global_game_object;
 	select_type = select_type_forest;
 
+	engine_graphics_manager_load();
 	engine_enemy_manager_load( po->level );
 
 	setup();
