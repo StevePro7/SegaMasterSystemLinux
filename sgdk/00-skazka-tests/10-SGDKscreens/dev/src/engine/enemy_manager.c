@@ -126,7 +126,6 @@ unsigned char engine_enemy_manager_dead()
 	return eo->hplo <= 0;
 }
 
-
 void engine_enemy_manager_draw( unsigned char enemy, unsigned char x, unsigned char y )
 {
 	// TODO regression test enemies
