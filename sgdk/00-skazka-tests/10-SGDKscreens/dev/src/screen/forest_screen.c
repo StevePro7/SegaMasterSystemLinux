@@ -41,7 +41,6 @@ void screen_forest_screen_load()
 
 	setup();
 
-
 	curr_selection = 0;
 	prev_selection = 0;
 	event_stage = scene_type_select;
@@ -58,6 +57,93 @@ void screen_forest_screen_load()
 
 void screen_forest_screen_update( unsigned char *screen_type )
 {
+	struct_player_object *po = &global_player_object;
+	struct_hack_object *ho = &global_hack_object;
+	struct_game_object *go = &global_game_object;
+	//unsigned char random;
+	unsigned char input;
+	unsigned char value;
+	//unsigned char xp = 0;
+	//unsigned char add_armor = 1;
+
+	if( scene_type_pushon == event_stage )
+	{
+	}
+
+	if( scene_type_select == event_stage )
+	{
+		input = engine_input_manager_hold_buttonB();
+		if( input )
+		{
+			// If difficulty not hard then cheat and run away unconditionally.
+			if( diff_type_hard != go->difficulty )
+			{
+				*screen_type = screen_type_stats;
+				return;
+			}
+
+			// If invincible then run away.
+			if( ho->hack_nodead )
+			{
+				*screen_type = screen_type_stats;
+				return;
+			}
+		}
+
+		curr_selection = engine_select_manager_update( select_type );
+		if( NO_SELECTION == curr_selection )
+		{
+			*screen_type = screen_type_forest;
+			return;
+		}
+
+		prev_selection = curr_selection;
+		event_stage = scene_type_decide;
+	}
+
+	if( scene_type_decide == event_stage )
+	{
+		if( fight_type_run == curr_selection )
+		{
+			// If invincible then run away.
+			if( ho->hack_nodead )
+			{
+				*screen_type = screen_type_stats;
+				return;
+			}
+
+			value = engine_random_manager_next();
+			if( value < HLF_RANDOM )
+			{
+				*screen_type = screen_type_stats;
+				return;
+			}
+			else
+			{
+				// Subtract HP as cannot currently run away.
+				engine_player_manager_hit( run_away_val );
+				if( engine_player_manager_dead() )
+				{
+					// Check if player has extra life!
+					if( engine_player_manager_life() )
+					{
+						*screen_type = screen_type_relive;
+						return;
+					}
+
+					*screen_type = screen_type_over;
+					return;
+				}
+
+				engine_audio_manager_play_sound( sound_type_10 );
+				engine_font_manager_draw_text( LOCALE_FIGHT_NOTRUN, LEFT_X + 7, TOP_Y + 17 );
+				engine_font_manager_draw_punc( LOCALE_QUOTE, LEFT_X + 17, TOP_Y + 17 );
+				engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 23, TOP_Y + 17 );
+				event_stage = scene_type_pushon;
+			}
+		}
+	}
+
 	*screen_type = screen_type_forest;
 }
 
