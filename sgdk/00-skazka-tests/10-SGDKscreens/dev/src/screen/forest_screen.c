@@ -60,11 +60,11 @@ void screen_forest_screen_update( unsigned char *screen_type )
 	struct_player_object *po = &global_player_object;
 	struct_hack_object *ho = &global_hack_object;
 	struct_game_object *go = &global_game_object;
-	//unsigned char random;
+	unsigned char random;
 	unsigned char input;
 	unsigned char value;
-	//unsigned char xp = 0;
-	//unsigned char add_armor = 1;
+	unsigned char xp = 0;
+	unsigned char add_armor = 1;
 
 	if( scene_type_pushon == event_stage )
 	{
@@ -141,6 +141,24 @@ void screen_forest_screen_update( unsigned char *screen_type )
 				engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 23, TOP_Y + 17 );
 				event_stage = scene_type_pushon;
 			}
+		}
+		if( fight_type_battle == curr_selection )
+		{
+			engine_sound_manager_fight();
+
+			random = engine_random_manager_next();
+			engine_fight_manager_player_to_enemy( &enemys_damage, random );
+
+			random = engine_random_manager_next();
+			engine_fight_manager_enemy_to_player( &player_damage, random );
+
+			engine_font_manager_draw_text( LOCALE_FIGHT_ENEMYS, LEFT_X + 7, TOP_Y + 17 );
+			engine_font_manager_draw_text( LOCALE_FIGHT_PLAYER, LEFT_X + 7, TOP_Y + 18 );
+
+			engine_font_manager_draw_data( enemys_damage, LEFT_X + 24, TOP_Y + 17 );
+			engine_font_manager_draw_data( player_damage, LEFT_X + 24, TOP_Y + 18 );
+
+			event_stage = scene_type_pushon;
 		}
 	}
 

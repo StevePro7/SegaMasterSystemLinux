@@ -2,6 +2,7 @@
 #include "enum_manager.h"
 #include "global_manager.h"
 #include "hack_manager.h"
+#include "random_manager.h"
 #include "audio_object.h"
 
 #ifdef _CONSOLE
@@ -48,21 +49,23 @@ void engine_audio_manager_play_music( unsigned char index )
 	play_music( index );
 }
 
-
-/*
 void engine_sound_manager_fight()
 {
-	//struct_hack_object *ho = &global_hack_object;
+	struct_hack_object *ho = &global_hack_object;
 	//unsigned char index = rand() % 5;
+	unsigned char index = 0;
 
-	//if( !ho->hack_sounds )
-	//{
-	//	return;
-	//}
+	if( !ho->hack_sounds )
+	{
+		return;
+	}
 
+	// TODO test
+	index = engine_random_manager_data( HLF_RANDOM );
 	//engine_sound_manager_play( index );
+	play_sound( index );
 }
-
+/*
 void engine_sound_manager_kill()
 {
 	//struct_hack_object *ho = &global_hack_object;
