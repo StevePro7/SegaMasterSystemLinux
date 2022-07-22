@@ -4,7 +4,6 @@
 #include "global_manager.h"
 #include "graphics_manager.h"
 #include "timer_manager.h"
-//#include <stdbool.h>
 
 #ifdef _CONSOLE
 #include "_genesis.h"
@@ -21,11 +20,12 @@ static unsigned char  flag;
 
 void screen_kill_screen_load()
 {
-	//engine_content_manager_load_koschey();
-	engine_graphics_manager_draw_koschey( LEFT_X + 10, TOP_Y + 2, 0 );// devkit_TILE_USE_SPRITE_PALETTE() );
+	engine_graphics_manager_draw_koschey( LEFT_X + 10, TOP_Y + 2, 0 );
 
 	engine_timer_manager_load( KILL_SCREEN_DELAY );
 //	engine_sound_manager_kill();
+	// TODO test
+	engine_audio_manager_play_sound( sound_type_13 );
 	count = 0;
 	flag = 1;
 }
