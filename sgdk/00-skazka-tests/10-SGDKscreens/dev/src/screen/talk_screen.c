@@ -10,7 +10,6 @@
 #include "locale_manager.h"
 #include "player_manager.h"
 #include "random_manager.h"
-//#include "select_manager.h"
 #include "timer_manager.h"
 #include "text_manager.h"
 #include "fixedbank.h"
@@ -37,6 +36,37 @@ void screen_talk_screen_load()
 
 void screen_talk_screen_update( unsigned char *screen_type )
 {
+	struct_hack_object *ho = &global_hack_object;
+	unsigned char input1;
+	unsigned char input2;
+
+	if( engine_audio_manager_is_playing() )
+	{
+		*screen_type = screen_type_talk;
+		return;
+	}
+
+	input1 = engine_input_manager_hold_buttonA();
+	if( input1 )
+	{
+		*screen_type = screen_type_stats;
+		return;
+	}
+
+	input2 = engine_input_manager_hold_buttonB();
+	if( input2 )
+	{
+		if( ho->hack_talker )
+		{
+			display_msg();
+		}
+		else
+		{
+			*screen_type = screen_type_stats;
+			return;
+		}
+	}
+
 	*screen_type = screen_type_talk;
 }
 
