@@ -8,7 +8,6 @@
 #include "global_manager.h"
 #include "graphics_manager.h"
 #include "hack_manager.h"
-#include "input_manager.h"
 #include "locale_manager.h"
 #include "player_manager.h"
 #include "random_manager.h"
@@ -86,11 +85,9 @@ void screen_boss_screen_load()
 
 void screen_boss_screen_update( unsigned char *screen_type )
 {
-	struct_player_object *po = &global_player_object;
 	struct_hack_object *ho = &global_hack_object;
 	unsigned char selection;
 	unsigned char random;
-	//unsigned char input;
 	unsigned char idx;
 	unsigned char row;
 
@@ -237,7 +234,7 @@ static void boss_laugh( unsigned char selection )
 		selection += 1;
 	}
 
-	engine_font_manager_draw_text( ( unsigned char* ) laugh_texts[ selection ], LEFT_X + 22, TOP_Y + 12 );
+	engine_font_manager_draw_text( ( char* ) laugh_texts[ selection ], LEFT_X + 22, TOP_Y + 12 );
 	if( 1 == selection )
 	{
 		engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 29, TOP_Y + 12 );
