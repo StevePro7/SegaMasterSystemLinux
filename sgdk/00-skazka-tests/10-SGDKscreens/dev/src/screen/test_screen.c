@@ -1,14 +1,13 @@
 #include "test_screen.h"
+#include "audio_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
-//#include "graphics_manager.h"
-#include "audio_manager.h"
 
 void screen_test_screen_load()
 {
 	engine_font_manager_draw_text( "TEST SCREEN!!", 10, 2 );
-	//engine_audio_manager_play_sound( 10 );
-	engine_music_manager_beat();
+	engine_audio_manager_play_sound( sound_type_10 );
+	//engine_music_manager_beat();
 }
 
 void screen_test_screen_update( unsigned char *screen_type )
