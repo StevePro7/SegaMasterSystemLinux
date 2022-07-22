@@ -17,7 +17,7 @@ void engine_game_manager_init()
 	
 	// TODO revert!
 	engine_game_manager_flash_on();
-	engine_game_manager_flash_off();	// TODO delete this line!
+	//engine_game_manager_flash_off();	// TODO delete this line!
 	// TODO revert!
 
 	engine_game_manager_difficulty( diff_type_easy );
