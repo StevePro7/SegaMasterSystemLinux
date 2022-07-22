@@ -21,6 +21,8 @@ static unsigned char select_type;
 
 void screen_diff_screen_load()
 {
+	select_type = select_type_diff;
+
 	engine_graphics_manager_draw_border();
 	engine_graphics_manager_clear_part();
 
