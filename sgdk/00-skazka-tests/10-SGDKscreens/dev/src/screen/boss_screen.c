@@ -33,7 +33,7 @@ static unsigned char first_time;
 
 static void boss_init( unsigned char *p_weapon, unsigned char *p_armor );
 static void boss_stats( unsigned char *p_weapon, unsigned char *p_armor );
-//static void boss_laugh( unsigned char selection );
+static void boss_laugh( unsigned char selection );
 
 unsigned char beg_boss_hit[ 2 ] = { 2, 4 };
 
@@ -88,8 +88,8 @@ void screen_boss_screen_update( unsigned char *screen_type )
 {
 	struct_player_object *po = &global_player_object;
 	struct_hack_object *ho = &global_hack_object;
-	//unsigned char selection;
-	//unsigned char random;
+	unsigned char selection;
+	unsigned char random;
 	//unsigned char input;
 	unsigned char idx;
 	unsigned char row;
@@ -127,6 +127,85 @@ void screen_boss_screen_update( unsigned char *screen_type )
 		engine_select_manager_load( select_type, LEFT_X + 5, TOP_Y + 18, 2 );
 	}
 
+	selection = 0;
+	if( scene_type_select == event_stage )
+	{
+		selection = engine_select_manager_update( select_type );
+		if( NO_SELECTION == selection )
+		{
+			*screen_type = screen_type_boss;
+			return;
+		}
+
+		event_stage = scene_type_decide;
+	}
+
+	if( scene_type_decide == event_stage )
+	{
+		if( boss_type_beg == selection )
+		{
+			// If not invincible.
+			if( !ho->hack_nodead )
+			{
+				// Subtract HP if you beg.
+				engine_player_manager_hit( beg_boss_val );
+				if( engine_player_manager_dead() )
+				{
+					// Check if player has extra life!
+					if( engine_player_manager_life() )
+					{
+						*screen_type = screen_type_relive;
+						return;
+					}
+
+					*screen_type = screen_type_over;
+					return;
+				}
+			}
+		}
+		if( boss_type_battle == selection )
+		{
+			random = engine_random_manager_next();
+			engine_fight_manager_player_to_boss( &enemys_damage, random, player_weapon );
+
+			random = engine_random_manager_next();
+			engine_fight_manager_boss_to_player( &player_damage, random );
+
+			// If both you and boss have 0 HP then you get game over first!
+			engine_player_manager_armor( player_armor );
+			engine_player_manager_hit( player_damage );
+
+			if( engine_player_manager_dead() )
+			{
+				// Check if player has extra life!
+				if( engine_player_manager_life() )
+				{
+					*screen_type = screen_type_relive;
+					return;
+				}
+
+				*screen_type = screen_type_over;
+				return;
+			}
+
+			engine_enemy_manager_hit( enemys_damage );
+			if( engine_enemy_manager_dead() )
+			{
+				engine_enemy_manager_hplo();
+				*screen_type = screen_type_kill;
+				return;
+			}
+		}
+
+		// Display updated HP after checking deaths.
+		engine_player_manager_hplo();
+		engine_enemy_manager_hplo();
+
+		boss_laugh( selection );
+		engine_sound_manager_fight();
+		event_stage = scene_type_select;
+	}
+
 	*screen_type = screen_type_boss;
 }
 
@@ -142,25 +221,25 @@ static void boss_init( unsigned char *p_weapon, unsigned char *p_armor )
 static void boss_stats( unsigned char *p_weapon, unsigned char *p_armor )
 {
 	struct_player_object *po = &global_player_object;
-	if( po->xp > 60 )
+	if( po->xp > 60 )	// TODO global mgr
 	{
 		*p_weapon += 1;
 		*p_armor += 1;
 	}
 }
 
-//static void boss_laugh( unsigned char selection )
-//{
-//	devkit_SMS_mapROMBank( FIXED_BANK );
-//	if( boss_type_battle == selection )
-//	{
-//		selection = rand() % 2;
-//		selection += 1;
-//	}
-//
-//	engine_font_manager_draw_text( ( unsigned char* ) laugh_texts[ selection ], LEFT_X + 22, TOP_Y + 12 );
-//	if( 1 == selection )
-//	{
-//		engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 29, TOP_Y + 12 );
-//	}
-//}
+static void boss_laugh( unsigned char selection )
+{
+	if( boss_type_battle == selection )
+	{
+		engine_random_manager_data( 2 );	// TODO global mgr
+		//selection = rand() % 2;
+		selection += 1;
+	}
+
+	engine_font_manager_draw_text( ( unsigned char* ) laugh_texts[ selection ], LEFT_X + 22, TOP_Y + 12 );
+	if( 1 == selection )
+	{
+		engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 29, TOP_Y + 12 );
+	}
+}
