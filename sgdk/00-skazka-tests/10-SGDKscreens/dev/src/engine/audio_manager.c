@@ -104,6 +104,10 @@ void engine_music_manager_intro()
 {
 	play_music( music_intro );
 }
+void engine_music_manager_boss()
+{
+	play_music( music_boss );
+}
 void engine_music_manager_over()
 {
 	play_music( music_over );

@@ -22,14 +22,14 @@
 #include <genesis.h>
 #endif
 
-//static unsigned char select_type;
+static unsigned char select_type;
 static unsigned char event_stage;
 static unsigned char enemys_damage;
 static unsigned char player_damage;
 static unsigned char player_weapon;
 static unsigned char player_armor;
 static unsigned char beg_boss_val;
-//static unsigned char first_time;
+static unsigned char first_time;
 
 static void boss_init( unsigned char *p_weapon, unsigned char *p_armor );
 static void boss_stats( unsigned char *p_weapon, unsigned char *p_armor );
@@ -43,7 +43,7 @@ void screen_boss_screen_load()
 	unsigned char row;
 	unsigned char idx;
 
-	//select_type = select_type_boss;
+	select_type = select_type_boss;
 	//row = 1;		//TODO delete
 
 	engine_graphics_manager_draw_border();
@@ -81,11 +81,52 @@ void screen_boss_screen_load()
 	}
 
 	beg_boss_val = beg_boss_hit[ go->difficulty ];
-	//first_time = 1;
+	first_time = 1;
 }
 
 void screen_boss_screen_update( unsigned char *screen_type )
 {
+	struct_player_object *po = &global_player_object;
+	struct_hack_object *ho = &global_hack_object;
+	//unsigned char selection;
+	//unsigned char random;
+	//unsigned char input;
+	unsigned char idx;
+	unsigned char row;
+
+	if( first_time )
+	{
+		first_time = 0;
+
+		// Play boss music.
+		engine_music_manager_boss();
+
+		// Erase wide text.
+		engine_font_manager_draw_text( LOCALE_30_SPCS, LEFT_X + 1, TOP_Y + 19 );
+		engine_font_manager_draw_text( LOCALE_30_SPCS, LEFT_X + 1, TOP_Y + 20 );
+
+		row = 18;
+		for( idx = 0; idx < 2; idx++ )
+		{
+			engine_font_manager_draw_text( ( char* ) boss_texts[ idx ], LEFT_X + 8, TOP_Y + row );
+			row++;
+		}
+		engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 13, TOP_Y + 19 );
+		engine_font_manager_draw_punc( LOCALE_POINT, LEFT_X + 14, TOP_Y + 19 );
+
+		// Print fight text and reset selection.
+		engine_font_manager_draw_text( LOCALE_FIGHT_MSG1, LEFT_X + 2, TOP_Y + 21 );
+		engine_font_manager_draw_text( LOCALE_BOSSX_MSG2, LEFT_X + 16, TOP_Y + 21 );
+		engine_font_manager_draw_punc( LOCALE_HYPHEN, LEFT_X + 10, TOP_Y + 21 );
+		engine_font_manager_draw_punc( LOCALE_HYPHEN, LEFT_X + 26, TOP_Y + 21 );
+		engine_font_manager_draw_punc( LOCALE_QUOTE, LEFT_X + 23, TOP_Y + 21 );
+
+		engine_player_manager_hplo();
+		engine_enemy_manager_hplo();
+
+		engine_select_manager_load( select_type, LEFT_X + 5, TOP_Y + 18, 2 );
+	}
+
 	*screen_type = screen_type_boss;
 }
 
