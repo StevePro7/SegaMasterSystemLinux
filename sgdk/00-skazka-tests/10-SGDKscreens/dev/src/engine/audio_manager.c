@@ -49,10 +49,10 @@ void engine_audio_manager_play_music( unsigned char index )
 	play_music( index );
 }
 
+// TODO test fight
 void engine_sound_manager_fight()
 {
 	struct_hack_object *ho = &global_hack_object;
-	//unsigned char index = rand() % 5;
 	unsigned char index = 0;
 
 	if( !ho->hack_sounds )
@@ -60,41 +60,10 @@ void engine_sound_manager_fight()
 		return;
 	}
 
-	// TODO test
 	index = engine_random_manager_data( HLF_RANDOM );
-	//engine_sound_manager_play( index );
 	play_sound( index );
 }
-/*
-void engine_sound_manager_kill()
-{
-	//struct_hack_object *ho = &global_hack_object;
-	//if( !ho->hack_sounds )
-	//{
-	//	return;
-	//}
 
-	//devkit_PSGSFXPlay( ( void * ) sfx_death_psg, devkit_SFX_CHANNEL2() );
-}
-
-void engine_music_manager_play( unsigned char index )
-{
-	//struct_hack_object *ho = &global_hack_object;
-	//const unsigned char *data;
-	//unsigned char bank;
-
-	//data = music_sample_data[ index ];
-	//bank = music_sample_bank[ index ];
-
-	//if( !ho->hack_musics )
-	//{
-	//	return;
-	//}
-
-	//devkit_SMS_mapROMBank( bank );
-	//engine_sample_manager_play( data );
-}
-*/
 void engine_music_manager_beat()
 {
 	play_sound( sound_type_11 );
