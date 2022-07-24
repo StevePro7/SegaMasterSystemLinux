@@ -39,9 +39,9 @@
 
 #define FONT_TILES				0		// 1  is graphics tile
 #define ITEMS_TILES				288
-#define PLAYER_TILES			128
-#define ENEMY_TILES				160
-#define LESHY_TILES				256
+#define PLAYER_TILES			320
+#define ENEMY_TILES				352
+#define LESHY_TILES				416
 
 #define MAX_MUSIC				3
 #define MAX_SOUND				14
