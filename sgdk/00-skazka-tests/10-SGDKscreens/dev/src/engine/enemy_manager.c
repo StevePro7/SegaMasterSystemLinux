@@ -119,16 +119,8 @@ void engine_enemy_manager_hit( char hp )
 	}
 }
 
-// TODO test
-unsigned char engine_enemy_manager_dead()
-{
-	struct_enemy_object *eo = &global_enemy_object;
-	return eo->hplo <= 0;
-}
-
 void engine_enemy_manager_draw( unsigned char enemy, unsigned char x, unsigned char y )
 {
-	// TODO regression test enemies
 	if( enemy_type_leshy != enemy )
 	{
 		draw_enemy( enemy, x, y );
@@ -137,6 +129,12 @@ void engine_enemy_manager_draw( unsigned char enemy, unsigned char x, unsigned c
 	{
 		draw_leshy( x, y );
 	}
+}
+
+unsigned char engine_enemy_manager_dead()
+{
+	struct_enemy_object *eo = &global_enemy_object;
+	return eo->hplo <= 0;
 }
 
 static void draw_enemy( unsigned char enemy, unsigned char x, unsigned char y )

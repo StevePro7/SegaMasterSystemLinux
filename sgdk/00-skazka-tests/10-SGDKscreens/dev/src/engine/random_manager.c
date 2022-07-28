@@ -44,7 +44,5 @@ unsigned char engine_random_manager_diff( unsigned char level )
 	value = random() % HLF_RANDOM;
 #endif
 
-	// TODO test
-	//return level == 0 ? 0 : 1;
 	return level <= value;
 }

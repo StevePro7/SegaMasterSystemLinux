@@ -12,7 +12,7 @@ void engine_target_manager_load( unsigned char index );
 void engine_enemy_manager_text();
 void engine_enemy_manager_hplo();
 void engine_enemy_manager_hit( char hp );
-unsigned char engine_enemy_manager_dead();
 void engine_enemy_manager_draw( unsigned char enemy, unsigned char x, unsigned char y );
+unsigned char engine_enemy_manager_dead();
 
 #endif//_ENEMY_MANAGER_H_

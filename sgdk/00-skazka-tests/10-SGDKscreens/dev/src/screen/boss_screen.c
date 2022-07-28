@@ -43,7 +43,6 @@ void screen_boss_screen_load()
 	unsigned char idx;
 
 	select_type = select_type_boss;
-	//row = 1;		//TODO delete
 
 	engine_graphics_manager_draw_border();
 	engine_graphics_manager_clear_part();
@@ -218,7 +217,7 @@ static void boss_init( unsigned char *p_weapon, unsigned char *p_armor )
 static void boss_stats( unsigned char *p_weapon, unsigned char *p_armor )
 {
 	struct_player_object *po = &global_player_object;
-	if( po->xp > 60 )	// TODO global mgr
+	if( po->xp > 60 )
 	{
 		*p_weapon += 1;
 		*p_armor += 1;
@@ -229,8 +228,8 @@ static void boss_laugh( unsigned char selection )
 {
 	if( boss_type_battle == selection )
 	{
-		engine_random_manager_data( 2 );	// TODO global mgr
-		//selection = rand() % 2;
+		// Flip coin 50/50 choose.
+		engine_random_manager_data( 2 );
 		selection += 1;
 	}
 

@@ -49,7 +49,6 @@ void engine_audio_manager_play_music( unsigned char index )
 	play_music( index );
 }
 
-// TODO test fight
 void engine_sound_manager_fight()
 {
 	struct_hack_object *ho = &global_hack_object;

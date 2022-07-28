@@ -1,5 +1,4 @@
 #include "graphics_manager.h"
-//#include "font_manager.h"
 #include "game_manager.h"
 #include "global_manager.h"
 #include "text_manager.h"
@@ -27,7 +26,7 @@ void engine_graphics_manager_init()
 	u16 *pal1 = NULL;
 	u16 *pal2 = NULL;
 
-	// get the palette data of moon
+	// Get the palette data from gfx.
 #ifndef _CONSOLE
 	pal0 = gfx_palette0.palette->data;
 	pal1 = gfx_palette1.palette->data;

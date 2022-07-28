@@ -14,11 +14,7 @@ void engine_game_manager_init()
 	engine_game_manager_lines_on();
 	engine_game_manager_intro_on();
 	engine_game_manager_music_on();
-	
-	// TODO revert!
 	engine_game_manager_flash_on();
-	//engine_game_manager_flash_off();	// TODO delete this line!
-	// TODO revert!
 
 	engine_game_manager_difficulty( diff_type_easy );
 }
@@ -75,7 +71,6 @@ void engine_game_manager_difficulty( unsigned char difficulty )
 // Common game rendering functions.
 void engine_game_manager_print_stats()
 {
-	// TODO test
 	engine_player_manager_stats();
 	engine_font_manager_draw_text( LOCALE_STATISTICS, LEFT_X + 2, TOP_Y + 6 );
 	engine_font_manager_draw_text( LOCALE_HP, LEFT_X + 2, TOP_Y + 7 );

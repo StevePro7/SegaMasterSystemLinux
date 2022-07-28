@@ -81,9 +81,7 @@ void engine_player_manager_stats()
 	engine_font_manager_draw_data( po->max_xp, LEFT_X + 9, TOP_Y + 8 );
 	engine_font_manager_draw_punc( LOCALE_SLASH, LEFT_X + 7, TOP_Y + 8 );
 	engine_font_manager_draw_data( po->xp, LEFT_X + 6, TOP_Y + 8 );
-
 	engine_font_manager_draw_data( po->gold, LEFT_X + 9, TOP_Y + 9 );
-	
 
 	// Print inventory.
 	engine_font_manager_draw_text( ( char * ) weapon_texts[ po->weapon ], LEFT_X + 2, TOP_Y + 11 );
@@ -194,13 +192,12 @@ void engine_player_manager_armor( unsigned char armor )
 	po->hp += armor;
 }
 
-// TODO test
 unsigned char engine_player_manager_dead()
 {
 	struct_player_object *po = &global_player_object;
 	return po->hp <= 0;
 }
-// TODO test
+
 unsigned char engine_player_manager_life()
 {
 	struct_player_object *po = &global_player_object;
