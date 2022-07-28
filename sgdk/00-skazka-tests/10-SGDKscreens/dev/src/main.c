@@ -6,6 +6,7 @@ int main()
 
 	open_screen_type = screen_type_splash;
 	//open_screen_type = screen_type_test;
+	open_screen_type = screen_type_title;
 
 	// Initialize player first!
 	engine_player_manager_init();

@@ -16,7 +16,6 @@
 
 static unsigned int palette;
 static unsigned char count;
-static unsigned char  flag;		// TODO
 
 void screen_kill_screen_load()
 {
@@ -25,7 +24,6 @@ void screen_kill_screen_load()
 	engine_timer_manager_load( KILL_SCREEN_DELAY );
 	engine_audio_manager_play_sound( sound_type_13 );
 	count = 0;
-	flag = 1;
 }
 
 void screen_kill_screen_update( unsigned char *screen_type )
@@ -38,7 +36,6 @@ void screen_kill_screen_update( unsigned char *screen_type )
 		count++;
 		if( count < KILL_FLASH_COUNT )
 		{
-			flag = 1 - flag;
 			palette = 1 - palette;
 			engine_graphics_manager_draw_koschey( LEFT_X + 10, TOP_Y + 2, palette );
 		}
