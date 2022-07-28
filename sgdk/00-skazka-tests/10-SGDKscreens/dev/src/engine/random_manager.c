@@ -36,7 +36,6 @@ unsigned char engine_random_manager_data( unsigned char max )
 
 unsigned char engine_random_manager_diff( unsigned char level )
 {
-	
 	unsigned char value = 0;
 #ifdef _CONSOLE
 	value = rand() % HLF_RANDOM;
