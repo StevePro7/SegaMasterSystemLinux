@@ -3,7 +3,6 @@ Skazka game for the SMS Power! 2022 Competition.
 
 ![Skazka](https://github.com/StevePro7/SegaMasterSystemLinux/tree/main/Games/skazka/_alexGRaphics/newTests/10-screens/img/CoverImage.png)
 
-
 ###### RELEASE
 Sunday, 27th March 2022
 
