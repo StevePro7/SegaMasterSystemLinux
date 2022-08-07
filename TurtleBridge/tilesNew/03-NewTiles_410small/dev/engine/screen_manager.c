@@ -14,6 +14,7 @@ static unsigned char x = 32;
 static unsigned char y = 128-64;// 64;
 
 static void bonus_level();
+static void texts_level();
 static unsigned char dx;
 static unsigned char count;
 static unsigned char tiles;
@@ -24,7 +25,7 @@ static unsigned char frames[] = { 0, 1, 2, 1 };
 void engine_screen_manager_init()
 {
 	engine_font_manager_draw_text( "STEVEPRO STUDIOS", 4, 4 );
-//	bonus_level();
+	texts_level();
 
 	count = 0;
 	tiles = 0;
@@ -66,6 +67,9 @@ void engine_screen_manager_update()
 	}
 	
 	engine_sprite_manager_draw( x + dx, y, 0 + tiles );
+
+	engine_sprite_manager_draw( 128, 64, 17 );
+	engine_sprite_manager_draw( 160, 96, 18 );
 }
 
 void engine_screen_manager_updateX()
@@ -113,6 +117,16 @@ void engine_screen_manager_updateX()
 	////engine_sprite_manager_fish( x + 96, y );
 
 
+}
+
+static void texts_level()
+{
+	engine_font_manager_draw_text( "1234", 4, 7 );
+
+	engine_font_manager_draw_text( "1", 3, 8 );
+	engine_font_manager_draw_text( "2", 3, 9 );
+	engine_font_manager_draw_text( "3", 3, 10 );
+	engine_font_manager_draw_text( "4", 3, 11 );
 }
 
 static void bonus_level()

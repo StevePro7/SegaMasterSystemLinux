@@ -12,5 +12,6 @@ void engine_tile_manager_draw_groundX( unsigned char type, unsigned char x, unsi
 
 void engine_sprite_manager_draw( unsigned char x, unsigned char y, unsigned int tile );
 void engine_sprite_manager_fish( unsigned char x, unsigned char y );
+//void engine_sprite_manager_octopus( unsigned char x, unsigned char y );
 
 #endif//_SPRITE_MANAGER_H_

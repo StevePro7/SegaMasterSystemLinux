@@ -151,7 +151,7 @@ void engine_tile_manager_draw_groundX( unsigned char type, unsigned char x, unsi
 // zoom sprites
 void engine_sprite_manager_draw( unsigned char x, unsigned char y, unsigned int tile )
 {
-	const unsigned char size = 1;
+	const unsigned char size = 2;
 	tile = SPRITE_TILES + tile * 4;
 
 	devkit_SMS_addSprite( x + size * 0, y + size * 0, tile + 0 );
@@ -167,3 +167,11 @@ void engine_sprite_manager_fish( unsigned char x, unsigned char y )
 	tile = 21; engine_sprite_manager_draw( x + 32, y, tile );
 	tile = 22; engine_sprite_manager_draw( x + 64, y, tile );
 }
+
+//void engine_sprite_manager_octopus( unsigned char x, unsigned char y )
+//{
+//	unsigned int tile;
+//	tile = 20; engine_sprite_manager_draw( x + 0, y, tile );
+//	tile = 21; engine_sprite_manager_draw( x + 32, y, tile );
+//	tile = 22; engine_sprite_manager_draw( x + 64, y, tile );
+//}
