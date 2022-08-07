@@ -67,10 +67,12 @@ void engine_screen_manager_update()
 	}
 	
 	engine_sprite_manager_draw( x + dx, y, 0 + tiles );
+	engine_sprite_manager_draw2( 224, 64, 18 );
+	engine_sprite_manager_draw2( 192, 64, 18 );
 
-	engine_sprite_manager_draw( 128, 64, 17 );
-	engine_sprite_manager_draw( 0, 64, 18 );
-	engine_sprite_manager_draw( 0, 64, 18 );
+	engine_sprite_manager_draw( 128, 112, 17 );
+	engine_sprite_manager_draw2( 224, 112, 0 );
+	engine_sprite_manager_draw2( 192, 112, 0 );
 }
 
 void engine_screen_manager_updateX()
