@@ -68,8 +68,8 @@ void engine_screen_manager_update()
 	
 	engine_sprite_manager_draw( x + dx, y, 0 + tiles );
 
-	engine_sprite_manager_draw( 128, 64, 17 );
-	engine_sprite_manager_draw( 192, 80, 18 );
+	//engine_sprite_manager_draw( 128, 64, 17 );
+	//engine_sprite_manager_draw( 192, 80, 18 );
 }
 
 void engine_screen_manager_updateX()
