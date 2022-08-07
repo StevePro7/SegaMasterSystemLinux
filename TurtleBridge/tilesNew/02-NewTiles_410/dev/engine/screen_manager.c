@@ -9,7 +9,7 @@
 #include "tile_manager.h"
 #include <stdbool.h>
 
-#define MAX_COUNT	20
+#define MAX_COUNT	25
 static unsigned char x = 32;
 static unsigned char y = 128-64;// 64;
 
@@ -55,7 +55,7 @@ void engine_screen_manager_update()
 			dx++;
 			count = 0;
 			frame++;
-			if( frame > 2 )
+			if( frame > 3 )
 			{
 				frame = 0;
 				walking = false;
