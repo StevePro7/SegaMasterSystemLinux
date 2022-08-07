@@ -9,7 +9,8 @@ void main( void )
 	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_NORMAL() );
 	devkit_SMS_useFirstHalfTilesforSprites( false );
 	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );
-	//devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_ZOOMSPRITES() );
+
+	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_ZOOMSPRITES() | devkit_VDPFEATURE_USETALLSPRITES() );
 
 	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_TALL_ZOOMED() );
 
