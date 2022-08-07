@@ -1,0 +1,42 @@
+;!FILE audio_manager.asm
+XL3
+H 9 areas 14 global symbols
+M audio_manager
+O -mz80
+S _mus_game_psg Ref000000
+S .__.ABS. Def000000
+S _devkit_PSGPlayNoRepeat Ref000000
+A _CODE size A flags 0 addr 0
+S A$audio_manager$57 Def000000
+S A$audio_manager$85 Def000009
+S A$audio_manager$58 Def000003
+S A$audio_manager$68 Def000008
+S A$audio_manager$59 Def000004
+S C$audio_manager.c$8$0_0$40 Def000000
+S G$engine_music_manager_play$0$0 Def000000
+S G$engine_sound_manager_play$0$0 Def000009
+S _engine_music_manager_play Def000000
+S _engine_sound_manager_play Def000009
+S XG$engine_music_manager_play$0$0 Def000008
+S C$audio_manager.c$10$1_0$40 Def000000
+S C$audio_manager.c$11$1_0$40 Def000008
+S XG$engine_sound_manager_play$0$0 Def000009
+S C$audio_manager.c$13$1_0$42 Def000009
+S A$audio_manager$60 Def000007
+S C$audio_manager.c$15$1_0$42 Def000009
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 21 00 00 E5 CD 00 00 F1 C9
+R 00 00 00 00 02 04 00 00 02 08 02 00
+T 09 00 00
+R 00 00 00 00
+T 09 00 00 C9
+R 00 00 00 00
