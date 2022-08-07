@@ -69,7 +69,7 @@ void engine_screen_manager_update()
 	engine_sprite_manager_draw( x + dx, y, 0 + tiles );
 
 	engine_sprite_manager_draw( 128, 64, 17 );
-	engine_sprite_manager_draw( 160, 96, 18 );
+	engine_sprite_manager_draw( 192, 80, 18 );
 }
 
 void engine_screen_manager_updateX()
@@ -122,11 +122,11 @@ void engine_screen_manager_updateX()
 static void texts_level()
 {
 	engine_font_manager_draw_text( "1234", 4, 7 );
-
-	engine_font_manager_draw_text( "1", 3, 8 );
-	engine_font_manager_draw_text( "2", 3, 9 );
-	engine_font_manager_draw_text( "3", 3, 10 );
-	engine_font_manager_draw_text( "4", 3, 11 );
+	engine_font_manager_draw_text( "1234", 16, 7 );
+	engine_font_manager_draw_text( "1", 3, 8 );	engine_font_manager_draw_text( "1", 15, 8 );
+	engine_font_manager_draw_text( "2", 3, 9 ); engine_font_manager_draw_text( "2", 15, 9 );
+	engine_font_manager_draw_text( "3", 3, 10 ); engine_font_manager_draw_text( "3", 15, 10 );
+	engine_font_manager_draw_text( "4", 3, 11 ); engine_font_manager_draw_text( "4", 15, 11 );
 }
 
 static void bonus_level()
