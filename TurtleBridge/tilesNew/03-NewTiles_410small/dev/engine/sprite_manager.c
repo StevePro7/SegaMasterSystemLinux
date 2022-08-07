@@ -151,7 +151,7 @@ void engine_tile_manager_draw_groundX( unsigned char type, unsigned char x, unsi
 // zoom sprites
 void engine_sprite_manager_draw( unsigned char x, unsigned char y, unsigned int tile )
 {
-	const unsigned char size = 2;
+	const unsigned char size = 1;
 	tile = SPRITE_TILES + tile * 4;
 
 	devkit_SMS_addSprite( x + size * 0, y + size * 0, tile + 0 );

@@ -9,6 +9,7 @@
 #include "tile_manager.h"
 #include <stdbool.h>
 
+#define MAX_COUNT	20
 static unsigned char x = 32;
 static unsigned char y = 128-64;// 64;
 
@@ -49,7 +50,7 @@ void engine_screen_manager_update()
 	else
 	{
 		count++;
-		if( count >= 10 )
+		if( count >= MAX_COUNT )
 		{
 			dx++;
 			count = 0;
