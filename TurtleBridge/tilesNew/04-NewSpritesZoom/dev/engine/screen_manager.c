@@ -49,34 +49,37 @@ void engine_screen_manager_update()
 		y += 1;
 	}
 
-	input = engine_input_manager_move_left();
+	input = engine_input_manager_move_fire1();
 	if( input )
 	{
 		y2 -= 1;
 	}
-	input = engine_input_manager_move_right();
+	input = engine_input_manager_move_fire2();
 	if( input )
 	{
 		y2 += 1;
 	}
 
 	engine_sprite_manager_draw( x + dx, y, 1 + tiles );
-	engine_sprite_manager_draw( 192, y, 0 + tiles );
-	engine_sprite_manager_draw( 224, y, 0 + tiles );
+	engine_sprite_manager_draw( 0, y, 0 + tiles );
+	engine_sprite_manager_draw( 0, y, 0 + tiles );
 
-	input = engine_input_manager_move_fire1();
-	if( input )
+	//input = engine_input_manager_move_fire1();
+	//if( input )
 	{
 		engine_sprite_manager_draw( 128, y2, 8 + tiles );
-		engine_sprite_manager_draw( 192, y2, 0 + tiles );
-		engine_sprite_manager_draw( 224, y2, 0 + tiles );
+	//	engine_sprite_manager_draw( 192, y2, 0 + tiles );
+	//	engine_sprite_manager_draw( 224, y2, 0 + tiles );
 	}
-	input = engine_input_manager_move_fire2();
-	if( input )
+	//input = engine_input_manager_move_fire2();
+	//if( input )
 	{
-		engine_sprite_manager_draw( 64, y2, 8 + tiles );
-		engine_sprite_manager_draw( 0, y2, 0 + tiles );
-		engine_sprite_manager_draw( 16, y2, 0 + tiles );
+	//	engine_sprite_manager_draw( 0, y2, 8 + tiles );
+		if( y != y2 )
+		{
+			engine_sprite_manager_draw( 0, y2, 0 + tiles );
+			engine_sprite_manager_draw( 0, y2, 0 + tiles );
+		}
 	}
 }
 
