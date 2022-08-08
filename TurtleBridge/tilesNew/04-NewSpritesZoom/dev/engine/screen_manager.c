@@ -24,7 +24,7 @@ static unsigned char frames[] = { 0, 1, 2, 1 };
 
 void engine_screen_manager_init()
 {
-	engine_font_manager_draw_text( "STEVEPRO STUDIOS !!", 4, 4 );
+	//engine_font_manager_draw_text( "STEVEPRO STUDIOS ??", 4, 4 );
 	texts_level();
 
 	count = 0;
@@ -67,29 +67,37 @@ void engine_screen_manager_update()
 	engine_sprite_manager_draw( 0, y, 0 + tiles );
 	engine_sprite_manager_draw( 0, y, 0 + tiles );
 
-	//input = engine_input_manager_move_fire1();
-	//if( input )
 	{
 		engine_sprite_manager_draw( 128, y2, 8 + tiles );
-	//	engine_sprite_manager_draw( 192, y2, 0 + tiles );
-	//	engine_sprite_manager_draw( 224, y2, 0 + tiles );
+		//	engine_sprite_manager_draw( 192, y2, 0 + tiles );
+		//	engine_sprite_manager_draw( 224, y2, 0 + tiles );
 	}
 	//input = engine_input_manager_move_fire2();
 	//if( input )
 	{
-	//	engine_sprite_manager_draw( 0, y2, 8 + tiles );
+		//	engine_sprite_manager_draw( 0, y2, 8 + tiles );
+
+			
+	}
+
+	if( y + 32 > y2 && y < y2 + 32 )
+	{
+		engine_font_manager_draw_text( "OVERLAP2", 10, 3 );
+
+		engine_sprite_manager_draw( 192, y2, 0 + tiles );
+		engine_sprite_manager_draw( 224, y2, 0 + tiles );
+	}
+	else
+	{
+		engine_font_manager_draw_text( "        ", 10, 3 );
 
 		engine_sprite_manager_draw( 0, y2, 0 + tiles );
-		if( y != y2 )
-		{
-			engine_sprite_manager_draw( 0, y2, 0 + tiles );
-		}
+		engine_sprite_manager_draw( 0, y2, 0 + tiles );
 	}
 
 	engine_font_manager_draw_data( y, 14, 2 );
 	engine_font_manager_draw_data( y2, 24, 2 );
 }
-
 
 static void texts_level()
 {
