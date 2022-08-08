@@ -33,7 +33,8 @@ void engine_screen_manager_init()
 	dx = 0;
 	walking = false;
 
-	engine_font_manager_draw_data( x, 14, 2 );
+	engine_font_manager_draw_data( y, 14, 2 );
+	engine_font_manager_draw_data( y2, 24, 2 );
 }
 
 void engine_screen_manager_update()
@@ -43,12 +44,12 @@ void engine_screen_manager_update()
 	input = engine_input_manager_move_up();
 	if( input )
 	{
-		x -= 1;
+		y -= 1;
 	}
 	input = engine_input_manager_move_down();
 	if( input )
 	{
-		x += 1;
+		y += 1;
 	}
 
 	input = engine_input_manager_move_fire1();
@@ -77,14 +78,16 @@ void engine_screen_manager_update()
 	//if( input )
 	{
 	//	engine_sprite_manager_draw( 0, y2, 8 + tiles );
+
+		engine_sprite_manager_draw( 0, y2, 0 + tiles );
 		if( y != y2 )
 		{
-			engine_sprite_manager_draw( 0, y2, 0 + tiles );
 			engine_sprite_manager_draw( 0, y2, 0 + tiles );
 		}
 	}
 
-	engine_font_manager_draw_data( x, 14, 2 );
+	engine_font_manager_draw_data( y, 14, 2 );
+	engine_font_manager_draw_data( y2, 24, 2 );
 }
 
 
