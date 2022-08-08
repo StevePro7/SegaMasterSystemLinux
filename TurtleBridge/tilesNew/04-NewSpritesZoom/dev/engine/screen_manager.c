@@ -11,7 +11,7 @@
 
 #define MAX_COUNT	20
 static unsigned char x = 32;
-static unsigned char y = 8 * 8;// 64;
+static unsigned char y = 72;// 8 * 8;// 64;
 static unsigned char y2 = 8 * 8;// 64;
 
 static void texts_level();
@@ -74,7 +74,10 @@ void engine_screen_manager_update()
 
 	if( y + 32 > y2 && y < y2 + 32 )
 	{
-		engine_font_manager_draw_text( "OVERLAP3", 10, 3 );
+		engine_font_manager_draw_text( "OVERLAP4", 10, 3 );
+
+		engine_sprite_manager_draw( 192, y- 32, 0 + tiles );
+		engine_sprite_manager_draw( 224, y- 32, 0 + tiles );
 	}
 	else
 	{
