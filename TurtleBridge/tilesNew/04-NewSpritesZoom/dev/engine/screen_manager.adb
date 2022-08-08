@@ -2,16 +2,10 @@ M:screen_manager
 F:G$engine_screen_manager_init$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_screen_manager_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lscreen_manager.engine_screen_manager_update$input$1_0$22({1}SC:U),R,0,0,[a]
-F:G$engine_screen_manager_updateX$0_0$0({2}DF,SV:S),C,0,0,0,0,0
-S:Lscreen_manager.engine_screen_manager_updateX$delta$1_0$28({1}SC:U),R,0,0,[]
-S:Lscreen_manager.engine_screen_manager_updateX$input$1_0$28({1}SC:U),R,0,0,[a]
 F:Fscreen_manager$texts_level$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-F:Fscreen_manager$bonus_level$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lscreen_manager.bonus_level$col$1_0$35({1}SC:U),R,0,0,[b]
-S:Lscreen_manager.bonus_level$max$1_0$35({1}SC:U),R,0,0,[]
-F:Fscreen_manager$bonus_level_org$0_0$0({2}DF,SV:S),C,0,0,0,0,0
 S:Fscreen_manager$x$0_0$0({1}SC:U),E,0,0
 S:Fscreen_manager$y$0_0$0({1}SC:U),E,0,0
+S:Fscreen_manager$y2$0_0$0({1}SC:U),E,0,0
 S:Fscreen_manager$frames$0_0$0({4}DA4d,SC:U),E,0,0
 S:Fscreen_manager$dx$0_0$0({1}SC:U),E,0,0
 S:Fscreen_manager$count$0_0$0({1}SC:U),E,0,0
@@ -57,5 +51,3 @@ S:G$engine_tile_manager_draw_flip$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_turtle$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_sign$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_scroll_test$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_screen_manager_updateX$0_0$0({2}DF,SV:S),C,0,0
-S:Fscreen_manager$bonus_level_org$0_0$0({2}DF,SV:S),C,0,0
