@@ -64,9 +64,20 @@ void engine_screen_manager_update()
 	engine_sprite_manager_draw( 192, y, 0 + tiles );
 	engine_sprite_manager_draw( 224, y, 0 + tiles );
 
-	engine_sprite_manager_draw( 128, y2, 8 + tiles );
-	//engine_sprite_manager_draw( 128, 64, 17 );
-	//engine_sprite_manager_draw( 192, 80, 18 );
+	input = engine_input_manager_move_fire1();
+	if( input )
+	{
+		engine_sprite_manager_draw( 128, y2, 8 + tiles );
+		engine_sprite_manager_draw( 192, y2, 0 + tiles );
+		engine_sprite_manager_draw( 224, y2, 0 + tiles );
+	}
+	input = engine_input_manager_move_fire2();
+	if( input )
+	{
+		engine_sprite_manager_draw( 64, y2, 8 + tiles );
+		engine_sprite_manager_draw( 0, y2, 0 + tiles );
+		engine_sprite_manager_draw( 16, y2, 0 + tiles );
+	}
 }
 
 
