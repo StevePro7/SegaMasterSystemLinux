@@ -63,36 +63,25 @@ void engine_screen_manager_update()
 		y2 += 1;
 	}
 
+	// Draw Mario
 	engine_sprite_manager_draw( x + dx, y, 1 + tiles );
+
+	// Draw octopus
+	engine_sprite_manager_draw( 128, y2, 8 + tiles );
+	
 	engine_sprite_manager_draw( 0, y, 0 + tiles );
 	engine_sprite_manager_draw( 0, y, 0 + tiles );
-
-	{
-		engine_sprite_manager_draw( 128, y2, 8 + tiles );
-		//	engine_sprite_manager_draw( 192, y2, 0 + tiles );
-		//	engine_sprite_manager_draw( 224, y2, 0 + tiles );
-	}
-	//input = engine_input_manager_move_fire2();
-	//if( input )
-	{
-		//	engine_sprite_manager_draw( 0, y2, 8 + tiles );
-
-			
-	}
 
 	if( y + 32 > y2 && y < y2 + 32 )
 	{
-		engine_font_manager_draw_text( "OVERLAP2", 10, 3 );
-
-		engine_sprite_manager_draw( 192, y2, 0 + tiles );
-		engine_sprite_manager_draw( 224, y2, 0 + tiles );
+		engine_font_manager_draw_text( "OVERLAP3", 10, 3 );
 	}
 	else
 	{
 		engine_font_manager_draw_text( "        ", 10, 3 );
 
-		engine_sprite_manager_draw( 0, y2, 0 + tiles );
-		engine_sprite_manager_draw( 0, y2, 0 + tiles );
+		engine_sprite_manager_draw( 192, y2, 0 + tiles );
+		engine_sprite_manager_draw( 224, y2, 0 + tiles );
 	}
 
 	engine_font_manager_draw_data( y, 14, 2 );
