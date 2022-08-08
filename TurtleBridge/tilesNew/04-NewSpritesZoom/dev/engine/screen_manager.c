@@ -12,7 +12,7 @@
 #define MAX_COUNT	20
 static unsigned char x = 32;
 static unsigned char y = 8 * 8;// 64;
-static unsigned char y2 = 18 * 8;// 64;
+static unsigned char y2 = 8 * 8;// 64;
 
 static void texts_level();
 static unsigned char dx;
@@ -32,6 +32,8 @@ void engine_screen_manager_init()
 	frame = 0;
 	dx = 0;
 	walking = false;
+
+	engine_font_manager_draw_data( x, 14, 2 );
 }
 
 void engine_screen_manager_update()
@@ -41,12 +43,12 @@ void engine_screen_manager_update()
 	input = engine_input_manager_move_up();
 	if( input )
 	{
-		y -= 1;
+		x -= 1;
 	}
 	input = engine_input_manager_move_down();
 	if( input )
 	{
-		y += 1;
+		x += 1;
 	}
 
 	input = engine_input_manager_move_fire1();
@@ -81,6 +83,8 @@ void engine_screen_manager_update()
 			engine_sprite_manager_draw( 0, y2, 0 + tiles );
 		}
 	}
+
+	engine_font_manager_draw_data( x, 14, 2 );
 }
 
 
