@@ -11,6 +11,7 @@ void engine_tile_manager_draw_turtleX( unsigned char type, unsigned char offset,
 void engine_tile_manager_draw_groundX( unsigned char type, unsigned char x, unsigned char y, unsigned char beg, unsigned char end );
 
 void engine_sprite_manager_draw( unsigned char x, unsigned char y, unsigned int tile );
+void engine_sprite_manager_draw2( unsigned char x, unsigned char y, unsigned int tile );
 void engine_sprite_manager_fish( unsigned char x, unsigned char y );
 //void engine_sprite_manager_octopus( unsigned char x, unsigned char y );
 
