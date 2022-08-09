@@ -15,7 +15,7 @@ cd gfx
 
 
 cd ..
-"C:\Program Files\SDCC\bin]folder2c.exe" gfx gfx
+"C:\Program Files\SDCC\bin\folder2c.exe" gfx gfx
 
 "C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 gfx.c
 
