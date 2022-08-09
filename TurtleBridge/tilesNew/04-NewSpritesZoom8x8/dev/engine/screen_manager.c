@@ -7,7 +7,8 @@
 #include "input_manager.h"
 #include "sprite_manager.h"
 #include "tile_manager.h"
-#include <stdbool.h>
+//#include <stdbool.h>
+#include "../devkit/_sms_manager.h"
 
 #define MAX_COUNT	20
 static unsigned char x = 32;
@@ -19,7 +20,7 @@ static unsigned char dx;
 static unsigned char count;
 static unsigned char tiles;
 static unsigned char frame;
-static bool walking;
+//static bool walking;
 static unsigned char frames[] = { 0, 1, 2, 1 };
 
 void engine_screen_manager_init()
@@ -41,6 +42,7 @@ void engine_screen_manager_init()
 
 void engine_screen_manager_update()
 {
+	devkit_SMS_addSprite( 96, 96, SPRITE_TILES + 1 );
 	//unsigned char input = 0;
 
 	//input = engine_input_manager_move_left();
