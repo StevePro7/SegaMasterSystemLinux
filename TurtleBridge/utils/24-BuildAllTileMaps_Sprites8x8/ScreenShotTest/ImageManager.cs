@@ -22,10 +22,11 @@ namespace ScreenShotTest
 				"tile",
 				"rght_01",
 				"yellow02",
-				"red02",
-				//"red02",
-				
+				"red04",
+				//"yellow01",
 				//"yellow02",
+				//"red01",
+				//"red02",
 			};
 		}
 		public IDictionary<string, Texture2D> Images { get; private set; }
