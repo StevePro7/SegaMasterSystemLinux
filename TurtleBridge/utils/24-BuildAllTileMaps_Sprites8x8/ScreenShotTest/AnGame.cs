@@ -26,8 +26,8 @@ namespace ScreenShotTest
 		public AnGame()
 		{
 			graphics = new GraphicsDeviceManager(this);
-			graphics.PreferredBackBufferWidth = 16;
-			graphics.PreferredBackBufferHeight = 16;
+			graphics.PreferredBackBufferWidth = 32;
+			graphics.PreferredBackBufferHeight = 8;
 			Content.RootDirectory = "Content";
 		}
 
@@ -61,9 +61,9 @@ namespace ScreenShotTest
 			imageManager = new ImageManager();
 			imageManager.LoadContent(Content);
 
-			int count = imageManager.Images.Count;
-			graphics.PreferredBackBufferHeight = 16 * count;
-			graphics.ApplyChanges();
+//			int count = 1;// imageManager.Images.Count;
+			//graphics.PreferredBackBufferHeight = 16 * count;
+			//graphics.ApplyChanges();
 
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
 			width = pp.BackBufferWidth;
@@ -130,14 +130,14 @@ namespace ScreenShotTest
 
 		private void Draw()
 		{
-			int y = 0;
+			int x = 0;
 			graphics.GraphicsDevice.Clear(Color.Black);
 			spriteBatch.Begin();
 
 			foreach (var image in imageManager.Images)
 			{
-				spriteBatch.Draw(image.Value, new Vector2(0, y), Color.White);
-				y += 16;
+				spriteBatch.Draw(image.Value, new Vector2(x, 0), Color.White);
+				x += 8;
 			}
 
 			spriteBatch.End();
