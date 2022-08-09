@@ -26,6 +26,8 @@ static unsigned char frames[] = { 0, 1, 2, 1 };
 void engine_screen_manager_init()
 {
 	engine_font_manager_draw_text( "ADRIANA IS SICK", 2, 2 );
+
+	engine_tile_manager_seaX( 19 );
 	//engine_font_manager_draw_text( "STEVEPRO STUDIOS ??", 4, 4 );
 	//texts_level();
 
@@ -42,7 +44,12 @@ void engine_screen_manager_init()
 
 void engine_screen_manager_update()
 {
-	devkit_SMS_addSprite( 96, 96, SPRITE_TILES + 1 );
+	//devkit_SMS_addSprite( 96, 96, SPRITE_TILES + 1 );
+
+	devkit_SMS_addSprite( 192, 172, SPRITE_TILES + 1 );
+	devkit_SMS_addSprite( 208, 172, SPRITE_TILES + 1 );
+	devkit_SMS_addSprite( 224, 172, SPRITE_TILES + 1 );
+
 	//unsigned char input = 0;
 
 	//input = engine_input_manager_move_left();
