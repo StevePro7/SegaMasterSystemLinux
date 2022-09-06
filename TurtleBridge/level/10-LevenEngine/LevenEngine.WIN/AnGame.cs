@@ -41,20 +41,13 @@ namespace LevenEngine.WIN
 
 		protected override void Update(GameTime gameTime)
 		{
-			if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-				Exit();
-
-			// TODO: Add your update logic here
-
+			MyGame.Update(gameTime);
 			base.Update(gameTime);
 		}
 
 		protected override void Draw(GameTime gameTime)
 		{
-			GraphicsDevice.Clear(Color.CornflowerBlue);
-
-			// TODO: Add your drawing code here
-
+			MyGame.Draw();
 			base.Draw(gameTime);
 		}
 	}

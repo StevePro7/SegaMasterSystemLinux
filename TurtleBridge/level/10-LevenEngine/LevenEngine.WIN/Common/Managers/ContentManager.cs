@@ -41,19 +41,19 @@ namespace WindowsGame.Common.Managers
 			Assets.EmulogicFont = Engine.Content.Load<SpriteFont>(fonts + FONT_NAME);
 
 			// Textures.
-			Assets.SpritesheetTexture = LoadTexture(SPRITE_NAME);
+			//Assets.SpritesheetTexture = LoadTexture(SPRITE_NAME);
 
 			// Songs.
-			Assets.TitleMusicSong = Engine.Content.Load<Song>(soundRoot + TITLE_MUSIC_NAME);
-			Assets.GameOverSong = Engine.Content.Load<Song>(soundRoot + GAME_OVER_NAME);
+			//Assets.TitleMusicSong = Engine.Content.Load<Song>(soundRoot + TITLE_MUSIC_NAME);
+			//Assets.GameOverSong = Engine.Content.Load<Song>(soundRoot + GAME_OVER_NAME);
 
 			// Sound effects.
-			Assets.SoundEffectDictionary = new Dictionary<SoundEffectType, SoundEffectInstance>();
-			for (SoundEffectType key = SoundEffectType.Right; key <= SoundEffectType.Early; ++key)
-			{
-				SoundEffectInstance value = LoadSoundEffectInstance(key.ToString());
-				Assets.SoundEffectDictionary.Add(key, value);
-			}
+			//Assets.SoundEffectDictionary = new Dictionary<SoundEffectType, SoundEffectInstance>();
+			//for (SoundEffectType key = SoundEffectType.Right; key <= SoundEffectType.Early; ++key)
+			//{
+			//	SoundEffectInstance value = LoadSoundEffectInstance(key.ToString());
+			//	Assets.SoundEffectDictionary.Add(key, value);
+			//}
 		}
 
 		private SoundEffectInstance LoadSoundEffectInstance(String assetName)

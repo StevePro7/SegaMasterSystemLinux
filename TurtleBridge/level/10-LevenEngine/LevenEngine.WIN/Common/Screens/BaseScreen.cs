@@ -45,7 +45,7 @@ namespace WindowsGame.Common.Screens
 
 		protected void LoadTextData()
 		{
-			LoadTextData(GetType().Name);
+			//LoadTextData(GetType().Name);
 		}
 		protected void LoadTextData(Byte suffix)
 		{
