@@ -9,8 +9,8 @@
     <ProjectGuid>{095339C2-AC46-4256-9D1F-207365EF04D0}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LevenEngine.WIN</RootNamespace>
-    <AssemblyName>LevenEngine.WIN</AssemblyName>
+    <RootNamespace>WindowsGame</RootNamespace>
+    <AssemblyName>WindowsGame</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MonoGamePlatform>Windows</MonoGamePlatform>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -42,6 +42,17 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AnGame.cs" />
+    <Compile Include="Master\Engine.cs" />
+    <Compile Include="Master\Implementation\RealFileProxy.cs" />
+    <Compile Include="Master\Implementation\RealLogger.cs" />
+    <Compile Include="Master\Implementation\TestLogger.cs" />
+    <Compile Include="Master\Interfaces\IFileManager.cs" />
+    <Compile Include="Master\Interfaces\IFileProxy.cs" />
+    <Compile Include="Master\Interfaces\ILogger.cs" />
+    <Compile Include="Master\IoC\EngineModule.cs" />
+    <Compile Include="Master\IoC\IoCContainer.cs" />
+    <Compile Include="Master\Managers\FileManager.cs" />
+    <Compile Include="MyGame.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -57,6 +68,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icon.ico" />
