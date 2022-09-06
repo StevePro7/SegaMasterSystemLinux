@@ -1,6 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using WindowsGame.Common;
+using WindowsGame.Common.Static;
+using WindowsGame.Common.TheGame;
+using WindowsGame.Master;
 
 namespace LevenEngine.WIN
 {
@@ -10,12 +14,14 @@ namespace LevenEngine.WIN
 	public class AnGame : Game
 	{
 		GraphicsDeviceManager graphics;
-		SpriteBatch spriteBatch;
 
 		public AnGame()
 		{
 			graphics = new GraphicsDeviceManager(this);
-			Content.RootDirectory = "Content";
+			Registration.Initialize();
+
+			var manager = GameFactory.Resolve();
+			MyGame.Construct(manager);
 		}
 
 		/// <summary>
@@ -26,7 +32,10 @@ namespace LevenEngine.WIN
 		/// </summary>
 		protected override void Initialize()
 		{
-			IsMouseVisible = true;
+			Engine.Initialize(this, graphics);
+			MyGame.Initialize();
+
+			MyGame.Manager.Logger.Info("stevepro");
 			base.Initialize();
 		}
 
@@ -37,7 +46,6 @@ namespace LevenEngine.WIN
 		protected override void LoadContent()
 		{
 			// Create a new SpriteBatch, which can be used to draw textures.
-			spriteBatch = new SpriteBatch(GraphicsDevice);
 
 			// TODO: use this.Content to load your game content here
 		}
