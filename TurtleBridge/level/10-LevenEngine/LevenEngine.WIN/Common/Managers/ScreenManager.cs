@@ -58,8 +58,9 @@ namespace WindowsGame.Common.Managers
 
 		public void Draw()
 		{
-			MyGame.Manager.ResolutionManager.BeginDraw(color);
-			Engine.SpriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, null, null, null, null, MyGame.Manager.ResolutionManager.TransformationMatrix);
+			//MyGame.Manager.ResolutionManager.BeginDraw(Color.AliceBlue);
+			//Engine.SpriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, null, null, null, null, MyGame.Manager.ResolutionManager.TransformationMatrix);
+			Engine.SpriteBatch.Begin();
 			screens[currScreen].Draw();
 			Engine.SpriteBatch.End();
 		}
@@ -68,7 +69,7 @@ namespace WindowsGame.Common.Managers
 		{
 			// TODO revert code!
 			//return currScreen > ScreenType.Init ? Color.White : Color.Black;
-			return Color.Orange;
+			return Color.Black;
 			//return Color.White;
 		}
 
