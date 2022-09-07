@@ -16,8 +16,8 @@ namespace WindowsGame.Common.Screens
 
 		public virtual void Initialize()
 		{
-			BuildPosition = GetBuildPosition();
-			CheatPositions = GetCheatPositions();
+			//BuildPosition = GetBuildPosition();
+			//CheatPositions = GetCheatPositions();
 		}
 
 		public virtual void LoadContent()

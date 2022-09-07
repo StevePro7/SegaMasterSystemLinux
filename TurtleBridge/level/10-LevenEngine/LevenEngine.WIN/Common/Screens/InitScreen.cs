@@ -25,6 +25,7 @@ namespace WindowsGame.Common.Screens
 
 		public override void LoadContent()
 		{
+			Engine.Game.Window.Title = "InitScreen";
 			base.LoadContent();
 			//MyGame.Manager.ThreadManager.LoadContentAsync();
 		}
@@ -50,8 +51,9 @@ namespace WindowsGame.Common.Screens
 #if WINDOWS
 			advance = MyGame.Manager.InputManager.Advance();
 #endif
-			
-			return fullScreen || advance ? nextScreen : ScreenType.Init;
+
+			//return fullScreen || advance ? nextScreen : ScreenType.Init;
+			return nextScreen;
 		}
 
 		public override void Draw()
@@ -62,7 +64,8 @@ namespace WindowsGame.Common.Screens
 		private static ScreenType GetNextScreen()
 		{
 			ScreenType screenType = MyGame.Manager.ConfigManager.GlobalConfigData.ScreenType;
-			if (ScreenType.Splash == screenType || ScreenType.Init == screenType)
+			//if (ScreenType.Splash == screenType || ScreenType.Init == screenType)
+			if (ScreenType.Init == screenType)
 			{
 				screenType = ScreenType.Title;
 			}

@@ -19,29 +19,38 @@ namespace WindowsGame.Common.Managers
 	public class ScreenManager : IScreenManager
 	{
 		private IDictionary<ScreenType, IScreen> screens;
-		private ScreenType currScreen = ScreenType.Splash;
-		private ScreenType nextScreen = ScreenType.Splash;
+		private ScreenType currScreen = ScreenType.Init;
+		private ScreenType nextScreen = ScreenType.Init;
 		private Color color;
 
 		public void Initialize()
 		{
 			screens = GetScreens();
-			screens[ScreenType.Splash].Initialize();
-			screens[ScreenType.Init].Initialize();
+			//screens[ScreenType.Splash].Initialize();
+			//screens[ScreenType.Init].Initialize();
+			foreach (var key in screens.Keys)
+			{
+				//if (ScreenType.Splash == key || ScreenType.Init == key)
+				screens[key].Initialize();
+			}
+
 			color = Color.Black;
 		}
 
 		public void LoadContent()
 		{
-			foreach (var key in screens.Keys)
-			{
-				if (ScreenType.Splash == key || ScreenType.Init == key)
-				{
-					continue;
-				}
+			//foreach (var key in screens.Keys)
+			//{
+			//	//if (ScreenType.Splash == key || ScreenType.Init == key)
+			//	if (ScreenType.Init == key)
+			//	{
+			//		continue;
+			//	}
 
-				screens[key].Initialize();
-			}
+			//	screens[key].Initialize();
+			//}
+
+			screens[currScreen].LoadContent();
 		}
 
 		public void Update(GameTime gameTime)
@@ -77,7 +86,7 @@ namespace WindowsGame.Common.Managers
 		{
 			return new Dictionary<ScreenType, IScreen>
 			{
-				{ScreenType.Splash, new SplashScreen()},
+				//{ScreenType.Splash, new SplashScreen()},
 				{ScreenType.Init, new InitScreen()},
 				{ScreenType.Title, new TitleScreen()},
 				{ScreenType.Diff, new DiffScreen()},

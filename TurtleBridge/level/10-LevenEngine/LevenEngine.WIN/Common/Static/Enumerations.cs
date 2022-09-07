@@ -2,7 +2,7 @@
 {
 	public enum ScreenType
 	{
-		Splash,
+		//Splash,
 		Init,
 		Title,
 		Diff,

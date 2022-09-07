@@ -55,7 +55,7 @@ namespace WindowsGame.Common
 			Engine.Game.IsMouseVisible = Constants.IsMouseVisible;
 			Manager.ResolutionManager.LoadContent(Constants.IsFullScreen, Constants.ScreenWide, Constants.ScreenHigh, Constants.UseExposed, Constants.ExposeWide, Constants.ExposeHigh);
 
-			Engine.Game.Window.Title = "Turtle Bridge";
+			//Engine.Game.Window.Title = "Turtle Bridge";
 		}
 
 		//public static void LoadContentAsync()

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using WindowsGame.Common.Interfaces;
 using WindowsGame.Common.Static;
+using WindowsGame.Master;
 
 namespace WindowsGame.Common.Screens
 {
@@ -8,10 +9,13 @@ namespace WindowsGame.Common.Screens
 	{
 		public override void Initialize()
 		{
+			base.Initialize();
 		}
 
 		public override void LoadContent()
 		{
+			Engine.Game.Window.Title = "TestScreen";
+			
 		}
 
 		public ScreenType Update(GameTime gameTime)
