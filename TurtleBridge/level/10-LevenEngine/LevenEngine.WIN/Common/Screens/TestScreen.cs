@@ -15,11 +15,11 @@ namespace WindowsGame.Common.Screens
 		public override void LoadContent()
 		{
 			Engine.Game.Window.Title = "TestScreen";
-			
 		}
 
 		public ScreenType Update(GameTime gameTime)
 		{
+			MyGame.Manager.Logger.Info("testing");
 			return ScreenType.Test;
 		}
 

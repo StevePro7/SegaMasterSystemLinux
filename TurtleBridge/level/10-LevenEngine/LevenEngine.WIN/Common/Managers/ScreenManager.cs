@@ -21,7 +21,7 @@ namespace WindowsGame.Common.Managers
 		private IDictionary<ScreenType, IScreen> screens;
 		private ScreenType currScreen = ScreenType.Init;
 		private ScreenType nextScreen = ScreenType.Init;
-		private Color color;
+		//private Color color;
 
 		public void Initialize()
 		{
@@ -34,7 +34,7 @@ namespace WindowsGame.Common.Managers
 				screens[key].Initialize();
 			}
 
-			color = Color.Black;
+			//color = Color.Black;
 		}
 
 		public void LoadContent()
@@ -59,7 +59,7 @@ namespace WindowsGame.Common.Managers
 			{
 				currScreen = nextScreen;
 				screens[currScreen].LoadContent();
-				color = GetColor();
+				//color = GetColor();
 			}
 
 			nextScreen = screens[currScreen].Update(gameTime);
@@ -74,13 +74,13 @@ namespace WindowsGame.Common.Managers
 			Engine.SpriteBatch.End();
 		}
 
-		private Color GetColor()
-		{
-			// TODO revert code!
-			//return currScreen > ScreenType.Init ? Color.White : Color.Black;
-			return Color.Black;
-			//return Color.White;
-		}
+		//private Color GetColor()
+		//{
+		//	// TODO revert code!
+		//	//return currScreen > ScreenType.Init ? Color.White : Color.Black;
+		//	return Color.Black;
+		//	//return Color.White;
+		//}
 
 		private static Dictionary<ScreenType, IScreen> GetScreens()
 		{
@@ -89,14 +89,14 @@ namespace WindowsGame.Common.Managers
 				//{ScreenType.Splash, new SplashScreen()},
 				{ScreenType.Init, new InitScreen()},
 				{ScreenType.Title, new TitleScreen()},
-				{ScreenType.Diff, new DiffScreen()},
-				{ScreenType.Long, new LongScreen()},
-				{ScreenType.Ready, new ReadyScreen()},
-				{ScreenType.Play, new PlayScreen()},
-				{ScreenType.Quiz, new QuizScreen()},
-				{ScreenType.Score, new ScoreScreen()},
-				{ScreenType.Over, new OverScreen()},
-				{ScreenType.Exit, new ExitScreen()},
+				//{ScreenType.Diff, new DiffScreen()},
+				//{ScreenType.Long, new LongScreen()},
+				//{ScreenType.Ready, new ReadyScreen()},
+				//{ScreenType.Play, new PlayScreen()},
+				//{ScreenType.Quiz, new QuizScreen()},
+				//{ScreenType.Score, new ScoreScreen()},
+				//{ScreenType.Over, new OverScreen()},
+				//{ScreenType.Exit, new ExitScreen()},
 				{ScreenType.Test, new TestScreen()},
 			};
 		}
