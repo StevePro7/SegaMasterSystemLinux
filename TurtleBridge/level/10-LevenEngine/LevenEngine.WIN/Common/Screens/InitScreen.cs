@@ -10,23 +10,23 @@ namespace WindowsGame.Common.Screens
 	{
 		private ScreenType nextScreen;
 		private UInt16 splashDelay;
-		private Boolean join;
+		//private Boolean join;
 
 		public override void Initialize()
 		{
-			Single wide = (Constants.ScreenWide - Assets.SplashTexture.Width) / 2.0f;
-			Single high = (Constants.ScreenHigh - Assets.SplashTexture.Height) / 2.0f;
-			BannerPosition = new Vector2(wide, high);
+			//Single wide = (Constants.ScreenWide - Assets.SplashTexture.Width) / 2.0f;
+			//Single high = (Constants.ScreenHigh - Assets.SplashTexture.Height) / 2.0f;
+			//BannerPosition = new Vector2(wide, high);
 
 			nextScreen = GetNextScreen();
 			splashDelay = MyGame.Manager.ConfigManager.GlobalConfigData.SplashDelay;
-			join = false;
+			//join = false;
 		}
 
 		public override void LoadContent()
 		{
 			base.LoadContent();
-			MyGame.Manager.ThreadManager.LoadContentAsync();
+			//MyGame.Manager.ThreadManager.LoadContentAsync();
 		}
 
 		public ScreenType Update(GameTime gameTime)
@@ -34,11 +34,11 @@ namespace WindowsGame.Common.Screens
 			UpdateTimer(gameTime);
 
 			// Do not attempt to progress until join.
-			join = MyGame.Manager.ThreadManager.Join(1);
-			if (!join)
-			{
-				return ScreenType.Init;
-			}
+			//join = MyGame.Manager.ThreadManager.Join(1);
+			//if (!join)
+			//{
+			//	return ScreenType.Init;
+			//}
 
 			if (Timer > splashDelay)
 			{

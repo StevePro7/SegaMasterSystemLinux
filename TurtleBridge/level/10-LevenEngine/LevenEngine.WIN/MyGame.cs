@@ -22,7 +22,7 @@ namespace WindowsGame.Common
 			Manager.ConfigManager.LoadContent();
 
 			Manager.ContentManager.Initialize();
-			Manager.ContentManager.LoadContentSplash();
+			//Manager.ContentManager.LoadContentSplash();
 
 			Manager.DeviceManager.Initialize();
 			Manager.ImageManager.Initialize();
@@ -35,21 +35,12 @@ namespace WindowsGame.Common
 			Manager.SoundManager.Initialize();
 			Manager.SpriteManager.Initialize();
 			Manager.StorageManager.Initialize();
-			Manager.ThreadManager.Initialize();
+			//Manager.TextManager.Initialize();
+			//Manager.ThreadManager.Initialize();
 		}
 
 		public static void LoadContent()
 		{
-			Engine.Game.IsFixedTimeStep = Constants.IsFixedTimeStep;
-			Engine.Game.TargetElapsedTime = TimeSpan.FromSeconds(1.0f / Constants.FramesPerSecond);
-			Engine.Game.IsMouseVisible = Constants.IsMouseVisible;
-			Manager.ResolutionManager.LoadContent(Constants.IsFullScreen, Constants.ScreenWide, Constants.ScreenHigh, Constants.UseExposed, Constants.ExposeWide, Constants.ExposeHigh);
-		}
-
-		public static void LoadContentAsync()
-		{
-			Manager.TextManager.Initialize();
-
 			Manager.CollisionManager.LoadContent();
 			Manager.ContentManager.LoadContent();
 			Manager.ImageManager.LoadContent();
@@ -59,8 +50,16 @@ namespace WindowsGame.Common
 			Manager.ScreenManager.LoadContent();
 			Manager.StorageManager.LoadContent();
 
-			GC.Collect();
+			Engine.Game.IsFixedTimeStep = Constants.IsFixedTimeStep;
+			Engine.Game.TargetElapsedTime = TimeSpan.FromSeconds(1.0f / Constants.FramesPerSecond);
+			Engine.Game.IsMouseVisible = Constants.IsMouseVisible;
+			Manager.ResolutionManager.LoadContent(Constants.IsFullScreen, Constants.ScreenWide, Constants.ScreenHigh, Constants.UseExposed, Constants.ExposeWide, Constants.ExposeHigh);
 		}
+
+		//public static void LoadContentAsync()
+		//{
+		//	GC.Collect();
+		//}
 
 		public static void UnloadContent()
 		{
@@ -91,19 +90,19 @@ namespace WindowsGame.Common
 			Manager.ScreenManager.Draw();
 		}
 
-		public static void OnActivated()
-		{
-			Manager.StorageManager.LoadContent();
-		}
-		public static void OnDeactivated()
-		{
-			Manager.StorageManager.SaveContent();
+//		public static void OnActivated()
+//		{
+//			Manager.StorageManager.LoadContent();
+//		}
+//		public static void OnDeactivated()
+//		{
+//			Manager.StorageManager.SaveContent();
 
-#if ANDROID
-			Android.OS.Process.KillProcess(Android.OS.Process.MyPid());
-			System.Environment.Exit(0);
-#endif
-		}
+//#if ANDROID
+//			Android.OS.Process.KillProcess(Android.OS.Process.MyPid());
+//			System.Environment.Exit(0);
+//#endif
+//		}
 
 		public static IGameManager Manager { get; private set; }
 	}

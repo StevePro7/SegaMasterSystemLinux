@@ -22,7 +22,7 @@ namespace WindowsGame.Common.TheGame
 		ISpriteManager SpriteManager { get; }
 		IStorageManager StorageManager { get; }
 		ITextManager TextManager { get; }
-		IThreadManager ThreadManager { get; }
+		//IThreadManager ThreadManager { get; }
 		IFileManager FileManager { get; }
 		ILogger Logger { get; }
 	}
@@ -47,7 +47,7 @@ namespace WindowsGame.Common.TheGame
 			ISpriteManager spriteManager,
 			IStorageManager storageManager,
 			ITextManager textManager,
-			IThreadManager threadManager,
+			//IThreadManager threadManager,
 			IFileManager fileManager,
 			ILogger logger
 		)
@@ -68,7 +68,7 @@ namespace WindowsGame.Common.TheGame
 			SpriteManager = spriteManager;
 			StorageManager = storageManager;
 			TextManager = textManager;
-			ThreadManager = threadManager;
+			//ThreadManager = threadManager;
 			FileManager = fileManager;
 			Logger = logger;
 		}
@@ -89,7 +89,7 @@ namespace WindowsGame.Common.TheGame
 		public ISpriteManager SpriteManager { get; private set; }
 		public IStorageManager StorageManager { get; private set; }
 		public ITextManager TextManager { get; private set; }
-		public IThreadManager ThreadManager { get; private set; }
+		//public IThreadManager ThreadManager { get; private set; }
 		public IFileManager FileManager { get; private set; }
 		public ILogger Logger { get; private set; }
 	}

@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Media;
 using WindowsGame.Common.Static;
 using WindowsGame.Master;
 
@@ -12,7 +10,7 @@ namespace WindowsGame.Common.Managers
 	{
 		void Initialize();
 		void LoadContent();
-		void LoadContentSplash();
+		//void LoadContentSplash();
 	}
 
 	public class ContentManager : BaseManager, IContentManager
@@ -26,16 +24,20 @@ namespace WindowsGame.Common.Managers
 			soundRoot = String.Format("{0}/{1}/", contentRoot, Constants.SOUND_DIRECTORY);
 		}
 
-		public void LoadContentSplash()
-		{
-			// TODO revert this - only used for testing
-			String splashName = MyGame.Manager.ConfigManager.GlobalConfigData.BlankSplash ? "StevePro" : "Splash";
-			Assets.SplashTexture = LoadTexture(splashName);
-			//Assets.SplashTexture = LoadTexture(SPLASH_NAME);
-		}
+		//public void LoadContentSplash()
+		//{
+		//	// TODO revert this - only used for testing
+		//	String splashName = MyGame.Manager.ConfigManager.GlobalConfigData.BlankSplash ? "StevePro" : "Splash";
+		//	Assets.SplashTexture = LoadTexture(splashName);
+		//	//Assets.SplashTexture = LoadTexture(SPLASH_NAME);
+		//}
 
 		public void LoadContent()
 		{
+			// Splash.
+			String splashName = MyGame.Manager.ConfigManager.GlobalConfigData.BlankSplash ? "StevePro" : "Splash";
+			Assets.SplashTexture = LoadTexture(splashName);
+
 			// Fonts.
 			String fonts = String.Format("{0}/{1}/", contentRoot, Constants.FONTS_DIRECTORY);
 			Assets.EmulogicFont = Engine.Content.Load<SpriteFont>(fonts + FONT_NAME);

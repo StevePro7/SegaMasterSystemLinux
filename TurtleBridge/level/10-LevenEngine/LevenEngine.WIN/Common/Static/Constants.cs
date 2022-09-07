@@ -28,7 +28,7 @@ namespace WindowsGame.Common.Static
 
 		// Global data.
 		public const Boolean IsFixedTimeStep = true;
-		public const UInt32 FramesPerSecond = 100;
+		public const UInt32 FramesPerSecond = 50;
 
 		// Global sizes.
 		public const Byte SpriteSize = 80;

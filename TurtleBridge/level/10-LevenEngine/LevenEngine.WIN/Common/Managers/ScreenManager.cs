@@ -67,7 +67,8 @@ namespace WindowsGame.Common.Managers
 		private Color GetColor()
 		{
 			// TODO revert code!
-			return currScreen > ScreenType.Init ? Color.White : Color.Black;
+			//return currScreen > ScreenType.Init ? Color.White : Color.Black;
+			return Color.Orange;
 			//return Color.White;
 		}
 

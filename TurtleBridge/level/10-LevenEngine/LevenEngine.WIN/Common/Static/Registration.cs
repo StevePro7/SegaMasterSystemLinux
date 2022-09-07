@@ -33,7 +33,7 @@ namespace WindowsGame.Common.Static
 			IoCContainer.Initialize<ISpriteManager, SpriteManager>();
 			IoCContainer.Initialize<IStorageManager, StorageManager>();
 			IoCContainer.Initialize<ITextManager, TextManager>();
-			IoCContainer.Initialize<IThreadManager, ThreadManager>();
+			//IoCContainer.Initialize<IThreadManager, ThreadManager>();
 
 			IoCContainer.Initialize<IJoystickInput, JoystickInput>();
 			IoCContainer.Initialize<IKeyboardInput, KeyboardInput>();

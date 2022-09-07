@@ -12,10 +12,10 @@ namespace WindowsGame.Common.Screens
 
 		public override void Initialize()
 		{
-			Single wide = (Constants.ScreenWide - Assets.SplashTexture.Width) / 2.0f;
-			Single high = (Constants.ScreenHigh - Assets.SplashTexture.Height) / 2.0f;
+			//Single wide = (Constants.ScreenWide - Assets.SplashTexture.Width) / 2.0f;
+			//Single high = (Constants.ScreenHigh - Assets.SplashTexture.Height) / 2.0f;
 
-			BannerPosition = new Vector2(wide, high);
+			//BannerPosition = new Vector2(wide, high);
 			flag = false;
 		}
 
@@ -26,7 +26,7 @@ namespace WindowsGame.Common.Screens
 
 		public override void Draw()
 		{
-			Engine.SpriteBatch.Draw(Assets.SplashTexture, BannerPosition, Color.White);
+			//Engine.SpriteBatch.Draw(Assets.SplashTexture, BannerPosition, Color.White);
 			flag = true;
 		}
 
