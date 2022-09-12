@@ -67,12 +67,12 @@ namespace WindowsGame.Common.Static
 		public const Byte GameOffsetX = 80;
 #endif
 #if WINDOWS && !MOBILE
-		public const UInt16 ScreenWide = 1024;
-		public const UInt16 ScreenHigh = 768;
+		public const UInt16 ScreenWide = 256;
+		public const UInt16 ScreenHigh = 192;
 
 		public const Boolean UseExposed = true;
-		public const UInt16 ExposeWide = 1024;
-		public const UInt16 ExposeHigh = 768;
+		public const UInt16 ExposeWide = 256;
+		public const UInt16 ExposeHigh = 192;
 
 		public const Byte GameOffsetX = 0;
 #endif

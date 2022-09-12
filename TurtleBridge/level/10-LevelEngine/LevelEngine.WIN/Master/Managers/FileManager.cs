@@ -16,19 +16,33 @@ namespace WindowsGame.Master.Managers
 			this.fileProxy = fileProxy;
 		}
 
+		// Warning CA2202
 		public IList<String> LoadTxt(String file)
 		{
 			IList<String> lines = new List<String>();
-			using (Stream stream = fileProxy.GetStream(file))
+			Stream stream = null;
+			try
 			{
-				using (StreamReader reader = new StreamReader(stream))
+				using (stream = fileProxy.GetStream(file))
 				{
-					String line = reader.ReadLine();
-					while (line != null)
+					using (StreamReader reader = new StreamReader(stream))
 					{
-						lines.Add(line);
-						line = reader.ReadLine();
+						String line = reader.ReadLine();
+						while (line != null)
+						{
+							lines.Add(line);
+							line = reader.ReadLine();
+						}
 					}
+				}
+
+				stream = null;
+			}
+			finally
+			{
+				if (stream != null)
+				{
+					stream.Dispose();
 				}
 			}
 

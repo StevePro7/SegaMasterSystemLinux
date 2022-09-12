@@ -10,7 +10,7 @@ namespace WindowsGame.Common.Managers
 	public interface IResolutionManager
 	{
 		void Initialize();
-		void LoadContent(Boolean isFullScreen, UInt16 screenWide, UInt16 screenHigh, Boolean useExposed, UInt16 exposeWide, UInt16 exposeHigh);
+		void LoadContent(Boolean isFullScreen, Byte screenScale, UInt16 screenWide, UInt16 screenHigh, Boolean useExposed, UInt16 exposeWide, UInt16 exposeHigh);
 		void BeginDraw(Color color);
 		void ApplyFullScreen(Boolean fullScreen);
 
@@ -31,6 +31,8 @@ namespace WindowsGame.Common.Managers
 
 		public void Initialize()
 		{
+			var screenScale = MyGame.Manager.ConfigManager.GlobalConfigData.ScreenScale;
+
 			_Device = Engine.GraphicsDeviceManager;
 			_Width = _Device.PreferredBackBufferWidth;
 			_Height = _Device.PreferredBackBufferHeight;
@@ -40,16 +42,16 @@ namespace WindowsGame.Common.Managers
 			SwapDisplayMode(ref displayModeWidth, ref displayModeHeight);
 		}
 
-		public void LoadContent(Boolean isFullScreen, UInt16 screenWide, UInt16 screenHigh, Boolean useExposed, UInt16 exposeWide, UInt16 exposeHigh)
+		public void LoadContent(Boolean isFullScreen, Byte screenScale, UInt16 screenWide, UInt16 screenHigh, Boolean useExposed, UInt16 exposeWide, UInt16 exposeHigh)
 		{
 			_FullScreen = isFullScreen;
-			_VWidth = screenWide;
-			_VHeight = screenHigh;
+			_VWidth = screenWide * screenScale;
+			_VHeight = screenHigh * screenScale;
 
 			if (useExposed)
 			{
-				_Width = exposeWide;
-				_Height = exposeHigh;
+				_Width = exposeWide * screenScale;
+				_Height = exposeHigh * screenScale;
 			}
 			else
 			{
