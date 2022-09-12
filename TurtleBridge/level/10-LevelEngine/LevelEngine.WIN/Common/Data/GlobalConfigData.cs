@@ -6,6 +6,7 @@ namespace WindowsGame.Common.Data
 	public struct GlobalConfigData
 	{
 		public ScreenType ScreenType;
+		public Byte ScreenScale;
 		public UInt16 SplashDelay;
 		public UInt16 TitleDelay;
 		public UInt16 OptionDelay;

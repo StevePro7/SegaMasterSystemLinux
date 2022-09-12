@@ -16,12 +16,6 @@ namespace WindowsGame.Common.Data
 			BaseRoot = root;
 		}
 
-		public static void LoadContent()
-		{
-			// Global generic data.
-			//var globalData = MyGame.Manager.ConfigManager.GlobalConfigData;
-		}
-
 		public static String BaseRoot { get; private set; }
 
 		public static String GetNumberZO(Byte number)
