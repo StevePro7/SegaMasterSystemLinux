@@ -14,6 +14,9 @@ namespace WindowsGame.Common.Static
 		public static Texture2D SplashTexture;
 		public static Texture2D SpritesheetTexture;
 
+		public static Texture2D StripHorzTexture;
+		public static Texture2D StripVertTexture;
+
 		// Sound.
 		public static IDictionary<SoundEffectType, SoundEffectInstance> SoundEffectDictionary;
 		public static Song TitleMusicSong;

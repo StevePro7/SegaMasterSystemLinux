@@ -43,6 +43,11 @@ namespace WindowsGame.Common.Managers
 			Assets.EmulogicFont = Engine.Content.Load<SpriteFont>(fonts + FONT_NAME);
 
 			// Textures.
+			Byte screenScale = MyGame.Manager.ConfigManager.GlobalConfigData.ScreenScale;
+			String textures = String.Format("{0}/{1}/{2}/", contentRoot, Constants.TEXTURES_DIRECTORY, screenScale);
+			Assets.StripHorzTexture = Engine.Content.Load<Texture2D>(textures + "StripHorz");
+			Assets.StripVertTexture = Engine.Content.Load<Texture2D>(textures + "StripVert");
+
 			//Assets.SpritesheetTexture = LoadTexture(SPRITE_NAME);
 
 			// Songs.

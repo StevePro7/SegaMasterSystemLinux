@@ -19,12 +19,13 @@ namespace WindowsGame.Common.Screens
 
 		public ScreenType Update(GameTime gameTime)
 		{
-			MyGame.Manager.Logger.Info("testing");
+			//MyGame.Manager.Logger.Info("testing");
 			return ScreenType.Test;
 		}
 
 		public override void Draw()
 		{
+			MyGame.Manager.ImageManager.DrawGrid();
 		}
 
 	}

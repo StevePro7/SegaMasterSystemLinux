@@ -11,6 +11,7 @@ namespace WindowsGame.Common.Managers
 		void Initialize();
 		void LoadContent();
 		void GenerateNextActor();
+		void DrawGrid();
 		void DrawTitle();
 		void DrawHeader();
 		void DrawCurrActor();
@@ -62,6 +63,21 @@ namespace WindowsGame.Common.Managers
 
 			spriteRects = PopulateSpriteRects();
 			imageRotate = MathHelper.ToRadians(270);
+		}
+
+		public void DrawGrid()
+		{
+			Byte screenScale = MyGame.Manager.ConfigManager.GlobalConfigData.ScreenScale;
+			for (var horz = 0; horz < Constants.ScreenWide * screenScale; horz += 8 * screenScale)
+			{
+				Vector2 pos = new Vector2(horz, 0);
+				Engine.SpriteBatch.Draw(Assets.StripVertTexture, pos, Color.White);
+			}
+			for (var vert = 0; vert < Constants.ScreenHigh * screenScale; vert += 8 * screenScale)
+			{
+				Vector2 pos = new Vector2(0, vert);
+				Engine.SpriteBatch.Draw(Assets.StripHorzTexture, pos, Color.White);
+			}
 		}
 
 		public void GenerateNextActor()
