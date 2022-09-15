@@ -18,12 +18,14 @@ namespace _01_Test
 		protected override void Initialize()
 		{
 			IsMouseVisible = true;
+			Logger.Initialize();
 			base.Initialize();
 		}
 
 		protected override void LoadContent()
 		{
 			spriteBatch = new SpriteBatch(GraphicsDevice);
+			Logger.Info("stevepro load content");
 		}
 
 		protected override void UnloadContent()
