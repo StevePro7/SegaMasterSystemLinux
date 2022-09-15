@@ -43,6 +43,12 @@ namespace _01_Test
 				Exit();
 			}
 
+			if (Keyboard.GetState().IsKeyDown(Keys.Space))
+			{
+				myRocketManager.Launch();
+			}
+
+			myRocketManager.Update();
 			base.Update(gameTime);
 		}
 
