@@ -8,19 +8,22 @@ namespace _01_Test
 	{
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
-		private MyRocketManager myRocketManager;
+		private readonly MyRocketManager myRocketManager;
+		private readonly MyConfigManger myConfigManger;
 
 		public Game1()
 		{
 			graphics = new GraphicsDeviceManager(this);
 			Content.RootDirectory = "Content";
-			myRocketManager = new MyRocketManager();
+			myConfigManger = new MyConfigManger();
+			myRocketManager = new MyRocketManager(myConfigManger);
 		}
 
 		protected override void Initialize()
 		{
 			IsMouseVisible = true;
 			Logger.Initialize();
+			myConfigManger.Initialize();
 			myRocketManager.Initialize();
 			base.Initialize();
 		}

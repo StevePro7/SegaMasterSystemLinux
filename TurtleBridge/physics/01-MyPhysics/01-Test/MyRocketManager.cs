@@ -8,6 +8,8 @@ namespace _01_Test
 {
 	public class MyRocketManager
 	{
+		private readonly MyConfigManger myConfigManger;
+
 		private bool _rocketFlying = false;
 		private Vector2 _rocketPosition;
 		private Vector2 _rocketDirection;
@@ -19,14 +21,25 @@ namespace _01_Test
 		private IList<Vector2> _rocketPositionList;
 
 		private Texture2D _rocketImage;
+		private const int Height = 400;
+
+		public MyRocketManager(MyConfigManger myConfigManger)
+		{
+			this.myConfigManger = myConfigManger;
+		}
 
 		public void Initialize()
 		{
-			Reset();
+			_rocketPositionList = new List<Vector2>();
+			_rocketPositionList.Clear();
 
-			angle = 45;
+			_rocketPosition = new Vector2(10, Height);
+			_rocketPositionList.Add(_rocketPosition);
+			_rocketAngle = 0.0f;
+
+			angle = myConfigManger.Angle;
 			radians = MathHelper.ToRadians(angle);
-			power = 300;
+			power = myConfigManger.Power;
 		}
 
 		public void LoadContent(ContentManager content)
@@ -41,7 +54,8 @@ namespace _01_Test
 				return;
 			}
 
-			Reset();
+			Initialize();
+
 			_rocketFlying = true;
 			_rocketAngle = radians;
 			Vector2 up = new Vector2(0, -1);
@@ -63,7 +77,7 @@ namespace _01_Test
 			_rocketPositionList.Add(_rocketPosition);
 			_rocketAngle = (float)Math.Atan2(_rocketDirection.X, -_rocketDirection.Y);
 
-			if (_rocketPosition.Y >= 300)
+			if (_rocketPosition.Y >= Height)
 			{
 				_rocketFlying = false;
 			}
@@ -77,14 +91,5 @@ namespace _01_Test
 			}
 		}
 
-		private void Reset()
-		{
-			_rocketPositionList = new List<Vector2>();
-			_rocketPositionList.Clear();
-
-			_rocketPosition = new Vector2(10, 300);
-			_rocketPositionList.Add(_rocketPosition);
-			_rocketAngle = 0.0f;
-		}
 	}
 }
