@@ -19,12 +19,15 @@ namespace _01_Test
 		private float angle;
 		private float radians;
 		private float power;
+		private IList<Vector2> _rocketPositionList;
 
 		private Texture2D _rocketImage;
 
 		public void Initialize()
 		{
+			_rocketPositionList = new List<Vector2>();
 			_rocketPosition = new Vector2(10, 300);
+			_rocketPositionList.Add(_rocketPosition);
 			_rocketAngle = 0.0f;
 
 			angle = 45;
@@ -62,12 +65,21 @@ namespace _01_Test
 			Vector2 gravity = new Vector2(0, 1);
 			_rocketDirection += gravity / 10.0f;
 			_rocketPosition += _rocketDirection;
+			_rocketPositionList.Add(_rocketPosition);
 			_rocketAngle = (float)Math.Atan2(_rocketDirection.X, -_rocketDirection.Y);
+
+			if (_rocketPosition.Y >= 300)
+			{
+				_rocketFlying = false;
+			}
 		}
 
 		public void Draw(SpriteBatch spriteBatch)
 		{
-			spriteBatch.Draw(_rocketImage, _rocketPosition, Color.White);
+			foreach (var pos in _rocketPositionList)
+			{
+				spriteBatch.Draw(_rocketImage, pos, Color.White);
+			}
 		}
 	}
 }
