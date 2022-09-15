@@ -8,6 +8,7 @@ namespace _01_Test
 		public void Initialize()
 		{
 			Angle = Convert.ToSingle(ConfigurationManager.AppSettings["Angle"]);
+			Angle = 90 - Angle;
 			Power = Convert.ToSingle(ConfigurationManager.AppSettings["Power"]);
 
 			Logger.Info("Angle = " + Angle);

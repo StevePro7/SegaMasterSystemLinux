@@ -80,6 +80,10 @@ namespace _01_Test
 			if (_rocketPosition.Y >= Height)
 			{
 				_rocketFlying = false;
+				foreach (var pos in _rocketPositionList)
+				{
+					Logger.Info($"{pos.X},{pos.Y}");
+				}
 			}
 		}
 
