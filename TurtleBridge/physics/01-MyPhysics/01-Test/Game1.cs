@@ -8,24 +8,27 @@ namespace _01_Test
 	{
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
+		private MyRocketManager myRocketManager;
 
 		public Game1()
 		{
 			graphics = new GraphicsDeviceManager(this);
 			Content.RootDirectory = "Content";
+			myRocketManager = new MyRocketManager();
 		}
 
 		protected override void Initialize()
 		{
 			IsMouseVisible = true;
 			Logger.Initialize();
+			myRocketManager.Initialize();
 			base.Initialize();
 		}
 
 		protected override void LoadContent()
 		{
 			spriteBatch = new SpriteBatch(GraphicsDevice);
-			Logger.Info("stevepro load content");
+			myRocketManager.LoadContent(Content);
 		}
 
 		protected override void UnloadContent()
@@ -46,6 +49,10 @@ namespace _01_Test
 		protected override void Draw(GameTime gameTime)
 		{
 			GraphicsDevice.Clear(Color.CornflowerBlue);
+
+			spriteBatch.Begin();
+			myRocketManager.Draw(spriteBatch);
+			spriteBatch.End();
 
 			base.Draw(gameTime);
 		}
