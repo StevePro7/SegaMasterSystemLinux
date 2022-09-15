@@ -3,9 +3,6 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _01_Test
 {
@@ -25,10 +22,7 @@ namespace _01_Test
 
 		public void Initialize()
 		{
-			_rocketPositionList = new List<Vector2>();
-			_rocketPosition = new Vector2(10, 300);
-			_rocketPositionList.Add(_rocketPosition);
-			_rocketAngle = 0.0f;
+			Reset();
 
 			angle = 45;
 			radians = MathHelper.ToRadians(angle);
@@ -47,6 +41,7 @@ namespace _01_Test
 				return;
 			}
 
+			Reset();
 			_rocketFlying = true;
 			_rocketAngle = radians;
 			Vector2 up = new Vector2(0, -1);
@@ -80,6 +75,16 @@ namespace _01_Test
 			{
 				spriteBatch.Draw(_rocketImage, pos, Color.White);
 			}
+		}
+
+		private void Reset()
+		{
+			_rocketPositionList = new List<Vector2>();
+			_rocketPositionList.Clear();
+
+			_rocketPosition = new Vector2(10, 300);
+			_rocketPositionList.Add(_rocketPosition);
+			_rocketAngle = 0.0f;
 		}
 	}
 }
