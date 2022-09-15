@@ -48,7 +48,11 @@ namespace _01_Test
 
 			if (Keyboard.GetState().IsKeyDown(Keys.Space))
 			{
-				myRocketManager.Launch();
+				if (!myRocketManager.IsRocketFlying)
+				{
+					myConfigManger.Initialize();
+					myRocketManager.Launch();
+				}
 			}
 
 			myRocketManager.Update();

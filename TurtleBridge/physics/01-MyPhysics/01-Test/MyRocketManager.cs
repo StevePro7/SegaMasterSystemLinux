@@ -91,5 +91,6 @@ namespace _01_Test
 			}
 		}
 
+		public bool IsRocketFlying { get { return _rocketFlying; } }
 	}
 }
