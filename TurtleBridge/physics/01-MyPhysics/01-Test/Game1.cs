@@ -23,7 +23,7 @@ namespace _01_Test
 		{
 			IsMouseVisible = true;
 			Logger.Initialize();
-			myConfigManger.Initialize();
+			//myConfigManger.Initialize();
 			myRocketManager.Initialize();
 			base.Initialize();
 		}
