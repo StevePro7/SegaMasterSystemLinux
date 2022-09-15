@@ -50,7 +50,7 @@ namespace _02_Test
 
 			dispX = (float)(velX * time);
 			posn = new List<Vector2>();
-
+			time = 0;
 		}
 
 		protected override void Initialize()
@@ -81,11 +81,14 @@ namespace _02_Test
 			}
 
 			var dt = 0.1f;
-			float dx = (float)(velX * dt);
-			float dy = (float)(velY * dt);
-			var pos = new Vector2(dx, dy);
-
-			Logger.Info("tick");
+			time += dt;
+			//float dx = (float)(velX * dt);
+			//float dy = (float)(velY * dt);
+			//var pos = new Vector2(dx, dy);
+			var e1 = time * time * -10;
+			var e2 = 40 * time;
+			var e3 = e1 + e2 + 20;
+			Logger.Info(e3.ToString());
 			base.Update(gameTime);
 		}
 
