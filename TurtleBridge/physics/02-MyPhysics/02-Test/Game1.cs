@@ -80,21 +80,36 @@ namespace _02_Test
 				Exit();
 			}
 
-			var dt = 0.1f;
-			time += dt;
-			//float dx = (float)(velX * dt);
-			//float dy = (float)(velY * dt);
-			//var pos = new Vector2(dx, dy);
-			var e1 = time * time * -10;
-			var e2 = 40 * time;
-			var e3 = e1 + e2 + 20;
-			Logger.Info(e3.ToString());
+			//Logger.Info(dx.ToString());
 			base.Update(gameTime);
 		}
 
 		protected override void Draw(GameTime gameTime)
 		{
 			GraphicsDevice.Clear(Color.CornflowerBlue);
+
+			var dt = 0.1f;
+			time += dt;
+			//float dx = (float)(velX * dt);
+			//float dy = (float)(velY * dt);
+			//var pos = new Vector2(dx, dy);
+			//var e1 = time * time * -10;
+			//var e2 = 40 * time;
+			//var e3 = e1 + e2 + 20;
+
+			var dx = velX * time;
+			var dy1 = velY * time;
+			var dy2 = 0.5 * -9.8 *time * time;
+			var dy = dy1 + dy2;
+			
+			Logger.Info(dx.ToString() + "," + dy.ToString());
+			//dx = 0;
+			//dy = 0;
+			var pos = new Vector2(00 + (float)dx, 0 + (float)dy);
+			spriteBatch.Begin();
+			spriteBatch.Draw(image, pos, Color.White);
+			spriteBatch.End();
+
 			base.Draw(gameTime);
 		}
 	}
