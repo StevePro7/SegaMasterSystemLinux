@@ -13,7 +13,7 @@ namespace _01_Test
 		private bool _rocketFlying = false;
 		private Vector2 _rocketPosition;
 		private Vector2 _rocketDirection;
-		private float _rocketAngle;
+		//private float _rocketAngle;
 		//private float _rocketScaling = 0.1f;
 		private float angle;
 		private float radians;
@@ -35,7 +35,7 @@ namespace _01_Test
 
 			_rocketPosition = new Vector2(10, Height);
 			_rocketPositionList.Add(_rocketPosition);
-			_rocketAngle = 0.0f;
+			//_rocketAngle = 0.0f;
 
 			angle = myConfigManger.Angle;
 			radians = MathHelper.ToRadians(angle);
@@ -57,9 +57,10 @@ namespace _01_Test
 			Initialize();
 
 			_rocketFlying = true;
-			_rocketAngle = radians;
+			//_rocketAngle = radians;
 			Vector2 up = new Vector2(0, -1);
-			Matrix rotMatrix = Matrix.CreateRotationZ(_rocketAngle);
+			//Matrix rotMatrix = Matrix.CreateRotationZ(_rocketAngle);
+			Matrix rotMatrix = Matrix.CreateRotationZ(radians);
 			_rocketDirection = Vector2.Transform(up, rotMatrix);
 			_rocketDirection *= power / 50.0f;
 		}
@@ -75,7 +76,7 @@ namespace _01_Test
 			_rocketDirection += gravity / 10.0f;
 			_rocketPosition += _rocketDirection;
 			_rocketPositionList.Add(_rocketPosition);
-			_rocketAngle = (float)Math.Atan2(_rocketDirection.X, -_rocketDirection.Y);
+			//_rocketAngle = (float)Math.Atan2(_rocketDirection.X, -_rocketDirection.Y);
 
 			if (_rocketPosition.Y >= Height)
 			{
