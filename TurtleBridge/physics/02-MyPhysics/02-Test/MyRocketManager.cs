@@ -80,14 +80,14 @@ namespace _02_Test
 			_rocketPosition = new Vector2(Wide + posX, High - posY);
 			_rocketPositionList.Add(_rocketPosition);
 
-			if (_rocketPosition.Y >= High)
-			{
-				_rocketFlying = false;
-				foreach (var pos in _rocketPositionList)
-				{
-					//Logger.Info($"{pos.X},{pos.Y}");
-				}
-			}
+			//if (_rocketPosition.Y >= High)
+			//{
+			//	_rocketFlying = false;
+			//	foreach (var pos in _rocketPositionList)
+			//	{
+			//		//Logger.Info($"{pos.X},{pos.Y}");
+			//	}
+			//}
 		}
 
 		public void Draw(SpriteBatch spriteBatch)
