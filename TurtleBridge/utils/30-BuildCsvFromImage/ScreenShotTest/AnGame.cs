@@ -13,6 +13,7 @@ namespace ScreenShotTest
 		private int height = 8;
 
 		ConfigurationManager configurationManager;
+		CsvManager csvManager;
 		FileManager fileManager;
 		PaletteManager paletteManager;
 		ImageManager imageManager;
@@ -34,6 +35,7 @@ namespace ScreenShotTest
 			IsMouseVisible = true;
 
 			configurationManager = new ConfigurationManager();
+			csvManager = new CsvManager();
 			fileManager = new FileManager();
 			imageManager = new ImageManager();
 			paletteManager = new PaletteManager();
@@ -43,6 +45,7 @@ namespace ScreenShotTest
 
 			controller = new MyController(
 				configurationManager,
+				csvManager,
 				fileManager,
 				imageManager,
 				paletteManager, 

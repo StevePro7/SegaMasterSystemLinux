@@ -6,6 +6,7 @@ namespace ScreenShotTest
 	public class MyController
 	{
 		ConfigurationManager configurationManager;
+		CsvManager csvManager;
 		FileManager fileManager;
 		PaletteManager paletteManager;
 		ImageManager imageManager;
@@ -16,6 +17,7 @@ namespace ScreenShotTest
 
 		public MyController(
 			ConfigurationManager configurationManager,
+			CsvManager csvManager,
 			FileManager fileManager,
 			ImageManager imageManager,
 			PaletteManager paletteManager, 
@@ -25,6 +27,7 @@ namespace ScreenShotTest
 			)
 		{
 			this.configurationManager = configurationManager;
+			this.csvManager = csvManager;
 			this.fileManager = fileManager;
 			this.imageManager = imageManager;
 			this.paletteManager = paletteManager;
@@ -38,7 +41,7 @@ namespace ScreenShotTest
 		{
 			configurationManager.Initialize();
 			fileManager.Initialize();
-			imageManager.Initialize(paletteManager, tileManager);//, tilemapManager);
+			imageManager.Initialize(csvManager, paletteManager, tileManager);//, tilemapManager);
 			paletteManager.Initialize();
 			tileManager.Initialize(fileManager, paletteManager);
 			//tilemapManager.Initialize(fileManager);

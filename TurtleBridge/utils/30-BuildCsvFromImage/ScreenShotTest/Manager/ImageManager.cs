@@ -5,16 +5,19 @@ namespace ScreenShotTest
 {
 	public class ImageManager
 	{
+		CsvManager csvManager;
 		PaletteManager paletteManager;
 		TileManager tileManager;
 		//TilemapManager tilemapManager;
 
 		public void Initialize(
+			CsvManager csvManager,
 			PaletteManager paletteManager,
 			TileManager tileManager//,
 			//TilemapManager tilemapManager
 			)
 		{
+			this.csvManager = csvManager;
 			this.paletteManager = paletteManager;
 			this.tileManager = tileManager;
 			//this.tilemapManager = tilemapManager;
