@@ -7,12 +7,9 @@ using Microsoft.Xna.Framework.Input;
 
 namespace ScreenShotTest
 {
-	/// <summary>
-	/// This is the main type for your game
-	/// </summary>
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		const string file = "skateboard01";
+		const string file = "skate01";
 
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
@@ -41,12 +38,6 @@ namespace ScreenShotTest
 			Content.RootDirectory = "Content";
 		}
 
-		/// <summary>
-		/// Allows the game to perform any initialization it needs to before starting to run.
-		/// This is where it can query for any required services and load any non-graphic
-		/// related content.  Calling base.Initialize will enumerate through any components
-		/// and initialize them as well.
-		/// </summary>
 		protected override void Initialize()
 		{
 			save = false;
@@ -59,10 +50,6 @@ namespace ScreenShotTest
 			base.Initialize();
 		}
 
-		/// <summary>
-		/// LoadContent will be called once per game and is the place to load
-		/// all of your content.
-		/// </summary>
 		protected override void LoadContent()
 		{
 			// Create a new SpriteBatch, which can be used to draw textures.
@@ -85,8 +72,9 @@ namespace ScreenShotTest
 
 			dict["#30"] = Content.Load<Texture2D>("30_0000ff");
 			dict["#39"] = Content.Load<Texture2D>("39_55aaff");
+			dict["#3D"] = Content.Load<Texture2D>("3d_55ffff");
 			dict["#3F"] = Content.Load<Texture2D>("3f_ffffff");
-		
+
 			lines = File.ReadAllLines(file + ".csv");
 
 
@@ -97,20 +85,11 @@ namespace ScreenShotTest
 			renderTarget = new RenderTarget2D(GraphicsDevice, width, height, false, SurfaceFormat.Color, DepthFormat.Depth24);
 		}
 
-		/// <summary>
-		/// UnloadContent will be called once per game and is the place to unload
-		/// all content.
-		/// </summary>
 		protected override void UnloadContent()
 		{
 			Content.Unload();
 		}
 
-		/// <summary>
-		/// Allows the game to run logic such as updating the world,
-		/// checking for collisions, gathering input, and playing audio.
-		/// </summary>
-		/// <param name="gameTime">Provides a snapshot of timing values.</param>
 		protected override void Update(GameTime gameTime)
 		{
 			// Allows the game to exit
@@ -120,10 +99,6 @@ namespace ScreenShotTest
 			base.Update(gameTime);
 		}
 
-		/// <summary>
-		/// This is called when the game should draw itself.
-		/// </summary>
-		/// <param name="gameTime">Provides a snapshot of timing values.</param>
 		protected override void Draw(GameTime gameTime)
 		{
 			if (save)
@@ -175,6 +150,7 @@ namespace ScreenShotTest
 					py = ty * size;
 
 					var text = texts[i];
+					text = text.ToUpper();
 					if (text.Length == 0)
 					{
 						text = "#39";
