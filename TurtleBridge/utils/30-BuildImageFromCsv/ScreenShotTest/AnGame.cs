@@ -15,9 +15,6 @@ namespace ScreenShotTest
 		SpriteBatch spriteBatch;
 		RenderTarget2D renderTarget;
 		PaletteManager paletteManager;
-		//private Texture2D image;
-		//private Texture2D horz, vert;
-		//private Texture2D pixel;
 		private const int offset = 0;
 
 		private bool save;
@@ -47,7 +44,7 @@ namespace ScreenShotTest
 			//	save = Convert.ToBoolean(ConfigurationManager.AppSettings["save"]);
 			//}
 			//save = true;
-			//IsMouseVisible = true;
+			IsMouseVisible = true;
 			paletteManager.Initialize();
 			base.Initialize();
 		}
@@ -131,15 +128,11 @@ namespace ScreenShotTest
 					py = ty * size;
 
 					var text = texts[i];
-					text = text.ToUpper();
 					if (text.Length == 0)
 					{
 						text = "#39";
 					}
-					if (text == "#31")
-					{
-						text = "#01";
-					}
+
 					var image = paletteManager.Dict[text];
 					spriteBatch.Draw(image, new Vector2(px, py), Color.White);
 					tx++;
