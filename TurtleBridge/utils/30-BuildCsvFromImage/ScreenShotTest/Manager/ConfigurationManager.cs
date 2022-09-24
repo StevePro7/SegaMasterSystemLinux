@@ -8,9 +8,9 @@ namespace ScreenShotTest
 		{
 			Files = new string[]
 			{
-				"skate01",
+				//"skate01",
 				//"skate02",
-				//"skate03",
+				"skate03",
 			};
 		}
 
