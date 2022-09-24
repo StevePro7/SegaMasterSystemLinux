@@ -14,6 +14,7 @@ namespace ScreenShotTest
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
 		RenderTarget2D renderTarget;
+		PaletteManager paletteManager;
 		//private Texture2D image;
 		//private Texture2D horz, vert;
 		//private Texture2D pixel;
@@ -24,7 +25,6 @@ namespace ScreenShotTest
 		private int width;
 		private int height;
 
-		private IDictionary<string, Texture2D> dict = new Dictionary<string, Texture2D>();
 		private int size = 8;
 		private int wide = 24;
 		private int high = 32;
@@ -36,6 +36,7 @@ namespace ScreenShotTest
 			graphics.PreferredBackBufferWidth = wide * size;
 			graphics.PreferredBackBufferHeight = high * size;
 			Content.RootDirectory = "Content";
+			paletteManager = new PaletteManager();
 		}
 
 		protected override void Initialize()
@@ -47,6 +48,7 @@ namespace ScreenShotTest
 			//}
 			//save = true;
 			//IsMouseVisible = true;
+			paletteManager.Initialize();
 			base.Initialize();
 		}
 
@@ -54,29 +56,8 @@ namespace ScreenShotTest
 		{
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch(GraphicsDevice);
-			dict["#00"] = Content.Load<Texture2D>("00_000000");
-			dict["#01"] = Content.Load<Texture2D>("01_550000");
-			dict["#02"] = Content.Load<Texture2D>("02_aa0000");
-			dict["#03"] = Content.Load<Texture2D>("03_ff0000");
-
-			dict["#08"] = Content.Load<Texture2D>("08_00aa00");
-			dict["#0B"] = Content.Load<Texture2D>("0b_ffaa00");
-			dict["#0C"] = Content.Load<Texture2D>("0c_00ff00");
-			dict["#0F"] = Content.Load<Texture2D>("0f_ffff00");
-
-			dict["#16"] = Content.Load<Texture2D>("16_aa5555");
-			dict["#1B"] = Content.Load<Texture2D>("1b_ffaa55");
-
-			dict["#2A"] = Content.Load<Texture2D>("2a_aaaaaa");
-			dict["#2B"] = Content.Load<Texture2D>("2b_ffaaaa");
-
-			dict["#30"] = Content.Load<Texture2D>("30_0000ff");
-			dict["#39"] = Content.Load<Texture2D>("39_55aaff");
-			dict["#3D"] = Content.Load<Texture2D>("3d_55ffff");
-			dict["#3F"] = Content.Load<Texture2D>("3f_ffffff");
-
+			paletteManager.LoadContent(Content);
 			lines = File.ReadAllLines(file + ".csv");
-
 
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
 			width = pp.BackBufferWidth;
@@ -159,7 +140,8 @@ namespace ScreenShotTest
 					{
 						text = "#01";
 					}
-					spriteBatch.Draw(dict[text], new Vector2(px, py), Color.White);
+					var image = paletteManager.Dict[text];
+					spriteBatch.Draw(image, new Vector2(px, py), Color.White);
 					tx++;
 				}
 				ty++;
