@@ -29,7 +29,7 @@ namespace ScreenShotTest
 		protected override void Initialize()
 		{
 			save = false;
-			//save = true;
+			save = true;
 			IsMouseVisible = true;
 			base.Initialize();
 		}
@@ -104,7 +104,9 @@ namespace ScreenShotTest
 			graphics.GraphicsDevice.Clear(Color.Black);
 			spriteBatch.Begin();
 
-			
+			spriteBatch.Draw(images[0], new Vector2(0, 0), Color.White);
+			spriteBatch.Draw(images[1], new Vector2(0, 32), Color.White);
+			spriteBatch.Draw(images[2], new Vector2(0, 64), Color.White);
 
 			spriteBatch.End();
 		}
