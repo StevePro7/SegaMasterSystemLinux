@@ -11,7 +11,7 @@ namespace ScreenShotTest
 		ImageManager imageManager;
 		ResourceManager resourceManager;
 		TileManager tileManager;
-		TilemapManager tilemapManager;
+		//TilemapManager tilemapManager;
 		string[] files;
 
 		public MyController(
@@ -20,8 +20,8 @@ namespace ScreenShotTest
 			ImageManager imageManager,
 			PaletteManager paletteManager, 
 			ResourceManager resourceManager,
-			TileManager tileManager,
-			TilemapManager tilemapManager
+			TileManager tileManager//,
+			//TilemapManager tilemapManager
 			)
 		{
 			this.configurationManager = configurationManager;
@@ -30,7 +30,7 @@ namespace ScreenShotTest
 			this.paletteManager = paletteManager;
 			this.resourceManager = resourceManager;
 			this.tileManager = tileManager;
-			this.tilemapManager = tilemapManager;
+			//this.tilemapManager = tilemapManager;
 			
 		}
 
@@ -38,10 +38,10 @@ namespace ScreenShotTest
 		{
 			configurationManager.Initialize();
 			fileManager.Initialize();
-			imageManager.Initialize(paletteManager, tileManager, tilemapManager);
+			imageManager.Initialize(paletteManager, tileManager);//, tilemapManager);
 			paletteManager.Initialize();
 			tileManager.Initialize(fileManager, paletteManager);
-			tilemapManager.Initialize(fileManager);
+			//tilemapManager.Initialize(fileManager);
 			files = configurationManager.Files;
 		}
 

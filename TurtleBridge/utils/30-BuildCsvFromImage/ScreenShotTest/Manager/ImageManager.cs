@@ -7,17 +7,17 @@ namespace ScreenShotTest
 	{
 		PaletteManager paletteManager;
 		TileManager tileManager;
-		TilemapManager tilemapManager;
+		//TilemapManager tilemapManager;
 
 		public void Initialize(
 			PaletteManager paletteManager,
-			TileManager tileManager,
-			TilemapManager tilemapManager
+			TileManager tileManager//,
+			//TilemapManager tilemapManager
 			)
 		{
 			this.paletteManager = paletteManager;
 			this.tileManager = tileManager;
-			this.tilemapManager = tilemapManager;
+			//this.tilemapManager = tilemapManager;
 		}
 
 		public void Process(SpriteBatch spriteBatch, Texture2D image, string file)
@@ -30,7 +30,7 @@ namespace ScreenShotTest
 
 			int tx = px / 8;
 			int ty = py / 8;
-			tilemapManager.Setup(file, tx, ty);
+			//tilemapManager.Setup(file, tx, ty);
 
 			int inp_delta = px;// tx * 8;
 			for (int row = 0; row < ty; row++)
@@ -41,11 +41,11 @@ namespace ScreenShotTest
 					int inp_start = GetStart(inp_index, tx, ty);
 
 					int key = tileManager.Process(texColors, inp_start, inp_delta);
-					tilemapManager.Update(file, col, row, key);
+					//tilemapManager.Update(file, col, row, key);
 				}
 			}
 
-			tilemapManager.Save(file);
+			//tilemapManager.Save(file);
 		}
 
 		private int GetStart(int index, int tx, int yy)

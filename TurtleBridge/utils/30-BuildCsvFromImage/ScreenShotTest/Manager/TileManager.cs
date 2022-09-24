@@ -23,7 +23,7 @@ namespace ScreenShotTest
 			this.fileMananger = fileMananger;
 			this.paletteManager = paletteManager;
 			TileBank = new List<Tile>();
-			TileDictionary = new Dictionary<int, string>();
+			//TileDictionary = new Dictionary<int, string>();
 			sb = new StringBuilder();
 			counter = 0;
 		}
@@ -63,27 +63,27 @@ namespace ScreenShotTest
 			hash = sb.ToString();
 
 			// Check if tile exists.
-			bool exists = false;
-			var dictTiles = TileDictionary.FirstOrDefault(x => x.Value == hash);
-			if (TileDictionary.Keys.Count != 0)
-			{
-				exists = null != dictTiles.Value;
-			}
+			//bool exists = false;
+			//var dictTiles = TileDictionary.FirstOrDefault(x => x.Value == hash);
+			//if (TileDictionary.Keys.Count != 0)
+			//{
+			//	exists = null != dictTiles.Value;
+			//}
 
-			if (exists)
-			{
-				key = dictTiles.Key;
-			}
-			else
-			{
+			//if (exists)
+			//{
+			//	key = dictTiles.Key;
+			//}
+			//else
+			//{
 				key = counter;
-				TileDictionary.Add(key, hash);
+				//TileDictionary.Add(key, hash);
 
 				var name = key.ToString().PadLeft(3, '0');
 				var tile = new Tile(key, name, hash, newColors);
 				TileBank.Add(tile);
 				counter++;
-			}
+			//}
 
 			return key;
 		}
@@ -119,6 +119,6 @@ namespace ScreenShotTest
 		}
 
 		public List<Tile> TileBank{ get; private set; }
-		public Dictionary<int, string> TileDictionary{ get; private set; }
+		//public Dictionary<int, string> TileDictionary{ get; private set; }
 	}
 }

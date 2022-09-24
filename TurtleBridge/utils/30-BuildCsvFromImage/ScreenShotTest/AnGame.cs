@@ -18,7 +18,7 @@ namespace ScreenShotTest
 		ImageManager imageManager;
 		ResourceManager resourceManager;
 		TileManager tileManager;
-		TilemapManager tilemapManager;
+		//TilemapManager tilemapManager;
 		MyController controller;
 
 		public AnGame()
@@ -39,7 +39,7 @@ namespace ScreenShotTest
 			paletteManager = new PaletteManager();
 			resourceManager = new ResourceManager();
 			tileManager = new TileManager();
-			tilemapManager = new TilemapManager();
+			//tilemapManager = new TilemapManager();
 
 			controller = new MyController(
 				configurationManager,
@@ -47,8 +47,8 @@ namespace ScreenShotTest
 				imageManager,
 				paletteManager, 
 				resourceManager,
-				tileManager,
-				tilemapManager
+				tileManager//,
+				//tilemapManager
 			);
 
 			controller.Initialize(GraphicsDevice);
