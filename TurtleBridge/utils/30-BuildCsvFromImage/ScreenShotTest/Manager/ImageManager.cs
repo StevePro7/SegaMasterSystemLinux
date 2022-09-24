@@ -28,6 +28,7 @@ namespace ScreenShotTest
 			int px = image.Width;
 			int py = image.Height;
 
+			var csvColors = new Color[px * py];
 			var texColors = new Color[px * py];
 			image.GetData(texColors);
 
@@ -48,7 +49,8 @@ namespace ScreenShotTest
 				}
 			}
 
-			//tilemapManager.Save(file);
+			csvManager.Process(texColors, px, py);
+			csvManager.Save(file);
 		}
 
 		private int GetStart(int index, int tx, int yy)

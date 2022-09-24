@@ -54,7 +54,7 @@ namespace ScreenShotTest
 					tmp_index = row_index + cx;
 					var texColor = texColors[tmp_index];
 					var text = paletteManager.GetColorAtIndex(texColor);
-					var data = text.Replace("$", "");
+					var data = text.Replace("#", "");
 					sb.Append(data);
 					newColors[cy * 8 + cx] = texColors[tmp_index];
 				}

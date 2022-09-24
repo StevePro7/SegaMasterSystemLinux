@@ -41,6 +41,7 @@ namespace ScreenShotTest
 		{
 			configurationManager.Initialize();
 			fileManager.Initialize();
+			csvManager.Initialize(fileManager, paletteManager);
 			imageManager.Initialize(csvManager, paletteManager, tileManager);//, tilemapManager);
 			paletteManager.Initialize();
 			tileManager.Initialize(fileManager, paletteManager);
