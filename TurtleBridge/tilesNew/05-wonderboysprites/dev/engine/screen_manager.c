@@ -7,20 +7,28 @@
 #include "input_manager.h"
 #include "sprite_manager.h"
 #include "tile_manager.h"
-//#include <stdbool.h>
 #include "../devkit/_sms_manager.h"
 
-
 static void draw_sprite( unsigned char idx, unsigned char x, unsigned char y );
+static unsigned char frame;
 
 void engine_screen_manager_init()
 {
 	engine_font_manager_draw_text( "ADRIANA HOMEWORK", 2, 2 );
+	frame = 0;
 }
 
 void engine_screen_manager_update()
 {
-	draw_sprite( 2, 96, 96 );
+	unsigned char input;
+
+	input = engine_input_manager_hold_fire2();
+	if( input )
+	{
+		frame = 1 - frame;
+	}
+
+	draw_sprite( frame, 96, 96 );
 }
 
 static void draw_sprite( unsigned char idx, unsigned char x, unsigned char y )
