@@ -7,7 +7,7 @@ namespace _02_Test
 {
 	public class Game1 : Game
 	{
-		const int image = 1;
+		const int image = 5;
 
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
