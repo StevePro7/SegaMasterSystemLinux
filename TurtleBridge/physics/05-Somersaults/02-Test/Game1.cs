@@ -7,17 +7,17 @@ namespace _02_Test
 {
 	public class Game1 : Game
 	{
+		const int image = 1;
+
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
-		private readonly MyRocketManager myRocketManager;
-		private readonly MyConfigManger myConfigManger;
+		Texture2D[] images;
+		int index = 0;
 
 		public Game1()
 		{
 			graphics = new GraphicsDeviceManager(this);
 			Content.RootDirectory = "Content";
-			myConfigManger = new MyConfigManger();
-			myRocketManager = new MyRocketManager(myConfigManger);
 		}
 
 		protected override void Initialize()
@@ -27,15 +27,32 @@ namespace _02_Test
 			IsFixedTimeStep = true;
 			var fps = 50;
 			TargetElapsedTime = TimeSpan.FromSeconds(1.0f / fps);
-			//myConfigManger.Initialize();
-			myRocketManager.Initialize();
 			base.Initialize();
 		}
 
 		protected override void LoadContent()
 		{
 			spriteBatch = new SpriteBatch(GraphicsDevice);
-			myRocketManager.LoadContent(Content);
+			string dirX = "0" + image.ToString();
+			string pref = "skate0";
+			if (4 == image)
+			{
+				pref += "1";
+			}
+			else if (5 == image)
+			{
+				pref += "2";
+			}
+			else
+			{
+				pref += image.ToString();
+			}
+
+			images = new Texture2D[4];
+			images[0] = Content.Load<Texture2D>($"{dirX}/{pref}_01");
+			images[1] = Content.Load<Texture2D>($"{dirX}/{pref}_02");
+			images[2] = Content.Load<Texture2D>($"{dirX}/{pref}_03");
+			images[3] = Content.Load<Texture2D>($"{dirX}/{pref}_04");
 		}
 
 		protected override void UnloadContent()
@@ -50,26 +67,32 @@ namespace _02_Test
 				Exit();
 			}
 
-			if (Keyboard.GetState().IsKeyDown(Keys.Space))
+			if (Keyboard.GetState().IsKeyDown(Keys.D1))
 			{
-				if (!myRocketManager.IsRocketFlying)
-				{
-					myConfigManger.Initialize();
-					myRocketManager.Launch();
-				}
+				index = 0;
 			}
-
-			myRocketManager.Update(gameTime);
+			if (Keyboard.GetState().IsKeyDown(Keys.D2))
+			{
+				index = 1;
+			}
+			if (Keyboard.GetState().IsKeyDown(Keys.D3))
+			{
+				index = 2;
+			}
+			if (Keyboard.GetState().IsKeyDown(Keys.D4))
+			{
+				index = 3;
+			}
 
 			base.Update(gameTime);
 		}
 
 		protected override void Draw(GameTime gameTime)
 		{
-			GraphicsDevice.Clear(Color.CornflowerBlue);
+			GraphicsDevice.Clear(Color.Black);
 
 			spriteBatch.Begin();
-			myRocketManager.Draw(spriteBatch);
+			spriteBatch.Draw(images[index], new Vector2(200, 200), null, Color.White, 0.0f, Vector2.Zero, 8.0f, SpriteEffects.None, 1.0f);
 			spriteBatch.End();
 
 			base.Draw(gameTime);
