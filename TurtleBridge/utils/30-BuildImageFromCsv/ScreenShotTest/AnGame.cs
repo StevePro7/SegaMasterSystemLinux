@@ -7,7 +7,7 @@ namespace ScreenShotTest
 {
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		const string file = "skate01";
+		const string file = "skate03";
 
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
@@ -41,7 +41,7 @@ namespace ScreenShotTest
 			//{
 			//	save = Convert.ToBoolean(ConfigurationManager.AppSettings["save"]);
 			//}
-			//save = true;
+			save = true;
 			IsMouseVisible = true;
 			paletteManager.Initialize();
 			base.Initialize();
