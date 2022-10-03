@@ -7,7 +7,7 @@ namespace ScreenShotTest
 {
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		const string file = "skate03";
+		const string file = "skate01";
 
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
@@ -20,7 +20,7 @@ namespace ScreenShotTest
 		private int width;
 		private int height;
 
-		private int size = 8;
+		private int size = 1;
 		private int wide = 32;
 		private int high = 32;
 		private string[] lines;
