@@ -90,10 +90,12 @@ namespace _02_Test
 
 		protected override void Draw(GameTime gameTime)
 		{
+			const float scale = 6.0f;
 			GraphicsDevice.Clear(Color.Black);
 
 			spriteBatch.Begin();
-			spriteBatch.Draw(images[index], new Vector2(200, 200), null, Color.White, 0.0f, Vector2.Zero, 8.0f, SpriteEffects.None, 1.0f);
+			spriteBatch.Draw(images[index], new Vector2(200, 200), null, Color.White, 0.0f, Vector2.Zero, scale, SpriteEffects.None, 1.0f);
+			//spriteBatch.Draw(images[1], new Vector2(200, 000), null, Color.White, 0.0f, Vector2.Zero, scale, SpriteEffects.None, 1.0f);
 			spriteBatch.End();
 
 			base.Draw(gameTime);
