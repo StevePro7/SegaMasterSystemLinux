@@ -12,12 +12,15 @@ namespace _02_Test
 		Texture2D triangle;
 		Texture2D block;
 
+		float x, y;
+
 		public Game1()
 		{
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = 600;
 			graphics.PreferredBackBufferHeight = 500;
 			Content.RootDirectory = "Content";
+			x = 0.0f;
 		}
 
 		protected override void Initialize()
@@ -50,46 +53,63 @@ namespace _02_Test
 				Exit();
 			}
 
+			if (Keyboard.GetState().IsKeyDown(Keys.Left))
+			{
+				if (x > 0)
+				{
+					x -= 5; ;
+				}
+			}
+			if (Keyboard.GetState().IsKeyDown(Keys.Right))
+			{
+				if (x < 400)
+				{
+					x+=5;
+				}
+			}
 			base.Update(gameTime);
 		}
 
 		protected override void Draw(GameTime gameTime)
 		{
-			int x, y;
 			GraphicsDevice.Clear(Color.CornflowerBlue);
 
 			spriteBatch.Begin();
 			spriteBatch.Draw(triangle, new Vector2(100, 100), Color.White);
-			DrawBlock(100, 400);
-			DrawBlock(500, 100);
+			//DrawBlock(100, 400);
+			//DrawBlock(500, 100);
 
-			x = 100; y = GetY(x);
-			DrawBlock(100 + x, 400 - y);
+			//for (x = 0; x <= 400; x += 20)
+			//{
+				y = GetY(x);
+				DrawBlock(100 + x, 400 - y);
+			//}
 
-			//x = 200; y = 150;
-			x = 200; y = GetY(x);
-			DrawBlock(100 + x, 400 - y);
-
-			x = 300; y = GetY(x);
-			DrawBlock(100 + x, 400 - y);
+			//x = 100; y = GetY(x);
+			//DrawBlock(100 + x, 400 - y);
+			////x = 200; y = 150;
+			//x = 200; y = GetY(x);
+			//DrawBlock(100 + x, 400 - y);
+			//x = 300; y = GetY(x);
+			//DrawBlock(100 + x, 400 - y);
 
 			spriteBatch.End();
 
 			base.Draw(gameTime);
 		}
 
-		private void DrawBlock(int x, int y)
+		private void DrawBlock(float x, float y)
 		{
-			var pos = new Vector2(x - 20, y - 20);
+			var pos = new Vector2(x - 40, y - 40);
 			spriteBatch.Draw(block, pos, Color.White);
 		}
 
-		private int GetY(int x)
+		private float GetY(float x)
 		{
 			var rads = MathHelper.ToRadians(37);
 			var angl = Math.Tan(rads);
 			var high = x * angl;
-			return (int)(high);
+			return (float)high;
 		}
 	}
 }
