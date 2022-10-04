@@ -55,13 +55,41 @@ namespace _02_Test
 
 		protected override void Draw(GameTime gameTime)
 		{
+			int x, y;
 			GraphicsDevice.Clear(Color.CornflowerBlue);
 
 			spriteBatch.Begin();
 			spriteBatch.Draw(triangle, new Vector2(100, 100), Color.White);
+			DrawBlock(100, 400);
+			DrawBlock(500, 100);
+
+			x = 100; y = GetY(x);
+			DrawBlock(100 + x, 400 - y);
+
+			//x = 200; y = 150;
+			x = 200; y = GetY(x);
+			DrawBlock(100 + x, 400 - y);
+
+			x = 300; y = GetY(x);
+			DrawBlock(100 + x, 400 - y);
+
 			spriteBatch.End();
 
 			base.Draw(gameTime);
+		}
+
+		private void DrawBlock(int x, int y)
+		{
+			var pos = new Vector2(x - 20, y - 20);
+			spriteBatch.Draw(block, pos, Color.White);
+		}
+
+		private int GetY(int x)
+		{
+			var rads = MathHelper.ToRadians(37);
+			var angl = Math.Tan(rads);
+			var high = x * angl;
+			return (int)(high);
 		}
 	}
 }
