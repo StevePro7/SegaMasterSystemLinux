@@ -11,6 +11,7 @@ namespace _02_Test
 		SpriteBatch spriteBatch;
 		Texture2D triangle;
 		Texture2D block;
+		Texture2D steve;
 
 		float x, y;
 
@@ -39,6 +40,7 @@ namespace _02_Test
 
 			triangle = Content.Load<Texture2D>("triangle345");
 			block = Content.Load<Texture2D>("block");
+			steve = Content.Load<Texture2D>("steve");
 		}
 
 		protected override void UnloadContent()
@@ -100,8 +102,8 @@ namespace _02_Test
 
 		private void DrawBlock(float x, float y)
 		{
-			var pos = new Vector2(x - 40, y - 40);
-			spriteBatch.Draw(block, pos, Color.White);
+			var pos = new Vector2(x - 15, y - 30);
+			spriteBatch.Draw(steve, pos, Color.White);
 		}
 
 		private float GetY(float x)
