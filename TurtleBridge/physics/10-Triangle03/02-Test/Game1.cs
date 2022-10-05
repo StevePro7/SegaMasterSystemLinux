@@ -36,6 +36,7 @@ namespace _02_Test
 			IsFixedTimeStep = true;
 			var fps = 50;
 			TargetElapsedTime = TimeSpan.FromSeconds(1.0f / fps);
+			myRocketManager.Initialize();
 			base.Initialize();
 		}
 
@@ -63,9 +64,9 @@ namespace _02_Test
 				Exit();
 			}
 
-			if (Keyboard.GetState().IsKeyDown(Keys.Space))
+			if (!myRocketManager.IsRocketFlying)
 			{
-				if (!myRocketManager.IsRocketFlying)
+				if (Keyboard.GetState().IsKeyDown(Keys.D3))
 				{
 					myConfigManger.Initialize();
 					myRocketManager.Launch();
@@ -73,16 +74,6 @@ namespace _02_Test
 			}
 
 			myRocketManager.Update(gameTime);
-
-			if (Keyboard.GetState().IsKeyDown(Keys.Left))
-			{
-				
-			}
-			if (Keyboard.GetState().IsKeyDown(Keys.Right))
-			{
-				
-			}
-
 			base.Update(gameTime);
 		}
 

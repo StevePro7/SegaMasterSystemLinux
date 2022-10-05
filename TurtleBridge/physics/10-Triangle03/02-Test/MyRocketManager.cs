@@ -23,14 +23,15 @@ namespace _02_Test
 		private IList<Vector2> _rocketPositionList;
 
 		private Texture2D _rocketImage;
-		private const int Wide = 200 -16;
-		private const int High = 400- 32;
+		private int Wide = 200 -16;
+		private int High = 400- 32;
 		private const float gravity = -9.8f;
 		private byte index = 0;
 
 		public MyRocketManager(MyConfigManger myConfigManger)
 		{
 			this.myConfigManger = myConfigManger;
+			index = 3;
 		}
 
 		public void Initialize()
@@ -38,8 +39,10 @@ namespace _02_Test
 			_rocketPositionList = new List<Vector2>();
 			_rocketPositionList.Clear();
 
+			Wide = 200 - 16;
+			High = 400 - 32;
 			_rocketPosition = new Vector2(Wide, High);
-			_rocketPositionList.Add(_rocketPosition);
+			//_rocketPositionList.Add(_rocketPosition);
 			//_rocketAngle = 0.0f;
 
 			angle = myConfigManger.Angle;
@@ -73,6 +76,14 @@ namespace _02_Test
 				return;
 			}
 
+			if (3 == index)
+			{
+				Update02(gameTime);
+			}
+		}
+
+		private void Update02(GameTime gameTime)
+		{
 			float delta = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 1000f;
 			timer += delta;
 			float posX = veliX * timer;
