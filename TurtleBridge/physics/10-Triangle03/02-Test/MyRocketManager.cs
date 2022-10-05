@@ -94,7 +94,7 @@ namespace _02_Test
 			{
 				return;
 			}
-
+			index = myIndex;
 			if (3==index)
 			{
 				Initialize();
@@ -125,6 +125,10 @@ namespace _02_Test
 			if (3 == index)
 			{
 				Update03(gameTime);
+			}
+			if (4 == index)
+			{
+				Update04(gameTime);
 			}
 			if (5 == index)
 			{
@@ -170,6 +174,18 @@ namespace _02_Test
 				{
 					//Logger.Info($"{pos.X},{pos.Y}");
 				}
+			}
+		}
+		private void Update04(GameTime gameTime)
+		{
+			Vector2 prevPos = _rocketPosition;
+			var posY = GetY(delta);
+			delta++;
+			_rocketPosition = new Vector2(prevPos.X + 1, High + posY);
+			if (_rocketPosition.X >= 600 + 57 - 16)
+			{
+				_rocketFlying = false;
+				delta = 0;
 			}
 		}
 		private void Update05(GameTime gameTime)

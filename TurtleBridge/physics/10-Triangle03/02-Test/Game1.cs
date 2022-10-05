@@ -80,6 +80,10 @@ namespace _02_Test
 					myConfigManger.Initialize();
 					myRocketManager.Launch(3);
 				}
+				if (Keyboard.GetState().IsKeyDown(Keys.D4))
+				{
+					myRocketManager.Launch(4);
+				}
 				if (Keyboard.GetState().IsKeyDown(Keys.D5))
 				{
 					myRocketManager.Launch(5);
