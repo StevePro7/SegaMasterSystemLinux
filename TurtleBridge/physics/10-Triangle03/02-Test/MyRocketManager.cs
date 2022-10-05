@@ -31,7 +31,7 @@ namespace _02_Test
 		public MyRocketManager(MyConfigManger myConfigManger)
 		{
 			this.myConfigManger = myConfigManger;
-			index = 5;
+			index = 2;
 		}
 
 		public void Initialize()
@@ -109,6 +109,10 @@ namespace _02_Test
 				return;
 			}
 
+			if (1 == index)
+			{
+				Update01(gameTime);
+			}
 			if (2 == index)
 			{
 				Update02(gameTime);
@@ -123,6 +127,15 @@ namespace _02_Test
 			}
 		}
 
+		private void Update01(GameTime gameTime)
+		{
+			Vector2 prevPos = _rocketPosition;
+			_rocketPosition = new Vector2(prevPos.X + 1, High);
+			if (_rocketPosition.X >= 200 - 57 - 16)
+			{
+				_rocketFlying = false;
+			}
+		}
 		private void Update02(GameTime gameTime)
 		{
 

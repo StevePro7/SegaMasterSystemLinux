@@ -66,6 +66,14 @@ namespace _02_Test
 
 			if (!myRocketManager.IsRocketFlying)
 			{
+				if (Keyboard.GetState().IsKeyDown(Keys.D1))
+				{
+					myRocketManager.Launch(1);
+				}
+				if (Keyboard.GetState().IsKeyDown(Keys.D2))
+				{
+					myRocketManager.Launch(2);
+				}
 				if (Keyboard.GetState().IsKeyDown(Keys.D3))
 				{
 					myConfigManger.Initialize();
