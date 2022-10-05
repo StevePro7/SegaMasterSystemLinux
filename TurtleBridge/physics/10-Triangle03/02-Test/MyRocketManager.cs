@@ -39,7 +39,7 @@ namespace _02_Test
 			_rocketPositionList = new List<Vector2>();
 			_rocketPositionList.Clear();
 
-			InitPos();
+			InitPos(index);
 			_rocketPosition = new Vector2(Wide, High);
 			//_rocketPositionList.Add(_rocketPosition);
 			//_rocketAngle = 0.0f;
@@ -52,8 +52,9 @@ namespace _02_Test
 			timer = 0.0f;
 		}
 
-		private void InitPos()
+		public void InitPos(byte myIndex)
 		{
+			index = myIndex;
 			if (1 == index)
 			{
 				Wide = 25; High = 400 + 80 - 32;
@@ -82,7 +83,7 @@ namespace _02_Test
 			_rocketImage03 = content.Load<Texture2D>("steve03");
 		}
 
-		public void Launch()
+		public void Launch(byte myIndex)
 		{
 			if (_rocketFlying)
 			{
@@ -93,6 +94,11 @@ namespace _02_Test
 			{
 				Initialize();
 			}
+			else
+			{
+				InitPos(myIndex);
+			}
+
 			_rocketFlying = true;
 		}
 
@@ -110,6 +116,10 @@ namespace _02_Test
 			if (3 == index)
 			{
 				Update03(gameTime);
+			}
+			if (5 == index)
+			{
+				Update05(gameTime);
 			}
 		}
 
@@ -134,6 +144,15 @@ namespace _02_Test
 				{
 					//Logger.Info($"{pos.X},{pos.Y}");
 				}
+			}
+		}
+		private void Update05(GameTime gameTime)
+		{
+			Vector2 prevPos = _rocketPosition;
+			_rocketPosition = new Vector2(prevPos.X + 1, High);
+			if (_rocketPosition.X >= 750)
+			{
+				_rocketFlying = false;
 			}
 		}
 
