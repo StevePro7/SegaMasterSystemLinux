@@ -22,7 +22,7 @@ namespace _02_Test
 		private float timer;
 		private IList<Vector2> _rocketPositionList;
 
-		private Texture2D _rocketImage;
+		private Texture2D _rocketImage01, _rocketImage03;
 		private int Wide = 200 -16;
 		private int High = 400- 32;
 		private const float gravity = -9.8f;
@@ -31,7 +31,7 @@ namespace _02_Test
 		public MyRocketManager(MyConfigManger myConfigManger)
 		{
 			this.myConfigManger = myConfigManger;
-			index = 4;
+			index = 5;
 		}
 
 		public void Initialize()
@@ -54,26 +54,32 @@ namespace _02_Test
 
 		private void InitPos()
 		{
+			if (1 == index)
+			{
+				Wide = 25; High = 400 + 80 - 32;
+			}
 			if (2 == index)
 			{
-				Wide = 200 - 57- 16;
-				High = 400 + 80- 32;
+				Wide = 200 - 57- 16; High = 400 + 80- 32;
 			}
 			if (3 == index)
 			{
-				Wide = 200 - 16;
-				High = 400 - 32;
+				Wide = 200 - 16; High = 400 - 32;
 			}
 			if (4 == index)
 			{
-				Wide = 600 - 16;
-				High = 400 - 32;
+				Wide = 600 - 16; High = 400 - 32;
+			}
+			if (5 == index)
+			{
+				Wide = 600 +57-16; High = 400 + 80 - 32;
 			}
 		}
 
 		public void LoadContent(ContentManager content)
 		{
-			_rocketImage = content.Load<Texture2D>("steve");
+			_rocketImage01 = content.Load<Texture2D>("steve01");
+			_rocketImage03 = content.Load<Texture2D>("steve03");
 		}
 
 		public void Launch()
@@ -133,11 +139,14 @@ namespace _02_Test
 
 		public void Draw(SpriteBatch spriteBatch)
 		{
-			//foreach (var pos in _rocketPositionList)
-			//{
-				//spriteBatch.Draw(_rocketImage, pos, Color.White);
-			spriteBatch.Draw(_rocketImage, _rocketPosition, Color.White);
-			//}
+			if (1 == index || 5==index)
+			{
+				spriteBatch.Draw(_rocketImage01, _rocketPosition, Color.White);
+			}
+			else
+			{
+				spriteBatch.Draw(_rocketImage03, _rocketPosition, Color.White);
+			}
 		}
 
 		public bool IsRocketFlying { get { return _rocketFlying; } }
