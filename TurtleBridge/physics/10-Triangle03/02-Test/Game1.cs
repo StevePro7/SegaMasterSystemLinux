@@ -9,16 +9,17 @@ namespace _02_Test
 	{
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
-		Texture2D triangle;
+		Texture2D[] triangle;
 		Texture2D block;
 		Texture2D steve;
 
+		const int rampHigh = 400;
 		float x, y;
 
 		public Game1()
 		{
 			graphics = new GraphicsDeviceManager(this);
-			graphics.PreferredBackBufferWidth = 600;
+			graphics.PreferredBackBufferWidth = 800;
 			graphics.PreferredBackBufferHeight = 500;
 			Content.RootDirectory = "Content";
 			x = 0.0f;
@@ -38,7 +39,9 @@ namespace _02_Test
 		{
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 
-			triangle = Content.Load<Texture2D>("triangle789");
+			triangle = new Texture2D[2];
+			triangle[0] = Content.Load<Texture2D>("triangle_max01");
+			triangle[1] = Content.Load<Texture2D>("triangle_max02");
 			block = Content.Load<Texture2D>("block");
 			steve = Content.Load<Texture2D>("steve");
 		}
@@ -57,30 +60,27 @@ namespace _02_Test
 
 			if (Keyboard.GetState().IsKeyDown(Keys.Left))
 			{
-				if (x > 0)
-				{
-					x -= 5; ;
-				}
+				
 			}
 			if (Keyboard.GetState().IsKeyDown(Keys.Right))
 			{
-				if (x < 400)
-				{
-					x+=5;
-				}
+				
 			}
+
 			base.Update(gameTime);
 		}
 
 		protected override void Draw(GameTime gameTime)
 		{
-			GraphicsDevice.Clear(Color.CornflowerBlue);
+			//GraphicsDevice.Clear(Color.CornflowerBlue);
+			GraphicsDevice.Clear(Color.White);
 
 			spriteBatch.Begin();
-			spriteBatch.Draw(triangle, new Vector2(100, 100), Color.White);
+			spriteBatch.Draw(triangle[0], new Vector2(200-triangle[0].Width, rampHigh), Color.White);
+			spriteBatch.Draw(triangle[1], new Vector2(600, rampHigh), Color.White);
 
-			y = GetY(x);
-				DrawBlock(100 + x, 100 + y);
+			//y = GetY(x);
+			//DrawBlock(100 + x, 100 + y);
 			
 			spriteBatch.End();
 
