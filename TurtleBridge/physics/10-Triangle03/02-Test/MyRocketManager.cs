@@ -26,6 +26,7 @@ namespace _02_Test
 		private const int Wide = 200 -16;
 		private const int High = 400- 32;
 		private const float gravity = -9.8f;
+		private byte index = 0;
 
 		public MyRocketManager(MyConfigManger myConfigManger)
 		{
@@ -78,7 +79,7 @@ namespace _02_Test
 			float posY = (float)(veliY * timer + 0.5 * gravity * timer * timer);
 
 			_rocketPosition = new Vector2(Wide + posX, High - posY);
-			_rocketPositionList.Add(_rocketPosition);
+			//_rocketPositionList.Add(_rocketPosition);
 
 			if (_rocketPosition.Y >= High)
 			{
@@ -92,10 +93,11 @@ namespace _02_Test
 
 		public void Draw(SpriteBatch spriteBatch)
 		{
-			foreach (var pos in _rocketPositionList)
-			{
-				spriteBatch.Draw(_rocketImage, pos, Color.White);
-			}
+			//foreach (var pos in _rocketPositionList)
+			//{
+				//spriteBatch.Draw(_rocketImage, pos, Color.White);
+			spriteBatch.Draw(_rocketImage, _rocketPosition, Color.White);
+			//}
 		}
 
 		public bool IsRocketFlying { get { return _rocketFlying; } }
