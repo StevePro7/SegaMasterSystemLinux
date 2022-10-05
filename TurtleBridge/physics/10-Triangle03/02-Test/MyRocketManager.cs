@@ -31,7 +31,7 @@ namespace _02_Test
 		public MyRocketManager(MyConfigManger myConfigManger)
 		{
 			this.myConfigManger = myConfigManger;
-			index = 3;
+			index = 4;
 		}
 
 		public void Initialize()
@@ -39,8 +39,7 @@ namespace _02_Test
 			_rocketPositionList = new List<Vector2>();
 			_rocketPositionList.Clear();
 
-			Wide = 200 - 16;
-			High = 400 - 32;
+			InitPos();
 			_rocketPosition = new Vector2(Wide, High);
 			//_rocketPositionList.Add(_rocketPosition);
 			//_rocketAngle = 0.0f;
@@ -51,6 +50,25 @@ namespace _02_Test
 			veliX = (float)(speed * Math.Cos(radians));
 			veliY = (float)(speed * Math.Sin(radians));
 			timer = 0.0f;
+		}
+
+		private void InitPos()
+		{
+			if (2 == index)
+			{
+				Wide = 200 - 57- 16;
+				High = 400 + 80- 32;
+			}
+			if (3 == index)
+			{
+				Wide = 200 - 16;
+				High = 400 - 32;
+			}
+			if (4 == index)
+			{
+				Wide = 600 - 16;
+				High = 400 - 32;
+			}
 		}
 
 		public void LoadContent(ContentManager content)
@@ -65,7 +83,10 @@ namespace _02_Test
 				return;
 			}
 
-			Initialize();
+			if (3==index)
+			{
+				Initialize();
+			}
 			_rocketFlying = true;
 		}
 
@@ -76,13 +97,21 @@ namespace _02_Test
 				return;
 			}
 
-			if (3 == index)
+			if (2 == index)
 			{
 				Update02(gameTime);
+			}
+			if (3 == index)
+			{
+				Update03(gameTime);
 			}
 		}
 
 		private void Update02(GameTime gameTime)
+		{
+
+		}
+		private void Update03(GameTime gameTime)
 		{
 			float delta = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 1000f;
 			timer += delta;
