@@ -20,6 +20,7 @@ namespace _02_Test
 		private float speed;
 		private float veliX, veliY;
 		private float timer;
+		float delta;
 		private IList<Vector2> _rocketPositionList;
 
 		private Texture2D _rocketImage01, _rocketImage03;
@@ -31,7 +32,7 @@ namespace _02_Test
 		public MyRocketManager(MyConfigManger myConfigManger)
 		{
 			this.myConfigManger = myConfigManger;
-			index = 2;
+			index = 1;
 		}
 
 		public void Initialize()
@@ -54,6 +55,7 @@ namespace _02_Test
 
 		public void InitPos(byte myIndex)
 		{
+			delta = 0.0f;
 			index = myIndex;
 			if (1 == index)
 			{
@@ -85,6 +87,9 @@ namespace _02_Test
 
 		public void Launch(byte myIndex)
 		{
+			angle = myConfigManger.Angle;
+			radians = MathHelper.ToRadians(angle);
+
 			if (_rocketFlying)
 			{
 				return;
@@ -138,7 +143,15 @@ namespace _02_Test
 		}
 		private void Update02(GameTime gameTime)
 		{
-
+			Vector2 prevPos = _rocketPosition;
+			var posY = GetY(delta);
+			delta++;
+			_rocketPosition = new Vector2(prevPos.X + 1, High - posY);
+			if (_rocketPosition.X >= 200 - 16)
+			{
+				_rocketFlying = false;
+				delta = 0;
+			}
 		}
 		private void Update03(GameTime gameTime)
 		{
@@ -182,5 +195,13 @@ namespace _02_Test
 		}
 
 		public bool IsRocketFlying { get { return _rocketFlying; } }
+
+		private float GetY(float x)
+		{
+			var rads = MathHelper.ToRadians(angle);
+			var angl = Math.Tan(rads);
+			var high = x * angl;
+			return (float)high;
+		}
 	}
 }

@@ -80,7 +80,7 @@ namespace _02_Test
 			spriteBatch.Draw(triangle, new Vector2(100, 100), Color.White);
 
 			y = GetY(x);
-				DrawBlock(100 + x, 100 + y);
+			DrawBlock(100 + x, 100 + y);
 			
 			spriteBatch.End();
 

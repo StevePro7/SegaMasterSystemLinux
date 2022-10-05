@@ -36,6 +36,7 @@ namespace _02_Test
 			IsFixedTimeStep = true;
 			var fps = 50;
 			TargetElapsedTime = TimeSpan.FromSeconds(1.0f / fps);
+			myConfigManger.Initialize();
 			myRocketManager.Initialize();
 			base.Initialize();
 		}
