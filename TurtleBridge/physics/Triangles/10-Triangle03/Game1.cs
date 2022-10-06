@@ -10,12 +10,9 @@ namespace _02_Test
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
 		Texture2D[] triangle;
-		//Texture2D block;
-		//Texture2D steve;
 		private const int High = 400;
 		private readonly MyRocketManager myRocketManager;
 		private readonly MyConfigManger myConfigManger;
-		float x, y;
 
 		public Game1()
 		{
@@ -26,7 +23,6 @@ namespace _02_Test
 			myConfigManger = new MyConfigManger();
 			myRocketManager = new MyRocketManager(myConfigManger);
 			myRocketManager.Initialize();
-			x = 0.0f;
 		}
 
 		protected override void Initialize()
