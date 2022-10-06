@@ -29,7 +29,7 @@ namespace _02_Test
 		public MyRocketManager(MyConfigManger myConfigManger)
 		{
 			this.myConfigManger = myConfigManger;
-			index = 5;
+			index = 2;
 		}
 
 		public void Initialize()
