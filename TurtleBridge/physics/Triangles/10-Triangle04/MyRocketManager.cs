@@ -56,15 +56,15 @@ namespace _02_Test
 			index = myIndex;
 			if (1 == index)
 			{
-				Wide = 0; High = 256 - 32;
+				Wide = 0; High = 256 - 32;				// W:0 H:224
 			}
 			if (2 == index)
 			{
-				Wide = 80; High = 256- 80-32;
+				Wide = 80 + 16; High = 256- 80-32;		// W:96 H:144
 			}
 			if (3 == index)
 			{
-				Wide = 200 - 16; High = 400 - 32;
+				Wide = 256 - 32 - 80 - 16; High = 256 - 80 - 32;       // W:128  H:144
 			}
 			if (4 == index)
 			{
@@ -208,6 +208,9 @@ namespace _02_Test
 			{
 				spriteBatch.Draw(_rocketImage03, _rocketPosition, Color.White);
 			}
+
+			spriteBatch.Draw(_rocketImage01, new Vector2(96, 112), Color.White);
+			spriteBatch.Draw(_rocketImage01, new Vector2(128, 112), Color.White);
 		}
 
 		public bool IsRocketFlying { get { return _rocketFlying; } }
