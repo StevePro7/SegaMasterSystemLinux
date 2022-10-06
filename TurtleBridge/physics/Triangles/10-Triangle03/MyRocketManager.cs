@@ -12,9 +12,6 @@ namespace _02_Test
 
 		private bool _rocketFlying = false;
 		private Vector2 _rocketPosition;
-	//	private Vector2 _rocketDirection;
-		//private float _rocketAngle;
-		//private float _rocketScaling = 0.1f;
 		private float angle;
 		private float radians;
 		private float speed;
@@ -77,6 +74,9 @@ namespace _02_Test
 			{
 				Wide = 600 +57-16; High = 400 + 80 - 32;
 			}
+
+			var msg = $"(W,H)=({Wide},{High})";
+			Logger.Info(msg);
 		}
 
 		public void LoadContent(ContentManager content)
