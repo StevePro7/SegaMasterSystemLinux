@@ -29,7 +29,7 @@ namespace _02_Test
 		public MyRocketManager(MyConfigManger myConfigManger)
 		{
 			this.myConfigManger = myConfigManger;
-			index = 2;
+			index = 5;
 		}
 
 		public void Initialize()
@@ -56,23 +56,23 @@ namespace _02_Test
 			index = myIndex;
 			if (1 == index)
 			{
-				Wide = 0; High = 256 - 32;				// W:0 H:224
+				Wide = 0; High = 256 - 32;								// W:0 H:224
 			}
 			if (2 == index)
 			{
-				Wide = 80 + 16; High = 256- 80-32;		// W:96 H:144
+				Wide = 16; High = 256 - 32;								// W:16 H:224
 			}
 			if (3 == index)
 			{
-				Wide = 256 - 32 - 80 - 16; High = 256 - 80 - 32;       // W:128  H:144
+				Wide = 80 + 16; High = 256 - 80 - 32;					// W:96 H:144
 			}
 			if (4 == index)
 			{
-				Wide = 600 - 16; High = 400 - 32;
+				Wide = 256 - 32 - 80 - 16; High = 256 - 80 - 32;		// W:128  H:144
 			}
 			if (5 == index)
 			{
-				Wide = 600 +57-16; High = 400 + 80 - 32;
+				Wide = 256-32-16; High = 256 - 32;						// W:208 H:224
 			}
 
 			var msg = $"(W,H)=({Wide},{High})";
