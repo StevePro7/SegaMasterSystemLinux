@@ -36,7 +36,7 @@ namespace _02_Test
 			save = false;
 			save = true;
 			rotate = 0.0f;
-			angle = 1 * 45;
+			angle = 7 * 45;
 			rotate = MathHelper.ToRadians(angle);
 			base.Initialize();
 		}
