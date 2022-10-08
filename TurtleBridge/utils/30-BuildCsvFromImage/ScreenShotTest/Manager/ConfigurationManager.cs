@@ -8,7 +8,8 @@ namespace ScreenShotTest
 		{
 			Files = new string[]
 			{
-				"skate01",
+				"045",
+				//"skate01",
 				//"skate02",
 				//"skate03",
 			};

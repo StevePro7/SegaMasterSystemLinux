@@ -15,7 +15,7 @@ namespace _02_Test
 
 		float rotate;
 		int angle;
-		const int size = 32;
+		const int size = 128;
 		private bool save;
 
 		public Game1()
@@ -36,7 +36,7 @@ namespace _02_Test
 			save = false;
 			save = true;
 			rotate = 0.0f;
-			angle = 8 * 45;
+			angle = 1 * 45;
 			rotate = MathHelper.ToRadians(angle);
 			base.Initialize();
 		}
@@ -45,7 +45,8 @@ namespace _02_Test
 		{
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 			//image = Content.Load<Texture2D>("steve");
-			image = Content.Load<Texture2D>("skate03");
+			//image = Content.Load<Texture2D>("skate03");
+			image = Content.Load<Texture2D>("skate128");
 			renderTarget = new RenderTarget2D(GraphicsDevice, size, size, false, SurfaceFormat.Color, DepthFormat.Depth24);
 		}
 
@@ -112,7 +113,7 @@ namespace _02_Test
 
 			//ublic void Draw(Texture2D texture, Vector2 position, Rectangle? sourceRectangle, Color color, float rotation, Vector2 origin, float scale, SpriteEffects effects, float layerDepth);
 			//priteBatch.Draw(image, new Vector2(64, 64), null, Color.White, rotate, new Vector2(16, 16), SpriteEffects.None, 1.0f);
-			spriteBatch.Draw(image, new Vector2(spot, spot), null, null, new Vector2(16, 16), rotate, null, null, SpriteEffects.None, 0.0f);
+			spriteBatch.Draw(image, new Vector2(spot, spot), null, null, new Vector2(image.Width/2, image.Height/2), rotate, null, null, SpriteEffects.None, 0.0f);
 			spriteBatch.End();
 		}
 	}
