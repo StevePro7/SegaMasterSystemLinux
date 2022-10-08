@@ -34,8 +34,8 @@ namespace _02_Test
 		protected override void LoadContent()
 		{
 			spriteBatch = new SpriteBatch(GraphicsDevice);
-			var dirX = "128x128/";
-			//var dirX = "32x32/";
+			//var dirX = "128x128/";
+			var dirX = "32x32/";
 			image = new Texture2D[8];
 			image[0] = Content.Load<Texture2D>(dirX + "000");
 			image[1] = Content.Load<Texture2D>(dirX + "045");
