@@ -10,13 +10,9 @@ namespace _02_Test
 	{
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
-		Texture2D image;
-		RenderTarget2D renderTarget;
-
-		float rotate;
-		int angle;
-		const int size = 32;
-		private bool save;
+		Texture2D[] image;
+		int index = 0;
+		int size = 256;
 
 		public Game1()
 		{
@@ -29,24 +25,26 @@ namespace _02_Test
 		protected override void Initialize()
 		{
 			IsMouseVisible = true;
-			Logger.Initialize();
 			IsFixedTimeStep = true;
 			var fps = 50;
 			TargetElapsedTime = TimeSpan.FromSeconds(1.0f / fps);
-			save = false;
-			save = true;
-			rotate = 0.0f;
-			angle = 8 * 45;
-			rotate = MathHelper.ToRadians(angle);
 			base.Initialize();
 		}
 
 		protected override void LoadContent()
 		{
 			spriteBatch = new SpriteBatch(GraphicsDevice);
-			//image = Content.Load<Texture2D>("steve");
-			image = Content.Load<Texture2D>("skate03");
-			renderTarget = new RenderTarget2D(GraphicsDevice, size, size, false, SurfaceFormat.Color, DepthFormat.Depth24);
+			//var dirX = "128x128/";
+			var dirX = "32x32/";
+			image = new Texture2D[8];
+			image[0] = Content.Load<Texture2D>(dirX + "000");
+			image[1] = Content.Load<Texture2D>(dirX + "045");
+			image[2] = Content.Load<Texture2D>(dirX + "090");
+			image[3] = Content.Load<Texture2D>(dirX + "135");
+			image[4] = Content.Load<Texture2D>(dirX + "180");
+			image[5] = Content.Load<Texture2D>(dirX + "225");
+			image[6] = Content.Load<Texture2D>(dirX + "270");
+			image[7] = Content.Load<Texture2D>(dirX + "315");
 		}
 
 		protected override void UnloadContent()
@@ -61,59 +59,54 @@ namespace _02_Test
 				Exit();
 			}
 
-			if (save || Keyboard.GetState().IsKeyDown(Keys.Space))
+			if (Keyboard.GetState().IsKeyDown(Keys.D1) || Keyboard.GetState().IsKeyDown(Keys.D9) || Keyboard.GetState().IsKeyDown(Keys.Space))
 			{
-				GraphicsDevice.SetRenderTarget(renderTarget);
-				GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.CornflowerBlue, 1, 0);
-
-				Draw();
-				base.Draw(gameTime);
-
-				GraphicsDevice.SetRenderTarget(null);
-				Texture2D resolvedTexture = (Texture2D)renderTarget;
-				var name = $"{angle}.png";
-				Stream stream2 = File.Create(name);
-				resolvedTexture.SaveAsPng(stream2, size, size);
-
-				Exit();
+				index = 0;
 			}
-
-			if (Keyboard.GetState().IsKeyDown(Keys.Left))
+			if (Keyboard.GetState().IsKeyDown(Keys.D2))
 			{
-				if (rotate > 0)
-				{
-					rotate -= 0.1f;
-				}
+				index = 1;
 			}
-			if (Keyboard.GetState().IsKeyDown(Keys.Right))
+			if (Keyboard.GetState().IsKeyDown(Keys.D3))
 			{
-				if (rotate < 360)
-				{
-					rotate += 0.1f;
-				}
+				index = 2;
 			}
-
+			if (Keyboard.GetState().IsKeyDown(Keys.D4))
+			{
+				index = 3;
+			}
+			if (Keyboard.GetState().IsKeyDown(Keys.D5))
+			{
+				index = 4;
+			}
+			if (Keyboard.GetState().IsKeyDown(Keys.D6))
+			{
+				index = 5;
+			}
+			if (Keyboard.GetState().IsKeyDown(Keys.D7))
+			{
+				index = 6;
+			}
+			if (Keyboard.GetState().IsKeyDown(Keys.D8))
+			{
+				index = 7;
+			}
 			base.Update(gameTime);
 		}
 
 		protected override void Draw(GameTime gameTime)
 		{
-			Draw();
+			int spot = size / 4;
+			GraphicsDevice.Clear(Color.Black);
+			spriteBatch.Begin();
+			spriteBatch.Draw(image[index], new Vector2(spot, spot), Color.White);
+			spriteBatch.End();
 			base.Draw(gameTime);
 		}
 
 		private void Draw()
 		{
-			int spot = size / 2;
-			GraphicsDevice.Clear(Color.Black);
-			//GraphicsDevice.Clear(Color.CornflowerBlue);
-
-			spriteBatch.Begin();
-
-			//ublic void Draw(Texture2D texture, Vector2 position, Rectangle? sourceRectangle, Color color, float rotation, Vector2 origin, float scale, SpriteEffects effects, float layerDepth);
-			//priteBatch.Draw(image, new Vector2(64, 64), null, Color.White, rotate, new Vector2(16, 16), SpriteEffects.None, 1.0f);
-			spriteBatch.Draw(image, new Vector2(spot, spot), null, null, new Vector2(16, 16), rotate, null, null, SpriteEffects.None, 0.0f);
-			spriteBatch.End();
+			
 		}
 	}
 }
