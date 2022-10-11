@@ -27,7 +27,7 @@ namespace ScreenShotTest
 		{
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = 32;
-			graphics.PreferredBackBufferHeight =32 * 4;
+			graphics.PreferredBackBufferHeight =32 * 8;
 			Content.RootDirectory = "Content";
 		}
 
@@ -44,7 +44,7 @@ namespace ScreenShotTest
 			//{
 			//	save = Convert.ToBoolean(ConfigurationManager.AppSettings["save"]);
 			//}
-			//save = true;
+			save = true;
 			IsMouseVisible = true;
 			base.Initialize();
 		}
