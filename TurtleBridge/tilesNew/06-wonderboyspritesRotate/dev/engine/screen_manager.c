@@ -23,21 +23,32 @@ void engine_screen_manager_update()
 	unsigned char input;
 	//frame = 0;
 
-	input = engine_input_manager_move_fire1();
+	input = engine_input_manager_hold_fire1();
 	if( input )
 	{
-		draw_sprite( 2, 96, 96 );
+		frame++;
+		if( frame > 7 )
+		{
+			frame = 0;
+		}
 	}
 	else
 	{
 		input = engine_input_manager_hold_fire2();
 		if( input )
 		{
-			frame = 1 - frame;
+			if( frame == 0 )
+			{
+				frame = 7;
+			}
+			else
+			{
+				frame--;
+			}
 		}
-
-		draw_sprite( frame, 96, 96 );
 	}
+
+	draw_sprite( frame, 96, 96 );
 }
 
 static void draw_sprite( unsigned char idx, unsigned char x, unsigned char y )
