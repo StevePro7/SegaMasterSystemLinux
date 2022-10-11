@@ -6,10 +6,13 @@ F:Fscreen_manager$draw_sprite$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lscreen_manager.draw_sprite$idx$1_0$108({1}SC:U),B,1,4
 S:Lscreen_manager.draw_sprite$x$1_0$108({1}SC:U),B,1,5
 S:Lscreen_manager.draw_sprite$y$1_0$108({1}SC:U),B,1,6
-S:Lscreen_manager.draw_sprite$num$1_0$109({1}SC:U),R,0,0,[l]
-S:Lscreen_manager.draw_sprite$i$1_0$109({1}SC:U),R,0,0,[d]
-S:Lscreen_manager.draw_sprite$j$1_0$109({1}SC:U),R,0,0,[e]
-S:Lscreen_manager.draw_sprite$sloc0$0_1$0({1}SC:S),B,1,-1
+S:Lscreen_manager.draw_sprite$wide$1_0$109({1}SC:U),R,0,0,[]
+S:Lscreen_manager.draw_sprite$high$1_0$109({1}SC:U),R,0,0,[]
+S:Lscreen_manager.draw_sprite$num$1_0$109({1}SC:U),R,0,0,[a]
+S:Lscreen_manager.draw_sprite$i$1_0$109({1}SC:U),R,0,0,[c]
+S:Lscreen_manager.draw_sprite$j$1_0$109({1}SC:U),B,1,-1
+S:Lscreen_manager.draw_sprite$sloc0$0_1$0({1}SC:U),B,1,-2
+S:Lscreen_manager.draw_sprite$sloc1$0_1$0({1}SC:U),B,1,-1
 S:Fscreen_manager$frame$0_0$0({1}SC:U),E,0,0
 S:G$engine_music_manager_play$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_sound_manager_play$0_0$0({2}DF,SV:S),C,0,0

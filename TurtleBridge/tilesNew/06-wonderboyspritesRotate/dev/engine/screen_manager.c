@@ -43,14 +43,17 @@ void engine_screen_manager_update()
 static void draw_sprite( unsigned char idx, unsigned char x, unsigned char y )
 {
 	//unsigned char row, col;
+	const unsigned char wide = 4;
+	const unsigned char high = 4;
 	unsigned char num;
+	
 	unsigned char i, j;
 
-	for( j = 0; j < 4; j++ )
+	for( j = 0; j < high; j++ )
 	{
-		for( i = 0; i < 3; i++ )
+		for( i = 0; i < wide; i++ )
 		{
-			num = ( idx * 12 ) + j * 3 + i;
+			num = ( idx * wide * high ) + j * 4 + i;
 			devkit_SMS_addSprite( x + i * 8, y + j * 8, SPRITE_TILES + num );
 		}
 	}
