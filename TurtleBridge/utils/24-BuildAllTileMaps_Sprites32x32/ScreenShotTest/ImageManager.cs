@@ -19,16 +19,17 @@ namespace ScreenShotTest
 		{
 			return new string[]
 			{
-				"tile",
-				"rght_01",
-				"yellow02",
-				"red04",
-				//"yellow01",
-				//"yellow02",
-				//"red01",
-				//"red02",
+				"000",
+				//"045",
+				"090",
+				//"135",
+				"180",
+				//"225",
+				"270",
+				//"315",
 			};
 		}
+
 		public IDictionary<string, Texture2D> Images { get; private set; }
 	}
 }

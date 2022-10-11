@@ -27,7 +27,7 @@ namespace ScreenShotTest
 		{
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = 32;
-			graphics.PreferredBackBufferHeight = 8;
+			graphics.PreferredBackBufferHeight =32 * 4;
 			Content.RootDirectory = "Content";
 		}
 
@@ -130,14 +130,14 @@ namespace ScreenShotTest
 
 		private void Draw()
 		{
-			int x = 0;
+			int y = 0;
 			graphics.GraphicsDevice.Clear(Color.Black);
 			spriteBatch.Begin();
 
 			foreach (var image in imageManager.Images)
 			{
-				spriteBatch.Draw(image.Value, new Vector2(x, 0), Color.White);
-				x += 8;
+				spriteBatch.Draw(image.Value, new Vector2(0, y), Color.White);
+				y += 32;
 			}
 
 			spriteBatch.End();
