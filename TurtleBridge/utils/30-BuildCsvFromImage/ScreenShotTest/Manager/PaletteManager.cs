@@ -20,6 +20,11 @@ namespace ScreenShotTest
 			strColor = strColor.ToLower();
 			var valColor = "#" + strColor;
 			var dictColor = PaletteDictionary.FirstOrDefault(x => x.Value == valColor);
+			if (null == dictColor.Key)
+			{
+				return "#XX";
+			}
+
 			return dictColor.Key;
 		}
 

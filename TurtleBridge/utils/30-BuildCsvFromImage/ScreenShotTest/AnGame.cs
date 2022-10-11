@@ -33,6 +33,7 @@ namespace ScreenShotTest
 		protected override void Initialize()
 		{
 			IsMouseVisible = true;
+			Logger.Initialize();
 
 			configurationManager = new ConfigurationManager();
 			csvManager = new CsvManager();

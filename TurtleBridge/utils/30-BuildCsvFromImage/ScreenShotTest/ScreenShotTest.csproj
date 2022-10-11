@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="AnGame.cs" />
     <Compile Include="Controller\MyController.cs" />
+    <Compile Include="Logger.cs" />
     <Compile Include="Manager\ConfigurationManager.cs" />
     <Compile Include="Manager\CsvManager.cs" />
     <Compile Include="Manager\FileManager.cs" />
@@ -56,6 +57,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\physics\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="MonoGame.Framework">
       <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\Windows\MonoGame.Framework.dll</HintPath>
     </Reference>
