@@ -18,6 +18,7 @@ namespace _02_Test
 		private float veliX, veliY;
 		private float timer;
 		float delta;
+		int frame;
 		private IList<Vector2> _rocketPositionList;
 
 		private Texture2D _rocketImage01, _rocketImage03;
@@ -29,7 +30,7 @@ namespace _02_Test
 		public MyRocketManager(MyConfigManger myConfigManger)
 		{
 			this.myConfigManger = myConfigManger;
-			index = 1;
+			index = 3;
 		}
 
 		public void Initialize()
@@ -76,7 +77,9 @@ namespace _02_Test
 			}
 
 			var msg = $"(W,H)=({Wide},{High})";
+			_rocketPosition = new Vector2(Wide, High);
 			Logger.Info(msg);
+			frame = 0;
 		}
 
 		public void LoadContent(ContentManager content)
@@ -159,14 +162,20 @@ namespace _02_Test
 		}
 		private void Update03(GameTime gameTime)
 		{
+			frame++;
+			string msg = $"{frame},{_rocketPosition.X},{_rocketPosition.Y},";
+
 			float delta = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 1000f;
 			timer += delta;
 			float posX = veliX * timer;
 			float posY = (float)(veliY * timer + 0.5 * gravity * timer * timer);
 
+			msg += $"{posX},{posY},";
 			_rocketPosition = new Vector2(Wide + posX, High - posY);
 			//_rocketPositionList.Add(_rocketPosition);
 
+			msg += $"{_rocketPosition.X},{_rocketPosition.Y}";
+			Logger.Info(msg);
 			if (_rocketPosition.Y >= High)
 			{
 				_rocketFlying = false;

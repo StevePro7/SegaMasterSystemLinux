@@ -16,6 +16,7 @@ namespace _02_Test
 
 		public Game1()
 		{
+			Logger.Initialize();
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = 800;
 			graphics.PreferredBackBufferHeight = 500;
@@ -28,7 +29,6 @@ namespace _02_Test
 		protected override void Initialize()
 		{
 			IsMouseVisible = true;
-			Logger.Initialize();
 			IsFixedTimeStep = true;
 			var fps = 50;
 			TargetElapsedTime = TimeSpan.FromSeconds(1.0f / fps);
