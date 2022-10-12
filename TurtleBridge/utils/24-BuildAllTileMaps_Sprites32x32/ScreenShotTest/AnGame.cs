@@ -11,7 +11,7 @@ namespace ScreenShotTest
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
 		private ImageManager imageManager;
-		const string file = "sprites_org";
+		const string file = "sprites_all_org";
 
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
@@ -27,7 +27,7 @@ namespace ScreenShotTest
 		{
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = 32;
-			graphics.PreferredBackBufferHeight =32 * 8;
+			graphics.PreferredBackBufferHeight =32 * 16;
 			Content.RootDirectory = "Content";
 		}
 
@@ -137,7 +137,8 @@ namespace ScreenShotTest
 			foreach (var image in imageManager.Images)
 			{
 				spriteBatch.Draw(image.Value, new Vector2(0, y), Color.White);
-				y += 32;
+				//y += 32;
+				y += 256;
 			}
 
 			spriteBatch.End();
