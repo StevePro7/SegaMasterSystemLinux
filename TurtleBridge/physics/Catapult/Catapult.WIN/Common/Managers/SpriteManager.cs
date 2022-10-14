@@ -2,6 +2,8 @@
 using Microsoft.Xna.Framework;
 using WindowsGame.Common.Data;
 using WindowsGame.Common.Static;
+using WindowsGame.Master;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace WindowsGame.Common.Managers
 {
@@ -18,6 +20,8 @@ namespace WindowsGame.Common.Managers
 		void DrawVolumeOn();
 		void DrawVolumeOff();
 		void DrawWhite(Vector2 position);
+
+		void DrawCatapultCrash();
 	}
 
 	public class SpriteManager : ISpriteManager
@@ -106,6 +110,14 @@ namespace WindowsGame.Common.Managers
 		private static Vector2 GetPositionAnswer(Byte x, Byte y)
 		{
 			return new Vector2(2 + Constants.GameOffsetX + x * Constants.SpriteTile, y * Constants.SpriteTile + offsetAnswerY);
+		}
+
+		public void DrawCatapultCrash()
+		{
+			var basePosition = Vector2.Zero;
+			float rotate = MathHelper.ToRadians(-5);
+			//Engine.SpriteBatch.Draw(Assets.BodyBackTexture, basePosition, null, Color.White, MathHelper.ToRadians(-5), Vector2.Zero, Microsoft.Xna.Framework.Graphics.SpriteEffects.None, 1.0f);
+			Engine.SpriteBatch.Draw(Assets.BodyBackTexture, basePosition, null, null, Vector2.Zero, rotate, Vector2.One, Color.White, SpriteEffects.None, 0.0f);
 		}
 
 	}

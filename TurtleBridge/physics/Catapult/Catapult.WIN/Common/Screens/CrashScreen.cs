@@ -29,6 +29,8 @@ namespace WindowsGame.Common.Screens
 		public override void Draw()
 		{
 			Engine.SpriteBatch.DrawString(Assets.EmulogicFont, "CRASH", new Vector2(20, 20), Color.White);
+
+			MyGame.Manager.SpriteManager.DrawCatapultCrash();
 		}
 
 	}
