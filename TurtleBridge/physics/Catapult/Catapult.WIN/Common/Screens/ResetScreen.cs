@@ -1,31 +1,31 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
+using WindowsGame.Common.Data;
 using WindowsGame.Common.Interfaces;
 using WindowsGame.Common.Static;
 using WindowsGame.Master;
 
 namespace WindowsGame.Common.Screens
 {
-	public class TestScreen : BaseScreen, IScreen
+	public class ResetScreen : BaseScreen, IScreen
 	{
 		public override void Initialize()
 		{
-			base.Initialize();
 		}
 
 		public override void LoadContent()
 		{
-			Engine.Game.Window.Title = "TestScreen";
-		}
+				}
 
 		public ScreenType Update(GameTime gameTime)
 		{
-			//MyGame.Manager.Logger.Info("testing");
-			return ScreenType.Test;
+			
+			return ScreenType.Reset;
 		}
 
 		public override void Draw()
 		{
-			//MyGame.Manager.ImageManager.DrawGrid();
+			Engine.SpriteBatch.DrawString(Assets.EmulogicFont, "RESET", new Vector2(20, 20), Color.White);
 		}
 
 	}
