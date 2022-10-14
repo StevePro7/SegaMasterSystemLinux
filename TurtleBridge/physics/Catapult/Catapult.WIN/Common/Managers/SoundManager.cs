@@ -37,12 +37,12 @@ namespace WindowsGame.Common.Managers
 
 		public void PlayTitleMusic()
 		{
-			PlaySong(Assets.TitleMusicSong, false);
+			//PlaySong(Assets.TitleMusicSong, false);
 		}
 
 		public void PlayGameOver()
 		{
-			PlaySong(Assets.GameOverSong, false);
+			//PlaySong(Assets.GameOverSong, false);
 		}
 
 		public void StopMusic()
@@ -129,8 +129,8 @@ namespace WindowsGame.Common.Managers
 				return;
 			}
 
-			SoundEffectInstance value = Assets.SoundEffectDictionary[key];
-			value.Play();
+			//SoundEffectInstance value = Assets.SoundEffectDictionary[key];
+			//value.Play();
 		}
 		private void SetVolume()
 		{
