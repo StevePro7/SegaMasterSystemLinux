@@ -116,7 +116,7 @@ namespace WindowsGame.Common.Managers
 		{
 			var basePosition = Vector2.Zero;
 			float rotate = MathHelper.ToRadians(-5);
-			//Engine.SpriteBatch.Draw(Assets.BodyBackTexture, basePosition, null, Color.White, MathHelper.ToRadians(-5), Vector2.Zero, Microsoft.Xna.Framework.Graphics.SpriteEffects.None, 1.0f);
+			Engine.SpriteBatch.Draw(Assets.BodyFrontTexture, basePosition, null, null, Vector2.Zero, rotate, Vector2.One, Color.White, SpriteEffects.None, 0.0f);
 			Engine.SpriteBatch.Draw(Assets.BodyBackTexture, basePosition, null, null, Vector2.Zero, rotate, Vector2.One, Color.White, SpriteEffects.None, 0.0f);
 		}
 
