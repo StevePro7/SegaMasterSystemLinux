@@ -138,7 +138,7 @@ namespace CatapultMiniGame
 			// Play the looping music
 			//loopingMusic = soundBank.GetCue("Music");
 			//loopingMusic.Play();
-
+			IsMouseVisible = true;
 			base.Initialize();
 		}
 
@@ -287,7 +287,8 @@ namespace CatapultMiniGame
 			Vector2 FontOrigin;
 
 			// Start Drawing
-			//spriteBatch.Begin(SpriteBlendMode.AlphaBlend);	// TODO
+			// https://nelsonhurst.com/xna-cheatsheet
+			//sprite.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
 			spriteBatch.Begin();
 
 			// Draw the sky
