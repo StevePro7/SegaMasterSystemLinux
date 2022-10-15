@@ -1,21 +1,12 @@
-﻿#region Using Statements
-using System;
-using System.Collections.Generic;
+﻿using System;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using System.IO;
-using System.Text;
-#endregion
 
 namespace CatapultMiniGame
 {
-	public class CatapultGame : Microsoft.Xna.Framework.Game
+	public class CatapultGame : Game
 	{
-		#region Fields
-
 		const int screenWidth = 1280;
 		const int screenHeight = 720;
 
@@ -52,17 +43,6 @@ namespace CatapultMiniGame
 		// Font components
 		SpriteFont tahomaFont;
 
-		// Audio components
-		//AudioEngine audioEngine;
-		//WaveBank waveBank;
-		//SoundBank soundBank;
-		//public SoundBank SoundBank
-		//{
-		//	get { return soundBank; }
-		//}
-		//Cue loopingMusic = null;
-
-		// Is our game running?
 		bool runGame = true;
 
 		// Used to delay the start of the game
@@ -99,15 +79,6 @@ namespace CatapultMiniGame
 			get { return pumpkinDistance; }
 		}
 
-		// Storage Objects
-		//IAsyncResult result = null;
-		//bool GameLoadRequested = true;
-		//StorageDevice device;
-
-		#endregion
-
-		#region Initialization
-
 		public CatapultGame()
 		{
 			graphics = new GraphicsDeviceManager(this);
@@ -115,36 +86,16 @@ namespace CatapultMiniGame
 			graphics.PreferredBackBufferHeight = screenHeight;
 			Content.RootDirectory = "Content";
 
-			//Components.Add(new GamerServicesComponent(this));
-
 			IsFixedTimeStep = true;
-
 			playerCatapult = new Catapult(this);
 		}
 
-		/// <summary>
-		/// Allows the game to perform any initialization it needs to before starting to
-		/// run. This is where it can query for any required services and load any 
-		/// non-graphic related content.  Calling base.Initialize will enumerate through
-		/// any components and initialize them as well.
-		/// </summary>
 		protected override void Initialize()
 		{
-			// Init sounds
-			//audioEngine = new AudioEngine("Content/Sounds/Sounds.xgs");
-			//waveBank = new WaveBank(audioEngine, "Content/Sounds/Wave Bank.xwb");
-			//soundBank = new SoundBank(audioEngine, "Content/Sounds/Sound Bank.xsb");
-
-			// Play the looping music
-			//loopingMusic = soundBank.GetCue("Music");
-			//loopingMusic.Play();
 			IsMouseVisible = true;
 			base.Initialize();
 		}
 
-		/// <summary>
-		/// Load your graphics content.
-		/// </summary>
 		protected override void LoadContent()
 		{
 			spriteBatch = new SpriteBatch(graphics.GraphicsDevice);
@@ -158,16 +109,6 @@ namespace CatapultMiniGame
 			playerCatapult.Initialize();
 		}
 
-
-		#endregion
-
-		#region Update and Draw
-
-		/// <summary>
-		/// Allows the game to run logic such as updating the world,
-		/// checking for collisions, gathering input and playing audio.
-		/// </summary>
-		/// <param name="gameTime">Provides a snapshot of timing values.</param>
 		protected override void Update(GameTime gameTime)
 		{
 			// Allow the game to exit
@@ -177,44 +118,16 @@ namespace CatapultMiniGame
 				runGame = false;
 			}
 
-			// We need to load the game data
-			//if (GameLoadRequested)
-			//{
-			//	if ((result != null) && result.IsCompleted)
-			//	{
-			//		device = Guide.EndShowStorageDeviceSelector(result);
-			//		result = null;
-			//		if ((device == null) || !device.IsConnected)
-			//		{
-			//			// Reset the request flag
-			//			GameLoadRequested = false;
-			//		}
-			//	}
-			//	if ((device != null) && device.IsConnected)
-			//	{
-			//		// Load game data
-			//		GetSavedData();
-			//		// Reset the request flag
-			//		GameLoadRequested = false;
-			//	}
-			//}
-
-			// Update sounds
-			//audioEngine.Update();
-
 			// Update input
 			lastGamePadState = currentGamePadState;
 			currentGamePadState = GamePad.GetState(PlayerIndex.One);
 			lastKeyboardState = currentKeyboardState;
 			currentKeyboardState = Keyboard.GetState();
 
-
 			// Wait 3 seconds until we start playing
 			if (gameTime.TotalGameTime.Seconds > 3 && playingGame == false)
 			{
 				playingGame = true;
-				// Get the storage device
-				//result = Guide.BeginShowStorageDeviceSelector(PlayerIndex.One, null, null);
 			}
 
 			// After 3 seconds play the game
@@ -265,10 +178,6 @@ namespace CatapultMiniGame
 			base.Update(gameTime);
 		}
 
-		/// <summary>
-		/// This is called when the game should draw itself.
-		/// </summary>
-		/// <param name="gameTime">Provides a snapshot of timing values.</param>
 		protected override void Draw(GameTime gameTime)
 		{
 			graphics.GraphicsDevice.Clear(Color.CornflowerBlue);
@@ -444,80 +353,8 @@ namespace CatapultMiniGame
 			base.Draw(gameTime);
 		}
 
-		#endregion
 
-		#region Exiting
 
-		// Override OnExiting function to stop all sounds and save game data
-		protected override void OnExiting(Object sender, EventArgs args)
-		{
-			//loopingMusic.Stop(AudioStopOptions.Immediate);
-			//loopingMusic.Dispose();
-
-			// Save the current high score
-			//if ((result != null) && result.IsCompleted)
-			//{
-			//	device = Guide.EndShowStorageDeviceSelector(result);
-			//	result = null;
-			//}
-			//if ((device != null) && device.IsConnected)
-			//{
-			//	SaveGameData();
-			//}
-
-			base.OnExiting(sender, args);
-		}
-
-		#endregion
-
-		#region Saving
-
-		// Returns string data from the game data file
-		//void GetSavedData()
-		//{
-		//	// Open a storage container
-		//	using (StorageContainer container = device.OpenContainer("Catapult"))
-		//	{
-		//		// Add the container path to our filename
-		//		string filename = Path.Combine(container.Path, "GameData.sav");
-
-		//		// There is no save file so exit
-		//		if (!File.Exists(filename))
-		//			return;
-
-		//		// Open save file and read high score
-		//		using (FileStream saveGameFile = new FileStream(filename,
-		//			FileMode.Open))
-		//		{
-		//			using (BinaryReader reader = new BinaryReader(saveGameFile))
-		//			{
-		//				highScore = reader.ReadInt32();
-		//			}
-		//		}
-		//	}
-		//}
-
-		// Save the game data
-		//void SaveGameData()
-		//{
-		//	// Open a storage container
-		//	using (StorageContainer container = device.OpenContainer("Catapult"))
-		//	{
-		//		// Add the container path to our filename
-		//		string filename = Path.Combine(container.Path, "GameData.sav");
-
-		//		// Create a new file
-		//		using (FileStream saveGameFile = new FileStream(filename,
-		//			FileMode.Create))
-		//		{
-		//			using (BinaryWriter writer = new BinaryWriter(saveGameFile))
-		//			{
-		//				writer.Write(highScore);
-		//			}
-		//		}
-		//	}
-		//}
-
-		#endregion
+		
 	}
 }
