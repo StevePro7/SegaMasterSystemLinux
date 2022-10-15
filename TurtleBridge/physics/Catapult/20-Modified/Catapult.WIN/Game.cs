@@ -9,6 +9,7 @@ namespace CatapultMiniGame
 	{
 		const int screenWidth = 1280;
 		const int screenHeight = 720;
+		const int starup = 0;
 
 		GraphicsDeviceManager graphics;
 
@@ -125,7 +126,7 @@ namespace CatapultMiniGame
 			currentKeyboardState = Keyboard.GetState();
 
 			// Wait 3 seconds until we start playing
-			if (gameTime.TotalGameTime.Seconds > 3 && playingGame == false)
+			if (gameTime.TotalGameTime.Seconds > starup && !playingGame)
 			{
 				playingGame = true;
 			}
