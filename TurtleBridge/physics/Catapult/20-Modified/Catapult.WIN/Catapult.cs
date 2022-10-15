@@ -1,27 +1,10 @@
-#region File Description
-//-----------------------------------------------------------------------------
-// Catapult.cs
-//
-// Microsoft XNA Community Game Platform
-// Copyright (C) Microsoft Corporation. All rights reserved.
-//-----------------------------------------------------------------------------
-#endregion
-
-#region Using Statements
 using System;
-using System.Collections.Generic;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Content;
-#endregion
 
 namespace CatapultMiniGame
 {
-	/// <summary>
-	/// States for the Catapult
-	/// </summary>
 	public enum CatapultState 
 	{ 
 		Rolling, 
@@ -32,13 +15,8 @@ namespace CatapultMiniGame
 		Reset
 	}
 
-	/// <summary>
-	/// Class to manage the catapult and the projectile
-	/// </summary>
 	public class Catapult : DrawableGameComponent
 	{
-		#region Fields
-
 		// Hold what game I belong to
 		CatapultGame curGame = null;
 
@@ -97,18 +75,9 @@ namespace CatapultMiniGame
 			set { boostPower = value; }
 		}
 
-		// Are we playing the crash sound
-		//Cue playingCue;
-		//Cue crashCue;
-
-		#endregion
-
-		#region Initialization
-
 		public Catapult(Game game) : base(game)
 		{
 			curGame = (CatapultGame)game;
-
 			ResetCatapult();
 		}
 
@@ -126,11 +95,6 @@ namespace CatapultMiniGame
 
 			base.Initialize();
 		}
-
-		#endregion
-
-		#region Update and Draw
-
 
 		public override void Update(GameTime gameTime)
 		{
@@ -159,13 +123,6 @@ namespace CatapultMiniGame
 				pumpkinPosition.X = pumpkinLaunchPosition = basePosition.X + 120;
 				pumpkinPosition.Y = basePosition.Y + 80;
 
-				// Play moving sound
-				//if (playingCue == null && baseSpeed > 0)
-				//{
-				//	playingCue = curGame.SoundBank.GetCue("Move");
-				//	playingCue.Play();
-				//}
-
 				// Check to see if we fire the pumpkin
 				if ((curGame.CurrentGamePadState.Buttons.A == ButtonState.Pressed &&
 					curGame.LastGamePadState.Buttons.A != ButtonState.Pressed) ||
@@ -173,13 +130,6 @@ namespace CatapultMiniGame
 					curGame.LastKeyboardState.IsKeyUp(Keys.Space)))
 				{
 					Fire();
-					//if (playingCue != null && playingCue.IsPlaying)
-					//{
-					//	playingCue.Stop(AudioStopOptions.Immediate);
-					//	playingCue.Dispose();
-					//	playingCue = curGame.SoundBank.GetCue("Flying");
-					//	playingCue.Play();
-					//}
 				}
 			}
 			// Are we in the firing state
@@ -233,19 +183,16 @@ namespace CatapultMiniGame
 					{
 						boostPower = 3;
 						pumpkinVelocity *= 2.0f;
-						//curGame.SoundBank.PlayCue("Boost");
 					}
 					else if (basePosition.X > 600)
 					{
 						boostPower = 2;
 						pumpkinVelocity *= 1.6f;
-						//curGame.SoundBank.PlayCue("Boost");
 					}
 					else if (basePosition.X > 580)
 					{
 						boostPower = 1;
 						pumpkinVelocity *= 1.3f;
-						//curGame.SoundBank.PlayCue("Boost");
 					}
 				}
 			}
@@ -268,17 +215,6 @@ namespace CatapultMiniGame
 				// Is the pumpkin hitting the ground
 				if (pumpkinPosition.Y > 630)
 				{
-					// Stop playing any sounds
-					//if (playingCue != null && playingCue.IsPlaying)
-					//{
-					//	playingCue.Stop(AudioStopOptions.Immediate);
-					//	playingCue.Dispose();
-					//	playingCue = null;
-					//}
-
-					// Play the bounce sound
-					//curGame.SoundBank.PlayCue("Bounce");
-
 					// Move the pumpkin out of the ground and Change the pumkin velocity
 					pumpkinPosition.Y = 630;
 					pumpkinVelocity.Y *= -0.8f;
@@ -288,11 +224,6 @@ namespace CatapultMiniGame
 					if (pumpkinVelocity.X < 0.1f)
 					{
 						currentState = CatapultState.ProjectileHit;
-						//curGame.SoundBank.PlayCue("Hit");
-
-					//	if (curGame.HighScore == (int)curGame.PumpkinDistance && 
-					//		curGame.HighScore > 1000)
-					//			curGame.SoundBank.PlayCue("HighScore");
 					}
 				}
 			}
@@ -300,23 +231,6 @@ namespace CatapultMiniGame
 			if (basePosition.X > 650)
 			{
 				currentState = CatapultState.Crash;
-
-				//if (playingCue != null && playingCue.IsPlaying)
-				//{
-				//	playingCue.Stop(AudioStopOptions.Immediate);
-				//	playingCue.Dispose();
-				//	playingCue = null;
-
-				//	if (crashCue != null)
-				//	{
-				//		crashCue.Stop(AudioStopOptions.Immediate);
-				//		crashCue.Dispose();
-				//		crashCue = null;
-				//	}
-
-				//	crashCue = curGame.SoundBank.GetCue("Crash");
-				//	crashCue.Play();
-				//}
 			}
 
 			// If the projectile hit or we crashed reset the catapult
@@ -372,10 +286,6 @@ namespace CatapultMiniGame
 			base.Draw(gameTime);
 		}
 
-		#endregion
-
-		#region Actions
-
 		// Reset the catapult and pumpkin to default positions
 		private void ResetCatapult()
 		{
@@ -402,9 +312,6 @@ namespace CatapultMiniGame
 		{
 			currentState = CatapultState.Firing;
 			pumpkinRotationPosition = pumpkinPosition;
-			//curGame.SoundBank.PlayCue("ThrowSound");
 		}
-
-		#endregion
 	}
 }
