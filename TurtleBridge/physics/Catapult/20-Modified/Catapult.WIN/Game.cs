@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -82,6 +81,8 @@ namespace CatapultMiniGame
 
 		public CatapultGame()
 		{
+			Logger.Initialize();
+			Logger.Info("catapult game");
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = screenWidth;
 			graphics.PreferredBackBufferHeight = screenHeight;
@@ -100,13 +101,10 @@ namespace CatapultMiniGame
 		protected override void LoadContent()
 		{
 			spriteBatch = new SpriteBatch(graphics.GraphicsDevice);
-
 			backgroundTexture = Content.Load<Texture2D>("Textures/ground");
 			skyTexture = Content.Load<Texture2D>("Textures/sky");
 			endObjectTexture = Content.Load<Texture2D>("Textures/log");
-
 			tahomaFont = Content.Load<SpriteFont>("Fonts/TahomaFont");
-
 			playerCatapult.Initialize();
 		}
 
@@ -149,19 +147,15 @@ namespace CatapultMiniGame
 				// Move background
 				if (playerCatapult.CurrentState == CatapultState.ProjectileFlying)
 				{
-					screenPosition.X = (playerCatapult.PumpkinPosition.X -
-										playerCatapult.PumpkinLaunchPosition) * -1.0f;
-					endObjectPos.X = (playerCatapult.PumpkinPosition.X -
-									  playerCatapult.PumpkinLaunchPosition) *
-									  -1.0f + 1000;
+					screenPosition.X = (playerCatapult.PumpkinPosition.X - playerCatapult.PumpkinLaunchPosition) * -1.0f;
+					endObjectPos.X = (playerCatapult.PumpkinPosition.X - playerCatapult.PumpkinLaunchPosition) * -1.0f + 1000;
 				}
 
 				// Calculate the pumpkin flying distance
 				if (playerCatapult.CurrentState == CatapultState.ProjectileFlying ||
 					playerCatapult.CurrentState == CatapultState.ProjectileHit)
 				{
-					pumpkinDistance = playerCatapult.PumpkinPosition.X -
-									  playerCatapult.PumpkinLaunchPosition;
+					pumpkinDistance = playerCatapult.PumpkinPosition.X - playerCatapult.PumpkinLaunchPosition;
 					pumpkinDistance /= 15.0f;
 				}
 
@@ -203,37 +197,26 @@ namespace CatapultMiniGame
 
 			// Draw the sky
 			spriteBatch.Draw(skyTexture, skyDrawPos, Color.White);
-			spriteBatch.Draw(skyTexture, skyDrawPos + new Vector2(skyTexture.Width, 0),
-				null, Color.White, 0, Vector2.Zero, 1,
-				SpriteEffects.FlipHorizontally, 0);
+			spriteBatch.Draw(skyTexture, skyDrawPos + new Vector2(skyTexture.Width, 0), null, Color.White, 0, Vector2.Zero, 1, SpriteEffects.FlipHorizontally, 0);
 
 			// Check to see if we need to draw another sky
 			if (skyDrawPos.X <= -(skyTexture.Width * 2) + screenWidth)
 			{
 				skyDrawPos.X += skyTexture.Width * 2;
 				spriteBatch.Draw(skyTexture, skyDrawPos, Color.White);
-				spriteBatch.Draw(skyTexture, skyDrawPos +
-					new Vector2(skyTexture.Width, 0),
-					null, Color.White, 0, Vector2.Zero, 1,
-					SpriteEffects.FlipHorizontally, 0);
+				spriteBatch.Draw(skyTexture, skyDrawPos + new Vector2(skyTexture.Width, 0), null, Color.White, 0, Vector2.Zero, 1, SpriteEffects.FlipHorizontally, 0);
 			}
 
 			// Draw the background once
 			spriteBatch.Draw(backgroundTexture, backgroundDrawPos, Color.White);
-			spriteBatch.Draw(backgroundTexture, backgroundDrawPos +
-				new Vector2(backgroundTexture.Width, 0),
-				null, Color.White, 0, Vector2.Zero, 1,
-				SpriteEffects.FlipHorizontally, 0);
+			spriteBatch.Draw(backgroundTexture, backgroundDrawPos + new Vector2(backgroundTexture.Width, 0), null, Color.White, 0, Vector2.Zero, 1, SpriteEffects.FlipHorizontally, 0);
 
 			// Check to see if we need to draw another background
 			if (backgroundDrawPos.X <= -(backgroundTexture.Width * 2) + screenWidth)
 			{
 				backgroundDrawPos.X += backgroundTexture.Width * 2;
 				spriteBatch.Draw(backgroundTexture, backgroundDrawPos, Color.White);
-				spriteBatch.Draw(backgroundTexture, backgroundDrawPos +
-				new Vector2(backgroundTexture.Width, 0),
-				null, Color.White, 0, Vector2.Zero, 1,
-				SpriteEffects.FlipHorizontally, 0);
+				spriteBatch.Draw(backgroundTexture, backgroundDrawPos + new Vector2(backgroundTexture.Width, 0), null, Color.White, 0, Vector2.Zero, 1, SpriteEffects.FlipHorizontally, 0);
 			}
 
 			// Draw the log at the end
@@ -248,16 +231,8 @@ namespace CatapultMiniGame
 				// Draw title
 				printString = "Catapult";
 				FontOrigin = tahomaFont.MeasureString(printString) / 2;
-				spriteBatch.DrawString(tahomaFont, printString,
-									   new Vector2(screenWidth / 2, 252),
-									   new Color(new Vector4(0, 0, 0, 3 -
-									   (float)gameTime.TotalGameTime.TotalSeconds)), 0,
-									   FontOrigin, 2, SpriteEffects.None, 0);
-				spriteBatch.DrawString(tahomaFont, printString,
-									   new Vector2(screenWidth / 2, 250),
-									   new Color(new Vector4(0.5f, 1.0f, 0.2f, 3 -
-									   (float)gameTime.TotalGameTime.TotalSeconds)), 0,
-									   FontOrigin, 2, SpriteEffects.None, 0);
+				spriteBatch.DrawString(tahomaFont, printString, new Vector2(screenWidth / 2, 252), new Color(new Vector4(0, 0, 0, 3 - (float)gameTime.TotalGameTime.TotalSeconds)), 0, FontOrigin, 2, SpriteEffects.None, 0);
+				spriteBatch.DrawString(tahomaFont, printString, new Vector2(screenWidth / 2, 250), new Color(new Vector4(0.5f, 1.0f, 0.2f, 3 - (float)gameTime.TotalGameTime.TotalSeconds)), 0, FontOrigin, 2, SpriteEffects.None, 0);
 			}
 			else
 			// We have started
@@ -274,62 +249,43 @@ namespace CatapultMiniGame
 					rightTriggerAmt *= 2;
 
 					printString = "Power Bonus: " + rightTriggerAmt.ToString("p1");
-					spriteBatch.DrawString(tahomaFont, printString, new Vector2(52, 62),
-								Color.Black, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
-					spriteBatch.DrawString(tahomaFont, printString, new Vector2(52, 60),
-								Color.Azure, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
+					spriteBatch.DrawString(tahomaFont, printString, new Vector2(52, 62), Color.Black, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
+					spriteBatch.DrawString(tahomaFont, printString, new Vector2(52, 60), Color.Azure, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
 				}
 
 				// Draw the distance
 				printString = "Distance: " + ((int)pumpkinDistance).ToString() + " ft.";
-				spriteBatch.DrawString(tahomaFont, printString, new Vector2(802, 17),
-								Color.Black, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
-				spriteBatch.DrawString(tahomaFont, printString, new Vector2(800, 15),
-								Color.Azure, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
+				spriteBatch.DrawString(tahomaFont, printString, new Vector2(802, 17), Color.Black, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
+				spriteBatch.DrawString(tahomaFont, printString, new Vector2(800, 15), Color.Azure, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
 				if (playerCatapult.PumpkinPosition.Y < -32)
 				{
 					float pumpkinHeight = -playerCatapult.PumpkinPosition.Y / 15.0f;
 
 					printString = ((int)pumpkinHeight).ToString() + " ft.";
-					spriteBatch.DrawString(tahomaFont, printString,
-								new Vector2(playerCatapult.PumpkinLaunchPosition, 62),
-								Color.Black, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
-					spriteBatch.DrawString(tahomaFont, printString,
-								new Vector2(playerCatapult.PumpkinLaunchPosition, 60),
-								Color.Azure, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
+					spriteBatch.DrawString(tahomaFont, printString, new Vector2(playerCatapult.PumpkinLaunchPosition, 62), Color.Black, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
+					spriteBatch.DrawString(tahomaFont, printString, new Vector2(playerCatapult.PumpkinLaunchPosition, 60), Color.Azure, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
 				}
 
 				// Draw the high score
 				printString = "High Score: " + highScore.ToString() + " ft.";
-				spriteBatch.DrawString(tahomaFont, printString, new Vector2(52, 17),
-								Color.Black, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
-				spriteBatch.DrawString(tahomaFont, printString, new Vector2(52, 15),
-								Color.Azure, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
+				spriteBatch.DrawString(tahomaFont, printString, new Vector2(52, 17), Color.Black, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
+				spriteBatch.DrawString(tahomaFont, printString, new Vector2(52, 15), Color.Azure, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
 
 				// Print new high score if over 1000
-				if (playerCatapult.CurrentState == CatapultState.ProjectileHit &&
-					highScore == (int)pumpkinDistance && highScore > 1000)
+				if (playerCatapult.CurrentState == CatapultState.ProjectileHit && highScore == (int)pumpkinDistance && highScore > 1000)
 				{
 					printString = "High Score!";
-					FontOrigin = tahomaFont.MeasureString(printString) / 2;
-					spriteBatch.DrawString(tahomaFont, printString,
-								new Vector2(screenWidth / 2, 252), Color.Black, 0,
-								FontOrigin, 2, SpriteEffects.None, 0);
-					spriteBatch.DrawString(tahomaFont, printString,
-								new Vector2(screenWidth / 2, 250), Color.Gold, 0,
-								FontOrigin, 2, SpriteEffects.None, 0);
+					FontOrigin = tahomaFont.MeasureString(printString) / 2; spriteBatch.DrawString(tahomaFont, printString,
+								new Vector2(screenWidth / 2, 252), Color.Black, 0, FontOrigin, 2, SpriteEffects.None, 0);
+					spriteBatch.DrawString(tahomaFont, printString, new Vector2(screenWidth / 2, 250), Color.Gold, 0, FontOrigin, 2, SpriteEffects.None, 0);
 				}
 				// Print that we crashed
 				else if (playerCatapult.CurrentState == CatapultState.Crash)
 				{
 					printString = "Crash!";
 					FontOrigin = tahomaFont.MeasureString(printString) / 2;
-					spriteBatch.DrawString(tahomaFont, printString,
-								new Vector2(screenWidth / 2, 252), Color.Black, 0,
-								FontOrigin, 2, SpriteEffects.None, 0);
-					spriteBatch.DrawString(tahomaFont, printString,
-								new Vector2(screenWidth / 2, 250), Color.Red, 0,
-								FontOrigin, 2, SpriteEffects.None, 0);
+					spriteBatch.DrawString(tahomaFont, printString, new Vector2(screenWidth / 2, 252), Color.Black, 0, FontOrigin, 2, SpriteEffects.None, 0);
+					spriteBatch.DrawString(tahomaFont, printString, new Vector2(screenWidth / 2, 250), Color.Red, 0, FontOrigin, 2, SpriteEffects.None, 0);
 				}
 				// Did we get boost power
 				else if (playerCatapult.BoostPower > 0)
@@ -340,22 +296,14 @@ namespace CatapultMiniGame
 
 					printString = "Boost Power" + boostPoints;
 					FontOrigin = tahomaFont.MeasureString(printString) / 2;
-					spriteBatch.DrawString(tahomaFont, printString,
-								new Vector2(screenWidth / 2, 252), Color.Black, 0,
-								FontOrigin, 2, SpriteEffects.None, 0);
-					spriteBatch.DrawString(tahomaFont, printString,
-								new Vector2(screenWidth / 2, 250), Color.Red, 0,
-								FontOrigin, 2, SpriteEffects.None, 0);
+					spriteBatch.DrawString(tahomaFont, printString, new Vector2(screenWidth / 2, 252), Color.Black, 0, FontOrigin, 2, SpriteEffects.None, 0);
+					spriteBatch.DrawString(tahomaFont, printString, new Vector2(screenWidth / 2, 250), Color.Red, 0, FontOrigin, 2, SpriteEffects.None, 0);
 				}
 			}
 
 			spriteBatch.End();
-
 			base.Draw(gameTime);
 		}
 
-
-
-		
 	}
 }
