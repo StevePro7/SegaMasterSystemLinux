@@ -124,7 +124,7 @@ namespace CatapultMiniGame
 			currentKeyboardState = Keyboard.GetState();
 
 			// Wait 3 seconds until we start playing
-			if (gameTime.TotalGameTime.Seconds > starup && !playingGame)
+			if (gameTime.TotalGameTime.Seconds >= starup && !playingGame)
 			{
 				playingGame = true;
 			}
@@ -229,10 +229,10 @@ namespace CatapultMiniGame
 			if (!playingGame)
 			{
 				// Draw title
-				printString = "Catapult";
-				FontOrigin = tahomaFont.MeasureString(printString) / 2;
-				spriteBatch.DrawString(tahomaFont, printString, new Vector2(screenWidth / 2, 252), new Color(new Vector4(0, 0, 0, 3 - (float)gameTime.TotalGameTime.TotalSeconds)), 0, FontOrigin, 2, SpriteEffects.None, 0);
-				spriteBatch.DrawString(tahomaFont, printString, new Vector2(screenWidth / 2, 250), new Color(new Vector4(0.5f, 1.0f, 0.2f, 3 - (float)gameTime.TotalGameTime.TotalSeconds)), 0, FontOrigin, 2, SpriteEffects.None, 0);
+				//printString = "Catapult";
+				//FontOrigin = tahomaFont.MeasureString(printString) / 2;
+				//spriteBatch.DrawString(tahomaFont, printString, new Vector2(screenWidth / 2, 252), new Color(new Vector4(0, 0, 0, 3 - (float)gameTime.TotalGameTime.TotalSeconds)), 0, FontOrigin, 2, SpriteEffects.None, 0);
+				//spriteBatch.DrawString(tahomaFont, printString, new Vector2(screenWidth / 2, 250), new Color(new Vector4(0.5f, 1.0f, 0.2f, 3 - (float)gameTime.TotalGameTime.TotalSeconds)), 0, FontOrigin, 2, SpriteEffects.None, 0);
 			}
 			else
 			// We have started
