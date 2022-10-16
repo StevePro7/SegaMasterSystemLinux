@@ -15,7 +15,7 @@ namespace CatapultMiniGame
 		Reset
 	}
 
-	public class Catapult : DrawableGameComponent
+	public class Catapult
 	{
 		// Hold what game I belong to
 		CatapultGame curGame = null;
@@ -75,23 +75,22 @@ namespace CatapultMiniGame
 			set { boostPower = value; }
 		}
 
-		public Catapult(Game game) : base(game)
+		public Catapult(Game game)
 		{
 			curGame = (CatapultGame)game;
 			ResetCatapult();
 		}
 
-		public override void  Initialize()
+		public void  Initialize()
 		{
 			baseTexture = curGame.Content.Load<Texture2D>("Textures/body_front");
 			baseTextureBack = curGame.Content.Load<Texture2D>("Textures/body_back");
 			pumpkinTexture = curGame.Content.Load<Texture2D>("Textures/pumpkin");
 			pumpkinSmashTexture = curGame.Content.Load<Texture2D>("Textures/pumpkinsmash");
 			armTexture = curGame.Content.Load<Texture2D>("Textures/arm");
-			base.Initialize();
 		}
 
-		public override void Update(GameTime gameTime)
+		public void Update(GameTime gameTime)
 		{
 			if (gameTime == null)
 				throw new ArgumentNullException("gameTime");
@@ -216,16 +215,18 @@ namespace CatapultMiniGame
 			}
 
 			// If the projectile hit or we crashed reset the catapult
+			if (curGame.CurrentKeyboardState.IsKeyDown(Keys.Enter))
+			{
+				currentState = CatapultState.Reset;
+			}
 			if ((currentState == CatapultState.Crash || currentState == CatapultState.ProjectileHit) && (curGame.CurrentGamePadState.Buttons.A == ButtonState.Pressed || curGame.CurrentKeyboardState.IsKeyDown(Keys.Space)) && curGame.CurrentGamePadState.Triggers.Left == 0 && curGame.CurrentKeyboardState.IsKeyUp(Keys.Right))
 			{
 				currentState = CatapultState.Reset;
 			}
-
-			base.Update(gameTime);
 		}
 
 		// Draw the catapult and pumpkin
-		public override void Draw(GameTime gameTime)
+		public void Draw(GameTime gameTime)
 		{
 			if (gameTime == null)
 				throw new ArgumentNullException("gameTime");
@@ -247,8 +248,6 @@ namespace CatapultMiniGame
 				curGame.SpriteBatch.Draw(pumpkinTexture, new Vector2(pumpkinLaunchPosition, pumpkinPosition.Y), null, Color.White, pumpkinRotation, new Vector2(32, 32), 1.0f, SpriteEffects.None, 0.0f);
 			else
 				curGame.SpriteBatch.Draw(pumpkinSmashTexture, new Vector2(pumpkinLaunchPosition, pumpkinPosition.Y), null, Color.White, 0, new Vector2(50, 32), 1.0f, SpriteEffects.None, 0.0f);
-
-			base.Draw(gameTime);
 		}
 
 		// Reset the catapult and pumpkin to default positions
