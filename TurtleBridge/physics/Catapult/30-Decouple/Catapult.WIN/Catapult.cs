@@ -104,8 +104,11 @@ namespace CatapultMiniGame
 			{
 				// Add to current speed
 				float speedAmt = 0.0f;// curGame.CurrentGamePadState.Triggers.Left;
-				if (curGame.CurrentKeyboardState.IsKeyDown(Keys.Right))
+				bool keysRight = curGame.CurrentKeyboardState.IsKeyDown(Keys.Right);
+				if (keysRight)
+				{
 					speedAmt = 1.0f;
+				}
 
 				baseSpeed += speedAmt * gameTime.ElapsedGameTime.Milliseconds * 0.001f;
 
@@ -118,7 +121,8 @@ namespace CatapultMiniGame
 
 				// Check to see if we fire the pumpkin
 				//if ((curGame.CurrentGamePadState.Buttons.A == ButtonState.Pressed && curGame.LastGamePadState.Buttons.A != ButtonState.Pressed) || (curGame.CurrentKeyboardState.IsKeyDown(Keys.Space) && curGame.LastKeyboardState.IsKeyUp(Keys.Space)))
-				if ((curGame.CurrentKeyboardState.IsKeyDown(Keys.Space) && curGame.LastKeyboardState.IsKeyUp(Keys.Space)))
+				bool keysSpace = curGame.CurrentKeyboardState.IsKeyDown(Keys.Space) && curGame.LastKeyboardState.IsKeyUp(Keys.Space);
+				if (keysSpace)
 				{
 					Fire();
 				}
@@ -155,8 +159,11 @@ namespace CatapultMiniGame
 					if (rightTriggerAmt > 0.5f)
 						rightTriggerAmt = 1.0f - rightTriggerAmt;
 
-					if (curGame.CurrentKeyboardState.IsKeyDown(Keys.B))
+					bool keysB = curGame.CurrentKeyboardState.IsKeyDown(Keys.B);
+					if (keysB)
+					{
 						rightTriggerAmt = 0.5f;
+					}
 
 					rightTriggerAmt *= 2;
 

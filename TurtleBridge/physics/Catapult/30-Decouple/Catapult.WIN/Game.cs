@@ -240,10 +240,11 @@ namespace CatapultMiniGame
 				if (playerCatapult.CurrentState == CatapultState.Rolling)
 				{
 					float rightTriggerAmt = 0;// currentGamePadState.Triggers.Right;
-					//if (rightTriggerAmt > 0.5f)
-					//	rightTriggerAmt = 1.0f - rightTriggerAmt;
+											  //if (rightTriggerAmt > 0.5f)
+											  //	rightTriggerAmt = 1.0f - rightTriggerAmt;
 
-					if (currentKeyboardState.IsKeyDown(Keys.B))
+					bool keysB = currentKeyboardState.IsKeyDown(Keys.B);
+					if (keysB)
 						rightTriggerAmt = 0.5f;
 
 					rightTriggerAmt *= 2;
