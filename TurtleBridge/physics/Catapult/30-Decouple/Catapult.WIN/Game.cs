@@ -19,16 +19,16 @@ namespace CatapultMiniGame
 		}
 
 		// Input States
-		GamePadState currentGamePadState;
-		public GamePadState CurrentGamePadState
-		{
-			get { return currentGamePadState; }
-		}
-		GamePadState lastGamePadState;
-		public GamePadState LastGamePadState
-		{
-			get { return lastGamePadState; }
-		}
+		//GamePadState currentGamePadState;
+		//public GamePadState CurrentGamePadState
+		//{
+		//	get { return currentGamePadState; }
+		//}
+		//GamePadState lastGamePadState;
+		//public GamePadState LastGamePadState
+		//{
+		//	get { return lastGamePadState; }
+		//}
 		KeyboardState currentKeyboardState;
 		public KeyboardState CurrentKeyboardState
 		{
@@ -118,8 +118,8 @@ namespace CatapultMiniGame
 			}
 
 			// Update input
-			lastGamePadState = currentGamePadState;
-			currentGamePadState = GamePad.GetState(PlayerIndex.One);
+			//lastGamePadState = currentGamePadState;
+			//currentGamePadState = GamePad.GetState(PlayerIndex.One);
 			lastKeyboardState = currentKeyboardState;
 			currentKeyboardState = Keyboard.GetState();
 
@@ -239,9 +239,9 @@ namespace CatapultMiniGame
 			{
 				if (playerCatapult.CurrentState == CatapultState.Rolling)
 				{
-					float rightTriggerAmt = currentGamePadState.Triggers.Right;
-					if (rightTriggerAmt > 0.5f)
-						rightTriggerAmt = 1.0f - rightTriggerAmt;
+					float rightTriggerAmt = 0;// currentGamePadState.Triggers.Right;
+					//if (rightTriggerAmt > 0.5f)
+					//	rightTriggerAmt = 1.0f - rightTriggerAmt;
 
 					if (currentKeyboardState.IsKeyDown(Keys.B))
 						rightTriggerAmt = 0.5f;

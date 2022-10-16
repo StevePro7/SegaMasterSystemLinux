@@ -103,7 +103,7 @@ namespace CatapultMiniGame
 			if (currentState == CatapultState.Rolling)
 			{
 				// Add to current speed
-				float speedAmt = curGame.CurrentGamePadState.Triggers.Left;
+				float speedAmt = 0.0f;// curGame.CurrentGamePadState.Triggers.Left;
 				if (curGame.CurrentKeyboardState.IsKeyDown(Keys.Right))
 					speedAmt = 1.0f;
 
@@ -117,7 +117,8 @@ namespace CatapultMiniGame
 				pumpkinPosition.Y = basePosition.Y + 80;
 
 				// Check to see if we fire the pumpkin
-				if ((curGame.CurrentGamePadState.Buttons.A == ButtonState.Pressed && curGame.LastGamePadState.Buttons.A != ButtonState.Pressed) || (curGame.CurrentKeyboardState.IsKeyDown(Keys.Space) && curGame.LastKeyboardState.IsKeyUp(Keys.Space)))
+				//if ((curGame.CurrentGamePadState.Buttons.A == ButtonState.Pressed && curGame.LastGamePadState.Buttons.A != ButtonState.Pressed) || (curGame.CurrentKeyboardState.IsKeyDown(Keys.Space) && curGame.LastKeyboardState.IsKeyUp(Keys.Space)))
+				if ((curGame.CurrentKeyboardState.IsKeyDown(Keys.Space) && curGame.LastKeyboardState.IsKeyUp(Keys.Space)))
 				{
 					Fire();
 				}
@@ -150,8 +151,7 @@ namespace CatapultMiniGame
 					pumpkinVelocity.Y = -baseSpeed * 0.75f;
 
 					// Add extra velocity for Right trigger 
-					float rightTriggerAmt = curGame.CurrentGamePadState.Triggers.Right;
-
+					float rightTriggerAmt = 0;// curGame.CurrentGamePadState.Triggers.Right;
 					if (rightTriggerAmt > 0.5f)
 						rightTriggerAmt = 1.0f - rightTriggerAmt;
 
@@ -219,7 +219,8 @@ namespace CatapultMiniGame
 			{
 				currentState = CatapultState.Reset;
 			}
-			if ((currentState == CatapultState.Crash || currentState == CatapultState.ProjectileHit) && (curGame.CurrentGamePadState.Buttons.A == ButtonState.Pressed || curGame.CurrentKeyboardState.IsKeyDown(Keys.Space)) && curGame.CurrentGamePadState.Triggers.Left == 0 && curGame.CurrentKeyboardState.IsKeyUp(Keys.Right))
+			//if ((currentState == CatapultState.Crash || currentState == CatapultState.ProjectileHit) && (curGame.CurrentGamePadState.Buttons.A == ButtonState.Pressed || curGame.CurrentKeyboardState.IsKeyDown(Keys.Space)) && curGame.CurrentGamePadState.Triggers.Left == 0 && curGame.CurrentKeyboardState.IsKeyUp(Keys.Right))
+			if ((currentState == CatapultState.Crash || currentState == CatapultState.ProjectileHit) && (curGame.CurrentKeyboardState.IsKeyDown(Keys.Space)) && curGame.CurrentKeyboardState.IsKeyUp(Keys.Right))
 			{
 				currentState = CatapultState.Reset;
 			}
