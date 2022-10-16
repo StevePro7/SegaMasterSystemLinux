@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
 
 namespace CatapultMiniGame
 {
@@ -9,6 +10,7 @@ namespace CatapultMiniGame
 		const int screenWidth = 1280;
 		const int screenHeight = 720;
 		const int starup = 0;
+		int frame = 0;
 
 		GraphicsDeviceManager graphics;
 
@@ -82,13 +84,14 @@ namespace CatapultMiniGame
 		public CatapultGame()
 		{
 			Logger.Initialize();
-			Logger.Info("catapult game");
+			//~Logger.Info("catapult game");
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = screenWidth;
 			graphics.PreferredBackBufferHeight = screenHeight;
 			Content.RootDirectory = "Content";
 
 			IsFixedTimeStep = true;
+			TargetElapsedTime = TimeSpan.FromSeconds(1.0f / 50.0f);
 			playerCatapult = new Catapult(this);
 		}
 
@@ -110,6 +113,9 @@ namespace CatapultMiniGame
 
 		protected override void Update(GameTime gameTime)
 		{
+			frame++;
+			Logger.Info(frame.ToString());
+
 			// Allow the game to exit
 			if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
 				Keyboard.GetState().IsKeyDown(Keys.Escape))

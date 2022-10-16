@@ -19,6 +19,7 @@ namespace CatapultMiniGame
 	{
 		// Hold what game I belong to
 		CatapultGame curGame = null;
+		bool firstTime = false;
 
 		// Current state of the Catapult
 		CatapultState currentState;
@@ -108,6 +109,12 @@ namespace CatapultMiniGame
 				if (keysRight)
 				{
 					speedAmt = 1.0f;
+				}
+
+				if (!firstTime)
+				{
+					firstTime = true;
+					//speedAmt = 1.0f;
 				}
 
 				baseSpeed += speedAmt * gameTime.ElapsedGameTime.Milliseconds * 0.001f;
