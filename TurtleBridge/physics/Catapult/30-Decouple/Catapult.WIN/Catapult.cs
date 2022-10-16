@@ -111,10 +111,10 @@ namespace CatapultMiniGame
 					speedAmt = 1.0f;
 				}
 
-				if (!firstTime)
+				if (!firstTime && 0 != gameTime.ElapsedGameTime.Milliseconds)
 				{
-					firstTime = true;
-					//speedAmt = 1.0f;
+					//firstTime = true;
+					speedAmt = 1.0f;
 				}
 
 				baseSpeed += speedAmt * gameTime.ElapsedGameTime.Milliseconds * 0.001f;
@@ -129,6 +129,11 @@ namespace CatapultMiniGame
 				// Check to see if we fire the pumpkin
 				//if ((curGame.CurrentGamePadState.Buttons.A == ButtonState.Pressed && curGame.LastGamePadState.Buttons.A != ButtonState.Pressed) || (curGame.CurrentKeyboardState.IsKeyDown(Keys.Space) && curGame.LastKeyboardState.IsKeyUp(Keys.Space)))
 				bool keysSpace = curGame.CurrentKeyboardState.IsKeyDown(Keys.Space) && curGame.LastKeyboardState.IsKeyUp(Keys.Space);
+				if (basePosition.X >= 650)
+				{
+					basePosition.X = 650;
+					keysSpace = true;
+				}
 				if (keysSpace)
 				{
 					Fire();
@@ -167,6 +172,7 @@ namespace CatapultMiniGame
 						rightTriggerAmt = 1.0f - rightTriggerAmt;
 
 					bool keysB = curGame.CurrentKeyboardState.IsKeyDown(Keys.B);
+					keysB = true;
 					if (keysB)
 					{
 						rightTriggerAmt = 0.5f;
@@ -284,6 +290,7 @@ namespace CatapultMiniGame
 			pumpkinRotation = 0;
 
 			boostPower = 0;
+			firstTime = false;
 		}
 
 		// Change state to firing and play fire sound

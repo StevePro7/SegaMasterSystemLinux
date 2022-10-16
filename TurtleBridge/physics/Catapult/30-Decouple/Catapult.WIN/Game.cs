@@ -114,7 +114,7 @@ namespace CatapultMiniGame
 		protected override void Update(GameTime gameTime)
 		{
 			frame++;
-			Logger.Info(frame.ToString());
+			//Logger.Info(frame.ToString());
 
 			// Allow the game to exit
 			if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
@@ -243,22 +243,23 @@ namespace CatapultMiniGame
 			else
 			// We have started
 			{
-				if (playerCatapult.CurrentState == CatapultState.Rolling)
-				{
-					float rightTriggerAmt = 0;// currentGamePadState.Triggers.Right;
-											  //if (rightTriggerAmt > 0.5f)
-											  //	rightTriggerAmt = 1.0f - rightTriggerAmt;
+				//if (playerCatapult.CurrentState == CatapultState.Rolling)
+				//{
+				//	float rightTriggerAmt = 0;// currentGamePadState.Triggers.Right;
+				//							  //if (rightTriggerAmt > 0.5f)
+				//							  //	rightTriggerAmt = 1.0f - rightTriggerAmt;
 
-					bool keysB = currentKeyboardState.IsKeyDown(Keys.B);
-					if (keysB)
-						rightTriggerAmt = 0.5f;
+				//	bool keysB = currentKeyboardState.IsKeyDown(Keys.B);
+				//	keysB = true;
+				//	if (keysB)
+				//		rightTriggerAmt = 0.5f;
 
-					rightTriggerAmt *= 2;
+				//	rightTriggerAmt *= 2;
 
-					printString = "Power Bonus: " + rightTriggerAmt.ToString("p1");
-					spriteBatch.DrawString(tahomaFont, printString, new Vector2(52, 62), Color.Black, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
-					spriteBatch.DrawString(tahomaFont, printString, new Vector2(52, 60), Color.Azure, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
-				}
+				//	printString = "Power Bonus: " + rightTriggerAmt.ToString("p1");
+				//	spriteBatch.DrawString(tahomaFont, printString, new Vector2(52, 62), Color.Black, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
+				//	spriteBatch.DrawString(tahomaFont, printString, new Vector2(52, 60), Color.Azure, 0, Vector2.Zero, 1, SpriteEffects.None, 0);
+				//}
 
 				// Draw the distance
 				printString = "Distance: " + ((int)pumpkinDistance).ToString() + " ft.";
