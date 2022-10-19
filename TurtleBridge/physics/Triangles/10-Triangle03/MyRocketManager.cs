@@ -78,7 +78,7 @@ namespace _02_Test
 
 			var msg = $"(W,H)=({Wide},{High})";
 			_rocketPosition = new Vector2(Wide, High);
-			Logger.Info(msg);
+			//Logger.Info(msg);
 			frame = 0;
 		}
 
@@ -142,6 +142,7 @@ namespace _02_Test
 		private void Update01(GameTime gameTime)
 		{
 			Vector2 prevPos = _rocketPosition;
+			//Logger.Info(prevPos.X.ToString());
 			_rocketPosition = new Vector2(prevPos.X + 1, High);
 			if (_rocketPosition.X >= 200 - 57 - 16)
 			{
@@ -151,6 +152,7 @@ namespace _02_Test
 		private void Update02(GameTime gameTime)
 		{
 			Vector2 prevPos = _rocketPosition;
+			Logger.Info(prevPos.X.ToString());
 			var posY = GetY(delta);
 			delta++;
 			_rocketPosition = new Vector2(prevPos.X + 1, High - posY);
@@ -172,10 +174,11 @@ namespace _02_Test
 
 			msg += $"{posX},{posY},";
 			_rocketPosition = new Vector2(Wide + posX, High - posY);
+			Logger.Info(posX.ToString());
 			//_rocketPositionList.Add(_rocketPosition);
 
 			msg += $"{_rocketPosition.X},{_rocketPosition.Y}";
-			Logger.Info(msg);
+			//Logger.Info(msg);
 			if (_rocketPosition.Y >= High)
 			{
 				_rocketFlying = false;
