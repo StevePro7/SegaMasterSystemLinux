@@ -12,7 +12,8 @@ namespace CatapultMiniGame
 		Crash, 
 		ProjectileFlying, 
 		ProjectileHit,
-		Reset
+		Reset,
+		StevePro,
 	}
 
 	public class Catapult
@@ -93,6 +94,11 @@ namespace CatapultMiniGame
 
 		public void Update(GameTime gameTime)
 		{
+			if (currentState == CatapultState.ProjectileFlying)
+			{
+				Logger.Info(pumpkinPosition.Y.ToString());
+			}
+
 			if (gameTime == null)
 				throw new ArgumentNullException("gameTime");
 
@@ -121,6 +127,7 @@ namespace CatapultMiniGame
 
 				// Move catapult based on speed
 				basePosition.X += baseSpeed * gameTime.ElapsedGameTime.Milliseconds;
+				
 
 				// Move pumpkin to match catapult
 				pumpkinPosition.X = pumpkinLaunchPosition = basePosition.X + 120;
@@ -162,6 +169,7 @@ namespace CatapultMiniGame
 				else
 				{
 					currentState = CatapultState.ProjectileFlying;
+					//currentState = CatapultState.StevePro;
 
 					pumpkinVelocity.X = baseSpeed * 2.0f + 1;
 					pumpkinVelocity.Y = -baseSpeed * 0.75f;
