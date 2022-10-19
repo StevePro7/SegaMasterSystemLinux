@@ -96,7 +96,7 @@ namespace CatapultMiniGame
 		{
 			if (currentState == CatapultState.ProjectileFlying)
 			{
-				Logger.Info(pumpkinPosition.Y.ToString());
+				//Logger.Info(pumpkinPosition.Y.ToString());
 			}
 
 			if (gameTime == null)
@@ -220,6 +220,8 @@ namespace CatapultMiniGame
 
 				// Rotate the pumpkin as it flys
 				pumpkinRotation += MathHelper.ToRadians(pumpkinVelocity.X * 3.5f);
+				var degs = MathHelper.ToDegrees(pumpkinRotation) % 360;
+				Logger.Info(degs.ToString());
 
 				// Is the pumpkin hitting the ground
 				if (pumpkinPosition.Y > 630)

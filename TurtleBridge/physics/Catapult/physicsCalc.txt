@@ -1,0 +1,26 @@
+19-Oct-2022
+Vector2 pumpkinAcceleration = new Vector2(0, 0.001f);
+
+pumpkinVelocity.X = baseSpeed * 2.0f + 1;
+pumpkinVelocity.Y = -baseSpeed * 0.75f;
+
+pumpkinVelocity *= 1.0f + rightTriggerAmt;
+
+
+pumpkinVelocity *= 2.0f;
+pumpkinVelocity *= 1.6f;
+pumpkinVelocity *= 1.3f;
+
+
+Projectile Flying
+// Update the position of the pumpkin
+pumpkinPosition += pumpkinVelocity * gameTime.ElapsedGameTime.Milliseconds;
+pumpkinVelocity += pumpkinAcceleration * gameTime.ElapsedGameTime.Milliseconds;
+
+// Rotate the pumpkin as it flys
+pumpkinRotation += MathHelper.ToRadians(pumpkinVelocity.X * 3.5f);
+
+// Move the pumpkin out of the ground and Change the pumkin velocity;
+pumpkinVelocity.Y *= -0.8f;
+pumpkinVelocity.X *= 0.7f;
+
