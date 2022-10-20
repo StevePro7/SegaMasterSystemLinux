@@ -24,6 +24,7 @@ namespace _02_Test
 		private Texture2D _rocketImage01, _rocketImage03;
 		private int Wide = 200 -16;
 		private int High = 400- 32;
+		private int prevPosX, prevPosY;
 		private const float gravity = -9.8f;
 		private byte index = 0;
 
@@ -78,6 +79,8 @@ namespace _02_Test
 
 			var msg = $"(W,H)=({Wide},{High})";
 			_rocketPosition = new Vector2(Wide, High);
+			prevPosX = Wide;
+			prevPosY = High;
 			//Logger.Info(msg);
 			frame = 0;
 		}
@@ -164,6 +167,10 @@ namespace _02_Test
 		}
 		private void Update03(GameTime gameTime)
 		{
+			Update03b(gameTime);
+		}
+		private void Update03a(GameTime gameTime)
+		{
 			frame++;
 			string msg = $"{frame},{_rocketPosition.X},{_rocketPosition.Y},";
 
@@ -175,6 +182,34 @@ namespace _02_Test
 			msg += $"{posX},{posY},";
 			_rocketPosition = new Vector2(Wide + posX, High - posY);
 			Logger.Info(posX.ToString());
+			//_rocketPositionList.Add(_rocketPosition);
+
+			msg += $"{_rocketPosition.X},{_rocketPosition.Y}";
+			//Logger.Info(msg);
+			if (_rocketPosition.Y >= High)
+			{
+				_rocketFlying = false;
+				foreach (var pos in _rocketPositionList)
+				{
+					//Logger.Info($"{pos.X},{pos.Y}");
+				}
+			}
+		}
+		private void Update03b(GameTime gameTime)
+		{
+			frame++;
+			string msg = $"{frame},{_rocketPosition.X},{_rocketPosition.Y},";
+
+			float delta = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 1000f;
+			timer += delta;
+			//prevPosX++;
+			prevPosX += 0;
+			float posX = veliX * timer;
+			float posY = (float)(veliY * timer + 0.5 * gravity * timer * timer);
+			prevPosY = (int)posY;
+			msg += $"{posX},{posY},";
+			_rocketPosition = new Vector2(prevPosX, High - posY);
+			Logger.Info(prevPosY.ToString());
 			//_rocketPositionList.Add(_rocketPosition);
 
 			msg += $"{_rocketPosition.X},{_rocketPosition.Y}";
