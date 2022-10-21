@@ -22,6 +22,10 @@ namespace Test
 			Triangles[1] = content.Load<Texture2D>("triangle_max02");
 		}
 
+		public void UnLoadContent(ContentManager content)
+		{
+			content.Unload();
+		}
 
 		public Texture2D[] Triangles{ get; private set; }
 	}

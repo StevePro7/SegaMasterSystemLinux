@@ -47,17 +47,11 @@ namespace Test
 		{
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 			myContentManager.LoadContent(Content);
-			//triangle = new Texture2D[2];
-			//triangle[0] = Content.Load<Texture2D>("triangle_max01");
-			//triangle[1] = Content.Load<Texture2D>("triangle_max02");
-			//myRocketManager.LoadContent(Content);
-			//block = Content.Load<Texture2D>("block");
-			//steve = Content.Load<Texture2D>("steve");
 		}
 
 		protected override void UnloadContent()
 		{
-			Content.Unload();
+			myContentManager.UnLoadContent(Content);
 		}
 
 		protected override void Update(GameTime gameTime)
@@ -67,32 +61,6 @@ namespace Test
 				Exit();
 			}
 
-			if (!myRocketManager.IsRocketFlying)
-			{
-				if (Keyboard.GetState().IsKeyDown(Keys.D1))
-				{
-					myRocketManager.Launch(1);
-				}
-				if (Keyboard.GetState().IsKeyDown(Keys.D2))
-				{
-					myRocketManager.Launch(2);
-				}
-				if (Keyboard.GetState().IsKeyDown(Keys.D3))
-				{
-					myConfigManger.Initialize();
-					myRocketManager.Launch(3);
-				}
-				if (Keyboard.GetState().IsKeyDown(Keys.D4))
-				{
-					myRocketManager.Launch(4);
-				}
-				if (Keyboard.GetState().IsKeyDown(Keys.D5))
-				{
-					myRocketManager.Launch(5);
-				}
-			}
-
-			myRocketManager.Update(gameTime);
 			base.Update(gameTime);
 		}
 
@@ -112,20 +80,6 @@ namespace Test
 			spriteBatch.End();
 
 			base.Draw(gameTime);
-		}
-
-		private void DrawBlock(float x, float y)
-		{
-			var pos = new Vector2(x - 15, y - 30);
-			//spriteBatch.Draw(steve, pos, Color.White);
-		}
-
-		private float GetY(float x)
-		{
-			var rads = MathHelper.ToRadians(37);
-			var angl = Math.Tan(rads);
-			var high = x * angl;
-			return (float)high;
 		}
 	}
 }
