@@ -7,14 +7,14 @@ namespace Test
 	{
 		public void Initialize()
 		{
+			Wide = Convert.ToInt32(ConfigurationManager.AppSettings["Wide"]);
+			High = Convert.ToInt32(ConfigurationManager.AppSettings["High"]);
 			Angle = Convert.ToSingle(ConfigurationManager.AppSettings["Angle"]);
-			//Angle = 90 - Angle;
 			Speed = Convert.ToSingle(ConfigurationManager.AppSettings["Speed"]);
-
-			//Logger.Info("Angle = " + Angle);
-			//Logger.Info("Speed = " + Speed);
 		}
 
+		public int Wide { get; private set; }
+		public int High { get; private set; }
 		public float Angle { get; private set; }
 		public float Speed { get; private set; }
 	}

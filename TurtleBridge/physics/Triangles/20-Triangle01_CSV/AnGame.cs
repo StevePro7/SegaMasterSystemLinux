@@ -17,11 +17,14 @@ namespace Test
 		public AnGame()
 		{
 			Logger.Initialize();
-			graphics = new GraphicsDeviceManager(this);
-			graphics.PreferredBackBufferWidth = 800;
-			graphics.PreferredBackBufferHeight = 500;
-			Content.RootDirectory = "Content";
 			myConfigManger = new MyConfigManger();
+			myConfigManger.Initialize();
+
+			graphics = new GraphicsDeviceManager(this);
+			graphics.PreferredBackBufferWidth = myConfigManger.Wide;
+			graphics.PreferredBackBufferHeight = myConfigManger.High;
+			Content.RootDirectory = "Content";
+			
 			myRocketManager = new MyRocketManager(myConfigManger);
 			myRocketManager.Initialize();
 		}
