@@ -9,11 +9,12 @@ namespace Test
 	{
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
-		Texture2D[] triangle;
+		//Texture2D[] triangle;
 		private const int High = 400;
 
 		private readonly MyContentManager myContentManager;
 		private readonly MyConfigManger myConfigManger;
+		private readonly MyCsvManager myCsvManger;
 		private readonly MyRocketManager myRocketManager;
 
 		public AnGame()
@@ -28,7 +29,9 @@ namespace Test
 
 			myContentManager = new MyContentManager();
 			myContentManager.Initialize(Content);
-			//Content.RootDirectory = "Content";
+
+			myCsvManger = new MyCsvManager();
+			myCsvManger.Initialize();
 
 			myRocketManager = new MyRocketManager(myConfigManger);
 			myRocketManager.Initialize();
@@ -47,6 +50,7 @@ namespace Test
 		{
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 			myContentManager.LoadContent(Content);
+			myCsvManger.Process();
 		}
 
 		protected override void UnloadContent()
