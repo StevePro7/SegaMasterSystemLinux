@@ -15,6 +15,8 @@ namespace _02_Test
 		public Game1()
 		{
 			graphics = new GraphicsDeviceManager(this);
+			graphics.PreferredBackBufferWidth = 1280;
+			graphics.PreferredBackBufferHeight = 512;
 			Content.RootDirectory = "Content";
 			myConfigManger = new MyConfigManger();
 			myRocketManager = new MyRocketManager(myConfigManger);
@@ -60,7 +62,6 @@ namespace _02_Test
 			}
 
 			myRocketManager.Update(gameTime);
-
 			base.Update(gameTime);
 		}
 

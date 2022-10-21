@@ -25,6 +25,7 @@ namespace _02_Test
 		private Texture2D _rocketImage;
 		private const int Wide = 10;
 		private const int High = 400;
+		private int maxHigh;
 		private const float gravity = -9.8f;
 
 		public MyRocketManager(MyConfigManger myConfigManger)
@@ -34,6 +35,8 @@ namespace _02_Test
 
 		public void Initialize()
 		{
+			maxHigh = int.MaxValue;
+
 			_rocketPositionList = new List<Vector2>();
 			_rocketPositionList.Clear();
 
@@ -63,6 +66,9 @@ namespace _02_Test
 
 			Initialize();
 			_rocketFlying = true;
+
+			Logger.Info("Wide  = " + Wide);
+			Logger.Info("High  = " + High);
 		}
 
 		public void Update(GameTime gameTime)
@@ -78,11 +84,24 @@ namespace _02_Test
 			float posY = (float)(veliY * timer + 0.5 * gravity * timer * timer);
 
 			_rocketPosition = new Vector2(Wide + posX, High - posY);
+			int tmpHigh = (int)(High - posY);
+			if (tmpHigh < maxHigh)
+			{
+				maxHigh = tmpHigh;
+			}
 			_rocketPositionList.Add(_rocketPosition);
 
 			if (_rocketPosition.Y >= High)
 			{
+				var maxWide = (int)(Wide + posX);
 				_rocketFlying = false;
+				Logger.Info("mWide = " + maxWide);
+				Logger.Info("mHigh = " + maxHigh);
+
+				Logger.Info("dWide = " + (int)posX);
+				Logger.Info("dHigh = " + (High - maxHigh));
+
+
 				foreach (var pos in _rocketPositionList)
 				{
 					//Logger.Info($"{pos.X},{pos.Y}");
