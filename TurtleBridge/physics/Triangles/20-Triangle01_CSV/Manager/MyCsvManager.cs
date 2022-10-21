@@ -16,6 +16,7 @@ namespace Test
 		private float veliX, veliY;
 		private float timer;
 		private float delta;
+		private float posX2, posY2;
 		private int frame;
 		private const float gravity = -9.8f;
 		//private const float gravity = -10.0f;
@@ -25,11 +26,28 @@ namespace Test
 			rocketPositionList = new List<Vector2>();
 			rocketPosition = Vector2.Zero;
 
-			angle = 32;// myConfigManger.Angle;
+			//for (angle = 0; angle <= 90; angle++)
+			//{
+			//	var rads1 = MathHelper.ToRadians(angle);
+			//	var rads2 = MathHelper.ToRadians(90 - angle);
+			//	var sin1 = Math.Sin(rads1);
+			//	var cos2 = Math.Cos(rads2);
+			//	var diff = (int)(sin1 - cos2);
+			//	var msg = $"{sin1},{cos2},{diff}";
+			//	if (diff != 0)
+			//	{
+			//		int x = 8;
+			//	}
+			//}
+			angle = 22;// myConfigManger.Angle;
 			radians = MathHelper.ToRadians(angle);
 			speed = 65;// myConfigManger.Speed;
+			var cos = Math.Cos(radians);
+			var sin = Math.Sin(radians);
 			veliX = (float)(speed * Math.Cos(radians));
 			veliY = (float)(speed * Math.Sin(radians));
+			posX2 = 0.0f;
+			posY2 = 0.0f;
 			timer = 0.0f;
 			delta = 0.0f;
 			frame = 0;
@@ -42,11 +60,20 @@ namespace Test
 			rocketPosition = new Vector2(wide, high);
 			rocketPositionList.Add(rocketPosition);
 
+			delta = 20 / 1000f;
+			timer = delta;
+			float testx = veliX * delta;
+			float testy = veliY * delta;
+			
+			var extra = 0.5 * gravity * timer * timer;
+
+			posX2 += testx;
+
 			while (true)
 			{
 				frame++;
 				//delta = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 1000f;
-				delta = 20 / 1000f;
+				
 				timer += delta;
 				float posX = veliX * timer;
 				float posY = (float)(veliY * timer + 0.5 * gravity * timer * timer);
@@ -73,7 +100,7 @@ namespace Test
 				lines.Add(line);
 			}
 
-			File.WriteAllLines("stevepro2.csv", lines.ToArray());
+			File.WriteAllLines("stevepro3.csv", lines.ToArray());
 			//rocketPosition = new Vector2(Wide + posX, High - posY);
 		}
 	}
