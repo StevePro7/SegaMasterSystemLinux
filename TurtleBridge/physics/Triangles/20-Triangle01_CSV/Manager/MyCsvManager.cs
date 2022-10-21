@@ -39,7 +39,7 @@ namespace Test
 			//		int x = 8;
 			//	}
 			//}
-			angle = 22;// myConfigManger.Angle;
+			angle = 55;// myConfigManger.Angle;
 			radians = MathHelper.ToRadians(angle);
 			speed = 65;// myConfigManger.Speed;
 			var cos = Math.Cos(radians);
@@ -66,8 +66,9 @@ namespace Test
 			float testy = veliY * delta;
 			
 			var extra = 0.5 * gravity * timer * timer;
-
+			var inter = testy + extra;
 			posX2 += testx;
+			posY2 += testy;
 
 			while (true)
 			{
@@ -96,7 +97,7 @@ namespace Test
 			IList<string> lines = new List<string>();
 			foreach (var pos in rocketPositionList)
 			{
-				var line = $"{pos.Y},{pos.X}";
+				var line = $"{pos.X},{pos.Y}";
 				lines.Add(line);
 			}
 
