@@ -11,8 +11,10 @@ namespace Test
 		SpriteBatch spriteBatch;
 		Texture2D[] triangle;
 		private const int High = 400;
-		private readonly MyRocketManager myRocketManager;
+
+		private readonly MyContentManager myContentManager;
 		private readonly MyConfigManger myConfigManger;
+		private readonly MyRocketManager myRocketManager;
 
 		public AnGame()
 		{
@@ -23,8 +25,11 @@ namespace Test
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = myConfigManger.Wide;
 			graphics.PreferredBackBufferHeight = myConfigManger.High;
-			Content.RootDirectory = "Content";
-			
+
+			myContentManager = new MyContentManager();
+			myContentManager.Initialize(Content);
+			//Content.RootDirectory = "Content";
+
 			myRocketManager = new MyRocketManager(myConfigManger);
 			myRocketManager.Initialize();
 		}
@@ -35,19 +40,17 @@ namespace Test
 			IsFixedTimeStep = true;
 			var fps = 50;
 			TargetElapsedTime = TimeSpan.FromSeconds(1.0f / fps);
-			myConfigManger.Initialize();
-			myRocketManager.Initialize();
 			base.Initialize();
 		}
 
 		protected override void LoadContent()
 		{
 			spriteBatch = new SpriteBatch(GraphicsDevice);
-
-			triangle = new Texture2D[2];
-			triangle[0] = Content.Load<Texture2D>("triangle_max01");
-			triangle[1] = Content.Load<Texture2D>("triangle_max02");
-			myRocketManager.LoadContent(Content);
+			myContentManager.LoadContent(Content);
+			//triangle = new Texture2D[2];
+			//triangle[0] = Content.Load<Texture2D>("triangle_max01");
+			//triangle[1] = Content.Load<Texture2D>("triangle_max02");
+			//myRocketManager.LoadContent(Content);
 			//block = Content.Load<Texture2D>("block");
 			//steve = Content.Load<Texture2D>("steve");
 		}
@@ -99,9 +102,9 @@ namespace Test
 			//GraphicsDevice.Clear(Color.White);
 
 			spriteBatch.Begin();
-			spriteBatch.Draw(triangle[0], new Vector2(200-triangle[0].Width, High), Color.White);
-			spriteBatch.Draw(triangle[1], new Vector2(600, High), Color.White);
-			myRocketManager.Draw(spriteBatch);
+			//spriteBatch.Draw(triangle[0], new Vector2(200-triangle[0].Width, High), Color.White);
+			//spriteBatch.Draw(triangle[1], new Vector2(600, High), Color.White);
+			//myRocketManager.Draw(spriteBatch);
 
 			//y = GetY(x);
 			//DrawBlock(100 + x, 100 + y);
