@@ -11,44 +11,39 @@
 
 static void draw_sprite( unsigned char idx, unsigned char x, unsigned char y );
 static unsigned char frame;
+static unsigned char jumps;
+static unsigned char posY;
+
+static unsigned char deltaY[125] =
+{
+	1, 	1, 	1, 	1, 	1, 	2, 	2, 	2, 	2, 	3, 	3, 	3, 	3, 	3, 	4, 	4, 	4, 	4, 	4, 	4, 	5, 	5, 	5, 	5, 	5, 	5, 	6, 	6, 	6, 	6, 	6, 	6, 	6, 	6, 	7, 	7, 	7, 	7, 	7, 	7, 	7, 	7, 	7, 	7, 	7, 	7, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	7, 	7, 	7, 	7, 	7, 	7, 	7, 	7, 	7, 	7, 	7, 	7, 	6, 	6, 	6, 	6, 	6, 	6, 	6, 	6, 	5, 	5, 	5, 	5, 	5, 	5, 	4, 	4, 	4, 	4, 	4, 	4, 	3, 	3, 	3, 	3, 	3, 	2, 	2, 	2, 	2, 	1, 	1, 	1, 	1, 	1
+};
 
 void engine_screen_manager_init()
 {
-	engine_font_manager_draw_text( "ADRIANA HOMEWORK", 2, 2 );
+	engine_font_manager_draw_text( "STEVEPRO TESTING", 2, 2 );
 	frame = 0;
+	jumps = 0;
+	posY = 160;
 }
 
 void engine_screen_manager_update()
 {
 	unsigned char input;
-	//frame = 0;
+	//unsigned char delay;
 
+	draw_sprite( frame, 96, posY );
+
+	if( jumps )
+	{
+		return;
+	}
 	input = engine_input_manager_hold_fire1();
 	if( input )
 	{
-		frame++;
-		if( frame > 7 )
-		{
-			frame = 0;
-		}
+		engine_font_manager_draw_text( "STEVEPRO JUMPING", 2, 2 );
+		jumps = 1;
 	}
-	else
-	{
-		input = engine_input_manager_hold_fire2();
-		if( input )
-		{
-			if( frame == 0 )
-			{
-				frame = 7;
-			}
-			else
-			{
-				frame--;
-			}
-		}
-	}
-
-	draw_sprite( frame, 96, 96 );
 }
 
 static void draw_sprite( unsigned char idx, unsigned char x, unsigned char y )
