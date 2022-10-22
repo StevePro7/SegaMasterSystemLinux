@@ -101,7 +101,7 @@ namespace Test
 				lines.Add(line);
 			}
 
-			File.WriteAllLines("stevepro3.csv", lines.ToArray());
+			File.WriteAllLines("stevepro4.csv", lines.ToArray());
 			//rocketPosition = new Vector2(Wide + posX, High - posY);
 		}
 	}

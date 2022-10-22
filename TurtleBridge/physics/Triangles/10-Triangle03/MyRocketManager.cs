@@ -41,12 +41,14 @@ namespace _02_Test
 
 			InitPos(index);
 			_rocketPosition = new Vector2(Wide, High);
-			//_rocketPositionList.Add(_rocketPosition);
+			_rocketPositionList.Add(_rocketPosition);
 			//_rocketAngle = 0.0f;
 
 			angle = myConfigManger.Angle;
 			radians = MathHelper.ToRadians(angle);
 			speed = myConfigManger.Speed;
+			Logger.Info("Angle:" + angle);
+			Logger.Info("Speed:" + speed);
 			veliX = (float)(speed * Math.Cos(radians));
 			veliY = (float)(speed * Math.Sin(radians));
 			timer = 0.0f;
@@ -81,7 +83,7 @@ namespace _02_Test
 			_rocketPosition = new Vector2(Wide, High);
 			prevPosX = Wide;
 			prevPosY = High;
-			//Logger.Info(msg);
+			Logger.Info(msg);
 			frame = 0;
 		}
 
@@ -167,7 +169,7 @@ namespace _02_Test
 		}
 		private void Update03(GameTime gameTime)
 		{
-			Update03b(gameTime);
+			Update03a(gameTime);
 		}
 		private void Update03a(GameTime gameTime)
 		{
@@ -177,12 +179,16 @@ namespace _02_Test
 			float delta = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 1000f;
 			timer += delta;
 			float posX = veliX * timer;
+
+			var left = veliX * timer;
+			var rght = (0.5 * gravity * timer * timer);
+			var totl = (float)(left + rght);
 			float posY = (float)(veliY * timer + 0.5 * gravity * timer * timer);
 
 			msg += $"{posX},{posY},";
 			_rocketPosition = new Vector2(Wide + posX, High - posY);
-			Logger.Info(posX.ToString());
-			//_rocketPositionList.Add(_rocketPosition);
+			//Logger.Info(posX.ToString());
+			_rocketPositionList.Add(_rocketPosition);
 
 			msg += $"{_rocketPosition.X},{_rocketPosition.Y}";
 			//Logger.Info(msg);
@@ -191,6 +197,9 @@ namespace _02_Test
 				_rocketFlying = false;
 				foreach (var pos in _rocketPositionList)
 				{
+					int px = Convert.ToInt32(pos.X);
+					int py = Convert.ToInt32(pos.Y);
+					Logger.Info($"{px},{py}");
 					//Logger.Info($"{pos.X},{pos.Y}");
 				}
 			}
