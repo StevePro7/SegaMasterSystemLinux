@@ -11,6 +11,7 @@
 
 static void draw_sprite( unsigned char idx, unsigned char x, unsigned char y );
 static unsigned char frame;
+static unsigned char index;
 static unsigned char jumps;
 static unsigned char posY;
 
@@ -23,6 +24,7 @@ void engine_screen_manager_init()
 {
 	engine_font_manager_draw_text( "STEVEPRO TESTING", 2, 2 );
 	frame = 0;
+	index = 0;
 	jumps = 0;
 	posY = 160;
 }
@@ -32,18 +34,24 @@ void engine_screen_manager_update()
 	unsigned char input;
 	//unsigned char delay;
 
-	draw_sprite( frame, 96, posY );
-
+	
 	if( jumps )
 	{
-		return;
+
 	}
-	input = engine_input_manager_hold_fire1();
-	if( input )
+	else
 	{
-		engine_font_manager_draw_text( "STEVEPRO JUMPING", 2, 2 );
-		jumps = 1;
+		input = engine_input_manager_hold_fire1();
+		if( input )
+		{
+			engine_font_manager_draw_text( "STEVEPRO JUMPING", 2, 2 );
+			index = 0;
+			posY = 160;
+			jumps = 1;
+		}
 	}
+
+	draw_sprite( frame, 96, posY );
 }
 
 static void draw_sprite( unsigned char idx, unsigned char x, unsigned char y )
