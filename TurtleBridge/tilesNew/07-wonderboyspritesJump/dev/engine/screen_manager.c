@@ -9,13 +9,14 @@
 #include "tile_manager.h"
 #include "../devkit/_sms_manager.h"
 
+#define MAX_JUMPS	125
 static void draw_sprite( unsigned char idx, unsigned char x, unsigned char y );
 static unsigned char frame;
 static unsigned char index;
 static unsigned char jumps;
 static unsigned char posY;
 
-static unsigned char deltaY[125] =
+static unsigned char deltaY[ MAX_JUMPS ] =
 {
 	1, 	1, 	1, 	1, 	1, 	2, 	2, 	2, 	2, 	3, 	3, 	3, 	3, 	3, 	4, 	4, 	4, 	4, 	4, 	4, 	5, 	5, 	5, 	5, 	5, 	5, 	6, 	6, 	6, 	6, 	6, 	6, 	6, 	6, 	7, 	7, 	7, 	7, 	7, 	7, 	7, 	7, 	7, 	7, 	7, 	7, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	8, 	7, 	7, 	7, 	7, 	7, 	7, 	7, 	7, 	7, 	7, 	7, 	7, 	6, 	6, 	6, 	6, 	6, 	6, 	6, 	6, 	5, 	5, 	5, 	5, 	5, 	5, 	4, 	4, 	4, 	4, 	4, 	4, 	3, 	3, 	3, 	3, 	3, 	2, 	2, 	2, 	2, 	1, 	1, 	1, 	1, 	1
 };
@@ -34,10 +35,17 @@ void engine_screen_manager_update()
 	unsigned char input;
 	//unsigned char delay;
 
-	
+	unsigned char delta = 0;
 	if( jumps )
 	{
-
+		delta = deltaY[ index ];
+		index++;
+		if( index >= MAX_JUMPS )
+		{
+			index = 0;
+			jumps = 0;
+			posY = 160;
+		}
 	}
 	else
 	{
@@ -46,12 +54,15 @@ void engine_screen_manager_update()
 		{
 			engine_font_manager_draw_text( "STEVEPRO JUMPING", 2, 2 );
 			index = 0;
-			posY = 160;
 			jumps = 1;
+			posY = 160;
 		}
 	}
 
-	draw_sprite( frame, 96, posY );
+	//engine_font_manager_draw_data( index, 25, 0 );
+	//engine_font_manager_draw_data( delta, 25, 1 );
+	//engine_font_manager_draw_data( jumps, 25, 2 );
+	draw_sprite( frame, 96, posY - delta );
 }
 
 static void draw_sprite( unsigned char idx, unsigned char x, unsigned char y )
