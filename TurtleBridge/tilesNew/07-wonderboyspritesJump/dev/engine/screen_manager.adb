@@ -14,9 +14,9 @@ S:Lscreen_manager.draw_sprite$i$1_0$110({1}SC:U),R,0,0,[c]
 S:Lscreen_manager.draw_sprite$j$1_0$110({1}SC:U),B,1,-1
 S:Lscreen_manager.draw_sprite$sloc0$0_1$0({1}SC:U),B,1,-2
 S:Lscreen_manager.draw_sprite$sloc1$0_1$0({1}SC:U),B,1,-1
-S:Fscreen_manager$deltaY$0_0$0({125}DA125d,SC:U),E,0,0
+S:Fscreen_manager$deltaY$0_0$0({516}DA516d,SC:U),E,0,0
 S:Fscreen_manager$frame$0_0$0({1}SC:U),E,0,0
-S:Fscreen_manager$index$0_0$0({1}SC:U),E,0,0
+S:Fscreen_manager$index$0_0$0({2}SI:U),E,0,0
 S:Fscreen_manager$jumps$0_0$0({1}SC:U),E,0,0
 S:Fscreen_manager$posY$0_0$0({1}SC:U),E,0,0
 S:G$engine_music_manager_play$0_0$0({2}DF,SV:S),C,0,0
