@@ -1,6 +1,7 @@
 #ifndef _SPRITE_MANAGER_H_
 #define _SPRITE_MANAGER_H_
 
+void engine_tile_manager_sky();
 void engine_tile_manager_seaX( unsigned char equator );
 
 void engine_tile_manager_draw_normX( unsigned char type, unsigned char x, unsigned char y );

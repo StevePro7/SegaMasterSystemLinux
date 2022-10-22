@@ -1,6 +1,6 @@
 ;!FILE main.asm
 XL3
-H 9 areas 5E global symbols
+H 9 areas 44 global symbols
 M main
 O -mz80
 S _engine_input_manager_update Ref000000
@@ -10,14 +10,11 @@ S _devkit_SMS_init Ref000000
 S _devkit_PSGSFXFrame Ref000000
 S _engine_screen_manager_update Ref000000
 S _engine_content_manager_load_sprites Ref000000
-S _devkit_SMS_VDPturnOnFeature Ref000000
 S _devkit_SMS_finalizeSprites Ref000000
 S _devkit_SMS_useFirstHalfTilesforSprites Ref000000
-S _devkit_VDPFEATURE_HIDEFIRSTCOL Ref000000
 S _devkit_PSGFrame Ref000000
 S .__.ABS. Def000000
 S _devkit_SMS_setSpriteMode Ref000000
-S _devkit_RGB Ref000000
 S _devkit_SMS_displayOff Ref000000
 S _devkit_UNSAFE_SMS_copySpritestoSAT Ref000000
 S _devkit_SPRITEMODE_NORMAL Ref000000
@@ -25,79 +22,56 @@ S _engine_asm_manager_clear_VRAM Ref000000
 S _devkit_SMS_waitForVBlank Ref000000
 S _engine_content_manager_load_bgtiles Ref000000
 S _devkit_SMS_initSprites Ref000000
-S _devkit_SMS_setBGPaletteColor Ref000000
-A _CODE size 5F flags 0 addr 0
-S A$main$101 Def000016
-S A$main$102 Def000019
-S A$main$130 Def000036
-S A$main$121 Def000028
-S A$main$140 Def00003F
-S A$main$131 Def000037
-S A$main$122 Def00002B
-S A$main$113 Def000022
+A _CODE size 40 flags 0 addr 0
+S A$main$110 Def000020
+S A$main$102 Def00001A
+S A$main$131 Def00002F
 S C$main.c$10$1_0$126 Def000013
-S A$main$132 Def000038
-S A$main$123 Def00002C
-S C$main.c$20$1_0$126 Def00003F
-S C$main.c$11$1_0$126 Def00001A
+S A$main$123 Def000029
+S A$main$114 Def000023
+S C$main.c$20$1_0$126 Def000020
 S _main Def000000
-S A$main$133 Def000039
-S A$main$124 Def00002E
-S A$main$106 Def00001A
-S C$main.c$21$1_0$126 Def000042
-S A$main$161 Def00004E
-S A$main$134 Def00003A
-S A$main$125 Def00002F
-S A$main$107 Def00001D
-S C$main.c$13$1_0$126 Def000022
-S A$main$153 Def000048
-S A$main$144 Def000042
-S A$main$135 Def00003B
-S A$main$126 Def000030
-S A$main$117 Def000025
-S A$main$108 Def00001E
-S C$main.c$14$1_0$126 Def000025
-S A$main$136 Def00003E
-S A$main$127 Def000033
-S A$main$109 Def000021
-S A$main$173 Def000057
-S A$main$128 Def000034
-S C$main.c$16$1_0$126 Def000028
-S A$main$165 Def000051
-S A$main$129 Def000035
-S C$main.c$31$3_0$128 Def000054
-S A$main$157 Def00004B
-S A$main$185 Def00005D
-S A$main$149 Def000045
-S C$main.c$36$2_0$126 Def00005D
-S C$main.c$33$3_0$128 Def000057
-S C$main.c$24$3_0$128 Def000045
-S A$main$177 Def00005A
-S C$main.c$34$3_0$128 Def00005A
-S C$main.c$25$3_0$128 Def000048
-S A$main$169 Def000054
-S C$main.c$26$3_0$128 Def00004B
-S XG$main$0$0 Def00005D
-S C$main.c$28$3_0$128 Def00004E
-S C$main.c$29$3_0$128 Def000051
+S A$main$106 Def00001D
+S C$main.c$21$1_0$126 Def000023
+S A$main$143 Def000038
+S C$main.c$13$1_0$126 Def00001A
+S A$main$135 Def000032
+S C$main.c$14$1_0$126 Def00001D
+S A$main$127 Def00002C
+S A$main$155 Def00003E
+S A$main$119 Def000026
+S A$main$147 Def00003B
+S C$main.c$31$3_0$128 Def000035
+S A$main$139 Def000035
+S C$main.c$36$2_0$126 Def00003E
+S C$main.c$33$3_0$128 Def000038
+S C$main.c$24$3_0$128 Def000026
+S C$main.c$34$3_0$128 Def00003B
+S C$main.c$25$3_0$128 Def000029
+S C$main.c$26$3_0$128 Def00002C
+S XG$main$0$0 Def00003E
+S C$main.c$28$3_0$128 Def00002F
+S C$main.c$29$3_0$128 Def000032
 S C$main.c$3$0_0$126 Def000000
-S A$main$90 Def00000C
-S A$main$81 Def000003
+S A$main$90 Def000012
+S A$main$81 Def000006
 S C$main.c$5$1_0$126 Def000000
-S A$main$91 Def00000D
+S A$main$73 Def000000
 S C$main.c$6$1_0$126 Def000003
-S A$main$92 Def00000E
 S C$main.c$7$1_0$126 Def000006
-S A$main$93 Def00000F
-S A$main$94 Def000012
-S A$main$85 Def000006
+S A$main$94 Def000013
+S A$main$85 Def000009
 S C$main.c$9$1_0$126 Def000009
-S A$main$77 Def000000
-S A$main$98 Def000013
-S A$main$89 Def000009
-S A$main$99 Def000014
+S A$main$95 Def000014
+S A$main$86 Def00000C
+S A$main$77 Def000003
+S A$main$96 Def000015
+S A$main$87 Def00000D
+S A$main$97 Def000016
+S A$main$88 Def00000E
+S A$main$98 Def000019
+S A$main$89 Def00000F
 S G$main$0$0 Def000000
-S A$main$100 Def000015
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -109,22 +83,18 @@ A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
 T 00 00 00 CD 00 00 CD 00 00 CD 00 00 CD
-R 00 00 00 00 02 04 03 00 02 07 0F 00 02 0A 12 00
+R 00 00 00 00 02 04 03 00 02 07 0C 00 02 0A 0F 00
 T 0A 00 00 00 00 7D F5 33 CD 00 00 33 AF F5 33 CD
-R 00 00 00 00 02 03 11 00 02 09 0D 00
-T 17 00 00 00 00 33 CD 00 00 E5 CD 00 00 F1 CD
-R 00 00 00 00 02 03 09 00 02 07 0A 00 02 0B 07 00
-T 23 00 00 00 00 CD 00 00 11 02 03 D5 3E 01 F5 33
-R 00 00 00 00 02 03 14 00 02 06 06 00
-T 30 00 00 CD 00 00 F1 7D 33 F5 33 AF F5 33 CD
-R 00 00 00 00 02 04 0E 00
-T 3C 00 00 00 00 F1 CD 00 00 CD 00 00
-R 00 00 00 00 02 03 16 00 02 07 01 00 02 0A 02 00
-T 45 00 00
+R 00 00 00 00 02 03 0E 00 02 09 0B 00
+T 17 00 00 00 00 33 CD 00 00 CD 00 00 CD
+R 00 00 00 00 02 03 08 00 02 07 11 00 02 0A 06 00
+T 21 00 00 00 00 CD 00 00
+R 00 00 00 00 02 03 01 00 02 06 02 00
+T 26 00 00
 R 00 00 00 00
-T 45 00 00 CD 00 00 CD 00 00 CD 00 00 CD
-R 00 00 00 00 02 04 15 00 02 07 00 00 02 0A 05 00
-T 4F 00 00 00 00 CD 00 00 CD 00 00 CD
-R 00 00 00 00 02 03 08 00 02 06 13 00 02 09 10 00
-T 58 00 00 00 00 CD 00 00 18 E6
-R 00 00 00 00 02 03 0B 00 02 06 04 00
+T 26 00 00 CD 00 00 CD 00 00 CD 00 00 CD
+R 00 00 00 00 02 04 12 00 02 07 00 00 02 0A 05 00
+T 30 00 00 00 00 CD 00 00 CD 00 00 CD
+R 00 00 00 00 02 03 07 00 02 06 10 00 02 09 0D 00
+T 39 00 00 00 00 CD 00 00 18 E6
+R 00 00 00 00 02 03 09 00 02 06 04 00

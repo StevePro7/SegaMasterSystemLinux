@@ -18,6 +18,24 @@ static void load_variables( unsigned char type )
 	high = tile_object_highX[ type ];
 }
 
+void engine_tile_manager_sky()
+{
+	unsigned char idx;
+	unsigned char val;
+	unsigned char row, col, x, y;
+
+	for( row = 0; row < 23; row++ )
+	{
+		for( col = 0; col < 31; col++ )
+		{
+			idx = 64;// row * wide + col;
+			val = array[ idx ];
+
+			devkit_SMS_setNextTileatXY( x, y );
+			devkit_SMS_setTile( ( *tiles + val ) );
+		}
+	}
+}
 void engine_tile_manager_seaX( unsigned char equator )
 {
 	unsigned char idx;
