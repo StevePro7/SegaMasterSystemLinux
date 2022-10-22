@@ -57,7 +57,7 @@ namespace _02_Test
 			_rocketImage = content.Load<Texture2D>("000");
 		}
 
-		public void Launch()
+		public void Launch(GameTime gameTime)
 		{
 			if (_rocketFlying)
 			{
@@ -69,6 +69,36 @@ namespace _02_Test
 
 			Logger.Info("Wide  = " + Wide);
 			Logger.Info("High  = " + High);
+
+			while (true)
+			{
+				float delta = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 1000f;
+				timer += delta;
+				float posX = veliX * timer;
+				float posY = (float)(veliY * timer + 0.5 * gravity * timer * timer);
+
+				_rocketPosition = new Vector2(Wide + posX, High - posY);
+				int tmpHigh = (int)(High - posY);
+				if (tmpHigh < maxHigh)
+				{
+					maxHigh = tmpHigh;
+				}
+				_rocketPositionList.Add(_rocketPosition);
+
+				if (_rocketPosition.Y >= High)
+				{
+					var maxWide = (int)(Wide + posX);
+					_rocketFlying = false;
+					//Logger.Info("mWide = " + maxWide);
+					//Logger.Info("mHigh = " + maxHigh);
+
+					//Logger.Info("dWide = " + (int)posX);
+					//Logger.Info("dHigh = " + (High - maxHigh));
+
+					break;
+					
+				}
+			}
 		}
 
 		public void Update(GameTime gameTime)
@@ -76,36 +106,6 @@ namespace _02_Test
 			if (!_rocketFlying)
 			{
 				return;
-			}
-
-			float delta = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 1000f;
-			timer += delta;
-			float posX = veliX * timer;
-			float posY = (float)(veliY * timer + 0.5 * gravity * timer * timer);
-
-			_rocketPosition = new Vector2(Wide + posX, High - posY);
-			int tmpHigh = (int)(High - posY);
-			if (tmpHigh < maxHigh)
-			{
-				maxHigh = tmpHigh;
-			}
-			_rocketPositionList.Add(_rocketPosition);
-
-			if (_rocketPosition.Y >= High)
-			{
-				var maxWide = (int)(Wide + posX);
-				_rocketFlying = false;
-				Logger.Info("mWide = " + maxWide);
-				Logger.Info("mHigh = " + maxHigh);
-
-				Logger.Info("dWide = " + (int)posX);
-				Logger.Info("dHigh = " + (High - maxHigh));
-
-
-				foreach (var pos in _rocketPositionList)
-				{
-					//Logger.Info($"{pos.X},{pos.Y}");
-				}
 			}
 		}
 

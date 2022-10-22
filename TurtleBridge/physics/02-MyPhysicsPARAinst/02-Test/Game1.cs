@@ -52,16 +52,16 @@ namespace _02_Test
 				Exit();
 			}
 
-			if (Keyboard.GetState().IsKeyDown(Keys.Space))
+			//if (Keyboard.GetState().IsKeyDown(Keys.Space))
 			{
 				if (!myRocketManager.IsRocketFlying)
 				{
 					myConfigManger.Initialize();
-					myRocketManager.Launch();
+					myRocketManager.Launch(gameTime);
 				}
 			}
 
-			myRocketManager.Update(gameTime);
+			//myRocketManager.Update(gameTime);
 			base.Update(gameTime);
 		}
 
