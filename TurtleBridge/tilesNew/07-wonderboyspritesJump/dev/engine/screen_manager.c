@@ -50,6 +50,7 @@ void engine_screen_manager_init()
 	index = 0;
 	jumps = 0;
 	posY = MAX_FLOOR;
+	engine_music_manager_play();
 }
 
 void engine_screen_manager_update()
