@@ -34,10 +34,12 @@ cd engine
 ::"C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 input_manager.c
 "C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 screen_manager.c
 "C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 sprite_manager.c
+"C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 storage_manager.c
 ::"C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 tile_manager.c
 cd ..
 
 cd object
+"C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 storage_object.c
 ::"C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 tile_object.c
 cd ..
 
@@ -70,7 +72,9 @@ engine/function_manager.rel engine/global_manager.rel ^
 engine/input_manager.rel ^
 engine/screen_manager.rel ^
 engine/sprite_manager.rel ^
+engine/storge_manager.rel ^
 engine/tile_manager.rel ^
+object/storage_object.rel ^
 object/tile_object.rel ^
 content/gfx.rel ^
 content/psg.rel
