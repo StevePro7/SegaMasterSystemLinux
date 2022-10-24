@@ -81,9 +81,9 @@ void engine_screen_manager_update()
 		if( input )
 		{
 			engine_font_manager_draw_text( "STEVEPRO JUMPING", 2, 2 );
-			index = 0;
-			jumps = 1;
-			posY = MAX_FLOOR;
+			//index = 0;
+			//jumps = 1;
+			//posY = MAX_FLOOR;
 		}
 	}
 

@@ -7,9 +7,7 @@ typedef struct tag_struct_storage_object
 	unsigned long Magic;
 
 	unsigned char num_bytes;
-	unsigned char sgb_byte1;
-	unsigned char sgb_byte2;
-	unsigned char sgb_byte3;
+	unsigned char sgb_bytes[3];
 
 	//unsigned char terminal;
 
