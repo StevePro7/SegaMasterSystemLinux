@@ -13,6 +13,7 @@ namespace ScreenShotTest
 			var numLines = 400;
 			var msb = numLines / 256;
 			var lsb = numLines % 256; 
+
 			using (BinaryWriter bw = new BinaryWriter(file))
 			{
 				// MAGIC
