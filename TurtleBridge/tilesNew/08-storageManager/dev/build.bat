@@ -72,7 +72,7 @@ engine/function_manager.rel engine/global_manager.rel ^
 engine/input_manager.rel ^
 engine/screen_manager.rel ^
 engine/sprite_manager.rel ^
-engine/storge_manager.rel ^
+engine/storage_manager.rel ^
 engine/tile_manager.rel ^
 object/storage_object.rel ^
 object/tile_object.rel ^
