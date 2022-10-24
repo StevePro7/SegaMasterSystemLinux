@@ -15,7 +15,9 @@ S:Lscreen_manager.draw_sprite$i$1_0$111({1}SC:U),R,0,0,[c]
 S:Lscreen_manager.draw_sprite$j$1_0$111({1}SC:U),B,1,-1
 S:Lscreen_manager.draw_sprite$sloc0$0_1$0({1}SC:U),B,1,-2
 S:Lscreen_manager.draw_sprite$sloc1$0_1$0({1}SC:U),B,1,-1
+T:Fscreen_manager$tag_struct_storage_object[({0}S:S$Magic$0_0$0({4}SL:U),Z,0,0)({4}S:S$num_bytes$0_0$0({1}SC:U),Z,0,0)({5}S:S$terminal$0_0$0({1}SC:U),Z,0,0)]
 S:Fscreen_manager$deltaY$0_0$0({4}DA4d,SC:U),E,0,0
+S:G$global_storage_object$0_0$0({6}STtag_struct_storage_object:S),E,0,0
 S:Fscreen_manager$frame$0_0$0({1}SC:U),E,0,0
 S:Fscreen_manager$index$0_0$0({2}SI:U),E,0,0
 S:Fscreen_manager$jumps$0_0$0({1}SC:U),E,0,0
@@ -50,6 +52,10 @@ S:G$engine_tile_manager_draw_turtleX$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_draw_groundX$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_sprite_manager_draw$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_sprite_manager_fish$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_storage_manager_available$0_0$0({2}DF,SC:U),C,0,0
+S:G$engine_storage_manager_read$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_storage_manager_write$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_storage_manager_erase$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_sky$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_sea$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_draw_pipe$0_0$0({2}DF,SV:S),C,0,0
