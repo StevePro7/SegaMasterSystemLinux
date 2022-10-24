@@ -40,18 +40,31 @@ static unsigned char deltaY[ MAX_JUMPS ] = { 0 };
 //};
 void engine_screen_manager_init()
 {
+	struct_storage_object *so = ( struct_storage_object* ) ( devkit_SMS_SRAM() );
+	unsigned char storage;
+	unsigned char numbyte;
+
 	engine_tile_manager_sky();
 	//engine_tile_manager_draw_normX( 4, 0, 20 );
 	engine_tile_manager_draw_groundX( 4, 0, 20, 0, 8 );
 	engine_tile_manager_draw_groundX( 4, 8, 20, 0, 8 );
 	engine_tile_manager_draw_groundX( 4, 16, 20, 0, 8 );
 	engine_tile_manager_draw_groundX( 4, 24, 20, 0, 8 );
-	engine_font_manager_draw_text( "STORAGE TEST", 2, 2 );
+	engine_font_manager_draw_text( "STORAGE TESTER", 2, 2 );
 	frame = 0;
 	index = 0;
 	jumps = 0;
 	posY = MAX_FLOOR;
-	engine_music_manager_play();
+	//engine_music_manager_play();
+
+	storage = engine_storage_manager_available();
+	engine_font_manager_draw_data( storage, 12, 3 );
+	if( storage )
+	{
+		engine_font_manager_draw_text( "OK..", 22, 4 );
+		numbyte = engine_storage_manager_read();
+		engine_font_manager_draw_data( numbyte, 22, 5 );
+	}
 }
 
 void engine_screen_manager_update()
@@ -83,7 +96,18 @@ void engine_screen_manager_update()
 		{
 			engine_font_manager_draw_text( "STEVEPRO JUMPING 1", 2, 2 );
 			engine_storage_manager_write();
-			engine_font_manager_draw_text( "STEVEPRO JUMPING 2", 2, 3 );
+			engine_font_manager_draw_text( "STEVEPRO JUMPING 3", 2, 3 );
+			//index = 0;
+			//jumps = 1;
+			//posY = MAX_FLOOR;
+		}
+
+		input = engine_input_manager_hold_fire2();
+		if( input )
+		{
+			engine_font_manager_draw_text( "STEVEPRO DELETED 1", 2, 2 );
+			engine_storage_manager_erase();
+			engine_font_manager_draw_text( "STEVEPRO DELETED 4", 2, 3 );
 			//index = 0;
 			//jumps = 1;
 			//posY = MAX_FLOOR;

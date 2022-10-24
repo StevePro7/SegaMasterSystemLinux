@@ -7,7 +7,7 @@
 extern struct_storage_object global_storage_object;
 
 unsigned char engine_storage_manager_available();
-void engine_storage_manager_read();
+unsigned char engine_storage_manager_read();
 void engine_storage_manager_write();
 void engine_storage_manager_erase();
 

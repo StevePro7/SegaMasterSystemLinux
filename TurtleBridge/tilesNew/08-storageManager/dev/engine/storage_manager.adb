@@ -2,12 +2,13 @@ M:storage_manager
 F:G$engine_storage_manager_available$0_0$0({2}DF,SC:U),Z,0,0,0,0,0
 S:Lstorage_manager.engine_storage_manager_available$so$1_0$82({2}DG,STtag_struct_storage_object:S),R,0,0,[l,h]
 S:Lstorage_manager.engine_storage_manager_available$foundMagic$1_0$82({1}SC:U),R,0,0,[l]
-F:G$engine_storage_manager_read$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lstorage_manager.engine_storage_manager_read$so$1_0$83({2}DG,STtag_struct_storage_object:S),R,0,0,[]
+F:G$engine_storage_manager_read$0_0$0({2}DF,SC:U),Z,0,0,0,0,0
+S:Lstorage_manager.engine_storage_manager_read$so$1_0$83({2}DG,STtag_struct_storage_object:S),R,0,0,[l,h]
+S:Lstorage_manager.engine_storage_manager_read$temp$1_0$83({1}SC:U),R,0,0,[l]
 F:G$engine_storage_manager_write$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lstorage_manager.engine_storage_manager_write$so$1_0$84({2}DG,STtag_struct_storage_object:S),R,0,0,[e,d]
 F:G$engine_storage_manager_erase$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lstorage_manager.engine_storage_manager_erase$so$1_0$85({2}DG,STtag_struct_storage_object:S),R,0,0,[l,h]
+S:Lstorage_manager.engine_storage_manager_erase$so$1_0$85({2}DG,STtag_struct_storage_object:S),R,0,0,[e,d]
 T:Fstorage_manager$tag_struct_storage_object[({0}S:S$Magic$0_0$0({4}SL:U),Z,0,0)({4}S:S$num_bytes$0_0$0({1}SC:U),Z,0,0)({5}S:S$terminal$0_0$0({1}SC:U),Z,0,0)]
 S:G$global_storage_object$0_0$0({6}STtag_struct_storage_object:S),E,0,0
 S:G$devkit_SMS_init$0_0$0({2}DF,SV:S),C,0,0
