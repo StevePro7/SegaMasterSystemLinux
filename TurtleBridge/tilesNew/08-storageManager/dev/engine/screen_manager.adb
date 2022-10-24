@@ -18,9 +18,9 @@ S:Lscreen_manager.draw_sprite$i$1_0$113({1}SC:U),R,0,0,[c]
 S:Lscreen_manager.draw_sprite$j$1_0$113({1}SC:U),B,1,-1
 S:Lscreen_manager.draw_sprite$sloc0$0_1$0({1}SC:U),B,1,-2
 S:Lscreen_manager.draw_sprite$sloc1$0_1$0({1}SC:U),B,1,-1
-T:Fscreen_manager$tag_struct_storage_object[({0}S:S$Magic$0_0$0({4}SL:U),Z,0,0)({4}S:S$num_bytes$0_0$0({1}SC:U),Z,0,0)({5}S:S$terminal$0_0$0({1}SC:U),Z,0,0)]
+T:Fscreen_manager$tag_struct_storage_object[({0}S:S$Magic$0_0$0({4}SL:U),Z,0,0)({4}S:S$num_bytes$0_0$0({1}SC:U),Z,0,0)({5}S:S$sgb_bytes$0_0$0({3}DA3d,SC:U),Z,0,0)({8}S:S$terminal$0_0$0({1}SC:U),Z,0,0)]
 S:Fscreen_manager$deltaY$0_0$0({4}DA4d,SC:U),E,0,0
-S:G$global_storage_object$0_0$0({6}STtag_struct_storage_object:S),E,0,0
+S:G$global_storage_object$0_0$0({9}STtag_struct_storage_object:S),E,0,0
 S:Fscreen_manager$frame$0_0$0({1}SC:U),E,0,0
 S:Fscreen_manager$index$0_0$0({2}SI:U),E,0,0
 S:Fscreen_manager$jumps$0_0$0({1}SC:U),E,0,0
