@@ -20,10 +20,10 @@ unsigned char engine_storage_manager_available()
 	return foundMagic;
 }
 
-unsigned char engine_storage_manager_read()
+unsigned int engine_storage_manager_read()
 {
 	struct_storage_object *so = ( struct_storage_object* ) ( devkit_SMS_SRAM() );
-	unsigned char temp;
+	unsigned int temp;
 	devkit_SMS_enableSRAM();
 	temp = so->num_bytes;
 	devkit_SMS_disableSRAM();
@@ -35,10 +35,10 @@ void engine_storage_manager_write()
 	struct_storage_object *so = ( struct_storage_object* ) ( devkit_SMS_SRAM() );
 	devkit_SMS_enableSRAM();
 	so->Magic = MAGIC;
-	so->num_bytes = 3;
-	so->sgb_bytes[ 0 ] = 2;
-	so->sgb_bytes[ 1 ] = 4;
-	so->sgb_bytes[ 2 ] = 8;
+	so->num_bytes = 400;
+	so->sgb_bytes[ 0 ] = 12;
+	so->sgb_bytes[ 1 ] = 24;
+	so->sgb_bytes[ 2 ] = 48;
 	so->terminal = FINAL;
 	devkit_SMS_disableSRAM();
 }

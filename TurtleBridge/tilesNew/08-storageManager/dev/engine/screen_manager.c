@@ -42,7 +42,7 @@ void engine_screen_manager_init()
 {
 	struct_storage_object *so = ( struct_storage_object* ) ( devkit_SMS_SRAM() );
 	unsigned char storage;
-	unsigned char numbyte;
+	unsigned int numbyte;
 
 	engine_tile_manager_sky();
 	//engine_tile_manager_draw_normX( 4, 0, 20 );
