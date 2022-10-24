@@ -17,21 +17,21 @@ namespace ScreenShotTest
 			using (BinaryWriter bw = new BinaryWriter(file))
 			{
 				// MAGIC
-				bw.Write(0x04);
-				bw.Write(0xB0);
-				bw.Write(0xE0);
-				bw.Write(0xAC);
+				bw.Write((byte)0x04);
+				bw.Write((byte)0xB0);
+				bw.Write((byte)0xE0);
+				bw.Write((byte)0xAC);
 
 				// Num lines.
-				bw.Write(lsb);
-				bw.Write(msb);
+				bw.Write((byte)lsb);
+				bw.Write((byte)msb);
 
 				// Values.
-				bw.Write(0x12);
-				bw.Write(0x24);
-				bw.Write(0x48);
+				bw.Write((byte)0x12);
+				bw.Write((byte)0x24);
+				bw.Write((byte)240);
 
-				bw.Write(0xFE);
+				bw.Write((byte)0xFE);
 			}
 		}
 

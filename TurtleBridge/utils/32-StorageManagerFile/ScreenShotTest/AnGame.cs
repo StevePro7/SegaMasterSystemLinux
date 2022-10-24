@@ -48,7 +48,6 @@ namespace ScreenShotTest
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 			fileManager.LoadContent(Content);
-			lines = File.ReadAllLines(file + ".csv");
 
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
 			int width = pp.BackBufferWidth;
