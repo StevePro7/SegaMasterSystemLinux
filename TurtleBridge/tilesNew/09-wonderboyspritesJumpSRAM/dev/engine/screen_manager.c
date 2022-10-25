@@ -5,7 +5,9 @@
 #include "font_manager.h"
 #include "global_manager.h"
 #include "input_manager.h"
+#include "jump_manager.h"
 #include "sprite_manager.h"
+#include "storage_manager.h"
 #include "tile_manager.h"
 #include "../devkit/_sms_manager.h"
 
@@ -18,9 +20,12 @@ static unsigned char frame;
 static unsigned int index;
 static unsigned char jumps;
 static unsigned char posY;
+static unsigned char storage_available;
 
 void engine_screen_manager_init()
 {
+	struct_jump_object *jo = &global_jump_object;
+	unsigned char index;
 	engine_tile_manager_sky();
 	//engine_tile_manager_draw_normX( 4, 0, 20 );
 	engine_tile_manager_draw_groundX( 4, 0, 20, 0, 8 );
@@ -28,6 +33,19 @@ void engine_screen_manager_init()
 	engine_tile_manager_draw_groundX( 4, 16, 20, 0, 8 );
 	engine_tile_manager_draw_groundX( 4, 24, 20, 0, 8 );
 	engine_font_manager_draw_text( "STEVEPRO STORAGE", 2, 2 );
+	engine_font_manager_draw_text( "STEVEPRO STORAGE", 2, 3 );
+	storage_available = engine_storage_manager_available();
+	if( storage_available )
+	{
+		engine_storage_manager_read();
+		engine_font_manager_draw_data( storage_available, 12, 4 );
+		engine_font_manager_draw_data( jo->num_jumps, 22, 5 );
+
+		//for( index = 0; index < jo->num_jumps; index++ )
+		//{
+		//	engine_font_manager_draw_data( jo->jump_high[index], 22, 7 + index );
+		//}
+	}
 	frame = 0;
 	index = 0;
 	jumps = 0;
@@ -37,15 +55,16 @@ void engine_screen_manager_init()
 
 void engine_screen_manager_update()
 {
+	struct_jump_object *jo = &global_jump_object;
 	unsigned char input;
 	unsigned char delta = 0;
 
 	frame = 0;
 	if( jumps )
 	{
-		//delta = deltaY[ index ];
+		delta = jo->jump_high[ index ];// deltaY[ index ];
 		index++;
-		if( index >= MAX_JUMPS )
+		if( index >= jo->num_jumps )
 		{
 			index = 0;
 			jumps = 0;
@@ -62,7 +81,7 @@ void engine_screen_manager_update()
 		input = engine_input_manager_hold_fire1();
 		if( input )
 		{
-			engine_font_manager_draw_text( "STEVEPRO JUMPING", 2, 2 );
+			engine_font_manager_draw_text( "STEVEPRO JUMPING!!", 2, 2 );
 			index = 0;
 			jumps = 1;
 			posY = MAX_FLOOR;
