@@ -1,62 +1,22 @@
 ;!FILE jump_manager.asm
 XL3
-H 9 areas 37 global symbols
+H 9 areas F global symbols
 M jump_manager
 O -mz80
 S .__.ABS. Def000000
-A _CODE size 42 flags 0 addr 0
-S C$jump_manager.c$7$0_0$4 Def000000
-S C$jump_manager.c$9$1_0$4 Def000008
-S XG$engine_jump_manager_init$0$0 Def000025
-S A$jump_manager$110 Def00002C
-S A$jump_manager$130 Def00003A
-S A$jump_manager$131 Def00003B
-S A$jump_manager$122 Def000031
-S A$jump_manager$141 Def000041
-S A$jump_manager$132 Def00003D
-S A$jump_manager$123 Def000034
-S A$jump_manager$124 Def000035
-S A$jump_manager$125 Def000038
-S A$jump_manager$117 Def00002E
-S A$jump_manager$108 Def000026
-S A$jump_manager$136 Def00003F
-S A$jump_manager$109 Def000028
-S A$jump_manager$129 Def000039
-S G$engine_jump_manager_load$0$0 Def000026
-S C$jump_manager.c$22$3_0$10 Def00002E
-S C$jump_manager.c$24$3_0$10 Def000031
-S A$jump_manager$70 Def000010
-S A$jump_manager$80 Def000017
-S A$jump_manager$71 Def000013
-S A$jump_manager$81 Def00001A
-S A$jump_manager$82 Def00001B
-S _engine_jump_manager_load Def000026
-S A$jump_manager$93 Def000023
-S A$jump_manager$75 Def000014
-S A$jump_manager$66 Def000008
-S A$jump_manager$57 Def000000
-S A$jump_manager$67 Def00000B
-S A$jump_manager$58 Def000002
-S A$jump_manager$86 Def00001D
-S A$jump_manager$68 Def00000E
-S A$jump_manager$59 Def000006
-S A$jump_manager$87 Def00001E
-S A$jump_manager$69 Def00000F
-S A$jump_manager$88 Def00001F
-S A$jump_manager$98 Def000025
-S A$jump_manager$89 Def000021
-S C$jump_manager.c$12$1_0$4 Def000008
+A _CODE size 2 flags 0 addr 0
+S C$jump_manager.c$7$0_0$5 Def000000
+S XG$engine_jump_manager_init$0$0 Def000000
+S G$engine_jump_manager_load$0$0 Def000001
+S A$jump_manager$81 Def000001
+S A$jump_manager$64 Def000000
+S _engine_jump_manager_load Def000001
 S G$engine_jump_manager_init$0$0 Def000000
-S C$jump_manager.c$13$2_0$5 Def00001D
-S XG$engine_jump_manager_load$0$0 Def000041
-S C$jump_manager.c$21$1_0$8 Def00002E
-S C$jump_manager.c$13$3_0$6 Def000014
-S C$jump_manager.c$17$2_0$4 Def000025
-S C$jump_manager.c$22$2_0$9 Def000039
-S C$jump_manager.c$15$3_0$6 Def000017
-S C$jump_manager.c$26$2_0$9 Def000041
+S XG$engine_jump_manager_load$0$0 Def000001
+S C$jump_manager.c$17$0_0$5 Def000000
+S C$jump_manager.c$26$0_0$8 Def000001
+S C$jump_manager.c$19$0_0$8 Def000001
 S _engine_jump_manager_init Def000000
-S C$jump_manager.c$19$2_0$9 Def000026
 A _DATA size 402 flags 0 addr 0
 S _global_jump_object Def000000
 S G$global_jump_object$0_0$0 Def000000
@@ -73,23 +33,9 @@ T 00 00 00
 R 00 00 01 00
 T 00 00 00
 R 00 00 00 00
-T 00 00 00 DD E5 DD 21 00 00 DD 39 21 00 00 DD 7E
-R 00 00 00 00 00 0C 01 00
-T 0D 00 00 04 77 23 DD 7E 05 77 01 00 00
+T 00 00 00 C9
 R 00 00 00 00
-T 17 00 00
+T 01 00 00
 R 00 00 00 00
-T 17 00 00 21 02 00 09 36 00 03 78 D6 04 38 F4 DD
-R 00 00 00 00 00 04 01 00
-T 24 00 00 E1 C9
-R 00 00 00 00
-T 26 00 00
-R 00 00 00 00
-T 26 00 00 DD E5 DD 21 00 00 DD 39 01 00 00
-R 00 00 00 00
-T 31 00 00
-R 00 00 00 00
-T 31 00 00 21 02 00 09 DD 7E 06 77 03 78 D6 04 38
-R 00 00 00 00 00 04 01 00
-T 3E 00 00 F2 DD E1 C9
+T 01 00 00 C9
 R 00 00 00 00

@@ -27,7 +27,7 @@ void engine_screen_manager_init()
 	engine_tile_manager_draw_groundX( 4, 8, 20, 0, 8 );
 	engine_tile_manager_draw_groundX( 4, 16, 20, 0, 8 );
 	engine_tile_manager_draw_groundX( 4, 24, 20, 0, 8 );
-	engine_font_manager_draw_text( "STEVEPRO TESTING", 2, 2 );
+	engine_font_manager_draw_text( "STEVEPRO STORAGE", 2, 2 );
 	frame = 0;
 	index = 0;
 	jumps = 0;
