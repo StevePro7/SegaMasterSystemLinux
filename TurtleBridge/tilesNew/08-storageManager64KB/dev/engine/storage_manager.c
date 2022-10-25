@@ -35,7 +35,7 @@ void engine_storage_manager_write()
 	struct_storage_object *so = ( struct_storage_object* ) ( devkit_SMS_SRAM() );
 	devkit_SMS_enableSRAM();
 	so->Magic = MAGIC;
-	so->num_bytes = 400;
+	so->num_bytes = 512;
 	so->sgb_bytes[ 0 ] = 12;
 	so->sgb_bytes[ 1 ] = 24;
 	so->sgb_bytes[ 2 ] = 48;
