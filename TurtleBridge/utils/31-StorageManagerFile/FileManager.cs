@@ -8,7 +8,6 @@ namespace StorageManager
 	{
 		private const string inFile = "physics.txt";
 		private const string otFile = "output.ssm";
-		private const string OUTPUT = "output";
 		private IList<string> inpLines;
 		private IList<string> outLines;
 
@@ -27,7 +26,7 @@ namespace StorageManager
 				bw.Write((byte)0xAC);
 
 				// Num lines.
-				Split((ushort)inpLines.Count, out lsb, out msb);
+				Split((ushort)inpLines.Count, ref lsb, ref msb);
 				bw.Write(lsb);
 				bw.Write(msb);
 
@@ -41,7 +40,7 @@ namespace StorageManager
 					}
 					else
 					{
-						Split((ushort)valLine, out lsb, out msb);
+						Split((ushort)valLine, ref lsb, ref msb);
 						bw.Write(lsb);
 						bw.Write(msb);
 					}
@@ -52,10 +51,10 @@ namespace StorageManager
 			}
 		}
 
-		private void Split(ushort input, out byte lsb, out byte msb)
+		private void Split(ushort input, ref byte lsb, ref byte msb)
 		{
 			msb = (byte)(input / 256);
-			lsb = (byte)(input & 256);
+			lsb = (byte)(input % 256);
 		}
 
 		public void Load()
@@ -76,14 +75,9 @@ namespace StorageManager
 
 		public void Init()
 		{
-			if (!Directory.Exists(OUTPUT))
+			if (File.Exists(otFile))
 			{
-				Directory.CreateDirectory(OUTPUT);
-			}
-			var path = $"OUTPUT/otFile";
-			if (File.Exists(path))
-			{
-				File.Delete(path);
+				File.Delete(otFile);
 			}
 
 			inpLines = new List<string>();
