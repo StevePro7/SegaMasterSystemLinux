@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Configuration;
 
-namespace BinaryFileWrite
+namespace StorageManager
 {
 	class Program
 	{
 		static void Main()
 		{
-			var lastBank = Convert.ToInt32(ConfigurationManager.AppSettings["lastBank"]);
-			Console.WriteLine($"Banks 2-'{lastBank}'");
+			var cm = new ConfigManager();
+			var fm = new FileManager();
 
-			var bm = new BankManager();
-			bm.Init(lastBank);
-			bm.Update(lastBank);
+			cm.Init();
+			fm.Init();
+			fm.Load();
+			fm.Process(cm.Single);
 
 			Console.WriteLine("Press [ RETURN ]");
 			Console.Read();
