@@ -1,5 +1,4 @@
 #include "tile_object.h"
-//#include "../banks/fixedbank.h"
 
 // Tiles.
 const unsigned char *tile_object_data[] =
