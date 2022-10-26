@@ -24,6 +24,10 @@ cd devkit
 ::"C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _snd_manager.c
 cd ..
 
+"C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 defines.c
+"C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 funcs.c
+"C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 vars.c
+
 "C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
 
 
@@ -47,7 +51,8 @@ banks/bank6.rel  banks/fixedbank.rel ^
 devkit/_sms_manager.rel ^
 devkit/_snd_manager.rel ^
 content/gfx.rel ^
-content/psg.rel
+content/psg.rel ^
+defines.rel funcs.rel vars.rel
 
 
 :: Execute
