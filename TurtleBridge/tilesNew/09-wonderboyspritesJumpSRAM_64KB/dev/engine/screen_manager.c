@@ -63,11 +63,11 @@ void engine_screen_manager_update()
 	frame = 0;
 	if( jumps )
 	{
-		input = engine_input_manager_hold_fire1();
+		input = engine_input_manager_move_fire1();
 		if( input )
 		{
 			delta = jo->jump_high[ index ];// deltaY[ index ];
-			engine_font_manager_draw_data( delta, 22, 4 + index );
+			//engine_font_manager_draw_data( delta, 22, 4 + index );
 			index++;
 			if( index >= jo->num_jumps )
 			{
