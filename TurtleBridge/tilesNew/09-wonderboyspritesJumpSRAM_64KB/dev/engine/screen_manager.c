@@ -88,16 +88,6 @@ void engine_screen_manager_update()
 			//jumps = 1;
 			posY = MAX_FLOOR;
 		}
-		input = engine_input_manager_hold_fire2();
-		if( input )
-		{
-			engine_font_manager_draw_text( "STEVEPRO DELETING1", 2, 2 );
-			engine_storage_manager_erase();
-			engine_font_manager_draw_text( "STEVEPRO DELETING3", 2, 3 );
-			index = 0;
-			//jumps = 1;
-			posY = MAX_FLOOR;
-		}
 	}
 
 	//engine_font_manager_draw_data( index, 25, 0 );

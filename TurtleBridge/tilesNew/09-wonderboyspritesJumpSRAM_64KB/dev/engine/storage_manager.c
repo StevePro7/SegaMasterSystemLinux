@@ -50,10 +50,15 @@ void engine_storage_manager_write()
 	struct_storage_object *so = ( struct_storage_object* ) ( devkit_SMS_SRAM() );
 	devkit_SMS_enableSRAM();
 	so->Magic = MAGIC;
-	so->num_jumps = 128;
-	so->jump_high[ 0 ] = 12;
-	so->jump_high[ 1 ] = 24;
-	so->jump_high[ 2 ] = 48;
+	so->num_jumps = 8;
+	so->jump_high[ 0 ] = 1;
+	so->jump_high[ 1 ] = 2;
+	so->jump_high[ 2 ] = 3;
+	so->jump_high[ 3 ] = 4;
+	so->jump_high[ 4 ] = 4;
+	so->jump_high[ 5 ] = 3;
+	so->jump_high[ 6 ] = 2;
+	so->jump_high[ 7 ] = 1;
 	so->terminal = FINAL;
 	devkit_SMS_disableSRAM();
 }
