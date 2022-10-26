@@ -2,14 +2,9 @@
 
 void main( void )
 {
-	devkit_SMS_init();
-	devkit_SMS_displayOff();
-	
-	for( ;; )
+	InitConsole();
+	while( 1 )
 	{
-		devkit_SMS_waitForVBlank();
-
-		devkit_PSGFrame();
-		devkit_PSGSFXFrame();
+		InitPlayStage();
 	}
 }

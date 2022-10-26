@@ -181,4 +181,5 @@ S:G$devkit_PSGSFXFrame$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SFX_CHANNEL2$0_0$0({2}DF,SC:U),C,0,0
 S:G$devkit_SFX_CHANNEL3$0_0$0({2}DF,SC:U),C,0,0
 S:G$devkit_SFX_CHANNELS2AND3$0_0$0({2}DF,SC:U),C,0,0
+S:G$InitConsole$0_0$0({2}DF,SV:S),C,0,0
 S:G$main$0_0$0({2}DF,SV:S),C,0,0

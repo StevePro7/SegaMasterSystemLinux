@@ -8,4 +8,6 @@
 #include "devkit/_sms_manager.h"
 #include "devkit/_snd_manager.h"
 
+#include "funcs.h"
+
 #endif//__MAIN__

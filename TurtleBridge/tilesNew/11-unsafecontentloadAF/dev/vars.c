@@ -11,3 +11,6 @@ unsigned char stageframe2mod;
 unsigned char stageframe4mod;
 unsigned char sprite82anim;
 unsigned char sprite164anim;
+
+
+unsigned char numinterrupts;

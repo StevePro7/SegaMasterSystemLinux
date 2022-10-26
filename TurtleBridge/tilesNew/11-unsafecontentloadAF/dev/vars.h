@@ -4,15 +4,15 @@
 #include "defines.h"
 
 // Keyboard
-extern unsigned int keystatus;  		// Estado del teclado
+extern unsigned int keystatus;
 
-								// Frames in stage
-extern unsigned int stageframe; 		// Guarda las frames en una stage
+extern unsigned int stageframe;
 
-								// Speeding thins up
 extern unsigned char stageframe2mod;
 extern unsigned char stageframe4mod;
 extern unsigned char sprite82anim;
 extern unsigned char sprite164anim;
+
+extern unsigned char numinterrupts;
 
 #endif//_VARS_H_

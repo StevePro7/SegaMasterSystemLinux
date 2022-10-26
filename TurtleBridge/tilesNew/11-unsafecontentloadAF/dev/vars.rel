@@ -1,15 +1,17 @@
 XL3
-H 9 areas D global symbols
+H 9 areas F global symbols
 M vars
 O -mz80
 S .__.ABS. Def000000
 A _CODE size 0 flags 0 addr 0
-A _DATA size 8 flags 0 addr 0
+A _DATA size 9 flags 0 addr 0
 S G$stageframe$0_0$0 Def000002
 S _sprite82anim Def000006
 S G$sprite82anim$0_0$0 Def000006
 S _keystatus Def000000
 S G$keystatus$0_0$0 Def000000
+S _numinterrupts Def000008
+S G$numinterrupts$0_0$0 Def000008
 S _stageframe2mod Def000004
 S _stageframe4mod Def000005
 S G$stageframe2mod$0_0$0 Def000004
@@ -47,4 +49,8 @@ R 00 00 01 00
 T 07 00 00
 R 00 00 01 00
 T 07 00 00
+R 00 00 01 00
+T 08 00 00
+R 00 00 01 00
+T 08 00 00
 R 00 00 01 00

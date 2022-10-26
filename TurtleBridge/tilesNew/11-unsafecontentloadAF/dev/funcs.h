@@ -1,8 +1,6 @@
 #ifndef _FUNCS_H_
 #define _FUNCS_H_
 
-#include "banks/fixedbank.h"
-
-void foo();
+void InitConsole();
 
 #endif//_FUNCS_H_

@@ -1,16 +1,53 @@
 ;!FILE funcs.asm
 XL3
-H 9 areas 7 global symbols
+H 9 areas 2C global symbols
 M funcs
 O -mz80
+S _devkit_SMS_init Ref000000
+S _devkit_VDPFEATURE_LEFTCOLBLANK Ref000000
+S _devkit_SMS_setLineCounter Ref000000
+S _numinterrupts Ref000000
+S _devkit_SMS_VDPturnOnFeature Ref000000
+S _devkit_SMS_enableLineInterrupt Ref000000
 S .__.ABS. Def000000
-A _CODE size 1 flags 0 addr 0
-S A$funcs$59 Def000000
-S G$foo$0$0 Def000000
-S _foo Def000000
-S C$funcs.c$4$0_0$2 Def000000
-S C$funcs.c$6$0_0$2 Def000000
-S XG$foo$0$0 Def000000
+S _devkit_SMS_setLineInterruptHandler Ref000000
+S _devkit_SMS_getKeysStatus Ref000000
+A _CODE size 29 flags 0 addr 0
+S _InitConsole Def000008
+S A$funcs$71 Def000007
+S A$funcs$62 Def000000
+S A$funcs$63 Def000004
+S C$funcs.c$20$1_0$84 Def00001D
+S C$funcs.c$11$1_0$84 Def000008
+S XG$InitConsole$0$0 Def000028
+S A$funcs$92 Def00000E
+S C$funcs.c$13$1_0$84 Def000008
+S A$funcs$93 Def000011
+S A$funcs$84 Def000008
+S C$funcs.c$23$1_0$84 Def000020
+S XFfuncs$InterruptHandler$0$0 Def000007
+S A$funcs$94 Def000012
+S C$funcs.c$24$1_0$84 Def000028
+S C$funcs.c$16$1_0$84 Def00000B
+S A$funcs$88 Def00000B
+S C$funcs.c$18$1_0$84 Def00000E
+S A$funcs$98 Def000015
+S C$funcs.c$19$1_0$84 Def000015
+S A$funcs$99 Def000017
+S C$funcs.c$6$0_0$83 Def000000
+S C$funcs.c$8$1_0$83 Def000000
+S C$funcs.c$9$1_0$83 Def000007
+S A$funcs$100 Def000018
+S A$funcs$110 Def000020
+S A$funcs$101 Def000019
+S G$InitConsole$0$0 Def000008
+S A$funcs$111 Def000023
+S A$funcs$102 Def00001C
+S A$funcs$121 Def000028
+S A$funcs$112 Def000024
+S Ffuncs$InterruptHandler$0$0 Def000000
+S A$funcs$113 Def000027
+S A$funcs$106 Def00001D
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -21,5 +58,13 @@ A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
-T 00 00 00 C9
+T 00 00 00 FD 21 00 00 FD 34 00 C9
+R 00 00 00 00 02 05 03 00
+T 08 00 00
 R 00 00 00 00
+T 08 00 00 CD 00 00 CD 00 00 21 00 00 E5 CD
+R 00 00 00 00 02 04 00 00 02 07 08 00 00 0A 00 00
+T 13 00 00 00 00 26 C0 E3 33 CD 00 00 33 CD 00 00
+R 00 00 00 00 02 03 07 00 02 0A 02 00 02 0E 05 00
+T 20 00 00 CD 00 00 E5 CD 00 00 F1 C9
+R 00 00 00 00 02 04 01 00 02 08 04 00
