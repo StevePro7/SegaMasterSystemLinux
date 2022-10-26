@@ -34,14 +34,14 @@ void engine_screen_manager_init()
 	engine_tile_manager_draw_groundX( 4, 8, 20, 0, 8 );
 	engine_tile_manager_draw_groundX( 4, 16, 20, 0, 8 );
 	engine_tile_manager_draw_groundX( 4, 24, 20, 0, 8 );
-	engine_font_manager_draw_text( "STEVEPRO STORAGE", 2, 2 );
-	engine_font_manager_draw_text( "STEVEPRO STORAGE", 2, 3 );
+	//engine_font_manager_draw_text( "STEVEPRO STORAGE", 2, 2 );
+	//engine_font_manager_draw_text( "STEVEPRO STORAGE", 2, 3 );
 	storage_available = engine_storage_manager_available();
 	if( storage_available )
 	{
 		engine_storage_manager_read();
-		engine_font_manager_draw_data( storage_available, 12, 4 );
-		engine_font_manager_draw_data( jo->num_jumps, 22, 5 );
+		//engine_font_manager_draw_data( storage_available, 12, 4 );
+		//engine_font_manager_draw_data( jo->num_jumps, 22, 5 );
 
 		//for( index = 0; index < jo->num_jumps; index++ )
 		//{
@@ -69,6 +69,12 @@ void engine_screen_manager_update()
 	{
 		if( scrollY )
 		{
+			devkit_SMS_setBGScrollX( scrollX-- );
+			devkit_SMS_setBGScrollX( scrollX-- );
+			devkit_SMS_setBGScrollX( scrollX-- );
+			devkit_SMS_setBGScrollX( scrollX-- );
+			devkit_SMS_setBGScrollX( scrollX-- );
+			devkit_SMS_setBGScrollX( scrollX-- );
 			devkit_SMS_setBGScrollX( scrollX-- );
 			devkit_SMS_setBGScrollX( scrollX-- );
 		}
@@ -123,7 +129,7 @@ void engine_screen_manager_update()
 			delta = 0;
 			index = 0;
 			jumps = 1;
-			engine_font_manager_draw_text( "STEVEPRO JUMPING!!", 2, 2 );
+			//engine_font_manager_draw_text( "STEVEPRO JUMPING!!", 2, 2 );
 			//engine_storage_manager_write();
 		}
 	}
