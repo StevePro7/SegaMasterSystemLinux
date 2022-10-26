@@ -21,6 +21,7 @@ static unsigned int index;
 static unsigned char jumps;
 static unsigned char delta;
 static unsigned char posY;
+static unsigned char scrollX, scrollY;
 static unsigned char storage_available;
 
 void engine_screen_manager_init()
@@ -52,6 +53,9 @@ void engine_screen_manager_init()
 	delta = 0;
 	jumps = 0;
 	posY = MAX_FLOOR;
+	scrollX = 1;
+	scrollY = 1;
+	devkit_SMS_setBGScrollX( 0 );
 	//engine_music_manager_play();
 }
 
@@ -59,6 +63,16 @@ void engine_screen_manager_update()
 {
 	struct_jump_object *jo = &global_jump_object;
 	unsigned char input;
+
+	input = engine_input_manager_move_right();
+	if( input )
+	{
+		if( scrollY )
+		{
+			devkit_SMS_setBGScrollX( scrollX-- );
+			devkit_SMS_setBGScrollX( scrollX-- );
+		}
+	}
 
 	frame = 0;
 	if( jumps )
@@ -82,6 +96,8 @@ void engine_screen_manager_update()
 			//	frame = frames[ index ];
 			//}
 		}
+
+		
 	}
 	else
 	{
