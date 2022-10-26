@@ -19,6 +19,7 @@ static void draw_sprite( unsigned char idx, unsigned char x, unsigned char y );
 static unsigned char frame;
 static unsigned int index;
 static unsigned char jumps;
+static unsigned char delta;
 static unsigned char posY;
 static unsigned char storage_available;
 
@@ -48,6 +49,7 @@ void engine_screen_manager_init()
 	}
 	frame = 0;
 	index = 0;
+	delta = 0;
 	jumps = 0;
 	posY = MAX_FLOOR;
 	//engine_music_manager_play();
@@ -57,36 +59,56 @@ void engine_screen_manager_update()
 {
 	struct_jump_object *jo = &global_jump_object;
 	unsigned char input;
-	unsigned char delta = 0;
 
 	frame = 0;
 	if( jumps )
 	{
-		delta = jo->jump_high[ index ];// deltaY[ index ];
-		index++;
-		if( index >= jo->num_jumps )
-		{
-			index = 0;
-			jumps = 0;
-			posY = MAX_FLOOR;
-		}
-
-		//if( index < 100 )
-		//{
-		//	frame = frames[ index ];
-		//}
-	}
-	else
-	{
 		input = engine_input_manager_hold_fire1();
 		if( input )
 		{
-			engine_font_manager_draw_text( "STEVEPRO JUMPING 1", 2, 2 );
-			engine_storage_manager_write();
-			engine_font_manager_draw_text( "STEVEPRO JUMPING 3", 2, 3 );
+			delta = jo->jump_high[ index ];// deltaY[ index ];
+			engine_font_manager_draw_data( delta, 22, 4 + index );
+			index++;
+			if( index >= jo->num_jumps )
+			{
+				delta = 0;
+				index = 0;
+				jumps = 0;
+				posY = MAX_FLOOR;
+			}
+
+			//if( index < 100 )
+			//{
+			//	frame = frames[ index ];
+			//}
+		}
+	}
+	else
+	{
+		//input = engine_input_manager_hold_fire1();
+		//if( input )
+		//{
+		//	engine_font_manager_draw_text( "STEVEPRO JUMPING 1", 2, 2 );
+		//	engine_storage_manager_write();
+		//	engine_font_manager_draw_text( "STEVEPRO JUMPING 3", 2, 3 );
+		//	index = 0;
+		//	//jumps = 1;
+		//	posY = MAX_FLOOR;
+		//}
+
+		input = engine_input_manager_hold_fire2();
+		if( input )
+		{
+			//for( index = 0; index < jo->num_jumps; index++ )
+			//{
+			//	engine_font_manager_draw_data( jo->jump_high[ index ], 12, 4 + index );
+			//}
+
+			delta = 0;
 			index = 0;
-			//jumps = 1;
-			posY = MAX_FLOOR;
+			jumps = 1;
+			engine_font_manager_draw_text( "STEVEPRO JUMPING!!", 2, 2 );
+			//engine_storage_manager_write();
 		}
 	}
 

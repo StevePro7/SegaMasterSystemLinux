@@ -5,7 +5,7 @@
 #include "../devkit/_sms_manager.h"
 
 #define MAGIC			0xACE0B004
-#define FINAL			0xFE
+#define FINAL			0xC9
 
 // Global variable.
 struct_storage_object global_storage_object;

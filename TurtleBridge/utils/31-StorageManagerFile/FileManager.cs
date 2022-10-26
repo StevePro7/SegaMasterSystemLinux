@@ -7,7 +7,8 @@ namespace StorageManager
 	public class FileManager
 	{
 		private const string inFile = "physics.txt";
-		private const string otFile = "output.ssm";
+		private const string oFile1 = "output.ssm";
+		private const string oFile2 = "output.sav";
 		private IList<string> inpLines;
 		private IList<string> outLines;
 
@@ -16,7 +17,7 @@ namespace StorageManager
 			byte lsb = 0;
 			byte msb = 0;
 
-			var file = File.Open(otFile, FileMode.Create);
+			var file = File.Open(oFile1, FileMode.Create);
 			using (BinaryWriter bw = new BinaryWriter(file))
 			{
 				// MAGIC
@@ -49,6 +50,8 @@ namespace StorageManager
 				// Terminal
 				bw.Write((byte)0xFE);
 			}
+
+			File.Copy(oFile1, oFile2);
 		}
 
 		private void Split(ushort input, ref byte lsb, ref byte msb)
@@ -75,11 +78,14 @@ namespace StorageManager
 
 		public void Init()
 		{
-			if (File.Exists(otFile))
+			if (File.Exists(oFile1))
 			{
-				File.Delete(otFile);
+				File.Delete(oFile1);
 			}
-
+			if (File.Exists(oFile2))
+			{
+				File.Delete(oFile2);
+			}
 			inpLines = new List<string>();
 			outLines = new List<string>();
 		}
