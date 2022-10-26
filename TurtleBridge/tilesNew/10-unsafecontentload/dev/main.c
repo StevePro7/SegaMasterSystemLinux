@@ -1,12 +1,26 @@
 #include "main.h"
 
 static unsigned char abc, def;
+static unsigned int stageframe;
+static unsigned char stageframe2mod;
+static unsigned char numinterrupts;;
+
+void InterruptHandler( void )
+{
+	numinterrupts++;
+}
 
 void main( void )
 {
 	devkit_SMS_init();
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
+
+	// Advanced frameskipping
+	numinterrupts = 0;
+	devkit_SMS_setLineInterruptHandler( &InterruptHandler );
+	devkit_SMS_setLineCounter( 192 );
+	devkit_SMS_enableLineInterrupt();
 
 	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_NORMAL() );
 	devkit_SMS_useFirstHalfTilesforSprites( false );
@@ -22,8 +36,15 @@ void main( void )
 	def = 0;
 	engine_screen_manager_init();
 	devkit_SMS_displayOn();
+
+	stageframe = 0;
+	stageframe2mod = 0;
 	for( ;; )
 	{
+		// Increase frames
+		stageframe++;
+		stageframe2mod = stageframe % 2;
+
 		//devkit_SMS_initSprites();
 		engine_input_manager_update();
 		engine_screen_manager_update();

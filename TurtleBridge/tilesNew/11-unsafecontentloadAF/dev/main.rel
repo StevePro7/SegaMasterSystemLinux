@@ -1,0 +1,44 @@
+;!FILE main.asm
+XL3
+H 9 areas 16 global symbols
+M main
+O -mz80
+S _devkit_SMS_init Ref000000
+S _devkit_PSGSFXFrame Ref000000
+S _devkit_PSGFrame Ref000000
+S .__.ABS. Def000000
+S _devkit_SMS_displayOff Ref000000
+S _devkit_SMS_waitForVBlank Ref000000
+A _CODE size 11 flags 0 addr 0
+S C$main.c$10$3_0$124 Def000006
+S _main Def000000
+S C$main.c$15$2_0$122 Def00000F
+S C$main.c$12$3_0$124 Def000009
+S C$main.c$13$3_0$124 Def00000C
+S XG$main$0$0 Def00000F
+S C$main.c$3$0_0$122 Def000000
+S C$main.c$5$1_0$122 Def000000
+S A$main$60 Def000000
+S C$main.c$6$1_0$122 Def000003
+S A$main$73 Def000009
+S A$main$64 Def000003
+S A$main$85 Def00000F
+S A$main$77 Def00000C
+S A$main$69 Def000006
+S G$main$0$0 Def000000
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 CD 00 00 CD 00 00
+R 00 00 00 00 02 04 00 00 02 07 04 00
+T 06 00 00
+R 00 00 00 00
+T 06 00 00 CD 00 00 CD 00 00 CD 00 00 18 F5
+R 00 00 00 00 02 04 05 00 02 07 02 00 02 0A 01 00
