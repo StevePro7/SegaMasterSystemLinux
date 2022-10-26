@@ -47,27 +47,26 @@ void engine_storage_manager_read()
 
 void engine_storage_manager_write()
 {
-	//struct_storage_object *so = ( struct_storage_object* ) ( devkit_SMS_SRAM() );
-	//devkit_SMS_enableSRAM();
-	//so->Magic = MAGIC;
-	//so->terminal = FINAL;
-	//devkit_SMS_disableSRAM();
+	struct_storage_object *so = ( struct_storage_object* ) ( devkit_SMS_SRAM() );
+	devkit_SMS_enableSRAM();
+	so->Magic = MAGIC;
+	so->num_jumps = 128;
+	so->jump_high[ 0 ] = 12;
+	so->jump_high[ 1 ] = 24;
+	so->jump_high[ 2 ] = 48;
+	so->terminal = FINAL;
+	devkit_SMS_disableSRAM();
 }
 
 void engine_storage_manager_erase()
 {
-	//struct_storage_object *so = ( struct_storage_object* ) ( devkit_SMS_SRAM() );
-	//unsigned char index;
-
-	//devkit_SMS_enableSRAM();
-	//so->Magic = 0x00000000;
-	//so->num_jumps = 0;
-	//
-	//for( index = 0; index < MAX_JUMPS; index++ )
-	//{
-	//	engine_jump_manager_load( index, 0 );
-	//}
-
-	//so->terminal = FINAL;
-	//devkit_SMS_disableSRAM();
+	struct_storage_object *so = ( struct_storage_object* ) ( devkit_SMS_SRAM() );
+	devkit_SMS_enableSRAM();
+	so->Magic = 0x00000000;
+	so->num_jumps = 0;
+	so->jump_high[ 0 ] = 9;
+	so->jump_high[ 1 ] = 9;
+	so->jump_high[ 2 ] = 9;
+	so->terminal = FINAL;
+	devkit_SMS_disableSRAM();
 }

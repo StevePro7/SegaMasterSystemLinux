@@ -9,7 +9,9 @@ S:Lstorage_manager.engine_storage_manager_read$index$1_0$89({2}SI:U),R,0,0,[e,d]
 S:Lstorage_manager.engine_storage_manager_read$value$1_0$89({1}SC:U),R,0,0,[a]
 S:Lstorage_manager.engine_storage_manager_read$sloc0$0_1$0({2}DG,DA1024d,SC:U),B,1,-2
 F:G$engine_storage_manager_write$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lstorage_manager.engine_storage_manager_write$so$1_0$92({2}DG,STtag_struct_storage_object:S),R,0,0,[e,d]
 F:G$engine_storage_manager_erase$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lstorage_manager.engine_storage_manager_erase$so$1_0$93({2}DG,STtag_struct_storage_object:S),R,0,0,[e,d]
 T:Fstorage_manager$tag_struct_jump_object[({0}S:S$num_jumps$0_0$0({2}SI:U),Z,0,0)({2}S:S$jump_high$0_0$0({1024}DA1024d,SC:U),Z,0,0)]
 T:Fstorage_manager$tag_struct_storage_object[({0}S:S$Magic$0_0$0({4}SL:U),Z,0,0)({4}S:S$num_jumps$0_0$0({2}SI:U),Z,0,0)({6}S:S$jump_high$0_0$0({1024}DA1024d,SC:U),Z,0,0)({1030}S:S$terminal$0_0$0({1}SC:U),Z,0,0)]
 S:G$global_jump_object$0_0$0({1026}STtag_struct_jump_object:S),E,0,0

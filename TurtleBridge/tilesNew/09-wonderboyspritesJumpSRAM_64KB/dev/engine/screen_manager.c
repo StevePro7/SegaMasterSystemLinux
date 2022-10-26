@@ -81,9 +81,21 @@ void engine_screen_manager_update()
 		input = engine_input_manager_hold_fire1();
 		if( input )
 		{
-			engine_font_manager_draw_text( "STEVEPRO JUMPING!!", 2, 2 );
+			engine_font_manager_draw_text( "STEVEPRO JUMPING 1", 2, 2 );
+			engine_storage_manager_write();
+			engine_font_manager_draw_text( "STEVEPRO JUMPING 3", 2, 3 );
 			index = 0;
-			jumps = 1;
+			//jumps = 1;
+			posY = MAX_FLOOR;
+		}
+		input = engine_input_manager_hold_fire2();
+		if( input )
+		{
+			engine_font_manager_draw_text( "STEVEPRO DELETING1", 2, 2 );
+			engine_storage_manager_erase();
+			engine_font_manager_draw_text( "STEVEPRO DELETING3", 2, 3 );
+			index = 0;
+			//jumps = 1;
 			posY = MAX_FLOOR;
 		}
 	}

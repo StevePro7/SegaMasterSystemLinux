@@ -61,8 +61,10 @@ echo.
 :: Link
 "C:\Program Files\SDCC\bin\sdcc.exe" --debug -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-loc 0xC000 ^
 ../crt0/crt0_sms.rel main.rel ^
+-Wl-b_BANK2=0x8000  -Wl-b_BANK3=0x8000 ^
 ../lib/SMSlib.lib ^
 ../lib/PSGlib.rel ^
+banks/bank2.rel  banks/bank3.rel ^
 banks/fixedbank.rel ^
 devkit/_sms_manager.rel ^
 devkit/_snd_manager.rel ^
