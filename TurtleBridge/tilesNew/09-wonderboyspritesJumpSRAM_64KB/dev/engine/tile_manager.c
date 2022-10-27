@@ -102,13 +102,13 @@ void engine_tile_manager_sign( unsigned char type, unsigned char x, unsigned cha
 }
 
 
-//void engine_tile_manager_cloud( unsigned char type, unsigned char x, unsigned char y )
-//{
-//	const unsigned char *array = tile_object_data[ type ];
-//	const unsigned char w = tile_object_wide[ type ];
-//	const unsigned char h = tile_object_high[ type ];
-//	draw_tile_next( array, x, y, w, h );
-//}
+void engine_tile_manager_cloud( unsigned char type, unsigned char x, unsigned char y )
+{
+	const unsigned char *array = tile_object_data[ type ];
+	const unsigned char w = tile_object_wide[ type ];
+	const unsigned char h = tile_object_high[ type ];
+	draw_tile_next( array, x, y, w, h );
+}
 
 
 
