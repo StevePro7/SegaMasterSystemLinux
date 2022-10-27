@@ -16,8 +16,8 @@ namespace StorageManager
 
 		public void Process2(bool single)
 		{
-			//byte lsb = 0;
-			//byte msb = 0;
+			byte lsb = 0;
+			byte msb = 0;
 
 			outLines.Clear();
 			string outLine = String.Empty;
@@ -28,16 +28,28 @@ namespace StorageManager
 			{
 				string inpLine = inpLines[index];
 				int valLine = Convert.ToInt32(inpLine);
-				hexLine += "0x" + valLine.ToString("X2");
-				hexLine += ",";
-				value++;
-				if (value == 16)
+				if (single)
 				{
-					hexLine = hexLine.Substring(0, hexLine.Length - 1);
+					hexLine += "0x" + valLine.ToString("X2");
+					hexLine += ",";
+					value++;
 				}
 				else
 				{
+					Split((ushort)valLine, ref lsb, ref msb);
+					hexLine += "0x" + lsb.ToString("X2");
+					hexLine += ",";
+					value++;
+					hexLine += "0x" + msb.ToString("X2");
+					hexLine += ",";
+					value++;
+				}
+
+				if (value == 16)
+				{
+					hexLine = hexLine.Substring(0, hexLine.Length - 1);
 					outLines.Add(hexLine);
+					hexLine = String.Empty;
 					value = 0;
 				}
 			}
