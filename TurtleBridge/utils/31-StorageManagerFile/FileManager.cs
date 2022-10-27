@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace StorageManager
 {
@@ -13,6 +14,7 @@ namespace StorageManager
 		private const string dataFc = "data.c";
 		private IList<string> inpLines;
 		private IList<string> outLines;
+		private IList<string> txtLines;
 
 		public void Process2(bool single)
 		{
@@ -47,16 +49,31 @@ namespace StorageManager
 
 				if (value == 16)
 				{
-					hexLine = hexLine.Substring(0, hexLine.Length - 1);
+					//hexLine = hexLine.Substring(0, hexLine.Length - 1);
 					outLines.Add(hexLine);
 					hexLine = String.Empty;
 					value = 0;
 				}
 			}
 
-			hexLine = hexLine.Substring(0, hexLine.Length - 1);
+			//hexLine = hexLine.Substring(0, hexLine.Length - 1);
 			outLines.Add(hexLine);
 			value = 0;
+
+			txtLines.Clear();
+			txtLines.Add("extern const unsigned char	data_val[];");
+			txtLines.Add("#define				data_val_size " + count);
+			File.WriteAllLines("data.h", txtLines.ToArray());
+
+			txtLines.Clear();
+			txtLines.Add("const unsigned char	data_val[] =");
+			txtLines.Add("{");
+			foreach (var txtLine in outLines)
+			{
+				txtLines.Add("\t" + txtLine);
+			}
+			txtLines.Add("};");
+			File.WriteAllLines("data.c", txtLines.ToArray());
 		}
 
 		public void Process1(bool single)
@@ -135,6 +152,7 @@ namespace StorageManager
 			}
 			inpLines = new List<string>();
 			outLines = new List<string>();
+			txtLines = new List<string>();
 		}
 	}
 }
