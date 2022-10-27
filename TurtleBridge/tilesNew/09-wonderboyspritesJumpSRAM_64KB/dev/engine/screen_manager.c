@@ -137,7 +137,8 @@ void engine_screen_manager_update()
 		//	posY = MAX_FLOOR;
 		//}
 
-		input = engine_input_manager_hold_fire2();
+		//input = engine_input_manager_hold_fire2();
+		input = engine_input_manager_move_fire2();
 		if( input )
 		{
 			//for( index = 0; index < jo->num_jumps; index++ )
