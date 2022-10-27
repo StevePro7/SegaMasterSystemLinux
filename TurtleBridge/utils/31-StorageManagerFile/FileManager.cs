@@ -9,10 +9,45 @@ namespace StorageManager
 		private const string inFile = "physics.txt";
 		private const string oFile1 = "output.ssm";
 		private const string oFile2 = "output.sav";
+		private const string dataFh = "data.h";
+		private const string dataFc = "data.c";
 		private IList<string> inpLines;
 		private IList<string> outLines;
 
-		public void Process(bool single)
+		public void Process2(bool single)
+		{
+			//byte lsb = 0;
+			//byte msb = 0;
+
+			outLines.Clear();
+			string outLine = String.Empty;
+			string hexLine = String.Empty;
+			int count = inpLines.Count;
+			int value = 0;
+			for (int index = 0; index < count; index++)
+			{
+				string inpLine = inpLines[index];
+				int valLine = Convert.ToInt32(inpLine);
+				hexLine += "0x" + valLine.ToString("X2");
+				hexLine += ",";
+				value++;
+				if (value == 16)
+				{
+					hexLine = hexLine.Substring(0, hexLine.Length - 1);
+				}
+				else
+				{
+					outLines.Add(hexLine);
+					value = 0;
+				}
+			}
+
+			hexLine = hexLine.Substring(0, hexLine.Length - 1);
+			outLines.Add(hexLine);
+			value = 0;
+		}
+
+		public void Process1(bool single)
 		{
 			byte lsb = 0;
 			byte msb = 0;
