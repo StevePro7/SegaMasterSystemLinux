@@ -29,7 +29,7 @@ void engine_jump_manager_data()
 	unsigned int index;
 
 	jo->num_jumps = data_val_size;
-	for( index = 0; index < MAX_JUMPS; index++ )
+	for( index = 0; index < jo->num_jumps; index++ )
 	{
 		jo->jump_high[ index ] = data_val[ index ];
 	}

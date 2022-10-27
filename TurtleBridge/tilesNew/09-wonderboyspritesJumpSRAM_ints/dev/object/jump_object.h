@@ -6,7 +6,7 @@
 typedef struct tag_struct_jump_object
 {
 	unsigned int num_jumps;
-	unsigned char jump_high[ MAX_JUMPS ];
+	unsigned int jump_high[ MAX_JUMPS ];
 
 } struct_jump_object;
 

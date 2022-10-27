@@ -18,8 +18,8 @@ namespace StorageManager
 
 		public void Process2(bool single)
 		{
-			byte lsb = 0;
-			byte msb = 0;
+			//byte lsb = 0;
+			//byte msb = 0;
 
 			outLines.Clear();
 			string outLine = String.Empty;
@@ -33,19 +33,13 @@ namespace StorageManager
 				if (single)
 				{
 					hexLine += "0x" + valLine.ToString("X2");
-					hexLine += ",";
-					value++;
 				}
 				else
 				{
-					Split((ushort)valLine, ref lsb, ref msb);
-					hexLine += "0x" + lsb.ToString("X2");
-					hexLine += ",";
-					value++;
-					hexLine += "0x" + msb.ToString("X2");
-					hexLine += ",";
-					value++;
+					hexLine += "0x" + valLine.ToString("X4");
 				}
+				hexLine += ", ";
+				value++;
 
 				if (value == 16)
 				{
@@ -61,12 +55,13 @@ namespace StorageManager
 			value = 0;
 
 			txtLines.Clear();
-			txtLines.Add("extern const unsigned char	data_val[];");
+			string type = single ? "char" : "int";
+			txtLines.Add("extern const unsigned " + type + "	data_val[];");
 			txtLines.Add("#define				data_val_size " + count);
 			File.WriteAllLines("data.h", txtLines.ToArray());
 
 			txtLines.Clear();
-			txtLines.Add("const unsigned char	data_val[] =");
+			txtLines.Add("const unsigned " + type + "	data_val[] =");
 			txtLines.Add("{");
 			foreach (var txtLine in outLines)
 			{

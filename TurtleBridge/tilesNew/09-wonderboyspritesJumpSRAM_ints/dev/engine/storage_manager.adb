@@ -12,9 +12,9 @@ F:G$engine_storage_manager_write$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lstorage_manager.engine_storage_manager_write$so$1_0$92({2}DG,STtag_struct_storage_object:S),R,0,0,[e,d]
 F:G$engine_storage_manager_erase$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lstorage_manager.engine_storage_manager_erase$so$1_0$93({2}DG,STtag_struct_storage_object:S),R,0,0,[e,d]
-T:Fstorage_manager$tag_struct_jump_object[({0}S:S$num_jumps$0_0$0({2}SI:U),Z,0,0)({2}S:S$jump_high$0_0$0({1024}DA1024d,SC:U),Z,0,0)]
+T:Fstorage_manager$tag_struct_jump_object[({0}S:S$num_jumps$0_0$0({2}SI:U),Z,0,0)({2}S:S$jump_high$0_0$0({2048}DA1024d,SI:U),Z,0,0)]
 T:Fstorage_manager$tag_struct_storage_object[({0}S:S$Magic$0_0$0({4}SL:U),Z,0,0)({4}S:S$num_jumps$0_0$0({2}SI:U),Z,0,0)({6}S:S$jump_high$0_0$0({1024}DA1024d,SC:U),Z,0,0)({1030}S:S$terminal$0_0$0({1}SC:U),Z,0,0)]
-S:G$global_jump_object$0_0$0({1026}STtag_struct_jump_object:S),E,0,0
+S:G$global_jump_object$0_0$0({2050}STtag_struct_jump_object:S),E,0,0
 S:G$global_storage_object$0_0$0({1031}STtag_struct_storage_object:S),E,0,0
 S:G$engine_font_manager_draw_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_text$0_0$0({2}DF,SV:S),C,0,0

@@ -11,6 +11,8 @@
 #include "tile_manager.h"
 #include "../devkit/_sms_manager.h"
 
+#define UFIX(x)                ((unsigned char)((x)>>8))
+
 //#define MAX_JUMPS	125
 //#define MAX_JUMPS	516
 #define MAX_FLOOR	128
@@ -19,8 +21,9 @@ static void draw_sprite( unsigned char idx, unsigned char x, unsigned char y );
 static unsigned char frame;
 static unsigned int index;
 static unsigned char jumps;
-static unsigned char delta;
+static unsigned int delta;
 static unsigned char posY;
+static unsigned int posY2;
 static unsigned char scrollX, scrollY;
 static unsigned char storage_available;
 
@@ -28,21 +31,30 @@ void engine_screen_manager_init()
 {
 	struct_jump_object *jo = &global_jump_object;
 	unsigned char index;
+
+	scrollX = 1;
+	scrollY = 1;
 	engine_tile_manager_sky();
-	//engine_tile_manager_draw_normX( 4, 0, 20 );
-	//engine_tile_manager_draw_groundX( 4, 0, 20, 0, 8 );
 	engine_tile_manager_draw_groundX( 4, 8, 20, 0, 8 );
-	//engine_tile_manager_draw_groundX( 4, 16, 20, 0, 8 );
-	//engine_tile_manager_draw_groundX( 4, 24, 20, 0, 8 );
+	if( !scrollY )
+	{
+		engine_tile_manager_draw_groundX( 4, 0, 20, 0, 8 );
+		engine_tile_manager_draw_groundX( 4, 16, 20, 0, 8 );
+		engine_tile_manager_draw_groundX( 4, 24, 20, 0, 8 );
+	}
+
 	//engine_font_manager_draw_text( "STEVEPRO STORAGE", 2, 2 );
 	//engine_font_manager_draw_text( "STEVEPRO STORAGE", 2, 3 );
 	//storage_available = engine_storage_manager_available();
 	//if( storage_available )
 	//{
 	engine_jump_manager_data();
-		//engine_storage_manager_read();
+		//engine_storage_manager_read();	
+	if( scrollY )
+	{
 		engine_font_manager_draw_data( storage_available, 12, 4 );
 		engine_font_manager_draw_data( jo->num_jumps, 22, 5 );
+	}
 
 		//for( index = 0; index < jo->num_jumps; index++ )
 		//{
@@ -54,8 +66,8 @@ void engine_screen_manager_init()
 	delta = 0;
 	jumps = 0;
 	posY = MAX_FLOOR;
-	scrollX = 1;
-	scrollY = 1;
+	posY2 = posY << 8;
+
 	devkit_SMS_setBGScrollX( 0 );
 	//engine_music_manager_play();
 }
@@ -64,6 +76,7 @@ void engine_screen_manager_update()
 {
 	struct_jump_object *jo = &global_jump_object;
 	unsigned char input;
+	
 
 	input = engine_input_manager_move_left();
 	if( input )
@@ -157,7 +170,16 @@ void engine_screen_manager_update()
 	//engine_font_manager_draw_data( index, 25, 0 );
 	//engine_font_manager_draw_data( frame, 25, 1 );
 	//engine_font_manager_draw_data( jumps, 25, 2 );
-	draw_sprite( frame, 72, posY - delta );
+	if( 0 == delta )
+	{
+		draw_sprite( frame, 72, posY - delta );
+	}
+	else
+	{
+		unsigned int tmpY2 = posY2 - delta;
+		unsigned char tmpY = UFIX( tmpY2 );
+		draw_sprite( frame, 72, tmpY );
+	}
 }
 
 static void draw_sprite( unsigned char idx, unsigned char x, unsigned char y )
