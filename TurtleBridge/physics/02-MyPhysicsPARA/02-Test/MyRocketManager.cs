@@ -12,7 +12,7 @@ namespace _02_Test
 
 		private bool _rocketFlying = false;
 		private Vector2 _rocketPosition;
-		private Vector2 _rocketDirection;
+		//private Vector2 _rocketDirection;
 		//private float _rocketAngle;
 		//private float _rocketScaling = 0.1f;
 		private float angle;

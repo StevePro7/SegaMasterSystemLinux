@@ -11,8 +11,7 @@ namespace _02_Test
 			//Angle = 90 - Angle;
 			Speed = Convert.ToSingle(ConfigurationManager.AppSettings["Speed"]);
 
-			Logger.Info("Angle = " + Angle);
-			Logger.Info("Speed = " + Speed);
+			
 		}
 
 		public float Angle { get; private set; }

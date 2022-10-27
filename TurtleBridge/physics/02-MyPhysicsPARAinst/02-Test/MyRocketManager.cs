@@ -11,8 +11,9 @@ namespace _02_Test
 		private readonly MyConfigManger myConfigManger;
 
 		private bool _rocketFlying = false;
+		private bool _loggerOutput = false;
 		private Vector2 _rocketPosition;
-		private Vector2 _rocketDirection;
+		//private Vector2 _rocketDirection;
 		//private float _rocketAngle;
 		//private float _rocketScaling = 0.1f;
 		private float angle;
@@ -67,8 +68,13 @@ namespace _02_Test
 			Initialize();
 			_rocketFlying = true;
 
-			Logger.Info("Wide  = " + Wide);
-			Logger.Info("High  = " + High);
+			if (!_loggerOutput)
+			{
+				Logger.Info("Angle = " + angle);
+				Logger.Info("Speed = " + speed);
+				//Logger.Info("Wide  = " + Wide);
+				//Logger.Info("High  = " + High);
+			}
 
 			while (true)
 			{
@@ -89,14 +95,16 @@ namespace _02_Test
 				{
 					var maxWide = (int)(Wide + posX);
 					_rocketFlying = false;
-					//Logger.Info("mWide = " + maxWide);
-					//Logger.Info("mHigh = " + maxHigh);
+					if (!_loggerOutput)
+					{
+						Logger.Info("mWide = " + (maxWide - Wide).ToString());
+						Logger.Info("mHigh = " + (High - maxHigh).ToString());
+					}
 
 					//Logger.Info("dWide = " + (int)posX);
 					//Logger.Info("dHigh = " + (High - maxHigh));
-
+					_loggerOutput = true;
 					break;
-					
 				}
 			}
 		}
