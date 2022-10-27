@@ -10,7 +10,8 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 :: Compile
 :: Compile
 cd banks
-:"C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 fixedbank.c
+"C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 data.c
+:::"C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 fixedbank.c
 cd ..
 
 cd content
@@ -25,7 +26,7 @@ cd ..
 
 cd engine
 ::"C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 asm_manager.c
-"C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 audio_manager.c
+::"C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 audio_manager.c
 ::"C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 content_manager.c
 ::"C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 enum_manager.c
 ::"C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 font_manager.c
@@ -65,6 +66,7 @@ echo.
 ../lib/SMSlib.lib ^
 ../lib/PSGlib.rel ^
 banks/bank2.rel  banks/bank3.rel ^
+banks/data.rel ^
 banks/fixedbank.rel ^
 devkit/_sms_manager.rel ^
 devkit/_snd_manager.rel ^
