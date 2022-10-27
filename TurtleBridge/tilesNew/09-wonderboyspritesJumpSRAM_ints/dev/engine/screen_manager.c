@@ -52,8 +52,8 @@ void engine_screen_manager_init()
 		//engine_storage_manager_read();	
 	if( scrollY )
 	{
-		engine_font_manager_draw_data( storage_available, 12, 4 );
-		engine_font_manager_draw_data( jo->num_jumps, 22, 5 );
+		//engine_font_manager_draw_data( storage_available, 12, 4 );
+		//engine_font_manager_draw_data( jo->num_jumps, 22, 5 );
 	}
 
 		//for( index = 0; index < jo->num_jumps; index++ )
@@ -69,7 +69,7 @@ void engine_screen_manager_init()
 	posY2 = posY << 8;
 
 	devkit_SMS_setBGScrollX( 0 );
-	//engine_music_manager_play();
+	engine_music_manager_play();
 }
 
 void engine_screen_manager_update()
