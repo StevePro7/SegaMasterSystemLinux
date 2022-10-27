@@ -30,18 +30,18 @@ void engine_screen_manager_init()
 	unsigned char index;
 	engine_tile_manager_sky();
 	//engine_tile_manager_draw_normX( 4, 0, 20 );
-	engine_tile_manager_draw_groundX( 4, 0, 20, 0, 8 );
+	//engine_tile_manager_draw_groundX( 4, 0, 20, 0, 8 );
 	engine_tile_manager_draw_groundX( 4, 8, 20, 0, 8 );
-	engine_tile_manager_draw_groundX( 4, 16, 20, 0, 8 );
-	engine_tile_manager_draw_groundX( 4, 24, 20, 0, 8 );
+	//engine_tile_manager_draw_groundX( 4, 16, 20, 0, 8 );
+	//engine_tile_manager_draw_groundX( 4, 24, 20, 0, 8 );
 	//engine_font_manager_draw_text( "STEVEPRO STORAGE", 2, 2 );
 	//engine_font_manager_draw_text( "STEVEPRO STORAGE", 2, 3 );
 	storage_available = engine_storage_manager_available();
 	if( storage_available )
 	{
 		engine_storage_manager_read();
-		//engine_font_manager_draw_data( storage_available, 12, 4 );
-		//engine_font_manager_draw_data( jo->num_jumps, 22, 5 );
+		engine_font_manager_draw_data( storage_available, 12, 4 );
+		engine_font_manager_draw_data( jo->num_jumps, 22, 5 );
 
 		//for( index = 0; index < jo->num_jumps; index++ )
 		//{
@@ -64,26 +64,33 @@ void engine_screen_manager_update()
 	struct_jump_object *jo = &global_jump_object;
 	unsigned char input;
 
-	input = engine_input_manager_move_right();
+	input = engine_input_manager_move_left();
 	if( input )
 	{
 		if( scrollY )
 		{
 			devkit_SMS_setBGScrollX( scrollX-- );
+		}
+	}
+	else
+	{
+		if( scrollY )
+		{
 			devkit_SMS_setBGScrollX( scrollX-- );
 			devkit_SMS_setBGScrollX( scrollX-- );
-			devkit_SMS_setBGScrollX( scrollX-- );
-			devkit_SMS_setBGScrollX( scrollX-- );
-			devkit_SMS_setBGScrollX( scrollX-- );
-			devkit_SMS_setBGScrollX( scrollX-- );
-			devkit_SMS_setBGScrollX( scrollX-- );
+			//devkit_SMS_setBGScrollX( scrollX-- );
+			//devkit_SMS_setBGScrollX( scrollX-- );
+			//devkit_SMS_setBGScrollX( scrollX-- );
+			//devkit_SMS_setBGScrollX( scrollX-- );
+			//devkit_SMS_setBGScrollX( scrollX-- );
+			//devkit_SMS_setBGScrollX( scrollX-- );
 		}
 	}
 
 	frame = 0;
 	if( jumps )
 	{
-		input = engine_input_manager_move_fire1();
+		input = 1;// engine_input_manager_move_fire1();
 		if( input )
 		{
 			delta = jo->jump_high[ index ];// deltaY[ index ];
