@@ -5,6 +5,6 @@ void main( void )
 	InitConsole();
 	while( 1 )
 	{
-		InitPlayStage();
+		//InitPlayStage();
 	}
 }
