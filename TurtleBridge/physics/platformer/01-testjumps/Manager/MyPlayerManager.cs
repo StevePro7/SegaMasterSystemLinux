@@ -7,4 +7,5 @@ namespace Test
 	public class MyPlayerManager
 	{
 	}
+
 }

@@ -11,6 +11,7 @@ namespace Test
 		SpriteBatch spriteBatch;
 		MyContentManager myContentManager;
 		MyInputManager myInputManager;
+		MyLevelManager myLevelManager;
 		MyScreenManager myScreenManager;
 
 		public AnGame()
@@ -22,7 +23,8 @@ namespace Test
 
 			myContentManager = new MyContentManager();
 			myInputManager = new MyInputManager();
-			myScreenManager = new MyScreenManager(myContentManager, myInputManager);
+			myLevelManager = new MyLevelManager(myContentManager);
+			myScreenManager = new MyScreenManager(myContentManager, myInputManager, myLevelManager);
 		}
 
 		protected override void Initialize()
@@ -32,6 +34,7 @@ namespace Test
 			TargetElapsedTime = TimeSpan.FromSeconds(1.0f / 50);
 			Logger.Initialize();
 			myContentManager.Initialize(Content);
+			myLevelManager.Initialize();
 			base.Initialize();
 		}
 
@@ -60,8 +63,7 @@ namespace Test
 		protected override void Draw(GameTime gameTime)
 		{
 			GraphicsDevice.Clear(Color.CornflowerBlue);
-
-			
+			myScreenManager.Draw(spriteBatch);
 			base.Draw(gameTime);
 		}
 
