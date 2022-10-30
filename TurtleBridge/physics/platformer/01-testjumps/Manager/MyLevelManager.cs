@@ -31,6 +31,11 @@ namespace Test
 					{
 						pos = new Vector2(col * Constants.TILE_WIDE, row * Constants.TILE_HIGH);
 						spriteBatch.Draw(myContentManager.Tile1616, pos, Color.White);
+
+						pos = new Vector2(col * Constants.TILE_WIDE + 0, row * Constants.TILE_HIGH);
+						spriteBatch.Draw(myContentManager.Tile88, pos, Color.White);
+						pos = new Vector2(col * Constants.TILE_WIDE + 8, row * Constants.TILE_HIGH);
+						spriteBatch.Draw(myContentManager.Tile88, pos, Color.White);
 					}
 				}
 			}
