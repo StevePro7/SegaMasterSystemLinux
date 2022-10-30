@@ -1,11 +1,22 @@
 ﻿using System;
+using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
 
 namespace Test
 {
 	public class MyPlayerManager
 	{
+		MyContentManager myContentManager;
+
+		public MyPlayerManager(MyContentManager myContentManager)
+		{
+			this.myContentManager = myContentManager;
+		}
+
+		public void Draw(SpriteBatch spriteBatch)
+		{
+			spriteBatch.Draw(myContentManager.Black2442, new Vector2(64, 128), Color.White);
+		}
 	}
 
 }

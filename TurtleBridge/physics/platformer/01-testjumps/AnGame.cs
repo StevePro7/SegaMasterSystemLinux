@@ -12,6 +12,7 @@ namespace Test
 		MyContentManager myContentManager;
 		MyInputManager myInputManager;
 		MyLevelManager myLevelManager;
+		MyPlayerManager myPlayerManager;
 		MyScreenManager myScreenManager;
 
 		public AnGame()
@@ -24,7 +25,8 @@ namespace Test
 			myContentManager = new MyContentManager();
 			myInputManager = new MyInputManager();
 			myLevelManager = new MyLevelManager(myContentManager);
-			myScreenManager = new MyScreenManager(myContentManager, myInputManager, myLevelManager);
+			myPlayerManager = new MyPlayerManager(myContentManager);
+			myScreenManager = new MyScreenManager(myContentManager, myInputManager, myLevelManager, myPlayerManager);
 		}
 
 		protected override void Initialize()
