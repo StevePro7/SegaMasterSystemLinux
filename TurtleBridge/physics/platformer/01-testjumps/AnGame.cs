@@ -11,12 +11,14 @@ namespace Test
 		SpriteBatch spriteBatch;
 		MyContentManager myContentManager;
 		MyInputManager myInputManager;
+		MyScreenManager myScreenManager;
 
 		public AnGame()
 		{
 			graphics = new GraphicsDeviceManager(this);
 			myContentManager = new MyContentManager();
 			myInputManager = new MyInputManager();
+			myScreenManager = new MyScreenManager(myContentManager, myInputManager);
 		}
 
 		protected override void Initialize()
