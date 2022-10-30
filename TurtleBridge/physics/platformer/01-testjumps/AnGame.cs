@@ -10,18 +10,20 @@ namespace Test
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
 		MyContentManager myContentManager;
+		MyInputManager myInputManager;
 
 		public AnGame()
 		{
 			graphics = new GraphicsDeviceManager(this);
 			myContentManager = new MyContentManager();
+			myInputManager = new MyInputManager();
 		}
 
 		protected override void Initialize()
 		{
 			IsMouseVisible = true;
 			IsFixedTimeStep = true;
-			TargetElapsedTime = TimeSpan.FromSeconds(1.0f / 10);
+			TargetElapsedTime = TimeSpan.FromSeconds(1.0f / 50);
 			Logger.Initialize();
 			myContentManager.Initialize(Content);
 			base.Initialize();
@@ -40,7 +42,8 @@ namespace Test
 
 		protected override void Update(GameTime gameTime)
 		{
-			if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+			myInputManager.Update(gameTime);
+			if (myInputManager.KeyPress(Keys.Escape))
 			{
 				Exit();
 			}

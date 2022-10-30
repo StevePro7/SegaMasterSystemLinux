@@ -2,9 +2,9 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 
-namespace WindowsGame.Common.Managers
+namespace Test
 {
-	public class InputManager
+	public class MyInputManager
 	{
 		private KeyboardState currKeyboardState;
 		private KeyboardState prevKeyboardState;
