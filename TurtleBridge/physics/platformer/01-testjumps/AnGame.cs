@@ -9,11 +9,12 @@ namespace Test
 	{
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
+		MyContentManager myContentManager;
 
 		public AnGame()
 		{
 			graphics = new GraphicsDeviceManager(this);
-			Content.RootDirectory = "Content";
+			myContentManager = new MyContentManager();
 		}
 
 		protected override void Initialize()
@@ -22,17 +23,19 @@ namespace Test
 			IsFixedTimeStep = true;
 			TargetElapsedTime = TimeSpan.FromSeconds(1.0f / 10);
 			Logger.Initialize();
+			myContentManager.Initialize(Content);
 			base.Initialize();
 		}
 
 		protected override void LoadContent()
 		{
 			spriteBatch = new SpriteBatch(GraphicsDevice);
+			myContentManager.LoadContent(Content);
 		}
 
 		protected override void UnloadContent()
 		{
-			Content.Unload();
+			myContentManager.UnLoadContent(Content);
 		}
 
 		protected override void Update(GameTime gameTime)

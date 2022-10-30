@@ -1,9 +1,7 @@
-﻿using System;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 
-namespace WindowsGame.Common.Managers
+namespace Test
 {
 	public class MyContentManager
 	{
