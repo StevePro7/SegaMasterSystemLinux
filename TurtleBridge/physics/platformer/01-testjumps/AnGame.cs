@@ -16,6 +16,10 @@ namespace Test
 		public AnGame()
 		{
 			graphics = new GraphicsDeviceManager(this);
+			graphics.PreferredBackBufferWidth = Constants.ScreenWide;
+			graphics.PreferredBackBufferHeight = Constants.ScreenHigh;
+			graphics.ApplyChanges();
+
 			myContentManager = new MyContentManager();
 			myInputManager = new MyInputManager();
 			myScreenManager = new MyScreenManager(myContentManager, myInputManager);

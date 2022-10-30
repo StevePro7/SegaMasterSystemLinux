@@ -7,7 +7,7 @@ namespace Test
 	{
 		public void Initialize(ContentManager content)
 		{
-			content.RootDirectory = "Content";
+			content.RootDirectory = Constants.CONTENT_DIRECTORY;
 		}
 
 		public void LoadContent(ContentManager content)

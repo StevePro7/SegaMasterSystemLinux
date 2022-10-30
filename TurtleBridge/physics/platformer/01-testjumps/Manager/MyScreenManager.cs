@@ -6,9 +6,16 @@ namespace Test
 {
 	public class MyScreenManager
 	{
-		public MyScreenManager()
-		{
+		MyContentManager myContentManager;
+		MyInputManager myInputManager;
 
+		public MyScreenManager(
+			MyContentManager myContentManager,
+			MyInputManager myInputManager
+			)
+		{
+			this.myContentManager = myContentManager;
+			this.myInputManager = myInputManager;
 		}
 
 	}
