@@ -35,8 +35,7 @@ namespace _02_Test
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 			string dirX = "0" + image.ToString();
 			string pref = "skate0";
-			if (4 == image || 6 == image
-				)
+			if (4 == image || 6 == image)
 			{
 				pref += "1";
 			}
