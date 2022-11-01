@@ -15,7 +15,7 @@ namespace Test
 		const int MAX_SPRITES = 10;
 		int wide= 32;
 		int high = 32;
-		string[] names = new string[MAX_SPRITES] { "skate01", "skate02", "skateR1", "skateR2", "skateR3", "skateR4", "skateL1", "skateL2", "skateL3", "skateL4" };
+		string[] names = new string[MAX_SPRITES] { "skate01", "skate02", "skateR1", "skateR2", "skateR3", "skateR4", "skateL1", "skateL4", "skateL3", "skateL2" };
 		private bool save;
 
 		public AnGame()
