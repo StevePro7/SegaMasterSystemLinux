@@ -1,0 +1,166 @@
+;!FILE jump_manager.asm
+XL3
+H 9 areas 6C global symbols
+M jump_manager
+O -mz80
+S _data_val Ref000000
+S .__.ABS. Def000000
+A _CODE size 87 flags 0 addr 0
+S C$jump_manager.c$8$0_0$4 Def000000
+S XG$engine_jump_manager_init$0$0 Def00002A
+S A$jump_manager$100 Def000028
+S A$jump_manager$200 Def00007F
+S A$jump_manager$201 Def000080
+S A$jump_manager$130 Def000041
+S A$jump_manager$212 Def000086
+S A$jump_manager$131 Def000043
+S A$jump_manager$132 Def000044
+S A$jump_manager$105 Def00002A
+S A$jump_manager$142 Def000048
+S A$jump_manager$133 Def000045
+S A$jump_manager$124 Def000033
+S A$jump_manager$115 Def00002B
+S A$jump_manager$206 Def000082
+S A$jump_manager$170 Def00005E
+S A$jump_manager$152 Def000049
+S A$jump_manager$125 Def000036
+S A$jump_manager$116 Def00002D
+S G$engine_jump_manager_data$0$0 Def000049
+S A$jump_manager$207 Def000084
+S A$jump_manager$180 Def000066
+S A$jump_manager$171 Def00005F
+S A$jump_manager$162 Def000052
+S A$jump_manager$153 Def00004B
+S A$jump_manager$126 Def000039
+S A$jump_manager$117 Def000031
+S A$jump_manager$190 Def000078
+S A$jump_manager$181 Def000067
+S A$jump_manager$172 Def000060
+S A$jump_manager$163 Def000055
+S A$jump_manager$154 Def00004F
+S A$jump_manager$127 Def00003C
+S A$jump_manager$191 Def000079
+S A$jump_manager$182 Def000069
+S A$jump_manager$173 Def000061
+S A$jump_manager$155 Def000051
+S A$jump_manager$137 Def000046
+S A$jump_manager$128 Def00003D
+S A$jump_manager$192 Def00007A
+S A$jump_manager$183 Def00006A
+S A$jump_manager$174 Def000062
+S A$jump_manager$129 Def00003E
+S A$jump_manager$193 Def00007B
+S A$jump_manager$184 Def00006D
+S A$jump_manager$194 Def00007C
+S A$jump_manager$185 Def00006F
+S A$jump_manager$167 Def000058
+S G$engine_jump_manager_load$0$0 Def00002B
+S A$jump_manager$195 Def00007D
+S A$jump_manager$186 Def000070
+S A$jump_manager$196 Def00007E
+S A$jump_manager$187 Def000073
+S A$jump_manager$178 Def000064
+S A$jump_manager$169 Def00005B
+S A$jump_manager$188 Def000076
+S A$jump_manager$179 Def000065
+S A$jump_manager$189 Def000077
+S C$jump_manager.c$32$2_0$10 Def00007F
+S C$jump_manager.c$32$3_0$11 Def000058
+S _engine_jump_manager_data Def000049
+S A$jump_manager$60 Def000006
+S C$jump_manager.c$34$3_0$11 Def000064
+S A$jump_manager$70 Def00000F
+S A$jump_manager$71 Def000010
+S A$jump_manager$72 Def000013
+S A$jump_manager$82 Def00001A
+S _engine_jump_manager_load Def00002B
+S A$jump_manager$83 Def00001B
+S A$jump_manager$93 Def000022
+S A$jump_manager$84 Def00001C
+S A$jump_manager$94 Def000023
+S A$jump_manager$85 Def00001D
+S A$jump_manager$76 Def000014
+S A$jump_manager$67 Def000008
+S A$jump_manager$58 Def000000
+S A$jump_manager$95 Def000024
+S A$jump_manager$86 Def00001E
+S A$jump_manager$77 Def000017
+S A$jump_manager$68 Def00000B
+S A$jump_manager$59 Def000002
+S A$jump_manager$96 Def000026
+S A$jump_manager$87 Def00001F
+S A$jump_manager$69 Def00000E
+S A$jump_manager$88 Def000020
+S XG$engine_jump_manager_data$0$0 Def000086
+S C$jump_manager.c$10$1_0$4 Def000008
+S A$jump_manager$89 Def000021
+S G$engine_jump_manager_init$0$0 Def000000
+S C$jump_manager.c$13$1_0$4 Def000008
+S XG$engine_jump_manager_load$0$0 Def000048
+S C$jump_manager.c$20$2_0$8 Def00002B
+S C$jump_manager.c$14$2_0$5 Def000022
+S C$jump_manager.c$22$1_0$8 Def000033
+S C$jump_manager.c$31$1_0$9 Def000052
+S C$jump_manager.c$23$1_0$8 Def000033
+S C$jump_manager.c$14$3_0$6 Def000014
+S C$jump_manager.c$24$1_0$8 Def000048
+S C$jump_manager.c$18$2_0$4 Def00002A
+S C$jump_manager.c$16$3_0$6 Def00001A
+S C$jump_manager.c$26$1_0$9 Def000049
+S C$jump_manager.c$36$2_0$9 Def000086
+S C$jump_manager.c$28$1_0$9 Def000052
+S _engine_jump_manager_init Def000000
+A _DATA size 802 flags 0 addr 0
+S _global_jump_object Def000000
+S G$global_jump_object$0_0$0 Def000000
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 01 00
+T 00 00 00
+R 00 00 01 00
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 DD E5 DD 21 00 00 DD 39 21 00 00 DD 7E
+R 00 00 00 00 00 0C 01 00
+T 0D 00 00 04 77 23 DD 7E 05 77 01 02 00 11 00 00
+R 00 00 00 00 00 0B 01 00
+T 1A 00 00
+R 00 00 00 00
+T 1A 00 00 6B 62 29 09 AF 77 23 77 13 7A D6 04 38
+R 00 00 00 00
+T 27 00 00 F2 DD E1 C9
+R 00 00 00 00
+T 2B 00 00
+R 00 00 00 00
+T 2B 00 00 DD E5 DD 21 00 00 DD 39 01 02 00 DD 6E
+R 00 00 00 00 00 0C 01 00
+T 38 00 00 04 DD 66 05 29 09 DD 7E 06 0E 00 77 23
+R 00 00 00 00
+T 45 00 00 71 DD E1 C9
+R 00 00 00 00
+T 49 00 00
+R 00 00 00 00
+T 49 00 00 DD E5 DD 21 00 00 DD 39 F5 21 94 01 22
+R 00 00 00 00
+T 56 00 00 00 00 01 00 00
+R 00 00 00 00 00 03 01 00
+T 5B 00 00
+R 00 00 00 00
+T 5B 00 00 2A 00 00 79 95 78 9C 30 1E 69 60 29 3E
+R 00 00 00 00 00 04 01 00
+T 68 00 00 02 00 00 85 DD 77 FE 3E 02 00 00 8C DD
+R 00 00 00 00 09 03 01 00 89 0B 01 00
+T 71 00 00 77 FF 11 00 00 19 5E 23 56 E1 E5 73 23
+R 00 00 00 00 02 06 00 00
+T 7E 00 00 72 03 18 D9
+R 00 00 00 00
+T 82 00 00
+R 00 00 00 00
+T 82 00 00 DD F9 DD E1 C9
+R 00 00 00 00
