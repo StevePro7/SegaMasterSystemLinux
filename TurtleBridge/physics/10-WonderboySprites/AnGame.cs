@@ -30,7 +30,7 @@ namespace Test
 		{
 			IsMouseVisible = true;
 			save = false;
-			//save = true;
+			save = true;
 			base.Initialize();
 		}
 

@@ -94,6 +94,30 @@ void engine_screen_manager_update()
 		}
 	}
 
+	input = engine_input_manager_hold_fire1();
+	if( input )
+	{
+		frame++;
+		if( frame >= 10 )
+		{
+			frame = 0;
+		}
+	}
+	input = engine_input_manager_hold_down();
+	if( input )
+	{
+		if( frame > 1 )
+		{
+			if( frame >= 6 )
+			{
+				frame -= 4;
+			}
+			else
+			{
+				frame += 4;
+			}
+		}
+	}
 	if( jumps )
 	{
 		input = 1;// engine_input_manager_move_fire1();
@@ -110,20 +134,9 @@ void engine_screen_manager_update()
 				posY = MAX_FLOOR;
 			}
 		}
-
-		
 	}
 	else
 	{
-		input = engine_input_manager_hold_fire1();
-		if( input )
-		{
-			frame++;
-			if( frame >= 10 )
-			{
-				frame = 0;
-			}
-		}
 		input = engine_input_manager_move_fire2();
 		if( input )
 		{
