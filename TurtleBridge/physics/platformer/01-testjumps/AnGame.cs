@@ -10,6 +10,7 @@ namespace Test
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
 		MyContentManager myContentManager;
+		MyCommandManager myCommandManager;
 		MyInputManager myInputManager;
 		MyLevelManager myLevelManager;
 		MyPlayerManager myPlayerManager;
