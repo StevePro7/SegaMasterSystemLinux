@@ -168,7 +168,14 @@ static void draw_sprite( unsigned char idx, unsigned char x, unsigned char y )
 	unsigned char num;
 	
 	unsigned char i, j;
-
+	if( 0 == idx || 1 == idx || 2 == idx || 4 == idx || 6 == idx || 8 == idx )
+	{
+		x += 4;
+	}
+	else //if( 3 == idx || 1 == idx || 2 == idx )
+	{
+		y += 4;
+	}
 	for( j = 0; j < high; j++ )
 	{
 		for( i = 0; i < wide; i++ )
