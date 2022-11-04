@@ -21,9 +21,11 @@ namespace Test
 
 		public void Initialize()
 		{
-			po.posnX = 64;
-			po.posnY = 160;
-			po.frame = 0;
+			//po.posnX = 64;
+			po.posnX = 8;
+			//po.posnX = 158;
+			po.posnY = 159;
+			po.frame = 2;
 			updatePlayer();
 		}
 
@@ -37,6 +39,11 @@ namespace Test
 
 		public void Update(GameTime gameTime)
 		{
+			if (myInputManager.KeyPress(Keys.Space))
+			{
+				var message = $"(x,y)=({po.posnX},{po.posnY})";
+				Logger.Info(message);
+			}
 			if (myInputManager.KeyHold(Keys.Left))
 			{
 				po.posnX -= 1;
@@ -60,17 +67,41 @@ namespace Test
 					po.posnY += dy;
 					updatePlayer();
 				}
+				else
+				{
+					// TODO - need to look this up!!
+					po.posnY = 160;
+					updatePlayer();
+				}
 			}
 		}
 
 		private bool canMoveDown(int dy)
 		{
+			int tempCollY = 0;
 			int tempPosnY = po.posnY + dy;
 			int tempTileY = tempPosnY >> 3;
-			int tempCollY = myLevelManager.collision_array[po.tileX];
+
+			tempCollY = myLevelManager.collision_array[po.tileX + 0];
 			if (tempTileY == tempCollY)
 			{
 				return false;
+			}
+			else
+			{
+				tempCollY = myLevelManager.collision_array[po.tileX + 1];
+				if (tempTileY == tempCollY)
+				{
+					return false;
+				}
+				else
+				{
+					tempCollY = myLevelManager.collision_array[po.tileX + 2];
+					if (tempTileY == tempCollY)
+					{
+						return false;
+					}
+				}
 			}
 
 			return true;
