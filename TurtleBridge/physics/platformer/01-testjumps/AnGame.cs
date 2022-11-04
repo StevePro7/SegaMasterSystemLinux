@@ -23,10 +23,11 @@ namespace Test
 			graphics.PreferredBackBufferHeight = Constants.ScreenHigh;
 			graphics.ApplyChanges();
 
+			myCommandManager = new MyCommandManager();
 			myContentManager = new MyContentManager();
 			myInputManager = new MyInputManager();
 			myLevelManager = new MyLevelManager(myContentManager);
-			myPlayerManager = new MyPlayerManager(myContentManager);
+			myPlayerManager = new MyPlayerManager(myContentManager, myInputManager);
 			myScreenManager = new MyScreenManager(myContentManager, myInputManager, myLevelManager, myPlayerManager);
 		}
 
@@ -37,6 +38,7 @@ namespace Test
 			TargetElapsedTime = TimeSpan.FromSeconds(1.0f / 50);
 			Logger.Initialize();
 			myContentManager.Initialize(Content);
+			myCommandManager.Initialize();
 			myLevelManager.Initialize();
 			myPlayerManager.Initialize();
 			base.Initialize();
@@ -61,6 +63,7 @@ namespace Test
 				Exit();
 			}
 
+			myPlayerManager.Update(gameTime);
 			base.Update(gameTime);
 		}
 

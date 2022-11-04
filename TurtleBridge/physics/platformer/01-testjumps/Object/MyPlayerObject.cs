@@ -6,6 +6,7 @@
 		//int spotX, spotY;
 		public int posnX, posnY;
 		public int drawX, drawY;
+		public int tileX, tileY;
 		//int collX, collY;
 		//int prevX, prevY;
 		//int commX, commY;

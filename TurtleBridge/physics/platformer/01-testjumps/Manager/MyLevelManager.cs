@@ -15,7 +15,7 @@ namespace Test
 
 		public void Initialize()
 		{
-			collision_array = GetCollArray();
+			collision_array = GetCollisionArray();
 		}
 
 		public void Draw(SpriteBatch spriteBatch)
@@ -40,7 +40,8 @@ namespace Test
 				}
 			}
 		}
-		private Byte[] GetCollArray()
+
+		private Byte[] GetCollisionArray()
 		{
 			return new byte[Constants.MAX_ROWS * Constants.MAX_COLS]
 			{
