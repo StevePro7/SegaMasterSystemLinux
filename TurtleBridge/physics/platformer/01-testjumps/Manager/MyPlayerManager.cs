@@ -22,9 +22,9 @@ namespace Test
 		public void Initialize()
 		{
 			//po.posnX = 64;
-			po.posnX = 8;
+			po.posnX = 80;
 			//po.posnX = 158;
-			po.posnY = 159;
+			po.posnY = 160;
 			po.frame = 2;
 			updatePlayer();
 		}
