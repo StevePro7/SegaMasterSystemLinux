@@ -38,6 +38,7 @@ namespace Test
 			Logger.Initialize();
 			myContentManager.Initialize(Content);
 			myLevelManager.Initialize();
+			myPlayerManager.Initialize();
 			base.Initialize();
 		}
 

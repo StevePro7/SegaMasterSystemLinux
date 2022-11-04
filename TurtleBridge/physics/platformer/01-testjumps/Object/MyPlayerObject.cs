@@ -4,8 +4,8 @@
 	{
 		////enum_move_type player_move_type;
 		//int spotX, spotY;
-		//int posnX, posnY;
-		//int drawX, drawY;
+		public int posnX, posnY;
+		public int drawX, drawY;
 		//int collX, collY;
 		//int prevX, prevY;
 		//int commX, commY;
@@ -25,5 +25,6 @@
 		////unsbyte anim_index, anim_start, anim_maxim;
 		////sbyte anim_frame, anim_count;
 		//sbyte kill_idx;
+		public byte frame;
 	}
 }

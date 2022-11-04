@@ -8,5 +8,7 @@ namespace Test
 {
 	public class MyCommandManager
 	{
+
+		private Byte[] command_array { get; set; }
 	}
 }
