@@ -67,8 +67,13 @@ namespace Test
 		{
 			int tempPosnY = po.posnY + dy;
 			int tempTileY = tempPosnY >> 3;
-			//int tempColmY = myLevelManager.collision_array[]		// TODO
-			return false;
+			int tempCollY = myLevelManager.collision_array[po.tileX];
+			if (tempTileY == tempCollY)
+			{
+				return false;
+			}
+
+			return true;
 		}
 
 		public void Draw(SpriteBatch spriteBatch)
