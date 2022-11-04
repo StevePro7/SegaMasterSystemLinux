@@ -9,12 +9,14 @@ namespace Test
 	{
 		private MyContentManager myContentManager;
 		private MyInputManager myInputManager;
+		private MyLevelManager myLevelManager;
 		private struct_player_object po;
 
-		public MyPlayerManager(MyContentManager myContentManager, MyInputManager myInputManager)
+		public MyPlayerManager(MyContentManager myContentManager, MyInputManager myInputManager, MyLevelManager myLevelManager)
 		{
 			this.myContentManager = myContentManager;
 			this.myInputManager = myInputManager;
+			this.myLevelManager = myLevelManager;
 		}
 
 		public void Initialize()
@@ -38,13 +40,35 @@ namespace Test
 			if (myInputManager.KeyHold(Keys.Left))
 			{
 				po.posnX -= 1;
+				updatePlayer();
 			}
 			if (myInputManager.KeyHold(Keys.Right))
 			{
 				po.posnX += 1;
+				updatePlayer();
 			}
+			if (myInputManager.KeyHold(Keys.Up))
+			{
+				po.posnY -= 1;
+				updatePlayer();
+			}
+			if (myInputManager.KeyHold(Keys.Down))
+			{
+				const int dy = 1;
+				if (canMoveDown(dy))
+				{
+					po.posnY += dy;
+					updatePlayer();
+				}
+			}
+		}
 
-			updatePlayer();
+		private bool canMoveDown(int dy)
+		{
+			int tempPosnY = po.posnY + dy;
+			int tempTileY = tempPosnY >> 3;
+			//int tempColmY = myLevelManager.collision_array[]		// TODO
+			return false;
 		}
 
 		public void Draw(SpriteBatch spriteBatch)

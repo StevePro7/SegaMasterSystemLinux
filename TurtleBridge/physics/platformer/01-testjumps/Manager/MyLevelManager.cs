@@ -16,6 +16,7 @@ namespace Test
 		public void Initialize()
 		{
 			collision_array = GetCollisionArray();
+			drawtiles_array = GetDrawTilesArray();
 		}
 
 		public void Draw(SpriteBatch spriteBatch)
@@ -26,7 +27,7 @@ namespace Test
 				for (byte col = 0; col < Constants.MAX_COLS; col++)
 				{
 					byte idx = (byte)(row * Constants.MAX_COLS + col);
-					byte val = collision_array[idx];
+					byte val = drawtiles_array[idx];
 					if (0 != val)
 					{
 						pos = new Vector2(col * Constants.TILE_WIDE, row * Constants.TILE_HIGH);
@@ -42,6 +43,14 @@ namespace Test
 		}
 
 		private Byte[] GetCollisionArray()
+		{
+			return new byte[Constants.MAX_COLS]
+			{
+				20,20,20,20,20,0,0,0,0,0,0,20,20,20,20,20,
+			};
+		}
+
+		private Byte[] GetDrawTilesArray()
 		{
 			return new byte[Constants.MAX_ROWS * Constants.MAX_COLS]
 			{
@@ -60,6 +69,7 @@ namespace Test
 			};
 		}
 
-		private Byte[] collision_array { get; set; }
+		public Byte[] collision_array { private get; set; }
+		private Byte[] drawtiles_array { get; set; }
 	}
 }

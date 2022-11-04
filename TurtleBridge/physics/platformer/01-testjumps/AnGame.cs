@@ -27,7 +27,7 @@ namespace Test
 			myContentManager = new MyContentManager();
 			myInputManager = new MyInputManager();
 			myLevelManager = new MyLevelManager(myContentManager);
-			myPlayerManager = new MyPlayerManager(myContentManager, myInputManager);
+			myPlayerManager = new MyPlayerManager(myContentManager, myInputManager, myLevelManager);
 			myScreenManager = new MyScreenManager(myContentManager, myInputManager, myLevelManager, myPlayerManager);
 		}
 
