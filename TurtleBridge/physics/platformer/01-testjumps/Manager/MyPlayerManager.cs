@@ -62,7 +62,10 @@ namespace Test
 			if (myInputManager.KeyHold(Keys.Down))
 			{
 				const int dy = 1;
-				if (canMoveDown(dy))
+				bool isMoveDown = false;
+				int tempCollY = 0;
+				canMoveDown(dy, ref isMoveDown, ref tempCollY);
+				if (isMoveDown)
 				{
 					po.posnY += dy;
 					updatePlayer();
@@ -70,41 +73,43 @@ namespace Test
 				else
 				{
 					// TODO - need to look this up!!
-					po.posnY = 160;
+					po.posnY = tempCollY * 8;
 					updatePlayer();
 				}
 			}
 		}
 
-		private bool canMoveDown(int dy)
+		private void canMoveDown(int dy, ref bool isMoveDown, ref int tempCollY)
 		{
-			int tempCollY = 0;
+			//int tempCollY = 0;
 			int tempPosnY = po.posnY + dy;
 			int tempTileY = tempPosnY >> 3;
 
+			isMoveDown = false;
 			tempCollY = myLevelManager.collision_array[po.tileX + 0];
 			if (tempTileY == tempCollY)
 			{
-				return false;
+				return;
 			}
 			else
 			{
 				tempCollY = myLevelManager.collision_array[po.tileX + 1];
 				if (tempTileY == tempCollY)
 				{
-					return false;
+					return;
 				}
 				else
 				{
 					tempCollY = myLevelManager.collision_array[po.tileX + 2];
 					if (tempTileY == tempCollY)
 					{
-						return false;
+						return;
 					}
 				}
 			}
 
-			return true;
+			isMoveDown = true;
+			return;
 		}
 
 		public void Draw(SpriteBatch spriteBatch)
