@@ -27,7 +27,10 @@ namespace Test
 		private const int Wide = 10;
 		private const int High = 400;
 		private int maxHigh;
+		private int gravPos;
 		private const float gravity = -9.8f;
+		private UInt16[] gravityArr = { 265, 289, 313, 339, 365, 393, 421, 451, 482, 513, 546, 580, 614, 650, 686, 724, 763, 802, 843, 885, 927, 971, 1016, 1061, 1108, 1156, 1204, 1254, 1305, 1356, 1409, 1463 };
+		private byte gravity_idx;
 
 		public MyRocketManager(MyConfigManger myConfigManger)
 		{
@@ -37,7 +40,7 @@ namespace Test
 		public void Initialize()
 		{
 			maxHigh = int.MaxValue;
-
+			gravPos = 0;
 			_rocketPositionList = new List<Vector2>();
 			_rocketPositionList.Clear();
 
@@ -76,21 +79,26 @@ namespace Test
 				//Logger.Info("High  = " + High);
 			}
 
+			int frame = 0;
+			float posX = 0.0f;
+			float posY = 0.0f;
 			while (true)
 			{
 				float delta = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 1000f;
 				timer += delta;
-				float posX = veliX * timer;
-				float posY = (float)(veliY * timer + 0.5 * gravity * timer * timer);
+				posX = veliX * timer;
+				posY = (float)(veliY * timer + 0.5 * gravity * timer * timer);
 
 				_rocketPosition = new Vector2(Wide + posX, High - posY);
 				int tmpHigh = (int)(High - posY);
 				if (tmpHigh < maxHigh)
 				{
 					maxHigh = tmpHigh;
+					gravPos = (int)(Wide + posX);
 				}
-				_rocketPositionList.Add(_rocketPosition);
+					_rocketPositionList.Add(_rocketPosition);
 
+				frame++;
 				if (_rocketPosition.Y >= High)
 				{
 					var maxWide = (int)(Wide + posX);
@@ -105,6 +113,31 @@ namespace Test
 					//Logger.Info("dHigh = " + (High - maxHigh));
 					_loggerOutput = true;
 					break;
+				}
+			}
+
+			posX = 0;
+			posY = maxHigh;
+			gravity_idx = 0;
+			if (frame > 10)
+			{
+				for (int idx = 0; idx < 200; idx++)
+				{
+					_rocketPosition = new Vector2(gravPos + posX, posY);
+					_rocketPositionList.Add(_rocketPosition);
+					posX += 2;
+
+					//var tempHigh = (int)(maxHigh + posY);
+					int gy = gravityArr[gravity_idx];
+					int bigPosnY = (int)posY << 8;
+					bigPosnY += gy;
+					posY = (bigPosnY >> 8);
+
+					gravity_idx++;
+					if (gravity_idx >= gravityArr.Length)
+					{
+						gravity_idx = (byte)(gravityArr.Length - 1);
+					}
 				}
 			}
 		}
