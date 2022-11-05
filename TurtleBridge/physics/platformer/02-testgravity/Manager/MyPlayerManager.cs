@@ -48,9 +48,29 @@ namespace Test
 				var message = $"(x,y)=({po.posnX},{po.posnY})";
 				Logger.Info(message);
 			}
-			if (myInputManager.KeyPress(Keys.Enter))
+			if (myInputManager.KeyPress(Keys.Enter) || (myInputManager.KeyHold(Keys.X)))
 			{
-				gravity_idx = 0;
+				//gravity_idx = 0;
+				po.posnX += 2;
+
+				int gy = gravity[gravity_idx];
+				//bool isMoveDown = false;
+				//int tempCollY = 0;
+				//canMoveDown(gy, ref isMoveDown, ref tempCollY);
+				//if (isMoveDown)
+				{
+					//po.posnY += dy;
+					int bigPosnY = po.posnY << 8;
+					bigPosnY += gy;
+					po.posnY = bigPosnY >> 8;
+					updatePlayer();
+
+					gravity_idx++;
+					if (gravity_idx >= gravity.Length)
+					{
+						gravity_idx = (byte)(gravity.Length - 1);
+					}
+				}
 			}
 			if (myInputManager.KeyHold(Keys.Left))
 			{
