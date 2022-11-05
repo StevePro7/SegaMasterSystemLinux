@@ -12,11 +12,15 @@ namespace Test
 		private MyLevelManager myLevelManager;
 		private struct_player_object po;
 
+		private UInt16[] gravity = { 265, 289, 313, 339, 365, 393, 421, 451, 482, 513, 546, 580, 614, 650, 686, 724, 763, 802, 843, 885, 927, 971, 1016, 1061, 1108, 1156, 1204, 1254, 1305, 1356, 1409, 1463 };
+		private byte gravity_idx;
+
 		public MyPlayerManager(MyContentManager myContentManager, MyInputManager myInputManager, MyLevelManager myLevelManager)
 		{
 			this.myContentManager = myContentManager;
 			this.myInputManager = myInputManager;
 			this.myLevelManager = myLevelManager;
+			gravity_idx = 0;
 		}
 
 		public void Initialize()
@@ -24,7 +28,7 @@ namespace Test
 			//po.posnX = 64;
 			po.posnX = 32;
 			//po.posnX = 158;
-			po.posnY = 160;
+			po.posnY = 32;
 			po.frame = 2;
 			updatePlayer();
 		}
@@ -44,6 +48,10 @@ namespace Test
 				var message = $"(x,y)=({po.posnX},{po.posnY})";
 				Logger.Info(message);
 			}
+			if (myInputManager.KeyPress(Keys.Enter))
+			{
+				gravity_idx = 0;
+			}
 			if (myInputManager.KeyHold(Keys.Left))
 			{
 				po.posnX -= 1;
@@ -51,7 +59,7 @@ namespace Test
 			}
 			if (myInputManager.KeyHold(Keys.Right))
 			{
-				po.posnX += 1;
+				po.posnX += 2;
 				updatePlayer();
 			}
 			if (myInputManager.KeyHold(Keys.Up))
@@ -61,28 +69,41 @@ namespace Test
 			}
 			if (myInputManager.KeyHold(Keys.Down))
 			{
-				const int dy = 1;
+				//const int dy = 1;
+				int gy = gravity[gravity_idx];
+				//byte dy = (byte)(gy >> 8);
 				bool isMoveDown = false;
 				int tempCollY = 0;
-				canMoveDown(dy, ref isMoveDown, ref tempCollY);
+				canMoveDown(gy, ref isMoveDown, ref tempCollY);
 				if (isMoveDown)
 				{
-					po.posnY += dy;
+					//po.posnY += dy;
+					int bigPosnY = po.posnY << 8;
+					bigPosnY += gy;
+					po.posnY = bigPosnY >> 8;
 					updatePlayer();
+
+					gravity_idx++;
+					if (gravity_idx >= gravity.Length)
+					{
+						gravity_idx = (byte)(gravity.Length - 1);
+					}
 				}
 				else
 				{
-					// TODO - need to look this up!!
 					po.posnY = tempCollY * 8;
 					updatePlayer();
 				}
 			}
 		}
 
-		private void canMoveDown(int dy, ref bool isMoveDown, ref int tempCollY)
+		private void canMoveDown(int gy, ref bool isMoveDown, ref int tempCollY)
 		{
 			//int tempCollY = 0;
-			int tempPosnY = po.posnY + dy;
+			int bigPosnY = po.posnY << 8;
+			bigPosnY += gy;
+			int tempPosnY = bigPosnY >> 8;
+			//int tempPosnY = po.posnY + dy;
 			int tempTileY = tempPosnY >> 3;
 
 			isMoveDown = false;
