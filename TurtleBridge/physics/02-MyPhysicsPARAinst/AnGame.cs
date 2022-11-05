@@ -3,16 +3,16 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 
-namespace _02_Test
+namespace Test
 {
-	public class Game1 : Game
+	public class AnGame : Game
 	{
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
 		private readonly MyRocketManager myRocketManager;
 		private readonly MyConfigManger myConfigManger;
 
-		public Game1()
+		public AnGame()
 		{
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = 1280;

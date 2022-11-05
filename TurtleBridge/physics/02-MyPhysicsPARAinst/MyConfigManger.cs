@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Configuration;
 
-namespace _02_Test
+namespace Test
 {
 	public class MyConfigManger
 	{

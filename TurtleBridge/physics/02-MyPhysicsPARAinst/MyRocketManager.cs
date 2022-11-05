@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 
-namespace _02_Test
+namespace Test
 {
 	public class MyRocketManager
 	{
