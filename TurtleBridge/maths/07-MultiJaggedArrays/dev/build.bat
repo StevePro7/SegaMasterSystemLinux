@@ -18,6 +18,7 @@ cd devkit
 cd ..
 
 cd engine
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 array_manager.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 asm_manager.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 content_manager.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 font_manager.c
@@ -46,6 +47,7 @@ sdcc --debug -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-
 ../lib/PSGlib.rel ^
 devkit/_sms_manager.rel ^
 devkit/_snd_manager.rel ^
+engine/array_manager.rel ^
 engine/asm_manager.rel ^
 engine/content_manager.rel ^
 engine/font_manager.rel ^
