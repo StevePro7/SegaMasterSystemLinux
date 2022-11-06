@@ -1,10 +1,13 @@
 M:screen_manager
 F:G$engine_screen_manager_init$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_screen_manager_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lscreen_manager.engine_screen_manager_update$ptr$1_0$6({2}DG,SI:S),R,0,0,[]
+S:Lscreen_manager.engine_screen_manager_update$ptr$1_0$6({2}DG,SI:S),R,0,0,[e,d]
+S:Lscreen_manager.engine_screen_manager_update$len$1_0$6({1}SC:U),R,0,0,[c]
+S:Lscreen_manager.engine_screen_manager_update$data$1_0$6({2}SI:S),R,0,0,[e,d]
 S:Lscreen_manager.engine_screen_manager_update$input$1_0$6({1}SC:U),R,0,0,[a]
 S:G$jump_array_ptr$0_0$0({0}DA0d,DG,SI:S),E,0,0
 S:Fscreen_manager$index$0_0$0({1}SC:U),E,0,0
+S:Fscreen_manager$value$0_0$0({1}SC:U),E,0,0
 S:G$engine_font_manager_draw_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_data$0_0$0({2}DF,SV:S),C,0,0
