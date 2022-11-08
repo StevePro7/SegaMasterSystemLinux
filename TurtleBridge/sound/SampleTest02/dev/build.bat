@@ -14,36 +14,36 @@ REM psg.bat
 
 
 cd devkit
-sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _sms_manager.c
-sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _snd_manager.c
+"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _sms_manager.c
+"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _snd_manager.c
 cd ..
 
 cd engine
-sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 asm_manager.c
-sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 content_manager.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 enum_manager.c
-sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 font_manager.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 global_manager.c
-sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 input_manager.c
-sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 riff_manager.c
-sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 sample_manager.c
-sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 screen_manager.c
+"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 asm_manager.c
+"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 content_manager.c
+::"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 enum_manager.c
+"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 font_manager.c
+::"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 global_manager.c
+"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 input_manager.c
+"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 riff_manager.c
+"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 sample_manager.c
+"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 screen_manager.c
 cd ..
 
 cd object
-sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 riff_object.c
+"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 riff_object.c
 cd ..
 
 cd screen
-sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 none_screen.c
-sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 test_screen.c
-sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 next_screen.c
+"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 none_screen.c
+"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 test_screen.c
+"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 next_screen.c
 cd ..
 
 
 REM echo Build main
-::sdcc -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 game.c
-sdcc -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
+::"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 game.c
+"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
 
 
 :: Calculate the difference in cSeconds
@@ -64,7 +64,7 @@ echo.
 
 
 REM echo Linking
-sdcc --debug -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-loc 0xC000 ^
+"C:\Program Files\SDCC\bin\sdcc" --debug -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-loc 0xC000 ^
 -Wl-b_BANK2=0x8000 -Wl-b_BANK3=0x8000 -Wl-b_BANK4=0x8000 -Wl-b_BANK5=0x8000 ^
 -Wl-b_BANK6=0x8000 -Wl-b_BANK7=0x8000 -Wl-b_BANK8=0x8000 -Wl-b_BANK9=0x8000 ^
 -Wl-b_BANK10=0x8000 ^
@@ -91,7 +91,7 @@ screen/next_screen.rel ^
 content/gfx.rel
 
 REM echo Binary output
-ihx2sms output.ihx output.sms
+"C:\Program Files\SDCC\bin\ihx2sms" output.ihx output.sms
 
 
 REM https://www.askingbox.com/question/batch-script-delete-file-if-it-exists
