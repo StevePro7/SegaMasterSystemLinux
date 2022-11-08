@@ -29,7 +29,7 @@ namespace Test
 			IsFixedTimeStep = true;
 			var fps = 50;
 			TargetElapsedTime = TimeSpan.FromSeconds(1.0f / fps);
-			//myConfigManger.Initialize();
+			myConfigManger.Initialize();
 			myRocketManager.Initialize();
 			base.Initialize();
 		}
@@ -38,6 +38,11 @@ namespace Test
 		{
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 			myRocketManager.LoadContent(Content);
+
+			if (!myRocketManager.IsRocketFlying)
+			{
+				myRocketManager.Launch();
+			}
 		}
 
 		protected override void UnloadContent()
@@ -53,15 +58,9 @@ namespace Test
 			}
 
 			//if (Keyboard.GetState().IsKeyDown(Keys.Space))
-			{
-				if (!myRocketManager.IsRocketFlying)
-				{
-					myConfigManger.Initialize();
-					myRocketManager.Launch(gameTime);
-				}
-			}
+			//{
+			//}
 
-			//myRocketManager.Update(gameTime);
 			base.Update(gameTime);
 		}
 

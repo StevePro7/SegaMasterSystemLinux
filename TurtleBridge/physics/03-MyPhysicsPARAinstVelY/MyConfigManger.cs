@@ -10,8 +10,6 @@ namespace Test
 			Angle = Convert.ToSingle(ConfigurationManager.AppSettings["Angle"]);
 			//Angle = 90 - Angle;
 			Speed = Convert.ToSingle(ConfigurationManager.AppSettings["Speed"]);
-
-			
 		}
 
 		public float Angle { get; private set; }
