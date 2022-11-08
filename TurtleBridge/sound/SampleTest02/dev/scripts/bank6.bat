@@ -5,15 +5,15 @@ cd banks
 cd bank6
 cd raw
 
-pcmenc -rto 1 -dt1 12 -dt2 12 -dt3 423 Riff__05.wav
+"C:\Program Files\SDCC\bin\pcmenc" -rto 1 -dt1 12 -dt2 12 -dt3 423 Riff__05.wav
 mv Riff__05.wav.pcmenc ../
 
 :: Convert.
 cd ../..
-folder2c bank6 bank6 6
+"C:\Program Files\SDCC\bin\folder2c" bank6 bank6 6
 
 :: Compile
-sdcc --debug -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK6 bank6.c
+"C:\Program Files\SDCC\bin\sdcc" --debug -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK6 bank6.c
 
 :: Cleanup
 if exist "*.asm" del "*.asm" > nul; 
