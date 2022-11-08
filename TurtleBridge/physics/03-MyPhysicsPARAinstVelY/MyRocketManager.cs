@@ -86,7 +86,7 @@ namespace Test
 				}
 
 				_rocketPositionList.Add(_rocketPosition);
-				if (frame == 150)
+				if (posY > 0)
 				{
 					break;
 				}
@@ -95,9 +95,16 @@ namespace Test
 
 		public void Draw(SpriteBatch spriteBatch)
 		{
+			int x1 = 0;
+			int x2 = 0;
 			foreach (var pos in _rocketPositionList)
 			{
-				spriteBatch.Draw(_rocketImage, pos, Color.White);
+				var pos1 = new Vector2(x1, pos.Y + 200);
+				var pos2 = new Vector2(x2, pos.Y + 200);
+				spriteBatch.Draw(_rocketImage, pos1, Color.White);
+				spriteBatch.Draw(_rocketImage, pos2, Color.White);
+				x1 += 1;
+				x2 += 2;
 			}
 		}
 
