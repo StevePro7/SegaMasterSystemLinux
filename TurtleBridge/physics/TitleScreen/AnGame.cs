@@ -12,10 +12,10 @@ namespace Test
 		Texture2D[] sprites;
 		RenderTarget2D renderTarget;
 
-		const int MAX_SPRITES = 10;
-		int wide= 32;
-		int high = 32;
-		string[] names = new string[MAX_SPRITES] { "skate01", "skate02", "skateR1", "skateR2", "skateR3", "skateR4", "skateL1", "skateL4", "skateL3", "skateL2" };
+		const int MAX_SPRITES = 2;
+		int wide= 128;
+		int high = 128;
+		string[] names = new string[MAX_SPRITES] { "LetterL", "LetterI" };
 		private bool save;
 
 		public AnGame()
@@ -30,7 +30,7 @@ namespace Test
 		{
 			IsMouseVisible = true;
 			save = false;
-			save = true;
+			//save = true;
 			base.Initialize();
 		}
 
@@ -82,10 +82,7 @@ namespace Test
 			GraphicsDevice.Clear(Color.Black);
 
 			spriteBatch.Begin();
-			for (int idx = 0; idx < MAX_SPRITES; idx++)
-			{
-				spriteBatch.Draw(sprites[idx], new Vector2(0, idx * high), Color.White);
-			}
+			spriteBatch.Draw(sprites[0], new Vector2(0, 0), Color.White);
 			spriteBatch.End();
 			base.Draw(gameTime);
 		}
