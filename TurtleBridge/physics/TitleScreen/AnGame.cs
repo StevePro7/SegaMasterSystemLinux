@@ -42,7 +42,7 @@ namespace Test
 			{
 				sprites[idx] = Content.Load<Texture2D>(names[idx]);
 			}
-			renderTarget = new RenderTarget2D(GraphicsDevice, wide, high * MAX_SPRITES, false, SurfaceFormat.Color, DepthFormat.Depth24);
+			renderTarget = new RenderTarget2D(GraphicsDevice, wide, high, false, SurfaceFormat.Color, DepthFormat.Depth24);
 		}
 
 		protected override void UnloadContent()
@@ -69,7 +69,7 @@ namespace Test
 				Texture2D resolvedTexture = (Texture2D)renderTarget;
 				var name = "sprites.png";
 				Stream stream2 = File.Create(name);
-				resolvedTexture.SaveAsPng(stream2, wide, high * MAX_SPRITES);
+				resolvedTexture.SaveAsPng(stream2, wide, high);
 
 				Exit();
 			}
