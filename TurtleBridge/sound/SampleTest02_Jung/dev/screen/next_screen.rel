@@ -1,10 +1,11 @@
 XL3
-H 9 areas 4 global symbols
+H 9 areas 5 global symbols
 M next_screen
 O -mz80
 S _engine_font_manager_draw_text Ref000000
 S .__.ABS. Def000000
-A _CODE size 2E flags 0 addr 0
+S _engine_input_manager_hold Ref000000
+A _CODE size 3E flags 0 addr 0
 S _screen_next_screen_load Def000000
 S _screen_next_screen_update Def000027
 A _DATA size 0 flags 0 addr 0
@@ -29,5 +30,11 @@ T 1B 00 00 54 48 45 4E 20 46 49 52 45 20 31 00
 R 00 00 00 00
 T 27 00 00
 R 00 00 00 00
-T 27 00 00 C1 E1 E5 C5 36 02 C9
+T 27 00 00 3E 10 F5 33 CD 00 00 4D 33 D1 E1 E5 D5
+R 00 00 00 00 02 08 02 00
+T 34 00 00 79 B7 28 03 36 01 C9
+R 00 00 00 00
+T 3B 00 00
+R 00 00 00 00
+T 3B 00 00 36 02 C9
 R 00 00 00 00
