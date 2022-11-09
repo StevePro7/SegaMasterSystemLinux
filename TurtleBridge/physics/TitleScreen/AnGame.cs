@@ -13,8 +13,8 @@ namespace Test
 		RenderTarget2D renderTarget;
 
 		const int MAX_SPRITES = 2;
-		int wide= 128;
-		int high = 128;
+		int wide= 118;
+		int high = 64;
 		string[] names = new string[MAX_SPRITES] { "LetterL", "LetterI" };
 		private bool save;
 
@@ -22,7 +22,7 @@ namespace Test
 		{
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = wide;
-			graphics.PreferredBackBufferHeight = high * MAX_SPRITES;
+			graphics.PreferredBackBufferHeight = high;
 			Content.RootDirectory = "Content";
 		}
 
@@ -30,7 +30,7 @@ namespace Test
 		{
 			IsMouseVisible = true;
 			save = false;
-			//save = true;
+			save = true;
 			base.Initialize();
 		}
 
@@ -83,6 +83,8 @@ namespace Test
 
 			spriteBatch.Begin();
 			spriteBatch.Draw(sprites[0], new Vector2(0, 0), Color.White);
+			spriteBatch.Draw(sprites[1], new Vector2(44, 0), Color.White);
+			spriteBatch.Draw(sprites[0], new Vector2(74, 0), Color.White);
 			spriteBatch.End();
 			base.Draw(gameTime);
 		}
