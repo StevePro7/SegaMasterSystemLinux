@@ -88,7 +88,7 @@ namespace Test
 
 			spriteBatch.Begin();
 			spriteBatch.Draw(sprites[0], new Vector2(0, 0), Color.White);
-			spriteBatch.Draw(sprites[1], new Vector2(184, 152-64), Color.White);
+			spriteBatch.Draw(sprites[2], new Vector2(186, 152-64), Color.White);
 			//spriteBatch.Draw(sprites[0], new Vector2(74, 0), Color.White);
 			spriteBatch.End();
 			base.Draw(gameTime);
