@@ -12,17 +12,17 @@ namespace Test
 		Texture2D[] sprites;
 		RenderTarget2D renderTarget;
 
-		const int MAX_SPRITES = 2;
-		int wide= 118;
-		int high = 64;
-		string[] names = new string[MAX_SPRITES] { "LetterL", "LetterI" };
+		const int MAX_SPRITES = 3;
+		int wide= 0;
+		int high = 0;
+		string[] names = new string[MAX_SPRITES] { "EK04", "01-sprites", "02-sprites" };
 		private bool save;
 
 		public AnGame()
 		{
 			graphics = new GraphicsDeviceManager(this);
-			graphics.PreferredBackBufferWidth = wide;
-			graphics.PreferredBackBufferHeight = high;
+			//graphics.PreferredBackBufferWidth = wide;
+			//graphics.PreferredBackBufferHeight = high;
 			Content.RootDirectory = "Content";
 		}
 
@@ -42,6 +42,11 @@ namespace Test
 			{
 				sprites[idx] = Content.Load<Texture2D>(names[idx]);
 			}
+			wide = sprites[0].Width;
+			high = sprites[0].Height;
+			graphics.PreferredBackBufferWidth = wide;
+			graphics.PreferredBackBufferHeight = high;
+			graphics.ApplyChanges();
 			renderTarget = new RenderTarget2D(GraphicsDevice, wide, high, false, SurfaceFormat.Color, DepthFormat.Depth24);
 		}
 
@@ -83,8 +88,8 @@ namespace Test
 
 			spriteBatch.Begin();
 			spriteBatch.Draw(sprites[0], new Vector2(0, 0), Color.White);
-			spriteBatch.Draw(sprites[1], new Vector2(44, 0), Color.White);
-			spriteBatch.Draw(sprites[0], new Vector2(74, 0), Color.White);
+			spriteBatch.Draw(sprites[1], new Vector2(184, 152-64), Color.White);
+			//spriteBatch.Draw(sprites[0], new Vector2(74, 0), Color.White);
 			spriteBatch.End();
 			base.Draw(gameTime);
 		}
