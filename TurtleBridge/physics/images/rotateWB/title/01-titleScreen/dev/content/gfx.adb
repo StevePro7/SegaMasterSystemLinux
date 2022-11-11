@@ -1,6 +1,4 @@
 M:gfx
-S:G$bggame_tiles__palette__bin$0_0$0({16}DA16d,SC:U),D,0,0
-S:G$bggame_tiles__tilemap__bin$0_0$0({512}DA512d,SC:U),D,0,0
-S:G$bggame_tiles__tiles__psgcompr$0_0$0({4172}DA4172d,SC:U),D,0,0
-S:G$sprite_tiles__palette__bin$0_0$0({16}DA16d,SC:U),D,0,0
-S:G$sprite_tiles__tiles__psgcompr$0_0$0({2847}DA2847d,SC:U),D,0,0
+S:G$titlescreen__palette__bin$0_0$0({16}DA16d,SC:U),D,0,0
+S:G$titlescreen__tilemap__bin$0_0$0({384}DA384d,SC:U),D,0,0
+S:G$titlescreen__tiles__psgcompr$0_0$0({4869}DA4869d,SC:U),D,0,0
