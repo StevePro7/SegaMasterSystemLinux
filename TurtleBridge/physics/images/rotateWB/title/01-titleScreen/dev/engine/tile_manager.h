@@ -1,6 +1,7 @@
 #ifndef _TILE_MANAGER_H_
 #define _TILE_MANAGER_H_
 
+void engine_tile_manager_draw_title();
 void engine_tile_manager_sky();
 void engine_tile_manager_sea();
 void engine_tile_manager_draw_pipe( unsigned char type, unsigned int x, unsigned char y, unsigned char wide, unsigned char high, unsigned char col );

@@ -5,31 +5,108 @@
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
 
-static void draw_tile_fl02( const unsigned char *array, unsigned char x, unsigned char y, unsigned char w, unsigned char h, unsigned char s, unsigned char f );
+//static void draw_tile_fl02( const unsigned char *array, unsigned char x, unsigned char y, unsigned char w, unsigned char h, unsigned char s, unsigned char f );
 //static void draw_tile_full( const unsigned char *array, unsigned char x, unsigned char y, unsigned char w, unsigned char h );
-static void draw_tile_flip( const unsigned char *array, unsigned char x, unsigned char y, unsigned char w, unsigned char h );
-static void draw_tile_next( const unsigned char *array, unsigned char x, unsigned char y, unsigned char w, unsigned char h );
-static void draw_tile_scroll( const unsigned char *array, unsigned char x, unsigned char y, unsigned char w, unsigned char h, unsigned char col );
+//static void draw_tile_flip( const unsigned char *array, unsigned char x, unsigned char y, unsigned char w, unsigned char h );
+//static void draw_tile_next( const unsigned char *array, unsigned char x, unsigned char y, unsigned char w, unsigned char h );
+//static void draw_tile_scroll( const unsigned char *array, unsigned char x, unsigned char y, unsigned char w, unsigned char h, unsigned char col );
+
+void engine_tile_manager_draw_title()
+{
+	const unsigned char *tiles = titlescreen__tilemap__bin;
+	unsigned int idx;
+	unsigned int val;
+	unsigned char row, col;
+
+	unsigned x,y;
+	unsigned w, h;
+	w = 16;
+	h = 12;
+	x = 8;
+	y = 0;
+	//row = 0;
+	for( row = 0; row < 12; row++ )
+	{
+		for( col = 0; col < w; col++ )
+		{
+		idx = row * 2 * w + col * 2;
+		val = tiles[ idx ];
+		devkit_SMS_setNextTileatXY( x + col, y + row );
+		devkit_SMS_setTile( ( val ) );
+		}
+	}
+
+	//row = 1;
+	////for( row = 0; row < h; row++ )
+	//{
+	//	for( col = 0; col < w; col++ )
+	//	{
+	//		idx = row * 2 * w + col * 2;
+	//		val = tiles[ idx ];
+	//		devkit_SMS_setNextTileatXY( x + col, y + row );
+	//		devkit_SMS_setTile( ( val ) );
+	//	}
+	//}
+
+	//row = 2;
+	////for( row = 0; row < h; row++ )
+	//{
+	//	for( col = 0; col < w; col++ )
+	//	{
+	//		idx = row * 2 * w + col * 2;
+	//		val = tiles[ idx ];
+	//		devkit_SMS_setNextTileatXY( x + col, y + row );
+	//		devkit_SMS_setTile( ( val ) );
+	//	}
+	//}
+	/*
+	row = 0;
+	col = 0;
+	idx = row * w + col * 2;
+	val = tiles[ idx ];
+	devkit_SMS_setNextTileatXY( x + col, y + row );
+	devkit_SMS_setTile( ( val ) );
+
+
+	col = 1;
+	idx = row * w + col * 2;
+	val = tiles[ idx ];
+	devkit_SMS_setNextTileatXY( x + col, y + row );
+	devkit_SMS_setTile( ( val ) );
+
+	col = 2;
+	idx = row * w + col * 2;
+	val = tiles[ idx ];
+	devkit_SMS_setNextTileatXY( x + col, y + row );
+	devkit_SMS_setTile( ( val ) );
+
+	col = 3;
+	idx = row * w + col * 2;
+	val = tiles[ idx ];
+	devkit_SMS_setNextTileatXY( x + col, y + row );
+	devkit_SMS_setTile( ( val ) );
+	*/
+}
 
 
 void engine_tile_manager_draw_pipe( unsigned char type, unsigned int x, unsigned char y, unsigned char wide, unsigned char high, unsigned char col )
 {
-	const unsigned char *tiles = bggame_tiles__tilemap__bin;
-	const unsigned char *array = tile_object_data[ type ];
-	unsigned char idx;
-	unsigned char val;
-	unsigned int off;
-	unsigned char row;
+	//const unsigned char *tiles = bggame_tiles__tilemap__bin;
+	//const unsigned char *array = tile_object_data[ type ];
+	//unsigned char idx;
+	//unsigned char val;
+	//unsigned int off;
+	//unsigned char row;
 
-	for( row = 0; row < high; row++ )
-	{
-		idx = row * wide + col;
-		val = array[ idx ];
-		off = val * 2;
-		devkit_SMS_loadTileMap( x, y + row, ( void * ) &tiles[ off ], 2 );
-	}
+	//for( row = 0; row < high; row++ )
+	//{
+	//	idx = row * wide + col;
+	//	val = array[ idx ];
+	//	off = val * 2;
+	//	devkit_SMS_loadTileMap( x, y + row, ( void * ) &tiles[ off ], 2 );
+	//}
 }
-
+/*
 void engine_tile_manager_draw_norm( unsigned char type, unsigned char x, unsigned char y, unsigned char wide, unsigned char high, unsigned char beg, unsigned char end )
 {
 	const unsigned char *tiles = bggame_tiles__tilemap__bin;
@@ -309,3 +386,4 @@ static void draw_tile_next( const unsigned char *array, unsigned char x, unsigne
 //	const unsigned char high = 3;
 //	engine_tile_manager_draw_flip( type, x, y, wide, high, 0, wide );
 //}
+*/

@@ -5,7 +5,7 @@
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
 #include <stdlib.h>
-
+/*
 const unsigned char *tiles = bggame_tiles__tilemap__bin;
 const unsigned char *array = NULL;
 unsigned char wide = 0;
@@ -175,3 +175,4 @@ void engine_sprite_manager_fish( unsigned char x, unsigned char y )
 //	tile = 21; engine_sprite_manager_draw( x + 32, y, tile );
 //	tile = 22; engine_sprite_manager_draw( x + 64, y, tile );
 //}
+*/
