@@ -23,7 +23,7 @@ void engine_tile_manager_draw_title()
 	w = 16;
 	h = 12;
 	x = 8;
-	y = 0;
+	y = 10;
 	//row = 0;
 	for( row = 0; row < 12; row++ )
 	{

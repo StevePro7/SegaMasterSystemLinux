@@ -4,11 +4,12 @@ S:Ltile_manager.engine_tile_manager_draw_title$tiles$1_0$89({2}DG,SC:U),R,0,0,[]
 S:Ltile_manager.engine_tile_manager_draw_title$idx$1_0$89({2}SI:U),R,0,0,[l,h]
 S:Ltile_manager.engine_tile_manager_draw_title$val$1_0$89({2}SI:U),R,0,0,[e,d]
 S:Ltile_manager.engine_tile_manager_draw_title$row$1_0$89({1}SC:U),R,0,0,[c]
-S:Ltile_manager.engine_tile_manager_draw_title$col$1_0$89({1}SC:U),R,0,0,[b]
+S:Ltile_manager.engine_tile_manager_draw_title$col$1_0$89({1}SC:U),B,1,-1
 S:Ltile_manager.engine_tile_manager_draw_title$x$1_0$89({2}SI:U),R,0,0,[]
 S:Ltile_manager.engine_tile_manager_draw_title$y$1_0$89({2}SI:U),R,0,0,[]
 S:Ltile_manager.engine_tile_manager_draw_title$w$1_0$89({2}SI:U),R,0,0,[]
 S:Ltile_manager.engine_tile_manager_draw_title$h$1_0$89({2}SI:U),R,0,0,[]
+S:Ltile_manager.engine_tile_manager_draw_title$sloc0$0_1$0({1}SC:U),B,1,-1
 F:G$engine_tile_manager_draw_pipe$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Ltile_manager.engine_tile_manager_draw_pipe$type$1_0$94({1}SC:U),B,1,4
 S:Ltile_manager.engine_tile_manager_draw_pipe$x$1_0$94({2}SI:U),B,1,5

@@ -7,7 +7,7 @@ cd gfx
 
 
 :: Tiles
-"C:\SEGA\bmp2tile043\bmp2tile.exe" raw/titlescreen.png -savetiles "titlescreen (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 64  -savetilemap "titlescreen (tilemap).bin" -savepalette "titlescreen (palette).bin" -fullpalette -exit
+"C:\SEGA\bmp2tile043\bmp2tile.exe" raw/titlescreen.png -savetiles "titlescreen (tiles).psgcompr" -removedupes -nomirror -planar -tileoffset 64  -savetilemap "titlescreen (tilemap).bin" -savepalette "titlescreen (palette).bin" -fullpalette -exit
 
 
 :: Sprites
