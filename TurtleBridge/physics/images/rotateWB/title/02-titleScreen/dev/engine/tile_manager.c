@@ -20,12 +20,12 @@ void engine_tile_manager_draw_title()
 
 	unsigned x,y;
 	unsigned w, h;
-	w = 16;
-	h = 12;
-	x = 8;
-	y = 10;
+	w = 18;
+	h = 14;
+	x = 7;
+	y = 0;
 	//row = 0;
-	for( row = 0; row < 12; row++ )
+	for( row = 0; row < h; row++ )
 	{
 		for( col = 0; col < w; col++ )
 		{
