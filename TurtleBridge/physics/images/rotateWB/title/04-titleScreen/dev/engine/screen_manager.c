@@ -10,10 +10,12 @@
 #include "tile_manager.h"
 #include "../devkit/_sms_manager.h"
 
+#define MAX_SPOTS	9
+
 static void draw_sprite( unsigned char idx, unsigned char x, unsigned char y );
 
-static unsigned char posX[] = { 8, 184 };
-static unsigned char posY[] = { 128, 128 };
+static unsigned char posX[ MAX_SPOTS ] = { 8, 30,52,74,96,118,140,162,184 };
+static unsigned char posY[ MAX_SPOTS ] = { 128, 112, 96, 96, 96, 96, 96, 112, 128 };
 static unsigned char idx;
 
 void engine_screen_manager_init()
@@ -34,17 +36,34 @@ void engine_screen_manager_update()
 	input = engine_input_manager_hold_left();
 	if( input )
 	{
-		idx = 1 - idx;
+		if( 0 == idx )
+		{
+			idx = 0;
+		}
+		else
+		{
+			idx--;
+		}
 	}
+
 	input = engine_input_manager_hold_right();
 	if( input )
 	{
-		idx = 1 - idx;
+		if( MAX_SPOTS - 1 == idx )
+		{
+			idx = MAX_SPOTS - 1;
+		}
+		else
+		{
+			idx++;
+		}
 	}
 
 	x = posX[ idx ];
 	y = posY[ idx ];
 
+	engine_font_manager_draw_data( idx, 30, 0 );
+	//draw_sprite( 0, 80, 96 );		// far right
 
 	draw_sprite( 0, x, y );
 	//draw_sprite( 0, 8, 128 );	//left 
