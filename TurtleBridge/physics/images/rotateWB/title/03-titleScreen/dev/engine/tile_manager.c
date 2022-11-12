@@ -21,7 +21,7 @@ void engine_tile_manager_draw_title()
 	unsigned x,y;
 	unsigned w, h;
 	w = 18;
-	h = 14;
+	h = 12;
 	x = 7;
 	y = 0;
 	//row = 0;

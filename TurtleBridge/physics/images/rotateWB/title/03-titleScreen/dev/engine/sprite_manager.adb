@@ -170,6 +170,9 @@ S:G$tile_object_wide$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$tile_object_high$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$tile_object_wideX$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$tile_object_highX$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$bggame_tile__palette__bin$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$bggame_tile__tilemap__bin$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$bggame_tile__tiles__psgcompr$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$titlescreen__palette__bin$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$titlescreen__tilemap__bin$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$titlescreen__tiles__psgcompr$0_0$0({0}DA0d,SC:U),D,0,0

@@ -17,16 +17,16 @@ void engine_font_manager_draw_char( unsigned char ch, unsigned char x, unsigned 
 
 void engine_font_manager_draw_text( unsigned char *text, unsigned char x, unsigned char y )
 {
-	//const unsigned char *pnt = bggame_tiles__tilemap__bin;
-	//unsigned char idx = 0;
+	const unsigned char *pnt = bggame_tile__tilemap__bin;
+	unsigned char idx = 0;
 
-	//while( '\0' != text[ idx ] )
-	//{
-	//	signed char tile = text[ idx ] - TEXT_ROOT;
-	//	devkit_SMS_setNextTileatXY( x++, y );
-	//	devkit_SMS_setTile( *pnt + tile );
-	//	idx++;
-	//}
+	while( '\0' != text[ idx ] )
+	{
+		signed char tile = text[ idx ] - TEXT_ROOT;
+		devkit_SMS_setNextTileatXY( x++, y );
+		devkit_SMS_setTile( *pnt + tile );
+		idx++;
+	}
 }
 
 void engine_font_manager_draw_data( unsigned int data, unsigned char x, unsigned char y )
