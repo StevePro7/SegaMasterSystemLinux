@@ -24,7 +24,9 @@ void engine_screen_manager_init()
 
 void engine_screen_manager_update()
 {
-	draw_sprite( 0, 16, 112 );
+	//draw_sprite( 0, 16, 112 );
+	//draw_sprite( 0, 200, 112 );		// far right
+	draw_sprite( 0, 200 - 16, 128 );		// far right
 }
 
 
