@@ -89,8 +89,8 @@ void engine_tile_manager_draw_title()
 }
 
 
-void engine_tile_manager_draw_pipe( unsigned char type, unsigned int x, unsigned char y, unsigned char wide, unsigned char high, unsigned char col )
-{
+//void engine_tile_manager_draw_pipe( unsigned char type, unsigned int x, unsigned char y, unsigned char wide, unsigned char high, unsigned char col )
+//{
 	//const unsigned char *tiles = bggame_tiles__tilemap__bin;
 	//const unsigned char *array = tile_object_data[ type ];
 	//unsigned char idx;
@@ -105,7 +105,7 @@ void engine_tile_manager_draw_pipe( unsigned char type, unsigned int x, unsigned
 	//	off = val * 2;
 	//	devkit_SMS_loadTileMap( x, y + row, ( void * ) &tiles[ off ], 2 );
 	//}
-}
+//}
 /*
 void engine_tile_manager_draw_norm( unsigned char type, unsigned char x, unsigned char y, unsigned char wide, unsigned char high, unsigned char beg, unsigned char end )
 {

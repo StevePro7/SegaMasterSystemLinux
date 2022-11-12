@@ -34,15 +34,6 @@ S:G$engine_storage_manager_read$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_storage_manager_write$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_storage_manager_erase$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_draw_title$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_tile_manager_sky$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_tile_manager_sea$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_tile_manager_draw_pipe$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_tile_manager_draw_tile$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_tile_manager_draw_norm$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_tile_manager_draw_flip$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_tile_manager_turtle$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_tile_manager_sign$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_tile_manager_scroll_test$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOnFeature$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOffFeature$0_0$0({2}DF,SV:S),C,0,0

@@ -7,6 +7,12 @@ extern const unsigned char	bggame_tiles__tilemap__bin[];
 extern const unsigned char	bggame_tiles__tiles__psgcompr[];
 #define				bggame_tiles__tiles__psgcompr_size 5255
 
+extern const unsigned char	sprite_tiles__palette__bin[];
+#define				sprite_tiles__palette__bin_size 16
+
+extern const unsigned char	sprite_tiles__tiles__psgcompr[];
+#define				sprite_tiles__tiles__psgcompr_size 591
+
 extern const unsigned char	titlescreen__palette__bin[];
 #define				titlescreen__palette__bin_size 16
 
