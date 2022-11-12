@@ -5,13 +5,16 @@
 #include "font_manager.h"
 #include "global_manager.h"
 #include "input_manager.h"
-#include "jump_manager.h"
 #include "sprite_manager.h"
 #include "storage_manager.h"
 #include "tile_manager.h"
 #include "../devkit/_sms_manager.h"
 
 static void draw_sprite( unsigned char idx, unsigned char x, unsigned char y );
+
+static unsigned char posX[] = { 8, 184 };
+static unsigned char posY[] = { 128, 128 };
+static unsigned char idx;
 
 void engine_screen_manager_init()
 {
@@ -20,13 +23,33 @@ void engine_screen_manager_init()
 	engine_font_manager_draw_text( "A TRIBUTE TO THE", 8, 22 );
 	engine_font_manager_draw_text( "GREATEST DAREDEVIL", 7, 23 );
 	devkit_SMS_displayOn();
+	idx = 0;
 }
 
 void engine_screen_manager_update()
 {
-	//draw_sprite( 0, 16, 112 );
+	unsigned char input;
+	unsigned char x, y;
+
+	input = engine_input_manager_hold_left();
+	if( input )
+	{
+		idx = 1 - idx;
+	}
+	input = engine_input_manager_hold_right();
+	if( input )
+	{
+		idx = 1 - idx;
+	}
+
+	x = posX[ idx ];
+	y = posY[ idx ];
+
+
+	draw_sprite( 0, x, y );
+	//draw_sprite( 0, 8, 128 );	//left 
 	//draw_sprite( 0, 200, 112 );		// far right
-	draw_sprite( 0, 200 - 16, 128 );		// far right
+	//draw_sprite( 0, 200 - 16, 128 );		// far right
 }
 
 

@@ -121,4 +121,4 @@ if exist "*.sym" del "*.sym" > nul
 
 :: Run
 ::java -jar C:/SEGA/Emulicious/Emulicious.jar output.sms
-C:/SEGA/Fusion/Fusion.exe output.sms
+    C:/SEGA/Fusion/Fusion.exe output.sms

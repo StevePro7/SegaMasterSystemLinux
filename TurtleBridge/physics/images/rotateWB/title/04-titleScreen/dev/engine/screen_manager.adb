@@ -1,6 +1,9 @@
 M:screen_manager
 F:G$engine_screen_manager_init$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_screen_manager_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lscreen_manager.engine_screen_manager_update$input$1_0$89({1}SC:U),R,0,0,[a]
+S:Lscreen_manager.engine_screen_manager_update$x$1_0$89({1}SC:U),R,0,0,[b]
+S:Lscreen_manager.engine_screen_manager_update$y$1_0$89({1}SC:U),R,0,0,[a]
 F:Fscreen_manager$draw_sprite$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lscreen_manager.draw_sprite$idx$1_0$92({1}SC:U),B,1,4
 S:Lscreen_manager.draw_sprite$x$1_0$92({1}SC:U),B,1,5
@@ -12,10 +15,11 @@ S:Lscreen_manager.draw_sprite$i$1_0$93({1}SC:U),R,0,0,[b]
 S:Lscreen_manager.draw_sprite$j$1_0$93({1}SC:U),R,0,0,[c]
 S:Lscreen_manager.draw_sprite$sloc0$0_1$0({1}SC:U),B,1,-2
 S:Lscreen_manager.draw_sprite$sloc1$0_1$0({1}SC:U),B,1,-1
-T:Fscreen_manager$tag_struct_jump_object[({0}S:S$num_jumps$0_0$0({2}SI:U),Z,0,0)({2}S:S$jump_high$0_0$0({2048}DA1024d,SI:U),Z,0,0)]
 T:Fscreen_manager$tag_struct_storage_object[({0}S:S$Magic$0_0$0({4}SL:U),Z,0,0)({4}S:S$num_jumps$0_0$0({2}SI:U),Z,0,0)({6}S:S$jump_high$0_0$0({1024}DA1024d,SC:U),Z,0,0)({1030}S:S$terminal$0_0$0({1}SC:U),Z,0,0)]
-S:G$global_jump_object$0_0$0({2050}STtag_struct_jump_object:S),E,0,0
+S:Fscreen_manager$posX$0_0$0({2}DA2d,SC:U),E,0,0
+S:Fscreen_manager$posY$0_0$0({2}DA2d,SC:U),E,0,0
 S:G$global_storage_object$0_0$0({1031}STtag_struct_storage_object:S),E,0,0
+S:Fscreen_manager$idx$0_0$0({1}SC:U),E,0,0
 S:G$engine_music_manager_play$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_sound_manager_play$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_bgtiles$0_0$0({2}DF,SV:S),C,0,0
@@ -37,9 +41,6 @@ S:G$engine_input_manager_move_left$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_right$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire1$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire2$0_0$0({2}DF,SC:U),C,0,0
-S:G$engine_jump_manager_init$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_jump_manager_load$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_jump_manager_data$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_sprite_manager_draw$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_storage_manager_available$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_storage_manager_read$0_0$0({2}DF,SV:S),C,0,0
