@@ -63,10 +63,11 @@ void engine_screen_manager_update()
 	x = posX[ idx ];
 	y = posY[ idx ];
 
+	// TODO delete this
 	engine_font_manager_draw_data( idx, 30, 0 );
-	//draw_sprite( 0, 80, 96 );		// far right
-
 	draw_sprite( 0, x, y );
+
+	//draw_sprite( 0, 80, 96 );		// far right
 	//draw_sprite( 0, 8, 128 );	//left 
 	//draw_sprite( 0, 200, 112 );		// far right
 	//draw_sprite( 0, 200 - 16, 128 );		// far right
