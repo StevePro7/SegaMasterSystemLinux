@@ -1,0 +1,129 @@
+;!FILE font_manager.asm
+XL3
+H 9 areas 51 global symbols
+M font_manager
+O -mz80
+S _devkit_SMS_setNextTileatXY Ref000000
+S .__.ABS. Def000000
+S _bggame_tile__tilemap__bin Ref000000
+S _devkit_SMS_setTile Ref000000
+A _CODE size 57 flags 0 addr 0
+S G$engine_font_manager_draw_zero$0$0 Def000056
+S G$engine_font_manager_draw_text$0$0 Def000001
+S A$font_manager$110 Def000033
+S A$font_manager$120 Def00003E
+S A$font_manager$111 Def000034
+S A$font_manager$130 Def000049
+S A$font_manager$121 Def00003F
+S A$font_manager$112 Def000035
+S A$font_manager$103 Def000022
+S A$font_manager$131 Def00004C
+S A$font_manager$122 Def000041
+S A$font_manager$113 Def000036
+S A$font_manager$104 Def000025
+S A$font_manager$132 Def00004D
+S A$font_manager$123 Def000042
+S A$font_manager$114 Def000039
+S A$font_manager$105 Def000028
+S A$font_manager$142 Def000051
+S A$font_manager$124 Def000043
+S A$font_manager$115 Def00003A
+S A$font_manager$106 Def00002B
+S _engine_font_manager_draw_zero Def000056
+S A$font_manager$143 Def000052
+S A$font_manager$125 Def000044
+S A$font_manager$107 Def00002E
+S A$font_manager$126 Def000045
+S A$font_manager$108 Def00002F
+S A$font_manager$136 Def00004E
+S A$font_manager$127 Def000046
+S A$font_manager$109 Def000032
+S A$font_manager$182 Def000056
+S A$font_manager$137 Def00004F
+S A$font_manager$128 Def000047
+S A$font_manager$119 Def00003B
+S A$font_manager$165 Def000055
+S A$font_manager$129 Def000048
+S _engine_font_manager_draw_text Def000001
+S A$font_manager$148 Def000054
+S XG$engine_font_manager_draw_zero$0$0 Def000056
+S G$engine_font_manager_draw_data$0$0 Def000055
+S C$font_manager.c$30$1_0$90 Def000054
+S C$font_manager.c$20$2_0$90 Def00000A
+S XG$engine_font_manager_draw_text$0$0 Def000054
+S A$font_manager$90 Def000018
+S C$font_manager.c$23$1_0$90 Def00000A
+S G$engine_font_manager_draw_char$0$0 Def000000
+S A$font_manager$91 Def00001A
+S A$font_manager$64 Def000000
+S A$font_manager$92 Def00001B
+S A$font_manager$74 Def000001
+S C$font_manager.c$10$0_0$88 Def000000
+S A$font_manager$93 Def00001C
+S A$font_manager$84 Def00000A
+S A$font_manager$75 Def000003
+S C$font_manager.c$18$0_0$90 Def000001
+S A$font_manager$94 Def00001D
+S A$font_manager$85 Def00000D
+S A$font_manager$76 Def000007
+S C$font_manager.c$32$1_0$94 Def000055
+S C$font_manager.c$25$2_0$91 Def00001F
+S A$font_manager$86 Def000010
+S A$font_manager$77 Def000009
+S C$font_manager.c$26$2_0$91 Def000022
+S C$font_manager.c$61$1_0$94 Def000055
+S C$font_manager.c$27$2_0$91 Def00003B
+S A$font_manager$88 Def000012
+S C$font_manager.c$28$2_0$91 Def00004E
+S A$font_manager$98 Def00001F
+S A$font_manager$89 Def000015
+S C$font_manager.c$16$0_0$88 Def000000
+S _engine_font_manager_draw_data Def000055
+S A$font_manager$99 Def000021
+S C$font_manager.c$63$1_0$97 Def000056
+S C$font_manager.c$82$1_0$97 Def000056
+S _engine_font_manager_draw_char Def000000
+S XG$engine_font_manager_draw_data$0$0 Def000055
+S XG$engine_font_manager_draw_char$0$0 Def000000
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 C9
+R 00 00 00 00
+T 01 00 00
+R 00 00 00 00
+T 01 00 00 DD E5 DD 21 00 00 DD 39 3B DD 7E 06 DD
+R 00 00 00 00
+T 0E 00 00 77 FF 0E 00
+R 00 00 00 00
+T 12 00 00
+R 00 00 00 00
+T 12 00 00 DD 6E 04 DD 66 05 06 00 09 7E B7 28 32
+R 00 00 00 00
+T 1F 00 00 C6 E0 47 DD 56 FF DD 34 FF DD 7E FF DD
+R 00 00 00 00
+T 2C 00 00 77 06 C5 DD 7E 07 F5 33 D5 33 CD 00 00
+R 00 00 00 00 02 0E 00 00
+T 39 00 00 F1 C1 3A 00 00 5F 16 00 78 6F 17 9F 67
+R 00 00 00 00 02 06 02 00
+T 46 00 00 19 C5 E5 CD 00 00 F1 C1 0C 18 C1
+R 00 00 00 00 02 07 03 00
+T 51 00 00
+R 00 00 00 00
+T 51 00 00 33 DD E1 C9
+R 00 00 00 00
+T 55 00 00
+R 00 00 00 00
+T 55 00 00 C9
+R 00 00 00 00
+T 56 00 00
+R 00 00 00 00
+T 56 00 00 C9
+R 00 00 00 00
