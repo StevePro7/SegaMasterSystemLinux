@@ -11,8 +11,10 @@ cd gfx
 "C:\SEGA\bmp2tile043\bmp2tile.exe" raw/titlescreen.png -savetiles "titlescreen (tiles).psgcompr" -removedupes -nomirror -planar -tileoffset 64  -savetilemap "titlescreen (tilemap).bin" -savepalette "titlescreen (palette).bin" -fullpalette -exit
 
 :: Sprites
-"C:\SEGA\bmp2tile043\bmp2tile.exe" raw/sprite_tiles.png -savetiles "sprite_tiles (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 0 -savepalette "sprite_tiles (palette).bin" -fullpalette  -spritepalette -exit
-
+"C:\SEGA\bmp2tile043\bmp2tile.exe" raw/skater01.png -savetiles "sprite_tiles01 (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 0 -savepalette "sprite_tiles (palette).bin" -fullpalette  -spritepalette -exit
+"C:\SEGA\bmp2tile043\bmp2tile.exe" raw/skater02.png -savetiles "sprite_tiles02 (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 48 -exit
+"C:\SEGA\bmp2tile043\bmp2tile.exe" raw/skater03.png -savetiles "sprite_tiles03 (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 96 -exit
+"C:\SEGA\bmp2tile043\bmp2tile.exe" raw/skater04.png -savetiles "sprite_tiles04 (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 144 -exit
 
 cd ..
 "C:\Program Files\SDCC\bin\folder2c.exe" gfx gfx

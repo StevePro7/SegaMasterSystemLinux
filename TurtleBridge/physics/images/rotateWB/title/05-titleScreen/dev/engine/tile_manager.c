@@ -13,7 +13,7 @@
 
 void engine_tile_manager_draw_title()
 {
-	const unsigned char *tiles = titlescreen__tilemap__bin;
+	const unsigned char *tiles = 0; // titlescreen__tilemap__bin;
 	unsigned int idx;
 	unsigned int val;
 	unsigned char row, col;

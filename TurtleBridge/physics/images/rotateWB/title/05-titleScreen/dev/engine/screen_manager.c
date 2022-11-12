@@ -65,7 +65,7 @@ void engine_screen_manager_update()
 
 	// TODO delete this
 	engine_font_manager_draw_data( idx, 30, 0 );
-	draw_sprite( 0, x, y );
+	draw_sprite( 3, x, y );
 
 	//draw_sprite( 0, 80, 96 );		// far right
 	//draw_sprite( 0, 8, 128 );	//left 
@@ -76,8 +76,8 @@ void engine_screen_manager_update()
 
 static void draw_sprite( unsigned char idx, unsigned char x, unsigned char y )
 {
-	const unsigned char wide = 6;
-	const unsigned char high = 8;
+	const unsigned char wide = 8;
+	const unsigned char high = 6;
 	unsigned char num;
 
 	unsigned char i, j;

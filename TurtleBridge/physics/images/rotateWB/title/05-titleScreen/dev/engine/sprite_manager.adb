@@ -1,6 +1,7 @@
 M:sprite_manager
 S:G$tile_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$tile_object_dataX$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$engine_sprite_manager_draw$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOnFeature$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOffFeature$0_0$0({2}DF,SV:S),C,0,0
@@ -170,9 +171,8 @@ S:G$tile_object_wide$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$tile_object_high$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$tile_object_wideX$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$tile_object_highX$0_0$0({0}DA0d,SC:U),D,0,0
-S:G$bggame_tile__palette__bin$0_0$0({0}DA0d,SC:U),D,0,0
-S:G$bggame_tile__tilemap__bin$0_0$0({0}DA0d,SC:U),D,0,0
-S:G$bggame_tile__tiles__psgcompr$0_0$0({0}DA0d,SC:U),D,0,0
-S:G$titlescreen__palette__bin$0_0$0({0}DA0d,SC:U),D,0,0
-S:G$titlescreen__tilemap__bin$0_0$0({0}DA0d,SC:U),D,0,0
-S:G$titlescreen__tiles__psgcompr$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$sprite_tiles__palette__bin$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$sprite_tiles01__tiles__psgcompr$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$sprite_tiles02__tiles__psgcompr$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$sprite_tiles03__tiles__psgcompr$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$sprite_tiles04__tiles__psgcompr$0_0$0({0}DA0d,SC:U),D,0,0

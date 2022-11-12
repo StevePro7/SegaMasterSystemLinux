@@ -10,8 +10,17 @@ extern const unsigned char	bggame_tiles__tiles__psgcompr[];
 extern const unsigned char	sprite_tiles__palette__bin[];
 #define				sprite_tiles__palette__bin_size 16
 
-extern const unsigned char	sprite_tiles__tiles__psgcompr[];
-#define				sprite_tiles__tiles__psgcompr_size 591
+extern const unsigned char	sprite_tiles01__tiles__psgcompr[];
+#define				sprite_tiles01__tiles__psgcompr_size 591
+
+extern const unsigned char	sprite_tiles02__tiles__psgcompr[];
+#define				sprite_tiles02__tiles__psgcompr_size 589
+
+extern const unsigned char	sprite_tiles03__tiles__psgcompr[];
+#define				sprite_tiles03__tiles__psgcompr_size 595
+
+extern const unsigned char	sprite_tiles04__tiles__psgcompr[];
+#define				sprite_tiles04__tiles__psgcompr_size 577
 
 extern const unsigned char	titlescreen__palette__bin[];
 #define				titlescreen__palette__bin_size 16
