@@ -15,7 +15,8 @@
 static void draw_sprite( unsigned char idx, unsigned char x, unsigned char y );
 
 static unsigned char posX[ MAX_SPOTS ] = { 8, 30,52,74,96,118,140,162,184 };
-static unsigned char posY[ MAX_SPOTS ] = { 128, 112, 96, 96, 96, 96, 96, 112, 128 };
+//static unsigned char posY[ MAX_SPOTS ] = { 128, 112, 96, 96, 96, 96, 96, 112, 128 };
+static unsigned char posY[ MAX_SPOTS ] = { 128, 112, 104, 100, 96, 100, 104, 112, 128 };
 static unsigned char idx;
 
 void engine_screen_manager_init()
