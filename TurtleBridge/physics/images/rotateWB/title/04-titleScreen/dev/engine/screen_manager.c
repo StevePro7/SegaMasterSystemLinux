@@ -15,7 +15,8 @@ void engine_screen_manager_init()
 {
 	devkit_SMS_displayOff();
 	engine_tile_manager_draw_title();
-	engine_font_manager_draw_text( "STEVEPRO", 10, 20 );
+	engine_font_manager_draw_text( "A TRIBUTE TO THE", 8, 22 );
+	engine_font_manager_draw_text( "GREATEST DAREDEVIL", 7, 23 );
 	devkit_SMS_displayOn();
 }
 
