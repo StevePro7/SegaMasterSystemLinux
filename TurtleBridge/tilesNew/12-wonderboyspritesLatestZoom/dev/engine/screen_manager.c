@@ -37,6 +37,18 @@ void engine_screen_manager_init()
 
 void engine_screen_manager_update()
 {
+	unsigned char input;
+
+	input = engine_input_manager_hold_left();
+	if( input )
+	{
+		frame--;
+	}
+	input = engine_input_manager_hold_right();
+	if( input )
+	{
+		frame++;
+	}
 
 	draw_sprite( frame, 2, 72, 64);
 }
@@ -51,11 +63,11 @@ static void draw_sprite( unsigned char idx, unsigned char size, unsigned char x,
 	unsigned char i, j;
 	if( 0 == idx || 1 == idx || 2 == idx || 4 == idx || 6 == idx || 8 == idx )
 	{
-		x += 4;
+		x += 4 * size;
 	}
 	else //if( 3 == idx || 1 == idx || 2 == idx )
 	{
-		y += 4;
+		y += 4 * size;
 	}
 	for( j = 0; j < high; j++ )
 	{
