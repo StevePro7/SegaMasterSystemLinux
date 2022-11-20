@@ -6,7 +6,8 @@ void main( void )
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
 
-	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_NORMAL() );
+	//devkit_SMS_setSpriteMode( devkit_SPRITEMODE_NORMAL() );
+	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_ZOOMED() );
 	devkit_SMS_useFirstHalfTilesforSprites( false );
 	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );
 
