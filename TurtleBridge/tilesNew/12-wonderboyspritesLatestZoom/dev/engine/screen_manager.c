@@ -39,6 +39,21 @@ void engine_screen_manager_update()
 {
 	unsigned char input;
 
+	input = engine_input_manager_hold_fire2();
+	if( input )
+	{
+		zoomd = 1 - zoomd;
+		if( 0 == zoomd )
+		{
+			devkit_SMS_setSpriteMode( devkit_SPRITEMODE_NORMAL() );
+		}
+		else
+		{
+			devkit_SMS_setSpriteMode( devkit_SPRITEMODE_ZOOMED() );
+		}
+	}
+	
+
 	input = engine_input_manager_hold_left();
 	if( input )
 	{
@@ -50,7 +65,7 @@ void engine_screen_manager_update()
 		frame++;
 	}
 
-	draw_sprite( frame, 2, 72, 64);
+	draw_sprite( frame, zoomd + 1, 72, 64);
 }
 
 static void draw_sprite( unsigned char idx, unsigned char size, unsigned char x, unsigned char y )
