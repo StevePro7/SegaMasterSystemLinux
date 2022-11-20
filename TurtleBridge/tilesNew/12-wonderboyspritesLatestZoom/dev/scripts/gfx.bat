@@ -13,7 +13,6 @@ cd gfx
 :: Sprites
 "C:\SEGA\bmp2tile043\bmp2tile.exe" raw/sprite_tiles.png -savetiles "sprite_tiles (tiles).psgcompr" -noremovedupes -nomirror -planar -tileoffset 0 -savepalette "sprite_tiles (palette).bin" -fullpalette  -spritepalette -exit
 
-
 cd ..
 "C:\Program Files\SDCC\bin\folder2c.exe" gfx gfx
 
