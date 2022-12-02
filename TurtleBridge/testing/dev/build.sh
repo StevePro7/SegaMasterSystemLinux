@@ -103,7 +103,7 @@ echo Execute
 ihx2sms output.ihx output.sms
 
 echo Copy
-cp output.sms ../stevepro.sms
+cp output.sms ../myTitleScreen.sms
 
 ## Delete
 ##cd banks

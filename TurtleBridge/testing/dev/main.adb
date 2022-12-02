@@ -1,6 +1,6 @@
 M:main
 F:G$main$0_0$0({2}DF,SV:S),C,0,0,0,0,0
-S:Lmain.main$open_screen_type$1_0$123({1}SC:U),R,0,0,[]
+S:Lmain.main$open_screen_type$1_0$124({1}SC:U),R,0,0,[]
 S:G$atof$0_0$0({2}DF,SF:S),C,0,0
 S:G$atoi$0_0$0({2}DF,SI:S),C,0,0
 S:G$atol$0_0$0({2}DF,SL:S),C,0,0
@@ -198,6 +198,8 @@ S:G$engine_input_manager_move_left$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_right$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire1$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire2$0_0$0({2}DF,SC:U),C,0,0
+S:G$engine_riff_manager_init$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_riff_manager_play$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_screen_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_screen_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$main$0_0$0({2}DF,SV:S),C,0,0

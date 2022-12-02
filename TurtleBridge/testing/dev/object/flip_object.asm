@@ -127,7 +127,7 @@ _flip_array_06:
 	.db #0x03	; 3
 	.db #0x04	; 4
 	.db #0x04	; 4
-	.db #0x04	; 4
+	.db #0x05	; 5
 	.area _INITIALIZER
 Fflip_object$__xinit_flip_array_ptr$0_0$0 == .
 __xinit__flip_array_ptr:
