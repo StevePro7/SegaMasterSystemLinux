@@ -36,7 +36,7 @@ void screen_test_screen_load()
 	engine_font_manager_draw_text( "GREATEST DAREDEVIL", 7, 23 );
 	devkit_SMS_displayOn();
 
-	jump_ptr = flip_array_ptr[ FLIP_INDEX ];
+	jump_ptr = flip_array_ptr[ 2 ];
 	index = 0;
 	check = 0;
 }
@@ -80,15 +80,16 @@ static void draw_sprite( unsigned char idx, unsigned char mode, unsigned char x,
 {
 	engine_sprite_manager_draw_player( idx, mode, x, y );
 
-	engine_sprite_manager_draw_tile( mode, 0, y );
-	engine_sprite_manager_draw_tile( mode, 8, y );
-	engine_sprite_manager_draw_tile( mode, 192, y );
-	engine_sprite_manager_draw_tile( mode, 224, y );
+	engine_sprite_manager_draw_tile( mode, 0, y + mode * 0 );
+	engine_sprite_manager_draw_tile( mode, 8, y + mode * 0 );
+	engine_sprite_manager_draw_tile( mode, 192, y + mode * 0 );
+	engine_sprite_manager_draw_tile( mode, 224, y + mode * 0 );
 
-	engine_sprite_manager_draw_tile( mode, 0, y + 16 );
-	engine_sprite_manager_draw_tile( mode, 8, y + 16 );
-	engine_sprite_manager_draw_tile( mode, 192, y + 16 );
-	engine_sprite_manager_draw_tile( mode, 224, y + 16 );
+	engine_sprite_manager_draw_tile( mode, 0, y + mode * 16 );
+	engine_sprite_manager_draw_tile( mode, 8, y + mode * 16 );
+	engine_sprite_manager_draw_tile( mode, 192, y + mode * 16 );
+	engine_sprite_manager_draw_tile( mode, 224, y + mode * 16 );
+
 
 	// const unsigned char wide = 4;
 	// const unsigned char high = 4;
