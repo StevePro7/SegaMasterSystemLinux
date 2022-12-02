@@ -4,6 +4,7 @@
 #include "../engine/global_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/riff_manager.h"
+#include "../engine/sprite_manager.h"
 #include "../engine/tile_manager.h"
 #include "../object/flip_object.h"
 #include "../devkit/_sms_manager.h"
@@ -12,7 +13,7 @@
 
 #define FLIP_INDEX	6
 
-static void draw_sprite( unsigned char idx, unsigned char size, unsigned char x, unsigned char y );
+static void draw_sprite( unsigned char idx, unsigned char mode, unsigned char x, unsigned char y );
 
 static unsigned char posX[ MAX_SPOTS ] = { 8, 30, 52, 74, 96, 118, 140, 162, 184 };
 static unsigned char posY[ MAX_SPOTS ] = { 128, 112, 104, 100, 96, 100, 104, 112, 128 };
@@ -75,27 +76,39 @@ void screen_test_screen_update( unsigned char *screen_type )
 	*screen_type = screen_type_test;
 }
 
-static void draw_sprite( unsigned char idx, unsigned char size, unsigned char x, unsigned char y )
+static void draw_sprite( unsigned char idx, unsigned char mode, unsigned char x, unsigned char y )
 {
-	const unsigned char wide = 4;
-	const unsigned char high = 4;
-	unsigned char num;
+	engine_sprite_manager_draw_player( idx, mode, x, y );
+
+	engine_sprite_manager_draw_tile( mode, 0, y );
+	engine_sprite_manager_draw_tile( mode, 8, y );
+	engine_sprite_manager_draw_tile( mode, 192, y );
+	engine_sprite_manager_draw_tile( mode, 224, y );
+
+	engine_sprite_manager_draw_tile( mode, 0, y + 16 );
+	engine_sprite_manager_draw_tile( mode, 8, y + 16 );
+	engine_sprite_manager_draw_tile( mode, 192, y + 16 );
+	engine_sprite_manager_draw_tile( mode, 224, y + 16 );
+
+	// const unsigned char wide = 4;
+	// const unsigned char high = 4;
+	// unsigned char num;
 	
-	unsigned char i, j;
-	if( 0 == idx || 1 == idx || 2 == idx || 4 == idx || 6 == idx || 8 == idx )
-	{
-		x += 4 * size;
-	}
-	else //if( 3 == idx || 1 == idx || 2 == idx )
-	{
-		y += 4 * size;
-	}
-	for( j = 0; j < high; j++ )
-	{
-		for( i = 0; i < wide; i++ )
-		{
-			num = ( idx * wide * high ) + j * wide + i;
-			devkit_SMS_addSprite( x + i * size * 8, y + j * size * 8, SPRITE_TILES + num );
-		}
-	}
+	// unsigned char i, j;
+	// if( 0 == idx || 1 == idx || 2 == idx || 4 == idx || 6 == idx || 8 == idx )
+	// {
+	// 	x += 4 * size;
+	// }
+	// else //if( 3 == idx || 1 == idx || 2 == idx )
+	// {
+	// 	y += 4 * size;
+	// }
+	// for( j = 0; j < high; j++ )
+	// {
+	// 	for( i = 0; i < wide; i++ )
+	// 	{
+	// 		num = ( idx * wide * high ) + j * wide + i;
+	// 		devkit_SMS_addSprite( x + i * size * 8, y + j * size * 8, SPRITE_TILES + num );
+	// 	}
+	// }
 }

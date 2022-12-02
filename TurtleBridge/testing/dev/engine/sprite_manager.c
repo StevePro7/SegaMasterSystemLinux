@@ -4,6 +4,14 @@
 #include "global_manager.h"
 #include "../devkit/_sms_manager.h"
 
+void engine_sprite_manager_draw_tile( unsigned char mode, unsigned char x, unsigned char y )
+{
+	devkit_SMS_addSprite( x + mode * 0, y + mode * 0, SPRITE_TILES );
+	devkit_SMS_addSprite( x + mode * 8, y + mode * 0, SPRITE_TILES );
+	devkit_SMS_addSprite( x + mode * 0, y + mode * 8, SPRITE_TILES );
+	devkit_SMS_addSprite( x + mode * 8, y + mode * 8, SPRITE_TILES );
+}
+
 void engine_sprite_manager_draw_player( unsigned char idx, unsigned char mode, unsigned char x, unsigned char y )
 {
 	const unsigned char wide = 4;
