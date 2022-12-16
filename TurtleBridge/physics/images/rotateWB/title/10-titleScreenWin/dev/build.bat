@@ -37,10 +37,10 @@ cd engine
 ::"C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 tile_manager.c
 cd ..
 
-::cd object
-::"C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 flip_object.c
+cd object
+"C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 flip_object.c
 ::"C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 riff_object.c
-::cd ..
+cd ..
 
 cd screen
 ::"C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 func_screen.c
