@@ -36,7 +36,7 @@ void screen_test_screen_load()
 	engine_font_manager_draw_text( "GREATEST DAREDEVIL", 7, 23 );
 	devkit_SMS_displayOn();
 
-	jump_ptr = flip_array_ptr[ 2 ];
+	jump_ptr = flip_array_ptr[ 0 ];
 	index = 0;
 	check = 0;
 }
