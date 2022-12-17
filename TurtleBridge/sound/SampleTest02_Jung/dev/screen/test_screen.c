@@ -26,7 +26,7 @@ void screen_test_screen_update( unsigned char *screen_type )
 	if( check == 0 )
 	{
 		check = 1;
-		for( value = 0; value < 7; value++ )
+		for( value = 0; value < 9; value++ )
 		{
 			//	engine_font_manager_draw_text( "RIFF", 4, value );
 			//	engine_font_manager_draw_data( value, 24, value );
