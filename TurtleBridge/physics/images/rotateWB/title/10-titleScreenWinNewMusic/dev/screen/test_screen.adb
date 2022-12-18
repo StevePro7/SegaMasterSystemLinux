@@ -2,7 +2,7 @@ M:test_screen
 F:G$screen_test_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_test_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Ltest_screen.screen_test_screen_update$screen_type$1_0$92({2}DG,SC:U),B,1,4
-S:Ltest_screen.screen_test_screen_update$input$1_0$93({1}SC:U),R,0,0,[a]
+S:Ltest_screen.screen_test_screen_update$input$1_0$93({1}SC:U),R,0,0,[l]
 S:Ltest_screen.screen_test_screen_update$x$1_0$93({1}SC:U),R,0,0,[c]
 S:Ltest_screen.screen_test_screen_update$y$1_0$93({1}SC:U),R,0,0,[b]
 S:Ltest_screen.screen_test_screen_update$f$1_0$93({1}SC:U),R,0,0,[a]

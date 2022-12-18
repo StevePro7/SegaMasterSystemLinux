@@ -29,6 +29,7 @@ static unsigned char check;
 
 void screen_test_screen_load()
 {
+	engine_riff_manager_init();
 	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_ZOOMED() );
 	devkit_SMS_displayOff();
 	engine_tile_manager_draw_title();
@@ -68,11 +69,11 @@ void screen_test_screen_update( unsigned char *screen_type )
 	if ( input || index + 1 >= MAX_SPOTS )
 	{
 		check = 1;
+		*screen_type = screen_type_func;
 		return;
 	}
 
-	index++;	
-
+	index++;
 	*screen_type = screen_type_test;
 }
 
