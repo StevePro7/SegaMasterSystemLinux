@@ -126,7 +126,7 @@ namespace ScreenShotTest
 			graphics.GraphicsDevice.Clear(Color.Black);
 			spriteBatch.Begin();
 			//spriteBatch.Draw(images[0], Vector2.Zero, Color.White);
-			spriteBatch.Draw(images[1], new Vector2(8, 32), Color.White);
+			spriteBatch.Draw(images[1], new Vector2(8, 0), Color.White);
 			spriteBatch.Draw(images[2], new Vector2(8, 80), Color.White);
 			spriteBatch.End();
 		}

@@ -57,7 +57,7 @@ void engine_screen_manager_init()
 	posY = MAX_FLOOR;
 	posY2 = posY << 8;
 
-	engine_tile_manager_gfx2();
+	engine_tile_manager_gfx();
 	//devkit_SMS_setBGScrollX( 0 );
 //	engine_music_manager_play();
 }
