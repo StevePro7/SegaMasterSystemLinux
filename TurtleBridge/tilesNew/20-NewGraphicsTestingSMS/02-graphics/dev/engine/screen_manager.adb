@@ -64,6 +64,7 @@ S:G$engine_storage_manager_available$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_storage_manager_read$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_storage_manager_write$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_storage_manager_erase$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_tile_manager_gfx2$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_gfx$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOnFeature$0_0$0({2}DF,SV:S),C,0,0

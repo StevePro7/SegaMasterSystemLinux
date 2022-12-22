@@ -24,8 +24,8 @@ namespace ScreenShotTest
 
 		public AnGame()
 		{
-			wide = 128;
-			high = 32 + 80;
+			wide = 72;
+			high = 80 + 48;
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = wide;
 			graphics.PreferredBackBufferHeight = high;
@@ -61,7 +61,7 @@ namespace ScreenShotTest
 			images = new Texture2D[3];
 			images[0] = Content.Load<Texture2D>("font_tiles");
 			images[1] = Content.Load<Texture2D>("section01_rght_64x80");
-			images[2] = Content.Load<Texture2D>("section02_rght_64x48");
+			images[2] = Content.Load<Texture2D>("section02_left_64x48");
 
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
 			wide = pp.BackBufferWidth;
@@ -125,9 +125,9 @@ namespace ScreenShotTest
 		{
 			graphics.GraphicsDevice.Clear(Color.Black);
 			spriteBatch.Begin();
-			spriteBatch.Draw(images[0], Vector2.Zero, Color.White);
+			//spriteBatch.Draw(images[0], Vector2.Zero, Color.White);
 			spriteBatch.Draw(images[1], new Vector2(8, 32), Color.White);
-			//spriteBatch.Draw(images[2], new Vector2(8, 80), Color.White);
+			spriteBatch.Draw(images[2], new Vector2(8, 80), Color.White);
 			spriteBatch.End();
 		}
 
