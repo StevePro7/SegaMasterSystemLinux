@@ -1,7 +1,7 @@
 #include "sprite_manager.h"
 #include "enum_manager.h"
 #include "global_manager.h"
-#include "../object/tile_object.h"
+//#include "../object/tile_object.h"
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
 #include <stdlib.h>
@@ -13,9 +13,7 @@ unsigned char high = 0;
 
 static void load_variables( unsigned char type )
 {
-	array = tile_object_dataX[ type ];
-	wide = tile_object_wideX[ type ];
-	high = tile_object_highX[ type ];
+	
 }
 
 void engine_tile_manager_seaX( unsigned char equator )
