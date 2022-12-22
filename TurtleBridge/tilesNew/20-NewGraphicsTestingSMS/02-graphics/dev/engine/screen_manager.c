@@ -27,6 +27,8 @@ static unsigned int posY2;
 static unsigned char scrollX, scrollY;
 static unsigned char storage_available;
 
+static unsigned int tmp;
+
 void engine_screen_manager_init()
 {
 	struct_jump_object *jo = &global_jump_object;
@@ -57,7 +59,8 @@ void engine_screen_manager_init()
 	posY = MAX_FLOOR;
 	posY2 = posY << 8;
 
-	engine_tile_manager_gfx();
+	tmp = 180;
+	engine_tile_manager_gfx2(tmp);
 	//devkit_SMS_setBGScrollX( 0 );
 //	engine_music_manager_play();
 }
@@ -65,11 +68,14 @@ void engine_screen_manager_init()
 void engine_screen_manager_update()
 {
 	//struct_jump_object *jo = &global_jump_object;
-	//unsigned char input;
+	unsigned char input;
 
-	//input = engine_input_manager_move_left();
-	//if( input )
-	//{
+	input = engine_input_manager_hold_left();
+	if( input )
+	{
+		tmp -= 2;
+		engine_tile_manager_gfx2( tmp );
+	}
 	//	if( scrollY )
 	//	{
 	//		devkit_SMS_setBGScrollX( scrollX-- );
@@ -95,10 +101,12 @@ void engine_screen_manager_update()
 	//	}
 	//}
 
-	//input = engine_input_manager_hold_fire1();
-	//if( input )
-	//{
-	//	frame++;
+	input = engine_input_manager_hold_right();
+	if( input )
+	{
+		tmp += 2;
+		engine_tile_manager_gfx2( tmp );
+	}
 	//	if( frame >= 10 )
 	//	{
 	//		frame = 0;
