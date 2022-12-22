@@ -15,19 +15,20 @@ namespace ScreenShotTest
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
 		RenderTarget2D renderTarget;
-		private Texture2D image;
+		private Texture2D[] images;
 		private const int offset = 0;
 
 		private bool save;
 
-		private int width;
-		private int height;
+		private int wide, high;
 
 		public AnGame()
 		{
+			wide = 128;
+			high = 32 + 80;
 			graphics = new GraphicsDeviceManager(this);
-			graphics.PreferredBackBufferWidth = (16 + offset) * 10 + 1;
-			graphics.PreferredBackBufferHeight = (16 + offset) * 10 + 1;
+			graphics.PreferredBackBufferWidth = wide;
+			graphics.PreferredBackBufferHeight = high;
 			Content.RootDirectory = "Content";
 		}
 
@@ -57,13 +58,15 @@ namespace ScreenShotTest
 		{
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch(GraphicsDevice);
-			image = Content.Load<Texture2D>("Title");
+			images = new Texture2D[3];
+			images[0] = Content.Load<Texture2D>("font_tiles");
+			images[1] = Content.Load<Texture2D>("section01_rght_64x80");
+			images[2] = Content.Load<Texture2D>("section02_rght_64x48");
 
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
-			width = pp.BackBufferWidth;
-			height = pp.BackBufferHeight;
-			//renderTarget = new RenderTarget2D(GraphicsDevice, width, height, 1, GraphicsDevice.DisplayMode.Format);
-			renderTarget = new RenderTarget2D(GraphicsDevice, width, height, false, SurfaceFormat.Color, DepthFormat.Depth24);
+			wide = pp.BackBufferWidth;
+			high = pp.BackBufferHeight;
+			renderTarget = new RenderTarget2D(GraphicsDevice, wide, high, false, SurfaceFormat.Color, DepthFormat.Depth24);
 		}
 
 		/// <summary>
@@ -104,14 +107,10 @@ namespace ScreenShotTest
 				Draw();
 				base.Draw(gameTime);
 
-				//GraphicsDevice.SetRenderTarget(0, null);
 				GraphicsDevice.SetRenderTarget(null);
-				//Texture2D resolvedTexture = renderTarget.GetTexture();
 				Texture2D resolvedTexture = (Texture2D)renderTarget;
-				//resolvedTexture.Save("00.jpg", ImageFileFormat.Jpg);
-				Stream stream = File.Create("xx.png");
-				//resolvedTexture.SaveAsJpeg(stream, width, height);
-				resolvedTexture.SaveAsPng(stream, width, height);
+				Stream stream = File.Create("graphics.png");
+				resolvedTexture.SaveAsPng(stream, wide, high);
 		
 				Exit();
 			}
@@ -126,7 +125,9 @@ namespace ScreenShotTest
 		{
 			graphics.GraphicsDevice.Clear(Color.Black);
 			spriteBatch.Begin();
-			spriteBatch.Draw(image, Vector2.Zero, Color.White);
+			spriteBatch.Draw(images[0], Vector2.Zero, Color.White);
+			spriteBatch.Draw(images[1], new Vector2(8, 32), Color.White);
+			//spriteBatch.Draw(images[2], new Vector2(8, 80), Color.White);
 			spriteBatch.End();
 		}
 
