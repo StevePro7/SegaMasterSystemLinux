@@ -15,7 +15,7 @@ void engine_tile_manager_gfx()
 	unsigned w, h;
 	w = 9;
 	h = 10;
-	x = 7;
+	x = 17;
 	y = 14;
 
 	for( row = 0; row < h; row++ )
