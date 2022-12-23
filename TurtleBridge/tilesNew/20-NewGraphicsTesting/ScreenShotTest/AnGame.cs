@@ -22,11 +22,18 @@ namespace ScreenShotTest
 
 		private int wide, high;
 
+		private IOutput output;
+		private AssetManager assetManager;
+
 		public AnGame()
 		{
-			wide = 72;
-			high = 80 + 48;
+			assetManager = new AssetManager();
+			output = new Output01();
 			graphics = new GraphicsDeviceManager(this);
+			output.Ctor(graphics);
+			wide = output.Wide;
+			high = output.High;
+
 			graphics.PreferredBackBufferWidth = wide;
 			graphics.PreferredBackBufferHeight = high;
 			Content.RootDirectory = "Content";
@@ -58,6 +65,7 @@ namespace ScreenShotTest
 		{
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch(GraphicsDevice);
+			assetManager.LoadContent(Content);
 			images = new Texture2D[3];
 			images[0] = Content.Load<Texture2D>("font_tiles");
 			images[1] = Content.Load<Texture2D>("section01_rght_64x80");
