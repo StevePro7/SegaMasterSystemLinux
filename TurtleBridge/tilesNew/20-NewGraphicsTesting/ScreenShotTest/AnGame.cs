@@ -45,7 +45,7 @@ namespace ScreenShotTest
 			//{
 			//	save = Convert.ToBoolean(ConfigurationManager.AppSettings["save"]);
 			//}
-			save = true;
+			//save = true;
 			IsMouseVisible = true;
 			base.Initialize();
 		}
