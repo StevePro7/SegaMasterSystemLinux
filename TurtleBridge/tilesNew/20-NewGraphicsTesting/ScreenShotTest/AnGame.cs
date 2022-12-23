@@ -85,8 +85,7 @@ namespace ScreenShotTest
 				Texture2D resolvedTexture = (Texture2D)renderTarget;
 				string name = output.GetType().Name;
 				Stream stream = File.Create(name + ".png");
-				//resolvedTexture.SaveAsPng(stream, wide, high);
-		
+				resolvedTexture.SaveAsPng(stream, wide, high);
 				Exit();
 			}
 			else
