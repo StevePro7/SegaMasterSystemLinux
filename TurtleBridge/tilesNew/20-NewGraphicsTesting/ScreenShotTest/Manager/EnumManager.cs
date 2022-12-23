@@ -3,8 +3,9 @@
 	public enum AssetType
 	{
 		font = 0,
-		block = 1,
-		title = 2,
+		font_old = 1,
+		block = 2,
+		title = 3,
 	}
 
 	public enum AssetType2
