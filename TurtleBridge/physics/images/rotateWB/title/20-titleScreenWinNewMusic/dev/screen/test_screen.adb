@@ -1,11 +1,11 @@
 M:test_screen
 F:G$screen_test_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_test_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Ltest_screen.screen_test_screen_update$screen_type$1_0$92({2}DG,SC:U),B,1,4
-S:Ltest_screen.screen_test_screen_update$input$1_0$93({1}SC:U),R,0,0,[l]
-S:Ltest_screen.screen_test_screen_update$x$1_0$93({1}SC:U),R,0,0,[c]
-S:Ltest_screen.screen_test_screen_update$y$1_0$93({1}SC:U),R,0,0,[b]
-S:Ltest_screen.screen_test_screen_update$f$1_0$93({1}SC:U),R,0,0,[a]
+S:Ltest_screen.screen_test_screen_update$screen_type$1_0$93({2}DG,SC:U),B,1,4
+S:Ltest_screen.screen_test_screen_update$input$1_0$94({1}SC:U),R,0,0,[a]
+S:Ltest_screen.screen_test_screen_update$x$1_0$94({1}SC:U),B,1,-1
+S:Ltest_screen.screen_test_screen_update$y$1_0$94({1}SC:U),R,0,0,[c]
+S:Ltest_screen.screen_test_screen_update$f$1_0$94({1}SC:U),R,0,0,[a]
 S:Ltest_screen.screen_test_screen_update$sloc0$0_1$0({1}SC:U),B,1,-1
 F:Ftest_screen$draw_sprite$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Ltest_screen.draw_sprite$idx$1_0$96({1}SC:U),B,1,4
@@ -18,6 +18,7 @@ S:G$flip_array_ptr$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:Ftest_screen$jump_ptr$0_0$0({2}DG,SC:U),E,0,0
 S:Ftest_screen$index$0_0$0({1}SC:U),E,0,0
 S:Ftest_screen$check$0_0$0({1}SC:U),E,0,0
+S:Ftest_screen$tmp$0_0$0({2}SI:U),E,0,0
 S:G$engine_font_manager_draw_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_data$0_0$0({2}DF,SV:S),C,0,0

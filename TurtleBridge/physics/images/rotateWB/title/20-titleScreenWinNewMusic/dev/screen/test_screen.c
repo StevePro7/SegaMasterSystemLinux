@@ -27,12 +27,15 @@ static const unsigned char *jump_ptr;
 static unsigned char index;
 static unsigned char check;
 
+static unsigned int tmp;
+
 void screen_test_screen_load()
 {
 	engine_riff_manager_init();
 	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_ZOOMED() );
 	devkit_SMS_displayOff();
-	engine_tile_manager_draw_title();
+	tmp = 136;
+	engine_tile_manager_draw_title( tmp );
 	engine_font_manager_draw_text( "A TRIBUTE TO THE", 8, 22 );
 	engine_font_manager_draw_text( "GREATEST DAREDEVIL", 7, 23 );
 	devkit_SMS_displayOn();
@@ -47,14 +50,30 @@ void screen_test_screen_update( unsigned char *screen_type )
 	unsigned char input;
 	unsigned char x, y, f;
 	
-	if (check)
-	{
-		x = posX[ index ];
-		y = posY[ index ];
-		f = jump_ptr[ index ];
-		draw_sprite( f, sprite_mode_zoomed, x, y );
-		return;
-	}
+	////if (check)
+	////{
+	////	x = posX[ index ];
+	////	y = posY[ index ];
+	////	f = jump_ptr[ index ];
+	////	draw_sprite( f, sprite_mode_zoomed, x, y );
+	////	return;
+	////}
+
+	//TODO delete
+	//input = engine_input_manager_hold_left();
+	//if( input )
+	//{
+	//	tmp -= 2;
+	//	engine_tile_manager_draw_title( tmp );
+	//	engine_font_manager_draw_data( tmp, 20, 10 );
+	//}
+	//input = engine_input_manager_hold_right();
+	//if( input )
+	//{
+	//	tmp += 2;
+	//	engine_tile_manager_draw_title( tmp );
+	//	engine_font_manager_draw_data( tmp, 20, 10 );
+	//}
 
 	engine_riff_manager_play( index );
 	
@@ -69,7 +88,7 @@ void screen_test_screen_update( unsigned char *screen_type )
 	if ( input || index + 1 >= MAX_SPOTS )
 	{
 		check = 1;
-		*screen_type = screen_type_func;
+		//*screen_type = screen_type_func;
 		return;
 	}
 

@@ -11,16 +11,16 @@
 //static void draw_tile_next( const unsigned char *array, unsigned char x, unsigned char y, unsigned char w, unsigned char h );
 //static void draw_tile_scroll( const unsigned char *array, unsigned char x, unsigned char y, unsigned char w, unsigned char h, unsigned char col );
 
-void engine_tile_manager_draw_title()
+void engine_tile_manager_draw_title( unsigned int tmp )
 {
-	const unsigned char *tiles = titlescreen__tilemap__bin;
+	const unsigned char *tiles = bggame_tiles__tilemap__bin;
 	unsigned int idx;
 	unsigned int val;
 	unsigned char row, col;
 
 	unsigned x,y;
 	unsigned w, h;
-	w = 18;
+	w = 17;
 	h = 12;
 	x = 7;
 	y = 0;
@@ -29,7 +29,7 @@ void engine_tile_manager_draw_title()
 	{
 		for( col = 0; col < w; col++ )
 		{
-			idx = row * 2 * w + col * 2;
+			idx = tmp + row * 2 * w + col * 2;
 			val = tiles[ idx ];
 			devkit_SMS_setNextTileatXY( x + col, y + row );
 			devkit_SMS_setTile( ( val ) );
