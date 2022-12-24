@@ -50,14 +50,22 @@ void screen_test_screen_update( unsigned char *screen_type )
 	unsigned char input;
 	unsigned char x, y, f;
 	
-	////if (check)
-	////{
-	////	x = posX[ index ];
-	////	y = posY[ index ];
-	////	f = jump_ptr[ index ];
-	////	draw_sprite( f, sprite_mode_zoomed, x, y );
-	////	return;
-	////}
+	if( check )
+	{
+		engine_input_manager_update();
+		input = engine_input_manager_move_fire1();
+		if( input )
+		{
+			*screen_type = screen_type_func;
+			return;
+		}
+
+		x = posX[ index ];
+		y = posY[ index ];
+		f = jump_ptr[ index ];
+		draw_sprite( f, sprite_mode_zoomed, x, y );
+		return;
+	}
 
 	//TODO delete
 	//input = engine_input_manager_hold_left();

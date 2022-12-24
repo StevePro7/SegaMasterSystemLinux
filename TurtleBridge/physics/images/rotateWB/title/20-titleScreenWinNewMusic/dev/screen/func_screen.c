@@ -10,8 +10,8 @@ static unsigned char index;
 void screen_func_screen_load()
 {
 	engine_font_manager_draw_text( "FUNC SCREEN", 10, 2 );
-	//devkit_SMS_setSpriteMode( devkit_SPRITEMODE_ZOOMED() );
-	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_NORMAL() );
+	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_ZOOMED() );
+	//devkit_SMS_setSpriteMode( devkit_SPRITEMODE_NORMAL() );
 	index = 0;
 
 }
