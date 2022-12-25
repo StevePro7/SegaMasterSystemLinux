@@ -27,13 +27,13 @@ void engine_screen_manager_init()
 	//engine_font_manager_draw_text( "!\"#$%^&*()?<>_;:'=,./[]\\",5, 10 );
 
 	x = 10;
-	col = 0;
+	col = 7;
 	tmp = 128;
 	for( idx = 0; idx < 8; idx++ )
 	{
 		engine_tile_manager_gfx3( tmp, x, col );
 		x++;
-		col++;
+		col--;
 	}
 }
 
