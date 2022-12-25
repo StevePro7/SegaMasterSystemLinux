@@ -21,6 +21,7 @@ namespace ScreenShotTest
 		public virtual void Save(string name)
 		{
 			lines.Clear();
+			int prev = 0;
 			foreach (var asset in assets)
 			{
 				var image = assetManager.Images[(int)asset];
@@ -30,7 +31,8 @@ namespace ScreenShotTest
 				int hdiv8 = high / 8;
 				int total = wdiv8 * hdiv8;
 				int dble = total * 2;
-				var line = $"{asset},{wide},{high},{wdiv8},{hdiv8},{total},{dble}";
+				prev += dble;
+				var line = $"{asset},{wide},{high},{wdiv8},{hdiv8},{total},{dble},{prev}";
 				lines.Add(line);
 			}
 
