@@ -30,19 +30,24 @@ static void lineScrollHandler(void);
 
 void engine_scroll_manager_init()
 {
-	//engine_font_manager_draw_text( "SCROLL", 10, 0 );
-	engine_font_manager_draw_text( "SCROLL", 10, 1 );
+	engine_font_manager_draw_text( "1234567890123456789012345678901", 1, 0 );
+	engine_font_manager_draw_text( "1234567890123456789012345678901", 1, 1 );
+	engine_font_manager_draw_text( "1234567890123456789012345678901", 1, 2 );
+	//engine_font_manager_draw_text( "SCROLL", 10, 1 );
 	
-	scroll_x[0] = 255 << 8;
-	scroll_x[1] = 255 << 8;
-	scroll_x[2] = 255 << 8;
-	scroll_x[3] = 255 << 8;
-	scroll_x[4] = 255 << 8;
-	scroll_x[5] = 255 << 8;
+	scroll_x[0] = 0;// 255 << 8;
+	scroll_x[1] = 0;// 255 << 8;
+	scroll_x[2] = 0;// 255 << 8;
+	scroll_x[3] = 0;// 255 << 8;
+	scroll_x[4] = 0;// 255 << 8;
+	scroll_x[5] = 0;// 255 << 8;
+	scroll_x[ 6 ] = 0;// 255 << 8;
+	scroll_x[ 7 ] = 0;// 255 << 8;
 	lineCnt = 0;
 
 	devkit_SMS_setLineInterruptHandler(&lineScrollHandler);
-	devkit_SMS_setLineCounter(31); /* we're updating every 32 scanlines... */
+	devkit_SMS_setLineCounter(30); // this almost works!!
+	//devkit_SMS_setLineCounter( 22 ); // this almost works!!
 	devkit_SMS_enableLineInterrupt();
 
 	engine_font_manager_draw_text( "SCROLL", 10, 2 );
@@ -69,7 +74,7 @@ void engine_scroll_manager_update2()
 
 		ytile = 18;
 
-		engine_tilemap_manager_draw_tile( X_TILE_MAX + scrollRightDivided8, ytile - 1 );
+		//engine_tilemap_manager_draw_tile( X_TILE_MAX + scrollRightDivided8, ytile - 1 );
 	}
 }
 
@@ -95,12 +100,14 @@ void engine_scroll_manager_update( unsigned char h1, unsigned char h2 )
 	//}
 
 	
-	scroll_x[0] = scroll_x[0] - h1; // 128;                             // 0.5<<8
-	scroll_x[1] = scroll_x[1] - h1; // 160; // 0.5<<8 + (0.125<<8)
-	scroll_x[2] = scroll_x[2] - h2; // 160;
-	scroll_x[3] = scroll_x[3] - h2; // 160;
-	scroll_x[4] = scroll_x[4] - h2; // 160;
-	// scroll_x[5] = scroll_x[5] - 200;
+	scroll_x[ 0 ] = scroll_x[ 0 ] - h1; // 128;                             // 0.5<<8
+	scroll_x[ 1 ] = scroll_x[ 1 ] - h2; // 160; // 0.5<<8 + (0.125<<8)
+	scroll_x[ 2 ] = scroll_x[ 2 ] - h2; // 160;
+	scroll_x[ 3 ] = scroll_x[ 3 ] - h2; // 160;
+	scroll_x[ 4 ] = scroll_x[ 4 ] - h2; // 160;
+//	scroll_x[ 5 ] = scroll_x[ 5 ] - h2; // 160;
+//	scroll_x[ 6 ] = scroll_x[ 6 ] - h2; // 160;
+//	scroll_x[ 7 ] = scroll_x[ 7 ] - 0; // 160;
 	lineCnt = 0;
 }
 

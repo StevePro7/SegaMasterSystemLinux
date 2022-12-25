@@ -1,0 +1,44 @@
+IMPORTANT
+25/12/2022
+
+
+2x options but I lose the bottom row
+
+
+#1.
+6x elements
+4x rows		static
+4x rows		slow
+all the rest	fast
+HALF bottom row?	so should be OK for sea?
+
+devkit_SMS_setLineCounter(30); // this almost works!!
+	scroll_x[ 0 ] = scroll_x[ 0 ] - h1; // 128;                             // 0.5<<8
+	scroll_x[ 1 ] = scroll_x[ 1 ] - h2; // 160; // 0.5<<8 + (0.125<<8)
+	scroll_x[ 2 ] = scroll_x[ 2 ] - h2; // 160;
+	scroll_x[ 3 ] = scroll_x[ 3 ] - h2; // 160;
+	scroll_x[ 4 ] = scroll_x[ 4 ] - h2; // 160;
+//	scroll_x[ 5 ] = scroll_x[ 5 ] - h2; // 160;
+
+
+#2.
+8x elements
+3x rows		static
+3x rows		slow
+all the rest	fast
+NOT so good for sea!
+
+devkit_SMS_setLineCounter( 22 ); // this almost works!!
+	scroll_x[ 0 ] = scroll_x[ 0 ] - h1; // 128;                             // 0.5<<8
+	scroll_x[ 1 ] = scroll_x[ 1 ] - h2; // 160; // 0.5<<8 + (0.125<<8)
+	scroll_x[ 2 ] = scroll_x[ 2 ] - h2; // 160;
+	scroll_x[ 3 ] = scroll_x[ 3 ] - h2; // 160;
+	scroll_x[ 4 ] = scroll_x[ 4 ] - h2; // 160;
+	scroll_x[ 5 ] = scroll_x[ 5 ] - h2; // 160;
+	scroll_x[ 6 ] = scroll_x[ 6 ] - h2; // 160;
+//	scroll_x[ 7 ] = scroll_x[ 7 ] - 0; // 160;
+
+
+#2
+6x elements
+//devkit_SMS_setLineCounter(30); // this almost works!!

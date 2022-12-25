@@ -28,7 +28,7 @@ static void printout();
 
 void engine_screen_manager_init()
 {
-	unsigned char xx, yy;
+	unsigned char xx, yy, zz;
 
 	//engine_font_manager_draw_text( "STEVEPRO STUDIOS!!", 4, 4 );
 	//engine_font_manager_draw_data( test, 30, yDelta++ );
@@ -42,6 +42,10 @@ void engine_screen_manager_init()
 		//engine_content_manager_draw_tileX( xx, yy + 4 );
 	}
 
+	for( zz = 0; zz < 24; zz ++ )
+	{
+		engine_font_manager_draw_char( 'X', 30, zz );
+	}
 	engine_music_manager_play();
 	//yDelta = 2;
 
@@ -82,8 +86,8 @@ void engine_screen_manager_update()
 	h2 = 0;
 	if( input )
 	{
-		h1 = 160;
-		h2 = 160;
+		h1 = 16;
+		h2 = 32;
 
 		//if( scrollRightDivided8 < X_TILE_DIFF )
 		//{

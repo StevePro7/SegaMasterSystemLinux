@@ -1,33 +1,33 @@
-XL2
+XL3
 H 9 areas 19 global symbols
 M main
 O -mz80
-S _engine_input_manager_update Ref0000
-S _engine_screen_manager_init Ref0000
-S _devkit_SMS_displayOn Ref0000
-S _devkit_SMS_init Ref0000
-S _devkit_VDPFEATURE_LEFTCOLBLANK Ref0000
-S _devkit_PSGSFXFrame Ref0000
-S _engine_screen_manager_update Ref0000
-S _engine_scroll_manager_init Ref0000
-S _devkit_SMS_VDPturnOnFeature Ref0000
-S _devkit_SMS_finalizeSprites Ref0000
-S _devkit_SMS_useFirstHalfTilesforSprites Ref0000
-S _devkit_VDPFEATURE_HIDEFIRSTCOL Ref0000
-S _devkit_PSGFrame Ref0000
-S .__.ABS. Def0000
-S _devkit_SMS_setSpriteMode Ref0000
-S _devkit_RGB Ref0000
-S _devkit_SMS_displayOff Ref0000
-S _devkit_UNSAFE_SMS_copySpritestoSAT Ref0000
-S _engine_content_manager_load_tiles Ref0000
-S _devkit_SPRITEMODE_NORMAL Ref0000
-S _engine_asm_manager_clear_VRAM Ref0000
-S _devkit_SMS_waitForVBlank Ref0000
-S _devkit_SMS_initSprites Ref0000
-S _devkit_SMS_setBGPaletteColor Ref0000
-A _CODE size 68 flags 0 addr 0
-S _main Def0000
+S _engine_input_manager_update Ref000000
+S _engine_screen_manager_init Ref000000
+S _devkit_SMS_displayOn Ref000000
+S _devkit_SMS_init Ref000000
+S _devkit_VDPFEATURE_LEFTCOLBLANK Ref000000
+S _devkit_PSGSFXFrame Ref000000
+S _engine_screen_manager_update Ref000000
+S _engine_scroll_manager_init Ref000000
+S _devkit_SMS_VDPturnOnFeature Ref000000
+S _devkit_SMS_finalizeSprites Ref000000
+S _devkit_SMS_useFirstHalfTilesforSprites Ref000000
+S _devkit_VDPFEATURE_HIDEFIRSTCOL Ref000000
+S _devkit_PSGFrame Ref000000
+S .__.ABS. Def000000
+S _devkit_SMS_setSpriteMode Ref000000
+S _devkit_RGB Ref000000
+S _devkit_SMS_displayOff Ref000000
+S _devkit_UNSAFE_SMS_copySpritestoSAT Ref000000
+S _engine_content_manager_load_tiles Ref000000
+S _devkit_SPRITEMODE_NORMAL Ref000000
+S _engine_asm_manager_clear_VRAM Ref000000
+S _devkit_SMS_waitForVBlank Ref000000
+S _devkit_SMS_initSprites Ref000000
+S _devkit_SMS_setBGPaletteColor Ref000000
+A _CODE size 66 flags 0 addr 0
+S _main Def000000
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -36,27 +36,27 @@ A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
 A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
-T 00 00
+T 00 00 00
 R 00 00 00 00
-T 00 00 CD 00 00 CD 00 00 CD 00 00 CD
-R 00 00 00 00 02 03 03 00 02 06 10 00 02 09 14 00
-T 0A 00 00 00 45 C5 33 CD 00 00 33 AF F5 33 CD
-R 00 00 00 00 02 02 13 00 02 08 0E 00
-T 17 00 00 00 33 CD 00 00 E5 CD 00 00 F1 CD
-R 00 00 00 00 02 02 0A 00 02 06 04 00 02 0A 08 00
-T 23 00 00 00 E5 CD 00 00 F1 CD 00 00 21 03 03 E5
-R 00 00 00 00 02 02 0B 00 02 06 08 00 02 0A 12 00
-T 31 00 3E 03 F5 33 CD 00 00 F1 33 45 C5 33 3E 0F
-R 00 00 00 00 02 07 0F 00
-T 3F 00 F5 33 CD 00 00 F1 CD 00 00 CD 00 00 CD
-R 00 00 00 00 02 05 17 00 02 09 01 00 02 0C 07 00
-T 4C 00 00 00
-R 00 00 00 00 02 02 02 00
-T 4E 00
+T 00 00 00 CD 00 00 CD 00 00 CD 00 00 CD
+R 00 00 00 00 02 04 03 00 02 07 10 00 02 0A 14 00
+T 0A 00 00 00 00 7D F5 33 CD 00 00 33 AF F5 33 CD
+R 00 00 00 00 02 03 13 00 02 09 0E 00
+T 17 00 00 00 00 33 CD 00 00 E5 CD 00 00 F1 CD
+R 00 00 00 00 02 03 0A 00 02 07 04 00 02 0B 08 00
+T 23 00 00 00 00 E5 CD 00 00 F1 CD 00 00 11 03 03
+R 00 00 00 00 02 03 0B 00 02 07 08 00 02 0B 12 00
+T 30 00 00 D5 3E 03 F5 33 CD 00 00 F1 7D 33 57 1E
+R 00 00 00 00 02 09 0F 00
+T 3D 00 00 0F D5 CD 00 00 F1 CD 00 00 CD 00 00 CD
+R 00 00 00 00 02 06 17 00 02 0A 01 00 02 0D 07 00
+T 4A 00 00 00 00
+R 00 00 00 00 02 03 02 00
+T 4C 00 00
 R 00 00 00 00
-T 4E 00 CD 00 00 CD 00 00 CD 00 00 CD
-R 00 00 00 00 02 03 16 00 02 06 00 00 02 09 06 00
-T 58 00 00 00 CD 00 00 CD 00 00 CD
-R 00 00 00 00 02 02 09 00 02 05 15 00 02 08 11 00
-T 61 00 00 00 CD 00 00 18 E6
-R 00 00 00 00 02 02 0C 00 02 05 05 00
+T 4C 00 00 CD 00 00 CD 00 00 CD 00 00 CD
+R 00 00 00 00 02 04 16 00 02 07 00 00 02 0A 06 00
+T 56 00 00 00 00 CD 00 00 CD 00 00 CD
+R 00 00 00 00 02 03 09 00 02 06 15 00 02 09 11 00
+T 5F 00 00 00 00 CD 00 00 18 E6
+R 00 00 00 00 02 03 0C 00 02 06 05 00
