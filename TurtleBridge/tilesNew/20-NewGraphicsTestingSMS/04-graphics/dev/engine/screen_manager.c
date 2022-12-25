@@ -20,21 +20,15 @@ void engine_screen_manager_init()
 	//unsigned char idx;
 	//unsigned char loop;
 
-	//engine_font_manager_draw_text( "HELLO WORLD", 10, 0 );
-	//engine_font_manager_draw_data( 1234, 10, 2 );
-	//engine_font_manager_draw_data( 5678, 10, 3 );
-	//engine_font_manager_draw_data( 90, 10, 4 );
-	//engine_font_manager_draw_text( "!\"#$%^&*()?<>_;:'=,./[]\\",5, 10 );
+	engine_font_manager_draw_text( "HELLO WORLD", 10, 0 );
+	engine_font_manager_draw_data( 1234, 10, 2 );
+	engine_font_manager_draw_data( 5678, 10, 3 );
+	engine_font_manager_draw_data( 90, 10, 4 );
+	engine_font_manager_draw_text( "!\"#$%^&*()?<>_;:'=,./[]\\", 5, 6 );
 
-	x = 10;
-	col = 7;
-	tmp = 128;
-	//for( idx = 0; idx < 8; idx++ )
-	{
-		engine_tile_manager_gfx3( tmp, x, col );
-		x++;
-		col--;
-	}
+	tmp = 144;
+	//engine_tile_manager_gfx2( tmp );
+	engine_font_manager_draw_data( tmp, 10, 12 );
 }
 
 void engine_screen_manager_update()
@@ -43,16 +37,15 @@ void engine_screen_manager_update()
 	unsigned char input;
 
 	input = engine_input_manager_hold_left();
-	//if( input )
-	//{
-	//	tmp -= 2;
-	//	engine_tile_manager_gfx2( tmp );
-	//}
+	if( input )
+	{
+		tmp -= 2;
+		engine_tile_manager_gfx2( tmp );
+	}
 	input = engine_input_manager_hold_right();
 	if( input )
 	{
-		engine_tile_manager_gfx3( tmp, x, col );
-		x++;
-		col--;
+		tmp += 2;
+		engine_tile_manager_gfx2( tmp );
 	}
 }

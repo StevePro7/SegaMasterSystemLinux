@@ -4,6 +4,32 @@
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
 
+void engine_tile_manager_gfx2( unsigned char tmp )
+{
+	const unsigned char *tiles = bggame_tiles__tilemap__bin;
+	unsigned int idx;
+	unsigned int val;
+	unsigned char row, col;
+
+	unsigned x, y;
+	unsigned w, h;
+	w = 16;
+	h = 10;
+	x = 18;
+	y = 12;
+
+	for( row = 0; row < h; row++ )
+	{
+		for( col = 0; col < w; col++ )
+		{
+			idx = tmp + row * 2 * w + col * 2;
+			val = tiles[ idx ];
+			devkit_SMS_setNextTileatXY( x + col, y + row );
+			devkit_SMS_setTile( ( val ) );
+		}
+	}
+}
+
 void engine_tile_manager_gfx3( unsigned char tmp, unsigned char x, unsigned char col )
 {
 	const unsigned char *tiles = bggame_tiles__tilemap__bin;
@@ -30,7 +56,9 @@ void engine_tile_manager_gfx3( unsigned char tmp, unsigned char x, unsigned char
 	}
 }
 
-void engine_tile_manager_gfx2(unsigned char tmp)
+
+
+void engine_tile_manager_gfx2_hack( unsigned char tmp )
 {
 	const unsigned char *tiles = bggame_tiles__tilemap__bin;
 	unsigned int idx;
