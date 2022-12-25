@@ -1,0 +1,118 @@
+;!FILE screen_manager.asm
+XL3
+H 9 areas 48 global symbols
+M screen_manager
+O -mz80
+S .__.ABS. Def000000
+S _engine_input_manager_hold_right Ref000000
+S _engine_input_manager_hold_left Ref000000
+S _engine_tile_manager_gfx3 Ref000000
+A _CODE size 60 flags 0 addr 0
+S _engine_screen_manager_init Def000000
+S G$engine_screen_manager_update$0$0 Def00002C
+S XG$engine_screen_manager_init$0$0 Def00002B
+S _engine_screen_manager_update Def00002C
+S A$screen_manager$100 Def000028
+S C$screen_manager.c$40$2_0$101 Def00002C
+S C$screen_manager.c$51$1_0$101 Def00002F
+S A$screen_manager$130 Def000033
+S A$screen_manager$121 Def00002C
+S C$screen_manager.c$52$1_0$101 Def000033
+S C$screen_manager.c$34$2_0$100 Def000010
+S A$screen_manager$140 Def000041
+S A$screen_manager$131 Def000034
+S C$screen_manager.c$35$2_0$100 Def00001D
+S A$screen_manager$141 Def000045
+S C$screen_manager.c$45$1_0$101 Def00002C
+S C$screen_manager.c$36$2_0$100 Def000024
+S A$screen_manager$142 Def000048
+S A$screen_manager$152 Def000051
+S A$screen_manager$143 Def000049
+S A$screen_manager$125 Def00002F
+S C$screen_manager.c$54$2_0$102 Def000035
+S A$screen_manager$153 Def000055
+S A$screen_manager$144 Def00004A
+S A$screen_manager$135 Def000035
+S A$screen_manager$126 Def000032
+S A$screen_manager$108 Def00002B
+S XG$engine_screen_manager_update$0$0 Def00005F
+S C$screen_manager.c$55$2_0$102 Def000051
+S A$screen_manager$145 Def00004B
+S A$screen_manager$136 Def000038
+S C$screen_manager.c$58$1_0$101 Def00005F
+S C$screen_manager.c$56$2_0$102 Def000058
+S A$screen_manager$146 Def00004C
+S A$screen_manager$137 Def00003C
+S A$screen_manager$147 Def00004F
+S A$screen_manager$138 Def00003F
+S A$screen_manager$166 Def00005F
+S A$screen_manager$157 Def000058
+S A$screen_manager$148 Def000050
+S A$screen_manager$139 Def000040
+S A$screen_manager$158 Def00005C
+S A$screen_manager$90 Def00001C
+S A$screen_manager$73 Def000005
+S A$screen_manager$83 Def000010
+S A$screen_manager$74 Def000008
+S A$screen_manager$84 Def000013
+S A$screen_manager$94 Def00001D
+S A$screen_manager$85 Def000014
+S A$screen_manager$95 Def000021
+S A$screen_manager$86 Def000016
+S A$screen_manager$68 Def000000
+S A$screen_manager$87 Def000017
+S A$screen_manager$78 Def00000A
+S A$screen_manager$69 Def000003
+S A$screen_manager$88 Def000018
+S A$screen_manager$79 Def00000D
+S C$screen_manager.c$30$1_0$99 Def000005
+S A$screen_manager$89 Def00001B
+S C$screen_manager.c$31$1_0$99 Def00000A
+S A$screen_manager$99 Def000024
+S G$engine_screen_manager_init$0$0 Def000000
+S C$screen_manager.c$18$0_0$99 Def000000
+S C$screen_manager.c$29$1_0$99 Def000000
+S C$screen_manager.c$38$2_0$99 Def00002B
+A _DATA size 4 flags 0 addr 0
+S Fscreen_manager$x$0_0$0 Def000000
+S Fscreen_manager$col$0_0$0 Def000001
+S Fscreen_manager$tmp$0_0$0 Def000002
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 01 00
+T 00 00 00
+R 00 00 01 00
+T 01 00 00
+R 00 00 01 00
+T 01 00 00
+R 00 00 01 00
+T 02 00 00
+R 00 00 01 00
+T 02 00 00
+R 00 00 01 00
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 21 00 00 36 0A 21 01 00 36 07 21 80 00
+R 00 00 00 00 00 04 01 00 00 09 01 00
+T 0D 00 00 22 02 00 11 0A 07 D5 3E 80 F5 33 CD
+R 00 00 00 00 00 04 01 00
+T 19 00 00 00 00 F1 33 FD 21 00 00 FD 34 00 FD 21
+R 00 00 00 00 02 03 03 00 00 09 01 00
+T 26 00 00 01 00 FD 35 00 C9
+R 00 00 00 00 00 03 01 00
+T 2C 00 00
+R 00 00 00 00
+T 2C 00 00 CD 00 00 CD 00 00 7D B7 C8 3A 02 00 FD
+R 00 00 00 00 02 04 02 00 02 07 01 00 00 0D 01 00
+T 39 00 00 21 01 00 FD 66 00 E5 33 FD 21 00 00 FD
+R 00 00 00 00 00 04 01 00 00 0D 01 00
+T 46 00 00 66 00 E5 33 F5 33 CD 00 00 F1 33 FD 21
+R 00 00 00 00 02 0A 03 00
+T 53 00 00 00 00 FD 34 00 FD 21 01 00 FD 35 00 C9
+R 00 00 00 00 00 03 01 00 00 0A 01 00
