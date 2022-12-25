@@ -25,9 +25,10 @@ void engine_screen_manager_init()
 	engine_font_manager_draw_data( 5678, 10, 3 );
 	engine_font_manager_draw_data( 90, 10, 4 );
 	engine_font_manager_draw_text( "!\"#$%^&*()?<>_;:'=,./[]\\", 5, 6 );
-
-	tmp = 144;
-	//engine_tile_manager_gfx2( tmp );
+	engine_font_manager_draw_char( 'X', 18, 11 );
+	
+	tmp = 160;
+	engine_tile_manager_gfx2( tmp );
 	engine_font_manager_draw_data( tmp, 10, 12 );
 }
 
@@ -41,11 +42,13 @@ void engine_screen_manager_update()
 	{
 		tmp -= 2;
 		engine_tile_manager_gfx2( tmp );
+		engine_font_manager_draw_data( tmp, 10, 12 );
 	}
 	input = engine_input_manager_hold_right();
 	if( input )
 	{
 		tmp += 2;
 		engine_tile_manager_gfx2( tmp );
+		engine_font_manager_draw_data( tmp, 10, 12 );
 	}
 }
