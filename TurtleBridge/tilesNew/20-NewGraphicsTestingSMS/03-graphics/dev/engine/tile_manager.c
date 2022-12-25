@@ -14,19 +14,32 @@ void engine_tile_manager_gfx2(unsigned char tmp)
 	unsigned x, y;
 	unsigned w, h;
 	w = 16;
+	//h = 5;
 	h = 10;
 	x = 18;
 	y = 12;
 
-	//tmp = 32;
+	//HACK to show small bridge - TODO would need to do this "properly"..!!
 	for( row = 0; row < h; row++ )
 	{
 		for( col = 0; col < w; col++ )
 		{
+			if( row >= 5 && row < 9 )
+			{
+				continue;
+			}
 			idx = tmp + row * 2 * w + col * 2;
 			val = tiles[ idx ];
-			devkit_SMS_setNextTileatXY( x + col, y + row );
-			devkit_SMS_setTile( ( val ) );
+			if( 9 == row )
+			{
+				devkit_SMS_setNextTileatXY( x + col, y + 5 );
+				devkit_SMS_setTile( ( val ) );
+			}
+			else
+			{
+				devkit_SMS_setNextTileatXY( x + col, y + row );
+				devkit_SMS_setTile( ( val ) );
+			}
 		}
 	}
 }

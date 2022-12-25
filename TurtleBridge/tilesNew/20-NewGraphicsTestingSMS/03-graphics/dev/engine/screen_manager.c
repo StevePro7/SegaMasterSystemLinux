@@ -33,6 +33,7 @@ void engine_screen_manager_init()
 {
 	struct_jump_object *jo = &global_jump_object;
 	unsigned char index;
+	unsigned char loop;
 
 	//engine_font_manager_draw_text( "HELLO WORLD", 10, 0 );
 	//engine_font_manager_draw_data( 1234, 10, 2 );
@@ -67,6 +68,11 @@ void engine_screen_manager_init()
 
 	tmp = 128;
 	engine_tile_manager_gfx2(tmp);
+
+	for( loop = 0; loop < 10; loop++ )
+	{
+		engine_font_manager_draw_data( loop, 15, 12 + loop );
+	}
 	//devkit_SMS_setBGScrollX( 0 );
 //	engine_music_manager_play();
 }
