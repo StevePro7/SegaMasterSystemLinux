@@ -34,11 +34,11 @@ void engine_screen_manager_init()
 	struct_jump_object *jo = &global_jump_object;
 	unsigned char index;
 
-	engine_font_manager_draw_text( "HELLO WORLD", 10, 0 );
-	engine_font_manager_draw_data( 1234, 10, 2 );
-	engine_font_manager_draw_data( 5678, 10, 3 );
-	engine_font_manager_draw_data( 90, 10, 4 );
-	engine_font_manager_draw_text( "!\"#$%^&*()?<>_;:'=,./[]\\",5, 10 );
+	//engine_font_manager_draw_text( "HELLO WORLD", 10, 0 );
+	//engine_font_manager_draw_data( 1234, 10, 2 );
+	//engine_font_manager_draw_data( 5678, 10, 3 );
+	//engine_font_manager_draw_data( 90, 10, 4 );
+	//engine_font_manager_draw_text( "!\"#$%^&*()?<>_;:'=,./[]\\",5, 10 );
 	
 	scrollX = 1;
 	scrollY = 0;
@@ -65,8 +65,8 @@ void engine_screen_manager_init()
 	posY = MAX_FLOOR;
 	posY2 = posY << 8;
 
-	tmp = 180;
-	//engine_tile_manager_gfx2(tmp);
+	tmp = 128;
+	engine_tile_manager_gfx2(tmp);
 	//devkit_SMS_setBGScrollX( 0 );
 //	engine_music_manager_play();
 }

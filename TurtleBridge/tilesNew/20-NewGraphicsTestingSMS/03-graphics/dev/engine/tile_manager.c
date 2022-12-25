@@ -13,10 +13,10 @@ void engine_tile_manager_gfx2(unsigned char tmp)
 
 	unsigned x, y;
 	unsigned w, h;
-	w = 9;
-	h = 6;
+	w = 16;
+	h = 10;
 	x = 18;
-	y = 14;
+	y = 12;
 
 	//tmp = 32;
 	for( row = 0; row < h; row++ )
