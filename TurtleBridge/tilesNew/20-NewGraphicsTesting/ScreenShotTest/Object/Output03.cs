@@ -3,15 +3,18 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace ScreenShotTest
 {
-	public class Output02 : Output, IOutput
+	public class Output03 : Output, IOutput
 	{
-		//private AssetType[] assets = { AssetType.font, AssetType.title };
+		//private AssetType[] assets = { AssetType.font, AssetType.bridge };
 
 		public void Ctor(GraphicsDeviceManager graphics, AssetManager assetManager)
 		{
 			base.Ctor(assetManager);
 			Wide = 128;
-			High = 128;
+			High = 32 + 80;
+
+			assets.Add(AssetType.font);
+			assets.Add(AssetType.bridge);
 		}
 
 		public void Draw(SpriteBatch spriteBatch)

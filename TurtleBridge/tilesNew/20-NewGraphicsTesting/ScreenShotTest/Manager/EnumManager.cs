@@ -6,6 +6,7 @@
 		font_old = 1,
 		block = 2,
 		title = 3,
+		bridge = 4,
 	}
 
 	public enum AssetType2

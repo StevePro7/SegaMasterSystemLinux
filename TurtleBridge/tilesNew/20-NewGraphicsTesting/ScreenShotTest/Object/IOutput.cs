@@ -6,8 +6,8 @@ namespace ScreenShotTest
 	public interface IOutput
 	{
 		void Ctor(GraphicsDeviceManager graphics, AssetManager assetManager);
-		//void Initialize();
 		void Draw(SpriteBatch spriteBatch);
+		void Save(string name);
 
 		int Wide { get; }
 		int High { get; }

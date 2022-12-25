@@ -20,7 +20,7 @@ namespace ScreenShotTest
 
 		public AnGame()
 		{
-			output = new Output02();
+			output = new Output03();
 
 			assetManager = new AssetManager();
 			graphics = new GraphicsDeviceManager(this);
@@ -86,6 +86,7 @@ namespace ScreenShotTest
 				string name = output.GetType().Name;
 				Stream stream = File.Create(name + ".png");
 				resolvedTexture.SaveAsPng(stream, wide, high);
+				output.Save(name);
 				Exit();
 			}
 			else

@@ -5,7 +5,7 @@ namespace ScreenShotTest
 {
 	public class Output01 : Output, IOutput
 	{
-		private AssetType[] assets = { AssetType.font, AssetType.block };
+		//private AssetType[] assets = { AssetType.font, AssetType.block };
 
 		public void Ctor(GraphicsDeviceManager graphics, AssetManager assetManager)
 		{
