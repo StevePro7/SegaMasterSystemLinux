@@ -17,7 +17,7 @@ static unsigned int tmp;
 
 void engine_screen_manager_init()
 {
-	unsigned char idx;
+	//unsigned char idx;
 	//unsigned char loop;
 
 	//engine_font_manager_draw_text( "HELLO WORLD", 10, 0 );
@@ -29,7 +29,7 @@ void engine_screen_manager_init()
 	x = 10;
 	col = 7;
 	tmp = 128;
-	for( idx = 0; idx < 8; idx++ )
+	//for( idx = 0; idx < 8; idx++ )
 	{
 		engine_tile_manager_gfx3( tmp, x, col );
 		x++;
@@ -43,15 +43,16 @@ void engine_screen_manager_update()
 	unsigned char input;
 
 	input = engine_input_manager_hold_left();
-	if( input )
-	{
-		tmp -= 2;
-		engine_tile_manager_gfx2( tmp );
-	}
+	//if( input )
+	//{
+	//	tmp -= 2;
+	//	engine_tile_manager_gfx2( tmp );
+	//}
 	input = engine_input_manager_hold_right();
 	if( input )
 	{
-		tmp += 2;
-		engine_tile_manager_gfx2( tmp );
+		engine_tile_manager_gfx3( tmp, x, col );
+		x++;
+		col--;
 	}
 }
