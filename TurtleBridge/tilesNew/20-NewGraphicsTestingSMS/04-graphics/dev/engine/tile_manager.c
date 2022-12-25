@@ -124,6 +124,38 @@ void engine_tile_manager_gfx()
 	}
 }
 
+void engine_tile_manager_sky()
+{
+	const unsigned char *tiles = bggame_tiles__tilemap__bin;
+	unsigned int idx;
+	unsigned int val;
+	unsigned char row, col, tmp;
+
+	unsigned x, y;
+	unsigned w, h;
+	w = 1;
+	h = 1;
+	x = 8;
+	y = 22;
+
+	tmp = 128;
+	for( row = 0; row < h; row++ )
+	{
+		for( col = 0; col < w; col++ )
+		{
+			idx = tmp + row * 2 * w + col * 2;
+			val = tiles[ idx ];
+			devkit_SMS_setNextTileatXY( x + col, y + row );
+			devkit_SMS_setTile( ( val ) );
+		}
+	}
+}
+
+void engine_tile_manager_sea()
+{
+
+}
+
 //static void draw_tile_fl02( const unsigned char *array, unsigned char x, unsigned char y, unsigned char w, unsigned char h, unsigned char s, unsigned char f );
 ////static void draw_tile_full( const unsigned char *array, unsigned char x, unsigned char y, unsigned char w, unsigned char h );
 //static void draw_tile_flip( const unsigned char *array, unsigned char x, unsigned char y, unsigned char w, unsigned char h );
@@ -219,15 +251,7 @@ void engine_tile_manager_gfx()
 //	
 //}
 //
-//void engine_tile_manager_sky()
-//{
-//	
-//}
-//
-//void engine_tile_manager_sea()
-//{
-//	
-//}
+
 //
 //
 //static void draw_tile_scroll( const unsigned char *array, unsigned char x, unsigned char y, unsigned char w, unsigned char h, unsigned char col )
