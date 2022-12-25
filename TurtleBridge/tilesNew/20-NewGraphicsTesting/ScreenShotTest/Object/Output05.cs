@@ -9,12 +9,19 @@ namespace ScreenShotTest
 		{
 			base.Ctor(assetManager);
 			Wide = 128;
-			High = 128;
+			High = assetManager.GetHeights(11);
 
 			assets.Add(AssetType.font);
-			//assets.Add(AssetType.wave);
-			//assets.Add(AssetType.bridge);
+			assets.Add(AssetType.wave);
+			assets.Add(AssetType.bridge);
 			assets.Add(AssetType.island);
+			assets.Add(AssetType.tree);
+			assets.Add(AssetType.cloudL);
+			assets.Add(AssetType.cloudS);
+			assets.Add(AssetType.turtleF);
+			assets.Add(AssetType.turtleH);
+			assets.Add(AssetType.sign);
+			assets.Add(AssetType.goal);
 		}
 
 		public void Draw(SpriteBatch spriteBatch)

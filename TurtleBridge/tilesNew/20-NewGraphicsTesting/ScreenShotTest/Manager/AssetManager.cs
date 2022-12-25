@@ -20,10 +20,25 @@ namespace ScreenShotTest
 			"cloud01_32x24",
 			"flying_turtle01_32x24",
 			//"flying_turtle02_32x24",
-			"flying_turtle02_32x24",
+			"hover_turtleAA00_32x24",
 			//"hover_turtleBB00_32x24",
 			"sign_send",
 			"sign_goal",
+		};
+
+		protected int[] heights =
+		{
+			32,
+			8,
+			80,
+			32,
+			80,
+			24,
+			24,
+			24,
+			24,
+			24,
+			24,
 		};
 
 		public void LoadContent(ContentManager content)
@@ -33,9 +48,20 @@ namespace ScreenShotTest
 
 			for (int index = 0; index < myEnumMemberCount; index++)
 			{
-				var name = nam`es[index];
+				var name = names[index];
 				Images[index] = content.Load<Texture2D>(name);
 			}
+		}
+
+		public int GetHeights(int numAssets)
+		{
+			int height = 0;
+			for (int idx = 0; idx < numAssets; idx++)
+			{
+				height += heights[idx];
+			}
+
+			return height;
 		}
 
 		public Texture2D[] Images { get; private set; }
