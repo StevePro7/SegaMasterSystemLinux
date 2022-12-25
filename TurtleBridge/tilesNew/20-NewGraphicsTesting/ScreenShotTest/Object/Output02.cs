@@ -10,7 +10,7 @@ namespace ScreenShotTest
 		public void Ctor(GraphicsDeviceManager graphics, AssetManager assetManager)
 		{
 			base.Ctor(assetManager);
-			Wide = 136;
+			Wide = 128;
 			High = 128;
 		}
 
@@ -26,7 +26,7 @@ namespace ScreenShotTest
 				var image = assetManager.Images[(int)asset];
 				if (idx > 0)
 				{
-					x = 8;
+					//x = 8;
 				}
 
 				var pos = new Vector2(x, y);
