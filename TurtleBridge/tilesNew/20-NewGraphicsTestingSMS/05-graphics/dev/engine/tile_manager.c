@@ -4,7 +4,7 @@
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
 
-void engine_tile_manager_gfx4( unsigned char tmp, unsigned char h )
+void engine_tile_manager_gfx4( unsigned int tmp, unsigned char h )
 {
 	const unsigned char *tiles = bggame_tiles__tilemap__bin;
 	unsigned int idx;

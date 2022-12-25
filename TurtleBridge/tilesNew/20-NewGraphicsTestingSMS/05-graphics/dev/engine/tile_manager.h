@@ -1,7 +1,7 @@
 #ifndef _TILE_MANAGER_H_
 #define _TILE_MANAGER_H_
 
-void engine_tile_manager_gfx4( unsigned char tmp, unsigned char h );
+void engine_tile_manager_gfx4( unsigned int tmp, unsigned char h );
 void engine_tile_manager_gfx3( unsigned char tmp, unsigned char x, unsigned char col );
 void engine_tile_manager_gfx2( unsigned char tmp );
 void engine_tile_manager_gfx();

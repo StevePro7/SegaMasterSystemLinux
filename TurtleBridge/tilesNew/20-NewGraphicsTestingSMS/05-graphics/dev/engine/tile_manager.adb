@@ -1,7 +1,7 @@
 M:tile_manager
 F:G$engine_tile_manager_gfx4$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Ltile_manager.engine_tile_manager_gfx4$tmp$1_0$85({1}SC:U),B,1,4
-S:Ltile_manager.engine_tile_manager_gfx4$h$1_0$85({1}SC:U),B,1,5
+S:Ltile_manager.engine_tile_manager_gfx4$tmp$1_0$85({2}SI:U),B,1,4
+S:Ltile_manager.engine_tile_manager_gfx4$h$1_0$85({1}SC:U),B,1,6
 S:Ltile_manager.engine_tile_manager_gfx4$tiles$1_0$86({2}DG,SC:U),R,0,0,[]
 S:Ltile_manager.engine_tile_manager_gfx4$idx$1_0$86({2}SI:U),R,0,0,[l,h]
 S:Ltile_manager.engine_tile_manager_gfx4$val$1_0$86({2}SI:U),R,0,0,[e,d]
