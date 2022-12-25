@@ -13,7 +13,17 @@ namespace ScreenShotTest
 			"block",
 			"titlescreen",
 			"wave_strip",
-			"section01_left_64x80"
+			"section01_left_64x80",			// bridge
+			"section03_norm_64x32",			// island
+			"section04_norm_64x80",			// tree
+			"cloud02_48x24",
+			"cloud01_32x24",
+			"flying_turtle01_32x24",
+			//"flying_turtle02_32x24",
+			"flying_turtle02_32x24",
+			//"hover_turtleBB00_32x24",
+			"sign_send",
+			"sign_goal",
 		};
 
 		public void LoadContent(ContentManager content)
@@ -23,7 +33,7 @@ namespace ScreenShotTest
 
 			for (int index = 0; index < myEnumMemberCount; index++)
 			{
-				var name = names[index];
+				var name = nam`es[index];
 				Images[index] = content.Load<Texture2D>(name);
 			}
 		}
