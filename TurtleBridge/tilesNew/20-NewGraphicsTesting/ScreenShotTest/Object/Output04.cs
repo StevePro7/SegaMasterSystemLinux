@@ -3,16 +3,17 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace ScreenShotTest
 {
-	public class Output01 : Output, IOutput
+	public class Output04 : Output, IOutput
 	{
 		public void Ctor(GraphicsDeviceManager graphics, AssetManager assetManager)
 		{
 			base.Ctor(assetManager);
 			Wide = 128;
-			High = 40;
+			High = 32 + 8+ 80;
 
-			assets.Add(AssetType.font_old);
-			assets.Add(AssetType.block);
+			assets.Add(AssetType.font);
+			assets.Add(AssetType.wave);
+			assets.Add(AssetType.bridge);
 		}
 
 		public void Draw(SpriteBatch spriteBatch)
@@ -25,11 +26,6 @@ namespace ScreenShotTest
 			{
 				color = Color.White;
 				var image = assetManager.Images[(int)asset];
-				if (idx > 0)
-				{
-					color = Color.Yellow;
-				}
-
 				var pos = new Vector2(x, y);
 				spriteBatch.Draw(image, pos, color);
 				y += image.Height;

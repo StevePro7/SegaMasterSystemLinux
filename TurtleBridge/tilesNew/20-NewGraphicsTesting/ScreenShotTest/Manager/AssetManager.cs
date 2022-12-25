@@ -6,7 +6,15 @@ namespace ScreenShotTest
 {
 	public class AssetManager
 	{
-		private string[] names = { "font_tiles_yellow", "font_tiles", "block", "titlescreen", "section01_left_64x80" };
+		private string[] names = 
+		{
+			"font_tiles_yellow",
+			"font_tiles",
+			"block",
+			"titlescreen",
+			"wave_strip",
+			"section01_left_64x80"
+		};
 
 		public void LoadContent(ContentManager content)
 		{
