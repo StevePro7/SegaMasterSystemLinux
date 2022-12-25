@@ -27,7 +27,7 @@ void engine_screen_manager_init()
 	engine_font_manager_draw_text( "!\"#$%^&*()?<>_;:'=,./[]\\", 5, 6 );
 	engine_font_manager_draw_char( 'X', 18, 11 );
 	
-	engine_tile_manager_sky();
+	engine_tile_manager_sea();
 	tmp = 160;
 	//engine_tile_manager_gfx2( tmp );
 	engine_font_manager_draw_data( tmp, 10, 12 );

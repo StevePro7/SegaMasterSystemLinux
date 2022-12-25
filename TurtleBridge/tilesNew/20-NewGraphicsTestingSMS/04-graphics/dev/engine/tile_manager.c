@@ -153,7 +153,38 @@ void engine_tile_manager_sky()
 
 void engine_tile_manager_sea()
 {
+	const unsigned char *tiles = bggame_tiles__tilemap__bin;
+	unsigned int idx;
+	unsigned int val;
+	unsigned char row, col, bse, tmp;
 
+	unsigned x, y;
+	unsigned w, h;
+	w = 1;
+	h = 1;
+	x = 2;
+	y = 15;
+
+	//tmp = 76 * 2;
+	col = 0;
+	row = 0;
+	// 64 = sky block
+	// 65 = sea block
+	// 66 - 74 = 9x sea tiles
+	// 1 + 1 + 9 = 11
+	// 11 * 8 = 88 px
+	//for( bse = 64; bse < 75; bse++ )
+	{
+		tmp = bse * 2;
+		//for( col = 0; col < w; col++ )
+		{
+			idx = tmp + row * 2 * w + col * 2;
+			val = tiles[ idx ];
+			devkit_SMS_setNextTileatXY( x, y );
+			devkit_SMS_setTile( ( val ) );
+			x += 1;
+		}
+	}
 }
 
 //static void draw_tile_fl02( const unsigned char *array, unsigned char x, unsigned char y, unsigned char w, unsigned char h, unsigned char s, unsigned char f );
