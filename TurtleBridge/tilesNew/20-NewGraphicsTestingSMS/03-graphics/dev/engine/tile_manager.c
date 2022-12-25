@@ -23,7 +23,7 @@ void engine_tile_manager_gfx3( unsigned char tmp, unsigned char x, unsigned char
 		//{
 			idx = tmp + row * 2 * w + col * 2;
 			val = tiles[ idx ];
-			devkit_SMS_setNextTileatXY( x + col, y + row );
+			devkit_SMS_setNextTileatXY( x /*+ col*/, y + row );		// IMPORTANT x not plus col now
 			devkit_SMS_setTile( ( val ) );
 		//}
 	}

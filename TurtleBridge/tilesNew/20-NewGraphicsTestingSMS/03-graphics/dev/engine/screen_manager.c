@@ -11,20 +11,13 @@
 #include "tile_manager.h"
 #include "../devkit/_sms_manager.h"
 
-static unsigned char frame;
-static unsigned int index;
-static unsigned char jumps;
-static unsigned int delta;
-static unsigned char posY;
-static unsigned int posY2;
-static unsigned char scrollX, scrollY;
-static unsigned char storage_available;
-
+static unsigned char x;
+static unsigned char col;
 static unsigned int tmp;
 
 void engine_screen_manager_init()
 {
-	//unsigned char index;
+	unsigned char idx;
 	//unsigned char loop;
 
 	//engine_font_manager_draw_text( "HELLO WORLD", 10, 0 );
@@ -33,8 +26,15 @@ void engine_screen_manager_init()
 	//engine_font_manager_draw_data( 90, 10, 4 );
 	//engine_font_manager_draw_text( "!\"#$%^&*()?<>_;:'=,./[]\\",5, 10 );
 
+	x = 10;
+	col = 0;
 	tmp = 128;
-	engine_tile_manager_gfx2(tmp);
+	for( idx = 0; idx < 8; idx++ )
+	{
+		engine_tile_manager_gfx3( tmp, x, col );
+		x++;
+		col++;
+	}
 }
 
 void engine_screen_manager_update()
