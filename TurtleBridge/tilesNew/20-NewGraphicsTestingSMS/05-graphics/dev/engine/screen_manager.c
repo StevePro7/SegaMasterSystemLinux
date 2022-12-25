@@ -11,7 +11,7 @@
 #include "tile_manager.h"
 #include "../devkit/_sms_manager.h"
 
-#define TMP_HGH		4
+#define TMP_HGH		3
 
 static unsigned char x;
 static unsigned char col;
@@ -29,7 +29,7 @@ void engine_screen_manager_init()
 	engine_font_manager_draw_text( "!\"#$%^&*()?<>_;:'=,./[]\\", 5, 6 );
 	engine_font_manager_draw_char( 'X', 18, 11 );
 	
-	tmp = 480;
+	tmp = 928;
 	engine_tile_manager_gfx4( tmp, TMP_HGH );
 	engine_font_manager_draw_data( tmp, 10, 12 );
 }
