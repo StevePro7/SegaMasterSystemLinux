@@ -30,17 +30,16 @@ namespace Test
 
 					pos = new Vector2(col * Constants.TILE_WIDE , row * Constants.TILE_HIGH);
 					spriteBatch.Draw(myContentManager.Tile88, pos, Color.White);
-					pos = new Vector2(col * Constants.TILE_WIDE, row * Constants.TILE_HIGH + 1 * Constants.TILE_HIGH);
-					spriteBatch.Draw(myContentManager.Tile88, pos, Color.White);
-
-					pos = new Vector2(col * Constants.TILE_WIDE, row * Constants.TILE_HIGH + 2 * Constants.TILE_HIGH);
-					spriteBatch.Draw(myContentManager.Tile88, pos, Color.White);
-					pos = new Vector2(col * Constants.TILE_WIDE, row * Constants.TILE_HIGH + 3 * Constants.TILE_HIGH);
-					spriteBatch.Draw(myContentManager.Tile88, pos, Color.White);
-					pos = new Vector2(col * Constants.TILE_WIDE, row * Constants.TILE_HIGH + 4 * Constants.TILE_HIGH);
-					spriteBatch.Draw(myContentManager.Tile88, pos, Color.White);
-					pos = new Vector2(col * Constants.TILE_WIDE, row * Constants.TILE_HIGH + 5 * Constants.TILE_HIGH);
-					spriteBatch.Draw(myContentManager.Tile88, pos, Color.White);
+					//pos = new Vector2(col * Constants.TILE_WIDE, row * Constants.TILE_HIGH + 1 * Constants.TILE_HIGH);
+					//spriteBatch.Draw(myContentManager.Tile88, pos, Color.White);
+					//pos = new Vector2(col * Constants.TILE_WIDE, row * Constants.TILE_HIGH + 2 * Constants.TILE_HIGH);
+					//spriteBatch.Draw(myContentManager.Tile88, pos, Color.White);
+					//pos = new Vector2(col * Constants.TILE_WIDE, row * Constants.TILE_HIGH + 3 * Constants.TILE_HIGH);
+					//spriteBatch.Draw(myContentManager.Tile88, pos, Color.White);
+					//pos = new Vector2(col * Constants.TILE_WIDE, row * Constants.TILE_HIGH + 4 * Constants.TILE_HIGH);
+					//spriteBatch.Draw(myContentManager.Tile88, pos, Color.White);
+					//pos = new Vector2(col * Constants.TILE_WIDE, row * Constants.TILE_HIGH + 5 * Constants.TILE_HIGH);
+					//spriteBatch.Draw(myContentManager.Tile88, pos, Color.White);
 				}
 			}
 		}
