@@ -21,17 +21,15 @@ namespace Test
 
 		public void Initialize()
 		{
-			//po.posnX = 64;
-			po.posnX = 32;
-			//po.posnX = 158;
-			po.posnY = 160;
-			po.frame = 2;
+			po.posnX = 16;
+			po.posnY = 144;
+			po.frame = 0;
 			updatePlayer();
 		}
 
 		private void updatePlayer()
 		{
-			po.drawX = po.posnX + 4;// - 16;
+			po.drawX = po.posnX;// + 4;// - 16;
 			po.drawY = po.posnY - 32;
 			po.tileX = po.posnX >> 3;
 			po.tileY = po.posnY >> 3;
