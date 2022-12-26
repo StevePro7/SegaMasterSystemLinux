@@ -295,7 +295,26 @@ void engine_tile_manager_sea()
 	devkit_SMS_setNextTileatXY( x, y );
 	devkit_SMS_setTile( ( val ) );
 
-	//devkit_SMS_setTile( ( val ) );
+	// row3:23
+	tmp = 128;
+	row = 0;
+	col = 8;	// 71
+	x = 12;
+	y = 23;
+	idx = tmp + row * 2 * size + col * 2;
+	val = tiles[ idx ];
+	devkit_SMS_setNextTileatXY( x, y );
+	devkit_SMS_setTile( ( val ) );
+
+	//tmp = 128;
+	//row = 0;
+	col = 9;	// 72
+	x = 13;
+	y = 23;
+	idx = tmp + row * 2 * size + col * 2;
+	val = tiles[ idx ];
+	devkit_SMS_setNextTileatXY( x, y );
+	devkit_SMS_setTile( ( val ) );
 
 	//unsigned char x;
 	//unsigned char sea_line1[] = { 66, 66, 67, 68, };
