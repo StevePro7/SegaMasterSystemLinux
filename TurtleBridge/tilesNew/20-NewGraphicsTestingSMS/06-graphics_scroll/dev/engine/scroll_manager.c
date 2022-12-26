@@ -30,10 +30,10 @@ static void lineScrollHandler(void);
 
 void engine_scroll_manager_init()
 {
-	engine_font_manager_draw_text( "SCROLL", 10, 0 );
-	engine_font_manager_draw_text( "SCROLL", 10, 1 );
-	engine_font_manager_draw_text( "SCROLL", 10, 2 );
-	engine_font_manager_draw_text( "SCROLL", 10, 3 );
+	engine_font_manager_draw_text( "123456789A123456789B123456789CX", 1, 0 );
+	engine_font_manager_draw_text( "123456789A123456789B123456789CX", 1, 1 );
+	engine_font_manager_draw_text( "123456789A123456789B123456789CX", 1, 2 );
+	//engine_font_manager_draw_text( "SCROLL", 10, 3 );
 
 	scroll_x[ 0 ] = 0; // 255 << 8;
 	scroll_x[ 1 ] = 0; // 255 << 8;

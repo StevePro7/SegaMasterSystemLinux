@@ -36,6 +36,8 @@ void engine_screen_manager_init()
 	engine_tile_manager_island();
 	//engine_tile_manager_gfx4( tmp, TMP_HGH );
 	//engine_font_manager_draw_data( tmp, 10, 12 );
+
+	engine_music_manager_play();
 }
 
 void engine_screen_manager_update()

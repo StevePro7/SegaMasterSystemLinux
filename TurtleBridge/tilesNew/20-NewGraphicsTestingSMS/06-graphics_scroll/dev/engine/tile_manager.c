@@ -202,7 +202,7 @@ void engine_tile_manager_sky()
 	tmp *= 2;
 	idx = tmp + 0 * 2 * 1 + 0 * 2;
 	val = tiles[ idx ];
-	for( row = 4; row < 21; row++ )
+	for( row = 3; row < 21; row++ )
 	{
 		for( col = 0; col < 32; col++ )
 		{
