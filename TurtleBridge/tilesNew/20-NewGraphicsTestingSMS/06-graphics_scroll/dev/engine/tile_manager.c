@@ -245,21 +245,55 @@ void engine_tile_manager_sea()
 	unsigned char x, y;
 	idx = 0;
 
+	// row1:21
 	tmp = 128;
 	row = 0;
 	col = 2;	// 66
 	col = 4;	// 67
-	x = 2;
+	col = 5;	// 68
+	x = 3;
 	y = 21;
 	idx = tmp + row * 2 * size + col * 2;
 	val = tiles[ idx ];
 	devkit_SMS_setNextTileatXY( x , y );
 	devkit_SMS_setTile( ( val ) );
 
-	tmp = 68;
-	//idx = tmp * 2;
-	idx = tmp + 0 * 2 * 16 + 0 * 2;
-	devkit_SMS_setNextTileatXY( 3, 21 );
+	// row2:22
+	tmp = 128;
+	row = 0;
+	//col = 5;	// 68
+	col = 10;	// 73
+	x = 5;
+	y = 22;
+	idx = tmp + row * 2 * size + col * 2;
+	val = tiles[ idx ];
+	devkit_SMS_setNextTileatXY( x, y );
+	devkit_SMS_setTile( ( val ) );
+
+	// row3:23
+	tmp = 128;
+	row = 0;
+	//col = 5;	// 68
+	col = 6;	// 69
+				//col = 10;	// 73
+	x = 8;
+	y = 23;
+	idx = tmp + row * 2 * size + col * 2;
+	val = tiles[ idx ];
+	devkit_SMS_setNextTileatXY( x, y );
+	devkit_SMS_setTile( ( val ) );
+
+	//tmp = 128;
+	//row = 0;
+	//col = 5;	// 68
+	col = 7;	// 70
+	//col = 10;	// 73
+	x = 9;
+	y = 23;
+	idx = tmp + row * 2 * size + col * 2;
+	val = tiles[ idx ];
+	devkit_SMS_setNextTileatXY( x, y );
+	devkit_SMS_setTile( ( val ) );
 
 	//devkit_SMS_setTile( ( val ) );
 
