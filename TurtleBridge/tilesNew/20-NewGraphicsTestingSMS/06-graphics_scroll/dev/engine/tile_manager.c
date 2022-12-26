@@ -154,14 +154,8 @@ void engine_tile_manager_sky()
 	unsigned int val;
 	unsigned char row, col, tmp;
 
-	//unsigned x, y;
-	//unsigned w, h;
-	//w = 1;
-	//h = 1;
-	//x = 8;
-	//y = 22;
-
-	tmp = 128;
+	tmp = 65;
+	tmp *= 2;
 	idx = tmp + 0 * 2 * 1 + 0 * 2;
 	val = tiles[ idx ];
 	for( row = 4; row < 21; row++ )
@@ -183,7 +177,7 @@ static void draw_see_line( unsigned char *sea_line, unsigned char x, unsigned ch
 	for( col = 0; col < 4; col++ )
 	{
 		elem = sea_line[ col ];
-		elem *= 2;
+		//elem *= 2;
 
 		//idx = elem * 2 + col * 2;
 		idx = elem + 0 * 2 * 1 + 0 * 2;

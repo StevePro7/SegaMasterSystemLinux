@@ -30,7 +30,7 @@ void engine_screen_manager_init()
 
 	//tmp = 480;
 	engine_tile_manager_sky();
-	engine_tile_manager_sea();
+	//engine_tile_manager_sea();
 	//engine_tile_manager_gfx4( tmp, TMP_HGH );
 	//engine_font_manager_draw_data( tmp, 10, 12 );
 }

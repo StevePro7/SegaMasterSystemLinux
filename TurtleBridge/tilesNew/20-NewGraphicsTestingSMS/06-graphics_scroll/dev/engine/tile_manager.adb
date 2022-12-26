@@ -73,7 +73,7 @@ S:Ltile_manager.draw_see_line$x$1_0$120({1}SC:U),B,1,6
 S:Ltile_manager.draw_see_line$y$1_0$120({1}SC:U),B,1,7
 S:Ltile_manager.draw_see_line$tiles$1_0$121({2}DG,SC:U),R,0,0,[]
 S:Ltile_manager.draw_see_line$col$1_0$121({1}SC:U),R,0,0,[e]
-S:Ltile_manager.draw_see_line$elem$1_0$121({1}SC:U),R,0,0,[a]
+S:Ltile_manager.draw_see_line$elem$1_0$121({1}SC:U),R,0,0,[l]
 S:Ltile_manager.draw_see_line$idx$1_0$121({2}SI:U),R,0,0,[l,h]
 S:Ltile_manager.draw_see_line$val$1_0$121({2}SI:U),R,0,0,[c,d]
 F:G$engine_tile_manager_sea$0_0$0({2}DF,SV:S),Z,0,10,0,0,0
