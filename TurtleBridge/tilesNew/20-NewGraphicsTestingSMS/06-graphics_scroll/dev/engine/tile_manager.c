@@ -31,7 +31,6 @@ void engine_tile_manager_gfx5( unsigned int tmp, unsigned char x, unsigned char 
 	unsigned char row, col;
 
 //	unsigned x, y;
-	
 	//w = 16;
 	//h = 10;
 	//x = 18;

@@ -49,8 +49,8 @@ void engine_screen_manager_update()
 	input = engine_input_manager_move_right();
 	if( input )
 	{
-		h1 = 16;
-		h2 = 32;
+		h1 = 128;
+		h2 = 196;
 	//	tmp -= 2;
 	//	engine_tile_manager_gfx4( tmp, TMP_HGH );
 	//	engine_font_manager_draw_data( tmp, 10, 12 );
