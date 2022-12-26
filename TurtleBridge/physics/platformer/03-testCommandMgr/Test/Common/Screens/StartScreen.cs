@@ -15,12 +15,14 @@ namespace WindowsGame.Common
 
 		public int Update(GameTime gameTime)
 		{
+			MyGame.Manager.PlayerManager.Update(gameTime);
 			return (int)ScreenType.Start;
 		}
 
 		public void Draw()
 		{
 			MyGame.Manager.LevelManager.Draw();
+			MyGame.Manager.PlayerManager.Draw();
 		}
 	}
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 using WindowsGame.Master;
 
 namespace WindowsGame.Common
@@ -22,6 +23,56 @@ namespace WindowsGame.Common
 			updatePlayer();
 		}
 
+		
+
+		public void Update(GameTime gameTime)
+		{
+			
+			if (MyGame.Manager.InputManager.KeyMove(Keys.Space))
+			{
+				var message = $"(x,y)=({po.posnX},{po.posnY})";
+				MyGame.Manager.Logger.Info(message);
+			}
+			if (MyGame.Manager.InputManager.KeyHold(Keys.Left))
+			{
+				po.posnX -= 1;
+				updatePlayer();
+			}
+			if (MyGame.Manager.InputManager.KeyHold(Keys.Right))
+			{
+				po.posnX += 1;
+				updatePlayer();
+			}
+			if (MyGame.Manager.InputManager.KeyHold(Keys.Up))
+			{
+				po.posnY -= 1;
+				updatePlayer();
+			}
+			if (MyGame.Manager.InputManager.KeyHold(Keys.Down))
+			{
+				const int dy = 1;
+				bool isMoveDown = false;
+				int tempCollY = 0;
+				canMoveDown(dy, ref isMoveDown, ref tempCollY);
+				if (isMoveDown)
+				{
+					po.posnY += dy;
+					updatePlayer();
+				}
+				else
+				{
+					// TODO - need to look this up!!
+					po.posnY = tempCollY * 8;
+					updatePlayer();
+				}
+			}
+		}
+
+		public void Draw()
+		{
+			Engine.SpriteBatch.Draw(Assets.Skater[po.frame], new Vector2(po.drawX, po.drawY), Color.White);
+		}
+
 		private void updatePlayer()
 		{
 			po.drawX = po.posnX;// + 4;// - 16;
@@ -30,85 +81,40 @@ namespace WindowsGame.Common
 			po.tileY = po.posnY >> 3;
 		}
 
-		public void Update(GameTime gameTime)
-		{
-			//if (myInputManager.KeyPress(Keys.Space))
-			//{
-			//	var message = $"(x,y)=({po.posnX},{po.posnY})";
-			//	Logger.Info(message);
-			//}
-			//if (myInputManager.KeyHold(Keys.Left))
-			//{
-			//	po.posnX -= 1;
-			//	updatePlayer();
-			//}
-			//if (myInputManager.KeyHold(Keys.Right))
-			//{
-			//	po.posnX += 1;
-			//	updatePlayer();
-			//}
-			//if (myInputManager.KeyHold(Keys.Up))
-			//{
-			//	po.posnY -= 1;
-			//	updatePlayer();
-			//}
-			//if (myInputManager.KeyHold(Keys.Down))
-			//{
-			//	const int dy = 1;
-			//	bool isMoveDown = false;
-			//	int tempCollY = 0;
-			//	canMoveDown(dy, ref isMoveDown, ref tempCollY);
-			//	if (isMoveDown)
-			//	{
-			//		po.posnY += dy;
-			//		updatePlayer();
-			//	}
-			//	else
-			//	{
-			//		// TODO - need to look this up!!
-			//		po.posnY = tempCollY * 8;
-			//		updatePlayer();
-			//	}
-			//}
-		}
-
 		private void canMoveDown(int dy, ref bool isMoveDown, ref int tempCollY)
 		{
-			////int tempCollY = 0;
-			//int tempPosnY = po.posnY + dy;
-			//int tempTileY = tempPosnY >> 3;
+			//int tempCollY = 0;
+			int tempPosnY = po.posnY + dy;
+			int tempTileY = tempPosnY >> 3;
 
-			//isMoveDown = false;
-			//tempCollY = myLevelManager.collision_array[po.tileX + 0];
-			//if (tempTileY == tempCollY)
-			//{
-			//	return;
-			//}
-			//else
-			//{
-			//	tempCollY = myLevelManager.collision_array[po.tileX + 1];
-			//	if (tempTileY == tempCollY)
-			//	{
-			//		return;
-			//	}
-			//	else
-			//	{
-			//		tempCollY = myLevelManager.collision_array[po.tileX + 2];
-			//		if (tempTileY == tempCollY)
-			//		{
-			//			return;
-			//		}
-			//	}
-			//}
+			isMoveDown = false;
+			tempCollY = MyGame.Manager.LevelManager.collision_array[po.tileX + 0];
+			if (tempTileY == tempCollY)
+			{
+				return;
+			}
+			else
+			{
+				tempCollY = MyGame.Manager.LevelManager.collision_array[po.tileX + 1];
+				if (tempTileY == tempCollY)
+				{
+					return;
+				}
+				else
+				{
+					tempCollY = MyGame.Manager.LevelManager.collision_array[po.tileX + 2];
+					if (tempTileY == tempCollY)
+					{
+						return;
+					}
+				}
+			}
 
-			//isMoveDown = true;
+			isMoveDown = true;
 			return;
 		}
 
-		public void Draw()
-		{
-			Engine.SpriteBatch.Draw(Assets.Skater[po.frame], new Vector2(po.drawX, po.drawY), Color.White);
-		}
+		
 	}
 
 }

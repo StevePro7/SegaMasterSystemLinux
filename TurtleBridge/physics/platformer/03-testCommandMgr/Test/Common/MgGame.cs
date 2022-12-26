@@ -15,8 +15,11 @@ namespace WindowsGame.Common
 		{
 			Manager.Logger.Initialize();
 
+			Manager.CommandManager.Initialize();
 			Manager.ContentManager.Initialize();
+			Manager.FrameManager.Initialize();
 			Manager.LevelManager.Initialize();
+			Manager.PlayerManager.Initialize();
 			Manager.ResolutionManager.Initialize();
 			Manager.ScreenManager.Initialize();
 		}

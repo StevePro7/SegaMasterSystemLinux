@@ -8,6 +8,8 @@ namespace WindowsGame.Common
 	{
 		void Initialize();
 		void Draw();
+
+		Byte[] collision_array { get; }
 	}
 
 	public class LevelManager : ILevelManager
