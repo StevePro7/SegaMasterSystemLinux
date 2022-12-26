@@ -237,18 +237,44 @@ static void draw_see_line( unsigned char *sea_line, unsigned char x, unsigned ch
 // 24-BackgroundSpriteTilesTest
 void engine_tile_manager_sea()
 {
-	unsigned char x;
-	unsigned char sea_line1[] = { 66, 66, 67, 68, };
-	unsigned char sea_line2[] = { 65, 65, 65, 73, };
-	//unsigned char sea_line3[] = { 65, 65, 65, 65, };
-	unsigned char sea_line3[] = { 65, 69, 70, 65, };
+	const unsigned char *tiles = bggame_tiles__tilemap__bin;
+	const unsigned size = 16;
+	unsigned int idx;
+	unsigned int val;
+	unsigned char row, col, tmp;
+	unsigned char x, y;
+	idx = 0;
 
-	for( x = 0; x < 32; x += 4 )
-	{
-		draw_see_line( sea_line1, x, 21 );
-		draw_see_line( sea_line2, x, 22 );
-		draw_see_line( sea_line3, x, 23 );
-	}
+	tmp = 128;
+	row = 0;
+	col = 2;	// 66
+	col = 4;	// 67
+	x = 2;
+	y = 21;
+	idx = tmp + row * 2 * size + col * 2;
+	val = tiles[ idx ];
+	devkit_SMS_setNextTileatXY( x , y );
+	devkit_SMS_setTile( ( val ) );
+
+	tmp = 68;
+	//idx = tmp * 2;
+	idx = tmp + 0 * 2 * 16 + 0 * 2;
+	devkit_SMS_setNextTileatXY( 3, 21 );
+
+	//devkit_SMS_setTile( ( val ) );
+
+	//unsigned char x;
+	//unsigned char sea_line1[] = { 66, 66, 67, 68, };
+	//unsigned char sea_line2[] = { 65, 65, 65, 73, };
+	////unsigned char sea_line3[] = { 65, 65, 65, 65, };
+	//unsigned char sea_line3[] = { 65, 69, 70, 65, };
+
+	//for( x = 0; x < 32; x += 4 )
+	//{
+	//	draw_see_line( sea_line1, x, 21 );
+	//	draw_see_line( sea_line2, x, 22 );
+	//	draw_see_line( sea_line3, x, 23 );
+	//}
 	
 	//draw_see_line( sea_line3, 4, 23 );
 	//draw_see_line( sea_line3, 8, 23 );
