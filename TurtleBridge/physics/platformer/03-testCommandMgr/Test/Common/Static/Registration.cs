@@ -14,6 +14,7 @@ namespace WindowsGame.Common
 			IoCContainer.Initialize<IInputManager, InputManager>();
 			IoCContainer.Initialize<ILevelManager, LevelManager>();
 			IoCContainer.Initialize<IPlayerManager, PlayerManager>();
+			IoCContainer.Initialize<IResolutionManager, ResolutionManager>();
 			IoCContainer.Initialize<IScreenManager, ScreenManager>();
 			IoCContainer.Initialize<IFileProxy, RealFileProxy>();
 			IoCContainer.Initialize<IFileManager, FileManager>();

@@ -7,6 +7,8 @@ namespace WindowsGame.Common
 		public const String BUILD_VERSION = "V1.0.0";
 		public const String CONTENT_DIRECTORY = "Content";
 
+		public const Byte FramesPerSecond = 50;
+		public const Boolean IsFixedTimeStep = true;
 		public const Boolean IsFullScreen = false;
 		public const Boolean IsMouseVisible = true;
 		public const UInt16 ScreenWide = 512;

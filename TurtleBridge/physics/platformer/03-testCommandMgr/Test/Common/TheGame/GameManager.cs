@@ -10,6 +10,7 @@ namespace WindowsGame.Common
 		IInputManager InputManager { get; }
 		ILevelManager LevelManager { get; }
 		IPlayerManager PlayerManager { get; }
+		IResolutionManager ResolutionManager { get; }
 		IScreenManager ScreenManager { get; }
 		IFileManager FileManager { get; }
 		ILogger Logger { get; }
@@ -25,6 +26,7 @@ namespace WindowsGame.Common
 			IInputManager inputManager,
 			ILevelManager levelManager,
 			IPlayerManager playerManager,
+			IResolutionManager resolutionManager,
 			IScreenManager screenManager,
 			IFileManager fileManager,
 			ILogger logger
@@ -36,6 +38,7 @@ namespace WindowsGame.Common
 			InputManager = inputManager;
 			LevelManager = levelManager;
 			PlayerManager = playerManager;
+			ResolutionManager = resolutionManager;
 			ScreenManager = screenManager;
 			FileManager = fileManager;
 			Logger = logger;
@@ -47,6 +50,7 @@ namespace WindowsGame.Common
 		public IInputManager InputManager { get; private set; }
 		public ILevelManager LevelManager { get; private set; }
 		public IPlayerManager PlayerManager { get; private set; }
+		public IResolutionManager ResolutionManager { get; private set; }
 		public IScreenManager ScreenManager { get; private set; }
 		public IFileManager FileManager { get; private set; }
 		public ILogger Logger { get; private set; }
