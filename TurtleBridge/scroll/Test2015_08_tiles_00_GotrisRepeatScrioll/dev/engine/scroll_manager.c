@@ -41,8 +41,8 @@ void engine_scroll_manager_init()
 	scroll_x[3] = 0;// 255 << 8;
 	scroll_x[4] = 0;// 255 << 8;
 	scroll_x[5] = 0;// 255 << 8;
-	scroll_x[ 6 ] = 0;// 255 << 8;
-	scroll_x[ 7 ] = 0;// 255 << 8;
+	//scroll_x[ 6 ] = 0;// 255 << 8;
+	//scroll_x[ 7 ] = 0;// 255 << 8;
 	lineCnt = 0;
 
 	devkit_SMS_setLineInterruptHandler(&lineScrollHandler);

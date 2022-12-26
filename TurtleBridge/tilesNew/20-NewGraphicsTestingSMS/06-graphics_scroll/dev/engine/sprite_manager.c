@@ -13,7 +13,7 @@ unsigned char high = 0;
 
 static void load_variables( unsigned char type )
 {
-	
+	type = 0;
 }
 
 void engine_tile_manager_seaX( unsigned char equator )

@@ -29,7 +29,7 @@ void engine_screen_manager_init()
 	//engine_font_manager_draw_char( 'X', 18, 11 );
 	
 	//tmp = 480;
-//	engine_tile_manager_sea();
+	engine_tile_manager_sea();
 	//engine_tile_manager_gfx4( tmp, TMP_HGH );
 	//engine_font_manager_draw_data( tmp, 10, 12 );
 }
@@ -42,7 +42,7 @@ void engine_screen_manager_update()
 
 	h1 = 0;
 	h2 = 0;
-	input = engine_input_manager_hold_right();
+	input = engine_input_manager_move_right();
 	if( input )
 	{
 		h1 = 16;
