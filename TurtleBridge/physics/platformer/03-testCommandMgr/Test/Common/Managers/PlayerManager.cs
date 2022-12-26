@@ -1,5 +1,4 @@
 ﻿using Microsoft.Xna.Framework;
-using WindowsGame.Master;
 
 namespace WindowsGame.Common
 {
