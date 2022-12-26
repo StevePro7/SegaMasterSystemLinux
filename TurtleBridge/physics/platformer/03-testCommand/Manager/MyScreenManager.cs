@@ -1,6 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 
 namespace Test
 {
@@ -22,6 +21,15 @@ namespace Test
 			this.myInputManager = myInputManager;
 			this.myLevelManager = myLevelManager;
 			this.myPlayerManager = myPlayerManager;
+		}
+
+		public void Initialize()
+		{
+		}
+
+		public void Update(GameTime gameTime)
+		{
+			myPlayerManager.Update(gameTime);
 		}
 
 		public void Draw(SpriteBatch spriteBatch)

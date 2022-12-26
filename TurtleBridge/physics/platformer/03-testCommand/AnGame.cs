@@ -44,6 +44,7 @@ namespace Test
 			myFrameManager.Initialize();
 			myLevelManager.Initialize();
 			myPlayerManager.Initialize();
+			myScreenManager.Initialize();
 			base.Initialize();
 		}
 
@@ -60,18 +61,13 @@ namespace Test
 
 		protected override void Update(GameTime gameTime)
 		{
-			string message = "Frame:" + myFrameManager.FrameCounter;
-			myFrameManager.Update();
-			message += " => " + myFrameManager.FrameCounter;
-			Logger.Info(message);
-
 			myInputManager.Update(gameTime);
 			if (myInputManager.KeyPress(Keys.Escape))
 			{
 				Exit();
 			}
 
-			myPlayerManager.Update(gameTime);
+			myScreenManager.Update(gameTime);
 			base.Update(gameTime);
 		}
 

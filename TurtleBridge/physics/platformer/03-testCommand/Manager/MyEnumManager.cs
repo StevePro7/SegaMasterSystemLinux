@@ -1,10 +1,13 @@
 ﻿namespace Test
 {
-	public class MyEnumManager
-	{
-		public enum Commands
+		public enum ScreenType
+		{
+			Record,
+			Playback,
+		}
+
+		public enum CommandType
 		{
 			MoveRight,
 		}
-	}
 }
