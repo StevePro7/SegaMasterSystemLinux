@@ -19,6 +19,7 @@ namespace WindowsGame.Common
 
 		public void LoadContent()
 		{
+			Assets.EmulogicFont = Engine.Content.Load<SpriteFont>("Emulogic");
 			Assets.Black2442 = Engine.Content.Load<Texture2D>("black_24x32");
 			Assets.Tile88 = Engine.Content.Load<Texture2D>("tile_8x8");
 			Assets.Tile1616 = Engine.Content.Load<Texture2D>("tile_16x16");

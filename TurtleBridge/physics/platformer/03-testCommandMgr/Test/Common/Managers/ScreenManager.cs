@@ -46,6 +46,7 @@ namespace WindowsGame.Common
 
 		public void Draw()
 		{
+			Engine.GraphicsDevice.Clear(Color.CornflowerBlue);
 			Engine.SpriteBatch.Begin();
 			screens[currScreen].Draw();
 			//myLevelManager.Draw(spriteBatch);

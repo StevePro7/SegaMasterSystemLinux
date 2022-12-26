@@ -25,7 +25,10 @@ namespace WindowsGame.Common
 			Engine.Game.IsFixedTimeStep = Constants.IsFixedTimeStep;
 			Engine.Game.TargetElapsedTime = TimeSpan.FromSeconds(1.0f / Constants.FramesPerSecond);
 			Engine.Game.IsMouseVisible = Constants.IsMouseVisible;
+
+			Manager.ContentManager.LoadContent();
 			Manager.ResolutionManager.LoadContent();
+			Manager.ScreenManager.LoadContent();
 		}
 
 		public static void UnloadContent()
