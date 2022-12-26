@@ -15,8 +15,8 @@ unsigned int Y_TILE_MAX = 24;
 
 unsigned char test = 0;
 unsigned int test2 = 0;
-unsigned char scroll = 0;
 //unsigned int scrollDivided8 = 0;
+unsigned char scroll = 0;
 unsigned char scrollRight = 0;
 unsigned char scrollRightDivided8 = 0;
 //unsigned int xtile = 0;
@@ -30,19 +30,19 @@ static void lineScrollHandler(void);
 
 void engine_scroll_manager_init()
 {
-	//engine_font_manager_draw_text( "SCROLL", 10, 0 );
-	//engine_font_manager_draw_text( "SCROLL", 10, 1 );
-	//engine_font_manager_draw_text( "SCROLL", 10, 2 );
-	//engine_font_manager_draw_text( "SCROLL", 10, 4 );
+	engine_font_manager_draw_text( "SCROLL", 10, 0 );
+	engine_font_manager_draw_text( "SCROLL", 10, 1 );
+	engine_font_manager_draw_text( "SCROLL", 10, 2 );
+	engine_font_manager_draw_text( "SCROLL", 10, 3 );
 
-	scroll_x[ 0 ] = 255 << 8;
-	scroll_x[ 1 ] = 255 << 8;
-	scroll_x[ 2 ] = 255 << 8;
-	scroll_x[ 3 ] = 255 << 8;
-	scroll_x[ 4 ] = 255 << 8;
-	scroll_x[ 5 ] = 255 << 8;
-	//scroll_x[ 6 ] = 255 << 8;
-	//scroll_x[ 7 ] = 255 << 8;
+	scroll_x[ 0 ] = 0; // 255 << 8;
+	scroll_x[ 1 ] = 0; // 255 << 8;
+	scroll_x[ 2 ] = 0; // 255 << 8;
+	scroll_x[ 3 ] = 0; // 255 << 8;
+	scroll_x[ 4 ] = 0; // 255 << 8;
+	scroll_x[ 5 ] = 0; // 255 << 8;
+	//scroll_x[ 6 ] = 0; // 255 << 8;
+	//scroll_x[ 7 ] = 0; // 255 << 8;
 	lineCnt = 0;
 
 	devkit_SMS_setLineInterruptHandler( &lineScrollHandler );

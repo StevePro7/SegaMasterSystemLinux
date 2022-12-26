@@ -81,8 +81,6 @@ void engine_tile_manager_gfx3( unsigned char tmp, unsigned char x, unsigned char
 	}
 }
 
-
-
 void engine_tile_manager_gfx2_hack( unsigned char tmp )
 {
 	const unsigned char *tiles = bggame_tiles__tilemap__bin;
@@ -156,21 +154,21 @@ void engine_tile_manager_sky()
 	unsigned int val;
 	unsigned char row, col, tmp;
 
-	unsigned x, y;
-	unsigned w, h;
-	w = 1;
-	h = 1;
-	x = 8;
-	y = 22;
+	//unsigned x, y;
+	//unsigned w, h;
+	//w = 1;
+	//h = 1;
+	//x = 8;
+	//y = 22;
 
 	tmp = 128;
-	for( row = 0; row < h; row++ )
+	idx = tmp + 0 * 2 * 1 + 0 * 2;
+	val = tiles[ idx ];
+	for( row = 4; row < 21; row++ )
 	{
-		for( col = 0; col < w; col++ )
+		for( col = 0; col < 32; col++ )
 		{
-			idx = tmp + row * 2 * w + col * 2;
-			val = tiles[ idx ];
-			devkit_SMS_setNextTileatXY( x + col, y + row );
+			devkit_SMS_setNextTileatXY( col, row );
 			devkit_SMS_setTile( ( val ) );
 		}
 	}
@@ -201,15 +199,26 @@ static void draw_see_line( unsigned char *sea_line, unsigned char x, unsigned ch
 // 24-BackgroundSpriteTilesTest
 void engine_tile_manager_sea()
 {
+	unsigned char x;
+	unsigned char sea_line1[] = { 66, 66, 67, 68, };
+	unsigned char sea_line2[] = { 65, 65, 65, 73, };
+	//unsigned char sea_line3[] = { 65, 65, 65, 65, };
 	unsigned char sea_line3[] = { 65, 69, 70, 65, };
-	draw_see_line( sea_line3, 0, 23 );
-	draw_see_line( sea_line3, 4, 23 );
-	draw_see_line( sea_line3, 8, 23 );
-	draw_see_line( sea_line3, 12, 23 );
-	draw_see_line( sea_line3, 16, 23 );
-	draw_see_line( sea_line3, 20, 23 );
-	draw_see_line( sea_line3, 24, 23 );
-	draw_see_line( sea_line3, 28, 23 );
+
+	for( x = 0; x < 32; x += 4 )
+	{
+		draw_see_line( sea_line1, x, 21 );
+		draw_see_line( sea_line2, x, 22 );
+		draw_see_line( sea_line3, x, 23 );
+	}
+	
+	//draw_see_line( sea_line3, 4, 23 );
+	//draw_see_line( sea_line3, 8, 23 );
+	//draw_see_line( sea_line3, 12, 23 );
+	//draw_see_line( sea_line3, 16, 23 );
+	//draw_see_line( sea_line3, 20, 23 );
+	//draw_see_line( sea_line3, 24, 23 );
+	//draw_see_line( sea_line3, 28, 23 );
 }
 
 void engine_tile_manager_seaZ()
