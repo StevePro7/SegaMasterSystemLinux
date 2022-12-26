@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace WindowsGame
+namespace WindowsGame.Common
 {
 	/// <summary>
 	/// This is the main type for your game.

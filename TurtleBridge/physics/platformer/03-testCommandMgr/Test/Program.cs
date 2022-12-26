@@ -14,7 +14,7 @@ namespace WindowsGame
         [STAThread]
         static void Main()
         {
-            using (var game = new AnGame())
+            using (var game = new WindowsGame.Common.AnGame())
                 game.Run();
         }
     }
