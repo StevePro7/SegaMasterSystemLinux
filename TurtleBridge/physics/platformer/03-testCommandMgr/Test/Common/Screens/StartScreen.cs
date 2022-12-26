@@ -20,6 +20,7 @@ namespace WindowsGame.Common
 
 		public void Draw()
 		{
+			MyGame.Manager.LevelManager.Draw();
 		}
 	}
 }

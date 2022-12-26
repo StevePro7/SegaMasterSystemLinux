@@ -16,6 +16,7 @@ namespace WindowsGame.Common
 			Manager.Logger.Initialize();
 
 			Manager.ContentManager.Initialize();
+			Manager.LevelManager.Initialize();
 			Manager.ResolutionManager.Initialize();
 			Manager.ScreenManager.Initialize();
 		}
