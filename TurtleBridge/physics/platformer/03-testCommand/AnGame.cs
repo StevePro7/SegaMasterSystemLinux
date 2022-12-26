@@ -11,6 +11,7 @@ namespace Test
 		SpriteBatch spriteBatch;
 		MyContentManager myContentManager;
 		MyCommandManager myCommandManager;
+		MyFrameManager myFrameManager;
 		MyInputManager myInputManager;
 		MyLevelManager myLevelManager;
 		MyPlayerManager myPlayerManager;
@@ -25,6 +26,7 @@ namespace Test
 
 			myCommandManager = new MyCommandManager();
 			myContentManager = new MyContentManager();
+			myFrameManager = new MyFrameManager();
 			myInputManager = new MyInputManager();
 			myLevelManager = new MyLevelManager(myContentManager);
 			myPlayerManager = new MyPlayerManager(myContentManager, myInputManager, myLevelManager);
@@ -39,6 +41,7 @@ namespace Test
 			Logger.Initialize();
 			myContentManager.Initialize(Content);
 			myCommandManager.Initialize();
+			myFrameManager.Initialize();
 			myLevelManager.Initialize();
 			myPlayerManager.Initialize();
 			base.Initialize();
@@ -57,6 +60,11 @@ namespace Test
 
 		protected override void Update(GameTime gameTime)
 		{
+			string message = "Frame:" + myFrameManager.FrameCounter;
+			myFrameManager.Update();
+			message += " => " + myFrameManager.FrameCounter;
+			Logger.Info(message);
+
 			myInputManager.Update(gameTime);
 			if (myInputManager.KeyPress(Keys.Escape))
 			{

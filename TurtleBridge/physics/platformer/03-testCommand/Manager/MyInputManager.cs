@@ -17,14 +17,14 @@ namespace Test
 
 		public Boolean KeyHold(Keys key)
 		{
-			//return currKeyboardState.IsKeyDown(key) && prevKeyboardState.IsKeyUp(key);
-			return currKeyboardState.IsKeyDown(key);
+			return currKeyboardState.IsKeyDown(key) && prevKeyboardState.IsKeyUp(key);
+			//return currKeyboardState.IsKeyDown(key);
 		}
 
 		public Boolean KeyPress(Keys key)
 		{
-			return currKeyboardState.IsKeyDown(key) && prevKeyboardState.IsKeyUp(key);
-			//return currKeyboardState.IsKeyDown(key);
+			//return currKeyboardState.IsKeyDown(key) && prevKeyboardState.IsKeyUp(key);
+			return currKeyboardState.IsKeyDown(key);
 		}
 
 	}
