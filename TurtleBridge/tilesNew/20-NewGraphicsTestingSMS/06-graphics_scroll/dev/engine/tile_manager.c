@@ -196,6 +196,9 @@ static void draw_see_line( unsigned char *sea_line, unsigned char x, unsigned ch
 	}
 }
 
+// IMPORTANT
+// original arrays here:
+// 24-BackgroundSpriteTilesTest
 void engine_tile_manager_sea()
 {
 	unsigned char sea_line3[] = { 65, 69, 70, 65, };
