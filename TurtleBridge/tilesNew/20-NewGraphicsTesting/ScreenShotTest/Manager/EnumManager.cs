@@ -16,19 +16,8 @@
 		turtleH = 11,
 		sign = 12,
 		goal = 13,
-		wave01 = 14,
-		wave02 = 15,
+		//wave01 = 14,
+		//wave02 = 15,
 	}
 
-	//public enum AssetType2
-	//{
-	//	font = 0,
-	//	block = 1,
-	//	bridge = 2,
-	//	island = 3,
-	//	sign = 4,
-	//	goal = 5,
-	//	cloudL = 6,
-	//	cloudS = 7,
-	//}
 }
