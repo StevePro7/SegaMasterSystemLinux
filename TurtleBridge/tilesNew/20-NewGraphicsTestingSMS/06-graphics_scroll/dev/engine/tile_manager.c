@@ -4,6 +4,49 @@
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
 
+void engine_tile_manager_clouds()
+{
+	engine_tile_manager_gfx5( 928, 2, 4, 6, 3 );
+	engine_tile_manager_gfx5( 1024, 10, 5, 4, 3 );
+	engine_tile_manager_gfx5( 928, 18, 4, 6, 3 );
+	engine_tile_manager_gfx5( 1024, 26, 5, 4, 3 );
+}
+void engine_tile_manager_island()
+{
+}
+void engine_tile_manager_tree()
+{
+
+}
+
+void engine_tile_manager_gfx5( unsigned int tmp, unsigned char x, unsigned char y, unsigned char w, unsigned char h )
+{
+	const unsigned char *tiles = bggame_tiles__tilemap__bin;
+	const unsigned size = 16;
+
+	unsigned int idx;
+	unsigned int val;
+	unsigned char row, col;
+
+//	unsigned x, y;
+	
+	//w = 16;
+	//h = 10;
+	//x = 18;
+	//y = 12;
+
+	for( row = 0; row < h; row++ )
+	{
+		for( col = 0; col < w; col++ )
+		{
+			idx = tmp + row * 2 * size + col * 2;
+			val = tiles[ idx ];
+			devkit_SMS_setNextTileatXY( x + col, y + row );
+			devkit_SMS_setTile( ( val ) );
+		}
+	}
+}
+
 void engine_tile_manager_gfx4( unsigned int tmp, unsigned char h )
 {
 	const unsigned char *tiles = bggame_tiles__tilemap__bin;
@@ -154,7 +197,7 @@ void engine_tile_manager_sky()
 	unsigned int val;
 	unsigned char row, col, tmp;
 
-	tmp = 65;
+	tmp = 64;
 	tmp *= 2;
 	idx = tmp + 0 * 2 * 1 + 0 * 2;
 	val = tiles[ idx ];
