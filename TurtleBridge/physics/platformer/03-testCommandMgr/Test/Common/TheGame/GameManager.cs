@@ -1,5 +1,4 @@
-﻿using System;
-using WindowsGame.Master;
+﻿using WindowsGame.Master;
 
 namespace WindowsGame.Common
 {
@@ -7,12 +6,13 @@ namespace WindowsGame.Common
 	{
 		ICommandManager CommandManager { get; }
 		IContentManager ContentManager { get; }
-		//IEnumManager EnumManager { get; }
 		IFrameManager FrameManager { get; }
 		IInputManager InputManager { get; }
 		ILevelManager LevelManager { get; }
 		IPlayerManager PlayerManager { get; }
 		IScreenManager ScreenManager { get; }
+		IFileManager FileManager { get; }
+		ILogger Logger { get; }
 	}
 
 	public class GameManager : IGameManager
@@ -21,31 +21,35 @@ namespace WindowsGame.Common
 		(
 			ICommandManager commandManager,
 			IContentManager contentManager,
-			//IEnumManager enumManager,
 			IFrameManager frameManager,
 			IInputManager inputManager,
 			ILevelManager levelManager,
 			IPlayerManager playerManager,
-			IScreenManager screenManager
+			IScreenManager screenManager,
+			IFileManager fileManager,
+			ILogger logger
 		)
 		{
 			CommandManager = commandManager;
 			ContentManager = contentManager;
-			//EnumManager = enumManager,
 			FrameManager = frameManager;
 			InputManager = inputManager;
 			LevelManager = levelManager;
 			PlayerManager = playerManager;
 			ScreenManager = screenManager;
+			FileManager = fileManager;
+			Logger = logger;
 		}
 
 		public ICommandManager CommandManager { get; private set; }
 		public IContentManager ContentManager { get; private set; }
-		//public IEnumManager EnumManager { get; private set; }
 		public IFrameManager FrameManager { get; private set; }
 		public IInputManager InputManager { get; private set; }
 		public ILevelManager LevelManager { get; private set; }
 		public IPlayerManager PlayerManager { get; private set; }
 		public IScreenManager ScreenManager { get; private set; }
+		public IFileManager FileManager { get; private set; }
+		public ILogger Logger { get; private set; }
 	}
+
 }
