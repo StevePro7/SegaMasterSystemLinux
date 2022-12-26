@@ -176,8 +176,44 @@ void engine_tile_manager_sky()
 	}
 }
 
+static void draw_see_line( unsigned char *sea_line, unsigned char x, unsigned char y )
+{
+	const unsigned char *tiles = bggame_tiles__tilemap__bin;
+	unsigned char col, elem;
+
+	unsigned int idx, val;
+	for( col = 0; col < 4; col++ )
+	{
+		elem = sea_line[ col ];
+		elem *= 2;
+
+		//idx = elem * 2 + col * 2;
+		idx = elem + 0 * 2 * 1 + 0 * 2;
+		val = tiles[ idx ];
+		devkit_SMS_setNextTileatXY( x, y );
+		devkit_SMS_setTile( val );
+		x++;
+	}
+}
+
 void engine_tile_manager_sea()
 {
+	unsigned char sea_line3[] = { 65, 69, 70, 65, };
+	draw_see_line( sea_line3, 0, 23 );
+	draw_see_line( sea_line3, 4, 23 );
+	draw_see_line( sea_line3, 8, 23 );
+	draw_see_line( sea_line3, 12, 23 );
+	draw_see_line( sea_line3, 16, 23 );
+	draw_see_line( sea_line3, 20, 23 );
+	draw_see_line( sea_line3, 24, 23 );
+	draw_see_line( sea_line3, 28, 23 );
+}
+
+void engine_tile_manager_seaZ()
+{
+	//66, 66, 67, 68,
+	//65, 65, 65, 73,
+	//65, 69, 70, 65,
 	const unsigned char *tiles = bggame_tiles__tilemap__bin;
 	unsigned int idx;
 	unsigned int val;
