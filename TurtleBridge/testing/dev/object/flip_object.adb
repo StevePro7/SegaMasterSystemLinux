@@ -1,9 +1,0 @@
-M:flip_object
-S:G$flip_array_ptr$0_0$0({14}DA7d,DG,SC:U),E,0,0
-S:G$flip_array_00$0_0$0({9}DA9d,SC:U),D,0,0
-S:G$flip_array_01$0_0$0({9}DA9d,SC:U),D,0,0
-S:G$flip_array_02$0_0$0({9}DA9d,SC:U),D,0,0
-S:G$flip_array_03$0_0$0({9}DA9d,SC:U),D,0,0
-S:G$flip_array_04$0_0$0({9}DA9d,SC:U),D,0,0
-S:G$flip_array_05$0_0$0({9}DA9d,SC:U),D,0,0
-S:G$flip_array_06$0_0$0({9}DA9d,SC:U),D,0,0
