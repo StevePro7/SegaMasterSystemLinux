@@ -6,17 +6,19 @@
 
 void engine_tile_manager_clouds()
 {
-	engine_tile_manager_gfx5( 928, 2, 4, 6, 3 );
+	engine_tile_manager_gfx5( 928, 1, 4, 6, 3 );
+	//engine_tile_manager_gfx5( 928, 2, 4, 6, 3 );
 	engine_tile_manager_gfx5( 1024, 10, 5, 4, 3 );
 	engine_tile_manager_gfx5( 928, 18, 4, 6, 3 );
 	engine_tile_manager_gfx5( 1024, 26, 5, 4, 3 );
 }
 void engine_tile_manager_island()
 {
+	engine_tile_manager_gfx5( 480, 1, 18, 8, 4 );
 }
 void engine_tile_manager_tree()
 {
-
+	engine_tile_manager_gfx5( 608, 2, 8, 8, 10 );
 }
 
 void engine_tile_manager_gfx5( unsigned int tmp, unsigned char x, unsigned char y, unsigned char w, unsigned char h )
@@ -220,7 +222,7 @@ static void draw_see_line( unsigned char *sea_line, unsigned char x, unsigned ch
 	for( col = 0; col < 4; col++ )
 	{
 		elem = sea_line[ col ];
-		//elem *= 2;
+		elem *= 2;
 
 		//idx = elem * 2 + col * 2;
 		idx = elem + 0 * 2 * 1 + 0 * 2;
