@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using System;
 using WindowsGame.Master;
 
 namespace WindowsGame.Common
@@ -15,6 +16,7 @@ namespace WindowsGame.Common
 
 		public int Update(GameTime gameTime)
 		{
+			MyGame.Manager.Logger.Info(DateTime.Now.ToString() + "  " + DateTime.Now.Millisecond.ToString());
 			MyGame.Manager.PlayerManager.Update(gameTime);
 			return (int)ScreenType.Start;
 		}
