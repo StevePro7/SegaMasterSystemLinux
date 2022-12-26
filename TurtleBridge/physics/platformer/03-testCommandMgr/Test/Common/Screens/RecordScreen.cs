@@ -11,6 +11,7 @@ namespace WindowsGame.Common
 
 		public void LoadContent()
 		{
+			Engine.Game.Window.Title = GetType().Name;
 		}
 
 		public int Update(GameTime gameTime)
@@ -20,6 +21,7 @@ namespace WindowsGame.Common
 
 		public void Draw()
 		{
+			Engine.SpriteBatch.DrawString(Assets.EmulogicFont, "RECORD SCREEN", new Vector2(10, 10), Color.Yellow);
 		}
 	}
 }

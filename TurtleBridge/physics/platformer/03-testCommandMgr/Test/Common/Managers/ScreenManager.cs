@@ -17,7 +17,7 @@ namespace WindowsGame.Common
 	{
 		private IDictionary<Int32, IScreen> screens;
 		private Int32 currScreen = (Int32)ScreenType.Start;
-		private Int32 nextScreen = (Int32)ScreenType.Start;
+		private Int32 nextScreen = (Int32)ScreenType.Record;
 
 		public void Initialize()
 		{
