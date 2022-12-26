@@ -16,6 +16,8 @@
 		turtleH = 11,
 		sign = 12,
 		goal = 13,
+		wave01 = 14,
+		wave02 = 15,
 	}
 
 	//public enum AssetType2

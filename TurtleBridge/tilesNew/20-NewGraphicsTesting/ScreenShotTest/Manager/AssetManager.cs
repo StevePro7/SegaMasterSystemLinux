@@ -24,6 +24,8 @@ namespace ScreenShotTest
 			//"hover_turtleBB00_32x24",
 			"sign_send",
 			"sign_goal",
+			"wave_strip_01",
+			"wave_strip_02",
 		};
 
 		protected int[] heights =
@@ -39,6 +41,8 @@ namespace ScreenShotTest
 			24,
 			24,
 			24,
+			8,
+			8,
 		};
 
 		public void LoadContent(ContentManager content)
