@@ -10,6 +10,8 @@ void engine_tile_manager_gfx();
 void engine_tile_manager_clouds();
 void engine_tile_manager_island();
 void engine_tile_manager_tree();
+void engine_tile_manager_bridge();
+void engine_tile_manager_turtle();
 
 void engine_tile_manager_sky();
 void engine_tile_manager_sea();

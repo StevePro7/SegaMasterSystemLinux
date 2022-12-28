@@ -21,6 +21,15 @@ void engine_tile_manager_tree()
 {
 	engine_tile_manager_gfx5( 608, 2, 8, 8, 10 );
 }
+void engine_tile_manager_bridge()
+{
+	engine_tile_manager_gfx5( 160, 1, 12, 8, 10 );		// Tall bridge
+}
+void engine_tile_manager_turtle()
+{
+	engine_tile_manager_gfx5( 1120, 12, 15, 4, 3 );		// Flying turtle
+	engine_tile_manager_gfx5( 1216, 12, 15, 4, 3 );		// Hover  turtle
+}
 
 void engine_tile_manager_gfx5( unsigned int tmp, unsigned char x, unsigned char y, unsigned char w, unsigned char h )
 {
