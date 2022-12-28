@@ -30,6 +30,8 @@ namespace WindowsGame.Common
 			Assets.Skater[0] = Engine.Content.Load<Texture2D>("skate01");
 			Assets.Skater[1] = Engine.Content.Load<Texture2D>("skate02");
 			Assets.Skater[2] = Engine.Content.Load<Texture2D>("skate03");
+
+			Assets.Sea3224 = Engine.Content.Load<Texture2D>("sea_32x24");
 		}
 
 		public void UnLoadContent()

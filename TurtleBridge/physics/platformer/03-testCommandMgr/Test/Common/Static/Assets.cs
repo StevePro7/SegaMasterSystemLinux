@@ -14,5 +14,7 @@ namespace WindowsGame.Common
 		public static Texture2D Tile248;
 		public static Texture2D Tile2432;
 		public static Texture2D[] Skater;
+
+		public static Texture2D Sea3224;
 	}
 }

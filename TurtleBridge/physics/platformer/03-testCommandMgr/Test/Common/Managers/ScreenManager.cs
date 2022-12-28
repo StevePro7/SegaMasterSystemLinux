@@ -17,7 +17,7 @@ namespace WindowsGame.Common
 	{
 		private IDictionary<Int32, IScreen> screens;
 		private Int32 currScreen = (Int32)ScreenType.Start;
-		private Int32 nextScreen = (Int32)ScreenType.Start;
+		private Int32 nextScreen = (Int32)ScreenType.Editor;
 
 		public void Initialize()
 		{
@@ -41,7 +41,6 @@ namespace WindowsGame.Common
 			}
 
 			nextScreen = screens[currScreen].Update(gameTime);
-			//myPlayerManager.Update(gameTime);
 		}
 
 		public void Draw()
@@ -49,8 +48,6 @@ namespace WindowsGame.Common
 			Engine.GraphicsDevice.Clear(Color.CornflowerBlue);
 			Engine.SpriteBatch.Begin();
 			screens[currScreen].Draw();
-			//myLevelManager.Draw(spriteBatch);
-			//myPlayerManager.Draw(spriteBatch);
 			Engine.SpriteBatch.End();
 		}
 
@@ -61,6 +58,7 @@ namespace WindowsGame.Common
 				{(Int32)ScreenType.Start, new StartScreen()},
 				{(Int32)ScreenType.Record, new RecordScreen()},
 				{(Int32)ScreenType.Playback, new PlaybackScreen()},
+				{(Int32)ScreenType.Editor, new EditorScreen()},
 			};
 		}
 	}

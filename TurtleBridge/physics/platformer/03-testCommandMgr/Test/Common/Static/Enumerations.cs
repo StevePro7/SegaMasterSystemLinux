@@ -4,7 +4,8 @@
 	{
 		Start,
 		Record,
-		Playback
+		Playback,
+		Editor,
 	}
 
 //	public enum DifficultyType
