@@ -1,5 +1,6 @@
 #include "tile_manager.h"
 #include "enum_manager.h"
+#include "font_manager.h"
 #include "global_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
@@ -215,27 +216,55 @@ void engine_tile_manager_sky()
 static void draw_see_line( unsigned char *sea_line, unsigned char x, unsigned char y )
 {
 	const unsigned char *tiles = bggame_tiles__tilemap__bin;
-	unsigned char col, elem;
+	const unsigned size = 16;
+	unsigned char elem, tile;
 
 	unsigned int idx, val;
-	for( col = 0; col < 4; col++ )
-	{
-		elem = sea_line[ col ];
-		elem *= 2;
+	unsigned char row, col, bse, tmp;
 
-		//idx = elem * 2 + col * 2;
-		idx = elem + 0 * 2 * 1 + 0 * 2;
+	idx = 0;
+	col = 0;
+
+	bse = 64;
+	tmp = bse * 2;
+	row = 0;
+	for( elem = 0; elem < 4; elem++ )
+	{
+		tile = sea_line[ elem ];
+		col = tile - bse;
+		idx = tmp + row * 2 * size + col * 2;
 		val = tiles[ idx ];
 		devkit_SMS_setNextTileatXY( x, y );
-		devkit_SMS_setTile( val );
+		devkit_SMS_setTile( ( val ) );
+
+		////idx = elem * 2 + col * 2;
+		//idx = elem + 0 * 2 * 1 + 0 * 2;
+		//val = tiles[ idx ];
+		//devkit_SMS_setNextTileatXY( x, y );
+		//devkit_SMS_setTile( val );
+
+		engine_font_manager_draw_data( elem, 10, 10 + x );
+		engine_font_manager_draw_data( val, 20, 10 + x );
+
 		x++;
 	}
 }
 
+void engine_tile_manager_sea()
+{
+	unsigned char sea_line1[] = { 66, 66, 67, 68, };
+	unsigned char sea_line2[] = { 65, 65, 65, 73, };
+	unsigned char sea_line3[] = { 65, 71, 72, 65, };
+	unsigned char x = 0;
+
+	//draw_see_line( sea_line1, x, 21 );
+	//draw_see_line( sea_line2, x, 22 );
+	draw_see_line( sea_line3, x, 23 );
+}
 // IMPORTANT
 // original arrays here:
 // 24-BackgroundSpriteTilesTest
-void engine_tile_manager_sea()
+void engine_tile_manager_seaQ()
 {
 	const unsigned char *tiles = bggame_tiles__tilemap__bin;
 	const unsigned size = 16;
