@@ -32,17 +32,17 @@ void engine_screen_manager_init()
 	engine_tile_manager_sky();
 	engine_tile_manager_sea();
 	engine_tile_manager_clouds();
-//	engine_tile_manager_tree();
+	engine_tile_manager_tree();
 	engine_tile_manager_island();
 	//engine_tile_manager_turtle();
 	//engine_tile_manager_bridge();
-	engine_tile_manager_sign();
+	//engine_tile_manager_sign();
 
 	//engine_tile_manager_gfx4( tmp, TMP_HGH );
 	//engine_font_manager_draw_data( tmp, 10, 12 );
 
 	//TODO
-	//engine_music_manager_play();
+	engine_music_manager_play();
 }
 
 void engine_screen_manager_update()
