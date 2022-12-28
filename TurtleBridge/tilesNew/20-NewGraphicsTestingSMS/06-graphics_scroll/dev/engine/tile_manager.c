@@ -241,16 +241,18 @@ void engine_tile_manager_sea()
 	const unsigned size = 16;
 	unsigned int idx;
 	unsigned int val;
-	unsigned char row, col, tmp;
+	unsigned char row, col, bse, tmp;
 	unsigned char x, y;
 	idx = 0;
+	col = 0;
 
 	// row1:21
-	tmp = 128;
+	bse = 64;
+	tmp = bse * 2;
 	row = 0;
-	col = 2;	// 66
-	col = 4;	// 67
-	col = 5;	// 68
+	//col = 2;	// 66
+	//col = 3;	// 67
+	//col = 4;	// 68
 	x = 3;
 	y = 21;
 	idx = tmp + row * 2 * size + col * 2;
@@ -259,10 +261,11 @@ void engine_tile_manager_sea()
 	devkit_SMS_setTile( ( val ) );
 
 	// row2:22
-	tmp = 128;
+	bse = 64;
+	tmp = bse * 2;
 	row = 0;
-	//col = 5;	// 68
-	col = 10;	// 73
+	//col = 1;	// 65
+	col = 9;	// 73
 	x = 5;
 	y = 22;
 	idx = tmp + row * 2 * size + col * 2;
@@ -271,11 +274,12 @@ void engine_tile_manager_sea()
 	devkit_SMS_setTile( ( val ) );
 
 	// row3:23
-	tmp = 128;
+	bse = 64;
+	tmp = bse * 2;
 	row = 0;
-	//col = 5;	// 68
-	col = 6;	// 69
-				//col = 10;	// 73
+	//col = 1;	// 65
+	col = 7;	// 71
+	//col = 8;	// 72
 	x = 8;
 	y = 23;
 	idx = tmp + row * 2 * size + col * 2;
@@ -283,11 +287,12 @@ void engine_tile_manager_sea()
 	devkit_SMS_setNextTileatXY( x, y );
 	devkit_SMS_setTile( ( val ) );
 
-	//tmp = 128;
-	//row = 0;
-	//col = 5;	// 68
-	col = 7;	// 70
-	//col = 10;	// 73
+	bse = 64;
+	tmp = bse * 2;
+	row = 0;
+	//col = 1;	// 65
+	//col = 7;	// 71
+	col = 8;	// 72
 	x = 9;
 	y = 23;
 	idx = tmp + row * 2 * size + col * 2;
@@ -295,26 +300,26 @@ void engine_tile_manager_sea()
 	devkit_SMS_setNextTileatXY( x, y );
 	devkit_SMS_setTile( ( val ) );
 
-	// row3:23
-	tmp = 128;
-	row = 0;
-	col = 8;	// 71
-	x = 12;
-	y = 23;
-	idx = tmp + row * 2 * size + col * 2;
-	val = tiles[ idx ];
-	devkit_SMS_setNextTileatXY( x, y );
-	devkit_SMS_setTile( ( val ) );
-
+	//// row3:23
 	//tmp = 128;
 	//row = 0;
-	col = 9;	// 72
-	x = 13;
-	y = 23;
-	idx = tmp + row * 2 * size + col * 2;
-	val = tiles[ idx ];
-	devkit_SMS_setNextTileatXY( x, y );
-	devkit_SMS_setTile( ( val ) );
+	//col = 8;	// 71
+	//x = 12;
+	//y = 23;
+	//idx = tmp + row * 2 * size + col * 2;
+	//val = tiles[ idx ];
+	//devkit_SMS_setNextTileatXY( x, y );
+	//devkit_SMS_setTile( ( val ) );
+
+	////tmp = 128;
+	////row = 0;
+	//col = 9;	// 72
+	//x = 13;
+	//y = 23;
+	//idx = tmp + row * 2 * size + col * 2;
+	//val = tiles[ idx ];
+	//devkit_SMS_setNextTileatXY( x, y );
+	//devkit_SMS_setTile( ( val ) );
 
 	//unsigned char x;
 	//unsigned char sea_line1[] = { 66, 66, 67, 68, };
