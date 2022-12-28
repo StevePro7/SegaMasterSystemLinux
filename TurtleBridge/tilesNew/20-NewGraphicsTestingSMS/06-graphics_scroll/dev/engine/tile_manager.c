@@ -224,28 +224,18 @@ static void draw_see_line( unsigned char *sea_line, unsigned char x, unsigned ch
 
 	idx = 0;
 	col = 0;
-
+	row = 0;
 	bse = 64;
 	tmp = bse * 2;
-	row = 0;
 	for( elem = 0; elem < 4; elem++ )
 	{
 		tile = sea_line[ elem ];
 		col = tile - bse;
 		idx = tmp + row * 2 * size + col * 2;
 		val = tiles[ idx ];
+
 		devkit_SMS_setNextTileatXY( x, y );
 		devkit_SMS_setTile( ( val ) );
-
-		////idx = elem * 2 + col * 2;
-		//idx = elem + 0 * 2 * 1 + 0 * 2;
-		//val = tiles[ idx ];
-		//devkit_SMS_setNextTileatXY( x, y );
-		//devkit_SMS_setTile( val );
-
-		engine_font_manager_draw_data( elem, 10, 10 + x );
-		engine_font_manager_draw_data( val, 20, 10 + x );
-
 		x++;
 	}
 }
@@ -257,9 +247,12 @@ void engine_tile_manager_sea()
 	unsigned char sea_line3[] = { 65, 71, 72, 65, };
 	unsigned char x = 0;
 
-	//draw_see_line( sea_line1, x, 21 );
-	//draw_see_line( sea_line2, x, 22 );
-	draw_see_line( sea_line3, x, 23 );
+	for( x = 0; x < 32; x += 4 )
+	{
+		draw_see_line( sea_line1, x, 21 );
+		draw_see_line( sea_line2, x, 22 );
+		draw_see_line( sea_line3, x, 23 );
+	}
 }
 // IMPORTANT
 // original arrays here:
