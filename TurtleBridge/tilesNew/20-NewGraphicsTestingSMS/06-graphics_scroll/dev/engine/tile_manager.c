@@ -30,6 +30,11 @@ void engine_tile_manager_turtle()
 	engine_tile_manager_gfx5( 1120, 12, 15, 4, 3 );		// Flying turtle
 	engine_tile_manager_gfx5( 1216, 12, 15, 4, 3 );		// Hover  turtle
 }
+void engine_tile_manager_sign()
+{
+	engine_tile_manager_gfx5( 1312, 4, 15, 3, 3 );		// sign
+	engine_tile_manager_gfx5( 1408, 4, 15, 3, 3 );		// goal
+}
 
 void engine_tile_manager_gfx5( unsigned int tmp, unsigned char x, unsigned char y, unsigned char w, unsigned char h )
 {
