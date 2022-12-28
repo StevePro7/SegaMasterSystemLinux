@@ -8,8 +8,6 @@ namespace ScreenShotTest
 		public void Ctor(GraphicsDeviceManager graphics, AssetManager assetManager)
 		{
 			base.Ctor(assetManager);
-			Wide = 128;
-			High = assetManager.GetHeights(4);
 
 			assets.Add(AssetType.font);
 			assets.Add(AssetType.wave);
@@ -22,6 +20,9 @@ namespace ScreenShotTest
 			assets.Add(AssetType.turtleH);
 			assets.Add(AssetType.sign);
 			assets.Add(AssetType.goal);
+
+			Wide = 128;
+			High = assetManager.GetHeights(assets.Count);
 		}
 
 		public void Draw(SpriteBatch spriteBatch)
