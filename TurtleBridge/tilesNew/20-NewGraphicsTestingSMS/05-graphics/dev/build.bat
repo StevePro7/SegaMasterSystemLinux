@@ -79,6 +79,9 @@ content/psg.rel
 :: Execute
 "C:\Program Files\SDCC\bin\ihx2sms.exe" output.ihx output.sms
 
+:: Copy
+cp output.sms ../Graphics.sms
+
 :: Delete
 cd content
 if exist "*.asm" del "*.asm" > nul; if exist "*.lst" del "*.lst" > nul; if exist "*.sym" del "*.sym" > nul
