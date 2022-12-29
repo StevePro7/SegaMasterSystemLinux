@@ -6,6 +6,7 @@ F:G$engine_scroll_manager_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lscroll_manager.engine_scroll_manager_update$h1$1_0$100({1}SC:U),B,1,4
 S:Lscroll_manager.engine_scroll_manager_update$h2$1_0$100({1}SC:U),B,1,5
 F:Fscroll_manager$lineScrollHandler$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lscroll_manager.lineScrollHandler$val$1_0$103({2}SI:U),R,0,0,[c,b]
 S:G$BG_TILE_WIDTH$0_0$0({2}SI:U),E,0,0
 S:G$X_TILE_MAX$0_0$0({2}SI:U),E,0,0
 S:G$X_TILE_DIFF$0_0$0({2}SI:U),E,0,0

@@ -32,8 +32,8 @@ void engine_screen_manager_init()
 	engine_tile_manager_sky();
 	engine_tile_manager_sea();
 	engine_tile_manager_clouds();
-	//engine_tile_manager_tree();
-	//engine_tile_manager_island();
+	engine_tile_manager_tree();
+	engine_tile_manager_island();
 	//engine_tile_manager_turtle();
 	//engine_tile_manager_bridge();
 	//engine_tile_manager_sign();
@@ -56,8 +56,10 @@ void engine_screen_manager_update()
 	input = engine_input_manager_move_right();
 	if( input )
 	{
-		h1 = 128;
-		h2 = 196;
+		//h1 = 128;
+		//h2 = 196;
+		h1 = 1;
+		h2 = 2;
 	//	tmp -= 2;
 	//	engine_tile_manager_gfx4( tmp, TMP_HGH );
 	//	engine_font_manager_draw_data( tmp, 10, 12 );
@@ -67,6 +69,12 @@ void engine_screen_manager_update()
 	if( input )
 	{
 		engine_scroll_manager_update2();
+	}
+
+	input = engine_input_manager_hold_left();
+	if( input )
+	{
+		engine_font_manager_draw_text( "HELLO", 15, 2 );
 	}
 	//input = engine_input_manager_move_right();
 	//if( input )

@@ -30,9 +30,9 @@ static void lineScrollHandler(void);
 
 void engine_scroll_manager_init()
 {
-	engine_font_manager_draw_text( "123456789A123456789B123456789CX", 1, 0 );
-	engine_font_manager_draw_text( "123456789A123456789B123456789CX", 1, 1 );
-	engine_font_manager_draw_text( "123456789A123456789B123456789CX", 1, 2 );
+	//engine_font_manager_draw_text( "123456789A123456789B123456789CX", 1, 0 );
+	//engine_font_manager_draw_text( "123456789A123456789B123456789CX", 1, 1 );
+	//engine_font_manager_draw_text( "123456789A123456789B123456789CX", 1, 2 );
 	//engine_font_manager_draw_text( "SCROLL", 10, 3 );
 
 	scroll_x[ 0 ] = 0; // 255 << 8;
@@ -88,6 +88,13 @@ void engine_scroll_manager_update( unsigned char h1, unsigned char h2 )
 
 static void lineScrollHandler(void)
 {
+	//unsigned int val = scroll_x[ lineCnt++ ] >> 8;
+	unsigned int val = scroll_x[ lineCnt++ ];
+
 	//engine_font_manager_draw_data( lineCnt, 10, 0 );
-	devkit_SMS_setBGScrollX( ( scroll_x[ lineCnt++ ] ) >> 8 );
+	//engine_font_manager_draw_data( val, 20, 0 );
+	//engine_font_manager_draw_data( lineCnt, 10, 0 );
+	//devkit_SMS_setBGScrollX( ( scroll_x[ lineCnt++ ] ) >> 8 );
+
+	devkit_SMS_setBGScrollX( val );
 }
