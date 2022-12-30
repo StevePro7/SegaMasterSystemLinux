@@ -1,11 +1,9 @@
 M:screen_manager
 F:G$engine_screen_manager_init$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_screen_manager_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lscreen_manager.engine_screen_manager_update$h1$1_0$92({1}SC:U),R,0,0,[c]
-S:Lscreen_manager.engine_screen_manager_update$h2$1_0$92({1}SC:U),R,0,0,[b]
-S:Lscreen_manager.engine_screen_manager_update$input$1_0$92({1}SC:U),R,0,0,[a]
-T:Fscreen_manager$tag_struct_tile_object[({0}S:S$tile_wide$0_0$0({1}SC:U),Z,0,0)({1}S:S$tile_high$0_0$0({1}SC:U),Z,0,0)]
-S:G$global_tile_object$0_0$0({2}STtag_struct_tile_object:S),E,0,0
+T:Fscreen_manager$tag_struct_tile_object[({0}S:S$tilemap_index$0_0$0({2}SI:U),Z,0,0)({2}S:S$tile_wide$0_0$0({1}SC:U),Z,0,0)({3}S:S$tile_high$0_0$0({1}SC:U),Z,0,0)]
+S:G$global_tile_object$0_0$0({4}STtag_struct_tile_object:S),E,0,0
+S:G$global_tile_objects$0_0$0({44}DA11d,STtag_struct_tile_object:S),E,0,0
 S:Fscreen_manager$x$0_0$0({1}SC:U),E,0,0
 S:Fscreen_manager$col$0_0$0({1}SC:U),E,0,0
 S:Fscreen_manager$tmp$0_0$0({2}SI:U),E,0,0
@@ -33,6 +31,7 @@ S:G$engine_input_manager_move_fire2$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_scroll_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_update2$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_update$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_tile_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_gfx5$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_gfx4$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_gfx3$0_0$0({2}DF,SV:S),C,0,0
