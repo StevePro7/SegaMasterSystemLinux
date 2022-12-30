@@ -1,11 +1,9 @@
 M:screen_manager
 F:G$engine_screen_manager_init$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_screen_manager_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lscreen_manager.engine_screen_manager_update$h1$1_0$94({1}SC:U),R,0,0,[c]
-S:Lscreen_manager.engine_screen_manager_update$h2$1_0$94({1}SC:U),R,0,0,[b]
-S:Lscreen_manager.engine_screen_manager_update$input$1_0$94({1}SC:U),R,0,0,[a]
-T:Fscreen_manager$tag_struct_jump_object[({0}S:S$num_jumps$0_0$0({2}SI:U),Z,0,0)({2}S:S$jump_high$0_0$0({2048}DA1024d,SI:U),Z,0,0)]
-S:G$global_jump_object$0_0$0({2050}STtag_struct_jump_object:S),E,0,0
+S:Lscreen_manager.engine_screen_manager_update$h1$1_0$92({1}SC:U),R,0,0,[c]
+S:Lscreen_manager.engine_screen_manager_update$h2$1_0$92({1}SC:U),R,0,0,[b]
+S:Lscreen_manager.engine_screen_manager_update$input$1_0$92({1}SC:U),R,0,0,[a]
 S:Fscreen_manager$x$0_0$0({1}SC:U),E,0,0
 S:Fscreen_manager$col$0_0$0({1}SC:U),E,0,0
 S:Fscreen_manager$tmp$0_0$0({2}SI:U),E,0,0
@@ -30,9 +28,6 @@ S:G$engine_input_manager_move_left$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_right$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire1$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire2$0_0$0({2}DF,SC:U),C,0,0
-S:G$engine_jump_manager_init$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_jump_manager_load$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_jump_manager_data$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_update2$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_update$0_0$0({2}DF,SV:S),C,0,0

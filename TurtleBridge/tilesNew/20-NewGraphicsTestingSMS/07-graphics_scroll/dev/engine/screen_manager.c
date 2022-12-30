@@ -5,7 +5,6 @@
 #include "font_manager.h"
 #include "global_manager.h"
 #include "input_manager.h"
-#include "jump_manager.h"
 #include "scroll_manager.h"
 #include "tile_manager.h"
 #include "../devkit/_sms_manager.h"
