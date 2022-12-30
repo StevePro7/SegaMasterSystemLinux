@@ -45,10 +45,10 @@ void engine_scroll_manager_init()
 	//scroll_x[ 7 ] = 0; // 255 << 8;
 	lineCnt = 0;
 
-	devkit_SMS_setLineInterruptHandler( &lineScrollHandler );
-	devkit_SMS_setLineCounter(30); // this almost works!!
+//	devkit_SMS_setLineInterruptHandler( &lineScrollHandler );
+//	devkit_SMS_setLineCounter(30); // this almost works!!
 	//devkit_SMS_setLineCounter( 22 ); // this almost works!!
-	devkit_SMS_enableLineInterrupt();
+//	devkit_SMS_enableLineInterrupt();
 }
 
 void engine_scroll_manager_update2()

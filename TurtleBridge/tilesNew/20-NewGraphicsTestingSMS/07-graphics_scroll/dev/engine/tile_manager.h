@@ -3,12 +3,15 @@
 
 #include "global_manager.h"
 #include "../object/tile_object.h"
+#include <stdbool.h>
 
 // Global variable.
 extern struct_tile_object global_tile_object;
 extern struct_tile_object global_tile_objects[ MAX_TILE_OBJECTS ];
 
 void engine_tile_manager_init();
+void engine_tile_manager_draw( unsigned char tile_type );
+//void engine_tile_manager_draw_column( unsigned char tile_type, unsigned char column, bool flip );
 
 void engine_tile_manager_gfx5( unsigned int tmp, unsigned char x, unsigned char y, unsigned char w, unsigned char h );
 void engine_tile_manager_gfx4( unsigned int tmp, unsigned char h );

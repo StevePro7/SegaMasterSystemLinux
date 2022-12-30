@@ -32,6 +32,7 @@ S:G$engine_scroll_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_update2$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_init$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_tile_manager_draw$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_gfx5$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_gfx4$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_gfx3$0_0$0({2}DF,SV:S),C,0,0

@@ -9,6 +9,32 @@
 struct_tile_object global_tile_object;
 struct_tile_object global_tile_objects[ MAX_TILE_OBJECTS ];
 
+void engine_tile_manager_draw( unsigned char tile_type )
+{
+	const unsigned char *tiles = bggame_tiles__tilemap__bin;
+	struct_tile_object *to = &global_tile_objects[ tile_type ];
+
+	unsigned int idx;
+	unsigned int val;
+	unsigned char row, col;
+
+	unsigned x, y;
+
+	x = 14;
+	y = 6;
+
+	for( row = 0; row < to->tile_wide; row++ )
+	{
+		for( col = 0; col < to->tile_high; col++ )
+		{
+			idx = to->tilemap_index + row * 2 * TILMAP_WIDE + col * 2;
+			val = tiles[ idx ];
+			devkit_SMS_setNextTileatXY( x + col, y + row );
+			devkit_SMS_setTile( ( val ) );
+		}
+	}
+}
+
 void engine_tile_manager_clouds()
 {
 	engine_tile_manager_gfx5( 928, 1, 4, 6, 3 );
