@@ -4,6 +4,8 @@ F:G$engine_screen_manager_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lscreen_manager.engine_screen_manager_update$h1$1_0$92({1}SC:U),R,0,0,[c]
 S:Lscreen_manager.engine_screen_manager_update$h2$1_0$92({1}SC:U),R,0,0,[b]
 S:Lscreen_manager.engine_screen_manager_update$input$1_0$92({1}SC:U),R,0,0,[a]
+T:Fscreen_manager$tag_struct_tile_object[({0}S:S$tile_wide$0_0$0({1}SC:U),Z,0,0)({1}S:S$tile_high$0_0$0({1}SC:U),Z,0,0)]
+S:G$global_tile_object$0_0$0({2}STtag_struct_tile_object:S),E,0,0
 S:Fscreen_manager$x$0_0$0({1}SC:U),E,0,0
 S:Fscreen_manager$col$0_0$0({1}SC:U),E,0,0
 S:Fscreen_manager$tmp$0_0$0({2}SI:U),E,0,0
