@@ -11,28 +11,33 @@ struct_tile_object global_tile_objects[ MAX_TILE_OBJECTS ];
 
 void engine_tile_manager_draw( unsigned char tile_type )
 {
-	const unsigned char *tiles = bggame_tiles__tilemap__bin;
-	struct_tile_object *to = &global_tile_objects[ tile_type ];
+	//const unsigned char *tiles = bggame_tiles__tilemap__bin;
+	//struct_tile_object *to = &global_tile_objects[ tile_type ];
 
-	unsigned int idx;
-	unsigned int val;
-	unsigned char row, col;
+	//unsigned int idx;
+	//unsigned int val;
+	//unsigned char row, col;
 
 	unsigned x, y;
 
 	x = 14;
 	y = 6;
 
-	for( row = 0; row < to->tile_wide; row++ )
-	{
-		for( col = 0; col < to->tile_high; col++ )
-		{
-			idx = to->tilemap_index + row * 2 * TILMAP_WIDE + col * 2;
-			val = tiles[ idx ];
-			devkit_SMS_setNextTileatXY( x + col, y + row );
-			devkit_SMS_setTile( ( val ) );
-		}
-	}
+	engine_font_manager_draw_data( tile_type, 10, 9 );
+	//engine_font_manager_draw_data( to->tilemap_index, 10, 10 );
+	//engine_font_manager_draw_data( to->tile_wide, 10, 11 );
+	//engine_font_manager_draw_data( to->tile_high, 10, 12 );
+
+	//for( row = 0; row < to->tile_wide; row++ )
+	//{
+	//	for( col = 0; col < to->tile_high; col++ )
+	//	{
+	//		idx = to->tilemap_index + row * 2 * TILMAP_WIDE + col * 2;
+	//		val = tiles[ idx ];
+	//		devkit_SMS_setNextTileatXY( x + col, y + row );
+	//		devkit_SMS_setTile( ( val ) );
+	//	}
+	//}
 }
 
 void engine_tile_manager_clouds()
