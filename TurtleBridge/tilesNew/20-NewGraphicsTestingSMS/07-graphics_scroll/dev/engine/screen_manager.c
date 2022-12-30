@@ -17,11 +17,28 @@ static unsigned int tmp;
 
 void engine_screen_manager_init()
 {
+	unsigned char idx;
+	unsigned char tile = tile_type_bridge;
 	engine_tile_manager_sky();
-	//engine_tile_manager_sea();
+	engine_tile_manager_sea();
 
-	engine_font_manager_draw_text( "BUILD", 10, 0 );
-	engine_tile_manager_draw( tile_type_bridge );
+	engine_font_manager_draw_text( "INDEX", 10, 0 );
+//	engine_tile_manager_draw( tile_type_island );
+
+	idx = 0;
+	//engine_tile_manager_draw_columns( tile, idx, 18 );
+	//engine_tile_manager_draw_columns( tile, 1, 17 );
+	//engine_tile_manager_draw_columns( tile, 2, 16 );
+	//engine_tile_manager_draw_columns( tile, 3, 15 );
+	//engine_tile_manager_draw_columns( tile, 4, 14 );
+	//engine_tile_manager_draw_columns( tile, 5, 13 );
+	//engine_tile_manager_draw_columns( tile, 6, 12 );
+	//engine_tile_manager_draw_columns( tile, 7, 11 );
+	for( idx = 0; idx < 8; idx++ )
+	{
+		//engine_font_manager_draw_data( idx, 20, 10 + idx );
+		engine_tile_manager_draw_columns( tile, idx, 18- idx);
+	}
 
 	//TODO
 	//engine_music_manager_play();
