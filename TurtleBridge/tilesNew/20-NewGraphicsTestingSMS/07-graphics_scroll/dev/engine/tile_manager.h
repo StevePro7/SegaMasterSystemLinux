@@ -1,10 +1,14 @@
 #ifndef _TILE_MANAGER_H_
 #define _TILE_MANAGER_H_
 
+#include "global_manager.h"
 #include "../object/tile_object.h"
 
 // Global variable.
 extern struct_tile_object global_tile_object;
+extern struct_tile_object global_tile_objects[ MAX_TILE_OBJECTS ];
+
+void engine_tile_manager_init();
 
 void engine_tile_manager_gfx5( unsigned int tmp, unsigned char x, unsigned char y, unsigned char w, unsigned char h );
 void engine_tile_manager_gfx4( unsigned int tmp, unsigned char h );

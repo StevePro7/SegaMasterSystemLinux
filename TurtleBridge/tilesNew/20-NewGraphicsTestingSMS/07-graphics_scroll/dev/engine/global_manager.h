@@ -9,6 +9,8 @@
 
 #define MAX_JUMPS			1024
 
-#define WAVES_HIGH			21		// TODO
+//#define WAVES_HIGH			21		// TODO
+
+#define MAX_TILE_OBJECTS	11
 
 #endif//_GLOBAL_MANAGER_H_

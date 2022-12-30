@@ -7,6 +7,7 @@
 
 // Global variable.
 struct_tile_object global_tile_object;
+struct_tile_object global_tile_objects[ MAX_TILE_OBJECTS ];
 
 void engine_tile_manager_clouds()
 {
@@ -263,5 +264,23 @@ void engine_tile_manager_sea()
 		draw_see_line( sea_line1, x, 21 );
 		draw_see_line( sea_line2, x, 22 );
 		draw_see_line( sea_line3, x, 23 );
+	}
+}
+
+void engine_tile_manager_init()
+{
+	struct_tile_object *to;
+	unsigned char idx;
+
+	unsigned int tilemap_indexes[ MAX_TILE_OBJECTS ] = { TILE_SKY, TILE_SEA, TILE_BRIDGE, TILE_ISLAND, TILE_TURTLEF, TILE_TURTLEH, TILE_TREE, TILE_SIGN, TILE_GOAL, TILE_CLOUDB, TILE_CLOUDS, };
+	unsigned char tile_wides[ MAX_TILE_OBJECTS ] = { 1, 1, 8, 8, 4, 4, 8, 3, 3, 6, 4, };
+	unsigned char tile_highs[ MAX_TILE_OBJECTS ] = { 1, 1, 10, 4, 3, 3, 10, 3, 3, 3, 3, };
+
+	for( idx = 0; idx < MAX_TILE_OBJECTS; idx++ )
+	{
+		to = &global_tile_objects[ idx ];
+		to->tilemap_index = tilemap_indexes[ idx ];
+		to->tile_wide = tile_wides[ idx ];
+		to->tile_high = tile_highs[ idx ];
 	}
 }
