@@ -37,7 +37,7 @@ void engine_screen_manager_init()
 	for( idx = 0; idx < 8; idx++ )
 	{
 		//engine_font_manager_draw_data( idx, 20, 10 + idx );
-		engine_tile_manager_draw_columns( tile, idx, 18- idx);
+		engine_tile_manager_draw_columns( tile, idx, 18- idx, true);
 	}
 
 	//TODO
