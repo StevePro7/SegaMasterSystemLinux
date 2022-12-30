@@ -6,17 +6,21 @@ void main()
 	unsigned char value;
 	unsigned char mask;
 	unsigned char X;
-	//unsigned char startBit;
-	unsigned char lastXbits;
+	unsigned char startBit;
+	//unsigned char lastXbits;
+	unsigned char isolatedXbits;
 
 	value = 255;
 	X = 3;
-	mask = ( 1 << X ) - 1;
-	lastXbits = value & mask;
+	startBit = 2;
+	mask = ( ( 1 << X ) - 1 ) << startBit;
+	isolatedXbits = value & mask;
 
-	printf( "X	%d\n", X );
 	printf( "val	%d\n", value );
-	printf( "bits	%d\n", lastXbits );
+	printf( "start	%d\n", startBit );
+	printf( "X	%d\n", X );
+	
+	printf( "res	%d\n", isolatedXbits );
 	printf( "\n" );
 	return;
 }

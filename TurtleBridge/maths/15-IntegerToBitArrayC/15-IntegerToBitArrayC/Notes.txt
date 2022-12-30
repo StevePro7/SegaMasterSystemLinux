@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+// https://stackoverflow.com/questions/8011700/how-do-i-extract-specific-n-bits-of-a-32-bit-unsigned-integer-in-c
+void main()
+{
+	unsigned char value;
+	unsigned char mask;
+	unsigned char X;
+	//unsigned char startBit;
+	unsigned char lastXbits;
+
+	value = 255;
+	X = 3;
+	mask = ( 1 << X ) - 1;
+	lastXbits = value & mask;
+
+    printf( "val	%d\n", value );     // 7
+	printf( "X	%d\n", X );             // 3
+	printf( "bits	%d\n", lastXbits ); // 7
+	printf( "\n" );
+	return;
+}
