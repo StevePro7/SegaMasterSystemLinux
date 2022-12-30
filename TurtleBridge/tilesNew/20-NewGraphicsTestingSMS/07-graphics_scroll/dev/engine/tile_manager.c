@@ -11,33 +11,33 @@ struct_tile_object global_tile_objects[ MAX_TILE_OBJECTS ];
 
 void engine_tile_manager_draw( unsigned char tile_type )
 {
-	//const unsigned char *tiles = bggame_tiles__tilemap__bin;
-	//struct_tile_object *to = &global_tile_objects[ tile_type ];
+	const unsigned char *tiles = bggame_tiles__tilemap__bin;
+	struct_tile_object *to = &global_tile_objects[ tile_type ];
 
-	//unsigned int idx;
-	//unsigned int val;
-	//unsigned char row, col;
+	unsigned int idx;
+	unsigned int val;
+	unsigned char row, col;
 
 	unsigned x, y;
 
 	x = 14;
-	y = 6;
+	y = 10;
 
-	engine_font_manager_draw_data( tile_type, 10, 9 );
-	//engine_font_manager_draw_data( to->tilemap_index, 10, 10 );
-	//engine_font_manager_draw_data( to->tile_wide, 10, 11 );
-	//engine_font_manager_draw_data( to->tile_high, 10, 12 );
+	//engine_font_manager_draw_data( tile_type, 10, 4 );
+	//engine_font_manager_draw_data( to->tilemap_index, 20, 5 );
+	//engine_font_manager_draw_data( to->tile_wide, 20, 6 );
+	//engine_font_manager_draw_data( to->tile_high, 20, 7 );
 
-	//for( row = 0; row < to->tile_wide; row++ )
-	//{
-	//	for( col = 0; col < to->tile_high; col++ )
-	//	{
-	//		idx = to->tilemap_index + row * 2 * TILMAP_WIDE + col * 2;
-	//		val = tiles[ idx ];
-	//		devkit_SMS_setNextTileatXY( x + col, y + row );
-	//		devkit_SMS_setTile( ( val ) );
-	//	}
-	//}
+	for( row = 0; row < to->tile_high; row++ )
+	{
+		for( col = 0; col < to->tile_wide; col++ )
+		{
+			idx = to->tilemap_index + row * 2 * TILMAP_WIDE + col * 2;
+			val = tiles[ idx ];
+			devkit_SMS_setNextTileatXY( x + col, y + row );
+			devkit_SMS_setTile( ( val ) );
+		}
+	}
 }
 
 void engine_tile_manager_clouds()
@@ -300,18 +300,18 @@ void engine_tile_manager_sea()
 
 void engine_tile_manager_init()
 {
-	struct_tile_object *to;
-	unsigned char idx;
-
 	unsigned int tilemap_indexes[ MAX_TILE_OBJECTS ] = { TILE_SKY, TILE_SEA, TILE_BRIDGE, TILE_ISLAND, TILE_TURTLEF, TILE_TURTLEH, TILE_TREE, TILE_SIGN, TILE_GOAL, TILE_CLOUDB, TILE_CLOUDS, };
 	unsigned char tile_wides[ MAX_TILE_OBJECTS ] = { 1, 1, 8, 8, 4, 4, 8, 3, 3, 6, 4, };
 	unsigned char tile_highs[ MAX_TILE_OBJECTS ] = { 1, 1, 10, 4, 3, 3, 10, 3, 3, 3, 3, };
 
-	for( idx = 0; idx < MAX_TILE_OBJECTS; idx++ )
+	struct_tile_object *to;
+	for( unsigned char idx = 0; idx < MAX_TILE_OBJECTS; idx++ )
 	{
 		to = &global_tile_objects[ idx ];
 		to->tilemap_index = tilemap_indexes[ idx ];
 		to->tile_wide = tile_wides[ idx ];
 		to->tile_high = tile_highs[ idx ];
+//		engine_font_manager_draw_data( idx, 10, 1 );
+//		engine_font_manager_draw_data( to->tile_high, 10, 2 );
 	}
 }
