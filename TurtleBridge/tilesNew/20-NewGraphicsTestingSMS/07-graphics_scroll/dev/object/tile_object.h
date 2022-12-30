@@ -2,6 +2,7 @@
 #define _TILE_OBJECT_H_
 
 #define TILMAP_WIDE		16
+#define TILE_NONE		0
 #define TILE_SKY		64
 #define TILE_SEA		64
 #define TILE_BRIDGE		160

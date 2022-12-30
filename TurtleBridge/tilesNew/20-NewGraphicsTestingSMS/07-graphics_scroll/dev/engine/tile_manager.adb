@@ -124,10 +124,10 @@ S:Ltile_manager.engine_tile_manager_sea$x$1_0$148({1}SC:U),R,0,0,[h]
 S:Ltile_manager.engine_tile_manager_sea$sloc0$0_1$0({2}DD,SC:U),B,1,-2
 S:Ltile_manager.engine_tile_manager_sea$sloc1$0_1$0({2}DD,SC:U),B,1,-4
 S:Ltile_manager.engine_tile_manager_sea$sloc2$0_1$0({2}DD,SC:U),B,1,-2
-F:G$engine_tile_manager_init$0_0$0({2}DF,SV:S),Z,0,38,0,0,0
-S:Ltile_manager.engine_tile_manager_init$tilemap_indexes$1_0$151({22}DA11d,SI:U),B,1,-51
-S:Ltile_manager.engine_tile_manager_init$tile_wides$1_0$151({11}DA11d,SC:U),B,1,-29
-S:Ltile_manager.engine_tile_manager_init$tile_highs$1_0$151({11}DA11d,SC:U),B,1,-18
+F:G$engine_tile_manager_init$0_0$0({2}DF,SV:S),Z,0,42,0,0,0
+S:Ltile_manager.engine_tile_manager_init$tilemap_indexes$1_0$151({24}DA12d,SI:U),B,1,-55
+S:Ltile_manager.engine_tile_manager_init$tile_wides$1_0$151({12}DA12d,SC:U),B,1,-31
+S:Ltile_manager.engine_tile_manager_init$tile_highs$1_0$151({12}DA12d,SC:U),B,1,-19
 S:Ltile_manager.engine_tile_manager_init$to$1_0$151({2}DG,STtag_struct_tile_object:S),B,1,-5
 S:Ltile_manager.engine_tile_manager_init$idx$2_0$152({1}SC:U),B,1,-1
 S:Ltile_manager.engine_tile_manager_init$sloc0$0_1$0({2}DD,SC:U),B,1,-7
@@ -139,7 +139,7 @@ S:Ltile_manager.engine_tile_manager_init$sloc5$0_1$0({2}DG,SC:U),B,1,-3
 S:Ltile_manager.engine_tile_manager_init$sloc6$0_1$0({2}DG,SC:U),B,1,-3
 T:Ftile_manager$tag_struct_tile_object[({0}S:S$tilemap_index$0_0$0({2}SI:U),Z,0,0)({2}S:S$tile_wide$0_0$0({1}SC:U),Z,0,0)({3}S:S$tile_high$0_0$0({1}SC:U),Z,0,0)]
 S:G$global_tile_object$0_0$0({4}STtag_struct_tile_object:S),E,0,0
-S:G$global_tile_objects$0_0$0({44}DA11d,STtag_struct_tile_object:S),E,0,0
+S:G$global_tile_objects$0_0$0({48}DA12d,STtag_struct_tile_object:S),E,0,0
 S:G$engine_font_manager_draw_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_data$0_0$0({2}DF,SV:S),C,0,0
