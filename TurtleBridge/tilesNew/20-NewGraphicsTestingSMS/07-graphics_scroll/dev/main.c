@@ -18,7 +18,7 @@ void main( void )
 
 	engine_screen_manager_init();
 	//engine_scroll_manager_init();
-	//engine_tile_manager_init();
+	engine_tile_manager_init();
 
 	devkit_SMS_displayOn();
 	for( ;; )

@@ -17,11 +17,11 @@ static unsigned int tmp;
 
 void engine_screen_manager_init()
 {
-	engine_font_manager_draw_text( "HELLO", 10, 10 );
 	//engine_tile_manager_sky();
-	//engine_tile_manager_sea();
+	engine_tile_manager_sea();
 
-	//engine_tile_manager_draw( tile_type_bridge );
+	engine_font_manager_draw_text( "THERE", 10, 2 );
+	engine_tile_manager_draw( tile_type_bridge );
 	//TODO
 	//engine_music_manager_play();
 }
