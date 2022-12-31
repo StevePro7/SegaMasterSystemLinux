@@ -31,15 +31,17 @@ void engine_screen_manager_init()
 
 void engine_screen_manager_update()
 {
+	struct_scroll_object *so = &global_scroll_object;
 	unsigned char input;
+
 	input = engine_input_manager_hold_left();
 	if( input )
 	{
-		engine_level_manager_draw();
+		engine_level_manager_draw( so->offset_right );
 	}
 
-	//input = engine_input_manager_hold_right();
-	input = engine_input_manager_move_right();
+	input = engine_input_manager_hold_right();
+	//input = engine_input_manager_move_right();
 	if( input )
 	{
 		engine_scroll_manager_update();

@@ -1,26 +1,41 @@
 #include "level_manager.h"
-//#include "global_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
+#include "global_manager.h"
 #include "tile_manager.h"
 
 // Global variable.
 struct_level_object global_level_object;
 
-static unsigned char column;
-
+//static unsigned char column;
+static unsigned char level_tile_type[] = { tile_type_bridge, tile_type_bridge, tile_type_bridge, tile_type_bridge };
+static unsigned char level_tile_cols[] = { 0, 1, 2, 3 };
+//static unsigned char level_tile_high[] = { 0, 1, 2, 3 };
 void engine_level_manager_init()
 {
-	column = 0;
+	struct_level_object *lo = &global_level_object;
+	lo->level_cols_offset = 0;
+	lo->level_draw_offset = 0;
+	//column = 0;
 }
 
 void engine_level_manager_load()
 {
 }
 
-void engine_level_manager_draw()
+void engine_level_manager_draw( unsigned int offset )
 {
-	engine_font_manager_draw_text( "LEVEL", 10, 2 );
+	struct_level_object *lo = &global_level_object;
+	unsigned char index, type, cols;
 
-	engine_tile_manager_draw_columns( tile_type_island, column, 18, column, false );
+	lo->level_cols_offset = offset;
+	lo->level_draw_offset = offset % SCREEN_WIDE;
+	engine_font_manager_draw_data( lo->level_cols_offset, 10, 5 );
+	engine_font_manager_draw_data( lo->level_draw_offset, 20, 5 );
+
+	index = lo->level_draw_offset;
+	type = level_tile_type[ index ];
+	cols = level_tile_cols[ index ];
+	//engine_tile_manager_draw_columns( tile_type_island, column, 18, column, false );
+	engine_tile_manager_draw_columns( type, cols, 12, cols, false );
 }
