@@ -15,7 +15,6 @@ S:G$test$0_0$0({1}SC:U),E,0,0
 S:G$test2$0_0$0({2}SI:U),E,0,0
 S:G$scroll$0_0$0({1}SC:U),E,0,0
 S:G$scrollRight$0_0$0({1}SC:U),E,0,0
-S:G$scrollRightDivided8$0_0$0({1}SC:U),E,0,0
 S:G$ytile$0_0$0({2}SI:U),E,0,0
 S:G$yDelta$0_0$0({2}SI:U),E,0,0
 S:G$scroll_x$0_0$0({12}DA6d,SI:U),E,0,0
