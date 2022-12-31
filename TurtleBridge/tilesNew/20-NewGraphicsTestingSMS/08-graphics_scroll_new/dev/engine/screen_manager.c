@@ -60,7 +60,8 @@ void engine_screen_manager_update()
 	}
 
 	delta = 0;
-	input = engine_input_manager_hold_right();
+	//input = engine_input_manager_hold_right();
+	input = engine_input_manager_move_right();
 	if( input )
 	{
 		if( !flag )
@@ -70,7 +71,11 @@ void engine_screen_manager_update()
 			//flag = 1;
 		}
 	}
-	engine_scroll_manager_update( delta );
+	newTile = engine_scroll_manager_update( delta );
+	if( newTile )
+	{
+		engine_level_manager_draw( so->offset_right );
+	}
 }
 
 
