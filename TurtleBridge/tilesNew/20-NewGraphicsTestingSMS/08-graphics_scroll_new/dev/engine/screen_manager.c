@@ -19,7 +19,7 @@ void engine_screen_manager_init()
 	unsigned char tile = tile_type_island;
 	engine_tile_manager_sky();
 	engine_tile_manager_sea();
-
+	engine_tile_manager_clouds();
 	engine_font_manager_draw_text( "NEW SCROLL", 10, 0 );
 
 	idx = 0;
@@ -66,7 +66,7 @@ void engine_screen_manager_update()
 	{
 		if( !flag )
 		{
-			engine_font_manager_draw_text( "RIGHT", 4, 1 );
+			//engine_font_manager_draw_text( "RIGHT", 4, 1 );
 			delta = 1;
 			//flag = 1;
 		}
