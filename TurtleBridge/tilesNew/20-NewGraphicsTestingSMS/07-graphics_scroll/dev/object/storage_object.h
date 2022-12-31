@@ -9,7 +9,7 @@ typedef struct tag_struct_storage_object
 	unsigned long Magic;
 
 	unsigned int num_jumps;
-	unsigned char jump_high[ MAX_JUMPS ];
+	unsigned char jump_high[ 6 ];
 
 	unsigned char terminal;
 

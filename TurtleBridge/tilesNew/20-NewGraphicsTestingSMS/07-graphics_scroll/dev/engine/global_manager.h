@@ -7,7 +7,7 @@
 #define SCREEN_WIDE			32
 #define SCREEN_HIGH			24
 
-#define MAX_JUMPS			1024
+//#define MAX_JUMPS			1024
 
 //#define WAVES_HIGH			21		// TODO
 

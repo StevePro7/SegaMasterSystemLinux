@@ -1,5 +1,6 @@
 #include "scroll_manager.h"
 #include "font_manager.h"
+#include "global_manager.h"
 #include "sprite_manager.h"
 #include "../devkit/_sms_manager.h"
 
@@ -42,6 +43,11 @@ bool engine_scroll_manager_update()
 	devkit_SMS_setBGScrollX( so->scroll );
 	newTile = so->scrollRight % 8 == delta;
 
+	if( newTile )
+	{
+		so->offset_right++;
+	}
+
 	print( newTile );
 	return newTile;
 }
@@ -54,14 +60,15 @@ static void print( bool newTile )
 	//engine_font_manager_draw_data( so->scrollRightDivided8, 25, 2 );
 
 	//engine_font_manager_draw_data( so->offset_left, 25, 5 );
-	//engine_font_manager_draw_data( so->offset_right, 25, 6 );
+	engine_font_manager_draw_data( so->offset_right, 20, 2 );
+	engine_font_manager_draw_data( so->offset_right % SCREEN_WIDE, 25, 2 );
 
 	//engine_font_manager_draw_data( so->scroll + so->scrollRight, 25, 8 );
 	//engine_font_manager_draw_data( so->scroll, so->scroll, 1 );
 
-	engine_font_manager_draw_text( "      ", 21, 2 );
+	engine_font_manager_draw_text( "      ", 21, 3 );
 	if( newTile )
 	{
-		engine_font_manager_draw_text( "TILES", 21, 2 );
+		engine_font_manager_draw_text( "TILES", 21, 3 );
 	}
 }

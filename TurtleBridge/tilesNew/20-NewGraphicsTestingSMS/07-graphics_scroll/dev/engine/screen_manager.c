@@ -38,7 +38,8 @@ void engine_screen_manager_update()
 		engine_level_manager_draw();
 	}
 
-	input = engine_input_manager_hold_right();
+	//input = engine_input_manager_hold_right();
+	input = engine_input_manager_move_right();
 	if( input )
 	{
 		engine_scroll_manager_update();

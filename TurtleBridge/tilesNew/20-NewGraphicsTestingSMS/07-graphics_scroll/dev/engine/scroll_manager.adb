@@ -3,11 +3,11 @@ F:G$engine_scroll_manager_init$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lscroll_manager.engine_scroll_manager_init$so$1_0$89({2}DG,STtag_struct_scroll_object:S),R,0,0,[]
 F:G$engine_scroll_manager_update$0_0$0({2}DF,:S),Z,0,0,0,0,0
 S:Lscroll_manager.engine_scroll_manager_update$so$1_0$90({2}DG,STtag_struct_scroll_object:S),R,0,0,[]
-S:Lscroll_manager.engine_scroll_manager_update$newTile$1_0$90({1}:S),R,0,0,[l]
+S:Lscroll_manager.engine_scroll_manager_update$newTile$1_0$90({1}:S),R,0,0,[c]
 S:Lscroll_manager.engine_scroll_manager_update$delta$1_0$90({1}SC:U),R,0,0,[]
 F:Fscroll_manager$print$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lscroll_manager.print$newTile$1_0$91({1}:S),B,1,4
-S:Lscroll_manager.print$so$1_0$92({2}DG,STtag_struct_scroll_object:S),R,0,0,[]
+S:Lscroll_manager.print$newTile$1_0$92({1}:S),B,1,4
+S:Lscroll_manager.print$so$1_0$93({2}DG,STtag_struct_scroll_object:S),R,0,0,[]
 T:Fscroll_manager$tag_struct_scroll_object[({0}S:S$scroll_left$0_0$0({1}SC:U),Z,0,0)({1}S:S$scroll_right$0_0$0({1}SC:U),Z,0,0)({2}S:S$scroll$0_0$0({1}SC:U),Z,0,0)({3}S:S$scrollRight$0_0$0({1}SC:U),Z,0,0)({4}S:S$scrollRightDivided8$0_0$0({1}SC:U),Z,0,0)({5}S:S$offset_left$0_0$0({2}SI:U),Z,0,0)({7}S:S$offset_right$0_0$0({2}SI:U),Z,0,0)]
 S:G$global_scroll_object$0_0$0({9}STtag_struct_scroll_object:S),E,0,0
 S:G$engine_font_manager_draw_char$0_0$0({2}DF,SV:S),C,0,0
