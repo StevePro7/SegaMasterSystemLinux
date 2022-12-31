@@ -38,6 +38,7 @@ void engine_screen_manager_update()
 	struct_scroll_object *so = &global_scroll_object;
 	unsigned char input;
 	unsigned char delta;
+	unsigned char value;
 	bool newTile;
 
 	input = engine_input_manager_hold_up();
@@ -59,7 +60,10 @@ void engine_screen_manager_update()
 		engine_level_manager_draw( so->offset_right );
 	}
 
+
+
 	delta = 0;
+	value = 0;
 	//input = engine_input_manager_hold_right();
 	input = engine_input_manager_move_right();
 	if( input )
@@ -71,10 +75,25 @@ void engine_screen_manager_update()
 			//flag = 1;
 		}
 	}
-	newTile = engine_scroll_manager_update( delta );
-	if( newTile )
+	input = engine_input_manager_move_fire1();
+	if( input )
 	{
-		engine_level_manager_draw( so->offset_right );
+		delta *= 2;
+	}
+	if( 0 == delta )
+	{
+		engine_scroll_manager_update( delta );
+	}
+	else
+	{
+		for( value = 0; value < delta; value++ )
+		{
+			newTile = engine_scroll_manager_update( delta );
+			if( newTile )
+			{
+				engine_level_manager_draw( so->offset_right );
+			}
+		}
 	}
 }
 
