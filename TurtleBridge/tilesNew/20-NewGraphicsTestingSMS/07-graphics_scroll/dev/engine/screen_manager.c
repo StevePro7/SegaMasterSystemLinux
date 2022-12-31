@@ -9,8 +9,6 @@
 #include "tile_manager.h"
 #include "../devkit/_sms_manager.h"
 
-//#define TMP_HGH		4
-
 static unsigned char x;
 static unsigned char col;
 static unsigned int tmp;
@@ -22,7 +20,7 @@ void engine_screen_manager_init()
 	engine_tile_manager_sky();
 	engine_tile_manager_sea();
 
-	engine_font_manager_draw_text( "INDEX", 10, 0 );
+	engine_font_manager_draw_text( "NEW BUILD", 10, 0 );
 //	engine_tile_manager_draw( tile_type_island );
 
 	idx = 0;
@@ -37,7 +35,7 @@ void engine_screen_manager_init()
 	for( idx = 0; idx < 8; idx++ )
 	{
 		//engine_font_manager_draw_data( idx, 20, 10 + idx );
-		engine_tile_manager_draw_columns( tile, idx, 18- idx, true);
+		engine_tile_manager_draw_columns( tile, 8- idx, 4, idx, true);
 	}
 
 	//TODO

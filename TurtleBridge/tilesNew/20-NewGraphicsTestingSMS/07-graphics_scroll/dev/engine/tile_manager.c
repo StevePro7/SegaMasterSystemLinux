@@ -9,7 +9,8 @@
 struct_tile_object global_tile_object;
 struct_tile_object global_tile_objects[ MAX_TILE_OBJECTS ];
 
-void engine_tile_manager_draw_columns( unsigned char tile_type, unsigned char col, unsigned char x, bool flip )
+//void engine_tile_manager_draw_columns( unsigned char tile_type, unsigned char col, unsigned char x, bool flip )
+void engine_tile_manager_draw_columns( unsigned char tile_type, unsigned char x, unsigned char y, unsigned char col, bool flip )
 {
 	const unsigned char *tiles = bggame_tiles__tilemap__bin;
 	struct_tile_object *to = &global_tile_objects[ tile_type ];
@@ -17,11 +18,6 @@ void engine_tile_manager_draw_columns( unsigned char tile_type, unsigned char co
 	unsigned int idx;
 	unsigned int val;
 	unsigned char row;
-
-	unsigned y;
-	//x = 14;
-	y = 12;
-
 
 	for( row = 0; row < to->tile_high; row++ )
 	{
