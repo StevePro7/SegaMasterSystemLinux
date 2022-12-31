@@ -32,9 +32,15 @@ void engine_screen_manager_init()
 void engine_screen_manager_update()
 {
 	unsigned char input;
-	input = engine_input_manager_hold_right();
+	input = engine_input_manager_hold_left();
 	if( input )
 	{
 		engine_level_manager_draw();
+	}
+
+	input = engine_input_manager_hold_right();
+	if( input )
+	{
+		engine_scroll_manager_update();
 	}
 }

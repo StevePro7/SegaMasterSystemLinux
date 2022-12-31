@@ -11,6 +11,8 @@ struct_scroll_object global_scroll_object;
 #pragma disable_warning 158
 #endif
 
+static void print( bool newTile );
+
 void engine_scroll_manager_init()
 {
 	struct_scroll_object *so = &global_scroll_object;
@@ -27,7 +29,39 @@ void engine_scroll_manager_init()
 }
 
 
-void engine_scroll_manager_update()
+bool engine_scroll_manager_update()
 {
+	struct_scroll_object *so = &global_scroll_object;
+	bool newTile;
+	const unsigned char delta = 1;
+
+	so->scroll -= delta;
+	so->scrollRight += delta;
+
+	// scroll pixel by pixel
+	devkit_SMS_setBGScrollX( so->scroll );
+	newTile = so->scrollRight % 8 == delta;
+
+	print( newTile );
+	return newTile;
 }
 
+static void print( bool newTile )
+{
+	struct_scroll_object *so = &global_scroll_object;
+	engine_font_manager_draw_data( so->scroll, 25, 0 );
+	engine_font_manager_draw_data( so->scrollRight, 25, 1 );
+	//engine_font_manager_draw_data( so->scrollRightDivided8, 25, 2 );
+
+	//engine_font_manager_draw_data( so->offset_left, 25, 5 );
+	//engine_font_manager_draw_data( so->offset_right, 25, 6 );
+
+	//engine_font_manager_draw_data( so->scroll + so->scrollRight, 25, 8 );
+	//engine_font_manager_draw_data( so->scroll, so->scroll, 1 );
+
+	engine_font_manager_draw_text( "      ", 21, 2 );
+	if( newTile )
+	{
+		engine_font_manager_draw_text( "TILES", 21, 2 );
+	}
+}
