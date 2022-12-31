@@ -41,7 +41,6 @@ void engine_screen_manager_update()
 	}
 
 	input = engine_input_manager_hold_right();
-	//input = engine_input_manager_move_right();
 	if( input )
 	{
 		engine_scroll_manager_update();

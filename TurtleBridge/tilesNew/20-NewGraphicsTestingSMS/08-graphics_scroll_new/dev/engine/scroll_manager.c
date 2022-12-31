@@ -27,6 +27,16 @@ void engine_scroll_manager_init()
 	so->offset_right = 31;
 
 	devkit_SMS_setBGScrollX( so->scroll );
+
+
+	// NEW
+	so->scroll_x[ 0 ] = 0; 
+	so->scroll_x[ 1 ] = 0; 
+	so->scroll_x[ 2 ] = 0; 
+	so->scroll_x[ 3 ] = 0; 
+	so->scroll_x[ 4 ] = 0; 
+	so->scroll_x[ 5 ] = 0; 
+	so->lineCnt = 0;
 }
 
 
