@@ -12,6 +12,7 @@ struct_scroll_object global_scroll_object;
 #pragma disable_warning 158
 #endif
 
+static void lineScrollHandler( void );
 static void print( bool newTile );
 
 void engine_scroll_manager_init()
@@ -118,4 +119,18 @@ static void print( bool newTile )
 	{
 		engine_font_manager_draw_text( "TILES", 21, 3 );
 	}
+}
+
+static void lineScrollHandler( void )
+{
+	struct_scroll_object *so = &global_scroll_object;
+	//unsigned int val = scroll_x[ lineCnt++ ] >> 8;
+	unsigned int val = so->scroll_x[ so->lineCnt++ ];
+
+	//engine_font_manager_draw_data( lineCnt, 10, 0 );
+	//engine_font_manager_draw_data( val, 20, 0 );
+	//engine_font_manager_draw_data( lineCnt, 10, 0 );
+	//devkit_SMS_setBGScrollX( ( scroll_x[ lineCnt++ ] ) >> 8 );
+
+	devkit_SMS_setBGScrollX( val );
 }

@@ -33,6 +33,14 @@ void engine_level_manager_draw( unsigned int offset )
 	engine_font_manager_draw_data( lo->level_cols_offset, 10, 5 );
 	engine_font_manager_draw_data( lo->level_draw_offset, 20, 5 );
 
+	// TODO hack while debugging
+	if( lo->level_draw_offset > 10 )
+	{
+		engine_font_manager_draw_text( "NOPE!", 4, 2 );
+		return;
+	}
+
+	engine_font_manager_draw_text( "     ", 4, 2 );
 	index = lo->level_draw_offset;
 	type = level_tile_type[ index ];
 	cols = level_tile_cols[ index ];

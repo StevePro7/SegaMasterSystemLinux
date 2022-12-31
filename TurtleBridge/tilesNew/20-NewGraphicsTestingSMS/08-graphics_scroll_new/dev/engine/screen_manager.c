@@ -50,6 +50,7 @@ void engine_screen_manager_update()
 	{
 		if( !flag )
 		{
+			engine_font_manager_draw_text( "RIGHT", 4, 1 );
 			delta = 1;
 			flag = 1;
 		}
