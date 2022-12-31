@@ -18,7 +18,7 @@ unsigned int test2 = 0;
 //unsigned int scrollDivided8 = 0;
 unsigned char scroll = 0;
 unsigned char scrollRight = 0;
-unsigned char scrollRightDivided8 = 0;
+//unsigned char scrollRightDivided8 = 0;
 //unsigned int xtile = 0;
 unsigned int ytile = 0;
 unsigned int yDelta = 0;
@@ -59,14 +59,14 @@ void engine_scroll_manager_update2()
 
 	scroll -= delta;
 	scrollRight += delta;
-	scrollRightDivided8 = scrollRight / 8;
+	//scrollRightDivided8 = scrollRight / 8;
 	//devkit_SMS_setBGScrollX( scroll );
 
 	// This works but does not update the top row
 	if( ( scrollRight % 8 ) == delta )
 	{
-		test = scrollRightDivided8 % 2;
-		ytile = 18;
+		//test = scrollRightDivided8 % 2;
+		//ytile = 18;
 		//engine_tilemap_manager_draw_tile( X_TILE_MAX + scrollRightDivided8, ytile - 1 );
 	}
 }

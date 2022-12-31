@@ -10,6 +10,8 @@
 #include "tile_manager.h"
 #include "../devkit/_sms_manager.h"
 
+static unsigned char flag;
+
 void engine_screen_manager_init()
 {
 	unsigned char idx;
@@ -17,7 +19,7 @@ void engine_screen_manager_init()
 	engine_tile_manager_sky();
 	engine_tile_manager_sea();
 
-	engine_font_manager_draw_text( "ISLAND", 10, 0 );
+	engine_font_manager_draw_text( "NEW SCROLL", 10, 0 );
 
 	idx = 0;
 	for( idx = 0; idx < 8; idx++ )
@@ -27,12 +29,14 @@ void engine_screen_manager_init()
 
 	//TODO
 	//engine_music_manager_play();
+	flag = 0;
 }
 
 void engine_screen_manager_update()
 {
 	struct_scroll_object *so = &global_scroll_object;
 	unsigned char input;
+	unsigned char delta;
 
 	input = engine_input_manager_hold_left();
 	if( input )
@@ -40,9 +44,15 @@ void engine_screen_manager_update()
 		engine_level_manager_draw( so->offset_right );
 	}
 
+	delta = 0;
 	input = engine_input_manager_hold_right();
 	if( input )
 	{
-		engine_scroll_manager_update();
+		if( !flag )
+		{
+			delta = 1;
+			flag = 1;
+		}
 	}
+	engine_scroll_manager_update( delta );
 }

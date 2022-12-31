@@ -1,17 +1,24 @@
-notes from previous builds
+notes for new scroll
 31-Dec-2022
 
-	idx = 0;
-	//engine_tile_manager_draw_columns( tile, idx, 18 );
-	//engine_tile_manager_draw_columns( tile, 1, 17 );
-	//engine_tile_manager_draw_columns( tile, 2, 16 );
-	//engine_tile_manager_draw_columns( tile, 3, 15 );
-	//engine_tile_manager_draw_columns( tile, 4, 14 );
-	//engine_tile_manager_draw_columns( tile, 5, 13 );
-	//engine_tile_manager_draw_columns( tile, 6, 12 );
-	//engine_tile_manager_draw_columns( tile, 7, 11 );
-	for( idx = 0; idx < 8; idx++ )
-	{
-		//engine_font_manager_draw_data( idx, 20, 10 + idx );
-		engine_tile_manager_draw_columns( tile, 8- idx, 4, idx, true);
-	}
+
+integrate
+06	new scroll prototype
+07	old scroll prototype
+
+
+frame #0	init
+scroll	0
+sRight	0
+offset	31
+lCol	31
+
+
+frame #1	update
+move right
+scroll	255		-1
+sRight	1		+1
+offset	32
+lCol	 0
+
+draw new col in lCol	0

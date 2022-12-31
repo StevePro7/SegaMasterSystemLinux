@@ -17,17 +17,17 @@ static void print( bool newTile );
 void engine_scroll_manager_init()
 {
 	struct_scroll_object *so = &global_scroll_object;
-	so->scroll_left = 0;
-	so->scroll_right = 0;
+	//->scroll_left = 0;
+	//so->scroll_right = 0;
+	//so->scrollRightDivided8 = 0;
 
 	so->scroll = 0;
 	so->scrollRight = 0;
-	so->scrollRightDivided8 = 0;
-	so->offset_left = 0;
+	//so->offset_left = 0;
 	so->offset_right = 31;
 
 	devkit_SMS_setBGScrollX( so->scroll );
-
+	print( false );
 
 	// NEW
 	so->scroll_x[ 0 ] = 0; 
@@ -39,8 +39,46 @@ void engine_scroll_manager_init()
 	so->lineCnt = 0;
 }
 
+bool engine_scroll_manager_update( unsigned char delta )
+{
+	struct_scroll_object *so = &global_scroll_object;
+	unsigned char temp;
+	bool newTile;
+	//const unsigned char delta = 1;
 
-bool engine_scroll_manager_update()
+	so->scroll -= delta;
+	so->scrollRight += delta;
+
+	newTile = false;
+	if( delta > 0 )
+	{
+		newTile = so->scrollRight % 8 == delta;
+		if( newTile )
+		{
+			so->offset_right++;
+		}
+	}
+
+	temp = 0;
+	//temp = so->scroll_x[ 0 ];
+	//engine_font_manager_draw_data( temp, 15, 10 );
+	//engine_font_manager_draw_data( so->scroll_x[ 0 ], 15, 11 );
+	//so->scroll_x[ 0 ] = so->scroll_x[ 0 ] - delta;
+	so->scroll_x[ 0 ] -= delta;
+	so->scroll_x[ 1 ] -= delta;
+	so->scroll_x[ 2 ] -= delta;
+	so->scroll_x[ 3 ] -= delta;
+	so->scroll_x[ 4 ] -= delta;
+	so->lineCnt = 0;
+
+	temp = so->scroll_x[ 0 ];
+	//engine_font_manager_draw_data( temp, 25, 12 );
+	//engine_font_manager_draw_data( so->scroll_x[ 0 ], 25, 13 );
+
+	return newTile;
+}
+
+bool engine_scroll_manager_updateZ()
 {
 	struct_scroll_object *so = &global_scroll_object;
 	bool newTile;
@@ -52,7 +90,6 @@ bool engine_scroll_manager_update()
 	// scroll pixel by pixel
 	devkit_SMS_setBGScrollX( so->scroll );
 	newTile = so->scrollRight % 8 == delta;
-
 	if( newTile )
 	{
 		so->offset_right++;
