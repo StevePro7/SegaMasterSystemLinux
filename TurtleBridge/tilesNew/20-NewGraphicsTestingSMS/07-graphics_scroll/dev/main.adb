@@ -1,6 +1,10 @@
 M:main
 F:G$main$0_0$0({2}DF,SV:S),C,0,0,0,0,0
+T:Fmain$tag_struct_scroll_object[({0}S:S$scroll_left$0_0$0({1}SC:U),Z,0,0)({1}S:S$scroll_right$0_0$0({1}SC:U),Z,0,0)({2}S:S$scroll$0_0$0({1}SC:U),Z,0,0)({3}S:S$scrollRight$0_0$0({1}SC:U),Z,0,0)({4}S:S$scrollRightDivided8$0_0$0({1}SC:U),Z,0,0)({5}S:S$offset_left$0_0$0({2}SI:U),Z,0,0)({7}S:S$offset_right$0_0$0({2}SI:U),Z,0,0)]
 T:Fmain$tag_struct_tile_object[({0}S:S$tilemap_index$0_0$0({2}SI:U),Z,0,0)({2}S:S$tile_wide$0_0$0({1}SC:U),Z,0,0)({3}S:S$tile_high$0_0$0({1}SC:U),Z,0,0)]
+T:Fmain$tag_struct_level_object[({0}S:S$num_levels$0_0$0({1}SC:U),Z,0,0)]
+S:G$global_level_object$0_0$0({1}STtag_struct_level_object:S),E,0,0
+S:G$global_scroll_object$0_0$0({9}STtag_struct_scroll_object:S),E,0,0
 S:G$global_tile_object$0_0$0({4}STtag_struct_tile_object:S),E,0,0
 S:G$global_tile_objects$0_0$0({48}DA12d,STtag_struct_tile_object:S),E,0,0
 S:G$atof$0_0$0({2}DF,SF:S),C,0,0
@@ -204,10 +208,12 @@ S:G$engine_input_manager_move_left$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_right$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire1$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire2$0_0$0({2}DF,SC:U),C,0,0
+S:G$engine_level_manager_init$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_level_manager_load$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_level_manager_draw$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_screen_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_screen_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_init$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_scroll_manager_update2$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_draw$0_0$0({2}DF,SV:S),C,0,0

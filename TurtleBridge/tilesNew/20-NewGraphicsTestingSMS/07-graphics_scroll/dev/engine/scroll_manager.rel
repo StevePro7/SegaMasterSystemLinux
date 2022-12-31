@@ -1,332 +1,77 @@
 ;!FILE scroll_manager.asm
 XL3
-H 9 areas B0 global symbols
+H 9 areas 2D global symbols
 M scroll_manager
 O -mz80
 S .__.ABS. Def000000
 S _devkit_SMS_setBGScrollX Ref000000
-A _CODE size CF flags 0 addr 0
-S C$scroll_manager.c$72$1_0$91 Def000063
-S C$scroll_manager.c$54$1_0$91 Def000020
-S C$scroll_manager.c$46$1_0$90 Def00001A
-S C$scroll_manager.c$38$1_0$90 Def000000
-S C$scroll_manager.c$80$1_0$94 Def00008C
-S C$scroll_manager.c$39$1_0$90 Def000006
-S C$scroll_manager.c$81$1_0$94 Def000097
-S C$scroll_manager.c$66$1_0$91 Def00004D
-S C$scroll_manager.c$82$1_0$94 Def0000A2
+A _CODE size 2D flags 0 addr 0
+S A$scroll_manager$95 Def00001F
+S A$scroll_manager$86 Def000017
+S C$scroll_manager.c$21$1_0$88 Def00000F
+S A$scroll_manager$96 Def000021
+S A$scroll_manager$69 Def000005
+S C$scroll_manager.c$22$1_0$88 Def000014
+S C$scroll_manager.c$14$0_0$88 Def000000
+S C$scroll_manager.c$23$1_0$88 Def000019
+S C$scroll_manager.c$24$1_0$88 Def00001F
+S C$scroll_manager.c$16$1_0$88 Def000000
 S G$engine_scroll_manager_init$0$0 Def000000
-S C$scroll_manager.c$74$1_0$94 Def000064
-S G$engine_scroll_manager_update2$0$0 Def000020
-S C$scroll_manager.c$92$1_0$96 Def0000B5
-S C$scroll_manager.c$68$2_0$92 Def000055
-S XFscroll_manager$lineScrollHandler$0$0 Def0000CE
-S C$scroll_manager.c$86$1_0$94 Def0000AD
-S C$scroll_manager.c$69$2_0$92 Def00005D
-S C$scroll_manager.c$87$1_0$94 Def0000B4
-S C$scroll_manager.c$78$1_0$94 Def00006C
-S C$scroll_manager.c$79$1_0$94 Def00007C
-S C$scroll_manager.c$89$1_0$96 Def0000B5
-S C$scroll_manager.c$99$1_0$96 Def0000C7
+S C$scroll_manager.c$26$1_0$88 Def000024
+S C$scroll_manager.c$17$1_0$88 Def000000
+S C$scroll_manager.c$27$1_0$88 Def00002B
+S C$scroll_manager.c$18$1_0$88 Def000005
 S _engine_scroll_manager_init Def000000
-S _engine_scroll_manager_update2 Def000020
-S G$engine_scroll_manager_update$0$0 Def000064
-S XG$engine_scroll_manager_init$0$0 Def00001F
-S XG$engine_scroll_manager_update2$0$0 Def000063
-S _engine_scroll_manager_update Def000064
-S A$scroll_manager$110 Def000000
-S A$scroll_manager$300 Def0000B9
-S A$scroll_manager$201 Def000055
-S A$scroll_manager$120 Def00000A
-S A$scroll_manager$111 Def000003
-S A$scroll_manager$310 Def0000C7
-S A$scroll_manager$301 Def0000BC
-S A$scroll_manager$202 Def000058
-S A$scroll_manager$130 Def000012
-S A$scroll_manager$121 Def00000B
-S A$scroll_manager$311 Def0000C8
-S A$scroll_manager$302 Def0000BF
-S A$scroll_manager$203 Def00005A
-S A$scroll_manager$140 Def00001A
-S A$scroll_manager$131 Def000013
-S A$scroll_manager$312 Def0000C9
-S A$scroll_manager$303 Def0000C1
-S A$scroll_manager$141 Def00001C
-S A$scroll_manager$322 Def0000CE
-S A$scroll_manager$313 Def0000CA
-S A$scroll_manager$304 Def0000C2
-S A$scroll_manager$232 Def00006C
-S A$scroll_manager$115 Def000006
-S A$scroll_manager$314 Def0000CD
-S A$scroll_manager$305 Def0000C3
-S A$scroll_manager$260 Def000097
-S A$scroll_manager$242 Def00007C
-S A$scroll_manager$233 Def00006F
-S A$scroll_manager$125 Def00000E
-S A$scroll_manager$116 Def000007
-S A$scroll_manager$306 Def0000C6
-S A$scroll_manager$270 Def0000A6
-S A$scroll_manager$261 Def00009A
-S A$scroll_manager$252 Def00008C
-S A$scroll_manager$243 Def00007F
-S A$scroll_manager$234 Def000072
-S A$scroll_manager$216 Def000063
-S A$scroll_manager$207 Def00005D
-S A$scroll_manager$162 Def000020
-S A$scroll_manager$135 Def000016
-S A$scroll_manager$126 Def00000F
-S XG$engine_scroll_manager_update$0$0 Def0000B4
-S A$scroll_manager$271 Def0000A8
-S A$scroll_manager$262 Def00009B
-S A$scroll_manager$253 Def00008F
-S A$scroll_manager$244 Def000082
-S A$scroll_manager$235 Def000074
-S A$scroll_manager$226 Def000064
-S A$scroll_manager$208 Def000060
-S A$scroll_manager$181 Def00003A
-S A$scroll_manager$172 Def00002B
-S A$scroll_manager$163 Def000023
-S A$scroll_manager$136 Def000017
-S A$scroll_manager$281 Def0000B2
-S A$scroll_manager$272 Def0000A9
-S A$scroll_manager$263 Def00009D
-S A$scroll_manager$254 Def000090
-S A$scroll_manager$245 Def000084
-S A$scroll_manager$236 Def000075
-S A$scroll_manager$227 Def000066
-S A$scroll_manager$182 Def00003C
-S A$scroll_manager$173 Def00002E
-S C$scroll_manager.c$100$1_0$96 Def0000CE
-S A$scroll_manager$264 Def00009E
-S A$scroll_manager$255 Def000092
-S A$scroll_manager$246 Def000085
-S A$scroll_manager$237 Def000077
-S A$scroll_manager$228 Def00006A
-S A$scroll_manager$192 Def00004D
-S A$scroll_manager$183 Def00003E
-S A$scroll_manager$174 Def000030
-S A$scroll_manager$256 Def000093
-S A$scroll_manager$247 Def000087
-S A$scroll_manager$238 Def000078
-S A$scroll_manager$193 Def00004E
-S A$scroll_manager$184 Def000040
-S A$scroll_manager$175 Def000031
-S A$scroll_manager$248 Def000088
-S A$scroll_manager$194 Def000050
-S A$scroll_manager$185 Def000042
-S A$scroll_manager$176 Def000032
-S A$scroll_manager$167 Def000024
-S A$scroll_manager$149 Def00001F
-S Fscroll_manager$lineScrollHandler$0$0 Def0000B5
-S A$scroll_manager$276 Def0000AD
-S A$scroll_manager$195 Def000052
-S A$scroll_manager$186 Def000044
-S A$scroll_manager$177 Def000034
-S A$scroll_manager$168 Def000028
-S A$scroll_manager$286 Def0000B4
-S A$scroll_manager$277 Def0000AF
-S A$scroll_manager$268 Def0000A2
-S A$scroll_manager$196 Def000053
-S A$scroll_manager$187 Def000046
-S A$scroll_manager$178 Def000036
-S A$scroll_manager$269 Def0000A5
-S A$scroll_manager$197 Def000054
-S A$scroll_manager$188 Def00004A
-S A$scroll_manager$179 Def000039
-S A$scroll_manager$299 Def0000B5
-S C$scroll_manager.c$31$0_0$90 Def000000
-S C$scroll_manager.c$40$1_0$90 Def00000A
-S C$scroll_manager.c$41$1_0$90 Def00000E
-S C$scroll_manager.c$42$1_0$90 Def000012
-S C$scroll_manager.c$60$1_0$91 Def000020
-S C$scroll_manager.c$52$1_0$90 Def00001F
-S C$scroll_manager.c$43$1_0$90 Def000016
-S C$scroll_manager.c$61$1_0$91 Def000024
-S C$scroll_manager.c$62$1_0$91 Def00002B
-A _DATA size D flags 0 addr 0
-S _scroll_x Def000000
-S G$scroll_x$0_0$0 Def000000
-S _lineCnt Def00000C
-S G$lineCnt$0_0$0 Def00000C
-A _INITIALIZED size 12 flags 0 addr 0
-S _yDelta Def000010
-S G$yDelta$0_0$0 Def000010
-S _ytile Def00000E
-S G$ytile$0_0$0 Def00000E
-S _X_TILE_MAX Def000002
-S _Y_TILE_MAX Def000006
-S G$X_TILE_MAX$0_0$0 Def000002
-S G$Y_TILE_MAX$0_0$0 Def000006
-S _test2 Def000009
-S G$test2$0_0$0 Def000009
-S _BG_TILE_WIDTH Def000000
-S G$BG_TILE_WIDTH$0_0$0 Def000000
-S _scrollRightDivided8 Def00000D
-S _test Def000008
-S G$scrollRightDivided8$0_0$0 Def00000D
-S G$test$0_0$0 Def000008
-S _scrollRight Def00000C
-S _scroll Def00000B
-S G$scrollRight$0_0$0 Def00000C
-S G$scroll$0_0$0 Def00000B
-S _X_TILE_DIFF Def000004
-S G$X_TILE_DIFF$0_0$0 Def000004
+S G$engine_scroll_manager_update$0$0 Def00002C
+S XG$engine_scroll_manager_init$0$0 Def00002B
+S _engine_scroll_manager_update Def00002C
+S A$scroll_manager$100 Def000024
+S A$scroll_manager$101 Def000025
+S A$scroll_manager$102 Def000026
+S A$scroll_manager$112 Def00002B
+S A$scroll_manager$103 Def000027
+S A$scroll_manager$104 Def00002A
+S XG$engine_scroll_manager_update$0$0 Def00002C
+S A$scroll_manager$129 Def00002C
+S A$scroll_manager$70 Def000008
+S C$scroll_manager.c$30$1_0$90 Def00002C
+S A$scroll_manager$80 Def00000F
+S A$scroll_manager$90 Def000019
+S A$scroll_manager$81 Def000012
+S C$scroll_manager.c$32$1_0$90 Def00002C
+S A$scroll_manager$91 Def00001C
+S A$scroll_manager$64 Def000000
+S A$scroll_manager$74 Def00000A
+S A$scroll_manager$65 Def000003
+S A$scroll_manager$75 Def00000D
+S A$scroll_manager$85 Def000014
+S A$scroll_manager$76 Def00000E
+S C$scroll_manager.c$20$1_0$88 Def00000A
+A _DATA size 9 flags 0 addr 0
+S _global_scroll_object Def000000
+S G$global_scroll_object$0_0$0 Def000000
+A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
-A _INITIALIZER size 12 flags 0 addr 0
-S Fscroll_manager$__xinit_scrollRight$0_0$0 Def00000C
-S Fscroll_manager$__xinit_scroll$0_0$0 Def00000B
-S Fscroll_manager$__xinit_X_TILE_DIFF$0_0$0 Def000004
-S Fscroll_manager$__xinit_yDelta$0_0$0 Def000010
-S Fscroll_manager$__xinit_ytile$0_0$0 Def00000E
-S Fscroll_manager$__xinit_X_TILE_MAX$0_0$0 Def000002
-S Fscroll_manager$__xinit_Y_TILE_MAX$0_0$0 Def000006
-S Fscroll_manager$__xinit_test2$0_0$0 Def000009
-S Fscroll_manager$__xinit_BG_TILE_WIDTH$0_0$0 Def000000
-S Fscroll_manager$__xinit_scrollRightDivided8$0_0$0 Def00000D
-S Fscroll_manager$__xinit_test$0_0$0 Def000008
+A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 01 00
 T 00 00 00
 R 00 00 01 00
-T 0C 00 00
-R 00 00 01 00
-T 0C 00 00
-R 00 00 01 00
-T 00 00 00
-R 00 00 02 00
-T 00 00 00
-R 00 00 02 00
-T 02 00 00
-R 00 00 02 00
-T 02 00 00
-R 00 00 02 00
-T 04 00 00
-R 00 00 02 00
-T 04 00 00
-R 00 00 02 00
-T 06 00 00
-R 00 00 02 00
-T 06 00 00
-R 00 00 02 00
-T 08 00 00
-R 00 00 02 00
-T 08 00 00
-R 00 00 02 00
-T 09 00 00
-R 00 00 02 00
-T 09 00 00
-R 00 00 02 00
-T 0B 00 00
-R 00 00 02 00
-T 0B 00 00
-R 00 00 02 00
-T 0C 00 00
-R 00 00 02 00
-T 0C 00 00
-R 00 00 02 00
-T 0D 00 00
-R 00 00 02 00
-T 0D 00 00
-R 00 00 02 00
-T 0E 00 00
-R 00 00 02 00
-T 0E 00 00
-R 00 00 02 00
-T 10 00 00
-R 00 00 02 00
-T 10 00 00
-R 00 00 02 00
 T 00 00 00
 R 00 00 00 00
-T 00 00 00 21 00 00 22 00 00 6C 22 02 00 6C 22
-R 00 00 00 00 00 07 01 00 00 0B 01 00
-T 0C 00 00 04 00 6C 22 06 00 6C 22 08 00 6C 22
-R 00 00 00 00 00 03 01 00 00 07 01 00 00 0B 01 00
-T 18 00 00 0A 00 3E 00 32 0C 00 C9
-R 00 00 00 00 00 03 01 00 00 08 01 00
-T 20 00 00
+T 00 00 00 21 00 00 36 00 21 01 00 36 00 01 02 00
+R 00 00 00 00 00 04 01 00 00 09 01 00 00 0E 01 00
+T 0D 00 00 AF 02 21 03 00 36 00 21 04 00 36 00 21
+R 00 00 00 00 00 06 01 00 00 0B 01 00
+T 1A 00 00 00 00 22 05 00 2E 1F 22 07 00 0A F5 33
+R 00 00 00 00 00 06 01 00 00 0B 01 00
+T 27 00 00 CD 00 00 33 C9
+R 00 00 00 00 02 04 01 00
+T 2C 00 00
 R 00 00 00 00
-T 20 00 00 21 0B 00 35 FD 21 0C 00 FD 34 00 FD 4E
-R 00 00 00 00 00 04 02 00 00 09 02 00
-T 2D 00 00 00 06 00 69 60 CB 78 28 04 21 07 00 09
+T 2C 00 00 C9
 R 00 00 00 00
-T 3A 00 00
-R 00 00 00 00
-T 3A 00 00 CB 2C CB 1D CB 2C CB 1D CB 2C CB 1D FD
-R 00 00 00 00
-T 47 00 00 21 0D 00 FD 75 00 79 E6 07 06 00 3D B0
-R 00 00 00 00 00 04 02 00
-T 54 00 00 C0 FD 7E 00 E6 01 32 08 00 21 12 00 22
-R 00 00 00 00 00 0A 02 00
-T 61 00 00 0E 00 C9
-R 00 00 00 00 00 03 02 00
-T 64 00 00
-R 00 00 00 00
-T 64 00 00 DD E5 DD 21 00 00 DD 39 2A 00 00 DD 4E
-R 00 00 00 00 00 0C 01 00
-T 71 00 00 04 06 00 BF ED 42 EB ED 53 00 00 2A
-R 00 00 00 00 00 0C 01 00
-T 7D 00 00 02 00 DD 4E 05 06 00 BF ED 42 EB ED 53
-R 00 00 00 00 00 03 01 00
-T 8A 00 00 02 00 2A 04 00 BF ED 42 EB ED 53 04 00
-R 00 00 00 00 00 03 01 00 00 06 01 00 00 0E 01 00
-T 97 00 00 2A 06 00 BF ED 42 EB ED 53 06 00 2A
-R 00 00 00 00 00 04 01 00 00 0C 01 00
-T A3 00 00 08 00 BF ED 42 EB ED 53 08 00 3E 00 32
-R 00 00 00 00 00 03 01 00 00 0B 01 00
-T B0 00 00 0C 00 DD E1 C9
-R 00 00 00 00 00 03 01 00
-T B5 00 00
-R 00 00 00 00
-T B5 00 00 FD 21 0C 00 FD 4E 00 FD 34 00 26 00 69
-R 00 00 00 00 00 05 01 00
-T C2 00 00 29 11 00 00 19 7E F5 33 CD 00 00 33 C9
-R 00 00 00 00 00 05 01 00 02 0C 01 00
-T 00 00 00
-R 00 00 07 00
-T 00 00 00 40 00
-R 00 00 07 00
-T 02 00 00
-R 00 00 07 00
-T 02 00 00 20 00
-R 00 00 07 00
-T 04 00 00
-R 00 00 07 00
-T 04 00 00 06 00
-R 00 00 07 00
-T 06 00 00
-R 00 00 07 00
-T 06 00 00 18 00
-R 00 00 07 00
-T 08 00 00
-R 00 00 07 00
-T 08 00 00 00
-R 00 00 07 00
-T 09 00 00
-R 00 00 07 00
-T 09 00 00 00 00
-R 00 00 07 00
-T 0B 00 00
-R 00 00 07 00
-T 0B 00 00 00
-R 00 00 07 00
-T 0C 00 00
-R 00 00 07 00
-T 0C 00 00 00
-R 00 00 07 00
-T 0D 00 00
-R 00 00 07 00
-T 0D 00 00 00
-R 00 00 07 00
-T 0E 00 00
-R 00 00 07 00
-T 0E 00 00 00 00
-R 00 00 07 00
-T 10 00 00
-R 00 00 07 00
-T 10 00 00 00 00
-R 00 00 07 00
