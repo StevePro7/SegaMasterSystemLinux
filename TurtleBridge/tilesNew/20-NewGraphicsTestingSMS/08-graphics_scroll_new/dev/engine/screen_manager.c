@@ -11,6 +11,7 @@
 #include "../devkit/_sms_manager.h"
 
 static unsigned char flag;
+static void print( bool newTile );
 
 void engine_screen_manager_init()
 {
@@ -37,6 +38,20 @@ void engine_screen_manager_update()
 	struct_scroll_object *so = &global_scroll_object;
 	unsigned char input;
 	unsigned char delta;
+	bool newTile;
+
+	input = engine_input_manager_hold_up();
+	if( input )
+	{
+		engine_font_manager_draw_char( '?', 1, 10 );
+	}
+
+	input = engine_input_manager_hold_down();
+	if( input )
+	{
+		newTile = so->scrollRight % 8 == 1;
+		print( newTile );
+	}
 
 	input = engine_input_manager_hold_left();
 	if( input )
@@ -52,8 +67,30 @@ void engine_screen_manager_update()
 		{
 			engine_font_manager_draw_text( "RIGHT", 4, 1 );
 			delta = 1;
-			flag = 1;
+			//flag = 1;
 		}
 	}
 	engine_scroll_manager_update( delta );
+}
+
+
+static void print( bool newTile )
+{
+	struct_scroll_object *so = &global_scroll_object;
+	engine_font_manager_draw_data( so->scroll, 25, 0 );
+	engine_font_manager_draw_data( so->scrollRight, 25, 1 );
+	//engine_font_manager_draw_data( so->scrollRightDivided8, 25, 2 );
+
+	//engine_font_manager_draw_data( so->offset_left, 25, 5 );
+	engine_font_manager_draw_data( so->offset_right, 20, 2 );
+	engine_font_manager_draw_data( so->offset_right % SCREEN_WIDE, 25, 2 );
+
+	////engine_font_manager_draw_data( so->scroll + so->scrollRight, 25, 8 );
+	////engine_font_manager_draw_data( so->scroll, so->scroll, 1 );
+
+	//engine_font_manager_draw_text( "      ", 21, 3 );
+	if( newTile )
+	{
+		engine_font_manager_draw_text( "TILES", 21, 0 );
+	}
 }
