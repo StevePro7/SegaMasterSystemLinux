@@ -14,7 +14,9 @@ typedef struct tag_struct_scroll_object
 	unsigned int offset_right;
 
 	// NEW
+	//unsigned char scroll_x[ 6 ];
 	unsigned int scroll_x[ 6 ];
+	unsigned char scroll_half;
 	unsigned char lineCnt;
 
 } struct_scroll_object;

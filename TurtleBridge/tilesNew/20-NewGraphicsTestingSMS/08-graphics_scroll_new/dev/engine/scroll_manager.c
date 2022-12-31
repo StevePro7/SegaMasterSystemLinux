@@ -31,11 +31,12 @@ void engine_scroll_manager_init()
 
 	// NEW
 	so->scroll_x[ 0 ] = 0; 
-	so->scroll_x[ 1 ] = 0; 
-	so->scroll_x[ 2 ] = 0; 
-	so->scroll_x[ 3 ] = 0; 
-	so->scroll_x[ 4 ] = 0; 
-	so->scroll_x[ 5 ] = 0; 
+	so->scroll_x[ 1 ] = 0;
+	so->scroll_x[ 2 ] = 0;
+	so->scroll_x[ 3 ] = 0;
+	so->scroll_x[ 4 ] = 0;
+	so->scroll_x[ 5 ] = 0;
+	so->scroll_half = 0;
 	so->lineCnt = 0;
 
 	devkit_SMS_setLineInterruptHandler( &lineScrollHandler );
@@ -56,6 +57,7 @@ bool engine_scroll_manager_update( unsigned char delta )
 	newTile = false;
 	if( delta > 0 )
 	{
+		
 		newTile = so->scrollRight % 8 == delta;
 		if( newTile )
 		{
@@ -68,7 +70,12 @@ bool engine_scroll_manager_update( unsigned char delta )
 	////engine_font_manager_draw_data( temp, 15, 10 );
 	////engine_font_manager_draw_data( so->scroll_x[ 0 ], 15, 11 );
 	//so->scroll_x[ 0 ] = so->scroll_x[ 0 ] - delta;
-	so->scroll_x[ 0 ] -= delta;
+	if( delta > 0 )
+	{
+		so->scroll_half = 1 - so->scroll_half;
+		so->scroll_x[ 0 ] -= so->scroll_half;
+	}
+
 	so->scroll_x[ 1 ] -= delta;
 	so->scroll_x[ 2 ] -= delta;
 	so->scroll_x[ 3 ] -= delta;
