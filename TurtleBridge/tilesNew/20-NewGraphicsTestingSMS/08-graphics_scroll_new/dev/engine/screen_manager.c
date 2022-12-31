@@ -29,7 +29,7 @@ void engine_screen_manager_init()
 	}
 
 	//TODO
-	//engine_music_manager_play();
+	engine_music_manager_play();
 	flag = 0;
 }
 
