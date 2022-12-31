@@ -30,8 +30,8 @@ void engine_level_manager_draw( unsigned int offset )
 
 	lo->level_cols_offset = offset;
 	lo->level_draw_offset = offset % SCREEN_WIDE;
-	engine_font_manager_draw_data( lo->level_cols_offset, 10, 5 );
-	engine_font_manager_draw_data( lo->level_draw_offset, 20, 5 );
+	engine_font_manager_draw_data( lo->level_cols_offset, 10, 2 );
+	engine_font_manager_draw_data( lo->level_draw_offset, 20, 2 );
 
 	// TODO hack while debugging
 	if( lo->level_draw_offset > 10 )

@@ -51,18 +51,18 @@ bool engine_scroll_manager_update( unsigned char delta )
 	bool newTile;
 	////const unsigned char delta = 1;
 
-	//so->scroll -= delta;
-	//so->scrollRight += delta;
+	so->scroll -= delta;
+	so->scrollRight += delta;
 
 	newTile = false;
-	//if( delta > 0 )
-	//{
-	//	newTile = so->scrollRight % 8 == delta;
-	//	if( newTile )
-	//	{
-	//		so->offset_right++;
-	//	}
-	//}
+	if( delta > 0 )
+	{
+		newTile = so->scrollRight % 8 == delta;
+		if( newTile )
+		{
+			so->offset_right++;
+		}
+	}
 
 	//temp = 0;
 	//temp = so->scroll_x[ 0 ];
@@ -79,7 +79,7 @@ bool engine_scroll_manager_update( unsigned char delta )
 	//temp = so->scroll_x[ 0 ];
 	////engine_font_manager_draw_data( temp, 25, 12 );
 	////engine_font_manager_draw_data( so->scroll_x[ 0 ], 25, 13 );
-
+	//print( newTile );
 	return newTile;
 }
 
@@ -107,13 +107,13 @@ bool engine_scroll_manager_update( unsigned char delta )
 static void print( bool newTile )
 {
 	struct_scroll_object *so = &global_scroll_object;
-	//engine_font_manager_draw_data( so->scroll, 25, 0 );
-	//engine_font_manager_draw_data( so->scrollRight, 25, 1 );
-	////engine_font_manager_draw_data( so->scrollRightDivided8, 25, 2 );
+	engine_font_manager_draw_data( so->scroll, 25, 0 );
+	engine_font_manager_draw_data( so->scrollRight, 25, 1 );
+	//engine_font_manager_draw_data( so->scrollRightDivided8, 25, 2 );
 
-	////engine_font_manager_draw_data( so->offset_left, 25, 5 );
-	//engine_font_manager_draw_data( so->offset_right, 20, 2 );
-	//engine_font_manager_draw_data( so->offset_right % SCREEN_WIDE, 25, 2 );
+	//engine_font_manager_draw_data( so->offset_left, 25, 5 );
+	engine_font_manager_draw_data( so->offset_right, 20, 2 );
+	engine_font_manager_draw_data( so->offset_right % SCREEN_WIDE, 25, 2 );
 
 	////engine_font_manager_draw_data( so->scroll + so->scrollRight, 25, 8 );
 	////engine_font_manager_draw_data( so->scroll, so->scroll, 1 );
@@ -121,7 +121,7 @@ static void print( bool newTile )
 	//engine_font_manager_draw_text( "      ", 21, 3 );
 	if( newTile )
 	{
-		//engine_font_manager_draw_text( "TILES", 21, 3 );
+		engine_font_manager_draw_text( "TILES", 21, 0 );
 	}
 }
 
