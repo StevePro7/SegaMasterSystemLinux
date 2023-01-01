@@ -2,6 +2,8 @@
 #define _TILE_MANAGER_H_
 
 void engine_tile_manager_draw_title( unsigned int tmp );
+void engine_tile_manager_draw_block( unsigned char x, unsigned char y );
+
 /*
 void engine_tile_manager_sky();
 void engine_tile_manager_sea();

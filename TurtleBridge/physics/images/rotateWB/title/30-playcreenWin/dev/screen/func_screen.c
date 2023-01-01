@@ -10,11 +10,21 @@ static unsigned char index;
 
 void screen_func_screen_load()
 {
+	unsigned char x, y;
 	index = 192;
-	engine_tile_manager_draw_title( index );
 
-	engine_font_manager_draw_text( "FUNC SCREEN!!", 10, 14 );
-	engine_font_manager_draw_data( index, 10, 15 );
+	for( y = 0; y < 3; y++ )
+	{
+		for( x = 0; x < 32; x++ )
+		{
+			engine_tile_manager_draw_block( x, y );
+		}
+	}
+	
+	engine_tile_manager_draw_title( index );
+	
+	//engine_font_manager_draw_text( "FUNC SCREEN!!", 10, 14 );
+	//engine_font_manager_draw_data( index, 10, 15 );
 	//devkit_SMS_setSpriteMode( devkit_SPRITEMODE_ZOOMED() );
 	//devkit_SMS_setSpriteMode( devkit_SPRITEMODE_NORMAL() );
 	//index = 0;
@@ -33,14 +43,14 @@ void screen_func_screen_update( unsigned char *screen_type )
 	if( input )
 	{
 		index-=2;
-		engine_tile_manager_draw_title( index );
+		//engine_tile_manager_draw_block( );
 		engine_font_manager_draw_data( index, 10, 15 );
 	}
 	input = engine_input_manager_hold_right();
 	if( input )
 	{
 		index+=2;
-		engine_tile_manager_draw_title( index );
+//		engine_tile_manager_draw_block(  );
 		engine_font_manager_draw_data( index, 10, 15 );
 	}
 	//engine_sprite_manager_draw_player( index, sprite_mode_zoomed, 96, 96 );
