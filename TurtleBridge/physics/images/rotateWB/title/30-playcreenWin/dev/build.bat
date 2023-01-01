@@ -96,7 +96,7 @@ content/gfx.rel
 "C:\Program Files\SDCC\bin\ihx2sms.exe" output.ihx output.sms
 
 echo Copy
-cp output.sms ../TitleScreen.sms
+cp output.sms ../PlayScreen.sms
 
 :: Delete
 cd banks
