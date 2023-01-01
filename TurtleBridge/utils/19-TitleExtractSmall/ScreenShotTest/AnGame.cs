@@ -29,7 +29,7 @@ namespace ScreenShotTest
 
 		public AnGame()
 		{
-			width = 256 + 4;
+			width = 256;
 			height = 32;
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = width;// 184;
@@ -112,7 +112,7 @@ namespace ScreenShotTest
 			spriteBatch.Begin();
 			
 			spriteBatch.Draw(images[2], new Vector2(0, 0), Color.White);
-			spriteBatch.Draw(images[2], new Vector2(128 + 8, 0), Color.White);
+			spriteBatch.Draw(images[2], new Vector2(128, 0), Color.White);
 			spriteBatch.Draw(images[0], new Vector2(0, 0), Color.White);
 			spriteBatch.End();
 		}
