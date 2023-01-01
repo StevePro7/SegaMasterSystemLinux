@@ -7,7 +7,7 @@ namespace ScreenShotTest
 {
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		string[] files = { "skate01", "skate02", "skate03" };
+		string[] files = { "sprite_top01", "sprite_top02", "sprite_top03", "sprite_top04", "sprites_partial" };
 		Texture2D[] images;
 
 		GraphicsDeviceManager graphics;
@@ -21,8 +21,8 @@ namespace ScreenShotTest
 		public AnGame()
 		{
 			graphics = new GraphicsDeviceManager(this);
-			graphics.PreferredBackBufferWidth = 24;
-			graphics.PreferredBackBufferHeight = 32 * 3;
+			graphics.PreferredBackBufferWidth = 32;
+			graphics.PreferredBackBufferHeight = 32 * 12;
 			Content.RootDirectory = "Content";
 		}
 
@@ -104,10 +104,12 @@ namespace ScreenShotTest
 			graphics.GraphicsDevice.Clear(Color.Black);
 			spriteBatch.Begin();
 
-			spriteBatch.Draw(images[0], new Vector2(0, 0), Color.White);
-			spriteBatch.Draw(images[1], new Vector2(0, 32), Color.White);
-			spriteBatch.Draw(images[2], new Vector2(0, 64), Color.White);
+			spriteBatch.Draw(images[0], new Vector2(0, 0 * 32), Color.White);
+			spriteBatch.Draw(images[1], new Vector2(0, 1 * 32), Color.White);
+			spriteBatch.Draw(images[2], new Vector2(0, 2 * 32), Color.White);
+			spriteBatch.Draw(images[3], new Vector2(0, 3 * 32), Color.White);
 
+			spriteBatch.Draw(images[4], new Vector2(0, 4 * 32), Color.White);
 			spriteBatch.End();
 		}
 
