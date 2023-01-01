@@ -18,7 +18,7 @@ namespace ScreenShotTest
 
 		public AnGame()
 		{
-			output = new Output05();
+			output = new Output02b();
 
 			assetManager = new AssetManager();
 			graphics = new GraphicsDeviceManager(this);
@@ -38,7 +38,7 @@ namespace ScreenShotTest
 			//{
 			//	save = Convert.ToBoolean(ConfigurationManager.AppSettings["save"]);
 			//}
-			save = true;
+			//save = true;
 			IsMouseVisible = true;
 			base.Initialize();
 		}

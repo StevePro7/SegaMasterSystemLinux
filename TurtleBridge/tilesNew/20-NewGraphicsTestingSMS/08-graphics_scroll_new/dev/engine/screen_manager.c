@@ -10,7 +10,6 @@
 #include "tile_manager.h"
 #include "../devkit/_sms_manager.h"
 
-static unsigned char flag;
 static void print( bool newTile );
 
 void engine_screen_manager_init()
@@ -29,8 +28,7 @@ void engine_screen_manager_init()
 	}
 
 	//TODO
-	engine_music_manager_play();
-	flag = 0;
+	//engine_music_manager_play();
 }
 
 void engine_screen_manager_update()
@@ -68,12 +66,8 @@ void engine_screen_manager_update()
 	input = engine_input_manager_move_right();
 	if( input )
 	{
-		if( !flag )
-		{
 			//engine_font_manager_draw_text( "RIGHT", 4, 1 );
 			delta = 1;
-			//flag = 1;
-		}
 	}
 	input = engine_input_manager_move_fire1();
 	if( input )

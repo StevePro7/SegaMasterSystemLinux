@@ -16,6 +16,7 @@
 		turtleH = 11,
 		sign = 12,
 		goal = 13,
+		titlePlay = 14,
 		//wave01 = 14,
 		//wave02 = 15,
 	}

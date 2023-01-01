@@ -1,0 +1,12 @@
+M:riff_object
+S:G$riff_sample_data$0_0$0({18}DA9d,DG,SC:U),E,0,0
+S:G$Riff__01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$Riff__02_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$Riff__03_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$Riff__04_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$Riff__05_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$Riff__06_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$Riff__07_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$Riff__08_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$Riff__09_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$riff_sample_bank$0_0$0({9}DA9d,SC:U),D,0,0
