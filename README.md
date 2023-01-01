@@ -2,6 +2,11 @@
 Sega Master System code repositories for Linux
 new code added daily...!!
 
+01-01-2023
+git error index uses extension
+01-01-2023
+http://techies-world.com/git-error-index-uses-extension-which-we-do-not-understand-fatal-index-file-corrupt
+
 Skazka sound effects choice
 E:\GitHub\StevePro8\SegaMasterSystemLinux\Examples\08_Music_SoundFX\dev
 
