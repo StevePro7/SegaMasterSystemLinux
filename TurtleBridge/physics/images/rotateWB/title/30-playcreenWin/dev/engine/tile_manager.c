@@ -22,7 +22,7 @@ void engine_tile_manager_draw_title( unsigned int tmp )
 	unsigned w, h;
 	w = 24;
 	h = 3;
-	x = 8;
+	x = 4;
 	y = 0;
 
 	for( row = 0; row < h; row++ )
