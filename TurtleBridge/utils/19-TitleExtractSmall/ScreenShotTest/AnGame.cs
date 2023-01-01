@@ -15,8 +15,7 @@ namespace ScreenShotTest
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
 		RenderTarget2D renderTarget;
-		//Texture2D[] images;
-		Texture2D[] colors;
+		Texture2D[] images;
 		Texture2D image;
 		Texture2D pixel;
 		private bool save;
@@ -31,7 +30,7 @@ namespace ScreenShotTest
 		public AnGame()
 		{
 			width = 128;
-			height = 96;
+			height = 64;
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = width;// 184;
 			graphics.PreferredBackBufferHeight = height;// 88;
@@ -45,7 +44,7 @@ namespace ScreenShotTest
 			//{
 			//	save = Convert.ToBoolean(ConfigurationManager.AppSettings["save"]);
 			//}
-			//save = true;
+			save = true;
 			IsMouseVisible = true;
 			base.Initialize();
 		}
@@ -54,7 +53,10 @@ namespace ScreenShotTest
 		{
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch(GraphicsDevice);
-
+			images = new Texture2D[3];
+			images[0] = Content.Load<Texture2D>("lil");
+			images[1] = Content.Load<Texture2D>("evel");
+			images[2] = Content.Load<Texture2D>("knievel");
 			image = Content.Load<Texture2D>("title_org");
 
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
@@ -108,10 +110,10 @@ namespace ScreenShotTest
 			graphics.GraphicsDevice.Clear(Color.Black);
 
 			spriteBatch.Begin();
-			//LIL
-			//spriteBatch.Draw(image, new Vector2(0, 0), new Rectangle(36, 0, 48, 32), Color.White);
-
-			spriteBatch.Draw(image, new Vector2(0, 0), new Rectangle(34, 31, 72, 32), Color.White);
+			
+			spriteBatch.Draw(images[2], new Vector2(0, 0), Color.White);
+			spriteBatch.Draw(images[2], new Vector2(0, 32), Color.White);
+			spriteBatch.Draw(images[0], new Vector2(0, 0), Color.White);
 			spriteBatch.End();
 		}
 
