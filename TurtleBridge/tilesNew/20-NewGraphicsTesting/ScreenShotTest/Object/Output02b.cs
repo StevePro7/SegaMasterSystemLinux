@@ -11,8 +11,8 @@ namespace ScreenShotTest
 			assets.Add(AssetType.font);
 			assets.Add(AssetType.titlePlay);
 
-			Wide = 128;
-			High = 32 + 48;
+			Wide = 192;
+			High = 32 + 24;
 		}
 
 		public void Draw(SpriteBatch spriteBatch)

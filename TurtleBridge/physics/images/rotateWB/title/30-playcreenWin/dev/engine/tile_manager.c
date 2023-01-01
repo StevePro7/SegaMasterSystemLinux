@@ -20,8 +20,8 @@ void engine_tile_manager_draw_title( unsigned int tmp )
 
 	unsigned x,y;
 	unsigned w, h;
-	w = 16;
-	h = 6;
+	w = 24;
+	h = 3;
 	x = 8;
 	y = 0;
 
