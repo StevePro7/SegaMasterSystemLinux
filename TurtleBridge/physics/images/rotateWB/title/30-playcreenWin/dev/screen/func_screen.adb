@@ -2,7 +2,7 @@ M:func_screen
 F:G$screen_func_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_func_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lfunc_screen.screen_func_screen_update$screen_type$1_0$90({2}DG,SC:U),B,1,4
-S:Lfunc_screen.screen_func_screen_update$input$1_0$91({1}SC:U),R,0,0,[a]
+S:Lfunc_screen.screen_func_screen_update$input$1_0$91({1}SC:U),R,0,0,[c]
 S:Ffunc_screen$index$0_0$0({1}SC:U),E,0,0
 S:G$engine_font_manager_draw_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_text$0_0$0({2}DF,SV:S),C,0,0

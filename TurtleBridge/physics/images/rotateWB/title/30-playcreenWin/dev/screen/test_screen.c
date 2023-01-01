@@ -27,13 +27,18 @@ static const unsigned char *jump_ptr;
 static unsigned char index;
 static unsigned char check;
 
+static unsigned int tmp;
+
 void screen_test_screen_load()
 {
+	engine_riff_manager_init();
 	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_ZOOMED() );
 	devkit_SMS_displayOff();
-	engine_tile_manager_draw_title();
+	tmp = 128;
+	engine_tile_manager_draw_title( tmp );
 	engine_font_manager_draw_text( "A TRIBUTE TO THE", 8, 22 );
 	engine_font_manager_draw_text( "GREATEST DAREDEVIL", 7, 23 );
+	//engine_font_manager_draw_data( tmp, 20, 10 );
 	devkit_SMS_displayOn();
 
 	jump_ptr = flip_array_ptr[ 0 ];
@@ -46,8 +51,16 @@ void screen_test_screen_update( unsigned char *screen_type )
 	unsigned char input;
 	unsigned char x, y, f;
 	
-	if (check)
+	if( check )
 	{
+		engine_input_manager_update();
+		input = engine_input_manager_move_fire1();
+		if( input )
+		{
+			*screen_type = screen_type_func;
+			return;
+		}
+
 		x = posX[ index ];
 		y = posY[ index ];
 		f = jump_ptr[ index ];
@@ -55,8 +68,24 @@ void screen_test_screen_update( unsigned char *screen_type )
 		return;
 	}
 
+	//TODO delete
+	//input = engine_input_manager_hold_left();
+	//if( input )
+	//{
+	//	tmp -= 2;
+	//	engine_tile_manager_draw_title( tmp );
+	//	engine_font_manager_draw_data( tmp, 20, 10 );
+	//}
+	//input = engine_input_manager_hold_right();
+	//if( input )
+	//{
+	//	tmp += 2;
+	//	engine_tile_manager_draw_title( tmp );
+	//	engine_font_manager_draw_data( tmp, 20, 10 );
+	//}
+
 	engine_riff_manager_play( index );
-	
+
 	x = posX[ index ];
 	y = posY[ index ];
 	f = jump_ptr[ index ];
@@ -68,11 +97,11 @@ void screen_test_screen_update( unsigned char *screen_type )
 	if ( input || index + 1 >= MAX_SPOTS )
 	{
 		check = 1;
+		//*screen_type = screen_type_func;
 		return;
 	}
 
-	index++;	
-
+	index++;
 	*screen_type = screen_type_test;
 }
 

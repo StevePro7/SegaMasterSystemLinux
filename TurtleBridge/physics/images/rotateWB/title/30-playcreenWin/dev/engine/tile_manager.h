@@ -1,7 +1,7 @@
 #ifndef _TILE_MANAGER_H_
 #define _TILE_MANAGER_H_
 
-void engine_tile_manager_draw_title();
+void engine_tile_manager_draw_title( unsigned int tmp );
 /*
 void engine_tile_manager_sky();
 void engine_tile_manager_sea();
