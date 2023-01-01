@@ -19,8 +19,8 @@ void main( void )
 	//devkit_SMS_setBGPaletteColor( 0, devkit_RGB( 1, 2, 3 ) );			// background tiles
 	devkit_SMS_setSpritePaletteColor( 0, devkit_RGB( 0, 0, 0 ) );		// border tiles		cornflower blue		sky
 
-	open_screen_type = screen_type_test;
-	//open_screen_type = screen_type_func;
+	//open_screen_type = screen_type_test;
+	open_screen_type = screen_type_func;
 	engine_riff_manager_init();
 	engine_screen_manager_init( open_screen_type );
 	devkit_SMS_displayOn();
