@@ -1,6 +1,8 @@
 #ifndef _GLOBAL_MANAGER_H_
 #define _GLOBAL_MANAGER_H_
 
+#define MAX_SCREEENS			22
+
 // Sprites.
 #define SPRITE_TILES		256
 
