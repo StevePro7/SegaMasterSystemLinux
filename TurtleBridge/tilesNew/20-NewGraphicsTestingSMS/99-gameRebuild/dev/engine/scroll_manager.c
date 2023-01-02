@@ -67,8 +67,8 @@ bool engine_scroll_manager_update( unsigned char delta )
 
 	//temp = 0;
 	//temp = so->scroll_x[ 0 ];
-	////engine_font_manager_draw_data( temp, 15, 10 );
-	////engine_font_manager_draw_data( so->scroll_x[ 0 ], 15, 11 );
+	////engine_font_manager_data( temp, 15, 10 );
+	////engine_font_manager_data( so->scroll_x[ 0 ], 15, 11 );
 	//so->scroll_x[ 0 ] = so->scroll_x[ 0 ] - delta;
 	if( delta > 0 )
 	{
@@ -83,8 +83,8 @@ bool engine_scroll_manager_update( unsigned char delta )
 	so->lineCnt = 0;
 
 	//temp = so->scroll_x[ 0 ];
-	////engine_font_manager_draw_data( temp, 25, 12 );
-	////engine_font_manager_draw_data( so->scroll_x[ 0 ], 25, 13 );
+	////engine_font_manager_data( temp, 25, 12 );
+	////engine_font_manager_data( so->scroll_x[ 0 ], 25, 13 );
 	//print( newTile );
 	return newTile;
 }
@@ -118,9 +118,9 @@ static void lineScrollHandler( void )
 	//unsigned int val = scroll_x[ lineCnt++ ] >> 8;
 	unsigned int val = so->scroll_x[ so->lineCnt++ ];
 
-	////engine_font_manager_draw_data( lineCnt, 10, 0 );
-	////engine_font_manager_draw_data( val, 20, 0 );
-	////engine_font_manager_draw_data( lineCnt, 10, 0 );
+	////engine_font_manager_data( lineCnt, 10, 0 );
+	////engine_font_manager_data( val, 20, 0 );
+	////engine_font_manager_data( lineCnt, 10, 0 );
 	//devkit_SMS_setBGScrollX( ( scroll_x[ lineCnt++ ] ) >> 8 );
 
 	devkit_SMS_setBGScrollX( val );

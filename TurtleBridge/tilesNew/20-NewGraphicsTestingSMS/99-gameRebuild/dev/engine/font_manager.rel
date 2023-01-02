@@ -10,8 +10,8 @@ S _bggame_tiles__tilemap__bin Ref000000
 S _devkit_SMS_setTile Ref000000
 S __moduint Ref000000
 A _CODE size 1C7 flags 0 addr 0
-S G$engine_font_manager_draw_zero$0$0 Def000136
-S G$engine_font_manager_draw_text$0$0 Def00002C
+S _engine_font_manager_zero Def000136
+S _engine_font_manager_text Def00002C
 S A$font_manager$110 Def000032
 S A$font_manager$210 Def000099
 S A$font_manager$120 Def00003B
@@ -41,6 +41,7 @@ S A$font_manager$204 Def00008D
 S A$font_manager$141 Def000059
 S A$font_manager$132 Def00004A
 S A$font_manager$123 Def000040
+S XG$engine_font_manager_zero$0$0 Def0001C6
 S A$font_manager$430 Def0001B6
 S A$font_manager$412 Def00019F
 S A$font_manager$340 Def000136
@@ -55,7 +56,6 @@ S A$font_manager$160 Def000070
 S A$font_manager$142 Def00005A
 S A$font_manager$133 Def00004C
 S A$font_manager$124 Def000043
-S _engine_font_manager_draw_zero Def000136
 S A$font_manager$440 Def0001C0
 S A$font_manager$431 Def0001B7
 S A$font_manager$413 Def0001A2
@@ -72,6 +72,7 @@ S A$font_manager$170 Def000079
 S A$font_manager$161 Def000071
 S A$font_manager$143 Def00005D
 S A$font_manager$125 Def000045
+S G$engine_font_manager_data$0$0 Def000080
 S A$font_manager$450 Def0001C6
 S A$font_manager$432 Def0001BA
 S A$font_manager$414 Def0001A3
@@ -134,6 +135,7 @@ S A$font_manager$146 Def000060
 S A$font_manager$137 Def00004D
 S A$font_manager$128 Def000048
 S A$font_manager$119 Def000038
+S XG$engine_font_manager_text$0$0 Def00007F
 S A$font_manager$444 Def0001C2
 S A$font_manager$426 Def0001B0
 S A$font_manager$417 Def0001A6
@@ -156,7 +158,7 @@ S A$font_manager$165 Def000077
 S A$font_manager$156 Def00006C
 S A$font_manager$147 Def000061
 S A$font_manager$138 Def000050
-S _engine_font_manager_draw_text Def00002C
+S G$engine_font_manager_char$0$0 Def000000
 S A$font_manager$445 Def0001C4
 S A$font_manager$427 Def0001B2
 S A$font_manager$418 Def0001A9
@@ -234,12 +236,10 @@ S A$font_manager$288 Def000106
 S A$font_manager$388 Def00017A
 S A$font_manager$379 Def000172
 S A$font_manager$289 Def000107
-S XG$engine_font_manager_draw_zero$0$0 Def0001C6
 S A$font_manager$389 Def00017D
-S G$engine_font_manager_draw_data$0$0 Def000080
-S XG$engine_font_manager_draw_text$0$0 Def00007F
+S _engine_font_manager_data Def000080
+S _engine_font_manager_char Def000000
 S A$font_manager$72 Def00000E
-S G$engine_font_manager_draw_char$0$0 Def000000
 S A$font_manager$82 Def00001B
 S A$font_manager$73 Def00000F
 S C$font_manager.c$10$0_0$87 Def000000
@@ -274,6 +274,7 @@ S C$font_manager.c$28$2_0$90 Def000079
 S C$font_manager.c$20$2_0$89 Def000035
 S C$font_manager.c$14$1_0$87 Def00000E
 S A$font_manager$88 Def000025
+S XG$engine_font_manager_data$0$0 Def000135
 S C$font_manager.c$51$3_0$94 Def0000DD
 S C$font_manager.c$15$1_0$87 Def00001B
 S A$font_manager$98 Def00002B
@@ -283,10 +284,9 @@ S C$font_manager.c$45$2_0$93 Def00009D
 S C$font_manager.c$43$3_0$94 Def00008D
 S C$font_manager.c$23$1_0$89 Def000035
 S C$font_manager.c$16$1_0$87 Def00002B
-S _engine_font_manager_draw_data Def000080
 S C$font_manager.c$46$2_0$93 Def0000B6
+S XG$engine_font_manager_char$0$0 Def00002B
 S C$font_manager.c$18$1_0$89 Def00002C
-S _engine_font_manager_draw_char Def000000
 S C$font_manager.c$72$2_0$98 Def0001BC
 S C$font_manager.c$63$2_0$98 Def000136
 S C$font_manager.c$55$4_0$95 Def0000F7
@@ -301,9 +301,9 @@ S C$font_manager.c$59$3_0$94 Def000114
 S C$font_manager.c$75$2_0$98 Def000175
 S C$font_manager.c$74$3_0$99 Def000155
 S C$font_manager.c$77$3_0$99 Def00018D
-S XG$engine_font_manager_draw_data$0$0 Def000135
+S G$engine_font_manager_zero$0$0 Def000136
 S C$font_manager.c$79$3_0$99 Def000191
-S XG$engine_font_manager_draw_char$0$0 Def00002B
+S G$engine_font_manager_text$0$0 Def00002C
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0

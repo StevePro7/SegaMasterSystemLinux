@@ -16,6 +16,18 @@ void engine_input_manager_update()
 	curr_joypad1 = devkit_SMS_getKeysStatus();
 }
 
+
+// Public methods HOLD.
+//unsigned char engine_input_manager_hold( unsigned char data )
+//{
+//	return curr_joypad1 & data && !( prev_joypad1 & data );
+//}
+//
+//unsigned char engine_input_manager_move( unsigned char data )
+//{
+//	return curr_joypad1 & data;
+//}
+
 // Public methods HOLD.
 unsigned char engine_input_manager_hold_up()
 {

@@ -33,17 +33,17 @@ void engine_level_manager_draw( unsigned int offset )
 
 	lo->level_cols_offset = offset;
 	lo->level_draw_offset = offset % SCREEN_WIDE;
-	//engine_font_manager_draw_data( lo->level_cols_offset, 10, 2 );
-	//engine_font_manager_draw_data( lo->level_draw_offset, 20, 2 );
+	//engine_font_manager_data( lo->level_cols_offset, 10, 2 );
+	//engine_font_manager_data( lo->level_draw_offset, 20, 2 );
 
 	// TODO hack while debugging
 	if( lo->level_draw_offset >= 12 )
 	{
-		//engine_font_manager_draw_text( "NOPE!", 4, 2 );
+		//engine_font_manager_text( "NOPE!", 4, 2 );
 		return;
 	}
 
-	//engine_font_manager_draw_text( "     ", 4, 2 );
+	//engine_font_manager_text( "     ", 4, 2 );
 	index = lo->level_draw_offset;
 	type = tile_type_bridge;// level_tile_type[ index ];
 	cols = level_tile_cols[ index ];

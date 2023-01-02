@@ -32,13 +32,13 @@ void engine_storage_manager_read()
 
 	//devkit_SMS_enableSRAM();
 	//num_jumps = so->num_jumps;
-	////engine_font_manager_draw_data( num_jumps, 12, 14 );
+	////engine_font_manager_data( num_jumps, 12, 14 );
 	//engine_jump_manager_init( num_jumps );
 
 	//for( index = 0; index < num_jumps; index++ )
 	//{
 	//	value = so->jump_high[ index ];
-	//	//engine_font_manager_draw_data( value, 22, 4 + index );
+	//	//engine_font_manager_data( value, 22, 4 + index );
 	//	engine_jump_manager_load( index, value );
 	//}
 

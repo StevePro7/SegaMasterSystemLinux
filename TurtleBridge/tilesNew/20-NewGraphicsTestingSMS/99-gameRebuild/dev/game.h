@@ -6,11 +6,11 @@
 
 #define verMaj		1
 #define verMin		0
-#define dateYear	2022
+#define dateYear	2023
 #define dateMonth	3
-#define dateDay		3
+#define dateDay		27
 #define author		"Steven Boland"
-#define name		"Sprite Tiles"
-#define descr		"Simple Sega Master System demo to run on real hardware!"
+#define name		"Lil Evel Knievel"
+#define descr		"Lil Evel Knievel game for the SMS Power! 2023 Competition"
 
 #endif//_GAME_H_

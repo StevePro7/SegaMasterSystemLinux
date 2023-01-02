@@ -155,10 +155,10 @@ S:Ltile_manager.engine_tile_manager_init$sloc6$0_1$0({2}DG,SC:U),B,1,-3
 T:Ftile_manager$tag_struct_tile_object[({0}S:S$tilemap_index$0_0$0({2}SI:U),Z,0,0)({2}S:S$tile_wide$0_0$0({1}SC:U),Z,0,0)({3}S:S$tile_high$0_0$0({1}SC:U),Z,0,0)]
 S:G$global_tile_object$0_0$0({4}STtag_struct_tile_object:S),E,0,0
 S:G$global_tile_objects$0_0$0({48}DA12d,STtag_struct_tile_object:S),E,0,0
-S:G$engine_font_manager_draw_char$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_font_manager_draw_text$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_font_manager_draw_data$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_font_manager_draw_zero$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_font_manager_data$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_font_manager_zero$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOnFeature$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOffFeature$0_0$0({2}DF,SV:S),C,0,0

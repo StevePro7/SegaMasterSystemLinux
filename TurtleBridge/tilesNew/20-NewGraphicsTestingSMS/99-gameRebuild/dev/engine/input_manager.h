@@ -3,6 +3,9 @@
 
 // Public method.
 void engine_input_manager_update();
+//TODO - replace all the input to use this API instead!
+//unsigned char engine_input_manager_hold( unsigned char data );
+//unsigned char engine_input_manager_move( unsigned char data );
 
 // Public methods HOLD.
 unsigned char engine_input_manager_hold_up();

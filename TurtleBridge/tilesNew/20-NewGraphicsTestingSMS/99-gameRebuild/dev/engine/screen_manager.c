@@ -19,7 +19,7 @@ void engine_screen_manager_init()
 	engine_tile_manager_sky();
 	engine_tile_manager_sea();
 	engine_tile_manager_clouds();
-	engine_font_manager_draw_text( "NEW SCROLL", 10, 0 );
+	engine_font_manager_text( "NEW REBUILD", 10, 0 );
 
 	idx = 0;
 	for( idx = 0; idx < 8; idx++ )
@@ -42,7 +42,7 @@ void engine_screen_manager_update()
 	input = engine_input_manager_hold_up();
 	if( input )
 	{
-		engine_font_manager_draw_char( '?', 1, 10 );
+		engine_font_manager_char( '?', 1, 10 );
 	}
 
 	input = engine_input_manager_hold_down();
@@ -66,7 +66,7 @@ void engine_screen_manager_update()
 	input = engine_input_manager_move_right();
 	if( input )
 	{
-			//engine_font_manager_draw_text( "RIGHT", 4, 1 );
+			//engine_font_manager_text( "RIGHT", 4, 1 );
 			delta = 1;
 	}
 	input = engine_input_manager_move_fire1();
@@ -95,20 +95,20 @@ void engine_screen_manager_update()
 static void print( bool newTile )
 {
 	struct_scroll_object *so = &global_scroll_object;
-	engine_font_manager_draw_data( so->scroll, 25, 0 );
-	engine_font_manager_draw_data( so->scrollRight, 25, 1 );
-	//engine_font_manager_draw_data( so->scrollRightDivided8, 25, 2 );
+	engine_font_manager_data( so->scroll, 25, 0 );
+	engine_font_manager_data( so->scrollRight, 25, 1 );
+	//engine_font_manager_data( so->scrollRightDivided8, 25, 2 );
 
-	//engine_font_manager_draw_data( so->offset_left, 25, 5 );
-	engine_font_manager_draw_data( so->offset_right, 20, 2 );
-	engine_font_manager_draw_data( so->offset_right % SCREEN_WIDE, 25, 2 );
+	//engine_font_manager_data( so->offset_left, 25, 5 );
+	engine_font_manager_data( so->offset_right, 20, 2 );
+	engine_font_manager_data( so->offset_right % SCREEN_WIDE, 25, 2 );
 
-	////engine_font_manager_draw_data( so->scroll + so->scrollRight, 25, 8 );
-	////engine_font_manager_draw_data( so->scroll, so->scroll, 1 );
+	////engine_font_manager_data( so->scroll + so->scrollRight, 25, 8 );
+	////engine_font_manager_data( so->scroll, so->scroll, 1 );
 
-	//engine_font_manager_draw_text( "      ", 21, 3 );
+	//engine_font_manager_text( "      ", 21, 3 );
 	if( newTile )
 	{
-		engine_font_manager_draw_text( "TILES", 21, 0 );
+		engine_font_manager_text( "TILES", 21, 0 );
 	}
 }

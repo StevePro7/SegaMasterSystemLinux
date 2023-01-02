@@ -7,7 +7,7 @@
 #define UNIT_ROOT	10		// 10 is decimal
 #define DATA_LONG	5		// 5 placeholder
 
-void engine_font_manager_draw_char( unsigned char ch, unsigned char x, unsigned char y )
+void engine_font_manager_char( unsigned char ch, unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = bggame_tiles__tilemap__bin;
 	unsigned char tile = ch - TEXT_ROOT;
@@ -15,7 +15,7 @@ void engine_font_manager_draw_char( unsigned char ch, unsigned char x, unsigned 
 	devkit_SMS_setTile( *pnt + tile );
 }
 
-void engine_font_manager_draw_text( unsigned char *text, unsigned char x, unsigned char y )
+void engine_font_manager_text( unsigned char *text, unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = bggame_tiles__tilemap__bin;
 	unsigned char idx = 0;
@@ -29,7 +29,7 @@ void engine_font_manager_draw_text( unsigned char *text, unsigned char x, unsign
 	}
 }
 
-void engine_font_manager_draw_data( unsigned int data, unsigned char x, unsigned char y )
+void engine_font_manager_data( unsigned int data, unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = bggame_tiles__tilemap__bin;
 
@@ -60,7 +60,7 @@ void engine_font_manager_draw_data( unsigned int data, unsigned char x, unsigned
 	}
 }
 
-void engine_font_manager_draw_zero( unsigned int data, unsigned char x, unsigned char y )
+void engine_font_manager_zero( unsigned int data, unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = bggame_tiles__tilemap__bin;
 
