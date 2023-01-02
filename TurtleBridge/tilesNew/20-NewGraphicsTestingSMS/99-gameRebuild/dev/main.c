@@ -29,6 +29,8 @@ void main( void )
 
 static void start()
 {
+	unsigned char open_screen_type;
+
 	devkit_SMS_init();
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
@@ -46,8 +48,10 @@ static void start()
 	engine_level_manager_init();
 	engine_tile_manager_init();
 
-	engine_screen_manager_init( screen_type_func );
-	//engine_scroll_manager_init();
+	open_screen_type = screen_type_func;
+	//open_screen_type = screen_type_func;
+	engine_screen_manager_init( open_screen_type );
+	engine_scroll_manager_init();
 
 	devkit_SMS_displayOn();
 }

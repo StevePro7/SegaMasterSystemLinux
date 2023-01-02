@@ -40,7 +40,12 @@ void engine_scroll_manager_init()
 	so->lineCnt = 0;
 
 	devkit_SMS_setLineInterruptHandler( &lineScrollHandler );
-	devkit_SMS_setLineCounter( 30 );
+	devkit_SMS_disableLineInterrupt();
+}
+
+void engine_scroll_manager_load( unsigned char count )
+{
+	devkit_SMS_setLineCounter( count );
 	devkit_SMS_enableLineInterrupt();
 }
 
