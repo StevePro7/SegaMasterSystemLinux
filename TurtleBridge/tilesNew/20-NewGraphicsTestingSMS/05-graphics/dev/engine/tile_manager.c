@@ -13,9 +13,9 @@ void engine_tile_manager_gfx4( unsigned int tmp, unsigned char h )
 
 	unsigned x, y;
 	unsigned w/*, h*/;
-	w = 16;
+	w = 24;
 	//h = 10;
-	x = 18;
+	x = 6;
 	y = 12;
 
 	for( row = 0; row < h; row++ )
