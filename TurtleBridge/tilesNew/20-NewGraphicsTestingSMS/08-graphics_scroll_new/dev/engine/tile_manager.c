@@ -61,11 +61,10 @@ void engine_tile_manager_draw( unsigned char tile_type )
 
 void engine_tile_manager_clouds()
 {
-	engine_tile_manager_gfx5( 928, 1, 4, 6, 3 );
-	//engine_tile_manager_gfx5( 928, 2, 4, 6, 3 );
-	engine_tile_manager_gfx5( 1024, 10, 5, 4, 3 );
-	engine_tile_manager_gfx5( 928, 18, 4, 6, 3 );
-	engine_tile_manager_gfx5( 1024, 26, 5, 4, 3 );
+	engine_tile_manager_gfx5( TILE_CLOUDB, 1, 4, 6, 3 );
+	engine_tile_manager_gfx5( TILE_CLOUDS, 10, 5, 4, 3 );
+	engine_tile_manager_gfx5( TILE_CLOUDB, 18, 4, 6, 3 );
+	engine_tile_manager_gfx5( TILE_CLOUDS, 26, 5, 4, 3 );
 }
 void engine_tile_manager_island()
 {
@@ -93,8 +92,6 @@ void engine_tile_manager_sign()
 void engine_tile_manager_gfx5( unsigned int tmp, unsigned char x, unsigned char y, unsigned char w, unsigned char h )
 {
 	const unsigned char *tiles = bggame_tiles__tilemap__bin;
-	const unsigned size = 16;
-
 	unsigned int idx;
 	unsigned int val;
 	unsigned char row, col;
@@ -103,7 +100,7 @@ void engine_tile_manager_gfx5( unsigned int tmp, unsigned char x, unsigned char 
 	{
 		for( col = 0; col < w; col++ )
 		{
-			idx = tmp + row * 2 * size + col * 2;
+			idx = tmp + row * 2 * TILMAP_WIDE + col * 2;
 			val = tiles[ idx ];
 			devkit_SMS_setNextTileatXY( x + col, y + row );
 			devkit_SMS_setTile( ( val ) );
@@ -120,7 +117,7 @@ void engine_tile_manager_gfx4( unsigned int tmp, unsigned char h )
 
 	unsigned x, y;
 	unsigned w/*, h*/;
-	w = 16;
+	w = TILMAP_WIDE;
 	//h = 10;
 	x = 18;
 	y = 12;
@@ -145,7 +142,7 @@ void engine_tile_manager_gfx2( unsigned char tmp )
 
 	unsigned x, y;
 	unsigned w, h;
-	w = 16;
+	w = TILMAP_WIDE;
 	h = 10;
 	x = 18;
 	y = 12;
@@ -171,7 +168,7 @@ void engine_tile_manager_gfx3( unsigned char tmp, unsigned char x, unsigned char
 
 	unsigned /*x,*/ y;
 	unsigned w, h;
-	w = 16;
+	w = TILMAP_WIDE;
 	h = 10;
 	y = 12;
 
@@ -197,7 +194,7 @@ void engine_tile_manager_gfx2_hack( unsigned char tmp )
 
 	unsigned x, y;
 	unsigned w, h;
-	w = 16;
+	w = TILMAP_WIDE;
 	//h = 5;
 	h = 10;
 	x = 18;
@@ -259,11 +256,9 @@ void engine_tile_manager_sky()
 	const unsigned char *tiles = bggame_tiles__tilemap__bin;
 	unsigned int idx;
 	unsigned int val;
-	unsigned char row, col, tmp;
+	unsigned char row, col;
 
-	tmp = 64;
-	tmp *= 2;
-	idx = tmp + 0 * 2 * 1 + 0 * 2;
+	idx = TILE_SKY + 0 * 2 * 1 + 0 * 2;
 	val = tiles[ idx ];
 	for( row = 3; row < 21; row++ )
 	{
@@ -278,22 +273,18 @@ void engine_tile_manager_sky()
 static void draw_see_line( unsigned char *sea_line, unsigned char x, unsigned char y )
 {
 	const unsigned char *tiles = bggame_tiles__tilemap__bin;
-	const unsigned size = 16;
 	unsigned char elem, tile;
 
-	unsigned int idx, val;
-	unsigned char row, col, bse, tmp;
-
+	unsigned int idx, val, tmp;
+	unsigned char row, col;
 	idx = 0;
 	col = 0;
 	row = 0;
-	bse = 64;
-	tmp = bse * 2;
 	for( elem = 0; elem < 4; elem++ )
 	{
 		tile = sea_line[ elem ];
-		col = tile - bse;
-		idx = tmp + row * 2 * size + col * 2;
+		tmp = tile + 256;
+		idx = tmp + row * 2 * TILMAP_WIDE + col * 2;
 		val = tiles[ idx ];
 
 		devkit_SMS_setNextTileatXY( x, y );
@@ -304,9 +295,9 @@ static void draw_see_line( unsigned char *sea_line, unsigned char x, unsigned ch
 
 void engine_tile_manager_sea()
 {
-	unsigned char sea_line1[] = { 66, 66, 67, 68, };
-	unsigned char sea_line2[] = { 65, 65, 65, 73, };
-	unsigned char sea_line3[] = { 65, 71, 72, 65, };
+	unsigned char sea_line1[] = { 84, 84, 86, 88, };
+	unsigned char sea_line2[] = { 82, 82, 82, 98, };
+	unsigned char sea_line3[] = { 82, 94, 96, 82, };
 	unsigned char x = 0;
 
 	for( x = 0; x < 32; x += 4 )
@@ -321,7 +312,7 @@ void engine_tile_manager_init()
 {
 	unsigned int tilemap_indexes[ MAX_TILE_OBJECTS ] = { TILE_NONE, TILE_SKY, TILE_SEA, TILE_BRIDGE, TILE_ISLAND, TILE_TURTLEF, TILE_TURTLEH, TILE_TREE, TILE_SIGN, TILE_GOAL, TILE_CLOUDB, TILE_CLOUDS, };
 	unsigned char tile_wides[ MAX_TILE_OBJECTS ] = { 0, 1, 1, 8, 8, 4, 4, 8, 3, 3, 6, 4, };
-	unsigned char tile_highs[ MAX_TILE_OBJECTS ] = { 0, 1, 1, 10, 4, 3, 3, 10, 3, 3, 3, 3, };
+	unsigned char tile_highs[ MAX_TILE_OBJECTS ] = { 0, 1, 1, 6, 4, 3, 3, 10, 3, 3, 3, 3, };
 
 	struct_tile_object *to;
 	for( unsigned char idx = 0; idx < MAX_TILE_OBJECTS; idx++ )

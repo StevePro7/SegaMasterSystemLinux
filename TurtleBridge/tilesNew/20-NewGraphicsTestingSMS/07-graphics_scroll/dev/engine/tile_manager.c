@@ -261,8 +261,6 @@ void engine_tile_manager_sky()
 	unsigned int val;
 	unsigned char row, col;
 
-	//tmp = 64;
-	//tmp *= 2;
 	idx = TILE_SKY + 0 * 2 * 1 + 0 * 2;
 	val = tiles[ idx ];
 	for( row = 3; row < 21; row++ )
