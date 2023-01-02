@@ -8,6 +8,10 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 
 
 :: Compile
+cd banks
+sdcc --debug -c --no-std-crt0 -mz80 --Werror --opt-code-size --constseg BANK15 fixedbank.c
+cd ..
+
 cd content
 ::"C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 gfx.c
 ::"C:\Program Files\SDCC\bin\sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 psg.c
@@ -96,9 +100,12 @@ content/psg.rel
 "C:\Program Files\SDCC\bin\ihx2sms.exe" output.ihx output.sms
 
 :: Copy
-cp output.sms ../TestScrolling.sms
+cp output.sms ../TestBuild.sms
 
 :: Delete
+cd banks
+if exist "*.asm" del "*.asm" > nul; if exist "*.lst" del "*.lst" > nul; if exist "*.sym" del "*.sym" > nul
+cd ..
 cd content
 if exist "*.asm" del "*.asm" > nul; if exist "*.lst" del "*.lst" > nul; if exist "*.sym" del "*.sym" > nul
 cd ..

@@ -3,11 +3,15 @@
 #include "../engine/font_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/scroll_manager.h"
+#include "../banks/fixedbank.h"
+#include "../devkit/_sms_manager.h"
 
 static unsigned char value;
 
 void screen_func_screen_load()
 {
+	devkit_SMS_mapROMBank( FIXED_BANK );
+	value = music_object_bank[1];
 	engine_font_manager_text( "FUNC SCREEN????", 10, 0 );
 	engine_font_manager_data( value, 30, 0 );
 	engine_scroll_manager_load( 30 );

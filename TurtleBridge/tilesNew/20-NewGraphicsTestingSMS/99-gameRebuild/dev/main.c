@@ -48,8 +48,8 @@ static void start()
 	engine_level_manager_init();
 	engine_tile_manager_init();
 
+	//open_screen_type = screen_type_title;
 	open_screen_type = screen_type_func;
-	//open_screen_type = screen_type_func;
 	engine_screen_manager_init( open_screen_type );
 	engine_scroll_manager_init();
 
