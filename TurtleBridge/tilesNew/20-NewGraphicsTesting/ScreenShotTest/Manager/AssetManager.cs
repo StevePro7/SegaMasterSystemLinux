@@ -42,7 +42,7 @@ namespace ScreenShotTest
 			24,
 			24,
 			24,
-			48,
+			24,
 			//8,
 			//8,
 		};
