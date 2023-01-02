@@ -1,5 +1,5 @@
 // Fixed  bank.
-#define FIXED_BANK	2
+#define FIXED_BANK	7
 
 
 // FIXED bank.
