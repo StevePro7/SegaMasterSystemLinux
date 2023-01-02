@@ -17,7 +17,7 @@ T:Fscreen_manager$tag_struct_level_object[({0}S:S$level_cols_offset$0_0$0({2}SI:
 S:G$global_level_object$0_0$0({3}STtag_struct_level_object:S),E,0,0
 S:G$global_scroll_object$0_0$0({12}STtag_struct_scroll_object:S),E,0,0
 S:G$global_tile_object$0_0$0({4}STtag_struct_tile_object:S),E,0,0
-S:G$global_tile_objects$0_0$0({48}DA12d,STtag_struct_tile_object:S),E,0,0
+S:G$global_tile_objects$0_0$0({52}DA13d,STtag_struct_tile_object:S),E,0,0
 S:G$engine_music_manager_play$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_sound_manager_play$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_bgtiles$0_0$0({2}DF,SV:S),C,0,0
@@ -60,6 +60,7 @@ S:G$engine_tile_manager_turtle$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_sign$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_sky$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_sea$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_tile_manager_banner$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOnFeature$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOffFeature$0_0$0({2}DF,SV:S),C,0,0

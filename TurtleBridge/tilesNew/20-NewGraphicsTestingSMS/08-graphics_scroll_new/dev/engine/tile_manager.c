@@ -308,11 +308,26 @@ void engine_tile_manager_sea()
 	}
 }
 
+void engine_tile_manager_banner()
+{
+	struct_tile_object *to = &global_tile_objects[ tile_type_banner ];
+	unsigned char row;
+
+	for( row = 0; row < 3; row++ )
+	{
+		// Underscore is now equivalent to white tile.
+		engine_font_manager_draw_text( "____", 0, row );
+		engine_font_manager_draw_text( "____", 28, row );
+	}
+
+	engine_tile_manager_gfx5( TILE_BANNER, 4, 0, to->tile_wide, to->tile_high );
+}
+
 void engine_tile_manager_init()
 {
-	unsigned int tilemap_indexes[ MAX_TILE_OBJECTS ] = { TILE_NONE, TILE_SKY, TILE_SEA, TILE_BRIDGE, TILE_ISLAND, TILE_TURTLEF, TILE_TURTLEH, TILE_TREE, TILE_SIGN, TILE_GOAL, TILE_CLOUDB, TILE_CLOUDS, };
-	unsigned char tile_wides[ MAX_TILE_OBJECTS ] = { 0, 1, 1, 8, 8, 4, 4, 8, 3, 3, 6, 4, };
-	unsigned char tile_highs[ MAX_TILE_OBJECTS ] = { 0, 1, 1, 6, 4, 3, 3, 10, 3, 3, 3, 3, };
+	unsigned int tilemap_indexes[ MAX_TILE_OBJECTS ] = { TILE_NONE, TILE_BANNER, TILE_SKY, TILE_SEA, TILE_BRIDGE, TILE_ISLAND, TILE_TURTLEF, TILE_TURTLEH, TILE_TREE, TILE_SIGN, TILE_GOAL, TILE_CLOUDB, TILE_CLOUDS, };
+	unsigned char tile_wides[ MAX_TILE_OBJECTS ] = { 0, 24, 1, 1, 8, 8, 4, 4, 8, 3, 3, 6, 4, };
+	unsigned char tile_highs[ MAX_TILE_OBJECTS ] = { 0, 3, 1, 1, 6, 4, 3, 3, 10, 3, 3, 3, 3, };
 
 	struct_tile_object *to;
 	for( unsigned char idx = 0; idx < MAX_TILE_OBJECTS; idx++ )

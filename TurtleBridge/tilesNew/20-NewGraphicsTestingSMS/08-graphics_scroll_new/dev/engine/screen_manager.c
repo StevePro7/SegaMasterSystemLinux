@@ -16,10 +16,11 @@ void engine_screen_manager_init()
 {
 	unsigned char idx;
 	unsigned char tile = tile_type_island;
+	engine_tile_manager_banner();
 	engine_tile_manager_sky();
 	engine_tile_manager_sea();
 	engine_tile_manager_clouds();
-	engine_font_manager_draw_text( "NEW TILES", 10, 0 );
+	//engine_font_manager_draw_text( "NEW TILES", 10, 0 );
 
 	idx = 0;
 	for( idx = 0; idx < 8; idx++ )
