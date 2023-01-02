@@ -7,19 +7,19 @@
 
 void engine_tile_manager_clouds()
 {
-	engine_tile_manager_gfx5( 928, 1, 4, 6, 3 );
+	engine_tile_manager_gfx5( 1344, 1, 4, 6, 3 );
 	//engine_tile_manager_gfx5( 928, 2, 4, 6, 3 );
-	engine_tile_manager_gfx5( 1024, 10, 5, 4, 3 );
-	engine_tile_manager_gfx5( 928, 18, 4, 6, 3 );
-	engine_tile_manager_gfx5( 1024, 26, 5, 4, 3 );
+	engine_tile_manager_gfx5( 1488, 10, 5, 4, 3 );
+	engine_tile_manager_gfx5( 1344, 18, 4, 6, 3 );
+	engine_tile_manager_gfx5( 1488, 26, 5, 4, 3 );
 }
 void engine_tile_manager_island()
 {
-	engine_tile_manager_gfx5( 480, 1, 18, 8, 4 );
+	engine_tile_manager_gfx5( 668, 1, 18, 8, 4 );
 }
 void engine_tile_manager_tree()
 {
-	engine_tile_manager_gfx5( 608, 2, 8, 8, 10 );
+	engine_tile_manager_gfx5( 864, 2, 8, 8, 10 );
 }
 void engine_tile_manager_bridge()
 {
@@ -27,19 +27,19 @@ void engine_tile_manager_bridge()
 }
 void engine_tile_manager_turtle()
 {
-	engine_tile_manager_gfx5( 1120, 12, 15, 4, 3 );		// Flying turtle
-	engine_tile_manager_gfx5( 1216, 12, 15, 4, 3 );		// Hover  turtle
+	engine_tile_manager_gfx5( 1632, 12, 15, 4, 3 );		// Flying turtle
+	engine_tile_manager_gfx5( 1776, 22, 15, 4, 3 );		// Hover  turtle
 }
 void engine_tile_manager_sign()
 {
-	engine_tile_manager_gfx5( 1312, 4, 15, 3, 3 );		// sign
-	engine_tile_manager_gfx5( 1408, 4, 15, 3, 3 );		// goal
+	engine_tile_manager_gfx5( 1920, 4, 15, 3, 3 );		// sign
+	engine_tile_manager_gfx5( 2064, 14, 15, 3, 3 );		// goal
 }
 
 void engine_tile_manager_gfx5( unsigned int tmp, unsigned char x, unsigned char y, unsigned char w, unsigned char h )
 {
 	const unsigned char *tiles = bggame_tiles__tilemap__bin;
-	const unsigned size = 16;
+	const unsigned size = 24;
 
 	unsigned int idx;
 	unsigned int val;
@@ -211,10 +211,10 @@ void engine_tile_manager_sky()
 	const unsigned char *tiles = bggame_tiles__tilemap__bin;
 	unsigned int idx;
 	unsigned int val;
-	unsigned char row, col, tmp;
+	unsigned int row, col, tmp;
 
-	tmp = 64;
-	tmp *= 2;
+	tmp = 336;
+	//tmp *= 2;
 	idx = tmp + 0 * 2 * 1 + 0 * 2;
 	val = tiles[ idx ];
 	for( row = 3; row < 21; row++ )
@@ -230,21 +230,23 @@ void engine_tile_manager_sky()
 static void draw_see_line( unsigned char *sea_line, unsigned char x, unsigned char y )
 {
 	const unsigned char *tiles = bggame_tiles__tilemap__bin;
-	const unsigned size = 16;
+	const unsigned size = 24;
 	unsigned char elem, tile;
 
 	unsigned int idx, val;
-	unsigned char row, col, bse, tmp;
-
+	unsigned char row, col;
+	unsigned int /*bse,*/ tmp;
 	idx = 0;
 	col = 0;
 	row = 0;
-	bse = 64;
-	tmp = bse * 2;
+	//bse = 168;
+	//tmp = bse * 2;
+	//tmp = 336;
 	for( elem = 0; elem < 4; elem++ )
 	{
 		tile = sea_line[ elem ];
-		col = tile - bse;
+		tmp = tile + 256;
+		//col = tile - bse;
 		idx = tmp + row * 2 * size + col * 2;
 		val = tiles[ idx ];
 
@@ -256,9 +258,12 @@ static void draw_see_line( unsigned char *sea_line, unsigned char x, unsigned ch
 
 void engine_tile_manager_sea()
 {
-	unsigned char sea_line1[] = { 66, 66, 67, 68, };
-	unsigned char sea_line2[] = { 65, 65, 65, 73, };
-	unsigned char sea_line3[] = { 65, 71, 72, 65, };
+	//unsigned char sea_line1[] = { 66, 66, 67, 68, };
+	//unsigned char sea_line2[] = { 65, 65, 65, 73, };
+	//unsigned char sea_line3[] = { 65, 71, 72, 65, };
+	unsigned char sea_line1[] = { 84, 84, 86, 88, };
+	unsigned char sea_line2[] = { 82, 82, 82, 98, };
+	unsigned char sea_line3[] = { 82, 94, 96, 82, };
 	unsigned char x = 0;
 
 	for( x = 0; x < 32; x += 4 )

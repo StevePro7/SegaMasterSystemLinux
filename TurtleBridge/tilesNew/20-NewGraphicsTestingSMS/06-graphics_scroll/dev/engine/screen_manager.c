@@ -31,9 +31,9 @@ void engine_screen_manager_init()
 	//tmp = 480;
 	engine_tile_manager_sky();
 	engine_tile_manager_sea();
-	engine_tile_manager_clouds();
-	engine_tile_manager_tree();
-	engine_tile_manager_island();
+	//engine_tile_manager_clouds();
+	//engine_tile_manager_tree();
+	//engine_tile_manager_island();
 	//engine_tile_manager_turtle();
 	//engine_tile_manager_bridge();
 	//engine_tile_manager_sign();
