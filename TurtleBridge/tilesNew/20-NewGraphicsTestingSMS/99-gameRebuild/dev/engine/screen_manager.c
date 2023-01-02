@@ -1,114 +1,92 @@
 #include "screen_manager.h"
-#include "audio_manager.h"
-#include "content_manager.h"
-#include "enum_manager.h"
-#include "font_manager.h"
 #include "global_manager.h"
-#include "input_manager.h"
-#include "level_manager.h"
-#include "scroll_manager.h"
-#include "tile_manager.h"
-#include "../devkit/_sms_manager.h"
+#include "enum_manager.h"
 
-static void print( bool newTile );
+// Screens
+#include "../screen/none_screen.h"
+#include "../screen/splash_screen.h"
+//#include "../screen/begin_screen.h"
+#include "../screen/title_screen.h"
+//#include "../screen/start_screen.h"
+//#include "../screen/init_screen.h"
+//#include "../screen/load_screen.h"
+//#include "../screen/ready_screen.h"
+//#include "../screen/play_screen.h"
+//#include "../screen/pass_screen.h"
+//#include "../screen/dead_screen.h"
+//#include "../screen/cont_screen.h"
+//#include "../screen/over_screen.h"
+//#include "../screen/prep_screen.h"
+//#include "../screen/fight_screen.h"
+//#include "../screen/boss_screen.h"
+//#include "../screen/beat_screen.h"
+//#include "../screen/option_screen.h"
+#include "../screen/test_screen.h"
+#include "../screen/func_screen.h"
 
-void engine_screen_manager_init()
+static unsigned char curr_screen_type;
+static unsigned char next_screen_type;
+
+static void( *load_method[ MAX_SCREEENS ] )( );
+static void( *update_method[ MAX_SCREEENS ] )( unsigned char *screen_type );
+
+void engine_screen_manager_init( unsigned char open_screen_type )
 {
-	unsigned char idx;
-	unsigned char tile = tile_type_island;
-	engine_tile_manager_sky();
-	engine_tile_manager_sea();
-	engine_tile_manager_clouds();
-	engine_font_manager_text( "NEW UPDATE", 10, 0 );
+	next_screen_type = open_screen_type;
+	curr_screen_type = screen_type_none;
 
-	idx = 0;
-	for( idx = 0; idx < 8; idx++ )
-	{
-		engine_tile_manager_draw_columns( tile, 10 + idx, 18, idx, false );
-	}
+	// Set load methods.
+	load_method[ screen_type_none ] = screen_none_screen_load;
+	load_method[ screen_type_splash ] = screen_splash_screen_load;
+	//load_method[ screen_type_begin ] = screen_begin_screen_load;
+	load_method[ screen_type_title ] = screen_title_screen_load;
+	//load_method[ screen_type_start ] = screen_start_screen_load;
+	//load_method[ screen_type_init ] = screen_init_screen_load;
+	//load_method[ screen_type_load ] = screen_load_screen_load;
+	//load_method[ screen_type_ready ] = screen_ready_screen_load;
+	//load_method[ screen_type_play ] = screen_play_screen_load;
+	//load_method[ screen_type_pass ] = screen_pass_screen_load;
+	//load_method[ screen_type_dead ] = screen_dead_screen_load;
+	//load_method[ screen_type_cont ] = screen_cont_screen_load;
+	//load_method[ screen_type_over ] = screen_over_screen_load;
+	//load_method[ screen_type_prep ] = screen_prep_screen_load;
+	//load_method[ screen_type_fight ] = screen_fight_screen_load;
+	//load_method[ screen_type_boss ] = screen_boss_screen_load;
+	//load_method[ screen_type_beat ] = screen_beat_screen_load;
+	//load_method[ screen_type_option ] = screen_option_screen_load;
+	load_method[ screen_type_test ] = screen_test_screen_load;
+	load_method[ screen_type_func ] = screen_func_screen_load;
 
-	//TODO
-	//engine_music_manager_play();
+	// Set update methods.
+	update_method[ screen_type_none ] = screen_none_screen_update;
+	update_method[ screen_type_splash ] = screen_splash_screen_update;
+	//update_method[ screen_type_begin ] = screen_begin_screen_update;
+	update_method[ screen_type_title ] = screen_title_screen_update;
+	//update_method[ screen_type_start ] = screen_start_screen_update;
+	//update_method[ screen_type_init ] = screen_init_screen_update;
+	//update_method[ screen_type_load ] = screen_load_screen_update;
+	//update_method[ screen_type_ready ] = screen_ready_screen_update;
+	//update_method[ screen_type_play ] = screen_play_screen_update;
+	//update_method[ screen_type_pass ] = screen_pass_screen_update;
+	//update_method[ screen_type_dead ] = screen_dead_screen_update;
+	//update_method[ screen_type_cont ] = screen_cont_screen_update;
+	//update_method[ screen_type_over ] = screen_over_screen_update;
+	//update_method[ screen_type_prep ] = screen_prep_screen_update;
+	//update_method[ screen_type_fight ] = screen_fight_screen_update;
+	//update_method[ screen_type_boss ] = screen_boss_screen_update;
+	//update_method[ screen_type_beat ] = screen_beat_screen_update;
+	//update_method[ screen_type_option ] = screen_option_screen_update;
+	update_method[ screen_type_test ] = screen_test_screen_update;
+	update_method[ screen_type_func ] = screen_func_screen_update;
 }
 
 void engine_screen_manager_update()
 {
-	struct_scroll_object *so = &global_scroll_object;
-	unsigned char input;
-	unsigned char delta;
-	unsigned char value;
-	bool newTile;
-
-	input = engine_input_manager_hold_up();
-	if( input )
+	if( curr_screen_type != next_screen_type )
 	{
-		engine_font_manager_char( '?', 1, 10 );
+		curr_screen_type = next_screen_type;
+		load_method[ curr_screen_type ]();
 	}
 
-	input = engine_input_manager_hold_down();
-	if( input )
-	{
-		newTile = so->scrollRight % 8 == 1;
-		print( newTile );
-	}
-
-	input = engine_input_manager_hold_left();
-	if( input )
-	{
-		engine_level_manager_draw( so->offset_right );
-	}
-
-
-
-	delta = 0;
-	value = 0;
-	//input = engine_input_manager_hold_right();
-	input = engine_input_manager_move_right();
-	if( input )
-	{
-			//engine_font_manager_text( "RIGHT", 4, 1 );
-			delta = 1;
-	}
-	input = engine_input_manager_move_fire1();
-	if( input )
-	{
-		delta *= 2;
-	}
-	if( 0 == delta )
-	{
-		engine_scroll_manager_update( delta );
-	}
-	else
-	{
-		for( value = 0; value < delta; value++ )
-		{
-			newTile = engine_scroll_manager_update( delta );
-			if( newTile )
-			{
-				engine_level_manager_draw( so->offset_right );
-			}
-		}
-	}
-}
-
-
-static void print( bool newTile )
-{
-	struct_scroll_object *so = &global_scroll_object;
-	engine_font_manager_data( so->scroll, 25, 0 );
-	engine_font_manager_data( so->scrollRight, 25, 1 );
-	//engine_font_manager_data( so->scrollRightDivided8, 25, 2 );
-
-	//engine_font_manager_data( so->offset_left, 25, 5 );
-	engine_font_manager_data( so->offset_right, 20, 2 );
-	engine_font_manager_data( so->offset_right % SCREEN_WIDE, 25, 2 );
-
-	////engine_font_manager_data( so->scroll + so->scrollRight, 25, 8 );
-	////engine_font_manager_data( so->scroll, so->scroll, 1 );
-
-	//engine_font_manager_text( "      ", 21, 3 );
-	if( newTile )
-	{
-		engine_font_manager_text( "TILES", 21, 0 );
-	}
+	update_method[ curr_screen_type ]( &next_screen_type );
 }
