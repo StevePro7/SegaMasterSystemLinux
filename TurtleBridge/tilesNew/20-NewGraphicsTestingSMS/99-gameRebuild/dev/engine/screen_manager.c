@@ -19,7 +19,7 @@ void engine_screen_manager_init()
 	engine_tile_manager_sky();
 	engine_tile_manager_sea();
 	engine_tile_manager_clouds();
-	engine_font_manager_text( "NEW REBUILD", 10, 0 );
+	engine_font_manager_text( "NEW UPDATE", 10, 0 );
 
 	idx = 0;
 	for( idx = 0; idx < 8; idx++ )
