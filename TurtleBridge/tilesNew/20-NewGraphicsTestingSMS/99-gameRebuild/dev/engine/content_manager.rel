@@ -1,37 +1,77 @@
 ;!FILE content_manager.asm
 XL3
-H 9 areas 1D global symbols
+H 9 areas 45 global symbols
 M content_manager
 O -mz80
+S _splash__tilemap__stmcompr Ref000000
 S _bggame_tiles__tiles__psgcompr Ref000000
+S _devkit_SMS_loadSTMcompressedTileMap Ref000000
+S _splash__palette__bin Ref000000
 S _devkit_SMS_loadBGPalette Ref000000
 S _devkit_SMS_loadPSGaidencompressedTiles Ref000000
 S .__.ABS. Def000000
 S _bggame_tiles__palette__bin Ref000000
-A _CODE size 16 flags 0 addr 0
+S _splash__tiles__psgcompr Ref000000
+S _devkit_SMS_mapROMBank Ref000000
+A _CODE size 41 flags 0 addr 0
 S G$engine_content_manager_load_sprites$0$0 Def000015
+S G$engine_content_manager_load_tiles_splash$0$0 Def000016
+S A$content_manager$120 Def000021
+S A$content_manager$111 Def000016
 S _engine_content_manager_load_sprites Def000015
+S A$content_manager$130 Def00002E
+S A$content_manager$121 Def000022
+S A$content_manager$112 Def000018
+S _engine_content_manager_load_tiles_splash Def000016
+S A$content_manager$131 Def00002F
+S A$content_manager$122 Def000025
+S A$content_manager$113 Def000019
+S A$content_manager$141 Def000038
+S A$content_manager$132 Def000030
+S A$content_manager$123 Def000026
+S A$content_manager$114 Def00001A
+S A$content_manager$142 Def00003B
+S A$content_manager$133 Def000031
+S A$content_manager$124 Def000029
+S A$content_manager$115 Def00001D
+S A$content_manager$152 Def000040
+S A$content_manager$143 Def00003C
+S A$content_manager$134 Def000032
+S A$content_manager$144 Def00003F
+S A$content_manager$135 Def000033
+S A$content_manager$136 Def000034
+S A$content_manager$137 Def000037
+S A$content_manager$128 Def00002A
+S A$content_manager$119 Def00001E
+S A$content_manager$129 Def00002D
 S XG$engine_content_manager_load_sprites$0$0 Def000015
-S A$content_manager$60 Def000004
-S C$content_manager.c$10$1_0$82 Def00000C
-S A$content_manager$70 Def000013
-S A$content_manager$61 Def000007
-S C$content_manager.c$11$1_0$82 Def000014
+S XG$engine_content_manager_load_tiles_splash$0$0 Def000040
+S A$content_manager$70 Def00000C
+S A$content_manager$61 Def000000
 S G$engine_content_manager_load_bgtiles$0$0 Def000000
-S A$content_manager$62 Def000008
-S A$content_manager$63 Def00000B
-S C$content_manager.c$12$1_0$84 Def000015
-S A$content_manager$67 Def00000C
-S A$content_manager$58 Def000000
-S A$content_manager$95 Def000015
-S A$content_manager$68 Def00000F
-S A$content_manager$59 Def000003
-S A$content_manager$78 Def000014
-S A$content_manager$69 Def000010
-S C$content_manager.c$17$1_0$84 Def000015
+S A$content_manager$71 Def00000F
+S A$content_manager$62 Def000003
+S C$content_manager.c$12$1_0$82 Def000000
+S A$content_manager$81 Def000014
+S A$content_manager$72 Def000010
+S A$content_manager$63 Def000004
+S C$content_manager.c$20$1_0$84 Def000015
+S C$content_manager.c$13$1_0$82 Def00000C
+S A$content_manager$73 Def000013
+S A$content_manager$64 Def000007
+S C$content_manager.c$14$1_0$82 Def000014
+S A$content_manager$65 Def000008
+S A$content_manager$66 Def00000B
+S C$content_manager.c$22$1_0$85 Def000016
+S C$content_manager.c$15$1_0$84 Def000015
+S C$content_manager.c$24$1_0$85 Def000016
+S C$content_manager.c$25$1_0$85 Def00001E
+S C$content_manager.c$26$1_0$85 Def00002A
+S A$content_manager$98 Def000015
+S C$content_manager.c$27$1_0$85 Def000038
+S C$content_manager.c$28$1_0$85 Def000040
 S _engine_content_manager_load_bgtiles Def000000
-S C$content_manager.c$6$0_0$82 Def000000
-S C$content_manager.c$9$1_0$82 Def000000
+S C$content_manager.c$9$0_0$82 Def000000
 S XG$engine_content_manager_load_bgtiles$0$0 Def000014
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
@@ -44,10 +84,20 @@ A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
 T 00 00 00 21 00 00 E5 21 00 00 E5 CD 00 00 F1 21
-R 00 00 00 00 02 08 00 00 02 0C 02 00
+R 00 00 00 00 02 08 01 00 02 0C 05 00
 T 0D 00 00 00 00 E3 CD 00 00 F1 C9
-R 00 00 00 00 02 03 04 00 02 07 01 00
+R 00 00 00 00 02 03 07 00 02 07 04 00
 T 15 00 00
 R 00 00 00 00
 T 15 00 00 C9
 R 00 00 00 00
+T 16 00 00
+R 00 00 00 00
+T 16 00 00 3E 02 F5 33 CD 00 00 33 21 80 00 E5 21
+R 00 00 00 00 02 08 09 00
+T 23 00 00 00 00 E5 CD 00 00 F1 21 00 00 E3 AF F5
+R 00 00 00 00 02 03 08 00 02 07 05 00 02 0B 00 00
+T 30 00 00 33 AF F5 33 CD 00 00 F1 21 00 00 E3 CD
+R 00 00 00 00 02 08 02 00 02 0C 03 00
+T 3D 00 00 00 00 F1 C9
+R 00 00 00 00 02 03 04 00

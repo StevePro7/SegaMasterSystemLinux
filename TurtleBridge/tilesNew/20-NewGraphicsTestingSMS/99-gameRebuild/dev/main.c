@@ -39,8 +39,8 @@ static void start()
 	devkit_SMS_useFirstHalfTilesforSprites( false );
 	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );
 
-	engine_content_manager_load_bgtiles();
-	engine_content_manager_load_sprites();
+	//engine_content_manager_load_bgtiles();
+	//engine_content_manager_load_sprites();
 
 	//devkit_SMS_setBGPaletteColor( 0, devkit_RGB( 1, 2, 3 ) );			// background tiles
 	//devkit_SMS_setBGPaletteColor( 16, devkit_RGB( 0, 3, 3 ) );		// border tiles		cornflower blue		sky
@@ -50,6 +50,8 @@ static void start()
 
 	//open_screen_type = screen_type_title;
 	open_screen_type = screen_type_func;
+	open_screen_type = screen_type_splash;
+
 	engine_screen_manager_init( open_screen_type );
 	engine_scroll_manager_init();
 
