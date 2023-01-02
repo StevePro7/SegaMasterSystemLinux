@@ -76,7 +76,7 @@ echo.
 ../lib/SMSlib.lib ^
 ../lib/PSGlib.rel ^
 banks\bank2.rel  banks\bank3.rel  banks\bank4.rel  banks\bank5.rel ^
-banks\bank6.rel  banks\bank7.rel ^
+banks\bank6.rel  banks\fixedbank.rel ^
 devkit/_sms_manager.rel ^
 devkit/_snd_manager.rel ^
 engine/asm_manager.rel ^

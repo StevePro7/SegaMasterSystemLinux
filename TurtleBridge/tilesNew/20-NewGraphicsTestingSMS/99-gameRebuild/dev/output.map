@@ -8,7 +8,6 @@ Area                                    Addr        Size        Decimal Bytes (A
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
      00000000  .__.ABS.                           SMSlib_autotext
-     00000000  _music_object_bank              
      00000000  l__BSEG                         
      00000000  l__BSS                          
      00000000  l__CABS                         
@@ -31,13 +30,13 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000000  s__HEADER4                      
      00000000  s__HEADER5                      
      00000001  l__GSFINAL                      
+     00000003  l__BANK7                        
      00000003  l__HEADER3                      
      00000003  l__HEADER4                      
      00000005  l__BANK3                        
      00000005  l__BANK4                        
      00000005  l__BANK5                        
      00000005  l__BANK6                        
-     00000005  l__BANK7                        
      00000006  l__HEADER0                      
      00000009  l__HEADER1                      
      0000000A  l__HEADER2                      
@@ -57,6 +56,7 @@ Area                                    Addr        Size        Decimal Bytes (A
      00001286  l__BANK2                        
      000062C9  l__CODE                         
      000064C9  s__HOME                         
+     000064C9  s__INITIALIZER                  
 ASxxxx Linker V03.00 + NoICE + sdld,  page 2.
 Hexadecimal  [32-Bits]
 
@@ -66,7 +66,6 @@ Area                                    Addr        Size        Decimal Bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     000064C9  s__INITIALIZER                  
      000064E0  s__GSINIT                       
      000064EF  s__GSFINAL                      
      00008000  G$SMS_SRAM$0_0$0                   _sms_manager
@@ -86,7 +85,6 @@ Area                                    Addr        Size        Decimal Bytes (A
      0000FFFC  _SRAM_bank_to_be_mapped_on_slot2   SMSlib_autotext
      0000FFFF  G$ROM_bank_to_be_mapped_on_slot2   _sms_manager
      0000FFFF  _ROM_bank_to_be_mapped_on_slot2    SMSlib_autotext
-
 ASxxxx Linker V03.00 + NoICE + sdld,  page 3.
 Hexadecimal  [32-Bits]
 
@@ -6792,12 +6790,12 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK7                              00008000    00000005 =           5. bytes (REL,CON)
+_BANK7                              00008000    00000003 =           3. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$bank7_txt$0_0$0                  bank7
-     00008000  _bank7_txt                         bank7
+     00008000  G$music_object_bank$0_0$0          fixedbank
+     00008000  _music_object_bank                 fixedbank
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 129.
 Hexadecimal  [32-Bits]
@@ -6871,7 +6869,7 @@ banks\bank3.rel                           [ bank3 ]
 banks\bank4.rel                           [ bank4 ]
 banks\bank5.rel                           [ bank5 ]
 banks\bank6.rel                           [ bank6 ]
-banks\bank7.rel                           [ bank7 ]
+banks\fixedbank.rel                       [ fixedbank ]
 devkit/_sms_manager.rel                   [ _sms_manager ]
 devkit/_snd_manager.rel                   [ _snd_manager ]
 engine/asm_manager.rel                    [ asm_manager ]
@@ -6946,4 +6944,3 @@ _BANK6=0x8000
 _BANK7=0x8000
 
 
-?ASlink-Warning-Undefined Global '_music_object_bank' referenced by module 'func_screen'
