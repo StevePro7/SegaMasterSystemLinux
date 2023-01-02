@@ -6,8 +6,7 @@ cd banks
 cd bank2
 
 :: Tiles
-bmp2tile.exe raw\main_tiles.png -savetiles "main_tiles (tiles).psgcompr" -noremovedupes -planar -tileoffset 64 -savetilemap "main_tiles (tilemap).bin" -savepalette "main_tiles (palette).bin" -fullpalette -exit
-bmp2tile.exe raw\splash.bmp -savetiles "splash (tiles).psgcompr" -removedupes -nomirror -planar -tileoffset 128 -savetilemap "splash (tilemap).stmcompr" -savepalette "splash (palette).bin" -fullpalette -exit
+"C:\SEGA\bmp2tile043\bmp2tile.exe" raw\splash.bmp -savetiles "splash (tiles).psgcompr" -removedupes -nomirror -planar -tileoffset 128 -savetilemap "splash (tilemap).stmcompr" -savepalette "splash (palette).bin" -fullpalette -exit
 
 cd ..
 folder2c bank2 bank2 2
