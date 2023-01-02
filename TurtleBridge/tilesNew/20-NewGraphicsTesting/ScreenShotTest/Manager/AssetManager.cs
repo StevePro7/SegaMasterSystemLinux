@@ -13,8 +13,9 @@ namespace ScreenShotTest
 			"block",
 			"titlescreen",
 			"wave_strip",
-			"section01_left_64x80",			// bridge
-			"section03_norm_64x32",			// island
+			//"section01_left_64x80",			// bridge big
+			"section02_left_64x48",			// bridge sml
+			"section03_norm_64x32",			// island big
 			"section04_norm_64x80",			// tree
 			"cloud02_48x24",
 			"cloud01_32x24",
@@ -35,7 +36,7 @@ namespace ScreenShotTest
 			8,
 			80,
 			32,
-			80,
+			48,
 			24,
 			24,
 			24,
