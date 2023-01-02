@@ -1,19 +1,20 @@
 #ifndef _TILE_OBJECT_H_
 #define _TILE_OBJECT_H_
 
-#define TILMAP_WIDE		16
+#define TILMAP_WIDE		24
 #define TILE_NONE		0
-#define TILE_SKY		64
-#define TILE_SEA		64
-#define TILE_BRIDGE		160
-#define TILE_ISLAND		480
-#define TILE_TURTLEF	1120
-#define TILE_TURTLEH	1216
-#define TILE_TREE		608
-#define TILE_SIGN		1312
-#define TILE_GOAL		1408
-#define TILE_CLOUDB		928
-#define TILE_CLOUDS		1024
+#define TILE_BANNER		192
+#define TILE_SKY		336
+#define TILE_SEA		336
+#define TILE_BRIDGE		384
+#define TILE_ISLAND		672
+#define TILE_TURTLEF	1632
+#define TILE_TURTLEH	1776
+#define TILE_TREE		864
+#define TILE_SIGN		1920
+#define TILE_GOAL		2064
+#define TILE_CLOUDB		1344
+#define TILE_CLOUDS		1488
 
 typedef struct tag_struct_tile_object
 {

@@ -259,11 +259,11 @@ void engine_tile_manager_sky()
 	const unsigned char *tiles = bggame_tiles__tilemap__bin;
 	unsigned int idx;
 	unsigned int val;
-	unsigned char row, col, tmp;
+	unsigned char row, col;
 
-	tmp = 64;
-	tmp *= 2;
-	idx = tmp + 0 * 2 * 1 + 0 * 2;
+	//tmp = 64;
+	//tmp *= 2;
+	idx = TILE_SKY + 0 * 2 * 1 + 0 * 2;
 	val = tiles[ idx ];
 	for( row = 3; row < 21; row++ )
 	{
@@ -278,22 +278,18 @@ void engine_tile_manager_sky()
 static void draw_see_line( unsigned char *sea_line, unsigned char x, unsigned char y )
 {
 	const unsigned char *tiles = bggame_tiles__tilemap__bin;
-	const unsigned size = 16;
 	unsigned char elem, tile;
 
-	unsigned int idx, val;
-	unsigned char row, col, bse, tmp;
-
+	unsigned int idx, val, tmp;
+	unsigned char row, col;
 	idx = 0;
 	col = 0;
 	row = 0;
-	bse = 64;
-	tmp = bse * 2;
 	for( elem = 0; elem < 4; elem++ )
 	{
 		tile = sea_line[ elem ];
-		col = tile - bse;
-		idx = tmp + row * 2 * size + col * 2;
+		tmp = tile + 256;
+		idx = tmp + row * 2 * TILMAP_WIDE + col * 2;
 		val = tiles[ idx ];
 
 		devkit_SMS_setNextTileatXY( x, y );
@@ -304,9 +300,9 @@ static void draw_see_line( unsigned char *sea_line, unsigned char x, unsigned ch
 
 void engine_tile_manager_sea()
 {
-	unsigned char sea_line1[] = { 66, 66, 67, 68, };
-	unsigned char sea_line2[] = { 65, 65, 65, 73, };
-	unsigned char sea_line3[] = { 65, 71, 72, 65, };
+	unsigned char sea_line1[] = { 84, 84, 86, 88, };
+	unsigned char sea_line2[] = { 82, 82, 82, 98, };
+	unsigned char sea_line3[] = { 82, 94, 96, 82, };
 	unsigned char x = 0;
 
 	for( x = 0; x < 32; x += 4 )
