@@ -4,7 +4,7 @@
 #include "../content/gfx.h"
 #include "../banks/bank2.h"
 
-#define SPLASH_TILES	128
+#define SPLASH_TILES	256
 
 void engine_content_manager_load_bgtiles()
 {

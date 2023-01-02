@@ -6,7 +6,7 @@
 void screen_splash_screen_load()
 {
 	engine_content_manager_load_tiles_splash();
-	//engine_font_manager_text( "SPLASH SCREEN!!", 10, 2 );
+	engine_font_manager_data( 1234, 10, 0 );
 }
 
 void screen_splash_screen_update( unsigned char *screen_type )
