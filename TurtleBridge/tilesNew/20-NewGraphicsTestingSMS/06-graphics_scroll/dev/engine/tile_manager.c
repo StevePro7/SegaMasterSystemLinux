@@ -15,7 +15,7 @@ void engine_tile_manager_clouds()
 }
 void engine_tile_manager_island()
 {
-	engine_tile_manager_gfx5( 668, 1, 18, 8, 4 );
+	engine_tile_manager_gfx5( 672, 1, 18, 8, 4 );
 }
 void engine_tile_manager_tree()
 {
@@ -23,7 +23,7 @@ void engine_tile_manager_tree()
 }
 void engine_tile_manager_bridge()
 {
-	engine_tile_manager_gfx5( 160, 1, 12, 8, 10 );		// Tall bridge
+	engine_tile_manager_gfx5( 384, 1, 12, 8, 10 );		// Tall bridge
 }
 void engine_tile_manager_turtle()
 {
@@ -33,7 +33,7 @@ void engine_tile_manager_turtle()
 void engine_tile_manager_sign()
 {
 	engine_tile_manager_gfx5( 1920, 4, 15, 3, 3 );		// sign
-	engine_tile_manager_gfx5( 2064, 14, 15, 3, 3 );		// goal
+	engine_tile_manager_gfx5( 2064, 17, 15, 3, 3 );		// goal
 }
 
 void engine_tile_manager_gfx5( unsigned int tmp, unsigned char x, unsigned char y, unsigned char w, unsigned char h )
@@ -46,7 +46,7 @@ void engine_tile_manager_gfx5( unsigned int tmp, unsigned char x, unsigned char 
 	unsigned char row, col;
 
 //	unsigned x, y;
-	//w = 16;
+	//w = 24;
 	//h = 10;
 	//x = 18;
 	//y = 12;
@@ -72,7 +72,7 @@ void engine_tile_manager_gfx4( unsigned int tmp, unsigned char h )
 
 	unsigned x, y;
 	unsigned w/*, h*/;
-	w = 16;
+	w = 24;
 	//h = 10;
 	x = 18;
 	y = 12;
@@ -97,7 +97,7 @@ void engine_tile_manager_gfx2( unsigned char tmp )
 
 	unsigned x, y;
 	unsigned w, h;
-	w = 16;
+	w = 24;
 	h = 10;
 	x = 18;
 	y = 12;
@@ -123,7 +123,7 @@ void engine_tile_manager_gfx3( unsigned char tmp, unsigned char x, unsigned char
 
 	unsigned /*x,*/ y;
 	unsigned w, h;
-	w = 16;
+	w = 24;
 	h = 10;
 	y = 12;
 
@@ -149,7 +149,7 @@ void engine_tile_manager_gfx2_hack( unsigned char tmp )
 
 	unsigned x, y;
 	unsigned w, h;
-	w = 16;
+	w = 24;
 	//h = 5;
 	h = 10;
 	x = 18;
