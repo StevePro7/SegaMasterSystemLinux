@@ -1,6 +1,6 @@
 ;!FILE tile_manager.asm
 XL3
-H 9 areas 588 global symbols
+H 9 areas 595 global symbols
 M tile_manager
 O -mz80
 S _devkit_TILE_FLIPPED_X Ref000000
@@ -8,19 +8,22 @@ S _devkit_SMS_setNextTileatXY Ref000000
 S .__.ABS. Def000000
 S _bggame_tiles__tilemap__bin Ref000000
 S _devkit_SMS_setTile Ref000000
-A _CODE size 81F flags 0 addr 0
-S A$tile_manager$1950 Def00081C
-S A$tile_manager$1932 Def000803
-S A$tile_manager$1923 Def0007F5
-S A$tile_manager$1914 Def0007E1
-S A$tile_manager$1860 Def000787
-S A$tile_manager$1851 Def000775
-S A$tile_manager$1842 Def000763
-S A$tile_manager$1833 Def000754
-S A$tile_manager$1824 Def000749
-S A$tile_manager$1806 Def00072E
-S A$tile_manager$1770 Def0006DB
-S A$tile_manager$1761 Def0006C8
+A _CODE size 83A flags 0 addr 0
+S A$tile_manager$1950 Def000828
+S A$tile_manager$1941 Def000814
+S A$tile_manager$1932 Def000808
+S A$tile_manager$1923 Def0007F1
+S A$tile_manager$1914 Def0007E6
+S A$tile_manager$1905 Def0007D3
+S A$tile_manager$1860 Def000789
+S A$tile_manager$1851 Def000777
+S A$tile_manager$1842 Def000768
+S A$tile_manager$1833 Def00075D
+S A$tile_manager$1815 Def000740
+S A$tile_manager$1806 Def00072B
+S A$tile_manager$1770 Def0006DA
+S A$tile_manager$1761 Def0006C3
+S A$tile_manager$1752 Def0006B9
 S A$tile_manager$1743 Def0006A8
 S A$tile_manager$1734 Def000698
 S A$tile_manager$1725 Def000687
@@ -74,16 +77,23 @@ S C$tile_manager.c$185$3_0$130 Def0003AC
 S XG$engine_tile_manager_gfx4$0$0 Def000302
 S C$tile_manager.c$128$2_0$116 Def0002A5
 S _engine_tile_manager_gfx Def000499
-S A$tile_manager$1933 Def000806
-S A$tile_manager$1915 Def0007E4
-S A$tile_manager$1852 Def000777
-S A$tile_manager$1843 Def000765
-S A$tile_manager$1834 Def000755
-S A$tile_manager$1825 Def00074A
-S A$tile_manager$1807 Def000731
-S A$tile_manager$1780 Def0006EF
-S A$tile_manager$1771 Def0006DC
-S A$tile_manager$1762 Def0006C9
+S A$tile_manager$1951 Def00082B
+S A$tile_manager$1942 Def000816
+S A$tile_manager$1933 Def000809
+S A$tile_manager$1924 Def0007F4
+S A$tile_manager$1915 Def0007E7
+S A$tile_manager$1906 Def0007D4
+S A$tile_manager$1870 Def00079C
+S A$tile_manager$1861 Def00078A
+S A$tile_manager$1852 Def000778
+S A$tile_manager$1843 Def000769
+S A$tile_manager$1834 Def00075E
+S A$tile_manager$1816 Def000743
+S A$tile_manager$1807 Def00072E
+S A$tile_manager$1780 Def0006EC
+S A$tile_manager$1771 Def0006DB
+S A$tile_manager$1762 Def0006C6
+S A$tile_manager$1753 Def0006BA
 S A$tile_manager$1744 Def0006AA
 S A$tile_manager$1735 Def000699
 S A$tile_manager$1726 Def000689
@@ -122,28 +132,32 @@ S A$tile_manager$1168 Def000465
 S A$tile_manager$1159 Def000459
 S A$tile_manager$1087 Def00040B
 S A$tile_manager$1078 Def0003FD
-S C$tile_manager.c$321$2_0$158 Def000814
+S C$tile_manager.c$321$2_0$158 Def00082F
 S C$tile_manager.c$306$2_0$155 Def00062F
 S C$tile_manager.c$251$5_0$144 Def0004DC
 S C$tile_manager.c$220$6_0$138 Def000467
 S C$tile_manager.c$138$2_0$116 Def000302
 S C$tile_manager.c$128$2_0$117 Def0002FC
 S XG$engine_tile_manager_gfx5$0$0 Def00029B
-S A$tile_manager$1943 Def000814
-S A$tile_manager$1934 Def000809
-S A$tile_manager$1916 Def0007E7
-S A$tile_manager$1880 Def0007A5
+S A$tile_manager$1952 Def00082E
+S A$tile_manager$1943 Def000819
+S A$tile_manager$1934 Def00080A
+S A$tile_manager$1925 Def0007F7
+S A$tile_manager$1916 Def0007E8
+S A$tile_manager$1907 Def0007D5
+S A$tile_manager$1880 Def0007AB
+S A$tile_manager$1871 Def00079E
+S A$tile_manager$1862 Def00078C
 S A$tile_manager$1853 Def00077A
-S A$tile_manager$1844 Def000768
-S A$tile_manager$1835 Def000756
-S A$tile_manager$1826 Def00074C
-S A$tile_manager$1817 Def000740
-S A$tile_manager$1808 Def000732
-S A$tile_manager$1790 Def000707
-S A$tile_manager$1781 Def0006F2
-S A$tile_manager$1772 Def0006DD
-S A$tile_manager$1763 Def0006CB
-S A$tile_manager$1754 Def0006B6
+S A$tile_manager$1844 Def00076A
+S A$tile_manager$1835 Def00075F
+S A$tile_manager$1817 Def000746
+S A$tile_manager$1808 Def00072F
+S A$tile_manager$1790 Def000704
+S A$tile_manager$1781 Def0006EF
+S A$tile_manager$1772 Def0006DC
+S A$tile_manager$1763 Def0006C9
+S A$tile_manager$1754 Def0006BC
 S A$tile_manager$1745 Def0006AB
 S A$tile_manager$1736 Def00069B
 S A$tile_manager$1727 Def00068C
@@ -184,24 +198,27 @@ S A$tile_manager$1079 Def000400
 S C$tile_manager.c$215$5_0$136 Def000418
 S C$tile_manager.c$155$4_0$125 Def00035F
 S XG$engine_tile_manager_island$0$0 Def0001BF
-S A$tile_manager$1944 Def000817
-S A$tile_manager$1935 Def00080B
-S A$tile_manager$1917 Def0007E8
-S A$tile_manager$1908 Def0007D1
-S A$tile_manager$1890 Def0007B4
-S A$tile_manager$1881 Def0007A7
-S A$tile_manager$1872 Def000795
-S A$tile_manager$1854 Def00077B
-S A$tile_manager$1845 Def000769
-S A$tile_manager$1836 Def000757
-S A$tile_manager$1827 Def00074D
-S A$tile_manager$1818 Def000743
-S A$tile_manager$1809 Def000734
-S A$tile_manager$1791 Def00070A
-S A$tile_manager$1782 Def0006F5
+S A$tile_manager$1962 Def000835
+S A$tile_manager$1944 Def00081C
+S A$tile_manager$1935 Def00080D
+S A$tile_manager$1926 Def0007F9
+S A$tile_manager$1917 Def0007EB
+S A$tile_manager$1908 Def0007D8
+S A$tile_manager$1890 Def0007BD
+S A$tile_manager$1881 Def0007AD
+S A$tile_manager$1872 Def0007A1
+S A$tile_manager$1863 Def00078F
+S A$tile_manager$1854 Def00077D
+S A$tile_manager$1845 Def00076B
+S A$tile_manager$1836 Def000761
+S A$tile_manager$1827 Def000755
+S A$tile_manager$1818 Def000747
+S A$tile_manager$1809 Def000731
+S A$tile_manager$1791 Def000707
+S A$tile_manager$1782 Def0006F2
 S A$tile_manager$1773 Def0006DE
-S A$tile_manager$1764 Def0006CE
-S A$tile_manager$1755 Def0006B9
+S A$tile_manager$1764 Def0006CB
+S A$tile_manager$1755 Def0006BD
 S A$tile_manager$1746 Def0006AD
 S A$tile_manager$1737 Def00069E
 S A$tile_manager$1728 Def00068D
@@ -232,31 +249,30 @@ S A$tile_manager$1188 Def000475
 S A$tile_manager$1179 Def00046F
 S A$tile_manager$110 Def000026
 S A$tile_manager$101 Def000017
-S C$tile_manager.c$321$3_0$159 Def000789
+S C$tile_manager.c$321$3_0$159 Def0007A4
 S C$tile_manager.c$314$2_0$158 Def00063C
 S C$tile_manager.c$291$3_0$153 Def000544
 S C$tile_manager.c$276$2_0$151 Def000529
 S C$tile_manager.c$265$1_0$145 Def0004FC
 S C$tile_manager.c$209$4_0$135 Def00048C
 S C$tile_manager.c$216$5_0$136 Def000442
-S A$tile_manager$1936 Def00080C
-S A$tile_manager$1927 Def0007F6
-S A$tile_manager$1918 Def0007EB
-S A$tile_manager$1909 Def0007D4
-S A$tile_manager$1891 Def0007B7
-S A$tile_manager$1882 Def0007A8
-S A$tile_manager$1873 Def000798
-S A$tile_manager$1864 Def000789
-S A$tile_manager$1855 Def00077D
-S A$tile_manager$1846 Def00076B
-S A$tile_manager$1837 Def000759
-S A$tile_manager$1828 Def00074E
-S A$tile_manager$1819 Def000744
-S A$tile_manager$1792 Def00070D
-S A$tile_manager$1783 Def0006F6
-S A$tile_manager$1774 Def0006E0
-S A$tile_manager$1765 Def0006D1
-S A$tile_manager$1756 Def0006BA
+S A$tile_manager$1963 Def000837
+S A$tile_manager$1945 Def00081E
+S A$tile_manager$1936 Def000810
+S A$tile_manager$1927 Def0007FC
+S A$tile_manager$1909 Def0007D9
+S A$tile_manager$1891 Def0007BE
+S A$tile_manager$1873 Def0007A2
+S A$tile_manager$1864 Def000790
+S A$tile_manager$1855 Def00077E
+S A$tile_manager$1846 Def00076C
+S A$tile_manager$1837 Def000762
+S A$tile_manager$1828 Def000758
+S A$tile_manager$1819 Def000749
+S A$tile_manager$1792 Def00070A
+S A$tile_manager$1783 Def0006F3
+S A$tile_manager$1774 Def0006E1
+S A$tile_manager$1765 Def0006CE
 S A$tile_manager$1747 Def0006B0
 S A$tile_manager$1738 Def00069F
 S A$tile_manager$1729 Def00068F
@@ -287,22 +303,18 @@ S C$tile_manager.c$247$4_0$143 Def0004F0
 S C$tile_manager.c$217$5_0$136 Def000451
 S C$tile_manager.c$165$2_0$128 Def00036B
 S C$tile_manager.c$155$5_0$126 Def000318
-S A$tile_manager$1955 Def00081E
-S A$tile_manager$1937 Def00080D
-S A$tile_manager$1928 Def0007F9
-S A$tile_manager$1919 Def0007ED
-S A$tile_manager$1892 Def0007B8
-S A$tile_manager$1883 Def0007A9
-S A$tile_manager$1874 Def00079B
+S A$tile_manager$1946 Def000821
+S A$tile_manager$1928 Def0007FF
+S A$tile_manager$1892 Def0007BF
+S A$tile_manager$1865 Def000792
 S A$tile_manager$1856 Def000780
 S A$tile_manager$1847 Def00076E
-S A$tile_manager$1838 Def00075C
-S A$tile_manager$1829 Def00074F
-S A$tile_manager$1793 Def00070E
-S A$tile_manager$1784 Def0006F8
-S A$tile_manager$1775 Def0006E3
-S A$tile_manager$1766 Def0006D2
-S A$tile_manager$1757 Def0006BD
+S A$tile_manager$1838 Def000763
+S A$tile_manager$1829 Def000759
+S A$tile_manager$1793 Def00070B
+S A$tile_manager$1784 Def0006F5
+S A$tile_manager$1775 Def0006E4
+S A$tile_manager$1766 Def0006D1
 S A$tile_manager$1748 Def0006B1
 S A$tile_manager$1739 Def0006A1
 S A$tile_manager$1694 Def000653
@@ -320,7 +332,7 @@ S A$tile_manager$220 Def0000B2
 S A$tile_manager$130 Def000040
 S A$tile_manager$121 Def000034
 S A$tile_manager$103 Def000019
-S C$tile_manager.c$323$3_0$159 Def000795
+S C$tile_manager.c$323$3_0$159 Def0007B0
 S C$tile_manager.c$316$2_0$158 Def000649
 S C$tile_manager.c$308$3_0$156 Def0005F1
 S C$tile_manager.c$286$2_0$152 Def000569
@@ -330,20 +342,18 @@ S C$tile_manager.c$266$2_0$145 Def000502
 S C$tile_manager.c$257$2_0$145 Def0004FC
 S C$tile_manager.c$209$5_0$136 Def0003DF
 S _engine_tile_manager_clouds Def00015A
-S A$tile_manager$1938 Def000810
-S A$tile_manager$1929 Def0007FB
-S A$tile_manager$1893 Def0007B9
-S A$tile_manager$1884 Def0007AB
-S A$tile_manager$1875 Def00079F
-S A$tile_manager$1866 Def00078D
-S A$tile_manager$1857 Def000781
-S A$tile_manager$1848 Def00076F
-S A$tile_manager$1839 Def00075D
-S A$tile_manager$1794 Def000710
-S A$tile_manager$1785 Def0006FB
-S A$tile_manager$1776 Def0006E6
-S A$tile_manager$1767 Def0006D3
-S A$tile_manager$1758 Def0006C0
+S A$tile_manager$1956 Def00082F
+S A$tile_manager$1947 Def000824
+S A$tile_manager$1929 Def000802
+S A$tile_manager$1893 Def0007C0
+S A$tile_manager$1866 Def000795
+S A$tile_manager$1857 Def000783
+S A$tile_manager$1848 Def000771
+S A$tile_manager$1839 Def000764
+S A$tile_manager$1794 Def00070D
+S A$tile_manager$1785 Def0006F8
+S A$tile_manager$1776 Def0006E5
+S A$tile_manager$1767 Def0006D2
 S A$tile_manager$1749 Def0006B3
 S A$tile_manager$1695 Def000654
 S A$tile_manager$1686 Def000649
@@ -362,8 +372,8 @@ S A$tile_manager$203 Def0000A1
 S A$tile_manager$140 Def000055
 S A$tile_manager$131 Def000041
 S A$tile_manager$122 Def000037
-S C$tile_manager.c$324$3_0$159 Def0007B1
-S C$tile_manager.c$317$2_0$158 Def0006B6
+S C$tile_manager.c$324$3_0$159 Def0007CC
+S C$tile_manager.c$317$2_0$158 Def0006BF
 S C$tile_manager.c$309$3_0$156 Def000603
 S C$tile_manager.c$297$2_0$151 Def000571
 S C$tile_manager.c$294$3_0$153 Def00055E
@@ -374,18 +384,18 @@ S C$tile_manager.c$224$6_0$139 Def000472
 S C$tile_manager.c$167$2_0$128 Def000373
 S C$tile_manager.c$157$5_0$126 Def00032C
 S C$tile_manager.c$50$4_0$101 Def0000CE
-S A$tile_manager$1939 Def000813
-S A$tile_manager$1894 Def0007BA
-S A$tile_manager$1885 Def0007AE
-S A$tile_manager$1876 Def0007A0
-S A$tile_manager$1867 Def000790
-S A$tile_manager$1858 Def000783
-S A$tile_manager$1849 Def000771
-S A$tile_manager$1795 Def000713
-S A$tile_manager$1786 Def0006FE
-S A$tile_manager$1777 Def0006E9
-S A$tile_manager$1768 Def0006D5
-S A$tile_manager$1759 Def0006C2
+S A$tile_manager$1957 Def000832
+S A$tile_manager$1948 Def000826
+S A$tile_manager$1894 Def0007C2
+S A$tile_manager$1885 Def0007B0
+S A$tile_manager$1867 Def000796
+S A$tile_manager$1858 Def000784
+S A$tile_manager$1849 Def000772
+S A$tile_manager$1795 Def000710
+S A$tile_manager$1786 Def0006FB
+S A$tile_manager$1777 Def0006E6
+S A$tile_manager$1768 Def0006D4
+S A$tile_manager$1759 Def0006BF
 S A$tile_manager$1696 Def000655
 S A$tile_manager$1687 Def00064C
 S A$tile_manager$1678 Def00063E
@@ -411,23 +421,24 @@ S A$tile_manager$132 Def000042
 S A$tile_manager$123 Def000039
 S A$tile_manager$114 Def000029
 S A$tile_manager$105 Def00001D
-S C$tile_manager.c$325$3_0$159 Def0007D1
-S C$tile_manager.c$318$2_0$158 Def000740
+S C$tile_manager.c$325$3_0$159 Def0007EC
+S C$tile_manager.c$318$2_0$158 Def000755
 S C$tile_manager.c$295$3_0$153 Def000568
 S C$tile_manager.c$270$5_0$149 Def000506
 S C$tile_manager.c$268$2_0$145 Def000504
 S C$tile_manager.c$259$2_0$145 Def0004FC
 S C$tile_manager.c$225$6_0$139 Def000483
 S C$tile_manager.c$158$5_0$126 Def000344
-S A$tile_manager$1949 Def00081A
-S A$tile_manager$1895 Def0007BD
-S A$tile_manager$1877 Def0007A2
-S A$tile_manager$1868 Def000792
+S A$tile_manager$1949 Def000827
+S A$tile_manager$1895 Def0007C3
+S A$tile_manager$1886 Def0007B3
+S A$tile_manager$1877 Def0007A4
+S A$tile_manager$1868 Def000798
 S A$tile_manager$1859 Def000786
-S A$tile_manager$1796 Def000716
-S A$tile_manager$1787 Def000701
-S A$tile_manager$1778 Def0006EA
-S A$tile_manager$1769 Def0006D8
+S A$tile_manager$1796 Def000713
+S A$tile_manager$1787 Def0006FE
+S A$tile_manager$1778 Def0006E7
+S A$tile_manager$1769 Def0006D7
 S A$tile_manager$1697 Def000656
 S A$tile_manager$1688 Def00064D
 S A$tile_manager$1679 Def000642
@@ -448,19 +459,21 @@ S A$tile_manager$133 Def000043
 S A$tile_manager$124 Def00003A
 S A$tile_manager$115 Def00002A
 S A$tile_manager$106 Def000020
-S C$tile_manager.c$328$2_0$158 Def00081E
-S C$tile_manager.c$326$3_0$159 Def0007F6
+S C$tile_manager.c$328$2_0$158 Def000839
+S C$tile_manager.c$326$3_0$159 Def000811
 S C$tile_manager.c$271$5_0$149 Def000513
 S C$tile_manager.c$249$5_0$144 Def0004C3
 S C$tile_manager.c$178$2_0$128 Def000373
 S C$tile_manager.c$159$5_0$126 Def00034B
 S C$tile_manager.c$70$1_0$104 Def0001AB
 S C$tile_manager.c$52$4_0$101 Def00014B
-S A$tile_manager$1896 Def0007BE
-S A$tile_manager$1878 Def0007A3
-S A$tile_manager$1797 Def000719
-S A$tile_manager$1788 Def000702
-S A$tile_manager$1779 Def0006EC
+S A$tile_manager$1968 Def000839
+S A$tile_manager$1896 Def0007C4
+S A$tile_manager$1887 Def0007B6
+S A$tile_manager$1869 Def00079B
+S A$tile_manager$1797 Def000716
+S A$tile_manager$1788 Def0006FF
+S A$tile_manager$1779 Def0006E9
 S A$tile_manager$1698 Def000657
 S A$tile_manager$1689 Def00064E
 S A$tile_manager$1599 Def0005F1
@@ -490,10 +503,11 @@ S C$tile_manager.c$219$6_0$138 Def000457
 S C$tile_manager.c$178$2_0$129 Def0003C1
 S C$tile_manager.c$62$2_0$103 Def00015A
 S _engine_tile_manager_draw_columns Def000000
-S A$tile_manager$1897 Def0007BF
-S A$tile_manager$1879 Def0007A4
-S A$tile_manager$1798 Def00071A
-S A$tile_manager$1789 Def000704
+S A$tile_manager$1897 Def0007C6
+S A$tile_manager$1888 Def0007BA
+S A$tile_manager$1879 Def0007A8
+S A$tile_manager$1798 Def000717
+S A$tile_manager$1789 Def000701
 S A$tile_manager$1699 Def000659
 S A$tile_manager$900 Def000356
 S A$tile_manager$612 Def00023B
@@ -525,9 +539,9 @@ S C$tile_manager.c$189$2_0$128 Def0003C6
 S C$tile_manager.c$72$1_0$104 Def0001AB
 S C$tile_manager.c$64$1_0$103 Def00015A
 S C$tile_manager.c$52$5_0$102 Def0000EA
-S A$tile_manager$1898 Def0007C2
-S A$tile_manager$1889 Def0007B1
-S A$tile_manager$1799 Def00071C
+S A$tile_manager$1898 Def0007C9
+S A$tile_manager$1889 Def0007BB
+S A$tile_manager$1799 Def000719
 S A$tile_manager$901 Def000359
 S A$tile_manager$820 Def000302
 S A$tile_manager$802 Def0002F7
@@ -564,7 +578,6 @@ S Ftile_manager$draw_see_line$0$0 Def000529
 S C$tile_manager.c$93$1_0$111 Def00023C
 S C$tile_manager.c$80$1_0$106 Def0001D5
 S C$tile_manager.c$73$1_0$104 Def0001BF
-S A$tile_manager$1899 Def0007C5
 S A$tile_manager$920 Def000367
 S A$tile_manager$902 Def00035A
 S A$tile_manager$830 Def000303
@@ -1136,7 +1149,7 @@ S A$tile_manager$1007 Def0003B8
 S C$tile_manager.c$132$5_0$120 Def0002C1
 S C$tile_manager.c$104$4_0$113 Def000292
 S G$engine_tile_manager_clouds$0$0 Def00015A
-S A$tile_manager$1800 Def00071F
+S A$tile_manager$1800 Def00071C
 S A$tile_manager$1710 Def00066C
 S A$tile_manager$1701 Def00065C
 S A$tile_manager$1620 Def00060A
@@ -1163,9 +1176,8 @@ S A$tile_manager$1026 Def0003C6
 S A$tile_manager$1008 Def0003BB
 S C$tile_manager.c$233$2_0$140 Def0004A2
 S C$tile_manager.c$133$5_0$120 Def0002DC
-S A$tile_manager$1900 Def0007C8
-S A$tile_manager$1810 Def000737
-S A$tile_manager$1801 Def000722
+S A$tile_manager$1810 Def000734
+S A$tile_manager$1801 Def00071F
 S A$tile_manager$1720 Def00067E
 S A$tile_manager$1711 Def00066E
 S A$tile_manager$1702 Def00065F
@@ -1199,16 +1211,15 @@ S A$tile_manager$1063 Def0003E5
 S A$tile_manager$1054 Def0003DA
 S A$tile_manager$1036 Def0003C7
 S A$tile_manager$1009 Def0003BC
-S XG$engine_tile_manager_init$0$0 Def00081E
+S XG$engine_tile_manager_init$0$0 Def000839
 S C$tile_manager.c$153$2_0$122 Def00030C
 S C$tile_manager.c$134$5_0$120 Def0002E3
 S C$tile_manager.c$114$2_0$116 Def00029C
 S C$tile_manager.c$104$5_0$114 Def00024D
-S A$tile_manager$1910 Def0007D6
-S A$tile_manager$1901 Def0007CB
-S A$tile_manager$1820 Def000745
-S A$tile_manager$1811 Def00073A
-S A$tile_manager$1802 Def000725
+S A$tile_manager$1910 Def0007DA
+S A$tile_manager$1820 Def00074C
+S A$tile_manager$1811 Def000737
+S A$tile_manager$1802 Def000722
 S A$tile_manager$1730 Def000690
 S A$tile_manager$1721 Def000680
 S A$tile_manager$1712 Def000671
@@ -1249,13 +1260,12 @@ S C$tile_manager.c$301$2_0$155 Def00057F
 S C$tile_manager.c$207$2_0$132 Def0003D2
 S C$tile_manager.c$163$2_0$122 Def00036A
 S C$tile_manager.c$153$2_0$123 Def000364
-S A$tile_manager$1920 Def0007EE
-S A$tile_manager$1911 Def0007D9
+S A$tile_manager$1911 Def0007DD
 S A$tile_manager$1902 Def0007CC
-S A$tile_manager$1830 Def000750
-S A$tile_manager$1821 Def000746
-S A$tile_manager$1812 Def00073D
-S A$tile_manager$1803 Def000726
+S A$tile_manager$1830 Def00075A
+S A$tile_manager$1821 Def00074F
+S A$tile_manager$1812 Def00073A
+S A$tile_manager$1803 Def000723
 S A$tile_manager$1740 Def0006A2
 S A$tile_manager$1731 Def000692
 S A$tile_manager$1722 Def000683
@@ -1305,15 +1315,15 @@ S C$tile_manager.c$182$3_0$130 Def000380
 S C$tile_manager.c$116$2_0$116 Def0002A5
 S C$tile_manager.c$106$5_0$114 Def00025C
 S G$engine_tile_manager_draw_columns$0$0 Def000000
-S A$tile_manager$1930 Def0007FE
-S A$tile_manager$1921 Def0007EF
-S A$tile_manager$1912 Def0007DC
-S A$tile_manager$1903 Def0007CD
-S A$tile_manager$1840 Def00075F
-S A$tile_manager$1831 Def000752
-S A$tile_manager$1822 Def000747
-S A$tile_manager$1813 Def00073E
-S A$tile_manager$1804 Def000728
+S A$tile_manager$1930 Def000803
+S A$tile_manager$1921 Def0007EC
+S A$tile_manager$1912 Def0007E0
+S A$tile_manager$1903 Def0007CF
+S A$tile_manager$1840 Def000765
+S A$tile_manager$1831 Def00075B
+S A$tile_manager$1822 Def000752
+S A$tile_manager$1813 Def00073B
+S A$tile_manager$1804 Def000725
 S A$tile_manager$1750 Def0006B4
 S A$tile_manager$1741 Def0006A4
 S A$tile_manager$1732 Def000695
@@ -1366,16 +1376,19 @@ S C$tile_manager.c$183$3_0$130 Def000398
 S XG$engine_tile_manager_gfx2$0$0 Def00036A
 S C$tile_manager.c$130$4_0$119 Def0002F7
 S C$tile_manager.c$107$5_0$114 Def000275
-S A$tile_manager$1931 Def000801
-S A$tile_manager$1922 Def0007F2
-S A$tile_manager$1913 Def0007DE
-S A$tile_manager$1904 Def0007D0
+S A$tile_manager$1940 Def000811
+S A$tile_manager$1931 Def000806
+S A$tile_manager$1922 Def0007EF
+S A$tile_manager$1913 Def0007E3
+S A$tile_manager$1904 Def0007D2
 S A$tile_manager$1850 Def000774
-S A$tile_manager$1841 Def000762
-S A$tile_manager$1832 Def000753
-S A$tile_manager$1823 Def000748
-S A$tile_manager$1805 Def00072B
-S A$tile_manager$1760 Def0006C5
+S A$tile_manager$1841 Def000767
+S A$tile_manager$1832 Def00075C
+S A$tile_manager$1823 Def000753
+S A$tile_manager$1814 Def00073D
+S A$tile_manager$1805 Def000728
+S A$tile_manager$1760 Def0006C2
+S A$tile_manager$1751 Def0006B6
 S A$tile_manager$1742 Def0006A7
 S A$tile_manager$1733 Def000696
 S A$tile_manager$1724 Def000686
@@ -1416,7 +1429,7 @@ S XG$engine_tile_manager_gfx3$0$0 Def0003C6
 S C$tile_manager.c$184$3_0$130 Def00039F
 S C$tile_manager.c$139$2_0$122 Def000303
 S C$tile_manager.c$108$5_0$114 Def00027C
-A _DATA size 34 flags 0 addr 0
+A _DATA size 38 flags 0 addr 0
 S _global_tile_objects Def000004
 S G$global_tile_objects$0_0$0 Def000004
 S _global_tile_object Def000000
@@ -1846,87 +1859,91 @@ T 31 06 00 04 67 D6 20 38 BA DD F9 DD E1 C9
 R 00 00 00 00
 T 3C 06 00
 R 00 00 00 00
-T 3C 06 00 DD E5 DD 21 00 00 DD 39 21 C9 FF 39 F9
+T 3C 06 00 DD E5 DD 21 00 00 DD 39 21 C5 FF 39 F9
 R 00 00 00 00
 T 49 06 00 21 00 00 39 4D 44 AF 77 23 77 69 60 23
 R 00 00 00 00
-T 56 06 00 23 36 50 23 36 01 21 04 00 09 36 50 23
+T 56 06 00 23 36 C0 23 36 00 21 04 00 09 36 50 23
 R 00 00 00 00
-T 63 06 00 36 01 21 06 00 09 36 80 23 36 01 21
+T 63 06 00 36 01 21 06 00 09 36 50 23 36 01 21
 R 00 00 00 00
-T 6F 06 00 08 00 09 36 A0 23 36 02 21 0A 00 09 36
+T 6F 06 00 08 00 09 36 80 23 36 01 21 0A 00 09 36
 R 00 00 00 00
-T 7C 06 00 60 23 36 06 21 0C 00 09 36 F0 23 36 06
+T 7C 06 00 A0 23 36 02 21 0C 00 09 36 60 23 36 06
 R 00 00 00 00
-T 89 06 00 21 0E 00 09 36 60 23 36 03 21 10 00 09
+T 89 06 00 21 0E 00 09 36 F0 23 36 06 21 10 00 09
 R 00 00 00 00
-T 96 06 00 36 80 23 36 07 21 12 00 09 36 10 23 36
+T 96 06 00 36 60 23 36 03 21 12 00 09 36 80 23 36
 R 00 00 00 00
-T A3 06 00 08 21 14 00 09 36 40 23 36 05 21 16 00
+T A3 06 00 07 21 14 00 09 36 10 23 36 08 21 16 00
 R 00 00 00 00
-T B0 06 00 09 36 D0 23 36 05 21 18 00 39 DD 75 F9
+T B0 06 00 09 36 40 23 36 05 21 18 00 09 36 D0 23
 R 00 00 00 00
-T BD 06 00 DD 74 FA 36 00 DD 6E F9 DD 66 FA 23 36
+T BD 06 00 36 05 21 1A 00 39 DD 75 F9 DD 74 FA 36
 R 00 00 00 00
-T CA 06 00 01 DD 6E F9 DD 66 FA 23 23 36 01 DD 6E
+T CA 06 00 00 DD 6E F9 DD 66 FA 23 36 18 DD 6E F9
 R 00 00 00 00
-T D7 06 00 F9 DD 66 FA 23 23 23 36 08 DD 6E F9 DD
+T D7 06 00 DD 66 FA 23 23 36 01 DD 6E F9 DD 66 FA
 R 00 00 00 00
-T E4 06 00 66 FA 11 04 00 19 36 08 DD 6E F9 DD 66
+T E4 06 00 23 23 23 36 01 DD 6E F9 DD 66 FA 11
 R 00 00 00 00
-T F1 06 00 FA 11 05 00 19 36 04 DD 6E F9 DD 66 FA
+T F0 06 00 04 00 19 36 08 DD 6E F9 DD 66 FA 11
 R 00 00 00 00
-T FE 06 00 11 06 00 19 36 04 DD 6E F9 DD 66 FA 11
+T FC 06 00 05 00 19 36 08 DD 6E F9 DD 66 FA 11
 R 00 00 00 00
-T 0B 07 00 07 00 19 36 08 DD 6E F9 DD 66 FA 11
+T 08 07 00 06 00 19 36 04 DD 6E F9 DD 66 FA 11
 R 00 00 00 00
-T 17 07 00 08 00 19 36 03 DD 6E F9 DD 66 FA 11
+T 14 07 00 07 00 19 36 04 DD 6E F9 DD 66 FA 11
 R 00 00 00 00
-T 23 07 00 09 00 19 36 03 DD 6E F9 DD 66 FA 11
+T 20 07 00 08 00 19 36 08 DD 6E F9 DD 66 FA 11
 R 00 00 00 00
-T 2F 07 00 0A 00 19 36 06 DD 6E F9 DD 66 FA 11
+T 2C 07 00 09 00 19 36 03 DD 6E F9 DD 66 FA 11
 R 00 00 00 00
-T 3B 07 00 0B 00 19 36 04 21 24 00 39 EB AF 12 6B
+T 38 07 00 0A 00 19 36 03 DD 6E F9 DD 66 FA 11
 R 00 00 00 00
-T 48 07 00 62 23 36 01 6B 62 23 23 36 01 6B 62 23
+T 44 07 00 0B 00 19 36 06 DD 6E F9 DD 66 FA 11
 R 00 00 00 00
-T 55 07 00 23 23 36 06 21 04 00 19 36 04 21 05 00
+T 50 07 00 0C 00 19 36 04 21 27 00 39 EB AF 12 6B
 R 00 00 00 00
-T 62 07 00 19 36 03 21 06 00 19 36 03 21 07 00 19
+T 5D 07 00 62 23 36 03 6B 62 23 23 36 01 6B 62 23
 R 00 00 00 00
-T 6F 07 00 36 0A 21 08 00 19 36 03 21 09 00 19 36
+T 6A 07 00 23 23 36 01 21 04 00 19 36 06 21 05 00
 R 00 00 00 00
-T 7C 07 00 03 21 0A 00 19 36 03 21 0B 00 19 36 03
+T 77 07 00 19 36 04 21 06 00 19 36 03 21 07 00 19
 R 00 00 00 00
-T 89 07 00 DD 36 FF 00
+T 84 07 00 36 03 21 08 00 19 36 0A 21 09 00 19 36
 R 00 00 00 00
-T 8D 07 00
+T 91 07 00 03 21 0A 00 19 36 03 21 0B 00 19 36 03
 R 00 00 00 00
-T 8D 07 00 DD 7E FF D6 0C D2 1A 08 DD 7E FF DD 77
+T 9E 07 00 21 0C 00 19 36 03 DD 36 FF 00
+R 00 00 00 00
+T A8 07 00
+R 00 00 00 00
+T A8 07 00 DD 7E FF D6 0D D2 35 08 DD 7E FF DD 77
 R 00 00 00 00 00 09 00 00
-T 9A 07 00 FD DD 36 FE 00 6F 26 00 29 29 7D C6
+T B5 07 00 FD DD 36 FE 00 6F 26 00 29 29 7D C6
 R 00 00 00 00
-T A6 07 00 04 00 00 6F 7C CE 04 00 00 DD 75 FB DD
+T C1 07 00 04 00 00 6F 7C CE 04 00 00 DD 75 FB DD
 R 00 00 00 00 09 03 01 00 89 09 01 00
-T AF 07 00 77 FC DD 6E FD DD 66 FE 29 09 7E DD 77
+T CA 07 00 77 FC DD 6E FD DD 66 FE 29 09 7E DD 77
 R 00 00 00 00
-T BC 07 00 FD 23 7E DD 77 FE DD 6E FB DD 66 FC DD
+T D7 07 00 FD 23 7E DD 77 FE DD 6E FB DD 66 FC DD
 R 00 00 00 00
-T C9 07 00 7E FD 77 23 DD 7E FE 77 DD 7E FB C6 02
+T E4 07 00 7E FD 77 23 DD 7E FE 77 DD 7E FB C6 02
 R 00 00 00 00
-T D6 07 00 DD 77 FD DD 7E FC CE 00 DD 77 FE DD 7E
+T F1 07 00 DD 77 FD DD 7E FC CE 00 DD 77 FE DD 7E
 R 00 00 00 00
-T E3 07 00 F9 DD 86 FF 6F DD 7E FA CE 00 67 7E DD
+T FE 07 00 F9 DD 86 FF 6F DD 7E FA CE 00 67 7E DD
 R 00 00 00 00
-T F0 07 00 6E FD DD 66 FE 77 DD 7E FB C6 03 DD 77
+T 0B 08 00 6E FD DD 66 FE 77 DD 7E FB C6 03 DD 77
 R 00 00 00 00
-T FD 07 00 FD DD 7E FC CE 00 DD 77 FE DD 6E FF 26
+T 18 08 00 FD DD 7E FC CE 00 DD 77 FE DD 6E FF 26
 R 00 00 00 00
-T 0A 08 00 00 19 7E DD 6E FD DD 66 FE 77 DD 34 FF
+T 25 08 00 00 19 7E DD 6E FD DD 66 FE 77 DD 34 FF
 R 00 00 00 00
-T 17 08 00 C3 8D 07
+T 32 08 00 C3 A8 07
 R 00 00 00 00 00 04 00 00
-T 1A 08 00
+T 35 08 00
 R 00 00 00 00
-T 1A 08 00 DD F9 DD E1 C9
+T 35 08 00 DD F9 DD E1 C9
 R 00 00 00 00

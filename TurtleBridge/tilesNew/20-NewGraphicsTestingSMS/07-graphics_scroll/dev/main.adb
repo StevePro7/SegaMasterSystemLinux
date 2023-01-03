@@ -6,7 +6,7 @@ T:Fmain$tag_struct_level_object[({0}S:S$level_cols_offset$0_0$0({2}SI:U),Z,0,0)(
 S:G$global_level_object$0_0$0({3}STtag_struct_level_object:S),E,0,0
 S:G$global_scroll_object$0_0$0({9}STtag_struct_scroll_object:S),E,0,0
 S:G$global_tile_object$0_0$0({4}STtag_struct_tile_object:S),E,0,0
-S:G$global_tile_objects$0_0$0({48}DA12d,STtag_struct_tile_object:S),E,0,0
+S:G$global_tile_objects$0_0$0({52}DA13d,STtag_struct_tile_object:S),E,0,0
 S:G$atof$0_0$0({2}DF,SF:S),C,0,0
 S:G$atoi$0_0$0({2}DF,SI:S),C,0,0
 S:G$atol$0_0$0({2}DF,SL:S),C,0,0

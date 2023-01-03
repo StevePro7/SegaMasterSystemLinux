@@ -11,6 +11,6 @@
 
 //#define WAVES_HIGH			21		// TODO
 
-#define MAX_TILE_OBJECTS	12
+#define MAX_TILE_OBJECTS	13
 
 #endif//_GLOBAL_MANAGER_H_
