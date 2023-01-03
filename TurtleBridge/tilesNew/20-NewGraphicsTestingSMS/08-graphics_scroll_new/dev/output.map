@@ -32,6 +32,7 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000001  l__GSFINAL                      
      00000003  l__HEADER3                      
      00000003  l__HEADER4                      
+     00000005  l__BANK3                        
      00000006  l__HEADER0                      
      00000009  l__HEADER1                      
      0000000A  l__HEADER2                      
@@ -48,6 +49,7 @@ Area                                    Addr        Size        Decimal Bytes (A
      0000012A  l__HEADER5                      
      00000172  l__DATA                         
      00000200  s__CODE                         
+     00000881  l__BANK2                        
      0000667E  l__CODE                         
      0000687E  s__HOME                         
      0000687E  s__INITIALIZER                  
@@ -55,8 +57,6 @@ Area                                    Addr        Size        Decimal Bytes (A
      000068A4  s__GSFINAL                      
      00008000  G$SMS_SRAM$0_0$0                   _sms_manager
      00008000  _SMS_SRAM                          SMSlib_autotext
-     0000C000  s__DATA                         
-     0000C172  s__INITIALIZED                  
 ASxxxx Linker V03.00 + NoICE + sdld,  page 2.
 Hexadecimal  [32-Bits]
 
@@ -66,6 +66,10 @@ Area                                    Addr        Size        Decimal Bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00008000  s__BANK2                        
+     00008000  s__BANK3                        
+     0000C000  s__DATA                         
+     0000C172  s__INITIALIZED                  
      0000C189  s__BSEG                         
      0000C189  s__BSS                          
      0000C189  s__HEAP                         
@@ -73,6 +77,7 @@ Area                                    Addr        Size        Decimal Bytes (A
      0000FFFC  _SRAM_bank_to_be_mapped_on_slot2   SMSlib_autotext
      0000FFFF  G$ROM_bank_to_be_mapped_on_slot2   _sms_manager
      0000FFFF  _ROM_bank_to_be_mapped_on_slot2    SMSlib_autotext
+
 ASxxxx Linker V03.00 + NoICE + sdld,  page 3.
 Hexadecimal  [32-Bits]
 
@@ -6451,6 +6456,33 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
+_BANK2                              00008000    00000881 =        2177. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00008000  G$splash__palette__bin$0_0$0       bank2
+     00008000  _splash__palette__bin              bank2
+     00008010  G$splash__tilemap__stmcompr$0_0$   bank2
+     00008010  _splash__tilemap__stmcompr         bank2
+     00008058  G$splash__tiles__psgcompr$0_0$0    bank2
+     00008058  _splash__tiles__psgcompr           bank2
+ASxxxx Linker V03.00 + NoICE + sdld,  page 119.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_BANK3                              00008000    00000005 =           5. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00008000  G$bank3_txt$0_0$0                  bank3
+     00008000  _bank3_txt                         bank3
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 120.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
 _CABS0                              00000000    00000010 =          16. bytes (ABS,CON)
 
       Value  Global                              Global Defined In Module
@@ -6458,7 +6490,7 @@ _CABS0                              00000000    00000010 =          16. bytes (A
      00007FF0  G$__SMS__SEGA_signature$0_0$0      _sms_manager
      00007FF0  ___SMS__SEGA_signature             _sms_manager
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 119.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 121.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -6470,7 +6502,7 @@ _CABS1                              00000000    0000000E =          14. bytes (A
      00007FD2  G$__SMS__SDSC_author$0_0$0         _sms_manager
      00007FD2  ___SMS__SDSC_author                _sms_manager
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 120.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 122.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -6482,7 +6514,7 @@ _CABS2                              00000000    0000000D =          13. bytes (A
      00007FC5  G$__SMS__SDSC_name$0_0$0           _sms_manager
      00007FC5  ___SMS__SDSC_name                  _sms_manager
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 121.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 123.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -6494,7 +6526,7 @@ _CABS3                              00000000    00000038 =          56. bytes (A
      00007F8D  G$__SMS__SDSC_descr$0_0$0          _sms_manager
      00007F8D  ___SMS__SDSC_descr                 _sms_manager
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 122.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 124.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -6506,13 +6538,15 @@ _CABS4                              00000000    00000010 =          16. bytes (A
      00007FE0  G$__SMS__SDSC_signature$0_0$0      _sms_manager
      00007FE0  ___SMS__SDSC_signature             _sms_manager
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 123.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 125.
 
 Files Linked                              [ module(s) ]
 
 ../crt0/crt0_sms.rel                      [ crt0 ]
 main.rel                                  [ main ]
 ../lib/PSGlib.rel                         [ PSGlib ]
+banks\bank2.rel                           [ bank2 ]
+banks\bank3.rel                           [ bank3 ]
 devkit/_sms_manager.rel                   [ _sms_manager ]
 devkit/_snd_manager.rel                   [ _snd_manager ]
 engine/asm_manager.rel                    [ asm_manager ]
@@ -6568,11 +6602,13 @@ C:\Program Files\SDCC\bin\..\lib\z80/z80.lib
 ../lib/SMSlib.lib                         [ SMSlib_loadTileMapArea.rel ]
 ../lib/SMSlib.lib                         [ SMSlib_autotext.rel ]
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 124.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 126.
 
 User Base Address Definitions
 
 _CODE = 0x0200
 _DATA = 0xc000
+_BANK2=0x8000
+_BANK3=0x8000
 
 
