@@ -43,8 +43,8 @@ void engine_screen_manager_update()
 	//	engine_level_manager_draw( so->offset_right );
 	//}
 
-	input = engine_input_manager_hold_right();
-	//input = engine_input_manager_move_right();
+	//input = engine_input_manager_hold_right();
+	input = engine_input_manager_move_right();
 	//input = 1;
 	if( input )
 	{
