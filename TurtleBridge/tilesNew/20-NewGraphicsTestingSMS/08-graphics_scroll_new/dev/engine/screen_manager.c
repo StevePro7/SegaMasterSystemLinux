@@ -95,10 +95,10 @@ void engine_screen_manager_update()
 			//engine_font_manager_draw_text( "RIGHT", 4, 1 );
 			delta = 1;
 	}
-	//input = engine_input_manager_move_fire1();
+	input = engine_input_manager_move_fire1();
 	if( input )
 	{
-		delta *= 2;
+		delta *= 4;
 	}
 	if( 0 == delta )
 	{
@@ -108,14 +108,15 @@ void engine_screen_manager_update()
 	{
 		for( value = 0; value < delta; value++ )
 		{
-			newTile = engine_scroll_manager_update( delta );
+			// IMPORTANT - this MUST be 1px 
+			newTile = engine_scroll_manager_update( 1 );
 			if( newTile )
 			{
 				engine_level_manager_draw( so->offset_right );
 			}
 		}
 
-		engine_font_manager_draw_data( so->offset_right, 10, 0 );
+		//engine_font_manager_draw_data( so->offset_right, 10, 0 );
 	}
 }
 
