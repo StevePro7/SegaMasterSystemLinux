@@ -19,7 +19,10 @@ S:Ltile_manager.engine_tile_manager_draw_empties$x$1_0$98({1}SC:U),B,1,4
 S:Ltile_manager.engine_tile_manager_draw_empties$tiles$1_0$99({2}DG,SC:U),R,0,0,[]
 S:Ltile_manager.engine_tile_manager_draw_empties$idx$1_0$99({2}SI:U),R,0,0,[]
 S:Ltile_manager.engine_tile_manager_draw_empties$val$1_0$99({2}SI:U),R,0,0,[c,b]
+S:Ltile_manager.engine_tile_manager_draw_empties$tmp$1_0$99({2}SI:U),R,0,0,[c,b]
 S:Ltile_manager.engine_tile_manager_draw_empties$row$1_0$99({1}SC:U),R,0,0,[d]
+S:Ltile_manager.engine_tile_manager_draw_empties$elem$1_0$99({1}SC:U),R,0,0,[e]
+S:Ltile_manager.engine_tile_manager_draw_empties$tile$1_0$99({1}SC:U),R,0,0,[a]
 F:G$engine_tile_manager_draw$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Ltile_manager.engine_tile_manager_draw$tile_type$1_0$102({1}SC:U),B,1,4
 S:Ltile_manager.engine_tile_manager_draw$tiles$1_0$103({2}DG,SC:U),R,0,0,[]
@@ -134,14 +137,8 @@ S:Ltile_manager.draw_see_line$val$1_0$156({2}SI:U),R,0,0,[c,d]
 S:Ltile_manager.draw_see_line$tmp$1_0$156({2}SI:U),R,0,0,[l,h]
 S:Ltile_manager.draw_see_line$row$1_0$156({1}SC:U),R,0,0,[]
 S:Ltile_manager.draw_see_line$col$1_0$156({1}SC:U),R,0,0,[]
-F:G$engine_tile_manager_sea$0_0$0({2}DF,SV:S),Z,0,10,0,0,0
-S:Ltile_manager.engine_tile_manager_sea$sea_line1$1_0$159({4}DA4d,SC:U),B,1,-16
-S:Ltile_manager.engine_tile_manager_sea$sea_line2$1_0$159({4}DA4d,SC:U),B,1,-12
-S:Ltile_manager.engine_tile_manager_sea$sea_line3$1_0$159({4}DA4d,SC:U),B,1,-8
-S:Ltile_manager.engine_tile_manager_sea$x$1_0$159({1}SC:U),R,0,0,[h]
-S:Ltile_manager.engine_tile_manager_sea$sloc0$0_1$0({2}DD,SC:U),B,1,-2
-S:Ltile_manager.engine_tile_manager_sea$sloc1$0_1$0({2}DD,SC:U),B,1,-4
-S:Ltile_manager.engine_tile_manager_sea$sloc2$0_1$0({2}DD,SC:U),B,1,-2
+F:G$engine_tile_manager_sea$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Ltile_manager.engine_tile_manager_sea$x$1_0$159({1}SC:U),R,0,0,[b]
 F:G$engine_tile_manager_init$0_0$0({2}DF,SV:S),Z,0,46,0,0,0
 S:Ltile_manager.engine_tile_manager_init$tilemap_indexes$1_0$162({26}DA13d,SI:U),B,1,-59
 S:Ltile_manager.engine_tile_manager_init$tile_wides$1_0$162({13}DA13d,SC:U),B,1,-33
@@ -156,6 +153,9 @@ S:Ltile_manager.engine_tile_manager_init$sloc4$0_1$0({2}SI:U),B,1,-3
 S:Ltile_manager.engine_tile_manager_init$sloc5$0_1$0({2}DG,SC:U),B,1,-3
 S:Ltile_manager.engine_tile_manager_init$sloc6$0_1$0({2}DG,SC:U),B,1,-3
 T:Ftile_manager$tag_struct_tile_object[({0}S:S$tilemap_index$0_0$0({2}SI:U),Z,0,0)({2}S:S$tile_wide$0_0$0({1}SC:U),Z,0,0)({3}S:S$tile_high$0_0$0({1}SC:U),Z,0,0)]
+S:Ftile_manager$sea_line1$0_0$0({4}DA4d,SC:U),E,0,0
+S:Ftile_manager$sea_line2$0_0$0({4}DA4d,SC:U),E,0,0
+S:Ftile_manager$sea_line3$0_0$0({4}DA4d,SC:U),E,0,0
 S:G$global_tile_object$0_0$0({4}STtag_struct_tile_object:S),E,0,0
 S:G$global_tile_objects$0_0$0({52}DA13d,STtag_struct_tile_object:S),E,0,0
 S:G$engine_font_manager_draw_char$0_0$0({2}DF,SV:S),C,0,0

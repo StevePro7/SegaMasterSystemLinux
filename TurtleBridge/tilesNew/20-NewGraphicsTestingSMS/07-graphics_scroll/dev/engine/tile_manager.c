@@ -1,4 +1,4 @@
-#include "tile_manager.h"
+	#include "tile_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
 #include "global_manager.h"
@@ -8,6 +8,10 @@
 // Global variable.
 struct_tile_object global_tile_object;
 struct_tile_object global_tile_objects[ MAX_TILE_OBJECTS ];
+
+static unsigned char sea_line1[] = { 84, 84, 86, 88, };
+static unsigned char sea_line2[] = { 82, 82, 82, 98, };
+static unsigned char sea_line3[] = { 82, 94, 96, 82, };
 
 //void engine_tile_manager_draw_columns( unsigned char tile_type, unsigned char col, unsigned char x, bool flip )
 void engine_tile_manager_draw_columns( unsigned char tile_type, unsigned char x, unsigned char y, unsigned char col, bool flip )
@@ -36,18 +40,27 @@ void engine_tile_manager_draw_columns( unsigned char tile_type, unsigned char x,
 void engine_tile_manager_draw_empties( unsigned char x )
 {
 	const unsigned char *tiles = bggame_tiles__tilemap__bin;
-	unsigned int idx;
-	unsigned int val;
-	unsigned char row;
+	unsigned int idx, val, tmp;
+	unsigned char row, elem, tile;
 
 	idx = TILE_SKY + 0 * 2 * 1 + 0 * 2;
-	//idx = 340 + 0 * 2 * 1 + 0 * 2;
 	val = tiles[ idx ];
 	for( row = 8; row < 21; row++ )
 	{
 		devkit_SMS_setNextTileatXY( x, row );
 		devkit_SMS_setTile( ( val ) );
 	}
+
+	elem = x % 4;
+	tile = sea_line1[ elem ];
+	tmp = tile + 256;
+	//idx = tmp + row * 2 * TILMAP_WIDE + col * 2;
+	idx = tmp + 0 * 2 * 1 + 0 * 2;
+	val = tiles[ idx ];
+
+	// Wave level is 3x tiles from the screen height.
+	devkit_SMS_setNextTileatXY( x, SCREEN_HIGH - 3 );
+	devkit_SMS_setTile( ( val ) );
 }
 
 void engine_tile_manager_draw( unsigned char tile_type )
@@ -312,12 +325,8 @@ static void draw_see_line( unsigned char *sea_line, unsigned char x, unsigned ch
 
 void engine_tile_manager_sea()
 {
-	unsigned char sea_line1[] = { 84, 84, 86, 88, };
-	unsigned char sea_line2[] = { 82, 82, 82, 98, };
-	unsigned char sea_line3[] = { 82, 94, 96, 82, };
 	unsigned char x = 0;
-
-	for( x = 0; x < 32; x += 4 )
+	for( x = 0; x < SCREEN_WIDE; x += 4 )
 	{
 		draw_see_line( sea_line1, x, 21 );
 		draw_see_line( sea_line2, x, 22 );
