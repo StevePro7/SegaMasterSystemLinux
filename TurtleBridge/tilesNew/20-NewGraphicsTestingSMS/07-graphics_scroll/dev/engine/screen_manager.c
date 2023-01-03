@@ -23,7 +23,7 @@ void engine_screen_manager_init()
 	idx = 0;
 	for( idx = 0; idx < 8; idx++ )
 	{
-		//engine_tile_manager_draw_columns( tile, 4 + idx, 18, idx, false );
+		engine_tile_manager_draw_columns( tile, 4 + idx, 18, idx, false );
 	}
 
 	//TODO
@@ -52,7 +52,7 @@ void engine_screen_manager_update()
 	//}
 	//if( newTile )
 	//{
-		engine_font_manager_draw_data( so->offset_right, 10, 0 );
+		//engine_font_manager_draw_data( so->offset_right, 10, 0 );
 		engine_level_manager_draw( so->offset_right );
 
 		newTile = engine_scroll_manager_update();
