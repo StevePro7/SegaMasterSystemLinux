@@ -1,6 +1,35 @@
 #include "main.h"
 
+static void start();
+
 void main( void )
+{
+	unsigned char input;
+	start();
+
+	for( ;; )
+	{
+		devkit_SMS_initSprites();
+		engine_input_manager_update();
+		input = input = engine_input_manager_move_fire2();
+		if( input )
+		{
+			devkit_PSGStop();
+			start();
+		}
+		engine_screen_manager_update();
+
+		devkit_SMS_finalizeSprites();
+		devkit_SMS_waitForVBlank();
+		//devkit_SMS_copySpritestoSAT();
+		devkit_UNSAFE_SMS_copySpritestoSAT();
+
+		devkit_PSGFrame();
+		devkit_PSGSFXFrame();
+	}
+}
+
+static void start()
 {
 	devkit_SMS_init();
 	devkit_SMS_displayOff();
@@ -22,20 +51,5 @@ void main( void )
 	engine_screen_manager_init();
 	//engine_scroll_manager_init();
 
-
 	devkit_SMS_displayOn();
-	for( ;; )
-	{
-		devkit_SMS_initSprites();
-		engine_input_manager_update();
-		engine_screen_manager_update();
-
-		devkit_SMS_finalizeSprites();
-		devkit_SMS_waitForVBlank();
-		//devkit_SMS_copySpritestoSAT();
-		devkit_UNSAFE_SMS_copySpritestoSAT();
-
-		devkit_PSGFrame();
-		devkit_PSGSFXFrame();
-	}
 }
