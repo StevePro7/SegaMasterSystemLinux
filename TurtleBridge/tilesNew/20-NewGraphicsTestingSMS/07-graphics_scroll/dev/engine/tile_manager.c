@@ -52,19 +52,19 @@ void engine_tile_manager_draw_empties( unsigned char x )
 	//	devkit_SMS_setTile( ( val ) );
 	//}
 
-	//row = 20;
-	//devkit_SMS_setNextTileatXY( x, row - 14 ); devkit_SMS_setTile( ( val ) );
-	//devkit_SMS_setNextTileatXY( x, row - 10 ); devkit_SMS_setTile( ( val ) );
-	//devkit_SMS_setNextTileatXY( x, row - 9 ); devkit_SMS_setTile( ( val ) );
-	//devkit_SMS_setNextTileatXY( x, row - 8 ); devkit_SMS_setTile( ( val ) );
-	//devkit_SMS_setNextTileatXY( x, row - 7 ); devkit_SMS_setTile( ( val ) );
-	//devkit_SMS_setNextTileatXY( x, row - 6 ); devkit_SMS_setTile( ( val ) );
-	//devkit_SMS_setNextTileatXY( x, row - 5 ); devkit_SMS_setTile( ( val ) );
-	//devkit_SMS_setNextTileatXY( x, row - 4 ); devkit_SMS_setTile( ( val ) );
-	//devkit_SMS_setNextTileatXY( x, row - 3 ); devkit_SMS_setTile( ( val ) );
-	//devkit_SMS_setNextTileatXY( x, row - 2 ); devkit_SMS_setTile( ( val ) );
-	//devkit_SMS_setNextTileatXY( x, row - 1 ); devkit_SMS_setTile( ( val ) );
-	//devkit_SMS_setNextTileatXY( x, row - 0 ); devkit_SMS_setTile( ( val ) );
+	row = 20;
+	devkit_SMS_setNextTileatXY( x, row - 14 ); devkit_SMS_setTile( ( val ) );
+	devkit_SMS_setNextTileatXY( x, row - 10 ); devkit_SMS_setTile( ( val ) );
+	devkit_SMS_setNextTileatXY( x, row - 9 ); devkit_SMS_setTile( ( val ) );
+	devkit_SMS_setNextTileatXY( x, row - 8 ); devkit_SMS_setTile( ( val ) );
+	devkit_SMS_setNextTileatXY( x, row - 7 ); devkit_SMS_setTile( ( val ) );
+	devkit_SMS_setNextTileatXY( x, row - 6 ); devkit_SMS_setTile( ( val ) );
+	devkit_SMS_setNextTileatXY( x, row - 5 ); devkit_SMS_setTile( ( val ) );
+	devkit_SMS_setNextTileatXY( x, row - 4 ); devkit_SMS_setTile( ( val ) );
+	devkit_SMS_setNextTileatXY( x, row - 3 ); devkit_SMS_setTile( ( val ) );
+	devkit_SMS_setNextTileatXY( x, row - 2 ); devkit_SMS_setTile( ( val ) );
+	devkit_SMS_setNextTileatXY( x, row - 1 ); devkit_SMS_setTile( ( val ) );
+	devkit_SMS_setNextTileatXY( x, row - 0 ); devkit_SMS_setTile( ( val ) );
 
 	elem = x % 4;
 	tile = sea_line1[ elem ];
