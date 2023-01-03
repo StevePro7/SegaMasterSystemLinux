@@ -98,7 +98,7 @@ void engine_screen_manager_update()
 	input = engine_input_manager_move_fire1();
 	if( input )
 	{
-		delta *= 4;
+		delta *= 8;
 	}
 	if( 0 == delta )
 	{
