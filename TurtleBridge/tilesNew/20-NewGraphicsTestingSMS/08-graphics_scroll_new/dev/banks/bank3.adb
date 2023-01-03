@@ -1,2 +1,2 @@
 M:bank3
-S:G$bank3_txt$0_0$0({5}DA5d,SC:U),D,0,0
+S:G$mus_game_psg$0_0$0({7953}DA7953d,SC:U),D,0,0

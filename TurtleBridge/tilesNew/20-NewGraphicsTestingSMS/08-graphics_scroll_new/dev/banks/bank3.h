@@ -1,4 +1,4 @@
-extern const unsigned char	bank3_txt[];
-#define				bank3_txt_size 5
-#define				bank3_txt_bank 3
+extern const unsigned char	mus_game_psg[];
+#define				mus_game_psg_size 7953
+#define				mus_game_psg_bank 3
 
