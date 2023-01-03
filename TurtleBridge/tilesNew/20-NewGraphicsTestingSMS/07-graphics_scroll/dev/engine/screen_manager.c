@@ -13,18 +13,18 @@
 
 void engine_screen_manager_init()
 {
-	//unsigned char idx;
-	//unsigned char tile = tile_type_island;
+	unsigned char idx;
+	unsigned char tile = tile_type_island;
 	engine_tile_manager_sky();
 	engine_tile_manager_sea();
-
+	engine_tile_manager_clouds();
 	//engine_font_manager_draw_text( "ISLAND", 10, 0 );
 
-	//idx = 0;
-	//for( idx = 0; idx < 8; idx++ )
-	//{
-	//	engine_tile_manager_draw_columns( tile, 10 + idx, 18, idx, false );
-	//}
+	idx = 0;
+	for( idx = 0; idx < 8; idx++ )
+	{
+		engine_tile_manager_draw_columns( tile, 4 + idx, 18, idx, false );
+	}
 
 	//TODO
 	engine_music_manager_play();
@@ -43,9 +43,9 @@ void engine_screen_manager_update()
 	//	engine_level_manager_draw( so->offset_right );
 	//}
 
-	//input = engine_input_manager_hold_right();
+	input = engine_input_manager_hold_right();
 	//input = engine_input_manager_move_right();
-	input = 1;
+	//input = 1;
 	if( input )
 	{
 		newTile = engine_scroll_manager_update();

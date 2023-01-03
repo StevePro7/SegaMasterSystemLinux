@@ -33,6 +33,23 @@ void engine_tile_manager_draw_columns( unsigned char tile_type, unsigned char x,
 	}
 }
 
+void engine_tile_manager_draw_empties( unsigned char x )
+{
+	const unsigned char *tiles = bggame_tiles__tilemap__bin;
+	unsigned int idx;
+	unsigned int val;
+	unsigned char row;
+
+	idx = TILE_SKY + 0 * 2 * 1 + 0 * 2;
+	//idx = 340 + 0 * 2 * 1 + 0 * 2;
+	val = tiles[ idx ];
+	for( row = 8; row < 21; row++ )
+	{
+		devkit_SMS_setNextTileatXY( x, row );
+		devkit_SMS_setTile( ( val ) );
+	}
+}
+
 void engine_tile_manager_draw( unsigned char tile_type )
 {
 	const unsigned char *tiles = bggame_tiles__tilemap__bin;
@@ -61,11 +78,10 @@ void engine_tile_manager_draw( unsigned char tile_type )
 
 void engine_tile_manager_clouds()
 {
-	engine_tile_manager_gfx5( 928, 1, 4, 6, 3 );
-	//engine_tile_manager_gfx5( 928, 2, 4, 6, 3 );
-	engine_tile_manager_gfx5( 1024, 10, 5, 4, 3 );
-	engine_tile_manager_gfx5( 928, 18, 4, 6, 3 );
-	engine_tile_manager_gfx5( 1024, 26, 5, 4, 3 );
+	engine_tile_manager_gfx5( TILE_CLOUDB, 1, 4, 6, 3 );
+	engine_tile_manager_gfx5( TILE_CLOUDS, 10, 5, 4, 3 );
+	engine_tile_manager_gfx5( TILE_CLOUDB, 18, 4, 6, 3 );
+	engine_tile_manager_gfx5( TILE_CLOUDS, 26, 5, 4, 3 );
 }
 void engine_tile_manager_island()
 {
@@ -93,8 +109,6 @@ void engine_tile_manager_sign()
 void engine_tile_manager_gfx5( unsigned int tmp, unsigned char x, unsigned char y, unsigned char w, unsigned char h )
 {
 	const unsigned char *tiles = bggame_tiles__tilemap__bin;
-	const unsigned size = 16;
-
 	unsigned int idx;
 	unsigned int val;
 	unsigned char row, col;
@@ -103,7 +117,7 @@ void engine_tile_manager_gfx5( unsigned int tmp, unsigned char x, unsigned char 
 	{
 		for( col = 0; col < w; col++ )
 		{
-			idx = tmp + row * 2 * size + col * 2;
+			idx = tmp + row * 2 * TILMAP_WIDE + col * 2;
 			val = tiles[ idx ];
 			devkit_SMS_setNextTileatXY( x + col, y + row );
 			devkit_SMS_setTile( ( val ) );

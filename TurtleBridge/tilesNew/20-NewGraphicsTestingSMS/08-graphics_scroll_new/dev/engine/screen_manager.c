@@ -16,7 +16,7 @@ void engine_screen_manager_init()
 {
 	unsigned char idx;
 	unsigned char tile = tile_type_island;
-	engine_tile_manager_banner();
+	//engine_tile_manager_banner();
 	engine_tile_manager_sky();
 	engine_tile_manager_sea();
 	engine_tile_manager_clouds();
@@ -40,25 +40,50 @@ void engine_screen_manager_update()
 	unsigned char value;
 	bool newTile;
 
-	input = engine_input_manager_hold_up();
-	if( input )
-	{
-		engine_font_manager_draw_char( '?', 1, 10 );
-	}
+	//input = engine_input_manager_hold_up();
+	//if( input )
+	//{
+	//	engine_font_manager_draw_char( '?', 1, 10 );
+	//}
 
-	input = engine_input_manager_hold_down();
-	if( input )
-	{
-		newTile = so->scrollRight % 8 == 1;
-		print( newTile );
-	}
+	//input = engine_input_manager_hold_down();
+	//if( input )
+	//{
+	//	newTile = so->scrollRight % 8 == 1;
+	//	print( newTile );
+	//}
 
-	input = engine_input_manager_hold_left();
-	if( input )
-	{
-		engine_level_manager_draw( so->offset_right );
-	}
+	//input = engine_input_manager_hold_left();
+	//if( input )
+	//{
+	//	engine_level_manager_draw( so->offset_right );
+	//}
 
+
+	//input = engine_input_manager_hold_right();
+	////input = 1;
+	//if( input )
+	//{
+	//	newTile = engine_scroll_manager_update( 1 );
+
+	//	//}
+	//	//if( newTile )
+	//	//{
+	//	engine_font_manager_draw_data( so->offset_right, 10, 0 );
+	//	//engine_level_manager_draw( so->offset_right );
+
+	//	//newTile = engine_scroll_manager_update();
+	//	////engine_font_manager_draw_data( so->offset_right, 10, 0 );
+	//	//engine_level_manager_draw( so->offset_right );
+
+	//	//newTile = engine_scroll_manager_update();
+	//	////engine_font_manager_draw_data( so->offset_right, 10, 0 );
+	//	//engine_level_manager_draw( so->offset_right );
+
+	//	//newTile = engine_scroll_manager_update();
+	//	////engine_font_manager_draw_data( so->offset_right, 10, 0 );
+	//	//engine_level_manager_draw( so->offset_right );
+	//}
 
 
 	delta = 0;
@@ -70,7 +95,7 @@ void engine_screen_manager_update()
 			//engine_font_manager_draw_text( "RIGHT", 4, 1 );
 			delta = 1;
 	}
-	input = engine_input_manager_move_fire1();
+	//input = engine_input_manager_move_fire1();
 	if( input )
 	{
 		delta *= 2;
@@ -89,6 +114,8 @@ void engine_screen_manager_update()
 				engine_level_manager_draw( so->offset_right );
 			}
 		}
+
+		engine_font_manager_draw_data( so->offset_right, 10, 0 );
 	}
 }
 

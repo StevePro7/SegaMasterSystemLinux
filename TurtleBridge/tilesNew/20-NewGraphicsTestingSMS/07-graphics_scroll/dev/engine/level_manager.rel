@@ -1,68 +1,109 @@
 ;!FILE level_manager.asm
 XL3
-H 9 areas 41 global symbols
+H 9 areas 6A global symbols
 M level_manager
 O -mz80
 S _engine_tile_manager_draw_columns Ref000000
+S _level_heightA Ref000000
+S _level_planesA Ref000000
 S .__.ABS. Def000000
-A _CODE size 3F flags 0 addr 0
-S C$level_manager.c$16$1_0$12 Def000000
-S C$level_manager.c$31$1_0$16 Def00000D
-S C$level_manager.c$24$1_0$14 Def00000C
-S C$level_manager.c$17$1_0$12 Def000000
-S C$level_manager.c$32$1_0$16 Def00001F
-S C$level_manager.c$18$1_0$12 Def000006
-S A$level_manager$71 Def000000
-S C$level_manager.c$42$1_0$16 Def000028
-S A$level_manager$72 Def000003
-S C$level_manager.c$43$1_0$16 Def00003E
-S C$level_manager.c$26$1_0$16 Def00000D
+S _level_columnA Ref000000
+S _engine_font_manager_draw_data Ref000000
+S _engine_tile_manager_draw_empties Ref000000
+A _CODE size 6D flags 0 addr 0
+S C$level_manager.c$22$1_0$15 Def00000C
+S C$level_manager.c$16$1_0$13 Def000000
+S C$level_manager.c$40$1_0$17 Def000040
+S C$level_manager.c$24$1_0$15 Def00000C
+S C$level_manager.c$17$1_0$13 Def000000
+S C$level_manager.c$41$1_0$17 Def000045
+S C$level_manager.c$32$1_0$17 Def000015
+S C$level_manager.c$18$1_0$13 Def000006
+S C$level_manager.c$33$1_0$17 Def000021
+S A$level_manager$73 Def000000
 S _engine_level_manager_load Def00000C
-S C$level_manager.c$28$1_0$16 Def00000D
+S A$level_manager$74 Def000003
+S C$level_manager.c$35$1_0$17 Def000029
+S C$level_manager.c$26$1_0$17 Def00000D
+S C$level_manager.c$36$1_0$17 Def00002F
 S G$engine_level_manager_draw$0$0 Def00000D
-S A$level_manager$85 Def00000B
-S A$level_manager$76 Def000006
-S A$level_manager$77 Def000009
+S C$level_manager.c$55$1_0$17 Def00006C
+S C$level_manager.c$28$1_0$17 Def000015
+S C$level_manager.c$53$2_0$19 Def00005A
+S C$level_manager.c$47$1_0$17 Def00004E
+S A$level_manager$87 Def00000B
+S A$level_manager$78 Def000006
+S C$level_manager.c$39$1_0$17 Def00003B
+S A$level_manager$79 Def000009
+S C$level_manager.c$49$1_0$17 Def00004A
+S C$level_manager.c$49$2_0$18 Def000052
 S G$engine_level_manager_init$0$0 Def000000
 S XG$engine_level_manager_load$0$0 Def00000C
 S _engine_level_manager_draw Def00000D
 S _engine_level_manager_init Def000000
-S XG$engine_level_manager_draw$0$0 Def00003E
+S XG$engine_level_manager_draw$0$0 Def00006C
 S XG$engine_level_manager_init$0$0 Def00000B
-S A$level_manager$120 Def000014
-S A$level_manager$102 Def00000C
-S A$level_manager$130 Def000022
-S A$level_manager$121 Def000016
-S A$level_manager$140 Def00002E
-S A$level_manager$131 Def000024
-S A$level_manager$122 Def000019
-S A$level_manager$150 Def00003C
-S A$level_manager$141 Def00002F
-S A$level_manager$132 Def000027
-S A$level_manager$123 Def00001A
-S A$level_manager$151 Def00003D
-S A$level_manager$142 Def000030
-S A$level_manager$124 Def00001B
-S A$level_manager$143 Def000032
-S A$level_manager$125 Def00001E
-S A$level_manager$144 Def000033
-S A$level_manager$145 Def000034
-S A$level_manager$136 Def000028
-S A$level_manager$118 Def00000D
-S A$level_manager$146 Def000035
-S A$level_manager$137 Def00002A
-S A$level_manager$119 Def000010
-S A$level_manager$147 Def000037
-S A$level_manager$138 Def00002B
-S A$level_manager$129 Def00001F
+S A$level_manager$200 Def000062
+S A$level_manager$210 Def00006A
+S A$level_manager$201 Def000063
+S A$level_manager$202 Def000064
+S A$level_manager$203 Def000067
+S A$level_manager$104 Def00000C
+S A$level_manager$204 Def000068
+S A$level_manager$150 Def00003A
+S A$level_manager$132 Def000021
+S A$level_manager$123 Def000015
+S A$level_manager$114 Def00000D
+S A$level_manager$205 Def000069
+S A$level_manager$160 Def000040
+S A$level_manager$133 Def000024
+S A$level_manager$124 Def000018
+S A$level_manager$115 Def00000F
+S A$level_manager$215 Def00006C
+S A$level_manager$161 Def000043
+S A$level_manager$143 Def00002F
+S A$level_manager$134 Def000026
+S A$level_manager$125 Def00001B
+S A$level_manager$116 Def000013
+S A$level_manager$162 Def000044
+S A$level_manager$144 Def000030
+S A$level_manager$126 Def00001C
+S A$level_manager$172 Def00004A
+S A$level_manager$154 Def00003B
+S A$level_manager$145 Def000033
+S A$level_manager$127 Def00001D
+S A$level_manager$173 Def00004D
+S A$level_manager$155 Def00003E
+S A$level_manager$146 Def000034
+S A$level_manager$128 Def000020
+S A$level_manager$192 Def00005A
+S A$level_manager$183 Def000052
+S A$level_manager$156 Def00003F
+S A$level_manager$147 Def000035
+S A$level_manager$138 Def000029
+S A$level_manager$193 Def00005B
+S A$level_manager$184 Def000053
+S A$level_manager$166 Def000045
 S A$level_manager$148 Def000038
 S A$level_manager$139 Def00002C
-S A$level_manager$149 Def00003B
+S A$level_manager$194 Def00005C
+S A$level_manager$185 Def000054
+S A$level_manager$167 Def000048
+S A$level_manager$149 Def000039
 S G$engine_level_manager_load$0$0 Def00000C
-S A$level_manager$159 Def00003E
-S C$level_manager.c$20$1_0$12 Def00000B
-S C$level_manager.c$14$0_0$12 Def000000
-S C$level_manager.c$22$1_0$14 Def00000C
+S A$level_manager$195 Def00005D
+S A$level_manager$186 Def000057
+S A$level_manager$177 Def00004E
+S A$level_manager$168 Def000049
+S A$level_manager$196 Def00005E
+S A$level_manager$187 Def000058
+S A$level_manager$178 Def00004F
+S A$level_manager$197 Def00005F
+S A$level_manager$179 Def000050
+S C$level_manager.c$20$1_0$13 Def00000B
+S A$level_manager$198 Def000060
+S A$level_manager$199 Def000061
+S C$level_manager.c$14$0_0$13 Def000000
 A _DATA size 3 flags 0 addr 0
 S _global_level_object Def000000
 S G$global_level_object$0_0$0 Def000000
@@ -99,14 +140,28 @@ T 0C 00 00 C9
 R 00 00 00 00
 T 0D 00 00
 R 00 00 00 00
-T 0D 00 00 21 00 00 FD 21 02 00 FD 39 FD 7E 00 77
-R 00 00 00 00 00 04 01 00
-T 1A 00 00 23 FD 7E 01 77 FD 7E 00 E6 1F 21 02 00
-R 00 00 00 00 00 0E 01 00
-T 27 00 00 77 26 00 E5 33 26 00 E5 33 26 10 E5 33
+T 0D 00 00 DD E5 DD 21 00 00 DD 39 21 00 00 DD 7E
+R 00 00 00 00 00 0C 01 00
+T 1A 00 00 04 77 23 DD 7E 05 77 DD 7E 04 E6 1F 32
 R 00 00 00 00
-T 34 00 00 57 1E 04 D5 CD 00 00 F1 F1 33 C9
-R 00 00 00 00 02 08 00 00
+T 27 00 00 02 00 DD 5E 04 DD 56 05 D5 21 0A 01 E5
+R 00 00 00 00 00 03 01 00
+T 34 00 00 D5 CD 00 00 F1 F1 D1 21 00 00 19 4E 21
+R 00 00 00 00 02 05 05 00 02 0B 02 00
+T 41 00 00 00 00 19 46 21 00 00 19 5E 21 02 00 56
+R 00 00 00 00 02 03 01 00 02 08 04 00 00 0D 01 00
+T 4E 00 00 79 B7 20 08 D5 33 CD 00 00 33 18 10
+R 00 00 00 00 02 0A 06 00
+T 5A 00 00
+R 00 00 00 00
+T 5A 00 00 AF F5 33 7B F5 33 C5 33 59 D5 CD 00 00
+R 00 00 00 00 02 0E 00 00
+T 67 00 00 F1 F1 33
+R 00 00 00 00
+T 6A 00 00
+R 00 00 00 00
+T 6A 00 00 DD E1 C9
+R 00 00 00 00
 T 00 00 00
 R 00 00 07 00
 T 00 00 00 04 04 04 04

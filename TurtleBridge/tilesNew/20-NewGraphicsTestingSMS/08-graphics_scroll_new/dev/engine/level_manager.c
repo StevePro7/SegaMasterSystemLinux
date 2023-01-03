@@ -29,7 +29,7 @@ void engine_level_manager_load()
 void engine_level_manager_draw( unsigned int offset )
 {
 	struct_level_object *lo = &global_level_object;
-	unsigned char index, type, cols;
+	//unsigned char index, type, cols;
 
 	lo->level_cols_offset = offset;
 	lo->level_draw_offset = offset % SCREEN_WIDE;
@@ -37,17 +37,19 @@ void engine_level_manager_draw( unsigned int offset )
 	//engine_font_manager_draw_data( lo->level_draw_offset, 20, 2 );
 
 	// TODO hack while debugging
-	if( lo->level_draw_offset >= 12 )
-	{
-		//engine_font_manager_draw_text( "NOPE!", 4, 2 );
-		return;
-	}
+	//if( lo->level_draw_offset >= 12 )
+	//{
+	//	//engine_font_manager_draw_text( "NOPE!", 4, 2 );
+	//	return;
+	//}
 
 	//engine_font_manager_draw_text( "     ", 4, 2 );
-	index = lo->level_draw_offset;
-	type = tile_type_bridge;// level_tile_type[ index ];
-	cols = level_tile_cols[ index ];
+	//index = lo->level_draw_offset;
+	//type = tile_type_bridge;// level_tile_type[ index ];
+	//cols = level_tile_cols[ index ];
 	//engine_tile_manager_draw_columns( tile_type_island, column, 18, column, false );
-	engine_tile_manager_draw_columns( type, level_x, 12, cols, false );
-	level_x++;
+	//engine_tile_manager_draw_columns( type, level_x, 12, cols, false );
+	//level_x++;
+
+	engine_tile_manager_draw_columns( tile_type_bridge, lo->level_draw_offset, 16, 0, false );
 }
