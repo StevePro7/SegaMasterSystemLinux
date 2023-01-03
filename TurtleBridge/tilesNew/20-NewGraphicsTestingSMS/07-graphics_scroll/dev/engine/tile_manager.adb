@@ -125,9 +125,9 @@ S:Ltile_manager.draw_see_line$elem$1_0$151({1}SC:U),R,0,0,[e]
 S:Ltile_manager.draw_see_line$tile$1_0$151({1}SC:U),R,0,0,[l]
 S:Ltile_manager.draw_see_line$idx$1_0$151({2}SI:U),R,0,0,[]
 S:Ltile_manager.draw_see_line$val$1_0$151({2}SI:U),R,0,0,[c,d]
+S:Ltile_manager.draw_see_line$tmp$1_0$151({2}SI:U),R,0,0,[l,h]
 S:Ltile_manager.draw_see_line$row$1_0$151({1}SC:U),R,0,0,[]
 S:Ltile_manager.draw_see_line$col$1_0$151({1}SC:U),R,0,0,[]
-S:Ltile_manager.draw_see_line$tmp$1_0$151({2}SI:U),R,0,0,[l,h]
 F:G$engine_tile_manager_sea$0_0$0({2}DF,SV:S),Z,0,10,0,0,0
 S:Ltile_manager.engine_tile_manager_sea$sea_line1$1_0$154({4}DA4d,SC:U),B,1,-16
 S:Ltile_manager.engine_tile_manager_sea$sea_line2$1_0$154({4}DA4d,SC:U),B,1,-12

@@ -26,16 +26,18 @@ void engine_level_manager_load()
 void engine_level_manager_draw( unsigned int offset )
 {
 	struct_level_object *lo = &global_level_object;
-	unsigned char index, type, cols;
+	//unsigned char index, type, cols;
 
 	lo->level_cols_offset = offset;
 	lo->level_draw_offset = offset % SCREEN_WIDE;
-	engine_font_manager_draw_data( lo->level_cols_offset, 10, 5 );
-	engine_font_manager_draw_data( lo->level_draw_offset, 20, 5 );
+	//engine_font_manager_draw_data( lo->level_cols_offset, 10, 1);
+	//engine_font_manager_draw_data( lo->level_draw_offset, 20, 1 );
 
-	index = lo->level_draw_offset;
-	type = level_tile_type[ index ];
-	cols = level_tile_cols[ index ];
+	//index = lo->level_draw_offset;
+	//type = level_tile_type[ index ];
+	//cols = level_tile_cols[ index ];
 	//engine_tile_manager_draw_columns( tile_type_island, column, 18, column, false );
-	engine_tile_manager_draw_columns( type, cols, 12, cols, false );
+	//engine_tile_manager_draw_columns( type, cols, 12, cols, false );
+
+	engine_tile_manager_draw_columns( tile_type_bridge, lo->level_draw_offset, 16, 0, false );
 }

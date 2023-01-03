@@ -48,7 +48,7 @@ bool engine_scroll_manager_update()
 		so->offset_right++;
 	}
 
-	print( newTile );
+	//print( newTile );
 	return newTile;
 }
 

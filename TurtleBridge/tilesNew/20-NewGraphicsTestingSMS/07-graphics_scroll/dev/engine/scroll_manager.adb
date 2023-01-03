@@ -1,10 +1,14 @@
 M:scroll_manager
 F:G$engine_scroll_manager_init$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lscroll_manager.engine_scroll_manager_init$so$1_0$89({2}DG,STtag_struct_scroll_object:S),R,0,0,[]
-F:G$engine_scroll_manager_update$0_0$0({2}DF,:S),Z,0,0,0,0,0
+F:G$engine_scroll_manager_update$0_0$0({2}DF,:S),Z,0,-1,0,0,0
 S:Lscroll_manager.engine_scroll_manager_update$so$1_0$90({2}DG,STtag_struct_scroll_object:S),R,0,0,[]
-S:Lscroll_manager.engine_scroll_manager_update$newTile$1_0$90({1}:S),R,0,0,[c]
+S:Lscroll_manager.engine_scroll_manager_update$newTile$1_0$90({1}:S),B,1,-5
 S:Lscroll_manager.engine_scroll_manager_update$delta$1_0$90({1}SC:U),R,0,0,[]
+S:Lscroll_manager.engine_scroll_manager_update$sloc0$0_1$0({1}:S),B,1,-1
+S:Lscroll_manager.engine_scroll_manager_update$sloc1$0_1$0({1}:S),B,1,-5
+S:Lscroll_manager.engine_scroll_manager_update$sloc2$0_1$0({2}SI:U),B,1,-4
+S:Lscroll_manager.engine_scroll_manager_update$sloc3$0_1$0({2}SI:U),B,1,-2
 F:Fscroll_manager$print$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lscroll_manager.print$newTile$1_0$92({1}:S),B,1,4
 S:Lscroll_manager.print$so$1_0$93({2}DG,STtag_struct_scroll_object:S),R,0,0,[]
