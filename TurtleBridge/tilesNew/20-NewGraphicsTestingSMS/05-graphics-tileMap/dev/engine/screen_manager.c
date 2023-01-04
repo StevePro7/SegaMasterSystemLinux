@@ -22,16 +22,16 @@ void engine_screen_manager_init()
 	//unsigned char idx;
 	//unsigned char loop;
 
-	engine_font_manager_draw_text( "HELLO WORLD", 10, 10 );
-	engine_font_manager_draw_data( 1234, 10, 2 );
-	engine_font_manager_draw_data( 5678, 10, 3 );
-	engine_font_manager_draw_data( 90, 10, 4 );
-	engine_font_manager_draw_text( "!\"#$%^&*()?<>;:'<=>?", 5, 6 );
-	//engine_font_manager_draw_char( 'X', 18, 10 );
+	//engine_font_manager_draw_text( "HELLO WORLD", 10, 10 );
+	//engine_font_manager_draw_data( 1234, 10, 2 );
+	//engine_font_manager_draw_data( 5678, 10, 3 );
+	//engine_font_manager_draw_data( 90, 10, 4 );
+	//engine_font_manager_draw_text( "!\"#$%^&*()?<>;:'<=>?", 5, 6 );
+	engine_font_manager_draw_char( '!', 18, 10 );
 
-	tmp = 1344;
-	engine_tile_manager_gfx4( tmp, TMP_HGH );
-	engine_font_manager_draw_data( tmp, 10, 11 );
+	//tmp = 1344;
+	//engine_tile_manager_gfx4( tmp, TMP_HGH );
+	//engine_font_manager_draw_data( tmp, 10, 11 );
 
 	////IMPORTANT - white square can print this
 	//for( idx = 0; idx < 32; idx++ )
