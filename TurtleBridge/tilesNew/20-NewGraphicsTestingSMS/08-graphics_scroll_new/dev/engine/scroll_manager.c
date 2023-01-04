@@ -57,7 +57,6 @@ bool engine_scroll_manager_update( unsigned char delta )
 	newTile = false;
 	if( delta > 0 )
 	{
-		
 		newTile = so->scrollRight % 8 == delta;
 		if( newTile )
 		{

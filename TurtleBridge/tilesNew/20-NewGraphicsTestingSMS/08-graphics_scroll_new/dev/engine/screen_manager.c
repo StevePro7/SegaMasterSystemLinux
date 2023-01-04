@@ -49,7 +49,7 @@ void engine_screen_manager_update()
 	if( input )
 	{
 		//engine_font_manager_draw_text( "RIGHT", 4, 1 );
-		delta = 1;
+		delta = 8;
 	}
 	input = engine_input_manager_move_fire1();
 	if( input )
@@ -62,46 +62,46 @@ void engine_screen_manager_update()
 	}
 	else
 	{
-		//for( value = 0; value < delta; value++ )
-		//{
-		//	// IMPORTANT - this MUST be 1px 
-		//	newTile = engine_scroll_manager_update( 1 );
-		//	if( newTile )
-		//	{
-		//		engine_level_manager_draw( so->offset_right );
-		//	}
-		//}
+		for( value = 0; value < delta; value++ )
+		{
+			// IMPORTANT - this MUST be 1px 
+			newTile = engine_scroll_manager_update( 1 );
+			if( newTile )
+			{
+				engine_level_manager_draw( so->offset_right );
+			}
+		}
 
-		newTile = engine_scroll_manager_update( 1 );
-		if( newTile )
-		{
-			engine_level_manager_draw( so->offset_right );
-		}
-		newTile = engine_scroll_manager_update( 1 );
-		if( newTile )
-		{
-			engine_level_manager_draw( so->offset_right );
-		}
-		newTile = engine_scroll_manager_update( 1 );
-		if( newTile )
-		{
-			engine_level_manager_draw( so->offset_right );
-		}
-		newTile = engine_scroll_manager_update( 1 );
-		if( newTile )
-		{
-			engine_level_manager_draw( so->offset_right );
-		}
-		newTile = engine_scroll_manager_update( 1 );
-		if( newTile )
-		{
-			engine_level_manager_draw( so->offset_right );
-		}
-		newTile = engine_scroll_manager_update( 1 );
-		if( newTile )
-		{
-			engine_level_manager_draw( so->offset_right );
-		}
+		//newTile = engine_scroll_manager_update( 1 );
+		//if( newTile )
+		//{
+		//	engine_level_manager_draw( so->offset_right );
+		//}
+		//newTile = engine_scroll_manager_update( 1 );
+		//if( newTile )
+		//{
+		//	engine_level_manager_draw( so->offset_right );
+		//}
+		//newTile = engine_scroll_manager_update( 1 );
+		//if( newTile )
+		//{
+		//	engine_level_manager_draw( so->offset_right );
+		//}
+		//newTile = engine_scroll_manager_update( 1 );
+		//if( newTile )
+		//{
+		//	engine_level_manager_draw( so->offset_right );
+		//}
+		//newTile = engine_scroll_manager_update( 1 );
+		//if( newTile )
+		//{
+		//	engine_level_manager_draw( so->offset_right );
+		//}
+		//newTile = engine_scroll_manager_update( 1 );
+		//if( newTile )
+		//{
+		//	engine_level_manager_draw( so->offset_right );
+		//}
 	}
 }
 
