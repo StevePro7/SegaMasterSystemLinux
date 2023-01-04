@@ -14,12 +14,13 @@ namespace ScreenShotTest
 		RenderTarget2D renderTarget;
 		Texture2D image;
 		int wide, high;
+		bool save;
 
 		public AnGame()
 		{
 			graphics = new GraphicsDeviceManager(this);
-			
 			Content.RootDirectory = "Content";
+			save = false;
 		}
 
 		protected override void Initialize()
@@ -63,34 +64,42 @@ namespace ScreenShotTest
 
 		protected override void Draw(GameTime gameTime)
 		{
-			int col;
-			string name;
-			Stream stream;
-			Texture2D resolvedTexture;
+			if (save)
+			{
+				int col;
+				string name;
+				Stream stream;
+				Texture2D resolvedTexture;
 
-			col = 2;
-			GraphicsDevice.SetRenderTarget(renderTarget);
-			GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.CornflowerBlue, 1, 0);
-			Draw(col);
-			base.Draw(gameTime);
-			GraphicsDevice.SetRenderTarget(null);
-			resolvedTexture = (Texture2D)renderTarget;
-			name = file + "_" + col.ToString().PadLeft(2, '0') + ".png";
-			stream = File.Create(name);
-			resolvedTexture.SaveAsPng(stream, wide, high);
+				col = 2;
+				GraphicsDevice.SetRenderTarget(renderTarget);
+				GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.CornflowerBlue, 1, 0);
+				Draw(col);
+				base.Draw(gameTime);
+				GraphicsDevice.SetRenderTarget(null);
+				resolvedTexture = (Texture2D)renderTarget;
+				name = file + "_" + col.ToString().PadLeft(2, '0') + ".png";
+				stream = File.Create(name);
+				resolvedTexture.SaveAsPng(stream, wide, high);
 
-			col = 7;
-			GraphicsDevice.SetRenderTarget(renderTarget);
-			GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.CornflowerBlue, 1, 0);
-			Draw(col);
-			base.Draw(gameTime);
-			GraphicsDevice.SetRenderTarget(null);
-			resolvedTexture = (Texture2D)renderTarget;
-			name = file + "_" + col.ToString().PadLeft(2, '0') + ".png";
-			stream = File.Create(name);
-			resolvedTexture.SaveAsPng(stream, wide, high);
+				col = 7;
+				GraphicsDevice.SetRenderTarget(renderTarget);
+				GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.CornflowerBlue, 1, 0);
+				Draw(col);
+				base.Draw(gameTime);
+				GraphicsDevice.SetRenderTarget(null);
+				resolvedTexture = (Texture2D)renderTarget;
+				name = file + "_" + col.ToString().PadLeft(2, '0') + ".png";
+				stream = File.Create(name);
+				resolvedTexture.SaveAsPng(stream, wide, high);
 
-			Exit();
+				Exit();
+			}
+			else
+			{
+				Draw(0);
+				base.Draw(gameTime);
+			}
 		}
 
 		private void Draw(int col)
