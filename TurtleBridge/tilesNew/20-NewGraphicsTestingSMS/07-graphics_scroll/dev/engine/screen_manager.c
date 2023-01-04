@@ -48,16 +48,16 @@ void engine_screen_manager_update()
 	input = 1;
 	if( input )
 	{
-		newTile = engine_scroll_manager_update();
+		
 	//}
 	//if( newTile )
 	//{
+		newTile = engine_scroll_manager_update();
 		//engine_font_manager_draw_data( so->offset_right, 10, 0 );
 		if( newTile )
 		{
 			engine_level_manager_draw( so->offset_right );
 		}
-		
 
 		newTile = engine_scroll_manager_update();
 		if( newTile )
