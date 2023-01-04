@@ -21,6 +21,7 @@ namespace ScreenShotTest
 			graphics = new GraphicsDeviceManager(this);
 			Content.RootDirectory = "Content";
 			save = false;
+			save = true;
 		}
 
 		protected override void Initialize()
@@ -71,27 +72,19 @@ namespace ScreenShotTest
 				Stream stream;
 				Texture2D resolvedTexture;
 
-				col = 2;
-				GraphicsDevice.SetRenderTarget(renderTarget);
-				GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.CornflowerBlue, 1, 0);
-				Draw(col);
-				base.Draw(gameTime);
-				GraphicsDevice.SetRenderTarget(null);
-				resolvedTexture = (Texture2D)renderTarget;
-				name = file + "_" + col.ToString().PadLeft(2, '0') + ".png";
-				stream = File.Create(name);
-				resolvedTexture.SaveAsPng(stream, wide, high);
-
-				col = 7;
-				GraphicsDevice.SetRenderTarget(renderTarget);
-				GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.CornflowerBlue, 1, 0);
-				Draw(col);
-				base.Draw(gameTime);
-				GraphicsDevice.SetRenderTarget(null);
-				resolvedTexture = (Texture2D)renderTarget;
-				name = file + "_" + col.ToString().PadLeft(2, '0') + ".png";
-				stream = File.Create(name);
-				resolvedTexture.SaveAsPng(stream, wide, high);
+				int loop = image.Width / 8;
+				for (col = 0; col < loop; col++)
+				{
+					GraphicsDevice.SetRenderTarget(renderTarget);
+					GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.CornflowerBlue, 1, 0);
+					Draw(col);
+					base.Draw(gameTime);
+					GraphicsDevice.SetRenderTarget(null);
+					resolvedTexture = (Texture2D)renderTarget;
+					name = file + "_" + col.ToString().PadLeft(2, '0') + ".png";
+					stream = File.Create(name);
+					resolvedTexture.SaveAsPng(stream, wide, high);
+				}
 
 				Exit();
 			}
