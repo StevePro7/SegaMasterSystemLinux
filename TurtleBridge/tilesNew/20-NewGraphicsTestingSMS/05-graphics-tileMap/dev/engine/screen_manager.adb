@@ -1,7 +1,7 @@
 M:screen_manager
 F:G$engine_screen_manager_init$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_screen_manager_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lscreen_manager.engine_screen_manager_update$input$1_0$101({1}SC:U),R,0,0,[a]
+S:Lscreen_manager.engine_screen_manager_update$input$1_0$102({1}SC:U),R,0,0,[a]
 T:Fscreen_manager$tag_struct_jump_object[({0}S:S$num_jumps$0_0$0({2}SI:U),Z,0,0)({2}S:S$jump_high$0_0$0({2048}DA1024d,SI:U),Z,0,0)]
 T:Fscreen_manager$tag_struct_storage_object[({0}S:S$Magic$0_0$0({4}SL:U),Z,0,0)({4}S:S$num_jumps$0_0$0({2}SI:U),Z,0,0)({6}S:S$jump_high$0_0$0({1024}DA1024d,SC:U),Z,0,0)({1030}S:S$terminal$0_0$0({1}SC:U),Z,0,0)]
 S:G$global_jump_object$0_0$0({2050}STtag_struct_jump_object:S),E,0,0
@@ -46,6 +46,7 @@ S:G$engine_storage_manager_available$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_storage_manager_read$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_storage_manager_write$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_storage_manager_erase$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_tile_manager_maps$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_gfx4$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_gfx3$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_gfx2$0_0$0({2}DF,SV:S),C,0,0

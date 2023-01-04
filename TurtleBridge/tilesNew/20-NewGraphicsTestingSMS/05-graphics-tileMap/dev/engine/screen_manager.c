@@ -27,7 +27,9 @@ void engine_screen_manager_init()
 	//engine_font_manager_draw_data( 5678, 10, 3 );
 	//engine_font_manager_draw_data( 90, 10, 4 );
 	//engine_font_manager_draw_text( "!\"#$%^&*()?<>;:'<=>?", 5, 6 );
-	engine_font_manager_draw_char( '!', 18, 10 );
+	engine_font_manager_draw_char( '#', 18, 2 );
+
+	engine_tile_manager_maps( 128 );
 
 	//tmp = 1344;
 	//engine_tile_manager_gfx4( tmp, TMP_HGH );
