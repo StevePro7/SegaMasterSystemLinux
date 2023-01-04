@@ -10,10 +10,15 @@
 #include "tile_manager.h"
 #include "../devkit/_sms_manager.h"
 
+static unsigned int tmp;
 
 void engine_screen_manager_init()
 {
-	engine_font_manager_draw_text( "SCREEN MANAGER 123", 10, 0 );
+	engine_font_manager_draw_text( "SCREEN MANAGER", 10, 0 );
+	engine_font_manager_draw_char( 'X', 10, 11 );
+
+	tmp = 128;
+	engine_tile_manager_gfx4( tmp, 10 );
 }
 
 void engine_screen_manager_update()
