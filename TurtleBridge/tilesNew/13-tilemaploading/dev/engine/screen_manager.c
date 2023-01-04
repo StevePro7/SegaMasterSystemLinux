@@ -13,7 +13,7 @@
 
 void engine_screen_manager_init()
 {
-	
+	engine_font_manager_draw_text( "SCREEN MANAGER 123", 10, 0 );
 }
 
 void engine_screen_manager_update()

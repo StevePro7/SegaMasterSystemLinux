@@ -1,22 +1,34 @@
 ;!FILE screen_manager.asm
 XL3
-H 9 areas D global symbols
+H 9 areas 19 global symbols
 M screen_manager
 O -mz80
+S _engine_font_manager_draw_text Ref000000
 S .__.ABS. Def000000
-A _CODE size 2 flags 0 addr 0
+A _CODE size 23 flags 0 addr 0
+S Fscreen_manager$__str_0$0_0$0 Def00000F
 S _engine_screen_manager_init Def000000
-S G$engine_screen_manager_update$0$0 Def000001
-S XG$engine_screen_manager_init$0$0 Def000000
-S _engine_screen_manager_update Def000001
-S XG$engine_screen_manager_update$0$0 Def000001
-S A$screen_manager$60 Def000000
-S A$screen_manager$77 Def000001
-S C$screen_manager.c$14$0_0$87 Def000000
-S C$screen_manager.c$22$0_0$89 Def000001
-S C$screen_manager.c$17$0_0$87 Def000000
+S G$engine_screen_manager_update$0$0 Def000022
+S XG$engine_screen_manager_init$0$0 Def00000E
+S _engine_screen_manager_update Def000022
+S XG$engine_screen_manager_update$0$0 Def000022
+S A$screen_manager$60 Def000004
+S A$screen_manager$61 Def000005
+S A$screen_manager$62 Def000008
+S A$screen_manager$63 Def000009
+S A$screen_manager$73 Def00000E
+S A$screen_manager$64 Def00000C
+S A$screen_manager$65 Def00000D
+S A$screen_manager$57 Def000000
+S A$screen_manager$94 Def000022
+S A$screen_manager$58 Def000001
+S C$screen_manager.c$14$0_0$86 Def000000
+S A$screen_manager$59 Def000002
+S C$screen_manager.c$22$1_0$88 Def000022
+S C$screen_manager.c$16$1_0$86 Def000000
+S C$screen_manager.c$17$1_0$86 Def00000E
 S G$engine_screen_manager_init$0$0 Def000000
-S C$screen_manager.c$19$0_0$89 Def000001
+S C$screen_manager.c$19$1_0$88 Def000022
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -27,9 +39,17 @@ A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
-T 00 00 00 C9
+T 00 00 00 AF 57 1E 0A D5 21 0F 00 E5 CD 00 00 F1
+R 00 00 00 00 00 09 00 00 02 0D 00 00
+T 0D 00 00 F1 C9
 R 00 00 00 00
-T 01 00 00
+T 0F 00 00
 R 00 00 00 00
-T 01 00 00 C9
+T 0F 00 00 53 43 52 45 45 4E 20 4D 41 4E 41 47 45
+R 00 00 00 00
+T 1C 00 00 52 20 31 32 33 00
+R 00 00 00 00
+T 22 00 00
+R 00 00 00 00
+T 22 00 00 C9
 R 00 00 00 00
