@@ -61,7 +61,8 @@ void engine_level_manager_draw( unsigned int offset )
 //	engine_tile_manager_draw_empties( lo->level_draw_offset );
 	if( 0 != planesA )
 	{
-		engine_tile_manager_draw_columns( planesA, lo->level_draw_offset, heightA, columnA, false );
+		//engine_tile_manager_draw_columns( planesA, lo->level_draw_offset, heightA, columnA, false );
+		engine_tile_manager_draw_columns( planesA, lo->level_draw_offset, 8, columnA, false );
 	}
 	else
 	{

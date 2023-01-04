@@ -23,7 +23,8 @@ void engine_tile_manager_draw_columns( unsigned char tile_type, unsigned char x,
 	unsigned int val;
 	unsigned char row;
 
-	for( row = 0; row < to->tile_high; row++ )
+	//for( row = 0; row < to->tile_high; row++ )
+	for( row = 0; row < 14; row++ )
 	{
 		idx = to->tilemap_index + row * 2 * TILMAP_WIDE + col * 2;
 		val = tiles[ idx ];
