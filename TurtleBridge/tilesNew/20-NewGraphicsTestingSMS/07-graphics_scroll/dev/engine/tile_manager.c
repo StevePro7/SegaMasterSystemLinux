@@ -53,7 +53,7 @@ void engine_tile_manager_draw_empties( unsigned char x )
 	//}
 
 	row = 20;
-	devkit_SMS_setNextTileatXY( x, row - 14 ); devkit_SMS_setTile( ( val ) );
+//	devkit_SMS_setNextTileatXY( x, row - 14 ); devkit_SMS_setTile( ( val ) );
 	devkit_SMS_setNextTileatXY( x, row - 10 ); devkit_SMS_setTile( ( val ) );
 	devkit_SMS_setNextTileatXY( x, row - 9 ); devkit_SMS_setTile( ( val ) );
 	devkit_SMS_setNextTileatXY( x, row - 8 ); devkit_SMS_setTile( ( val ) );
