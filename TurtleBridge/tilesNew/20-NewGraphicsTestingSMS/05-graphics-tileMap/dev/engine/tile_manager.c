@@ -18,8 +18,8 @@ void engine_tile_manager_maps( unsigned int tmp )
 	x = 10;
 	y = 12;
 
-	devkit_SMS_loadTileMap( x, y, ( void * ) &tiles[ tmp ], 4 );
-	//devkit_SMS_loadTileMapArea( x, y, ( void * ) &tiles[ tmp ], 1, 14 );
+	//devkit_SMS_loadTileMap( x, y, ( void * ) &tiles[ tmp ], 4 );
+	devkit_SMS_loadTileMapArea( x, y, ( void * ) &tiles[ tmp ], 8, 1 );
 }
 
 void engine_tile_manager_gfx4( unsigned int tmp, unsigned char h )

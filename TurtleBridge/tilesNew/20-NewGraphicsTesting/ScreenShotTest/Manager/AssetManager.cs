@@ -30,6 +30,7 @@ namespace ScreenShotTest
 			//"wave_strip_02",
 			"font_tiles_00",
 			"font_tiles_01",
+			"section04_norm_64x64_side",
 		};
 
 		protected int[] heights =
@@ -50,8 +51,9 @@ namespace ScreenShotTest
 			//8,
 			64,
 			64,
+			64,
 		};
-
+			
 		public void LoadContent(ContentManager content)
 		{
 			var myEnumMemberCount = Enum.GetNames(typeof(AssetType)).Length;

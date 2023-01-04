@@ -21,6 +21,7 @@
 		//wave02 = 15,
 		font_tiles_00 = 15,
 		font_tiles_01 = 16,
+		tree_side = 17,
 	}
 
 }
