@@ -28,6 +28,8 @@ namespace ScreenShotTest
 			"titlescreenPlay",
 			//"wave_strip_01",
 			//"wave_strip_02",
+			"font_tiles_00",
+			"font_tiles_01",
 		};
 
 		protected int[] heights =
@@ -46,6 +48,8 @@ namespace ScreenShotTest
 			24,
 			//8,
 			//8,
+			64,
+			64,
 		};
 
 		public void LoadContent(ContentManager content)
