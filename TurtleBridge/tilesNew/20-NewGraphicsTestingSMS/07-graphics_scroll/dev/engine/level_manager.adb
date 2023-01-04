@@ -38,3 +38,4 @@ S:G$engine_tile_manager_turtle$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_sign$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_sky$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_sea$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_tile_manager_banner$0_0$0({2}DF,SV:S),C,0,0

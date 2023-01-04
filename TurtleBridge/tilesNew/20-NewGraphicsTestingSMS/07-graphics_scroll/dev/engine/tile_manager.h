@@ -30,5 +30,6 @@ void engine_tile_manager_sign();
 
 void engine_tile_manager_sky();
 void engine_tile_manager_sea();
+void engine_tile_manager_banner();
 
 #endif//_TILE_MANAGER_H_

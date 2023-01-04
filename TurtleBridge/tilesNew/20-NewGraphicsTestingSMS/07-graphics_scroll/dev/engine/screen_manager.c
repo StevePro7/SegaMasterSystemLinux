@@ -15,6 +15,7 @@ void engine_screen_manager_init()
 {
 	unsigned char idx;
 	unsigned char tile = tile_type_island;
+	//engine_tile_manager_banner();
 	engine_tile_manager_sky();
 	engine_tile_manager_sea();
 	engine_tile_manager_clouds();

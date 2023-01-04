@@ -49,7 +49,7 @@ bool engine_scroll_manager_update( unsigned char delta )
 	struct_scroll_object *so = &global_scroll_object;
 	//unsigned char temp;
 	bool newTile;
-	////const unsigned char delta = 1;
+	//const unsigned char delta = 1;
 
 	so->scroll -= delta;
 	so->scrollRight += delta;

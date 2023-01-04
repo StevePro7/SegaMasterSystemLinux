@@ -78,6 +78,21 @@ void engine_tile_manager_draw_empties( unsigned char x )
 	devkit_SMS_setTile( ( val ) );
 }
 
+void engine_tile_manager_banner()
+{
+	struct_tile_object *to = &global_tile_objects[ tile_type_banner ];
+	unsigned char row;
+
+	for( row = 0; row < 3; row++ )
+	{
+		// Underscore is now equivalent to white tile.
+		engine_font_manager_draw_text( "____", 0, row );
+		engine_font_manager_draw_text( "____", 28, row );
+	}
+
+	engine_tile_manager_gfx5( TILE_BANNER, 4, 0, to->tile_wide, to->tile_high );
+}
+
 void engine_tile_manager_draw( unsigned char tile_type )
 {
 	const unsigned char *tiles = bggame_tiles__tilemap__bin;
