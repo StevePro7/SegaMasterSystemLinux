@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.IO;
 
 namespace ScreenShotTest
 {
@@ -10,8 +11,9 @@ namespace ScreenShotTest
 
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
+		RenderTarget2D renderTarget;
 		Texture2D image;
-		int high;
+		int wide, high;
 
 		public AnGame()
 		{
@@ -32,13 +34,17 @@ namespace ScreenShotTest
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 
 			image = Content.Load<Texture2D>(file);
+			wide = 8;
 			high = image.Height;
 
-			graphics.PreferredBackBufferWidth = 8;
+			graphics.PreferredBackBufferWidth = wide;
 			graphics.PreferredBackBufferHeight = high;
 			graphics.ApplyChanges();
 
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
+			wide = pp.BackBufferWidth;
+			high = pp.BackBufferHeight;
+			renderTarget = new RenderTarget2D(GraphicsDevice, wide, high, false, SurfaceFormat.Color, DepthFormat.Depth24);
 		}
 
 		protected override void UnloadContent()
@@ -57,13 +63,39 @@ namespace ScreenShotTest
 
 		protected override void Draw(GameTime gameTime)
 		{
-			graphics.GraphicsDevice.Clear(Color.Black);
-			Draw(7);
+			int col;
+			string name;
+			Stream stream;
+			Texture2D resolvedTexture;
+
+			col = 2;
+			GraphicsDevice.SetRenderTarget(renderTarget);
+			GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.CornflowerBlue, 1, 0);
+			Draw(col);
 			base.Draw(gameTime);
+			GraphicsDevice.SetRenderTarget(null);
+			resolvedTexture = (Texture2D)renderTarget;
+			name = file + "_" + col.ToString().PadLeft(2, '0') + ".png";
+			stream = File.Create(name);
+			resolvedTexture.SaveAsPng(stream, wide, high);
+
+			col = 7;
+			GraphicsDevice.SetRenderTarget(renderTarget);
+			GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.CornflowerBlue, 1, 0);
+			Draw(col);
+			base.Draw(gameTime);
+			GraphicsDevice.SetRenderTarget(null);
+			resolvedTexture = (Texture2D)renderTarget;
+			name = file + "_" + col.ToString().PadLeft(2, '0') + ".png";
+			stream = File.Create(name);
+			resolvedTexture.SaveAsPng(stream, wide, high);
+
+			Exit();
 		}
 
 		private void Draw(int col)
 		{
+			graphics.GraphicsDevice.Clear(Color.Black);
 			spriteBatch.Begin();
 			spriteBatch.Draw(image, Vector2.Zero, new Rectangle(col * 8, 0,  8, image.Height), Color.White);
 			spriteBatch.End();
