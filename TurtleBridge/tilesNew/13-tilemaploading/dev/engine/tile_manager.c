@@ -5,6 +5,25 @@
 #include "../devkit/_sms_manager.h"
 #include "../content/gfx.h"
 
+
+void engine_tile_manager_maps( unsigned int tmp, unsigned char h )
+{
+	const unsigned char *tiles = bggame_tiles__tilemap__bin;
+	//unsigned int idx;
+	//unsigned int val;
+	//unsigned char row, col;
+
+	unsigned x, y;
+	unsigned w/*, h*/;
+	w = 16;
+	//h = 10;
+	x = 10;
+	y = 12;
+
+	//devkit_SMS_loadTileMap( x, y, ( void * ) &tiles[ tmp ], 4 );
+	devkit_SMS_loadTileMapArea( x, y, &tiles[ tmp ], 1, 16 );
+}
+
 void engine_tile_manager_gfx4( unsigned int tmp, unsigned char h )
 {
 	const unsigned char *tiles = bggame_tiles__tilemap__bin;
