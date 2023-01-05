@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace ScreenShotTest
 {
-	public class Output13a : Output, IOutput
+	public class Output13b : Output, IOutput
 	{
 		const int high = 112;
 
@@ -12,7 +12,7 @@ namespace ScreenShotTest
 			base.Ctor(assetManager);
 
 			assets.Add(AssetType.waves_block_112);
-			assets.Add(AssetType.turtleH);
+			assets.Add(AssetType.turtleF);
 
 			Wide = 32;
 			High = high;
