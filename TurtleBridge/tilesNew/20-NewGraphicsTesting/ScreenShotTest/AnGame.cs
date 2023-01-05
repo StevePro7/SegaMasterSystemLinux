@@ -36,7 +36,7 @@ namespace ScreenShotTest
 			IsMouseVisible = true;
 			base.Initialize();
 			save = false;
-			save = true;
+			//save = true;
 		}
 
 		protected override void LoadContent()

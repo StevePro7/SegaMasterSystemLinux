@@ -22,6 +22,16 @@
 		font_tiles_00 = 15,
 		font_tiles_01 = 16,
 		tree_side = 17,
+		wave_64 = 18,
+		wave_65 = 19,
+		wave_66 = 20,
+		wave_67 = 21,
+		wave_68 = 22,
+		wave_69 = 23,
+		wave_70 = 24,
+		wave_71 = 25,
+		wave_72 = 26,
+		wave_73 = 27,
 	}
 
 }
