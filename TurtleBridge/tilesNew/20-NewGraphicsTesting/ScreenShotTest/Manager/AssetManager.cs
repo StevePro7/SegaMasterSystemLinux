@@ -46,6 +46,10 @@ namespace ScreenShotTest
 			"DrawCol01_16",
 			"DrawCol02_16",
 			"DrawCol03_16",
+			"section02_mid01l",
+			"section02_mid01lr",
+			"section02_mid02l",
+			"section02_mid02r",
 		};
 
 		protected int[] heights =
@@ -69,6 +73,7 @@ namespace ScreenShotTest
 			64,
 			8, 8, 8, 8, 8, 8, 8, 8, 8, 8,
 			128, 128, 128, 128,
+			32, 32, 32, 32,
 		};
 			
 		public void LoadContent(ContentManager content)

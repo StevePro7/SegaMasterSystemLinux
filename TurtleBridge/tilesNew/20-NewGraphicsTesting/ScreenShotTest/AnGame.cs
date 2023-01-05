@@ -7,7 +7,7 @@ namespace ScreenShotTest
 {
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		const string name = "waves_block_32x128";
+		const string name = "section02_hybrid01";
 
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
@@ -20,7 +20,7 @@ namespace ScreenShotTest
 
 		public AnGame()
 		{
-			output = new Output10b();
+			output = new Output11a();
 
 			assetManager = new AssetManager();
 			graphics = new GraphicsDeviceManager(this);

@@ -36,6 +36,10 @@
 		DrawCol01_16 = 29,
 		DrawCol02_16 = 30,
 		DrawCol03_16 = 31,
+		bridge_mid01l = 32,
+		bridge_mid01r = 33,
+		bridge_mid02l = 34,
+		bridge_mid02r = 35,
 	}
 
 }
