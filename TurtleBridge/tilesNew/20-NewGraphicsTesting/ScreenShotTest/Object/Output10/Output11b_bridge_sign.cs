@@ -46,10 +46,10 @@ namespace ScreenShotTest
 			pos = new Vector2(0, y);
 			spriteBatch.Draw(image, pos, Color.White);
 
-			asset = assets[2];
+			asset = assets[3];
 			image = assetManager.Images[(int)asset];
 			y -= image.Height;
-			pos = new Vector2(8, y);
+			pos = new Vector2(0, y);
 			spriteBatch.Draw(image, pos, Color.White);
 		}
 
