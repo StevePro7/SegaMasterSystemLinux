@@ -7,7 +7,7 @@ namespace ScreenShotTest
 {
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		string file = "section03_norm_64x32";
+		string file = "wave_strip";
 
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
@@ -67,7 +67,7 @@ namespace ScreenShotTest
 		{
 			if (save)
 			{
-				int col;
+				int col, val;
 				string name;
 				Stream stream;
 				Texture2D resolvedTexture;
@@ -81,7 +81,8 @@ namespace ScreenShotTest
 					base.Draw(gameTime);
 					GraphicsDevice.SetRenderTarget(null);
 					resolvedTexture = (Texture2D)renderTarget;
-					name = file + "_" + col.ToString().PadLeft(2, '0') + ".png";
+					val = col + 64;
+					name = file + "_" + val.ToString().PadLeft(2, '0') + ".png";
 					stream = File.Create(name);
 					resolvedTexture.SaveAsPng(stream, wide, high);
 				}
