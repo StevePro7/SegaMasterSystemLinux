@@ -32,6 +32,10 @@
 		wave_71 = 25,
 		wave_72 = 26,
 		wave_73 = 27,
+		DrawCol00_16 = 28,
+		DrawCol01_16 = 29,
+		DrawCol02_16 = 30,
+		DrawCol03_16 = 31,
 	}
 
 }

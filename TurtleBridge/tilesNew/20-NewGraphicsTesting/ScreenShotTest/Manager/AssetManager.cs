@@ -42,6 +42,10 @@ namespace ScreenShotTest
 			"wave_strip_71",
 			"wave_strip_72",
 			"wave_strip_73",
+			"DrawCol00_16",
+			"DrawCol01_16",
+			"DrawCol02_16",
+			"DrawCol03_16",
 		};
 
 		protected int[] heights =
@@ -64,6 +68,7 @@ namespace ScreenShotTest
 			64,
 			64,
 			8, 8, 8, 8, 8, 8, 8, 8, 8, 8,
+			128, 128, 128, 128,
 		};
 			
 		public void LoadContent(ContentManager content)
