@@ -20,7 +20,7 @@ namespace ScreenShotTest
 
 		public AnGame()
 		{
-			output = new Output12a();
+			output = new Output13a();
 
 			assetManager = new AssetManager();
 			graphics = new GraphicsDeviceManager(this);
