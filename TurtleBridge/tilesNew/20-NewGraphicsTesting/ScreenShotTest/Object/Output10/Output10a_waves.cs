@@ -21,16 +21,44 @@ namespace ScreenShotTest
 			assets.Add(AssetType.wave_71);
 			assets.Add(AssetType.wave_67);
 			assets.Add(AssetType.wave_72);
+			assets.Add(AssetType.wave_68);
+			assets.Add(AssetType.wave_73);
 
 			Wide = 8;
-			High = 14 * 8;
+			High = 16 * 8;
 		}
 
 		public void Draw(SpriteBatch spriteBatch)
 		{
 			//DrawCol00_14(spriteBatch);
 			//DrawCol01_16(spriteBatch);
-			DrawCol02_16(spriteBatch);
+			//DrawCol02_16(spriteBatch);
+			DrawCol03_16(spriteBatch);
+		}
+
+		private void DrawCol03_16(SpriteBatch spriteBatch)
+		{
+			var asset = assets[0];
+			var image = assetManager.Images[(int)asset];
+			var pos = Vector2.Zero;
+			for (int row = 0; row < high - 1; row++)
+			{
+				spriteBatch.Draw(image, pos, Color.White);
+				pos.Y += 8;
+			}
+
+			asset = assets[6];
+			image = assetManager.Images[(int)asset];
+			spriteBatch.Draw(image, pos, Color.White);
+			pos.Y += 8;
+			asset = assets[7];
+			image = assetManager.Images[(int)asset];
+			spriteBatch.Draw(image, pos, Color.White);
+			pos.Y += 8;
+			asset = assets[2];
+			image = assetManager.Images[(int)asset];
+			spriteBatch.Draw(image, pos, Color.White);
+			pos.Y += 8;
 		}
 
 		private void DrawCol02_16(SpriteBatch spriteBatch)
