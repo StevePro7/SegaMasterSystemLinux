@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace ScreenShotTest
 {
-	public class Output11a : Output, IOutput
+	public class Output11b : Output, IOutput
 	{
 		const int high = 112;
 
@@ -41,7 +41,7 @@ namespace ScreenShotTest
 				}
 			}
 
-			asset = assets[5];
+			asset = assets[4];
 			image = assetManager.Images[(int)asset];
 			int y = High - image.Height;
 			pos = new Vector2(0, y);

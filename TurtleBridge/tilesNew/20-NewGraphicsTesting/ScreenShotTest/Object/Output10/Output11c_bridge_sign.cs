@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace ScreenShotTest
 {
-	public class Output11b : Output, IOutput
+	public class Output11c : Output, IOutput
 	{
 		const int high = 112;
 
