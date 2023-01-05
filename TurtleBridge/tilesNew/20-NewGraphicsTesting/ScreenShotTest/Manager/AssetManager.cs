@@ -32,7 +32,6 @@ namespace ScreenShotTest
 			"font_tiles_00",
 			"font_tiles_01",
 			"section04_norm_64x64_side",
-
 			"wave_strip_64",
 			"wave_strip_65",
 			"wave_strip_66",
@@ -51,6 +50,8 @@ namespace ScreenShotTest
 			"section02_mid01lr",
 			"section02_mid02l",
 			"section02_mid02r",
+			"waves_block_32x112",
+			"waves_block_32x128",
 		};
 
 		protected int[] heights =
@@ -75,6 +76,7 @@ namespace ScreenShotTest
 			8, 8, 8, 8, 8, 8, 8, 8, 8, 8,
 			128, 128, 128, 128,
 			32, 32, 32, 32,
+			112, 128
 		};
 			
 		public void LoadContent(ContentManager content)

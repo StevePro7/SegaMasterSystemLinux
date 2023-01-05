@@ -40,6 +40,8 @@
 		bridge_mid01r = 33,
 		bridge_mid02l = 34,
 		bridge_mid02r = 35,
+		waves_block_112 = 36,
+		waves_block_128 = 37,
 	}
 
 }

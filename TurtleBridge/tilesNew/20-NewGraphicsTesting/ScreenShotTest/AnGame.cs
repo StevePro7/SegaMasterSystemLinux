@@ -7,7 +7,7 @@ namespace ScreenShotTest
 {
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		const string name = "section03_norm_64x32_tree";
+		const string name = "hover_turtleAA00_32x24_00";
 
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
