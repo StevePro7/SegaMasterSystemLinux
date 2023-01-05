@@ -22,7 +22,7 @@
 		font_tiles_00 = 15,
 		font_tiles_01 = 16,
 		tree_side = 17,
-		wave_64 = 18,
+		skys_64 = 18,
 		wave_65 = 19,
 		wave_66 = 20,
 		wave_67 = 21,

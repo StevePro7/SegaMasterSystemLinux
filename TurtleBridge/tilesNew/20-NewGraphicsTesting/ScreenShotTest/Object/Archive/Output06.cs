@@ -9,7 +9,7 @@ namespace ScreenShotTest
 		{
 			base.Ctor(assetManager);
 
-			assets.Add(AssetType.wave_64);
+			assets.Add(AssetType.skys_64);
 			assets.Add(AssetType.wave_65);
 			assets.Add(AssetType.wave_66);
 			assets.Add(AssetType.wave_67);
@@ -28,7 +28,7 @@ namespace ScreenShotTest
 		{
 			int x = 0;
 			int y = 0;
-			int idx = 1;
+			int idx = 0;
 			var asset = assets[idx];
 			var image = assetManager.Images[(int)asset];
 			var pos = new Vector2(x, y);

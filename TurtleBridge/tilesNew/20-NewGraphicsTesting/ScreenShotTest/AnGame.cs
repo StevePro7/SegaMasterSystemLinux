@@ -7,6 +7,8 @@ namespace ScreenShotTest
 {
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
+		const string name = "DrawCol01_16";
+
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
 		RenderTarget2D renderTarget;
@@ -18,7 +20,7 @@ namespace ScreenShotTest
 
 		public AnGame()
 		{
-			output = new Output06();
+			output = new Output10();
 
 			assetManager = new AssetManager();
 			graphics = new GraphicsDeviceManager(this);
@@ -36,7 +38,7 @@ namespace ScreenShotTest
 			IsMouseVisible = true;
 			base.Initialize();
 			save = false;
-			//save = true;
+			save = true;
 		}
 
 		protected override void LoadContent()
@@ -77,10 +79,10 @@ namespace ScreenShotTest
 
 				GraphicsDevice.SetRenderTarget(null);
 				Texture2D resolvedTexture = (Texture2D)renderTarget;
-				string name = output.GetType().Name;
+				//string name = output.GetType().Name;
 				Stream stream = File.Create(name + ".png");
 				resolvedTexture.SaveAsPng(stream, wide, high);
-				output.Save(name);
+				//output.Save(name);
 				Exit();
 			}
 			else
