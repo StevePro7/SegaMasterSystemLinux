@@ -33,7 +33,7 @@ namespace ScreenShotTest
 
 			asset = assets[1];
 			image = assetManager.Images[(int)asset];
-			y = High - image.Height - 16;
+			y = High - image.Height - 64;
 			pos = new Vector2(0, y);
 			spriteBatch.Draw(image, pos, Color.White);
 		}
