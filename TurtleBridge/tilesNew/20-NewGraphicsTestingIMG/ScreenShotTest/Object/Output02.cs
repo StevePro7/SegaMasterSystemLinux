@@ -10,26 +10,34 @@ namespace ScreenShotTest
 			base.Ctor(assetManager);
 
 			assets.Add(AssetType.font_tiles_yellow);
-			assets.Add(AssetType.section03_norm_64x32);
-			assets.Add(AssetType.section04_norm_64x80);
-			assets.Add(AssetType.section03_norm_64x32_tree);
+			assets.Add(AssetType.flying_turtle01_32x24_00);
+			assets.Add(AssetType.flying_turtle01_32x24_01);
+			assets.Add(AssetType.flying_turtle01_32x24_02);
+			assets.Add(AssetType.flying_turtle01_32x24_03);
 
 			Wide = 128;
-			High = 32 + 112 + 80 + 112;
+			High = 32 + 112;
 		}
 
 		public void Draw(SpriteBatch spriteBatch)
 		{
+			AssetType asset;
 			Texture2D image;
 			Vector2 pos;
-			int y = 0;
-			foreach (AssetType asset in assets)
-			{
-				image = assetManager.Images[(int)asset];
+			int i, y = 0;
 
-				pos = new Vector2(0, y);
+			asset = assets[0];
+			image = assetManager.Images[(int)asset];
+			pos = new Vector2(0, y);
+			spriteBatch.Draw(image, pos, Color.White);
+			y += image.Height;
+
+			for (i = 0; i < 1; i++)
+			{
+				asset = assets[i + 1];
+				image = assetManager.Images[(int)asset];
+				pos = new Vector2(i * 32, y);
 				spriteBatch.Draw(image, pos, Color.White);
-				y += image.Height;
 			}
 			
 		}
