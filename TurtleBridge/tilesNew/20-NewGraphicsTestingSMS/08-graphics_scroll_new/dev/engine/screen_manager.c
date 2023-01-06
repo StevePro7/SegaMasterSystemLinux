@@ -29,7 +29,7 @@ void engine_screen_manager_init()
 	}
 
 	//TODO
-	engine_music_manager_play();
+	//engine_music_manager_play();
 }
 
 void engine_screen_manager_update()
@@ -49,16 +49,21 @@ void engine_screen_manager_update()
 	if( input )
 	{
 		//engine_font_manager_draw_text( "RIGHT", 4, 1 );
-		delta = 8;
+		delta = 4;
 	}
 	input = engine_input_manager_move_fire1();
 	if( input )
 	{
-		//delta *= 4;
+		delta *= 2;
 	}
 	if( 0 == delta )
 	{
-		engine_scroll_manager_update( 0 );
+		//engine_scroll_manager_update( 0 );
+		newTile = engine_scroll_manager_update( 1 );
+		if( newTile )
+		{
+			engine_level_manager_draw( so->offset_right );
+		}
 	}
 	else
 	{
