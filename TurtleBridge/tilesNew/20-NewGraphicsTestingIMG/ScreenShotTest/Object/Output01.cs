@@ -11,13 +11,15 @@ namespace ScreenShotTest
 
 			assets.Add(AssetType.font_tiles_yellow);
 			assets.Add(AssetType.section03_norm_64x32);
+			assets.Add(AssetType.section04_norm_64x80);
+			assets.Add(AssetType.section03_norm_64x32_tree);
+
 			Wide = 128;
-			High = 32 + 112;
+			High = 32 + 112 + 80 + 112;
 		}
 
 		public void Draw(SpriteBatch spriteBatch)
 		{
-			//AssetType asset;
 			Texture2D image;
 			Vector2 pos;
 			int y = 0;
