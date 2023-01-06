@@ -32,7 +32,7 @@ namespace ScreenShotTest
 			spriteBatch.Draw(image, pos, Color.White);
 			y += image.Height;
 
-			for (i = 0; i < 1; i++)
+			for (i = 0; i < 4; i++)
 			{
 				asset = assets[i + 1];
 				image = assetManager.Images[(int)asset];
