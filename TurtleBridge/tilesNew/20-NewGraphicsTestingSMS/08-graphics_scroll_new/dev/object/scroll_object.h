@@ -8,7 +8,7 @@ typedef struct tag_struct_scroll_object
 	//unsigned char scroll_right;
 	//unsigned char scrollRightDivided8;
 
-	unsigned char scroll;
+	//unsigned char scroll;
 	unsigned char scrollRight;
 	//unsigned int offset_left;
 	unsigned int offset_right;

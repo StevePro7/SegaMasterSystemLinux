@@ -38,11 +38,18 @@ bool engine_scroll_manager_update()
 
 	so->scroll -= delta;
 	so->scrollRight += delta;
+	// IMPORTANT - performance improvement - would like to test to triple check but looks good at the mo'	09-Jan-2023
+	if( so->scrollRight >= 8 )
+	{
+		so->scrollRight = 0;
+	}
 
 	// scroll pixel by pixel
 	devkit_SMS_setBGScrollX( so->scroll );
-	newTile = so->scrollRight % 8 == delta;
 
+	// IMPORTANT - performance improvement - would like to test to triple check but looks good at the mo'	09-Jan-2023
+	newTile = so->scrollRight == delta;
+	//newTile = so->scrollRight % 8 == delta;
 	if( newTile )
 	{
 		so->offset_right++;

@@ -21,16 +21,17 @@ void engine_scroll_manager_init()
 	//so->scroll_right = 0;
 	//so->scrollRightDivided8 = 0;
 
-	so->scroll = 0;
+	//so->scroll = 0;
 	so->scrollRight = 0;
 	//so->offset_left = 0;
 	so->offset_right = 31;
 
-	devkit_SMS_setBGScrollX( so->scroll );
+	devkit_SMS_setBGScrollX( 0 );
+	//devkit_SMS_setBGScrollX( so->scroll );
 	//print( false );
 
 	// NEW
-	so->scroll_x[ 0 ] = 0; 
+	so->scroll_x[ 0 ] = 0;
 	so->scroll_x[ 1 ] = 0;
 	so->scroll_x[ 2 ] = 0;
 	so->scroll_x[ 3 ] = 0;
@@ -51,13 +52,20 @@ bool engine_scroll_manager_update( unsigned char delta )
 	bool newTile;
 	//const unsigned char delta = 1;
 
-	so->scroll -= delta;
+	//so->scroll -= delta;
 	so->scrollRight += delta;
+	// IMPORTANT - performance improvement - would like to test to triple check but looks good at the mo'	09-Jan-2023
+	if( so->scrollRight >= 8 )
+	{
+		so->scrollRight = 0;
+	}
 
 	newTile = false;
 	if( delta > 0 )
 	{
-		newTile = so->scrollRight % 8 == delta;
+		// IMPORTANT - performance improvement - would like to test to triple check but looks good at the mo'	09-Jan-2023
+		newTile = so->scrollRight == delta;
+		//newTile = so->scrollRight % 8 == delta;
 		if( newTile )
 		{
 			so->offset_right++;

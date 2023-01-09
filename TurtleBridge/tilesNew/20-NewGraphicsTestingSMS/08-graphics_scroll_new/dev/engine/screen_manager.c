@@ -114,7 +114,7 @@ void engine_screen_manager_update()
 static void print( bool newTile )
 {
 	struct_scroll_object *so = &global_scroll_object;
-	engine_font_manager_draw_data( so->scroll, 25, 0 );
+	//engine_font_manager_draw_data( so->scroll, 25, 0 );
 	engine_font_manager_draw_data( so->scrollRight, 25, 1 );
 	//engine_font_manager_draw_data( so->scrollRightDivided8, 25, 2 );
 

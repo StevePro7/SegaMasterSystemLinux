@@ -2,6 +2,10 @@
 Sega Master System code repositories for Linux
 new code added daily...!!
 
+09-01-2023
+mod replacement
+https://embeddedgurus.com/stack-overflow/2011/02/efficient-c-tip-13-use-the-modulus-operator-with-caution
+
 01-01-2023
 git error index uses extension
 01-01-2023
