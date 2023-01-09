@@ -28,7 +28,7 @@ void engine_level_manager_draw( unsigned int offset )
 	struct_level_object *lo = &global_level_object;
 	unsigned int index;
 	unsigned char planesA, heightA, columnA;
-
+	bool flip;
 	lo->level_cols_offset = offset;
 	lo->level_draw_offset = offset % SCREEN_WIDE;
 
@@ -37,17 +37,23 @@ void engine_level_manager_draw( unsigned int offset )
 	//engine_font_manager_draw_data( lo->level_draw_offset, 20, 1 );
 
 	planesA = level_planesA[ index ];
-	heightA = level_heightA[ index ];
+	heightA = 16;// level_heightA[ index ];
 	columnA = level_columnA[ index ];
 	//type = level_tile_type[ index ];
 	//cols = level_tile_cols[ index ];
 	//engine_tile_manager_draw_columns( tile_type_island, column, 18, column, false );
 	//engine_tile_manager_draw_columns( type, cols, 12, cols, false );
 
+	flip = false;
+	if( columnA >= 128 )
+	{
+		flip = true;
+		columnA -= 128;
+	}
 	engine_tile_manager_draw_empties( lo->level_draw_offset );
 	if( 0 != planesA )
 	{
-		engine_tile_manager_draw_columns( planesA, lo->level_draw_offset, heightA, columnA, false );
+		engine_tile_manager_draw_columns( planesA, lo->level_draw_offset, heightA, columnA, flip );
 	}
 	else
 	{
