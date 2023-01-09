@@ -9,6 +9,7 @@ namespace ScreenShotTest
 		private string[] names =
 		{
 			"font_tiles_yellow",
+			"wave_strip",
 			"waves_block_32x112",
 
 			"section03_norm_64x32",

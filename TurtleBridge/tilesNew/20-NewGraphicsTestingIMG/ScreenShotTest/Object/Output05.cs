@@ -10,6 +10,7 @@ namespace ScreenShotTest
 			base.Ctor(assetManager);
 
 			assets.Add(AssetType.font_tiles_yellow);
+			assets.Add(AssetType.wave_strip);
 
 			Wide = 192;
 			High = 24;
@@ -31,6 +32,11 @@ namespace ScreenShotTest
 			y = 16;
 			//spriteBatch.Draw(image, new Vector2(0, y), new Rectangle(0, 24, 128, 8), Color.White);
 			spriteBatch.Draw(image, new Vector2(0, y), new Rectangle(0, 24, 128 - 40, 8), Color.White);
+
+			// waves strip
+			asset = assets[1];
+			image = assetManager.Images[(int)asset];
+			spriteBatch.Draw(image, new Vector2(128, y), Color.White);
 		}
 
 	}

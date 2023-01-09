@@ -7,7 +7,7 @@ namespace ScreenShotTest
 {
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		const string name = "font_tiles_yellow_192x24_02";
+		const string name = "font_tiles_yellow_192x24_04";
 
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
