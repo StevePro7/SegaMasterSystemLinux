@@ -7,7 +7,7 @@ namespace ScreenShotTest
 {
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		const string name = "play_screen_21";
+		const string name = "clouds";
 
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
@@ -20,7 +20,7 @@ namespace ScreenShotTest
 
 		public AnGame()
 		{
-			output = new Output06();
+			output = new Output07();
 
 			assetManager = new AssetManager();
 			graphics = new GraphicsDeviceManager(this);

@@ -29,6 +29,9 @@ namespace ScreenShotTest
 			"section03_open_64x32_03",
 
 			"section02_left_64x48",
+
+			"cloud01_32x24",
+			"cloud02_48x24",
 		};
 
 		protected int[] heights = { 0 };

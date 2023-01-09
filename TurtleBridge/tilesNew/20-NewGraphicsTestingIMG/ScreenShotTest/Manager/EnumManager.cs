@@ -23,6 +23,9 @@
 		section03_open_64x32_03 = 14,
 
 		section02_left_64x48 = 15,
+
+		cloud01_32x24 = 16,
+		cloud02_48x24 = 17,
 	}
 
 }
