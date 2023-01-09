@@ -7,7 +7,7 @@ namespace ScreenShotTest
 {
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		const string name = "flying_turtle01_32x24_05";
+		const string name = "section03_open_64x32";
 
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
@@ -20,7 +20,7 @@ namespace ScreenShotTest
 
 		public AnGame()
 		{
-			output = new Output13b();
+			output = new Output14();
 
 			assetManager = new AssetManager();
 			graphics = new GraphicsDeviceManager(this);

@@ -52,6 +52,14 @@ namespace ScreenShotTest
 			"section02_mid02r",
 			"waves_block_32x112",
 			"waves_block_32x128",
+			"section03_norm_64x32_01",
+			"section03_norm_64x32_02",
+			"section03_norm_64x32_03",
+			"section03_norm_64x32_04",
+			"section03_norm_64x32_05",
+			"section03_norm_64x32_06",
+			"section03_norm_64x32_07",
+			"section03_norm_64x32_08",
 		};
 
 		protected int[] heights =
@@ -76,7 +84,8 @@ namespace ScreenShotTest
 			8, 8, 8, 8, 8, 8, 8, 8, 8, 8,
 			128, 128, 128, 128,
 			32, 32, 32, 32,
-			112, 128
+			112, 128,
+			32, 32, 32, 32, 32, 32, 32, 32,
 		};
 			
 		public void LoadContent(ContentManager content)

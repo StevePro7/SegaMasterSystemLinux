@@ -42,6 +42,14 @@
 		bridge_mid02r = 35,
 		waves_block_112 = 36,
 		waves_block_128 = 37,
+		section03_norm_64x32_01 = 38,
+		section03_norm_64x32_02 = 39,
+		section03_norm_64x32_03 = 40,
+		section03_norm_64x32_04 = 41,
+		section03_norm_64x32_05 = 42,
+		section03_norm_64x32_06 = 43,
+		section03_norm_64x32_07 = 44,
+		section03_norm_64x32_08 = 45,
 	}
 
 }
