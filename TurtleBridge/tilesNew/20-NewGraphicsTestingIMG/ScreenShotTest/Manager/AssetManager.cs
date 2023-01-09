@@ -9,6 +9,8 @@ namespace ScreenShotTest
 		private string[] names =
 		{
 			"font_tiles_yellow",
+			"waves_block_32x112",
+
 			"section03_norm_64x32",
 			"section04_norm_64x80",
 			"section03_norm_64x32_tree",
@@ -21,6 +23,8 @@ namespace ScreenShotTest
 			"section03_open_64x32_01",
 			"section03_open_64x32_02",
 			"section03_open_64x32_03",
+
+			"section02_left_64x48",
 		};
 
 		protected int[] heights = { 0 };
