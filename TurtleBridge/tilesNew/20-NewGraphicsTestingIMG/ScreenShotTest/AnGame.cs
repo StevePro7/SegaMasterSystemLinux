@@ -20,7 +20,7 @@ namespace ScreenShotTest
 
 		public AnGame()
 		{
-			output = new Output05();
+			output = new Output06();
 
 			assetManager = new AssetManager();
 			graphics = new GraphicsDeviceManager(this);
@@ -38,7 +38,7 @@ namespace ScreenShotTest
 			IsMouseVisible = true;
 			base.Initialize();
 			save = false;
-			save = true;
+			//save = true;
 		}
 
 		protected override void LoadContent()

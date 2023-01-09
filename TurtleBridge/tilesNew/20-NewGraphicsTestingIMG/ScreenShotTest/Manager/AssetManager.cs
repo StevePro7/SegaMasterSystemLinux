@@ -16,6 +16,9 @@ namespace ScreenShotTest
 			"section04_norm_64x80",
 			"section03_norm_64x32_tree",
 
+			"hover_turtleAA00_32x24_00",
+			"hover_turtleAA00_32x24_01",
+
 			"flying_turtle01_32x24_00",
 			"flying_turtle01_32x24_01",
 			"flying_turtle01_32x24_02",
