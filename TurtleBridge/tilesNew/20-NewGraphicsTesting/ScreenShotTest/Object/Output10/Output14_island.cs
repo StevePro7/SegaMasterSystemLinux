@@ -46,14 +46,25 @@ namespace ScreenShotTest
 			//Draw(spriteBatch, 3, 6 * 8, y);
 			//Draw(spriteBatch, 4, 7 * 8, y);
 
-			Draw(spriteBatch, 3, 0 * 8, y);
-			Draw(spriteBatch, 4, 1 * 8, y);
-			Draw(spriteBatch, 5, 2 * 8, y);
-			Draw(spriteBatch, 6, 3 * 8, y);
-			Draw(spriteBatch, 3, 4 * 8, y);
-			Draw(spriteBatch, 4, 5 * 8, y);
-			Draw(spriteBatch, 5, 6 * 8, y);
-			Draw(spriteBatch, 6, 7 * 8, y);
+			Draw(spriteBatch, 2, 0 * 8, y);
+			Draw(spriteBatch, 3, 1 * 8, y);
+			Draw(spriteBatch, 4, 2 * 8, y);
+			Draw(spriteBatch, 5, 3 * 8, y);
+			Draw(spriteBatch, 2, 4 * 8, y);
+			Draw(spriteBatch, 3, 5 * 8, y);
+			Draw(spriteBatch, 4, 6 * 8, y);
+			Draw(spriteBatch, 5, 7 * 8, y);
+
+			//Draw(spriteBatch, 3, 0 * 8, y);
+			//Draw(spriteBatch, 4, 1 * 8, y);
+			//Draw(spriteBatch, 5, 2 * 8, y);
+			//Draw(spriteBatch, 6, 3 * 8, y);
+			//Draw(spriteBatch, 3, 4 * 8, y);
+			//Draw(spriteBatch, 4, 5 * 8, y);
+			//Draw(spriteBatch, 5, 6 * 8, y);
+			//Draw(spriteBatch, 6, 7 * 8, y);
+
+
 
 			//asset = assets[1];
 			//image = assetManager.Images[(int)asset];
