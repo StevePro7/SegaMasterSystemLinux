@@ -3,8 +3,10 @@
 #include "../devkit/_sms_manager.h"
 //#include "../content/gfx.h"
 #include "../banks/bank2.h"
+#include "../banks/bank3.h"
 
-#define SPLASH_TILES	128
+#define BGGAME_TILES	0
+//#define SPLASH_TILES	128
 
 void engine_content_manager_load_bgtiles()
 {
@@ -21,8 +23,8 @@ void engine_content_manager_load_sprites()
 
 void engine_content_manager_splash()
 {
-	devkit_SMS_mapROMBank( splash__tiles__psgcompr_bank );
-	devkit_SMS_loadPSGaidencompressedTiles( splash__tiles__psgcompr, SPLASH_TILES );
-	devkit_SMS_loadSTMcompressedTileMap( 0, 0, ( void * ) splash__tilemap__stmcompr );
-	devkit_SMS_loadBGPalette( ( void * ) splash__palette__bin );
+	devkit_SMS_mapROMBank( splash_tiles__tiles__psgcompr_bank );
+	devkit_SMS_loadPSGaidencompressedTiles( splash_tiles__tiles__psgcompr, BGGAME_TILES );
+	//devkit_SMS_loadSTMcompressedTileMap( 0, 0, ( void * ) splash_til__tilemap__stmcompr );
+	devkit_SMS_loadBGPalette( ( void * ) splash_tiles__palette__bin );
 }

@@ -6,9 +6,8 @@ cd banks
 cd bank2
 
 :: Tiles
+"C:/SEGA/bmp2tile043/bmp2tile.exe" raw/bggame_tiles.png -savetiles "bggame_tiles (tiles).psgcompr" -removedupes -nomirror -planar -tileoffset 0 -savetilemap "bggame_tiles (tilemap).bin" -savepalette "bggame_tiles (palette).bin" -fullpalette -exit
 "C:/SEGA/bmp2tile043/bmp2tile.exe" raw/splash_tiles.png -savetiles "splash_tiles (tiles).psgcompr" -removedupes -nomirror -planar -tileoffset 0 -savetilemap "splash_tiles (tilemap).bin" -savepalette "splash_tiles (palette).bin" -fullpalette -exit
-:::"C:/SEGA/bmp2tile043/bmp2tile.exe" raw/titles_tiles.png -savetiles "titles_tiles (tiles).psgcompr" -removedupes -nomirror -planar -tileoffset 0 -savetilemap "titles_tiles (tilemap).bin" -savepalette "titles_tiles (palette).bin" -fullpalette -exit
-::"C:/SEGA/bmp2tile043/bmp2tile.exe" raw/bggame_tiles.png -savetiles "bggame_tiles (tiles).psgcompr" -removedupes -nomirror -planar -tileoffset 0 -savetilemap "bggame_tiles (tilemap).bin" -savepalette "bggame_tiles (palette).bin" -fullpalette -exit
 
 cd ..
 folder2c bank2 bank2 2

@@ -1,63 +1,50 @@
 ;!FILE content_manager.asm
 XL3
-H 9 areas 37 global symbols
+H 9 areas 2A global symbols
 M content_manager
 O -mz80
-S _splash__tilemap__stmcompr Ref000000
-S _devkit_SMS_loadSTMcompressedTileMap Ref000000
-S _splash__palette__bin Ref000000
+S _splash_tiles__palette__bin Ref000000
 S _devkit_SMS_loadBGPalette Ref000000
 S _devkit_SMS_loadPSGaidencompressedTiles Ref000000
 S .__.ABS. Def000000
-S _splash__tiles__psgcompr Ref000000
+S _splash_tiles__tiles__psgcompr Ref000000
 S _devkit_SMS_mapROMBank Ref000000
-A _CODE size 2D flags 0 addr 0
+A _CODE size 1F flags 0 addr 0
 S G$engine_content_manager_load_sprites$0$0 Def000001
 S G$engine_content_manager_splash$0$0 Def000002
-S A$content_manager$120 Def000020
+S A$content_manager$111 Def000016
+S A$content_manager$102 Def00000A
 S _engine_content_manager_load_sprites Def000001
-S A$content_manager$121 Def000023
-S A$content_manager$112 Def000016
-S A$content_manager$103 Def00000A
-S A$content_manager$113 Def000019
-S A$content_manager$104 Def00000D
+S A$content_manager$112 Def000019
+S A$content_manager$103 Def00000D
+S A$content_manager$122 Def00001E
+S A$content_manager$113 Def00001A
+S A$content_manager$104 Def00000E
 S _engine_content_manager_splash Def000002
-S A$content_manager$114 Def00001A
-S A$content_manager$105 Def00000E
-S A$content_manager$115 Def00001B
-S A$content_manager$106 Def000011
-S A$content_manager$125 Def000024
-S A$content_manager$116 Def00001C
-S A$content_manager$107 Def000012
-S A$content_manager$126 Def000027
-S A$content_manager$117 Def00001D
-S A$content_manager$108 Def000015
-S A$content_manager$136 Def00002C
-S A$content_manager$127 Def000028
-S A$content_manager$118 Def00001E
-S A$content_manager$128 Def00002B
-S A$content_manager$119 Def00001F
+S A$content_manager$114 Def00001D
+S A$content_manager$105 Def000011
+S A$content_manager$106 Def000012
+S A$content_manager$107 Def000015
 S XG$engine_content_manager_load_sprites$0$0 Def000001
-S XG$engine_content_manager_splash$0$0 Def00002C
+S XG$engine_content_manager_splash$0$0 Def00001E
+S C$content_manager.c$11$0_0$83 Def000000
 S G$engine_content_manager_load_bgtiles$0$0 Def000000
-S C$content_manager.c$20$0_0$85 Def000001
-S A$content_manager$82 Def000001
-S C$content_manager.c$14$0_0$83 Def000000
-S A$content_manager$65 Def000000
-S C$content_manager.c$22$0_0$86 Def000002
-S C$content_manager.c$15$0_0$85 Def000001
-S A$content_manager$95 Def000002
-S A$content_manager$96 Def000004
-S C$content_manager.c$24$1_0$86 Def000002
-S A$content_manager$97 Def000005
-S C$content_manager.c$25$1_0$86 Def00000A
-S A$content_manager$98 Def000006
-S C$content_manager.c$26$1_0$86 Def000016
-S A$content_manager$99 Def000009
-S C$content_manager.c$27$1_0$86 Def000024
-S C$content_manager.c$28$1_0$86 Def00002C
+S A$content_manager$81 Def000001
+S A$content_manager$64 Def000000
+S C$content_manager.c$22$0_0$85 Def000001
+S C$content_manager.c$30$1_0$86 Def00001E
+S C$content_manager.c$16$0_0$83 Def000000
+S A$content_manager$94 Def000002
+S A$content_manager$95 Def000004
+S C$content_manager.c$24$0_0$86 Def000002
+S A$content_manager$96 Def000005
+S C$content_manager.c$17$0_0$85 Def000001
+S A$content_manager$97 Def000006
+S A$content_manager$98 Def000009
+S C$content_manager.c$26$1_0$86 Def000002
+S C$content_manager.c$27$1_0$86 Def00000A
 S _engine_content_manager_load_bgtiles Def000000
-S C$content_manager.c$9$0_0$83 Def000000
+S C$content_manager.c$29$1_0$86 Def000016
 S XG$engine_content_manager_load_bgtiles$0$0 Def000000
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
@@ -77,11 +64,9 @@ T 01 00 00 C9
 R 00 00 00 00
 T 02 00 00
 R 00 00 00 00
-T 02 00 00 3E 02 F5 33 CD 00 00 33 21 80 00 E5 21
-R 00 00 00 00 02 08 07 00
-T 0F 00 00 00 00 E5 CD 00 00 F1 21 00 00 E3 AF F5
-R 00 00 00 00 02 03 06 00 02 07 04 00 02 0B 00 00
-T 1C 00 00 33 AF F5 33 CD 00 00 F1 21 00 00 E3 CD
-R 00 00 00 00 02 08 01 00 02 0C 02 00
-T 29 00 00 00 00 F1 C9
-R 00 00 00 00 02 03 03 00
+T 02 00 00 3E 02 F5 33 CD 00 00 33 21 00 00 E5 21
+R 00 00 00 00 02 08 05 00
+T 0F 00 00 00 00 E5 CD 00 00 F1 21 00 00 E3 CD
+R 00 00 00 00 02 03 04 00 02 07 02 00 02 0B 00 00
+T 1B 00 00 00 00 F1 C9
+R 00 00 00 00 02 03 01 00
