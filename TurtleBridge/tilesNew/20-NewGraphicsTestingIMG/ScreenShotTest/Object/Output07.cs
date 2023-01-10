@@ -13,7 +13,7 @@ namespace ScreenShotTest
 			assets.Add(AssetType.cloud01_32x24);
 			assets.Add(AssetType.cloud02_48x24);
 			
-			Wide = 128;
+			Wide = 192;
 			High = 24;
 		}
 
@@ -25,6 +25,8 @@ namespace ScreenShotTest
 			spriteBatch.Draw(image, new Vector2(32, 0), Color.White);
 			spriteBatch.Draw(image, new Vector2(64, 0), Color.White);
 			spriteBatch.Draw(image, new Vector2(96, 0), Color.White);
+			spriteBatch.Draw(image, new Vector2(128, 0), Color.White);
+			spriteBatch.Draw(image, new Vector2(160, 0), Color.White);
 
 			asset = assets[2];
 			image = assetManager.Images[(int)asset];
@@ -33,6 +35,10 @@ namespace ScreenShotTest
 			asset = assets[1];
 			image = assetManager.Images[(int)asset];
 			spriteBatch.Draw(image, new Vector2(64 + (64 - image.Width) / 2, 0), Color.White);
+
+			asset = assets[2];
+			image = assetManager.Images[(int)asset];
+			spriteBatch.Draw(image, new Vector2(128 + (64 - image.Width) / 2, 0), Color.White);
 		}
 
 	}

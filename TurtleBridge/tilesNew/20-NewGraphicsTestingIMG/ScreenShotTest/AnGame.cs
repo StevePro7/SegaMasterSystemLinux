@@ -7,7 +7,7 @@ namespace ScreenShotTest
 {
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		const string name = "titleScreenFonts02";
+		const string name = "clouds_192x24";
 
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
@@ -20,7 +20,7 @@ namespace ScreenShotTest
 
 		public AnGame()
 		{
-			output = new Output08();
+			output = new Output07();
 
 			assetManager = new AssetManager();
 			graphics = new GraphicsDeviceManager(this);
