@@ -13,6 +13,7 @@
 		x02_section03_norm_64x32 = 6,
 		x02_section03_open_64x32_02 = 7,
 		x02_section03_open_64x32_03 = 8,
+
 		x03_section03_tree_64x32_01 = 9,
 		x03_section03_tree_64x32_02 = 10,
 		x03_section03_tree_64x32_03 = 11,

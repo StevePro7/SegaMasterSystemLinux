@@ -7,7 +7,7 @@ namespace ScreenShotTest
 {
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		const string name = "bggame_tiles.png";
+		const string name = "bggame_tiles01";
 
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
@@ -38,7 +38,7 @@ namespace ScreenShotTest
 			IsMouseVisible = true;
 			base.Initialize();
 			save = false;
-			//save = true;
+			save = true;
 		}
 
 		protected override void LoadContent()
