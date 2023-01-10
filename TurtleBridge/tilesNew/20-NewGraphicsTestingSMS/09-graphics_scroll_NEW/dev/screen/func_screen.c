@@ -14,7 +14,7 @@ void screen_func_screen_load()
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();
-	engine_sprite_manager_clear();
+	engine_sprite_manager_clear( '[' );
 	//engine_font_manager_data( 3, 14, 12 );
 	//engine_font_manager_text( "FUNC SCREEN...!", 10, 2 );
 	devkit_SMS_displayOn();
@@ -27,7 +27,7 @@ void screen_func_screen_update( unsigned char *screen_type )
 	if( input )
 	{
 		//engine_font_manager_data( 39, 14, 12 );
-		engine_font_manager_char( '[', 14, 12 );
+		//engine_font_manager_char( '[', 14, 12 );
 	}
 
 	*screen_type = screen_type_func;

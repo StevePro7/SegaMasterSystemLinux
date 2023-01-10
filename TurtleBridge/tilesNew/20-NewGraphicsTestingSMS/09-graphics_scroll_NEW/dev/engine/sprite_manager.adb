@@ -1,10 +1,8 @@
 M:sprite_manager
 F:G$engine_sprite_manager_clear$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lsprite_manager.engine_sprite_manager_clear$row$1_0$112({1}SC:U),R,0,0,[c]
-S:Lsprite_manager.engine_sprite_manager_clear$col$1_0$112({1}SC:U),R,0,0,[b]
-F:G$engine_sprite_manager_fish$0_0$0({2}DF,SV:S),C,0,0,0,0,0
-S:Lsprite_manager.engine_sprite_manager_fish$x$1_0$117({1}SC:U),B,1,4
-S:Lsprite_manager.engine_sprite_manager_fish$y$1_0$117({1}SC:U),B,1,5
+S:Lsprite_manager.engine_sprite_manager_clear$ch$1_0$113({1}SC:U),B,1,4
+S:Lsprite_manager.engine_sprite_manager_clear$row$1_0$114({1}SC:U),R,0,0,[c]
+S:Lsprite_manager.engine_sprite_manager_clear$col$1_0$114({1}SC:U),R,0,0,[b]
 S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0_0$0({2}DF,SV:S),C,0,0
@@ -174,4 +172,3 @@ S:G$mbtowc$0_0$0({2}DF,SI:S),C,0,0
 S:G$wctomb$0_0$0({2}DF,SI:S),C,0,0
 S:G$mbstowcs$0_0$0({2}DF,SI:U),C,0,0
 S:G$wcstombs$0_0$0({2}DF,SI:U),C,0,0
-S:G$engine_sprite_manager_fish$0_0$0({2}DF,SV:S),C,0,0

@@ -7,14 +7,14 @@
 //#include "../content/gfx.h"
 #include <stdlib.h>
 
-void engine_sprite_manager_clear()
+void engine_sprite_manager_clear( unsigned char ch )
 {
 	unsigned char row, col;
 	for( row = 2; row < 22; row++ )
 	{
 		for( col = 2; col < 30; col++ )
 		{
-			engine_font_manager_char( '[', col, row );
+			engine_font_manager_char( ch, col, row );
 		}
 	}
 }
@@ -31,13 +31,13 @@ void engine_sprite_manager_clear()
 //	devkit_SMS_addSprite( x + size * 8, y + size * 8, tile + 3 );
 //}
 
-void engine_sprite_manager_fish( unsigned char x, unsigned char y )
-{
+//void engine_sprite_manager_fish( unsigned char x, unsigned char y )
+//{
 	//unsigned int tile;
 	//tile = 20; engine_sprite_manager_draw( x + 0, y, tile );
 	//tile = 21; engine_sprite_manager_draw( x + 32, y, tile );
 	//tile = 22; engine_sprite_manager_draw( x + 64, y, tile );
-}
+//}
 
 //void engine_sprite_manager_octopus( unsigned char x, unsigned char y )
 //{

@@ -1,63 +1,53 @@
 ;!FILE func_screen.asm
 XL3
-H 9 areas 37 global symbols
+H 9 areas 2D global symbols
 M func_screen
 O -mz80
 S _devkit_SMS_displayOn Ref000000
 S .__.ABS. Def000000
-S _engine_font_manager_char Ref000000
 S _engine_input_manager_hold Ref000000
 S _devkit_SMS_displayOff Ref000000
 S _engine_asm_manager_clear_VRAM Ref000000
 S _engine_content_manager_bggame Ref000000
 S _engine_sprite_manager_clear Ref000000
-A _CODE size 2F flags 0 addr 0
-S A$func_screen$66 Def000000
-S C$func_screen.c$34$1_0$91 Def00002E
-S C$func_screen.c$26$1_0$91 Def00000F
-S C$func_screen.c$27$1_0$91 Def000018
-S C$func_screen.c$20$1_0$89 Def00000C
-S C$func_screen.c$12$0_0$89 Def000000
-S A$func_screen$78 Def000009
-S C$func_screen.c$21$1_0$89 Def00000C
-S A$func_screen$89 Def00000C
-S C$func_screen.c$14$1_0$89 Def000000
-S C$func_screen.c$15$1_0$89 Def000003
-S C$func_screen.c$16$1_0$89 Def000006
-S C$func_screen.c$17$1_0$89 Def000009
+A _CODE size 23 flags 0 addr 0
+S C$func_screen.c$33$1_0$92 Def00001C
+S C$func_screen.c$17$1_0$90 Def000009
+S C$func_screen.c$34$1_0$92 Def000022
+S A$func_screen$77 Def000009
+S C$func_screen.c$26$1_0$92 Def000014
+S A$func_screen$78 Def00000B
+S A$func_screen$69 Def000003
+S A$func_screen$79 Def00000C
 S _screen_func_screen_load Def000000
-S XG$screen_func_screen_load$0$0 Def00000C
-S G$screen_func_screen_update$0$0 Def00000F
-S A$func_screen$120 Def000022
-S A$func_screen$111 Def000018
-S A$func_screen$102 Def00000F
-S A$func_screen$130 Def00002A
-S A$func_screen$121 Def000023
-S A$func_screen$112 Def000019
-S A$func_screen$103 Def000011
-S A$func_screen$140 Def00002E
-S A$func_screen$131 Def00002B
-S A$func_screen$122 Def000026
-S A$func_screen$104 Def000012
-S A$func_screen$132 Def00002C
-S A$func_screen$123 Def000027
-S A$func_screen$105 Def000013
+S XG$screen_func_screen_load$0$0 Def000011
+S G$screen_func_screen_update$0$0 Def000014
+S A$func_screen$113 Def00001C
+S A$func_screen$114 Def00001D
+S A$func_screen$105 Def000014
+S A$func_screen$115 Def00001E
 S A$func_screen$106 Def000016
-S _screen_func_screen_update Def00000F
-S A$func_screen$116 Def00001B
+S _screen_func_screen_update Def000014
+S A$func_screen$125 Def000022
+S A$func_screen$116 Def00001F
 S A$func_screen$107 Def000017
-S A$func_screen$117 Def00001E
-S A$func_screen$118 Def00001F
-S A$func_screen$128 Def000028
-S A$func_screen$119 Def000021
-S A$func_screen$129 Def000029
-S XG$screen_func_screen_update$0$0 Def00002E
-S A$func_screen$70 Def000003
+S A$func_screen$117 Def000020
+S A$func_screen$108 Def000018
+S A$func_screen$109 Def00001B
+S XG$screen_func_screen_update$0$0 Def000022
+S C$func_screen.c$20$1_0$90 Def000011
+S C$func_screen.c$12$0_0$90 Def000000
+S C$func_screen.c$21$1_0$90 Def000011
+S A$func_screen$80 Def00000D
 S G$screen_func_screen_load$0$0 Def000000
-S C$func_screen.c$30$2_0$92 Def00001B
-S C$func_screen.c$23$1_0$91 Def00000F
-S A$func_screen$74 Def000006
-S C$func_screen.c$33$1_0$91 Def000028
+S A$func_screen$81 Def000010
+S C$func_screen.c$14$1_0$90 Def000000
+S A$func_screen$73 Def000006
+S C$func_screen.c$15$1_0$90 Def000003
+S A$func_screen$92 Def000011
+S A$func_screen$65 Def000000
+S C$func_screen.c$23$1_0$92 Def000014
+S C$func_screen.c$16$1_0$90 Def000006
 A _DATA size 1 flags 0 addr 0
 S Ffunc_screen$value$0_0$0 Def000000
 A _INITIALIZED size 0 flags 0 addr 0
@@ -73,17 +63,13 @@ T 00 00 00
 R 00 00 01 00
 T 00 00 00
 R 00 00 00 00
-T 00 00 00 CD 00 00 CD 00 00 CD 00 00 CD
-R 00 00 00 00 02 04 04 00 02 07 05 00 02 0A 06 00
-T 0A 00 00 00 00 C3 00 00
-R 00 00 00 00 02 03 07 00 02 06 00 00
-T 0F 00 00
+T 00 00 00 CD 00 00 CD 00 00 CD 00 00 3E 5B F5 33
+R 00 00 00 00 02 04 03 00 02 07 04 00 02 0A 05 00
+T 0D 00 00 CD 00 00 33 C3 00 00
+R 00 00 00 00 02 04 06 00 02 08 00 00
+T 14 00 00
 R 00 00 00 00
-T 0F 00 00 3E 01 F5 33 CD 00 00 7D 33 B7 28 0D 11
-R 00 00 00 00 02 08 03 00
-T 1C 00 00 0E 0C D5 3E 5B F5 33 CD 00 00 F1 33
-R 00 00 00 00 02 0B 02 00
-T 28 00 00
-R 00 00 00 00
-T 28 00 00 C1 E1 E5 C5 36 15 C9
+T 14 00 00 3E 01 F5 33 CD 00 00 33 C1 E1 E5 C5 36
+R 00 00 00 00 02 08 02 00
+T 21 00 00 15 C9
 R 00 00 00 00
