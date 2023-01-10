@@ -1,0 +1,42 @@
+-mjwx
+-i output.ihx
+-y
+-b _CODE = 0x0200
+-b _DATA = 0xc000
+-b_BANK2=0x8000
+-b_BANK3=0x8000
+-k C:\Program Files\SDCC\bin\..\lib\z80
+-l ../lib/SMSlib.lib
+-l z80
+../crt0/crt0_sms.rel
+main.rel
+../lib/PSGlib.rel
+banks/bank2.rel
+banks/bank3.rel
+devkit/_sms_manager.rel
+devkit/_snd_manager.rel
+engine/asm_manager.rel
+engine/audio_manager.rel
+engine/content_manager.rel
+engine/enum_manager.rel
+engine/font_manager.rel
+engine/function_manager.rel
+engine/global_manager.rel
+engine/input_manager.rel
+engine/level_manager.rel
+engine/screen_manager.rel
+engine/scroll_manager.rel
+engine/sprite_manager.rel
+engine/storage_manager.rel
+engine/tile_manager.rel
+object/level_object.rel
+object/scroll_object.rel
+object/storage_object.rel
+object/tile_object.rel
+screen/func_screen.rel
+screen/none_screen.rel
+screen/splash_screen.rel
+screen/test_screen.rel
+screen/title_screen.rel
+
+-e
