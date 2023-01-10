@@ -9,7 +9,8 @@ namespace ScreenShotTest
 		{
 			base.Ctor(assetManager);
 
-			assets.Add(AssetType.splashSmall);
+			//assets.Add(AssetType.splashSmall);
+			assets.Add(AssetType.titlescreen);
 			assets.Add(AssetType.font_tiles_yellow_192x24_01);
 			assets.Add(AssetType.font_tiles_yellow_192x24_02);
 

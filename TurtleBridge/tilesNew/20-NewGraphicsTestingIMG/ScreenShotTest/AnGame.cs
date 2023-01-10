@@ -7,7 +7,7 @@ namespace ScreenShotTest
 {
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		const string name = "splashScreenSmall02";
+		const string name = "titleScreenFonts02";
 
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
