@@ -19,7 +19,7 @@ void engine_content_manager_load_sprites()
 	//devkit_SMS_loadSpritePalette( ( void * ) sprite_tiles__palette__bin );
 }
 
-void engine_content_manager_load_tiles_splash()
+void engine_content_manager_splash()
 {
 	devkit_SMS_mapROMBank( splash__tiles__psgcompr_bank );
 	devkit_SMS_loadPSGaidencompressedTiles( splash__tiles__psgcompr, SPLASH_TILES );

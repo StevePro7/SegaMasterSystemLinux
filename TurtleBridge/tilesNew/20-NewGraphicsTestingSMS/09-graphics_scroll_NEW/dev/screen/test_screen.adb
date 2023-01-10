@@ -15,7 +15,7 @@ S:G$engine_music_manager_play$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_sound_manager_play$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_bgtiles$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_sprites$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_content_manager_load_tiles_splash$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_content_manager_splash$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0_0$0({2}DF,SV:S),C,0,0
