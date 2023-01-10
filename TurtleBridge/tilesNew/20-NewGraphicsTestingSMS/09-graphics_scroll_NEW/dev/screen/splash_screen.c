@@ -8,7 +8,7 @@ void screen_splash_screen_load()
 {
 	devkit_SMS_displayOff();
 	engine_content_manager_splash();
-	engine_font_manager_splash_data( 20, 4, 2 );
+	engine_font_manager_splash_data( 40, 4, 2 );
 	devkit_SMS_displayOn();
 }
 

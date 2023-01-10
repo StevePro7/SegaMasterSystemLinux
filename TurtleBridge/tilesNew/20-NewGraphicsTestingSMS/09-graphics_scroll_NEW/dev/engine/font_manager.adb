@@ -4,7 +4,7 @@ S:Lfont_manager.engine_font_manager_splash_data$data$1_0$84({2}SI:U),B,1,4
 S:Lfont_manager.engine_font_manager_splash_data$x$1_0$84({1}SC:U),B,1,6
 S:Lfont_manager.engine_font_manager_splash_data$y$1_0$84({1}SC:U),B,1,7
 F:Ffont_manager$draw_data$0_0$0({2}DF,SV:S),Z,0,5,0,0,0
-S:Lfont_manager.draw_data$pnt$1_0$86({2}DG,SC:U),B,1,4
+S:Lfont_manager.draw_data$tilemap$1_0$86({2}DG,SC:U),B,1,4
 S:Lfont_manager.draw_data$data$1_0$86({2}SI:U),B,1,6
 S:Lfont_manager.draw_data$x$1_0$86({1}SC:U),B,1,8
 S:Lfont_manager.draw_data$y$1_0$86({1}SC:U),B,1,9

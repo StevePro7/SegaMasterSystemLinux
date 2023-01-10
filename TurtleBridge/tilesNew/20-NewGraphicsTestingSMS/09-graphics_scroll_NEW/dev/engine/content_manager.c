@@ -8,6 +8,8 @@
 #define BGGAME_TILES	0
 //#define SPLASH_TILES	128
 
+static void load_tile( unsigned char bank, const unsigned char *tiles, unsigned char tilefrom, const unsigned char *palette );
+
 void engine_content_manager_load_bgtiles()
 {
 	// BGgame tiles.
@@ -27,4 +29,18 @@ void engine_content_manager_splash()
 	devkit_SMS_loadPSGaidencompressedTiles( splash_tiles__tiles__psgcompr, BGGAME_TILES );
 	//devkit_SMS_loadSTMcompressedTileMap( 0, 0, ( void * ) splash_til__tilemap__stmcompr );
 	devkit_SMS_loadBGPalette( ( void * ) splash_tiles__palette__bin );
+}
+
+void engine_content_manager_titles()
+{
+	devkit_SMS_mapROMBank( titles_tiles__tiles__psgcompr_bank );
+	devkit_SMS_loadPSGaidencompressedTiles( titles_tiles__tiles__psgcompr, BGGAME_TILES );
+	devkit_SMS_loadBGPalette( ( void * ) titles_tiles__palette__bin );
+}
+
+static void load_tile( unsigned char bank, const unsigned char *tiles, unsigned char tilefrom, const unsigned char *palette )
+{
+	devkit_SMS_mapROMBank( bank );
+	devkit_SMS_loadPSGaidencompressedTiles( tiles, tilefrom );
+	devkit_SMS_loadBGPalette( ( void * ) palette );
 }
