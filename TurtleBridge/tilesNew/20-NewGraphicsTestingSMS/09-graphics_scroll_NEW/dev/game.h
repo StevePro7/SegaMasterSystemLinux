@@ -11,6 +11,6 @@
 #define dateDay		27
 #define author		"Steven Boland"
 #define name		"Lil Evel Knievel"
-#define descr		"Lil Evel Knievel game for the SMS Power! 2023 Competition"
+#define descr		"Lil Evel Knievel SMS Power! 2023 Competition"
 
 #endif//_GAME_H_
