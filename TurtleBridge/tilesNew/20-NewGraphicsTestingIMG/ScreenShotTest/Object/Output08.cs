@@ -19,20 +19,13 @@ namespace ScreenShotTest
 
 		public void Draw(SpriteBatch spriteBatch)
 		{
-			AssetType asset = assets[0];
+			AssetType asset = assets[2];
 			Texture2D image = assetManager.Images[(int)asset];
 			spriteBatch.Draw(image, new Vector2(0, 0), Color.White);
-			spriteBatch.Draw(image, new Vector2(32, 0), Color.White);
-			spriteBatch.Draw(image, new Vector2(64, 0), Color.White);
-			spriteBatch.Draw(image, new Vector2(96, 0), Color.White);
 
-			asset = assets[2];
+			asset = assets[0];
 			image = assetManager.Images[(int)asset];
-			spriteBatch.Draw(image, new Vector2(0 + (64 - image.Width) / 2, 0), Color.White);
-
-			asset = assets[1];
-			image = assetManager.Images[(int)asset];
-			spriteBatch.Draw(image, new Vector2(64 + (64 - image.Width) / 2, 0), Color.White);
+			spriteBatch.Draw(image, new Vector2(0, 24), Color.White);
 		}
 
 	}
