@@ -1,0 +1,1 @@
+"C:\SEGA\bmp2tile043\bmp2tile.exe" raw/bggame_tiles.png -savetiles "bggame_tiles (tiles).psgcompr" -removedupes -nomirror -planar -tileoffset 0  -savetilemap "bggame_tiles (tilemap).bin" -savepalette "bggame_tiles (palette).bin" -fullpalette
