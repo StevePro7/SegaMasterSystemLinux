@@ -8,18 +8,23 @@
 #define UNIT_ROOT	10		// 10 is decimal
 #define DATA_LONG	5		// 5 placeholder
 
+//todo - do I need to ROM bank?
 static void draw_data( const unsigned char *tilemap, unsigned int data, unsigned char x, unsigned char y );
-//static void draw_data( const unsigned char *pnt, unsigned char bank, unsigned int data, unsigned char x, unsigned char y );
+static void draw_text( const unsigned char *tilemap, unsigned char *text, unsigned char x, unsigned char y );
 
 void engine_font_manager_splash_data( unsigned int data, unsigned char x, unsigned char y )
 {
 	//draw_data( splash_tiles__tilemap__bin, splash_tiles__tilemap__bin_bank, data, x, y );
 	draw_data( splash_tiles__tilemap__bin, data, x, y );
 }
-
 void engine_font_manager_titles_data( unsigned int data, unsigned char x, unsigned char y )
 {
 	draw_data( titles_tiles__tilemap__bin, data, x, y );
+}
+
+void engine_font_manager_titles_text( unsigned char *text, unsigned char x, unsigned char y )
+{
+	draw_text( titles_tiles__tilemap__bin, text, x, y );
 }
 
 //static void draw_data( const unsigned char *pnt, unsigned char bank, unsigned int data, unsigned char x, unsigned char y )
@@ -52,19 +57,17 @@ static void draw_data( const unsigned char *tilemap, unsigned int data, unsigned
 	}
 }
 
-//void engine_font_manager_text( unsigned char *text, unsigned char x, unsigned char y )
-//{
-//	//const unsigned char *pnt = bggame_tiles__tilemap__bin;
-//	//unsigned char idx = 0;
-//
-//	//while( '\0' != text[ idx ] )
-//	//{
-//	//	signed char tile = text[ idx ] - TEXT_ROOT;
-//	//	devkit_SMS_setNextTileatXY( x++, y );
-//	//	devkit_SMS_setTile( *pnt + tile );
-//	//	idx++;
-//	//}
-//}
+static void draw_text( const unsigned char *tilemap, unsigned char *text, unsigned char x, unsigned char y )
+{
+	unsigned char idx = 0;
+	while( '\0' != text[ idx ] )
+	{
+		signed char tile = text[ idx ] - TEXT_ROOT;
+		devkit_SMS_setNextTileatXY( x++, y );
+		devkit_SMS_setTile( *tilemap + tile );
+		idx++;
+	}
+}
 
 //void engine_font_manager_char( unsigned char ch, unsigned char x, unsigned char y )
 //{

@@ -12,8 +12,8 @@ void screen_title_screen_load()
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_titles();
 	engine_font_manager_titles_data( 1, 14, 12 );
+	engine_font_manager_titles_text( "TITLES SCREEN	", 10, 2 );
 	devkit_SMS_displayOn();
-//	engine_font_manager_text( "TITLE SCREEN!!", 10, 2 );
 }
 
 void screen_title_screen_update( unsigned char *screen_type )
@@ -23,5 +23,6 @@ void screen_title_screen_update( unsigned char *screen_type )
 	{
 		engine_font_manager_titles_data( 2, 14, 12 );
 	}
+
 	*screen_type = screen_type_title;
 }
