@@ -25,10 +25,11 @@ void engine_content_manager_load_sprites()
 
 void engine_content_manager_splash()
 {
-	devkit_SMS_mapROMBank( splash_tiles__tiles__psgcompr_bank );
-	devkit_SMS_loadPSGaidencompressedTiles( splash_tiles__tiles__psgcompr, BGGAME_TILES );
-	//devkit_SMS_loadSTMcompressedTileMap( 0, 0, ( void * ) splash_til__tilemap__stmcompr );
-	devkit_SMS_loadBGPalette( ( void * ) splash_tiles__palette__bin );
+	//devkit_SMS_mapROMBank( splash_tiles__tiles__psgcompr_bank );
+	//devkit_SMS_loadPSGaidencompressedTiles( splash_tiles__tiles__psgcompr, BGGAME_TILES );
+	//devkit_SMS_loadBGPalette( ( void * ) splash_tiles__palette__bin );
+
+	load_tile( splash_tiles__tiles__psgcompr_bank, splash_tiles__tiles__psgcompr, BGGAME_TILES, splash_tiles__palette__bin );
 }
 
 void engine_content_manager_titles()
