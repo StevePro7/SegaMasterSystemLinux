@@ -1,13 +1,11 @@
 M:content_manager
-F:G$engine_content_manager_load_bgtiles$0_0$0({2}DF,SV:S),C,0,0,0,0,0
-F:G$engine_content_manager_load_sprites$0_0$0({2}DF,SV:S),C,0,0,0,0,0
 F:G$engine_content_manager_splash$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_content_manager_titles$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:Fcontent_manager$load_tile$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lcontent_manager.load_tile$bank$1_0$89({1}SC:U),B,1,4
-S:Lcontent_manager.load_tile$tiles$1_0$89({2}DG,SC:U),B,1,5
-S:Lcontent_manager.load_tile$tilefrom$1_0$89({1}SC:U),B,1,7
-S:Lcontent_manager.load_tile$palette$1_0$89({2}DG,SC:U),B,1,8
+S:Lcontent_manager.load_tile$bank$1_0$85({1}SC:U),B,1,4
+S:Lcontent_manager.load_tile$tiles$1_0$85({2}DG,SC:U),B,1,5
+S:Lcontent_manager.load_tile$tilefrom$1_0$85({1}SC:U),B,1,7
+S:Lcontent_manager.load_tile$palette$1_0$85({2}DG,SC:U),B,1,8
 S:G$devkit_SMS_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOnFeature$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOffFeature$0_0$0({2}DF,SV:S),C,0,0
@@ -149,5 +147,3 @@ S:G$devkit_SMS_addSprite_bulk8$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_addSprite_bulk12$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_setTilePriority$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_isCollisionDetected$0_0$0({2}DF,SC:U),C,0,0
-S:G$engine_content_manager_load_bgtiles$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_content_manager_load_sprites$0_0$0({2}DF,SV:S),C,0,0

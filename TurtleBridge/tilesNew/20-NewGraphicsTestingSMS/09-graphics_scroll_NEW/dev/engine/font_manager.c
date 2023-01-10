@@ -1,7 +1,7 @@
 #include "font_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/bank2.h"
-//#include "../content/gfx.h"
+#include "../banks/bank3.h"
 
 #define TEXT_ROOT	32		// 32 is " " in ASCII.
 #define DATA_ROOT	16		// 16 is "0" (48=16+32)
@@ -15,6 +15,11 @@ void engine_font_manager_splash_data( unsigned int data, unsigned char x, unsign
 {
 	//draw_data( splash_tiles__tilemap__bin, splash_tiles__tilemap__bin_bank, data, x, y );
 	draw_data( splash_tiles__tilemap__bin, data, x, y );
+}
+
+void engine_font_manager_titles_data( unsigned int data, unsigned char x, unsigned char y )
+{
+	draw_data( titles_tiles__tilemap__bin, data, x, y );
 }
 
 //static void draw_data( const unsigned char *pnt, unsigned char bank, unsigned int data, unsigned char x, unsigned char y )

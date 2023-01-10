@@ -1,11 +1,12 @@
 M:func_screen
 F:G$screen_func_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_func_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lfunc_screen.screen_func_screen_update$screen_type$1_0$88({2}DG,SC:U),B,1,4
+S:Lfunc_screen.screen_func_screen_update$screen_type$1_0$89({2}DG,SC:U),B,1,4
 T:Ffunc_screen$tag_struct_scroll_object[({0}S:S$scroll$0_0$0({1}SC:U),Z,0,0)({1}S:S$scrollRight$0_0$0({1}SC:U),Z,0,0)({2}S:S$offset_right$0_0$0({2}SI:U),Z,0,0)({4}S:S$scroll_x$0_0$0({6}DA6d,SC:U),Z,0,0)({10}S:S$scroll_half$0_0$0({1}SC:U),Z,0,0)({11}S:S$lineCnt$0_0$0({1}SC:U),Z,0,0)]
 S:G$global_scroll_object$0_0$0({12}STtag_struct_scroll_object:S),E,0,0
 S:Ffunc_screen$value$0_0$0({1}SC:U),E,0,0
 S:G$engine_font_manager_splash_data$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_font_manager_titles_data$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_hold_up$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_hold_down$0_0$0({2}DF,SC:U),C,0,0

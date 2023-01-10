@@ -10,7 +10,7 @@ void screen_title_screen_load()
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_titles();
-	//engine_font_manager_splash_data( 20, 4, 2 );
+	engine_font_manager_titles_data( 456, 14, 12 );
 	devkit_SMS_displayOn();
 //	engine_font_manager_text( "TITLE SCREEN!!", 10, 2 );
 }
