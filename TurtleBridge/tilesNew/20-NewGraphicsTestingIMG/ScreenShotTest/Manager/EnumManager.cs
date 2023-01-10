@@ -26,6 +26,13 @@
 
 		cloud01_32x24 = 16,
 		cloud02_48x24 = 17,
+
+		splashSmall = 18,
+		titlescreen = 19,
+		font_tiles_yellow_192x24_01 = 20,
+		font_tiles_yellow_192x24_02 = 21,
+		font_tiles_yellow_192x24_05 = 22,
+		font_tiles_yellow_192x24_06 = 23,
 	}
 
 }

@@ -24,7 +24,7 @@ namespace ScreenShotTest
 			AssetType asset;
 			Texture2D image;
 			Vector2 pos;
-			int i, y = 0;
+			int y = 0;
 
 			asset = assets[2];
 			image = assetManager.Images[(int)asset];

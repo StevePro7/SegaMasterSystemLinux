@@ -32,6 +32,13 @@ namespace ScreenShotTest
 
 			"cloud01_32x24",
 			"cloud02_48x24",
+
+			"splashSmall",
+			"titlescreen",
+			"font_tiles_yellow_192x24_01",
+			"font_tiles_yellow_192x24_02",
+			"font_tiles_yellow_192x24_05",
+			"font_tiles_yellow_192x24_06",
 		};
 
 		protected int[] heights = { 0 };
