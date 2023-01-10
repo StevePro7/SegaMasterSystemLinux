@@ -1,17 +1,9 @@
 M:test_screen
 F:G$screen_test_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Ltest_screen.screen_test_screen_load$idx$1_0$96({1}SC:U),R,0,0,[b]
-S:Ltest_screen.screen_test_screen_load$tile$1_0$96({1}SC:U),R,0,0,[]
 F:G$screen_test_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Ltest_screen.screen_test_screen_update$screen_type$1_0$99({2}DG,SC:U),B,1,4
-S:Ltest_screen.screen_test_screen_update$so$1_0$100({2}DG,STtag_struct_scroll_object:S),R,0,0,[c,b]
-S:Ltest_screen.screen_test_screen_update$input$1_0$100({1}SC:U),R,0,0,[a]
-S:Ltest_screen.screen_test_screen_update$delta$1_0$100({1}SC:U),R,0,0,[d]
-S:Ltest_screen.screen_test_screen_update$value$1_0$100({1}SC:U),R,0,0,[e]
-S:Ltest_screen.screen_test_screen_update$newTile$1_0$100({1}:S),R,0,0,[a]
 F:Ftest_screen$print$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Ltest_screen.print$newTile$1_0$111({1}:S),B,1,4
-S:Ltest_screen.print$so$1_0$112({2}DG,STtag_struct_scroll_object:S),R,0,0,[]
+S:Ltest_screen.print$newTile$1_0$101({1}:S),B,1,4
 T:Ftest_screen$tag_struct_scroll_object[({0}S:S$scroll$0_0$0({1}SC:U),Z,0,0)({1}S:S$scrollRight$0_0$0({1}SC:U),Z,0,0)({2}S:S$offset_right$0_0$0({2}SI:U),Z,0,0)({4}S:S$scroll_x$0_0$0({6}DA6d,SC:U),Z,0,0)({10}S:S$scroll_half$0_0$0({1}SC:U),Z,0,0)({11}S:S$lineCnt$0_0$0({1}SC:U),Z,0,0)]
 T:Ftest_screen$tag_struct_tile_object[({0}S:S$tilemap_index$0_0$0({2}SI:U),Z,0,0)({2}S:S$tile_wide$0_0$0({1}SC:U),Z,0,0)({3}S:S$tile_high$0_0$0({1}SC:U),Z,0,0)]
 T:Ftest_screen$tag_struct_level_object[({0}S:S$level_cols_offset$0_0$0({2}SI:U),Z,0,0)({2}S:S$level_draw_offset$0_0$0({1}SC:U),Z,0,0)]
@@ -23,6 +15,7 @@ S:G$engine_music_manager_play$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_sound_manager_play$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_bgtiles$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_sprites$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_content_manager_load_tiles_splash$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0_0$0({2}DF,SV:S),C,0,0
@@ -44,6 +37,7 @@ S:G$engine_level_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_level_manager_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_level_manager_draw$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_init$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_scroll_manager_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_update$0_0$0({2}DF,:S),C,0,0
 S:G$engine_tile_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_draw$0_0$0({2}DF,SV:S),C,0,0

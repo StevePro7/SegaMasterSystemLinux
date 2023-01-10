@@ -6,8 +6,8 @@ F:G$engine_storage_manager_read$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lstorage_manager.engine_storage_manager_read$so$1_0$87({2}DG,STtag_struct_storage_object:S),R,0,0,[]
 F:G$engine_storage_manager_write$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_storage_manager_erase$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-T:Fstorage_manager$tag_struct_storage_object[({0}S:S$Magic$0_0$0({4}SL:U),Z,0,0)({4}S:S$num_jumps$0_0$0({2}SI:U),Z,0,0)({6}S:S$jump_high$0_0$0({6}DA6d,SC:U),Z,0,0)({12}S:S$terminal$0_0$0({1}SC:U),Z,0,0)]
-S:G$global_storage_object$0_0$0({13}STtag_struct_storage_object:S),E,0,0
+T:Fstorage_manager$tag_struct_storage_object[({0}S:S$Magic$0_0$0({4}SL:U),Z,0,0)({4}S:S$num_jumps$0_0$0({2}SI:U),Z,0,0)({6}S:S$terminal$0_0$0({1}SC:U),Z,0,0)]
+S:G$global_storage_object$0_0$0({7}STtag_struct_storage_object:S),E,0,0
 S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0_0$0({2}DF,SV:S),C,0,0

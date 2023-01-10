@@ -1,4 +1,4 @@
-@echo off
+::@echo off
 
 :: Time build START
 :: Reference: https://stackoverflow.com/questions/673523/how-do-i-measure-execution-time-of-a-command-on-the-windows-command-line
@@ -97,10 +97,8 @@ object/level_object.rel ^
 object/scroll_object.rel ^
 object/storage_object.rel ^
 object/tile_object.rel ^
-screen/func_screen.rel screen/none_screen.rel screen/splash_screen.rel screen/test_screen.rel screen/title_screen.rel ^
-content/gfx.rel ^
-content/psg.rel
-
+screen/func_screen.rel screen/none_screen.rel screen/splash_screen.rel screen/test_screen.rel ^
+screen/title_screen.rel
 
 :: Execute
 "C:\Program Files\SDCC\bin\ihx2sms.exe" output.ihx output.sms

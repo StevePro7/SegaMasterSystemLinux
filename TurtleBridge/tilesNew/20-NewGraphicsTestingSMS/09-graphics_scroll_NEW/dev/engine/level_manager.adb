@@ -4,10 +4,6 @@ S:Llevel_manager.engine_level_manager_init$lo$1_0$12({2}DG,STtag_struct_level_ob
 F:G$engine_level_manager_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_level_manager_draw$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Llevel_manager.engine_level_manager_draw$offset$1_0$15({2}SI:U),B,1,4
-S:Llevel_manager.engine_level_manager_draw$lo$1_0$16({2}DG,STtag_struct_level_object:S),R,0,0,[l,h]
-S:Llevel_manager.engine_level_manager_draw$index$1_0$16({1}SC:U),R,0,0,[e]
-S:Llevel_manager.engine_level_manager_draw$type$1_0$16({1}SC:U),R,0,0,[]
-S:Llevel_manager.engine_level_manager_draw$cols$1_0$16({1}SC:U),R,0,0,[a]
 T:Flevel_manager$tag_struct_tile_object[({0}S:S$tilemap_index$0_0$0({2}SI:U),Z,0,0)({2}S:S$tile_wide$0_0$0({1}SC:U),Z,0,0)({3}S:S$tile_high$0_0$0({1}SC:U),Z,0,0)]
 T:Flevel_manager$tag_struct_level_object[({0}S:S$level_cols_offset$0_0$0({2}SI:U),Z,0,0)({2}S:S$level_draw_offset$0_0$0({1}SC:U),Z,0,0)]
 S:Flevel_manager$level_tile_cols$0_0$0({12}DA12d,SC:U),E,0,0

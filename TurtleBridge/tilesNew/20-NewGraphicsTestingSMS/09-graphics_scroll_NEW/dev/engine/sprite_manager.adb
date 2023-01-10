@@ -7,7 +7,6 @@ S:Lsprite_manager.engine_sprite_manager_draw$size$1_0$111({1}SC:U),R,0,0,[]
 F:G$engine_sprite_manager_fish$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lsprite_manager.engine_sprite_manager_fish$x$1_0$112({1}SC:U),B,1,4
 S:Lsprite_manager.engine_sprite_manager_fish$y$1_0$112({1}SC:U),B,1,5
-S:Lsprite_manager.engine_sprite_manager_fish$tile$1_0$113({2}SI:U),R,0,0,[]
 S:G$devkit_SMS_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOnFeature$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOffFeature$0_0$0({2}DF,SV:S),C,0,0
