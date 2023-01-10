@@ -2,37 +2,30 @@
 {
 	public enum AssetType
 	{
-		font_tiles_yellow = 0,
-		wave_strip = 1,
-		waves_block_32x112 = 2,
+		x00_font_tiles_yellow_192x24_05 = 0,
+		x00_font_tiles_yellow_192x24_06 = 1,
 
-		section03_norm_64x32 = 3,
-		section04_norm_64x80 = 4,
-		section03_norm_64x32_tree = 5,
+		x01_section02_left_64x112 = 2,
+		x01_section02_left_goal00 = 3,
+		x01_section02_left_sign01 = 4,
+		x01_waves_block_32x112 = 5,
 
-		hover_turtleAA00_32x24_00 = 6,
-		hover_turtleAA00_32x24_01 = 7,
+		x02_section03_norm_64x32 = 6,
+		x02_section03_open_64x32_02 = 7,
+		x02_section03_open_64x32_03 = 8,
+		x03_section03_tree_64x32_01 = 9,
+		x03_section03_tree_64x32_02 = 10,
+		x03_section03_tree_64x32_03 = 11,
 
-		flying_turtle01_32x24_00 = 8,
-		flying_turtle01_32x24_01 = 9,
-		flying_turtle01_32x24_02 = 10,
-		flying_turtle01_32x24_03 = 11,
+		x04_flying_turtle01_32x24_00 = 12,
+		x04_flying_turtle01_32x24_01 = 13,
+		x04_flying_turtle01_32x24_02 = 14,
+		x04_flying_turtle01_32x24_03 = 15,
+		x04_hover_turtleAA00_32x24_00 = 16,
+		x04_hover_turtleAA00_32x24_01 = 17,
 
-		section03_open_64x32_01 = 12,
-		section03_open_64x32_02 = 13,
-		section03_open_64x32_03 = 14,
-
-		section02_left_64x48 = 15,
-
-		cloud01_32x24 = 16,
-		cloud02_48x24 = 17,
-
-		splashSmall = 18,
-		titlescreen = 19,
-		font_tiles_yellow_192x24_01 = 20,
-		font_tiles_yellow_192x24_02 = 21,
-		font_tiles_yellow_192x24_05 = 22,
-		font_tiles_yellow_192x24_06 = 23,
+		x05_clouds_192x24 = 18,
+		x06_titlescreenPlay = 19,
 	}
 
 }
