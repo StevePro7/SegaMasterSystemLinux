@@ -2,9 +2,9 @@ M:title_screen
 F:G$screen_title_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_title_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Ltitle_screen.screen_title_screen_update$screen_type$1_0$85({2}DG,SC:U),B,1,4
-S:G$engine_content_manager_load_bgtiles$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_content_manager_load_sprites$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_asm_manager_clear_VRAM$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_splash$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_content_manager_titles$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_splash_data$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOnFeature$0_0$0({2}DF,SV:S),C,0,0

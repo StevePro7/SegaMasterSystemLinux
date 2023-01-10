@@ -11,9 +11,8 @@ S:G$global_tile_object$0_0$0({4}STtag_struct_tile_object:S),E,0,0
 S:G$global_tile_objects$0_0$0({48}DA12d,STtag_struct_tile_object:S),E,0,0
 S:G$engine_music_manager_play$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_sound_manager_play$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_content_manager_load_bgtiles$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_content_manager_load_sprites$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_splash$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_content_manager_titles$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_splash_data$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_hold_up$0_0$0({2}DF,SC:U),C,0,0
