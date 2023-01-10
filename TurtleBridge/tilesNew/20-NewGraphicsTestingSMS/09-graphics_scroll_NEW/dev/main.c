@@ -10,7 +10,7 @@ void main( void )
 	{
 		devkit_SMS_initSprites();
 		engine_input_manager_update();
-		input = input = engine_input_manager_move_fire2();
+		input = input = engine_input_manager_move( input_type_fire2 );
 		if( input )
 		{
 			start();
