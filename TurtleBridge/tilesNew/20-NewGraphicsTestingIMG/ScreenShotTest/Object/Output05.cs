@@ -37,6 +37,9 @@ namespace ScreenShotTest
 			asset = assets[1];
 			image = assetManager.Images[(int)asset];
 			spriteBatch.Draw(image, new Vector2(128 - 16, y), Color.White);
+
+			// wave tile	sky blue	top left
+			spriteBatch.Draw(image, Vector2.Zero, new Rectangle(0, 0, 8, 8), Color.White);
 		}
 
 	}
