@@ -9,31 +9,31 @@ namespace ScreenShotTest
 		{
 			base.Ctor(assetManager);
 
-			//assets.Add(AssetType.x00_font_tiles_yellow_192x24_05);
-			assets.Add(AssetType.x00_font_tiles_yellow_192x24_06);
+			////assets.Add(AssetType.x00_font_tiles_yellow_192x24_05);
+			//assets.Add(AssetType.x00_font_tiles_yellow_192x24_06);
 
-			assets.Add(AssetType.x01_waves_block_32x112);
-			assets.Add(AssetType.x01_section02_left_64x112);
-			assets.Add(AssetType.x01_section02_left_goal00);
-			assets.Add(AssetType.x01_section02_left_sign01);
+			//assets.Add(AssetType.x01_waves_block_32x112);
+			//assets.Add(AssetType.x01_section02_left_64x112);
+			//assets.Add(AssetType.x01_section02_left_goal00);
+			//assets.Add(AssetType.x01_section02_left_sign01);
 
-			assets.Add(AssetType.x02_section03_norm_64x32);
-			assets.Add(AssetType.x02_section03_open_64x32_02);
-			assets.Add(AssetType.x02_section03_open_64x32_03);
+			//assets.Add(AssetType.x02_section03_norm_64x32);
+			//assets.Add(AssetType.x02_section03_open_64x32_02);
+			//assets.Add(AssetType.x02_section03_open_64x32_03);
 
-			assets.Add(AssetType.x03_section03_tree_64x32_01);
-			assets.Add(AssetType.x03_section03_tree_64x32_02);
-			assets.Add(AssetType.x03_section03_tree_64x32_03);
+			//assets.Add(AssetType.x03_section03_tree_64x32_01);
+			//assets.Add(AssetType.x03_section03_tree_64x32_02);
+			//assets.Add(AssetType.x03_section03_tree_64x32_03);
 
-			assets.Add(AssetType.x04_hover_turtleAA00_32x24_00);
-			assets.Add(AssetType.x04_hover_turtleAA00_32x24_01);
-			assets.Add(AssetType.x04_flying_turtle01_32x24_00);
-			assets.Add(AssetType.x04_flying_turtle01_32x24_01);
-			assets.Add(AssetType.x04_flying_turtle01_32x24_02);
-			assets.Add(AssetType.x04_flying_turtle01_32x24_03);
+			//assets.Add(AssetType.x04_hover_turtleAA00_32x24_00);
+			//assets.Add(AssetType.x04_hover_turtleAA00_32x24_01);
+			//assets.Add(AssetType.x04_flying_turtle01_32x24_00);
+			//assets.Add(AssetType.x04_flying_turtle01_32x24_01);
+			//assets.Add(AssetType.x04_flying_turtle01_32x24_02);
+			//assets.Add(AssetType.x04_flying_turtle01_32x24_03);
 
-			assets.Add(AssetType.x05_clouds_192x24);
-			assets.Add(AssetType.x06_titlescreenPlay);
+			//assets.Add(AssetType.x05_clouds_192x24);
+			//assets.Add(AssetType.x06_titlescreenPlay);
 
 			Wide = 192;
 			High = 24 + 112 + 112 + 112 + 112 + 24 + 24;
@@ -44,8 +44,8 @@ namespace ScreenShotTest
 			int y = 0;
 
 			// Asset #0.
-			DrawAsset(spriteBatch, AssetType.x00_font_tiles_yellow_192x24_05, 0, y);
-			//DrawAsset(spriteBatch, AssetType.x00_font_tiles_yellow_192x24_06, 0, y);
+			//DrawAsset(spriteBatch, AssetType.x00_font_tiles_yellow_192x24_05, 0, y);
+			DrawAsset(spriteBatch, AssetType.x00_font_tiles_yellow_192x24_06, 0, y);
 
 			// Asset #1.
 			y += 24;
