@@ -36,7 +36,7 @@ namespace ScreenShotTest
 			// waves strip
 			asset = assets[1];
 			image = assetManager.Images[(int)asset];
-			spriteBatch.Draw(image, new Vector2(128, y), Color.White);
+			spriteBatch.Draw(image, new Vector2(128 - 16, y), Color.White);
 		}
 
 	}
