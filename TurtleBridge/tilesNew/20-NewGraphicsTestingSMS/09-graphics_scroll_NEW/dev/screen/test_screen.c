@@ -10,7 +10,7 @@
 #include "../engine/tile_manager.h"
 #include "../devkit/_sms_manager.h"
 
-static void print( bool newTile );
+//static void print( bool newTile );
 
 void screen_test_screen_load()
 {
@@ -94,8 +94,8 @@ void screen_test_screen_update( unsigned char *screen_type )
 }
 
 
-static void print( bool newTile )
-{
+//static void print( bool newTile )
+//{
 	//struct_scroll_object *so = &global_scroll_object;
 	//engine_font_manager_data( so->scroll, 25, 0 );
 	//engine_font_manager_data( so->scrollRight, 25, 1 );
@@ -113,4 +113,4 @@ static void print( bool newTile )
 	//{
 	//	engine_font_manager_text( "TILES", 21, 0 );
 	//}
-}
+//}
