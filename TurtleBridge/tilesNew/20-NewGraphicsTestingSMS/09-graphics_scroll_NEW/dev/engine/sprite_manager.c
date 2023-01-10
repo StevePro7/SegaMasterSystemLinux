@@ -3,7 +3,7 @@
 #include "global_manager.h"
 //#include "../object/tile_object.h"
 #include "../devkit/_sms_manager.h"
-#include "../content/gfx.h"
+//#include "../content/gfx.h"
 #include <stdlib.h>
 
 
@@ -22,10 +22,10 @@ void engine_sprite_manager_draw( unsigned char x, unsigned char y, unsigned int 
 
 void engine_sprite_manager_fish( unsigned char x, unsigned char y )
 {
-	unsigned int tile;
-	tile = 20; engine_sprite_manager_draw( x + 0, y, tile );
-	tile = 21; engine_sprite_manager_draw( x + 32, y, tile );
-	tile = 22; engine_sprite_manager_draw( x + 64, y, tile );
+	//unsigned int tile;
+	//tile = 20; engine_sprite_manager_draw( x + 0, y, tile );
+	//tile = 21; engine_sprite_manager_draw( x + 32, y, tile );
+	//tile = 22; engine_sprite_manager_draw( x + 64, y, tile );
 }
 
 //void engine_sprite_manager_octopus( unsigned char x, unsigned char y )

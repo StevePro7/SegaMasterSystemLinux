@@ -51,47 +51,49 @@ void engine_scroll_manager_load( unsigned char count )
 
 bool engine_scroll_manager_update( unsigned char delta )
 {
-	struct_scroll_object *so = &global_scroll_object;
-	//unsigned char temp;
-	bool newTile;
-	////const unsigned char delta = 1;
+	//struct_scroll_object *so = &global_scroll_object;
+	////unsigned char temp;
+	//bool newTile;
+	//////const unsigned char delta = 1;
 
-	so->scroll -= delta;
-	so->scrollRight += delta;
+	//so->scroll -= delta;
+	//so->scrollRight += delta;
 
-	newTile = false;
-	if( delta > 0 )
-	{
-		
-		newTile = so->scrollRight % 8 == delta;
-		if( newTile )
-		{
-			so->offset_right++;
-		}
-	}
+	//newTile = false;
+	//if( delta > 0 )
+	//{
+	//	
+	//	newTile = so->scrollRight % 8 == delta;
+	//	if( newTile )
+	//	{
+	//		so->offset_right++;
+	//	}
+	//}
 
-	//temp = 0;
-	//temp = so->scroll_x[ 0 ];
-	////engine_font_manager_data( temp, 15, 10 );
-	////engine_font_manager_data( so->scroll_x[ 0 ], 15, 11 );
-	//so->scroll_x[ 0 ] = so->scroll_x[ 0 ] - delta;
-	if( delta > 0 )
-	{
-		so->scroll_half = 1 - so->scroll_half;
-		so->scroll_x[ 0 ] -= so->scroll_half;
-	}
+	////temp = 0;
+	////temp = so->scroll_x[ 0 ];
+	//////engine_font_manager_data( temp, 15, 10 );
+	//////engine_font_manager_data( so->scroll_x[ 0 ], 15, 11 );
+	////so->scroll_x[ 0 ] = so->scroll_x[ 0 ] - delta;
+	//if( delta > 0 )
+	//{
+	//	so->scroll_half = 1 - so->scroll_half;
+	//	so->scroll_x[ 0 ] -= so->scroll_half;
+	//}
 
-	so->scroll_x[ 1 ] -= delta;
-	so->scroll_x[ 2 ] -= delta;
-	so->scroll_x[ 3 ] -= delta;
-	so->scroll_x[ 4 ] -= delta;
-	so->lineCnt = 0;
+	//so->scroll_x[ 1 ] -= delta;
+	//so->scroll_x[ 2 ] -= delta;
+	//so->scroll_x[ 3 ] -= delta;
+	//so->scroll_x[ 4 ] -= delta;
+	//so->lineCnt = 0;
 
-	//temp = so->scroll_x[ 0 ];
-	////engine_font_manager_data( temp, 25, 12 );
-	////engine_font_manager_data( so->scroll_x[ 0 ], 25, 13 );
-	//print( newTile );
-	return newTile;
+	////temp = so->scroll_x[ 0 ];
+	//////engine_font_manager_data( temp, 25, 12 );
+	//////engine_font_manager_data( so->scroll_x[ 0 ], 25, 13 );
+	////print( newTile );
+	//return newTile;
+
+	return false;
 }
 
 //bool engine_scroll_manager_updateZ()
