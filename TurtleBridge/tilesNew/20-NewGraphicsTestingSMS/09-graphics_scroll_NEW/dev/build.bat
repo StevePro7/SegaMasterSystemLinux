@@ -99,7 +99,7 @@ screen/title_screen.rel
 "C:\Program Files\SDCC\bin\ihx2sms.exe" output.ihx output.sms
 
 :: Copy
-cp output.sms ../TestBuild.sms
+copy output.sms ..\TestBuild.sms
 
 :: Delete
 cd banks

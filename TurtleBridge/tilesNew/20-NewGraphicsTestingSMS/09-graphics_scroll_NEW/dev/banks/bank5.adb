@@ -1,2 +1,2 @@
 M:bank5
-S:G$bank5_txt$0_0$0({5}DA5d,SC:U),D,0,0
+S:G$mastertracker_psg$0_0$0({4825}DA4825d,SC:U),D,0,0
