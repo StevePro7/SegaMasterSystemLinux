@@ -11,12 +11,14 @@ static unsigned char value;
 
 void screen_func_screen_load()
 {
+	value = 0;
+
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();
-	engine_sprite_manager_clear( '[' );
-	//engine_font_manager_data( 3, 14, 12 );
-	//engine_font_manager_text( "FUNC SCREEN...!", 10, 2 );
+	//engine_sprite_manager_clear( '[' );
+	engine_font_manager_data( value, 14, 12 );
+	engine_font_manager_text( "FUNC SCREEN...!", 10, 2 );
 	devkit_SMS_displayOn();
 }
 
@@ -26,7 +28,12 @@ void screen_func_screen_update( unsigned char *screen_type )
 	input = engine_input_manager_hold( input_type_up );
 	if( input )
 	{
-		//engine_font_manager_data( 39, 14, 12 );
+		if( !value )
+		{
+			value = 1;
+			engine_font_manager_data( value, 14, 12 );
+		}
+
 		//engine_font_manager_char( '[', 14, 12 );
 	}
 
