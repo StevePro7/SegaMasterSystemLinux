@@ -15,7 +15,7 @@ void engine_music_manager_play( unsigned char index )
 	music_bank = music_object_bank[ index ];
 
 	devkit_SMS_mapROMBank( music_bank );
-	devkit_PSGPlay( ( unsigned char* ) music_data );
+	devkit_PSGPlayNoRepeat( ( unsigned char* ) music_data );
 }
 
 //void engine_music_manager_play()

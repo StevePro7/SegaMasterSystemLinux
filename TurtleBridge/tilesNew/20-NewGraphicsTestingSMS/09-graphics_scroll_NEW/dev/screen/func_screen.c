@@ -1,5 +1,6 @@
 #include "func_screen.h"
 #include "../engine/asm_manager.h"
+#include "../engine/audio_manager.h"
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
@@ -25,13 +26,14 @@ void screen_func_screen_load()
 void screen_func_screen_update( unsigned char *screen_type )
 {
 	unsigned char input;
-	input = engine_input_manager_hold( input_type_up );
+	input = engine_input_manager_hold( input_type_down );
 	if( input )
 	{
 		if( !value )
 		{
 			value = 1;
 			engine_font_manager_data( value, 14, 12 );
+			engine_music_manager_play( 1 );
 		}
 
 		//engine_font_manager_char( '[', 14, 12 );
