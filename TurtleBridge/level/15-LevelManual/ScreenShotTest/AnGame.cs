@@ -7,8 +7,11 @@ namespace ScreenShotTest
 {
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
+		const string file = "output";
+
 		private AssetManager assetManager;
-		const string file = "level";
+		private FileManager fileManager;
+		
 
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
@@ -18,8 +21,12 @@ namespace ScreenShotTest
 
 		public AnGame()
 		{
-			wide = 256;
-			high = 192;
+			assetManager = new AssetManager();
+			fileManager = new FileManager();
+			fileManager.Initialize();
+
+			wide = fileManager.Objects.Count * 32;
+			high = 112;
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = wide;
 			graphics.PreferredBackBufferHeight = high;
@@ -30,6 +37,7 @@ namespace ScreenShotTest
 		{
 			IsMouseVisible = true;
 			base.Initialize();
+			fileManager.Initialize();
 			save = false;
 			//save = true;
 		}
@@ -39,7 +47,7 @@ namespace ScreenShotTest
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 
-			assetManager = new AssetManager();
+			
 			assetManager.LoadContent(Content);
 
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
@@ -87,9 +95,18 @@ namespace ScreenShotTest
 
 		private void Draw()
 		{
+			Texture2D image;
+			Vector2 pos;
 			graphics.GraphicsDevice.Clear(Color.Black);
 			spriteBatch.Begin();
 
+			pos = new Vector2(0, 0);
+			foreach(var obj in fileManager.Objects)
+			{
+				image = assetManager.Images[obj];
+				spriteBatch.Draw(image, pos, Color.White);
+				pos.X += image.Width;
+			}
 
 			spriteBatch.End();
 		}
