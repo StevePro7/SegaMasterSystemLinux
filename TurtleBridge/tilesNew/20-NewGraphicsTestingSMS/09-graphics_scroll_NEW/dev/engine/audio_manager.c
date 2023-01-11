@@ -1,15 +1,29 @@
 #include "audio_manager.h"
+#include "../devkit/_sms_manager.h"
 #include "../devkit/_snd_manager.h"
-//#include "../content/psg.h"
+#include "../banks/fixedbank.h"
 
-#define mus_game_psg			mus_game_psg
+// TODO - store the music data + bank in audio_object!
 
-void engine_music_manager_play()
+void engine_music_manager_play( unsigned char index )
 {
-	//devkit_PSGPlay( ( unsigned char* ) mus_game_psg );
-	//devkit_PSGPlayNoRepeat( ( unsigned char* ) mus_game_psg );
+	const unsigned char *music_data;
+	unsigned char music_bank;
+
+	devkit_SMS_mapROMBank( FIXED_BANK );
+	music_data = music_object_data[ index ];
+	music_bank = music_object_bank[ index ];
+
+	devkit_SMS_mapROMBank( music_bank );
+	devkit_PSGPlay( ( unsigned char* ) music_data );
 }
 
-void engine_sound_manager_play()
-{
-}
+//void engine_music_manager_play()
+//{
+//	//devkit_PSGPlay( ( unsigned char* ) mus_game_psg );
+//	//devkit_PSGPlayNoRepeat( ( unsigned char* ) mus_game_psg );
+//}
+//
+//void engine_sound_manager_play()
+//{
+//}

@@ -1,15 +1,16 @@
+#include "bank4.h"
+#include "bank5.h"
+
+
 // FIXED bank.
+// Audio Manager.
+const unsigned char *music_object_data[] =
+{
+	animeopening_psg,
+	mastertracker_psg,
+};
 const unsigned char music_object_bank[] =
 {
-	0x41, 0x42, 0x43,
-	32,
-	70,
-	32,
-	71,
-	32,
-	72,
-	74,
-	75,
-	77,
-	78
+	animeopening_psg_bank,
+	mastertracker_psg_bank,
 };

@@ -1,21 +1,34 @@
 XL3
-H A areas 3 global symbols
+H A areas 8 global symbols
 M fixedbank
 O -mz80
+S _mastertracker_psg Ref000000
+S _animeopening_psg Ref000000
 S .__.ABS. Def000000
 A _CODE size 0 flags 0 addr 0
 A _DATA size 0 flags 0 addr 0
-A _INITIALIZED size 0 flags 0 addr 0
+A _INITIALIZED size 4 flags 0 addr 0
+S _music_object_data Def000000
+S G$music_object_data$0_0$0 Def000000
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
-A _BANK7 size D flags 0 addr 0
+A _BANK7 size 2 flags 0 addr 0
 S _music_object_bank Def000000
 S G$music_object_bank$0_0$0 Def000000
-A _INITIALIZER size 0 flags 0 addr 0
+A _INITIALIZER size 4 flags 0 addr 0
+S Ffixedbank$__xinit_music_object_data$0_0$0 Def000000
 A _CABS size 0 flags 8 addr 0
 T 00 00 00
+R 00 00 02 00
+T 00 00 00
+R 00 00 02 00
+T 00 00 00
 R 00 00 07 00
-T 00 00 00 41 42 43 20 46 20 47 20 48 4A 4B 4D 4E
+T 00 00 00 04 05
 R 00 00 07 00
+T 00 00 00
+R 00 00 08 00
+T 00 00 00 00 00 00 00
+R 00 00 08 00 02 03 01 00 02 05 00 00

@@ -1,2 +1,5 @@
 M:fixedbank
-S:G$music_object_bank$0_0$0({13}DA13d,SC:U),D,0,0
+S:G$music_object_data$0_0$0({4}DA2d,DG,SC:U),E,0,0
+S:G$animeopening_psg$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$mastertracker_psg$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$music_object_bank$0_0$0({2}DA2d,SC:U),D,0,0
