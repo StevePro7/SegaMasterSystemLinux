@@ -14,7 +14,7 @@ namespace ScreenShotTest
 		public void Initialize()
 		{
 			var delim = new char[] { ',' };
-			var lines = File.ReadAllLines("level.txt");
+			var lines = File.ReadAllLines("level.csv");
 			foreach (var line in lines)
 			{
 				var objs = line.Split(delim);
@@ -25,14 +25,17 @@ namespace ScreenShotTest
 					}
 					else
 					{
-						char ch = obj.ToCharArray()[0];
-						if (ch >= 'A' && ch <= 'Q')
-						{
-							Objects.Add(obj);
-						}
+						var let = obj.ToUpper();
+						char ch = let.ToCharArray()[0];
+						//if (ch >= 'A' && ch <= 'Q')
+						//{
+							Objects.Add(let);
+						//}
 					}
 				}
 			}
+
+			int len = Objects.Count;
 		}
 
 		public IList<string> Objects { get; private set; }

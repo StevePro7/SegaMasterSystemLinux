@@ -11,7 +11,7 @@ namespace ScreenShotTest
 
 		private AssetManager assetManager;
 		private FileManager fileManager;
-		
+		private LevelManager levelManager;
 
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
@@ -21,6 +21,7 @@ namespace ScreenShotTest
 
 		public AnGame()
 		{
+			levelManager = new LevelManager();
 			assetManager = new AssetManager();
 			fileManager = new FileManager();
 			fileManager.Initialize();
@@ -37,7 +38,6 @@ namespace ScreenShotTest
 		{
 			IsMouseVisible = true;
 			base.Initialize();
-			fileManager.Initialize();
 			save = false;
 			//save = true;
 		}
@@ -46,8 +46,6 @@ namespace ScreenShotTest
 		{
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch(GraphicsDevice);
-
-			
 			assetManager.LoadContent(Content);
 
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
@@ -64,9 +62,15 @@ namespace ScreenShotTest
 		protected override void Update(GameTime gameTime)
 		{
 			// Allows the game to exit
-			if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-				this.Exit();
+			if (Keyboard.GetState().IsKeyDown(Keys.Escape))
+			{
+				Exit();
+			}
 
+			if (Keyboard.GetState().IsKeyDown(Keys.Enter))
+			{
+				fileManager.Initialize();
+			}
 			base.Update(gameTime);
 		}
 
@@ -105,6 +109,11 @@ namespace ScreenShotTest
 			{
 				image = assetManager.Images[obj];
 				spriteBatch.Draw(image, pos, Color.White);
+				int x = image.Width;
+				if (x != 32)
+				{
+					int y = 0;
+				}
 				pos.X += image.Width;
 			}
 
