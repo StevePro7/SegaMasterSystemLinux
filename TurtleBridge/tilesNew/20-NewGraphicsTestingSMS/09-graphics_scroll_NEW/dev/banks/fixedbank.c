@@ -1,11 +1,15 @@
 // FIXED bank.
 const unsigned char music_object_bank[] =
 {
-	0,
-	1,
-	2,
-	4,
-	5,
-	7,
-	8
+	0x41, 0x42, 0x43,
+	32,
+	70,
+	32,
+	71,
+	32,
+	72,
+	74,
+	75,
+	77,
+	78
 };
