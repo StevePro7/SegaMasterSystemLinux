@@ -11,6 +11,7 @@ namespace ScreenShotTest
 
 		private AssetManager assetManager;
 		private FileManager fileManager;
+		private BoardManager boardManager;
 		private LevelManager levelManager;
 
 		GraphicsDeviceManager graphics;
@@ -25,9 +26,10 @@ namespace ScreenShotTest
 			assetManager = new AssetManager();
 			fileManager = new FileManager();
 			fileManager.Initialize();
+			boardManager = new BoardManager(assetManager, fileManager);
 
-			wide = fileManager.Objects.Count * 32;
-			high = 112;
+			wide = 1024;// fileManager.Objects.Count * 32;
+			high = 224;
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = wide;
 			graphics.PreferredBackBufferHeight = high;
@@ -47,6 +49,7 @@ namespace ScreenShotTest
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 			assetManager.LoadContent(Content);
+			boardManager.LoadContent(Content);
 
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
 			wide = pp.BackBufferWidth;
@@ -99,24 +102,9 @@ namespace ScreenShotTest
 
 		private void Draw()
 		{
-			Texture2D image;
-			Vector2 pos;
-			graphics.GraphicsDevice.Clear(Color.Black);
+			graphics.GraphicsDevice.Clear(Color.CornflowerBlue);
 			spriteBatch.Begin();
-
-			pos = new Vector2(0, 0);
-			foreach(var obj in fileManager.Objects)
-			{
-				image = assetManager.Images[obj];
-				spriteBatch.Draw(image, pos, Color.White);
-				int x = image.Width;
-				if (x != 32)
-				{
-					int y = 0;
-				}
-				pos.X += image.Width;
-			}
-
+			boardManager.Draw(spriteBatch, wide, high);
 			spriteBatch.End();
 		}
 
