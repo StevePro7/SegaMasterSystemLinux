@@ -4,11 +4,14 @@
 #include "sprite_manager.h"
 #include "../devkit/_sms_manager.h"
 
+#define PARALLAX_SCROLLING	0
+
 // Global variable.
 struct_scroll_object global_scroll_object;
 
 #ifdef _CONSOLE
 #else
+#pragma disable_warning 126
 #pragma disable_warning 158
 #endif
 
@@ -37,11 +40,16 @@ static void full_scroll_update( unsigned char delta )
 
 void engine_scroll_manager_init()
 {
-	load_method = para_scroll_load;
-	update_method = para_scroll_update;
-
-	//load_method = full_scroll_load;
-	//update_method = full_scroll_update;
+	if( PARALLAX_SCROLLING )
+	{
+		load_method = para_scroll_load;
+		update_method = para_scroll_update;
+	}
+	else
+	{
+		load_method = full_scroll_load;
+		update_method = full_scroll_update;
+	}
 
 //	struct_scroll_object *so = &global_scroll_object;
 //	//->scroll_left = 0;
