@@ -26,6 +26,15 @@ namespace ScreenShotTest
 		{
 			Texture2D image;
 			Vector2 pos= new Vector2(0, 0);
+			int x = 0;
+			for (int box = 0; box < wide; box += 32)
+			{
+				image = assetManager.Images["A"];
+				spriteBatch.Draw(image, new Vector2(x, 0), Color.White);
+				spriteBatch.Draw(image, new Vector2(x, 112), Color.White);
+				x += 32;
+			}
+
 			foreach (var obj in fileManager.Objects)
 			{
 				image = assetManager.Images[obj];
@@ -33,19 +42,29 @@ namespace ScreenShotTest
 				pos.X += image.Width;
 			}
 
+
+			pos = new Vector2(64, 112);
+			foreach (var obj in assetManager.Images.Values)
+			{
+				spriteBatch.Draw(obj, pos, Color.White);
+				pos.X += 32;
+			}
+
 			// Draw lines
 			for (int col = 0; col < wide; col += 32)
 			{
-				spriteBatch.Draw(stripVert, new Vector2(col, 0), new Rectangle(0, 0, 2, 112), Color.White);
+				spriteBatch.Draw(stripVert, new Vector2(col, 0), new Rectangle(0, 0, 2, 224), Color.White);
 				if (col > 0 && 0 == col % 256)
 				{
-					spriteBatch.Draw(stripVert, new Vector2(col, 0), new Rectangle(0, 0, 2, 112), Color.Black);
+					spriteBatch.Draw(stripVert, new Vector2(col, 0), new Rectangle(0, 0, 2, 224), Color.Black);
 				}
 			}
 			for (int row = 0; row < wide; row += 512)
 			{
 				spriteBatch.Draw(stripHorz, new Vector2(row, 112), Color.Black);
 			}
+
+			
 		}
 	}
 }
