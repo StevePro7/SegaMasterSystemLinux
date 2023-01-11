@@ -9,7 +9,7 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 
 :: Compile
 cd banks
-::::"C:\Program Files\SDCC\bin\sdcc.exe" --debug -c --no-std-crt0 -mz80 --Werror --opt-code-size --constseg BANK7 fixedbank.c
+"C:\Program Files\SDCC\bin\sdcc.exe" --debug -c --no-std-crt0 -mz80 --Werror --opt-code-size --constseg BANK7 fixedbank.c
 cd ..
 
 cd devkit
@@ -67,9 +67,13 @@ echo.
 "C:\Program Files\SDCC\bin\sdcc.exe" --debug -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-loc 0xC000 ^
 ../crt0/crt0_sms.rel main.rel ^
 -Wl-b_BANK2=0x8000  -Wl-b_BANK3=0x8000 ^
+-Wl-b_BANK4=0x8000  -Wl-b_BANK5=0x8000 ^
+-Wl-b_BANK6=0x8000  -Wl-b_BANK7=0x8000 ^
 ../lib/SMSlib.lib ^
 ../lib/PSGlib.rel ^
 banks/bank2.rel  banks/bank3.rel ^
+banks/bank4.rel  banks/bank5.rel ^
+banks/bank6.rel  banks/fixedbank.rel ^
 devkit/_sms_manager.rel ^
 devkit/_snd_manager.rel ^
 engine/asm_manager.rel ^
