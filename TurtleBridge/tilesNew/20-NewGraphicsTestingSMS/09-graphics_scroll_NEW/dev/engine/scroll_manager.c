@@ -12,45 +12,74 @@ struct_scroll_object global_scroll_object;
 #pragma disable_warning 158
 #endif
 
-static void lineScrollHandler( void );
+//static void lineScrollHandler( void );
+
+static void( *load_method )( unsigned char count );
+static void( *update_method )( unsigned char delta );
+
+static void para_scroll_load( unsigned char count )
+{
+	engine_font_manager_data( count, 10, 4 );
+}
+static void para_scroll_update( unsigned char delta )
+{
+	engine_font_manager_data( delta, 10, 6 );
+}
+
+static void full_scroll_load( unsigned char count )
+{
+	engine_font_manager_data( count, 10, 12 );
+}
+static void full_scroll_update( unsigned char delta )
+{
+	engine_font_manager_data( delta, 10, 16 );
+}
 
 void engine_scroll_manager_init()
 {
-	struct_scroll_object *so = &global_scroll_object;
-	//->scroll_left = 0;
-	//so->scroll_right = 0;
-	//so->scrollRightDivided8 = 0;
+	load_method = para_scroll_load;
+	update_method = para_scroll_update;
 
-	so->scroll = 0;
-	so->scrollRight = 0;
-	//so->offset_left = 0;
-	so->offset_right = 31;
+	//load_method = full_scroll_load;
+	//update_method = full_scroll_update;
 
-	devkit_SMS_setBGScrollX( so->scroll );
-	//print( false );
-
-	// NEW
-	so->scroll_x[ 0 ] = 0; 
-	so->scroll_x[ 1 ] = 0;
-	so->scroll_x[ 2 ] = 0;
-	so->scroll_x[ 3 ] = 0;
-	so->scroll_x[ 4 ] = 0;
-	so->scroll_x[ 5 ] = 0;
-	so->scroll_half = 0;
-	so->lineCnt = 0;
-
-	devkit_SMS_setLineInterruptHandler( &lineScrollHandler );
-	devkit_SMS_disableLineInterrupt();
+//	struct_scroll_object *so = &global_scroll_object;
+//	//->scroll_left = 0;
+//	//so->scroll_right = 0;
+//	//so->scrollRightDivided8 = 0;
+//
+//	so->scroll = 0;
+//	so->scrollRight = 0;
+//	//so->offset_left = 0;
+//	so->offset_right = 31;
+//
+//	devkit_SMS_setBGScrollX( so->scroll );
+//	//print( false );
+//
+//	// NEW
+//	so->scroll_x[ 0 ] = 0; 
+//	so->scroll_x[ 1 ] = 0;
+//	so->scroll_x[ 2 ] = 0;
+//	so->scroll_x[ 3 ] = 0;
+//	so->scroll_x[ 4 ] = 0;
+//	so->scroll_x[ 5 ] = 0;
+//	so->scroll_half = 0;
+//	so->lineCnt = 0;
+//
+//	devkit_SMS_setLineInterruptHandler( &lineScrollHandler );
+//	devkit_SMS_disableLineInterrupt();
 }
 
 void engine_scroll_manager_load( unsigned char count )
 {
-	devkit_SMS_setLineCounter( count );
-	devkit_SMS_enableLineInterrupt();
+	load_method( count );
+	//devkit_SMS_setLineCounter( count );
+	//devkit_SMS_enableLineInterrupt();
 }
 
 bool engine_scroll_manager_update( unsigned char delta )
 {
+	update_method( delta );
 	//struct_scroll_object *so = &global_scroll_object;
 	////unsigned char temp;
 	//bool newTile;
@@ -119,16 +148,16 @@ bool engine_scroll_manager_update( unsigned char delta )
 
 
 
-static void lineScrollHandler( void )
-{
-	struct_scroll_object *so = &global_scroll_object;
-	//unsigned int val = scroll_x[ lineCnt++ ] >> 8;
-	unsigned int val = so->scroll_x[ so->lineCnt++ ];
-
-	////engine_font_manager_data( lineCnt, 10, 0 );
-	////engine_font_manager_data( val, 20, 0 );
-	////engine_font_manager_data( lineCnt, 10, 0 );
-	//devkit_SMS_setBGScrollX( ( scroll_x[ lineCnt++ ] ) >> 8 );
-
-	devkit_SMS_setBGScrollX( val );
-}
+//static void lineScrollHandler( void )
+//{
+//	struct_scroll_object *so = &global_scroll_object;
+//	//unsigned int val = scroll_x[ lineCnt++ ] >> 8;
+//	unsigned int val = so->scroll_x[ so->lineCnt++ ];
+//
+//	////engine_font_manager_data( lineCnt, 10, 0 );
+//	////engine_font_manager_data( val, 20, 0 );
+//	////engine_font_manager_data( lineCnt, 10, 0 );
+//	//devkit_SMS_setBGScrollX( ( scroll_x[ lineCnt++ ] ) >> 8 );
+//
+//	devkit_SMS_setBGScrollX( val );
+//}

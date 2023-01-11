@@ -1,19 +1,25 @@
 #include "test_screen.h"
+#include "../engine/asm_manager.h"
 #include "../engine/audio_manager.h"
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
-#include "../engine/global_manager.h"
 #include "../engine/input_manager.h"
-#include "../engine/level_manager.h"
 #include "../engine/scroll_manager.h"
-#include "../engine/tile_manager.h"
 #include "../devkit/_sms_manager.h"
 
 //static void print( bool newTile );
 
 void screen_test_screen_load()
 {
+	devkit_SMS_displayOff();
+	engine_asm_manager_clear_VRAM();
+	engine_content_manager_titles();
+	//engine_sprite_manager_clear( '[' );
+	engine_font_manager_text( "TEST SCREEN...!", 10, 2 );
+	engine_scroll_manager_load( 20 );
+	devkit_SMS_displayOn();
+
 	//unsigned char idx;
 	//unsigned char tile = tile_type_island;
 	//engine_tile_manager_sky();
@@ -34,7 +40,7 @@ void screen_test_screen_load()
 void screen_test_screen_update( unsigned char *screen_type )
 {
 	//struct_scroll_object *so = &global_scroll_object;
-	//unsigned char input;
+	unsigned char input;
 	//unsigned char delta;
 	//unsigned char value;
 	//bool newTile;
@@ -45,12 +51,12 @@ void screen_test_screen_update( unsigned char *screen_type )
 	//	engine_font_manager_char( '?', 1, 10 );
 	//}
 
-	//input = engine_input_manager_hold_down();
-	//if( input )
-	//{
-	//	newTile = so->scrollRight % 8 == 1;
+	input = engine_input_manager_hold( input_type_down);
+	if( input )
+	{
+		engine_scroll_manager_update( 2 );
 	//	print( newTile );
-	//}
+	}
 
 	//input = engine_input_manager_hold_left();
 	//if( input )
