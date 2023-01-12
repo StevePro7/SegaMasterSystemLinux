@@ -56,14 +56,46 @@ namespace ScreenShotTest
 			//Draw(spriteBatch, 7, 7 * 8, y);
 
 			// Right
-			Draw(spriteBatch, 2, 0 * 8, y);
-			Draw(spriteBatch, 2, 1 * 8, y);
-			Draw(spriteBatch, 3, 2 * 8, y);
-			Draw(spriteBatch, 4, 3 * 8, y);
-			Draw(spriteBatch, 5, 4 * 8, y);
-			Draw(spriteBatch, 6, 5 * 8, y);
-			Draw(spriteBatch, 7, 6 * 8, y);
-			Draw(spriteBatch, 8, 7 * 8, y);
+			//Draw(spriteBatch, 2, 0 * 8, y);
+			//Draw(spriteBatch, 2, 1 * 8, y);
+			//Draw(spriteBatch, 3, 2 * 8, y);
+			//Draw(spriteBatch, 4, 3 * 8, y);
+			//Draw(spriteBatch, 5, 4 * 8, y);
+			//Draw(spriteBatch, 6, 5 * 8, y);
+			//Draw(spriteBatch, 7, 6 * 8, y);
+			//Draw(spriteBatch, 8, 7 * 8, y);
+
+			// Platform
+			//Draw(spriteBatch, 2, 0 * 8, y);
+			//Draw(spriteBatch, 3, 1 * 8, y);
+			//Draw(spriteBatch, 4, 2 * 8, y);
+			//Draw(spriteBatch, 5, 3 * 8, y);
+			//Draw(spriteBatch, 2, 4 * 8, y);
+			//Draw(spriteBatch, 3, 5 * 8, y);
+			//Draw(spriteBatch, 4, 6 * 8, y);
+			//Draw(spriteBatch, 5, 7 * 8, y);
+
+			// Platform + tree
+			//Draw(spriteBatch, 3, 0 * 8, y);
+			//Draw(spriteBatch, 4, 1 * 8, y);
+			//Draw(spriteBatch, 5, 2 * 8, y);
+			//Draw(spriteBatch, 6, 3 * 8, y);
+			//Draw(spriteBatch, 3, 4 * 8, y);
+			//Draw(spriteBatch, 4, 5 * 8, y);
+			//Draw(spriteBatch, 5, 6 * 8, y);
+			//Draw(spriteBatch, 6, 7 * 8, y);
+			//Draw(spriteBatch, 11, 0 * 8, 0);
+
+			// Platform + sign
+			Draw(spriteBatch, 4, 0 * 8, y);
+			Draw(spriteBatch, 5, 1 * 8, y);
+			Draw(spriteBatch, 6, 2 * 8, y);
+			Draw(spriteBatch, 7, 3 * 8, y);
+			Draw(spriteBatch, 4, 4 * 8, y);
+			Draw(spriteBatch, 5, 5 * 8, y);
+			Draw(spriteBatch, 6, 6 * 8, y);
+			Draw(spriteBatch, 7, 7 * 8, y);
+			Draw(spriteBatch, 10, 4 * 8, High - 56);
 		}
 
 		private void Draw(SpriteBatch spriteBatch, int idx, int x, int y)
