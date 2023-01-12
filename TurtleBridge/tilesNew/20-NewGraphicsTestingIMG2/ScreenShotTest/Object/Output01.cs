@@ -44,8 +44,8 @@ namespace ScreenShotTest
 			int y = 0;
 
 			// Asset #0.
-			//DrawAsset(spriteBatch, AssetType.x00_font_tiles_yellow_192x24_05, 0, y);
-			DrawAsset(spriteBatch, AssetType.x00_font_tiles_yellow_192x24_06, 0, y);
+			DrawAsset(spriteBatch, AssetType.x00_font_tiles_yellow_192x24_05, 0, y);
+			//DrawAsset(spriteBatch, AssetType.x00_font_tiles_yellow_192x24_06, 0, y);
 
 			// Asset #1.
 			y += 24;
@@ -57,15 +57,21 @@ namespace ScreenShotTest
 
 			// Asset #2.
 			y += 112;
-			DrawAsset(spriteBatch, AssetType.x02_section03_norm_64x32, 0, y);
-			DrawAsset(spriteBatch, AssetType.x02_section03_open_64x32_02, 64, y);
-			DrawAsset(spriteBatch, AssetType.x02_section03_open_64x32_03, 128, y);
+			//DrawAsset(spriteBatch, AssetType.x02_section03_norm_64x32, 0, y);
+			//DrawAsset(spriteBatch, AssetType.x02_section03_open_64x32_02, 64, y);
+			//DrawAsset(spriteBatch, AssetType.x02_section03_open_64x32_03, 128, y);
+			DrawAsset(spriteBatch, AssetType.islands01, 0, y);
+			DrawAsset(spriteBatch, AssetType.islands02, 64, y);
+			DrawAsset(spriteBatch, AssetType.islands03, 128, y);
 
 			// Asset #3.
 			y += 112;
-			DrawAsset(spriteBatch, AssetType.x03_section03_tree_64x32_01, 0, y);
-			DrawAsset(spriteBatch, AssetType.x03_section03_tree_64x32_02, 64, y);
-			DrawAsset(spriteBatch, AssetType.x03_section03_tree_64x32_03, 128, y);
+			DrawAsset(spriteBatch, AssetType.islands04, 0, y);
+			DrawAsset(spriteBatch, AssetType.islands05, 64, y);
+			DrawAsset(spriteBatch, AssetType.islands06, 128, y);
+			//DrawAsset(spriteBatch, AssetType.x03_section03_tree_64x32_01, 0, y);
+			//DrawAsset(spriteBatch, AssetType.x03_section03_tree_64x32_02, 64, y);
+			//DrawAsset(spriteBatch, AssetType.x03_section03_tree_64x32_03, 128, y);
 
 			// Asset #4.
 			y += 112;

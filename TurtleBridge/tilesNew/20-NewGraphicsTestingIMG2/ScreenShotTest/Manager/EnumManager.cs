@@ -27,6 +27,13 @@
 
 		x05_clouds_192x24 = 18,
 		x06_titlescreenPlay = 19,
+
+		islands01 = 20,
+		islands02 = 21,
+		islands03 = 22,
+		islands04 = 23,
+		islands05 = 24,
+		islands06 = 25,
 	}
 
 }

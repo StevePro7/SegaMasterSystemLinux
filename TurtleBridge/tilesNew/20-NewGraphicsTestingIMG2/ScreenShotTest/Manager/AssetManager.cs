@@ -28,6 +28,12 @@ namespace ScreenShotTest
 			"04-hover_turtleAA00_32x24_01",
 			"05-clouds_192x24",
 			"06-titlescreenPlay",
+			"islands01",
+			"islands02",
+			"islands03",
+			"islands04",
+			"islands05",
+			"islands06",
 		};
 
 		protected int[] heights = { 0 };
