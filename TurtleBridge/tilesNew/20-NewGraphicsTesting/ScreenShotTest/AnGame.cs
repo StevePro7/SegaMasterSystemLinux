@@ -7,7 +7,7 @@ namespace ScreenShotTest
 {
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		const string name = "section03_open_64x32";
+		const string name = "islands03";
 
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
@@ -20,7 +20,7 @@ namespace ScreenShotTest
 
 		public AnGame()
 		{
-			output = new Output14();
+			output = new Output15();
 
 			assetManager = new AssetManager();
 			graphics = new GraphicsDeviceManager(this);
@@ -38,7 +38,7 @@ namespace ScreenShotTest
 			IsMouseVisible = true;
 			base.Initialize();
 			save = false;
-			save = true;
+			//save = true;
 		}
 
 		protected override void LoadContent()

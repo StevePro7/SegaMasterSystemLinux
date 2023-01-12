@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace ScreenShotTest
 {
-	public class Output15 : Output, IOutput
+	public class Output14 : Output, IOutput
 	{
 		const int high = 112;
 
@@ -12,17 +12,12 @@ namespace ScreenShotTest
 			base.Ctor(assetManager);
 
 			assets.Add(AssetType.waves_block_112);
-			assets.Add(AssetType.section03_norm_64x32_01);
 			assets.Add(AssetType.section03_norm_64x32_02);
 			assets.Add(AssetType.section03_norm_64x32_03);
 			assets.Add(AssetType.section03_norm_64x32_04);
 			assets.Add(AssetType.section03_norm_64x32_05);
 			assets.Add(AssetType.section03_norm_64x32_06);
 			assets.Add(AssetType.section03_norm_64x32_07);
-			assets.Add(AssetType.section03_norm_64x32_08);
-			assets.Add(AssetType.island);
-			assets.Add(AssetType.sign);
-			assets.Add(AssetType.tree);
 
 			Wide = 64;
 			High = high;
@@ -32,44 +27,7 @@ namespace ScreenShotTest
 		{
 			AssetType asset;
 			Texture2D image;
-			int y = High - 32;
-
-			// Waves
-			asset = assets[0];
-			image = assetManager.Images[(int)asset];
-			spriteBatch.Draw(image, new Vector2(0, 0), Color.White);
-			spriteBatch.Draw(image, new Vector2(32, 0), Color.White);
-
-			// ORG
-			//asset = assets[9];
-			//image = assetManager.Images[(int)asset];
-			//spriteBatch.Draw(image, new Vector2(0, High-image.Height), Color.White);
-
-			// Left
-			//Draw(spriteBatch, 1, 0 * 8, y);
-			//Draw(spriteBatch, 2, 1 * 8, y);
-			//Draw(spriteBatch, 3, 2 * 8, y);
-			//Draw(spriteBatch, 4, 3 * 8, y);
-			//Draw(spriteBatch, 5, 4 * 8, y);
-			//Draw(spriteBatch, 6, 5 * 8, y);
-			//Draw(spriteBatch, 7, 6 * 8, y);
-			//Draw(spriteBatch, 7, 7 * 8, y);
-
-			// Right
-			Draw(spriteBatch, 2, 0 * 8, y);
-			Draw(spriteBatch, 2, 1 * 8, y);
-			Draw(spriteBatch, 3, 2 * 8, y);
-			Draw(spriteBatch, 4, 3 * 8, y);
-			Draw(spriteBatch, 5, 4 * 8, y);
-			Draw(spriteBatch, 6, 5 * 8, y);
-			Draw(spriteBatch, 7, 6 * 8, y);
-			Draw(spriteBatch, 8, 7 * 8, y);
-		}
-
-		public void DrawX(SpriteBatch spriteBatch)
-		{
-			AssetType asset;
-			Texture2D image;
+			Vector2 pos;
 
 			int y = 0;
 			asset = assets[0];
@@ -88,14 +46,14 @@ namespace ScreenShotTest
 			//Draw(spriteBatch, 3, 6 * 8, y);
 			//Draw(spriteBatch, 4, 7 * 8, y);
 
-			//Draw(spriteBatch, 2, 0 * 8, y);
-			//Draw(spriteBatch, 3, 1 * 8, y);
-			//Draw(spriteBatch, 4, 2 * 8, y);
-			//Draw(spriteBatch, 5, 3 * 8, y);
-			//Draw(spriteBatch, 2, 4 * 8, y);
-			//Draw(spriteBatch, 3, 5 * 8, y);
-			//Draw(spriteBatch, 4, 6 * 8, y);
-			//Draw(spriteBatch, 5, 7 * 8, y);
+			Draw(spriteBatch, 2, 0 * 8, y);
+			Draw(spriteBatch, 3, 1 * 8, y);
+			Draw(spriteBatch, 4, 2 * 8, y);
+			Draw(spriteBatch, 5, 3 * 8, y);
+			Draw(spriteBatch, 2, 4 * 8, y);
+			Draw(spriteBatch, 3, 5 * 8, y);
+			Draw(spriteBatch, 4, 6 * 8, y);
+			Draw(spriteBatch, 5, 7 * 8, y);
 
 			//Draw(spriteBatch, 3, 0 * 8, y);
 			//Draw(spriteBatch, 4, 1 * 8, y);
@@ -122,6 +80,7 @@ namespace ScreenShotTest
 			var pos = new Vector2(x, y);
 			spriteBatch.Draw(image, pos, Color.White);
 		}
+
 
 	}
 }
