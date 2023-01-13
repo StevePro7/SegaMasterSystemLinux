@@ -3,12 +3,39 @@
 #include "font_manager.h"
 #include "global_manager.h"
 #include "../devkit/_sms_manager.h"
-//#include "../content/gfx.h"
+#include "../banks/bank2.h"
 
 // Global variable.
 struct_tile_object global_tile_object;
 struct_tile_object global_tile_objects[ MAX_TILE_OBJECTS ];
 
+void engine_tile_manager_stevepro( unsigned int tileMap, unsigned char x, unsigned char y, unsigned char w, unsigned char h )
+{
+	const unsigned char *tiles = bggame_tiles__tilemap__bin;
+	unsigned int idx;
+	unsigned int val;
+	unsigned char row, col;
+
+	//unsigned char x, y;
+	//unsigned char size, w, h;
+	//size = 24;
+	//w = 24;
+	//h = 3;
+	//x = 0;
+	//y = 0;
+
+	for( row = 0; row < h; row++ )
+	{
+		for( col = 0; col < w; col++ )
+		{
+			idx = tileMap + row * 2 * TILMAP_WIDE + col * 2;
+			val = tiles[ idx ];
+			devkit_SMS_setNextTileatXY( x + col, y + row );
+			devkit_SMS_setTile( ( val ) );
+		}
+	}
+}
+/*
 //void engine_tile_manager_draw_columns( unsigned char tile_type, unsigned char col, unsigned char x, bool flip )
 void engine_tile_manager_draw_columns( unsigned char tile_type, unsigned char x, unsigned char y, unsigned char col, bool flip )
 {
@@ -119,7 +146,7 @@ void engine_tile_manager_gfx4( unsigned int tmp, unsigned char h )
 	//unsigned char row, col;
 
 	//unsigned x, y;
-	//unsigned w/*, h*/;
+	//unsigned w, h;
 	//w = 16;
 	////h = 10;
 	//x = 18;
@@ -135,7 +162,8 @@ void engine_tile_manager_gfx4( unsigned int tmp, unsigned char h )
 	//		devkit_SMS_setTile( ( val ) );
 	//	}
 	//}
-}
+//}
+
 void engine_tile_manager_gfx2( unsigned char tmp )
 {
 	//const unsigned char *tiles = bggame_tiles__tilemap__bin;
@@ -167,9 +195,9 @@ void engine_tile_manager_gfx3( unsigned char tmp, unsigned char x, unsigned char
 	//const unsigned char *tiles = bggame_tiles__tilemap__bin;
 	//unsigned int idx;
 	//unsigned int val;
-	//unsigned char row/*, col*/;
+	//unsigned char row, col;
 
-	//unsigned /*x,*/ y;
+	//unsigned x,y;
 	//unsigned w, h;
 	//w = 16;
 	//h = 10;
@@ -182,11 +210,11 @@ void engine_tile_manager_gfx3( unsigned char tmp, unsigned char x, unsigned char
 	//		idx = tmp + row * 2 * w + col * 2;
 	//		val = tiles[ idx ];
 	//		val = val | devkit_TILE_FLIPPED_X();
-	//		devkit_SMS_setNextTileatXY( x /*+ col*/, y + row );		// IMPORTANT x not plus col now
+	//		devkit_SMS_setNextTileatXY( x, y + row );		// IMPORTANT x not plus col now
 	//		devkit_SMS_setTile( ( val ) );
 	//	//}
 	//}
-}
+//}
 
 void engine_tile_manager_gfx2_hack( unsigned char tmp )
 {
@@ -316,7 +344,7 @@ void engine_tile_manager_sea()
 	//	draw_see_line( sea_line3, x, 23 );
 	//}
 }
-
+*/
 void engine_tile_manager_init()
 {
 	//unsigned int tilemap_indexes[ MAX_TILE_OBJECTS ] = { TILE_NONE, TILE_SKY, TILE_SEA, TILE_BRIDGE, TILE_ISLAND, TILE_TURTLEF, TILE_TURTLEH, TILE_TREE, TILE_SIGN, TILE_GOAL, TILE_CLOUDB, TILE_CLOUDS, };

@@ -28,6 +28,7 @@ void engine_level_manager_load()
 
 void engine_level_manager_draw( unsigned int offset )
 {
+	offset += 2;
 	//struct_level_object *lo = &global_level_object;
 	//unsigned char index, type, cols;
 

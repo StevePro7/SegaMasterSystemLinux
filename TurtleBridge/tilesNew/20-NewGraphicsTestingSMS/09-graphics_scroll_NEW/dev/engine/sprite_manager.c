@@ -10,9 +10,9 @@
 void engine_sprite_manager_clear( unsigned char ch )
 {
 	unsigned char row, col;
-	for( row = 2; row < 22; row++ )
+	for( row = 0; row < 24; row++ )
 	{
-		for( col = 2; col < 30; col++ )
+		for( col = 0; col < 32; col++ )
 		{
 			engine_font_manager_char( ch, col, row );
 		}
