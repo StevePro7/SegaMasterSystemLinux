@@ -1,5 +1,5 @@
 #include "function_manager.h"
-
+/*
 #define BYTE_NIBBLE_MASK	0x0F
 
 void engine_function_manager_convertXYtoZ( unsigned char divide, unsigned char x, unsigned char y, unsigned char *z )
@@ -20,4 +20,4 @@ void engine_function_manager_convertByteToNibbles( unsigned char byte, unsigned 
 void engine_function_manager_convertNibblesToByte( unsigned char upper_nibble, unsigned char lower_nibble, unsigned char *byte )
 {
 //	*byte = lower_nibble | ( upper_nibble << 4 );
-}
+}*/
