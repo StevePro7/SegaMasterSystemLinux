@@ -7,7 +7,7 @@ namespace ScreenShotTest
 {
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		const string name = "921-sprite_left_64";
+		const string name = "94-sprite_left_128";
 
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
@@ -38,7 +38,7 @@ namespace ScreenShotTest
 			IsMouseVisible = true;
 			base.Initialize();
 			save = false;
-			//save = true;
+			save = true;
 		}
 
 		protected override void LoadContent()

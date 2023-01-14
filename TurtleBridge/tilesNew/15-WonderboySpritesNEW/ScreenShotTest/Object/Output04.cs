@@ -15,7 +15,7 @@ namespace ScreenShotTest
 			assets.Add(AssetType.sprite_plat04);
 
 			Wide = 32;
-			High = 64;
+			High = 128;
 		}
 
 		public void Draw(SpriteBatch spriteBatch)
