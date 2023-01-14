@@ -21,17 +21,17 @@ namespace Test
 
 		public void Initialize()
 		{
-			//po.posnX = 64;
-			po.posnX = 32;
-			//po.posnX = 158;
+			po.posnX = 64;
+			//po.posnX = 32;
 			po.posnY = 160;
-			po.frame = 2;
+			po.frame = 4;
+			//po.frame = 0;
 			updatePlayer();
 		}
 
 		private void updatePlayer()
 		{
-			po.drawX = po.posnX + 4;// - 16;
+			po.drawX = po.posnX - 16;
 			po.drawY = po.posnY - 32;
 			po.tileX = po.posnX >> 3;
 			po.tileY = po.posnY >> 3;
@@ -39,7 +39,7 @@ namespace Test
 
 		public void Update(GameTime gameTime)
 		{
-			if (myInputManager.KeyPress(Keys.Space))
+			if (myInputManager.KeyHold(Keys.Space))
 			{
 				var message = $"(x,y)=({po.posnX},{po.posnY})";
 				Logger.Info(message);
@@ -54,17 +54,25 @@ namespace Test
 				po.posnX += 1;
 				updatePlayer();
 			}
-			if (myInputManager.KeyHold(Keys.Up))
-			{
-				po.posnY -= 1;
-				updatePlayer();
-			}
+			//if (myInputManager.KeyHold(Keys.Up))
+			//{
+			//	po.posnY -= 1;
+			//	updatePlayer();
+			//}
 			if (myInputManager.KeyHold(Keys.Down))
 			{
-				const int dy = 1;
+				//const int dy = 1;
+				const int dy = 0;
 				bool isMoveDown = false;
 				int tempCollY = 0;
-				canMoveDown(dy, ref isMoveDown, ref tempCollY);
+				int tile = 0;
+				canMoveDown(dy, ref isMoveDown, ref tempCollY, ref tile);
+
+				bool onPlatform = !isMoveDown;
+
+				var message = $"{po.posnY},{tempCollY},{po.drawX},{po.posnX},{po.tileX},{po.tileX-2},{po.tileX-1},{po.tileX},{po.tileX+1},{tile},{onPlatform}";
+				Logger.Info(message);
+
 				if (isMoveDown)
 				{
 					po.posnY += dy;
@@ -72,42 +80,56 @@ namespace Test
 				}
 				else
 				{
-					// TODO - need to look this up!!
-					po.posnY = tempCollY * 8;
+					
+					po.posnY = po.posnY + 0; // tempCollY * 8;
 					updatePlayer();
 				}
 			}
 		}
 
-		private void canMoveDown(int dy, ref bool isMoveDown, ref int tempCollY)
+		private void canMoveDown(int dy, ref bool isMoveDown, ref int tempCollY, ref int tile)
 		{
 			//int tempCollY = 0;
 			int tempPosnY = po.posnY + dy;
 			int tempTileY = tempPosnY >> 3;
 
 			isMoveDown = false;
-			tempCollY = myLevelManager.collision_array[po.tileX + 0];
+			tile = po.tileX - 2;
+			tempCollY = myLevelManager.collision_array[tile];
 			if (tempTileY == tempCollY)
 			{
 				return;
 			}
 			else
 			{
-				tempCollY = myLevelManager.collision_array[po.tileX + 1];
+				tile = po.tileX - 1;
+				tempCollY = myLevelManager.collision_array[tile];
 				if (tempTileY == tempCollY)
 				{
 					return;
 				}
 				else
 				{
-					tempCollY = myLevelManager.collision_array[po.tileX + 2];
+					tile = po.tileX + 0;
+					tempCollY = myLevelManager.collision_array[tile];
 					if (tempTileY == tempCollY)
 					{
 						return;
 					}
+					else
+					{
+						tile = po.tileX + 1;
+						tempCollY = myLevelManager.collision_array[tile];
+						if (tempTileY == tempCollY)
+						{
+							return;
+						}
+					}
 				}
 			}
 
+			tempCollY = 0;
+			tile = 0;
 			isMoveDown = true;
 			return;
 		}

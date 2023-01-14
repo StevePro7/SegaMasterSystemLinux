@@ -15,7 +15,7 @@ namespace Test
 
 		public void Initialize()
 		{
-			collision_array = GetCollisionArray();
+			collision_array = getCollisionArray();
 		//	drawtiles_array = GetDrawTilesArray();
 		}
 
@@ -42,35 +42,14 @@ namespace Test
 			}
 		}
 
-		private Byte[] GetCollisionArray()
+		private Byte[] getCollisionArray()
 		{
 			return new byte[Constants.MAX_COLS]
 			{
-				20,20,20,20,0,0,0,0,20,20,20,20,0,0,0,0,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,
-				//20,20,20,20,20,20,20,20,20,20,0,0,0,0,0,0,0,0,0,0,0,0,20,20,20,20,20, 20,20,20,20,20,
+				20,20,20,20,20,20,0,0,0,0,20,20,20,20,20,20,20,20,20,20,0,0,0,0,0,0,0,0,0,0,0,0
 			};
 		}
 
-		//private Byte[] GetDrawTilesArray()
-		//{
-		//	return new byte[Constants.MAX_ROWS * Constants.MAX_COLS]
-		//	{
-		//		0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-		//		0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-		//		0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-		//		0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-		//		0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-		//		0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-		//		0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-		//		0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-		//		0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-		//		0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-		//		1,1,1,1,1,0,0,0,0,0,0,1,1,1,1,1,
-		//		0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-		//	};
-		//}
-
 		public Byte[] collision_array { get; private set; }
-		//private Byte[] drawtiles_array { get; set; }
 	}
 }
