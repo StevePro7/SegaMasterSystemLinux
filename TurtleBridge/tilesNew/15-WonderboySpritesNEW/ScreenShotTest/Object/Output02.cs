@@ -15,7 +15,7 @@ namespace ScreenShotTest
 
 		public void Draw(SpriteBatch spriteBatch)
 		{
-			int idx = 7;
+			int idx = 6;
 
 			AssetType asset;
 			Texture2D image;
@@ -24,7 +24,7 @@ namespace ScreenShotTest
 			
 			asset = assets[0];
 			image = assetManager.Images[(int)asset];
-			pos = new Vector2(0, 0);
+			pos = new Vector2(8, 0);
 			rect = new Rectangle(0, idx * 32, 32, 32);
 			spriteBatch.Draw(image, pos, rect, Color.White);
 		}

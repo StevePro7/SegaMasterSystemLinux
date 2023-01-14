@@ -24,7 +24,7 @@ namespace ScreenShotTest
 
 		public void Draw(SpriteBatch spriteBatch)
 		{
-			int x = 0;
+			int x = 8;
 			Draw(spriteBatch, 0, x, 0 * 32);
 			Draw(spriteBatch, 1, 0, 1 * 32);
 			Draw(spriteBatch, 2, x, 2 * 32);
