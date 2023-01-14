@@ -21,6 +21,13 @@
 		sprite_plat02 = 14,
 		sprite_plat03 = 15,
 		sprite_plat04 = 16,
+
+		sprite_left_08_256 = 17,
+		sprite_rght_08_256 = 18,
+		sprite_left_64 = 19,
+		sprite_rght_64 = 20,
+		sprite_left_128 = 21,
+		sprite_rght_128 = 22,
 	}
 
 }

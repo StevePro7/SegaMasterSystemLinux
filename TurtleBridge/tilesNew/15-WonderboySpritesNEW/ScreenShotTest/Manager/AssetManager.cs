@@ -27,6 +27,13 @@ namespace ScreenShotTest
 			"sprite_plat02",
 			"sprite_plat03",
 			"sprite_plat04",
+
+			"01-sprite_left_08_256",
+			"01-sprite_rght_08_256",
+			"92-sprite_left_64",
+			"92-sprite_rght_64",
+			"94-sprite_left_128",
+			"94-sprite_rght_128",
 		};
 
 		protected int[] heights = { 0 };
