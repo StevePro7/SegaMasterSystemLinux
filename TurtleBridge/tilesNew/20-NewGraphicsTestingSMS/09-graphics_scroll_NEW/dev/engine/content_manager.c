@@ -24,12 +24,13 @@ void engine_content_manager_titles()
 	load_tile( titles_tiles__tiles__psgcompr_bank, titles_tiles__tiles__psgcompr, BGGAME_TILES, titles_tiles__palette__bin );
 }
 
-//void engine_content_manager_sprite()
-//{
-//	// Sprite tiles.
-//	//devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) sprite_tiles__tiles__psgcompr, SPRITE_TILES );
-//	//devkit_SMS_loadSpritePalette( ( void * ) sprite_tiles__palette__bin );
-//}
+void engine_content_manager_sprite()
+{
+	// Sprite tiles.
+	devkit_SMS_mapROMBank( sprite_tiles__tiles__psgcompr_bank );
+	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) sprite_tiles__tiles__psgcompr, SPRITE_TILES );
+	devkit_SMS_loadSpritePalette( ( void * ) sprite_tiles__palette__bin );
+}
 
 static void load_tile( unsigned char bank, const unsigned char *tiles, unsigned char tilefrom, const unsigned char *palette )
 {

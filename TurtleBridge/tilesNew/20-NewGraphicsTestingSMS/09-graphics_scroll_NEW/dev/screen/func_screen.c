@@ -12,19 +12,23 @@ static unsigned int tmp;
 static void draw_title(unsigned int tmp);
 
 static unsigned char value;
+static unsigned char index;
 
 void screen_func_screen_load()
 {
 	tmp = 120;
 	value = 0;
+	index = 0;
 
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();
+	engine_content_manager_sprite();
 	//engine_sprite_manager_clear( 'X' );
-	draw_title(tmp);
-	//engine_font_manager_data( value, 14, 12 );
+	//draw_title(tmp);
+	engine_font_manager_data( index, 12, 9 );
 	//engine_font_manager_text( "FUNC SCREEN...!", 10, 2 );
+	engine_sprite_manager_draw( index, 96, 80 );
 	devkit_SMS_displayOn();
 }
 
@@ -59,6 +63,8 @@ void screen_func_screen_update( unsigned char *screen_type )
 
 		//engine_font_manager_char( '[', 14, 12 );
 //	}
+
+	engine_sprite_manager_draw( index, 96, 80 );
 
 	*screen_type = screen_type_func;
 }

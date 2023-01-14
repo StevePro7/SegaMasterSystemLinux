@@ -1,46 +1,119 @@
 ;!FILE sprite_manager.asm
 XL3
-H 9 areas 25 global symbols
+H 9 areas 6E global symbols
 M sprite_manager
 O -mz80
 S .__.ABS. Def000000
 S _engine_font_manager_char Ref000000
-A _CODE size 24 flags 0 addr 0
-S A$sprite_manager$70 Def000008
-S A$sprite_manager$61 Def000002
-S A$sprite_manager$80 Def000016
-S A$sprite_manager$71 Def000009
-S A$sprite_manager$72 Def00000A
-S A$sprite_manager$91 Def00001D
-S A$sprite_manager$73 Def00000D
-S A$sprite_manager$92 Def00001E
-S A$sprite_manager$74 Def00000E
-S A$sprite_manager$56 Def000000
-S A$sprite_manager$93 Def00001F
-S A$sprite_manager$84 Def000017
-S A$sprite_manager$75 Def00000F
-S A$sprite_manager$66 Def000004
-S A$sprite_manager$94 Def000021
-S A$sprite_manager$85 Def000018
-S A$sprite_manager$76 Def000010
-S A$sprite_manager$67 Def000005
-S A$sprite_manager$86 Def000019
-S A$sprite_manager$77 Def000011
-S A$sprite_manager$68 Def000006
-S A$sprite_manager$87 Def00001B
-S A$sprite_manager$78 Def000014
-S A$sprite_manager$69 Def000007
-S A$sprite_manager$79 Def000015
+S _devkit_SMS_addSprite Ref000000
+A _CODE size 85 flags 0 addr 0
+S A$sprite_manager$70 Def000006
+S A$sprite_manager$80 Def000014
+S A$sprite_manager$71 Def000007
+S A$sprite_manager$81 Def000015
+S A$sprite_manager$72 Def000008
+S A$sprite_manager$63 Def000002
+S A$sprite_manager$82 Def000016
+S A$sprite_manager$73 Def000009
+S A$sprite_manager$74 Def00000A
+S A$sprite_manager$93 Def00001D
+S A$sprite_manager$75 Def00000D
+S G$engine_sprite_manager_draw$0$0 Def000024
+S A$sprite_manager$94 Def00001E
+S A$sprite_manager$76 Def00000E
+S A$sprite_manager$58 Def000000
+S A$sprite_manager$95 Def00001F
+S A$sprite_manager$86 Def000017
+S A$sprite_manager$77 Def00000F
+S A$sprite_manager$68 Def000004
+S A$sprite_manager$96 Def000021
+S A$sprite_manager$87 Def000018
+S A$sprite_manager$78 Def000010
+S A$sprite_manager$69 Def000005
+S A$sprite_manager$88 Def000019
+S A$sprite_manager$79 Def000011
+S A$sprite_manager$89 Def00001B
+S _engine_sprite_manager_draw Def000024
+S XG$engine_sprite_manager_draw$0$0 Def000084
 S G$engine_sprite_manager_clear$0$0 Def000000
 S _engine_sprite_manager_clear Def000000
-S C$sprite_manager.c$10$0_0$115 Def000000
-S A$sprite_manager$102 Def000023
-S C$sprite_manager.c$20$2_0$115 Def000023
-S C$sprite_manager.c$13$2_0$115 Def00001D
-S C$sprite_manager.c$15$2_0$115 Def000002
+S C$sprite_manager.c$10$0_0$116 Def000000
+S A$sprite_manager$130 Def00003E
+S A$sprite_manager$121 Def00002D
+S C$sprite_manager.c$30$2_0$122 Def00007B
+S A$sprite_manager$203 Def000084
+S A$sprite_manager$131 Def000040
+S A$sprite_manager$122 Def000030
+S A$sprite_manager$104 Def000023
+S C$sprite_manager.c$22$2_0$122 Def000024
+S A$sprite_manager$150 Def000054
+S A$sprite_manager$123 Def000031
+S A$sprite_manager$114 Def000024
+S C$sprite_manager.c$32$2_0$122 Def000042
+S C$sprite_manager.c$20$2_0$116 Def000023
+S A$sprite_manager$160 Def00005C
+S A$sprite_manager$124 Def000032
+S A$sprite_manager$115 Def000026
+S A$sprite_manager$170 Def00006A
+S A$sprite_manager$161 Def00005D
+S A$sprite_manager$143 Def000049
+S A$sprite_manager$125 Def000033
+S A$sprite_manager$116 Def00002A
+S C$sprite_manager.c$13$2_0$116 Def00001D
+S A$sprite_manager$180 Def000076
+S A$sprite_manager$171 Def00006B
+S A$sprite_manager$162 Def00005E
+S A$sprite_manager$144 Def00004C
+S A$sprite_manager$135 Def000042
+S A$sprite_manager$126 Def000034
+S A$sprite_manager$117 Def00002C
+S A$sprite_manager$181 Def000077
+S A$sprite_manager$172 Def00006C
+S A$sprite_manager$163 Def000061
+S A$sprite_manager$154 Def000055
+S A$sprite_manager$145 Def00004D
+S A$sprite_manager$127 Def000037
+S C$sprite_manager.c$32$4_0$124 Def000078
+S C$sprite_manager.c$30$5_0$125 Def00002D
+S C$sprite_manager.c$15$2_0$116 Def000002
+S A$sprite_manager$191 Def00007B
+S A$sprite_manager$173 Def00006D
+S A$sprite_manager$164 Def000062
+S A$sprite_manager$155 Def000056
+S A$sprite_manager$146 Def00004E
+S A$sprite_manager$137 Def000044
+S A$sprite_manager$192 Def00007E
+S A$sprite_manager$174 Def00006E
+S A$sprite_manager$165 Def000063
+S A$sprite_manager$156 Def000058
+S A$sprite_manager$147 Def00004F
+S A$sprite_manager$138 Def000045
+S A$sprite_manager$129 Def00003B
+S C$sprite_manager.c$38$2_0$122 Def000084
+S A$sprite_manager$175 Def00006F
+S A$sprite_manager$166 Def000064
+S A$sprite_manager$157 Def000059
+S A$sprite_manager$148 Def000052
+S A$sprite_manager$139 Def000047
 S XG$engine_sprite_manager_clear$0$0 Def000023
-S C$sprite_manager.c$15$4_0$117 Def000017
-S C$sprite_manager.c$17$5_0$118 Def000004
+S A$sprite_manager$185 Def000078
+S A$sprite_manager$176 Def000070
+S A$sprite_manager$167 Def000065
+S A$sprite_manager$158 Def00005A
+S A$sprite_manager$149 Def000053
+S C$sprite_manager.c$34$5_0$125 Def000049
+S C$sprite_manager.c$15$4_0$118 Def000017
+S A$sprite_manager$186 Def000079
+S A$sprite_manager$177 Def000071
+S A$sprite_manager$168 Def000066
+S A$sprite_manager$159 Def00005B
+S C$sprite_manager.c$35$5_0$125 Def000055
+S A$sprite_manager$178 Def000072
+S A$sprite_manager$169 Def000067
+S A$sprite_manager$197 Def000080
+S A$sprite_manager$179 Def000075
+S A$sprite_manager$198 Def000082
+S C$sprite_manager.c$17$5_0$119 Def000004
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -64,4 +137,34 @@ R 00 00 00 00
 T 11 00 00 CD 00 00 F1 33 C1 04 78 D6 20 38 E7 0C
 R 00 00 00 00 02 04 01 00
 T 1E 00 00 79 D6 18 38 DF C9
+R 00 00 00 00
+T 24 00 00
+R 00 00 00 00
+T 24 00 00 DD E5 DD 21 00 00 DD 39 F5 DD 7E 04 87
+R 00 00 00 00
+T 31 00 00 87 87 87 DD 77 FE DD 36 FF 00
+R 00 00 00 00
+T 3B 00 00
+R 00 00 00 00
+T 3B 00 00 DD 7E FF D6 04 30 3E 0E 00
+R 00 00 00 00
+T 44 00 00
+R 00 00 00 00
+T 44 00 00 79 D6 04 30 32 DD 5E FF 7B 87 87 DD 46
+R 00 00 00 00
+T 51 00 00 FE 80 69 85 6F 3E 00 3C 67 7B 87 87 87
+R 00 00 00 00
+T 5E 00 00 DD 46 06 80 5F 79 87 87 87 DD 46 05 80
+R 00 00 00 00
+T 6B 00 00 C5 E5 63 E5 33 F5 33 CD 00 00 F1 F1 C1
+R 00 00 00 00 02 0B 02 00
+T 78 00 00 0C 18 C9
+R 00 00 00 00
+T 7B 00 00
+R 00 00 00 00
+T 7B 00 00 DD 34 FF 18 BB
+R 00 00 00 00
+T 80 00 00
+R 00 00 00 00
+T 80 00 00 DD F9 DD E1 C9
 R 00 00 00 00

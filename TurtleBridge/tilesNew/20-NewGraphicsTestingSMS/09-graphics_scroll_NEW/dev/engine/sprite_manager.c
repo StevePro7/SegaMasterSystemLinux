@@ -19,17 +19,23 @@ void engine_sprite_manager_clear( unsigned char ch )
 	}
 }
 
-// zoom sprites
-//void engine_sprite_manager_draw( unsigned char x, unsigned char y, unsigned int tile )
-//{
-//	const unsigned char size = 2;
-//	tile = SPRITE_TILES + tile * 4;
-//
-//	devkit_SMS_addSprite( x + size * 0, y + size * 0, tile + 0 );
-//	devkit_SMS_addSprite( x + size * 8, y + size * 0, tile + 1 );
-//	devkit_SMS_addSprite( x + size * 0, y + size * 8, tile + 2 );
-//	devkit_SMS_addSprite( x + size * 8, y + size * 8, tile + 3 );
-//}
+void engine_sprite_manager_draw( unsigned char idx, unsigned char x, unsigned char y )
+{
+	const unsigned char wide = 4;
+	const unsigned char high = 4;
+	unsigned char num;
+
+	unsigned char i, j;
+
+	for( j = 0; j < high; j++ )
+	{
+		for( i = 0; i < wide; i++ )
+		{
+			num = ( idx * wide * high ) + j * 4 + i;
+			devkit_SMS_addSprite( x + i * 8, y + j * 8, SPRITE_TILES + num );
+		}
+	}
+}
 
 //void engine_sprite_manager_fish( unsigned char x, unsigned char y )
 //{
