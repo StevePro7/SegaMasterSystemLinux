@@ -94,7 +94,8 @@ namespace Test
 			int tempTileY = tempPosnY >> 3;
 
 			isMoveDown = false;
-			tile = po.tileX - 2;
+			tile = po.tileX - 2;    // Easy
+			tile = po.tileX - 1;	// Hard
 			tempCollY = myLevelManager.collision_array[tile];
 			if (tempTileY == tempCollY)
 			{
@@ -102,30 +103,30 @@ namespace Test
 			}
 			else
 			{
-				tile = po.tileX - 1;
-				tempCollY = myLevelManager.collision_array[tile];
-				if (tempTileY == tempCollY)
-				{
-					return;
-				}
-				else
-				{
-					tile = po.tileX + 0;
-					tempCollY = myLevelManager.collision_array[tile];
-					if (tempTileY == tempCollY)
-					{
-						return;
-					}
-					else
-					{
+				//tile = po.tileX - 1;
+				//tempCollY = myLevelManager.collision_array[tile];
+				//if (tempTileY == tempCollY)
+				//{
+				//	return;
+				//}
+				//else
+				//{
+				//	tile = po.tileX + 0;
+				//	tempCollY = myLevelManager.collision_array[tile];
+				//	if (tempTileY == tempCollY)
+				//	{
+				//		return;
+				//	}
+				//	else
+				//	{
 						tile = po.tileX + 1;
 						tempCollY = myLevelManager.collision_array[tile];
 						if (tempTileY == tempCollY)
 						{
 							return;
 						}
-					}
-				}
+				//	}
+				//}
 			}
 
 			tempCollY = 0;
