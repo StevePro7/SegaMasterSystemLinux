@@ -82,10 +82,10 @@ static void drawScreen()
 	////engine_sprite_manager_clear('[');
 
 	engine_tile_manager_stevepro( TILE_PLAY_TITLE, 4, 0, 24, 3 );
-	engine_tile_manager_stevepro( TILE_CLOUDB, 2, 4, 8, 3 );
-	engine_tile_manager_stevepro( TILE_CLOUDS, 10, 4, 8, 3 );
-	engine_tile_manager_stevepro( TILE_CLOUDB, 18, 4, 8, 3 );
-	engine_tile_manager_stevepro( TILE_CLOUDS, 26, 4, 8, 3 );
+	engine_tile_manager_stevepro( TILE_CLOUDS, 2, 4, 8, 3 );
+	engine_tile_manager_stevepro3( TILE_CLOUDS, 10, 4, 8, 3 );
+	//engine_tile_manager_stevepro( TILE_CLOUDB, 18, 4, 8, 3 );
+	//engine_tile_manager_stevepro( TILE_CLOUDS, 26, 4, 8, 3 );
 
 	engine_tile_manager_stevepro( TILE_BRIDGE_MIDD, 0, 8, 4, 14 );
 	engine_tile_manager_stevepro( TILE_BRIDGE_MIDD, 4, 8, 4, 14 );

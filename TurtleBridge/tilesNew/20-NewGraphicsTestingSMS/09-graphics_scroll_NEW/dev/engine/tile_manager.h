@@ -10,7 +10,8 @@ extern struct_tile_object global_tile_object;
 extern struct_tile_object global_tile_objects[ MAX_TILE_OBJECTS ];
 
 void engine_tile_manager_stevepro( unsigned int tileMap, unsigned char x, unsigned char y, unsigned char w, unsigned char h );
-
+void engine_tile_manager_stevepro2( unsigned int tileMap, unsigned char x, unsigned char y, unsigned char w, unsigned char h );
+void engine_tile_manager_stevepro3( unsigned int tileMap, unsigned char x, unsigned char y, unsigned char w, unsigned char h );
 void engine_tile_manager_init();
 /*
 void engine_tile_manager_draw( unsigned char tile_type );

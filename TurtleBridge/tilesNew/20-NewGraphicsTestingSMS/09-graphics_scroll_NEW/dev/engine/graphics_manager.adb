@@ -1,9 +1,11 @@
 M:graphics_manager
 F:G$engine_graphics_manager_sea$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lgraphics_manager.engine_graphics_manager_sea$x$1_0$3({1}SC:U),B,1,4
+S:Lgraphics_manager.engine_graphics_manager_sea$x$1_0$5({1}SC:U),B,1,4
 S:Lgraphics_manager.engine_graphics_manager_sea$sloc0$0_1$0({1}SC:S),B,1,-1
 T:Fgraphics_manager$tag_struct_tile_object[({0}S:S$tilemap_index$0_0$0({2}SI:U),Z,0,0)({2}S:S$tile_wide$0_0$0({1}SC:U),Z,0,0)({3}S:S$tile_high$0_0$0({1}SC:U),Z,0,0)]
 S:G$global_tile_object$0_0$0({4}STtag_struct_tile_object:S),E,0,0
 S:G$global_tile_objects$0_0$0({48}DA12d,STtag_struct_tile_object:S),E,0,0
 S:G$engine_tile_manager_stevepro$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_tile_manager_stevepro2$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_tile_manager_stevepro3$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_init$0_0$0({2}DF,SV:S),C,0,0
