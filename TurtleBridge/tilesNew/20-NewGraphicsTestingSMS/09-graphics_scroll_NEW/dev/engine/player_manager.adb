@@ -1,10 +1,14 @@
 M:player_manager
 F:G$engine_player_manager_init$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lplayer_manager.engine_player_manager_init$po$1_0$3({2}DG,STtag_struct_player_object:S),R,0,0,[l,h]
+F:G$engine_player_manager_left$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lplayer_manager.engine_player_manager_left$po$1_0$4({2}DG,STtag_struct_player_object:S),R,0,0,[c,b]
+F:G$engine_player_manager_right$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lplayer_manager.engine_player_manager_right$po$1_0$5({2}DG,STtag_struct_player_object:S),R,0,0,[c,b]
 F:Fplayer_manager$updatePlayer$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lplayer_manager.updatePlayer$po$1_0$4({2}DG,STtag_struct_player_object:S),R,0,0,[e,d]
+S:Lplayer_manager.updatePlayer$po$1_0$6({2}DG,STtag_struct_player_object:S),R,0,0,[e,d]
 F:G$engine_player_manager_draw$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lplayer_manager.engine_player_manager_draw$po$1_0$5({2}DG,STtag_struct_player_object:S),R,0,0,[]
+S:Lplayer_manager.engine_player_manager_draw$po$1_0$7({2}DG,STtag_struct_player_object:S),R,0,0,[]
 T:Fplayer_manager$tag_struct_player_object[({0}S:S$posnX$0_0$0({1}SC:U),Z,0,0)({1}S:S$posnY$0_0$0({1}SC:U),Z,0,0)({2}S:S$drawX$0_0$0({1}SC:U),Z,0,0)({3}S:S$drawY$0_0$0({1}SC:U),Z,0,0)({4}S:S$tileX$0_0$0({1}SC:U),Z,0,0)({5}S:S$tileY$0_0$0({1}SC:U),Z,0,0)]
 S:G$global_player_object$0_0$0({6}STtag_struct_player_object:S),E,0,0
 S:G$engine_sprite_manager_clear$0_0$0({2}DF,SV:S),C,0,0

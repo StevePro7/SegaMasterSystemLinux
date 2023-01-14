@@ -16,6 +16,20 @@ void engine_player_manager_init()
 	updatePlayer();
 }
 
+void engine_player_manager_left()
+{
+	struct_player_object *po = &global_player_object;
+	po->posnX--;
+	updatePlayer();
+}
+
+void engine_player_manager_right()
+{
+	struct_player_object *po = &global_player_object;
+	po->posnX++;
+	updatePlayer();
+}
+
 static void updatePlayer()
 {
 	struct_player_object *po = &global_player_object;
