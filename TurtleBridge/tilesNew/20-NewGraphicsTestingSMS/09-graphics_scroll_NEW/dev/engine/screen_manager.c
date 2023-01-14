@@ -8,7 +8,7 @@
 //#include "../screen/begin_screen.h"
 #include "../screen/title_screen.h"
 //#include "../screen/start_screen.h"
-//#include "../screen/init_screen.h"
+#include "../screen/init_screen.h"
 //#include "../screen/load_screen.h"
 //#include "../screen/ready_screen.h"
 //#include "../screen/play_screen.h"
@@ -41,7 +41,7 @@ void engine_screen_manager_init( unsigned char open_screen_type )
 	//load_method[ screen_type_begin ] = screen_begin_screen_load;
 	load_method[ screen_type_title ] = screen_title_screen_load;
 	//load_method[ screen_type_start ] = screen_start_screen_load;
-	//load_method[ screen_type_init ] = screen_init_screen_load;
+	load_method[ screen_type_init ] = screen_init_screen_load;
 	//load_method[ screen_type_load ] = screen_load_screen_load;
 	//load_method[ screen_type_ready ] = screen_ready_screen_load;
 	//load_method[ screen_type_play ] = screen_play_screen_load;
@@ -63,7 +63,7 @@ void engine_screen_manager_init( unsigned char open_screen_type )
 	//update_method[ screen_type_begin ] = screen_begin_screen_update;
 	update_method[ screen_type_title ] = screen_title_screen_update;
 	//update_method[ screen_type_start ] = screen_start_screen_update;
-	//update_method[ screen_type_init ] = screen_init_screen_update;
+	update_method[ screen_type_init ] = screen_init_screen_update;
 	//update_method[ screen_type_load ] = screen_load_screen_update;
 	//update_method[ screen_type_ready ] = screen_ready_screen_update;
 	//update_method[ screen_type_play ] = screen_play_screen_update;
