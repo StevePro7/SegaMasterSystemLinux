@@ -7,7 +7,7 @@ namespace ScreenShotTest
 {
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		const string name = "sprite_plat01";
+		const string name = "sprite_plat04";
 
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;

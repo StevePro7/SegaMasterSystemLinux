@@ -8,7 +8,11 @@ namespace ScreenShotTest
 		public void Ctor(GraphicsDeviceManager graphics, AssetManager assetManager)
 		{
 			base.Ctor(assetManager);
+			assets.Add(AssetType.sprites_partial);
 			assets.Add(AssetType.sprite_top01);
+			assets.Add(AssetType.sprite_top02);
+			assets.Add(AssetType.sprite_top03);
+			assets.Add(AssetType.sprite_top04);
 			Wide = 32;
 			High = 32;
 		}
@@ -19,7 +23,7 @@ namespace ScreenShotTest
 			AssetType asset;
 			Texture2D image;
 			Vector2 pos;
-			asset = assets[0];
+			asset = assets[4];
 			image = assetManager.Images[(int)asset];
 			pos = new Vector2(x, 0);
 			spriteBatch.Draw(image, pos, Color.White);
