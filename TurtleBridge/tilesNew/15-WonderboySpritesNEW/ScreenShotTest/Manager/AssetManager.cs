@@ -13,6 +13,15 @@ namespace ScreenShotTest
 			"sprite_top02",
 			"sprite_top03",
 			"sprite_top04",
+
+			"sprite_flip01",
+			"sprite_flip02",
+			"sprite_flip03",
+			"sprite_flip04",
+			"sprite_flip05",
+			"sprite_flip06",
+			"sprite_flip07",
+			"sprite_flip08",
 		};
 
 		protected int[] heights = { 0 };
