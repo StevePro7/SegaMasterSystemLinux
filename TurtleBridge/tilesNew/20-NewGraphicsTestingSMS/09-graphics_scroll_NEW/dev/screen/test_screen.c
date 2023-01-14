@@ -4,6 +4,7 @@
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
+#include "../engine/graphics_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/sprite_manager.h"
 #include "../engine/tile_manager.h"
@@ -17,20 +18,6 @@ static void drawScreen();
 void screen_test_screen_load()
 {
 	drawScreen();
-	engine_tile_manager_stevepro( 128, 8, 21, 1, 1 );
-	engine_tile_manager_stevepro( 128, 9, 21, 1, 1 );
-	engine_tile_manager_stevepro( 130, 10, 21, 1, 1 );
-	engine_tile_manager_stevepro( 132, 11, 21, 1, 1 );
-
-	engine_tile_manager_stevepro( 126, 8, 22, 1, 1 );
-	engine_tile_manager_stevepro( 126, 9, 22, 1, 1 );
-	engine_tile_manager_stevepro( 126, 10, 22, 1, 1 );
-	engine_tile_manager_stevepro( 142, 11, 22, 1, 1 );
-
-	engine_tile_manager_stevepro( 126, 8, 23, 1, 1 );
-	engine_tile_manager_stevepro( 138, 9, 23, 1, 1 );
-	engine_tile_manager_stevepro( 140, 10, 23, 1, 1 );
-	engine_tile_manager_stevepro( 126, 11, 23, 1, 1 );
 }
 
 void screen_test_screen_update( unsigned char *screen_type )	
@@ -83,26 +70,32 @@ static void draw_title(unsigned int tmp)
 
 static void drawScreen()
 {
+	unsigned char x;
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();
 
+	for( x = 0; x < 32; x += 4 )
+	{
+		engine_graphics_manager_sea( x );
+	}
 	////engine_sprite_manager_clear('[');
-	//engine_tile_manager_stevepro( TILE_PLAY_TITLE, 4, 0, 24, 3 );
-	//engine_tile_manager_stevepro( TILE_CLOUDB, 2, 4, 8, 3 );
-	//engine_tile_manager_stevepro( TILE_CLOUDS, 10, 4, 8, 3 );
-	//engine_tile_manager_stevepro( TILE_CLOUDB, 18, 4, 8, 3 );
-	//engine_tile_manager_stevepro( TILE_CLOUDS, 26, 4, 8, 3 );
 
-	//engine_tile_manager_stevepro( TILE_BRIDGE_MIDD, 0, 8, 4, 14 );
-	//engine_tile_manager_stevepro( TILE_BRIDGE_MIDD, 4, 8, 4, 14 );
-	//engine_tile_manager_stevepro( TILE_BRIDGE_SIGN, 8, 8, 4, 14 );
-	//engine_tile_manager_stevepro( TILE_BRIDGE_RGHT, 12, 8, 4, 14 );
+	engine_tile_manager_stevepro( TILE_PLAY_TITLE, 4, 0, 24, 3 );
+	engine_tile_manager_stevepro( TILE_CLOUDB, 2, 4, 8, 3 );
+	engine_tile_manager_stevepro( TILE_CLOUDS, 10, 4, 8, 3 );
+	engine_tile_manager_stevepro( TILE_CLOUDB, 18, 4, 8, 3 );
+	engine_tile_manager_stevepro( TILE_CLOUDS, 26, 4, 8, 3 );
 
-	//engine_tile_manager_stevepro( TILE_WAVE, 16, 8, 4, 14 );
-	//engine_tile_manager_stevepro( TILE_WAVE, 20, 8, 4, 14 );
+	engine_tile_manager_stevepro( TILE_BRIDGE_MIDD, 0, 8, 4, 14 );
+	engine_tile_manager_stevepro( TILE_BRIDGE_MIDD, 4, 8, 4, 14 );
+	engine_tile_manager_stevepro( TILE_BRIDGE_SIGN, 8, 8, 4, 14 );
+	engine_tile_manager_stevepro( TILE_BRIDGE_RGHT, 12, 8, 4, 14 );
 
-	//engine_tile_manager_stevepro( TILE_ISLAND_02, 24, 8, 8, 14 );
+	engine_tile_manager_stevepro( TILE_WAVE, 16, 8, 4, 14 );
+	engine_tile_manager_stevepro( TILE_WAVE, 20, 8, 4, 14 );
+
+	engine_tile_manager_stevepro( TILE_ISLAND_02, 24, 8, 8, 14 );
 
 	//draw_title(tmp);
 	//engine_font_manager_data( tmp, 10, 20 );
