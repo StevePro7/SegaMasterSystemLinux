@@ -27,6 +27,6 @@ extern const unsigned char	sprite_tiles__palette__bin[];
 #define				sprite_tiles__palette__bin_bank 2
 
 extern const unsigned char	sprite_tiles__tiles__psgcompr[];
-#define				sprite_tiles__tiles__psgcompr_size 3404
+#define				sprite_tiles__tiles__psgcompr_size 2847
 #define				sprite_tiles__tiles__psgcompr_bank 2
 
