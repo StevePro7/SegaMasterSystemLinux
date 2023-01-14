@@ -1,6 +1,8 @@
 M:main
 F:G$main$0_0$0({2}DF,SV:S),C,0,10,0,0,0
 S:Lmain.main$col$1_0$96({2}SI:S),R,0,0,[l,h]
+S:Lmain.main$x$1_0$96({1}SC:U),R,0,0,[]
+S:Lmain.main$y$1_0$96({1}SC:U),R,0,0,[]
 S:Lmain.main$fmt$1_1$97({10}DA10d,SC:U),B,1,-10
 S:G$atof$0_0$0({2}DF,SF:S),C,0,0
 S:G$atoi$0_0$0({2}DF,SI:S),C,0,0
@@ -148,6 +150,7 @@ S:G$devkit_SMS_addSprite_bulk8$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_addSprite_bulk12$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_setTilePriority$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_isCollisionDetected$0_0$0({2}DF,SC:U),C,0,0
+S:G$engine_asm_manager_clear_VRAM$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_bgtiles$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_sprites$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_char$0_0$0({2}DF,SV:S),C,0,0

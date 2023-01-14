@@ -3,7 +3,7 @@
 
 int Bar()
 {
-	unsigned int test = 3;
+	unsigned int test = 1;
 
 	STEVEPRO();
 	test = 0;
