@@ -3,6 +3,7 @@
 #include "..\engine\content_manager.h"
 #include "..\engine\enum_manager.h"
 #include "..\engine\font_manager.h"
+#include "../engine/tile_manager.h"
 #include "..\devkit\_sms_manager.h"
 
 void screen_init_screen_load()
@@ -11,7 +12,9 @@ void screen_init_screen_load()
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();
 	engine_content_manager_sprite();
-	engine_font_manager_text( "INIT[SCREEN[OK", 10, 2 );
+	engine_tile_manager_stevepro( TILE_ISLAND_01, 0, 8, 8, 14 );
+	engine_tile_manager_stevepro( TILE_WAVE, 8, 8, 4, 14 );
+	engine_tile_manager_stevepro( TILE_ISLAND_01, 12, 8, 8, 14 );
 	devkit_SMS_displayOn();
 }
 
