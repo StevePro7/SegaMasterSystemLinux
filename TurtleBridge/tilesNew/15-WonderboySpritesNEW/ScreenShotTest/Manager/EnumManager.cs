@@ -16,6 +16,11 @@
 		sprite_flip06 = 10,
 		sprite_flip07 = 11,
 		sprite_flip08 = 12,
+
+		sprite_plat01 = 13,
+		sprite_plat02 = 14,
+		sprite_plat03 = 15,
+		sprite_plat04 = 16,
 	}
 
 }

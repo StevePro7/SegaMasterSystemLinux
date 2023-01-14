@@ -7,9 +7,7 @@ namespace ScreenShotTest
 {
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
-		//const string name = "sprite_left_08_256";
-		//const string name = "sprite_rght_08_256";
-		const string name = "sprite_flip07";
+		const string name = "921-sprite_left_64";
 
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
@@ -22,7 +20,7 @@ namespace ScreenShotTest
 
 		public AnGame()
 		{
-			output = new Output02();
+			output = new Output04();
 
 			assetManager = new AssetManager();
 			graphics = new GraphicsDeviceManager(this);
