@@ -53,6 +53,7 @@ static void start()
 
 	engine_screen_manager_init( open_screen_type );
 	engine_scroll_manager_init();
+	engine_player_manager_init();
 
 	devkit_SMS_displayOn();
 }

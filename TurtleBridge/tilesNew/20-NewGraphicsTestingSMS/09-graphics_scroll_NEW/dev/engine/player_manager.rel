@@ -1,17 +1,82 @@
 ;!FILE player_manager.asm
 XL3
-H 9 areas 7 global symbols
+H 9 areas 48 global symbols
 M player_manager
 O -mz80
+S _engine_sprite_manager_draw Ref000000
 S .__.ABS. Def000000
-A _CODE size 1 flags 0 addr 0
-S G$bar$0$0 Def000000
-S C$player_manager.c$4$0_0$83 Def000000
-S C$player_manager.c$6$0_0$83 Def000000
-S _bar Def000000
-S XG$bar$0$0 Def000000
-S A$player_manager$59 Def000000
-A _DATA size 0 flags 0 addr 0
+A _CODE size 45 flags 0 addr 0
+S C$player_manager.c$11$1_0$3 Def000000
+S A$player_manager$98 Def00000E
+S C$player_manager.c$12$1_0$3 Def000003
+S A$player_manager$99 Def00000F
+S C$player_manager.c$21$1_0$4 Def00000B
+S C$player_manager.c$13$1_0$3 Def000005
+S G$engine_player_manager_init$0$0 Def000000
+S C$player_manager.c$30$1_0$5 Def000031
+S C$player_manager.c$22$1_0$4 Def00000E
+S C$player_manager.c$31$1_0$5 Def000031
+S C$player_manager.c$23$1_0$4 Def000014
+S C$player_manager.c$32$1_0$5 Def000044
+S C$player_manager.c$24$1_0$4 Def00001D
+S C$player_manager.c$16$1_0$3 Def000008
+S C$player_manager.c$25$1_0$4 Def000026
+S C$player_manager.c$17$1_0$3 Def000008
+S C$player_manager.c$26$1_0$4 Def000030
+S _engine_player_manager_draw Def000031
+S C$player_manager.c$19$1_0$4 Def00000B
+S Fplayer_manager$updatePlayer$0$0 Def00000B
+S C$player_manager.c$28$1_0$5 Def000031
+S _engine_player_manager_init Def000000
+S XG$engine_player_manager_draw$0$0 Def000044
+S C$player_manager.c$9$0_0$3 Def000000
+S XG$engine_player_manager_init$0$0 Def000008
+S A$player_manager$100 Def000011
+S XFplayer_manager$updatePlayer$0$0 Def000030
+S A$player_manager$122 Def000026
+S A$player_manager$113 Def00001D
+S A$player_manager$104 Def000014
+S A$player_manager$123 Def000027
+S A$player_manager$114 Def00001E
+S A$player_manager$105 Def000015
+S A$player_manager$160 Def00003D
+S A$player_manager$124 Def000028
+S A$player_manager$115 Def00001F
+S A$player_manager$106 Def000016
+S A$player_manager$161 Def00003E
+S A$player_manager$152 Def000031
+S A$player_manager$125 Def000029
+S A$player_manager$116 Def000020
+S A$player_manager$107 Def000017
+S A$player_manager$162 Def00003F
+S A$player_manager$153 Def000034
+S A$player_manager$126 Def00002A
+S A$player_manager$117 Def000021
+S A$player_manager$108 Def000018
+S A$player_manager$172 Def000044
+S A$player_manager$163 Def000042
+S A$player_manager$154 Def000035
+S A$player_manager$136 Def000030
+S A$player_manager$127 Def00002C
+S A$player_manager$118 Def000023
+S A$player_manager$109 Def00001A
+S A$player_manager$164 Def000043
+S A$player_manager$155 Def000038
+S A$player_manager$128 Def00002F
+S A$player_manager$156 Def000039
+S A$player_manager$157 Def00003A
+S A$player_manager$158 Def00003B
+S A$player_manager$159 Def00003C
+S A$player_manager$70 Def000006
+S A$player_manager$61 Def000000
+S A$player_manager$81 Def000008
+S A$player_manager$65 Def000003
+S G$engine_player_manager_draw$0$0 Def000031
+S A$player_manager$94 Def00000B
+S A$player_manager$69 Def000005
+A _DATA size 6 flags 0 addr 0
+S _global_player_object Def000000
+S G$global_player_object$0_0$0 Def000000
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
@@ -20,6 +85,24 @@ A _GSFINAL size 0 flags 0 addr 0
 A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00 00
+R 00 00 01 00
+T 00 00 00
+R 00 00 01 00
+T 00 00 00
 R 00 00 00 00
-T 00 00 00 C9
+T 00 00 00 21 00 00 36 40 23 36 A0 C3 0B 00
+R 00 00 00 00 00 04 01 00 00 0C 00 00
+T 0B 00 00
 R 00 00 00 00
+T 0B 00 00 11 00 00 1A C6 F0 32 02 00 4B 42 03 0A
+R 00 00 00 00 00 04 01 00 00 0A 01 00
+T 18 00 00 C6 E0 32 03 00 1A 0F 0F 0F E6 1F 32
+R 00 00 00 00 00 06 01 00
+T 24 00 00 04 00 0A 0F 0F 0F E6 1F 21 05 00 77 C9
+R 00 00 00 00 00 03 01 00 00 0C 01 00
+T 31 00 00
+R 00 00 00 00
+T 31 00 00 21 03 00 46 3A 02 00 C5 33 F5 33 AF F5
+R 00 00 00 00 00 04 01 00 00 08 01 00
+T 3E 00 00 33 CD 00 00 F1 33 C9
+R 00 00 00 00 02 05 00 00

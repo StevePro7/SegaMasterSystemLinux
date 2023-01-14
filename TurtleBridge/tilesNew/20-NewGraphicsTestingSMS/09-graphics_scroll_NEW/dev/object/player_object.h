@@ -1,11 +1,11 @@
 #ifndef _PLAYER_OBJECT_H_
 #define _PLAYER_OBJECT_H_
 
-#include "../engine/global_manager.h"
-
 typedef struct tag_struct_player_object
 {
-	unsigned char posnX;
+	unsigned char posnX, posnY;
+	unsigned char drawX, drawY;
+	unsigned char tileX, tileY;
 
 } struct_player_object;
 

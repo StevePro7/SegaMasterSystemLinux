@@ -84,13 +84,13 @@ engine/content_manager.rel ^
 engine/enum_manager.rel engine/font_manager.rel ^
 engine/function_manager.rel engine/global_manager.rel ^
 engine/input_manager.rel ^
-engine/level_manager.rel ^
+engine/level_manager.rel engine/player_manager.rel ^
 engine/screen_manager.rel ^
 engine/scroll_manager.rel ^
 engine/sprite_manager.rel ^
 engine/storage_manager.rel ^
 engine/tile_manager.rel ^
-object/level_object.rel ^
+object/level_object.rel object/player_object.rel ^
 object/scroll_object.rel ^
 object/storage_object.rel ^
 object/tile_object.rel ^
