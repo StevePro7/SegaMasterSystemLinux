@@ -3,11 +3,13 @@
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
+#include "../engine/input_manager.h"
 #include "../engine/player_manager.h"
 #include "../engine/tile_manager.h"
 #include "../devkit/_sms_manager.h"
 
 static void drawScreen();
+static unsigned char collision_array[] = { 20,20,20,20,20,20,20,20,0,0,0,0,20,20,20,20,20,20,20,20,0,0,0,0,0,0,0,0,0,0,0,0 };
 
 void screen_init_screen_load()
 {
@@ -16,6 +18,22 @@ void screen_init_screen_load()
 
 void screen_init_screen_update( unsigned char *screen_type )
 {
+	struct_player_object *po = &global_player_object;
+	unsigned char input;
+	input = engine_input_manager_hold( input_type_up );
+	if( input )
+	{
+		engine_font_manager_data( po->drawX, 8, 0 );
+		engine_font_manager_data( po->posnX, 16, 0 );
+		engine_font_manager_data( po->tileX, 24, 0 );
+	}
+
+	input = engine_input_manager_hold( input_type_down );
+	if( input )
+	{
+		engine_font_manager_data( po->posnX, 20, 0 );
+	}
+
 	engine_player_manager_draw();
 	*screen_type = screen_type_init;
 }

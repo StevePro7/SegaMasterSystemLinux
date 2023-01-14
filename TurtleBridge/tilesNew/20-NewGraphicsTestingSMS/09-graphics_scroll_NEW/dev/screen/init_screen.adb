@@ -1,10 +1,13 @@
 M:init_screen
 F:G$screen_init_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_init_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Linit_screen.screen_init_screen_update$screen_type$1_0$89({2}DG,SC:U),B,1,4
+S:Linit_screen.screen_init_screen_update$screen_type$1_0$91({2}DG,SC:U),B,1,4
+S:Linit_screen.screen_init_screen_update$po$1_0$92({2}DG,STtag_struct_player_object:S),R,0,0,[]
+S:Linit_screen.screen_init_screen_update$input$1_0$92({1}SC:U),R,0,0,[a]
 F:Finit_screen$drawScreen$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 T:Finit_screen$tag_struct_player_object[({0}S:S$posnX$0_0$0({1}SC:U),Z,0,0)({1}S:S$posnY$0_0$0({1}SC:U),Z,0,0)({2}S:S$drawX$0_0$0({1}SC:U),Z,0,0)({3}S:S$drawY$0_0$0({1}SC:U),Z,0,0)({4}S:S$tileX$0_0$0({1}SC:U),Z,0,0)({5}S:S$tileY$0_0$0({1}SC:U),Z,0,0)]
 T:Finit_screen$tag_struct_tile_object[({0}S:S$tilemap_index$0_0$0({2}SI:U),Z,0,0)({2}S:S$tile_wide$0_0$0({1}SC:U),Z,0,0)({3}S:S$tile_high$0_0$0({1}SC:U),Z,0,0)]
+S:Finit_screen$collision_array$0_0$0({32}DA32d,SC:U),E,0,0
 S:G$global_player_object$0_0$0({6}STtag_struct_player_object:S),E,0,0
 S:G$global_tile_object$0_0$0({4}STtag_struct_tile_object:S),E,0,0
 S:G$global_tile_objects$0_0$0({48}DA12d,STtag_struct_tile_object:S),E,0,0
@@ -17,6 +20,9 @@ S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_zero$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_input_manager_update$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_input_manager_hold$0_0$0({2}DF,SC:U),C,0,0
+S:G$engine_input_manager_move$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_player_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_draw$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_stevepro$0_0$0({2}DF,SV:S),C,0,0
