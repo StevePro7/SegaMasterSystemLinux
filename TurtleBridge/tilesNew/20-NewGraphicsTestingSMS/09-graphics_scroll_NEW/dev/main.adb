@@ -209,6 +209,7 @@ S:G$engine_level_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_level_manager_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_level_manager_draw$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_init$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_player_manager_draw$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_screen_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_screen_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_init$0_0$0({2}DF,SV:S),C,0,0

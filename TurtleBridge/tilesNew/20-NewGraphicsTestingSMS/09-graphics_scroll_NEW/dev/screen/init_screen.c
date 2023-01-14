@@ -16,6 +16,7 @@ void screen_init_screen_load()
 
 void screen_init_screen_update( unsigned char *screen_type )
 {
+	engine_player_manager_draw();
 	*screen_type = screen_type_init;
 }
 
@@ -25,13 +26,14 @@ static void drawScreen()
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();
 	engine_content_manager_sprite();
-	engine_tile_manager_stevepro( TILE_PLAY_TITLE, 4, 0, 24, 3 );
-	engine_tile_manager_stevepro( TILE_CLOUDB, 2, 4, 8, 3 );
-	engine_tile_manager_stevepro( TILE_CLOUDS, 10, 4, 8, 3 );
-	engine_tile_manager_stevepro( TILE_CLOUDB, 18, 4, 8, 3 );
-	engine_tile_manager_stevepro( TILE_CLOUDS, 26, 4, 8, 3 );
+	//engine_tile_manager_stevepro( TILE_PLAY_TITLE, 4, 0, 24, 3 );
+	//engine_tile_manager_stevepro( TILE_CLOUDB, 2, 4, 8, 3 );
+	//engine_tile_manager_stevepro( TILE_CLOUDS, 10, 4, 8, 3 );
+	//engine_tile_manager_stevepro( TILE_CLOUDB, 18, 4, 8, 3 );
+	//engine_tile_manager_stevepro( TILE_CLOUDS, 26, 4, 8, 3 );
 	engine_tile_manager_stevepro( TILE_ISLAND_01, 0, 8, 8, 14 );
 	engine_tile_manager_stevepro( TILE_WAVE, 8, 8, 4, 14 );
 	engine_tile_manager_stevepro( TILE_ISLAND_01, 12, 8, 8, 14 );
+	engine_player_manager_draw();
 	devkit_SMS_displayOn();
 }
