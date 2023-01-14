@@ -35,19 +35,23 @@ void screen_func_screen_load()
 void screen_func_screen_update( unsigned char *screen_type )
 {
 	unsigned char input;
-	input = engine_input_manager_move(input_type_left);
+	input = engine_input_manager_hold(input_type_left);
 	if( input )
 	{
-		tmp -= 2;
-		draw_title( tmp );
-		engine_font_manager_data( tmp, 10, 20 );
+		//tmp -= 2;
+		//draw_title( tmp );
+		//engine_font_manager_data( tmp, 10, 20 );
+		index--;
+		engine_font_manager_data( index, 12, 9 );
 	}
-	input = engine_input_manager_move(input_type_right);
+	input = engine_input_manager_hold(input_type_right);
 	if( input )
 	{
-		tmp += 2;
-		draw_title( tmp );
-		engine_font_manager_data( tmp, 10, 20 );
+		//tmp += 2;
+		//draw_title( tmp );
+		//engine_font_manager_data( tmp, 10, 20 );
+		index++;
+		engine_font_manager_data( index, 12, 9 );
 	}
 
 
