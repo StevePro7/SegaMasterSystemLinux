@@ -3,6 +3,8 @@
 #include "font_manager.h"
 #include "global_manager.h"
 #include "tile_manager.h"
+#include "../devkit/_sms_manager.h"
+#include "../banks/fixedbank.h"
 
 // Global variable.
 struct_level_object global_level_object;
@@ -48,6 +50,7 @@ void engine_level_manager_draw( unsigned int offset )
 	//engine_font_manager_draw_data( index, 10, 1);
 	//engine_font_manager_draw_data( lo->level_draw_offset, 20, 1 );
 
+	devkit_SMS_mapROMBank( FIXED_BANK );
 	planesA = level_planesA[ index ];
 	columnA = level_columnA[ index ];
 	//type = level_tile_type[ index ];
@@ -64,7 +67,8 @@ void engine_level_manager_draw( unsigned int offset )
 	//engine_tile_manager_draw_empties( lo->level_draw_offset );
 	//if( 0 != planesA )
 	//{
-		engine_tile_manager_draw_columns( planesA, lo->level_draw_offset, columnA );
+	
+	engine_tile_manager_draw_columns( planesA, lo->level_draw_offset, columnA );
 	//}
 	//else
 	//{

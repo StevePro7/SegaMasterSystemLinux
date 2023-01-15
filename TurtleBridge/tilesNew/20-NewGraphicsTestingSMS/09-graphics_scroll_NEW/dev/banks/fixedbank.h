@@ -31,3 +31,8 @@ extern const unsigned char music_object_bank[];
 extern const unsigned int tiles_object_indexes[];
 extern const unsigned char tiles_object_widths[];
 extern const unsigned char tiles_object_platform[];
+
+
+// Level Manager.
+extern const unsigned char level_planesA[];
+extern const unsigned char level_columnA[];
