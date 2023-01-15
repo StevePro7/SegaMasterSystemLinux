@@ -37,7 +37,12 @@ void engine_level_manager_draw( unsigned int offset )
 	unsigned int index;
 	unsigned char planesA, columnA;
 	lo->level_cols_offset = offset;
-	lo->level_draw_offset = offset % SCREEN_WIDE;
+	//lo->level_draw_offset = offset % SCREEN_WIDE;
+	lo->level_draw_offset++;
+	if( lo->level_draw_offset >= SCREEN_WIDE )
+	{
+		lo->level_draw_offset = 0;
+	}
 
 	index = lo->level_cols_offset;
 	//engine_font_manager_draw_data( index, 10, 1);
