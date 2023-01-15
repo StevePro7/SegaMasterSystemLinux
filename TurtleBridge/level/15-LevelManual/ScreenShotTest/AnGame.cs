@@ -28,7 +28,7 @@ namespace ScreenShotTest
 			fileManager.Initialize();
 			boardManager = new BoardManager(assetManager, fileManager);
 
-			wide = 1024;// fileManager.Objects.Count * 32;
+			wide = 800;// fileManager.Objects.Count * 32;
 			high = 224;
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = wide;

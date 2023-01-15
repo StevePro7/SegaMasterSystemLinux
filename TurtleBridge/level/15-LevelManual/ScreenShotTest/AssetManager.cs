@@ -8,12 +8,14 @@ namespace ScreenShotTest
 	{
 		public void LoadContent(ContentManager myContentManager)
 		{
-			Images = new Dictionary<string, Texture2D>();
+			Images = new List<Texture2D>();
 			var files = GetFiles();
-			foreach (var file in files)
+			for (int index = 0; index < files.Length; index++)
 			{
-				var name = file.Substring(0, 1);
-				Images[name] = myContentManager.Load<Texture2D>(file);
+				var file = files[index];
+				var temp = "Large/" + file;
+				var image = myContentManager.Load<Texture2D>(temp);
+				Images.Add(image);
 			}
 		}
 
@@ -22,25 +24,26 @@ namespace ScreenShotTest
 			return new string[]
 			{
 				"AwavesBlock",
-				"BleftBridge",
-				"CmiddBridge",
-				"DrghtBridge",
-				"EsignBridge",
-				"FgoalBridge",
-				"GleftIsland",
-				"HmiddIsland",
-				"IrghtIsland",
-				"JtreeIslLft",
-				"KtreeIslRgt",
-				"LturtleSea1",
-				"MturtleSea2",
-				"NturtleFly1",
-				"OturtleFly2",
-				"PturtleFly3",
-				"QturtleFly4",
+				"BbridgeMidd",
+				"CbridgeSide",
+				"DbridgeSign",
+				"EislandTiny",
+				"FislandLeft",
+				"GislandRght",
+				"HislandMidd",
+				"IislandTree",
+				"JislandSign",
+				"KturtleSea1",
+				"LturtleSea2",
+				"MturtleFly1",
+				"NturtleFly2",
+				"OturtleFly3",
+				"PturtleFly4",
+				"QbridgeSideFlip",
+				"RbridgeSignGoal",
 			};
 		}
 
-		public IDictionary<string, Texture2D> Images { get; private set; }
+		public List<	Texture2D> Images { get; private set; }
 	}
 }
