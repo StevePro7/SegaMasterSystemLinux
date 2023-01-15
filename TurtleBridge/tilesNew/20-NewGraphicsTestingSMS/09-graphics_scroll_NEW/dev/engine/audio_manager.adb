@@ -3,9 +3,9 @@ F:G$engine_audio_manager_init$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Laudio_manager.engine_audio_manager_init$ao$1_0$122({2}DG,STtag_struct_audio_object:S),R,0,0,[]
 F:G$engine_music_manager_play$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Laudio_manager.engine_music_manager_play$index$1_0$123({1}SC:U),B,1,4
-S:Laudio_manager.engine_music_manager_play$music_data$1_0$124({2}DG,SC:U),R,0,0,[c,b]
-S:Laudio_manager.engine_music_manager_play$music_bank$1_0$124({1}SC:U),R,0,0,[a]
+S:Laudio_manager.engine_music_manager_play$ao$1_0$124({2}DG,STtag_struct_audio_object:S),R,0,0,[]
 F:G$engine_audio_manager_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Laudio_manager.engine_audio_manager_update$ao$1_0$125({2}DG,STtag_struct_audio_object:S),R,0,0,[]
 T:Faudio_manager$tag_struct_audio_object[({0}S:S$music_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$music_bank$0_0$0({1}SC:U),Z,0,0)]
 S:G$music_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$global_audio_object$0_0$0({3}STtag_struct_audio_object:S),E,0,0

@@ -16,20 +16,28 @@ void engine_audio_manager_init()
 
 void engine_music_manager_play( unsigned char index )
 {
-	const unsigned char *music_data;
-	unsigned char music_bank;
+	struct_audio_object *ao = &global_audio_object;
+	//const unsigned char *music_data;
+	//unsigned char music_bank;
 
 	devkit_SMS_mapROMBank( FIXED_BANK );
-	music_data = music_object_data[ index ];
-	music_bank = music_object_bank[ index ];
+	ao->music_data = ( unsigned char* ) music_object_data[ index ];
+	ao->music_bank = music_object_bank[ index ];
 
-	devkit_SMS_mapROMBank( music_bank );
-	devkit_PSGPlayNoRepeat( ( unsigned char* ) music_data );
+	devkit_SMS_mapROMBank( ao->music_bank );
+	devkit_PSGPlayNoRepeat( ( unsigned char* ) ao->music_data );
 }
 
 void engine_audio_manager_update()
 {
-	devkit_PSGFrame();
+	struct_audio_object *ao = &global_audio_object;
+	if( 0 != ao->music_bank )
+	{
+		//devkit_SMS_mapROMBank( ao->music_bank );
+		devkit_PSGFrame();
+	}
+
+
 	devkit_PSGSFXFrame();
 }
 

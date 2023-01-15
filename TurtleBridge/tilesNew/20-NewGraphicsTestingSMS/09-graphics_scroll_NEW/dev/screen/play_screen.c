@@ -16,7 +16,7 @@ void screen_play_screen_load()
 {
 	//drawScreen();
 	////TODO
-	engine_music_manager_play(0);
+	engine_music_manager_play( 0 );
 }
 
 void screen_play_screen_update( unsigned char *screen_type )
