@@ -16,7 +16,7 @@ static unsigned char cols;
 void screen_play_screen_load()
 {
 	drawScreen();
-	engine_music_manager_play( 0 );
+	engine_music_manager_play( 1 );
 	cols = 0;
 }
 
