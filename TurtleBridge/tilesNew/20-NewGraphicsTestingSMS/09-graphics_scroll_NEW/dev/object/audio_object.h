@@ -5,8 +5,8 @@ typedef struct tag_struct_audio_object
 {
 	unsigned char *music_data;
 	unsigned char music_bank;
-	//unsigned char *sound_data;
-	//unsigned char sound_bank;
+	unsigned char *sound_data;
+	unsigned char sound_bank;
 
 } struct_audio_object;
 
