@@ -1,54 +1,80 @@
 ;!FILE audio_manager.asm
 XL3
-H 9 areas 2C global symbols
+H 9 areas 46 global symbols
 M audio_manager
 O -mz80
+S _devkit_PSGSFXFrame Ref000000
 S _music_object_data Ref000000
 S _music_object_bank Ref000000
+S _devkit_PSGFrame Ref000000
 S .__.ABS. Def000000
 S _devkit_PSGPlayNoRepeat Ref000000
 S _devkit_SMS_mapROMBank Ref000000
-A _CODE size 35 flags 0 addr 0
-S A$audio_manager$92 Def00002E
-S A$audio_manager$83 Def000026
-S A$audio_manager$74 Def00001B
-S A$audio_manager$56 Def000006
-S A$audio_manager$93 Def000031
-S A$audio_manager$75 Def00001C
-S A$audio_manager$68 Def000010
-S A$audio_manager$87 Def000027
-S A$audio_manager$69 Def000013
-S C$audio_manager.c$13$1_0$97 Def000008
-S A$audio_manager$97 Def000032
-S A$audio_manager$88 Def000028
-S A$audio_manager$79 Def00001D
-S C$audio_manager.c$14$1_0$97 Def000010
-S A$audio_manager$89 Def000029
-S C$audio_manager.c$15$1_0$97 Def00001D
-S C$audio_manager.c$17$1_0$97 Def000027
-S C$audio_manager.c$19$1_0$97 Def000034
-S C$audio_manager.c$8$0_0$97 Def000000
-S G$engine_music_manager_play$0$0 Def000000
-S _engine_music_manager_play Def000000
-S A$audio_manager$102 Def000034
-S XG$engine_music_manager_play$0$0 Def000034
-S A$audio_manager$60 Def000008
-S A$audio_manager$70 Def000016
-S A$audio_manager$61 Def00000A
-S A$audio_manager$80 Def000020
-S A$audio_manager$71 Def000018
-S A$audio_manager$62 Def00000B
-S A$audio_manager$90 Def00002A
-S A$audio_manager$81 Def000023
-S A$audio_manager$72 Def000019
-S A$audio_manager$63 Def00000C
-S A$audio_manager$54 Def000000
-S A$audio_manager$91 Def00002D
-S A$audio_manager$82 Def000025
-S A$audio_manager$73 Def00001A
-S A$audio_manager$64 Def00000F
-S A$audio_manager$55 Def000002
-A _DATA size 0 flags 0 addr 0
+A _CODE size 47 flags 0 addr 0
+S A$audio_manager$92 Def00000C
+S A$audio_manager$74 Def000009
+S A$audio_manager$93 Def00000E
+S A$audio_manager$94 Def000012
+S A$audio_manager$68 Def000000
+S A$audio_manager$69 Def000003
+S A$audio_manager$98 Def000014
+S A$audio_manager$99 Def000016
+S G$engine_audio_manager_init$0$0 Def000000
+S _engine_audio_manager_init Def000000
+S G$engine_audio_manager_update$0$0 Def000041
+S G$engine_music_manager_play$0$0 Def00000C
+S XG$engine_audio_manager_init$0$0 Def00000B
+S _engine_audio_manager_update Def000041
+S _engine_music_manager_play Def00000C
+S C$audio_manager.c$10$0_0$122 Def000000
+S A$audio_manager$100 Def000017
+S A$audio_manager$110 Def000025
+S A$audio_manager$101 Def000018
+S A$audio_manager$120 Def000031
+S A$audio_manager$111 Def000026
+S A$audio_manager$102 Def00001B
+S C$audio_manager.c$12$1_0$122 Def000000
+S A$audio_manager$130 Def00003A
+S A$audio_manager$121 Def000032
+S A$audio_manager$112 Def000027
+S C$audio_manager.c$13$1_0$122 Def000000
+S A$audio_manager$140 Def000040
+S A$audio_manager$131 Def00003D
+S A$audio_manager$113 Def000028
+S C$audio_manager.c$14$1_0$122 Def000006
+S C$audio_manager.c$30$1_0$125 Def000041
+S C$audio_manager.c$22$1_0$124 Def000014
+S C$audio_manager.c$15$1_0$122 Def00000B
+S A$audio_manager$106 Def00001C
+S C$audio_manager.c$23$1_0$124 Def00001C
+S A$audio_manager$125 Def000033
+S A$audio_manager$107 Def00001F
+S C$audio_manager.c$32$1_0$125 Def000041
+S C$audio_manager.c$24$1_0$124 Def000029
+S A$audio_manager$153 Def000041
+S A$audio_manager$135 Def00003E
+S A$audio_manager$126 Def000034
+S A$audio_manager$117 Def000029
+S A$audio_manager$108 Def000022
+S XG$engine_audio_manager_update$0$0 Def000044
+S C$audio_manager.c$33$1_0$125 Def000044
+S A$audio_manager$127 Def000035
+S A$audio_manager$118 Def00002C
+S A$audio_manager$109 Def000024
+S C$audio_manager.c$34$1_0$125 Def000044
+S C$audio_manager.c$26$1_0$124 Def000033
+S C$audio_manager.c$17$1_0$124 Def00000C
+S A$audio_manager$164 Def000044
+S A$audio_manager$128 Def000036
+S A$audio_manager$119 Def00002F
+S XG$engine_music_manager_play$0$0 Def000040
+S A$audio_manager$129 Def000039
+S C$audio_manager.c$28$1_0$124 Def000040
+S A$audio_manager$82 Def00000B
+S A$audio_manager$73 Def000006
+A _DATA size 3 flags 0 addr 0
+S _global_audio_object Def000000
+S G$global_audio_object$0_0$0 Def000000
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
@@ -57,14 +83,26 @@ A _GSFINAL size 0 flags 0 addr 0
 A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00 00
+R 00 00 01 00
+T 00 00 00
+R 00 00 01 00
+T 00 00 00
 R 00 00 00 00
-T 00 00 00 DD E5 DD 21 00 00 DD 39 3E 07 F5 33 CD
+T 00 00 00 21 00 00 22 00 00 21 02 00 36 00 C9
+R 00 00 00 00 00 07 01 00 00 0A 01 00
+T 0C 00 00
 R 00 00 00 00
-T 0D 00 00 00 00 33 01 00 00 DD 6E 04 26 00 29 09
-R 00 00 00 00 02 03 04 00 02 07 00 00
-T 1A 00 00 4E 23 46 11 00 00 DD 6E 04 26 00 19 7E
-R 00 00 00 00 02 07 01 00
-T 27 00 00 C5 F5 33 CD 00 00 33 CD 00 00 F1 DD E1
-R 00 00 00 00 02 07 04 00 02 0B 03 00
-T 34 00 00 C9
+T 0C 00 00 DD E5 DD 21 00 00 DD 39 3E 07 F5 33 CD
 R 00 00 00 00
+T 19 00 00 00 00 33 01 00 00 DD 6E 04 26 00 29 09
+R 00 00 00 00 02 03 06 00 02 07 01 00
+T 26 00 00 4E 23 46 11 00 00 DD 6E 04 26 00 19 7E
+R 00 00 00 00 02 07 02 00
+T 33 00 00 C5 F5 33 CD 00 00 33 CD 00 00 F1 DD E1
+R 00 00 00 00 02 07 06 00 02 0B 05 00
+T 40 00 00 C9
+R 00 00 00 00
+T 41 00 00
+R 00 00 00 00
+T 41 00 00 CD 00 00 C3 00 00
+R 00 00 00 00 02 04 03 00 02 07 00 00

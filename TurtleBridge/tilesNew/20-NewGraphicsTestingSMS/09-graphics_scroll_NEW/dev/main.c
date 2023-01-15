@@ -22,8 +22,7 @@ void main( void )
 		//devkit_SMS_copySpritestoSAT();
 		devkit_UNSAFE_SMS_copySpritestoSAT();
 
-		devkit_PSGFrame();
-		devkit_PSGSFXFrame();
+		engine_audio_manager_update();
 	}
 }
 
@@ -42,6 +41,7 @@ static void start()
 	//devkit_SMS_setBGPaletteColor( 0, devkit_RGB( 1, 2, 3 ) );			// background tiles
 	//devkit_SMS_setBGPaletteColor( 16, devkit_RGB( 0, 3, 3 ) );		// border tiles		cornflower blue		sky
 
+	engine_audio_manager_init();
 	engine_level_manager_init();
 	engine_tile_manager_init();
 

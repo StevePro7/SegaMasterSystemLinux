@@ -2,8 +2,17 @@
 #include "../devkit/_sms_manager.h"
 #include "../devkit/_snd_manager.h"
 #include "../banks/fixedbank.h"
+#include <stdlib.h>
 
-// TODO - store the music data + bank in audio_object!
+// Global variable.
+struct_audio_object global_audio_object;
+
+void engine_audio_manager_init()
+{
+	struct_audio_object *ao = &global_audio_object;
+	ao->music_data = NULL;
+	ao->music_bank = 0;
+}
 
 void engine_music_manager_play( unsigned char index )
 {
@@ -16,6 +25,12 @@ void engine_music_manager_play( unsigned char index )
 
 	devkit_SMS_mapROMBank( music_bank );
 	devkit_PSGPlayNoRepeat( ( unsigned char* ) music_data );
+}
+
+void engine_audio_manager_update()
+{
+	devkit_PSGFrame();
+	devkit_PSGSFXFrame();
 }
 
 //void engine_music_manager_play()
