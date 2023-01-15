@@ -14,7 +14,6 @@ T:Flevel_manager$tag_struct_level_object[({0}S:S$level_cols_offset$0_0$0({2}SI:U
 S:G$global_tile_object$0_0$0({4}STtag_struct_tile_object:S),E,0,0
 S:G$global_tile_objects$0_0$0({64}DA16d,STtag_struct_tile_object:S),E,0,0
 S:G$global_level_object$0_0$0({3}STtag_struct_level_object:S),E,0,0
-S:Flevel_manager$level_x$0_0$0({1}SC:U),E,0,0
 S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0_0$0({2}DF,SV:S),C,0,0

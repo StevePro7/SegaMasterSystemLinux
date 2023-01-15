@@ -11,7 +11,7 @@ struct_level_object global_level_object;
 //static unsigned char level_tile_type[] = { tile_type_bridge, tile_type_bridge, tile_type_bridge, tile_type_bridge };
 //static unsigned char level_tile_cols[] = { 0, 1, 2, 3, 0, 1, 2, 3, 4, 5, 6, 7 };
 //static unsigned char level_tile_high[] = { 0, 1, 2, 3 };
-static unsigned char level_x;
+//static unsigned char level_x;
 
 void engine_level_manager_init()
 {
@@ -19,7 +19,7 @@ void engine_level_manager_init()
 	lo->level_cols_offset = 0;
 	lo->level_draw_offset = 31;
 	//column = 0;
-	level_x = 0;
+	//level_x = 0;
 }
 
 void engine_level_manager_load()
@@ -28,7 +28,7 @@ void engine_level_manager_load()
 	lo->level_cols_offset = 0;
 	lo->level_draw_offset = 31;
 	//column = 0;
-	level_x = 0;
+	//level_x = 0;
 }
 
 void engine_level_manager_draw( unsigned int offset )
