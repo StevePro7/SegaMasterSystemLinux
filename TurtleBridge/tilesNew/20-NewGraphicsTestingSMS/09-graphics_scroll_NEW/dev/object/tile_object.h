@@ -1,6 +1,28 @@
 #ifndef _TILE_OBJECT_H_
 #define _TILE_OBJECT_H_
 
+//#define TILE_WAVES_BLOCK	144
+//#define TILE_BRIDGE_MIDD	152
+//#define TILE_BRIDGE_SIDE	160
+//#define TILE_BRIDGE_SIGN		168		// new
+////#define TILE_BRIDGE_GOAL		176		// new
+//
+//#define TILE_ISLAND_01		816		// new
+//#define TILE_ISLAND_02		832		// new
+//#define TILE_ISLAND_03		848		// new
+//
+//#define TILE_ISLAND_04		1488		// new
+//#define TILE_ISLAND_05		1504		// new
+//#define TILE_ISLAND_06		1520		// new
+//
+//#define TILE_TURTLEH1	2160			// new
+//#define TILE_TURTLEH2	2168			// new
+//#define TILE_TURTLEF1	2176			// new
+//#define TILE_TURTLEF2	2184			// new
+//#define TILE_TURTLEF3	2192			// new
+//#define TILE_TURTLEF4	2200			// new
+
+
 #define TILMAP_WIDE		24
 #define TILE_STRIP		4
 #define TILE_BLACK		120		//new
@@ -61,7 +83,8 @@ typedef struct tag_struct_tile_object
 {
 	unsigned int tilemap_index;
 	unsigned char tile_wide;
-	unsigned char tile_high;
+	//unsigned char tile_high;		TODO delete - as #define 
+	unsigned char tile_platform;
 
 } struct_tile_object;
 

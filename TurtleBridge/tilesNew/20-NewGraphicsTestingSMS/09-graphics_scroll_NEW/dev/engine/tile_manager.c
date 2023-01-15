@@ -3,8 +3,11 @@
 #include "font_manager.h"
 #include "global_manager.h"
 #include "../devkit/_sms_manager.h"
+#include "../banks/fixedbank.h"
 #include "../banks/bank2.h"
 
+#define TILE_SCROLL_HIGH	8
+#define TILE_SCROLL_ROWS	14
 // Global variable.
 struct_tile_object global_tile_object;
 struct_tile_object global_tile_objects[ MAX_TILE_OBJECTS ];
@@ -404,16 +407,20 @@ void engine_tile_manager_sea()
 */
 void engine_tile_manager_init()
 {
-	//unsigned int tilemap_indexes[ MAX_TILE_OBJECTS ] = { TILE_NONE, TILE_SKY, TILE_SEA, TILE_BRIDGE, TILE_ISLAND, TILE_TURTLEF, TILE_TURTLEH, TILE_TREE, TILE_SIGN, TILE_GOAL, TILE_CLOUDB, TILE_CLOUDS, };
+	struct_tile_object *to;
+	unsigned char idx;
+
+	//unsigned int tilemap_indexes[ MAX_TILE_OBJECTS ] =   TILE_NONE, TILE_SKY, TILE_SEA, TILE_BRIDGE, TILE_ISLAND, TILE_TURTLEF, TILE_TURTLEH, TILE_TREE, TILE_SIGN, TILE_GOAL, TILE_CLOUDB, TILE_CLOUDS, };
 	//unsigned char tile_wides[ MAX_TILE_OBJECTS ] = { 0, 1, 1, 8, 8, 4, 4, 8, 3, 3, 6, 4, };
 	//unsigned char tile_highs[ MAX_TILE_OBJECTS ] = { 0, 1, 1, 10, 4, 3, 3, 10, 3, 3, 3, 3, };
-
-	//struct_tile_object *to;
-	//for( unsigned char idx = 0; idx < MAX_TILE_OBJECTS; idx++ )
-	//{
-	//	to = &global_tile_objects[ idx ];
-	//	to->tilemap_index = tilemap_indexes[ idx ];
-	//	to->tile_wide = tile_wides[ idx ];
-	//	to->tile_high = tile_highs[ idx ];
-	//}
+	
+	devkit_SMS_mapROMBank( FIXED_BANK );
+	for( idx = 0; idx < MAX_TILE_OBJECTS; idx++ )
+	{
+		to = &global_tile_objects[ idx ];
+		to->tilemap_index = tiles_object_indexes[ idx ];
+		to->tile_wide = tiles_object_widths[ idx ];
+		//to->tile_high = TILE_SCROLL_HIGH;
+		to->tile_platform = tiles_object_platform[ idx ];
+	}
 }
