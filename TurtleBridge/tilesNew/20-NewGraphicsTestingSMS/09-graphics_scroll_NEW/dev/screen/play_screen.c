@@ -51,7 +51,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 	if( 0 == delta )
 	{
 		//engine_scroll_manager_update( 0 );
-		newTile = engine_scroll_manager_update( 0 );
+		newTile = engine_scroll_manager_update( 1 );
 		if( newTile )
 		{
 			engine_level_manager_draw( so->offset_right );
