@@ -70,32 +70,33 @@ static void draw_title(unsigned int tmp)
 
 static void drawScreen()
 {
-	unsigned char x;
+	//unsigned char x;
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();
 
-	for( x = 0; x < 32; x += 4 )
-	{
-		engine_graphics_manager_sea( x );
-	}
+	engine_graphics_manager_sea();
+	//for( x = 0; x < 32; x += 4 )
+	//{
+	//	//engine_graphics_manager_sea( x );
+	//}
 	////engine_sprite_manager_clear('[');
 
-	engine_tile_manager_stevepro( TILE_PLAY_TITLE, 4, 0, 24, 3 );
-	engine_tile_manager_stevepro( TILE_CLOUDS, 2, 4, 8, 3 );
-	engine_tile_manager_stevepro3( TILE_CLOUDS, 10, 4, 8, 3 );
-	//engine_tile_manager_stevepro( TILE_CLOUDB, 18, 4, 8, 3 );
-	//engine_tile_manager_stevepro( TILE_CLOUDS, 26, 4, 8, 3 );
+	//engine_tile_manager_stevepro( TILE_PLAY_TITLE, 4, 0, 24, 3 );
+	//engine_tile_manager_stevepro( TILE_CLOUDS, 2, 4, 8, 3 );
+	//engine_tile_manager_stevepro3( TILE_CLOUDS, 10, 4, 8, 3 );
+	////engine_tile_manager_stevepro( TILE_CLOUDB, 18, 4, 8, 3 );
+	////engine_tile_manager_stevepro( TILE_CLOUDS, 26, 4, 8, 3 );
 
-	engine_tile_manager_stevepro( TILE_BRIDGE_MIDD, 0, 8, 4, 14 );
-	engine_tile_manager_stevepro( TILE_BRIDGE_MIDD, 4, 8, 4, 14 );
-	engine_tile_manager_stevepro( TILE_BRIDGE_SIGN, 8, 8, 4, 14 );
-	engine_tile_manager_stevepro( TILE_BRIDGE_RGHT, 12, 8, 4, 14 );
+	//engine_tile_manager_stevepro( TILE_BRIDGE_MIDD, 0, 8, 4, 14 );
+	//engine_tile_manager_stevepro( TILE_BRIDGE_MIDD, 4, 8, 4, 14 );
+	//engine_tile_manager_stevepro( TILE_BRIDGE_SIGN, 8, 8, 4, 14 );
+	//engine_tile_manager_stevepro( TILE_BRIDGE_RGHT, 12, 8, 4, 14 );
 
-	engine_tile_manager_stevepro( TILE_WAVE, 16, 8, 4, 14 );
-	engine_tile_manager_stevepro( TILE_WAVE, 20, 8, 4, 14 );
+	//engine_tile_manager_stevepro( TILE_WAVE, 16, 8, 4, 14 );
+	//engine_tile_manager_stevepro( TILE_WAVE, 20, 8, 4, 14 );
 
-	engine_tile_manager_stevepro( TILE_ISLAND_02, 24, 8, 8, 14 );
+	//engine_tile_manager_stevepro( TILE_ISLAND_02, 24, 8, 8, 14 );
 
 	//draw_title(tmp);
 	//engine_font_manager_data( tmp, 10, 20 );

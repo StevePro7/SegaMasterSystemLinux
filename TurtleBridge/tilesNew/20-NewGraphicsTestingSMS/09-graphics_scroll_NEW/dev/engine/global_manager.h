@@ -8,6 +8,7 @@
 
 #define SCREEN_WIDE			32
 #define SCREEN_HIGH			24
+#define OCEANS_HIGH			3		// TODO - in gfx mgr only?
 
 //#define MAX_JUMPS			1024
 

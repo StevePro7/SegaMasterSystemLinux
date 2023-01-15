@@ -2,6 +2,7 @@
 #define _TILE_OBJECT_H_
 
 #define TILMAP_WIDE		24
+#define TILE_STRIP		4
 #define TILE_BLACK		120		//new
 #define TILE_WHITE		2920	//new
 
