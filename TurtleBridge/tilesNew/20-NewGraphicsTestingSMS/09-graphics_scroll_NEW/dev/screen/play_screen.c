@@ -20,7 +20,7 @@ void screen_play_screen_load()
 	drawScreen();
 	engine_level_manager_load();
 	engine_scroll_manager_load();
-	engine_music_manager_play( 1 );
+	engine_music_manager_play( 0 );
 	
 	//cols = 0;
 }
