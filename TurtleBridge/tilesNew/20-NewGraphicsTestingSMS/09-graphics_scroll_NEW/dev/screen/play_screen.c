@@ -6,6 +6,7 @@
 #include "../engine/font_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/scroll_manager.h"
+#include "../engine/tile_manager.h"
 #include "../devkit/_sms_manager.h"
 
 void screen_play_screen_load()
@@ -13,7 +14,13 @@ void screen_play_screen_load()
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();
-	engine_font_manager_text( "PLAY SCREEN", 10, 2 );
+	;
+	engine_tile_manager_draw_columns( tile_type_bridge_midd, 10, 0 );
+	engine_tile_manager_draw_columns( tile_type_bridge_midd, 11, 1 );
+	engine_tile_manager_draw_columns( tile_type_bridge_midd, 12, 2 );
+	engine_tile_manager_draw_columns( tile_type_bridge_midd, 13, 3 );
+
+	engine_font_manager_text( "PLAY", 10, 14 );
 	devkit_SMS_displayOn();
 
 	////TODO

@@ -1,10 +1,13 @@
 M:play_screen
 F:G$screen_play_screen_load$0_0$0({2}DF,SV:S),C,0,0,0,0,0
 F:G$screen_play_screen_update$0_0$0({2}DF,SV:S),C,0,0,0,0,0
-S:Lplay_screen.screen_play_screen_update$screen_type$1_0$93({2}DG,SC:U),B,1,4
-S:Lplay_screen.screen_play_screen_update$input$1_0$94({1}SC:U),R,0,0,[]
+S:Lplay_screen.screen_play_screen_update$screen_type$1_0$97({2}DG,SC:U),B,1,4
+S:Lplay_screen.screen_play_screen_update$input$1_0$98({1}SC:U),R,0,0,[]
 T:Fplay_screen$tag_struct_scroll_object[({0}S:S$scroll$0_0$0({1}SC:U),Z,0,0)({1}S:S$scrollRight$0_0$0({1}SC:U),Z,0,0)({2}S:S$offset_right$0_0$0({2}SI:U),Z,0,0)({4}S:S$scroll_x$0_0$0({6}DA6d,SC:U),Z,0,0)({10}S:S$scroll_half$0_0$0({1}SC:U),Z,0,0)({11}S:S$lineCnt$0_0$0({1}SC:U),Z,0,0)]
+T:Fplay_screen$tag_struct_tile_object[({0}S:S$tilemap_index$0_0$0({2}SI:U),Z,0,0)({2}S:S$tile_wide$0_0$0({1}SC:U),Z,0,0)({3}S:S$tile_platform$0_0$0({1}SC:U),Z,0,0)]
 S:G$global_scroll_object$0_0$0({12}STtag_struct_scroll_object:S),E,0,0
+S:G$global_tile_object$0_0$0({4}STtag_struct_tile_object:S),E,0,0
+S:G$global_tile_objects$0_0$0({64}DA16d,STtag_struct_tile_object:S),E,0,0
 S:G$screen_back_screen_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$screen_back_screen_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_asm_manager_clear_VRAM$0_0$0({2}DF,SV:S),C,0,0
@@ -23,6 +26,11 @@ S:G$engine_input_manager_move$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_scroll_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_update$0_0$0({2}DF,:S),C,0,0
+S:G$engine_tile_manager_draw_columns$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_tile_manager_stevepro$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_tile_manager_stevepro2$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_tile_manager_stevepro3$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_tile_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOnFeature$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOffFeature$0_0$0({2}DF,SV:S),C,0,0
