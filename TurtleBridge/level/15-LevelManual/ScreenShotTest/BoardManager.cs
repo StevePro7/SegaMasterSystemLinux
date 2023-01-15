@@ -44,39 +44,39 @@ namespace ScreenShotTest
 			//	pos.X += image.Width;
 			//}
 
+			// Draw selectors
+			pos = new Vector2(256+128, 112);
+			int delta = 0;
+			int index;
+			for (index = 4; index < 10; index++)
+			{
+				image = assetManager.Images[index];
+				delta = 0;
+				if (image.Width == 32)
+				{
+					delta = 16;
+				}
+				spriteBatch.Draw(image, new Vector2(pos.X + delta, pos.Y), Color.White);
+				pos.X += 64;
+			}
 
-			pos = new Vector2(64, 112);
-			//int delta = 0;
-			//int index;
-			//for (index = 4, index < 18; index++)
-			//{
-			//	var key = assetManager.Images.Keys[index];
-			//	var obj = assetManager.Images.Values[key];
-			//}
-			//foreach (var obj in assetManager.Images.Values)
-			//{
-			//	delta = 0;
-			//	if (obj.Width == 32)
-			//	{
-			//		delta = 16;
-			//	}
-			//	spriteBatch.Draw(obj, new Vector2(pos.X + delta, pos.Y), Color.White);
-			//	pos.X += 64;
-			//}
-
-			//// Draw lines
-			//for (int col = 0; col < wide; col += 32)
-			//{
-			//	spriteBatch.Draw(stripVert, new Vector2(col, 0), new Rectangle(0, 0, 2, 224), Color.White);
-			//	if (col > 0 && 0 == col % 256)
-			//	{
-			//		spriteBatch.Draw(stripVert, new Vector2(col, 0), new Rectangle(0, 0, 2, 224), Color.Black);
-			//	}
-			//}
-			//for (int row = 0; row < wide; row += 512)
-			//{
-			//	spriteBatch.Draw(stripHorz, new Vector2(row, 112), Color.Black);
-			//}
+			// Draw lines
+			for (int col = 0; col < wide; col += 32)
+			{
+				spriteBatch.Draw(stripVert, new Vector2(col, 0), new Rectangle(0, 0, 2, 112), Color.White);
+				if (col > 0 && 0 == col % 64)
+				{
+					spriteBatch.Draw(stripVert, new Vector2(col, 112), new Rectangle(0, 0, 2, 112), Color.White);
+				}
+				if (col > 0 && 0 == col % 256)
+				{
+					spriteBatch.Draw(stripVert, new Vector2(col, 0), new Rectangle(0, 0, 2, 224), Color.Black);
+				}
+			}
+			for (int row = 0; row < wide; row += 512)
+			{
+				spriteBatch.Draw(stripHorz, new Vector2(row, 112), Color.Black);
+			}
 
 
 		}
