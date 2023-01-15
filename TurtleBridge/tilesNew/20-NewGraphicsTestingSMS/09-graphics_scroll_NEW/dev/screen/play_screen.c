@@ -20,7 +20,7 @@ void screen_play_screen_load()
 	drawScreen();
 	engine_level_manager_load();
 	engine_scroll_manager_load();
-	engine_music_manager_play( 0 );
+	engine_music_manager_play( 1 );
 	
 	//cols = 0;
 }
@@ -90,6 +90,7 @@ static void drawScreen()
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();
+	engine_content_manager_sprite();
 
 	engine_graphics_manager_sea();
 	engine_tile_manager_stevepro( TILE_PLAY_TITLE, 4, 0, 24, 3 );
