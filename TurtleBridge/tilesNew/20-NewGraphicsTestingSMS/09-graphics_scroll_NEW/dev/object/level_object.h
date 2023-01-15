@@ -10,4 +10,7 @@ typedef struct tag_struct_level_object
 
 } struct_level_object;
 
+extern const unsigned char level_planesA[];
+extern const unsigned char level_columnA[];
+
 #endif//_LEVEL_OBJECT_H_

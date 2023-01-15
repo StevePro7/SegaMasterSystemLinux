@@ -6,6 +6,7 @@
 #include "../engine/font_manager.h"
 #include "../engine/graphics_manager.h"
 #include "../engine/input_manager.h"
+#include "../engine/level_manager.h"
 #include "../engine/scroll_manager.h"
 #include "../engine/tile_manager.h"
 #include "../devkit/_sms_manager.h"
@@ -30,11 +31,16 @@ void screen_play_screen_update( unsigned char *screen_type )
 	bool newTile = false;
 
 	input = engine_input_manager_hold( input_type_right);
+	//input = 1;
 	if( input )
 	{
 		//engine_tile_manager_draw_columns( tile_type_island_tree, 20 + cols, 0 + cols );
 		newTile = engine_scroll_manager_update( 1 );
 		engine_font_manager_data( newTile, 30, 0 );
+		if( newTile )
+		{
+			engine_level_manager_draw( so->offset_right );
+		}
 		//cols++;
 		//engine_scroll_manager_update( 2 );
 	//	print( newTile );

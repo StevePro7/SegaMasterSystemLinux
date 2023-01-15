@@ -9,7 +9,9 @@ F:Fplay_screen$drawScreen$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 T:Fplay_screen$tag_struct_scroll_object[({0}S:S$scroll$0_0$0({1}SC:U),Z,0,0)({1}S:S$scrollRight$0_0$0({1}SC:U),Z,0,0)({2}S:S$offset_right$0_0$0({2}SI:U),Z,0,0)({4}S:S$scroll_x$0_0$0({6}DA6d,SC:U),Z,0,0)({10}S:S$scroll_half$0_0$0({1}SC:U),Z,0,0)({11}S:S$lineCnt$0_0$0({1}SC:U),Z,0,0)]
 T:Fplay_screen$tag_struct_tile_object[({0}S:S$tilemap_index$0_0$0({2}SI:U),Z,0,0)({2}S:S$tile_wide$0_0$0({1}SC:U),Z,0,0)({3}S:S$tile_platform$0_0$0({1}SC:U),Z,0,0)]
 T:Fplay_screen$tag_struct_audio_object[({0}S:S$music_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$music_bank$0_0$0({1}SC:U),Z,0,0)({3}S:S$sound_data$0_0$0({2}DG,SC:U),Z,0,0)({5}S:S$sound_bank$0_0$0({1}SC:U),Z,0,0)]
+T:Fplay_screen$tag_struct_level_object[({0}S:S$level_cols_offset$0_0$0({2}SI:U),Z,0,0)({2}S:S$level_draw_offset$0_0$0({1}SC:U),Z,0,0)]
 S:G$global_audio_object$0_0$0({6}STtag_struct_audio_object:S),E,0,0
+S:G$global_level_object$0_0$0({3}STtag_struct_level_object:S),E,0,0
 S:G$global_scroll_object$0_0$0({12}STtag_struct_scroll_object:S),E,0,0
 S:G$global_tile_object$0_0$0({4}STtag_struct_tile_object:S),E,0,0
 S:G$global_tile_objects$0_0$0({64}DA16d,STtag_struct_tile_object:S),E,0,0
@@ -31,6 +33,9 @@ S:G$engine_graphics_manager_sea$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_hold$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move$0_0$0({2}DF,SC:U),C,0,0
+S:G$engine_level_manager_init$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_level_manager_load$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_level_manager_draw$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_update$0_0$0({2}DF,:S),C,0,0

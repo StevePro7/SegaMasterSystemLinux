@@ -68,9 +68,9 @@ void engine_scroll_manager_init()
 //	devkit_SMS_disableLineInterrupt();
 }
 
-void engine_scroll_manager_load( unsigned char count )
+void engine_scroll_manager_load()
 {
-	load_method( count );
+	load_method();
 	//devkit_SMS_setLineCounter( count );
 	//devkit_SMS_enableLineInterrupt();
 }
