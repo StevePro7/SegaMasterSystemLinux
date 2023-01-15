@@ -12,28 +12,30 @@
 #include <stdbool.h>
 
 static void drawScreen();
-static unsigned char cols;
+//static unsigned char cols;
 
 void screen_play_screen_load()
 {
 	drawScreen();
-	engine_music_manager_play( 1 );
-	//engine_scroll_manager_load( 10 );
-	cols = 0;
+	engine_scroll_manager_load();
+	//engine_music_manager_play( 1 );
+	
+	//cols = 0;
 }
 
 void screen_play_screen_update( unsigned char *screen_type )
 {
-	//struct_scroll_object *so = &global_scroll_object;
+	struct_scroll_object *so = &global_scroll_object;
 	unsigned char input;
-	bool flag;
-	input = engine_input_manager_hold( input_type_down);
+	bool newTile = false;
+
+	input = engine_input_manager_hold( input_type_right);
 	if( input )
 	{
-		engine_tile_manager_draw_columns( tile_type_island_tree, 20 + cols, 0 + cols );
-		//flag = engine_scroll_manager_update( cols );
-		//engine_font_manager_data( flag, 30, 0 );
-		cols++;
+		//engine_tile_manager_draw_columns( tile_type_island_tree, 20 + cols, 0 + cols );
+		newTile = engine_scroll_manager_update( 1 );
+		engine_font_manager_data( newTile, 30, 0 );
+		//cols++;
 		//engine_scroll_manager_update( 2 );
 	//	print( newTile );
 	}
