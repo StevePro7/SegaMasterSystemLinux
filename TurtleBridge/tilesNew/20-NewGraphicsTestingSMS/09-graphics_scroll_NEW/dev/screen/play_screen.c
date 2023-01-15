@@ -11,16 +11,17 @@
 
 void screen_play_screen_load()
 {
+	unsigned char idx;
+
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();
-	;
-	engine_tile_manager_draw_columns( tile_type_bridge_midd, 10, 0 );
-	engine_tile_manager_draw_columns( tile_type_bridge_midd, 11, 1 );
-	engine_tile_manager_draw_columns( tile_type_bridge_midd, 12, 2 );
-	engine_tile_manager_draw_columns( tile_type_bridge_midd, 13, 3 );
 
-	engine_font_manager_text( "PLAY", 10, 14 );
+	for( idx = 0; idx < 4; idx++ )
+	{
+		engine_tile_manager_draw_columns( tile_type_turtle_fly4, 10 + idx, 0 + idx );
+	}
+
 	devkit_SMS_displayOn();
 
 	////TODO
