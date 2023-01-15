@@ -42,9 +42,13 @@ S:Ltile_manager.engine_tile_manager_stevepro3$tmp$1_0$102({1}SC:U),R,0,0,[e]
 S:Ltile_manager.engine_tile_manager_stevepro3$sloc0$0_1$0({2}SI:S),B,1,-3
 S:Ltile_manager.engine_tile_manager_stevepro3$sloc1$0_1$0({1}SC:U),B,1,-1
 F:G$engine_tile_manager_init$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-T:Ftile_manager$tag_struct_tile_object[({0}S:S$tilemap_index$0_0$0({2}SI:U),Z,0,0)({2}S:S$tile_wide$0_0$0({1}SC:U),Z,0,0)({3}S:S$tile_high$0_0$0({1}SC:U),Z,0,0)]
+S:Ltile_manager.engine_tile_manager_init$to$1_0$107({2}DG,STtag_struct_tile_object:S),R,0,0,[c,b]
+S:Ltile_manager.engine_tile_manager_init$idx$1_0$107({1}SC:U),B,1,-1
+S:Ltile_manager.engine_tile_manager_init$sloc0$0_1$0({1}SC:U),B,1,-1
+T:Ftile_manager$tag_struct_tile_object[({0}S:S$tilemap_index$0_0$0({2}SI:U),Z,0,0)({2}S:S$tile_wide$0_0$0({1}SC:U),Z,0,0)({3}S:S$tile_platform$0_0$0({1}SC:U),Z,0,0)]
+S:G$music_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$global_tile_object$0_0$0({4}STtag_struct_tile_object:S),E,0,0
-S:G$global_tile_objects$0_0$0({48}DA12d,STtag_struct_tile_object:S),E,0,0
+S:G$global_tile_objects$0_0$0({64}DA16d,STtag_struct_tile_object:S),E,0,0
 S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0_0$0({2}DF,SV:S),C,0,0

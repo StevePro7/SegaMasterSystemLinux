@@ -48,8 +48,9 @@ static void start()
 	//open_screen_type = screen_type_splash;
 	//open_screen_type = screen_type_title;
 	//open_screen_type = screen_type_func;
-	open_screen_type = screen_type_test;
+	//open_screen_type = screen_type_test;
 	//open_screen_type = screen_type_init;
+	open_screen_type = screen_type_play;
 
 	engine_screen_manager_init( open_screen_type );
 	engine_scroll_manager_init();

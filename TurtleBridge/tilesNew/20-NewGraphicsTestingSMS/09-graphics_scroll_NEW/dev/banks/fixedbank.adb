@@ -3,3 +3,6 @@ S:G$music_object_data$0_0$0({4}DA2d,DG,SC:U),E,0,0
 S:G$animeopening_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$mastertracker_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$music_object_bank$0_0$0({2}DA2d,SC:U),D,0,0
+S:G$tiles_object_indexes$0_0$0({32}DA16d,SI:U),D,0,0
+S:G$tiles_object_widths$0_0$0({16}DA16d,SC:U),D,0,0
+S:G$tiles_object_platform$0_0$0({16}DA16d,SC:U),D,0,0

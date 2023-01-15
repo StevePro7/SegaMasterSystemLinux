@@ -1,5 +1,5 @@
 XL3
-H A areas 8 global symbols
+H A areas E global symbols
 M fixedbank
 O -mz80
 S _mastertracker_psg Ref000000
@@ -14,9 +14,15 @@ A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
-A _BANK7 size 2 flags 0 addr 0
+A _BANK7 size 42 flags 0 addr 0
+S _tiles_object_widths Def000022
+S G$tiles_object_widths$0_0$0 Def000022
 S _music_object_bank Def000000
 S G$music_object_bank$0_0$0 Def000000
+S _tiles_object_platform Def000032
+S G$tiles_object_platform$0_0$0 Def000032
+S _tiles_object_indexes Def000002
+S G$tiles_object_indexes$0_0$0 Def000002
 A _INITIALIZER size 4 flags 0 addr 0
 S Ffixedbank$__xinit_music_object_data$0_0$0 Def000000
 A _CABS size 0 flags 8 addr 0
@@ -27,6 +33,26 @@ R 00 00 02 00
 T 00 00 00
 R 00 00 07 00
 T 00 00 00 04 05
+R 00 00 07 00
+T 02 00 00
+R 00 00 07 00
+T 02 00 00 90 00 98 00 A0 00 A8 00 30 03 40 03
+R 00 00 07 00
+T 0E 00 00 50 03 D0 05 E0 05 F0 05 70 08 78 08
+R 00 00 07 00
+T 1A 00 00 80 08 88 08 90 08 98 08
+R 00 00 07 00
+T 22 00 00
+R 00 00 07 00
+T 22 00 00 04 04 04 04 08 08 08 08 08 08 04 04 04
+R 00 00 07 00
+T 2F 00 00 04 04 04
+R 00 00 07 00
+T 32 00 00
+R 00 00 07 00
+T 32 00 00 00 10 10 10 12 12 12 12 12 12 13 12 11
+R 00 00 07 00
+T 3F 00 00 10 0F 0E
 R 00 00 07 00
 T 00 00 00
 R 00 00 08 00
