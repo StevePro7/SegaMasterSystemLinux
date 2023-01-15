@@ -6,11 +6,11 @@ F:G$engine_scroll_manager_update$0_0$0({2}DF,:S),Z,0,0,0,0,0
 S:Lscroll_manager.engine_scroll_manager_update$delta$1_0$102({1}SC:U),B,1,4
 F:Fscroll_manager$para_scroll_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lscroll_manager.para_scroll_load$count$1_0$104({1}SC:U),B,1,4
-F:Fscroll_manager$para_scroll_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+F:Fscroll_manager$para_scroll_update$0_0$0({2}DF,:S),Z,0,0,0,0,0
 S:Lscroll_manager.para_scroll_update$delta$1_0$106({1}SC:U),B,1,4
 F:Fscroll_manager$full_scroll_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lscroll_manager.full_scroll_load$count$1_0$108({1}SC:U),B,1,4
-F:Fscroll_manager$full_scroll_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+F:Fscroll_manager$full_scroll_update$0_0$0({2}DF,:S),Z,0,0,0,0,0
 S:Lscroll_manager.full_scroll_update$delta$1_0$110({1}SC:U),B,1,4
 F:Fscroll_manager$lineScrollHandler$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lscroll_manager.lineScrollHandler$so$1_0$113({2}DG,STtag_struct_scroll_object:S),R,0,0,[]
@@ -18,7 +18,7 @@ S:Lscroll_manager.lineScrollHandler$val$1_0$113({2}SI:U),R,0,0,[]
 T:Fscroll_manager$tag_struct_scroll_object[({0}S:S$scroll$0_0$0({1}SC:U),Z,0,0)({1}S:S$scrollRight$0_0$0({1}SC:U),Z,0,0)({2}S:S$offset_right$0_0$0({2}SI:U),Z,0,0)({4}S:S$scroll_x$0_0$0({6}DA6d,SC:U),Z,0,0)({10}S:S$scroll_half$0_0$0({1}SC:U),Z,0,0)({11}S:S$lineCnt$0_0$0({1}SC:U),Z,0,0)]
 S:G$global_scroll_object$0_0$0({12}STtag_struct_scroll_object:S),E,0,0
 S:Fscroll_manager$load_method$0_0$0({2}DC,DF,SV:S),E,0,0
-S:Fscroll_manager$update_method$0_0$0({2}DC,DF,SV:S),E,0,0
+S:Fscroll_manager$update_method$0_0$0({2}DC,DF,:S),E,0,0
 S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0_0$0({2}DF,SV:S),C,0,0

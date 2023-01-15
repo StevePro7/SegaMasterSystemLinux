@@ -4,7 +4,8 @@
 #include "sprite_manager.h"
 #include "../devkit/_sms_manager.h"
 
-#define PARALLAX_SCROLLING	1
+#define PARALLAX_SCROLLING	0
+#define SCROLL_COLUMNS		8
 
 // Global variable.
 struct_scroll_object global_scroll_object;
@@ -17,14 +18,14 @@ struct_scroll_object global_scroll_object;
 
 
 static void( *load_method )( unsigned char count );
-static void( *update_method )( unsigned char delta );
+static bool( *update_method )( unsigned char delta );
 static void lineScrollHandler( void );
 
 // Private helper functions - TODO - delete
 static void para_scroll_load( unsigned char count );
-static void para_scroll_update( unsigned char delta );
+static bool para_scroll_update( unsigned char delta );
 static void full_scroll_load( unsigned char count );
-static void full_scroll_update( unsigned char delta );
+static bool full_scroll_update( unsigned char delta );
 
 void engine_scroll_manager_init()
 {
@@ -75,7 +76,7 @@ void engine_scroll_manager_load( unsigned char count )
 
 bool engine_scroll_manager_update( unsigned char delta )
 {
-	update_method( delta );
+	return update_method( delta );
 	//struct_scroll_object *so = &global_scroll_object;
 	////unsigned char temp;
 	//bool newTile;
@@ -117,8 +118,6 @@ bool engine_scroll_manager_update( unsigned char delta )
 	//////engine_font_manager_data( so->scroll_x[ 0 ], 25, 13 );
 	////print( newTile );
 	//return newTile;
-
-	return false;
 }
 
 //bool engine_scroll_manager_updateZ()
@@ -147,18 +146,56 @@ static void para_scroll_load( unsigned char count )
 {
 	engine_font_manager_data( count, 10, 4 );
 }
-static void para_scroll_update( unsigned char delta )
+static bool para_scroll_update( unsigned char delta )
 {
 	engine_font_manager_data( delta, 10, 6 );
+	return true;
 }
 
 static void full_scroll_load( unsigned char count )
 {
 	engine_font_manager_data( count, 10, 12 );
+	//struct_scroll_object *so = &global_scroll_object;
+	////so->scroll_left = 0;
+	////so->scroll_right = 0;
+
+	//so->scroll = 0;
+	//so->scrollRight = 0;
+	////so->scrollRightDivided8 = 0;
+	////so->offset_left = 0;
+	//so->offset_right = 31;
+
+	//devkit_SMS_setBGScrollX( so->scroll );
 }
-static void full_scroll_update( unsigned char delta )
+static bool full_scroll_update( unsigned char delta )
 {
 	engine_font_manager_data( delta, 10, 16 );
+	//struct_scroll_object *so = &global_scroll_object;
+	//bool newTile;
+	////const unsigned char delta = 1;
+
+	//so->scroll -= delta;
+	//so->scrollRight += delta;
+	//// IMPORTANT - performance improvement - would like to test to triple check but looks good at the mo'	09-Jan-2023
+	//if( so->scrollRight >= SCROLL_COLUMNS )
+	//{
+	//	so->scrollRight = 0;
+	//}
+
+	//// scroll pixel by pixel
+	//devkit_SMS_setBGScrollX( so->scroll );
+
+	//// IMPORTANT - performance improvement - would like to test to triple check but looks good at the mo'	09-Jan-2023
+	//newTile = so->scrollRight == delta;
+	////newTile = so->scrollRight % 8 == delta;
+	//if( newTile )
+	//{
+	//	so->offset_right++;
+	//}
+
+	////print( newTile );
+	//return newTile;
+	return false;
 }
 
 

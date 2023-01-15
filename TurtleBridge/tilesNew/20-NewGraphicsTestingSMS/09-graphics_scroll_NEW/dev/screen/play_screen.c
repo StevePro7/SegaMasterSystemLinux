@@ -9,6 +9,7 @@
 #include "../engine/scroll_manager.h"
 #include "../engine/tile_manager.h"
 #include "../devkit/_sms_manager.h"
+#include <stdbool.h>
 
 static void drawScreen();
 static unsigned char cols;
@@ -25,11 +26,13 @@ void screen_play_screen_update( unsigned char *screen_type )
 {
 	//struct_scroll_object *so = &global_scroll_object;
 	unsigned char input;
+	bool flag;
 	input = engine_input_manager_hold( input_type_down);
 	if( input )
 	{
 		//engine_tile_manager_draw_columns( tile_type_island_tree, 10 + cols, 0 + cols );
-		engine_scroll_manager_update( cols );
+		flag = engine_scroll_manager_update( cols );
+		engine_font_manager_data( flag, 30, 0 );
 		cols++;
 		//engine_scroll_manager_update( 2 );
 	//	print( newTile );
@@ -41,7 +44,6 @@ void screen_play_screen_update( unsigned char *screen_type )
 
 static void drawScreen()
 {
-	//unsigned char idx;
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();
@@ -53,10 +55,9 @@ static void drawScreen()
 	engine_tile_manager_stevepro( TILE_CLOUDB, 18, 4, 8, 3 );
 	engine_tile_manager_stevepro( TILE_CLOUDS, 26, 4, 8, 3 );
 
-	//for( idx = 0; idx < 4; idx++ )
-	//{
-	//	engine_tile_manager_draw_columns( tile_type_turtle_fly4, 10 + idx, 0 + idx );
-	//}
-
+	engine_tile_manager_stevepro( TILE_BRIDGE_MIDD, 0, 8, 4, 14 );
+	engine_tile_manager_stevepro( TILE_BRIDGE_MIDD, 4, 8, 4, 14 );
+	engine_tile_manager_stevepro( TILE_BRIDGE_SIGN, 8, 8, 4, 14 );
+	engine_tile_manager_stevepro( TILE_BRIDGE_RGHT, 12, 8, 4, 14 );
 	devkit_SMS_displayOn();
 }
