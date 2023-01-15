@@ -33,10 +33,9 @@ void engine_audio_manager_update()
 	struct_audio_object *ao = &global_audio_object;
 	if( 0 != ao->music_bank )
 	{
-		//devkit_SMS_mapROMBank( ao->music_bank );
+		devkit_SMS_mapROMBank( ao->music_bank );
 		devkit_PSGFrame();
 	}
-
 
 	devkit_PSGSFXFrame();
 }

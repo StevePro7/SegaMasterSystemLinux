@@ -11,26 +11,24 @@
 #include "../devkit/_sms_manager.h"
 
 static void drawScreen();
+static unsigned char cols;
 
 void screen_play_screen_load()
 {
 	drawScreen();
-	//engine_music_manager_play( 0 );
+	engine_music_manager_play( 0 );
+	cols = 0;
 }
 
 void screen_play_screen_update( unsigned char *screen_type )
 {
-	
-	
 	//struct_scroll_object *so = &global_scroll_object;
 	unsigned char input;
-	
-
 	input = engine_input_manager_hold( input_type_down);
 	if( input )
 	{
-		
-		engine_tile_manager_draw_columns( tile_type_turtle_fly4, 10, 0 );
+		engine_tile_manager_draw_columns( tile_type_island_tree, 10 + cols, 0 + cols );
+		cols++;
 		//engine_scroll_manager_update( 2 );
 	//	print( newTile );
 	}

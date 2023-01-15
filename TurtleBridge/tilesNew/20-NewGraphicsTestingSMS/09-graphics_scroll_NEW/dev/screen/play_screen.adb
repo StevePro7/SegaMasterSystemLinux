@@ -11,6 +11,7 @@ S:G$global_audio_object$0_0$0({3}STtag_struct_audio_object:S),E,0,0
 S:G$global_scroll_object$0_0$0({12}STtag_struct_scroll_object:S),E,0,0
 S:G$global_tile_object$0_0$0({4}STtag_struct_tile_object:S),E,0,0
 S:G$global_tile_objects$0_0$0({64}DA16d,STtag_struct_tile_object:S),E,0,0
+S:Fplay_screen$cols$0_0$0({1}SC:U),E,0,0
 S:G$screen_back_screen_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$screen_back_screen_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_asm_manager_clear_VRAM$0_0$0({2}DF,SV:S),C,0,0
