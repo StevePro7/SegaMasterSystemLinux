@@ -4,12 +4,12 @@ H 9 areas 68 global symbols
 M audio_manager
 O -mz80
 S _devkit_PSGSFXGetStatus Ref000000
+S _devkit_PSGPlay Ref000000
 S _devkit_PSGSFXFrame Ref000000
 S _music_object_data Ref000000
 S _music_object_bank Ref000000
 S _devkit_PSGFrame Ref000000
 S .__.ABS. Def000000
-S _devkit_PSGPlayNoRepeat Ref000000
 S _devkit_SMS_mapROMBank Ref000000
 A _CODE size 78 flags 0 addr 0
 S A$audio_manager$74 Def000006
@@ -38,6 +38,7 @@ S A$audio_manager$203 Def00006F
 S A$audio_manager$122 Def00002D
 S A$audio_manager$113 Def000021
 S A$audio_manager$104 Def000019
+S C$audio_manager.c$30$1_0$124 Def000056
 S C$audio_manager.c$21$1_0$124 Def00001F
 S C$audio_manager.c$14$1_0$122 Def000006
 S A$audio_manager$204 Def000070
@@ -62,48 +63,47 @@ S A$audio_manager$143 Def000047
 S A$audio_manager$134 Def00003E
 S A$audio_manager$125 Def000031
 S A$audio_manager$116 Def000026
+S C$audio_manager.c$50$1_0$125 Def000075
 S C$audio_manager.c$24$1_0$124 Def000027
 S C$audio_manager.c$17$1_0$122 Def000016
 S A$audio_manager$144 Def000048
 S A$audio_manager$135 Def000041
 S A$audio_manager$126 Def000032
 S XG$engine_audio_manager_update$0$0 Def000075
-S C$audio_manager.c$40$2_0$126 Def00005D
 S C$audio_manager.c$25$1_0$124 Def000038
 S A$audio_manager$217 Def000075
 S A$audio_manager$190 Def000063
 S A$audio_manager$145 Def00004B
 S A$audio_manager$136 Def000043
 S A$audio_manager$127 Def000033
-S C$audio_manager.c$41$2_0$126 Def000063
-S C$audio_manager.c$34$1_0$125 Def000057
+S C$audio_manager.c$41$2_0$126 Def00005D
 S A$audio_manager$137 Def000044
 S A$audio_manager$128 Def000034
-S C$audio_manager.c$44$1_0$125 Def000066
+S C$audio_manager.c$42$2_0$126 Def000063
+S C$audio_manager.c$35$1_0$125 Def000057
 S XG$engine_music_manager_play$0$0 Def000056
 S C$audio_manager.c$27$1_0$124 Def000046
 S A$audio_manager$183 Def00005D
 S A$audio_manager$156 Def000054
 S A$audio_manager$138 Def000045
-S C$audio_manager.c$28$1_0$124 Def00004C
+S C$audio_manager.c$45$1_0$125 Def000066
 S C$audio_manager.c$19$1_0$124 Def000017
 S A$audio_manager$184 Def00005E
-S C$audio_manager.c$37$1_0$125 Def000057
-S C$audio_manager.c$29$1_0$124 Def000056
+S C$audio_manager.c$29$1_0$124 Def00004C
 S A$audio_manager$185 Def00005F
 S A$audio_manager$149 Def00004C
 S C$audio_manager.c$38$1_0$125 Def000057
 S A$audio_manager$195 Def000066
 S A$audio_manager$186 Def000062
 S A$audio_manager$177 Def000057
+S C$audio_manager.c$39$1_0$125 Def000057
 S A$audio_manager$196 Def000069
 S A$audio_manager$178 Def00005A
-S C$audio_manager.c$49$1_0$125 Def000075
-S C$audio_manager.c$46$2_0$127 Def00006C
 S A$audio_manager$197 Def00006A
 S A$audio_manager$179 Def00005B
-S C$audio_manager.c$47$2_0$127 Def000075
+S C$audio_manager.c$47$2_0$127 Def00006C
 S A$audio_manager$198 Def00006B
+S C$audio_manager.c$48$2_0$127 Def000075
 S A$audio_manager$70 Def000003
 S A$audio_manager$80 Def00000E
 A _DATA size 6 flags 0 addr 0
@@ -131,22 +131,22 @@ R 00 00 00 00
 T 17 00 00 DD E5 DD 21 00 00 DD 39 3E 07 F5 33 CD
 R 00 00 00 00
 T 24 00 00 00 00 33 01 00 00 DD 6E 04 26 00 29 09
-R 00 00 00 00 02 03 07 00 02 07 02 00
+R 00 00 00 00 02 03 07 00 02 07 03 00
 T 31 00 00 4E 23 46 ED 43 00 00 01 02 00 11 00 00
-R 00 00 00 00 00 08 01 00 00 0B 01 00 02 0E 03 00
+R 00 00 00 00 00 08 01 00 00 0B 01 00 02 0E 04 00
 T 3E 00 00 DD 6E 04 26 00 19 7E 02 F5 33 CD 00 00
 R 00 00 00 00 02 0E 07 00
 T 4B 00 00 33 2A 00 00 E5 CD 00 00 F1 DD E1 C9
-R 00 00 00 00 00 05 01 00 02 09 06 00
+R 00 00 00 00 00 05 01 00 02 09 01 00
 T 57 00 00
 R 00 00 00 00
 T 57 00 00 3A 02 00 B7 28 09 F5 33 CD 00 00 33 CD
 R 00 00 00 00 00 04 01 00 02 0C 07 00
 T 64 00 00 00 00
-R 00 00 00 00 02 03 04 00
+R 00 00 00 00 02 03 05 00
 T 66 00 00
 R 00 00 00 00
 T 66 00 00 CD 00 00 7D B7 C8 3A 05 00 F5 33 CD
 R 00 00 00 00 02 04 00 00 00 0A 01 00
 T 72 00 00 00 00 33 C3 00 00
-R 00 00 00 00 02 03 07 00 02 07 01 00
+R 00 00 00 00 02 03 07 00 02 07 02 00

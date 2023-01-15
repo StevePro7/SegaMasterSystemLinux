@@ -93,7 +93,7 @@ static void drawScreen()
 	engine_content_manager_sprite();
 
 	engine_graphics_manager_sea();
-	engine_tile_manager_stevepro( TILE_PLAY_TITLE, 4, 0, 24, 3 );
+	//engine_tile_manager_stevepro( TILE_PLAY_TITLE, 4, 0, 24, 3 );
 	engine_tile_manager_stevepro( TILE_CLOUDS, 2, 4, 8, 3 );
 	engine_tile_manager_stevepro( TILE_CLOUDB, 10, 4, 8, 3 );
 	engine_tile_manager_stevepro( TILE_CLOUDB, 18, 4, 8, 3 );
@@ -103,7 +103,11 @@ static void drawScreen()
 	engine_tile_manager_stevepro( TILE_BRIDGE_MIDD, 4, 8, 4, 14 );
 	engine_tile_manager_stevepro( TILE_BRIDGE_SIGN, 8, 8, 4, 14 );
 	engine_tile_manager_stevepro( TILE_BRIDGE_RGHT, 12, 8, 4, 14 );
+	//engine_font_manager_text( "[[[[[[[[[[[[[[[[[[[[[[[[", 4, 0 );
+	engine_font_manager_text( "[[[[[[[[[[[[[[[[[[[[[[[[", 4, 1 );
+	engine_font_manager_text( "[[[[[[[[[[[[[[[[[[[[[[[[", 4, 2 );
 	//engine_font_manager_text( "[[[[[[[[[[[[[[[[[[[[[[[[", 4, 3 );
-	//engine_font_manager_text( "STEVEPRO[IS[WRITING[THIS", 4, 3 );
+	engine_font_manager_text( "STEVEPRO[IS[WRITING[THIS", 4, 1 );
+	engine_font_manager_text( "STEVEPRO[IS[WRITING[THIS", 4, 2 );
 	devkit_SMS_displayOn();
 }
