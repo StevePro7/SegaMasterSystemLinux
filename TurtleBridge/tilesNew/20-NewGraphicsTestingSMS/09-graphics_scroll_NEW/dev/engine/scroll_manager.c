@@ -4,7 +4,7 @@
 #include "sprite_manager.h"
 #include "../devkit/_sms_manager.h"
 
-#define PARALLAX_SCROLLING	0
+#define PARALLAX_SCROLLING	1
 
 // Global variable.
 struct_scroll_object global_scroll_object;
@@ -15,28 +15,16 @@ struct_scroll_object global_scroll_object;
 #pragma disable_warning 158
 #endif
 
-//static void lineScrollHandler( void );
 
 static void( *load_method )( unsigned char count );
 static void( *update_method )( unsigned char delta );
+static void lineScrollHandler( void );
 
-static void para_scroll_load( unsigned char count )
-{
-	engine_font_manager_data( count, 10, 4 );
-}
-static void para_scroll_update( unsigned char delta )
-{
-	engine_font_manager_data( delta, 10, 6 );
-}
-
-static void full_scroll_load( unsigned char count )
-{
-	engine_font_manager_data( count, 10, 12 );
-}
-static void full_scroll_update( unsigned char delta )
-{
-	engine_font_manager_data( delta, 10, 16 );
-}
+// Private helper functions - TODO - delete
+static void para_scroll_load( unsigned char count );
+static void para_scroll_update( unsigned char delta );
+static void full_scroll_load( unsigned char count );
+static void full_scroll_update( unsigned char delta );
 
 void engine_scroll_manager_init()
 {
@@ -155,17 +143,35 @@ bool engine_scroll_manager_update( unsigned char delta )
 //}
 
 
+static void para_scroll_load( unsigned char count )
+{
+	engine_font_manager_data( count, 10, 4 );
+}
+static void para_scroll_update( unsigned char delta )
+{
+	engine_font_manager_data( delta, 10, 6 );
+}
 
-//static void lineScrollHandler( void )
-//{
-//	struct_scroll_object *so = &global_scroll_object;
-//	//unsigned int val = scroll_x[ lineCnt++ ] >> 8;
-//	unsigned int val = so->scroll_x[ so->lineCnt++ ];
-//
-//	////engine_font_manager_data( lineCnt, 10, 0 );
-//	////engine_font_manager_data( val, 20, 0 );
-//	////engine_font_manager_data( lineCnt, 10, 0 );
-//	//devkit_SMS_setBGScrollX( ( scroll_x[ lineCnt++ ] ) >> 8 );
-//
-//	devkit_SMS_setBGScrollX( val );
-//}
+static void full_scroll_load( unsigned char count )
+{
+	engine_font_manager_data( count, 10, 12 );
+}
+static void full_scroll_update( unsigned char delta )
+{
+	engine_font_manager_data( delta, 10, 16 );
+}
+
+
+static void lineScrollHandler( void )
+{
+	struct_scroll_object *so = &global_scroll_object;
+	//unsigned int val = scroll_x[ lineCnt++ ] >> 8;
+	unsigned int val = so->scroll_x[ so->lineCnt++ ];
+
+	////engine_font_manager_data( lineCnt, 10, 0 );
+	////engine_font_manager_data( val, 20, 0 );
+	////engine_font_manager_data( lineCnt, 10, 0 );
+	//devkit_SMS_setBGScrollX( ( scroll_x[ lineCnt++ ] ) >> 8 );
+
+	devkit_SMS_setBGScrollX( val );
+}
