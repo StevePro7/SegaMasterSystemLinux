@@ -29,25 +29,43 @@ void screen_play_screen_update( unsigned char *screen_type )
 {
 	struct_scroll_object *so = &global_scroll_object;
 	unsigned char input;
-	bool newTile = false;
+	unsigned char delta;
+	unsigned char value;
+	bool newTile;
 
-	//input = engine_input_manager_hold( input_type_right);
-	input = engine_input_manager_move( input_type_right );
+	delta = 0;
+	value = 0;
+	newTile = false;
+	input = engine_input_manager_hold( input_type_right);
+	//input = engine_input_manager_move( input_type_right );
 	//input = 1;
 	if( input )
 	{
+		delta = 1;
 		//engine_tile_manager_draw_columns( tile_type_island_tree, 20 + cols, 0 + cols );
-		newTile = engine_scroll_manager_update( 1 );
-		engine_font_manager_data( newTile, 30, 0 );
-		if( newTile )
-		{
-			engine_level_manager_draw( so->offset_right );
-		}
 		//cols++;
 		//engine_scroll_manager_update( 2 );
 	//	print( newTile );
 	}
 
+	if( 0 == delta )
+	{
+		//engine_scroll_manager_update( 0 );
+		newTile = engine_scroll_manager_update( 0 );
+		if( newTile )
+		{
+			engine_level_manager_draw( so->offset_right );
+		}
+	}
+	else
+	{
+		newTile = engine_scroll_manager_update( 1 );
+		//engine_font_manager_data( newTile, 30, 0 );
+		if( newTile )
+		{
+			engine_level_manager_draw( so->offset_right );
+		}
+	}
 	*screen_type = screen_type_play;
 }
 
