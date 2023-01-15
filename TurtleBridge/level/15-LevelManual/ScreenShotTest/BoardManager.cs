@@ -45,10 +45,10 @@ namespace ScreenShotTest
 			//}
 
 			// Draw selectors
-			pos = new Vector2(256+128, 112);
+			pos = new Vector2(256+128+64, 112);
 			int delta = 0;
 			int index;
-			for (index = 4; index < 10; index++)
+			for (index = 4; index < 16; index++)
 			{
 				image = assetManager.Images[index];
 				delta = 0;
@@ -60,24 +60,36 @@ namespace ScreenShotTest
 				pos.X += 64;
 			}
 
+			pos = new Vector2(128, 112);
+			delta = 16;
+			spriteBatch.Draw(assetManager.Images[(int)AssetType.QbridgeSideFlip], new Vector2(pos.X + delta, pos.Y), Color.White);
+			pos.X += 64;
+			spriteBatch.Draw(assetManager.Images[(int)AssetType.BbridgeMidd], new Vector2(pos.X + delta, pos.Y), Color.White);
+			pos.X += 64;
+			spriteBatch.Draw(assetManager.Images[(int)AssetType.CbridgeSide], new Vector2(pos.X + delta, pos.Y), Color.White);
+			pos.X += 64;
+			spriteBatch.Draw(assetManager.Images[(int)AssetType.DbridgeSign], new Vector2(pos.X + delta, pos.Y), Color.White);
+			pos.X += 64;
+			spriteBatch.Draw(assetManager.Images[(int)AssetType.RbridgeSignGoal], new Vector2(pos.X + delta, pos.Y), Color.White);
+			pos.X += 64;
+
 			// Draw lines
-			for (int col = 0; col < wide; col += 32)
+			for (int col = 0; col < wide; col += 16)
 			{
 				spriteBatch.Draw(stripVert, new Vector2(col, 0), new Rectangle(0, 0, 2, 112), Color.White);
 				if (col > 0 && 0 == col % 64)
 				{
 					spriteBatch.Draw(stripVert, new Vector2(col, 112), new Rectangle(0, 0, 2, 112), Color.White);
 				}
-				if (col > 0 && 0 == col % 256)
+				if (col > 0 && 0 == col % 128)
 				{
-					spriteBatch.Draw(stripVert, new Vector2(col, 0), new Rectangle(0, 0, 2, 224), Color.Black);
+					spriteBatch.Draw(stripVert, new Vector2(col, 0), new Rectangle(0, 0, 2, 112), Color.Black);
 				}
 			}
 			for (int row = 0; row < wide; row += 512)
 			{
 				spriteBatch.Draw(stripHorz, new Vector2(row, 112), Color.Black);
 			}
-
 
 		}
 	}
