@@ -13,6 +13,7 @@ void main( void )
 		input = input = engine_input_manager_move( input_type_fire2 );
 		if( input )
 		{
+			devkit_PSGStop();
 			start();
 		}
 		engine_screen_manager_update();

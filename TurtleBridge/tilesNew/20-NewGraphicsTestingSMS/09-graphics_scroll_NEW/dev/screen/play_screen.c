@@ -20,7 +20,7 @@ void screen_play_screen_load()
 	drawScreen();
 	engine_level_manager_load();
 	engine_scroll_manager_load();
-	//engine_music_manager_play( 1 );
+	engine_music_manager_play( 0 );
 	
 	//cols = 0;
 }
@@ -36,21 +36,24 @@ void screen_play_screen_update( unsigned char *screen_type )
 	delta = 0;
 	value = 0;
 	newTile = false;
-	input = engine_input_manager_hold( input_type_right);
+	input = engine_input_manager_move( input_type_right);
 	//input = engine_input_manager_move( input_type_right );
 	//input = 1;
 	if( input )
 	{
-		delta = 1;
+		delta = 4;
 		//engine_tile_manager_draw_columns( tile_type_island_tree, 20 + cols, 0 + cols );
 		//cols++;
 		//engine_scroll_manager_update( 2 );
 	//	print( newTile );
 	}
-
+	input = engine_input_manager_move( input_type_fire1 );
+	if( input )
+	{
+		delta *= 2;
+	}
 	if( 0 == delta )
 	{
-		//engine_scroll_manager_update( 0 );
 		newTile = engine_scroll_manager_update( 1 );
 		if( newTile )
 		{
@@ -59,13 +62,25 @@ void screen_play_screen_update( unsigned char *screen_type )
 	}
 	else
 	{
-		newTile = engine_scroll_manager_update( 1 );
-		//engine_font_manager_data( newTile, 30, 0 );
-		if( newTile )
+		for( value = 0; value < delta; value++ )
 		{
-			engine_level_manager_draw( so->offset_right );
+			// IMPORTANT - this MUST be 1px 
+			newTile = engine_scroll_manager_update( 1 );
+			if( newTile )
+			{
+				engine_level_manager_draw( so->offset_right );
+			}
 		}
+
+		//newTile = engine_scroll_manager_update( 1 );
+		////engine_font_manager_data( newTile, 30, 0 );
+		//if( newTile )
+		//{
+		//	engine_level_manager_draw( so->offset_right );
+		//}
 	}
+
+	//engine_font_manager_data( newTile, 31, 0 );
 	*screen_type = screen_type_play;
 }
 
