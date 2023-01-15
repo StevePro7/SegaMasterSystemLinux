@@ -22,6 +22,7 @@ void engine_tile_manager_draw_columns( unsigned char tile_type, unsigned char x,
 	unsigned int val;
 	unsigned char row;
 
+	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
 	for( row = 0; row < TILE_SCROLL_ROWS; row++ )
 	{
 		idx = to->tilemap_index + row * 2 * TILMAP_WIDE + col * 2;
