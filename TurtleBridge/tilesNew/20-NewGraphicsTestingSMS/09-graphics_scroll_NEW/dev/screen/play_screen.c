@@ -14,9 +14,8 @@ static void drawScreen();
 
 void screen_play_screen_load()
 {
-	//drawScreen();
-	////TODO
-	engine_music_manager_play( 0 );
+	drawScreen();
+	//engine_music_manager_play( 0 );
 }
 
 void screen_play_screen_update( unsigned char *screen_type )
@@ -31,7 +30,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 	if( input )
 	{
 		
-		//engine_tile_manager_draw_columns( tile_type_turtle_fly4, 10, 0 );
+		engine_tile_manager_draw_columns( tile_type_turtle_fly4, 10, 0 );
 		//engine_scroll_manager_update( 2 );
 	//	print( newTile );
 	}
