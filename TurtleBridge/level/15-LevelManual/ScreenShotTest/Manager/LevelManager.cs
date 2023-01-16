@@ -28,12 +28,12 @@ namespace ScreenShotTest
 			for (int idx = 0; idx < cols; idx++)
 			{
 				tile = Tiles[idx];
-				//if ((int)AssetType.QbridgeSideFlip == tile)
-				//{
-				//	image = assetManager.ImagesSmall[tile];
-				//}
-				image = assetManager.ImagesSmall[tile];
-				spriteBatch.Draw(image, pos, Color.White);
+				if (tile < (int)AssetType.SislandTinyXtra)
+				{
+					image = assetManager.ImagesSmall[tile];
+					spriteBatch.Draw(image, pos, Color.White);
+				}
+
 				pos.X += 16;
 			}
 		}
@@ -45,12 +45,12 @@ namespace ScreenShotTest
 				Tiles[idx] = 0;
 			}
 			Tiles[0] = (int)AssetType.BbridgeMidd;
-			Tiles[1] = (int)AssetType.CbridgeSide;
-			Tiles[2] = (int)AssetType.AwavesBlock;
-			Tiles[3] = (int)AssetType.QbridgeSideFlip;
+			Tiles[1] = (int)AssetType.BbridgeMidd;
+			Tiles[2] = (int)AssetType.FislandLeft;
+			Tiles[3] = (int)AssetType.TislandLeftXtra;
 			Tiles[4] = (int)AssetType.BbridgeMidd;
-			Tiles[5] = (int)AssetType.RbridgeSignGoal;
-			Tiles[6] = (int)AssetType.BbridgeMidd;
+			Tiles[5] = (int)AssetType.BbridgeMidd;
+			//Tiles[6] = (int)AssetType.BbridgeMidd;
 
 			return Tiles;
 		}
