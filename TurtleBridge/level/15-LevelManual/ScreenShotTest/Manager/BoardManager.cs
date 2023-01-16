@@ -8,12 +8,14 @@ namespace ScreenShotTest
 	{
 		private AssetManager assetManager;
 		private FileManager fileManager;
+		private LevelManager levelManager;
 		private Texture2D stripHorz, stripVert;
 		private int wide, high;
-		public BoardManager(AssetManager assetManager, FileManager fileManager, int wide, int high)
+		public BoardManager(AssetManager assetManager, FileManager fileManager, LevelManager levelManager, int wide, int high)
 		{
 			this.assetManager = assetManager;
 			this.fileManager = fileManager;
+			this.levelManager = levelManager;
 			this.wide = wide;
 			this.high = high;
 		}
@@ -33,10 +35,12 @@ namespace ScreenShotTest
 			for (int box = 0; box < wide; box += 32)
 			{
 				image = assetManager.ImagesLarge[(int)AssetType.AwavesBlock];
-				spriteBatch.Draw(image, new Vector2(x, 0), Color.White);
+				//spriteBatch.Draw(image, new Vector2(x, 0), Color.White);
 				spriteBatch.Draw(image, new Vector2(x, 112), Color.White);
 				x += 32;
 			}
+
+			levelManager.Draw(spriteBatch);
 
 			// TODO replace with tile mgr
 			//foreach (var obj in fileManager.Objects)

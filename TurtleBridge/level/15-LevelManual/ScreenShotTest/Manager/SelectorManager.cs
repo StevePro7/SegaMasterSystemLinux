@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ScreenShotTest
 {
-	public class LevelManager
+	public class SelectorManager
 	{
 	}
 }

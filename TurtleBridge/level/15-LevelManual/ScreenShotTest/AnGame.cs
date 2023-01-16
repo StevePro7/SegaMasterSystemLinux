@@ -22,14 +22,16 @@ namespace ScreenShotTest
 
 		public AnGame()
 		{
-			wide = 1024 + 512;// fileManager.Objects.Count * 32;
+			//wide = 1024 + 512;// fileManager.Objects.Count * 32;
+			wide = 256;
 			high = 224;
 
-			levelManager = new LevelManager();
 			assetManager = new AssetManager();
+			levelManager = new LevelManager(assetManager);
+			levelManager.Initialize(wide);
 			fileManager = new FileManager();
 			fileManager.Initialize();
-			boardManager = new BoardManager(assetManager, fileManager, wide, high);
+			boardManager = new BoardManager(assetManager, fileManager,levelManager, wide, high);
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = wide;
 			graphics.PreferredBackBufferHeight = high;
