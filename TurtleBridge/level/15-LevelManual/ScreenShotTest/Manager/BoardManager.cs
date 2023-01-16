@@ -11,6 +11,7 @@ namespace ScreenShotTest
 		private LevelManager levelManager;
 		private Texture2D stripHorz, stripVert;
 		private int wide, high;
+
 		public BoardManager(AssetManager assetManager, FileManager fileManager, LevelManager levelManager, int wide, int high)
 		{
 			this.assetManager = assetManager;

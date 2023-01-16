@@ -27,10 +27,10 @@ namespace ScreenShotTest
 			high = 224;
 
 			assetManager = new AssetManager();
-			levelManager = new LevelManager(assetManager);
-			levelManager.Initialize(wide);
 			fileManager = new FileManager();
-			fileManager.Initialize();
+			fileManager.Initialize(wide);
+			levelManager = new LevelManager(assetManager, fileManager);
+			levelManager.Initialize(wide);
 			boardManager = new BoardManager(assetManager, fileManager,levelManager, wide, high);
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = wide;
@@ -52,6 +52,7 @@ namespace ScreenShotTest
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 			assetManager.LoadContent(Content);
 			boardManager.LoadContent(Content);
+			levelManager.LoadContent();
 
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
 			wide = pp.BackBufferWidth;
@@ -74,7 +75,7 @@ namespace ScreenShotTest
 
 			if (Keyboard.GetState().IsKeyDown(Keys.Enter))
 			{
-				fileManager.Initialize();
+				levelManager.LoadContent();
 			}
 			base.Update(gameTime);
 		}

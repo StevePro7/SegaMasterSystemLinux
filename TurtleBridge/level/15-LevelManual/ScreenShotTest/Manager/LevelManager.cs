@@ -6,18 +6,26 @@ namespace ScreenShotTest
 	public class LevelManager
 	{
 		private AssetManager assetManager;
+		private FileManager fileManager;
 		private int cols;
 
-		public LevelManager(AssetManager assetManager)
+		public LevelManager(AssetManager assetManager, FileManager fileManager)
 		{
 			this.assetManager = assetManager;
+			this.fileManager = fileManager;
 		}
 
 		public void Initialize(int wide)
 		{
 			cols = wide / 16;
-			Tiles = new int[wide];
-			Tiles = GetTiles();
+			Tiles = new int[cols];
+			//Tiles = GetTiles();
+		}
+
+		public void LoadContent()
+		{
+			fileManager.LoadContent();
+			Tiles = fileManager.Tiles;
 		}
 
 		public void Draw(SpriteBatch spriteBatch)
