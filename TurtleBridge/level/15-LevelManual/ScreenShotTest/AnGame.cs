@@ -104,7 +104,7 @@ namespace ScreenShotTest
 		{
 			graphics.GraphicsDevice.Clear(Color.CornflowerBlue);
 			spriteBatch.Begin();
-			boardManager.Draw(spriteBatch, wide, high);
+			boardManager.Draw(spriteBatch);
 			spriteBatch.End();
 		}
 

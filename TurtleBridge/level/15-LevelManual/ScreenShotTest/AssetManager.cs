@@ -9,6 +9,9 @@ namespace ScreenShotTest
 		public void LoadContent(ContentManager myContentManager)
 		{
 			Images = new List<Texture2D>();
+			ImagesLarge = new List<Texture2D>();
+			ImagesSmall = new List<Texture2D>();
+
 			var files = GetFiles();
 			for (int index = 0; index < files.Length; index++)
 			{
@@ -45,5 +48,7 @@ namespace ScreenShotTest
 		}
 
 		public List<	Texture2D> Images { get; private set; }
+		public List<Texture2D> ImagesLarge { get; private set; }
+		public List<Texture2D> ImagesSmall { get; private set; }
 	}
 }

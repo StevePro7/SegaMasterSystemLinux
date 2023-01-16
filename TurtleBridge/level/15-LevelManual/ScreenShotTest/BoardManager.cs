@@ -9,11 +9,13 @@ namespace ScreenShotTest
 		private AssetManager assetManager;
 		private FileManager fileManager;
 		private Texture2D stripHorz, stripVert;
-
-		public BoardManager(AssetManager assetManager, FileManager fileManager)
+		private int wide, high;
+		public BoardManager(AssetManager assetManager, FileManager fileManager, int wide, int high)
 		{
 			this.assetManager = assetManager;
 			this.fileManager = fileManager;
+			this.wide = wide;
+			this.high = high;
 		}
 
 		public void LoadContent(ContentManager myContentManager)
@@ -22,7 +24,7 @@ namespace ScreenShotTest
 			stripVert = myContentManager.Load<Texture2D>("StripVert");
 		}
 
-		public void Draw(SpriteBatch spriteBatch, int wide, int high)
+		public void Draw(SpriteBatch spriteBatch)
 		{
 			Texture2D image;
 			Vector2 pos = new Vector2(0, 0);
