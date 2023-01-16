@@ -42,6 +42,11 @@
 		PturtleFly4 = 15,
 		QbridgeSideFlip = 16,
 		RbridgeSignGoal = 17,
-
+		SislandTinyXtra = 18,
+		TislandLeftXtra = 19,
+		UislandRghtXtra = 20,
+		VislandMiddXtra = 21,
+		WislandTreeXtra = 22,
+		XislandSignXtra = 23,
 	}
 }

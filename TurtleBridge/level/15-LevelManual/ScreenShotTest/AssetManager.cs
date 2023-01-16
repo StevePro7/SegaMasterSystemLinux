@@ -8,17 +8,22 @@ namespace ScreenShotTest
 	{
 		public void LoadContent(ContentManager myContentManager)
 		{
-			Images = new List<Texture2D>();
 			ImagesLarge = new List<Texture2D>();
 			ImagesSmall = new List<Texture2D>();
 
 			var files = GetFiles();
+			string file;
+			string temp;
+			Texture2D image;
 			for (int index = 0; index < files.Length; index++)
 			{
-				var file = files[index];
-				var temp = "Large/" + file;
-				var image = myContentManager.Load<Texture2D>(temp);
-				Images.Add(image);
+				file = files[index];
+				temp = "Large/" + file;
+				image = myContentManager.Load<Texture2D>(temp);
+				ImagesLarge.Add(image);
+				temp = "Small/" + file;
+				image = myContentManager.Load<Texture2D>(temp);
+				ImagesSmall.Add(image);
 			}
 		}
 
@@ -47,7 +52,6 @@ namespace ScreenShotTest
 			};
 		}
 
-		public List<	Texture2D> Images { get; private set; }
 		public List<Texture2D> ImagesLarge { get; private set; }
 		public List<Texture2D> ImagesSmall { get; private set; }
 	}

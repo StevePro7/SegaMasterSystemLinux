@@ -32,7 +32,7 @@ namespace ScreenShotTest
 			// Draw waves
 			for (int box = 0; box < wide; box += 32)
 			{
-				image = assetManager.Images[(int)AssetType.AwavesBlock];
+				image = assetManager.ImagesLarge[(int)AssetType.AwavesBlock];
 				spriteBatch.Draw(image, new Vector2(x, 0), Color.White);
 				spriteBatch.Draw(image, new Vector2(x, 112), Color.White);
 				x += 32;
@@ -41,7 +41,7 @@ namespace ScreenShotTest
 			// TODO replace with tile mgr
 			//foreach (var obj in fileManager.Objects)
 			//{
-			//	image = assetManager.Images[obj];
+			//	image = assetManager.ImagesLarge[obj];
 			//	spriteBatch.Draw(image, pos, Color.White);
 			//	pos.X += image.Width;
 			//}
@@ -52,7 +52,7 @@ namespace ScreenShotTest
 			int index;
 			for (index = 4; index < 16; index++)
 			{
-				image = assetManager.Images[index];
+				image = assetManager.ImagesLarge[index];
 				delta = 0;
 				if (image.Width == 32)
 				{
@@ -64,15 +64,15 @@ namespace ScreenShotTest
 
 			pos = new Vector2(128, 112);
 			delta = 16;
-			spriteBatch.Draw(assetManager.Images[(int)AssetType.QbridgeSideFlip], new Vector2(pos.X + delta, pos.Y), Color.White);
+			spriteBatch.Draw(assetManager.ImagesLarge[(int)AssetType.QbridgeSideFlip], new Vector2(pos.X + delta, pos.Y), Color.White);
 			pos.X += 64;
-			spriteBatch.Draw(assetManager.Images[(int)AssetType.BbridgeMidd], new Vector2(pos.X + delta, pos.Y), Color.White);
+			spriteBatch.Draw(assetManager.ImagesLarge[(int)AssetType.BbridgeMidd], new Vector2(pos.X + delta, pos.Y), Color.White);
 			pos.X += 64;
-			spriteBatch.Draw(assetManager.Images[(int)AssetType.CbridgeSide], new Vector2(pos.X + delta, pos.Y), Color.White);
+			spriteBatch.Draw(assetManager.ImagesLarge[(int)AssetType.CbridgeSide], new Vector2(pos.X + delta, pos.Y), Color.White);
 			pos.X += 64;
-			spriteBatch.Draw(assetManager.Images[(int)AssetType.DbridgeSign], new Vector2(pos.X + delta, pos.Y), Color.White);
+			spriteBatch.Draw(assetManager.ImagesLarge[(int)AssetType.DbridgeSign], new Vector2(pos.X + delta, pos.Y), Color.White);
 			pos.X += 64;
-			spriteBatch.Draw(assetManager.Images[(int)AssetType.RbridgeSignGoal], new Vector2(pos.X + delta, pos.Y), Color.White);
+			spriteBatch.Draw(assetManager.ImagesLarge[(int)AssetType.RbridgeSignGoal], new Vector2(pos.X + delta, pos.Y), Color.White);
 			pos.X += 64;
 
 			// Draw lines
