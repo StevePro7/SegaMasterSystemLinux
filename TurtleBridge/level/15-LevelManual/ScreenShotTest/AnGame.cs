@@ -12,6 +12,7 @@ namespace ScreenShotTest
 		private AssetManager assetManager;
 		private FileManager fileManager;
 		private BoardManager boardManager;
+		private InputManager inputManager;
 		private LevelManager levelManager;
 
 		GraphicsDeviceManager graphics;
@@ -22,8 +23,8 @@ namespace ScreenShotTest
 
 		public AnGame()
 		{
-			//wide = 1024 + 512;// fileManager.Objects.Count * 32;
-			wide = 256;
+			wide = 1024 + 512;// fileManager.Objects.Count * 32;
+			//wide = 256;
 			high = 224;
 
 			assetManager = new AssetManager();
@@ -31,6 +32,7 @@ namespace ScreenShotTest
 			fileManager.Initialize(wide);
 			levelManager = new LevelManager(assetManager, fileManager);
 			levelManager.Initialize(wide);
+			inputManager = new InputManager(wide, high);
 			boardManager = new BoardManager(assetManager, fileManager,levelManager, wide, high);
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = wide;
@@ -72,11 +74,12 @@ namespace ScreenShotTest
 			{
 				Exit();
 			}
-
 			if (Keyboard.GetState().IsKeyDown(Keys.Enter))
 			{
 				levelManager.LoadContent();
 			}
+
+			inputManager.Update();
 			base.Update(gameTime);
 		}
 
