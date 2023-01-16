@@ -23,6 +23,7 @@ namespace ScreenShotTest
 
 		public AnGame()
 		{
+			Logger.Initialize();
 			wide = 1024 + 512;// fileManager.Objects.Count * 32;
 			//wide = 256;
 			high = 224;

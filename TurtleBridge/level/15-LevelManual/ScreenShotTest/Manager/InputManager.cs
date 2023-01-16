@@ -6,7 +6,6 @@ namespace ScreenShotTest
 	public class InputManager
 	{
 		private int wide, high;
-		private int size;
 
 		public InputManager(int wide, int high)
 		{

@@ -40,6 +40,7 @@
   <PropertyGroup />
   <ItemGroup>
     <Compile Include="AnGame.cs" />
+    <Compile Include="Logger.cs" />
     <Compile Include="Manager\AssetManager.cs" />
     <Compile Include="Manager\BoardManager.cs" />
     <Compile Include="Manager\EnumManager.cs" />
@@ -51,6 +52,9 @@
     <Compile Include="Manager\SelectorManager.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="MonoGame.Framework">
       <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\Windows\MonoGame.Framework.dll</HintPath>
     </Reference>
@@ -59,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icon.ico" />
+    <None Include="App.config" />
     <None Include="Content\Large\AwavesBlock.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
