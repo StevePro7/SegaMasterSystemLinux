@@ -9,14 +9,16 @@ namespace ScreenShotTest
 		private AssetManager assetManager;
 		private FileManager fileManager;
 		private LevelManager levelManager;
+		private SelectorManager selectorManager;
 		private Texture2D stripHorz, stripVert;
 		private int wide, high;
 
-		public BoardManager(AssetManager assetManager, FileManager fileManager, LevelManager levelManager, int wide, int high)
+		public BoardManager(AssetManager assetManager, FileManager fileManager, LevelManager levelManager, SelectorManager selectorManager, int wide, int high)
 		{
 			this.assetManager = assetManager;
 			this.fileManager = fileManager;
 			this.levelManager = levelManager;
+			this.selectorManager = selectorManager;
 			this.wide = wide;
 			this.high = high;
 		}
@@ -79,6 +81,15 @@ namespace ScreenShotTest
 			pos.X += 64;
 			spriteBatch.Draw(assetManager.ImagesLarge[(int)AssetType.RbridgeSignGoal], new Vector2(pos.X + delta, pos.Y), Color.White);
 			pos.X += 64;
+
+			// Draw selector
+			pos = new Vector2(0, 112);
+			image = assetManager.ImagesLarge[selectorManager.Selector];
+			if (32 == image.Width)
+			{
+				pos.X += 16;
+			}
+			spriteBatch.Draw(image, pos, Color.White);
 
 			// Draw lines
 			for (int col = 0; col < wide; col += 16)
