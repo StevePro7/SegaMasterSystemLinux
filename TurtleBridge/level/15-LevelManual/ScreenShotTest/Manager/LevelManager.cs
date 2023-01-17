@@ -56,18 +56,18 @@ namespace ScreenShotTest
 				if (stack.Count > 0)
 				{
 					Vector2 position = stack.Pop();
-					row = (int)(position.Y);
+					//row = (int)(position.Y);
 					col = (int)(position.X);
-					var oldTile = Tiles[col];
+					//var oldTile = Tiles[col];
 					Tiles[col] = (int)AssetType.AwavesBlock;
-					if (Tiles[col - 1] >= (int)AssetType.SislandTinyXtra)
-					{
-						Tiles[col - 1] = (int)AssetType.AwavesBlock;
-					}
-					if (Tiles[col + 1] >= (int)AssetType.SislandTinyXtra)
-					{
-						Tiles[col + 1] = (int)AssetType.AwavesBlock;
-					}
+					//if (Tiles[col - 1] >= (int)AssetType.SislandTinyXtra)
+					//{
+					//	Tiles[col - 1] = (int)AssetType.AwavesBlock;
+					//}
+					//if (Tiles[col + 1] >= (int)AssetType.SislandTinyXtra)
+					//{
+					//	Tiles[col + 1] = (int)AssetType.AwavesBlock;
+					//}
 				}
 			}
 
@@ -97,29 +97,30 @@ namespace ScreenShotTest
 						stack.Push(inputManager.MousePosition);
 					}
 				}
-				if (oldTile < (int)AssetType.SislandTinyXtra)
-				{
+				//if (oldTile < (int)AssetType.SislandTinyXtra)
+				//{
 					Tiles[col] = selector;
-					if (selector >= (int)AssetType.EislandTiny && selector <= (int)AssetType.JislandSign)
-					{
-						Tiles[col + 1] = selector + 14;
-					}
-				}
+				//	if (selector >= (int)AssetType.EislandTiny && selector <= (int)AssetType.JislandSign)
+				//	{
+				//		Tiles[col + 1] = selector + 14;
+				//	}
+				//}
 			}
 
 			if (rght)
 			{
 				if (stack.Count > 0)
 				{
-					Vector2 position = stack.Pop();
+					stack.Pop();
+					//Vector2 position = stack.Pop();
 				}
 
-				var oldTile = Tiles[col];
+				//var oldTile = Tiles[col];
 				Tiles[col] = (int)AssetType.AwavesBlock;
-				if (oldTile >= (int)AssetType.EislandTiny && oldTile <= (int)AssetType.JislandSign)
-				{
-					Tiles[col + 1] = (int)AssetType.AwavesBlock;
-				}
+				//if (oldTile >= (int)AssetType.EislandTiny && oldTile <= (int)AssetType.JislandSign)
+				//{
+				//	Tiles[col + 1] = (int)AssetType.AwavesBlock;
+				//}
 				//if (Tiles[col + 1] >= (int)AssetType.SislandTinyXtra)
 				//{
 				//	Tiles[col + 0] = (int)AssetType.AwavesBlock;
