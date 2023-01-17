@@ -27,8 +27,8 @@ namespace ScreenShotTest
 			int my = mouseState.Y;
 			if (mx >= 0 && my <= wide && my >= 0 && my <= high)
 			{
-				int bx = mx / 32;
-				int by = my / 32;
+				int bx = mx / 16;
+				int by = my / 16;
 
 				MousePosition = new Vector2(bx, by);
 			}

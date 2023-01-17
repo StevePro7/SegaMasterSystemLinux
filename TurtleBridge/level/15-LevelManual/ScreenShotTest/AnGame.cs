@@ -85,6 +85,7 @@ namespace ScreenShotTest
 			}
 
 			inputManager.Update();
+			selectorManager.Update();
 			base.Update(gameTime);
 		}
 

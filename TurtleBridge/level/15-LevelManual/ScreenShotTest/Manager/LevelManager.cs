@@ -27,6 +27,11 @@ namespace ScreenShotTest
 			Tiles = fileManager.Tiles;
 		}
 
+		public void Update()
+		{
+
+		}
+
 		public void Draw(SpriteBatch spriteBatch)
 		{
 			Vector2 pos = Vector2.Zero;
