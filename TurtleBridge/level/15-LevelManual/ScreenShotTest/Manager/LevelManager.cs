@@ -19,7 +19,6 @@ namespace ScreenShotTest
 		{
 			cols = wide / 16;
 			Tiles = new int[cols];
-			//Tiles = GetTiles();
 		}
 
 		public void LoadContent()

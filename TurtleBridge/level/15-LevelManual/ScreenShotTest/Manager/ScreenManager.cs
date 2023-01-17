@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LevelEditor.Manager
+namespace ScreenShotTest.Manager
 {
-	public class FileManager
+	public class ScreenManager
 	{
 	}
 }
