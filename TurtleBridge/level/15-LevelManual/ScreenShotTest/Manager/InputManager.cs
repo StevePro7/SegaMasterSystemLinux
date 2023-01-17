@@ -32,15 +32,12 @@ namespace ScreenShotTest
 
 				MousePosition = new Vector2(bx, by);
 			}
-			
-			//TODO check!!
+		}
+
+		public void Reset()
+		{
 			prevKeyboardState = currKeyboardState;
 		}
-//TODO delete
-//		public void Reset()
-//		{
-//			prevKeyboardState = currKeyboardState;
-//		}
 
 		public bool KeyDown(Keys key)
 		{

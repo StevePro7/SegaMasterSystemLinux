@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 
 namespace ScreenShotTest
@@ -45,10 +46,30 @@ namespace ScreenShotTest
 		{
 			int row = (int)(inputManager.MousePosition.Y);
 			int col = (int)(inputManager.MousePosition.X);
-			
+			int selector = selectorManager.Selector;
 
 			bool left = inputManager.LeftButton();
 			bool rght = inputManager.RightButton();
+
+			if (inputManager.KeyHold(Keys.Delete))
+			{
+				if (stack.Count > 0)
+				{
+					Vector2 position = stack.Pop();
+					row = (int)(position.Y);
+					col = (int)(position.X);
+					var oldTile = Tiles[col];
+					Tiles[col] = (int)AssetType.AwavesBlock;
+					if (Tiles[col - 1] >= (int)AssetType.SislandTinyXtra)
+					{
+						Tiles[col - 1] = (int)AssetType.AwavesBlock;
+					}
+					if (Tiles[col + 1] >= (int)AssetType.SislandTinyXtra)
+					{
+						Tiles[col + 1] = (int)AssetType.AwavesBlock;
+					}
+				}
+			}
 
 			if (left || rght)
 			{
@@ -69,12 +90,41 @@ namespace ScreenShotTest
 				//Logger.Info(col.ToString());
 				//bool isValid	TODO
 				var oldTile = Tiles[col];
-				if (selectorManager.Selector != oldTile)
+				if (selector != oldTile)
 				{
-					stack.Push(inputManager.MousePosition);
+					if (selector < (int)AssetType.RbridgeSignGoal)
+					{
+						stack.Push(inputManager.MousePosition);
+					}
+				}
+				if (oldTile < (int)AssetType.SislandTinyXtra)
+				{
+					Tiles[col] = selector;
+					if (selector >= (int)AssetType.EislandTiny && selector <= (int)AssetType.JislandSign)
+					{
+						Tiles[col + 1] = selector + 14;
+					}
+				}
+			}
+
+			if (rght)
+			{
+				if (stack.Count > 0)
+				{
+					Vector2 position = stack.Pop();
 				}
 
-				Tiles[col] = selectorManager.Selector;
+				var oldTile = Tiles[col];
+				Tiles[col] = (int)AssetType.AwavesBlock;
+				if (oldTile >= (int)AssetType.EislandTiny && oldTile <= (int)AssetType.JislandSign)
+				{
+					Tiles[col + 1] = (int)AssetType.AwavesBlock;
+				}
+				//if (Tiles[col + 1] >= (int)AssetType.SislandTinyXtra)
+				//{
+				//	Tiles[col + 0] = (int)AssetType.AwavesBlock;
+				//	Tiles[col + 1] = (int)AssetType.AwavesBlock;
+				//}
 			}
 		}
 
