@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Generic;
 
 namespace ScreenShotTest
 {
@@ -7,17 +8,24 @@ namespace ScreenShotTest
 	{
 		private AssetManager assetManager;
 		private FileManager fileManager;
+		private InputManager inputManager;
+		private SelectorManager selectorManager;
+		private Stack<Vector2> stack;
+		private int wide, high;
 		private int cols;
+		private int rows;
 
-		public LevelManager(AssetManager assetManager, FileManager fileManager)
+		public LevelManager(AssetManager assetManager, FileManager fileManager, InputManager inputManager, SelectorManager selectorManager, int wide, int high)
 		{
 			this.assetManager = assetManager;
 			this.fileManager = fileManager;
-		}
-
-		public void Initialize(int wide)
-		{
+			this.inputManager = inputManager;
+			this.selectorManager = selectorManager;
+			stack = new Stack<Vector2>();
+			this.wide = wide;
+			this.high = high;
 			cols = wide / 16;
+			rows = high / 32;
 			Tiles = new int[cols];
 		}
 
@@ -25,11 +33,49 @@ namespace ScreenShotTest
 		{
 			fileManager.LoadContent();
 			Tiles = fileManager.Tiles;
+			for (int idx = 0; idx < 8; idx++)
+			{
+				Tiles[cols - idx - 1] = (int)AssetType.BbridgeMidd;
+			}
+
+			Tiles[cols - 4] = (int)AssetType.RbridgeSignGoal;
 		}
 
 		public void Update()
 		{
+			int row = (int)(inputManager.MousePosition.Y);
+			int col = (int)(inputManager.MousePosition.X);
+			
 
+			bool left = inputManager.LeftButton();
+			bool rght = inputManager.RightButton();
+
+			if (left || rght)
+			{
+				bool play = row < rows;
+				if (!play)
+				{
+					return;
+				}
+
+				if (col < 0 || col >= cols - 8 || row < 0 || row >= rows)
+				{
+					return;
+				}
+			}
+
+			if (left)
+			{
+				//Logger.Info(col.ToString());
+				//bool isValid	TODO
+				var oldTile = Tiles[col];
+				if (selectorManager.Selector != oldTile)
+				{
+					stack.Push(inputManager.MousePosition);
+				}
+
+				Tiles[col] = selectorManager.Selector;
+			}
 		}
 
 		public void Draw(SpriteBatch spriteBatch)

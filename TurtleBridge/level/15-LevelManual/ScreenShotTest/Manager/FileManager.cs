@@ -7,7 +7,7 @@ namespace ScreenShotTest
 	{
 		private int cols;
 
-		public void Initialize(int wide)
+		public FileManager(int wide)
 		{
 			cols = wide / 16;
 			Tiles = new int[cols];

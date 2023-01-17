@@ -30,13 +30,11 @@ namespace ScreenShotTest
 			high = 224;
 
 			assetManager = new AssetManager();
-			fileManager = new FileManager();
-			fileManager.Initialize(wide);
-			levelManager = new LevelManager(assetManager, fileManager);
-			levelManager.Initialize(wide);
+			fileManager = new FileManager(wide);
 			inputManager = new InputManager(wide, high);
 			selectorManager = new SelectorManager(inputManager);
 			selectorManager.Initialize();
+			levelManager = new LevelManager(assetManager, fileManager, inputManager, selectorManager, wide, high);
 			boardManager = new BoardManager(assetManager, fileManager, levelManager, selectorManager, wide, high);
 
 			graphics = new GraphicsDeviceManager(this);
@@ -85,6 +83,7 @@ namespace ScreenShotTest
 			}
 
 			inputManager.Update();
+			levelManager.Update();
 			selectorManager.Update();
 			base.Update(gameTime);
 		}
