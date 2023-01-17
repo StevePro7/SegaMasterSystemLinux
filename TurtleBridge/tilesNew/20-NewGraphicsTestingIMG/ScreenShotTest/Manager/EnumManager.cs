@@ -33,6 +33,9 @@
 		font_tiles_yellow_192x24_02 = 21,
 		font_tiles_yellow_192x24_05 = 22,
 		font_tiles_yellow_192x24_06 = 23,
+
+		sign_send = 24,
+		sign_goal = 25,
 	}
 
 }

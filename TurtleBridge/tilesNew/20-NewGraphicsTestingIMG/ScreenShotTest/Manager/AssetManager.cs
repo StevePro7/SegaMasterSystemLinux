@@ -39,6 +39,9 @@ namespace ScreenShotTest
 			"font_tiles_yellow_192x24_02",
 			"font_tiles_yellow_192x24_05",
 			"font_tiles_yellow_192x24_06",
+
+			"sign_send",
+			"sign_goal",
 		};
 
 		protected int[] heights = { 0 };
