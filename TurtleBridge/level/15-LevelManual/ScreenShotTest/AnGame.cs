@@ -10,6 +10,7 @@ namespace ScreenShotTest
 		const string file = "output";
 
 		private AssetManager assetManager;
+		private ConfigManager configManager;
 		private FileManager fileManager;
 		private BoardManager boardManager;
 		private InputManager inputManager;
@@ -25,7 +26,9 @@ namespace ScreenShotTest
 		public AnGame()
 		{
 			Logger.Initialize();
-			wide = 1024 + 512;// fileManager.Objects.Count * 32;
+			configManager = new ConfigManager();
+			wide = configManager.NumScreens * 128;
+			//wide = 1024 + 512;// fileManager.Objects.Count * 32;
 			//wide = 256;
 			high = 224;
 

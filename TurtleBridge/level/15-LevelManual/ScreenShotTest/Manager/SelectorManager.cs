@@ -36,14 +36,12 @@ namespace ScreenShotTest
 			{
 				return;
 			}
-			if (col > 80)
+			if (col >= 80)
 			{
 				return;
 			}
 
 			int idx = col >> 2;
-			Logger.Info(col.ToString() + " " + idx.ToString());
-
 			AssetType type = selectorIndex[idx];
 			Selector = GetSelector(type);
 		}

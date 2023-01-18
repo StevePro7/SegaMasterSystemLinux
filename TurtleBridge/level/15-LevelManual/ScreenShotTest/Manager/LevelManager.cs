@@ -48,9 +48,7 @@ namespace ScreenShotTest
 			int col = (int)(inputManager.MousePosition.X);
 			int selector = selectorManager.Selector;
 
-			bool left = inputManager.LeftButton();
-			bool rght = inputManager.RightButton();
-
+			// Check delete first.
 			if (inputManager.KeyHold(Keys.Delete))
 			{
 				if (stack.Count > 0)
@@ -61,6 +59,8 @@ namespace ScreenShotTest
 				}
 			}
 
+			bool left = inputManager.LeftButton();
+			bool rght = inputManager.RightButton();
 			if (left || rght)
 			{
 				bool play = row < rows;
@@ -73,6 +73,12 @@ namespace ScreenShotTest
 				{
 					return;
 				}
+			}
+
+			bool ctrl = inputManager.KeyDown(Keys.LeftControl);
+			if (ctrl && left)
+			{
+				Logger.Info("ctrl " + col.ToString());
 			}
 
 			if (left)
