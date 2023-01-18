@@ -43,6 +43,10 @@ namespace ScreenShotTest
 			}
 
 			int idx = col >> 2;
+			if (0 == idx)
+			{
+				return;
+			}
 			AssetType type = selectorIndex[idx];
 			Selector = GetSelector(type);
 		}

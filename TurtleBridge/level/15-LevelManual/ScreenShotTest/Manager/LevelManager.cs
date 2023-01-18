@@ -75,27 +75,24 @@ namespace ScreenShotTest
 				}
 			}
 
-			bool ctrl = inputManager.KeyHold(Keys.LeftControl);
-			if (ctrl)
+			if (inputManager.KeyHold(Keys.Right))
 			{
 				for (int idx = cols - 1; idx > col; idx--)
 				{
 					Tiles[idx] = Tiles[idx - 1];
 				}
 
-				//Tiles[col] = (int)AssetType.AwavesBlock;
-				//for (int idx = 0; idx < col-1; idx++)
-				//{
-				//	tempTile = Tiles[idx + 1];
-				//	Tiles[idx + 1] = Tiles[idx];
-				//}
-				//Tiles[cols - 1] = (int)AssetType.AwavesBlock;
+				Tiles[col] = (int)AssetType.AwavesBlock;
+			}
 
-				//{
-				//	Tiles[idx + 1] = Tiles[idx];
-				//}
-				//Tiles[col] = (int)AssetType.AwavesBlock;
-				//Tiles[col + 1] = Tiles[col];
+			if (inputManager.KeyHold(Keys.Left))
+			{
+				for (int idx = 0; idx < col; idx++)
+				{
+					Tiles[idx] = Tiles[idx + 1];
+				}
+
+				Tiles[col] = (int)AssetType.AwavesBlock;
 			}
 
 			if (left)
@@ -112,7 +109,7 @@ namespace ScreenShotTest
 				Tiles[col] = selector;
 			}
 
-			if (rght)
+			if (rght )
 			{
 				if (stack.Count > 0)
 				{
@@ -121,6 +118,14 @@ namespace ScreenShotTest
 				}
 
 				Tiles[col] = (int)AssetType.AwavesBlock;
+			}
+
+			if (inputManager.KeyHold(Keys.Q))
+			{
+				for (int idx = 0; idx < cols; idx++)
+				{
+					Tiles[idx] = (int)AssetType.AwavesBlock;
+				}
 			}
 		}
 
