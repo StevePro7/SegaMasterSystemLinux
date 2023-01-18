@@ -19,7 +19,8 @@ namespace ScreenShotTest
 
 		public void Initialize()
 		{
-			Selector = GetSelector(AssetType.AwavesBlock);
+			//Selector = GetSelector(AssetType.AwavesBlock);
+			Selector = GetSelector(AssetType.DbridgeSign);
 		}
 
 		public void Update()
@@ -59,8 +60,8 @@ namespace ScreenShotTest
 			AssetType.BbridgeMidd,
 			AssetType.CbridgeSide,
 			AssetType.DbridgeSign,
-			AssetType.EislandMidd,
 			AssetType.FislandLeft,
+			AssetType.EislandMidd,
 			AssetType.GislandRght,
 			AssetType.HislandSign,
 			AssetType.IislandTreeL,

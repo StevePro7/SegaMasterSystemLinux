@@ -75,10 +75,27 @@ namespace ScreenShotTest
 				}
 			}
 
-			bool ctrl = inputManager.KeyDown(Keys.LeftControl);
-			if (ctrl && left)
+			bool ctrl = inputManager.KeyHold(Keys.LeftControl);
+			if (ctrl)
 			{
-				Logger.Info("ctrl " + col.ToString());
+				for (int idx = cols - 1; idx > col; idx--)
+				{
+					Tiles[idx] = Tiles[idx - 1];
+				}
+
+				//Tiles[col] = (int)AssetType.AwavesBlock;
+				//for (int idx = 0; idx < col-1; idx++)
+				//{
+				//	tempTile = Tiles[idx + 1];
+				//	Tiles[idx + 1] = Tiles[idx];
+				//}
+				//Tiles[cols - 1] = (int)AssetType.AwavesBlock;
+
+				//{
+				//	Tiles[idx + 1] = Tiles[idx];
+				//}
+				//Tiles[col] = (int)AssetType.AwavesBlock;
+				//Tiles[col + 1] = Tiles[col];
 			}
 
 			if (left)

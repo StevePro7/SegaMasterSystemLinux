@@ -56,13 +56,17 @@ namespace ScreenShotTest
 				spriteBatch.Draw(image, new Vector2(pos.X + delta, pos.Y), Color.White);
 				pos.X += 64;
 			}
-			pos = new Vector2(128, 112);
 			delta = 16;
+			pos = new Vector2(128, 112);
 			spriteBatch.Draw(assetManager.ImagesLarge[(int)AssetType.QbridgeSideFlip], new Vector2(pos.X + delta, pos.Y), Color.White);
 			pos.X += 1024;
 			spriteBatch.Draw(assetManager.ImagesLarge[(int)AssetType.RbridgeSignGoal], new Vector2(pos.X + delta, pos.Y), Color.White);
 			pos.X += 64;
 			spriteBatch.Draw(assetManager.ImagesLarge[(int)AssetType.SislandSignGoal], new Vector2(pos.X + delta, pos.Y), Color.White);
+			pos = new Vector2(384, 112);
+			spriteBatch.Draw(assetManager.ImagesLarge[(int)AssetType.FislandLeft], new Vector2(pos.X + delta, pos.Y), Color.White);
+			pos = new Vector2(384 + 64, 112);
+			spriteBatch.Draw(assetManager.ImagesLarge[(int)AssetType.EislandMidd], new Vector2(pos.X + delta, pos.Y), Color.White);
 
 			// Draw selector
 			pos = new Vector2(16, 112);
