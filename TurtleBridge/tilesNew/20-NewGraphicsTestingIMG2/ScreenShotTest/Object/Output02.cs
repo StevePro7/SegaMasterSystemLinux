@@ -9,34 +9,37 @@ namespace ScreenShotTest
 		{
 			base.Ctor(assetManager);
 
-			////assets.Add(AssetType.x00_font_tiles_yellow_192x24_05);
-			//assets.Add(AssetType.x00_font_tiles_yellow_192x24_06);
+			//assets.Add(AssetType.x00_font_tiles_yellow_192x24_05);
+			assets.Add(AssetType.x00_font_tiles_yellow_192x24_06);
 
-			//assets.Add(AssetType.x01_waves_block_32x112);
-			//assets.Add(AssetType.x01_section02_left_64x112);
-			//assets.Add(AssetType.x01_section02_left_goal00);
-			//assets.Add(AssetType.x01_section02_left_sign01);
+			assets.Add(AssetType.x01_waves_block_32x112);
+			assets.Add(AssetType.x01_section02_left_64x112);
+			assets.Add(AssetType.x01_section02_left_goal00);
+			assets.Add(AssetType.x01_section02_left_sign01);
 
-			//assets.Add(AssetType.x02_section03_norm_64x32);
-			//assets.Add(AssetType.x02_section03_open_64x32_02);
-			//assets.Add(AssetType.x02_section03_open_64x32_03);
+			assets.Add(AssetType.x02_Aisland_midd);
+			assets.Add(AssetType.x02_Bisland_left);
+			assets.Add(AssetType.x02_Cisland_rght);
+			assets.Add(AssetType.x02_Disland_sign);
+			assets.Add(AssetType.x02_Eisland_goal);
+			assets.Add(AssetType.x02_Fisland_treeL);
+			assets.Add(AssetType.x02_Gisland_treeR);
 
-			//assets.Add(AssetType.x03_section03_tree_64x32_01);
-			//assets.Add(AssetType.x03_section03_tree_64x32_02);
-			//assets.Add(AssetType.x03_section03_tree_64x32_03);
+			assets.Add(AssetType.x04_hover_turtleAA00_32x24_00);
+			assets.Add(AssetType.x04_hover_turtleAA00_32x24_01);
+			assets.Add(AssetType.x04_flying_turtle01_32x24_00);
+			assets.Add(AssetType.x04_flying_turtle01_32x24_01);
+			assets.Add(AssetType.x04_flying_turtle01_32x24_02);
+			assets.Add(AssetType.x04_flying_turtle01_32x24_03);
 
-			//assets.Add(AssetType.x04_hover_turtleAA00_32x24_00);
-			//assets.Add(AssetType.x04_hover_turtleAA00_32x24_01);
-			//assets.Add(AssetType.x04_flying_turtle01_32x24_00);
-			//assets.Add(AssetType.x04_flying_turtle01_32x24_01);
-			//assets.Add(AssetType.x04_flying_turtle01_32x24_02);
-			//assets.Add(AssetType.x04_flying_turtle01_32x24_03);
-
-			//assets.Add(AssetType.x05_clouds_192x24);
-			//assets.Add(AssetType.x06_titlescreenPlay);
+			assets.Add(AssetType.x05_clouds_192x24);
+			assets.Add(AssetType.x06_titlescreenPlay);
+			assets.Add(AssetType.titlescreenPlayLIL);
+			assets.Add(AssetType.titlescreenPlayLIL_black);
+			assets.Add(AssetType.titlescreenPlayLIL_blue);
 
 			Wide = 192;
-			High = 24 + 112 + 112 + 112 + 112 + 24 + 24;
+			High = 24 + 112 + 112 + 112 + 24 + 24;
 		}
 
 		public void Draw(SpriteBatch spriteBatch)
@@ -53,25 +56,16 @@ namespace ScreenShotTest
 			DrawAsset(spriteBatch, AssetType.x01_section02_left_64x112, 32, y);
 			DrawAsset(spriteBatch, AssetType.x01_section02_left_sign01, 96, y);
 			DrawAsset(spriteBatch, AssetType.x01_section02_left_goal00, 128, y);
-			DrawAsset(spriteBatch, AssetType.x01_waves_block_32x112, 160, y);
+			DrawAsset(spriteBatch, AssetType.x02_Aisland_midd, 160, y);
 
-			// Asset #2.
+			// Asset #2
 			y += 112;
-			//DrawAsset(spriteBatch, AssetType.x02_section03_norm_64x32, 0, y);
-			//DrawAsset(spriteBatch, AssetType.x02_section03_open_64x32_02, 64, y);
-			//DrawAsset(spriteBatch, AssetType.x02_section03_open_64x32_03, 128, y);
-			//DrawAsset(spriteBatch, AssetType.islands01, 0, y);
-			//DrawAsset(spriteBatch, AssetType.islands02, 64, y);
-			//DrawAsset(spriteBatch, AssetType.islands03, 128, y);
-
-			//// Asset #3.
-			//y += 112;
-			//DrawAsset(spriteBatch, AssetType.islands04, 0, y);
-			//DrawAsset(spriteBatch, AssetType.islands05, 64, y);
-			//DrawAsset(spriteBatch, AssetType.islands06, 128, y);
-			//DrawAsset(spriteBatch, AssetType.x03_section03_tree_64x32_01, 0, y);
-			//DrawAsset(spriteBatch, AssetType.x03_section03_tree_64x32_02, 64, y);
-			//DrawAsset(spriteBatch, AssetType.x03_section03_tree_64x32_03, 128, y);
+			DrawAsset(spriteBatch, AssetType.x02_Bisland_left, 0, y);
+			DrawAsset(spriteBatch, AssetType.x02_Cisland_rght, 32, y);
+			DrawAsset(spriteBatch, AssetType.x02_Disland_sign, 64, y);
+			DrawAsset(spriteBatch, AssetType.x02_Eisland_goal, 96, y);
+			DrawAsset(spriteBatch, AssetType.x02_Fisland_treeL, 128, y);
+			DrawAsset(spriteBatch, AssetType.x02_Gisland_treeR, 160, y);
 
 			// Asset #4.
 			y += 112;
