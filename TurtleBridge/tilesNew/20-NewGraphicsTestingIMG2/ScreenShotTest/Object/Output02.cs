@@ -82,7 +82,8 @@ namespace ScreenShotTest
 
 			// Asset #6.
 			y += 24;
-			DrawAsset(spriteBatch, AssetType.x06_titlescreenPlay, 0, y);
+			//DrawAsset(spriteBatch, AssetType.x06_titlescreenPlay, 0, y);
+			DrawAsset(spriteBatch, AssetType.titlescreenPlayLIL, 0, y);
 		}
 
 		private void DrawAsset(SpriteBatch spriteBatch, AssetType asset, int x, int y)
