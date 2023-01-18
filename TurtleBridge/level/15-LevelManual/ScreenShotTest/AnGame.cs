@@ -32,7 +32,7 @@ namespace ScreenShotTest
 			assetManager = new AssetManager();
 			fileManager = new FileManager(wide);
 			inputManager = new InputManager(wide, high);
-			selectorManager = new SelectorManager(inputManager);
+			selectorManager = new SelectorManager(inputManager, wide, high);
 			selectorManager.Initialize();
 			levelManager = new LevelManager(assetManager, fileManager, inputManager, selectorManager, wide, high);
 			boardManager = new BoardManager(assetManager, fileManager, levelManager, selectorManager, wide, high);

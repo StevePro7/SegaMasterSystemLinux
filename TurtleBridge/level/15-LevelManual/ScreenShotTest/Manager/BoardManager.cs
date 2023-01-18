@@ -38,11 +38,11 @@ namespace ScreenShotTest
 			for (int box = 0; box < wide; box += 32)
 			{
 				image = assetManager.ImagesLarge[(int)AssetType.AwavesBlock];
-				//spriteBatch.Draw(image, new Vector2(x, 0), Color.White);
 				spriteBatch.Draw(image, new Vector2(x, 112), Color.White);
 				x += 32;
 			}
 
+			// Draw level.
 			levelManager.Draw(spriteBatch);
 
 			// Draw selectors
@@ -56,14 +56,13 @@ namespace ScreenShotTest
 				spriteBatch.Draw(image, new Vector2(pos.X + delta, pos.Y), Color.White);
 				pos.X += 64;
 			}
-
 			pos = new Vector2(128, 112);
 			delta = 16;
 			spriteBatch.Draw(assetManager.ImagesLarge[(int)AssetType.QbridgeSideFlip], new Vector2(pos.X + delta, pos.Y), Color.White);
 			pos.X += 1024;
 			spriteBatch.Draw(assetManager.ImagesLarge[(int)AssetType.RbridgeSignGoal], new Vector2(pos.X + delta, pos.Y), Color.White);
 			pos.X += 64;
-			spriteBatch.Draw(assetManager.ImagesLarge[(int)AssetType.SislandTinyXtra], new Vector2(pos.X + delta, pos.Y), Color.White);
+			spriteBatch.Draw(assetManager.ImagesLarge[(int)AssetType.SislandSignGoal], new Vector2(pos.X + delta, pos.Y), Color.White);
 
 			// Draw selector
 			pos = new Vector2(16, 112);

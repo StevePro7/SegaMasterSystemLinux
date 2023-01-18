@@ -5,36 +5,77 @@ namespace ScreenShotTest
 	public class SelectorManager
 	{
 		private InputManager inputManager;
+		private int wide, high;
+		private int rows, cols;
 
-		public SelectorManager(InputManager inputManager)
+		public SelectorManager(InputManager inputManager, int wide, int high)
 		{
 			this.inputManager = inputManager;
+			this.wide = wide;
+			this.high = high;
+			cols = wide / 32;
+			rows = high / 32;
 		}
 
 		public void Initialize()
 		{
 			Selector = GetSelector(AssetType.AwavesBlock);
-			//Selector = GetSelector(AssetType.BbridgeMidd);
 		}
 
 		public void Update()
 		{
 			bool left = inputManager.LeftButton();
+			if (!left)
+			{
+				return;
+			}
 
-			if (inputManager.KeyDown(Keys.D1) || (left && (inputManager.MousePosition.X == 0 || inputManager.MousePosition.X == 1) && (inputManager.MousePosition.Y == 6 || inputManager.MousePosition.Y == 7)))
+			int row = (int)(inputManager.MousePosition.Y);
+			int col = (int)(inputManager.MousePosition.X);
+			if (row < rows)
 			{
-				Selector = GetSelector(AssetType.BbridgeMidd);
+				return;
 			}
-			if (inputManager.KeyDown(Keys.D2) || (left && inputManager.MousePosition.X == 2 && (inputManager.MousePosition.Y == 6 || inputManager.MousePosition.Y == 7)))
+			if (col > 80)
 			{
-				Selector = GetSelector(AssetType.HislandMidd);
+				return;
 			}
+
+			int idx = col >> 2;
+			Logger.Info(col.ToString() + " " + idx.ToString());
+
+			AssetType type = selectorIndex[idx];
+			Selector = GetSelector(type);
 		}
 
 		private int GetSelector(AssetType assetType)
 		{
 			return (int)assetType;
 		}
+
+		private AssetType[] selectorIndex =
+		{
+			AssetType.AwavesBlock,
+			AssetType.AwavesBlock,
+			AssetType.QbridgeSideFlip,
+			AssetType.BbridgeMidd,
+			AssetType.CbridgeSide,
+			AssetType.DbridgeSign,
+			AssetType.EislandMidd,
+			AssetType.FislandLeft,
+			AssetType.GislandRght,
+			AssetType.HislandSign,
+			AssetType.IislandTreeL,
+			AssetType.IislandTreeL,
+			AssetType.KturtleSea1,
+			AssetType.LturtleSea2,
+			AssetType.MturtleFly1,
+			AssetType.NturtleFly2,
+			AssetType.OturtleFly3,
+			AssetType.PturtleFly4,
+			AssetType.RbridgeSignGoal,
+			AssetType.SislandSignGoal,
+		};
 
 		public int Selector { get; private set; }
 	}
