@@ -35,12 +35,12 @@ namespace ScreenShotTest
 				"BbridgeMidd",
 				"CbridgeSide",
 				"DbridgeSign",
-				"EislandTiny",
+				"EislandMidd",
 				"FislandLeft",
 				"GislandRght",
-				"HislandMidd",
+				"HislandSign",
 				"IislandTree",
-				"JislandSign",
+				"JislandTreeRght",
 				"KturtleSea1",
 				"LturtleSea2",
 				"MturtleFly1",
@@ -49,6 +49,7 @@ namespace ScreenShotTest
 				"PturtleFly4",
 				"QbridgeSideFlip",
 				"RbridgeSignGoal",
+				"SislandSignGoal",
 			};
 		}
 

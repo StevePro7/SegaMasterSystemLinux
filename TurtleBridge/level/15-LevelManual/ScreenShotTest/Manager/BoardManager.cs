@@ -45,26 +45,14 @@ namespace ScreenShotTest
 
 			levelManager.Draw(spriteBatch);
 
-			// TODO replace with tile mgr
-			//foreach (var obj in fileManager.Objects)
-			//{
-			//	image = assetManager.ImagesLarge[obj];
-			//	spriteBatch.Draw(image, pos, Color.White);
-			//	pos.X += image.Width;
-			//}
-
 			// Draw selectors
-			pos = new Vector2(256+128+64, 112);
-			int delta = 0;
+			pos = new Vector2(128, 112);
+			int delta = 16;
 			int index;
-			for (index = 4; index < 16; index++)
+			for (index = 0; index < 16; index++)
 			{
 				image = assetManager.ImagesLarge[index];
-				delta = 0;
-				if (image.Width == 32)
-				{
-					delta = 16;
-				}
+				delta = 16;
 				spriteBatch.Draw(image, new Vector2(pos.X + delta, pos.Y), Color.White);
 				pos.X += 64;
 			}
@@ -72,23 +60,14 @@ namespace ScreenShotTest
 			pos = new Vector2(128, 112);
 			delta = 16;
 			spriteBatch.Draw(assetManager.ImagesLarge[(int)AssetType.QbridgeSideFlip], new Vector2(pos.X + delta, pos.Y), Color.White);
-			pos.X += 64;
-			spriteBatch.Draw(assetManager.ImagesLarge[(int)AssetType.BbridgeMidd], new Vector2(pos.X + delta, pos.Y), Color.White);
-			pos.X += 64;
-			spriteBatch.Draw(assetManager.ImagesLarge[(int)AssetType.CbridgeSide], new Vector2(pos.X + delta, pos.Y), Color.White);
-			pos.X += 64;
-			spriteBatch.Draw(assetManager.ImagesLarge[(int)AssetType.DbridgeSign], new Vector2(pos.X + delta, pos.Y), Color.White);
-			pos.X += 64;
+			pos.X += 1024;
 			spriteBatch.Draw(assetManager.ImagesLarge[(int)AssetType.RbridgeSignGoal], new Vector2(pos.X + delta, pos.Y), Color.White);
 			pos.X += 64;
+			spriteBatch.Draw(assetManager.ImagesLarge[(int)AssetType.SislandTinyXtra], new Vector2(pos.X + delta, pos.Y), Color.White);
 
 			// Draw selector
-			pos = new Vector2(0, 112);
+			pos = new Vector2(16, 112);
 			image = assetManager.ImagesLarge[selectorManager.Selector];
-			if (32 == image.Width)
-			{
-				pos.X += 16;
-			}
 			spriteBatch.Draw(image, pos, Color.White);
 
 			// Draw lines
