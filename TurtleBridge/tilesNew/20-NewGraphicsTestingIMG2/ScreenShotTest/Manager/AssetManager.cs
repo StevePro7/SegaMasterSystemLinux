@@ -14,6 +14,15 @@ namespace ScreenShotTest
 			"01-section02_left_goal00",
 			"01-section02_left_sign01",
 			"01-waves_block_32x112",
+
+			"02-Aisland_midd",
+			"02-Bisland_left",
+			"02-Cisland_rght",
+			"02-Disland_sign",
+			"02-Eisland_goal",
+			"02-Fisland_treeL",
+			"03-Fisland_treeR",
+
 			"02-section03_norm_64x32",
 			"02-section03_open_64x32_02",
 			"02-section03_open_64x32_03",
@@ -28,12 +37,9 @@ namespace ScreenShotTest
 			"04-hover_turtleAA00_32x24_01",
 			"05-clouds_192x24",
 			"06-titlescreenPlay",
-			"islands01",
-			"islands02",
-			"islands03",
-			"islands04",
-			"islands05",
-			"islands06",
+			"titlescreenPlayLIL",
+			"titlescreenPlayLIL_black",
+			"titlescreenPlayLIL_blue",
 		};
 
 		protected int[] heights = { 0 };

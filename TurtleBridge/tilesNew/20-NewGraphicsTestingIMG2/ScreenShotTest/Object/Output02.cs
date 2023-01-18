@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace ScreenShotTest
 {
-	public class Output01 : Output, IOutput
+	public class Output02 : Output, IOutput
 	{
 		public void Ctor(GraphicsDeviceManager graphics, AssetManager assetManager)
 		{
@@ -60,8 +60,7 @@ namespace ScreenShotTest
 			//DrawAsset(spriteBatch, AssetType.x02_section03_norm_64x32, 0, y);
 			//DrawAsset(spriteBatch, AssetType.x02_section03_open_64x32_02, 64, y);
 			//DrawAsset(spriteBatch, AssetType.x02_section03_open_64x32_03, 128, y);
-
-			//DrawAsset(spriteBatch			//DrawAsset(spriteBatch, AssetType.islands01, 0, y);
+			//DrawAsset(spriteBatch, AssetType.islands01, 0, y);
 			//DrawAsset(spriteBatch, AssetType.islands02, 64, y);
 			//DrawAsset(spriteBatch, AssetType.islands03, 128, y);
 
@@ -69,7 +68,8 @@ namespace ScreenShotTest
 			//y += 112;
 			//DrawAsset(spriteBatch, AssetType.islands04, 0, y);
 			//DrawAsset(spriteBatch, AssetType.islands05, 64, y);
-			//DrawAsset(spriteBatch, AssetType.islands06, 128, y);, AssetType.x03_section03_tree_64x32_01, 0, y);
+			//DrawAsset(spriteBatch, AssetType.islands06, 128, y);
+			//DrawAsset(spriteBatch, AssetType.x03_section03_tree_64x32_01, 0, y);
 			//DrawAsset(spriteBatch, AssetType.x03_section03_tree_64x32_02, 64, y);
 			//DrawAsset(spriteBatch, AssetType.x03_section03_tree_64x32_03, 128, y);
 
