@@ -68,7 +68,13 @@ namespace ScreenShotTest
 
 			var lines = data.ToArray();
 			var csv = String.Join(",", lines);
-			File.WriteAllText("level.csv", csv);
+			File.WriteAllText(path + "/level.csv", csv);
+
+			data.Clear();
+			var numTiles = tiles.Length;
+			var scr = numTiles % 8 + 1;
+			//string line = $"{tiles}"
+			data.Add("NoScreens," + scr.ToString());
 		}
 
 		public int[] Tiles { get; private set; }
