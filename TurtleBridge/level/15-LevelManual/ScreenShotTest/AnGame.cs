@@ -38,7 +38,7 @@ namespace ScreenShotTest
 			selectorManager = new SelectorManager(inputManager, wide, high);
 			selectorManager.Initialize();
 			levelManager = new LevelManager(assetManager, fileManager, inputManager, selectorManager, wide, high);
-			boardManager = new BoardManager(assetManager, fileManager, levelManager, selectorManager, wide, high);
+			boardManager = new BoardManager(this, assetManager, fileManager, inputManager, levelManager, selectorManager, wide, high);
 
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = wide;
@@ -86,6 +86,7 @@ namespace ScreenShotTest
 			}
 
 			inputManager.Update();
+			boardManager.Update();
 			levelManager.Update();
 			selectorManager.Update();
 			inputManager.Reset();

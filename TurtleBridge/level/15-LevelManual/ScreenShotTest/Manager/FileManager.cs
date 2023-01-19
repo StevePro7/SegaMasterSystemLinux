@@ -43,7 +43,6 @@ namespace ScreenShotTest
 					}
 				}
 			}
-
 		}
 
 		public int[] Tiles { get; private set; }

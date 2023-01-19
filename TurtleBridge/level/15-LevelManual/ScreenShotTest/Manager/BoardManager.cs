@@ -1,32 +1,49 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 
 namespace ScreenShotTest
 {
 	public class BoardManager
 	{
+		private Game game;
 		private AssetManager assetManager;
 		private FileManager fileManager;
+		private InputManager inputManager;
 		private LevelManager levelManager;
 		private SelectorManager selectorManager;
 		private Texture2D stripHorz, stripVert;
 		private int wide, high;
 
-		public BoardManager(AssetManager assetManager, FileManager fileManager, LevelManager levelManager, SelectorManager selectorManager, int wide, int high)
+		public BoardManager(Game game, AssetManager assetManager, FileManager fileManager, InputManager inputManager, LevelManager levelManager, SelectorManager selectorManager, int wide, int high)
 		{
+			this.game = game;
 			this.assetManager = assetManager;
 			this.fileManager = fileManager;
+			this.inputManager = inputManager;
 			this.levelManager = levelManager;
 			this.selectorManager = selectorManager;
 			this.wide = wide;
 			this.high = high;
+
+			game.Window.Title = "Editor";
 		}
 
 		public void LoadContent(ContentManager myContentManager)
 		{
 			stripHorz = myContentManager.Load<Texture2D>("StripHorz");
 			stripVert = myContentManager.Load<Texture2D>("StripVert");
+		}
+
+		public void Update()
+		{
+			if (!inputManager.KeyHold(Keys.Enter))
+			{
+				return;
+			}
+
+			var tiles = levelManager.Tiles;
 		}
 
 		public void Draw(SpriteBatch spriteBatch)

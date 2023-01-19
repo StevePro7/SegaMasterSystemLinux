@@ -109,16 +109,14 @@ namespace ScreenShotTest
 				var oldTile = Tiles[col];
 				if (selector != oldTile)
 				{
-					//if (selector < (int)AssetType.RbridgeSignGoal)
-					{
-						stack.Push(inputManager.MousePosition);
-					}
+					Vector2 pos = inputManager.MousePosition;
+					stack.Push(pos);
 				}
 
 				Tiles[col] = selector;
 			}
 
-			if (rght )
+			if (rght)
 			{
 				if (stack.Count > 0)
 				{
@@ -136,6 +134,28 @@ namespace ScreenShotTest
 					Tiles[idx] = (int)AssetType.AwavesBlock;
 				}
 			}
+
+			if (inputManager.KeyHold(Keys.T))
+			{
+				UpdateTrees();
+				Validate();
+			}
+		}
+
+		public void UpdateTrees()
+		{
+			for (int idx = 0; idx < cols - 1; idx++)
+			{
+				if ((int)AssetType.IislandTreeL == Tiles[idx])
+				{
+					Tiles[idx + 1] = (int)AssetType.JislandTreeR;
+				}
+			}
+		}
+
+		public void Validate()
+		{
+
 		}
 
 		public void Draw(SpriteBatch spriteBatch)
