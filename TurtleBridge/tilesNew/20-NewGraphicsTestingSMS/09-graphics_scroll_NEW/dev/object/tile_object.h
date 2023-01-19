@@ -55,7 +55,7 @@
 #define TILE_PLAY_TITLE			2304
 
 #define TILE_BLACK		120		//new
-#define TILE_WHITE		2920	//new
+#define TILE_WHITE		2920	//??
 
 
 //#define TILMAP_WIDE		16
