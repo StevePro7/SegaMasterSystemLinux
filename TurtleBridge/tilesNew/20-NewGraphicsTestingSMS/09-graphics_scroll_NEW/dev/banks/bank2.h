@@ -7,7 +7,7 @@ extern const unsigned char	bggame_tiles__tilemap__bin[];
 #define				bggame_tiles__tilemap__bin_bank 2
 
 extern const unsigned char	bggame_tiles__tiles__psgcompr[];
-#define				bggame_tiles__tiles__psgcompr_size 4164
+#define				bggame_tiles__tiles__psgcompr_size 4100
 #define				bggame_tiles__tiles__psgcompr_bank 2
 
 extern const unsigned char	splash_tiles__palette__bin[];
