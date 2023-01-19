@@ -99,10 +99,10 @@ static void drawScreen()
 	//engine_tile_manager_stevepro( TILE_CLOUDB, 18, 4, 8, 3 );
 	//engine_tile_manager_stevepro( TILE_CLOUDS, 26, 4, 8, 3 );
 
-	engine_tile_manager_stevepro( TILE_BRIDGE_MIDD, 0, 8, 4, 14 );
-	engine_tile_manager_stevepro( TILE_BRIDGE_MIDD, 4, 8, 4, 14 );
-	engine_tile_manager_stevepro( TILE_BRIDGE_SIGN, 8, 8, 4, 14 );
-	engine_tile_manager_stevepro( TILE_BRIDGE_RGHT, 12, 8, 4, 14 );
+	//engine_tile_manager_stevepro( TILE_BRIDGE_MIDD, 0, 8, 4, 14 );
+	//engine_tile_manager_stevepro( TILE_BRIDGE_MIDD, 4, 8, 4, 14 );
+	//engine_tile_manager_stevepro( TILE_BRIDGE_SIGN, 8, 8, 4, 14 );
+	//engine_tile_manager_stevepro( TILE_BRIDGE_RGHT, 12, 8, 4, 14 );
 	//engine_font_manager_text( "[[[[[[[[[[[[[[[[[[[[[[[[", 4, 0 );
 	engine_font_manager_text( "[[[[[[[[[[[[[[[[[[[[[[[[", 4, 1 );
 	engine_font_manager_text( "[[[[[[[[[[[[[[[[[[[[[[[[", 4, 2 );

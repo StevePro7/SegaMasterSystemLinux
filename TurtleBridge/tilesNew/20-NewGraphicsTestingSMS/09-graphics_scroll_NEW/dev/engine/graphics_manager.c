@@ -39,7 +39,9 @@ void engine_graphics_manager_sea()
 	unsigned char tileIdx, tileMap;
 	unsigned int idx, val;
 
-	// Original data - new data is 2x tiles offset!
+	// Original data - new data is 2x tiles offset
+	
+	// TODO use TILE_SEA as offset here!
 	unsigned char sea_lines[] = 
 	{
 		66, 66, 67, 68,

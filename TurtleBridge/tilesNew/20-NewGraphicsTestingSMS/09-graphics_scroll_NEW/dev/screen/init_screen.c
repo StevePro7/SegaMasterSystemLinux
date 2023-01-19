@@ -116,9 +116,9 @@ static void drawScreen()
 	//engine_tile_manager_stevepro( TILE_CLOUDS, 10, 4, 8, 3 );
 	//engine_tile_manager_stevepro( TILE_CLOUDB, 18, 4, 8, 3 );
 	//engine_tile_manager_stevepro( TILE_CLOUDS, 26, 4, 8, 3 );
-	engine_tile_manager_stevepro( TILE_ISLAND_01, 0, 8, 8, 14 );
-	engine_tile_manager_stevepro( TILE_WAVE, 8, 8, 4, 14 );
-	engine_tile_manager_stevepro( TILE_ISLAND_01, 12, 8, 8, 14 );
+	//engine_tile_manager_stevepro( TILE_ISLAND_01, 0, 8, 8, 14 );
+	engine_tile_manager_stevepro( TILE_WAVES_BLOCK, 8, 8, 4, 14 );
+	//engine_tile_manager_stevepro( TILE_ISLAND_01, 12, 8, 8, 14 );
 	engine_player_manager_draw();
 	devkit_SMS_displayOn();
 }

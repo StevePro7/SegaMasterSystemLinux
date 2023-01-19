@@ -17,27 +17,35 @@ static void drawScreen();
 
 void screen_test_screen_load()
 {
-	drawScreen();
+	tmp = TILE_TURTLE_FLY4;
+
+	devkit_SMS_displayOff();
+	engine_asm_manager_clear_VRAM();
+	engine_content_manager_bggame();
+	draw_title( tmp );
+	engine_font_manager_data( tmp, 10, 20 );
+	devkit_SMS_displayOn();
+	//drawScreen();
 }
 
 void screen_test_screen_update( unsigned char *screen_type )	
 {
-	//unsigned char input;
-	//input = engine_input_manager_hold(input_type_left);
-	//if( input )
-//	{
-//		tmp -= 2;
-//		draw_title( tmp );
-//		engine_font_manager_data( tmp, 10, 20 );
-//	}
-//	input = engine_input_manager_move(input_type_right);
-//	//input = engine_input_manager_hold(input_type_right);
-//	if( input )
-//	{
-//		tmp += 2;
-//		draw_title( tmp );
-//		engine_font_manager_data( tmp, 10, 20 );
-//	}
+	unsigned char input;
+	input = engine_input_manager_hold(input_type_left);
+	if( input )
+	{
+		tmp -= 2;
+		draw_title( tmp );
+		engine_font_manager_data( tmp, 10, 20 );
+	}
+	input = engine_input_manager_move(input_type_right);
+	//input = engine_input_manager_hold(input_type_right);
+	if( input )
+	{
+		tmp += 2;
+		draw_title( tmp );
+		engine_font_manager_data( tmp, 10, 20 );
+	}
 	*screen_type = screen_type_test;
 }
 
@@ -51,8 +59,8 @@ static void draw_title(unsigned int tmp)
 	unsigned char x, y;
 	unsigned char size, w, h;
 	size = 24;
-	w = 24;
-	h = 3;
+	w = 4;
+	h = 14;
 	x = 0;
 	y = 0;
 
@@ -83,7 +91,7 @@ static void drawScreen()
 	////engine_sprite_manager_clear('[');
 
 	//engine_tile_manager_stevepro( TILE_PLAY_TITLE, 4, 0, 24, 3 );
-	//engine_tile_manager_stevepro( TILE_CLOUDS, 2, 4, 8, 3 );
+	engine_tile_manager_stevepro( TILE_CLOUDS, 2, 4, 8, 3 );
 	//engine_tile_manager_stevepro3( TILE_CLOUDS, 10, 4, 8, 3 );
 	////engine_tile_manager_stevepro( TILE_CLOUDB, 18, 4, 8, 3 );
 	////engine_tile_manager_stevepro( TILE_CLOUDS, 26, 4, 8, 3 );
