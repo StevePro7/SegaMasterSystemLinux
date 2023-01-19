@@ -80,10 +80,6 @@ namespace ScreenShotTest
 			{
 				Exit();
 			}
-			if (Keyboard.GetState().IsKeyDown(Keys.Enter))
-			{
-				levelManager.LoadContent();
-			}
 
 			inputManager.Update();
 			boardManager.Update();

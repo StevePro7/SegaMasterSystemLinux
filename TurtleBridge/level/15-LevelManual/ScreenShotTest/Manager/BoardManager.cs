@@ -38,6 +38,7 @@ namespace ScreenShotTest
 
 		public void Update()
 		{
+			levelManager.Validate();
 			if (!inputManager.KeyHold(Keys.Enter))
 			{
 				return;

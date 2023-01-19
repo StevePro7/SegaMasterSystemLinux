@@ -7,7 +7,7 @@ namespace ScreenShotTest
 {
 	public class FileManager
 	{
-		private IList<string> data;
+		private List<string> data;
 		private int cols;
 
 		public FileManager(int wide)
@@ -50,6 +50,18 @@ namespace ScreenShotTest
 			}
 		}
 
+		private List<string> GetType(int tile)
+		{
+			List<string> item = new List<string>();
+			for (int idx = 0; idx < 4; idx++)
+			{
+				string val = "0x" + tile.ToString("X").ToString().PadLeft(2, '0');
+				item.Add(val);
+			}
+
+			return item;
+		}
+
 		public void Save(int[] tiles)
 		{
 			Tiles = tiles;
@@ -62,10 +74,18 @@ namespace ScreenShotTest
 
 			for (int idx = 0; idx < cols; idx++)
 			{
+				var tile = Tiles[idx];
+				var item = GetType(tile);
+				data.AddRange(item);
+			}
+
+			// level.csv
+			data.Clear();
+			for (int idx = 0; idx < cols; idx++)
+			{
 				var tile = Tiles[idx].ToString().PadLeft(2, '0');
 				data.Add(tile);
 			}
-
 			var lines = data.ToArray();
 			var csv = String.Join(",", lines);
 			File.WriteAllText(path + "/level.csv", csv);
