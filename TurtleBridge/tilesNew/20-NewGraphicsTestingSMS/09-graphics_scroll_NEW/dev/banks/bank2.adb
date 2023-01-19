@@ -1,7 +1,7 @@
 M:bank2
 S:G$bggame_tiles__palette__bin$0_0$0({16}DA16d,SC:U),D,0,0
-S:G$bggame_tiles__tilemap__bin$0_0$0({3120}DA3120d,SC:U),D,0,0
-S:G$bggame_tiles__tiles__psgcompr$0_0$0({4100}DA4100d,SC:U),D,0,0
+S:G$bggame_tiles__tilemap__bin$0_0$0({2448}DA2448d,SC:U),D,0,0
+S:G$bggame_tiles__tiles__psgcompr$0_0$0({4164}DA4164d,SC:U),D,0,0
 S:G$splash_tiles__palette__bin$0_0$0({16}DA16d,SC:U),D,0,0
 S:G$splash_tiles__tilemap__bin$0_0$0({912}DA912d,SC:U),D,0,0
 S:G$splash_tiles__tiles__psgcompr$0_0$0({2478}DA2478d,SC:U),D,0,0
