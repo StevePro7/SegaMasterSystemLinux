@@ -7,6 +7,7 @@ namespace ScreenShotTest
 {
 	public class LevelManager
 	{
+		private Game game;
 		private AssetManager assetManager;
 		private FileManager fileManager;
 		private InputManager inputManager;
@@ -15,8 +16,9 @@ namespace ScreenShotTest
 		private int wide, high;
 		private int rows, cols;
 
-		public LevelManager(AssetManager assetManager, FileManager fileManager, InputManager inputManager, SelectorManager selectorManager, int wide, int high)
+		public LevelManager(Game game, AssetManager assetManager, FileManager fileManager, InputManager inputManager, SelectorManager selectorManager, int wide, int high)
 		{
+			this.game = game;
 			this.assetManager = assetManager;
 			this.fileManager = fileManager;
 			this.inputManager = inputManager;
@@ -135,10 +137,14 @@ namespace ScreenShotTest
 				}
 			}
 
-			if (inputManager.KeyHold(Keys.T))
+			if (inputManager.KeyHold(Keys.Space))
 			{
-				UpdateTrees();
 				Validate();
+			}
+
+			if (inputManager.KeyHold(Keys.Back))
+			{
+				game.Window.Title = "Editor";
 			}
 		}
 
@@ -155,7 +161,37 @@ namespace ScreenShotTest
 
 		public void Validate()
 		{
-
+			IsValid = false;
+			int tile = Tiles[0];
+			if (!((tile == (int)AssetType.AwavesBlock) || (tile == (int)AssetType.BbridgeMidd) || ((tile == (int)AssetType.EislandMidd) || (tile == (int)AssetType.FislandLeft))))
+			{
+				BadCols = 0;
+				return;
+			}
+	
+			for (int idx = 1; idx < cols - 1; idx++)
+			{
+				tile = Tiles[idx];
+				var prev = Tiles[idx - 1];
+				var next = Tiles[idx + 1];
+				if ((int)AssetType.QbridgeSideFlip== tile)
+				{
+					if ((int)AssetType.BbridgeMidd != next)
+					{
+						BadCols = idx;
+						return;
+					}
+				}
+				if ((int)AssetType.CbridgeSide == tile)
+				{
+					if ((int)AssetType.BbridgeMidd != prev)
+					{
+						BadCols = idx;
+						return;
+					}
+				}
+			}
+			IsValid = true;
 		}
 
 		public void Draw(SpriteBatch spriteBatch)
@@ -194,5 +230,7 @@ namespace ScreenShotTest
 		}
 
 		public int[] Tiles { get; private set; }
+		public bool IsValid { get; private set; }
+		public int BadCols { get; private set; }
 	}
 }
