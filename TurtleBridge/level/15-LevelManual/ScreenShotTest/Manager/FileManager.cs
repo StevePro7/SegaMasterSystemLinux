@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace ScreenShotTest
 {
 	public class FileManager
 	{
+		private IList<string> data;
 		private int cols;
 
 		public FileManager(int wide)
@@ -15,6 +18,8 @@ namespace ScreenShotTest
 			{
 				Tiles[idx] = 0;
 			}
+
+			data = new List<string>();
 		}
 
 		public void LoadContent()
@@ -43,6 +48,27 @@ namespace ScreenShotTest
 					}
 				}
 			}
+		}
+
+		public void Save(int[] tiles)
+		{
+			Tiles = tiles;
+			string format = "yyyyMMdd-HHmmss";
+			var path = DateTime.Now.ToString(format);
+			if (!Directory.Exists(path))
+			{
+				Directory.CreateDirectory(path);
+			}
+
+			for (int idx = 0; idx < cols; idx++)
+			{
+				var tile = Tiles[idx].ToString().PadLeft(2, '0');
+				data.Add(tile);
+			}
+
+			var lines = data.ToArray();
+			var csv = String.Join(",", lines);
+			File.WriteAllText("level.csv", csv);
 		}
 
 		public int[] Tiles { get; private set; }

@@ -44,17 +44,19 @@ namespace ScreenShotTest
 			}
 
 			levelManager.Validate();
-			if (!levelManager.IsValid)
-			{
-				var col = levelManager.BadCols % 8;
-				var scr = levelManager.BadCols / 8;
-				var msg = $"ERROR screen:{scr+1} column:{col+1}";
-				game.Window.Title = msg;
-				return;
-			}
+			//if (!levelManager.IsValid)
+			//{
+			//	var col = levelManager.BadCols % 8;
+			//	var scr = levelManager.BadCols / 8;
+			//	var msg = $"ERROR screen:{scr+1} column:{col+1}";
+			//	game.Window.Title = msg;
+			//	return;
+			//}
 
 			game.Window.Title = "EValid";
+			levelManager.UpdateTrees();
 			var tiles = levelManager.Tiles;
+			fileManager.Save(tiles);
 		}
 
 		public void Draw(SpriteBatch spriteBatch)
