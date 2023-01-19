@@ -42,6 +42,8 @@ namespace ScreenShotTest
 				return;
 			}
 
+
+
 			int idx = col >> 2;
 			if (0 == idx)
 			{

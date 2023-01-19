@@ -73,6 +73,15 @@ namespace ScreenShotTest
 				{
 					return;
 				}
+
+				// Edge case for trees
+				if (selectorManager.Selector == (int)AssetType.IislandTreeL)
+				{
+					if (col == cols-1)
+					{
+						return;
+					}
+				}
 			}
 
 			if (inputManager.KeyHold(Keys.Right))
