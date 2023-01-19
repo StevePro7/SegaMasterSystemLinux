@@ -17,7 +17,7 @@ static void drawScreen();
 
 void screen_test_screen_load()
 {
-	tmp = TILE_TURTLE_FLY4;
+	tmp = TILE_CLOUD_SMALL;
 
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
@@ -38,8 +38,8 @@ void screen_test_screen_update( unsigned char *screen_type )
 		draw_title( tmp );
 		engine_font_manager_data( tmp, 10, 20 );
 	}
-	input = engine_input_manager_move(input_type_right);
-	//input = engine_input_manager_hold(input_type_right);
+	//input = engine_input_manager_move(input_type_right);
+	input = engine_input_manager_hold(input_type_right);
 	if( input )
 	{
 		tmp += 2;
@@ -59,8 +59,8 @@ static void draw_title(unsigned int tmp)
 	unsigned char x, y;
 	unsigned char size, w, h;
 	size = 24;
-	w = 4;
-	h = 14;
+	w = 8;
+	h = 3;
 	x = 0;
 	y = 0;
 
@@ -91,7 +91,7 @@ static void drawScreen()
 	////engine_sprite_manager_clear('[');
 
 	//engine_tile_manager_stevepro( TILE_PLAY_TITLE, 4, 0, 24, 3 );
-	engine_tile_manager_stevepro( TILE_CLOUDS, 2, 4, 8, 3 );
+	//engine_tile_manager_stevepro( TILE_CLOUDS, 2, 4, 8, 3 );
 	//engine_tile_manager_stevepro3( TILE_CLOUDS, 10, 4, 8, 3 );
 	////engine_tile_manager_stevepro( TILE_CLOUDB, 18, 4, 8, 3 );
 	////engine_tile_manager_stevepro( TILE_CLOUDS, 26, 4, 8, 3 );

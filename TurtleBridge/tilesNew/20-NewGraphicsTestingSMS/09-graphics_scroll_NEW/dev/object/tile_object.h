@@ -26,33 +26,33 @@
 #define TILE_STRIP		4
 #define TILE_NONE		0
 
-//#define TILE_SKY		64		// DEL
-#define TILE_WAVES_BLOCK		144				// new
-#define TILE_OCEAN_LEVEL		64		// DEL
-#define TILE_BRIDGE_MIDD		152		// new
-#define TILE_BRIDGE_SIDE		160		// new
-#define TILE_BRIDGE_SIGN		168		// new
-#define TILE_BRIDGE_GOAL		176		// new
-#define TILE_ISLAND_MIDD		184		// new
+#define TILE_SKY_AND_SEA		64
 
-#define TILE_ISLAND_LEFT		816		// new
-#define TILE_ISLAND_RGHT		824		// new
-#define TILE_ISLAND_SIGN		832		// new
-#define TILE_ISLAND_GOAL		840		// new
-#define TILE_ISLAND_TREEL		848		// new
-#define TILE_ISLAND_TREER		856		// new
+#define TILE_WAVES_BLOCK		144
+#define TILE_BRIDGE_MIDD		152
+#define TILE_BRIDGE_SIDE		160
+#define TILE_BRIDGE_SIGN		168
+#define TILE_BRIDGE_GOAL		176
+#define TILE_ISLAND_MIDD		184
 
-#define TILE_TURTLE_SEA1		1488			// new
-#define TILE_TURTLE_SEA2		1496			// new
-#define TILE_TURTLE_FLY1		1504			// new
-#define TILE_TURTLE_FLY2		1512			// new
-#define TILE_TURTLE_FLY3		1520			// new
-#define TILE_TURTLE_FLY4		1528			// new
+#define TILE_ISLAND_LEFT		816
+#define TILE_ISLAND_RGHT		824
+#define TILE_ISLAND_SIGN		832
+#define TILE_ISLAND_GOAL		840
+#define TILE_ISLAND_TREEL		848
+#define TILE_ISLAND_TREER		856
 
-#define TILE_CLOUDB		2832		//updated
-#define TILE_CLOUDS		2848		//updated
+#define TILE_TURTLE_SEA1		1488
+#define TILE_TURTLE_SEA2		1496
+#define TILE_TURTLE_FLY1		1504
+#define TILE_TURTLE_FLY2		1512
+#define TILE_TURTLE_FLY3		1520
+#define TILE_TURTLE_FLY4		1528
 
-#define TILE_PLAY_TITLE		2976		//updated
+#define TILE_CLOUD_LARGE		2160
+#define TILE_CLOUD_SMALL		2176
+
+#define TILE_PLAY_TITLE			2976
 
 #define TILE_BLACK		120		//new
 #define TILE_WHITE		2920	//new

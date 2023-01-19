@@ -24,11 +24,11 @@ extern const unsigned char music_object_bank[];
 #define TILE_ISLAND_TREER		856		// new
 
 #define TILE_TURTLE_SEA1		1488			// new
-#define TILE_TURTLE_SEA2		2168			// new
-#define TILE_TURTLE_FLY1		2176			// new
-#define TILE_TURTLE_FLY2		2184			// new
-#define TILE_TURTLE_FLY3		2192			// new
-#define TILE_TURTLE_FLY4		2200			// new
+#define TILE_TURTLE_SEA2		1496			// new
+#define TILE_TURTLE_FLY1		1504			// new
+#define TILE_TURTLE_FLY2		1512			// new
+#define TILE_TURTLE_FLY3		1520			// new
+#define TILE_TURTLE_FLY4		1528			// new
 
 #define TILE_CLOUDB		2832		//updated
 #define TILE_CLOUDS		2848		//updated
