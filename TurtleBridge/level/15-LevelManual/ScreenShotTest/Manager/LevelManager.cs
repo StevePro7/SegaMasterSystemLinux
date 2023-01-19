@@ -168,7 +168,13 @@ namespace ScreenShotTest
 				BadCols = 0;
 				return;
 			}
-	
+			tile = Tiles[cols-1];
+			if (!((tile == (int)AssetType.AwavesBlock) || (tile == (int)AssetType.BbridgeMidd) || ((tile == (int)AssetType.EislandMidd) || (tile == (int)AssetType.GislandRght))))
+			{
+				BadCols = 0;
+				return;
+			}
+
 			for (int idx = 1; idx < cols - 1; idx++)
 			{
 				tile = Tiles[idx];
@@ -185,6 +191,22 @@ namespace ScreenShotTest
 				if ((int)AssetType.CbridgeSide == tile)
 				{
 					if ((int)AssetType.BbridgeMidd != prev)
+					{
+						BadCols = idx;
+						return;
+					}
+				}
+				if ((int)AssetType.FislandLeft == tile)
+				{
+					if (!((next == (int)AssetType.EislandMidd) || (next == (int)AssetType.GislandRght) || ((next == (int)AssetType.HislandSign) || (next== (int)AssetType.IislandTreeL))))
+					{
+						BadCols = idx;
+						return;
+					}
+				}
+				if ((int)AssetType.GislandRght == tile)
+				{
+					if (!((prev == (int)AssetType.EislandMidd) || (prev == (int)AssetType.FislandLeft) || ((prev == (int)AssetType.HislandSign))))
 					{
 						BadCols = idx;
 						return;
