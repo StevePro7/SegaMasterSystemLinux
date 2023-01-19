@@ -79,7 +79,7 @@ namespace ScreenShotTest
 				// Edge case for trees
 				if (selectorManager.Selector == (int)AssetType.IislandTreeL)
 				{
-					if (col == cols-1)
+					if (col >= cols-2)
 					{
 						return;
 					}
