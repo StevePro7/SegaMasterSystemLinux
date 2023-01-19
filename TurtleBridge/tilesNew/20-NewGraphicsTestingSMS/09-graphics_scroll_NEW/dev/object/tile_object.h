@@ -52,7 +52,7 @@
 #define TILE_CLOUD_LARGE		2160
 #define TILE_CLOUD_SMALL		2176
 
-#define TILE_PLAY_TITLE			2976
+#define TILE_PLAY_TITLE			2304
 
 #define TILE_BLACK		120		//new
 #define TILE_WHITE		2920	//new

@@ -17,7 +17,7 @@ static void drawScreen();
 
 void screen_test_screen_load()
 {
-	tmp = TILE_CLOUD_SMALL;
+	tmp = TILE_PLAY_TITLE;
 
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
@@ -59,7 +59,7 @@ static void draw_title(unsigned int tmp)
 	unsigned char x, y;
 	unsigned char size, w, h;
 	size = 24;
-	w = 8;
+	w = 24;
 	h = 3;
 	x = 0;
 	y = 0;
