@@ -175,11 +175,22 @@ namespace ScreenShotTest
 				return;
 			}
 
+			var goals = 0;
 			for (int idx = 1; idx < cols - 1; idx++)
 			{
 				tile = Tiles[idx];
 				var prev = Tiles[idx - 1];
 				var next = Tiles[idx + 1];
+
+				if ((tile == (int)AssetType.RbridgeSignGoal) || tile == (int)AssetType.SislandSignGoal)
+				{
+					goals++;
+					if (goals > 1)
+					{
+						BadCols = idx;
+						return;
+					}
+				}
 				if ((int)AssetType.QbridgeSideFlip== tile)
 				{
 					if ((int)AssetType.BbridgeMidd != next)
@@ -207,6 +218,22 @@ namespace ScreenShotTest
 				if ((int)AssetType.GislandRght == tile)
 				{
 					if (!((prev == (int)AssetType.EislandMidd) || (prev == (int)AssetType.FislandLeft) || ((prev == (int)AssetType.HislandSign))))
+					{
+						BadCols = idx;
+						return;
+					}
+				}
+				if ((int)AssetType.RbridgeSignGoal == tile)
+				{
+					if (!((prev == (int)AssetType.BbridgeMidd) || (next == (int)AssetType.BbridgeMidd)))
+					{
+						BadCols = idx;
+						return;
+					}
+				}
+				if (((int)AssetType.EislandMidd == tile) || ((int)AssetType.HislandSign == tile) || ((int)AssetType.SislandSignGoal == tile))
+				{
+					if ((prev == (int)AssetType.AwavesBlock) || (next == (int)AssetType.AwavesBlock))
 					{
 						BadCols = idx;
 						return;
