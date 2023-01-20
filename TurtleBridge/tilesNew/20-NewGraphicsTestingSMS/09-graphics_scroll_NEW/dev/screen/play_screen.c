@@ -36,12 +36,12 @@ void screen_play_screen_update( unsigned char *screen_type )
 	delta = 0;
 	value = 0;
 	newTile = false;
-	input = engine_input_manager_move( input_type_right);
-	//input = engine_input_manager_move( input_type_right );
+	//input = engine_input_manager_hold( input_type_right);
+	input = engine_input_manager_move( input_type_right );
 	//input = 1;
 	if( input )
 	{
-		delta = 4;
+		delta = 1;
 		//engine_tile_manager_draw_columns( tile_type_island_tree, 20 + cols, 0 + cols );
 		//cols++;
 		//engine_scroll_manager_update( 2 );
@@ -64,7 +64,6 @@ void screen_play_screen_update( unsigned char *screen_type )
 	}
 	else
 	{
-		delta = 0;
 		for( value = 0; value < delta; value++ )
 		{
 			// IMPORTANT - this MUST be 1px 
@@ -97,14 +96,18 @@ static void drawScreen()
 
 	engine_graphics_manager_sea();
 	engine_tile_manager_stevepro( TILE_PLAY_TITLE, 4, 0, 24, 3 );
-	//engine_tile_manager_stevepro( TILE_CLOUDS, 2, 4, 8, 3 );
-	//engine_tile_manager_stevepro( TILE_CLOUDB, 10, 4, 8, 3 );
-	//engine_tile_manager_stevepro( TILE_CLOUDB, 18, 4, 8, 3 );
-	//engine_tile_manager_stevepro( TILE_CLOUDS, 26, 4, 8, 3 );
+	engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 2, 4, 8, 3 );
+	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 10, 4, 8, 3 );
+	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 18, 4, 8, 3 );
+	engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 26, 4, 8, 3 );
 
-	//engine_tile_manager_stevepro( TILE_BRIDGE_MIDD, 0, 8, 4, 14 );
-	//engine_tile_manager_stevepro( TILE_BRIDGE_MIDD, 4, 8, 4, 14 );
-	//engine_tile_manager_stevepro( TILE_BRIDGE_SIGN, 8, 8, 4, 14 );
+	engine_tile_manager_stevepro( TILE_ISLAND_LEFT, 0, 8, 4, 14 );
+	engine_tile_manager_stevepro( TILE_ISLAND_MIDD, 4, 8, 4, 14 );
+	engine_tile_manager_stevepro( TILE_ISLAND_MIDD, 8, 8, 4, 14 );
+	engine_tile_manager_stevepro( TILE_ISLAND_MIDD, 12, 8, 4, 14 );
+	engine_tile_manager_stevepro( TILE_ISLAND_SIGN, 16, 8, 4, 14 );
+	engine_tile_manager_stevepro( TILE_ISLAND_RGHT, 20, 8, 4, 14 );
+
 	//engine_tile_manager_stevepro( TILE_BRIDGE_RGHT, 12, 8, 4, 14 );
 	//engine_font_manager_text( "[[[[[[[[[[[[[[[[[[[[[[[[", 4, 0 );
 	//engine_font_manager_text( "[[[[[[[[[[[[[[[[[[[[[[[[", 4, 1 );
