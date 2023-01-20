@@ -62,7 +62,7 @@ namespace ScreenShotTest
 				// Reverse columns for flipped tiles.
 				if (((int)AssetType.QbridgeSideFlip == tile) || ((int)AssetType.TislandTreeLFlip == tile) || ((int)AssetType.UislandTreeRFlip == tile))
 				{
-					tmp = 4 - idx;
+					tmp = (4-1) - idx;
 					tmp += 8;
 				}
 				// Sign
