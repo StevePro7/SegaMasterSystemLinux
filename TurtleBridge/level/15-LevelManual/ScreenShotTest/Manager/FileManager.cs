@@ -82,30 +82,31 @@ namespace ScreenShotTest
 		private List<int> GetType(int tile)
 		{
 			var item = new List<int>();
+
+			// Make adjustments.
+			if ((int)AssetType.QbridgeSideFlip == tile)
+			{
+				tile = (int)tile_type.tile_type_bridge_side;
+			}
+			else if ((int)AssetType.RbridgeSignGoal == tile)
+			{
+				tile = (int)tile_type.tile_type_bridge_sign;
+			}
+			else if ((int)AssetType.SislandSignGoal == tile)
+			{
+				tile = (int)tile_type.tile_type_island_sign;
+			}
+			else if ((int)AssetType.TislandTreeLFlip == tile)
+			{
+				tile = (int)tile_type.tile_type_islandTreeL;
+			}
+			else if ((int)AssetType.UislandTreeRFlip == tile)
+			{
+				tile = (int)tile_type.tile_type_islandTreeR;
+			}
+
 			for (int idx = 0; idx < 4; idx++)
 			{
-				// Make adjustments.
-				if ((int)AssetType.QbridgeSideFlip == tile)
-				{
-					tile = (int)tile_type.tile_type_bridge_side;
-				}
-				else if ((int)AssetType.RbridgeSignGoal == tile)
-				{
-					tile = (int)tile_type.tile_type_bridge_sign;
-				}
-				else if ((int)AssetType.SislandSignGoal == tile)
-				{
-					tile = (int)tile_type.tile_type_island_sign;
-				}
-				else if ((int)AssetType.TislandTreeLFlip == tile)
-				{
-					tile = (int)tile_type.tile_type_islandTreeL;
-				}
-				else if ((int)AssetType.UislandTreeRFlip== tile)
-				{
-					tile = (int)tile_type.tile_type_islandTreeR;
-				}
-
 				item.Add(tile);
 				//string val = "0x" + tile.ToString("X").ToString().PadLeft(2, '0');
 				//item.Add(val);
