@@ -214,7 +214,7 @@ namespace ScreenShotTest
 				text2.AddRange(rght);
 			}
 
-			DumpData(text1, text2);
+			DumpData(text1, text2, path);
 
 			// level.csv
 			data.Clear();
@@ -225,7 +225,7 @@ namespace ScreenShotTest
 			}
 			var lines = data.ToArray();
 			var csv = String.Join(",", lines);
-			//File.WriteAllText(path + "/level.csv", csv);
+			File.WriteAllText(path + "/level.csv", csv);
 
 			data.Clear();
 			var numTiles = tiles.Length;
@@ -236,7 +236,7 @@ namespace ScreenShotTest
 			//File.WriteAllLines(path + "/info.txt", contents);
 		}
 
-		private void DumpData(List<string> text1, List<string> text2)
+		private void DumpData(List<string> text1, List<string> text2, string path)
 		{
 			var file1 = new List<string>();
 			var file2 = new List<string>();
@@ -249,23 +249,21 @@ namespace ScreenShotTest
 
 			file1.Add("const unsigned char level_planesA[] =");
 			file1.Add("{");
-			file2.Add("const unsigned char	level_columnA[] =");
+			file2.Add("const unsigned char level_columnA[] =");
 			file2.Add("{");
-			for (int idx = 0; idx < 64; idx++)
-
-			//for (int idx = 0; idx < text1.Count; idx++)
+			for (int idx = 0; idx < text1.Count; idx++)
 			{
 				cols = text1[idx];
 				type = text2[idx];
 				if (0 != loop)
 				{
-					line1 += cols;
-					line2 += type;
+					line1 += type;
+					line2 += cols;
 				}
 				else
 				{
-					line1 += "\t" + cols;
-					line2 += "\t" + type;
+					line1 += "\t" + type;
+					line2 += "\t" + cols;
 				}
 				loop++;
 				if (wide != loop)
@@ -294,8 +292,8 @@ namespace ScreenShotTest
 			file1.Add("};");
 			file2.Add("};");
 
-			File.WriteAllLines("output/file1.c", file1.ToArray());
-			File.WriteAllLines("output/file2.c", file2.ToArray());
+			File.WriteAllLines(path + "/level_planesA.c", file1.ToArray());
+			File.WriteAllLines(path + "/level_columnA.c", file2.ToArray());
 		}
 
 		public int[] Tiles { get; private set; }
