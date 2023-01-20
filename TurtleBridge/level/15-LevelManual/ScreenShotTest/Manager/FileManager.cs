@@ -7,7 +7,7 @@ namespace ScreenShotTest
 {
 	public class FileManager
 	{
-		private List<string> data, data1, data2, data3;
+		private List<string> data, text1, text2, data3;
 		private int cols;
 
 		public FileManager(int wide)
@@ -20,8 +20,8 @@ namespace ScreenShotTest
 			}
 
 			data = new List<string>();
-			data1 = new List<string>();
-			data2 = new List<string>();
+			text1 = new List<string>();
+			text2 = new List<string>();
 			data3 = new List<string>();
 		}
 
@@ -53,7 +53,66 @@ namespace ScreenShotTest
 			}
 		}
 
-		private List<int> GetCols(int tile)
+		private List<string> GetCols01(int tile)
+		{
+			var item = new List<string>();
+			for (int idx = 0; idx < 4; idx++)
+			{
+				int tmp = idx;
+				// Reverse columns for flipped tiles.
+				if (((int)AssetType.QbridgeSideFlip == tile) || ((int)AssetType.TislandTreeLFlip == tile) || ((int)AssetType.UislandTreeRFlip == tile))
+				{
+					tmp = (4 - 1) - idx;
+					tmp += 8;
+				}
+				// Sign
+				if (((int)AssetType.RbridgeSignGoal == tile) || ((int)AssetType.SislandSignGoal == tile))
+				{
+					tmp += 4;
+				}
+
+				string cols = "0x" + tmp.ToString("X").ToString().PadLeft(2, '0');
+				item.Add(cols);
+			}
+
+			return item;
+		}
+		private List<string> GetType01(int tile)
+		{
+			var item = new List<string>();
+
+			// Make adjustments.
+			if ((int)AssetType.QbridgeSideFlip == tile)
+			{
+				tile = (int)tile_type.tile_type_bridge_side;
+			}
+			else if ((int)AssetType.RbridgeSignGoal == tile)
+			{
+				tile = (int)tile_type.tile_type_bridge_sign;
+			}
+			else if ((int)AssetType.SislandSignGoal == tile)
+			{
+				tile = (int)tile_type.tile_type_island_sign;
+			}
+			else if ((int)AssetType.TislandTreeLFlip == tile)
+			{
+				tile = (int)tile_type.tile_type_islandTreeL;
+			}
+			else if ((int)AssetType.UislandTreeRFlip == tile)
+			{
+				tile = (int)tile_type.tile_type_islandTreeR;
+			}
+
+			string val = "0x" + tile.ToString("X").ToString().PadLeft(2, '0');
+			for (int idx = 0; idx < 4; idx++)
+			{
+				item.Add(val);
+			}
+
+			return item;
+		}
+
+		private List<int> GetCols02(int tile)
 		{
 			var item = new List<int>();
 			for (int idx = 0; idx < 4; idx++)
@@ -79,7 +138,7 @@ namespace ScreenShotTest
 			return item;
 		}
 
-		private List<int> GetType(int tile)
+		private List<int> GetType02(int tile)
 		{
 			var item = new List<int>();
 
@@ -133,25 +192,29 @@ namespace ScreenShotTest
 				}
 			}
 
-			// Bytes array.
-			data1.Clear();
-			data2.Clear();
-			data3.Clear();
+			// Bytes array #1.
+			text1.Clear();
+			text2.Clear();
 			for (int idx = 0; idx < cols; idx++)
 			{
 				var tile = Tiles[idx];
-				var left = GetCols(tile);
-				var rght = GetType(tile);
+				var left = GetCols01(tile);
+				var rght = GetType01(tile);
 				//data1.AddRange(left);
 				//data2.AddRange(rght);
 
-				for (int bob = 0; bob < 4; bob++)
-				{
-					var d1 = left[bob];
-					var d2 = rght[bob];
-					var d3 = d1 + d2;
-				}
+				//for (int bob = 0; bob < 4; bob++)
+				//{
+				//	var d1 = left[bob];
+				//	var d2 = rght[bob];
+				//	var d3 = d1 + d2;
+				//}
+
+				text1.AddRange(left);
+				text2.AddRange(rght);
 			}
+
+			DumpData(text1, text2);
 
 			// level.csv
 			data.Clear();
@@ -171,6 +234,68 @@ namespace ScreenShotTest
 			data.Add("NoScreens," + scr.ToString());
 			var contents = data.ToArray();
 			//File.WriteAllLines(path + "/info.txt", contents);
+		}
+
+		private void DumpData(List<string> text1, List<string> text2)
+		{
+			var file1 = new List<string>();
+			var file2 = new List<string>();
+			const int wide = 16;
+			int loop = 0;
+			string cols = String.Empty;
+			string type = String.Empty;
+			string line1 = String.Empty;
+			string line2 = String.Empty;
+
+			file1.Add("const unsigned char level_planesA[] =");
+			file1.Add("{");
+			file2.Add("const unsigned char	level_columnA[] =");
+			file2.Add("{");
+			for (int idx = 0; idx < 64; idx++)
+
+			//for (int idx = 0; idx < text1.Count; idx++)
+			{
+				cols = text1[idx];
+				type = text2[idx];
+				if (0 != loop)
+				{
+					line1 += cols;
+					line2 += type;
+				}
+				else
+				{
+					line1 += "\t" + cols;
+					line2 += "\t" + type;
+				}
+				loop++;
+				if (wide != loop)
+				{
+					line1 += ", ";
+					line2 += ", ";
+				}
+				else
+				{
+					line1 += ",";
+					line2 += ",";
+					file1.Add(line1);
+					file2.Add(line2);
+					line1 = String.Empty;
+					line2 = String.Empty;
+					loop = 0;
+				}
+			}
+
+			if (0 != line1.Length)
+			{
+				file1.Add(line1);
+				file2.Add(line2);
+			}
+
+			file1.Add("};");
+			file2.Add("};");
+
+			File.WriteAllLines("output/file1.c", file1.ToArray());
+			File.WriteAllLines("output/file2.c", file2.ToArray());
 		}
 
 		public int[] Tiles { get; private set; }
