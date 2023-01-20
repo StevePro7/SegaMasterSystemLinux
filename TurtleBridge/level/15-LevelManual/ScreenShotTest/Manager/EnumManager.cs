@@ -28,20 +28,26 @@
 		BbridgeMidd = 1,
 		CbridgeSide = 2,
 		DbridgeSign = 3,
+
 		EislandMidd = 4,
 		FislandLeft = 5,
 		GislandRght = 6,
 		HislandSign = 7,
 		IislandTreeL = 8,
 		JislandTreeR = 9,
+
 		KturtleSea1 = 10,
 		LturtleSea2 = 11,
 		MturtleFly1 = 12,
 		NturtleFly2 = 13,
 		OturtleFly3 = 14,
 		PturtleFly4 = 15,
+
 		QbridgeSideFlip = 16,
 		RbridgeSignGoal = 17,
 		SislandSignGoal = 18,
+		TislandTreeLFlip = 19,
+		UislandTreeRFlip = 20,
+
 	}
 }

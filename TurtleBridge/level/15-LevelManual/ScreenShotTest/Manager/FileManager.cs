@@ -53,13 +53,62 @@ namespace ScreenShotTest
 			}
 		}
 
-		private List<string> GetType(int tile)
+		private List<int> GetCols(int tile)
 		{
-			List<string> item = new List<string>();
+			var item = new List<int>();
 			for (int idx = 0; idx < 4; idx++)
 			{
-				string val = "0x" + tile.ToString("X").ToString().PadLeft(2, '0');
-				item.Add(val);
+				int tmp = idx;
+				// Reverse columns for flipped tiles.
+				if (((int)AssetType.QbridgeSideFlip == tile) || ((int)AssetType.TislandTreeLFlip == tile) || ((int)AssetType.UislandTreeRFlip == tile))
+				{
+					tmp = 4 - idx;
+					tmp += 8;
+				}
+				// Sign
+				if (((int)AssetType.RbridgeSignGoal == tile) || ((int)AssetType.SislandSignGoal == tile))
+				{
+					tmp += 4;
+				}
+
+				//int val = tmp << 4;
+				//string cols = "0x" + tmp.ToString("X").ToString().PadLeft(2, '0');
+				item.Add(tmp);
+			}
+
+			return item;
+		}
+
+		private List<int> GetType(int tile)
+		{
+			var item = new List<int>();
+			for (int idx = 0; idx < 4; idx++)
+			{
+				// Make adjustments.
+				if ((int)AssetType.QbridgeSideFlip == tile)
+				{
+					tile = (int)tile_type.tile_type_bridge_side;
+				}
+				else if ((int)AssetType.RbridgeSignGoal == tile)
+				{
+					tile = (int)tile_type.tile_type_bridge_sign;
+				}
+				else if ((int)AssetType.SislandSignGoal == tile)
+				{
+					tile = (int)tile_type.tile_type_island_sign;
+				}
+				else if ((int)AssetType.TislandTreeLFlip == tile)
+				{
+					tile = (int)tile_type.tile_type_islandTreeL;
+				}
+				else if ((int)AssetType.UislandTreeRFlip== tile)
+				{
+					tile = (int)tile_type.tile_type_islandTreeR;
+				}
+
+				item.Add(tile);
+				//string val = "0x" + tile.ToString("X").ToString().PadLeft(2, '0');
+				//item.Add(val);
 			}
 
 			return item;
@@ -83,11 +132,24 @@ namespace ScreenShotTest
 				}
 			}
 
+			// Bytes array.
+			data1.Clear();
+			data2.Clear();
+			data3.Clear();
 			for (int idx = 0; idx < cols; idx++)
 			{
 				var tile = Tiles[idx];
-				var item = GetType(tile);
-				data.AddRange(item);
+				var left = GetCols(tile);
+				var rght = GetType(tile);
+				//data1.AddRange(left);
+				//data2.AddRange(rght);
+
+				for (int bob = 0; bob < 4; bob++)
+				{
+					var d1 = left[bob];
+					var d2 = rght[bob];
+					var d3 = d1 + d2;
+				}
 			}
 
 			// level.csv
