@@ -7,7 +7,7 @@ namespace ScreenShotTest
 {
 	public class FileManager
 	{
-		private List<string> data;
+		private List<string> data, data1, data2, data3;
 		private int cols;
 
 		public FileManager(int wide)
@@ -20,6 +20,9 @@ namespace ScreenShotTest
 			}
 
 			data = new List<string>();
+			data1 = new List<string>();
+			data2 = new List<string>();
+			data3 = new List<string>();
 		}
 
 		public void LoadContent()
@@ -65,11 +68,19 @@ namespace ScreenShotTest
 		public void Save(int[] tiles)
 		{
 			Tiles = tiles;
-			string format = "yyyyMMdd-HHmmss";
-			var path = DateTime.Now.ToString(format);
+			//string format = "yyyyMMdd-HHmmss";
+			var path = "output";// DateTime.Now.ToString(format);
 			if (!Directory.Exists(path))
 			{
 				Directory.CreateDirectory(path);
+			}
+			else
+			{
+				var files = Directory.GetFiles(path);
+				foreach(var file in files)
+				{
+					File.Delete(file);
+				}
 			}
 
 			for (int idx = 0; idx < cols; idx++)
@@ -88,13 +99,15 @@ namespace ScreenShotTest
 			}
 			var lines = data.ToArray();
 			var csv = String.Join(",", lines);
-			File.WriteAllText(path + "/level.csv", csv);
+			//File.WriteAllText(path + "/level.csv", csv);
 
 			data.Clear();
 			var numTiles = tiles.Length;
-			var scr = numTiles % 8 + 1;
+			var scr = numTiles / 8;
 			//string line = $"{tiles}"
 			data.Add("NoScreens," + scr.ToString());
+			var contents = data.ToArray();
+			//File.WriteAllLines(path + "/info.txt", contents);
 		}
 
 		public int[] Tiles { get; private set; }
