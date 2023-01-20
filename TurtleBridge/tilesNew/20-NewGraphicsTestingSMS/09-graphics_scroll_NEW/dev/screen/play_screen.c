@@ -41,7 +41,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 	//input = 1;
 	if( input )
 	{
-		delta = 1;
+		delta = 4;
 		//engine_tile_manager_draw_columns( tile_type_island_tree, 20 + cols, 0 + cols );
 		//cols++;
 		//engine_scroll_manager_update( 2 );
@@ -55,7 +55,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 	if( 0 == delta )
 	{
 		// uncomment next line for auto scroll
-		//delta = 1;
+		delta = 1;
 		newTile = engine_scroll_manager_update( delta );
 		if( newTile )
 		{
