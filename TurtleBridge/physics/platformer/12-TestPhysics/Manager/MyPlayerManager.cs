@@ -23,7 +23,7 @@ namespace Test
 		public void Initialize()
 		{
 			//po.posnX = 72;
-			po.posnX = 72;
+			po.posnX = 16;
 			//po.posnX = 32;
 			po.posnY = 112;
 			po.frame = 0;
@@ -53,10 +53,24 @@ namespace Test
 				po.posnX -= 1;
 				updatePlayer();
 			}
-			if (myInputManager.KeyHold(Keys.Right))
+			if (myInputManager.KeyMove(Keys.Right))
 			{
-				po.posnX += 1;
-				updatePlayer();
+				if (po.posnX >= 72)
+				{
+					if (po.index >= 40)
+					{
+						return;
+					}
+					sbyte value = physics_array[po.index++];
+					po.posnX += 1;
+					po.posnY -= value;
+					updatePlayer();
+				}
+				else
+				{
+					po.posnX += 1;
+					updatePlayer();
+				}
 			}
 			if (myInputManager.KeyMove(Keys.Down))
 			{

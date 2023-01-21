@@ -62,6 +62,12 @@ namespace Test
 			{
 				Exit();
 			}
+			if (myInputManager.KeyHold(Keys.Back))
+			{
+				myCommandManager.Initialize();
+				myLevelManager.Initialize();
+				myPlayerManager.Initialize();
+			}
 
 			myPlayerManager.Update(gameTime);
 			base.Update(gameTime);
