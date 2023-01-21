@@ -21,7 +21,7 @@ namespace Test
 
 		public void Initialize()
 		{
-			po.posnX = 80;
+			po.posnX = 64;
 			//po.posnX = 32;
 			po.posnY = 144;
 			po.frame = 0;
