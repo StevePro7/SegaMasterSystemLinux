@@ -13,17 +13,18 @@
 
 void screen_load_screen_load()
 {
-	unsigned char tile = TILE_TURTLE_SEA1;
+	unsigned int tile = TILE_TURTLE_SEA2;
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();
 	engine_content_manager_sprite();
 	engine_graphics_manager_sea();
 
-	engine_tile_manager_stevepro( tile, 0, 8, 4, 14 );
-	engine_tile_manager_stevepro( tile, 4, 8, 4, 14 );
-	engine_tile_manager_stevepro( tile, 8, 8, 4, 14 );
-	engine_tile_manager_stevepro( tile, 12, 8, 4, 14 );
+	engine_tile_manager_stevepro( TILE_ISLAND_MIDD, 0, 8, 4, 14 );
+	engine_tile_manager_stevepro( TILE_ISLAND_MIDD, 4, 8, 4, 14 );
+	engine_tile_manager_stevepro( TILE_ISLAND_RGHT, 8, 8, 4, 14 );
+	engine_tile_manager_stevepro( TILE_TURTLE_SEA2, 12, 8, 4, 14 );
+	engine_tile_manager_stevepro( TILE_TURTLE_SEA2, 16, 8, 4, 14 );
 	//engine_tile_manager_stevepro( tile, 16, 8, 4, 14 );
 	//engine_tile_manager_stevepro( TILE_BRIDGE_RGHT, 12, 8, 4, 14 );
 
