@@ -50,8 +50,8 @@ namespace Test
 				var message = $"(x,y)=({po.posnX},{po.posnY})";
 				Logger.Info(message);
 			}
-			if (myInputManager.KeyHold(Keys.Enter))
-			//if (myInputManager.KeyMove(Keys.Enter))
+			//if (myInputManager.KeyHold(Keys.Enter))
+			if (myInputManager.KeyMove(Keys.Enter))
 			{
 				// IMPORTANT must return so do NOT add deltaY despite being on platform!
 				if (po.isOnground)
