@@ -23,14 +23,16 @@ namespace Test
 		public void Initialize()
 		{
 			//po.posnX = 72;
-			po.posnX = 72;
-			//po.posnX = 32;
-			po.posnY = 64;
+			po.posnX = 16;
+			//po.posnX = 80;
+			po.posnY = 127;
 			po.frame = 0;
 			po.index = 0;
+			po.isOnground = false;
 			//po.frame = 0;
 			updatePlayer();
 			physics_array = getPhysicsArray();
+			Logger.Info($"Player in the air py={po.posnY}");
 		}
 
 		private void updatePlayer()
@@ -48,52 +50,51 @@ namespace Test
 				var message = $"(x,y)=({po.posnX},{po.posnY})";
 				Logger.Info(message);
 			}
-			if (myInputManager.KeyMove(Keys.Down))
+			if (myInputManager.KeyHold(Keys.Down))
 			{
+				// IMPORTANT must return so do NOT add deltaY despite being on platform!
+				if (po.isOnground)
+				{
+					Logger.Info($"Player on ground2 py={po.posnY}");
+					return;
+				}
+
 				//var tile = po.tileX - 2;    // Easy
 				var tile1 = po.tileX - 1;    // Hard
 				var tile2 = po.tileX + 1;    // Hard
 				var tempCollY1 = myLevelManager.collision_array[tile1];
 				var tempCollY2 = myLevelManager.collision_array[tile2];
-			}
-		
-		}
 
-		private void canMoveDown(int dy, ref bool isMoveDown, ref int tempCollY, ref int tile)
-		{
-			//int tempCollY = 0;
-			int tempPosnY = po.posnY + dy;
-			int tempTileY = tempPosnY >> 3;
-
-			isMoveDown = false;
-			tile = po.tileX - 2;    // Easy
-			tile = po.tileX - 1;	// Hard
-			tempCollY = myLevelManager.collision_array[tile];
-			if (tempTileY == tempCollY)
-			{
-				return;
+				var deltaY = physics_array[po.index];
+				// Ascending
+				if (deltaY < 0)
+				{
+				}
+				// Descending
+				if (deltaY >= 0 )
+				{
+					var tempY = po.posnY + deltaY;
+					var tileY = tempY >> 3;
+					if ((tileY == tempCollY1) || (tileY == tempCollY2))
+					{
+						po.posnY = tileY << 3;
+						po.isOnground = true;
+						po.index = 0;
+						Logger.Info($"Player on ground! py={po.posnY}");
+					}
+					else
+					{
+						po.posnY = tempY;
+						po.index++;
+						updatePlayer();
+						Logger.Info($"Player in the air py={po.posnY}");
+					}
+				}
 			}
-			else
-			{
-				
-						tile = po.tileX + 1;
-						tempCollY = myLevelManager.collision_array[tile];
-						if (tempTileY == tempCollY)
-						{
-							return;
-						}
-			}
-
-			tempCollY = 0;
-			tile = 0;
-			isMoveDown = true;
-			return;
 		}
 
 		public void Draw(SpriteBatch spriteBatch)
 		{
-			//spriteBatch.Draw(myContentManager.Black2442, new Vector2(64, 128), Color.White);
-			//spriteBatch.Draw(myContentManager.Tile2432, new Vector2(64, 128), Color.White);
 			spriteBatch.Draw(myContentManager.Skater[po.frame], new Vector2(po.drawX, po.drawY), Color.White);
 		}
 
@@ -101,8 +102,7 @@ namespace Test
 		{
 			return new sbyte[]
 			{
-				//0, 0, 0, 0, -1, 0, -1, -1, -1, 0, -2, -1, -1, -1, -2, -1, -2, -2, -2, -1, -3, -2, -2, -2, -3, -2, -3, -3, -3, -2, -4, -3, -3, -3, -4, -3, -4, -4, -4, -4,
-				1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+				8,8,8,8,8
 			};
 		}
 

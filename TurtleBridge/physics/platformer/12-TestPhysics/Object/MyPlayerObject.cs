@@ -7,6 +7,7 @@
 		public int posnX, posnY;
 		public int drawX, drawY;
 		public int tileX, tileY;
+		public bool isOnground;
 		//int collX, collY;
 		//int prevX, prevY;
 		//int commX, commY;
