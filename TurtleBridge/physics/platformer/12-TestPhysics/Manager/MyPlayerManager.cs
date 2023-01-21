@@ -62,7 +62,7 @@ namespace Test
 						return;
 					}
 					sbyte value = physics_array[po.index++];
-					po.posnX += 1;
+					po.posnX += 2;
 					po.posnY -= value;
 					updatePlayer();
 				}

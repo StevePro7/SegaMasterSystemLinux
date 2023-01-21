@@ -49,6 +49,10 @@ namespace Test
 				spriteBatch.Draw(myContentManager.Tiles[(int)tile_type.tile_type_turtle_fly4], pos, Color.White);
 			}
 
+			pos = new Vector2(4 * Constants.TILE_WIDE, Constants.COLUMN_START);
+			//spriteBatch.Draw(myContentManager.Tiles[(int)tile_type.tile_type_bridge_midd], pos, Color.White);
+			spriteBatch.Draw(myContentManager.Tiles[(int)tile_type.tile_type_turtle_sea1], pos, Color.White);
+
 		}
 
 		private Byte[] getCollisionArray()
