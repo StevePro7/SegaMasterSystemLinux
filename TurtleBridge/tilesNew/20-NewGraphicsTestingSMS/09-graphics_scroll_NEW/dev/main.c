@@ -14,7 +14,7 @@ void main( void )
 		if( input )
 		{
 			devkit_PSGStop();
-			start();
+			//start();
 		}
 		engine_screen_manager_update();
 
@@ -52,7 +52,8 @@ static void start()
 	//open_screen_type = screen_type_test;
 	//open_screen_type = screen_type_init;
 	//open_screen_type = screen_type_play;
-	open_screen_type = screen_type_load;
+	//open_screen_type = screen_type_load;
+	open_screen_type = screen_type_ready;
 
 	engine_screen_manager_init( open_screen_type );
 	engine_scroll_manager_init();
