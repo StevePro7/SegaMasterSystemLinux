@@ -21,7 +21,7 @@ namespace Test
 			//return currKeyboardState.IsKeyDown(key);
 		}
 
-		public Boolean KeyPress(Keys key)
+		public Boolean KeyMove(Keys key)
 		{
 			//return currKeyboardState.IsKeyDown(key) && prevKeyboardState.IsKeyUp(key);
 			return currKeyboardState.IsKeyDown(key);

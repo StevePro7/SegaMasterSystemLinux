@@ -27,5 +27,6 @@
 		////sbyte anim_frame, anim_count;
 		//sbyte kill_idx;
 		public byte frame;
+		public short index;
 	}
 }

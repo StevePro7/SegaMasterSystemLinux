@@ -58,7 +58,7 @@ namespace Test
 		protected override void Update(GameTime gameTime)
 		{
 			myInputManager.Update(gameTime);
-			if (myInputManager.KeyPress(Keys.Escape))
+			if (myInputManager.KeyMove(Keys.Escape))
 			{
 				Exit();
 			}

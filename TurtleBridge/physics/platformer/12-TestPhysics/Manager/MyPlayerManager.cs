@@ -7,6 +7,7 @@ namespace Test
 {
 	public class MyPlayerManager
 	{
+
 		private MyContentManager myContentManager;
 		private MyInputManager myInputManager;
 		private MyLevelManager myLevelManager;
@@ -21,12 +22,15 @@ namespace Test
 
 		public void Initialize()
 		{
-			po.posnX = 64;
+			//po.posnX = 72;
+			po.posnX = 72;
 			//po.posnX = 32;
-			po.posnY = 144;
+			po.posnY = 112;
 			po.frame = 0;
+			po.index = 0;
 			//po.frame = 0;
 			updatePlayer();
+			physics_array = getPhysicsArray();
 		}
 
 		private void updatePlayer()
@@ -54,12 +58,18 @@ namespace Test
 				po.posnX += 1;
 				updatePlayer();
 			}
-			//if (myInputManager.KeyHold(Keys.Up))
-			//{
-			//	po.posnY -= 1;
-			//	updatePlayer();
-			//}
-			if (myInputManager.KeyHold(Keys.Down))
+			if (myInputManager.KeyMove(Keys.Down))
+			{
+				if (po.index >= 40)
+				{
+					return;
+				}
+				sbyte value = physics_array[po.index++];
+				po.posnX += 1;
+				po.posnY -= value;
+				updatePlayer();
+			}
+			if (myInputManager.KeyHold(Keys.Enter))
 			{
 				//const int dy = 1;
 				const int dy = 0;
@@ -141,6 +151,16 @@ namespace Test
 			//spriteBatch.Draw(myContentManager.Tile2432, new Vector2(64, 128), Color.White);
 			spriteBatch.Draw(myContentManager.Skater[po.frame], new Vector2(po.drawX, po.drawY), Color.White);
 		}
+
+		private SByte[] getPhysicsArray()
+		{
+			return new sbyte[]
+			{
+				0, 0, 0, 0, -1, 0, -1, -1, -1, 0, -2, -1, -1, -1, -2, -1, -2, -2, -2, -1, -3, -2, -2, -2, -3, -2, -3, -3, -3, -2, -4, -3, -3, -3, -4, -3, -4, -4, -4, -4,
+			};
+		}
+
+		public SByte[] physics_array { get; private set; }
 	}
 
 }
