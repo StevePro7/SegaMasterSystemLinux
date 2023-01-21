@@ -25,7 +25,7 @@ namespace Test
 			//po.posnX = 72;
 			po.posnX = 72;
 			//po.posnX = 32;
-			po.posnY = 112;
+			po.posnY = 64;
 			po.frame = 0;
 			po.index = 0;
 			//po.frame = 0;
@@ -50,7 +50,11 @@ namespace Test
 			}
 			if (myInputManager.KeyMove(Keys.Down))
 			{
-			
+				//var tile = po.tileX - 2;    // Easy
+				var tile1 = po.tileX - 1;    // Hard
+				var tile2 = po.tileX + 1;    // Hard
+				var tempCollY1 = myLevelManager.collision_array[tile1];
+				var tempCollY2 = myLevelManager.collision_array[tile2];
 			}
 		
 		}
@@ -97,7 +101,8 @@ namespace Test
 		{
 			return new sbyte[]
 			{
-				0, 0, 0, 0, -1, 0, -1, -1, -1, 0, -2, -1, -1, -1, -2, -1, -2, -2, -2, -1, -3, -2, -2, -2, -3, -2, -3, -3, -3, -2, -4, -3, -3, -3, -4, -3, -4, -4, -4, -4,
+				//0, 0, 0, 0, -1, 0, -1, -1, -1, 0, -2, -1, -1, -1, -2, -1, -2, -2, -2, -1, -3, -2, -2, -2, -3, -2, -3, -3, -3, -2, -4, -3, -3, -3, -4, -3, -4, -4, -4, -4,
+				1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 			};
 		}
 

@@ -13,10 +13,11 @@ namespace Test
 		public const UInt16 ScreenHigh = 192;
 
 		//public const Byte MAX_ROWS = 12;
-		public const Byte MAX_COLS = Constants.ScreenWide / 32;
-
+		public const Byte MAX_COLS = Constants.ScreenWide / 8;
 		public const Byte TILE_WIDE = 32;
 		public const Byte TILE_HIGH = 112;
+
+		public const Byte MAX_OBJS = Constants.ScreenWide / Constants.TILE_WIDE;
 
 		public const Byte MAX_COMMANDS = 1;
 

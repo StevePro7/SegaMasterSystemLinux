@@ -25,7 +25,7 @@ namespace Test
 		public void Draw(SpriteBatch spriteBatch)
 		{
 			Vector2 pos = Vector2.Zero;
-			for (byte col = 0; col < Constants.MAX_COLS; col++)
+			for (int col = 0; col < Constants.MAX_OBJS; col++)
 			{
 				pos = new Vector2(col * Constants.TILE_WIDE, Constants.ScreenHigh - 24);
 				spriteBatch.Draw(myContentManager.Sea, pos, Color.White);
@@ -57,7 +57,10 @@ namespace Test
 			for (int idx = 0; idx < drawtiles_array.Length; idx++)
 			{
 				var tile = drawtiles_array[idx];
-				collList.Add(collHigh[tile]);
+				for (int lop = 0; lop < 4; lop++)
+				{
+					collList.Add(collHigh[tile]);
+				}
 			}
 
 			return collList.ToArray();
