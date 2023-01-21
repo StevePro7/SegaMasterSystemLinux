@@ -9,8 +9,8 @@ static void updatePlayer();
 void engine_player_manager_init()
 {
 	struct_player_object *po = &global_player_object;
-	po->posnX = 80;
-	po->posnY = 144;
+	po->posnX = 72;
+	po->posnY = 112;
 	//po->frame = 4;
 	//po->frame = 0;
 	updatePlayer();
@@ -27,6 +27,19 @@ void engine_player_manager_right()
 {
 	struct_player_object *po = &global_player_object;
 	po->posnX++;
+	updatePlayer();
+}
+
+void engine_player_manager_up()
+{
+	struct_player_object *po = &global_player_object;
+	po->posnY--;
+	updatePlayer();
+}
+void engine_player_manager_down()
+{
+	struct_player_object *po = &global_player_object;
+	po->posnY++;
 	updatePlayer();
 }
 
