@@ -2,7 +2,6 @@
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Test
 {
@@ -39,10 +38,10 @@ namespace Test
 		{
 			return new byte[]
 			{
-				(byte)tile_type.tile_type_bridge_midd,
-				(byte)tile_type.tile_type_bridge_midd,
-				(byte)tile_type.tile_type_bridge_midd,
-				(byte)tile_type.tile_type_bridge_midd,
+				(byte)tile_type.tile_type_turtle_fly2,
+				(byte)tile_type.tile_type_turtle_fly2,
+				(byte)tile_type.tile_type_turtle_fly2,
+				(byte)tile_type.tile_type_turtle_fly2,
 
 				(byte)tile_type.tile_type_waves_block,
 				(byte)tile_type.tile_type_waves_block,

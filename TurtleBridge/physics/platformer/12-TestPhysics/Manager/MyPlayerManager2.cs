@@ -25,7 +25,7 @@ namespace Test
 			//po.posnX = 72;
 			po.posnX = 16;
 			//po.posnX = 32;
-			po.posnY = 112;
+			po.posnY = 129;
 			po.frame = 0;
 			po.index = 0;
 			//po.frame = 0;

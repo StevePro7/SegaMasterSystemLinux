@@ -25,7 +25,7 @@ namespace Test
 			//po.posnX = 72;
 			po.posnX = 16;
 			//po.posnX = 80;
-			po.posnY = 127;
+			po.posnY = 150;
 			po.frame = 0;
 			po.index = 0;
 			po.isOnground = false;
@@ -50,12 +50,18 @@ namespace Test
 				var message = $"(x,y)=({po.posnX},{po.posnY})";
 				Logger.Info(message);
 			}
-			if (myInputManager.KeyHold(Keys.Down))
+			if (myInputManager.KeyHold(Keys.Enter))
+			//if (myInputManager.KeyMove(Keys.Enter))
 			{
 				// IMPORTANT must return so do NOT add deltaY despite being on platform!
 				if (po.isOnground)
 				{
-					Logger.Info($"Player on ground2 py={po.posnY}");
+					//Logger.Info($"Player on ground2 py={po.posnY}");
+					return;
+				}
+				if (po.index >= physics_array.Length)
+				{
+					// Prevent buffer overrun.
 					return;
 				}
 
@@ -69,8 +75,21 @@ namespace Test
 				// Ascending
 				if (deltaY < 0)
 				{
+					var tempY = po.posnY + deltaY;
+					var tileY = tempY >> 3;
+
+					po.posnY = tempY;
+					po.index++;
+					updatePlayer();
+					Logger.Info($"Player in the air py={po.posnY}  {po.tileY} [{tempCollY1}]");
 				}
 				// Descending
+				if (deltaY == 0)
+				{
+					Logger.Info($"Player APEX APEX! py={po.posnY}  {po.tileY} [{tempCollY1}]");
+					po.index++;
+					return;
+				}
 				if (deltaY >= 0 )
 				{
 					var tempY = po.posnY + deltaY;
@@ -87,7 +106,7 @@ namespace Test
 						po.posnY = tempY;
 						po.index++;
 						updatePlayer();
-						Logger.Info($"Player in the air py={po.posnY}");
+						Logger.Info($"Player in the air py={po.posnY}  {po.tileY} [{tempCollY1}]");
 					}
 				}
 			}
@@ -102,7 +121,8 @@ namespace Test
 		{
 			return new sbyte[]
 			{
-				8,8,8,8,8
+				-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+				//-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 0, 0,0, 0, 0, 0,0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 			};
 		}
 
