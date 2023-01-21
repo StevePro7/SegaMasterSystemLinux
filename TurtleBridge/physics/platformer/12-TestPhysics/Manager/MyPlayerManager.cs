@@ -48,67 +48,11 @@ namespace Test
 				var message = $"(x,y)=({po.posnX},{po.posnY})";
 				Logger.Info(message);
 			}
-			if (myInputManager.KeyHold(Keys.Left))
-			{
-				po.posnX -= 1;
-				updatePlayer();
-			}
-			if (myInputManager.KeyMove(Keys.Right))
-			{
-				if (po.posnX >= 72)
-				{
-					if (po.index >= 40)
-					{
-						return;
-					}
-					sbyte value = physics_array[po.index++];
-					po.posnX += 2;
-					po.posnY -= value;
-					updatePlayer();
-				}
-				else
-				{
-					po.posnX += 1;
-					updatePlayer();
-				}
-			}
 			if (myInputManager.KeyMove(Keys.Down))
 			{
-				if (po.index >= 40)
-				{
-					return;
-				}
-				sbyte value = physics_array[po.index++];
-				po.posnX += 1;
-				po.posnY -= value;
-				updatePlayer();
+			
 			}
-			if (myInputManager.KeyHold(Keys.Enter))
-			{
-				//const int dy = 1;
-				const int dy = 0;
-				bool isMoveDown = false;
-				int tempCollY = 0;
-				int tile = 0;
-				canMoveDown(dy, ref isMoveDown, ref tempCollY, ref tile);
-
-				bool onPlatform = !isMoveDown;
-
-				var message = $"{po.posnY},{tempCollY},{po.drawX},{po.posnX},{po.tileX},{po.tileX-2},{po.tileX-1},{po.tileX},{po.tileX+1},{tile},{onPlatform}";
-				Logger.Info(message);
-
-				if (isMoveDown)
-				{
-					po.posnY += dy;
-					updatePlayer();
-				}
-				else
-				{
-					
-					po.posnY = po.posnY + 0; // tempCollY * 8;
-					updatePlayer();
-				}
-			}
+		
 		}
 
 		private void canMoveDown(int dy, ref bool isMoveDown, ref int tempCollY, ref int tile)
@@ -127,30 +71,13 @@ namespace Test
 			}
 			else
 			{
-				//tile = po.tileX - 1;
-				//tempCollY = myLevelManager.collision_array[tile];
-				//if (tempTileY == tempCollY)
-				//{
-				//	return;
-				//}
-				//else
-				//{
-				//	tile = po.tileX + 0;
-				//	tempCollY = myLevelManager.collision_array[tile];
-				//	if (tempTileY == tempCollY)
-				//	{
-				//		return;
-				//	}
-				//	else
-				//	{
+				
 						tile = po.tileX + 1;
 						tempCollY = myLevelManager.collision_array[tile];
 						if (tempTileY == tempCollY)
 						{
 							return;
 						}
-				//	}
-				//}
 			}
 
 			tempCollY = 0;

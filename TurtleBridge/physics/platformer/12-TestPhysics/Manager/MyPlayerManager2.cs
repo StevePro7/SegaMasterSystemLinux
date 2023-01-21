@@ -53,6 +53,7 @@ namespace Test
 				po.posnX -= 1;
 				updatePlayer();
 			}
+			// Quick gravity test
 			if (myInputManager.KeyMove(Keys.Right))
 			{
 				if (po.posnX >= 72)

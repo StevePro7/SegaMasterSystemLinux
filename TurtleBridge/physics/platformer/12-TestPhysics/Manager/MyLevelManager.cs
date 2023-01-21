@@ -1,12 +1,15 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Test
 {
 	public class MyLevelManager
 	{
 		MyContentManager myContentManager;
+		private byte[] collHigh = { 0, 16, 16, 16, 18, 18, 18, 18, 18, 18, 19, 18, 17, 16, 15, 14 };
 
 		public MyLevelManager(MyContentManager myContentManager)
 		{
@@ -15,8 +18,8 @@ namespace Test
 
 		public void Initialize()
 		{
+			drawtiles_array = getDrawTilesArray();
 			collision_array = getCollisionArray();
-		//	drawtiles_array = GetDrawTilesArray();
 		}
 
 		public void Draw(SpriteBatch spriteBatch)
@@ -26,44 +29,41 @@ namespace Test
 			{
 				pos = new Vector2(col * Constants.TILE_WIDE, Constants.ScreenHigh - 24);
 				spriteBatch.Draw(myContentManager.Sea, pos, Color.White);
-
-				//byte idx = (byte)(row * Constants.MAX_COLS + col);
-				//byte row = collision_array[col];
-				//if (0 != row)
-				//{
-				//	//pos = new Vector2(col * Constants.TILE_WIDE, row * Constants.TILE_HIGH);
-				//	//spriteBatch.Draw(myContentManager.Tile1616, pos, Color.White);
-
-				//	pos = new Vector2(col * Constants.TILE_WIDE , row * Constants.TILE_HIGH);
-				//	spriteBatch.Draw(myContentManager.Tile88, pos, Color.White);
-				//	pos = new Vector2(col * Constants.TILE_WIDE, row * Constants.TILE_HIGH + Constants.TILE_HIGH);
-				//	spriteBatch.Draw(myContentManager.Tile88, pos, Color.White);
-				//}
+				var tile = drawtiles_array[col];
+				pos.Y = 64;
+				spriteBatch.Draw(myContentManager.Tiles[tile], pos, Color.White);
 			}
+		}
 
-			for (byte col = 0; col < 4; col++)
+		private Byte[] getDrawTilesArray()
+		{
+			return new byte[]
 			{
-				pos = new Vector2(col * Constants.TILE_WIDE, Constants.COLUMN_START);
-				//spriteBatch.Draw(myContentManager.Tiles[(int)tile_type.tile_type_bridge_midd], pos, Color.White);
-				spriteBatch.Draw(myContentManager.Tiles[(int)tile_type.tile_type_island_midd], pos, Color.White);
-				//spriteBatch.Draw(myContentManager.Tiles[(int)tile_type.tile_type_turtle_fly4], pos, Color.White);
-			}
+				(byte)tile_type.tile_type_bridge_midd,
+				(byte)tile_type.tile_type_bridge_midd,
+				(byte)tile_type.tile_type_bridge_midd,
+				(byte)tile_type.tile_type_bridge_midd,
 
-			pos = new Vector2(4 * Constants.TILE_WIDE, Constants.COLUMN_START);
-			//spriteBatch.Draw(myContentManager.Tiles[(int)tile_type.tile_type_bridge_midd], pos, Color.White);
-			//spriteBatch.Draw(myContentManager.Tiles[(int)tile_type.tile_type_turtle_sea1], pos, Color.White);
-
+				(byte)tile_type.tile_type_waves_block,
+				(byte)tile_type.tile_type_waves_block,
+				(byte)tile_type.tile_type_waves_block,
+				(byte)tile_type.tile_type_waves_block,
+			};
 		}
 
 		private Byte[] getCollisionArray()
 		{
-			return new byte[]
+			var collList = new List<byte>();
+			for (int idx = 0; idx < drawtiles_array.Length; idx++)
 			{
-				
-				0
-			};
+				var tile = drawtiles_array[idx];
+				collList.Add(collHigh[tile]);
+			}
+
+			return collList.ToArray();
 		}
 
+		public Byte[] drawtiles_array { get; private set; }
 		public Byte[] collision_array { get; private set; }
 	}
 }
