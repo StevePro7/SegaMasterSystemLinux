@@ -20,6 +20,7 @@ namespace Test
 
 		public const Byte MAX_COMMANDS = 1;
 
+		public const Byte COLUMN_START = 64;
 		//public const Boolean UseExposed = true;
 		//public const UInt16 ExposeWide = 256;
 		//public const UInt16 ExposeHigh = 192;
