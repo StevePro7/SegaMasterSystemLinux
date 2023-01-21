@@ -26,25 +26,32 @@ namespace Test
 			{
 				for (byte col = 0; col < Constants.MAX_COLS; col++)
 				{
-					//byte idx = (byte)(row * Constants.MAX_COLS + col);
-					byte row = collision_array[col];
-					if (0 != row)
-					{
-						//pos = new Vector2(col * Constants.TILE_WIDE, row * Constants.TILE_HIGH);
-						//spriteBatch.Draw(myContentManager.Tile1616, pos, Color.White);
+					pos = new Vector2(col * Constants.TILE_WIDE, Constants.ScreenHigh - 24);
+					spriteBatch.Draw(myContentManager.Sea, pos, Color.White);
 
-						pos = new Vector2(col * Constants.TILE_WIDE , row * Constants.TILE_HIGH);
-						spriteBatch.Draw(myContentManager.Tile88, pos, Color.White);
-						pos = new Vector2(col * Constants.TILE_WIDE, row * Constants.TILE_HIGH + Constants.TILE_HIGH);
-						spriteBatch.Draw(myContentManager.Tile88, pos, Color.White);
-					}
+					//byte idx = (byte)(row * Constants.MAX_COLS + col);
+					//byte row = collision_array[col];
+					//if (0 != row)
+					//{
+					//	//pos = new Vector2(col * Constants.TILE_WIDE, row * Constants.TILE_HIGH);
+					//	//spriteBatch.Draw(myContentManager.Tile1616, pos, Color.White);
+
+					//	pos = new Vector2(col * Constants.TILE_WIDE , row * Constants.TILE_HIGH);
+					//	spriteBatch.Draw(myContentManager.Tile88, pos, Color.White);
+					//	pos = new Vector2(col * Constants.TILE_WIDE, row * Constants.TILE_HIGH + Constants.TILE_HIGH);
+					//	spriteBatch.Draw(myContentManager.Tile88, pos, Color.White);
+					//}
 				}
+
+				pos = new Vector2(0, 64);
+				//spriteBatch.Draw(myContentManager.Tiles[(int)tile_type.tile_type_bridge_midd], pos, Color.White);
+				spriteBatch.Draw(myContentManager.Tiles[(int)tile_type.tile_type_island_midd], pos, Color.White);
 			}
 		}
 
 		private Byte[] getCollisionArray()
 		{
-			return new byte[Constants.MAX_COLS]
+			return new byte[]
 			{
 				18,18,18,18,18,18,18,18,0,0,0,0,18,18,18,18,18,18,18,18,0,0,0,0,0,0,0,0,0,0,0,0
 			};

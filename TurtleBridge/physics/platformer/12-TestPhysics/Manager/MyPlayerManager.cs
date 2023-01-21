@@ -24,7 +24,7 @@ namespace Test
 			po.posnX = 64;
 			//po.posnX = 32;
 			po.posnY = 144;
-			po.frame = 4;
+			po.frame = 0;
 			//po.frame = 0;
 			updatePlayer();
 		}

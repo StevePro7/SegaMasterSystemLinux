@@ -9,11 +9,11 @@ namespace Test
 
 		public const Boolean IsFullScreen = false;
 		public const Boolean IsMouseVisible = true;
-		public const UInt16 ScreenWide = 256;
+		public const UInt16 ScreenWide = 512;
 		public const UInt16 ScreenHigh = 192;
 
 		//public const Byte MAX_ROWS = 12;
-		public const Byte MAX_COLS = 32;
+		public const Byte MAX_COLS = Constants.ScreenWide / 8 ;
 
 		public const Byte TILE_WIDE = 8;
 		public const Byte TILE_HIGH = 8;
