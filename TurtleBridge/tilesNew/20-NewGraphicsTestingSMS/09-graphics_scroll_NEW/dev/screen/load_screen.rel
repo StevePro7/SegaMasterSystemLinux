@@ -1,110 +1,137 @@
 ;!FILE load_screen.asm
 XL3
-H 9 areas 65 global symbols
+H 9 areas 80 global symbols
 M load_screen
 O -mz80
+S _engine_player_manager_left Ref000000
 S _engine_player_manager_draw Ref000000
 S _devkit_SMS_displayOn Ref000000
 S _engine_graphics_manager_sea Ref000000
 S .__.ABS. Def000000
 S _engine_content_manager_sprite Ref000000
+S _engine_input_manager_hold Ref000000
 S _devkit_SMS_displayOff Ref000000
 S _engine_asm_manager_clear_VRAM Ref000000
 S _engine_content_manager_bggame Ref000000
 S _engine_tile_manager_stevepro Ref000000
-A _CODE size 85 flags 0 addr 0
+S _engine_player_manager_right Ref000000
+A _CODE size A3 flags 0 addr 0
+S C$load_screen.c$48$2_0$98 Def000096
 S XG$screen_load_screen_load$0$0 Def000078
 S G$screen_load_screen_update$0$0 Def00007B
-S A$load_screen$110 Def000039
-S A$load_screen$101 Def000026
-S A$load_screen$120 Def000046
-S A$load_screen$102 Def000029
-S A$load_screen$130 Def000055
-S A$load_screen$121 Def000049
-S A$load_screen$103 Def00002A
-S A$load_screen$140 Def000062
-S A$load_screen$131 Def000056
-S A$load_screen$122 Def00004C
-S A$load_screen$104 Def00002D
-S A$load_screen$150 Def000076
-S A$load_screen$141 Def000065
-S A$load_screen$132 Def000059
-S A$load_screen$123 Def00004D
-S A$load_screen$114 Def00003A
-S A$load_screen$105 Def00002E
-S A$load_screen$151 Def000077
-S A$load_screen$142 Def000066
-S A$load_screen$133 Def00005A
-S A$load_screen$115 Def00003D
-S A$load_screen$106 Def000031
+S A$load_screen$100 Def000025
+S A$load_screen$200 Def00008E
+S A$load_screen$110 Def000032
+S A$load_screen$201 Def000091
+S A$load_screen$120 Def000041
+S A$load_screen$111 Def000035
+S A$load_screen$220 Def00009C
+S A$load_screen$211 Def000096
+S A$load_screen$202 Def000092
+S A$load_screen$130 Def00004E
+S A$load_screen$121 Def000042
+S A$load_screen$112 Def000038
+S A$load_screen$221 Def00009D
+S A$load_screen$131 Def000051
+S A$load_screen$122 Def000045
+S A$load_screen$113 Def000039
+S A$load_screen$104 Def000026
+S A$load_screen$222 Def00009E
+S A$load_screen$150 Def00006F
+S A$load_screen$132 Def000052
+S A$load_screen$123 Def000046
+S A$load_screen$105 Def000029
+S A$load_screen$232 Def0000A2
+S A$load_screen$223 Def00009F
+S A$load_screen$151 Def000070
+S A$load_screen$133 Def000055
+S A$load_screen$124 Def000049
+S A$load_screen$106 Def00002A
 S _screen_load_screen_update Def00007B
-S A$load_screen$143 Def000068
-S A$load_screen$134 Def00005D
-S A$load_screen$116 Def00003E
-S A$load_screen$107 Def000032
-S A$load_screen$180 Def00007F
-S A$load_screen$162 Def000078
-S A$load_screen$144 Def000069
-S A$load_screen$135 Def000060
-S A$load_screen$117 Def000041
-S A$load_screen$108 Def000035
-S A$load_screen$181 Def000080
-S A$load_screen$145 Def00006B
-S A$load_screen$136 Def000061
-S A$load_screen$127 Def00004E
-S A$load_screen$118 Def000042
-S A$load_screen$109 Def000038
-S A$load_screen$191 Def000084
-S A$load_screen$182 Def000081
-S A$load_screen$146 Def00006C
-S A$load_screen$128 Def000051
-S A$load_screen$119 Def000045
-S A$load_screen$183 Def000082
-S A$load_screen$147 Def00006F
-S A$load_screen$129 Def000052
-S A$load_screen$175 Def00007B
-S A$load_screen$148 Def000070
-S A$load_screen$149 Def000073
-S A$load_screen$179 Def00007E
-S XG$screen_load_screen_update$0$0 Def000084
-S A$load_screen$80 Def00000C
+S A$load_screen$224 Def0000A0
+S A$load_screen$206 Def000093
+S A$load_screen$152 Def000073
+S A$load_screen$143 Def000062
+S A$load_screen$134 Def000056
+S A$load_screen$125 Def00004C
+S A$load_screen$107 Def00002D
+S A$load_screen$216 Def000099
+S A$load_screen$207 Def000094
+S A$load_screen$180 Def00007E
+S A$load_screen$153 Def000076
+S A$load_screen$144 Def000065
+S A$load_screen$135 Def000059
+S A$load_screen$126 Def00004D
+S A$load_screen$117 Def00003A
+S A$load_screen$108 Def00002E
+S A$load_screen$181 Def00007F
+S A$load_screen$154 Def000077
+S A$load_screen$145 Def000066
+S A$load_screen$136 Def00005A
+S A$load_screen$118 Def00003D
+S A$load_screen$109 Def000031
+S A$load_screen$182 Def000082
+S A$load_screen$146 Def000068
+S A$load_screen$137 Def00005D
+S A$load_screen$119 Def00003E
+S A$load_screen$192 Def000087
+S A$load_screen$183 Def000083
+S A$load_screen$165 Def000078
+S A$load_screen$147 Def000069
+S A$load_screen$138 Def000060
+S A$load_screen$148 Def00006B
+S A$load_screen$139 Def000061
+S A$load_screen$149 Def00006C
+S A$load_screen$187 Def000084
+S A$load_screen$178 Def00007B
+S A$load_screen$197 Def00008A
+S A$load_screen$188 Def000085
+S A$load_screen$179 Def00007D
+S A$load_screen$198 Def00008C
+S A$load_screen$199 Def00008D
+S XG$screen_load_screen_update$0$0 Def0000A2
+S A$load_screen$71 Def000003
 S G$screen_load_screen_load$0$0 Def000000
-S A$load_screen$90 Def000018
-S A$load_screen$72 Def000006
-S A$load_screen$91 Def000019
-S A$load_screen$64 Def000000
+S A$load_screen$90 Def000015
+S A$load_screen$91 Def000016
 S C$load_screen.c$20$1_0$94 Def000009
-S A$load_screen$92 Def00001A
+S A$load_screen$92 Def000017
+S A$load_screen$83 Def00000C
 S C$load_screen.c$21$1_0$94 Def00000C
-S A$load_screen$93 Def00001D
-S A$load_screen$84 Def00000F
+S A$load_screen$93 Def000018
+S A$load_screen$75 Def000006
 S C$load_screen.c$14$0_0$94 Def000000
-S A$load_screen$94 Def00001E
-S A$load_screen$85 Def000012
-S A$load_screen$76 Def000009
+S A$load_screen$94 Def000019
+S A$load_screen$67 Def000000
 S C$load_screen.c$23$1_0$94 Def00000F
-S A$load_screen$95 Def000021
-S A$load_screen$86 Def000013
-S A$load_screen$68 Def000003
+S A$load_screen$95 Def00001A
 S C$load_screen.c$40$1_0$96 Def000084
 S C$load_screen.c$33$1_0$94 Def000078
 S C$load_screen.c$24$1_0$94 Def000026
-S A$load_screen$96 Def000024
-S A$load_screen$87 Def000015
+S A$load_screen$96 Def00001D
+S A$load_screen$87 Def00000F
 S C$load_screen.c$34$1_0$94 Def000078
 S C$load_screen.c$25$1_0$94 Def00003A
-S A$load_screen$97 Def000025
-S A$load_screen$88 Def000016
+S A$load_screen$97 Def00001E
+S A$load_screen$88 Def000012
+S A$load_screen$79 Def000009
+S C$load_screen.c$51$1_0$96 Def000099
 S C$load_screen.c$26$1_0$94 Def00004E
 S C$load_screen.c$17$1_0$94 Def000000
-S A$load_screen$89 Def000017
+S A$load_screen$98 Def000021
+S A$load_screen$89 Def000013
+S C$load_screen.c$52$1_0$96 Def00009C
 S C$load_screen.c$27$1_0$94 Def000062
 S C$load_screen.c$18$1_0$94 Def000003
+S A$load_screen$99 Def000024
+S C$load_screen.c$53$1_0$96 Def0000A2
+S C$load_screen.c$42$2_0$97 Def000087
 S C$load_screen.c$19$1_0$94 Def000006
+S C$load_screen.c$45$1_0$96 Def00008A
 S C$load_screen.c$36$1_0$96 Def00007B
+S C$load_screen.c$46$1_0$96 Def000093
 S _screen_load_screen_load Def000000
-S C$load_screen.c$38$1_0$96 Def00007B
-S C$load_screen.c$39$1_0$96 Def00007E
+S C$load_screen.c$39$1_0$96 Def00007B
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -116,26 +143,38 @@ A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
 T 00 00 00 CD 00 00 CD 00 00 CD 00 00 CD
-R 00 00 00 00 02 04 05 00 02 07 06 00 02 0A 07 00
+R 00 00 00 00 02 04 07 00 02 07 08 00 02 0A 09 00
 T 0A 00 00 00 00 CD 00 00 11 04 0E D5 3E 08 F5 33
-R 00 00 00 00 02 03 04 00 02 06 02 00
+R 00 00 00 00 02 03 05 00 02 06 03 00
 T 17 00 00 AF F5 33 21 B8 00 E5 CD 00 00 21 06 00
-R 00 00 00 00 02 0B 08 00
+R 00 00 00 00 02 0B 0A 00
 T 24 00 00 39 F9 11 04 0E D5 11 04 08 D5 21 B8 00
 R 00 00 00 00
 T 31 00 00 E5 CD 00 00 21 06 00 39 F9 11 04 0E D5
-R 00 00 00 00 02 05 08 00
+R 00 00 00 00 02 05 0A 00
 T 3E 00 00 11 08 08 D5 21 38 03 E5 CD 00 00 21
-R 00 00 00 00 02 0C 08 00
+R 00 00 00 00 02 0C 0A 00
 T 4A 00 00 06 00 39 F9 11 04 0E D5 11 0C 08 D5 21
 R 00 00 00 00
 T 57 00 00 D8 05 E5 CD 00 00 21 06 00 39 F9 11
-R 00 00 00 00 02 07 08 00
+R 00 00 00 00 02 07 0A 00
 T 63 00 00 04 0E D5 3E 08 57 1E 10 D5 21 D8 05 E5
 R 00 00 00 00
 T 70 00 00 CD 00 00 21 06 00 39 F9 C3 00 00
-R 00 00 00 00 02 04 08 00 02 0C 01 00
+R 00 00 00 00 02 04 0A 00 02 0C 02 00
 T 7B 00 00
 R 00 00 00 00
-T 7B 00 00 CD 00 00 C1 E1 E5 C5 36 07 C9
-R 00 00 00 00 02 04 00 00
+T 7B 00 00 3E 04 F5 33 CD 00 00 7D 33 B7 28 03 CD
+R 00 00 00 00 02 08 06 00
+T 88 00 00 00 00
+R 00 00 00 00 02 03 00 00
+T 8A 00 00
+R 00 00 00 00
+T 8A 00 00 3E 08 F5 33 CD 00 00 7D 33 B7 28 03 CD
+R 00 00 00 00 02 08 06 00
+T 97 00 00 00 00
+R 00 00 00 00 02 03 0B 00
+T 99 00 00
+R 00 00 00 00
+T 99 00 00 CD 00 00 C1 E1 E5 C5 36 07 C9
+R 00 00 00 00 02 04 01 00

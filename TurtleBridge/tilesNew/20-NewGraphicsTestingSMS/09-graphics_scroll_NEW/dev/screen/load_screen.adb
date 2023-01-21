@@ -3,6 +3,7 @@ F:G$screen_load_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lload_screen.screen_load_screen_load$tile$1_0$94({2}SI:U),R,0,0,[]
 F:G$screen_load_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lload_screen.screen_load_screen_update$screen_type$1_0$95({2}DG,SC:U),B,1,4
+S:Lload_screen.screen_load_screen_update$input$1_0$96({1}SC:U),R,0,0,[a]
 T:Fload_screen$tag_struct_player_object[({0}S:S$posnX$0_0$0({1}SC:U),Z,0,0)({1}S:S$posnY$0_0$0({1}SC:U),Z,0,0)({2}S:S$drawX$0_0$0({1}SC:U),Z,0,0)({3}S:S$drawY$0_0$0({1}SC:U),Z,0,0)({4}S:S$tileX$0_0$0({1}SC:U),Z,0,0)({5}S:S$tileY$0_0$0({1}SC:U),Z,0,0)]
 T:Fload_screen$tag_struct_tile_object[({0}S:S$tilemap_index$0_0$0({2}SI:U),Z,0,0)({2}S:S$tile_wide$0_0$0({1}SC:U),Z,0,0)({3}S:S$tile_platform$0_0$0({1}SC:U),Z,0,0)]
 T:Fload_screen$tag_struct_level_object[({0}S:S$level_cols_offset$0_0$0({2}SI:U),Z,0,0)({2}S:S$level_draw_offset$0_0$0({1}SC:U),Z,0,0)]

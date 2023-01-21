@@ -35,6 +35,19 @@ void screen_load_screen_load()
 
 void screen_load_screen_update( unsigned char *screen_type )
 {
+	unsigned char input;
+	input = engine_input_manager_hold( input_type_left );
+	if( input )
+	{
+		engine_player_manager_left();
+	}
+	//input = engine_input_manager_move(input_type_right);
+	input = engine_input_manager_hold( input_type_right );
+	if( input )
+	{
+		engine_player_manager_right();
+	}
+
 	engine_player_manager_draw();
 	*screen_type = screen_type_load;
 }
