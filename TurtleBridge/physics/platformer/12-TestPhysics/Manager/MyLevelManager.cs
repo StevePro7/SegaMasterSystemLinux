@@ -41,13 +41,14 @@ namespace Test
 				//}
 			}
 
-			for (byte col = 0; col < 4; col++)
+			for (byte col = 0; col < 3; col++)
 			{
 				pos = new Vector2(col * Constants.TILE_WIDE, Constants.COLUMN_START);
 				//spriteBatch.Draw(myContentManager.Tiles[(int)tile_type.tile_type_bridge_midd], pos, Color.White);
-				spriteBatch.Draw(myContentManager.Tiles[(int)tile_type.tile_type_island_midd], pos, Color.White);
+				//spriteBatch.Draw(myContentManager.Tiles[(int)tile_type.tile_type_island_midd], pos, Color.White);
+				spriteBatch.Draw(myContentManager.Tiles[(int)tile_type.tile_type_turtle_sea2], pos, Color.White);
 			}
-			
+
 		}
 
 		private Byte[] getCollisionArray()
