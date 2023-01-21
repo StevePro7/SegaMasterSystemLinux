@@ -1,0 +1,39 @@
+Collision Logic
+21-Janc-2023
+
+if onGround then
+	move
+	check if inAir
+end
+
+
+if inAir then
+
+lookup deltaY
+if ascending then
+	posnY -= deltaY
+	ignore collision
+end
+
+if descending then
+	posY += deltaY
+	if frame !standing then
+		ignore collision
+	end
+
+// collision
+tileX = posnX >> 3
+tileY = posnY >> 3
+
+tile1 = tileX - 1	
+tile2 = tileX - 2	
+
+if (tile1 == collY || tile2 == collY) then
+	// clamp to platform
+	posnY = collY << 3
+end
+
+
+end
+
+end
