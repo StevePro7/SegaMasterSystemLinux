@@ -30,7 +30,7 @@ void main( void )
 			//engine_audio_manager_update();
 			continue;
 		}
-
+		
 		devkit_SMS_initSprites();
 		engine_input_manager_update();
 		input = input = engine_input_manager_move( input_type_fire2 );
@@ -43,6 +43,7 @@ void main( void )
 
 		devkit_SMS_finalizeSprites();
 		devkit_SMS_waitForVBlank();
+
 		//devkit_SMS_copySpritestoSAT();
 		devkit_UNSAFE_SMS_copySpritestoSAT();
 

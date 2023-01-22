@@ -39,12 +39,12 @@ void engine_audio_manager_update()
 	if( 0 != ao->music_bank )
 	{
 		devkit_SMS_mapROMBank( ao->music_bank );
-		devkit_PSGFrame();
+		//devkit_PSGFrame();
 	}
 
-	if( devkit_PSGSFXGetStatus() )
-	{
-		devkit_SMS_mapROMBank( ao->sound_bank );
-		devkit_PSGSFXFrame();
-	}
+	//if( devkit_PSGSFXGetStatus() )
+	//{
+	//	devkit_SMS_mapROMBank( ao->sound_bank );
+	//	devkit_PSGSFXFrame();
+	//}
 }
