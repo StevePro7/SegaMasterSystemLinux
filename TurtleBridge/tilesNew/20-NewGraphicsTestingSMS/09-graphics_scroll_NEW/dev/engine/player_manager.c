@@ -8,7 +8,7 @@ struct_player_object global_player_object;
 
 static void updatePlayer();
 
-static signed char physics_array[] = { -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, };
+static signed char physics_array[] = { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, };
 //static signed char physics_array[] = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, };
 
 void engine_player_manager_init()
@@ -17,7 +17,7 @@ void engine_player_manager_init()
 	po->posnX = 80;
 //	po->posnX = 168;
 	//po->posnY = 112;
-	po->posnY = 144;
+	po->posnY = 160;
 	//po->posnY = 132;
 	//po->frame = 4;
 	//po->frame = 0;

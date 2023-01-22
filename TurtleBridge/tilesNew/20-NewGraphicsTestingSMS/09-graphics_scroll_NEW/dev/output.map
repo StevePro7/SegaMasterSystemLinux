@@ -42,8 +42,8 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000010  l__CABS4                        
      00000011  l__CABS2                        
      0000002D  l__CABS3                        
-     00000053  l__INITIALIZED                  
-     00000053  l__INITIALIZER                  
+     00000051  l__INITIALIZED                  
+     00000051  l__INITIALIZER                  
      000000BE  G$VDPDataPort$0_0$0                asm_manager
      000000BF  G$VDPControlPort$0_0$0             asm_manager
      0000012A  l__HEADER5                      
@@ -56,7 +56,7 @@ Area                                    Addr        Size        Decimal Bytes (A
      0000344E  l__BANK2                        
      00003638  s__HOME                         
      00003638  s__INITIALIZER                  
-     0000368B  s__GSINIT                       
+     00003689  s__GSINIT                       
 ASxxxx Linker V03.00 + NoICE + sdld,  page 2.
 Hexadecimal  [32-Bits]
 
@@ -66,7 +66,7 @@ Area                                    Addr        Size        Decimal Bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     0000369A  s__GSFINAL                      
+     00003698  s__GSFINAL                      
      0000397A  l__BANK4                        
      00008000  G$SMS_SRAM$0_0$0                   _sms_manager
      00008000  _SMS_SRAM                          SMSlib_autotext
@@ -78,9 +78,9 @@ Area                                    Addr        Size        Decimal Bytes (A
      00008000  s__BANK7                        
      0000C000  s__DATA                         
      0000C1EE  s__INITIALIZED                  
-     0000C241  s__BSEG                         
-     0000C241  s__BSS                          
-     0000C241  s__HEAP                         
+     0000C23F  s__BSEG                         
+     0000C23F  s__BSS                          
+     0000C23F  s__HEAP                         
      0000FFFC  G$SRAM_bank_to_be_mapped_on_slot   _sms_manager
      0000FFFC  _SRAM_bank_to_be_mapped_on_slot2   SMSlib_autotext
      0000FFFF  G$ROM_bank_to_be_mapped_on_slot2   _sms_manager
@@ -6769,7 +6769,7 @@ _CODE                               00000200    00003438 =       13368. bytes (R
      000023DA  XG$screen_ready_screen_load$0$0    ready_screen
      000023DD  A$ready_screen$91                  ready_screen
      000023DD  C$ready_screen.c$23$1_0$96         ready_screen
-     000023DD  C$ready_screen.c$26$1_0$96         ready_screen
+     000023DD  C$ready_screen.c$27$1_0$96         ready_screen
      000023DD  G$screen_ready_screen_update$0$0   ready_screen
      000023DD  _screen_ready_screen_update        ready_screen
      000023DF  A$ready_screen$92                  ready_screen
@@ -7641,7 +7641,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_INITIALIZER                        00003638    00000053 =          83. bytes (REL,CON)
+_INITIALIZER                        00003638    00000051 =          81. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -7649,25 +7649,25 @@ _INITIALIZER                        00003638    00000053 =          83. bytes (R
      0000363C  Finput_manager$__xinit_curr_joyp   input_manager
      0000363E  Finput_manager$__xinit_prev_joyp   input_manager
      00003640  Fplayer_manager$__xinit_physics_   player_manager
-     00003664  Finit_screen$__xinit_collision_a   init_screen
+     00003662  Finit_screen$__xinit_collision_a   init_screen
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 135.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSINIT                             0000368B    0000000F =          15. bytes (REL,CON)
+_GSINIT                             00003689    0000000F =          15. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     0000368B  gsinit                             crt0
+     00003689  gsinit                             crt0
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 136.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSFINAL                            0000369A    00000001 =           1. bytes (REL,CON)
+_GSFINAL                            00003698    00000001 =           1. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -7772,7 +7772,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_INITIALIZED                        0000C1EE    00000053 =          83. bytes (REL,CON)
+_INITIALIZED                        0000C1EE    00000051 =          81. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -7781,13 +7781,13 @@ _INITIALIZED                        0000C1EE    00000053 =          83. bytes (R
      0000C1F2  Finput_manager$curr_joypad1$0_0$   input_manager
      0000C1F4  Finput_manager$prev_joypad1$0_0$   input_manager
      0000C1F6  Fplayer_manager$physics_array$0_   player_manager
-     0000C21A  Finit_screen$collision_array$0_0   init_screen
-     0000C23A  _VDPReg                            SMSlib
-     0000C23C  _spritesHeight                     SMSlib
-     0000C23D  _spritesWidth                      SMSlib
-     0000C23E  _spritesTileOffset                 SMSlib
-     0000C23F  _clipWin_x1                        SMSlib_spriteClip
-     0000C240  _clipWin_y1                        SMSlib_spriteClip
+     0000C218  Finit_screen$collision_array$0_0   init_screen
+     0000C238  _VDPReg                            SMSlib
+     0000C23A  _spritesHeight                     SMSlib
+     0000C23B  _spritesWidth                      SMSlib
+     0000C23C  _spritesTileOffset                 SMSlib
+     0000C23D  _clipWin_x1                        SMSlib_spriteClip
+     0000C23E  _clipWin_y1                        SMSlib_spriteClip
 ASxxxx Linker V03.00 + NoICE + sdld,  page 140.
 Hexadecimal  [32-Bits]
 

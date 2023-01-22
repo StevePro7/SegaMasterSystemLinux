@@ -23,8 +23,8 @@ void screen_ready_screen_load()
 void screen_ready_screen_update( unsigned char *screen_type )
 {
 	unsigned char input;
-	input = engine_input_manager_hold( input_type_fire1 );
-	//input = engine_input_manager_move( input_type_fire1 );
+	//input = engine_input_manager_hold( input_type_fire1 );
+	input = engine_input_manager_move( input_type_fire1 );
 	if( input )
 	{
 		engine_player_manager_update();
