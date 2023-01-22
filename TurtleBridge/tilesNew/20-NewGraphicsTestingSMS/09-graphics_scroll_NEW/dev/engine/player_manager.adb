@@ -5,11 +5,10 @@ F:G$engine_player_manager_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lplayer_manager.engine_player_manager_load$po$1_0$8({2}DG,STtag_struct_player_object:S),R,0,0,[]
 F:G$engine_player_manager_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lplayer_manager.engine_player_manager_update$level_platform$1_0$9({1}SC:U),R,0,0,[]
-S:Lplayer_manager.engine_player_manager_update$tempY$1_0$9({1}SC:U),R,0,0,[c]
+S:Lplayer_manager.engine_player_manager_update$tempY$1_0$9({1}SC:U),R,0,0,[e]
 S:Lplayer_manager.engine_player_manager_update$tileY$1_0$9({1}SC:U),R,0,0,[a]
-S:Lplayer_manager.engine_player_manager_update$deltaY$1_0$9({1}SC:S),B,1,-1
+S:Lplayer_manager.engine_player_manager_update$deltaY$1_0$9({1}SC:S),R,0,0,[c]
 S:Lplayer_manager.engine_player_manager_update$po$1_0$9({2}DG,STtag_struct_player_object:S),R,0,0,[]
-S:Lplayer_manager.engine_player_manager_update$sloc0$0_1$0({1}SC:S),B,1,-1
 F:G$engine_player_manager_left$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lplayer_manager.engine_player_manager_left$po$1_0$16({2}DG,STtag_struct_player_object:S),R,0,0,[c,b]
 F:G$engine_player_manager_right$0_0$0({2}DF,SV:S),Z,0,0,0,0,0

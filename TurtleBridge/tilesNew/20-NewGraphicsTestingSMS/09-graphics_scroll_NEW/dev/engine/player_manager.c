@@ -8,7 +8,7 @@ struct_player_object global_player_object;
 
 static void updatePlayer();
 
-static signed char physics_array[] = { -1,-1,-1,-1,-1,-1,-1,-1,-1, -1, -1, -1, -1, -1, -1, -1, -1, -1,-1,-1,-1,-1,-1,-1,-1,-1,-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 0,0,0,0,0,0,0,0,1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, };
+static signed char physics_array[] = { 0,-1,-1,-1,-1,-1,-1,-1,-1, -1, -1, -1, -1, -1, -1, -1, -1, -1,-1,-1,-1,-1,-1,-1,-1,-1,-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 0,0,0,0,0,0,0,0,1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, };
 //static signed char physics_array[] = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, };
 
 void engine_player_manager_init()
@@ -16,8 +16,8 @@ void engine_player_manager_init()
 	struct_player_object *po = &global_player_object;
 	po->posnX = 80;
 //	po->posnX = 168;
-	//po->posnY = 112;
-	po->posnY = 160;
+	po->posnY = 112;
+	//po->posnY = 128;
 	//po->posnY = 132;
 	//po->frame = 4;
 	//po->frame = 0;
@@ -87,7 +87,7 @@ void engine_player_manager_update()
 		else
 		{
 			po->posnY = tempY;
-			po->player_index++;
+			//po->player_index++;
 			updatePlayer();
 
 			//engine_font_manager_data( po->posnY, 30, 2 );
@@ -106,7 +106,7 @@ void engine_player_manager_update()
 		//engine_font_manager_data( tileY, 30, 5 );
 		
 		po->posnY = tempY;
-		po->player_index++;
+		//po->player_index++;
 		updatePlayer();
 
 		//engine_font_manager_data( po->posnY, 30, 2 );
@@ -124,7 +124,7 @@ void engine_player_manager_update()
 		//engine_font_manager_data( tileY, 30, 5 );
 
 		po->posnY = tempY;				// NOP
-		po->player_index++;
+		//po->player_index++;
 		updatePlayer();					// NOP
 
 		//engine_font_manager_data( po->posnY, 30, 2 );

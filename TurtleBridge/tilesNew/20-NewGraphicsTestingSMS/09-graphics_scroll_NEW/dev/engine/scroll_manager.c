@@ -218,6 +218,7 @@ static bool para_scroll_update( unsigned char delta )
 	so->scroll_x[ 2 ] -= delta;
 	so->scroll_x[ 3 ] -= delta;
 	so->scroll_x[ 4 ] -= delta;
+	so->scroll_x[ 5 ] -= 0;
 	so->lineCnt = 0;
 
 	//temp = so->scroll_x[ 0 ];
