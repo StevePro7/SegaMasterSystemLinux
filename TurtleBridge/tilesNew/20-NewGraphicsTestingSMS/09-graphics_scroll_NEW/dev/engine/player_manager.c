@@ -9,7 +9,7 @@ struct_player_object global_player_object;
 static void updatePlayer();
 
 //static signed char physics_array[] = { -1, -1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, };
-static signed char physics_array[] = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, };
+//static signed char physics_array[] = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, };
 
 void engine_player_manager_init()
 {
@@ -24,15 +24,15 @@ void engine_player_manager_init()
 	//po->player_state = player_state_isonground;
 	po->player_state = player_state_isintheair;
 	po->player_index = 0;
-	engine_font_manager_data( po->posnY, 30, 1 );
 	updatePlayer();
 }
 
 void engine_player_manager_load()
 {
 	struct_player_object *po = &global_player_object;
-	engine_font_manager_data( po->posnY, 30, 1 );
 	engine_font_manager_data( po->posnY, 30, 2 );
+	//engine_font_manager_data( po->posnY, 30, 2 );
+	engine_font_manager_data( po->tileY, 30, 4 );
 }
 
 void engine_player_manager_update()
@@ -55,8 +55,19 @@ void engine_player_manager_update()
 	if( deltaY > 0 )
 	{
 		engine_font_manager_text( "PLAYER DOWN", 5, 0 );
-		
+		engine_font_manager_data( po->posnY, 30, 1 );
+
+		tempY = po->posnY + deltaY;
+		tileY = tempY >> 3;
+
+		engine_font_manager_data( tempY, 30, 4 );
+		engine_font_manager_data( tileY, 30, 5 );
+
+		po->posnY = tempY;
 		po->player_index++;
+		updatePlayer();
+
+		engine_font_manager_data( po->posnY, 30, 2 );
 		return;
 	}
 	else if( deltaY < 0 )
@@ -74,13 +85,25 @@ void engine_player_manager_update()
 		po->player_index++;
 		updatePlayer();
 
-		engine_font_manager_data( po->posnY, 30, 0 );
+		engine_font_manager_data( po->posnY, 30, 2 );
 		return;
 	}
 	else
 	{
 		engine_font_manager_text( "PLAYER APEX", 5, 0 );
+		engine_font_manager_data( po->posnY, 30, 1 );
+
+		tempY = po->posnY + deltaY;		// NOP
+		tileY = tempY >> 3;				// NOP
+
+		engine_font_manager_data( tempY, 30, 4 );
+		engine_font_manager_data( tileY, 30, 5 );
+
+		po->posnY = tempY;				// NOP
 		po->player_index++;
+		updatePlayer();					// NOP
+
+		engine_font_manager_data( po->posnY, 30, 2 );
 		return;
 	}
 	
