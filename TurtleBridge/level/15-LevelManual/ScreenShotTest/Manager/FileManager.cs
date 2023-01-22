@@ -224,8 +224,16 @@ namespace ScreenShotTest
 				data.Add(tile);
 			}
 			var lines = data.ToArray();
-			var csv = String.Join(",", lines);
-			File.WriteAllText(path + "/level.csv", csv);
+			data.Clear();
+			for (int idx = 0; idx < cols; idx += 8)
+			{
+				var line = String.Join(",", lines, idx, 8);
+				data.Add(line);
+			}
+
+			lines = data.ToArray();
+			File.WriteAllLines(path + "/level.csv", lines);
+			//File.WriteAllText(path + "/level.csv", csv);
 
 			data.Clear();
 			var numTiles = tiles.Length;
