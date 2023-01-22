@@ -39,6 +39,15 @@ typedef enum tag_enum_input_type
 
 } enum_input_type;
 
+typedef enum tag_enum_player_state
+{
+	player_state_isonground = 0,
+	player_state_isintheair = 1,
+	player_state_isnowdying = 2,
+	player_state_iskilldaed = 3,
+
+} enum_player_state;
+
 typedef enum tag_enum_tile_type
 {
 	tile_type_waves_block = 0,
@@ -57,7 +66,6 @@ typedef enum tag_enum_tile_type
 	tile_type_turtle_fly2 = 13,
 	tile_type_turtle_fly3 = 14,
 	tile_type_turtle_fly4 = 15,
-
 
 } enum_tile_type;
 

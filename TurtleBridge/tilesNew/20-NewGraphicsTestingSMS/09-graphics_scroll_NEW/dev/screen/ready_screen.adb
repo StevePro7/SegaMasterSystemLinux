@@ -2,12 +2,14 @@ M:ready_screen
 F:G$screen_ready_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_ready_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lready_screen.screen_ready_screen_update$screen_type$1_0$95({2}DG,SC:U),B,1,4
-S:Lready_screen.screen_ready_screen_update$input$1_0$96({2}SI:U),R,0,0,[l,h]
-T:Fready_screen$tag_struct_player_object[({0}S:S$posnX$0_0$0({1}SC:U),Z,0,0)({1}S:S$posnY$0_0$0({1}SC:U),Z,0,0)({2}S:S$drawX$0_0$0({1}SC:U),Z,0,0)({3}S:S$drawY$0_0$0({1}SC:U),Z,0,0)({4}S:S$tileX$0_0$0({1}SC:U),Z,0,0)({5}S:S$tileY$0_0$0({1}SC:U),Z,0,0)]
+S:Lready_screen.screen_ready_screen_update$input$1_0$96({1}SC:U),R,0,0,[a]
+F:Fready_screen$drawScreen$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lready_screen.drawScreen$tile$1_0$98({2}SI:U),R,0,0,[]
+T:Fready_screen$tag_struct_player_object[({0}S:S$posnX$0_0$0({1}SC:U),Z,0,0)({1}S:S$posnY$0_0$0({1}SC:U),Z,0,0)({2}S:S$drawX$0_0$0({1}SC:U),Z,0,0)({3}S:S$drawY$0_0$0({1}SC:U),Z,0,0)({4}S:S$tileX$0_0$0({1}SC:U),Z,0,0)({5}S:S$tileY$0_0$0({1}SC:U),Z,0,0)({6}S:S$player_state$0_0$0({1}SC:U),Z,0,0)]
 T:Fready_screen$tag_struct_tile_object[({0}S:S$tilemap_index$0_0$0({2}SI:U),Z,0,0)({2}S:S$tile_wide$0_0$0({1}SC:U),Z,0,0)({3}S:S$tile_platform$0_0$0({1}SC:U),Z,0,0)]
 T:Fready_screen$tag_struct_level_object[({0}S:S$level_cols_offset$0_0$0({2}SI:U),Z,0,0)({2}S:S$level_draw_offset$0_0$0({1}SC:U),Z,0,0)]
 S:G$global_level_object$0_0$0({3}STtag_struct_level_object:S),E,0,0
-S:G$global_player_object$0_0$0({6}STtag_struct_player_object:S),E,0,0
+S:G$global_player_object$0_0$0({7}STtag_struct_player_object:S),E,0,0
 S:G$global_tile_object$0_0$0({4}STtag_struct_tile_object:S),E,0,0
 S:G$global_tile_objects$0_0$0({64}DA16d,STtag_struct_tile_object:S),E,0,0
 S:G$engine_asm_manager_clear_VRAM$0_0$0({2}DF,SV:S),C,0,0
@@ -27,6 +29,7 @@ S:G$engine_level_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_level_manager_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_level_manager_draw$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_init$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_player_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_left$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_right$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_up$0_0$0({2}DF,SV:S),C,0,0

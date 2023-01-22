@@ -1,4 +1,6 @@
 #include "player_manager.h"
+#include "enum_manager.h"
+#include "font_manager.h"
 #include "sprite_manager.h"
 
 // Global variable.
@@ -6,14 +8,25 @@ struct_player_object global_player_object;
 
 static void updatePlayer();
 
+static signed char physics_array[] = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, };
+
 void engine_player_manager_init()
 {
 	struct_player_object *po = &global_player_object;
-	po->posnX = 72;
-	po->posnY = 112;
+	po->posnX = 80;
+//	po->posnX = 168;
+	//po->posnY = 112;
+	po->posnY = 144;
 	//po->frame = 4;
 	//po->frame = 0;
+	po->player_state = player_state_isonground;
 	updatePlayer();
+}
+
+void engine_player_manager_update()
+{
+	struct_player_object *po = &global_player_object;
+	engine_font_manager_data( po->player_state, 10, 10 );
 }
 
 void engine_player_manager_left()
