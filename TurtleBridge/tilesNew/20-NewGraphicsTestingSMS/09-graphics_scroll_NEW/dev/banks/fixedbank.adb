@@ -6,5 +6,5 @@ S:G$music_object_bank$0_0$0({2}DA2d,SC:U),D,0,0
 S:G$tiles_object_indexes$0_0$0({32}DA16d,SI:U),D,0,0
 S:G$tiles_object_widths$0_0$0({16}DA16d,SC:U),D,0,0
 S:G$tiles_object_platform$0_0$0({16}DA16d,SC:U),D,0,0
-S:G$level_planesA$0_0$0({1152}DA1152d,SC:U),D,0,0
-S:G$level_columnA$0_0$0({1152}DA1152d,SC:U),D,0,0
+S:G$level_planesA$0_0$0({384}DA384d,SC:U),D,0,0
+S:G$level_columnA$0_0$0({384}DA384d,SC:U),D,0,0

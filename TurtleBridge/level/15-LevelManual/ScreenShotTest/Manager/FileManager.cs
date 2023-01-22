@@ -246,6 +246,7 @@ namespace ScreenShotTest
 
 		private void DumpData(List<string> text1, List<string> text2, string path)
 		{
+			var file = new List<string>();
 			var file1 = new List<string>();
 			var file2 = new List<string>();
 			const int wide = 16;
@@ -300,8 +301,12 @@ namespace ScreenShotTest
 			file1.Add("};");
 			file2.Add("};");
 
-			File.WriteAllLines(path + "/level_planesA.c", file1.ToArray());
-			File.WriteAllLines(path + "/level_columnA.c", file2.ToArray());
+			file.AddRange(file1);
+			file.Add(String.Empty);
+			file.AddRange(file2);
+			File.WriteAllLines(path + "/fixed_bank.c", file.ToArray());
+			//File.WriteAllLines(path + "/level_planesA.c", file1.ToArray());
+			//File.WriteAllLines(path + "/level_columnA.c", file2.ToArray());
 		}
 
 		public int[] Tiles { get; private set; }
