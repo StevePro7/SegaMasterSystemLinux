@@ -31,7 +31,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 	unsigned char value;
 	bool newTile;
 
-	delta = 4;
+	delta = 8;
 	value = 0;
 	newTile = false;
 	//input = engine_input_manager_hold( input_type_right);
@@ -53,7 +53,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 	input = engine_input_manager_move( input_type_right );
 	if( input )
 	{
-		delta = 4;
+		delta = 6;
 	}
 	//input = engine_input_manager_move( input_type_left );
 	//if( input )

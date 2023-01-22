@@ -8,7 +8,7 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 
 :: Compile
 cd banks
-"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c --no-std-crt0 -mz80 --Werror --opt-code-size --constseg BANK7 fixedbank.c
+::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c --no-std-crt0 -mz80 --Werror --opt-code-size --constseg BANK7 fixedbank.c
 cd ..
 
 cd devkit
@@ -143,5 +143,5 @@ if exist "*.lst" del "*.lst" > nul
 if exist "*.sym" del "*.sym" > nul
 
 :: Run
-java -jar C:/SEGA/Emulicious/Emulicious.jar output.sms
-::C:/SEGA/Fusion/Fusion.exe output.sms
+::java -jar C:/SEGA/Emulicious/Emulicious.jar output.sms
+C:/SEGA/Fusion/Fusion.exe output.sms
