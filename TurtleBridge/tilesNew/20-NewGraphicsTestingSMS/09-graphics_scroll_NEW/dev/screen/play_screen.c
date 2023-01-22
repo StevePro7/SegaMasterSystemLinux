@@ -20,7 +20,7 @@ void screen_play_screen_load()
 	drawScreen();
 	engine_level_manager_load();
 	engine_scroll_manager_load();
-	engine_music_manager_play( 0 );
+	engine_music_manager_play( 1 );
 }
 
 void screen_play_screen_update( unsigned char *screen_type )
@@ -31,7 +31,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 	unsigned char value;
 	bool newTile;
 
-	delta = 8;
+	delta = 4;
 	value = 0;
 	newTile = false;
 	//input = engine_input_manager_hold( input_type_right);
@@ -119,6 +119,11 @@ static void drawScreen()
 
 	engine_graphics_manager_sea();
 	engine_tile_manager_stevepro( TILE_PLAY_TITLE, 4, 0, 24, 3 );
+	//engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 2, 0, 8, 3 );
+	//engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 10, 1, 8, 3 );
+	//engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 18, 1, 8, 3 );
+	//engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 26, 0, 8, 3 );
+
 	engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 2, 5, 8, 3 );
 	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 10, 4, 8, 3 );
 	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 18, 4, 8, 3 );

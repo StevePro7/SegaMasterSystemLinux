@@ -14,7 +14,7 @@ static signed char physics_array[] = { 0,-1,-1,-1,-1,-1,-1,-1,-1, -1, -1, -1, -1
 void engine_player_manager_init()
 {
 	struct_player_object *po = &global_player_object;
-	po->posnX = 80;
+	po->posnX = 48;
 //	po->posnX = 168;
 	po->posnY = 128;
 	//po->posnY = 128;

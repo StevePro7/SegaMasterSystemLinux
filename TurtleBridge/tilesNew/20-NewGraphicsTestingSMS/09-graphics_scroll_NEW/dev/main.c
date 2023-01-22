@@ -47,7 +47,7 @@ void main( void )
 		//devkit_SMS_copySpritestoSAT();
 		devkit_UNSAFE_SMS_copySpritestoSAT();
 
-		//engine_audio_manager_update();
+		engine_audio_manager_update();
 	}
 }
 
