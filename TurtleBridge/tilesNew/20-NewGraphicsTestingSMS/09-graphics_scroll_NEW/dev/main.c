@@ -14,7 +14,7 @@ void main( void )
 		if( input )
 		{
 			devkit_PSGStop();
-			//start();
+			start();
 		}
 		engine_screen_manager_update();
 

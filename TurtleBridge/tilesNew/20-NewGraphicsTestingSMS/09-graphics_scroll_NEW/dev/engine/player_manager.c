@@ -8,6 +8,7 @@ struct_player_object global_player_object;
 
 static void updatePlayer();
 
+//static signed char physics_array[] = { -1, -1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, };
 static signed char physics_array[] = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, };
 
 void engine_player_manager_init()
@@ -16,17 +17,74 @@ void engine_player_manager_init()
 	po->posnX = 80;
 //	po->posnX = 168;
 	//po->posnY = 112;
-	po->posnY = 144;
+	//po->posnY = 144;
+	po->posnY = 136;
 	//po->frame = 4;
 	//po->frame = 0;
-	po->player_state = player_state_isonground;
+	//po->player_state = player_state_isonground;
+	po->player_state = player_state_isintheair;
+	po->player_index = 0;
+	engine_font_manager_data( po->posnY, 30, 1 );
 	updatePlayer();
+}
+
+void engine_player_manager_load()
+{
+	struct_player_object *po = &global_player_object;
+	engine_font_manager_data( po->posnY, 30, 1 );
+	engine_font_manager_data( po->posnY, 30, 2 );
 }
 
 void engine_player_manager_update()
 {
+	// TODO inject via level manager!
+	const unsigned char level_platform = 18;
+	unsigned char tempY, tileY;
+	signed char deltaY = 0;
+
 	struct_player_object *po = &global_player_object;
-	engine_font_manager_data( po->player_state, 10, 10 );
+	if( player_state_isonground == po->player_state )
+	{
+		return;
+	}
+
+	deltaY = physics_array[ po->player_index ];
+	engine_font_manager_data( po->player_index, 20, 0 );
+	engine_font_manager_data( deltaY, 30, 0 );
+
+	if( deltaY > 0 )
+	{
+		engine_font_manager_text( "PLAYER DOWN", 5, 0 );
+		
+		po->player_index++;
+		return;
+	}
+	else if( deltaY < 0 )
+	{
+		engine_font_manager_text( "PLAYER -UP-", 5, 0 );
+		engine_font_manager_data( po->posnY, 30, 1 );
+
+		tempY = po->posnY + deltaY;
+		tileY = tempY >> 3;
+
+		engine_font_manager_data( tempY, 30, 4 );
+		engine_font_manager_data( tileY, 30, 5 );
+		
+		po->posnY = tempY;
+		po->player_index++;
+		updatePlayer();
+
+		engine_font_manager_data( po->posnY, 30, 0 );
+		return;
+	}
+	else
+	{
+		engine_font_manager_text( "PLAYER APEX", 5, 0 );
+		po->player_index++;
+		return;
+	}
+	
+	//engine_font_manager_data( po->player_state, 10, 10 );
 }
 
 void engine_player_manager_left()
