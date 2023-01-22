@@ -1,56 +1,56 @@
 ;!FILE player_manager.asm
 XL3
-H 9 areas 230 global symbols
+H 9 areas 23D global symbols
 M player_manager
 O -mz80
 S _engine_font_manager_text Ref000000
 S _engine_sprite_manager_draw Ref000000
 S _engine_font_manager_data Ref000000
 S .__.ABS. Def000000
-A _CODE size 2DB flags 0 addr 0
-S C$player_manager.c$94$3_0$15 Def000162
-S C$player_manager.c$79$3_0$14 Def000123
+A _CODE size 2ED flags 0 addr 0
+S C$player_manager.c$86$3_0$14 Def000145
+S C$player_manager.c$95$3_0$15 Def000162
+S C$player_manager.c$87$3_0$14 Def000157
+S C$player_manager.c$96$3_0$15 Def000174
 S G$engine_player_manager_init$0$0 Def000000
-S XG$engine_player_manager_right$0$0 Def00028C
-S C$player_manager.c$89$3_0$15 Def000146
-S C$player_manager.c$99$2_0$16 Def000167
-S C$player_manager.c$21$1_0$7 Def000005
-S _engine_player_manager_left Def00027D
-S G$engine_player_manager_down$0$0 Def000298
+S XG$engine_player_manager_right$0$0 Def00029E
+S C$player_manager.c$30$1_0$7 Def000014
+S _engine_player_manager_left Def00028F
+S G$engine_player_manager_down$0$0 Def0002AA
 S XG$engine_player_manager_load$0$0 Def00005E
-S C$player_manager.c$14$0_0$7 Def000000
-S C$player_manager.c$31$1_0$8 Def000017
-S _engine_player_manager_draw Def0002C7
-S Fplayer_manager$updatePlayer$0$0 Def0002A1
-S C$player_manager.c$42$1_0$8 Def00004F
-S C$player_manager.c$40$2_0$9 Def000041
-S C$player_manager.c$33$1_0$8 Def000017
-S C$player_manager.c$25$1_0$7 Def00000A
-S C$player_manager.c$16$1_0$7 Def000000
+S C$player_manager.c$22$1_0$7 Def000005
+S C$player_manager.c$15$0_0$7 Def000000
+S C$player_manager.c$32$1_0$8 Def000017
+S _engine_player_manager_draw Def0002D9
+S Fplayer_manager$updatePlayer$0$0 Def0002B3
+S C$player_manager.c$43$1_0$8 Def00004F
+S C$player_manager.c$41$2_0$9 Def000041
 S C$player_manager.c$34$1_0$8 Def000017
+S C$player_manager.c$26$1_0$7 Def00000A
 S C$player_manager.c$17$1_0$7 Def000000
-S XG$engine_player_manager_up$0$0 Def000295
-S C$player_manager.c$27$1_0$7 Def00000F
-S C$player_manager.c$36$1_0$8 Def000029
-S C$player_manager.c$28$1_0$7 Def000014
-S C$player_manager.c$46$1_0$8 Def00005E
+S XG$engine_player_manager_up$0$0 Def0002A7
+S C$player_manager.c$35$1_0$8 Def000017
+S C$player_manager.c$18$1_0$7 Def000000
+S C$player_manager.c$28$1_0$7 Def00000F
+S C$player_manager.c$37$1_0$8 Def000029
 S C$player_manager.c$29$1_0$7 Def000014
 S Fplayer_manager$__str_0$0_0$0 Def00005F
-S C$player_manager.c$38$1_0$8 Def00003B
+S C$player_manager.c$47$1_0$8 Def00005E
 S _engine_player_manager_init Def000000
 S Fplayer_manager$__str_1$0_0$0 Def000071
-S Fplayer_manager$__str_2$0_0$0 Def000247
-S XG$engine_player_manager_left$0$0 Def000283
-S Fplayer_manager$__str_3$0_0$0 Def000259
+S C$player_manager.c$39$1_0$8 Def00003B
+S Fplayer_manager$__str_2$0_0$0 Def000259
+S XG$engine_player_manager_left$0$0 Def000295
+S Fplayer_manager$__str_3$0_0$0 Def00026B
 S G$engine_player_manager_update$0$0 Def000083
-S Fplayer_manager$__str_4$0_0$0 Def000265
-S _engine_player_manager_down Def000298
-S Fplayer_manager$__str_5$0_0$0 Def000271
-S XG$engine_player_manager_draw$0$0 Def0002DA
+S Fplayer_manager$__str_4$0_0$0 Def000277
+S _engine_player_manager_down Def0002AA
+S Fplayer_manager$__str_5$0_0$0 Def000283
+S XG$engine_player_manager_draw$0$0 Def0002EC
 S XG$engine_player_manager_init$0$0 Def000014
 S _engine_player_manager_update Def000083
-S XG$engine_player_manager_down$0$0 Def00029E
-S XFplayer_manager$updatePlayer$0$0 Def0002C6
+S XG$engine_player_manager_down$0$0 Def0002B0
+S XFplayer_manager$updatePlayer$0$0 Def0002D8
 S A$player_manager$210 Def000086
 S A$player_manager$120 Def00001C
 S A$player_manager$102 Def000014
@@ -58,21 +58,19 @@ S A$player_manager$310 Def0000ED
 S A$player_manager$220 Def000094
 S A$player_manager$211 Def000087
 S A$player_manager$121 Def00001D
-S C$player_manager.c$151$1_0$20 Def00028F
-S C$player_manager.c$100$2_0$16 Def000179
-S A$player_manager$500 Def0001A3
+S A$player_manager$410 Def000152
 S A$player_manager$401 Def000145
 S A$player_manager$311 Def0000EE
 S A$player_manager$230 Def000097
 S A$player_manager$221 Def000095
 S A$player_manager$140 Def000034
 S A$player_manager$122 Def00001E
-S C$player_manager.c$160$1_0$21 Def000298
-S C$player_manager.c$110$2_0$16 Def0001C1
-S A$player_manager$600 Def000205
-S A$player_manager$510 Def0001AC
-S A$player_manager$501 Def0001A4
-S A$player_manager$411 Def00014A
+S C$player_manager.c$110$2_0$16 Def0001CC
+S C$player_manager.c$101$2_0$16 Def000179
+S A$player_manager$600 Def00020A
+S A$player_manager$510 Def0001AE
+S A$player_manager$411 Def000155
+S A$player_manager$402 Def000148
 S A$player_manager$330 Def000100
 S A$player_manager$312 Def0000EF
 S A$player_manager$303 Def0000E2
@@ -80,17 +78,18 @@ S A$player_manager$231 Def00009A
 S A$player_manager$150 Def00003F
 S A$player_manager$141 Def000035
 S A$player_manager$123 Def000020
-S C$player_manager.c$161$1_0$21 Def00029E
-S C$player_manager.c$153$1_0$20 Def00028F
-S C$player_manager.c$135$1_0$11 Def000246
-S C$player_manager.c$102$2_0$16 Def00018F
-S A$player_manager$610 Def000211
-S A$player_manager$601 Def000207
-S A$player_manager$511 Def0001AD
-S A$player_manager$502 Def0001A7
-S A$player_manager$430 Def00015D
-S A$player_manager$421 Def000150
-S A$player_manager$412 Def00014B
+S C$player_manager.c$161$1_0$21 Def0002AA
+S C$player_manager.c$153$1_0$20 Def0002A1
+S C$player_manager.c$111$2_0$16 Def0001D0
+S C$player_manager.c$102$2_0$16 Def00018B
+S A$player_manager$610 Def000215
+S A$player_manager$601 Def00020D
+S A$player_manager$520 Def0001BC
+S A$player_manager$511 Def0001AF
+S A$player_manager$502 Def0001A6
+S A$player_manager$421 Def000158
+S A$player_manager$412 Def000156
+S A$player_manager$403 Def00014A
 S A$player_manager$340 Def00010B
 S A$player_manager$331 Def000102
 S A$player_manager$322 Def0000F8
@@ -103,20 +102,16 @@ S A$player_manager$142 Def000036
 S A$player_manager$133 Def000029
 S A$player_manager$124 Def000021
 S C$player_manager.c$170$1_0$22 Def0002BC
-S C$player_manager.c$162$1_0$21 Def00029E
-S C$player_manager.c$154$1_0$20 Def00028F
-S C$player_manager.c$120$2_0$17 Def0001FF
-S C$player_manager.c$112$2_0$16 Def0001C4
-S C$player_manager.c$103$2_0$16 Def000194
-S A$player_manager$701 Def00027D
-S A$player_manager$611 Def000212
-S A$player_manager$602 Def000209
-S A$player_manager$530 Def0001C0
-S A$player_manager$512 Def0001B0
-S A$player_manager$503 Def0001A8
-S A$player_manager$431 Def000160
-S A$player_manager$422 Def000153
-S A$player_manager$413 Def00014C
+S C$player_manager.c$162$1_0$21 Def0002AA
+S C$player_manager.c$120$2_0$17 Def0001FB
+S C$player_manager.c$112$2_0$16 Def0001D3
+S A$player_manager$602 Def00020E
+S A$player_manager$530 Def0001C5
+S A$player_manager$512 Def0001B2
+S A$player_manager$503 Def0001A7
+S A$player_manager$440 Def000169
+S A$player_manager$422 Def00015B
+S A$player_manager$404 Def00014B
 S A$player_manager$350 Def000114
 S A$player_manager$341 Def00010C
 S A$player_manager$323 Def0000FB
@@ -131,21 +126,24 @@ S A$player_manager$161 Def00004E
 S A$player_manager$143 Def000039
 S A$player_manager$134 Def00002C
 S A$player_manager$125 Def000022
-S C$player_manager.c$171$1_0$22 Def0002C6
-S C$player_manager.c$155$1_0$20 Def000295
-S C$player_manager.c$130$2_0$17 Def000234
-S C$player_manager.c$121$2_0$17 Def000204
-S C$player_manager.c$113$2_0$16 Def0001D6
-S A$player_manager$630 Def000228
-S A$player_manager$621 Def00021B
-S A$player_manager$612 Def000213
-S A$player_manager$540 Def0001C9
-S A$player_manager$513 Def0001B1
+S C$player_manager.c$171$1_0$22 Def0002C5
+S C$player_manager.c$163$1_0$21 Def0002B0
+S C$player_manager.c$155$1_0$20 Def0002A1
+S C$player_manager.c$137$1_0$11 Def000258
+S C$player_manager.c$130$2_0$17 Def000243
+S C$player_manager.c$104$2_0$16 Def0001A1
+S A$player_manager$900 Def0002E3
+S A$player_manager$810 Def0002AD
+S A$player_manager$720 Def000292
+S A$player_manager$630 Def00022A
+S A$player_manager$621 Def00021D
+S A$player_manager$603 Def00020F
+S A$player_manager$531 Def0001C8
+S A$player_manager$513 Def0001B3
 S A$player_manager$504 Def0001A9
-S A$player_manager$450 Def00016B
-S A$player_manager$441 Def000163
-S A$player_manager$432 Def000161
-S A$player_manager$423 Def000155
+S A$player_manager$441 Def00016B
+S A$player_manager$432 Def00015F
+S A$player_manager$405 Def00014C
 S A$player_manager$360 Def000122
 S A$player_manager$351 Def000115
 S A$player_manager$342 Def00010D
@@ -163,23 +161,26 @@ S A$player_manager$171 Def000051
 S A$player_manager$144 Def00003A
 S A$player_manager$135 Def00002E
 S A$player_manager$126 Def000023
-S C$player_manager.c$156$1_0$20 Def000295
-S C$player_manager.c$140$1_0$18 Def000280
-S XG$engine_player_manager_update$0$0 Def000246
-S C$player_manager.c$131$2_0$17 Def000246
-S C$player_manager.c$105$2_0$16 Def00019B
-S A$player_manager$640 Def00022E
-S A$player_manager$631 Def000229
-S A$player_manager$622 Def00021C
-S A$player_manager$613 Def000214
-S A$player_manager$541 Def0001CA
-S A$player_manager$523 Def0001BA
-S A$player_manager$514 Def0001B2
-S A$player_manager$505 Def0001AA
-S A$player_manager$451 Def00016D
-S A$player_manager$442 Def000165
-S A$player_manager$424 Def000156
-S A$player_manager$406 Def000146
+S C$player_manager.c$172$1_0$22 Def0002CE
+S C$player_manager.c$164$1_0$21 Def0002B0
+S C$player_manager.c$156$1_0$20 Def0002A1
+S XG$engine_player_manager_update$0$0 Def000258
+S C$player_manager.c$122$2_0$17 Def000211
+S C$player_manager.c$114$2_0$16 Def0001D6
+S C$player_manager.c$105$2_0$16 Def0001A6
+S A$player_manager$901 Def0002E4
+S A$player_manager$811 Def0002AE
+S A$player_manager$721 Def000293
+S A$player_manager$640 Def000233
+S A$player_manager$631 Def00022B
+S A$player_manager$622 Def00021E
+S A$player_manager$604 Def000210
+S A$player_manager$532 Def0001C9
+S A$player_manager$514 Def0001B4
+S A$player_manager$505 Def0001AB
+S A$player_manager$451 Def000174
+S A$player_manager$442 Def00016C
+S A$player_manager$406 Def00014E
 S A$player_manager$370 Def000128
 S A$player_manager$352 Def000116
 S A$player_manager$343 Def000110
@@ -197,24 +198,29 @@ S A$player_manager$154 Def000041
 S A$player_manager$136 Def00002F
 S A$player_manager$127 Def000024
 S A$player_manager$118 Def000017
-S C$player_manager.c$164$1_0$22 Def0002A1
-S C$player_manager.c$141$1_0$18 Def000283
-S C$player_manager.c$123$2_0$17 Def00020B
-S C$player_manager.c$106$2_0$16 Def0001AB
-S A$player_manager$821 Def0002A1
-S A$player_manager$731 Def000286
-S A$player_manager$650 Def000234
-S A$player_manager$641 Def00022F
-S A$player_manager$623 Def00021D
-S A$player_manager$614 Def000217
-S A$player_manager$560 Def0001D9
-S A$player_manager$542 Def0001CB
+S C$player_manager.c$173$1_0$22 Def0002D8
+S C$player_manager.c$157$1_0$20 Def0002A7
+S C$player_manager.c$141$1_0$18 Def00028F
+S C$player_manager.c$132$2_0$17 Def000246
+S C$player_manager.c$123$2_0$17 Def000216
+S C$player_manager.c$115$2_0$16 Def0001E8
+S A$player_manager$902 Def0002E5
+S A$player_manager$812 Def0002AF
+S A$player_manager$722 Def000294
+S A$player_manager$650 Def00023C
+S A$player_manager$641 Def000234
+S A$player_manager$632 Def00022C
+S A$player_manager$623 Def00021F
+S A$player_manager$614 Def000216
+S A$player_manager$560 Def0001E1
+S A$player_manager$533 Def0001CA
 S A$player_manager$524 Def0001BD
-S A$player_manager$515 Def0001B3
-S A$player_manager$470 Def000185
-S A$player_manager$452 Def00016E
-S A$player_manager$425 Def000157
-S A$player_manager$407 Def000149
+S A$player_manager$515 Def0001B5
+S A$player_manager$470 Def000187
+S A$player_manager$461 Def000179
+S A$player_manager$443 Def00016D
+S A$player_manager$416 Def000157
+S A$player_manager$407 Def00014F
 S A$player_manager$371 Def000129
 S A$player_manager$353 Def000119
 S A$player_manager$344 Def000111
@@ -234,29 +240,29 @@ S A$player_manager$155 Def000044
 S A$player_manager$137 Def000030
 S A$player_manager$128 Def000027
 S A$player_manager$119 Def00001A
-S C$player_manager.c$173$1_0$23 Def0002C7
-S C$player_manager.c$157$1_0$21 Def000298
-S C$player_manager.c$142$1_0$18 Def000283
-S C$player_manager.c$124$2_0$17 Def00021B
-S A$player_manager$840 Def0002B3
-S A$player_manager$831 Def0002AA
-S A$player_manager$705 Def000280
-S A$player_manager$660 Def000244
-S A$player_manager$651 Def000237
-S A$player_manager$642 Def000230
-S A$player_manager$624 Def000220
-S A$player_manager$615 Def000218
-S A$player_manager$606 Def00020B
-S A$player_manager$570 Def0001E8
-S A$player_manager$561 Def0001DA
-S A$player_manager$543 Def0001CD
-S A$player_manager$534 Def0001C1
+S C$player_manager.c$158$1_0$20 Def0002A7
+S C$player_manager.c$150$1_0$19 Def00029E
+S C$player_manager.c$142$1_0$18 Def000292
+S C$player_manager.c$133$2_0$17 Def000258
+S C$player_manager.c$107$2_0$16 Def0001AD
+S A$player_manager$903 Def0002E6
+S A$player_manager$840 Def0002B6
+S A$player_manager$750 Def00029B
+S A$player_manager$651 Def00023F
+S A$player_manager$642 Def000235
+S A$player_manager$624 Def000222
+S A$player_manager$615 Def000217
+S A$player_manager$561 Def0001E2
+S A$player_manager$543 Def0001D0
+S A$player_manager$534 Def0001CB
+S A$player_manager$525 Def0001BE
 S A$player_manager$516 Def0001B6
-S A$player_manager$471 Def000186
-S A$player_manager$462 Def000179
-S A$player_manager$453 Def000171
-S A$player_manager$426 Def000159
-S A$player_manager$417 Def00014D
+S A$player_manager$480 Def000190
+S A$player_manager$471 Def000188
+S A$player_manager$462 Def00017A
+S A$player_manager$444 Def00016E
+S A$player_manager$426 Def00015C
+S A$player_manager$408 Def000150
 S A$player_manager$372 Def00012A
 S A$player_manager$354 Def00011A
 S A$player_manager$345 Def000112
@@ -272,30 +278,37 @@ S A$player_manager$174 Def000058
 S A$player_manager$156 Def000045
 S A$player_manager$138 Def000032
 S A$player_manager$129 Def000028
-S C$player_manager.c$166$1_0$22 Def0002A1
-S G$engine_player_manager_right$0$0 Def000286
-S C$player_manager.c$108$2_0$16 Def0001BA
-S A$player_manager$850 Def0002BD
-S A$player_manager$841 Def0002B4
-S A$player_manager$832 Def0002AB
-S A$player_manager$706 Def000281
-S A$player_manager$661 Def000245
-S A$player_manager$652 Def000239
-S A$player_manager$625 Def000221
+S C$player_manager.c$166$1_0$22 Def0002B3
+S C$player_manager.c$151$1_0$19 Def00029E
+S G$engine_player_manager_right$0$0 Def000298
+S C$player_manager.c$143$1_0$18 Def000295
+S C$player_manager.c$125$2_0$17 Def00021D
+S C$player_manager.c$108$2_0$16 Def0001BD
+S A$player_manager$904 Def0002E7
+S A$player_manager$850 Def0002C0
+S A$player_manager$841 Def0002B7
+S A$player_manager$823 Def0002B0
+S A$player_manager$751 Def00029C
+S A$player_manager$733 Def000295
+S A$player_manager$670 Def00024F
+S A$player_manager$661 Def000243
+S A$player_manager$643 Def000238
+S A$player_manager$625 Def000223
 S A$player_manager$616 Def000219
-S A$player_manager$607 Def00020C
-S A$player_manager$580 Def0001F2
-S A$player_manager$562 Def0001DB
+S A$player_manager$580 Def0001F3
+S A$player_manager$562 Def0001E3
 S A$player_manager$553 Def0001D6
-S A$player_manager$544 Def0001CE
-S A$player_manager$517 Def0001B7
-S A$player_manager$490 Def000199
-S A$player_manager$481 Def00018F
-S A$player_manager$472 Def000187
-S A$player_manager$463 Def00017C
-S A$player_manager$454 Def000172
+S A$player_manager$544 Def0001D1
+S A$player_manager$526 Def0001BF
+S A$player_manager$517 Def0001B9
+S A$player_manager$490 Def00019E
+S A$player_manager$481 Def000192
+S A$player_manager$472 Def000189
+S A$player_manager$463 Def00017B
+S A$player_manager$445 Def00016F
 S A$player_manager$436 Def000162
-S A$player_manager$427 Def00015A
+S A$player_manager$427 Def00015D
+S A$player_manager$409 Def000151
 S A$player_manager$391 Def000138
 S A$player_manager$382 Def000133
 S A$player_manager$373 Def00012B
@@ -313,32 +326,37 @@ S A$player_manager$166 Def00004F
 S A$player_manager$157 Def000048
 S A$player_manager$148 Def00003B
 S A$player_manager$139 Def000033
-S C$player_manager.c$175$1_0$23 Def0002C7
-S C$player_manager.c$167$1_0$22 Def0002A4
-S C$player_manager.c$159$1_0$21 Def000298
-S C$player_manager.c$126$2_0$17 Def00022A
-S C$player_manager.c$117$2_0$17 Def0001D7
-S C$player_manager.c$109$2_0$16 Def0001BE
-S A$player_manager$851 Def0002BE
-S A$player_manager$842 Def0002B5
-S A$player_manager$833 Def0002AC
-S A$player_manager$707 Def000282
-S A$player_manager$653 Def00023A
-S A$player_manager$635 Def00022A
-S A$player_manager$626 Def000222
-S A$player_manager$617 Def00021A
-S A$player_manager$608 Def00020D
+S C$player_manager.c$175$1_0$23 Def0002D9
+S C$player_manager.c$159$1_0$21 Def0002AA
+S C$player_manager.c$144$1_0$18 Def000295
+S C$player_manager.c$126$2_0$17 Def00022D
+S A$player_manager$914 Def0002EC
+S A$player_manager$905 Def0002EA
+S A$player_manager$860 Def0002CB
+S A$player_manager$851 Def0002C2
+S A$player_manager$842 Def0002B9
+S A$player_manager$752 Def00029D
+S A$player_manager$716 Def00028F
+S A$player_manager$671 Def000250
+S A$player_manager$644 Def000239
+S A$player_manager$626 Def000224
+S A$player_manager$617 Def00021B
+S A$player_manager$608 Def000211
+S A$player_manager$590 Def0001FE
 S A$player_manager$581 Def0001F4
-S A$player_manager$563 Def0001DD
-S A$player_manager$545 Def0001CF
-S A$player_manager$518 Def0001B8
-S A$player_manager$509 Def0001AB
-S A$player_manager$482 Def000192
-S A$player_manager$473 Def000188
-S A$player_manager$464 Def00017D
-S A$player_manager$455 Def000175
-S A$player_manager$446 Def000167
-S A$player_manager$428 Def00015B
+S A$player_manager$563 Def0001E6
+S A$player_manager$554 Def0001D9
+S A$player_manager$545 Def0001D2
+S A$player_manager$527 Def0001C2
+S A$player_manager$518 Def0001BA
+S A$player_manager$509 Def0001AD
+S A$player_manager$491 Def00019F
+S A$player_manager$482 Def000193
+S A$player_manager$473 Def00018A
+S A$player_manager$464 Def00017C
+S A$player_manager$446 Def000172
+S A$player_manager$437 Def000165
+S A$player_manager$428 Def00015E
 S A$player_manager$392 Def00013B
 S A$player_manager$383 Def000134
 S A$player_manager$356 Def00011C
@@ -352,33 +370,29 @@ S A$player_manager$176 Def00005C
 S A$player_manager$167 Def000050
 S A$player_manager$158 Def000049
 S A$player_manager$149 Def00003E
-S C$player_manager.c$176$1_0$23 Def0002C7
-S C$player_manager.c$168$1_0$22 Def0002AA
-S C$player_manager.c$144$1_0$19 Def000286
-S C$player_manager.c$127$2_0$17 Def00022E
-S C$player_manager.c$118$2_0$17 Def0001E9
+S C$player_manager.c$168$1_0$22 Def0002B3
 S G$engine_player_manager_load$0$0 Def000017
-S A$player_manager$852 Def0002BF
-S A$player_manager$843 Def0002B6
-S A$player_manager$834 Def0002AD
-S A$player_manager$825 Def0002A4
-S A$player_manager$735 Def000289
-S A$player_manager$672 Def000246
-S A$player_manager$654 Def00023B
+S A$player_manager$906 Def0002EB
+S A$player_manager$870 Def0002D7
+S A$player_manager$780 Def0002A4
+S A$player_manager$672 Def000251
+S A$player_manager$645 Def00023A
 S A$player_manager$636 Def00022D
-S A$player_manager$627 Def000223
-S A$player_manager$609 Def000210
-S A$player_manager$582 Def0001F5
-S A$player_manager$564 Def0001DE
-S A$player_manager$546 Def0001D0
-S A$player_manager$528 Def0001BE
-S A$player_manager$519 Def0001B9
-S A$player_manager$483 Def000193
-S A$player_manager$474 Def00018B
-S A$player_manager$465 Def00017E
-S A$player_manager$456 Def000176
-S A$player_manager$447 Def000168
-S A$player_manager$429 Def00015C
+S A$player_manager$627 Def000225
+S A$player_manager$609 Def000214
+S A$player_manager$591 Def0001FF
+S A$player_manager$582 Def0001F7
+S A$player_manager$573 Def0001E9
+S A$player_manager$564 Def0001E7
+S A$player_manager$555 Def0001DB
+S A$player_manager$528 Def0001C3
+S A$player_manager$519 Def0001BB
+S A$player_manager$492 Def0001A0
+S A$player_manager$483 Def000194
+S A$player_manager$465 Def00017D
+S A$player_manager$456 Def000175
+S A$player_manager$447 Def000173
+S A$player_manager$438 Def000167
 S A$player_manager$393 Def00013C
 S A$player_manager$357 Def00011F
 S A$player_manager$339 Def00010A
@@ -388,60 +402,52 @@ S A$player_manager$258 Def0000B5
 S A$player_manager$249 Def0000AD
 S A$player_manager$177 Def00005D
 S A$player_manager$159 Def00004C
-S C$player_manager.c$177$1_0$23 Def0002DA
-S C$player_manager.c$169$1_0$22 Def0002B3
-S C$player_manager.c$137$1_0$18 Def00027D
-S C$player_manager.c$128$2_0$17 Def000231
-S A$player_manager$880 Def0002CA
-S A$player_manager$853 Def0002C0
-S A$player_manager$844 Def0002B7
-S A$player_manager$835 Def0002AE
-S A$player_manager$826 Def0002A5
-S A$player_manager$808 Def00029E
-S A$player_manager$736 Def00028A
-S A$player_manager$718 Def000283
-S A$player_manager$655 Def00023D
-S A$player_manager$646 Def000231
+S C$player_manager.c$177$1_0$23 Def0002D9
+S C$player_manager.c$169$1_0$22 Def0002B6
+S C$player_manager.c$128$2_0$17 Def00023C
+S C$player_manager.c$119$2_0$17 Def0001E9
+S A$player_manager$781 Def0002A5
+S A$player_manager$763 Def00029E
+S A$player_manager$673 Def000252
+S A$player_manager$655 Def000240
+S A$player_manager$646 Def00023B
+S A$player_manager$637 Def00022E
 S A$player_manager$628 Def000226
-S A$player_manager$583 Def0001F6
-S A$player_manager$574 Def0001E9
-S A$player_manager$565 Def0001E1
-S A$player_manager$547 Def0001D1
-S A$player_manager$538 Def0001C4
-S A$player_manager$529 Def0001BF
-S A$player_manager$475 Def00018C
-S A$player_manager$466 Def000180
+S A$player_manager$592 Def000200
+S A$player_manager$583 Def0001F8
+S A$player_manager$574 Def0001EA
+S A$player_manager$556 Def0001DC
+S A$player_manager$538 Def0001CC
+S A$player_manager$529 Def0001C4
+S A$player_manager$484 Def000196
+S A$player_manager$466 Def00017F
 S A$player_manager$457 Def000177
-S A$player_manager$448 Def000169
+S A$player_manager$439 Def000168
 S A$player_manager$394 Def00013F
 S A$player_manager$367 Def000123
 S A$player_manager$358 Def000120
 S A$player_manager$295 Def0000DB
 S A$player_manager$268 Def0000C2
 S A$player_manager$259 Def0000B6
-S C$player_manager.c$146$1_0$19 Def000286
-S A$player_manager$890 Def0002D8
-S A$player_manager$881 Def0002CB
-S A$player_manager$863 Def0002C6
-S A$player_manager$854 Def0002C2
-S A$player_manager$845 Def0002B9
-S A$player_manager$836 Def0002B0
-S A$player_manager$827 Def0002A7
-S A$player_manager$764 Def00028F
-S A$player_manager$737 Def00028B
-S A$player_manager$656 Def00023E
-S A$player_manager$629 Def000227
-S A$player_manager$593 Def0001FF
-S A$player_manager$584 Def0001F7
-S A$player_manager$575 Def0001EC
-S A$player_manager$566 Def0001E2
-S A$player_manager$548 Def0001D4
-S A$player_manager$539 Def0001C7
-S A$player_manager$494 Def00019B
-S A$player_manager$476 Def00018D
-S A$player_manager$467 Def000181
-S A$player_manager$458 Def000178
-S A$player_manager$449 Def00016A
+S C$player_manager.c$178$1_0$23 Def0002D9
+S C$player_manager.c$146$1_0$19 Def000298
+S C$player_manager.c$129$2_0$17 Def000240
+S A$player_manager$836 Def0002B3
+S A$player_manager$809 Def0002AA
+S A$player_manager$782 Def0002A6
+S A$player_manager$746 Def000298
+S A$player_manager$674 Def000253
+S A$player_manager$665 Def000246
+S A$player_manager$656 Def000241
+S A$player_manager$638 Def00022F
+S A$player_manager$629 Def000229
+S A$player_manager$593 Def000202
+S A$player_manager$584 Def0001F9
+S A$player_manager$575 Def0001EB
+S A$player_manager$557 Def0001DD
+S A$player_manager$539 Def0001CF
+S A$player_manager$485 Def000197
+S A$player_manager$467 Def000180
 S A$player_manager$395 Def000140
 S A$player_manager$377 Def00012E
 S A$player_manager$368 Def000124
@@ -450,22 +456,23 @@ S A$player_manager$296 Def0000DE
 S A$player_manager$287 Def0000D0
 S A$player_manager$278 Def0000C6
 S A$player_manager$269 Def0000C3
-S C$player_manager.c$147$1_0$19 Def000289
-S C$player_manager.c$139$1_0$18 Def00027D
-S A$player_manager$891 Def0002D9
-S A$player_manager$882 Def0002CE
+S C$player_manager.c$179$1_0$23 Def0002EC
+S C$player_manager.c$139$1_0$18 Def00028F
+S A$player_manager$864 Def0002CE
 S A$player_manager$855 Def0002C5
-S A$player_manager$765 Def000292
-S A$player_manager$657 Def00023F
-S A$player_manager$594 Def000202
-S A$player_manager$585 Def0001F8
-S A$player_manager$576 Def0001ED
-S A$player_manager$567 Def0001E5
-S A$player_manager$558 Def0001D7
-S A$player_manager$549 Def0001D5
-S A$player_manager$495 Def00019C
-S A$player_manager$477 Def00018E
-S A$player_manager$468 Def000182
+S A$player_manager$846 Def0002BC
+S A$player_manager$675 Def000256
+S A$player_manager$666 Def000249
+S A$player_manager$657 Def000242
+S A$player_manager$639 Def000232
+S A$player_manager$594 Def000203
+S A$player_manager$585 Def0001FA
+S A$player_manager$576 Def0001EC
+S A$player_manager$558 Def0001DF
+S A$player_manager$549 Def0001D3
+S A$player_manager$486 Def000198
+S A$player_manager$477 Def00018B
+S A$player_manager$468 Def000183
 S A$player_manager$396 Def000143
 S A$player_manager$387 Def000135
 S A$player_manager$378 Def000131
@@ -473,103 +480,109 @@ S A$player_manager$369 Def000126
 S A$player_manager$297 Def0000DF
 S A$player_manager$288 Def0000D1
 S A$player_manager$279 Def0000C7
-S C$player_manager.c$148$1_0$19 Def00028C
-S A$player_manager$883 Def0002CF
-S A$player_manager$766 Def000293
-S A$player_manager$748 Def00028C
-S A$player_manager$658 Def000240
-S A$player_manager$595 Def000203
-S A$player_manager$586 Def0001FB
-S A$player_manager$577 Def0001EE
-S A$player_manager$568 Def0001E6
-S A$player_manager$559 Def0001D8
-S A$player_manager$496 Def00019D
-S A$player_manager$487 Def000194
+S C$player_manager.c$148$1_0$19 Def000298
+S A$player_manager$865 Def0002CF
+S A$player_manager$856 Def0002C6
+S A$player_manager$847 Def0002BD
+S A$player_manager$793 Def0002A7
+S A$player_manager$676 Def000257
+S A$player_manager$667 Def00024B
+S A$player_manager$595 Def000204
+S A$player_manager$577 Def0001ED
+S A$player_manager$568 Def0001E8
+S A$player_manager$559 Def0001E0
+S A$player_manager$496 Def0001A1
+S A$player_manager$487 Def000199
+S A$player_manager$478 Def00018E
 S A$player_manager$469 Def000184
 S A$player_manager$397 Def000144
 S A$player_manager$298 Def0000E0
 S A$player_manager$289 Def0000D2
-S G$engine_player_manager_up$0$0 Def00028F
-S C$player_manager.c$149$1_0$19 Def00028C
-S A$player_manager$884 Def0002D0
-S A$player_manager$794 Def000298
-S A$player_manager$767 Def000294
-S A$player_manager$659 Def000241
-S A$player_manager$587 Def0001FC
-S A$player_manager$578 Def0001F0
-S A$player_manager$569 Def0001E7
-S A$player_manager$497 Def0001A0
-S A$player_manager$488 Def000195
+S G$engine_player_manager_up$0$0 Def0002A1
+S C$player_manager.c$149$1_0$19 Def00029B
+S A$player_manager$866 Def0002D0
+S A$player_manager$857 Def0002C7
+S A$player_manager$848 Def0002BE
+S A$player_manager$668 Def00024C
+S A$player_manager$596 Def000206
+S A$player_manager$578 Def0001EF
+S A$player_manager$497 Def0001A4
+S A$player_manager$488 Def00019A
+S A$player_manager$479 Def00018F
 S A$player_manager$299 Def0000E1
-S A$player_manager$885 Def0002D1
-S A$player_manager$849 Def0002BC
-S A$player_manager$795 Def00029B
-S A$player_manager$588 Def0001FD
-S A$player_manager$579 Def0001F1
-S A$player_manager$498 Def0001A1
-S A$player_manager$489 Def000197
-S C$player_manager.c$62$1_0$11 Def000097
-S C$player_manager.c$44$2_0$10 Def000051
-S A$player_manager$886 Def0002D2
-S A$player_manager$796 Def00029C
-S A$player_manager$778 Def000295
-S A$player_manager$589 Def0001FE
-S A$player_manager$499 Def0001A2
-S C$player_manager.c$63$1_0$11 Def0000A5
-S A$player_manager$887 Def0002D3
-S A$player_manager$797 Def00029D
-S A$player_manager$599 Def000204
-S C$player_manager.c$64$1_0$11 Def0000B5
-S C$player_manager.c$55$1_0$11 Def000083
-S A$player_manager$888 Def0002D4
-S A$player_manager$879 Def0002C7
+S C$player_manager.c$70$1_0$11 Def0000C6
+S A$player_manager$894 Def0002D9
+S A$player_manager$867 Def0002D1
+S A$player_manager$858 Def0002C8
+S A$player_manager$849 Def0002BF
+S A$player_manager$687 Def000258
+S A$player_manager$669 Def00024D
+S A$player_manager$597 Def000207
+S A$player_manager$579 Def0001F0
+S A$player_manager$498 Def0001A5
+S A$player_manager$489 Def00019D
+S C$player_manager.c$60$2_0$12 Def000096
+S A$player_manager$895 Def0002DC
+S A$player_manager$868 Def0002D2
+S A$player_manager$859 Def0002C9
+S A$player_manager$598 Def000208
+S A$player_manager$589 Def0001FB
+S C$player_manager.c$63$1_0$11 Def000097
+S C$player_manager.c$45$2_0$10 Def000051
+S A$player_manager$896 Def0002DD
+S A$player_manager$878 Def0002D8
+S A$player_manager$869 Def0002D4
+S A$player_manager$779 Def0002A1
+S A$player_manager$599 Def000209
+S C$player_manager.c$70$2_0$13 Def0000E2
+S C$player_manager.c$64$1_0$11 Def0000A5
+S A$player_manager$897 Def0002E0
 S A$player_manager$80 Def000005
-S C$player_manager.c$71$2_0$13 Def0000F8
+S C$player_manager.c$65$1_0$11 Def0000B5
 S C$player_manager.c$56$1_0$11 Def000083
-S _engine_player_manager_right Def000286
-S A$player_manager$889 Def0002D5
+S _engine_player_manager_right Def000298
+S A$player_manager$898 Def0002E1
 S A$player_manager$90 Def00000F
 S A$player_manager$81 Def000008
-S G$engine_player_manager_left$0$0 Def00027D
-S C$player_manager.c$72$2_0$13 Def0000FD
-S C$player_manager.c$66$1_0$11 Def0000C6
-S C$player_manager.c$48$1_0$11 Def000083
-S A$player_manager$899 Def0002DA
+S G$engine_player_manager_left$0$0 Def00028F
+S C$player_manager.c$72$2_0$13 Def0000F8
+S C$player_manager.c$57$1_0$11 Def000083
+S A$player_manager$899 Def0002E2
 S A$player_manager$91 Def000012
-S C$player_manager.c$80$3_0$14 Def00012E
+S C$player_manager.c$80$3_0$14 Def000123
+S C$player_manager.c$73$2_0$13 Def0000FD
+S C$player_manager.c$67$1_0$11 Def0000C6
+S C$player_manager.c$49$1_0$11 Def000083
 S _engine_player_manager_load Def000017
-S C$player_manager.c$81$3_0$14 Def000133
-S C$player_manager.c$74$2_0$13 Def000104
+S C$player_manager.c$81$3_0$14 Def00012E
 S A$player_manager$75 Def000000
-S G$engine_player_manager_draw$0$0 Def0002C7
-S C$player_manager.c$90$3_0$15 Def00014A
-S C$player_manager.c$82$3_0$14 Def000135
-S C$player_manager.c$75$2_0$13 Def000114
-S C$player_manager.c$69$1_0$11 Def0000C6
-S C$player_manager.c$58$2_0$12 Def000089
+S G$engine_player_manager_draw$0$0 Def0002D9
+S C$player_manager.c$82$3_0$14 Def000133
+S C$player_manager.c$75$2_0$13 Def000104
 S A$player_manager$85 Def00000A
 S A$player_manager$76 Def000003
-S C$player_manager.c$97$1_0$11 Def000163
-S C$player_manager.c$91$3_0$15 Def00014D
-S C$player_manager.c$59$2_0$12 Def000096
+S C$player_manager.c$91$3_0$15 Def000158
+S C$player_manager.c$83$3_0$14 Def000135
+S C$player_manager.c$76$2_0$13 Def000114
+S C$player_manager.c$59$2_0$12 Def000089
 S A$player_manager$86 Def00000D
-S C$player_manager.c$84$3_0$14 Def000138
-S C$player_manager.c$77$2_0$13 Def000123
-S C$player_manager.c$68$2_0$13 Def0000D0
-S C$player_manager.c$93$3_0$15 Def000150
-S C$player_manager.c$85$3_0$14 Def000145
-S C$player_manager.c$69$2_0$13 Def0000E2
-S _engine_player_manager_up Def00028F
+S C$player_manager.c$92$3_0$15 Def00015C
+S C$player_manager.c$99$1_0$11 Def000175
+S C$player_manager.c$93$3_0$15 Def00015F
+S C$player_manager.c$85$3_0$14 Def000138
+S C$player_manager.c$78$2_0$13 Def000123
+S C$player_manager.c$69$2_0$13 Def0000D0
+S _engine_player_manager_up Def0002A1
 A _DATA size 8 flags 0 addr 0
 S _global_player_object Def000000
 S G$global_player_object$0_0$0 Def000000
-A _INITIALIZED size 10 flags 0 addr 0
+A _INITIALIZED size 4 flags 0 addr 0
 S Fplayer_manager$physics_array$0_0$0 Def000000
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
-A _INITIALIZER size 10 flags 0 addr 0
+A _INITIALIZER size 4 flags 0 addr 0
 S Fplayer_manager$__xinit_physics_array$0_0$0 Def000000
 A _CABS size 0 flags 8 addr 0
 T 00 00 00
@@ -582,9 +595,9 @@ T 00 00 00
 R 00 00 02 00
 T 00 00 00
 R 00 00 00 00
-T 00 00 00 21 00 00 36 50 21 01 00 36 8D 21 06 00
+T 00 00 00 21 00 00 36 50 21 01 00 36 8F 21 06 00
 R 00 00 00 00 00 04 01 00 00 09 01 00 00 0E 01 00
-T 0D 00 00 36 01 21 07 00 36 00 C3 A1 02
+T 0D 00 00 36 01 21 07 00 36 00 C3 B3 02
 R 00 00 00 00 00 06 01 00 00 0B 00 00
 T 17 00 00
 R 00 00 00 00
@@ -618,7 +631,7 @@ T 7E 00 00 20 41 49 52 00
 R 00 00 00 00
 T 83 00 00
 R 00 00 00 00
-T 83 00 00 3A 06 00 B7 20 0E 11 05 05 D5 21 47 02
+T 83 00 00 3A 06 00 B7 20 0E 11 05 05 D5 21 59 02
 R 00 00 00 00 00 04 01 00 00 0E 00 00
 T 90 00 00 E5 CD 00 00 F1 F1 C9
 R 00 00 00 00 02 05 00 00
@@ -636,7 +649,7 @@ T C5 00 00 C1 AF 91 E2 CD 00 EE 80
 R 00 00 00 00 00 07 00 00
 T CD 00 00
 R 00 00 00 00
-T CD 00 00 F2 63 01 C5 D5 AF 57 1E 05 D5 21 59 02
+T CD 00 00 F2 75 01 C5 D5 AF 57 1E 05 D5 21 6B 02
 R 00 00 00 00 00 04 00 00 00 0E 00 00
 T DA 00 00 E5 CD 00 00 F1 F1 D1 C1 3A 01 00 C5 D5
 R 00 00 00 00 02 05 00 00 00 0C 01 00
@@ -648,113 +661,113 @@ T 01 01 00 38 CB 38 C5 D5 11 1E 04 D5 79 F5 33 CD
 R 00 00 00 00
 T 0E 01 00 00 00 F1 33 D1 C1 C5 D5 11 1E 05 D5 C5
 R 00 00 00 00 02 03 02 00
-T 1B 01 00 33 CD 00 00 F1 33 D1 C1 78 FE 12 20 1E
+T 1B 01 00 33 CD 00 00 F1 33 D1 C1 78 FE 12 20 30
 R 00 00 00 00 02 05 02 00
 T 28 01 00 87 87 87 32 01 00 21 06 00 36 00 AF 12
 R 00 00 00 00 00 07 01 00 00 0A 01 00
-T 35 01 00 CD A1 02 11 05 04 D5 21 47 02 E5 CD
+T 35 01 00 CD B3 02 11 05 04 D5 21 59 02 E5 CD
 R 00 00 00 00 00 04 00 00 00 0B 00 00
-T 41 01 00 00 00 F1 F1 C9
-R 00 00 00 00 02 03 00 00
-T 46 01 00
+T 41 01 00 00 00 F1 F1 3A 01 00 26 02 E5 33 26 1E
+R 00 00 00 00 02 03 00 00 00 08 01 00
+T 4E 01 00 E5 33 F5 33 CD 00 00 F1 33 C9
+R 00 00 00 00 02 08 02 00
+T 58 01 00
 R 00 00 00 00
-T 46 01 00 21 01 00 71 1A 3C 12 CD A1 02 3A 01 00
+T 58 01 00 21 01 00 71 1A 3C 12 CD B3 02 3A 01 00
 R 00 00 00 00 00 04 01 00 00 0B 00 00 00 0E 01 00
-T 53 01 00 26 02 E5 33 26 1E E5 33 F5 33 CD 00 00
+T 65 01 00 26 02 E5 33 26 1E E5 33 F5 33 CD 00 00
 R 00 00 00 00 02 0E 02 00
-T 60 01 00 F1 33 C9
+T 72 01 00 F1 33 C9
 R 00 00 00 00
-T 63 01 00
+T 75 01 00
 R 00 00 00 00
-T 63 01 00 CB 79 28 70 C5 D5 AF 57 1E 05 D5 21
+T 75 01 00 CB 79 28 70 C5 D5 AF 57 1E 05 D5 21
 R 00 00 00 00
-T 6F 01 00 65 02 E5 CD 00 00 F1 F1 D1 C1 3A 01 00
+T 81 01 00 77 02 E5 CD 00 00 F1 F1 D1 C1 3A 01 00
 R 00 00 00 00 00 03 00 00 02 07 00 00 00 0E 01 00
-T 7C 01 00 C5 D5 26 01 E5 33 26 1E E5 33 F5 33 CD
+T 8E 01 00 C5 D5 26 01 E5 33 26 1E E5 33 F5 33 CD
 R 00 00 00 00
-T 89 01 00 00 00 F1 33 D1 C1 3A 01 00 81 4F 41 CB
+T 9B 01 00 00 00 F1 33 D1 C1 3A 01 00 81 4F 41 CB
 R 00 00 00 00 02 03 02 00 00 0A 01 00
-T 96 01 00 38 CB 38 CB 38 C5 D5 11 1E 04 D5 79 F5
+T A8 01 00 38 CB 38 CB 38 C5 D5 11 1E 04 D5 79 F5
 R 00 00 00 00
-T A3 01 00 33 CD 00 00 F1 33 D1 C1 C5 D5 11 1E 05
+T B5 01 00 33 CD 00 00 F1 33 D1 C1 C5 D5 11 1E 05
 R 00 00 00 00 02 05 02 00
-T B0 01 00 D5 C5 33 CD 00 00 F1 33 D1 C1 21 01 00
+T C2 01 00 D5 C5 33 CD 00 00 F1 33 D1 C1 21 01 00
 R 00 00 00 00 02 07 02 00 00 0E 01 00
-T BD 01 00 71 1A 3C 12 CD A1 02 3A 01 00 26 02 E5
+T CF 01 00 71 1A 3C 12 CD B3 02 3A 01 00 26 02 E5
 R 00 00 00 00 00 08 00 00 00 0B 01 00
-T CA 01 00 33 26 1E E5 33 F5 33 CD 00 00 F1 33 C9
+T DC 01 00 33 26 1E E5 33 F5 33 CD 00 00 F1 33 C9
 R 00 00 00 00 02 0B 02 00
-T D7 01 00
+T E9 01 00
 R 00 00 00 00
-T D7 01 00 C5 D5 AF 57 1E 05 D5 21 71 02 E5 CD
+T E9 01 00 C5 D5 AF 57 1E 05 D5 21 83 02 E5 CD
 R 00 00 00 00 00 0B 00 00
-T E3 01 00 00 00 F1 F1 D1 C1 3A 01 00 C5 D5 26 01
+T F5 01 00 00 00 F1 F1 D1 C1 3A 01 00 C5 D5 26 01
 R 00 00 00 00 02 03 00 00 00 0A 01 00
-T F0 01 00 E5 33 26 1E E5 33 F5 33 CD 00 00 F1 33
+T 02 02 00 E5 33 26 1E E5 33 F5 33 CD 00 00 F1 33
 R 00 00 00 00 02 0C 02 00
-T FD 01 00 D1 C1 3A 01 00 81 4F 41 CB 38 CB 38 CB
+T 0F 02 00 D1 C1 3A 01 00 81 4F 41 CB 38 CB 38 CB
 R 00 00 00 00 00 06 01 00
-T 0A 02 00 38 C5 D5 11 1E 04 D5 79 F5 33 CD 00 00
+T 1C 02 00 38 C5 D5 11 1E 04 D5 79 F5 33 CD 00 00
 R 00 00 00 00 02 0E 02 00
-T 17 02 00 F1 33 D1 C1 C5 D5 11 1E 05 D5 C5 33 CD
+T 29 02 00 F1 33 D1 C1 C5 D5 11 1E 05 D5 C5 33 CD
 R 00 00 00 00
-T 24 02 00 00 00 F1 33 D1 C1 21 01 00 71 1A 3C 12
+T 36 02 00 00 00 F1 33 D1 C1 21 01 00 71 1A 3C 12
 R 00 00 00 00 02 03 02 00 00 0A 01 00
-T 31 02 00 CD A1 02 3A 01 00 26 02 E5 33 26 1E E5
+T 43 02 00 CD B3 02 3A 01 00 26 02 E5 33 26 1E E5
 R 00 00 00 00 00 04 00 00 00 07 01 00
-T 3E 02 00 33 F5 33 CD 00 00 F1 33 C9
+T 50 02 00 33 F5 33 CD 00 00 F1 33 C9
 R 00 00 00 00 02 07 02 00
-T 47 02 00
-R 00 00 00 00
-T 47 02 00 50 4C 41 59 45 52 20 4F 4E 20 47 52 4F
-R 00 00 00 00
-T 54 02 00 55 4E 44 20 00
-R 00 00 00 00
 T 59 02 00
 R 00 00 00 00
-T 59 02 00 50 4C 41 59 45 52 20 44 4F 57 4E 00
+T 59 02 00 50 4C 41 59 45 52 20 4F 4E 20 47 52 4F
 R 00 00 00 00
-T 65 02 00
+T 66 02 00 55 4E 44 20 00
 R 00 00 00 00
-T 65 02 00 50 4C 41 59 45 52 20 2D 55 50 2D 00
+T 6B 02 00
 R 00 00 00 00
-T 71 02 00
+T 6B 02 00 50 4C 41 59 45 52 20 44 4F 57 4E 00
 R 00 00 00 00
-T 71 02 00 50 4C 41 59 45 52 20 41 50 45 58 00
+T 77 02 00
 R 00 00 00 00
-T 7D 02 00
+T 77 02 00 50 4C 41 59 45 52 20 2D 55 50 2D 00
 R 00 00 00 00
-T 7D 02 00 01 00 00 0A 3D 02 C3 A1 02
-R 00 00 00 00 00 04 01 00 00 0A 00 00
-T 86 02 00
+T 83 02 00
 R 00 00 00 00
-T 86 02 00 01 00 00 0A 3C 02 C3 A1 02
-R 00 00 00 00 00 04 01 00 00 0A 00 00
+T 83 02 00 50 4C 41 59 45 52 20 41 50 45 58 00
+R 00 00 00 00
 T 8F 02 00
 R 00 00 00 00
-T 8F 02 00 01 01 00 0A 3D 02 C3 A1 02
+T 8F 02 00 01 00 00 0A 3D 02 C3 B3 02
 R 00 00 00 00 00 04 01 00 00 0A 00 00
 T 98 02 00
 R 00 00 00 00
-T 98 02 00 01 01 00 0A 3C 02 C3 A1 02
+T 98 02 00 01 00 00 0A 3C 02 C3 B3 02
 R 00 00 00 00 00 04 01 00 00 0A 00 00
 T A1 02 00
 R 00 00 00 00
-T A1 02 00 11 00 00 1A C6 F0 32 02 00 4B 42 03 0A
-R 00 00 00 00 00 04 01 00 00 0A 01 00
-T AE 02 00 C6 E0 32 03 00 1A 0F 0F 0F E6 1F 32
-R 00 00 00 00 00 06 01 00
-T BA 02 00 04 00 0A 0F 0F 0F E6 1F 21 05 00 77 C9
-R 00 00 00 00 00 03 01 00 00 0C 01 00
-T C7 02 00
+T A1 02 00 01 01 00 0A 3D 02 C3 B3 02
+R 00 00 00 00 00 04 01 00 00 0A 00 00
+T AA 02 00
 R 00 00 00 00
-T C7 02 00 21 03 00 46 3A 02 00 C5 33 F5 33 AF F5
+T AA 02 00 01 01 00 0A 3C 02 C3 B3 02
+R 00 00 00 00 00 04 01 00 00 0A 00 00
+T B3 02 00
+R 00 00 00 00
+T B3 02 00 11 00 00 1A C6 F0 32 02 00 4B 42 03 0A
+R 00 00 00 00 00 04 01 00 00 0A 01 00
+T C0 02 00 C6 E0 32 03 00 1A 0F 0F 0F E6 1F 32
+R 00 00 00 00 00 06 01 00
+T CC 02 00 04 00 0A 0F 0F 0F E6 1F 21 05 00 77 C9
+R 00 00 00 00 00 03 01 00 00 0C 01 00
+T D9 02 00
+R 00 00 00 00
+T D9 02 00 21 03 00 46 3A 02 00 C5 33 F5 33 AF F5
 R 00 00 00 00 00 04 01 00 00 08 01 00
-T D4 02 00 33 CD 00 00 F1 33 C9
+T E6 02 00 33 CD 00 00 F1 33 C9
 R 00 00 00 00 02 05 01 00
 T 00 00 00
 R 00 00 07 00
-T 00 00 00 01 01 01 01 01 01 01 01 01 01 01 01 01
-R 00 00 07 00
-T 0D 00 00 01 01 01
+T 00 00 00 09 08 07 06
 R 00 00 07 00

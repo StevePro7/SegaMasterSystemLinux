@@ -8,8 +8,9 @@ struct_player_object global_player_object;
 
 static void updatePlayer();
 
+static signed char physics_array[] = { 9, 8, 7, 6, };
 //static signed char physics_array[] = { -1, -1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, };
-static signed char physics_array[] = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, };
+//static signed char physics_array[] = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, };
 
 void engine_player_manager_init()
 {
@@ -18,7 +19,7 @@ void engine_player_manager_init()
 //	po->posnX = 168;
 	//po->posnY = 112;
 	//po->posnY = 144;
-	po->posnY = 141;
+	po->posnY = 143;
 	//po->frame = 4;
 	//po->frame = 0;
 	//po->player_state = player_state_isonground;
@@ -82,6 +83,7 @@ void engine_player_manager_update()
 			updatePlayer();
 
 			engine_font_manager_text( "PLAYER ON GROUND ", 5, 4 );
+			engine_font_manager_data( po->posnY, 30, 2 );
 			return;
 		}
 		else
