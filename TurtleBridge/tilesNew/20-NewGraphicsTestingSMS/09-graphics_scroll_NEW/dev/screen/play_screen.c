@@ -31,7 +31,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 	unsigned char value;
 	bool newTile;
 
-	delta = 3;
+	delta = 0;
 	value = 0;
 	newTile = false;
 	//input = engine_input_manager_hold( input_type_right);
@@ -110,6 +110,8 @@ void screen_play_screen_update( unsigned char *screen_type )
 
 static void drawScreen()
 {
+	unsigned char idx;
+
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();
@@ -122,12 +124,18 @@ static void drawScreen()
 	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 18, 4, 8, 3 );
 	engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 26, 5, 8, 3 );
 
-	engine_tile_manager_stevepro( TILE_ISLAND_LEFT, 0, 8, 4, 14 );
-	engine_tile_manager_stevepro( TILE_ISLAND_MIDD, 4, 8, 4, 14 );
-	engine_tile_manager_stevepro( TILE_ISLAND_MIDD, 8, 8, 4, 14 );
-	engine_tile_manager_stevepro( TILE_ISLAND_MIDD, 12, 8, 4, 14 );
-	engine_tile_manager_stevepro( TILE_ISLAND_SIGN, 16, 8, 4, 14 );
-	engine_tile_manager_stevepro( TILE_ISLAND_RGHT, 20, 8, 4, 14 );
+	//engine_tile_manager_stevepro( TILE_ISLAND_LEFT, 0, 8, 4, 14 );
+	//engine_tile_manager_stevepro( TILE_ISLAND_MIDD, 4, 8, 4, 14 );
+	//engine_tile_manager_stevepro( TILE_ISLAND_MIDD, 8, 8, 4, 14 );
+	//engine_tile_manager_stevepro( TILE_ISLAND_MIDD, 12, 8, 4, 14 );
+	//engine_tile_manager_stevepro( TILE_ISLAND_SIGN, 16, 8, 4, 14 );
+	//engine_tile_manager_stevepro( TILE_ISLAND_RGHT, 20, 8, 4, 14 );
+
+	// Draw from level.
+	for( idx = 0; idx < SCREEN_WIDE; idx++ )
+	{
+		engine_level_manager_draw( idx );
+	}
 
 	//engine_tile_manager_stevepro( TILE_BRIDGE_RGHT, 12, 8, 4, 14 );
 	//engine_font_manager_text( "[[[[[[[[[[[[[[[[[[[[[[[[", 4, 0 );
