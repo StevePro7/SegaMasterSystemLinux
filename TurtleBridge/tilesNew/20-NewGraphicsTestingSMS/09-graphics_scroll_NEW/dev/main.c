@@ -4,10 +4,33 @@ static void start();
 
 void main( void )
 {
+	static bool global_pause;
 	unsigned char input;
 	start();
 	for( ;; )
 	{
+		if( devkit_SMS_queryPauseRequested() )
+		{
+			devkit_SMS_resetPauseRequest();
+			global_pause = !global_pause;
+			if( global_pause )
+			{
+				devkit_PSGSilenceChannels();
+			}
+			else
+			{
+				devkit_PSGRestoreVolumes();
+			}
+		}
+
+		if( global_pause )
+		{
+			engine_scroll_manager_update( 0 );
+			devkit_SMS_waitForVBlank();
+			//engine_audio_manager_update();
+			continue;
+		}
+
 		devkit_SMS_initSprites();
 		engine_input_manager_update();
 		input = input = engine_input_manager_move( input_type_fire2 );
@@ -51,9 +74,9 @@ static void start()
 	//open_screen_type = screen_type_func;
 	//open_screen_type = screen_type_test;
 	//open_screen_type = screen_type_init;
-	//open_screen_type = screen_type_play;
+	open_screen_type = screen_type_play;
 	//open_screen_type = screen_type_load;
-	open_screen_type = screen_type_ready;
+	//open_screen_type = screen_type_ready;
 
 	engine_screen_manager_init( open_screen_type );
 	engine_scroll_manager_init();

@@ -17,7 +17,6 @@ void screen_load_screen_load()
 {
 	drawScreen();
 	//engine_font_manager_text( "LOAD SCREEN", 10, 10 );
-
 }
 
 void screen_load_screen_update( unsigned char *screen_type )
