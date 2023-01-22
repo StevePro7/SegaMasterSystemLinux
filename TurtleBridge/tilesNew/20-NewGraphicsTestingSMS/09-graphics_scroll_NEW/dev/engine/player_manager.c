@@ -8,8 +8,7 @@ struct_player_object global_player_object;
 
 static void updatePlayer();
 
-static signed char physics_array[] = { 9, 8, 7, 6, };
-//static signed char physics_array[] = { -1, -1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, };
+static signed char physics_array[] = { -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, };
 //static signed char physics_array[] = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, };
 
 void engine_player_manager_init()
@@ -18,13 +17,12 @@ void engine_player_manager_init()
 	po->posnX = 80;
 //	po->posnX = 168;
 	//po->posnY = 112;
-	//po->posnY = 144;
-	po->posnY = 143;
+	po->posnY = 144;
+	//po->posnY = 132;
 	//po->frame = 4;
 	//po->frame = 0;
 	//po->player_state = player_state_isonground;
 	po->player_state = player_state_isintheair;
-	//po->player_state = player_state_isonground;
 	po->player_index = 0;
 	updatePlayer();
 }

@@ -14,9 +14,9 @@ S:Lfont_manager.engine_font_manager_text$idx$1_0$89({1}SC:U),R,0,0,[c]
 S:Lfont_manager.engine_font_manager_text$tile$2_0$90({1}SC:S),R,0,0,[b]
 S:Lfont_manager.engine_font_manager_text$sloc0$0_1$0({1}SC:U),B,1,-1
 F:G$engine_font_manager_data$0_0$0({2}DF,SV:S),Z,0,5,0,0,0
-S:Lfont_manager.engine_font_manager_data$data$1_0$91({1}SC:U),B,1,4
-S:Lfont_manager.engine_font_manager_data$x$1_0$91({1}SC:U),B,1,5
-S:Lfont_manager.engine_font_manager_data$y$1_0$91({1}SC:U),B,1,6
+S:Lfont_manager.engine_font_manager_data$data$1_0$91({2}SI:U),B,1,4
+S:Lfont_manager.engine_font_manager_data$x$1_0$91({1}SC:U),B,1,6
+S:Lfont_manager.engine_font_manager_data$y$1_0$91({1}SC:U),B,1,7
 S:Lfont_manager.engine_font_manager_data$pnt$1_0$92({2}DG,SC:U),R,0,0,[]
 S:Lfont_manager.engine_font_manager_data$idx$1_0$92({1}SC:U),B,1,-1
 S:Lfont_manager.engine_font_manager_data$tile$1_0$92({1}SC:S),R,0,0,[e]

@@ -29,7 +29,7 @@ void engine_font_manager_text( unsigned char *text, unsigned char x, unsigned ch
 	}
 }
 
-void engine_font_manager_data( unsigned char data, unsigned char x, unsigned char y )
+void engine_font_manager_data( unsigned int data, unsigned char x, unsigned char y )
 {
 	const unsigned char *pnt = bggame_tiles__tilemap__bin;
 
