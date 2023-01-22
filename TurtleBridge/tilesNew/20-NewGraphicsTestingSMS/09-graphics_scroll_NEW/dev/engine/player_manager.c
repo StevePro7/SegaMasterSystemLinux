@@ -23,6 +23,7 @@ void engine_player_manager_init()
 	//po->frame = 0;
 	//po->player_state = player_state_isonground;
 	po->player_state = player_state_isintheair;
+	//po->player_state = player_state_isonground;
 	po->player_index = 0;
 	updatePlayer();
 }
@@ -54,6 +55,7 @@ void engine_player_manager_update()
 	struct_player_object *po = &global_player_object;
 	if( player_state_isonground == po->player_state )
 	{
+		engine_font_manager_text( "PLAYER ON GROUND ", 5, 5 );
 		return;
 	}
 
@@ -72,12 +74,25 @@ void engine_player_manager_update()
 		engine_font_manager_data( tempY, 30, 4 );
 		engine_font_manager_data( tileY, 30, 5 );
 
-		po->posnY = tempY;
-		po->player_index++;
-		updatePlayer();
+		if( tileY == level_platform )
+		{
+			po->posnY = tileY << 3;
+			po->player_state = player_state_isonground;
+			po->player_index = 0;
+			updatePlayer();
 
-		engine_font_manager_data( po->posnY, 30, 2 );
-		return;
+			engine_font_manager_text( "PLAYER ON GROUND ", 5, 4 );
+			return;
+		}
+		else
+		{
+			po->posnY = tempY;
+			po->player_index++;
+			updatePlayer();
+
+			engine_font_manager_data( po->posnY, 30, 2 );
+			return;
+		}
 	}
 	else if( deltaY < 0 )
 	{
