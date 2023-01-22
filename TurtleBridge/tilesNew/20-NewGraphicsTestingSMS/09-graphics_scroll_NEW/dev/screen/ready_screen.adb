@@ -2,7 +2,7 @@ M:ready_screen
 F:G$screen_ready_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_ready_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lready_screen.screen_ready_screen_update$screen_type$1_0$95({2}DG,SC:U),B,1,4
-S:Lready_screen.screen_ready_screen_update$input$1_0$96({1}SC:U),R,0,0,[a]
+S:Lready_screen.screen_ready_screen_update$input$1_0$96({2}SI:U),R,0,0,[l,h]
 F:Fready_screen$drawScreen$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lready_screen.drawScreen$tile$1_0$98({2}SI:U),R,0,0,[]
 T:Fready_screen$tag_struct_player_object[({0}S:S$posnX$0_0$0({1}SC:U),Z,0,0)({1}S:S$posnY$0_0$0({1}SC:U),Z,0,0)({2}S:S$drawX$0_0$0({1}SC:U),Z,0,0)({3}S:S$drawY$0_0$0({1}SC:U),Z,0,0)({4}S:S$tileX$0_0$0({1}SC:U),Z,0,0)({5}S:S$tileY$0_0$0({1}SC:U),Z,0,0)({6}S:S$player_state$0_0$0({1}SC:U),Z,0,0)({7}S:S$player_index$0_0$0({1}SC:U),Z,0,0)]

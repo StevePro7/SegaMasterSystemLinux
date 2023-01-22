@@ -1,0 +1,94 @@
+enums for command player
+22-Jan-2023
+
+
+ground
+flying
+
+JUMP
+
+BOOST
+
+MOVE
+left
+midd
+rght
+
+
+FLIP
+back
+front
+fwd
+
+inner
+outer
+
+
+ROTATE
+
+
+
+TODO
+tile / gfx mgr clean up
+level mgr save
+
+command mgr convert from input
+
+collision mgr summary algo
+
+clouds
+
+scroll 8x
+scroll 9x
+
+
+
+isonground
+if 
+
+isintheair
+
+
+unsigned int input = devkit_SMS_getKeysHeld();	//move
+
+
+isonground
+cmd = player_cmd_ground_move_midd
+
+if move left then cmd = player_cmd_ground_move_left
+if move rght then cmd = player_cmd_ground_move_rght
+
+if move fire1 then boost = true
+if hold fire2 then jump = true
+
+if jump then
+	if boost then
+		cmd = player_cmd_ground_jump_boost
+	else
+		cmd = player_cmd_ground_jump_norm
+	end
+end
+
+
+if isintheair then
+cmd = player_cmd_flying_move_midd
+
+if hold fire2 then toggle frame
+if hold fire1 then rotate = true
+	if move then cmd = player_cmd_flying_flip_inner
+	if move then cmd = player_cmd_flying_flip_outer
+end
+else
+if move left then cmd = player_cmd_flying_move_left
+if move rght then cmd = player_cmd_flying_move_rght
+end
+
+
+move_left
+move_rght
+
+move up		boost
+//move_fire1	boost
+
+hold_fire1	jump / toggle
+hold_fire2	jump / flip

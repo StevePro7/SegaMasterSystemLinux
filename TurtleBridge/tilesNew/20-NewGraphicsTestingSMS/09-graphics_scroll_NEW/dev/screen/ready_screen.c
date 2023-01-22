@@ -22,15 +22,21 @@ void screen_ready_screen_load()
 //unsigned int input = devkit_SMS_getKeysStatus();
 void screen_ready_screen_update( unsigned char *screen_type )
 {
-	unsigned char input;
-	//input = engine_input_manager_hold( input_type_fire1 );
-	input = engine_input_manager_move( input_type_fire1 );
-	if( input )
+	unsigned int input = devkit_SMS_getKeysPressed();	//hold
+	if( input != 0 )
 	{
-		engine_player_manager_update();
+		engine_font_manager_data( input, 10, 12 );
 	}
+	engine_font_manager_data( input, 10, 10 );
+	//unsigned char input;
+	//input = engine_input_manager_hold( input_type_fire1 );
+	//input = engine_input_manager_move( input_type_right );
+	//if( input )
+	//{
+	//	engine_player_manager_update();
+	//}
 
-	engine_player_manager_draw();
+	//engine_player_manager_draw();
 	*screen_type = screen_type_ready;
 }
 
@@ -63,6 +69,6 @@ static void drawScreen()
 	//engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 10, 4, 8, 3 );
 	//engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 18, 4, 8, 3 );
 	//engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 26, 4, 8, 3 );
-	engine_player_manager_draw();
+	//engine_player_manager_draw();
 	devkit_SMS_displayOn();
 }
