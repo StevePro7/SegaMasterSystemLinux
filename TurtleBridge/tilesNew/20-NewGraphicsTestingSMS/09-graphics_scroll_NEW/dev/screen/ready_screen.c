@@ -36,7 +36,7 @@ void screen_ready_screen_update( unsigned char *screen_type )
 
 static void drawScreen()
 {
-	unsigned int tile = TILE_TURTLE_SEA2;
+	unsigned int tile = TILE_TURTLE_FLY1;
 
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
