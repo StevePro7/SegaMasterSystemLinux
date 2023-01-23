@@ -1,9 +1,11 @@
 M:start_screen
 F:G$screen_start_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-F:G$screen_start_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lstart_screen.screen_start_screen_update$screen_type$1_0$90({2}DG,SC:U),B,1,4
-S:Lstart_screen.screen_start_screen_update$input$1_0$91({1}SC:U),R,0,0,[a]
-S:Lstart_screen.screen_start_screen_update$value$1_0$91({1}SC:U),R,0,0,[c]
+F:G$screen_start_screen_update$0_0$0({2}DF,SV:S),Z,0,2,0,0,0
+S:Lstart_screen.screen_start_screen_update$screen_type$1_0$92({2}DG,SC:U),B,1,4
+S:Lstart_screen.screen_start_screen_update$input$1_0$93({1}SC:U),R,0,0,[a]
+S:Lstart_screen.screen_start_screen_update$value$1_0$93({1}SC:U),R,0,0,[b]
+S:Lstart_screen.screen_start_screen_update$lower$1_0$93({1}SC:U),B,1,-2
+S:Lstart_screen.screen_start_screen_update$upper$1_0$93({1}SC:U),B,1,-1
 S:Fstart_screen$index$0_0$0({1}SC:U),E,0,0
 S:G$engine_asm_manager_clear_VRAM$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_bggame$0_0$0({2}DF,SV:S),C,0,0
@@ -18,6 +20,8 @@ S:G$engine_graphics_manager_sea$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_hold$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move$0_0$0({2}DF,SC:U),C,0,0
+S:G$engine_function_manager_convertByteToNibbles$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_function_manager_convertNibblesToByte$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOnFeature$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOffFeature$0_0$0({2}DF,SV:S),C,0,0
