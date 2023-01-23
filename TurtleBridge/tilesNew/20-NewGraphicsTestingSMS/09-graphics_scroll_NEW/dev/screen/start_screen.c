@@ -1,14 +1,44 @@
 #include "start_screen.h"
-#include "..\engine\content_manager.h"
-#include "..\engine\enum_manager.h"
-#include "..\engine\font_manager.h"
+#include "../engine/asm_manager.h"
+#include "../engine/content_manager.h"
+#include "../engine/enum_manager.h"
+#include "../engine/font_manager.h"
+#include "../engine/graphics_manager.h"
+#include "../engine/input_manager.h"
+#include "../devkit/_sms_manager.h"
+
+static unsigned char index;
+
+static const unsigned char level_tiles[] =
+{
+	0x04, 0x14, 0x24, 0x34, 0x04, 0x14, 0x24, 0x34, 0x04, 0x14, 0x24, 0x34, 0x04, 0x14, 0x24, 0x34,
+};
 
 void screen_start_screen_load()
 {
-
+	devkit_SMS_displayOff();
+	engine_asm_manager_clear_VRAM();
+	engine_content_manager_bggame();
+	engine_content_manager_sprite();
+	engine_graphics_manager_sea();
+	engine_font_manager_text( "START SCREEN", 10, 2 );
+	devkit_SMS_displayOn();
+	index = 0;
 }
 
 void screen_start_screen_update( unsigned char *screen_type )
 {
+	unsigned char input;
+	unsigned char value;
+
+	input = engine_input_manager_hold( input_type_right );
+	if( input != 0 )
+	{
+		value = level_tiles[ index ];
+		engine_font_manager_data( index, 10, 10 );
+		engine_font_manager_data( value, 20, 10 );
+		index++;
+	}
+	
 	*screen_type = screen_type_start;
 }
