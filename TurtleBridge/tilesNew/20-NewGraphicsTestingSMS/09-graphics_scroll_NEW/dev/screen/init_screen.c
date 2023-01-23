@@ -63,7 +63,8 @@ void screen_init_screen_update( unsigned char *screen_type )
 		}
 		else
 		{
-			tile = po->tileX + 1;
+			//tile = po->tileX + 2;	// Easy
+			tile = po->tileX + 1;	// Hard
 			tempCollY = collision_array[ tile ];
 			if( tempTileY == tempCollY )
 			{
@@ -116,8 +117,11 @@ static void drawScreen()
 	//engine_tile_manager_stevepro( TILE_CLOUDS, 10, 4, 8, 3 );
 	//engine_tile_manager_stevepro( TILE_CLOUDB, 18, 4, 8, 3 );
 	//engine_tile_manager_stevepro( TILE_CLOUDS, 26, 4, 8, 3 );
-	//engine_tile_manager_stevepro( TILE_ISLAND_01, 0, 8, 8, 14 );
+	engine_tile_manager_stevepro( TILE_ISLAND_MIDD, 0, 8, 8, 14 );
+	engine_tile_manager_stevepro( TILE_ISLAND_RGHT, 4, 8, 4, 14 );
 	engine_tile_manager_stevepro( TILE_WAVES_BLOCK, 8, 8, 4, 14 );
+	engine_tile_manager_stevepro( TILE_ISLAND_LEFT, 12, 8, 8, 14 );
+	engine_tile_manager_stevepro( TILE_ISLAND_MIDD, 16, 8, 4, 14 );
 	//engine_tile_manager_stevepro( TILE_ISLAND_01, 12, 8, 8, 14 );
 	engine_player_manager_draw();
 	devkit_SMS_displayOn();

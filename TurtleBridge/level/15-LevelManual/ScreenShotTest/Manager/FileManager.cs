@@ -7,7 +7,8 @@ namespace ScreenShotTest
 {
 	public class FileManager
 	{
-		private List<string> data, text1, text2, data3;
+		private List<string> data, text1, text2;
+		private List<int> data1, data2, data3;
 		private int cols;
 
 		public FileManager(int wide)
@@ -22,7 +23,9 @@ namespace ScreenShotTest
 			data = new List<string>();
 			text1 = new List<string>();
 			text2 = new List<string>();
-			data3 = new List<string>();
+			data1 = new List<int>();
+			data2 = new List<int>();
+			data3 = new List<int>();
 		}
 
 		public void LoadContent()
@@ -130,9 +133,8 @@ namespace ScreenShotTest
 					tmp += 4;
 				}
 
-				//int val = tmp << 4;
-				//string cols = "0x" + tmp.ToString("X").ToString().PadLeft(2, '0');
-				item.Add(tmp);
+				int val = tmp << 4;
+				item.Add(val);
 			}
 
 			return item;
@@ -167,8 +169,6 @@ namespace ScreenShotTest
 			for (int idx = 0; idx < 4; idx++)
 			{
 				item.Add(tile);
-				//string val = "0x" + tile.ToString("X").ToString().PadLeft(2, '0');
-				//item.Add(val);
 			}
 
 			return item;
@@ -213,8 +213,31 @@ namespace ScreenShotTest
 				text1.AddRange(left);
 				text2.AddRange(rght);
 			}
+			//DumpData1(text1, text2, path);
 
-			DumpData(text1, text2, path);
+			// Bytes array #2.
+			data1.Clear();
+			data2.Clear();
+			data3.Clear();
+			for (int idx = 0; idx < cols; idx++)
+			{
+				var tile = Tiles[idx];
+				var left = GetCols02(tile);
+				var rght = GetType02(tile);
+				data1.AddRange(left);
+				data2.AddRange(rght);
+
+				//for (int bob = 0; bob < 4; bob++)
+				//{
+				//	var d1 = left[bob];
+				//	var d2 = rght[bob];
+				//	var d3 = d1 + d2;
+				//}
+
+				//data1.AddRange(left);
+				//data2.AddRange(rght);
+			}
+			DumpData1(text1, text2, path);
 
 			// level.csv
 			data.Clear();
@@ -244,7 +267,7 @@ namespace ScreenShotTest
 			//File.WriteAllLines(path + "/info.txt", contents);
 		}
 
-		private void DumpData(List<string> text1, List<string> text2, string path)
+		private void DumpData1(List<string> text1, List<string> text2, string path)
 		{
 			var file = new List<string>();
 			var file1 = new List<string>();
