@@ -11,8 +11,8 @@
 
 static void drawScreen();
 static void statPlater();
-//static unsigned char collision_array[] = { 20,20,20,20,20,20,20,20,0,0,0,0,20,20,20,20,20,20,20,20,0,0,0,0,0,0,0,0,0,0,0,0 };
-static unsigned char collision_array[] = { 18,18,18,18,18,18,18,18,0,0,0,0,18,18,18,18,18,18,18,18,0,0,0,0,0,0,0,0,0,0,0,0 };
+//static unsigned char collision_array[] = { 18,18,18,18,18,18,18,18,0,0,0,0,18,18,18,18,18,18,18,18,0,0,0,0,0,0,0,0,0,0,0,0 };
+static unsigned char collision_array[] = { 18,18,18,18,0,0,0,0,0,0,0,0,18,18,18,18,18,18,18,18,0,0,0,0,0,0,0,0,0,0,0,0 };
 
 void screen_init_screen_load()
 {
@@ -54,8 +54,8 @@ void screen_init_screen_update( unsigned char *screen_type )
 		tempTileY = tempPosnY >> 3;
 
 		isMoveDown = false;
-		//tile = po->tileX - 2;    // Easy
-		tile = po->tileX - 1;	// Hard
+		tile = po->tileX - 2;    // Easy
+		//tile = po->tileX - 1;	// Hard
 		tempCollY = collision_array[ tile ];
 		if( tempTileY == tempCollY )
 		{
@@ -63,8 +63,8 @@ void screen_init_screen_update( unsigned char *screen_type )
 		}
 		else
 		{
-			//tile = po->tileX + 2;	// Easy
-			tile = po->tileX + 1;	// Hard
+			tile = po->tileX + 2;	// Easy
+			//tile = po->tileX + 1;	// Hard
 			tempCollY = collision_array[ tile ];
 			if( tempTileY == tempCollY )
 			{
@@ -79,19 +79,23 @@ void screen_init_screen_update( unsigned char *screen_type )
 
 	printout:
 		onPlatform = !isMoveDown;
-		engine_font_manager_data( po->posnY, 16, 2 );
-		engine_font_manager_data( tempCollY, 24, 2 );
+		//engine_font_manager_data( po->posnY, 16, 2 );
+		//engine_font_manager_data( tempCollY, 24, 2 );
 
-		engine_font_manager_data( po->tileX, 8, 3 );
-		engine_font_manager_data( po->tileX - 2, 16, 3 );
-		engine_font_manager_data( po->tileX - 1, 24, 3 );
+		engine_font_manager_data( po->tileX - 2, 8, 3 );
+		engine_font_manager_data( po->tileX - 1, 8, 4 );
+		engine_font_manager_data( po->tileX + 0, 8, 5 );
+		engine_font_manager_data( po->tileX + 1, 8, 6 );
+		engine_font_manager_data( po->tileX + 2, 8, 7 );
 
-		engine_font_manager_data( po->tileX, 8, 4 );
-		engine_font_manager_data( po->tileX + 0, 16, 4 );
-		engine_font_manager_data( po->tileX + 1, 24, 4 );
+		engine_font_manager_data( collision_array[ po->tileX - 2 ], 16, 3 );
+		engine_font_manager_data( collision_array[ po->tileX - 1 ], 16, 4 );
+		engine_font_manager_data( collision_array[ po->tileX + 0 ], 16, 5 );
+		engine_font_manager_data( collision_array[ po->tileX + 1 ], 16, 6 );
+		engine_font_manager_data( collision_array[ po->tileX + 2 ], 16, 7 );
 
-		engine_font_manager_data( tile, 16, 6 );
-		engine_font_manager_data( onPlatform, 24, 6 );
+		engine_font_manager_data( tile, 16, 9 );
+		engine_font_manager_data( onPlatform, 24, 9 );
 	}
 
 	engine_player_manager_draw();
@@ -101,9 +105,9 @@ void screen_init_screen_update( unsigned char *screen_type )
 static void statPlater()
 {
 	struct_player_object *po = &global_player_object;
-	engine_font_manager_data( po->drawX, 8, 0 );
+	engine_font_manager_data( po->tileX, 8, 0 );
 	engine_font_manager_data( po->posnX, 16, 0 );
-	engine_font_manager_data( po->tileX, 24, 0 );
+	engine_font_manager_data( po->drawX, 24, 0 );
 }
 
 static void drawScreen()
@@ -113,12 +117,10 @@ static void drawScreen()
 	engine_content_manager_bggame();
 	engine_content_manager_sprite();
 	//engine_tile_manager_stevepro( TILE_PLAY_TITLE, 4, 0, 24, 3 );
-	//engine_tile_manager_stevepro( TILE_CLOUDB, 2, 4, 8, 3 );
-	//engine_tile_manager_stevepro( TILE_CLOUDS, 10, 4, 8, 3 );
-	//engine_tile_manager_stevepro( TILE_CLOUDB, 18, 4, 8, 3 );
-	//engine_tile_manager_stevepro( TILE_CLOUDS, 26, 4, 8, 3 );
-	engine_tile_manager_stevepro( TILE_ISLAND_MIDD, 0, 8, 8, 14 );
-	engine_tile_manager_stevepro( TILE_ISLAND_RGHT, 4, 8, 4, 14 );
+	//engine_tile_manager_stevepro( TILE_ISLAND_MIDD, 0, 8, 8, 14 );
+	//engine_tile_manager_stevepro( TILE_ISLAND_RGHT, 4, 8, 4, 14 );
+	engine_tile_manager_stevepro( TILE_ISLAND_RGHT, 0, 8, 4, 14 );
+	engine_tile_manager_stevepro( TILE_WAVES_BLOCK, 4, 8, 4, 14 );
 	engine_tile_manager_stevepro( TILE_WAVES_BLOCK, 8, 8, 4, 14 );
 	engine_tile_manager_stevepro( TILE_ISLAND_LEFT, 12, 8, 8, 14 );
 	engine_tile_manager_stevepro( TILE_ISLAND_MIDD, 16, 8, 4, 14 );
