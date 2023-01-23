@@ -118,6 +118,7 @@ namespace ScreenShotTest
 		private List<int> GetCols02(int tile)
 		{
 			var item = new List<int>();
+			item.Clear();
 			for (int idx = 0; idx < 4; idx++)
 			{
 				int tmp = idx;
@@ -213,7 +214,7 @@ namespace ScreenShotTest
 				text1.AddRange(left);
 				text2.AddRange(rght);
 			}
-			//DumpData1(text1, text2, path);
+			DumpData1(text1, text2, path);
 
 			// Bytes array #2.
 			data1.Clear();
@@ -227,17 +228,15 @@ namespace ScreenShotTest
 				data1.AddRange(left);
 				data2.AddRange(rght);
 
-				//for (int bob = 0; bob < 4; bob++)
-				//{
-				//	var d1 = left[bob];
-				//	var d2 = rght[bob];
-				//	var d3 = d1 + d2;
-				//}
-
-				//data1.AddRange(left);
-				//data2.AddRange(rght);
+				for (int bob = 0; bob < 4; bob++)
+				{
+					var d1 = left[bob];
+					var d2 = rght[bob];
+					var d3 = d1 + d2;
+					data3.Add(d3);
+				}
 			}
-			DumpData1(text1, text2, path);
+			DumpData2(data3, path);
 
 			// level.csv
 			data.Clear();
@@ -266,6 +265,54 @@ namespace ScreenShotTest
 			var contents = data.ToArray();
 			//File.WriteAllLines(path + "/info.txt", contents);
 		}
+
+		private void DumpData2(List<int> data3, string path)
+		{
+			var file = new List<string>();
+			const int wide = 16;
+			int loop = 0;
+			int data = 0;
+			string type = String.Empty;
+			string line = String.Empty;
+
+			file.Add("const unsigned char level_tiles[] =");
+			file.Add("{");
+			for (int idx = 0; idx < text1.Count; idx++)
+			{
+				data = data3[idx];
+				type = "0x" + data.ToString("X").ToString().PadLeft(2, '0');
+				if (0 != loop)
+				{
+					line += type;
+				}
+				else
+				{
+					line += "\t" + type;
+				}
+				loop++;
+				if (wide != loop)
+				{
+					line += ", ";
+				}
+				else
+				{
+					line += ",";
+					file.Add(line);
+					line = String.Empty;
+					loop = 0;
+				}
+			}
+
+			if (0 != line.Length)
+			{
+				file.Add(line);
+			}
+
+			file.Add("};");
+			File.WriteAllLines(path + "/fixed_bank2.c", file.ToArray());
+		}
+
+		//private void DumpData1(List<int> data3, string path)
 
 		private void DumpData1(List<string> text1, List<string> text2, string path)
 		{
@@ -327,7 +374,7 @@ namespace ScreenShotTest
 			file.AddRange(file1);
 			file.Add(String.Empty);
 			file.AddRange(file2);
-			File.WriteAllLines(path + "/fixed_bank.c", file.ToArray());
+			File.WriteAllLines(path + "/fixed_bank1.c", file.ToArray());
 			//File.WriteAllLines(path + "/level_planesA.c", file1.ToArray());
 			//File.WriteAllLines(path + "/level_columnA.c", file2.ToArray());
 		}

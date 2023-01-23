@@ -20,7 +20,7 @@ namespace ScreenShotTest
 		public void Initialize()
 		{
 			//Selector = GetSelector(AssetType.AwavesBlock);
-			Selector = GetSelector(AssetType.SislandSignGoal);
+			Selector = GetSelector(AssetType.QbridgeSideFlip);
 		}
 
 		public void Update()
