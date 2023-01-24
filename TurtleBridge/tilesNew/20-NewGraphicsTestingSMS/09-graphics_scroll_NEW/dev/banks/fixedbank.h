@@ -6,6 +6,9 @@
 extern const unsigned char *music_object_data[];
 extern const unsigned char music_object_bank[];
 
+// Level Manager.
+extern const unsigned char *level_object_data[];
+extern const unsigned char level_object_bank[];
 
 // Tiles Manager.
 #define TILE_SKY_AND_SEA		64
