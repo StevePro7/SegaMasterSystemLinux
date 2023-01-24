@@ -5,6 +5,9 @@
 
 typedef struct tag_struct_level_object
 {
+	// TODO
+	// store level_tile* pointer to current level
+	// store level_bank  value   to current level bank
 	unsigned int level_cols_offset;
 	unsigned char level_draw_offset;
 

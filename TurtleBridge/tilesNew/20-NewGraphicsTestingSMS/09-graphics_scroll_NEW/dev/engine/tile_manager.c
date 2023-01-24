@@ -444,7 +444,7 @@ void engine_tile_manager_init()
 	{
 		to = &global_tile_objects[ idx ];
 		to->tilemap_index = tiles_object_indexes[ idx ];
-		to->tile_wide = tiles_object_widths[ idx ];
+	//	to->tile_wide = tiles_object_widths[ idx ];
 		//to->tile_high = TILE_SCROLL_HIGH;
 		to->tile_platform = tiles_object_platform[ idx ];
 	}

@@ -16,7 +16,6 @@ const unsigned char music_object_bank[] =
 	mastertracker_psg_bank,
 };
 
-
 // Tiles Manager.
 const unsigned int tiles_object_indexes[] =
 {
@@ -24,38 +23,28 @@ const unsigned int tiles_object_indexes[] =
 	TILE_BRIDGE_MIDD,
 	TILE_BRIDGE_SIDE,
 	TILE_BRIDGE_SIGN,
-	//TILE_BRIDGE_GOAL,
-
 	TILE_ISLAND_MIDD,
 	TILE_ISLAND_LEFT,
 	TILE_ISLAND_RGHT,
 	TILE_ISLAND_SIGN,
-	//TILE_ISLAND_GOAL,
 	TILE_ISLAND_TREEL,
 	TILE_ISLAND_TREER,
-
 	TILE_TURTLE_SEA1,
 	TILE_TURTLE_SEA2,
 	TILE_TURTLE_FLY1,
 	TILE_TURTLE_FLY2,
 	TILE_TURTLE_FLY3,
 	TILE_TURTLE_FLY4,
-};
 
-const unsigned char tiles_object_widths[] =
-{
-	4, 4, 4, 4, 
-	8, 8, 8, 8,
-	8, 8, 4, 4, 
-	4, 4, 4, 4,
+	TILE_BRIDGE_SIDE,
+	TILE_ISLAND_GOAL,
+	TILE_BRIDGE_GOAL,
 };
 
 extern const unsigned char tiles_object_platform[] =
 {
-	0, 16, 16, 16,
-	18, 18, 18, 18,
-	18, 18, 19, 18,		// TODO - confirm turtle high
-	17, 16, 15, 14,		// TODO - confirm turtle high
+	 0, 16, 16, 16, 18, 18, 18, 18,
+	18, 18, 19, 18,	17, 16, 15, 14,
 };
 
 
