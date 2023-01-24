@@ -6,7 +6,7 @@ typedef enum tag_enum_screen_type
 	screen_type_none = 0,
 	screen_type_splash = 1,
 	//screen_type_begin = 2,
-	//screen_type_intro = 3,
+	screen_type_intro = 3,
 	screen_type_title = 4,
 	screen_type_start = 5,
 	screen_type_init = 6,
