@@ -24,7 +24,7 @@ void engine_level_manager_init()
 	//level_x = 0;
 }
 
-void engine_level_manager_load()
+void engine_level_manager_load( unsigned char level )
 {
 	struct_level_object *lo = &global_level_object;
 	lo->level_cols_offset = 0;

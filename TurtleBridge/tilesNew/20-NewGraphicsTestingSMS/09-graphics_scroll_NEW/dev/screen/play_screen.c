@@ -18,7 +18,7 @@ static void drawScreen();
 void screen_play_screen_load()
 {
 	drawScreen();
-	engine_level_manager_load();
+	engine_level_manager_load(0);
 	engine_scroll_manager_load();
 	engine_music_manager_play( 1 );
 }
