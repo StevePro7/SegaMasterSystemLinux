@@ -17,6 +17,17 @@ const unsigned char music_object_bank[] =
 };
 
 // Level Manager.
+const unsigned char *mylevel_planesA[] =
+{
+	level_planesA01,
+	level1102_txt,
+};
+const unsigned char *mylevel_columnA[] =
+{
+	level_columnA01,
+	level1102_txt,
+};
+
 const unsigned char *level_object_data[] =
 {
 	level1101_txt,

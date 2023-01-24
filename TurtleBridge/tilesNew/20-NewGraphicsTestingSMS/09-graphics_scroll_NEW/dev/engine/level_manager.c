@@ -24,13 +24,17 @@ void engine_level_manager_init()
 	//level_x = 0;
 }
 
-void engine_level_manager_load( unsigned char level )
+void engine_level_manager_load( unsigned char index )
 {
 	struct_level_object *lo = &global_level_object;
 	lo->level_cols_offset = 0;
 	lo->level_draw_offset = 31;
 	//column = 0;
 	//level_x = 0;
+
+	devkit_SMS_mapROMBank( FIXED_BANK );
+	lo->level_data = ( unsigned char* ) level_object_data[ index ];
+	lo->level_bank = level_object_bank[ index ];
 }
 
 void engine_level_manager_draw( unsigned int offset )
