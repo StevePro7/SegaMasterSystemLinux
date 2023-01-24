@@ -2,7 +2,15 @@ extern const unsigned char	level_planesA01[];
 #define				level_planesA01_size 32
 #define				level_planesA01_bank 6
 
+extern const unsigned char	level_planesA02[];
+#define				level_planesA01_size 32
+#define				level_planesA01_bank 6
+
 extern const unsigned char	level_columnA01[];
+#define				level_columnA01_size 32
+#define				level_columnA01_bank 6
+
+extern const unsigned char	level_columnA02[];
 #define				level_columnA01_size 32
 #define				level_columnA01_bank 6
 

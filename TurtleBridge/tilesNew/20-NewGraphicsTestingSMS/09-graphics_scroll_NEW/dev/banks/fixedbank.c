@@ -20,12 +20,12 @@ const unsigned char music_object_bank[] =
 const unsigned char *mylevel_planesA[] =
 {
 	level_planesA01,
-	level1102_txt,
+	level_planesA02,
 };
 const unsigned char *mylevel_columnA[] =
 {
 	level_columnA01,
-	level1102_txt,
+	level_columnA02,
 };
 
 const unsigned char *level_object_data[] =
