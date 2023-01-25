@@ -8,7 +8,6 @@ extern struct_level_object global_level_object;
 
 void engine_level_manager_init();
 void engine_level_manager_load( unsigned char index );
-void engine_level_manager_test();
 void engine_level_manager_draw( unsigned int offset );
 
 #endif//_LEVEL_MANAGER_H_

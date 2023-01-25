@@ -40,11 +40,6 @@ void engine_level_manager_load( unsigned char index )
 	lo->level_bank = level_object_bank[ index ];
 }
 
-void engine_level_manager_test()
-{
-	engine_font_manager_data( 12, 10, 1 );
-}
-
 void engine_level_manager_draw( unsigned int offset )
 {
 	struct_level_object *lo = &global_level_object;
@@ -62,7 +57,8 @@ void engine_level_manager_draw( unsigned int offset )
 	//engine_font_manager_draw_data( index, 10, 1);
 	//engine_font_manager_draw_data( lo->level_draw_offset, 20, 1 );
 
-	devkit_SMS_mapROMBank( FIXED_BANK );
+	devkit_SMS_mapROMBank( lo->level_bank );
+	//devkit_SMS_mapROMBank( FIXED_BANK );
 	planesA = lo->xlevel_planesA[ index ];
 	columnA = lo->xlevel_columnA[ index ];
 	//type = level_tile_type[ index ];
