@@ -37,7 +37,7 @@ void engine_level_manager_load( unsigned char index )
 	lo->xlevel_planesA = ( unsigned char* ) mylevel_planesA[ index ];
 	lo->xlevel_columnA = ( unsigned char* ) mylevel_columnA[ index ];
 	lo->level_data = ( unsigned char* ) level_object_data[ index ];
-	lo->level_bank = level_object_bank[ index ];
+	lo->level_bank = 6;//TODO -hardcoded // level_object_bank[ index ];
 }
 
 void engine_level_manager_draw( unsigned int offset )

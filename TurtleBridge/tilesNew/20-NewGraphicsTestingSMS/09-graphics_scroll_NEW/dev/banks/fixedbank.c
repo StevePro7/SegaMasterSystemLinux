@@ -21,11 +21,13 @@ const unsigned char *mylevel_planesA[] =
 {
 	level_planesA01,
 	level_planesA02,
+	level_planesA03,
 };
 const unsigned char *mylevel_columnA[] =
 {
 	level_columnA01,
 	level_columnA02,
+	level_columnA03,
 };
 
 const unsigned char *level_object_data[] =
