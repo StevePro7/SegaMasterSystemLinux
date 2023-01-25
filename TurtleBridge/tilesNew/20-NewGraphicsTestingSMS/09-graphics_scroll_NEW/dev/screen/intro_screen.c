@@ -9,20 +9,20 @@
 
 void screen_intro_screen_load()
 {
-	unsigned char idx;
-
+	//unsigned char idx;
+	engine_level_manager_load( 0 );
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();
-	for( idx = 0; idx < SCREEN_WIDE; idx++ )
-	{
-		engine_level_manager_draw( idx );
-	}
+	//for( idx = 0; idx < SCREEN_WIDE; idx++ )
+	//{
+	//	engine_level_manager_draw( idx );
+	//}
+	engine_level_manager_test();
 	devkit_SMS_displayOn();
 }
 
 void screen_intro_screen_update( unsigned char *screen_type )
 {
-	
 	*screen_type = screen_type_intro;
 }

@@ -3,47 +3,47 @@ XL3
 H 9 areas 28 global symbols
 M intro_screen
 O -mz80
-S _engine_font_manager_text Ref000000
+S _engine_level_manager_load Ref000000
 S _devkit_SMS_displayOn Ref000000
 S .__.ABS. Def000000
+S _engine_level_manager_test Ref000000
 S _devkit_SMS_displayOff Ref000000
 S _engine_asm_manager_clear_VRAM Ref000000
 S _engine_content_manager_bggame Ref000000
-A _CODE size 2C flags 0 addr 0
-S A$intro_screen$75 Def00000D
-S C$intro_screen.c$11$1_0$87 Def000003
-S A$intro_screen$76 Def000010
-S C$intro_screen.c$12$1_0$87 Def000006
-S A$intro_screen$77 Def000011
-S C$intro_screen.c$20$1_0$89 Def000025
-S C$intro_screen.c$13$1_0$87 Def000009
-S A$intro_screen$78 Def000014
-S A$intro_screen$69 Def000006
-S C$intro_screen.c$21$1_0$89 Def00002B
-S C$intro_screen.c$14$1_0$87 Def000016
-S A$intro_screen$79 Def000015
-S C$intro_screen.c$15$1_0$87 Def000016
-S C$intro_screen.c$17$1_0$89 Def000025
+A _CODE size 1D flags 0 addr 0
+S A$intro_screen$93 Def000013
+S A$intro_screen$66 Def000006
+S C$intro_screen.c$25$1_0$91 Def000016
+S C$intro_screen.c$10$0_0$89 Def000000
+S C$intro_screen.c$27$1_0$91 Def000016
+S A$intro_screen$78 Def00000D
+S C$intro_screen.c$28$1_0$91 Def00001C
+S C$intro_screen.c$21$1_0$89 Def000010
+S C$intro_screen.c$22$1_0$89 Def000013
+S C$intro_screen.c$13$1_0$89 Def000000
+S C$intro_screen.c$23$1_0$89 Def000013
+S C$intro_screen.c$14$1_0$89 Def000007
+S C$intro_screen.c$15$1_0$89 Def00000A
+S C$intro_screen.c$16$1_0$89 Def00000D
 S _screen_intro_screen_load Def000000
-S Fintro_screen$__str_0$0_0$0 Def000019
-S XG$screen_intro_screen_load$0$0 Def000016
-S C$intro_screen.c$8$0_0$87 Def000000
-S G$screen_intro_screen_update$0$0 Def000025
-S A$intro_screen$110 Def000028
-S A$intro_screen$111 Def000029
-S _screen_intro_screen_update Def000025
-S A$intro_screen$107 Def000025
-S A$intro_screen$108 Def000026
-S A$intro_screen$109 Def000027
-S A$intro_screen$119 Def00002B
-S XG$screen_intro_screen_update$0$0 Def00002B
-S A$intro_screen$61 Def000000
+S XG$screen_intro_screen_load$0$0 Def000013
+S G$screen_intro_screen_update$0$0 Def000016
+S A$intro_screen$110 Def00001A
+S A$intro_screen$106 Def000016
+S _screen_intro_screen_update Def000016
+S A$intro_screen$107 Def000017
+S A$intro_screen$108 Def000018
+S A$intro_screen$118 Def00001C
+S A$intro_screen$109 Def000019
+S XG$screen_intro_screen_update$0$0 Def00001C
+S A$intro_screen$70 Def000007
+S A$intro_screen$62 Def000000
 S G$screen_intro_screen_load$0$0 Def000000
-S A$intro_screen$90 Def000016
-S A$intro_screen$73 Def000009
-S A$intro_screen$74 Def00000C
+S A$intro_screen$63 Def000001
+S A$intro_screen$82 Def000010
+S A$intro_screen$64 Def000002
+S A$intro_screen$74 Def00000A
 S A$intro_screen$65 Def000003
-S C$intro_screen.c$10$1_0$87 Def000000
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -54,15 +54,11 @@ A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
-T 00 00 00 CD 00 00 CD 00 00 CD 00 00 11 0A 02 D5
-R 00 00 00 00 02 04 03 00 02 07 04 00 02 0A 05 00
-T 0D 00 00 21 19 00 E5 CD 00 00 F1 F1 C3 00 00
-R 00 00 00 00 00 04 00 00 02 08 00 00 02 0D 01 00
-T 19 00 00
+T 00 00 00 AF F5 33 CD 00 00 33 CD 00 00 CD 00 00
+R 00 00 00 00 02 07 00 00 02 0B 04 00 02 0E 05 00
+T 0D 00 00 CD 00 00 CD 00 00 C3 00 00
+R 00 00 00 00 02 04 06 00 02 07 03 00 02 0A 01 00
+T 16 00 00
 R 00 00 00 00
-T 19 00 00 48 45 4C 4C 4F 20 49 4E 54 52 4F 00
-R 00 00 00 00
-T 25 00 00
-R 00 00 00 00
-T 25 00 00 C1 E1 E5 C5 36 03 C9
+T 16 00 00 C1 E1 E5 C5 36 03 C9
 R 00 00 00 00

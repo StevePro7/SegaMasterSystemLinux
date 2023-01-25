@@ -57,6 +57,9 @@ S:Ltile_manager.engine_tile_manager_init$idx$1_0$112({1}SC:U),B,1,-1
 S:Ltile_manager.engine_tile_manager_init$sloc0$0_1$0({1}SC:U),B,1,-1
 T:Ftile_manager$tag_struct_tile_object[({0}S:S$tilemap_index$0_0$0({2}SI:U),Z,0,0)({2}S:S$tile_wide$0_0$0({1}SC:U),Z,0,0)({3}S:S$tile_platform$0_0$0({1}SC:U),Z,0,0)]
 S:G$music_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$mylevel_planesA$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$mylevel_columnA$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$level_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$global_tile_object$0_0$0({4}STtag_struct_tile_object:S),E,0,0
 S:G$global_tile_objects$0_0$0({64}DA16d,STtag_struct_tile_object:S),E,0,0
 S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0

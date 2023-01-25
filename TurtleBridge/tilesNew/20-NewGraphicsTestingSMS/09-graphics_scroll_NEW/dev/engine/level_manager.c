@@ -5,6 +5,7 @@
 #include "tile_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
+#include "../banks/bank6.h"
 
 // Global variable.
 struct_level_object global_level_object;
@@ -33,8 +34,15 @@ void engine_level_manager_load( unsigned char index )
 	//level_x = 0;
 
 	devkit_SMS_mapROMBank( FIXED_BANK );
+	lo->xlevel_planesA = ( unsigned char* ) mylevel_planesA[ index ];
+	lo->xlevel_columnA = ( unsigned char* ) mylevel_columnA[ index ];
 	lo->level_data = ( unsigned char* ) level_object_data[ index ];
 	lo->level_bank = level_object_bank[ index ];
+}
+
+void engine_level_manager_test()
+{
+	engine_font_manager_data( 12, 10, 1 );
 }
 
 void engine_level_manager_draw( unsigned int offset )
@@ -55,8 +63,8 @@ void engine_level_manager_draw( unsigned int offset )
 	//engine_font_manager_draw_data( lo->level_draw_offset, 20, 1 );
 
 	devkit_SMS_mapROMBank( FIXED_BANK );
-	planesA = level_planesA[ index ];
-	columnA = level_columnA[ index ];
+	planesA = lo->xlevel_planesA[ index ];
+	columnA = lo->xlevel_columnA[ index ];
 	//type = level_tile_type[ index ];
 	//cols = level_tile_cols[ index ];
 	//engine_tile_manager_draw_columns( tile_type_island, column, 18, column, false );
