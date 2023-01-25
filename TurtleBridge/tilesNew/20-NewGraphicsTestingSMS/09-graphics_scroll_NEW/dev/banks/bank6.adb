@@ -1,9 +1,9 @@
 M:bank6
 S:G$level_planesA01$0_0$0({32}DA32d,SC:U),D,0,0
 S:G$level_planesA02$0_0$0({32}DA32d,SC:U),D,0,0
-S:G$level_planesA03$0_0$0({32}DA32d,SC:U),D,0,0
-S:G$level_columnA01$0_0$0({32}DA32d,SC:U),D,0,0
+S:G$level_planesA03$0_0$0({64}DA64d,SC:U),D,0,0
+S:G$level_columnA01$0_0$0({33}DA33d,SC:U),D,0,0
 S:G$level_columnA02$0_0$0({32}DA32d,SC:U),D,0,0
-S:G$level_columnA03$0_0$0({32}DA32d,SC:U),D,0,0
+S:G$level_columnA03$0_0$0({64}DA64d,SC:U),D,0,0
 S:G$level1101_txt$0_0$0({32}DA32d,SC:U),D,0,0
 S:G$level1102_txt$0_0$0({32}DA32d,SC:U),D,0,0
