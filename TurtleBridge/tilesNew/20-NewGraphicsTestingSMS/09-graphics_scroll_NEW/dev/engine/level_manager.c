@@ -6,6 +6,7 @@
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
 #include "../banks/bank6.h"
+#include <stdbool.h>
 
 // Global variable.
 struct_level_object global_level_object;
@@ -45,6 +46,7 @@ void engine_level_manager_draw( unsigned int offset )
 	struct_level_object *lo = &global_level_object;
 	unsigned int index;
 	unsigned char planesA, columnA;
+	bool flip = false;
 	lo->level_cols_offset = offset;
 	//lo->level_draw_offset = offset % SCREEN_WIDE;
 	lo->level_draw_offset++;
@@ -67,16 +69,16 @@ void engine_level_manager_draw( unsigned int offset )
 	//engine_tile_manager_draw_columns( type, cols, 12, cols, false );
 
 	//flip = false;
-	if( columnA >= 128 )
+	if( columnA >= 8 )
 	{
-		//flip = true;
-		columnA -= 128;
+		flip = true;
+		columnA -= 8;
 	}
 	//engine_tile_manager_draw_empties( lo->level_draw_offset );
 	//if( 0 != planesA )
 	//{
 	
-	engine_tile_manager_draw_columns( planesA, lo->level_draw_offset, columnA );
+	engine_tile_manager_draw_columns( planesA, lo->level_draw_offset, columnA, flip );
 	//}
 	//else
 	//{

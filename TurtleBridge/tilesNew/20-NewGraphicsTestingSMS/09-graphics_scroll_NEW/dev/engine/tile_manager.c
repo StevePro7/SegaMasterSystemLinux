@@ -12,8 +12,8 @@
 struct_tile_object global_tile_object;
 struct_tile_object global_tile_objects[ MAX_TILE_OBJECTS ];
 
-//void engine_tile_manager_draw_columns( unsigned char tile_type, unsigned char x, unsigned char y, unsigned char col, bool flip )
-void engine_tile_manager_draw_columns( unsigned char tile_type, unsigned char x, unsigned char col )
+//void engine_tile_manager_draw_columns( unsigned char tile_type, unsigned char x, unsigned char col )
+void engine_tile_manager_draw_columns( unsigned char tile_type, unsigned char x, unsigned char col, bool flip )
 {
 	const unsigned char *tiles = bggame_tiles__tilemap__bin;
 	struct_tile_object *to = &global_tile_objects[ tile_type ];
@@ -27,10 +27,10 @@ void engine_tile_manager_draw_columns( unsigned char tile_type, unsigned char x,
 	{
 		idx = to->tilemap_index + row * 2 * TILMAP_WIDE + col * 2;
 		val = tiles[ idx ];
-		//if( flip )
-		//{
-		//	val |= devkit_TILE_FLIPPED_X();
-		//}
+		if( flip )
+		{
+			val |= devkit_TILE_FLIPPED_X();
+		}
 
 		devkit_SMS_setNextTileatXY( x, TILE_SCROLL_HIGH + row );
 		devkit_SMS_setTile( val );
