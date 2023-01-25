@@ -20,7 +20,7 @@ void screen_play_screen_load()
 	engine_level_manager_load( 0 );
 	drawScreen();
 	engine_scroll_manager_load();
-	engine_music_manager_play( 1 );
+	//engine_music_manager_play( 1 );
 }
 
 void screen_play_screen_update( unsigned char *screen_type )
@@ -31,7 +31,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 	unsigned char value;
 	bool newTile;
 
-	delta = 5;
+	delta = 0;
 	value = 0;
 	newTile = false;
 	//input = engine_input_manager_hold( input_type_right);
@@ -53,7 +53,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 	input = engine_input_manager_move( input_type_right );
 	if( input )
 	{
-		delta = 4;
+		delta = 2;
 	}
 	//input = engine_input_manager_move( input_type_left );
 	//if( input )
@@ -74,7 +74,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 	if( 0 == delta )
 	{
 		// uncomment next line for auto scroll
-		delta = 1;
+		delta = 0;
 		newTile = engine_scroll_manager_update( delta );
 		if( newTile )
 		{
