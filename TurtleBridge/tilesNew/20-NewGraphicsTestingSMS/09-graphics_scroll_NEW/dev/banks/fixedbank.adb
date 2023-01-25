@@ -15,5 +15,3 @@ S:G$level1101_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$level1102_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$music_object_bank$0_0$0({2}DA2d,SC:U),D,0,0
 S:G$level_object_bank$0_0$0({2}DA2d,SC:U),D,0,0
-S:G$tiles_object_indexes$0_0$0({38}DA19d,SI:U),D,0,0
-S:G$tiles_object_platform$0_0$0({16}DA16d,SC:U),D,0,0
