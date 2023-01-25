@@ -1,5 +1,5 @@
 XL3
-H A areas 11 global symbols
+H A areas 13 global symbols
 M bank6
 O -mz80
 S .__.ABS. Def000000
@@ -10,7 +10,7 @@ A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
-A _BANK6 size 701 flags 0 addr 0
+A _BANK6 size 721 flags 0 addr 0
 S G$level_planesA03$0_0$0 Def000340
 S _level_columnA01 Def000360
 S _level_columnA02 Def000681
@@ -21,10 +21,12 @@ S G$level_columnA03$0_0$0 Def0006A1
 S _level1101_txt Def0006C1
 S _level1102_txt Def0006E1
 S _level_planesA01 Def000000
+S _level1103_txt Def000701
 S G$level1101_txt$0_0$0 Def0006C1
 S _level_planesA02 Def000320
 S G$level1102_txt$0_0$0 Def0006E1
 S _level_planesA03 Def000340
+S G$level1103_txt$0_0$0 Def000701
 S G$level_planesA01$0_0$0 Def000000
 S G$level_planesA02$0_0$0 Def000320
 A _INITIALIZER size 0 flags 0 addr 0
@@ -328,4 +330,12 @@ R 00 00 07 00
 T EE 06 00 14 24 34 04 14 24 34 04 14 24 34 04 14
 R 00 00 07 00
 T FB 06 00 24 34 06 16 26 36
+R 00 00 07 00
+T 01 07 00
+R 00 00 07 00
+T 01 07 00 43 53 63 73 47 57 67 77 00 10 20 30 00
+R 00 00 07 00
+T 0E 07 00 10 20 30 00 10 20 30 00 10 20 30 00 10
+R 00 00 07 00
+T 1B 07 00 20 30 00 10 20 30
 R 00 00 07 00
