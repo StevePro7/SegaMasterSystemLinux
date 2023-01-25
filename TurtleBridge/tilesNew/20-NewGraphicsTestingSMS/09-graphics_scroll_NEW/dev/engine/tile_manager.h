@@ -6,8 +6,8 @@
 #include <stdbool.h>
 
 // Global variable.
-extern struct_tile_object global_tile_object;
-extern struct_tile_object global_tile_objects[ MAX_TILE_OBJECTS ];
+//extern struct_tile_object global_tile_object;
+//extern struct_tile_object global_tile_objects[ MAX_TILE_OBJECTS ];
 
 //void engine_tile_manager_draw_columns( unsigned char tile_type, unsigned char x, unsigned char col );
 void engine_tile_manager_draw_columns( unsigned char tile_type, unsigned char x, unsigned char col, bool flip );

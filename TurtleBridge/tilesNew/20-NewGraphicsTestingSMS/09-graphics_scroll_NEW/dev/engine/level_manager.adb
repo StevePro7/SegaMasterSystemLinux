@@ -12,10 +12,7 @@ S:Llevel_manager.engine_level_manager_draw$planesA$1_0$96({1}SC:U),R,0,0,[e]
 S:Llevel_manager.engine_level_manager_draw$columnA$1_0$96({1}SC:U),R,0,0,[c]
 S:Llevel_manager.engine_level_manager_draw$flip$1_0$96({1}:S),B,1,-1
 S:Llevel_manager.engine_level_manager_draw$sloc0$0_1$0({1}:S),B,1,-1
-T:Flevel_manager$tag_struct_tile_object[({0}S:S$tilemap_index$0_0$0({2}SI:U),Z,0,0)({2}S:S$tile_wide$0_0$0({1}SC:U),Z,0,0)({3}S:S$tile_platform$0_0$0({1}SC:U),Z,0,0)]
 T:Flevel_manager$tag_struct_level_object[({0}S:S$xlevel_planesA$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$xlevel_columnA$0_0$0({2}DG,SC:U),Z,0,0)({4}S:S$level_data$0_0$0({2}DG,SC:U),Z,0,0)({6}S:S$level_bank$0_0$0({1}SC:U),Z,0,0)({7}S:S$level_cols_offset$0_0$0({2}SI:U),Z,0,0)({9}S:S$level_draw_offset$0_0$0({1}SC:U),Z,0,0)]
-S:G$global_tile_object$0_0$0({4}STtag_struct_tile_object:S),E,0,0
-S:G$global_tile_objects$0_0$0({64}DA16d,STtag_struct_tile_object:S),E,0,0
 S:G$music_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$mylevel_planesA$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$mylevel_columnA$0_0$0({0}DA0d,DG,SC:U),E,0,0

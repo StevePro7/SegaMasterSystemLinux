@@ -36,14 +36,13 @@
 extern const unsigned int tiles_object_indexes[];
 extern const unsigned char tiles_object_platform[];
 
-
-typedef struct tag_struct_tile_object
-{
-	unsigned int tilemap_index;
-	unsigned char tile_wide;
-	//unsigned char tile_high;		TODO delete - as #define 
-	unsigned char tile_platform;
-
-} struct_tile_object;
+//typedef struct tag_struct_tile_object
+//{
+//	unsigned int tilemap_index;
+//	unsigned char tile_wide;
+//	//unsigned char tile_high;		TODO delete - as #define 
+//	unsigned char tile_platform;
+//
+//} struct_tile_object;
 
 #endif//_LEVEL_OBJECT_H_
