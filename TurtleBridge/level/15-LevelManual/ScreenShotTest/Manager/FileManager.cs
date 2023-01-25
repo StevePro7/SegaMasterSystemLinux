@@ -196,7 +196,7 @@ namespace ScreenShotTest
 			// Bytes array #1.
 			text1.Clear();
 			text2.Clear();
-			for (int idx = 0; idx < 32; idx++)
+			for (int idx = 0; idx < cols; idx++)
 			{
 				var tile = Tiles[idx];
 				var left = GetCols01(tile);

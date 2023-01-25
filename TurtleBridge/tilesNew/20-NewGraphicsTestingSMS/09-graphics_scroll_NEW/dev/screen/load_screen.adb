@@ -6,12 +6,9 @@ S:Lload_screen.screen_load_screen_update$input$1_0$97({1}SC:U),R,0,0,[a]
 F:Fload_screen$drawScreen$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lload_screen.drawScreen$tile$1_0$101({2}SI:U),R,0,0,[]
 T:Fload_screen$tag_struct_player_object[({0}S:S$posnX$0_0$0({1}SC:U),Z,0,0)({1}S:S$posnY$0_0$0({1}SC:U),Z,0,0)({2}S:S$drawX$0_0$0({1}SC:U),Z,0,0)({3}S:S$drawY$0_0$0({1}SC:U),Z,0,0)({4}S:S$tileX$0_0$0({1}SC:U),Z,0,0)({5}S:S$tileY$0_0$0({1}SC:U),Z,0,0)({6}S:S$player_state$0_0$0({1}SC:U),Z,0,0)({7}S:S$player_index$0_0$0({1}SC:U),Z,0,0)]
-T:Fload_screen$tag_struct_tile_object[({0}S:S$tilemap_index$0_0$0({2}SI:U),Z,0,0)({2}S:S$tile_wide$0_0$0({1}SC:U),Z,0,0)({3}S:S$tile_platform$0_0$0({1}SC:U),Z,0,0)]
 T:Fload_screen$tag_struct_level_object[({0}S:S$xlevel_planesA$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$xlevel_columnA$0_0$0({2}DG,SC:U),Z,0,0)({4}S:S$level_data$0_0$0({2}DG,SC:U),Z,0,0)({6}S:S$level_bank$0_0$0({1}SC:U),Z,0,0)({7}S:S$level_cols_offset$0_0$0({2}SI:U),Z,0,0)({9}S:S$level_draw_offset$0_0$0({1}SC:U),Z,0,0)]
 S:G$global_level_object$0_0$0({10}STtag_struct_level_object:S),E,0,0
 S:G$global_player_object$0_0$0({8}STtag_struct_player_object:S),E,0,0
-S:G$global_tile_object$0_0$0({4}STtag_struct_tile_object:S),E,0,0
-S:G$global_tile_objects$0_0$0({64}DA16d,STtag_struct_tile_object:S),E,0,0
 S:G$engine_asm_manager_clear_VRAM$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_bggame$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_splash$0_0$0({2}DF,SV:S),C,0,0

@@ -33,6 +33,18 @@ void engine_level_manager_load( unsigned char index )
 	lo->level_bank = 6;//TODO -hardcoded // level_object_bank[ index ];
 }
 
+void engine_level_manager_show( unsigned char screen )
+{
+	struct_level_object *lo = &global_level_object;
+	unsigned char index;
+	unsigned int offset;
+	offset = screen * SCREEN_WIDE;
+	for( index = 0; index < SCREEN_WIDE; index++ )
+	{
+		engine_level_manager_draw( offset + index );
+	}
+}
+
 void engine_level_manager_draw( unsigned int offset )
 {
 	struct_level_object *lo = &global_level_object;

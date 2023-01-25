@@ -16,9 +16,6 @@ S:Ltest_screen.draw_title$size$1_0$103({1}SC:U),R,0,0,[]
 S:Ltest_screen.draw_title$w$1_0$103({1}SC:U),R,0,0,[]
 S:Ltest_screen.draw_title$h$1_0$103({1}SC:U),R,0,0,[]
 F:Ftest_screen$drawScreen$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-T:Ftest_screen$tag_struct_tile_object[({0}S:S$tilemap_index$0_0$0({2}SI:U),Z,0,0)({2}S:S$tile_wide$0_0$0({1}SC:U),Z,0,0)({3}S:S$tile_platform$0_0$0({1}SC:U),Z,0,0)]
-S:G$global_tile_object$0_0$0({4}STtag_struct_tile_object:S),E,0,0
-S:G$global_tile_objects$0_0$0({64}DA16d,STtag_struct_tile_object:S),E,0,0
 S:Ftest_screen$tmp$0_0$0({2}SI:U),E,0,0
 S:G$screen_title_screen_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$screen_title_screen_update$0_0$0({2}DF,SV:S),C,0,0
