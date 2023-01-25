@@ -11,7 +11,7 @@
 void screen_intro_screen_load()
 {
 	//unsigned char idx;
-	engine_level_manager_load( 0 );
+	engine_level_manager_load( 1 );
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();
@@ -20,7 +20,7 @@ void screen_intro_screen_load()
 	//{
 	//	engine_level_manager_draw( idx );
 	//}
-	engine_level_manager_show( 3 );	// screen #0
+	engine_level_manager_show( 11 );	// screen #0
 	devkit_SMS_displayOn();
 }
 

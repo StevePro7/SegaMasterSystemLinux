@@ -17,8 +17,14 @@ static void drawScreen();
 
 void screen_play_screen_load()
 {
-	engine_level_manager_load( 0 );
+	engine_level_manager_load( 1 );
+
+	devkit_SMS_displayOff();
 	drawScreen();
+	engine_level_manager_show( 0 );
+	engine_player_manager_draw();
+	devkit_SMS_displayOn();
+
 	engine_scroll_manager_load();
 	//engine_music_manager_play( 1 );
 }
@@ -109,9 +115,9 @@ void screen_play_screen_update( unsigned char *screen_type )
 
 static void drawScreen()
 {
-	unsigned char idx;
+	//unsigned char idx;
 
-	devkit_SMS_displayOff();
+	
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();
 	engine_content_manager_sprite();
@@ -135,11 +141,11 @@ static void drawScreen()
 	//engine_tile_manager_stevepro( TILE_ISLAND_SIGN, 16, 8, 4, 14 );
 	//engine_tile_manager_stevepro( TILE_ISLAND_RGHT, 20, 8, 4, 14 );
 
-	// Draw from level.
-	for( idx = 0; idx < SCREEN_WIDE; idx++ )
-	{
-		engine_level_manager_draw( idx );
-	}
+	//// Draw from level.
+	//for( idx = 0; idx < SCREEN_WIDE; idx++ )
+	//{
+	//	engine_level_manager_draw( idx );
+	//}
 
 	//engine_tile_manager_stevepro( TILE_BRIDGE_RGHT, 12, 8, 4, 14 );
 	//engine_font_manager_text( "[[[[[[[[[[[[[[[[[[[[[[[[", 4, 0 );
@@ -149,6 +155,5 @@ static void drawScreen()
 	//engine_font_manager_text( "STEVEPRO[IS[WRITING[THIS", 4, 1 );
 	//engine_font_manager_text( "STEVEPRO[IS[WRITING[THIS", 4, 2 );
 
-	engine_player_manager_draw();
-	devkit_SMS_displayOn();
+	
 }
