@@ -23,7 +23,7 @@ const unsigned char *level_object_data[] =
 	level1102_txt,
 	level1103_txt,
 };
-const unsigned char level_object_size[] =
+const unsigned int level_object_size[] =
 {
 	level1101_txt_size,
 	level1102_txt_size,

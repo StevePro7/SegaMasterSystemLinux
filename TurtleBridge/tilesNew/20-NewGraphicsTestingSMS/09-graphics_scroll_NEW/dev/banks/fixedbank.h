@@ -7,8 +7,6 @@ extern const unsigned char *music_object_data[];
 extern const unsigned char music_object_bank[];
 
 // Level Manager.
-//extern const unsigned char *mylevel_planesA[];
-//extern const unsigned char *mylevel_columnA[];
 extern const unsigned char *level_object_data[];
-extern const unsigned char level_object_size[];
+extern const unsigned int level_object_size[];
 extern const unsigned char level_object_bank[];

@@ -10,17 +10,12 @@
 
 void screen_intro_screen_load()
 {
-	//unsigned char idx;
-	engine_level_manager_load( 1 );
+	engine_level_manager_load( 0 );
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();
 	engine_graphics_manager_sea();
-	//for( idx = 0; idx < SCREEN_WIDE; idx++ )
-	//{
-	//	engine_level_manager_draw( idx );
-	//}
-	engine_level_manager_show( 11 );	// screen #0
+	engine_level_manager_show( 1 );
 	devkit_SMS_displayOn();
 }
 

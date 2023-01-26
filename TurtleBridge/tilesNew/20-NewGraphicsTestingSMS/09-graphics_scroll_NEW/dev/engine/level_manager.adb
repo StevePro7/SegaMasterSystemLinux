@@ -17,12 +17,10 @@ S:Llevel_manager.engine_level_manager_draw$data$1_0$103({1}SC:U),R,0,0,[c]
 S:Llevel_manager.engine_level_manager_draw$planesA$1_0$103({1}SC:U),B,1,-2
 S:Llevel_manager.engine_level_manager_draw$columnA$1_0$103({1}SC:U),B,1,-1
 S:Llevel_manager.engine_level_manager_draw$flip$1_0$103({1}:S),R,0,0,[b]
-T:Flevel_manager$tag_struct_level_object[({0}S:S$xlevel_planesA$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$xlevel_columnA$0_0$0({2}DG,SC:U),Z,0,0)({4}S:S$level_data$0_0$0({2}DG,SC:U),Z,0,0)({6}S:S$level_bank$0_0$0({1}SC:U),Z,0,0)({7}S:S$level_cols_offset$0_0$0({2}SI:U),Z,0,0)({9}S:S$level_draw_offset$0_0$0({1}SC:U),Z,0,0)]
+T:Flevel_manager$tag_struct_level_object[({0}S:S$level_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$level_size$0_0$0({1}SC:U),Z,0,0)({3}S:S$level_bank$0_0$0({1}SC:U),Z,0,0)({4}S:S$level_cols_offset$0_0$0({2}SI:U),Z,0,0)({6}S:S$level_draw_offset$0_0$0({1}SC:U),Z,0,0)]
 S:G$music_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
-S:G$mylevel_planesA$0_0$0({0}DA0d,DG,SC:U),E,0,0
-S:G$mylevel_columnA$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$level_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
-S:G$global_level_object$0_0$0({10}STtag_struct_level_object:S),E,0,0
+S:G$global_level_object$0_0$0({7}STtag_struct_level_object:S),E,0,0
 S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0_0$0({2}DF,SV:S),C,0,0

@@ -2,8 +2,8 @@ M:intro_screen
 F:G$screen_intro_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_intro_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lintro_screen.screen_intro_screen_update$screen_type$1_0$91({2}DG,SC:U),B,1,4
-T:Fintro_screen$tag_struct_level_object[({0}S:S$xlevel_planesA$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$xlevel_columnA$0_0$0({2}DG,SC:U),Z,0,0)({4}S:S$level_data$0_0$0({2}DG,SC:U),Z,0,0)({6}S:S$level_bank$0_0$0({1}SC:U),Z,0,0)({7}S:S$level_cols_offset$0_0$0({2}SI:U),Z,0,0)({9}S:S$level_draw_offset$0_0$0({1}SC:U),Z,0,0)]
-S:G$global_level_object$0_0$0({10}STtag_struct_level_object:S),E,0,0
+T:Fintro_screen$tag_struct_level_object[({0}S:S$level_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$level_size$0_0$0({1}SC:U),Z,0,0)({3}S:S$level_bank$0_0$0({1}SC:U),Z,0,0)({4}S:S$level_cols_offset$0_0$0({2}SI:U),Z,0,0)({6}S:S$level_draw_offset$0_0$0({1}SC:U),Z,0,0)]
+S:G$global_level_object$0_0$0({7}STtag_struct_level_object:S),E,0,0
 S:G$engine_asm_manager_clear_VRAM$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_bggame$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_splash$0_0$0({2}DF,SV:S),C,0,0

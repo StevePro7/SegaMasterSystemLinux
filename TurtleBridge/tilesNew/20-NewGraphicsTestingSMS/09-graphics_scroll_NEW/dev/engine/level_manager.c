@@ -28,7 +28,8 @@ void engine_level_manager_load( unsigned char index )
 
 	devkit_SMS_mapROMBank( FIXED_BANK );
 	lo->level_data = ( unsigned char* ) level_object_data[ index ];
-	lo->level_bank = 6;//TODO -hardcoded // level_object_bank[ index ];
+	lo->level_size = level_object_size[ index ];
+	lo->level_bank = level_object_bank[ index ];
 }
 
 void engine_level_manager_show( unsigned char screen )
@@ -63,12 +64,8 @@ void engine_level_manager_draw( unsigned int offset )
 	data = lo->level_data[ index ];
 	planesA = 0;
 	columnA = 0;
-	//engine_function_manager_convertByteToNibbles( data, &planesA, &columnA );
 	engine_function_manager_convertByteToNibbles( data, &columnA, &planesA );
-	//planesA = lo->xlevel_planesA[ index ];
-	//columnA = lo->xlevel_columnA[ index ];
 
-	//flip = false;
 	if( columnA >= 8 )
 	{
 		flip = true;
