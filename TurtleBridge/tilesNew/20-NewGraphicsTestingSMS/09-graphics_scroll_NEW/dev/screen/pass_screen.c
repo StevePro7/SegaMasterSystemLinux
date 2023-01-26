@@ -13,7 +13,7 @@ unsigned char swap;
 void screen_pass_screen_load()
 {
 	engine_player_manager_draw();
-	engine_scroll_manager_load();
+	//engine_scroll_manager_load();
 	//devkit_SMS_displayOff();
 	//engine_asm_manager_clear_VRAM();
 	//engine_content_manager_bggame();

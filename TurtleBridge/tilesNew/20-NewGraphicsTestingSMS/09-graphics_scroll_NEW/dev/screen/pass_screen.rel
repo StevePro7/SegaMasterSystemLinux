@@ -1,6 +1,6 @@
 ;!FILE pass_screen.asm
 XL3
-H 9 areas 34 global symbols
+H 9 areas 31 global symbols
 M pass_screen
 O -mz80
 S _engine_player_manager_draw Ref000000
@@ -8,52 +8,49 @@ S _engine_player_manager_pass Ref000000
 S _global_player_object Ref000000
 S .__.ABS. Def000000
 S _engine_scroll_manager_update Ref000000
-S _engine_scroll_manager_load Ref000000
-A _CODE size 2D flags 0 addr 0
-S XG$screen_pass_screen_update$0$0 Def00002C
+A _CODE size 2A flags 0 addr 0
+S XG$screen_pass_screen_update$0$0 Def000029
 S C$pass_screen.c$13$0_0$91 Def000000
 S G$screen_pass_screen_load$0$0 Def000000
-S A$pass_screen$81 Def00000B
-S A$pass_screen$72 Def000006
-S A$pass_screen$73 Def000008
-S A$pass_screen$64 Def000000
-S C$pass_screen.c$30$1_0$93 Def00000C
-S C$pass_screen.c$24$1_0$91 Def000006
+S A$pass_screen$63 Def000000
+S C$pass_screen.c$30$1_0$93 Def000009
+S A$pass_screen$92 Def000009
+S C$pass_screen.c$24$1_0$91 Def000003
 S C$pass_screen.c$15$1_0$91 Def000000
-S C$pass_screen.c$50$1_0$93 Def000023
-S C$pass_screen.c$25$1_0$91 Def00000B
-S C$pass_screen.c$16$1_0$91 Def000003
-S C$pass_screen.c$51$1_0$93 Def000026
-S A$pass_screen$68 Def000003
-S C$pass_screen.c$52$1_0$93 Def00002C
-S C$pass_screen.c$35$1_0$93 Def000013
-S A$pass_screen$97 Def00000C
-S C$pass_screen.c$27$1_0$93 Def00000C
-S A$pass_screen$98 Def00000D
-S A$pass_screen$99 Def00000E
-S C$pass_screen.c$29$1_0$93 Def00000C
-S C$pass_screen.c$44$2_0$96 Def00001A
+S A$pass_screen$93 Def00000A
+S C$pass_screen.c$50$1_0$93 Def000020
+S C$pass_screen.c$25$1_0$91 Def000008
+S A$pass_screen$94 Def00000B
+S A$pass_screen$76 Def000008
+S A$pass_screen$67 Def000003
+S C$pass_screen.c$51$1_0$93 Def000023
+S A$pass_screen$95 Def00000C
+S A$pass_screen$68 Def000005
+S C$pass_screen.c$52$1_0$93 Def000029
+S A$pass_screen$96 Def00000F
+S C$pass_screen.c$35$1_0$93 Def000010
+S C$pass_screen.c$27$1_0$93 Def000009
+S C$pass_screen.c$29$1_0$93 Def000009
+S C$pass_screen.c$44$2_0$96 Def000017
 S _screen_pass_screen_load Def000000
-S C$pass_screen.c$46$3_0$97 Def000020
-S XG$screen_pass_screen_load$0$0 Def00000B
-S G$screen_pass_screen_update$0$0 Def00000C
-S A$pass_screen$100 Def00000F
-S A$pass_screen$101 Def000012
-S A$pass_screen$111 Def00001A
-S A$pass_screen$130 Def00002A
+S C$pass_screen.c$46$3_0$97 Def00001D
+S XG$screen_pass_screen_load$0$0 Def000008
+S G$screen_pass_screen_update$0$0 Def000009
+S A$pass_screen$100 Def000010
+S A$pass_screen$101 Def000013
+S A$pass_screen$102 Def000015
+S A$pass_screen$121 Def000023
 S A$pass_screen$112 Def00001D
-S A$pass_screen$122 Def000023
-S A$pass_screen$113 Def00001E
-S A$pass_screen$105 Def000013
-S A$pass_screen$106 Def000016
-S _screen_pass_screen_update Def00000C
-S A$pass_screen$107 Def000018
-S A$pass_screen$126 Def000026
+S A$pass_screen$122 Def000024
+S A$pass_screen$123 Def000025
+S A$pass_screen$133 Def000029
+S A$pass_screen$124 Def000026
+S A$pass_screen$106 Def000017
+S _screen_pass_screen_update Def000009
+S A$pass_screen$125 Def000027
+S A$pass_screen$107 Def00001A
 S A$pass_screen$117 Def000020
-S A$pass_screen$127 Def000027
-S A$pass_screen$128 Def000028
-S A$pass_screen$138 Def00002C
-S A$pass_screen$129 Def000029
+S A$pass_screen$108 Def00001B
 A _DATA size 1 flags 0 addr 0
 S _swap Def000000
 S G$swap$0_0$0 Def000000
@@ -70,15 +67,15 @@ T 00 00 00
 R 00 00 01 00
 T 00 00 00
 R 00 00 00 00
-T 00 00 00 CD 00 00 CD 00 00 3E 01 32 00 00 C9
-R 00 00 00 00 02 04 00 00 02 07 05 00 00 0C 01 00
-T 0C 00 00
+T 00 00 00 CD 00 00 3E 01 32 00 00 C9
+R 00 00 00 00 02 04 00 00 00 09 01 00
+T 09 00 00
 R 00 00 00 00
-T 0C 00 00 AF F5 33 CD 00 00 33 3A 00 00 D6 F0 30
+T 09 00 00 AF F5 33 CD 00 00 33 3A 00 00 D6 F0 30
 R 00 00 00 00 02 07 04 00 02 0B 02 00
-T 19 00 00 09 3A 00 00 B7 28 03 CD 00 00
+T 16 00 00 09 3A 00 00 B7 28 03 CD 00 00
 R 00 00 00 00 00 05 01 00 02 0B 01 00
-T 23 00 00
+T 20 00 00
 R 00 00 00 00
-T 23 00 00 CD 00 00 C1 E1 E5 C5 36 0A C9
+T 20 00 00 CD 00 00 C1 E1 E5 C5 36 0A C9
 R 00 00 00 00 02 04 00 00

@@ -9,6 +9,7 @@
 #include "../engine/level_manager.h"
 #include "../engine/player_manager.h"
 #include "../engine/scroll_manager.h"
+#include "../engine/tile_manager.h"
 #include "../devkit/_sms_manager.h"
 #include <stdbool.h>
 
@@ -22,6 +23,11 @@ void screen_intro_screen_load()
 	engine_content_manager_bggame();
 	engine_content_manager_sprite();
 	engine_graphics_manager_sea();
+	engine_tile_manager_stevepro( TILE_PLAY_TITLE, 4, 0, 24, 3 );
+	engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 2, 5, 8, 3 );
+	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 10, 4, 8, 3 );
+	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 18, 4, 8, 3 );
+	engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 26, 5, 8, 3 );
 	engine_level_manager_show( 0 );
 	engine_player_manager_draw();
 	devkit_SMS_displayOn();
@@ -43,7 +49,7 @@ void screen_intro_screen_update( unsigned char *screen_type )
 	input = engine_input_manager_move( input_type_right );
 	if( input )
 	{
-		delta = 8;
+		delta = 2;
 	}
 	//input = engine_input_manager_move( input_type_down );
 	//if( input )
@@ -81,7 +87,7 @@ void screen_intro_screen_update( unsigned char *screen_type )
 
 	if( complete )
 	{
-		engine_player_manager_update3();
+	//	engine_player_manager_update3();
 		*screen_type = screen_type_pass;
 		return;
 	}
