@@ -13,7 +13,7 @@
 #include "../screen/load_screen.h"
 #include "../screen/ready_screen.h"
 #include "../screen/play_screen.h"
-//#include "../screen/pass_screen.h"
+#include "../screen/pass_screen.h"
 //#include "../screen/dead_screen.h"
 //#include "../screen/cont_screen.h"
 //#include "../screen/over_screen.h"
@@ -47,7 +47,7 @@ void engine_screen_manager_init( unsigned char open_screen_type )
 	load_method[ screen_type_load ] = screen_load_screen_load;
 	load_method[ screen_type_ready ] = screen_ready_screen_load;
 	load_method[ screen_type_play ] = screen_play_screen_load;
-	//load_method[ screen_type_pass ] = screen_pass_screen_load;
+	load_method[ screen_type_pass ] = screen_pass_screen_load;
 	//load_method[ screen_type_dead ] = screen_dead_screen_load;
 	//load_method[ screen_type_cont ] = screen_cont_screen_load;
 	//load_method[ screen_type_over ] = screen_over_screen_load;
@@ -70,7 +70,7 @@ void engine_screen_manager_init( unsigned char open_screen_type )
 	update_method[ screen_type_load ] = screen_load_screen_update;
 	update_method[ screen_type_ready ] = screen_ready_screen_update;
 	update_method[ screen_type_play ] = screen_play_screen_update;
-	//update_method[ screen_type_pass ] = screen_pass_screen_update;
+	update_method[ screen_type_pass ] = screen_pass_screen_update;
 	//update_method[ screen_type_dead ] = screen_dead_screen_update;
 	//update_method[ screen_type_cont ] = screen_cont_screen_update;
 	//update_method[ screen_type_over ] = screen_over_screen_update;

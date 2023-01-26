@@ -1,6 +1,6 @@
 M:screen_manager
 F:G$engine_screen_manager_init$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lscreen_manager.engine_screen_manager_init$open_screen_type$1_0$14({1}SC:U),B,1,4
+S:Lscreen_manager.engine_screen_manager_init$open_screen_type$1_0$15({1}SC:U),B,1,4
 F:G$engine_screen_manager_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Fscreen_manager$curr_screen_type$0_0$0({1}SC:U),E,0,0
 S:Fscreen_manager$next_screen_type$0_0$0({1}SC:U),E,0,0
@@ -24,6 +24,8 @@ S:G$screen_ready_screen_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$screen_ready_screen_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$screen_play_screen_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$screen_play_screen_update$0_0$0({2}DF,SV:S),C,0,0
+S:G$screen_pass_screen_load$0_0$0({2}DF,SV:S),C,0,0
+S:G$screen_pass_screen_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$screen_test_screen_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$screen_test_screen_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$screen_func_screen_load$0_0$0({2}DF,SV:S),C,0,0

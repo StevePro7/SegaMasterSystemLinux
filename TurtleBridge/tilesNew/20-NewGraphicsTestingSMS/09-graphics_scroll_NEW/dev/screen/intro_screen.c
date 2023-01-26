@@ -5,6 +5,7 @@
 #include "../engine/font_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/graphics_manager.h"
+#include "../engine/input_manager.h"
 #include "../engine/level_manager.h"
 #include "../engine/player_manager.h"
 #include "../engine/scroll_manager.h"
@@ -18,13 +19,22 @@ void screen_intro_screen_load()
 	engine_content_manager_bggame();
 	engine_content_manager_sprite();
 	engine_graphics_manager_sea();
-	engine_level_manager_show( 1 );
+	engine_level_manager_show( 0 );
 	engine_player_manager_draw();
 	devkit_SMS_displayOn();
 }
 
 void screen_intro_screen_update( unsigned char *screen_type )
 {
+	struct_scroll_object *so = &global_scroll_object;
+	unsigned char input;
+	unsigned char delta;
+	unsigned char value;
+	input = engine_input_manager_move( input_type_right );
+	if( input )
+	{
+		delta = 1;
+	}
 	//engine_player_manager_update();
 	engine_player_manager_draw();
 	*screen_type = screen_type_intro;

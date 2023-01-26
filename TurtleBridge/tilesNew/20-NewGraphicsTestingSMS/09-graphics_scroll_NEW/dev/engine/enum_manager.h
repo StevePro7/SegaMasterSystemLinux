@@ -13,7 +13,7 @@ typedef enum tag_enum_screen_type
 	screen_type_load = 7,
 	screen_type_ready = 8,
 	screen_type_play = 9,
-	//screen_type_pass = 10,
+	screen_type_pass = 10,
 	//screen_type_dead = 11,
 	//screen_type_cont = 12,
 	//screen_type_over = 13,
