@@ -216,6 +216,7 @@ S:G$engine_player_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_update2$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_player_manager_update3$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_left$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_right$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_up$0_0$0({2}DF,SV:S),C,0,0

@@ -12,6 +12,8 @@
 #include "../devkit/_sms_manager.h"
 #include <stdbool.h>
 
+static bool complete;
+
 void screen_intro_screen_load()
 {
 	engine_level_manager_load( 2 );
@@ -24,11 +26,13 @@ void screen_intro_screen_load()
 	engine_player_manager_draw();
 	devkit_SMS_displayOn();
 	engine_scroll_manager_load();
+	complete = false;
 }
 
 void screen_intro_screen_update( unsigned char *screen_type )
 {
 	struct_scroll_object *so = &global_scroll_object;
+	struct_level_object *lo = &global_level_object;
 	unsigned char input;
 	unsigned char delta;
 	unsigned char value;
@@ -48,17 +52,34 @@ void screen_intro_screen_update( unsigned char *screen_type )
 	//	return;
 	//}
 
-	for( value = 0; value < delta; value++ )
+	if( !complete )
 	{
-		newTile = engine_scroll_manager_update( 1 );
-		if( newTile )
+		for( value = 0; value < delta; value++ )
 		{
-			engine_level_manager_draw( so->offset_right );
+			newTile = engine_scroll_manager_update( 1 );
+			if( newTile )
+			{
+				engine_level_manager_draw( so->offset_right );
+				complete = so->offset_right >= lo->level_size;
+				if( complete )
+				{
+					engine_font_manager_text( "NEXT SCREEN", 10, 3 );
+					break;
+				}
+			}
 		}
 	}
 
 	//engine_player_manager_update();
-	engine_player_manager_update2();
+	//engine_player_manager_update2();
 	engine_player_manager_draw();
+
+	if( complete )
+	{
+		engine_player_manager_update3();
+		*screen_type = screen_type_pass;
+		return;
+	}
+
 	*screen_type = screen_type_intro;
 }

@@ -67,6 +67,10 @@ void engine_level_manager_draw( unsigned int offset )
 	}
 
 	engine_font_manager_data( offset, 10, 2 );
+	//if( offset >= lo->level_size )
+	//{
+	//	engine_font_manager_text( "THE END", 10, 3 );
+	//}
 	//index = lo->level_cols_offset;
 
 	devkit_SMS_mapROMBank( lo->level_bank );

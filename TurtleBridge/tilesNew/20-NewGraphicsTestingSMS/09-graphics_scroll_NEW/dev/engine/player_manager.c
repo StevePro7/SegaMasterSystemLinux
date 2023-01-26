@@ -49,7 +49,11 @@ void engine_player_manager_load()
 	//	//engine_font_manager_text( "PLAYER IN THE AIR", 5, 4 );
 	//}
 }
-
+void engine_player_manager_update3()
+{
+	struct_player_object *po = &global_player_object;
+	po->player_frame = 4;
+}
 void engine_player_manager_update2()
 {
 	struct_player_object *po = &global_player_object;

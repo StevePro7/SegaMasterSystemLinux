@@ -3,6 +3,7 @@ F:G$screen_intro_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_intro_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lintro_screen.screen_intro_screen_update$screen_type$1_0$94({2}DG,SC:U),B,1,4
 S:Lintro_screen.screen_intro_screen_update$so$1_0$95({2}DG,STtag_struct_scroll_object:S),R,0,0,[]
+S:Lintro_screen.screen_intro_screen_update$lo$1_0$95({2}DG,STtag_struct_level_object:S),R,0,0,[]
 S:Lintro_screen.screen_intro_screen_update$input$1_0$95({1}SC:U),R,0,0,[a]
 S:Lintro_screen.screen_intro_screen_update$delta$1_0$95({1}SC:U),R,0,0,[c]
 S:Lintro_screen.screen_intro_screen_update$value$1_0$95({1}SC:U),R,0,0,[b]
@@ -13,6 +14,7 @@ T:Fintro_screen$tag_struct_level_object[({0}S:S$level_data$0_0$0({2}DG,SC:U),Z,0
 S:G$global_level_object$0_0$0({37}STtag_struct_level_object:S),E,0,0
 S:G$global_player_object$0_0$0({9}STtag_struct_player_object:S),E,0,0
 S:G$global_scroll_object$0_0$0({12}STtag_struct_scroll_object:S),E,0,0
+S:Fintro_screen$complete$0_0$0({1}:S),E,0,0
 S:G$engine_asm_manager_clear_VRAM$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_bggame$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_splash$0_0$0({2}DF,SV:S),C,0,0
@@ -34,6 +36,7 @@ S:G$engine_player_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_update2$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_player_manager_update3$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_left$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_right$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_up$0_0$0({2}DF,SV:S),C,0,0
