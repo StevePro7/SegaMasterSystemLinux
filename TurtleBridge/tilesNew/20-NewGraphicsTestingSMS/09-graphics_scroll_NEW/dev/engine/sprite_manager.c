@@ -2,9 +2,7 @@
 #include "enum_manager.h"
 #include "font_manager.h"
 #include "global_manager.h"
-//#include "../object/tile_object.h"
 #include "../devkit/_sms_manager.h"
-//#include "../content/gfx.h"
 #include <stdlib.h>
 
 void engine_sprite_manager_clear( unsigned char ch )

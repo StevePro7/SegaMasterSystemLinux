@@ -10,6 +10,7 @@
 #include "../engine/player_manager.h"
 #include "../engine/scroll_manager.h"
 #include "../devkit/_sms_manager.h"
+#include <stdbool.h>
 
 void screen_intro_screen_load()
 {
@@ -22,6 +23,7 @@ void screen_intro_screen_load()
 	engine_level_manager_show( 0 );
 	engine_player_manager_draw();
 	devkit_SMS_displayOn();
+	engine_scroll_manager_load();
 }
 
 void screen_intro_screen_update( unsigned char *screen_type )
@@ -30,12 +32,32 @@ void screen_intro_screen_update( unsigned char *screen_type )
 	unsigned char input;
 	unsigned char delta;
 	unsigned char value;
-	input = engine_input_manager_move( input_type_right );
+	bool newTile;
+
+	delta = 0;
+	input = engine_input_manager_hold( input_type_right );
 	if( input )
 	{
 		delta = 1;
 	}
+	//input = engine_input_manager_move( input_type_down );
+	//if( input )
+	//{
+	//	*screen_type = screen_type_pass;
+	//	return;
+	//}
+
+	for( value = 0; value < delta; value++ )
+	{
+		newTile = engine_scroll_manager_update( 1 );
+		if( newTile )
+		{
+			engine_level_manager_draw( so->offset_right );
+		}
+	}
+
 	//engine_player_manager_update();
+	engine_player_manager_update2();
 	engine_player_manager_draw();
 	*screen_type = screen_type_intro;
 }

@@ -10,13 +10,13 @@
 
 void screen_pass_screen_load()
 {
-	devkit_SMS_displayOff();
-	engine_asm_manager_clear_VRAM();
-	engine_content_manager_bggame();
-	engine_content_manager_sprite();
-	engine_graphics_manager_sea();
+	//devkit_SMS_displayOff();
+	//engine_asm_manager_clear_VRAM();
+	//engine_content_manager_bggame();
+	//engine_content_manager_sprite();
+	//engine_graphics_manager_sea();
 	engine_font_manager_text( "PASS[SCREEN", 10, 2 );
-	devkit_SMS_displayOn();
+	//devkit_SMS_displayOn();
 }
 
 void screen_pass_screen_update( unsigned char *screen_type )

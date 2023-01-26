@@ -8,6 +8,7 @@ typedef struct tag_struct_player_object
 	unsigned char tileX, tileY;
 	unsigned char player_state;
 	unsigned char player_index;		// TODO better name!
+	unsigned char player_frame;
 
 } struct_player_object;
 

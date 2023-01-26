@@ -9,7 +9,11 @@ struct_player_object global_player_object;
 static void updatePlayer();
 
 static signed char physics_array[] = { 0,-1,-1,-1,-1,-1,-1,-1,-1, -1, -1, -1, -1, -1, -1, -1, -1, -1,-1,-1,-1,-1,-1,-1,-1,-1,-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 0,0,0,0,0,0,0,0,1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, };
+
+
 //static signed char physics_array[] = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, };
+// TODO - replace
+static signed char animate_count;
 
 void engine_player_manager_init()
 {
@@ -24,6 +28,8 @@ void engine_player_manager_init()
 	//po->player_state = player_state_isonground;
 	po->player_state = player_state_isintheair;
 	po->player_index = 0;
+	po->player_frame = 0;
+	animate_count = 0;
 	updatePlayer();
 }
 
@@ -44,6 +50,16 @@ void engine_player_manager_load()
 	//}
 }
 
+void engine_player_manager_update2()
+{
+	struct_player_object *po = &global_player_object;
+	animate_count++;
+	if( animate_count >= 100 )
+	{
+		animate_count = 0;
+		po->player_frame = 1 - po->player_frame;
+	}
+}
 void engine_player_manager_update()
 {
 	// TODO inject via level manager!
@@ -173,5 +189,5 @@ static void updatePlayer()
 void engine_player_manager_draw()
 {
 	struct_player_object *po = &global_player_object;
-	engine_sprite_manager_draw( 0, po->drawX, po->drawY );
+	engine_sprite_manager_draw( po->player_frame, po->drawX, po->drawY );
 }
