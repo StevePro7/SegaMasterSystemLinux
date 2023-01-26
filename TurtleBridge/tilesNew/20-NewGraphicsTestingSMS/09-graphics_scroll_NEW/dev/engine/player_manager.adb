@@ -1,6 +1,6 @@
 M:player_manager
 F:G$engine_player_manager_init$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lplayer_manager.engine_player_manager_init$po$1_0$7({2}DG,STtag_struct_player_object:S),R,0,0,[]
+S:Lplayer_manager.engine_player_manager_init$po$1_0$7({2}DG,STtag_struct_player_object:S),R,0,0,[c,b]
 F:G$engine_player_manager_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lplayer_manager.engine_player_manager_load$po$1_0$8({2}DG,STtag_struct_player_object:S),R,0,0,[]
 F:G$engine_player_manager_update3$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
@@ -23,8 +23,10 @@ F:G$engine_player_manager_down$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lplayer_manager.engine_player_manager_down$po$1_0$22({2}DG,STtag_struct_player_object:S),R,0,0,[]
 F:Fplayer_manager$updatePlayer$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lplayer_manager.updatePlayer$po$1_0$23({2}DG,STtag_struct_player_object:S),R,0,0,[e,d]
+F:G$engine_player_manager_pass$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lplayer_manager.engine_player_manager_pass$po$1_0$24({2}DG,STtag_struct_player_object:S),R,0,0,[c,b]
 F:G$engine_player_manager_draw$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lplayer_manager.engine_player_manager_draw$po$1_0$24({2}DG,STtag_struct_player_object:S),R,0,0,[]
+S:Lplayer_manager.engine_player_manager_draw$po$1_0$25({2}DG,STtag_struct_player_object:S),R,0,0,[]
 T:Fplayer_manager$tag_struct_player_object[({0}S:S$posnX$0_0$0({1}SC:U),Z,0,0)({1}S:S$posnY$0_0$0({1}SC:U),Z,0,0)({2}S:S$drawX$0_0$0({1}SC:U),Z,0,0)({3}S:S$drawY$0_0$0({1}SC:U),Z,0,0)({4}S:S$tileX$0_0$0({1}SC:U),Z,0,0)({5}S:S$tileY$0_0$0({1}SC:U),Z,0,0)({6}S:S$player_state$0_0$0({1}SC:U),Z,0,0)({7}S:S$player_index$0_0$0({1}SC:U),Z,0,0)({8}S:S$player_frame$0_0$0({1}SC:U),Z,0,0)]
 S:Fplayer_manager$physics_array$0_0$0({116}DA116d,SC:S),E,0,0
 S:G$global_player_object$0_0$0({9}STtag_struct_player_object:S),E,0,0

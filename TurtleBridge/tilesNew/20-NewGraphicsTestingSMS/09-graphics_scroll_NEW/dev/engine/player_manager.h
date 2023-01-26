@@ -16,5 +16,6 @@ void engine_player_manager_right();
 void engine_player_manager_up();
 void engine_player_manager_down();
 void engine_player_manager_draw();
+void engine_player_manager_pass();
 
 #endif//_PLAYER_MANAGER_H_

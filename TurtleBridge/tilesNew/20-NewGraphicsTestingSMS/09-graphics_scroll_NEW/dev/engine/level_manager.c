@@ -66,7 +66,7 @@ void engine_level_manager_draw( unsigned int offset )
 		lo->level_draw_offset = 0;
 	}
 
-	engine_font_manager_data( offset, 10, 2 );
+//	engine_font_manager_data( offset, 10, 2 );
 	//if( offset >= lo->level_size )
 	//{
 	//	engine_font_manager_text( "THE END", 10, 3 );

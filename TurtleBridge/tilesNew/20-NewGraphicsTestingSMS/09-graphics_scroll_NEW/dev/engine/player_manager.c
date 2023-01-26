@@ -19,6 +19,7 @@ void engine_player_manager_init()
 {
 	struct_player_object *po = &global_player_object;
 	po->posnX = 48;
+	po->posnX = 80;
 //	po->posnX = 168;
 	//po->posnY = 144;
 	po->posnY = 128;
@@ -58,7 +59,7 @@ void engine_player_manager_update2()
 {
 	struct_player_object *po = &global_player_object;
 	animate_count++;
-	if( animate_count >= 100 )
+	if( animate_count >= 50 )
 	{
 		animate_count = 0;
 		po->player_frame = 1 - po->player_frame;
@@ -188,6 +189,13 @@ static void updatePlayer()
 	po->drawY = po->posnY - 32;
 	po->tileX = po->posnX >> 3;
 	po->tileY = po->posnY >> 3;
+}
+
+void engine_player_manager_pass()
+{
+	struct_player_object *po = &global_player_object;
+	po->posnX++;
+	updatePlayer();
 }
 
 void engine_player_manager_draw()

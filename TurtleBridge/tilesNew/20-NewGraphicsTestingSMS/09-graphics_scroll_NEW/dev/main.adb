@@ -222,6 +222,7 @@ S:G$engine_player_manager_right$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_up$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_down$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_draw$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_player_manager_pass$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_screen_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_screen_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_init$0_0$0({2}DF,SV:S),C,0,0
