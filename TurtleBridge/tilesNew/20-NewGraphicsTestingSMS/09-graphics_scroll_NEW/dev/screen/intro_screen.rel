@@ -13,43 +13,43 @@ S _engine_graphics_manager_sea Ref000000
 S .__.ABS. Def000000
 S _engine_content_manager_sprite Ref000000
 S _engine_scroll_manager_update Ref000000
-S _engine_input_manager_hold Ref000000
 S _engine_level_manager_show Ref000000
 S _devkit_SMS_displayOff Ref000000
 S _engine_asm_manager_clear_VRAM Ref000000
 S _engine_content_manager_bggame Ref000000
+S _engine_input_manager_move Ref000000
 S _engine_scroll_manager_load Ref000000
 A _CODE size 73 flags 0 addr 0
 S C$intro_screen.c$23$1_0$93 Def000017
 S C$intro_screen.c$15$0_0$93 Def000000
 S A$intro_screen$94 Def000014
+S C$intro_screen.c$40$1_0$95 Def00003C
 S C$intro_screen.c$31$1_0$95 Def00002F
 S C$intro_screen.c$24$1_0$93 Def00001E
 S A$intro_screen$86 Def00000E
-S C$intro_screen.c$50$1_0$95 Def000041
 S C$intro_screen.c$25$1_0$93 Def000021
 S A$intro_screen$78 Def000008
-S C$intro_screen.c$60$1_0$95 Def000062
+S C$intro_screen.c$51$1_0$95 Def000041
 S C$intro_screen.c$26$1_0$93 Def000024
 S C$intro_screen.c$17$1_0$93 Def000000
-S C$intro_screen.c$61$1_0$95 Def000065
-S C$intro_screen.c$41$2_0$96 Def00003F
+S C$intro_screen.c$61$1_0$95 Def000062
 S C$intro_screen.c$27$1_0$93 Def000024
 S C$intro_screen.c$18$1_0$93 Def000008
 S A$intro_screen$98 Def000017
-S C$intro_screen.c$62$1_0$95 Def000068
-S C$intro_screen.c$50$2_0$97 Def00005F
+S C$intro_screen.c$62$1_0$95 Def000065
+S C$intro_screen.c$42$2_0$96 Def00003F
 S C$intro_screen.c$19$1_0$93 Def00000B
 S A$intro_screen$99 Def000018
-S C$intro_screen.c$63$1_0$95 Def000072
+S C$intro_screen.c$63$1_0$95 Def000068
+S C$intro_screen.c$51$2_0$97 Def00005F
+S C$intro_screen.c$64$1_0$95 Def000072
 S C$intro_screen.c$37$1_0$95 Def00002F
-S C$intro_screen.c$38$1_0$95 Def000031
 S C$intro_screen.c$29$1_0$95 Def000027
 S _screen_intro_screen_load Def000000
-S C$intro_screen.c$52$3_0$98 Def000047
-S C$intro_screen.c$39$1_0$95 Def00003C
-S C$intro_screen.c$53$3_0$98 Def000051
-S C$intro_screen.c$55$4_0$99 Def000055
+S C$intro_screen.c$39$1_0$95 Def000031
+S C$intro_screen.c$53$3_0$98 Def000047
+S C$intro_screen.c$54$3_0$98 Def000051
+S C$intro_screen.c$56$4_0$99 Def000055
 S XG$screen_intro_screen_load$0$0 Def000024
 S G$screen_intro_screen_update$0$0 Def000027
 S A$intro_screen$100 Def000019
@@ -125,11 +125,11 @@ A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
 T 00 00 00 3E 02 F5 33 CD 00 00 33 CD 00 00 CD
-R 00 00 00 00 02 08 00 00 02 0C 0C 00
+R 00 00 00 00 02 08 00 00 02 0C 0B 00
 T 0C 00 00 00 00 CD 00 00 CD 00 00 CD
-R 00 00 00 00 02 03 0D 00 02 06 0E 00 02 09 08 00
+R 00 00 00 00 02 03 0C 00 02 06 0D 00 02 09 08 00
 T 15 00 00 00 00 AF F5 33 CD 00 00 33 CD 00 00 CD
-R 00 00 00 00 02 03 06 00 02 09 0B 00 02 0D 01 00
+R 00 00 00 00 02 03 06 00 02 09 0A 00 02 0D 01 00
 T 22 00 00 00 00 C3 00 00
 R 00 00 00 00 02 03 02 00 02 06 0F 00
 T 27 00 00
@@ -137,7 +137,7 @@ R 00 00 00 00
 T 27 00 00 DD E5 DD 21 00 00 DD 39 0E 00 C5 3E 08
 R 00 00 00 00
 T 34 00 00 F5 33 CD 00 00 7D 33 C1 B7 28 02 0E 01
-R 00 00 00 00 02 06 0A 00
+R 00 00 00 00 02 06 0E 00
 T 41 00 00
 R 00 00 00 00
 T 41 00 00 06 00

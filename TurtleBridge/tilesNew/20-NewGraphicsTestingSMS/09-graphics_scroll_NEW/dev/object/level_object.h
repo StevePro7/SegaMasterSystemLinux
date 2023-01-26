@@ -11,8 +11,9 @@ typedef struct tag_struct_level_object
 	unsigned char *level_data;
 	unsigned char level_size;
 	unsigned char level_bank;
-	unsigned int level_cols_offset;
+	//unsigned int level_cols_offset;
 	unsigned char level_draw_offset;
+	unsigned char level_platforms[ SCREEN_WIDE ];
 
 } struct_level_object;
 

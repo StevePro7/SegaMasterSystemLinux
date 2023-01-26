@@ -16,14 +16,22 @@ struct_level_object global_level_object;
 void engine_level_manager_init()
 {
 	struct_level_object *lo = &global_level_object;
-	lo->level_cols_offset = 0;
-	lo->level_draw_offset = 31;
+	unsigned char idx;
+	//lo->level_cols_offset = 0;
+	lo->level_draw_offset = SCREEN_WIDE - 1;
+
+	// TODO - set the platform value to maximum if invincible setting!
+	for( idx = 0; idx < SCREEN_WIDE; idx++ )
+	{
+		lo->level_platforms[ idx ] = tiles_object_platform[ TILE_WAVES_BLOCK ];
+	}
 }
 
 void engine_level_manager_load( unsigned char index )
 {
 	struct_level_object *lo = &global_level_object;
-	lo->level_cols_offset = 0;
+	//unsigned char idx;
+	//lo->level_cols_offset = 0;
 	lo->level_draw_offset = 31;
 
 	devkit_SMS_mapROMBank( FIXED_BANK );
@@ -47,21 +55,23 @@ void engine_level_manager_show( unsigned char screen )
 void engine_level_manager_draw( unsigned int offset )
 {
 	struct_level_object *lo = &global_level_object;
-	unsigned int index;
+	//unsigned int index;
 	unsigned char data, planesA, columnA;
 	bool flip = false;
 
-	lo->level_cols_offset = offset;
+	//lo->level_cols_offset = offset;
 	lo->level_draw_offset++;
 	if( lo->level_draw_offset >= SCREEN_WIDE )
 	{
 		lo->level_draw_offset = 0;
 	}
 
-	index = lo->level_cols_offset;
+	engine_font_manager_data( offset, 10, 2 );
+	//index = lo->level_cols_offset;
 
 	devkit_SMS_mapROMBank( lo->level_bank );
-	data = lo->level_data[ index ];
+	//data = lo->level_data[ index ];
+	data = lo->level_data[ offset ];
 	planesA = 0;
 	columnA = 0;
 	engine_function_manager_convertByteToNibbles( data, &columnA, &planesA );
@@ -71,6 +81,6 @@ void engine_level_manager_draw( unsigned int offset )
 		flip = true;
 		columnA -= 8;
 	}
-	
+
 	engine_tile_manager_draw_columns( planesA, lo->level_draw_offset, columnA, flip );
 }

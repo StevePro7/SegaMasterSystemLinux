@@ -154,7 +154,7 @@ static void para_scroll_load()
 	//so->scroll = 0;
 	so->scrollRight = 0;
 	//so->offset_left = 0;
-	so->offset_right = 31;
+	so->offset_right = SCREEN_WIDE - 1;
 
 	devkit_SMS_setBGScrollX( 0 );
 	//devkit_SMS_setBGScrollX( so->scroll );
@@ -239,7 +239,7 @@ static void full_scroll_load()
 	so->scrollRight = 0;
 	//so->scrollRightDivided8 = 0;
 	//so->offset_left = 0;
-	so->offset_right = 31;
+	so->offset_right = SCREEN_WIDE - 1;
 
 	devkit_SMS_setBGScrollX( so->scroll );
 }
