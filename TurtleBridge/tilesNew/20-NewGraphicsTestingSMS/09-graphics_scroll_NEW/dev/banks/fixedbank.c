@@ -17,19 +17,6 @@ const unsigned char music_object_bank[] =
 };
 
 // Level Manager.
-//const unsigned char *mylevel_planesA[] =
-//{
-//	level_planesA01,
-//	level_planesA02,
-//	level_planesA03,
-//};
-//const unsigned char *mylevel_columnA[] =
-//{
-//	level_columnA01,
-//	level_columnA02,
-//	level_columnA03,
-//};
-
 const unsigned char *level_object_data[] =
 {
 	level1101_txt,
@@ -38,6 +25,9 @@ const unsigned char *level_object_data[] =
 };
 const unsigned char level_object_size[] =
 {
+	level1101_txt_size,
+	level1102_txt_size,
+	level1103_txt_size,
 };
 const unsigned char level_object_bank[] =
 {
