@@ -16,6 +16,7 @@ void screen_intro_screen_load()
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();
+	engine_content_manager_sprite();
 	engine_graphics_manager_sea();
 	engine_level_manager_show( 1 );
 	engine_player_manager_draw();

@@ -1,6 +1,6 @@
 ;!FILE intro_screen.asm
 XL3
-H 9 areas 34 global symbols
+H 9 areas 37 global symbols
 M intro_screen
 O -mz80
 S _engine_level_manager_load Ref000000
@@ -8,53 +8,56 @@ S _engine_player_manager_draw Ref000000
 S _devkit_SMS_displayOn Ref000000
 S _engine_graphics_manager_sea Ref000000
 S .__.ABS. Def000000
+S _engine_content_manager_sprite Ref000000
 S _engine_level_manager_show Ref000000
 S _devkit_SMS_displayOff Ref000000
 S _engine_asm_manager_clear_VRAM Ref000000
 S _engine_content_manager_bggame Ref000000
-A _CODE size 2C flags 0 addr 0
-S A$intro_screen$84 Def000011
-S A$intro_screen$66 Def000003
+A _CODE size 2F flags 0 addr 0
+S A$intro_screen$93 Def000017
+S A$intro_screen$66 Def000002
 S C$intro_screen.c$16$1_0$91 Def000008
-S A$intro_screen$76 Def00000B
-S A$intro_screen$67 Def000004
+S A$intro_screen$94 Def000019
+S A$intro_screen$85 Def000011
+S A$intro_screen$67 Def000003
 S C$intro_screen.c$17$1_0$91 Def00000B
-S A$intro_screen$68 Def000007
-S C$intro_screen.c$25$1_0$93 Def000022
+S A$intro_screen$95 Def00001A
+S A$intro_screen$77 Def00000B
+S A$intro_screen$68 Def000004
 S C$intro_screen.c$18$1_0$91 Def00000E
-S A$intro_screen$96 Def00001C
+S A$intro_screen$96 Def00001B
+S A$intro_screen$69 Def000007
+S C$intro_screen.c$26$1_0$93 Def000025
 S C$intro_screen.c$19$1_0$91 Def000011
-S A$intro_screen$88 Def000014
-S A$intro_screen$89 Def000016
-S C$intro_screen.c$28$1_0$93 Def000022
+S A$intro_screen$97 Def00001E
+S A$intro_screen$89 Def000014
 S C$intro_screen.c$29$1_0$93 Def000025
 S _screen_intro_screen_load Def000000
-S XG$screen_intro_screen_load$0$0 Def00001F
-S G$screen_intro_screen_update$0$0 Def000022
-S A$intro_screen$120 Def000022
-S A$intro_screen$124 Def000025
-S _screen_intro_screen_update Def000022
-S A$intro_screen$125 Def000026
-S A$intro_screen$107 Def00001F
-S A$intro_screen$126 Def000027
-S A$intro_screen$136 Def00002B
-S A$intro_screen$127 Def000028
-S A$intro_screen$128 Def000029
-S XG$screen_intro_screen_update$0$0 Def00002B
+S XG$screen_intro_screen_load$0$0 Def000022
+S G$screen_intro_screen_update$0$0 Def000025
+S A$intro_screen$101 Def00001F
+S A$intro_screen$130 Def000029
+S A$intro_screen$112 Def000022
+S A$intro_screen$131 Def00002A
+S A$intro_screen$141 Def00002E
+S A$intro_screen$132 Def00002B
+S A$intro_screen$133 Def00002C
+S _screen_intro_screen_update Def000025
+S A$intro_screen$125 Def000025
+S A$intro_screen$129 Def000028
+S XG$screen_intro_screen_update$0$0 Def00002E
 S C$intro_screen.c$20$1_0$91 Def000014
-S A$intro_screen$80 Def00000E
-S C$intro_screen.c$21$1_0$91 Def00001C
+S C$intro_screen.c$21$1_0$91 Def000017
 S C$intro_screen.c$13$0_0$91 Def000000
 S G$screen_intro_screen_load$0$0 Def000000
-S A$intro_screen$90 Def000017
-S A$intro_screen$72 Def000008
+S A$intro_screen$81 Def00000E
 S C$intro_screen.c$22$1_0$91 Def00001F
-S A$intro_screen$91 Def000018
-S A$intro_screen$64 Def000000
-S C$intro_screen.c$30$1_0$93 Def00002B
-S C$intro_screen.c$23$1_0$91 Def00001F
-S A$intro_screen$92 Def00001B
-S A$intro_screen$65 Def000002
+S A$intro_screen$73 Def000008
+S C$intro_screen.c$30$1_0$93 Def000028
+S C$intro_screen.c$23$1_0$91 Def000022
+S A$intro_screen$65 Def000000
+S C$intro_screen.c$31$1_0$93 Def00002E
+S C$intro_screen.c$24$1_0$91 Def000022
 S C$intro_screen.c$15$1_0$91 Def000000
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
@@ -67,12 +70,14 @@ A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
 T 00 00 00 3E 02 F5 33 CD 00 00 33 CD 00 00 CD
-R 00 00 00 00 02 08 00 00 02 0C 06 00
-T 0C 00 00 00 00 CD 00 00 CD 00 00 3E 01 F5 33 CD
-R 00 00 00 00 02 03 07 00 02 06 08 00 02 09 03 00
-T 19 00 00 00 00 33 CD 00 00 C3 00 00
-R 00 00 00 00 02 03 05 00 02 07 01 00 02 0A 02 00
-T 22 00 00
+R 00 00 00 00 02 08 00 00 02 0C 07 00
+T 0C 00 00 00 00 CD 00 00 CD 00 00 CD
+R 00 00 00 00 02 03 08 00 02 06 09 00 02 09 05 00
+T 15 00 00 00 00 3E 01 F5 33 CD 00 00 33 CD 00 00
+R 00 00 00 00 02 03 03 00 02 0A 06 00 02 0E 01 00
+T 22 00 00 C3 00 00
+R 00 00 00 00 02 04 02 00
+T 25 00 00
 R 00 00 00 00
-T 22 00 00 CD 00 00 C1 E1 E5 C5 36 03 C9
+T 25 00 00 CD 00 00 C1 E1 E5 C5 36 03 C9
 R 00 00 00 00 02 04 01 00
