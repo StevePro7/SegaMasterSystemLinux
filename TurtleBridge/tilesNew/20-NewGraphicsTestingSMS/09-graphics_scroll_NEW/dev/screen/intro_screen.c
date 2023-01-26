@@ -33,7 +33,7 @@ void screen_intro_screen_load()
 	engine_player_manager_draw();
 	devkit_SMS_displayOn();
 	engine_scroll_manager_load();
-	engine_music_manager_play( 0 );
+	engine_music_manager_play( 1 );
 	complete = false;
 }
 
@@ -89,7 +89,7 @@ void screen_intro_screen_update( unsigned char *screen_type )
 
 	if( complete )
 	{
-	//	engine_player_manager_update3();
+		engine_player_manager_update3();
 		*screen_type = screen_type_pass;
 		return;
 	}
