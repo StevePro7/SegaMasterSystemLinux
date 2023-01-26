@@ -1,5 +1,6 @@
 #include "intro_screen.h"
 #include "../engine/asm_manager.h"
+#include "../engine/audio_manager.h"
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
@@ -32,6 +33,7 @@ void screen_intro_screen_load()
 	engine_player_manager_draw();
 	devkit_SMS_displayOn();
 	engine_scroll_manager_load();
+	engine_music_manager_play( 0 );
 	complete = false;
 }
 
