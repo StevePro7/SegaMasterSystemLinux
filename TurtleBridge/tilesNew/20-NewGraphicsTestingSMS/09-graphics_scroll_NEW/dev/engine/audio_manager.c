@@ -29,6 +29,14 @@ void engine_music_manager_play( unsigned char index )
 	devkit_PSGPlay( ( unsigned char* ) ao->music_data );
 }
 
+void engine_music_manager_stop()
+{
+	struct_audio_object *ao = &global_audio_object;
+	ao->music_data = NULL;
+	ao->music_bank = 0;
+	devkit_PSGStop();
+}
+
 // TODO sfx
 //void engine_sound_manager_play( unsigned char index ) {}
 

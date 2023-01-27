@@ -1,5 +1,6 @@
 #include "pass_screen.h"
 #include "../engine/asm_manager.h"
+#include "../engine/audio_manager.h"
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
@@ -8,7 +9,7 @@
 #include "../engine/scroll_manager.h"
 #include "../devkit/_sms_manager.h"
 
-unsigned char swap;
+static unsigned char swap;
 
 void screen_pass_screen_load()
 {
@@ -19,9 +20,9 @@ void screen_pass_screen_load()
 	//engine_content_manager_bggame();
 	//engine_content_manager_sprite();
 	//engine_graphics_manager_sea();
-	//engine_font_manager_text( "PASS[SCREEN", 10, 2 );
+	engine_font_manager_text( "PASS[SCREEN", 10, 2 );
 	//devkit_SMS_displayOn();
-	swap = 1;
+	swap = 0;
 }
 
 void screen_pass_screen_update( unsigned char *screen_type )
@@ -37,14 +38,20 @@ void screen_pass_screen_update( unsigned char *screen_type )
 		//engine_font_manager_text( "LEVEL COM", 10, 4 );
 		// TODO delete
 		//po->player_frame = 1;
+
+		if( !swap )
+		{
+			engine_music_manager_stop();
+			swap = 1;
+		}
 	}
 	else
 	{
 		//swap = 1 - swap;
-		if( swap )
-		{
+		//if( swap )
+		//{
 			engine_player_manager_pass();
-		}
+		//}
 	}
 	
 	engine_player_manager_draw();
