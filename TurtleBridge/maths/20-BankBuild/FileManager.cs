@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 
 namespace FunctionMgr
 {
@@ -42,7 +41,7 @@ namespace FunctionMgr
 			lines = new List<string>();
 		}
 
-		public void Build(int bank, List<string> script)
+		public void Banks(int bank)
 		{
 			string name = "bank" + bank.ToString();
 			if (Directory.Exists(name))
@@ -60,8 +59,12 @@ namespace FunctionMgr
 			lines.Add(name);
 			var path = string.Format("banks/{0}/{0}.txt", name);
 			File.WriteAllLines(path, lines.ToArray());
+		}
 
-			path = string.Format("scripts/{0}.bat", name);
+		public void Scripts(int bank, List<string> script)
+		{
+			string name = "bank" + bank.ToString();
+			var path = string.Format("scripts/{0}.bat", name);
 			File.WriteAllLines(path, script.ToArray());
 		}
 
