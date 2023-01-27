@@ -20,7 +20,7 @@ void screen_pass_screen_load()
 	//engine_content_manager_bggame();
 	//engine_content_manager_sprite();
 	//engine_graphics_manager_sea();
-	engine_font_manager_text( "PASS[SCREEN", 10, 2 );
+	//engine_font_manager_text( "PASS[SCREEN", 10, 2 );
 	//devkit_SMS_displayOn();
 	swap = 0;
 }
@@ -43,6 +43,7 @@ void screen_pass_screen_update( unsigned char *screen_type )
 		{
 			engine_music_manager_stop();
 			swap = 1;
+			po->player_frame = 1;
 		}
 	}
 	else

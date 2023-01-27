@@ -20,6 +20,7 @@ S:Fintro_screen$complete$0_0$0({1}:S),E,0,0
 S:G$engine_asm_manager_clear_VRAM$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_audio_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_music_manager_play$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_music_manager_stop$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_audio_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_bggame$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_splash$0_0$0({2}DF,SV:S),C,0,0

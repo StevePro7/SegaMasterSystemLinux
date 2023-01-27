@@ -62,7 +62,8 @@ void screen_intro_screen_update( unsigned char *screen_type )
 
 	if( 0 == delta )
 	{
-		engine_scroll_manager_update( 0 );
+		delta = 2;
+		//engine_scroll_manager_update( 1 );
 	}
 
 	if( !complete )

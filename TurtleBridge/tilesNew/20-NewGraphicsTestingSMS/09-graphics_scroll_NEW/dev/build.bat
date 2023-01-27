@@ -1,4 +1,4 @@
-::@echo off
+@echo off
 
 :: Time build START
 :: Reference: https://stackoverflow.com/questions/673523/how-do-i-measure-execution-time-of-a-command-on-the-windows-command-line
@@ -53,7 +53,7 @@ cd screen
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 dead_screen.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 func_screen.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 init_screen.c
-::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 intro_screen.c
+"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 intro_screen.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 load_screen.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 none_screen.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 option_screen.c
@@ -113,7 +113,7 @@ object/tile_object.rel ^
 screen/beat_screen.rel screen/begin_screen.rel screen/boss_screen.rel screen/cont_screen.rel screen/dead_screen.rel ^
 screen/func_screen.rel screen/init_screen.rel screen/intro_screen.rel screen/load_screen.rel screen/none_screen.rel ^
 screen/option_screen.rel screen/over_screen.rel screen/pass_screen.rel screen/play_screen.rel screen/ready_screen.rel ^
-screen/splash_screen.rel screen/start_screen.rel screen/test_screen.rel screen/title_screen.rel ^
+screen/splash_screen.rel screen/start_screen.rel screen/test_screen.rel screen/title_screen.rel
 
 :: Execute
 "C:/Program Files/SDCC/bin/ihx2sms.exe" output.ihx output.sms
