@@ -12,10 +12,11 @@ namespace FunctionMgr
 			var fm = new FileManager();
 			fm.Init();
 
-			var bm = new BankManager();
+			var bm = new BankManager(fm);
 			bm.Init();
 			//bm.ProcessBanks(numBanks);
 			bm.ProcessBank(2);
+			//bm.ProcessBank02(2);
 
 			Console.WriteLine("Press [ RETURN ]");
 			Console.Read();
