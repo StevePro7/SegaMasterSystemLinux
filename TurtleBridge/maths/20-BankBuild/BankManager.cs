@@ -32,6 +32,7 @@ namespace FunctionMgr
 		{
 			//ProcessBank01(bank);
 			//fm.Banks(bank);
+			// TODO make "raw" subdirectory and delete on each execution
 			ProcessBank02(bank);
 			fm.Scripts(bank, lines);
 		}

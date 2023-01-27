@@ -13,16 +13,23 @@ namespace FunctionMgr
 			path = "banks";
 			if (Directory.Exists(path))
 			{
+				string[] files;
 				var dirX = Directory.GetDirectories(path);
 				foreach (var dir in dirX)
 				{
-					var files = Directory.GetFiles(dir);
+					files = Directory.GetFiles(dir);
 					foreach (var file in files)
 					{
 						File.Delete(file);
 					}
 
 					Directory.Delete(dir);
+				}
+
+				files = Directory.GetFiles(path);
+				foreach (var file in files)
+				{
+					File.Delete(file);
 				}
 			}
 
