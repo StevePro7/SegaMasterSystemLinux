@@ -61,7 +61,7 @@ namespace FunctionMgr
 			var path = string.Format("banks/{0}/{0}.txt", name);
 			File.WriteAllLines(path, lines.ToArray());
 
-			path = string.Format("banks/{0}/{0}.bat", name);
+			path = string.Format("scripts/{0}.bat", name);
 			File.WriteAllLines(path, script.ToArray());
 		}
 
