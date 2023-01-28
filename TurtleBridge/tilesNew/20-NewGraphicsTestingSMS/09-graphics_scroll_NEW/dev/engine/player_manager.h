@@ -17,5 +17,6 @@ void engine_player_manager_up();
 void engine_player_manager_down();
 void engine_player_manager_draw();
 void engine_player_manager_pass();
+void engine_player_manager_count();
 
 #endif//_PLAYER_MANAGER_H_

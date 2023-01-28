@@ -46,6 +46,7 @@ void screen_intro_screen_update( unsigned char *screen_type )
 	unsigned char value;
 	bool newTile;
 
+	//engine_player_manager_count();
 	delta = 0;
 	//input = engine_input_manager_hold( input_type_right );
 	input = engine_input_manager_move( input_type_right );
@@ -62,8 +63,8 @@ void screen_intro_screen_update( unsigned char *screen_type )
 
 	if( 0 == delta )
 	{
-		delta = 2;
-		//engine_scroll_manager_update( 1 );
+		delta = 0;
+		engine_scroll_manager_update( delta );
 	}
 
 	if( !complete )
@@ -85,7 +86,7 @@ void screen_intro_screen_update( unsigned char *screen_type )
 	}
 
 	//engine_player_manager_update();
-	engine_player_manager_update2();
+//	engine_player_manager_update2();
 	engine_player_manager_draw();
 
 	if( complete )

@@ -9,6 +9,7 @@ typedef struct tag_struct_player_object
 	unsigned char player_state;
 	unsigned char player_index;		// TODO better name!
 	unsigned char player_frame;
+	unsigned int player_count;
 
 } struct_player_object;
 
