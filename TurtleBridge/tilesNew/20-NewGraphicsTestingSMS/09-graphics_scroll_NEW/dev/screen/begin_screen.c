@@ -38,7 +38,7 @@ void screen_begin_screen_load()
 	engine_player_manager_startY( player_startY );
 	engine_player_manager_draw();
 
-	engine_debug_manager_printout();
+	//engine_debug_manager_printout();
 	//nextPrint();
 
 	devkit_SMS_displayOn();
@@ -54,7 +54,7 @@ void screen_begin_screen_update( unsigned char *screen_type )
 	unsigned char delta;
 	bool newTile;
 	delta = 0;
-	newTile = false; 
+	newTile = false;
 	input = engine_input_manager_move( input_type_down );
 	if( input )
 	{
@@ -79,13 +79,18 @@ void screen_begin_screen_update( unsigned char *screen_type )
 			engine_level_manager_draw( so->offset_right );
 		}
 	}
+	if( 0 == delta )
+	{
+		delta = 0;
+		engine_scroll_manager_update( delta );
+	}
 	/*input = engine_input_manager_move( input_type_down );
 	if( input )
 	{
 		engine_debug_manager_printout();
 	}*/
 
-	engine_debug_manager_printout();
+	//engine_debug_manager_printout();
 	//nextPrint();
 
 	engine_player_manager_draw();
