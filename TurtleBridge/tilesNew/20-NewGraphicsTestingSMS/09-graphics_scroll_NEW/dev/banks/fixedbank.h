@@ -13,5 +13,6 @@ extern const unsigned int level_object_size[];
 extern const unsigned char level_object_bank[];
 
 
+// TODO re-instate in fixed bank
 // Player Manager.
 extern const unsigned char player_object_starts[];

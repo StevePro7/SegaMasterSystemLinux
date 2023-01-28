@@ -81,7 +81,7 @@ static void start()
 	//open_screen_type = screen_type_start;
 	open_screen_type = screen_type_intro;
 	//open_screen_type = screen_type_pass;
-	//open_screen_type = screen_type_begin;
+	open_screen_type = screen_type_begin;
 
 	engine_screen_manager_init( open_screen_type );
 	engine_scroll_manager_init();

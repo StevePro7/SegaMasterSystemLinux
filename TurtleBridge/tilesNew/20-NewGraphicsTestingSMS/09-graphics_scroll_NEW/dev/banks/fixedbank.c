@@ -16,8 +16,9 @@ const unsigned char music_object_bank[] =
 	mastertracker_psg_bank,
 };
 
+// TODO re-instate in fixed bank
 // Player Manager.
-const unsigned char player_object_starts[] = { 32, 48, 64, 80, 96 };
+//const unsigned char player_object_starts[] = { 32, 48, 64, 80, 96 };
 
 // Level Manager.
 const unsigned char *level_object_data[] =
