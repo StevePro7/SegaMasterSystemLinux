@@ -87,8 +87,8 @@ void screen_begin_screen_update( unsigned char *screen_type )
 			engine_level_manager_draw( so->offset_right );
 		}
 
-		//po->posnX++;
-		//po->tileX = po->posnX >> 3;
+		po->posnX++;
+		po->tileX = po->posnX >> 3;
 	}
 
 	//engine_debug_manager_printout();
