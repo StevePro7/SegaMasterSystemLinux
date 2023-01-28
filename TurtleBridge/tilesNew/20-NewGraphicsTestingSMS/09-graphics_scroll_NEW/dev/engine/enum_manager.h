@@ -45,6 +45,15 @@ typedef enum tag_enum_player_state
 
 } enum_player_state;
 
+typedef enum tag_enum_difficulty_type
+{
+	difficulty_type_easier = 0,
+	difficulty_type_normal = 1,
+	difficulty_type_harder = 2,
+	difficulty_type_insane = 3,
+
+} enum_difficulty_type;
+
 typedef enum tag_enum_tile_type
 {
 	tile_type_waves_block = 0,

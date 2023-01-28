@@ -17,6 +17,7 @@ static void drawScreen();
 void screen_begin_screen_load()
 {
 	engine_level_manager_load( 3 );
+	engine_player_manager_load( difficulty_type_easier );
 	devkit_SMS_displayOff();
 	drawScreen();
 	engine_level_manager_show( 0 );

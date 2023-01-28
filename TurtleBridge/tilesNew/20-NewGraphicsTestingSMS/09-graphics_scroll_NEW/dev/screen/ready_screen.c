@@ -16,7 +16,7 @@ static void drawScreen();
 void screen_ready_screen_load()
 {
 	drawScreen();
-	engine_player_manager_load();
+	//engine_player_manager_load();
 }
 
 //unsigned int input = devkit_SMS_getKeysStatus();

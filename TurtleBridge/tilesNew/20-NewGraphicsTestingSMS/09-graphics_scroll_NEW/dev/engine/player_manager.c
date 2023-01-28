@@ -3,6 +3,7 @@
 #include "font_manager.h"
 #include "sprite_manager.h"
 #include "../devkit/_sms_manager.h"
+#include "../banks/fixedbank.h"
 #include "../banks/bank2.h"
 
 // Global variable.
@@ -20,7 +21,7 @@ static signed char animate_count;
 void engine_player_manager_init()
 {
 	struct_player_object *po = &global_player_object;
-	po->posnX = 48;
+	po->posnX = 0;
 	//po->posnX = 32;
 	//po->posnX = 96;
 //	po->posnX = 168;
@@ -38,22 +39,14 @@ void engine_player_manager_init()
 	updatePlayer();
 }
 
-void engine_player_manager_load()
+void engine_player_manager_load( unsigned char difficulty )
 {
 	struct_player_object *po = &global_player_object;
-	//engine_font_manager_data( po->posnY, 30, 2 );
-	////engine_font_manager_data( po->posnY, 30, 2 );
-	//engine_font_manager_data( po->tileY, 30, 4 );
-
-	//if( player_state_isonground == po->player_state )
-	//{
-	//	//engine_font_manager_text( "PLAYER ON GROUND ", 5, 4 );
-	//}
-	//else if( player_state_isintheair == po->player_state )
-	//{
-	//	//engine_font_manager_text( "PLAYER IN THE AIR", 5, 4 );
-	//}
+	devkit_SMS_mapROMBank( FIXED_BANK );
+	po->posnX = player_object_starts[ difficulty ];
+	updatePlayer();
 }
+
 void engine_player_manager_update3()
 {
 	struct_player_object *po = &global_player_object;

@@ -7,7 +7,7 @@
 extern struct_player_object global_player_object;
 
 void engine_player_manager_init();
-void engine_player_manager_load();
+void engine_player_manager_load( unsigned char difficulty );
 void engine_player_manager_update();
 void engine_player_manager_update2();		// TODO update better
 void engine_player_manager_update3();
