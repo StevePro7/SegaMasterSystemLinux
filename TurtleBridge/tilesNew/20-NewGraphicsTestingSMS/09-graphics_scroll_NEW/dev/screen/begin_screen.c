@@ -16,15 +16,17 @@ static void drawScreen();
 
 void screen_begin_screen_load()
 {
+	engine_level_manager_load( 3 );
 	devkit_SMS_displayOff();
 	drawScreen();
-	//engine_level_manager_show( 0 );
-	//engine_player_manager_draw();
+	engine_level_manager_show( 0 );
+	engine_player_manager_draw();
 	devkit_SMS_displayOn();
 }
 
 void screen_begin_screen_update( unsigned char *screen_type )
 {
+	engine_player_manager_draw();
 	*screen_type = screen_type_begin;
 }
 

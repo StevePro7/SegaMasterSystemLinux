@@ -1,6 +1,6 @@
 M:player_manager
 F:G$engine_player_manager_init$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lplayer_manager.engine_player_manager_init$po$1_0$88({2}DG,STtag_struct_player_object:S),R,0,0,[c,b]
+S:Lplayer_manager.engine_player_manager_init$po$1_0$88({2}DG,STtag_struct_player_object:S),R,0,0,[]
 F:G$engine_player_manager_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lplayer_manager.engine_player_manager_load$po$1_0$89({2}DG,STtag_struct_player_object:S),R,0,0,[]
 F:G$engine_player_manager_update3$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
