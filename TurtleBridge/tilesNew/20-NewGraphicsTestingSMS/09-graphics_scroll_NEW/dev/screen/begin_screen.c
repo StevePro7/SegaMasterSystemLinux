@@ -52,12 +52,14 @@ void screen_begin_screen_update( unsigned char *screen_type )
 	//input = engine_input_man
 	bool newTile;
 	newTile = false; 
-	//input = engine_input_manager_move( input_type_left );
-	//if( input )
-	//{
-	//	engine_player_manager_left();
-	//	engine_debug_manager_printout();
-	//}
+	input = engine_input_manager_move( input_type_down );
+	if( input )
+	{
+		*screen_type = screen_type_dead;
+		return;
+		//engine_player_manager_left();
+		//engine_debug_manager_printout();
+	}
 	//input = engine_input_manager_move( input_type_right );
 	input = engine_input_manager_hold( input_type_right );
 	if( input )
