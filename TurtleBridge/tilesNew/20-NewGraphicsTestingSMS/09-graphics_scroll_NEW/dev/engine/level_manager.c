@@ -7,6 +7,7 @@
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
 #include "../banks/bank6.h"
+#include "../banks/bank2.h"
 #include <stdbool.h>
 
 // Global variable.
@@ -92,4 +93,9 @@ void engine_level_manager_draw( unsigned int offset )
 		level_column -= 8;
 	}
 	engine_tile_manager_draw_columns( level_object, lo->level_draw_offset, level_column, flip );
+
+	//devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+	engine_font_manager_data( offset, 12, 2 );
+	engine_font_manager_data( lo->level_draw_offset, 12, 3 );
+	engine_font_manager_data( level_platform, 12, 5 );
 }
