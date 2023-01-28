@@ -22,7 +22,7 @@ void screen_intro_screen_load()
 	struct_level_object *lo = &global_level_object;
 	unsigned char player_startY;
 
-	engine_level_manager_load( 3 );
+	engine_level_manager_load( 1 );
 	engine_player_manager_startX( difficulty_type_normal );
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
