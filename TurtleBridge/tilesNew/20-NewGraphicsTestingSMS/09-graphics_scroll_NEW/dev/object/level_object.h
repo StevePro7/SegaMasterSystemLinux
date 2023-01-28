@@ -13,10 +13,13 @@ typedef struct tag_struct_level_object
 	unsigned char level_bank;
 	//unsigned int level_cols_offset;
 	unsigned char level_draw_offset;
-	unsigned char level_platforms[ SCREEN_WIDE ];
+	
+	//unsigned char *level_platforms;		// IMPORTANT 28/03/2023 - don't use fixed size array here as corrupts other memory e.g. playerX
+	//unsigned char level_platforms[ 32 ] = { 0 };
 
 } struct_level_object;
 
+extern unsigned char level_platforms[];
 //extern const unsigned char level_planesA[];
 //extern const unsigned char level_columnA[];
 

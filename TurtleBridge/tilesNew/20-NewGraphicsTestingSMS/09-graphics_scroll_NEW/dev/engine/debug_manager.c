@@ -21,9 +21,9 @@ void engine_debug_manager_printout()
 	engine_font_manager_data( po->tileX + 1, 8, 5 );
 	engine_font_manager_data( po->tileX + 2, 8, 6 );
 
-	engine_font_manager_data( lo->level_platforms[ po->tileX - 2 ], 16, 2 );
-	engine_font_manager_data( lo->level_platforms[ po->tileX - 1 ], 16, 3 );
-	engine_font_manager_data( lo->level_platforms[ po->tileX + 0 ], 16, 4 );
-	engine_font_manager_data( lo->level_platforms[ po->tileX + 1 ], 16, 5 );
-	engine_font_manager_data( lo->level_platforms[ po->tileX + 2 ], 16, 6 );
+//	engine_font_manager_data( lo->level_platforms[ po->tileX - 2 ], 16, 2 );
+//	engine_font_manager_data( lo->level_platforms[ po->tileX - 1 ], 16, 3 );
+	//engine_font_manager_data( lo->level_platforms[ po->tileX + 0 ], 16, 4 );
+	//engine_font_manager_data( lo->level_platforms[ po->tileX + 1 ], 16, 5 );
+	//engine_font_manager_data( lo->level_platforms[ po->tileX + 2 ], 16, 6 );
 }

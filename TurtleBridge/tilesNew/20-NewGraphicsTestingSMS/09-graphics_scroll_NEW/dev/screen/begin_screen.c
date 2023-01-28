@@ -35,7 +35,8 @@ void screen_begin_screen_load()
 	engine_player_manager_startX( difficulty_type_insane -3 );
 	engine_level_manager_show( 0 );
 
-	player_startY = lo->level_platforms[ po->tileX ];
+//	player_startY = lo->level_platforms[ po->tileX ];
+	player_startY = level_platforms[ po->tileX ];
 	engine_player_manager_startY( player_startY );
 	engine_player_manager_draw();
 
@@ -91,15 +92,13 @@ void screen_begin_screen_update( unsigned char *screen_type )
 	}
 	else
 	{
-		engine_player_manager_right();
-
 		newTile = engine_scroll_manager_update( delta );
 		if( newTile )
 		{
 			engine_level_manager_draw( so->offset_right );
 		}
 
-		
+		engine_player_manager_right();
 
 
 		//engine_debug_manager_printout();
@@ -138,7 +137,8 @@ static unsigned char anyPlatforms()
 	//engine_font_manager_data( player_platform, 8, 11 );
 
 	tilelook = po->tileX - 1;
-	lookup_platform = lo->level_platforms[ tilelook ];
+	//lookup_platform = lo->level_platforms[ tilelook ];
+	lookup_platform = level_platforms[ tilelook ];
 	//engine_font_manager_data( tilelook, 16, 10 );
 	//engine_font_manager_data( lookup_platform, 16, 11 );
 	if( lookup_platform == player_platform )
@@ -147,7 +147,8 @@ static unsigned char anyPlatforms()
 	}
 
 	tilelook = po->tileX + 1;
-	lookup_platform = lo->level_platforms[ tilelook ];
+	//lookup_platform = lo->level_platforms[ tilelook ];
+	lookup_platform = level_platforms[ tilelook ];
 	//engine_font_manager_data( tilelook, 24, 10 );
 	//engine_font_manager_data( lookup_platform, 24, 11 );
 	if( lookup_platform == player_platform )

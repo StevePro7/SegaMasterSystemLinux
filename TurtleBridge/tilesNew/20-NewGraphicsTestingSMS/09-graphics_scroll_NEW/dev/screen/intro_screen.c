@@ -36,7 +36,8 @@ void screen_intro_screen_load()
 	engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 26, 5, 8, 3 );
 	engine_level_manager_show( 0 );
 
-	player_startY = lo->level_platforms[ po->tileX ];
+//	player_startY = lo->level_platforms[ po->tileX ];
+	player_startY = level_platforms[ po->tileX ];
 	engine_player_manager_startY( player_startY );
 	engine_player_manager_draw();
 	devkit_SMS_displayOn();
