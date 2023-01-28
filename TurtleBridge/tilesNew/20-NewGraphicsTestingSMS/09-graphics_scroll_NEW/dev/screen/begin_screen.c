@@ -66,8 +66,8 @@ void screen_begin_screen_update( unsigned char *screen_type )
 		//engine_player_manager_left();
 		//engine_debug_manager_printout();
 	}
-	//input = engine_input_manager_move( input_type_right );
-	input = engine_input_manager_hold( input_type_right );
+	input = engine_input_manager_move( input_type_right );
+	//input = engine_input_manager_hold( input_type_right );
 	//input = 1;
 	if( input )
 	{
@@ -97,6 +97,7 @@ void screen_begin_screen_update( unsigned char *screen_type )
 		if( !collision )
 		{
 			engine_scroll_manager_update( 0 );
+			engine_player_manager_draw();
 			*screen_type = screen_type_dead;
 			return;
 		}
