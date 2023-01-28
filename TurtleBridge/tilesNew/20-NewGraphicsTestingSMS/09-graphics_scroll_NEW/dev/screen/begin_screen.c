@@ -35,24 +35,35 @@ void screen_begin_screen_load()
 	engine_player_manager_draw();
 	engine_debug_manager_printout();
 	devkit_SMS_displayOn();
+	engine_scroll_manager_load();
 }
 
 void screen_begin_screen_update( unsigned char *screen_type )
 {
+	struct_scroll_object *so = &global_scroll_object;
 	struct_player_object *po = &global_player_object;
 	struct_level_object *lo = &global_level_object;
 	unsigned char input;
-	input = engine_input_manager_hold( input_type_left );
-	if( input )
-	{
-		engine_player_manager_left();
-		engine_debug_manager_printout();
-	}
+	//input = engine_input_man
+	bool newTile;
+	newTile = false; 
+	//input = engine_input_manager_move( input_type_left );
+	//if( input )
+	//{
+	//	engine_player_manager_left();
+	//	engine_debug_manager_printout();
+	//}
+	//input = engine_input_manager_move( input_type_right );
 	input = engine_input_manager_hold( input_type_right );
 	if( input )
 	{
-		engine_player_manager_right();
-		engine_debug_manager_printout();
+		//engine_player_manager_right();
+		//engine_debug_manager_printout();
+		newTile = engine_scroll_manager_update( 1 );
+		if( newTile )
+		{
+			engine_level_manager_draw( so->offset_right );
+		}
 	}
 	/*input = engine_input_manager_move( input_type_down );
 	if( input )
