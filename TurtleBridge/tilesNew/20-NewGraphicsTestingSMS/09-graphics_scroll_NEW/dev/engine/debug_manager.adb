@@ -2,10 +2,10 @@ M:debug_manager
 F:G$engine_debug_manager_printout$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Ldebug_manager.engine_debug_manager_printout$po$1_0$92({2}DG,STtag_struct_player_object:S),R,0,0,[]
 S:Ldebug_manager.engine_debug_manager_printout$lo$1_0$92({2}DG,STtag_struct_level_object:S),R,0,0,[]
-T:Fdebug_manager$tag_struct_player_object[({0}S:S$posnX$0_0$0({1}SC:U),Z,0,0)({1}S:S$posnY$0_0$0({1}SC:U),Z,0,0)({2}S:S$drawX$0_0$0({1}SC:U),Z,0,0)({3}S:S$drawY$0_0$0({1}SC:U),Z,0,0)({4}S:S$tileX$0_0$0({1}SC:U),Z,0,0)({5}S:S$tileY$0_0$0({1}SC:U),Z,0,0)({6}S:S$player_state$0_0$0({1}SC:U),Z,0,0)({7}S:S$player_index$0_0$0({1}SC:U),Z,0,0)({8}S:S$player_frame$0_0$0({1}SC:U),Z,0,0)({9}S:S$player_count$0_0$0({2}SI:U),Z,0,0)]
+T:Fdebug_manager$tag_struct_player_object[({0}S:S$posnX$0_0$0({2}SI:U),Z,0,0)({2}S:S$posnY$0_0$0({2}SI:U),Z,0,0)({4}S:S$drawX$0_0$0({1}SC:U),Z,0,0)({5}S:S$drawY$0_0$0({1}SC:U),Z,0,0)({6}S:S$tileX$0_0$0({2}SI:U),Z,0,0)({8}S:S$tileY$0_0$0({2}SI:U),Z,0,0)({10}S:S$player_state$0_0$0({1}SC:U),Z,0,0)({11}S:S$player_index$0_0$0({1}SC:U),Z,0,0)({12}S:S$player_frame$0_0$0({1}SC:U),Z,0,0)({13}S:S$player_count$0_0$0({2}SI:U),Z,0,0)]
 T:Fdebug_manager$tag_struct_level_object[({0}S:S$level_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$level_size$0_0$0({1}SC:U),Z,0,0)({3}S:S$level_bank$0_0$0({1}SC:U),Z,0,0)({4}S:S$level_draw_offset$0_0$0({1}SC:U),Z,0,0)({5}S:S$level_platforms$0_0$0({32}DA32d,SC:U),Z,0,0)]
 S:G$global_level_object$0_0$0({37}STtag_struct_level_object:S),E,0,0
-S:G$global_player_object$0_0$0({11}STtag_struct_player_object:S),E,0,0
+S:G$global_player_object$0_0$0({15}STtag_struct_player_object:S),E,0,0
 S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0_0$0({2}DF,SV:S),C,0,0

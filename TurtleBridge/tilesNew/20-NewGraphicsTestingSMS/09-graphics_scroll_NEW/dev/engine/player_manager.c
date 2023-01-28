@@ -43,7 +43,8 @@ void engine_player_manager_startX( unsigned char difficulty )
 {
 	struct_player_object *po = &global_player_object;
 	devkit_SMS_mapROMBank( FIXED_BANK );
-	po->posnX = player_object_starts[ difficulty ];
+	po->startX = player_object_starts[ difficulty ];
+	po->posnX = po->startX;
 	updatePlayer();
 }
 void engine_player_manager_startY( unsigned char player_startY )
@@ -52,7 +53,6 @@ void engine_player_manager_startY( unsigned char player_startY )
 	po->posnY = player_startY << 3;
 	updatePlayer();
 }
-
 
 void engine_player_manager_load( unsigned char difficulty, unsigned char player_startY )
 {

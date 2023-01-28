@@ -12,8 +12,10 @@
 #include "../engine/scroll_manager.h"
 #include "../engine/tile_manager.h"
 #include "../devkit/_sms_manager.h"
+#include "../banks/bank2.h"
 
 static void drawScreen();
+static void nextPrint();
 
 void screen_begin_screen_load()
 {
@@ -33,7 +35,10 @@ void screen_begin_screen_load()
 	player_startY = lo->level_platforms[ po->tileX ];
 	engine_player_manager_startY( player_startY );
 	engine_player_manager_draw();
+
 	engine_debug_manager_printout();
+	nextPrint();
+
 	devkit_SMS_displayOn();
 	engine_scroll_manager_load();
 }
@@ -57,6 +62,9 @@ void screen_begin_screen_update( unsigned char *screen_type )
 	input = engine_input_manager_hold( input_type_right );
 	if( input )
 	{
+		po->posnX++;
+		po->tileX = po->posnX >> 3;
+
 		//engine_player_manager_right();
 		//engine_debug_manager_printout();
 		newTile = engine_scroll_manager_update( 1 );
@@ -71,6 +79,9 @@ void screen_begin_screen_update( unsigned char *screen_type )
 		engine_debug_manager_printout();
 	}*/
 
+	engine_debug_manager_printout();
+	nextPrint();
+
 	engine_player_manager_draw();
 	*screen_type = screen_type_begin;
 }
@@ -83,4 +94,20 @@ static void drawScreen()
 
 	engine_graphics_manager_sea();
 	//engine_font_manager_text( "BEGIN[SCREEN!!", 10, 2 );
+}
+
+static void nextPrint()
+{
+	struct_scroll_object *so = &global_scroll_object;
+	struct_player_object *po = &global_player_object;
+	struct_level_object *lo = &global_level_object;
+
+	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+
+	engine_font_manager_data( lo->level_draw_offset, 8, 7 );
+	engine_font_manager_data( so->offset_right, 16, 7 );
+	engine_font_manager_data( lo->level_platforms[ lo->level_draw_offset ], 24, 7 );
+
+	engine_font_manager_data( po->tileX, 8, 8 );
+	engine_font_manager_data( lo->level_platforms[ po->tileX ], 16, 8 );
 }
