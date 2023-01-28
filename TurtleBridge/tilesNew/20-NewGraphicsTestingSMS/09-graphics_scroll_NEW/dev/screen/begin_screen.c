@@ -55,9 +55,11 @@ void screen_begin_screen_update( unsigned char *screen_type )
 	bool newTile;
 	delta = 0;
 	newTile = false;
+
 	input = engine_input_manager_move( input_type_down );
 	if( input )
 	{
+		engine_scroll_manager_update( 0 );
 		*screen_type = screen_type_dead;
 		return;
 		//engine_player_manager_left();
@@ -68,8 +70,16 @@ void screen_begin_screen_update( unsigned char *screen_type )
 	if( input )
 	{
 		delta = 1;
-		po->posnX++;
-		po->tileX = po->posnX >> 3;
+	}
+
+	if( 0 == delta )
+	{
+		delta = 0;
+		engine_scroll_manager_update( delta );
+	}
+	else
+	{
+		delta = 1;
 
 		//engine_player_manager_right();
 		//engine_debug_manager_printout();
@@ -78,17 +88,10 @@ void screen_begin_screen_update( unsigned char *screen_type )
 		{
 			engine_level_manager_draw( so->offset_right );
 		}
+
+		po->posnX++;
+		po->tileX = po->posnX >> 3;
 	}
-	if( 0 == delta )
-	{
-		delta = 0;
-		engine_scroll_manager_update( delta );
-	}
-	/*input = engine_input_manager_move( input_type_down );
-	if( input )
-	{
-		engine_debug_manager_printout();
-	}*/
 
 	//engine_debug_manager_printout();
 	//nextPrint();

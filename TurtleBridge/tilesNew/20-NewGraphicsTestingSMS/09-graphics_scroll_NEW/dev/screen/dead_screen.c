@@ -5,7 +5,7 @@
 
 void screen_dead_screen_load()
 {
-	engine_font_manager_text( "DEAD[SCREEN!!", 10, 1 );
+	engine_font_manager_text( "DEAD[SCREEN..!!", 1, 1 );
 }
 
 void screen_dead_screen_update( unsigned char *screen_type )
