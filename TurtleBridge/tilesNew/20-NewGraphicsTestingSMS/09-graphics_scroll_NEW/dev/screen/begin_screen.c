@@ -32,7 +32,8 @@ void screen_begin_screen_load()
 
 	devkit_SMS_displayOff();
 	drawScreen();
-	engine_player_manager_startX( difficulty_type_insane -3 );
+	engine_player_manager_startX( difficulty_type_normal );
+	//engine_player_manager_startX( difficulty_type_insane +1 );
 	engine_level_manager_show( 0 );
 
 //	player_startY = lo->level_platforms[ po->tileX ];
@@ -78,8 +79,8 @@ void screen_begin_screen_update( unsigned char *screen_type )
 		*screen_type = screen_type_dead;
 		return;
 	}
-	//input = engine_input_manager_move( input_type_right );
-	input = engine_input_manager_hold( input_type_right );
+	input = engine_input_manager_move( input_type_right );
+	//input = engine_input_manager_hold( input_type_right );
 	//input = 1;
 	if( input )
 	{
@@ -101,19 +102,19 @@ void screen_begin_screen_update( unsigned char *screen_type )
 		engine_player_manager_right();
 
 
-		//engine_debug_manager_printout();
+		engine_debug_manager_printout();
 
-		////// TODO - won't check this if somersault in air etc.
-		//collision = anyPlatforms();
-		////devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
-		////engine_font_manager_data( collision, 8, 12 );
-		//if( !collision )
-		//{
-		//	engine_scroll_manager_update( 0 );
-		//	engine_player_manager_draw();
-		//	*screen_type = screen_type_dead;
-		//	return;
-		//}
+		//// TODO - won't check this if somersault in air etc.
+		collision = anyPlatforms();
+		devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+		engine_font_manager_data( collision, 8, 12 );
+		if( !collision )
+		{
+			engine_scroll_manager_update( 0 );
+			engine_player_manager_draw();
+			*screen_type = screen_type_dead;
+			return;
+		}
 	}
 
 	//engine_debug_manager_printout();
@@ -131,26 +132,26 @@ static unsigned char anyPlatforms()
 	unsigned char lookup_platform;
 	unsigned char player_platform = po->tileY;
 
-	//devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
 
-	//engine_font_manager_data( po->tileX, 8, 10 );
-	//engine_font_manager_data( player_platform, 8, 11 );
+	engine_font_manager_data( po->tileX, 8, 10 );
+	engine_font_manager_data( player_platform, 8, 11 );
 
-	tilelook = po->tileX - 1;
+	tilelook = po->tileX - 2;
 	//lookup_platform = lo->level_platforms[ tilelook ];
 	lookup_platform = level_platforms[ tilelook ];
-	//engine_font_manager_data( tilelook, 16, 10 );
-	//engine_font_manager_data( lookup_platform, 16, 11 );
+	engine_font_manager_data( tilelook, 16, 10 );
+	engine_font_manager_data( lookup_platform, 16, 11 );
 	if( lookup_platform == player_platform )
 	{
 		return tilelook;
 	}
 
-	tilelook = po->tileX + 1;
+	tilelook = po->tileX + 2;
 	//lookup_platform = lo->level_platforms[ tilelook ];
 	lookup_platform = level_platforms[ tilelook ];
-	//engine_font_manager_data( tilelook, 24, 10 );
-	//engine_font_manager_data( lookup_platform, 24, 11 );
+	engine_font_manager_data( tilelook, 24, 10 );
+	engine_font_manager_data( lookup_platform, 24, 11 );
 	if( lookup_platform == player_platform )
 	{
 		return tilelook;

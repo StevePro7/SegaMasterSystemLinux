@@ -26,12 +26,6 @@ const unsigned int tiles_object_indexes[] =
 
 const unsigned char tiles_object_platform[] =
 {
-	00, 16, 16, 16, 13, 13, 13, 13,
-	13, 13, 19, 13,	17, 16, 15, 14,
+	00, 16, 16, 16, 18, 18, 18, 18,
+	18, 18, 19, 18,	17, 16, 15, 14,
 };
-//
-//const unsigned char tiles_object_platform[] =
-//{
-//	00, 16, 16, 16, 18, 18, 18, 18,
-//	18, 18, 19, 18,	17, 16, 15, 14,
-//};

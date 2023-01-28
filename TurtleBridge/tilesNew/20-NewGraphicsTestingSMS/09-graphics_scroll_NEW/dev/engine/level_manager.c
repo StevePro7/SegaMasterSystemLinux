@@ -17,16 +17,6 @@ struct_level_object global_level_object;
 void engine_level_manager_init()
 {
 	struct_level_object *lo = &global_level_object;
-	//unsigned char idx;
-	lo->level_draw_offset = SCREEN_WIDE - 1;
-
-	// TODO - set the platform value to maximum if invincible setting!
-	//{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-	//for( idx = 0; idx < SCREEN_WIDE; idx++ )
-	//{
-	//	lo->level_platforms[ idx ] = tiles_object_platform[ tile_type_waves_block ];
-	//}
-
 	lo->level_draw_offset = SCREEN_WIDE - 1;
 }
 
