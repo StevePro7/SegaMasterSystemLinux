@@ -3,16 +3,19 @@
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
+#include "../engine/graphics_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/player_manager.h"
 #include "../engine/tile_manager.h"
 #include "../devkit/_sms_manager.h"
 #include <stdbool.h>
 
+#define COLLISION_DELTA		1
+
 static void drawScreen();
 static void statPlater();
-//static unsigned char collision_array[] = { 18,18,18,18,18,18,18,18,0,0,0,0,18,18,18,18,18,18,18,18,0,0,0,0,0,0,0,0,0,0,0,0 };
-static unsigned char collision_array[] = { 18,18,18,18,0,0,0,0,0,0,0,0,18,18,18,18,18,18,18,18,0,0,0,0,0,0,0,0,0,0,0,0 };
+static unsigned char collision_array[] = { 18,18,18,18,18,18,18,18,0,0,0,0,18,18,18,18,18,18,18,18,0,0,0,0,0,0,0,0,0,0,0,0 };
+//static unsigned char collision_array[] = { 18,18,18,18,0,0,0,0,0,0,0,0,18,18,18,18,18,18,18,18,0,0,0,0,0,0,0,0,0,0,0,0 };
 
 void screen_init_screen_load()
 {
@@ -54,8 +57,9 @@ void screen_init_screen_update( unsigned char *screen_type )
 		tempTileY = tempPosnY >> 3;
 
 		isMoveDown = false;
-		tile = po->tileX - 2;    // Easy
-		//tile = po->tileX - 1;	// Hard
+		//tile = po->tileX - 2;		// Easy
+		//tile = po->tileX - 1;		// Hard
+		tile = po->tileX - COLLISION_DELTA;
 		tempCollY = collision_array[ tile ];
 		if( tempTileY == tempCollY )
 		{
@@ -63,8 +67,9 @@ void screen_init_screen_update( unsigned char *screen_type )
 		}
 		else
 		{
-			tile = po->tileX + 2;	// Easy
-			//tile = po->tileX + 1;	// Hard
+			//tile = po->tileX + 2;	// Easy
+			//tile = po->tileX + 1	// Hard
+			tile = po->tileX + COLLISION_DELTA;
 			tempCollY = collision_array[ tile ];
 			if( tempTileY == tempCollY )
 			{
@@ -116,11 +121,12 @@ static void drawScreen()
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();
 	engine_content_manager_sprite();
+	engine_graphics_manager_sea();
 	//engine_tile_manager_stevepro( TILE_PLAY_TITLE, 4, 0, 24, 3 );
-	//engine_tile_manager_stevepro( TILE_ISLAND_MIDD, 0, 8, 8, 14 );
-	//engine_tile_manager_stevepro( TILE_ISLAND_RGHT, 4, 8, 4, 14 );
-	engine_tile_manager_stevepro( TILE_ISLAND_RGHT, 0, 8, 4, 14 );
-	engine_tile_manager_stevepro( TILE_WAVES_BLOCK, 4, 8, 4, 14 );
+	engine_tile_manager_stevepro( TILE_ISLAND_MIDD, 0, 8, 8, 14 );
+	engine_tile_manager_stevepro( TILE_ISLAND_RGHT, 4, 8, 4, 14 );
+	//engine_tile_manager_stevepro( TILE_ISLAND_RGHT, 0, 8, 4, 14 );
+	//engine_tile_manager_stevepro( TILE_WAVES_BLOCK, 4, 8, 4, 14 );
 	engine_tile_manager_stevepro( TILE_WAVES_BLOCK, 8, 8, 4, 14 );
 	engine_tile_manager_stevepro( TILE_ISLAND_LEFT, 12, 8, 8, 14 );
 	engine_tile_manager_stevepro( TILE_ISLAND_MIDD, 16, 8, 4, 14 );

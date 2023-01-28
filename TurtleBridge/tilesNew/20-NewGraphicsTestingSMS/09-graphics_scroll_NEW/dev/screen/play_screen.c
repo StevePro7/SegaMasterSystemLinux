@@ -17,7 +17,7 @@ static void drawScreen();
 
 void screen_play_screen_load()
 {
-	engine_level_manager_load( 1 );
+	engine_level_manager_load( 0 );
 
 	devkit_SMS_displayOff();
 	drawScreen();
@@ -116,8 +116,6 @@ void screen_play_screen_update( unsigned char *screen_type )
 static void drawScreen()
 {
 	//unsigned char idx;
-
-	
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();
 	engine_content_manager_sprite();
@@ -154,6 +152,4 @@ static void drawScreen()
 	//engine_font_manager_text( "[[[[[[[[[[[[[[[[[[[[[[[[", 4, 3 );
 	//engine_font_manager_text( "STEVEPRO[IS[WRITING[THIS", 4, 1 );
 	//engine_font_manager_text( "STEVEPRO[IS[WRITING[THIS", 4, 2 );
-
-	
 }

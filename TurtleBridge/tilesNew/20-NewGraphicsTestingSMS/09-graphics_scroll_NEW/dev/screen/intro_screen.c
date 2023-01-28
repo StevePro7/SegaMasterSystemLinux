@@ -33,7 +33,7 @@ void screen_intro_screen_load()
 	engine_player_manager_draw();
 	devkit_SMS_displayOn();
 	engine_scroll_manager_load();
-	engine_music_manager_play( 1 );
+	//engine_music_manager_play( 1 );
 	complete = false;
 }
 

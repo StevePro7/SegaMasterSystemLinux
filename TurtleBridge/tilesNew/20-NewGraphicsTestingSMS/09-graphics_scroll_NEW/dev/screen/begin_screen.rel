@@ -1,38 +1,62 @@
 ;!FILE begin_screen.asm
 XL3
-H 9 areas 1D global symbols
+H 9 areas 35 global symbols
 M begin_screen
 O -mz80
 S _engine_font_manager_text Ref000000
+S _devkit_SMS_displayOn Ref000000
+S _engine_graphics_manager_sea Ref000000
 S .__.ABS. Def000000
-A _CODE size 24 flags 0 addr 0
-S _screen_begin_screen_update Def00001D
-S XG$screen_begin_screen_update$0$0 Def000023
-S A$begin_screen$60 Def000007
-S A$begin_screen$61 Def000008
-S A$begin_screen$71 Def00000D
-S A$begin_screen$62 Def00000B
+S _engine_content_manager_sprite Ref000000
+S _devkit_SMS_displayOff Ref000000
+S _engine_asm_manager_clear_VRAM Ref000000
+S _engine_content_manager_bggame Ref000000
+A _CODE size 39 flags 0 addr 0
+S A$begin_screen$120 Def000013
+S C$begin_screen.c$33$1_0$101 Def000010
+S A$begin_screen$103 Def00000F
+S C$begin_screen.c$34$1_0$101 Def000013
+S C$begin_screen.c$26$1_0$100 Def000009
+S C$begin_screen.c$35$1_0$101 Def000016
+S A$begin_screen$132 Def00001C
+S C$begin_screen.c$28$1_0$100 Def000009
+S A$begin_screen$133 Def00001F
+S A$begin_screen$124 Def000016
+S C$begin_screen.c$37$1_0$101 Def000019
+S Fbegin_screen$drawScreen$0$0 Def000010
+S C$begin_screen.c$29$1_0$100 Def00000F
+S _screen_begin_screen_update Def000009
+S A$begin_screen$134 Def000020
+S A$begin_screen$116 Def000010
+S C$begin_screen.c$38$1_0$101 Def00001C
+S A$begin_screen$135 Def000023
+S C$begin_screen.c$39$1_0$101 Def000029
+S A$begin_screen$136 Def000024
+S A$begin_screen$146 Def000029
+S A$begin_screen$137 Def000027
+S A$begin_screen$128 Def000019
+S A$begin_screen$138 Def000028
+S XG$screen_begin_screen_update$0$0 Def00000F
 S G$screen_begin_screen_load$0$0 Def000000
-S A$begin_screen$90 Def00001F
-S A$begin_screen$63 Def00000C
-S A$begin_screen$91 Def000020
-S A$begin_screen$92 Def000021
-S A$begin_screen$57 Def000000
-S A$begin_screen$58 Def000003
-S A$begin_screen$59 Def000004
-S A$begin_screen$88 Def00001D
-S A$begin_screen$89 Def00001E
-S C$begin_screen.c$10$1_0$8 Def00001D
+S A$begin_screen$63 Def000000
+S A$begin_screen$91 Def000009
+S A$begin_screen$92 Def00000A
+S A$begin_screen$93 Def00000B
+S A$begin_screen$94 Def00000C
+S A$begin_screen$67 Def000003
+S A$begin_screen$95 Def00000D
+S C$begin_screen.c$20$1_0$98 Def000003
+S A$begin_screen$78 Def000006
+S XFbegin_screen$drawScreen$0$0 Def000029
+S C$begin_screen.c$23$1_0$98 Def000006
+S C$begin_screen.c$24$1_0$98 Def000006
+S C$begin_screen.c$17$0_0$98 Def000000
 S _screen_begin_screen_load Def000000
-S C$begin_screen.c$12$1_0$8 Def00001D
-S C$begin_screen.c$13$1_0$8 Def000023
-S Fbegin_screen$__str_0$0_0$0 Def00000E
-S XG$screen_begin_screen_load$0$0 Def00000D
-S C$begin_screen.c$5$0_0$6 Def000000
-S C$begin_screen.c$7$1_0$6 Def000000
-S C$begin_screen.c$8$1_0$6 Def00000D
-S G$screen_begin_screen_update$0$0 Def00001D
-S A$begin_screen$100 Def000023
+S C$begin_screen.c$19$1_0$98 Def000000
+S Fbegin_screen$__str_0$0_0$0 Def00002A
+S XG$screen_begin_screen_load$0$0 Def000006
+S G$screen_begin_screen_update$0$0 Def000009
+S C$begin_screen.c$31$1_0$101 Def000010
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -43,17 +67,23 @@ A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
-T 00 00 00 11 0A 02 D5 21 0E 00 E5 CD 00 00 F1 F1
-R 00 00 00 00 00 08 00 00 02 0C 00 00
-T 0D 00 00 C9
+T 00 00 00 CD 00 00 CD 10 00 C3 00 00
+R 00 00 00 00 02 04 05 00 00 07 00 00 02 0A 01 00
+T 09 00 00
 R 00 00 00 00
-T 0E 00 00
+T 09 00 00 C1 E1 E5 C5 36 02 C9
 R 00 00 00 00
-T 0E 00 00 42 45 47 49 4E 20 53 43 52 45 45 4E 21
+T 10 00 00
 R 00 00 00 00
-T 1B 00 00 21 00
+T 10 00 00 CD 00 00 CD 00 00 CD 00 00 CD
+R 00 00 00 00 02 04 06 00 02 07 07 00 02 0A 04 00
+T 1A 00 00 00 00 11 0A 02 D5 21 2A 00 E5 CD 00 00
+R 00 00 00 00 02 03 02 00 00 0A 00 00 02 0E 00 00
+T 27 00 00 F1 F1 C9
 R 00 00 00 00
-T 1D 00 00
+T 2A 00 00
 R 00 00 00 00
-T 1D 00 00 C1 E1 E5 C5 36 02 C9
+T 2A 00 00 42 45 47 49 4E 5B 53 43 52 45 45 4E 21
+R 00 00 00 00
+T 37 00 00 21 00
 R 00 00 00 00

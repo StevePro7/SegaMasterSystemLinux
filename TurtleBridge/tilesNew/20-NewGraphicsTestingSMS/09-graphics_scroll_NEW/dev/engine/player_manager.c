@@ -24,8 +24,8 @@ void engine_player_manager_init()
 	po->posnX = 32;
 	//po->posnX = 96;
 //	po->posnX = 168;
-	//po->posnY = 144;
-	po->posnY = 128;
+	po->posnY = 144;
+	//po->posnY = 128;
 	//po->posnY = 132;
 	//po->frame = 4;
 	//po->frame = 0;
