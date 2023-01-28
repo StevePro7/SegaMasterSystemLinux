@@ -3,10 +3,9 @@
 
 typedef struct tag_struct_player_object
 {
-	unsigned int posnX;
-	unsigned char startX, posnY;
+	unsigned int posnX, tileX;
+	unsigned char startX, posnY, tileY;
 	unsigned char drawX, drawY;
-	unsigned int tileX, tileY;
 	unsigned char player_state;
 	unsigned char player_index;		// TODO better name!
 	unsigned char player_frame;

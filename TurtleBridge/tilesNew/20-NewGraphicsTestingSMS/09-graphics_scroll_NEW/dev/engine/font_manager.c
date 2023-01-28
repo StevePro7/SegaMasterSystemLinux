@@ -40,7 +40,7 @@ void engine_font_manager_data( unsigned int data, unsigned char x, unsigned char
 	unsigned char remainder = 0;
 
 	char hold[ DATA_LONG ];
-	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+	//devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
 	for( idx = 0; idx < DATA_LONG; ++idx )
 	{
 		quotient = data / UNIT_ROOT;
