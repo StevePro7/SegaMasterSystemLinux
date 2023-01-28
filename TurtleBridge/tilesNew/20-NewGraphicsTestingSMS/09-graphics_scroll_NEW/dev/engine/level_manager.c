@@ -85,7 +85,7 @@ void engine_level_manager_draw( unsigned int offset )
 	level_data = lo->level_data[ offset ];
 	engine_function_manager_convertByteToNibbles( level_data, &level_column, &level_object );
 	level_platform = tiles_object_platform[ level_object ];
-	lo->level_platforms[ lo->level_draw_offset ] = level_platform;
+	lo->level_platforms[ offset ] = level_platform;
 
 	if( level_column >= 8 )
 	{
@@ -95,7 +95,8 @@ void engine_level_manager_draw( unsigned int offset )
 	engine_tile_manager_draw_columns( level_object, lo->level_draw_offset, level_column, flip );
 
 	//devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
-	engine_font_manager_data( offset, 12, 2 );
-	engine_font_manager_data( lo->level_draw_offset, 12, 3 );
-	engine_font_manager_data( level_platform, 12, 5 );
+	//engine_font_manager_data( offset, 12, 12 );
+	//engine_font_manager_data( level_object, 12, 13 );
+	//engine_font_manager_data( level_platform, 12, 14 );
+	//engine_font_manager_data( lo->level_platforms[ offset ], 12, 15 );
 }

@@ -54,14 +54,14 @@ void engine_player_manager_startY( unsigned char player_startY )
 	updatePlayer();
 }
 
-void engine_player_manager_load( unsigned char difficulty, unsigned char player_startY )
-{
-	struct_player_object *po = &global_player_object;
-	devkit_SMS_mapROMBank( FIXED_BANK );
-	po->posnX = player_object_starts[ difficulty ];
-	po->posnY = player_startY << 3;
-	updatePlayer();
-}
+//void engine_player_manager_load( unsigned char difficulty, unsigned char player_startY )
+//{
+//	struct_player_object *po = &global_player_object;
+//	devkit_SMS_mapROMBank( FIXED_BANK );
+//	po->posnX = player_object_starts[ difficulty ];
+//	po->posnY = player_startY << 3;
+//	updatePlayer();
+//}
 
 void engine_player_manager_update3()
 {
@@ -177,9 +177,17 @@ void engine_player_manager_left()
 
 void engine_player_manager_right()
 {
+//	unsigned char px;
 	struct_player_object *po = &global_player_object;
-	po->posnX++;
-	updatePlayer();
+	//px = po->posnX;
+	//px++;
+	//po->posnX = px;
+		//po->posnX = po->posnX + 1;
+	//po->tileX = po->posnX >> 3;
+	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+	//engine_font_manager_data( delta, 12, 12 );
+	engine_font_manager_data( po->posnX, 24, 16 );
+	//engine_font_manager_data( po->tileX, 24, 17 );
 }
 
 void engine_player_manager_up()

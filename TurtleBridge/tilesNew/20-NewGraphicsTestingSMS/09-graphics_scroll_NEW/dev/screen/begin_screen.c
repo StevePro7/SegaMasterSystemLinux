@@ -28,10 +28,11 @@ void screen_begin_screen_load()
 	engine_level_manager_load( 3 );
 	//engine_player_manager_startX( difficulty_type_easier );
 	//engine_player_manager_startX( difficulty_type_normal );
-	engine_player_manager_startX( difficulty_type_insane+1 );
+
 
 	devkit_SMS_displayOff();
 	drawScreen();
+	engine_player_manager_startX( difficulty_type_insane -3 );
 	engine_level_manager_show( 0 );
 
 	player_startY = lo->level_platforms[ po->tileX ];
@@ -43,6 +44,11 @@ void screen_begin_screen_load()
 
 	devkit_SMS_displayOn();
 	engine_scroll_manager_load();
+
+	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+	//engine_font_manager_data( delta, 12, 12 );
+	engine_font_manager_data( po->posnX, 12, 13 );
+	engine_font_manager_data( po->tileX, 12, 14 );
 }
 
 void screen_begin_screen_update( unsigned char *screen_type )
@@ -57,6 +63,13 @@ void screen_begin_screen_update( unsigned char *screen_type )
 	delta = 0;
 	newTile = false;
 	collision = 0;
+
+	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+	//engine_font_manager_data( delta, 12, 12 );
+	engine_font_manager_data( po->posnX, 24, 13 );
+	engine_font_manager_data( po->tileX, 24, 14 );
+
+
 	input = engine_input_manager_move( input_type_down );
 	if( input )
 	{
@@ -64,8 +77,8 @@ void screen_begin_screen_update( unsigned char *screen_type )
 		*screen_type = screen_type_dead;
 		return;
 	}
-	input = engine_input_manager_move( input_type_right );
-	//input = engine_input_manager_hold( input_type_right );
+	//input = engine_input_manager_move( input_type_right );
+	input = engine_input_manager_hold( input_type_right );
 	//input = 1;
 	if( input )
 	{
@@ -78,28 +91,30 @@ void screen_begin_screen_update( unsigned char *screen_type )
 	}
 	else
 	{
+		engine_player_manager_right();
+
 		newTile = engine_scroll_manager_update( delta );
 		if( newTile )
 		{
 			engine_level_manager_draw( so->offset_right );
 		}
 
-		po->posnX += delta;
-		po->tileX = po->posnX >> 3;
+		
 
-		engine_debug_manager_printout();
 
-		//// TODO - won't check this if somersault in air etc.
-		collision = anyPlatforms();
-		devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
-		//engine_font_manager_data( collision, 8, 12 );
-		if( !collision )
-		{
-			engine_scroll_manager_update( 0 );
-			engine_player_manager_draw();
-			*screen_type = screen_type_dead;
-			return;
-		}
+		//engine_debug_manager_printout();
+
+		////// TODO - won't check this if somersault in air etc.
+		//collision = anyPlatforms();
+		////devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+		////engine_font_manager_data( collision, 8, 12 );
+		//if( !collision )
+		//{
+		//	engine_scroll_manager_update( 0 );
+		//	engine_player_manager_draw();
+		//	*screen_type = screen_type_dead;
+		//	return;
+		//}
 	}
 
 	//engine_debug_manager_printout();
@@ -117,7 +132,7 @@ static unsigned char anyPlatforms()
 	unsigned char lookup_platform;
 	unsigned char player_platform = po->tileY;
 
-	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+	//devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
 
 	//engine_font_manager_data( po->tileX, 8, 10 );
 	//engine_font_manager_data( player_platform, 8, 11 );
