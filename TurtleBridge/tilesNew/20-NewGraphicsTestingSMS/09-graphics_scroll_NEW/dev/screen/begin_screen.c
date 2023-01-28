@@ -41,7 +41,7 @@ void screen_begin_screen_load()
 	engine_player_manager_startY( player_startY );
 	engine_player_manager_draw();
 
-	engine_debug_manager_printout();
+	//engine_debug_manager_printout();
 	//nextPrint();
 
 	devkit_SMS_displayOn();
@@ -49,8 +49,8 @@ void screen_begin_screen_load()
 
 	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
 	//engine_font_manager_data( delta, 12, 12 );
-	engine_font_manager_data( po->posnX, 12, 13 );
-	engine_font_manager_data( po->tileX, 12, 14 );
+	//engine_font_manager_data( po->posnX, 12, 13 );
+	//engine_font_manager_data( po->tileX, 12, 14 );
 }
 
 void screen_begin_screen_update( unsigned char *screen_type )
@@ -68,8 +68,8 @@ void screen_begin_screen_update( unsigned char *screen_type )
 
 	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
 	//engine_font_manager_data( delta, 12, 12 );
-	engine_font_manager_data( po->posnX, 24, 13 );
-	engine_font_manager_data( po->tileX, 24, 14 );
+	//engine_font_manager_data( po->posnX, 24, 13 );
+	//engine_font_manager_data( po->tileX, 24, 14 );
 
 
 	input = engine_input_manager_move( input_type_down );
@@ -102,12 +102,12 @@ void screen_begin_screen_update( unsigned char *screen_type )
 		engine_player_manager_right();
 
 
-		engine_debug_manager_printout();
+		//engine_debug_manager_printout();
 
 		//// TODO - won't check this if somersault in air etc.
 		collision = anyPlatforms();
-		devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
-		engine_font_manager_data( collision, 8, 12 );
+		//devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+		//engine_font_manager_data( collision, 8, 12 );
 		if( !collision )
 		{
 			engine_scroll_manager_update( 0 );
@@ -134,14 +134,14 @@ static unsigned char anyPlatforms()
 
 	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
 
-	engine_font_manager_data( po->tileX, 8, 10 );
-	engine_font_manager_data( player_platform, 8, 11 );
+	//engine_font_manager_data( po->tileX, 8, 10 );
+	//engine_font_manager_data( player_platform, 8, 11 );
 
 	tilelook = po->tileX - 2;
 	//lookup_platform = lo->level_platforms[ tilelook ];
 	lookup_platform = level_platforms[ tilelook ];
-	engine_font_manager_data( tilelook, 16, 10 );
-	engine_font_manager_data( lookup_platform, 16, 11 );
+	//engine_font_manager_data( tilelook, 16, 10 );
+	//engine_font_manager_data( lookup_platform, 16, 11 );
 	if( lookup_platform == player_platform )
 	{
 		return tilelook;
@@ -150,8 +150,8 @@ static unsigned char anyPlatforms()
 	tilelook = po->tileX + 2;
 	//lookup_platform = lo->level_platforms[ tilelook ];
 	lookup_platform = level_platforms[ tilelook ];
-	engine_font_manager_data( tilelook, 24, 10 );
-	engine_font_manager_data( lookup_platform, 24, 11 );
+	//engine_font_manager_data( tilelook, 24, 10 );
+	//engine_font_manager_data( lookup_platform, 24, 11 );
 	if( lookup_platform == player_platform )
 	{
 		return tilelook;
