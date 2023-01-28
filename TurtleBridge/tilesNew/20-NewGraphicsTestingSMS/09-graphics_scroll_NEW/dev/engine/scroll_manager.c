@@ -4,7 +4,7 @@
 #include "sprite_manager.h"
 #include "../devkit/_sms_manager.h"
 
-#define PARALLAX_SCROLLING		0
+#define PARALLAX_SCROLLING		1
 #define SCROLL_COLUMNS			8
 #define SCROLL_LINE_COUNT		30
 
@@ -155,7 +155,7 @@ static void para_scroll_load()
 	so->scrollRight = 0;
 	//so->offset_left = 0;
 	so->offset_right = SCREEN_WIDE - 1;
-	engine_font_manager_data( so->offset_right, 16, 6 );
+
 	devkit_SMS_setBGScrollX( 0 );
 	//devkit_SMS_setBGScrollX( so->scroll );
 	//print( false );
@@ -177,13 +177,11 @@ static void para_scroll_load()
 }
 static bool para_scroll_update( unsigned char delta )
 {
-	//engine_font_manager_data( delta, 10, 6 );
 	struct_scroll_object *so = &global_scroll_object;
 	//unsigned char temp;
 	bool newTile;
 	//const unsigned char delta = 1;
-	
-	engine_font_manager_data( so->offset_right, 16, 8 );
+
 	//so->scroll -= delta;
 	so->scrollRight += delta;
 	// IMPORTANT - performance improvement - would like to test to triple check but looks good at the mo'	09-Jan-2023
@@ -203,8 +201,6 @@ static bool para_scroll_update( unsigned char delta )
 			so->offset_right++;
 		}
 	}
-
-	engine_font_manager_data( so->offset_right, 16, 9 );
 
 	//temp = 0;
 	//temp = so->scroll_x[ 0 ];
@@ -244,8 +240,6 @@ static void full_scroll_load()
 	//so->offset_left = 0;
 	so->offset_right = SCREEN_WIDE - 1;
 
-	engine_font_manager_data( so->offset_right, 16, 6 );
-
 	devkit_SMS_setBGScrollX( so->scroll );
 }
 static bool full_scroll_update( unsigned char delta )
@@ -253,8 +247,6 @@ static bool full_scroll_update( unsigned char delta )
 	struct_scroll_object *so = &global_scroll_object;
 	bool newTile;
 	//const unsigned char delta = 1;
-
-	engine_font_manager_data( so->offset_right, 16, 8 );
 
 	so->scroll -= delta;
 	so->scrollRight += delta;
@@ -279,7 +271,6 @@ static bool full_scroll_update( unsigned char delta )
 		}
 	}
 
-	engine_font_manager_data( so->offset_right, 16, 8 );
 	//print( newTile );
 	return newTile;
 }

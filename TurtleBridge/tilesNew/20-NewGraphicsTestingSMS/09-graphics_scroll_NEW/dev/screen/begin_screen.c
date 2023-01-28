@@ -84,7 +84,6 @@ void screen_begin_screen_update( unsigned char *screen_type )
 		newTile = engine_scroll_manager_update( delta );
 		if( newTile )
 		{
-		//	engine_font_manager_data( so->offset_right, 16, 10 );
 			engine_level_manager_draw( so->offset_right );
 		}
 

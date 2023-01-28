@@ -10,11 +10,12 @@ S:Lscroll_manager.para_scroll_update$delta$1_0$100({1}SC:U),B,1,4
 S:Lscroll_manager.para_scroll_update$so$1_0$101({2}DG,STtag_struct_scroll_object:S),R,0,0,[]
 S:Lscroll_manager.para_scroll_update$newTile$1_0$101({1}:S),R,0,0,[c]
 F:Fscroll_manager$full_scroll_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lscroll_manager.full_scroll_load$so$1_0$106({2}DG,STtag_struct_scroll_object:S),R,0,0,[]
+S:Lscroll_manager.full_scroll_load$so$1_0$106({2}DG,STtag_struct_scroll_object:S),R,0,0,[c,b]
 F:Fscroll_manager$full_scroll_update$0_0$0({2}DF,:S),Z,0,0,0,0,0
 S:Lscroll_manager.full_scroll_update$delta$1_0$107({1}SC:U),B,1,4
 S:Lscroll_manager.full_scroll_update$so$1_0$108({2}DG,STtag_struct_scroll_object:S),R,0,0,[c,b]
-S:Lscroll_manager.full_scroll_update$newTile$1_0$108({1}:S),R,0,0,[c]
+S:Lscroll_manager.full_scroll_update$newTile$1_0$108({1}:S),R,0,0,[e]
+S:Lscroll_manager.full_scroll_update$sloc0$0_1$0({2}SI:U),B,1,-2
 F:Fscroll_manager$lineScrollHandler$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lscroll_manager.lineScrollHandler$so$1_0$113({2}DG,STtag_struct_scroll_object:S),R,0,0,[]
 S:Lscroll_manager.lineScrollHandler$val$1_0$113({2}SI:U),R,0,0,[]
