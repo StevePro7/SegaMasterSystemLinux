@@ -17,7 +17,6 @@ void engine_level_manager_init()
 {
 	struct_level_object *lo = &global_level_object;
 	unsigned char idx;
-	//lo->level_cols_offset = 0;
 	lo->level_draw_offset = SCREEN_WIDE - 1;
 
 	// TODO - set the platform value to maximum if invincible setting!
@@ -32,8 +31,6 @@ void engine_level_manager_init()
 void engine_level_manager_load( unsigned char index )
 {
 	struct_level_object *lo = &global_level_object;
-	//unsigned char idx;
-	//lo->level_cols_offset = 0;
 	lo->level_draw_offset = SCREEN_WIDE - 1;
 
 	devkit_SMS_mapROMBank( FIXED_BANK );
@@ -62,36 +59,37 @@ void engine_level_manager_show( unsigned char screen )
 void engine_level_manager_draw( unsigned int offset )
 {
 	struct_level_object *lo = &global_level_object;
-	//unsigned int index;
-	unsigned char data, planesA, columnA;
+	//unsigned char data, planesA, columnA;
+	unsigned char level_data, level_column, level_object, level_platform;
 	bool flip = false;
 
-	//lo->level_cols_offset = offset;
 	lo->level_draw_offset++;
 	if( lo->level_draw_offset >= SCREEN_WIDE )
 	{
 		lo->level_draw_offset = 0;
 	}
 
-//	engine_font_manager_data( offset, 10, 2 );
-	//if( offset >= lo->level_size )
-	//{
-	//	engine_font_manager_text( "THE END", 10, 3 );
-	//}
-	//index = lo->level_cols_offset;
-
 	devkit_SMS_mapROMBank( lo->level_bank );
-	//data = lo->level_data[ index ];
-	data = lo->level_data[ offset ];
-	planesA = 0;
-	columnA = 0;
-	engine_function_manager_convertByteToNibbles( data, &columnA, &planesA );
+	//data = lo->level_data[ offset ];
+	//planesA = 0;
+	//columnA = 0;
+	//engine_function_manager_convertByteToNibbles( data, &columnA, &planesA );
+	//if( columnA >= 8 )
+	//{
+	//	flip = true;
+	//	columnA -= 8;
+	//}
+	//engine_tile_manager_draw_columns( planesA, lo->level_draw_offset, columnA, flip );
 
-	if( columnA >= 8 )
+	level_data = lo->level_data[ offset ];
+	engine_function_manager_convertByteToNibbles( level_data, &level_column, &level_object );
+	level_platform = tiles_object_platform[ level_object ];
+	lo->level_platforms[ lo->level_draw_offset ] = level_platform;
+
+	if( level_column >= 8 )
 	{
 		flip = true;
-		columnA -= 8;
+		level_column -= 8;
 	}
-
-	engine_tile_manager_draw_columns( planesA, lo->level_draw_offset, columnA, flip );
+	engine_tile_manager_draw_columns( level_object, lo->level_draw_offset, level_column, flip );
 }

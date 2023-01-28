@@ -13,9 +13,10 @@ S:Llevel_manager.engine_level_manager_show$offset$1_0$101({2}SI:U),R,0,0,[c,b]
 F:G$engine_level_manager_draw$0_0$0({2}DF,SV:S),Z,0,2,0,0,0
 S:Llevel_manager.engine_level_manager_draw$offset$1_0$104({2}SI:U),B,1,4
 S:Llevel_manager.engine_level_manager_draw$lo$1_0$105({2}DG,STtag_struct_level_object:S),R,0,0,[]
-S:Llevel_manager.engine_level_manager_draw$data$1_0$105({1}SC:U),R,0,0,[c]
-S:Llevel_manager.engine_level_manager_draw$planesA$1_0$105({1}SC:U),B,1,-2
-S:Llevel_manager.engine_level_manager_draw$columnA$1_0$105({1}SC:U),B,1,-1
+S:Llevel_manager.engine_level_manager_draw$level_data$1_0$105({1}SC:U),R,0,0,[c]
+S:Llevel_manager.engine_level_manager_draw$level_column$1_0$105({1}SC:U),B,1,-2
+S:Llevel_manager.engine_level_manager_draw$level_object$1_0$105({1}SC:U),B,1,-1
+S:Llevel_manager.engine_level_manager_draw$level_platform$1_0$105({1}SC:U),R,0,0,[c]
 S:Llevel_manager.engine_level_manager_draw$flip$1_0$105({1}:S),R,0,0,[b]
 T:Flevel_manager$tag_struct_level_object[({0}S:S$level_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$level_size$0_0$0({1}SC:U),Z,0,0)({3}S:S$level_bank$0_0$0({1}SC:U),Z,0,0)({4}S:S$level_draw_offset$0_0$0({1}SC:U),Z,0,0)({5}S:S$level_platforms$0_0$0({32}DA32d,SC:U),Z,0,0)]
 S:G$music_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
