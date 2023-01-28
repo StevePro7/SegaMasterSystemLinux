@@ -13,9 +13,11 @@
 #include "../engine/tile_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/bank2.h"
+#include <stdbool.h>
 
 static void drawScreen();
 static void nextPrint();
+static bool anyPlatforms();
 
 void screen_begin_screen_load()
 {
@@ -49,8 +51,9 @@ void screen_begin_screen_update( unsigned char *screen_type )
 	struct_player_object *po = &global_player_object;
 	struct_level_object *lo = &global_level_object;
 	unsigned char input;
-	//input = engine_input_man
+	unsigned char delta;
 	bool newTile;
+	delta = 0;
 	newTile = false; 
 	input = engine_input_manager_move( input_type_down );
 	if( input )
@@ -64,12 +67,13 @@ void screen_begin_screen_update( unsigned char *screen_type )
 	input = engine_input_manager_hold( input_type_right );
 	if( input )
 	{
+		delta = 1;
 		po->posnX++;
 		po->tileX = po->posnX >> 3;
 
 		//engine_player_manager_right();
 		//engine_debug_manager_printout();
-		newTile = engine_scroll_manager_update( 1 );
+		newTile = engine_scroll_manager_update( delta );
 		if( newTile )
 		{
 			engine_level_manager_draw( so->offset_right );
@@ -86,6 +90,11 @@ void screen_begin_screen_update( unsigned char *screen_type )
 
 	engine_player_manager_draw();
 	*screen_type = screen_type_begin;
+}
+
+static bool anyPlatforms()
+{
+	return true;
 }
 
 static void drawScreen()
