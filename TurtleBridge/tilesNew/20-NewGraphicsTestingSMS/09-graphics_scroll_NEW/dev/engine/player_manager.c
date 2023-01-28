@@ -22,7 +22,7 @@ void engine_player_manager_init()
 	struct_player_object *po = &global_player_object;
 	po->posnX = 48;
 	po->posnX = 32;
-	po->posnX = 96;
+	//po->posnX = 96;
 //	po->posnX = 168;
 	//po->posnY = 144;
 	po->posnY = 128;
@@ -204,9 +204,9 @@ void engine_player_manager_pass()
 void engine_player_manager_count()
 {
 	struct_player_object *po = &global_player_object;
-	po->player_count++;
 	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
 	engine_font_manager_data( po->player_count, 30, 4 );
+	po->player_count++;
 }
 void engine_player_manager_draw()
 {

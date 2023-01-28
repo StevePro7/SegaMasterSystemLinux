@@ -38,6 +38,10 @@ void engine_level_manager_load( unsigned char index )
 	lo->level_data = ( unsigned char* ) level_object_data[ index ];
 	lo->level_size = level_object_size[ index ];
 	lo->level_bank = level_object_bank[ index ];
+
+	// IMPORTANT
+	// must store level_size as 1px less because size=64 thus range is 0-63 i.e. store 63 NOT 64...!
+	lo->level_size -= 1;
 }
 
 void engine_level_manager_show( unsigned char screen )
