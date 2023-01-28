@@ -15,15 +15,15 @@ void engine_debug_manager_printout()
 	engine_font_manager_data( po->posnX, 16, 0 );
 	engine_font_manager_data( po->drawX, 24, 0 );
 
-	//engine_font_manager_data( po->tileX - 2, 1, 3 );
-	engine_font_manager_data( po->tileX - 1, 8, 2 );
-	engine_font_manager_data( po->tileX + 0, 8, 3 );
-	engine_font_manager_data( po->tileX + 1, 8, 4 );
-	//engine_font_manager_data( po->tileX + 2, 8, 5 );
+	//engine_font_manager_data( po->tileX - 2, 1, 2 );
+	engine_font_manager_data( po->tileX - 1, 8, 3 );
+	engine_font_manager_data( po->tileX + 0, 8, 4 );
+	engine_font_manager_data( po->tileX + 1, 8, 5 );
+	//engine_font_manager_data( po->tileX + 2, 8, 6 );
 
-	//engine_font_manager_data( lo->level_platforms[ po->tileX - 2 ], 16, 1 );
-	engine_font_manager_data( lo->level_platforms[ po->tileX - 1 ], 16, 2 );
-	engine_font_manager_data( lo->level_platforms[ po->tileX + 0 ], 16, 3 );
-	engine_font_manager_data( lo->level_platforms[ po->tileX + 1 ], 16, 4 );
-	//engine_font_manager_data( lo->level_platforms[ po->tileX + 2 ], 16, 5 );
+	//engine_font_manager_data( lo->level_platforms[ po->tileX - 2 ], 16, 2 );
+	engine_font_manager_data( lo->level_platforms[ po->tileX - 1 ], 16, 3 );
+	engine_font_manager_data( lo->level_platforms[ po->tileX + 0 ], 16, 4 );
+	engine_font_manager_data( lo->level_platforms[ po->tileX + 1 ], 16, 5 );
+	//engine_font_manager_data( lo->level_platforms[ po->tileX + 2 ], 16, 6 );
 }
