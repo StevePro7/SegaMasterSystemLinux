@@ -18,7 +18,12 @@ static bool complete;
 
 void screen_intro_screen_load()
 {
+	struct_player_object *po = &global_player_object;
+	struct_level_object *lo = &global_level_object;
+	unsigned char player_startY;
+
 	engine_level_manager_load( 2 );
+	engine_player_manager_startX( difficulty_type_normal );
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();
@@ -30,6 +35,9 @@ void screen_intro_screen_load()
 	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 18, 4, 8, 3 );
 	engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 26, 5, 8, 3 );
 	engine_level_manager_show( 0 );
+
+	player_startY = lo->level_platforms[ po->tileX ];
+	engine_player_manager_startY( player_startY );
 	engine_player_manager_draw();
 	devkit_SMS_displayOn();
 	engine_scroll_manager_load();

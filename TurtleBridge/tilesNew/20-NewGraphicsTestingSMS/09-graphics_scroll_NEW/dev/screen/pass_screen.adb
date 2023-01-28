@@ -1,8 +1,8 @@
 M:pass_screen
 F:G$screen_pass_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_pass_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lpass_screen.screen_pass_screen_update$screen_type$1_0$93({2}DG,SC:U),B,1,4
-S:Lpass_screen.screen_pass_screen_update$po$1_0$94({2}DG,STtag_struct_player_object:S),R,0,0,[]
+S:Lpass_screen.screen_pass_screen_update$screen_type$1_0$96({2}DG,SC:U),B,1,4
+S:Lpass_screen.screen_pass_screen_update$po$1_0$97({2}DG,STtag_struct_player_object:S),R,0,0,[]
 T:Fpass_screen$tag_struct_player_object[({0}S:S$posnX$0_0$0({1}SC:U),Z,0,0)({1}S:S$posnY$0_0$0({1}SC:U),Z,0,0)({2}S:S$drawX$0_0$0({1}SC:U),Z,0,0)({3}S:S$drawY$0_0$0({1}SC:U),Z,0,0)({4}S:S$tileX$0_0$0({1}SC:U),Z,0,0)({5}S:S$tileY$0_0$0({1}SC:U),Z,0,0)({6}S:S$player_state$0_0$0({1}SC:U),Z,0,0)({7}S:S$player_index$0_0$0({1}SC:U),Z,0,0)({8}S:S$player_frame$0_0$0({1}SC:U),Z,0,0)({9}S:S$player_count$0_0$0({2}SI:U),Z,0,0)]
 T:Fpass_screen$tag_struct_scroll_object[({0}S:S$scroll$0_0$0({1}SC:U),Z,0,0)({1}S:S$scrollRight$0_0$0({1}SC:U),Z,0,0)({2}S:S$offset_right$0_0$0({2}SI:U),Z,0,0)({4}S:S$scroll_x$0_0$0({6}DA6d,SC:U),Z,0,0)({10}S:S$scroll_half$0_0$0({1}SC:U),Z,0,0)({11}S:S$lineCnt$0_0$0({1}SC:U),Z,0,0)]
 T:Fpass_screen$tag_struct_audio_object[({0}S:S$music_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$music_bank$0_0$0({1}SC:U),Z,0,0)({3}S:S$sound_data$0_0$0({2}DG,SC:U),Z,0,0)({5}S:S$sound_bank$0_0$0({1}SC:U),Z,0,0)]
@@ -30,6 +30,8 @@ S:G$engine_level_manager_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_level_manager_show$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_level_manager_draw$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_init$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_player_manager_startX$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_player_manager_startY$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_update2$0_0$0({2}DF,SV:S),C,0,0
