@@ -93,7 +93,7 @@ static bool para_scroll_update( unsigned char delta )
 	//so->scroll -= delta;
 	so->scrollRight += delta;
 	// IMPORTANT - performance improvement - would like to test to triple check but looks good at the mo'	09-Jan-2023
-	if( so->scrollRight >= 8 )
+	if( so->scrollRight >= SCROLL_COLUMNS )
 	{
 		so->scrollRight = 0;
 	}

@@ -40,7 +40,7 @@ void engine_level_manager_load( unsigned char index )
 
 	// IMPORTANT
 	// must store level_size as 1px less because size=64 thus range is 0-63 i.e. store 63 NOT 64...!
-	lo->level_size -= 1;
+	//lo->level_size -= 1;
 }
 
 // TODO - need to get this correct!
