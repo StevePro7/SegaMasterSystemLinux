@@ -20,11 +20,14 @@ cd engine
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 asm_manager.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 audio_manager.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 content_manager.c
+::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 debug_manager.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 enum_manager.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 font_manager.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 function_manager.c
+::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 game_manager.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 global_manager.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 graphics_manager.c
+::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 hack_manager.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 input_manager.c
 "C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 level_manager.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 maths_manager.c
@@ -38,6 +41,7 @@ cd ..
 
 cd object
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-size --peep-file ../peep-rules.txt --std-c99 audio_object.c
+::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-size --peep-file ../peep-rules.txt --std-c99 hack_object.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-size --peep-file ../peep-rules.txt --std-c99 level_object.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-size --peep-file ../peep-rules.txt --std-c99 player_object.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-size --peep-file ../peep-rules.txt --std-c99 scroll_object.c
@@ -94,22 +98,14 @@ banks/bank4.rel  banks/bank5.rel ^
 banks/bank6.rel  banks/fixedbank.rel ^
 devkit/_sms_manager.rel ^
 devkit/_snd_manager.rel ^
-engine/asm_manager.rel ^
-engine/audio_manager.rel ^
-engine/content_manager.rel ^
-engine/enum_manager.rel engine/font_manager.rel ^
-engine/function_manager.rel engine/global_manager.rel ^
-engine/graphics_manager.rel engine/input_manager.rel ^
+engine/asm_manager.rel engine/audio_manager.rel engine/content_manager.rel engine/debug_manager.rel engine/enum_manager.rel ^
+engine/font_manager.rel engine/function_manager.rel engine/game_manager.rel engine/global_manager.rel ^
+engine/graphics_manager.rel engine/hack_manager.rel engine/input_manager.rel ^
 engine/level_manager.rel engine/maths_manager.rel engine/player_manager.rel ^
-engine/screen_manager.rel ^
-engine/scroll_manager.rel ^
-engine/sprite_manager.rel ^
-engine/storage_manager.rel ^
-engine/tile_manager.rel ^
-object/audio_object.rel object/level_object.rel object/player_object.rel ^
-object/scroll_object.rel ^
-object/storage_object.rel ^
-object/tile_object.rel ^
+engine/screen_manager.rel engine/scroll_manager.rel engine/sprite_manager.rel ^
+engine/storage_manager.rel engine/tile_manager.rel ^
+object/audio_object.rel object/hack_object.rel object/level_object.rel object/player_object.rel ^
+object/scroll_object.rel object/storage_object.rel object/tile_object.rel ^
 screen/beat_screen.rel screen/begin_screen.rel screen/boss_screen.rel screen/cont_screen.rel screen/dead_screen.rel ^
 screen/func_screen.rel screen/init_screen.rel screen/intro_screen.rel screen/load_screen.rel screen/none_screen.rel ^
 screen/option_screen.rel screen/over_screen.rel screen/pass_screen.rel screen/play_screen.rel screen/ready_screen.rel ^
