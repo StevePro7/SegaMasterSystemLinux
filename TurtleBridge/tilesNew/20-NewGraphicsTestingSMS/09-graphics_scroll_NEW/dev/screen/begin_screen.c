@@ -2,6 +2,7 @@
 #include "../engine/asm_manager.h"
 #include "../engine/audio_manager.h"
 #include "../engine/content_manager.h"
+#include "../engine/debug_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/graphics_manager.h"
@@ -16,17 +17,49 @@ static void drawScreen();
 
 void screen_begin_screen_load()
 {
+	struct_player_object *po = &global_player_object;
+	struct_level_object *lo = &global_level_object;
+	unsigned char player_startY;
+
 	engine_level_manager_load( 3 );
-	engine_player_manager_load( difficulty_type_easier );
+	//engine_player_manager_startX( difficulty_type_easier );
+	engine_player_manager_startX( difficulty_type_normal );
+	//engine_player_manager_startX( difficulty_type_insane+1 );
+
 	devkit_SMS_displayOff();
 	drawScreen();
 	engine_level_manager_show( 0 );
+
+	player_startY = lo->level_platforms[ po->tileX ];
+	engine_player_manager_startY( player_startY );
 	engine_player_manager_draw();
+	engine_debug_manager_printout();
 	devkit_SMS_displayOn();
 }
 
 void screen_begin_screen_update( unsigned char *screen_type )
 {
+	struct_player_object *po = &global_player_object;
+	struct_level_object *lo = &global_level_object;
+	unsigned char input;
+	input = engine_input_manager_hold( input_type_left );
+	if( input )
+	{
+		engine_player_manager_left();
+		engine_debug_manager_printout();
+	}
+	input = engine_input_manager_hold( input_type_right );
+	if( input )
+	{
+		engine_player_manager_right();
+		engine_debug_manager_printout();
+	}
+	/*input = engine_input_manager_move( input_type_down );
+	if( input )
+	{
+		engine_debug_manager_printout();
+	}*/
+
 	engine_player_manager_draw();
 	*screen_type = screen_type_begin;
 }
@@ -38,5 +71,5 @@ static void drawScreen()
 	engine_content_manager_sprite();
 
 	engine_graphics_manager_sea();
-	engine_font_manager_text( "BEGIN[SCREEN!!", 10, 2 );
+	//engine_font_manager_text( "BEGIN[SCREEN!!", 10, 2 );
 }

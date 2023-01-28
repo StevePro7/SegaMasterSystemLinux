@@ -25,7 +25,7 @@ void engine_player_manager_init()
 	//po->posnX = 32;
 	//po->posnX = 96;
 //	po->posnX = 168;
-	po->posnY = 144;
+	po->posnY = 0;
 	//po->posnY = 128;
 	//po->posnY = 132;
 	//po->frame = 4;
@@ -39,11 +39,27 @@ void engine_player_manager_init()
 	updatePlayer();
 }
 
-void engine_player_manager_load( unsigned char difficulty )
+void engine_player_manager_startX( unsigned char difficulty )
 {
 	struct_player_object *po = &global_player_object;
 	devkit_SMS_mapROMBank( FIXED_BANK );
 	po->posnX = player_object_starts[ difficulty ];
+	updatePlayer();
+}
+void engine_player_manager_startY( unsigned char player_startY )
+{
+	struct_player_object *po = &global_player_object;
+	po->posnY = player_startY << 3;
+	updatePlayer();
+}
+
+
+void engine_player_manager_load( unsigned char difficulty, unsigned char player_startY )
+{
+	struct_player_object *po = &global_player_object;
+	devkit_SMS_mapROMBank( FIXED_BANK );
+	po->posnX = player_object_starts[ difficulty ];
+	po->posnY = player_startY << 3;
 	updatePlayer();
 }
 

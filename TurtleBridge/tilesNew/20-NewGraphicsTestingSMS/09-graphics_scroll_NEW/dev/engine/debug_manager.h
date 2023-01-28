@@ -1,6 +1,6 @@
 #ifndef _DEBUG_MANAGER_H_
 #define _DEBUG_MANAGER_H_
 
-void Foo();
+void engine_debug_manager_printout();
 
 #endif//_DEBUG_MANAGER_H_
