@@ -47,7 +47,8 @@ void screen_begin_screen_load()
 	devkit_SMS_displayOn();
 	engine_scroll_manager_load();
 
-	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+	engine_music_manager_play( 1 );
+	//devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
 	//engine_font_manager_data( delta, 12, 12 );
 	//engine_font_manager_data( po->posnX, 12, 13 );
 	//engine_font_manager_data( po->tileX, 12, 14 );
@@ -128,6 +129,7 @@ static unsigned char anyPlatforms()
 {
 	struct_player_object *po = &global_player_object;
 	struct_level_object *lo = &global_level_object;
+	unsigned char chasm;
 	unsigned int tilelook;
 	unsigned char lookup_platform;
 	unsigned char player_platform = po->tileY;
@@ -137,7 +139,8 @@ static unsigned char anyPlatforms()
 	//engine_font_manager_data( po->tileX, 8, 10 );
 	//engine_font_manager_data( player_platform, 8, 11 );
 
-	tilelook = po->tileX - 2;
+	chasm = 2;
+	tilelook = po->tileX - chasm;
 	//lookup_platform = lo->level_platforms[ tilelook ];
 	lookup_platform = level_platforms[ tilelook ];
 	//engine_font_manager_data( tilelook, 16, 10 );
@@ -147,7 +150,7 @@ static unsigned char anyPlatforms()
 		return tilelook;
 	}
 
-	tilelook = po->tileX + 2;
+	tilelook = po->tileX + chasm;
 	//lookup_platform = lo->level_platforms[ tilelook ];
 	lookup_platform = level_platforms[ tilelook ];
 	//engine_font_manager_data( tilelook, 24, 10 );

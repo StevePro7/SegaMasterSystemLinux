@@ -16,6 +16,7 @@ S:Lbegin_screen.screen_begin_screen_update$sloc0$0_1$0({2}DG,SC:U),B,1,-2
 F:Fbegin_screen$anyPlatforms$0_0$0({2}DF,SC:U),Z,0,0,0,0,0
 S:Lbegin_screen.anyPlatforms$po$1_0$109({2}DG,STtag_struct_player_object:S),R,0,0,[]
 S:Lbegin_screen.anyPlatforms$lo$1_0$109({2}DG,STtag_struct_level_object:S),R,0,0,[]
+S:Lbegin_screen.anyPlatforms$chasm$1_0$109({1}SC:U),R,0,0,[]
 S:Lbegin_screen.anyPlatforms$tilelook$1_0$109({2}SI:U),R,0,0,[e,d]
 S:Lbegin_screen.anyPlatforms$lookup_platform$1_0$109({1}SC:U),R,0,0,[c]
 S:Lbegin_screen.anyPlatforms$player_platform$1_0$109({1}SC:U),B,1,-1
