@@ -52,10 +52,11 @@ void screen_begin_screen_update( unsigned char *screen_type )
 	struct_level_object *lo = &global_level_object;
 	unsigned char input;
 	unsigned char delta;
-	bool newTile, collision;
+	unsigned char collision;
+	bool newTile;
 	delta = 0;
 	newTile = false;
-	collision = false;
+	collision = 0;
 	input = engine_input_manager_move( input_type_down );
 	if( input )
 	{
@@ -85,20 +86,20 @@ void screen_begin_screen_update( unsigned char *screen_type )
 			engine_level_manager_draw( so->offset_right );
 		}
 
-		//po->posnX += delta;
-		//po->tileX = po->posnX >> 3;
+		po->posnX += delta;
+		po->tileX = po->posnX >> 3;
 
-		//engine_debug_manager_printout();
+		engine_debug_manager_printout();
 
 		//// TODO - won't check this if somersault in air etc.
-		//collision = anyPlatforms();
-		//engine_font_manager_data( collision, 8, 12 );
-		//if( !collision )
-		//{
-		//	engine_scroll_manager_update( 0 );
-		//	*screen_type = screen_type_dead;
-		//	return;
-		//}
+		collision = anyPlatforms();
+		engine_font_manager_data( collision, 8, 12 );
+		if( !collision )
+		{
+			engine_scroll_manager_update( 0 );
+			*screen_type = screen_type_dead;
+			return;
+		}
 	}
 
 	//engine_debug_manager_printout();
@@ -113,16 +114,25 @@ static unsigned char anyPlatforms()
 	struct_player_object *po = &global_player_object;
 	struct_level_object *lo = &global_level_object;
 	unsigned int tilelook;
-	unsigned char platform = po->tileY;
+	unsigned char lookup_platform;
+	unsigned char player_platform = po->tileY;
+
+	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+
+	engine_font_manager_data( player_platform, 8, 10 );
 
 	tilelook = po->tileX - 1;
-	if( tilelook == platform )
+	lookup_platform = lo->level_platforms[ tilelook ];
+	engine_font_manager_data( lookup_platform, 16, 10 );
+	if( lookup_platform == player_platform )
 	{
 		return tilelook;
 	}
 
 	tilelook = po->tileX + 1;
-	if( tilelook == platform )
+	lookup_platform = lo->level_platforms[ tilelook ];
+	engine_font_manager_data( lookup_platform, 24, 10 );
+	if( lookup_platform == player_platform )
 	{
 		return tilelook;
 	}
