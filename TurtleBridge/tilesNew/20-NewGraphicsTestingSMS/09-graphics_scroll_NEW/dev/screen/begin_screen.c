@@ -38,7 +38,7 @@ void screen_begin_screen_load()
 	engine_player_manager_startY( player_startY );
 	engine_player_manager_draw();
 
-	engine_debug_manager_printout();
+	//engine_debug_manager_printout();
 	//nextPrint();
 
 	devkit_SMS_displayOn();
@@ -89,11 +89,11 @@ void screen_begin_screen_update( unsigned char *screen_type )
 		po->posnX += delta;
 		po->tileX = po->posnX >> 3;
 
-		engine_debug_manager_printout();
+		//engine_debug_manager_printout();
 
 		//// TODO - won't check this if somersault in air etc.
 		collision = anyPlatforms();
-		engine_font_manager_data( collision, 8, 12 );
+		//engine_font_manager_data( collision, 8, 12 );
 		if( !collision )
 		{
 			engine_scroll_manager_update( 0 );
@@ -119,11 +119,11 @@ static unsigned char anyPlatforms()
 
 	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
 
-	engine_font_manager_data( player_platform, 8, 10 );
+	//engine_font_manager_data( player_platform, 8, 10 );
 
 	tilelook = po->tileX - 1;
 	lookup_platform = lo->level_platforms[ tilelook ];
-	engine_font_manager_data( lookup_platform, 16, 10 );
+	//engine_font_manager_data( lookup_platform, 16, 10 );
 	if( lookup_platform == player_platform )
 	{
 		return tilelook;
@@ -131,7 +131,7 @@ static unsigned char anyPlatforms()
 
 	tilelook = po->tileX + 1;
 	lookup_platform = lo->level_platforms[ tilelook ];
-	engine_font_manager_data( lookup_platform, 24, 10 );
+	//engine_font_manager_data( lookup_platform, 24, 10 );
 	if( lookup_platform == player_platform )
 	{
 		return tilelook;

@@ -1,45 +1,48 @@
 ;!FILE dead_screen.asm
 XL3
-H 9 areas 24 global symbols
+H 9 areas 27 global symbols
 M dead_screen
 O -mz80
+S _engine_player_manager_draw Ref000000
 S _engine_font_manager_text Ref000000
 S .__.ABS. Def000000
 S _engine_scroll_manager_update Ref000000
-A _CODE size 2C flags 0 addr 0
-S C$dead_screen.c$8$1_0$7 Def000000
+A _CODE size 2F flags 0 addr 0
 S G$screen_dead_screen_update$0$0 Def00001E
-S C$dead_screen.c$9$1_0$7 Def00000D
-S A$dead_screen$100 Def000028
-S A$dead_screen$101 Def000029
+S A$dead_screen$102 Def000028
+S A$dead_screen$103 Def000029
+S A$dead_screen$104 Def00002A
+S A$dead_screen$114 Def00002E
+S A$dead_screen$105 Def00002B
+S A$dead_screen$106 Def00002C
 S _screen_dead_screen_update Def00001E
-S A$dead_screen$109 Def00002B
-S XG$screen_dead_screen_update$0$0 Def00002B
-S A$dead_screen$60 Def000004
-S A$dead_screen$61 Def000007
-S A$dead_screen$62 Def000008
+S C$dead_screen.c$10$1_0$10 Def00000D
+S C$dead_screen.c$12$1_0$12 Def00001E
+S XG$screen_dead_screen_update$0$0 Def00002E
+S C$dead_screen.c$14$1_0$12 Def00001E
+S C$dead_screen.c$15$1_0$12 Def000025
+S C$dead_screen.c$16$1_0$12 Def000028
+S A$dead_screen$60 Def000003
+S C$dead_screen.c$17$1_0$12 Def00002E
+S A$dead_screen$61 Def000004
+S A$dead_screen$62 Def000007
 S G$screen_dead_screen_load$0$0 Def000000
-S A$dead_screen$90 Def00001F
-S A$dead_screen$72 Def00000D
-S A$dead_screen$63 Def00000B
-S A$dead_screen$91 Def000020
-S A$dead_screen$64 Def00000C
-S A$dead_screen$92 Def000021
-S A$dead_screen$93 Def000024
-S A$dead_screen$58 Def000000
-S A$dead_screen$59 Def000003
-S A$dead_screen$97 Def000025
-S A$dead_screen$98 Def000026
-S A$dead_screen$89 Def00001E
-S A$dead_screen$99 Def000027
+S A$dead_screen$90 Def00001E
+S A$dead_screen$63 Def000008
+S A$dead_screen$91 Def00001F
+S A$dead_screen$73 Def00000D
+S A$dead_screen$64 Def00000B
+S A$dead_screen$92 Def000020
+S A$dead_screen$65 Def00000C
+S A$dead_screen$93 Def000021
+S A$dead_screen$94 Def000024
+S A$dead_screen$59 Def000000
+S A$dead_screen$98 Def000025
+S C$dead_screen.c$7$0_0$10 Def000000
 S _screen_dead_screen_load Def000000
-S C$dead_screen.c$11$1_0$9 Def00001E
-S C$dead_screen.c$13$1_0$9 Def00001E
-S C$dead_screen.c$14$1_0$9 Def000025
-S C$dead_screen.c$15$1_0$9 Def00002B
+S C$dead_screen.c$9$1_0$10 Def000000
 S Fdead_screen$__str_0$0_0$0 Def00000E
 S XG$screen_dead_screen_load$0$0 Def00000D
-S C$dead_screen.c$6$0_0$7 Def000000
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -51,7 +54,7 @@ A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
 T 00 00 00 11 01 01 D5 21 0E 00 E5 CD 00 00 F1 F1
-R 00 00 00 00 00 08 00 00 02 0C 00 00
+R 00 00 00 00 00 08 00 00 02 0C 01 00
 T 0D 00 00 C9
 R 00 00 00 00
 T 0E 00 00
@@ -62,7 +65,7 @@ T 1B 00 00 21 21 00
 R 00 00 00 00
 T 1E 00 00
 R 00 00 00 00
-T 1E 00 00 AF F5 33 CD 00 00 33 C1 E1 E5 C5 36 0B
-R 00 00 00 00 02 07 02 00
-T 2B 00 00 C9
+T 1E 00 00 AF F5 33 CD 00 00 33 CD 00 00 C1 E1 E5
+R 00 00 00 00 02 07 03 00 02 0B 00 00
+T 2B 00 00 C5 36 0B C9
 R 00 00 00 00
