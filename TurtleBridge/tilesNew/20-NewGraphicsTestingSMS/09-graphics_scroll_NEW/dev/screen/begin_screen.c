@@ -25,7 +25,7 @@ void screen_begin_screen_load()
 	struct_level_object *lo = &global_level_object;
 	unsigned char player_startY;
 
-	engine_level_manager_load( 3 );
+	engine_level_manager_load( 2 );
 	//engine_player_manager_startX( difficulty_type_easier );
 	engine_player_manager_startX( difficulty_type_normal );
 	//engine_player_manager_startX( difficulty_type_insane+1 );
@@ -66,7 +66,8 @@ void screen_begin_screen_update( unsigned char *screen_type )
 		//engine_debug_manager_printout();
 	}
 	//input = engine_input_manager_move( input_type_right );
-	input = engine_input_manager_hold( input_type_right );
+	//input = engine_input_manager_hold( input_type_right );
+	input = 1;
 	if( input )
 	{
 		delta = 1;
@@ -89,8 +90,8 @@ void screen_begin_screen_update( unsigned char *screen_type )
 			engine_level_manager_draw( so->offset_right );
 		}
 
-		po->posnX++;
-		po->tileX = po->posnX >> 3;
+		//po->posnX++;
+		//po->tileX = po->posnX >> 3;
 	}
 
 	//engine_debug_manager_printout();

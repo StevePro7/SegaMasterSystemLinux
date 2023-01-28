@@ -9,9 +9,8 @@ S:Lbegin_screen.screen_begin_screen_update$so$1_0$103({2}DG,STtag_struct_scroll_
 S:Lbegin_screen.screen_begin_screen_update$po$1_0$103({2}DG,STtag_struct_player_object:S),R,0,0,[]
 S:Lbegin_screen.screen_begin_screen_update$lo$1_0$103({2}DG,STtag_struct_level_object:S),R,0,0,[]
 S:Lbegin_screen.screen_begin_screen_update$input$1_0$103({1}SC:U),R,0,0,[l]
-S:Lbegin_screen.screen_begin_screen_update$delta$1_0$103({1}SC:U),R,0,0,[c]
+S:Lbegin_screen.screen_begin_screen_update$delta$1_0$103({1}SC:U),R,0,0,[]
 S:Lbegin_screen.screen_begin_screen_update$newTile$1_0$103({1}:S),R,0,0,[l]
-S:Lbegin_screen.screen_begin_screen_update$sloc0$0_1$0({2}DG,SC:U),B,1,-2
 F:Fbegin_screen$anyPlatforms$0_0$0({2}DF,:S),Z,0,0,0,0,0
 F:Fbegin_screen$drawScreen$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:Fbegin_screen$nextPrint$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
