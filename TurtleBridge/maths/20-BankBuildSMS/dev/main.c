@@ -14,12 +14,6 @@ void main( void )
 	engine_content_manager_load_bgtiles();
 	engine_content_manager_load_sprites();
 
-	//devkit_SMS_setBGPaletteColor( 0, devkit_RGB( 1, 2, 3 ) );
-	//devkit_SMS_setBGPaletteColor( 16, devkit_RGB( 1, 2, 3 ) );		// cornflower blue		sky
-	engine_level_manager_init();
-	engine_screen_manager_init();
-	engine_scroll_manager_init();
-
 	devkit_SMS_displayOn();
 	for( ;; )
 	{
