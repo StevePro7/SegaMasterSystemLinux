@@ -231,7 +231,7 @@ S:G$engine_screen_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_screen_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_load$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_scroll_manager_update$0_0$0({2}DF,:S),C,0,0
+S:G$engine_scroll_manager_update$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_tile_manager_draw_columns$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_stevepro$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_stevepro2$0_0$0({2}DF,SV:S),C,0,0

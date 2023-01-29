@@ -4,7 +4,7 @@
 #include "sprite_manager.h"
 #include "../devkit/_sms_manager.h"
 
-#define PARALLAX_SCROLLING		0
+#define PARALLAX_SCROLLING		1
 #define SCROLL_COLUMNS			8
 #define SCROLL_LINE_COUNT		30
 
@@ -19,14 +19,14 @@ struct_scroll_object global_scroll_object;
 
 
 static void( *load_method )( int scroll_complete );
-static bool( *update_method )( unsigned char delta );
+static enum_scroll_state( *update_method )( unsigned char delta );
 static void lineScrollHandler( void );
 
 // Private helper functions - TODO - delete
 static void para_scroll_load( int scroll_complete );
-static bool para_scroll_update( unsigned char delta );
+static enum_scroll_state para_scroll_update( unsigned char delta );
 static void full_scroll_load( int scroll_complete );
-static bool full_scroll_update( unsigned char delta );
+static enum_scroll_state full_scroll_update( unsigned char delta );
 
 void engine_scroll_manager_init()
 {
@@ -75,7 +75,7 @@ void engine_scroll_manager_load( int scroll_complete )
 	//devkit_SMS_enableLineInterrupt();
 }
 
-bool engine_scroll_manager_update( unsigned char delta )
+enum_scroll_state engine_scroll_manager_update( unsigned char delta )
 {
 	return update_method( delta );
 	//struct_scroll_object *so = &global_scroll_object;
@@ -176,11 +176,12 @@ static void para_scroll_load( int scroll_complete )
 	devkit_SMS_setLineCounter( SCROLL_LINE_COUNT );
 	devkit_SMS_enableLineInterrupt();
 }
-static bool para_scroll_update( unsigned char delta )
+static enum_scroll_state para_scroll_update( unsigned char delta )
 {
 	struct_scroll_object *so = &global_scroll_object;
+	enum_scroll_state scroll_state;
 	//unsigned char temp;
-	bool newTile;
+	//bool newTile;
 	//const unsigned char delta = 1;
 
 	//so->scroll -= delta;
@@ -191,16 +192,21 @@ static bool para_scroll_update( unsigned char delta )
 		so->scrollRight = 0;
 	}
 
-	newTile = false;
+	//newTile = false;
+	scroll_state = scroll_state_none;
 	if( delta > 0 )
 	{
 		// IMPORTANT - performance improvement - would like to test to triple check but looks good at the mo'	09-Jan-2023
-		newTile = so->scrollRight == delta;
-		//newTile = so->scrollRight % 8 == delta;
-		if( newTile )
+		if( delta == so->scrollRight )
 		{
+			scroll_state = scroll_state_tile;
 			so->offset_right++;
 		}
+		//newTile = so->scrollRight == delta;
+		//if( newTile )
+		//{
+		//	so->offset_right++;
+		//}
 	}
 
 	//temp = 0;
@@ -225,7 +231,8 @@ static bool para_scroll_update( unsigned char delta )
 	////engine_font_manager_draw_data( temp, 25, 12 );
 	////engine_font_manager_draw_data( so->scroll_x[ 0 ], 25, 13 );
 	//print( newTile );
-	return newTile;
+	//return newTile;
+	return scroll_state;
 }
 
 static void full_scroll_load( int scroll_complete )
@@ -244,10 +251,11 @@ static void full_scroll_load( int scroll_complete )
 
 	devkit_SMS_setBGScrollX( so->scroll );
 }
-static bool full_scroll_update( unsigned char delta )
+static enum_scroll_state full_scroll_update( unsigned char delta )
 {
 	struct_scroll_object *so = &global_scroll_object;
-	bool newTile;
+	enum_scroll_state scroll_state;
+	//bool newTile;
 	//const unsigned char delta = 1;
 
 	so->scroll -= delta;
@@ -261,20 +269,26 @@ static bool full_scroll_update( unsigned char delta )
 	// scroll pixel by pixel
 	devkit_SMS_setBGScrollX( so->scroll );
 
-	newTile = false;
+	//newTile = false;
+	scroll_state = scroll_state_none;
 	if( delta > 0 )
 	{
 		// IMPORTANT - performance improvement - would like to test to triple check but looks good at the mo'	09-Jan-2023
-		newTile = so->scrollRight == delta;
-		//newTile = so->scrollRight % 8 == delta;
-		if( newTile )
+		if( delta == so->scrollRight )
 		{
+			scroll_state = scroll_state_tile;
 			so->offset_right++;
 		}
+		//newTile = so->scrollRight == delta;
+		//if( newTile )
+		//{
+		//	so->offset_right++;
+		//}
 	}
 
 	//print( newTile );
-	return newTile;
+	//return newTile;
+	return scroll_state;
 }
 
 

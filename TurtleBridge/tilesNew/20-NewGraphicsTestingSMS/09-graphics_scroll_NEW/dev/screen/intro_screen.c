@@ -53,10 +53,11 @@ void screen_intro_screen_update( unsigned char *screen_type )
 	unsigned char input;
 	unsigned char delta;
 	unsigned char value;
-	bool newTile;
+	enum_scroll_state scroll_state;
+	//bool newTile;
 
 	//engine_player_manager_count();
-	delta = 0;
+	delta = 4;
 	//input = engine_input_manager_hold( input_type_right );
 	input = engine_input_manager_move( input_type_right );
 	if( input )
@@ -80,8 +81,10 @@ void screen_intro_screen_update( unsigned char *screen_type )
 	{
 		for( value = 0; value < delta; value++ )
 		{
-			newTile = engine_scroll_manager_update( 1 );
-			if( newTile )
+			scroll_state = engine_scroll_manager_update( 1 );
+			//newTile = engine_scroll_manager_update( 1 );
+			//if( newTile )
+			if ( scroll_state_tile == scroll_state )
 			{
 				engine_level_manager_draw( so->offset_right );
 				complete = so->offset_right >= lo->level_size;
@@ -100,6 +103,7 @@ void screen_intro_screen_update( unsigned char *screen_type )
 
 	if( complete )
 	{
+		engine_scroll_manager_update( 0 );
 		engine_player_manager_update3();
 		//*screen_type = screen_type_pass;
 		return;
