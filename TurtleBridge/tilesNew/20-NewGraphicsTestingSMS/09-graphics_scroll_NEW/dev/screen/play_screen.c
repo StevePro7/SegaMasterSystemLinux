@@ -17,6 +17,7 @@ static void drawScreen();
 
 void screen_play_screen_load()
 {
+	struct_scroll_object *so = &global_scroll_object;
 	engine_level_manager_load( 0 );
 
 	devkit_SMS_displayOff();
@@ -25,7 +26,8 @@ void screen_play_screen_load()
 	engine_player_manager_draw();
 	devkit_SMS_displayOn();
 
-	engine_scroll_manager_load();
+	// TODO - wire this up "properly"
+	engine_scroll_manager_load(256);
 	//engine_music_manager_play( 1 );
 }
 

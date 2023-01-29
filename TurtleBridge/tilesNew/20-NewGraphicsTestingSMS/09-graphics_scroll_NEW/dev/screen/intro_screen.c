@@ -41,7 +41,7 @@ void screen_intro_screen_load()
 	engine_player_manager_startY( player_startY );
 	engine_player_manager_draw();
 	devkit_SMS_displayOn();
-	engine_scroll_manager_load();
+	engine_scroll_manager_load( lo->level_size );
 	//engine_music_manager_play( 1 );
 	complete = false;
 }
@@ -56,12 +56,12 @@ void screen_intro_screen_update( unsigned char *screen_type )
 	bool newTile;
 
 	//engine_player_manager_count();
-	delta = 1;
+	delta = 0;
 	//input = engine_input_manager_hold( input_type_right );
 	input = engine_input_manager_move( input_type_right );
 	if( input )
 	{
-		delta = 2;
+		delta = 1;
 	}
 	//input = engine_input_manager_move( input_type_down );
 	//if( input )

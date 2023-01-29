@@ -18,14 +18,14 @@ struct_scroll_object global_scroll_object;
 #endif
 
 
-static void( *load_method )();
+static void( *load_method )( int scroll_complete );
 static bool( *update_method )( unsigned char delta );
 static void lineScrollHandler( void );
 
 // Private helper functions - TODO - delete
-static void para_scroll_load();
+static void para_scroll_load( int scroll_complete );
 static bool para_scroll_update( unsigned char delta );
-static void full_scroll_load();
+static void full_scroll_load( int scroll_complete );
 static bool full_scroll_update( unsigned char delta );
 
 void engine_scroll_manager_init()
@@ -68,9 +68,9 @@ void engine_scroll_manager_init()
 //	devkit_SMS_disableLineInterrupt();
 }
 
-void engine_scroll_manager_load()
+void engine_scroll_manager_load( int scroll_complete )
 {
-	load_method();
+	load_method( scroll_complete );
 	//devkit_SMS_setLineCounter( count );
 	//devkit_SMS_enableLineInterrupt();
 }
@@ -143,7 +143,7 @@ bool engine_scroll_manager_update( unsigned char delta )
 //}
 
 
-static void para_scroll_load()
+static void para_scroll_load( int scroll_complete )
 {
 //	engine_font_manager_data( 12, 10, 4 );
 	struct_scroll_object *so = &global_scroll_object;
@@ -155,6 +155,7 @@ static void para_scroll_load()
 	so->scrollRight = 0;
 	//so->offset_left = 0;
 	so->offset_right = SCREEN_WIDE - 1;
+	so->scroll_complete = scroll_complete;
 
 	devkit_SMS_setBGScrollX( 0 );
 	//devkit_SMS_setBGScrollX( so->scroll );
@@ -227,7 +228,7 @@ static bool para_scroll_update( unsigned char delta )
 	return newTile;
 }
 
-static void full_scroll_load()
+static void full_scroll_load( int scroll_complete )
 {
 //	engine_font_manager_data( count, 10, 12 );
 	struct_scroll_object *so = &global_scroll_object;
@@ -239,6 +240,7 @@ static void full_scroll_load()
 	//so->scrollRightDivided8 = 0;
 	//so->offset_left = 0;
 	so->offset_right = SCREEN_WIDE - 1;
+	so->scroll_complete = scroll_complete;
 
 	devkit_SMS_setBGScrollX( so->scroll );
 }

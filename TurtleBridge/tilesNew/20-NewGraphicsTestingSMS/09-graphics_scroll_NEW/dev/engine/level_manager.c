@@ -28,6 +28,7 @@ void engine_level_manager_load( unsigned char index )
 	devkit_SMS_mapROMBank( FIXED_BANK );
 	lo->level_data = ( unsigned char* ) level_object_data[ index ];
 	lo->level_size = level_object_size[ index ];
+	lo->level_size = 40;	// stevepro
 	lo->level_bank = level_object_bank[ index ];
 
 	// IMPORTANT
