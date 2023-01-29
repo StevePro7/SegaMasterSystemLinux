@@ -18,6 +18,7 @@
 static void drawScreen();
 static void nextPrint();
 static unsigned char anyPlatforms();
+static bool complete;
 
 void screen_begin_screen_load()
 {
@@ -52,6 +53,7 @@ void screen_begin_screen_load()
 	//engine_font_manager_data( delta, 12, 12 );
 	//engine_font_manager_data( po->posnX, 12, 13 );
 	//engine_font_manager_data( po->tileX, 12, 14 );
+	complete = false;
 }
 
 void screen_begin_screen_update( unsigned char *screen_type )
@@ -62,9 +64,10 @@ void screen_begin_screen_update( unsigned char *screen_type )
 	unsigned char input;
 	unsigned char delta;
 	unsigned char collision;
-	bool newTile;
+	enum_scroll_state scroll_state;
+	//bool newTile;
 	delta = 0;
-	newTile = false;
+	//newTile = false;
 	collision = 0;
 
 	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
@@ -94,10 +97,20 @@ void screen_begin_screen_update( unsigned char *screen_type )
 	}
 	else
 	{
-		newTile = engine_scroll_manager_update( delta );
-		if( newTile )
+		scroll_state = engine_scroll_manager_update( 1 );
+		//newTile = engine_scroll_manager_update( delta );
+		//if( newTile )
+		if( scroll_state_tile == scroll_state )
 		{
 			engine_level_manager_draw( so->offset_right );
+		}
+		else if( scroll_state_comp == scroll_state )
+		{
+			complete = scroll_state_comp == scroll_state;
+			if( complete )
+			{
+				//engine_font_manager_text( "NEXT SCREEN", 10, 3 );
+			}
 		}
 
 		engine_player_manager_right();
