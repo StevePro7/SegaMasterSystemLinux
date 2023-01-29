@@ -88,7 +88,7 @@ void screen_begin_screen_update( unsigned char *screen_type )
 	//input = 1;
 	if( input )
 	{
-		delta = 2;
+		delta = 1;
 	}
 
 	if( 0 == delta )
