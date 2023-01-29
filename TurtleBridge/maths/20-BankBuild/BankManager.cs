@@ -104,6 +104,14 @@ namespace FunctionMgr
 			lines.Add("cd banks");
 			lines.Add("");
 
+			var folder2c = String.Format("{0}{1}folder2c{0} {2} {2} {3}",
+				quote,
+				software,
+				lower,
+				bank);
+			lines.Add(folder2c);
+			lines.Add("");
+
 			var compile = String.Format("{0}{1}sdcc{0} --debug -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg {2} {3}.c",
 				quote,
 				software,
