@@ -45,6 +45,14 @@ typedef enum tag_enum_player_state
 
 } enum_player_state;
 
+typedef enum tag_enum_scroll_state
+{
+	scroll_state_none = 0,
+	scroll_state_tile = 1,
+	scroll_state_comp = 2,
+
+} enum_scroll_state;
+
 typedef enum tag_enum_difficulty_type
 {
 	difficulty_type_easier = 0,
