@@ -162,18 +162,18 @@ static void para_scroll_load( int scroll_complete )
 	//print( false );
 
 	// NEW
-	//so->scroll_x[ 0 ] = 0;
-	//so->scroll_x[ 1 ] = 0;
-	//so->scroll_x[ 2 ] = 0;
-	//so->scroll_x[ 3 ] = 0;
-	//so->scroll_x[ 4 ] = 0;
-	//so->scroll_x[ 5 ] = 0;
-	scroll_x[ 0 ] = 0;
-	scroll_x[ 1 ] = 0;
-	scroll_x[ 2 ] = 0;
-	scroll_x[ 3 ] = 0;
-	scroll_x[ 4 ] = 0;
-	scroll_x[ 5 ] = 0;
+	so->scroll_x[ 0 ] = 0;
+	so->scroll_x[ 1 ] = 0;
+	so->scroll_x[ 2 ] = 0;
+	so->scroll_x[ 3 ] = 0;
+	so->scroll_x[ 4 ] = 0;
+	so->scroll_x[ 5 ] = 0;
+	//scroll_xy[ 0 ] = 0;
+	//scroll_xy[ 1 ] = 0;
+	//scroll_xy[ 2 ] = 0;
+	//scroll_xy[ 3 ] = 0;
+	//scroll_xy[ 4 ] = 0;
+	//scroll_xy[ 5 ] = 0;
 	so->scroll_half = 0;
 	so->lineCnt = 0;
 
@@ -223,20 +223,20 @@ static enum_scroll_state para_scroll_update( unsigned char delta )
 	if( delta > 0 )
 	{
 		so->scroll_half = 1 - so->scroll_half;
-		scroll_x[ 0 ] -= so->scroll_half;
-		//so->scroll_x[ 0 ] -= so->scroll_half;
+		//scroll_xy[ 0 ] -= so->scroll_half;
+		so->scroll_x[ 0 ] -= so->scroll_half;
 	}
 
-	scroll_x[ 1 ] -= delta;
-	scroll_x[ 2 ] -= delta;
-	scroll_x[ 3 ] -= delta;
-	scroll_x[ 4 ] -= delta;
-	scroll_x[ 5 ] -= 0;
-	//so->scroll_x[ 1 ] -= delta;
-	//so->scroll_x[ 2 ] -= delta;
-	//so->scroll_x[ 3 ] -= delta;
-	//so->scroll_x[ 4 ] -= delta;
-	//so->scroll_x[ 5 ] -= 0;
+	//scroll_xy[ 1 ] -= delta;
+	//scroll_xy[ 2 ] -= delta;
+	//scroll_xy[ 3 ] -= delta;
+	//scroll_xy[ 4 ] -= delta;
+	//scroll_xy[ 5 ] -= 0;
+	so->scroll_x[ 1 ] -= delta;
+	so->scroll_x[ 2 ] -= delta;
+	so->scroll_x[ 3 ] -= delta;
+	so->scroll_x[ 4 ] -= delta;
+	so->scroll_x[ 5 ] -= 0;
 	so->lineCnt = 0;
 
 	//temp = so->scroll_x[ 0 ];
@@ -314,8 +314,8 @@ static void lineScrollHandler( void )
 {
 	struct_scroll_object *so = &global_scroll_object;
 	//unsigned int val = scroll_x[ lineCnt++ ] >> 8;
-	//unsigned int val = so->scroll_x[ so->lineCnt++ ];
-	unsigned int val = scroll_x[ so->lineCnt++ ];
+	unsigned int val = so->scroll_x[ so->lineCnt++ ];
+	//unsigned int val = scroll_xy[ so->lineCnt++ ];
 
 	////engine_font_manager_data( lineCnt, 10, 0 );
 	////engine_font_manager_data( val, 20, 0 );
