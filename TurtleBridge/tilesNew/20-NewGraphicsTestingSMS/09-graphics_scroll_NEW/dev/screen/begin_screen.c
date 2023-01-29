@@ -93,41 +93,46 @@ void screen_begin_screen_update( unsigned char *screen_type )
 
 	if( 0 == delta )
 	{
+		delta = 0;
 		engine_scroll_manager_update( 0 );
 	}
-	else
+
+	if( !complete )
 	{
-		scroll_state = engine_scroll_manager_update( 1 );
-		//newTile = engine_scroll_manager_update( delta );
-		//if( newTile )
-		if( scroll_state_tile == scroll_state )
+		if( delta > 0 )
 		{
-			engine_level_manager_draw( so->offset_right );
-		}
-		else if( scroll_state_comp == scroll_state )
-		{
-			complete = scroll_state_comp == scroll_state;
-			if( complete )
+			scroll_state = engine_scroll_manager_update( delta );
+			//newTile = engine_scroll_manager_update( delta );
+			//if( newTile )
+			if( scroll_state_tile == scroll_state )
 			{
-				//engine_font_manager_text( "NEXT SCREEN", 10, 3 );
+				engine_level_manager_draw( so->offset_right );
 			}
-		}
+			else if( scroll_state_comp == scroll_state )
+			{
+				complete = scroll_state_comp == scroll_state;
+				if( complete )
+				{
+					//engine_font_manager_text( "NEXT SCREEN", 10, 3 );
+				}
+			}
 
-		engine_player_manager_right();
+			engine_player_manager_right();
 
 
-		//engine_debug_manager_printout();
+			////engine_debug_manager_printout();
 
-		//// TODO - won't check this if somersault in air etc.
-		collision = anyPlatforms();
-		//devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
-		//engine_font_manager_data( collision, 8, 12 );
-		if( !collision )
-		{
-			engine_scroll_manager_update( 0 );
-			engine_player_manager_draw();
-			*screen_type = screen_type_dead;
-			return;
+			//// TODO - won't check this if somersault in air etc.
+			collision = anyPlatforms();
+			//devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+			//engine_font_manager_data( collision, 8, 12 );
+			if( !collision )
+			{
+				engine_scroll_manager_update( 0 );
+				engine_player_manager_draw();
+				*screen_type = screen_type_dead;
+				return;
+			}
 		}
 	}
 
@@ -135,6 +140,16 @@ void screen_begin_screen_update( unsigned char *screen_type )
 	//nextPrint();
 
 	engine_player_manager_draw();
+
+	if( complete )
+	{
+		engine_scroll_manager_update( 0 );
+		engine_player_manager_update3();
+		engine_player_manager_draw();
+		//*screen_type = screen_type_pass;
+		//return;
+	}
+
 	*screen_type = screen_type_begin;
 }
 
@@ -147,7 +162,7 @@ static unsigned char anyPlatforms()
 	unsigned char lookup_platform;
 	unsigned char player_platform = po->tileY;
 
-	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+	//devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
 
 	//engine_font_manager_data( po->tileX, 8, 10 );
 	//engine_font_manager_data( player_platform, 8, 11 );
