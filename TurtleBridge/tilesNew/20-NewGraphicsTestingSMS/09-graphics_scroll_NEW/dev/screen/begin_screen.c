@@ -120,7 +120,7 @@ void screen_begin_screen_update( unsigned char *screen_type )
 			engine_player_manager_right();
 
 
-			////engine_debug_manager_printout();
+			//engine_debug_manager_printout();
 
 			//// TODO - won't check this if somersault in air etc.
 			collision = anyPlatforms();
