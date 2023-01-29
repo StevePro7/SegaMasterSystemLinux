@@ -4,7 +4,7 @@
 #include "sprite_manager.h"
 #include "../devkit/_sms_manager.h"
 
-#define PARALLAX_SCROLLING		0
+#define PARALLAX_SCROLLING		1
 #define SCROLL_COLUMNS			8
 #define SCROLL_LINE_COUNT		30
 
@@ -192,14 +192,19 @@ static enum_scroll_state para_scroll_update( unsigned char delta )
 
 	//so->scroll -= delta;
 	so->scrollRight += delta;
+	//newTile = false;
+	scroll_state = scroll_state_none;
+
 	// IMPORTANT - performance improvement - would like to test to triple check but looks good at the mo'	09-Jan-2023
 	if( so->scrollRight >= 8 )
 	{
 		so->scrollRight = 0;
+		if( so->offset_right == so->scroll_complete )
+		{
+			scroll_state = scroll_state_comp;
+		}
 	}
 
-	//newTile = false;
-	scroll_state = scroll_state_none;
 	if( delta > 0 )
 	{
 		// IMPORTANT - performance improvement - would like to test to triple check but looks good at the mo'	09-Jan-2023
