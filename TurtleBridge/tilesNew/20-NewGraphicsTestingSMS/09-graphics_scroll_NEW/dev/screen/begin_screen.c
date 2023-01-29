@@ -26,7 +26,7 @@ void screen_begin_screen_load()
 	struct_level_object *lo = &global_level_object;
 	unsigned char player_startY;
 
-	engine_level_manager_load( 4 );
+	engine_level_manager_load( 7 );
 	//engine_player_manager_startX( difficulty_type_easier );
 	//engine_player_manager_startX( difficulty_type_normal );
 
