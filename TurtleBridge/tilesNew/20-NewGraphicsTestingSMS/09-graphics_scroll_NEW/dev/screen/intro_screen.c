@@ -101,7 +101,7 @@ void screen_intro_screen_update( unsigned char *screen_type )
 	if( complete )
 	{
 		engine_player_manager_update3();
-		*screen_type = screen_type_pass;
+		//*screen_type = screen_type_pass;
 		return;
 	}
 
