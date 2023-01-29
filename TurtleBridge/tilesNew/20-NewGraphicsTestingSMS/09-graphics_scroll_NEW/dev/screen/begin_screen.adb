@@ -11,7 +11,7 @@ S:Lbegin_screen.screen_begin_screen_update$lo$1_0$103({2}DG,STtag_struct_level_o
 S:Lbegin_screen.screen_begin_screen_update$input$1_0$103({1}SC:U),R,0,0,[l]
 S:Lbegin_screen.screen_begin_screen_update$delta$1_0$103({1}SC:U),R,0,0,[c]
 S:Lbegin_screen.screen_begin_screen_update$collision$1_0$103({1}SC:U),R,0,0,[a]
-S:Lbegin_screen.screen_begin_screen_update$newTile$1_0$103({1}:S),R,0,0,[l]
+S:Lbegin_screen.screen_begin_screen_update$newTile$1_0$103({1}:S),R,0,0,[]
 S:Lbegin_screen.screen_begin_screen_update$sloc0$0_1$0({2}DG,SC:U),B,1,-2
 F:Fbegin_screen$anyPlatforms$0_0$0({2}DF,SC:U),Z,0,0,0,0,0
 S:Lbegin_screen.anyPlatforms$po$1_0$110({2}DG,STtag_struct_player_object:S),R,0,0,[]
@@ -45,6 +45,7 @@ S:G$engine_content_manager_splash$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_titles$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_sprite$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_debug_manager_printout$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_debug_manager_scrollout$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0_0$0({2}DF,SV:S),C,0,0
@@ -72,7 +73,7 @@ S:G$engine_player_manager_pass$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_count$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_load$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_scroll_manager_update$0_0$0({2}DF,:S),C,0,0
+S:G$engine_scroll_manager_update$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_tile_manager_draw_columns$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_stevepro$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_stevepro2$0_0$0({2}DF,SV:S),C,0,0
