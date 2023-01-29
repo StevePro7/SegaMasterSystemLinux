@@ -22,7 +22,7 @@ void screen_intro_screen_load()
 	struct_level_object *lo = &global_level_object;
 	unsigned char player_startY;
 
-	engine_level_manager_load( 2 );
+	engine_level_manager_load( 4 );
 	engine_player_manager_startX( difficulty_type_normal );
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
@@ -68,12 +68,11 @@ void screen_intro_screen_update( unsigned char *screen_type )
 	{
 		delta = 2;
 	}
-	//input = engine_input_manager_move( input_type_down );
-	//if( input )
-	//{
-	//	*screen_type = screen_type_pass;
-	//	return;
-	//}
+	input = engine_input_manager_move( input_type_fire1 );
+	if( input )
+	{
+		delta *= 2;
+	}
 
 	if( 0 == delta )
 	{
