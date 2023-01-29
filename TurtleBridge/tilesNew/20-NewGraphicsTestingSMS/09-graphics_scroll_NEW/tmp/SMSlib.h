@@ -246,7 +246,7 @@ unsigned char SMS_readPaddle( unsigned char port ) { return 1; } /*__z88dk_fastc
 
 #ifndef TARGET_GG
 /* pause handling (SMS only) */
-_Bool SMS_queryPauseRequested (void) { return 1; }
+_Bool SMS_queryPauseRequested (void) { return 0; }
 void SMS_resetPauseRequest (void) {}
 #endif
 

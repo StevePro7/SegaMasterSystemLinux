@@ -162,12 +162,18 @@ static void para_scroll_load( int scroll_complete )
 	//print( false );
 
 	// NEW
-	so->scroll_x[ 0 ] = 0;
-	so->scroll_x[ 1 ] = 0;
-	so->scroll_x[ 2 ] = 0;
-	so->scroll_x[ 3 ] = 0;
-	so->scroll_x[ 4 ] = 0;
-	so->scroll_x[ 5 ] = 0;
+	//so->scroll_x[ 0 ] = 0;
+	//so->scroll_x[ 1 ] = 0;
+	//so->scroll_x[ 2 ] = 0;
+	//so->scroll_x[ 3 ] = 0;
+	//so->scroll_x[ 4 ] = 0;
+	//so->scroll_x[ 5 ] = 0;
+	scroll_x[ 0 ] = 0;
+	scroll_x[ 1 ] = 0;
+	scroll_x[ 2 ] = 0;
+	scroll_x[ 3 ] = 0;
+	scroll_x[ 4 ] = 0;
+	scroll_x[ 5 ] = 0;
 	so->scroll_half = 0;
 	so->lineCnt = 0;
 
@@ -217,14 +223,20 @@ static enum_scroll_state para_scroll_update( unsigned char delta )
 	if( delta > 0 )
 	{
 		so->scroll_half = 1 - so->scroll_half;
-		so->scroll_x[ 0 ] -= so->scroll_half;
+		scroll_x[ 0 ] -= so->scroll_half;
+		//so->scroll_x[ 0 ] -= so->scroll_half;
 	}
 
-	so->scroll_x[ 1 ] -= delta;
-	so->scroll_x[ 2 ] -= delta;
-	so->scroll_x[ 3 ] -= delta;
-	so->scroll_x[ 4 ] -= delta;
-	so->scroll_x[ 5 ] -= 0;
+	scroll_x[ 1 ] -= delta;
+	scroll_x[ 2 ] -= delta;
+	scroll_x[ 3 ] -= delta;
+	scroll_x[ 4 ] -= delta;
+	scroll_x[ 5 ] -= 0;
+	//so->scroll_x[ 1 ] -= delta;
+	//so->scroll_x[ 2 ] -= delta;
+	//so->scroll_x[ 3 ] -= delta;
+	//so->scroll_x[ 4 ] -= delta;
+	//so->scroll_x[ 5 ] -= 0;
 	so->lineCnt = 0;
 
 	//temp = so->scroll_x[ 0 ];
@@ -260,17 +272,23 @@ static enum_scroll_state full_scroll_update( unsigned char delta )
 
 	so->scroll -= delta;
 	so->scrollRight += delta;
+	scroll_state = scroll_state_none;
+
 	// IMPORTANT - performance improvement - would like to test to triple check but looks good at the mo'	09-Jan-2023
 	if( so->scrollRight >= SCROLL_COLUMNS )
 	{
 		so->scrollRight = 0;
+		//if( so->offset_right == so->scroll_complete )
+		//{
+		//	scroll_state = scroll_state_comp;
+		//}
 	}
 
 	// scroll pixel by pixel
 	devkit_SMS_setBGScrollX( so->scroll );
 
 	//newTile = false;
-	scroll_state = scroll_state_none;
+	//scroll_state = scroll_state_none;
 	if( delta > 0 )
 	{
 		// IMPORTANT - performance improvement - would like to test to triple check but looks good at the mo'	09-Jan-2023
@@ -296,7 +314,8 @@ static void lineScrollHandler( void )
 {
 	struct_scroll_object *so = &global_scroll_object;
 	//unsigned int val = scroll_x[ lineCnt++ ] >> 8;
-	unsigned int val = so->scroll_x[ so->lineCnt++ ];
+	//unsigned int val = so->scroll_x[ so->lineCnt++ ];
+	unsigned int val = scroll_x[ so->lineCnt++ ];
 
 	////engine_font_manager_data( lineCnt, 10, 0 );
 	////engine_font_manager_data( val, 20, 0 );

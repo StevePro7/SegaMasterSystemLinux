@@ -30,15 +30,9 @@ void main( void )
 			//engine_audio_manager_update();
 			continue;
 		}
-		
+
 		devkit_SMS_initSprites();
 		engine_input_manager_update();
-		input = input = engine_input_manager_move( input_type_fire2 );
-		if( input )
-		{
-			devkit_PSGStop();
-			start();
-		}
 		engine_screen_manager_update();
 
 		devkit_SMS_finalizeSprites();
@@ -48,6 +42,14 @@ void main( void )
 		devkit_UNSAFE_SMS_copySpritestoSAT();
 
 		engine_audio_manager_update();
+
+		engine_input_manager_update();
+		input = input = engine_input_manager_move( input_type_fire2 );
+		if( input )
+		{
+			devkit_PSGStop();
+			start();
+		}
 	}
 }
 
@@ -75,11 +77,11 @@ static void start()
 	//open_screen_type = screen_type_func;
 	//open_screen_type = screen_type_test;
 	//open_screen_type = screen_type_init;
-	open_screen_type = screen_type_play;
+	//open_screen_type = screen_type_play;
 	//open_screen_type = screen_type_load;
 	//open_screen_type = screen_type_ready;
 	//open_screen_type = screen_type_start;
-	//open_screen_type = screen_type_intro;
+	open_screen_type = screen_type_intro;
 	//open_screen_type = screen_type_pass;
 	//open_screen_type = screen_type_begin;
 

@@ -15,11 +15,13 @@ typedef struct tag_struct_scroll_object
 	unsigned int scroll_complete;
 
 	// NEW
-	unsigned char scroll_x[ 6 ];
+	//unsigned char scroll_x[ 6 ];
 	//unsigned int scroll_x[ 6 ];
 	unsigned char scroll_half;
 	unsigned char lineCnt;
 
 } struct_scroll_object;
+
+extern unsigned char scroll_x[];
 
 #endif//_SCROLL_OBJECT_H_
