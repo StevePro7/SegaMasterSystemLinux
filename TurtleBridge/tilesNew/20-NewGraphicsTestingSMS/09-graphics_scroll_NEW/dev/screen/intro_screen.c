@@ -57,7 +57,7 @@ void screen_intro_screen_update( unsigned char *screen_type )
 	//bool newTile;
 
 	//engine_player_manager_count();
-	delta = 4;
+	delta = 2;
 	//input = engine_input_manager_hold( input_type_right );
 	input = engine_input_manager_move( input_type_right );
 	if( input )
@@ -99,7 +99,7 @@ void screen_intro_screen_update( unsigned char *screen_type )
 				complete = scroll_state_comp == scroll_state;
 				if( complete )
 				{
-					engine_font_manager_text( "NEXT SCREEN", 10, 3 );
+					//engine_font_manager_text( "NEXT SCREEN", 10, 3 );
 					break;
 				}
 			}
@@ -114,7 +114,7 @@ void screen_intro_screen_update( unsigned char *screen_type )
 	{
 		engine_scroll_manager_update( 0 );
 		engine_player_manager_update3();
-		//*screen_type = screen_type_pass;
+		*screen_type = screen_type_pass;
 		return;
 	}
 
