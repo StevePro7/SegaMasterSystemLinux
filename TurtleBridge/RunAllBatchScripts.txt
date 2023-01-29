@@ -1,0 +1,14 @@
+Run all batch scripts in folder
+29-Jan-2023
+
+
+Reference
+https://www.eightforums.com/threads/run-all-batch-files-that-exist-within-a-folder.63732/
+
+IMPL
+for /R %s in (*.bat) do %s
+
+
+e.g.
+cd D:\GitHub\StevePro8\SegaMasterSystemLinux\TurtleBridge\maths\20-BankBuild\output01\scripts
+for /R %s in (*.bat) do %s
