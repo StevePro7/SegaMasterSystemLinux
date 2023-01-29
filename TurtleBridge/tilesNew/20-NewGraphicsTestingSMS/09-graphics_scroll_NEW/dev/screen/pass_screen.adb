@@ -1,5 +1,6 @@
 M:pass_screen
 F:G$screen_pass_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lpass_screen.screen_pass_screen_load$po$1_0$95({2}DG,STtag_struct_player_object:S),R,0,0,[]
 F:G$screen_pass_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lpass_screen.screen_pass_screen_update$screen_type$1_0$96({2}DG,SC:U),B,1,4
 S:Lpass_screen.screen_pass_screen_update$po$1_0$97({2}DG,STtag_struct_player_object:S),R,0,0,[]
