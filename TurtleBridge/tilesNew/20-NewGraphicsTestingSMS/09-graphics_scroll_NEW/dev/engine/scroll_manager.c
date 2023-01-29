@@ -274,18 +274,18 @@ static enum_scroll_state full_scroll_update( unsigned char delta )
 	so->scrollRight += delta;
 	scroll_state = scroll_state_none;
 
+	// scroll pixel by pixel
+	devkit_SMS_setBGScrollX( so->scroll );
+
 	// IMPORTANT - performance improvement - would like to test to triple check but looks good at the mo'	09-Jan-2023
 	if( so->scrollRight >= SCROLL_COLUMNS )
 	{
 		so->scrollRight = 0;
-		//if( so->offset_right == so->scroll_complete )
-		//{
-		//	scroll_state = scroll_state_comp;
-		//}
+		if( so->offset_right == so->scroll_complete )
+		{
+			scroll_state = scroll_state_comp;
+		}
 	}
-
-	// scroll pixel by pixel
-	devkit_SMS_setBGScrollX( so->scroll );
 
 	//newTile = false;
 	//scroll_state = scroll_state_none;
