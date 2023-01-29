@@ -23,7 +23,10 @@ void screen_intro_screen_load()
 	unsigned char player_startY;
 
 	engine_level_manager_load( 4 );
-	engine_player_manager_startX( difficulty_type_normal );
+	//engine_player_manager_startX( difficulty_type_normal );
+	//engine_player_manager_startX( difficulty_type_easier );
+	engine_player_manager_startX( difficulty_type_insane );
+	engine_player_manager_startX( difficulty_type_harder );
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();
