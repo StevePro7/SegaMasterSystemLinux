@@ -30,10 +30,12 @@ void screen_intro_screen_load()
 	engine_content_manager_sprite();
 	engine_graphics_manager_sea();
 	engine_tile_manager_stevepro( TILE_PLAY_TITLE, 4, 0, 24, 3 );
-	engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 2, 5, 8, 3 );
-	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 10, 4, 8, 3 );
-	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 18, 4, 8, 3 );
-	engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 26, 5, 8, 3 );
+	//engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 2, 5, 8, 3 );
+	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 1, 4, 8, 3 );
+	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 9, 4, 8, 3 );
+	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 17, 4, 8, 3 );
+	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 25, 4, 8, 3 );
+	//engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 26, 5, 8, 3 );
 	engine_level_manager_show( 0 );
 
 //	player_startY = lo->level_platforms[ po->tileX ];
