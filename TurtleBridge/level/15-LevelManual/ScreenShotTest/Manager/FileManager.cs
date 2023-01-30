@@ -134,7 +134,6 @@ namespace ScreenShotTest
 				}
 			}
 
-
 			// Bytes array #2.
 			data1.Clear();
 			data2.Clear();
