@@ -6,6 +6,9 @@
 // Sprites.
 #define SPRITE_TILES		256
 
+#define PIXELS_WIDE			256
+#define PIXELS_HIGH			192
+
 #define SCREEN_WIDE			32
 #define SCREEN_HIGH			24
 #define OCEANS_HIGH			3		// TODO - in gfx mgr only?

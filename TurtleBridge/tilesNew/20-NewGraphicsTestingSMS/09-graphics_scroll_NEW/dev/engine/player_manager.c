@@ -1,6 +1,7 @@
 #include "player_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
+#include "global_manager.h"
 #include "sprite_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
@@ -52,6 +53,15 @@ void engine_player_manager_startY( unsigned char player_startY )
 	struct_player_object *po = &global_player_object;
 	po->posnY = player_startY << 3;
 	updatePlayer();
+}
+
+void engine_player_manager_screen( unsigned char screen )
+{
+	struct_player_object *po = &global_player_object;
+	unsigned int offset;
+	offset = screen * PIXELS_WIDE;
+	po->posnX += offset;
+	po->tileX = po->posnX >> 3;
 }
 
 //void engine_player_manager_load( unsigned char difficulty, unsigned char player_startY )

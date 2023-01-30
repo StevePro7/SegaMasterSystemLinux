@@ -1,9 +1,9 @@
 M:debug_manager
 F:G$engine_debug_manager_scrollout$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Ldebug_manager.engine_debug_manager_scrollout$so$1_0$93({2}DG,STtag_struct_scroll_object:S),R,0,0,[]
+S:Ldebug_manager.engine_debug_manager_scrollout$so$1_0$94({2}DG,STtag_struct_scroll_object:S),R,0,0,[]
 F:G$engine_debug_manager_printout$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Ldebug_manager.engine_debug_manager_printout$po$1_0$94({2}DG,STtag_struct_player_object:S),R,0,0,[]
-S:Ldebug_manager.engine_debug_manager_printout$lo$1_0$94({2}DG,STtag_struct_level_object:S),R,0,0,[]
+S:Ldebug_manager.engine_debug_manager_printout$po$1_0$95({2}DG,STtag_struct_player_object:S),R,0,0,[]
+S:Ldebug_manager.engine_debug_manager_printout$lo$1_0$95({2}DG,STtag_struct_level_object:S),R,0,0,[]
 T:Fdebug_manager$tag_struct_player_object[({0}S:S$posnX$0_0$0({2}SI:U),Z,0,0)({2}S:S$tileX$0_0$0({2}SI:U),Z,0,0)({4}S:S$startX$0_0$0({1}SC:U),Z,0,0)({5}S:S$posnY$0_0$0({1}SC:U),Z,0,0)({6}S:S$tileY$0_0$0({1}SC:U),Z,0,0)({7}S:S$drawX$0_0$0({1}SC:U),Z,0,0)({8}S:S$drawY$0_0$0({1}SC:U),Z,0,0)({9}S:S$player_state$0_0$0({1}SC:U),Z,0,0)({10}S:S$player_index$0_0$0({1}SC:U),Z,0,0)({11}S:S$player_frame$0_0$0({1}SC:U),Z,0,0)({12}S:S$player_count$0_0$0({2}SI:U),Z,0,0)]
 T:Fdebug_manager$tag_struct_scroll_object[({0}S:S$scroll$0_0$0({1}SC:U),Z,0,0)({1}S:S$scrollRight$0_0$0({1}SC:U),Z,0,0)({2}S:S$offset_right$0_0$0({2}SI:U),Z,0,0)({4}S:S$scroll_complete$0_0$0({2}SI:U),Z,0,0)({6}S:S$scroll_x$0_0$0({12}DA6d,SI:U),Z,0,0)({18}S:S$scroll_half$0_0$0({1}SC:U),Z,0,0)({19}S:S$lineCnt$0_0$0({1}SC:U),Z,0,0)]
 T:Fdebug_manager$tag_struct_level_object[({0}S:S$level_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$level_size$0_0$0({2}SI:U),Z,0,0)({4}S:S$level_bank$0_0$0({1}SC:U),Z,0,0)({5}S:S$level_draw_offset$0_0$0({1}SC:U),Z,0,0)]
@@ -22,6 +22,7 @@ S:G$engine_level_manager_draw$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_startX$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_startY$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_player_manager_screen$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_update2$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_update3$0_0$0({2}DF,SV:S),C,0,0

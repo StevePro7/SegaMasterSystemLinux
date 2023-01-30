@@ -21,12 +21,15 @@ void screen_intro_screen_load()
 	struct_player_object *po = &global_player_object;
 	struct_level_object *lo = &global_level_object;
 	unsigned char player_startY;
+	unsigned char level, screen;
 
-	engine_level_manager_load( 7 );
+	level = 7;
+	screen = 1;		//checkpoint
+	engine_level_manager_load( level );
 	//engine_player_manager_startX( difficulty_type_normal );
 	//engine_player_manager_startX( difficulty_type_easier );
 	engine_player_manager_startX( difficulty_type_insane );
-	engine_player_manager_startX( difficulty_type_harder );
+	//engine_player_manager_startX( difficulty_type_harder );
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();
@@ -41,7 +44,8 @@ void screen_intro_screen_load()
 	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 9, 4, 8, 3 );
 	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 17, 4, 8, 3 );
 	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 25, 4, 8, 3 );
-	engine_level_manager_show( 0 );
+	engine_level_manager_show( screen );
+	engine_player_manager_screen( screen );
 
 //	player_startY = lo->level_platforms[ po->tileX ];
 	player_startY = level_platforms[ po->tileX ];
