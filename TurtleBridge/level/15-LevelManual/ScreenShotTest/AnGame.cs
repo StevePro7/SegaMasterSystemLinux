@@ -33,7 +33,7 @@ namespace ScreenShotTest
 			high = 224;
 
 			assetManager = new AssetManager();
-			fileManager = new FileManager(wide);
+			fileManager = new FileManager(configManager, wide);
 			inputManager = new InputManager(wide, high);
 			selectorManager = new SelectorManager(inputManager, wide, high);
 			selectorManager.Initialize();

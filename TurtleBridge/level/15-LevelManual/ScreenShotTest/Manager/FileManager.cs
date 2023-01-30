@@ -7,12 +7,14 @@ namespace ScreenShotTest
 {
 	public class FileManager
 	{
-		private List<string> data, text1, text2;
+		private ConfigManager configManager;
+		private List<string> data, text1, text2, total;
 		private List<int> data1, data2, data3;
 		private int cols;
 
-		public FileManager(int wide)
+		public FileManager(ConfigManager configManager, int wide)
 		{
+			this.configManager = configManager;
 			cols = wide / 16;
 			Tiles = new int[cols];
 			for (int idx = 0; idx < cols; idx++)
@@ -23,6 +25,7 @@ namespace ScreenShotTest
 			data = new List<string>();
 			text1 = new List<string>();
 			text2 = new List<string>();
+			total = new List<string>();
 			data1 = new List<int>();
 			data2 = new List<int>();
 			data3 = new List<int>();
@@ -182,6 +185,43 @@ namespace ScreenShotTest
 			data.Add("NoScreens," + scr.ToString());
 			var contents = data.ToArray();
 			//File.WriteAllLines(path + "/info.txt", contents);
+
+			SaveLevelnfo(path);
+		}
+
+		private void SaveLevelnfo(string path)
+		{
+			string prefix = configManager.LevelPrefix;
+			int maxLevel = configManager.NumLevels;
+
+			data.Clear();
+			text1.Clear();
+			text2.Clear();
+			data.Add("const unsigned char *level_object_data[] =");
+			text1.Add("const unsigned char *level_object_size[] =");
+			text2.Add("const unsigned char *level_object_bank[] =");
+			data.Add("{");
+			text1.Add("{");
+			text2.Add("{");
+			for (int idx = 0; idx < maxLevel; idx++)
+			{
+				string levl = (idx+1).ToString().PadLeft(2, '0');
+				string file = String.Format("{0}{1}_txt", prefix, levl);
+				data.Add("\t" + file + ",");
+				text1.Add("\t" + file + "_size,");
+				text2.Add("\t" + file + "_bank,");
+			}
+			data.Add("};");
+			text1.Add("};");
+			text2.Add("};");
+
+			total.Clear();
+			total.AddRange(data);
+			total.AddRange(text1);
+			total.AddRange(text2);
+
+			var contents = total.ToArray();
+			File.WriteAllLines(path + "/fixedbank.c", contents);
 		}
 
 		private void DumpData2(List<int> data3, string path)
