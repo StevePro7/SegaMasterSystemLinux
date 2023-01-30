@@ -24,6 +24,10 @@ S:Lscroll_manager.full_scroll_update$sloc1$0_1$0({2}SI:U),B,1,-2
 F:Fscroll_manager$lineScrollHandler$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lscroll_manager.lineScrollHandler$so$1_0$122({2}DG,STtag_struct_scroll_object:S),R,0,0,[]
 S:Lscroll_manager.lineScrollHandler$val$1_0$122({2}SI:U),R,0,0,[a,c]
+F:Fscroll_manager$lineScrollHandler_new$0_0$0({2}DF,SV:S),C,0,0,0,0,0
+S:Lscroll_manager.lineScrollHandler_new$so$1_0$124({2}DG,STtag_struct_scroll_object:S),R,0,0,[]
+S:Lscroll_manager.lineScrollHandler_new$value$1_0$124({2}SI:U),R,0,0,[a,c]
+S:Lscroll_manager.lineScrollHandler_new$index$1_0$124({1}SC:U),R,0,0,[a]
 T:Fscroll_manager$tag_struct_scroll_object[({0}S:S$scroll$0_0$0({1}SC:U),Z,0,0)({1}S:S$scrollRight$0_0$0({1}SC:U),Z,0,0)({2}S:S$offset_right$0_0$0({2}SI:U),Z,0,0)({4}S:S$scroll_complete$0_0$0({2}SI:U),Z,0,0)({6}S:S$scroll_x$0_0$0({12}DA6d,SI:U),Z,0,0)({18}S:S$scroll_half$0_0$0({1}SC:U),Z,0,0)({19}S:S$lineCnt$0_0$0({1}SC:U),Z,0,0)]
 S:G$global_scroll_object$0_0$0({20}STtag_struct_scroll_object:S),E,0,0
 S:Fscroll_manager$load_method$0_0$0({2}DC,DF,SV:S),E,0,0
@@ -175,3 +179,4 @@ S:G$devkit_SMS_addSprite_bulk8$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_addSprite_bulk12$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_setTilePriority$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_isCollisionDetected$0_0$0({2}DF,SC:U),C,0,0
+S:Fscroll_manager$lineScrollHandler_new$0_0$0({2}DF,SV:S),C,0,0

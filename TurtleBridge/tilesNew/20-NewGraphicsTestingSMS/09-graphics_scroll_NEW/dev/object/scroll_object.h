@@ -22,6 +22,6 @@ typedef struct tag_struct_scroll_object
 
 } struct_scroll_object;
 
-//extern unsigned int scroll_xy[ 6 ];
+//extern unsigned int scroll_xy[];
 
 #endif//_SCROLL_OBJECT_H_

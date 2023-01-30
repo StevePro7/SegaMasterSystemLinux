@@ -1,4 +1,20 @@
 TODO
+30-Jan-2023
+// TODO set this correctly for checkpoint and test
+void engine_scroll_manager_screen( unsigned char screen );
+so->offset_right += screen * SCREEN_WIDE
+
+
+Get the parallax scroll working with array
+scroll_xy[]
+
+as I believe the memory is still potentially corrupt..!!
+I think all I need to do is this
+
+extern unsigned int scroll_xy[];
+unsigned int scroll_xy[] = { 0, 0, 0, 0, 0, 0, };
+
+
 29-Jan-2023
 
 I need to be able to load any screen [checkpoint] at any time

@@ -4,7 +4,7 @@
 #include "sprite_manager.h"
 #include "../devkit/_sms_manager.h"
 
-#define PARALLAX_SCROLLING		1
+#define PARALLAX_SCROLLING		0
 #define SCROLL_COLUMNS			8
 #define SCROLL_LINE_COUNT		30
 
@@ -253,7 +253,7 @@ static enum_scroll_state para_scroll_update( unsigned char delta )
 }
 
 static void full_scroll_load( int scroll_complete )
-{
+{	
 //	engine_font_manager_data( count, 10, 12 );
 	struct_scroll_object *so = &global_scroll_object;
 	//so->scroll_left = 0;
@@ -328,4 +328,19 @@ static void lineScrollHandler( void )
 	//devkit_SMS_setBGScrollX( ( scroll_x[ lineCnt++ ] ) >> 8 );
 
 	devkit_SMS_setBGScrollX( val );
+}
+
+
+static void lineScrollHandler_new( void )
+{
+	struct_scroll_object *so = &global_scroll_object;
+	unsigned int value;
+	unsigned char index;
+
+	index = so->lineCnt++;
+	if( index < 6 )
+	{
+		value = so->scroll_x[ so->lineCnt++ ];
+		devkit_SMS_setBGScrollX( value );
+	}
 }

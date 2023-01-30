@@ -23,13 +23,13 @@ void screen_intro_screen_load()
 	unsigned char player_startY;
 	unsigned char level, screen;
 
-	level = 7;
-	screen = 1;		//checkpoint
+	level = 8;
+	screen = 0;		//checkpoint
 	engine_level_manager_load( level );
+	engine_player_manager_startX( difficulty_type_easier );
 	//engine_player_manager_startX( difficulty_type_normal );
-	//engine_player_manager_startX( difficulty_type_easier );
-	engine_player_manager_startX( difficulty_type_insane );
 	//engine_player_manager_startX( difficulty_type_harder );
+	//engine_player_manager_startX( difficulty_type_insane );
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();

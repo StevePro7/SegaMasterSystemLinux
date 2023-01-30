@@ -11,6 +11,8 @@ namespace ScreenShotTest
 		private List<string> data, text1, text2, total;
 		private List<int> data1, data2, data3;
 		private int cols;
+		private string prefix;
+		private int maxLevel;
 
 		public FileManager(ConfigManager configManager, int wide)
 		{
@@ -29,6 +31,9 @@ namespace ScreenShotTest
 			data1 = new List<int>();
 			data2 = new List<int>();
 			data3 = new List<int>();
+
+			prefix = configManager.LevelPrefix;
+			maxLevel = configManager.NumLevels;
 		}
 
 		public void LoadContent()
@@ -191,15 +196,12 @@ namespace ScreenShotTest
 
 		private void SaveLevelnfo(string path)
 		{
-			string prefix = configManager.LevelPrefix;
-			int maxLevel = configManager.NumLevels;
-
 			data.Clear();
 			text1.Clear();
 			text2.Clear();
 			data.Add("const unsigned char *level_object_data[] =");
-			text1.Add("const unsigned char *level_object_size[] =");
-			text2.Add("const unsigned char *level_object_bank[] =");
+			text1.Add("const unsigned int level_object_size[] =");
+			text2.Add("const unsigned char level_object_bank[] =");
 			data.Add("{");
 			text1.Add("{");
 			text2.Add("{");
@@ -234,7 +236,10 @@ namespace ScreenShotTest
 			string type = String.Empty;
 			string line = String.Empty;
 
-			file.Add("const unsigned char level_tiles[] =");
+			string levl = maxLevel.ToString().PadLeft(2, '0');
+			string name = String.Format("{0}{1}_txt", prefix, levl);
+
+			file.Add("const unsigned char " + name + "[] =");
 			file.Add("{");
 			for (int idx = 0; idx < data3.Count; idx++)
 			{
@@ -271,9 +276,9 @@ namespace ScreenShotTest
 			File.WriteAllLines(path + "/bank6.c", file.ToArray());
 
 			file.Clear();
-			file.Add("extern const unsigned char level_tiles[];");
-			file.Add("#define				level_tiles_size " + cols * 4);
-			file.Add("#define				level_tiles_bank " + bank);
+			file.Add("extern const unsigned char " + name + "[];");
+			file.Add("#define				" + name + "_size " + cols * 4);
+			file.Add("#define				" + name + "_bank " + bank);
 			File.WriteAllLines(path + "/bank6.h", file.ToArray());
 		}
 
