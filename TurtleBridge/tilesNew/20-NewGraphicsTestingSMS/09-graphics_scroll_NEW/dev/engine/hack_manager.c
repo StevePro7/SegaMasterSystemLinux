@@ -49,10 +49,10 @@ void engine_hack_manager_load()
 {
 	struct_hack_object *ho = &global_hack_object;
 
+#ifndef _CONSOLE
+
 	ho->hack_object_level = PEEK( HACKER_START + 0 );			// 0x0050		// Non-zero value enables invincibility.
 	ho->hack_object_screen = PEEK( HACKER_START + 1 );			// 0x0051		// Non-zero value enables maximum boost.
-
-#ifndef _CONSOLE
 
 	//ho->hack_object_delay_test = PEEK( HACKER_START - 2 );			// 0x004E		// Used to speed through any game delay.
 	//ho->hack_object_mydebugger = PEEK( HACKER_START - 1 );			// 0x004F		// Used to show debugging info for game.

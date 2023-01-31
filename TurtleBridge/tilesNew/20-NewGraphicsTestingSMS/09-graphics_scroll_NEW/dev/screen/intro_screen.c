@@ -32,8 +32,6 @@ void screen_intro_screen_load()
 	level = ho->hack_object_level;
 	screen = ho->hack_object_screen;
 
-	
-
 
 	engine_level_manager_load( level );
 	engine_player_manager_startX( difficulty_type_easier );
