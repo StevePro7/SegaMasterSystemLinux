@@ -21,6 +21,9 @@ void engine_hack_manager_init()
 {
 	struct_hack_object *ho = &global_hack_object;
 
+	ho->hack_object_level = 0;
+	ho->hack_object_screen = 0;
+
 	//ho->hack_object_delay_test = 0;
 	//ho->hack_object_mydebugger = 0;
 	//ho->hack_object_invincibie = 0;
@@ -45,6 +48,9 @@ void engine_hack_manager_init()
 void engine_hack_manager_load()
 {
 	struct_hack_object *ho = &global_hack_object;
+
+	ho->hack_object_level = PEEK( HACKER_START + 0 );			// 0x0050		// Non-zero value enables invincibility.
+	ho->hack_object_screen = PEEK( HACKER_START + 1 );			// 0x0051		// Non-zero value enables maximum boost.
 
 #ifndef _CONSOLE
 

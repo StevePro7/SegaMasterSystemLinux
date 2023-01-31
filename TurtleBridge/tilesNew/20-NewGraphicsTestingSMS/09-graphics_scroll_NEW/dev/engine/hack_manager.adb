@@ -1,9 +1,9 @@
 M:hack_manager
 F:G$engine_hack_manager_init$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lhack_manager.engine_hack_manager_init$ho$1_0$1({2}DG,STtag_struct_hack_object:S),R,0,0,[]
+S:Lhack_manager.engine_hack_manager_init$ho$1_0$1({2}DG,STtag_struct_hack_object:S),R,0,0,[c,b]
 F:G$engine_hack_manager_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lhack_manager.engine_hack_manager_load$ho$1_0$2({2}DG,STtag_struct_hack_object:S),R,0,0,[]
+S:Lhack_manager.engine_hack_manager_load$ho$1_0$2({2}DG,STtag_struct_hack_object:S),R,0,0,[c,b]
 F:G$engine_hack_manager_invert$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lhack_manager.engine_hack_manager_invert$ho$1_0$3({2}DG,STtag_struct_hack_object:S),R,0,0,[]
-T:Fhack_manager$tag_struct_hack_object[({0}S:S$hack_object_delay_test$0_0$0({1}SC:U),Z,0,0)]
-S:G$global_hack_object$0_0$0({1}STtag_struct_hack_object:S),E,0,0
+T:Fhack_manager$tag_struct_hack_object[({0}S:S$hack_object_level$0_0$0({1}SC:U),Z,0,0)({1}S:S$hack_object_screen$0_0$0({1}SC:U),Z,0,0)]
+S:G$global_hack_object$0_0$0({2}STtag_struct_hack_object:S),E,0,0

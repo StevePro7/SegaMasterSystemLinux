@@ -5,7 +5,11 @@
 
 typedef struct tag_struct_hack_object
 {
-	unsigned char hack_object_delay_test;
+	//unsigned char hack_object_delay_test;
+
+	unsigned char hack_object_level;
+	unsigned char hack_object_screen;
+
 	//unsigned char hack_object_mydebugger;
 	//unsigned char hack_object_invincibie;
 	//unsigned char hack_object_full_boost;

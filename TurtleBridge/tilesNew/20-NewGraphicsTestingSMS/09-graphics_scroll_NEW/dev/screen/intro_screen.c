@@ -6,18 +6,21 @@
 #include "../engine/font_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/graphics_manager.h"
+#include "../engine/hack_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/level_manager.h"
 #include "../engine/player_manager.h"
 #include "../engine/scroll_manager.h"
 #include "../engine/tile_manager.h"
 #include "../devkit/_sms_manager.h"
+#include "../banks/bank2.h"
 #include <stdbool.h>
 
 static bool complete;
 
 void screen_intro_screen_load()
 {
+	struct_hack_object *ho = &global_hack_object;
 	struct_player_object *po = &global_player_object;
 	struct_level_object *lo = &global_level_object;
 	unsigned char player_startY;
@@ -25,6 +28,13 @@ void screen_intro_screen_load()
 
 	level = 8;
 	screen = 0;		//checkpoint
+
+	level = ho->hack_object_level;
+	screen = ho->hack_object_screen;
+
+	
+
+
 	engine_level_manager_load( level );
 	engine_player_manager_startX( difficulty_type_easier );
 	//engine_player_manager_startX( difficulty_type_normal );
@@ -54,6 +64,10 @@ void screen_intro_screen_load()
 	devkit_SMS_displayOn();
 	engine_scroll_manager_load( lo->level_size );
 	//engine_music_manager_play( 1 );
+
+	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+	engine_font_manager_data( ho->hack_object_level, 12, 12 );
+	engine_font_manager_data( ho->hack_object_screen, 12, 13 );
 	complete = false;
 }
 
