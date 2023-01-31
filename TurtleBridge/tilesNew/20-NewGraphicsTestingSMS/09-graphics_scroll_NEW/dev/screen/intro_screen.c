@@ -26,11 +26,11 @@ void screen_intro_screen_load()
 	unsigned char player_startY;
 	unsigned char level, screen;
 
-	level = 8;
+	level = 6;
 	screen = 0;		//checkpoint
 
-	level = ho->hack_object_level;
-	screen = ho->hack_object_screen;
+	//level = ho->hack_object_level;
+	//screen = ho->hack_object_screen;
 
 
 	engine_level_manager_load( level );
@@ -48,10 +48,10 @@ void screen_intro_screen_load()
 	//engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 9, 4, 8, 3 );
 	//engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 17, 4, 8, 3 );
 	//engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 25, 4, 8, 3 );
-	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 1, 4, 8, 3 );
-	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 9, 4, 8, 3 );
-	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 17, 4, 8, 3 );
-	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 25, 4, 8, 3 );
+	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 1, 5, 8, 3 );
+	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 9, 5, 8, 3 );
+	engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 17, 4, 8, 3 );
+	engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 25, 5, 8, 3 );
 	engine_level_manager_show( screen );
 	engine_player_manager_screen( screen );
 
@@ -61,11 +61,11 @@ void screen_intro_screen_load()
 	engine_player_manager_draw();
 	devkit_SMS_displayOn();
 	engine_scroll_manager_load( lo->level_size );
-	//engine_music_manager_play( 1 );
+	engine_music_manager_play( 0 );
 
-	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
-	engine_font_manager_data( ho->hack_object_level, 12, 12 );
-	engine_font_manager_data( ho->hack_object_screen, 12, 13 );
+	//devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+	//engine_font_manager_data( ho->hack_object_level, 12, 12 );
+	//engine_font_manager_data( ho->hack_object_screen, 12, 13 );
 	complete = false;
 }
 
@@ -80,7 +80,7 @@ void screen_intro_screen_update( unsigned char *screen_type )
 	//bool newTile;
 
 	//engine_player_manager_count();
-	delta = 0;
+	delta = 1;
 	input = engine_input_manager_hold( input_type_fire2 );
 	if( input )
 	{
