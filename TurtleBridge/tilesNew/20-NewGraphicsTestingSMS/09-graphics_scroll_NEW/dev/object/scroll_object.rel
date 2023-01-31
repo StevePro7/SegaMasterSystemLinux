@@ -1,14 +1,25 @@
 XL3
-H 9 areas 1 global symbols
+H 9 areas 4 global symbols
 M scroll_object
 O -mz80
 S .__.ABS. Def000000
 A _CODE size 0 flags 0 addr 0
 A _DATA size 0 flags 0 addr 0
-A _INITIALIZED size 0 flags 0 addr 0
+A _INITIALIZED size C flags 0 addr 0
+S G$scroll_xy$0_0$0 Def000000
+S _scroll_xy Def000000
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
-A _INITIALIZER size 0 flags 0 addr 0
+A _INITIALIZER size C flags 0 addr 0
+S Fscroll_object$__xinit_scroll_xy$0_0$0 Def000000
 A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 02 00
+T 00 00 00
+R 00 00 02 00
+T 00 00 00
+R 00 00 07 00
+T 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+R 00 00 07 00

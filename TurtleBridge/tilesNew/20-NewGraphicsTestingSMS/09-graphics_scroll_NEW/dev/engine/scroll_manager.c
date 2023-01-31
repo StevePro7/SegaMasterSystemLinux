@@ -162,18 +162,18 @@ static void para_scroll_load( int scroll_complete )
 	//print( false );
 
 	// NEW
-	so->scroll_x[ 0 ] = 0;
-	so->scroll_x[ 1 ] = 0;
-	so->scroll_x[ 2 ] = 0;
-	so->scroll_x[ 3 ] = 0;
-	so->scroll_x[ 4 ] = 0;
-	so->scroll_x[ 5 ] = 0;
-	//scroll_xy[ 0 ] = 0;
-	//scroll_xy[ 1 ] = 0;
-	//scroll_xy[ 2 ] = 0;
-	//scroll_xy[ 3 ] = 0;
-	//scroll_xy[ 4 ] = 0;
-	//scroll_xy[ 5 ] = 0;
+	//so->scroll_x[ 0 ] = 0;
+	//so->scroll_x[ 1 ] = 0;
+	//so->scroll_x[ 2 ] = 0;
+	//so->scroll_x[ 3 ] = 0;
+	//so->scroll_x[ 4 ] = 0;
+	//so->scroll_x[ 5 ] = 0;
+	scroll_xy[ 0 ] = 0;
+	scroll_xy[ 1 ] = 0;
+	scroll_xy[ 2 ] = 0;
+	scroll_xy[ 3 ] = 0;
+	scroll_xy[ 4 ] = 0;
+	scroll_xy[ 5 ] = 0;
 	so->scroll_half = 0;
 	so->lineCnt = 0;
 
@@ -228,20 +228,20 @@ static enum_scroll_state para_scroll_update( unsigned char delta )
 	if( delta > 0 )
 	{
 		so->scroll_half = 1 - so->scroll_half;
-		//scroll_xy[ 0 ] -= so->scroll_half;
-		so->scroll_x[ 0 ] -= so->scroll_half;
+		scroll_xy[ 0 ] -= so->scroll_half;
+		//so->scroll_x[ 0 ] -= so->scroll_half;
 	}
 
-	//scroll_xy[ 1 ] -= delta;
-	//scroll_xy[ 2 ] -= delta;
-	//scroll_xy[ 3 ] -= delta;
-	//scroll_xy[ 4 ] -= delta;
-	//scroll_xy[ 5 ] -= 0;
-	so->scroll_x[ 1 ] -= delta;
-	so->scroll_x[ 2 ] -= delta;
-	so->scroll_x[ 3 ] -= delta;
-	so->scroll_x[ 4 ] -= delta;
-	so->scroll_x[ 5 ] -= 0;
+	scroll_xy[ 1 ] -= delta;
+	scroll_xy[ 2 ] -= delta;
+	scroll_xy[ 3 ] -= delta;
+	scroll_xy[ 4 ] -= delta;
+	scroll_xy[ 5 ] -= 0;
+	//so->scroll_x[ 1 ] -= delta;
+	//so->scroll_x[ 2 ] -= delta;
+	//so->scroll_x[ 3 ] -= delta;
+	//so->scroll_x[ 4 ] -= delta;
+	//so->scroll_x[ 5 ] -= 0;
 	so->lineCnt = 0;
 
 	//temp = so->scroll_x[ 0 ];
@@ -313,14 +313,66 @@ static enum_scroll_state full_scroll_update( unsigned char delta )
 	//return newTile;
 	return scroll_state;
 }
-
-
 static void lineScrollHandler( void )
 {
 	struct_scroll_object *so = &global_scroll_object;
 	//unsigned int val = scroll_x[ lineCnt++ ] >> 8;
-	unsigned int val = so->scroll_x[ so->lineCnt++ ];
-	//unsigned int val = scroll_xy[ so->lineCnt++ ];
+	//unsigned char val = so->scroll_x[ so->lineCnt++ ];
+	unsigned char val = scroll_xy[ so->lineCnt++ ];
+
+	devkit_SMS_setBGScrollX( val );
+}
+
+static void lineScrollHandlerX( void )
+{
+	struct_scroll_object *so = &global_scroll_object;
+	unsigned char value;
+	unsigned char index;
+
+	//unsigned char val = so->scroll_x[ so->lineCnt ];
+	index = so->lineCnt;
+	value = 0;
+	if( index < 6 )
+	{
+		if( 0 == so->lineCnt )
+		{
+			value = scroll_xy[ 0 ];
+		}
+		else if( 1 == so->lineCnt )
+		{
+			value = scroll_xy[ 1 ];
+		}
+		else if( 2 == so->lineCnt )
+		{
+			value = scroll_xy[ 2 ];
+		}
+		else if( 3 == so->lineCnt )
+		{
+			value = scroll_xy[ 3 ];
+		}
+		else if( 4 == so->lineCnt )
+		{
+			value = scroll_xy[ 4 ];
+		}
+		else if( 5 == so->lineCnt )
+		{
+			value = scroll_xy[ 5 ];
+		}
+		//value = scroll_xy[ so->lineCnt ];
+		so->lineCnt++;
+
+		devkit_SMS_setBGScrollX( value );
+	}
+}
+
+static void lineScrollHandler_old( void )
+{
+	struct_scroll_object *so = &global_scroll_object;
+	//unsigned int val = scroll_x[ lineCnt++ ] >> 8;
+	//unsigned char val = so->scroll_x[ so->lineCnt ];
+	unsigned char val = scroll_xy[ so->lineCnt++ ];
+	//so->lineCnt++;
+	
 
 	////engine_font_manager_data( lineCnt, 10, 0 );
 	////engine_font_manager_data( val, 20, 0 );
@@ -334,13 +386,14 @@ static void lineScrollHandler( void )
 static void lineScrollHandler_new( void )
 {
 	struct_scroll_object *so = &global_scroll_object;
-	unsigned int value;
+	unsigned char value;
 	unsigned char index;
 
 	index = so->lineCnt++;
 	if( index < 6 )
 	{
-		value = so->scroll_x[ so->lineCnt++ ];
+		//value = so->scroll_x[ so->lineCnt++ ];
+		value = scroll_xy[ so->lineCnt++ ];
 		devkit_SMS_setBGScrollX( value );
 	}
 }

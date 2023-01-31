@@ -44,7 +44,7 @@ cd object
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-size --peep-file ../peep-rules.txt --std-c99 hack_object.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-size --peep-file ../peep-rules.txt --std-c99 level_object.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-size --peep-file ../peep-rules.txt --std-c99 player_object.c
-::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-size --peep-file ../peep-rules.txt --std-c99 scroll_object.c
+"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-size --peep-file ../peep-rules.txt --std-c99 scroll_object.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-size --peep-file ../peep-rules.txt --std-c99 storage_object.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-size --peep-file ../peep-rules.txt --std-c99 tile_object.c
 cd ..
@@ -61,7 +61,7 @@ cd screen
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 load_screen.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 none_screen.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 option_screen.c
-"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 over_screen.c
+::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 over_screen.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 pass_screen.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 play_screen.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 ready_screen.c
