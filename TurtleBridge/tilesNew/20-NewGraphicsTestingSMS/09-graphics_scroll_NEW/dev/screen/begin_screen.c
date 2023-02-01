@@ -202,10 +202,10 @@ static void drawScreen()
 	//engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 9, 4, 8, 3 );
 	//engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 17, 4, 8, 3 );
 	//engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 25, 4, 8, 3 );
-	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 1, 4, 8, 3 );
-	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 9, 4, 8, 3 );
-	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 17, 4, 8, 3 );
-	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 25, 4, 8, 3 );
+	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 1, 5, 8, 3 );
+	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 9, 5, 8, 3 );
+	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 17, 5, 8, 3 );
+	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 25, 5, 8, 3 );
 	//engine_font_manager_text( "BEGIN[SCREEN!!", 10, 2 );
 }
 
