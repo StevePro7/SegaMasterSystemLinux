@@ -80,13 +80,13 @@ void screen_intro_screen_update( unsigned char *screen_type )
 
 	//engine_player_manager_count();
 	delta = 1;
-	input = engine_input_manager_hold( input_type_fire2 );
-	if( input )
-	{
-		engine_scroll_manager_update( 0 );
-		*screen_type = screen_type_over;
-		return;
-	}
+	//input = engine_input_manager_hold( input_type_fire2 );
+	//if( input )
+	//{
+	//	engine_scroll_manager_update( 0 );
+	//	*screen_type = screen_type_over;
+	//	return;
+	//}
 	//input = engine_input_manager_hold( input_type_right );
 	input = engine_input_manager_move( input_type_right );
 	if( input )
