@@ -205,9 +205,9 @@ namespace ScreenShotTest
 			data.Add("{");
 			text1.Add("{");
 			text2.Add("{");
-			for (int idx = 0; idx < maxLevel; idx++)
+			for (int idx = 0; idx <= maxLevel; idx++)
 			{
-				string levl = (idx+1).ToString().PadLeft(2, '0');
+				string levl = (idx).ToString().PadLeft(2, '0');
 				string file = String.Format("{0}{1}_txt", prefix, levl);
 				data.Add("\t" + file + ",");
 				text1.Add("\t" + file + "_size,");

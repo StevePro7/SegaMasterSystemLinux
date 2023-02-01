@@ -23,6 +23,7 @@ const unsigned char music_object_bank[] =
 // Level Manager.
 const unsigned char *level_object_data[] =
 {
+	level1100_txt,
 	level1101_txt,
 	level1102_txt,
 	level1103_txt,
@@ -35,6 +36,7 @@ const unsigned char *level_object_data[] =
 };
 const unsigned int level_object_size[] =
 {
+	level1100_txt_size,
 	level1101_txt_size,
 	level1102_txt_size,
 	level1103_txt_size,
@@ -47,6 +49,7 @@ const unsigned int level_object_size[] =
 };
 const unsigned char level_object_bank[] =
 {
+	level1100_txt_bank,
 	level1101_txt_bank,
 	level1102_txt_bank,
 	level1103_txt_bank,

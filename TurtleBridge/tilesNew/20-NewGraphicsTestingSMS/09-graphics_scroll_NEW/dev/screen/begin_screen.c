@@ -27,7 +27,7 @@ void screen_begin_screen_load()
 	unsigned char player_startY;
 	unsigned char level, screen;
 
-	level = 7;
+	level = 0;
 	screen = 0;
 	engine_level_manager_load( level );
 	//engine_player_manager_startX( difficulty_type_easier );
@@ -186,7 +186,7 @@ static unsigned char anyPlatforms()
 	//engine_font_manager_data( po->tileX, 8, 10 );
 	//engine_font_manager_data( player_platform, 8, 11 );
 
-	chasm = 1;
+	chasm = 2;
 	tilelook = po->tileX - chasm;
 	//lookup_platform = lo->level_platforms[ tilelook ];
 	lookup_platform = level_platforms[ tilelook ];
