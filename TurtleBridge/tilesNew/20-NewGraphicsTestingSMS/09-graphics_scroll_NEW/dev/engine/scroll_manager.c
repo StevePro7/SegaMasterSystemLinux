@@ -4,7 +4,7 @@
 #include "sprite_manager.h"
 #include "../devkit/_sms_manager.h"
 
-#define PARALLAX_SCROLLING		0
+#define PARALLAX_SCROLLING		1
 #define SCROLL_COLUMNS			8
 #define SCROLL_PARA_ARRAY		6
 #define SCROLL_LINE_COUNT		30
@@ -55,8 +55,10 @@ enum_scroll_state engine_scroll_manager_update( unsigned char delta )
 static void para_scroll_load( int scroll_complete )
 {
 	struct_scroll_object *so = &global_scroll_object;
+	unsigned char screen = 0;
 	so->scrollRight = 0;
-	so->offset_right = SCREEN_WIDE - 1;
+	//so->offset_right = SCREEN_WIDE - 1;
+	so->offset_right = ( screen * SCREEN_WIDE ) + SCREEN_WIDE - 1;
 	so->scroll_complete = scroll_complete;
 	devkit_SMS_setBGScrollX( so->scroll );
 
@@ -118,9 +120,10 @@ static enum_scroll_state para_scroll_update( unsigned char delta )
 static void full_scroll_load( int scroll_complete )
 {
 	struct_scroll_object *so = &global_scroll_object;
+	unsigned char screen = 0;
 	so->scroll = 0;
 	so->scrollRight = 0;
-	so->offset_right = SCREEN_WIDE - 1;
+	so->offset_right = ( screen * SCREEN_WIDE ) + SCREEN_WIDE - 1;
 	so->scroll_complete = scroll_complete;
 	devkit_SMS_setBGScrollX( so->scroll );
 }
