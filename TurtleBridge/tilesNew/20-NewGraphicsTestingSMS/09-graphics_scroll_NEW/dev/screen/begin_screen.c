@@ -48,7 +48,7 @@ void screen_begin_screen_load()
 	devkit_SMS_displayOn();
 	engine_scroll_manager_load( lo->level_size );
 
-	engine_music_manager_play( 1 );
+	//engine_music_manager_play( 1 );
 	//devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
 	//engine_font_manager_data( delta, 12, 12 );
 	//engine_font_manager_data( po->posnX, 12, 13 );
@@ -63,11 +63,10 @@ void screen_begin_screen_update( unsigned char *screen_type )
 	struct_level_object *lo = &global_level_object;
 	unsigned char input;
 	unsigned char delta;
+	unsigned char value;
 	unsigned char collision;
 	enum_scroll_state scroll_state;
-	//bool newTile;
 	delta = 0;
-	//newTile = false;
 	collision = 0;
 
 	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
@@ -101,25 +100,25 @@ void screen_begin_screen_update( unsigned char *screen_type )
 	{
 		if( delta > 0 )
 		{
-			scroll_state = engine_scroll_manager_update( delta );
-			//newTile = engine_scroll_manager_update( delta );
-			//if( newTile )
-			if( scroll_state_tile == scroll_state )
+			//for( value = 0; value < delta; value++ )
 			{
-				engine_level_manager_draw( so->offset_right );
-			}
-			else if( scroll_state_comp == scroll_state )
-			{
-				complete = scroll_state_comp == scroll_state;
-				if( complete )
+				scroll_state = engine_scroll_manager_update( 1 );
+				if( scroll_state_tile == scroll_state )
 				{
-					//engine_font_manager_text( "NEXT SCREEN", 10, 3 );
+					engine_level_manager_draw( so->offset_right );
 				}
-			}
+				else if( scroll_state_comp == scroll_state )
+				{
+					complete = scroll_state_comp == scroll_state;
+					if( complete )
+					{
+						//engine_font_manager_text( "NEXT SCREEN", 10, 3 );
+						//break;
+					}
+				}
+			//}
 
 			engine_player_manager_right();
-
-
 			//engine_debug_manager_printout();
 
 			//// TODO - won't check this if somersault in air etc.
@@ -133,11 +132,11 @@ void screen_begin_screen_update( unsigned char *screen_type )
 				*screen_type = screen_type_dead;
 				return;
 			}
+
+			//engine_debug_manager_printout();
+			//nextPrint();
 		}
 	}
-
-	//engine_debug_manager_printout();
-	//nextPrint();
 
 	engine_player_manager_draw();
 	if( complete )
@@ -166,7 +165,7 @@ static unsigned char anyPlatforms()
 	//engine_font_manager_data( po->tileX, 8, 10 );
 	//engine_font_manager_data( player_platform, 8, 11 );
 
-	chasm = 2;
+	chasm = 1;
 	tilelook = po->tileX - chasm;
 	//lookup_platform = lo->level_platforms[ tilelook ];
 	lookup_platform = level_platforms[ tilelook ];

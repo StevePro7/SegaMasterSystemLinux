@@ -77,7 +77,6 @@ void screen_intro_screen_update( unsigned char *screen_type )
 	unsigned char delta;
 	unsigned char value;
 	enum_scroll_state scroll_state;
-	//bool newTile;
 
 	//engine_player_manager_count();
 	delta = 1;
@@ -111,8 +110,6 @@ void screen_intro_screen_update( unsigned char *screen_type )
 		for( value = 0; value < delta; value++ )
 		{
 			scroll_state = engine_scroll_manager_update( 1 );
-			//newTile = engine_scroll_manager_update( 1 );
-			//if( newTile )
 			if ( scroll_state_tile == scroll_state )
 			{
 				engine_level_manager_draw( so->offset_right );
