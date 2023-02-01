@@ -25,17 +25,21 @@ void screen_begin_screen_load()
 	struct_player_object *po = &global_player_object;
 	struct_level_object *lo = &global_level_object;
 	unsigned char player_startY;
+	unsigned char level, screen;
 
-	engine_level_manager_load( 7 );
-	//engine_player_manager_startX( difficulty_type_easier );
-	engine_player_manager_startX( difficulty_type_insane );
+	level = 7;
+	screen = 3;
+	engine_level_manager_load( level );
+	engine_player_manager_startX( difficulty_type_easier );
+	//engine_player_manager_startX( difficulty_type_insane );
 
 
 	devkit_SMS_displayOff();
 	drawScreen();
 	//engine_player_manager_startX( difficulty_type_normal );
 	//engine_player_manager_startX( difficulty_type_insane +1 );
-	engine_level_manager_show( 0 );
+	engine_level_manager_show( screen );
+	engine_player_manager_screen( screen );
 
 //	player_startY = lo->level_platforms[ po->tileX ];
 	player_startY = level_platforms[ po->tileX ];
@@ -181,7 +185,7 @@ static unsigned char anyPlatforms()
 	//engine_font_manager_data( po->tileX, 8, 10 );
 	//engine_font_manager_data( player_platform, 8, 11 );
 
-	chasm = 1;
+	chasm = 2;
 	tilelook = po->tileX - chasm;
 	//lookup_platform = lo->level_platforms[ tilelook ];
 	lookup_platform = level_platforms[ tilelook ];

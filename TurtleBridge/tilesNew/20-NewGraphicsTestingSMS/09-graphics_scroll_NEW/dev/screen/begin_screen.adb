@@ -3,6 +3,8 @@ F:G$screen_begin_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lbegin_screen.screen_begin_screen_load$po$1_0$103({2}DG,STtag_struct_player_object:S),R,0,0,[]
 S:Lbegin_screen.screen_begin_screen_load$lo$1_0$103({2}DG,STtag_struct_level_object:S),R,0,0,[]
 S:Lbegin_screen.screen_begin_screen_load$player_startY$1_0$103({1}SC:U),R,0,0,[a]
+S:Lbegin_screen.screen_begin_screen_load$level$1_0$103({1}SC:U),R,0,0,[]
+S:Lbegin_screen.screen_begin_screen_load$screen$1_0$103({1}SC:U),R,0,0,[]
 F:G$screen_begin_screen_update$0_0$0({2}DF,SV:S),Z,0,-1,0,0,0
 S:Lbegin_screen.screen_begin_screen_update$screen_type$1_0$104({2}DG,SC:U),B,1,4
 S:Lbegin_screen.screen_begin_screen_update$so$1_0$105({2}DG,STtag_struct_scroll_object:S),R,0,0,[]

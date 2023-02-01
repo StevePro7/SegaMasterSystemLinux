@@ -48,6 +48,11 @@ void engine_player_manager_startX( unsigned char difficulty )
 	po->posnX = po->startX;
 	updatePlayer();
 }
+//void engine_player_manager_checkX( unsigned char screen )
+//{
+	// TODO - do I want to have 
+	// engine_player_manager_screen()
+//}
 void engine_player_manager_startY( unsigned char player_startY )
 {
 	struct_player_object *po = &global_player_object;
