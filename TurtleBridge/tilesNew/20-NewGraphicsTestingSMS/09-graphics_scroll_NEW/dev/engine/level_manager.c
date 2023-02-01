@@ -79,7 +79,8 @@ void engine_level_manager_draw( unsigned int offset )
 	level_platform = tiles_object_platform[ level_object ];
 	//lo->level_platforms[ offset ] = level_platform;
 //	lo->level_platforms[ offset ] = tiles_object_platform[ level_object ];
-	level_platforms[ lo->level_draw_offset ] = level_platform;// tiles_object_platform[ level_object ];
+	//level_platforms[ lo->level_draw_offset ] = level_platform;// tiles_object_platform[ level_object ];
+	level_platforms[ offset ] = level_platform;// tiles_object_platform[ level_object ];
 	if( level_column >= 8 )
 	{
 		flip = true;
