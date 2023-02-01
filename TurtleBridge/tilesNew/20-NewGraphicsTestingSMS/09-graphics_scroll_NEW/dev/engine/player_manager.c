@@ -23,6 +23,7 @@ void engine_player_manager_init()
 {
 	struct_player_object *po = &global_player_object;
 	po->posnX = 0;
+	po->startX = 0; 
 	//po->posnX = 32;
 	//po->posnX = 96;
 //	po->posnX = 168;
@@ -193,11 +194,9 @@ void engine_player_manager_left()
 void engine_player_manager_right( unsigned char delta )
 {
 	struct_player_object *po = &global_player_object;
-	//px = po->posnX;
-	//px++;
-	//po->posnX = px;
 	po->posnX = po->posnX + delta;
 	po->tileX = po->posnX >> 3;
+	//po->lookX = po->tileX % SCREEN_WIDE;
 	//devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
 	////engine_font_manager_data( delta, 12, 12 );
 	//engine_font_manager_data( po->posnX, 24, 16 );
@@ -224,6 +223,7 @@ static void updatePlayer()
 	po->drawY = po->posnY - 32;
 	po->tileX = po->posnX >> 3;
 	po->tileY = po->posnY >> 3;
+	//po->lookX = po->tileX % SCREEN_WIDE;
 }
 
 void engine_player_manager_pass()

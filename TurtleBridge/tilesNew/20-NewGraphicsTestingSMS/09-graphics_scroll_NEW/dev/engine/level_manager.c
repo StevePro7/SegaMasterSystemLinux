@@ -53,7 +53,7 @@ void engine_level_manager_draw( unsigned int offset )
 {
 	struct_level_object *lo = &global_level_object;
 	//unsigned char data, planesA, columnA;
-	unsigned char level_data, level_column, level_object;// , level_platform;
+	unsigned char level_data, level_column, level_object, level_platform;
 	bool flip = false;
 
 	lo->level_draw_offset++;
@@ -76,14 +76,14 @@ void engine_level_manager_draw( unsigned int offset )
 
 	level_data = lo->level_data[ offset ];
 	engine_function_manager_convertByteToNibbles( level_data, &level_column, &level_object );
-	//level_platform = tiles_object_platform[ level_object ];
+	level_platform = tiles_object_platform[ level_object ];
 	//lo->level_platforms[ offset ] = level_platform;
 //	lo->level_platforms[ offset ] = tiles_object_platform[ level_object ];
-	level_platforms[ offset ] = tiles_object_platform[ level_object ];
+	level_platforms[ lo->level_draw_offset ] = level_platform;// tiles_object_platform[ level_object ];
 	if( level_column >= 8 )
 	{
 		flip = true;
-		level_column -= 8;
+		level_column -= 8;		// TODO - #define
 	}
 	engine_tile_manager_draw_columns( level_object, lo->level_draw_offset, level_column, flip );
 

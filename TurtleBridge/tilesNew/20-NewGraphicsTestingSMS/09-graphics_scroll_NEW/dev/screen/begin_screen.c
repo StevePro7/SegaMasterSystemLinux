@@ -28,16 +28,16 @@ void screen_begin_screen_load()
 	unsigned char level, screen;
 
 	level = 7;
-	screen = 3;
+	screen = 0;
 	engine_level_manager_load( level );
-	engine_player_manager_startX( difficulty_type_easier );
+	//engine_player_manager_startX( difficulty_type_easier );
 	//engine_player_manager_startX( difficulty_type_insane );
 
 
 	devkit_SMS_displayOff();
 	drawScreen();
-	//engine_player_manager_startX( difficulty_type_normal );
-	//engine_player_manager_startX( difficulty_type_insane +1 );
+	//engine_player_manager_startX( difficulty_type_harder);
+	engine_player_manager_startX( difficulty_type_insane );
 	engine_level_manager_show( screen );
 	engine_player_manager_screen( screen );
 
@@ -47,7 +47,7 @@ void screen_begin_screen_load()
 	engine_player_manager_draw();
 
 	engine_debug_manager_printout();
-	//nextPrint();
+	nextPrint();
 
 	devkit_SMS_displayOn();
 	engine_scroll_manager_load( lo->level_size );
@@ -140,6 +140,7 @@ void screen_begin_screen_update( unsigned char *screen_type )
 
 			engine_player_manager_right( delta );
 			engine_debug_manager_printout();
+			nextPrint();
 
 			//// TODO - won't check this if somersault in air etc.
 			collision = anyPlatforms();
@@ -176,7 +177,7 @@ static unsigned char anyPlatforms()
 	struct_player_object *po = &global_player_object;
 	struct_level_object *lo = &global_level_object;
 	unsigned char chasm;
-	unsigned int tilelook;
+	unsigned char tilelook;
 	unsigned char lookup_platform;
 	unsigned char player_platform = po->tileY;
 
@@ -185,7 +186,7 @@ static unsigned char anyPlatforms()
 	//engine_font_manager_data( po->tileX, 8, 10 );
 	//engine_font_manager_data( player_platform, 8, 11 );
 
-	chasm = 2;
+	chasm = 1;
 	tilelook = po->tileX - chasm;
 	//lookup_platform = lo->level_platforms[ tilelook ];
 	lookup_platform = level_platforms[ tilelook ];
@@ -236,10 +237,10 @@ static void nextPrint()
 
 	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
 
-	//engine_font_manager_data( lo->level_draw_offset, 8, 7 );
-	//engine_font_manager_data( so->offset_right, 16, 7 );
-	//engine_font_manager_data( lo->level_platforms[ lo->level_draw_offset ], 24, 7 );
+	engine_font_manager_data( lo->level_draw_offset, 8, 8 );
+	engine_font_manager_data( so->offset_right, 16, 8 );
+	engine_font_manager_data( level_platforms[ lo->level_draw_offset ], 24, 8 );
 
-	//engine_font_manager_data( po->tileX, 8, 8 );
-	//engine_font_manager_data( lo->level_platforms[ po->tileX ], 16, 8 );
+	//engine_font_manager_data( po->tileX, 8, 9 );
+	//engine_font_manager_data( level_platforms[ po->tileX ], 16, 9 );
 }
