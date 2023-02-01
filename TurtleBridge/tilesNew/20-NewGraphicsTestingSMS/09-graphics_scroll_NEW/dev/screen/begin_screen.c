@@ -181,7 +181,7 @@ static unsigned char anyPlatforms()
 	//engine_font_manager_data( po->tileX, 8, 10 );
 	//engine_font_manager_data( player_platform, 8, 11 );
 
-	chasm = 2;
+	chasm = 1;
 	tilelook = po->tileX - chasm;
 	//lookup_platform = lo->level_platforms[ tilelook ];
 	lookup_platform = level_platforms[ tilelook ];
