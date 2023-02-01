@@ -75,7 +75,7 @@ void screen_begin_screen_update( unsigned char *screen_type )
 	//engine_font_manager_data( po->tileX, 24, 14 );
 
 
-	input = engine_input_manager_move( input_type_down );
+	input = engine_input_manager_move( input_type_fire1 );
 	if( input )
 	{
 		engine_scroll_manager_update( 0 );
@@ -90,10 +90,20 @@ void screen_begin_screen_update( unsigned char *screen_type )
 	{
 		delta = 1;
 	}
-	input = engine_input_manager_hold( input_type_left );
+	input = engine_input_manager_hold( input_type_down );
 	if( input )
 	{
 		delta = 2;
+	}
+	input = engine_input_manager_hold( input_type_left );
+	if( input )
+	{
+		delta = 3;
+	}
+	input = engine_input_manager_hold( input_type_up );
+	if( input )
+	{
+		delta = 4;
 	}
 
 	if( 0 == delta )
@@ -119,7 +129,7 @@ void screen_begin_screen_update( unsigned char *screen_type )
 					if( complete )
 					{
 						//engine_font_manager_text( "NEXT SCREEN", 10, 3 );
-						//break;
+						break;
 					}
 				}
 			}
@@ -171,7 +181,7 @@ static unsigned char anyPlatforms()
 	//engine_font_manager_data( po->tileX, 8, 10 );
 	//engine_font_manager_data( player_platform, 8, 11 );
 
-	chasm = 1;
+	chasm = 2;
 	tilelook = po->tileX - chasm;
 	//lookup_platform = lo->level_platforms[ tilelook ];
 	lookup_platform = level_platforms[ tilelook ];
