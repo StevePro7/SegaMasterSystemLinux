@@ -185,14 +185,13 @@ void engine_player_manager_left()
 	updatePlayer();
 }
 
-void engine_player_manager_right()
+void engine_player_manager_right( unsigned char delta )
 {
-//	unsigned char px;
 	struct_player_object *po = &global_player_object;
 	//px = po->posnX;
 	//px++;
 	//po->posnX = px;
-	po->posnX = po->posnX + 1;
+	po->posnX = po->posnX + delta;
 	po->tileX = po->posnX >> 3;
 	//devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
 	////engine_font_manager_data( delta, 12, 12 );

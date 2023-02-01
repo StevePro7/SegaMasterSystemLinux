@@ -28,12 +28,12 @@ void screen_begin_screen_load()
 
 	engine_level_manager_load( 7 );
 	//engine_player_manager_startX( difficulty_type_easier );
-	//engine_player_manager_startX( difficulty_type_normal );
+	engine_player_manager_startX( difficulty_type_insane );
 
 
 	devkit_SMS_displayOff();
 	drawScreen();
-	engine_player_manager_startX( difficulty_type_normal );
+	//engine_player_manager_startX( difficulty_type_normal );
 	//engine_player_manager_startX( difficulty_type_insane +1 );
 	engine_level_manager_show( 0 );
 
@@ -63,7 +63,7 @@ void screen_begin_screen_update( unsigned char *screen_type )
 	struct_level_object *lo = &global_level_object;
 	unsigned char input;
 	unsigned char delta;
-	//unsigned char value;
+	unsigned char value;
 	unsigned char collision;
 	enum_scroll_state scroll_state;
 	delta = 0;
@@ -82,12 +82,18 @@ void screen_begin_screen_update( unsigned char *screen_type )
 		*screen_type = screen_type_dead;
 		return;
 	}
-	input = engine_input_manager_move( input_type_right );
-	//input = engine_input_manager_hold( input_type_right );
+	
+	//input = engine_input_manager_move( input_type_right );
+	input = engine_input_manager_hold( input_type_right );
 	//input = 1;
 	if( input )
 	{
 		delta = 1;
+	}
+	input = engine_input_manager_hold( input_type_left );
+	if( input )
+	{
+		delta = 2;
 	}
 
 	if( 0 == delta )
@@ -100,7 +106,7 @@ void screen_begin_screen_update( unsigned char *screen_type )
 	{
 		if( delta > 0 )
 		{
-			//for( value = 0; value < delta; value++ )
+			for( value = 0; value < delta; value++ )
 			{
 				scroll_state = engine_scroll_manager_update( 1 );
 				if( scroll_state_tile == scroll_state )
@@ -118,7 +124,7 @@ void screen_begin_screen_update( unsigned char *screen_type )
 				}
 			}
 
-			engine_player_manager_right();
+			engine_player_manager_right( delta );
 			engine_debug_manager_printout();
 
 			//// TODO - won't check this if somersault in air etc.

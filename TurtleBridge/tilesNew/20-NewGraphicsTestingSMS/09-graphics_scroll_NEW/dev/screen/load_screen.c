@@ -31,7 +31,7 @@ void screen_load_screen_update( unsigned char *screen_type )
 	input = engine_input_manager_hold( input_type_right );
 	if( input )
 	{
-		engine_player_manager_right();
+		engine_player_manager_right(1);
 	}
 	input = engine_input_manager_hold( input_type_down );
 	if( input )

@@ -15,7 +15,7 @@ void engine_player_manager_update();
 void engine_player_manager_update2();		// TODO update better
 void engine_player_manager_update3();
 void engine_player_manager_left();
-void engine_player_manager_right();
+void engine_player_manager_right( unsigned char delta );
 void engine_player_manager_up();
 void engine_player_manager_down();
 void engine_player_manager_draw();
