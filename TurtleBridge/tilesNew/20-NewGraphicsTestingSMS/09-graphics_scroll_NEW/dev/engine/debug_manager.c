@@ -19,9 +19,10 @@ void engine_debug_manager_printout()
 	struct_level_object *lo = &global_level_object;
 
 	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
-	engine_font_manager_data( po->tileX, 8, 0 );
+	//engine_font_manager_data( po->tileX, 8, 0 );
 	engine_font_manager_data( po->posnX, 16, 0 );
-	engine_font_manager_data( po->drawX, 24, 0 );
+	//engine_font_manager_data( po->drawX, 24, 0 );
+	engine_font_manager_data( po->tileX, 24, 0 );
 
 	engine_font_manager_data( po->tileX - 2, 8, 2 );
 	engine_font_manager_data( po->tileX - 1, 8, 3 );
