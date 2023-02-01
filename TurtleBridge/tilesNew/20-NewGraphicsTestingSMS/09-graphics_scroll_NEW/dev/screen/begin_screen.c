@@ -28,7 +28,7 @@ void screen_begin_screen_load()
 	unsigned char level, screen;
 
 	level = 0;
-	screen = 0;
+	screen = 5;
 	engine_level_manager_load( level );
 	//engine_player_manager_startX( difficulty_type_easier );
 	//engine_player_manager_startX( difficulty_type_insane );
