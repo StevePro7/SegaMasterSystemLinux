@@ -24,7 +24,7 @@ void screen_over_screen_load()
 	engine_graphics_manager_sea();
 	engine_font_manager_text( "OVER[SCREEN", 10, 2 );
 	devkit_SMS_displayOn();
-	engine_scroll_manager_load( 0 );
+	engine_scroll_manager_load( 0, 256 );
 }
 
 void screen_over_screen_update( unsigned char *screen_type )

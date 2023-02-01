@@ -27,7 +27,7 @@ void screen_play_screen_load()
 	devkit_SMS_displayOn();
 
 	// TODO - wire this up "properly"
-	engine_scroll_manager_load(256);
+	engine_scroll_manager_load(0, 256);
 	//engine_music_manager_play( 1 );
 }
 

@@ -50,7 +50,7 @@ void screen_begin_screen_load()
 	nextPrint();
 
 	devkit_SMS_displayOn();
-	engine_scroll_manager_load( lo->level_size );
+	engine_scroll_manager_load( screen, lo->level_size );
 
 	//engine_music_manager_play( 1 );
 	//devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );

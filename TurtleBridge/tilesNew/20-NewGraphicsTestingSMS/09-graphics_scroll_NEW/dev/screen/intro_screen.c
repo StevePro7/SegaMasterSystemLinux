@@ -60,8 +60,8 @@ void screen_intro_screen_load()
 	engine_player_manager_startY( player_startY );
 	engine_player_manager_draw();
 	devkit_SMS_displayOn();
-	engine_scroll_manager_load( lo->level_size );
-	//engine_music_manager_play( 0 );
+	engine_scroll_manager_load( screen, lo->level_size );
+	engine_music_manager_play( 1 );
 
 	//devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
 	//engine_font_manager_data( ho->hack_object_level, 12, 12 );
