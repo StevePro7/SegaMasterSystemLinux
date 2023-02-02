@@ -24,10 +24,12 @@ void engine_player_manager_init()
 	struct_player_object *po = &global_player_object;
 	po->posnX = 0;
 	po->startX = 0; 
+	po->lookX = 0;
 	//po->posnX = 32;
 	//po->posnX = 96;
 //	po->posnX = 168;
 	po->posnY = 0;
+	
 	//po->posnY = 128;
 	//po->posnY = 132;
 	//po->frame = 4;
@@ -196,7 +198,11 @@ void engine_player_manager_right( unsigned char delta )
 	struct_player_object *po = &global_player_object;
 	po->posnX = po->posnX + delta;
 	po->tileX = po->posnX >> 3;
+
+	// https://johnysswlab.com/make-your-programs-run-faster-avoid-expensive-instructions
 	//po->lookX = po->tileX % SCREEN_WIDE;
+	po->lookX = po->tileX  & ( SCREEN_WIDE - 1 );
+
 	//devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
 	////engine_font_manager_data( delta, 12, 12 );
 	//engine_font_manager_data( po->posnX, 24, 16 );
@@ -222,8 +228,11 @@ static void updatePlayer()
 	po->drawX = po->posnX - 16;
 	po->drawY = po->posnY - 32;
 	po->tileX = po->posnX >> 3;
-	po->tileY = po->posnY >> 3;
+
+	// https://johnysswlab.com/make-your-programs-run-faster-avoid-expensive-instructions
 	//po->lookX = po->tileX % SCREEN_WIDE;
+	po->lookX = po->tileX  & ( SCREEN_WIDE - 1 );
+	po->tileY = po->posnY >> 3;
 }
 
 void engine_player_manager_pass()

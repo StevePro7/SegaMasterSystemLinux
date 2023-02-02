@@ -185,10 +185,10 @@ void SMS_autoSetUpTextRenderer( void ) {}
 void SMS_decompressZX7( const void *src, void *dst ) {}
 
 /* functions to read joypad(s) */
-unsigned int SMS_getKeysStatus (void) { return 1; }
-unsigned int SMS_getKeysPressed (void) { return 1;}
-unsigned int SMS_getKeysHeld (void) { return 1;}
-unsigned int SMS_getKeysReleased (void) { return 1;}
+unsigned int SMS_getKeysStatus (void) { return 0; }
+unsigned int SMS_getKeysPressed (void) { return 0;}
+unsigned int SMS_getKeysHeld (void) { return 0;}
+unsigned int SMS_getKeysReleased (void) { return 0;}
 
 /* handy defines for joypad(s) handling */
 #ifndef CONTROLLER_PORTS

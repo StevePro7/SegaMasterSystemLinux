@@ -5,7 +5,7 @@ static void start();
 void main( void )
 {
 	static bool global_pause;
-	unsigned char input;
+//	unsigned char input;
 	start();
 	for( ;; )
 	{
@@ -43,13 +43,13 @@ void main( void )
 
 		engine_audio_manager_update();
 
-		engine_input_manager_update();
-		input = input = engine_input_manager_move( input_type_fire2 );
-		if( input )
-		{
-			devkit_PSGStop();
-			start();
-		}
+		//engine_input_manager_update();
+		//input = input = engine_input_manager_move( input_type_fire2 );
+		//if( input )
+		//{
+		//	devkit_PSGStop();
+		//	start();
+		//}
 	}
 }
 
@@ -75,7 +75,7 @@ static void start()
 	engine_tile_manager_init();
 
 	//open_screen_type = screen_type_splash;
-	//open_screen_type = screen_type_title;
+	open_screen_type = screen_type_title;
 	//open_screen_type = screen_type_func;
 	//open_screen_type = screen_type_test;
 	//open_screen_type = screen_type_init;

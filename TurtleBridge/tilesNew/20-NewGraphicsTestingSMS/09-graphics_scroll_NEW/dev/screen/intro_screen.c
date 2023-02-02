@@ -27,7 +27,7 @@ void screen_intro_screen_load()
 	unsigned char player_startY;
 	unsigned char level, screen;
 
-	level = 6;
+	level = 0;
 	screen = 0;		//checkpoint
 
 	//level = ho->hack_object_level;
@@ -35,10 +35,10 @@ void screen_intro_screen_load()
 
 
 	engine_level_manager_load( level );
-	engine_player_manager_startX( difficulty_type_easier );
+	//engine_player_manager_startX( difficulty_type_easier );
 	//engine_player_manager_startX( difficulty_type_normal );
 	//engine_player_manager_startX( difficulty_type_harder );
-	//engine_player_manager_startX( difficulty_type_insane );
+	engine_player_manager_startX( difficulty_type_insane );
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();
@@ -90,16 +90,32 @@ void screen_intro_screen_update( unsigned char *screen_type )
 	//	return;
 	//}
 	//input = engine_input_manager_hold( input_type_right );
-	input = engine_input_manager_move( input_type_right );
+	input = engine_input_manager_hold( input_type_right );
+	//input = 1;
+	if( input )
+	{
+		delta = 1;
+	}
+	input = engine_input_manager_hold( input_type_down );
 	if( input )
 	{
 		delta = 2;
 	}
-	input = engine_input_manager_move( input_type_fire1 );
+	input = engine_input_manager_hold( input_type_left );
 	if( input )
 	{
-		delta *= 2;
+		delta = 3;
 	}
+	input = engine_input_manager_hold( input_type_up );
+	if( input )
+	{
+		delta = 4;
+	}
+	//input = engine_input_manager_move( input_type_fire1 );
+	//if( input )
+	//{
+	//	delta *= 2;
+	//}
 
 	if( 0 == delta )
 	{
@@ -109,28 +125,34 @@ void screen_intro_screen_update( unsigned char *screen_type )
 
 	if( !complete )
 	{
-		for( value = 0; value < delta; value++ )
+		if( delta > 0 )
 		{
-			scroll_state = engine_scroll_manager_update( 1 );
-			if ( scroll_state_tile == scroll_state )
+			for( value = 0; value < delta; value++ )
 			{
-				engine_level_manager_draw( so->scrollDeltaX );
-				//complete = so->scrollDeltaX >= lo->level_size;
-				//if( complete )
-				//{
-				//	//engine_font_manager_text( "NEXT SCREEN", 10, 3 );
-				//	break;
-				//}
-			}
-			else if( scroll_state_comp == scroll_state )
-			{
-				complete = scroll_state_comp == scroll_state;
-				if( complete )
+				scroll_state = engine_scroll_manager_update( 1 );
+				if( scroll_state_tile == scroll_state )
 				{
-					//engine_font_manager_text( "NEXT SCREEN", 10, 3 );
-					break;
+					engine_level_manager_draw( so->scrollDeltaX );
+					//complete = so->scrollDeltaX >= lo->level_size;
+					//if( complete )
+					//{
+					//	//engine_font_manager_text( "NEXT SCREEN", 10, 3 );
+					//	break;
+					//}
+				}
+				else if( scroll_state_comp == scroll_state )
+				{
+					complete = scroll_state_comp == scroll_state;
+					if( complete )
+					{
+						//engine_font_manager_text( "NEXT SCREEN", 10, 3 );
+						break;
+					}
 				}
 			}
+
+			engine_player_manager_right( delta );
+			engine_debug_manager_printout();
 		}
 	}
 

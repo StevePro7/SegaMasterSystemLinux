@@ -83,7 +83,8 @@ void engine_level_manager_draw( unsigned int offset )
 	
 	// IMPORTANT - this is a buffer overrun!!
 	//level_platforms[ offset ] = level_platform;// tiles_object_platform[ level_object ];
-	level_platforms[ 0 ] = 0;
+	//level_platforms[ lo->level_draw_offset] = level_platform;// tiles_object_platform[ level_object ];
+	level_platforms[ lo->level_draw_offset ] = level_platform;
 	if( level_column >= 8 )
 	{
 		flip = true;
