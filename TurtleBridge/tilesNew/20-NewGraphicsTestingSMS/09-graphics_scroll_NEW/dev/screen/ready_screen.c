@@ -2,6 +2,7 @@
 #include "../engine/asm_manager.h"
 //#include "../engine/audio_manager.h"
 #include "../engine/content_manager.h"
+#include "../engine/collision_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/graphics_manager.h"
@@ -17,6 +18,8 @@ static void drawScreen();
 void screen_ready_screen_load()
 {
 	drawScreen();
+	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+	engine_font_manager_text( "READY", 10, 14 );
 	//engine_player_manager_load();
 }
 
@@ -35,25 +38,26 @@ void screen_ready_screen_update( unsigned char *screen_type )
 	input2 = devkit_SMS_getKeysHeld();		//move
 	if( input2 != 0 )
 	{
-		engine_font_manager_data( input2, 10, 15 );
+		engine_collision_manager_player();
+		//engine_font_manager_data( input2, 10, 15 );
 	}
+//
+//	input1 = devkit_SMS_getKeysPressed();	//hold
+//	if( input1 != 0 )
+//	{
+//		//engine_font_manager_data( input1, 10, 14 );
+//		if( input1 & 32 )
+//		{
+////			engine_font_manager_text( "JUMP!!", 20, 10 );
+//		}
+//	}
 
-	input1 = devkit_SMS_getKeysPressed();	//hold
-	if( input1 != 0 )
-	{
-		engine_font_manager_data( input1, 10, 14 );
-		if( input1 & 32 )
-		{
-			engine_font_manager_text( "JUMP!!", 20, 10 );
-		}
-	}
 
+	//engine_font_manager_data( input1, 10, 10 );
+	//engine_font_manager_data( input2, 10, 11 );
 
-	engine_font_manager_data( input1, 10, 10 );
-	engine_font_manager_data( input2, 10, 11 );
-
-	engine_font_manager_data( input1, 10, 14 );
-	engine_font_manager_data( input2, 10, 15 );
+	//engine_font_manager_data( input1, 10, 14 );
+	//engine_font_manager_data( input2, 10, 15 );
 
 	//unsigned char input;
 	//input = engine_input_manager_hold( input_type_fire1 );
