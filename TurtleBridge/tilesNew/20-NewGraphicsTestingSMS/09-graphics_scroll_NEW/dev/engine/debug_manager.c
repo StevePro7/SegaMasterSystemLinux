@@ -10,7 +10,7 @@ void engine_debug_manager_scrollout()
 {
 	struct_scroll_object *so = &global_scroll_object;
 	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
-	engine_font_manager_data( so->scroll_complete, 8, 0 );
+	engine_font_manager_data( so->scrollFinish, 8, 0 );
 }
 
 void engine_debug_manager_printout()

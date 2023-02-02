@@ -86,7 +86,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 		newTile = engine_scroll_manager_update( delta );
 		if( newTile )
 		{
-			engine_level_manager_draw( so->offset_right );
+			engine_level_manager_draw( so->scrollDeltaX );
 		}
 	}
 	else
@@ -97,7 +97,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 			newTile = engine_scroll_manager_update( 1 );
 			if( newTile )
 			{
-				engine_level_manager_draw( so->offset_right );
+				engine_level_manager_draw( so->scrollDeltaX );
 			}
 		}
 
@@ -105,7 +105,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 		////engine_font_manager_data( newTile, 30, 0 );
 		//if( newTile )
 		//{
-		//	engine_level_manager_draw( so->offset_right );
+		//	engine_level_manager_draw( so->scrollDeltaX );
 		//}
 	}
 

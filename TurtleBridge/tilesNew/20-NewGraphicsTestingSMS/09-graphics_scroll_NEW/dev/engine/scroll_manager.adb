@@ -2,12 +2,12 @@ M:scroll_manager
 F:G$engine_scroll_manager_init$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_scroll_manager_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lscroll_manager.engine_scroll_manager_load$screen$1_0$100({1}SC:U),B,1,4
-S:Lscroll_manager.engine_scroll_manager_load$scroll_complete$1_0$100({2}SI:S),B,1,5
+S:Lscroll_manager.engine_scroll_manager_load$scrollFinish$1_0$100({2}SI:S),B,1,5
 F:G$engine_scroll_manager_update$0_0$0({2}DF,SC:U),Z,0,0,0,0,0
 S:Lscroll_manager.engine_scroll_manager_update$delta$1_0$102({1}SC:U),B,1,4
 F:Fscroll_manager$para_scroll_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lscroll_manager.para_scroll_load$screen$1_0$104({1}SC:U),B,1,4
-S:Lscroll_manager.para_scroll_load$scroll_complete$1_0$104({2}SI:S),B,1,5
+S:Lscroll_manager.para_scroll_load$scrollFinish$1_0$104({2}SI:S),B,1,5
 S:Lscroll_manager.para_scroll_load$so$1_0$105({2}DG,STtag_struct_scroll_object:S),R,0,0,[]
 F:Fscroll_manager$para_scroll_update$0_0$0({2}DF,SC:U),Z,0,0,0,0,0
 S:Lscroll_manager.para_scroll_update$delta$1_0$106({1}SC:U),B,1,4
@@ -16,7 +16,7 @@ S:Lscroll_manager.para_scroll_update$scroll_state$1_0$107({1}SC:U),B,1,-1
 S:Lscroll_manager.para_scroll_update$sloc0$0_1$0({1}SC:U),B,1,-1
 F:Fscroll_manager$full_scroll_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lscroll_manager.full_scroll_load$screen$1_0$112({1}SC:U),B,1,4
-S:Lscroll_manager.full_scroll_load$scroll_complete$1_0$112({2}SI:S),B,1,5
+S:Lscroll_manager.full_scroll_load$scrollFinish$1_0$112({2}SI:S),B,1,5
 S:Lscroll_manager.full_scroll_load$so$1_0$113({2}DG,STtag_struct_scroll_object:S),R,0,0,[c,b]
 F:Fscroll_manager$full_scroll_update$0_0$0({2}DF,SC:U),Z,0,0,0,0,0
 S:Lscroll_manager.full_scroll_update$delta$1_0$114({1}SC:U),B,1,4
@@ -30,7 +30,7 @@ S:Lscroll_manager.lineScrollHandler$index$1_0$121({1}SC:U),R,0,0,[c]
 S:Lscroll_manager.lineScrollHandler$value$1_0$121({1}SC:U),B,1,-1
 S:Lscroll_manager.lineScrollHandler$sloc0$0_1$0({1}SC:U),B,1,-2
 S:Lscroll_manager.lineScrollHandler$sloc1$0_1$0({1}SC:U),B,1,-1
-T:Fscroll_manager$tag_struct_scroll_object[({0}S:S$scroll$0_0$0({1}SC:U),Z,0,0)({1}S:S$scrollRight$0_0$0({1}SC:U),Z,0,0)({2}S:S$offset_right$0_0$0({2}SI:U),Z,0,0)({4}S:S$scroll_complete$0_0$0({2}SI:U),Z,0,0)({6}S:S$scroll_x0$0_0$0({1}SC:U),Z,0,0)({7}S:S$scroll_x1$0_0$0({1}SC:U),Z,0,0)({8}S:S$scroll_x2$0_0$0({1}SC:U),Z,0,0)({9}S:S$scroll_x3$0_0$0({1}SC:U),Z,0,0)({10}S:S$scroll_x4$0_0$0({1}SC:U),Z,0,0)({11}S:S$scroll_x5$0_0$0({1}SC:U),Z,0,0)({12}S:S$scroll_half$0_0$0({1}SC:U),Z,0,0)({13}S:S$lineCnt$0_0$0({1}SC:U),Z,0,0)]
+T:Fscroll_manager$tag_struct_scroll_object[({0}S:S$scrollLeftX$0_0$0({1}SC:U),Z,0,0)({1}S:S$scrollRight$0_0$0({1}SC:U),Z,0,0)({2}S:S$scrollDeltaX$0_0$0({2}SI:U),Z,0,0)({4}S:S$scrollFinish$0_0$0({2}SI:U),Z,0,0)({6}S:S$scroll_x0$0_0$0({1}SC:U),Z,0,0)({7}S:S$scroll_x1$0_0$0({1}SC:U),Z,0,0)({8}S:S$scroll_x2$0_0$0({1}SC:U),Z,0,0)({9}S:S$scroll_x3$0_0$0({1}SC:U),Z,0,0)({10}S:S$scroll_x4$0_0$0({1}SC:U),Z,0,0)({11}S:S$scroll_x5$0_0$0({1}SC:U),Z,0,0)({12}S:S$scroll_half$0_0$0({1}SC:U),Z,0,0)({13}S:S$lineCnt$0_0$0({1}SC:U),Z,0,0)]
 S:G$global_scroll_object$0_0$0({14}STtag_struct_scroll_object:S),E,0,0
 S:Fscroll_manager$load_method$0_0$0({2}DC,DF,SV:S),E,0,0
 S:Fscroll_manager$update_method$0_0$0({2}DC,DF,SC:U),E,0,0

@@ -125,7 +125,7 @@ void screen_begin_screen_update( unsigned char *screen_type )
 				scroll_state = engine_scroll_manager_update( 1 );
 				if( scroll_state_tile == scroll_state )
 				{
-					engine_level_manager_draw( so->offset_right );
+					engine_level_manager_draw( so->scrollDeltaX );
 				}
 				else if( scroll_state_comp == scroll_state )
 				{
@@ -238,7 +238,7 @@ static void nextPrint()
 	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
 
 	engine_font_manager_data( lo->level_draw_offset, 8, 8 );
-	engine_font_manager_data( so->offset_right, 16, 8 );
+	engine_font_manager_data( so->scrollDeltaX, 16, 8 );
 	engine_font_manager_data( level_platforms[ lo->level_draw_offset ], 24, 8 );
 
 	//engine_font_manager_data( po->tileX, 8, 9 );
