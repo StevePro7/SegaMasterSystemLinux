@@ -1,5 +1,6 @@
 #include "start_screen.h"
 #include "../engine/asm_manager.h"
+#include "../engine/collision_manager.h"
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
@@ -24,31 +25,44 @@ void screen_start_screen_load()
 	engine_content_manager_bggame();
 	engine_content_manager_sprite();
 	engine_graphics_manager_sea();
-	engine_font_manager_text( "START SCREEN", 10, 2 );
+	engine_font_manager_text( "START", 10, 0 );
 	devkit_SMS_displayOn();
 	index = 0;
 }
 
 void screen_start_screen_update( unsigned char *screen_type )
 {
-	unsigned char input;
-	unsigned char value;
+	unsigned char collisionTile;
 
-	unsigned char lower, upper;
-	lower = 0;
-	upper = 0;
-	input = engine_input_manager_hold( input_type_right );
-	if( input != 0 )
-	{
-		value = level_tiles[ index ];
-		engine_font_manager_data( index, 10, 10 );
-		engine_font_manager_data( value, 20, 10 );
-
-		engine_function_manager_convertByteToNibbles( value, &lower, &upper );
-		engine_font_manager_data( lower, 10, 12 );
-		engine_font_manager_data( upper, 20, 12);
-		index++;
-	}
+	engine_collision_manager_load( difficulty_type_easier );
+	collisionTile = engine_collision_manager_player( 0, 10 );
+	collisionTile = engine_collision_manager_player( 1, 11 );
+	collisionTile = engine_collision_manager_player( 2, 12 );
+	collisionTile = engine_collision_manager_player( 3, 13 );
 	
+	collisionTile = engine_collision_manager_player( 28, 20 );
+	collisionTile = engine_collision_manager_player( 29, 21 );
+	collisionTile = engine_collision_manager_player( 30, 22 );
+	collisionTile = engine_collision_manager_player( 31, 23 );
+	
+	//unsigned char input;
+	//unsigned char value;
+
+	//unsigned char lower, upper;
+	//lower = 0;
+	//upper = 0;
+	//input = engine_input_manager_hold( input_type_right );
+	//if( input != 0 )
+	//{
+	//	value = level_tiles[ index ];
+	//	engine_font_manager_data( index, 10, 10 );
+	//	engine_font_manager_data( value, 20, 10 );
+
+	//	engine_function_manager_convertByteToNibbles( value, &lower, &upper );
+	//	engine_font_manager_data( lower, 10, 12 );
+	//	engine_font_manager_data( upper, 20, 12);
+	//	index++;
+	//}
+
 	*screen_type = screen_type_start;
 }

@@ -30,18 +30,33 @@ void engine_collision_manager_load( unsigned char difficulty )
 	collisionRange = SCREEN_WIDE - collisionDelta;
 }
 
-void engine_collision_manager_player()
+unsigned char engine_collision_manager_player( unsigned char lookX, unsigned char tileY )
 {
 	struct_player_object *po = &global_player_object;
 	struct_level_object *lo = &global_level_object;
 
 	unsigned char collisionTile;
 	//unsigned char lookup_platform;
-	unsigned char player_platform;
-	unsigned char lookX;
+	//unsigned char player_platform;		 // po->tileY
+//	unsigned char lookX;
 
-	player_platform = po->tileY;
-	lookX = po->lookX;
+	//player_platform = po->tileY;
+	//lookX = po->lookX;
+
+	// Check collision left side of player.
+	//if( ( 0 == lookX ) || ( 1 == lookX && moreForgiving ) )
+	if( ( COLLISION_MIN_PLUS_NIL == lookX ) || ( COLLISION_MIN_PLUS_ONE ==lookX && moreForgiving ) )
+	{
+		collisionTile = lookX + collisionRange;
+	}
+	else
+	{
+		collisionTile = lookX - collisionDelta;
+	}
+
+	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+	engine_font_manager_data( collisionTile, 10, tileY );
+
 
 	// Check collision right side of player.
 	//if( ( 31 == lookX ) || ( 30 == lookX && moreForgiving ) )
@@ -55,16 +70,9 @@ void engine_collision_manager_player()
 	}
 
 
-	// Check collision left side of player.
-	//if( ( 0 == lookX ) || ( 1 == lookX && moreForgiving ) )
-	if( ( COLLISION_MIN_PLUS_NIL == lookX ) || ( COLLISION_MIN_PLUS_ONE ==lookX && moreForgiving ) )
-	{
-		collisionTile = lookX + collisionRange;
-	}
-	else
-	{
-		collisionTile = lookX - collisionDelta;
-	}
+	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+	engine_font_manager_data( collisionTile, 20, tileY );
+
 
 	//if( ( COLLISION_TEST_LEFT_TWO == lookX ) || ( COLLISION_TEST_LEFT_ONE == lookX && moreForgiving ) )
 	//{
@@ -89,7 +97,9 @@ void engine_collision_manager_player()
 	//}
 
 	// 
-	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
-	//engine_font_manager_data( COLLISION_TEST_RGHT_TWO, 12, 12 );
+	
 	//collision = 0;
+
+	collisionTile += tileY;
+	return collisionTile;
 }
