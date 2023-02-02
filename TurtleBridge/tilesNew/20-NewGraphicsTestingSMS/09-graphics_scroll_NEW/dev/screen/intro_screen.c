@@ -132,8 +132,8 @@ void screen_intro_screen_update( unsigned char *screen_type )
 				scroll_state = engine_scroll_manager_update( 1 );
 				if( scroll_state_tile == scroll_state )
 				{
-					engine_level_manager_draw( so->scrollDeltaX );
-					//complete = so->scrollDeltaX >= lo->level_size;
+					engine_level_manager_draw( so->scrollColumn );
+					//complete = so->scrollColumn >= lo->level_size;
 					//if( complete )
 					//{
 					//	//engine_font_manager_text( "NEXT SCREEN", 10, 3 );

@@ -8,7 +8,7 @@ typedef struct tag_struct_level_object
 	unsigned char *level_data;
 	unsigned int level_size;
 	unsigned char level_bank;
-	unsigned char level_draw_offset;
+	unsigned char colunn_draw;
 
 } struct_level_object;
 

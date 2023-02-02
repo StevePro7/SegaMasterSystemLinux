@@ -9,7 +9,7 @@
 void screen_dead_screen_load()
 {
 	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
-	engine_font_manager_text( "DEAD[SCREEN..!!", 1, 1 );
+	engine_font_manager_text( "DEAD", 1, 10 );
 	engine_player_manager_draw();
 }
 

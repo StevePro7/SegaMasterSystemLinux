@@ -6,9 +6,8 @@
 // Global variable.
 extern struct_level_object global_level_object;
 
-void engine_level_manager_init();
-void engine_level_manager_load( unsigned char index );
+void engine_level_manager_load( unsigned char level );
 void engine_level_manager_show( unsigned char screen );
-void engine_level_manager_draw( unsigned int offset );
+void engine_level_manager_draw( unsigned int scrollColumn );
 
 #endif//_LEVEL_MANAGER_H_

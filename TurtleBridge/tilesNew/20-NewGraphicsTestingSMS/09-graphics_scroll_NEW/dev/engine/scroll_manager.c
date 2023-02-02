@@ -57,7 +57,7 @@ static void para_scroll_load( unsigned char screen, int scrollFinish )
 	struct_scroll_object *so = &global_scroll_object;
 	so->scrollLeftX = 0;
 	so->scrollRight = 0;
-	so->scrollDeltaX = ( screen * SCREEN_WIDE ) + SCREEN_WIDE - 1;
+	so->scrollColumn = ( screen * SCREEN_WIDE ) + SCREEN_WIDE - 1;
 	so->scrollFinish = scrollFinish;
 	devkit_SMS_setBGScrollX( so->scrollLeftX );
 
@@ -86,7 +86,7 @@ static enum_scroll_state para_scroll_update( unsigned char delta )
 	if( so->scrollRight >= SCROLL_COLUMNS )
 	{
 		so->scrollRight = 0;
-		if( so->scrollDeltaX == so->scrollFinish )
+		if( so->scrollColumn == so->scrollFinish )
 		{
 			scroll_state = scroll_state_comp;
 		}
@@ -97,7 +97,7 @@ static enum_scroll_state para_scroll_update( unsigned char delta )
 		if( delta == so->scrollRight )
 		{
 			scroll_state = scroll_state_tile;
-			so->scrollDeltaX++;
+			so->scrollColumn++;
 		}
 
 		// Scroll cloud section at half pace.
@@ -121,7 +121,7 @@ static void full_scroll_load( unsigned char screen, int scrollFinish )
 	struct_scroll_object *so = &global_scroll_object;
 	so->scrollLeftX = 0;
 	so->scrollRight = 0;
-	so->scrollDeltaX = ( screen * SCREEN_WIDE ) + SCREEN_WIDE - 1;
+	so->scrollColumn = ( screen * SCREEN_WIDE ) + SCREEN_WIDE - 1;
 	so->scrollFinish = scrollFinish;
 	devkit_SMS_setBGScrollX( so->scrollLeftX );
 }
@@ -140,7 +140,7 @@ static enum_scroll_state full_scroll_update( unsigned char delta )
 	if( so->scrollRight >= SCROLL_COLUMNS )
 	{
 		so->scrollRight = 0;
-		if( so->scrollDeltaX == so->scrollFinish )
+		if( so->scrollColumn == so->scrollFinish )
 		{
 			scroll_state = scroll_state_comp;
 		}
@@ -151,7 +151,7 @@ static enum_scroll_state full_scroll_update( unsigned char delta )
 		if( delta == so->scrollRight )
 		{
 			scroll_state = scroll_state_tile;
-			so->scrollDeltaX++;
+			so->scrollColumn++;
 		}
 	}
 

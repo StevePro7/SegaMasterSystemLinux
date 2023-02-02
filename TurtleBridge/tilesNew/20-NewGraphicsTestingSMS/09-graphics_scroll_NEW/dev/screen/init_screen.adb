@@ -17,9 +17,9 @@ S:Linit_screen.screen_init_screen_update$sloc3$0_1$0({1}:S),B,1,-2
 F:Finit_screen$statPlater$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Linit_screen.statPlater$po$1_0$106({2}DG,STtag_struct_player_object:S),R,0,0,[]
 F:Finit_screen$drawScreen$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-T:Finit_screen$tag_struct_player_object[({0}S:S$posnX$0_0$0({2}SI:U),Z,0,0)({2}S:S$tileX$0_0$0({2}SI:U),Z,0,0)({4}S:S$startX$0_0$0({1}SC:U),Z,0,0)({5}S:S$posnY$0_0$0({1}SC:U),Z,0,0)({6}S:S$tileY$0_0$0({1}SC:U),Z,0,0)({7}S:S$drawX$0_0$0({1}SC:U),Z,0,0)({8}S:S$drawY$0_0$0({1}SC:U),Z,0,0)({9}S:S$player_state$0_0$0({1}SC:U),Z,0,0)({10}S:S$player_index$0_0$0({1}SC:U),Z,0,0)({11}S:S$player_frame$0_0$0({1}SC:U),Z,0,0)({12}S:S$player_count$0_0$0({2}SI:U),Z,0,0)]
+T:Finit_screen$tag_struct_player_object[({0}S:S$posnX$0_0$0({2}SI:U),Z,0,0)({2}S:S$tileX$0_0$0({2}SI:U),Z,0,0)({4}S:S$lookX$0_0$0({1}SC:U),Z,0,0)({5}S:S$startX$0_0$0({1}SC:U),Z,0,0)({6}S:S$posnY$0_0$0({1}SC:U),Z,0,0)({7}S:S$tileY$0_0$0({1}SC:U),Z,0,0)({8}S:S$drawX$0_0$0({1}SC:U),Z,0,0)({9}S:S$drawY$0_0$0({1}SC:U),Z,0,0)({10}S:S$player_state$0_0$0({1}SC:U),Z,0,0)({11}S:S$player_index$0_0$0({1}SC:U),Z,0,0)({12}S:S$player_frame$0_0$0({1}SC:U),Z,0,0)({13}S:S$player_count$0_0$0({2}SI:U),Z,0,0)]
 S:Finit_screen$collision_array$0_0$0({32}DA32d,SC:U),E,0,0
-S:G$global_player_object$0_0$0({14}STtag_struct_player_object:S),E,0,0
+S:G$global_player_object$0_0$0({15}STtag_struct_player_object:S),E,0,0
 S:G$engine_asm_manager_clear_VRAM$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_bggame$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_splash$0_0$0({2}DF,SV:S),C,0,0

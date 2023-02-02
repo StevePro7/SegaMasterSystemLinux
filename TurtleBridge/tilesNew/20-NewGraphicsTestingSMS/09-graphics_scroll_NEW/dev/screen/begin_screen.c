@@ -27,8 +27,8 @@ void screen_begin_screen_load()
 	unsigned char player_startY;
 	unsigned char level, screen;
 
-	level = 0;
-	screen = 5;
+	level = 1;
+	screen = 0;
 	engine_level_manager_load( level );
 	//engine_player_manager_startX( difficulty_type_easier );
 	//engine_player_manager_startX( difficulty_type_insane );
@@ -47,7 +47,7 @@ void screen_begin_screen_load()
 	engine_player_manager_draw();
 
 	engine_debug_manager_printout();
-	nextPrint();
+	//nextPrint();
 
 	devkit_SMS_displayOn();
 	engine_scroll_manager_load( screen, lo->level_size );
@@ -125,7 +125,7 @@ void screen_begin_screen_update( unsigned char *screen_type )
 				scroll_state = engine_scroll_manager_update( 1 );
 				if( scroll_state_tile == scroll_state )
 				{
-					engine_level_manager_draw( so->scrollDeltaX );
+					engine_level_manager_draw( so->scrollColumn );
 				}
 				else if( scroll_state_comp == scroll_state )
 				{
@@ -140,7 +140,7 @@ void screen_begin_screen_update( unsigned char *screen_type )
 
 			engine_player_manager_right( delta );
 			engine_debug_manager_printout();
-			nextPrint();
+			//nextPrint();
 
 			//// TODO - won't check this if somersault in air etc.
 			collision = anyPlatforms();
@@ -186,7 +186,7 @@ static unsigned char anyPlatforms()
 	//engine_font_manager_data( po->tileX, 8, 10 );
 	//engine_font_manager_data( player_platform, 8, 11 );
 
-	chasm = 2;
+	chasm = 1;
 	tilelook = po->tileX - chasm;
 	//lookup_platform = lo->level_platforms[ tilelook ];
 	lookup_platform = level_platforms[ tilelook ];
@@ -237,9 +237,9 @@ static void nextPrint()
 
 	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
 
-	engine_font_manager_data( lo->level_draw_offset, 8, 8 );
-	engine_font_manager_data( so->scrollDeltaX, 16, 8 );
-	engine_font_manager_data( level_platforms[ lo->level_draw_offset ], 24, 8 );
+	engine_font_manager_data( lo->colunn_draw, 8, 8 );
+	engine_font_manager_data( so->scrollColumn, 16, 8 );
+	engine_font_manager_data( level_platforms[ lo->colunn_draw ], 24, 8 );
 
 	//engine_font_manager_data( po->tileX, 8, 9 );
 	//engine_font_manager_data( level_platforms[ po->tileX ], 16, 9 );
