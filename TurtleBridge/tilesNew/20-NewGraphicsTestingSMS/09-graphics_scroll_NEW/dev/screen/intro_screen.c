@@ -2,6 +2,7 @@
 #include "../engine/asm_manager.h"
 #include "../engine/audio_manager.h"
 #include "../engine/content_manager.h"
+#include "../engine/debug_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/global_manager.h"
@@ -43,15 +44,15 @@ void screen_intro_screen_load()
 	engine_content_manager_bggame();
 	engine_content_manager_sprite();
 	engine_graphics_manager_sea();
-	engine_tile_manager_stevepro( TILE_PLAY_TITLE, 4, 0, 24, 3 );
-	//engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 1, 4, 8, 3 );
-	//engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 9, 4, 8, 3 );
+	//engine_tile_manager_stevepro( TILE_PLAY_TITLE, 4, 0, 24, 3 );
+	////engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 1, 4, 8, 3 );
+	////engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 9, 4, 8, 3 );
+	////engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 17, 4, 8, 3 );
+	////engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 25, 4, 8, 3 );
+	//engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 1, 5, 8, 3 );
+	//engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 9, 5, 8, 3 );
 	//engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 17, 4, 8, 3 );
-	//engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 25, 4, 8, 3 );
-	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 1, 5, 8, 3 );
-	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 9, 5, 8, 3 );
-	engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 17, 4, 8, 3 );
-	engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 25, 5, 8, 3 );
+	//engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 25, 5, 8, 3 );
 	engine_level_manager_show( screen );
 	engine_player_manager_screen( screen );
 
@@ -61,11 +62,12 @@ void screen_intro_screen_load()
 	engine_player_manager_draw();
 	devkit_SMS_displayOn();
 	engine_scroll_manager_load( screen, lo->level_size );
-	engine_music_manager_play( 1 );
+	//engine_music_manager_play( 1 );
 
 	//devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
 	//engine_font_manager_data( ho->hack_object_level, 12, 12 );
 	//engine_font_manager_data( ho->hack_object_screen, 12, 13 );
+	engine_debug_manager_printout();
 	complete = false;
 }
 
@@ -79,7 +81,7 @@ void screen_intro_screen_update( unsigned char *screen_type )
 	enum_scroll_state scroll_state;
 
 	//engine_player_manager_count();
-	delta = 1;
+	delta = 0;
 	//input = engine_input_manager_hold( input_type_fire2 );
 	//if( input )
 	//{
