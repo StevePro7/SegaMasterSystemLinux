@@ -24,7 +24,7 @@ void screen_start_screen_load()
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();
 	engine_content_manager_sprite();
-	engine_graphics_manager_sea();
+	//engine_graphics_manager_sea();
 	engine_font_manager_text( "START", 10, 0 );
 	devkit_SMS_displayOn();
 	index = 0;
@@ -34,7 +34,7 @@ void screen_start_screen_update( unsigned char *screen_type )
 {
 	unsigned char collisionTile;
 
-	engine_collision_manager_load( difficulty_type_easier );
+	engine_collision_manager_load( difficulty_type_insane );
 	collisionTile = engine_collision_manager_player( 0, 10 );
 	collisionTile = engine_collision_manager_player( 1, 11 );
 	collisionTile = engine_collision_manager_player( 2, 12 );
