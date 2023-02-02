@@ -4,21 +4,18 @@
 typedef struct tag_struct_scroll_object
 {
 	// Full scroll.
-	//unsigned char scroll;
 	unsigned char scrollLeftX;
 	unsigned char scrollRight;
 	unsigned int scrollDeltaX;
 	unsigned int scrollFinish;
-	//unsigned int offset_right;
-	//unsigned int scroll_complete;
 
 	// Para scroll.
-	unsigned char scroll_x0;
-	unsigned char scroll_x1;
-	unsigned char scroll_x2;
-	unsigned char scroll_x3;
-	unsigned char scroll_x4;
-	unsigned char scroll_x5;
+	unsigned char scrollLeftX0;
+	unsigned char scrollLeftX1;
+	unsigned char scrollLeftX2;
+	unsigned char scrollLeftX3;
+	unsigned char scrollLeftX4;
+	unsigned char scrollLeftX5;
 	unsigned char scroll_half;
 	unsigned char lineCnt;
 

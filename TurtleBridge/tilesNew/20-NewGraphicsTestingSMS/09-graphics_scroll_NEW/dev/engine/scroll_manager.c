@@ -61,12 +61,12 @@ static void para_scroll_load( unsigned char screen, int scrollFinish )
 	so->scrollFinish = scrollFinish;
 	devkit_SMS_setBGScrollX( so->scrollLeftX );
 
-	so->scroll_x0 = 0;
-	so->scroll_x1 = 0;
-	so->scroll_x2 = 0;
-	so->scroll_x3 = 0;
-	so->scroll_x4 = 0;
-	so->scroll_x5 = 0;
+	so->scrollLeftX0 = 0;
+	so->scrollLeftX1 = 0;
+	so->scrollLeftX2 = 0;
+	so->scrollLeftX3 = 0;
+	so->scrollLeftX4 = 0;
+	so->scrollLeftX5 = 0;
 	so->scroll_half = 0;
 	so->lineCnt = 0;
 
@@ -102,15 +102,15 @@ static enum_scroll_state para_scroll_update( unsigned char delta )
 
 		// Scroll cloud section at half pace.
 		so->scroll_half = 1 - so->scroll_half;
-		so->scroll_x0 -= so->scroll_half;
+		so->scrollLeftX0 -= so->scroll_half;
 	}
 
 	// Scroll game screen at full pace.
-	so->scroll_x1 -= delta;
-	so->scroll_x2 -= delta;
-	so->scroll_x3 -= delta;
-	so->scroll_x4 -= delta;
-	so->scroll_x5 -= 0;
+	so->scrollLeftX1 -= delta;
+	so->scrollLeftX2 -= delta;
+	so->scrollLeftX3 -= delta;
+	so->scrollLeftX4 -= delta;
+	so->scrollLeftX5 -= 0;
 	so->lineCnt = 0;
 
 	return scroll_state;
@@ -169,27 +169,27 @@ static void lineScrollHandler( void )
 	{
 		if( 0 == so->lineCnt )
 		{
-			value = so->scroll_x0;
+			value = so->scrollLeftX0;
 		}
 		else if( 1 == so->lineCnt )
 		{
-			value = so->scroll_x1;
+			value = so->scrollLeftX1;
 		}
 		else if( 2 == so->lineCnt )
 		{
-			value = so->scroll_x2;
+			value = so->scrollLeftX2;
 		}
 		else if( 3 == so->lineCnt )
 		{
-			value = so->scroll_x3;
+			value = so->scrollLeftX3;
 		}
 		else if( 4 == so->lineCnt )
 		{
-			value = so->scroll_x4;
+			value = so->scrollLeftX4;
 		}
 		else if( 5 == so->lineCnt )
 		{
-			value = so->scroll_x5;
+			value = so->scrollLeftX5;
 		}
 
 		so->lineCnt++;
