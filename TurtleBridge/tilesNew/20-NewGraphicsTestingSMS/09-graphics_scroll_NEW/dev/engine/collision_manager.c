@@ -30,20 +30,21 @@ void engine_collision_manager_load( unsigned char difficulty )
 	collisionRange = SCREEN_WIDE - collisionDelta;
 }
 
-unsigned char engine_collision_manager_player( unsigned char lookX, unsigned char tileY )
+signed char engine_collision_manager_player( unsigned char lookX, unsigned char tileY )
 {
 	struct_player_object *po = &global_player_object;
 	struct_level_object *lo = &global_level_object;
 
-	unsigned char collisionTile;
+
 	unsigned char lookup_platform;
 	unsigned char player_platform;		 // po->tileY
 //	unsigned char lookX;
+	signed char collisionTile;
 
 	//player_platform = po->tileY;
 	//lookX = po->lookX;
 	player_platform = tileY;
-
+	collisionTile = INVALID_NUMBER;
 	// Check collision left side of player.
 	//if( ( 0 == lookX ) || ( 1 == lookX && moreForgiving ) )
 	if( ( COLLISION_MIN_PLUS_NIL == lookX ) || ( COLLISION_MIN_PLUS_ONE ==lookX && moreForgiving ) )
@@ -60,17 +61,11 @@ unsigned char engine_collision_manager_player( unsigned char lookX, unsigned cha
 	engine_font_manager_data( collisionTile, 8, 6 );
 
 	lookup_platform = level_platforms[ collisionTile ];
-	//if( lookup_platform == player_platform )
+	engine_font_manager_data( lookup_platform, 8, 7 );
+	if( lookup_platform == player_platform )
 	{
-		engine_font_manager_data( lookup_platform, 8, 7 );
-		//return collisionTile;
+		return collisionTile;
 	}
-	//else
-	//{
-	//	engine_font_manager_data( 0, 8, 9 );
-	//}
-
-	// TODO delete
 
 	// Check collision right side of player.
 	//if( ( 31 == lookX ) || ( 30 == lookX && moreForgiving ) )
@@ -89,44 +84,48 @@ unsigned char engine_collision_manager_player( unsigned char lookX, unsigned cha
 	engine_font_manager_data( collisionTile, 8, 9 );
 
 	lookup_platform = level_platforms[ collisionTile ];
-	//if( lookup_platform == player_platform )
+	engine_font_manager_data( lookup_platform, 8, 10 );
+	if( lookup_platform == player_platform )
 	{
-		engine_font_manager_data( lookup_platform, 8, 10 );
+		
 		return collisionTile;
 	}
-	//else
-	//{
-	//	engine_font_manager_data( 0, 8, 12 );
-	//}
-
-	// TODO delete
-
-	//if( ( COLLISION_TEST_LEFT_TWO == lookX ) || ( COLLISION_TEST_LEFT_ONE == lookX && moreForgiving ) )
-	//{
-	//	collisionTile = lookX + COLLISION_TEST_RGHT_TWO;
-	//}
-	//else
-	//{
-	//	collisionTile = lookX - collisionDelta;
-	//}
-
-	//lookup_platform = level_platforms[ collisionTile ];
-	//if( lookup_platform == player_platform )
-	//{
-	//	return lookup_platform;
-	//}
-
-
-	//lookup_platform = level_platforms[ collisionTile ];
-	//if( lookup_platform == player_platform )
-	//{
-	//	return lookup_platform;
-	//}
-
-	// 
 	
-	//collision = 0;
-
-	collisionTile += tileY;
-	return collisionTile;
+	return INVALID_NUMBER;
 }
+
+
+//else
+//{
+//	engine_font_manager_data( 0, 8, 12 );
+//}
+
+// TODO delete
+
+//if( ( COLLISION_TEST_LEFT_TWO == lookX ) || ( COLLISION_TEST_LEFT_ONE == lookX && moreForgiving ) )
+//{
+//	collisionTile = lookX + COLLISION_TEST_RGHT_TWO;
+//}
+//else
+//{
+//	collisionTile = lookX - collisionDelta;
+//}
+
+//lookup_platform = level_platforms[ collisionTile ];
+//if( lookup_platform == player_platform )
+//{
+//	return lookup_platform;
+//}
+
+
+//lookup_platform = level_platforms[ collisionTile ];
+//if( lookup_platform == player_platform )
+//{
+//	return lookup_platform;
+//}
+
+// 
+
+//collision = 0;
+
+//collisionTile += tileY;

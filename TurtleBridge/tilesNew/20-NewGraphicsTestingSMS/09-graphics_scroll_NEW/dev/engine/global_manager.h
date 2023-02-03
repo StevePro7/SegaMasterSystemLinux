@@ -19,4 +19,6 @@
 
 #define MAX_TILE_OBJECTS	16
 
+#define INVALID_NUMBER		-1
+
 #endif//_GLOBAL_MANAGER_H_
