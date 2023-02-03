@@ -29,7 +29,7 @@ void screen_intro_screen_load()
 	unsigned char level, screen;
 	unsigned char difficulty;
 
-	level = 0;
+	level = 10;
 	screen = 0;		//checkpoint
 
 	//level = ho->hack_object_level;
@@ -90,7 +90,7 @@ void screen_intro_screen_update( unsigned char *screen_type )
 	unsigned char input;
 	unsigned char delta;
 	unsigned char value;
-	unsigned char collision;
+	signed char collision;
 	enum_scroll_state scroll_state;
 
 	//engine_player_manager_count();
@@ -103,23 +103,23 @@ void screen_intro_screen_update( unsigned char *screen_type )
 	//	return;
 	//}
 	//input = engine_input_manager_hold( input_type_right );
-	input = engine_input_manager_hold( input_type_right );
+	input = engine_input_manager_move( input_type_right );
 	//input = 1;
 	if( input )
 	{
 		delta = 1;
 	}
-	input = engine_input_manager_hold( input_type_down );
+	input = engine_input_manager_move( input_type_down );
 	if( input )
 	{
 		delta = 2;
 	}
-	input = engine_input_manager_hold( input_type_left );
+	input = engine_input_manager_move( input_type_left );
 	if( input )
 	{
 		delta = 3;
 	}
-	input = engine_input_manager_hold( input_type_up );
+	input = engine_input_manager_move( input_type_up );
 	if( input )
 	{
 		delta = 4;
@@ -171,6 +171,15 @@ void screen_intro_screen_update( unsigned char *screen_type )
 
 			devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
 			engine_font_manager_data( collision, 8, 12 );
+
+			if( INVALID_NUMBER == collision )
+			{
+				engine_font_manager_text( "DEAD", 8, 13 );
+			}
+			else
+			{
+				engine_font_manager_text( "XXXX", 8, 13 );
+			}
 		}
 	}
 

@@ -52,8 +52,8 @@ void engine_player_manager_startX( unsigned char difficulty )
 	po->startX = player_object_starts[ difficulty ];
 
 	// TODO delete
-	//po->startX = 128;
-	po->startX = 224;
+	po->startX = 128;
+	//po->startX = 224;
 	// TODO delete
 
 	po->posnX = po->startX;
