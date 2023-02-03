@@ -55,7 +55,7 @@ unsigned char engine_collision_manager_player( unsigned char lookX, unsigned cha
 	}
 
 	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
-	engine_font_manager_data( collisionTile, 10, tileY );
+	engine_font_manager_data( collisionTile, 8, tileY + 0 );
 
 
 	// Check collision right side of player.
@@ -71,7 +71,7 @@ unsigned char engine_collision_manager_player( unsigned char lookX, unsigned cha
 
 
 	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
-	engine_font_manager_data( collisionTile, 20, tileY );
+	engine_font_manager_data( collisionTile, 8, tileY + 2);
 
 
 	//if( ( COLLISION_TEST_LEFT_TWO == lookX ) || ( COLLISION_TEST_LEFT_ONE == lookX && moreForgiving ) )

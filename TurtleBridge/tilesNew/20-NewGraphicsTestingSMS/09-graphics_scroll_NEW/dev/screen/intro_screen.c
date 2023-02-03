@@ -1,6 +1,7 @@
 #include "intro_screen.h"
 #include "../engine/asm_manager.h"
 #include "../engine/audio_manager.h"
+#include "../engine/collision_manager.h"
 #include "../engine/content_manager.h"
 #include "../engine/debug_manager.h"
 #include "../engine/enum_manager.h"
@@ -26,6 +27,7 @@ void screen_intro_screen_load()
 	struct_level_object *lo = &global_level_object;
 	unsigned char player_startY;
 	unsigned char level, screen;
+	unsigned char difficulty;
 
 	level = 0;
 	screen = 0;		//checkpoint
@@ -33,12 +35,21 @@ void screen_intro_screen_load()
 	//level = ho->hack_object_level;
 	//screen = ho->hack_object_screen;
 
-
 	engine_level_manager_load( level );
+
+	difficulty = difficulty_type_easier;
+	difficulty = difficulty_type_insane;
+	//difficulty = difficulty_type_harder;
+	engine_player_manager_startX( difficulty );
+	engine_collision_manager_load( difficulty );
+
+	
 	//engine_player_manager_startX( difficulty_type_easier );
 	//engine_player_manager_startX( difficulty_type_normal );
 	//engine_player_manager_startX( difficulty_type_harder );
-	engine_player_manager_startX( difficulty_type_insane );
+	//engine_player_manager_startX( difficulty_type_insane );
+	//engine_collision_manager_load( difficulty_type_insane );
+
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();
@@ -74,10 +85,12 @@ void screen_intro_screen_load()
 void screen_intro_screen_update( unsigned char *screen_type )
 {
 	struct_scroll_object *so = &global_scroll_object;
+	struct_player_object *po = &global_player_object;
 	struct_level_object *lo = &global_level_object;
 	unsigned char input;
 	unsigned char delta;
 	unsigned char value;
+	//unsigned char collision;
 	enum_scroll_state scroll_state;
 
 	//engine_player_manager_count();
@@ -153,6 +166,8 @@ void screen_intro_screen_update( unsigned char *screen_type )
 
 			engine_player_manager_right( delta );
 			engine_debug_manager_printout();
+
+			engine_collision_manager_player( po->lookX, 7 );
 		}
 	}
 
