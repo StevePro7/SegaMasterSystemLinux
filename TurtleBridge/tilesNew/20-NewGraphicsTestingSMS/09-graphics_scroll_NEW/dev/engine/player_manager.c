@@ -11,8 +11,8 @@
 struct_player_object global_player_object;
 
 static void updatePlayer();
-static void updatePlayerX();
-static void updatePlayerY();
+//static void updatePlayerX();
+//static void updatePlayerY();
 
 static signed char physics_array[] = { 0,-1,-1,-1,-1,-1,-1,-1,-1, -1, -1, -1, -1, -1, -1, -1, -1, -1,-1,-1,-1,-1,-1,-1,-1,-1,-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 0,0,0,0,0,0,0,0,1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, };
 
@@ -29,7 +29,7 @@ void engine_player_manager_init()
 	po->lookX = 0;
 	//po->posnX = 32;
 	//po->posnX = 96;
-//	po->posnX = 168;
+	//po->posnX = 168;
 	po->posnY = 0;
 	
 	//po->posnY = 128;
@@ -50,6 +50,11 @@ void engine_player_manager_startX( unsigned char difficulty )
 	struct_player_object *po = &global_player_object;
 	devkit_SMS_mapROMBank( FIXED_BANK );
 	po->startX = player_object_starts[ difficulty ];
+
+	// TODO delete
+	po->startX = 224;
+	// TODO delete
+
 	po->posnX = po->startX;
 	updatePlayer();
 }

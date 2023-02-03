@@ -167,7 +167,7 @@ void screen_intro_screen_update( unsigned char *screen_type )
 			engine_player_manager_right( delta );
 			engine_debug_manager_printout();
 
-			engine_collision_manager_player( po->lookX, 7 );
+			engine_collision_manager_player( po->lookX, po->tileY );
 		}
 	}
 
