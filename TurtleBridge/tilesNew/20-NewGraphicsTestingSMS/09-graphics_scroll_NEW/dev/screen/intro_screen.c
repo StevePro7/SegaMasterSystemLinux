@@ -173,7 +173,7 @@ void screen_intro_screen_update( unsigned char *screen_type )
 			devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
 			//engine_font_manager_data( collision, 8, 12 );
 
-			if( INVALID_NUMBER == collision )
+			if( INVALID_INDEX == collision )
 			{
 				engine_font_manager_text( "DEAD", 8, 13 );
 			}
