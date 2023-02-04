@@ -8,7 +8,9 @@ extern const unsigned char music_object_bank[];
 
 
 // Locale Manager.
+extern const unsigned char my_splash_text[];
 #define LOCALE_SPLASH_SCREEN	"(C)1987"
+#define LOCALE_TITLE1_SCREEN	"TRIBUTE"
 //extern const unsigned char *locale_object_texts[];
 
 // Level Manager.

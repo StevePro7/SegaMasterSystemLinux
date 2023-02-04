@@ -17,7 +17,8 @@ void screen_splash_screen_load()
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_splash();
 	engine_graphics_manager_image( splash_tiles__tilemap__bin, TILE_IMAGE_SCREEN, 4, 4, 24, 16 );
-	engine_util_manager_locale_text( LOCALE_SPLASH_SCREEN, 25, 23 );
+	engine_font_manager_text( LOCALE_SPLASH_SCREEN, 25, 23 );
+	//engine_util_manager_locale_text( my_splash_text, 25, 23 );
 	devkit_SMS_displayOn();
 }
 

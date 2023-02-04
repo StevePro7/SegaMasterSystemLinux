@@ -1,8 +1,9 @@
 M:title_screen
 F:G$screen_title_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_title_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Ltitle_screen.screen_title_screen_update$screen_type$1_0$91({2}DG,SC:U),B,1,4
-S:Ftitle_screen$tmp$0_0$0({2}SI:U),E,0,0
+S:Ltitle_screen.screen_title_screen_update$screen_type$1_0$90({2}DG,SC:U),B,1,4
+S:G$music_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$level_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$screen_splash_screen_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$screen_splash_screen_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_asm_manager_clear_VRAM$0_0$0({2}DF,SV:S),C,0,0
@@ -157,4 +158,3 @@ S:G$devkit_SMS_addSprite_bulk8$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_addSprite_bulk12$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_setTilePriority$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_isCollisionDetected$0_0$0({2}DF,SC:U),C,0,0
-S:Ftitle_screen$draw_title$0_0$0({2}DF,SV:S),C,0,0

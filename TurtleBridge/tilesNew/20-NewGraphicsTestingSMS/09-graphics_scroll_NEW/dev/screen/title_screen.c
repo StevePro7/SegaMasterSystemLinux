@@ -8,20 +8,17 @@
 #include "../engine/graphics_manager.h"
 //#include "../engine/input_manager.h"
 #include "../devkit/_sms_manager.h"
+#include "../banks/fixedbank.h"
 #include "../banks/bank3.h"
-
-static unsigned int tmp;
-static void draw_title(unsigned int tmp);
 
 void screen_title_screen_load()
 {
-	tmp = 144;
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_titles();
-
 	engine_graphics_manager_image( titles_tiles__tilemap__bin, TILE_IMAGE_SCREEN, 8, 0, 16, 12 );
-
+	engine_font_manager_text( "A TRIBUTE TO THE", 8, 22 );
+	engine_font_manager_text( "GREATEST DAREDEVIL", 7, 23 );
 	devkit_SMS_displayOn();
 }
 

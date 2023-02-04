@@ -17,6 +17,7 @@ const unsigned char music_object_bank[] =
 };
 
 // Locale Manager.
+const unsigned char my_splash_text[] = { 0x65, 0x65, 0x65 ,0x65 };
 //const unsigned char *locale_object_texts[] =
 //{
 //	"V1.0",

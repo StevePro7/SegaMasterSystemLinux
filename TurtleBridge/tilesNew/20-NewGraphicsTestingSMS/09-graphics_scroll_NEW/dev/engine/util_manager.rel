@@ -1,80 +1,87 @@
 ;!FILE util_manager.asm
 XL3
-H 9 areas 47 global symbols
+H 9 areas 4E global symbols
 M util_manager
 O -mz80
 S _engine_font_manager_text Ref000000
 S .__.ABS. Def000000
-A _CODE size 64 flags 0 addr 0
-S A$util_manager$100 Def000031
-S A$util_manager$110 Def00003C
-S A$util_manager$101 Def000032
+S _devkit_SMS_mapROMBank Ref000000
+A _CODE size 6C flags 0 addr 0
+S A$util_manager$110 Def00003A
 S G$engine_util_manager_locale_text$0$0 Def000000
-S A$util_manager$111 Def00003F
-S A$util_manager$102 Def000033
-S A$util_manager$121 Def000045
-S A$util_manager$112 Def000042
-S A$util_manager$103 Def000034
-S A$util_manager$140 Def000057
-S A$util_manager$113 Def000044
-S A$util_manager$104 Def000036
-S G$engine_util_manager_convertNibblesToByte$0$0 Def000046
-S G$engine_util_manager_convertByteToNibbles$0$0 Def00001F
-S A$util_manager$141 Def000059
-S A$util_manager$105 Def000038
-S A$util_manager$142 Def00005A
-S A$util_manager$143 Def00005B
-S A$util_manager$134 Def000046
-S A$util_manager$144 Def00005C
-S A$util_manager$135 Def00004A
-S A$util_manager$145 Def00005D
-S A$util_manager$136 Def00004C
+S A$util_manager$120 Def000047
+S A$util_manager$111 Def00003B
+S A$util_manager$102 Def000027
+S A$util_manager$130 Def00004D
+S A$util_manager$121 Def00004A
+S A$util_manager$112 Def00003C
+S A$util_manager$103 Def00002B
+S A$util_manager$122 Def00004C
+S A$util_manager$113 Def00003E
+S A$util_manager$104 Def00002D
+S G$engine_util_manager_convertNibblesToByte$0$0 Def00004E
+S G$engine_util_manager_convertByteToNibbles$0$0 Def000027
+S A$util_manager$150 Def000061
+S A$util_manager$114 Def000040
+S A$util_manager$105 Def000030
+S A$util_manager$151 Def000062
+S A$util_manager$106 Def000033
+S A$util_manager$152 Def000063
+S A$util_manager$143 Def00004E
+S A$util_manager$107 Def000036
+S A$util_manager$153 Def000064
+S A$util_manager$144 Def000052
+S A$util_manager$108 Def000038
+S A$util_manager$154 Def000065
+S A$util_manager$145 Def000054
+S A$util_manager$118 Def000041
 S A$util_manager$109 Def000039
-S A$util_manager$155 Def000063
-S A$util_manager$146 Def00005F
-S A$util_manager$137 Def00004F
-S A$util_manager$147 Def000062
-S A$util_manager$138 Def000052
-S A$util_manager$139 Def000055
+S A$util_manager$164 Def00006B
+S A$util_manager$155 Def000067
+S A$util_manager$146 Def000057
+S A$util_manager$119 Def000044
+S A$util_manager$156 Def00006A
+S A$util_manager$147 Def00005A
+S A$util_manager$148 Def00005D
+S A$util_manager$149 Def00005F
 S _engine_util_manager_locale_text Def000000
-S _engine_util_manager_convertNibblesToByte Def000046
-S _engine_util_manager_convertByteToNibbles Def00001F
+S _engine_util_manager_convertNibblesToByte Def00004E
+S _engine_util_manager_convertByteToNibbles Def000027
 S C$util_manager.c$10$0_0$90 Def000000
-S A$util_manager$60 Def000006
-S A$util_manager$70 Def000019
-S A$util_manager$61 Def000009
-S A$util_manager$80 Def00001E
-S A$util_manager$71 Def00001C
-S A$util_manager$62 Def00000A
-S A$util_manager$72 Def00001D
-S A$util_manager$63 Def00000B
-S C$util_manager.c$21$1_0$92 Def00001F
-S A$util_manager$64 Def00000E
-S C$util_manager.c$22$1_0$92 Def000039
-S XG$engine_util_manager_locale_text$0$0 Def00001E
-S C$util_manager.c$15$1_0$90 Def000000
-S A$util_manager$65 Def000010
-S C$util_manager.c$23$1_0$92 Def000045
-S C$util_manager.c$16$1_0$90 Def00001E
-S A$util_manager$93 Def00001F
-S A$util_manager$66 Def000011
-S A$util_manager$94 Def000023
-S A$util_manager$67 Def000012
-S A$util_manager$58 Def000000
-S XG$engine_util_manager_convertNibblesToByte$0$0 Def000063
-S XG$engine_util_manager_convertByteToNibbles$0$0 Def000045
-S A$util_manager$95 Def000025
-S A$util_manager$68 Def000015
-S A$util_manager$59 Def000004
-S C$util_manager.c$24$1_0$94 Def000046
-S A$util_manager$96 Def000028
-S A$util_manager$69 Def000018
-S A$util_manager$97 Def00002B
-S C$util_manager.c$26$1_0$94 Def000046
-S C$util_manager.c$19$1_0$92 Def00001F
-S A$util_manager$98 Def00002E
-S C$util_manager.c$27$1_0$94 Def000063
-S A$util_manager$99 Def000030
+S A$util_manager$60 Def000002
+S A$util_manager$70 Def000011
+S A$util_manager$61 Def000003
+S C$util_manager.c$12$1_0$90 Def000000
+S A$util_manager$80 Def000024
+S A$util_manager$71 Def000012
+S A$util_manager$62 Def000004
+S A$util_manager$81 Def000025
+S A$util_manager$72 Def000013
+S A$util_manager$63 Def000007
+S C$util_manager.c$21$1_0$92 Def000027
+S A$util_manager$73 Def000016
+S C$util_manager.c$22$1_0$92 Def000041
+S XG$engine_util_manager_locale_text$0$0 Def000026
+S C$util_manager.c$15$1_0$90 Def000008
+S A$util_manager$74 Def000018
+S C$util_manager.c$23$1_0$92 Def00004D
+S C$util_manager.c$16$1_0$90 Def000026
+S A$util_manager$75 Def000019
+S A$util_manager$76 Def00001A
+S A$util_manager$67 Def000008
+S XG$engine_util_manager_convertNibblesToByte$0$0 Def00006B
+S XG$engine_util_manager_convertByteToNibbles$0$0 Def00004D
+S A$util_manager$77 Def00001D
+S A$util_manager$68 Def00000C
+S A$util_manager$59 Def000000
+S C$util_manager.c$24$1_0$94 Def00004E
+S A$util_manager$78 Def000020
+S A$util_manager$69 Def00000E
+S A$util_manager$79 Def000021
+S C$util_manager.c$26$1_0$94 Def00004E
+S C$util_manager.c$19$1_0$92 Def000027
+S A$util_manager$89 Def000026
+S C$util_manager.c$27$1_0$94 Def00006B
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -85,25 +92,25 @@ A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
-T 00 00 00 FD 21 05 00 FD 39 FD 7E 00 F5 33 FD 7E
+T 00 00 00 3E 07 F5 33 CD 00 00 33 FD 21 05 00 FD
+R 00 00 00 00 02 08 02 00
+T 0D 00 00 39 FD 7E 00 F5 33 FD 7E FF FD 2B F5 33
 R 00 00 00 00
-T 0D 00 00 FF FD 2B F5 33 FD 6E FE FD 66 FF E5 CD
+T 1A 00 00 FD 6E FE FD 66 FF E5 CD 00 00 F1 F1 C9
+R 00 00 00 00 02 0B 00 00
+T 27 00 00
 R 00 00 00 00
-T 1A 00 00 00 00 F1 F1 C9
-R 00 00 00 00 02 03 00 00
-T 1F 00 00
+T 27 00 00 FD 21 03 00 FD 39 FD 4E 00 FD 46 01 FD
 R 00 00 00 00
-T 1F 00 00 FD 21 03 00 FD 39 FD 4E 00 FD 46 01 FD
+T 34 00 00 7E FF FD 2B 07 07 07 07 E6 0F E6 0F 02
 R 00 00 00 00
-T 2C 00 00 7E FF FD 2B 07 07 07 07 E6 0F E6 0F 02
+T 41 00 00 FD 4E 03 FD 46 04 FD 7E 00 E6 0F 02 C9
 R 00 00 00 00
-T 39 00 00 FD 4E 03 FD 46 04 FD 7E 00 E6 0F 02 C9
+T 4E 00 00
 R 00 00 00 00
-T 46 00 00
+T 4E 00 00 FD 21 04 00 FD 39 FD 4E 00 FD 46 01 FD
 R 00 00 00 00
-T 46 00 00 FD 21 04 00 FD 39 FD 4E 00 FD 46 01 FD
+T 5B 00 00 7E FE FD 2B FD 2B 87 87 87 87 FD 23 FD
 R 00 00 00 00
-T 53 00 00 7E FE FD 2B FD 2B 87 87 87 87 FD 23 FD
-R 00 00 00 00
-T 60 00 00 B6 00 02 C9
+T 68 00 00 B6 00 02 C9
 R 00 00 00 00
