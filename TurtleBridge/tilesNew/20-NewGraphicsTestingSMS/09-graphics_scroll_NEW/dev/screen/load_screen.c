@@ -20,7 +20,7 @@
 void screen_load_screen_load()
 {
 	unsigned char data;
-	data = 0b00000000;
+	data = 127;;
 
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
@@ -28,10 +28,10 @@ void screen_load_screen_load()
 	engine_content_manager_sprite();
 	//engine_graphics_manager_level();
 
-	//engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 1, 5, 8, 3 );
-	//engine_tile_manager_stevepro2( TILE_CLOUD_LARGE, 9, 5, 8, 3 );
-	//engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 17, 5, 8, 3 );
-	//engine_tile_manager_stevepro2( TILE_CLOUD_LARGE, 25, 5, 8, 3 );
+	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 1, 5, 8, 3 );
+	engine_tile_manager_stevepro2( TILE_CLOUD_LARGE, 9, 5, 8, 3 );
+	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 17, 5, 8, 3 );
+	engine_tile_manager_stevepro2( TILE_CLOUD_LARGE, 25, 5, 8, 3 );
 	
 	engine_graphics_manager_clouds( data );
 	devkit_SMS_displayOn();

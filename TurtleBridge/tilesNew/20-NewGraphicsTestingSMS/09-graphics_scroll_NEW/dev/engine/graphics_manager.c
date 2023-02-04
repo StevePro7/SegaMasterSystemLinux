@@ -5,7 +5,7 @@
 #include "../devkit/_sms_manager.h"
 #include "../banks/bank2.h"
 
-#define CLOUD_ROW_START		5
+#define CLOUD_ROW_START		4
 #define CLOUD_COL_START		1
 #define CLOUD_COL_WIDES		8
 

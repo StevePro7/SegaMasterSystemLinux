@@ -56,6 +56,8 @@ void screen_intro_screen_load()
 	engine_content_manager_bggame();
 	engine_content_manager_sprite();
 	engine_graphics_manager_sea();
+	engine_graphics_manager_title();
+	engine_graphics_manager_clouds( 88 );
 	//engine_tile_manager_stevepro( TILE_PLAY_TITLE, 4, 0, 24, 3 );
 	////engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 1, 4, 8, 3 );
 	////engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 9, 4, 8, 3 );
