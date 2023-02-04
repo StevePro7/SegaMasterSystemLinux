@@ -57,7 +57,7 @@ signed char engine_collision_manager_player( unsigned char lookX, unsigned char 
 	}
 
 	// TODO delete
-	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+	//devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
 	//engine_font_manager_data( collisionTile, 8, 6 );
 
 	lookup_platform = level_platforms[ collisionTile ];
@@ -80,7 +80,7 @@ signed char engine_collision_manager_player( unsigned char lookX, unsigned char 
 	
 
 	// TODO delete
-	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+	//devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
 	//engine_font_manager_data( collisionTile, 8, 9 );
 
 	lookup_platform = level_platforms[ collisionTile ];

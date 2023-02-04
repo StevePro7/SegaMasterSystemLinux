@@ -24,6 +24,7 @@ void screen_play_screen_load()
 	drawScreen();
 	engine_level_manager_show( 0 );
 	engine_player_manager_draw();
+	//engine_font_manager_text( "PRESS START", 10, 7 );
 	devkit_SMS_displayOn();
 
 	// TODO - wire this up "properly"
@@ -129,10 +130,10 @@ static void drawScreen()
 	//engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 18, 1, 8, 3 );
 	//engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 26, 0, 8, 3 );
 
-	engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 2, 5, 8, 3 );
-	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 10, 4, 8, 3 );
-	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 18, 4, 8, 3 );
-	engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 26, 5, 8, 3 );
+	//engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 2, 6, 8, 3 );
+	//engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 10, 5, 8, 3 );
+	//engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 18, 5, 8, 3 );
+	//engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 26, 4, 8, 3 );
 
 	//engine_tile_manager_stevepro( TILE_ISLAND_LEFT, 0, 8, 4, 14 );
 	//engine_tile_manager_stevepro( TILE_ISLAND_MIDD, 4, 8, 4, 14 );
