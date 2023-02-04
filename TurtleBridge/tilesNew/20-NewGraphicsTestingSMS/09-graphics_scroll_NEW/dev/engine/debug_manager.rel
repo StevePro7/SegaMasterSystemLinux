@@ -1,159 +1,182 @@
 ;!FILE debug_manager.asm
 XL3
-H 9 areas 96 global symbols
+H 9 areas AD global symbols
 M debug_manager
 O -mz80
 S _global_player_object Ref000000
 S _global_scroll_object Ref000000
 S _engine_font_manager_data Ref000000
 S .__.ABS. Def000000
+S _global_game_object Ref000000
 S _level_platforms Ref000000
 S _devkit_SMS_mapROMBank Ref000000
-A _CODE size B2 flags 0 addr 0
-S C$debug_manager.c$26$3_0$98 Def000034
-S C$debug_manager.c$28$3_0$98 Def000048
-S C$debug_manager.c$29$3_0$98 Def00004C
-S XG$engine_debug_manager_scrollout$0$0 Def000016
-S C$debug_manager.c$9$0_0$95 Def000000
-S G$engine_debug_manager_printout$0$0 Def000017
-S _engine_debug_manager_printout Def000017
-S A$debug_manager$200 Def00007F
-S A$debug_manager$110 Def000022
-S A$debug_manager$101 Def000017
-S A$debug_manager$210 Def00008C
-S A$debug_manager$201 Def000082
-S A$debug_manager$120 Def00002B
-S A$debug_manager$102 Def000019
-S A$debug_manager$220 Def00009A
-S A$debug_manager$211 Def00008F
-S A$debug_manager$202 Def000083
+A _CODE size CC flags 0 addr 0
+S C$debug_manager.c$81$1_0$99 Def0000B5
+S C$debug_manager.c$39$1_0$96 Def000094
+S C$debug_manager.c$82$1_0$99 Def0000BD
+S C$debug_manager.c$27$3_0$98 Def000022
+S C$debug_manager.c$83$1_0$99 Def0000CB
+S C$debug_manager.c$29$3_0$98 Def000027
+S C$debug_manager.c$78$1_0$99 Def0000B5
+S XG$engine_debug_manager_scrollout$0$0 Def0000CB
+S G$engine_debug_manager_printout$0$0 Def00001A
+S G$engine_debug_manager_initgame$0$0 Def000000
+S _engine_debug_manager_printout Def00001A
+S A$debug_manager$200 Def000079
+S A$debug_manager$110 Def00001E
+S A$debug_manager$201 Def00007C
+S A$debug_manager$111 Def000021
+S A$debug_manager$202 Def00007D
 S A$debug_manager$130 Def000034
-S A$debug_manager$121 Def00002C
-S A$debug_manager$103 Def00001A
-S A$debug_manager$230 Def0000A5
-S A$debug_manager$221 Def00009B
-S A$debug_manager$212 Def000090
-S A$debug_manager$140 Def000041
+S A$debug_manager$121 Def000027
+S A$debug_manager$230 Def0000A3
+S A$debug_manager$212 Def000087
+S A$debug_manager$203 Def00007E
+S A$debug_manager$140 Def00003C
 S A$debug_manager$131 Def000035
-S A$debug_manager$122 Def00002D
-S A$debug_manager$104 Def00001B
-S A$debug_manager$231 Def0000A7
-S A$debug_manager$222 Def00009C
-S A$debug_manager$150 Def00004B
-S A$debug_manager$141 Def000044
-S A$debug_manager$132 Def000037
-S A$debug_manager$123 Def000030
-S A$debug_manager$105 Def00001E
-S A$debug_manager$232 Def0000AA
-S A$debug_manager$223 Def00009F
-S A$debug_manager$160 Def000054
-S A$debug_manager$142 Def000045
-S A$debug_manager$133 Def000038
-S A$debug_manager$124 Def000031
-S A$debug_manager$115 Def000024
-S A$debug_manager$233 Def0000AB
-S A$debug_manager$224 Def0000A0
-S A$debug_manager$206 Def000084
+S A$debug_manager$122 Def000028
+S A$debug_manager$240 Def0000AF
+S A$debug_manager$222 Def000094
+S A$debug_manager$213 Def00008A
+S A$debug_manager$204 Def000080
+S A$debug_manager$150 Def00004A
+S A$debug_manager$141 Def00003E
+S A$debug_manager$132 Def000036
+S A$debug_manager$123 Def00002A
+S A$debug_manager$250 Def0000B4
+S A$debug_manager$241 Def0000B2
+S A$debug_manager$223 Def000097
+S A$debug_manager$214 Def00008D
+S A$debug_manager$205 Def000081
+S A$debug_manager$160 Def00004F
+S A$debug_manager$142 Def00003F
+S A$debug_manager$124 Def00002B
+S A$debug_manager$115 Def000022
+S A$debug_manager$242 Def0000B3
+S A$debug_manager$224 Def000098
+S A$debug_manager$215 Def00008E
+S A$debug_manager$206 Def000082
 S A$debug_manager$170 Def00005D
-S A$debug_manager$161 Def000055
-S A$debug_manager$143 Def000046
-S A$debug_manager$134 Def000039
-S A$debug_manager$125 Def000032
+S A$debug_manager$161 Def000050
+S A$debug_manager$143 Def000040
+S A$debug_manager$125 Def00002C
 S A$debug_manager$116 Def000025
-S A$debug_manager$234 Def0000AC
-S A$debug_manager$216 Def000091
-S A$debug_manager$207 Def000087
-S A$debug_manager$180 Def00006C
-S A$debug_manager$171 Def00005F
-S A$debug_manager$162 Def000058
-S A$debug_manager$144 Def000047
-S A$debug_manager$135 Def00003B
-S A$debug_manager$126 Def000033
-S A$debug_manager$117 Def000027
-S A$debug_manager$244 Def0000B1
-S A$debug_manager$235 Def0000AF
-S A$debug_manager$217 Def000094
-S A$debug_manager$208 Def00008A
-S A$debug_manager$190 Def000074
-S A$debug_manager$181 Def00006D
-S A$debug_manager$172 Def000060
-S A$debug_manager$163 Def000059
-S A$debug_manager$154 Def00004C
-S A$debug_manager$136 Def00003C
-S A$debug_manager$118 Def000028
-S A$debug_manager$109 Def00001F
-S A$debug_manager$236 Def0000B0
-S A$debug_manager$218 Def000095
-S A$debug_manager$209 Def00008B
-S A$debug_manager$182 Def00006E
-S A$debug_manager$173 Def000061
-S A$debug_manager$164 Def00005A
-S A$debug_manager$155 Def00004D
-S A$debug_manager$137 Def00003D
-S A$debug_manager$119 Def000029
-S XG$engine_debug_manager_printout$0$0 Def0000B1
-S A$debug_manager$228 Def0000A1
-S A$debug_manager$219 Def000097
-S A$debug_manager$183 Def00006F
-S A$debug_manager$174 Def000063
-S A$debug_manager$165 Def00005B
-S A$debug_manager$156 Def00004F
-S A$debug_manager$138 Def00003F
-S A$debug_manager$229 Def0000A4
-S A$debug_manager$175 Def000064
-S A$debug_manager$157 Def000050
+S A$debug_manager$107 Def00001A
+S _engine_debug_manager_initgame Def000000
+S A$debug_manager$270 Def0000BC
+S A$debug_manager$234 Def0000A4
+S A$debug_manager$225 Def00009A
+S A$debug_manager$216 Def00008F
+S A$debug_manager$207 Def000085
+S A$debug_manager$180 Def000066
+S A$debug_manager$171 Def00005E
+S A$debug_manager$162 Def000052
+S A$debug_manager$144 Def000042
+S A$debug_manager$126 Def00002E
+S A$debug_manager$108 Def00001C
+S A$debug_manager$280 Def0000C6
+S A$debug_manager$235 Def0000A7
+S A$debug_manager$226 Def00009D
+S A$debug_manager$217 Def000092
+S A$debug_manager$208 Def000086
+S A$debug_manager$181 Def000067
+S A$debug_manager$163 Def000053
+S A$debug_manager$154 Def00004B
+S A$debug_manager$145 Def000043
+S A$debug_manager$136 Def000037
+S A$debug_manager$127 Def00002F
+S A$debug_manager$109 Def00001D
+S A$debug_manager$290 Def0000CB
+S A$debug_manager$281 Def0000C9
+S A$debug_manager$236 Def0000A8
+S A$debug_manager$227 Def00009E
+S A$debug_manager$218 Def000093
+S A$debug_manager$182 Def000068
+S A$debug_manager$164 Def000054
+S A$debug_manager$155 Def00004C
+S A$debug_manager$146 Def000044
+S A$debug_manager$137 Def000038
+S A$debug_manager$128 Def000030
+S XG$engine_debug_manager_printout$0$0 Def0000B4
+S A$debug_manager$282 Def0000CA
+S A$debug_manager$237 Def0000AA
+S A$debug_manager$228 Def00009F
+S A$debug_manager$183 Def00006A
+S A$debug_manager$165 Def000056
+S A$debug_manager$156 Def00004E
+S A$debug_manager$147 Def000047
+S A$debug_manager$138 Def00003A
+S A$debug_manager$129 Def000033
+S A$debug_manager$274 Def0000BD
+S A$debug_manager$238 Def0000AD
+S A$debug_manager$229 Def0000A2
+S A$debug_manager$193 Def000073
+S A$debug_manager$184 Def00006B
+S A$debug_manager$175 Def00005F
+S A$debug_manager$166 Def000057
 S A$debug_manager$148 Def000048
-S A$debug_manager$139 Def000040
-S A$debug_manager$194 Def000076
-S A$debug_manager$176 Def000065
-S A$debug_manager$158 Def000051
+S A$debug_manager$139 Def00003B
+S A$debug_manager$275 Def0000C0
+S A$debug_manager$266 Def0000B5
+S A$debug_manager$239 Def0000AE
+S A$debug_manager$194 Def000074
+S A$debug_manager$185 Def00006C
+S A$debug_manager$176 Def000060
+S A$debug_manager$167 Def000058
 S A$debug_manager$149 Def000049
-S A$debug_manager$195 Def000079
-S A$debug_manager$177 Def000067
-S A$debug_manager$159 Def000053
-S A$debug_manager$196 Def00007A
+S A$debug_manager$276 Def0000C1
+S A$debug_manager$267 Def0000B7
+S A$debug_manager$195 Def000075
+S A$debug_manager$186 Def00006F
+S A$debug_manager$177 Def000062
+S A$debug_manager$168 Def00005B
+S A$debug_manager$277 Def0000C2
+S A$debug_manager$268 Def0000B8
+S A$debug_manager$196 Def000077
 S A$debug_manager$187 Def000070
-S A$debug_manager$178 Def000068
+S A$debug_manager$178 Def000063
 S A$debug_manager$169 Def00005C
-S A$debug_manager$197 Def00007B
+S A$debug_manager$278 Def0000C4
+S A$debug_manager$269 Def0000B9
 S A$debug_manager$188 Def000071
-S A$debug_manager$179 Def000069
-S A$debug_manager$198 Def00007D
+S A$debug_manager$179 Def000064
+S A$debug_manager$279 Def0000C5
 S A$debug_manager$189 Def000072
-S A$debug_manager$199 Def00007E
-S G$engine_debug_manager_scrollout$0$0 Def000000
-S A$debug_manager$70 Def00000B
-S A$debug_manager$61 Def000000
-S A$debug_manager$71 Def00000C
-S A$debug_manager$62 Def000002
-S A$debug_manager$72 Def00000D
+S XG$engine_debug_manager_initgame$0$0 Def000019
+S G$engine_debug_manager_scrollout$0$0 Def0000B5
+S A$debug_manager$62 Def000000
+S A$debug_manager$72 Def00000A
 S A$debug_manager$63 Def000003
-S A$debug_manager$73 Def00000F
-S A$debug_manager$64 Def000004
-S A$debug_manager$74 Def000010
-S A$debug_manager$65 Def000007
-S C$debug_manager.c$11$1_0$95 Def000000
-S A$debug_manager$75 Def000011
+S C$debug_manager.c$10$0_0$95 Def000000
+S A$debug_manager$91 Def000019
+S A$debug_manager$82 Def000014
+S A$debug_manager$73 Def00000D
+S A$debug_manager$83 Def000017
+S C$debug_manager.c$20$1_0$96 Def00001A
 S C$debug_manager.c$12$1_0$95 Def000000
-S A$debug_manager$85 Def000016
-S A$debug_manager$76 Def000014
-S C$debug_manager.c$13$1_0$95 Def000008
-S A$debug_manager$77 Def000015
-S C$debug_manager.c$22$1_0$96 Def000017
-S C$debug_manager.c$14$1_0$95 Def000016
-S A$debug_manager$69 Def000008
-S C$debug_manager.c$33$1_0$96 Def000076
-S C$debug_manager.c$34$1_0$96 Def000084
-S C$debug_manager.c$23$2_0$97 Def000070
-S C$debug_manager.c$30$3_0$98 Def00005C
-S C$debug_manager.c$16$1_0$96 Def000017
-S _engine_debug_manager_scrollout Def000000
-S C$debug_manager.c$35$1_0$96 Def000091
-S C$debug_manager.c$36$1_0$96 Def0000A1
-S C$debug_manager.c$23$3_0$98 Def00001F
-S C$debug_manager.c$18$1_0$96 Def000017
-S C$debug_manager.c$38$1_0$96 Def0000B1
-S C$debug_manager.c$25$3_0$98 Def000024
+S A$debug_manager$67 Def000005
+S C$debug_manager.c$13$1_0$95 Def000000
+S A$debug_manager$77 Def00000F
+S A$debug_manager$68 Def000008
+S C$debug_manager.c$40$1_0$96 Def0000A4
+S C$debug_manager.c$22$1_0$96 Def00001A
+S C$debug_manager.c$14$1_0$95 Def000005
+S A$debug_manager$78 Def000012
+S C$debug_manager.c$15$1_0$95 Def00000A
+S C$debug_manager.c$42$1_0$96 Def0000B4
+S C$debug_manager.c$16$1_0$95 Def00000F
+S C$debug_manager.c$30$3_0$98 Def000037
+S C$debug_manager.c$17$1_0$95 Def000014
+S _engine_debug_manager_scrollout Def0000B5
+S C$debug_manager.c$26$1_0$96 Def00001A
+S C$debug_manager.c$18$1_0$95 Def000019
+S C$debug_manager.c$32$3_0$98 Def00004B
+S C$debug_manager.c$37$1_0$96 Def000079
+S C$debug_manager.c$33$3_0$98 Def00004F
+S C$debug_manager.c$80$1_0$99 Def0000B5
+S C$debug_manager.c$38$1_0$96 Def000087
+S C$debug_manager.c$27$2_0$97 Def000073
+S C$debug_manager.c$34$3_0$98 Def00005F
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -164,35 +187,41 @@ A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
-T 00 00 00 3E 02 F5 33 CD 00 00 33 2A 04 00 AF 57
-R 00 00 00 00 02 08 05 00 02 0C 01 00
-T 0D 00 00 1E 08 D5 E5 CD 00 00 F1 F1 C9
-R 00 00 00 00 02 08 02 00
-T 17 00 00
+T 00 00 00 21 00 00 36 00 21 01 00 36 00 21 02 00
+R 00 00 00 00 02 04 04 00 02 09 04 00 02 0E 04 00
+T 0D 00 00 36 00 21 03 00 36 00 21 04 00 36 00 C9
+R 00 00 00 00 02 06 04 00 02 0B 04 00
+T 1A 00 00
 R 00 00 00 00
-T 17 00 00 3E 02 F5 33 CD 00 00 33 01 00 00 16 00
-R 00 00 00 00 02 08 05 00 02 0C 04 00
-T 24 00 00
+T 1A 00 00 3E 02 F5 33 CD 00 00 33 01 00 00 16 00
+R 00 00 00 00 02 08 06 00 02 0C 05 00
+T 27 00 00
 R 00 00 00 00
-T 24 00 00 6A 26 00 C5 D5 1E 0E D5 E5 CD 00 00 F1
+T 27 00 00 6A 26 00 C5 D5 1E 0E D5 E5 CD 00 00 F1
 R 00 00 00 00 02 0D 02 00
-T 31 00 00 F1 D1 C1 6A 26 00 09 6E 26 00 C5 D5 1E
+T 34 00 00 F1 D1 C1 6A 26 00 09 6E 26 00 C5 D5 1E
 R 00 00 00 00
-T 3E 00 00 12 D5 E5 CD 00 00 F1 F1 D1 C1 7A C6 10
+T 41 00 00 12 D5 E5 CD 00 00 F1 F1 D1 C1 7A C6 10
 R 00 00 00 00 02 07 02 00
-T 4B 00 00 5F 6B 26 00 C5 D5 1E 19 D5 E5 CD 00 00
+T 4E 00 00 5F 6B 26 00 C5 D5 1E 19 D5 E5 CD 00 00
 R 00 00 00 00 02 0E 02 00
-T 58 00 00 F1 F1 D1 C1 6B 26 00 09 6E 26 00 C5 D5
+T 5B 00 00 F1 F1 D1 C1 6B 26 00 09 6E 26 00 C5 D5
 R 00 00 00 00
-T 65 00 00 1E 1E D5 E5 CD 00 00 F1 F1 D1 C1 14 7A
+T 68 00 00 1E 1E D5 E5 CD 00 00 F1 F1 D1 C1 14 7A
 R 00 00 00 00 02 08 02 00
-T 72 00 00 D6 10 38 AE 2A 00 00 AF 57 1E 08 D5 E5
+T 75 00 00 D6 10 38 AE 2A 00 00 AF 57 1E 08 D5 E5
 R 00 00 00 00 02 08 00 00
-T 7F 00 00 CD 00 00 F1 F1 2A 02 00 11 08 01 D5 E5
+T 82 00 00 CD 00 00 F1 F1 2A 02 00 11 08 01 D5 E5
 R 00 00 00 00 02 04 02 00 02 09 00 00
-T 8C 00 00 CD 00 00 F1 F1 3A 04 00 4F 06 00 11
+T 8F 00 00 CD 00 00 F1 F1 3A 04 00 4F 06 00 11
 R 00 00 00 00 02 04 02 00 02 09 00 00
-T 98 00 00 08 02 D5 C5 CD 00 00 F1 F1 3A 07 00 4F
+T 9B 00 00 08 02 D5 C5 CD 00 00 F1 F1 3A 07 00 4F
 R 00 00 00 00 02 08 02 00 02 0D 00 00
-T A5 00 00 06 00 11 08 04 D5 C5 CD 00 00 F1 F1 C9
+T A8 00 00 06 00 11 08 04 D5 C5 CD 00 00 F1 F1 C9
 R 00 00 00 00 02 0B 02 00
+T B5 00 00
+R 00 00 00 00
+T B5 00 00 3E 02 F5 33 CD 00 00 33 2A 04 00 AF 57
+R 00 00 00 00 02 08 06 00 02 0C 01 00
+T C2 00 00 1E 08 D5 E5 CD 00 00 F1 F1 C9
+R 00 00 00 00 02 08 02 00

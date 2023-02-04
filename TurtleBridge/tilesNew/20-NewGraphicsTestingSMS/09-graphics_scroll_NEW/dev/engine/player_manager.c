@@ -36,8 +36,8 @@ void engine_player_manager_init()
 	//po->posnY = 132;
 	//po->frame = 4;
 	//po->frame = 0;
-	//po->player_state = player_state_isonground;
-	po->player_state = player_state_isintheair;
+	po->player_state = player_state_isonground;
+	//po->player_state = player_state_isintheair;
 	po->player_index = 0;
 	po->player_frame = 0;
 	po->player_count = 0;

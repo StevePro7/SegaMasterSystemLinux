@@ -7,16 +7,14 @@
 #include "../devkit/_sms_manager.h"
 #include "../banks/bank2.h"
 
-void engine_debug_manager_scrollout()
+void engine_debug_manager_initgame()
 {
-	struct_scroll_object *so = &global_scroll_object;
-	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
-	engine_font_manager_data( so->scrollFinish, 8, 0 );
-}
-
-void engine_debug_manager_loadgame()
-{
-
+	struct_game_object *go = &global_game_object;
+	go->game_difficulty = difficulty_type_easier;
+	go->game_world = 0;
+	go->game_round = 0;
+	go->game_level = 0;
+	go->game_point = 0;
 }
 
 void engine_debug_manager_printout()
@@ -75,3 +73,11 @@ void engine_debug_manager_printout()
 //	//engine_font_manager_data( lo->level_platforms[ po->tileX + 1 ], 16, 5 );
 //	//engine_font_manager_data( lo->level_platforms[ po->tileX + 2 ], 16, 6 );
 //}
+
+
+void engine_debug_manager_scrollout()
+{
+	struct_scroll_object *so = &global_scroll_object;
+	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+	engine_font_manager_data( so->scrollFinish, 8, 0 );
+}
