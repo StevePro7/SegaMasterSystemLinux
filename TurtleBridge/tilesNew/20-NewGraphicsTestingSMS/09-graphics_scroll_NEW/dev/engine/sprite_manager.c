@@ -3,19 +3,20 @@
 #include "font_manager.h"
 #include "global_manager.h"
 #include "../devkit/_sms_manager.h"
-#include <stdlib.h>
+//#include <stdlib.h>
 
-void engine_sprite_manager_clear( unsigned char ch )
-{
-	unsigned char row, col;
-	for( row = 0; row < 24; row++ )
-	{
-		for( col = 0; col < 32; col++ )
-		{
-			engine_font_manager_char( ch, col, row );
-		}
-	}
-}
+// TODO delete
+//void engine_sprite_manager_clear( unsigned char ch )
+//{
+//	unsigned char row, col;
+//	for( row = 0; row < 24; row++ )
+//	{
+//		for( col = 0; col < 32; col++ )
+//		{
+//			engine_font_manager_char( ch, col, row );
+//		}
+//	}
+//}
 
 void engine_sprite_manager_draw( unsigned char idx, unsigned char x, unsigned char y )
 {
