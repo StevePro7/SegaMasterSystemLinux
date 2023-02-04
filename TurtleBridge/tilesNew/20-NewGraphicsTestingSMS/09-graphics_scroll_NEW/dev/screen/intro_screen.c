@@ -38,9 +38,9 @@ void screen_intro_screen_load()
 	engine_level_manager_load( level );
 
 	//difficulty = difficulty_type_easier;
-	//difficulty = difficulty_type_normal;
-	difficulty = difficulty_type_insane;
-	difficulty = difficulty_type_harder;
+	difficulty = difficulty_type_normal;
+	//difficulty = difficulty_type_harder;
+	//difficulty = difficulty_type_insane;
 	engine_player_manager_startX( difficulty );
 	engine_collision_manager_load( difficulty );
 
