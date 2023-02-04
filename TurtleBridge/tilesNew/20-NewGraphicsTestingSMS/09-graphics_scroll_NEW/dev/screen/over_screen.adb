@@ -1,5 +1,8 @@
 M:over_screen
 F:G$screen_over_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lover_screen.screen_over_screen_load$byte$1_0$6({1}SC:U),R,0,0,[]
+S:Lover_screen.screen_over_screen_load$bit$1_0$6({1}SC:U),R,0,0,[]
+S:Lover_screen.screen_over_screen_load$res$1_0$6({1}SC:U),R,0,0,[]
 F:G$screen_over_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lover_screen.screen_over_screen_update$screen_type$1_0$7({2}DG,SC:U),B,1,4
 S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0

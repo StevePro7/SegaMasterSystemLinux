@@ -42,6 +42,33 @@ void engine_tile_manager_draw_columns( unsigned char tile_type, unsigned char x,
 	}
 }
 
+void engine_tile_manager_draw_cloud( unsigned int tileMap, unsigned char x, unsigned char y, bool flip )
+{
+	const unsigned char *tiles = bggame_tiles__tilemap__bin;
+	unsigned int idx;
+	unsigned int val;
+	unsigned char row, col, tmp;
+	const unsigned char w = 8;
+	const unsigned char h = 3;
+
+	for( row = 0; row < h; row++ )
+	{
+		for( col = 0; col < w; col++ )
+		{
+			tmp = flip ? ( w - col - 1 ) : col;
+			idx = tileMap + row * 2 * TILMAP_WIDE + col * 2;
+			val = tiles[ idx ];
+			if( flip )
+			{
+				// TODO - do I want to do this or pass unsigned int??
+				val |= flippedX;
+			}
+
+			devkit_SMS_setNextTileatXY( x + tmp, y + row );
+			devkit_SMS_setTile( ( val ) );
+		}
+	}
+}
 void engine_tile_manager_stevepro( unsigned int tileMap, unsigned char x, unsigned char y, unsigned char w, unsigned char h )
 {
 	const unsigned char *tiles = bggame_tiles__tilemap__bin;
@@ -71,7 +98,7 @@ void engine_tile_manager_stevepro2( unsigned int tileMap, unsigned char x, unsig
 	{
 		for( col = 0; col < w; col++ )
 		{
-			tmp = w - col;
+			tmp = w - col - 1;
 			idx = tileMap + row * 2 * TILMAP_WIDE + col * 2;
 			val = tiles[ idx ];
 			val |= devkit_TILE_FLIPPED_X();

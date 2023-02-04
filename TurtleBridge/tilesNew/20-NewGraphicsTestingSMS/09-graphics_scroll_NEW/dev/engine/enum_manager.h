@@ -87,4 +87,11 @@ typedef enum tag_enum_tile_type
 
 } enum_tile_type;
 
+typedef enum tag_enum_cloud_type
+{
+	cloud_type_large = 0,
+	cloud_type_small = 1,
+
+} enum_cloud_type;
+
 #endif//_ENUM_MANAGER_H_

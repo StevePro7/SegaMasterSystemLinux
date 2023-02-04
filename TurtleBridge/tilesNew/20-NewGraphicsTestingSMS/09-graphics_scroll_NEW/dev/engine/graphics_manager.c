@@ -1,22 +1,68 @@
 #include "graphics_manager.h"
+#include "enum_manager.h"
 #include "global_manager.h"
 #include "tile_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/bank2.h"
 
+#define CLOUD_ROW_START		9
+#define CLOUD_COL_START		1
+#define CLOUD_COL_WIDES		8
+
 void engine_graphics_manager_level()
 {
 	engine_graphics_manager_title();
-	engine_graphics_manager_clouds();
+	//engine_graphics_manager_clouds();
 	engine_graphics_manager_sea();
 }
 
-void engine_graphics_manager_clouds()
+void engine_graphics_manager_clouds( unsigned char data )
 {
-	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 1, 5, 8, 3 );
+	unsigned int cloud_tile_type[] = { TILE_CLOUD_LARGE , TILE_CLOUD_SMALL };
+	//unsigned char byte, bit;
+	unsigned char result;
+	unsigned char height;
+
+	result = cloud_type_large;
+	height = 1;
+
+	engine_tile_manager_draw_cloud( cloud_tile_type[ result ], CLOUD_COL_START + 0 * CLOUD_COL_WIDES, CLOUD_ROW_START + height, 0 );
+	engine_tile_manager_draw_cloud( cloud_tile_type[ result ], CLOUD_COL_START + 1 * CLOUD_COL_WIDES, CLOUD_ROW_START + height, 1 );
+
+	//result = cloud_type_small;
+	engine_tile_manager_draw_cloud( cloud_tile_type[ result ], CLOUD_COL_START + 2 * CLOUD_COL_WIDES, CLOUD_ROW_START + height, 0 );
+	engine_tile_manager_draw_cloud( cloud_tile_type[ result ], CLOUD_COL_START + 3 * CLOUD_COL_WIDES, CLOUD_ROW_START + height, 1 );
+	/*result = ( data >> 7 ) & 0x01;
+	if( cloud_type_large == result )
+	{
+		height = 1;
+		result = ( data >> 3 ) & 0x01;
+		if( result )
+		{
+			engine_tile_manager_stevepro( TILE_CLOUD_LARGE, CLOUD_COL_START + 0 * 4, CLOUD_ROW_START + height, 8, 3 );
+		}
+		else
+		{
+			engine_tile_manager_stevepro2( TILE_CLOUD_LARGE, CLOUD_COL_START + 0 * 4, CLOUD_ROW_START + height, 8, 3 );
+		}
+	}
+	else
+	{
+		height = ( data >> 6 ) & 0x01;
+		result = ( data >> 2 ) & 0x01;
+		if( result )
+		{
+			engine_tile_manager_stevepro( TILE_CLOUD_SMALL, CLOUD_COL_START + 0 * 4, CLOUD_ROW_START + height, 8, 3 );
+		}
+		else
+		{
+			engine_tile_manager_stevepro2( TILE_CLOUD_SMALL, CLOUD_COL_START + 0 * 4, CLOUD_ROW_START + height, 8, 3 );
+		}
+	}*/
+	/*engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 1, 5, 8, 3 );
 	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 9, 5, 8, 3 );
 	engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 17, 4, 8, 3 );
-	engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 25, 5, 8, 3 );
+	engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 25, 5, 8, 3 );*/
 }
 void engine_graphics_manager_cloud()
 {
