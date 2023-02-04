@@ -5,7 +5,7 @@
 #include "../devkit/_sms_manager.h"
 #include "../banks/bank2.h"
 
-#define CLOUD_ROW_START		9
+#define CLOUD_ROW_START		5
 #define CLOUD_COL_START		1
 #define CLOUD_COL_WIDES		8
 
@@ -22,16 +22,44 @@ void engine_graphics_manager_clouds( unsigned char data )
 	//unsigned char byte, bit;
 	unsigned char result;
 	unsigned char height;
+	unsigned char flip1, flip2;
 
-	result = cloud_type_large;
-	height = 1;
+	//result = cloud_type_large;
+	//height = 1;
 
-	engine_tile_manager_draw_cloud( cloud_tile_type[ result ], CLOUD_COL_START + 0 * CLOUD_COL_WIDES, CLOUD_ROW_START + height, 0 );
-	engine_tile_manager_draw_cloud( cloud_tile_type[ result ], CLOUD_COL_START + 1 * CLOUD_COL_WIDES, CLOUD_ROW_START + height, 1 );
+	result = ( data >> 7 ) & 0x01;
+	height = ( data >> 6 ) & 0x01;
+	flip1 = ( data >> 5 ) & 0x01;
+	flip2 = ( data >> 4 ) & 0x01;
+	if( cloud_type_large == result )
+	{
+		engine_tile_manager_draw_cloud( cloud_tile_type[ cloud_type_large ], CLOUD_COL_START + 0 * CLOUD_COL_WIDES, CLOUD_ROW_START + 1, flip1 );
+		engine_tile_manager_draw_cloud( cloud_tile_type[ cloud_type_small ], CLOUD_COL_START + 1 * CLOUD_COL_WIDES, CLOUD_ROW_START + height, flip2 );
+	}
+	else
+	{
+		engine_tile_manager_draw_cloud( cloud_tile_type[ cloud_type_small ], CLOUD_COL_START + 0 * CLOUD_COL_WIDES, CLOUD_ROW_START + height, flip1 );
+		engine_tile_manager_draw_cloud( cloud_tile_type[ cloud_type_large ], CLOUD_COL_START + 1 * CLOUD_COL_WIDES, CLOUD_ROW_START + 1, flip2 );
+	}
+
+	result = ( data >> 3 ) & 0x01;
+	height = ( data >> 2 ) & 0x01;
+	flip1 = ( data >> 1 ) & 0x01;
+	flip2 = ( data >> 0 ) & 0x01;
+	if( cloud_type_large == result )
+	{
+		engine_tile_manager_draw_cloud( cloud_tile_type[ cloud_type_large ], CLOUD_COL_START + 2 * CLOUD_COL_WIDES, CLOUD_ROW_START + 1, flip1 );
+		engine_tile_manager_draw_cloud( cloud_tile_type[ cloud_type_small ], CLOUD_COL_START + 3 * CLOUD_COL_WIDES, CLOUD_ROW_START + height, flip2 );
+	}
+	else
+	{
+		engine_tile_manager_draw_cloud( cloud_tile_type[ cloud_type_small ], CLOUD_COL_START + 2 * CLOUD_COL_WIDES, CLOUD_ROW_START + height, flip1 );
+		engine_tile_manager_draw_cloud( cloud_tile_type[ cloud_type_large ], CLOUD_COL_START + 3 * CLOUD_COL_WIDES, CLOUD_ROW_START + 1, flip2 );
+	}
 
 	//result = cloud_type_small;
-	engine_tile_manager_draw_cloud( cloud_tile_type[ result ], CLOUD_COL_START + 2 * CLOUD_COL_WIDES, CLOUD_ROW_START + height, 0 );
-	engine_tile_manager_draw_cloud( cloud_tile_type[ result ], CLOUD_COL_START + 3 * CLOUD_COL_WIDES, CLOUD_ROW_START + height, 1 );
+	//engine_tile_manager_draw_cloud( cloud_tile_type[ result ], CLOUD_COL_START + 2 * CLOUD_COL_WIDES, CLOUD_ROW_START + height, 0 );
+	//engine_tile_manager_draw_cloud( cloud_tile_type[ result ], CLOUD_COL_START + 3 * CLOUD_COL_WIDES, CLOUD_ROW_START + height, 1 );
 	/*result = ( data >> 7 ) & 0x01;
 	if( cloud_type_large == result )
 	{

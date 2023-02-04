@@ -28,16 +28,12 @@ void screen_load_screen_load()
 	engine_content_manager_sprite();
 	//engine_graphics_manager_level();
 
-	engine_font_manager_text( "12345678123456781234567812345678", 0, 8 );
 	//engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 1, 5, 8, 3 );
 	//engine_tile_manager_stevepro2( TILE_CLOUD_LARGE, 9, 5, 8, 3 );
 	//engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 17, 5, 8, 3 );
 	//engine_tile_manager_stevepro2( TILE_CLOUD_LARGE, 25, 5, 8, 3 );
 	
 	engine_graphics_manager_clouds( data );
-
-	
-
 	devkit_SMS_displayOn();
 
 
