@@ -8,8 +8,8 @@ extern const unsigned char music_object_bank[];
 
 
 // Locale Manager.
-// Locale Manager.
-extern const unsigned char *locale_object_texts[];
+#define LOCALE_SPLASH_SCREEN	"(C)1987"
+//extern const unsigned char *locale_object_texts[];
 
 // Level Manager.
 extern const unsigned char *level_object_data[];

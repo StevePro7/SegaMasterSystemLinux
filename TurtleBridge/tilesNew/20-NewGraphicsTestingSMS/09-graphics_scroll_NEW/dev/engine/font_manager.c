@@ -25,7 +25,7 @@ void engine_font_manager_text( unsigned char *text, unsigned char x, unsigned ch
 	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
 	while( '\0' != text[ idx ] )
 	{
-		signed char tile = text[ idx ] - TEXT_ROOT;
+		unsigned char tile = text[ idx ] - TEXT_ROOT;
 		devkit_SMS_setNextTileatXY( x++, y );
 		devkit_SMS_setTile( *pnt + tile );
 		idx++;

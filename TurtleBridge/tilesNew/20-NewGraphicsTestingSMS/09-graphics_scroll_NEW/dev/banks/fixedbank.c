@@ -17,12 +17,11 @@ const unsigned char music_object_bank[] =
 };
 
 // Locale Manager.
-const unsigned char *locale_object_texts[] =
-{
-	"V1.0",
-	"(C)1987",
-	
-};
+//const unsigned char *locale_object_texts[] =
+//{
+//	"V1.0",
+//	"(C)1987",
+//};
 
 // TODO re-instate in fixed bank
 // Player Manager.

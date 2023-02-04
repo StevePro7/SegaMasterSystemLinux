@@ -1,8 +1,8 @@
 M:start_screen
 F:G$screen_start_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_start_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lstart_screen.screen_start_screen_update$screen_type$1_0$95({2}DG,SC:U),B,1,4
-S:Lstart_screen.screen_start_screen_update$collisionTile$1_0$96({1}SC:U),R,0,0,[]
+S:Lstart_screen.screen_start_screen_update$screen_type$1_0$96({2}DG,SC:U),B,1,4
+S:Lstart_screen.screen_start_screen_update$collisionTile$1_0$97({1}SC:U),R,0,0,[]
 S:Fstart_screen$index$0_0$0({1}SC:U),E,0,0
 S:G$engine_asm_manager_clear_VRAM$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_collision_manager_load$0_0$0({2}DF,SV:S),C,0,0
@@ -20,6 +20,7 @@ S:G$engine_graphics_manager_image$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_hold$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move$0_0$0({2}DF,SC:U),C,0,0
+S:G$engine_util_manager_locale_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_util_manager_convertByteToNibbles$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_util_manager_convertNibblesToByte$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_init$0_0$0({2}DF,SV:S),C,0,0

@@ -1,6 +1,5 @@
 M:fixedbank
 S:G$music_object_data$0_0$0({4}DA2d,DG,SC:U),E,0,0
-S:G$locale_object_texts$0_0$0({4}DA2d,DG,SC:U),E,0,0
 S:G$level_object_data$0_0$0({22}DA11d,DG,SC:U),E,0,0
 S:G$player_object_starts$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$animeopening_psg$0_0$0({0}DA0d,SC:U),D,0,0
@@ -19,5 +18,3 @@ S:G$level1110_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$music_object_bank$0_0$0({2}DA2d,SC:U),D,0,0
 S:G$level_object_size$0_0$0({22}DA11d,SI:U),D,0,0
 S:G$level_object_bank$0_0$0({11}DA11d,SC:U),D,0,0
-S:Ffixedbank$__str_0$0_0$0({5}DA5d,SC:U),D,0,0
-S:Ffixedbank$__str_1$0_0$0({8}DA8d,SC:U),D,0,0

@@ -6,6 +6,7 @@
 #include "../engine/global_manager.h"
 #include "../engine/graphics_manager.h"
 //#include "../engine/input_manager.h"
+#include "../engine/util_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
 #include "../banks/bank2.h"
@@ -16,7 +17,7 @@ void screen_splash_screen_load()
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_splash();
 	engine_graphics_manager_image( splash_tiles__tilemap__bin, TILE_IMAGE_SCREEN, 4, 4, 24, 16 );
-	//engine_font_manager_text( ( unsigned char * ) locale_object_texts[ 1 ], 25, 23 );
+	engine_util_manager_locale_text( LOCALE_SPLASH_SCREEN, 25, 23 );
 	devkit_SMS_displayOn();
 }
 
