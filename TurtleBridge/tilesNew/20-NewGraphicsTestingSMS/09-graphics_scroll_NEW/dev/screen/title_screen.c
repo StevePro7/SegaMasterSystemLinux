@@ -17,8 +17,10 @@ void screen_title_screen_load()
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_titles();
 	engine_graphics_manager_image( titles_tiles__tilemap__bin, TILE_IMAGE_SCREEN, 8, 0, 16, 12 );
-	engine_font_manager_text( "A TRIBUTE TO THE", 8, 22 );
-	engine_font_manager_text( "GREATEST DAREDEVIL", 7, 23 );
+
+	engine_content_manager_sprite();
+	engine_font_manager_text( LOCALE_TITLE1_SCREEN, 8, 22 );
+	engine_font_manager_text( LOCALE_TITLE2_SCREEN, 7, 23 );
 	devkit_SMS_displayOn();
 }
 
