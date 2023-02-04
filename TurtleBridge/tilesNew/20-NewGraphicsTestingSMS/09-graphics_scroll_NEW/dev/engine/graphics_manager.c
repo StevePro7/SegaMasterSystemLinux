@@ -4,6 +4,47 @@
 #include "../devkit/_sms_manager.h"
 #include "../banks/bank2.h"
 
+void engine_graphics_manager_level()
+{
+	engine_graphics_manager_title();
+	engine_graphics_manager_clouds();
+	engine_graphics_manager_sea();
+}
+
+void engine_graphics_manager_clouds()
+{
+	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 1, 5, 8, 3 );
+	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 9, 5, 8, 3 );
+	engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 17, 4, 8, 3 );
+	engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 25, 5, 8, 3 );
+}
+void engine_graphics_manager_cloud()
+{
+
+}
+void engine_graphics_manager_title()
+{
+	engine_graphics_manager_image( bggame_tiles__tilemap__bin, TILE_PLAY_TITLE, 4, 0, 24, 3 );
+}
+
+void engine_graphics_manager_image( const unsigned char *tiles, unsigned int tileMap, unsigned char x, unsigned char y, unsigned char w, unsigned char h )
+{
+	unsigned int idx;
+	unsigned int val;
+	unsigned char row, col;
+
+	for( row = 0; row < h; row++ )
+	{
+		for( col = 0; col < w; col++ )
+		{
+			idx = tileMap + row * 2 * TILMAP_WIDE + col * 2;
+			val = tiles[ idx ];
+			devkit_SMS_setNextTileatXY( x + col, y + row );
+			devkit_SMS_setTile( ( val ) );
+		}
+	}
+}
+
 // NOTES
 /*
 OLD
@@ -40,15 +81,15 @@ void engine_graphics_manager_sea()
 	unsigned int idx, val;
 
 	// Original data - new data is 2x tiles offset
-	
+
 	// TODO use TILE_SEA as offset here!
-	unsigned char sea_lines[] = 
+	unsigned char sea_lines[] =
 	{
 		66, 66, 67, 68,
 		65, 65, 65, 73,
 		65, 71, 72, 65,
 	};
-	
+
 	for( row = 0; row < OCEANS_HIGH; row++ )
 	{
 		y = 21 + row;
@@ -68,42 +109,6 @@ void engine_graphics_manager_sea()
 				devkit_SMS_setNextTileatXY( x + col, y + 0 );
 				devkit_SMS_setTile( ( val ) );
 			}
-		}
-	}
-}
-
-//void engine_graphics_manager_seaX( unsigned char x )
-//{
-//	engine_tile_manager_stevepro( 128, x + 0, 21, 1, 1 );
-//	engine_tile_manager_stevepro( 128, x + 1, 21, 1, 1 );
-//	engine_tile_manager_stevepro( 130, x + 2, 21, 1, 1 );
-//	engine_tile_manager_stevepro( 132, x + 3, 21, 1, 1 );
-//
-//	engine_tile_manager_stevepro( 126, x + 0, 22, 1, 1 );
-//	engine_tile_manager_stevepro( 126, x + 1, 22, 1, 1 );
-//	engine_tile_manager_stevepro( 126, x + 2, 22, 1, 1 );
-//	engine_tile_manager_stevepro( 142, x + 3, 22, 1, 1 );
-//
-//	engine_tile_manager_stevepro( 126, x + 0, 23, 1, 1 );
-//	engine_tile_manager_stevepro( 138, x + 1, 23, 1, 1 );
-//	engine_tile_manager_stevepro( 140, x + 2, 23, 1, 1 );
-//	engine_tile_manager_stevepro( 126, x + 3, 23, 1, 1 );
-//}
-
-void engine_graphics_manager_image( const unsigned char *tiles, unsigned int tileMap, unsigned char x, unsigned char y, unsigned char w, unsigned char h )
-{
-	unsigned int idx;
-	unsigned int val;
-	unsigned char row, col;
-
-	for( row = 0; row < h; row++ )
-	{
-		for( col = 0; col < w; col++ )
-		{
-			idx = tileMap + row * 2 * TILMAP_WIDE + col * 2;
-			val = tiles[ idx ];
-			devkit_SMS_setNextTileatXY( x + col, y + row );
-			devkit_SMS_setTile( ( val ) );
 		}
 	}
 }

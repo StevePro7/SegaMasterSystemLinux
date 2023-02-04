@@ -1,13 +1,6 @@
 #include "init_screen.h"
-#include "../engine/asm_manager.h"
 #include "../engine/debug_manager.h"
 #include "../engine/enum_manager.h"
-#include "../engine/font_manager.h"
-#include "../engine/graphics_manager.h"
-#include "../engine/input_manager.h"
-#include "../engine/player_manager.h"
-#include "../engine/tile_manager.h"
-#include "../devkit/_sms_manager.h"
 
 void screen_init_screen_load()
 {
@@ -16,7 +9,7 @@ void screen_init_screen_load()
 
 void screen_init_screen_update( unsigned char *screen_type )
 {
-	*screen_type = screen_type_init;
+	*screen_type = screen_type_load;
 }
 void screen_init_screen_updateX( unsigned char *screen_type )
 {

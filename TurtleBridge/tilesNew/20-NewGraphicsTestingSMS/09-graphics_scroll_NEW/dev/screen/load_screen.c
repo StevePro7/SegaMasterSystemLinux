@@ -4,6 +4,7 @@
 #include "../engine/debug_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
+#include "../engine/graphics_manager.h"
 #include "../engine/level_manager.h"
 #include "../engine/player_manager.h"
 #include "../engine/tile_manager.h"
@@ -17,7 +18,8 @@ void screen_load_screen_load()
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();
 	engine_content_manager_sprite();
-	devkit_SMS_displayOff();
+	engine_graphics_manager_level();
+	devkit_SMS_displayOn();
 
 
 	//drawScreen();
