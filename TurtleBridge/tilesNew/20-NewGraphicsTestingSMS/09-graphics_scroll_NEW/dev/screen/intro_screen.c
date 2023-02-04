@@ -76,7 +76,7 @@ void screen_intro_screen_load()
 	engine_player_manager_draw();
 	devkit_SMS_displayOn();
 	engine_scroll_manager_load( screen, lo->level_size );
-	//engine_music_manager_play( 1 );
+	engine_music_manager_play( 1 );
 
 	//devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
 	//engine_font_manager_data( ho->hack_object_level, 12, 12 );
@@ -175,14 +175,14 @@ void screen_intro_screen_update( unsigned char *screen_type )
 			devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
 			//engine_font_manager_data( collision, 8, 12 );
 
-			if( INVALID_INDEX == collision )
-			{
-				engine_font_manager_text( "DEAD", 8, 13 );
-			}
-			else
-			{
-				engine_font_manager_text( "    ", 8, 13 );
-			}
+			//if( INVALID_INDEX == collision )
+			//{
+			//	engine_font_manager_text( "DEAD", 8, 13 );
+			//}
+			//else
+			//{
+			//	engine_font_manager_text( "    ", 8, 13 );
+			//}
 		}
 	}
 
