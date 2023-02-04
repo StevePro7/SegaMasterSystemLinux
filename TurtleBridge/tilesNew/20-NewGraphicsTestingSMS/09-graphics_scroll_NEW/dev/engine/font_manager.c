@@ -11,6 +11,8 @@ void engine_font_manager_char( unsigned char ch, unsigned char x, unsigned char 
 {
 	const unsigned char *pnt = bggame_tiles__tilemap__bin;
 	unsigned char tile = ch - TEXT_ROOT;
+
+	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
 	devkit_SMS_setNextTileatXY( x, y );
 	devkit_SMS_setTile( *pnt + tile );
 }
@@ -20,6 +22,7 @@ void engine_font_manager_text( unsigned char *text, unsigned char x, unsigned ch
 	const unsigned char *pnt = bggame_tiles__tilemap__bin;
 	unsigned char idx = 0;
 
+	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
 	while( '\0' != text[ idx ] )
 	{
 		signed char tile = text[ idx ] - TEXT_ROOT;
@@ -39,8 +42,8 @@ void engine_font_manager_data( unsigned int data, unsigned char x, unsigned char
 	unsigned int quotient = 0;
 	unsigned char remainder = 0;
 
-	char hold[ DATA_LONG ];
-	//devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+	unsigned char hold[ DATA_LONG ];
+	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
 	for( idx = 0; idx < DATA_LONG; ++idx )
 	{
 		quotient = data / UNIT_ROOT;
@@ -66,10 +69,10 @@ void engine_font_manager_zero( unsigned int data, unsigned char x, unsigned char
 	const unsigned char *pnt = bggame_tiles__tilemap__bin;
 
 	unsigned char idx;
-	//signed char tile;
 	unsigned char tile;
 
-	char hold[ DATA_LONG ];
+	unsigned char hold[ DATA_LONG ];
+	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
 	for( idx = 0; idx < DATA_LONG; ++idx )
 	{
 		hold[ idx ] = data % UNIT_ROOT;
