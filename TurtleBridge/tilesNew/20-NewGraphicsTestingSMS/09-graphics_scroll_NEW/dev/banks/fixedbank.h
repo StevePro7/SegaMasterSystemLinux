@@ -7,6 +7,10 @@ extern const unsigned char *music_object_data[];
 extern const unsigned char music_object_bank[];
 
 
+// Locale Manager.
+// Locale Manager.
+extern const unsigned char *locale_object_texts[];
+
 // Level Manager.
 extern const unsigned char *level_object_data[];
 extern const unsigned int level_object_size[];

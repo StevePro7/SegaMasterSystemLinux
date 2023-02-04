@@ -1,0 +1,9 @@
+M:util_manager
+F:G$engine_function_manager_convertByteToNibbles$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lutil_manager.engine_function_manager_convertByteToNibbles$byte$1_0$3({1}SC:U),B,1,4
+S:Lutil_manager.engine_function_manager_convertByteToNibbles$upper_nibble$1_0$3({2}DG,SC:U),B,1,5
+S:Lutil_manager.engine_function_manager_convertByteToNibbles$lower_nibble$1_0$3({2}DG,SC:U),B,1,7
+F:G$engine_function_manager_convertNibblesToByte$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lutil_manager.engine_function_manager_convertNibblesToByte$upper_nibble$1_0$5({1}SC:U),B,1,4
+S:Lutil_manager.engine_function_manager_convertNibblesToByte$lower_nibble$1_0$5({1}SC:U),B,1,5
+S:Lutil_manager.engine_function_manager_convertNibblesToByte$byte$1_0$5({2}DG,SC:U),B,1,6

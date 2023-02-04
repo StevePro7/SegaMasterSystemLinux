@@ -19,6 +19,9 @@
 
 #define MAX_TILE_OBJECTS	16
 
+#define INVALID_INDEX		-1
 #define INVALID_NUMBER		-1
+
+#define TILE_IMAGE_SCREEN	144
 
 #endif//_GLOBAL_MANAGER_H_

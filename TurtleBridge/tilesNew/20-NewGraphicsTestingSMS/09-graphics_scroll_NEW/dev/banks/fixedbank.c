@@ -16,6 +16,14 @@ const unsigned char music_object_bank[] =
 	mastertracker_psg_bank,
 };
 
+// Locale Manager.
+const unsigned char *locale_object_texts[] =
+{
+	"V1.0",
+	"(C)1987",
+	
+};
+
 // TODO re-instate in fixed bank
 // Player Manager.
 //const unsigned char player_object_starts[] = { 32, 48, 64, 80, 96 };

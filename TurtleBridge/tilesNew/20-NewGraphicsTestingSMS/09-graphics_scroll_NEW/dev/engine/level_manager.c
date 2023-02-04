@@ -2,8 +2,8 @@
 #include "enum_manager.h"
 #include "font_manager.h"
 #include "global_manager.h"
-#include "maths_manager.h"
 #include "tile_manager.h"
+#include "util_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
 #include "../banks/bank6.h"
@@ -57,7 +57,7 @@ void engine_level_manager_draw( unsigned int scrollColumn )
 
 	devkit_SMS_mapROMBank( lo->level_bank );
 	level_data = lo->level_data[ scrollColumn ];
-	engine_function_manager_convertByteToNibbles( level_data, &level_column, &level_object );
+	engine_util_manager_convertByteToNibbles( level_data, &level_column, &level_object );
 
 	level_platform = tiles_object_platform[ level_object ];
 	level_platforms[ lo->colunn_draw ] = level_platform;
