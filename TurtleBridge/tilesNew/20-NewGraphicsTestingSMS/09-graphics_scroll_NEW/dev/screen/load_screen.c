@@ -18,7 +18,8 @@ void screen_load_screen_load()
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();
 	engine_content_manager_sprite();
-	engine_graphics_manager_level();
+	//engine_graphics_manager_level();
+	engine_graphics_manager_cloud();
 	devkit_SMS_displayOn();
 
 

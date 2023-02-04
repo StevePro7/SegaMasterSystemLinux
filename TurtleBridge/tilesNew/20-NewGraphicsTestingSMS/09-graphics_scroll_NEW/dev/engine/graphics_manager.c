@@ -20,7 +20,10 @@ void engine_graphics_manager_clouds()
 }
 void engine_graphics_manager_cloud()
 {
-
+	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 1, 5, 8, 3 );
+	engine_tile_manager_stevepro2( TILE_CLOUD_LARGE, 17, 5, 8, 3 );
+	engine_tile_manager_stevepro2( TILE_CLOUD_SMALL, 9, 4, 8, 3 );
+	engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 25, 5, 8, 3 );
 }
 void engine_graphics_manager_title()
 {

@@ -1,7 +1,7 @@
 M:graphics_manager
 F:G$engine_graphics_manager_level$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_graphics_manager_clouds$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-F:G$engine_graphics_manager_cloud$0_0$0({2}DF,SV:S),C,0,0,0,0,0
+F:G$engine_graphics_manager_cloud$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_graphics_manager_title$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_graphics_manager_image$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lgraphics_manager.engine_graphics_manager_image$tiles$1_0$90({2}DG,SC:U),B,1,4
@@ -31,6 +31,7 @@ S:Lgraphics_manager.engine_graphics_manager_sea$sloc0$0_1$0({1}SC:U),B,1,-2
 S:Lgraphics_manager.engine_graphics_manager_sea$sloc1$0_1$0({1}SC:U),B,1,-1
 S:G$engine_tile_manager_draw_columns$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_stevepro$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_tile_manager_stevepro2$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOnFeature$0_0$0({2}DF,SV:S),C,0,0
@@ -173,4 +174,3 @@ S:G$devkit_SMS_addSprite_bulk8$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_addSprite_bulk12$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_setTilePriority$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_isCollisionDetected$0_0$0({2}DF,SC:U),C,0,0
-S:G$engine_graphics_manager_cloud$0_0$0({2}DF,SV:S),C,0,0
