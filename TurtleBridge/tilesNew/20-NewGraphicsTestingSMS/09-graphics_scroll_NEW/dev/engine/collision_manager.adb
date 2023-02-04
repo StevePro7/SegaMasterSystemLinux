@@ -6,7 +6,7 @@ S:Lcollision_manager.engine_collision_manager_player$lookX$1_0$98({1}SC:U),B,1,4
 S:Lcollision_manager.engine_collision_manager_player$tileY$1_0$98({1}SC:U),B,1,5
 S:Lcollision_manager.engine_collision_manager_player$po$1_0$99({2}DG,STtag_struct_player_object:S),R,0,0,[]
 S:Lcollision_manager.engine_collision_manager_player$lo$1_0$99({2}DG,STtag_struct_level_object:S),R,0,0,[]
-S:Lcollision_manager.engine_collision_manager_player$lookup_platform$1_0$99({1}SC:U),R,0,0,[e]
+S:Lcollision_manager.engine_collision_manager_player$lookup_platform$1_0$99({1}SC:U),R,0,0,[a]
 S:Lcollision_manager.engine_collision_manager_player$player_platform$1_0$99({1}SC:U),R,0,0,[c]
 S:Lcollision_manager.engine_collision_manager_player$collisionTile$1_0$99({1}SC:S),R,0,0,[b]
 T:Fcollision_manager$tag_struct_player_object[({0}S:S$posnX$0_0$0({2}SI:U),Z,0,0)({2}S:S$tileX$0_0$0({2}SI:U),Z,0,0)({4}S:S$lookX$0_0$0({1}SC:U),Z,0,0)({5}S:S$startX$0_0$0({1}SC:U),Z,0,0)({6}S:S$posnY$0_0$0({1}SC:U),Z,0,0)({7}S:S$tileY$0_0$0({1}SC:U),Z,0,0)({8}S:S$drawX$0_0$0({1}SC:U),Z,0,0)({9}S:S$drawY$0_0$0({1}SC:U),Z,0,0)({10}S:S$player_state$0_0$0({1}SC:U),Z,0,0)({11}S:S$player_index$0_0$0({1}SC:U),Z,0,0)({12}S:S$player_frame$0_0$0({1}SC:U),Z,0,0)({13}S:S$player_count$0_0$0({2}SI:U),Z,0,0)]

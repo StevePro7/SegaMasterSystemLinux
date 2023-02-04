@@ -37,9 +37,10 @@ void screen_intro_screen_load()
 
 	engine_level_manager_load( level );
 
-	difficulty = difficulty_type_easier;
-	//difficulty = difficulty_type_insane;
-	//difficulty = difficulty_type_harder;
+	//difficulty = difficulty_type_easier;
+	//difficulty = difficulty_type_normal;
+	difficulty = difficulty_type_insane;
+	difficulty = difficulty_type_harder;
 	engine_player_manager_startX( difficulty );
 	engine_collision_manager_load( difficulty );
 
@@ -78,7 +79,7 @@ void screen_intro_screen_load()
 	//devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
 	//engine_font_manager_data( ho->hack_object_level, 12, 12 );
 	//engine_font_manager_data( ho->hack_object_screen, 12, 13 );
-	engine_debug_manager_printout();
+	//engine_debug_manager_printout();
 	complete = false;
 }
 
@@ -165,12 +166,12 @@ void screen_intro_screen_update( unsigned char *screen_type )
 			}
 
 			engine_player_manager_right( delta );
-			engine_debug_manager_printout();
+			//engine_debug_manager_printout();
 
 			collision = engine_collision_manager_player( po->lookX, po->tileY );
 
 			devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
-			engine_font_manager_data( collision, 8, 12 );
+			//engine_font_manager_data( collision, 8, 12 );
 
 			if( INVALID_NUMBER == collision )
 			{
@@ -178,7 +179,7 @@ void screen_intro_screen_update( unsigned char *screen_type )
 			}
 			else
 			{
-				engine_font_manager_text( "XXXX", 8, 13 );
+				engine_font_manager_text( "    ", 8, 13 );
 			}
 		}
 	}
