@@ -89,3 +89,21 @@ void engine_graphics_manager_sea()
 //	engine_tile_manager_stevepro( 140, x + 2, 23, 1, 1 );
 //	engine_tile_manager_stevepro( 126, x + 3, 23, 1, 1 );
 //}
+
+void engine_graphics_manager_image( const unsigned char *tiles, unsigned int tileMap, unsigned char x, unsigned char y, unsigned char w, unsigned char h )
+{
+	unsigned int idx;
+	unsigned int val;
+	unsigned char row, col;
+
+	for( row = 0; row < h; row++ )
+	{
+		for( col = 0; col < w; col++ )
+		{
+			idx = tileMap + row * 2 * TILMAP_WIDE + col * 2;
+			val = tiles[ idx ];
+			devkit_SMS_setNextTileatXY( x + col, y + row );
+			devkit_SMS_setTile( ( val ) );
+		}
+	}
+}
