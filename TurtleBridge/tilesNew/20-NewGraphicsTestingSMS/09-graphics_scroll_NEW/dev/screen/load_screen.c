@@ -42,6 +42,10 @@ void screen_load_screen_load()
 	
 	player_loadY = level_platforms[ po->lookX ];
 	engine_player_manager_loadY( player_loadY );
+
+	// TODO delete 
+	engine_player_manager_loadY( 16 );
+	// TODO delete 
 	engine_player_manager_draw();
 
 	// TODO delete
@@ -74,8 +78,8 @@ void screen_load_screen_update( unsigned char *screen_type )
 
 	//*screen_type = screen_type_ready;
 	//*screen_type = screen_type_play;
-	//*screen_type = screen_type_dead;
-	*screen_type = screen_type_over;
+	*screen_type = screen_type_dead;
+	//*screen_type = screen_type_over;
 }
 
 //
