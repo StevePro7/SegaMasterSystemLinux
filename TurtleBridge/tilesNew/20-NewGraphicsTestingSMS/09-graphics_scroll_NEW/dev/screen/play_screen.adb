@@ -46,7 +46,7 @@ S:G$engine_level_manager_draw_column$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_initX$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_loadX$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_player_manager_initY$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_player_manager_loadY$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_update2$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_update3$0_0$0({2}DF,SV:S),C,0,0
