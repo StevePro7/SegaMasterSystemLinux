@@ -17,10 +17,11 @@ void engine_debug_manager_initgame()
 	go->game_difficulty = difficulty_type_insane;
 	go->game_world = 0;
 	go->game_round = 0;
-	go->game_level = 11;
+	go->game_level = 12;
 	go->game_point = 0;
 	go->game_cloud = 88;		// TODO will be random
-	go->game_isgod = false;
+	//go->game_isgod = false;
+	go->game_isgod = true;
 }
 
 void engine_debug_manager_printout()

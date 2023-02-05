@@ -10,8 +10,8 @@ S .__.ABS. Def000000
 S _level1100_txt Ref000000
 S _level1110_txt Ref000000
 S _level1101_txt Ref000000
-S _level1111_txt Ref000000
 S _level1102_txt Ref000000
+S _level1112_txt Ref000000
 S _level1103_txt Ref000000
 S _level1104_txt Ref000000
 S _level1105_txt Ref000000
@@ -28,9 +28,9 @@ A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
-A _BANK7 size 2A flags 0 addr 0
-S _level_object_bank Def00001E
-S G$level_object_bank$0_0$0 Def00001E
+A _BANK7 size 2D flags 0 addr 0
+S _level_object_bank Def000020
+S G$level_object_bank$0_0$0 Def000020
 S _music_object_bank Def000000
 S _my_splash_text Def000002
 S G$music_object_bank$0_0$0 Def000000
@@ -63,9 +63,11 @@ T 06 00 00 80 01 80 01 80 01 40 00 40 00 80 01
 R 00 00 07 00
 T 12 00 00 80 01 80 01 80 00 80 01 80 01 80 01
 R 00 00 07 00
-T 1E 00 00
+T 1E 00 00 80 01
 R 00 00 07 00
-T 1E 00 00 06 06 06 06 06 06 06 06 06 06 06 06
+T 20 00 00
+R 00 00 07 00
+T 20 00 00 06 06 06 06 06 06 06 06 06 06 06 06 06
 R 00 00 07 00
 T 00 00 00
 R 00 00 08 00
@@ -74,10 +76,10 @@ R 00 00 08 00 02 03 03 00 02 05 01 00
 T 04 00 00
 R 00 00 08 00
 T 04 00 00 00 00 00 00 00 00
-R 00 00 08 00 02 03 05 00 02 05 07 00 02 07 09 00
+R 00 00 08 00 02 03 05 00 02 05 07 00 02 07 08 00
 T 0A 00 00 00 00 00 00 00 00
 R 00 00 08 00 02 03 0A 00 02 05 0B 00 02 07 0C 00
 T 10 00 00 00 00 00 00 00 00
 R 00 00 08 00 02 03 0D 00 02 05 0E 00 02 07 00 00
 T 16 00 00 00 00 00 00 00 00
-R 00 00 08 00 02 03 02 00 02 05 06 00 02 07 08 00
+R 00 00 08 00 02 03 02 00 02 05 06 00 02 07 09 00

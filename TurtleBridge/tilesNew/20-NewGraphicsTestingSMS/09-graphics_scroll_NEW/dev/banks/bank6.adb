@@ -11,3 +11,4 @@ S:G$level1108_txt$0_0$0({128}DA128d,SC:U),D,0,0
 S:G$level1109_txt$0_0$0({384}DA384d,SC:U),D,0,0
 S:G$level1110_txt$0_0$0({384}DA384d,SC:U),D,0,0
 S:G$level1111_txt$0_0$0({384}DA384d,SC:U),D,0,0
+S:G$level1112_txt$0_0$0({384}DA384d,SC:U),D,0,0
