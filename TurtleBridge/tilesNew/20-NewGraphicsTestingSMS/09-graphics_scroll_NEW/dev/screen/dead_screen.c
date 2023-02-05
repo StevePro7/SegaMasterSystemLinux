@@ -69,7 +69,7 @@ void screen_dead_screen_update( unsigned char *screen_type )
 				engine_font_manager_text( "    ", 8, 8 );
 			}
 		}
-		else if( player_state_isintheair == po->player_state )
+		if( player_state_isintheair == po->player_state )
 		{
 			deltaX = 2;
 			engine_player_manager_right( deltaX );
@@ -83,7 +83,7 @@ void screen_dead_screen_update( unsigned char *screen_type )
 				po->player_index++;
 			}
 
-			engine_debug_manager_printout();
+			//engine_debug_manager_printout();
 			if( po->posnY >= 168 )
 			{
 				po->posnY = 168;
@@ -101,12 +101,12 @@ void screen_dead_screen_update( unsigned char *screen_type )
 				}
 			}
 		}
-		else if( player_state_isnowdying == po->player_state )
+		if( player_state_isnowdying == po->player_state )
 		{
 			engine_player_manager_right( deltaX );
 		}
 
-		engine_debug_manager_printout();
+		//engine_debug_manager_printout();
 	}
 
 	engine_player_manager_draw();
