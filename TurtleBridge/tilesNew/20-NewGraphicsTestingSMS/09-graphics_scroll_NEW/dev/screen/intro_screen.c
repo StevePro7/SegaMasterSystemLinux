@@ -30,7 +30,7 @@ void screen_intro_screen_load()
 	unsigned char difficulty;
 
 	level = 10;
-	screen = 0;		//checkpoint
+	screen = 2;		//checkpoint
 
 	//level = ho->hack_object_level;
 	//screen = ho->hack_object_screen;
@@ -71,7 +71,6 @@ void screen_intro_screen_load()
 	engine_player_manager_loadX( screen );
 
 //	player_startY = lo->level_platforms[ po->tileX ];
-	//player_startY = level_platforms[ po->tileX ];			// BUG
 	player_startY = level_platforms[ po->lookX ];
 	engine_player_manager_initY( player_startY );
 	engine_player_manager_draw();
