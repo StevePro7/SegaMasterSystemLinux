@@ -194,10 +194,10 @@ void engine_player_manager_left()
 	updatePlayerX();
 }
 
-void engine_player_manager_right( unsigned char delta )
+void engine_player_manager_right( unsigned char deltaX )
 {
 	struct_player_object *po = &global_player_object;
-	po->posnX = po->posnX + delta;
+	po->posnX += deltaX;
 	updatePlayerX();
 	//po->tileX = po->posnX >> 3;
 
@@ -211,13 +211,20 @@ void engine_player_manager_right( unsigned char delta )
 	////engine_font_manager_data( po->tileX, 24, 17 );
 }
 
+void engine_player_manager_down( unsigned char deltaY )
+{
+	struct_player_object *po = &global_player_object;
+	po->posnY += deltaY;
+	updatePlayerY();
+}
+
 void engine_player_manager_up()
 {
 	struct_player_object *po = &global_player_object;
 	po->posnY--;
 	updatePlayerY();
 }
-void engine_player_manager_down()
+void engine_player_manager_downX()
 {
 	struct_player_object *po = &global_player_object;
 	po->posnY++;

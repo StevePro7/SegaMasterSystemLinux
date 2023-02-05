@@ -22,55 +22,77 @@ void screen_dead_screen_update( unsigned char *screen_type )
 	struct_player_object *po = &global_player_object;
 	struct_level_object *lo = &global_level_object;
 	unsigned char input;
-	unsigned char delta;
+	unsigned char deltaX;
 	unsigned char value;
 	signed char collision;
+	signed char deltaY;	//gravity;
 	enum_scroll_state scroll_state;
 
-	delta = 0;
+	deltaX = 0;
 	input = engine_input_manager_move( input_type_right );
 	if( input )
 	{
-		delta = 1;
+		deltaX = 1;
 	}
 
-	if( 0 == delta )
+	if( 0 == deltaX )
 	{
-		delta = 0;
-		engine_scroll_manager_update( delta );
+		deltaX = 0;
+		engine_scroll_manager_update( deltaX );
 	}
 	
-	if( delta > 0 )
+	if( deltaX > 0 )
 	{
-		for( value = 0; value < delta; value++ )
+		for( value = 0; value < deltaX; value++ )
 		{
 			scroll_state = engine_scroll_manager_update( 1 );
 			if( scroll_state_tile == scroll_state )
 			{
 				engine_level_manager_draw_column( so->scrollColumn );
 			}
-			//else if( scroll_state_comp == scroll_state )
-			//{
-			//	complete = scroll_state_comp == scroll_state;
-			//	if( complete )
-			//	{
-			//		break;
-			//	}
-			//}
 		}
 
-		engine_player_manager_right( delta );
+		if( player_state_isonground == po->player_state )
+		{
+			engine_player_manager_right( deltaX );
+			collision = engine_collision_manager_player( po->lookX, po->tileY );
+			if( INVALID_INDEX == collision )
+			{
+				po->player_state = player_state_isintheair;
+				engine_font_manager_text( "DEAD", 8, 8 );
+			}
+			else
+			{
+				engine_font_manager_text( "    ", 8, 8 );
+			}
+		}
+		else if( player_state_isintheair == po->player_state )
+		{
+			deltaX = 2;
+			engine_player_manager_right( deltaX );
+
+			deltaY = gravityZZ[ po->player_index ];
+			engine_font_manager_data( deltaY, 20, 6 );
+
+			engine_player_manager_down( deltaY );
+			if( po->player_index < 16 )
+			{
+				po->player_index++;
+			}
+
+			if( po->posnY >= PIXELS_HIGH )
+			{
+				po->posnY = PIXELS_HIGH;
+				po->player_state = player_state_isnowdying;
+				po->player_index = 0;
+			}
+		}
+		else if( player_state_isnowdying == po->player_state )
+		{
+			engine_player_manager_right( deltaX );
+		}
+
 		engine_debug_manager_printout();
-
-		collision = engine_collision_manager_player( po->lookX, po->tileY );
-		if( INVALID_INDEX == collision )
-		{
-			engine_font_manager_text( "DEAD", 8, 8 );
-		}
-		else
-		{
-			engine_font_manager_text( "    ", 8, 8 );
-		}
 	}
 
 	engine_player_manager_draw();
