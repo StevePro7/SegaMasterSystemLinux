@@ -43,7 +43,7 @@ S:Lgraphics_manager.engine_graphics_manager_sea$val$1_0$103({2}SI:U),R,0,0,[l,h]
 S:Lgraphics_manager.engine_graphics_manager_sea$sea_lines$1_0$103({12}DA12d,SC:U),B,1,-14
 S:Lgraphics_manager.engine_graphics_manager_sea$sloc0$0_1$0({1}SC:U),B,1,-2
 S:Lgraphics_manager.engine_graphics_manager_sea$sloc1$0_1$0({1}SC:U),B,1,-1
-S:G$engine_tile_manager_draw_columns$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_tile_manager_draw_column$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_draw_cloud$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_stevepro$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_stevepro2$0_0$0({2}DF,SV:S),C,0,0

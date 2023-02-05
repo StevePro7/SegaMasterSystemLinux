@@ -30,19 +30,19 @@ void engine_level_manager_init( unsigned char level )
 	lo->level_size -= 1;
 }
 
-void engine_level_manager_show( unsigned char screen )
+void engine_level_manager_draw_point( unsigned char checkPoint )
 {
 	struct_level_object *lo = &global_level_object;
 	unsigned char index;
 
-	unsigned int scrollColumn = screen * SCREEN_WIDE;
+	unsigned int scrollColumn = checkPoint * SCREEN_WIDE;
 	for( index = 0; index < SCREEN_WIDE; index++ )
 	{
-		engine_level_manager_draw( scrollColumn + index );
+		engine_level_manager_draw_column( scrollColumn + index );
 	}
 }
 
-void engine_level_manager_draw( unsigned int scrollColumn )
+void engine_level_manager_draw_column( unsigned int scrollColumn )
 {
 	struct_level_object *lo = &global_level_object;
 	unsigned char level_data, level_column;
@@ -67,5 +67,5 @@ void engine_level_manager_draw( unsigned int scrollColumn )
 		level_column -= LEVEL_FLIP_TILE_FLAG;
 	}
 
-	engine_tile_manager_draw_columns( level_object, lo->column_draw, level_column, flip );
+	engine_tile_manager_draw_column( level_object, lo->column_draw, level_column, flip );
 }

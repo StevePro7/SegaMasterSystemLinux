@@ -17,7 +17,7 @@ void engine_tile_manager_init()
 }
 
 //void engine_tile_manager_draw_columns( unsigned char tile_type, unsigned char x, unsigned char col )
-void engine_tile_manager_draw_columns( unsigned char tile_type, unsigned char x, unsigned char col, bool flip )
+void engine_tile_manager_draw_column( unsigned char tile_type, unsigned char x, unsigned char col, bool flip )
 {
 	const unsigned char *tiles = bggame_tiles__tilemap__bin;
 	unsigned int idx;

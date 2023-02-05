@@ -22,7 +22,7 @@ void screen_play_screen_load()
 
 	devkit_SMS_displayOff();
 	drawScreen();
-	engine_level_manager_show( 0 );
+	engine_level_manager_draw_point( 0 );
 	engine_player_manager_draw();
 	//engine_font_manager_text( "PRESS START", 10, 7 );
 	devkit_SMS_displayOn();
@@ -87,7 +87,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 		newTile = engine_scroll_manager_update( delta );
 		if( newTile )
 		{
-			engine_level_manager_draw( so->scrollColumn );
+			engine_level_manager_draw_column( so->scrollColumn );
 		}
 	}
 	else
@@ -98,7 +98,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 			newTile = engine_scroll_manager_update( 1 );
 			if( newTile )
 			{
-				engine_level_manager_draw( so->scrollColumn );
+				engine_level_manager_draw_column( so->scrollColumn );
 			}
 		}
 
@@ -106,7 +106,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 		////engine_font_manager_data( newTile, 30, 0 );
 		//if( newTile )
 		//{
-		//	engine_level_manager_draw( so->scrollColumn );
+		//	engine_level_manager_draw_column( so->scrollColumn );
 		//}
 	}
 
@@ -145,7 +145,7 @@ static void drawScreen()
 	//// Draw from level.
 	//for( idx = 0; idx < SCREEN_WIDE; idx++ )
 	//{
-	//	engine_level_manager_draw( idx );
+	//	engine_level_manager_draw_column( idx );
 	//}
 
 	//engine_tile_manager_stevepro( TILE_BRIDGE_RGHT, 12, 8, 4, 14 );

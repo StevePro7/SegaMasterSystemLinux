@@ -20,6 +20,7 @@
 
 void screen_load_screen_load()
 {
+	struct_game_object *go = &global_game_object;
 	unsigned char data;
 	data = 127;
 
@@ -27,6 +28,7 @@ void screen_load_screen_load()
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();
 	engine_content_manager_sprite();
+
 	engine_graphics_manager_level();
 
 	//engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 1, 5, 8, 3 );
@@ -36,6 +38,8 @@ void screen_load_screen_load()
 	
 	//engine_graphics_manager_clouds( data );
 
+	engine_level_manager_draw_point( go->game_point );
+	engine_player_manager_loadX( go->game_point );
 
 	devkit_SMS_displayOn();
 

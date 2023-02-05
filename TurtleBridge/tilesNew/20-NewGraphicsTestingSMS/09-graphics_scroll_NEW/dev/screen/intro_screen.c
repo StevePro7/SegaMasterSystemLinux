@@ -67,8 +67,8 @@ void screen_intro_screen_load()
 	//engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 9, 5, 8, 3 );
 	//engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 17, 4, 8, 3 );
 	//engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 25, 5, 8, 3 );
-	engine_level_manager_show( screen );
-	engine_player_manager_screen( screen );
+	engine_level_manager_draw_point( screen );
+	engine_player_manager_loadX( screen );
 
 //	player_startY = lo->level_platforms[ po->tileX ];
 	player_startY = level_platforms[ po->tileX ];
@@ -148,7 +148,7 @@ void screen_intro_screen_update( unsigned char *screen_type )
 				scroll_state = engine_scroll_manager_update( 1 );
 				if( scroll_state_tile == scroll_state )
 				{
-					engine_level_manager_draw( so->scrollColumn );
+					engine_level_manager_draw_column( so->scrollColumn );
 					//complete = so->scrollColumn >= lo->level_size;
 					//if( complete )
 					//{

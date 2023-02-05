@@ -30,8 +30,8 @@ S:Fcollision_manager$collisionDelta$0_0$0({1}SC:U),E,0,0
 S:Fcollision_manager$collisionRange$0_0$0({1}SC:U),E,0,0
 S:Fcollision_manager$moreForgiving$0_0$0({1}:S),E,0,0
 S:G$engine_level_manager_init$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_level_manager_show$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_level_manager_draw$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_level_manager_draw_point$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_level_manager_draw_column$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_initX$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_initY$0_0$0({2}DF,SV:S),C,0,0

@@ -15,7 +15,7 @@ void screen_pass_screen_load()
 {
 	// TODO - wrap this in an API - must reset startX as will have increased as scrolling thru level - although drawX never changes then
 	struct_player_object *po = &global_player_object;
-	po->posnX = po->startX;
+	po->posnX = po->initX;
 	engine_player_manager_draw();
 	//engine_scroll_manager_load();
 	//devkit_SMS_displayOff();

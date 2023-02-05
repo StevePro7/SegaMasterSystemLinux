@@ -225,8 +225,8 @@ S:G$engine_input_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_hold$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_level_manager_init$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_level_manager_show$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_level_manager_draw$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_level_manager_draw_point$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_level_manager_draw_column$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_initX$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_initY$0_0$0({2}DF,SV:S),C,0,0
@@ -246,7 +246,7 @@ S:G$engine_screen_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_update$0_0$0({2}DF,SC:U),C,0,0
-S:G$engine_tile_manager_draw_columns$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_tile_manager_draw_column$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_draw_cloud$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_stevepro$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_stevepro2$0_0$0({2}DF,SV:S),C,0,0

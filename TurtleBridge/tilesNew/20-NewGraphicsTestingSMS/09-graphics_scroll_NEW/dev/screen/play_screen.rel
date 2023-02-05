@@ -3,17 +3,17 @@ XL3
 H 9 areas E5 global symbols
 M play_screen
 O -mz80
+S _engine_level_manager_draw_column Ref000000
 S _engine_player_manager_draw Ref000000
 S _devkit_SMS_displayOn Ref000000
-S _engine_level_manager_draw Ref000000
 S _global_scroll_object Ref000000
 S _engine_graphics_manager_sea Ref000000
 S _engine_level_manager_init Ref000000
+S _engine_level_manager_draw_point Ref000000
 S _engine_player_manager_update Ref000000
 S .__.ABS. Def000000
 S _engine_content_manager_sprite Ref000000
 S _engine_scroll_manager_update Ref000000
-S _engine_level_manager_show Ref000000
 S _devkit_SMS_displayOff Ref000000
 S _engine_asm_manager_clear_VRAM Ref000000
 S _engine_content_manager_bggame Ref000000
@@ -246,7 +246,7 @@ R 00 00 00 00
 T 00 00 00 AF F5 33 CD 00 00 33 CD 00 00 CD DB 00
 R 00 00 00 00 02 07 05 00 02 0B 0B 00 00 0E 00 00
 T 0D 00 00 AF F5 33 CD 00 00 33 CD 00 00 CD 00 00
-R 00 00 00 00 02 07 0A 00 02 0B 00 00 02 0E 01 00
+R 00 00 00 00 02 07 06 00 02 0B 01 00 02 0E 02 00
 T 1A 00 00 21 00 01 E5 AF F5 33 CD 00 00 F1 33 C9
 R 00 00 00 00 02 0B 10 00
 T 27 00 00
@@ -284,9 +284,9 @@ R 00 00 00 00
 T 8E 00 00
 R 00 00 00 00
 T 8E 00 00 7B B7 20 17 C5 AF F5 33 CD 00 00 7D 33
-R 00 00 00 00 02 0C 09 00
+R 00 00 00 00 02 0C 0A 00
 T 9B 00 00 C1 B7 28 2B 2A 02 00 E5 CD 00 00 F1 18
-R 00 00 00 00 02 08 03 00 02 0C 02 00
+R 00 00 00 00 02 08 03 00 02 0C 00 00
 T A8 00 00 21
 R 00 00 00 00
 T A9 00 00
@@ -296,9 +296,9 @@ R 00 00 00 00
 T AB 00 00
 R 00 00 00 00
 T AB 00 00 7A 93 30 1B D5 3E 01 F5 33 CD 00 00 7D
-R 00 00 00 00 02 0D 09 00
+R 00 00 00 00 02 0D 0A 00
 T B8 00 00 33 D1 B7 28 0A 2A 02 00 D5 E5 CD 00 00
-R 00 00 00 00 02 09 03 00 02 0E 02 00
+R 00 00 00 00 02 09 03 00 02 0E 00 00
 T C5 00 00 F1 D1
 R 00 00 00 00
 T C7 00 00
@@ -308,13 +308,13 @@ R 00 00 00 00
 T CA 00 00
 R 00 00 00 00
 T CA 00 00 CD 00 00 CD 00 00 DD 6E 04 DD 66 05 36
-R 00 00 00 00 02 04 06 00 02 07 00 00
+R 00 00 00 00 02 04 07 00 02 07 01 00
 T D7 00 00 09 DD E1 C9
 R 00 00 00 00
 T DB 00 00
 R 00 00 00 00
 T DB 00 00 CD 00 00 CD 00 00 CD 00 00 CD
-R 00 00 00 00 02 04 0C 00 02 07 0D 00 02 0A 08 00
+R 00 00 00 00 02 04 0C 00 02 07 0D 00 02 0A 09 00
 T E5 00 00 00 00 11 18 03 D5 AF 57 1E 04 D5 21
 R 00 00 00 00 02 03 04 00
 T F1 00 00 00 09 E5 CD 00 00 21 06 00 39 F9 C9

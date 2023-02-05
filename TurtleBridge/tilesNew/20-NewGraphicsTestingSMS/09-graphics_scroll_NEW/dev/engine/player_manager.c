@@ -25,7 +25,7 @@ void engine_player_manager_init()
 {
 	struct_player_object *po = &global_player_object;
 	po->posnX = 0;
-	po->startX = 0; 
+	po->initX = 0; 
 	po->lookX = 0;
 	//po->posnX = 32;
 	//po->posnX = 96;
@@ -49,16 +49,32 @@ void engine_player_manager_initX( unsigned char difficulty )
 {
 	struct_player_object *po = &global_player_object;
 	devkit_SMS_mapROMBank( FIXED_BANK );
-	po->startX = player_object_starts[ difficulty ];
+	po->initX = player_object_starts[ difficulty ];
 
 	// TODO delete
 	//po->startX = 112;
 	//po->startX = 224;
 	// TODO delete
 
-	po->posnX = po->startX;
-	updatePlayer();
+	po->posnX = po->initX;
+	po->drawX = po->posnX - 16;
+	updatePlayerX();
 }
+
+// TODO - need algorithm to align which individual screen to a checkpoint
+void engine_player_manager_loadX( unsigned char checkPoint )
+{
+	struct_player_object *po = &global_player_object;
+	unsigned int offset;
+	unsigned char screen;
+
+	screen = checkPoint;
+	offset = screen * PIXELS_WIDE;
+	po->posnX = po->initX + offset;
+	updatePlayerX();
+}
+
+
 //void engine_player_manager_checkX( unsigned char screen )
 //{
 	// TODO - do I want to have 
@@ -69,15 +85,6 @@ void engine_player_manager_initY( unsigned char player_startY )
 	struct_player_object *po = &global_player_object;
 	po->posnY = player_startY << 3;
 	updatePlayer();
-}
-
-void engine_player_manager_screen( unsigned char screen )
-{
-	struct_player_object *po = &global_player_object;
-	unsigned int offset;
-	offset = screen * PIXELS_WIDE;
-	po->posnX += offset;
-	po->tileX = po->posnX >> 3;
 }
 
 //void engine_player_manager_load( unsigned char difficulty, unsigned char player_startY )
@@ -234,9 +241,6 @@ void engine_player_manager_down()
 
 static void updatePlayer()
 {
-	struct_player_object *po = &global_player_object;
-	po->drawX = po->posnX - 16;
-
 	updatePlayerX();
 	updatePlayerY();
 

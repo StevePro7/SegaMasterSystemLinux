@@ -38,8 +38,8 @@ void screen_begin_screen_load()
 	drawScreen();
 	//engine_player_manager_initX( difficulty_type_harder);
 	engine_player_manager_initX( difficulty_type_insane );
-	engine_level_manager_show( screen );
-	engine_player_manager_screen( screen );
+	engine_level_manager_draw_point( screen );
+	engine_player_manager_loadX( screen );
 
 //	player_startY = lo->level_platforms[ po->tileX ];
 	player_startY = level_platforms[ po->tileX ];
@@ -125,7 +125,7 @@ void screen_begin_screen_update( unsigned char *screen_type )
 				scroll_state = engine_scroll_manager_update( 1 );
 				if( scroll_state_tile == scroll_state )
 				{
-					engine_level_manager_draw( so->scrollColumn );
+					engine_level_manager_draw_column( so->scrollColumn );
 				}
 				else if( scroll_state_comp == scroll_state )
 				{
