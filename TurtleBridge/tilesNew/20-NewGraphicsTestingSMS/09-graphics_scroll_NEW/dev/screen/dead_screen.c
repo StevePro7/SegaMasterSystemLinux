@@ -3,6 +3,7 @@
 #include "../engine/debug_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
+#include "../engine/game_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/level_manager.h"
 #include "../engine/player_manager.h"
@@ -22,6 +23,7 @@ void screen_dead_screen_update( unsigned char *screen_type )
 	struct_scroll_object *so = &global_scroll_object;
 	struct_player_object *po = &global_player_object;
 	struct_level_object *lo = &global_level_object;
+	struct_game_object *go = &global_game_object;
 	unsigned char input;
 	unsigned char deltaX;
 	unsigned char value;
@@ -81,11 +83,22 @@ void screen_dead_screen_update( unsigned char *screen_type )
 				po->player_index++;
 			}
 
+			engine_debug_manager_printout();
 			if( po->posnY >= 168 )
 			{
 				po->posnY = 168;
-				po->player_state = player_state_isnowdying;
-				po->player_index = 0;
+				if( go->game_isgod )
+				{
+					po->player_state = player_state_isnowdying;
+					po->player_index = 0;
+					po->player_frame = 0;
+				}
+				else
+				{
+					//engine_font_manager_text( "SPLAT", 20, 20 );
+					*screen_type = screen_type_over;
+					return;
+				}
 			}
 		}
 		else if( player_state_isnowdying == po->player_state )
