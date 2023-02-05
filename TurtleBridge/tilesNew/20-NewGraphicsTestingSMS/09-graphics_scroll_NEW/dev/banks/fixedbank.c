@@ -44,6 +44,8 @@ const unsigned char *level_object_data[] =
 	level1110_txt,
 	level1111_txt,
 	level1112_txt,
+	level1113_txt,
+	level1114_txt,
 };
 const unsigned int level_object_size[] =
 {
@@ -60,6 +62,8 @@ const unsigned int level_object_size[] =
 	level1110_txt_size,
 	level1111_txt_size,
 	level1112_txt_size,
+	level1113_txt_size,
+	level1114_txt_size,
 };
 const unsigned char level_object_bank[] =
 {
@@ -76,4 +80,6 @@ const unsigned char level_object_bank[] =
 	level1110_txt_bank,
 	level1111_txt_bank,
 	level1112_txt_bank,
+	level1113_txt_bank,
+	level1114_txt_bank,
 };
