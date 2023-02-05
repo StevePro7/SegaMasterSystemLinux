@@ -12,7 +12,8 @@
 void engine_debug_manager_initgame()
 {
 	struct_game_object *go = &global_game_object;
-	go->game_difficulty = difficulty_type_easier;
+	//go->game_difficulty = difficulty_type_easier;
+	go->game_difficulty = difficulty_type_insane;
 	go->game_world = 0;
 	go->game_round = 0;
 	go->game_level = 10;
@@ -24,23 +25,25 @@ void engine_debug_manager_printout()
 {
 	struct_player_object *po = &global_player_object;
 	struct_level_object *lo = &global_level_object;
-	unsigned char idx, tmp;
+	//unsigned char idx, tmp;
 
-	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
-	for( idx = 0; idx < 16; idx++ )
-	{
-		engine_font_manager_data( idx, 14, idx );
-		engine_font_manager_data( level_platforms[ idx ], 18, idx );
+	//devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+	//for( idx = 0; idx < 16; idx++ )
+	//{
+	//	engine_font_manager_data( idx, 14, idx );
+	//	engine_font_manager_data( level_platforms[ idx ], 18, idx );
 
-		tmp = idx + 16;
-		engine_font_manager_data( tmp, 25, idx );
-		engine_font_manager_data( level_platforms[ tmp ], 30, idx );
-	}
+	//	tmp = idx + 16;
+	//	engine_font_manager_data( tmp, 25, idx );
+	//	engine_font_manager_data( level_platforms[ tmp ], 30, idx );
+	//}
 
-	engine_font_manager_data( po->posnX, 8, 0 );
-	engine_font_manager_data( po->tileX, 8, 1 );
-	engine_font_manager_data( po->lookX, 8, 2 );
-	engine_font_manager_data( po->tileY, 8, 4 );
+	engine_font_manager_data( po->posnX, 10, 0 );
+	engine_font_manager_data( po->tileX, 10, 1 );
+	engine_font_manager_data( po->posnX, 20, 0 );
+	engine_font_manager_data( po->tileX, 20, 1 );
+	engine_font_manager_data( po->lookX, 10, 3 );
+	engine_font_manager_data( po->tileY, 10, 4 );
 }
 
 //void engine_debug_manager_printoutX()

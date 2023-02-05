@@ -43,6 +43,9 @@ void screen_load_screen_load()
 	player_loadY = level_platforms[ po->lookX ];
 	engine_player_manager_loadY( player_loadY );
 	engine_player_manager_draw();
+
+	// TODO delete
+	engine_debug_manager_printout();
 	devkit_SMS_displayOn();
 }
 
