@@ -1,14 +1,7 @@
 M:play_screen
 F:G$screen_play_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lplay_screen.screen_play_screen_load$so$1_0$105({2}DG,STtag_struct_scroll_object:S),R,0,0,[]
 F:G$screen_play_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lplay_screen.screen_play_screen_update$screen_type$1_0$106({2}DG,SC:U),B,1,4
-S:Lplay_screen.screen_play_screen_update$so$1_0$107({2}DG,STtag_struct_scroll_object:S),R,0,0,[c,b]
-S:Lplay_screen.screen_play_screen_update$input$1_0$107({1}SC:U),R,0,0,[a]
-S:Lplay_screen.screen_play_screen_update$delta$1_0$107({1}SC:U),R,0,0,[e]
-S:Lplay_screen.screen_play_screen_update$value$1_0$107({1}SC:U),R,0,0,[d]
-S:Lplay_screen.screen_play_screen_update$newTile$1_0$107({1}:S),R,0,0,[]
-F:Fplay_screen$drawScreen$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 T:Fplay_screen$tag_struct_player_object[({0}S:S$posnX$0_0$0({2}SI:U),Z,0,0)({2}S:S$tileX$0_0$0({2}SI:U),Z,0,0)({4}S:S$initX$0_0$0({1}SC:U),Z,0,0)({5}S:S$lookX$0_0$0({1}SC:U),Z,0,0)({6}S:S$posnY$0_0$0({1}SC:U),Z,0,0)({7}S:S$tileY$0_0$0({1}SC:U),Z,0,0)({8}S:S$drawX$0_0$0({1}SC:U),Z,0,0)({9}S:S$drawY$0_0$0({1}SC:U),Z,0,0)({10}S:S$player_state$0_0$0({1}SC:U),Z,0,0)({11}S:S$player_index$0_0$0({1}SC:U),Z,0,0)({12}S:S$player_frame$0_0$0({1}SC:U),Z,0,0)({13}S:S$player_count$0_0$0({2}SI:U),Z,0,0)]
 T:Fplay_screen$tag_struct_scroll_object[({0}S:S$scrollLeftX$0_0$0({1}SC:U),Z,0,0)({1}S:S$scrollRight$0_0$0({1}SC:U),Z,0,0)({2}S:S$scrollColumn$0_0$0({2}SI:U),Z,0,0)({4}S:S$scrollFinish$0_0$0({2}SI:U),Z,0,0)({6}S:S$scrollLeftX0$0_0$0({1}SC:U),Z,0,0)({7}S:S$scrollLeftX1$0_0$0({1}SC:U),Z,0,0)({8}S:S$scrollLeftX2$0_0$0({1}SC:U),Z,0,0)({9}S:S$scrollLeftX3$0_0$0({1}SC:U),Z,0,0)({10}S:S$scrollLeftX4$0_0$0({1}SC:U),Z,0,0)({11}S:S$scrollLeftX5$0_0$0({1}SC:U),Z,0,0)({12}S:S$scroll_half$0_0$0({1}SC:U),Z,0,0)({13}S:S$lineCnt$0_0$0({1}SC:U),Z,0,0)]
 T:Fplay_screen$tag_struct_audio_object[({0}S:S$music_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$music_bank$0_0$0({1}SC:U),Z,0,0)({3}S:S$sound_data$0_0$0({2}DG,SC:U),Z,0,0)({5}S:S$sound_bank$0_0$0({1}SC:U),Z,0,0)]
