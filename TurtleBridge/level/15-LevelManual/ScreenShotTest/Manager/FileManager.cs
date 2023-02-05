@@ -72,7 +72,26 @@ namespace ScreenShotTest
 						upper_nibble = 0;
 						lower_nibble = 0;
 						engine_util_manager_convertByteToNibbles(data, ref upper_nibble, ref lower_nibble);
-						Tiles[idx++] = lower_nibble;
+						Tiles[idx] = lower_nibble;
+
+						// Hack workaround.
+						if ((int)AssetType.CbridgeSide == lower_nibble && upper_nibble >= 8)
+						{
+							Tiles[idx] = (int)AssetType.QbridgeSideFlip;
+						}
+						if (upper_nibble >= 4)
+						{
+							if ((int)AssetType.DbridgeSign == lower_nibble)
+							{
+								Tiles[idx] = (int)AssetType.RbridgeSignGoal;
+							}
+							if ((int)AssetType.HislandSign == lower_nibble)
+							{
+								Tiles[idx] = (int)AssetType.SislandSignGoal;
+							}
+						}
+
+						idx++;
 					}
 				}
 
