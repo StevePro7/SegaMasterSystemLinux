@@ -4,13 +4,14 @@ S:Lplayer_manager.engine_player_manager_init$po$1_0$91({2}DG,STtag_struct_player
 F:G$engine_player_manager_initX$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lplayer_manager.engine_player_manager_initX$difficulty$1_0$92({1}SC:U),B,1,4
 S:Lplayer_manager.engine_player_manager_initX$po$1_0$93({2}DG,STtag_struct_player_object:S),R,0,0,[]
+F:G$engine_player_manager_loadX$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lplayer_manager.engine_player_manager_loadX$checkPoint$1_0$94({1}SC:U),B,1,4
+S:Lplayer_manager.engine_player_manager_loadX$po$1_0$95({2}DG,STtag_struct_player_object:S),R,0,0,[]
+S:Lplayer_manager.engine_player_manager_loadX$offset$1_0$95({2}SI:U),R,0,0,[c,b]
+S:Lplayer_manager.engine_player_manager_loadX$screen$1_0$95({1}SC:U),R,0,0,[c]
 F:G$engine_player_manager_initY$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lplayer_manager.engine_player_manager_initY$player_startY$1_0$94({1}SC:U),B,1,4
-S:Lplayer_manager.engine_player_manager_initY$po$1_0$95({2}DG,STtag_struct_player_object:S),R,0,0,[]
-F:G$engine_player_manager_screen$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lplayer_manager.engine_player_manager_screen$screen$1_0$96({1}SC:U),B,1,4
-S:Lplayer_manager.engine_player_manager_screen$po$1_0$97({2}DG,STtag_struct_player_object:S),R,0,0,[]
-S:Lplayer_manager.engine_player_manager_screen$offset$1_0$97({2}SI:U),R,0,0,[c,b]
+S:Lplayer_manager.engine_player_manager_initY$player_startY$1_0$96({1}SC:U),B,1,4
+S:Lplayer_manager.engine_player_manager_initY$po$1_0$97({2}DG,STtag_struct_player_object:S),R,0,0,[]
 F:G$engine_player_manager_update3$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lplayer_manager.engine_player_manager_update3$po$1_0$98({2}DG,STtag_struct_player_object:S),R,0,0,[]
 F:G$engine_player_manager_update2$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
@@ -31,7 +32,6 @@ S:Lplayer_manager.engine_player_manager_up$po$1_0$111({2}DG,STtag_struct_player_
 F:G$engine_player_manager_down$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lplayer_manager.engine_player_manager_down$po$1_0$112({2}DG,STtag_struct_player_object:S),R,0,0,[]
 F:Fplayer_manager$updatePlayer$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lplayer_manager.updatePlayer$po$1_0$113({2}DG,STtag_struct_player_object:S),R,0,0,[]
 F:Fplayer_manager$updatePlayerX$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lplayer_manager.updatePlayerX$po$1_0$114({2}DG,STtag_struct_player_object:S),R,0,0,[]
 F:Fplayer_manager$updatePlayerY$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
@@ -42,7 +42,7 @@ F:G$engine_player_manager_count$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lplayer_manager.engine_player_manager_count$po$1_0$117({2}DG,STtag_struct_player_object:S),R,0,0,[]
 F:G$engine_player_manager_draw$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lplayer_manager.engine_player_manager_draw$po$1_0$118({2}DG,STtag_struct_player_object:S),R,0,0,[]
-T:Fplayer_manager$tag_struct_player_object[({0}S:S$posnX$0_0$0({2}SI:U),Z,0,0)({2}S:S$tileX$0_0$0({2}SI:U),Z,0,0)({4}S:S$lookX$0_0$0({1}SC:U),Z,0,0)({5}S:S$startX$0_0$0({1}SC:U),Z,0,0)({6}S:S$posnY$0_0$0({1}SC:U),Z,0,0)({7}S:S$tileY$0_0$0({1}SC:U),Z,0,0)({8}S:S$drawX$0_0$0({1}SC:U),Z,0,0)({9}S:S$drawY$0_0$0({1}SC:U),Z,0,0)({10}S:S$player_state$0_0$0({1}SC:U),Z,0,0)({11}S:S$player_index$0_0$0({1}SC:U),Z,0,0)({12}S:S$player_frame$0_0$0({1}SC:U),Z,0,0)({13}S:S$player_count$0_0$0({2}SI:U),Z,0,0)]
+T:Fplayer_manager$tag_struct_player_object[({0}S:S$posnX$0_0$0({2}SI:U),Z,0,0)({2}S:S$tileX$0_0$0({2}SI:U),Z,0,0)({4}S:S$initX$0_0$0({1}SC:U),Z,0,0)({5}S:S$lookX$0_0$0({1}SC:U),Z,0,0)({6}S:S$posnY$0_0$0({1}SC:U),Z,0,0)({7}S:S$tileY$0_0$0({1}SC:U),Z,0,0)({8}S:S$drawX$0_0$0({1}SC:U),Z,0,0)({9}S:S$drawY$0_0$0({1}SC:U),Z,0,0)({10}S:S$player_state$0_0$0({1}SC:U),Z,0,0)({11}S:S$player_index$0_0$0({1}SC:U),Z,0,0)({12}S:S$player_frame$0_0$0({1}SC:U),Z,0,0)({13}S:S$player_count$0_0$0({2}SI:U),Z,0,0)]
 S:Fplayer_manager$physics_array$0_0$0({116}DA116d,SC:S),E,0,0
 S:G$music_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$level_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0

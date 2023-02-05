@@ -20,7 +20,9 @@
 
 void screen_load_screen_load()
 {
+	struct_player_object *po = &global_player_object;
 	struct_game_object *go = &global_game_object;
+	unsigned char player_initY;
 	unsigned char data;
 	data = 127;
 
@@ -40,7 +42,9 @@ void screen_load_screen_load()
 
 	engine_level_manager_draw_point( go->game_point );
 	engine_player_manager_loadX( go->game_point );
-
+	
+	player_initY = level_platforms[ po->tileX ];
+	player_initY = level_platforms[ po->lookX ];
 	devkit_SMS_displayOn();
 
 

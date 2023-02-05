@@ -71,7 +71,8 @@ void screen_intro_screen_load()
 	engine_player_manager_loadX( screen );
 
 //	player_startY = lo->level_platforms[ po->tileX ];
-	player_startY = level_platforms[ po->tileX ];
+	//player_startY = level_platforms[ po->tileX ];			// BUG
+	player_startY = level_platforms[ po->lookX ];
 	engine_player_manager_initY( player_startY );
 	engine_player_manager_draw();
 	devkit_SMS_displayOn();
