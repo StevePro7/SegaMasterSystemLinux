@@ -30,20 +30,20 @@ void screen_begin_screen_load()
 	level = 1;
 	screen = 0;
 	engine_level_manager_init( level );
-	//engine_player_manager_startX( difficulty_type_easier );
-	//engine_player_manager_startX( difficulty_type_insane );
+	//engine_player_manager_initX( difficulty_type_easier );
+	//engine_player_manager_initX( difficulty_type_insane );
 
 
 	devkit_SMS_displayOff();
 	drawScreen();
-	//engine_player_manager_startX( difficulty_type_harder);
-	engine_player_manager_startX( difficulty_type_insane );
+	//engine_player_manager_initX( difficulty_type_harder);
+	engine_player_manager_initX( difficulty_type_insane );
 	engine_level_manager_show( screen );
 	engine_player_manager_screen( screen );
 
 //	player_startY = lo->level_platforms[ po->tileX ];
 	player_startY = level_platforms[ po->tileX ];
-	engine_player_manager_startY( player_startY );
+	engine_player_manager_initY( player_startY );
 	engine_player_manager_draw();
 
 	engine_debug_manager_printout();

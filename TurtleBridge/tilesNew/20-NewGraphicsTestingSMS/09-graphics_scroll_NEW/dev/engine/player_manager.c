@@ -11,8 +11,8 @@
 struct_player_object global_player_object;
 
 static void updatePlayer();
-//static void updatePlayerX();
-//static void updatePlayerY();
+static void updatePlayerX();
+static void updatePlayerY();
 
 static signed char physics_array[] = { 0,-1,-1,-1,-1,-1,-1,-1,-1, -1, -1, -1, -1, -1, -1, -1, -1, -1,-1,-1,-1,-1,-1,-1,-1,-1,-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 0,0,0,0,0,0,0,0,1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, };
 
@@ -45,14 +45,14 @@ void engine_player_manager_init()
 	updatePlayer();
 }
 
-void engine_player_manager_startX( unsigned char difficulty )
+void engine_player_manager_initX( unsigned char difficulty )
 {
 	struct_player_object *po = &global_player_object;
 	devkit_SMS_mapROMBank( FIXED_BANK );
 	po->startX = player_object_starts[ difficulty ];
 
 	// TODO delete
-	po->startX = 112;
+	//po->startX = 112;
 	//po->startX = 224;
 	// TODO delete
 
@@ -64,7 +64,7 @@ void engine_player_manager_startX( unsigned char difficulty )
 	// TODO - do I want to have 
 	// engine_player_manager_screen()
 //}
-void engine_player_manager_startY( unsigned char player_startY )
+void engine_player_manager_initY( unsigned char player_startY )
 {
 	struct_player_object *po = &global_player_object;
 	po->posnY = player_startY << 3;
@@ -198,48 +198,72 @@ void engine_player_manager_left()
 {
 	struct_player_object *po = &global_player_object;
 	po->posnX--;
-	updatePlayer();
+	po->drawX = po->posnX - 16;
+	updatePlayerX();
 }
 
 void engine_player_manager_right( unsigned char delta )
 {
 	struct_player_object *po = &global_player_object;
 	po->posnX = po->posnX + delta;
-	po->tileX = po->posnX >> 3;
+	updatePlayerX();
+	//po->tileX = po->posnX >> 3;
 
-	// https://johnysswlab.com/make-your-programs-run-faster-avoid-expensive-instructions
-	//po->lookX = po->tileX % SCREEN_WIDE;
-	po->lookX = po->tileX  & ( SCREEN_LESS_ONE );
+	//// https://johnysswlab.com/make-your-programs-run-faster-avoid-expensive-instructions
+	////po->lookX = po->tileX % SCREEN_WIDE;
+	//po->lookX = po->tileX  & ( SCREEN_LESS_ONE );
 
-	//devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
-	////engine_font_manager_data( delta, 12, 12 );
-	//engine_font_manager_data( po->posnX, 24, 16 );
-	//engine_font_manager_data( po->tileX, 24, 17 );
+	////devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+	//////engine_font_manager_data( delta, 12, 12 );
+	////engine_font_manager_data( po->posnX, 24, 16 );
+	////engine_font_manager_data( po->tileX, 24, 17 );
 }
 
 void engine_player_manager_up()
 {
 	struct_player_object *po = &global_player_object;
 	po->posnY--;
-	updatePlayer();
+	updatePlayerY();
 }
 void engine_player_manager_down()
 {
 	struct_player_object *po = &global_player_object;
 	po->posnY++;
-	updatePlayer();
+	updatePlayerY();
 }
 
 static void updatePlayer()
 {
 	struct_player_object *po = &global_player_object;
 	po->drawX = po->posnX - 16;
-	po->drawY = po->posnY - 32;
-	po->tileX = po->posnX >> 3;
 
+	updatePlayerX();
+	updatePlayerY();
+
+	// TODO delete
+	//struct_player_object *po = &global_player_object;
+	//po->drawX = po->posnX - 16;
+	//po->drawY = po->posnY - 32;
+	//po->tileX = po->posnX >> 3;
+
+	//// https://johnysswlab.com/make-your-programs-run-faster-avoid-expensive-instructions
+	////po->lookX = po->tileX % SCREEN_WIDE;
+	//po->lookX = po->tileX  & SCREEN_LESS_ONE;
+	//po->tileY = po->posnY >> 3;
+}
+
+static void updatePlayerX()
+{
 	// https://johnysswlab.com/make-your-programs-run-faster-avoid-expensive-instructions
-	//po->lookX = po->tileX % SCREEN_WIDE;
+	struct_player_object *po = &global_player_object;
+	po->tileX = po->posnX >> 3;
 	po->lookX = po->tileX  & SCREEN_LESS_ONE;
+}
+
+static void updatePlayerY()
+{
+	struct_player_object *po = &global_player_object;
+	po->drawY = po->posnY - 32;
 	po->tileY = po->posnY >> 3;
 }
 

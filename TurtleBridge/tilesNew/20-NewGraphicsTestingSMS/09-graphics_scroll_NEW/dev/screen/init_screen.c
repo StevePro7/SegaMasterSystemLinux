@@ -12,7 +12,7 @@ void screen_init_screen_load()
 	engine_debug_manager_initgame();
 
 	engine_level_manager_init( go->game_level );
-	engine_player_manager_startX( go->game_difficulty );		// TODO rename
+	engine_player_manager_initX( go->game_difficulty );		// TODO rename
 	engine_collision_manager_init( go->game_difficulty );
 }
 

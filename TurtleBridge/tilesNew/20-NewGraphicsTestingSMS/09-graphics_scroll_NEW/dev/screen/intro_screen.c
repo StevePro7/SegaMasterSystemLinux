@@ -40,15 +40,15 @@ void screen_intro_screen_load()
 	//difficulty = difficulty_type_easier;
 	difficulty = difficulty_type_normal;
 	//difficulty = difficulty_type_harder;
-	//difficulty = difficulty_type_insane;
-	engine_player_manager_startX( difficulty );
+	difficulty = difficulty_type_insane;
+	engine_player_manager_initX( difficulty );
 	engine_collision_manager_init( difficulty );
 
 	
-	//engine_player_manager_startX( difficulty_type_easier );
-	//engine_player_manager_startX( difficulty_type_normal );
-	//engine_player_manager_startX( difficulty_type_harder );
-	//engine_player_manager_startX( difficulty_type_insane );
+	//engine_player_manager_initX( difficulty_type_easier );
+	//engine_player_manager_initX( difficulty_type_normal );
+	//engine_player_manager_initX( difficulty_type_harder );
+	//engine_player_manager_initX( difficulty_type_insane );
 	//engine_collision_manager_init( difficulty_type_insane );
 
 	devkit_SMS_displayOff();
@@ -72,7 +72,7 @@ void screen_intro_screen_load()
 
 //	player_startY = lo->level_platforms[ po->tileX ];
 	player_startY = level_platforms[ po->tileX ];
-	engine_player_manager_startY( player_startY );
+	engine_player_manager_initY( player_startY );
 	engine_player_manager_draw();
 	devkit_SMS_displayOn();
 	engine_scroll_manager_load( screen, lo->level_size );
@@ -175,14 +175,14 @@ void screen_intro_screen_update( unsigned char *screen_type )
 			devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
 			//engine_font_manager_data( collision, 8, 12 );
 
-			//if( INVALID_INDEX == collision )
-			//{
-			//	engine_font_manager_text( "DEAD", 8, 13 );
-			//}
-			//else
-			//{
-			//	engine_font_manager_text( "    ", 8, 13 );
-			//}
+			if( INVALID_INDEX == collision )
+			{
+				engine_font_manager_text( "DEAD", 8, 13 );
+			}
+			else
+			{
+				engine_font_manager_text( "    ", 8, 13 );
+			}
 		}
 	}
 
