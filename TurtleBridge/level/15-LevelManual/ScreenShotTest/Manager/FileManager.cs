@@ -66,7 +66,7 @@ namespace ScreenShotTest
 
 					for (int cnt = 0; cnt < 16; cnt += 4)
 					{
-						var text = objs[cnt];
+						var text = objs[cnt].Trim();
 						int data = Convert.ToInt32(text, 16);
 
 						upper_nibble = 0;
