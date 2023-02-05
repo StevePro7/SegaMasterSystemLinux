@@ -40,9 +40,9 @@ void engine_debug_manager_printout()
 
 	engine_font_manager_data( po->posnX, 10, 0 );
 	engine_font_manager_data( po->tileX, 10, 1 );
-	engine_font_manager_data( po->posnX, 20, 0 );
-	engine_font_manager_data( po->tileX, 20, 1 );
-	engine_font_manager_data( po->lookX, 10, 3 );
+	engine_font_manager_data( po->tileX, 20, 0 );
+	engine_font_manager_data( po->lookX, 20, 1 );
+	engine_font_manager_data( po->posnY, 10, 3 );
 	engine_font_manager_data( po->tileY, 10, 4 );
 }
 
