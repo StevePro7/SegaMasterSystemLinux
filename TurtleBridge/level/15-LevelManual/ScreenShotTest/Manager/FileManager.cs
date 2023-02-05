@@ -38,14 +38,55 @@ namespace ScreenShotTest
 
 		public void LoadContent()
 		{
+			int upper_nibble;
+			int lower_nibble;
+			var delim = new char[] { ',' };
+			var lines = File.ReadAllLines("bank6.c");
+			int idx = 0;
+
+			if (File.Exists("bank6.c"))
+			{
+				foreach (var temp in lines)
+				{
+					var line = temp.Trim();
+					if (line.Contains("const") || line.Contains("{") || line.Contains("}"))
+					{
+						continue;
+					}
+
+					if (line.EndsWith(","))
+					{
+						line = line.Substring(0, line.Length - 1);
+					}
+					var objs = line.Split(delim);
+					if (objs.Length != 16)
+					{
+						throw new Exception("bank6.c NOT 16x elements");
+					}
+
+					for (int cnt = 0; cnt < 16; cnt += 4)
+					{
+						var text = objs[cnt];
+						int data = Convert.ToInt32(text, 16);
+
+						upper_nibble = 0;
+						lower_nibble = 0;
+						engine_util_manager_convertByteToNibbles(data, ref upper_nibble, ref lower_nibble);
+						Tiles[idx++] = lower_nibble;
+					}
+				}
+
+				return;
+			}
+
 			if (!File.Exists("level.csv"))
 			{
 				return;
 			}
 
-			var delim = new char[] { ',' };
-			var lines = File.ReadAllLines("level.csv");
-			int idx = 0;
+			//var delim = new char[] { ',' };
+			lines = File.ReadAllLines("level.csv");
+			idx = 0;
 			foreach (var line in lines)
 			{
 				var objs = line.Split(delim);
@@ -280,6 +321,12 @@ namespace ScreenShotTest
 			file.Add("#define				" + name + "_size " + cols * 4);
 			file.Add("#define				" + name + "_bank " + bank);
 			File.WriteAllLines(path + "/bank6.h", file.ToArray());
+		}
+
+		void engine_util_manager_convertByteToNibbles(int data, ref int upper_nibble, ref int lower_nibble)
+		{
+			upper_nibble = (data >> 4) & 0x0F;
+			lower_nibble = data & 0x0F;
 		}
 
 		public int[] Tiles { get; private set; }
