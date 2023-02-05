@@ -57,7 +57,7 @@ static void para_scroll_load( unsigned char screen, int scrollFinish )
 	struct_scroll_object *so = &global_scroll_object;
 	so->scrollLeftX = 0;
 	so->scrollRight = 0;
-	so->scrollColumn = ( screen * SCREEN_WIDE ) + SCREEN_WIDE - 1;
+	so->scrollColumn = ( screen * SCREEN_WIDE ) + SCREEN_LESS_ONE;
 	so->scrollFinish = scrollFinish;
 	devkit_SMS_setBGScrollX( so->scrollLeftX );
 
@@ -121,7 +121,7 @@ static void full_scroll_load( unsigned char screen, int scrollFinish )
 	struct_scroll_object *so = &global_scroll_object;
 	so->scrollLeftX = 0;
 	so->scrollRight = 0;
-	so->scrollColumn = ( screen * SCREEN_WIDE ) + SCREEN_WIDE - 1;
+	so->scrollColumn = ( screen * SCREEN_WIDE ) + SCREEN_LESS_ONE;
 	so->scrollFinish = scrollFinish;
 	devkit_SMS_setBGScrollX( so->scrollLeftX );
 }

@@ -4,20 +4,18 @@
 #include "global_manager.h"
 #include "level_manager.h"
 #include "player_manager.h"
-//#include "../devkit/_sms_manager.h"
-//#include "../banks/bank2.h"
 #include <stdbool.h>
 
 #define COLLISION_MIN_PLUS_NIL		0						// 00
 #define COLLISION_MIN_PLUS_ONE		1						// 01
-#define COLLISION_MAX_LESS_ONE		SCREEN_WIDE - 1			// 31
+#define COLLISION_MAX_LESS_ONE		SCREEN_LESS_ONE			// 31
 #define COLLISION_MAX_LESS_TWO		SCREEN_WIDE - 2			// 30
 
 static unsigned char collisionDelta;
 static unsigned char collisionRange;
 static bool moreForgiving;
 
-void engine_collision_manager_load( unsigned char difficulty )
+void engine_collision_manager_init( unsigned char difficulty )
 {
 	collisionDelta = 1;
 	moreForgiving = false;
@@ -37,14 +35,13 @@ signed char engine_collision_manager_player( unsigned char lookX, unsigned char 
 
 	unsigned char lookup_platform;
 	unsigned char player_platform;		 // po->tileY
-//	unsigned char lookX;
 	signed char collisionTile;
 
 	player_platform = tileY;
 	collisionTile = INVALID_INDEX;
 
 	// Check collision left side of player.
-	if( ( COLLISION_MIN_PLUS_NIL == lookX ) || ( COLLISION_MIN_PLUS_ONE ==lookX && moreForgiving ) )
+	if( ( COLLISION_MIN_PLUS_NIL == lookX ) || ( COLLISION_MIN_PLUS_ONE == lookX && moreForgiving ) )
 	{
 		collisionTile = lookX + collisionRange;
 	}

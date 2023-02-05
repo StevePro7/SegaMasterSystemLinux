@@ -35,21 +35,21 @@ void screen_intro_screen_load()
 	//level = ho->hack_object_level;
 	//screen = ho->hack_object_screen;
 
-	engine_level_manager_load( level );
+	engine_level_manager_init( level );
 
 	//difficulty = difficulty_type_easier;
 	difficulty = difficulty_type_normal;
 	//difficulty = difficulty_type_harder;
 	//difficulty = difficulty_type_insane;
 	engine_player_manager_startX( difficulty );
-	engine_collision_manager_load( difficulty );
+	engine_collision_manager_init( difficulty );
 
 	
 	//engine_player_manager_startX( difficulty_type_easier );
 	//engine_player_manager_startX( difficulty_type_normal );
 	//engine_player_manager_startX( difficulty_type_harder );
 	//engine_player_manager_startX( difficulty_type_insane );
-	//engine_collision_manager_load( difficulty_type_insane );
+	//engine_collision_manager_init( difficulty_type_insane );
 
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();

@@ -34,14 +34,14 @@ void screen_ready_screen_update( unsigned char *screen_type )
 	//engine_font_manager_data( input1, 10, 10 );
 	//engine_font_manager_data( input2, 10, 11 );
 
-	engine_collision_manager_load( 1 );
+	engine_collision_manager_init( 1 );
 	engine_collision_manager_player( 31, 15 );
 
 	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
 	input2 = devkit_SMS_getKeysHeld();		//move
 	if( input2 != 0 )
 	{
-		engine_collision_manager_load( 0 );
+		engine_collision_manager_init( 0 );
 		engine_collision_manager_player(10, 15);
 		//engine_font_manager_data( input2, 10, 15 );
 	}

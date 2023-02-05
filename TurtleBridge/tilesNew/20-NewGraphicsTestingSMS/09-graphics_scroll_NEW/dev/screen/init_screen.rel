@@ -1,42 +1,66 @@
 ;!FILE init_screen.asm
 XL3
-H 9 areas 21 global symbols
+H 9 areas 39 global symbols
 M init_screen
 O -mz80
+S _engine_collision_manager_init Ref000000
+S _engine_level_manager_init Ref000000
 S .__.ABS. Def000000
+S _global_game_object Ref000000
+S _engine_player_manager_startX Ref000000
 S _engine_debug_manager_initgame Ref000000
-A _CODE size 11 flags 0 addr 0
-S A$init_screen$80 Def000005
+A _CODE size 2D flags 0 addr 0
+S C$init_screen.c$16$1_0$11 Def000015
+S C$init_screen.c$17$1_0$11 Def00001E
+S C$init_screen.c$23$1_0$15 Def000026
+S A$init_screen$70 Def000007
+S A$init_screen$80 Def000014
+S A$init_screen$71 Def000008
 S G$screen_init_screen_load$0$0 Def000000
-S A$init_screen$90 Def000009
-S A$init_screen$81 Def000006
-S A$init_screen$82 Def000007
-S A$init_screen$65 Def000000
-S A$init_screen$78 Def000003
-S _screen_init_screen_updateX Def00000A
-S A$init_screen$79 Def000004
-S C$init_screen.c$10$1_0$4 Def000003
-S C$init_screen.c$12$1_0$4 Def000003
-S C$init_screen.c$13$1_0$4 Def000009
+S A$init_screen$72 Def00000B
+S C$init_screen.c$19$1_0$13 Def00001F
+S A$init_screen$64 Def000000
+S A$init_screen$84 Def000015
+S A$init_screen$85 Def000018
+S A$init_screen$76 Def00000C
+S A$init_screen$86 Def000019
+S A$init_screen$77 Def00000F
+S A$init_screen$68 Def000003
+S A$init_screen$96 Def00001E
+S A$init_screen$87 Def00001A
+S A$init_screen$78 Def000010
+S A$init_screen$69 Def000006
+S _screen_init_screen_updateX Def000026
+S A$init_screen$88 Def00001D
+S A$init_screen$79 Def000011
 S _screen_init_screen_load Def000000
-S C$init_screen.c$14$1_0$6 Def00000A
-S XG$screen_init_screen_updateX$0$0 Def000010
-S C$init_screen.c$95$1_0$6 Def00000A
-S C$init_screen.c$96$1_0$6 Def000010
-S XG$screen_init_screen_load$0$0 Def000000
-S C$init_screen.c$5$0_0$2 Def000000
-S C$init_screen.c$7$1_0$2 Def000000
-S C$init_screen.c$8$1_0$2 Def000000
-S G$screen_init_screen_update$0$0 Def000003
-S A$init_screen$103 Def00000A
-S A$init_screen$104 Def00000B
-S A$init_screen$105 Def00000C
-S A$init_screen$115 Def000010
-S A$init_screen$106 Def00000D
-S _screen_init_screen_update Def000003
-S A$init_screen$107 Def00000E
-S G$screen_init_screen_updateX$0$0 Def00000A
-S XG$screen_init_screen_update$0$0 Def000009
+S C$init_screen.c$9$0_0$11 Def000000
+S XG$screen_init_screen_updateX$0$0 Def00002C
+S XG$screen_init_screen_load$0$0 Def00001E
+S G$screen_init_screen_update$0$0 Def00001F
+S A$init_screen$110 Def000020
+S A$init_screen$111 Def000021
+S A$init_screen$121 Def000025
+S A$init_screen$112 Def000022
+S A$init_screen$113 Def000023
+S C$init_screen.c$104$1_0$15 Def000026
+S C$init_screen.c$105$1_0$15 Def00002C
+S _screen_init_screen_update Def00001F
+S A$init_screen$134 Def000026
+S A$init_screen$135 Def000027
+S A$init_screen$136 Def000028
+S A$init_screen$109 Def00001F
+S A$init_screen$146 Def00002C
+S A$init_screen$137 Def000029
+S A$init_screen$138 Def00002A
+S C$init_screen.c$11$1_0$11 Def000000
+S C$init_screen.c$12$1_0$11 Def000000
+S C$init_screen.c$21$1_0$13 Def00001F
+S C$init_screen.c$14$1_0$11 Def000003
+S G$screen_init_screen_updateX$0$0 Def000026
+S XG$screen_init_screen_update$0$0 Def000025
+S C$init_screen.c$22$1_0$13 Def000025
+S C$init_screen.c$15$1_0$11 Def00000C
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -47,13 +71,17 @@ A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
-T 00 00 00 C3 00 00
-R 00 00 00 00 02 04 01 00
-T 03 00 00
+T 00 00 00 CD 00 00 3A 03 00 F5 33 CD 00 00 33 3A
+R 00 00 00 00 02 04 05 00 02 07 03 00 02 0C 01 00
+T 0D 00 00 00 00 F5 33 CD 00 00 33 3A 00 00 F5 33
+R 00 00 00 00 02 03 03 00 02 08 04 00 02 0C 03 00
+T 1A 00 00 CD 00 00 33 C9
+R 00 00 00 00 02 04 00 00
+T 1F 00 00
 R 00 00 00 00
-T 03 00 00 C1 E1 E5 C5 36 07 C9
+T 1F 00 00 C1 E1 E5 C5 36 07 C9
 R 00 00 00 00
-T 0A 00 00
+T 26 00 00
 R 00 00 00 00
-T 0A 00 00 C1 E1 E5 C5 36 06 C9
+T 26 00 00 C1 E1 E5 C5 36 06 C9
 R 00 00 00 00

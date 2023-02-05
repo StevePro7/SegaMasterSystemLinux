@@ -64,7 +64,7 @@ S:G$engine_graphics_manager_image$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_hold$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move$0_0$0({2}DF,SC:U),C,0,0
-S:G$engine_level_manager_load$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_level_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_level_manager_show$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_level_manager_draw$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_init$0_0$0({2}DF,SV:S),C,0,0

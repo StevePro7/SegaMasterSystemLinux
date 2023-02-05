@@ -10,9 +10,10 @@ void screen_init_screen_load()
 {
 	struct_game_object *go = &global_game_object;
 	engine_debug_manager_initgame();
-	engine_level_manager_load( go->game_level );
-	engine_player_manager_startX( go->game_difficulty );
-	engine_collision_manager_load( go->game_difficulty );
+
+	engine_level_manager_init( go->game_level );
+	engine_player_manager_startX( go->game_difficulty );		// TODO rename
+	engine_collision_manager_init( go->game_difficulty );
 }
 
 void screen_init_screen_update( unsigned char *screen_type )

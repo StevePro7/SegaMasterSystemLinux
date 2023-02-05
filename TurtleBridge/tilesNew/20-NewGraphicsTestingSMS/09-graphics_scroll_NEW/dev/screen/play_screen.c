@@ -18,7 +18,7 @@ static void drawScreen();
 void screen_play_screen_load()
 {
 	struct_scroll_object *so = &global_scroll_object;
-	engine_level_manager_load( 0 );
+	engine_level_manager_init( 0 );
 
 	devkit_SMS_displayOff();
 	drawScreen();

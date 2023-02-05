@@ -15,10 +15,10 @@
 // Global variable.
 struct_level_object global_level_object;
 
-void engine_level_manager_load( unsigned char level )
+void engine_level_manager_init( unsigned char level )
 {
 	struct_level_object *lo = &global_level_object;
-	lo->column_draw = SCREEN_WIDE - 1;
+	lo->column_draw = SCREEN_LESS_ONE;
 
 	devkit_SMS_mapROMBank( FIXED_BANK );
 	lo->level_data = ( unsigned char* ) level_object_data[ level ];

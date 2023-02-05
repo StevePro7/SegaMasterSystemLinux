@@ -1,7 +1,7 @@
 M:title_screen
 F:G$screen_title_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_title_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Ltitle_screen.screen_title_screen_update$screen_type$1_0$90({2}DG,SC:U),B,1,4
+S:Ltitle_screen.screen_title_screen_update$screen_type$1_0$91({2}DG,SC:U),B,1,4
 S:G$music_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$level_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$screen_splash_screen_load$0_0$0({2}DF,SV:S),C,0,0
@@ -15,7 +15,11 @@ S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_zero$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_graphics_manager_level$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_sea$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_graphics_manager_clouds$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_graphics_manager_cloud$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_graphics_manager_title$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_image$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOnFeature$0_0$0({2}DF,SV:S),C,0,0

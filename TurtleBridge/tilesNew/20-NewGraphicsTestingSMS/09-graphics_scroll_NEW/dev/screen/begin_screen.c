@@ -29,7 +29,7 @@ void screen_begin_screen_load()
 
 	level = 1;
 	screen = 0;
-	engine_level_manager_load( level );
+	engine_level_manager_init( level );
 	//engine_player_manager_startX( difficulty_type_easier );
 	//engine_player_manager_startX( difficulty_type_insane );
 

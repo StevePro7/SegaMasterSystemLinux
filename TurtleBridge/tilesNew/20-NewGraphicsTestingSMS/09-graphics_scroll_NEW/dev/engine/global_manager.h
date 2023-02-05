@@ -10,6 +10,7 @@
 #define PIXELS_HIGH			192
 
 #define SCREEN_WIDE			32
+#define SCREEN_LESS_ONE		SCREEN_WIDE - 1
 #define SCREEN_HIGH			24
 #define OCEANS_HIGH			3		// TODO - in gfx mgr only?
 

@@ -209,7 +209,7 @@ void engine_player_manager_right( unsigned char delta )
 
 	// https://johnysswlab.com/make-your-programs-run-faster-avoid-expensive-instructions
 	//po->lookX = po->tileX % SCREEN_WIDE;
-	po->lookX = po->tileX  & ( SCREEN_WIDE - 1 );
+	po->lookX = po->tileX  & ( SCREEN_LESS_ONE );
 
 	//devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
 	////engine_font_manager_data( delta, 12, 12 );
@@ -239,7 +239,7 @@ static void updatePlayer()
 
 	// https://johnysswlab.com/make-your-programs-run-faster-avoid-expensive-instructions
 	//po->lookX = po->tileX % SCREEN_WIDE;
-	po->lookX = po->tileX  & ( SCREEN_WIDE - 1 );
+	po->lookX = po->tileX  & SCREEN_LESS_ONE;
 	po->tileY = po->posnY >> 3;
 }
 

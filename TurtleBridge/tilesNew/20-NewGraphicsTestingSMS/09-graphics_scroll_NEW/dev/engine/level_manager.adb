@@ -1,7 +1,7 @@
 M:level_manager
-F:G$engine_level_manager_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Llevel_manager.engine_level_manager_load$level$1_0$96({1}SC:U),B,1,4
-S:Llevel_manager.engine_level_manager_load$lo$1_0$97({2}DG,STtag_struct_level_object:S),R,0,0,[]
+F:G$engine_level_manager_init$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Llevel_manager.engine_level_manager_init$level$1_0$96({1}SC:U),B,1,4
+S:Llevel_manager.engine_level_manager_init$lo$1_0$97({2}DG,STtag_struct_level_object:S),R,0,0,[]
 F:G$engine_level_manager_show$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Llevel_manager.engine_level_manager_show$screen$1_0$98({1}SC:U),B,1,4
 S:Llevel_manager.engine_level_manager_show$lo$1_0$99({2}DG,STtag_struct_level_object:S),R,0,0,[]

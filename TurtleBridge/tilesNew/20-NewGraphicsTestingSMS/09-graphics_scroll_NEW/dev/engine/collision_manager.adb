@@ -1,6 +1,6 @@
 M:collision_manager
-F:G$engine_collision_manager_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lcollision_manager.engine_collision_manager_load$difficulty$1_0$10({1}SC:U),B,1,4
+F:G$engine_collision_manager_init$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lcollision_manager.engine_collision_manager_init$difficulty$1_0$10({1}SC:U),B,1,4
 F:G$engine_collision_manager_player$0_0$0({2}DF,SC:S),Z,0,0,0,0,0
 S:Lcollision_manager.engine_collision_manager_player$lookX$1_0$13({1}SC:U),B,1,4
 S:Lcollision_manager.engine_collision_manager_player$tileY$1_0$13({1}SC:U),B,1,5
@@ -22,14 +22,14 @@ S:Lcollision_manager.engine_collision_manager_playerX$collisionTile$1_0$22({1}SC
 S:Lcollision_manager.engine_collision_manager_playerX$sloc0$0_1$0({1}SC:U),B,1,-2
 S:Lcollision_manager.engine_collision_manager_playerX$sloc1$0_1$0({1}SC:S),B,1,-1
 T:Fcollision_manager$tag_struct_player_object[({0}S:S$posnX$0_0$0({2}SI:U),Z,0,0)({2}S:S$tileX$0_0$0({2}SI:U),Z,0,0)({4}S:S$lookX$0_0$0({1}SC:U),Z,0,0)({5}S:S$startX$0_0$0({1}SC:U),Z,0,0)({6}S:S$posnY$0_0$0({1}SC:U),Z,0,0)({7}S:S$tileY$0_0$0({1}SC:U),Z,0,0)({8}S:S$drawX$0_0$0({1}SC:U),Z,0,0)({9}S:S$drawY$0_0$0({1}SC:U),Z,0,0)({10}S:S$player_state$0_0$0({1}SC:U),Z,0,0)({11}S:S$player_index$0_0$0({1}SC:U),Z,0,0)({12}S:S$player_frame$0_0$0({1}SC:U),Z,0,0)({13}S:S$player_count$0_0$0({2}SI:U),Z,0,0)]
-T:Fcollision_manager$tag_struct_level_object[({0}S:S$level_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$level_size$0_0$0({2}SI:U),Z,0,0)({4}S:S$level_bank$0_0$0({1}SC:U),Z,0,0)({5}S:S$colunn_draw$0_0$0({1}SC:U),Z,0,0)]
+T:Fcollision_manager$tag_struct_level_object[({0}S:S$level_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$level_size$0_0$0({2}SI:U),Z,0,0)({4}S:S$level_bank$0_0$0({1}SC:U),Z,0,0)({5}S:S$column_draw$0_0$0({1}SC:U),Z,0,0)]
 S:G$level_platforms$0_0$0({0}DA0d,SC:U),E,0,0
 S:G$global_level_object$0_0$0({6}STtag_struct_level_object:S),E,0,0
 S:G$global_player_object$0_0$0({15}STtag_struct_player_object:S),E,0,0
 S:Fcollision_manager$collisionDelta$0_0$0({1}SC:U),E,0,0
 S:Fcollision_manager$collisionRange$0_0$0({1}SC:U),E,0,0
 S:Fcollision_manager$moreForgiving$0_0$0({1}:S),E,0,0
-S:G$engine_level_manager_load$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_level_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_level_manager_show$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_level_manager_draw$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_init$0_0$0({2}DF,SV:S),C,0,0
