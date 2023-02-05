@@ -130,7 +130,7 @@ void engine_player_manager_update()
 			po->posnY = tileY << 3;
 			po->player_state = player_state_isonground;
 			po->player_index = 0;
-			updatePlayer();
+			updatePlayerY();
 
 			//engine_font_manager_text( "PLAYER ON GROUND ", 5, 4 );
 			//engine_font_manager_data( po->posnY, 30, 2 );

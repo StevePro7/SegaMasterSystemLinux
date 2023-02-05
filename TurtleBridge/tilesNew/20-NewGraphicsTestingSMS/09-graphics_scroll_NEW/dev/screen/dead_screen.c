@@ -31,7 +31,7 @@ void screen_dead_screen_update( unsigned char *screen_type )
 	signed char deltaY;	//gravity;
 	enum_scroll_state scroll_state;
 
-	deltaX = 0;
+	deltaX = 1;
 	input = engine_input_manager_move( input_type_right );
 	if( input )
 	{
@@ -78,26 +78,38 @@ void screen_dead_screen_update( unsigned char *screen_type )
 			//engine_font_manager_data( deltaY, 20, 6 );
 
 			engine_player_manager_down( deltaY );
-			if( po->player_index < 16 )
+			collision = engine_collision_manager_player( po->lookX, po->tileY );
+			if( INVALID_INDEX != collision )
 			{
-				po->player_index++;
+				po->player_state = player_state_isonground;
+				po->posnY = po->tileY << 3;
+				po->drawY = po->posnY - 32;
+				po->player_index = 0;
+				po->player_frame = 0;
 			}
-
-			//engine_debug_manager_printout();
-			if( po->posnY >= 168 )
+			else
 			{
-				po->posnY = 168;
-				if( go->game_isgod )
+				if( po->player_index < 16 )
 				{
-					po->player_state = player_state_isnowdying;
-					po->player_index = 0;
-					po->player_frame = 0;
+					po->player_index++;
 				}
-				else
+
+				//engine_debug_manager_printout();
+				if( po->posnY >= 168 )
 				{
-					//engine_font_manager_text( "SPLAT", 20, 20 );
-					*screen_type = screen_type_over;
-					return;
+					po->posnY = 168;
+					if( go->game_isgod )
+					{
+						po->player_state = player_state_isnowdying;
+						po->player_index = 0;
+						po->player_frame = 0;
+					}
+					else
+					{
+						//engine_font_manager_text( "SPLAT", 20, 20 );
+						*screen_type = screen_type_over;
+						return;
+					}
 				}
 			}
 		}
