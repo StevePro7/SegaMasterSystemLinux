@@ -16,7 +16,8 @@ void engine_debug_manager_initgame()
 	go->game_world = 0;
 	go->game_round = 0;
 	go->game_level = 10;
-	go->game_point = 1;
+	go->game_point = 0;
+	go->game_cloud = 88;		// TODO will be random
 }
 
 void engine_debug_manager_printout()

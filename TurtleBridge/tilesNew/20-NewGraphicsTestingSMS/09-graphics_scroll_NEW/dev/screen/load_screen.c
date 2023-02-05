@@ -23,8 +23,6 @@ void screen_load_screen_load()
 	struct_player_object *po = &global_player_object;
 	struct_game_object *go = &global_game_object;
 	unsigned char player_loadY;
-	unsigned char data;
-	data = 127;
 
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
@@ -37,23 +35,20 @@ void screen_load_screen_load()
 	//engine_tile_manager_stevepro2( TILE_CLOUD_LARGE, 9, 5, 8, 3 );
 	//engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 17, 5, 8, 3 );
 	//engine_tile_manager_stevepro2( TILE_CLOUD_LARGE, 25, 5, 8, 3 );
-	
-	//engine_graphics_manager_clouds( data );
+	//engine_graphics_manager_clouds( go->game_cloud );
 
 	engine_level_manager_draw_point( go->game_point );
 	engine_player_manager_loadX( go->game_point );
 	
 	player_loadY = level_platforms[ po->lookX ];
 	engine_player_manager_loadY( player_loadY );
+	engine_player_manager_draw();
 	devkit_SMS_displayOn();
-
-
-	//drawScreen();
-	//engine_font_manager_text( "LOAD SCREEN", 10, 10 );
 }
 
 void screen_load_screen_update( unsigned char *screen_type )
 {
+	engine_player_manager_draw();
 	//unsigned char input;
 	//input = engine_input_manager_hold( input_type_left );
 	//if( input )
