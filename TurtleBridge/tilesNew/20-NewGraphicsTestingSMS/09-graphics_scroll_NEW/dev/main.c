@@ -5,7 +5,7 @@ static void start();
 void main( void )
 {
 	static bool global_pause;
-//	unsigned char input;
+	unsigned char input;
 	start();
 	for( ;; )
 	{
@@ -33,6 +33,14 @@ void main( void )
 
 		devkit_SMS_initSprites();
 		engine_input_manager_update();
+
+		input = engine_input_manager_move( input_type_fire2 );
+		if( input )
+		{
+			devkit_PSGStop();
+			start();
+		}
+
 		engine_screen_manager_update();
 
 		devkit_SMS_finalizeSprites();
@@ -42,14 +50,6 @@ void main( void )
 		devkit_UNSAFE_SMS_copySpritestoSAT();
 
 		engine_audio_manager_update();
-
-		//engine_input_manager_update();
-		//input = input = engine_input_manager_move( input_type_fire2 );
-		//if( input )
-		//{
-		//	devkit_PSGStop();
-		//	start();
-		//}
 	}
 }
 
@@ -58,7 +58,7 @@ static void start()
 	unsigned char open_screen_type;
 
 	devkit_SMS_init();
-	//engine_debug_manager_initcontent();
+	engine_debug_manager_initcontent();
 
 	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_NORMAL() );
 	devkit_SMS_useFirstHalfTilesforSprites( false );

@@ -98,13 +98,13 @@ void screen_dead_screen_update( unsigned char *screen_type )
 				if( po->posnY >= 168 )
 				{
 					po->posnY = 168;
-					//if( go->game_isgod )
-					//{
-					//	po->player_state = player_state_isnowdying;
-					//	po->player_index = 0;
-					//	po->player_frame = 0;
-					//}
-					//else
+					if( go->game_isgod )
+					{
+						po->player_state = player_state_isnowdying;
+						po->player_index = 0;
+						po->player_frame = 0;
+					}
+					else
 					{
 						engine_scroll_manager_update( 0 );
 						//engine_font_manager_text( "SPLAT", 20, 20 );
