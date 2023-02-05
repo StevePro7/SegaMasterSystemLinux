@@ -2,7 +2,7 @@ M:load_screen
 F:G$screen_load_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lload_screen.screen_load_screen_load$po$1_0$100({2}DG,STtag_struct_player_object:S),R,0,0,[]
 S:Lload_screen.screen_load_screen_load$go$1_0$100({2}DG,STtag_struct_game_object:S),R,0,0,[]
-S:Lload_screen.screen_load_screen_load$player_initY$1_0$100({1}SC:U),R,0,0,[]
+S:Lload_screen.screen_load_screen_load$player_loadY$1_0$100({1}SC:U),R,0,0,[a]
 S:Lload_screen.screen_load_screen_load$data$1_0$100({1}SC:U),R,0,0,[]
 F:G$screen_load_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lload_screen.screen_load_screen_update$screen_type$1_0$101({2}DG,SC:U),B,1,4
@@ -39,7 +39,7 @@ S:G$engine_level_manager_draw_column$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_initX$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_loadX$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_player_manager_initY$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_player_manager_loadY$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_update2$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_update3$0_0$0({2}DF,SV:S),C,0,0

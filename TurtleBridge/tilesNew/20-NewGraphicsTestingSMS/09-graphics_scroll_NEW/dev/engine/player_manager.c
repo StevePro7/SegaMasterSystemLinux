@@ -74,27 +74,12 @@ void engine_player_manager_loadX( unsigned char checkPoint )
 	updatePlayerX();
 }
 
-
-//void engine_player_manager_checkX( unsigned char screen )
-//{
-	// TODO - do I want to have 
-	// engine_player_manager_screen()
-//}
-void engine_player_manager_initY( unsigned char player_startY )
+void engine_player_manager_loadY( unsigned char player_loadY )
 {
 	struct_player_object *po = &global_player_object;
-	po->posnY = player_startY << 3;
-	updatePlayer();
+	po->posnY = player_loadY << 3;
+	updatePlayerY();
 }
-
-//void engine_player_manager_load( unsigned char difficulty, unsigned char player_startY )
-//{
-//	struct_player_object *po = &global_player_object;
-//	devkit_SMS_mapROMBank( FIXED_BANK );
-//	po->posnX = player_object_starts[ difficulty ];
-//	po->posnY = player_startY << 3;
-//	updatePlayer();
-//}
 
 void engine_player_manager_update3()
 {

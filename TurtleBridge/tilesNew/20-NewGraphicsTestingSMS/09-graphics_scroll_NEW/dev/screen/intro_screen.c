@@ -29,8 +29,8 @@ void screen_intro_screen_load()
 	unsigned char level, screen;
 	unsigned char difficulty;
 
-	level = 10;
-	screen = 2;		//checkpoint
+	level = 0;
+	screen = 0;		//checkpoint
 
 	//level = ho->hack_object_level;
 	//screen = ho->hack_object_screen;
@@ -44,7 +44,6 @@ void screen_intro_screen_load()
 	engine_player_manager_initX( difficulty );
 	engine_collision_manager_init( difficulty );
 
-	
 	//engine_player_manager_initX( difficulty_type_easier );
 	//engine_player_manager_initX( difficulty_type_normal );
 	//engine_player_manager_initX( difficulty_type_harder );
@@ -72,7 +71,7 @@ void screen_intro_screen_load()
 
 //	player_startY = lo->level_platforms[ po->tileX ];
 	player_startY = level_platforms[ po->lookX ];
-	engine_player_manager_initY( player_startY );
+	engine_player_manager_loadY( player_startY );
 	engine_player_manager_draw();
 	devkit_SMS_displayOn();
 	engine_scroll_manager_load( screen, lo->level_size );

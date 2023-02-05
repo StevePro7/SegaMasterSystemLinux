@@ -30,6 +30,8 @@ void engine_level_manager_init( unsigned char level )
 	lo->level_size -= 1;
 }
 
+// TODO rename 
+// engine_level_manager_load()
 void engine_level_manager_draw_point( unsigned char checkPoint )
 {
 	struct_level_object *lo = &global_level_object;
@@ -42,6 +44,8 @@ void engine_level_manager_draw_point( unsigned char checkPoint )
 	}
 }
 
+// TODO rename 
+// engine_level_manager_draw()
 void engine_level_manager_draw_column( unsigned int scrollColumn )
 {
 	struct_level_object *lo = &global_level_object;

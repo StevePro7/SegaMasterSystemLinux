@@ -9,9 +9,9 @@ S:Lplayer_manager.engine_player_manager_loadX$checkPoint$1_0$94({1}SC:U),B,1,4
 S:Lplayer_manager.engine_player_manager_loadX$po$1_0$95({2}DG,STtag_struct_player_object:S),R,0,0,[]
 S:Lplayer_manager.engine_player_manager_loadX$offset$1_0$95({2}SI:U),R,0,0,[c,b]
 S:Lplayer_manager.engine_player_manager_loadX$screen$1_0$95({1}SC:U),R,0,0,[c]
-F:G$engine_player_manager_initY$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lplayer_manager.engine_player_manager_initY$player_startY$1_0$96({1}SC:U),B,1,4
-S:Lplayer_manager.engine_player_manager_initY$po$1_0$97({2}DG,STtag_struct_player_object:S),R,0,0,[]
+F:G$engine_player_manager_loadY$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lplayer_manager.engine_player_manager_loadY$player_loadY$1_0$96({1}SC:U),B,1,4
+S:Lplayer_manager.engine_player_manager_loadY$po$1_0$97({2}DG,STtag_struct_player_object:S),R,0,0,[]
 F:G$engine_player_manager_update3$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lplayer_manager.engine_player_manager_update3$po$1_0$98({2}DG,STtag_struct_player_object:S),R,0,0,[]
 F:G$engine_player_manager_update2$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
