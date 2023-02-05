@@ -9,6 +9,7 @@
 #include "../engine/scroll_manager.h"
 
 static signed char gravityZZ[ 17 ] = { 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5 };
+//static signed char gravityZZ[ 17 ] = { 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4 };
 
 void screen_dead_screen_load()
 {
@@ -80,9 +81,9 @@ void screen_dead_screen_update( unsigned char *screen_type )
 				po->player_index++;
 			}
 
-			if( po->posnY >= PIXELS_HIGH )
+			if( po->posnY >= 168 )
 			{
-				po->posnY = PIXELS_HIGH;
+				po->posnY = 168;
 				po->player_state = player_state_isnowdying;
 				po->player_index = 0;
 			}
