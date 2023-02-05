@@ -16,7 +16,7 @@
 #include <stdbool.h>
 
 static void drawScreen();
-static void nextPrint();
+//static void nextPrint();
 static unsigned char anyPlatforms();
 static bool complete;
 
@@ -229,18 +229,18 @@ static void drawScreen()
 	//engine_font_manager_text( "BEGIN[SCREEN!!", 10, 2 );
 }
 
-static void nextPrint()
-{
-	struct_scroll_object *so = &global_scroll_object;
-	struct_player_object *po = &global_player_object;
-	struct_level_object *lo = &global_level_object;
-
-	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
-
-	engine_font_manager_data( lo->colunn_draw, 8, 8 );
-	engine_font_manager_data( so->scrollColumn, 16, 8 );
-	engine_font_manager_data( level_platforms[ lo->colunn_draw ], 24, 8 );
-
-	//engine_font_manager_data( po->tileX, 8, 9 );
-	//engine_font_manager_data( level_platforms[ po->tileX ], 16, 9 );
-}
+//static void nextPrint()
+//{
+//	struct_scroll_object *so = &global_scroll_object;
+//	struct_player_object *po = &global_player_object;
+//	struct_level_object *lo = &global_level_object;
+//
+//	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+//
+//	engine_font_manager_data( lo->column_draw, 8, 8 );
+//	engine_font_manager_data( so->scrollColumn, 16, 8 );
+//	engine_font_manager_data( level_platforms[ lo->column_draw ], 24, 8 );
+//
+//	//engine_font_manager_data( po->tileX, 8, 9 );
+//	//engine_font_manager_data( level_platforms[ po->tileX ], 16, 9 );
+//}

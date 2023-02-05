@@ -18,7 +18,7 @@ struct_level_object global_level_object;
 void engine_level_manager_load( unsigned char level )
 {
 	struct_level_object *lo = &global_level_object;
-	lo->colunn_draw = SCREEN_WIDE - 1;
+	lo->column_draw = SCREEN_WIDE - 1;
 
 	devkit_SMS_mapROMBank( FIXED_BANK );
 	lo->level_data = ( unsigned char* ) level_object_data[ level ];
@@ -49,10 +49,10 @@ void engine_level_manager_draw( unsigned int scrollColumn )
 	unsigned char level_object, level_platform;
 	bool flip = false;
 
-	lo->colunn_draw++;
-	if( lo->colunn_draw >= SCREEN_WIDE )
+	lo->column_draw++;
+	if( lo->column_draw >= SCREEN_WIDE )
 	{
-		lo->colunn_draw = 0;
+		lo->column_draw = 0;
 	}
 
 	devkit_SMS_mapROMBank( lo->level_bank );
@@ -60,12 +60,12 @@ void engine_level_manager_draw( unsigned int scrollColumn )
 	engine_util_manager_convertByteToNibbles( level_data, &level_column, &level_object );
 
 	level_platform = tiles_object_platform[ level_object ];
-	level_platforms[ lo->colunn_draw ] = level_platform;
+	level_platforms[ lo->column_draw ] = level_platform;
 	if( level_column >= LEVEL_FLIP_TILE_FLAG )
 	{
 		flip = true;
 		level_column -= LEVEL_FLIP_TILE_FLAG;
 	}
 
-	engine_tile_manager_draw_columns( level_object, lo->colunn_draw, level_column, flip );
+	engine_tile_manager_draw_columns( level_object, lo->column_draw, level_column, flip );
 }
