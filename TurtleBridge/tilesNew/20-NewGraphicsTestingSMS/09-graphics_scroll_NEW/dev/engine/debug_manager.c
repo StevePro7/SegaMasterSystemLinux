@@ -1,4 +1,6 @@
 #include "debug_manager.h"
+#include "../engine/asm_manager.h"
+#include "../engine/content_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/game_manager.h"
 #include "../engine/level_manager.h"
@@ -80,4 +82,16 @@ void engine_debug_manager_scrollout()
 	struct_scroll_object *so = &global_scroll_object;
 	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
 	engine_font_manager_data( so->scrollFinish, 8, 0 );
+}
+
+
+
+void engine_debug_manager_initcontent()
+{
+	devkit_SMS_displayOff();
+	engine_asm_manager_clear_VRAM();
+	engine_content_manager_bggame();
+	engine_content_manager_sprite();
+	devkit_SMS_displayOn();
+
 }

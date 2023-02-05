@@ -204,6 +204,10 @@ S:G$engine_content_manager_bggame$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_splash$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_titles$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_sprite$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_debug_manager_initgame$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_debug_manager_printout$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_debug_manager_scrollout$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_debug_manager_initcontent$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0_0$0({2}DF,SV:S),C,0,0
