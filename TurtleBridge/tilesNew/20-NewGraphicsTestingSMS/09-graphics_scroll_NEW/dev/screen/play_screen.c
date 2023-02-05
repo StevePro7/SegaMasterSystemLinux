@@ -13,15 +13,20 @@
 #include "../devkit/_sms_manager.h"
 #include <stdbool.h>
 
+static unsigned char getDelta();
+static unsigned char foo;
+
 void screen_play_screen_load()
 {
 	engine_font_manager_text( "PLAY SCREEN", 10, 5 );
+	foo = 0;
+	engine_font_manager_data( foo, 10, 7 );
 }
 
 void screen_play_screen_update( unsigned char *screen_type )
 {
 	//struct_scroll_object *so = &global_scroll_object;
-	//unsigned char input;
+	unsigned char input;
 	//unsigned char delta;
 	//unsigned char value;
 	//bool newTile;
@@ -30,11 +35,12 @@ void screen_play_screen_update( unsigned char *screen_type )
 	//value = 0;
 	//newTile = false;
 	////input = engine_input_manager_hold( input_type_right);
-	//input = engine_input_manager_move( input_type_down );
-	//if( input )
-	//{
-	//	delta = 2;
-	//}
+	input = engine_input_manager_move( input_type_down );
+	if( input )
+	{
+		foo++;
+		engine_font_manager_data( foo, 10, 7 );
+	}
 	//input = engine_input_manager_move( input_type_left );
 	//if( input )
 	//{
@@ -99,4 +105,35 @@ void screen_play_screen_update( unsigned char *screen_type )
 	//engine_player_manager_update();
 	engine_player_manager_draw();
 	*screen_type = screen_type_play;
+}
+
+
+static unsigned char getDelta()
+{
+	unsigned char input;
+	unsigned char delta;
+	delta = 0;
+	
+	input = engine_input_manager_move( input_type_right );
+	if( input )
+	{
+		delta = 1;
+	}
+	input = engine_input_manager_move( input_type_down );
+	if( input )
+	{
+		delta = 2;
+	}
+	input = engine_input_manager_move( input_type_left );
+	if( input )
+	{
+		delta = 3;
+	}
+	input = engine_input_manager_move( input_type_up );
+	if( input )
+	{
+		delta = 4;
+	}
+
+	return delta *= 2;
 }

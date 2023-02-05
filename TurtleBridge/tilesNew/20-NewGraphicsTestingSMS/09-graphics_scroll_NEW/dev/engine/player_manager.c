@@ -40,7 +40,7 @@ void engine_player_manager_init()
 	//po->player_state = player_state_isintheair;
 	po->player_index = 0;
 	po->player_frame = 0;
-	po->player_count = 0;
+	//po->player_count = 0;		// todo delete
 	animate_count = 0;
 	updatePlayer();
 }
@@ -262,13 +262,13 @@ void engine_player_manager_pass()
 	po->posnX++;
 	updatePlayer();
 }
-void engine_player_manager_count()
-{
-	struct_player_object *po = &global_player_object;
-	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
-	engine_font_manager_data( po->player_count, 30, 4 );
-	po->player_count++;
-}
+//void engine_player_manager_count()
+//{
+//	struct_player_object *po = &global_player_object;
+//	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+//	engine_font_manager_data( po->player_count, 30, 4 );
+//	po->player_count++;
+//}
 void engine_player_manager_draw()
 {
 	struct_player_object *po = &global_player_object;

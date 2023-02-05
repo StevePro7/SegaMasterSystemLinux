@@ -70,6 +70,7 @@ static void start()
 	engine_hack_manager_init();
 	engine_hack_manager_load();
 	engine_audio_manager_init();
+	engine_input_manager_init();
 	engine_tile_manager_init();
 
 	//open_screen_type = screen_type_splash;
