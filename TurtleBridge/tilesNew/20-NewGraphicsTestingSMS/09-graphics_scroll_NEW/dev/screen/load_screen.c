@@ -8,6 +8,7 @@
 #include "../engine/graphics_manager.h"
 #include "../engine/level_manager.h"
 #include "../engine/player_manager.h"
+#include "../engine/scroll_manager.h"
 #include "../engine/tile_manager.h"
 #include "../devkit/_sms_manager.h"
 
@@ -21,6 +22,7 @@
 void screen_load_screen_load()
 {
 	struct_player_object *po = &global_player_object;
+	struct_level_object *lo = &global_level_object;
 	struct_game_object *go = &global_game_object;
 	unsigned char player_loadY;
 
@@ -44,13 +46,15 @@ void screen_load_screen_load()
 	engine_player_manager_loadY( player_loadY );
 
 	// TODO delete 
-	engine_player_manager_loadY( 16 );
+	//engine_player_manager_loadY( 18 );
 	// TODO delete 
 	engine_player_manager_draw();
 
 	// TODO delete
 	engine_debug_manager_printout();
 	devkit_SMS_displayOn();
+
+	engine_scroll_manager_load( go->game_point, lo->level_size );
 }
 
 void screen_load_screen_update( unsigned char *screen_type )

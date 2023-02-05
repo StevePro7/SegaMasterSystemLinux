@@ -42,6 +42,7 @@ const unsigned char *level_object_data[] =
 	level1108_txt,
 	level1109_txt,
 	level1110_txt,
+	level1111_txt,
 	level1112_txt,
 };
 const unsigned int level_object_size[] =

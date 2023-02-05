@@ -1,6 +1,6 @@
 M:fixedbank
 S:G$music_object_data$0_0$0({4}DA2d,DG,SC:U),E,0,0
-S:G$level_object_data$0_0$0({24}DA12d,DG,SC:U),E,0,0
+S:G$level_object_data$0_0$0({26}DA13d,DG,SC:U),E,0,0
 S:G$player_object_starts$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$animeopening_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$mastertracker_psg$0_0$0({0}DA0d,SC:U),D,0,0

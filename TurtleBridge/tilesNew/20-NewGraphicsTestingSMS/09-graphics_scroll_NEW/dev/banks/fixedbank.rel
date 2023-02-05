@@ -1,5 +1,5 @@
 XL3
-H A areas 1D global symbols
+H A areas 1E global symbols
 M fixedbank
 O -mz80
 S _level1108_txt Ref000000
@@ -10,6 +10,7 @@ S .__.ABS. Def000000
 S _level1100_txt Ref000000
 S _level1110_txt Ref000000
 S _level1101_txt Ref000000
+S _level1111_txt Ref000000
 S _level1102_txt Ref000000
 S _level1112_txt Ref000000
 S _level1103_txt Ref000000
@@ -19,7 +20,7 @@ S _level1106_txt Ref000000
 S _level1107_txt Ref000000
 A _CODE size 0 flags 0 addr 0
 A _DATA size 0 flags 0 addr 0
-A _INITIALIZED size 1C flags 0 addr 0
+A _INITIALIZED size 1E flags 0 addr 0
 S _level_object_data Def000004
 S G$level_object_data$0_0$0 Def000004
 S _music_object_data Def000000
@@ -37,7 +38,7 @@ S G$music_object_bank$0_0$0 Def000000
 S G$my_splash_text$0_0$0 Def000002
 S _level_object_size Def000006
 S G$level_object_size$0_0$0 Def000006
-A _INITIALIZER size 1C flags 0 addr 0
+A _INITIALIZER size 1E flags 0 addr 0
 S Ffixedbank$__xinit_music_object_data$0_0$0 Def000000
 S Ffixedbank$__xinit_level_object_data$0_0$0 Def000004
 A _CABS size 0 flags 8 addr 0
@@ -76,10 +77,12 @@ R 00 00 08 00 02 03 03 00 02 05 01 00
 T 04 00 00
 R 00 00 08 00
 T 04 00 00 00 00 00 00 00 00
-R 00 00 08 00 02 03 05 00 02 05 07 00 02 07 08 00
+R 00 00 08 00 02 03 05 00 02 05 07 00 02 07 09 00
 T 0A 00 00 00 00 00 00 00 00
-R 00 00 08 00 02 03 0A 00 02 05 0B 00 02 07 0C 00
+R 00 00 08 00 02 03 0B 00 02 05 0C 00 02 07 0D 00
 T 10 00 00 00 00 00 00 00 00
-R 00 00 08 00 02 03 0D 00 02 05 0E 00 02 07 00 00
+R 00 00 08 00 02 03 0E 00 02 05 0F 00 02 07 00 00
 T 16 00 00 00 00 00 00 00 00
-R 00 00 08 00 02 03 02 00 02 05 06 00 02 07 09 00
+R 00 00 08 00 02 03 02 00 02 05 06 00 02 07 08 00
+T 1C 00 00 00 00
+R 00 00 08 00 02 03 0A 00
