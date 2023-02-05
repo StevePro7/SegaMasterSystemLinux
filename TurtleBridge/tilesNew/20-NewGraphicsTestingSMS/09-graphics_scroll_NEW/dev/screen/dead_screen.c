@@ -14,7 +14,7 @@ static signed char gravityZZ[ 17 ] = { 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 5, 5, 5, 5,
 
 void screen_dead_screen_load()
 {
-	engine_font_manager_text( "DEAD SCREEN", 1, 5 );
+	//engine_font_manager_text( "DEAD SCREEN", 1, 5 );
 	engine_player_manager_draw();
 }
 
@@ -62,11 +62,11 @@ void screen_dead_screen_update( unsigned char *screen_type )
 			if( INVALID_INDEX == collision )
 			{
 				po->player_state = player_state_isintheair;
-				engine_font_manager_text( "DEAD", 8, 8 );
+				//engine_font_manager_text( "DEAD", 8, 8 );
 			}
 			else
 			{
-				engine_font_manager_text( "    ", 8, 8 );
+				//engine_font_manager_text( "    ", 8, 8 );
 			}
 		}
 		if( player_state_isintheair == po->player_state )
@@ -75,7 +75,7 @@ void screen_dead_screen_update( unsigned char *screen_type )
 			engine_player_manager_right( deltaX );
 
 			deltaY = gravityZZ[ po->player_index ];
-			engine_font_manager_data( deltaY, 20, 6 );
+			//engine_font_manager_data( deltaY, 20, 6 );
 
 			engine_player_manager_down( deltaY );
 			if( po->player_index < 16 )

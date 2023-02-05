@@ -11,8 +11,8 @@
 
 void engine_graphics_manager_level()
 {
-	//engine_graphics_manager_title();
-	//engine_graphics_manager_clouds();
+	engine_graphics_manager_title();
+	engine_graphics_manager_clouds(64);
 	engine_graphics_manager_sea();
 }
 

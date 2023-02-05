@@ -10,7 +10,7 @@ S:Ldead_screen.screen_dead_screen_update$input$1_0$22({1}SC:U),R,0,0,[a]
 S:Ldead_screen.screen_dead_screen_update$deltaX$1_0$22({1}SC:U),B,1,-4
 S:Ldead_screen.screen_dead_screen_update$value$1_0$22({1}SC:U),B,1,-1
 S:Ldead_screen.screen_dead_screen_update$collision$1_0$22({1}SC:S),R,0,0,[l]
-S:Ldead_screen.screen_dead_screen_update$deltaY$1_0$22({1}SC:S),R,0,0,[b]
+S:Ldead_screen.screen_dead_screen_update$deltaY$1_0$22({1}SC:S),R,0,0,[a]
 S:Ldead_screen.screen_dead_screen_update$scroll_state$1_0$22({1}SC:U),R,0,0,[a]
 S:Ldead_screen.screen_dead_screen_update$sloc0$0_1$0({1}SC:U),B,1,-4
 S:Ldead_screen.screen_dead_screen_update$sloc1$0_1$0({1}SC:U),B,1,-1

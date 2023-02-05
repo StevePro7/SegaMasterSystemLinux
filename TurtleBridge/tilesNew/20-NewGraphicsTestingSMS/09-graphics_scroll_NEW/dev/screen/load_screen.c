@@ -51,7 +51,7 @@ void screen_load_screen_load()
 	engine_player_manager_draw();
 
 	// TODO delete
-	engine_debug_manager_printout();
+	//engine_debug_manager_printout();
 	devkit_SMS_displayOn();
 
 	engine_scroll_manager_load( go->game_point, lo->level_size );
