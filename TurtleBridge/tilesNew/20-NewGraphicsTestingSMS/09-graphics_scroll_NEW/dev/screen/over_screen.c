@@ -2,13 +2,14 @@
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/player_manager.h"
+#include "../engine/scroll_manager.h"
 
 void screen_over_screen_load()
 {
 //	unsigned char byte;
 //	unsigned char bit;
 //	unsigned char res;
-	engine_font_manager_text( "OVER SCREEN!!", 10, 2 );
+	engine_font_manager_text( "OVER SCREEN!!", 10, 3 );
 
 	//byte = 0b00000100;
 	//bit = 2;
@@ -20,6 +21,7 @@ void screen_over_screen_load()
 
 void screen_over_screen_update( unsigned char *screen_type )
 {
+	engine_scroll_manager_update( 0 );
 	engine_player_manager_draw();
 	*screen_type = screen_type_over;
 }

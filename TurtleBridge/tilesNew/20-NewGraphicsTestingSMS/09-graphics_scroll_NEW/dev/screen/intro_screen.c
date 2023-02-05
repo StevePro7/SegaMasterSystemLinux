@@ -29,7 +29,7 @@ void screen_intro_screen_load()
 	unsigned char level, screen;
 	unsigned char difficulty;
 
-	level = 0;
+	level = 10;
 	screen = 0;		//checkpoint
 
 	//level = ho->hack_object_level;
@@ -96,7 +96,7 @@ void screen_intro_screen_update( unsigned char *screen_type )
 	enum_scroll_state scroll_state;
 
 	//engine_player_manager_count();
-	delta = 0;
+	delta = 1;
 	//input = engine_input_manager_hold( input_type_fire2 );
 	//if( input )
 	//{

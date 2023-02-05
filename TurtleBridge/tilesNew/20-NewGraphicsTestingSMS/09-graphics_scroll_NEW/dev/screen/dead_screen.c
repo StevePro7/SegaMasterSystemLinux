@@ -69,7 +69,7 @@ void screen_dead_screen_update( unsigned char *screen_type )
 				//engine_font_manager_text( "    ", 8, 8 );
 			}
 		}
-		if( player_state_isintheair == po->player_state )
+		else if( player_state_isintheair == po->player_state )
 		{
 			deltaX = 2;
 			engine_player_manager_right( deltaX );
@@ -98,14 +98,15 @@ void screen_dead_screen_update( unsigned char *screen_type )
 				if( po->posnY >= 168 )
 				{
 					po->posnY = 168;
-					if( go->game_isgod )
+					//if( go->game_isgod )
+					//{
+					//	po->player_state = player_state_isnowdying;
+					//	po->player_index = 0;
+					//	po->player_frame = 0;
+					//}
+					//else
 					{
-						po->player_state = player_state_isnowdying;
-						po->player_index = 0;
-						po->player_frame = 0;
-					}
-					else
-					{
+						engine_scroll_manager_update( 0 );
 						//engine_font_manager_text( "SPLAT", 20, 20 );
 						*screen_type = screen_type_over;
 						return;

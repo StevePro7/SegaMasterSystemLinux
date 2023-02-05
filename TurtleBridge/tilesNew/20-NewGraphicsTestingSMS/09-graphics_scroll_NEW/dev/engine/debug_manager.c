@@ -13,11 +13,11 @@
 void engine_debug_manager_initgame()
 {
 	struct_game_object *go = &global_game_object;
-	//go->game_difficulty = difficulty_type_easier;
+	//go->game_difficulty = difficulty_type_normal;
 	go->game_difficulty = difficulty_type_insane;
 	go->game_world = 0;
 	go->game_round = 0;
-	go->game_level = 14;
+	go->game_level = 10;
 	go->game_point = 0;
 	go->game_cloud = 88;		// TODO will be random
 	//go->game_isgod = false;
@@ -65,7 +65,7 @@ void engine_debug_manager_printout()
 //	engine_font_manager_data( po->tileX, 16, 0 );
 //	//engine_font_manager_data( po->lookX, 24, 0 );
 //
-//	lookX = po->tileX;
+//	lookX = po->lookX;
 //	engine_font_manager_data( lookX - 2, 8, 2 );
 //	engine_font_manager_data( lookX - 1, 8, 3 );
 //	engine_font_manager_data( lookX + 0, 8, 4 );
@@ -77,12 +77,6 @@ void engine_debug_manager_printout()
 //	engine_font_manager_data( level_platforms[ lookX + 0 ], 16, 4 );
 //	engine_font_manager_data( level_platforms[ lookX + 1 ], 16, 5 );
 //	engine_font_manager_data( level_platforms[ lookX + 2 ], 16, 6 );
-//
-////	engine_font_manager_data( lo->level_platforms[ po->tileX - 2 ], 16, 2 );
-////	engine_font_manager_data( lo->level_platforms[ po->tileX - 1 ], 16, 3 );
-//	//engine_font_manager_data( lo->level_platforms[ po->tileX + 0 ], 16, 4 );
-//	//engine_font_manager_data( lo->level_platforms[ po->tileX + 1 ], 16, 5 );
-//	//engine_font_manager_data( lo->level_platforms[ po->tileX + 2 ], 16, 6 );
 //}
 
 
