@@ -51,11 +51,11 @@ void screen_option_screen_update( unsigned char *screen_type )
 	{
 		if( player_state_isonground == po->player_state )
 		{
-			deltaX = 4;
+			deltaX = 2;
 		}
 		else if( player_state_isintheair == po->player_state )
 		{
-			deltaX = 5;
+			deltaX = 4;
 		}
 	}
 
