@@ -27,7 +27,7 @@ void screen_option_screen_load()
 	//engine_debug_manager_printout();
 	reset();
 
-	engine_music_manager_play( 1 );
+	engine_music_manager_play( 0 );
 }
 
 void screen_option_screen_update( unsigned char *screen_type )
@@ -45,13 +45,26 @@ void screen_option_screen_update( unsigned char *screen_type )
 	enum_scroll_state scroll_state;
 	//signed int data;
 
-	deltaX = 0;
+	deltaX = 2;
+	input = engine_input_manager_move( input_type_left );
+	if( input )
+	{
+		if( player_state_isonground == po->player_state )
+		{
+			deltaX = 1;
+			//po->player_frame = 4;
+		}
+		else if( player_state_isintheair == po->player_state )
+		{
+			deltaX = 2;
+		}
+	}
 	input = engine_input_manager_move( input_type_right );
 	if( input )
 	{
 		if( player_state_isonground == po->player_state )
 		{
-			deltaX = 2;
+			deltaX = 3;
 		}
 		else if( player_state_isintheair == po->player_state )
 		{
@@ -84,7 +97,7 @@ void screen_option_screen_update( unsigned char *screen_type )
 	}
 
 
-	if( deltaX > 0 )
+	if( deltaX > 0 ) 
 	{
 		for( loops = 0; loops < deltaX; loops++ )
 		{

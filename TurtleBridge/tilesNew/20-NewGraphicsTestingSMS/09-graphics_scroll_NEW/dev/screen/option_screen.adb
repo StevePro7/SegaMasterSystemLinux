@@ -6,7 +6,7 @@ S:Loption_screen.screen_option_screen_update$so$1_0$51({2}DG,STtag_struct_scroll
 S:Loption_screen.screen_option_screen_update$po$1_0$51({2}DG,STtag_struct_player_object:S),R,0,0,[]
 S:Loption_screen.screen_option_screen_update$lo$1_0$51({2}DG,STtag_struct_level_object:S),R,0,0,[]
 S:Loption_screen.screen_option_screen_update$go$1_0$51({2}DG,STtag_struct_game_object:S),R,0,0,[]
-S:Loption_screen.screen_option_screen_update$input$1_0$51({1}SC:U),R,0,0,[l]
+S:Loption_screen.screen_option_screen_update$input$1_0$51({1}SC:U),R,0,0,[a]
 S:Loption_screen.screen_option_screen_update$deltaX$1_0$51({1}SC:U),B,1,-4
 S:Loption_screen.screen_option_screen_update$deltaY$1_0$51({1}SC:S),R,0,0,[b]
 S:Loption_screen.screen_option_screen_update$loops$1_0$51({1}SC:U),B,1,-1

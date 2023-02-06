@@ -5,7 +5,7 @@ static void start();
 void main( void )
 {
 	static bool global_pause;
-	//unsigned char input;
+	unsigned char input;
 	start();
 	for( ;; )
 	{
@@ -34,12 +34,12 @@ void main( void )
 		devkit_SMS_initSprites();
 		engine_input_manager_update();
 
-		//input = engine_input_manager_move( input_type_fire2 );
-		//if( input )
-		//{
-		//	devkit_PSGStop();
-		//	start();
-		//}
+		input = engine_input_manager_move( input_type_fire2 );
+		if( input )
+		{
+			devkit_PSGStop();
+			start();
+		}
 
 		engine_screen_manager_update();
 
