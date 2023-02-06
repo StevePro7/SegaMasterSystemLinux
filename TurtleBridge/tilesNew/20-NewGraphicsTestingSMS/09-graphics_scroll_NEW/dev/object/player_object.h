@@ -19,4 +19,10 @@ typedef struct tag_struct_player_object
 // Player Manager.
 extern const unsigned char player_object_starts[];
 
+extern const signed int *jump_array_ptr[];
+extern const unsigned char jump_array_len[];
+extern const signed int jump_array_01[];
+extern const signed int jump_array_02[];
+extern const signed int jump_array_03[];
+
 #endif//_PLAYER_OBJECT_H_
