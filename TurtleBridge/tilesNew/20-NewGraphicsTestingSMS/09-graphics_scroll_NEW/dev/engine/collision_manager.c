@@ -32,8 +32,8 @@ void engine_collision_manager_init( unsigned char difficulty )
 
 signed char engine_collision_manager_player( unsigned char lookX, unsigned char tileY )
 {
-	struct_player_object *po = &global_player_object;
-	struct_level_object *lo = &global_level_object;
+	//struct_player_object *po = &global_player_object;
+	// struct_level_object *lo = &global_level_object;
 
 	unsigned char lookup_platform;
 	unsigned char player_platform;		 // po->tileY

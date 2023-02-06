@@ -277,7 +277,7 @@ void engine_player_manager_count()
 {
 	struct_player_object *po = &global_player_object;
 	po->player_count++;
-	if( po->player_count > 10 )
+	if( po->player_count > 25 )
 	{
 		po->player_count = 0;
 		po->player_frame = 1 - po->player_frame;	

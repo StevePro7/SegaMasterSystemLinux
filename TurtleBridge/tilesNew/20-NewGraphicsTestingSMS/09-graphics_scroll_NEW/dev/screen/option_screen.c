@@ -1,4 +1,5 @@
 #include "option_screen.h"
+#include "../engine/audio_manager.h"
 #include "../engine/collision_manager.h"
 #include "../engine/debug_manager.h"
 #include "../engine/enum_manager.h"
@@ -25,6 +26,8 @@ void screen_option_screen_load()
 	engine_player_manager_draw();
 	//engine_debug_manager_printout();
 	reset();
+
+	engine_music_manager_play( 1 );
 }
 
 void screen_option_screen_update( unsigned char *screen_type )
@@ -48,17 +51,17 @@ void screen_option_screen_update( unsigned char *screen_type )
 	{
 		if( player_state_isonground == po->player_state )
 		{
-			deltaX = 2;
+			deltaX = 4;
 		}
 		else if( player_state_isintheair == po->player_state )
 		{
-			deltaX = 3;
+			deltaX = 5;
 		}
 	}
 
 	if( player_state_isonground == po->player_state )
 	{
-		input = engine_input_manager_move( input_type_fire1 );
+		input = engine_input_manager_hold( input_type_fire1 );
 		if( input )
 		{
 			po->player_state = player_state_isintheair;
