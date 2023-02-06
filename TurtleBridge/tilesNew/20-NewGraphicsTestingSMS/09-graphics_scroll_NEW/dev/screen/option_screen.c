@@ -21,8 +21,9 @@ static void reset();
 
 void screen_option_screen_load()
 {
-	engine_font_manager_text( "OPTION SCREEN", 10, 0 );
+	//engine_font_manager_text( "OPTION SCREEN", 10, 0 );
 	engine_player_manager_draw();
+	engine_debug_manager_printout();
 	reset();
 }
 
@@ -39,7 +40,7 @@ void screen_option_screen_update( unsigned char *screen_type )
 	signed char collision;
 	
 	enum_scroll_state scroll_state;
-	signed int data;
+	//signed int data;
 
 	deltaX = 0;
 	input = engine_input_manager_move( input_type_right );
@@ -69,7 +70,7 @@ void screen_option_screen_update( unsigned char *screen_type )
 			valueX = 0;
 			ptr = jump_array_ptr[ indexZ ];
 			len = jump_array_len[ indexZ ];
-			data = ptr[ valueX ];
+			//data = ptr[ valueX ];
 		}
 	}
 
@@ -94,19 +95,28 @@ void screen_option_screen_update( unsigned char *screen_type )
 		if( player_state_isonground == po->player_state )
 		{
 			engine_player_manager_right( deltaX );
-			collision = engine_collision_manager_player( po->lookX, po->tileY );
-			if( INVALID_INDEX == collision )
-			{
-				po->player_state = player_state_isintheair;
-				po->player_index = 0;
-				po->player_frame = 4;
-				engine_font_manager_text( "FALL", 8, 8 );
 
-				indexZ = 0;
-				valueX = 0;
-				ptr = jump_array_ptr[ indexZ ];
-				len = jump_array_len[ indexZ ];
-				data = ptr[ valueX ];
+			// Edge case where player is invincible and walking on water then do not perform gravity test!
+			if( po->posnY >= 168 && go->game_isgod )
+			{
+				po->posnY = 168;
+			}
+			else
+			{
+				collision = engine_collision_manager_player( po->lookX, po->tileY );
+				if( INVALID_INDEX == collision )
+				{
+					po->player_state = player_state_isintheair;
+					po->player_index = 0;
+					po->player_frame = 4;
+					engine_font_manager_text( "FALL", 8, 8 );
+
+					indexZ = 0;
+					valueX = 0;
+					ptr = jump_array_ptr[ indexZ ];
+					len = jump_array_len[ indexZ ];
+					//data = ptr[ valueX ];
+				}
 			}
 		}
 		else if( player_state_isintheair == po->player_state )
@@ -139,12 +149,11 @@ void screen_option_screen_update( unsigned char *screen_type )
 					po->drawY = po->posnY - 32;
 					po->player_index = 0;
 					po->player_frame = 0;
-					//engine_font_manager_text( "LAND", 8, 8 );
+					engine_font_manager_text( "LAND", 8, 8 );
 				}
 				else
 				{
 					//engine_font_manager_text( "    ", 8, 8 );
-
 					if( po->posnY >= 168 )
 					{
 						po->posnY = 168;
@@ -231,6 +240,7 @@ void screen_option_screen_update( unsigned char *screen_type )
 	//	}
 	//}
 
+	engine_debug_manager_printout();
 	engine_player_manager_draw();
 	*screen_type = screen_type_option;
 }
