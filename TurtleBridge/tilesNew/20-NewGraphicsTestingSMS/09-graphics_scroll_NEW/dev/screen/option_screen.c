@@ -23,7 +23,7 @@ void screen_option_screen_load()
 {
 	//engine_font_manager_text( "OPTION SCREEN", 10, 0 );
 	engine_player_manager_draw();
-	engine_debug_manager_printout();
+	//engine_debug_manager_printout();
 	reset();
 }
 
@@ -48,11 +48,11 @@ void screen_option_screen_update( unsigned char *screen_type )
 	{
 		if( player_state_isonground == po->player_state )
 		{
-			deltaX = 1;
+			deltaX = 2;
 		}
 		else if( player_state_isintheair == po->player_state )
 		{
-			deltaX = 2;
+			deltaX = 3;
 		}
 	}
 
@@ -64,7 +64,7 @@ void screen_option_screen_update( unsigned char *screen_type )
 			po->player_state = player_state_isintheair;
 			po->player_index = 0;
 			po->player_frame = 4;
-			engine_font_manager_text( "JUMP", 8, 8 );
+			//engine_font_manager_text( "JUMP", 8, 8 );
 
 			indexZ = 1;
 			valueX = 0;
@@ -95,6 +95,7 @@ void screen_option_screen_update( unsigned char *screen_type )
 		if( player_state_isonground == po->player_state )
 		{
 			engine_player_manager_right( deltaX );
+			engine_player_manager_count();
 
 			// Edge case where player is invincible and walking on water then do not perform gravity test!
 			if( po->posnY >= 168 && go->game_isgod )
@@ -109,7 +110,7 @@ void screen_option_screen_update( unsigned char *screen_type )
 					po->player_state = player_state_isintheair;
 					po->player_index = 0;
 					po->player_frame = 4;
-					engine_font_manager_text( "FALL", 8, 8 );
+					//engine_font_manager_text( "FALL", 8, 8 );
 
 					indexZ = 0;
 					valueX = 0;
@@ -149,7 +150,7 @@ void screen_option_screen_update( unsigned char *screen_type )
 					po->drawY = po->posnY - 32;
 					po->player_index = 0;
 					po->player_frame = 0;
-					engine_font_manager_text( "LAND", 8, 8 );
+					//engine_font_manager_text( "LAND", 8, 8 );
 				}
 				else
 				{
@@ -240,7 +241,7 @@ void screen_option_screen_update( unsigned char *screen_type )
 	//	}
 	//}
 
-	engine_debug_manager_printout();
+	//engine_debug_manager_printout();
 	engine_player_manager_draw();
 	*screen_type = screen_type_option;
 }

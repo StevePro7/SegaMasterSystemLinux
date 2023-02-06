@@ -16,7 +16,7 @@ S:Loption_screen.screen_option_screen_update$sloc0$0_1$0({1}SC:U),B,1,-4
 S:Loption_screen.screen_option_screen_update$sloc1$0_1$0({1}SC:U),B,1,-1
 S:Loption_screen.screen_option_screen_update$sloc2$0_1$0({2}SI:U),B,1,-3
 F:Foption_screen$reset$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-T:Foption_screen$tag_struct_player_object[({0}S:S$posnX$0_0$0({2}SI:U),Z,0,0)({2}S:S$tileX$0_0$0({2}SI:U),Z,0,0)({4}S:S$initX$0_0$0({1}SC:U),Z,0,0)({5}S:S$lookX$0_0$0({1}SC:U),Z,0,0)({6}S:S$posnY$0_0$0({1}SC:U),Z,0,0)({7}S:S$tileY$0_0$0({1}SC:U),Z,0,0)({8}S:S$drawX$0_0$0({1}SC:U),Z,0,0)({9}S:S$drawY$0_0$0({1}SC:U),Z,0,0)({10}S:S$player_state$0_0$0({1}SC:U),Z,0,0)({11}S:S$player_index$0_0$0({1}SC:U),Z,0,0)({12}S:S$player_frame$0_0$0({1}SC:U),Z,0,0)]
+T:Foption_screen$tag_struct_player_object[({0}S:S$posnX$0_0$0({2}SI:U),Z,0,0)({2}S:S$tileX$0_0$0({2}SI:U),Z,0,0)({4}S:S$initX$0_0$0({1}SC:U),Z,0,0)({5}S:S$lookX$0_0$0({1}SC:U),Z,0,0)({6}S:S$posnY$0_0$0({1}SC:U),Z,0,0)({7}S:S$tileY$0_0$0({1}SC:U),Z,0,0)({8}S:S$drawX$0_0$0({1}SC:U),Z,0,0)({9}S:S$drawY$0_0$0({1}SC:U),Z,0,0)({10}S:S$player_state$0_0$0({1}SC:U),Z,0,0)({11}S:S$player_index$0_0$0({1}SC:U),Z,0,0)({12}S:S$player_frame$0_0$0({1}SC:U),Z,0,0)({13}S:S$player_count$0_0$0({2}SI:U),Z,0,0)]
 T:Foption_screen$tag_struct_scroll_object[({0}S:S$scrollLeftX$0_0$0({1}SC:U),Z,0,0)({1}S:S$scrollRight$0_0$0({1}SC:U),Z,0,0)({2}S:S$scrollColumn$0_0$0({2}SI:U),Z,0,0)({4}S:S$scrollFinish$0_0$0({2}SI:U),Z,0,0)({6}S:S$scrollLeftX0$0_0$0({1}SC:U),Z,0,0)({7}S:S$scrollLeftX1$0_0$0({1}SC:U),Z,0,0)({8}S:S$scrollLeftX2$0_0$0({1}SC:U),Z,0,0)({9}S:S$scrollLeftX3$0_0$0({1}SC:U),Z,0,0)({10}S:S$scrollLeftX4$0_0$0({1}SC:U),Z,0,0)({11}S:S$scrollLeftX5$0_0$0({1}SC:U),Z,0,0)({12}S:S$scroll_half$0_0$0({1}SC:U),Z,0,0)({13}S:S$lineCnt$0_0$0({1}SC:U),Z,0,0)]
 T:Foption_screen$tag_struct_game_object[({0}S:S$game_difficulty$0_0$0({1}SC:U),Z,0,0)({1}S:S$game_world$0_0$0({1}SC:U),Z,0,0)({2}S:S$game_round$0_0$0({1}SC:U),Z,0,0)({3}S:S$game_level$0_0$0({1}SC:U),Z,0,0)({4}S:S$game_point$0_0$0({1}SC:U),Z,0,0)({5}S:S$game_cloud$0_0$0({1}SC:U),Z,0,0)({6}S:S$game_isgod$0_0$0({1}SC:U),Z,0,0)]
 T:Foption_screen$tag_struct_frame_object[({0}S:S$frame_count$0_0$0({2}SI:U),Z,0,0)]
@@ -27,7 +27,7 @@ S:G$global_game_object$0_0$0({7}STtag_struct_game_object:S),E,0,0
 S:G$level_platforms$0_0$0({0}DA0d,SC:U),E,0,0
 S:G$global_level_object$0_0$0({6}STtag_struct_level_object:S),E,0,0
 S:G$jump_array_ptr$0_0$0({0}DA0d,DG,SI:S),E,0,0
-S:G$global_player_object$0_0$0({13}STtag_struct_player_object:S),E,0,0
+S:G$global_player_object$0_0$0({15}STtag_struct_player_object:S),E,0,0
 S:G$global_scroll_object$0_0$0({14}STtag_struct_scroll_object:S),E,0,0
 S:G$global_delay_object$0_0$0({4}STtag_struct_delay_object:S),E,0,0
 S:G$global_frame_object$0_0$0({2}STtag_struct_frame_object:S),E,0,0
@@ -68,6 +68,7 @@ S:G$engine_player_manager_down$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_downX$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_draw$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_pass$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_player_manager_count$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_update$0_0$0({2}DF,SC:U),C,0,0

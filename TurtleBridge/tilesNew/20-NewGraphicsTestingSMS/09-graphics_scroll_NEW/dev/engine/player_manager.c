@@ -273,13 +273,16 @@ void engine_player_manager_pass()
 	po->posnX++;
 	updatePlayer();
 }
-//void engine_player_manager_count()
-//{
-//	struct_player_object *po = &global_player_object;
-//	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
-//	engine_font_manager_data( po->player_count, 30, 4 );
-//	po->player_count++;
-//}
+void engine_player_manager_count()
+{
+	struct_player_object *po = &global_player_object;
+	po->player_count++;
+	if( po->player_count > 10 )
+	{
+		po->player_count = 0;
+		po->player_frame = 1 - po->player_frame;	
+	}
+}
 void engine_player_manager_draw()
 {
 	struct_player_object *po = &global_player_object;
