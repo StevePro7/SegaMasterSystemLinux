@@ -7,7 +7,7 @@ S:Lcont_screen.screen_cont_screen_update$po$1_0$24({2}DG,STtag_struct_player_obj
 S:Lcont_screen.screen_cont_screen_update$lo$1_0$24({2}DG,STtag_struct_level_object:S),R,0,0,[]
 S:Lcont_screen.screen_cont_screen_update$fo$1_0$24({2}DG,STtag_struct_frame_object:S),R,0,0,[]
 S:Lcont_screen.screen_cont_screen_update$go$1_0$24({2}DG,STtag_struct_game_object:S),R,0,0,[]
-S:Lcont_screen.screen_cont_screen_update$input$1_0$24({1}SC:U),R,0,0,[a]
+S:Lcont_screen.screen_cont_screen_update$input$1_0$24({1}SC:U),R,0,0,[l]
 S:Lcont_screen.screen_cont_screen_update$deltaX$1_0$24({1}SC:U),B,1,-1
 S:Lcont_screen.screen_cont_screen_update$value$1_0$24({1}SC:U),R,0,0,[c]
 S:Lcont_screen.screen_cont_screen_update$collision$1_0$24({1}SC:S),R,0,0,[l]

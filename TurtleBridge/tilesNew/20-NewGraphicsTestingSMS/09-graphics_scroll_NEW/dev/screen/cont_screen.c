@@ -50,6 +50,18 @@ void screen_cont_screen_update( unsigned char *screen_type )
 		}
 	}
 
+	if( player_state_isonground == po->player_state )
+	{
+		input = engine_input_manager_move( input_type_fire1 );
+		if( input )
+		{
+			po->player_state = player_state_isintheair;
+			po->player_index = 0;
+			po->player_frame = 4;
+			engine_font_manager_text( "JUMP", 8, 8 );
+		}
+	}
+
 	if( 0 == deltaX )
 	{
 		deltaX = 0;
@@ -70,13 +82,13 @@ void screen_cont_screen_update( unsigned char *screen_type )
 		if( player_state_isonground == po->player_state )
 		{
 			engine_player_manager_right( deltaX );
-			if( 0 == fo->frame_count )
-			{
-				po->player_state = player_state_isintheair;
-				po->player_index = 0;
-				po->player_frame = 4;
-				engine_font_manager_text( "JUMP", 8, 8 );
-			}
+			//if( 0 == fo->frame_count )
+			//{
+			//	po->player_state = player_state_isintheair;
+			//	po->player_index = 0;
+			//	po->player_frame = 4;
+			//	engine_font_manager_text( "JUMP", 8, 8 );
+			//}
 		}
 		else if( player_state_isintheair == po->player_state )
 		{
