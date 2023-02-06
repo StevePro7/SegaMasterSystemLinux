@@ -41,16 +41,16 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000010  l__CABS4                        
      00000011  l__CABS2                        
      0000002D  l__CABS3                        
-     00000033  l__BANK7                        
+     00000036  l__BANK7                        
      000000BE  G$VDPDataPort$0_0$0                asm_manager
      000000BF  G$VDPControlPort$0_0$0             asm_manager
-     000000D2  l__INITIALIZED                  
-     000000D2  l__INITIALIZER                  
+     000000D4  l__INITIALIZED                  
+     000000D4  l__INITIALIZER                  
      0000012A  l__HEADER5                      
      000001BE  l__DATA                         
      00000200  s__CODE                         
      000012D9  l__BANK5                        
-     00001300  l__BANK6                        
+     00001480  l__BANK6                        
      000017E2  l__BANK3                        
      0000344E  l__BANK2                        
      0000397A  l__BANK4                        
@@ -66,8 +66,8 @@ Area                                    Addr        Size        Decimal Bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00003DB5  s__GSINIT                       
-     00003DC4  s__GSFINAL                      
+     00003DB7  s__GSINIT                       
+     00003DC6  s__GSFINAL                      
      00008000  G$SMS_SRAM$0_0$0                   _sms_manager
      00008000  _SMS_SRAM                          SMSlib_autotext
      00008000  s__BANK2                        
@@ -78,9 +78,9 @@ Area                                    Addr        Size        Decimal Bytes (A
      00008000  s__BANK7                        
      0000C000  s__DATA                         
      0000C1BE  s__INITIALIZED                  
-     0000C290  s__BSEG                         
-     0000C290  s__BSS                          
-     0000C290  s__HEAP                         
+     0000C292  s__BSEG                         
+     0000C292  s__BSS                          
+     0000C292  s__HEAP                         
      0000FFFC  G$SRAM_bank_to_be_mapped_on_slot   _sms_manager
      0000FFFC  _SRAM_bank_to_be_mapped_on_slot2   SMSlib_autotext
      0000FFFF  G$ROM_bank_to_be_mapped_on_slot2   _sms_manager
@@ -9114,35 +9114,35 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_INITIALIZER                        00003CE3    000000D2 =         210. bytes (REL,CON)
+_INITIALIZER                        00003CE3    000000D4 =         212. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
      00003CE3  Ffixedbank$__xinit_music_object_   fixedbank
      00003CE7  Ffixedbank$__xinit_level_object_   fixedbank
-     00003D05  Finput_manager$__xinit_curr_joyp   input_manager
-     00003D07  Finput_manager$__xinit_prev_joyp   input_manager
-     00003D09  Fplayer_manager$__xinit_physics_   player_manager
-     00003D7D  Flevel_object$__xinit_level_plat   level_object
-     00003D9D  Fdead_screen$__xinit_gravityZZ$0   dead_screen
+     00003D07  Finput_manager$__xinit_curr_joyp   input_manager
+     00003D09  Finput_manager$__xinit_prev_joyp   input_manager
+     00003D0B  Fplayer_manager$__xinit_physics_   player_manager
+     00003D7F  Flevel_object$__xinit_level_plat   level_object
+     00003D9F  Fdead_screen$__xinit_gravityZZ$0   dead_screen
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 160.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSINIT                             00003DB5    0000000F =          15. bytes (REL,CON)
+_GSINIT                             00003DB7    0000000F =          15. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00003DB5  gsinit                             crt0
+     00003DB7  gsinit                             crt0
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 161.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSFINAL                            00003DC4    00000001 =           1. bytes (REL,CON)
+_GSFINAL                            00003DC6    00000001 =           1. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -9259,7 +9259,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_INITIALIZED                        0000C1BE    000000D2 =         210. bytes (REL,CON)
+_INITIALIZED                        0000C1BE    000000D4 =         212. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -9267,18 +9267,18 @@ _INITIALIZED                        0000C1BE    000000D2 =         210. bytes (R
      0000C1BE  _music_object_data                 fixedbank
      0000C1C2  G$level_object_data$0_0$0          fixedbank
      0000C1C2  _level_object_data                 fixedbank
-     0000C1E0  Finput_manager$curr_joypad1$0_0$   input_manager
-     0000C1E2  Finput_manager$prev_joypad1$0_0$   input_manager
-     0000C1E4  Fplayer_manager$physics_array$0_   player_manager
-     0000C258  G$level_platforms$0_0$0            level_object
-     0000C258  _level_platforms                   level_object
-     0000C278  Fdead_screen$gravityZZ$0_0$0       dead_screen
-     0000C289  _VDPReg                            SMSlib
-     0000C28B  _spritesHeight                     SMSlib
-     0000C28C  _spritesWidth                      SMSlib
-     0000C28D  _spritesTileOffset                 SMSlib
-     0000C28E  _clipWin_x1                        SMSlib_spriteClip
-     0000C28F  _clipWin_y1                        SMSlib_spriteClip
+     0000C1E2  Finput_manager$curr_joypad1$0_0$   input_manager
+     0000C1E4  Finput_manager$prev_joypad1$0_0$   input_manager
+     0000C1E6  Fplayer_manager$physics_array$0_   player_manager
+     0000C25A  G$level_platforms$0_0$0            level_object
+     0000C25A  _level_platforms                   level_object
+     0000C27A  Fdead_screen$gravityZZ$0_0$0       dead_screen
+     0000C28B  _VDPReg                            SMSlib
+     0000C28D  _spritesHeight                     SMSlib
+     0000C28E  _spritesWidth                      SMSlib
+     0000C28F  _spritesTileOffset                 SMSlib
+     0000C290  _clipWin_x1                        SMSlib_spriteClip
+     0000C291  _clipWin_y1                        SMSlib_spriteClip
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 165.
 Hexadecimal  [32-Bits]
@@ -9350,7 +9350,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK6                              00008000    00001300 =        4864. bytes (REL,CON)
+_BANK6                              00008000    00001480 =        5248. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -9384,12 +9384,15 @@ _BANK6                              00008000    00001300 =        4864. bytes (R
      00009000  _level1113_txt                     bank6
      00009180  G$level1114_txt$0_0$0              bank6
      00009180  _level1114_txt                     bank6
+     00009300  G$level1115_txt$0_0$0              bank6
+     00009300  _level1115_txt                     bank6
+
 ASxxxx Linker V03.00 + NoICE + sdld,  page 170.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK7                              00008000    00000033 =          51. bytes (REL,CON)
+_BANK7                              00008000    00000036 =          54. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -9399,8 +9402,8 @@ _BANK7                              00008000    00000033 =          51. bytes (R
      00008002  _my_splash_text                    fixedbank
      00008006  G$level_object_size$0_0$0          fixedbank
      00008006  _level_object_size                 fixedbank
-     00008024  G$level_object_bank$0_0$0          fixedbank
-     00008024  _level_object_bank                 fixedbank
+     00008026  G$level_object_bank$0_0$0          fixedbank
+     00008026  _level_object_bank                 fixedbank
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 171.
 Hexadecimal  [32-Bits]
