@@ -48,6 +48,7 @@ void engine_debug_manager_printout()
 
 	engine_font_manager_data( po->posnY, 10, 3 );
 	engine_font_manager_data( po->tileY, 10, 4 );
+	engine_font_manager_data( po->drawY, 10, 5 );
 	engine_font_manager_data( po->player_state, 20, 3 );
 	engine_font_manager_data( po->player_index, 20, 4 );
 }

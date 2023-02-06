@@ -1,7 +1,7 @@
 #include "input_manager.h"
 #include "../devkit/_sms_manager.h"
 
-#define INPUT_MOVEMENT		0
+#define INPUT_MOVEMENT		1
 
 #ifdef _CONSOLE
 #else
