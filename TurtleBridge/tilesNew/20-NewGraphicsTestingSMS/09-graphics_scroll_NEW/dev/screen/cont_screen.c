@@ -10,13 +10,14 @@
 #include "../engine/scroll_manager.h"
 #include "../engine/timer_manager.h"
 
-static signed char physics_array[ 34 ] = { -11, -8, -7, -6, -5, -4, -4, -3, -3, -3, -2, -2, -2, -1, -1, -1, -1, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5 };
+//static signed char physics_array[ 34 ] = { -11, -8, -7, -6, -5, -4, -4, -3, -3, -3, -2, -2, -2, -1, -1, -1, -1, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5 };
+static signed char physics_array[ 34 ] = { -11, -9, -9, -9, -9, -8, -8, -8, -7, -7, -6, -5, -4, -3, -2, -1, -1, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5 };
 //static signed char physics_array[ 22 ] = { -4, -3, -2, -1, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5 };
 
 void screen_cont_screen_load()
 {
 	engine_frame_manager_load();
-	engine_frame_manager_draw();
+	//engine_frame_manager_draw();
 	//engine_font_manager_text( "CONT SCREEN!!", 10, 2 );
 	engine_player_manager_draw();
 	engine_debug_manager_printout();
@@ -42,11 +43,11 @@ void screen_cont_screen_update( unsigned char *screen_type )
 	{
 		if( player_state_isonground == po->player_state )
 		{
-			deltaX = 1;
+			deltaX = 2;
 		}
 		else if( player_state_isintheair == po->player_state )
 		{
-			deltaX = 2;
+			deltaX = 3;
 		}
 	}
 
@@ -58,7 +59,7 @@ void screen_cont_screen_update( unsigned char *screen_type )
 			po->player_state = player_state_isintheair;
 			po->player_index = 0;
 			po->player_frame = 4;
-			engine_font_manager_text( "JUMP", 8, 8 );
+			//engine_font_manager_text( "JUMP", 8, 8 );
 		}
 	}
 
@@ -112,19 +113,18 @@ void screen_cont_screen_update( unsigned char *screen_type )
 					po->drawY = po->posnY - 32;
 					po->player_index = 0;
 					po->player_frame = 0;
-					engine_font_manager_text( "LAND", 8, 8 );
+					//engine_font_manager_text( "LAND", 8, 8 );
 				}
 				else
 				{
-					engine_font_manager_text( "    ", 8, 8 );
+					//engine_font_manager_text( "    ", 8, 8 );
 
-					//engine_debug_manager_printout();
 					if( po->posnY >= 168 )
 					{
 						po->posnY = 168;
 						if( go->game_isgod )
 						{
-							po->player_state = player_state_isnowdying;
+							po->player_state = player_state_isonground;
 							po->player_index = 0;
 							po->player_frame = 0;
 						}
@@ -153,7 +153,7 @@ void screen_cont_screen_update( unsigned char *screen_type )
 		if( deltaX > 0 )
 		{
 			engine_frame_manager_update();
-			engine_frame_manager_draw();
+			//engine_frame_manager_draw();
 		}
 	}
 
