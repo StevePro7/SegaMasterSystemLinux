@@ -45,36 +45,66 @@ void screen_option_screen_update( unsigned char *screen_type )
 	enum_scroll_state scroll_state;
 	//signed int data;
 
-	deltaX = 2;
-	input = engine_input_manager_move( input_type_left );
-	if( input )
+	deltaX = 0;
+	if( player_state_isonground == po->player_state )
 	{
-		if( player_state_isonground == po->player_state )
+		deltaX = 2;
+		input = engine_input_manager_move( input_type_left );
+		if ( input )
 		{
 			deltaX = 1;
-			//po->player_frame = 4;
 		}
-		else if( player_state_isintheair == po->player_state )
-		{
-			deltaX = 2;
-		}
-	}
-	input = engine_input_manager_move( input_type_right );
-	if( input )
-	{
-		if( player_state_isonground == po->player_state )
+		input = engine_input_manager_move( input_type_right );
+		if( input )
 		{
 			deltaX = 3;
 		}
-		else if( player_state_isintheair == po->player_state )
+	}
+	if( player_state_isintheair == po->player_state )
+	{
+		deltaX = 3;
+		input = engine_input_manager_move( input_type_left );
+		if( input )
+		{
+			deltaX = 2;
+		}
+		input = engine_input_manager_move( input_type_right );
+		if( input )
 		{
 			deltaX = 4;
 		}
 	}
+	//deltaX = 2;
+	//input = engine_input_manager_move( input_type_left );
+	//if( input )
+	//{
+	//	if( player_state_isonground == po->player_state )
+	//	{
+	//		deltaX = 1;
+	//		//po->player_frame = 4;
+	//	}
+	//	else if( player_state_isintheair == po->player_state )
+	//	{
+	//		deltaX = 2;
+	//	}
+	//}
+	//input = engine_input_manager_move( input_type_right );
+	//if( input )
+	//{
+	//	if( player_state_isonground == po->player_state )
+	//	{
+	//		deltaX = 3;
+	//	}
+	//	else if( player_state_isintheair == po->player_state )
+	//	{
+	//		deltaX = 4;
+	//	}
+	//}
 
 	if( player_state_isonground == po->player_state )
 	{
-		input = engine_input_manager_hold( input_type_fire1 );
+		//input = engine_input_manager_hold( input_type_fire1 );
+		input = engine_input_manager_move( input_type_fire1 );
 		if( input )
 		{
 			po->player_state = player_state_isintheair;
