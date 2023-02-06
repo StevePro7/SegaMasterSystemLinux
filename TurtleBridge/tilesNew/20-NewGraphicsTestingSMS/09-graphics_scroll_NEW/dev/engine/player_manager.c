@@ -194,6 +194,10 @@ void engine_player_manager_left()
 	updatePlayerX();
 }
 
+//TODO rename right() and down() functions
+//void engine_player_manager_horz( unsigned char deltaX )
+//void engine_player_manager_vert( unsigned char deltaX )
+
 void engine_player_manager_right( unsigned char deltaX )
 {
 	struct_player_object *po = &global_player_object;
