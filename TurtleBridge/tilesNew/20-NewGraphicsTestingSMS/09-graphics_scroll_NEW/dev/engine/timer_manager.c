@@ -2,6 +2,8 @@
 #include "font_manager.h"
 #include "hack_manager.h"
 
+#define MAX_INT_VALUE		65535
+
 // Global variables.
 struct_delay_object global_delay_object;
 struct_frame_object global_frame_object;
@@ -39,7 +41,7 @@ unsigned char engine_delay_manager_update()
 void engine_delay_manager_draw()
 {
 	struct_delay_object *dObj = &global_delay_object;
-//	engine_font_manager_data( dObj->delay_timer, 31, 1 );
+	engine_font_manager_data( dObj->delay_timer, 31, 1 );
 }
 
 
@@ -53,7 +55,7 @@ void engine_frame_manager_update()
 {
 	struct_frame_object *fo = &global_frame_object;
 	fo->frame_count++;
-//	if( fo->frame_count >= MAX_INT_VALUE )
+	if( fo->frame_count >= MAX_INT_VALUE )
 	{
 		fo->frame_count = 0;
 	}

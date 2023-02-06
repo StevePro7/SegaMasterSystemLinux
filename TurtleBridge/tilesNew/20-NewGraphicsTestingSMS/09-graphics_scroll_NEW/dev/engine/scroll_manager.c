@@ -4,7 +4,7 @@
 #include "sprite_manager.h"
 #include "../devkit/_sms_manager.h"
 
-#define PARALLAX_SCROLLING		1
+#define PARALLAX_SCROLLING		0
 #define SCROLL_COLUMNS			8
 #define SCROLL_PARA_ARRAY		6
 #define SCROLL_LINE_COUNT		30

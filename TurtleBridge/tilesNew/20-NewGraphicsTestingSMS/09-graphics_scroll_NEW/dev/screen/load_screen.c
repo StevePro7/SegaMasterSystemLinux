@@ -83,6 +83,7 @@ void screen_load_screen_update( unsigned char *screen_type )
 	//*screen_type = screen_type_ready;
 	//*screen_type = screen_type_play;
 	*screen_type = screen_type_dead;
+	//*screen_type = screen_type_cont;
 	//*screen_type = screen_type_over;
 }
 
