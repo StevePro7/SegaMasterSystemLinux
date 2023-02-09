@@ -11,6 +11,7 @@ namespace Test
 		SpriteBatch spriteBatch;
 		private readonly MyRocketManager myRocketManager;
 		private readonly MyConfigManger myConfigManger;
+		private readonly MyContentManager myContentManager;
 
 		public AnGame()
 		{
@@ -19,6 +20,7 @@ namespace Test
 			graphics.PreferredBackBufferHeight = 512;
 			Content.RootDirectory = "Content";
 			myConfigManger = new MyConfigManger();
+			myContentManager = new MyContentManager();
 			myRocketManager = new MyRocketManager(myConfigManger);
 		}
 
@@ -37,12 +39,12 @@ namespace Test
 		protected override void LoadContent()
 		{
 			spriteBatch = new SpriteBatch(GraphicsDevice);
-			myRocketManager.LoadContent(Content);
+			myContentManager.LoadContent(Content);
 
-			if (!myRocketManager.IsRocketFlying)
-			{
-				myRocketManager.Launch();
-			}
+			//if (!myRocketManager.IsRocketFlying)
+			//{
+			//	myRocketManager.Launch();
+			//}
 		}
 
 		protected override void UnloadContent()
@@ -57,10 +59,6 @@ namespace Test
 				Exit();
 			}
 
-			//if (Keyboard.GetState().IsKeyDown(Keys.Space))
-			//{
-			//}
-
 			base.Update(gameTime);
 		}
 
@@ -69,7 +67,7 @@ namespace Test
 			GraphicsDevice.Clear(Color.CornflowerBlue);
 
 			spriteBatch.Begin();
-			myRocketManager.Draw(spriteBatch);
+		//	myRocketManager.Draw(spriteBatch);
 			spriteBatch.End();
 
 			base.Draw(gameTime);
