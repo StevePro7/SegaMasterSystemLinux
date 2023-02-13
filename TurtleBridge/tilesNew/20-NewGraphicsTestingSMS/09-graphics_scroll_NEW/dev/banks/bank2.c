@@ -12,7 +12,6 @@ const unsigned char *locale_object_texts[] =
 extern const unsigned char *locale_object_blank[] =
 {
 	"              ",		// LOCALE_BLANK14
-	//"                 ",		// LOCALE_BLANK17
 	"      ",		// LOCALE_BLANK6
 };
 

@@ -6,6 +6,7 @@
 #include "../engine/font_manager.h"
 #include "../engine/game_manager.h"
 #include "../engine/graphics_manager.h"
+#include "../engine/input_manager.h"
 #include "../engine/level_manager.h"
 #include "../engine/player_manager.h"
 #include "../engine/scroll_manager.h"
@@ -15,6 +16,7 @@
 #include "../banks/bank2.h"
 
 static unsigned char player_loadY;
+static unsigned char game_difficulty;
 
 void screen_diff_screen_load()
 {
@@ -26,7 +28,8 @@ void screen_diff_screen_load()
 		engine_debug_manager_initgame();
 
 		engine_level_manager_init( go->game_level );
-		engine_player_manager_initX( go->game_difficulty );		// TODO rename
+		game_difficulty = go->game_difficulty;
+		engine_player_manager_initX( game_difficulty );
 
 
 		devkit_SMS_displayOff();
@@ -43,7 +46,7 @@ void screen_diff_screen_load()
 		player_loadY = level_platforms[ po->lookX ];
 		engine_player_manager_loadY( player_loadY );
 
-		engine_font_manager_text( ( unsigned char * ) locale_object_difficulty[ go->game_difficulty ], po->posnX / 8 - 2, player_loadY - 6 );
+		engine_font_manager_text( ( unsigned char * ) locale_object_difficulty[ game_difficulty ], po->posnX / 8 - 2, player_loadY - 6 );
 		engine_player_manager_draw();
 
 		engine_util_manager_locale_texts( 5, 7, 5 );
@@ -55,7 +58,27 @@ void screen_diff_screen_load()
 
 void screen_diff_screen_update( unsigned char *screen_type )
 {
-	//struct_player_object *po = &global_player_object;
+	//struct_game_object *go = &global_game_object;
+	struct_player_object *po = &global_player_object;
+	unsigned char input;
+
+	input = engine_input_manager_hold( input_type_left );
+	if( input && game_difficulty > 0 )
+	{
+		engine_util_manager_locale_blank( 1, po->posnX / 8 - 2, player_loadY - 6 );
+		game_difficulty--;
+		engine_player_manager_initX( game_difficulty );
+		engine_font_manager_text( ( unsigned char * ) locale_object_difficulty[ game_difficulty ], po->posnX / 8 - 2, player_loadY - 6 );
+	}
+
+	input = engine_input_manager_hold( input_type_right );
+	if( input && game_difficulty <= 2 )
+	{
+		engine_util_manager_locale_blank( 1, po->posnX / 8 - 2, player_loadY - 6 );
+		game_difficulty++;
+		engine_player_manager_initX( game_difficulty );
+		engine_font_manager_text( ( unsigned char * ) locale_object_difficulty[ game_difficulty ], po->posnX / 8 - 2, player_loadY - 6 );
+	}
 
 	engine_player_manager_draw();
 	*screen_type = screen_type_diff;
