@@ -1,5 +1,5 @@
 XL3
-H A areas 19 global symbols
+H A areas 1D global symbols
 M bank2
 O -mz80
 S .__.ABS. Def000000
@@ -8,15 +8,18 @@ S Fbank2$__str_1$0_0$0 Def000000
 S Fbank2$__str_2$0_0$0 Def000000
 S Fbank2$__str_3$0_0$0 Def000000
 S Fbank2$__str_4$0_0$0 Def000000
+S Fbank2$__str_5$0_0$0 Def000000
 A _DATA size 0 flags 0 addr 0
-A _INITIALIZED size A flags 0 addr 0
+A _INITIALIZED size C flags 0 addr 0
+S _locale_object_blank Def00000A
+S G$locale_object_blank$0_0$0 Def00000A
 S _locale_object_texts Def000000
 S G$locale_object_texts$0_0$0 Def000000
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
-A _BANK2 size 348E flags 0 addr 0
+A _BANK2 size 349D flags 0 addr 0
 S G$sprite_tiles__tiles__psgcompr$0_0$0 Def002702
 S _bggame_tiles__tiles__psgcompr Def0009A0
 S _splash_tiles__tilemap__bin Def0019B4
@@ -34,12 +37,17 @@ S G$bggame_tiles__palette__bin$0_0$0 Def000000
 S _splash_tiles__tiles__psgcompr Def001D44
 S G$splash_tiles__tiles__psgcompr$0_0$0 Def001D44
 S _sprite_tiles__tiles__psgcompr Def002702
-A _INITIALIZER size A flags 0 addr 0
+A _INITIALIZER size C flags 0 addr 0
 S Fbank2$__xinit_locale_object_texts$0_0$0 Def000000
+S Fbank2$__xinit_locale_object_blank$0_0$0 Def00000A
 A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 02 00
 T 00 00 00
+R 00 00 02 00
+T 0A 00 00
+R 00 00 02 00
+T 0A 00 00
 R 00 00 02 00
 T 00 00 00
 R 00 00 07 00
@@ -2153,9 +2161,19 @@ T 7F 34 00 49 4E 53 45 52 54 20 43 4F 49 4E 28 53
 R 00 00 07 00
 T 8C 34 00 29 00
 R 00 00 07 00
+T 8E 34 00
+R 00 00 07 00
+T 8E 34 00 20 20 20 20 20 20 20 20 20 20 20 20 20
+R 00 00 07 00
+T 9B 34 00 20 00
+R 00 00 07 00
 T 00 00 00
 R 00 00 08 00
 T 00 00 00 4E 34 56 34 5B 34
 R 00 00 08 00 00 03 07 00 00 05 07 00 00 07 07 00
 T 06 00 00 6C 34 7F 34
 R 00 00 08 00 00 03 07 00 00 05 07 00
+T 0A 00 00
+R 00 00 08 00
+T 0A 00 00 8E 34
+R 00 00 08 00 00 03 07 00

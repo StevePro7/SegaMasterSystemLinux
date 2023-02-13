@@ -1,10 +1,15 @@
 const unsigned char *locale_object_texts[] =
 {
-	"(C)1987",
-	"V1.0",
+	"(C)1987",				// Splash
+	"V1.0",					// Title
 	"A TRIBUTE TO THE",
 	"GREATEST DAREDEVIL",
-	"INSERT COIN(S)",
+	"INSERT COIN(S)",		// Start?
+};
+
+extern const unsigned char *locale_object_blank[] =
+{
+	"              ",		// LOCALE_BLANK14
 };
 
 const unsigned char bggame_tiles__palette__bin[] = {

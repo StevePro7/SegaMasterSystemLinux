@@ -1,5 +1,6 @@
 M:bank2
 S:G$locale_object_texts$0_0$0({10}DA5d,DG,SC:U),E,0,0
+S:G$locale_object_blank$0_0$0({2}DA1d,DG,SC:U),E,0,0
 S:G$bggame_tiles__palette__bin$0_0$0({16}DA16d,SC:U),D,0,0
 S:G$bggame_tiles__tilemap__bin$0_0$0({2448}DA2448d,SC:U),D,0,0
 S:G$bggame_tiles__tiles__psgcompr$0_0$0({4100}DA4100d,SC:U),D,0,0
@@ -13,3 +14,4 @@ S:Fbank2$__str_1$0_0$0({5}DA5d,SC:U),D,0,0
 S:Fbank2$__str_2$0_0$0({17}DA17d,SC:U),D,0,0
 S:Fbank2$__str_3$0_0$0({19}DA19d,SC:U),D,0,0
 S:Fbank2$__str_4$0_0$0({15}DA15d,SC:U),D,0,0
+S:Fbank2$__str_5$0_0$0({15}DA15d,SC:U),D,0,0

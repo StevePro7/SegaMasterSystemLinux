@@ -15,11 +15,11 @@ extern const unsigned char music_object_bank[];
 
 //#define LOCALE_INTRO_SCREEN			"INSERT COIN(S)"
 //#define LOCALE_INTRO_SCREEN1		"PRESS START"
-#define LOCALE_BLANK14				"              "
+//#define LOCALE_BLANK14				"              "
 //#define LOCALE_INTRO_SCREEN2	   "12345INSERT COIN(S)12345"
 //extern const unsigned char *locale_object_texts[];
 
-#define LOCALE_BLANK16		"                "
+//#define LOCALE_BLANK16		"                "
 
 // Level Manager.
 extern const unsigned char *level_object_data[];

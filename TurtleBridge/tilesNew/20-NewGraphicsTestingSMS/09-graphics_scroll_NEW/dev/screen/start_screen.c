@@ -54,7 +54,8 @@ void screen_start_screen_update( unsigned char *screen_type )
 		}
 		else
 		{
-			engine_font_manager_text( LOCALE_BLANK14, 9, 7 );
+			//engine_font_manager_text( LOCALE_BLANK14, 9, 7 );
+			engine_util_manager_locale_blank( 0, 9, 7 );
 		}
 	}
 

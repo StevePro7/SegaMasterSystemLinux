@@ -18,6 +18,14 @@ void engine_util_manager_locale_text( unsigned char index, unsigned char x, unsi
 	engine_font_manager_text( text, x, y );
 }
 
+void engine_util_manager_locale_blank( unsigned char index, unsigned char x, unsigned char y )
+{
+	unsigned char *blank;
+	devkit_SMS_mapROMBank( 2 );
+	blank = ( unsigned char * ) locale_object_blank[ index ];
+	engine_font_manager_text( blank, x, y );
+}
+
 // Maths Manager.
 void engine_util_manager_convertByteToNibbles( unsigned char byte, unsigned char *upper_nibble, unsigned char *lower_nibble )
 {
