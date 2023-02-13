@@ -60,7 +60,7 @@ void screen_start_screen_update( unsigned char *screen_type )
 		
 	}
 
-	engine_scroll_manager_update( 1 );
+	engine_scroll_manager_section( 1 );
 	*screen_type = screen_type_start;
 }
 

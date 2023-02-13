@@ -21,12 +21,12 @@ struct_scroll_object global_scroll_object;
 // Private helper functions.
 static void( *load_method )( unsigned char screen, int scrollFinish );
 static enum_scroll_state( *update_method )( unsigned char delta );
-static void( *update_section )( unsigned char detla );
+static enum_scroll_state( *update_section )( unsigned char delta );
 static void lineScrollHandler( void );
 
 static void para_scroll_load( unsigned char screen, int scrollFinish );
 static enum_scroll_state para_scroll_update( unsigned char delta );
-static void para_scroll_section( unsigned char delta );
+static enum_scroll_state para_scroll_section( unsigned char delta );
 static void full_scroll_load( unsigned char screen, int scrollFinish );
 static enum_scroll_state full_scroll_update( unsigned char delta );
 
@@ -54,6 +54,11 @@ void engine_scroll_manager_load( unsigned char screen, int scrollFinish )
 enum_scroll_state engine_scroll_manager_update( unsigned char delta )
 {
 	return update_method( delta );
+}
+
+enum_scroll_state engine_scroll_manager_section( unsigned char delta )
+{
+	return update_section( delta );
 }
 
 static void para_scroll_load( unsigned char screen, int scrollFinish )
@@ -119,7 +124,7 @@ static enum_scroll_state para_scroll_update( unsigned char delta )
 
 	return scroll_state;
 }
-static void para_scroll_section( unsigned char delta )
+static enum_scroll_state para_scroll_section( unsigned char delta )
 {
 	struct_scroll_object *so = &global_scroll_object;
 	enum_scroll_state scroll_state;
@@ -153,6 +158,8 @@ static void para_scroll_section( unsigned char delta )
 	so->scrollLeftX4 -= delta;
 	so->scrollLeftX5 -= 0;
 	so->lineCnt = 0;
+
+	return scroll_state;
 }
 
 
