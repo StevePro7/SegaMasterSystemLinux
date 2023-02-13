@@ -30,7 +30,9 @@ void screen_start_screen_load()
 	engine_content_manager_sprite();
 	engine_graphics_manager_title();
 	engine_graphics_manager_sea();
-	engine_font_manager_text( LOCALE_INTRO_SCREEN, 8, 7 );
+	engine_font_manager_text( LOCALE_INTRO_SCREEN, 9, 7 );
+	//engine_font_manager_text( LOCALE_INTRO_SCREEN1, 10, 5 );
+	//engine_font_manager_text( LOCALE_INTRO_SCREEN2, 4, 4 );
 	devkit_SMS_displayOn();
 
 	engine_scroll_manager_init();
@@ -49,16 +51,16 @@ void screen_start_screen_update( unsigned char *screen_type )
 		flag = !flag;
 		if (flag)
 		{
-			engine_font_manager_text( LOCALE_INTRO_SCREEN, 8, 7 );
+			engine_font_manager_text( LOCALE_INTRO_SCREEN, 9, 7 );
 		}
 		else
 		{
-			engine_font_manager_text( LOCALE_BLANK16, 8, 7 );
+			engine_font_manager_text( LOCALE_BLANK14, 9, 7 );
 		}
 		
 	}
 
-			engine_scroll_manager_update( 1 );
+	//engine_scroll_manager_update( 1 );
 	*screen_type = screen_type_start;
 }
 

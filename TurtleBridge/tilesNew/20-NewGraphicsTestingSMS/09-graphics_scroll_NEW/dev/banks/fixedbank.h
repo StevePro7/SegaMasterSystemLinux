@@ -13,9 +13,10 @@ extern const unsigned char my_splash_text[];
 #define LOCALE_TITLE1_SCREEN	"A TRIBUTE TO THE"
 #define LOCALE_TITLE2_SCREEN	"GREATEST DAREDEVIL"
 
-//#define LOCALE_INTRO_SCREEN	    "PRESS START"
-#define LOCALE_INTRO_SCREEN	    "INSERT  CONIN(S)"
-#define LOCALE_INTRO_SCREEN2	   "BXXXINSERT  CONIN(S)ZZZA"
+#define LOCALE_INTRO_SCREEN			"INSERT COIN(S)"
+//#define LOCALE_INTRO_SCREEN1		"PRESS START"
+#define LOCALE_BLANK14				"              "
+//#define LOCALE_INTRO_SCREEN2	   "12345INSERT COIN(S)12345"
 //extern const unsigned char *locale_object_texts[];
 
 #define LOCALE_BLANK16		"                "
