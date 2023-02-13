@@ -43,7 +43,7 @@ void screen_diff_screen_load()
 		player_loadY = level_platforms[ po->lookX ];
 		engine_player_manager_loadY( player_loadY );
 
-		engine_font_manager_text( ( unsigned char * ) locale_object_difficulty[ go->game_difficulty ], po->posnX - 1, player_loadY - 8 );
+		engine_font_manager_text( ( unsigned char * ) locale_object_difficulty[ go->game_difficulty ], po->posnX / 8 - 2, player_loadY - 6 );
 		engine_player_manager_draw();
 
 		engine_util_manager_locale_texts( 5, 7, 5 );
