@@ -1,16 +1,21 @@
 XL3
-H A areas 11 global symbols
+H A areas 18 global symbols
 M bank2
 O -mz80
 S .__.ABS. Def000000
 A _CODE size 0 flags 0 addr 0
+S Fbank2$__str_1$0_0$0 Def000000
+S Fbank2$__str_2$0_0$0 Def000000
+S Fbank2$__str_3$0_0$0 Def000000
 A _DATA size 0 flags 0 addr 0
-A _INITIALIZED size 0 flags 0 addr 0
+A _INITIALIZED size 8 flags 0 addr 0
+S _locale_object_texts Def000000
+S G$locale_object_texts$0_0$0 Def000000
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
-A _BANK2 size 344E flags 0 addr 0
+A _BANK2 size 347F flags 0 addr 0
 S G$sprite_tiles__tiles__psgcompr$0_0$0 Def002702
 S _bggame_tiles__tiles__psgcompr Def0009A0
 S _splash_tiles__tilemap__bin Def0019B4
@@ -18,6 +23,7 @@ S G$bggame_tiles__tiles__psgcompr$0_0$0 Def0009A0
 S G$splash_tiles__tilemap__bin$0_0$0 Def0019B4
 S _splash_tiles__palette__bin Def0019A4
 S G$splash_tiles__palette__bin$0_0$0 Def0019A4
+S Fbank2$__str_0$0_0$0 Def00344E
 S _sprite_tiles__palette__bin Def0026F2
 S G$sprite_tiles__palette__bin$0_0$0 Def0026F2
 S _bggame_tiles__tilemap__bin Def000010
@@ -27,8 +33,13 @@ S G$bggame_tiles__palette__bin$0_0$0 Def000000
 S _splash_tiles__tiles__psgcompr Def001D44
 S G$splash_tiles__tiles__psgcompr$0_0$0 Def001D44
 S _sprite_tiles__tiles__psgcompr Def002702
-A _INITIALIZER size 0 flags 0 addr 0
+A _INITIALIZER size 8 flags 0 addr 0
+S Fbank2$__xinit_locale_object_texts$0_0$0 Def000000
 A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 02 00
+T 00 00 00
+R 00 00 02 00
 T 00 00 00
 R 00 00 07 00
 T 00 00 00 00 01 30 02 03 14 04 08 19 39 0B 3A 2B
@@ -2115,3 +2126,29 @@ T 36 34 00 30 78 78 B0 00 64 80 00 90 B8 20 00 10
 R 00 00 07 00
 T 43 34 00 10 20 20 40 48 90 00 00 00 00 00
 R 00 00 07 00
+T 4E 34 00
+R 00 00 07 00
+T 4E 34 00 28 43 29 31 39 38 37 00
+R 00 00 07 00
+T 56 34 00
+R 00 00 07 00
+T 56 34 00 56 31 2E 30 00
+R 00 00 07 00
+T 5B 34 00
+R 00 00 07 00
+T 5B 34 00 41 20 54 52 49 42 55 54 45 20 54 4F 20
+R 00 00 07 00
+T 68 34 00 54 48 45 00
+R 00 00 07 00
+T 6C 34 00
+R 00 00 07 00
+T 6C 34 00 47 52 45 41 54 45 53 54 20 44 41 52 45
+R 00 00 07 00
+T 79 34 00 44 45 56 49 4C 00
+R 00 00 07 00
+T 00 00 00
+R 00 00 08 00
+T 00 00 00 4E 34 56 34 5B 34
+R 00 00 08 00 00 03 07 00 00 05 07 00 00 07 07 00
+T 06 00 00 6C 34
+R 00 00 08 00 00 03 07 00

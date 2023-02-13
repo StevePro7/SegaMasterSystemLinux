@@ -6,10 +6,14 @@
 #include "../engine/font_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/graphics_manager.h"
-//#include "../engine/input_manager.h"
+#include "../engine/input_manager.h"
+#include "../engine/sprite_manager.h"
+#include "../engine/util_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
 #include "../banks/bank3.h"
+
+static void draw_sprite( unsigned char idx, unsigned char mode, unsigned char x, unsigned char y );
 
 void screen_title_screen_load()
 {
@@ -19,12 +23,38 @@ void screen_title_screen_load()
 	engine_graphics_manager_image( titles_tiles__tilemap__bin, TILE_IMAGE_SCREEN, 8, 0, 16, 12 );
 
 	engine_content_manager_sprite();
-	engine_font_manager_text( LOCALE_TITLE1_SCREEN, 8, 22 );
-	engine_font_manager_text( LOCALE_TITLE2_SCREEN, 7, 23 );
+	engine_util_manager_locale_text( 1, 28, 23 );
+	engine_util_manager_locale_text( 2, 8, 22 );
+	engine_util_manager_locale_text( 3, 7, 23 );
+	//engine_font_manager_text( LOCALE_TITLE1_SCREEN, 8, 22 );
+	//engine_font_manager_text( LOCALE_TITLE2_SCREEN, 7, 23 );
+	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_ZOOMED() );
 	devkit_SMS_displayOn();
 }
 
 void screen_title_screen_update( unsigned char *screen_type )
 {
+	unsigned char input;
+	input = engine_input_manager_move( input_type_down );
+	if( input )
+	{
+		draw_sprite( 4, sprite_mode_zoomed, 176, 128 );
+	}
+
 	*screen_type = screen_type_title;
+}
+
+static void draw_sprite( unsigned char idx, unsigned char mode, unsigned char x, unsigned char y )
+{
+	engine_sprite_manager_mode( idx, mode, x, y );
+
+	engine_sprite_manager_zoom( mode, 0, y + mode * 0 );
+	engine_sprite_manager_zoom( mode, 8, y + mode * 0 );
+	engine_sprite_manager_zoom( mode, 192, y + mode * 0 );
+	engine_sprite_manager_zoom( mode, 224, y + mode * 0 );
+
+	engine_sprite_manager_zoom( mode, 0, y + mode * 16 );
+	engine_sprite_manager_zoom( mode, 8, y + mode * 16 );
+	engine_sprite_manager_zoom( mode, 192, y + mode * 16 );
+	engine_sprite_manager_zoom( mode, 224, y + mode * 16 );
 }

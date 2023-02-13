@@ -1,3 +1,5 @@
+extern const unsigned char *locale_object_texts[];
+
 extern const unsigned char	bggame_tiles__palette__bin[];
 #define				bggame_tiles__palette__bin_size 16
 #define				bggame_tiles__palette__bin_bank 2

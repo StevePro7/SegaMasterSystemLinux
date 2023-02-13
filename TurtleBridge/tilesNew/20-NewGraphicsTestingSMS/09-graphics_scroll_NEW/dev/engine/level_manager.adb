@@ -19,6 +19,7 @@ T:Flevel_manager$tag_struct_level_object[({0}S:S$level_data$0_0$0({2}DG,SC:U),Z,
 S:G$level_platforms$0_0$0({0}DA0d,SC:U),E,0,0
 S:G$music_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$level_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$locale_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$global_level_object$0_0$0({6}STtag_struct_level_object:S),E,0,0
 S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0

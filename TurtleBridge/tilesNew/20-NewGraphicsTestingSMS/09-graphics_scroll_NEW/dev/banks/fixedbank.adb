@@ -21,6 +21,5 @@ S:G$level1113_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$level1114_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$level1115_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$music_object_bank$0_0$0({2}DA2d,SC:U),D,0,0
-S:G$my_splash_text$0_0$0({4}DA4d,SC:U),D,0,0
 S:G$level_object_size$0_0$0({32}DA16d,SI:U),D,0,0
 S:G$level_object_bank$0_0$0({16}DA16d,SC:U),D,0,0

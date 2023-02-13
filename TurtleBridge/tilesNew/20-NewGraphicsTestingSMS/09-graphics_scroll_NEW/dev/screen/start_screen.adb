@@ -22,6 +22,7 @@ S:G$global_frame_object$0_0$0({2}STtag_struct_frame_object:S),E,0,0
 S:G$global_reset_object$0_0$0({2}STtag_struct_reset_object:S),E,0,0
 S:G$music_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$level_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$locale_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:Fstart_screen$screen_intro_screen_delay$0_0$0({1}SC:U),E,0,0
 S:Fstart_screen$cheat_count$0_0$0({1}SC:U),E,0,0
 S:Fstart_screen$delay$0_0$0({1}SC:U),E,0,0

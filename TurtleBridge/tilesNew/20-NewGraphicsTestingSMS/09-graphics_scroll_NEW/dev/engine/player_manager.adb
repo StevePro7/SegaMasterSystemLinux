@@ -54,6 +54,7 @@ S:Fplayer_manager$physics_array$0_0$0({116}DA116d,SC:S),E,0,0
 S:G$jump_array_ptr$0_0$0({0}DA0d,DG,SI:S),E,0,0
 S:G$music_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$level_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$locale_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$global_player_object$0_0$0({15}STtag_struct_player_object:S),E,0,0
 S:Fplayer_manager$animate_count$0_0$0({1}SC:S),E,0,0
 S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0

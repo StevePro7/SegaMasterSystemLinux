@@ -90,6 +90,13 @@ typedef enum tag_enum_tile_type
 
 } enum_tile_type;
 
+typedef enum tag_enum_sprite_mode
+{
+	sprite_mode_normai = 1,
+	sprite_mode_zoomed = 2,
+
+} enum_sprite_mode_type;
+
 typedef enum tag_enum_cloud_type
 {
 	cloud_type_large = 0,
