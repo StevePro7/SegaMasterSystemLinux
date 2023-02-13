@@ -80,6 +80,20 @@ void screen_diff_screen_update( unsigned char *screen_type )
 		engine_font_manager_text( ( unsigned char * ) locale_object_difficulty[ game_difficulty ], po->posnX / 8 - 2, player_loadY - 6 );
 	}
 
+	input = engine_input_manager_hold( input_type_fire1 );
+	if( input )
+	{
+		engine_util_manager_locale_blank( 1, po->posnX / 8 - 2, player_loadY - 6 );
+		engine_util_manager_locale_blank( 2, 7, 5 );
+		// TODO sfx
+		//engine_player_manager_draw();
+		*screen_type = screen_type_beat;
+		return;
+	}
+
+	// TODO - navigate backwards.
+	//input = engine_input_manager_hold( input_type_fire2 );
+
 	engine_player_manager_draw();
 	*screen_type = screen_type_diff;
 }
