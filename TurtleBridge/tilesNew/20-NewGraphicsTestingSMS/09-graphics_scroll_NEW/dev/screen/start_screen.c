@@ -56,7 +56,6 @@ void screen_start_screen_update( unsigned char *screen_type )
 		{
 			engine_font_manager_text( LOCALE_BLANK14, 9, 7 );
 		}
-		
 	}
 
 	engine_scroll_manager_section( 1 );
