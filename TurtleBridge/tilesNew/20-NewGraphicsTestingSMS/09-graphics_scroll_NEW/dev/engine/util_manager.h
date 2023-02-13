@@ -2,8 +2,8 @@
 #define _UTIL_MANAGER_H_
 
 // Locale Manager.
-//void engine_util_manager_locale_text( unsigned char *text, unsigned char x, unsigned char y );
-void engine_util_manager_locale_text( unsigned char index, unsigned char x, unsigned char y );
+//void engine_util_manager_locale_texts( unsigned char *text, unsigned char x, unsigned char y );
+void engine_util_manager_locale_texts( unsigned char index, unsigned char x, unsigned char y );
 void engine_util_manager_locale_blank( unsigned char index, unsigned char x, unsigned char y );
 
 // Maths Manager.

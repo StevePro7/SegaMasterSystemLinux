@@ -1,9 +1,9 @@
 M:util_manager
-F:G$engine_util_manager_locale_text$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lutil_manager.engine_util_manager_locale_text$index$1_0$117({1}SC:U),B,1,4
-S:Lutil_manager.engine_util_manager_locale_text$x$1_0$117({1}SC:U),B,1,5
-S:Lutil_manager.engine_util_manager_locale_text$y$1_0$117({1}SC:U),B,1,6
-S:Lutil_manager.engine_util_manager_locale_text$text$1_0$118({2}DG,SC:U),R,0,0,[c,b]
+F:G$engine_util_manager_locale_texts$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lutil_manager.engine_util_manager_locale_texts$index$1_0$117({1}SC:U),B,1,4
+S:Lutil_manager.engine_util_manager_locale_texts$x$1_0$117({1}SC:U),B,1,5
+S:Lutil_manager.engine_util_manager_locale_texts$y$1_0$117({1}SC:U),B,1,6
+S:Lutil_manager.engine_util_manager_locale_texts$text$1_0$118({2}DG,SC:U),R,0,0,[c,b]
 F:G$engine_util_manager_locale_blank$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lutil_manager.engine_util_manager_locale_blank$index$1_0$119({1}SC:U),B,1,4
 S:Lutil_manager.engine_util_manager_locale_blank$x$1_0$119({1}SC:U),B,1,5

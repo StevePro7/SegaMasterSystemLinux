@@ -23,9 +23,9 @@ void screen_title_screen_load()
 	engine_graphics_manager_image( titles_tiles__tilemap__bin, TILE_IMAGE_SCREEN, 8, 0, 16, 12 );
 
 	engine_content_manager_sprite();
-	engine_util_manager_locale_text( 1, 28, 23 );
-	engine_util_manager_locale_text( 2, 8, 22 );
-	engine_util_manager_locale_text( 3, 7, 23 );
+	engine_util_manager_locale_texts( 1, 28, 23 );
+	engine_util_manager_locale_texts( 2, 8, 22 );
+	engine_util_manager_locale_texts( 3, 7, 23 );
 	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_ZOOMED() );
 	devkit_SMS_displayOn();
 }

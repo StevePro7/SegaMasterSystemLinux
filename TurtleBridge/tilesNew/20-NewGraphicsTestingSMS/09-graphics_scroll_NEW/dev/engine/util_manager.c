@@ -5,15 +5,14 @@
 #include "../banks/bank2.h"
 #include <stdlib.h>
 
+#define LOCALE_ROM_BANK		2
 #define BYTE_NIBBLE_MASK	0x0F
 
 // Locale Manager.
-//void engine_util_manager_locale_text( unsigned char *text, unsigned char x, unsigned char y )
-void engine_util_manager_locale_text( unsigned char index, unsigned char x, unsigned char y )
+void engine_util_manager_locale_texts( unsigned char index, unsigned char x, unsigned char y )
 {
 	unsigned char *text;
-	devkit_SMS_mapROMBank( 2 );
-	//text = ( unsigned char * ) locale_object_texts[ 0 ];
+	devkit_SMS_mapROMBank( LOCALE_ROM_BANK );
 	text = ( unsigned char * ) locale_object_texts[ index ];
 	engine_font_manager_text( text, x, y );
 }
@@ -21,7 +20,7 @@ void engine_util_manager_locale_text( unsigned char index, unsigned char x, unsi
 void engine_util_manager_locale_blank( unsigned char index, unsigned char x, unsigned char y )
 {
 	unsigned char *blank;
-	devkit_SMS_mapROMBank( 2 );
+	devkit_SMS_mapROMBank( LOCALE_ROM_BANK );
 	blank = ( unsigned char * ) locale_object_blank[ index ];
 	engine_font_manager_text( blank, x, y );
 }

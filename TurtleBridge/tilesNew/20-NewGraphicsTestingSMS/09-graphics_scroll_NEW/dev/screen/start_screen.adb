@@ -86,7 +86,7 @@ S:G$engine_frame_manager_draw$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_reset_manager_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_reset_manager_update$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_reset_manager_reset$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_util_manager_locale_text$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_util_manager_locale_texts$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_util_manager_locale_blank$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_util_manager_convertByteToNibbles$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_util_manager_convertNibblesToByte$0_0$0({2}DF,SV:S),C,0,0

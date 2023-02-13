@@ -1,6 +1,6 @@
 M:debug_manager
 F:G$engine_debug_manager_initgame$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Ldebug_manager.engine_debug_manager_initgame$go$1_0$98({2}DG,STtag_struct_game_object:S),R,0,0,[c,b]
+S:Ldebug_manager.engine_debug_manager_initgame$go$1_0$98({2}DG,STtag_struct_game_object:S),R,0,0,[]
 F:G$engine_debug_manager_printout$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Ldebug_manager.engine_debug_manager_printout$po$1_0$99({2}DG,STtag_struct_player_object:S),R,0,0,[]
 S:Ldebug_manager.engine_debug_manager_printout$lo$1_0$99({2}DG,STtag_struct_level_object:S),R,0,0,[]
@@ -28,7 +28,7 @@ S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_zero$0_0$0({2}DF,SV:S),C,0,0
-S:G$Bar$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_game_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_level_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_level_manager_draw_point$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_level_manager_draw_column$0_0$0({2}DF,SV:S),C,0,0

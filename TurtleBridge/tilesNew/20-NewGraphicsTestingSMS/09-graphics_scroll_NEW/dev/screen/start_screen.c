@@ -31,7 +31,7 @@ void screen_start_screen_load()
 	engine_content_manager_sprite();
 	engine_graphics_manager_title();
 	engine_graphics_manager_sea();
-	engine_util_manager_locale_text( 4, 9, 7 );
+	engine_util_manager_locale_texts( 4, 9, 7 );
 	devkit_SMS_displayOn();
 
 	engine_scroll_manager_init();
@@ -50,7 +50,7 @@ void screen_start_screen_update( unsigned char *screen_type )
 		flag = !flag;
 		if (flag)
 		{
-			engine_util_manager_locale_text( 4, 9, 7 );
+			engine_util_manager_locale_texts( 4, 9, 7 );
 		}
 		else
 		{

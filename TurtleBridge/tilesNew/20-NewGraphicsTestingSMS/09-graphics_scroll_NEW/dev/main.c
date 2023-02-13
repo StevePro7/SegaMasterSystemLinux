@@ -67,6 +67,7 @@ static void start()
 	//devkit_SMS_setBGPaletteColor( 0, devkit_RGB( 1, 2, 3 ) );			// background tiles
 	//devkit_SMS_setBGPaletteColor( 16, devkit_RGB( 0, 3, 3 ) );		// border tiles		cornflower blue		sky
 
+	engine_game_manager_init();
 	engine_hack_manager_init();
 	engine_hack_manager_load();
 	engine_audio_manager_init();
@@ -74,7 +75,7 @@ static void start()
 	engine_tile_manager_init();
 
 	//open_screen_type = screen_type_splash;
-	open_screen_type = screen_type_title;
+	//open_screen_type = screen_type_title;
 	//open_screen_type = screen_type_option;
 	//open_screen_type = screen_type_func;
 	//open_screen_type = screen_type_test;
@@ -90,8 +91,8 @@ static void start()
 	//open_screen_type = screen_type_over;
 	//open_screen_type = screen_type_cont;
 	//open_screen_type = screen_type_test;
-	open_screen_type = screen_type_start;
-	//open_screen_type = screen_type_demo;
+	//open_screen_type = screen_type_start;
+	open_screen_type = screen_type_diff;
 
 	engine_player_manager_init();
 	engine_scroll_manager_init();

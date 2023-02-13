@@ -6,7 +6,6 @@
 // Global variable.
 extern struct_game_object global_game_object;
 
-// TODO - store player start via game difficulty here
-void Bar();
+void engine_game_manager_init();
 
 #endif//_GAME_MANAGER_H_

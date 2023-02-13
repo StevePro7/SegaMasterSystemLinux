@@ -14,6 +14,7 @@
 #include "engine/debug_manager.h"
 #include "engine/enum_manager.h"
 #include "engine/font_manager.h"
+#include "engine/game_manager.h"
 #include "engine/graphics_manager.h"
 #include "engine/hack_manager.h"
 #include "engine/input_manager.h"
