@@ -13,7 +13,7 @@ extern const unsigned char music_object_bank[];
 //#define LOCALE_TITLE1_SCREEN	"A TRIBUTE TO THE"
 //#define LOCALE_TITLE2_SCREEN	"GREATEST DAREDEVIL"
 
-#define LOCALE_INTRO_SCREEN			"INSERT COIN(S)"
+//#define LOCALE_INTRO_SCREEN			"INSERT COIN(S)"
 //#define LOCALE_INTRO_SCREEN1		"PRESS START"
 #define LOCALE_BLANK14				"              "
 //#define LOCALE_INTRO_SCREEN2	   "12345INSERT COIN(S)12345"

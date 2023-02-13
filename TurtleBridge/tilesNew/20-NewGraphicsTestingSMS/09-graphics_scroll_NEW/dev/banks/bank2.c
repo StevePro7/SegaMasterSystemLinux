@@ -4,6 +4,7 @@ const unsigned char *locale_object_texts[] =
 	"V1.0",
 	"A TRIBUTE TO THE",
 	"GREATEST DAREDEVIL",
+	"INSERT COIN(S)",
 };
 
 const unsigned char bggame_tiles__palette__bin[] = {

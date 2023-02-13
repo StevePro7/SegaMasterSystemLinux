@@ -26,8 +26,6 @@ void screen_title_screen_load()
 	engine_util_manager_locale_text( 1, 28, 23 );
 	engine_util_manager_locale_text( 2, 8, 22 );
 	engine_util_manager_locale_text( 3, 7, 23 );
-	//engine_font_manager_text( LOCALE_TITLE1_SCREEN, 8, 22 );
-	//engine_font_manager_text( LOCALE_TITLE2_SCREEN, 7, 23 );
 	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_ZOOMED() );
 	devkit_SMS_displayOn();
 }

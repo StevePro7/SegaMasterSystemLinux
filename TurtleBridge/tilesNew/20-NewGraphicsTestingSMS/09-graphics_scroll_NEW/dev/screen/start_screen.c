@@ -12,6 +12,7 @@
 #include "../engine/player_manager.h"
 #include "../engine/scroll_manager.h"
 #include "../engine/timer_manager.h"
+#include "../engine/util_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
 #include "../banks/bank2.h"
@@ -30,13 +31,11 @@ void screen_start_screen_load()
 	engine_content_manager_sprite();
 	engine_graphics_manager_title();
 	engine_graphics_manager_sea();
-	engine_font_manager_text( LOCALE_INTRO_SCREEN, 9, 7 );
-	//engine_font_manager_text( LOCALE_INTRO_SCREEN1, 10, 5 );
-	//engine_font_manager_text( LOCALE_INTRO_SCREEN2, 4, 4 );
+	engine_util_manager_locale_text( 4, 9, 7 );
 	devkit_SMS_displayOn();
 
 	engine_scroll_manager_init();
-	engine_scroll_manager_load(0,0);
+	engine_scroll_manager_load( 0, 0 );
 	screen_intro_screen_delay = NORMAL_DELAY;
 	engine_delay_manager_load(50);
 	flag = true;
@@ -51,7 +50,7 @@ void screen_start_screen_update( unsigned char *screen_type )
 		flag = !flag;
 		if (flag)
 		{
-			engine_font_manager_text( LOCALE_INTRO_SCREEN, 9, 7 );
+			engine_util_manager_locale_text( 4, 9, 7 );
 		}
 		else
 		{

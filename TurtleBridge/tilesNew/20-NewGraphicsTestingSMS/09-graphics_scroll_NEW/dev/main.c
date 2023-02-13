@@ -90,7 +90,7 @@ static void start()
 	//open_screen_type = screen_type_over;
 	//open_screen_type = screen_type_cont;
 	//open_screen_type = screen_type_test;
-	//open_screen_type = screen_type_start;
+	open_screen_type = screen_type_start;
 	//open_screen_type = screen_type_demo;
 
 	engine_player_manager_init();
