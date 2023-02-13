@@ -12,6 +12,7 @@ namespace Test
 		private readonly MyRocketManager myRocketManager;
 		private readonly MyConfigManger myConfigManger;
 		private readonly MyContentManager myContentManager;
+		private int status;
 
 		public AnGame()
 		{
@@ -29,11 +30,13 @@ namespace Test
 			IsMouseVisible = true;
 			Logger.Initialize();
 			IsFixedTimeStep = true;
-			var fps = 50;
+			var fps = 10;
 			TargetElapsedTime = TimeSpan.FromSeconds(1.0f / fps);
 			myConfigManger.Initialize();
 			myRocketManager.Initialize();
 			base.Initialize();
+			status = 0;
+			//Logger.Info("hello 04 IN ");
 		}
 
 		protected override void LoadContent()
@@ -59,6 +62,8 @@ namespace Test
 				Exit();
 			}
 
+			status++;
+			Logger.Info("hello 04 UP " + status);
 			base.Update(gameTime);
 		}
 
