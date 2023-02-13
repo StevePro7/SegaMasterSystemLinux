@@ -12,8 +12,7 @@ S:Lscroll_manager.para_scroll_load$so$1_0$104({2}DG,STtag_struct_scroll_object:S
 F:Fscroll_manager$para_scroll_update$0_0$0({2}DF,SC:U),Z,0,0,0,0,0
 S:Lscroll_manager.para_scroll_update$delta$1_0$105({1}SC:U),B,1,4
 S:Lscroll_manager.para_scroll_update$so$1_0$106({2}DG,STtag_struct_scroll_object:S),R,0,0,[]
-S:Lscroll_manager.para_scroll_update$scroll_state$1_0$106({1}SC:U),B,1,-1
-S:Lscroll_manager.para_scroll_update$sloc0$0_1$0({1}SC:U),B,1,-1
+S:Lscroll_manager.para_scroll_update$scroll_state$1_0$106({1}SC:U),R,0,0,[e]
 F:Fscroll_manager$full_scroll_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lscroll_manager.full_scroll_load$screen$1_0$111({1}SC:U),B,1,4
 S:Lscroll_manager.full_scroll_load$scrollFinish$1_0$111({2}SI:S),B,1,5

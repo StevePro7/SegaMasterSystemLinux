@@ -100,9 +100,10 @@ static enum_scroll_state para_scroll_update( unsigned char delta )
 			so->scrollColumn++;
 		}
 
+		// TODO - remember to dup this for the intro screen only!!
 		// Scroll cloud section at half pace.
-		so->scroll_half = 1 - so->scroll_half;
-		so->scrollLeftX0 -= so->scroll_half;
+		//so->scroll_half = 1 - so->scroll_half;
+		//so->scrollLeftX0 -= so->scroll_half;
 	}
 
 	// Scroll game screen at full pace.

@@ -1,11 +1,11 @@
 M:screen_manager
 F:G$engine_screen_manager_init$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lscreen_manager.engine_screen_manager_init$open_screen_type$1_0$22({1}SC:U),B,1,4
+S:Lscreen_manager.engine_screen_manager_init$open_screen_type$1_0$25({1}SC:U),B,1,4
 F:G$engine_screen_manager_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Fscreen_manager$curr_screen_type$0_0$0({1}SC:U),E,0,0
 S:Fscreen_manager$next_screen_type$0_0$0({1}SC:U),E,0,0
-S:Fscreen_manager$load_method$0_0$0({38}DA19d,DC,DF,SV:S),E,0,0
-S:Fscreen_manager$update_method$0_0$0({38}DA19d,DC,DF,SV:S),E,0,0
+S:Fscreen_manager$load_method$0_0$0({44}DA22d,DC,DF,SV:S),E,0,0
+S:Fscreen_manager$update_method$0_0$0({44}DA22d,DC,DF,SV:S),E,0,0
 S:G$screen_none_screen_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$screen_none_screen_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$screen_splash_screen_load$0_0$0({2}DF,SV:S),C,0,0
@@ -16,6 +16,12 @@ S:G$screen_intro_screen_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$screen_intro_screen_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$screen_title_screen_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$screen_title_screen_update$0_0$0({2}DF,SV:S),C,0,0
+S:G$screen_demo_screen_load$0_0$0({2}DF,SV:S),C,0,0
+S:G$screen_demo_screen_update$0_0$0({2}DF,SV:S),C,0,0
+S:G$screen_diff_screen_load$0_0$0({2}DF,SV:S),C,0,0
+S:G$screen_diff_screen_update$0_0$0({2}DF,SV:S),C,0,0
+S:G$screen_level_screen_load$0_0$0({2}DF,SV:S),C,0,0
+S:G$screen_level_screen_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$screen_start_screen_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$screen_start_screen_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$screen_init_screen_load$0_0$0({2}DF,SV:S),C,0,0

@@ -1,7 +1,7 @@
 #ifndef _GLOBAL_MANAGER_H_
 #define _GLOBAL_MANAGER_H_
 
-#define MAX_SCREEENS		19
+#define MAX_SCREEENS		22
 
 // Sprites.
 #define SPRITE_TILES		256
@@ -25,5 +25,8 @@
 #define INVALID_INDEX		-1
 
 #define TILE_IMAGE_SCREEN	144
+
+// Delay
+#define NORMAL_DELAY		50
 
 #endif//_GLOBAL_MANAGER_H_

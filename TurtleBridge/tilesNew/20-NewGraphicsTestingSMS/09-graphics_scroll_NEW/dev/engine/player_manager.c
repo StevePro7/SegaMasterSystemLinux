@@ -21,16 +21,26 @@ static signed char physics_array[] = { 0,-1,-1,-1,-1,-1,-1,-1,-1, -1, -1, -1, -1
 // TODO - replace
 static signed char animate_count;
 
+void engine_player_manager_starts(unsigned char index)
+{
+	struct_player_object *po = &global_player_object;
+	
+	unsigned char px = player_object_starts[index];
+
+	po->posnX = px;
+	updatePlayerX();
+}
+
 void engine_player_manager_init()
 {
 	struct_player_object *po = &global_player_object;
-	po->posnX = 0;
-	po->initX = 0; 
+	po->posnX = 80;
+	po->initX = 80; 
 	po->lookX = 0;
 	//po->posnX = 32;
 	//po->posnX = 96;
 	//po->posnX = 168;
-	po->posnY = 0;
+	po->posnY = 128;
 	
 	//po->posnY = 128;
 	//po->posnY = 132;
