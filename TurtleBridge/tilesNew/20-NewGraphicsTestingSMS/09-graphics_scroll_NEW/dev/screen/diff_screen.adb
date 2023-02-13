@@ -1,13 +1,13 @@
 M:diff_screen
 F:G$screen_diff_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Ldiff_screen.screen_diff_screen_load$po$1_0$112({2}DG,STtag_struct_player_object:S),R,0,0,[]
-S:Ldiff_screen.screen_diff_screen_load$lo$1_0$112({2}DG,STtag_struct_level_object:S),R,0,0,[]
-S:Ldiff_screen.screen_diff_screen_load$go$1_0$112({2}DG,STtag_struct_game_object:S),R,0,0,[]
+S:Ldiff_screen.screen_diff_screen_load$po$1_0$113({2}DG,STtag_struct_player_object:S),R,0,0,[]
+S:Ldiff_screen.screen_diff_screen_load$lo$1_0$113({2}DG,STtag_struct_level_object:S),R,0,0,[]
+S:Ldiff_screen.screen_diff_screen_load$go$1_0$113({2}DG,STtag_struct_game_object:S),R,0,0,[]
 S:Ldiff_screen.screen_diff_screen_load$sloc0$0_1$0({1}SC:S),B,1,-1
 F:G$screen_diff_screen_update$0_0$0({2}DF,SV:S),Z,0,-1,0,0,0
-S:Ldiff_screen.screen_diff_screen_update$screen_type$1_0$113({2}DG,SC:U),B,1,4
-S:Ldiff_screen.screen_diff_screen_update$po$1_0$114({2}DG,STtag_struct_player_object:S),R,0,0,[]
-S:Ldiff_screen.screen_diff_screen_update$input$1_0$114({1}SC:U),R,0,0,[a]
+S:Ldiff_screen.screen_diff_screen_update$screen_type$1_0$114({2}DG,SC:U),B,1,4
+S:Ldiff_screen.screen_diff_screen_update$po$1_0$115({2}DG,STtag_struct_player_object:S),R,0,0,[]
+S:Ldiff_screen.screen_diff_screen_update$input$1_0$115({1}SC:U),R,0,0,[a]
 S:Ldiff_screen.screen_diff_screen_update$sloc0$0_1$0({1}SC:S),B,1,-1
 S:Ldiff_screen.screen_diff_screen_update$sloc1$0_1$0({1}SC:S),B,1,-1
 T:Fdiff_screen$tag_struct_player_object[({0}S:S$posnX$0_0$0({2}SI:U),Z,0,0)({2}S:S$tileX$0_0$0({2}SI:U),Z,0,0)({4}S:S$initX$0_0$0({1}SC:U),Z,0,0)({5}S:S$lookX$0_0$0({1}SC:U),Z,0,0)({6}S:S$posnY$0_0$0({1}SC:U),Z,0,0)({7}S:S$tileY$0_0$0({1}SC:U),Z,0,0)({8}S:S$drawX$0_0$0({1}SC:U),Z,0,0)({9}S:S$drawY$0_0$0({1}SC:U),Z,0,0)({10}S:S$player_state$0_0$0({1}SC:U),Z,0,0)({11}S:S$player_index$0_0$0({1}SC:U),Z,0,0)({12}S:S$player_frame$0_0$0({1}SC:U),Z,0,0)({13}S:S$player_count$0_0$0({2}SI:U),Z,0,0)]
@@ -39,6 +39,7 @@ S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_zero$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_init$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_game_manager_set_difficulty$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_level$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_sea$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_clouds$0_0$0({2}DF,SV:S),C,0,0

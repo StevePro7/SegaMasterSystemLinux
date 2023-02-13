@@ -87,6 +87,7 @@ void screen_diff_screen_update( unsigned char *screen_type )
 		engine_util_manager_locale_blank( 2, 7, 5 );
 		// TODO sfx
 		//engine_player_manager_draw();
+		engine_game_manager_set_difficulty( game_difficulty );
 		*screen_type = screen_type_beat;
 		return;
 	}

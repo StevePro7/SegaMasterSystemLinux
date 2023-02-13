@@ -1,11 +1,11 @@
 M:debug_manager
 F:G$engine_debug_manager_initgame$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Ldebug_manager.engine_debug_manager_initgame$go$1_0$98({2}DG,STtag_struct_game_object:S),R,0,0,[]
+S:Ldebug_manager.engine_debug_manager_initgame$go$1_0$99({2}DG,STtag_struct_game_object:S),R,0,0,[]
 F:G$engine_debug_manager_printout$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Ldebug_manager.engine_debug_manager_printout$po$1_0$99({2}DG,STtag_struct_player_object:S),R,0,0,[]
-S:Ldebug_manager.engine_debug_manager_printout$lo$1_0$99({2}DG,STtag_struct_level_object:S),R,0,0,[]
+S:Ldebug_manager.engine_debug_manager_printout$po$1_0$100({2}DG,STtag_struct_player_object:S),R,0,0,[]
+S:Ldebug_manager.engine_debug_manager_printout$lo$1_0$100({2}DG,STtag_struct_level_object:S),R,0,0,[]
 F:G$engine_debug_manager_scrollout$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Ldebug_manager.engine_debug_manager_scrollout$so$1_0$100({2}DG,STtag_struct_scroll_object:S),R,0,0,[]
+S:Ldebug_manager.engine_debug_manager_scrollout$so$1_0$101({2}DG,STtag_struct_scroll_object:S),R,0,0,[]
 F:G$engine_debug_manager_initcontent$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 T:Fdebug_manager$tag_struct_player_object[({0}S:S$posnX$0_0$0({2}SI:U),Z,0,0)({2}S:S$tileX$0_0$0({2}SI:U),Z,0,0)({4}S:S$initX$0_0$0({1}SC:U),Z,0,0)({5}S:S$lookX$0_0$0({1}SC:U),Z,0,0)({6}S:S$posnY$0_0$0({1}SC:U),Z,0,0)({7}S:S$tileY$0_0$0({1}SC:U),Z,0,0)({8}S:S$drawX$0_0$0({1}SC:U),Z,0,0)({9}S:S$drawY$0_0$0({1}SC:U),Z,0,0)({10}S:S$player_state$0_0$0({1}SC:U),Z,0,0)({11}S:S$player_index$0_0$0({1}SC:U),Z,0,0)({12}S:S$player_frame$0_0$0({1}SC:U),Z,0,0)({13}S:S$player_count$0_0$0({2}SI:U),Z,0,0)]
 T:Fdebug_manager$tag_struct_scroll_object[({0}S:S$scrollLeftX$0_0$0({1}SC:U),Z,0,0)({1}S:S$scrollRight$0_0$0({1}SC:U),Z,0,0)({2}S:S$scrollColumn$0_0$0({2}SI:U),Z,0,0)({4}S:S$scrollFinish$0_0$0({2}SI:U),Z,0,0)({6}S:S$scrollLeftX0$0_0$0({1}SC:U),Z,0,0)({7}S:S$scrollLeftX1$0_0$0({1}SC:U),Z,0,0)({8}S:S$scrollLeftX2$0_0$0({1}SC:U),Z,0,0)({9}S:S$scrollLeftX3$0_0$0({1}SC:U),Z,0,0)({10}S:S$scrollLeftX4$0_0$0({1}SC:U),Z,0,0)({11}S:S$scrollLeftX5$0_0$0({1}SC:U),Z,0,0)({12}S:S$scroll_half$0_0$0({1}SC:U),Z,0,0)({13}S:S$lineCnt$0_0$0({1}SC:U),Z,0,0)]
@@ -30,6 +30,7 @@ S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_zero$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_init$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_game_manager_set_difficulty$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_level_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_level_manager_draw_point$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_level_manager_draw_column$0_0$0({2}DF,SV:S),C,0,0

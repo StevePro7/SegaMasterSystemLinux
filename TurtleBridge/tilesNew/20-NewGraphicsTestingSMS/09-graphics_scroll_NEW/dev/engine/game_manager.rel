@@ -1,20 +1,33 @@
 ;!FILE game_manager.asm
 XL3
-H 9 areas D global symbols
+H 9 areas 1A global symbols
 M game_manager
 O -mz80
 S .__.ABS. Def000000
-A _CODE size 6 flags 0 addr 0
-S A$game_manager$71 Def000005
-S A$game_manager$62 Def000000
-S A$game_manager$63 Def000003
-S C$game_manager.c$10$1_0$1 Def000000
-S C$game_manager.c$11$1_0$1 Def000005
+A _CODE size 14 flags 0 addr 0
+S _engine_game_manager_set_difficulty Def000006
+S A$game_manager$90 Def00000D
+S A$game_manager$72 Def000005
+S A$game_manager$63 Def000000
+S A$game_manager$91 Def00000F
+S A$game_manager$64 Def000003
+S A$game_manager$92 Def000012
+S C$game_manager.c$10$1_0$2 Def000000
+S C$game_manager.c$11$1_0$2 Def000005
+S A$game_manager$88 Def000006
+S A$game_manager$89 Def000009
 S G$engine_game_manager_init$0$0 Def000000
+S C$game_manager.c$13$1_0$4 Def000006
+S XG$engine_game_manager_set_difficulty$0$0 Def000013
+S C$game_manager.c$15$1_0$4 Def000006
+S C$game_manager.c$16$1_0$4 Def000006
+S C$game_manager.c$17$1_0$4 Def000013
 S _engine_game_manager_init Def000000
-S C$game_manager.c$7$0_0$1 Def000000
-S C$game_manager.c$9$1_0$1 Def000000
+S C$game_manager.c$7$0_0$2 Def000000
+S C$game_manager.c$9$1_0$2 Def000000
 S XG$engine_game_manager_init$0$0 Def000005
+S A$game_manager$100 Def000013
+S G$engine_game_manager_set_difficulty$0$0 Def000006
 A _DATA size 7 flags 0 addr 0
 S _global_game_object Def000000
 S G$global_game_object$0_0$0 Def000000
@@ -33,3 +46,9 @@ T 00 00 00
 R 00 00 00 00
 T 00 00 00 21 00 00 36 01 C9
 R 00 00 00 00 00 04 01 00
+T 06 00 00
+R 00 00 00 00
+T 06 00 00 21 00 00 FD 21 02 00 FD 39 FD 7E 00 77
+R 00 00 00 00 00 04 01 00
+T 13 00 00 C9
+R 00 00 00 00
