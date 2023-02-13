@@ -24,6 +24,7 @@ S:G$music_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$level_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$locale_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$locale_object_blank$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$locale_object_difficulty$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:Fstart_screen$screen_intro_screen_delay$0_0$0({1}SC:U),E,0,0
 S:Fstart_screen$cheat_count$0_0$0({1}SC:U),E,0,0
 S:Fstart_screen$delay$0_0$0({1}SC:U),E,0,0

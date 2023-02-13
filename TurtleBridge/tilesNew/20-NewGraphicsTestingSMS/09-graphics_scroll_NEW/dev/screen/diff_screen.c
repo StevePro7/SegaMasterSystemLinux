@@ -10,7 +10,9 @@
 #include "../engine/player_manager.h"
 #include "../engine/scroll_manager.h"
 #include "../engine/tile_manager.h"
+#include "../engine/util_manager.h"
 #include "../devkit/_sms_manager.h"
+#include "../banks/bank2.h"
 
 static unsigned char player_loadY;
 
@@ -38,10 +40,13 @@ void screen_diff_screen_load()
 	engine_level_manager_draw_point( go->game_point );
 	engine_player_manager_loadX( go->game_point );
 
-	player_loadY = level_platforms[ po->lookX ];
 	engine_player_manager_loadY( player_loadY );
 
+	//engine_util_manager_locale_texts( 1, 28, 23 );
+	//engine_font_manager_text( ( unsigned char * ) locale_object_difficulty[ go->game_difficulty ], po->posnX - 1, player_loadY - 8 );
 	engine_player_manager_draw();
+
+	engine_util_manager_locale_texts( 5, 7, 7 );
 	devkit_SMS_displayOn();
 
 	engine_scroll_manager_load( go->game_point, lo->level_size );

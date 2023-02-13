@@ -5,12 +5,25 @@ const unsigned char *locale_object_texts[] =
 	"A TRIBUTE TO THE",
 	"GREATEST DAREDEVIL",
 	"INSERT COIN(S)",		// Start?
+	"SELECT  DIFFICULTY",	// Difficulty
+	//"12345INSERT COIN(S)12345"
 };
 
 extern const unsigned char *locale_object_blank[] =
 {
 	"              ",		// LOCALE_BLANK14
+	//"                 ",		// LOCALE_BLANK17
+	"      ",		// LOCALE_BLANK6
 };
+
+const unsigned char *locale_object_difficulty[] =
+{
+	"EASIER",
+	"NORMAL",
+	"HARDER",
+	"INSANE",
+};
+
 
 const unsigned char bggame_tiles__palette__bin[] = {
 0x00,0x01,0x30,0x02,0x03,0x14,0x04,0x08,0x19,0x39,0x0b,0x3a,0x2b,0x0f,0x2f,0x3f};

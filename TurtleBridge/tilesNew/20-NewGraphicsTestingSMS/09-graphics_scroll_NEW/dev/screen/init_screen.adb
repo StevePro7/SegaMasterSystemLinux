@@ -19,7 +19,7 @@ S:G$engine_debug_manager_initgame$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_debug_manager_printout$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_debug_manager_scrollout$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_debug_manager_initcontent$0_0$0({2}DF,SV:S),C,0,0
-S:G$Bar$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_game_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_level_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_level_manager_draw_point$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_level_manager_draw_column$0_0$0({2}DF,SV:S),C,0,0

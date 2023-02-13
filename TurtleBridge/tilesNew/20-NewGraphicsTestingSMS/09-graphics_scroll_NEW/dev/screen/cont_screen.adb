@@ -43,7 +43,7 @@ S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_zero$0_0$0({2}DF,SV:S),C,0,0
-S:G$Bar$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_game_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_hold$0_0$0({2}DF,SC:U),C,0,0

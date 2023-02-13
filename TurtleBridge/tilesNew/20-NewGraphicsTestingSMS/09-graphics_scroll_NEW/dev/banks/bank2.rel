@@ -1,25 +1,33 @@
 XL3
-H A areas 1D global symbols
+H A areas 26 global symbols
 M bank2
 O -mz80
 S .__.ABS. Def000000
 A _CODE size 0 flags 0 addr 0
+S Fbank2$__str_10$0_0$0 Def000000
+S Fbank2$__str_11$0_0$0 Def000000
 S Fbank2$__str_1$0_0$0 Def000000
 S Fbank2$__str_2$0_0$0 Def000000
 S Fbank2$__str_3$0_0$0 Def000000
 S Fbank2$__str_4$0_0$0 Def000000
 S Fbank2$__str_5$0_0$0 Def000000
+S Fbank2$__str_6$0_0$0 Def000000
+S Fbank2$__str_7$0_0$0 Def000000
+S Fbank2$__str_8$0_0$0 Def000000
+S Fbank2$__str_9$0_0$0 Def000000
 A _DATA size 0 flags 0 addr 0
-A _INITIALIZED size C flags 0 addr 0
-S _locale_object_blank Def00000A
-S G$locale_object_blank$0_0$0 Def00000A
+A _INITIALIZED size 18 flags 0 addr 0
+S _locale_object_blank Def00000C
+S G$locale_object_blank$0_0$0 Def00000C
+S _locale_object_difficulty Def000010
+S G$locale_object_difficulty$0_0$0 Def000010
 S _locale_object_texts Def000000
 S G$locale_object_texts$0_0$0 Def000000
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
-A _BANK2 size 349D flags 0 addr 0
+A _BANK2 size 34D3 flags 0 addr 0
 S G$sprite_tiles__tiles__psgcompr$0_0$0 Def002702
 S _bggame_tiles__tiles__psgcompr Def0009A0
 S _splash_tiles__tilemap__bin Def0019B4
@@ -37,17 +45,22 @@ S G$bggame_tiles__palette__bin$0_0$0 Def000000
 S _splash_tiles__tiles__psgcompr Def001D44
 S G$splash_tiles__tiles__psgcompr$0_0$0 Def001D44
 S _sprite_tiles__tiles__psgcompr Def002702
-A _INITIALIZER size C flags 0 addr 0
+A _INITIALIZER size 18 flags 0 addr 0
+S Fbank2$__xinit_locale_object_difficulty$0_0$0 Def000010
 S Fbank2$__xinit_locale_object_texts$0_0$0 Def000000
-S Fbank2$__xinit_locale_object_blank$0_0$0 Def00000A
+S Fbank2$__xinit_locale_object_blank$0_0$0 Def00000C
 A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 02 00
 T 00 00 00
 R 00 00 02 00
-T 0A 00 00
+T 0C 00 00
 R 00 00 02 00
-T 0A 00 00
+T 0C 00 00
+R 00 00 02 00
+T 10 00 00
+R 00 00 02 00
+T 10 00 00
 R 00 00 02 00
 T 00 00 00
 R 00 00 07 00
@@ -2163,17 +2176,49 @@ T 8C 34 00 29 00
 R 00 00 07 00
 T 8E 34 00
 R 00 00 07 00
-T 8E 34 00 20 20 20 20 20 20 20 20 20 20 20 20 20
+T 8E 34 00 53 45 4C 45 43 54 20 20 44 49 46 46 49
 R 00 00 07 00
-T 9B 34 00 20 00
+T 9B 34 00 43 55 4C 54 59 00
+R 00 00 07 00
+T A1 34 00
+R 00 00 07 00
+T A1 34 00 20 20 20 20 20 20 20 20 20 20 20 20 20
+R 00 00 07 00
+T AE 34 00 20 00
+R 00 00 07 00
+T B0 34 00
+R 00 00 07 00
+T B0 34 00 20 20 20 20 20 20 00
+R 00 00 07 00
+T B7 34 00
+R 00 00 07 00
+T B7 34 00 45 41 53 49 45 52 00
+R 00 00 07 00
+T BE 34 00
+R 00 00 07 00
+T BE 34 00 4E 4F 52 4D 41 4C 00
+R 00 00 07 00
+T C5 34 00
+R 00 00 07 00
+T C5 34 00 48 41 52 44 45 52 00
+R 00 00 07 00
+T CC 34 00
+R 00 00 07 00
+T CC 34 00 49 4E 53 41 4E 45 00
 R 00 00 07 00
 T 00 00 00
 R 00 00 08 00
 T 00 00 00 4E 34 56 34 5B 34
 R 00 00 08 00 00 03 07 00 00 05 07 00 00 07 07 00
-T 06 00 00 6C 34 7F 34
-R 00 00 08 00 00 03 07 00 00 05 07 00
-T 0A 00 00
+T 06 00 00 6C 34 7F 34 8E 34
+R 00 00 08 00 00 03 07 00 00 05 07 00 00 07 07 00
+T 0C 00 00
 R 00 00 08 00
-T 0A 00 00 8E 34
+T 0C 00 00 A1 34 B0 34
+R 00 00 08 00 00 03 07 00 00 05 07 00
+T 10 00 00
+R 00 00 08 00
+T 10 00 00 B7 34 BE 34 C5 34
+R 00 00 08 00 00 03 07 00 00 05 07 00 00 07 07 00
+T 16 00 00 CC 34
 R 00 00 08 00 00 03 07 00
