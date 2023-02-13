@@ -48,7 +48,7 @@ void screen_option_screen_update( unsigned char *screen_type )
 	deltaX = 0;
 	if( player_state_isonground == po->player_state )
 	{
-		deltaX = 2;
+		//deltaX = 2;
 		input = engine_input_manager_move( input_type_left );
 		if ( input )
 		{
