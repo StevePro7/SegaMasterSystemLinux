@@ -1,38 +1,67 @@
 ;!FILE level_screen.asm
 XL3
-H 9 areas 1D global symbols
+H 9 areas 3A global symbols
 M level_screen
 O -mz80
-S _engine_font_manager_text Ref000000
+S _engine_graphics_manager_title Ref000000
+S _devkit_SMS_displayOn Ref000000
+S _engine_graphics_manager_sea Ref000000
+S _engine_level_manager_init Ref000000
+S _engine_level_manager_draw_point Ref000000
 S .__.ABS. Def000000
-A _CODE size 24 flags 0 addr 0
-S XG$screen_level_screen_load$0$0 Def00000D
-S C$level_screen.c$5$0_0$6 Def000000
-S C$level_screen.c$7$1_0$6 Def000000
-S C$level_screen.c$8$1_0$6 Def00000D
-S G$screen_level_screen_update$0$0 Def00001D
-S A$level_screen$100 Def000023
-S _screen_level_screen_update Def00001D
-S XG$screen_level_screen_update$0$0 Def000023
-S A$level_screen$60 Def000007
-S A$level_screen$61 Def000008
-S A$level_screen$71 Def00000D
-S A$level_screen$62 Def00000B
+S _global_game_object Ref000000
+S _engine_content_manager_sprite Ref000000
+S _engine_debug_manager_initgame Ref000000
+S _devkit_SMS_displayOff Ref000000
+S _engine_asm_manager_clear_VRAM Ref000000
+S _engine_content_manager_bggame Ref000000
+A _CODE size 31 flags 0 addr 0
+S XG$screen_level_screen_load$0$0 Def000027
+S G$screen_level_screen_update$0$0 Def00002A
+S A$level_screen$101 Def00001B
+S C$level_screen.c$20$1_0$113 Def000000
+S A$level_screen$120 Def000027
+S C$level_screen.c$30$1_0$113 Def000015
+S C$level_screen.c$32$1_0$113 Def000018
+S C$level_screen.c$23$1_0$113 Def000000
+S A$level_screen$105 Def00001E
+S C$level_screen.c$40$1_0$115 Def00002A
+S C$level_screen.c$33$1_0$113 Def00001B
+S A$level_screen$133 Def00002A
+S A$level_screen$106 Def000021
+S C$level_screen.c$25$1_0$113 Def000003
+S _screen_level_screen_update Def00002A
+S A$level_screen$134 Def00002B
+S A$level_screen$107 Def000022
+S C$level_screen.c$42$1_0$115 Def00002A
+S C$level_screen.c$35$1_0$113 Def00001E
+S C$level_screen.c$18$0_0$113 Def000000
+S A$level_screen$135 Def00002C
+S A$level_screen$108 Def000023
+S C$level_screen.c$43$1_0$115 Def000030
+S C$level_screen.c$27$1_0$113 Def00000C
+S A$level_screen$145 Def000030
+S A$level_screen$136 Def00002D
+S A$level_screen$109 Def000026
+S C$level_screen.c$37$1_0$113 Def000027
+S C$level_screen.c$28$1_0$113 Def00000F
+S A$level_screen$137 Def00002E
+S C$level_screen.c$38$1_0$113 Def000027
+S C$level_screen.c$29$1_0$113 Def000012
+S XG$screen_level_screen_update$0$0 Def000030
 S G$screen_level_screen_load$0$0 Def000000
-S A$level_screen$90 Def00001F
-S A$level_screen$63 Def00000C
-S A$level_screen$91 Def000020
-S A$level_screen$92 Def000021
-S A$level_screen$57 Def000000
-S A$level_screen$58 Def000003
-S A$level_screen$59 Def000004
-S A$level_screen$88 Def00001D
-S A$level_screen$89 Def00001E
-S C$level_screen.c$10$1_0$8 Def00001D
+S A$level_screen$81 Def00000C
+S A$level_screen$73 Def000003
+S A$level_screen$74 Def000006
+S A$level_screen$93 Def000015
+S A$level_screen$75 Def000007
+S A$level_screen$85 Def00000F
+S A$level_screen$76 Def000008
+S A$level_screen$77 Def00000B
+S A$level_screen$69 Def000000
+S A$level_screen$97 Def000018
+S A$level_screen$89 Def000012
 S _screen_level_screen_load Def000000
-S C$level_screen.c$12$1_0$8 Def00001D
-S C$level_screen.c$13$1_0$8 Def000023
-S Flevel_screen$__str_0$0_0$0 Def00000E
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -43,17 +72,15 @@ A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
-T 00 00 00 11 0A 02 D5 21 0E 00 E5 CD 00 00 F1 F1
-R 00 00 00 00 00 08 00 00 02 0C 00 00
-T 0D 00 00 C9
+T 00 00 00 CD 00 00 3A 03 00 F5 33 CD 00 00 33 CD
+R 00 00 00 00 02 04 08 00 02 07 06 00 02 0C 03 00
+T 0D 00 00 00 00 CD 00 00 CD 00 00 CD
+R 00 00 00 00 02 03 09 00 02 06 0A 00 02 09 0B 00
+T 16 00 00 00 00 CD 00 00 CD 00 00 3A
+R 00 00 00 00 02 03 07 00 02 06 00 00 02 09 02 00
+T 1F 00 00 04 00 F5 33 CD 00 00 33 C3 00 00
+R 00 00 00 00 02 03 06 00 02 08 04 00 02 0C 01 00
+T 2A 00 00
 R 00 00 00 00
-T 0E 00 00
-R 00 00 00 00
-T 0E 00 00 4C 45 56 45 4C 20 53 43 52 45 45 4E 21
-R 00 00 00 00
-T 1B 00 00 21 00
-R 00 00 00 00
-T 1D 00 00
-R 00 00 00 00
-T 1D 00 00 C1 E1 E5 C5 36 07 C9
+T 2A 00 00 C1 E1 E5 C5 36 07 C9
 R 00 00 00 00

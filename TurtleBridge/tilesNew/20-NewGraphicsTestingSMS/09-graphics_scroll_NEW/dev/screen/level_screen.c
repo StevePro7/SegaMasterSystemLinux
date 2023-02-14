@@ -1,10 +1,40 @@
 #include "level_screen.h"
+#include "../engine/asm_manager.h"
+#include "../engine/content_manager.h"
+#include "../engine/debug_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
+#include "../engine/game_manager.h"
+#include "../engine/graphics_manager.h"
+#include "../engine/input_manager.h"
+#include "../engine/level_manager.h"
+#include "../engine/player_manager.h"
+#include "../engine/scroll_manager.h"
+#include "../engine/tile_manager.h"
+#include "../engine/util_manager.h"
+#include "../devkit/_sms_manager.h"
+#include "../banks/bank2.h"
 
 void screen_level_screen_load()
 {
-	engine_font_manager_text( "LEVEL SCREEN!!", 10, 2 );
+	struct_game_object *go = &global_game_object;
+
+	// TODO delete this.
+	engine_debug_manager_initgame();
+
+	engine_level_manager_init( go->game_level );
+
+	devkit_SMS_displayOff();
+	engine_asm_manager_clear_VRAM();
+	engine_content_manager_bggame();
+	engine_content_manager_sprite();
+
+	engine_graphics_manager_title();
+	engine_graphics_manager_sea();
+
+	engine_level_manager_draw_point( go->game_point );
+
+	devkit_SMS_displayOn();
 }
 
 void screen_level_screen_update( unsigned char *screen_type )
