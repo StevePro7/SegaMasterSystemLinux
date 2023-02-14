@@ -15,7 +15,8 @@
 #include "../devkit/_sms_manager.h"
 #include "../banks/bank2.h"
 
-static unsigned char cursorX;
+static unsigned char cursorX[] = { 2, 11, 20 };
+static unsigned char cursorIdx;
 static unsigned char world, round, level, point;
 
 //static void printCursor();
@@ -31,7 +32,7 @@ void screen_level_screen_load()
 	round = go->game_round;
 	level = go->game_level;
 	point = go->game_point;
-	cursorX = 2;
+	cursorIdx = 0;
 
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
@@ -48,6 +49,7 @@ void screen_level_screen_load()
 	//engine_level_manager_draw_point( go->game_point );
 
 	printStats();
+	engine_font_manager_char( '>', cursorX[ cursorIdx ], 3 );
 	devkit_SMS_displayOn();
 }
 
@@ -55,20 +57,41 @@ void screen_level_screen_update( unsigned char *screen_type )
 {
 	unsigned char input;
 
-	input = engine_input_manager_hold( input_type_down );
-	if( input )
+	input = engine_input_manager_hold( input_type_left );
+	if( input && 0 != cursorIdx )
 	{
-		point++;
-		engine_level_manager_init( level );
-		engine_level_manager_draw_point( point );
+		engine_font_manager_char( ' ', cursorX[ cursorIdx ], 3 );
+		cursorIdx--;
+		engine_font_manager_char( '>', cursorX[ cursorIdx ], 3 );
+	
 	}
 
 	input = engine_input_manager_hold( input_type_right );
+	if( input && 2 != cursorIdx )
+	{
+		engine_font_manager_char( ' ', cursorX[ cursorIdx ], 3 );
+		cursorIdx++;
+		engine_font_manager_char( '>', cursorX[ cursorIdx ], 3 );
+	
+	}
+
+	input = engine_input_manager_hold( input_type_down );
 	if( input )
 	{
-		level++;
-		engine_level_manager_init( level );
-		engine_level_manager_draw_point( point );
+		if( 2 == cursorIdx )
+		{
+			point++;
+			engine_level_manager_init( level );
+			engine_level_manager_draw_point( point );
+		}
+		else
+		{
+			level++;
+			engine_level_manager_init( level );
+			engine_level_manager_draw_point( point );
+		}
+
+		printStats();
 	}
 
 	*screen_type = screen_type_level;
@@ -76,7 +99,7 @@ void screen_level_screen_update( unsigned char *screen_type )
 
 static void printStats()
 {
-	engine_font_manager_text( "[WORLD[[[[ROUND[[[[POINT[[/[[", 2, 5 );
+	//engine_font_manager_text( "[WORLD[[[[ROUND[[[[POINT[[/[[", 2, 5 );
 
 	if( ( world + 1 ) < 10 )
 	{
@@ -89,7 +112,7 @@ static void printStats()
 		engine_font_manager_char( '0', 17, 3 );
 	}
 
-	engine_font_manager_data( ( point + 1 ), 27, 4 );
+	engine_font_manager_data( ( point + 1 ), 27, 3 );
 	engine_font_manager_char( '0', 26, 3 );
 	engine_font_manager_char( '/', 28, 3 );
 	engine_font_manager_char( '0', 29, 3 );
@@ -99,7 +122,8 @@ static void printStats()
 	engine_util_manager_locale_texts( 7, 12, 3 );
 	engine_util_manager_locale_texts( 8, 21, 3 );
 
-	engine_font_manager_char( '>', cursorX, 3 );
-	engine_font_manager_char( '>', cursorX, 3 );
-	engine_font_manager_char( '>', cursorX, 3 );
+	
+	//engine_font_manager_char( '>', 2, 4 );
+	//engine_font_manager_char( '>', 11, 4 );
+	//engine_font_manager_char( '>', 20, 4 );
 }
