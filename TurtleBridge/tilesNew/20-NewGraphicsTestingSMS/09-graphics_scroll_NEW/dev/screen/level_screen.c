@@ -47,8 +47,6 @@ void screen_level_screen_load()
 	//engine_level_manager_init( go->game_level );
 	//engine_level_manager_draw_point( go->game_point );
 
-	engine_util_manager_locale_texts( 6, 2, 3 );
-	engine_font_manager_char( '>', cursorX, 3 );
 	printStats();
 	devkit_SMS_displayOn();
 }
@@ -56,6 +54,14 @@ void screen_level_screen_load()
 void screen_level_screen_update( unsigned char *screen_type )
 {
 	unsigned char input;
+
+	input = engine_input_manager_hold( input_type_down );
+	if( input )
+	{
+		point++;
+		engine_level_manager_init( level );
+		engine_level_manager_draw_point( point );
+	}
 
 	input = engine_input_manager_hold( input_type_right );
 	if( input )
@@ -70,5 +76,30 @@ void screen_level_screen_update( unsigned char *screen_type )
 
 static void printStats()
 {
+	engine_font_manager_text( "[WORLD[[[[ROUND[[[[POINT[[/[[", 2, 5 );
 
+	if( ( world + 1 ) < 10 )
+	{
+		engine_font_manager_data( ( world + 1 ), 9, 3 );
+		engine_font_manager_char( '0', 8, 3 );
+	}
+	if( ( round + 1 ) < 10 )
+	{
+		engine_font_manager_data( ( round + 1 ), 18, 3 );
+		engine_font_manager_char( '0', 17, 3 );
+	}
+
+	engine_font_manager_data( ( point + 1 ), 27, 4 );
+	engine_font_manager_char( '0', 26, 3 );
+	engine_font_manager_char( '/', 28, 3 );
+	engine_font_manager_char( '0', 29, 3 );
+	engine_font_manager_char( '4', 30, 3 );
+
+	engine_util_manager_locale_texts( 6, 3, 3 );
+	engine_util_manager_locale_texts( 7, 12, 3 );
+	engine_util_manager_locale_texts( 8, 21, 3 );
+
+	engine_font_manager_char( '>', cursorX, 3 );
+	engine_font_manager_char( '>', cursorX, 3 );
+	engine_font_manager_char( '>', cursorX, 3 );
 }
