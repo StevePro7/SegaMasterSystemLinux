@@ -66,11 +66,11 @@ void screen_test_screen_load()
 	index = 0;
 	flag = 0;
 
-	engine_font_manager_data( index, 20, 10 );
-	engine_font_manager_data( 0, 20, 11 );
-	engine_font_manager_data( 0, 20, 12 );
-	engine_font_manager_data( po->posnY, 20, 13 );
-	engine_font_manager_data( po->drawY, 20, 14 );
+	//engine_font_manager_data( index, 20, 10 );
+	//engine_font_manager_data( 0, 20, 11 );
+	//engine_font_manager_data( 0, 20, 12 );
+	//engine_font_manager_data( po->posnY, 20, 13 );
+	//engine_font_manager_data( po->drawY, 20, 14 );
 }
 
 void screen_test_screen_update( unsigned char *screen_type )
@@ -104,12 +104,11 @@ void screen_test_screen_update( unsigned char *screen_type )
 		}
 
 		po->drawY = po->posnY - 32;
-		engine_font_manager_data( index, 20, 10 );
-		engine_font_manager_data( delta, 20, 11 );
-		engine_font_manager_data( tmpY2, 20, 12 );
-		engine_font_manager_data( po->posnY, 20, 13 );
-		engine_font_manager_data( po->drawY, 20, 14 );
-
+		//engine_font_manager_data( index, 20, 10 );
+		//engine_font_manager_data( delta, 20, 11 );
+		//engine_font_manager_data( tmpY2, 20, 12 );
+		//engine_font_manager_data( po->posnY, 20, 13 );
+		//engine_font_manager_data( po->drawY, 20, 14 );
 	}
 	else
 	{
