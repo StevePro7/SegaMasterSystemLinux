@@ -16,7 +16,7 @@
 #include "../banks/bank2.h"
 
 static unsigned char cursorX;
-static unsigned char world, round, point;
+static unsigned char world, round, level, point;
 
 //static void printCursor();
 static void printStats();
@@ -24,13 +24,14 @@ static void printStats();
 void screen_level_screen_load()
 {
 	struct_game_object *go = &global_game_object;
-	world = go->game_world;
-	round = go->game_round;
-	point = go->game_point;
-	cursorX = 2;
 
 	// TODO delete this.
 	engine_debug_manager_initgame();
+	world = go->game_world;
+	round = go->game_round;
+	level = go->game_level;
+	point = go->game_point;
+	cursorX = 2;
 
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
@@ -40,8 +41,12 @@ void screen_level_screen_load()
 	engine_graphics_manager_title();
 	engine_graphics_manager_sea();
 
-	engine_level_manager_init( go->game_level );
-	engine_level_manager_draw_point( go->game_point );
+	engine_level_manager_init( level );
+	engine_level_manager_draw_point( point );
+
+	//engine_level_manager_init( go->game_level );
+	//engine_level_manager_draw_point( go->game_point );
+
 	engine_util_manager_locale_texts( 6, 2, 3 );
 	engine_font_manager_char( '>', cursorX, 3 );
 	printStats();
@@ -50,6 +55,16 @@ void screen_level_screen_load()
 
 void screen_level_screen_update( unsigned char *screen_type )
 {
+	unsigned char input;
+
+	input = engine_input_manager_hold( input_type_right );
+	if( input )
+	{
+		level++;
+		engine_level_manager_init( level );
+		engine_level_manager_draw_point( point );
+	}
+
 	*screen_type = screen_type_level;
 }
 
