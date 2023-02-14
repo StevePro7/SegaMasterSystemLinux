@@ -16,7 +16,7 @@ namespace Test
 
 		public AnGame()
 		{
-			output = new Output02();
+			output = new Output03();
 
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = 1280;
