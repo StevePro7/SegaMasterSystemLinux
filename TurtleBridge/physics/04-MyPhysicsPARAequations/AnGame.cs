@@ -12,10 +12,12 @@ namespace Test
 		private readonly MyRocketManager myRocketManager;
 		private readonly MyConfigManger myConfigManger;
 		private readonly MyContentManager myContentManager;
-		private int status;
+		private readonly IOutput output;
 
 		public AnGame()
 		{
+			output = new Output02();
+
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = 1280;
 			graphics.PreferredBackBufferHeight = 512;
@@ -27,27 +29,22 @@ namespace Test
 
 		protected override void Initialize()
 		{
-			IsMouseVisible = true;
 			Logger.Initialize();
+			IsMouseVisible = true;
 			IsFixedTimeStep = true;
 			var fps = 10;
 			TargetElapsedTime = TimeSpan.FromSeconds(1.0f / fps);
 			myConfigManger.Initialize();
 			myRocketManager.Initialize();
+			output.Initialize();
 			base.Initialize();
-			status = 0;
-			//Logger.Info("hello 04 IN ");
 		}
 
 		protected override void LoadContent()
 		{
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 			myContentManager.LoadContent(Content);
-
-			//if (!myRocketManager.IsRocketFlying)
-			//{
-			//	myRocketManager.Launch();
-			//}
+			output.Process();
 		}
 
 		protected override void UnloadContent()
@@ -62,8 +59,6 @@ namespace Test
 				Exit();
 			}
 
-			status++;
-			Logger.Info("hello 04 UP " + status);
 			base.Update(gameTime);
 		}
 
