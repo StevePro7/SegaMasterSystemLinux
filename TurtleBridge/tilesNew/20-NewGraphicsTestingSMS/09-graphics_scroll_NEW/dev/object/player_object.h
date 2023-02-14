@@ -6,6 +6,7 @@ typedef struct tag_struct_player_object
 	unsigned int posnX;
 	unsigned int tileX;
 	unsigned char initX, lookX;
+	unsigned char initY;
 	unsigned char posnY, tileY;
 	unsigned char drawX, drawY;
 	unsigned char player_state;

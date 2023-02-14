@@ -88,6 +88,7 @@ void engine_player_manager_loadY( unsigned char player_loadY )
 {
 	struct_player_object *po = &global_player_object;
 	po->posnY = player_loadY << 3;
+	po->initY = po->posnY;
 	updatePlayerY();
 }
 
@@ -297,4 +298,7 @@ void engine_player_manager_draw()
 {
 	struct_player_object *po = &global_player_object;
 	engine_sprite_manager_draw( po->player_frame, po->drawX, po->drawY );
+
+	// TODO delete
+	engine_sprite_manager_draw( 2, po->drawX+32, po->initY - 32 - 46);
 }
