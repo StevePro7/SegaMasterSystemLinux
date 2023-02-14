@@ -1,5 +1,5 @@
 XL3
-H A areas 27 global symbols
+H A areas 28 global symbols
 M bank2
 O -mz80
 S .__.ABS. Def000000
@@ -7,6 +7,7 @@ A _CODE size 0 flags 0 addr 0
 S Fbank2$__str_10$0_0$0 Def000000
 S Fbank2$__str_11$0_0$0 Def000000
 S Fbank2$__str_12$0_0$0 Def000000
+S Fbank2$__str_13$0_0$0 Def000000
 S Fbank2$__str_1$0_0$0 Def000000
 S Fbank2$__str_2$0_0$0 Def000000
 S Fbank2$__str_3$0_0$0 Def000000
@@ -17,18 +18,18 @@ S Fbank2$__str_7$0_0$0 Def000000
 S Fbank2$__str_8$0_0$0 Def000000
 S Fbank2$__str_9$0_0$0 Def000000
 A _DATA size 0 flags 0 addr 0
-A _INITIALIZED size 1A flags 0 addr 0
-S _locale_object_blank Def00000C
-S G$locale_object_blank$0_0$0 Def00000C
-S _locale_object_difficulty Def000012
-S G$locale_object_difficulty$0_0$0 Def000012
+A _INITIALIZED size 1C flags 0 addr 0
+S _locale_object_blank Def00000E
+S G$locale_object_blank$0_0$0 Def00000E
+S _locale_object_difficulty Def000014
+S G$locale_object_difficulty$0_0$0 Def000014
 S _locale_object_texts Def000000
 S G$locale_object_texts$0_0$0 Def000000
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
-A _BANK2 size 34E6 flags 0 addr 0
+A _BANK2 size 3504 flags 0 addr 0
 S G$sprite_tiles__tiles__psgcompr$0_0$0 Def002702
 S _bggame_tiles__tiles__psgcompr Def0009A0
 S _splash_tiles__tilemap__bin Def0019B4
@@ -46,22 +47,22 @@ S G$bggame_tiles__palette__bin$0_0$0 Def000000
 S _splash_tiles__tiles__psgcompr Def001D44
 S G$splash_tiles__tiles__psgcompr$0_0$0 Def001D44
 S _sprite_tiles__tiles__psgcompr Def002702
-A _INITIALIZER size 1A flags 0 addr 0
-S Fbank2$__xinit_locale_object_difficulty$0_0$0 Def000012
+A _INITIALIZER size 1C flags 0 addr 0
+S Fbank2$__xinit_locale_object_difficulty$0_0$0 Def000014
 S Fbank2$__xinit_locale_object_texts$0_0$0 Def000000
-S Fbank2$__xinit_locale_object_blank$0_0$0 Def00000C
+S Fbank2$__xinit_locale_object_blank$0_0$0 Def00000E
 A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 02 00
 T 00 00 00
 R 00 00 02 00
-T 0C 00 00
+T 0E 00 00
 R 00 00 02 00
-T 0C 00 00
+T 0E 00 00
 R 00 00 02 00
-T 12 00 00
+T 14 00 00
 R 00 00 02 00
-T 12 00 00
+T 14 00 00
 R 00 00 02 00
 T 00 00 00
 R 00 00 07 00
@@ -2183,35 +2184,43 @@ T 9B 34 00 43 55 4C 54 59 00
 R 00 00 07 00
 T A1 34 00
 R 00 00 07 00
-T A1 34 00 20 20 20 20 20 20 20 20 20 20 20 20 20
+T A1 34 00 5B 57 4F 52 4C 44 5B 5B 5B 5B 52 4F 55
 R 00 00 07 00
-T AE 34 00 20 00
+T AE 34 00 4E 44 5B 5B 5B 5B 50 4F 49 4E 54 5B 5B
 R 00 00 07 00
-T B0 34 00
+T BB 34 00 2F 5B 5B 00
 R 00 00 07 00
-T B0 34 00 20 20 20 20 20 20 00
+T BF 34 00
 R 00 00 07 00
-T B7 34 00
+T BF 34 00 20 20 20 20 20 20 20 20 20 20 20 20 20
 R 00 00 07 00
-T B7 34 00 20 20 20 20 20 20 20 20 20 20 20 20 20
+T CC 34 00 20 00
 R 00 00 07 00
-T C4 34 00 20 20 20 20 20 00
+T CE 34 00
 R 00 00 07 00
-T CA 34 00
+T CE 34 00 20 20 20 20 20 20 00
 R 00 00 07 00
-T CA 34 00 45 41 53 49 45 52 00
+T D5 34 00
 R 00 00 07 00
-T D1 34 00
+T D5 34 00 20 20 20 20 20 20 20 20 20 20 20 20 20
 R 00 00 07 00
-T D1 34 00 4E 4F 52 4D 41 4C 00
+T E2 34 00 20 20 20 20 20 00
 R 00 00 07 00
-T D8 34 00
+T E8 34 00
 R 00 00 07 00
-T D8 34 00 48 41 52 44 45 52 00
+T E8 34 00 45 41 53 49 45 52 00
 R 00 00 07 00
-T DF 34 00
+T EF 34 00
 R 00 00 07 00
-T DF 34 00 49 4E 53 41 4E 45 00
+T EF 34 00 4E 4F 52 4D 41 4C 00
+R 00 00 07 00
+T F6 34 00
+R 00 00 07 00
+T F6 34 00 48 41 52 44 45 52 00
+R 00 00 07 00
+T FD 34 00
+R 00 00 07 00
+T FD 34 00 49 4E 53 41 4E 45 00
 R 00 00 07 00
 T 00 00 00
 R 00 00 08 00
@@ -2219,13 +2228,15 @@ T 00 00 00 4E 34 56 34 5B 34
 R 00 00 08 00 00 03 07 00 00 05 07 00 00 07 07 00
 T 06 00 00 6C 34 7F 34 8E 34
 R 00 00 08 00 00 03 07 00 00 05 07 00 00 07 07 00
-T 0C 00 00
+T 0C 00 00 A1 34
+R 00 00 08 00 00 03 07 00
+T 0E 00 00
 R 00 00 08 00
-T 0C 00 00 A1 34 B0 34 B7 34
+T 0E 00 00 BF 34 CE 34 D5 34
 R 00 00 08 00 00 03 07 00 00 05 07 00 00 07 07 00
-T 12 00 00
+T 14 00 00
 R 00 00 08 00
-T 12 00 00 CA 34 D1 34 D8 34
+T 14 00 00 E8 34 EF 34 F6 34
 R 00 00 08 00 00 03 07 00 00 05 07 00 00 07 07 00
-T 18 00 00 DF 34
+T 1A 00 00 FD 34
 R 00 00 08 00 00 03 07 00

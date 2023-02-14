@@ -3,6 +3,7 @@ F:G$screen_level_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Llevel_screen.screen_level_screen_load$go$1_0$113({2}DG,STtag_struct_game_object:S),R,0,0,[]
 F:G$screen_level_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Llevel_screen.screen_level_screen_update$screen_type$1_0$114({2}DG,SC:U),B,1,4
+F:Flevel_screen$printStats$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 T:Flevel_screen$tag_struct_player_object[({0}S:S$posnX$0_0$0({2}SI:U),Z,0,0)({2}S:S$tileX$0_0$0({2}SI:U),Z,0,0)({4}S:S$initX$0_0$0({1}SC:U),Z,0,0)({5}S:S$lookX$0_0$0({1}SC:U),Z,0,0)({6}S:S$posnY$0_0$0({1}SC:U),Z,0,0)({7}S:S$tileY$0_0$0({1}SC:U),Z,0,0)({8}S:S$drawX$0_0$0({1}SC:U),Z,0,0)({9}S:S$drawY$0_0$0({1}SC:U),Z,0,0)({10}S:S$player_state$0_0$0({1}SC:U),Z,0,0)({11}S:S$player_index$0_0$0({1}SC:U),Z,0,0)({12}S:S$player_frame$0_0$0({1}SC:U),Z,0,0)({13}S:S$player_count$0_0$0({2}SI:U),Z,0,0)]
 T:Flevel_screen$tag_struct_scroll_object[({0}S:S$scrollLeftX$0_0$0({1}SC:U),Z,0,0)({1}S:S$scrollRight$0_0$0({1}SC:U),Z,0,0)({2}S:S$scrollColumn$0_0$0({2}SI:U),Z,0,0)({4}S:S$scrollFinish$0_0$0({2}SI:U),Z,0,0)({6}S:S$scrollLeftX0$0_0$0({1}SC:U),Z,0,0)({7}S:S$scrollLeftX1$0_0$0({1}SC:U),Z,0,0)({8}S:S$scrollLeftX2$0_0$0({1}SC:U),Z,0,0)({9}S:S$scrollLeftX3$0_0$0({1}SC:U),Z,0,0)({10}S:S$scrollLeftX4$0_0$0({1}SC:U),Z,0,0)({11}S:S$scrollLeftX5$0_0$0({1}SC:U),Z,0,0)({12}S:S$scroll_half$0_0$0({1}SC:U),Z,0,0)({13}S:S$lineCnt$0_0$0({1}SC:U),Z,0,0)]
 T:Flevel_screen$tag_struct_game_object[({0}S:S$game_difficulty$0_0$0({1}SC:U),Z,0,0)({1}S:S$game_world$0_0$0({1}SC:U),Z,0,0)({2}S:S$game_round$0_0$0({1}SC:U),Z,0,0)({3}S:S$game_level$0_0$0({1}SC:U),Z,0,0)({4}S:S$game_point$0_0$0({1}SC:U),Z,0,0)({5}S:S$game_cloud$0_0$0({1}SC:U),Z,0,0)({6}S:S$game_isgod$0_0$0({1}SC:U),Z,0,0)]
@@ -16,6 +17,10 @@ S:G$global_scroll_object$0_0$0({14}STtag_struct_scroll_object:S),E,0,0
 S:G$locale_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$locale_object_blank$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$locale_object_difficulty$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:Flevel_screen$cursorX$0_0$0({1}SC:U),E,0,0
+S:Flevel_screen$world$0_0$0({1}SC:U),E,0,0
+S:Flevel_screen$round$0_0$0({1}SC:U),E,0,0
+S:Flevel_screen$point$0_0$0({1}SC:U),E,0,0
 S:G$engine_asm_manager_clear_VRAM$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_bggame$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_splash$0_0$0({2}DF,SV:S),C,0,0

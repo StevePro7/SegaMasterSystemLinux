@@ -6,6 +6,7 @@ const unsigned char *locale_object_texts[] =
 	"GREATEST DAREDEVIL",
 	"INSERT COIN(S)",		// Start?
 	"SELECT  DIFFICULTY",	// Difficulty
+	"[WORLD[[[[ROUND[[[[POINT[[/[[",		// Level
 	//"12345INSERT COIN(S)12345"
 };
 

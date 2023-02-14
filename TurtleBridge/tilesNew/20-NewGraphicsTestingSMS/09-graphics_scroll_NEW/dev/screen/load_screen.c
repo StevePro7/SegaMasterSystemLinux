@@ -53,6 +53,7 @@ void screen_load_screen_load()
 
 	// TODO delete
 	//engine_debug_manager_printout();
+	engine_font_manager_text( "WORLD01ROUND01POINT03/04", 4, 3 );
 	devkit_SMS_displayOn();
 
 	engine_scroll_manager_load( go->game_point, lo->level_size );
