@@ -6,12 +6,11 @@ S:Ltest_screen.screen_test_screen_load$go$1_0$107({2}DG,STtag_struct_game_object
 F:G$screen_test_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Ltest_screen.screen_test_screen_update$screen_type$1_0$108({2}DG,SC:U),B,1,4
 S:Ltest_screen.screen_test_screen_update$po$1_0$109({2}DG,STtag_struct_player_object:S),R,0,0,[]
-S:Ltest_screen.screen_test_screen_update$tmpY2$1_0$109({2}SI:U),B,1,-3
+S:Ltest_screen.screen_test_screen_update$tmpY2$1_0$109({2}SI:U),B,1,-2
 S:Ltest_screen.screen_test_screen_update$tmpY$1_0$109({1}SC:U),R,0,0,[e]
 S:Ltest_screen.screen_test_screen_update$input$1_0$109({1}SC:U),R,0,0,[a]
 S:Ltest_screen.screen_test_screen_update$delta$1_0$109({2}SI:S),R,0,0,[c,b]
-S:Ltest_screen.screen_test_screen_update$sloc0$0_1$0({2}SI:U),B,1,-3
-S:Ltest_screen.screen_test_screen_update$sloc1$0_1$0({1}SC:U),B,1,-1
+S:Ltest_screen.screen_test_screen_update$sloc0$0_1$0({2}SI:U),B,1,-2
 F:G$screen_test_screen_updateX$0_0$0({2}DF,SV:S),C,0,0,0,0,0
 S:Ltest_screen.screen_test_screen_updateX$screen_type$1_0$115({2}DG,SC:U),B,1,4
 S:Ltest_screen.screen_test_screen_updateX$po$1_0$116({2}DG,STtag_struct_player_object:S),R,0,0,[c,b]
@@ -28,7 +27,7 @@ T:Ftest_screen$tag_struct_delay_object[({0}S:S$delay_value$0_0$0({2}SI:U),Z,0,0)
 T:Ftest_screen$tag_struct_audio_object[({0}S:S$music_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$music_bank$0_0$0({1}SC:U),Z,0,0)({3}S:S$sound_data$0_0$0({2}DG,SC:U),Z,0,0)({5}S:S$sound_bank$0_0$0({1}SC:U),Z,0,0)]
 T:Ftest_screen$tag_struct_level_object[({0}S:S$level_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$level_size$0_0$0({2}SI:U),Z,0,0)({4}S:S$level_bank$0_0$0({1}SC:U),Z,0,0)({5}S:S$column_draw$0_0$0({1}SC:U),Z,0,0)]
 T:Ftest_screen$tag_struct_reset_object[({0}S:S$reset_value$0_0$0({1}SC:U),Z,0,0)({1}S:S$reset_timer$0_0$0({1}SC:U),Z,0,0)]
-S:Ftest_screen$jumps$0_0$0({130}DA65d,SI:S),E,0,0
+S:Ftest_screen$jumps$0_0$0({206}DA103d,SI:S),E,0,0
 S:G$global_audio_object$0_0$0({6}STtag_struct_audio_object:S),E,0,0
 S:G$global_game_object$0_0$0({7}STtag_struct_game_object:S),E,0,0
 S:G$global_hack_object$0_0$0({2}STtag_struct_hack_object:S),E,0,0
