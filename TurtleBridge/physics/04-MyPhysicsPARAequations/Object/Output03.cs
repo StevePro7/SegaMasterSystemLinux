@@ -1,5 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -10,6 +9,9 @@ namespace Test
 	// Practice Problem: The Motorcycle Daredevil
 	public class Output03 : Output, IOutput
 	{
+		//private const float deltaTime = 0.056f;
+		private const float deltaTime = 0.115f;
+
 		private List<float> deltaY;
 		private List<int> valueY;
 		private int index;
@@ -17,8 +19,7 @@ namespace Test
 		public Output03()
 		{
 			Angle = 55;
-			//Speed = 31.2f;
-			Speed = 50;
+			Speed = 31.2f;
 
 			deltaY = new List<float>();
 			valueY = new List<int>();
@@ -43,7 +44,7 @@ namespace Test
 
 			//positive = false;
 			List<string> lines = new List<string>();
-			for (float dt = 0.1f; dt < hangTime + 2; dt += 0.1f)
+			for (float dt = deltaTime; dt < hangTime + 2; dt += deltaTime)
 			{
 				float vd = InitVelY * dt + 0.5f * Gravity * dt * dt;
 				//float rn = (float)Math.Round(vd, 2);
