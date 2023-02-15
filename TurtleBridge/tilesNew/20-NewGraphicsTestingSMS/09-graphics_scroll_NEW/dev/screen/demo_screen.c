@@ -92,6 +92,7 @@ void screen_demo_screen_update( unsigned char *screen_type )
 	{
 		if( input1 & input_type_fire1 || input1 & input_type_fire2 )
 		{
+			frame = 0;
 			engine_font_manager_data( input1, 20, 7 );
 			po->player_state = player_state_isintheair;
 			index = 0;
