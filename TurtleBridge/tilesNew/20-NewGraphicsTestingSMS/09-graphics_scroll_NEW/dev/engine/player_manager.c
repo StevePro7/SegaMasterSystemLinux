@@ -89,6 +89,7 @@ void engine_player_manager_loadY( unsigned char player_loadY )
 	struct_player_object *po = &global_player_object;
 	po->posnY = player_loadY << 3;
 	po->initY = po->posnY;
+	
 	updatePlayerY();
 }
 
@@ -276,6 +277,7 @@ static void updatePlayerY()
 	struct_player_object *po = &global_player_object;
 	po->drawY = po->posnY - 32;
 	po->tileY = po->posnY >> 3;
+	po->leapY = po->posnY << 8;
 }
 
 void engine_player_manager_pass()

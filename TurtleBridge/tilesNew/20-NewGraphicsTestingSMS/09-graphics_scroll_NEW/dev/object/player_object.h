@@ -8,6 +8,7 @@ typedef struct tag_struct_player_object
 	unsigned char initX, lookX;
 	unsigned char initY;
 	unsigned char posnY, tileY;
+	unsigned int leapY;
 	unsigned char drawX, drawY;
 	unsigned char player_state;
 	unsigned char player_index;		// TODO better name!

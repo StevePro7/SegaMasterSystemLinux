@@ -20,10 +20,10 @@
 
 #define UFIX(x)                ((unsigned char)((x)>>8))
 static unsigned char player_loadY;
-static unsigned char flag, frame;
+static unsigned char frame;
 static unsigned char landingY;
 static unsigned char index;
-static unsigned int posY2;
+//static unsigned int posY2;
 
 //static signed int jumps[] =
 //{
@@ -65,10 +65,8 @@ void screen_demo_screen_load()
 	engine_player_manager_draw();
 	devkit_SMS_displayOn();
 
-	posY2 = po->posnY << 8;
 	index = 0;
 	frame = 0;
-	flag = 0;
 
 	engine_font_manager_data( po->player_state, 20, 8 );
 	engine_font_manager_data( frame, 20, 9 );
@@ -85,7 +83,8 @@ void screen_demo_screen_update( unsigned char *screen_type )
 {
 	struct_player_object *po = &global_player_object;
 	unsigned int input1, input2;
-	//signed int deltaY;
+	signed int deltaY;
+//	unsigned int leapY;
 
 	input1 = devkit_SMS_getKeysPressed();			// hold
 	input2 = devkit_SMS_getKeysHeld();				// move
@@ -95,10 +94,35 @@ void screen_demo_screen_update( unsigned char *screen_type )
 		{
 			engine_font_manager_data( input1, 20, 7 );
 			po->player_state = player_state_isintheair;
+			index = 0;
 		}
 	}
 	if( player_state_isintheair == po->player_state )
 	{
+		deltaY = jumps[ index ];
+		po->leapY += deltaY;
+		po->posnY = UFIX( po->leapY );
+		if( po->posnY >= landingY )
+		{
+			//po->posnY = player_loadY * 8;
+			po->posnY = landingY;
+			po->leapY = po->posnY << 8;
+			po->player_frame = 0;
+			po->player_state = player_state_isonground;
+			index = 0;
+		}
+		else
+		{
+			//po->posnX += 2;
+			//po->drawX = po->posnX - 16;
+			//po->player_frame = 4;
+			//po->leapY = po->posnY << 8;
+			index++;
+		}
+
+		frame++;
+		po->drawY = po->posnY - 32;
+
 		engine_font_manager_data( po->player_state, 20, 8 );
 		engine_font_manager_data( frame, 20, 9 );
 		engine_font_manager_data( index, 20, 10 );
