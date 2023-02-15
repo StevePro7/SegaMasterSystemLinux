@@ -300,5 +300,5 @@ void engine_player_manager_draw()
 	engine_sprite_manager_draw( po->player_frame, po->drawX, po->drawY );
 
 	// TODO delete
-	engine_sprite_manager_draw( 2, po->drawX+32, po->initY - 32 - 46);
+	//engine_sprite_manager_draw( 2, po->drawX+32, po->initY - 32 - 46);
 }
