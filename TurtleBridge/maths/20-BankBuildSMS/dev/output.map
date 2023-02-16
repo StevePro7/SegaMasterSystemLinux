@@ -41,8 +41,6 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000007  l__BANK9                        
      00000008  l__BANK10                       
      00000008  l__BANK11                       
-     00000008  l__BANK12                       
-     00000008  l__BANK13                       
      00000008  l__BANK14                       
      00000008  l__BANK15                       
      00000008  l__BANK16                       
@@ -57,6 +55,8 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000008  l__BANK25                       
      00000008  l__BANK26                       
      00000008  l__BANK27                       
+     00000008  l__BANK28                       
+     00000008  l__BANK29                       
 ASxxxx Linker V03.00 + NoICE + sdld,  page 2.
 Hexadecimal  [32-Bits]
 
@@ -66,8 +66,6 @@ Area                                    Addr        Size        Decimal Bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00000008  l__BANK28                       
-     00000008  l__BANK29                       
      00000008  l__BANK30                       
      00000008  l__BANK31                       
      00000008  l__BANK32                       
@@ -108,15 +106,17 @@ Area                                    Addr        Size        Decimal Bytes (A
      0000000F  l__GSINIT                       
      00000010  l__CABS0                        
      00000010  l__CABS4                        
-     00000014  l__BANK63                       
-     00000030  l__INITIALIZED                  
-     00000030  l__INITIALIZER                  
+     00000016  l__BANK63                       
+     00000034  l__INITIALIZED                  
+     00000034  l__INITIALIZER                  
      00000038  l__CABS3                        
      000000BE  G$VDPDataPort$0_0$0                asm_manager
      000000BF  G$VDPControlPort$0_0$0             asm_manager
      0000012A  l__HEADER5                      
      0000016A  l__DATA                         
      00000200  s__CODE                         
+     000017E2  l__BANK3                        
+     00001C14  l__CODE                         
 ASxxxx Linker V03.00 + NoICE + sdld,  page 3.
 Hexadecimal  [32-Bits]
 
@@ -126,13 +126,13 @@ Area                                    Addr        Size        Decimal Bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     000017E2  l__BANK3                        
-     00001C15  l__CODE                         
-     00001E15  s__HOME                         
-     00001E15  s__INITIALIZER                  
-     00001E45  s__GSINIT                       
-     00001E54  s__GSFINAL                      
+     00001E14  s__HOME                         
+     00001E14  s__INITIALIZER                  
+     00001E48  s__GSINIT                       
+     00001E57  s__GSFINAL                      
+     000033DF  l__BANK12                       
      000034F8  l__BANK2                        
+     000035FC  l__BANK13                       
      00008000  G$SMS_SRAM$0$0                     _sms_manager
      00008000  _SMS_SRAM                          SMSlib_loadTileMap
      00008000  s__BANK10                       
@@ -208,9 +208,9 @@ Area                                    Addr        Size        Decimal Bytes (A
      00008000  s__BANK9                        
      0000C000  s__DATA                         
      0000C16A  s__INITIALIZED                  
-     0000C19A  s__BSEG                         
-     0000C19A  s__BSS                          
-     0000C19A  s__HEAP                         
+     0000C19E  s__BSEG                         
+     0000C19E  s__BSS                          
+     0000C19E  s__HEAP                         
      0000FFFC  G$SRAM_bank_to_be_mapped_on_slot   _sms_manager
      0000FFFC  _SRAM_bank_to_be_mapped_on_slot2   SMSlib_loadTileMap
      0000FFFF  G$ROM_bank_to_be_mapped_on_slot2   _sms_manager
@@ -221,7 +221,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -280,7 +280,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -340,7 +340,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -400,7 +400,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -460,7 +460,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -520,7 +520,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -580,7 +580,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -640,7 +640,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -700,7 +700,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -760,7 +760,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -820,7 +820,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -880,7 +880,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -940,7 +940,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -1000,7 +1000,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -1060,7 +1060,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -1120,7 +1120,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -1180,7 +1180,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -1240,7 +1240,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -1300,7 +1300,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -1360,7 +1360,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -1420,7 +1420,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -1480,7 +1480,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -1540,7 +1540,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -1600,7 +1600,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -1660,7 +1660,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -1720,7 +1720,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -1780,7 +1780,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -1840,7 +1840,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -1900,7 +1900,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -1960,7 +1960,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -2020,7 +2020,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -2080,7 +2080,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -2140,7 +2140,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -2200,7 +2200,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -2260,7 +2260,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -2320,7 +2320,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -2380,7 +2380,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -2440,7 +2440,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -2500,7 +2500,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -2560,7 +2560,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -2620,7 +2620,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -2680,7 +2680,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -2740,7 +2740,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -2800,7 +2800,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -2860,7 +2860,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -2920,7 +2920,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -2980,7 +2980,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -3040,7 +3040,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -3100,7 +3100,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -3160,7 +3160,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -3220,7 +3220,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -3280,7 +3280,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -3340,7 +3340,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -3400,7 +3400,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -3460,7 +3460,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -3520,7 +3520,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -3580,7 +3580,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -3640,7 +3640,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -3700,7 +3700,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -3760,7 +3760,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -3820,95 +3820,95 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
      00001444  XG$screen_test_screen_load$0$0     test_screen
      00001445  Ftest_screen$__str_0$0_0$0         test_screen
-     00001456  A$test_screen$88                   test_screen
-     00001456  C$test_screen.c$10$1_0$8           test_screen
-     00001456  C$test_screen.c$12$1_0$8           test_screen
-     00001456  G$screen_test_screen_update$0$0    test_screen
-     00001456  _screen_test_screen_update         test_screen
-     00001457  A$test_screen$89                   test_screen
-     00001458  A$test_screen$90                   test_screen
-     00001459  A$test_screen$91                   test_screen
-     0000145A  A$test_screen$92                   test_screen
-     0000145C  A$test_screen$100                  test_screen
-     0000145C  C$test_screen.c$13$1_0$8           test_screen
-     0000145C  XG$screen_test_screen_update$0$0   test_screen
-     0000145D  _SMS_reserveSprite                 SMSlib_spriteAdv
-     0000147E  _SMS_updateSpritePosition          SMSlib_spriteAdv
-     000014C0  _SMS_updateSpriteImage             SMSlib_spriteAdv
-     000014DA  _SMS_hideSprite                    SMSlib_spriteAdv
-     000014E9  __divuint                          
-     000014F1  __divuchar                         
-     000014F8  __divu8                            
-     000014FB  __divu16                           
-     0000152A  _UNSAFE_SMS_copySpritestoSAT       SMSlib_UNSAFE
-     00001542  _UNSAFE_SMS_VRAMmemcpy32           SMSlib_UNSAFE
-     0000155F  _UNSAFE_SMS_VRAMmemcpy64           SMSlib_UNSAFE
-     0000157C  _UNSAFE_SMS_VRAMmemcpy128          SMSlib_UNSAFE
-     00001599  _SMS_init                          SMSlib
-     000015ED  _VDPReg_init                       SMSlib
-     000015F8  _SMS_VDPType                       SMSlib
-     00001600  _SMS_VDPturnOnFeature              SMSlib
-     00001617  _SMS_VDPturnOffFeature             SMSlib
-     00001630  _SMS_setBGScrollX                  SMSlib
-     0000163A  _SMS_setBGScrollY                  SMSlib
-     00001644  _SMS_setBackdropColor              SMSlib
-     0000164E  _SMS_useFirstHalfTilesforSprites   SMSlib
-     00001662  _SMS_setSpriteMode                 SMSlib
-     000016A7  _SMS_setBGPaletteColor             SMSlib
-     000016BB  _SMS_setSpritePaletteColor         SMSlib
-     000016CF  _SMS_loadBGPalette                 SMSlib
-     000016E3  _SMS_loadSpritePalette             SMSlib
-     000016F7  _SMS_setColor                      SMSlib
-     000016FB  _SMS_initSprites                   SMSlib
-     00001701  _SMS_addSprite                     SMSlib
-     00001756  _SMS_finalizeSprites               SMSlib
-     00001768  _SMS_copySpritestoSAT              SMSlib
-     00001791  _SMS_waitForVBlank                 SMSlib
-     0000179E  _SMS_getKeysStatus                 SMSlib
-     000017A2  _SMS_getKeysPressed                SMSlib
-     000017BF  _SMS_getKeysHeld                   SMSlib
-     000017D6  _SMS_getKeysReleased               SMSlib
-     000017F3  _SMS_queryPauseRequested           SMSlib
+     00001455  A$test_screen$88                   test_screen
+     00001455  C$test_screen.c$10$1_0$8           test_screen
+     00001455  C$test_screen.c$12$1_0$8           test_screen
+     00001455  G$screen_test_screen_update$0$0    test_screen
+     00001455  _screen_test_screen_update         test_screen
+     00001456  A$test_screen$89                   test_screen
+     00001457  A$test_screen$90                   test_screen
+     00001458  A$test_screen$91                   test_screen
+     00001459  A$test_screen$92                   test_screen
+     0000145B  A$test_screen$100                  test_screen
+     0000145B  C$test_screen.c$13$1_0$8           test_screen
+     0000145B  XG$screen_test_screen_update$0$0   test_screen
+     0000145C  _SMS_reserveSprite                 SMSlib_spriteAdv
+     0000147D  _SMS_updateSpritePosition          SMSlib_spriteAdv
+     000014BF  _SMS_updateSpriteImage             SMSlib_spriteAdv
+     000014D9  _SMS_hideSprite                    SMSlib_spriteAdv
+     000014E8  __divuint                          
+     000014F0  __divuchar                         
+     000014F7  __divu8                            
+     000014FA  __divu16                           
+     00001529  _UNSAFE_SMS_copySpritestoSAT       SMSlib_UNSAFE
+     00001541  _UNSAFE_SMS_VRAMmemcpy32           SMSlib_UNSAFE
+     0000155E  _UNSAFE_SMS_VRAMmemcpy64           SMSlib_UNSAFE
+     0000157B  _UNSAFE_SMS_VRAMmemcpy128          SMSlib_UNSAFE
+     00001598  _SMS_init                          SMSlib
+     000015EC  _VDPReg_init                       SMSlib
+     000015F7  _SMS_VDPType                       SMSlib
+     000015FF  _SMS_VDPturnOnFeature              SMSlib
+     00001616  _SMS_VDPturnOffFeature             SMSlib
+     0000162F  _SMS_setBGScrollX                  SMSlib
+     00001639  _SMS_setBGScrollY                  SMSlib
+     00001643  _SMS_setBackdropColor              SMSlib
+     0000164D  _SMS_useFirstHalfTilesforSprites   SMSlib
+     00001661  _SMS_setSpriteMode                 SMSlib
+     000016A6  _SMS_setBGPaletteColor             SMSlib
+     000016BA  _SMS_setSpritePaletteColor         SMSlib
+     000016CE  _SMS_loadBGPalette                 SMSlib
+     000016E2  _SMS_loadSpritePalette             SMSlib
+     000016F6  _SMS_setColor                      SMSlib
+     000016FA  _SMS_initSprites                   SMSlib
+     00001700  _SMS_addSprite                     SMSlib
+     00001755  _SMS_finalizeSprites               SMSlib
+     00001767  _SMS_copySpritestoSAT              SMSlib
+     00001790  _SMS_waitForVBlank                 SMSlib
+     0000179D  _SMS_getKeysStatus                 SMSlib
+     000017A1  _SMS_getKeysPressed                SMSlib
+     000017BE  _SMS_getKeysHeld                   SMSlib
+     000017D5  _SMS_getKeysReleased               SMSlib
+     000017F2  _SMS_queryPauseRequested           SMSlib
 ASxxxx Linker V03.00 + NoICE + sdld,  page 66.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001C15 =        7189. bytes (REL,CON)
+_CODE                               00000200    00001C14 =        7188. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     000017FB  _SMS_resetPauseRequest             SMSlib
-     00001801  _SMS_setLineInterruptHandler       SMSlib
-     00001812  _SMS_setLineCounter                SMSlib
-     00001821  _SMS_getVCount                     SMSlib
-     00001825  _SMS_getHCount                     SMSlib
-     00001829  _SMS_isr                           SMSlib
-     0000185F  _SMS_nmi_isr                       SMSlib
-     00001872  _SMS_setClippingWindow             SMSlib_spriteClip
-     00001893  _SMS_addSpriteClipping             SMSlib_spriteClip
-     0000195B  _SMS_VRAMmemset                    SMSlib_VRAMmemset
-     00001980  _SMS_VRAMmemsetW                   SMSlib_VRAMmemset
-     000019B0  _SMS_loadBGPaletteHalfBrightness   SMSlib_paletteAdv
-     000019C7  _SMS_zeroBGPalette                 SMSlib_paletteAdv
-     000019DB  _SMS_loadSpritePaletteHalfBright   SMSlib_paletteAdv
-     000019F2  _SMS_zeroSpritePalette             SMSlib_paletteAdv
-     00001A06  _SMS_loadTiles                     SMSlib_loadTiles
-     00001A37  _SMS_VRAMmemcpy                    SMSlib_VRAMmemcpy
-     00001A64  _SMS_VRAMmemcpy_brief              SMSlib_VRAMmemcpy
-     00001A8C  _SMS_loadSTMcompressedTileMapAre   SMSlib_STMcomp
-     00001C6D  ___sdcc_call_hl                    
-     00001C6E  _SMS_loadPSGaidencompressedTiles   SMSlib_PSGaiden
-     00001D50  _SMS_loadTileMapArea               SMSlib_loadTileMapArea
-     00001DC5  _SMS_loadTileMap                   SMSlib_loadTileMap
-     00001DFE  __moduchar                         
-     00001E0A  __moduint                          
+     000017FA  _SMS_resetPauseRequest             SMSlib
+     00001800  _SMS_setLineInterruptHandler       SMSlib
+     00001811  _SMS_setLineCounter                SMSlib
+     00001820  _SMS_getVCount                     SMSlib
+     00001824  _SMS_getHCount                     SMSlib
+     00001828  _SMS_isr                           SMSlib
+     0000185E  _SMS_nmi_isr                       SMSlib
+     00001871  _SMS_setClippingWindow             SMSlib_spriteClip
+     00001892  _SMS_addSpriteClipping             SMSlib_spriteClip
+     0000195A  _SMS_VRAMmemset                    SMSlib_VRAMmemset
+     0000197F  _SMS_VRAMmemsetW                   SMSlib_VRAMmemset
+     000019AF  _SMS_loadBGPaletteHalfBrightness   SMSlib_paletteAdv
+     000019C6  _SMS_zeroBGPalette                 SMSlib_paletteAdv
+     000019DA  _SMS_loadSpritePaletteHalfBright   SMSlib_paletteAdv
+     000019F1  _SMS_zeroSpritePalette             SMSlib_paletteAdv
+     00001A05  _SMS_loadTiles                     SMSlib_loadTiles
+     00001A36  _SMS_VRAMmemcpy                    SMSlib_VRAMmemcpy
+     00001A63  _SMS_VRAMmemcpy_brief              SMSlib_VRAMmemcpy
+     00001A8B  _SMS_loadSTMcompressedTileMapAre   SMSlib_STMcomp
+     00001C6C  ___sdcc_call_hl                    
+     00001C6D  _SMS_loadPSGaidencompressedTiles   SMSlib_PSGaiden
+     00001D4F  _SMS_loadTileMapArea               SMSlib_loadTileMapArea
+     00001DC4  _SMS_loadTileMap                   SMSlib_loadTileMap
+     00001DFD  __moduchar                         
+     00001E09  __moduint                          
 ASxxxx Linker V03.00 + NoICE + sdld,  page 67.
 Hexadecimal  [32-Bits]
 
@@ -3977,33 +3977,35 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_INITIALIZER                        00001E15    00000030 =          48. bytes (REL,CON)
+_INITIALIZER                        00001E14    00000034 =          52. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00001E15  Fbank2$__xinit_locale_object_tex   bank2
-     00001E27  Fbank2$__xinit_locale_object_bla   bank2
-     00001E2D  Fbank2$__xinit_locale_object_dif   bank2
-     00001E35  Ffixedbank$__xinit_steven_object   fixedbank
-     00001E39  Finput_manager$__xinit_curr_joyp   input_manager
-     00001E3B  Finput_manager$__xinit_prev_joyp   input_manager
+     00001E14  Fbank2$__xinit_locale_object_tex   bank2
+     00001E26  Fbank2$__xinit_locale_object_bla   bank2
+     00001E2C  Fbank2$__xinit_locale_object_dif   bank2
+     00001E34  Ffixedbank$__xinit_riff_sample_d   fixedbank
+     00001E38  Ffixedbank$__xinit_steven_object   fixedbank
+     00001E3C  Finput_manager$__xinit_curr_joyp   input_manager
+     00001E3E  Finput_manager$__xinit_prev_joyp   input_manager
+
 ASxxxx Linker V03.00 + NoICE + sdld,  page 74.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSINIT                             00001E45    0000000F =          15. bytes (REL,CON)
+_GSINIT                             00001E48    0000000F =          15. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00001E45  gsinit                             crt0
+     00001E48  gsinit                             crt0
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 75.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSFINAL                            00001E54    00000001 =           1. bytes (REL,CON)
+_GSFINAL                            00001E57    00000001 =           1. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -4066,7 +4068,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_INITIALIZED                        0000C16A    00000030 =          48. bytes (REL,CON)
+_INITIALIZED                        0000C16A    00000034 =          52. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -4076,17 +4078,19 @@ _INITIALIZED                        0000C16A    00000030 =          48. bytes (R
      0000C17C  _locale_object_blank               bank2
      0000C182  G$locale_object_difficulty$0_0$0   bank2
      0000C182  _locale_object_difficulty          bank2
-     0000C18A  G$steven_object_texts$0_0$0        fixedbank
-     0000C18A  _steven_object_texts               fixedbank
-     0000C18E  Finput_manager$curr_joypad1$0_0$   input_manager
-     0000C190  Finput_manager$prev_joypad1$0_0$   input_manager
-     0000C192  _VDPReg                            SMSlib
-     0000C194  _spritesHeight                     SMSlib
-     0000C195  _spritesWidth                      SMSlib
-     0000C196  _clipWin_x0                        SMSlib_spriteClip
-     0000C197  _clipWin_y0                        SMSlib_spriteClip
-     0000C198  _clipWin_x1                        SMSlib_spriteClip
-     0000C199  _clipWin_y1                        SMSlib_spriteClip
+     0000C18A  G$riff_sample_data$0_0$0           fixedbank
+     0000C18A  _riff_sample_data                  fixedbank
+     0000C18E  G$steven_object_texts$0_0$0        fixedbank
+     0000C18E  _steven_object_texts               fixedbank
+     0000C192  Finput_manager$curr_joypad1$0_0$   input_manager
+     0000C194  Finput_manager$prev_joypad1$0_0$   input_manager
+     0000C196  _VDPReg                            SMSlib
+     0000C198  _spritesHeight                     SMSlib
+     0000C199  _spritesWidth                      SMSlib
+     0000C19A  _clipWin_x0                        SMSlib_spriteClip
+     0000C19B  _clipWin_y0                        SMSlib_spriteClip
+     0000C19C  _clipWin_x1                        SMSlib_spriteClip
+     0000C19D  _clipWin_y1                        SMSlib_spriteClip
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 78.
 Hexadecimal  [32-Bits]
@@ -4231,24 +4235,24 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK12                             00008000    00000008 =           8. bytes (REL,CON)
+_BANK12                             00008000    000033DF =       13279. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$bank12_txt$0_0$0                 bank12
-     00008000  _bank12_txt                        bank12
+     00008000  G$Riff__01_wav_pcmenc$0_0$0        bank12
+     00008000  _Riff__01_wav_pcmenc               bank12
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 89.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK13                             00008000    00000008 =           8. bytes (REL,CON)
+_BANK13                             00008000    000035FC =       13820. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$bank13_txt$0_0$0                 bank13
-     00008000  _bank13_txt                        bank13
+     00008000  G$Riff__02_wav_pcmenc$0_0$0        bank13
+     00008000  _Riff__02_wav_pcmenc               bank13
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 90.
 Hexadecimal  [32-Bits]
@@ -4843,13 +4847,16 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK63                             00008000    00000014 =          20. bytes (REL,CON)
+_BANK63                             00008000    00000016 =          22. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$steven_object_numbers$0_0$0      fixedbank
-     00008000  _steven_object_numbers             fixedbank
-     00008003  Ffixedbank$__str_0$0_0$0           fixedbank
+     00008000  G$riff_sample_bank$0_0$0           fixedbank
+     00008000  _riff_sample_bank                  fixedbank
+     00008002  G$steven_object_numbers$0_0$0      fixedbank
+     00008002  _steven_object_numbers             fixedbank
+     00008005  Ffixedbank$__str_0$0_0$0           fixedbank
+
 ASxxxx Linker V03.00 + NoICE + sdld,  page 140.
 Hexadecimal  [32-Bits]
 

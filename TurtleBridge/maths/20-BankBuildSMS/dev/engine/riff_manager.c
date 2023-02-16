@@ -1,7 +1,7 @@
 #include "riff_manager.h"
 #include "sample_manager.h"
-#include "../object/riff_object.h"
 #include "../devkit/_sms_manager.h"
+#include "../banks/fixedbank.h"
 
 const unsigned char psgInit[] =
 {
@@ -18,6 +18,7 @@ void engine_riff_manager_play( unsigned char index )
 	const unsigned char *data;
 	unsigned char bank;
 
+	devkit_SMS_mapROMBank( FIXED_BANK );
 	data = riff_sample_data[ index ];
 	bank = riff_sample_bank[ index ];
 

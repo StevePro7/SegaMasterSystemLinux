@@ -1,7 +1,17 @@
 #include "fixedbank.h"
-//#include "bank4.h"
-//#include "bank5.h"
-//#include "bank6.h"
+#include "bank12.h"
+#include "bank13.h"
+
+const unsigned char *riff_sample_data[] =
+{
+	Riff__01_wav_pcmenc,
+	Riff__02_wav_pcmenc,
+};
+const unsigned char riff_sample_bank[] =
+{
+	Riff__01_wav_pcmenc_bank,
+	Riff__02_wav_pcmenc_bank,
+};
 
 const unsigned char steven_object_numbers[] =
 {
