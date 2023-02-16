@@ -13,6 +13,7 @@
 
 const unsigned char *riff_sample_data[] =
 {
+	// Splash riff	[x9]
 	Riff__Splash__Screen__01_wav_pcmenc,
 	Riff__Splash__Screen__02_wav_pcmenc,
 	Riff__Splash__Screen__03_wav_pcmenc,
@@ -22,6 +23,8 @@ const unsigned char *riff_sample_data[] =
 	Riff__Splash__Screen__07_wav_pcmenc,
 	Riff__Splash__Screen__08_wav_pcmenc,
 	Riff__Splash__Screen__09_wav_pcmenc,
+
+	// Oh-li-la	[x2]
 	Riff__01_wav_pcmenc,
 	Riff__02_wav_pcmenc,
 };
