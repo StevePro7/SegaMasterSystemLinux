@@ -28,7 +28,7 @@ T:Fdemo_screen$tag_struct_delay_object[({0}S:S$delay_value$0_0$0({2}SI:U),Z,0,0)
 T:Fdemo_screen$tag_struct_audio_object[({0}S:S$music_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$music_bank$0_0$0({1}SC:U),Z,0,0)({3}S:S$sound_data$0_0$0({2}DG,SC:U),Z,0,0)({5}S:S$sound_bank$0_0$0({1}SC:U),Z,0,0)]
 T:Fdemo_screen$tag_struct_level_object[({0}S:S$level_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$level_size$0_0$0({2}SI:U),Z,0,0)({4}S:S$level_bank$0_0$0({1}SC:U),Z,0,0)({5}S:S$column_draw$0_0$0({1}SC:U),Z,0,0)]
 T:Fdemo_screen$tag_struct_reset_object[({0}S:S$reset_value$0_0$0({1}SC:U),Z,0,0)({1}S:S$reset_timer$0_0$0({1}SC:U),Z,0,0)]
-S:Fdemo_screen$jumps$0_0$0({124}DA62d,SI:S),E,0,0
+S:Fdemo_screen$jumps$0_0$0({158}DA79d,SI:S),E,0,0
 S:G$global_audio_object$0_0$0({6}STtag_struct_audio_object:S),E,0,0
 S:G$global_game_object$0_0$0({7}STtag_struct_game_object:S),E,0,0
 S:G$global_hack_object$0_0$0({2}STtag_struct_hack_object:S),E,0,0
