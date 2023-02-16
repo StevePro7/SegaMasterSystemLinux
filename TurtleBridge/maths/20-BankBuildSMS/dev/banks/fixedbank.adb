@@ -1,6 +1,15 @@
 M:fixedbank
-S:G$riff_sample_data$0_0$0({22}DA11d,DG,SC:U),E,0,0
+S:G$riff_sample_data$0_0$0({40}DA20d,DG,SC:U),E,0,0
 S:G$steven_object_texts$0_0$0({4}DA2d,DG,SC:U),E,0,0
+S:G$Riff__Title__Screen__01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$Riff__Title__Screen__02_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$Riff__Title__Screen__03_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$Riff__Title__Screen__04_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$Riff__Title__Screen__05_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$Riff__Title__Screen__06_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$Riff__Title__Screen__07_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$Riff__Title__Screen__08_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$Riff__Title__Screen__09_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff__Splash__Screen__01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff__Splash__Screen__02_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff__Splash__Screen__03_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
@@ -12,7 +21,7 @@ S:G$Riff__Splash__Screen__08_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff__Splash__Screen__09_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff__01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff__02_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
-S:G$riff_sample_bank$0_0$0({11}DA11d,SC:U),D,0,0
+S:G$riff_sample_bank$0_0$0({20}DA20d,SC:U),D,0,0
 S:G$steven_object_numbers$0_0$0({3}DA3d,SC:U),D,0,0
 S:Ffixedbank$__str_0$0_0$0({9}DA9d,SC:U),D,0,0
 S:Ffixedbank$__str_1$0_0$0({8}DA8d,SC:U),D,0,0

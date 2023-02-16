@@ -17,7 +17,7 @@ void screen_test_screen_update( unsigned char *screen_type )
 	input = engine_input_manager_hold_down();
 	if( input )
 	{
-		engine_font_manager_text( "SOUND FX!!", 10, 10 );
+		engine_font_manager_text( "SOUND FX??", 10, 10 );
 		for( index = 0; index < 9; index++ )
 		{
 			engine_riff_manager_play( index );

@@ -1,4 +1,13 @@
 #include "fixedbank.h"
+#include "bank41.h"
+#include "bank42.h"
+#include "bank43.h"
+#include "bank44.h"
+#include "bank45.h"
+#include "bank46.h"
+#include "bank47.h"
+#include "bank48.h"
+#include "bank49.h"
 #include "bank51.h"
 #include "bank52.h"
 #include "bank53.h"
@@ -13,6 +22,17 @@
 
 const unsigned char *riff_sample_data[] =
 {
+	// Title riff	[x9]
+	Riff__Title__Screen__01_wav_pcmenc,
+	Riff__Title__Screen__02_wav_pcmenc,
+	Riff__Title__Screen__03_wav_pcmenc,
+	Riff__Title__Screen__04_wav_pcmenc,
+	Riff__Title__Screen__05_wav_pcmenc,
+	Riff__Title__Screen__06_wav_pcmenc,
+	Riff__Title__Screen__07_wav_pcmenc,
+	Riff__Title__Screen__08_wav_pcmenc,
+	Riff__Title__Screen__09_wav_pcmenc,
+
 	// Splash riff	[x9]
 	Riff__Splash__Screen__01_wav_pcmenc,
 	Riff__Splash__Screen__02_wav_pcmenc,
@@ -30,6 +50,16 @@ const unsigned char *riff_sample_data[] =
 };
 const unsigned char riff_sample_bank[] =
 {
+	Riff__Title__Screen__01_wav_pcmenc_bank,
+	Riff__Title__Screen__02_wav_pcmenc_bank,
+	Riff__Title__Screen__03_wav_pcmenc_bank,
+	Riff__Title__Screen__04_wav_pcmenc_bank,
+	Riff__Title__Screen__05_wav_pcmenc_bank,
+	Riff__Title__Screen__06_wav_pcmenc_bank,
+	Riff__Title__Screen__07_wav_pcmenc_bank,
+	Riff__Title__Screen__08_wav_pcmenc_bank,
+	Riff__Title__Screen__09_wav_pcmenc_bank,
+
 	Riff__Splash__Screen__01_wav_pcmenc_bank,
 	Riff__Splash__Screen__02_wav_pcmenc_bank,
 	Riff__Splash__Screen__03_wav_pcmenc_bank,
@@ -39,6 +69,7 @@ const unsigned char riff_sample_bank[] =
 	Riff__Splash__Screen__07_wav_pcmenc_bank,
 	Riff__Splash__Screen__08_wav_pcmenc_bank,
 	Riff__Splash__Screen__09_wav_pcmenc_bank,
+
 	Riff__01_wav_pcmenc_bank,
 	Riff__02_wav_pcmenc_bank,
 };
