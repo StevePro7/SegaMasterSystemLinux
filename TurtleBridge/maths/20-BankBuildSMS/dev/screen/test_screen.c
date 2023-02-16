@@ -12,13 +12,16 @@ void screen_test_screen_load()
 
 void screen_test_screen_update( unsigned char *screen_type )
 {
+	unsigned char index;
 	unsigned char input;
 	input = engine_input_manager_hold_down();
 	if( input )
 	{
-		engine_font_manager_text( "SOUND FX", 10, 10 );
-		engine_riff_manager_play( 0 );
-		engine_riff_manager_play( 1 );
+		engine_font_manager_text( "SOUND FX!!", 10, 10 );
+		for( index = 0; index < 9; index++ )
+		{
+			engine_riff_manager_play( index );
+		}
 	}
 	*screen_type = screen_type_test;
 }
