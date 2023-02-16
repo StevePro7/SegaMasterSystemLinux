@@ -46,7 +46,6 @@ static unsigned int posY2;
 void screen_test_screen_load()
 {
 	struct_player_object *po = &global_player_object;
-	struct_level_object *lo = &global_level_object;
 	struct_game_object *go = &global_game_object;
 
 	// TODO delete this.
