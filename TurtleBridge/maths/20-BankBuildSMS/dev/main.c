@@ -3,18 +3,17 @@
 void main( void )
 {
 	devkit_SMS_init();
-	devkit_SMS_displayOff();
-	engine_asm_manager_clear_VRAM();
 
 	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_NORMAL() );
 	devkit_SMS_useFirstHalfTilesforSprites( false );
-	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );
-	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_ZOOMSPRITES() );
+	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );		// TODO uncomment
 
-	engine_content_manager_load_bgtiles();
-	engine_content_manager_load_sprites();
-
+	devkit_SMS_displayOff();
+	engine_asm_manager_clear_VRAM();
+	engine_content_manager_bggame();
+	engine_content_manager_sprite();
 	devkit_SMS_displayOn();
+
 	for( ;; )
 	{
 		devkit_SMS_initSprites();

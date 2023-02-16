@@ -25,17 +25,17 @@
     <Filter Include="Source Files\engine">
       <UniqueIdentifier>{10b12b8c-8725-42c5-948c-255ef353cf76}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\content">
-      <UniqueIdentifier>{55867956-372a-4026-b0ad-80ba35a69da9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\content">
-      <UniqueIdentifier>{c38c7e2f-e14e-4d06-84b4-507ab53ce91d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\banks">
       <UniqueIdentifier>{672a6406-f023-442e-9aa6-5f7f12a4c42b}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\banks">
       <UniqueIdentifier>{87fea4ad-51df-4414-a897-91d742e1560d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\screen">
+      <UniqueIdentifier>{a27c0dca-079f-4818-8f76-e0f8ffa21583}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\screen">
+      <UniqueIdentifier>{9bf1094e-a26a-4548-ad06-84864739f916}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -63,17 +63,11 @@
     <ClCompile Include="engine\screen_manager.c">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
-    <ClCompile Include="content\gfx.c">
-      <Filter>Source Files\content</Filter>
-    </ClCompile>
     <ClCompile Include="engine\input_manager.c">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
     <ClCompile Include="engine\global_manager.c">
       <Filter>Source Files\engine</Filter>
-    </ClCompile>
-    <ClCompile Include="content\psg.c">
-      <Filter>Source Files\content</Filter>
     </ClCompile>
     <ClCompile Include="engine\enum_manager.c">
       <Filter>Source Files\engine</Filter>
@@ -264,6 +258,15 @@
     <ClCompile Include="banks\bank63.c">
       <Filter>Source Files\banks</Filter>
     </ClCompile>
+    <ClCompile Include="screen\func_screen.c">
+      <Filter>Source Files\screen</Filter>
+    </ClCompile>
+    <ClCompile Include="screen\none_screen.c">
+      <Filter>Source Files\screen</Filter>
+    </ClCompile>
+    <ClCompile Include="screen\test_screen.c">
+      <Filter>Source Files\screen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="build.bat">
@@ -295,17 +298,11 @@
     <ClInclude Include="engine\screen_manager.h">
       <Filter>Header Files\engine</Filter>
     </ClInclude>
-    <ClInclude Include="content\gfx.h">
-      <Filter>Header Files\content</Filter>
-    </ClInclude>
     <ClInclude Include="engine\input_manager.h">
       <Filter>Header Files\engine</Filter>
     </ClInclude>
     <ClInclude Include="engine\global_manager.h">
       <Filter>Header Files\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="content\psg.h">
-      <Filter>Header Files\content</Filter>
     </ClInclude>
     <ClInclude Include="engine\enum_manager.h">
       <Filter>Header Files\engine</Filter>
@@ -495,6 +492,15 @@
     </ClInclude>
     <ClInclude Include="banks\bank63.h">
       <Filter>Header Files\banks</Filter>
+    </ClInclude>
+    <ClInclude Include="screen\func_screen.h">
+      <Filter>Header Files\screen</Filter>
+    </ClInclude>
+    <ClInclude Include="screen\none_screen.h">
+      <Filter>Header Files\screen</Filter>
+    </ClInclude>
+    <ClInclude Include="screen\test_screen.h">
+      <Filter>Header Files\screen</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
