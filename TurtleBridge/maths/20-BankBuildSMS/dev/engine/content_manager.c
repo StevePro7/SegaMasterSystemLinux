@@ -35,6 +35,6 @@ void engine_content_manager_sprite()
 static void load_tile( unsigned char bank, const unsigned char *tiles, unsigned char tilefrom, const unsigned char *palette )
 {
 	devkit_SMS_mapROMBank( bank );
-	devkit_SMS_loadPSGaidencompressedTiles( tiles, tilefrom );
+	devkit_SMS_loadPSGaidencompressedTiles( ( unsigned char * ) tiles, tilefrom );
 	devkit_SMS_loadBGPalette( ( void * ) palette );
 }
