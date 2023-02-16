@@ -22,7 +22,7 @@
 
 const unsigned char *riff_sample_data[] =
 {
-	// Title riff	[x9]
+	// Title riff	bank 41-49	[x9]
 	Riff__Title__Screen__01_wav_pcmenc,
 	Riff__Title__Screen__02_wav_pcmenc,
 	Riff__Title__Screen__03_wav_pcmenc,
@@ -33,7 +33,7 @@ const unsigned char *riff_sample_data[] =
 	Riff__Title__Screen__08_wav_pcmenc,
 	Riff__Title__Screen__09_wav_pcmenc,
 
-	// Splash riff	[x9]
+	// Splash riff	bank 51-59	[x9]
 	Riff__Splash__Screen__01_wav_pcmenc,
 	Riff__Splash__Screen__02_wav_pcmenc,
 	Riff__Splash__Screen__03_wav_pcmenc,
@@ -44,7 +44,7 @@ const unsigned char *riff_sample_data[] =
 	Riff__Splash__Screen__08_wav_pcmenc,
 	Riff__Splash__Screen__09_wav_pcmenc,
 
-	// Oh-li-la	[x2]
+	// Oh-li-la		bank 12-13	[x2]
 	Riff__01_wav_pcmenc,
 	Riff__02_wav_pcmenc,
 };
