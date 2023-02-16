@@ -101,7 +101,6 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000008  l__BANK60                       
      00000008  l__BANK61                       
      00000008  l__BANK62                       
-     00000008  l__BANK63                       
      00000009  l__HEADER1                      
      0000000A  l__HEADER2                      
      0000000D  l__CABS2                        
@@ -109,8 +108,9 @@ Area                                    Addr        Size        Decimal Bytes (A
      0000000F  l__GSINIT                       
      00000010  l__CABS0                        
      00000010  l__CABS4                        
-     0000002C  l__INITIALIZED                  
-     0000002C  l__INITIALIZER                  
+     00000011  l__BANK63                       
+     00000030  l__INITIALIZED                  
+     00000030  l__INITIALIZER                  
      00000038  l__CABS3                        
      000000BE  G$VDPDataPort$0_0$0                asm_manager
      000000BF  G$VDPControlPort$0_0$0             asm_manager
@@ -127,11 +127,11 @@ Area                                    Addr        Size        Decimal Bytes (A
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
      000017E2  l__BANK3                        
-     00001BD1  l__CODE                         
-     00001DD1  s__HOME                         
-     00001DD1  s__INITIALIZER                  
-     00001DFD  s__GSINIT                       
-     00001E0C  s__GSFINAL                      
+     00001BD4  l__CODE                         
+     00001DD4  s__HOME                         
+     00001DD4  s__INITIALIZER                  
+     00001E04  s__GSINIT                       
+     00001E13  s__GSFINAL                      
      000034F8  l__BANK2                        
      00008000  G$SMS_SRAM$0$0                     _sms_manager
      00008000  _SMS_SRAM                          SMSlib_loadTileMap
@@ -208,9 +208,9 @@ Area                                    Addr        Size        Decimal Bytes (A
      00008000  s__BANK9                        
      0000C000  s__DATA                         
      0000C16A  s__INITIALIZED                  
-     0000C196  s__BSEG                         
-     0000C196  s__BSS                          
-     0000C196  s__HEAP                         
+     0000C19A  s__BSEG                         
+     0000C19A  s__BSS                          
+     0000C19A  s__HEAP                         
      0000FFFC  G$SRAM_bank_to_be_mapped_on_slot   _sms_manager
      0000FFFC  _SRAM_bank_to_be_mapped_on_slot2   SMSlib_loadTileMap
      0000FFFF  G$ROM_bank_to_be_mapped_on_slot2   _sms_manager
@@ -221,7 +221,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -280,7 +280,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -329,21 +329,22 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      000007F8  Fbank2$__str_7$0_0$0               bank2
      000007F8  Fbank2$__str_8$0_0$0               bank2
      000007F8  Fbank2$__str_9$0_0$0               bank2
+     000007F8  Ffixedbank$__str_1$0_0$0           fixedbank
      000007F8  G$devkit_SMS_init$0$0              _sms_manager
      000007F8  XG$devkit_SMS_init$0$0             _sms_manager
      000007F8  _devkit_SMS_init                   _sms_manager
      000007FB  A$_sms_manager$264                 _sms_manager
      000007FB  C$_sms_manager.c$18$1$122          _sms_manager
-     000007FB  C$_sms_manager.c$20$1$124          _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 7.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     000007FB  C$_sms_manager.c$20$1$124          _sms_manager
      000007FB  G$devkit_SMS_VDPturnOnFeature$0$   _sms_manager
      000007FB  _devkit_SMS_VDPturnOnFeature       _sms_manager
      000007FC  A$_sms_manager$265                 _sms_manager
@@ -394,16 +395,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00000815  _devkit_VDPFEATURE_LEFTCOLBLANK    _sms_manager
      00000818  A$_sms_manager$365                 _sms_manager
      00000818  C$_sms_manager.c$43$1$130          _sms_manager
-     00000818  XG$devkit_VDPFEATURE_LEFTCOLBLAN   _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 8.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000818  XG$devkit_VDPFEATURE_LEFTCOLBLAN   _sms_manager
      00000819  A$_sms_manager$378                 _sms_manager
      00000819  C$_sms_manager.c$44$1$130          _sms_manager
      00000819  C$_sms_manager.c$46$1$131          _sms_manager
@@ -454,16 +455,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00000830  XG$devkit_VDPFEATURE_224LINES$0$   _sms_manager
      00000831  A$_sms_manager$486                 _sms_manager
      00000831  C$_sms_manager.c$70$1$136          _sms_manager
-     00000831  C$_sms_manager.c$72$1$137          _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 9.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000831  C$_sms_manager.c$72$1$137          _sms_manager
      00000831  G$devkit_VDPFEATURE_FRAMEIRQ$0$0   _sms_manager
      00000831  _devkit_VDPFEATURE_FRAMEIRQ        _sms_manager
      00000834  A$_sms_manager$491                 _sms_manager
@@ -514,16 +515,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      0000085A  C$_sms_manager.c$96$1$144          _sms_manager
      0000085A  XG$devkit_SMS_setBGScrollY$0$0     _sms_manager
      0000085D  A$_sms_manager$598                 _sms_manager
-     0000085D  C$_sms_manager.c$97$1$144          _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 10.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     0000085D  C$_sms_manager.c$97$1$144          _sms_manager
      0000085D  C$_sms_manager.c$99$1$146          _sms_manager
      0000085D  G$devkit_SMS_setBackdropColor$0$   _sms_manager
      0000085D  _devkit_SMS_setBackdropColor       _sms_manager
@@ -574,16 +575,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      0000088A  A$_sms_manager$697                 _sms_manager
      0000088A  C$_sms_manager.c$119$1$152         _sms_manager
      0000088A  C$_sms_manager.c$121$1$153         _sms_manager
-     0000088A  G$devkit_SPRITEMODE_ZOOMED$0$0     _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 11.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     0000088A  G$devkit_SPRITEMODE_ZOOMED$0$0     _sms_manager
      0000088A  _devkit_SPRITEMODE_ZOOMED          _sms_manager
      0000088C  A$_sms_manager$702                 _sms_manager
      0000088C  C$_sms_manager.c$122$1$153         _sms_manager
@@ -634,16 +635,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      000008AE  A$_sms_manager$798                 _sms_manager
      000008AE  C$_sms_manager.c$145$1$159         _sms_manager
      000008AE  C$_sms_manager.c$147$1$160         _sms_manager
-     000008AE  G$devkit_SMS_disableSRAM$0$0       _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 12.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     000008AE  G$devkit_SMS_disableSRAM$0$0       _sms_manager
      000008AE  _devkit_SMS_disableSRAM            _sms_manager
      000008B1  A$_sms_manager$799                 _sms_manager
      000008B3  A$_sms_manager$804                 _sms_manager
@@ -694,16 +695,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      000008DB  C$_sms_manager.c$166$1$164         _sms_manager
      000008DB  XG$devkit_SMS_loadTiles$0$0        _sms_manager
      000008DC  A$_sms_manager$891                 _sms_manager
-     000008DC  C$_sms_manager.c$167$1$164         _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 13.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     000008DC  C$_sms_manager.c$167$1$164         _sms_manager
      000008DC  C$_sms_manager.c$169$1$166         _sms_manager
      000008DC  G$devkit_SMS_loadPSGaidencompres   _sms_manager
      000008DC  _devkit_SMS_loadPSGaidencompress   _sms_manager
@@ -754,16 +755,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00000913  A$_sms_manager$946                 _sms_manager
      00000916  A$_sms_manager$947                 _sms_manager
      00000917  A$_sms_manager$948                 _sms_manager
-     00000918  A$_sms_manager$953                 _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 14.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000918  A$_sms_manager$953                 _sms_manager
      00000918  C$_sms_manager.c$176$1$168         _sms_manager
      00000918  XG$devkit_SMS_loadTileMap$0$0      _sms_manager
      00000919  A$_sms_manager$966                 _sms_manager
@@ -814,16 +815,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      0000094A  A$_sms_manager$1017                _sms_manager
      0000094B  A$_sms_manager$1018                _sms_manager
      0000094C  A$_sms_manager$1019                _sms_manager
-     0000094D  A$_sms_manager$1020                _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 15.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     0000094D  A$_sms_manager$1020                _sms_manager
      0000094E  A$_sms_manager$1021                _sms_manager
      0000094F  A$_sms_manager$1022                _sms_manager
      00000952  A$_sms_manager$1023                _sms_manager
@@ -874,16 +875,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00000986  XG$devkit_SMS_loadSTMcompressedT   _sms_manager
      00000987  A$_sms_manager$1093                _sms_manager
      00000987  C$_sms_manager.c$193$1$174         _sms_manager
-     00000987  C$_sms_manager.c$195$1$176         _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 16.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000987  C$_sms_manager.c$195$1$176         _sms_manager
      00000987  G$devkit_SMS_crt0_RST08$0$0        _sms_manager
      00000987  _devkit_SMS_crt0_RST08             _sms_manager
      00000988  A$_sms_manager$1094                _sms_manager
@@ -934,16 +935,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      000009A3  _devkit_XYtoADDR                   _sms_manager
      000009A4  A$_sms_manager$1191                _sms_manager
      000009A4  C$_sms_manager.c$219$1$184         _sms_manager
-     000009A4  G$devkit_SMS_setNextTileatXY$0$0   _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 17.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     000009A4  G$devkit_SMS_setNextTileatXY$0$0   _sms_manager
      000009A4  _devkit_SMS_setNextTileatXY        _sms_manager
      000009A6  A$_sms_manager$1192                _sms_manager
      000009AA  A$_sms_manager$1193                _sms_manager
@@ -994,16 +995,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      000009D9  G$devkit_SMS_setNextTileatAddr$0   _sms_manager
      000009D9  _devkit_SMS_setNextTileatAddr      _sms_manager
      000009DD  A$_sms_manager$1262                _sms_manager
-     000009DF  A$_sms_manager$1263                _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 18.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     000009DF  A$_sms_manager$1263                _sms_manager
      000009E2  A$_sms_manager$1264                _sms_manager
      000009E4  A$_sms_manager$1269                _sms_manager
      000009E4  C$_sms_manager.c$230$1$190         _sms_manager
@@ -1054,16 +1055,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00000A1B  A$_sms_manager$1345                _sms_manager
      00000A1B  C$_sms_manager.c$241$1$194         _sms_manager
      00000A1B  C$_sms_manager.c$243$1$195         _sms_manager
-     00000A1B  G$devkit_TILE_FLIPPED_Y$0$0        _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 19.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000A1B  G$devkit_TILE_FLIPPED_Y$0$0        _sms_manager
      00000A1B  _devkit_TILE_FLIPPED_Y             _sms_manager
      00000A1E  A$_sms_manager$1350                _sms_manager
      00000A1E  C$_sms_manager.c$244$1$195         _sms_manager
@@ -1114,16 +1115,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00000A42  A$_sms_manager$1432                _sms_manager
      00000A43  A$_sms_manager$1433                _sms_manager
      00000A44  A$_sms_manager$1438                _sms_manager
-     00000A44  C$_sms_manager.c$262$1$200         _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 20.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000A44  C$_sms_manager.c$262$1$200         _sms_manager
      00000A44  XG$devkit_SMS_addSprite$0$0        _sms_manager
      00000A45  A$_sms_manager$1455                _sms_manager
      00000A45  C$_sms_manager.c$263$1$200         _sms_manager
@@ -1174,16 +1175,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00000A71  A$_sms_manager$1513                _sms_manager
      00000A74  A$_sms_manager$1514                _sms_manager
      00000A75  A$_sms_manager$1519                _sms_manager
-     00000A75  C$_sms_manager.c$274$1$206         _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 21.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000A75  C$_sms_manager.c$274$1$206         _sms_manager
      00000A75  XG$devkit_SMS_updateSpriteImage$   _sms_manager
      00000A76  A$_sms_manager$1532                _sms_manager
      00000A76  C$_sms_manager.c$275$1$206         _sms_manager
@@ -1234,16 +1235,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00000AA4  C$_sms_manager.c$285$1$212         _sms_manager
      00000AA4  G$devkit_SMS_addSpriteClipping$0   _sms_manager
      00000AA4  _devkit_SMS_addSpriteClipping      _sms_manager
-     00000AA7  A$_sms_manager$1597                _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 22.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000AA7  A$_sms_manager$1597                _sms_manager
      00000AA8  A$_sms_manager$1598                _sms_manager
      00000AA9  A$_sms_manager$1599                _sms_manager
      00000AAA  A$_sms_manager$1600                _sms_manager
@@ -1294,16 +1295,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00000AD3  A$_sms_manager$1675                _sms_manager
      00000AD4  A$_sms_manager$1676                _sms_manager
      00000AD5  A$_sms_manager$1677                _sms_manager
-     00000AD6  A$_sms_manager$1678                _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 23.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000AD6  A$_sms_manager$1678                _sms_manager
      00000AD9  A$_sms_manager$1679                _sms_manager
      00000ADA  A$_sms_manager$1684                _sms_manager
      00000ADA  C$_sms_manager.c$307$1$216         _sms_manager
@@ -1354,16 +1355,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00000AFC  C$_sms_manager.c$322$1$224         _sms_manager
      00000AFC  G$devkit_SMS_setNextBGColoratInd   _sms_manager
      00000AFC  _devkit_SMS_setNextBGColoratInde   _sms_manager
-     00000B00  A$_sms_manager$1769                _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 24.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000B00  A$_sms_manager$1769                _sms_manager
      00000B02  A$_sms_manager$1770                _sms_manager
      00000B05  A$_sms_manager$1771                _sms_manager
      00000B07  A$_sms_manager$1772                _sms_manager
@@ -1414,16 +1415,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00000B38  A$_sms_manager$1847                _sms_manager
      00000B39  A$_sms_manager$1848                _sms_manager
      00000B3C  A$_sms_manager$1849                _sms_manager
-     00000B3D  A$_sms_manager$1850                _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 25.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000B3D  A$_sms_manager$1850                _sms_manager
      00000B3E  A$_sms_manager$1851                _sms_manager
      00000B3F  A$_sms_manager$1852                _sms_manager
      00000B40  A$_sms_manager$1853                _sms_manager
@@ -1474,16 +1475,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00000B70  A$_sms_manager$1922                _sms_manager
      00000B70  C$_sms_manager.c$347$1$232         _sms_manager
      00000B70  C$_sms_manager.c$349$1$234         _sms_manager
-     00000B70  G$devkit_SMS_loadBGPaletteHalfBr   _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 26.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000B70  G$devkit_SMS_loadBGPaletteHalfBr   _sms_manager
      00000B70  _devkit_SMS_loadBGPaletteHalfBri   _sms_manager
      00000B71  A$_sms_manager$1923                _sms_manager
      00000B72  A$_sms_manager$1924                _sms_manager
@@ -1534,16 +1535,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00000B8A  C$_sms_manager.c$373$1$242         _sms_manager
      00000B8A  C$_sms_manager.c$375$1$243         _sms_manager
      00000B8A  C$_sms_manager.c$376$1$243         _sms_manager
-     00000B8A  G$devkit_SMS_getKeysHeld$0$0       _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 27.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000B8A  G$devkit_SMS_getKeysHeld$0$0       _sms_manager
      00000B8A  XG$devkit_SMS_getKeysHeld$0$0      _sms_manager
      00000B8A  _devkit_SMS_getKeysHeld            _sms_manager
      00000B8D  A$_sms_manager$2053                _sms_manager
@@ -1594,16 +1595,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00000BA3  C$_sms_manager.c$402$1$249         _sms_manager
      00000BA3  XG$devkit_PORT_A_KEY_1$0$0         _sms_manager
      00000BA4  A$_sms_manager$2156                _sms_manager
-     00000BA4  C$_sms_manager.c$403$1$249         _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 28.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000BA4  C$_sms_manager.c$403$1$249         _sms_manager
      00000BA4  C$_sms_manager.c$405$1$250         _sms_manager
      00000BA4  G$devkit_PORT_A_KEY_2$0$0          _sms_manager
      00000BA4  _devkit_PORT_A_KEY_2               _sms_manager
@@ -1654,16 +1655,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00000BBC  C$_sms_manager.c$428$1$255         _sms_manager
      00000BBC  C$_sms_manager.c$430$1$256         _sms_manager
      00000BBC  G$devkit_PORT_B_KEY_1$0$0          _sms_manager
-     00000BBC  _devkit_PORT_B_KEY_1               _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 29.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000BBC  _devkit_PORT_B_KEY_1               _sms_manager
      00000BBF  A$_sms_manager$2269                _sms_manager
      00000BBF  C$_sms_manager.c$431$1$256         _sms_manager
      00000BBF  XG$devkit_PORT_B_KEY_1$0$0         _sms_manager
@@ -1714,16 +1715,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00000BD4  _devkit_PORT_B_TH                  _sms_manager
      00000BD7  A$_sms_manager$2377                _sms_manager
      00000BD7  C$_sms_manager.c$456$1$262         _sms_manager
-     00000BD7  XG$devkit_PORT_B_TH$0$0            _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 30.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000BD7  XG$devkit_PORT_B_TH$0$0            _sms_manager
      00000BD8  A$_sms_manager$2394                _sms_manager
      00000BD8  C$_sms_manager.c$459$1$262         _sms_manager
      00000BD8  C$_sms_manager.c$461$1$263         _sms_manager
@@ -1774,16 +1775,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00000BF0  A$_sms_manager$2483                _sms_manager
      00000BF1  A$_sms_manager$2484                _sms_manager
      00000BF4  A$_sms_manager$2485                _sms_manager
-     00000BF5  A$_sms_manager$2490                _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 31.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000BF5  A$_sms_manager$2490                _sms_manager
      00000BF5  C$_sms_manager.c$502$1$271         _sms_manager
      00000BF5  XG$devkit_SMS_setLineInterruptHa   _sms_manager
      00000BF6  A$_sms_manager$2503                _sms_manager
@@ -1834,16 +1835,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00000C14  C$_sms_manager.c$528$1$279         _sms_manager
      00000C14  C$_sms_manager.c$530$1$281         _sms_manager
      00000C14  G$devkit_SMS_VRAMmemcpy$0$0        _sms_manager
-     00000C14  _devkit_SMS_VRAMmemcpy             _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 32.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000C14  _devkit_SMS_VRAMmemcpy             _sms_manager
      00000C17  A$_sms_manager$2598                _sms_manager
      00000C18  A$_sms_manager$2599                _sms_manager
      00000C19  A$_sms_manager$2600                _sms_manager
@@ -1894,16 +1895,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00000C50  A$_sms_manager$2655                _sms_manager
      00000C51  A$_sms_manager$2656                _sms_manager
      00000C52  A$_sms_manager$2661                _sms_manager
-     00000C52  C$_sms_manager.c$535$1$283         _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 33.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000C52  C$_sms_manager.c$535$1$283         _sms_manager
      00000C52  XG$devkit_SMS_VRAMmemcpy_brief$0   _sms_manager
      00000C53  A$_sms_manager$2674                _sms_manager
      00000C53  C$_sms_manager.c$536$1$283         _sms_manager
@@ -1954,16 +1955,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00000C85  A$_sms_manager$2726                _sms_manager
      00000C86  A$_sms_manager$2727                _sms_manager
      00000C87  A$_sms_manager$2728                _sms_manager
-     00000C88  A$_sms_manager$2729                _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 34.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000C88  A$_sms_manager$2729                _sms_manager
      00000C89  A$_sms_manager$2730                _sms_manager
      00000C8C  A$_sms_manager$2731                _sms_manager
      00000C8F  A$_sms_manager$2732                _sms_manager
@@ -2014,16 +2015,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00000CB6  A$_sms_manager$2807                _sms_manager
      00000CB7  A$_sms_manager$2808                _sms_manager
      00000CB8  A$_sms_manager$2809                _sms_manager
-     00000CB9  A$_sms_manager$2810                _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 35.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000CB9  A$_sms_manager$2810                _sms_manager
      00000CBA  A$_sms_manager$2811                _sms_manager
      00000CBB  A$_sms_manager$2812                _sms_manager
      00000CBE  A$_sms_manager$2813                _sms_manager
@@ -2074,16 +2075,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00000CE7  A$_sms_manager$2878                _sms_manager
      00000CE8  A$_sms_manager$2879                _sms_manager
      00000CE9  A$_sms_manager$2880                _sms_manager
-     00000CEA  A$_sms_manager$2881                _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 36.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000CEA  A$_sms_manager$2881                _sms_manager
      00000CED  A$_sms_manager$2882                _sms_manager
      00000CEE  A$_sms_manager$2883                _sms_manager
      00000CEF  A$_sms_manager$2888                _sms_manager
@@ -2134,16 +2135,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00000D16  A$_sms_manager$2949                _sms_manager
      00000D17  A$_sms_manager$2950                _sms_manager
      00000D18  A$_sms_manager$2951                _sms_manager
-     00000D19  A$_sms_manager$2952                _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 37.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000D19  A$_sms_manager$2952                _sms_manager
      00000D1A  A$_sms_manager$2953                _sms_manager
      00000D1B  A$_sms_manager$2954                _sms_manager
      00000D1C  A$_sms_manager$2955                _sms_manager
@@ -2194,16 +2195,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00000D52  A$_sms_manager$3032                _sms_manager
      00000D55  A$_sms_manager$3033                _sms_manager
      00000D56  A$_sms_manager$3034                _sms_manager
-     00000D57  A$_sms_manager$3035                _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 38.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000D57  A$_sms_manager$3035                _sms_manager
      00000D58  A$_sms_manager$3036                _sms_manager
      00000D59  A$_sms_manager$3037                _sms_manager
      00000D5C  A$_sms_manager$3038                _sms_manager
@@ -2254,16 +2255,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00000D9D  A$_sms_manager$3089                _sms_manager
      00000DA0  A$_sms_manager$3090                _sms_manager
      00000DA2  A$_sms_manager$3091                _sms_manager
-     00000DA3  A$_sms_manager$3092                _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 39.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000DA3  A$_sms_manager$3092                _sms_manager
      00000DA4  A$_sms_manager$3093                _sms_manager
      00000DA5  A$_sms_manager$3094                _sms_manager
      00000DA6  A$_sms_manager$3095                _sms_manager
@@ -2314,16 +2315,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00000DEA  A$_sms_manager$3144                _sms_manager
      00000DEB  A$_sms_manager$3145                _sms_manager
      00000DEC  A$_sms_manager$3146                _sms_manager
-     00000DED  A$_sms_manager$3150                _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 40.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000DED  A$_sms_manager$3150                _sms_manager
      00000DED  C$_sms_manager.c$604$1$307         _sms_manager
      00000DF0  A$_sms_manager$3151                _sms_manager
      00000DF2  A$_sms_manager$3152                _sms_manager
@@ -2374,16 +2375,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00000E30  A$_sms_manager$3209                _sms_manager
      00000E31  A$_sms_manager$3210                _sms_manager
      00000E32  A$_sms_manager$3211                _sms_manager
-     00000E35  A$_sms_manager$3212                _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 41.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000E35  A$_sms_manager$3212                _sms_manager
      00000E36  A$_sms_manager$3213                _sms_manager
      00000E37  A$_sms_manager$3214                _sms_manager
      00000E38  A$_sms_manager$3218                _sms_manager
@@ -2434,16 +2435,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00000E71  A$_sms_manager$3266                _sms_manager
      00000E72  A$_sms_manager$3267                _sms_manager
      00000E73  A$_sms_manager$3268                _sms_manager
-     00000E74  A$_sms_manager$3269                _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 42.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000E74  A$_sms_manager$3269                _sms_manager
      00000E75  A$_sms_manager$3270                _sms_manager
      00000E78  A$_sms_manager$3271                _sms_manager
      00000E79  A$_sms_manager$3272                _sms_manager
@@ -2494,16 +2495,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00000EAF  A$_sms_manager$3323                _sms_manager
      00000EB0  A$_sms_manager$3324                _sms_manager
      00000EB1  A$_sms_manager$3325                _sms_manager
-     00000EB2  A$_sms_manager$3326                _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 43.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000EB2  A$_sms_manager$3326                _sms_manager
      00000EB5  A$_sms_manager$3327                _sms_manager
      00000EB6  A$_sms_manager$3328                _sms_manager
      00000EB7  A$_sms_manager$3329                _sms_manager
@@ -2554,16 +2555,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00000EED  A$_sms_manager$3380                _sms_manager
      00000EEE  A$_sms_manager$3381                _sms_manager
      00000EEF  A$_sms_manager$3382                _sms_manager
-     00000EF2  A$_sms_manager$3383                _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 44.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000EF2  A$_sms_manager$3383                _sms_manager
      00000EF3  A$_sms_manager$3384                _sms_manager
      00000EF4  A$_sms_manager$3385                _sms_manager
      00000EF5  A$_sms_manager$3386                _sms_manager
@@ -2614,16 +2615,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00000F72  C$_snd_manager.c$12$1$33           _snd_manager
      00000F72  G$devkit_PSG_STOPPED$0$0           _snd_manager
      00000F72  _devkit_PSG_STOPPED                _snd_manager
-     00000F74  A$_snd_manager$96                  _snd_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 45.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000F74  A$_snd_manager$96                  _snd_manager
      00000F74  C$_snd_manager.c$13$1$33           _snd_manager
      00000F74  XG$devkit_PSG_STOPPED$0$0          _snd_manager
      00000F75  A$_snd_manager$109                 _snd_manager
@@ -2674,16 +2675,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00000F8A  XG$devkit_PSGPlay$0$0              _snd_manager
      00000F8B  A$_snd_manager$209                 _snd_manager
      00000F8B  C$_snd_manager.c$37$1$39           _snd_manager
-     00000F8B  C$_snd_manager.c$39$1$41           _snd_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 46.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000F8B  C$_snd_manager.c$39$1$41           _snd_manager
      00000F8B  C$_snd_manager.c$40$1$41           _snd_manager
      00000F8B  G$devkit_PSGCancelLoop$0$0         _snd_manager
      00000F8B  XG$devkit_PSGCancelLoop$0$0        _snd_manager
@@ -2734,16 +2735,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00000FA7  A$_snd_manager$301                 _snd_manager
      00000FA8  A$_snd_manager$302                 _snd_manager
      00000FAB  A$_snd_manager$303                 _snd_manager
-     00000FAC  A$_snd_manager$308                 _snd_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 47.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000FAC  A$_snd_manager$308                 _snd_manager
      00000FAC  C$_snd_manager.c$60$1$51           _snd_manager
      00000FAC  XG$devkit_PSGSetMusicVolumeAtten   _snd_manager
      00000FAD  A$_snd_manager$321                 _snd_manager
@@ -2794,16 +2795,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00000FD7  C$_snd_manager.c$73$1$57           _snd_manager
      00000FD7  G$devkit_PSGSFXCancelLoop$0$0      _snd_manager
      00000FD7  XG$devkit_PSGSFXCancelLoop$0$0     _snd_manager
-     00000FD7  _devkit_PSGSFXCancelLoop           _snd_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 48.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000FD7  _devkit_PSGSFXCancelLoop           _snd_manager
      00000FDA  A$_snd_manager$404                 _snd_manager
      00000FDA  C$_snd_manager.c$74$1$57           _snd_manager
      00000FDA  C$_snd_manager.c$76$1$59           _snd_manager
@@ -2854,16 +2855,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00000FEE  A$asm_manager$60                   asm_manager
      00000FF0  A$asm_manager$61                   asm_manager
      00000FF2  A$asm_manager$62                   asm_manager
-     00000FF4  A$asm_manager$63                   asm_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 49.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000FF4  A$asm_manager$63                   asm_manager
      00000FF7  A$asm_manager$65                   asm_manager
      00000FF9  A$asm_manager$66                   asm_manager
      00000FFB  A$asm_manager$67                   asm_manager
@@ -2914,16 +2915,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00001030  A$content_manager$109              content_manager
      00001031  A$content_manager$117              content_manager
      00001031  C$content_manager.c$20$1_0$67      content_manager
-     00001031  XG$engine_content_manager_splash   content_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 50.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00001031  XG$engine_content_manager_splash   content_manager
      00001032  A$content_manager$130              content_manager
      00001032  C$content_manager.c$22$1_0$68      content_manager
      00001032  C$content_manager.c$24$1_0$68      content_manager
@@ -2974,16 +2975,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00001067  C$content_manager.c$37$1_0$71      content_manager
      00001067  Fcontent_manager$load_tile$0$0     content_manager
      0000106A  A$content_manager$206              content_manager
-     0000106B  A$content_manager$207              content_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 51.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     0000106B  A$content_manager$207              content_manager
      0000106C  A$content_manager$208              content_manager
      0000106D  A$content_manager$209              content_manager
      0000106E  A$content_manager$210              content_manager
@@ -3034,16 +3035,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      000010B1  A$font_manager$80                  font_manager
      000010B4  A$font_manager$81                  font_manager
      000010B5  A$font_manager$82                  font_manager
-     000010B8  A$font_manager$83                  font_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 52.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     000010B8  A$font_manager$83                  font_manager
      000010B9  A$font_manager$84                  font_manager
      000010BA  A$font_manager$88                  font_manager
      000010BA  C$font_manager.c$17$1_0$70         font_manager
@@ -3094,16 +3095,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00001100  A$font_manager$155                 font_manager
      00001101  A$font_manager$156                 font_manager
      00001104  A$font_manager$157                 font_manager
-     00001105  A$font_manager$158                 font_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 53.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00001105  A$font_manager$158                 font_manager
      00001106  A$font_manager$159                 font_manager
      00001107  A$font_manager$160                 font_manager
      00001108  A$font_manager$161                 font_manager
@@ -3154,16 +3155,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00001147  A$font_manager$228                 font_manager
      0000114A  A$font_manager$229                 font_manager
      0000114E  A$font_manager$234                 font_manager
-     0000114E  C$font_manager.c$49$2_0$75         font_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 54.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     0000114E  C$font_manager.c$49$2_0$75         font_manager
      00001151  A$font_manager$235                 font_manager
      00001152  A$font_manager$236                 font_manager
      00001155  A$font_manager$237                 font_manager
@@ -3214,16 +3215,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      000011A2  A$font_manager$295                 font_manager
      000011A2  C$font_manager.c$59$4_0$78         font_manager
      000011A4  A$font_manager$300                 font_manager
-     000011A4  C$font_manager.c$62$3_0$77         font_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 55.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     000011A4  C$font_manager.c$62$3_0$77         font_manager
      000011A7  A$font_manager$301                 font_manager
      000011AA  A$font_manager$302                 font_manager
      000011AD  A$font_manager$303                 font_manager
@@ -3274,16 +3275,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      000011ED  A$font_manager$367                 font_manager
      000011EE  A$font_manager$368                 font_manager
      000011F1  A$font_manager$369                 font_manager
-     000011F2  A$font_manager$373                 font_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 56.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     000011F2  A$font_manager$373                 font_manager
      000011F2  C$font_manager.c$76$3_0$82         font_manager
      000011F5  A$font_manager$374                 font_manager
      000011F6  A$font_manager$375                 font_manager
@@ -3334,16 +3335,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00001246  A$font_manager$429                 font_manager
      00001249  A$font_manager$430                 font_manager
      0000124C  A$font_manager$431                 font_manager
-     0000124D  A$font_manager$432                 font_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 57.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     0000124D  A$font_manager$432                 font_manager
      0000124E  A$font_manager$433                 font_manager
      00001251  A$font_manager$434                 font_manager
      00001252  A$font_manager$435                 font_manager
@@ -3394,16 +3395,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00001286  A$input_manager$108                input_manager
      00001287  A$input_manager$109                input_manager
      0000128A  A$input_manager$110                input_manager
-     0000128B  A$input_manager$118                input_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 58.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     0000128B  A$input_manager$118                input_manager
      0000128B  C$input_manager.c$23$1_0$68        input_manager
      0000128B  XG$engine_input_manager_hold_up$   input_manager
      0000128C  A$input_manager$131                input_manager
@@ -3454,16 +3455,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      000012B0  C$input_manager.c$40$1_0$73        input_manager
      000012B0  C$input_manager.c$42$1_0$73        input_manager
      000012B0  G$engine_input_manager_hold_fire   input_manager
-     000012B0  _engine_input_manager_hold_fire2   input_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 59.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     000012B0  _engine_input_manager_hold_fire2   input_manager
      000012B3  A$input_manager$228                input_manager
      000012B4  A$input_manager$229                input_manager
      000012B7  A$input_manager$230                input_manager
@@ -3514,16 +3515,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      000012DC  A$input_manager$334                input_manager
      000012DC  C$input_manager.c$61$1_0$77        input_manager
      000012DC  XG$engine_input_manager_move_rig   input_manager
-     000012DD  A$input_manager$347                input_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 60.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     000012DD  A$input_manager$347                input_manager
      000012DD  C$input_manager.c$62$1_0$78        input_manager
      000012DD  C$input_manager.c$64$1_0$78        input_manager
      000012DD  G$engine_input_manager_move_fire   input_manager
@@ -3574,16 +3575,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      00001329  A$input_manager$419                input_manager
      0000132A  A$input_manager$421                input_manager
      0000132C  A$input_manager$429                input_manager
-     0000132C  C$input_manager.c$75$1_0$81        input_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 61.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     0000132C  C$input_manager.c$75$1_0$81        input_manager
      0000132C  XFinput_manager$engine_input_man   input_manager
      0000132D  A$input_manager$442                input_manager
      0000132D  C$input_manager.c$76$1_0$83        input_manager
@@ -3634,16 +3635,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      0000136E  C$screen_manager.c$34$1_0$8        screen_manager
      0000136E  G$engine_screen_manager_update$0   screen_manager
      0000136E  _engine_screen_manager_update      screen_manager
-     00001371  A$screen_manager$134               screen_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 62.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00001371  A$screen_manager$134               screen_manager
      00001375  A$screen_manager$135               screen_manager
      00001378  A$screen_manager$136               screen_manager
      0000137A  A$screen_manager$140               screen_manager
@@ -3694,16 +3695,16 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      000013BB  A$func_screen$71                   func_screen
      000013BB  C$func_screen.c$8$1_0$6            func_screen
      000013BB  XG$screen_func_screen_load$0$0     func_screen
-     000013BC  Ffunc_screen$__str_0$0_0$0         func_screen
 ASxxxx Linker V03.00 + NoICE + sdld,  page 63.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     000013BC  Ffunc_screen$__str_0$0_0$0         func_screen
      000013CC  A$func_screen$88                   func_screen
      000013CC  C$func_screen.c$10$1_0$8           func_screen
      000013CC  C$func_screen.c$12$1_0$8           func_screen
@@ -3754,104 +3755,103 @@ _CODE                               00000200    00001BD1 =        7121. bytes (R
      000013FD  A$test_screen$60                   test_screen
      000013FE  A$test_screen$61                   test_screen
      00001401  A$test_screen$62                   test_screen
-     00001402  A$test_screen$63                   test_screen
 ASxxxx Linker V03.00 + NoICE + sdld,  page 64.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00001402  A$test_screen$63                   test_screen
      00001403  A$test_screen$71                   test_screen
      00001403  C$test_screen.c$8$1_0$6            test_screen
      00001403  XG$screen_test_screen_load$0$0     test_screen
      00001404  Ftest_screen$__str_0$0_0$0         test_screen
-     00001412  A$test_screen$88                   test_screen
-     00001412  C$test_screen.c$10$1_0$8           test_screen
-     00001412  C$test_screen.c$12$1_0$8           test_screen
-     00001412  G$screen_test_screen_update$0$0    test_screen
-     00001412  _screen_test_screen_update         test_screen
-     00001413  A$test_screen$89                   test_screen
-     00001414  A$test_screen$90                   test_screen
-     00001415  A$test_screen$91                   test_screen
-     00001416  A$test_screen$92                   test_screen
-     00001418  A$test_screen$100                  test_screen
-     00001418  C$test_screen.c$13$1_0$8           test_screen
-     00001418  XG$screen_test_screen_update$0$0   test_screen
-     00001419  _SMS_reserveSprite                 SMSlib_spriteAdv
-     0000143A  _SMS_updateSpritePosition          SMSlib_spriteAdv
-     0000147C  _SMS_updateSpriteImage             SMSlib_spriteAdv
-     00001496  _SMS_hideSprite                    SMSlib_spriteAdv
-     000014A5  __divuint                          
-     000014AD  __divuchar                         
-     000014B4  __divu8                            
-     000014B7  __divu16                           
-     000014E6  _UNSAFE_SMS_copySpritestoSAT       SMSlib_UNSAFE
-     000014FE  _UNSAFE_SMS_VRAMmemcpy32           SMSlib_UNSAFE
-     0000151B  _UNSAFE_SMS_VRAMmemcpy64           SMSlib_UNSAFE
-     00001538  _UNSAFE_SMS_VRAMmemcpy128          SMSlib_UNSAFE
-     00001555  _SMS_init                          SMSlib
-     000015A9  _VDPReg_init                       SMSlib
-     000015B4  _SMS_VDPType                       SMSlib
-     000015BC  _SMS_VDPturnOnFeature              SMSlib
-     000015D3  _SMS_VDPturnOffFeature             SMSlib
-     000015EC  _SMS_setBGScrollX                  SMSlib
-     000015F6  _SMS_setBGScrollY                  SMSlib
-     00001600  _SMS_setBackdropColor              SMSlib
-     0000160A  _SMS_useFirstHalfTilesforSprites   SMSlib
-     0000161E  _SMS_setSpriteMode                 SMSlib
-     00001663  _SMS_setBGPaletteColor             SMSlib
-     00001677  _SMS_setSpritePaletteColor         SMSlib
-     0000168B  _SMS_loadBGPalette                 SMSlib
-     0000169F  _SMS_loadSpritePalette             SMSlib
-     000016B3  _SMS_setColor                      SMSlib
-     000016B7  _SMS_initSprites                   SMSlib
-     000016BD  _SMS_addSprite                     SMSlib
-     00001712  _SMS_finalizeSprites               SMSlib
-     00001724  _SMS_copySpritestoSAT              SMSlib
-     0000174D  _SMS_waitForVBlank                 SMSlib
-     0000175A  _SMS_getKeysStatus                 SMSlib
-     0000175E  _SMS_getKeysPressed                SMSlib
-     0000177B  _SMS_getKeysHeld                   SMSlib
+     00001415  A$test_screen$88                   test_screen
+     00001415  C$test_screen.c$10$1_0$8           test_screen
+     00001415  C$test_screen.c$12$1_0$8           test_screen
+     00001415  G$screen_test_screen_update$0$0    test_screen
+     00001415  _screen_test_screen_update         test_screen
+     00001416  A$test_screen$89                   test_screen
+     00001417  A$test_screen$90                   test_screen
+     00001418  A$test_screen$91                   test_screen
+     00001419  A$test_screen$92                   test_screen
+     0000141B  A$test_screen$100                  test_screen
+     0000141B  C$test_screen.c$13$1_0$8           test_screen
+     0000141B  XG$screen_test_screen_update$0$0   test_screen
+     0000141C  _SMS_reserveSprite                 SMSlib_spriteAdv
+     0000143D  _SMS_updateSpritePosition          SMSlib_spriteAdv
+     0000147F  _SMS_updateSpriteImage             SMSlib_spriteAdv
+     00001499  _SMS_hideSprite                    SMSlib_spriteAdv
+     000014A8  __divuint                          
+     000014B0  __divuchar                         
+     000014B7  __divu8                            
+     000014BA  __divu16                           
+     000014E9  _UNSAFE_SMS_copySpritestoSAT       SMSlib_UNSAFE
+     00001501  _UNSAFE_SMS_VRAMmemcpy32           SMSlib_UNSAFE
+     0000151E  _UNSAFE_SMS_VRAMmemcpy64           SMSlib_UNSAFE
+     0000153B  _UNSAFE_SMS_VRAMmemcpy128          SMSlib_UNSAFE
+     00001558  _SMS_init                          SMSlib
+     000015AC  _VDPReg_init                       SMSlib
+     000015B7  _SMS_VDPType                       SMSlib
+     000015BF  _SMS_VDPturnOnFeature              SMSlib
+     000015D6  _SMS_VDPturnOffFeature             SMSlib
+     000015EF  _SMS_setBGScrollX                  SMSlib
+     000015F9  _SMS_setBGScrollY                  SMSlib
+     00001603  _SMS_setBackdropColor              SMSlib
+     0000160D  _SMS_useFirstHalfTilesforSprites   SMSlib
+     00001621  _SMS_setSpriteMode                 SMSlib
+     00001666  _SMS_setBGPaletteColor             SMSlib
+     0000167A  _SMS_setSpritePaletteColor         SMSlib
+     0000168E  _SMS_loadBGPalette                 SMSlib
+     000016A2  _SMS_loadSpritePalette             SMSlib
+     000016B6  _SMS_setColor                      SMSlib
+     000016BA  _SMS_initSprites                   SMSlib
+     000016C0  _SMS_addSprite                     SMSlib
+     00001715  _SMS_finalizeSprites               SMSlib
+     00001727  _SMS_copySpritestoSAT              SMSlib
+     00001750  _SMS_waitForVBlank                 SMSlib
+     0000175D  _SMS_getKeysStatus                 SMSlib
+     00001761  _SMS_getKeysPressed                SMSlib
 ASxxxx Linker V03.00 + NoICE + sdld,  page 65.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001BD1 =        7121. bytes (REL,CON)
+_CODE                               00000200    00001BD4 =        7124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00001792  _SMS_getKeysReleased               SMSlib
-     000017AF  _SMS_queryPauseRequested           SMSlib
-     000017B7  _SMS_resetPauseRequest             SMSlib
-     000017BD  _SMS_setLineInterruptHandler       SMSlib
-     000017CE  _SMS_setLineCounter                SMSlib
-     000017DD  _SMS_getVCount                     SMSlib
-     000017E1  _SMS_getHCount                     SMSlib
-     000017E5  _SMS_isr                           SMSlib
-     0000181B  _SMS_nmi_isr                       SMSlib
-     0000182E  _SMS_setClippingWindow             SMSlib_spriteClip
-     0000184F  _SMS_addSpriteClipping             SMSlib_spriteClip
-     00001917  _SMS_VRAMmemset                    SMSlib_VRAMmemset
-     0000193C  _SMS_VRAMmemsetW                   SMSlib_VRAMmemset
-     0000196C  _SMS_loadBGPaletteHalfBrightness   SMSlib_paletteAdv
-     00001983  _SMS_zeroBGPalette                 SMSlib_paletteAdv
-     00001997  _SMS_loadSpritePaletteHalfBright   SMSlib_paletteAdv
-     000019AE  _SMS_zeroSpritePalette             SMSlib_paletteAdv
-     000019C2  _SMS_loadTiles                     SMSlib_loadTiles
-     000019F3  _SMS_VRAMmemcpy                    SMSlib_VRAMmemcpy
-     00001A20  _SMS_VRAMmemcpy_brief              SMSlib_VRAMmemcpy
-     00001A48  _SMS_loadSTMcompressedTileMapAre   SMSlib_STMcomp
-     00001C29  ___sdcc_call_hl                    
-     00001C2A  _SMS_loadPSGaidencompressedTiles   SMSlib_PSGaiden
-     00001D0C  _SMS_loadTileMapArea               SMSlib_loadTileMapArea
-     00001D81  _SMS_loadTileMap                   SMSlib_loadTileMap
-     00001DBA  __moduchar                         
-     00001DC6  __moduint                          
-
+     0000177E  _SMS_getKeysHeld                   SMSlib
+     00001795  _SMS_getKeysReleased               SMSlib
+     000017B2  _SMS_queryPauseRequested           SMSlib
+     000017BA  _SMS_resetPauseRequest             SMSlib
+     000017C0  _SMS_setLineInterruptHandler       SMSlib
+     000017D1  _SMS_setLineCounter                SMSlib
+     000017E0  _SMS_getVCount                     SMSlib
+     000017E4  _SMS_getHCount                     SMSlib
+     000017E8  _SMS_isr                           SMSlib
+     0000181E  _SMS_nmi_isr                       SMSlib
+     00001831  _SMS_setClippingWindow             SMSlib_spriteClip
+     00001852  _SMS_addSpriteClipping             SMSlib_spriteClip
+     0000191A  _SMS_VRAMmemset                    SMSlib_VRAMmemset
+     0000193F  _SMS_VRAMmemsetW                   SMSlib_VRAMmemset
+     0000196F  _SMS_loadBGPaletteHalfBrightness   SMSlib_paletteAdv
+     00001986  _SMS_zeroBGPalette                 SMSlib_paletteAdv
+     0000199A  _SMS_loadSpritePaletteHalfBright   SMSlib_paletteAdv
+     000019B1  _SMS_zeroSpritePalette             SMSlib_paletteAdv
+     000019C5  _SMS_loadTiles                     SMSlib_loadTiles
+     000019F6  _SMS_VRAMmemcpy                    SMSlib_VRAMmemcpy
+     00001A23  _SMS_VRAMmemcpy_brief              SMSlib_VRAMmemcpy
+     00001A4B  _SMS_loadSTMcompressedTileMapAre   SMSlib_STMcomp
+     00001C2C  ___sdcc_call_hl                    
+     00001C2D  _SMS_loadPSGaidencompressedTiles   SMSlib_PSGaiden
+     00001D0F  _SMS_loadTileMapArea               SMSlib_loadTileMapArea
+     00001D84  _SMS_loadTileMap                   SMSlib_loadTileMap
+     00001DBD  __moduchar                         
+     00001DC9  __moduint                          
 ASxxxx Linker V03.00 + NoICE + sdld,  page 66.
 Hexadecimal  [32-Bits]
 
@@ -3920,33 +3920,33 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_INITIALIZER                        00001DD1    0000002C =          44. bytes (REL,CON)
+_INITIALIZER                        00001DD4    00000030 =          48. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00001DD1  Fbank2$__xinit_locale_object_tex   bank2
-     00001DE3  Fbank2$__xinit_locale_object_bla   bank2
-     00001DE9  Fbank2$__xinit_locale_object_dif   bank2
-     00001DF1  Finput_manager$__xinit_curr_joyp   input_manager
-     00001DF3  Finput_manager$__xinit_prev_joyp   input_manager
-
+     00001DD4  Fbank2$__xinit_locale_object_tex   bank2
+     00001DE6  Fbank2$__xinit_locale_object_bla   bank2
+     00001DEC  Fbank2$__xinit_locale_object_dif   bank2
+     00001DF4  Ffixedbank$__xinit_steven_object   fixedbank
+     00001DF8  Finput_manager$__xinit_curr_joyp   input_manager
+     00001DFA  Finput_manager$__xinit_prev_joyp   input_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 73.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSINIT                             00001DFD    0000000F =          15. bytes (REL,CON)
+_GSINIT                             00001E04    0000000F =          15. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00001DFD  gsinit                             crt0
+     00001E04  gsinit                             crt0
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 74.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSFINAL                            00001E0C    00000001 =           1. bytes (REL,CON)
+_GSFINAL                            00001E13    00000001 =           1. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -4009,7 +4009,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_INITIALIZED                        0000C16A    0000002C =          44. bytes (REL,CON)
+_INITIALIZED                        0000C16A    00000030 =          48. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -4019,15 +4019,18 @@ _INITIALIZED                        0000C16A    0000002C =          44. bytes (R
      0000C17C  _locale_object_blank               bank2
      0000C182  G$locale_object_difficulty$0_0$0   bank2
      0000C182  _locale_object_difficulty          bank2
-     0000C18A  Finput_manager$curr_joypad1$0_0$   input_manager
-     0000C18C  Finput_manager$prev_joypad1$0_0$   input_manager
-     0000C18E  _VDPReg                            SMSlib
-     0000C190  _spritesHeight                     SMSlib
-     0000C191  _spritesWidth                      SMSlib
-     0000C192  _clipWin_x0                        SMSlib_spriteClip
-     0000C193  _clipWin_y0                        SMSlib_spriteClip
-     0000C194  _clipWin_x1                        SMSlib_spriteClip
-     0000C195  _clipWin_y1                        SMSlib_spriteClip
+     0000C18A  G$steven_object_texts$0_0$0        fixedbank
+     0000C18A  _steven_object_texts               fixedbank
+     0000C18E  Finput_manager$curr_joypad1$0_0$   input_manager
+     0000C190  Finput_manager$prev_joypad1$0_0$   input_manager
+     0000C192  _VDPReg                            SMSlib
+     0000C194  _spritesHeight                     SMSlib
+     0000C195  _spritesWidth                      SMSlib
+     0000C196  _clipWin_x0                        SMSlib_spriteClip
+     0000C197  _clipWin_y0                        SMSlib_spriteClip
+     0000C198  _clipWin_x1                        SMSlib_spriteClip
+     0000C199  _clipWin_y1                        SMSlib_spriteClip
+
 ASxxxx Linker V03.00 + NoICE + sdld,  page 77.
 Hexadecimal  [32-Bits]
 
@@ -4783,12 +4786,11 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK63                             00008000    00000008 =           8. bytes (REL,CON)
+_BANK63                             00008000    00000011 =          17. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$bank63_txt$0_0$0                 bank63
-     00008000  _bank63_txt                        bank63
+     00008000  Ffixedbank$__str_0$0_0$0           fixedbank
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 139.
 Hexadecimal  [32-Bits]
@@ -4857,68 +4859,68 @@ Files Linked                              [ module(s) ]
 ../crt0/crt0_sms.rel                      [ crt0 ]
 main.rel                                  [ main ]
 ../lib/PSGlib.rel                         [ PSGlib ]
-banks\bank2.rel                           [ bank2 ]
-banks\bank3.rel                           [ bank3 ]
-banks\bank4.rel                           [ bank4 ]
-banks\bank5.rel                           [ bank5 ]
-banks\bank6.rel                           [ bank6 ]
-banks\bank7.rel                           [ bank7 ]
-banks\bank8.rel                           [ bank8 ]
-banks\bank9.rel                           [ bank9 ]
-banks\bank10.rel                          [ bank10 ]
-banks\bank11.rel                          [ bank11 ]
-banks\bank12.rel                          [ bank12 ]
-banks\bank13.rel                          [ bank13 ]
-banks\bank14.rel                          [ bank14 ]
-banks\bank15.rel                          [ bank15 ]
-banks\bank16.rel                          [ bank16 ]
-banks\bank17.rel                          [ bank17 ]
-banks\bank18.rel                          [ bank18 ]
-banks\bank19.rel                          [ bank19 ]
-banks\bank20.rel                          [ bank20 ]
-banks\bank21.rel                          [ bank21 ]
-banks\bank22.rel                          [ bank22 ]
-banks\bank23.rel                          [ bank23 ]
-banks\bank24.rel                          [ bank24 ]
-banks\bank25.rel                          [ bank25 ]
-banks\bank26.rel                          [ bank26 ]
-banks\bank27.rel                          [ bank27 ]
-banks\bank28.rel                          [ bank28 ]
-banks\bank29.rel                          [ bank29 ]
-banks\bank30.rel                          [ bank30 ]
-banks\bank31.rel                          [ bank31 ]
-banks\bank32.rel                          [ bank32 ]
-banks\bank33.rel                          [ bank33 ]
-banks\bank34.rel                          [ bank34 ]
-banks\bank35.rel                          [ bank35 ]
-banks\bank36.rel                          [ bank36 ]
-banks\bank37.rel                          [ bank37 ]
-banks\bank38.rel                          [ bank38 ]
-banks\bank39.rel                          [ bank39 ]
-banks\bank40.rel                          [ bank40 ]
-banks\bank41.rel                          [ bank41 ]
-banks\bank42.rel                          [ bank42 ]
-banks\bank43.rel                          [ bank43 ]
-banks\bank44.rel                          [ bank44 ]
-banks\bank45.rel                          [ bank45 ]
-banks\bank46.rel                          [ bank46 ]
-banks\bank47.rel                          [ bank47 ]
-banks\bank48.rel                          [ bank48 ]
-banks\bank49.rel                          [ bank49 ]
-banks\bank50.rel                          [ bank50 ]
-banks\bank51.rel                          [ bank51 ]
-banks\bank52.rel                          [ bank52 ]
-banks\bank53.rel                          [ bank53 ]
-banks\bank54.rel                          [ bank54 ]
-banks\bank55.rel                          [ bank55 ]
-banks\bank56.rel                          [ bank56 ]
-banks\bank57.rel                          [ bank57 ]
-banks\bank58.rel                          [ bank58 ]
-banks\bank59.rel                          [ bank59 ]
-banks\bank60.rel                          [ bank60 ]
-banks\bank61.rel                          [ bank61 ]
-banks\bank62.rel                          [ bank62 ]
-banks\bank63.rel                          [ bank63 ]
+banks/bank2.rel                           [ bank2 ]
+banks/bank3.rel                           [ bank3 ]
+banks/bank4.rel                           [ bank4 ]
+banks/bank5.rel                           [ bank5 ]
+banks/bank6.rel                           [ bank6 ]
+banks/bank7.rel                           [ bank7 ]
+banks/bank8.rel                           [ bank8 ]
+banks/bank9.rel                           [ bank9 ]
+banks/bank10.rel                          [ bank10 ]
+banks/bank11.rel                          [ bank11 ]
+banks/bank12.rel                          [ bank12 ]
+banks/bank13.rel                          [ bank13 ]
+banks/bank14.rel                          [ bank14 ]
+banks/bank15.rel                          [ bank15 ]
+banks/bank16.rel                          [ bank16 ]
+banks/bank17.rel                          [ bank17 ]
+banks/bank18.rel                          [ bank18 ]
+banks/bank19.rel                          [ bank19 ]
+banks/bank20.rel                          [ bank20 ]
+banks/bank21.rel                          [ bank21 ]
+banks/bank22.rel                          [ bank22 ]
+banks/bank23.rel                          [ bank23 ]
+banks/bank24.rel                          [ bank24 ]
+banks/bank25.rel                          [ bank25 ]
+banks/bank26.rel                          [ bank26 ]
+banks/bank27.rel                          [ bank27 ]
+banks/bank28.rel                          [ bank28 ]
+banks/bank29.rel                          [ bank29 ]
+banks/bank30.rel                          [ bank30 ]
+banks/bank31.rel                          [ bank31 ]
+banks/bank32.rel                          [ bank32 ]
+banks/bank33.rel                          [ bank33 ]
+banks/bank34.rel                          [ bank34 ]
+banks/bank35.rel                          [ bank35 ]
+banks/bank36.rel                          [ bank36 ]
+banks/bank37.rel                          [ bank37 ]
+banks/bank38.rel                          [ bank38 ]
+banks/bank39.rel                          [ bank39 ]
+banks/bank40.rel                          [ bank40 ]
+banks/bank41.rel                          [ bank41 ]
+banks/bank42.rel                          [ bank42 ]
+banks/bank43.rel                          [ bank43 ]
+banks/bank44.rel                          [ bank44 ]
+banks/bank45.rel                          [ bank45 ]
+banks/bank46.rel                          [ bank46 ]
+banks/bank47.rel                          [ bank47 ]
+banks/bank48.rel                          [ bank48 ]
+banks/bank49.rel                          [ bank49 ]
+banks/bank50.rel                          [ bank50 ]
+banks/bank51.rel                          [ bank51 ]
+banks/bank52.rel                          [ bank52 ]
+banks/bank53.rel                          [ bank53 ]
+banks/bank54.rel                          [ bank54 ]
+banks/bank55.rel                          [ bank55 ]
+banks/bank56.rel                          [ bank56 ]
+banks/bank57.rel                          [ bank57 ]
+banks/bank58.rel                          [ bank58 ]
+banks/bank59.rel                          [ bank59 ]
+banks/bank60.rel                          [ bank60 ]
+banks/bank61.rel                          [ bank61 ]
+banks/bank62.rel                          [ bank62 ]
+banks/fixedbank.rel                       [ fixedbank ]
 devkit/_sms_manager.rel                   [ _sms_manager ]
 devkit/_snd_manager.rel                   [ _snd_manager ]
 engine/asm_manager.rel                    [ asm_manager ]
