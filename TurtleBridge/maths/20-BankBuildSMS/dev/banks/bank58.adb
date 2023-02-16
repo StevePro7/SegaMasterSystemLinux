@@ -1,2 +1,2 @@
 M:bank58
-S:G$bank58_txt$0_0$0({8}DA8d,SC:U),D,0,0
+S:G$Riff__Splash__Screen__08_wav_pcmenc$0_0$0({16015}DA16015d,SC:U),D,0,0
