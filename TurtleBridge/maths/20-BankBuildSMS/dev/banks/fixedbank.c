@@ -3,6 +3,13 @@
 //#include "bank5.h"
 //#include "bank6.h"
 
+const unsigned char steven_object_numbers[] =
+{
+	17,
+	34,
+	51,
+};
+
 const unsigned char *steven_object_texts[] =
 {
 	"STEVEPRO",

@@ -1,5 +1,5 @@
 XL3
-H A areas 6 global symbols
+H A areas 8 global symbols
 M fixedbank
 O -mz80
 S .__.ABS. Def000000
@@ -13,8 +13,10 @@ A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
-A _BANK63 size 11 flags 0 addr 0
-S Ffixedbank$__str_0$0_0$0 Def000000
+A _BANK63 size 14 flags 0 addr 0
+S _steven_object_numbers Def000000
+S G$steven_object_numbers$0_0$0 Def000000
+S Ffixedbank$__str_0$0_0$0 Def000003
 A _INITIALIZER size 4 flags 0 addr 0
 S Ffixedbank$__xinit_steven_object_texts$0_0$0 Def000000
 A _CABS size 0 flags 8 addr 0
@@ -24,13 +26,17 @@ T 00 00 00
 R 00 00 02 00
 T 00 00 00
 R 00 00 07 00
-T 00 00 00 53 54 45 56 45 50 52 4F 00
+T 00 00 00 11 22 33
 R 00 00 07 00
-T 09 00 00
+T 03 00 00
 R 00 00 07 00
-T 09 00 00 53 54 55 44 49 4F 53 00
+T 03 00 00 53 54 45 56 45 50 52 4F 00
+R 00 00 07 00
+T 0C 00 00
+R 00 00 07 00
+T 0C 00 00 53 54 55 44 49 4F 53 00
 R 00 00 07 00
 T 00 00 00
 R 00 00 08 00
-T 00 00 00 00 00 09 00
+T 00 00 00 03 00 0C 00
 R 00 00 08 00 00 03 07 00 00 05 07 00
