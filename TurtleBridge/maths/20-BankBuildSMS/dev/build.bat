@@ -31,6 +31,11 @@ cd engine
 "C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 screen_manager.c
 cd ..
 
+cd screen
+"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 func_screen.c
+"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 none_screen.c
+"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 test_screen.c
+cd ..
 
 "C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
 
@@ -71,11 +76,9 @@ banks\bank60.rel banks\bank61.rel banks\bank62.rel banks\bank63.rel ^
 devkit/_sms_manager.rel ^
 devkit/_snd_manager.rel ^
 engine/asm_manager.rel ^
-engine/content_manager.rel ^
-engine/enum_manager.rel engine/font_manager.rel ^
-engine/global_manager.rel ^
-engine/input_manager.rel ^
-engine/screen_manager.rel
+engine/content_manager.rel engine/enum_manager.rel engine/font_manager.rel ^
+engine/global_manager.rel engine/input_manager.rel engine/screen_manager.rel ^
+screen/func_screen.rel screen/none_screen.rel screen/test_screen.rel
 
 
 :: Execute
@@ -100,6 +103,10 @@ cd ..
 ::cd object
 ::if exist "*.asm" del "*.asm" > nul; if exist "*.lst" del "*.lst" > nul; if exist "*.sym" del "*.sym" > nul
 ::cd ..
+
+cd screen
+if exist "*.asm" del "*.asm" > nul; if exist "*.lst" del "*.lst" > nul; if exist "*.sym" del "*.sym" > nul
+cd ..
 
 if exist "*.asm" del "*.asm" > nul
 if exist "*.ihx" del "*.ihx" > nul

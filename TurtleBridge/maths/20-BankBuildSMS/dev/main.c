@@ -2,6 +2,7 @@
 
 void main( void )
 {
+	unsigned char open_screen_type;
 	devkit_SMS_init();
 
 	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_NORMAL() );
@@ -14,6 +15,8 @@ void main( void )
 	engine_content_manager_sprite();
 	devkit_SMS_displayOn();
 
+	open_screen_type = screen_type_test;
+	engine_screen_manager_init( open_screen_type );
 	for( ;; )
 	{
 		devkit_SMS_initSprites();
