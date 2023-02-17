@@ -1,5 +1,5 @@
 XL3
-H A areas 25 global symbols
+H A areas 28 global symbols
 M fixedbank
 O -mz80
 S _Riff_Intro_Hulk_01_wav_pcmenc Ref000000
@@ -8,6 +8,9 @@ S _Riff_Intro_Hulk_02_wav_pcmenc Ref000000
 S _Riff__02_wav_pcmenc Ref000000
 S _Riff_Intro_Hulk_03_wav_pcmenc Ref000000
 S _Riff_Intro_Hulk_04_wav_pcmenc Ref000000
+S _Riff_Intro_Karate_01_wav_pcmenc Ref000000
+S _Riff_Intro_Karate_02_wav_pcmenc Ref000000
+S _Riff_Intro_Karate_03_wav_pcmenc Ref000000
 S _Riff__Splash__Screen__01_wav_pcmenc Ref000000
 S _Riff__Splash__Screen__02_wav_pcmenc Ref000000
 S _Riff__Splash__Screen__03_wav_pcmenc Ref000000
@@ -30,70 +33,74 @@ S _Riff__Title__Screen__09_wav_pcmenc Ref000000
 A _CODE size 0 flags 0 addr 0
 S Ffixedbank$__str_1$0_0$0 Def000000
 A _DATA size 0 flags 0 addr 0
-A _INITIALIZED size 34 flags 0 addr 0
+A _INITIALIZED size 3A flags 0 addr 0
 S _riff_sample_data Def000000
-S _steven_object_texts Def000030
+S _steven_object_texts Def000036
 S G$riff_sample_data$0_0$0 Def000000
-S G$steven_object_texts$0_0$0 Def000030
+S G$steven_object_texts$0_0$0 Def000036
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
-A _BANK63 size 2C flags 0 addr 0
+A _BANK63 size 2F flags 0 addr 0
 S _riff_sample_bank Def000000
 S G$riff_sample_bank$0_0$0 Def000000
-S _steven_object_numbers Def000018
-S G$steven_object_numbers$0_0$0 Def000018
-S Ffixedbank$__str_0$0_0$0 Def00001B
-A _INITIALIZER size 34 flags 0 addr 0
+S _steven_object_numbers Def00001B
+S G$steven_object_numbers$0_0$0 Def00001B
+S Ffixedbank$__str_0$0_0$0 Def00001E
+A _INITIALIZER size 3A flags 0 addr 0
 S Ffixedbank$__xinit_riff_sample_data$0_0$0 Def000000
-S Ffixedbank$__xinit_steven_object_texts$0_0$0 Def000030
+S Ffixedbank$__xinit_steven_object_texts$0_0$0 Def000036
 A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 02 00
 T 00 00 00
 R 00 00 02 00
-T 30 00 00
+T 36 00 00
 R 00 00 02 00
-T 30 00 00
+T 36 00 00
 R 00 00 02 00
 T 00 00 00
 R 00 00 07 00
-T 00 00 00 15 16 17 18 29 2A 2B 2C 2D 2E 2F 30 31
+T 00 00 00 19 1A 1B 15 16 17 18 29 2A 2B 2C 2D 2E
 R 00 00 07 00
-T 0D 00 00 33 34 35 36 37 38 39 3A 3B 0C 0D
+T 0D 00 00 2F 30 31 33 34 35 36 37 38 39 3A 3B 0C
 R 00 00 07 00
-T 18 00 00
-R 00 00 07 00
-T 18 00 00 11 22 33
+T 1A 00 00 0D
 R 00 00 07 00
 T 1B 00 00
 R 00 00 07 00
-T 1B 00 00 53 54 45 56 45 50 52 4F 00
+T 1B 00 00 11 22 33
 R 00 00 07 00
-T 24 00 00
+T 1E 00 00
 R 00 00 07 00
-T 24 00 00 53 54 55 44 49 4F 53 00
+T 1E 00 00 53 54 45 56 45 50 52 4F 00
+R 00 00 07 00
+T 27 00 00
+R 00 00 07 00
+T 27 00 00 53 54 55 44 49 4F 53 00
 R 00 00 07 00
 T 00 00 00
 R 00 00 08 00
 T 00 00 00 00 00 00 00 00 00
-R 00 00 08 00 02 03 00 00 02 05 02 00 02 07 04 00
+R 00 00 08 00 02 03 06 00 02 05 07 00 02 07 08 00
 T 06 00 00 00 00 00 00 00 00
-R 00 00 08 00 02 03 05 00 02 05 10 00 02 07 11 00
+R 00 00 08 00 02 03 00 00 02 05 02 00 02 07 04 00
 T 0C 00 00 00 00 00 00 00 00
-R 00 00 08 00 02 03 12 00 02 05 13 00 02 07 14 00
+R 00 00 08 00 02 03 05 00 02 05 13 00 02 07 14 00
 T 12 00 00 00 00 00 00 00 00
 R 00 00 08 00 02 03 15 00 02 05 16 00 02 07 17 00
 T 18 00 00 00 00 00 00 00 00
-R 00 00 08 00 02 03 18 00 02 05 06 00 02 07 07 00
+R 00 00 08 00 02 03 18 00 02 05 19 00 02 07 1A 00
 T 1E 00 00 00 00 00 00 00 00
-R 00 00 08 00 02 03 08 00 02 05 09 00 02 07 0A 00
+R 00 00 08 00 02 03 1B 00 02 05 09 00 02 07 0A 00
 T 24 00 00 00 00 00 00 00 00
 R 00 00 08 00 02 03 0B 00 02 05 0C 00 02 07 0D 00
 T 2A 00 00 00 00 00 00 00 00
-R 00 00 08 00 02 03 0E 00 02 05 01 00 02 07 03 00
-T 30 00 00
+R 00 00 08 00 02 03 0E 00 02 05 0F 00 02 07 10 00
+T 30 00 00 00 00 00 00 00 00
+R 00 00 08 00 02 03 11 00 02 05 01 00 02 07 03 00
+T 36 00 00
 R 00 00 08 00
-T 30 00 00 1B 00 24 00
+T 36 00 00 1E 00 27 00
 R 00 00 08 00 00 03 07 00 00 05 07 00

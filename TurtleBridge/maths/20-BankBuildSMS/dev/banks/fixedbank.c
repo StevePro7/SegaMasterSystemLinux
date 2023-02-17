@@ -3,6 +3,9 @@
 #include "banK22.h"
 #include "banK23.h"
 #include "banK24.h"
+#include "banK25.h"
+#include "banK26.h"
+#include "banK27.h"
 #include "bank41.h"
 #include "bank42.h"
 #include "bank43.h"
@@ -26,6 +29,11 @@
 
 const unsigned char *riff_sample_data[] =
 {
+	// Karate Kid	bank25-27
+	Riff_Intro_Karate_01_wav_pcmenc,
+	Riff_Intro_Karate_02_wav_pcmenc,
+	Riff_Intro_Karate_03_wav_pcmenc,
+
 	// Hulk Hogan	bank 21-24
 	Riff_Intro_Hulk_01_wav_pcmenc,
 	Riff_Intro_Hulk_02_wav_pcmenc,
@@ -60,6 +68,10 @@ const unsigned char *riff_sample_data[] =
 };
 const unsigned char riff_sample_bank[] =
 {
+	Riff_Intro_Karate_01_wav_pcmenc_bank,
+	Riff_Intro_Karate_02_wav_pcmenc_bank,
+	Riff_Intro_Karate_03_wav_pcmenc_bank,
+
 	Riff_Intro_Hulk_01_wav_pcmenc_bank,
 	Riff_Intro_Hulk_02_wav_pcmenc_bank,
 	Riff_Intro_Hulk_03_wav_pcmenc_bank,
