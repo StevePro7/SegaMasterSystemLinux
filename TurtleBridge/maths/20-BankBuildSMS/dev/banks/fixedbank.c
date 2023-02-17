@@ -10,6 +10,10 @@
 #include "banK28.h"
 #include "banK29.h"
 #include "banK30.h"
+#include "bank31.h"
+#include "bank32.h"
+#include "bank33.h"
+#include "bank34.h"
 #include "bank41.h"
 #include "bank42.h"
 #include "bank43.h"
@@ -33,6 +37,12 @@
 
 const unsigned char *riff_sample_data[] =
 {
+	// Ultimage Warrior	bank 31-34
+	Riff_Intro_Ultimate_01_wav_pcmenc,
+	Riff_Intro_Ultimate_02_wav_pcmenc,
+	Riff_Intro_Ultimate_03_wav_pcmenc,
+	Riff_Intro_Ultimate_04_wav_pcmenc,
+
 	// Wayne World	 bank 20
 	Riff_Sound_Wayne_01_wav_pcmenc,
 
@@ -82,6 +92,11 @@ const unsigned char *riff_sample_data[] =
 };
 const unsigned char riff_sample_bank[] =
 {
+	Riff_Intro_Ultimate_01_wav_pcmenc_bank,
+	Riff_Intro_Ultimate_02_wav_pcmenc_bank,
+	Riff_Intro_Ultimate_03_wav_pcmenc_bank,
+	Riff_Intro_Ultimate_04_wav_pcmenc_bank,
+
 	Riff_Sound_Wayne_01_wav_pcmenc_bank,
 
 	Riff_Sound_Eminem_01_wav_pcmenc_bank,
