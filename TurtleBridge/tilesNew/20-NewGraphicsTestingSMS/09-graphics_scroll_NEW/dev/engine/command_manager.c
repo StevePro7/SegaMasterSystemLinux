@@ -9,9 +9,25 @@ unsigned char engine_command_manager_build( unsigned char  state, unsigned char 
 {
 	unsigned char command = COMMAND_NONE_MASK;
 
-	if( input1 )
+	if( !input1 && !input2 )
 	{
-		command |= COMMAND_LEFT_MASK;
+		command |= COMMAND_MIDD_MASK;
+	}
+	else
+	{
+		if( input1 )
+		{
+			command |= COMMAND_LEFT_MASK;
+		}
+		if( input2 )
+		{
+			command |= COMMAND_RGHT_MASK;
+		}
+	}
+
+	if( input3 )
+	{
+//		command |= COMMAND_RGHT_MASK;
 	}
 
 	return command;

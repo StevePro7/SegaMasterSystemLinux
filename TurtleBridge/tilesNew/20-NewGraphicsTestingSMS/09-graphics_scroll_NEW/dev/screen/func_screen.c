@@ -41,13 +41,22 @@ void screen_func_screen_update( unsigned char *screen_type )
 	engine_font_manager_text( "     ", 10, 13 );
 	engine_font_manager_text( "     ", 10, 14 );
 
+	if( ( COMMAND_MIDD_MASK & command ) == COMMAND_MIDD_MASK )
+	{
+		engine_font_manager_text( " MIDD", 10, 10 );
+	}
+	if( ( COMMAND_LEFT_MASK & command ) == COMMAND_LEFT_MASK )
+	{
+		engine_font_manager_text( " LEFT", 10, 10 );
+	}
+	if( ( COMMAND_RGHT_MASK & command ) == COMMAND_RGHT_MASK )
+	{
+		engine_font_manager_text( "RIGHT", 10, 10 );
+	}
+
 	if( COMMAND_NONE_MASK == command )
 	{
 		engine_font_manager_text( " NONE", 10, 10 );
-	}
-	else if( ( COMMAND_LEFT_MASK & command ) == COMMAND_LEFT_MASK )
-	{
-		engine_font_manager_text( " LEFT", 10, 10 );
 	}
 
 	*screen_type = screen_type_func;
