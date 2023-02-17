@@ -1,4 +1,5 @@
 #include "fixedbank.h"
+#include "banK20.h"
 #include "banK21.h"
 #include "banK22.h"
 #include "banK23.h"
@@ -32,6 +33,9 @@
 
 const unsigned char *riff_sample_data[] =
 {
+	// Wayne World	 bank 20
+	Riff_Sound_Wayne_01_wav_pcmenc,
+
 	// Eminem	 bank 30
 	Riff_Sound_Eminem_01_wav_pcmenc,
 
@@ -78,6 +82,8 @@ const unsigned char *riff_sample_data[] =
 };
 const unsigned char riff_sample_bank[] =
 {
+	Riff_Sound_Wayne_01_wav_pcmenc_bank,
+
 	Riff_Sound_Eminem_01_wav_pcmenc_bank,
 
 	Riff_Death_Licence_01_wav_pcmenc_bank,
