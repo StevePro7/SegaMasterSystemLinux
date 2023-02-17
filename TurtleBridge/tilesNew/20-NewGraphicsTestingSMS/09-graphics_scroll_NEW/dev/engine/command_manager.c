@@ -1,5 +1,11 @@
 #include "command_manager.h"
+#include "enum_manager.h"
 #include "global_manager.h"
+
+#ifdef _CONSOLE
+#else
+#pragma disable_warning 261
+#endif
 
 void engine_command_manager_init()
 {
@@ -9,6 +15,7 @@ unsigned char engine_command_manager_build( unsigned char  state, unsigned char 
 {
 	unsigned char command = COMMAND_NONE_MASK;
 
+	// Horizontal movement.
 	if( !input1 && !input2 )
 	{
 		command |= COMMAND_MIDD_MASK;
@@ -25,14 +32,26 @@ unsigned char engine_command_manager_build( unsigned char  state, unsigned char 
 		}
 	}
 
-	if( input3 )
+	// Vertical movement.
+	if( player_state_isonground == state && input3 )
 	{
 		command |= COMMAND_HIGH_MASK;
 	}
-	if( input4 )
+	if( player_state_isintheair == state && input4 )
 	{
 		command |= COMMAND_DOWN_MASK;
 	}
+
+	// Action buttons.
+	if( player_state_isonground == state )
+	{
+
+	}
+	else if( player_state_isonground == state )
+	{
+
+	}
+
 
 	return command;
 }

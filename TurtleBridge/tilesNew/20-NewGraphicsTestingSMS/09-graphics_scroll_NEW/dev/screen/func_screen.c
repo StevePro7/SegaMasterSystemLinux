@@ -15,7 +15,7 @@ void screen_func_screen_load()
 {
 	struct_player_object *po = &global_player_object;
 	po->player_state = player_state_isonground;
-	//po->player_state = player_state_isintheair;
+	po->player_state = player_state_isintheair;
 
 	engine_font_manager_text( "FUNC SCREEN", 10, 2 );
 }
@@ -41,7 +41,7 @@ void screen_func_screen_update( unsigned char *screen_type )
 	engine_font_manager_text( "     ", 10, 13 );
 	engine_font_manager_text( "     ", 10, 14 );
 
-	// Move left, midd, right.
+	// Move left, middle, right.
 	if( ( COMMAND_MIDD_MASK & command ) == COMMAND_MIDD_MASK )
 	{
 		engine_font_manager_text( " MIDD", 10, 10 );
@@ -55,6 +55,7 @@ void screen_func_screen_update( unsigned char *screen_type )
 		engine_font_manager_text( "RIGHT", 10, 10 );
 	}
 
+	// Move up, down.
 	if( ( COMMAND_HIGH_MASK & command ) == COMMAND_HIGH_MASK )
 	{
 		engine_font_manager_text( " HIGH", 10, 11 );
@@ -62,6 +63,20 @@ void screen_func_screen_update( unsigned char *screen_type )
 	if( ( COMMAND_DOWN_MASK & command ) == COMMAND_DOWN_MASK )
 	{
 		engine_font_manager_text( " DOWN", 10, 11 );
+	}
+
+	// Hold button1, button2.
+	if( ( COMMAND_JUMP_MASK & command ) == COMMAND_JUMP_MASK )
+	{
+		engine_font_manager_text( " JUMP", 10, 12 );
+	}
+	if( ( COMMAND_SWAP_MASK & command ) == COMMAND_SWAP_MASK )
+	{
+		engine_font_manager_text( " SWAP", 10, 12 );
+	}
+	if( ( COMMAND_JUMP_MASK & command ) == COMMAND_JUMP_MASK )
+	{
+		engine_font_manager_text( " JUMP", 10, 12 );
 	}
 
 	if( COMMAND_NONE_MASK == command )
