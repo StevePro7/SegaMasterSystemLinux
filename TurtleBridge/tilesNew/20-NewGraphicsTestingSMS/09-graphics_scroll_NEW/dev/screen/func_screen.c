@@ -14,8 +14,8 @@
 void screen_func_screen_load()
 {
 	struct_player_object *po = &global_player_object;
-	po->player_state = player_state_isonground;
-	//po->player_state = player_state_isintheair;
+	//po->player_state = player_state_isonground;
+	po->player_state = player_state_isintheair;
 
 	engine_font_manager_text( "FUNC SCREEN", 10, 2 );
 }
@@ -74,9 +74,9 @@ void screen_func_screen_update( unsigned char *screen_type )
 	{
 		engine_font_manager_text( " SWAP", 10, 12 );
 	}
-	if( ( COMMAND_JUMP_MASK & command ) == COMMAND_JUMP_MASK )
+	if( ( COMMAND_FLIP_MASK & command ) == COMMAND_FLIP_MASK )
 	{
-		engine_font_manager_text( " JUMP", 10, 12 );
+		engine_font_manager_text( " FLIP", 10, 13 );
 	}
 
 	if( COMMAND_NONE_MASK == command )

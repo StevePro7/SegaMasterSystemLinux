@@ -50,6 +50,15 @@ unsigned char engine_command_manager_build( unsigned char  state, unsigned char 
 		{
 			command |= COMMAND_DOWN_MASK;
 		}
+		if( input5 )
+		{
+			command |= COMMAND_SWAP_MASK;
+		}
+		// TODO do I want to prefer swap over flip or let both at the same time??
+		if( input6 )
+		{
+			command |= COMMAND_FLIP_MASK;
+		}
 	}
 
 	return command;
