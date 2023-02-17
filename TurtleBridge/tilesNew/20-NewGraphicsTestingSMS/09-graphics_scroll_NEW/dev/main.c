@@ -58,7 +58,7 @@ static void start()
 	unsigned char open_screen_type;
 
 	devkit_SMS_init();
-	//engine_debug_manager_initcontent();
+	engine_debug_manager_initcontent();
 
 	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_NORMAL() );
 	devkit_SMS_useFirstHalfTilesforSprites( false );
@@ -91,7 +91,7 @@ static void start()
 	//open_screen_type = screen_type_over;
 	//open_screen_type = screen_type_cont;
 	//open_screen_type = screen_type_test;
-	open_screen_type = screen_type_demo;
+	open_screen_type = screen_type_func;
 	//open_screen_type = screen_type_start;
 	//open_screen_type = screen_type_diff;
 	//open_screen_type = screen_type_level;

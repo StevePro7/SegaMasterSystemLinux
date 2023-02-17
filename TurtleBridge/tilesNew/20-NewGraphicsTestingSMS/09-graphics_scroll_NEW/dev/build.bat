@@ -21,6 +21,7 @@ cd engine
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 asm_manager.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 audio_manager.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 collision_manager.c
+"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 command_manager.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 content_manager.c
 "C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 debug_manager.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 enum_manager.c
@@ -106,8 +107,8 @@ banks/bank6.rel  banks/fixedbank.rel ^
 controller.rel ^
 devkit/_sms_manager.rel ^
 devkit/_snd_manager.rel ^
-engine/asm_manager.rel engine/audio_manager.rel engine/collision_manager.rel engine/content_manager.rel engine/debug_manager.rel ^
-engine/enum_manager.rel engine/game_manager.rel engine/font_manager.rel  engine/global_manager.rel ^
+engine/asm_manager.rel engine/audio_manager.rel engine/collision_manager.rel engine/command_manager.rel engine/content_manager.rel ^
+engine/debug_manager.rel engine/enum_manager.rel engine/game_manager.rel engine/font_manager.rel  engine/global_manager.rel ^
 engine/graphics_manager.rel engine/hack_manager.rel engine/input_manager.rel ^
 engine/level_manager.rel engine/player_manager.rel ^
 engine/screen_manager.rel engine/scroll_manager.rel engine/sprite_manager.rel ^
