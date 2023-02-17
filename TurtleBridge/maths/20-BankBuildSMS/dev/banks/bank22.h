@@ -1,4 +1,4 @@
-extern const unsigned char	bank22_txt[];
-#define				bank22_txt_size 8
-#define				bank22_txt_bank 22
+extern const unsigned char	Riff_Intro_Hulk_02_wav_pcmenc[];
+#define				Riff_Intro_Hulk_02_wav_pcmenc_size 15117
+#define				Riff_Intro_Hulk_02_wav_pcmenc_bank 22
 

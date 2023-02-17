@@ -1,4 +1,8 @@
 #include "fixedbank.h"
+#include "banK21.h"
+#include "banK22.h"
+#include "banK23.h"
+#include "banK24.h"
 #include "bank41.h"
 #include "bank42.h"
 #include "bank43.h"
@@ -22,6 +26,12 @@
 
 const unsigned char *riff_sample_data[] =
 {
+	// Hulk Hogan	bank 21-24
+	Riff_Intro_Hulk_01_wav_pcmenc,
+	Riff_Intro_Hulk_02_wav_pcmenc,
+	Riff_Intro_Hulk_03_wav_pcmenc,
+	Riff_Intro_Hulk_04_wav_pcmenc,
+
 	// Title riff	bank 41-49	[x9]
 	Riff__Title__Screen__01_wav_pcmenc,
 	Riff__Title__Screen__02_wav_pcmenc,
@@ -50,6 +60,11 @@ const unsigned char *riff_sample_data[] =
 };
 const unsigned char riff_sample_bank[] =
 {
+	Riff_Intro_Hulk_01_wav_pcmenc_bank,
+	Riff_Intro_Hulk_02_wav_pcmenc_bank,
+	Riff_Intro_Hulk_03_wav_pcmenc_bank,
+	Riff_Intro_Hulk_04_wav_pcmenc_bank,
+
 	Riff__Title__Screen__01_wav_pcmenc_bank,
 	Riff__Title__Screen__02_wav_pcmenc_bank,
 	Riff__Title__Screen__03_wav_pcmenc_bank,

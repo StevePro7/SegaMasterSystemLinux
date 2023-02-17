@@ -15,25 +15,35 @@ void screen_test_screen_update( unsigned char *screen_type )
 	unsigned char index;
 	unsigned char input;
 
-	input = engine_input_manager_hold_up();
+	input = engine_input_manager_hold_right();
 	if( input )
 	{
-		engine_font_manager_text( "SPLASH", 10, 10 );
-		for( index = 9; index < 18; index++ )
+		engine_font_manager_text( "HULK", 10, 10 );
+		for( index = 0; index < 3; index++ )
 		{
 			engine_riff_manager_play( index );
 		}
 	}
 
-	input = engine_input_manager_hold_down();
-	if( input )
-	{
-		engine_font_manager_text( "TITLES", 10, 10 );
-		for( index = 0; index < 9; index++ )
-		{
-			engine_riff_manager_play( index );
-		}
-	}
+	//input = engine_input_manager_hold_up();
+	//if( input )
+	//{
+	//	engine_font_manager_text( "SPLASH", 10, 10 );
+	//	for( index = 9; index < 18; index++ )
+	//	{
+	//		engine_riff_manager_play( index );
+	//	}
+	//}
+
+	//input = engine_input_manager_hold_down();
+	//if( input )
+	//{
+	//	engine_font_manager_text( "TITLES", 10, 10 );
+	//	for( index = 0; index < 9; index++ )
+	//	{
+	//		engine_riff_manager_play( index );
+	//	}
+	//}
 
 	*screen_type = screen_type_test;
 }
