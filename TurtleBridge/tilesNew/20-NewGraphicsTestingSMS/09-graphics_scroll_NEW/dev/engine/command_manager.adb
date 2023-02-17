@@ -1,9 +1,2 @@
 M:command_manager
 F:G$engine_command_manager_init$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-F:G$engine_command_manager_build$0_0$0({2}DF,SC:U),Z,0,0,0,0,0
-S:Lcommand_manager.engine_command_manager_build$input1$1_0$4({1}SC:U),B,1,4
-S:Lcommand_manager.engine_command_manager_build$input2$1_0$4({1}SC:U),B,1,5
-S:Lcommand_manager.engine_command_manager_build$input3$1_0$4({1}SC:U),B,1,6
-S:Lcommand_manager.engine_command_manager_build$input4$1_0$4({1}SC:U),B,1,7
-S:Lcommand_manager.engine_command_manager_build$input5$1_0$4({1}SC:U),B,1,8
-S:Lcommand_manager.engine_command_manager_build$input6$1_0$4({1}SC:U),B,1,9

@@ -1,24 +1,16 @@
 ;!FILE command_manager.asm
 XL3
-H 9 areas F global symbols
+H 9 areas 7 global symbols
 M command_manager
 O -mz80
 S .__.ABS. Def000000
-A _CODE size 4 flags 0 addr 0
-S A$command_manager$60 Def000000
-S XG$engine_command_manager_build$0$0 Def000003
-S A$command_manager$81 Def000003
-S A$command_manager$73 Def000001
-S C$command_manager.c$10$1_0$5 Def000001
-S C$command_manager.c$11$1_0$5 Def000003
+A _CODE size 1 flags 0 addr 0
+S A$command_manager$59 Def000000
 S G$engine_command_manager_init$0$0 Def000000
 S _engine_command_manager_init Def000000
-S C$command_manager.c$3$0_0$3 Def000000
-S C$command_manager.c$6$0_0$3 Def000000
-S C$command_manager.c$8$0_0$5 Def000001
+S C$command_manager.c$3$0_0$2 Def000000
+S C$command_manager.c$6$0_0$2 Def000000
 S XG$engine_command_manager_init$0$0 Def000000
-S G$engine_command_manager_build$0$0 Def000001
-S _engine_command_manager_build Def000001
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -30,8 +22,4 @@ A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
 T 00 00 00 C9
-R 00 00 00 00
-T 01 00 00
-R 00 00 00 00
-T 01 00 00 2E 00 C9
 R 00 00 00 00
