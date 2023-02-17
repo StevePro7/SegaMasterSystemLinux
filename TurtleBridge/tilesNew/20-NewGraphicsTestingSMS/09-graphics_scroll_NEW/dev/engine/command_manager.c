@@ -32,26 +32,25 @@ unsigned char engine_command_manager_build( unsigned char  state, unsigned char 
 		}
 	}
 
-	// Vertical movement.
-	if( player_state_isonground == state && input3 )
-	{
-		command |= COMMAND_HIGH_MASK;
-	}
-	if( player_state_isintheair == state && input4 )
-	{
-		command |= COMMAND_DOWN_MASK;
-	}
-
-	// Action buttons.
+	// Vertical movement + Action buttons.
 	if( player_state_isonground == state )
 	{
-
+		if( input3 )
+		{
+			command |= COMMAND_HIGH_MASK;
+		}
+		if( input5 || input6 )
+		{
+			command |= COMMAND_JUMP_MASK;
+		}
 	}
-	else if( player_state_isonground == state )
+	if( player_state_isintheair == state )
 	{
-
+		if( input4 )
+		{
+			command |= COMMAND_DOWN_MASK;
+		}
 	}
-
 
 	return command;
 }
