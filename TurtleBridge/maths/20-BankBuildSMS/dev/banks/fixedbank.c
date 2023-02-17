@@ -6,6 +6,8 @@
 #include "banK25.h"
 #include "banK26.h"
 #include "banK27.h"
+#include "banK28.h"
+#include "banK29.h"
 #include "bank41.h"
 #include "bank42.h"
 #include "bank43.h"
@@ -29,6 +31,10 @@
 
 const unsigned char *riff_sample_data[] =
 {
+	// License to Drive	bank 28-29
+	Riff_Death_Licence_01_wav_pcmenc,
+	Riff_Death_Licence_02_wav_pcmenc,
+
 	// Karate Kid	bank25-27
 	Riff_Intro_Karate_01_wav_pcmenc,
 	Riff_Intro_Karate_02_wav_pcmenc,
@@ -68,6 +74,9 @@ const unsigned char *riff_sample_data[] =
 };
 const unsigned char riff_sample_bank[] =
 {
+	Riff_Death_Licence_01_wav_pcmenc_bank,
+	Riff_Death_Licence_02_wav_pcmenc_bank,
+
 	Riff_Intro_Karate_01_wav_pcmenc_bank,
 	Riff_Intro_Karate_02_wav_pcmenc_bank,
 	Riff_Intro_Karate_03_wav_pcmenc_bank,
