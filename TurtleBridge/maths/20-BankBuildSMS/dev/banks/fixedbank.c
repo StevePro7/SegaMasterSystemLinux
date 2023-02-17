@@ -8,6 +8,7 @@
 #include "banK27.h"
 #include "banK28.h"
 #include "banK29.h"
+#include "banK30.h"
 #include "bank41.h"
 #include "bank42.h"
 #include "bank43.h"
@@ -31,6 +32,9 @@
 
 const unsigned char *riff_sample_data[] =
 {
+	// Eminem	 bank 30
+	Riff_Sound_Eminem_01_wav_pcmenc,
+
 	// License to Drive	bank 28-29
 	Riff_Death_Licence_01_wav_pcmenc,
 	Riff_Death_Licence_02_wav_pcmenc,
@@ -74,6 +78,8 @@ const unsigned char *riff_sample_data[] =
 };
 const unsigned char riff_sample_bank[] =
 {
+	Riff_Sound_Eminem_01_wav_pcmenc_bank,
+
 	Riff_Death_Licence_01_wav_pcmenc_bank,
 	Riff_Death_Licence_02_wav_pcmenc_bank,
 
