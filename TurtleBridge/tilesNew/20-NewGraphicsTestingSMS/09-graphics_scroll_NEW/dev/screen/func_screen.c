@@ -14,8 +14,8 @@
 void screen_func_screen_load()
 {
 	struct_player_object *po = &global_player_object;
-	//po->player_state = player_state_isonground;
-	po->player_state = player_state_isintheair;
+	po->player_state = player_state_isonground;
+	//po->player_state = player_state_isintheair;
 
 	engine_font_manager_text( "FUNC SCREEN", 10, 2 );
 }
