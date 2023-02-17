@@ -27,7 +27,11 @@ unsigned char engine_command_manager_build( unsigned char  state, unsigned char 
 
 	if( input3 )
 	{
-//		command |= COMMAND_RGHT_MASK;
+		command |= COMMAND_HIGH_MASK;
+	}
+	if( input4 )
+	{
+		command |= COMMAND_DOWN_MASK;
 	}
 
 	return command;

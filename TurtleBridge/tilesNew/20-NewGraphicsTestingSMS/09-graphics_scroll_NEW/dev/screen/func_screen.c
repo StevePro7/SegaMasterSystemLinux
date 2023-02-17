@@ -41,6 +41,7 @@ void screen_func_screen_update( unsigned char *screen_type )
 	engine_font_manager_text( "     ", 10, 13 );
 	engine_font_manager_text( "     ", 10, 14 );
 
+	// Move left, midd, right.
 	if( ( COMMAND_MIDD_MASK & command ) == COMMAND_MIDD_MASK )
 	{
 		engine_font_manager_text( " MIDD", 10, 10 );
@@ -52,6 +53,15 @@ void screen_func_screen_update( unsigned char *screen_type )
 	if( ( COMMAND_RGHT_MASK & command ) == COMMAND_RGHT_MASK )
 	{
 		engine_font_manager_text( "RIGHT", 10, 10 );
+	}
+
+	if( ( COMMAND_HIGH_MASK & command ) == COMMAND_HIGH_MASK )
+	{
+		engine_font_manager_text( " HIGH", 10, 11 );
+	}
+	if( ( COMMAND_DOWN_MASK & command ) == COMMAND_DOWN_MASK )
+	{
+		engine_font_manager_text( " DOWN", 10, 11 );
 	}
 
 	if( COMMAND_NONE_MASK == command )
