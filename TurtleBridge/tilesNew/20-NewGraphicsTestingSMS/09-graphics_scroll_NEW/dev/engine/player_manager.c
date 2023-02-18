@@ -6,6 +6,7 @@
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
 #include "../banks/bank2.h"
+#include <stdlib.h>
 
 #define PLAYER_MIN_HIGH		32
 #define PLAYER_MAX_HIGH		168
@@ -23,6 +24,9 @@ static void updatePlayer();
 static void updatePlayerX();
 static void updatePlayerY();
 
+static const signed int *jump_ptr;
+static unsigned char jump_len;
+
 void engine_player_manager_init()
 {
 	struct_player_object *po = &global_player_object;
@@ -31,8 +35,10 @@ void engine_player_manager_init()
 	po->posnY = 0; po->tileY = 0; po->leapY = 0;
 	po->drawX = 0; po->drawY = 0;
 	po->player_state = player_state_isonground;
-	po->player_index = 0; po->player_frame = 0;
-	po->player_count = 0;
+	po->player_index = 0; po->player_jumps = 0;
+	po->player_frame = 0; po->player_count = 0;
+	jump_ptr = NULL;
+	jump_len = 0;
 	updatePlayer();
 }
 
@@ -103,6 +109,15 @@ unsigned char engine_player_manager_get_deltaX( unsigned char state, unsigned ch
 	return deltaX;
 }
 
+signed char engine_player_manager_get_deltaY( unsigned char state, unsigned char jumps )
+{
+	// IMPORTANT this function will only be invoked when player is in the air.
+	struct_player_object *po = &global_player_object;
+	signed char deltaY = jump_ptr[po->player_index];
+
+	return deltaY;
+
+}
 void engine_player_manager_set_action( unsigned char state, unsigned char command )
 {
 	struct_player_object *po = &global_player_object;
@@ -127,9 +142,9 @@ void engine_player_manager_set_action( unsigned char state, unsigned char comman
 			index += 1;
 		}
 
-		//ptr = jump_array_ptr[ indexZ ];
-		//len = jump_array_len[ indexZ ];
-		//data = ptr[ valueX ];
+		// Set the jump array information.
+		jump_ptr = jump_array_ptr[ po->player_index ];
+		jump_len = jump_array_len[ po->player_index ];
 	}
 	else
 	{
@@ -149,8 +164,16 @@ void engine_player_manager_set_action( unsigned char state, unsigned char comman
 }
 
 //TODO rename right() and down() functions
-//void engine_player_manager_horz( unsigned char deltaX )
-//void engine_player_manager_vert( unsigned char deltaY )
+void engine_player_manager_horz( unsigned char deltaX )
+{
+	struct_player_object *po = &global_player_object;
+	po->posnX += deltaX;
+	updatePlayerX();
+}
+void engine_player_manager_vert( unsigned char deltaY )
+{
+
+}
 
 void engine_player_manager_right( unsigned char deltaX )
 {

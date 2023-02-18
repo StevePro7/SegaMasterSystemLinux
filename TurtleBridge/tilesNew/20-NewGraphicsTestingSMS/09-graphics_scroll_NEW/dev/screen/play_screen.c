@@ -33,7 +33,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 	//unsigned char input1, input2, input3, input4, input5, input6;
 	unsigned char input;
 	unsigned char deltaX;
-	//signed char deltaY;
+	signed char deltaY;
 	unsigned char loops;
 	//signed char collision;
 	enum_scroll_state scroll_state;
@@ -60,7 +60,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 		// No scroll.
 		if( 0 == deltaX )
 		{
-			engine_scroll_manager_update( deltaX );
+			engine_scroll_manager_update( 0 );
 		}
 		else
 		{
@@ -82,6 +82,18 @@ void screen_play_screen_update( unsigned char *screen_type )
 					}
 				}
 			}
+
+			// Set horizontal movement.
+			engine_player_manager_horz( deltaX );
+
+			// Get / set vertical movement.
+			deltaY = 0;
+			if( player_state_isintheair == po->player_state )
+			{
+				deltaY = engine_player_manager_get_deltaY( po->player_state, po->player_jumps );
+				engine_player_manager_vert( deltaY );
+			}
+			
 		}
 	}
 

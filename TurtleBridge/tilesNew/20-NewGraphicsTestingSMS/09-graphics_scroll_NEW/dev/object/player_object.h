@@ -14,6 +14,7 @@ typedef struct tag_struct_player_object
 	unsigned char drawX, drawY;
 	unsigned char player_state;
 	unsigned char player_index;
+	unsigned char player_jumps;
 	unsigned char player_frame;
 	unsigned int player_count;
 
