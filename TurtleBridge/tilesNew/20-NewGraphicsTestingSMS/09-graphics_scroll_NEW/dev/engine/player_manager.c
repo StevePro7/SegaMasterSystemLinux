@@ -7,6 +7,9 @@
 #include "../banks/fixedbank.h"
 #include "../banks/bank2.h"
 
+#define PLAYER_MIN_HIGH		32
+#define PLAYER_MAX_HIGH		168
+
 // Global variable.
 struct_player_object global_player_object;
 
@@ -53,7 +56,19 @@ void engine_player_manager_loadX( unsigned char checkPoint )
 void engine_player_manager_loadY( unsigned char player_loadY )
 {
 	struct_player_object *po = &global_player_object;
-	po->posnY = player_loadY << 3;
+	po->player_state = player_state_isonground;
+
+	// Check for starting point without platform.
+	if( 0 == player_loadY )
+	{
+		po->player_state = player_state_isintheair;
+		po->posnY = PLAYER_MIN_HIGH;
+	}
+	else
+	{
+		po->posnY = player_loadY << 3;
+	}
+	
 	//po->initY = po->posnY;		// TODO - don't think I need this
 	updatePlayerY();
 }

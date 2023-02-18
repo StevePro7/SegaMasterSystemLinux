@@ -31,6 +31,5 @@ void screen_ready_screen_load()
 //unsigned int input = devkit_SMS_getKeysStatus();
 void screen_ready_screen_update( unsigned char *screen_type )
 {
-	
 	*screen_type = screen_type_ready;
 }
