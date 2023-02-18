@@ -23,6 +23,7 @@ extern const unsigned char player_object_starts[];
 
 extern const signed int *jump_array_ptr[];
 extern const unsigned char jump_array_len[];
+extern const signed int jump_array_00[];
 extern const signed int jump_array_01[];
 extern const signed int jump_array_02[];
 extern const signed int jump_array_03[];
