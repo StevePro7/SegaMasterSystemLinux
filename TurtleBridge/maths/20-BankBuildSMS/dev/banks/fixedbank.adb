@@ -1,6 +1,11 @@
 M:fixedbank
-S:G$riff_sample_data$0_0$0({82}DA41d,DG,SC:U),E,0,0
+S:G$riff_sample_data$0_0$0({92}DA46d,DG,SC:U),E,0,0
 S:G$steven_object_texts$0_0$0({4}DA2d,DG,SC:U),E,0,0
+S:G$Riff_Finish_BeeGees_01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$Riff_Finish_BeeGees_04_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$Riff_Finish_BeeGees_05_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$Riff_Finish_BeeGees_06_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$Riff_Finish_BeeGees_07_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff_Sound_Wayne_01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff_Intro_Hulk_01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff_Intro_Hulk_02_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
@@ -40,9 +45,9 @@ S:G$Riff__Splash__Screen__06_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff__Splash__Screen__07_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff__Splash__Screen__08_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff__Splash__Screen__09_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
-S:G$Riff__01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
-S:G$Riff__02_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
-S:G$riff_sample_bank$0_0$0({41}DA41d,SC:U),D,0,0
+S:G$Riff_Finish_BeeGees_02_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$Riff_Finish_BeeGees_03_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$riff_sample_bank$0_0$0({46}DA46d,SC:U),D,0,0
 S:G$steven_object_numbers$0_0$0({3}DA3d,SC:U),D,0,0
 S:Ffixedbank$__str_0$0_0$0({9}DA9d,SC:U),D,0,0
 S:Ffixedbank$__str_1$0_0$0({8}DA8d,SC:U),D,0,0

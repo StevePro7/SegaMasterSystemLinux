@@ -1,4 +1,4 @@
-extern const unsigned char	bank11_txt[];
-#define				bank11_txt_size 8
-#define				bank11_txt_bank 11
+extern const unsigned char	Riff_Finish_BeeGees_01_wav_pcmenc[];
+#define				Riff_Finish_BeeGees_01_wav_pcmenc_size 15983
+#define				Riff_Finish_BeeGees_01_wav_pcmenc_bank 11
 

@@ -1,4 +1,11 @@
 #include "fixedbank.h"
+#include "bank11.h"
+#include "bank12.h"
+#include "bank13.h"
+#include "bank14.h"
+#include "bank15.h"
+#include "bank16.h"
+#include "bank17.h"
 #include "banK20.h"
 #include "banK21.h"
 #include "banK22.h"
@@ -43,6 +50,15 @@
 
 const unsigned char *riff_sample_data[] =
 {
+	// BeeGees	bank11-17
+	Riff_Finish_BeeGees_01_wav_pcmenc,
+	Riff_Finish_BeeGees_02_wav_pcmenc,
+	Riff_Finish_BeeGees_03_wav_pcmenc,
+	Riff_Finish_BeeGees_04_wav_pcmenc,
+	Riff_Finish_BeeGees_05_wav_pcmenc,
+	Riff_Finish_BeeGees_06_wav_pcmenc,
+	Riff_Finish_BeeGees_07_wav_pcmenc,
+
 	// AC/DC ready	bank 39-40
 	Riff_Intro_ACDC_01_wav_pcmenc,
 	Riff_Intro_ACDC_02_wav_pcmenc,
@@ -103,11 +119,19 @@ const unsigned char *riff_sample_data[] =
 	Riff__Splash__Screen__09_wav_pcmenc,
 
 	// Oh-li-la		bank 12-13	[x2]
-	Riff__01_wav_pcmenc,
-	Riff__02_wav_pcmenc,
+	//Riff__01_wav_pcmenc,
+	//Riff__02_wav_pcmenc,
 };
 const unsigned char riff_sample_bank[] =
 {
+	Riff_Finish_BeeGees_01_wav_pcmenc_bank,
+	Riff_Finish_BeeGees_02_wav_pcmenc_bank,
+	Riff_Finish_BeeGees_03_wav_pcmenc_bank,
+	Riff_Finish_BeeGees_04_wav_pcmenc_bank,
+	Riff_Finish_BeeGees_05_wav_pcmenc_bank,
+	Riff_Finish_BeeGees_06_wav_pcmenc_bank,
+	Riff_Finish_BeeGees_07_wav_pcmenc_bank,
+
 	Riff_Intro_ACDC_01_wav_pcmenc_bank,
 	Riff_Intro_ACDC_02_wav_pcmenc_bank,
 
@@ -157,8 +181,8 @@ const unsigned char riff_sample_bank[] =
 	Riff__Splash__Screen__08_wav_pcmenc_bank,
 	Riff__Splash__Screen__09_wav_pcmenc_bank,
 
-	Riff__01_wav_pcmenc_bank,
-	Riff__02_wav_pcmenc_bank,
+	//Riff__01_wav_pcmenc_bank,
+	//Riff__02_wav_pcmenc_bank,
 };
 
 const unsigned char steven_object_numbers[] =

@@ -1,24 +1,14 @@
-echo start
-:: Setup.
+REM bank13
+@echo off
+
 cd ..
 cd banks
-cd bank13
-cd raw
 
-pcmenc -rto 1 -dt1 12 -dt2 12 -dt3 423 Riff__02.wav
-mv Riff__02.wav.pcmenc ../
+"C:/Program Files/SDCC/bin/folder2c" bank13 bank13 13
 
-:: Convert.
-cd ../..
-folder2c bank13 bank13 13
+"C:/Program Files/SDCC/bin/sdcc" --debug -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK13 bank13.c
 
-:: Compile
-sdcc --debug -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK13 bank13.c
+del *.asm > nul; del *.lst > nul; del *.sym > nul
 
-:: Cleanup
-if exist "*.asm" del "*.asm" > nul; 
-if exist "*.lst" del "*.lst" > nul; 
-if exist "*.sym" del "*.sym" > nul;
-
-cd ../scripts
-echo -end-
+cd ..
+cd scripts

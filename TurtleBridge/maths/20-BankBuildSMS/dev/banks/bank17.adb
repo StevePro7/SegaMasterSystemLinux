@@ -1,2 +1,2 @@
 M:bank17
-S:G$bank17_txt$0_0$0({8}DA8d,SC:U),D,0,0
+S:G$Riff_Finish_BeeGees_07_wav_pcmenc$0_0$0({6836}DA6836d,SC:U),D,0,0
