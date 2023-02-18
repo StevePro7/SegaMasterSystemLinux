@@ -15,8 +15,8 @@
 void screen_func_screen_load()
 {
 	struct_player_object *po = &global_player_object;
-	po->player_state = player_state_isonground;
-	//po->player_state = player_state_isintheair;
+	//po->player_state = player_state_isonground;
+	po->player_state = player_state_isintheair;
 
 	engine_font_manager_text( "FUNC SCREEN", 10, 2 );
 }
@@ -63,11 +63,13 @@ void screen_func_screen_update( unsigned char *screen_type )
 	// Move up, down.
 	if( ( COMMAND_HIGH_MASK & command ) == COMMAND_HIGH_MASK )
 	{
-		engine_font_manager_text( " HIGH", 10, 11 );
+		//engine_font_manager_text( " HIGH", 10, 11 );
+		engine_music_manager_play( 5 );
 	}
 	if( ( COMMAND_DOWN_MASK & command ) == COMMAND_DOWN_MASK )
 	{
-		engine_font_manager_text( " DOWN", 10, 11 );
+		//engine_font_manager_text( " DOWN", 10, 11 );
+		engine_music_manager_play( 6 );
 	}
 
 	// Hold button1, button2.

@@ -19,6 +19,10 @@ void engine_audio_manager_init()
 void engine_music_manager_play( unsigned char index )
 {
 	struct_audio_object *ao = &global_audio_object;
+	if( devkit_PSGGetStatus() )
+	{
+		return;
+	}
 
 	devkit_SMS_mapROMBank( FIXED_BANK );
 	ao->music_data = ( unsigned char* ) music_object_data[ index ];
