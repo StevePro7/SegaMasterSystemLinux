@@ -17,7 +17,15 @@ static void drawScreen();
 
 void screen_ready_screen_load()
 {
-	engine_font_manager_text( "READY", 10, 14 );
+	unsigned int posnX;
+	unsigned char tileX;
+
+	posnX = 256 * 8 - 1;
+	tileX = posnX >> 3;
+	engine_font_manager_text( "READY", 10, 2 );
+
+	engine_font_manager_data( posnX, 10, 10 );
+	engine_font_manager_data( tileX, 10, 11 );
 }
 
 //unsigned int input = devkit_SMS_getKeysStatus();
