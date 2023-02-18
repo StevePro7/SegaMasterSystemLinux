@@ -14,6 +14,10 @@
 #include "bank32.h"
 #include "bank33.h"
 #include "bank34.h"
+#include "bank35.h"
+#include "bank36.h"
+#include "bank37.h"
+#include "bank38.h"
 #include "bank41.h"
 #include "bank42.h"
 #include "bank43.h"
@@ -37,6 +41,12 @@
 
 const unsigned char *riff_sample_data[] =
 {
+	// Kiss	bank 35-38
+	Riff_Intro_Kiss_01_wav_pcmenc,
+	Riff_Intro_Kiss_02_wav_pcmenc,
+	Riff_Intro_Kiss_03_wav_pcmenc,
+	Riff_Intro_Kiss_04_wav_pcmenc,
+
 	// Ultimage Warrior	bank 31-34
 	Riff_Intro_Ultimate_01_wav_pcmenc,
 	Riff_Intro_Ultimate_02_wav_pcmenc,
@@ -92,6 +102,11 @@ const unsigned char *riff_sample_data[] =
 };
 const unsigned char riff_sample_bank[] =
 {
+	Riff_Intro_Kiss_01_wav_pcmenc_bank,
+	Riff_Intro_Kiss_02_wav_pcmenc_bank,
+	Riff_Intro_Kiss_03_wav_pcmenc_bank,
+	Riff_Intro_Kiss_04_wav_pcmenc_bank,
+
 	Riff_Intro_Ultimate_01_wav_pcmenc_bank,
 	Riff_Intro_Ultimate_02_wav_pcmenc_bank,
 	Riff_Intro_Ultimate_03_wav_pcmenc_bank,

@@ -18,7 +18,7 @@ void screen_test_screen_update( unsigned char *screen_type )
 	input = engine_input_manager_hold_right();
 	if( input )
 	{
-		engine_font_manager_text( "UW", 10, 10 );
+		engine_font_manager_text( "KISS", 10, 10 );
 		//engine_riff_manager_play( 0 );
 
 		for( index = 0; index < 4; index++ )

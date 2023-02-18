@@ -1,5 +1,5 @@
 M:fixedbank
-S:G$riff_sample_data$0_0$0({70}DA35d,DG,SC:U),E,0,0
+S:G$riff_sample_data$0_0$0({78}DA39d,DG,SC:U),E,0,0
 S:G$steven_object_texts$0_0$0({4}DA2d,DG,SC:U),E,0,0
 S:G$Riff_Sound_Wayne_01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff_Intro_Hulk_01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
@@ -16,6 +16,10 @@ S:G$Riff_Intro_Ultimate_01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff_Intro_Ultimate_02_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff_Intro_Ultimate_03_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff_Intro_Ultimate_04_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$Riff_Intro_Kiss_01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$Riff_Intro_Kiss_02_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$Riff_Intro_Kiss_03_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$Riff_Intro_Kiss_04_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff__Title__Screen__01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff__Title__Screen__02_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff__Title__Screen__03_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
@@ -36,7 +40,7 @@ S:G$Riff__Splash__Screen__08_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff__Splash__Screen__09_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff__01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff__02_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
-S:G$riff_sample_bank$0_0$0({35}DA35d,SC:U),D,0,0
+S:G$riff_sample_bank$0_0$0({39}DA39d,SC:U),D,0,0
 S:G$steven_object_numbers$0_0$0({3}DA3d,SC:U),D,0,0
 S:Ffixedbank$__str_0$0_0$0({9}DA9d,SC:U),D,0,0
 S:Ffixedbank$__str_1$0_0$0({8}DA8d,SC:U),D,0,0
