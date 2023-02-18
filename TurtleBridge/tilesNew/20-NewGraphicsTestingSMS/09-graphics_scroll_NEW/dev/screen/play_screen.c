@@ -12,6 +12,11 @@
 #include "../engine/scroll_manager.h"
 #include "../engine/timer_manager.h"
 
+#ifdef _CONSOLE
+#else
+#pragma disable_warning 261
+#endif
+
 void screen_play_screen_load()
 {
 	engine_frame_manager_load();

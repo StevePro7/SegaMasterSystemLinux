@@ -12,6 +12,7 @@
 
 #ifdef _CONSOLE
 #else
+#pragma disable_warning 110
 #pragma disable_warning 261
 #endif
 
@@ -107,6 +108,11 @@ void engine_player_manager_set_action( unsigned char state, unsigned char comman
 	struct_player_object *po = &global_player_object;
 	unsigned char index;
 
+	// TODO delete
+	index = state;
+	index = command;
+	// TODO delete
+
 	// Player on ground.
 	if( ( COMMAND_JUMP_MASK & command ) == COMMAND_JUMP_MASK )
 	{
@@ -114,6 +120,7 @@ void engine_player_manager_set_action( unsigned char state, unsigned char comman
 		po->player_index = 0;
 		po->player_frame = 4;
 		index = 0;
+
 		// determine jump index
 		if( ( COMMAND_HIGH_MASK & command ) == COMMAND_HIGH_MASK )
 		{
