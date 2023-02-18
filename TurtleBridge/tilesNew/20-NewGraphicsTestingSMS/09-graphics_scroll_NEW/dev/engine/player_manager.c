@@ -116,6 +116,11 @@ signed char engine_player_manager_get_deltaY( unsigned char state )
 	struct_player_object *po = &global_player_object;
 	signed char deltaY = jump_ptr[ po->jumper_index ];
 
+	if( po->jumper_index < jump_len - 1 )
+	{
+		po->jumper_index++;
+	}
+
 	return deltaY;
 
 }
@@ -173,21 +178,23 @@ void engine_player_manager_horz( unsigned char deltaX )
 }
 void engine_player_manager_vert( unsigned char deltaY )
 {
-
-}
-
-void engine_player_manager_right( unsigned char deltaX )
-{
-	struct_player_object *po = &global_player_object;
-	po->posnX += deltaX;
-	updatePlayerX();
-}
-
-void engine_player_manager_down( unsigned char deltaY )
-{
 	struct_player_object *po = &global_player_object;
 	po->posnY += deltaY;
 	updatePlayerY();
+}
+
+// TODO delete
+void engine_player_manager_right( unsigned char deltaX )
+{
+//	struct_player_object *po = &global_player_object;
+//	po->posnX += deltaX;
+//	updatePlayerX();
+}
+void engine_player_manager_down( unsigned char deltaY )
+{
+//	struct_player_object *po = &global_player_object;
+//	po->posnY += deltaY;
+//	updatePlayerY();
 }
 
 static void updatePlayer()

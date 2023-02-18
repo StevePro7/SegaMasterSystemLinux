@@ -20,8 +20,10 @@ void engine_player_manager_set_action( unsigned char state, unsigned char comman
 void engine_player_manager_horz( unsigned char deltaX );
 void engine_player_manager_vert( unsigned char deltaY );
 
+// TODO delete
 void engine_player_manager_right( unsigned char deltaX );
 void engine_player_manager_down( unsigned char deltaY );
+
 void engine_player_manager_draw();
 void engine_player_manager_pass();
 void engine_player_manager_count();
