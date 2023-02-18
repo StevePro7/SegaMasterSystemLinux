@@ -14,6 +14,7 @@
 
 #ifdef _CONSOLE
 #else
+#pragma disable_warning 110
 #pragma disable_warning 261
 #endif
 
@@ -90,8 +91,9 @@ void screen_play_screen_update( unsigned char *screen_type )
 			deltaY = 0;
 			if( player_state_isintheair == po->player_state )
 			{
-				deltaY = engine_player_manager_get_deltaY( po->player_state );
+				deltaY = engine_player_manager_get_deltaY();
 				engine_player_manager_vert( deltaY );
+				engine_player_manager_bounds( deltaY, po->posnY, go->game_isgod );
 			}
 			
 			player_state = engine_player_manager_collision( po->player_state, po->lookX, po->tileY );

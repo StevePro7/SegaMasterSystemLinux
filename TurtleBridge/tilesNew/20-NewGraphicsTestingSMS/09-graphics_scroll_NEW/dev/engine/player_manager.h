@@ -14,13 +14,12 @@ void engine_player_manager_loadX( unsigned char checkPoint );
 void engine_player_manager_loadY( unsigned char player_loadY );
 
 unsigned char engine_player_manager_get_deltaX( unsigned char state, unsigned char command );
-signed char engine_player_manager_get_deltaY( unsigned char state );
+signed char engine_player_manager_get_deltaY();
 void engine_player_manager_set_action( unsigned char state, unsigned char command );
-//unsigned char engine_player_manager_get_deltaY( unsigned char command );
 
 void engine_player_manager_horz( unsigned char deltaX );
 void engine_player_manager_vert( unsigned char deltaY );
-void engine_player_manager_bounds( unsigned char deltaY, unsigned char posnY, unsigned char invincible );
+void engine_player_manager_bounds( signed char deltaY, unsigned char posnY, unsigned char invincible );
 enum_player_state engine_player_manager_collision( unsigned char state, unsigned char lookX, unsigned char tileY );
 
 // TODO delete

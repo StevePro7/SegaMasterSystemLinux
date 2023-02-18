@@ -111,7 +111,7 @@ unsigned char engine_player_manager_get_deltaX( unsigned char state, unsigned ch
 	return deltaX;
 }
 
-signed char engine_player_manager_get_deltaY( unsigned char state )
+signed char engine_player_manager_get_deltaY()
 {
 	// IMPORTANT this function will only be invoked when player is in the air.
 	struct_player_object *po = &global_player_object;
@@ -123,8 +123,8 @@ signed char engine_player_manager_get_deltaY( unsigned char state )
 	}
 
 	return deltaY;
-
 }
+
 void engine_player_manager_set_action( unsigned char state, unsigned char command )
 {
 	struct_player_object *po = &global_player_object;
@@ -184,12 +184,12 @@ void engine_player_manager_vert( unsigned char deltaY )
 	updatePlayerY();
 }
 
-void engine_player_manager_bounds( unsigned char deltaY, unsigned char posnY, unsigned char invincible )
+void engine_player_manager_bounds( signed char deltaY, unsigned char posnY, unsigned char invincible )
 {
 	struct_player_object *po = &global_player_object;
 	if( deltaY > 0 )
 	{
-		if( po->posnY >= PLAYER_MAX_HIGH && invincible )
+		if( posnY >= PLAYER_MAX_HIGH && invincible )
 		{
 			// Cannot fall through the screen.
 			po->posnY = PLAYER_MAX_HIGH;
@@ -202,7 +202,7 @@ void engine_player_manager_bounds( unsigned char deltaY, unsigned char posnY, un
 	else if( deltaY < 0 )
 	{
 		// Cannot jump through the screen.
-		if( po->posnY < PLAYER_MIN_HIGH )
+		if( posnY < PLAYER_MIN_HIGH )
 		{
 			po->posnY = PLAYER_MIN_HIGH;
 			updatePlayerY();
@@ -217,7 +217,7 @@ enum_player_state engine_player_manager_collision( unsigned char state, unsigned
 	enum_player_state player_state;
 	signed char collision;
 
-	player_state = po->player_state;
+	player_state = state;
 	collision = engine_collision_manager_player( lookX, tileY );
 
 	if( player_state_isonground == player_state )
@@ -241,12 +241,14 @@ enum_player_state engine_player_manager_collision( unsigned char state, unsigned
 // TODO delete
 void engine_player_manager_right( unsigned char deltaX )
 {
+	deltaX += 0;
 //	struct_player_object *po = &global_player_object;
 //	po->posnX += deltaX;
 //	updatePlayerX();
 }
 void engine_player_manager_down( unsigned char deltaY )
 {
+	deltaY += 0;
 //	struct_player_object *po = &global_player_object;
 //	po->posnY += deltaY;
 //	updatePlayerY();
