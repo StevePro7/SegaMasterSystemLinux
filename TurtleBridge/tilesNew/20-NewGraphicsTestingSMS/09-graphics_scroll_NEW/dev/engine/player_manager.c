@@ -187,7 +187,7 @@ void engine_player_manager_vert( unsigned char deltaY )
 void engine_player_manager_bounds( signed char deltaY, unsigned char posnY, unsigned char invincible )
 {
 	struct_player_object *po = &global_player_object;
-	if( deltaY > 0 )
+	if( deltaY >= 0 )
 	{
 		if( posnY >= PLAYER_MAX_HIGH && invincible )
 		{
@@ -225,12 +225,27 @@ enum_player_state engine_player_manager_collision( unsigned char state, unsigned
 		// Player was on the ground but now "falling" in the air due to gravity.
 		if( INVALID_INDEX == collision )
 		{
-			po->player_state = player_state_isintheair;
+			player_state = player_state_isintheair;
 			po->jumper_index = 0;
 			po->player_frame = 4;			// TODO check opposite frame.
 
 			jump_ptr = jump_array_ptr[ po->jumper_index ];
 			jump_len = jump_array_len[ po->jumper_index ];
+		}
+	}
+	else if( player_state_isintheair == player_state )
+	{
+		// Player is in the air but check there could be a platform to land on.
+		if( INVALID_INDEX != collision )
+		{
+			po->player_state = player_state_isonground;
+			po->jumper_index = 0;
+			po->player_frame = 0;
+
+			// Ensure player aligns with platform landed on...
+			po->posnY = tileY << 3;
+			updatePlayerY();
+			//engine_font_manager_text( "LAND", 8, 8 );
 		}
 	}
 

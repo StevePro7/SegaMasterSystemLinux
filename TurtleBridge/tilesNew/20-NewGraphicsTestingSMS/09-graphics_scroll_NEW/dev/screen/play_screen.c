@@ -93,10 +93,10 @@ void screen_play_screen_update( unsigned char *screen_type )
 			{
 				deltaY = engine_player_manager_get_deltaY();
 				engine_player_manager_vert( deltaY );
-				engine_player_manager_bounds( deltaY, po->posnY, go->game_isgod );
 			}
 			
 			player_state = engine_player_manager_collision( po->player_state, po->lookX, po->tileY );
+			engine_player_manager_bounds( deltaY, po->posnY, go->game_isgod );
 		}
 	}
 
