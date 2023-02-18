@@ -10,6 +10,11 @@
 #define PLAYER_MIN_HIGH		32
 #define PLAYER_MAX_HIGH		168
 
+#ifdef _CONSOLE
+#else
+#pragma disable_warning 261
+#endif
+
 // Global variable.
 struct_player_object global_player_object;
 
@@ -97,7 +102,7 @@ unsigned char engine_player_manager_get_deltaX( unsigned char state, unsigned ch
 	return deltaX;
 }
 
-engine_player_manager_set_action( unsigned char state, unsigned char command )
+void engine_player_manager_set_action( unsigned char state, unsigned char command )
 {
 	struct_player_object *po = &global_player_object;
 	unsigned char index;
