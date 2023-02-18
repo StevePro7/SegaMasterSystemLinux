@@ -37,11 +37,11 @@ void screen_play_screen_update( unsigned char *screen_type )
 	unsigned char loops;
 	//signed char collision;
 	enum_scroll_state scroll_state;
-
+	enum_player_state player_state;
 	unsigned char command = COMMAND_NONE_MASK;
 
 	input = engine_input_manager_hold( input_type_right );
-//	input = 1;		// TODO delete
+	input = 1;		// TODO delete
 	if( input )
 	{
 		engine_frame_manager_update();
@@ -94,7 +94,13 @@ void screen_play_screen_update( unsigned char *screen_type )
 				engine_player_manager_vert( deltaY );
 			}
 			
+			player_state = engine_player_manager_collision( po->player_state, po->lookX, po->tileY );
 		}
+	}
+
+	// Move on to the dying sequence.
+	if( player_state_isnowdying == player_state )
+	{
 	}
 
 	engine_player_manager_draw();

@@ -1,6 +1,7 @@
 #ifndef _PLAYER_MANAGER_H_
 #define _PLAYER_MANAGER_H_
 
+#include "enum_manager.h"
 #include "../object/player_object.h"
 	
 // Global variable.
@@ -19,6 +20,7 @@ void engine_player_manager_set_action( unsigned char state, unsigned char comman
 
 void engine_player_manager_horz( unsigned char deltaX );
 void engine_player_manager_vert( unsigned char deltaY );
+enum_player_state engine_player_manager_collision( unsigned char state, unsigned char lookX, unsigned char tileY );
 
 // TODO delete
 void engine_player_manager_right( unsigned char deltaX );

@@ -1,4 +1,5 @@
 #include "player_manager.h"
+#include "collision_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
 #include "global_manager.h"
@@ -181,6 +182,33 @@ void engine_player_manager_vert( unsigned char deltaY )
 	struct_player_object *po = &global_player_object;
 	po->posnY += deltaY;
 	updatePlayerY();
+}
+
+enum_player_state engine_player_manager_collision( unsigned char state, unsigned char lookX, unsigned char tileY )
+{
+	struct_player_object *po = &global_player_object;
+	enum_player_state player_state;
+	signed char collision;
+
+	player_state = po->player_state;
+	collision = engine_collision_manager_player( lookX, tileY );
+
+	if( player_state_isonground == player_state )
+	{
+		// Player was on the ground but now "falling" in the air due to gravity.
+		if( INVALID_INDEX == collision )
+		{
+			po->player_state = player_state_isintheair;
+			po->jumper_index = 0;
+			po->player_frame = 4;			// TODO check opposite frame.
+
+			jump_ptr = jump_array_ptr[ po->jumper_index ];
+			jump_len = jump_array_len[ po->jumper_index ];
+		}
+	}
+
+	po->player_state = player_state;
+	return player_state;
 }
 
 // TODO delete
