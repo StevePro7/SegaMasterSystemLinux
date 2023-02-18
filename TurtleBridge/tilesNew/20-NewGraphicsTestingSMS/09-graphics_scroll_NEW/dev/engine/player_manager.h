@@ -6,7 +6,7 @@
 // Global variable.
 extern struct_player_object global_player_object;
 
-void engine_player_manager_starts(unsigned char index);
+//void engine_player_manager_starts(unsigned char index);
 void engine_player_manager_init();
 void engine_player_manager_initX( unsigned char difficulty );
 void engine_player_manager_loadX( unsigned char checkPoint );

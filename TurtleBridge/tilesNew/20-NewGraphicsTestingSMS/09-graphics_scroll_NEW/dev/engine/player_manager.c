@@ -21,14 +21,14 @@ static signed char physics_array[] = { 0,-1,-1,-1,-1,-1,-1,-1,-1, -1, -1, -1, -1
 // TODO - replace
 static signed char animate_count;
 
-void engine_player_manager_starts( unsigned char index )
-{
-	struct_player_object *po = &global_player_object;
-	unsigned char px = player_object_starts[ index ];
-
-	po->posnX = px;
-	updatePlayerX();
-}
+//void engine_player_manager_starts( unsigned char index )
+//{
+//	struct_player_object *po = &global_player_object;
+//	unsigned char px = player_object_starts[ index ];
+//
+//	po->posnX = px;
+//	updatePlayerX();
+//}
 
 void engine_player_manager_init()
 {
@@ -292,7 +292,7 @@ void engine_player_manager_count()
 	if( po->player_count > 25 )
 	{
 		po->player_count = 0;
-		po->player_frame = 1 - po->player_frame;	
+		po->player_frame = 1 - po->player_frame;
 	}
 }
 void engine_player_manager_draw()
