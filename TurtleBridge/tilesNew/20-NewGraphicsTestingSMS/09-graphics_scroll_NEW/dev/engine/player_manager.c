@@ -97,6 +97,45 @@ unsigned char engine_player_manager_get_deltaX( unsigned char state, unsigned ch
 	return deltaX;
 }
 
+engine_player_manager_set_action( unsigned char state, unsigned char command )
+{
+	struct_player_object *po = &global_player_object;
+	unsigned char index;
+
+	// Player on ground.
+	if( ( COMMAND_JUMP_MASK & command ) == COMMAND_JUMP_MASK )
+	{
+		po->player_state = player_state_isintheair;
+		po->player_index = 0;
+		po->player_frame = 4;
+		index = 0;
+		// determine jump index
+		if( ( COMMAND_HIGH_MASK & command ) == COMMAND_HIGH_MASK )
+		{
+			index += 1;
+		}
+
+		//ptr = jump_array_ptr[ indexZ ];
+		//len = jump_array_len[ indexZ ];
+		//data = ptr[ valueX ];
+	}
+	else
+	{
+		// Player in the air.
+		if( ( COMMAND_SWAP_MASK & command ) == COMMAND_SWAP_MASK )
+		{
+			//demo_screen
+			//swap_player_frame();
+		}
+		if( ( COMMAND_FLIP_MASK & command ) == COMMAND_FLIP_MASK )
+		{
+			//demo_screen
+			//but use command to determine LEFT || RGHT for Flip.
+			//flip_player_frame(command);
+		}
+	}
+}
+
 //TODO rename right() and down() functions
 //void engine_player_manager_horz( unsigned char deltaX )
 //void engine_player_manager_vert( unsigned char deltaY )

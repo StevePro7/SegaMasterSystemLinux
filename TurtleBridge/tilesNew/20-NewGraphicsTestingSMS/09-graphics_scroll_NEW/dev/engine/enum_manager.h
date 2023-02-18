@@ -63,6 +63,7 @@ typedef enum tag_enum_player_frame
 	player_frame_theair_left_02 = 9,
 	player_frame_theair_left_03 = 10,
 	player_frame_theair_left_04 = 11,
+	player_frame_sprite_maximum = 12,
 
 } enum_player_frame;
 

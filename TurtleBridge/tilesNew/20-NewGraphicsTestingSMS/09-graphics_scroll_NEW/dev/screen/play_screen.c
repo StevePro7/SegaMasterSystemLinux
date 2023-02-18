@@ -24,11 +24,15 @@ void screen_play_screen_update( unsigned char *screen_type )
 	//unsigned char input1, input2, input3, input4, input5, input6;
 	unsigned char input;
 	unsigned char deltaX;
-	//unsigned char deltaY;
+	signed char deltaY;
+	unsigned char loops;
+	signed char collision;
+	enum_scroll_state scroll_state;
+
 	unsigned char command = COMMAND_NONE_MASK;
 
 	input = engine_input_manager_hold( input_type_right );
-	input = 1;
+	input = 1;		// TODO delete
 	if( input )
 	{
 		engine_frame_manager_update();
@@ -38,7 +42,30 @@ void screen_play_screen_update( unsigned char *screen_type )
 
 	if( COMMAND_NONE_MASK != command )
 	{
+		// Get horizontal movement.
 		deltaX = engine_player_manager_get_deltaX( po->player_state, command );
+
+		// Get button action.
+		engine_player_manager_set_action( po->player_state, command );
+
+		// No scroll.
+		if( 0 == deltaX )
+		{
+			engine_scroll_manager_update( deltaX );
+		}
+		else
+		{
+			//if( !complete ) {}
+
+			for( loops = 0; loops < deltaX; loops++ )
+			{
+				scroll_state = engine_scroll_manager_update( 1 );
+				if( scroll_state_tile == scroll_state )
+				{
+					engine_level_manager_draw_column( so->scrollColumn );
+				}
+			}
+		}
 	}
 
 	engine_player_manager_draw();
