@@ -12,6 +12,9 @@ void engine_player_manager_initX( unsigned char difficulty );
 void engine_player_manager_loadX( unsigned char checkPoint );
 void engine_player_manager_loadY( unsigned char player_loadY );
 
+unsigned char engine_player_manager_get_deltaX( unsigned char state, unsigned char command );
+//unsigned char engine_player_manager_get_deltaY( unsigned char command );
+
 void engine_player_manager_right( unsigned char deltaX );
 void engine_player_manager_down( unsigned char deltaY );
 void engine_player_manager_draw();

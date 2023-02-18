@@ -73,6 +73,30 @@ void engine_player_manager_loadY( unsigned char player_loadY )
 	updatePlayerY();
 }
 
+unsigned char engine_player_manager_get_deltaX( unsigned char state, unsigned char command )
+{
+	unsigned char deltaX;
+
+	deltaX = 0;
+	//deltaX = 2;
+	if( ( COMMAND_LEFT_MASK & command ) == COMMAND_LEFT_MASK )
+	{
+		deltaX = 1;
+	}
+	if( ( COMMAND_RGHT_MASK & command ) == COMMAND_RGHT_MASK )
+	{
+		deltaX = 3;
+	}
+
+	// Add 1px when player in the air.
+	if( player_state_isintheair == state )
+	{
+		deltaX += 1;
+	}
+
+	return deltaX;
+}
+
 //TODO rename right() and down() functions
 //void engine_player_manager_horz( unsigned char deltaX )
 //void engine_player_manager_vert( unsigned char deltaY )
