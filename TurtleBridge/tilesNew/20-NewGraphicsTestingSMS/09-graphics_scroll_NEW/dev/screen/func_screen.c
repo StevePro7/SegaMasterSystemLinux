@@ -1,4 +1,5 @@
 #include "func_screen.h"
+#include "../engine/audio_manager.h"
 #include "../engine/command_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
@@ -26,6 +27,12 @@ void screen_func_screen_update( unsigned char *screen_type )
 	unsigned char input1, input2, input3, input4, input5, input6;
 	unsigned char command;
 
+	//engine_font_manager_text( "     ", 10, 10 );
+	engine_font_manager_text( "     ", 10, 11 );
+	engine_font_manager_text( "     ", 10, 12 );
+	engine_font_manager_text( "     ", 10, 13 );
+	engine_font_manager_text( "     ", 10, 14 );
+
 	input1 = engine_input_manager_move( input_type_left );
 	input2 = engine_input_manager_move( input_type_right );
 	input3 = engine_input_manager_move( input_type_up );
@@ -33,13 +40,11 @@ void screen_func_screen_update( unsigned char *screen_type )
 	input5 = engine_input_manager_hold( input_type_fire1 );
 	input6 = engine_input_manager_hold( input_type_fire2 );
 
-	command = engine_command_manager_build( po->player_state, input1, input2, input3, input4, input5, input6 );
+	engine_font_manager_data( input5, 30, 12 );
+	engine_font_manager_data( input6, 30, 13 );
 
-	engine_font_manager_text( "     ", 10, 10 );
-	engine_font_manager_text( "     ", 10, 11 );
-	engine_font_manager_text( "     ", 10, 12 );
-	engine_font_manager_text( "     ", 10, 13 );
-	engine_font_manager_text( "     ", 10, 14 );
+	command = engine_command_manager_build( po->player_state, input1, input2, input3, input4, input5, input6 );
+	//command = engine_command_manager_buildX( po->player_state, input1, input2, input3, input4, input5, input6 );
 
 	// Move left, middle, right.
 	if( ( COMMAND_MIDD_MASK & command ) == COMMAND_MIDD_MASK )
@@ -68,15 +73,18 @@ void screen_func_screen_update( unsigned char *screen_type )
 	// Hold button1, button2.
 	if( ( COMMAND_JUMP_MASK & command ) == COMMAND_JUMP_MASK )
 	{
-		engine_font_manager_text( " JUMP", 10, 12 );
+		engine_music_manager_play( 2 );
+		//engine_font_manager_text( " JUMP", 10, 12 );
 	}
 	if( ( COMMAND_SWAP_MASK & command ) == COMMAND_SWAP_MASK )
 	{
-		engine_font_manager_text( " SWAP", 10, 12 );
+		engine_music_manager_play( 3 );
+		//engine_font_manager_text( " SWAP", 10, 12 );
 	}
 	if( ( COMMAND_FLIP_MASK & command ) == COMMAND_FLIP_MASK )
 	{
-		engine_font_manager_text( " FLIP", 10, 13 );
+		engine_music_manager_play( 4 );
+		//engine_font_manager_text( " FLIP", 10, 13 );
 	}
 
 	if( COMMAND_NONE_MASK == command )
