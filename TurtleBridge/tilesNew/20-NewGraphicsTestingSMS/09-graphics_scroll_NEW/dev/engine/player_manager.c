@@ -18,7 +18,8 @@ void engine_player_manager_init()
 {
 	struct_player_object *po = &global_player_object;
 	po->initX = 0; po->posnX = 0; po->tileX = 0; po->lookX = 0;
-	po->initY = 0; po->posnY = 0; po->tileY = 0; po->leapY = 0;
+	//po->initY = 0; po->posnY = 0; po->tileY = 0; po->leapY = 0;
+	po->posnY = 0; po->tileY = 0; po->leapY = 0;
 	po->drawX = 0; po->drawY = 0;
 	po->player_state = player_state_isonground;
 	po->player_index = 0; po->player_frame = 0;
@@ -53,7 +54,7 @@ void engine_player_manager_loadY( unsigned char player_loadY )
 {
 	struct_player_object *po = &global_player_object;
 	po->posnY = player_loadY << 3;
-	po->initY = po->posnY;
+	//po->initY = po->posnY;		// TODO - don't think I need this
 	updatePlayerY();
 }
 
