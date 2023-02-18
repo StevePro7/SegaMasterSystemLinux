@@ -184,6 +184,33 @@ void engine_player_manager_vert( unsigned char deltaY )
 	updatePlayerY();
 }
 
+void engine_player_manager_bounds( unsigned char deltaY, unsigned char posnY, unsigned char invincible )
+{
+	struct_player_object *po = &global_player_object;
+	if( deltaY > 0 )
+	{
+		if( po->posnY >= PLAYER_MAX_HIGH && invincible )
+		{
+			// Cannot fall through the screen.
+			po->posnY = PLAYER_MAX_HIGH;
+			po->player_state = player_state_isonground;
+			po->jumper_index = 0;
+			po->player_frame = 0;
+			updatePlayerY();
+		}
+	}
+	else if( deltaY < 0 )
+	{
+		// Cannot jump through the screen.
+		if( po->posnY < PLAYER_MIN_HIGH )
+		{
+			po->posnY = PLAYER_MIN_HIGH;
+			updatePlayerY();
+		}
+	}
+}
+
+
 enum_player_state engine_player_manager_collision( unsigned char state, unsigned char lookX, unsigned char tileY )
 {
 	struct_player_object *po = &global_player_object;

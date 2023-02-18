@@ -20,6 +20,7 @@ void engine_player_manager_set_action( unsigned char state, unsigned char comman
 
 void engine_player_manager_horz( unsigned char deltaX );
 void engine_player_manager_vert( unsigned char deltaY );
+void engine_player_manager_bounds( unsigned char deltaY, unsigned char posnY, unsigned char invincible );
 enum_player_state engine_player_manager_collision( unsigned char state, unsigned char lookX, unsigned char tileY );
 
 // TODO delete
