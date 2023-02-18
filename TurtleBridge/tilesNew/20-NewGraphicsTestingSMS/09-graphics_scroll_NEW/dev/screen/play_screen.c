@@ -90,7 +90,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 			deltaY = 0;
 			if( player_state_isintheair == po->player_state )
 			{
-				deltaY = engine_player_manager_get_deltaY( po->player_state, po->player_jumps );
+				deltaY = engine_player_manager_get_deltaY( po->player_state );
 				engine_player_manager_vert( deltaY );
 			}
 			

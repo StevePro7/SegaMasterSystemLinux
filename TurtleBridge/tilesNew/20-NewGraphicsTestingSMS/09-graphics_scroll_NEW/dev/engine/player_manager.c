@@ -10,6 +10,7 @@
 
 #define PLAYER_MIN_HIGH		32
 #define PLAYER_MAX_HIGH		168
+#define MOTION_ANIMATES		25
 
 #ifdef _CONSOLE
 #else
@@ -35,8 +36,8 @@ void engine_player_manager_init()
 	po->posnY = 0; po->tileY = 0; po->leapY = 0;
 	po->drawX = 0; po->drawY = 0;
 	po->player_state = player_state_isonground;
-	po->player_index = 0; po->player_jumps = 0;
-	po->player_frame = 0; po->player_count = 0;
+	po->player_index = 0;
+	po->player_frame = 0; po->motion_count = 0;
 	jump_ptr = NULL;
 	jump_len = 0;
 	updatePlayer();
@@ -109,11 +110,11 @@ unsigned char engine_player_manager_get_deltaX( unsigned char state, unsigned ch
 	return deltaX;
 }
 
-signed char engine_player_manager_get_deltaY( unsigned char state, unsigned char jumps )
+signed char engine_player_manager_get_deltaY( unsigned char state )
 {
 	// IMPORTANT this function will only be invoked when player is in the air.
 	struct_player_object *po = &global_player_object;
-	signed char deltaY = jump_ptr[po->player_index];
+	signed char deltaY = jump_ptr[ po->player_index ];
 
 	return deltaY;
 
@@ -218,10 +219,11 @@ void engine_player_manager_pass()
 void engine_player_manager_count()
 {
 	struct_player_object *po = &global_player_object;
-	po->player_count++;
-	if( po->player_count > 25 )
+	po->motion_count++;
+	if( po->motion_count > MOTION_ANIMATES )
 	{
-		po->player_count = 0;
+		// TODO calculate frame inverse when moving left!!
+		po->motion_count = 0;
 		po->player_frame = 1 - po->player_frame;
 	}
 }
