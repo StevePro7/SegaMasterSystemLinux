@@ -36,7 +36,7 @@ void engine_player_manager_init()
 	po->posnY = 0; po->tileY = 0; po->leapY = 0;
 	po->drawX = 0; po->drawY = 0;
 	po->player_state = player_state_isonground;
-	po->player_index = 0;
+	po->jumper_index = 0;
 	po->player_frame = 0; po->motion_count = 0;
 	jump_ptr = NULL;
 	jump_len = 0;
@@ -114,7 +114,7 @@ signed char engine_player_manager_get_deltaY( unsigned char state )
 {
 	// IMPORTANT this function will only be invoked when player is in the air.
 	struct_player_object *po = &global_player_object;
-	signed char deltaY = jump_ptr[ po->player_index ];
+	signed char deltaY = jump_ptr[ po->jumper_index ];
 
 	return deltaY;
 
@@ -133,7 +133,7 @@ void engine_player_manager_set_action( unsigned char state, unsigned char comman
 	if( ( COMMAND_JUMP_MASK & command ) == COMMAND_JUMP_MASK )
 	{
 		po->player_state = player_state_isintheair;
-		po->player_index = 0;
+		po->jumper_index = 0;
 		po->player_frame = 4;
 		index = 0;
 
@@ -144,8 +144,8 @@ void engine_player_manager_set_action( unsigned char state, unsigned char comman
 		}
 
 		// Set the jump array information.
-		jump_ptr = jump_array_ptr[ po->player_index ];
-		jump_len = jump_array_len[ po->player_index ];
+		jump_ptr = jump_array_ptr[ po->jumper_index ];
+		jump_len = jump_array_len[ po->jumper_index ];
 	}
 	else
 	{

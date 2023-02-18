@@ -57,7 +57,7 @@ void screen_cont_screen_update( unsigned char *screen_type )
 		if( input )
 		{
 			po->player_state = player_state_isintheair;
-			po->player_index = 0;
+			po->jumper_index = 0;
 			po->player_frame = 4;
 			//engine_font_manager_text( "JUMP", 8, 8 );
 		}
@@ -86,7 +86,7 @@ void screen_cont_screen_update( unsigned char *screen_type )
 			//if( 0 == fo->frame_count )
 			//{
 			//	po->player_state = player_state_isintheair;
-			//	po->player_index = 0;
+			//	po->jumper_index = 0;
 			//	po->player_frame = 4;
 			//	engine_font_manager_text( "JUMP", 8, 8 );
 			//}
@@ -94,7 +94,7 @@ void screen_cont_screen_update( unsigned char *screen_type )
 		else if( player_state_isintheair == po->player_state )
 		{
 			engine_player_manager_right( deltaX );
-			deltaY = physics_array[ po->player_index ];
+			deltaY = physics_array[ po->jumper_index ];
 			engine_player_manager_down( deltaY );
 
 			// TODO
@@ -118,7 +118,7 @@ void screen_cont_screen_update( unsigned char *screen_type )
 					po->player_state = player_state_isonground;
 					po->posnY = po->tileY << 3;
 					po->drawY = po->posnY - 32;
-					po->player_index = 0;
+					po->jumper_index = 0;
 					po->player_frame = 0;
 					//engine_font_manager_text( "LAND", 8, 8 );
 				}
@@ -132,7 +132,7 @@ void screen_cont_screen_update( unsigned char *screen_type )
 						if( go->game_isgod )
 						{
 							po->player_state = player_state_isonground;
-							po->player_index = 0;
+							po->jumper_index = 0;
 							po->player_frame = 0;
 						}
 						else
@@ -148,9 +148,9 @@ void screen_cont_screen_update( unsigned char *screen_type )
 
 			if( player_state_isintheair == po->player_state )
 			{
-				if( po->player_index < 33 )
+				if( po->jumper_index < 33 )
 				{
-					po->player_index++;
+					po->jumper_index++;
 				}
 			}
 		}

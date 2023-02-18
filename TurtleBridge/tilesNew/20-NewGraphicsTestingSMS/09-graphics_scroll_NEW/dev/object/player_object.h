@@ -13,8 +13,8 @@ typedef struct tag_struct_player_object
 	unsigned int leapY;
 	unsigned char drawX, drawY;
 	unsigned char player_state;
-	unsigned char player_index;
-	//unsigned char jumper_index;
+	//unsigned char player_index;
+	unsigned char jumper_index;
 	//unsigned char jumper_array;		// replaced by jump_ptr	TODO delete
 	unsigned char player_frame;
 	unsigned char motion_count;

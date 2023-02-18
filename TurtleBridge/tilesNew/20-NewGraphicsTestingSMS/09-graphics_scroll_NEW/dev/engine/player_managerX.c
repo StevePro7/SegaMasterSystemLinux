@@ -60,8 +60,8 @@ void engine_player_manager_update()
 		return;
 	}
 
-	deltaY = physics_array[ po->player_index ];
-	//engine_font_manager_data( po->player_index, 20, 0 );
+	deltaY = physics_array[ po->jumper_index ];
+	//engine_font_manager_data( po->jumper_index, 20, 0 );
 	//engine_font_manager_data( deltaY, 30, 0 );
 
 	if( deltaY > 0 )
@@ -79,7 +79,7 @@ void engine_player_manager_update()
 		{
 			po->posnY = tileY << 3;
 			po->player_state = player_state_isonground;
-			po->player_index = 0;
+			po->jumper_index = 0;
 			updatePlayerY();
 
 			//engine_font_manager_text( "PLAYER ON GROUND ", 5, 4 );
@@ -89,7 +89,7 @@ void engine_player_manager_update()
 		else
 		{
 			po->posnY = tempY;
-			//po->player_index++;
+			//po->jumper_index++;
 			updatePlayer();
 
 			//engine_font_manager_data( po->posnY, 30, 2 );
@@ -108,7 +108,7 @@ void engine_player_manager_update()
 		//engine_font_manager_data( tileY, 30, 5 );
 		
 		po->posnY = tempY;
-		//po->player_index++;
+		//po->jumper_index++;
 		updatePlayer();
 
 		//engine_font_manager_data( po->posnY, 30, 2 );
@@ -126,7 +126,7 @@ void engine_player_manager_update()
 		//engine_font_manager_data( tileY, 30, 5 );
 
 		po->posnY = tempY;				// NOP
-		//po->player_index++;
+		//po->jumper_index++;
 		updatePlayer();					// NOP
 
 		//engine_font_manager_data( po->posnY, 30, 2 );

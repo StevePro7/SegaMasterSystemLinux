@@ -74,7 +74,7 @@ void screen_dead_screen_update( unsigned char *screen_type )
 			deltaX = 2;
 			engine_player_manager_right( deltaX );
 
-			deltaY = gravityZZ[ po->player_index ];
+			deltaY = gravityZZ[ po->jumper_index ];
 			//engine_font_manager_data( deltaY, 20, 6 );
 
 			engine_player_manager_down( deltaY );
@@ -84,14 +84,14 @@ void screen_dead_screen_update( unsigned char *screen_type )
 				po->player_state = player_state_isonground;
 				po->posnY = po->tileY << 3;
 				po->drawY = po->posnY - 32;
-				po->player_index = 0;
+				po->jumper_index = 0;
 				po->player_frame = 0;
 			}
 			else
 			{
-				if( po->player_index < 16 )
+				if( po->jumper_index < 16 )
 				{
-					po->player_index++;
+					po->jumper_index++;
 				}
 
 				//engine_debug_manager_printout();
@@ -101,7 +101,7 @@ void screen_dead_screen_update( unsigned char *screen_type )
 					if( go->game_isgod )
 					{
 						po->player_state = player_state_isnowdying;
-						po->player_index = 0;
+						po->jumper_index = 0;
 						po->player_frame = 0;
 					}
 					else

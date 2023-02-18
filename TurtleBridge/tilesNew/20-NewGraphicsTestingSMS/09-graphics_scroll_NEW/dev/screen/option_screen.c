@@ -108,7 +108,7 @@ void screen_option_screen_update( unsigned char *screen_type )
 		if( input )
 		{
 			po->player_state = player_state_isintheair;
-			po->player_index = 0;
+			po->jumper_index = 0;
 			po->player_frame = 4;
 			//engine_font_manager_text( "JUMP", 8, 8 );
 
@@ -154,7 +154,7 @@ void screen_option_screen_update( unsigned char *screen_type )
 				if( INVALID_INDEX == collision )
 				{
 					po->player_state = player_state_isintheair;
-					po->player_index = 0;
+					po->jumper_index = 0;
 					po->player_frame = 4;
 					//engine_font_manager_text( "FALL", 8, 8 );
 
@@ -169,8 +169,8 @@ void screen_option_screen_update( unsigned char *screen_type )
 		else if( player_state_isintheair == po->player_state )
 		{
 			engine_player_manager_right( deltaX );
-			deltaY = ptr[ po->player_index ];
-			//deltaY = data[ po->player_index ];
+			deltaY = ptr[ po->jumper_index ];
+			//deltaY = data[ po->jumper_index ];
 			engine_player_manager_down( deltaY );
 
 			// TODO
@@ -194,7 +194,7 @@ void screen_option_screen_update( unsigned char *screen_type )
 					po->player_state = player_state_isonground;
 					po->posnY = po->tileY << 3;
 					po->drawY = po->posnY - 32;
-					po->player_index = 0;
+					po->jumper_index = 0;
 					po->player_frame = 0;
 					//engine_font_manager_text( "LAND", 8, 8 );
 				}
@@ -207,7 +207,7 @@ void screen_option_screen_update( unsigned char *screen_type )
 						if( go->game_isgod )
 						{
 							po->player_state = player_state_isonground;
-							po->player_index = 0;
+							po->jumper_index = 0;
 							po->player_frame = 0;
 						}
 						else
@@ -223,9 +223,9 @@ void screen_option_screen_update( unsigned char *screen_type )
 
 			if( player_state_isintheair == po->player_state )
 			{
-				if( po->player_index < len - 1 )
+				if( po->jumper_index < len - 1 )
 				{
-					po->player_index++;
+					po->jumper_index++;
 				}
 			}
 		}
