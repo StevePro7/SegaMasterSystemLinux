@@ -1,31 +1,60 @@
 ;!FILE play_screen.asm
 XL3
-H 9 areas 16 global symbols
+H 9 areas 33 global symbols
 M play_screen
 O -mz80
+S _engine_frame_manager_draw Ref000000
 S _engine_player_manager_draw Ref000000
+S _engine_frame_manager_update Ref000000
 S .__.ABS. Def000000
-A _CODE size B flags 0 addr 0
-S XG$screen_play_screen_update$0$0 Def00000A
-S C$play_screen.c$20$1_0$24 Def00000A
-S C$play_screen.c$14$0_0$22 Def000000
-S A$play_screen$61 Def000000
-S C$play_screen.c$16$0_0$24 Def000001
-S A$play_screen$80 Def000006
+S _engine_scroll_manager_update Ref000000
+S _engine_input_manager_hold Ref000000
+S _engine_frame_manager_load Ref000000
+A _CODE size 2A flags 0 addr 0
+S XG$screen_play_screen_update$0$0 Def000029
+S C$play_screen.c$13$0_0$23 Def000000
+S C$play_screen.c$20$1_0$25 Def00000E
+S C$play_screen.c$15$1_0$23 Def000000
+S A$play_screen$70 Def000006
+S C$play_screen.c$30$2_0$26 Def00001A
+S C$play_screen.c$16$1_0$23 Def000003
+S A$play_screen$71 Def000007
+S A$play_screen$62 Def000000
+S C$play_screen.c$31$2_0$26 Def00001D
+S C$play_screen.c$17$1_0$23 Def000006
 S G$screen_play_screen_load$0$0 Def000000
-S A$play_screen$90 Def00000A
-S A$play_screen$81 Def000007
-S A$play_screen$82 Def000008
-S C$play_screen.c$18$1_0$24 Def000001
-S A$play_screen$74 Def000001
-S C$play_screen.c$19$1_0$24 Def000004
-S A$play_screen$78 Def000004
-S A$play_screen$79 Def000005
+S A$play_screen$72 Def000008
+S C$play_screen.c$34$1_0$25 Def000020
+S C$play_screen.c$18$1_0$23 Def00000D
+S A$play_screen$82 Def00000D
+S A$play_screen$73 Def000009
+S C$play_screen.c$35$1_0$25 Def000023
+S A$play_screen$74 Def00000C
+S C$play_screen.c$36$1_0$25 Def000029
+S C$play_screen.c$27$1_0$25 Def00000E
+S A$play_screen$66 Def000003
+S C$play_screen.c$28$1_0$25 Def000017
+S A$play_screen$95 Def00000E
+S A$play_screen$96 Def000010
+S A$play_screen$97 Def000011
+S A$play_screen$98 Def000012
+S A$play_screen$99 Def000015
 S _screen_play_screen_load Def000000
-S XG$screen_play_screen_load$0$0 Def000000
-S G$screen_play_screen_update$0$0 Def000001
-S _screen_play_screen_update Def000001
-S C$play_screen.c$12$0_0$22 Def000000
+S XG$screen_play_screen_load$0$0 Def00000D
+S G$screen_play_screen_update$0$0 Def00000E
+S A$play_screen$100 Def000016
+S A$play_screen$122 Def000023
+S A$play_screen$113 Def00001D
+S A$play_screen$104 Def000017
+S A$play_screen$123 Def000024
+S A$play_screen$105 Def000018
+S A$play_screen$124 Def000025
+S _screen_play_screen_update Def00000E
+S A$play_screen$134 Def000029
+S A$play_screen$125 Def000026
+S A$play_screen$126 Def000027
+S A$play_screen$118 Def000020
+S A$play_screen$109 Def00001A
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -36,9 +65,17 @@ A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
-T 00 00 00 C9
+T 00 00 00 CD 00 00 CD 00 00 AF F5 33 CD 00 00 33
+R 00 00 00 00 02 04 06 00 02 07 00 00 02 0D 04 00
+T 0D 00 00 C9
 R 00 00 00 00
-T 01 00 00
+T 0E 00 00
 R 00 00 00 00
-T 01 00 00 CD 00 00 C1 E1 E5 C5 36 0C C9
-R 00 00 00 00 02 04 00 00
+T 0E 00 00 3E 08 F5 33 CD 00 00 7D 33 B7 28 06 CD
+R 00 00 00 00 02 08 05 00
+T 1B 00 00 00 00 CD 00 00
+R 00 00 00 00 02 03 02 00 02 06 00 00
+T 20 00 00
+R 00 00 00 00
+T 20 00 00 CD 00 00 C1 E1 E5 C5 36 0C C9
+R 00 00 00 00 02 04 01 00
