@@ -18,6 +18,8 @@
 #include "bank36.h"
 #include "bank37.h"
 #include "bank38.h"
+#include "bank39.h"
+#include "bank40.h"
 #include "bank41.h"
 #include "bank42.h"
 #include "bank43.h"
@@ -41,6 +43,10 @@
 
 const unsigned char *riff_sample_data[] =
 {
+	// AC/DC ready	bank 39-40
+	Riff_Intro_ACDC_01_wav_pcmenc,
+	Riff_Intro_ACDC_02_wav_pcmenc,
+
 	// Kiss	bank 35-38
 	Riff_Intro_Kiss_01_wav_pcmenc,
 	Riff_Intro_Kiss_02_wav_pcmenc,
@@ -102,6 +108,9 @@ const unsigned char *riff_sample_data[] =
 };
 const unsigned char riff_sample_bank[] =
 {
+	Riff_Intro_ACDC_01_wav_pcmenc_bank,
+	Riff_Intro_ACDC_02_wav_pcmenc_bank,
+
 	Riff_Intro_Kiss_01_wav_pcmenc_bank,
 	Riff_Intro_Kiss_02_wav_pcmenc_bank,
 	Riff_Intro_Kiss_03_wav_pcmenc_bank,
