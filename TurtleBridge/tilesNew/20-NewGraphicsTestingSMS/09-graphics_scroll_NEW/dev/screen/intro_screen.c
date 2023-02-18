@@ -192,7 +192,7 @@ void screen_intro_screen_update( unsigned char *screen_type )
 	if( complete )
 	{
 		engine_scroll_manager_update( 0 );
-		engine_player_manager_update3();
+		//engine_player_manager_update3();
 		*screen_type = screen_type_pass;
 		return;
 	}
