@@ -19,10 +19,11 @@ void engine_audio_manager_init()
 void engine_music_manager_play( unsigned char index )
 {
 	struct_audio_object *ao = &global_audio_object;
-	if( devkit_PSGGetStatus() )
-	{
-		return;
-	}
+	//TODO remove - use more in SFX
+	//if( devkit_PSGGetStatus() )
+	//{
+	//	return;
+	//}
 
 	devkit_SMS_mapROMBank( FIXED_BANK );
 	ao->music_data = ( unsigned char* ) music_object_data[ index ];
@@ -46,7 +47,7 @@ void engine_music_manager_stop()
 
 void engine_audio_manager_update()
 {
-	// Thanks to @eruiz for this cod3!
+	// Thanks to @eruiz for this code!
 	struct_audio_object *ao = &global_audio_object;
 	if( 0 != ao->music_bank )
 	{
@@ -54,6 +55,7 @@ void engine_audio_manager_update()
 		devkit_PSGFrame();
 	}
 
+	// TODO implement...!!
 	//if( devkit_PSGSFXGetStatus() )
 	//{
 	//	devkit_SMS_mapROMBank( ao->sound_bank );
