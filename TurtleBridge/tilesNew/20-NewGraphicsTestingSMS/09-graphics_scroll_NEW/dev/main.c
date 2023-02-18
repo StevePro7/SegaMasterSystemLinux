@@ -58,7 +58,7 @@ static void start()
 	unsigned char open_screen_type;
 
 	devkit_SMS_init();
-	engine_debug_manager_initcontent();
+	//engine_debug_manager_initcontent();
 
 	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_NORMAL() );
 	devkit_SMS_useFirstHalfTilesforSprites( false );
@@ -79,11 +79,11 @@ static void start()
 	//open_screen_type = screen_type_option;
 	//open_screen_type = screen_type_func;
 	//open_screen_type = screen_type_test;
-	//open_screen_type = screen_type_init;
+	open_screen_type = screen_type_init;
 	//open_screen_type = screen_type_intro;
 	//open_screen_type = screen_type_play;
 	//open_screen_type = screen_type_load;
-	open_screen_type = screen_type_ready;
+	//open_screen_type = screen_type_ready;
 	//open_screen_type = screen_type_start;
 	
 	//open_screen_type = screen_type_pass;
@@ -95,7 +95,7 @@ static void start()
 	//open_screen_type = screen_type_start;
 	//open_screen_type = screen_type_diff;
 	//open_screen_type = screen_type_level;
-	//open_screen_type = screen_type_beat;
+	//open_screen_type = screen_type_demo;
 
 	engine_player_manager_init();
 	engine_scroll_manager_init();

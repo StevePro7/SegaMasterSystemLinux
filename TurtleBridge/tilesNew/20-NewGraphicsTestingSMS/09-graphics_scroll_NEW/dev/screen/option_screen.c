@@ -27,7 +27,7 @@ void screen_option_screen_load()
 	//engine_debug_manager_printout();
 	reset();
 
-	engine_music_manager_play( 0 );
+	//engine_music_manager_play( 0 );
 }
 
 void screen_option_screen_update( unsigned char *screen_type )

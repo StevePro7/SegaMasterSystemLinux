@@ -48,11 +48,30 @@ typedef enum tag_enum_player_state
 
 } enum_player_state;
 
+// TODO - replace these enums for swap / flip.
+typedef enum tag_enum_player_frame
+{
+	player_frame_ground_rght_01 = 0,
+	player_frame_ground_rght_02 = 1,
+	player_frame_ground_left_01 = 2,
+	player_frame_ground_left_02 = 3,
+	player_frame_theair_rght_01 = 4,
+	player_frame_theair_rght_02 = 5,
+	player_frame_theair_rght_03 = 6,
+	player_frame_theair_rght_04 = 7,
+	player_frame_theair_left_01 = 8,
+	player_frame_theair_left_02 = 9,
+	player_frame_theair_left_03 = 10,
+	player_frame_theair_left_04 = 11,
+
+} enum_player_frame;
+
 typedef enum tag_enum_scroll_state
 {
 	scroll_state_none = 0,
 	scroll_state_tile = 1,
 	scroll_state_comp = 2,
+	//scroll_state_line = 2		// TODO draw tile and update checkpoint
 
 } enum_scroll_state;
 
