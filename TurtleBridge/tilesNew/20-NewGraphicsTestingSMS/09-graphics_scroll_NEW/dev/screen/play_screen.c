@@ -4,6 +4,7 @@
 #include "../engine/debug_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
+#include "../engine/game_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/level_manager.h"
@@ -20,19 +21,22 @@ void screen_play_screen_load()
 
 void screen_play_screen_update( unsigned char *screen_type )
 {
+	struct_scroll_object *so = &global_scroll_object;
 	struct_player_object *po = &global_player_object;
+	struct_level_object *lo = &global_level_object;
+	struct_game_object *go = &global_game_object;
 	//unsigned char input1, input2, input3, input4, input5, input6;
 	unsigned char input;
 	unsigned char deltaX;
-	signed char deltaY;
+	//signed char deltaY;
 	unsigned char loops;
-	signed char collision;
+	//signed char collision;
 	enum_scroll_state scroll_state;
 
 	unsigned char command = COMMAND_NONE_MASK;
 
 	input = engine_input_manager_hold( input_type_right );
-	input = 1;		// TODO delete
+//	input = 1;		// TODO delete
 	if( input )
 	{
 		engine_frame_manager_update();
@@ -56,13 +60,21 @@ void screen_play_screen_update( unsigned char *screen_type )
 		else
 		{
 			//if( !complete ) {}
-
 			for( loops = 0; loops < deltaX; loops++ )
 			{
 				scroll_state = engine_scroll_manager_update( 1 );
 				if( scroll_state_tile == scroll_state )
 				{
 					engine_level_manager_draw_column( so->scrollColumn );
+				}
+				else if( scroll_state_comp == scroll_state )
+				{
+					//complete = scroll_state_comp == scroll_state;
+					//if( complete )
+					{
+						//engine_font_manager_text( "NEXT SCREEN", 10, 3 );
+						break;
+					}
 				}
 			}
 		}
