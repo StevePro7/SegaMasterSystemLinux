@@ -241,7 +241,7 @@ void engine_player_manager_bounds( signed int deltaY, unsigned char posnY, unsig
 	}
 }
 
-enum_player_state engine_player_manager_collision( unsigned char state, unsigned char lookX, unsigned char tileY, unsigned char posnY, unsigned char invincible )
+enum_player_state engine_player_manager_collision( unsigned char state, unsigned char lookX, unsigned char tileY, signed int deltaY, unsigned char posnY, unsigned char invincible )
 {
 	struct_player_object *po = &global_player_object;
 	enum_player_state player_state;
@@ -286,18 +286,21 @@ enum_player_state engine_player_manager_collision( unsigned char state, unsigned
 		}
 		else if( player_state_isintheair == player_state )
 		{
-			// Player is in the air but check there could be a platform to land on.
-			if( INVALID_INDEX != collision )
+			// Player  in air descending thus check there could be platform to land on.
+			if( deltaY > 0 )
 			{
-				player_state = player_state_isonground;
-				po->jumper_index = 0;
-				//po->player_frame = 0;
-				po->player_frame = updatePlayerFrameFlyingToGround( po->player_frame );
+				if( INVALID_INDEX != collision )
+				{
+					player_state = player_state_isonground;
+					po->jumper_index = 0;
+					//po->player_frame = 0;
+					po->player_frame = updatePlayerFrameFlyingToGround( po->player_frame );
 
-				// Ensure player aligns with platform landed on...
-				po->posnY = tileY << 3;
-				po->leapY = po->posnY << 8;
-				updatePlayerY();
+					// Ensure player aligns with platform landed on...
+					po->posnY = tileY << 3;
+					po->leapY = po->posnY << 8;
+					updatePlayerY();
+				}
 			}
 		}
 	}

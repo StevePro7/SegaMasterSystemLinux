@@ -60,7 +60,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 		engine_frame_manager_draw();
 
 		command = engine_command_manager_build( po->player_state, 1, 0, 0, 0, 0, 0 );
-		if( 200 == fo->frame_count )
+		if( 70 == fo->frame_count )
 		{
 			command = engine_command_manager_build( po->player_state, 1, 0, 0, 0, 1, 0 );
 		}
@@ -113,7 +113,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 			}
 			
 			// General all-purpose collision detection routine.
-			player_state = engine_player_manager_collision( po->player_state, po->lookX, po->tileY, po->posnY, go->game_isgod );
+			player_state = engine_player_manager_collision( po->player_state, po->lookX, po->tileY, deltaY, po->posnY, go->game_isgod );
 		}
 	}
 
