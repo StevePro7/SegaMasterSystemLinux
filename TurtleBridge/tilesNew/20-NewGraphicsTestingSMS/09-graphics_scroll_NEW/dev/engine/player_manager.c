@@ -187,7 +187,7 @@ void engine_player_manager_vert( unsigned char deltaY )
 void engine_player_manager_bounds( signed char deltaY, unsigned char posnY, unsigned char invincible )
 {
 	struct_player_object *po = &global_player_object;
-	if( deltaY >= 0 )
+	if( deltaY > 0 )
 	{
 		if( posnY >= PLAYER_MAX_HIGH && invincible )
 		{
@@ -211,15 +211,36 @@ void engine_player_manager_bounds( signed char deltaY, unsigned char posnY, unsi
 }
 
 
-enum_player_state engine_player_manager_collision( unsigned char state, unsigned char lookX, unsigned char tileY )
+enum_player_state engine_player_manager_collision( unsigned char state, unsigned char lookX, unsigned char tileY, unsigned char posnY, unsigned char invincible )
 {
 	struct_player_object *po = &global_player_object;
 	enum_player_state player_state;
 	signed char collision;
-
 	player_state = state;
-	collision = engine_collision_manager_player( lookX, tileY );
 
+	// Check if player fallen through to the water.
+	if( posnY >= PLAYER_MAX_HIGH )
+	{
+		// If God mode then simply revert back to "ground".
+		if( invincible )
+		{
+			player_state = player_state_isonground;
+			po->posnY = PLAYER_MAX_HIGH;
+			//po->jumper_index = 0;
+			//po->player_frame = 0;
+			updatePlayerY();
+		}
+		else
+		{
+			// Otherwise update palyer dying state.
+			player_state = player_state_isnowdying;
+		}
+
+		return player_state;
+	}
+
+	// Default check platform collision as before.
+	collision = engine_collision_manager_player( lookX, tileY );
 	if( player_state_isonground == player_state )
 	{
 		// Player was on the ground but now "falling" in the air due to gravity.
@@ -238,14 +259,15 @@ enum_player_state engine_player_manager_collision( unsigned char state, unsigned
 		// Player is in the air but check there could be a platform to land on.
 		if( INVALID_INDEX != collision )
 		{
-			po->player_state = player_state_isonground;
+			//TODO check if this is the bug??
+			player_state = player_state_isonground;
+			//po->player_state = player_state_isonground;
 			po->jumper_index = 0;
 			po->player_frame = 0;
 
 			// Ensure player aligns with platform landed on...
 			po->posnY = tileY << 3;
 			updatePlayerY();
-			//engine_font_manager_text( "LAND", 8, 8 );
 		}
 	}
 
