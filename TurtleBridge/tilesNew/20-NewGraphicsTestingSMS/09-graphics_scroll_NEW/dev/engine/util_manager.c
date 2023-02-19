@@ -41,7 +41,7 @@ void engine_random_manager_rand()
 {
 	rand();
 }
-unsigned char engine_random_manager_next( unsigned char max )
+unsigned char engine_random_manager_next( unsigned int max )
 {
 	return rand() % max;
 }

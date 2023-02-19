@@ -12,6 +12,6 @@ void engine_util_manager_convertNibblesToByte( unsigned char upper_nibble, unsig
 
 // Random Manager.
 void engine_random_manager_rand();
-unsigned char engine_random_manager_next( unsigned char max );
+unsigned char engine_random_manager_next( unsigned int max );
 
 #endif//#define _MATHS_MANAGER_H_

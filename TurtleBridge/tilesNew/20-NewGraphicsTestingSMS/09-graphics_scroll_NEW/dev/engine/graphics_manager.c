@@ -42,20 +42,20 @@ void engine_graphics_manager_clouds( unsigned char data )
 		engine_tile_manager_draw_cloud( cloud_tile_type[ cloud_type_large ], CLOUD_COL_START + 1 * CLOUD_COL_WIDES, CLOUD_ROW_START + 1, flip2 );
 	}
 
-	//result = ( COMMAND_HIGH_MASK & data ) == COMMAND_HIGH_MASK;
-	//height = ( COMMAND_RGHT_MASK & data ) == COMMAND_RGHT_MASK;
-	//flip1 = ( COMMAND_MIDD_MASK & data ) == COMMAND_MIDD_MASK;
-	//flip2 = ( COMMAND_LEFT_MASK & data ) == COMMAND_LEFT_MASK;
-	//if( cloud_type_large == result )
-	//{
-	//	engine_tile_manager_draw_cloud( cloud_tile_type[ cloud_type_large ], CLOUD_COL_START + 2 * CLOUD_COL_WIDES, CLOUD_ROW_START + 1, flip1 );
-	//	engine_tile_manager_draw_cloud( cloud_tile_type[ cloud_type_small ], CLOUD_COL_START + 3 * CLOUD_COL_WIDES, CLOUD_ROW_START + height, flip2 );
-	//}
-	//else
-	//{
-	//	engine_tile_manager_draw_cloud( cloud_tile_type[ cloud_type_small ], CLOUD_COL_START + 2 * CLOUD_COL_WIDES, CLOUD_ROW_START + height, flip1 );
-	//	engine_tile_manager_draw_cloud( cloud_tile_type[ cloud_type_large ], CLOUD_COL_START + 3 * CLOUD_COL_WIDES, CLOUD_ROW_START + 1, flip2 );
-	//}
+	result = ( COMMAND_HIGH_MASK & data ) == COMMAND_HIGH_MASK;
+	height = ( COMMAND_RGHT_MASK & data ) == COMMAND_RGHT_MASK;
+	flip1 = ( COMMAND_MIDD_MASK & data ) == COMMAND_MIDD_MASK;
+	flip2 = ( COMMAND_LEFT_MASK & data ) == COMMAND_LEFT_MASK;
+	if( cloud_type_large == result )
+	{
+		engine_tile_manager_draw_cloud( cloud_tile_type[ cloud_type_large ], CLOUD_COL_START + 2 * CLOUD_COL_WIDES, CLOUD_ROW_START + 1, flip1 );
+		engine_tile_manager_draw_cloud( cloud_tile_type[ cloud_type_small ], CLOUD_COL_START + 3 * CLOUD_COL_WIDES, CLOUD_ROW_START + height, flip2 );
+	}
+	else
+	{
+		engine_tile_manager_draw_cloud( cloud_tile_type[ cloud_type_small ], CLOUD_COL_START + 2 * CLOUD_COL_WIDES, CLOUD_ROW_START + height, flip1 );
+		engine_tile_manager_draw_cloud( cloud_tile_type[ cloud_type_large ], CLOUD_COL_START + 3 * CLOUD_COL_WIDES, CLOUD_ROW_START + 1, flip2 );
+	}
 }
 void engine_graphics_manager_cloud()
 {
