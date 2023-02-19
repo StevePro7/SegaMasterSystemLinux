@@ -57,7 +57,6 @@ void screen_load_screen_load()
 	devkit_SMS_displayOn();
 
 	engine_scroll_manager_load( go->game_point, lo->level_size );
-	
 }
 
 void screen_load_screen_update( unsigned char *screen_type )

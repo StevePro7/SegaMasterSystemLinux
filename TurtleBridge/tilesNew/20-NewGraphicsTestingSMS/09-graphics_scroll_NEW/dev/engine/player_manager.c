@@ -26,6 +26,7 @@ struct_player_object global_player_object;
 static void updatePlayer();
 static void updatePlayerX();
 static void updatePlayerY();
+static unsigned char updatePlayerFrameGroundToFlying( unsigned char player_frame );
 
 static const signed int *jump_ptr;
 static unsigned char jump_len;
@@ -80,7 +81,8 @@ void engine_player_manager_loadY( unsigned char player_loadY )
 		po->player_state = player_state_isintheair;
 		po->posnY = PLAYER_MIN_HIGH;
 		po->jumper_index = 0;
-		po->player_frame = 4;		// todo frame
+		//po->player_frame = 4;		// todo frame check
+		po->player_frame = updatePlayerFrameGroundToFlying( po->player_frame );
 
 		// Set the jump array information.
 		jump_ptr = jump_array_ptr[ po->jumper_index ];
@@ -161,14 +163,16 @@ void engine_player_manager_set_action( unsigned char state, unsigned char comman
 	if( ( COMMAND_JUMP_MASK & command ) == COMMAND_JUMP_MASK )
 	{
 		po->player_state = player_state_isintheair;
-		po->jumper_index = 0;
-		po->player_frame = 4;		// todo frame
-		index = 0;
 
-		// determine jump index
+		// TODO - calculate this - determine jump index
+		po->jumper_index = 1;
+		//po->player_frame = po->player_frame < player_frame_ground_left_01 ? player_frame_theair_rght_01 : player_frame_theair_left_01;
+		po->player_frame = updatePlayerFrameGroundToFlying( po->player_frame );
+
+		// TODO test this
 		if( ( COMMAND_HIGH_MASK & command ) == COMMAND_HIGH_MASK )
 		{
-			index += 1;
+			po->jumper_index += 1;
 		}
 
 		// Set the jump array information.
@@ -271,7 +275,8 @@ enum_player_state engine_player_manager_collision( unsigned char state, unsigned
 			{
 				player_state = player_state_isintheair;
 				po->jumper_index = 0;
-				po->player_frame = 4;			// TODO check opposite frame.
+				//po->player_frame = 4;			// TODO check opposite frame.
+				po->player_frame = updatePlayerFrameGroundToFlying( po->player_frame );
 
 				jump_ptr = jump_array_ptr[ po->jumper_index ];
 				jump_len = jump_array_len[ po->jumper_index ];
@@ -332,6 +337,10 @@ static void updatePlayerY()
 	po->drawY = po->posnY - 32;
 	po->tileY = po->posnY >> 3;
 	//po->leapY = po->posnY << 8;
+}
+static unsigned char updatePlayerFrameGroundToFlying( unsigned char player_frame )
+{
+	return player_frame < player_frame_ground_left_01 ? player_frame_theair_rght_01 : player_frame_theair_left_01;
 }
 
 void engine_player_manager_pass()
