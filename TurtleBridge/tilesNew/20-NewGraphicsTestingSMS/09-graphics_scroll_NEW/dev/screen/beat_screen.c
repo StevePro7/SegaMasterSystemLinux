@@ -10,7 +10,7 @@
 
 void screen_beat_screen_load()
 {
-	unsigned char data = 0b00000000;
+	unsigned char data = 0b11100000;
 
 	//struct_game_object *go = &global_game_object;
 	engine_font_manager_text( "BEAT SCREEN..!!", 10, 14 );
