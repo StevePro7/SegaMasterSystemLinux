@@ -82,7 +82,6 @@ void engine_player_manager_loadY( unsigned char player_loadY )
 		po->player_state = player_state_isintheair;
 		po->posnY = PLAYER_MIN_HIGH;
 		po->jumper_index = 0;
-		//po->player_frame = 4;		// todo frame check
 		po->player_frame = updatePlayerFrameGroundToFlying( po->player_frame );
 
 		// Set the jump array information.
@@ -224,7 +223,6 @@ void engine_player_manager_bounds( signed int deltaY, unsigned char posnY, unsig
 			po->leapY = po->posnY << 8;
 			po->player_state = player_state_isonground;
 			po->jumper_index = 0;
-			//po->player_frame = 0;		// TODO test and delete
 			po->player_frame = updatePlayerFrameFlyingToGround( po->player_frame );
 			updatePlayerY();
 		}
@@ -277,9 +275,9 @@ enum_player_state engine_player_manager_collision( unsigned char state, unsigned
 			{
 				player_state = player_state_isintheair;
 				po->jumper_index = 0;
-				//po->player_frame = 4;			// TODO check opposite frame.
 				po->player_frame = updatePlayerFrameGroundToFlying( po->player_frame );
 
+				// Set the jump array information.
 				jump_ptr = jump_array_ptr[ po->jumper_index ];
 				jump_len = jump_array_len[ po->jumper_index ];
 			}
@@ -293,7 +291,6 @@ enum_player_state engine_player_manager_collision( unsigned char state, unsigned
 				{
 					player_state = player_state_isonground;
 					po->jumper_index = 0;
-					//po->player_frame = 0;
 					po->player_frame = updatePlayerFrameFlyingToGround( po->player_frame );
 
 					// Ensure player aligns with platform landed on...

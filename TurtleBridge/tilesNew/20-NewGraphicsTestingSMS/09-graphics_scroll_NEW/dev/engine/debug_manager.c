@@ -16,8 +16,8 @@ void engine_debug_manager_initgame()
 	struct_game_object *go = &global_game_object;
 	go->game_difficulty = difficulty_type_easier;
 	//go->game_difficulty = difficulty_type_normal;
-	//go->game_difficulty = difficulty_type_harder;
-	go->game_difficulty = difficulty_type_insane;
+	go->game_difficulty = difficulty_type_harder;
+	//go->game_difficulty = difficulty_type_insane;
 	go->game_world = 0;
 	go->game_round = 0;
 	go->game_level = 0;
@@ -27,7 +27,7 @@ void engine_debug_manager_initgame()
 	//go->game_isgod = false;
 	go->game_isgod = true;
 
-	po->player_frame = 0;// player_frame_ground_left_01;
+	po->player_frame = 1;// player_frame_ground_left_01;
 }
 
 void engine_debug_manager_printout()
