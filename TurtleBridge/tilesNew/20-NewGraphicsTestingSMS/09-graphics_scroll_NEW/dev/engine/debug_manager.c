@@ -28,7 +28,7 @@ void engine_debug_manager_initgame()
 	//go->game_isgod = false;
 	go->game_isgod = true;
 
-	po->player_frame = 3;// player_frame_ground_left_01;
+	po->player_frame = 0;// player_frame_ground_left_01;
 }
 
 void engine_debug_manager_printout()

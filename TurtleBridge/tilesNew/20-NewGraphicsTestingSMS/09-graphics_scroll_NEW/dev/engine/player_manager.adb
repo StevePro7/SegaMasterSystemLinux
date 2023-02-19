@@ -64,13 +64,13 @@ S:Lplayer_manager.updatePlayerY$po$1_0$191({2}DG,STtag_struct_player_object:S),R
 F:Fplayer_manager$updatePlayerFrameGroundToFlying$0_0$0({2}DF,SC:U),Z,0,0,0,0,0
 S:Lplayer_manager.updatePlayerFrameGroundToFlying$player_frame$1_0$192({1}SC:U),B,1,4
 F:Fplayer_manager$updatePlayerFrameFlyingToGround$0_0$0({2}DF,SC:U),Z,0,0,0,0,0
-S:Lplayer_manager.updatePlayerFrameFlyingToGround$player_frame$1_0$194({1}SC:U),B,1,4
+S:Lplayer_manager.updatePlayerFrameFlyingToGround$player_frame$1_0$195({1}SC:U),B,1,4
 F:G$engine_player_manager_pass$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lplayer_manager.engine_player_manager_pass$po$1_0$197({2}DG,STtag_struct_player_object:S),R,0,0,[]
+S:Lplayer_manager.engine_player_manager_pass$po$1_0$198({2}DG,STtag_struct_player_object:S),R,0,0,[]
 F:G$engine_player_manager_count$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lplayer_manager.engine_player_manager_count$po$1_0$198({2}DG,STtag_struct_player_object:S),R,0,0,[]
+S:Lplayer_manager.engine_player_manager_count$po$1_0$199({2}DG,STtag_struct_player_object:S),R,0,0,[]
 F:G$engine_player_manager_draw$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lplayer_manager.engine_player_manager_draw$po$1_0$200({2}DG,STtag_struct_player_object:S),R,0,0,[]
+S:Lplayer_manager.engine_player_manager_draw$po$1_0$201({2}DG,STtag_struct_player_object:S),R,0,0,[]
 T:Fplayer_manager$tag_struct_player_object[({0}S:S$initX$0_0$0({1}SC:U),Z,0,0)({1}S:S$posnX$0_0$0({2}SI:U),Z,0,0)({3}S:S$tileX$0_0$0({1}SC:U),Z,0,0)({4}S:S$lookX$0_0$0({1}SC:U),Z,0,0)({5}S:S$posnY$0_0$0({1}SC:U),Z,0,0)({6}S:S$tileY$0_0$0({1}SC:U),Z,0,0)({7}S:S$leapY$0_0$0({2}SI:U),Z,0,0)({9}S:S$drawX$0_0$0({1}SC:U),Z,0,0)({10}S:S$drawY$0_0$0({1}SC:U),Z,0,0)({11}S:S$player_state$0_0$0({1}SC:U),Z,0,0)({12}S:S$jumper_index$0_0$0({1}SC:U),Z,0,0)({13}S:S$player_frame$0_0$0({1}SC:U),Z,0,0)({14}S:S$motion_count$0_0$0({1}SC:U),Z,0,0)]
 S:G$jump_array_ptr$0_0$0({0}DA0d,DG,SI:S),E,0,0
 S:G$music_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
