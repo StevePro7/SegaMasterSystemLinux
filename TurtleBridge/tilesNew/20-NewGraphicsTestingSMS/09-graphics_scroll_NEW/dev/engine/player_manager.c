@@ -27,6 +27,7 @@ static void updatePlayer();
 static void updatePlayerX();
 static void updatePlayerY();
 static unsigned char updatePlayerFrameGroundToFlying( unsigned char player_frame );
+static unsigned char updatePlayerFrameFlyingToGround( unsigned char player_frame );
 
 static const signed int *jump_ptr;
 static unsigned char jump_len;
@@ -223,7 +224,8 @@ void engine_player_manager_bounds( signed int deltaY, unsigned char posnY, unsig
 			po->leapY = po->posnY << 8;
 			po->player_state = player_state_isonground;
 			po->jumper_index = 0;
-			po->player_frame = 0;
+			//po->player_frame = 0;		// TODO test and delete
+			po->player_frame = updatePlayerFrameFlyingToGround( po->player_frame );
 			updatePlayerY();
 		}
 	}
@@ -289,7 +291,8 @@ enum_player_state engine_player_manager_collision( unsigned char state, unsigned
 			{
 				player_state = player_state_isonground;
 				po->jumper_index = 0;
-				po->player_frame = 0;
+				//po->player_frame = 0;
+				po->player_frame = updatePlayerFrameFlyingToGround( po->player_frame );
 
 				// Ensure player aligns with platform landed on...
 				po->posnY = tileY << 3;
@@ -341,6 +344,21 @@ static void updatePlayerY()
 static unsigned char updatePlayerFrameGroundToFlying( unsigned char player_frame )
 {
 	return player_frame < player_frame_ground_left_01 ? player_frame_theair_rght_01 : player_frame_theair_left_01;
+}
+
+static unsigned char updatePlayerFrameFlyingToGround( unsigned char player_frame )
+{
+	// Swap back to appropriate player frame on ground.
+	if( player_frame >= player_frame_theair_left_01 )
+	{
+		return player_frame_ground_left_01;
+	}
+
+	//TODO - check but there shouldn't be any other checks..??
+	//if( player_frame >= player_frame_theair_rght_01 )
+	//{
+		return player_frame_ground_rght_01;
+	//}
 }
 
 void engine_player_manager_pass()

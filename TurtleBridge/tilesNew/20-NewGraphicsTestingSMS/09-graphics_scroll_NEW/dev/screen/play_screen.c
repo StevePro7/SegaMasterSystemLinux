@@ -53,14 +53,14 @@ void screen_play_screen_update( unsigned char *screen_type )
 
 	input1 = engine_input_manager_hold( input_type_left );
 	input2 = engine_input_manager_move( input_type_right );
-	//input = 1;		// TODO delete
+	//input1 = 1;		// TODO delete
 	if( input1 || input2 )
 	{
 		engine_frame_manager_update();
 		engine_frame_manager_draw();
 
-		command = engine_command_manager_build( po->player_state, 1, 1, 0, 0, 0, 0 );
-		if( 50 == fo->frame_count )
+		command = engine_command_manager_build( po->player_state, 1, 0, 0, 0, 0, 0 );
+		if( 200 == fo->frame_count )
 		{
 			command = engine_command_manager_build( po->player_state, 1, 0, 0, 0, 1, 0 );
 		}
