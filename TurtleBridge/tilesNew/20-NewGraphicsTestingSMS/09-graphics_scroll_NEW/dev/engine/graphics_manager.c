@@ -59,7 +59,7 @@ void engine_graphics_manager_clouds( unsigned char data )
 	if( cloud_type_large == result )
 	{
 		engine_tile_manager_draw_cloud( cloud_tile_type[ cloud_type_large ], CLOUD_COL_START + 2 * CLOUD_COL_WIDES, CLOUD_ROW_START + 1, flip1 );
-		//engine_tile_manager_draw_cloud( cloud_tile_type[ cloud_type_small ], CLOUD_COL_START + 3 * CLOUD_COL_WIDES, CLOUD_ROW_START + height, flip2 );
+		engine_tile_manager_draw_cloud( cloud_tile_type[ cloud_type_small ], CLOUD_COL_START + 3 * CLOUD_COL_WIDES, CLOUD_ROW_START + height, flip2 );
 	}
 	else
 	{
