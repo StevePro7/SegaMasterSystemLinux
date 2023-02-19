@@ -1,6 +1,5 @@
 #include "load_screen.h"
 #include "../engine/asm_manager.h"
-#include "../engine/audio_manager.h"
 #include "../engine/content_manager.h"
 #include "../engine/debug_manager.h"
 #include "../engine/enum_manager.h"
@@ -32,8 +31,8 @@ void screen_load_screen_load()
 	engine_content_manager_bggame();
 	engine_content_manager_sprite();
 
-	engine_graphics_manager_level();
-	//engine_graphics_manager_sea();
+	//engine_graphics_manager_level();
+	engine_graphics_manager_sea();
 
 	//engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 1, 5, 8, 3 );
 	//engine_tile_manager_stevepro2( TILE_CLOUD_LARGE, 9, 5, 8, 3 );

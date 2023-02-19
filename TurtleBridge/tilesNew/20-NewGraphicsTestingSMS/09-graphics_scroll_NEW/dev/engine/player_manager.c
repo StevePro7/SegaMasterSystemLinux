@@ -93,7 +93,7 @@ unsigned char engine_player_manager_get_deltaX( unsigned char state, unsigned ch
 	unsigned char deltaX;
 
 	deltaX = 0;
-	deltaX = 2;
+	//deltaX = 2;
 	if( ( COMMAND_LEFT_MASK & command ) == COMMAND_LEFT_MASK )
 	{
 		deltaX = 1;
