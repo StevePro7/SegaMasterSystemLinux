@@ -39,7 +39,8 @@ void engine_player_manager_init()
 	po->drawX = 0; po->drawY = 0;
 	po->player_state = player_state_isonground;
 	po->jumper_index = 0;
-	po->player_frame = 0; po->motion_count = 0;
+	po->player_frame = player_frame_ground_rght_01;
+	po->motion_count = 0;
 	jump_ptr = NULL;
 	jump_len = 0;
 	updatePlayer();
@@ -64,6 +65,7 @@ void engine_player_manager_loadX( unsigned char checkPoint )
 	screen = checkPoint;
 	offset = screen * PIXELS_WIDE;
 	po->posnX = po->initX + offset;
+	//po->player_frame = player_frame_ground_rght_01;
 	updatePlayerX();
 }
 
@@ -96,12 +98,19 @@ void engine_player_manager_loadY( unsigned char player_loadY )
 
 unsigned char engine_player_manager_get_deltaX( unsigned char state, unsigned char command )
 {
+	struct_player_object *po = &global_player_object;
 	unsigned char deltaX;
 
-	deltaX = 0;
+	//deltaX = 0;
 	deltaX = 2;
 	if( ( COMMAND_LEFT_MASK & command ) == COMMAND_LEFT_MASK )
 	{
+		// Back up when facing forward and going slower...
+		if( po->player_frame < player_frame_ground_left_01 )
+		{
+			po->player_frame = player_frame_theair_rght_01;
+		}
+
 		deltaX = 1;
 	}
 	if( ( COMMAND_RGHT_MASK & command ) == COMMAND_RGHT_MASK )
@@ -241,7 +250,7 @@ enum_player_state engine_player_manager_collision( unsigned char state, unsigned
 			po->posnY = PLAYER_MAX_HIGH;
 			po->leapY = po->posnY << 8;
 			po->jumper_index = 0;
-			po->player_frame = 0;			// TODO check opposite frame.
+			//po->player_frame = 0;			// TODO check opposite frame.
 			updatePlayerY();
 		}
 		else
