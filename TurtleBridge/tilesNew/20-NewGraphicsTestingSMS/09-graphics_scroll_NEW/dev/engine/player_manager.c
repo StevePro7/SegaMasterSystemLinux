@@ -384,7 +384,6 @@ static unsigned char updatePlayerFrameGroundToFlying( unsigned char player_frame
 
 	return player_frame_theair_rght_01;
 }
-
 static unsigned char updatePlayerFrameFlyingToGround( unsigned char player_frame )
 {
 	// Swap back to appropriate player frame on ground.
@@ -393,11 +392,7 @@ static unsigned char updatePlayerFrameFlyingToGround( unsigned char player_frame
 		return player_frame_ground_left_01;
 	}
 
-	//TODO - check but there shouldn't be any other checks..??
-	//if( player_frame >= player_frame_theair_rght_01 )
-	//{
-		return player_frame_ground_rght_01;
-	//}
+	return player_frame_ground_rght_01;
 }
 
 void engine_player_manager_pass()
@@ -406,16 +401,18 @@ void engine_player_manager_pass()
 	po->posnX++;
 	updatePlayer();
 }
+
+// TODO delete this as replaced by engine_player_manager_animate()
 void engine_player_manager_count()
 {
-	struct_player_object *po = &global_player_object;
-	po->motion_count++;
-	if( po->motion_count > MOTION_ANIMATES )
-	{
-		// TODO calculate frame inverse when moving left!!
-		po->motion_count = 0;
-		po->player_frame = 1 - po->player_frame;
-	}
+	//struct_player_object *po = &global_player_object;
+	//po->motion_count++;
+	//if( po->motion_count > MOTION_ANIMATES )
+	//{
+	//	// TODO calculate frame inverse when moving left!!
+	//	po->motion_count = 0;
+	//	po->player_frame = 1 - po->player_frame;
+	//}
 }
 void engine_player_manager_draw()
 {
