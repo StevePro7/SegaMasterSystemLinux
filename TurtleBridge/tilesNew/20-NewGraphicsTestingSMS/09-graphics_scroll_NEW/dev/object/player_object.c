@@ -9,9 +9,13 @@ const unsigned char player_object_starts[] = { 40, 72, 104, 136 };		//IMPORTANT 
 
 const signed int *jump_array_ptr[] =
 {
-	jump_array_01,
-	jump_array_02,
-	//jump_array_03,
+	//signed char
+	//jump_array_01,
+	//jump_array_02,
+
+	//signed int
+	jump_array_00,
+	jump_array_03,
 };
 
 const unsigned char jump_array_len[] = { 17, 34 };
@@ -19,8 +23,13 @@ const unsigned char jump_array_len[] = { 17, 34 };
 // Gravity.
 const signed int jump_array_00[] =
 {
-	256, 256, 512, 512, 768, 768, 1024, 1024, 1280, 1280, 1280, 1280, 1280, 1280, 1280, 1280, 1280,
+	128, 128, 256, 256, 512, 512, 768, 768, 1024, 1024, 1280, 1280, 1280, 1280, 1280, 1280, 1280,
 };
+
+//const signed int jump_array_00[] =
+//{
+//	256, 256, 512, 512, 768, 768, 1024, 1024, 1280, 1280, 1280, 1280, 1280, 1280, 1280, 1280, 1280,
+//};
 
 const signed int jump_array_01[] =
 {

@@ -12,6 +12,7 @@
 #define PLAYER_MIN_HIGH		32
 #define PLAYER_MAX_HIGH		168
 #define MOTION_ANIMATES		25
+#define UFIX(x)				((unsigned char)((x)>>8))
 
 #ifdef _CONSOLE
 #else
@@ -47,7 +48,6 @@ void engine_player_manager_init()
 void engine_player_manager_initX( unsigned char difficulty )
 {
 	struct_player_object *po = &global_player_object;
-	//devkit_SMS_mapROMBank( FIXED_BANK );
 	po->initX = player_object_starts[ difficulty ];
 	po->posnX = po->initX;
 	po->drawX = po->posnX - 16;
@@ -111,11 +111,11 @@ unsigned char engine_player_manager_get_deltaX( unsigned char state, unsigned ch
 	return deltaX;
 }
 
-signed char engine_player_manager_get_deltaY()
+signed int engine_player_manager_get_deltaY()
 {
 	// IMPORTANT this function will only be invoked when player is in the air.
 	struct_player_object *po = &global_player_object;
-	signed char deltaY = jump_ptr[ po->jumper_index ];
+	signed int deltaY = jump_ptr[ po->jumper_index ];
 
 	if( po->jumper_index < jump_len - 1 )
 	{
@@ -177,10 +177,11 @@ void engine_player_manager_horz( unsigned char deltaX )
 	po->posnX += deltaX;
 	updatePlayerX();
 }
-void engine_player_manager_vert( unsigned char deltaY )
+void engine_player_manager_vert( unsigned int deltaY )
 {
 	struct_player_object *po = &global_player_object;
-	po->posnY += deltaY;
+	po->leapY += deltaY;
+	po->posnY = UFIX( po->leapY );
 	updatePlayerY();
 }
 

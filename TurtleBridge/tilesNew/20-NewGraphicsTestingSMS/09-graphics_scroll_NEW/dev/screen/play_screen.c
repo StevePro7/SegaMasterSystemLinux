@@ -34,7 +34,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 	//unsigned char input1, input2, input3, input4, input5, input6;
 	unsigned char input;
 	unsigned char deltaX;
-	signed char deltaY;
+	signed int deltaY;
 	unsigned char loops;
 	//signed char collision;
 	enum_scroll_state scroll_state;
@@ -49,7 +49,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 	{
 		//engine_frame_manager_update();
 		//engine_frame_manager_draw();
-		command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 0 );
+		command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 0 );
 	}
 
 	if( COMMAND_NONE_MASK != command )
