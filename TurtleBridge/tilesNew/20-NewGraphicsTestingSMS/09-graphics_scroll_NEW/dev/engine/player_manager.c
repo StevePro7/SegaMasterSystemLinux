@@ -312,18 +312,30 @@ enum_player_state engine_player_manager_collision( unsigned char state, unsigned
 	return player_state;
 }
 
-void engine_player_manager_animate( unsigned char state )
+void engine_player_manager_animate( unsigned char frame )
 {
 	struct_player_object *po = &global_player_object;
-	if( state < player_frame_ground_left_01 )
+	if( frame < player_frame_theair_rght_01 )
 	{
 		po->motion_count++;
-		//if( po->motion_count > MOTION_ANIMATES )
-		if( po->motion_count > 4 )
+		if( po->motion_count > MOTION_ANIMATES )
 		{
-			// TODO calculate frame inverse when moving left!!
 			po->motion_count = 0;
-			po->player_frame = 1 - po->player_frame;
+			if( frame < player_frame_ground_left_01 )
+			{
+				po->player_frame = 1 - po->player_frame;
+			}
+			if( frame < player_frame_theair_rght_01 )
+			{
+				if( player_frame_ground_left_01 == frame )
+				{
+					po->player_frame = player_frame_ground_left_02;
+				}
+				else if( player_frame_ground_left_02 == frame )
+				{
+					po->player_frame = player_frame_ground_left_01;
+				}
+			}
 		}
 	}
 }

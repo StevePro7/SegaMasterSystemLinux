@@ -113,7 +113,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 			}
 			else if( player_state_isonground == po->player_state )
 			{
-				engine_player_manager_animate( po->player_state );
+				engine_player_manager_animate( po->player_frame );
 			}
 
 			// General all-purpose collision detection routine.
