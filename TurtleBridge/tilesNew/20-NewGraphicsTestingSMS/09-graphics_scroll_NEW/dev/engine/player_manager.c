@@ -36,7 +36,6 @@ void engine_player_manager_init()
 {
 	struct_player_object *po = &global_player_object;
 	po->initX = 0; po->posnX = 0; po->tileX = 0; po->lookX = 0;
-	//po->initY = 0; po->posnY = 0; po->tileY = 0; po->leapY = 0;
 	po->posnY = 0; po->tileY = 0; po->leapY = 0;
 	po->drawX = 0; po->drawY = 0;
 	po->player_state = player_state_isonground;
@@ -67,7 +66,6 @@ void engine_player_manager_loadX( unsigned char checkPoint )
 	screen = checkPoint;
 	offset = screen * PIXELS_WIDE;
 	po->posnX = po->initX + offset;
-	//po->player_frame = player_frame_ground_rght_01;
 	updatePlayerX();
 }
 
@@ -196,7 +194,6 @@ void engine_player_manager_set_action( unsigned char state, unsigned char comman
 	}
 }
 
-//TODO rename right() and down() functions
 void engine_player_manager_horz( unsigned char deltaX )
 {
 	struct_player_object *po = &global_player_object;
@@ -312,6 +309,7 @@ enum_player_state engine_player_manager_collision( unsigned char state, unsigned
 	return player_state;
 }
 
+// IMPORTANT this function will only be invoked when player is on the ground.
 void engine_player_manager_animate( unsigned char frame )
 {
 	struct_player_object *po = &global_player_object;
@@ -338,22 +336,6 @@ void engine_player_manager_animate( unsigned char frame )
 			}
 		}
 	}
-}
-
-// TODO delete
-void engine_player_manager_right( unsigned char deltaX )
-{
-	deltaX += 0;
-//	struct_player_object *po = &global_player_object;
-//	po->posnX += deltaX;
-//	updatePlayerX();
-}
-void engine_player_manager_down( unsigned char deltaY )
-{
-	deltaY += 0;
-//	struct_player_object *po = &global_player_object;
-//	po->posnY += deltaY;
-//	updatePlayerY();
 }
 
 static void updatePlayer()
@@ -402,6 +384,12 @@ void engine_player_manager_pass()
 	updatePlayer();
 }
 
+void engine_player_manager_draw()
+{
+	struct_player_object *po = &global_player_object;
+	engine_sprite_manager_draw( po->player_frame, po->drawX, po->drawY );
+}
+
 // TODO delete this as replaced by engine_player_manager_animate()
 void engine_player_manager_count()
 {
@@ -414,8 +402,18 @@ void engine_player_manager_count()
 	//	po->player_frame = 1 - po->player_frame;
 	//}
 }
-void engine_player_manager_draw()
+// TODO delete
+void engine_player_manager_right( unsigned char deltaX )
 {
-	struct_player_object *po = &global_player_object;
-	engine_sprite_manager_draw( po->player_frame, po->drawX, po->drawY );
+	deltaX += 0;
+	//	struct_player_object *po = &global_player_object;
+	//	po->posnX += deltaX;
+	//	updatePlayerX();
+}
+void engine_player_manager_down( unsigned char deltaY )
+{
+	deltaY += 0;
+	//	struct_player_object *po = &global_player_object;
+	//	po->posnY += deltaY;
+	//	updatePlayerY();
 }
