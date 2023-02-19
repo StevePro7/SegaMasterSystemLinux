@@ -112,7 +112,7 @@ unsigned char engine_player_manager_get_deltaX( unsigned char state, unsigned ch
 		{
 			// TODO - revert back this line...
 			//po->player_frame = player_frame_theair_rght_01;
-			po->player_frame = player_frame_ground_rght_01;
+			//po->player_frame = player_frame_ground_rght_01;
 		}
 
 		deltaX = 1;

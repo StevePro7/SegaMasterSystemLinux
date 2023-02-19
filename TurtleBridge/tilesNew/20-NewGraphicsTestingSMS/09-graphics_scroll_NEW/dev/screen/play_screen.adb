@@ -7,7 +7,8 @@ S:Lplay_screen.screen_play_screen_update$so$1_0$34({2}DG,STtag_struct_scroll_obj
 S:Lplay_screen.screen_play_screen_update$po$1_0$34({2}DG,STtag_struct_player_object:S),R,0,0,[]
 S:Lplay_screen.screen_play_screen_update$lo$1_0$34({2}DG,STtag_struct_level_object:S),R,0,0,[]
 S:Lplay_screen.screen_play_screen_update$go$1_0$34({2}DG,STtag_struct_game_object:S),R,0,0,[]
-S:Lplay_screen.screen_play_screen_update$input$1_0$34({1}SC:U),R,0,0,[a]
+S:Lplay_screen.screen_play_screen_update$input1$1_0$34({1}SC:U),R,0,0,[b]
+S:Lplay_screen.screen_play_screen_update$input2$1_0$34({1}SC:U),R,0,0,[l]
 S:Lplay_screen.screen_play_screen_update$deltaX$1_0$34({1}SC:U),B,1,-2
 S:Lplay_screen.screen_play_screen_update$deltaY$1_0$34({2}SI:S),R,0,0,[e,d]
 S:Lplay_screen.screen_play_screen_update$loops$1_0$34({1}SC:U),B,1,-1

@@ -39,8 +39,8 @@ void screen_play_screen_update( unsigned char *screen_type )
 	struct_player_object *po = &global_player_object;
 	struct_level_object *lo = &global_level_object;
 	struct_game_object *go = &global_game_object;
-	//unsigned char input1, input2, input3, input4, input5, input6;
-	unsigned char input;
+	unsigned char input1, input2;// , input3, input4, input5, input6;
+	//unsigned char input;
 	unsigned char deltaX;
 	signed int deltaY;
 	unsigned char loops;
@@ -51,14 +51,16 @@ void screen_play_screen_update( unsigned char *screen_type )
 	unsigned char command = COMMAND_NONE_MASK;
 	player_state = po->player_state;
 
-	input = engine_input_manager_hold( input_type_right );
+	input1 = engine_input_manager_hold( input_type_left );
+	input2 = engine_input_manager_move( input_type_right );
 	//input = 1;		// TODO delete
-	if( input )
+	if( input1 || input2 )
 	{
 		engine_frame_manager_update();
 		engine_frame_manager_draw();
 
-		if( 1 == fo->frame_count )
+		command = engine_command_manager_build( po->player_state, 1, 1, 0, 0, 0, 0 );
+		if( 50 == fo->frame_count )
 		{
 			command = engine_command_manager_build( po->player_state, 1, 0, 0, 0, 1, 0 );
 		}
