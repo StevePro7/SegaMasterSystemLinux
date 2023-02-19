@@ -20,8 +20,8 @@
 
 void screen_play_screen_load()
 {
-	engine_frame_manager_load();
-	engine_frame_manager_draw();
+	//engine_frame_manager_load();
+	//engine_frame_manager_draw();
 	engine_scroll_manager_update( 0 );
 }
 
@@ -47,8 +47,8 @@ void screen_play_screen_update( unsigned char *screen_type )
 	input = 1;		// TODO delete
 	if( input )
 	{
-		engine_frame_manager_update();
-		engine_frame_manager_draw();
+		//engine_frame_manager_update();
+		//engine_frame_manager_draw();
 		command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 0 );
 	}
 
