@@ -60,10 +60,10 @@ void screen_play_screen_update( unsigned char *screen_type )
 		engine_frame_manager_draw();
 
 		command = engine_command_manager_build( po->player_state, 1, 0, 0, 0, 0, 0 );
-		if( 70 == fo->frame_count )
-		{
-			command = engine_command_manager_build( po->player_state, 1, 0, 0, 0, 1, 0 );
-		}
+		//if( 70 == fo->frame_count )
+		//{
+		//	command = engine_command_manager_build( po->player_state, 1, 0, 0, 0, 1, 0 );
+		//}
 	}
 
 	if( COMMAND_NONE_MASK != command )
@@ -111,7 +111,11 @@ void screen_play_screen_update( unsigned char *screen_type )
 				engine_player_manager_vert( deltaY );
 				engine_player_manager_bounds( deltaY, po->posnY, go->game_isgod );
 			}
-			
+			else if( player_state_isonground == po->player_state )
+			{
+				engine_player_manager_animate( po->player_state );
+			}
+
 			// General all-purpose collision detection routine.
 			player_state = engine_player_manager_collision( po->player_state, po->lookX, po->tileY, deltaY, po->posnY, go->game_isgod );
 		}

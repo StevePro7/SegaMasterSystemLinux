@@ -219,9 +219,9 @@ void engine_player_manager_bounds( signed int deltaY, unsigned char posnY, unsig
 		if( posnY >= PLAYER_MAX_HIGH && invincible )
 		{
 			// Cannot fall through the screen.
+			po->player_state = player_state_isonground;
 			po->posnY = PLAYER_MAX_HIGH;
 			po->leapY = po->posnY << 8;
-			po->player_state = player_state_isonground;
 			po->jumper_index = 0;
 			po->player_frame = updatePlayerFrameFlyingToGround( po->player_frame );
 			updatePlayerY();
@@ -249,6 +249,12 @@ enum_player_state engine_player_manager_collision( unsigned char state, unsigned
 	// Check if player fallen through to the water.
 	if( posnY >= PLAYER_MAX_HIGH )
 	{
+		//// TODO check to see if only this code is necessary as the player_state will be isOnGround and all other player properties set from the bounds check earlier in the frame...
+		//if( !invincible )
+		//{
+		//	// Otherwise update player dying state.
+		//	player_state = player_state_isnowdying;
+		//}
 		// If God mode then simply revert back to "ground".
 		if( invincible )
 		{
@@ -304,6 +310,22 @@ enum_player_state engine_player_manager_collision( unsigned char state, unsigned
 
 	po->player_state = player_state;
 	return player_state;
+}
+
+void engine_player_manager_animate( unsigned char state )
+{
+	struct_player_object *po = &global_player_object;
+	if( state < player_frame_ground_left_01 )
+	{
+		po->motion_count++;
+		//if( po->motion_count > MOTION_ANIMATES )
+		if( po->motion_count > 4 )
+		{
+			// TODO calculate frame inverse when moving left!!
+			po->motion_count = 0;
+			po->player_frame = 1 - po->player_frame;
+		}
+	}
 }
 
 // TODO delete
