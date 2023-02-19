@@ -39,7 +39,7 @@ S:G$engine_player_manager_initX$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_loadX$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_loadY$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_get_deltaX$0_0$0({2}DF,SC:U),C,0,0
-S:G$engine_player_manager_get_deltaY$0_0$0({2}DF,SC:S),C,0,0
+S:G$engine_player_manager_get_deltaY$0_0$0({2}DF,SI:S),C,0,0
 S:G$engine_player_manager_set_action$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_horz$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_vert$0_0$0({2}DF,SV:S),C,0,0

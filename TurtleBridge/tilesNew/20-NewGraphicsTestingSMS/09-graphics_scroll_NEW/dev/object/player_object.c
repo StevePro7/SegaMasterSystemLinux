@@ -21,15 +21,16 @@ const signed int *jump_array_ptr[] =
 const unsigned char jump_array_len[] = { 17, 34 };
 
 // Gravity.
-const signed int jump_array_00[] =
-{
-	128, 128, 256, 256, 512, 512, 768, 768, 1024, 1024, 1280, 1280, 1280, 1280, 1280, 1280, 1280,
-};
-
 //const signed int jump_array_00[] =
 //{
-//	256, 256, 512, 512, 768, 768, 1024, 1024, 1280, 1280, 1280, 1280, 1280, 1280, 1280, 1280, 1280,
+//	//128, 128,
+//	256, 256,
 //};
+
+const signed int jump_array_00[] =
+{
+	256, 256, 512, 512, 768, 768, 1024, 1024, 1280, 1280, 1280, 1280, 1280, 1280, 1280, 1280, 1280,
+};
 
 const signed int jump_array_01[] =
 {

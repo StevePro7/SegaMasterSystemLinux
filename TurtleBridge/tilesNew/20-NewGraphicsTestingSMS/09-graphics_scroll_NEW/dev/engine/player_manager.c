@@ -84,6 +84,7 @@ void engine_player_manager_loadY( unsigned char player_loadY )
 	}
 	
 	//po->initY = po->posnY;		// TODO - don't think I need this
+	po->leapY = po->posnY << 8;
 	updatePlayerY();
 }
 
@@ -194,6 +195,7 @@ void engine_player_manager_bounds( signed char deltaY, unsigned char posnY, unsi
 		{
 			// Cannot fall through the screen.
 			po->posnY = PLAYER_MAX_HIGH;
+			po->leapY = po->posnY << 8;
 			po->player_state = player_state_isonground;
 			po->jumper_index = 0;
 			po->player_frame = 0;
@@ -206,11 +208,11 @@ void engine_player_manager_bounds( signed char deltaY, unsigned char posnY, unsi
 		if( posnY < PLAYER_MIN_HIGH )
 		{
 			po->posnY = PLAYER_MIN_HIGH;
+			po->leapY = po->posnY << 8;
 			updatePlayerY();
 		}
 	}
 }
-
 
 enum_player_state engine_player_manager_collision( unsigned char state, unsigned char lookX, unsigned char tileY, unsigned char posnY, unsigned char invincible )
 {
@@ -227,6 +229,9 @@ enum_player_state engine_player_manager_collision( unsigned char state, unsigned
 		{
 			player_state = player_state_isonground;
 			po->posnY = PLAYER_MAX_HIGH;
+			po->leapY = po->posnY << 8;
+			po->jumper_index = 0;
+			po->player_frame = 0;			// TODO check opposite frame.
 			updatePlayerY();
 		}
 		else
@@ -234,37 +239,38 @@ enum_player_state engine_player_manager_collision( unsigned char state, unsigned
 			// Otherwise update player dying state.
 			player_state = player_state_isnowdying;
 		}
-
-		return player_state;
 	}
-
-	// Default check platform collision as before.
-	collision = engine_collision_manager_player( lookX, tileY );
-	if( player_state_isonground == player_state )
+	else
 	{
-		// Player was on the ground but now "falling" in the air due to gravity.
-		if( INVALID_INDEX == collision )
+		// Default check platform collision as before.
+		collision = engine_collision_manager_player( lookX, tileY );
+		if( player_state_isonground == player_state )
 		{
-			player_state = player_state_isintheair;
-			po->jumper_index = 0;
-			po->player_frame = 4;			// TODO check opposite frame.
+			// Player was on the ground but now "falling" in the air due to gravity.
+			if( INVALID_INDEX == collision )
+			{
+				player_state = player_state_isintheair;
+				po->jumper_index = 0;
+				po->player_frame = 4;			// TODO check opposite frame.
 
-			jump_ptr = jump_array_ptr[ po->jumper_index ];
-			jump_len = jump_array_len[ po->jumper_index ];
+				jump_ptr = jump_array_ptr[ po->jumper_index ];
+				jump_len = jump_array_len[ po->jumper_index ];
+			}
 		}
-	}
-	else if( player_state_isintheair == player_state )
-	{
-		// Player is in the air but check there could be a platform to land on.
-		if( INVALID_INDEX != collision )
+		else if( player_state_isintheair == player_state )
 		{
-			player_state = player_state_isonground;
-			po->jumper_index = 0;
-			po->player_frame = 0;
+			// Player is in the air but check there could be a platform to land on.
+			if( INVALID_INDEX != collision )
+			{
+				player_state = player_state_isonground;
+				po->jumper_index = 0;
+				po->player_frame = 0;
 
-			// Ensure player aligns with platform landed on...
-			po->posnY = tileY << 3;
-			updatePlayerY();
+				// Ensure player aligns with platform landed on...
+				po->posnY = tileY << 3;
+				po->leapY = po->posnY << 8;
+				updatePlayerY();
+			}
 		}
 	}
 
@@ -305,7 +311,7 @@ static void updatePlayerY()
 	struct_player_object *po = &global_player_object;
 	po->drawY = po->posnY - 32;
 	po->tileY = po->posnY >> 3;
-	po->leapY = po->posnY << 8;
+	//po->leapY = po->posnY << 8;
 }
 
 void engine_player_manager_pass()
