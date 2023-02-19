@@ -3,12 +3,12 @@ XL3
 H 9 areas 68 global symbols
 M audio_manager
 O -mz80
+S _devkit_PSGPlay Ref000000
 S _music_object_data Ref000000
 S _music_object_bank Ref000000
 S _devkit_PSGStop Ref000000
 S _devkit_PSGFrame Ref000000
 S .__.ABS. Def000000
-S _devkit_PSGPlayNoRepeat Ref000000
 S _devkit_SMS_mapROMBank Ref000000
 A _CODE size 73 flags 0 addr 0
 S A$audio_manager$74 Def000006
@@ -65,7 +65,6 @@ S A$audio_manager$134 Def00003E
 S A$audio_manager$125 Def000031
 S A$audio_manager$116 Def000026
 S C$audio_manager.c$41$1_0$125 Def00005D
-S C$audio_manager.c$33$1_0$124 Def00004C
 S C$audio_manager.c$17$1_0$122 Def000016
 S A$audio_manager$216 Def00006A
 S A$audio_manager$144 Def000048
@@ -73,6 +72,7 @@ S A$audio_manager$135 Def000041
 S A$audio_manager$126 Def000032
 S XG$engine_audio_manager_update$0$0 Def000070
 S C$audio_manager.c$42$1_0$125 Def000062
+S C$audio_manager.c$34$1_0$124 Def00004C
 S A$audio_manager$217 Def00006B
 S A$audio_manager$145 Def00004B
 S A$audio_manager$136 Def000043
@@ -131,22 +131,22 @@ R 00 00 00 00
 T 17 00 00 DD E5 DD 21 00 00 DD 39 3E 07 F5 33 CD
 R 00 00 00 00
 T 24 00 00 00 00 33 01 00 00 DD 6E 04 26 00 29 09
-R 00 00 00 00 02 03 06 00 02 07 00 00
+R 00 00 00 00 02 03 06 00 02 07 01 00
 T 31 00 00 4E 23 46 ED 43 00 00 01 02 00 11 00 00
-R 00 00 00 00 00 08 01 00 00 0B 01 00 02 0E 01 00
+R 00 00 00 00 00 08 01 00 00 0B 01 00 02 0E 02 00
 T 3E 00 00 DD 6E 04 26 00 19 7E 02 F5 33 CD 00 00
 R 00 00 00 00 02 0E 06 00
 T 4B 00 00 33 2A 00 00 E5 CD 00 00 F1 DD E1 C9
-R 00 00 00 00 00 05 01 00 02 09 05 00
+R 00 00 00 00 00 05 01 00 02 09 00 00
 T 57 00 00
 R 00 00 00 00
 T 57 00 00 21 00 00 22 00 00 21 02 00 36 00 C3
 R 00 00 00 00 00 07 01 00 00 0A 01 00
 T 63 00 00 00 00
-R 00 00 00 00 02 03 02 00
+R 00 00 00 00 02 03 03 00
 T 65 00 00
 R 00 00 00 00
 T 65 00 00 3A 02 00 B7 C8 F5 33 CD 00 00 33 C3
 R 00 00 00 00 00 04 01 00 02 0B 06 00
 T 71 00 00 00 00
-R 00 00 00 00 02 03 03 00
+R 00 00 00 00 02 03 04 00

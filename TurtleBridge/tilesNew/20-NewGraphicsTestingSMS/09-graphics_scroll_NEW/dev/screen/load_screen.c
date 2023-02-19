@@ -58,11 +58,12 @@ void screen_load_screen_load()
 	devkit_SMS_displayOn();
 
 	engine_scroll_manager_load( go->game_point, lo->level_size );
-	engine_music_manager_play( 0 );
+	
 }
 
 void screen_load_screen_update( unsigned char *screen_type )
 {
+	engine_scroll_manager_update( 0 );
 	engine_player_manager_draw();
 	//unsigned char input;
 	//input = engine_input_manager_hold( input_type_left );
