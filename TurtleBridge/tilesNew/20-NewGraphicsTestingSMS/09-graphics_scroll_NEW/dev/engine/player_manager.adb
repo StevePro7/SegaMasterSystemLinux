@@ -32,9 +32,9 @@ F:G$engine_player_manager_vert$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lplayer_manager.engine_player_manager_vert$deltaY$1_0$154({2}SI:U),B,1,4
 S:Lplayer_manager.engine_player_manager_vert$po$1_0$155({2}DG,STtag_struct_player_object:S),R,0,0,[]
 F:G$engine_player_manager_bounds$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lplayer_manager.engine_player_manager_bounds$deltaY$1_0$156({1}SC:S),B,1,4
-S:Lplayer_manager.engine_player_manager_bounds$posnY$1_0$156({1}SC:U),B,1,5
-S:Lplayer_manager.engine_player_manager_bounds$invincible$1_0$156({1}SC:U),B,1,6
+S:Lplayer_manager.engine_player_manager_bounds$deltaY$1_0$156({2}SI:S),B,1,4
+S:Lplayer_manager.engine_player_manager_bounds$posnY$1_0$156({1}SC:U),B,1,6
+S:Lplayer_manager.engine_player_manager_bounds$invincible$1_0$156({1}SC:U),B,1,7
 S:Lplayer_manager.engine_player_manager_bounds$po$1_0$157({2}DG,STtag_struct_player_object:S),R,0,0,[]
 F:G$engine_player_manager_collision$0_0$0({2}DF,SC:U),Z,0,0,0,0,0
 S:Lplayer_manager.engine_player_manager_collision$state$1_0$162({1}SC:U),B,1,4

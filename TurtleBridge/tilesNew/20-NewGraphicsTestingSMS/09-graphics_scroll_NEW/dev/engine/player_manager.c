@@ -77,6 +77,12 @@ void engine_player_manager_loadY( unsigned char player_loadY )
 	{
 		po->player_state = player_state_isintheair;
 		po->posnY = PLAYER_MIN_HIGH;
+		po->jumper_index = 0;
+		po->player_frame = 4;		// todo frame
+
+		// Set the jump array information.
+		jump_ptr = jump_array_ptr[ po->jumper_index ];
+		jump_len = jump_array_len[ po->jumper_index ];
 	}
 	else
 	{
@@ -93,7 +99,7 @@ unsigned char engine_player_manager_get_deltaX( unsigned char state, unsigned ch
 	unsigned char deltaX;
 
 	deltaX = 0;
-	//deltaX = 2;
+	deltaX = 2;
 	if( ( COMMAND_LEFT_MASK & command ) == COMMAND_LEFT_MASK )
 	{
 		deltaX = 1;
@@ -145,7 +151,7 @@ void engine_player_manager_set_action( unsigned char state, unsigned char comman
 	{
 		po->player_state = player_state_isintheair;
 		po->jumper_index = 0;
-		po->player_frame = 4;
+		po->player_frame = 4;		// todo frame
 		index = 0;
 
 		// determine jump index
@@ -190,7 +196,7 @@ void engine_player_manager_vert( unsigned int deltaY )
 	updatePlayerY();
 }
 
-void engine_player_manager_bounds( signed char deltaY, unsigned char posnY, unsigned char invincible )
+void engine_player_manager_bounds( signed int deltaY, unsigned char posnY, unsigned char invincible )
 {
 	struct_player_object *po = &global_player_object;
 	if( deltaY > 0 )
