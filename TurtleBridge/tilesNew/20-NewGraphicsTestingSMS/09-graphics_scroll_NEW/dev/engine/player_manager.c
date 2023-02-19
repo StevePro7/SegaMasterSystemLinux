@@ -116,11 +116,15 @@ signed int engine_player_manager_get_deltaY()
 {
 	// IMPORTANT this function will only be invoked when player is in the air.
 	struct_player_object *po = &global_player_object;
-	signed int deltaY = jump_ptr[ po->jumper_index ];
+	signed int deltaY = 0;
 
-	if( po->jumper_index < jump_len - 1 )
+	if( NULL != jump_ptr )
 	{
-		po->jumper_index++;
+		deltaY = jump_ptr[ po->jumper_index ];
+		if( po->jumper_index < jump_len - 1 )
+		{
+			po->jumper_index++;
+		}
 	}
 
 	return deltaY;
