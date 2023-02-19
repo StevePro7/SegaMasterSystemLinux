@@ -39,7 +39,9 @@ void screen_play_screen_update( unsigned char *screen_type )
 	//signed char collision;
 	enum_scroll_state scroll_state;
 	enum_player_state player_state;
+
 	unsigned char command = COMMAND_NONE_MASK;
+	player_state = po->player_state;
 
 	input = engine_input_manager_hold( input_type_right );
 	input = 1;		// TODO delete
@@ -47,7 +49,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 	{
 		engine_frame_manager_update();
 		engine_frame_manager_draw();
-		command = engine_command_manager_build( po->player_state, 1, 0, 0, 0, 0, 0 );
+		command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 0 );
 	}
 
 	if( COMMAND_NONE_MASK != command )
@@ -96,14 +98,16 @@ void screen_play_screen_update( unsigned char *screen_type )
 				engine_player_manager_bounds( deltaY, po->posnY, go->game_isgod );
 			}
 			
+			// General all-purpose collision detection routine.
 			player_state = engine_player_manager_collision( po->player_state, po->lookX, po->tileY, po->posnY, go->game_isgod );
-			
 		}
 	}
 
 	// Move on to the dying sequence.
 	if( player_state_isnowdying == player_state )
 	{
+		*screen_type = screen_type_beat;
+		return;
 	}
 
 	engine_player_manager_draw();
