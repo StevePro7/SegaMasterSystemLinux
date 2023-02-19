@@ -232,7 +232,7 @@ enum_player_state engine_player_manager_collision( unsigned char state, unsigned
 		}
 		else
 		{
-			// Otherwise update palyer dying state.
+			// Otherwise update player dying state.
 			player_state = player_state_isnowdying;
 		}
 
