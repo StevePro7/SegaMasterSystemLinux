@@ -9,6 +9,11 @@
 #define CLOUD_COL_START		1
 #define CLOUD_COL_WIDES		8
 
+#ifdef _CONSOLE
+#else
+#pragma disable_warning 261
+#endif
+
 void engine_graphics_manager_level()
 {
 	engine_graphics_manager_title();
@@ -19,33 +24,42 @@ void engine_graphics_manager_level()
 void engine_graphics_manager_clouds( unsigned char data )
 {
 	unsigned int cloud_tile_type[] = { TILE_CLOUD_LARGE , TILE_CLOUD_SMALL };
-	unsigned char result;
-	unsigned char height;
+	unsigned char result, height;
 	unsigned char flip1, flip2;
 
-	result = ( data >> 7 ) & 0x01;
-	height = ( data >> 6 ) & 0x01;
-	flip1 = ( data >> 5 ) & 0x01;
-	flip2 = ( data >> 4 ) & 0x01;
-	if( cloud_type_large == result )
-	{
-		engine_tile_manager_draw_cloud( cloud_tile_type[ cloud_type_large ], CLOUD_COL_START + 0 * CLOUD_COL_WIDES, CLOUD_ROW_START + 1, flip1 );
-		engine_tile_manager_draw_cloud( cloud_tile_type[ cloud_type_small ], CLOUD_COL_START + 1 * CLOUD_COL_WIDES, CLOUD_ROW_START + height, flip2 );
-	}
-	else
-	{
-		engine_tile_manager_draw_cloud( cloud_tile_type[ cloud_type_small ], CLOUD_COL_START + 0 * CLOUD_COL_WIDES, CLOUD_ROW_START + height, flip1 );
-		engine_tile_manager_draw_cloud( cloud_tile_type[ cloud_type_large ], CLOUD_COL_START + 1 * CLOUD_COL_WIDES, CLOUD_ROW_START + 1, flip2 );
-	}
+	result = 0;
+	height = 0;
+	flip1 = 0;
+	flip2 = 0;
+	//result = ( data >> 7 ) & 0x01;
+	//height = ( data >> 6 ) & 0x01;
+	//flip1 = ( data >> 5 ) & 0x01;
+	//flip2 = ( data >> 4 ) & 0x01;
+	//if( cloud_type_large == result )
+	//{
+	//	engine_tile_manager_draw_cloud( cloud_tile_type[ cloud_type_large ], CLOUD_COL_START + 0 * CLOUD_COL_WIDES, CLOUD_ROW_START + 1, flip1 );
+	//	engine_tile_manager_draw_cloud( cloud_tile_type[ cloud_type_small ], CLOUD_COL_START + 1 * CLOUD_COL_WIDES, CLOUD_ROW_START + height, flip2 );
+	//}
+	//else
+	//{
+	//	engine_tile_manager_draw_cloud( cloud_tile_type[ cloud_type_small ], CLOUD_COL_START + 0 * CLOUD_COL_WIDES, CLOUD_ROW_START + height, flip1 );
+	//	engine_tile_manager_draw_cloud( cloud_tile_type[ cloud_type_large ], CLOUD_COL_START + 1 * CLOUD_COL_WIDES, CLOUD_ROW_START + 1, flip2 );
+	//}
 
-	result = ( data >> 3 ) & 0x01;
-	height = ( data >> 2 ) & 0x01;
-	flip1 = ( data >> 1 ) & 0x01;
-	flip2 = ( data >> 0 ) & 0x01;
+	//result = ( data >> 3 ) & 0x01;
+	//height = ( data >> 2 ) & 0x01;
+	//flip1 = ( data >> 1 ) & 0x01;
+	//flip2 = ( data >> 0 ) & 0x01;
+
+
+	result = ( COMMAND_HIGH_MASK & data ) == COMMAND_HIGH_MASK;
+	height = ( COMMAND_RGHT_MASK & data ) == COMMAND_RGHT_MASK;
+	flip1 = ( COMMAND_MIDD_MASK & data ) == COMMAND_MIDD_MASK;
+	flip2 = ( COMMAND_LEFT_MASK & data ) == COMMAND_LEFT_MASK;
 	if( cloud_type_large == result )
 	{
 		engine_tile_manager_draw_cloud( cloud_tile_type[ cloud_type_large ], CLOUD_COL_START + 2 * CLOUD_COL_WIDES, CLOUD_ROW_START + 1, flip1 );
-		engine_tile_manager_draw_cloud( cloud_tile_type[ cloud_type_small ], CLOUD_COL_START + 3 * CLOUD_COL_WIDES, CLOUD_ROW_START + height, flip2 );
+		//engine_tile_manager_draw_cloud( cloud_tile_type[ cloud_type_small ], CLOUD_COL_START + 3 * CLOUD_COL_WIDES, CLOUD_ROW_START + height, flip2 );
 	}
 	else
 	{
