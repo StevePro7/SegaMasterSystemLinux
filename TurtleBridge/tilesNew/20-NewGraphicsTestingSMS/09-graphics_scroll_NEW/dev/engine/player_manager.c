@@ -226,8 +226,6 @@ enum_player_state engine_player_manager_collision( unsigned char state, unsigned
 		{
 			player_state = player_state_isonground;
 			po->posnY = PLAYER_MAX_HIGH;
-			//po->jumper_index = 0;
-			//po->player_frame = 0;
 			updatePlayerY();
 		}
 		else
@@ -259,9 +257,7 @@ enum_player_state engine_player_manager_collision( unsigned char state, unsigned
 		// Player is in the air but check there could be a platform to land on.
 		if( INVALID_INDEX != collision )
 		{
-			//TODO check if this is the bug??
 			player_state = player_state_isonground;
-			//po->player_state = player_state_isonground;
 			po->jumper_index = 0;
 			po->player_frame = 0;
 
