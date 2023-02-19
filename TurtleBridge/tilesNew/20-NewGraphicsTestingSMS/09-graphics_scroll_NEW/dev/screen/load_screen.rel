@@ -8,6 +8,7 @@ S _devkit_SMS_displayOn Ref000000
 S _global_player_object Ref000000
 S _engine_player_manager_loadX Ref000000
 S _engine_player_manager_loadY Ref000000
+S _engine_graphics_manager_sea Ref000000
 S _engine_level_manager_draw_point Ref000000
 S _global_level_object Ref000000
 S .__.ABS. Def000000
@@ -17,7 +18,6 @@ S _devkit_SMS_displayOff Ref000000
 S _engine_asm_manager_clear_VRAM Ref000000
 S _engine_content_manager_bggame Ref000000
 S _level_platforms Ref000000
-S _engine_graphics_manager_level Ref000000
 S _engine_scroll_manager_load Ref000000
 A _CODE size 52 flags 0 addr 0
 S XG$screen_load_screen_load$0$0 Def000047
@@ -37,7 +37,6 @@ S A$load_screen$113 Def000024
 S A$load_screen$104 Def000018
 S C$load_screen.c$52$1_0$111 Def000032
 S C$load_screen.c$43$1_0$111 Def00000F
-S C$load_screen.c$34$1_0$111 Def00000C
 S C$load_screen.c$25$1_0$111 Def000000
 S A$load_screen$141 Def000042
 S A$load_screen$132 Def000035
@@ -45,6 +44,7 @@ S A$load_screen$123 Def00002E
 S A$load_screen$114 Def000027
 S A$load_screen$105 Def00001B
 S C$load_screen.c$44$1_0$111 Def000018
+S C$load_screen.c$35$1_0$111 Def00000C
 S C$load_screen.c$26$1_0$111 Def000000
 S A$load_screen$151 Def000047
 S A$load_screen$142 Def000045
@@ -101,17 +101,17 @@ A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
 T 00 00 00 CD 00 00 CD 00 00 CD 00 00 CD
-R 00 00 00 00 02 04 0A 00 02 07 0B 00 02 0A 0C 00
+R 00 00 00 00 02 04 0B 00 02 07 0C 00 02 0A 0D 00
 T 0A 00 00 00 00 CD 00 00 3A 04 00 F5 33 CD
-R 00 00 00 00 02 03 09 00 02 06 0E 00 02 09 08 00
+R 00 00 00 00 02 03 0A 00 02 06 05 00 02 09 09 00
 T 15 00 00 00 00 33 3A 04 00 F5 33 CD 00 00 33 01
-R 00 00 00 00 02 03 05 00 02 07 08 00 02 0C 03 00
+R 00 00 00 00 02 03 06 00 02 07 09 00 02 0C 03 00
 T 22 00 00 00 00 3A 04 00 6F 26 00 09 7E F5 33 CD
-R 00 00 00 00 02 03 0D 00 02 06 02 00
+R 00 00 00 00 02 03 0E 00 02 06 02 00
 T 2F 00 00 00 00 33 CD 00 00 CD 00 00 ED 4B
 R 00 00 00 00 02 03 04 00 02 07 00 00 02 0A 01 00
 T 3A 00 00 02 00 3A 04 00 C5 F5 33 CD 00 00 F1 33
-R 00 00 00 00 02 03 06 00 02 06 08 00 02 0C 0F 00
+R 00 00 00 00 02 03 07 00 02 06 09 00 02 0C 0F 00
 T 47 00 00 C9
 R 00 00 00 00
 T 48 00 00
