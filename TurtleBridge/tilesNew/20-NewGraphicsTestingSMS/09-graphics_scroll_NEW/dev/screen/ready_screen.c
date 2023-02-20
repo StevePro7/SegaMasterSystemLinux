@@ -24,6 +24,6 @@ void screen_ready_screen_load()
 void screen_ready_screen_update( unsigned char *screen_type )
 {
 	//engine_scroll_manager_update( 0 );
-	//*screen_type = screen_type_ready;
-	*screen_type = screen_type_play;
+	*screen_type = screen_type_ready;
+	//*screen_type = screen_type_play;
 }
