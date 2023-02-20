@@ -14,10 +14,10 @@
 #pragma disable_warning 261
 #endif
 
-void engine_graphics_manager_level()
+void engine_graphics_manager_level( unsigned char cloud_formation )
 {
 	engine_graphics_manager_title();
-	engine_graphics_manager_clouds(64);
+	engine_graphics_manager_clouds( cloud_formation );
 	engine_graphics_manager_sea();
 }
 

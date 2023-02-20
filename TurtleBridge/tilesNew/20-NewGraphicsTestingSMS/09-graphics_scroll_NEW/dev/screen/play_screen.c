@@ -21,8 +21,8 @@
 
 void screen_play_screen_load()
 {
-	engine_frame_manager_load();
-	engine_frame_manager_draw();
+	//engine_frame_manager_load();
+	//engine_frame_manager_draw();
 
 	//19-Feb-2023
 	// TODO - iron this out but IMPORTANT - I don't think I want to play music in same function as draw title etc. as causes screen flicker??
@@ -39,8 +39,8 @@ void screen_play_screen_update( unsigned char *screen_type )
 	struct_player_object *po = &global_player_object;
 	struct_level_object *lo = &global_level_object;
 	struct_game_object *go = &global_game_object;
-	unsigned char input1, input2;// , input3, input4, input5, input6;
-	//unsigned char input;
+	unsigned char input1;// input2, input3, input4, input5, input6;
+	unsigned char input2;
 	unsigned char deltaX;
 	signed int deltaY;
 	unsigned char loops;
@@ -56,8 +56,8 @@ void screen_play_screen_update( unsigned char *screen_type )
 	//input1 = 1;		// TODO delete
 	if( input1 || input2 )
 	{
-		engine_frame_manager_update();
-		engine_frame_manager_draw();
+		//engine_frame_manager_update();
+		//engine_frame_manager_draw();
 
 		command = engine_command_manager_build( po->player_state, 1, 0, 0, 0, 0, 0 );
 		if( 10 == fo->frame_count )
@@ -119,6 +119,10 @@ void screen_play_screen_update( unsigned char *screen_type )
 			// General all-purpose collision detection routine.
 			player_state = engine_player_manager_collision( po->player_state, po->lookX, po->tileY, deltaY, po->posnY, go->game_isgod );
 		}
+	}
+	else
+	{
+		engine_scroll_manager_update( 0 );
 	}
 
 	// Move on to the dying sequence.

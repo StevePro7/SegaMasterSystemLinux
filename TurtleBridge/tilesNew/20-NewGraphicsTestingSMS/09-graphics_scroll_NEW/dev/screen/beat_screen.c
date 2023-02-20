@@ -41,7 +41,9 @@ void screen_beat_screen_update( unsigned char *screen_type )
 		{
 			engine_font_manager_text( "                                ", 0, loop );
 		}
+
 		engine_graphics_manager_clouds( data );
 	}
+
 	*screen_type = screen_type_beat;
 }

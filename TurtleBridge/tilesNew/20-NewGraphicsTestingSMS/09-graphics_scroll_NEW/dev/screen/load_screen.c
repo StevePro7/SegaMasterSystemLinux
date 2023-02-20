@@ -5,11 +5,13 @@
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/game_manager.h"
+#include "../engine/global_manager.h"
 #include "../engine/graphics_manager.h"
 #include "../engine/level_manager.h"
 #include "../engine/player_manager.h"
 #include "../engine/scroll_manager.h"
 #include "../engine/tile_manager.h"
+#include "../engine/util_manager.h"
 #include "../devkit/_sms_manager.h"
 
 //static void drawScreen();
@@ -25,13 +27,14 @@ void screen_load_screen_load()
 	struct_level_object *lo = &global_level_object;
 	struct_game_object *go = &global_game_object;
 	unsigned char player_loadY;
+	unsigned char cloud_formation = engine_random_manager_next( SPRITE_TILES );
 
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();
 	engine_content_manager_sprite();
 
-	engine_graphics_manager_level();
+	engine_graphics_manager_level( cloud_formation );
 	//engine_graphics_manager_sea();
 
 	//engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 1, 5, 8, 3 );
