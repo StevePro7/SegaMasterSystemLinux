@@ -16,10 +16,10 @@ void screen_beat_screen_load()
 {
 	struct_player_object *po = &global_player_object;
 	po->posnX = 128;
-	po->posnY = 96;
-	po->drawX = 128;
+	po->initX = po->posnX;
+	po->drawX = po->initX - 16;
 	po->drawY = 96;
-	po->player_frame = 4;
+	po->player_frame = 8;
 	engine_font_manager_data( po->player_frame, 10, 10 );
 
 	//unsigned char data = 0xFF;
@@ -37,15 +37,27 @@ void screen_beat_screen_update( unsigned char *screen_type )
 	struct_player_object *po = &global_player_object;
 	//unsigned char data, loop;
 	unsigned char input1;// , input2;// , input3, input4, input5, input6;
+	unsigned char command;
 
 	input1 = engine_input_manager_hold( input_type_down );
 	//input2 = engine_input_manager_move( input_type_right );
 
 	if( input1 )
 	{
+		command = 0b00000000;
+
 		//po->player_frame = engine_cartoon_manager_wave( po->player_frame );
-		po->player_frame = engine_cartoon_manager_swap( po->player_frame );
-		//po->player_frame = engine_cartoon_manager_flip( po->player_frame );
+		//po->player_frame = engine_cartoon_manager_swap( po->player_frame );
+		po->player_frame = engine_cartoon_manager_flip( po->player_frame, command );
+
+		po->drawX = po->initX - 16;
+		po->drawY = 96;
+		if( 5 == po->player_frame || 7 == po->player_frame || 9 == po->player_frame || 11 == po->player_frame )
+		{
+			po->drawX = po->initX - 16 + 4;
+			po->drawY = 100;
+		}
+
 		engine_font_manager_data( po->player_frame, 10, 10 );
 	}
 	//if( input2 )
