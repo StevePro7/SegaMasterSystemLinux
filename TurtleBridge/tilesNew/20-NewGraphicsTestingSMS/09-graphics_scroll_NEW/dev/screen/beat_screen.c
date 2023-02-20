@@ -19,7 +19,7 @@ void screen_beat_screen_load()
 	po->posnY = 96;
 	po->drawX = 128;
 	po->drawY = 96;
-	po->player_frame = 3;
+	po->player_frame = 4;
 	engine_font_manager_data( po->player_frame, 10, 10 );
 
 	//unsigned char data = 0xFF;
@@ -43,7 +43,9 @@ void screen_beat_screen_update( unsigned char *screen_type )
 
 	if( input1 )
 	{
-		po->player_frame = engine_cartoon_manager_wave( po->player_frame );
+		//po->player_frame = engine_cartoon_manager_wave( po->player_frame );
+		po->player_frame = engine_cartoon_manager_swap( po->player_frame );
+		//po->player_frame = engine_cartoon_manager_flip( po->player_frame );
 		engine_font_manager_data( po->player_frame, 10, 10 );
 	}
 	//if( input2 )
