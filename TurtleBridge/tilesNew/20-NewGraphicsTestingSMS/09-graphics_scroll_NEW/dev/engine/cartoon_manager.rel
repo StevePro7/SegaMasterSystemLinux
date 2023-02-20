@@ -1,16 +1,50 @@
 ;!FILE cartoon_manager.asm
 XL3
-H 9 areas 7 global symbols
+H 9 areas 29 global symbols
 M cartoon_manager
 O -mz80
 S .__.ABS. Def000000
-A _CODE size 1 flags 0 addr 0
-S XG$engine_cartoon_manager_init$0$0 Def000000
-S A$cartoon_manager$59 Def000000
-S G$engine_cartoon_manager_init$0$0 Def000000
-S _engine_cartoon_manager_init Def000000
-S C$cartoon_manager.c$3$0_0$2 Def000000
-S C$cartoon_manager.c$5$0_0$2 Def000000
+A _CODE size 3B flags 0 addr 0
+S C$cartoon_manager.c$8$2_0$4 Def00000F
+S XG$engine_cartoon_manager_wave$0$0 Def00003A
+S A$cartoon_manager$103 Def000035
+S A$cartoon_manager$113 Def00003A
+S A$cartoon_manager$108 Def000038
+S A$cartoon_manager$60 Def00000D
+S A$cartoon_manager$52 Def000000
+S A$cartoon_manager$80 Def000022
+S A$cartoon_manager$53 Def000002
+S A$cartoon_manager$81 Def000024
+S A$cartoon_manager$54 Def000006
+S A$cartoon_manager$91 Def00002A
+S A$cartoon_manager$73 Def000018
+S A$cartoon_manager$64 Def00000F
+S A$cartoon_manager$92 Def00002D
+S A$cartoon_manager$74 Def00001B
+S A$cartoon_manager$65 Def000012
+S A$cartoon_manager$93 Def00002F
+S A$cartoon_manager$75 Def00001D
+S A$cartoon_manager$66 Def000014
+S A$cartoon_manager$85 Def000026
+S A$cartoon_manager$67 Def000015
+S A$cartoon_manager$58 Def000008
+S A$cartoon_manager$86 Def000028
+S A$cartoon_manager$68 Def000016
+S A$cartoon_manager$59 Def00000B
+S A$cartoon_manager$97 Def000031
+S A$cartoon_manager$79 Def00001F
+S C$cartoon_manager.c$11$1_0$3 Def000018
+S A$cartoon_manager$98 Def000033
+S G$engine_cartoon_manager_wave$0$0 Def000000
+S C$cartoon_manager.c$23$1_0$3 Def000035
+S C$cartoon_manager.c$24$1_0$3 Def00003A
+S C$cartoon_manager.c$13$2_0$5 Def00001F
+S C$cartoon_manager.c$17$2_0$5 Def00002A
+S C$cartoon_manager.c$15$3_0$6 Def000026
+S _engine_cartoon_manager_wave Def000000
+S C$cartoon_manager.c$19$3_0$7 Def000031
+S C$cartoon_manager.c$4$0_0$3 Def000000
+S C$cartoon_manager.c$6$1_0$3 Def000008
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -21,5 +55,25 @@ A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
-T 00 00 00 C9
+T 00 00 00 DD E5 DD 21 00 00 DD 39 DD 7E 04 D6 02
+R 00 00 00 00
+T 0D 00 00 30 09 DD 4E 04 3E 01 91 6F 18 20
+R 00 00 00 00
+T 18 00 00
+R 00 00 00 00
+T 18 00 00 DD 7E 04 D6 04 30 16 DD 7E 04 D6 02 20
+R 00 00 00 00
+T 25 00 00 04 2E 03 18 0E
+R 00 00 00 00
+T 2A 00 00
+R 00 00 00 00
+T 2A 00 00 DD 7E 04 D6 03 20 04 2E 02 18 03
+R 00 00 00 00
+T 35 00 00
+R 00 00 00 00
+T 35 00 00 DD 6E 04
+R 00 00 00 00
+T 38 00 00
+R 00 00 00 00
+T 38 00 00 DD E1 C9
 R 00 00 00 00
