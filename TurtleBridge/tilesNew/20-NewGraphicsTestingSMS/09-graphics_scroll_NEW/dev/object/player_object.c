@@ -7,6 +7,13 @@ const unsigned char player_object_starts[] = { 40, 72, 104, 136 };		//IMPORTANT 
 //const unsigned char player_object_starts[] = { 40, 56, 72, 88, 104 };        //IMPORTANT 30-Jan-2023 - may have to use this for first turtle.
 //const unsigned char player_object_starts[] = { 160,176,192,208,224 };
 
+// IMPORTANT - require +4px delta on player draw for frames:  5, 7, 9, 11.
+const unsigned char player_object_deltas[] = { 0, 0, 0, 0, 0, 4, 0, 4, 0, 4, 0, 4, };
+
+// TODO delete - no alignment so looks weird!!
+//const unsigned char player_object_deltas[] = { 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, };
+// TODO delete - no alignment so looks weird!!
+
 const signed int *jump_array_ptr[] =
 {
 	//signed char

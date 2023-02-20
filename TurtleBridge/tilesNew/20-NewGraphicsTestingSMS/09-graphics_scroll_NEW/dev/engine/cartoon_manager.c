@@ -2,6 +2,11 @@
 #include "enum_manager.h"
 #include "global_manager.h"
 
+#ifdef _CONSOLE
+#else
+#pragma disable_warning 261
+#endif
+
 unsigned char engine_cartoon_manager_wave( unsigned char frame )
 {
 	if( frame < player_frame_ground_left_01 )
