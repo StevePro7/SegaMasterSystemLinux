@@ -321,21 +321,6 @@ void engine_player_manager_animate( unsigned char frame )
 		{
 			po->motion_count = 0;
 			po->player_frame = engine_cartoon_manager_wave( frame );
-			//if( frame < player_frame_ground_left_01 )
-			//{
-			//	po->player_frame = 1 - po->player_frame;
-			//}
-			//if( frame < player_frame_theair_rght_01 )
-			//{
-			//	if( player_frame_ground_left_01 == frame )
-			//	{
-			//		po->player_frame = player_frame_ground_left_02;
-			//	}
-			//	else if( player_frame_ground_left_02 == frame )
-			//	{
-			//		po->player_frame = player_frame_ground_left_01;
-			//	}
-			//}
 		}
 	}
 }
