@@ -14,7 +14,7 @@ S:Lplay_screen.screen_play_screen_update$deltaY$1_0$35({2}SI:S),R,0,0,[c,b]
 S:Lplay_screen.screen_play_screen_update$loops$1_0$35({1}SC:U),B,1,-1
 S:Lplay_screen.screen_play_screen_update$scroll_state$1_0$35({1}SC:U),R,0,0,[a]
 S:Lplay_screen.screen_play_screen_update$player_state$1_0$35({1}SC:U),B,1,-1
-S:Lplay_screen.screen_play_screen_update$command$1_0$35({1}SC:U),R,0,0,[c]
+S:Lplay_screen.screen_play_screen_update$command$1_0$35({1}SC:U),R,0,0,[b]
 S:Lplay_screen.screen_play_screen_update$sloc0$0_1$0({1}SC:U),B,1,-1
 S:Lplay_screen.screen_play_screen_update$sloc1$0_1$0({1}SC:U),B,1,-2
 S:Lplay_screen.screen_play_screen_update$sloc2$0_1$0({1}SC:U),B,1,-1
