@@ -1,4 +1,5 @@
 M:bank6
+S:G$level1116_txt$0_0$0({512}DA512d,SC:U),D,0,0
 S:G$level1100_txt$0_0$0({384}DA384d,SC:U),D,0,0
 S:G$level1101_txt$0_0$0({384}DA384d,SC:U),D,0,0
 S:G$level1102_txt$0_0$0({384}DA384d,SC:U),D,0,0

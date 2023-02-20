@@ -1,6 +1,6 @@
 M:fixedbank
 S:G$music_object_data$0_0$0({24}DA12d,DG,SC:U),E,0,0
-S:G$level_object_data$0_0$0({32}DA16d,DG,SC:U),E,0,0
+S:G$level_object_data$0_0$0({34}DA17d,DG,SC:U),E,0,0
 S:G$player_object_starts$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$animeopening_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$mastertracker_psg$0_0$0({0}DA0d,SC:U),D,0,0
@@ -14,6 +14,7 @@ S:G$sound6_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$sound7_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$sound8_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$sound9_psg$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$level1116_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$level1100_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$level1101_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$level1102_txt$0_0$0({0}DA0d,SC:U),D,0,0
@@ -31,5 +32,5 @@ S:G$level1113_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$level1114_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$level1115_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$music_object_bank$0_0$0({12}DA12d,SC:U),D,0,0
-S:G$level_object_size$0_0$0({32}DA16d,SI:U),D,0,0
-S:G$level_object_bank$0_0$0({16}DA16d,SC:U),D,0,0
+S:G$level_object_size$0_0$0({34}DA17d,SI:U),D,0,0
+S:G$level_object_bank$0_0$0({17}DA17d,SC:U),D,0,0

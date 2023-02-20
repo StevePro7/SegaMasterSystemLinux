@@ -17,8 +17,8 @@ void screen_ready_screen_load()
 	//engine_font_manager_data( tileX, 10, 11 );
 
 	engine_scroll_manager_update( 0 );
-	engine_music_manager_play( 0 );		// glitch
-	engine_music_manager_play( 0 );		// NO gfx
+//	engine_music_manager_play( 0 );		// glitch
+	//engine_music_manager_play( 1 );		// NO gfx
 }
 
 void screen_ready_screen_update( unsigned char *screen_type )

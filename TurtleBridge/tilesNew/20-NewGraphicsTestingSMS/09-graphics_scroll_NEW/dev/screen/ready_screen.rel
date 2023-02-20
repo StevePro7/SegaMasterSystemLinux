@@ -1,48 +1,35 @@
 ;!FILE ready_screen.asm
 XL3
-H 9 areas 27 global symbols
+H 9 areas 1A global symbols
 M ready_screen
 O -mz80
 S .__.ABS. Def000000
 S _engine_scroll_manager_update Ref000000
-S _engine_music_manager_play Ref000000
-A _CODE size 1D flags 0 addr 0
+A _CODE size F flags 0 addr 0
 S C$ready_screen.c$7$0_0$6 Def000000
-S G$screen_ready_screen_update$0$0 Def000016
-S A$ready_screen$100 Def000017
-S A$ready_screen$101 Def000018
-S A$ready_screen$111 Def00001C
-S A$ready_screen$102 Def000019
-S A$ready_screen$103 Def00001A
-S _screen_ready_screen_update Def000016
-S XG$screen_ready_screen_update$0$0 Def00001C
-S A$ready_screen$60 Def000002
-S A$ready_screen$70 Def00000D
-S A$ready_screen$61 Def000003
-S A$ready_screen$62 Def000006
+S G$screen_ready_screen_update$0$0 Def000008
+S _screen_ready_screen_update Def000008
+S XG$screen_ready_screen_update$0$0 Def00000E
+S A$ready_screen$60 Def000003
+S A$ready_screen$61 Def000006
 S G$screen_ready_screen_load$0$0 Def000000
-S A$ready_screen$74 Def00000E
-S A$ready_screen$75 Def00000F
-S A$ready_screen$66 Def000007
-S A$ready_screen$76 Def000010
-S A$ready_screen$67 Def000008
-S A$ready_screen$58 Def000000
-S A$ready_screen$86 Def000015
-S A$ready_screen$77 Def000011
-S A$ready_screen$68 Def000009
-S A$ready_screen$59 Def000001
-S A$ready_screen$78 Def000014
-S A$ready_screen$69 Def00000A
-S A$ready_screen$99 Def000016
-S C$ready_screen.c$20$1_0$6 Def000007
-S C$ready_screen.c$21$1_0$6 Def00000E
+S A$ready_screen$82 Def000008
+S A$ready_screen$83 Def000009
+S A$ready_screen$84 Def00000A
+S A$ready_screen$57 Def000000
+S A$ready_screen$94 Def00000E
+S A$ready_screen$85 Def00000B
+S A$ready_screen$58 Def000001
+S A$ready_screen$86 Def00000C
+S A$ready_screen$59 Def000002
+S A$ready_screen$69 Def000007
 S _screen_ready_screen_load Def000000
-S C$ready_screen.c$22$1_0$6 Def000015
-S C$ready_screen.c$24$1_0$8 Def000016
+S C$ready_screen.c$22$1_0$6 Def000007
+S C$ready_screen.c$24$1_0$8 Def000008
 S C$ready_screen.c$19$1_0$6 Def000000
-S C$ready_screen.c$28$1_0$8 Def000016
-S C$ready_screen.c$29$1_0$8 Def00001C
-S XG$screen_ready_screen_load$0$0 Def000015
+S C$ready_screen.c$28$1_0$8 Def000008
+S C$ready_screen.c$29$1_0$8 Def00000E
+S XG$screen_ready_screen_load$0$0 Def000007
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -53,11 +40,9 @@ A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
-T 00 00 00 AF F5 33 CD 00 00 33 AF F5 33 CD 00 00
-R 00 00 00 00 02 07 01 00 02 0E 02 00
-T 0D 00 00 33 AF F5 33 CD 00 00 33 C9
-R 00 00 00 00 02 08 02 00
-T 16 00 00
+T 00 00 00 AF F5 33 CD 00 00 33 C9
+R 00 00 00 00 02 07 01 00
+T 08 00 00
 R 00 00 00 00
-T 16 00 00 C1 E1 E5 C5 36 0C C9
+T 08 00 00 C1 E1 E5 C5 36 0C C9
 R 00 00 00 00
