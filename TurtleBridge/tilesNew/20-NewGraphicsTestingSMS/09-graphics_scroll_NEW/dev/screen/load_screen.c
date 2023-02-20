@@ -60,6 +60,7 @@ void screen_load_screen_load()
 	devkit_SMS_displayOn();
 
 	engine_scroll_manager_load( go->game_point, lo->level_size );
+	engine_scroll_manager_update( 0 );
 }
 
 void screen_load_screen_update( unsigned char *screen_type )
@@ -86,12 +87,12 @@ void screen_load_screen_update( unsigned char *screen_type )
 
 	//engine_player_manager_draw();
 
-	//*screen_type = screen_type_ready;
 	//*screen_type = screen_type_dead;
 	//*screen_type = screen_type_over;
 	//*screen_type = screen_type_cont;
 	//*screen_type = screen_type_option;
-	*screen_type = screen_type_play;
+	*screen_type = screen_type_ready;
+	//*screen_type = screen_type_play;
 }
 
 //

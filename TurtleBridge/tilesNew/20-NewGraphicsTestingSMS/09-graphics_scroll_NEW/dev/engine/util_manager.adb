@@ -19,7 +19,7 @@ S:Lutil_manager.engine_util_manager_convertNibblesToByte$lower_nibble$1_0$123({1
 S:Lutil_manager.engine_util_manager_convertNibblesToByte$byte$1_0$123({2}DG,SC:U),B,1,6
 F:G$engine_random_manager_rand$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_random_manager_next$0_0$0({2}DF,SC:U),Z,0,0,0,0,0
-S:Lutil_manager.engine_random_manager_next$max$1_0$126({1}SC:U),B,1,4
+S:Lutil_manager.engine_random_manager_next$max$1_0$126({2}SI:U),B,1,4
 S:G$music_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$level_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$locale_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0

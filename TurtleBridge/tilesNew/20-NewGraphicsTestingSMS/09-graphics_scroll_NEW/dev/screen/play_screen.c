@@ -27,7 +27,7 @@ void screen_play_screen_load()
 	//19-Feb-2023
 	// TODO - iron this out but IMPORTANT - I don't think I want to play music in same function as draw title etc. as causes screen flicker??
 	engine_scroll_manager_update( 0 );
-	//engine_music_manager_play( 0 );
+	//engine_music_manager_play( 1 );
 }
 
 void screen_play_screen_update( unsigned char *screen_type )
@@ -53,13 +53,13 @@ void screen_play_screen_update( unsigned char *screen_type )
 
 	input1 = engine_input_manager_hold( input_type_left );
 	input2 = engine_input_manager_move( input_type_right );
-	//input1 = 1;		// TODO delete
+	input1 = 1;		// TODO delete
 	if( input1 || input2 )
 	{
 		//engine_frame_manager_update();
 		//engine_frame_manager_draw();
 
-		command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 0 );
+		command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 0 );
 		if( 10 == fo->frame_count )
 		{
 			command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 1, 0 );

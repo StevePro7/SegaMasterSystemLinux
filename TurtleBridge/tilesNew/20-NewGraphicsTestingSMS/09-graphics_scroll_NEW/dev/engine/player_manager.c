@@ -376,6 +376,7 @@ void engine_player_manager_draw()
 	struct_player_object *po = &global_player_object;
 	unsigned char deltaDraw = player_object_deltas[ po->player_frame ];
 	//unsigned char deltaDraw = 0;
+	//unsigned char deltaDraw = 0;
 	//if( 5 == po->player_frame || 7 == po->player_frame || 9 == po->player_frame || 11 == po->player_frame )
 	//{
 		//deltaDraw = 4;
