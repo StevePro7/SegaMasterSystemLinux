@@ -152,6 +152,7 @@ void engine_player_manager_set_action( unsigned char frame, unsigned char comman
 {
 	struct_player_object *po = &global_player_object;
 	unsigned char newFrame;
+	unsigned char newIndex;
 	// TODO delete
 	//unsigned char index;
 	//index = state;
@@ -165,15 +166,27 @@ void engine_player_manager_set_action( unsigned char frame, unsigned char comman
 		po->player_state = player_state_isintheair;
 
 		// TODO - calculate this - determine jump index
-		po->jumper_index = 1;
+		newIndex = 2;
+		if( ( COMMAND_LEFT_MASK & command ) == COMMAND_LEFT_MASK )
+		{
+			newIndex = 1;
+		}
+		if( ( COMMAND_RGHT_MASK & command ) == COMMAND_RGHT_MASK )
+		{
+			newIndex = 3;
+		}
+
 		newFrame = updatePlayerFrameGroundToFlying( po->player_frame );
 		//po->player_frame = updatePlayerFrameGroundToFlying( po->player_frame );
 
 		// TODO test this
 		if( ( COMMAND_HIGH_MASK & command ) == COMMAND_HIGH_MASK )
 		{
-			po->jumper_index += 1;
+			newIndex += 1;
+			//po->jumper_index += 1;
 		}
+
+		po->jumper_index = newIndex;
 
 		// Set the jump array information.
 		jump_ptr = jump_array_ptr[ po->jumper_index ];

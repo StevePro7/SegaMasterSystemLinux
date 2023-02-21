@@ -60,18 +60,18 @@ void screen_play_screen_update( unsigned char *screen_type )
 
 		engine_frame_manager_update();
 		engine_frame_manager_draw();
-		if( 1 == fo->frame_count )
+		if( 3 == fo->frame_count )
 		{
-			command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 1, 0 );
+			command = engine_command_manager_build( po->player_state, 0, 1, 1, 0, 1, 0 );
 		}
-		if( 4 == fo->frame_count || 6 == fo->frame_count )//|| 8 == fo->frame_count )
-		{
-			command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 1 );
-		}
-		if( 5 == fo->frame_count )
-		{
-			//command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 1, 0 );
-		}
+		//if( 4 == fo->frame_count || 6 == fo->frame_count )//|| 8 == fo->frame_count )
+		//{
+		//	//command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 1 );
+		//}
+		//if( 5 == fo->frame_count )
+		//{
+		//	//command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 1, 0 );
+		//}
 	}
 
 	if( COMMAND_NONE_MASK != command )
