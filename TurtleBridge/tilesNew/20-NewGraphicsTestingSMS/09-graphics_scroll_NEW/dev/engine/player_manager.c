@@ -301,7 +301,7 @@ enum_player_state engine_player_manager_collision( unsigned char state, unsigned
 			if( deltaY > 0 )
 			{
 				// Only check collision with potential platform if "landing" stance.
-				if( player_frame_theair_rght_01 == po->player_frame || player_frame_theair_left_01 == po->player_frame )
+				if( player_frame_theair_rght_01 == po->player_frame || player_frame_theair_left_01 == po->player_frame || invincible )
 				{
 					if( INVALID_INDEX != collision )
 					{

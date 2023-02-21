@@ -64,7 +64,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 		{
 			command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 1, 0 );
 		}
-		if( 4 == fo->frame_count )//|| 6 == fo->frame_count || 8 == fo->frame_count )
+		if( 4 == fo->frame_count || 6 == fo->frame_count )//|| 8 == fo->frame_count )
 		{
 			command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 1 );
 		}
