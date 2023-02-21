@@ -133,6 +133,8 @@ void screen_play_screen_update( unsigned char *screen_type )
 		engine_scroll_manager_update( 0 );
 	}
 
+	engine_player_manager_draw();
+
 	// Move on to the dying sequence.
 	if( player_state_isnowdying == player_state )
 	{
@@ -140,6 +142,5 @@ void screen_play_screen_update( unsigned char *screen_type )
 		return;
 	}
 
-	engine_player_manager_draw();
 	*screen_type = screen_type_play;
 }
