@@ -16,6 +16,16 @@ void screen_pass_screen_load()
 	// TODO - wrap this in an API - must reset startX as will have increased as scrolling thru level - although drawX never changes then
 	struct_player_object *po = &global_player_object;
 	po->posnX = po->initX;
+	if( po->player_frame < 2 || ( po->player_frame > 4 && po->player_frame < 8 ) )
+	{
+		po->player_frame = 4;
+	}
+	else if( po->player_frame < 4 || po->player_frame > 8 )
+	{
+		po->player_frame = 8;
+	}
+	po->posnY = po->tileY << 3;
+	po->drawY = po->posnY - 32;
 	engine_player_manager_draw();
 	//engine_scroll_manager_load();
 	//devkit_SMS_displayOff();
@@ -46,7 +56,7 @@ void screen_pass_screen_update( unsigned char *screen_type )
 		{
 			engine_music_manager_stop();
 			swap = 1;
-			po->player_frame = 1;
+			po->player_frame = ( 4 == po->player_frame ) ? 1 : 3;
 		}
 	}
 	else

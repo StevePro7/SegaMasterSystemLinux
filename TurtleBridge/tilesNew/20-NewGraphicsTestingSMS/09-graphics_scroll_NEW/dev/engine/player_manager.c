@@ -191,6 +191,8 @@ void engine_player_manager_set_action( unsigned char frame, unsigned char comman
 		// Set the jump array information.
 		jump_ptr = jump_array_ptr[ po->jumper_index ];
 		jump_len = jump_array_len[ po->jumper_index ];
+
+		engine_font_manager_data( po->jumper_index, 31, 5 );
 	}
 	else
 	{
@@ -393,8 +395,10 @@ static unsigned char updatePlayerFrameFlyingToGround( unsigned char player_frame
 void engine_player_manager_pass()
 {
 	struct_player_object *po = &global_player_object;
+	
 	po->posnX++;
-	updatePlayer();
+	po->drawX = po->posnX - 16;
+	//updatePlayer();
 }
 
 // TODO delete this as replaced by engine_player_manager_animate()

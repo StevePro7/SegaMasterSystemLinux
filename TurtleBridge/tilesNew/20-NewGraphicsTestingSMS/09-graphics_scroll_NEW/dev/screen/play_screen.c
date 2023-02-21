@@ -12,12 +12,15 @@
 #include "../engine/player_manager.h"
 #include "../engine/scroll_manager.h"
 #include "../engine/timer_manager.h"
+#include <stdbool.h>
 
 #ifdef _CONSOLE
 #else
 #pragma disable_warning 110
 #pragma disable_warning 261
 #endif
+
+static bool complete;
 
 void screen_play_screen_load()
 {
@@ -28,6 +31,7 @@ void screen_play_screen_load()
 	// TODO - iron this out but IMPORTANT - I don't think I want to play music in same function as draw title etc. as causes screen flicker??
 	engine_scroll_manager_update( 0 );
 	//engine_music_manager_play( 0 );
+	complete = false;
 }
 
 void screen_play_screen_update( unsigned char *screen_type )
@@ -53,21 +57,29 @@ void screen_play_screen_update( unsigned char *screen_type )
 
 	input1 = engine_input_manager_hold( input_type_left );
 	input2 = engine_input_manager_move( input_type_right );
-	//input1 = 1;		// TODO delete
+	input1 = 1;		// TODO delete
 	if( input1 || input2 )
 	{
-		command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 0 );
+		command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 0 );
 
 		engine_frame_manager_update();
 		engine_frame_manager_draw();
-		if( 3 == fo->frame_count )
+		if( 60 == fo->frame_count )
 		{
-			command = engine_command_manager_build( po->player_state, 1, 0, 0, 0, 1, 0 );
+			command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 1, 0 );
 		}
-		//if( 4 == fo->frame_count || 6 == fo->frame_count )//|| 8 == fo->frame_count )
-		//{
-		//	//command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 1 );
-		//}
+		if( 96 == fo->frame_count )//|| 6 == fo->frame_count )//|| 8 == fo->frame_count )
+		{
+			command = engine_command_manager_build( po->player_state, 0, 1, 1, 0, 0, 1 );
+		}
+		if( 175 == fo->frame_count )
+		{
+			command = engine_command_manager_build( po->player_state, 1, 0, 0, 0, 0, 1 );
+		}
+		if( 180 == fo->frame_count )
+		{
+			command = engine_command_manager_build( po->player_state, 1, 0, 0, 0, 0, 1 );
+		}
 		//if( 5 == fo->frame_count )
 		//{
 		//	//command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 1, 0 );
@@ -99,10 +111,9 @@ void screen_play_screen_update( unsigned char *screen_type )
 				}
 				else if( scroll_state_comp == scroll_state )
 				{
-					//complete = scroll_state_comp == scroll_state;
-					//if( complete )
+					complete = scroll_state_comp == scroll_state;
+					if( complete )
 					{
-						//engine_font_manager_text( "NEXT SCREEN", 10, 3 );
 						break;
 					}
 				}
@@ -149,10 +160,21 @@ void screen_play_screen_update( unsigned char *screen_type )
 
 	engine_player_manager_draw();
 
-	// Move on to the dying sequence.
+
+
+	// Check if moving on to the dying sequence.
 	if( player_state_isnowdying == player_state )
 	{
+		engine_scroll_manager_update( 0 );
 		*screen_type = screen_type_dead;
+		return;
+	}
+
+	// Check to see if player completes level.
+	if( complete )
+	{
+		engine_scroll_manager_update( 0 );
+		*screen_type = screen_type_pass;
 		return;
 	}
 
