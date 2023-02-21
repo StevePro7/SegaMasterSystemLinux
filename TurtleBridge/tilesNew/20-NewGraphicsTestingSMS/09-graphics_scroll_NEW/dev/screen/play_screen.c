@@ -27,7 +27,7 @@ void screen_play_screen_load()
 	//19-Feb-2023
 	// TODO - iron this out but IMPORTANT - I don't think I want to play music in same function as draw title etc. as causes screen flicker??
 	engine_scroll_manager_update( 0 );
-	engine_music_manager_play( 0 );
+	//engine_music_manager_play( 0 );
 }
 
 void screen_play_screen_update( unsigned char *screen_type )
@@ -54,7 +54,6 @@ void screen_play_screen_update( unsigned char *screen_type )
 	input1 = engine_input_manager_hold( input_type_left );
 	input2 = engine_input_manager_move( input_type_right );
 	//input1 = 1;		// TODO delete
-	engine_font_manager_data( po->player_frame, 31, 3 );
 	if( input1 || input2 )
 	{
 		command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 0 );
@@ -65,16 +64,14 @@ void screen_play_screen_update( unsigned char *screen_type )
 		{
 			command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 1, 0 );
 		}
-		if( 12 == fo->frame_count )
+		if( 4 == fo->frame_count || 6 == fo->frame_count || 8 == fo->frame_count )
 		{
-			command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 1 );
+			command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 1 );
 		}
-		//if( 3 == fo->frame_count )
-		//{
-		//	command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 1 );
-		//}
-
-		engine_font_manager_data( po->player_frame, 31, 4 );
+		if( 5 == fo->frame_count )
+		{
+			command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 1, 0 );
+		}
 	}
 
 	if( COMMAND_NONE_MASK != command )
@@ -83,9 +80,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 		deltaX = engine_player_manager_get_deltaX( po->player_state, command );
 
 		// Get button action.
-		engine_player_manager_set_action( po->player_state, po->player_frame, command );
-
-		engine_font_manager_data( po->player_frame, 31, 5 );
+		engine_player_manager_set_action( po->player_frame, command );
 
 		// No scroll.
 		if( 0 == deltaX )
@@ -131,8 +126,6 @@ void screen_play_screen_update( unsigned char *screen_type )
 
 			// General all-purpose collision detection routine.
 			player_state = engine_player_manager_collision( po->player_state, po->lookX, po->tileY, deltaY, po->posnY, go->game_isgod );
-
-			engine_font_manager_data( po->player_frame, 31, 6 );
 		}
 	}
 	else
@@ -146,8 +139,6 @@ void screen_play_screen_update( unsigned char *screen_type )
 		*screen_type = screen_type_beat;
 		return;
 	}
-
-	engine_font_manager_data( po->player_frame, 31, 7 );
 
 	engine_player_manager_draw();
 	*screen_type = screen_type_play;

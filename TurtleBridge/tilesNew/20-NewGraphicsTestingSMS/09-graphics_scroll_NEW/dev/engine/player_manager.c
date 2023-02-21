@@ -148,7 +148,7 @@ signed int engine_player_manager_get_deltaY()
 	return deltaY;
 }
 
-void engine_player_manager_set_action( unsigned char state, unsigned char frame, unsigned char command )
+void engine_player_manager_set_action( unsigned char frame, unsigned char command )
 {
 	struct_player_object *po = &global_player_object;
 	unsigned char newFrame;

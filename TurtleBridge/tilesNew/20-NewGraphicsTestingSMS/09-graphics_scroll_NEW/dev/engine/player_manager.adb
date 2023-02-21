@@ -22,9 +22,8 @@ S:Lplayer_manager.engine_player_manager_get_deltaY$po$1_0$149({2}DG,STtag_struct
 S:Lplayer_manager.engine_player_manager_get_deltaY$deltaY$1_0$149({2}SI:S),R,0,0,[e,d]
 S:Lplayer_manager.engine_player_manager_get_deltaY$sloc0$0_1$0({1}SC:U),B,1,-1
 F:G$engine_player_manager_set_action$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lplayer_manager.engine_player_manager_set_action$state$1_0$152({1}SC:U),B,1,4
-S:Lplayer_manager.engine_player_manager_set_action$frame$1_0$152({1}SC:U),B,1,5
-S:Lplayer_manager.engine_player_manager_set_action$command$1_0$152({1}SC:U),B,1,6
+S:Lplayer_manager.engine_player_manager_set_action$frame$1_0$152({1}SC:U),B,1,4
+S:Lplayer_manager.engine_player_manager_set_action$command$1_0$152({1}SC:U),B,1,5
 S:Lplayer_manager.engine_player_manager_set_action$po$1_0$153({2}DG,STtag_struct_player_object:S),R,0,0,[]
 S:Lplayer_manager.engine_player_manager_set_action$newFrame$1_0$153({1}SC:U),B,1,-3
 S:Lplayer_manager.engine_player_manager_set_action$sloc0$0_1$0({1}SC:U),B,1,-3
