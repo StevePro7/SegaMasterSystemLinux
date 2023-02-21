@@ -15,7 +15,7 @@ void engine_player_manager_loadY( unsigned char player_loadY );
 
 unsigned char engine_player_manager_get_deltaX( unsigned char state, unsigned char command );
 signed int engine_player_manager_get_deltaY();
-void engine_player_manager_set_action( unsigned char state, unsigned char command );
+void engine_player_manager_set_action( unsigned char state, unsigned char frame, unsigned char command );
 
 void engine_player_manager_horz( unsigned char deltaX );
 void engine_player_manager_vert( unsigned int deltaY );

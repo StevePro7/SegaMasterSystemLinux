@@ -76,7 +76,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 		deltaX = engine_player_manager_get_deltaX( po->player_state, command );
 
 		// Get button action.
-		engine_player_manager_set_action( po->player_state, command );
+		engine_player_manager_set_action( po->player_state, po->player_frame, command );
 
 		// No scroll.
 		if( 0 == deltaX )

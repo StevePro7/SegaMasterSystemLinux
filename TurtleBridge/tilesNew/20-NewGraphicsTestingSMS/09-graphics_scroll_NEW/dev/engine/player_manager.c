@@ -148,12 +148,12 @@ signed int engine_player_manager_get_deltaY()
 	return deltaY;
 }
 
-void engine_player_manager_set_action( unsigned char state, unsigned char command )
+void engine_player_manager_set_action( unsigned char state, unsigned char frame, unsigned char command )
 {
 	struct_player_object *po = &global_player_object;
-	unsigned char index;
 
 	// TODO delete
+	unsigned char index;
 	index = state;
 	index = command;
 	// TODO delete
@@ -183,6 +183,7 @@ void engine_player_manager_set_action( unsigned char state, unsigned char comman
 		// Player in the air.
 		if( ( COMMAND_SWAP_MASK & command ) == COMMAND_SWAP_MASK )
 		{
+			po->player_frame = engine_cartoon_manager_swap( frame );
 			//demo_screen
 			//swap_player_frame();
 		}
