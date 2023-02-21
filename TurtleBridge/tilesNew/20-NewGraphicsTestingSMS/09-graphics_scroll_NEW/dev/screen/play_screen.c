@@ -54,20 +54,27 @@ void screen_play_screen_update( unsigned char *screen_type )
 	input1 = engine_input_manager_hold( input_type_left );
 	input2 = engine_input_manager_move( input_type_right );
 	//input1 = 1;		// TODO delete
+	engine_font_manager_data( po->player_frame, 31, 3 );
 	if( input1 || input2 )
 	{
 		command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 0 );
 
 		engine_frame_manager_update();
 		engine_frame_manager_draw();
-		if( 3 == fo->frame_count )
+		if( 1 == fo->frame_count )
 		{
 			command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 1, 0 );
 		}
-		if( 5 == fo->frame_count )
+		if( 12 == fo->frame_count )
 		{
-			command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 1, 0 );
+			command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 1 );
 		}
+		//if( 3 == fo->frame_count )
+		//{
+		//	command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 1 );
+		//}
+
+		engine_font_manager_data( po->player_frame, 31, 4 );
 	}
 
 	if( COMMAND_NONE_MASK != command )
@@ -77,6 +84,8 @@ void screen_play_screen_update( unsigned char *screen_type )
 
 		// Get button action.
 		engine_player_manager_set_action( po->player_state, po->player_frame, command );
+
+		engine_font_manager_data( po->player_frame, 31, 5 );
 
 		// No scroll.
 		if( 0 == deltaX )
@@ -122,6 +131,8 @@ void screen_play_screen_update( unsigned char *screen_type )
 
 			// General all-purpose collision detection routine.
 			player_state = engine_player_manager_collision( po->player_state, po->lookX, po->tileY, deltaY, po->posnY, go->game_isgod );
+
+			engine_font_manager_data( po->player_frame, 31, 6 );
 		}
 	}
 	else
@@ -135,6 +146,8 @@ void screen_play_screen_update( unsigned char *screen_type )
 		*screen_type = screen_type_beat;
 		return;
 	}
+
+	engine_font_manager_data( po->player_frame, 31, 7 );
 
 	engine_player_manager_draw();
 	*screen_type = screen_type_play;

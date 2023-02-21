@@ -1,12 +1,12 @@
 #include "beat_screen.h"
 #include "../engine/cartoon_manager.h"
+#include "../engine/command_manager.h"
 #include "../engine/debug_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/graphics_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/player_manager.h"
-//#include "../engine/util_manager.h"
 
 #ifdef _CONSOLE
 #else
@@ -24,7 +24,7 @@ void screen_beat_screen_load()
 	//po->initX = po->posnX;
 	//po->drawX = po->initX - 16;
 	//po->drawY = 96;
-	po->player_frame = 8;
+	po->player_frame = 4;
 	engine_font_manager_data( po->player_frame, 10, 10 );
 
 	//unsigned char data = 0xFF;
@@ -49,10 +49,12 @@ void screen_beat_screen_update( unsigned char *screen_type )
 
 	if( input1 )
 	{
-		command = 0b00000000;
+		//command = 0b00000000;
+		command = engine_command_manager_build( 1, 0, 0, 0, 0, 0, 1 );
 		//po->player_frame = engine_cartoon_manager_wave( po->player_frame );
 		//po->player_frame = engine_cartoon_manager_swap( po->player_frame );
 		po->player_frame = engine_cartoon_manager_flip( po->player_frame, command );
+		engine_font_manager_data( po->player_frame, 10, 10 );
 	}
 
 	if( input2 )

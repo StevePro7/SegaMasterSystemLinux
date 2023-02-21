@@ -151,22 +151,23 @@ signed int engine_player_manager_get_deltaY()
 void engine_player_manager_set_action( unsigned char state, unsigned char frame, unsigned char command )
 {
 	struct_player_object *po = &global_player_object;
-
+	unsigned char newFrame;
 	// TODO delete
-	unsigned char index;
-	index = state;
-	index = command;
+	//unsigned char index;
+	//index = state;
+	//index = command;
 	// TODO delete
 
 	// Player on ground.
+	newFrame = po->player_frame;
 	if( ( COMMAND_JUMP_MASK & command ) == COMMAND_JUMP_MASK )
 	{
 		po->player_state = player_state_isintheair;
 
 		// TODO - calculate this - determine jump index
 		po->jumper_index = 1;
-		//po->player_frame = po->player_frame < player_frame_ground_left_01 ? player_frame_theair_rght_01 : player_frame_theair_left_01;
-		po->player_frame = updatePlayerFrameGroundToFlying( po->player_frame );
+		newFrame = updatePlayerFrameGroundToFlying( po->player_frame );
+		//po->player_frame = updatePlayerFrameGroundToFlying( po->player_frame );
 
 		// TODO test this
 		if( ( COMMAND_HIGH_MASK & command ) == COMMAND_HIGH_MASK )
@@ -183,17 +184,24 @@ void engine_player_manager_set_action( unsigned char state, unsigned char frame,
 		// Player in the air.
 		if( ( COMMAND_SWAP_MASK & command ) == COMMAND_SWAP_MASK )
 		{
-			po->player_frame = engine_cartoon_manager_swap( frame );
-			//demo_screen
-			//swap_player_frame();
+			//po->player_frame = engine_cartoon_manager_swap( frame );
+			newFrame = engine_cartoon_manager_swap( frame );
+			po->player_frame = newFrame;
 		}
 		if( ( COMMAND_FLIP_MASK & command ) == COMMAND_FLIP_MASK )
 		{
-			//demo_screen
-			//but use command to determine LEFT || RGHT for Flip.
-			//flip_player_frame(command);
+			//newFrame = po->player_frame;
+			newFrame = engine_cartoon_manager_flip( frame, command );
+			po->player_frame = newFrame;
+
+			//engine_font_manager_data( newFrame, 30, 11 );
+			//engine_font_manager_data( po->player_frame, 30, 13 );
+			//po->player_frame = engine_cartoon_manager_flip( frame, command );
+		//	engine_font_manager_data( po->player_frame, 30, 14 );
 		}
 	}
+
+	po->player_frame = newFrame;
 }
 
 void engine_player_manager_horz( unsigned char deltaX )
@@ -372,19 +380,6 @@ void engine_player_manager_pass()
 	updatePlayer();
 }
 
-void engine_player_manager_draw()
-{
-	struct_player_object *po = &global_player_object;
-	unsigned char deltaDraw = player_object_deltas[ po->player_frame ];
-	//unsigned char deltaDraw = 0;
-	//unsigned char deltaDraw = 0;
-	//if( 5 == po->player_frame || 7 == po->player_frame || 9 == po->player_frame || 11 == po->player_frame )
-	//{
-		//deltaDraw = 4;
-	//}
-	engine_sprite_manager_draw( po->player_frame, po->drawX + deltaDraw, po->drawY + deltaDraw );
-}
-
 // TODO delete this as replaced by engine_player_manager_animate()
 void engine_player_manager_count()
 {
@@ -411,4 +406,17 @@ void engine_player_manager_down( unsigned char deltaY )
 	//	struct_player_object *po = &global_player_object;
 	//	po->posnY += deltaY;
 	//	updatePlayerY();
+}
+
+
+void engine_player_manager_draw()
+{
+	struct_player_object *po = &global_player_object;
+	unsigned char deltaDraw = player_object_deltas[ po->player_frame ];
+	//unsigned char deltaDraw = 0;
+	//if( 5 == po->player_frame || 7 == po->player_frame || 9 == po->player_frame || 11 == po->player_frame )
+	//{
+		//deltaDraw = 4;
+	//}
+	engine_sprite_manager_draw( po->player_frame, po->drawX + deltaDraw, po->drawY + deltaDraw );
 }
