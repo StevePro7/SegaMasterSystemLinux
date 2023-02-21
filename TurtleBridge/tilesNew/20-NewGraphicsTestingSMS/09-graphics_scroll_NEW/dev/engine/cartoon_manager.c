@@ -51,14 +51,6 @@ unsigned char engine_cartoon_manager_swap( unsigned char frame )
 	return frame;
 }
 
-//unsigned char engine_cartoon_manager_flipX( unsigned char frame, unsigned char command )
-//{
-//	unsigned char newFrame;
-//
-//	newFrame = 9;
-//	engine_font_manager_data( newFrame, 30, 10 );
-//	return newFrame;
-//}
 unsigned char engine_cartoon_manager_flip( unsigned char frame, unsigned char command )
 {
 	if( player_frame_ground_rght_01 == frame )

@@ -297,19 +297,23 @@ enum_player_state engine_player_manager_collision( unsigned char state, unsigned
 		}
 		else if( player_state_isintheair == player_state )
 		{
-			// Player  in air descending thus check there could be platform to land on.
+			// Player in air descending thus check there could be platform to land on.
 			if( deltaY > 0 )
 			{
-				if( INVALID_INDEX != collision )
+				// Only check collision with potential platform if "landing" stance.
+				if( player_frame_theair_rght_01 == po->player_frame || player_frame_theair_left_01 == po->player_frame )
 				{
-					player_state = player_state_isonground;
-					po->jumper_index = 0;
-					po->player_frame = updatePlayerFrameFlyingToGround( po->player_frame );
+					if( INVALID_INDEX != collision )
+					{
+						player_state = player_state_isonground;
+						po->jumper_index = 0;
+						po->player_frame = updatePlayerFrameFlyingToGround( po->player_frame );
 
-					// Ensure player aligns with platform landed on...
-					po->posnY = tileY << 3;
-					po->leapY = po->posnY << 8;
-					updatePlayerY();
+						// Ensure player aligns with platform landed on...
+						po->posnY = tileY << 3;
+						po->leapY = po->posnY << 8;
+						updatePlayerY();
+					}
 				}
 			}
 		}
