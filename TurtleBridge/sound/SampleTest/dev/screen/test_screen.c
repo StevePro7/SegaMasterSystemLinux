@@ -23,7 +23,14 @@ void screen_test_screen_update( unsigned char *screen_type )
 		if( input )
 		{
 			engine_font_manager_draw_text( "PLAY SOUND FX 02", 10, 9 );
-			engine_riff_manager_play( 0 );
+			engine_riff_manager_play( 1 );
+		}
+
+		input = engine_input_manager_hold( input_type_down );
+		if( input )
+		{
+			engine_font_manager_draw_text( "PLAY SOUND FX 02", 10, 9 );
+			engine_riff_manager_play( 2 );
 		}
 		else
 		{
