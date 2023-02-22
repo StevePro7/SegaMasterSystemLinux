@@ -71,3 +71,20 @@ signed char engine_collision_manager_player( unsigned char lookX, unsigned char 
 
 	return INVALID_INDEX;
 }
+
+
+//unsigned char engine_collision_manager_finish( unsigned char lookX, unsigned char tileY )
+void engine_collision_manager_finish( unsigned char lookX, unsigned char tileY, unsigned char *player_begY, unsigned char *player_endY )
+{
+	// Short algorithm to compare player finishing level:
+	// if player>=lookup_platform then return lookup_platform.
+	unsigned char lookup_platform = level_platforms[ lookX ];
+
+	*player_begY = lookup_platform << 3;
+	*player_endY = lookup_platform << 3;
+
+	if( tileY < lookup_platform )
+	{
+		*player_begY = tileY << 3;
+	}
+}

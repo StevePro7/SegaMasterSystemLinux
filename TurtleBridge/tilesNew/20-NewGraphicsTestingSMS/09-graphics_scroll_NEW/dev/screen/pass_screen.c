@@ -1,7 +1,7 @@
 #include "pass_screen.h"
 #include "../engine/asm_manager.h"
 #include "../engine/audio_manager.h"
-#include "../engine/content_manager.h"
+#include "../engine/collision_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/level_manager.h"
@@ -9,23 +9,35 @@
 #include "../engine/scroll_manager.h"
 #include "../devkit/_sms_manager.h"
 
+//static unsigned char player_passX;
+static unsigned char player_endY;
 static unsigned char swap;
 
 void screen_pass_screen_load()
 {
+	player_endY = engine_player_manager_finish();
+
 	// TODO - wrap this in an API - must reset startX as will have increased as scrolling thru level - although drawX never changes then
-	struct_player_object *po = &global_player_object;
-	po->posnX = po->initX;
-	if( po->player_frame < 2 || ( po->player_frame > 4 && po->player_frame < 8 ) )
-	{
-		po->player_frame = 4;
-	}
-	else if( po->player_frame < 4 || po->player_frame > 8 )
-	{
-		po->player_frame = 8;
-	}
-	po->posnY = po->tileY << 3;
-	po->drawY = po->posnY - 32;
+	//struct_player_object *po = &global_player_object;
+	//unsigned char player_loadY;
+
+	//po->posnX = po->initX;
+	//player_loadY = engine_collision_manager_finish( po->lookX, po->tileY );
+
+	//po->posnY = player_loadY << 3;
+	//po->leapY = po->posnY << 8;
+	//po->drawY = po->posnY - 32;
+
+
+	//if( po->player_frame < 2 || ( po->player_frame > 4 && po->player_frame < 8 ) )
+	//{
+	//	po->player_frame = 4;
+	//}
+	//else if( po->player_frame < 4 || po->player_frame > 8 )
+	//{
+	//	po->player_frame = 8;
+	//}
+
 	engine_player_manager_draw();
 	//engine_scroll_manager_load();
 	//devkit_SMS_displayOff();
@@ -64,7 +76,7 @@ void screen_pass_screen_update( unsigned char *screen_type )
 		//swap = 1 - swap;
 		//if( swap )
 		//{
-			engine_player_manager_pass();
+		engine_player_manager_pass( player_endY );
 		//}
 	}
 	

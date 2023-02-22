@@ -353,6 +353,38 @@ void engine_player_manager_animate( unsigned char frame )
 	}
 }
 
+unsigned char engine_player_manager_finish()
+{
+	struct_player_object *po = &global_player_object;
+	unsigned char player_begY, player_endY;
+	engine_collision_manager_finish( po->lookX, po->tileY, &player_begY, &player_endY );
+
+	// Update co-ordinates.
+	po->posnX = po->initX;
+	po->posnY = player_begY;
+	po->leapY = po->posnY << 8;
+	updatePlayerY();
+
+	// Update animation.
+	if( po->player_frame < player_frame_ground_left_01 || ( po->player_frame > player_frame_theair_rght_01 && po->player_frame < player_frame_theair_left_01 ) )
+	{
+		po->player_frame = player_frame_theair_rght_01;
+	}
+	else if( po->player_frame < player_frame_theair_rght_01 || po->player_frame > player_frame_theair_left_01 )
+	{
+		po->player_frame = player_frame_theair_left_01;
+	}
+
+	// Get ready for gravity...
+	po->jumper_index = 0;
+
+	// Set the jump array information.
+	jump_ptr = jump_array_ptr[ po->jumper_index ];
+	jump_len = jump_array_len[ po->jumper_index ];
+
+	return player_endY;
+}
+
 static void updatePlayer()
 {
 	updatePlayerX();
@@ -392,13 +424,26 @@ static unsigned char updatePlayerFrameFlyingToGround( unsigned char player_frame
 	return player_frame_ground_rght_01;
 }
 
-void engine_player_manager_pass()
+void engine_player_manager_pass( unsigned char player_endY )
 {
 	struct_player_object *po = &global_player_object;
-	
-	po->posnX++;
+	signed int deltaY;
+
+	// TODO - get the deltaX from the previous command
+	po->posnX += 3;
 	po->drawX = po->posnX - 16;
-	//updatePlayer();
+
+	if( po->posnY != player_endY )
+	{
+		deltaY = engine_player_manager_get_deltaY();
+		engine_player_manager_vert( deltaY );
+	}
+
+	if( po->posnY >= player_endY )
+	{
+		po->posnY = player_endY;
+		updatePlayerY();
+	}
 }
 
 // TODO delete this as replaced by engine_player_manager_animate()
