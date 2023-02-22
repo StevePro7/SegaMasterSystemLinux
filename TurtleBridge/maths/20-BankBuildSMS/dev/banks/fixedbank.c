@@ -6,6 +6,8 @@
 #include "bank15.h"
 #include "bank16.h"
 #include "bank17.h"
+#include "bank18.h"
+#include "bank19.h"
 #include "banK20.h"
 #include "banK21.h"
 #include "banK22.h"
@@ -50,6 +52,10 @@
 
 const unsigned char *riff_sample_data[] =
 {
+	// Game Over	bank18-19
+	Riff_Sound_Over_01_wav_pcmenc,
+	Riff_Sound_Over_02_wav_pcmenc,
+
 	// BeeGees	bank11-17
 	Riff_Finish_BeeGees_01_wav_pcmenc,
 	Riff_Finish_BeeGees_02_wav_pcmenc,
@@ -124,6 +130,9 @@ const unsigned char *riff_sample_data[] =
 };
 const unsigned char riff_sample_bank[] =
 {
+	Riff_Sound_Over_01_wav_pcmenc_bank,
+	Riff_Sound_Over_02_wav_pcmenc_bank,
+
 	Riff_Finish_BeeGees_01_wav_pcmenc_bank,
 	Riff_Finish_BeeGees_02_wav_pcmenc_bank,
 	Riff_Finish_BeeGees_03_wav_pcmenc_bank,
