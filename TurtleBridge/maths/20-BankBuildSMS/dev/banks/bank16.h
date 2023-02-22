@@ -1,4 +1,4 @@
-extern const unsigned char	Riff_Finish_BeeGees_06_wav_pcmenc[];
-#define				Riff_Finish_BeeGees_06_wav_pcmenc_size 15302
-#define				Riff_Finish_BeeGees_06_wav_pcmenc_bank 16
+extern const unsigned char	Riff_Sound_Silicon02_01_wav_pcmenc[];
+#define				Riff_Sound_Silicon02_01_wav_pcmenc_size 6525
+#define				Riff_Sound_Silicon02_01_wav_pcmenc_bank 16
 

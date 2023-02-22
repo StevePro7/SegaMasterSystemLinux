@@ -18,10 +18,10 @@ void screen_test_screen_update( unsigned char *screen_type )
 	input = engine_input_manager_hold_right();
 	if( input )
 	{
-		engine_font_manager_text( "GAME OVER", 10, 10 );
+		engine_font_manager_text( "SILICON VALLEY", 10, 10 );
 		//engine_riff_manager_play( 0 );
 
-		for( index = 0; index < 2; index++ )
+		for( index = 0; index < 3; index++ )
 		{
 			engine_riff_manager_play( index );
 		}
