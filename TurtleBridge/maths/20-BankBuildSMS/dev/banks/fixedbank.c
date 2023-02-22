@@ -1,8 +1,9 @@
 #include "fixedbank.h"
-//#include "bank11.h"
-//#include "bank12.h"
-//#include "bank13.h"
-//#include "bank14.h"
+#include "bank10.h"
+#include "bank11.h"
+#include "bank12.h"
+#include "bank13.h"
+#include "bank14.h"
 #include "bank15.h"
 #include "bank16.h"
 #include "bank17.h"
@@ -52,6 +53,13 @@
 
 const unsigned char *riff_sample_data[] =
 {
+	// Austin Powers	bank 10-14
+	Riff_Sound_Austin01_01_wav_pcmenc,
+	Riff_Sound_Austin02_01_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin03_01_wav_pcmenc,
+	Riff_Sound_Austin03_02_wav_pcmenc,
+
 	// Silicon Valley	bank 15-17
 	Riff_Sound_Silicon01_01_wav_pcmenc,
 	Riff_Sound_Silicon02_01_wav_pcmenc,
@@ -135,6 +143,12 @@ const unsigned char *riff_sample_data[] =
 };
 const unsigned char riff_sample_bank[] =
 {
+	Riff_Sound_Austin01_01_wav_pcmenc_bank,
+	Riff_Sound_Austin02_01_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin03_01_wav_pcmenc_bank,
+	Riff_Sound_Austin03_02_wav_pcmenc_bank,
+
 	Riff_Sound_Silicon01_01_wav_pcmenc_bank,
 	Riff_Sound_Silicon02_01_wav_pcmenc_bank,
 	Riff_Sound_Silicon03_01_wav_pcmenc_bank,
