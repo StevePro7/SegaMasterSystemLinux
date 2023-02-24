@@ -31,7 +31,7 @@ cd engine
 cd ..
 
 cd object
-::"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 riff_object.c
+"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 riff_object.c
 cd ..
 
 cd screen

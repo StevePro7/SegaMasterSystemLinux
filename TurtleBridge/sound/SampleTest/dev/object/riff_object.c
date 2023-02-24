@@ -12,7 +12,7 @@
 #include "../banks/bank12.h"
 #include "../banks/bank13.h"
 #include "../banks/bank14.h"
-//#include "../banks/bank15.h"
+#include "../banks/bank15.h"
 
 const unsigned char *riff_sample_data[] =
 {
@@ -20,6 +20,7 @@ const unsigned char *riff_sample_data[] =
 	Riff_Sound_Excellent20_01_wav_pcmenc,
 	Riff_Sound_Excellent30_01_wav_pcmenc,
 	Riff_Sound_Excellent40_01_wav_pcmenc,
+	Riff_Sound_Excellent50_01_wav_pcmenc,
 	SoundFx_wav_pcmenc,
 	SoundFx03_wav_pcmenc,
 	SoundFx04_wav_pcmenc,
@@ -37,6 +38,7 @@ const unsigned char riff_sample_bank[] =
 	Riff_Sound_Excellent20_01_wav_pcmenc_bank,
 	Riff_Sound_Excellent30_01_wav_pcmenc_bank,
 	Riff_Sound_Excellent40_01_wav_pcmenc_bank,
+	Riff_Sound_Excellent50_01_wav_pcmenc_bank,
 	SoundFx_wav_pcmenc_bank,
 	SoundFx03_wav_pcmenc_bank,
 	SoundFx04_wav_pcmenc_bank,
