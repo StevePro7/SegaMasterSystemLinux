@@ -12,18 +12,18 @@ void screen_test_screen_load()
 
 void screen_test_screen_update( unsigned char *screen_type )
 {
-	unsigned char index;
+//	unsigned char index;
 	unsigned char input;
 
 	input = engine_input_manager_hold_right();
 	if( input )
 	{
-		engine_font_manager_text( "AUSTIN POWERS", 10, 10 );
-		//engine_riff_manager_play( 0 );
-		for( index = 0; index < 2; index++ )
-		{
-			engine_riff_manager_play( index + 3 );
-		}
+		engine_font_manager_text( "EXCELLENT10", 10, 10 );
+		engine_riff_manager_play( 0 );
+		//for( index = 0; index < 2; index++ )
+		//{
+		//	engine_riff_manager_play( index + 3 );
+		//}
 	}
 
 	//input = engine_input_manager_hold_up();
