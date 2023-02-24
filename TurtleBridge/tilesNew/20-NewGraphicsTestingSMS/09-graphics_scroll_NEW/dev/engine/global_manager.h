@@ -8,6 +8,7 @@
 
 #define PIXELS_WIDE			256
 #define PIXELS_HIGH			192
+#define LEVELS_SIDE			240
 #define DEATH_PX_HI			224
 #define OCEAN_PX_HI			168		// this is the Y value which will switch to death sequence
 

@@ -74,7 +74,7 @@ signed char engine_collision_manager_player( unsigned char lookX, unsigned char 
 
 
 //unsigned char engine_collision_manager_finish( unsigned char lookX, unsigned char tileY )
-void engine_collision_manager_finish( unsigned char lookX, unsigned char tileY, unsigned char *player_begY, unsigned char *player_endY )
+void engine_collision_manager_finish( unsigned char lookX, unsigned char tileY, unsigned char posnY, unsigned char *player_begY, unsigned char *player_endY )
 {
 	// Short algorithm to compare player finishing level:
 	// if player>=lookup_platform then return lookup_platform.
@@ -85,6 +85,6 @@ void engine_collision_manager_finish( unsigned char lookX, unsigned char tileY, 
 
 	if( tileY < lookup_platform )
 	{
-		*player_begY = tileY << 3;
+		*player_begY = posnY;
 	}
 }

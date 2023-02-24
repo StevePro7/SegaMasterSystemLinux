@@ -100,22 +100,22 @@ void screen_play_screen_update( unsigned char *screen_type )
 		{
 			command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 1, 0 );
 		}
-		if( 96 == fo->frame_count )//|| 6 == fo->frame_count )//|| 8 == fo->frame_count )
-		{
-			command = engine_command_manager_build( po->player_state, 0, 1, 1, 0, 0, 1 );
-		}
-		if( 160 == fo->frame_count )
+		if( 70 == fo->frame_count )//|| 6 == fo->frame_count )//|| 8 == fo->frame_count )
 		{
 			command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 1 );
 		}
-		if( 200 == fo->frame_count )
-		{
-			command = engine_command_manager_build( po->player_state, 0, 1, 1, 0, 0, 1 );
-		}
-		if( 210 == fo->frame_count )
-		{
-			command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 1, 0 );
-		}
+		//if( 110 == fo->frame_count )
+		//{
+		//	command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 1 );
+		//}
+		//if( 180 == fo->frame_count )
+		//{
+		//	command = engine_command_manager_build( po->player_state, 0, 1, 1, 0, 0, 1 );
+		//}
+		//if( 250 == fo->frame_count )
+		//{
+		//	command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 1, 0 );
+		//}
 	}
 
 	if( COMMAND_NONE_MASK != command )

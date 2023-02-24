@@ -357,7 +357,7 @@ unsigned char engine_player_manager_finish()
 {
 	struct_player_object *po = &global_player_object;
 	unsigned char player_begY, player_endY;
-	engine_collision_manager_finish( po->lookX, po->tileY, &player_begY, &player_endY );
+	engine_collision_manager_finish( po->lookX, po->tileY, po->posnY, &player_begY, &player_endY );
 
 	// Update co-ordinates.
 	po->posnX = po->initX;

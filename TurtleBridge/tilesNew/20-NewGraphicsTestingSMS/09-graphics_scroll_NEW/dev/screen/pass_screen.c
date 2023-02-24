@@ -4,6 +4,7 @@
 #include "../engine/collision_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
+#include "../engine/input_manager.h"
 #include "../engine/level_manager.h"
 #include "../engine/player_manager.h"
 #include "../engine/scroll_manager.h"
@@ -53,33 +54,28 @@ void screen_pass_screen_load()
 void screen_pass_screen_update( unsigned char *screen_type )
 {
 	struct_player_object *po = &global_player_object;
-	engine_scroll_manager_update( 0 );
-	if( po->posnX >= 200 )
-	{
-		//po->player_frame = 4;
-	}
-	if( po->posnX >= 240 )
-	{
-		//engine_font_manager_text( "LEVEL COM", 10, 4 );
-		// TODO delete
-		//po->player_frame = 1;
+	unsigned char input1, input2;
 
+	engine_scroll_manager_update( 0 );
+	if( po->posnX >= LEVELS_SIDE )
+	{
 		if( !swap )
 		{
 			engine_music_manager_stop();
 			swap = 1;
-			po->player_frame = ( 4 == po->player_frame ) ? 1 : 3;
+			po->player_frame = ( player_frame_theair_rght_01 == po->player_frame ) ? player_frame_ground_rght_02 : player_frame_ground_left_02;
 		}
 	}
 	else
 	{
-		//swap = 1 - swap;
-		//if( swap )
-		//{
-		engine_player_manager_pass( player_endY );
-		//}
+		input1 = engine_input_manager_hold( input_type_up );
+		input2 = engine_input_manager_move( input_type_down );
+		if( input1 || input2 )
+		{
+			engine_player_manager_pass( player_endY );
+		}
 	}
-	
+
 	engine_player_manager_draw();
 	*screen_type = screen_type_pass;
 }

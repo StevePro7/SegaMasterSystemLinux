@@ -12,8 +12,9 @@ S:Lcollision_manager.engine_collision_manager_player$sloc1$0_1$0({1}SC:S),B,1,-1
 F:G$engine_collision_manager_finish$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lcollision_manager.engine_collision_manager_finish$lookX$1_0$18({1}SC:U),B,1,4
 S:Lcollision_manager.engine_collision_manager_finish$tileY$1_0$18({1}SC:U),B,1,5
-S:Lcollision_manager.engine_collision_manager_finish$player_begY$1_0$18({2}DG,SC:U),B,1,6
-S:Lcollision_manager.engine_collision_manager_finish$player_endY$1_0$18({2}DG,SC:U),B,1,8
+S:Lcollision_manager.engine_collision_manager_finish$posnY$1_0$18({1}SC:U),B,1,6
+S:Lcollision_manager.engine_collision_manager_finish$player_begY$1_0$18({2}DG,SC:U),B,1,7
+S:Lcollision_manager.engine_collision_manager_finish$player_endY$1_0$18({2}DG,SC:U),B,1,9
 S:Lcollision_manager.engine_collision_manager_finish$lookup_platform$1_0$19({1}SC:U),R,0,0,[e]
 T:Fcollision_manager$tag_struct_level_object[({0}S:S$level_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$level_size$0_0$0({2}SI:U),Z,0,0)({4}S:S$level_bank$0_0$0({1}SC:U),Z,0,0)({5}S:S$column_draw$0_0$0({1}SC:U),Z,0,0)]
 S:G$level_platforms$0_0$0({0}DA0d,SC:U),E,0,0
