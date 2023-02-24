@@ -1,2 +1,2 @@
 M:bank15
-S:G$Riff_Sound_Excellent20_01_wav_pcmenc$0_0$0({9341}DA9341d,SC:U),D,0,0
+S:G$bank15_txt$0_0$0({6}DA6d,SC:U),D,0,0
