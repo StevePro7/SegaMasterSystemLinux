@@ -1,4 +1,4 @@
-extern const unsigned char	SoundFx08_wav_pcmenc[];
-#define				SoundFx08_wav_pcmenc_size 16145
-#define				SoundFx08_wav_pcmenc_bank 8
+extern const unsigned char	Riff_Sound_Youza40_01_wav_pcmenc[];
+#define				Riff_Sound_Youza40_01_wav_pcmenc_size 15524
+#define				Riff_Sound_Youza40_01_wav_pcmenc_bank 8
 

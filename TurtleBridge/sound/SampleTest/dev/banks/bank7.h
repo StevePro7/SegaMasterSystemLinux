@@ -1,4 +1,4 @@
-extern const unsigned char	SoundFx07_wav_pcmenc[];
-#define				SoundFx07_wav_pcmenc_size 9324
-#define				SoundFx07_wav_pcmenc_bank 7
+extern const unsigned char	Riff_Sound_VHshriek_01_wav_pcmenc[];
+#define				Riff_Sound_VHshriek_01_wav_pcmenc_size 15027
+#define				Riff_Sound_VHshriek_01_wav_pcmenc_bank 7
 
