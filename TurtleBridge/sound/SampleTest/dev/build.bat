@@ -1,4 +1,4 @@
-::@echo off
+@echo off
 
 REM https://stackoverflow.com/questions/673523/how-do-i-measure-execution-time-of-a-command-on-the-windows-command-line
 :: Calculate the start timestamp
@@ -14,34 +14,33 @@ REM psg.bat
 
 
 cd devkit
-"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _sms_manager.c
-"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _snd_manager.c
+::"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _sms_manager.c
+::"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _snd_manager.c
 cd ..
 
 cd engine
-"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 asm_manager.c
-"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 content_manager.c
-::"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 enum_manager.c
-"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 font_manager.c
-::"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 global_manager.c
-"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 input_manager.c
-"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 riff_manager.c
-"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 sample_manager.c
-"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 screen_manager.c
+::"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 asm_manager.c
+::"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 content_manager.c
+::::"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 enum_manager.c
+::"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 font_manager.c
+::::"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 global_manager.c
+::"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 input_manager.c
+::"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 riff_manager.c
+::"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 sample_manager.c
+::"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 screen_manager.c
 cd ..
 
 cd object
-"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 riff_object.c
+::"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 riff_object.c
 cd ..
 
 cd screen
-"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 none_screen.c
+::"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 none_screen.c
 "C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 test_screen.c
 cd ..
 
 
 REM echo Build main
-::"C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 game.c
 "C:\Program Files\SDCC\bin\sdcc" -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
 
 

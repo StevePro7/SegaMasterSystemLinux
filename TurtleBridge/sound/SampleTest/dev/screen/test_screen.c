@@ -11,11 +11,30 @@ void screen_test_screen_load()
 
 void screen_test_screen_update( unsigned char *screen_type )
 {	
-	unsigned char input = engine_input_manager_hold( input_type_left );
+	unsigned char input;
+	input = engine_input_manager_hold( input_type_left );
 	if( input )
 	{
 		engine_font_manager_draw_text( "SIMPSONS 10", 10, 10 );
 		engine_riff_manager_play( 0 );
+	}
+	input = engine_input_manager_hold( input_type_right );
+	if( input )
+	{
+		engine_font_manager_draw_text( "SIMPSONS 20", 10, 11 );
+		engine_riff_manager_play( 1 );
+	}
+	input = engine_input_manager_hold( input_type_up );
+	if( input )
+	{
+		engine_font_manager_draw_text( "SIMPSONS 30", 10, 12 );
+		engine_riff_manager_play( 2 );
+	}
+	input = engine_input_manager_hold( input_type_down );
+	if( input )
+	{
+		engine_font_manager_draw_text( "SIMPSONS 40", 10, 13 );
+		engine_riff_manager_play( 3 );
 	}
 	
 	*screen_type = screen_type_test;
