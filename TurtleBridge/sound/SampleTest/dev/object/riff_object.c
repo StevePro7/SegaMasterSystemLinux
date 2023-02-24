@@ -21,6 +21,7 @@ const unsigned char *riff_sample_data[] =
 	Riff_Sound_Excellent30_01_wav_pcmenc,
 	Riff_Sound_Excellent40_01_wav_pcmenc,
 	Riff_Sound_Excellent50_01_wav_pcmenc,
+	Riff_Sound_SimpsonsSucked_01_wav_pcmenc,
 	SoundFx_wav_pcmenc,
 	SoundFx03_wav_pcmenc,
 	SoundFx04_wav_pcmenc,
@@ -29,7 +30,6 @@ const unsigned char *riff_sample_data[] =
 	SoundFx07_wav_pcmenc,
 	SoundFx08_wav_pcmenc,
 	Riff__09_wav_pcmenc,
-	Riff__10_wav_pcmenc,
 };
 
 const unsigned char riff_sample_bank[] =
@@ -39,6 +39,7 @@ const unsigned char riff_sample_bank[] =
 	Riff_Sound_Excellent30_01_wav_pcmenc_bank,
 	Riff_Sound_Excellent40_01_wav_pcmenc_bank,
 	Riff_Sound_Excellent50_01_wav_pcmenc_bank,
+	Riff_Sound_SimpsonsSucked_01_wav_pcmenc_bank,
 	SoundFx_wav_pcmenc_bank,
 	SoundFx03_wav_pcmenc_bank,
 	SoundFx04_wav_pcmenc_bank,
@@ -47,5 +48,4 @@ const unsigned char riff_sample_bank[] =
 	SoundFx07_wav_pcmenc_bank,
 	SoundFx08_wav_pcmenc_bank,
 	Riff__09_wav_pcmenc_bank,
-	Riff__10_wav_pcmenc_bank,
 };

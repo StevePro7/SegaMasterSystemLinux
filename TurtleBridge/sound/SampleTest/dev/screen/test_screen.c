@@ -42,7 +42,12 @@ void screen_test_screen_update( unsigned char *screen_type )
 		engine_font_manager_draw_text( "SIMPSONS 50", 10, 14 );
 		engine_riff_manager_play( 4 );
 	}
-	
+	input = engine_input_manager_hold( input_type_fire2 );
+	if( input )
+	{
+		engine_font_manager_draw_text( "SIMPSONS SK", 10, 15 );
+		engine_riff_manager_play( 5 );
+	}
 	*screen_type = screen_type_test;
 }
 

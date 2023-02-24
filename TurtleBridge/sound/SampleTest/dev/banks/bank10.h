@@ -1,4 +1,4 @@
-extern const unsigned char	Riff__10_wav_pcmenc[];
-#define				Riff__10_wav_pcmenc_size 9242
-#define				Riff__10_wav_pcmenc_bank 10
+extern const unsigned char	Riff_Sound_SimpsonsSucked_01_wav_pcmenc[];
+#define				Riff_Sound_SimpsonsSucked_01_wav_pcmenc_size 14270
+#define				Riff_Sound_SimpsonsSucked_01_wav_pcmenc_bank 10
 
