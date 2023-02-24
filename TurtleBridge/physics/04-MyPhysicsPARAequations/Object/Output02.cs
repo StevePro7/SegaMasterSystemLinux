@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 
 namespace Test
 {
@@ -17,6 +16,7 @@ namespace Test
 		public void Process()
 		{
 			float hangTime = HangTime();
+
 			// v = d / t OR d = vt
 			float horzDist = InitVelX * hangTime;
 
