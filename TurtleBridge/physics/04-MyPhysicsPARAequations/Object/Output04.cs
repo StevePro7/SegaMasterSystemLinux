@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace Test
 {
@@ -65,9 +66,11 @@ namespace Test
 			List<string> lines = new List<string>();
 			lines.Add("Result,Angle,Speed,HangTime,HorzDist,MaxJumper,VertDist,MinHeight,MaxFrames,DeltaYData");
 
-			for (int idx = 0; idx < physicsDataList.Count; idx++)
+			var sortData = physicsDataList.OrderBy(x => x.MaxJumper).ThenBy(y => y.Angle).ThenBy(z => z.Speed).ToList();
+			//var sortData = physicsDataList.OrderBy(x => x.MaxJumper).ToList();
+			for (int idx = 0; idx < sortData.Count; idx++)
 			{
-				var data = physicsDataList[idx];
+				var data = sortData[idx];
 				var line = String.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
 					data.Result.ToString().ToUpper(),
 					data.Angle,
