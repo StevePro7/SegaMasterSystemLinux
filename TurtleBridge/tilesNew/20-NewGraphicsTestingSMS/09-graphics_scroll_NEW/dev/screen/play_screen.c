@@ -60,7 +60,11 @@ void screen_play_screen_update( unsigned char *screen_type )
 	//input1 = 1;		// TODO delete
 	if( input1 || input2 )
 	{
-		if( 18 == fo->frame_count )
+		if( fo->frame_count < 18 )
+		{
+			command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 0 );
+		}
+		else if( 18 == fo->frame_count )
 		{
 			command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 1, 0 );
 		}
@@ -68,6 +72,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 		{
 			command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 0 );
 		}
+
 		//command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 0 );
 
 		//engine_frame_manager_update();
