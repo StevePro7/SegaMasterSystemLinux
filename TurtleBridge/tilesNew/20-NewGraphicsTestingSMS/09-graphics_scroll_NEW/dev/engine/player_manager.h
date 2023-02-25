@@ -18,14 +18,14 @@ signed int engine_player_manager_get_deltaY();
 void engine_player_manager_set_action( unsigned char frame, unsigned char command );
 
 void engine_player_manager_horz( unsigned char deltaX );
-void engine_player_manager_vert( unsigned int deltaY );
+void engine_player_manager_vert( signed int deltaY );
 void engine_player_manager_bounds( signed int deltaY, unsigned char posnY, unsigned char invincible );
 void engine_player_manager_animate( unsigned char frame );
 enum_player_state engine_player_manager_collision( unsigned char state, unsigned char lookX, unsigned char tileY, signed int deltaY, unsigned char posnY, unsigned char invincible );
 
 // TODO delete
 void engine_player_manager_right( unsigned char deltaX );
-void engine_player_manager_down( unsigned char deltaY );
+void engine_player_manager_down( signed char deltaY );
 
 void engine_player_manager_draw();
 unsigned char engine_player_manager_finish();

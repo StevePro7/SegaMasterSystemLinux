@@ -229,7 +229,7 @@ void engine_player_manager_horz( unsigned char deltaX )
 	po->posnX += deltaX;
 	updatePlayerX();
 }
-void engine_player_manager_vert( unsigned int deltaY )
+void engine_player_manager_vert( signed int deltaY )
 {
 	struct_player_object *po = &global_player_object;
 	po->leapY += deltaY;
@@ -475,7 +475,7 @@ void engine_player_manager_right( unsigned char deltaX )
 	//	po->posnX += deltaX;
 	//	updatePlayerX();
 }
-void engine_player_manager_down( unsigned char deltaY )
+void engine_player_manager_down( signed char deltaY )
 {
 	deltaY += 0;
 	//	struct_player_object *po = &global_player_object;

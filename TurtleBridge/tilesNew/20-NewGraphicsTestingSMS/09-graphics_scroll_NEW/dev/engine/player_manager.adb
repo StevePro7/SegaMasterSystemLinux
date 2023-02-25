@@ -33,7 +33,7 @@ F:G$engine_player_manager_horz$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lplayer_manager.engine_player_manager_horz$deltaX$1_0$163({1}SC:U),B,1,4
 S:Lplayer_manager.engine_player_manager_horz$po$1_0$164({2}DG,STtag_struct_player_object:S),R,0,0,[]
 F:G$engine_player_manager_vert$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lplayer_manager.engine_player_manager_vert$deltaY$1_0$165({2}SI:U),B,1,4
+S:Lplayer_manager.engine_player_manager_vert$deltaY$1_0$165({2}SI:S),B,1,4
 S:Lplayer_manager.engine_player_manager_vert$po$1_0$166({2}DG,STtag_struct_player_object:S),R,0,0,[]
 F:G$engine_player_manager_bounds$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lplayer_manager.engine_player_manager_bounds$deltaY$1_0$167({2}SI:S),B,1,4
@@ -76,7 +76,7 @@ F:G$engine_player_manager_count$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_player_manager_right$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lplayer_manager.engine_player_manager_right$deltaX$1_0$207({1}SC:U),B,1,4
 F:G$engine_player_manager_down$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lplayer_manager.engine_player_manager_down$deltaY$1_0$209({1}SC:U),B,1,4
+S:Lplayer_manager.engine_player_manager_down$deltaY$1_0$209({1}SC:S),B,1,4
 F:G$engine_player_manager_draw$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lplayer_manager.engine_player_manager_draw$po$1_0$211({2}DG,STtag_struct_player_object:S),R,0,0,[]
 S:Lplayer_manager.engine_player_manager_draw$deltaDraw$1_0$211({1}SC:U),R,0,0,[e]

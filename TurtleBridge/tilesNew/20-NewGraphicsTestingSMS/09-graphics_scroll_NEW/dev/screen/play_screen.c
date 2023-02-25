@@ -21,7 +21,7 @@
 #endif
 
 static bool complete;
-
+static signed int deltaY;
 void screen_play_screen_load()
 {
 	engine_frame_manager_load();
@@ -32,6 +32,7 @@ void screen_play_screen_load()
 	engine_scroll_manager_update( 0 );
 	//engine_music_manager_play( 0 );
 	complete = false;
+	deltaY = 0;
 }
 
 void screen_play_screen_update( unsigned char *screen_type )
@@ -46,7 +47,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 	unsigned char input1;// input2, input3, input4, input5, input6;
 	unsigned char input2;
 	unsigned char deltaX;
-	signed int deltaY;
+	//signed int deltaY;
 	unsigned char loops;
 	//signed char collision;
 	enum_scroll_state scroll_state;
@@ -54,17 +55,17 @@ void screen_play_screen_update( unsigned char *screen_type )
 
 	unsigned char command = COMMAND_NONE_MASK;
 	player_state = po->player_state;
-
+	
 	input1 = engine_input_manager_hold( input_type_left );
 	input2 = engine_input_manager_move( input_type_right );
-	//input1 = 1;		// TODO delete
+	input1 = 1;		// TODO delete
 	if( input1 || input2 )
 	{
-		if( fo->frame_count < 14 )
-		{
-			command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 0 );
-		}
-		else if( 14 == fo->frame_count )
+		//if( fo->frame_count < 14 )
+		//{
+		//	command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 0 );
+		//}
+		if( 0 == fo->frame_count )
 		{
 			command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 1, 0 );
 		}
@@ -198,7 +199,10 @@ void screen_play_screen_update( unsigned char *screen_type )
 	}
 
 	engine_player_manager_draw();
-	//engine_debug_manager_printout();
+//	engine_debug_manager_printout();
+
+	engine_font_manager_data( deltaY, 30, 2 );
+	engine_font_manager_data( po->posnY, 30, 3 );
 
 	// Check to see if player completes level.
 	if( complete )
