@@ -1,5 +1,6 @@
 #include "load_screen.h"
 #include "../engine/asm_manager.h"
+#include "../engine/command_manager.h"
 #include "../engine/content_manager.h"
 #include "../engine/debug_manager.h"
 #include "../engine/enum_manager.h"
@@ -48,6 +49,7 @@ void screen_load_screen_load()
 	
 	player_loadY = level_platforms[ po->lookX ];
 	engine_player_manager_loadY( player_loadY );
+	engine_command_manager_load();
 
 	// TODO delete 
 	//engine_player_manager_loadY( 18 );

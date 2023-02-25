@@ -7,8 +7,15 @@
 #pragma disable_warning 261
 #endif
 
-void engine_command_manager_init()
+// Global variable.
+struct_command_object global_command_object;
+
+void engine_command_manager_load()
 {
+	struct_command_object *co = &global_command_object;
+	co->frame_index = 0;
+	co->curr_command = COMMAND_NONE_MASK;
+	co->prev_command = COMMAND_NONE_MASK;
 }
 
 unsigned char engine_command_manager_build( unsigned char state, unsigned char input1, unsigned char input2, unsigned char input3, unsigned char input4, unsigned char input5, unsigned char input6 )
