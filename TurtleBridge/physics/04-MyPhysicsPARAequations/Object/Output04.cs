@@ -16,7 +16,8 @@ namespace Test
 		private List<int> valueY;
 
 		private const int MaxFrames = 512;
-		private const int MaxJumpin = 512;
+		private const int MaxJumpin = 512+32;
+		private const int MinHeight = 0;
 		private const int startHigh = 112;
 		private const int finshHigh = 224;
 
@@ -44,19 +45,6 @@ namespace Test
 
 				ProcessItem();
 			}
-
-			//int index = 0;
-			//Angle = angles[index];
-			//Speed = speeds[index];
-			//ProcessItem();
-
-			//index = 1;
-			//Angle = angles[index];
-			//Speed = speeds[index];
-			//ProcessItem();
-
-			//Angle = 25;
-			//Speed = 80;
 
 			Print();
 		}
@@ -98,7 +86,21 @@ namespace Test
 			// v = d / t OR d = vt
 			float horzDist = InitVelX * hangTime;
 			int myHorzDist = Convert.ToInt32(horzDist);
-			if (myHorzDist > MaxJumpin)
+			int myMaxJumper = myHorzDist / 32;
+			if (myMaxJumper < 2 || myHorzDist > MaxJumpin)
+			{
+				return;
+			}
+
+			hangTime = HangTime();
+			float halfTime = hangTime / 2;
+
+			// d = vi * t + 1/2 * a * t^2
+			float vertDist = InitVelY * halfTime + 0.5f * Gravity * halfTime * halfTime;
+			int myVertDist = Convert.ToInt32(vertDist);
+
+			int minHeight = startHigh - physicsData.VertDist;
+			if (minHeight < MinHeight)
 			{
 				return;
 			}
@@ -111,21 +113,17 @@ namespace Test
 
 			physicsData.Angle = Angle;
 			physicsData.Speed = Speed;
-
-			hangTime = HangTime();
 			physicsData.HangTime = hangTime;
 
 			// v = d / t OR d = vt
-			horzDist = InitVelX * hangTime;
-			physicsData.HorzDist = Convert.ToInt32(horzDist);
-			physicsData.MaxJumper = physicsData.HorzDist / 32;
+			physicsData.HorzDist = myHorzDist;
+			physicsData.MaxJumper = myMaxJumper;
 
-			float halfTime = hangTime / 2;
 			// d = vi * t + 1/2 * a * t^2
-			float vertDist = InitVelY * halfTime + 0.5f * Gravity * halfTime * halfTime;
-			physicsData.VertDist = Convert.ToInt32(vertDist);
-			physicsData.MinHeight = startHigh - physicsData.VertDist;
+			physicsData.VertDist = myVertDist;
+			physicsData.MinHeight = minHeight;
 
+			// Iterate all points to check validity...
 			const int deltaX = 3;
 			float moveX = InitVelX / deltaX;
 			float deltaTime = 1 / moveX;
