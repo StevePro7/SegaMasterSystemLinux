@@ -58,7 +58,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 	
 	input1 = engine_input_manager_hold( input_type_left );
 	input2 = engine_input_manager_move( input_type_right );
-	input1 = 1;		// TODO delete
+	//input1 = 1;		// TODO delete
 	if( input1 || input2 )
 	{
 		//if( fo->frame_count < 14 )
@@ -200,9 +200,8 @@ void screen_play_screen_update( unsigned char *screen_type )
 
 	engine_player_manager_draw();
 //	engine_debug_manager_printout();
-
-	engine_font_manager_data( deltaY, 30, 2 );
-	engine_font_manager_data( po->posnY, 30, 3 );
+//	engine_font_manager_data( deltaY, 30, 2 );
+//	engine_font_manager_data( po->posnY, 30, 3 );
 
 	// Check to see if player completes level.
 	if( complete )
