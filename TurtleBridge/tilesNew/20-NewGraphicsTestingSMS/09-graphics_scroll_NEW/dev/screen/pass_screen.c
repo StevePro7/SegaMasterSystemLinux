@@ -70,7 +70,7 @@ void screen_pass_screen_update( unsigned char *screen_type )
 	{
 		input1 = engine_input_manager_hold( input_type_up );
 		input2 = engine_input_manager_move( input_type_down );
-		if( input1 || input2 )
+		//if( input1 || input2 )
 		{
 			engine_player_manager_pass( player_endY );
 		}

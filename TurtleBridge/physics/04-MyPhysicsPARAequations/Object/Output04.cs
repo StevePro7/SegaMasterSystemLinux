@@ -15,6 +15,7 @@ namespace Test
 		private List<int> valueY;
 
 		private const int MaxFrames = 512;
+		private const int MaxJumpin = 512;
 		private const int startHigh = 112;
 		private const int finshHigh = 224;
 
@@ -31,15 +32,27 @@ namespace Test
 
 		public void Process()
 		{
-			int index = 0;
-			Angle = angles[index];
-			Speed = speeds[index];
-			ProcessItem();
+			for (int myAngle = 5; myAngle < 90; myAngle += 5)
+			{
+				Angle = myAngle;
+				for (int mySpeed = 5; mySpeed < 90; mySpeed += 5)
+				{
+					Speed = mySpeed;
+					ProcessItem();
+				}
 
-			index = 1;
-			Angle = angles[index];
-			Speed = speeds[index];
-			ProcessItem();
+				ProcessItem();
+			}
+
+			//int index = 0;
+			//Angle = angles[index];
+			//Speed = speeds[index];
+			//ProcessItem();
+
+			//index = 1;
+			//Angle = angles[index];
+			//Speed = speeds[index];
+			//ProcessItem();
 
 			//Angle = 25;
 			//Speed = 80;
@@ -77,6 +90,16 @@ namespace Test
 		{
 			Initialize();
 
+			float hangTime = HangTime();
+
+			// v = d / t OR d = vt
+			float horzDist = InitVelX * hangTime;
+			int myHorzDist = Convert.ToInt32(horzDist);
+			if (myHorzDist > MaxJumpin)
+			{
+				return;
+			}
+
 			deltaY.Clear();
 			valueY.Clear();
 			physicsData = new PhysicsData();
@@ -86,11 +109,11 @@ namespace Test
 			physicsData.Angle = Angle;
 			physicsData.Speed = Speed;
 
-			float hangTime = HangTime();
+			hangTime = HangTime();
 			physicsData.HangTime = hangTime;
 
 			// v = d / t OR d = vt
-			float horzDist = InitVelX * hangTime;
+			horzDist = InitVelX * hangTime;
 			physicsData.HorzDist = Convert.ToInt32(horzDist);
 			physicsData.MaxJumper = physicsData.HorzDist / 32;
 
@@ -153,13 +176,14 @@ namespace Test
 				}
 
 				physicsData.DeltaYData = String.Join("|", physicsData.DeltaYList);
+				physicsDataList.Add(physicsData);
 			}
 			else
 			{
 				physicsData.DeltaYData = Math.Round(diff, 2).ToString();
 			}
 
-			physicsDataList.Add(physicsData);
+			//physicsDataList.Add(physicsData);
 		}
 
 	}
