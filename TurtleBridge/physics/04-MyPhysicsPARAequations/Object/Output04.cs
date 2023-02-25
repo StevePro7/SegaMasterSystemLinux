@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace Test
 {
@@ -30,10 +31,41 @@ namespace Test
 			//Angle = 25;
 			//Speed = 80;
 
+			int index = 0;
+			ProcessItem(index);
+
+			Print();
+		}
+
+		private void Print()
+		{
+			List<string> lines = new List<string>();
+			lines.Add("Angle,Speed,HangTime,HorzDist,MaxJumper,VertDist,MinHeight,MaxFrames,DeltaYData");
+
+			for (int idx = 0; idx < physicsDataList.Count; idx++)
+			{
+				var data = physicsDataList[idx];
+				var line = String.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},",
+					data.Angle,
+					data.Speed,
+					Math.Round(data.HangTime, 2),
+					data.HorzDist,
+					data.MaxJumper,
+					data.VertDist,
+					data.MinHeight,
+					data.MaxFrames,
+					data.DeltaYData);
+				lines.Add(line);
+			}
+
+			var contents = lines.ToArray();
+			File.WriteAllLines("Output04.csv", contents);
+		}
+
+		private void ProcessItem(int index )
+		{
 			const int startHigh = 112;
 			const int finshHigh = 224;
-
-			int index = 0;
 
 			Angle = angles[index];
 			Speed = speeds[index];
@@ -42,6 +74,9 @@ namespace Test
 			deltaY.Clear();
 			valueY.Clear();
 			physicsData = new PhysicsData();
+			physicsData.DeltaYList = new List<int>();
+			physicsData.DeltaYList.Clear();
+
 			physicsData.Angle = Angle;
 			physicsData.Speed = Speed;
 
@@ -50,12 +85,14 @@ namespace Test
 
 			// v = d / t OR d = vt
 			float horzDist = InitVelX * hangTime;
-			physicsData.HorzDist = horzDist;
+			physicsData.HorzDist = Convert.ToInt32(horzDist);
+			physicsData.MaxJumper = physicsData.HorzDist / 32;
 
 			float halfTime = hangTime / 2;
 			// d = vi * t + 1/2 * a * t^2
 			float vertDist = InitVelY * halfTime + 0.5f * Gravity * halfTime * halfTime;
-			physicsData.VertDist = vertDist;
+			physicsData.VertDist = Convert.ToInt32(vertDist);
+			physicsData.MinHeight = startHigh - physicsData.VertDist;
 
 			const int deltaX = 3;
 			float moveX = InitVelX / deltaX;
@@ -103,12 +140,20 @@ namespace Test
 			physicsData.MaxFrames = frame;
 			if (ok)
 			{
-				physicsData.DeltaYData = String.Join("|", valueY);
+				for (int idx = 2; idx < valueY.Count; idx++)
+				{
+					physicsData.DeltaYList.Add(valueY[idx]);
+				}
+
+				physicsData.DeltaYData = String.Join("|", physicsData.DeltaYList);
+			}
+			else
+			{
+				physicsData.DeltaYData = Math.Round(diff, 2).ToString();
 			}
 
 			physicsDataList.Add(physicsData);
 		}
 
-	
 	}
 }
