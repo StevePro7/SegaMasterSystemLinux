@@ -3,10 +3,10 @@ T:Fplayer_object$tag_struct_player_object[({0}S:S$initX$0_0$0({1}SC:U),Z,0,0)({1
 S:G$jump_array_ptr$0_0$0({12}DA6d,DG,SI:S),E,0,0
 S:G$player_object_starts$0_0$0({4}DA4d,SC:U),D,0,0
 S:G$player_object_deltas$0_0$0({12}DA12d,SC:U),D,0,0
-S:G$jump_array_len$0_0$0({6}DA6d,SC:U),D,0,0
+S:G$jump_array_len$0_0$0({7}DA7d,SC:U),D,0,0
 S:G$jump_array_00$0_0$0({34}DA17d,SI:S),D,0,0
 S:G$jump_array_01$0_0$0({64}DA32d,SI:S),D,0,0
 S:G$jump_array_02$0_0$0({64}DA32d,SI:S),D,0,0
 S:G$jump_array_03$0_0$0({64}DA32d,SI:S),D,0,0
 S:G$jump_array_04$0_0$0({64}DA32d,SI:S),D,0,0
-S:G$jump_array_99$0_0$0({132}DA66d,SI:S),D,0,0
+S:G$jump_array_99$0_0$0({452}DA226d,SI:S),D,0,0

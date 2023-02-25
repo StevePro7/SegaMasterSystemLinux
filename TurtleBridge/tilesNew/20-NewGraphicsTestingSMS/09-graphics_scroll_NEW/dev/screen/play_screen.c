@@ -26,7 +26,7 @@ static signed int deltaY;
 void screen_play_screen_load()
 {
 	engine_frame_manager_load();
-	//engine_frame_manager_draw();
+	engine_frame_manager_draw();
 
 	//19-Feb-2023
 	// TODO - iron this out but IMPORTANT - I don't think I want to play music in same function as draw title etc. as causes screen flicker??
@@ -60,7 +60,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 	
 	input1 = engine_input_manager_hold( input_type_left );
 	input2 = engine_input_manager_move( input_type_right );
-	input1 = 1;		// TODO delete
+	//input1 = 1;		// TODO delete
 	if( input1 || input2 )
 	{
 		//if( fo->frame_count < 14 )
@@ -105,7 +105,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 		//command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 0 );
 
 		engine_frame_manager_update();
-		//engine_frame_manager_draw();
+		engine_frame_manager_draw();
 		//if( 60 == fo->frame_count )
 		//{
 		//	command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 1, 0 );
