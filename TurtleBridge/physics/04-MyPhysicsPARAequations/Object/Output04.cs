@@ -14,7 +14,10 @@ namespace Test
 		private List<float> deltaY;
 		private List<int> valueY;
 
-		private const int MaxFrames = 200;
+		private const int MaxFrames = 512;
+		private const int startHigh = 112;
+		private const int finshHigh = 224;
+
 		private float[] angles = { 45,65 };
 		private float[] speeds = { 35,35 };
 
@@ -28,11 +31,18 @@ namespace Test
 
 		public void Process()
 		{
+			int index = 0;
+			Angle = angles[index];
+			Speed = speeds[index];
+			ProcessItem();
+
+			index = 1;
+			Angle = angles[index];
+			Speed = speeds[index];
+			ProcessItem();
+
 			//Angle = 25;
 			//Speed = 80;
-
-			int index = 0;
-			ProcessItem(index);
 
 			Print();
 		}
@@ -63,13 +73,8 @@ namespace Test
 			File.WriteAllLines("Output04.csv", contents);
 		}
 
-		private void ProcessItem(int index )
+		private void ProcessItem()
 		{
-			const int startHigh = 112;
-			const int finshHigh = 224;
-
-			Angle = angles[index];
-			Speed = speeds[index];
 			Initialize();
 
 			deltaY.Clear();
