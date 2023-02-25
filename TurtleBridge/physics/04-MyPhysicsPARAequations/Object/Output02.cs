@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.Xna.Framework;
+using System.Collections.Generic;
 using System.IO;
 
 namespace Test
@@ -7,6 +8,9 @@ namespace Test
 	// Practice Problem: The Motorcycle Daredevil
 	public class Output02 : Output, IOutput
 	{
+		//private const float deltaTime = 0.115f;
+		private float deltaTime = 0.0f;
+
 		public Output02()
 		{
 			Angle = 55;
@@ -28,11 +32,22 @@ namespace Test
 			// vertDist = 33.4m
 
 			List<string> lines = new List<string>();
-			for (float dt = 0; dt < hangTime; dt += 0.01f)
+			lines.Add("TheAngle," + Angle);
+			lines.Add("TheSpeed," + Speed);
+			lines.Add("InitVelX," + InitVelX);
+			lines.Add("InitVelY," + InitVelY);
+			lines.Add("HorzDist," + horzDist);
+			lines.Add("VertDist," + vertDist);
+
+			int deltaX = 2;
+			float moveX = InitVelX / deltaX;
+			deltaTime = 1 / moveX;
+			float ptX = 0;
+			for (float dt = 0; dt < hangTime; dt += deltaTime)
 			{
-				float vd = InitVelY * dt + 0.5f * Gravity * dt * dt;
-				string pt = $"{dt},{vd}";
-				lines.Add(pt);
+				float ptY = InitVelY * dt + 0.5f * Gravity * dt * dt;
+				Points.Add(new Vector2(ptX, ptY));
+				ptX += 2;
 			}
 
 			var contents = lines.ToArray();

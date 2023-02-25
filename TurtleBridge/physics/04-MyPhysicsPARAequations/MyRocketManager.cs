@@ -51,7 +51,7 @@ namespace Test
 
 		public void LoadContent(ContentManager content)
 		{
-			_rocketImage = content.Load<Texture2D>("000");
+			_rocketImage = content.Load<Texture2D>("8");
 		}
 
 		public void Launch()
@@ -105,6 +105,14 @@ namespace Test
 				spriteBatch.Draw(_rocketImage, pos2, Color.White);
 				x1 += 1;
 				x2 += 2;
+			}
+		}
+
+		public void DrawPoints(SpriteBatch spriteBatch, List<Vector2> points)
+		{
+			foreach (var point in points)
+			{
+				spriteBatch.Draw(_rocketImage, point, Color.White);
 			}
 		}
 

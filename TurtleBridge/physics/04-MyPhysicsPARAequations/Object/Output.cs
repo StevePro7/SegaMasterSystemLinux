@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using System;
+using System.Collections.Generic;
 
 namespace Test
 {
@@ -12,6 +13,7 @@ namespace Test
 			var radians = MathHelper.ToRadians(Angle);
 			InitVelX = (float)(Speed * Math.Cos(radians));
 			InitVelY = (float)(Speed * Math.Sin(radians));
+			Points = new List<Vector2>();
 		}
 
 		public float HangTime()
@@ -30,5 +32,7 @@ namespace Test
 
 		public float InitDispX { get; set; }
 		public float InitDispY { get; set; }
+
+		public List<Vector2> Points { get; protected set; }
 	}
 }

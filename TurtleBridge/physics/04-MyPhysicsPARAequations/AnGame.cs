@@ -16,7 +16,7 @@ namespace Test
 
 		public AnGame()
 		{
-			output = new Output04();
+			output = new Output02();
 
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = 1280;
@@ -44,6 +44,7 @@ namespace Test
 		{
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 			myContentManager.LoadContent(Content);
+			myRocketManager.LoadContent(Content);
 			output.Process();
 		}
 
@@ -67,7 +68,7 @@ namespace Test
 			GraphicsDevice.Clear(Color.CornflowerBlue);
 
 			spriteBatch.Begin();
-		//	myRocketManager.Draw(spriteBatch);
+			myRocketManager.DrawPoints(spriteBatch, output.Points);
 			spriteBatch.End();
 
 			base.Draw(gameTime);
