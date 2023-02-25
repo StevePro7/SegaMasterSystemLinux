@@ -15,6 +15,7 @@ typedef struct tag_struct_player_object
 	unsigned char player_state;
 	//unsigned char player_index;
 	unsigned char jumper_index;
+	unsigned char deltaY_index;
 	//unsigned char jumper_array;		// replaced by jump_ptr	TODO delete
 	unsigned char player_frame;
 	unsigned char motion_count;
@@ -33,5 +34,6 @@ extern const signed int jump_array_01[];
 extern const signed int jump_array_02[];
 extern const signed int jump_array_03[];
 extern const signed int jump_array_04[];
+extern const signed int jump_array_99[];
 
 #endif//_PLAYER_OBJECT_H_

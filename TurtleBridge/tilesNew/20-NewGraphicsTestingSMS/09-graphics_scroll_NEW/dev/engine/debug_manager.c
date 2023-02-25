@@ -61,6 +61,7 @@ void engine_debug_manager_printout()
 	engine_font_manager_data( po->drawY, 10, 5 );
 	engine_font_manager_data( po->player_state, 20, 3 );
 	engine_font_manager_data( po->jumper_index, 20, 4 );
+	engine_font_manager_data( po->deltaY_index, 20, 5 );
 }
 
 //void engine_debug_manager_printoutX()

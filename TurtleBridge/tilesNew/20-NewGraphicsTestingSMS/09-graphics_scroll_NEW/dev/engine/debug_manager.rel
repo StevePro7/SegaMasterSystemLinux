@@ -1,6 +1,6 @@
 ;!FILE debug_manager.asm
 XL3
-H 9 areas B5 global symbols
+H 9 areas BF global symbols
 M debug_manager
 O -mz80
 S _devkit_SMS_displayOn Ref000000
@@ -14,19 +14,20 @@ S _devkit_SMS_displayOff Ref000000
 S _engine_asm_manager_clear_VRAM Ref000000
 S _engine_content_manager_bggame Ref000000
 S _devkit_SMS_mapROMBank Ref000000
-A _CODE size DE flags 0 addr 0
-S _engine_debug_manager_initcontent Def0000CF
-S XG$engine_debug_manager_scrollout$0$0 Def0000CE
+A _CODE size EE flags 0 addr 0
+S _engine_debug_manager_initcontent Def0000DF
+S XG$engine_debug_manager_scrollout$0$0 Def0000DE
 S G$engine_debug_manager_printout$0$0 Def000029
-S XG$engine_debug_manager_initcontent$0$0 Def0000DB
-S C$debug_manager.c$111$1_0$109 Def0000DB
-S C$debug_manager.c$103$1_0$109 Def0000CF
-S C$debug_manager.c$105$1_0$109 Def0000CF
-S C$debug_manager.c$106$1_0$109 Def0000D2
+S XG$engine_debug_manager_initcontent$0$0 Def0000EB
+S C$debug_manager.c$100$1_0$108 Def0000DE
+S C$debug_manager.c$110$1_0$109 Def0000EB
+S C$debug_manager.c$112$1_0$109 Def0000EB
+S C$debug_manager.c$104$1_0$109 Def0000DF
+S C$debug_manager.c$106$1_0$109 Def0000DF
 S G$engine_debug_manager_initgame$0$0 Def000000
-S C$debug_manager.c$107$1_0$109 Def0000D5
-S C$debug_manager.c$108$1_0$109 Def0000D8
-S C$debug_manager.c$109$1_0$109 Def0000DB
+S C$debug_manager.c$107$1_0$109 Def0000E2
+S C$debug_manager.c$108$1_0$109 Def0000E5
+S C$debug_manager.c$109$1_0$109 Def0000E8
 S _engine_debug_manager_printout Def000029
 S A$debug_manager$200 Def000082
 S A$debug_manager$101 Def00001E
@@ -36,7 +37,7 @@ S A$debug_manager$102 Def000021
 S A$debug_manager$220 Def00009B
 S A$debug_manager$211 Def000091
 S A$debug_manager$202 Def000086
-S A$debug_manager$311 Def0000D8
+S A$debug_manager$311 Def0000DF
 S A$debug_manager$230 Def0000A7
 S A$debug_manager$221 Def00009D
 S A$debug_manager$212 Def000092
@@ -44,7 +45,6 @@ S A$debug_manager$131 Def000029
 S C$debug_manager.c$30$1_0$106 Def000019
 S C$debug_manager.c$21$1_0$106 Def000005
 S C$debug_manager.c$13$0_0$106 Def000000
-S A$debug_manager$303 Def0000D2
 S A$debug_manager$231 Def0000AA
 S A$debug_manager$222 Def0000A0
 S A$debug_manager$213 Def000095
@@ -52,7 +52,7 @@ S A$debug_manager$150 Def000043
 S A$debug_manager$132 Def00002C
 S C$debug_manager.c$31$1_0$106 Def00001E
 S C$debug_manager.c$22$1_0$106 Def00000A
-S A$debug_manager$322 Def0000DB
+S A$debug_manager$250 Def0000C6
 S A$debug_manager$232 Def0000AB
 S A$debug_manager$223 Def0000A1
 S A$debug_manager$214 Def000096
@@ -62,6 +62,8 @@ S A$debug_manager$133 Def00002D
 S A$debug_manager$115 Def000028
 S A$debug_manager$106 Def000023
 S C$debug_manager.c$23$1_0$106 Def00000F
+S A$debug_manager$323 Def0000E8
+S A$debug_manager$242 Def0000B7
 S A$debug_manager$233 Def0000AD
 S A$debug_manager$224 Def0000A2
 S A$debug_manager$206 Def000087
@@ -74,7 +76,8 @@ S A$debug_manager$107 Def000026
 S C$debug_manager.c$24$1_0$106 Def000014
 S C$debug_manager.c$15$1_0$106 Def000000
 S _engine_debug_manager_initgame Def000000
-S A$debug_manager$270 Def0000C0
+S A$debug_manager$315 Def0000E2
+S A$debug_manager$243 Def0000BA
 S A$debug_manager$234 Def0000B0
 S A$debug_manager$225 Def0000A5
 S A$debug_manager$207 Def00008A
@@ -86,9 +89,8 @@ S A$debug_manager$135 Def000030
 S C$debug_manager.c$60$1_0$107 Def000077
 S C$debug_manager.c$34$1_0$106 Def000023
 S C$debug_manager.c$16$1_0$106 Def000000
-S A$debug_manager$307 Def0000D5
-S A$debug_manager$271 Def0000C3
-S A$debug_manager$262 Def0000B8
+S A$debug_manager$334 Def0000EB
+S A$debug_manager$244 Def0000BB
 S A$debug_manager$235 Def0000B1
 S A$debug_manager$226 Def0000A6
 S A$debug_manager$208 Def00008B
@@ -100,8 +102,8 @@ S A$debug_manager$136 Def000031
 S C$debug_manager.c$61$1_0$107 Def000087
 S C$debug_manager.c$35$1_0$106 Def000028
 S C$debug_manager.c$17$1_0$106 Def000000
-S A$debug_manager$272 Def0000C4
-S A$debug_manager$263 Def0000BA
+S A$debug_manager$290 Def0000DD
+S A$debug_manager$245 Def0000BD
 S A$debug_manager$236 Def0000B2
 S A$debug_manager$218 Def000097
 S A$debug_manager$209 Def00008D
@@ -110,11 +112,10 @@ S A$debug_manager$173 Def00005D
 S A$debug_manager$164 Def000052
 S A$debug_manager$146 Def00003D
 S A$debug_manager$137 Def000032
-S XG$engine_debug_manager_printout$0$0 Def0000B7
+S XG$engine_debug_manager_printout$0$0 Def0000C7
 S C$debug_manager.c$62$1_0$107 Def000097
-S A$debug_manager$273 Def0000C5
-S A$debug_manager$264 Def0000BB
-S A$debug_manager$246 Def0000B7
+S A$debug_manager$282 Def0000D0
+S A$debug_manager$246 Def0000C0
 S A$debug_manager$237 Def0000B5
 S A$debug_manager$219 Def00009A
 S A$debug_manager$183 Def00006A
@@ -124,8 +125,10 @@ S A$debug_manager$147 Def00003E
 S A$debug_manager$138 Def000035
 S C$debug_manager.c$63$1_0$107 Def0000A7
 S C$debug_manager.c$54$1_0$107 Def000029
-S A$debug_manager$274 Def0000C7
-S A$debug_manager$265 Def0000BC
+S A$debug_manager$319 Def0000E5
+S A$debug_manager$283 Def0000D3
+S A$debug_manager$274 Def0000C8
+S A$debug_manager$247 Def0000C1
 S A$debug_manager$238 Def0000B6
 S A$debug_manager$184 Def00006B
 S A$debug_manager$175 Def000061
@@ -136,41 +139,48 @@ S A$debug_manager$139 Def000036
 S C$debug_manager.c$64$1_0$107 Def0000B7
 S C$debug_manager.c$55$1_0$107 Def000037
 S C$debug_manager.c$37$1_0$107 Def000029
-S A$debug_manager$275 Def0000C8
-S A$debug_manager$266 Def0000BF
+S A$debug_manager$284 Def0000D4
+S A$debug_manager$275 Def0000CA
+S A$debug_manager$248 Def0000C2
 S A$debug_manager$194 Def000077
 S A$debug_manager$185 Def00006D
 S A$debug_manager$176 Def000062
 S A$debug_manager$158 Def00004A
 S A$debug_manager$149 Def000042
+S C$debug_manager.c$65$1_0$107 Def0000C7
 S C$debug_manager.c$56$1_0$107 Def000049
-S A$debug_manager$276 Def0000C9
+S A$debug_manager$285 Def0000D5
+S A$debug_manager$276 Def0000CB
+S A$debug_manager$258 Def0000C7
+S A$debug_manager$249 Def0000C5
 S A$debug_manager$195 Def00007A
 S A$debug_manager$186 Def000070
 S A$debug_manager$177 Def000065
 S A$debug_manager$159 Def00004C
 S C$debug_manager.c$57$1_0$107 Def000057
 S C$debug_manager.c$39$1_0$107 Def000029
-S A$debug_manager$286 Def0000CE
+S A$debug_manager$286 Def0000D7
 S A$debug_manager$277 Def0000CC
 S A$debug_manager$196 Def00007B
 S A$debug_manager$187 Def000071
 S A$debug_manager$178 Def000066
-S A$debug_manager$278 Def0000CD
+S A$debug_manager$287 Def0000D8
+S A$debug_manager$278 Def0000CF
 S A$debug_manager$197 Def00007D
 S A$debug_manager$188 Def000072
-S C$debug_manager.c$94$1_0$108 Def0000B8
 S C$debug_manager.c$59$1_0$107 Def000067
+S A$debug_manager$288 Def0000D9
 S A$debug_manager$198 Def000080
 S A$debug_manager$189 Def000075
+S C$debug_manager.c$95$1_0$108 Def0000C8
+S A$debug_manager$298 Def0000DE
+S A$debug_manager$289 Def0000DC
 S A$debug_manager$199 Def000081
-S C$debug_manager.c$96$1_0$108 Def0000B8
-S A$debug_manager$299 Def0000CF
-S C$debug_manager.c$97$1_0$108 Def0000B8
+S C$debug_manager.c$97$1_0$108 Def0000C8
 S XG$engine_debug_manager_initgame$0$0 Def000028
-S C$debug_manager.c$98$1_0$108 Def0000C0
-S G$engine_debug_manager_scrollout$0$0 Def0000B8
-S C$debug_manager.c$99$1_0$108 Def0000CE
+S C$debug_manager.c$98$1_0$108 Def0000C8
+S G$engine_debug_manager_scrollout$0$0 Def0000C8
+S C$debug_manager.c$99$1_0$108 Def0000D0
 S A$debug_manager$71 Def000000
 S A$debug_manager$81 Def00000A
 S A$debug_manager$72 Def000003
@@ -178,13 +188,13 @@ S A$debug_manager$91 Def000014
 S A$debug_manager$82 Def00000D
 S A$debug_manager$92 Def000017
 S A$debug_manager$76 Def000005
-S G$engine_debug_manager_initcontent$0$0 Def0000CF
+S G$engine_debug_manager_initcontent$0$0 Def0000DF
 S A$debug_manager$86 Def00000F
 S A$debug_manager$77 Def000008
 S A$debug_manager$96 Def000019
 S A$debug_manager$87 Def000012
 S A$debug_manager$97 Def00001C
-S _engine_debug_manager_scrollout Def0000B8
+S _engine_debug_manager_scrollout Def0000C8
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -199,7 +209,7 @@ T 00 00 00 21 00 00 36 00 21 01 00 36 00 21 02 00
 R 00 00 00 00 02 04 05 00 02 09 05 00 02 0E 05 00
 T 0D 00 00 36 00 21 03 00 36 09 21 04 00 36 00 21
 R 00 00 00 00 02 06 05 00 02 0B 05 00
-T 1A 00 00 05 00 36 58 21 06 00 36 00 21 0D 00 36
+T 1A 00 00 05 00 36 58 21 06 00 36 00 21 0E 00 36
 R 00 00 00 00 02 03 05 00 02 08 05 00 02 0D 01 00
 T 27 00 00 00 C9
 R 00 00 00 00
@@ -227,17 +237,19 @@ T 9D 00 00 11 14 03 D5 C5 CD 00 00 F1 F1 3A 0C 00
 R 00 00 00 00 02 09 03 00 02 0E 01 00
 T AA 00 00 4F 06 00 11 14 04 D5 C5 CD 00 00 F1 F1
 R 00 00 00 00 02 0C 03 00
-T B7 00 00 C9
+T B7 00 00 3A 0D 00 4F 06 00 11 14 05 D5 C5 CD
+R 00 00 00 00 02 04 01 00
+T C3 00 00 00 00 F1 F1 C9
+R 00 00 00 00 02 03 03 00
+T C8 00 00
 R 00 00 00 00
-T B8 00 00
-R 00 00 00 00
-T B8 00 00 3E 02 F5 33 CD 00 00 33 2A 04 00 AF 57
+T C8 00 00 3E 02 F5 33 CD 00 00 33 2A 04 00 AF 57
 R 00 00 00 00 02 08 0A 00 02 0C 02 00
-T C5 00 00 1E 08 D5 E5 CD 00 00 F1 F1 C9
+T D5 00 00 1E 08 D5 E5 CD 00 00 F1 F1 C9
 R 00 00 00 00 02 08 03 00
-T CF 00 00
+T DF 00 00
 R 00 00 00 00
-T CF 00 00 CD 00 00 CD 00 00 CD 00 00 CD
+T DF 00 00 CD 00 00 CD 00 00 CD 00 00 CD
 R 00 00 00 00 02 04 07 00 02 07 08 00 02 0A 09 00
-T D9 00 00 00 00 C3 00 00
+T E9 00 00 00 00 C3 00 00
 R 00 00 00 00 02 03 06 00 02 06 00 00

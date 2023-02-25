@@ -40,7 +40,7 @@ void engine_player_manager_init()
 	po->posnY = 0; po->tileY = 0; po->leapY = 0;
 	po->drawX = 0; po->drawY = 0;
 	po->player_state = player_state_isonground;
-	po->jumper_index = 0;
+	po->jumper_index = 0; po->deltaY_index = 0;
 	po->player_frame = player_frame_ground_rght_01;
 	po->motion_count = 0;
 	jump_ptr = NULL;
@@ -81,6 +81,7 @@ void engine_player_manager_loadY( unsigned char player_loadY )
 		po->player_state = player_state_isintheair;
 		po->posnY = PLAYER_MIN_HIGH;
 		po->jumper_index = 0;
+		po->deltaY_index = 0;
 		po->player_frame = updatePlayerFrameGroundToFlying( po->player_frame );
 
 		// Set the jump array information.
@@ -138,10 +139,10 @@ signed int engine_player_manager_get_deltaY()
 
 	if( NULL != jump_ptr )
 	{
-		deltaY = jump_ptr[ po->jumper_index ];
-		if( po->jumper_index < jump_len - 1 )
+		deltaY = jump_ptr[ po->deltaY_index ];
+		if( po->deltaY_index < jump_len - 1 )
 		{
-			po->jumper_index++;
+			po->deltaY_index++;
 		}
 	}
 
@@ -153,11 +154,6 @@ void engine_player_manager_set_action( unsigned char frame, unsigned char comman
 	struct_player_object *po = &global_player_object;
 	unsigned char newFrame;
 	unsigned char newIndex;
-	// TODO delete
-	//unsigned char index;
-	//index = state;
-	//index = command;
-	// TODO delete
 
 	// Player on ground.
 	newFrame = po->player_frame;
@@ -167,6 +163,7 @@ void engine_player_manager_set_action( unsigned char frame, unsigned char comman
 
 		// TODO - calculate this - determine jump index
 		newIndex = 2;
+		newIndex = 5;		// TODO - delete - hard code this value during physics testing!!
 		if( ( COMMAND_LEFT_MASK & command ) == COMMAND_LEFT_MASK )
 		{
 			newIndex = 1;
@@ -186,12 +183,19 @@ void engine_player_manager_set_action( unsigned char frame, unsigned char comman
 			//po->jumper_index += 1;
 		}
 
+
+		// TODO - delete - hard code this value during physics testing!!
+		//newIndex = 4;
+		// TODO - delete - hard code this value during physics testing!!
+
 		po->jumper_index = newIndex;
+		po->deltaY_index = 0;
 
 		// Set the jump array information.
 		jump_ptr = jump_array_ptr[ po->jumper_index ];
 		jump_len = jump_array_len[ po->jumper_index ];
 
+		// TODO delete this debugging info - for newIndex!!
 		engine_font_manager_data( po->jumper_index, 31, 5 );
 	}
 	else
@@ -245,6 +249,7 @@ void engine_player_manager_bounds( signed int deltaY, unsigned char posnY, unsig
 			po->posnY = PLAYER_MAX_HIGH;
 			po->leapY = po->posnY << 8;
 			po->jumper_index = 0;
+			po->deltaY_index = 0;
 			po->player_frame = updatePlayerFrameFlyingToGround( po->player_frame );
 			updatePlayerY();
 		}
@@ -284,6 +289,7 @@ enum_player_state engine_player_manager_collision( unsigned char state, unsigned
 			po->posnY = PLAYER_MAX_HIGH;
 			po->leapY = po->posnY << 8;
 			po->jumper_index = 0;
+			po->deltaY_index = 0;
 			updatePlayerY();
 		}
 		else
@@ -303,6 +309,7 @@ enum_player_state engine_player_manager_collision( unsigned char state, unsigned
 			{
 				player_state = player_state_isintheair;
 				po->jumper_index = 0;
+				po->deltaY_index = 0;
 				po->player_frame = updatePlayerFrameGroundToFlying( po->player_frame );
 
 				// Set the jump array information.
@@ -315,13 +322,14 @@ enum_player_state engine_player_manager_collision( unsigned char state, unsigned
 			// Player in air descending thus check there could be platform to land on.
 			if( deltaY > 0 )
 			{
-				// Only check collision with potential platform if "landing" stance.
+				// Only check collision with potential platform if "landing" stance OR player is invincible.
 				if( player_frame_theair_rght_01 == po->player_frame || player_frame_theair_left_01 == po->player_frame || invincible )
 				{
 					if( INVALID_INDEX != collision )
 					{
 						player_state = player_state_isonground;
 						po->jumper_index = 0;
+						po->deltaY_index = 0;
 						po->player_frame = updatePlayerFrameFlyingToGround( po->player_frame );
 
 						// Ensure player aligns with platform landed on...
@@ -377,6 +385,7 @@ unsigned char engine_player_manager_finish()
 
 	// Get ready for gravity...
 	po->jumper_index = 0;
+	po->deltaY_index = 0;
 
 	// Set the jump array information.
 	jump_ptr = jump_array_ptr[ po->jumper_index ];

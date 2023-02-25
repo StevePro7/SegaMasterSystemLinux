@@ -57,14 +57,17 @@ void screen_play_screen_update( unsigned char *screen_type )
 
 	input1 = engine_input_manager_hold( input_type_left );
 	input2 = engine_input_manager_move( input_type_right );
-	//input1 = 1;		// TODO delete
+//	input1 = 1;		// TODO delete
 	if( input1 || input2 )
 	{
-		//if( 5 == fo->frame_count )
-		//{
-		//	//command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 1, 0 );
-		//}
-
+		if( 0 == fo->frame_count )
+		{
+			command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 1 );
+		}
+		else
+		{
+			command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 0 );
+		}
 		//command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 0 );
 
 		//engine_frame_manager_update();
@@ -91,18 +94,18 @@ void screen_play_screen_update( unsigned char *screen_type )
 		////}
 
 
-		command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 0 );
+		//command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 0 );
 
 		engine_frame_manager_update();
 		engine_frame_manager_draw();
-		if( 60 == fo->frame_count )
-		{
-			command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 1, 0 );
-		}
-		if( 70 == fo->frame_count )//|| 6 == fo->frame_count )//|| 8 == fo->frame_count )
-		{
-			command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 1 );
-		}
+		//if( 60 == fo->frame_count )
+		//{
+		//	command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 1, 0 );
+		//}
+		//if( 70 == fo->frame_count )//|| 6 == fo->frame_count )//|| 8 == fo->frame_count )
+		//{
+		//	command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 1 );
+		//}
 		//if( 110 == fo->frame_count )
 		//{
 		//	command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 1 );
@@ -190,7 +193,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 	}
 
 	engine_player_manager_draw();
-
+	engine_debug_manager_printout();
 
 	// Check to see if player completes level.
 	if( complete )
