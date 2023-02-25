@@ -22,6 +22,7 @@
 
 static bool complete;
 static signed int deltaY;
+
 void screen_play_screen_load()
 {
 	engine_frame_manager_load();
@@ -71,7 +72,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 		}
 		else
 		{
-			command = engine_command_manager_build( po->player_state, 1, 0, 0, 0, 0, 0 );
+			command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 0 );
 		}
 
 		//command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 0 );
@@ -192,6 +193,9 @@ void screen_play_screen_update( unsigned char *screen_type )
 				player_state = engine_player_manager_collision( po->player_state, po->lookX, po->tileY, deltaY, po->posnY, go->game_isgod );
 			}
 		}
+
+		// Store command for future use.
+		engine_command_manager_update( command );
 	}
 	else
 	{

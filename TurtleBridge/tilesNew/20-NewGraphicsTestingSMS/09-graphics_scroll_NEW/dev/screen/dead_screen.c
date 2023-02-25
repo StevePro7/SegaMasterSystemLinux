@@ -1,27 +1,39 @@
 #include "dead_screen.h"
-#include "../engine/collision_manager.h"
-#include "../engine/debug_manager.h"
+#include "../engine/command_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
-#include "../engine/game_manager.h"
+#include "../engine/global_manager.h"
 #include "../engine/input_manager.h"
-#include "../engine/level_manager.h"
 #include "../engine/player_manager.h"
-#include "../engine/scroll_manager.h"
+
+#define PLAYER_MAX_DEAD		224
 
 //static signed char gravityZZ[ 17 ] = { 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5 };
 //static signed char gravityZZ[ 17 ] = { 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4 };
 
+static unsigned char deltaX;
+static signed int deltaY;
+static unsigned char swap;
+
 void screen_dead_screen_load()
 {
-	engine_font_manager_text( "DEAD SCREEN", 1, 5 );
+	struct_command_object *co = &global_command_object;
+	struct_player_object *po = &global_player_object;
+
+	// TODO - do I want to wrap this in an API?
+	po->posnX = po->initX;
+	engine_font_manager_text( "DEAD SCREEN!!", 1, 5 );
+	deltaX = engine_player_manager_get_deltaX( po->player_state, co->prev_command );
+	//deltaX += 1;			// As player was previously in the air before dying.
 	engine_player_manager_draw();
+	swap = 0;
 }
 
 void screen_dead_screen_update( unsigned char *screen_type )
 {
+	struct_player_object *po = &global_player_object;
+	unsigned char input1, input2;
 	//struct_scroll_object *so = &global_scroll_object;
-	//struct_player_object *po = &global_player_object;
 	//struct_level_object *lo = &global_level_object;
 	//struct_game_object *go = &global_game_object;
 	//unsigned char input;
@@ -31,6 +43,40 @@ void screen_dead_screen_update( unsigned char *screen_type )
 	//signed char deltaY;	//gravity;
 	//enum_scroll_state scroll_state;
 
+	if( swap )
+	{
+		engine_font_manager_text( "NEXT SCREEN!!", 1, 6 );
+	}
+	else
+	{
+		input1 = engine_input_manager_hold( input_type_up );
+		input2 = engine_input_manager_move( input_type_down );
+	//	if( input1 || input2 )
+		{
+			// Set horizontal movement.
+			engine_player_manager_horz( deltaX );
+			// TODO - do I want to wrap this in an API?
+			po->drawX = po->posnX - 16;
+
+			if( po->posnX >= LEVELS_SIDE )
+			{
+				po->posnX = LEVELS_SIDE;
+			}
+
+			// Get / set vertical movement.
+			deltaY = engine_player_manager_get_deltaY();
+			engine_player_manager_vert( deltaY );
+			
+			if( po->posnY >= PLAYER_MAX_DEAD )
+			{
+				po->posnY = PLAYER_MAX_DEAD;
+				swap = 1;
+			}
+		}
+	}
+
+	engine_player_manager_draw();
+	
 	//deltaX = 1;
 	//input = engine_input_manager_move( input_type_right );
 	//if( input )

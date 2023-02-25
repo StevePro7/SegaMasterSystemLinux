@@ -82,7 +82,13 @@ unsigned char engine_command_manager_build( unsigned char state, unsigned char i
 	return command;
 }
 
-// Not reliable
+void engine_command_manager_update( unsigned char command )
+{
+	struct_command_object *co = &global_command_object;
+	co->prev_command = command;
+}
+
+// Not reliable??
 /*
 unsigned char engine_command_manager_buildX( unsigned char  state, unsigned char input1, unsigned char input2, unsigned char input3, unsigned char input4, unsigned char input5, unsigned char input6 )
 {

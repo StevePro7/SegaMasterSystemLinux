@@ -1,5 +1,6 @@
 M:command_manager
-F:G$engine_command_manager_init$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+F:G$engine_command_manager_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lcommand_manager.engine_command_manager_load$co$1_0$3({2}DG,STtag_struct_command_object:S),R,0,0,[]
 F:G$engine_command_manager_build$0_0$0({2}DF,SC:U),Z,0,0,0,0,0
 S:Lcommand_manager.engine_command_manager_build$state$1_0$4({1}SC:U),B,1,4
 S:Lcommand_manager.engine_command_manager_build$input1$1_0$4({1}SC:U),B,1,5
@@ -9,3 +10,8 @@ S:Lcommand_manager.engine_command_manager_build$input4$1_0$4({1}SC:U),B,1,8
 S:Lcommand_manager.engine_command_manager_build$input5$1_0$4({1}SC:U),B,1,9
 S:Lcommand_manager.engine_command_manager_build$input6$1_0$4({1}SC:U),B,1,10
 S:Lcommand_manager.engine_command_manager_build$command$1_0$5({1}SC:U),R,0,0,[l]
+F:G$engine_command_manager_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lcommand_manager.engine_command_manager_update$command$1_0$20({1}SC:U),B,1,4
+S:Lcommand_manager.engine_command_manager_update$co$1_0$21({2}DG,STtag_struct_command_object:S),R,0,0,[]
+T:Fcommand_manager$tag_struct_command_object[({0}S:S$frame_index$0_0$0({2}SI:U),Z,0,0)({2}S:S$curr_command$0_0$0({1}SC:U),Z,0,0)({3}S:S$prev_command$0_0$0({1}SC:U),Z,0,0)]
+S:G$global_command_object$0_0$0({4}STtag_struct_command_object:S),E,0,0
