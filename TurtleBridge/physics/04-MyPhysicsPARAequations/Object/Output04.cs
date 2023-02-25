@@ -15,7 +15,7 @@ namespace Test
 		private List<float> deltaY;
 		private List<int> valueY;
 
-		private const int MaxFrames = 45;
+		private const int MaxFrames = 46;
 		private float[] angles = { 65 };
 		private float[] speeds = { 35 };
 
@@ -69,7 +69,6 @@ namespace Test
 			{
 				float vd = InitVelY * dt + 0.5f * Gravity * dt * dt;
 				deltaY.Add(vd);
-
 				dt += deltaTime;
 			}
 
@@ -78,10 +77,16 @@ namespace Test
 			float valu = 0.0f;
 			int test = 0;
 			int blah = 0;
+			bool ok = true;
 			for (frame = 1; frame < MaxFrames; frame++)
 			{
 				diff = deltaY[frame - 1] - deltaY[frame];
 				blah = Convert.ToInt32(diff);
+				if (diff >= 8)
+				{
+					ok = false;
+					break;
+				}
 				valu = diff * 256;
 				test = Convert.ToInt32(valu);
 				posnY += blah;
@@ -91,6 +96,12 @@ namespace Test
 				}
 
 				valueY.Add(test);
+			}
+
+			physicsData.MaxFrames = frame;
+			if (ok)
+			{
+				physicsData.DeltaYData = String.Join("|", valueY);
 			}
 
 			physicsDataList.Add(physicsData);
