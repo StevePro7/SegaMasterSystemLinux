@@ -9,59 +9,93 @@ namespace Test
 	// Practice Problem: The Motorcycle Daredevil
 	public class Output04 : Output, IOutput
 	{
-		private List<float> angles;
-		private List<float> speeds;
-		private List<float> hangTimes;
-		private List<float> horzDists;
-		private List<float> vertDists;
+		private List<PhysicsData> physicsDataList;
+		private PhysicsData physicsData;
+
+		private List<float> deltaY;
+		private List<int> valueY;
+
+		private const int MaxFrames = 45;
+		private float[] angles = { 65 };
+		private float[] speeds = { 35 };
 
 		public Output04()
 		{
-			angles = new List<float>();
-			speeds = new List<float>();
-			hangTimes = new List<float>();
-			horzDists = new List<float>();
-			vertDists = new List<float>();
-
-			hangTimes.Clear();
-			horzDists.Clear();
-			vertDists.Clear();
+			physicsDataList = new List<PhysicsData>();
+			deltaY = new List<float>();
+			valueY = new List<int>();
+			physicsDataList.Clear();
 		}
 
 		public void Process()
 		{
-			Angle = 65;
-			Speed = 35;
-			Initialize();
-			angles.Add(Angle);
-			speeds.Add(Speed);
-			AddValue(Angle, Speed);
-
 			//Angle = 25;
 			//Speed = 80;
-			//Initialize();
-			//angles.Add(Angle);
-			//speeds.Add(Speed);
-			//AddValue(Angle, Speed);
 
-			string line = String.Join(",", angles);
-			int cnt = angles.Count;
-		}
+			const int startHigh = 112;
+			const int finshHigh = 224;
 
-		public void AddValue(float angle, float speed)
-		{
+			int index = 0;
+
+			Angle = angles[index];
+			Speed = speeds[index];
+			Initialize();
+
+			deltaY.Clear();
+			valueY.Clear();
+			physicsData = new PhysicsData();
+			physicsData.Angle = Angle;
+			physicsData.Speed = Speed;
+
 			float hangTime = HangTime();
+			physicsData.HangTime = hangTime;
 
 			// v = d / t OR d = vt
 			float horzDist = InitVelX * hangTime;
+			physicsData.HorzDist = horzDist;
 
 			float halfTime = hangTime / 2;
 			// d = vi * t + 1/2 * a * t^2
 			float vertDist = InitVelY * halfTime + 0.5f * Gravity * halfTime * halfTime;
+			physicsData.VertDist = vertDist;
 
-			hangTimes.Add(hangTime);
-			horzDists.Add(horzDist);
-			vertDists.Add(vertDist);
+			const int deltaX = 3;
+			float moveX = InitVelX / deltaX;
+			float deltaTime = 1 / moveX;
+
+			float dt = 0.0f;
+			int frame = 0;
+			for (frame = 0; frame < MaxFrames; frame++)
+			{
+				float vd = InitVelY * dt + 0.5f * Gravity * dt * dt;
+				deltaY.Add(vd);
+
+				dt += deltaTime;
+			}
+
+			int posnY = startHigh;
+			float diff = 0.0f;
+			float valu = 0.0f;
+			int test = 0;
+			int blah = 0;
+			for (frame = 1; frame < MaxFrames; frame++)
+			{
+				diff = deltaY[frame - 1] - deltaY[frame];
+				blah = Convert.ToInt32(diff);
+				valu = diff * 256;
+				test = Convert.ToInt32(valu);
+				posnY += blah;
+				if (posnY >= finshHigh)
+				{
+					break;
+				}
+
+				valueY.Add(test);
+			}
+
+			physicsDataList.Add(physicsData);
 		}
+
+	
 	}
 }

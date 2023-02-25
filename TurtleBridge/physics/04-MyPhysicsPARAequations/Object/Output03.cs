@@ -56,9 +56,12 @@ namespace Test
 			for (int index = 1; index < deltaY.Count; index++)
 			{
 				float diff = deltaY[index - 1] - deltaY[index];
-				float valu = diff * 256;
-				int test = Convert.ToInt32(valu);
-				valueY.Add(test);
+				if (diff < 8)
+				{
+					float valu = diff * 256;
+					int test = Convert.ToInt32(valu);
+					valueY.Add(test);
+				}
 			}
 
 			lines.Clear();

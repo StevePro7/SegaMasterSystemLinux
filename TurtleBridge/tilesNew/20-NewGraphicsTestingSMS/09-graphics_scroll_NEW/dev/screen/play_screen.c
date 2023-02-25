@@ -24,6 +24,7 @@ static bool complete;
 
 void screen_play_screen_load()
 {
+	struct_player_object *po = &global_player_object;
 	engine_frame_manager_load();
 	engine_frame_manager_draw();
 
@@ -32,6 +33,9 @@ void screen_play_screen_load()
 	engine_scroll_manager_update( 0 );
 	//engine_music_manager_play( 0 );
 	complete = false;
+
+	po->posnY = 224;
+	po->drawY = po->posnY - 32;
 }
 
 void screen_play_screen_update( unsigned char *screen_type )
