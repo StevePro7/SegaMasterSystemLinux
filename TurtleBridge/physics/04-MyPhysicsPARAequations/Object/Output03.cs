@@ -56,15 +56,16 @@ namespace Test
 			for (int index = 1; index < deltaY.Count; index++)
 			{
 				float diff = deltaY[index - 1] - deltaY[index];
-				int valu = (int)(diff * 256);
-				valueY.Add(valu);
+				float valu = diff * 256;
+				int test = Convert.ToInt32(valu);
+				valueY.Add(test);
 			}
 
 			lines.Clear();
 			lines.Add("static int jumps[] =");
 			lines.Add("{");
 			string text = String.Empty;
-			for (int index = 1; index < valueY.Count; index++)
+			for (int index = 0; index < valueY.Count; index++)
 			{
 				text += valueY[index] + ", ";
 			}

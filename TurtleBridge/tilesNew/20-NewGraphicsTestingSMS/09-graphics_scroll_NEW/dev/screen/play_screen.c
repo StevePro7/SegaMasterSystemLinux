@@ -60,9 +60,9 @@ void screen_play_screen_update( unsigned char *screen_type )
 //	input1 = 1;		// TODO delete
 	if( input1 || input2 )
 	{
-		if( 0 == fo->frame_count )
+		if( 18 == fo->frame_count )
 		{
-			command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 1 );
+			command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 1, 0 );
 		}
 		else
 		{
@@ -193,7 +193,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 	}
 
 	engine_player_manager_draw();
-	engine_debug_manager_printout();
+	//engine_debug_manager_printout();
 
 	// Check to see if player completes level.
 	if( complete )

@@ -100,7 +100,6 @@ void engine_debug_manager_scrollout()
 }
 
 
-
 void engine_debug_manager_initcontent()
 {
 	devkit_SMS_displayOff();
