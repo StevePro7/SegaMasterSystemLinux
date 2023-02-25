@@ -433,13 +433,13 @@ static unsigned char updatePlayerFrameFlyingToGround( unsigned char player_frame
 	return player_frame_ground_rght_01;
 }
 
-void engine_player_manager_pass( unsigned char player_endY )
+void engine_player_manager_pass( unsigned char player_passX, unsigned char player_endY )
 {
 	struct_player_object *po = &global_player_object;
 	signed int deltaY;
 
 	// TODO - get the deltaX from the previous command
-	po->posnX += 3;
+	po->posnX += player_passX;
 	po->drawX = po->posnX - 16;
 
 	if( po->posnY != player_endY )

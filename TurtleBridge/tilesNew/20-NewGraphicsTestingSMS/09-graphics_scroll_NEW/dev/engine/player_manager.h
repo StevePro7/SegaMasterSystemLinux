@@ -29,7 +29,7 @@ void engine_player_manager_down( signed char deltaY );
 
 void engine_player_manager_draw();
 unsigned char engine_player_manager_finish();
-void engine_player_manager_pass(unsigned char player_passY );
+void engine_player_manager_pass( unsigned char player_passX, unsigned char player_endY );
 void engine_player_manager_count();
 
 #endif//_PLAYER_MANAGER_H_

@@ -69,7 +69,8 @@ S:Lplayer_manager.updatePlayerFrameGroundToFlying$player_frame$1_0$195({1}SC:U),
 F:Fplayer_manager$updatePlayerFrameFlyingToGround$0_0$0({2}DF,SC:U),Z,0,0,0,0,0
 S:Lplayer_manager.updatePlayerFrameFlyingToGround$player_frame$1_0$198({1}SC:U),B,1,4
 F:G$engine_player_manager_pass$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lplayer_manager.engine_player_manager_pass$player_endY$1_0$201({1}SC:U),B,1,4
+S:Lplayer_manager.engine_player_manager_pass$player_passX$1_0$201({1}SC:U),B,1,4
+S:Lplayer_manager.engine_player_manager_pass$player_endY$1_0$201({1}SC:U),B,1,5
 S:Lplayer_manager.engine_player_manager_pass$po$1_0$202({2}DG,STtag_struct_player_object:S),R,0,0,[]
 S:Lplayer_manager.engine_player_manager_pass$deltaY$1_0$202({2}SI:S),R,0,0,[e,d]
 F:G$engine_player_manager_count$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
