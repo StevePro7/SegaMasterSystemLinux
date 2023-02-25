@@ -63,7 +63,6 @@ void screen_level_screen_update( unsigned char *screen_type )
 		engine_font_manager_char( ' ', cursorX[ cursorIdx ], 3 );
 		cursorIdx--;
 		engine_font_manager_char( '>', cursorX[ cursorIdx ], 3 );
-	
 	}
 
 	input = engine_input_manager_hold( input_type_right );
@@ -72,21 +71,51 @@ void screen_level_screen_update( unsigned char *screen_type )
 		engine_font_manager_char( ' ', cursorX[ cursorIdx ], 3 );
 		cursorIdx++;
 		engine_font_manager_char( '>', cursorX[ cursorIdx ], 3 );
-	
 	}
 
-	input = engine_input_manager_hold( input_type_down );
+	input = engine_input_manager_hold( input_type_up );
 	if( input )
 	{
-		if( 2 == cursorIdx )
+		if( 0 == cursorIdx || 1 == cursorIdx )
 		{
-			point++;
-			engine_level_manager_init( level );
-			engine_level_manager_draw_point( point );
+			if( level > 0 )
+			{
+				world--;
+				level--;
+				point = 0;
+				engine_level_manager_init( level );
+				engine_level_manager_draw_point( point );
+			}
 		}
 		else
 		{
-			level++;
+			if( point > 0 )
+			{
+				point--;
+				engine_level_manager_init( level );
+				engine_level_manager_draw_point( point );
+			}
+		}
+
+		printStats();
+	}
+	input = engine_input_manager_hold( input_type_down );
+	if( input )
+	{
+		if( 0 == cursorIdx || 1 == cursorIdx )
+		{
+			if( level < 21 )
+			{
+				world++;
+				level++;
+				point = 0;
+				engine_level_manager_init( level );
+				engine_level_manager_draw_point( point );
+			}
+		}
+		else
+		{
+			point++;
 			engine_level_manager_init( level );
 			engine_level_manager_draw_point( point );
 		}
@@ -101,9 +130,9 @@ static void printStats()
 {
 	//engine_font_manager_text( "[WORLD[[[[ROUND[[[[POINT[[/[[", 2, 5 );
 
-	if( ( world + 1 ) < 10 )
+	engine_font_manager_data( ( world  ), 9, 3 );
+	if( ( world ) < 10 )
 	{
-		engine_font_manager_data( ( world + 1 ), 9, 3 );
 		engine_font_manager_char( '0', 8, 3 );
 	}
 	if( ( round + 1 ) < 10 )

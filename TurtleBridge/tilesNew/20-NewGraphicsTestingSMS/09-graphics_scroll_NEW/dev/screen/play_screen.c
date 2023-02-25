@@ -60,7 +60,6 @@ void screen_play_screen_update( unsigned char *screen_type )
 	//input1 = 1;		// TODO delete
 	if( input1 || input2 )
 	{
-
 		//if( 5 == fo->frame_count )
 		//{
 		//	//command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 1, 0 );

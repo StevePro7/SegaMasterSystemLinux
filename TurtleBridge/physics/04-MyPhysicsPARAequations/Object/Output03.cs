@@ -10,7 +10,7 @@ namespace Test
 	public class Output03 : Output, IOutput
 	{
 		//private const float deltaTime = 0.056f;
-		private const float deltaTime = 0.115f;
+		private float deltaTime = 0.0f;
 
 		private List<float> deltaY;
 		private List<int> valueY;
@@ -18,13 +18,12 @@ namespace Test
 
 		public Output03()
 		{
-			Angle = 55;
-			Speed = 31.2f;
+			Angle = 65;
+			Speed = 35;
 
 			deltaY = new List<float>();
 			valueY = new List<int>();
 			deltaY.Clear();
-			deltaY.Add(0);
 			index = deltaY.Count();
 		}
 
@@ -42,34 +41,18 @@ namespace Test
 			// horzDist = 93.3m
 			// vertDist = 33.4m
 
-			//positive = false;
+			const int deltaX = 3;
+			float moveX = InitVelX / deltaX;
+			deltaTime = 1 / moveX;
+
 			List<string> lines = new List<string>();
-			for (float dt = deltaTime; dt < hangTime + 2; dt += deltaTime)
+			for (float dt = 0; dt < hangTime + 2.5f; dt += deltaTime)
 			{
 				float vd = InitVelY * dt + 0.5f * Gravity * dt * dt;
-				//float rn = (float)Math.Round(vd, 2);
-				float rn = vd;
-				deltaY.Add(rn);
-				//lines.Add(rn.ToString());
-				//float prev = deltaY[index - 1];
-				//float diff = prev - vd;
-				//deltaY.Add(diff);
-				//float valu = diff * 256;
-				//int data = (int)valu;
-
-				//if (!positive)
-				//{
-				//	if (data >= 0)
-				//	{
-				//		// TODO log this value - first on decent.
-				//		positive = true;
-				//	}
-				//}
-				//index++;
+				deltaY.Add(vd);
 			}
 
 			index = 0;
-			valueY.Add(0);
 			for (int index = 1; index < deltaY.Count; index++)
 			{
 				float diff = deltaY[index - 1] - deltaY[index];
