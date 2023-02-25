@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 
 namespace Test
 {
@@ -15,7 +13,7 @@ namespace Test
 		private List<float> deltaY;
 		private List<int> valueY;
 
-		private const int MaxFrames = 46;
+		private const int MaxFrames = 47;
 		private float[] angles = { 65 };
 		private float[] speeds = { 35 };
 
@@ -65,9 +63,11 @@ namespace Test
 
 			float dt = 0.0f;
 			int frame = 0;
-			for (frame = 0; frame < MaxFrames; frame++)
+			float vd = 0;
+			deltaY.Add(vd);
+			for (frame = 1; frame < MaxFrames; frame++)
 			{
-				float vd = InitVelY * dt + 0.5f * Gravity * dt * dt;
+				vd = InitVelY * dt + 0.5f * Gravity * dt * dt;
 				deltaY.Add(vd);
 				dt += deltaTime;
 			}
@@ -78,24 +78,26 @@ namespace Test
 			int test = 0;
 			int blah = 0;
 			bool ok = true;
+			valueY.Add(0);
 			for (frame = 1; frame < MaxFrames; frame++)
 			{
 				diff = deltaY[frame - 1] - deltaY[frame];
 				blah = Convert.ToInt32(diff);
-				if (diff >= 8)
-				{
-					ok = false;
-					break;
-				}
+
 				valu = diff * 256;
 				test = Convert.ToInt32(valu);
+				valueY.Add(test);
+
 				posnY += blah;
 				if (posnY >= finshHigh)
 				{
 					break;
 				}
-
-				valueY.Add(test);
+				if (diff >= 8)
+				{
+					ok = false;
+					break;
+				}
 			}
 
 			physicsData.MaxFrames = frame;
