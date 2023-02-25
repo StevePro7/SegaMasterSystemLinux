@@ -30,22 +30,22 @@ namespace Test
 
 		public void Process()
 		{
-			Angle = 5;
-			Speed = 20;
+			Angle = 65;
+			Speed = 35;
 			Initialize();
 			angles.Add(Angle);
 			speeds.Add(Speed);
 			AddValue(Angle, Speed);
 
-			Angle = 25;
-			Speed = 80;
-			Initialize();
-			angles.Add(Angle);
-			speeds.Add(Speed);
-			AddValue(Angle, Speed);
+			//Angle = 25;
+			//Speed = 80;
+			//Initialize();
+			//angles.Add(Angle);
+			//speeds.Add(Speed);
+			//AddValue(Angle, Speed);
 
+			string line = String.Join(",", angles);
 			int cnt = angles.Count;
-			String.Join(",", angles);
 		}
 
 		public void AddValue(float angle, float speed)
