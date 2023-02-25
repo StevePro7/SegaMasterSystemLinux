@@ -40,23 +40,22 @@ void engine_debug_manager_printout()
 {
 	struct_player_object *po = &global_player_object;
 	struct_level_object *lo = &global_level_object;
-	//unsigned char idx, tmp;
+	unsigned char idx, tmp;
 
 	//devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
-	//for( idx = 0; idx < 16; idx++ )
-	//{
-	//	engine_font_manager_data( idx, 14, idx );
-	//	engine_font_manager_data( level_platforms[ idx ], 18, idx );
+	for( idx = 0; idx < 16; idx++ )
+	{
+		engine_font_manager_data( idx, 14, idx );
+		engine_font_manager_data( level_platforms[ idx ], 18, idx );
 
-	//	tmp = idx + 16;
-	//	engine_font_manager_data( tmp, 25, idx );
-	//	engine_font_manager_data( level_platforms[ tmp ], 30, idx );
-	//}
+		tmp = idx + 16;
+		engine_font_manager_data( tmp, 25, idx );
+		engine_font_manager_data( level_platforms[ tmp ], 30, idx );
+	}
 
 	engine_font_manager_data( po->posnX, 10, 0 );
 	engine_font_manager_data( po->tileX, 10, 1 );
-	engine_font_manager_data( po->tileX, 20, 0 );
-	engine_font_manager_data( po->lookX, 20, 1 );
+	engine_font_manager_data( po->lookX, 10, 2 );
 
 	engine_font_manager_data( po->posnY, 10, 3 );
 	engine_font_manager_data( po->tileY, 10, 4 );

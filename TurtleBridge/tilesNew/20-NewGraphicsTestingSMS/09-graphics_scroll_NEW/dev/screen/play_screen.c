@@ -104,7 +104,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 		//command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 0 );
 
 		engine_frame_manager_update();
-		engine_frame_manager_draw();
+		//engine_frame_manager_draw();
 		//if( 60 == fo->frame_count )
 		//{
 		//	command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 1, 0 );
@@ -203,7 +203,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 	}
 
 	engine_player_manager_draw();
-//	engine_debug_manager_printout();
+	//engine_debug_manager_printout();
 //	engine_font_manager_data( deltaY, 30, 2 );
 //	engine_font_manager_data( po->posnY, 30, 3 );
 
