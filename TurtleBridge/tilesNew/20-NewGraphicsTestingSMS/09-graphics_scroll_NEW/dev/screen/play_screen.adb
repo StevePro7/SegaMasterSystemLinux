@@ -1,6 +1,5 @@
 M:play_screen
 F:G$screen_play_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lplay_screen.screen_play_screen_load$po$1_0$35({2}DG,STtag_struct_player_object:S),R,0,0,[]
 F:G$screen_play_screen_update$0_0$0({2}DF,SV:S),Z,0,-3,0,0,0
 S:Lplay_screen.screen_play_screen_update$screen_type$1_0$36({2}DG,SC:U),B,1,4
 S:Lplay_screen.screen_play_screen_update$fo$1_0$37({2}DG,STtag_struct_frame_object:S),R,0,0,[]

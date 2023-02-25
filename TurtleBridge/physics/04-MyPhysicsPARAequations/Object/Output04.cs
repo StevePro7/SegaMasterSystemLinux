@@ -14,9 +14,9 @@ namespace Test
 		private List<float> deltaY;
 		private List<int> valueY;
 
-		private const int MaxFrames = 47;
-		private float[] angles = { 65 };
-		private float[] speeds = { 35 };
+		private const int MaxFrames = 200;
+		private float[] angles = { 45,65 };
+		private float[] speeds = { 35,35 };
 
 		public Output04()
 		{
@@ -40,12 +40,13 @@ namespace Test
 		private void Print()
 		{
 			List<string> lines = new List<string>();
-			lines.Add("Angle,Speed,HangTime,HorzDist,MaxJumper,VertDist,MinHeight,MaxFrames,DeltaYData");
+			lines.Add("Result,Angle,Speed,HangTime,HorzDist,MaxJumper,VertDist,MinHeight,MaxFrames,DeltaYData");
 
 			for (int idx = 0; idx < physicsDataList.Count; idx++)
 			{
 				var data = physicsDataList[idx];
-				var line = String.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},",
+				var line = String.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}",
+					data.Result.ToString().ToUpper(),
 					data.Angle,
 					data.Speed,
 					Math.Round(data.HangTime, 2),
@@ -138,6 +139,7 @@ namespace Test
 			}
 
 			physicsData.MaxFrames = frame;
+			physicsData.Result = ok;
 			if (ok)
 			{
 				for (int idx = 2; idx < valueY.Count; idx++)

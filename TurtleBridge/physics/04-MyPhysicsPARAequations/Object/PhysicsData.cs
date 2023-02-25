@@ -14,5 +14,6 @@ namespace Test
 		public int MaxFrames { get; set; }
 		public string DeltaYData { get; set; }
 		public List<int> DeltaYList { get; set; }
+		public bool Result { get; set; }
 	}
 }

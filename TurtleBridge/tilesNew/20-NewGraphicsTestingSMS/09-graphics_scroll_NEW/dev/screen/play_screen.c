@@ -24,7 +24,6 @@ static bool complete;
 
 void screen_play_screen_load()
 {
-	struct_player_object *po = &global_player_object;
 	engine_frame_manager_load();
 	engine_frame_manager_draw();
 
@@ -33,9 +32,6 @@ void screen_play_screen_load()
 	engine_scroll_manager_update( 0 );
 	//engine_music_manager_play( 0 );
 	complete = false;
-
-	po->posnY = 224;
-	po->drawY = po->posnY - 32;
 }
 
 void screen_play_screen_update( unsigned char *screen_type )
@@ -64,11 +60,11 @@ void screen_play_screen_update( unsigned char *screen_type )
 	//input1 = 1;		// TODO delete
 	if( input1 || input2 )
 	{
-		if( fo->frame_count < 18 )
+		if( fo->frame_count < 14 )
 		{
 			command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 0 );
 		}
-		else if( 18 == fo->frame_count )
+		else if( 14 == fo->frame_count )
 		{
 			command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 1, 0 );
 		}
@@ -202,7 +198,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 	}
 
 	engine_player_manager_draw();
-	//engine_debug_manager_printout();
+	engine_debug_manager_printout();
 
 	// Check to see if player completes level.
 	if( complete )
