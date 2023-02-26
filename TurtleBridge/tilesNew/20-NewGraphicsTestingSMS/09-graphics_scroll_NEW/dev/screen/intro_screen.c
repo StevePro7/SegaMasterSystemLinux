@@ -69,8 +69,8 @@ void screen_intro_screen_update( unsigned char *screen_type )
 		input6 = engine_input_manager_hold( input_type_fire2 );
 
 		command = engine_command_manager_build( po->player_state, input1, input2, input3, 0, input5, input6 );
-		engine_font_manager_data( po->player_state, 31, 1 );
-		engine_font_manager_data( command, 31, 2 );
+		//engine_font_manager_data( po->player_state, 31, 1 );
+		//engine_font_manager_data( command, 31, 2 );
 
 		if( command != co->prev_command )
 		{
@@ -78,8 +78,8 @@ void screen_intro_screen_update( unsigned char *screen_type )
 			//	engine_command_manager_draw();
 		}
 
-		engine_frame_manager_update();
-		engine_frame_manager_draw();
+		//engine_frame_manager_update();
+		//engine_frame_manager_draw();
 
 
 		if( COMMAND_NONE_MASK != command )
