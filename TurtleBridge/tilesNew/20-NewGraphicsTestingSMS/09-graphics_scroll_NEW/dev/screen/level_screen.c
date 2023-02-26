@@ -32,7 +32,7 @@ void screen_level_screen_load()
 	round = go->game_round;
 	level = go->game_level;
 	point = go->game_point;
-	cursorIdx = 0;
+	cursorIdx = 2;
 
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();

@@ -73,7 +73,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 		}
 		else
 		{
-			command = engine_command_manager_build( po->player_state, 1, 0, 0, 0, 0, 0 );
+			command = engine_command_manager_build( po->player_state, 0, 1, 0, 1, 0, 0 );
 		}
 
 		//command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 0 );
@@ -183,11 +183,15 @@ void screen_play_screen_update( unsigned char *screen_type )
 			// Finally, check if player forcing downward drop.
 			if( player_state_isintheair == po->player_state )
 			{
+				// If player forces down while in the air then only apply on the descent!
 				if( ( COMMAND_DOWN_MASK & command ) == COMMAND_DOWN_MASK )
 				{
-					deltaY = engine_player_manager_get_deltaY();
-					engine_player_manager_vert( deltaY );
-					engine_player_manager_bounds( deltaY, po->posnY, go->game_isgod );
+					if( deltaY > 0 )
+					{
+						deltaY = engine_player_manager_get_deltaY();
+						engine_player_manager_vert( deltaY );
+						engine_player_manager_bounds( deltaY, po->posnY, go->game_isgod );
+					}
 				}
 
 				// General all-purpose collision detection routine.
