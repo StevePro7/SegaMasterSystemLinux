@@ -111,7 +111,7 @@ void screen_intro_screen_update( unsigned char *screen_type )
 		input5 = engine_input_manager_hold( input_type_fire1 );
 		input6 = engine_input_manager_hold( input_type_fire2 );
 
-		command = engine_command_manager_build( po->player_state, input1, input2, input3, 0, input5, input6 );
+		command = engine_command_manager_build( po->player_state, input1, input2, input3, input4, input5, input6 );
 		//engine_font_manager_data( po->player_state, 31, 1 );
 		//engine_font_manager_data( command, 31, 2 );
 

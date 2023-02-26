@@ -14,9 +14,16 @@ struct_command_object global_command_object;
 void engine_command_manager_load()
 {
 	struct_command_object *co = &global_command_object;
+	unsigned char index;
 	co->frame_index = 0;
 	co->curr_command = COMMAND_NONE_MASK;
 	co->prev_command = COMMAND_NONE_MASK;
+
+	for( index = 0; index < MAX_COMMANDS; index++ )
+	{
+		command_frame_index[ index ] = COMMAND_NONE_MASK;
+		command_this_command[ index ] = COMMAND_NONE_MASK;
+	}
 }
 
 // TODO - rename this as record

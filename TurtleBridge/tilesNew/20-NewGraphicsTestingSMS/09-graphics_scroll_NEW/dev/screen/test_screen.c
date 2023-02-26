@@ -134,7 +134,7 @@ void screen_test_screen_update( unsigned char *screen_type )
 			if( command_frame_index[ frame_counter ] == fo->frame_count )
 			{
 				command = command_this_command[ frame_counter ];
-				engine_font_manager_data( frame_counter, 30, 04 );
+				engine_font_manager_data( frame_counter, 30, 03 );
 				engine_font_manager_data( command, 30, 04 );
 
 				//TODO - bad - wrap in API.
@@ -261,8 +261,10 @@ static void printCmds()
 {
 	engine_font_manager_data( command_frame_index[ 0 ], 21, 1 );
 	engine_font_manager_data( command_frame_index[ 1 ], 21, 2 );
+	engine_font_manager_data( command_frame_index[ 2 ], 21, 3 );
 	engine_font_manager_data( command_this_command[ 0 ], 26, 1 );
 	engine_font_manager_data( command_this_command[ 1 ], 26, 2 );
+	engine_font_manager_data( command_this_command[ 2 ], 26, 3 );
 	//engine_font_manager_text( "TEST??", 10, 3 );
 	//engine_font_manager_data( command_frame_index[ 0 ], 20, 10 );
 	//engine_font_manager_data( command_frame_index[ 1 ], 20, 11 );
