@@ -73,7 +73,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 		}
 		else
 		{
-			command = engine_command_manager_build( po->player_state, 0, 1, 0, 1, 0, 0 );
+			command = engine_command_manager_build( po->player_state, 1, 0, 0, 0, 0, 0 );
 		}
 
 		//command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 0 );
