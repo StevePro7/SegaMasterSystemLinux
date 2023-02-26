@@ -16,9 +16,9 @@ void screen_start_screen_update( unsigned char *screen_type )
 	input = engine_input_manager_hold( input_type_right );
 	if( input )
 	{
-		engine_font_manager_text( "START..!!", 10, 3 );
+		engine_font_manager_text( "START?!!", 10, 3 );
 		engine_storage_manager_write();
-		engine_font_manager_text( "START..??", 10, 4 );
+		engine_font_manager_text( "START!!??", 10, 4 );
 	}
 
 	*screen_type = screen_type_start;

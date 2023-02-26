@@ -9,7 +9,9 @@ typedef struct tag_struct_storage_object
 	unsigned long Magic;
 
 	//unsigned int num_jumps;
-	unsigned char flag;
+	//unsigned char flag;
+	unsigned int storage_frame_index[ 2 ];
+	unsigned char storage_this_command[ 2 ];
 	unsigned char terminal;
 
 } struct_storage_object;

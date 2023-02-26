@@ -9,11 +9,11 @@ S:Lstorage_manager.engine_storage_manager_write$so$1_0$91({2}DG,STtag_struct_sto
 S:Lstorage_manager.engine_storage_manager_write$co$1_0$91({2}DG,STtag_struct_command_object:S),R,0,0,[]
 F:G$engine_storage_manager_erase$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 T:Fstorage_manager$tag_struct_command_object[({0}S:S$frame_index$0_0$0({2}SI:U),Z,0,0)({2}S:S$curr_command$0_0$0({1}SC:U),Z,0,0)({3}S:S$prev_command$0_0$0({1}SC:U),Z,0,0)]
-T:Fstorage_manager$tag_struct_storage_object[({0}S:S$Magic$0_0$0({4}SL:U),Z,0,0)({4}S:S$flag$0_0$0({1}SC:U),Z,0,0)({5}S:S$terminal$0_0$0({1}SC:U),Z,0,0)]
+T:Fstorage_manager$tag_struct_storage_object[({0}S:S$Magic$0_0$0({4}SL:U),Z,0,0)({4}S:S$storage_frame_index$0_0$0({4}DA2d,SI:U),Z,0,0)({8}S:S$storage_this_command$0_0$0({2}DA2d,SC:U),Z,0,0)({10}S:S$terminal$0_0$0({1}SC:U),Z,0,0)]
 S:G$command_frame_index$0_0$0({0}DA0d,SI:U),E,0,0
 S:G$command_this_command$0_0$0({0}DA0d,SC:U),E,0,0
 S:G$global_command_object$0_0$0({4}STtag_struct_command_object:S),E,0,0
-S:G$global_storage_object$0_0$0({6}STtag_struct_storage_object:S),E,0,0
+S:G$global_storage_object$0_0$0({11}STtag_struct_storage_object:S),E,0,0
 S:G$engine_command_manager_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_command_manager_build$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_command_manager_update$0_0$0({2}DF,SV:S),C,0,0

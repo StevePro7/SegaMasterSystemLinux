@@ -51,9 +51,11 @@ void engine_storage_manager_write()
 	struct_command_object *co = &global_command_object;
 	devkit_SMS_enableSRAM();
 	so->Magic = MAGIC;
-	so->flag = 0x48;
-	//storage_frame_index[ 0 ] = 1;
-	//storage_this_command[ 0 ] = 2;
+	//so->flag = 0x48;
+	so->storage_frame_index[ 0 ] = command_frame_index[ 0 ];
+	so->storage_frame_index[ 1 ] = command_frame_index[ 1 ];
+	so->storage_this_command[ 0 ] = command_this_command[ 0 ];
+	so->storage_this_command[ 1 ] = command_this_command[ 1 ];
 	//so->num_jumps = 0xBEEF;
 	//so->jump_high[ 0 ] = 1;
 	//so->jump_high[ 1 ] = 2;
