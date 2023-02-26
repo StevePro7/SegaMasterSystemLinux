@@ -1,2 +1,2 @@
 M:bank5
-S:G$Riff_Sound_VHdoctor_02_wav_pcmenc$0_0$0({15088}DA15088d,SC:U),D,0,0
+S:G$Riff_Sound_Excellent40_01_wav_pcmenc$0_0$0({15609}DA15609d,SC:U),D,0,0
