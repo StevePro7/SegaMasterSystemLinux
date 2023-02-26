@@ -5,8 +5,8 @@ S:Ltest_screen.screen_test_screen_update$screen_type$1_0$37({2}DG,SC:U),B,1,4
 S:Ltest_screen.screen_test_screen_update$fo$1_0$38({2}DG,STtag_struct_frame_object:S),R,0,0,[]
 S:Ltest_screen.screen_test_screen_update$po$1_0$38({2}DG,STtag_struct_player_object:S),R,0,0,[]
 S:Ltest_screen.screen_test_screen_update$co$1_0$38({2}DG,STtag_struct_command_object:S),R,0,0,[]
-S:Ltest_screen.screen_test_screen_update$input1$1_0$38({1}SC:U),R,0,0,[c]
-S:Ltest_screen.screen_test_screen_update$input2$1_0$38({1}SC:U),R,0,0,[l]
+S:Ltest_screen.screen_test_screen_update$input1$1_0$38({1}SC:U),R,0,0,[l]
+S:Ltest_screen.screen_test_screen_update$input2$1_0$38({1}SC:U),R,0,0,[a]
 S:Ltest_screen.screen_test_screen_update$player_state$1_0$38({1}SC:U),R,0,0,[]
 S:Ltest_screen.screen_test_screen_update$command$1_0$38({1}SC:U),R,0,0,[c]
 F:Ftest_screen$printCmds$0_0$0({2}DF,SV:S),Z,0,0,0,0,0

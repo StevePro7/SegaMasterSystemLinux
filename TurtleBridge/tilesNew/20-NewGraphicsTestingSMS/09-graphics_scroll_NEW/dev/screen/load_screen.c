@@ -95,7 +95,8 @@ void screen_load_screen_update( unsigned char *screen_type )
 	//*screen_type = screen_type_option;
 	//*screen_type = screen_type_ready;
 	//*screen_type = screen_type_play;
-	*screen_type = screen_type_intro;
+	//*screen_type = screen_type_intro;				// Integrate input => commands to play game.
+	*screen_type = screen_type_test;				// Integrate command playback POC
 }
 
 //

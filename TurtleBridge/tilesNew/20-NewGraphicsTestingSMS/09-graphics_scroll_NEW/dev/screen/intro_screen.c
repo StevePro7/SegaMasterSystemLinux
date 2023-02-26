@@ -182,8 +182,8 @@ void screen_intro_screen_update( unsigned char *screen_type )
 			*screen_type = screen_type_dead;
 			return;
 		}
-
 	}
+
 	engine_player_manager_draw();
 	*screen_type = screen_type_intro;
 }

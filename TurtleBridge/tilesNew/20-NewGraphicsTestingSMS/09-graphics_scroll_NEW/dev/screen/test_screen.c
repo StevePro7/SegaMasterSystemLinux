@@ -31,7 +31,10 @@ void screen_test_screen_load()
 
 	engine_frame_manager_load();
 	engine_frame_manager_draw();
+	engine_command_manager_load();
 	engine_storage_manager_read();
+
+	engine_scroll_manager_update( 0 );
 	complete = false;
 	deltaY = 0;
 	frame_counter = 0;
@@ -60,31 +63,33 @@ void screen_test_screen_update( unsigned char *screen_type )
 	unsigned char command = COMMAND_NONE_MASK;
 	player_state = po->player_state;
 
-	input1 = engine_input_manager_hold( input_type_left );
-	input2 = engine_input_manager_move( input_type_right );
-	//input1 = 1;		// TODO delete
-	if( input1 || input2 )
+	if( !complete )
 	{
-		if( command_frame_index[ frame_counter ] == fo->frame_count )
+		input1 = engine_input_manager_hold( input_type_left );
+		input2 = engine_input_manager_move( input_type_right );
+		//input1 = 1;		// TODO delete
+		if( input1 || input2 )
 		{
-			command = command_this_command[ frame_counter ];
-			engine_font_manager_data( command, 30, 04 );
+			if( command_frame_index[ frame_counter ] == fo->frame_count )
+			{
+				command = command_this_command[ frame_counter ];
+				engine_font_manager_data( command, 30, 04 );
 
-			//TODO - bad - wrap in API.
-			co->prev_command = command;
-			frame_counter++;
-		}
-		else
-		{
-			command = co->prev_command;
-		}
+				//TODO - bad - wrap in API.
+				co->prev_command = command;
+				frame_counter++;
+			}
+			else
+			{
+				command = co->prev_command;
+			}
 
-		
-		engine_frame_manager_update();
-		engine_frame_manager_draw();
+			engine_frame_manager_update();
+			engine_frame_manager_draw();
+		}
 	}
 
-	//engine_player_manager_draw();
+	engine_player_manager_draw();
 	*screen_type = screen_type_test;
 }
 
