@@ -1,6 +1,6 @@
 ;!FILE storage_manager.asm
 XL3
-H 9 areas 95 global symbols
+H 9 areas 7D global symbols
 M storage_manager
 O -mz80
 S _devkit_SMS_SRAM Ref000000
@@ -9,148 +9,124 @@ S _devkit_SMS_disableSRAM Ref000000
 S .__.ABS. Def000000
 S _command_frame_index Ref000000
 S _devkit_SMS_enableSRAM Ref000000
-A _CODE size A2 flags 0 addr 0
-S G$engine_storage_manager_erase$0$0 Def0000A1
-S A$storage_manager$200 Def000066
-S A$storage_manager$210 Def00006E
+A _CODE size 85 flags 0 addr 0
+S G$engine_storage_manager_erase$0$0 Def000084
+S A$storage_manager$200 Def000062
+S A$storage_manager$210 Def00006C
+S A$storage_manager$201 Def000063
 S A$storage_manager$102 Def000027
-S A$storage_manager$211 Def00006F
+S A$storage_manager$211 Def00006D
+S A$storage_manager$202 Def000064
 S A$storage_manager$103 Def000028
-S A$storage_manager$212 Def000070
-S A$storage_manager$140 Def000037
+S A$storage_manager$221 Def000075
+S A$storage_manager$203 Def000065
 S A$storage_manager$104 Def00002B
-S A$storage_manager$240 Def00008F
-S A$storage_manager$231 Def000083
-S A$storage_manager$222 Def00007B
-S A$storage_manager$213 Def000072
-S A$storage_manager$204 Def000069
-S A$storage_manager$150 Def000043
-S A$storage_manager$141 Def00003A
+S A$storage_manager$240 Def000081
+S A$storage_manager$222 Def000078
+S A$storage_manager$141 Def000039
 S A$storage_manager$132 Def000030
-S A$storage_manager$241 Def000090
-S A$storage_manager$232 Def000086
-S A$storage_manager$223 Def00007E
-S A$storage_manager$214 Def000073
-S A$storage_manager$205 Def00006A
-S A$storage_manager$160 Def00004F
-S A$storage_manager$151 Def000044
+S A$storage_manager$223 Def000079
+S A$storage_manager$151 Def000043
 S A$storage_manager$142 Def00003B
-S A$storage_manager$133 Def000031
 S A$storage_manager$115 Def00002C
-S A$storage_manager$251 Def000098
-S A$storage_manager$233 Def000087
-S A$storage_manager$224 Def00007F
-S A$storage_manager$215 Def000075
-S A$storage_manager$206 Def00006D
-S A$storage_manager$161 Def000052
-S A$storage_manager$152 Def000047
-S A$storage_manager$143 Def00003C
-S A$storage_manager$134 Def000034
-S A$storage_manager$252 Def00009B
-S A$storage_manager$234 Def000089
-S A$storage_manager$225 Def000080
-S A$storage_manager$216 Def000076
-S A$storage_manager$162 Def000053
-S A$storage_manager$153 Def000048
-S A$storage_manager$144 Def00003D
-S A$storage_manager$253 Def00009C
-S A$storage_manager$235 Def00008A
-S A$storage_manager$226 Def000081
-S A$storage_manager$217 Def000078
-S A$storage_manager$172 Def00005C
-S A$storage_manager$163 Def000054
-S A$storage_manager$154 Def000049
-S A$storage_manager$145 Def00003E
+S A$storage_manager$215 Def00006F
+S A$storage_manager$152 Def000044
+S A$storage_manager$216 Def000072
+S A$storage_manager$207 Def000066
+S A$storage_manager$180 Def00004C
+S A$storage_manager$217 Def000073
+S A$storage_manager$208 Def000069
+S A$storage_manager$190 Def000056
+S A$storage_manager$181 Def00004D
+S A$storage_manager$163 Def000046
+S A$storage_manager$136 Def000033
 S G$engine_storage_manager_read$0$0 Def00002D
-S _engine_storage_manager_erase Def0000A1
-S A$storage_manager$281 Def0000A1
-S A$storage_manager$245 Def000092
-S A$storage_manager$227 Def000082
-S A$storage_manager$218 Def000079
-S A$storage_manager$173 Def00005D
-S A$storage_manager$164 Def000055
-S A$storage_manager$155 Def00004A
+S _engine_storage_manager_erase Def000084
+S A$storage_manager$227 Def00007B
+S A$storage_manager$209 Def00006A
+S A$storage_manager$191 Def000058
+S A$storage_manager$182 Def000050
+S A$storage_manager$146 Def00003E
+S A$storage_manager$137 Def000036
 S A$storage_manager$128 Def00002D
-S A$storage_manager$264 Def00009E
-S A$storage_manager$246 Def000095
-S A$storage_manager$174 Def000060
-S A$storage_manager$165 Def000058
-S A$storage_manager$156 Def00004B
-S A$storage_manager$138 Def000035
-S A$storage_manager$247 Def000096
-S A$storage_manager$175 Def000061
-S A$storage_manager$166 Def000059
-S A$storage_manager$139 Def000036
-S A$storage_manager$239 Def00008C
-S A$storage_manager$176 Def000062
-S A$storage_manager$167 Def00005A
-S A$storage_manager$149 Def000042
-S A$storage_manager$168 Def00005B
+S A$storage_manager$228 Def00007E
+S A$storage_manager$192 Def000059
+S A$storage_manager$147 Def000041
+S A$storage_manager$229 Def00007F
+S A$storage_manager$193 Def00005B
+S A$storage_manager$257 Def000084
+S A$storage_manager$194 Def00005C
+S A$storage_manager$176 Def000049
+S A$storage_manager$186 Def000051
 S G$engine_storage_manager_available$0$0 Def000000
-S A$storage_manager$187 Def000063
-S XG$engine_storage_manager_erase$0$0 Def0000A1
+S A$storage_manager$187 Def000052
+S A$storage_manager$188 Def000053
+S A$storage_manager$198 Def00005E
+S A$storage_manager$189 Def000055
+S A$storage_manager$199 Def000061
+S XG$engine_storage_manager_erase$0$0 Def000084
 S _engine_storage_manager_read Def00002D
 S A$storage_manager$70 Def000004
 S A$storage_manager$80 Def00000D
 S A$storage_manager$71 Def000007
-S C$storage_manager.c$40$1_0$90 Def000063
 S A$storage_manager$90 Def00001C
 S A$storage_manager$81 Def00000E
-S G$engine_storage_manager_write$0$0 Def000066
+S G$engine_storage_manager_write$0$0 Def000049
 S A$storage_manager$91 Def00001E
 S A$storage_manager$82 Def00000F
-S C$storage_manager.c$50$1_0$91 Def000083
 S C$storage_manager.c$33$1_0$90 Def000030
 S A$storage_manager$92 Def00001F
 S A$storage_manager$83 Def000010
 S A$storage_manager$65 Def000000
-S C$storage_manager.c$51$1_0$91 Def00008C
-S C$storage_manager.c$42$1_0$91 Def000066
-S C$storage_manager.c$34$1_0$90 Def000035
+S C$storage_manager.c$51$1_0$91 Def00004C
+S C$storage_manager.c$34$1_0$90 Def000033
 S _engine_storage_manager_available Def000000
 S A$storage_manager$93 Def000021
 S A$storage_manager$84 Def000012
 S A$storage_manager$75 Def000008
-S C$storage_manager.c$52$1_0$91 Def000092
-S C$storage_manager.c$35$1_0$90 Def000042
+S C$storage_manager.c$52$1_0$91 Def000051
+S C$storage_manager.c$44$1_0$90 Def000046
+S C$storage_manager.c$35$1_0$90 Def000039
 S C$storage_manager.c$26$1_0$90 Def00002D
 S A$storage_manager$94 Def000023
 S A$storage_manager$85 Def000014
 S A$storage_manager$76 Def000009
-S C$storage_manager.c$62$1_0$91 Def000098
-S C$storage_manager.c$44$1_0$91 Def000066
-S C$storage_manager.c$36$1_0$90 Def00004F
+S C$storage_manager.c$45$1_0$90 Def000046
+S C$storage_manager.c$36$1_0$90 Def00003E
 S A$storage_manager$86 Def000015
 S A$storage_manager$77 Def00000A
-S C$storage_manager.c$63$1_0$91 Def00009E
-S C$storage_manager.c$37$1_0$90 Def00005C
+S C$storage_manager.c$54$1_0$91 Def00005E
+S C$storage_manager.c$37$1_0$90 Def000043
 S C$storage_manager.c$28$1_0$90 Def00002D
 S C$storage_manager.c$20$1_0$89 Def000003
 S A$storage_manager$96 Def000025
 S A$storage_manager$87 Def000017
 S A$storage_manager$78 Def00000B
 S A$storage_manager$69 Def000003
-S C$storage_manager.c$64$1_0$91 Def00009E
-S C$storage_manager.c$46$1_0$91 Def000069
+S C$storage_manager.c$71$1_0$93 Def000084
+S C$storage_manager.c$55$1_0$91 Def000066
 S C$storage_manager.c$21$1_0$89 Def000008
 S A$storage_manager$88 Def000019
 S A$storage_manager$79 Def00000C
-S C$storage_manager.c$47$1_0$91 Def00006E
-S C$storage_manager.c$39$1_0$90 Def000063
+S C$storage_manager.c$56$1_0$91 Def00006F
+S C$storage_manager.c$47$1_0$91 Def000049
 S C$storage_manager.c$22$1_0$89 Def000027
 S A$storage_manager$98 Def000026
 S A$storage_manager$89 Def00001A
+S C$storage_manager.c$82$1_0$93 Def000084
+S C$storage_manager.c$57$1_0$91 Def000075
 S C$storage_manager.c$23$1_0$89 Def00002C
 S C$storage_manager.c$15$0_0$89 Def000000
-S C$storage_manager.c$49$1_0$91 Def00007B
-S XG$engine_storage_manager_read$0$0 Def000063
+S C$storage_manager.c$67$1_0$91 Def00007B
+S C$storage_manager.c$49$1_0$91 Def000049
+S XG$engine_storage_manager_read$0$0 Def000046
 S C$storage_manager.c$24$1_0$89 Def00002C
-S C$storage_manager.c$66$1_0$93 Def0000A1
+S C$storage_manager.c$68$1_0$91 Def000081
+S C$storage_manager.c$69$1_0$91 Def000081
 S C$storage_manager.c$17$1_0$89 Def000000
-S C$storage_manager.c$77$1_0$93 Def0000A1
-S _engine_storage_manager_write Def000066
+S _engine_storage_manager_write Def000049
 S XG$engine_storage_manager_available$0$0 Def00002C
-S XG$engine_storage_manager_write$0$0 Def00009E
+S XG$engine_storage_manager_write$0$0 Def000081
 A _DATA size B flags 0 addr 0
 S _global_storage_object Def000000
 S G$global_storage_object$0_0$0 Def000000
@@ -183,29 +159,25 @@ T 26 00 00 6F E5 CD 00 00 E1 C9
 R 00 00 00 00 02 06 02 00
 T 2D 00 00
 R 00 00 00 00
-T 2D 00 00 CD 00 00 E5 CD 00 00 D1 4B 42 21 04 00
+T 2D 00 00 CD 00 00 CD 00 00 21 00 00 22 00 00 2E
+R 00 00 00 00 02 04 00 00 02 07 05 00 02 0D 04 00
+T 3A 00 00 04 22 02 00 21 00 00 36 02 23 36 22 C3
+R 00 00 00 00 02 05 04 00 02 08 01 00
+T 47 00 00 00 00
+R 00 00 00 00 02 03 02 00
+T 49 00 00
+R 00 00 00 00
+T 49 00 00 CD 00 00 E5 CD 00 00 D1 6B 62 36 04 23
 R 00 00 00 00 02 04 00 00 02 08 05 00
-T 3A 00 00 09 4E 23 46 ED 43 00 00 4B 42 21 06 00
-R 00 00 00 00 02 09 04 00
-T 47 00 00 09 4E 23 46 ED 43 02 00 01 00 00 6B 62
-R 00 00 00 00 02 09 04 00 02 0C 01 00
-T 54 00 00 C5 01 08 00 09 C1 7E 02 03 21 09 00 19
+T 56 00 00 36 B0 23 36 E0 23 36 AC 21 04 00 19 AF
 R 00 00 00 00
-T 61 00 00 7E 02 C3 00 00
-R 00 00 00 00 02 06 02 00
-T 66 00 00
+T 63 00 00 77 23 77 21 06 00 19 36 04 23 36 00 21
 R 00 00 00 00
-T 66 00 00 CD 00 00 E5 CD 00 00 D1 6B 62 36 04 23
-R 00 00 00 00 02 04 00 00 02 08 05 00
-T 73 00 00 36 B0 23 36 E0 23 36 AC 21 04 00 19 AF
+T 70 00 00 08 00 19 36 02 21 09 00 19 36 22 21
 R 00 00 00 00
-T 80 00 00 77 23 77 21 06 00 19 36 04 23 36 00 21
-R 00 00 00 00
-T 8D 00 00 08 00 19 36 02 21 09 00 19 36 22 21
-R 00 00 00 00
-T 99 00 00 0A 00 19 36 C9 C3 00 00
+T 7C 00 00 0A 00 19 36 C9 C3 00 00
 R 00 00 00 00 02 09 02 00
-T A1 00 00
+T 84 00 00
 R 00 00 00 00
-T A1 00 00 C9
+T 84 00 00 C9
 R 00 00 00 00

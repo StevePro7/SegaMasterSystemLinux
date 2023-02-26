@@ -19,6 +19,7 @@ void engine_command_manager_load()
 	co->prev_command = COMMAND_NONE_MASK;
 }
 
+// TODO - rename this as record
 void engine_command_manager_steven( unsigned int frame, unsigned char command )
 {
 	struct_command_object *co = &global_command_object;
