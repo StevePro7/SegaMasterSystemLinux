@@ -9,14 +9,10 @@ typedef struct tag_struct_storage_object
 	unsigned long Magic;
 
 	//unsigned int num_jumps;
-	//unsigned char flag;
-	unsigned int storage_frame_index[ 2 ];
-	unsigned char storage_this_command[ 2 ];
+	unsigned int storage_frame_index[ 3 ];
+	unsigned char storage_this_command[ 3 ];
 	unsigned char terminal;
 
 } struct_storage_object;
-
-//extern unsigned int storage_frame_index[];
-//extern unsigned char storage_this_command[];
 
 #endif//_STORAGE_OBJECT_H_

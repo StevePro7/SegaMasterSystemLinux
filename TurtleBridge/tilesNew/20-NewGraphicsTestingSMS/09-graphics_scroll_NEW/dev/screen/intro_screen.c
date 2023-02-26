@@ -29,7 +29,7 @@ void screen_intro_screen_load()
 	engine_frame_manager_draw();
 	engine_command_manager_load();
 	//engine_command_manager_draw();
-	engine_font_manager_text( "INTRO", 10, 0 );
+	engine_font_manager_text( "INTROX SCREEN", 10, 2 );
 
 	engine_scroll_manager_update( 0 );
 	complete = false;

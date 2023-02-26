@@ -27,7 +27,7 @@ static void printCmds();
 
 void screen_test_screen_load()
 {
-	engine_font_manager_text( "TEST", 10, 0 );
+	engine_font_manager_text( "TESTER SCREEN", 10, 2 );
 
 	engine_frame_manager_load();
 	engine_frame_manager_draw();
