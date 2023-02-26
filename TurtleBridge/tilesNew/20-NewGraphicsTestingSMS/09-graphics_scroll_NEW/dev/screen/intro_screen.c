@@ -78,8 +78,8 @@ void screen_intro_screen_update( unsigned char *screen_type )
 			//	engine_command_manager_draw();
 		}
 
-		//engine_frame_manager_update();
-		//engine_frame_manager_draw();
+		engine_frame_manager_update();
+		engine_frame_manager_draw();
 
 
 		if( COMMAND_NONE_MASK != command )
