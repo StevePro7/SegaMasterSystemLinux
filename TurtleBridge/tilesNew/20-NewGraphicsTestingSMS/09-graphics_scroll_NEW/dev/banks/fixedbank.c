@@ -37,7 +37,7 @@ const unsigned char music_object_bank[] =
 };
 
 // Locale Manager.
-//const unsigned char my_splash_text[] = { 0x65, 0x65, 0x65 ,0x65 };
+//const unsigned char m	y_splash_text[] = { 0x65, 0x65, 0x65 ,0x65 };
 //const unsigned char *locale_object_texts[] =
 //{
 //	"V1.0",
@@ -51,8 +51,8 @@ const unsigned char music_object_bank[] =
 // Level Manager.
 const unsigned char *level_object_data[] =
 {
-	level1103_txt,
 	level1104_txt,
+	level1103_txt,
 	level1108_txt,
 	level1116_txt,
 	level1100_txt,
@@ -71,8 +71,8 @@ const unsigned char *level_object_data[] =
 };
 const unsigned int level_object_size[] =
 {
-	level1103_txt_size,
 	level1104_txt_size,
+	level1103_txt_size,
 	level1108_txt_size,
 	level1116_txt_size,
 	level1100_txt_size,
@@ -91,8 +91,8 @@ const unsigned int level_object_size[] =
 };
 const unsigned char level_object_bank[] =
 {
-	level1103_txt_bank,
 	level1104_txt_bank,
+	level1103_txt_bank,
 	level1108_txt_bank,
 	level1116_txt_bank,
 	level1100_txt_bank,
