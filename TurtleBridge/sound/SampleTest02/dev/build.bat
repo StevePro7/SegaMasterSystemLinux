@@ -93,6 +93,9 @@ content/gfx.rel
 REM echo Binary output
 "C:\Program Files\SDCC\bin\ihx2sms" output.ihx output.sms
 
+:: Copy
+copy output.sms ..\TestBuild.sms
+
 
 REM https://www.askingbox.com/question/batch-script-delete-file-if-it-exists
 cd devkit

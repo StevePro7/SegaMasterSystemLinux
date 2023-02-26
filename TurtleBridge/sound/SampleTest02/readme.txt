@@ -1,9 +1,9 @@
 readme
-13-Jan-2022
+26-Feb-2023
 
-bank3		YouD1
-bank4		YouD2
-bank5		YouD3
+Simpsons
+Excellent 5x
+Sucked	  1x
 
-bank6		Game
-bank7		Over
+Silicon 3x
+Austin 3x

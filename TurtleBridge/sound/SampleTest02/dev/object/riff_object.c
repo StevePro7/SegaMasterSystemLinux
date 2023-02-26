@@ -16,30 +16,38 @@
 
 const unsigned char *riff_sample_data[] =
 {
-	Riff_Sound_VHjump02_01_wav_pcmenc,
-	Riff_Sound_VHjump02_02_wav_pcmenc,
-	Riff_Sound_VHdoctor_01_wav_pcmenc,
-	Riff_Sound_VHdoctor_02_wav_pcmenc,
-	Riff_Sound_VHdoctor_03_wav_pcmenc,
-	Riff_Sound_VHshriek_01_wav_pcmenc,
-	Riff_Sound_Youza40_01_wav_pcmenc,
-	Riff_Sound_GnRSucked_01_wav_pcmenc,
-	Riff_Sound_GnRSucked_02_wav_pcmenc,
-	Riff_Sound_GnRSucked_03_wav_pcmenc,
+	Riff_Sound_Excellent10_01_wav_pcmenc,
+	Riff_Sound_Excellent20_01_wav_pcmenc,
+	Riff_Sound_Excellent30_01_wav_pcmenc,
+	Riff_Sound_Excellent40_01_wav_pcmenc,
+	Riff_Sound_Excellent50_01_wav_pcmenc,
+	Riff_Sound_SimpsonsSucked_01_wav_pcmenc,
+	Riff_Sound_Silicon01_01_wav_pcmenc,
+	Riff_Sound_Silicon02_01_wav_pcmenc,
+	Riff_Sound_Silicon03_01_wav_pcmenc,
+	Riff_Sound_Austin01_01_wav_pcmenc,
+	Riff_Sound_Austin02_01_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin03_01_wav_pcmenc,
+	Riff_Sound_Austin03_02_wav_pcmenc,
 };
 
 const unsigned char riff_sample_bank[] =
 {
-	Riff_Sound_VHjump02_01_wav_pcmenc_bank,
-	Riff_Sound_VHjump02_02_wav_pcmenc_bank,
-	Riff_Sound_VHdoctor_01_wav_pcmenc_bank,
-	Riff_Sound_VHdoctor_02_wav_pcmenc_bank,
-	Riff_Sound_VHdoctor_03_wav_pcmenc_bank,
-	Riff_Sound_VHshriek_01_wav_pcmenc_bank,
-	Riff_Sound_Youza40_01_wav_pcmenc_bank,
-	Riff_Sound_GnRSucked_01_wav_pcmenc_bank,
-	Riff_Sound_GnRSucked_02_wav_pcmenc_bank,
-	Riff_Sound_GnRSucked_03_wav_pcmenc_bank,
+	Riff_Sound_Excellent10_01_wav_pcmenc_bank,
+	Riff_Sound_Excellent20_01_wav_pcmenc_bank,
+	Riff_Sound_Excellent30_01_wav_pcmenc_bank,
+	Riff_Sound_Excellent40_01_wav_pcmenc_bank,
+	Riff_Sound_Excellent50_01_wav_pcmenc_bank,
+	Riff_Sound_SimpsonsSucked_01_wav_pcmenc_bank,
+	Riff_Sound_Silicon01_01_wav_pcmenc_bank,
+	Riff_Sound_Silicon02_01_wav_pcmenc_bank,
+	Riff_Sound_Silicon03_01_wav_pcmenc_bank,
+	Riff_Sound_Austin01_01_wav_pcmenc_bank,
+	Riff_Sound_Austin02_01_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin03_01_wav_pcmenc_bank,
+	Riff_Sound_Austin03_02_wav_pcmenc_bank,
 };
 
 /*

@@ -4,56 +4,96 @@
 #include "../engine/input_manager.h"
 #include "../engine/riff_manager.h"
 
+static unsigned char index;
+
 void screen_test_screen_load()
 {	
-	engine_font_manager_draw_text( "PRESS LEFT / UP / RIGHT", 4, 6 );
+	index = 0;
+	engine_font_manager_draw_text( "PRESS UP / DOWN / FIRE1", 4, 6 );
+	engine_font_manager_draw_text( "INDEX", 4, 10 );
+	engine_font_manager_draw_data( index, 8, 11 );
 }
 
 void screen_test_screen_update( unsigned char *screen_type )
-{	
+{
 	unsigned char input;
-	input = engine_input_manager_hold( input_type_left );
-	if( input )
-	{
-		engine_font_manager_draw_text( "VAN HALEN 01", 10, 10 );
-		engine_riff_manager_play( 0 );
-		engine_riff_manager_play( 1 );
-	}
-	input = engine_input_manager_hold( input_type_right );
-	if( input )
-	{
-		engine_font_manager_draw_text( "VAN HALEN 02", 10, 11 );
-		engine_riff_manager_play( 2 );
-		engine_riff_manager_play( 3 );
-		engine_riff_manager_play( 4 );
-	}
+	unsigned char count;
+	count = 1;
 	input = engine_input_manager_hold( input_type_up );
-	if( input )
+	if( input && index > 0 )
 	{
-		engine_font_manager_draw_text( "VAN HALEN 03", 10, 12 );
-		engine_riff_manager_play( 5 );
+		index--;
+		engine_font_manager_draw_data( index, 8, 11 );
 	}
 	input = engine_input_manager_hold( input_type_down );
-	if( input )
+	if( input && index < 13 )
 	{
-		engine_font_manager_draw_text( "GUNS N ROSES 01", 10, 14 );
-		engine_riff_manager_play( 6 );
+		index++;
+		engine_font_manager_draw_data( index, 8, 11 );
 	}
+
 	input = engine_input_manager_hold( input_type_fire1 );
 	if( input )
 	{
-		engine_font_manager_draw_text( "GUNS N ROSES 02", 10, 15 );
-		engine_riff_manager_play( 7 );
-		engine_riff_manager_play( 8 );
+		if( 10 == index || 12 == index )
+		{
+			engine_riff_manager_play( index + 0 );
+			engine_riff_manager_play( index + 1 );
+		}
+		else
+		{
+			engine_riff_manager_play( index );
+		}
 	}
-	//input = engine_input_manager_hold( input_type_fire2 );
-	//if( input )
-	//{
-	//	engine_font_manager_draw_text( "SIMPSONS SK", 10, 15 );
-	//	engine_riff_manager_play( 5 );
-	//}
+
 	*screen_type = screen_type_test;
 }
+
+//void screen_test_screen_updateX( unsigned char *screen_type )
+//{	
+//	unsigned char input;
+//	input = engine_input_manager_hold( input_type_left );
+//	if( input )
+//	{
+//		engine_font_manager_draw_text( "VAN HALEN 01", 10, 10 );
+//		engine_riff_manager_play( 0 );
+//		engine_riff_manager_play( 1 );
+//	}
+//	input = engine_input_manager_hold( input_type_right );
+//	if( input )
+//	{
+//		engine_font_manager_draw_text( "VAN HALEN 02", 10, 11 );
+//		engine_riff_manager_play( 2 );
+//		engine_riff_manager_play( 3 );
+//		engine_riff_manager_play( 4 );
+//	}
+//	input = engine_input_manager_hold( input_type_up );
+//	if( input )
+//	{
+//		engine_font_manager_draw_text( "VAN HALEN 03", 10, 12 );
+//		engine_riff_manager_play( 5 );
+//	}
+//	input = engine_input_manager_hold( input_type_down );
+//	if( input )
+//	{
+//		engine_font_manager_draw_text( "GUNS N ROSES 01", 10, 14 );
+//		engine_riff_manager_play( 6 );
+//	}
+//	input = engine_input_manager_hold( input_type_fire1 );
+//	if( input )
+//	{
+//		engine_font_manager_draw_text( "GUNS N ROSES 02", 10, 15 );
+//		engine_riff_manager_play( 7 );
+//		engine_riff_manager_play( 8 );
+//	}
+//	//input = engine_input_manager_hold( input_type_fire2 );
+//	//if( input )
+//	//{
+//	//	engine_font_manager_draw_text( "SIMPSONS SK", 10, 15 );
+//	//	engine_riff_manager_play( 5 );
+//	//}
+//	*screen_type = screen_type_test;
+//}
 
 /*
 void screen_test_screen_update( unsigned char *screen_type )
