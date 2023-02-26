@@ -32,13 +32,14 @@ void screen_ready_screen_update( unsigned char *screen_type )
 	input6 = engine_input_manager_hold( input_type_fire2 );
 
 	command = engine_command_manager_build( po->player_state, input1, input2, input3, 0, input5, input6 );
+	engine_font_manager_data( po->player_state, 31, 1 );
 	engine_font_manager_data( command, 31, 2 );
-
-	//if( input4 )
+	if( input4 )
 	{
 		if( command != co->prev_command )
 		{
 			engine_command_manager_steven( fo->frame_count, command );
+			engine_command_manager_draw();
 		}
 
 		engine_frame_manager_update();
