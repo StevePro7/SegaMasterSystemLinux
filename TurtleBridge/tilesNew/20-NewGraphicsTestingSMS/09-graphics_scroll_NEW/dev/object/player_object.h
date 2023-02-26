@@ -38,5 +38,6 @@ extern const signed int jump_array_99[];
 extern const signed int jump_array_20[];
 extern const signed int jump_array_40[];
 extern const signed int jump_array_80[];
+extern const signed int jump_array_130[];
 
 #endif//_PLAYER_OBJECT_H_
