@@ -48,7 +48,7 @@ void engine_storage_manager_read()
 void engine_storage_manager_write()
 {
 	struct_storage_object *so = ( struct_storage_object* ) ( devkit_SMS_SRAM() );
-	struct_command_object *co = &global_command_object;
+	//struct_command_object *co = &global_command_object;
 	devkit_SMS_enableSRAM();
 	so->Magic = MAGIC;
 	//so->flag = 0x48;
