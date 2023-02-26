@@ -1,29 +1,40 @@
 #include "ready_screen.h"
-#include "../engine/asm_manager.h"
-#include "../engine/audio_manager.h"
+#include "../engine/command_manager.h"
 #include "../engine/enum_manager.h"
-#include "../engine/scroll_manager.h"
+#include "../engine/font_manager.h"
+#include "../engine/input_manager.h"
+#include "../engine/player_manager.h"
+#include "../engine/timer_manager.h"
 
 void screen_ready_screen_load()
 {
-	//unsigned int posnX;
-	//unsigned char tileX;
-
-	//posnX = 256 * 8 - 1;
-	//tileX = posnX >> 3;
-	//engine_font_manager_text( "READY", 10, 2 );
-
-	//engine_font_manager_data( posnX, 10, 10 );
-	//engine_font_manager_data( tileX, 10, 11 );
-
-	engine_scroll_manager_update( 0 );
-//	engine_music_manager_play( 0 );		// glitch
-	//engine_music_manager_play( 1 );		// NO gfx
+	engine_frame_manager_load();
+	engine_frame_manager_draw();
+	engine_font_manager_text( "READY", 10, 2 );
 }
 
 void screen_ready_screen_update( unsigned char *screen_type )
 {
-	//engine_scroll_manager_update( 0 );
+	struct_player_object *po = &global_player_object;
+	unsigned char input1, input2, input3, input4, input5, input6;
+	unsigned char command;
+	input1 = engine_input_manager_move( input_type_left );
+	input2 = engine_input_manager_move( input_type_right );
+	input3 = engine_input_manager_move( input_type_up );
+//	input4 = engine_input_manager_move( input_type_down );
+	input4 = engine_input_manager_hold( input_type_down );			// increment frame counter.
+	input5 = engine_input_manager_hold( input_type_fire1 );
+	input6 = engine_input_manager_hold( input_type_fire2 );
+
+	command = engine_command_manager_build( po->player_state, input1, input2, input3, 0, input5, input6 );
+	engine_font_manager_data( command, 31, 2 );
+
+	if( input4 )
+	{
+		engine_frame_manager_update();
+		engine_frame_manager_draw();
+	}
+
 	*screen_type = screen_type_ready;
 	//*screen_type = screen_type_play;
 }
