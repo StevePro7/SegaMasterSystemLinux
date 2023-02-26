@@ -4,6 +4,8 @@
 #include "../engine/input_manager.h"
 #include "../engine/riff_manager.h"
 
+static unsigned char sounds[] = { 0, 2, 6, 10 };
+static unsigned char counts[] = { 2, 4, 4, 4 };
 static unsigned char index;
 
 void screen_test_screen_load()
@@ -17,8 +19,7 @@ void screen_test_screen_load()
 void screen_test_screen_update( unsigned char *screen_type )
 {
 	unsigned char input;
-	unsigned char count;
-	count = 1;
+	unsigned char loops, count, sound;
 	input = engine_input_manager_hold( input_type_up );
 	if( input && index > 0 )
 	{
@@ -26,7 +27,7 @@ void screen_test_screen_update( unsigned char *screen_type )
 		engine_font_manager_draw_data( index, 8, 11 );
 	}
 	input = engine_input_manager_hold( input_type_down );
-	if( input && index < 13 )
+	if( input && index < 4 )
 	{
 		index++;
 		engine_font_manager_draw_data( index, 8, 11 );
@@ -35,15 +36,13 @@ void screen_test_screen_update( unsigned char *screen_type )
 	input = engine_input_manager_hold( input_type_fire1 );
 	if( input )
 	{
-		if( 10 == index || 12 == index )
+		sound = sounds[ index ];
+		count = counts[ index ];
+		for( loops = 0; loops < count; loops++ )
 		{
-			engine_riff_manager_play( index + 0 );
-			engine_riff_manager_play( index + 1 );
+			engine_riff_manager_play( sound + loops );
 		}
-		else
-		{
-			engine_riff_manager_play( index );
-		}
+		
 	}
 
 	*screen_type = screen_type_test;
