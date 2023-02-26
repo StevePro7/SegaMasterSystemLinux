@@ -1,17 +1,22 @@
 #include "intro_screen.h"
-#include "../engine/audio_manager.h"
+#include "../engine/asm_manager.h"
+//#include "../engine/audio_manager.h"
 #include "../engine/collision_manager.h"
+#include "../engine/content_manager.h"
 #include "../engine/command_manager.h"
 #include "../engine/debug_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/game_manager.h"
 #include "../engine/global_manager.h"
+#include "../engine/graphics_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/level_manager.h"
 #include "../engine/player_manager.h"
 #include "../engine/scroll_manager.h"
 #include "../engine/timer_manager.h"
+#include "../engine/util_manager.h"
+#include "../devkit/_sms_manager.h"
 #include <stdbool.h>
 
 #ifdef _CONSOLE
@@ -25,6 +30,43 @@ static signed int deltaY;
 
 void screen_intro_screen_load()
 {
+	// init_screen
+	struct_player_object *po = &global_player_object;
+	struct_level_object *lo = &global_level_object;
+	struct_game_object *go = &global_game_object;
+	unsigned char player_loadY;
+	unsigned char cloud_formation = engine_random_manager_next( SPRITE_TILES );
+
+	// TODO delete
+	engine_debug_manager_initgame();
+	// TODO delete
+
+	engine_level_manager_init( go->game_level );
+	engine_player_manager_initX( go->game_difficulty );		// TODO rename
+	engine_collision_manager_init( go->game_difficulty );
+
+	// load_screen
+	devkit_SMS_displayOff();
+	engine_asm_manager_clear_VRAM();
+	engine_content_manager_bggame();
+	engine_content_manager_sprite();
+
+	engine_graphics_manager_level( cloud_formation );
+
+	engine_level_manager_draw_point( go->game_point );
+	engine_player_manager_loadX( go->game_point );
+
+	player_loadY = level_platforms[ po->lookX ];
+	engine_player_manager_loadY( player_loadY );
+	engine_command_manager_load();
+	engine_player_manager_draw();
+	devkit_SMS_displayOn();
+
+	engine_scroll_manager_load( go->game_point, lo->level_size );
+	engine_scroll_manager_update( 0 );
+
+
+	// intro_screen
 	engine_frame_manager_load();
 	engine_frame_manager_draw();
 	engine_command_manager_load();
@@ -75,6 +117,8 @@ void screen_intro_screen_update( unsigned char *screen_type )
 		if( command != co->prev_command )
 		{
 			engine_command_manager_steven( fo->frame_count, command );
+			engine_font_manager_data( fo->frame_count, 30, 4 );
+			engine_font_manager_data( command, 30, 5 );
 			//	engine_command_manager_draw();
 		}
 
@@ -171,7 +215,8 @@ void screen_intro_screen_update( unsigned char *screen_type )
 		if( complete )
 		{
 			engine_scroll_manager_update( 0 );
-			//*screen_type = screen_type_pass;
+			//engine_storage_manager_write();
+			*screen_type = screen_type_option;
 			return;
 		}
 
