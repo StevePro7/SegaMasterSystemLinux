@@ -1,4 +1,4 @@
-extern const unsigned char	Riff_Sound_Austin03_02_wav_pcmenc[];
-#define				Riff_Sound_Austin03_02_wav_pcmenc_size 3226
-#define				Riff_Sound_Austin03_02_wav_pcmenc_bank 15
+extern const unsigned char	Riff_Intro_Ultimate_04_wav_pcmenc[];
+#define				Riff_Intro_Ultimate_04_wav_pcmenc_size 12170
+#define				Riff_Intro_Ultimate_04_wav_pcmenc_bank 15
 

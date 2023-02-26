@@ -1,2 +1,2 @@
 M:bank11
-S:G$Riff_Sound_Austin01_01_wav_pcmenc$0_0$0({16145}DA16145d,SC:U),D,0,0
+S:G$Riff_Intro_Kiss_04_wav_pcmenc$0_0$0({10270}DA10270d,SC:U),D,0,0

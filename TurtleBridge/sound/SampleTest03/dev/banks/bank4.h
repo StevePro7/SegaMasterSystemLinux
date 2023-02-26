@@ -1,4 +1,4 @@
-extern const unsigned char	Riff_Sound_Excellent30_01_wav_pcmenc[];
-#define				Riff_Sound_Excellent30_01_wav_pcmenc_size 7093
-#define				Riff_Sound_Excellent30_01_wav_pcmenc_bank 4
+extern const unsigned char	Riff_Intro_Hulk_01_wav_pcmenc[];
+#define				Riff_Intro_Hulk_01_wav_pcmenc_size 14663
+#define				Riff_Intro_Hulk_01_wav_pcmenc_bank 4
 
