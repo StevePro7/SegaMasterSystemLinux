@@ -1,2 +1,2 @@
 M:bank3
-S:G$Riff__02_wav_pcmenc$0$0({13820}DA13820d,SC:U),D,0,0
+S:G$Riff_Sound_Excellent20_01_wav_pcmenc$0_0$0({9341}DA9341d,SC:U),D,0,0
