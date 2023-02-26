@@ -40,8 +40,10 @@ void engine_storage_manager_read()
 
 	command_frame_index[ 0 ] = so->storage_frame_index[ 0 ];
 	command_frame_index[ 1 ] = so->storage_frame_index[ 1 ];
+	command_frame_index[ 2 ] = so->storage_frame_index[ 2 ];
 	command_this_command[ 0 ] = so->storage_this_command[ 0 ];
 	command_this_command[ 1 ] = so->storage_this_command[ 1 ];
+	command_this_command[ 2 ] = so->storage_this_command[ 2 ];
 
 	devkit_SMS_disableSRAM();
 }
@@ -62,10 +64,10 @@ void engine_storage_manager_write()
 
 	so->storage_frame_index[ 0 ] = command_frame_index[ 0 ];
 	so->storage_frame_index[ 1 ] = command_frame_index[ 1 ];
-	//so->storage_frame_index[ 2 ] = command_frame_index[ 2 ];
+	so->storage_frame_index[ 2 ] = command_frame_index[ 2 ];
 	so->storage_this_command[ 0 ] = command_this_command[ 0 ];
 	so->storage_this_command[ 1 ] = command_this_command[ 1 ];
-	//so->storage_this_command[ 2 ] = command_this_command[ 2 ];
+	so->storage_this_command[ 2 ] = command_this_command[ 2 ];
 
 	so->terminal = FINAL;
 	devkit_SMS_disableSRAM();

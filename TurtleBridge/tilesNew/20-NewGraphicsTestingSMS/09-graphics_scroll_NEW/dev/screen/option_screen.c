@@ -37,7 +37,7 @@ void screen_option_screen_update( unsigned char *screen_type )
 		engine_font_manager_char( '>', 10, cursorY );
 	}
 
-	input3 = engine_input_manager_hold( input_type_fire2 );
+	input3 = engine_input_manager_hold( input_type_fire1 );
 	if( input3 )
 	{
 		if( 0 == cursorY )
@@ -61,7 +61,7 @@ void screen_option_screen_update( unsigned char *screen_type )
 	}
 	else
 	{
-		input3 = engine_input_manager_hold( input_type_fire1 );
+		input3 = engine_input_manager_hold( input_type_fire2 );
 		if( input3 )
 		{
 			engine_storage_manager_erase();
