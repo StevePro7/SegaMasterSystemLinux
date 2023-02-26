@@ -1,7 +1,7 @@
 #include "storage_manager.h"
+#include "command_manager.h"
 #include "font_manager.h"
 #include "global_manager.h"
-//#include "jump_manager.h"
 #include "../devkit/_sms_manager.h"
 
 #define MAGIC			0xACE0B004
@@ -47,20 +47,24 @@ void engine_storage_manager_read()
 
 void engine_storage_manager_write()
 {
-	/*struct_storage_object *so = ( struct_storage_object* ) ( devkit_SMS_SRAM() );
+	struct_storage_object *so = ( struct_storage_object* ) ( devkit_SMS_SRAM() );
+	struct_command_object *co = &global_command_object;
 	devkit_SMS_enableSRAM();
 	so->Magic = MAGIC;
-	so->num_jumps = 8;
-	so->jump_high[ 0 ] = 1;
-	so->jump_high[ 1 ] = 2;
-	so->jump_high[ 2 ] = 3;
-	so->jump_high[ 3 ] = 4;
-	so->jump_high[ 4 ] = 4;
-	so->jump_high[ 5 ] = 3;
-	so->jump_high[ 6 ] = 2;
-	so->jump_high[ 7 ] = 1;
+	so->flag = 0x48;
+	//storage_frame_index[ 0 ] = 1;
+	//storage_this_command[ 0 ] = 2;
+	//so->num_jumps = 0xBEEF;
+	//so->jump_high[ 0 ] = 1;
+	//so->jump_high[ 1 ] = 2;
+	//so->jump_high[ 2 ] = 3;
+	//so->jump_high[ 3 ] = 4;
+	//so->jump_high[ 4 ] = 4;
+	//so->jump_high[ 5 ] = 3;
+	//so->jump_high[ 6 ] = 2;
+	//so->jump_high[ 7 ] = 1;
 	so->terminal = FINAL;
-	devkit_SMS_disableSRAM();*/
+	devkit_SMS_disableSRAM();
 }
 
 void engine_storage_manager_erase()

@@ -12,7 +12,7 @@
 struct_command_object global_command_object;
 
 void engine_command_manager_load()
-{	
+{
 	struct_command_object *co = &global_command_object;
 	co->frame_index = 0;
 	co->curr_command = COMMAND_NONE_MASK;
@@ -22,12 +22,11 @@ void engine_command_manager_load()
 void engine_command_manager_steven( unsigned int frame, unsigned char command )
 {
 	struct_command_object *co = &global_command_object;
-	command_frame_index[ co->frame_index ] = frame;
-	command_this_command[ co->frame_index ] = command;
-	co->prev_command = command;
-
 	if( co->frame_index < MAX_COMMANDS )
 	{
+		command_frame_index[ co->frame_index ] = frame;
+		command_this_command[ co->frame_index ] = command;
+		co->prev_command = command;
 		co->frame_index++;
 	}
 	//else
