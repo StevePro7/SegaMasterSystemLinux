@@ -1,12 +1,14 @@
 #include "option_screen.h"
-#include "../engine/debug_manager.h"
+#include "../engine/command_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/player_manager.h"
+#include "../engine/storage_manager.h"
 
 static unsigned char cursorY;
+static void printCmds();
 
 void screen_option_screen_load()
 {
@@ -18,7 +20,7 @@ void screen_option_screen_load()
 	engine_font_manager_text( "OPTION SCREEN", 10, 2 );
 	engine_font_manager_text( "  RECORD CMDS", 10, 0 );
 	engine_font_manager_text( "  PLAYBACK!!!", 10, 1 );
-	cursorY = 0;
+	cursorY = 1;
 	engine_font_manager_char( '>', 10, cursorY );
 }
 
@@ -27,6 +29,7 @@ void screen_option_screen_update( unsigned char *screen_type )
 	unsigned char input1, input2, input3;
 	input1 = engine_input_manager_hold( input_type_up );
 	input2 = engine_input_manager_hold( input_type_down );
+//	unsigned char available;
 	if( input1 || input2 )
 	{
 		engine_font_manager_char( ' ', 10, cursorY );
@@ -42,8 +45,29 @@ void screen_option_screen_update( unsigned char *screen_type )
 			*screen_type = screen_type_intro;
 			return;
 		}
+		if( 1 == cursorY )
+		{
+			/*available = engine_storage_manager_available();
+			if( available )
+			{
+				engine_storage_manager_read();
+				printCmds();
+
+			}
+			engine_font_manager_data( available, 31, 1 );*/
+			*screen_type = screen_type_test;
+			return;
+		}
 	}
 
 //	engine_player_manager_draw();
 	*screen_type = screen_type_option;
+}
+
+static void printCmds()
+{
+	engine_font_manager_data( command_frame_index[ 0 ], 21, 1 );
+	engine_font_manager_data( command_frame_index[ 1 ], 21, 2 );
+	engine_font_manager_data( command_this_command[ 0 ], 26, 1 );
+	engine_font_manager_data( command_this_command[ 1 ], 26, 2 );
 }

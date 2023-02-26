@@ -3,7 +3,7 @@ F:G$engine_storage_manager_available$0_0$0({2}DF,SC:U),Z,0,0,0,0,0
 S:Lstorage_manager.engine_storage_manager_available$so$1_0$89({2}DG,STtag_struct_storage_object:S),R,0,0,[l,h]
 S:Lstorage_manager.engine_storage_manager_available$foundMagic$1_0$89({1}SC:U),R,0,0,[l]
 F:G$engine_storage_manager_read$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lstorage_manager.engine_storage_manager_read$so$1_0$90({2}DG,STtag_struct_storage_object:S),R,0,0,[]
+S:Lstorage_manager.engine_storage_manager_read$so$1_0$90({2}DG,STtag_struct_storage_object:S),R,0,0,[e,d]
 F:G$engine_storage_manager_write$0_0$0({2}DF,SV:S),Z,0,-2,0,0,0
 S:Lstorage_manager.engine_storage_manager_write$so$1_0$91({2}DG,STtag_struct_storage_object:S),R,0,0,[c,b]
 S:Lstorage_manager.engine_storage_manager_write$sloc0$0_1$0({2}DG,DA2d,SI:U),B,1,-2

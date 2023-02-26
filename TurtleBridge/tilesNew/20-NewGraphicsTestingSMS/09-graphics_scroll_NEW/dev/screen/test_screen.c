@@ -10,7 +10,7 @@
 #include "../engine/game_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/graphics_manager.h"
-#include "../engine/input_manager.h"
+#include "../engine/input_manager.h"	
 #include "../engine/level_manager.h"
 #include "../engine/player_manager.h"
 #include "../engine/scroll_manager.h"
@@ -33,6 +33,44 @@ static void printCmds();
 
 void screen_test_screen_load()
 {
+	// init_screen
+	struct_player_object *po = &global_player_object;
+	struct_level_object *lo = &global_level_object;
+	struct_game_object *go = &global_game_object;
+	unsigned char available;
+	unsigned char player_loadY;
+	unsigned char cloud_formation = engine_random_manager_next( SPRITE_TILES );
+
+	// TODO delete
+	engine_debug_manager_initgame();
+	// TODO delete
+
+	engine_level_manager_init( go->game_level );
+	engine_player_manager_initX( go->game_difficulty );		// TODO rename
+	engine_collision_manager_init( go->game_difficulty );
+
+	// load_screen
+	devkit_SMS_displayOff();
+	engine_asm_manager_clear_VRAM();
+	engine_content_manager_bggame();
+	engine_content_manager_sprite();
+
+	engine_graphics_manager_level( cloud_formation );
+
+	engine_level_manager_draw_point( go->game_point );
+	engine_player_manager_loadX( go->game_point );
+
+	player_loadY = level_platforms[ po->lookX ];
+	engine_player_manager_loadY( player_loadY );
+	engine_command_manager_load();
+	engine_player_manager_draw();
+	devkit_SMS_displayOn();
+
+	engine_scroll_manager_load( go->game_point, lo->level_size );
+	engine_scroll_manager_update( 0 );
+
+
+	// test_screen
 	engine_font_manager_text( "TESTER SCREEN", 10, 2 );
 
 	engine_frame_manager_load();
@@ -44,6 +82,15 @@ void screen_test_screen_load()
 	complete = false;
 	deltaY = 0;
 	frame_counter = 0;
+
+
+	available = engine_storage_manager_available();
+	engine_font_manager_data( available, 31, 1 );
+	if( available )
+	{
+		engine_storage_manager_read();
+		printCmds();
+	}
 }
 
 void screen_test_screen_update( unsigned char *screen_type )
@@ -203,15 +250,19 @@ void screen_test_screen_update( unsigned char *screen_type )
 
 static void printCmds()
 {
-	engine_font_manager_text( "TEST??", 10, 3 );
-	engine_font_manager_data( command_frame_index[ 0 ], 20, 10 );
-	engine_font_manager_data( command_frame_index[ 1 ], 20, 11 );
-	engine_font_manager_data( command_this_command[ 0 ], 20, 12 );
-	engine_font_manager_data( command_this_command[ 1 ], 20, 13 );
+	engine_font_manager_data( command_frame_index[ 0 ], 21, 1 );
+	engine_font_manager_data( command_frame_index[ 1 ], 21, 2 );
+	engine_font_manager_data( command_this_command[ 0 ], 26, 1 );
+	engine_font_manager_data( command_this_command[ 1 ], 26, 2 );
+	//engine_font_manager_text( "TEST??", 10, 3 );
+	//engine_font_manager_data( command_frame_index[ 0 ], 20, 10 );
+	//engine_font_manager_data( command_frame_index[ 1 ], 20, 11 );
+	//engine_font_manager_data( command_this_command[ 0 ], 20, 12 );
+	//engine_font_manager_data( command_this_command[ 1 ], 20, 13 );
 
-	engine_font_manager_data( command_frame_index[ 0 ], 20, 18 );
-	engine_font_manager_data( command_frame_index[ 1 ], 20, 19 );
-	engine_font_manager_data( command_this_command[ 0 ], 20, 20 );
-	engine_font_manager_data( command_this_command[ 1 ], 20, 21 );
-	engine_font_manager_text( "TEST??", 10, 4 );
+	//engine_font_manager_data( command_frame_index[ 0 ], 20, 18 );
+	//engine_font_manager_data( command_frame_index[ 1 ], 20, 19 );
+	//engine_font_manager_data( command_this_command[ 0 ], 20, 20 );
+	//engine_font_manager_data( command_this_command[ 1 ], 20, 21 );
+	//engine_font_manager_text( "TEST??", 10, 4 );
 }
