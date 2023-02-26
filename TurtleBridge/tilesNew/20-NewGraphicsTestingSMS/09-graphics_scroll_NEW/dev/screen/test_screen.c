@@ -30,6 +30,7 @@ static bool complete;
 static signed int deltaY;
 static unsigned char frame_counter;
 static void printCmds();
+static unsigned char available;
 
 void screen_test_screen_load()
 {
@@ -37,7 +38,7 @@ void screen_test_screen_load()
 	struct_player_object *po = &global_player_object;
 	struct_level_object *lo = &global_level_object;
 	struct_game_object *go = &global_game_object;
-	unsigned char available;
+	
 	unsigned char player_loadY;
 	unsigned char cloud_formation = engine_random_manager_next( SPRITE_TILES );
 
@@ -115,7 +116,14 @@ void screen_test_screen_update( unsigned char *screen_type )
 
 	unsigned char command = COMMAND_NONE_MASK;
 	player_state = po->player_state;
-		
+
+	// goto options.
+	if( !available )
+	{
+		*screen_type = screen_type_option;
+		return;
+	}
+
 	if( !complete )
 	{
 		input1 = engine_input_manager_hold( input_type_left );
@@ -231,6 +239,7 @@ void screen_test_screen_update( unsigned char *screen_type )
 		{
 			engine_scroll_manager_update( 0 );
 			//*screen_type = screen_type_pass;
+			*screen_type = screen_type_option;
 			return;
 		}
 

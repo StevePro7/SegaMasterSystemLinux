@@ -73,13 +73,15 @@ void engine_storage_manager_write()
 
 void engine_storage_manager_erase()
 {
-	//struct_storage_object *so = ( struct_storage_object* ) ( devkit_SMS_SRAM() );
-	//devkit_SMS_enableSRAM();
-	//so->Magic = 0x00000000;
-	//so->num_jumps = 0;
-	//so->jump_high[ 0 ] = 9;
-	//so->jump_high[ 1 ] = 9;
-	//so->jump_high[ 2 ] = 9;
-	//so->terminal = FINAL;
-	//devkit_SMS_disableSRAM();
+	struct_storage_object *so = ( struct_storage_object* ) ( devkit_SMS_SRAM() );
+	devkit_SMS_enableSRAM();
+	so->Magic = 0x00000000;
+	so->storage_frame_index[ 0 ] = 0;
+	so->storage_frame_index[ 1 ] = 0;
+	//so->storage_frame_index[ 2 ] = 0;
+	so->storage_this_command[ 0 ] = 0;
+	so->storage_this_command[ 1 ] = 0;
+	//so->storage_this_command[ 2 ] = 0;
+	so->terminal = FINAL;
+	devkit_SMS_disableSRAM();
 }

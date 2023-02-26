@@ -20,7 +20,7 @@ void screen_option_screen_load()
 	engine_font_manager_text( "OPTION SCREEN", 10, 2 );
 	engine_font_manager_text( "  RECORD CMDS", 10, 0 );
 	engine_font_manager_text( "  PLAYBACK!!!", 10, 1 );
-	cursorY = 0;
+	cursorY = 1;
 	engine_font_manager_char( '>', 10, cursorY );
 }
 
@@ -59,7 +59,15 @@ void screen_option_screen_update( unsigned char *screen_type )
 			return;
 		}
 	}
-
+	else
+	{
+		input3 = engine_input_manager_hold( input_type_fire1 );
+		if( input3 )
+		{
+			engine_storage_manager_erase();
+			engine_font_manager_text( "ERASER SCREEN", 10, 2 );
+		}
+	}
 //	engine_player_manager_draw();
 	*screen_type = screen_type_option;
 }

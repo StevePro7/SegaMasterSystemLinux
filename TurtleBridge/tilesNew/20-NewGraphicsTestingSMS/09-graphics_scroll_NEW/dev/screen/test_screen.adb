@@ -3,7 +3,6 @@ F:G$screen_test_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Ltest_screen.screen_test_screen_load$po$1_0$125({2}DG,STtag_struct_player_object:S),R,0,0,[]
 S:Ltest_screen.screen_test_screen_load$lo$1_0$125({2}DG,STtag_struct_level_object:S),R,0,0,[]
 S:Ltest_screen.screen_test_screen_load$go$1_0$125({2}DG,STtag_struct_game_object:S),R,0,0,[]
-S:Ltest_screen.screen_test_screen_load$available$1_0$125({1}SC:U),R,0,0,[l]
 S:Ltest_screen.screen_test_screen_load$player_loadY$1_0$125({1}SC:U),R,0,0,[a]
 S:Ltest_screen.screen_test_screen_load$cloud_formation$1_0$125({1}SC:U),B,1,-1
 S:Ltest_screen.screen_test_screen_load$sloc0$0_1$0({1}SC:U),B,1,-1
@@ -51,6 +50,7 @@ S:G$global_reset_object$0_0$0({2}STtag_struct_reset_object:S),E,0,0
 S:Ftest_screen$complete$0_0$0({1}:S),E,0,0
 S:Ftest_screen$deltaY$0_0$0({2}SI:S),E,0,0
 S:Ftest_screen$frame_counter$0_0$0({1}SC:U),E,0,0
+S:Ftest_screen$available$0_0$0({1}SC:U),E,0,0
 S:G$engine_asm_manager_clear_VRAM$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_collision_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_collision_manager_player$0_0$0({2}DF,SC:S),C,0,0

@@ -6,7 +6,6 @@ S:Loption_screen.screen_option_screen_update$screen_type$1_0$27({2}DG,SC:U),B,1,
 S:Loption_screen.screen_option_screen_update$input1$1_0$28({1}SC:U),R,0,0,[c]
 S:Loption_screen.screen_option_screen_update$input2$1_0$28({1}SC:U),R,0,0,[l]
 S:Loption_screen.screen_option_screen_update$input3$1_0$28({1}SC:U),R,0,0,[l]
-F:Foption_screen$printCmds$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 T:Foption_screen$tag_struct_player_object[({0}S:S$initX$0_0$0({1}SC:U),Z,0,0)({1}S:S$posnX$0_0$0({2}SI:U),Z,0,0)({3}S:S$tileX$0_0$0({1}SC:U),Z,0,0)({4}S:S$lookX$0_0$0({1}SC:U),Z,0,0)({5}S:S$posnY$0_0$0({1}SC:U),Z,0,0)({6}S:S$tileY$0_0$0({1}SC:U),Z,0,0)({7}S:S$leapY$0_0$0({2}SI:U),Z,0,0)({9}S:S$drawX$0_0$0({1}SC:U),Z,0,0)({10}S:S$drawY$0_0$0({1}SC:U),Z,0,0)({11}S:S$player_state$0_0$0({1}SC:U),Z,0,0)({12}S:S$jumper_index$0_0$0({1}SC:U),Z,0,0)({13}S:S$deltaY_index$0_0$0({1}SC:U),Z,0,0)({14}S:S$player_frame$0_0$0({1}SC:U),Z,0,0)({15}S:S$motion_count$0_0$0({1}SC:U),Z,0,0)]
 T:Foption_screen$tag_struct_command_object[({0}S:S$frame_index$0_0$0({2}SI:U),Z,0,0)({2}S:S$curr_command$0_0$0({1}SC:U),Z,0,0)({3}S:S$prev_command$0_0$0({1}SC:U),Z,0,0)]
 T:Foption_screen$tag_struct_storage_object[({0}S:S$Magic$0_0$0({4}SL:U),Z,0,0)({4}S:S$storage_frame_index$0_0$0({4}DA2d,SI:U),Z,0,0)({8}S:S$storage_this_command$0_0$0({2}DA2d,SC:U),Z,0,0)({10}S:S$terminal$0_0$0({1}SC:U),Z,0,0)]
@@ -52,3 +51,4 @@ S:G$engine_storage_manager_available$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_storage_manager_read$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_storage_manager_write$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_storage_manager_erase$0_0$0({2}DF,SV:S),C,0,0
+S:Foption_screen$printCmds$0_0$0({2}DF,SV:S),C,0,0
