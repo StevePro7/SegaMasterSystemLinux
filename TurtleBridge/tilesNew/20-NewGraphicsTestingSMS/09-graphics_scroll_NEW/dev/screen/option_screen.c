@@ -34,7 +34,7 @@ void screen_option_screen_update( unsigned char *screen_type )
 		engine_font_manager_char( '>', 10, cursorY );
 	}
 
-	input3 = engine_input_manager_hold( input_type_right );
+	input3 = engine_input_manager_hold( input_type_fire2 );
 	if( input3 )
 	{
 		if( 0 == cursorY )

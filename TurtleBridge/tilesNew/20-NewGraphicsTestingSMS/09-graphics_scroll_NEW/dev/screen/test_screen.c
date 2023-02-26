@@ -1,17 +1,23 @@
 #include "test_screen.h"
+#include "../engine/asm_manager.h"
 //#include "../engine/audio_manager.h"
 #include "../engine/collision_manager.h"
+#include "../engine/content_manager.h"
 #include "../engine/command_manager.h"
+#include "../engine/debug_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/game_manager.h"
 #include "../engine/global_manager.h"
+#include "../engine/graphics_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/level_manager.h"
 #include "../engine/player_manager.h"
 #include "../engine/scroll_manager.h"
 #include "../engine/storage_manager.h"
 #include "../engine/timer_manager.h"
+#include "../engine/util_manager.h"
+#include "../devkit/_sms_manager.h"
 #include <stdbool.h>
 
 #ifdef _CONSOLE
@@ -73,6 +79,7 @@ void screen_test_screen_update( unsigned char *screen_type )
 			if( command_frame_index[ frame_counter ] == fo->frame_count )
 			{
 				command = command_this_command[ frame_counter ];
+				engine_font_manager_data( frame_counter, 30, 04 );
 				engine_font_manager_data( command, 30, 04 );
 
 				//TODO - bad - wrap in API.

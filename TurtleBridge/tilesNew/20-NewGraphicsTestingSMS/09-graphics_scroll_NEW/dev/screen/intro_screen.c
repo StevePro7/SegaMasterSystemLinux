@@ -14,6 +14,7 @@
 #include "../engine/level_manager.h"
 #include "../engine/player_manager.h"
 #include "../engine/scroll_manager.h"
+#include "../engine/storage_manager.h"
 #include "../engine/timer_manager.h"
 #include "../engine/util_manager.h"
 #include "../devkit/_sms_manager.h"
@@ -215,7 +216,7 @@ void screen_intro_screen_update( unsigned char *screen_type )
 		if( complete )
 		{
 			engine_scroll_manager_update( 0 );
-			//engine_storage_manager_write();
+			engine_storage_manager_write();
 			*screen_type = screen_type_option;
 			return;
 		}
