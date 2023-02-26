@@ -12,7 +12,6 @@ void screen_start_screen_load()
 void screen_start_screen_update( unsigned char *screen_type )
 {
 	unsigned char input;
-
 	input = engine_input_manager_hold( input_type_right );
 	if( input )
 	{

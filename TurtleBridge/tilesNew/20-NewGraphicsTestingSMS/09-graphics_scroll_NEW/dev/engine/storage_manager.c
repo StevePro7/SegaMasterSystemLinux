@@ -26,23 +26,17 @@ unsigned char engine_storage_manager_available()
 void engine_storage_manager_read()
 {
 	struct_storage_object *so = ( struct_storage_object* ) ( devkit_SMS_SRAM() );
-//	unsigned int num_jumps;
-//	unsigned int index;
-	//unsigned char value;
+	/*	unsigned int num_jumps;
+		unsigned int index;
+		unsigned char value*/;
 
-	//devkit_SMS_enableSRAM();
-	//num_jumps = so->num_jumps;
-	////engine_font_manager_data( num_jumps, 12, 14 );
-	//engine_jump_manager_init( num_jumps );
+	devkit_SMS_enableSRAM();
+	command_frame_index[ 0 ] = so->storage_frame_index[ 0 ];
+	command_frame_index[ 1 ] = so->storage_frame_index[ 1 ];
+	command_this_command[ 0 ] = so->storage_this_command[ 0 ];
+	command_this_command[ 1 ] = so->storage_this_command[ 1 ];
 
-	//for( index = 0; index < num_jumps; index++ )
-	//{
-	//	value = so->jump_high[ index ];
-	//	//engine_font_manager_data( value, 22, 4 + index );
-	//	engine_jump_manager_load( index, value );
-	//}
-
-	//devkit_SMS_disableSRAM();
+	devkit_SMS_disableSRAM();
 }
 
 void engine_storage_manager_write()
@@ -52,10 +46,10 @@ void engine_storage_manager_write()
 	devkit_SMS_enableSRAM();
 	so->Magic = MAGIC;
 	//so->flag = 0x48;
-	so->storage_frame_index[ 0 ] = command_frame_index[ 0 ];
-	so->storage_frame_index[ 1 ] = command_frame_index[ 1 ];
-	so->storage_this_command[ 0 ] = command_this_command[ 0 ];
-	so->storage_this_command[ 1 ] = command_this_command[ 1 ];
+	so->storage_frame_index[ 0 ] = 0;// command_frame_index[ 0 ];
+	so->storage_frame_index[ 1 ] = 4;// command_frame_index[ 1 ];
+	so->storage_this_command[ 0 ] = 2;// command_this_command[ 0 ];
+	so->storage_this_command[ 1 ] = 34;// command_this_command[ 1 ];
 	//so->num_jumps = 0xBEEF;
 	//so->jump_high[ 0 ] = 1;
 	//so->jump_high[ 1 ] = 2;

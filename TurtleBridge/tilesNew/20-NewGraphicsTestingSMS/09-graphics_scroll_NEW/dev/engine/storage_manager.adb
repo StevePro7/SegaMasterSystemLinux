@@ -3,11 +3,9 @@ F:G$engine_storage_manager_available$0_0$0({2}DF,SC:U),Z,0,0,0,0,0
 S:Lstorage_manager.engine_storage_manager_available$so$1_0$89({2}DG,STtag_struct_storage_object:S),R,0,0,[l,h]
 S:Lstorage_manager.engine_storage_manager_available$foundMagic$1_0$89({1}SC:U),R,0,0,[l]
 F:G$engine_storage_manager_read$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lstorage_manager.engine_storage_manager_read$so$1_0$90({2}DG,STtag_struct_storage_object:S),R,0,0,[]
-F:G$engine_storage_manager_write$0_0$0({2}DF,SV:S),Z,0,-2,0,0,0
-S:Lstorage_manager.engine_storage_manager_write$so$1_0$91({2}DG,STtag_struct_storage_object:S),R,0,0,[c,b]
-S:Lstorage_manager.engine_storage_manager_write$sloc0$0_1$0({2}DG,DA2d,SI:U),B,1,-2
-S:Lstorage_manager.engine_storage_manager_write$sloc1$0_1$0({2}DG,SI:U),B,1,-2
+S:Lstorage_manager.engine_storage_manager_read$so$1_0$90({2}DG,STtag_struct_storage_object:S),R,0,0,[e,d]
+F:G$engine_storage_manager_write$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lstorage_manager.engine_storage_manager_write$so$1_0$91({2}DG,STtag_struct_storage_object:S),R,0,0,[e,d]
 F:G$engine_storage_manager_erase$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 T:Fstorage_manager$tag_struct_command_object[({0}S:S$frame_index$0_0$0({2}SI:U),Z,0,0)({2}S:S$curr_command$0_0$0({1}SC:U),Z,0,0)({3}S:S$prev_command$0_0$0({1}SC:U),Z,0,0)]
 T:Fstorage_manager$tag_struct_storage_object[({0}S:S$Magic$0_0$0({4}SL:U),Z,0,0)({4}S:S$storage_frame_index$0_0$0({4}DA2d,SI:U),Z,0,0)({8}S:S$storage_this_command$0_0$0({2}DA2d,SC:U),Z,0,0)({10}S:S$terminal$0_0$0({1}SC:U),Z,0,0)]
