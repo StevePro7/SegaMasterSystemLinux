@@ -196,7 +196,7 @@ void engine_player_manager_set_action( unsigned char frame, unsigned char comman
 		jump_len = jump_array_len[ po->jumper_index ];
 
 		// TODO delete this debugging info - for newIndex!!
-		engine_font_manager_data( po->jumper_index, 31, 5 );
+		//engine_font_manager_data( po->jumper_index, 31, 5 );
 	}
 	else
 	{
