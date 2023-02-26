@@ -9,4 +9,7 @@ typedef struct tag_struct_command_object
 
 } struct_command_object;
 
+extern unsigned int command_frame_index[];
+extern unsigned char command_this_command[];
+
 #endif//_COMMAND_OBJECT_H_

@@ -10,12 +10,17 @@ void screen_ready_screen_load()
 {
 	engine_frame_manager_load();
 	engine_frame_manager_draw();
+	engine_command_manager_load();
+	engine_command_manager_draw();
 	engine_font_manager_text( "READY", 10, 2 );
 }
 
 void screen_ready_screen_update( unsigned char *screen_type )
 {
+	struct_frame_object *fo = &global_frame_object;
 	struct_player_object *po = &global_player_object;
+	struct_command_object *co = &global_command_object;
+
 	unsigned char input1, input2, input3, input4, input5, input6;
 	unsigned char command;
 	input1 = engine_input_manager_move( input_type_left );
@@ -29,8 +34,13 @@ void screen_ready_screen_update( unsigned char *screen_type )
 	command = engine_command_manager_build( po->player_state, input1, input2, input3, 0, input5, input6 );
 	engine_font_manager_data( command, 31, 2 );
 
-	if( input4 )
+	//if( input4 )
 	{
+		if( command != co->prev_command )
+		{
+			engine_command_manager_steven( fo->frame_count, command );
+		}
+
 		engine_frame_manager_update();
 		engine_frame_manager_draw();
 	}

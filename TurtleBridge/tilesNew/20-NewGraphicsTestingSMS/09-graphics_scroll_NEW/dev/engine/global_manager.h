@@ -30,7 +30,8 @@
 // Delay
 #define NORMAL_DELAY		50
 
-// Commands.
+// Commands
+#define MAX_COMMANDS		16
 #define COMMAND_NONE_MASK	0b00000000
 
 #define COMMAND_LEFT_MASK	0b00000001
