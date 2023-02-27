@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FunctionMgr
+namespace AudioDump
 {
-	class AudioManager
+	public class AudioManager
 	{
 	}
 }
