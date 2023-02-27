@@ -1,4 +1,4 @@
-extern const unsigned char	Riff_Intro_ACDC_02_wav_pcmenc[];
-#define				Riff_Intro_ACDC_02_wav_pcmenc_size 8366
-#define				Riff_Intro_ACDC_02_wav_pcmenc_bank 3
+extern const unsigned char	Riff_Sound_Silicon02_01_wav_pcmenc[];
+#define				Riff_Sound_Silicon02_01_wav_pcmenc_size 6525
+#define				Riff_Sound_Silicon02_01_wav_pcmenc_bank 3
 

@@ -1,2 +1,2 @@
 M:bank5
-S:G$Riff_Intro_Hulk_02_wav_pcmenc$0_0$0({15117}DA15117d,SC:U),D,0,0
+S:G$Riff_Sound_Wayne_01_wav_pcmenc$0_0$0({10425}DA10425d,SC:U),D,0,0
