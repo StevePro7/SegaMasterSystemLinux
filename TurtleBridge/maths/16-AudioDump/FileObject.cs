@@ -3,10 +3,10 @@
 	public struct FileObject
 	{
 		public string Name { get; private set; }
-		public string Bank { get; private set; }
-		public string Size { get; private set; }
+		public int Bank { get; private set; }
+		public int Size { get; private set; }
 
-		public FileObject(string name, string bank, string size)
+		public FileObject(string name, int bank, int size)
 		{
 			Name = name;
 			Bank = bank;

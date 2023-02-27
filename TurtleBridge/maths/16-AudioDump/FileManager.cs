@@ -25,6 +25,7 @@ namespace AudioDump
 				DumpFile(file);
 			}
 
+			Data = Data.OrderByDescending(x => x.Size).ToList();
 			for (int index = 0; index < Data.Count; index++)
 			{
 				var item = Data[index];
@@ -43,29 +44,27 @@ namespace AudioDump
 		{
 			var lines = File.ReadAllLines(path);
 
-			string line, name, size, bank;
+			string line, temp, name;
+			int size, bank;
 			line = lines[0];
 			line = line.Replace("extern const unsigned char	", "");
 			line = line.Replace("[];", "");
 			line = line.Trim();
 			name = line;
-			//Names.Add(line);
 
 			line = lines[1];
 			line = line.Replace("#define				", "");
-			size = name + "_size";
-			line = line.Replace(size, "");
+			temp = name + "_size";
+			line = line.Replace(temp, "");
 			line = line.Trim();
-			size = line;
-			//Sizes.Add(line);
+			size = Convert.ToInt32(line); ;
 
 			line = lines[2];
 			line = line.Replace("#define				", "");
-			bank = name + "_bank";
-			line = line.Replace(bank, "");
+			temp = name + "_bank";
+			line = line.Replace(temp, "");
 			line = line.Trim();
-			bank = line;
-			//Banks.Add(line);
+			bank = Convert.ToInt32(line);
 
 			var obj = new FileObject(name, bank, size);
 			Data.Add(obj);
