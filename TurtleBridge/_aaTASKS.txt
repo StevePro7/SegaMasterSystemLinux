@@ -1,0 +1,96 @@
+TASKS
+27-Feb-2022
+
+One month to go until deadline:
+
+List of tasks
+
+01.
+Finalize audio
+get any outstanding tunes
+e.g.
+Shinobi	complete screen
+Beatscreen audio
+
+stage play any other audio
+SFX used from before	e.g. Cheat
+
+
+PCMs consolidate into multiple banks
+
+
+02.
+Design ALL the levels
+
+03.
+Record playing levels for demo
+
+04.
+finalize level select - save in SRAM for future
+
+04b.
+level select screen by screen but
+integrate checkpoints
+each level has 4x checkpoints which is levelsize / 4
+
+05.
+finalize difficulty as can be in the air
+hardcode the row where the text lives
+
+06.
+beat screen
+record 4x difficulty for 4x the final beat screen
+
+07.
+loop game play from
+init => load => [ready] => dead
+init => load => [ready] => dead => init	checkpoint
+init => load => [ready] => dead => cont
+init => load => [ready] => dead => cont => init
+init => load => [ready] => dead => cont => over
+
+init => load => [ready] => pass
+init => load => [ready] => pass => init
+
+08.
+additional sprites
+heart??
+
+09.
+intro => demo
+demo screen has commands text
+ LEFT	RIGHT
+   UP	 DOWN
+FIRE1	FIRE2
+
+
+10.
+Integrate checkpoints into level manager
+and while playing
+
+
+11.
+save in SRAM
+world, round, check, diff
+
+
+12.
+Integrate cheat into "intro" screen
+INSERT COIN(S)
+
+if go back to title then revert
+but if go fwd then keep...
+
+
+13.
+Level editor
+print the number of empty wave blocks to make it easier to eyeball and not have impossible levels
+copy the output of bank6.c back to the original file so don't have to manually copy n' paste
+
+14.
+physics jump arrays
+midd	delta	range
+12	4	8,12,16
+9	3	6,9,12
+6	2	4,6,8
+3	1	2,3,4
