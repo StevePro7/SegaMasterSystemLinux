@@ -9,14 +9,11 @@ namespace AudioDump
 	{
 		private const string root = @"D:/GitHub/StevePro8/SegaMasterSystemLinux/TurtleBridge/sound/";
 
-		public FileManager()
+		public void DumpFiles(string project)
 		{
 			Data = new List<FileObject>();
 			Lines = new List<string>();
-		}
 
-		public void DumpFiles(string project)
-		{
 			string path = String.Format("{0}{1}/dev/banks/", root, project);
 			var files = Directory.GetFiles(path, "*.h");
 
