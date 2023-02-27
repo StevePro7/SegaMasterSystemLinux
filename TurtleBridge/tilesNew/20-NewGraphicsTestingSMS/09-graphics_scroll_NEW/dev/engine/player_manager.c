@@ -183,11 +183,6 @@ void engine_player_manager_set_action( unsigned char frame, unsigned char comman
 			//po->jumper_index += 1;
 		}
 
-
-		// TODO - delete - hard code this value during physics testing!!
-		//newIndex = 4;
-		// TODO - delete - hard code this value during physics testing!!
-
 		po->jumper_index = newIndex;
 		po->deltaY_index = 0;
 
@@ -196,7 +191,8 @@ void engine_player_manager_set_action( unsigned char frame, unsigned char comman
 		jump_len = jump_array_len[ po->jumper_index ];
 
 		// TODO delete this debugging info - for newIndex!!
-		//engine_font_manager_data( po->jumper_index, 31, 5 );
+		engine_font_manager_data( po->jumper_index, 31, 5 );
+		// TODO delete this debugging info - for newIndex!!
 	}
 	else
 	{
@@ -216,7 +212,7 @@ void engine_player_manager_set_action( unsigned char frame, unsigned char comman
 			//engine_font_manager_data( newFrame, 30, 11 );
 			//engine_font_manager_data( po->player_frame, 30, 13 );
 			//po->player_frame = engine_cartoon_manager_flip( frame, command );
-		//	engine_font_manager_data( po->player_frame, 30, 14 );
+			//engine_font_manager_data( po->player_frame, 30, 14 );
 		}
 	}
 

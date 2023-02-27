@@ -284,7 +284,7 @@ namespace ScreenShotTest
 
 			var contents = total.ToArray();
 			File.WriteAllLines(path + "/fixedbank.c", contents);
-			File.WriteAllLines(path + "/../../../../fixedbank.c", contents);
+			
 		}
 
 		private void DumpData2(List<int> data3, string path)
@@ -334,7 +334,9 @@ namespace ScreenShotTest
 			}
 
 			file.Add("};");
-			File.WriteAllLines(path + "/bank6.c", file.ToArray());
+			var contents = file.ToArray();
+			File.WriteAllLines(path + "/bank6.c", contents);
+			File.WriteAllLines(path + "/../../../../../bank6.c", contents);
 
 			file.Clear();
 			file.Add("extern const unsigned char " + name + "[];");
