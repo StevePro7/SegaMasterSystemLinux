@@ -13,7 +13,7 @@ static unsigned char collisionDelta;
 static unsigned char collisionRange;
 static bool moreForgiving;
 
-void engine_collision_manager_initX( unsigned char difficulty )
+void engine_collision_manager_init( unsigned char difficulty )
 {
 	// Harder + Insane collision delta = 1px range as is less forgiving.
 	difficulty += 0;
@@ -30,7 +30,7 @@ void engine_collision_manager_initX( unsigned char difficulty )
 }
 
 // ORG
-void engine_collision_manager_init( unsigned char difficulty )
+void engine_collision_manager_initX( unsigned char difficulty )
 {
 	// Harder + Insane collision delta = 1px range as is less forgiving.
 	collisionDelta = 1;

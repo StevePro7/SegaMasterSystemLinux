@@ -1,8 +1,8 @@
 M:collision_manager
-F:G$engine_collision_manager_initX$0_0$0({2}DF,SV:S),C,0,0,0,0,0
-S:Lcollision_manager.engine_collision_manager_initX$difficulty$1_0$7({1}SC:U),B,1,4
 F:G$engine_collision_manager_init$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lcollision_manager.engine_collision_manager_init$difficulty$1_0$10({1}SC:U),B,1,4
+S:Lcollision_manager.engine_collision_manager_init$difficulty$1_0$7({1}SC:U),B,1,4
+F:G$engine_collision_manager_initX$0_0$0({2}DF,SV:S),C,0,0,0,0,0
+S:Lcollision_manager.engine_collision_manager_initX$difficulty$1_0$10({1}SC:U),B,1,4
 F:G$engine_collision_manager_player$0_0$0({2}DF,SC:S),Z,0,0,0,0,0
 S:Lcollision_manager.engine_collision_manager_player$lookX$1_0$13({1}SC:U),B,1,4
 S:Lcollision_manager.engine_collision_manager_player$tileY$1_0$13({1}SC:U),B,1,5

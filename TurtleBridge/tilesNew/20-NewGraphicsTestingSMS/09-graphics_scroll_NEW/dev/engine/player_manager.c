@@ -163,7 +163,7 @@ void engine_player_manager_set_action( unsigned char frame, unsigned char comman
 
 		// TODO - calculate this - determine jump index
 		newIndex = 2;
-		//newIndex = 9;		// TODO - delete - hard code this value during physics testing!!
+		newIndex = 7;		// TODO - delete - hard code this value during physics testing!!
 		if( ( COMMAND_LEFT_MASK & command ) == COMMAND_LEFT_MASK )
 		{
 			newIndex = 1;
