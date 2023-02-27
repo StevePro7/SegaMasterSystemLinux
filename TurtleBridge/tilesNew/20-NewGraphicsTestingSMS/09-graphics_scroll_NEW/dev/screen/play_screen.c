@@ -69,10 +69,10 @@ void screen_play_screen_update( unsigned char *screen_type )
 		//{
 		//	command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 0 );
 		//}
-		//if(	2 == fo->frame_count )
-		//{
-		//	command = engine_command_manager_build( po->player_state, 1, 0, 0, 0, 0, 0 );
-		//}
+		if(	0 == fo->frame_count )
+		{
+			command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 1 );
+		}
 		//else if( 3 == fo->frame_count )
 		//{
 		//	command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 0 );

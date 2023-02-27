@@ -284,6 +284,7 @@ namespace ScreenShotTest
 
 			var contents = total.ToArray();
 			File.WriteAllLines(path + "/fixedbank.c", contents);
+			File.WriteAllLines(path + "/../../../../fixedbank.c", contents);
 		}
 
 		private void DumpData2(List<int> data3, string path)
