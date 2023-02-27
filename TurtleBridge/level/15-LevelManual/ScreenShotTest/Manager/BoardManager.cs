@@ -42,37 +42,7 @@ namespace ScreenShotTest
 			stripVert = myContentManager.Load<Texture2D>("StripVert");
 		}
 
-		private void ProcessWaveGaps()
-		{
-			waveCount.Clear();
-			wavePosns.Clear();
-
-			var length = levelManager.Tiles.Length;
-			int count = 0;
-			for (int index = length - 1; index >= 0; index--)
-			{
-				var element = levelManager.Tiles[index];
-				if ((int)tile_type.tile_type_waves_block == element)
-				{
-					count++;
-				}
-				else
-				{
-					if (count > 0)
-					{
-						waveCount.Add(count);
-						wavePosns.Add(index);
-						count = 0;
-					}
-				}
-			}
-			if (count > 0)
-			{
-				waveCount.Add(count);
-				wavePosns.Add(0);
-				count = 0;
-			}
-		}
+		
 
 		public void Update()
 		{
@@ -173,5 +143,38 @@ namespace ScreenShotTest
 				}
 			}
 		}
+
+		private void ProcessWaveGaps()
+		{
+			waveCount.Clear();
+			wavePosns.Clear();
+
+			var length = levelManager.Tiles.Length;
+			int count = 0;
+			for (int index = length - 1; index >= 0; index--)
+			{
+				var element = levelManager.Tiles[index];
+				if ((int)tile_type.tile_type_waves_block == element)
+				{
+					count++;
+				}
+				else
+				{
+					if (count > 0)
+					{
+						waveCount.Add(count);
+						wavePosns.Add(index);
+						count = 0;
+					}
+				}
+			}
+			if (count > 0)
+			{
+				waveCount.Add(count);
+				wavePosns.Add(0);
+				count = 0;
+			}
+		}
+
 	}
 }
