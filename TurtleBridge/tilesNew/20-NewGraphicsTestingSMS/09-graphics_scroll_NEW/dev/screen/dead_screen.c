@@ -22,7 +22,7 @@ void screen_dead_screen_load()
 
 	// TODO - do I want to wrap this in an API?
 	po->posnX = po->initX;
-	engine_font_manager_text( "DEAD SCREEN!!", 1, 5 );
+	//engine_font_manager_text( "DEAD SCREEN!!", 1, 5 );
 	deltaX = engine_player_manager_get_deltaX( po->player_state, co->prev_command );
 	//deltaX += 1;			// As player was previously in the air before dying.
 	engine_player_manager_draw();
@@ -45,12 +45,13 @@ void screen_dead_screen_update( unsigned char *screen_type )
 
 	if( swap )
 	{
-		engine_font_manager_text( "NEXT SCREEN!!", 1, 6 );
+		//engine_font_manager_text( "NEXT SCREEN!!", 1, 6 );
 	}
 	else
 	{
 		input1 = engine_input_manager_hold( input_type_up );
 		input2 = engine_input_manager_move( input_type_down );
+		//input1 = 1;		// TODO delete
 		if( input1 || input2 )
 		{
 			// Set horizontal movement.
