@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AudioDump
 {
@@ -16,6 +14,7 @@ namespace AudioDump
 			Names = new List<string>();
 			Banks = new List<string>();
 			Sizes = new List<string>();
+			Lines = new List<string>();
 		}
 
 		public void DumpFiles(string project)
@@ -24,13 +23,21 @@ namespace AudioDump
 			var files = Directory.GetFiles(path, "*.h");
 			foreach (var file in files)
 			{
-				DumpFiles(file);
+				DumpFile(file);
 			}
+
+			for (int index = 0; index < Names.Count; index++)
+			{
+				string line = String.Format("{0},{1},{2}", Banks[index], Names[index], Sizes[index]);
+				Lines.Add(line);
+			}
+
+			var contents = Lines.ToArray();
+			File.WriteAllLines(project + ".csv", contents);
 		}
 
-		public void DumpFile(string file)
+		public void DumpFile(string path)
 		{
-			string path = String.Format("{0}SampleTest01/dev/banks/{1}", root, file);
 			var lines = File.ReadAllLines(path);
 
 			string line, name, size, bank;
@@ -59,5 +66,6 @@ namespace AudioDump
 		public List<string> Names { get; private set; }
 		public List<string> Banks { get; private set; }
 		public List<string> Sizes { get; private set; }
+		public List<string> Lines { get; private set; }
 	}
 }
