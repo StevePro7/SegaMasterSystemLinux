@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Collections.Generic;
 
 namespace ScreenShotTest
 {
@@ -14,6 +15,8 @@ namespace ScreenShotTest
 		private LevelManager levelManager;
 		private SelectorManager selectorManager;
 		private Texture2D stripHorz, stripVert;
+		private SpriteFont font;
+		private List<int> waveCount, wavePosns;
 		private int wide, high;
 
 		public BoardManager(Game game, AssetManager assetManager, FileManager fileManager, InputManager inputManager, LevelManager levelManager, SelectorManager selectorManager, int wide, int high)
@@ -28,17 +31,53 @@ namespace ScreenShotTest
 			this.high = high;
 
 			game.Window.Title = "Editor";
+			waveCount = new List<int>();
+			wavePosns = new List<int>();
 		}
 
 		public void LoadContent(ContentManager myContentManager)
 		{
+			font = myContentManager.Load<SpriteFont>("Emulogic");
 			stripHorz = myContentManager.Load<Texture2D>("StripHorz");
 			stripVert = myContentManager.Load<Texture2D>("StripVert");
+		}
+
+		private void ProcessWaveGaps()
+		{
+			waveCount.Clear();
+			wavePosns.Clear();
+
+			var length = levelManager.Tiles.Length;
+			int count = 0;
+			for (int index = length - 1; index >= 0; index--)
+			{
+				var element = levelManager.Tiles[index];
+				if ((int)tile_type.tile_type_waves_block == element)
+				{
+					count++;
+				}
+				else
+				{
+					if (count > 0)
+					{
+						waveCount.Add(count);
+						wavePosns.Add(index);
+						count = 0;
+					}
+				}
+			}
+			if (count > 0)
+			{
+				waveCount.Add(count);
+				wavePosns.Add(0);
+				count = 0;
+			}
 		}
 
 		public void Update()
 		{
 			levelManager.Validate();
+			ProcessWaveGaps();
 			if (!inputManager.KeyHold(Keys.Enter))
 			{
 				return;
@@ -122,6 +161,17 @@ namespace ScreenShotTest
 				spriteBatch.Draw(stripHorz, new Vector2(row, 112), Color.Black);
 			}
 
+			if (wavePosns.Count > 0)
+			{
+				for (index = 0; index < wavePosns.Count; index++)
+				{
+					var cnt = waveCount[index];
+					var xxx = wavePosns[index];
+					int yyy = 0 == xxx ? 0 : xxx + 1;
+					pos = new Vector2(yyy * 16, 8);
+					spriteBatch.DrawString(font, cnt.ToString(), pos, Color.Yellow);
+				}
+			}
 		}
 	}
 }
