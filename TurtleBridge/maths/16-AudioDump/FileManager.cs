@@ -86,6 +86,17 @@ namespace AudioDump
 			}
 		}
 
+		public void Sporadic(string proj, string name, int bank, int size)
+		{
+			var obj = new FileObject(proj, name, bank, size);
+			var ext = Names.Contains(name);
+			if (!ext)
+			{
+				Names.Add(name);
+				Data.Add(obj);
+			}
+		}
+
 		public List<FileObject> Data { get; private set; }
 		public List<string> Lines { get; private set; }
 		public List<string> Names { get; private set; }
