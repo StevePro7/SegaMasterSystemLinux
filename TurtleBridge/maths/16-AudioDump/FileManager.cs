@@ -8,6 +8,7 @@ namespace AudioDump
 	public class FileManager
 	{
 		private const string root = @"E:/GitHub/StevePro8/SegaMasterSystemLinux/TurtleBridge/sound/";
+		//private const string root = @"E:/GitHub/StevePro8/SegaMasterSystemLinux/TurtleBridge/maths/20-BankBuildSMS/dev/banks/";
 
 		public FileManager()
 		{
@@ -19,6 +20,7 @@ namespace AudioDump
 		public void DumpFiles(string project)
 		{
 			string path = String.Format("{0}{1}/dev/banks/", root, project);
+			//string path = root;
 			var files = Directory.GetFiles(path, "*.h");
 			foreach (var file in files)
 			{
@@ -56,6 +58,10 @@ namespace AudioDump
 			line = line.Replace("[];", "");
 			line = line.Trim();
 			name = line;
+			if (name.Contains("GnRSucked"))
+			{
+				return;
+			}
 
 			line = lines[1];
 			line = line.Replace("#define				", "");
@@ -75,7 +81,7 @@ namespace AudioDump
 			var ext = Names.Contains(name);
 			if (!ext)
 			{
-				//Names.Add(name);
+				Names.Add(name);
 				Data.Add(obj);
 			}
 		}
