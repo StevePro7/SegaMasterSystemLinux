@@ -5,7 +5,7 @@ static void start();
 void main( void )
 {
 	static bool global_pause;
-	//unsigned char input;
+	unsigned char input;
 	start();
 	for( ;; )
 	{
@@ -34,12 +34,12 @@ void main( void )
 		devkit_SMS_initSprites();
 		engine_input_manager_update();
 
-		//input = engine_input_manager_move( input_type_fire2 );
-		//if( input )
-		//{
-		//	devkit_PSGStop();
-		//	start();
-		//}
+		input = engine_input_manager_move( input_type_fire2 );
+		if( input )
+		{
+			devkit_PSGStop();
+			start();
+		}
 
 		engine_screen_manager_update();
 
@@ -58,7 +58,7 @@ static void start()
 	unsigned char open_screen_type;
 
 	devkit_SMS_init();
-	//engine_debug_manager_initcontent();
+	engine_debug_manager_initcontent();
 
 	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_NORMAL() );
 	devkit_SMS_useFirstHalfTilesforSprites( false );
@@ -99,7 +99,7 @@ static void start()
 	
 	//open_screen_type = screen_type_demo;
 	//open_screen_type = screen_type_dead;
-	//open_screen_type = screen_type_beat;
+	open_screen_type = screen_type_beat;
 
 	engine_player_manager_init();
 	engine_scroll_manager_init();

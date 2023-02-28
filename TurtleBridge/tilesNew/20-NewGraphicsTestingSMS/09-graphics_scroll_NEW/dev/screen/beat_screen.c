@@ -16,6 +16,7 @@
 void screen_beat_screen_load()
 {
 	struct_player_object *po = &global_player_object;
+	unsigned char data;
 
 	engine_player_manager_initX( 0 );
 	engine_player_manager_loadX( 0 );
@@ -27,6 +28,11 @@ void screen_beat_screen_load()
 	po->player_frame = 4;
 	engine_font_manager_data( po->player_frame, 10, 10 );
 
+	data = 17;
+	engine_font_manager_text( "HELLO", 20, 14 );
+	engine_font_manager_data( data, 24, 12 );
+
+	engine_font_manager_valu( data, 24, 14 );
 	//unsigned char data = 0xFF;
 	//unsigned char data = engine_random_manager_next( 256 );
 
