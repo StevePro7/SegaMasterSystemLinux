@@ -163,7 +163,7 @@ void engine_player_manager_set_action( unsigned char frame, unsigned char comman
 
 		// TODO - calculate this - determine jump index
 		newIndex = 2;
-		newIndex = 6;		// TODO - delete - hard code this value during physics testing!!
+		//newIndex = 6;		// TODO - delete - hard code this value during physics testing!!
 		if( ( COMMAND_LEFT_MASK & command ) == COMMAND_LEFT_MASK )
 		{
 			newIndex = 1;
@@ -191,7 +191,7 @@ void engine_player_manager_set_action( unsigned char frame, unsigned char comman
 		jump_len = jump_array_len[ po->jumper_index ];
 
 		// TODO delete this debugging info - for newIndex!!
-		//engine_font_manager_data( po->jumper_index, 31, 5 );
+		engine_font_manager_data( po->jumper_index, 31, 5 );
 		// TODO delete this debugging info - for newIndex!!
 	}
 	else
