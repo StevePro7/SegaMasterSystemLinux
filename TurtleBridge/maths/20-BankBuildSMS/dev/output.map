@@ -33,7 +33,6 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000003  l__HEADER3                      
      00000003  l__HEADER4                      
      00000006  l__HEADER0                      
-     00000007  l__BANK4                        
      00000007  l__BANK5                        
      00000007  l__BANK6                        
      00000007  l__BANK7                        
@@ -57,6 +56,7 @@ Area                                    Addr        Size        Decimal Bytes (A
      000000BF  G$VDPControlPort$0_0$0             asm_manager
      0000012A  l__HEADER5                      
      0000016A  l__DATA                         
+     00000200  s__CODE                         
 ASxxxx Linker V03.00 + NoICE + sdld,  page 2.
 Hexadecimal  [32-Bits]
 
@@ -66,7 +66,6 @@ Area                                    Addr        Size        Decimal Bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00000200  s__CODE                         
      000006A1  l__BANK24                       
      00000C9A  l__BANK14                       
      000017E2  l__BANK3                        
@@ -117,6 +116,7 @@ Area                                    Addr        Size        Decimal Bytes (A
      00003CA6  l__BANK41                       
      00003CF7  l__BANK51                       
      00003DB1  l__BANK33                       
+     00003DBB  l__BANK52                       
 ASxxxx Linker V03.00 + NoICE + sdld,  page 3.
 Hexadecimal  [32-Bits]
 
@@ -126,13 +126,13 @@ Area                                    Addr        Size        Decimal Bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00003DBB  l__BANK52                       
      00003E1C  l__BANK43                       
      00003E31  l__BANK54                       
      00003E8F  l__BANK58                       
      00003F11  l__BANK10                       
      00003F1B  l__BANK26                       
      00003FC1  l__BANK45                       
+     00004000  l__BANK4                        
      00008000  G$SMS_SRAM$0$0                     _sms_manager
      00008000  _SMS_SRAM                          SMSlib_loadTileMap
      00008000  s__BANK10                       
@@ -4319,12 +4319,26 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK4                              00008000    00000007 =           7. bytes (REL,CON)
+_BANK4                              00008000    00004000 =       16384. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$bank4_txt$0_0$0                  bank4
-     00008000  _bank4_txt                         bank4
+     00008000  G$stevepro01$0_0$0                 bank4
+     00008000  _stevepro01                        bank4
+     00008800  G$stevepro02$0_0$0                 bank4
+     00008800  _stevepro02                        bank4
+     00009000  G$stevepro03$0_0$0                 bank4
+     00009000  _stevepro03                        bank4
+     00009800  G$stevepro04$0_0$0                 bank4
+     00009800  _stevepro04                        bank4
+     0000A000  G$stevepro05$0_0$0                 bank4
+     0000A000  _stevepro05                        bank4
+     0000A800  G$stevepro06$0_0$0                 bank4
+     0000A800  _stevepro06                        bank4
+     0000B000  G$stevepro07$0_0$0                 bank4
+     0000B000  _stevepro07                        bank4
+     0000B800  G$stevepro08$0_0$0                 bank4
+     0000B800  _stevepro08                        bank4
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 84.
 Hexadecimal  [32-Bits]
