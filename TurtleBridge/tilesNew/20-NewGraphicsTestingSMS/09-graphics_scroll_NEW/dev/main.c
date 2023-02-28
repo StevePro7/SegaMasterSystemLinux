@@ -58,7 +58,7 @@ static void start()
 	unsigned char open_screen_type;
 
 	devkit_SMS_init();
-	//engine_debug_manager_initcontent();
+	engine_debug_manager_initcontent();
 
 	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_NORMAL() );
 	devkit_SMS_useFirstHalfTilesforSprites( false );

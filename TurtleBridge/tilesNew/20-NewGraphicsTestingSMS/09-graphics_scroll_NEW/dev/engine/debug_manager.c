@@ -22,7 +22,7 @@ void engine_debug_manager_initgame()
 	go->game_round = 0;
 	// 9 = turtles
 	// 3 = long512
-	go->game_level = 6;// 9;
+	go->game_level = 3;// 9;
 	go->game_point = 0;
 	//go->game_level = 3;	// trees
 	//go->game_level = 7;	// trees
