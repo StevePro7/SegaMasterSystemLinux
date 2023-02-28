@@ -28,9 +28,13 @@ namespace AudioDump
 			}
 		}
 
-		public void Save()
+		public void Sort()
 		{
 			Data = Data.OrderByDescending(x => x.Size).ToList();
+		}
+
+		public void Save()
+		{
 			for (int index = 0; index < Data.Count; index++)
 			{
 				var item = Data[index];
