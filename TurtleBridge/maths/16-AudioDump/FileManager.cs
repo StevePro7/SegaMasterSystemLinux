@@ -7,37 +7,45 @@ namespace AudioDump
 {
 	public class FileManager
 	{
-		private const string root = @"D:/GitHub/StevePro8/SegaMasterSystemLinux/TurtleBridge/sound/";
+		private const string root = @"E:/GitHub/StevePro8/SegaMasterSystemLinux/TurtleBridge/sound/";
 
-		public void DumpFiles(string project)
+		public FileManager()
 		{
 			Data = new List<FileObject>();
 			Lines = new List<string>();
+			Names = new List<string>();
+		}
 
+		public void DumpFiles(string project)
+		{
 			string path = String.Format("{0}{1}/dev/banks/", root, project);
 			var files = Directory.GetFiles(path, "*.h");
-
 			foreach (var file in files)
 			{
-				DumpFile(file);
+				DumpFile(project, file);
 			}
+		}
 
+		public void Save()
+		{
 			Data = Data.OrderByDescending(x => x.Size).ToList();
 			for (int index = 0; index < Data.Count; index++)
 			{
 				var item = Data[index];
-				string line = String.Format("{0},{1},{2}",
+				string line = String.Format("{0},{1},{2},{3}",
+					item.Proj,
 					item.Bank,
 					item.Name,
 					item.Size);
 				Lines.Add(line);
 			}
 
+			var fileName = "audiodump.csv";
 			var contents = Lines.ToArray();
-			File.WriteAllLines(project + ".csv", contents);
+			File.WriteAllLines(fileName, contents);
 		}
 
-		public void DumpFile(string path)
+		public void DumpFile(string proj, string path)
 		{
 			var lines = File.ReadAllLines(path);
 
@@ -63,11 +71,17 @@ namespace AudioDump
 			line = line.Trim();
 			bank = Convert.ToInt32(line);
 
-			var obj = new FileObject(name, bank, size);
-			Data.Add(obj);
+			var obj = new FileObject(proj, name, bank, size);
+			var ext = Names.Contains(name);
+			if (!ext)
+			{
+				//Names.Add(name);
+				Data.Add(obj);
+			}
 		}
 
 		public List<FileObject> Data { get; private set; }
 		public List<string> Lines { get; private set; }
+		public List<string> Names { get; private set; }
 	}
 }
