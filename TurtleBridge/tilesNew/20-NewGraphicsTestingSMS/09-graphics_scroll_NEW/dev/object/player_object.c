@@ -11,23 +11,17 @@ const unsigned char player_object_starts[] = { 40, 72, 104, 136 };		// BEST BEST
 const unsigned char player_object_deltas[] = { 0, 0, 0, 0, 0, 4, 0, 4, 0, 4, 0, 4, };
 
 
+//signed int
 const signed int *jump_array_ptr[] =
 {
-	//signed int
 	jump_array_00,
 	jump_array_01,
 	jump_array_02,
 	jump_array_03,
 	jump_array_04,
-	//jump_array_99,
-	//jump_array_20,
-	//jump_array_40,
-	//jump_array_80,
-	//jump_array_130,
-};	
-	
-//const char jump_array_len[] = { 17, 34 };
-//const unsigned char jump_array_len[] = { 17, 32, 32, 32, 32, 67, 54, 85, 134, 178 };
+};
+
+
 const unsigned char jump_array_len[] = { 17, 54, 82, 134, 178 };
 
 // Gravity directly from Platform Explorer but in fixed function mode.
@@ -62,7 +56,26 @@ const signed int jump_array_04[] =
 };
 
 
+
+// TODO delete / archive
+// PREV code	now dead
+//const signed int *jump_array_ptr[] =
+//{
+//	//signed int
+//	jump_array_00,
+//	jump_array_01,
+//	jump_array_02,
+//	jump_array_03,
+//	jump_array_04,
+//	//jump_array_99,
+//	//jump_array_20,
+//	//jump_array_40,
+//	//jump_array_80,
+//	//jump_array_130,
+//};
+
 // Line:81
+//const unsigned char jump_array_len[] = { 17, 32, 32, 32, 32, 67, 54, 85, 134, 178 };
 // MaxJumper:13- Angle:40 Speed:65: HorzDist:425 VertDist:89 MaxFrames:178			 BEST BEST		confirm jump makes 12x gaps	MIDD	16x gaps RGHT	8x gaps LEFT
 //const signed int jump_array_130[] =
 //{

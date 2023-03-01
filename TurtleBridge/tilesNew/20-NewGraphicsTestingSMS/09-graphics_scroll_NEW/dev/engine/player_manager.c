@@ -104,7 +104,7 @@ unsigned char engine_player_manager_get_deltaX( unsigned char state, unsigned ch
 	unsigned char deltaX;
 
 	//deltaX = 0;
-	deltaX = 2;		// TODO - try 2, 4, 6, 8
+	deltaX = 4;		// TODO - try 2, 4, 6, 8
 	if( ( COMMAND_LEFT_MASK & command ) == COMMAND_LEFT_MASK )
 	{
 		// Back up when facing forward and going slower...
@@ -115,17 +115,17 @@ unsigned char engine_player_manager_get_deltaX( unsigned char state, unsigned ch
 			//po->player_frame = player_frame_ground_rght_01;
 		}
 
-		deltaX -= 1;
+		deltaX -= 2;
 	}
 	if( ( COMMAND_RGHT_MASK & command ) == COMMAND_RGHT_MASK )
 	{
-		deltaX += 1;
+		deltaX += 2;
 	}
 
 	// Add 1px when player in the air.
 	if( player_state_isintheair == state )
 	{
-		deltaX += 1;
+		deltaX += 2;
 	}
 
 	return deltaX;
