@@ -59,7 +59,7 @@ void screen_level_screen_load()
 }
 
 
-void screen_level_screen_update( unsigned char *screen_type )
+void screen_level_screen_updateY( unsigned char *screen_type )
 {
 	unsigned char input;
 
@@ -123,7 +123,7 @@ void screen_level_screen_update( unsigned char *screen_type )
 	*screen_type = screen_type_level;
 }
 
-void screen_level_screen_updateX( unsigned char *screen_type )
+void screen_level_screen_update( unsigned char *screen_type )
 {
 	unsigned char input;
 

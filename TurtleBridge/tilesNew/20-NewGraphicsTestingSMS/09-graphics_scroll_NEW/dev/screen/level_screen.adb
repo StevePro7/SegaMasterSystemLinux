@@ -1,12 +1,12 @@
 M:level_screen
 F:G$screen_level_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Llevel_screen.screen_level_screen_load$go$1_0$121({2}DG,STtag_struct_game_object:S),R,0,0,[]
+F:G$screen_level_screen_updateY$0_0$0({2}DF,SV:S),C,0,0,0,0,0
+S:Llevel_screen.screen_level_screen_updateY$screen_type$1_0$122({2}DG,SC:U),B,1,4
+S:Llevel_screen.screen_level_screen_updateY$input$1_0$123({1}SC:U),R,0,0,[a]
 F:G$screen_level_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Llevel_screen.screen_level_screen_update$screen_type$1_0$122({2}DG,SC:U),B,1,4
-S:Llevel_screen.screen_level_screen_update$input$1_0$123({1}SC:U),R,0,0,[a]
-F:G$screen_level_screen_updateX$0_0$0({2}DF,SV:S),C,0,0,0,0,0
-S:Llevel_screen.screen_level_screen_updateX$screen_type$1_0$134({2}DG,SC:U),B,1,4
-S:Llevel_screen.screen_level_screen_updateX$input$1_0$135({1}SC:U),R,0,0,[a]
+S:Llevel_screen.screen_level_screen_update$screen_type$1_0$134({2}DG,SC:U),B,1,4
+S:Llevel_screen.screen_level_screen_update$input$1_0$135({1}SC:U),R,0,0,[a]
 F:Flevel_screen$printStats$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Llevel_screen.printStats$delta$1_0$147({1}SC:U),R,0,0,[]
 F:Flevel_screen$printTexts$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
@@ -231,4 +231,4 @@ S:G$devkit_SMS_addSprite_bulk8$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_addSprite_bulk12$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_setTilePriority$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_isCollisionDetected$0_0$0({2}DF,SC:U),C,0,0
-S:G$screen_level_screen_updateX$0_0$0({2}DF,SV:S),C,0,0
+S:G$screen_level_screen_updateY$0_0$0({2}DF,SV:S),C,0,0

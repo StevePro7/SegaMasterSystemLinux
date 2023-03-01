@@ -130,6 +130,8 @@ unsigned char engine_player_manager_get_deltaX( unsigned char state, unsigned ch
 		deltaX += 1;		// PRE 1st March 2023
 	}
 
+	// TODO IMPORTANT - hardcoded for jump array testing!!
+	deltaX = 1;
 	return deltaX;
 }
 
@@ -185,7 +187,7 @@ void engine_player_manager_set_action( unsigned char frame, unsigned char comman
 			//po->jumper_index += 1;
 		}
 
-		po->jumper_index = newIndex;
+		po->jumper_index = 1;// newIndex;
 		po->deltaY_index = 0;
 
 		// Set the jump array information.

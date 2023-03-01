@@ -23,10 +23,14 @@
 static bool complete;
 static signed int deltaY;
 
+static unsigned int totalX;
+static unsigned char frameX;
+static unsigned char flag;
+
 void screen_play_screen_load()
 {
 	engine_frame_manager_load();
-	//engine_frame_manager_draw();
+	engine_frame_manager_draw();
 
 	//19-Feb-2023
 	// TODO - iron this out but IMPORTANT - I don't think I want to play music in same function as draw title etc. as causes screen flicker??
@@ -35,6 +39,10 @@ void screen_play_screen_load()
 	//engine_debug_manager_printout();
 	complete = false;
 	deltaY = 0;
+
+	totalX = 0;
+	frameX = 0;
+	flag = 0;
 }
 
 void screen_play_screen_update( unsigned char *screen_type )
@@ -60,18 +68,21 @@ void screen_play_screen_update( unsigned char *screen_type )
 	
 	input1 = engine_input_manager_hold( input_type_left );
 	input2 = engine_input_manager_move( input_type_right );
-	//input1 = 1;		// TODO delete
+	input1 = 1;		// TODO delete
 	if( input1 || input2 )
 	{
-		command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 0 );
-
-		//if( 0 == fo->frame_count )
+		if( 0 == fo->frame_count )
 		{
 			//command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 1 );		//Jump index = 1.
-			//command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 1 );		//Jump index = 2.
+			command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 1 );		//Jump index = 2.
 			//command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 1 );		//Jump index = 3.
 			//command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 1 );		//Jump index = 4.
 		}
+		else
+		{
+			command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 0 );
+		}
+
 		//if( 24 == fo->frame_count )
 		{
 			//command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 1, 0 );
@@ -108,7 +119,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 		//command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 0 );
 
 		engine_frame_manager_update();
-		//engine_frame_manager_draw();
+		engine_frame_manager_draw();
 		//if( 60 == fo->frame_count )
 		//{
 		//	command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 1, 0 );
@@ -135,6 +146,21 @@ void screen_play_screen_update( unsigned char *screen_type )
 	{
 		// Get horizontal movement.
 		deltaX = engine_player_manager_get_deltaX( po->player_state, command );
+
+		if( po->player_state == player_state_isintheair )
+		{
+			totalX += deltaX;
+			frameX++;
+		}
+		else
+		{
+			if( fo->frame_count > 1 && po->player_state == player_state_isonground && !flag )
+			{
+				flag = 1;
+				engine_font_manager_data( totalX, 30, 2 );
+				engine_font_manager_data( frameX, 30, 3 );
+			}
+		}
 
 		// Get button action.
 		engine_player_manager_set_action( po->player_frame, command );
