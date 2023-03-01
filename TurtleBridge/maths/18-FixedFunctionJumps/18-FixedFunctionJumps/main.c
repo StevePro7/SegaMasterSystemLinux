@@ -32,9 +32,9 @@ void main()
 	int leapY = posnY << 8;
 	signed int deltaY = 0;
 	unsigned char index = 0;
-	unsigned char maxim = 54;
+	unsigned char maxim = 178;
 
-	printf( "jump_array_01 '%d'\n", posnY );
+	printf( "jump_array '%d'\n", posnY );
 	while( 1 )
 	{
 		if( index >= maxim )
@@ -42,17 +42,17 @@ void main()
 			break;
 		}
 		index++;
-		deltaY = jump_array_01[ index ];
+		deltaY = jump_array_04[ index ];
 		leapY += deltaY;
 		posnY = UFIX( leapY );
-		printf( "jump_array_01 '%d'\n", posnY );
+		printf( "jump_array '%d'\n", posnY );
 		if( posnY >= 128 )
 		{
 			break;
 		}
 	}
 
-	printf( "jump_array_01 '%d'\n", posnY );
-	printf( "jump_array_01 '%d'\n", index );
+	printf( "jump_array '%d'\n", posnY );
+	printf( "jump_array '%d'\n", index );
 	return;
 }
