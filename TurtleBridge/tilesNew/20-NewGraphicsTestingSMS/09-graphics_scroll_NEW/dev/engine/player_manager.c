@@ -131,7 +131,7 @@ unsigned char engine_player_manager_get_deltaX( unsigned char state, unsigned ch
 	}
 
 	// TODO IMPORTANT - hardcoded for jump array testing!!
-	deltaX = 1;
+	//deltaX = 5;
 	return deltaX;
 }
 
@@ -187,7 +187,7 @@ void engine_player_manager_set_action( unsigned char frame, unsigned char comman
 			//po->jumper_index += 1;
 		}
 
-		po->jumper_index = 1;// newIndex;
+		po->jumper_index = newIndex;
 		po->deltaY_index = 0;
 
 		// Set the jump array information.
