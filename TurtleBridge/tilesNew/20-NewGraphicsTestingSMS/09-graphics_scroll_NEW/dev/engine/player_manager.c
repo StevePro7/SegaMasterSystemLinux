@@ -104,7 +104,7 @@ unsigned char engine_player_manager_get_deltaX( unsigned char state, unsigned ch
 	unsigned char deltaX;
 
 	//deltaX = 0;
-	deltaX = 4;		// TODO - try 2, 4, 6, 8
+	deltaX = 2;		// TODO - try 2, 4, 6, 8
 	if( ( COMMAND_LEFT_MASK & command ) == COMMAND_LEFT_MASK )
 	{
 		// Back up when facing forward and going slower...
@@ -125,7 +125,9 @@ unsigned char engine_player_manager_get_deltaX( unsigned char state, unsigned ch
 	// Add 1px when player in the air.
 	if( player_state_isintheair == state )
 	{
-		deltaX += 2;
+		// IMPORTANT - harder w/ onground=2px and inair delta+=1 will fall over single gap but deltaX+=2 will "survive"
+		//deltaX += 2;		// post 1st March 2023
+		deltaX += 1;		// PRE 1st March 2023
 	}
 
 	return deltaX;

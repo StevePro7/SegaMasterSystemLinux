@@ -60,7 +60,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 	
 	input1 = engine_input_manager_hold( input_type_left );
 	input2 = engine_input_manager_move( input_type_right );
-	input1 = 1;		// TODO delete
+	//input1 = 1;		// TODO delete
 	if( input1 || input2 )
 	{
 		command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 0 );
