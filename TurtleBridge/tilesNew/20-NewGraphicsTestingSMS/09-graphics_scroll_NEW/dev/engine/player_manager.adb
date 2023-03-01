@@ -101,7 +101,7 @@ S:G$engine_collision_manager_finish$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_font_manager_zero$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_font_manager_valu$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_sprite_manager_draw$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_sprite_manager_mode$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_sprite_manager_zoom$0_0$0({2}DF,SV:S),C,0,0
