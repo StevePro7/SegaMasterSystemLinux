@@ -1,0 +1,9 @@
+M:bank4
+S:G$stevepro01$0_0$0({2048}DA2048d,SC:U),D,0,0
+S:G$stevepro02$0_0$0({2048}DA2048d,SC:U),D,0,0
+S:G$stevepro03$0_0$0({2048}DA2048d,SC:U),D,0,0
+S:G$stevepro04$0_0$0({2048}DA2048d,SC:U),D,0,0
+S:G$stevepro05$0_0$0({2048}DA2048d,SC:U),D,0,0
+S:G$stevepro06$0_0$0({2048}DA2048d,SC:U),D,0,0
+S:G$stevepro07$0_0$0({2048}DA2048d,SC:U),D,0,0
+S:G$stevepro08$0_0$0({2048}DA2048d,SC:U),D,0,0
