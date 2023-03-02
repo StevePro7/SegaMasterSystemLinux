@@ -1,17 +1,21 @@
 XL3
-H 9 areas D global symbols
+H 9 areas 11 global symbols
 M locale_manager
 O -mz80
 S .__.ABS. Def000000
-A _CODE size 4E flags 0 addr 0
+A _CODE size 8E flags 0 addr 0
 S Flocale_manager$__str_0$0_0$0 Def000000
 S Flocale_manager$__str_1$0_0$0 Def000007
 S Flocale_manager$__str_2$0_0$0 Def00000E
 S Flocale_manager$__str_3$0_0$0 Def00001E
 S Flocale_manager$__str_4$0_0$0 Def00002E
 S Flocale_manager$__str_5$0_0$0 Def00003E
+S Flocale_manager$__str_6$0_0$0 Def00004E
+S Flocale_manager$__str_7$0_0$0 Def00005E
+S Flocale_manager$__str_8$0_0$0 Def00006E
+S Flocale_manager$__str_9$0_0$0 Def00007E
 A _DATA size 0 flags 0 addr 0
-A _INITIALIZED size C flags 0 addr 0
+A _INITIALIZED size 14 flags 0 addr 0
 S _song_object_texts Def000004
 S G$song_object_texts$0_0$0 Def000004
 S _riff_object_texts Def000000
@@ -20,7 +24,7 @@ A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
-A _INITIALIZER size C flags 0 addr 0
+A _INITIALIZER size 14 flags 0 addr 0
 S Flocale_manager$__xinit_riff_object_texts$0_0$0 Def000000
 S Flocale_manager$__xinit_song_object_texts$0_0$0 Def000004
 A _CABS size 0 flags 8 addr 0
@@ -42,27 +46,51 @@ T 07 00 00 53 50 4C 41 53 48 00
 R 00 00 00 00
 T 0E 00 00
 R 00 00 00 00
-T 0E 00 00 41 4E 49 4D 45 4F 50 45 4E 49 4E 47 20
+T 0E 00 00 42 45 41 54 20 53 43 52 45 45 4E 20 20
 R 00 00 00 00
 T 1B 00 00 20 20 00
 R 00 00 00 00
 T 1E 00 00
 R 00 00 00 00
-T 1E 00 00 55 53 41 53 4A 55 42 41 52 55 49 4E 53
+T 1E 00 00 43 4F 4E 54 20 53 43 52 45 45 4E 20 20
 R 00 00 00 00
 T 2B 00 00 20 20 00
 R 00 00 00 00
 T 2E 00 00
 R 00 00 00 00
-T 2E 00 00 4D 4F 48 45 4E 4A 4F 44 41 52 4F 55 53
+T 2E 00 00 50 41 53 53 20 53 43 52 45 45 4E 20 20
 R 00 00 00 00
-T 3B 00 00 41 53 00
+T 3B 00 00 20 20 00
 R 00 00 00 00
 T 3E 00 00
 R 00 00 00 00
-T 3E 00 00 4D 41 53 54 45 52 54 52 41 43 4B 45 52
+T 3E 00 00 4F 56 45 52 20 53 43 52 45 45 4E 20 20
 R 00 00 00 00
 T 4B 00 00 20 20 00
+R 00 00 00 00
+T 4E 00 00
+R 00 00 00 00
+T 4E 00 00 41 4E 49 4D 45 4F 50 45 4E 49 4E 47 20
+R 00 00 00 00
+T 5B 00 00 20 20 00
+R 00 00 00 00
+T 5E 00 00
+R 00 00 00 00
+T 5E 00 00 55 53 41 53 4A 55 42 41 52 55 49 4E 53
+R 00 00 00 00
+T 6B 00 00 20 20 00
+R 00 00 00 00
+T 6E 00 00
+R 00 00 00 00
+T 6E 00 00 4D 4F 48 45 4E 4A 4F 44 41 52 4F 55 53
+R 00 00 00 00
+T 7B 00 00 41 53 00
+R 00 00 00 00
+T 7E 00 00
+R 00 00 00 00
+T 7E 00 00 4D 41 53 54 45 52 54 52 41 43 4B 45 52
+R 00 00 00 00
+T 8B 00 00 20 20 00
 R 00 00 00 00
 T 00 00 00
 R 00 00 07 00
@@ -72,5 +100,7 @@ T 04 00 00
 R 00 00 07 00
 T 04 00 00 0E 00 1E 00 2E 00
 R 00 00 07 00 00 03 00 00 00 05 00 00 00 07 00 00
-T 0A 00 00 3E 00
-R 00 00 07 00 00 03 00 00
+T 0A 00 00 3E 00 4E 00 5E 00
+R 00 00 07 00 00 03 00 00 00 05 00 00 00 07 00 00
+T 10 00 00 6E 00 7E 00
+R 00 00 07 00 00 03 00 00 00 05 00 00

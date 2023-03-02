@@ -27,7 +27,7 @@ void screen_song_screen_update( unsigned char *screen_type )
 	}
 
 	input = engine_input_manager_hold_down();
-	if( input && index < 3 )
+	if( input && index < 7 )
 	{
 		index++;
 		engine_font_manager_data( index, 14, 9 );
