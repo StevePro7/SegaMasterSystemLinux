@@ -73,11 +73,37 @@ const unsigned char riff_sample_bank[] =
 	Riff_Sound_Excellent10_01_wav_pcmenc_bank,
 };
 
-const unsigned char steven_object_numbers[] =
+// FIXED bank.
+// Audio Manager.
+const unsigned char *music_object_data[] =
 {
-	17,
-	34,
-	51,
+	animeopening_psg,
+	mastertracker_psg,
+	//sound0_psg,
+	//sound1_psg,
+	//sound2_psg,
+	//sound3_psg,
+	//sound4_psg,
+	//sound5_psg,
+	//sound6_psg,
+	//sound7_psg,
+	//sound8_psg,
+	//sound9_psg,
+};
+const unsigned char music_object_bank[] =
+{
+	animeopening_psg_bank,
+	mastertracker_psg_bank,
+	//sound0_psg_bank,
+	//sound1_psg_bank,
+	//sound2_psg_bank,
+	//sound3_psg_bank,
+	//sound4_psg_bank,
+	//sound5_psg_bank,
+	//sound6_psg_bank,
+	//sound7_psg_bank,
+	//sound8_psg_bank,
+	//sound9_psg_bank,
 };
 
 // FIXED bank.

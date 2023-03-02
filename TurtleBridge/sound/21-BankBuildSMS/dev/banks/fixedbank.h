@@ -4,7 +4,10 @@
 extern const unsigned char *riff_sample_data[];
 extern const unsigned char riff_sample_bank[];
 
-extern const unsigned char steven_object_numbers[];
+// FIXED bank.
+// Audio Manager.
+extern const unsigned char *music_object_data[];
+extern const unsigned char music_object_bank[];
 
 //// FIXED bank.
 //// Audio Manager.
