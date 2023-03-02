@@ -30,7 +30,6 @@ void main( void )
 		//devkit_SMS_copySpritestoSAT();
 		devkit_UNSAFE_SMS_copySpritestoSAT();		// TODO ensure this works
 
-		devkit_PSGFrame();
-		devkit_PSGSFXFrame();
+		engine_audio_manager_update();
 	}
 }

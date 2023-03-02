@@ -1,4 +1,9 @@
 M:locale_manager
-S:G$steven_object_texts$0_0$0({4}DA2d,DG,SC:U),E,0,0
-S:Flocale_manager$__str_0$0_0$0({4}DA4d,SC:U),D,0,0
-S:Flocale_manager$__str_1$0_0$0({4}DA4d,SC:U),D,0,0
+S:G$riff_object_texts$0_0$0({4}DA2d,DG,SC:U),E,0,0
+S:G$song_object_texts$0_0$0({8}DA4d,DG,SC:U),E,0,0
+S:Flocale_manager$__str_0$0_0$0({6}DA6d,SC:U),D,0,0
+S:Flocale_manager$__str_1$0_0$0({7}DA7d,SC:U),D,0,0
+S:Flocale_manager$__str_2$0_0$0({13}DA13d,SC:U),D,0,0
+S:Flocale_manager$__str_3$0_0$0({14}DA14d,SC:U),D,0,0
+S:Flocale_manager$__str_4$0_0$0({16}DA16d,SC:U),D,0,0
+S:Flocale_manager$__str_5$0_0$0({14}DA14d,SC:U),D,0,0

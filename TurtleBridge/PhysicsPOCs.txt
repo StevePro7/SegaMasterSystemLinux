@@ -1,4 +1,44 @@
 Physics POCs
+02-Feb-2023
+
+
+constraints
+gnd	cant go <1	>6
+air	cant go <2	>8
+
+linear
+123	234	+1
+234	345	+1
+345	456	+1
+456	567	+1
+567	678	+1
+
+
+FAST	opt#1
+123	234	+1	32
+234	345	+1	32
+345	567	+2	64
+456	567	+1	64
+456	678	+2	64
+
+FAST	opt#2
+234	345	+1
+345	456	+1
+345	567	+2
+456	567	+1
+456	678	+2
+
+//SLOW	CANT HAVE SLOW!!
+//will wreck fast jumps
+//1234	234	+1
+//2345	345	+1
+//2345	456	+2
+//3456	456	+1
+//3456	567	+2
+
+
+
+
 14-Jan-2023
 
 D:\GitHub\StevePro8\SegaMasterSystemLinux\TurtleBridge\tilesNew\07-wonderboyspritesJump\dev

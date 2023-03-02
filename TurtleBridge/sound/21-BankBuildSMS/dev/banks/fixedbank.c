@@ -1,4 +1,8 @@
 #include "fixedbank.h"
+#include "bank4.h"
+#include "bank5.h"
+#include "bank6.h"
+#include "bank7.h"
 #include "bank8.h"
 #include "bank40.h"
 #include "bank41.h"
@@ -78,6 +82,8 @@ const unsigned char riff_sample_bank[] =
 const unsigned char *music_object_data[] =
 {
 	animeopening_psg,
+	usas_jubaruins_psg,
+	mohenjodaro_usas_psg,
 	mastertracker_psg,
 	//sound0_psg,
 	//sound1_psg,
@@ -93,6 +99,8 @@ const unsigned char *music_object_data[] =
 const unsigned char music_object_bank[] =
 {
 	animeopening_psg_bank,
+	usas_jubaruins_psg_bank,
+	mohenjodaro_usas_psg_bank,
 	mastertracker_psg_bank,
 	//sound0_psg_bank,
 	//sound1_psg_bank,
@@ -423,7 +431,7 @@ const unsigned char steven_object_numbers[] =
 51,
 };
 
-const unsigned char *steven_object_texts[] =
+const unsigned char *riff_object_texts[] =
 {
 "STEVEPRO",
 "STUDIOS",

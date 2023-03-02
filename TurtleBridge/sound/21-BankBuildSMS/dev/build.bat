@@ -20,6 +20,7 @@ cd ..
 
 cd engine
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 asm_manager.c
+"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 audio_manager.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 audio_manager.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 content_manager.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 enum_manager.c
@@ -33,10 +34,14 @@ cd engine
 "C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 screen_manager.c
 cd ..
 
+cd object
+"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-size --peep-file ../peep-rules.txt --std-c99 audio_object.c
+cd ..
+
 cd screen
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 none_screen.c
 "C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 riff_screen.c
-::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 song_screen.c
+"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 song_screen.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 test_screen.c
 cd ..
 
@@ -78,10 +83,11 @@ banks/bank52.rel banks/bank53.rel banks/bank54.rel banks/bank55.rel banks/bank56
 banks/bank60.rel banks/bank61.rel banks/bank62.rel banks/fixedbank.rel ^
 devkit/_sms_manager.rel ^
 devkit/_snd_manager.rel ^
-engine/asm_manager.rel ^
+engine/asm_manager.rel engine/audio_manager.rel ^
 engine/content_manager.rel engine/enum_manager.rel engine/font_manager.rel ^
 engine/global_manager.rel engine/input_manager.rel engine/locale_manager.rel ^
 engine/riff_manager.rel engine/sample_manager.rel engine/screen_manager.rel ^
+object/audio_object.rel ^
 screen/none_screen.rel screen/riff_screen.rel screen/song_screen.rel screen/test_screen.rel
 
 

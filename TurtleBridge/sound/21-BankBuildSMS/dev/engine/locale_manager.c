@@ -1,7 +1,15 @@
 #include "locale_manager.h"
 
-const unsigned char *steven_object_texts[] =
+const unsigned char *riff_object_texts[] =
 {
-	"AAA",
-	"BBB",
+	"TITLE",
+	"SPLASH",
+};
+
+const unsigned char *song_object_texts[] =
+{
+	"ANIMEOPENING",
+	"USASJUBARUINS",
+	"MOHENJODAROUSAS",
+	"MASTERTRACKER",
 };

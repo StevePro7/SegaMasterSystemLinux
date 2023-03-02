@@ -3,7 +3,14 @@ F:G$screen_riff_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_riff_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lriff_screen.screen_riff_screen_update$screen_type$1_0$8({2}DG,SC:U),B,1,4
 S:Lriff_screen.screen_riff_screen_update$input$1_0$9({1}SC:U),R,0,0,[a]
-S:G$steven_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:Lriff_screen.screen_riff_screen_update$loops$1_0$9({1}SC:U),R,0,0,[e]
+S:Lriff_screen.screen_riff_screen_update$count$1_0$9({1}SC:U),R,0,0,[c]
+S:Lriff_screen.screen_riff_screen_update$value$1_0$9({1}SC:U),R,0,0,[b]
+S:Friff_screen$indexs$0_0$0({2}DA2d,SC:U),E,0,0
+S:Friff_screen$counts$0_0$0({2}DA2d,SC:U),E,0,0
+S:G$riff_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$song_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:Friff_screen$index$0_0$0({1}SC:U),E,0,0
 S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0_0$0({2}DF,SV:S),C,0,0
