@@ -1,12 +1,13 @@
 M:fixedbank
 S:G$riff_sample_data$0_0$0({38}DA19d,DG,SC:U),E,0,0
-S:G$music_object_data$0_0$0({16}DA8d,DG,SC:U),E,0,0
+S:G$music_object_data$0_0$0({18}DA9d,DG,SC:U),E,0,0
 S:G$animeopening_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$usas_jubaruins_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$mohenjodaro_usas_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$mastertracker_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$mus_beat_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$mus_cont_psg$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$mus_death_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$mus_level_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$mus_over_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff_Sound_Excellent10_01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
@@ -30,4 +31,4 @@ S:G$Riff__Splash__Screen__07_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff__Splash__Screen__08_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff__Splash__Screen__09_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$riff_sample_bank$0_0$0({19}DA19d,SC:U),D,0,0
-S:G$music_object_bank$0_0$0({8}DA8d,SC:U),D,0,0
+S:G$music_object_bank$0_0$0({9}DA9d,SC:U),D,0,0

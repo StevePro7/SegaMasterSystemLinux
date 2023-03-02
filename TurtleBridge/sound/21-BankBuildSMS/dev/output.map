@@ -45,10 +45,10 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000010  l__CABS0                        
      00000010  l__CABS4                        
      00000011  l__CABS2                        
-     0000001B  l__BANK63                       
+     0000001C  l__BANK63                       
      0000002D  l__CABS3                        
-     0000007A  l__INITIALIZED                  
-     0000007A  l__INITIALIZER                  
+     0000007C  l__INITIALIZED                  
+     0000007C  l__INITIALIZER                  
      000000BE  G$VDPDataPort$0_0$0                asm_manager
      000000BF  G$VDPControlPort$0_0$0             asm_manager
      0000012A  l__DATA                         
@@ -76,16 +76,16 @@ Area                                    Addr        Size        Decimal Bytes (A
      0000217D  l__BANK27                       
      0000223C  s__HOME                         
      0000223C  s__INITIALIZER                  
-     000022B6  s__GSINIT                       
-     000022C5  s__GSFINAL                      
+     000022B8  s__GSINIT                       
+     000022C7  s__GSFINAL                      
      0000241A  l__BANK12                       
      0000246C  l__BANK19                       
      0000281E  l__BANK38                       
      000028B9  l__BANK20                       
      00002C72  l__BANK36                       
      00002D08  l__BANK11                       
-     00002EA8  l__BANK7                        
      00002F8A  l__BANK34                       
+     00003086  l__BANK7                        
      000031E8  l__BANK8                        
      000032CD  l__BANK35                       
      000032ED  l__BANK37                       
@@ -208,9 +208,9 @@ Area                                    Addr        Size        Decimal Bytes (A
      00008000  s__BANK9                        
      0000C000  s__DATA                         
      0000C12A  s__INITIALIZED                  
-     0000C1A4  s__BSEG                         
-     0000C1A4  s__BSS                          
-     0000C1A4  s__HEAP                         
+     0000C1A6  s__BSEG                         
+     0000C1A6  s__BSS                          
+     0000C1A6  s__HEAP                         
      0000FFFC  G$SRAM_bank_to_be_mapped_on_slot   _sms_manager
      0000FFFC  _SRAM_bank_to_be_mapped_on_slot2   SMSlib_loadTileMap
      0000FFFF  G$ROM_bank_to_be_mapped_on_slot2   _sms_manager
@@ -4463,7 +4463,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_INITIALIZER                        0000223C    0000007A =         122. bytes (REL,CON)
+_INITIALIZER                        0000223C    0000007C =         124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -4472,30 +4472,30 @@ _INITIALIZER                        0000223C    0000007A =         122. bytes (R
      00002254  Fbank2$__xinit_locale_object_dif   bank2
      0000225C  Ffixedbank$__xinit_riff_sample_d   fixedbank
      00002282  Ffixedbank$__xinit_music_object_   fixedbank
-     00002292  Finput_manager$__xinit_curr_joyp   input_manager
-     00002294  Finput_manager$__xinit_prev_joyp   input_manager
-     00002296  Flocale_manager$__xinit_riff_obj   locale_manager
-     0000229A  Flocale_manager$__xinit_song_obj   locale_manager
-     000022AA  Friff_screen$__xinit_indexs$0_0$   riff_screen
-     000022AC  Friff_screen$__xinit_counts$0_0$   riff_screen
+     00002294  Finput_manager$__xinit_curr_joyp   input_manager
+     00002296  Finput_manager$__xinit_prev_joyp   input_manager
+     00002298  Flocale_manager$__xinit_riff_obj   locale_manager
+     0000229C  Flocale_manager$__xinit_song_obj   locale_manager
+     000022AC  Friff_screen$__xinit_indexs$0_0$   riff_screen
+     000022AE  Friff_screen$__xinit_counts$0_0$   riff_screen
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 82.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSINIT                             000022B6    0000000F =          15. bytes (REL,CON)
+_GSINIT                             000022B8    0000000F =          15. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     000022B6  gsinit                             crt0
+     000022B8  gsinit                             crt0
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 83.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSFINAL                            000022C5    00000001 =           1. bytes (REL,CON)
+_GSFINAL                            000022C7    00000001 =           1. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -4561,7 +4561,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_INITIALIZED                        0000C12A    0000007A =         122. bytes (REL,CON)
+_INITIALIZED                        0000C12A    0000007C =         124. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -4575,21 +4575,21 @@ _INITIALIZED                        0000C12A    0000007A =         122. bytes (R
      0000C14A  _riff_sample_data                  fixedbank
      0000C170  G$music_object_data$0_0$0          fixedbank
      0000C170  _music_object_data                 fixedbank
-     0000C180  Finput_manager$curr_joypad1$0_0$   input_manager
-     0000C182  Finput_manager$prev_joypad1$0_0$   input_manager
-     0000C184  G$riff_object_texts$0_0$0          locale_manager
-     0000C184  _riff_object_texts                 locale_manager
-     0000C188  G$song_object_texts$0_0$0          locale_manager
-     0000C188  _song_object_texts                 locale_manager
-     0000C198  Friff_screen$indexs$0_0$0          riff_screen
-     0000C19A  Friff_screen$counts$0_0$0          riff_screen
-     0000C19C  _VDPReg                            SMSlib
-     0000C19E  _spritesHeight                     SMSlib
-     0000C19F  _spritesWidth                      SMSlib
-     0000C1A0  _clipWin_x0                        SMSlib_spriteClip
-     0000C1A1  _clipWin_y0                        SMSlib_spriteClip
-     0000C1A2  _clipWin_x1                        SMSlib_spriteClip
-     0000C1A3  _clipWin_y1                        SMSlib_spriteClip
+     0000C182  Finput_manager$curr_joypad1$0_0$   input_manager
+     0000C184  Finput_manager$prev_joypad1$0_0$   input_manager
+     0000C186  G$riff_object_texts$0_0$0          locale_manager
+     0000C186  _riff_object_texts                 locale_manager
+     0000C18A  G$song_object_texts$0_0$0          locale_manager
+     0000C18A  _song_object_texts                 locale_manager
+     0000C19A  Friff_screen$indexs$0_0$0          riff_screen
+     0000C19C  Friff_screen$counts$0_0$0          riff_screen
+     0000C19E  _VDPReg                            SMSlib
+     0000C1A0  _spritesHeight                     SMSlib
+     0000C1A1  _spritesWidth                      SMSlib
+     0000C1A2  _clipWin_x0                        SMSlib_spriteClip
+     0000C1A3  _clipWin_y0                        SMSlib_spriteClip
+     0000C1A4  _clipWin_x1                        SMSlib_spriteClip
+     0000C1A5  _clipWin_y1                        SMSlib_spriteClip
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 86.
 Hexadecimal  [32-Bits]
@@ -4674,7 +4674,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK7                              00008000    00002EA8 =       11944. bytes (REL,CON)
+_BANK7                              00008000    00003086 =       12422. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -4684,11 +4684,12 @@ _BANK7                              00008000    00002EA8 =       11944. bytes (R
      000092D9  _mus_beat_psg                      bank7
      000098FE  G$mus_cont_psg$0_0$0               bank7
      000098FE  _mus_cont_psg                      bank7
-     0000A925  G$mus_level_psg$0_0$0              bank7
-     0000A925  _mus_level_psg                     bank7
-     0000AB37  G$mus_over_psg$0_0$0               bank7
-     0000AB37  _mus_over_psg                      bank7
-
+     0000A925  G$mus_death_psg$0_0$0              bank7
+     0000A925  _mus_death_psg                     bank7
+     0000AB03  G$mus_level_psg$0_0$0              bank7
+     0000AB03  _mus_level_psg                     bank7
+     0000AD15  G$mus_over_psg$0_0$0               bank7
+     0000AD15  _mus_over_psg                      bank7
 ASxxxx Linker V03.00 + NoICE + sdld,  page 92.
 Hexadecimal  [32-Bits]
 
@@ -5354,7 +5355,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK63                             00008000    0000001B =          27. bytes (REL,CON)
+_BANK63                             00008000    0000001C =          28. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------

@@ -8,6 +8,7 @@ const unsigned char *riff_object_texts[] =
 
 const unsigned char *song_object_texts[] =
 {
+	"DEATH SCREEN   ",		// Shinobi SMS death music
 	"BEAT SCREEN    ",
 	"CONT SCREEN    ",
 	"PASS SCREEN    ",		// Shinobi Mission one finished

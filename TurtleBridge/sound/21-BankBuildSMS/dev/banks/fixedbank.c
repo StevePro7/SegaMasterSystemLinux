@@ -81,6 +81,7 @@ const unsigned char riff_sample_bank[] =
 // Audio Manager.
 const unsigned char *music_object_data[] =
 {
+	mus_death_psg,
 	mus_beat_psg,
 	mus_cont_psg,
 	mus_level_psg,
@@ -103,6 +104,7 @@ const unsigned char *music_object_data[] =
 };
 const unsigned char music_object_bank[] =
 {
+	mus_death_psg_bank,
 	mus_beat_psg_bank,
 	mus_cont_psg_bank,
 	mus_level_psg_bank,
