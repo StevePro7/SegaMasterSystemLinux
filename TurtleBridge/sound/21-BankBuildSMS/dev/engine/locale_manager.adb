@@ -1,6 +1,6 @@
 M:locale_manager
 S:G$riff_object_texts$0_0$0({4}DA2d,DG,SC:U),E,0,0
-S:G$song_object_texts$0_0$0({16}DA8d,DG,SC:U),E,0,0
+S:G$song_object_texts$0_0$0({18}DA9d,DG,SC:U),E,0,0
 S:Flocale_manager$__str_0$0_0$0({7}DA7d,SC:U),D,0,0
 S:Flocale_manager$__str_1$0_0$0({7}DA7d,SC:U),D,0,0
 S:Flocale_manager$__str_2$0_0$0({16}DA16d,SC:U),D,0,0
@@ -11,3 +11,4 @@ S:Flocale_manager$__str_6$0_0$0({16}DA16d,SC:U),D,0,0
 S:Flocale_manager$__str_7$0_0$0({16}DA16d,SC:U),D,0,0
 S:Flocale_manager$__str_8$0_0$0({16}DA16d,SC:U),D,0,0
 S:Flocale_manager$__str_9$0_0$0({16}DA16d,SC:U),D,0,0
+S:Flocale_manager$__str_10$0_0$0({16}DA16d,SC:U),D,0,0
