@@ -1,4 +1,4 @@
-extern const unsigned char	bank6_txt[];
-#define				bank6_txt_size 7
-#define				bank6_txt_bank 6
+extern const unsigned char	mohenjodaro_usas_psg[];
+#define				mohenjodaro_usas_psg_size 13113
+#define				mohenjodaro_usas_psg_bank 6
 

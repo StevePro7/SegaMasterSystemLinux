@@ -1,2 +1,2 @@
 M:bank6
-S:G$bank6_txt$0_0$0({7}DA7d,SC:U),D,0,0
+S:G$mohenjodaro_usas_psg$0_0$0({13113}DA13113d,SC:U),D,0,0

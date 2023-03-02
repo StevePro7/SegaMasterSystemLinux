@@ -1,4 +1,4 @@
-extern const unsigned char	bank5_txt[];
-#define				bank5_txt_size 7
-#define				bank5_txt_bank 5
+extern const unsigned char	usas_jubaruins_psg[];
+#define				usas_jubaruins_psg_size 14126
+#define				usas_jubaruins_psg_bank 5
 
