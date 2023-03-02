@@ -41,5 +41,11 @@ void screen_song_screen_update( unsigned char *screen_type )
 		engine_music_manager_play( index );
 	}
 
+	input = engine_input_manager_hold_fire2();
+	if( input )
+	{
+		engine_sound_manager_play( index );
+	}
+
 	*screen_type = screen_type_song;
 }

@@ -1,8 +1,8 @@
 M:song_screen
 F:G$screen_song_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_song_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lsong_screen.screen_song_screen_update$screen_type$1_0$8({2}DG,SC:U),B,1,4
-S:Lsong_screen.screen_song_screen_update$input$1_0$9({1}SC:U),R,0,0,[a]
+S:Lsong_screen.screen_song_screen_update$screen_type$1_0$9({2}DG,SC:U),B,1,4
+S:Lsong_screen.screen_song_screen_update$input$1_0$10({1}SC:U),R,0,0,[a]
 T:Fsong_screen$tag_struct_audio_object[({0}S:S$music_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$music_bank$0_0$0({1}SC:U),Z,0,0)({3}S:S$sound_data$0_0$0({2}DG,SC:U),Z,0,0)({5}S:S$sound_bank$0_0$0({1}SC:U),Z,0,0)]
 S:G$global_audio_object$0_0$0({6}STtag_struct_audio_object:S),E,0,0
 S:G$riff_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
@@ -11,6 +11,8 @@ S:Fsong_screen$index$0_0$0({1}SC:U),E,0,0
 S:G$engine_audio_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_music_manager_play$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_music_manager_stop$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_sound_manager_play$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_sound_manager_stop$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_audio_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0
