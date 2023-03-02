@@ -1,13 +1,74 @@
 #include "fixedbank.h"
 #include "bank8.h"
+#include "bank40.h"
+#include "bank41.h"
+#include "bank42.h"
+#include "bank43.h"
+#include "bank44.h"
+#include "bank45.h"
+#include "bank46.h"
+#include "bank47.h"
+#include "bank48.h"
+#include "bank49.h"
+#include "bank51.h"
+#include "bank52.h"
+#include "bank53.h"
+#include "bank54.h"
+#include "bank55.h"
+#include "bank56.h"
+#include "bank57.h"
+#include "bank58.h"
+#include "bank59.h"
 
 const unsigned char *riff_sample_data[] =
 {
+	// Title riff	bank 41-49	[x9]
+	Riff__Title__Screen__01_wav_pcmenc,
+	Riff__Title__Screen__02_wav_pcmenc,
+	Riff__Title__Screen__03_wav_pcmenc,
+	Riff__Title__Screen__04_wav_pcmenc,
+	Riff__Title__Screen__05_wav_pcmenc,
+	Riff__Title__Screen__06_wav_pcmenc,
+	Riff__Title__Screen__07_wav_pcmenc,
+	Riff__Title__Screen__08_wav_pcmenc,
+	Riff__Title__Screen__09_wav_pcmenc,
+
+	// Splash riff	bank 51-59	[x9]
+	Riff__Splash__Screen__01_wav_pcmenc,
+	Riff__Splash__Screen__02_wav_pcmenc,
+	Riff__Splash__Screen__03_wav_pcmenc,
+	Riff__Splash__Screen__04_wav_pcmenc,
+	Riff__Splash__Screen__05_wav_pcmenc,
+	Riff__Splash__Screen__06_wav_pcmenc,
+	Riff__Splash__Screen__07_wav_pcmenc,
+	Riff__Splash__Screen__08_wav_pcmenc,
+	Riff__Splash__Screen__09_wav_pcmenc,
+
 	// Simpsons
 	Riff_Sound_Excellent10_01_wav_pcmenc,
 };
 const unsigned char riff_sample_bank[] =
 {
+	Riff__Title__Screen__01_wav_pcmenc_bank,
+	Riff__Title__Screen__02_wav_pcmenc_bank,
+	Riff__Title__Screen__03_wav_pcmenc_bank,
+	Riff__Title__Screen__04_wav_pcmenc_bank,
+	Riff__Title__Screen__05_wav_pcmenc_bank,
+	Riff__Title__Screen__06_wav_pcmenc_bank,
+	Riff__Title__Screen__07_wav_pcmenc_bank,
+	Riff__Title__Screen__08_wav_pcmenc_bank,
+	Riff__Title__Screen__09_wav_pcmenc_bank,
+
+	Riff__Splash__Screen__01_wav_pcmenc_bank,
+	Riff__Splash__Screen__02_wav_pcmenc_bank,
+	Riff__Splash__Screen__03_wav_pcmenc_bank,
+	Riff__Splash__Screen__04_wav_pcmenc_bank,
+	Riff__Splash__Screen__05_wav_pcmenc_bank,
+	Riff__Splash__Screen__06_wav_pcmenc_bank,
+	Riff__Splash__Screen__07_wav_pcmenc_bank,
+	Riff__Splash__Screen__08_wav_pcmenc_bank,
+	Riff__Splash__Screen__09_wav_pcmenc_bank,
+
 	// Simpsons
 	Riff_Sound_Excellent10_01_wav_pcmenc_bank,
 };
@@ -19,11 +80,6 @@ const unsigned char steven_object_numbers[] =
 	51,
 };
 
-const unsigned char *steven_object_texts[] =
-{
-	"STEVEPRO",
-	"STUDIOS",
-};
 // FIXED bank.
 // Audio Manager.
 //const unsigned char *music_object_data[] =

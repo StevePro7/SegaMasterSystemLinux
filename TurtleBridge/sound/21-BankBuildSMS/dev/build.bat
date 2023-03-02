@@ -27,6 +27,7 @@ cd engine
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 enum_manager.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 global_manager.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 input_manager.c
+"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 locale_manager.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 riff_manager.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 sample_manager.c
 "C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 screen_manager.c
@@ -35,8 +36,8 @@ cd ..
 cd screen
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 none_screen.c
 "C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 riff_screen.c
-"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 song_screen.c
-"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 test_screen.c
+::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 song_screen.c
+::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 test_screen.c
 cd ..
 
 "C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
@@ -79,8 +80,8 @@ devkit/_sms_manager.rel ^
 devkit/_snd_manager.rel ^
 engine/asm_manager.rel ^
 engine/content_manager.rel engine/enum_manager.rel engine/font_manager.rel ^
-engine/global_manager.rel engine/input_manager.rel engine/riff_manager.rel ^
-engine/sample_manager.rel engine/screen_manager.rel ^
+engine/global_manager.rel engine/input_manager.rel engine/locale_manager.rel ^
+engine/riff_manager.rel engine/sample_manager.rel engine/screen_manager.rel ^
 screen/none_screen.rel screen/riff_screen.rel screen/song_screen.rel screen/test_screen.rel
 
 

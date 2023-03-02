@@ -16,7 +16,7 @@ void main( void )
 	devkit_SMS_displayOn();
 
 	open_screen_type = screen_type_riff;
-	open_screen_type = screen_type_song;
+	//open_screen_type = screen_type_song;
 	//open_screen_type = screen_type_test;
 	engine_screen_manager_init( open_screen_type );
 	for( ;; )

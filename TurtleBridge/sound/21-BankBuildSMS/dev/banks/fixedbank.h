@@ -5,7 +5,6 @@ extern const unsigned char *riff_sample_data[];
 extern const unsigned char riff_sample_bank[];
 
 extern const unsigned char steven_object_numbers[];
-extern const unsigned char *steven_object_texts[];
 
 //// FIXED bank.
 //// Audio Manager.
