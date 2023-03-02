@@ -9,35 +9,37 @@ static unsigned char index;
 
 void screen_song_screen_load()
 {
-	engine_font_manager_text( "SONG SCREEN..!!", 10, 2 );
-	//engine_music_manager_play( index );
 	index = 0;
+	engine_font_manager_text( "SONG SCREEN!!", 10, 2 );
 	engine_font_manager_data( index, 14, 9 );
 	engine_font_manager_text( ( unsigned char* ) song_object_texts[ index ], 10, 10 );
-	engine_music_manager_play( index );
 }
 
 void screen_song_screen_update( unsigned char *screen_type )
 {
 	unsigned char input;
-	input = engine_input_manager_hold_left();
+	input = engine_input_manager_hold_up();
 	if( input && index > 0 )
 	{
 		index--;
-		engine_music_manager_stop();
 		engine_font_manager_data( index, 14, 9 );
 		engine_font_manager_text( ( unsigned char* ) song_object_texts[ index ], 10, 10 );
+	}
+
+	input = engine_input_manager_hold_down();
+	if( input && index < 3 )
+	{
+		index++;
+		engine_font_manager_data( index, 14, 9 );
+		engine_font_manager_text( ( unsigned char* ) song_object_texts[ index ], 10, 10 );
+	}
+
+	input = engine_input_manager_hold_fire1();
+	if( input )
+	{
+		engine_music_manager_stop();
 		engine_music_manager_play( index );
 	}
 
-	input = engine_input_manager_hold_right();
-	if( input && index < 4 )
-	{
-		index++;
-		engine_music_manager_stop();
-		engine_font_manager_data( index, 14, 9 );
-		engine_font_manager_text( ( unsigned char* ) song_object_texts[ index ], 10, 10 );
-		engine_music_manager_play( index );
-	}
 	*screen_type = screen_type_song;
 }
