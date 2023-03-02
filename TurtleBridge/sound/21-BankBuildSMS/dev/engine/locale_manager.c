@@ -2,14 +2,14 @@
 
 const unsigned char *riff_object_texts[] =
 {
-	"TITLE",
+	"TITLE ",
 	"SPLASH",
 };
 
 const unsigned char *song_object_texts[] =
 {
-	"ANIMEOPENING",
-	"USASJUBARUINS",
+	"ANIMEOPENING   ",
+	"USASJUBARUINS  ",
 	"MOHENJODAROUSAS",
-	"MASTERTRACKER",
+	"MASTERTRACKER  ",
 };
