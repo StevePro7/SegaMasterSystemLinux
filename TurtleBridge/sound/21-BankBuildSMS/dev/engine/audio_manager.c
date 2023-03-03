@@ -57,7 +57,6 @@ void engine_sound_manager_play( unsigned char index )
 
 	devkit_SMS_mapROMBank( ao->sound_bank );
 	devkit_PSGSFXPlay( ( unsigned char* ) ao->sound_data, devkit_SFX_CHANNELS2AND3() );
-	//devkit_PSGPlay( ( unsigned char* ) ao->music_data );
 }
 
 void engine_sound_manager_stop()
@@ -67,9 +66,6 @@ void engine_sound_manager_stop()
 	ao->sound_bank = 0;
 	devkit_PSGSFXStop();
 }
-
-// TODO sfx
-//void engine_sound_manager_play( unsigned char index ) {}
 
 void engine_audio_manager_update()
 {
