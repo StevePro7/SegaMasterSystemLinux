@@ -65,7 +65,7 @@ namespace FunctionMgr
 			lines.Clear();
 			lines.Add(name);
 			var path = string.Format("banks/{0}/{0}.txt", name);
-			//File.WriteAllLines(path, lines.ToArray());
+			File.WriteAllLines(path, lines.ToArray());
 		}
 
 		public void Scripts(int bank, List<string> script)
