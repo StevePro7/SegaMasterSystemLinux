@@ -105,6 +105,7 @@ unsigned char engine_player_manager_get_deltaX( unsigned char state, unsigned ch
 
 	//deltaX = 0;
 	deltaX = 2;		// TODO - try 2, 4, 6, 8
+	//deltaX = 6;		// TODO delete
 	if( ( COMMAND_LEFT_MASK & command ) == COMMAND_LEFT_MASK )
 	{
 		// Back up when facing forward and going slower...
