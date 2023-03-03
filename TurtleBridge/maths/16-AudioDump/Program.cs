@@ -18,7 +18,7 @@ namespace AudioDump
 			//fm.Sporadic("SampleTest05", "mus_beat_psg", 6, 1573);
 
 			fm.Sort();
-			//fm.Save();
+			fm.Save();
 
 			var am = new AudioManager();
 			am.Calculate(fm.Data);

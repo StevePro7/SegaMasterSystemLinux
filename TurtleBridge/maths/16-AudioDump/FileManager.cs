@@ -7,7 +7,8 @@ namespace AudioDump
 {
 	public class FileManager
 	{
-		private const string root = @"E:/GitHub/StevePro8/SegaMasterSystemLinux/TurtleBridge/sound/";
+		private const string root = @"E:/GitHub/StevePro8/SegaMasterSystemLinux/TurtleBridge/sound/SampleTestStrip/";
+		//private const string root = @"E:/GitHub/StevePro8/SegaMasterSystemLinux/TurtleBridge/sound/";
 		//private const string root = @"E:/GitHub/StevePro8/SegaMasterSystemLinux/TurtleBridge/maths/20-BankBuildSMS/dev/banks/";
 
 		public FileManager()
@@ -30,7 +31,8 @@ namespace AudioDump
 
 		public void Sort()
 		{
-			Data = Data.OrderByDescending(x => x.Size).ToList();
+			Data = Data.OrderBy(x => x.Proj).ThenBy(y => y.Bank).ToList();
+			//Data = Data.OrderByDescending(x => x.Size).ToList();
 		}
 
 		public void Save()
