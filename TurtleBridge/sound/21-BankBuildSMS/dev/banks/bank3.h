@@ -1,3 +1,7 @@
+extern const unsigned char	Riff_Sound_Austin02_02_wav_pcmenc[];
+#define				Riff_Sound_Austin02_02_wav_pcmenc_size 9242
+#define				Riff_Sound_Austin02_02_wav_pcmenc_bank 3
+
 extern const unsigned char	titles_tiles__palette__bin[];
 #define				titles_tiles__palette__bin_size 16
 #define				titles_tiles__palette__bin_bank 3
