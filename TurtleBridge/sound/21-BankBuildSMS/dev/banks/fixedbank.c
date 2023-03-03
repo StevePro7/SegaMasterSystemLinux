@@ -49,7 +49,7 @@ const unsigned char *riff_sample_data[] =
 	Riff__Splash__Screen__09_wav_pcmenc,
 
 	// Simpsons
-	Riff_Sound_Excellent10_01_wav_pcmenc,
+	//Riff_Sound_Excellent10_01_wav_pcmenc,
 };
 const unsigned char riff_sample_bank[] =
 {
@@ -74,7 +74,7 @@ const unsigned char riff_sample_bank[] =
 	Riff__Splash__Screen__09_wav_pcmenc_bank,
 
 	// Simpsons
-	Riff_Sound_Excellent10_01_wav_pcmenc_bank,
+	//Riff_Sound_Excellent10_01_wav_pcmenc_bank,
 };
 
 // FIXED bank.
