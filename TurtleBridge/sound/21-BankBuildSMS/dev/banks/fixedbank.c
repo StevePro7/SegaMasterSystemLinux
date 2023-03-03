@@ -1,10 +1,42 @@
 #include "fixedbank.h"
+#include "bank2.h"
 #include "bank3.h"
 #include "bank4.h"
 #include "bank5.h"
 #include "bank6.h"
 #include "bank7.h"
 #include "bank8.h"
+#include "bank9.h"
+#include "bank10.h"
+#include "bank11.h"
+#include "bank12.h"
+#include "bank13.h"
+#include "bank14.h"
+#include "bank15.h"
+#include "bank16.h"
+#include "bank17.h"
+#include "bank18.h"
+#include "bank19.h"
+#include "banK20.h"
+#include "banK21.h"
+#include "banK22.h"
+#include "banK23.h"
+#include "banK24.h"
+#include "banK25.h"
+#include "banK26.h"
+#include "banK27.h"
+#include "banK28.h"
+#include "banK29.h"
+#include "banK30.h"
+#include "bank31.h"
+#include "bank32.h"
+#include "bank33.h"
+#include "bank34.h"
+#include "bank35.h"
+#include "bank36.h"
+#include "bank37.h"
+#include "bank38.h"
+#include "bank39.h"
 #include "bank40.h"
 #include "bank41.h"
 #include "bank42.h"
@@ -24,9 +56,26 @@
 #include "bank57.h"
 #include "bank58.h"
 #include "bank59.h"
+#include "bank60.h"
+#include "bank61.h"
 
 const unsigned char *riff_sample_data[] =
 {
+	// Simpsons
+	Riff_Sound_Excellent10_01_wav_pcmenc,
+	Riff_Sound_Excellent20_01_wav_pcmenc,
+	Riff_Sound_Excellent30_01_wav_pcmenc,
+	Riff_Sound_Excellent40_01_wav_pcmenc,
+	Riff_Sound_Excellent50_01_wav_pcmenc,
+
+	// Austin Powers
+	Riff_Sound_Austin01_01_wav_pcmenc,
+	Riff_Sound_Austin02_01_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin03_01_wav_pcmenc,
+	Riff_Sound_Austin03_02_wav_pcmenc,
+
+
 	// Title riff	bank 41-49	[x9]
 	Riff__Title__Screen__01_wav_pcmenc,
 	Riff__Title__Screen__02_wav_pcmenc,
@@ -48,12 +97,23 @@ const unsigned char *riff_sample_data[] =
 	Riff__Splash__Screen__07_wav_pcmenc,
 	Riff__Splash__Screen__08_wav_pcmenc,
 	Riff__Splash__Screen__09_wav_pcmenc,
-
-	// Simpsons
-	//Riff_Sound_Excellent10_01_wav_pcmenc,
 };
 const unsigned char riff_sample_bank[] =
 {
+	// Simpsons
+	Riff_Sound_Excellent10_01_wav_pcmenc_bank,
+	Riff_Sound_Excellent20_01_wav_pcmenc_bank,
+	Riff_Sound_Excellent30_01_wav_pcmenc_bank,
+	Riff_Sound_Excellent40_01_wav_pcmenc_bank,
+	Riff_Sound_Excellent50_01_wav_pcmenc_bank,
+
+	// Austin Powers
+	Riff_Sound_Austin01_01_wav_pcmenc_bank,
+	Riff_Sound_Austin02_01_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin03_01_wav_pcmenc_bank,
+	Riff_Sound_Austin03_02_wav_pcmenc_bank,
+
 	Riff__Title__Screen__01_wav_pcmenc_bank,
 	Riff__Title__Screen__02_wav_pcmenc_bank,
 	Riff__Title__Screen__03_wav_pcmenc_bank,
@@ -73,9 +133,6 @@ const unsigned char riff_sample_bank[] =
 	Riff__Splash__Screen__07_wav_pcmenc_bank,
 	Riff__Splash__Screen__08_wav_pcmenc_bank,
 	Riff__Splash__Screen__09_wav_pcmenc_bank,
-
-	// Simpsons
-	//Riff_Sound_Excellent10_01_wav_pcmenc_bank,
 };
 
 // FIXED bank.

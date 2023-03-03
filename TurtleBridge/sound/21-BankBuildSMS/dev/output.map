@@ -33,8 +33,12 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000003  l__HEADER3                      
      00000003  l__HEADER4                      
      00000006  l__HEADER0                      
+     00000007  l__BANK8                        
      00000007  l__BANK9                        
-     00000008  l__BANK50                       
+     00000008  l__BANK10                       
+     00000008  l__BANK11                       
+     00000008  l__BANK12                       
+     00000008  l__BANK13                       
      00000008  l__BANK60                       
      00000008  l__BANK61                       
      00000008  l__BANK62                       
@@ -45,18 +49,14 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000010  l__CABS0                        
      00000010  l__CABS4                        
      00000011  l__CABS2                        
-     00000020  l__BANK63                       
+     00000029  l__BANK63                       
      0000002D  l__CABS3                        
-     00000086  l__INITIALIZED                  
-     00000086  l__INITIALIZER                  
+     000000A4  l__INITIALIZED                  
+     000000A4  l__INITIALIZER                  
      000000BE  G$VDPDataPort$0_0$0                asm_manager
      000000BF  G$VDPControlPort$0_0$0             asm_manager
      0000012A  l__DATA                         
      0000012A  l__HEADER5                      
-     00000200  s__CODE                         
-     000006A1  l__BANK24                       
-     00000C9A  l__BANK14                       
-     000017E2  l__BANK3                        
 ASxxxx Linker V03.00 + NoICE + sdld,  page 2.
 Hexadecimal  [32-Bits]
 
@@ -66,57 +66,57 @@ Area                                    Addr        Size        Decimal Bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     0000197D  l__BANK16                       
-     00001B60  l__BANK30                       
-     00001D63  l__BANK15                       
-     00001DD6  l__BANK29                       
-     00001E7B  l__BANK17                       
-     000020AE  l__BANK40                       
+     00000200  s__CODE                         
      000020C4  l__CODE                         
-     0000217D  l__BANK27                       
      000022C4  s__HOME                         
      000022C4  s__INITIALIZER                  
-     0000234A  s__GSINIT                       
-     00002359  s__GSFINAL                      
-     0000241A  l__BANK12                       
-     0000246C  l__BANK19                       
-     0000281E  l__BANK38                       
-     000028B9  l__BANK20                       
-     00002C72  l__BANK36                       
-     00002D08  l__BANK11                       
-     00002F8A  l__BANK34                       
+     00002368  s__GSINIT                       
+     00002377  s__GSFINAL                      
+     00002D08  l__BANK27                       
+     00002F8A  l__BANK20                       
      00003086  l__BANK7                        
-     000031E8  l__BANK8                        
-     000032CD  l__BANK35                       
-     000032ED  l__BANK37                       
      000033BB  l__BANK6                        
+     000033DF  l__BANK15                       
      000034F8  l__BANK2                        
      000035EA  l__BANK49                       
-     000035FE  l__BANK31                       
-     00003691  l__BANK28                       
+     000035FC  l__BANK16                       
+     000035FE  l__BANK17                       
+     00003699  l__BANK14                       
      0000372E  l__BANK5                        
-     0000379D  l__BANK32                       
-     00003890  l__BANK25                       
-     000038DD  l__BANK18                       
+     0000379D  l__BANK18                       
+     000037BE  l__BANK29                       
+     000037D3  l__BANK32                       
+     000037F8  l__BANK39                       
+     00003857  l__BANK34                       
+     000038D8  l__BANK36                       
+     00003918  l__BANK37                       
      00003947  l__BANK21                       
      00003958  l__BANK53                       
      0000397A  l__BANK4                        
      00003984  l__BANK59                       
      00003A1C  l__BANK23                       
+     00003A6D  l__BANK31                       
      00003A97  l__BANK46                       
+     00003AB3  l__BANK50                       
      00003ADD  l__BANK56                       
+     00003AF0  l__BANK33                       
      00003AF5  l__BANK55                       
      00003B0D  l__BANK22                       
      00003B0D  l__BANK44                       
-     00003B3A  l__BANK39                       
+     00003B3A  l__BANK25                       
      00003BEA  l__BANK57                       
+     00003BFC  l__BANK3                        
      00003C43  l__BANK48                       
      00003C4E  l__BANK42                       
      00003C4E  l__BANK47                       
-     00003C61  l__BANK13                       
+     00003C61  l__BANK26                       
+     00003CA4  l__BANK24                       
      00003CA6  l__BANK41                       
      00003CF7  l__BANK51                       
-     00003DB1  l__BANK33                       
+     00003CF9  l__BANK30                       
+     00003DB1  l__BANK19                       
+     00003DBB  l__BANK52                       
+     00003DD9  l__BANK35                       
 ASxxxx Linker V03.00 + NoICE + sdld,  page 3.
 Hexadecimal  [32-Bits]
 
@@ -126,12 +126,12 @@ Area                                    Addr        Size        Decimal Bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00003DBB  l__BANK52                       
      00003E1C  l__BANK43                       
      00003E31  l__BANK54                       
+     00003E82  l__BANK38                       
+     00003E84  l__BANK40                       
      00003E8F  l__BANK58                       
-     00003F11  l__BANK10                       
-     00003F1B  l__BANK26                       
+     00003F11  l__BANK28                       
      00003FC1  l__BANK45                       
      00008000  G$SMS_SRAM$0_0$0                   _sms_manager
      00008000  _SMS_SRAM                          SMSlib_loadTileMap
@@ -208,9 +208,9 @@ Area                                    Addr        Size        Decimal Bytes (A
      00008000  s__BANK9                        
      0000C000  s__DATA                         
      0000C12A  s__INITIALIZED                  
-     0000C1B0  s__BSEG                         
-     0000C1B0  s__BSS                          
-     0000C1B0  s__HEAP                         
+     0000C1CE  s__BSEG                         
+     0000C1CE  s__BSS                          
+     0000C1CE  s__HEAP                         
      0000FFFC  G$SRAM_bank_to_be_mapped_on_slot   _sms_manager
      0000FFFC  _SRAM_bank_to_be_mapped_on_slot2   SMSlib_loadTileMap
      0000FFFF  G$ROM_bank_to_be_mapped_on_slot2   _sms_manager
@@ -2895,26 +2895,26 @@ _CODE                               00000200    000020C4 =        8388. bytes (R
      00001143  A$audio_manager$265                audio_manager
      00001144  A$audio_manager$269                audio_manager
      00001146  A$audio_manager$274                audio_manager
-     00001146  C$audio_manager.c$61$1_0$114       audio_manager
+     00001146  C$audio_manager.c$60$1_0$114       audio_manager
      00001146  XG$engine_sound_manager_play$0$0   audio_manager
      00001147  A$audio_manager$290                audio_manager
-     00001147  C$audio_manager.c$63$1_0$115       audio_manager
+     00001147  C$audio_manager.c$62$1_0$115       audio_manager
+     00001147  C$audio_manager.c$64$1_0$115       audio_manager
      00001147  C$audio_manager.c$65$1_0$115       audio_manager
-     00001147  C$audio_manager.c$66$1_0$115       audio_manager
      00001147  G$engine_sound_manager_stop$0$0    audio_manager
      00001147  _engine_sound_manager_stop         audio_manager
      0000114A  A$audio_manager$291                audio_manager
      0000114D  A$audio_manager$295                audio_manager
-     0000114D  C$audio_manager.c$67$1_0$115       audio_manager
+     0000114D  C$audio_manager.c$66$1_0$115       audio_manager
      00001150  A$audio_manager$296                audio_manager
      00001152  A$audio_manager$307                audio_manager
+     00001152  C$audio_manager.c$67$1_0$115       audio_manager
      00001152  C$audio_manager.c$68$1_0$115       audio_manager
-     00001152  C$audio_manager.c$69$1_0$115       audio_manager
      00001152  XG$engine_sound_manager_stop$0$0   audio_manager
      00001155  A$audio_manager$323                audio_manager
+     00001155  C$audio_manager.c$70$1_0$116       audio_manager
+     00001155  C$audio_manager.c$73$1_0$116       audio_manager
      00001155  C$audio_manager.c$74$1_0$116       audio_manager
-     00001155  C$audio_manager.c$77$1_0$116       audio_manager
-     00001155  C$audio_manager.c$78$1_0$116       audio_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 50.
 Hexadecimal  [32-Bits]
 
@@ -2929,26 +2929,26 @@ _CODE                               00000200    000020C4 =        8388. bytes (R
      00001158  A$audio_manager$324                audio_manager
      00001159  A$audio_manager$325                audio_manager
      0000115B  A$audio_manager$329                audio_manager
-     0000115B  C$audio_manager.c$80$2_0$117       audio_manager
+     0000115B  C$audio_manager.c$76$2_0$117       audio_manager
      0000115C  A$audio_manager$330                audio_manager
      0000115D  A$audio_manager$331                audio_manager
      00001160  A$audio_manager$332                audio_manager
      00001161  A$audio_manager$336                audio_manager
-     00001161  C$audio_manager.c$81$2_0$117       audio_manager
+     00001161  C$audio_manager.c$77$2_0$117       audio_manager
      00001164  A$audio_manager$341                audio_manager
-     00001164  C$audio_manager.c$84$1_0$116       audio_manager
+     00001164  C$audio_manager.c$80$1_0$116       audio_manager
      00001167  A$audio_manager$342                audio_manager
      00001168  A$audio_manager$343                audio_manager
      00001169  A$audio_manager$344                audio_manager
      0000116A  A$audio_manager$348                audio_manager
-     0000116A  C$audio_manager.c$86$2_0$118       audio_manager
+     0000116A  C$audio_manager.c$82$2_0$118       audio_manager
      0000116D  A$audio_manager$349                audio_manager
      0000116E  A$audio_manager$350                audio_manager
      0000116F  A$audio_manager$351                audio_manager
      00001172  A$audio_manager$352                audio_manager
      00001173  A$audio_manager$363                audio_manager
-     00001173  C$audio_manager.c$87$2_0$118       audio_manager
-     00001173  C$audio_manager.c$89$1_0$116       audio_manager
+     00001173  C$audio_manager.c$83$2_0$118       audio_manager
+     00001173  C$audio_manager.c$85$1_0$116       audio_manager
      00001173  XG$engine_audio_manager_update$0   audio_manager
      00001176  A$content_manager$62               content_manager
      00001176  C$content_manager.c$12$0_0$66      content_manager
@@ -3968,15 +3968,15 @@ _CODE                               00000200    000020C4 =        8388. bytes (R
      000016B3  C$none_screen.c$13$1_0$8           none_screen
      000016B3  XG$screen_none_screen_update$0$0   none_screen
      000016B4  A$riff_screen$72                   riff_screen
-     000016B4  C$riff_screen.c$13$0_0$7           riff_screen
-     000016B4  C$riff_screen.c$15$1_0$7           riff_screen
+     000016B4  C$riff_screen.c$15$0_0$7           riff_screen
+     000016B4  C$riff_screen.c$17$1_0$7           riff_screen
      000016B4  G$screen_riff_screen_load$0$0      riff_screen
      000016B4  _screen_riff_screen_load           riff_screen
      000016B7  A$riff_screen$73                   riff_screen
      000016B9  A$riff_screen$77                   riff_screen
-     000016B9  C$riff_screen.c$16$1_0$7           riff_screen
+     000016B9  C$riff_screen.c$18$1_0$7           riff_screen
      000016BC  A$riff_screen$81                   riff_screen
-     000016BC  C$riff_screen.c$17$1_0$7           riff_screen
+     000016BC  C$riff_screen.c$19$1_0$7           riff_screen
      000016BF  A$riff_screen$82                   riff_screen
      000016C0  A$riff_screen$83                   riff_screen
      000016C3  A$riff_screen$84                   riff_screen
@@ -3984,7 +3984,7 @@ _CODE                               00000200    000020C4 =        8388. bytes (R
      000016C7  A$riff_screen$86                   riff_screen
      000016C8  A$riff_screen$87                   riff_screen
      000016C9  A$riff_screen$91                   riff_screen
-     000016C9  C$riff_screen.c$18$1_0$7           riff_screen
+     000016C9  C$riff_screen.c$20$1_0$7           riff_screen
      000016CC  A$riff_screen$92                   riff_screen
      000016CD  A$riff_screen$93                   riff_screen
      000016CF  A$riff_screen$94                   riff_screen
@@ -3994,7 +3994,7 @@ _CODE                               00000200    000020C4 =        8388. bytes (R
      000016D7  A$riff_screen$98                   riff_screen
      000016D8  A$riff_screen$99                   riff_screen
      000016D9  A$riff_screen$103                  riff_screen
-     000016D9  C$riff_screen.c$19$1_0$7           riff_screen
+     000016D9  C$riff_screen.c$21$1_0$7           riff_screen
 ASxxxx Linker V03.00 + NoICE + sdld,  page 68.
 Hexadecimal  [32-Bits]
 
@@ -4019,29 +4019,29 @@ _CODE                               00000200    000020C4 =        8388. bytes (R
      000016EF  A$riff_screen$116                  riff_screen
      000016F0  A$riff_screen$117                  riff_screen
      000016F1  A$riff_screen$125                  riff_screen
-     000016F1  C$riff_screen.c$20$1_0$7           riff_screen
+     000016F1  C$riff_screen.c$22$1_0$7           riff_screen
      000016F1  XG$screen_riff_screen_load$0$0     riff_screen
      000016F2  Friff_screen$__str_0$0_0$0         riff_screen
      00001700  A$riff_screen$139                  riff_screen
-     00001700  C$riff_screen.c$22$1_0$9           riff_screen
+     00001700  C$riff_screen.c$24$1_0$9           riff_screen
      00001700  G$screen_riff_screen_update$0$0    riff_screen
      00001700  _screen_riff_screen_update         riff_screen
      00001702  A$riff_screen$140                  riff_screen
      00001706  A$riff_screen$141                  riff_screen
      00001708  A$riff_screen$145                  riff_screen
-     00001708  C$riff_screen.c$27$1_0$9           riff_screen
+     00001708  C$riff_screen.c$29$1_0$9           riff_screen
      0000170B  A$riff_screen$146                  riff_screen
      0000170C  A$riff_screen$150                  riff_screen
-     0000170C  C$riff_screen.c$28$1_0$9           riff_screen
+     0000170C  C$riff_screen.c$30$1_0$9           riff_screen
      0000170D  A$riff_screen$151                  riff_screen
      0000170F  A$riff_screen$152                  riff_screen
      00001713  A$riff_screen$153                  riff_screen
      00001716  A$riff_screen$154                  riff_screen
      00001717  A$riff_screen$155                  riff_screen
      00001719  A$riff_screen$159                  riff_screen
-     00001719  C$riff_screen.c$30$2_0$10          riff_screen
+     00001719  C$riff_screen.c$32$2_0$10          riff_screen
      0000171C  A$riff_screen$163                  riff_screen
-     0000171C  C$riff_screen.c$31$2_0$10          riff_screen
+     0000171C  C$riff_screen.c$33$2_0$10          riff_screen
      0000171F  A$riff_screen$164                  riff_screen
      00001721  A$riff_screen$165                  riff_screen
      00001724  A$riff_screen$166                  riff_screen
@@ -4050,7 +4050,7 @@ _CODE                               00000200    000020C4 =        8388. bytes (R
      00001729  A$riff_screen$169                  riff_screen
      0000172A  A$riff_screen$170                  riff_screen
      0000172B  A$riff_screen$174                  riff_screen
-     0000172B  C$riff_screen.c$32$2_0$10          riff_screen
+     0000172B  C$riff_screen.c$34$2_0$10          riff_screen
      0000172E  A$riff_screen$175                  riff_screen
      00001731  A$riff_screen$176                  riff_screen
      00001732  A$riff_screen$177                  riff_screen
@@ -4075,19 +4075,19 @@ _CODE                               00000200    000020C4 =        8388. bytes (R
      00001741  A$riff_screen$187                  riff_screen
      00001742  A$riff_screen$188                  riff_screen
      00001743  A$riff_screen$193                  riff_screen
-     00001743  C$riff_screen.c$35$1_0$9           riff_screen
+     00001743  C$riff_screen.c$37$1_0$9           riff_screen
      00001746  A$riff_screen$194                  riff_screen
      00001747  A$riff_screen$198                  riff_screen
-     00001747  C$riff_screen.c$36$1_0$9           riff_screen
+     00001747  C$riff_screen.c$38$1_0$9           riff_screen
      00001748  A$riff_screen$199                  riff_screen
      0000174A  A$riff_screen$200                  riff_screen
      0000174E  A$riff_screen$201                  riff_screen
      00001751  A$riff_screen$202                  riff_screen
      00001753  A$riff_screen$203                  riff_screen
      00001755  A$riff_screen$207                  riff_screen
-     00001755  C$riff_screen.c$38$2_0$11          riff_screen
+     00001755  C$riff_screen.c$40$2_0$11          riff_screen
      00001758  A$riff_screen$211                  riff_screen
-     00001758  C$riff_screen.c$39$2_0$11          riff_screen
+     00001758  C$riff_screen.c$41$2_0$11          riff_screen
      0000175B  A$riff_screen$212                  riff_screen
      0000175D  A$riff_screen$213                  riff_screen
      00001760  A$riff_screen$214                  riff_screen
@@ -4096,7 +4096,7 @@ _CODE                               00000200    000020C4 =        8388. bytes (R
      00001765  A$riff_screen$217                  riff_screen
      00001766  A$riff_screen$218                  riff_screen
      00001767  A$riff_screen$222                  riff_screen
-     00001767  C$riff_screen.c$40$2_0$11          riff_screen
+     00001767  C$riff_screen.c$42$2_0$11          riff_screen
      0000176A  A$riff_screen$223                  riff_screen
      0000176D  A$riff_screen$224                  riff_screen
      0000176E  A$riff_screen$225                  riff_screen
@@ -4112,7 +4112,7 @@ _CODE                               00000200    000020C4 =        8388. bytes (R
      0000177D  A$riff_screen$235                  riff_screen
      0000177E  A$riff_screen$236                  riff_screen
      0000177F  A$riff_screen$241                  riff_screen
-     0000177F  C$riff_screen.c$43$1_0$9           riff_screen
+     0000177F  C$riff_screen.c$45$1_0$9           riff_screen
      00001782  A$riff_screen$242                  riff_screen
      00001783  A$riff_screen$246                  riff_screen
 ASxxxx Linker V03.00 + NoICE + sdld,  page 70.
@@ -4124,16 +4124,16 @@ _CODE                               00000200    000020C4 =        8388. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00001783  C$riff_screen.c$44$1_0$9           riff_screen
+     00001783  C$riff_screen.c$46$1_0$9           riff_screen
      00001784  A$riff_screen$247                  riff_screen
      00001786  A$riff_screen$251                  riff_screen
-     00001786  C$riff_screen.c$46$2_0$12          riff_screen
+     00001786  C$riff_screen.c$48$2_0$12          riff_screen
      00001789  A$riff_screen$252                  riff_screen
      0000178C  A$riff_screen$253                  riff_screen
      0000178E  A$riff_screen$254                  riff_screen
      0000178F  A$riff_screen$255                  riff_screen
      00001790  A$riff_screen$259                  riff_screen
-     00001790  C$riff_screen.c$47$2_0$12          riff_screen
+     00001790  C$riff_screen.c$49$2_0$12          riff_screen
      00001792  A$riff_screen$260                  riff_screen
      00001795  A$riff_screen$261                  riff_screen
      00001796  A$riff_screen$262                  riff_screen
@@ -4143,19 +4143,19 @@ _CODE                               00000200    000020C4 =        8388. bytes (R
      0000179C  A$riff_screen$266                  riff_screen
      0000179D  A$riff_screen$267                  riff_screen
      0000179E  A$riff_screen$271                  riff_screen
-     0000179E  C$riff_screen.c$48$2_0$12          riff_screen
+     0000179E  C$riff_screen.c$50$2_0$12          riff_screen
      0000179F  A$riff_screen$272                  riff_screen
      000017A0  A$riff_screen$273                  riff_screen
      000017A2  A$riff_screen$277                  riff_screen
-     000017A2  C$riff_screen.c$50$3_0$13          riff_screen
+     000017A2  C$riff_screen.c$52$3_0$13          riff_screen
      000017A3  A$riff_screen$278                  riff_screen
      000017A4  A$riff_screen$279                  riff_screen
      000017A7  A$riff_screen$280                  riff_screen
      000017A8  A$riff_screen$281                  riff_screen
      000017AA  A$riff_screen$286                  riff_screen
-     000017AA  C$riff_screen.c$54$1_0$9           riff_screen
+     000017AA  C$riff_screen.c$56$1_0$9           riff_screen
      000017AC  A$riff_screen$291                  riff_screen
-     000017AC  C$riff_screen.c$56$5_0$16          riff_screen
+     000017AC  C$riff_screen.c$58$5_0$16          riff_screen
      000017AD  A$riff_screen$292                  riff_screen
      000017AE  A$riff_screen$293                  riff_screen
      000017B0  A$riff_screen$294                  riff_screen
@@ -4168,10 +4168,10 @@ _CODE                               00000200    000020C4 =        8388. bytes (R
      000017B9  A$riff_screen$301                  riff_screen
      000017BA  A$riff_screen$302                  riff_screen
      000017BB  A$riff_screen$306                  riff_screen
-     000017BB  C$riff_screen.c$54$4_0$15          riff_screen
+     000017BB  C$riff_screen.c$56$4_0$15          riff_screen
      000017BC  A$riff_screen$307                  riff_screen
      000017BE  A$riff_screen$312                  riff_screen
-     000017BE  C$riff_screen.c$61$1_0$9           riff_screen
+     000017BE  C$riff_screen.c$63$1_0$9           riff_screen
      000017C1  A$riff_screen$313                  riff_screen
      000017C4  A$riff_screen$314                  riff_screen
      000017C6  A$riff_screen$318                  riff_screen
@@ -4185,7 +4185,7 @@ _CODE                               00000200    000020C4 =        8388. bytes (R
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
      000017C8  A$riff_screen$323                  riff_screen
-     000017C8  C$riff_screen.c$62$1_0$9           riff_screen
+     000017C8  C$riff_screen.c$64$1_0$9           riff_screen
      000017C8  XG$screen_riff_screen_update$0$0   riff_screen
      000017C9  A$song_screen$68                   song_screen
      000017C9  C$song_screen.c$10$0_0$8           song_screen
@@ -4571,7 +4571,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_INITIALIZER                        000022C4    00000086 =         134. bytes (REL,CON)
+_INITIALIZER                        000022C4    000000A4 =         164. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -4579,31 +4579,31 @@ _INITIALIZER                        000022C4    00000086 =         134. bytes (R
      000022D6  Fbank2$__xinit_locale_object_bla   bank2
      000022DC  Fbank2$__xinit_locale_object_dif   bank2
      000022E4  Ffixedbank$__xinit_riff_sample_d   fixedbank
-     0000230A  Ffixedbank$__xinit_music_object_   fixedbank
-     0000231C  Ffixedbank$__xinit_sound_object_   fixedbank
-     00002324  Finput_manager$__xinit_curr_joyp   input_manager
-     00002326  Finput_manager$__xinit_prev_joyp   input_manager
-     00002328  Flocale_manager$__xinit_riff_obj   locale_manager
-     0000232C  Flocale_manager$__xinit_song_obj   locale_manager
-     0000233E  Friff_screen$__xinit_indexs$0_0$   riff_screen
-     00002340  Friff_screen$__xinit_counts$0_0$   riff_screen
+     0000231C  Ffixedbank$__xinit_music_object_   fixedbank
+     0000232E  Ffixedbank$__xinit_sound_object_   fixedbank
+     00002336  Finput_manager$__xinit_curr_joyp   input_manager
+     00002338  Finput_manager$__xinit_prev_joyp   input_manager
+     0000233A  Flocale_manager$__xinit_riff_obj   locale_manager
+     0000233E  Flocale_manager$__xinit_song_obj   locale_manager
+     00002350  Friff_screen$__xinit_indexs$0_0$   riff_screen
+     00002358  Friff_screen$__xinit_counts$0_0$   riff_screen
 ASxxxx Linker V03.00 + NoICE + sdld,  page 84.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSINIT                             0000234A    0000000F =          15. bytes (REL,CON)
+_GSINIT                             00002368    0000000F =          15. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     0000234A  gsinit                             crt0
+     00002368  gsinit                             crt0
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 85.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSFINAL                            00002359    00000001 =           1. bytes (REL,CON)
+_GSFINAL                            00002377    00000001 =           1. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -4669,7 +4669,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_INITIALIZED                        0000C12A    00000086 =         134. bytes (REL,CON)
+_INITIALIZED                        0000C12A    000000A4 =         164. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -4681,25 +4681,25 @@ _INITIALIZED                        0000C12A    00000086 =         134. bytes (R
      0000C142  _locale_object_difficulty          bank2
      0000C14A  G$riff_sample_data$0_0$0           fixedbank
      0000C14A  _riff_sample_data                  fixedbank
-     0000C170  G$music_object_data$0_0$0          fixedbank
-     0000C170  _music_object_data                 fixedbank
-     0000C182  G$sound_object_data$0_0$0          fixedbank
-     0000C182  _sound_object_data                 fixedbank
-     0000C18A  Finput_manager$curr_joypad1$0_0$   input_manager
-     0000C18C  Finput_manager$prev_joypad1$0_0$   input_manager
-     0000C18E  G$riff_object_texts$0_0$0          locale_manager
-     0000C18E  _riff_object_texts                 locale_manager
-     0000C192  G$song_object_texts$0_0$0          locale_manager
-     0000C192  _song_object_texts                 locale_manager
-     0000C1A4  Friff_screen$indexs$0_0$0          riff_screen
-     0000C1A6  Friff_screen$counts$0_0$0          riff_screen
-     0000C1A8  _VDPReg                            SMSlib
-     0000C1AA  _spritesHeight                     SMSlib
-     0000C1AB  _spritesWidth                      SMSlib
-     0000C1AC  _clipWin_x0                        SMSlib_spriteClip
-     0000C1AD  _clipWin_y0                        SMSlib_spriteClip
-     0000C1AE  _clipWin_x1                        SMSlib_spriteClip
-     0000C1AF  _clipWin_y1                        SMSlib_spriteClip
+     0000C182  G$music_object_data$0_0$0          fixedbank
+     0000C182  _music_object_data                 fixedbank
+     0000C194  G$sound_object_data$0_0$0          fixedbank
+     0000C194  _sound_object_data                 fixedbank
+     0000C19C  Finput_manager$curr_joypad1$0_0$   input_manager
+     0000C19E  Finput_manager$prev_joypad1$0_0$   input_manager
+     0000C1A0  G$riff_object_texts$0_0$0          locale_manager
+     0000C1A0  _riff_object_texts                 locale_manager
+     0000C1A4  G$song_object_texts$0_0$0          locale_manager
+     0000C1A4  _song_object_texts                 locale_manager
+     0000C1B6  Friff_screen$indexs$0_0$0          riff_screen
+     0000C1BE  Friff_screen$counts$0_0$0          riff_screen
+     0000C1C6  _VDPReg                            SMSlib
+     0000C1C8  _spritesHeight                     SMSlib
+     0000C1C9  _spritesWidth                      SMSlib
+     0000C1CA  _clipWin_x0                        SMSlib_spriteClip
+     0000C1CB  _clipWin_y0                        SMSlib_spriteClip
+     0000C1CC  _clipWin_x1                        SMSlib_spriteClip
+     0000C1CD  _clipWin_y1                        SMSlib_spriteClip
 ASxxxx Linker V03.00 + NoICE + sdld,  page 88.
 Hexadecimal  [32-Bits]
 
@@ -4732,16 +4732,19 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK3                              00008000    000017E2 =        6114. bytes (REL,CON)
+_BANK3                              00008000    00003BFC =       15356. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$titles_tiles__palette__bin$0_0   bank3
-     00008000  _titles_tiles__palette__bin        bank3
-     00008010  G$titles_tiles__tilemap__bin$0_0   bank3
-     00008010  _titles_tiles__tilemap__bin        bank3
-     000082E0  G$titles_tiles__tiles__psgcompr$   bank3
-     000082E0  _titles_tiles__tiles__psgcompr     bank3
+     00008000  G$Riff_Sound_Austin02_02_wav_pcm   bank3
+     00008000  _Riff_Sound_Austin02_02_wav_pcme   bank3
+     0000A41A  G$titles_tiles__palette__bin$0_0   bank3
+     0000A41A  _titles_tiles__palette__bin        bank3
+     0000A42A  G$titles_tiles__tilemap__bin$0_0   bank3
+     0000A42A  _titles_tiles__tilemap__bin        bank3
+     0000A6FA  G$titles_tiles__tiles__psgcompr$   bank3
+     0000A6FA  _titles_tiles__tiles__psgcompr     bank3
+
 ASxxxx Linker V03.00 + NoICE + sdld,  page 90.
 Hexadecimal  [32-Bits]
 
@@ -4812,12 +4815,12 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK8                              00008000    000031E8 =       12776. bytes (REL,CON)
+_BANK8                              00008000    00000007 =           7. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$Riff_Sound_Excellent10_01_wav_   bank8
-     00008000  _Riff_Sound_Excellent10_01_wav_p   bank8
+     00008000  G$bank8_txt$0_0$0                  bank8
+     00008000  _bank8_txt                         bank8
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 95.
 Hexadecimal  [32-Bits]
@@ -4836,132 +4839,134 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK10                             00008000    00003F11 =       16145. bytes (REL,CON)
+_BANK10                             00008000    00000008 =           8. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$Riff_Sound_Austin01_01_wav_pcm   bank10
-     00008000  _Riff_Sound_Austin01_01_wav_pcme   bank10
+     00008000  G$bank10_txt$0_0$0                 bank10
+     00008000  _bank10_txt                        bank10
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 97.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK11                             00008000    00002D08 =       11528. bytes (REL,CON)
+_BANK11                             00008000    00000008 =           8. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$Riff_Sound_Austin02_01_wav_pcm   bank11
-     00008000  _Riff_Sound_Austin02_01_wav_pcme   bank11
+     00008000  G$bank11_txt$0_0$0                 bank11
+     00008000  _bank11_txt                        bank11
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 98.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK12                             00008000    0000241A =        9242. bytes (REL,CON)
+_BANK12                             00008000    00000008 =           8. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$Riff_Sound_Austin02_02_wav_pcm   bank12
-     00008000  _Riff_Sound_Austin02_02_wav_pcme   bank12
+     00008000  G$bank12_txt$0_0$0                 bank12
+     00008000  _bank12_txt                        bank12
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 99.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK13                             00008000    00003C61 =       15457. bytes (REL,CON)
+_BANK13                             00008000    00000008 =           8. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$Riff_Sound_Austin03_01_wav_pcm   bank13
-     00008000  _Riff_Sound_Austin03_01_wav_pcme   bank13
+     00008000  G$bank13_txt$0_0$0                 bank13
+     00008000  _bank13_txt                        bank13
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 100.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK14                             00008000    00000C9A =        3226. bytes (REL,CON)
+_BANK14                             00008000    00003699 =       13977. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$Riff_Sound_Austin03_02_wav_pcm   bank14
-     00008000  _Riff_Sound_Austin03_02_wav_pcme   bank14
+     00008000  G$bank14_txt$0_0$0                 bank14
+     00008000  _bank14_txt                        bank14
+     00008008  G$Riff_Death_Licence_01_wav_pcme   bank14
+     00008008  _Riff_Death_Licence_01_wav_pcmen   bank14
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 101.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK15                             00008000    00001D63 =        7523. bytes (REL,CON)
+_BANK15                             00008000    000033DF =       13279. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$Riff_Sound_Silicon01_01_wav_pc   bank15
-     00008000  _Riff_Sound_Silicon01_01_wav_pcm   bank15
+     00008000  G$Riff_Sound_Commando_01_wav_pcm   bank15
+     00008000  _Riff_Sound_Commando_01_wav_pcme   bank15
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 102.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK16                             00008000    0000197D =        6525. bytes (REL,CON)
+_BANK16                             00008000    000035FC =       13820. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$Riff_Sound_Silicon02_01_wav_pc   bank16
-     00008000  _Riff_Sound_Silicon02_01_wav_pcm   bank16
+     00008000  G$Riff_Sound_Commando_02_wav_pcm   bank16
+     00008000  _Riff_Sound_Commando_02_wav_pcme   bank16
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 103.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK17                             00008000    00001E7B =        7803. bytes (REL,CON)
+_BANK17                             00008000    000035FE =       13822. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$Riff_Sound_Silicon03_01_wav_pc   bank17
-     00008000  _Riff_Sound_Silicon03_01_wav_pcm   bank17
+     00008000  G$Riff_Intro_Ultimate_01_wav_pcm   bank17
+     00008000  _Riff_Intro_Ultimate_01_wav_pcme   bank17
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 104.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK18                             00008000    000038DD =       14557. bytes (REL,CON)
+_BANK18                             00008000    0000379D =       14237. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$Riff_Sound_Over_01_wav_pcmenc$   bank18
-     00008000  _Riff_Sound_Over_01_wav_pcmenc     bank18
+     00008000  G$Riff_Intro_Ultimate_02_wav_pcm   bank18
+     00008000  _Riff_Intro_Ultimate_02_wav_pcme   bank18
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 105.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK19                             00008000    0000246C =        9324. bytes (REL,CON)
+_BANK19                             00008000    00003DB1 =       15793. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$Riff_Sound_Over_02_wav_pcmenc$   bank19
-     00008000  _Riff_Sound_Over_02_wav_pcmenc     bank19
+     00008000  G$Riff_Intro_Ultimate_03_wav_pcm   bank19
+     00008000  _Riff_Intro_Ultimate_03_wav_pcme   bank19
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 106.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK20                             00008000    000028B9 =       10425. bytes (REL,CON)
+_BANK20                             00008000    00002F8A =       12170. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$Riff_Sound_Wayne_01_wav_pcmenc   bank20
-     00008000  _Riff_Sound_Wayne_01_wav_pcmenc    bank20
+     00008000  G$Riff_Intro_Ultimate_04_wav_pcm   bank20
+     00008000  _Riff_Intro_Ultimate_04_wav_pcme   bank20
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 107.
 Hexadecimal  [32-Bits]
@@ -5004,204 +5009,216 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK24                             00008000    000006A1 =        1697. bytes (REL,CON)
+_BANK24                             00008000    00003CA4 =       15524. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$Riff_Intro_Hulk_04_wav_pcmenc$   bank24
-     00008000  _Riff_Intro_Hulk_04_wav_pcmenc     bank24
+     00008000  G$Riff_Sound_Youza40_01_wav_pcme   bank24
+     00008000  _Riff_Sound_Youza40_01_wav_pcmen   bank24
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 111.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK25                             00008000    00003890 =       14480. bytes (REL,CON)
+_BANK25                             00008000    00003B3A =       15162. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$Riff_Intro_Karate_01_wav_pcmen   bank25
-     00008000  _Riff_Intro_Karate_01_wav_pcmenc   bank25
+     00008000  G$Riff_Intro_ACDC_01_wav_pcmenc$   bank25
+     00008000  _Riff_Intro_ACDC_01_wav_pcmenc     bank25
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 112.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK26                             00008000    00003F1B =       16155. bytes (REL,CON)
+_BANK26                             00008000    00003C61 =       15457. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$Riff_Intro_Karate_02_wav_pcmen   bank26
-     00008000  _Riff_Intro_Karate_02_wav_pcmenc   bank26
+     00008000  G$Riff_Sound_Austin03_01_wav_pcm   bank26
+     00008000  _Riff_Sound_Austin03_01_wav_pcme   bank26
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 113.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK27                             00008000    0000217D =        8573. bytes (REL,CON)
+_BANK27                             00008000    00002D08 =       11528. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$Riff_Intro_Karate_03_wav_pcmen   bank27
-     00008000  _Riff_Intro_Karate_03_wav_pcmenc   bank27
+     00008000  G$Riff_Sound_Austin02_01_wav_pcm   bank27
+     00008000  _Riff_Sound_Austin02_01_wav_pcme   bank27
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 114.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK28                             00008000    00003691 =       13969. bytes (REL,CON)
+_BANK28                             00008000    00003F11 =       16145. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$Riff_Death_Licence_01_wav_pcme   bank28
-     00008000  _Riff_Death_Licence_01_wav_pcmen   bank28
+     00008000  G$Riff_Sound_Austin01_01_wav_pcm   bank28
+     00008000  _Riff_Sound_Austin01_01_wav_pcme   bank28
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 115.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK29                             00008000    00001DD6 =        7638. bytes (REL,CON)
+_BANK29                             00008000    000037BE =       14270. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$Riff_Death_Licence_02_wav_pcme   bank29
-     00008000  _Riff_Death_Licence_02_wav_pcmen   bank29
+     00008000  G$Riff_Sound_SimpsonsSucked_01_w   bank29
+     00008000  _Riff_Sound_SimpsonsSucked_01_wa   bank29
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 116.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK30                             00008000    00001B60 =        7008. bytes (REL,CON)
+_BANK30                             00008000    00003CF9 =       15609. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$Riff_Sound_Eminem_01_wav_pcmen   bank30
-     00008000  _Riff_Sound_Eminem_01_wav_pcmenc   bank30
+     00008000  G$Riff_Sound_Excellent40_01_wav_   bank30
+     00008000  _Riff_Sound_Excellent40_01_wav_p   bank30
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 117.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK31                             00008000    000035FE =       13822. bytes (REL,CON)
+_BANK31                             00008000    00003A6D =       14957. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$Riff_Intro_Ultimate_01_wav_pcm   bank31
-     00008000  _Riff_Intro_Ultimate_01_wav_pcme   bank31
+     00008000  G$Riff_Sound_Excellent50_01_wav_   bank31
+     00008000  _Riff_Sound_Excellent50_01_wav_p   bank31
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 118.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK32                             00008000    0000379D =       14237. bytes (REL,CON)
+_BANK32                             00008000    000037D3 =       14291. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$Riff_Intro_Ultimate_02_wav_pcm   bank32
-     00008000  _Riff_Intro_Ultimate_02_wav_pcme   bank32
+     00008000  G$Riff_Sound_VHdoctor_01_wav_pcm   bank32
+     00008000  _Riff_Sound_VHdoctor_01_wav_pcme   bank32
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 119.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK33                             00008000    00003DB1 =       15793. bytes (REL,CON)
+_BANK33                             00008000    00003AF0 =       15088. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$Riff_Intro_Ultimate_03_wav_pcm   bank33
-     00008000  _Riff_Intro_Ultimate_03_wav_pcme   bank33
+     00008000  G$Riff_Sound_VHdoctor_02_wav_pcm   bank33
+     00008000  _Riff_Sound_VHdoctor_02_wav_pcme   bank33
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 120.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK34                             00008000    00002F8A =       12170. bytes (REL,CON)
+_BANK34                             00008000    00003857 =       14423. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$Riff_Intro_Ultimate_04_wav_pcm   bank34
-     00008000  _Riff_Intro_Ultimate_04_wav_pcme   bank34
+     00008000  G$Riff_Sound_VHdoctor_03_wav_pcm   bank34
+     00008000  _Riff_Sound_VHdoctor_03_wav_pcme   bank34
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 121.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK35                             00008000    000032CD =       13005. bytes (REL,CON)
+_BANK35                             00008000    00003DD9 =       15833. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$Riff_Intro_Kiss_01_wav_pcmenc$   bank35
-     00008000  _Riff_Intro_Kiss_01_wav_pcmenc     bank35
+     00008000  G$Riff_Intro_Hulk_04_wav_pcmenc$   bank35
+     00008000  _Riff_Intro_Hulk_04_wav_pcmenc     bank35
+     000086A1  G$Riff_Sound_VHjump02_01_wav_pcm   bank35
+     000086A1  _Riff_Sound_VHjump02_01_wav_pcme   bank35
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 122.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK36                             00008000    00002C72 =       11378. bytes (REL,CON)
+_BANK36                             00008000    000038D8 =       14552. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$Riff_Intro_Kiss_02_wav_pcmenc$   bank36
-     00008000  _Riff_Intro_Kiss_02_wav_pcmenc     bank36
+     00008000  G$Riff_Sound_Excellent20_01_wav_   bank36
+     00008000  _Riff_Sound_Excellent20_01_wav_p   bank36
+     0000A47D  G$Riff_Sound_VHjump02_02_wav_pcm   bank36
+     0000A47D  _Riff_Sound_VHjump02_02_wav_pcme   bank36
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 123.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK37                             00008000    000032ED =       13037. bytes (REL,CON)
+_BANK37                             00008000    00003918 =       14616. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$Riff_Intro_Kiss_03_wav_pcmenc$   bank37
-     00008000  _Riff_Intro_Kiss_03_wav_pcmenc     bank37
+     00008000  G$Riff_Sound_Excellent30_01_wav_   bank37
+     00008000  _Riff_Sound_Excellent30_01_wav_p   bank37
+     00009BB5  G$Riff_Sound_Silicon01_01_wav_pc   bank37
+     00009BB5  _Riff_Sound_Silicon01_01_wav_pcm   bank37
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 124.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK38                             00008000    0000281E =       10270. bytes (REL,CON)
+_BANK38                             00008000    00003E82 =       16002. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$Riff_Intro_Kiss_04_wav_pcmenc$   bank38
-     00008000  _Riff_Intro_Kiss_04_wav_pcmenc     bank38
+     00008000  G$Riff_Sound_Austin03_02_wav_pcm   bank38
+     00008000  _Riff_Sound_Austin03_02_wav_pcme   bank38
+     00008C9A  G$Riff_Sound_Excellent10_01_wav_   bank38
+     00008C9A  _Riff_Sound_Excellent10_01_wav_p   bank38
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 125.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK39                             00008000    00003B3A =       15162. bytes (REL,CON)
+_BANK39                             00008000    000037F8 =       14328. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$Riff_Intro_ACDC_01_wav_pcmenc$   bank39
-     00008000  _Riff_Intro_ACDC_01_wav_pcmenc     bank39
+     00008000  G$Riff_Sound_Silicon02_01_wav_pc   bank39
+     00008000  _Riff_Sound_Silicon02_01_wav_pcm   bank39
+     0000997D  G$Riff_Sound_Silicon03_01_wav_pc   bank39
+     0000997D  _Riff_Sound_Silicon03_01_wav_pcm   bank39
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 126.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK40                             00008000    000020AE =        8366. bytes (REL,CON)
+_BANK40                             00008000    00003E84 =       16004. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$Riff_Intro_ACDC_02_wav_pcmenc$   bank40
-     00008000  _Riff_Intro_ACDC_02_wav_pcmenc     bank40
+     00008000  G$Riff_Death_Licence_02_wav_pcme   bank40
+     00008000  _Riff_Death_Licence_02_wav_pcmen   bank40
+     00009DD6  G$Riff_Intro_ACDC_02_wav_pcmenc$   bank40
+     00009DD6  _Riff_Intro_ACDC_02_wav_pcmenc     bank40
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 127.
 Hexadecimal  [32-Bits]
@@ -5316,12 +5333,12 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK50                             00008000    00000008 =           8. bytes (REL,CON)
+_BANK50                             00008000    00003AB3 =       15027. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$bank50_txt$0_0$0                 bank50
-     00008000  _bank50_txt                        bank50
+     00008000  G$Riff_Sound_VHshriek_01_wav_pcm   bank50
+     00008000  _Riff_Sound_VHshriek_01_wav_pcme   bank50
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 137.
 Hexadecimal  [32-Bits]
@@ -5472,16 +5489,16 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK63                             00008000    00000020 =          32. bytes (REL,CON)
+_BANK63                             00008000    00000029 =          41. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
      00008000  G$riff_sample_bank$0_0$0           fixedbank
      00008000  _riff_sample_bank                  fixedbank
-     00008013  G$music_object_bank$0_0$0          fixedbank
-     00008013  _music_object_bank                 fixedbank
-     0000801C  G$sound_object_bank$0_0$0          fixedbank
-     0000801C  _sound_object_bank                 fixedbank
+     0000801C  G$music_object_bank$0_0$0          fixedbank
+     0000801C  _music_object_bank                 fixedbank
+     00008025  G$sound_object_bank$0_0$0          fixedbank
+     00008025  _sound_object_bank                 fixedbank
 ASxxxx Linker V03.00 + NoICE + sdld,  page 150.
 Hexadecimal  [32-Bits]
 
