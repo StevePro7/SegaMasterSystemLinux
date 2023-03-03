@@ -75,6 +75,15 @@ const unsigned char *riff_sample_data[] =
 	Riff_Sound_Austin03_01_wav_pcmenc,
 	Riff_Sound_Austin03_02_wav_pcmenc,
 
+	// Silicon Valley
+	Riff_Sound_Silicon01_01_wav_pcmenc,
+	Riff_Sound_Silicon02_01_wav_pcmenc,
+	Riff_Sound_Silicon03_01_wav_pcmenc,
+
+	// Game Ove
+	Riff_Sound_Over_01_wav_pcmenc,
+	Riff_Sound_Over_02_wav_pcmenc,
+
 
 	// Title riff	bank 41-49	[x9]
 	Riff__Title__Screen__01_wav_pcmenc,
@@ -113,6 +122,15 @@ const unsigned char riff_sample_bank[] =
 	Riff_Sound_Austin02_02_wav_pcmenc_bank,
 	Riff_Sound_Austin03_01_wav_pcmenc_bank,
 	Riff_Sound_Austin03_02_wav_pcmenc_bank,
+
+	// Silicon Valley
+	Riff_Sound_Silicon01_01_wav_pcmenc_bank,
+	Riff_Sound_Silicon02_01_wav_pcmenc_bank,
+	Riff_Sound_Silicon03_01_wav_pcmenc_bank,
+
+	// Game Ove
+	Riff_Sound_Over_01_wav_pcmenc_bank,
+	Riff_Sound_Over_02_wav_pcmenc_bank,
 
 	Riff__Title__Screen__01_wav_pcmenc_bank,
 	Riff__Title__Screen__02_wav_pcmenc_bank,

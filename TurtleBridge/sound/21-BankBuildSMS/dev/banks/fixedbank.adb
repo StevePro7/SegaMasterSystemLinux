@@ -1,5 +1,5 @@
 M:fixedbank
-S:G$riff_sample_data$0_0$0({56}DA28d,DG,SC:U),E,0,0
+S:G$riff_sample_data$0_0$0({66}DA33d,DG,SC:U),E,0,0
 S:G$music_object_data$0_0$0({18}DA9d,DG,SC:U),E,0,0
 S:G$sound_object_data$0_0$0({8}DA4d,DG,SC:U),E,0,0
 S:G$locale_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
@@ -88,8 +88,8 @@ S:G$Riff__Splash__Screen__06_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff__Splash__Screen__07_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff__Splash__Screen__08_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff__Splash__Screen__09_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
-S:G$bank60_txt$0_0$0({0}DA0d,SC:U),D,0,0
-S:G$bank61_txt$0_0$0({0}DA0d,SC:U),D,0,0
-S:G$riff_sample_bank$0_0$0({28}DA28d,SC:U),D,0,0
+S:G$Riff_Sound_Over_01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$Riff_Sound_Over_02_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$riff_sample_bank$0_0$0({33}DA33d,SC:U),D,0,0
 S:G$music_object_bank$0_0$0({9}DA9d,SC:U),D,0,0
 S:G$sound_object_bank$0_0$0({4}DA4d,SC:U),D,0,0
