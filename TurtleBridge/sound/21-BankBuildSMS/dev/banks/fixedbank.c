@@ -1,4 +1,5 @@
 #include "fixedbank.h"
+#include "bank3.h"
 #include "bank4.h"
 #include "bank5.h"
 #include "bank6.h"
