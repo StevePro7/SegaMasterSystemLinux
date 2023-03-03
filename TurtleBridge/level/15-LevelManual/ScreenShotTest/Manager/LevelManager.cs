@@ -61,6 +61,14 @@ namespace ScreenShotTest
 				}
 			}
 
+			if (inputManager.KeyHold(Keys.A))
+			{
+				for (int idx = 0; idx < Tiles.Length; idx++)
+				{
+					Tiles[idx] = selectorManager.Selector;
+				}
+			}
+
 			bool left = inputManager.LeftButton();
 			bool rght = inputManager.RightButton();
 			if (left || rght)

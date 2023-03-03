@@ -42,12 +42,11 @@ namespace ScreenShotTest
 			stripVert = myContentManager.Load<Texture2D>("StripVert");
 		}
 
-		
-
 		public void Update()
 		{
 			levelManager.Validate();
 			ProcessWaveGaps();
+
 			if (!inputManager.KeyHold(Keys.Enter))
 			{
 				return;
