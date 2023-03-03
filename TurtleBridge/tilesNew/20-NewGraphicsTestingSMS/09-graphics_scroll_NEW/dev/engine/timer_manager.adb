@@ -33,7 +33,7 @@ S:G$global_reset_object$0_0$0({2}STtag_struct_reset_object:S),E,0,0
 S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_font_manager_zero$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_font_manager_valu$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_hack_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_hack_manager_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_hack_manager_invert$0_0$0({2}DF,SV:S),C,0,0

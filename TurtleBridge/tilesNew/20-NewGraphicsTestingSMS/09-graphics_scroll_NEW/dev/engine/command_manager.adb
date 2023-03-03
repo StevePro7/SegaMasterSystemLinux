@@ -29,4 +29,4 @@ S:G$global_command_object$0_0$0({4}STtag_struct_command_object:S),E,0,0
 S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_font_manager_zero$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_font_manager_valu$0_0$0({2}DF,SV:S),C,0,0

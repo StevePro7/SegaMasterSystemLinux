@@ -35,7 +35,7 @@ void screen_play_screen_load()
 	//19-Feb-2023
 	// TODO - iron this out but IMPORTANT - I don't think I want to play music in same function as draw title etc. as causes screen flicker??
 	engine_scroll_manager_update( 0 );
-	//engine_music_manager_play( 0 );
+	engine_music_manager_play( 0 );
 	//engine_debug_manager_printout();
 	complete = false;
 	deltaY = 0;
@@ -147,20 +147,20 @@ void screen_play_screen_update( unsigned char *screen_type )
 		// Get horizontal movement.
 		deltaX = engine_player_manager_get_deltaX( po->player_state, command );
 
-		if( po->player_state == player_state_isintheair )
-		{
-			totalX += deltaX;
-			frameX++;
-		}
-		else
-		{
-			if( fo->frame_count > 1 && po->player_state == player_state_isonground && !flag )
-			{
-				flag = 1;
-				engine_font_manager_data( totalX, 30, 2 );
-				engine_font_manager_data( frameX, 30, 3 );
-			}
-		}
+		//if( po->player_state == player_state_isintheair )
+		//{
+		//	totalX += deltaX;
+		//	frameX++;
+		//}
+		//else
+		//{
+		//	if( fo->frame_count > 1 && po->player_state == player_state_isonground && !flag )
+		//	{
+		//		flag = 1;
+		//		engine_font_manager_data( totalX, 30, 2 );
+		//		engine_font_manager_data( frameX, 30, 3 );
+		//	}
+		//}
 
 		// Get button action.
 		engine_player_manager_set_action( po->player_frame, command );

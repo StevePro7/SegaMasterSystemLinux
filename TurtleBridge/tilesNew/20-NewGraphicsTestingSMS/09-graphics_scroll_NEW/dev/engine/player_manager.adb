@@ -16,7 +16,7 @@ F:G$engine_player_manager_get_deltaX$0_0$0({2}DF,SC:U),Z,0,0,0,0,0
 S:Lplayer_manager.engine_player_manager_get_deltaX$state$1_0$145({1}SC:U),B,1,4
 S:Lplayer_manager.engine_player_manager_get_deltaX$command$1_0$145({1}SC:U),B,1,5
 S:Lplayer_manager.engine_player_manager_get_deltaX$po$1_0$146({2}DG,STtag_struct_player_object:S),R,0,0,[]
-S:Lplayer_manager.engine_player_manager_get_deltaX$deltaX$1_0$146({1}SC:U),R,0,0,[]
+S:Lplayer_manager.engine_player_manager_get_deltaX$deltaX$1_0$146({1}SC:U),R,0,0,[l]
 F:G$engine_player_manager_get_deltaY$0_0$0({2}DF,SI:S),Z,0,0,0,0,0
 S:Lplayer_manager.engine_player_manager_get_deltaY$po$1_0$151({2}DG,STtag_struct_player_object:S),R,0,0,[]
 S:Lplayer_manager.engine_player_manager_get_deltaY$deltaY$1_0$151({2}SI:S),R,0,0,[e,d]
@@ -24,9 +24,11 @@ S:Lplayer_manager.engine_player_manager_get_deltaY$sloc0$0_1$0({1}SC:U),B,1,-1
 F:G$engine_player_manager_set_action$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lplayer_manager.engine_player_manager_set_action$frame$1_0$154({1}SC:U),B,1,4
 S:Lplayer_manager.engine_player_manager_set_action$command$1_0$154({1}SC:U),B,1,5
-S:Lplayer_manager.engine_player_manager_set_action$po$1_0$155({2}DG,STtag_struct_player_object:S),R,0,0,[]
-S:Lplayer_manager.engine_player_manager_set_action$newFrame$1_0$155({1}SC:U),R,0,0,[c]
-S:Lplayer_manager.engine_player_manager_set_action$newIndex$1_0$155({1}SC:U),R,0,0,[]
+S:Lplayer_manager.engine_player_manager_set_action$po$1_0$155({2}DG,STtag_struct_player_object:S),R,0,0,[c,b]
+S:Lplayer_manager.engine_player_manager_set_action$newFrame$1_0$155({1}SC:U),R,0,0,[e]
+S:Lplayer_manager.engine_player_manager_set_action$newIndex$1_0$155({1}SC:U),B,1,-1
+S:Lplayer_manager.engine_player_manager_set_action$sloc0$0_1$0({2}SI:S),B,1,-3
+S:Lplayer_manager.engine_player_manager_set_action$sloc1$0_1$0({1}SC:U),B,1,-1
 F:G$engine_player_manager_horz$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lplayer_manager.engine_player_manager_horz$deltaX$1_0$163({1}SC:U),B,1,4
 S:Lplayer_manager.engine_player_manager_horz$po$1_0$164({2}DG,STtag_struct_player_object:S),R,0,0,[]

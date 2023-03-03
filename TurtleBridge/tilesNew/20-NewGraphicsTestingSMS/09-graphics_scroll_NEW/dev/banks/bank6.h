@@ -65,3 +65,7 @@ extern const unsigned char level1114_txt[];
 extern const unsigned char level1115_txt[];
 #define				level1115_txt_size 384
 #define				level1115_txt_bank 6
+
+extern const unsigned char level1117_txt[];
+#define				level1117_txt_size 2048
+#define				level1117_txt_bank 6

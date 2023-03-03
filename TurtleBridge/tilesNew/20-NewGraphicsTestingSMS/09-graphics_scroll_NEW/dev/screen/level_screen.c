@@ -205,7 +205,9 @@ static void printStats()
 	delta = 1;
 	engine_font_manager_valu( ( world + delta ), 9, DIFFICULTY_ROW );
 	engine_font_manager_valu( ( round + delta ), 18, DIFFICULTY_ROW );
-	engine_font_manager_valu( ( point + delta ), 27, DIFFICULTY_ROW );
+	//engine_font_manager_valu( ( point + delta ), 27, DIFFICULTY_ROW );		// TODO - revert
+	engine_font_manager_data( ( point + delta ), 27, DIFFICULTY_ROW );
+
 	//engine_font_manager_char( '0', 26, DIFFICULTY_ROW );
 	//engine_font_manager_char( '/', 28, DIFFICULTY_ROW );
 	//engine_font_manager_char( '0', 29, DIFFICULTY_ROW );
@@ -232,6 +234,6 @@ static void printTexts()
 
 	engine_font_manager_char( '0', 8, DIFFICULTY_ROW );
 	engine_font_manager_char( '0', 17, DIFFICULTY_ROW );
-	engine_font_manager_char( '0', 26, DIFFICULTY_ROW );
+	//engine_font_manager_char( '0', 26, DIFFICULTY_ROW );		// TODO - revert
 	engine_font_manager_text( "/04", 28, DIFFICULTY_ROW );
 }
