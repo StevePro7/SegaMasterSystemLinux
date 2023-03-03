@@ -29,6 +29,10 @@ namespace AudioDump
 				fileWips.Add(objOuter);
 				Datas.Add(outer);
 				int maxim = objOuter.Size;
+				if (Names.Contains(objOuter.Name))
+				{
+					continue;
+				}
 				Names.Add(objOuter.Name);
 				for (int inner = 0; inner < count; inner++)
 				{
