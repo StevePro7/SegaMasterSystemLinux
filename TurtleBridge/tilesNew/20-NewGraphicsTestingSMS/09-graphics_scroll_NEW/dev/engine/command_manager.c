@@ -26,6 +26,18 @@ void engine_command_manager_init()
 	}
 }
 
+void engine_command_manager_load( unsigned int *storage_frame_index, unsigned char* storage_this_command )
+{
+	struct_command_object *co = &global_command_object;
+	unsigned char index;
+
+	for( index = 0; index < MAX_COMMANDS; index++ )
+	{
+		command_frame_index[ index ] = storage_frame_index[ index ];
+		command_this_command[ index ] = storage_this_command[ index ];
+	}
+}
+
 // TODO - rename this as record
 void engine_command_manager_record( unsigned int frame, unsigned char command )
 {
