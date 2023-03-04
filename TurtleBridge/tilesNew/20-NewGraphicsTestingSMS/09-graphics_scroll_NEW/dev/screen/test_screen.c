@@ -31,6 +31,7 @@ static signed int deltaY;
 static unsigned char frame_counter;
 static void printCmds();
 static unsigned char available;
+static unsigned char local_prev_command;
 
 void screen_test_screen_load()
 {
@@ -78,7 +79,7 @@ void screen_test_screen_load()
 	engine_font_manager_text( "TESTER SCREEN", 10, 2 );
 
 	engine_frame_manager_load();
-	engine_frame_manager_draw();
+	//engine_frame_manager_draw();
 	engine_command_manager_init();
 	//engine_command_manager_load();
 	engine_storage_manager_read();
@@ -87,14 +88,14 @@ void screen_test_screen_load()
 	complete = false;
 	deltaY = 0;
 	frame_counter = 0;
-
+	local_prev_command = COMMAND_NONE_MASK;
 
 	available = engine_storage_manager_available();
 	engine_font_manager_data( available, 31, 1 );
 	if( available )
 	{
 		engine_storage_manager_read();
-		printCmds();
+	//	printCmds();
 	}
 }
 
@@ -138,20 +139,23 @@ void screen_test_screen_update( unsigned char *screen_type )
 			if( command_frame_index[ frame_counter ] == fo->frame_count )
 			{
 				command = command_this_command[ frame_counter ];
-				engine_font_manager_data( frame_counter, 30, 03 );
-				engine_font_manager_data( command, 30, 04 );
+
+				//engine_font_manager_data( frame_counter, 30, 03 );
+				//engine_font_manager_data( command, 30, 04 );
 
 				//TODO - bad - wrap in API.
-				co->prev_command = command;
+				//co->prev_command = command;
+				local_prev_command = command;
 				frame_counter++;
 			}
 			else
 			{
-				command = co->prev_command;
+				//command = co->prev_command;
+				command = local_prev_command;
 			}
 
 			engine_frame_manager_update();
-			engine_frame_manager_draw();
+			//engine_frame_manager_draw();
 		}
 
 		if( COMMAND_NONE_MASK != command )

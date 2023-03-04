@@ -23,7 +23,7 @@ void screen_option_screen_load()
 	engine_font_manager_text( "OPTION SCREEN", 10, 2 );
 	engine_font_manager_text( "  RECORD CMDS", 10, 0 );
 	engine_font_manager_text( "  PLAYBACK!!!", 10, 1 );
-	cursorY = 0;
+	cursorY = 1;
 	engine_font_manager_char( '>', 10, cursorY );
 }
 
