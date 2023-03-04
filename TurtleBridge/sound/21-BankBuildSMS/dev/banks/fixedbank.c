@@ -47,6 +47,7 @@
 #include "bank47.h"
 #include "bank48.h"
 #include "bank49.h"
+#include "bank50.h"
 #include "bank51.h"
 #include "bank52.h"
 #include "bank53.h"
@@ -131,6 +132,14 @@ const unsigned char *riff_sample_data[] =
 	Riff__Splash__Screen__07_wav_pcmenc,
 	Riff__Splash__Screen__08_wav_pcmenc,
 	Riff__Splash__Screen__09_wav_pcmenc,
+
+	// VH
+	Riff_Sound_VHshriek_01_wav_pcmenc,
+	Riff_Sound_VHjump02_01_wav_pcmenc,
+	Riff_Sound_VHjump02_02_wav_pcmenc,
+	Riff_Sound_VHdoctor_01_wav_pcmenc,
+	Riff_Sound_VHdoctor_02_wav_pcmenc,
+	Riff_Sound_VHdoctor_03_wav_pcmenc,
 };
 const unsigned char riff_sample_bank[] =
 {
@@ -202,6 +211,14 @@ const unsigned char riff_sample_bank[] =
 	Riff__Splash__Screen__07_wav_pcmenc_bank,
 	Riff__Splash__Screen__08_wav_pcmenc_bank,
 	Riff__Splash__Screen__09_wav_pcmenc_bank,
+
+	// VH
+	Riff_Sound_VHshriek_01_wav_pcmenc_bank,
+	Riff_Sound_VHjump02_01_wav_pcmenc_bank,
+	Riff_Sound_VHjump02_02_wav_pcmenc_bank,
+	Riff_Sound_VHdoctor_01_wav_pcmenc_bank,
+	Riff_Sound_VHdoctor_02_wav_pcmenc_bank,
+	Riff_Sound_VHdoctor_03_wav_pcmenc_bank,
 };
 
 // FIXED bank.
