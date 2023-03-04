@@ -9,7 +9,7 @@ extern struct_player_object global_player_object;
 
 //void engine_player_manager_starts(unsigned char index);
 void engine_player_manager_init();
-void engine_player_manager_initX( unsigned char difficulty );
+void engine_player_manager_initX( unsigned char difficulty, unsigned char world );
 void engine_player_manager_loadX( unsigned char checkPoint );
 void engine_player_manager_loadY( unsigned char player_loadY );
 

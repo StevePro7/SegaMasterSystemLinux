@@ -29,7 +29,7 @@ void screen_diff_screen_load()
 
 		engine_level_manager_init( go->game_level );
 		game_difficulty = go->game_difficulty;
-		engine_player_manager_initX( game_difficulty );
+		engine_player_manager_initX( go->game_difficulty, go->game_world );
 
 
 		devkit_SMS_displayOff();
@@ -58,7 +58,7 @@ void screen_diff_screen_load()
 
 void screen_diff_screen_update( unsigned char *screen_type )
 {
-	//struct_game_object *go = &global_game_object;
+	struct_game_object *go = &global_game_object;
 	struct_player_object *po = &global_player_object;
 	unsigned char input;
 
@@ -67,7 +67,7 @@ void screen_diff_screen_update( unsigned char *screen_type )
 	{
 		engine_util_manager_locale_blank( 1, po->posnX / 8 - 2, player_loadY - 6 );
 		game_difficulty--;
-		engine_player_manager_initX( game_difficulty );
+		engine_player_manager_initX( game_difficulty, go->game_world );
 		engine_font_manager_text( ( unsigned char * ) locale_object_difficulty[ game_difficulty ], po->posnX / 8 - 2, player_loadY - 6 );
 	}
 
@@ -76,7 +76,7 @@ void screen_diff_screen_update( unsigned char *screen_type )
 	{
 		engine_util_manager_locale_blank( 1, po->posnX / 8 - 2, player_loadY - 6 );
 		game_difficulty++;
-		engine_player_manager_initX( game_difficulty );
+		engine_player_manager_initX( game_difficulty, go->game_world );
 		engine_font_manager_text( ( unsigned char * ) locale_object_difficulty[ game_difficulty ], po->posnX / 8 - 2, player_loadY - 6 );
 	}
 

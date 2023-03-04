@@ -48,7 +48,7 @@ void engine_player_manager_init()
 	updatePlayer();
 }
 
-void engine_player_manager_initX( unsigned char difficulty )
+void engine_player_manager_initX( unsigned char difficulty, unsigned char world )
 {
 	struct_player_object *po = &global_player_object;
 	po->initX = player_object_starts[ difficulty ];

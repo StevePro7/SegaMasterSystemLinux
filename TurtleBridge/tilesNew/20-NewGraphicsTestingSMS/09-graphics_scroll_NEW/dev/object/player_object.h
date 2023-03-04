@@ -27,6 +27,11 @@ typedef struct tag_struct_player_object
 extern const unsigned char player_object_starts[];
 extern const unsigned char player_object_deltas[];
 
+extern const unsigned char player_moving_deltaX[];
+extern const unsigned char player_ground_deltaX[];
+extern const unsigned char player_flying_deltaX[];
+
+
 extern const signed int *jump_array_ptr[];
 extern const unsigned char jump_array_len[];
 extern const signed int jump_array_00[];
@@ -34,10 +39,10 @@ extern const signed int jump_array_01[];
 extern const signed int jump_array_02[];
 extern const signed int jump_array_03[];
 extern const signed int jump_array_04[];
-extern const signed int jump_array_99[];
-extern const signed int jump_array_20[];
-extern const signed int jump_array_40[];
-extern const signed int jump_array_80[];
-extern const signed int jump_array_130[];
+//extern const signed int jump_array_99[];
+//extern const signed int jump_array_20[];
+//extern const signed int jump_array_40[];
+//extern const signed int jump_array_80[];
+//extern const signed int jump_array_130[];
 
 #endif//_PLAYER_OBJECT_H_

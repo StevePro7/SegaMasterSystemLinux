@@ -14,7 +14,7 @@ void screen_init_screen_load()
 	// TODO delete
 
 	engine_level_manager_init( go->game_level );
-	engine_player_manager_initX( go->game_difficulty );		// TODO rename
+	engine_player_manager_initX( go->game_difficulty, go->game_world );
 	engine_collision_manager_init( go->game_difficulty );
 }
 

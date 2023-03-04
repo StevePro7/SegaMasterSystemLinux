@@ -37,7 +37,7 @@ void screen_begin_screen_load()
 	devkit_SMS_displayOff();
 	drawScreen();
 	//engine_player_manager_initX( difficulty_type_harder);
-	engine_player_manager_initX( difficulty_type_insane );
+	engine_player_manager_initX( difficulty_type_insane, 1 );
 	engine_level_manager_draw_point( screen );
 	engine_player_manager_loadX( screen );
 
