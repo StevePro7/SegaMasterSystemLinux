@@ -110,7 +110,11 @@ unsigned char engine_command_manager_build( unsigned char state, unsigned char i
 	{
 		if( player_state_isonground == state )
 		{
-			command |= COMMAND_HIGH_MASK;
+			// Edge case: ignore up direction if on ground but NOT jumping to filter out unused commands.
+			if( input5 || input6 )
+			{
+				command |= COMMAND_HIGH_MASK;
+			}
 		}
 	}
 	if( input4 )
