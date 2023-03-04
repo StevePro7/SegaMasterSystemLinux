@@ -79,10 +79,10 @@ void screen_test_screen_load()
 	engine_font_manager_text( "TESTER SCREEN", 10, 2 );
 
 	engine_frame_manager_load();
-	//engine_frame_manager_draw();
+	engine_frame_manager_draw();
 	engine_command_manager_init();
 	//engine_command_manager_load();
-	engine_storage_manager_read();
+	//engine_storage_manager_read();
 
 	engine_scroll_manager_update( 0 );
 	complete = false;
@@ -95,7 +95,7 @@ void screen_test_screen_load()
 	if( available )
 	{
 		engine_storage_manager_read();
-	//	printCmds();
+		printCmds();
 	}
 }
 
@@ -155,7 +155,7 @@ void screen_test_screen_update( unsigned char *screen_type )
 			}
 
 			engine_frame_manager_update();
-			//engine_frame_manager_draw();
+			engine_frame_manager_draw();
 		}
 
 		if( COMMAND_NONE_MASK != command )

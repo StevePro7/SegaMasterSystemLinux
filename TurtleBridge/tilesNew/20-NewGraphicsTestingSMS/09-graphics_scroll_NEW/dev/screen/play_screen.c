@@ -26,6 +26,7 @@ static signed int deltaY;
 static unsigned int totalX;
 static unsigned char frameX;
 static unsigned char flag;
+static unsigned char scroll_count;
 
 void screen_play_screen_load()
 {
@@ -35,7 +36,7 @@ void screen_play_screen_load()
 	//19-Feb-2023
 	// TODO - iron this out but IMPORTANT - I don't think I want to play music in same function as draw title etc. as causes screen flicker??
 	engine_scroll_manager_update( 0 );
-	engine_music_manager_play( 0 );
+	//engine_music_manager_play( 0 );
 	//engine_debug_manager_printout();
 	complete = false;
 	deltaY = 0;
@@ -43,6 +44,7 @@ void screen_play_screen_load()
 	totalX = 0;
 	frameX = 0;
 	flag = 0;
+	scroll_count = 0;
 }
 
 void screen_play_screen_update( unsigned char *screen_type )
@@ -68,19 +70,19 @@ void screen_play_screen_update( unsigned char *screen_type )
 	
 	input1 = engine_input_manager_hold( input_type_left );
 	input2 = engine_input_manager_move( input_type_right );
-	input1 = 1;		// TODO delete
+	//input1 = 1;		// TODO delete
 	if( input1 || input2 )
 	{
-		if( 1 == fo->frame_count )
+		if( 0 == fo->frame_count )
 		{
 			//command = engine_command_manager_build( po->player_state, 1, 0, 0, 0, 0, 1 );		//Jump index = 1.
-			command = engine_command_manager_build( po->player_state, 0, 0, 1, 0, 0, 1 );		//Jump index = 2.
+			command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 1 );		//Jump index = 2.
 			//command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 1 );		//Jump index = 3.
 			//command = engine_command_manager_build( po->player_state, 0, 1, 1, 0, 0, 1 );		//Jump index = 4.
 		}
 		else
 		{
-			command = engine_command_manager_build( po->player_state, 0, 0, 1, 0, 0, 0 );
+			command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 0 );
 		}
 
 		//if( 24 == fo->frame_count )
@@ -147,6 +149,10 @@ void screen_play_screen_update( unsigned char *screen_type )
 		// Get horizontal movement.
 		deltaX = engine_player_manager_get_deltaX( po->player_state, command );
 
+		// TODO delete this debugging info - for newIndex!!
+		engine_font_manager_data( deltaX, 31, 6 );
+		// TODO delete this debugging info - for newIndex!!
+
 		//if( po->player_state == player_state_isintheair )
 		//{
 		//	totalX += deltaX;
@@ -179,6 +185,10 @@ void screen_play_screen_update( unsigned char *screen_type )
 				if( scroll_state_tile == scroll_state )
 				{
 					engine_level_manager_draw_column( so->scrollColumn );
+					if (fo->frame_count == 0 || po->player_state == 1 )
+					{
+						scroll_count++;		// TODO delete as only used for impossible jump debugging
+					}
 				}
 				else if( scroll_state_comp == scroll_state )
 				{
@@ -189,6 +199,11 @@ void screen_play_screen_update( unsigned char *screen_type )
 					}
 				}
 			}
+
+			// TODO delete this debugging info - for newIndex!!
+			engine_font_manager_data( scroll_count, 31, 8 );
+			engine_font_manager_data( scroll_count / 4, 31, 9 );
+			// TODO delete this debugging info - for newIndex!!
 
 			// Set horizontal movement.
 			engine_player_manager_horz( deltaX );
