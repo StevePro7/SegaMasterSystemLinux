@@ -10,7 +10,8 @@ void screen_ready_screen_load()
 {
 	engine_frame_manager_load();
 	engine_frame_manager_draw();
-	engine_command_manager_load();
+	engine_command_manager_init();
+	//engine_command_manager_load();
 	engine_command_manager_draw();
 	engine_font_manager_text( "READY", 10, 2 );
 }

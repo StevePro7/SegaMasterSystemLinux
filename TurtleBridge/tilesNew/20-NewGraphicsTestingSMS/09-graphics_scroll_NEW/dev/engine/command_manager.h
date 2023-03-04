@@ -6,7 +6,8 @@
 // Global variable.
 extern struct_command_object global_command_object;
 
-void engine_command_manager_load();
+void engine_command_manager_init();
+//void engine_command_manager_load();
 unsigned char engine_command_manager_build( unsigned char state, unsigned char input1, unsigned char input2, unsigned char input3, unsigned char input4, unsigned char input5, unsigned char input6 );
 //unsigned char engine_command_manager_buildX( unsigned char  state, unsigned char input1, unsigned char input2, unsigned char input3, unsigned char input4, unsigned char input5, unsigned char input6 );
 void engine_command_manager_update( unsigned char command );

@@ -23,10 +23,10 @@ S:G$jump_array_ptr$0_0$0({0}DA0d,DG,SI:S),E,0,0
 S:G$global_player_object$0_0$0({16}STtag_struct_player_object:S),E,0,0
 S:G$global_scroll_object$0_0$0({14}STtag_struct_scroll_object:S),E,0,0
 S:G$engine_asm_manager_clear_VRAM$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_command_manager_load$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_command_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_command_manager_build$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_command_manager_update$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_command_manager_steven$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_command_manager_record$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_command_manager_draw$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_bggame$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_splash$0_0$0({2}DF,SV:S),C,0,0

@@ -59,7 +59,7 @@ void screen_intro_screen_load()
 
 	player_loadY = level_platforms[ po->lookX ];
 	engine_player_manager_loadY( player_loadY );
-	engine_command_manager_load();
+	//engine_command_manager_init();		TODO delete - dup
 	engine_player_manager_draw();
 	devkit_SMS_displayOn();
 
@@ -70,7 +70,7 @@ void screen_intro_screen_load()
 	// intro_screen
 	engine_frame_manager_load();
 	engine_frame_manager_draw();
-	engine_command_manager_load();
+	engine_command_manager_init();
 	//engine_command_manager_draw();
 	engine_font_manager_text( "INTROX SCREEN", 10, 2 );
 
@@ -225,8 +225,11 @@ void screen_intro_screen_update( unsigned char *screen_type )
 		if( player_state_isnowdying == player_state )
 		{
 			engine_scroll_manager_update( 0 );
-			*screen_type = screen_type_dead;
+			engine_storage_manager_write();
+			*screen_type = screen_type_option;
 			return;
+			//*screen_type = screen_type_dead;
+			//return;
 		}
 	}
 

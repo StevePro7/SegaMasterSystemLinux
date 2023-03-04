@@ -5,6 +5,7 @@
 #include "../engine/global_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/player_manager.h"
+#include "../engine/scroll_manager.h"
 #include "../engine/storage_manager.h"
 
 static unsigned char cursorY;
@@ -13,14 +14,16 @@ static void printCmds();
 void screen_option_screen_load()
 {
 	unsigned char idx;
+	engine_scroll_manager_update( 0 );
 	for( idx = 0; idx < SCREEN_HIGH; idx++ )
 	{
 		engine_font_manager_text( "                                ", 0, idx );
 	}
+
 	engine_font_manager_text( "OPTION SCREEN", 10, 2 );
 	engine_font_manager_text( "  RECORD CMDS", 10, 0 );
 	engine_font_manager_text( "  PLAYBACK!!!", 10, 1 );
-	cursorY = 1;
+	cursorY = 0;
 	engine_font_manager_char( '>', 10, cursorY );
 }
 

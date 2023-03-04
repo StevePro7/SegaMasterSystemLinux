@@ -11,7 +11,7 @@
 // Global variable.
 struct_command_object global_command_object;
 
-void engine_command_manager_load()
+void engine_command_manager_init()
 {
 	struct_command_object *co = &global_command_object;
 	unsigned char index;
@@ -32,12 +32,12 @@ void engine_command_manager_record( unsigned int frame, unsigned char command )
 	// TODO - just save 3x cmds for initial POC
 	struct_command_object *co = &global_command_object;
 	//if( co->frame_index < MAX_COMMANDS )
-	if( co->frame_index < 3 )
-	{
-		command_frame_index[ co->frame_index ] = frame;
-		command_this_command[ co->frame_index ] = command;
-		co->frame_index++;
-	}
+	//if( co->frame_index < 16 )
+	//{
+		//command_frame_index[ co->frame_index ] = frame;
+		//command_this_command[ co->frame_index ] = command;
+		//co->frame_index++;
+	//}
 
 	co->prev_command = command;
 }

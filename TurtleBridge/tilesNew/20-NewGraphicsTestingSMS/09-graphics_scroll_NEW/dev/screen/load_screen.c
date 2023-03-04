@@ -49,7 +49,8 @@ void screen_load_screen_load()
 	
 	player_loadY = level_platforms[ po->lookX ];
 	engine_player_manager_loadY( player_loadY );
-	engine_command_manager_load();
+	engine_command_manager_init();
+	//engine_command_manager_load();		// TODO remove
 
 	// TODO delete 
 	//engine_player_manager_loadY( 18 );

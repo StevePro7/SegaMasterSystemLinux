@@ -8,9 +8,15 @@ typedef struct tag_struct_storage_object
 {
 	unsigned long Magic;
 
-	//unsigned int num_jumps;
-	unsigned int storage_frame_index[ 3 ];
-	unsigned char storage_this_command[ 3 ];
+	unsigned char storage_difficulty;
+	unsigned char storage_world;
+	unsigned char storage_round;
+	unsigned char storage_level;
+	unsigned char storage_point;
+	unsigned char storage_padding[ 7 ];
+
+	unsigned int storage_frame_index[ MAX_COMMANDS ];
+	unsigned char storage_this_command[ MAX_COMMANDS ];
 	unsigned char terminal;
 
 } struct_storage_object;

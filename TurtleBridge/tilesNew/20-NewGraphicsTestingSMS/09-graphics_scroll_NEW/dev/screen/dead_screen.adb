@@ -17,10 +17,10 @@ S:G$global_player_object$0_0$0({16}STtag_struct_player_object:S),E,0,0
 S:Fdead_screen$deltaX$0_0$0({1}SC:U),E,0,0
 S:Fdead_screen$deltaY$0_0$0({2}SI:S),E,0,0
 S:Fdead_screen$swap$0_0$0({1}SC:U),E,0,0
-S:G$engine_command_manager_load$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_command_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_command_manager_build$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_command_manager_update$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_command_manager_steven$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_command_manager_record$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_command_manager_draw$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0
