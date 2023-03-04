@@ -1,5 +1,5 @@
 M:fixedbank
-S:G$riff_sample_data$0_0$0({110}DA55d,DG,SC:U),E,0,0
+S:G$riff_sample_data$0_0$0({114}DA57d,DG,SC:U),E,0,0
 S:G$music_object_data$0_0$0({18}DA9d,DG,SC:U),E,0,0
 S:G$sound_object_data$0_0$0({8}DA4d,DG,SC:U),E,0,0
 S:G$locale_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
@@ -35,7 +35,7 @@ S:G$bank9_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$bank10_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$bank11_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$bank12_txt$0_0$0({0}DA0d,SC:U),D,0,0
-S:G$bank13_txt$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$Riff_Sound_Wayne_01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$bank14_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff_Death_Licence_01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff_Sound_Commando_01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
@@ -91,6 +91,7 @@ S:G$Riff__Splash__Screen__08_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff__Splash__Screen__09_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff_Sound_Over_01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff_Sound_Over_02_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
-S:G$riff_sample_bank$0_0$0({55}DA55d,SC:U),D,0,0
+S:G$Riff_Sound_Eminem_01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$riff_sample_bank$0_0$0({57}DA57d,SC:U),D,0,0
 S:G$music_object_bank$0_0$0({9}DA9d,SC:U),D,0,0
 S:G$sound_object_bank$0_0$0({4}DA4d,SC:U),D,0,0

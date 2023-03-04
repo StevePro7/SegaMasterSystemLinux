@@ -59,7 +59,7 @@
 #include "bank59.h"
 #include "bank60.h"
 #include "bank61.h"
-
+#include "bank62.h"
 const unsigned char *riff_sample_data[] =
 {
 	// Simpsons
@@ -150,6 +150,12 @@ const unsigned char *riff_sample_data[] =
 
 	// GnR
 	Riff_Sound_Youza40_01_wav_pcmenc,
+
+	// WW
+	Riff_Sound_Wayne_01_wav_pcmenc,
+
+	// Eminem
+	Riff_Sound_Eminem_01_wav_pcmenc,
 };
 const unsigned char riff_sample_bank[] =
 {
@@ -239,6 +245,13 @@ const unsigned char riff_sample_bank[] =
 
 	// GnR
 	Riff_Sound_Youza40_01_wav_pcmenc_bank,
+
+	// WW
+	Riff_Sound_Wayne_01_wav_pcmenc_bank,
+
+	// Eminem
+	Riff_Sound_Eminem_01_wav_pcmenc_bank,
+
 };
 
 // FIXED bank.

@@ -6,8 +6,8 @@ S:Lriff_screen.screen_riff_screen_update$input$1_0$9({1}SC:U),R,0,0,[a]
 S:Lriff_screen.screen_riff_screen_update$loops$1_0$9({1}SC:U),R,0,0,[e]
 S:Lriff_screen.screen_riff_screen_update$count$1_0$9({1}SC:U),R,0,0,[c]
 S:Lriff_screen.screen_riff_screen_update$value$1_0$9({1}SC:U),R,0,0,[b]
-S:Friff_screen$indexs$0_0$0({24}DA24d,SC:U),E,0,0
-S:Friff_screen$counts$0_0$0({24}DA24d,SC:U),E,0,0
+S:Friff_screen$indexs$0_0$0({26}DA26d,SC:U),E,0,0
+S:Friff_screen$counts$0_0$0({26}DA26d,SC:U),E,0,0
 S:G$riff_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$song_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:Friff_screen$index$0_0$0({1}SC:U),E,0,0
