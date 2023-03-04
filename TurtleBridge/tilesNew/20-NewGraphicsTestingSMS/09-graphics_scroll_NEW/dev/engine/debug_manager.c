@@ -18,7 +18,7 @@ void engine_debug_manager_initgame()
 	go->game_difficulty = difficulty_type_normal;
 	//go->game_difficulty = difficulty_type_harder;
 	//go->game_difficulty = difficulty_type_insane;
-	go->game_world = 4;
+	go->game_world = 0;
 	go->game_round = 0;
 	// 9 = turtles
 	// 3 = long512
