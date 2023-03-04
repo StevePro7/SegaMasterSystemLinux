@@ -5,20 +5,20 @@
 #include "../engine/locale_manager.h"
 #include "../engine/riff_manager.h"
 
-#define MAX_RIFFS	12
+#define MAX_RIFFS	20
 
 static unsigned char index;
 
-static unsigned char indexs[] = { 0,1,2,3,4,5,6,8, 9,10,11,12,13 };
-static unsigned char counts[] = { 1,1,1,1,1,1,2,2, 1, 1, 1, 1, 2};
+static unsigned char indexs[] = { 0,1,2,3,4,5,6,8,10,11,12,13,15,17,21,23,27,36 };
+static unsigned char counts[] = { 1,1,1,1,1,1,2,2, 1, 1, 1, 2, 2, 4, 2, 4, 9, 9 };
 
 void screen_riff_screen_load()
 {
-	index = 8;
+	index = 16;
 	engine_riff_manager_init();
 	engine_font_manager_text( "RIFF SCREEN!!", 10, 2 );
 	engine_font_manager_data( index, 14, 9 );
-	engine_font_manager_text( ( unsigned char* ) riff_object_texts[ index ], 10, 10 );
+	//engine_font_manager_text( ( unsigned char* ) riff_object_texts[ index ], 10, 10 );
 }
 
 void screen_riff_screen_update( unsigned char *screen_type )
@@ -31,7 +31,7 @@ void screen_riff_screen_update( unsigned char *screen_type )
 	{
 		index--;
 		engine_font_manager_data( index, 14, 9 );
-		engine_font_manager_text( ( unsigned char* ) riff_object_texts[ index ], 10, 10 );
+		//engine_font_manager_text( ( unsigned char* ) riff_object_texts[ index ], 10, 10 );
 	}
 
 	input = engine_input_manager_hold_down();
@@ -39,7 +39,7 @@ void screen_riff_screen_update( unsigned char *screen_type )
 	{
 		index++;
 		engine_font_manager_data( index, 14, 9 );
-		engine_font_manager_text( ( unsigned char* ) riff_object_texts[ index ], 10, 10 );
+		//engine_font_manager_text( ( unsigned char* ) riff_object_texts[ index ], 10, 10 );
 	}
 
 	input = engine_input_manager_hold_fire1();

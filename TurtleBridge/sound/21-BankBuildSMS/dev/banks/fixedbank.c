@@ -80,10 +80,35 @@ const unsigned char *riff_sample_data[] =
 	Riff_Sound_Silicon02_01_wav_pcmenc,
 	Riff_Sound_Silicon03_01_wav_pcmenc,
 
-	// Game Ove
+	// Game Over
 	Riff_Sound_Over_01_wav_pcmenc,
 	Riff_Sound_Over_02_wav_pcmenc,
 
+	// AC/DC ready
+	Riff_Intro_ACDC_01_wav_pcmenc,
+	Riff_Intro_ACDC_02_wav_pcmenc,
+
+	// Ultimage Warrior
+	Riff_Intro_Ultimate_01_wav_pcmenc,
+	Riff_Intro_Ultimate_02_wav_pcmenc,
+	Riff_Intro_Ultimate_03_wav_pcmenc,
+	Riff_Intro_Ultimate_04_wav_pcmenc,
+
+	// Wayne World	 bank 20
+	//Riff_Sound_Wayne_01_wav_pcmenc,
+
+	// Eminem	 bank 30
+	//Riff_Sound_Eminem_01_wav_pcmenc,
+
+	// License to Drive	bank 28-29
+	Riff_Death_Licence_01_wav_pcmenc,
+	Riff_Death_Licence_02_wav_pcmenc,
+
+	// Hulk Hogan	bank 21-24
+	Riff_Intro_Hulk_01_wav_pcmenc,
+	Riff_Intro_Hulk_02_wav_pcmenc,
+	Riff_Intro_Hulk_03_wav_pcmenc,
+	Riff_Intro_Hulk_04_wav_pcmenc,
 
 	// Title riff	bank 41-49	[x9]
 	Riff__Title__Screen__01_wav_pcmenc,
@@ -128,9 +153,35 @@ const unsigned char riff_sample_bank[] =
 	Riff_Sound_Silicon02_01_wav_pcmenc_bank,
 	Riff_Sound_Silicon03_01_wav_pcmenc_bank,
 
-	// Game Ove
+	// Game Over
 	Riff_Sound_Over_01_wav_pcmenc_bank,
 	Riff_Sound_Over_02_wav_pcmenc_bank,
+
+	// AC/DC ready
+	Riff_Intro_ACDC_01_wav_pcmenc_bank,
+	Riff_Intro_ACDC_02_wav_pcmenc_bank,
+
+	// Ultimage Warrior
+	Riff_Intro_Ultimate_01_wav_pcmenc_bank,
+	Riff_Intro_Ultimate_02_wav_pcmenc_bank,
+	Riff_Intro_Ultimate_03_wav_pcmenc_bank,
+	Riff_Intro_Ultimate_04_wav_pcmenc_bank,
+
+	// Wayne World	 bank 20
+	//Riff_Sound_Wayne_01_wav_pcmenc_bank,
+
+	// Eminem	 bank 30
+	//Riff_Sound_Eminem_01_wav_pcmenc_bank,
+
+	// License to Drive	bank 28-29
+	Riff_Death_Licence_01_wav_pcmenc_bank,
+	Riff_Death_Licence_02_wav_pcmenc_bank,
+
+	// Hulk Hogan	bank 21-24
+	Riff_Intro_Hulk_01_wav_pcmenc_bank,
+	Riff_Intro_Hulk_02_wav_pcmenc_bank,
+	Riff_Intro_Hulk_03_wav_pcmenc_bank,
+	Riff_Intro_Hulk_04_wav_pcmenc_bank,
 
 	Riff__Title__Screen__01_wav_pcmenc_bank,
 	Riff__Title__Screen__02_wav_pcmenc_bank,
