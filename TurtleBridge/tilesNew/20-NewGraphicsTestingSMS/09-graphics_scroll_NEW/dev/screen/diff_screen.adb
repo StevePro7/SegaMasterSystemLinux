@@ -6,6 +6,7 @@ S:Ldiff_screen.screen_diff_screen_load$go$1_0$121({2}DG,STtag_struct_game_object
 S:Ldiff_screen.screen_diff_screen_load$sloc0$0_1$0({1}SC:S),B,1,-1
 F:G$screen_diff_screen_update$0_0$0({2}DF,SV:S),Z,0,-1,0,0,0
 S:Ldiff_screen.screen_diff_screen_update$screen_type$1_0$122({2}DG,SC:U),B,1,4
+S:Ldiff_screen.screen_diff_screen_update$go$1_0$123({2}DG,STtag_struct_game_object:S),R,0,0,[]
 S:Ldiff_screen.screen_diff_screen_update$po$1_0$123({2}DG,STtag_struct_player_object:S),R,0,0,[]
 S:Ldiff_screen.screen_diff_screen_update$input$1_0$123({1}SC:U),R,0,0,[a]
 S:Ldiff_screen.screen_diff_screen_update$sloc0$0_1$0({1}SC:S),B,1,-1

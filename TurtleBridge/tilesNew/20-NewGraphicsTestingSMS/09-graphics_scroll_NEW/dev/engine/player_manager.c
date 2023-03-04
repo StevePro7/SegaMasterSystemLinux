@@ -32,6 +32,7 @@ static unsigned char updatePlayerFrameFlyingToGround( unsigned char player_frame
 
 static const signed int *jump_ptr;
 static unsigned char jump_len;
+static unsigned char moving_deltaX, ground_deltaX, flying_deltaX;
 
 void engine_player_manager_init()
 {
@@ -46,6 +47,9 @@ void engine_player_manager_init()
 	jump_ptr = NULL;
 	jump_len = 0;
 	updatePlayer();
+	moving_deltaX = 2;
+	ground_deltaX = 1;
+	flying_deltaX = 1;
 }
 
 void engine_player_manager_initX( unsigned char difficulty, unsigned char world )
@@ -104,7 +108,8 @@ unsigned char engine_player_manager_get_deltaX( unsigned char state, unsigned ch
 	unsigned char deltaX;
 
 	//deltaX = 0;
-	deltaX = 2;		// TODO - try 2, 4, 6, 8
+	//deltaX = 2;		// TODO - try 2, 4, 6, 8
+	deltaX = moving_deltaX;
 	//deltaX = 6;		// TODO delete
 	if( ( COMMAND_LEFT_MASK & command ) == COMMAND_LEFT_MASK )
 	{
@@ -116,11 +121,13 @@ unsigned char engine_player_manager_get_deltaX( unsigned char state, unsigned ch
 			//po->player_frame = player_frame_ground_rght_01;
 		}
 
-		deltaX -= 2;
+		//deltaX -= 2;
+		deltaX -= ground_deltaX;
 	}
 	if( ( COMMAND_RGHT_MASK & command ) == COMMAND_RGHT_MASK )
 	{
-		deltaX += 2;
+		//deltaX += 2;
+		deltaX += ground_deltaX;
 	}
 
 	// Add 1px when player in the air.
@@ -128,7 +135,8 @@ unsigned char engine_player_manager_get_deltaX( unsigned char state, unsigned ch
 	{
 		// IMPORTANT - harder w/ onground=2px and inair delta+=1 will fall over single gap but deltaX+=2 will "survive"
 		//deltaX += 2;		// post 1st March 2023
-		deltaX += 1;		// PRE 1st March 2023
+		//deltaX += 1;		// PRE 1st March 2023
+		deltaX += flying_deltaX;
 	}
 
 	// TODO IMPORTANT - hardcoded for jump array testing!!

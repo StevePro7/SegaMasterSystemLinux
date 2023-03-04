@@ -3,6 +3,7 @@ F:G$engine_player_manager_init$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lplayer_manager.engine_player_manager_init$po$1_0$136({2}DG,STtag_struct_player_object:S),R,0,0,[]
 F:G$engine_player_manager_initX$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lplayer_manager.engine_player_manager_initX$difficulty$1_0$137({1}SC:U),B,1,4
+S:Lplayer_manager.engine_player_manager_initX$world$1_0$137({1}SC:U),B,1,5
 S:Lplayer_manager.engine_player_manager_initX$po$1_0$138({2}DG,STtag_struct_player_object:S),R,0,0,[]
 F:G$engine_player_manager_loadX$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lplayer_manager.engine_player_manager_loadX$checkPoint$1_0$139({1}SC:U),B,1,4
@@ -16,7 +17,7 @@ F:G$engine_player_manager_get_deltaX$0_0$0({2}DF,SC:U),Z,0,0,0,0,0
 S:Lplayer_manager.engine_player_manager_get_deltaX$state$1_0$145({1}SC:U),B,1,4
 S:Lplayer_manager.engine_player_manager_get_deltaX$command$1_0$145({1}SC:U),B,1,5
 S:Lplayer_manager.engine_player_manager_get_deltaX$po$1_0$146({2}DG,STtag_struct_player_object:S),R,0,0,[]
-S:Lplayer_manager.engine_player_manager_get_deltaX$deltaX$1_0$146({1}SC:U),R,0,0,[l]
+S:Lplayer_manager.engine_player_manager_get_deltaX$deltaX$1_0$146({1}SC:U),R,0,0,[c]
 F:G$engine_player_manager_get_deltaY$0_0$0({2}DF,SI:S),Z,0,0,0,0,0
 S:Lplayer_manager.engine_player_manager_get_deltaY$po$1_0$151({2}DG,STtag_struct_player_object:S),R,0,0,[]
 S:Lplayer_manager.engine_player_manager_get_deltaY$deltaY$1_0$151({2}SI:S),R,0,0,[e,d]
@@ -92,6 +93,9 @@ S:G$locale_object_difficulty$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$global_player_object$0_0$0({16}STtag_struct_player_object:S),E,0,0
 S:Fplayer_manager$jump_ptr$0_0$0({2}DG,SI:S),E,0,0
 S:Fplayer_manager$jump_len$0_0$0({1}SC:U),E,0,0
+S:Fplayer_manager$moving_deltaX$0_0$0({1}SC:U),E,0,0
+S:Fplayer_manager$ground_deltaX$0_0$0({1}SC:U),E,0,0
+S:Fplayer_manager$flying_deltaX$0_0$0({1}SC:U),E,0,0
 S:G$engine_cartoon_manager_wave$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_cartoon_manager_swap$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_cartoon_manager_flip$0_0$0({2}DF,SC:U),C,0,0

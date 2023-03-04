@@ -10,6 +10,16 @@ const unsigned char player_object_starts[] = { 40, 72, 104, 136 };		// BEST BEST
 // IMPORTANT - require +4px delta on player draw for frames:  5, 7, 9, 11.
 const unsigned char player_object_deltas[] = { 0, 0, 0, 0, 0, 4, 0, 4, 0, 4, 0, 4, };
 
+// As you were 0f-Mar-2023
+const unsigned char player_moving_deltaX[] = { 2, 2, 2, 2, 2 };
+const unsigned char player_ground_deltaX[] = { 1, 1, 1, 1, 1 };
+const unsigned char player_flying_deltaX[] = { 1, 1, 1, 1, 1 };
+
+// Initial Physics POCs...	opt#1
+//const unsigned char player_moving_deltaX[] = { 2, 3, 4, 5, 5 };
+//const unsigned char player_ground_deltaX[] = { 1, 1, 1, 1, 1 };
+//const unsigned char player_flying_deltaX[] = { 1, 1, 2, 1, 2 };
+
 
 //signed int
 const signed int *jump_array_ptr[] =
