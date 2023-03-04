@@ -140,6 +140,16 @@ const unsigned char *riff_sample_data[] =
 	Riff_Sound_VHdoctor_01_wav_pcmenc,
 	Riff_Sound_VHdoctor_02_wav_pcmenc,
 	Riff_Sound_VHdoctor_03_wav_pcmenc,
+
+	// Simpsons - move above
+	Riff_Sound_SimpsonsSucked_01_wav_pcmenc,
+
+	// Commando
+	Riff_Sound_Commando_01_wav_pcmenc,
+	Riff_Sound_Commando_02_wav_pcmenc,
+
+	// GnR
+	Riff_Sound_Youza40_01_wav_pcmenc,
 };
 const unsigned char riff_sample_bank[] =
 {
@@ -219,6 +229,16 @@ const unsigned char riff_sample_bank[] =
 	Riff_Sound_VHdoctor_01_wav_pcmenc_bank,
 	Riff_Sound_VHdoctor_02_wav_pcmenc_bank,
 	Riff_Sound_VHdoctor_03_wav_pcmenc_bank,
+
+	// Simpsons - move above
+	Riff_Sound_SimpsonsSucked_01_wav_pcmenc_bank,
+
+	// Commando
+	Riff_Sound_Commando_01_wav_pcmenc_bank,
+	Riff_Sound_Commando_02_wav_pcmenc_bank,
+
+	// GnR
+	Riff_Sound_Youza40_01_wav_pcmenc_bank,
 };
 
 // FIXED bank.

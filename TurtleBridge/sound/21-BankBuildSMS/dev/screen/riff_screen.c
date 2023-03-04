@@ -5,16 +5,16 @@
 #include "../engine/locale_manager.h"
 #include "../engine/riff_manager.h"
 
-#define MAX_RIFFS	24
+#define MAX_RIFFS	23
 
 static unsigned char index;
 
-static unsigned char indexs[] = { 0,1,2,3,4,5,6,8,10,11,12,13,15,17,21,23,27,36,45,46,48 };
-static unsigned char counts[] = { 1,1,1,1,1,1,2,2, 1, 1, 1, 2, 2, 4, 2, 4, 9, 9, 1, 2, 3 };
+static unsigned char indexs[] = { 0,1,2,3,4,5,6,8,10,11,12,13,15,17,21,23,27,36,45,46,48,51,52,54, };
+static unsigned char counts[] = { 1,1,1,1,1,1,2,2, 1, 1, 1, 2, 2, 4, 2, 4, 9, 9, 1, 2, 3, 1, 2, 1 };
 
 void screen_riff_screen_load()
 {
-	index = 18;
+	index = 22;
 	engine_riff_manager_init();
 	engine_font_manager_text( "RIFF SCREEN!!", 10, 2 );
 	engine_font_manager_data( index, 14, 9 );
