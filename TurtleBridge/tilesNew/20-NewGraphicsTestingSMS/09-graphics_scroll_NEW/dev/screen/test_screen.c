@@ -252,6 +252,7 @@ void screen_test_screen_update( unsigned char *screen_type )
 		{
 			engine_scroll_manager_update( 0 );
 			//*screen_type = screen_type_dead;
+			*screen_type = screen_type_option;
 			return;
 		}
 	}
@@ -267,10 +268,14 @@ static void printCmds()
 	engine_font_manager_data( command_frame_index[ 1 ], 21, 2 );
 	engine_font_manager_data( command_frame_index[ 2 ], 21, 3 );
 	engine_font_manager_data( command_frame_index[ 3 ], 21, 4 );
+	engine_font_manager_data( command_frame_index[ 4 ], 21, 5 );
+
 	engine_font_manager_data( command_this_command[ 0 ], 26, 1 );
 	engine_font_manager_data( command_this_command[ 1 ], 26, 2 );
 	engine_font_manager_data( command_this_command[ 2 ], 26, 3 );
 	engine_font_manager_data( command_this_command[ 3 ], 26, 4 );
+	engine_font_manager_data( command_this_command[ 4 ], 26, 5 );
+
 	//engine_font_manager_text( "TEST??", 10, 3 );
 	//engine_font_manager_data( command_frame_index[ 0 ], 20, 10 );
 	//engine_font_manager_data( command_frame_index[ 1 ], 20, 11 );
