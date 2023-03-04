@@ -27,7 +27,7 @@ void engine_command_manager_load()
 }
 
 // TODO - rename this as record
-void engine_command_manager_steven( unsigned int frame, unsigned char command )
+void engine_command_manager_record( unsigned int frame, unsigned char command )
 {
 	// TODO - just save 3x cmds for initial POC
 	struct_command_object *co = &global_command_object;
@@ -36,13 +36,10 @@ void engine_command_manager_steven( unsigned int frame, unsigned char command )
 	{
 		command_frame_index[ co->frame_index ] = frame;
 		command_this_command[ co->frame_index ] = command;
-		co->prev_command = command;
 		co->frame_index++;
 	}
-	//else
-	//{
-	//	co->frame_index = 0;
-	//}
+
+	co->prev_command = command;
 }
 
 void engine_command_manager_draw()

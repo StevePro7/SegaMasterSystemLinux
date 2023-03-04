@@ -142,6 +142,10 @@ unsigned char engine_player_manager_get_deltaX( unsigned char state, unsigned ch
 		//deltaX += 2;		// post 1st March 2023
 		//deltaX += 1;		// PRE 1st March 2023
 		deltaX += flying_deltaX;
+
+		// TODO delete = testing
+		//deltaX = 4;
+		// TODO delete = testing
 	}
 
 	// TODO IMPORTANT - hardcoded for jump array testing!!
@@ -201,7 +205,10 @@ void engine_player_manager_set_action( unsigned char frame, unsigned char comman
 			//po->jumper_index += 1;
 		}
 
+		// TODO delete = testing
 		po->jumper_index = newIndex;
+		//po->jumper_index = 4;	// TODO delete = testing
+		// TODO delete = testing
 		po->deltaY_index = 0;
 
 		// Set the jump array information.

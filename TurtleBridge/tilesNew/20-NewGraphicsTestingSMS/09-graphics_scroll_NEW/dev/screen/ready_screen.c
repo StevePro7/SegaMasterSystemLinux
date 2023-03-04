@@ -38,7 +38,7 @@ void screen_ready_screen_update( unsigned char *screen_type )
 	{
 		if( command != co->prev_command )
 		{
-			engine_command_manager_steven( fo->frame_count, command );
+			engine_command_manager_record( fo->frame_count, command );
 			engine_command_manager_draw();
 		}
 
