@@ -59,6 +59,11 @@ void engine_player_manager_initX( unsigned char difficulty, unsigned char world 
 	po->posnX = po->initX;
 	po->drawX = po->posnX - 16;
 	updatePlayerX();
+
+	// Update player deltaX values pending world.
+	moving_deltaX = player_moving_deltaX[ world ];
+	ground_deltaX = player_ground_deltaX[ world ];
+	flying_deltaX = player_flying_deltaX[ world ];
 }
 
 // TODO - need algorithm to align which individual screen to a checkpoint
