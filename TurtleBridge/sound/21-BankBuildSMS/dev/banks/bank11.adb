@@ -1,2 +1,2 @@
 M:bank11
-S:G$Riff_Sound_Wayne_01_wav_pcmenc$0_0$0({10425}DA10425d,SC:U),D,0,0
+S:G$bank11_txt$0_0$0({8}DA8d,SC:U),D,0,0
