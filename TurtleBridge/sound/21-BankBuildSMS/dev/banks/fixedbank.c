@@ -61,6 +61,11 @@
 #include "bank61.h"
 #include "bank62.h"
 
+extern const unsigned char steven_data[] =
+{
+	16,32,48,64,80,96,112,128,144,160,176,192,208,224,240,255
+};
+
 const unsigned char *riff_sample_data[] =
 {
 	// Simpsons

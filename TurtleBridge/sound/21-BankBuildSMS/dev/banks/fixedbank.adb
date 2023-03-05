@@ -91,6 +91,7 @@ S:G$Riff__Splash__Screen__09_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff_Sound_Over_01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff_Sound_Over_02_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$bank62_txt$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$steven_data$0_0$0({16}DA16d,SC:U),D,0,0
 S:G$riff_sample_bank$0_0$0({57}DA57d,SC:U),D,0,0
 S:G$music_object_bank$0_0$0({9}DA9d,SC:U),D,0,0
 S:G$sound_object_bank$0_0$0({4}DA4d,SC:U),D,0,0

@@ -4,6 +4,7 @@
 #include "../engine/input_manager.h"
 #include "../engine/locale_manager.h"
 #include "../engine/riff_manager.h"
+#include "../banks/fixedbank.h"
 
 #define MAX_RIFFS	25
 
@@ -20,6 +21,7 @@ void screen_riff_screen_load()
 	index = 0;
 	engine_riff_manager_init();
 	engine_font_manager_text( "RIFF SCREEN!!", 10, 2 );
+	engine_font_manager_data( FIXED_BANK, 14, 7 );
 	engine_font_manager_data( index, 14, 9 );
 	engine_font_manager_text( ( unsigned char* ) riff_object_texts[ index ], 10, 10 );
 }
