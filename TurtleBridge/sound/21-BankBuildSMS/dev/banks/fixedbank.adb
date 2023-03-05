@@ -1,4 +1,5 @@
 M:fixedbank
+S:G$steven_text$0_0$0({6}DA3d,DG,SC:U),E,0,0
 S:G$riff_sample_data$0_0$0({114}DA57d,DG,SC:U),E,0,0
 S:G$music_object_data$0_0$0({18}DA9d,DG,SC:U),E,0,0
 S:G$sound_object_data$0_0$0({8}DA4d,DG,SC:U),E,0,0
@@ -37,7 +38,6 @@ S:G$Riff_Sound_Wayne_01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff_Sound_Eminem_01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff_Sound_Commando_01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff_Sound_Commando_02_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
-S:G$bank15_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff_Death_Licence_01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff_Intro_Ultimate_01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff_Intro_Ultimate_02_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
@@ -91,7 +91,11 @@ S:G$Riff__Splash__Screen__09_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff_Sound_Over_01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff_Sound_Over_02_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$bank62_txt$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$steven_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$steven_data$0_0$0({16}DA16d,SC:U),D,0,0
 S:G$riff_sample_bank$0_0$0({57}DA57d,SC:U),D,0,0
 S:G$music_object_bank$0_0$0({9}DA9d,SC:U),D,0,0
 S:G$sound_object_bank$0_0$0({4}DA4d,SC:U),D,0,0
+S:Ffixedbank$__str_0$0_0$0({7}DA7d,SC:U),D,0,0
+S:Ffixedbank$__str_1$0_0$0({7}DA7d,SC:U),D,0,0
+S:Ffixedbank$__str_2$0_0$0({7}DA7d,SC:U),D,0,0

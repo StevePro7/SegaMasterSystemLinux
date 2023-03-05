@@ -36,9 +36,9 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000007  l__BANK8                        
      00000007  l__BANK9                        
      00000008  l__BANK10                       
-     00000008  l__BANK15                       
      00000008  l__BANK62                       
      00000009  l__HEADER1                      
+     0000000A  l__BANK63                       
      0000000A  l__HEADER2                      
      0000000E  l__CABS1                        
      0000000F  l__GSINIT                       
@@ -46,13 +46,13 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000010  l__CABS4                        
      00000011  l__CABS2                        
      0000002D  l__CABS3                        
-     00000056  l__BANK63                       
+     0000006B  l__BANK15                       
      000000BE  G$VDPDataPort$0_0$0                asm_manager
      000000BF  G$VDPControlPort$0_0$0             asm_manager
      0000012A  l__DATA                         
      0000012A  l__HEADER5                      
-     00000132  l__INITIALIZED                  
-     00000132  l__INITIALIZER                  
+     00000138  l__INITIALIZED                  
+     00000138  l__INITIALIZER                  
      00000200  s__CODE                         
      00001B60  l__BANK12                       
      00002179  l__CODE                         
@@ -68,8 +68,8 @@ Area                                    Addr        Size        Decimal Bytes (A
       -----  --------------------------------   ------------------------
      00002379  s__INITIALIZER                  
      0000246C  l__BANK61                       
-     000024AB  s__GSINIT                       
-     000024BA  s__GSFINAL                      
+     000024B1  s__GSINIT                       
+     000024C0  s__GSFINAL                      
      000028B9  l__BANK11                       
      00002D08  l__BANK27                       
      00002F8A  l__BANK20                       
@@ -208,9 +208,9 @@ Area                                    Addr        Size        Decimal Bytes (A
      00008000  s__BANK9                        
      0000C000  s__DATA                         
      0000C12A  s__INITIALIZED                  
-     0000C25C  s__BSEG                         
-     0000C25C  s__BSS                          
-     0000C25C  s__HEAP                         
+     0000C262  s__BSEG                         
+     0000C262  s__BSS                          
+     0000C262  s__HEAP                         
      0000FFFC  G$SRAM_bank_to_be_mapped_on_slot   _sms_manager
      0000FFFC  _SRAM_bank_to_be_mapped_on_slot2   SMSlib_loadTileMap
      0000FFFF  G$ROM_bank_to_be_mapped_on_slot2   _sms_manager
@@ -327,14 +327,14 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      000007F5  Fbank2$__str_7$0_0$0               bank2
      000007F5  Fbank2$__str_8$0_0$0               bank2
      000007F5  Fbank2$__str_9$0_0$0               bank2
+     000007F5  Ffixedbank$__str_1$0_0$0           fixedbank
+     000007F5  Ffixedbank$__str_2$0_0$0           fixedbank
      000007F5  G$devkit_SMS_init$0$0              _sms_manager
      000007F5  XG$devkit_SMS_init$0$0             _sms_manager
      000007F5  _devkit_SMS_init                   _sms_manager
      000007F8  A$_sms_manager$267                 _sms_manager
      000007F8  C$_sms_manager.c$18$1_0$124        _sms_manager
      000007F8  C$_sms_manager.c$20$1_0$124        _sms_manager
-     000007F8  G$devkit_SMS_VDPturnOnFeature$0$   _sms_manager
-     000007F8  _devkit_SMS_VDPturnOnFeature       _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 7.
 Hexadecimal  [32-Bits]
 
@@ -344,6 +344,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     000007F8  G$devkit_SMS_VDPturnOnFeature$0$   _sms_manager
+     000007F8  _devkit_SMS_VDPturnOnFeature       _sms_manager
      000007FC  A$_sms_manager$268                 _sms_manager
      000007FE  A$_sms_manager$269                 _sms_manager
      00000801  A$_sms_manager$270                 _sms_manager
@@ -393,8 +395,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00000825  A$_sms_manager$386                 _sms_manager
      00000825  C$_sms_manager.c$43$1_0$130        _sms_manager
      00000825  XG$devkit_VDPFEATURE_LEFTCOLBLAN   _sms_manager
-     00000826  A$_sms_manager$399                 _sms_manager
-     00000826  C$_sms_manager.c$44$1_0$131        _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 8.
 Hexadecimal  [32-Bits]
 
@@ -404,6 +404,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000826  A$_sms_manager$399                 _sms_manager
+     00000826  C$_sms_manager.c$44$1_0$131        _sms_manager
      00000826  C$_sms_manager.c$46$1_0$131        _sms_manager
      00000826  G$devkit_VDPFEATURE_LOCKHSCROLL$   _sms_manager
      00000826  _devkit_VDPFEATURE_LOCKHSCROLL     _sms_manager
@@ -453,8 +455,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      0000083E  A$_sms_manager$525                 _sms_manager
      0000083E  C$_sms_manager.c$70$1_0$137        _sms_manager
      0000083E  C$_sms_manager.c$72$1_0$137        _sms_manager
-     0000083E  G$devkit_VDPFEATURE_FRAMEIRQ$0$0   _sms_manager
-     0000083E  _devkit_VDPFEATURE_FRAMEIRQ        _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 9.
 Hexadecimal  [32-Bits]
 
@@ -464,6 +464,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     0000083E  G$devkit_VDPFEATURE_FRAMEIRQ$0$0   _sms_manager
+     0000083E  _devkit_VDPFEATURE_FRAMEIRQ        _sms_manager
      00000841  A$_sms_manager$533                 _sms_manager
      00000841  C$_sms_manager.c$73$1_0$137        _sms_manager
      00000841  XG$devkit_VDPFEATURE_FRAMEIRQ$0$   _sms_manager
@@ -513,8 +515,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00000867  XG$devkit_SMS_setBGScrollY$0$0     _sms_manager
      0000086A  A$_sms_manager$655                 _sms_manager
      0000086A  C$_sms_manager.c$97$1_0$146        _sms_manager
-     0000086A  C$_sms_manager.c$99$1_0$146        _sms_manager
-     0000086A  G$devkit_SMS_setBackdropColor$0$   _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 10.
 Hexadecimal  [32-Bits]
 
@@ -524,6 +524,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     0000086A  C$_sms_manager.c$99$1_0$146        _sms_manager
+     0000086A  G$devkit_SMS_setBackdropColor$0$   _sms_manager
      0000086A  _devkit_SMS_setBackdropColor       _sms_manager
      0000086E  A$_sms_manager$656                 _sms_manager
      00000870  A$_sms_manager$657                 _sms_manager
@@ -573,8 +575,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00000897  C$_sms_manager.c$119$1_0$153       _sms_manager
      00000897  C$_sms_manager.c$121$1_0$153       _sms_manager
      00000897  G$devkit_SPRITEMODE_ZOOMED$0$0     _sms_manager
-     00000897  _devkit_SPRITEMODE_ZOOMED          _sms_manager
-     00000899  A$_sms_manager$777                 _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 11.
 Hexadecimal  [32-Bits]
 
@@ -584,6 +584,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000897  _devkit_SPRITEMODE_ZOOMED          _sms_manager
+     00000899  A$_sms_manager$777                 _sms_manager
      00000899  C$_sms_manager.c$122$1_0$153       _sms_manager
      00000899  XG$devkit_SPRITEMODE_ZOOMED$0$0    _sms_manager
      0000089A  A$_sms_manager$790                 _sms_manager
@@ -633,8 +635,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      000008C3  C$_sms_manager.c$145$1_0$160       _sms_manager
      000008C3  C$_sms_manager.c$147$1_0$160       _sms_manager
      000008C3  G$devkit_SMS_disableSRAM$0$0       _sms_manager
-     000008C3  _devkit_SMS_disableSRAM            _sms_manager
-     000008C5  A$_sms_manager$886                 _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 12.
 Hexadecimal  [32-Bits]
 
@@ -644,6 +644,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     000008C3  _devkit_SMS_disableSRAM            _sms_manager
+     000008C5  A$_sms_manager$886                 _sms_manager
      000008C8  A$_sms_manager$894                 _sms_manager
      000008C8  C$_sms_manager.c$148$1_0$160       _sms_manager
      000008C8  XG$devkit_SMS_disableSRAM$0$0      _sms_manager
@@ -693,8 +695,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      000008F8  _devkit_SMS_loadPSGaidencompress   _sms_manager
      000008FC  A$_sms_manager$986                 _sms_manager
      000008FE  A$_sms_manager$987                 _sms_manager
-     00000901  A$_sms_manager$988                 _sms_manager
-     00000904  A$_sms_manager$989                 _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 13.
 Hexadecimal  [32-Bits]
 
@@ -704,6 +704,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000901  A$_sms_manager$988                 _sms_manager
+     00000904  A$_sms_manager$989                 _sms_manager
      00000905  A$_sms_manager$990                 _sms_manager
      00000908  A$_sms_manager$991                 _sms_manager
      0000090B  A$_sms_manager$992                 _sms_manager
@@ -753,8 +755,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00000948  A$_sms_manager$1062                _sms_manager
      0000094B  A$_sms_manager$1063                _sms_manager
      0000094E  A$_sms_manager$1064                _sms_manager
-     0000094F  A$_sms_manager$1065                _sms_manager
-     00000952  A$_sms_manager$1066                _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 14.
 Hexadecimal  [32-Bits]
 
@@ -764,6 +764,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     0000094F  A$_sms_manager$1065                _sms_manager
+     00000952  A$_sms_manager$1066                _sms_manager
      00000954  A$_sms_manager$1067                _sms_manager
      00000955  A$_sms_manager$1068                _sms_manager
      00000956  A$_sms_manager$1069                _sms_manager
@@ -813,8 +815,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00000994  C$_sms_manager.c$190$1_0$174       _sms_manager
      00000994  G$devkit_SMS_loadSTMcompressedTi   _sms_manager
      00000994  _devkit_SMS_loadSTMcompressedTil   _sms_manager
-     00000996  A$_sms_manager$1142                _sms_manager
-     00000997  A$_sms_manager$1143                _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 15.
 Hexadecimal  [32-Bits]
 
@@ -824,6 +824,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000996  A$_sms_manager$1142                _sms_manager
+     00000997  A$_sms_manager$1143                _sms_manager
      00000998  A$_sms_manager$1144                _sms_manager
      0000099C  A$_sms_manager$1145                _sms_manager
      0000099E  A$_sms_manager$1146                _sms_manager
@@ -873,8 +875,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      000009DA  A$_sms_manager$1229                _sms_manager
      000009DC  A$_sms_manager$1230                _sms_manager
      000009DF  A$_sms_manager$1231                _sms_manager
-     000009E2  A$_sms_manager$1239                _sms_manager
-     000009E2  C$_sms_manager.c$206$1_0$180       _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 16.
 Hexadecimal  [32-Bits]
 
@@ -884,6 +884,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     000009E2  A$_sms_manager$1239                _sms_manager
+     000009E2  C$_sms_manager.c$206$1_0$180       _sms_manager
      000009E2  XG$devkit_SMS_setTile$0$0          _sms_manager
      000009E5  A$_sms_manager$1252                _sms_manager
      000009E5  C$_sms_manager.c$207$1_0$182       _sms_manager
@@ -933,8 +935,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00000A18  A$_sms_manager$1319                _sms_manager
      00000A19  A$_sms_manager$1320                _sms_manager
      00000A1A  A$_sms_manager$1328                _sms_manager
-     00000A1A  C$_sms_manager.c$222$1_0$186       _sms_manager
-     00000A1A  XG$devkit_SMS_setNextTileatXY$0$   _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 17.
 Hexadecimal  [32-Bits]
 
@@ -944,6 +944,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000A1A  C$_sms_manager.c$222$1_0$186       _sms_manager
+     00000A1A  XG$devkit_SMS_setNextTileatXY$0$   _sms_manager
      00000A1C  A$_sms_manager$1329                _sms_manager
      00000A1F  A$_sms_manager$1342                _sms_manager
      00000A1F  C$_sms_manager.c$223$1_0$188       _sms_manager
@@ -993,8 +995,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00000A51  A$_sms_manager$1409                _sms_manager
      00000A54  A$_sms_manager$1410                _sms_manager
      00000A56  A$_sms_manager$1411                _sms_manager
-     00000A57  A$_sms_manager$1412                _sms_manager
-     00000A58  A$_sms_manager$1413                _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 18.
 Hexadecimal  [32-Bits]
 
@@ -1004,6 +1004,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000A57  A$_sms_manager$1412                _sms_manager
+     00000A58  A$_sms_manager$1413                _sms_manager
      00000A59  A$_sms_manager$1414                _sms_manager
      00000A5A  A$_sms_manager$1415                _sms_manager
      00000A5B  A$_sms_manager$1416                _sms_manager
@@ -1053,8 +1055,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00000A79  C$_sms_manager.c$258$1_0$198       _sms_manager
      00000A79  G$devkit_SMS_initSprites$0$0       _sms_manager
      00000A79  XG$devkit_SMS_initSprites$0$0      _sms_manager
-     00000A79  _devkit_SMS_initSprites            _sms_manager
-     00000A7C  A$_sms_manager$1546                _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 19.
 Hexadecimal  [32-Bits]
 
@@ -1064,6 +1064,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000A79  _devkit_SMS_initSprites            _sms_manager
+     00000A7C  A$_sms_manager$1546                _sms_manager
      00000A7C  C$_sms_manager.c$259$1_0$200       _sms_manager
      00000A7C  C$_sms_manager.c$261$1_0$200       _sms_manager
      00000A7C  G$devkit_SMS_addSprite$0$0         _sms_manager
@@ -1113,8 +1115,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00000AB7  A$_sms_manager$1615                _sms_manager
      00000AB8  A$_sms_manager$1623                _sms_manager
      00000AB8  C$_sms_manager.c$270$1_0$204       _sms_manager
-     00000AB8  XG$devkit_SMS_updateSpritePositi   _sms_manager
-     00000AB9  A$_sms_manager$1636                _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 20.
 Hexadecimal  [32-Bits]
 
@@ -1124,6 +1124,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000AB8  XG$devkit_SMS_updateSpritePositi   _sms_manager
+     00000AB9  A$_sms_manager$1636                _sms_manager
      00000AB9  C$_sms_manager.c$271$1_0$206       _sms_manager
      00000AB9  C$_sms_manager.c$273$1_0$206       _sms_manager
      00000AB9  G$devkit_SMS_updateSpriteImage$0   _sms_manager
@@ -1173,8 +1175,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00000AF4  A$_sms_manager$1705                _sms_manager
      00000AF5  A$_sms_manager$1706                _sms_manager
      00000AF8  A$_sms_manager$1707                _sms_manager
-     00000AF9  A$_sms_manager$1708                _sms_manager
-     00000AFA  A$_sms_manager$1716                _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 21.
 Hexadecimal  [32-Bits]
 
@@ -1184,6 +1184,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000AF9  A$_sms_manager$1708                _sms_manager
+     00000AFA  A$_sms_manager$1716                _sms_manager
      00000AFA  C$_sms_manager.c$282$1_0$210       _sms_manager
      00000AFA  XG$devkit_SMS_setClippingWindow$   _sms_manager
      00000AFB  A$_sms_manager$1729                _sms_manager
@@ -1233,8 +1235,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00000B2B  A$_sms_manager$1808                _sms_manager
      00000B2E  A$_sms_manager$1809                _sms_manager
      00000B31  A$_sms_manager$1810                _sms_manager
-     00000B32  A$_sms_manager$1811                _sms_manager
-     00000B35  A$_sms_manager$1812                _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 22.
 Hexadecimal  [32-Bits]
 
@@ -1244,6 +1244,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000B32  A$_sms_manager$1811                _sms_manager
+     00000B35  A$_sms_manager$1812                _sms_manager
      00000B36  A$_sms_manager$1820                _sms_manager
      00000B36  C$_sms_manager.c$307$1_0$216       _sms_manager
      00000B36  XG$devkit_SMS_setBGPaletteColor$   _sms_manager
@@ -1293,8 +1295,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00000B70  A$_sms_manager$1911                _sms_manager
      00000B71  A$_sms_manager$1912                _sms_manager
      00000B73  A$_sms_manager$1913                _sms_manager
-     00000B74  A$_sms_manager$1921                _sms_manager
-     00000B74  C$_sms_manager.c$323$1_0$224       _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 23.
 Hexadecimal  [32-Bits]
 
@@ -1304,6 +1304,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000B74  A$_sms_manager$1921                _sms_manager
+     00000B74  C$_sms_manager.c$323$1_0$224       _sms_manager
      00000B74  XG$devkit_SMS_setNextBGColoratIn   _sms_manager
      00000B77  A$_sms_manager$1934                _sms_manager
      00000B77  C$_sms_manager.c$324$1_0$226       _sms_manager
@@ -1353,8 +1355,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00000BAF  XG$devkit_RGB$0$0                  _sms_manager
      00000BB0  A$_sms_manager$2019                _sms_manager
      00000BB0  C$_sms_manager.c$338$1_0$232       _sms_manager
-     00000BB0  C$_sms_manager.c$340$1_0$232       _sms_manager
-     00000BB0  G$devkit_RGB8$0$0                  _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 24.
 Hexadecimal  [32-Bits]
 
@@ -1364,6 +1364,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000BB0  C$_sms_manager.c$340$1_0$232       _sms_manager
+     00000BB0  G$devkit_RGB8$0$0                  _sms_manager
      00000BB0  _devkit_RGB8                       _sms_manager
      00000BB4  A$_sms_manager$2020                _sms_manager
      00000BB6  A$_sms_manager$2021                _sms_manager
@@ -1413,8 +1415,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00000BEE  A$_sms_manager$2091                _sms_manager
      00000BF1  A$_sms_manager$2092                _sms_manager
      00000BF4  A$_sms_manager$2100                _sms_manager
-     00000BF4  C$_sms_manager.c$354$1_0$236       _sms_manager
-     00000BF4  XG$devkit_SMS_loadSpritePaletteH   _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 25.
 Hexadecimal  [32-Bits]
 
@@ -1424,6 +1424,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000BF4  C$_sms_manager.c$354$1_0$236       _sms_manager
+     00000BF4  XG$devkit_SMS_loadSpritePaletteH   _sms_manager
      00000BF7  A$_sms_manager$2120                _sms_manager
      00000BF7  C$_sms_manager.c$355$1_0$238       _sms_manager
      00000BF7  C$_sms_manager.c$357$1_0$238       _sms_manager
@@ -1473,8 +1475,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00000C09  _devkit_PORT_A_KEY_UP              _sms_manager
      00000C0C  A$_sms_manager$2241                _sms_manager
      00000C0C  C$_sms_manager.c$386$1_0$245       _sms_manager
-     00000C0C  XG$devkit_PORT_A_KEY_UP$0$0        _sms_manager
-     00000C0D  A$_sms_manager$2254                _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 26.
 Hexadecimal  [32-Bits]
 
@@ -1484,6 +1484,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000C0C  XG$devkit_PORT_A_KEY_UP$0$0        _sms_manager
+     00000C0D  A$_sms_manager$2254                _sms_manager
      00000C0D  C$_sms_manager.c$387$1_0$246       _sms_manager
      00000C0D  C$_sms_manager.c$389$1_0$246       _sms_manager
      00000C0D  G$devkit_PORT_A_KEY_DOWN$0$0       _sms_manager
@@ -1533,8 +1535,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00000C24  XG$devkit_PORT_A_KEY_START$0$0     _sms_manager
      00000C25  A$_sms_manager$2380                _sms_manager
      00000C25  C$_sms_manager.c$412$1_0$252       _sms_manager
-     00000C25  C$_sms_manager.c$414$1_0$252       _sms_manager
-     00000C25  G$devkit_PORT_B_KEY_UP$0$0         _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 27.
 Hexadecimal  [32-Bits]
 
@@ -1544,6 +1544,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000C25  C$_sms_manager.c$414$1_0$252       _sms_manager
+     00000C25  G$devkit_PORT_B_KEY_UP$0$0         _sms_manager
      00000C25  _devkit_PORT_B_KEY_UP              _sms_manager
      00000C28  A$_sms_manager$2388                _sms_manager
      00000C28  C$_sms_manager.c$415$1_0$252       _sms_manager
@@ -1593,8 +1595,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00000C3D  C$_sms_manager.c$438$1_0$258       _sms_manager
      00000C3D  G$devkit_PORT_B_KEY_START$0$0      _sms_manager
      00000C3D  _devkit_PORT_B_KEY_START           _sms_manager
-     00000C40  A$_sms_manager$2514                _sms_manager
-     00000C40  C$_sms_manager.c$439$1_0$258       _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 28.
 Hexadecimal  [32-Bits]
 
@@ -1604,6 +1604,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000C40  A$_sms_manager$2514                _sms_manager
+     00000C40  C$_sms_manager.c$439$1_0$258       _sms_manager
      00000C40  XG$devkit_PORT_B_KEY_START$0$0     _sms_manager
      00000C41  A$_sms_manager$2527                _sms_manager
      00000C41  C$_sms_manager.c$441$1_0$259       _sms_manager
@@ -1653,8 +1655,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00000C54  _devkit_SMS_resetPauseRequest      _sms_manager
      00000C57  A$_sms_manager$2651                _sms_manager
      00000C57  C$_sms_manager.c$484$1_0$266       _sms_manager
-     00000C57  C$_sms_manager.c$486$1_0$266       _sms_manager
-     00000C57  G$devkit_SMS_VDPFlags$0$0          _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 29.
 Hexadecimal  [32-Bits]
 
@@ -1664,6 +1664,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000C57  C$_sms_manager.c$486$1_0$266       _sms_manager
+     00000C57  G$devkit_SMS_VDPFlags$0$0          _sms_manager
      00000C57  _devkit_SMS_VDPFlags               _sms_manager
      00000C5A  A$_sms_manager$2652                _sms_manager
      00000C5B  A$_sms_manager$2660                _sms_manager
@@ -1713,8 +1715,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00000C77  A$_sms_manager$2756                _sms_manager
      00000C77  C$_sms_manager.c$506$1_0$273       _sms_manager
      00000C77  XG$devkit_SMS_setLineCounter$0$0   _sms_manager
-     00000C78  A$_sms_manager$2769                _sms_manager
-     00000C78  C$_sms_manager.c$507$1_0$274       _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 30.
 Hexadecimal  [32-Bits]
 
@@ -1724,6 +1724,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000C78  A$_sms_manager$2769                _sms_manager
+     00000C78  C$_sms_manager.c$507$1_0$274       _sms_manager
      00000C78  C$_sms_manager.c$509$1_0$274       _sms_manager
      00000C78  G$devkit_SMS_enableLineInterrupt   _sms_manager
      00000C78  _devkit_SMS_enableLineInterrupt    _sms_manager
@@ -1773,8 +1775,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00000CAC  A$_sms_manager$2865                _sms_manager
      00000CAF  A$_sms_manager$2866                _sms_manager
      00000CB0  A$_sms_manager$2867                _sms_manager
-     00000CB1  A$_sms_manager$2875                _sms_manager
-     00000CB1  C$_sms_manager.c$531$1_0$281       _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 31.
 Hexadecimal  [32-Bits]
 
@@ -1784,6 +1784,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000CB1  A$_sms_manager$2875                _sms_manager
+     00000CB1  C$_sms_manager.c$531$1_0$281       _sms_manager
      00000CB1  XG$devkit_SMS_VRAMmemcpy$0$0       _sms_manager
      00000CB2  A$_sms_manager$2888                _sms_manager
      00000CB2  C$_sms_manager.c$532$1_0$283       _sms_manager
@@ -1833,8 +1835,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00000CF7  C$_sms_manager.c$539$1_0$285       _sms_manager
      00000CF7  XG$devkit_SMS_VRAMmemset$0$0       _sms_manager
      00000CF8  A$_sms_manager$2961                _sms_manager
-     00000CF8  C$_sms_manager.c$540$1_0$287       _sms_manager
-     00000CF8  C$_sms_manager.c$542$1_0$287       _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 32.
 Hexadecimal  [32-Bits]
 
@@ -1844,6 +1844,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000CF8  C$_sms_manager.c$540$1_0$287       _sms_manager
+     00000CF8  C$_sms_manager.c$542$1_0$287       _sms_manager
      00000CF8  G$devkit_SMS_VRAMmemsetW$0$0       _sms_manager
      00000CF8  _devkit_SMS_VRAMmemsetW            _sms_manager
      00000CFC  A$_sms_manager$2962                _sms_manager
@@ -1893,8 +1895,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00000D3D  A$_sms_manager$3049                _sms_manager
      00000D3D  C$_sms_manager.c$554$1_0$293       _sms_manager
      00000D3D  C$_sms_manager.c$556$1_0$293       _sms_manager
-     00000D3D  G$devkit_UNSAFE_SMS_VRAMmemcpy64   _sms_manager
-     00000D3D  _devkit_UNSAFE_SMS_VRAMmemcpy64    _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 33.
 Hexadecimal  [32-Bits]
 
@@ -1904,6 +1904,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000D3D  G$devkit_UNSAFE_SMS_VRAMmemcpy64   _sms_manager
+     00000D3D  _devkit_UNSAFE_SMS_VRAMmemcpy64    _sms_manager
      00000D41  A$_sms_manager$3050                _sms_manager
      00000D43  A$_sms_manager$3051                _sms_manager
      00000D46  A$_sms_manager$3052                _sms_manager
@@ -1953,8 +1955,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00000D7E  A$_sms_manager$3122                _sms_manager
      00000D7F  A$_sms_manager$3123                _sms_manager
      00000D80  A$_sms_manager$3124                _sms_manager
-     00000D81  A$_sms_manager$3125                _sms_manager
-     00000D82  A$_sms_manager$3126                _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 34.
 Hexadecimal  [32-Bits]
 
@@ -1964,6 +1964,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000D81  A$_sms_manager$3125                _sms_manager
+     00000D82  A$_sms_manager$3126                _sms_manager
      00000D83  A$_sms_manager$3127                _sms_manager
      00000D84  A$_sms_manager$3128                _sms_manager
      00000D87  A$_sms_manager$3129                _sms_manager
@@ -2013,8 +2015,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00000DAD  A$_sms_manager$3199                _sms_manager
      00000DAE  A$_sms_manager$3200                _sms_manager
      00000DAF  A$_sms_manager$3201                _sms_manager
-     00000DB0  A$_sms_manager$3202                _sms_manager
-     00000DB1  A$_sms_manager$3203                _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 35.
 Hexadecimal  [32-Bits]
 
@@ -2024,6 +2024,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000DB0  A$_sms_manager$3202                _sms_manager
+     00000DB1  A$_sms_manager$3203                _sms_manager
      00000DB2  A$_sms_manager$3204                _sms_manager
      00000DB3  A$_sms_manager$3205                _sms_manager
      00000DB4  A$_sms_manager$3206                _sms_manager
@@ -2073,8 +2075,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00000DE9  A$_sms_manager$3291                _sms_manager
      00000DEA  A$_sms_manager$3292                _sms_manager
      00000DEB  A$_sms_manager$3293                _sms_manager
-     00000DEC  A$_sms_manager$3294                _sms_manager
-     00000DEF  A$_sms_manager$3295                _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 36.
 Hexadecimal  [32-Bits]
 
@@ -2084,6 +2084,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000DEC  A$_sms_manager$3294                _sms_manager
+     00000DEF  A$_sms_manager$3295                _sms_manager
      00000DF0  A$_sms_manager$3296                _sms_manager
      00000DF1  A$_sms_manager$3297                _sms_manager
      00000DF2  A$_sms_manager$3298                _sms_manager
@@ -2133,8 +2135,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00000E30  A$_sms_manager$3348                _sms_manager
      00000E33  A$_sms_manager$3349                _sms_manager
      00000E36  A$_sms_manager$3350                _sms_manager
-     00000E37  A$_sms_manager$3351                _sms_manager
-     00000E38  A$_sms_manager$3352                _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 37.
 Hexadecimal  [32-Bits]
 
@@ -2144,6 +2144,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000E37  A$_sms_manager$3351                _sms_manager
+     00000E38  A$_sms_manager$3352                _sms_manager
      00000E3A  A$_sms_manager$3353                _sms_manager
      00000E3B  A$_sms_manager$3354                _sms_manager
      00000E3C  A$_sms_manager$3355                _sms_manager
@@ -2193,8 +2195,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00000E7D  A$_sms_manager$3403                _sms_manager
      00000E7E  A$_sms_manager$3407                _sms_manager
      00000E7E  C$_sms_manager.c$604$1_0$307       _sms_manager
-     00000E81  A$_sms_manager$3408                _sms_manager
-     00000E84  A$_sms_manager$3409                _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 38.
 Hexadecimal  [32-Bits]
 
@@ -2204,6 +2204,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000E81  A$_sms_manager$3408                _sms_manager
+     00000E84  A$_sms_manager$3409                _sms_manager
      00000E87  A$_sms_manager$3410                _sms_manager
      00000E88  A$_sms_manager$3411                _sms_manager
      00000E89  A$_sms_manager$3412                _sms_manager
@@ -2253,8 +2255,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00000EC7  A$_sms_manager$3471                _sms_manager
      00000EC8  A$_sms_manager$3472                _sms_manager
      00000ECB  A$_sms_manager$3473                _sms_manager
-     00000ECC  A$_sms_manager$3474                _sms_manager
-     00000ECD  A$_sms_manager$3475                _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 39.
 Hexadecimal  [32-Bits]
 
@@ -2264,6 +2264,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000ECC  A$_sms_manager$3474                _sms_manager
+     00000ECD  A$_sms_manager$3475                _sms_manager
      00000ECE  A$_sms_manager$3479                _sms_manager
      00000ECE  C$_sms_manager.c$610$1_0$309       _sms_manager
      00000ECF  A$_sms_manager$3480                _sms_manager
@@ -2313,8 +2315,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00000F05  A$_sms_manager$3528                _sms_manager
      00000F06  A$_sms_manager$3529                _sms_manager
      00000F07  A$_sms_manager$3530                _sms_manager
-     00000F08  A$_sms_manager$3531                _sms_manager
-     00000F09  A$_sms_manager$3532                _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 40.
 Hexadecimal  [32-Bits]
 
@@ -2324,6 +2324,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000F08  A$_sms_manager$3531                _sms_manager
+     00000F09  A$_sms_manager$3532                _sms_manager
      00000F0A  A$_sms_manager$3533                _sms_manager
      00000F0B  A$_sms_manager$3534                _sms_manager
      00000F0C  A$_sms_manager$3535                _sms_manager
@@ -2373,8 +2375,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00000F43  A$_sms_manager$3585                _sms_manager
      00000F44  A$_sms_manager$3586                _sms_manager
      00000F45  A$_sms_manager$3587                _sms_manager
-     00000F46  A$_sms_manager$3588                _sms_manager
-     00000F47  A$_sms_manager$3589                _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 41.
 Hexadecimal  [32-Bits]
 
@@ -2384,6 +2384,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000F46  A$_sms_manager$3588                _sms_manager
+     00000F47  A$_sms_manager$3589                _sms_manager
      00000F48  A$_sms_manager$3590                _sms_manager
      00000F49  A$_sms_manager$3591                _sms_manager
      00000F4C  A$_sms_manager$3592                _sms_manager
@@ -2433,8 +2435,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00000F81  A$_sms_manager$3642                _sms_manager
      00000F82  A$_sms_manager$3643                _sms_manager
      00000F83  A$_sms_manager$3644                _sms_manager
-     00000F84  A$_sms_manager$3645                _sms_manager
-     00000F85  A$_sms_manager$3646                _sms_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 42.
 Hexadecimal  [32-Bits]
 
@@ -2444,6 +2444,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000F84  A$_sms_manager$3645                _sms_manager
+     00000F85  A$_sms_manager$3646                _sms_manager
      00000F86  A$_sms_manager$3647                _sms_manager
      00000F89  A$_sms_manager$3648                _sms_manager
      00000F8A  A$_sms_manager$3649                _sms_manager
@@ -2493,8 +2495,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00000FB9  F_sms_manager$__str_0$0_0$0        _sms_manager
      00000FC7  F_sms_manager$__str_1$0_0$0        _sms_manager
      00000FD8  F_sms_manager$__str_2$0_0$0        _sms_manager
-     00001005  A$_snd_manager$91                  _snd_manager
-     00001005  C$_snd_manager.c$10$0_0$33         _snd_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 43.
 Hexadecimal  [32-Bits]
 
@@ -2504,6 +2504,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00001005  A$_snd_manager$91                  _snd_manager
+     00001005  C$_snd_manager.c$10$0_0$33         _snd_manager
      00001005  C$_snd_manager.c$12$1_0$33         _snd_manager
      00001005  G$devkit_PSG_STOPPED$0$0           _snd_manager
      00001005  _devkit_PSG_STOPPED                _snd_manager
@@ -2553,8 +2555,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00001018  A$_snd_manager$200                 _snd_manager
      00001019  A$_snd_manager$201                 _snd_manager
      0000101C  A$_snd_manager$202                 _snd_manager
-     0000101D  A$_snd_manager$210                 _snd_manager
-     0000101D  C$_snd_manager.c$36$1_0$39         _snd_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 44.
 Hexadecimal  [32-Bits]
 
@@ -2564,6 +2564,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     0000101D  A$_snd_manager$210                 _snd_manager
+     0000101D  C$_snd_manager.c$36$1_0$39         _snd_manager
      0000101D  XG$devkit_PSGPlay$0$0              _snd_manager
      0000101E  A$_snd_manager$230                 _snd_manager
      0000101E  C$_snd_manager.c$37$1_0$41         _snd_manager
@@ -2613,8 +2615,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00001034  G$devkit_PSGSetMusicVolumeAttenu   _snd_manager
      00001034  _devkit_PSGSetMusicVolumeAttenua   _snd_manager
      00001037  A$_snd_manager$331                 _snd_manager
-     00001038  A$_snd_manager$332                 _snd_manager
-     00001039  A$_snd_manager$333                 _snd_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 45.
 Hexadecimal  [32-Bits]
 
@@ -2624,6 +2624,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00001038  A$_snd_manager$332                 _snd_manager
+     00001039  A$_snd_manager$333                 _snd_manager
      0000103A  A$_snd_manager$334                 _snd_manager
      0000103B  A$_snd_manager$335                 _snd_manager
      0000103E  A$_snd_manager$336                 _snd_manager
@@ -2673,8 +2675,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00001070  G$devkit_PSGSFXCancelLoop$0$0      _snd_manager
      00001070  XG$devkit_PSGSFXCancelLoop$0$0     _snd_manager
      00001070  _devkit_PSGSFXCancelLoop           _snd_manager
-     00001073  A$_snd_manager$446                 _snd_manager
-     00001073  C$_snd_manager.c$74$1_0$59         _snd_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 46.
 Hexadecimal  [32-Bits]
 
@@ -2684,6 +2684,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00001073  A$_snd_manager$446                 _snd_manager
+     00001073  C$_snd_manager.c$74$1_0$59         _snd_manager
      00001073  C$_snd_manager.c$76$1_0$59         _snd_manager
      00001073  C$_snd_manager.c$77$1_0$59         _snd_manager
      00001073  G$devkit_PSGSFXStop$0$0            _snd_manager
@@ -2733,8 +2735,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00001089  A$asm_manager$61                   asm_manager
      0000108B  A$asm_manager$62                   asm_manager
      0000108D  A$asm_manager$63                   asm_manager
-     00001090  A$asm_manager$65                   asm_manager
-     00001092  A$asm_manager$66                   asm_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 47.
 Hexadecimal  [32-Bits]
 
@@ -2744,6 +2744,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00001090  A$asm_manager$65                   asm_manager
+     00001092  A$asm_manager$66                   asm_manager
      00001094  A$asm_manager$67                   asm_manager
      00001095  A$asm_manager$68                   asm_manager
      00001096  A$asm_manager$69                   asm_manager
@@ -2793,8 +2795,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      000010CD  A$audio_manager$133                audio_manager
      000010CE  A$audio_manager$134                audio_manager
      000010CF  A$audio_manager$135                audio_manager
-     000010D3  A$audio_manager$139                audio_manager
-     000010D3  C$audio_manager.c$30$1_0$111       audio_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 48.
 Hexadecimal  [32-Bits]
 
@@ -2804,6 +2804,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     000010D3  A$audio_manager$139                audio_manager
+     000010D3  C$audio_manager.c$30$1_0$111       audio_manager
      000010D6  A$audio_manager$140                audio_manager
      000010D9  A$audio_manager$141                audio_manager
      000010DC  A$audio_manager$142                audio_manager
@@ -2853,8 +2855,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      0000110F  A$audio_manager$224                audio_manager
      00001110  A$audio_manager$228                audio_manager
      00001110  C$audio_manager.c$55$1_0$114       audio_manager
-     00001113  A$audio_manager$229                audio_manager
-     00001116  A$audio_manager$230                audio_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 49.
 Hexadecimal  [32-Bits]
 
@@ -2864,6 +2864,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00001113  A$audio_manager$229                audio_manager
+     00001116  A$audio_manager$230                audio_manager
      00001118  A$audio_manager$231                audio_manager
      00001119  A$audio_manager$232                audio_manager
      0000111A  A$audio_manager$233                audio_manager
@@ -2913,8 +2915,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00001152  XG$engine_sound_manager_stop$0$0   audio_manager
      00001155  A$audio_manager$323                audio_manager
      00001155  C$audio_manager.c$70$1_0$116       audio_manager
-     00001155  C$audio_manager.c$73$1_0$116       audio_manager
-     00001155  C$audio_manager.c$74$1_0$116       audio_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 50.
 Hexadecimal  [32-Bits]
 
@@ -2924,6 +2924,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00001155  C$audio_manager.c$73$1_0$116       audio_manager
+     00001155  C$audio_manager.c$74$1_0$116       audio_manager
      00001155  G$engine_audio_manager_update$0$   audio_manager
      00001155  _engine_audio_manager_update       audio_manager
      00001158  A$audio_manager$324                audio_manager
@@ -2973,8 +2975,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      0000118D  XG$engine_content_manager_bggame   content_manager
      0000118E  A$content_manager$96               content_manager
      0000118E  C$content_manager.c$17$1_0$67      content_manager
-     0000118E  C$content_manager.c$19$1_0$67      content_manager
-     0000118E  G$engine_content_manager_splash$   content_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 51.
 Hexadecimal  [32-Bits]
 
@@ -2984,6 +2984,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     0000118E  C$content_manager.c$19$1_0$67      content_manager
+     0000118E  G$engine_content_manager_splash$   content_manager
      0000118E  _engine_content_manager_splash     content_manager
      00001191  A$content_manager$97               content_manager
      00001192  A$content_manager$98               content_manager
@@ -3033,8 +3035,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      000011C5  A$content_manager$168              content_manager
      000011C6  A$content_manager$172              content_manager
      000011C6  C$content_manager.c$31$1_0$69      content_manager
-     000011C9  A$content_manager$173              content_manager
-     000011CA  A$content_manager$174              content_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 52.
 Hexadecimal  [32-Bits]
 
@@ -3044,6 +3044,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     000011C9  A$content_manager$173              content_manager
+     000011CA  A$content_manager$174              content_manager
      000011CD  A$content_manager$175              content_manager
      000011CE  A$content_manager$176              content_manager
      000011D1  A$content_manager$177              content_manager
@@ -3093,8 +3095,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      0000120B  C$font_manager.c$10$0_0$70         font_manager
      0000120B  G$engine_font_manager_char$0$0     font_manager
      0000120B  _engine_font_manager_char          font_manager
-     0000120D  A$font_manager$59                  font_manager
-     00001211  A$font_manager$60                  font_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 53.
 Hexadecimal  [32-Bits]
 
@@ -3104,6 +3104,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     0000120D  A$font_manager$59                  font_manager
+     00001211  A$font_manager$60                  font_manager
      00001213  A$font_manager$67                  font_manager
      00001213  C$font_manager.c$12$2_0$70         font_manager
      00001213  C$font_manager.c$13$1_0$70         font_manager
@@ -3153,8 +3155,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00001250  C$font_manager.c$26$1_0$72         font_manager
      00001253  A$font_manager$133                 font_manager
      00001256  A$font_manager$134                 font_manager
-     00001258  A$font_manager$136                 font_manager
-     0000125B  A$font_manager$137                 font_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 54.
 Hexadecimal  [32-Bits]
 
@@ -3164,6 +3164,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00001258  A$font_manager$136                 font_manager
+     0000125B  A$font_manager$137                 font_manager
      0000125E  A$font_manager$138                 font_manager
      00001260  A$font_manager$139                 font_manager
      00001261  A$font_manager$140                 font_manager
@@ -3213,8 +3215,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      0000129B  A$font_manager$204                 font_manager
      0000129F  A$font_manager$205                 font_manager
      000012A1  A$font_manager$206                 font_manager
-     000012A4  A$font_manager$207                 font_manager
-     000012A5  A$font_manager$208                 font_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 55.
 Hexadecimal  [32-Bits]
 
@@ -3224,6 +3224,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     000012A4  A$font_manager$207                 font_manager
+     000012A5  A$font_manager$208                 font_manager
      000012A6  A$font_manager$215                 font_manager
      000012A6  C$font_manager.c$37$2_0$75         font_manager
      000012A6  C$font_manager.c$46$1_0$75         font_manager
@@ -3273,8 +3275,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      000012F9  A$font_manager$268                 font_manager
      000012FA  A$font_manager$272                 font_manager
      000012FA  C$font_manager.c$53$3_0$77         font_manager
-     000012FD  A$font_manager$273                 font_manager
-     00001300  A$font_manager$277                 font_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 56.
 Hexadecimal  [32-Bits]
 
@@ -3284,6 +3284,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     000012FD  A$font_manager$273                 font_manager
+     00001300  A$font_manager$277                 font_manager
      00001300  C$font_manager.c$55$3_0$77         font_manager
      00001301  A$font_manager$278                 font_manager
      00001303  A$font_manager$279                 font_manager
@@ -3333,8 +3335,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      0000134C  A$font_manager$337                 font_manager
      0000134E  A$font_manager$338                 font_manager
      00001350  A$font_manager$343                 font_manager
-     00001350  C$font_manager.c$65$2_0$75         font_manager
-     00001350  XG$engine_font_manager_data$0$0    font_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 57.
 Hexadecimal  [32-Bits]
 
@@ -3344,6 +3344,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00001350  C$font_manager.c$65$2_0$75         font_manager
+     00001350  XG$engine_font_manager_data$0$0    font_manager
      00001351  A$font_manager$353                 font_manager
      00001351  C$font_manager.c$67$2_0$80         font_manager
      00001351  G$engine_font_manager_zero$0$0     font_manager
@@ -3393,8 +3395,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00001399  A$font_manager$407                 font_manager
      0000139C  A$font_manager$408                 font_manager
      0000139D  A$font_manager$409                 font_manager
-     000013A0  A$font_manager$410                 font_manager
-     000013A3  A$font_manager$411                 font_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 58.
 Hexadecimal  [32-Bits]
 
@@ -3404,6 +3404,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     000013A0  A$font_manager$410                 font_manager
+     000013A3  A$font_manager$411                 font_manager
      000013A4  A$font_manager$412                 font_manager
      000013A7  A$font_manager$413                 font_manager
      000013A8  A$font_manager$414                 font_manager
@@ -3453,8 +3455,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      000013E9  XG$engine_font_manager_zero$0$0    font_manager
      000013EA  A$input_manager$80                 input_manager
      000013EA  C$input_manager.c$13$0_0$67        input_manager
-     000013EA  C$input_manager.c$15$1_0$67        input_manager
-     000013EA  G$engine_input_manager_update$0$   input_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 59.
 Hexadecimal  [32-Bits]
 
@@ -3464,6 +3464,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     000013EA  C$input_manager.c$15$1_0$67        input_manager
+     000013EA  G$engine_input_manager_update$0$   input_manager
      000013EA  _engine_input_manager_update       input_manager
      000013ED  A$input_manager$81                 input_manager
      000013F0  A$input_manager$85                 input_manager
@@ -3513,8 +3515,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00001415  A$input_manager$180                input_manager
      00001416  A$input_manager$181                input_manager
      00001419  A$input_manager$182                input_manager
-     0000141A  A$input_manager$190                input_manager
-     0000141A  C$input_manager.c$35$1_0$71        input_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 60.
 Hexadecimal  [32-Bits]
 
@@ -3524,6 +3524,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     0000141A  A$input_manager$190                input_manager
+     0000141A  C$input_manager.c$35$1_0$71        input_manager
      0000141A  XG$engine_input_manager_hold_rig   input_manager
      0000141B  A$input_manager$203                input_manager
      0000141B  C$input_manager.c$36$1_0$72        input_manager
@@ -3573,8 +3575,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      0000143F  C$input_manager.c$54$1_0$76        input_manager
      0000143F  C$input_manager.c$56$1_0$76        input_manager
      0000143F  G$engine_input_manager_move_left   input_manager
-     0000143F  _engine_input_manager_move_left    input_manager
-     00001442  A$input_manager$300                input_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 61.
 Hexadecimal  [32-Bits]
 
@@ -3584,6 +3584,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     0000143F  _engine_input_manager_move_left    input_manager
+     00001442  A$input_manager$300                input_manager
      00001443  A$input_manager$301                input_manager
      00001446  A$input_manager$302                input_manager
      00001447  A$input_manager$310                input_manager
@@ -3633,8 +3635,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00001470  A$input_manager$400                input_manager
      00001473  A$input_manager$401                input_manager
      00001477  A$input_manager$402                input_manager
-     00001479  A$input_manager$403                input_manager
-     0000147C  A$input_manager$404                input_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 62.
 Hexadecimal  [32-Bits]
 
@@ -3644,6 +3644,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00001479  A$input_manager$403                input_manager
+     0000147C  A$input_manager$404                input_manager
      0000147D  A$input_manager$405                input_manager
      0000147F  A$input_manager$406                input_manager
      00001482  A$input_manager$407                input_manager
@@ -3693,8 +3695,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00001520  Flocale_manager$__str_16$0_0$0     locale_manager
      00001527  Flocale_manager$__str_17$0_0$0     locale_manager
      0000152E  Flocale_manager$__str_18$0_0$0     locale_manager
-     00001535  Flocale_manager$__str_19$0_0$0     locale_manager
-     0000153C  Flocale_manager$__str_20$0_0$0     locale_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 63.
 Hexadecimal  [32-Bits]
 
@@ -3704,6 +3704,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00001535  Flocale_manager$__str_19$0_0$0     locale_manager
+     0000153C  Flocale_manager$__str_20$0_0$0     locale_manager
      00001543  Flocale_manager$__str_21$0_0$0     locale_manager
      0000154A  Flocale_manager$__str_22$0_0$0     locale_manager
      00001551  Flocale_manager$__str_23$0_0$0     locale_manager
@@ -3753,8 +3755,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00001624  C$riff_manager.c$23$1_0$70         riff_manager
      00001627  A$riff_manager$117                 riff_manager
      0000162A  A$riff_manager$118                 riff_manager
-     0000162C  A$riff_manager$119                 riff_manager
-     0000162D  A$riff_manager$120                 riff_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 64.
 Hexadecimal  [32-Bits]
 
@@ -3764,6 +3764,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     0000162C  A$riff_manager$119                 riff_manager
+     0000162D  A$riff_manager$120                 riff_manager
      0000162E  A$riff_manager$124                 riff_manager
      0000162E  C$riff_manager.c$25$1_0$70         riff_manager
      0000162F  A$riff_manager$125                 riff_manager
@@ -3813,8 +3815,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00001668  A$sample_manager$119               sample_manager
      00001669  A$sample_manager$120               sample_manager
      0000166B  A$sample_manager$121               sample_manager
-     0000166F  A$sample_manager$125               sample_manager
-     00001670  A$sample_manager$126               sample_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 65.
 Hexadecimal  [32-Bits]
 
@@ -3824,6 +3824,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     0000166F  A$sample_manager$125               sample_manager
+     00001670  A$sample_manager$126               sample_manager
      00001672  A$sample_manager$127               sample_manager
      00001674  A$sample_manager$128               sample_manager
      00001675  A$sample_manager$129               sample_manager
@@ -3873,8 +3875,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      000016BE  A$screen_manager$77                screen_manager
      000016BF  A$screen_manager$78                screen_manager
      000016C0  A$screen_manager$79                screen_manager
-     000016C3  A$screen_manager$83                screen_manager
-     000016C3  C$screen_manager.c$20$1_0$8        screen_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 66.
 Hexadecimal  [32-Bits]
 
@@ -3884,6 +3884,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     000016C3  A$screen_manager$83                screen_manager
+     000016C3  C$screen_manager.c$20$1_0$8        screen_manager
      000016C6  A$screen_manager$84                screen_manager
      000016C8  A$screen_manager$88                screen_manager
      000016C8  C$screen_manager.c$23$1_0$8        screen_manager
@@ -3933,8 +3935,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00001719  A$screen_manager$163               screen_manager
      0000171A  A$screen_manager$164               screen_manager
      0000171B  A$screen_manager$165               screen_manager
-     0000171C  A$screen_manager$166               screen_manager
-     0000171D  A$screen_manager$167               screen_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 67.
 Hexadecimal  [32-Bits]
 
@@ -3944,6 +3944,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     0000171C  A$screen_manager$166               screen_manager
+     0000171D  A$screen_manager$167               screen_manager
      00001720  A$screen_manager$172               screen_manager
      00001720  C$screen_manager.c$43$1_0$9        screen_manager
      00001723  A$screen_manager$173               screen_manager
@@ -3993,8 +3995,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      0000175B  XG$screen_none_screen_update$0$0   none_screen
      0000175C  A$riff_screen$72                   riff_screen
      0000175C  C$riff_screen.c$19$0_0$7           riff_screen
-     0000175C  C$riff_screen.c$21$1_0$7           riff_screen
-     0000175C  G$screen_riff_screen_load$0$0      riff_screen
 ASxxxx Linker V03.00 + NoICE + sdld,  page 68.
 Hexadecimal  [32-Bits]
 
@@ -4004,6 +4004,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     0000175C  C$riff_screen.c$21$1_0$7           riff_screen
+     0000175C  G$screen_riff_screen_load$0$0      riff_screen
      0000175C  _screen_riff_screen_load           riff_screen
      0000175F  A$riff_screen$73                   riff_screen
      00001761  A$riff_screen$77                   riff_screen
@@ -4053,8 +4055,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      000017A6  A$riff_screen$135                  riff_screen
      000017A6  C$riff_screen.c$27$1_0$7           riff_screen
      000017A6  XG$screen_riff_screen_load$0$0     riff_screen
-     000017A7  Friff_screen$__str_0$0_0$0         riff_screen
-     000017B5  A$riff_screen$149                  riff_screen
 ASxxxx Linker V03.00 + NoICE + sdld,  page 69.
 Hexadecimal  [32-Bits]
 
@@ -4064,6 +4064,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     000017A7  Friff_screen$__str_0$0_0$0         riff_screen
+     000017B5  A$riff_screen$149                  riff_screen
      000017B5  C$riff_screen.c$29$1_0$9           riff_screen
      000017B5  G$screen_riff_screen_update$0$0    riff_screen
      000017B5  _screen_riff_screen_update         riff_screen
@@ -4113,8 +4115,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      000017FC  C$riff_screen.c$43$1_0$9           riff_screen
      000017FD  A$riff_screen$209                  riff_screen
      000017FF  A$riff_screen$210                  riff_screen
-     00001803  A$riff_screen$211                  riff_screen
-     00001806  A$riff_screen$212                  riff_screen
 ASxxxx Linker V03.00 + NoICE + sdld,  page 70.
 Hexadecimal  [32-Bits]
 
@@ -4124,6 +4124,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00001803  A$riff_screen$211                  riff_screen
+     00001806  A$riff_screen$212                  riff_screen
      00001808  A$riff_screen$213                  riff_screen
      0000180A  A$riff_screen$217                  riff_screen
      0000180A  C$riff_screen.c$45$2_0$11          riff_screen
@@ -4173,8 +4175,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      0000184E  A$riff_screen$274                  riff_screen
      00001850  A$riff_screen$275                  riff_screen
      00001851  A$riff_screen$276                  riff_screen
-     00001852  A$riff_screen$277                  riff_screen
-     00001853  A$riff_screen$281                  riff_screen
 ASxxxx Linker V03.00 + NoICE + sdld,  page 71.
 Hexadecimal  [32-Bits]
 
@@ -4184,6 +4184,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00001852  A$riff_screen$277                  riff_screen
+     00001853  A$riff_screen$281                  riff_screen
      00001853  C$riff_screen.c$55$2_0$12          riff_screen
      00001854  A$riff_screen$282                  riff_screen
      00001855  A$riff_screen$283                  riff_screen
@@ -4233,8 +4235,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      0000188B  A$song_screen$77                   song_screen
      0000188E  A$song_screen$78                   song_screen
      0000188F  A$song_screen$79                   song_screen
-     00001890  A$song_screen$83                   song_screen
-     00001890  C$song_screen.c$14$1_0$8           song_screen
 ASxxxx Linker V03.00 + NoICE + sdld,  page 72.
 Hexadecimal  [32-Bits]
 
@@ -4244,6 +4244,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00001890  A$song_screen$83                   song_screen
+     00001890  C$song_screen.c$14$1_0$8           song_screen
      00001893  A$song_screen$84                   song_screen
      00001894  A$song_screen$85                   song_screen
      00001896  A$song_screen$86                   song_screen
@@ -4293,8 +4295,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      000018E3  A$song_screen$155                  song_screen
      000018E3  C$song_screen.c$25$2_0$11          song_screen
      000018E6  A$song_screen$156                  song_screen
-     000018E8  A$song_screen$157                  song_screen
-     000018EB  A$song_screen$158                  song_screen
 ASxxxx Linker V03.00 + NoICE + sdld,  page 73.
 Hexadecimal  [32-Bits]
 
@@ -4304,6 +4304,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     000018E8  A$song_screen$157                  song_screen
+     000018EB  A$song_screen$158                  song_screen
      000018EC  A$song_screen$159                  song_screen
      000018ED  A$song_screen$160                  song_screen
      000018F0  A$song_screen$161                  song_screen
@@ -4353,8 +4355,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00001937  A$song_screen$218                  song_screen
      00001938  A$song_screen$219                  song_screen
      00001939  A$song_screen$220                  song_screen
-     0000193A  A$song_screen$221                  song_screen
-     0000193B  A$song_screen$222                  song_screen
 ASxxxx Linker V03.00 + NoICE + sdld,  page 74.
 Hexadecimal  [32-Bits]
 
@@ -4364,6 +4364,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     0000193A  A$song_screen$221                  song_screen
+     0000193B  A$song_screen$222                  song_screen
      0000193C  A$song_screen$223                  song_screen
      0000193F  A$song_screen$224                  song_screen
      00001940  A$song_screen$225                  song_screen
@@ -4413,8 +4415,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00001977  C$test_screen.c$10$1_0$7           test_screen
      0000197A  A$test_screen$65                   test_screen
      0000197B  A$test_screen$66                   test_screen
-     0000197E  A$test_screen$67                   test_screen
-     0000197F  A$test_screen$68                   test_screen
 ASxxxx Linker V03.00 + NoICE + sdld,  page 75.
 Hexadecimal  [32-Bits]
 
@@ -4424,6 +4424,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     0000197E  A$test_screen$67                   test_screen
+     0000197F  A$test_screen$68                   test_screen
      00001982  A$test_screen$69                   test_screen
      00001983  A$test_screen$70                   test_screen
      00001984  A$test_screen$78                   test_screen
@@ -4473,8 +4475,6 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      00001A5F  __divu16                           
      00001A8E  _UNSAFE_SMS_copySpritestoSAT       SMSlib_UNSAFE
      00001AA6  _UNSAFE_SMS_VRAMmemcpy32           SMSlib_UNSAFE
-     00001AC3  _UNSAFE_SMS_VRAMmemcpy64           SMSlib_UNSAFE
-     00001AE0  _UNSAFE_SMS_VRAMmemcpy128          SMSlib_UNSAFE
 ASxxxx Linker V03.00 + NoICE + sdld,  page 76.
 Hexadecimal  [32-Bits]
 
@@ -4484,6 +4484,8 @@ _CODE                               00000200    00002179 =        8569. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00001AC3  _UNSAFE_SMS_VRAMmemcpy64           SMSlib_UNSAFE
+     00001AE0  _UNSAFE_SMS_VRAMmemcpy128          SMSlib_UNSAFE
      00001AFD  _SMS_init                          SMSlib
      00001B51  _VDPReg_init                       SMSlib
      00001B5C  _SMS_VDPType                       SMSlib
@@ -4533,9 +4535,17 @@ _CODE                               00000200    00002179 =        8569. bytes (R
      000022B4  _SMS_loadTileMapArea               SMSlib_loadTileMapArea
      00002329  _SMS_loadTileMap                   SMSlib_loadTileMap
      00002362  __moduchar                         
-     0000236E  __moduint                          
-
 ASxxxx Linker V03.00 + NoICE + sdld,  page 77.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00002179 =        8569. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     0000236E  __moduint                          
+ASxxxx Linker V03.00 + NoICE + sdld,  page 78.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -4546,7 +4556,7 @@ _HEADER0                            00000000    00000006 =           6. bytes (A
       -----  --------------------------------   ------------------------
      00000006  _SMS_crt0_RST08                    crt0
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 78.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 79.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -4557,7 +4567,7 @@ _HEADER1                            00000000    00000009 =           9. bytes (A
       -----  --------------------------------   ------------------------
      00000011  _SMS_crt0_RST18                    crt0
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 79.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 80.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -4566,7 +4576,7 @@ _HEADER2                            00000000    0000000A =          10. bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-ASxxxx Linker V03.00 + NoICE + sdld,  page 80.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 81.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -4575,7 +4585,7 @@ _HEADER3                            00000000    00000003 =           3. bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-ASxxxx Linker V03.00 + NoICE + sdld,  page 81.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 82.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -4584,7 +4594,7 @@ _HEADER4                            00000000    00000003 =           3. bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-ASxxxx Linker V03.00 + NoICE + sdld,  page 82.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 83.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -4598,48 +4608,50 @@ _HEADER5                            00000000    0000012A =         298. bytes (A
      00000159  _OUTI32                            crt0
      00000199  _outi_block                        crt0
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 83.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 84.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_INITIALIZER                        00002379    00000132 =         306. bytes (REL,CON)
+_INITIALIZER                        00002379    00000138 =         312. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
      00002379  Fbank2$__xinit_locale_object_tex   bank2
      0000238B  Fbank2$__xinit_locale_object_bla   bank2
      00002391  Fbank2$__xinit_locale_object_dif   bank2
-     00002399  Ffixedbank$__xinit_riff_sample_d   fixedbank
-     0000240B  Ffixedbank$__xinit_music_object_   fixedbank
-     0000241D  Ffixedbank$__xinit_sound_object_   fixedbank
-     00002425  Finput_manager$__xinit_curr_joyp   input_manager
-     00002427  Finput_manager$__xinit_prev_joyp   input_manager
-     00002429  Flocale_manager$__xinit_riff_obj   locale_manager
-     0000245D  Flocale_manager$__xinit_song_obj   locale_manager
-     0000246F  Friff_screen$__xinit_indexs$0_0$   riff_screen
-     00002489  Friff_screen$__xinit_counts$0_0$   riff_screen
-ASxxxx Linker V03.00 + NoICE + sdld,  page 84.
-Hexadecimal  [32-Bits]
-
-Area                                    Addr        Size        Decimal Bytes (Attributes)
---------------------------------        ----        ----        ------- ----- ------------
-_GSINIT                             000024AB    0000000F =          15. bytes (REL,CON)
-
-      Value  Global                              Global Defined In Module
-      -----  --------------------------------   ------------------------
-     000024AB  gsinit                             crt0
+     00002399  Ffixedbank$__xinit_steven_text$0   fixedbank
+     0000239F  Ffixedbank$__xinit_riff_sample_d   fixedbank
+     00002411  Ffixedbank$__xinit_music_object_   fixedbank
+     00002423  Ffixedbank$__xinit_sound_object_   fixedbank
+     0000242B  Finput_manager$__xinit_curr_joyp   input_manager
+     0000242D  Finput_manager$__xinit_prev_joyp   input_manager
+     0000242F  Flocale_manager$__xinit_riff_obj   locale_manager
+     00002463  Flocale_manager$__xinit_song_obj   locale_manager
+     00002475  Friff_screen$__xinit_indexs$0_0$   riff_screen
+     0000248F  Friff_screen$__xinit_counts$0_0$   riff_screen
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 85.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSFINAL                            000024BA    00000001 =           1. bytes (REL,CON)
+_GSINIT                             000024B1    0000000F =          15. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     000024B1  gsinit                             crt0
+
 ASxxxx Linker V03.00 + NoICE + sdld,  page 86.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_GSFINAL                            000024C0    00000001 =           1. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 87.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -4696,12 +4708,12 @@ _DATA                               0000C000    0000012A =         298. bytes (R
      0000C107  _SpriteNextFree                    SMSlib
      0000C108  _SMS_theLineInterruptHandler       SMSlib
      0000C10A  _decompBuffer                      SMSlib_PSGaiden
-ASxxxx Linker V03.00 + NoICE + sdld,  page 87.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 88.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_INITIALIZED                        0000C12A    00000132 =         306. bytes (REL,CON)
+_INITIALIZED                        0000C12A    00000138 =         312. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -4711,28 +4723,31 @@ _INITIALIZED                        0000C12A    00000132 =         306. bytes (R
      0000C13C  _locale_object_blank               bank2
      0000C142  G$locale_object_difficulty$0_0$0   bank2
      0000C142  _locale_object_difficulty          bank2
-     0000C14A  G$riff_sample_data$0_0$0           fixedbank
-     0000C14A  _riff_sample_data                  fixedbank
-     0000C1BC  G$music_object_data$0_0$0          fixedbank
-     0000C1BC  _music_object_data                 fixedbank
-     0000C1CE  G$sound_object_data$0_0$0          fixedbank
-     0000C1CE  _sound_object_data                 fixedbank
-     0000C1D6  Finput_manager$curr_joypad1$0_0$   input_manager
-     0000C1D8  Finput_manager$prev_joypad1$0_0$   input_manager
-     0000C1DA  G$riff_object_texts$0_0$0          locale_manager
-     0000C1DA  _riff_object_texts                 locale_manager
-     0000C20E  G$song_object_texts$0_0$0          locale_manager
-     0000C20E  _song_object_texts                 locale_manager
-     0000C220  Friff_screen$indexs$0_0$0          riff_screen
-     0000C23A  Friff_screen$counts$0_0$0          riff_screen
-     0000C254  _VDPReg                            SMSlib
-     0000C256  _spritesHeight                     SMSlib
-     0000C257  _spritesWidth                      SMSlib
-     0000C258  _clipWin_x0                        SMSlib_spriteClip
-     0000C259  _clipWin_y0                        SMSlib_spriteClip
-     0000C25A  _clipWin_x1                        SMSlib_spriteClip
-     0000C25B  _clipWin_y1                        SMSlib_spriteClip
-ASxxxx Linker V03.00 + NoICE + sdld,  page 88.
+     0000C14A  G$steven_text$0_0$0                fixedbank
+     0000C14A  _steven_text                       fixedbank
+     0000C150  G$riff_sample_data$0_0$0           fixedbank
+     0000C150  _riff_sample_data                  fixedbank
+     0000C1C2  G$music_object_data$0_0$0          fixedbank
+     0000C1C2  _music_object_data                 fixedbank
+     0000C1D4  G$sound_object_data$0_0$0          fixedbank
+     0000C1D4  _sound_object_data                 fixedbank
+     0000C1DC  Finput_manager$curr_joypad1$0_0$   input_manager
+     0000C1DE  Finput_manager$prev_joypad1$0_0$   input_manager
+     0000C1E0  G$riff_object_texts$0_0$0          locale_manager
+     0000C1E0  _riff_object_texts                 locale_manager
+     0000C214  G$song_object_texts$0_0$0          locale_manager
+     0000C214  _song_object_texts                 locale_manager
+     0000C226  Friff_screen$indexs$0_0$0          riff_screen
+     0000C240  Friff_screen$counts$0_0$0          riff_screen
+     0000C25A  _VDPReg                            SMSlib
+     0000C25C  _spritesHeight                     SMSlib
+     0000C25D  _spritesWidth                      SMSlib
+     0000C25E  _clipWin_x0                        SMSlib_spriteClip
+     0000C25F  _clipWin_y0                        SMSlib_spriteClip
+     0000C260  _clipWin_x1                        SMSlib_spriteClip
+     0000C261  _clipWin_y1                        SMSlib_spriteClip
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 89.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -4759,7 +4774,7 @@ _BANK2                              00008000    000034F8 =       13560. bytes (R
      0000A702  _sprite_tiles__tiles__psgcompr     bank2
      0000B44E  Fbank2$__str_0$0_0$0               bank2
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 89.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 90.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -4777,7 +4792,7 @@ _BANK3                              00008000    00003BFC =       15356. bytes (R
      0000A6FA  G$titles_tiles__tiles__psgcompr$   bank3
      0000A6FA  _titles_tiles__tiles__psgcompr     bank3
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 90.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 91.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -4789,7 +4804,7 @@ _BANK4                              00008000    0000397A =       14714. bytes (R
      00008000  G$animeopening_psg$0_0$0           bank4
      00008000  _animeopening_psg                  bank4
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 91.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 92.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -4801,7 +4816,7 @@ _BANK5                              00008000    0000372E =       14126. bytes (R
      00008000  G$usas_jubaruins_psg$0_0$0         bank5
      00008000  _usas_jubaruins_psg                bank5
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 92.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 93.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -4821,7 +4836,7 @@ _BANK6                              00008000    000033BB =       13243. bytes (R
      0000B398  G$sfx_reset_psg$0_0$0              bank6
      0000B398  _sfx_reset_psg                     bank6
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 93.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 94.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -4842,7 +4857,7 @@ _BANK7                              00008000    00003086 =       12422. bytes (R
      0000AB03  _mus_level_psg                     bank7
      0000AD15  G$mus_over_psg$0_0$0               bank7
      0000AD15  _mus_over_psg                      bank7
-ASxxxx Linker V03.00 + NoICE + sdld,  page 94.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 95.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -4854,7 +4869,7 @@ _BANK8                              00008000    00000007 =           7. bytes (R
      00008000  G$bank8_txt$0_0$0                  bank8
      00008000  _bank8_txt                         bank8
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 95.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 96.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -4866,7 +4881,7 @@ _BANK9                              00008000    00000007 =           7. bytes (R
      00008000  G$bank9_txt$0_0$0                  bank9
      00008000  _bank9_txt                         bank9
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 96.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 97.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -4878,7 +4893,7 @@ _BANK10                             00008000    00000008 =           8. bytes (R
      00008000  G$bank10_txt$0_0$0                 bank10
      00008000  _bank10_txt                        bank10
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 97.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 98.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -4890,7 +4905,7 @@ _BANK11                             00008000    000028B9 =       10425. bytes (R
      00008000  G$Riff_Sound_Wayne_01_wav_pcmenc   bank11
      00008000  _Riff_Sound_Wayne_01_wav_pcmenc    bank11
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 98.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 99.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -4902,7 +4917,7 @@ _BANK12                             00008000    00001B60 =        7008. bytes (R
      00008000  G$Riff_Sound_Eminem_01_wav_pcmen   bank12
      00008000  _Riff_Sound_Eminem_01_wav_pcmenc   bank12
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 99.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 100.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -4914,7 +4929,7 @@ _BANK13                             00008000    000033DF =       13279. bytes (R
      00008000  G$Riff_Sound_Commando_01_wav_pcm   bank13
      00008000  _Riff_Sound_Commando_01_wav_pcme   bank13
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 100.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 101.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -4926,19 +4941,25 @@ _BANK14                             00008000    000035FC =       13820. bytes (R
      00008000  G$Riff_Sound_Commando_02_wav_pcm   bank14
      00008000  _Riff_Sound_Commando_02_wav_pcme   bank14
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 101.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 102.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK15                             00008000    00000008 =           8. bytes (REL,CON)
+_BANK15                             00008000    0000006B =         107. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$bank15_txt$0_0$0                 bank15
-     00008000  _bank15_txt                        bank15
-
-ASxxxx Linker V03.00 + NoICE + sdld,  page 102.
+     00008000  G$steven_data$0_0$0                fixedbank
+     00008000  _steven_data                       fixedbank
+     00008010  G$riff_sample_bank$0_0$0           fixedbank
+     00008010  _riff_sample_bank                  fixedbank
+     00008049  G$music_object_bank$0_0$0          fixedbank
+     00008049  _music_object_bank                 fixedbank
+     00008052  G$sound_object_bank$0_0$0          fixedbank
+     00008052  _sound_object_bank                 fixedbank
+     00008056  Ffixedbank$__str_0$0_0$0           fixedbank
+ASxxxx Linker V03.00 + NoICE + sdld,  page 103.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -4950,7 +4971,7 @@ _BANK16                             00008000    00003691 =       13969. bytes (R
      00008000  G$Riff_Death_Licence_01_wav_pcme   bank16
      00008000  _Riff_Death_Licence_01_wav_pcmen   bank16
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 103.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 104.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -4962,7 +4983,7 @@ _BANK17                             00008000    000035FE =       13822. bytes (R
      00008000  G$Riff_Intro_Ultimate_01_wav_pcm   bank17
      00008000  _Riff_Intro_Ultimate_01_wav_pcme   bank17
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 104.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 105.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -4974,7 +4995,7 @@ _BANK18                             00008000    0000379D =       14237. bytes (R
      00008000  G$Riff_Intro_Ultimate_02_wav_pcm   bank18
      00008000  _Riff_Intro_Ultimate_02_wav_pcme   bank18
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 105.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 106.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -4986,7 +5007,7 @@ _BANK19                             00008000    00003DB1 =       15793. bytes (R
      00008000  G$Riff_Intro_Ultimate_03_wav_pcm   bank19
      00008000  _Riff_Intro_Ultimate_03_wav_pcme   bank19
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 106.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 107.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -4998,7 +5019,7 @@ _BANK20                             00008000    00002F8A =       12170. bytes (R
      00008000  G$Riff_Intro_Ultimate_04_wav_pcm   bank20
      00008000  _Riff_Intro_Ultimate_04_wav_pcme   bank20
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 107.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 108.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5010,7 +5031,7 @@ _BANK21                             00008000    00003947 =       14663. bytes (R
      00008000  G$Riff_Intro_Hulk_01_wav_pcmenc$   bank21
      00008000  _Riff_Intro_Hulk_01_wav_pcmenc     bank21
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 108.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 109.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5022,7 +5043,7 @@ _BANK22                             00008000    00003B0D =       15117. bytes (R
      00008000  G$Riff_Intro_Hulk_02_wav_pcmenc$   bank22
      00008000  _Riff_Intro_Hulk_02_wav_pcmenc     bank22
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 109.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 110.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5034,7 +5055,7 @@ _BANK23                             00008000    00003A1C =       14876. bytes (R
      00008000  G$Riff_Intro_Hulk_03_wav_pcmenc$   bank23
      00008000  _Riff_Intro_Hulk_03_wav_pcmenc     bank23
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 110.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 111.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5046,7 +5067,7 @@ _BANK24                             00008000    00003CA4 =       15524. bytes (R
      00008000  G$Riff_Sound_Youza40_01_wav_pcme   bank24
      00008000  _Riff_Sound_Youza40_01_wav_pcmen   bank24
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 111.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 112.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5058,7 +5079,7 @@ _BANK25                             00008000    00003B3A =       15162. bytes (R
      00008000  G$Riff_Intro_ACDC_01_wav_pcmenc$   bank25
      00008000  _Riff_Intro_ACDC_01_wav_pcmenc     bank25
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 112.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 113.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5070,7 +5091,7 @@ _BANK26                             00008000    00003C61 =       15457. bytes (R
      00008000  G$Riff_Sound_Austin03_01_wav_pcm   bank26
      00008000  _Riff_Sound_Austin03_01_wav_pcme   bank26
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 113.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 114.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5082,7 +5103,7 @@ _BANK27                             00008000    00002D08 =       11528. bytes (R
      00008000  G$Riff_Sound_Austin02_01_wav_pcm   bank27
      00008000  _Riff_Sound_Austin02_01_wav_pcme   bank27
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 114.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 115.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5094,7 +5115,7 @@ _BANK28                             00008000    00003F11 =       16145. bytes (R
      00008000  G$Riff_Sound_Austin01_01_wav_pcm   bank28
      00008000  _Riff_Sound_Austin01_01_wav_pcme   bank28
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 115.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 116.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5106,7 +5127,7 @@ _BANK29                             00008000    000037BE =       14270. bytes (R
      00008000  G$Riff_Sound_SimpsonsSucked_01_w   bank29
      00008000  _Riff_Sound_SimpsonsSucked_01_wa   bank29
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 116.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 117.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5118,7 +5139,7 @@ _BANK30                             00008000    00003CF9 =       15609. bytes (R
      00008000  G$Riff_Sound_Excellent40_01_wav_   bank30
      00008000  _Riff_Sound_Excellent40_01_wav_p   bank30
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 117.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 118.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5130,7 +5151,7 @@ _BANK31                             00008000    00003A6D =       14957. bytes (R
      00008000  G$Riff_Sound_Excellent50_01_wav_   bank31
      00008000  _Riff_Sound_Excellent50_01_wav_p   bank31
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 118.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 119.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5142,7 +5163,7 @@ _BANK32                             00008000    000037D3 =       14291. bytes (R
      00008000  G$Riff_Sound_VHdoctor_01_wav_pcm   bank32
      00008000  _Riff_Sound_VHdoctor_01_wav_pcme   bank32
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 119.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 120.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5154,7 +5175,7 @@ _BANK33                             00008000    00003AF0 =       15088. bytes (R
      00008000  G$Riff_Sound_VHdoctor_02_wav_pcm   bank33
      00008000  _Riff_Sound_VHdoctor_02_wav_pcme   bank33
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 120.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 121.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5166,7 +5187,7 @@ _BANK34                             00008000    00003857 =       14423. bytes (R
      00008000  G$Riff_Sound_VHdoctor_03_wav_pcm   bank34
      00008000  _Riff_Sound_VHdoctor_03_wav_pcme   bank34
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 121.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 122.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5180,7 +5201,7 @@ _BANK35                             00008000    00003DD9 =       15833. bytes (R
      000086A1  G$Riff_Sound_VHjump02_01_wav_pcm   bank35
      000086A1  _Riff_Sound_VHjump02_01_wav_pcme   bank35
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 122.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 123.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5194,7 +5215,7 @@ _BANK36                             00008000    000038D8 =       14552. bytes (R
      0000A47D  G$Riff_Sound_VHjump02_02_wav_pcm   bank36
      0000A47D  _Riff_Sound_VHjump02_02_wav_pcme   bank36
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 123.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 124.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5208,7 +5229,7 @@ _BANK37                             00008000    00003918 =       14616. bytes (R
      00009BB5  G$Riff_Sound_Silicon01_01_wav_pc   bank37
      00009BB5  _Riff_Sound_Silicon01_01_wav_pcm   bank37
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 124.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 125.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5222,7 +5243,7 @@ _BANK38                             00008000    00003E82 =       16002. bytes (R
      00008C9A  G$Riff_Sound_Excellent10_01_wav_   bank38
      00008C9A  _Riff_Sound_Excellent10_01_wav_p   bank38
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 125.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 126.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5236,7 +5257,7 @@ _BANK39                             00008000    000037F8 =       14328. bytes (R
      0000997D  G$Riff_Sound_Silicon03_01_wav_pc   bank39
      0000997D  _Riff_Sound_Silicon03_01_wav_pcm   bank39
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 126.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 127.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5250,7 +5271,7 @@ _BANK40                             00008000    00003E84 =       16004. bytes (R
      00009DD6  G$Riff_Intro_ACDC_02_wav_pcmenc$   bank40
      00009DD6  _Riff_Intro_ACDC_02_wav_pcmenc     bank40
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 127.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 128.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5262,7 +5283,7 @@ _BANK41                             00008000    00003CA6 =       15526. bytes (R
      00008000  G$Riff__Title__Screen__01_wav_pc   bank41
      00008000  _Riff__Title__Screen__01_wav_pcm   bank41
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 128.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 129.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5274,7 +5295,7 @@ _BANK42                             00008000    00003C4E =       15438. bytes (R
      00008000  G$Riff__Title__Screen__02_wav_pc   bank42
      00008000  _Riff__Title__Screen__02_wav_pcm   bank42
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 129.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 130.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5286,7 +5307,7 @@ _BANK43                             00008000    00003E1C =       15900. bytes (R
      00008000  G$Riff__Title__Screen__03_wav_pc   bank43
      00008000  _Riff__Title__Screen__03_wav_pcm   bank43
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 130.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 131.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5298,7 +5319,7 @@ _BANK44                             00008000    00003B0D =       15117. bytes (R
      00008000  G$Riff__Title__Screen__04_wav_pc   bank44
      00008000  _Riff__Title__Screen__04_wav_pcm   bank44
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 131.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 132.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5310,7 +5331,7 @@ _BANK45                             00008000    00003FC1 =       16321. bytes (R
      00008000  G$Riff__Title__Screen__05_wav_pc   bank45
      00008000  _Riff__Title__Screen__05_wav_pcm   bank45
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 132.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 133.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5322,7 +5343,7 @@ _BANK46                             00008000    00003A97 =       14999. bytes (R
      00008000  G$Riff__Title__Screen__06_wav_pc   bank46
      00008000  _Riff__Title__Screen__06_wav_pcm   bank46
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 133.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 134.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5334,7 +5355,7 @@ _BANK47                             00008000    00003C4E =       15438. bytes (R
      00008000  G$Riff__Title__Screen__07_wav_pc   bank47
      00008000  _Riff__Title__Screen__07_wav_pcm   bank47
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 134.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 135.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5346,7 +5367,7 @@ _BANK48                             00008000    00003C43 =       15427. bytes (R
      00008000  G$Riff__Title__Screen__08_wav_pc   bank48
      00008000  _Riff__Title__Screen__08_wav_pcm   bank48
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 135.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 136.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5358,7 +5379,7 @@ _BANK49                             00008000    000035EA =       13802. bytes (R
      00008000  G$Riff__Title__Screen__09_wav_pc   bank49
      00008000  _Riff__Title__Screen__09_wav_pcm   bank49
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 136.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 137.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5370,7 +5391,7 @@ _BANK50                             00008000    00003AB3 =       15027. bytes (R
      00008000  G$Riff_Sound_VHshriek_01_wav_pcm   bank50
      00008000  _Riff_Sound_VHshriek_01_wav_pcme   bank50
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 137.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 138.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5382,7 +5403,7 @@ _BANK51                             00008000    00003CF7 =       15607. bytes (R
      00008000  G$Riff__Splash__Screen__01_wav_p   bank51
      00008000  _Riff__Splash__Screen__01_wav_pc   bank51
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 138.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 139.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5394,7 +5415,7 @@ _BANK52                             00008000    00003DBB =       15803. bytes (R
      00008000  G$Riff__Splash__Screen__02_wav_p   bank52
      00008000  _Riff__Splash__Screen__02_wav_pc   bank52
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 139.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 140.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5406,7 +5427,7 @@ _BANK53                             00008000    00003958 =       14680. bytes (R
      00008000  G$Riff__Splash__Screen__03_wav_p   bank53
      00008000  _Riff__Splash__Screen__03_wav_pc   bank53
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 140.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 141.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5418,7 +5439,7 @@ _BANK54                             00008000    00003E31 =       15921. bytes (R
      00008000  G$Riff__Splash__Screen__04_wav_p   bank54
      00008000  _Riff__Splash__Screen__04_wav_pc   bank54
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 141.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 142.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5430,7 +5451,7 @@ _BANK55                             00008000    00003AF5 =       15093. bytes (R
      00008000  G$Riff__Splash__Screen__05_wav_p   bank55
      00008000  _Riff__Splash__Screen__05_wav_pc   bank55
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 142.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 143.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5442,7 +5463,7 @@ _BANK56                             00008000    00003ADD =       15069. bytes (R
      00008000  G$Riff__Splash__Screen__06_wav_p   bank56
      00008000  _Riff__Splash__Screen__06_wav_pc   bank56
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 143.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 144.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5454,7 +5475,7 @@ _BANK57                             00008000    00003BEA =       15338. bytes (R
      00008000  G$Riff__Splash__Screen__07_wav_p   bank57
      00008000  _Riff__Splash__Screen__07_wav_pc   bank57
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 144.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 145.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5466,7 +5487,7 @@ _BANK58                             00008000    00003E8F =       16015. bytes (R
      00008000  G$Riff__Splash__Screen__08_wav_p   bank58
      00008000  _Riff__Splash__Screen__08_wav_pc   bank58
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 145.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 146.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5478,7 +5499,7 @@ _BANK59                             00008000    00003984 =       14724. bytes (R
      00008000  G$Riff__Splash__Screen__09_wav_p   bank59
      00008000  _Riff__Splash__Screen__09_wav_pc   bank59
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 146.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 147.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5490,7 +5511,7 @@ _BANK60                             00008000    000038DD =       14557. bytes (R
      00008000  G$Riff_Sound_Over_01_wav_pcmenc$   bank60
      00008000  _Riff_Sound_Over_01_wav_pcmenc     bank60
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 147.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 148.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5502,7 +5523,7 @@ _BANK61                             00008000    0000246C =        9324. bytes (R
      00008000  G$Riff_Sound_Over_02_wav_pcmenc$   bank61
      00008000  _Riff_Sound_Over_02_wav_pcmenc     bank61
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 148.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 149.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5514,25 +5535,19 @@ _BANK62                             00008000    00000008 =           8. bytes (R
      00008000  G$bank62_txt$0_0$0                 bank62
      00008000  _bank62_txt                        bank62
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 149.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 150.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK63                             00008000    00000056 =          86. bytes (REL,CON)
+_BANK63                             00008000    0000000A =          10. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$steven_data$0_0$0                fixedbank
-     00008000  _steven_data                       fixedbank
-     00008010  G$riff_sample_bank$0_0$0           fixedbank
-     00008010  _riff_sample_bank                  fixedbank
-     00008049  G$music_object_bank$0_0$0          fixedbank
-     00008049  _music_object_bank                 fixedbank
-     00008052  G$sound_object_bank$0_0$0          fixedbank
-     00008052  _sound_object_bank                 fixedbank
+     00008000  G$steven_txt$0_0$0                 bank63
+     00008000  _steven_txt                        bank63
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 150.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 151.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5544,7 +5559,7 @@ _CABS0                              00000000    00000010 =          16. bytes (A
      00007FF0  G$__SMS__SEGA_signature$0_0$0      _sms_manager
      00007FF0  ___SMS__SEGA_signature             _sms_manager
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 151.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 152.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5556,7 +5571,7 @@ _CABS1                              00000000    0000000E =          14. bytes (A
      00007FD2  G$__SMS__SDSC_author$0_0$0         _sms_manager
      00007FD2  ___SMS__SDSC_author                _sms_manager
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 152.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 153.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5568,7 +5583,7 @@ _CABS2                              00000000    00000011 =          17. bytes (A
      00007FC1  G$__SMS__SDSC_name$0_0$0           _sms_manager
      00007FC1  ___SMS__SDSC_name                  _sms_manager
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 153.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 154.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5580,7 +5595,7 @@ _CABS3                              00000000    0000002D =          45. bytes (A
      00007F94  G$__SMS__SDSC_descr$0_0$0          _sms_manager
      00007F94  ___SMS__SDSC_descr                 _sms_manager
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 154.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 155.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -5592,7 +5607,7 @@ _CABS4                              00000000    00000010 =          16. bytes (A
      00007FE0  G$__SMS__SDSC_signature$0_0$0      _sms_manager
      00007FE0  ___SMS__SDSC_signature             _sms_manager
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 155.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 156.
 
 Files Linked                              [ module(s) ]
 
@@ -5612,7 +5627,7 @@ banks/bank11.rel                          [ bank11 ]
 banks/bank12.rel                          [ bank12 ]
 banks/bank13.rel                          [ bank13 ]
 banks/bank14.rel                          [ bank14 ]
-banks/bank15.rel                          [ bank15 ]
+banks/fixedbank.rel                       [ fixedbank ]
 banks/bank16.rel                          [ bank16 ]
 banks/bank17.rel                          [ bank17 ]
 banks/bank18.rel                          [ bank18 ]
@@ -5660,7 +5675,7 @@ banks/bank59.rel                          [ bank59 ]
 banks/bank60.rel                          [ bank60 ]
 banks/bank61.rel                          [ bank61 ]
 banks/bank62.rel                          [ bank62 ]
-banks/fixedbank.rel                       [ fixedbank ]
+banks/bank63.rel                          [ bank63 ]
 devkit/_sms_manager.rel                   [ _sms_manager ]
 devkit/_snd_manager.rel                   [ _snd_manager ]
 engine/asm_manager.rel                    [ asm_manager ]
@@ -5702,7 +5717,7 @@ C:/Program Files/SDCC/bin\..\lib\z80/z80.lib
 C:/Program Files/SDCC/bin\..\lib\z80/z80.lib
                                           [ modunsigned.rel ]
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 156.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 157.
 
 User Base Address Definitions
 

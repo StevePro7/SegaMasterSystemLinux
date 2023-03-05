@@ -1,4 +1,4 @@
-extern const unsigned char	bank63_txt[];
-#define				bank63_txt_size 8
-#define				bank63_txt_bank 63
+extern const unsigned char	steven_txt[];
+#define				steven_txt_size 10
+#define				steven_txt_bank 63
 

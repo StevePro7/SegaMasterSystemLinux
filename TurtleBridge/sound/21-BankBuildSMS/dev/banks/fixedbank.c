@@ -12,7 +12,6 @@
 #include "bank12.h"
 #include "bank13.h"
 #include "bank14.h"
-#include "bank15.h"
 #include "bank16.h"
 #include "bank17.h"
 #include "bank18.h"
@@ -60,8 +59,15 @@
 #include "bank60.h"
 #include "bank61.h"
 #include "bank62.h"
+#include "bank63.h"
 
-extern const unsigned char steven_data[] =
+const unsigned char *steven_text[] =
+{
+	"TEST01",
+	"TEST02",
+	"TEST03",
+};
+const unsigned char steven_data[] =
 {
 	16,32,48,64,80,96,112,128,144,160,176,192,208,224,240,255
 };
