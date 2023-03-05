@@ -254,7 +254,6 @@ const unsigned char riff_sample_bank[] =
 	Riff__Splash__Screen__07_wav_pcmenc_bank,
 	Riff__Splash__Screen__08_wav_pcmenc_bank,
 	Riff__Splash__Screen__09_wav_pcmenc_bank,
-
 };
 
 //const unsigned char *riff_sample_data[] =
