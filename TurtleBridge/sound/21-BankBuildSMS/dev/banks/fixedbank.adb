@@ -31,9 +31,9 @@ S:G$mus_cont_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$mus_death_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$mus_level_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$mus_over_psg$0_0$0({0}DA0d,SC:U),D,0,0
-S:G$bank8_txt$0_0$0({0}DA0d,SC:U),D,0,0
-S:G$bank9_txt$0_0$0({0}DA0d,SC:U),D,0,0
-S:G$bank10_txt$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$Riff_Sound_Over_01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$Riff_Sound_Over_02_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$Riff_Sound_VHshriek_01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff_Sound_Wayne_01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff_Sound_Eminem_01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff_Sound_Commando_01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
@@ -69,6 +69,11 @@ S:G$Riff_Sound_Silicon02_01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff_Sound_Silicon03_01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff_Death_Licence_02_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff_Intro_ACDC_02_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$bank41_txt$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$bank42_txt$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$bank43_txt$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$bank44_txt$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$bank45_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff__Title__Screen__01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff__Title__Screen__02_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff__Title__Screen__03_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
@@ -78,7 +83,6 @@ S:G$Riff__Title__Screen__06_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff__Title__Screen__07_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff__Title__Screen__08_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff__Title__Screen__09_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
-S:G$Riff_Sound_VHshriek_01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff__Splash__Screen__01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff__Splash__Screen__02_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff__Splash__Screen__03_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
@@ -88,10 +92,6 @@ S:G$Riff__Splash__Screen__06_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff__Splash__Screen__07_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff__Splash__Screen__08_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff__Splash__Screen__09_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
-S:G$Riff_Sound_Over_01_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
-S:G$Riff_Sound_Over_02_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
-S:G$bank62_txt$0_0$0({0}DA0d,SC:U),D,0,0
-S:G$steven_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$steven_data$0_0$0({16}DA16d,SC:U),D,0,0
 S:G$riff_sample_bank$0_0$0({57}DA57d,SC:U),D,0,0
 S:G$music_object_bank$0_0$0({9}DA9d,SC:U),D,0,0
