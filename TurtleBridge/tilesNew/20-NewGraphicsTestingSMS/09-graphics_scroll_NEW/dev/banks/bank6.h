@@ -1,71 +1,20 @@
-extern const unsigned char level1116_txt[];
-#define				level1116_txt_size 512
-#define				level1116_txt_bank 6
+extern const unsigned char	mohenjodaro_usas_psg[];
+#define				mohenjodaro_usas_psg_size 13113
+#define				mohenjodaro_usas_psg_bank 6
 
-extern const unsigned char level1100_txt[];
-#define				level1100_txt_size 384
-#define				level1100_txt_bank 6
+extern const unsigned char	sfx_accept_psg[];
+#define				sfx_accept_psg_size 32
+#define				sfx_accept_psg_bank 6
 
-extern const unsigned char	level1101_txt[];
-#define				level1101_txt_size 256	//384
-#define				level1101_txt_bank 6
+extern const unsigned char	sfx_gem_psg[];
+#define				sfx_gem_psg_size 28
+#define				sfx_gem_psg_bank 6
 
-extern const unsigned char	level1102_txt[];
-#define				level1102_txt_size 384	
-#define				level1102_txt_bank 6
+extern const unsigned char	sfx_power_psg[];
+#define				sfx_power_psg_size 35
+#define				sfx_power_psg_bank 6
 
-extern const unsigned char	level1103_txt[];
-#define				level1103_txt_size 64
-#define				level1103_txt_bank 6
+extern const unsigned char	sfx_reset_psg[];
+#define				sfx_reset_psg_size 35
+#define				sfx_reset_psg_bank 6
 
-extern const unsigned char level1104_txt[];
-#define				level1104_txt_size 64
-#define				level1104_txt_bank 6
-
-extern const unsigned char level1105_txt[];
-#define				level1105_txt_size 384
-#define				level1105_txt_bank 6
-
-extern const unsigned char level1106_txt[];
-#define				level1106_txt_size 384
-#define				level1106_txt_bank 6
-
-extern const unsigned char level1107_txt[];
-#define				level1107_txt_size 384
-#define				level1107_txt_bank 6
-
-extern const unsigned char level1108_txt[];
-#define				level1108_txt_size 128
-#define				level1108_txt_bank 6
-
-extern const unsigned char level1109_txt[];
-#define				level1109_txt_size 384
-#define				level1109_txt_bank 6
-
-extern const unsigned char level1110_txt[];
-#define				level1110_txt_size 384
-#define				level1110_txt_bank 6
-
-extern const unsigned char level1111_txt[];
-#define				level1111_txt_size 384
-#define				level1111_txt_bank 6
-
-extern const unsigned char level1112_txt[];
-#define				level1112_txt_size 384
-#define				level1112_txt_bank 6
-
-extern const unsigned char level1113_txt[];
-#define				level1113_txt_size 384
-#define				level1113_txt_bank 6
-
-extern const unsigned char level1114_txt[];
-#define				level1114_txt_size 384
-#define				level1114_txt_bank 6
-
-extern const unsigned char level1115_txt[];
-#define				level1115_txt_size 384
-#define				level1115_txt_bank 6
-
-extern const unsigned char level1117_txt[];
-#define				level1117_txt_size 2048
-#define				level1117_txt_bank 6
