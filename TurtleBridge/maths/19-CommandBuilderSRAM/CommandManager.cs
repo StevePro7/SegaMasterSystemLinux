@@ -10,6 +10,8 @@ namespace CommandBuilderSRAM
 
 		public CommandManager()
 		{
+			Lines1 = new List<string>();
+			Lines2 = new List<string>();
 			Frames = new List<string>();
 			Commands = new List<string>();
 		}
@@ -26,11 +28,40 @@ namespace CommandBuilderSRAM
 					byte2.ToString("X").PadLeft(2, '0'),
 					byte1.ToString("X").PadLeft(2, '0')
 					);
-
-				Console.WriteLine(frame);
+				Frames.Add(frame);
 			}
+
+			start = start + count;
+			for (int index = start; index < start + MaxCommands; index++)
+			{
+				var byte1 = bytes[index];
+				var command = String.Format("0x{0}", byte1.ToString("X").PadLeft(2, '0'));
+				Commands.Add(command);
+			}
+
+			count = 0;
+			string line1 = String.Empty;
+			string line2 = String.Empty;
+			for (int index = 0; index < MaxCommands; index++)
+			{
+				line1 += Frames[index] + ",";
+				line2 += Commands[index] + ",";
+				count++;
+				if (3 == count)
+				{
+					Lines1.Add(line1);
+					Lines2.Add(line2);
+					line1 = String.Empty;
+					line2 = String.Empty;
+					count = 0;
+				}
+			}
+
+			Console.WriteLine(line1);
 		}
 
+		public IList<string> Lines1 { get; private set; }
+		public IList<string> Lines2 { get; private set; }
 		public IList<string> Frames { get; private set; }
 		public IList<string> Commands { get; private set; }
 	}
