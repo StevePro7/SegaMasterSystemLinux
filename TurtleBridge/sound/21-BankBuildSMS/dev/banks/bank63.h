@@ -1,4 +1,4 @@
-extern const unsigned char	steven_txt[];
-#define				steven_txt_size 10
-#define				steven_txt_bank 63
+extern const unsigned char	Riff__Splash__Screen__09_wav_pcmenc[];
+#define				Riff__Splash__Screen__09_wav_pcmenc_size 14724
+#define				Riff__Splash__Screen__09_wav_pcmenc_bank 63
 

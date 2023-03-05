@@ -1,4 +1,4 @@
-extern const unsigned char	Riff_Sound_Over_01_wav_pcmenc[];
-#define				Riff_Sound_Over_01_wav_pcmenc_size 14557
-#define				Riff_Sound_Over_01_wav_pcmenc_bank 60
+extern const unsigned char	Riff__Splash__Screen__06_wav_pcmenc[];
+#define				Riff__Splash__Screen__06_wav_pcmenc_size 15069
+#define				Riff__Splash__Screen__06_wav_pcmenc_bank 60
 
