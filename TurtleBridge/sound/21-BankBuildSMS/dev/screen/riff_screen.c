@@ -9,8 +9,11 @@
 
 static unsigned char index;
 
-static unsigned char indexs[] = { 0,1,2,3,4,5,6,8,10,11,12,13,15,17,21,23,27,36,45,46,48,51,52,54,55,56, };
-static unsigned char counts[] = { 1,1,1,1,1,1,2,2, 1, 1, 1, 2, 2, 4, 2, 4, 9, 9, 1, 2, 3, 1, 2, 1, 1, 1 };
+static unsigned char indexs[] = { 0,1,2,3,4,5,6,8,10,11,12,13,15,17,21,23,27,28,30,33,34,36,37,38,39,48, };
+static unsigned char counts[] = { 1,1,1,1,1,1,2,2, 1, 1, 1, 2, 2, 4, 2, 4, 1, 2, 3, 1, 2, 1, 1, 1, 9, 9, };
+
+//static unsigned char indexs[] = { 0,1,2,3,4,5,6,8,10,11,12,13,15,17,21,23,27,36,45,46,48,51,52,54,55,56, };
+//static unsigned char counts[] = { 1,1,1,1,1,1,2,2, 1, 1, 1, 2, 2, 4, 2, 4, 9, 9, 1, 2, 3, 1, 2, 1, 1, 1 };
 
 void screen_riff_screen_load()
 {

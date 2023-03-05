@@ -6,6 +6,7 @@ S:Lriff_manager.engine_riff_manager_play$data$1_0$70({2}DG,SC:U),R,0,0,[e,d]
 S:Lriff_manager.engine_riff_manager_play$bank$1_0$70({1}SC:U),R,0,0,[a]
 S:G$riff_sample_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$music_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$sound_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$engine_sample_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_sample_manager_play$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_init$0_0$0({2}DF,SV:S),C,0,0

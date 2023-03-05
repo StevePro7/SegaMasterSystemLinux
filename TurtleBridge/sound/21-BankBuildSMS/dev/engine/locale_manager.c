@@ -18,8 +18,6 @@ const unsigned char *riff_object_texts[] =
 	"UWINTR",
 	"LTODID",
 	"HULKHO",
-	"TITLEX",
-	"SPLASH",
 	"SHRIEK",
 	"VHJUMP",
 	"VHDOCT",
@@ -28,6 +26,8 @@ const unsigned char *riff_object_texts[] =
 	"YOUZA ",
 	"WWEXCL",
 	"ENIMEN",
+	"TITLEX",
+	"SPLASH",
 };
 
 const unsigned char *song_object_texts[] =
