@@ -1,4 +1,4 @@
-extern const unsigned char	bank10_txt[];
-#define				bank10_txt_size 8
-#define				bank10_txt_bank 10
+extern const unsigned char	Riff_Sound_VHshriek_01_wav_pcmenc[];
+#define				Riff_Sound_VHshriek_01_wav_pcmenc_size 15027
+#define				Riff_Sound_VHshriek_01_wav_pcmenc_bank 10
 
