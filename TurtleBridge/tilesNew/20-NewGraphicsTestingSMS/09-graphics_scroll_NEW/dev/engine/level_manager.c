@@ -6,7 +6,7 @@
 #include "util_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
-#include "../banks/bank6.h"
+#include "../banks/bank12.h"
 #include "../banks/bank2.h"
 #include <stdbool.h>
 

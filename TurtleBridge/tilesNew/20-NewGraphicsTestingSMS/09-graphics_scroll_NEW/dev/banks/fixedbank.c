@@ -4,6 +4,19 @@
 #include "bank7.h"
 #include "bank12.h"
 
+// TODO delete this
+const unsigned char *steven_text[] =
+{
+	"STEVEPRO01",
+	"STEVEPRO02",
+	"STEVEPRO03",
+};
+const unsigned char steven_data[] =
+{
+	16,32,48,64,80,96,112,128,144,160,176,192,208,224,240,255
+};
+
+
 // FIXED bank.
 // Audio Manager.
 const unsigned char *music_object_data[] =

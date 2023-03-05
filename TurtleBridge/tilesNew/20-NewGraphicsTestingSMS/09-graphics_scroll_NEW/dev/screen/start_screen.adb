@@ -3,8 +3,8 @@ F:G$screen_start_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_start_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lstart_screen.screen_start_screen_update$screen_type$1_0$9({2}DG,SC:U),B,1,4
 S:Lstart_screen.screen_start_screen_update$input$1_0$10({1}SC:U),R,0,0,[a]
-T:Fstart_screen$tag_struct_storage_object[({0}S:S$Magic$0_0$0({4}SL:U),Z,0,0)({4}S:S$storage_frame_index$0_0$0({32}DA16d,SI:U),Z,0,0)({36}S:S$storage_this_command$0_0$0({16}DA16d,SC:U),Z,0,0)({52}S:S$terminal$0_0$0({1}SC:U),Z,0,0)]
-S:G$global_storage_object$0_0$0({53}STtag_struct_storage_object:S),E,0,0
+T:Fstart_screen$tag_struct_storage_object[({0}S:S$Magic$0_0$0({4}SL:U),Z,0,0)({4}S:S$storage_difficulty$0_0$0({1}SC:U),Z,0,0)({5}S:S$storage_world$0_0$0({1}SC:U),Z,0,0)({6}S:S$storage_round$0_0$0({1}SC:U),Z,0,0)({7}S:S$storage_level$0_0$0({1}SC:U),Z,0,0)({8}S:S$storage_point$0_0$0({1}SC:U),Z,0,0)({9}S:S$storage_padding$0_0$0({7}DA7d,SC:U),Z,0,0)({16}S:S$storage_frame_index$0_0$0({64}DA32d,SI:U),Z,0,0)({80}S:S$storage_this_command$0_0$0({32}DA32d,SC:U),Z,0,0)({112}S:S$terminal$0_0$0({1}SC:U),Z,0,0)]
+S:G$global_storage_object$0_0$0({113}STtag_struct_storage_object:S),E,0,0
 S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0_0$0({2}DF,SV:S),C,0,0

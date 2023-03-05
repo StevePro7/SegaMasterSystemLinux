@@ -1,5 +1,10 @@
 // Fixed  bank.
-#define FIXED_BANK	7
+#define FIXED_BANK	15
+
+// TODO delete this
+extern const unsigned char *steven_text[];
+extern const unsigned char steven_data[];
+
 
 // FIXED bank.
 // Audio Manager.
