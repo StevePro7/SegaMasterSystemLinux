@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace CommandBuilderSRAM
 {
@@ -12,6 +13,7 @@ namespace CommandBuilderSRAM
 		{
 			Lines1 = new List<string>();
 			Lines2 = new List<string>();
+			LinesX = new List<string>();
 			Frames = new List<string>();
 			Commands = new List<string>();
 		}
@@ -47,7 +49,7 @@ namespace CommandBuilderSRAM
 				line1 += Frames[index] + ",";
 				line2 += Commands[index] + ",";
 				count++;
-				if (3 == count)
+				if (16 == count)
 				{
 					Lines1.Add(line1);
 					Lines2.Add(line2);
@@ -57,13 +59,46 @@ namespace CommandBuilderSRAM
 				}
 			}
 
-			Console.WriteLine(line1);
+			if (0 != line1.Length)
+			{
+				Lines1.Add(line1);
+				Lines2.Add(line2);
+			}
 		}
 
-		public IList<string> Lines1 { get; private set; }
-		public IList<string> Lines2 { get; private set; }
-		public IList<string> Frames { get; private set; }
-		public IList<string> Commands { get; private set; }
+		public void Save()
+		{
+			LinesX.Add("#include \"command_object.h\"");
+			LinesX.Add("");
+
+			LinesX.Add("unsigned int command_frame_index[] =");
+			LinesX.Add("{");
+			for (int index = 0; index < Lines1.Count; index++)
+			{
+				var line1 = Lines1[index];
+				LinesX.Add("\t" + line1);
+			}
+			LinesX.Add("};");
+			LinesX.Add("");
+
+			LinesX.Add("unsigned int command_this_command[] =");
+			LinesX.Add("{");
+			for (int index = 0; index < Lines1.Count; index++)
+			{
+				var line2 = Lines2[index];
+				LinesX.Add("\t" + line2);
+			}
+			LinesX.Add("};");
+
+			var contents = LinesX.ToArray();
+			File.WriteAllLines("output/command_object.c", contents);
+		}
+
+		public List<string> Lines1 { get; private set; }
+		public List<string> Lines2 { get; private set; }
+		public List<string> LinesX { get; private set; }
+		public List<string> Frames { get; private set; }
+		public List<string> Commands { get; private set; }
 	}
 }
 

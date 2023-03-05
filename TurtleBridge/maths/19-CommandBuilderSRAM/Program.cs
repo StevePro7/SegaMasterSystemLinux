@@ -12,6 +12,8 @@ namespace CommandBuilderSRAM
 
 			var cm = new CommandManager();
 			cm.Process(fm.Bytes);
+			cm.Save();
+
 			Console.WriteLine("Press [ RETURN ]");
 			Console.Read();
 		}
