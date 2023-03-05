@@ -3,13 +3,7 @@ REM bank44
 
 cd ..
 cd banks
-cd bank44
-cd raw
 
-"C:/Program Files/SDCC/bin/pcmenc" -rto 1 -dt1 12 -dt2 12 -dt3 423 Riff__Title__Screen__04.wav
-mv Riff__Title__Screen__04.wav.pcmenc ../
-
-cd ../..
 "C:/Program Files/SDCC/bin/folder2c" bank44 bank44 44
 
 "C:/Program Files/SDCC/bin/sdcc" --debug -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK44 bank44.c
