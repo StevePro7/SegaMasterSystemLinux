@@ -61,6 +61,18 @@ namespace ScreenShotTest
 				}
 			}
 
+			if (inputManager.KeyHold(Keys.Back))
+			{
+				int end = Tiles.Length - col - 1;
+				for (int idx = 0; idx < end; idx++)
+				{
+					Tiles[col + idx] = Tiles[col + idx + 1];
+				}
+
+				// Blank out the last column.
+				Tiles[cols - 1] = (int)tile_type.tile_type_waves_block;
+			}
+
 			if (inputManager.KeyHold(Keys.A))
 			{
 				for (int idx = 0; idx < Tiles.Length; idx++)
