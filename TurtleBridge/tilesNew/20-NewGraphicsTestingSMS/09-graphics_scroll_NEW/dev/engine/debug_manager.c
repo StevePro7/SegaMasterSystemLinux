@@ -19,13 +19,13 @@ void engine_debug_manager_initgame()
 	go->game_difficulty = difficulty_type_harder;
 	//go->game_difficulty = difficulty_type_insane;
 
-	go->game_world = 2;
+	go->game_world = 0;
 	go->game_round = 0;
 	// 9 = turtles
 	// 3 = long512
-	//go->game_level = 2;
-	go->game_level = 17;// 64x screens
-	go->game_point = 0;
+	go->game_level = 2;
+	//go->game_level = 17;// 64x screens
+	//go->game_point = 0;
 	//go->game_level = 3;	// trees
 	//go->game_level = 7;	// trees
 	//go->game_level = 9;	// turtles
