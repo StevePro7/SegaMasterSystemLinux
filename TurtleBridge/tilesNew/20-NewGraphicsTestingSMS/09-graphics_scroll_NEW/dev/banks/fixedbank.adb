@@ -1,10 +1,16 @@
 M:fixedbank
 S:G$steven_text$0_0$0({6}DA3d,DG,SC:U),E,0,0
-S:G$music_object_data$0_0$0({4}DA2d,DG,SC:U),E,0,0
+S:G$music_object_data$0_0$0({18}DA9d,DG,SC:U),E,0,0
+S:G$sound_object_data$0_0$0({8}DA4d,DG,SC:U),E,0,0
 S:G$level_object_data$0_0$0({36}DA18d,DG,SC:U),E,0,0
 S:G$player_object_starts$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$animeopening_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$usas_jubaruins_psg$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$mohenjodaro_usas_psg$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$sfx_accept_psg$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$sfx_gem_psg$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$sfx_power_psg$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$sfx_reset_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$mastertracker_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$mus_beat_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$mus_cont_psg$0_0$0({0}DA0d,SC:U),D,0,0
@@ -30,7 +36,8 @@ S:G$level1114_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$level1115_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$level1117_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$steven_data$0_0$0({16}DA16d,SC:U),D,0,0
-S:G$music_object_bank$0_0$0({2}DA2d,SC:U),D,0,0
+S:G$music_object_bank$0_0$0({9}DA9d,SC:U),D,0,0
+S:G$sound_object_bank$0_0$0({4}DA4d,SC:U),D,0,0
 S:G$level_object_size$0_0$0({36}DA18d,SI:U),D,0,0
 S:G$level_object_bank$0_0$0({18}DA18d,SC:U),D,0,0
 S:Ffixedbank$__str_0$0_0$0({11}DA11d,SC:U),D,0,0
