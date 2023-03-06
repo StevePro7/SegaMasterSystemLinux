@@ -291,7 +291,7 @@ namespace ScreenShotTest
 		{
 			var file = new List<string>();
 			const int wide = 16;
-			int bank = 6;
+			int bank = 12;
 			int loop = 0;
 			int data = 0;
 			string type = String.Empty;

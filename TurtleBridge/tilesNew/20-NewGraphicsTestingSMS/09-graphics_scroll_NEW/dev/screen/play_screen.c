@@ -67,7 +67,9 @@ void screen_play_screen_update( unsigned char *screen_type )
 
 	unsigned char command = COMMAND_NONE_MASK;
 	player_state = po->player_state;
-	
+	deltaX = 0;
+	deltaY = 0;
+
 	input1 = engine_input_manager_hold( input_type_left );
 	input2 = engine_input_manager_move( input_type_right );
 	//input1 = 1;		// TODO delete
@@ -82,7 +84,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 		//}
 		//else
 		//{
-			command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 0 );
+			command = engine_command_manager_build( po->player_state, 1, 0, 0, 0, 0, 0 );
 		//}
 
 		//if( 24 == fo->frame_count )

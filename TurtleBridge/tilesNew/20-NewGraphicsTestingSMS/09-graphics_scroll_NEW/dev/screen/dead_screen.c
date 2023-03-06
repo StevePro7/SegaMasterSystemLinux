@@ -23,7 +23,7 @@ void screen_dead_screen_load()
 	// TODO - do I want to wrap this in an API?
 	po->posnX = po->initX;
 	//engine_font_manager_text( "DEAD SCREEN!!", 1, 5 );
-	deltaX = engine_player_manager_get_deltaX( po->player_state, co->prev_command );
+	deltaX = engine_player_manager_get_deltaX( po->player_state, co->prev_command );		// TODO - do I want to halve this value - looks like slow motion
 	//deltaX += 1;			// As player was previously in the air before dying.
 	engine_player_manager_draw();
 	swap = 0;
@@ -65,7 +65,7 @@ void screen_dead_screen_update( unsigned char *screen_type )
 			}
 
 			// Get / set vertical movement.
-			deltaY = engine_player_manager_get_deltaY();
+			deltaY = engine_player_manager_get_deltaY();			// TODO - do I want to halve this value - looks like slow motion
 			engine_player_manager_vert( deltaY );
 			
 			if( po->posnY >= PLAYER_MAX_DEAD )
