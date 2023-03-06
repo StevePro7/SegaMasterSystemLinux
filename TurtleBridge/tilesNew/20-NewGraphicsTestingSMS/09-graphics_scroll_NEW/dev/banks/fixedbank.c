@@ -50,16 +50,14 @@ const unsigned char music_object_bank[] =
 const unsigned char *sound_object_data[] =
 {
 	sfx_accept_psg,
-	sfx_gem_psg,
-	sfx_power_psg,
 	sfx_reset_psg,
+	sfx_power_psg,
 };
 const unsigned char sound_object_bank[] =
 {
 	sfx_accept_psg_bank,
-	sfx_gem_psg_bank,
-	sfx_power_psg_bank,
 	sfx_reset_psg_bank,
+	sfx_power_psg_bank,
 };
 
 // Locale Manager.
