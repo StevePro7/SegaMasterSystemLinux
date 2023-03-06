@@ -52,6 +52,10 @@ void screen_pass_screen_load()
 	//engine_graphics_manager_sea();
 	//engine_font_manager_text( "PASS[SCREEN", 10, 2 );
 	//devkit_SMS_displayOn();
+
+	// TODO remove from below
+	// play PCM first + block
+	//engine_music_manager_stop();
 	swap = 0;
 }
 
@@ -71,6 +75,19 @@ void screen_pass_screen_update( unsigned char *screen_type )
 			swap = 1;
 			po->player_frame = ( player_frame_theair_rght_01 == po->player_frame ) ? player_frame_ground_rght_02 : player_frame_ground_left_02;
 		}
+		// TODO delete - 7-Mar-2023 was POC'ing scroll / moving player back but won't work with current posnX logic check - TODO remove!!
+		//else
+		//{
+		//	input1 = engine_input_manager_hold( input_type_up );
+		//	input2 = engine_input_manager_move( input_type_down );
+		//	if( input1 || input2 )
+		//	{
+		//		// TODO delete -poc
+		//		po->posnX -= 1;
+		//		po->drawX = po->posnX - 16;
+		//		engine_scroll_manager_update( 1 );
+		//	}
+		//}
 	}
 	else
 	{
