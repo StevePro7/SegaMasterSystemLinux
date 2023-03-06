@@ -12,7 +12,7 @@ namespace ScreenShotTest
 		private List<int> data1, data2, data3;
 		private int cols;
 		private string filename;
-		private int maxLevel;
+	//	private int maxLevel;
 
 		public FileManager(ConfigManager configManager, int wide)
 		{
@@ -36,7 +36,7 @@ namespace ScreenShotTest
 			string round = configManager.NumRound.ToString().PadLeft(2, '0');
 			filename  = String.Format("level_{0}{1}_txt", world, round);
 			//prefix = configManager.LevelPrefix;
-			maxLevel = configManager.NumLevels;
+			//maxLevel = configManager.NumLevels;
 		}
 
 		public void LoadContent()
@@ -269,14 +269,14 @@ namespace ScreenShotTest
 			data.Add("{");
 			text1.Add("{");
 			text2.Add("{");
-			for (int idx = 0; idx <= maxLevel; idx++)
-			{
-				//string levl = (idx).ToString().PadLeft(2, '0');
-				//string file = String.Format("{0}{1}_txt", prefix, levl);
-				data.Add("\t" + filename + ",");
-				text1.Add("\t" + filename + "_size,");
-				text2.Add("\t" + filename + "_bank,");
-			}
+			//for (int idx = 0; idx <= maxLevel; idx++)
+			//{
+			//	//string levl = (idx).ToString().PadLeft(2, '0');
+			//	//string file = String.Format("{0}{1}_txt", prefix, levl);
+			//	data.Add("\t" + filename + ",");
+			//	text1.Add("\t" + filename + "_size,");
+			//	text2.Add("\t" + filename + "_bank,");
+			//}
 			data.Add("};");
 			text1.Add("};");
 			text2.Add("};");
@@ -287,7 +287,7 @@ namespace ScreenShotTest
 			total.AddRange(text2);
 
 			var contents = total.ToArray();
-			File.WriteAllLines(path + "/fixedbank.c", contents);
+			//File.WriteAllLines(path + "/fixedbank.c", contents);
 			
 		}
 
@@ -341,7 +341,7 @@ namespace ScreenShotTest
 			var contents = file.ToArray();
 			string banktext = "bank" + bank;
 			File.WriteAllLines(path + "/" + banktext + ".c", contents);
-			File.WriteAllLines(path + "/../../../../../" + banktext + ".c", contents);
+			File.WriteAllLines(path + "/../../../../../bankX.c", contents);
 
 			file.Clear();
 			file.Add("extern const unsigned char " + filename + "[];");
