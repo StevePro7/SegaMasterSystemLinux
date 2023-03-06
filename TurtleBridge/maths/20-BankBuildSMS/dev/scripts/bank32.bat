@@ -3,7 +3,13 @@ REM bank32
 
 cd ..
 cd banks
+::cd bank32
+::cd raw
 
+::"C:/Program Files/SDCC/bin/pcmenc" -rto 1 -dt1 12 -dt2 12 -dt3 423 INSERT_WAV_FILE_HERE.wav
+::mv INSERT_WAV_FILE_HERE.wav.pcmenc ../
+
+::cd ../..
 "C:/Program Files/SDCC/bin/folder2c" bank32 bank32 32
 
 "C:/Program Files/SDCC/bin/sdcc" --debug -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK32 bank32.c

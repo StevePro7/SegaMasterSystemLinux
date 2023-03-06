@@ -6,8 +6,8 @@ cd banks
 ::cd bank21
 ::cd raw
 
-::"C:/Program Files/SDCC/bin/pcmenc" -rto 1 -dt1 12 -dt2 12 -dt3 423 Riff__Splash__Screen__01.wav
-::mv Riff__Splash__Screen__01.wav.pcmenc ../
+::"C:/Program Files/SDCC/bin/pcmenc" -rto 1 -dt1 12 -dt2 12 -dt3 423 INSERT_WAV_FILE_HERE.wav
+::mv INSERT_WAV_FILE_HERE.wav.pcmenc ../
 
 ::cd ../..
 "C:/Program Files/SDCC/bin/folder2c" bank21 bank21 21

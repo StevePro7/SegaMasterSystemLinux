@@ -40,7 +40,7 @@ namespace FunctionMgr
 		public void ProcessBank02(int bank)
 		{
 			// TODO - inject the WAV file name
-			//var filename = "Riff__05.wav";
+			var filename = "INSERT_WAV_FILE_HERE.wav";
 
 			var lower = "bank" + bank;
 			var upper = "BANK" + bank;
@@ -52,21 +52,21 @@ namespace FunctionMgr
 			lines.Add("");
 			lines.Add("cd ..");
 			lines.Add("cd banks");
-			//lines.Add("cd " + lower);
-			//lines.Add("cd raw");
+			lines.Add("::cd " + lower);
+			lines.Add("::cd raw");
 			lines.Add("");
 
-			//var pcmenc = String.Format("{0}{1}pcmenc{0} -rto 1 -dt1 12 -dt2 12 -dt3 423 {2}",
-			//	quote,
-			//	software,
-			//	filename);
-			//lines.Add(pcmenc);
+			var pcmenc = String.Format("::{0}{1}pcmenc{0} -rto 1 -dt1 12 -dt2 12 -dt3 423 {2}",
+				quote,
+				software,
+				filename);
+			lines.Add(pcmenc);
 
-			//var move = String.Format("mv {0}.pcmenc ../", filename);
-			//lines.Add(move);
+			var move = String.Format("::mv {0}.pcmenc ../", filename);
+			lines.Add(move);
 
-			//lines.Add("");
-			//lines.Add("cd ../..");
+			lines.Add("");
+			lines.Add("::cd ../..");
 
 			var folder2c = String.Format("{0}{1}folder2c{0} {2} {2} {3}",
 				quote,

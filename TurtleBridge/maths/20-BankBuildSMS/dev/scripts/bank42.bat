@@ -3,13 +3,13 @@ REM bank42
 
 cd ..
 cd banks
-cd bank42
-cd raw
+::cd bank42
+::cd raw
 
-"C:/Program Files/SDCC/bin/pcmenc" -rto 1 -dt1 12 -dt2 12 -dt3 423 Riff__Title__Screen__02.wav
-mv Riff__Title__Screen__02.wav.pcmenc ../
+::"C:/Program Files/SDCC/bin/pcmenc" -rto 1 -dt1 12 -dt2 12 -dt3 423 INSERT_WAV_FILE_HERE.wav
+::mv INSERT_WAV_FILE_HERE.wav.pcmenc ../
 
-cd ../..
+::cd ../..
 "C:/Program Files/SDCC/bin/folder2c" bank42 bank42 42
 
 "C:/Program Files/SDCC/bin/sdcc" --debug -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK42 bank42.c
