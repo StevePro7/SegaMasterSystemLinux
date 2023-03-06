@@ -76,12 +76,12 @@ S:Lplayer_manager.engine_player_manager_pass$po$1_0$202({2}DG,STtag_struct_playe
 S:Lplayer_manager.engine_player_manager_pass$deltaY$1_0$202({2}SI:S),R,0,0,[e,d]
 F:G$engine_player_manager_count$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_player_manager_right$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lplayer_manager.engine_player_manager_right$deltaX$1_0$207({1}SC:U),B,1,4
+S:Lplayer_manager.engine_player_manager_right$deltaX$1_0$208({1}SC:U),B,1,4
 F:G$engine_player_manager_down$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lplayer_manager.engine_player_manager_down$deltaY$1_0$209({1}SC:S),B,1,4
+S:Lplayer_manager.engine_player_manager_down$deltaY$1_0$210({1}SC:S),B,1,4
 F:G$engine_player_manager_draw$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lplayer_manager.engine_player_manager_draw$po$1_0$211({2}DG,STtag_struct_player_object:S),R,0,0,[]
-S:Lplayer_manager.engine_player_manager_draw$deltaDraw$1_0$211({1}SC:U),R,0,0,[e]
+S:Lplayer_manager.engine_player_manager_draw$po$1_0$212({2}DG,STtag_struct_player_object:S),R,0,0,[]
+S:Lplayer_manager.engine_player_manager_draw$deltaDraw$1_0$212({1}SC:U),R,0,0,[e]
 S:Lplayer_manager.engine_player_manager_draw$sloc0$0_1$0({1}SC:U),B,1,-1
 T:Fplayer_manager$tag_struct_player_object[({0}S:S$initX$0_0$0({1}SC:U),Z,0,0)({1}S:S$posnX$0_0$0({2}SI:U),Z,0,0)({3}S:S$tileX$0_0$0({1}SC:U),Z,0,0)({4}S:S$lookX$0_0$0({1}SC:U),Z,0,0)({5}S:S$posnY$0_0$0({1}SC:U),Z,0,0)({6}S:S$tileY$0_0$0({1}SC:U),Z,0,0)({7}S:S$leapY$0_0$0({2}SI:U),Z,0,0)({9}S:S$drawX$0_0$0({1}SC:U),Z,0,0)({10}S:S$drawY$0_0$0({1}SC:U),Z,0,0)({11}S:S$player_state$0_0$0({1}SC:U),Z,0,0)({12}S:S$jumper_index$0_0$0({1}SC:U),Z,0,0)({13}S:S$deltaY_index$0_0$0({1}SC:U),Z,0,0)({14}S:S$player_frame$0_0$0({1}SC:U),Z,0,0)({15}S:S$motion_count$0_0$0({1}SC:U),Z,0,0)]
 S:G$jump_array_ptr$0_0$0({0}DA0d,DG,SI:S),E,0,0

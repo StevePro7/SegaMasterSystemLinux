@@ -459,13 +459,17 @@ void engine_player_manager_pass( unsigned char player_passX, unsigned char playe
 	struct_player_object *po = &global_player_object;
 	signed int deltaY;
 
-	// TODO - get the deltaX from the previous command
 	po->posnX += player_passX;
-	po->drawX = po->posnX - 16;
+	if( po->posnX >= LEVELS_SIDE )
+	{
+		po->posnX = LEVELS_SIDE;
+	}
 
+	po->drawX = po->posnX - 16;
 	if( po->posnY != player_endY )
 	{
 		deltaY = engine_player_manager_get_deltaY();
+		deltaY >>= 1;
 		engine_player_manager_vert( deltaY );
 	}
 

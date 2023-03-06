@@ -19,6 +19,7 @@ void screen_pass_screen_load()
 	struct_command_object *co = &global_command_object;
 	struct_player_object *po = &global_player_object;
 	player_passX = engine_player_manager_get_deltaX( po->player_state, co->prev_command );
+	player_passX >>= 1;
 	player_endY = engine_player_manager_finish();
 
 	// TODO - wrap this in an API - must reset startX as will have increased as scrolling thru level - although drawX never changes then
@@ -62,6 +63,8 @@ void screen_pass_screen_update( unsigned char *screen_type )
 	engine_scroll_manager_update( 0 );
 	if( po->posnX >= LEVELS_SIDE )
 	{
+		// Continue invoke function in case player still in air.
+		engine_player_manager_pass( player_passX, player_endY );
 		if( !swap )
 		{
 			engine_music_manager_stop();
