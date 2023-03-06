@@ -4,7 +4,10 @@ F:G$screen_splash_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lsplash_screen.screen_splash_screen_update$screen_type$1_0$96({2}DG,SC:U),B,1,4
 S:G$steven_text$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$music_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$sound_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$riff_sample_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$level_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$song_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$locale_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$locale_object_blank$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$locale_object_difficulty$0_0$0({0}DA0d,DG,SC:U),E,0,0

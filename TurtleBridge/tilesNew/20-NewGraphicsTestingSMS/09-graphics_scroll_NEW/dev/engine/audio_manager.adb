@@ -17,6 +17,7 @@ T:Faudio_manager$tag_struct_audio_object[({0}S:S$music_data$0_0$0({2}DG,SC:U),Z,
 S:G$steven_text$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$music_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$sound_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$riff_sample_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$level_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$global_audio_object$0_0$0({6}STtag_struct_audio_object:S),E,0,0
 S:G$devkit_SMS_init$0_0$0({2}DF,SV:S),C,0,0

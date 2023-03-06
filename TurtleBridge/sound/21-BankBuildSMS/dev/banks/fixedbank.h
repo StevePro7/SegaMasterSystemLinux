@@ -12,6 +12,8 @@ extern const unsigned char music_object_bank[];
 extern const unsigned char *sound_object_data[];
 extern const unsigned char sound_object_bank[];
 
+extern const unsigned char *riff_sample_data[];
+extern const unsigned char riff_sample_bank[];
 
 //// FIXED bank.
 //// Audio Manager.

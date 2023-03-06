@@ -60,7 +60,10 @@ S:Ltile_manager.engine_tile_manager_stevepro2$sloc1$0_1$0({1}SC:U),B,1,-2
 S:Ltile_manager.engine_tile_manager_stevepro2$sloc2$0_1$0({1}SC:U),B,1,-1
 S:G$steven_text$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$music_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$sound_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$riff_sample_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$level_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$song_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$locale_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$locale_object_blank$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$locale_object_difficulty$0_0$0({0}DA0d,DG,SC:U),E,0,0

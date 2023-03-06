@@ -1,9 +1,22 @@
 #include "fixedbank.h"
+#include "bank3.h"
 #include "bank4.h"
 #include "bank5.h"
 #include "bank6.h"
 #include "bank7.h"
 #include "bank12.h"
+
+// Locale Manager.
+//const unsigned char m	y_splash_text[] = { 0x65, 0x65, 0x65 ,0x65 };
+//const unsigned char *locale_object_texts[] =
+//{
+//	"V1.0",
+//	"(C)1987",
+//};
+
+// TODO re-instate in fixed bank
+// Player Manager.
+//const unsigned char player_object_starts[] = { 32, 48, 64, 80, 96 };
 
 // TODO delete this
 const unsigned char *steven_text[] =
@@ -60,17 +73,6 @@ const unsigned char sound_object_bank[] =
 	sfx_power_psg_bank,
 };
 
-// Locale Manager.
-//const unsigned char m	y_splash_text[] = { 0x65, 0x65, 0x65 ,0x65 };
-//const unsigned char *locale_object_texts[] =
-//{
-//	"V1.0",
-//	"(C)1987",
-//};
-
-// TODO re-instate in fixed bank
-// Player Manager.
-//const unsigned char player_object_starts[] = { 32, 48, 64, 80, 96 };
 
 // Level Manager.
 const unsigned char *level_object_data[] =
@@ -135,4 +137,189 @@ const unsigned char level_object_bank[] =
 	level1114_txt_bank,
 	level1115_txt_bank,
 	level1117_txt_bank,
+};
+
+
+const unsigned char *riff_sample_data[] =
+{
+	// Simpsons
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+
+	// Austin Powers
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+
+	// Silicon Valley
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+
+	// Game Over
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+
+	// AC/DC ready
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+
+	// Ultimate Warrior
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+
+	// License to Drive	bank 28-29
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+
+	// Hulk Hogan	bank 21-24
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+
+	// VH
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+
+	// Simpsons - move above
+	Riff_Sound_Austin02_02_wav_pcmenc,
+
+	// Commando
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+
+	// GnR
+	Riff_Sound_Austin02_02_wav_pcmenc,
+
+	// WW
+	Riff_Sound_Austin02_02_wav_pcmenc,
+
+	// Eminem
+	Riff_Sound_Austin02_02_wav_pcmenc,
+
+	// Title riff	bank 41-49	[x9]
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+
+	// Splash riff	bank 51-59	[x9]
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+};
+
+const unsigned char riff_sample_bank[] =
+{
+	// Simpsons
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+
+	// Austin Powers
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+
+	// Silicon Valley
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+
+	// Game Over
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+
+	// AC/DC ready
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+
+	// Ultimate Warrior
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+
+	// License to Drive	bank 28-29
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+
+	// Hulk Hogan	bank 21-24
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+
+	// VH
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+
+	// Simpsons - move above
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+
+	// Commando
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+
+	// GnR
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+
+	// WW
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+
+	// Eminem
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+
+	// Title
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+
+	// Splash
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
 };

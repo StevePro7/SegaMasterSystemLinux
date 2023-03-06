@@ -101,17 +101,11 @@ const unsigned char *riff_sample_data[] =
 	Riff_Intro_ACDC_01_wav_pcmenc,
 	Riff_Intro_ACDC_02_wav_pcmenc,
 
-	// Ultimage Warrior
+	// Ultimate Warrior
 	Riff_Intro_Ultimate_01_wav_pcmenc,
 	Riff_Intro_Ultimate_02_wav_pcmenc,
 	Riff_Intro_Ultimate_03_wav_pcmenc,
 	Riff_Intro_Ultimate_04_wav_pcmenc,
-
-	// Wayne World	 bank 20
-	//Riff_Sound_Wayne_01_wav_pcmenc,
-
-	// Eminem	 bank 30
-	//Riff_Sound_Eminem_01_wav_pcmenc,
 
 	// License to Drive	bank 28-29
 	Riff_Death_Licence_01_wav_pcmenc,
@@ -198,17 +192,11 @@ const unsigned char riff_sample_bank[] =
 	Riff_Intro_ACDC_01_wav_pcmenc_bank,
 	Riff_Intro_ACDC_02_wav_pcmenc_bank,
 
-	// Ultimage Warrior
+	// Ultimate Warrior
 	Riff_Intro_Ultimate_01_wav_pcmenc_bank,
 	Riff_Intro_Ultimate_02_wav_pcmenc_bank,
 	Riff_Intro_Ultimate_03_wav_pcmenc_bank,
 	Riff_Intro_Ultimate_04_wav_pcmenc_bank,
-
-	// Wayne World	 bank 20
-	//Riff_Sound_Wayne_01_wav_pcmenc_bank,
-
-	// Eminem	 bank 30
-	//Riff_Sound_Eminem_01_wav_pcmenc_bank,
 
 	// License to Drive	bank 28-29
 	Riff_Death_Licence_01_wav_pcmenc_bank,

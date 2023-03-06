@@ -10,6 +10,8 @@ S:Ltitle_screen.draw_sprite$x$1_0$106({1}SC:U),B,1,6
 S:Ltitle_screen.draw_sprite$y$1_0$106({1}SC:U),B,1,7
 S:G$steven_text$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$music_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$sound_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$riff_sample_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$level_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$screen_splash_screen_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$screen_splash_screen_update$0_0$0({2}DF,SV:S),C,0,0

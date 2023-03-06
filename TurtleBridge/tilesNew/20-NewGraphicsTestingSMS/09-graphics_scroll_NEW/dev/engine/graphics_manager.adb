@@ -49,6 +49,7 @@ S:Lgraphics_manager.engine_graphics_manager_sea$val$1_0$105({2}SI:U),R,0,0,[l,h]
 S:Lgraphics_manager.engine_graphics_manager_sea$sea_lines$1_0$105({12}DA12d,SC:U),B,1,-14
 S:Lgraphics_manager.engine_graphics_manager_sea$sloc0$0_1$0({1}SC:U),B,1,-2
 S:Lgraphics_manager.engine_graphics_manager_sea$sloc1$0_1$0({1}SC:U),B,1,-1
+S:G$song_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$locale_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$locale_object_blank$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$locale_object_difficulty$0_0$0({0}DA0d,DG,SC:U),E,0,0
