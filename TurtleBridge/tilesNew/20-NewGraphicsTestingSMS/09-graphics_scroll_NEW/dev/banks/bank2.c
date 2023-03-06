@@ -1,16 +1,16 @@
 // TODO delete
 const unsigned char *song_object_texts[] =
 {
+	"ANIMEOPENING   ",
+	"USASJUBARUINS  ",
+	"MOHENJODAROUSAS",
+	"MASTERTRACKER  ",
+
 	"DEATH SCREEN   ",		// Shinobi SMS death music
 	"BEAT SCREEN    ",
 	"CONT SCREEN    ",
 	"PASS SCREEN    ",		// Shinobi Mission one finished
 	"OVER SCREEN    ",		// Beat 'em game??
-
-	"ANIMEOPENING   ",
-	"USASJUBARUINS  ",
-	"MOHENJODAROUSAS",
-	"MASTERTRACKER  ",
 };
 
 
