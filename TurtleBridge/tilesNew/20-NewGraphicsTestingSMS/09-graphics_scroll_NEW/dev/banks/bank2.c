@@ -1,3 +1,19 @@
+// TODO delete
+const unsigned char *song_object_texts[] =
+{
+	"DEATH SCREEN   ",		// Shinobi SMS death music
+	"BEAT SCREEN    ",
+	"CONT SCREEN    ",
+	"PASS SCREEN    ",		// Shinobi Mission one finished
+	"OVER SCREEN    ",		// Beat 'em game??
+
+	"ANIMEOPENING   ",
+	"USASJUBARUINS  ",
+	"MOHENJODAROUSAS",
+	"MASTERTRACKER  ",
+};
+
+
 const unsigned char *locale_object_texts[] =
 {
 	"(C)1987",				// Splash

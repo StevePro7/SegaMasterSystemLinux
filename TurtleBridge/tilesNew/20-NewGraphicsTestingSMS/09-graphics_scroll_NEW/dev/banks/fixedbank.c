@@ -1,6 +1,7 @@
 #include "fixedbank.h"
 #include "bank4.h"
 #include "bank5.h"
+#include "bank6.h"
 #include "bank7.h"
 #include "bank12.h"
 
@@ -21,13 +22,44 @@ const unsigned char steven_data[] =
 // Audio Manager.
 const unsigned char *music_object_data[] =
 {
+	mus_death_psg,
+	mus_beat_psg,
+	mus_cont_psg,
+	mus_level_psg,
+	mus_over_psg,
+
 	animeopening_psg,
+	usas_jubaruins_psg,
+	mohenjodaro_usas_psg,
 	mastertracker_psg,
 };
 const unsigned char music_object_bank[] =
 {
+	mus_death_psg_bank,
+	mus_beat_psg_bank,
+	mus_cont_psg_bank,
+	mus_level_psg_bank,
+	mus_over_psg_bank,
+
 	animeopening_psg_bank,
+	usas_jubaruins_psg_bank,
+	mohenjodaro_usas_psg_bank,
 	mastertracker_psg_bank,
+};
+
+const unsigned char *sound_object_data[] =
+{
+	sfx_accept_psg,
+	sfx_gem_psg,
+	sfx_power_psg,
+	sfx_reset_psg,
+};
+const unsigned char sound_object_bank[] =
+{
+	sfx_accept_psg_bank,
+	sfx_gem_psg_bank,
+	sfx_power_psg_bank,
+	sfx_reset_psg_bank,
 };
 
 // Locale Manager.

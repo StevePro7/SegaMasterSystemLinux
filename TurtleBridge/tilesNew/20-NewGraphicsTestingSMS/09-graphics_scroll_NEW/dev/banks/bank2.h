@@ -1,3 +1,6 @@
+// TODO delete
+extern const unsigned char *song_object_texts[];
+
 extern const unsigned char *locale_object_texts[];
 extern const unsigned char *locale_object_blank[];
 extern const unsigned char *locale_object_difficulty[];
