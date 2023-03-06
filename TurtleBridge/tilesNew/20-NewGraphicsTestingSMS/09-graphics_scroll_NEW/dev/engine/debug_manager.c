@@ -26,7 +26,7 @@ void engine_debug_manager_initgame()
 	//go->game_level = 2;
 	//go->game_level = 17;// 64x screens
 	go->game_level = 18;
-	go->game_point = 5;
+	go->game_point = 1;
 
 	//go->game_level = 3;	// trees
 	//go->game_level = 7;	// trees
