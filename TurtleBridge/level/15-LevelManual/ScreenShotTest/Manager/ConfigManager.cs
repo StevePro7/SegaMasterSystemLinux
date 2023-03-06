@@ -28,6 +28,9 @@ namespace ScreenShotTest
 
 		public int NumScreens { get; private set; }
 		public int NumLevels { get; private set; }
+		public int NumWorld { get; private set; }
+		public int NumRound { get; private set; }
+		public int NumBank { get; private set; }
 		public string LevelPrefix { get; private set; }
 	}
 }

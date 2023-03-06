@@ -11,7 +11,7 @@ namespace ScreenShotTest
 		private List<string> data, text1, text2, total;
 		private List<int> data1, data2, data3;
 		private int cols;
-		private string prefix;
+		private string filename;
 		private int maxLevel;
 
 		public FileManager(ConfigManager configManager, int wide)
@@ -32,7 +32,10 @@ namespace ScreenShotTest
 			data2 = new List<int>();
 			data3 = new List<int>();
 
-			prefix = configManager.LevelPrefix;
+			string world = configManager.NumWorld.ToString().PadLeft(2, '0');
+			string round = configManager.NumRound.ToString().PadLeft(2, '0');
+			filename  = String.Format("level_{0}{1}_txt", world, round);
+			//prefix = configManager.LevelPrefix;
 			maxLevel = configManager.NumLevels;
 		}
 
@@ -41,11 +44,12 @@ namespace ScreenShotTest
 			int upper_nibble;
 			int lower_nibble;
 			var delim = new char[] { ',' };
-			var lines = File.ReadAllLines("bank6.c");
+			string[] lines = null;
 			int idx = 0;
 
-			if (File.Exists("bank6.c"))
+			if (File.Exists("bankX.c"))
 			{
+				lines = File.ReadAllLines("bankX.c");
 				foreach (var temp in lines)
 				{
 					var line = temp.Trim();
@@ -61,7 +65,7 @@ namespace ScreenShotTest
 					var objs = line.Split(delim);
 					if (objs.Length != 16)
 					{
-						throw new Exception("bank6.c NOT 16x elements");
+						throw new Exception("bankX.c NOT 16x elements");
 					}
 
 					for (int cnt = 0; cnt < 16; cnt += 4)
@@ -267,11 +271,11 @@ namespace ScreenShotTest
 			text2.Add("{");
 			for (int idx = 0; idx <= maxLevel; idx++)
 			{
-				string levl = (idx).ToString().PadLeft(2, '0');
-				string file = String.Format("{0}{1}_txt", prefix, levl);
-				data.Add("\t" + file + ",");
-				text1.Add("\t" + file + "_size,");
-				text2.Add("\t" + file + "_bank,");
+				//string levl = (idx).ToString().PadLeft(2, '0');
+				//string file = String.Format("{0}{1}_txt", prefix, levl);
+				data.Add("\t" + filename + ",");
+				text1.Add("\t" + filename + "_size,");
+				text2.Add("\t" + filename + "_bank,");
 			}
 			data.Add("};");
 			text1.Add("};");
@@ -291,16 +295,16 @@ namespace ScreenShotTest
 		{
 			var file = new List<string>();
 			const int wide = 16;
-			int bank = 12;
+			int bank = configManager.NumBank;
 			int loop = 0;
 			int data = 0;
 			string type = String.Empty;
 			string line = String.Empty;
 
-			string levl = maxLevel.ToString().PadLeft(2, '0');
-			string name = String.Format("{0}{1}_txt", prefix, levl);
+			//string levl = maxLevel.ToString().PadLeft(2, '0');
+			//string name = String.Format("level_{1}{2}_txt", prefix, world, round);
 
-			file.Add("const unsigned char " + name + "[] =");
+			file.Add("const unsigned char " + filename + "[] =");
 			file.Add("{");
 			for (int idx = 0; idx < data3.Count; idx++)
 			{
@@ -335,14 +339,15 @@ namespace ScreenShotTest
 
 			file.Add("};");
 			var contents = file.ToArray();
-			File.WriteAllLines(path + "/bank6.c", contents);
-			File.WriteAllLines(path + "/../../../../../bank6.c", contents);
+			string banktext = "bank" + bank;
+			File.WriteAllLines(path + "/" + banktext + ".c", contents);
+			File.WriteAllLines(path + "/../../../../../" + banktext + ".c", contents);
 
 			file.Clear();
-			file.Add("extern const unsigned char " + name + "[];");
-			file.Add("#define				" + name + "_size " + cols * 4);
-			file.Add("#define				" + name + "_bank " + bank);
-			File.WriteAllLines(path + "/bank6.h", file.ToArray());
+			file.Add("extern const unsigned char " + filename + "[];");
+			file.Add("#define				" + filename + "_size " + cols * 4);
+			file.Add("#define				" + filename + "_bank " + bank);
+			File.WriteAllLines(path + "/" + banktext + ".h", file.ToArray());
 		}
 
 		void engine_util_manager_convertByteToNibbles(int data, ref int upper_nibble, ref int lower_nibble)
