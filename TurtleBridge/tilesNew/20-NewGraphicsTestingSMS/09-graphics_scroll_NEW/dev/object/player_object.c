@@ -18,7 +18,7 @@ const unsigned char player_object_deltas[] = { 0, 0, 0, 0, 0, 4, 0, 4, 0, 4, 0, 
 // Initial Physics POCs...	opt#1
 const unsigned char player_moving_deltaX[] = { 2, 3, 4, 5, 5 };
 const unsigned char player_ground_deltaX[] = { 1, 1, 1, 1, 1 };
-const unsigned char player_flying_deltaX[] = { 1, 1, 2, 1, 2 };
+const unsigned char player_flying_deltaX[] = { 1, 1, 1, 1, 2 };
 
 
 //signed int
