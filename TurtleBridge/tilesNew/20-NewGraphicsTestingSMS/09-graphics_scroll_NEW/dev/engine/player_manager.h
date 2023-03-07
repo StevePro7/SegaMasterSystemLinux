@@ -30,7 +30,9 @@ void engine_player_manager_down( signed char deltaY );
 void engine_player_manager_draw();
 void engine_player_manager_head();
 unsigned char engine_player_manager_finish();
+void engine_player_manager_dying();
 void engine_player_manager_pass( unsigned char player_passX, unsigned char player_endY );
+void engine_player_manager_dead( unsigned char player_deadX );
 void engine_player_manager_count();
 
 #endif//_PLAYER_MANAGER_H_

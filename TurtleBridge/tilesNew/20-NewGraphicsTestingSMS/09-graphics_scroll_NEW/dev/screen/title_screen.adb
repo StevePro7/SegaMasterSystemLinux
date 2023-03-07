@@ -1,13 +1,13 @@
 M:title_screen
 F:G$screen_title_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_title_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Ltitle_screen.screen_title_screen_update$screen_type$1_0$103({2}DG,SC:U),B,1,4
-S:Ltitle_screen.screen_title_screen_update$input$1_0$104({1}SC:U),R,0,0,[a]
+S:Ltitle_screen.screen_title_screen_update$screen_type$1_0$104({2}DG,SC:U),B,1,4
+S:Ltitle_screen.screen_title_screen_update$input$1_0$105({1}SC:U),R,0,0,[a]
 F:Ftitle_screen$draw_sprite$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Ltitle_screen.draw_sprite$idx$1_0$106({1}SC:U),B,1,4
-S:Ltitle_screen.draw_sprite$mode$1_0$106({1}SC:U),B,1,5
-S:Ltitle_screen.draw_sprite$x$1_0$106({1}SC:U),B,1,6
-S:Ltitle_screen.draw_sprite$y$1_0$106({1}SC:U),B,1,7
+S:Ltitle_screen.draw_sprite$idx$1_0$107({1}SC:U),B,1,4
+S:Ltitle_screen.draw_sprite$mode$1_0$107({1}SC:U),B,1,5
+S:Ltitle_screen.draw_sprite$x$1_0$107({1}SC:U),B,1,6
+S:Ltitle_screen.draw_sprite$y$1_0$107({1}SC:U),B,1,7
 S:G$steven_text$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$music_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$sound_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
@@ -35,6 +35,7 @@ S:G$engine_input_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_hold$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_sprite_manager_draw$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_sprite_manager_head$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_sprite_manager_mode$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_sprite_manager_zoom$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_util_manager_locale_texts$0_0$0({2}DF,SV:S),C,0,0

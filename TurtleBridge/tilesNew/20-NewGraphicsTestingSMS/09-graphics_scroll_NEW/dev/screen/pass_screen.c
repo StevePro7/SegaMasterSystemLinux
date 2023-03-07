@@ -44,6 +44,8 @@ void screen_pass_screen_load()
 	//}
 
 	engine_player_manager_draw();
+	engine_player_manager_head();
+
 	//engine_scroll_manager_load();
 	//devkit_SMS_displayOff();
 	//engine_asm_manager_clear_VRAM();
@@ -100,5 +102,6 @@ void screen_pass_screen_update( unsigned char *screen_type )
 	}
 
 	engine_player_manager_draw();
+	//engine_player_manager_head();		// TODO test
 	*screen_type = screen_type_pass;
 }

@@ -387,6 +387,12 @@ void engine_player_manager_animate( unsigned char frame )
 	}
 }
 
+void engine_player_manager_dying()
+{
+	struct_player_object *po = &global_player_object;
+	po->posnX = po->initX;
+}
+
 unsigned char engine_player_manager_finish()
 {
 	struct_player_object *po = &global_player_object;
@@ -483,6 +489,11 @@ void engine_player_manager_pass( unsigned char player_passX, unsigned char playe
 		po->posnY = player_endY;
 		updatePlayerY();
 	}
+}
+
+void engine_player_manager_dead( unsigned char player_deadX )
+{
+
 }
 
 // TODO delete this as replaced by engine_player_manager_animate()
