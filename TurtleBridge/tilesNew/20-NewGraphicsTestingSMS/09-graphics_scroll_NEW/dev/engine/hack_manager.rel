@@ -1,49 +1,65 @@
 ;!FILE hack_manager.asm
 XL3
-H 9 areas 29 global symbols
+H 9 areas 39 global symbols
 M hack_manager
 O -mz80
 S .__.ABS. Def000000
-A _CODE size 18 flags 0 addr 0
-S A$hack_manager$70 Def000005
-S A$hack_manager$61 Def000000
-S A$hack_manager$80 Def000008
-S A$hack_manager$71 Def000006
-S A$hack_manager$72 Def000007
-S _engine_hack_manager_load Def000009
+A _CODE size 35 flags 0 addr 0
+S A$hack_manager$70 Def000008
+S A$hack_manager$80 Def000012
+S A$hack_manager$64 Def000000
+S _engine_hack_manager_load Def000015
+S A$hack_manager$74 Def00000A
 S A$hack_manager$65 Def000003
-S A$hack_manager$93 Def000009
-S A$hack_manager$66 Def000004
+S A$hack_manager$75 Def00000D
 S C$hack_manager.c$20$0_0$1 Def000000
-S XG$engine_hack_manager_invert$0$0 Def000017
-S A$hack_manager$97 Def00000C
+S XG$engine_hack_manager_invert$0$0 Def000034
+S A$hack_manager$69 Def000005
+S A$hack_manager$88 Def000014
+S A$hack_manager$79 Def00000F
 S C$hack_manager.c$22$1_0$1 Def000000
-S A$hack_manager$98 Def00000F
-S C$hack_manager.c$50$1_0$2 Def000009
-S C$hack_manager.c$24$1_0$1 Def000003
+S C$hack_manager.c$50$1_0$1 Def000014
+S C$hack_manager.c$24$1_0$1 Def000000
 S G$engine_hack_manager_init$0$0 Def000000
 S C$hack_manager.c$25$1_0$1 Def000005
-S XG$engine_hack_manager_load$0$0 Def000016
-S C$hack_manager.c$54$1_0$2 Def00000C
-S C$hack_manager.c$46$1_0$1 Def000008
-S C$hack_manager.c$81$1_0$3 Def000017
-S C$hack_manager.c$55$1_0$2 Def000010
-S C$hack_manager.c$48$1_0$2 Def000009
-S C$hack_manager.c$77$1_0$2 Def000016
-S C$hack_manager.c$79$1_0$3 Def000017
+S C$hack_manager.c$52$1_0$2 Def000015
+S C$hack_manager.c$26$1_0$1 Def00000A
+S C$hack_manager.c$27$1_0$1 Def00000F
+S XG$engine_hack_manager_load$0$0 Def000015
+S C$hack_manager.c$54$1_0$2 Def000015
+S C$hack_manager.c$73$1_0$3 Def000016
+S C$hack_manager.c$65$1_0$2 Def000015
+S C$hack_manager.c$74$1_0$3 Def000020
+S C$hack_manager.c$75$1_0$3 Def00002A
+S C$hack_manager.c$76$1_0$3 Def000034
+S C$hack_manager.c$67$1_0$3 Def000016
+S C$hack_manager.c$69$1_0$3 Def000016
 S _engine_hack_manager_init Def000000
-S XG$engine_hack_manager_init$0$0 Def000008
-S A$hack_manager$102 Def000010
-S A$hack_manager$103 Def000011
-S A$hack_manager$113 Def000016
-S A$hack_manager$104 Def000014
-S A$hack_manager$105 Def000015
-S G$engine_hack_manager_invert$0$0 Def000017
-S A$hack_manager$133 Def000017
-S G$engine_hack_manager_load$0$0 Def000009
-S _engine_hack_manager_invert Def000017
-S C$hack_manager.c$105$1_0$3 Def000017
-A _DATA size 2 flags 0 addr 0
+S XG$engine_hack_manager_init$0$0 Def000014
+S G$engine_hack_manager_invert$0$0 Def000016
+S A$hack_manager$142 Def00002A
+S A$hack_manager$133 Def000020
+S A$hack_manager$124 Def000016
+S A$hack_manager$143 Def00002D
+S A$hack_manager$134 Def000023
+S A$hack_manager$125 Def000019
+S A$hack_manager$144 Def00002E
+S A$hack_manager$135 Def000024
+S A$hack_manager$126 Def00001A
+S A$hack_manager$108 Def000015
+S A$hack_manager$145 Def000030
+S A$hack_manager$136 Def000026
+S A$hack_manager$127 Def00001C
+S A$hack_manager$155 Def000034
+S A$hack_manager$146 Def000032
+S A$hack_manager$137 Def000028
+S A$hack_manager$128 Def00001E
+S A$hack_manager$147 Def000033
+S A$hack_manager$138 Def000029
+S A$hack_manager$129 Def00001F
+S G$engine_hack_manager_load$0$0 Def000015
+S _engine_hack_manager_invert Def000016
+A _DATA size 4 flags 0 addr 0
 S _global_hack_object Def000000
 S G$global_hack_object$0_0$0 Def000000
 A _INITIALIZED size 0 flags 0 addr 0
@@ -59,15 +75,19 @@ T 00 00 00
 R 00 00 01 00
 T 00 00 00
 R 00 00 00 00
-T 00 00 00 01 00 00 AF 02 03 AF 02 C9
-R 00 00 00 00 00 04 01 00
-T 09 00 00
+T 00 00 00 21 00 00 36 00 21 01 00 36 00 21 02 00
+R 00 00 00 00 00 04 01 00 00 09 01 00 00 0E 01 00
+T 0D 00 00 36 00 21 03 00 36 00 C9
+R 00 00 00 00 00 06 01 00
+T 15 00 00
 R 00 00 00 00
-T 09 00 00 01 00 00 3A 50 00 02 03 21 51 00 7E 02
-R 00 00 00 00 00 04 01 00
-T 16 00 00 C9
+T 15 00 00 C9
 R 00 00 00 00
-T 17 00 00
+T 16 00 00
 R 00 00 00 00
-T 17 00 00 C9
+T 16 00 00 01 01 00 0A D6 01 3E 00 17 02 01 02 00
+R 00 00 00 00 00 04 01 00 00 0E 01 00
+T 23 00 00 0A D6 01 3E 00 17 02 01 03 00 0A D6 01
+R 00 00 00 00 00 0B 01 00
+T 30 00 00 3E 00 17 02 C9
 R 00 00 00 00

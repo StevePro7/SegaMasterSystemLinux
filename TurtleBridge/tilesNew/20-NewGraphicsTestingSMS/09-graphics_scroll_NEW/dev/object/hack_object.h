@@ -7,8 +7,8 @@ typedef struct tag_struct_hack_object
 {
 	//unsigned char hack_object_delay_test;
 
-	unsigned char hack_object_level;
-	unsigned char hack_object_screen;
+	//unsigned char hack_object_level;
+	//unsigned char hack_object_screen;
 
 	//unsigned char hack_object_mydebugger;
 	//unsigned char hack_object_invincibie;
@@ -21,8 +21,11 @@ typedef struct tag_struct_hack_object
 
 	//unsigned char hack_object_world_data;
 	//unsigned char hack_object_round_data;
-	//unsigned char hack_object_music_data;
-	//unsigned char hack_object_sound_data;
+
+	unsigned char hack_isgod;
+	unsigned char hack_music;
+	unsigned char hack_sound;
+	unsigned char hack_riffs;
 
 	//unsigned char hack_object_enemy_move[ MAX_ENEMIES ];
 
