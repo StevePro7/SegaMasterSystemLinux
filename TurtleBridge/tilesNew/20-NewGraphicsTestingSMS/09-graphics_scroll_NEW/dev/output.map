@@ -36,7 +36,6 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000007  l__BANK8                        
      00000007  l__BANK9                        
      00000008  l__BANK10                       
-     00000008  l__BANK11                       
      00000009  l__HEADER1                      
      0000000A  l__HEADER2                      
      0000000E  l__CABS1                        
@@ -48,6 +47,7 @@ Area                                    Addr        Size        Decimal Bytes (A
      000000B2  l__BANK15                       
      000000BE  G$VDPDataPort$0_0$0                asm_manager
      000000BF  G$VDPControlPort$0_0$0             asm_manager
+     00000100  l__BANK11                       
      0000012A  l__HEADER5                      
      00000200  s__CODE                         
      00000264  l__DATA                         
@@ -55,7 +55,7 @@ Area                                    Addr        Size        Decimal Bytes (A
      000002A6  l__INITIALIZER                  
      00001B60  l__BANK13                       
      000028B9  l__BANK14                       
-     00002F00  l__BANK12                       
+     00002D80  l__BANK12                       
      00003086  l__BANK7                        
 ASxxxx Linker V03.00 + NoICE + sdld,  page 2.
 Hexadecimal  [32-Bits]
@@ -16236,19 +16236,19 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK11                             00008000    00000008 =           8. bytes (REL,CON)
+_BANK11                             00008000    00000100 =         256. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$bank11_txt$0_0$0                 bank11
-     00008000  _bank11_txt                        bank11
+     00008000  G$level_0808_txt$0_0$0             bank11
+     00008000  _level_0808_txt                    bank11
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 288.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK12                             00008000    00002F00 =       12032. bytes (REL,CON)
+_BANK12                             00008000    00002D80 =       11648. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -16290,8 +16290,6 @@ _BANK12                             00008000    00002F00 =       12032. bytes (R
      0000A380  _level1117_txt                     bank12
      0000AB80  G$level1118_txt$0_0$0              bank12
      0000AB80  _level1118_txt                     bank12
-     0000AD80  G$level_0808_txt$0_0$0             bank12
-     0000AD80  _level_0808_txt                    bank12
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 289.
 Hexadecimal  [32-Bits]

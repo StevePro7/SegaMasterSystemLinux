@@ -1,4 +1,3 @@
-extern const unsigned char	bank11_txt[];
-#define				bank11_txt_size 8
-#define				bank11_txt_bank 11
-
+extern const unsigned char level_0808_txt[];
+#define				level_0808_txt_size 256
+#define				level_0808_txt_bank 11

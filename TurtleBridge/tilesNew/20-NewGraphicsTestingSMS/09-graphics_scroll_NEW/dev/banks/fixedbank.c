@@ -4,6 +4,7 @@
 #include "bank5.h"
 #include "bank6.h"
 #include "bank7.h"
+#include "bank11.h"
 #include "bank12.h"
 
 // Locale Manager.

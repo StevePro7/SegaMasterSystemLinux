@@ -21,6 +21,7 @@ S:G$mus_cont_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$mus_death_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$mus_level_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$mus_over_psg$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$level_0808_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$level1116_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$level1100_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$level1101_txt$0_0$0({0}DA0d,SC:U),D,0,0
@@ -40,7 +41,6 @@ S:G$level1114_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$level1115_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$level1117_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$level1118_txt$0_0$0({0}DA0d,SC:U),D,0,0
-S:G$level_0808_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$steven_data$0_0$0({16}DA16d,SC:U),D,0,0
 S:G$music_object_bank$0_0$0({9}DA9d,SC:U),D,0,0
 S:G$sound_object_bank$0_0$0({3}DA3d,SC:U),D,0,0
