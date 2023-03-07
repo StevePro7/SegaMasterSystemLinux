@@ -250,6 +250,7 @@ S:G$engine_player_manager_collision$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_player_manager_right$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_down$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_draw$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_player_manager_head$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_finish$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_player_manager_pass$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_count$0_0$0({2}DF,SV:S),C,0,0

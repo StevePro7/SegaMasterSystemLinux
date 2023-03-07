@@ -36,6 +36,26 @@ void engine_sprite_manager_draw( unsigned char idx, unsigned char x, unsigned ch
 	}
 }
 
+void engine_sprite_manager_head( unsigned char x, unsigned char y )
+{
+	const unsigned char wide = 4;
+	const unsigned char high = 4;
+	const unsigned char midd = 2;
+	unsigned char num;
+	unsigned char idx;
+	unsigned char i, j;
+
+	idx = 0;
+	for( j = 0; j < midd; j++ )
+	{
+		for( i = midd; i < wide; i++ )
+		{
+			num = ( idx * wide * high ) + j * wide + i;
+			devkit_SMS_addSprite( x + i * 8, y + j * 8, SPRITE_TILES + num );
+		}
+	}
+}
+
 // TODO refactor into above...
 void engine_sprite_manager_mode( unsigned char idx, unsigned char mode, unsigned char x, unsigned char y )
 {

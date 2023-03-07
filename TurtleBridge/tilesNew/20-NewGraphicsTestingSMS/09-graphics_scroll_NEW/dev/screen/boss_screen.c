@@ -2,7 +2,9 @@
 #include "../engine/audio_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
+#include "../engine/graphics_manager.h"
 #include "../engine/input_manager.h"
+#include "../engine/player_manager.h"
 #include "../banks/bank2.h"
 
 static unsigned char index;
@@ -22,14 +24,21 @@ void screen_boss_screen_load()
 	//engine_font_manager_text( "BOSS SCREEN!!", 10, 2 );
 
 	index = 0;
-	engine_font_manager_text( "SONG SCREEN!!", 10, 2 );
-	engine_font_manager_data( index, 14, 9 );
-	engine_font_manager_text( ( unsigned char* ) song_object_texts[ index ], 10, 10 );
+	engine_font_manager_text( "BOSS SCREEN!!", 10, 2 );
+	engine_graphics_manager_level( 72 );
+
+	engine_player_manager_initX( 1, 1 );
+	engine_player_manager_loadY( 16 );
+	//engine_player_manager_draw();
+	engine_player_manager_head();
+
+	//engine_font_manager_data( index, 14, 9 );
+	//engine_font_manager_text( ( unsigned char* ) song_object_texts[ index ], 10, 10 );
 }
 
 void screen_boss_screen_update( unsigned char *screen_type )
 {
-	unsigned char input;
+	/*unsigned char input;
 	input = engine_input_manager_hold( input_type_up );
 	if( input && index > 0 )
 	{
@@ -57,7 +66,10 @@ void screen_boss_screen_update( unsigned char *screen_type )
 	if( input )
 	{
 		engine_sound_manager_play( index );
-	}
+	}*/
 
+
+	//engine_player_manager_draw();
+	engine_player_manager_head();
 	*screen_type = screen_type_boss;
 }

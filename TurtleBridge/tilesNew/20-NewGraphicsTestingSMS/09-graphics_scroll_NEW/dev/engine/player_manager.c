@@ -520,3 +520,8 @@ void engine_player_manager_draw()
 	//}
 	engine_sprite_manager_draw( po->player_frame, po->drawX + deltaDraw, po->drawY + deltaDraw );
 }
+
+void engine_player_manager_head()
+{
+	engine_sprite_manager_head( 220, 172 );
+}
