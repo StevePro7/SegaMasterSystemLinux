@@ -342,12 +342,19 @@ namespace ScreenShotTest
 			string banktext = "bank" + bank;
 			File.WriteAllLines(path + "/" + banktext + ".c", contents);
 			File.WriteAllLines(path + "/../../../../../bankX.c", contents);
+			// HACK - avoid copy n' paste during level testing.
+			File.WriteAllLines(path + "/../../../../../../../../tilesNew/20-NewGraphicsTestingSMS/09-graphics_scroll_NEW/dev/banks/" + banktext + ".c", contents);
 
 			file.Clear();
 			file.Add("extern const unsigned char " + filename + "[];");
 			file.Add("#define				" + filename + "_size " + cols * 4);
 			file.Add("#define				" + filename + "_bank " + bank);
-			File.WriteAllLines(path + "/" + banktext + ".h", file.ToArray());
+			contents = file.ToArray();
+			File.WriteAllLines(path + "/" + banktext + ".h", contents);
+			File.WriteAllLines(path + "/../../../../../bankX.h", contents);
+			// HACK - avoid copy n' paste during level testing.
+			File.WriteAllLines(path + "/../../../../../../../../tilesNew/20-NewGraphicsTestingSMS/09-graphics_scroll_NEW/dev/banks/" + banktext + ".h", contents);
+
 		}
 
 		void engine_util_manager_convertByteToNibbles(int data, ref int upper_nibble, ref int lower_nibble)
