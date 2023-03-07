@@ -20,7 +20,7 @@ void engine_debug_manager_initgame()
 	go->game_difficulty = difficulty_type_insane;
 
 	go->game_world = 5;
-	go->game_point = 63;
+	go->game_point = 8;
 
 	go->game_world -= 1;
 	go->game_point -= 1;
@@ -29,8 +29,8 @@ void engine_debug_manager_initgame()
 	// 9 = turtles
 	// 3 = long512
 	//go->game_level = 2;
-	go->game_level = 17;// 64x screens
-	//go->game_level = 19;	// testing large jumps
+	//go->game_level = 17;// 64x screens
+	go->game_level = 18;	// testing large jumps
 
 	//go->game_level = 3;	// trees
 	//go->game_level = 7;	// trees
