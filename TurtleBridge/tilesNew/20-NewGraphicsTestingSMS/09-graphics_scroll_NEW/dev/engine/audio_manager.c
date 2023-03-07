@@ -1,4 +1,5 @@
 #include "audio_manager.h"
+#include "hack_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../devkit/_snd_manager.h"
 #include "../banks/fixedbank.h"
@@ -19,11 +20,11 @@ void engine_audio_manager_init()
 void engine_music_manager_play( unsigned char index )
 {
 	struct_audio_object *ao = &global_audio_object;
-	//TODO remove - use more in SFX
-	//if( devkit_PSGGetStatus() )
-	//{
-	//	return;
-	//}
+	struct_hack_object *ho = &global_hack_object;
+	if( !ho->hack_music )
+	{
+		return;
+	}
 
 	devkit_SMS_mapROMBank( FIXED_BANK );
 	ao->music_data = ( unsigned char* ) music_object_data[ index ];
@@ -45,11 +46,11 @@ void engine_music_manager_stop()
 void engine_sound_manager_play( unsigned char index )
 {
 	struct_audio_object *ao = &global_audio_object;
-	//TODO remove - use more in SFX
-	//if( devkit_PSGGetStatus() )
-	//{
-	//	return;
-	//}
+	struct_hack_object *ho = &global_hack_object;
+	if( !ho->hack_sound )
+	{
+		return;
+	}
 
 	devkit_SMS_mapROMBank( FIXED_BANK );
 	ao->sound_data = ( unsigned char* ) sound_object_data[ index ];

@@ -62,15 +62,14 @@ void engine_hack_manager_load()
 	//ho->hack_sound = PEEK( HACKER_START + 9 );			// 0x0059		// Set 0=Sound to play otherwise silent.
 
 #endif
-}
 
-void engine_hack_manager_invert()
-{
-	struct_hack_object *ho = &global_hack_object;
-
-	
 	// Invert default values.
 	ho->hack_music = !ho->hack_music;
 	ho->hack_sound = !ho->hack_sound;
+	ho->hack_riffs = !ho->hack_riffs;
+
+	// TODO delete.
+	ho->hack_music = 0;
+	ho->hack_sound = 0;
 	ho->hack_riffs = !ho->hack_riffs;
 }
