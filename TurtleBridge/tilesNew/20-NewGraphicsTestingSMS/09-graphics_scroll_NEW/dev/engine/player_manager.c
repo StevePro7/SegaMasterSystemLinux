@@ -13,6 +13,7 @@
 #define PLAYER_MIN_HIGH		32
 #define PLAYER_MAX_HIGH		168
 #define MOTION_ANIMATES		25
+#define PLAYER_HEAD_ROW		172
 #define UFIX(x)				((unsigned char)((x)>>8))
 
 #ifdef _CONSOLE
@@ -43,6 +44,7 @@ void engine_player_manager_init()
 	po->player_state = player_state_isonground;
 	po->jumper_index = 0; po->deltaY_index = 0;
 	po->player_frame = player_frame_ground_rght_01;
+	po->player_lives = MAX_LIVES;
 	po->motion_count = 0;
 	jump_ptr = NULL;
 	jump_len = 0;
@@ -51,6 +53,9 @@ void engine_player_manager_init()
 	ground_deltaX = 1;
 	flying_deltaX = 1;
 }
+
+// todo - need to re-init player_lives to 3x every game "load"
+// todo - if difficulty == easier || normal then lives += 1 ?
 
 void engine_player_manager_initX( unsigned char difficulty, unsigned char world )
 {
@@ -523,7 +528,10 @@ void engine_player_manager_draw()
 
 void engine_player_manager_head()
 {
-	engine_sprite_manager_head( 220, 172 );
-	engine_sprite_manager_head( 196, 172 );
-	engine_sprite_manager_head( 172, 172 );
+	struct_player_object *po = &global_player_object;
+	unsigned char index;
+	for( index = 0; index < po->player_lives - 1; index++ )
+	{
+		engine_sprite_manager_head( player_lives_headX[ index ], PLAYER_HEAD_ROW );
+	}
 }

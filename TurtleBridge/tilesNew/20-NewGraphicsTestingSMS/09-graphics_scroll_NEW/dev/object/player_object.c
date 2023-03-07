@@ -20,6 +20,7 @@ const unsigned char player_moving_deltaX[] = { 2, 3, 4, 5, 5 };
 const unsigned char player_ground_deltaX[] = { 1, 1, 1, 1, 1 };
 const unsigned char player_flying_deltaX[] = { 1, 1, 1, 1, 2 };
 
+const unsigned char player_lives_headX[] = { 220, 196, 172 };
 
 //signed int
 const signed int *jump_array_ptr[] =

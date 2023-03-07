@@ -254,6 +254,8 @@ void screen_play_screen_update( unsigned char *screen_type )
 	}
 
 	engine_player_manager_draw();
+	engine_player_manager_head();
+
 	//engine_debug_manager_printout();
 //	engine_font_manager_data( deltaY, 30, 2 );
 //	engine_font_manager_data( po->posnY, 30, 3 );

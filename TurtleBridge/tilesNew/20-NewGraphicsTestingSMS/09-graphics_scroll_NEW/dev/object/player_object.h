@@ -18,6 +18,7 @@ typedef struct tag_struct_player_object
 	unsigned char deltaY_index;
 	//unsigned char jumper_array;		// replaced by jump_ptr	TODO delete
 	unsigned char player_frame;
+	unsigned char player_lives;
 	unsigned char motion_count;
 
 } struct_player_object;
@@ -31,6 +32,7 @@ extern const unsigned char player_moving_deltaX[];
 extern const unsigned char player_ground_deltaX[];
 extern const unsigned char player_flying_deltaX[];
 
+extern const unsigned char player_lives_headX[];
 
 extern const signed int *jump_array_ptr[];
 extern const unsigned char jump_array_len[];
