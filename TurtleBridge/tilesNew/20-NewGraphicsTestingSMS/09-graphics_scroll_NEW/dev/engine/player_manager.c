@@ -524,4 +524,6 @@ void engine_player_manager_draw()
 void engine_player_manager_head()
 {
 	engine_sprite_manager_head( 220, 172 );
+	engine_sprite_manager_head( 196, 172 );
+	engine_sprite_manager_head( 172, 172 );
 }

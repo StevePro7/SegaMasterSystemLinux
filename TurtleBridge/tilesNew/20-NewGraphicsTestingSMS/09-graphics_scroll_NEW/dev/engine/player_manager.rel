@@ -1,6 +1,6 @@
 ;!FILE player_manager.asm
 XL3
-H 9 areas 466 global symbols
+H 9 areas 470 global symbols
 M player_manager
 O -mz80
 S _player_object_starts Ref000000
@@ -19,7 +19,7 @@ S _engine_cartoon_manager_wave Ref000000
 S _engine_sprite_manager_head Ref000000
 S _jump_array_len Ref000000
 S _engine_cartoon_manager_swap Ref000000
-A _CODE size 632 flags 0 addr 0
+A _CODE size 642 flags 0 addr 0
 S G$engine_player_manager_init$0$0 Def000000
 S _engine_player_manager_count Def0005F7
 S _engine_player_manager_set_action Def0001CE
@@ -413,6 +413,7 @@ S C$player_manager.c$234$3_0$163 Def000299
 S C$player_manager.c$164$2_0$153 Def000193
 S C$player_manager.c$153$1_0$147 Def000179
 S C$player_manager.c$117$1_0$147 Def00013B
+S A$player_manager$1871 Def000639
 S A$player_manager$1844 Def000628
 S A$player_manager$1826 Def000618
 S A$player_manager$1817 Def00060C
@@ -438,6 +439,7 @@ S A$player_manager$1187 Def00042E
 S A$player_manager$1178 Def000427
 S A$player_manager$1169 Def00041D
 S A$player_manager$1079 Def0003B1
+S C$player_manager.c$528$1_0$214 Def000639
 S C$player_manager.c$496$1_0$210 Def0005F8
 S C$player_manager.c$476$1_0$203 Def0005E7
 S C$player_manager.c$473$2_0$205 Def0005E0
@@ -456,6 +458,7 @@ S C$player_manager.c$215$2_0$157 Def000241
 S C$player_manager.c$181$1_0$156 Def0001DA
 S C$player_manager.c$165$2_0$153 Def0001AE
 S C$player_manager.c$154$1_0$147 Def00017A
+S A$player_manager$1872 Def00063C
 S A$player_manager$1827 Def000619
 S A$player_manager$1818 Def00060D
 S A$player_manager$1773 Def0005F8
@@ -473,6 +476,7 @@ S A$player_manager$1269 Def000470
 S A$player_manager$1197 Def000436
 S A$player_manager$1089 Def0003B8
 S A$player_manager$110 Def000013
+S C$player_manager.c$529$1_0$214 Def000641
 S C$player_manager.c$468$1_0$203 Def0005C4
 S C$player_manager.c$459$1_0$203 Def0005A8
 S Fplayer_manager$updatePlayerY$0$0 Def00055E
@@ -488,6 +492,9 @@ S C$player_manager.c$216$2_0$157 Def000254
 S C$player_manager.c$182$1_0$156 Def0001E0
 S C$player_manager.c$159$1_0$152 Def000184
 S C$player_manager.c$119$1_0$147 Def00013F
+S A$player_manager$1882 Def000641
+S A$player_manager$1873 Def00063D
+S A$player_manager$1864 Def000631
 S A$player_manager$1828 Def00061C
 S A$player_manager$1675 Def0005C1
 S A$player_manager$1666 Def0005B6
@@ -509,6 +516,8 @@ S C$player_manager.c$274$3_0$171 Def000334
 S C$player_manager.c$253$1_0$167 Def0002D5
 S C$player_manager.c$229$3_0$162 Def000288
 S C$player_manager.c$174$1_0$156 Def0001CE
+S A$player_manager$1874 Def000640
+S A$player_manager$1865 Def000634
 S A$player_manager$1838 Def000625
 S A$player_manager$1829 Def00061D
 S A$player_manager$1793 Def0005F9
@@ -536,6 +545,7 @@ S C$player_manager.c$261$1_0$169 Def0002F5
 S C$player_manager.c$247$1_0$165 Def0002BA
 S C$player_manager.c$209$2_0$157 Def000233
 S C$player_manager.c$139$1_0$147 Def000167
+S A$player_manager$1866 Def000635
 S A$player_manager$1857 Def000629
 S A$player_manager$1839 Def000626
 S A$player_manager$1695 Def0005D7
@@ -566,6 +576,7 @@ S C$player_manager.c$219$2_0$157 Def000260
 S C$player_manager.c$176$1_0$156 Def0001D7
 S C$player_manager.c$167$3_0$154 Def0001C1
 S _engine_player_manager_bounds Def0002F5
+S A$player_manager$1867 Def000638
 S A$player_manager$1858 Def00062C
 S A$player_manager$1696 Def0005DA
 S A$player_manager$1687 Def0005CD
@@ -595,7 +606,6 @@ S C$player_manager.c$191$3_0$158 Def000202
 S C$player_manager.c$184$2_0$157 Def0001F0
 S _engine_player_manager_collision Def000366
 S _engine_player_manager_initX Def000064
-S A$player_manager$1868 Def000631
 S A$player_manager$1859 Def00062D
 S A$player_manager$1697 Def0005DB
 S A$player_manager$1688 Def0005D0
@@ -1115,7 +1125,7 @@ S G$engine_player_manager_count$0$0 Def0005F7
 S G$engine_player_manager_set_action$0$0 Def0001CE
 S A$player_manager$987 Def000360
 S A$player_manager$699 Def00023C
-S XG$engine_player_manager_head$0$0 Def000631
+S XG$engine_player_manager_head$0$0 Def000641
 S _engine_player_manager_right Def0005F8
 S A$player_manager$997 Def000365
 S A$player_manager$799 Def0002B5
@@ -1584,5 +1594,7 @@ T 21 06 00 00 00 F1 33 33 DD E1 C9
 R 00 00 00 00 02 03 02 00
 T 29 06 00
 R 00 00 00 00
-T 29 06 00 11 DC AC D5 CD 00 00 F1 C9
+T 29 06 00 11 DC AC D5 CD 00 00 F1 11 C4 AC D5 CD
 R 00 00 00 00 02 08 0D 00
+T 36 06 00 00 00 F1 11 AC AC D5 CD 00 00 F1 C9
+R 00 00 00 00 02 03 0D 00 02 0B 0D 00
