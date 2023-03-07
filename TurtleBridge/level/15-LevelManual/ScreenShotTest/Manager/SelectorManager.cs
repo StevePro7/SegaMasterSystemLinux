@@ -20,7 +20,7 @@ namespace ScreenShotTest
 		public void Initialize()
 		{
 			//Selector = GetSelector(AssetType.AwavesBlock);
-			Selector = GetSelector(AssetType.QbridgeSideFlip);
+			Selector = GetSelector(AssetType.KturtleSea1);
 		}
 
 		public void Update()

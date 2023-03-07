@@ -19,8 +19,8 @@ void engine_debug_manager_initgame()
 	//go->game_difficulty = difficulty_type_harder;
 	go->game_difficulty = difficulty_type_insane;
 
-	go->game_world = 5;
-	go->game_point = 4;
+	go->game_world = 2;
+	go->game_point = 1;
 
 	go->game_world -= 1;
 	go->game_point -= 1;
