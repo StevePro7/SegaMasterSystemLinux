@@ -18,6 +18,8 @@
 #include "../banks/bank2.h"
 #include <stdbool.h>
 
+#define STARTING_SCROLLING		0
+
 static unsigned char screen_intro_screen_delay;
 static unsigned char cheat_count;
 static unsigned char delay;
@@ -34,8 +36,12 @@ void screen_start_screen_load()
 	engine_util_manager_locale_texts( 4, 9, 7 );
 	devkit_SMS_displayOn();
 
-	engine_scroll_manager_init();
-	engine_scroll_manager_load( 0, 0 );
+	if( STARTING_SCROLLING )
+	{
+		engine_scroll_manager_init();
+		engine_scroll_manager_load( 0, 0 );
+	}
+
 	screen_intro_screen_delay = NORMAL_DELAY;
 	engine_delay_manager_load( 50 );
 	flag = true;
@@ -59,6 +65,10 @@ void screen_start_screen_update( unsigned char *screen_type )
 		}
 	}
 
-	engine_scroll_manager_section( 1 );
+	if( STARTING_SCROLLING )
+	{
+		engine_scroll_manager_section( 1 );
+	}
+
 	*screen_type = screen_type_start;
 }

@@ -19,10 +19,10 @@ void engine_delay_manager_load( unsigned int delay )
 	dObj->delay_timer = 0;
 
 	// Used for testing so no wait.
-//	if( ho->hack_object_delay_test )
-//	{
-//		dObj->delay_value = 0;
-//	}
+	if( ho->hack_delay )
+	{
+		dObj->delay_value = 0;
+	}
 }
 unsigned char engine_delay_manager_update()
 {
