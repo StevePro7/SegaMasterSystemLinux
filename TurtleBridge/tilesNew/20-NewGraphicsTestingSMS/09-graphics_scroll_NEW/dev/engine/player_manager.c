@@ -512,7 +512,7 @@ void engine_player_manager_dead( unsigned char player_deadX )
 
 	if( po->posnY >= PLAYER_DEAD )
 	{
-		po->posnY >= PLAYER_DEAD;
+		po->posnY = PLAYER_DEAD;
 		updatePlayerY();
 	}
 }
