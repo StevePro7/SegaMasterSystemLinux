@@ -100,10 +100,6 @@ void screen_diff_screen_update( unsigned char *screen_type )
 		{
 			game_difficulty--;
 		}
-		//engine_util_manager_locale_blank( 1, po->posnX / 8 - 2, player_loadY - 6 );
-		//game_difficulty--;
-		//engine_player_manager_initX( game_difficulty, game_world );
-		//engine_font_manager_text( ( unsigned char * ) locale_object_difficulty[ game_difficulty ], po->posnX / 8 - 2, player_loadY - 6 );
 	}
 
 	input = engine_input_manager_hold( input_type_down );
@@ -118,10 +114,6 @@ void screen_diff_screen_update( unsigned char *screen_type )
 		{
 			game_difficulty++;
 		}
-		//engine_util_manager_locale_blank( 1, po->posnX / 8 - 2, player_loadY - 6 );
-		//game_difficulty++;
-		//engine_player_manager_initX( game_difficulty, game_world );
-		//engine_font_manager_text( ( unsigned char * ) locale_object_difficulty[ game_difficulty ], po->posnX / 8 - 2, player_loadY - 6 );
 	}
 
 	if( updateDiff )
@@ -138,7 +130,7 @@ void screen_diff_screen_update( unsigned char *screen_type )
 		// TODO sfx
 		//engine_player_manager_draw();
 		engine_game_manager_set_difficulty( game_difficulty );
-		//*screen_type = screen_type_beat;
+		*screen_type = screen_type_beat;
 		return;
 	}
 

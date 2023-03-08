@@ -18,6 +18,8 @@ void screen_beat_screen_load()
 	struct_player_object *po = &global_player_object;
 	unsigned char data;
 
+	engine_font_manager_text( "BEAT SCREEN!!", 10, 0 );
+
 	// TODO replace with real values
 	engine_player_manager_initX( 0, 1 );
 	engine_player_manager_loadX( 0 );
