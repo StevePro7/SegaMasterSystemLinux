@@ -15,8 +15,13 @@
 #include "../devkit/_sms_manager.h"
 #include "../banks/bank2.h"
 
+
+static void printTexts();
+
 static unsigned char player_loadY;
 static unsigned char game_difficulty;
+//static unsigned char cursorX[] = { 2, 11, 20, 24 };
+//static unsigned char cursorIdx;
 
 void screen_diff_screen_load()
 {
@@ -52,7 +57,7 @@ void screen_diff_screen_load()
 	//engine_player_manager_loadY( 0 );
 
 	
-	engine_util_manager_locale_texts( 5, 7, 7 );
+	
 	engine_scroll_manager_load( go->game_point, lo->level_size );
 
 	engine_player_manager_initX( go->game_difficulty, go->game_world );
@@ -62,7 +67,9 @@ void screen_diff_screen_load()
 	//engine_player_manager_loadY( 0 );
 	engine_player_manager_draw();
 
-	engine_font_manager_text( ( unsigned char * ) locale_object_difficulty[ game_difficulty ], po->posnX / 8 - 2, player_loadY - 6 );
+	//engine_font_manager_text( ( unsigned char * ) locale_object_difficulty[ game_difficulty ], po->posnX / 8 - 2, player_loadY - 6 );
+	printTexts();
+	//cursorIdx = game_difficulty;
 }
 
 
@@ -75,26 +82,26 @@ void screen_diff_screen_update( unsigned char *screen_type )
 	input = engine_input_manager_hold( input_type_left );
 	if( input && game_difficulty > 0 )
 	{
-		engine_util_manager_locale_blank( 1, po->posnX / 8 - 2, player_loadY - 6 );
+		//engine_util_manager_locale_blank( 1, po->posnX / 8 - 2, player_loadY - 6 );
 		game_difficulty--;
 		engine_player_manager_initX( game_difficulty, go->game_world );
-		engine_font_manager_text( ( unsigned char * ) locale_object_difficulty[ game_difficulty ], po->posnX / 8 - 2, player_loadY - 6 );
+		//engine_font_manager_text( ( unsigned char * ) locale_object_difficulty[ game_difficulty ], po->posnX / 8 - 2, player_loadY - 6 );
 	}
 
 	input = engine_input_manager_hold( input_type_right );
 	if( input && game_difficulty <= 2 )
 	{
-		engine_util_manager_locale_blank( 1, po->posnX / 8 - 2, player_loadY - 6 );
+		//engine_util_manager_locale_blank( 1, po->posnX / 8 - 2, player_loadY - 6 );
 		game_difficulty++;
 		engine_player_manager_initX( game_difficulty, go->game_world );
-		engine_font_manager_text( ( unsigned char * ) locale_object_difficulty[ game_difficulty ], po->posnX / 8 - 2, player_loadY - 6 );
+		//engine_font_manager_text( ( unsigned char * ) locale_object_difficulty[ game_difficulty ], po->posnX / 8 - 2, player_loadY - 6 );
 	}
 
 	input = engine_input_manager_hold( input_type_fire1 );
 	if( input )
 	{
-		engine_util_manager_locale_blank( 1, po->posnX / 8 - 2, player_loadY - 6 );
-		engine_util_manager_locale_blank( 2, 7, 5 );
+		//engine_util_manager_locale_blank( 1, po->posnX / 8 - 2, player_loadY - 6 );
+		//engine_util_manager_locale_blank( 2, 7, 5 );
 		// TODO sfx
 		//engine_player_manager_draw();
 		engine_game_manager_set_difficulty( game_difficulty );
@@ -107,4 +114,59 @@ void screen_diff_screen_update( unsigned char *screen_type )
 
 	engine_player_manager_draw();
 	*screen_type = screen_type_diff;
+}
+
+//void screen_diff_screen_updateX( unsigned char *screen_type )
+//{
+//	struct_game_object *go = &global_game_object;
+//	struct_player_object *po = &global_player_object;
+//	unsigned char input;
+//
+//	input = engine_input_manager_hold( input_type_left );
+//	if( input && game_difficulty > 0 )
+//	{
+//		engine_util_manager_locale_blank( 1, po->posnX / 8 - 2, player_loadY - 6 );
+//		game_difficulty--;
+//		engine_player_manager_initX( game_difficulty, go->game_world );
+//		engine_font_manager_text( ( unsigned char * ) locale_object_difficulty[ game_difficulty ], po->posnX / 8 - 2, player_loadY - 6 );
+//	}
+//
+//	input = engine_input_manager_hold( input_type_right );
+//	if( input && game_difficulty <= 2 )
+//	{
+//		engine_util_manager_locale_blank( 1, po->posnX / 8 - 2, player_loadY - 6 );
+//		game_difficulty++;
+//		engine_player_manager_initX( game_difficulty, go->game_world );
+//		engine_font_manager_text( ( unsigned char * ) locale_object_difficulty[ game_difficulty ], po->posnX / 8 - 2, player_loadY - 6 );
+//	}
+//
+//	input = engine_input_manager_hold( input_type_fire1 );
+//	if( input )
+//	{
+//		engine_util_manager_locale_blank( 1, po->posnX / 8 - 2, player_loadY - 6 );
+//		engine_util_manager_locale_blank( 2, 7, 5 );
+//		// TODO sfx
+//		//engine_player_manager_draw();
+//		engine_game_manager_set_difficulty( game_difficulty );
+//		*screen_type = screen_type_beat;
+//		return;
+//	}
+//
+//	// TODO - navigate backwards.
+//	//input = engine_input_manager_hold( input_type_fire2 );
+//
+//	engine_player_manager_draw();
+//	*screen_type = screen_type_diff;
+//}
+
+static void printTexts()
+{
+	engine_util_manager_locale_texts( 5, 7, 3 );
+	engine_font_manager_text( "EASIER", 15, 4 );
+	engine_font_manager_text( "NORMAL", 15, 5 );
+	engine_font_manager_text( "HARDER", 15, 6 );
+	engine_font_manager_text( "INSANE", 15, 7 );
+	//engine_font_manager_text( "[WORLD[[[[ROUND[[[[POINT[[/[[", 2, 5 );
+	//engine_font_manager_text( "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX", 2, 5 );
+	//engine_font_manager_text( " EASIER NORMAL  HARDER INSANE", 2, 3 );
 }
