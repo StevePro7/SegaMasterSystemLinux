@@ -29,7 +29,6 @@ static unsigned char player_loadY;
 void screen_level_screen_load()
 {
 	struct_player_object *po = &global_player_object;
-	//struct_level_object *lo = &global_level_object;
 	struct_game_object *go = &global_game_object;
 
 	// TODO delete this.
@@ -41,6 +40,7 @@ void screen_level_screen_load()
 	cursorIdx = 0;
 
 
+	//engine_graphics_manager_common();
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();
@@ -62,12 +62,11 @@ void screen_level_screen_load()
 	engine_font_manager_char( '>', cursorX[ cursorIdx ], SHARE_TEXT_ROW_ );
 	
 	// TODO confirm that will NOT draw player here 
-	//engine_player_manager_initX( go->game_difficulty, go->game_world );
-	//engine_player_manager_loadX( go->game_point );
-	//player_loadY = level_platforms[ po->lookX ];
-	//engine_player_manager_loadY( player_loadY );
-	//engine_player_manager_loadY( 0 );
-	//engine_player_manager_draw();
+	engine_player_manager_initX( go->game_difficulty, go->game_world );
+	engine_player_manager_loadX( go->game_point );
+	player_loadY = level_platforms[ po->lookX ];
+	engine_player_manager_loadY( player_loadY );
+	engine_player_manager_draw();
 }
 
 void screen_level_screen_update( unsigned char *screen_type )
@@ -147,83 +146,99 @@ void screen_level_screen_update( unsigned char *screen_type )
 			engine_level_manager_init( level );
 			engine_level_manager_draw_point( point );
 
-			//engine_player_manager_loadX( point );
-			//player_loadY = level_platforms[ po->lookX ];
-			//engine_player_manager_loadY( player_loadY );
-			//engine_player_manager_loadY( 0 );
-			//engine_player_manager_draw();
+			//engine_player_manager_initX( go->game_difficulty, world );
+			engine_player_manager_loadX( point );
+			player_loadY = level_platforms[ po->lookX ];
+			engine_player_manager_loadY( player_loadY );
+
+			engine_player_manager_draw();
 		}
 
 		printStats();
 	}
 
-	//engine_player_manager_draw();
+		input = engine_input_manager_hold( input_type_fire1 );
+		if( input )
+		{
+			engine_font_manager_text( "YES", 10, 10 );
+			//*screen_type = screen_type_beat;
+			//return;
+		}
+
+		input = engine_input_manager_hold( input_type_fire2 );
+		if( input )
+		{
+			*screen_type = screen_type_diff;
+			return;
+		}
+
+	engine_player_manager_draw();
 	*screen_type = screen_type_level;
 }
 
-void screen_level_screen_updateY( unsigned char *screen_type )
-{
-	unsigned char input;
-
-	input = engine_input_manager_hold( input_type_left );
-	if( input && 0 != cursorIdx )
-	{
-		engine_font_manager_char( ' ', cursorX[ cursorIdx ], SHARE_TEXT_ROW_ );
-		cursorIdx--;
-		engine_font_manager_char( '>', cursorX[ cursorIdx ], SHARE_TEXT_ROW_ );
-	}
-
-	input = engine_input_manager_hold( input_type_right );
-	if( input && 2 != cursorIdx )
-	{
-		engine_font_manager_char( ' ', cursorX[ cursorIdx ], SHARE_TEXT_ROW_ );
-		cursorIdx++;
-		engine_font_manager_char( '>', cursorX[ cursorIdx ], SHARE_TEXT_ROW_ );
-	}
-
-	input = engine_input_manager_hold( input_type_up );
-	if( input )
-	{
-		if( 0 == cursorIdx && world > 0 )
-		{
-			world--;
-		}
-		if( 1 == cursorIdx && round > 0 )
-		{
-			round--;
-		}
-		if( 2 == cursorIdx && point > 0 )
-		{
-			point--;
-			//engine_level_manager_init( level );
-			//engine_level_manager_draw_point( point );
-		}
-
-		printStats();
-	}
-	input = engine_input_manager_hold( input_type_down );
-	if( input )
-	{
-		if( 0 == cursorIdx && world < ( MAX_WOLRDS - 1 ) )
-		{
-			world++;
-		}
-		if( 1 == cursorIdx && round < ( MAX_ROUNDS - 1 ) )
-		{
-			round++;
-		}
-		if( 2 == cursorIdx && point < ( MAX_CHECKS - 1 ) )
-		{
-			point++;
-			//engine_level_manager_init( level );
-			//engine_level_manager_draw_point( point );
-		}
-
-		printStats();
-	}
-
-	*screen_type = screen_type_level;
-}
+//void screen_level_screen_updateY( unsigned char *screen_type )
+//{
+//	unsigned char input;
+//
+//	input = engine_input_manager_hold( input_type_left );
+//	if( input && 0 != cursorIdx )
+//	{
+//		engine_font_manager_char( ' ', cursorX[ cursorIdx ], SHARE_TEXT_ROW_ );
+//		cursorIdx--;
+//		engine_font_manager_char( '>', cursorX[ cursorIdx ], SHARE_TEXT_ROW_ );
+//	}
+//
+//	input = engine_input_manager_hold( input_type_right );
+//	if( input && 2 != cursorIdx )
+//	{
+//		engine_font_manager_char( ' ', cursorX[ cursorIdx ], SHARE_TEXT_ROW_ );
+//		cursorIdx++;
+//		engine_font_manager_char( '>', cursorX[ cursorIdx ], SHARE_TEXT_ROW_ );
+//	}
+//
+//	input = engine_input_manager_hold( input_type_up );
+//	if( input )
+//	{
+//		if( 0 == cursorIdx && world > 0 )
+//		{
+//			world--;
+//		}
+//		if( 1 == cursorIdx && round > 0 )
+//		{
+//			round--;
+//		}
+//		if( 2 == cursorIdx && point > 0 )
+//		{
+//			point--;
+//			//engine_level_manager_init( level );
+//			//engine_level_manager_draw_point( point );
+//		}
+//
+//		printStats();
+//	}
+//	input = engine_input_manager_hold( input_type_down );
+//	if( input )
+//	{
+//		if( 0 == cursorIdx && world < ( MAX_WOLRDS - 1 ) )
+//		{
+//			world++;
+//		}
+//		if( 1 == cursorIdx && round < ( MAX_ROUNDS - 1 ) )
+//		{
+//			round++;
+//		}
+//		if( 2 == cursorIdx && point < ( MAX_CHECKS - 1 ) )
+//		{
+//			point++;
+//			//engine_level_manager_init( level );
+//			//engine_level_manager_draw_point( point );
+//		}
+//
+//		printStats();
+//	}
+//
+//	*screen_type = screen_type_level;
+//}
 
 static void printStats()
 {
