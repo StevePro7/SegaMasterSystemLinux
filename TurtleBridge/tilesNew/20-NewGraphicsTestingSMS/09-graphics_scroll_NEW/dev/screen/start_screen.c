@@ -23,7 +23,7 @@
 #pragma disable_warning 126
 #endif
 
-#define STARTING_SCROLLING		0
+#define STARTING_SCROLLING		1
 
 static unsigned char screen_intro_screen_delay;
 static unsigned char cheat_count;
@@ -87,7 +87,6 @@ void screen_start_screen_update( unsigned char *screen_type )
 			}
 			else
 			{
-				//engine_font_manager_text( LOCALE_BLANK14, 9, 7 );
 				engine_util_manager_locale_blank( 0, 9, 7 );
 			}
 		}

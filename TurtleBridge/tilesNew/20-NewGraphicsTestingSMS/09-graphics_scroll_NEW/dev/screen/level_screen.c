@@ -150,8 +150,6 @@ void screen_level_screen_update( unsigned char *screen_type )
 			engine_player_manager_loadX( point );
 			player_loadY = level_platforms[ po->lookX ];
 			engine_player_manager_loadY( player_loadY );
-
-			engine_player_manager_draw();
 		}
 
 		printStats();
