@@ -51,7 +51,17 @@ void screen_start_screen_load()
 void screen_start_screen_update( unsigned char *screen_type )
 {
 	struct_hack_object *ho = &global_hack_object;
-	//unsigned char input; 
+	unsigned char input; 
+
+	input = engine_input_manager_hold( input_type_fire1 );
+	if( input )
+	{
+		// TODO riff
+		//engine_font_manager_text( "DIFF SCREEN", 10, 10 );
+		//*screen_type = screen_type_diff;
+		//return;
+	}
+
 	delay = engine_delay_manager_update();
 	if( delay )
 	{

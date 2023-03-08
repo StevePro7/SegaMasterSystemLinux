@@ -41,7 +41,6 @@ void screen_level_screen_load()
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();
 	engine_content_manager_sprite();
-
 	engine_graphics_manager_title();
 	engine_graphics_manager_sea();
 
