@@ -36,13 +36,13 @@ extern const unsigned char *locale_object_blank[] =
 	"                  ",		// LOCALE_BLANK18
 };
 
-const unsigned char *locale_object_difficulty[] =
-{
-	"EASIER",
-	"NORMAL",
-	"HARDER",
-	"INSANE",
-};
+//const unsigned char *locale_object_difficulty[] =
+//{
+//	"EASIER",
+//	"NORMAL",
+//	"HARDER",
+//	"INSANE",
+//};
 
 
 const unsigned char bggame_tiles__palette__bin[] = {

@@ -102,7 +102,6 @@ S:G$level_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$song_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$locale_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$locale_object_blank$0_0$0({0}DA0d,DG,SC:U),E,0,0
-S:G$locale_object_difficulty$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$global_player_object$0_0$0({17}STtag_struct_player_object:S),E,0,0
 S:Fplayer_manager$jump_ptr$0_0$0({2}DG,SI:S),E,0,0
 S:Fplayer_manager$jump_len$0_0$0({1}SC:U),E,0,0
