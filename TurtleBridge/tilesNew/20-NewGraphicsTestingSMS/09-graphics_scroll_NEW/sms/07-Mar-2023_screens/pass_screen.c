@@ -22,12 +22,45 @@ void screen_pass_screen_load()
 	player_passX >>= 1;
 	player_endY = engine_player_manager_finish();
 
+	// TODO - wrap this in an API - must reset startX as will have increased as scrolling thru level - although drawX never changes then
+	//struct_player_object *po = &global_player_object;
+	//unsigned char player_loadY;
+
+	//po->posnX = po->initX;
+	//player_loadY = engine_collision_manager_finish( po->lookX, po->tileY );
+
+	//po->posnY = player_loadY << 3;
+	//po->leapY = po->posnY << 8;
+	//po->drawY = po->posnY - 32;
+
+
+	//if( po->player_frame < 2 || ( po->player_frame > 4 && po->player_frame < 8 ) )
+	//{
+	//	po->player_frame = 4;
+	//}
+	//else if( po->player_frame < 4 || po->player_frame > 8 )
+	//{
+	//	po->player_frame = 8;
+	//}
+
 	engine_player_manager_draw();
 	engine_player_manager_head();
+
+	//engine_scroll_manager_load();
+	//devkit_SMS_displayOff();
+	//engine_asm_manager_clear_VRAM();
+	//engine_content_manager_bggame();
+	//engine_content_manager_sprite();
+	//engine_graphics_manager_sea();
+	//engine_font_manager_text( "PASS[SCREEN", 10, 2 );
+	//devkit_SMS_displayOn();
+
+	// TODO remove from below
+	// play PCM first + block
+	//engine_music_manager_stop();
 	swap = 0;
 }
 
-// TODO - show the world round point text on screen when pass.
 void screen_pass_screen_update( unsigned char *screen_type )
 {
 	struct_player_object *po = &global_player_object;
@@ -69,6 +102,6 @@ void screen_pass_screen_update( unsigned char *screen_type )
 	}
 
 	engine_player_manager_draw();
-	engine_player_manager_head();
+	//engine_player_manager_head();		// TODO test
 	*screen_type = screen_type_pass;
 }
