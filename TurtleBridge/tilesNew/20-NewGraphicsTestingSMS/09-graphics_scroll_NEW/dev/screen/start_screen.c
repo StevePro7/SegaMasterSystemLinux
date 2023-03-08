@@ -40,6 +40,7 @@ void screen_start_screen_load()
 	engine_graphics_manager_title();
 	engine_graphics_manager_sea();
 	devkit_SMS_displayOn();
+	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_NORMAL() );
 
 	engine_util_manager_locale_texts( 4, 9, 7 );
 	if( STARTING_SCROLLING )
@@ -64,8 +65,8 @@ void screen_start_screen_update( unsigned char *screen_type )
 	{
 		// TODO riff
 		//engine_font_manager_text( "DIFF SCREEN", 10, 10 );
-		//*screen_type = screen_type_diff;
-		//return;
+		*screen_type = screen_type_diff;
+		return;
 	}
 
 	delay = engine_delay_manager_update();

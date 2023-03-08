@@ -113,7 +113,12 @@ void screen_diff_screen_update( unsigned char *screen_type )
 	}
 
 	// TODO - navigate backwards.
-	//input = engine_input_manager_hold( input_type_fire2 );
+	input = engine_input_manager_hold( input_type_fire2 );
+	if( input )
+	{
+		*screen_type = screen_type_start;
+		return;
+	}
 
 	engine_player_manager_draw();
 	*screen_type = screen_type_diff;
