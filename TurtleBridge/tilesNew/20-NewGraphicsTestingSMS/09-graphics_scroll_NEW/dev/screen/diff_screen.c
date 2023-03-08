@@ -20,12 +20,10 @@
 
 static void setupPlayer();
 static void printCursor();
-static void printTexts();
+//static void printTexts();
 
 static unsigned char player_loadY;
 static unsigned char game_difficulty; 
-
-
 
 void screen_diff_screen_load()
 {
@@ -48,6 +46,12 @@ void screen_diff_screen_load()
 	engine_graphics_manager_sea();
 	devkit_SMS_displayOn();
 
+	engine_font_manager_text( "SELECT  DIFFICULTY", 7, SHARE_TEXT_ROW + 0 );
+	engine_font_manager_text( "EASIER", CURSOR_X + 3, SHARE_TEXT_ROW + 1 );
+	engine_font_manager_text( "NORMAL", CURSOR_X + 3, SHARE_TEXT_ROW + 2 );
+	engine_font_manager_text( "HARDER", CURSOR_X + 3, SHARE_TEXT_ROW + 3 );
+	engine_font_manager_text( "INSANE", CURSOR_X + 3, SHARE_TEXT_ROW + 4 );
+
 
 	engine_level_manager_draw_point( go->game_point );
 	engine_scroll_manager_load( go->game_point, lo->level_size );
@@ -55,7 +59,7 @@ void screen_diff_screen_load()
 
 	setupPlayer();
 	printCursor();
-	printTexts();
+//	printTexts();
 	engine_player_manager_draw();
 }
 
@@ -138,26 +142,50 @@ static void printCursor()
 	unsigned char index;
 	for( index = 0; index < MAX_DIFFICULTY; index++ )
 	{
-		engine_font_manager_char( ' ', CURSOR_X, SHARE_TEXT_ROW_ + index + 1 );
+		engine_font_manager_char( ' ', CURSOR_X, SHARE_TEXT_ROW + index + 1 );
 	}
 
-	engine_font_manager_char( '>', CURSOR_X, SHARE_TEXT_ROW_ + game_difficulty + 1 );
+	engine_font_manager_char( '>', CURSOR_X, SHARE_TEXT_ROW + game_difficulty + 1 );
 }
 
-static void printTexts()
-{
-	unsigned char index;
-	engine_util_manager_locale_texts( 5, 7, SHARE_TEXT_ROW_ );
-	for( index = 0; index < MAX_DIFFICULTY; index++ )
-	{
-		engine_font_manager_text( ( unsigned char * ) locale_object_difficulty[ index ], CURSOR_X + 3, SHARE_TEXT_ROW_ + index + 1 );
-	}
-
-	//engine_font_manager_text( "EASIER", 15, 4 );
-	//engine_font_manager_text( "NORMAL", 15, 5 );
-	//engine_font_manager_text( "HARDER", 15, 6 );
-	//engine_font_manager_text( "INSANE", 15, 7 );
-	//engine_font_manager_text( "[WORLD[[[[ROUND[[[[POINT[[/[[", 2, 5 );
-	//engine_font_manager_text( "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX", 2, 5 );
-	//engine_font_manager_text( " EASIER NORMAL  HARDER INSANE", 2, 3 );
-}
+//static void printTexts()
+//{
+//	//unsigned char index;
+//	//unsigned char *text;
+//	//engine_util_manager_locale_texts( 5, 7, SHARE_TEXT_ROW + 0 );
+//
+//	// Weird - for some reason I was getting graphics glitches on real HW - so hard code text for now.
+//	engine_font_manager_text( "SELECT  DIFFICULTY", 7, SHARE_TEXT_ROW + 0 );
+//	engine_font_manager_text( "EASIER", CURSOR_X + 3, SHARE_TEXT_ROW + 1 );
+//	engine_font_manager_text( "NORMAL", CURSOR_X + 3, SHARE_TEXT_ROW + 2 );
+//	engine_font_manager_text( "HARDER", CURSOR_X + 3, SHARE_TEXT_ROW + 3 );
+//	engine_font_manager_text( "INSANE", CURSOR_X + 3, SHARE_TEXT_ROW + 4 );
+//
+//	//index = 3;
+//	//text = ( unsigned char * ) locale_object_difficulty[ index ];
+//	//engine_font_manager_text( text, CURSOR_X + 3, SHARE_TEXT_ROW + index + 1 );
+//	//index = 1;
+//	//text = ( unsigned char * ) locale_object_difficulty[ index ];
+//	//engine_font_manager_text( text, CURSOR_X + 3, SHARE_TEXT_ROW + index + 1 );
+//	//index = 2;
+//	//text = ( unsigned char * ) locale_object_difficulty[ index ];
+//	//engine_font_manager_text( text, CURSOR_X + 3, SHARE_TEXT_ROW + index + 1 );
+//	//index = 0;
+//	//text = ( unsigned char * ) locale_object_difficulty[ index ];
+//	//engine_font_manager_text( text, CURSOR_X + 3, SHARE_TEXT_ROW + index + 1 );
+//
+//	//for( index = 0; index < MAX_DIFFICULTY; index++ )
+//	//{
+//		//text = ( unsigned char * ) locale_object_difficulty[ index ];
+//		//engine_font_manager_text( text, CURSOR_X + 3, SHARE_TEXT_ROW + index + 3 );
+//		//engine_font_manager_text( ( unsigned char * ) locale_object_difficulty[ index ], CURSOR_X + 3, SHARE_TEXT_ROW + index + 1 );
+//	//}
+//
+//	//engine_font_manager_text( "EASIER", 15, 4 );
+//	//engine_font_manager_text( "NORMAL", 15, 5 );
+//	//engine_font_manager_text( "HARDER", 15, 6 );
+//	//engine_font_manager_text( "INSANE", 15, 7 );
+//	//engine_font_manager_text( "[WORLD[[[[ROUND[[[[POINT[[/[[", 2, 5 );
+//	//engine_font_manager_text( "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX", 2, 5 );
+//	//engine_font_manager_text( " EASIER NORMAL  HARDER INSANE", 2, 3 );
+//}

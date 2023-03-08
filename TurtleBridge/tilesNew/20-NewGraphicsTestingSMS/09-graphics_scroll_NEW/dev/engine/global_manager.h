@@ -32,7 +32,7 @@
 #define INVALID_INDEX		-1
 
 #define TILE_IMAGE_SCREEN	144
-#define SHARE_TEXT_ROW_		3
+#define SHARE_TEXT_ROW		3
 
 // Delay
 #define NORMAL_DELAY		50
