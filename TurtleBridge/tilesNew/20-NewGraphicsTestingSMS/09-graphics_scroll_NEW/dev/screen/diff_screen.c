@@ -24,19 +24,8 @@ static void printTexts();
 
 static unsigned char player_loadY;
 static unsigned char game_difficulty; 
-//static unsigned char cursorX[] = { 2, 11, 20, 24 };
-//static unsigned char cursorIdx;
 
-static void setupPlayer()
-{
-	struct_player_object *po = &global_player_object;
-	struct_game_object *go = &global_game_object;
 
-	engine_player_manager_initX( game_difficulty, go->game_world );
-	engine_player_manager_loadX( go->game_point );
-	player_loadY = level_platforms[ po->lookX ];
-	engine_player_manager_loadY( player_loadY );
-}
 
 void screen_diff_screen_load()
 {
@@ -61,25 +50,13 @@ void screen_diff_screen_load()
 
 
 	engine_level_manager_draw_point( go->game_point );
-
-	// TODO revert the hard coded zero for testing
-	//engine_player_manager_initX( go->game_difficulty, go->game_world );
-	//engine_player_manager_loadX( go->game_point );
-	//player_loadY = level_platforms[ po->lookX ];
-	//engine_player_manager_loadY( player_loadY );
-	//engine_player_manager_loadY( 0 );
-
 	engine_scroll_manager_load( go->game_point, lo->level_size );
 
 
-	//engine_player_manager_loadY( 0 );
 	setupPlayer();
-	engine_player_manager_draw();
-
-	//engine_font_manager_text( ( unsigned char * ) locale_object_difficulty[ game_difficulty ], po->posnX / 8 - 2, player_loadY - 6 );
-	printTexts();
 	printCursor();
-	//cursorIdx = game_difficulty;
+	printTexts();
+	engine_player_manager_draw();
 }
 
 void screen_diff_screen_update( unsigned char *screen_type )
@@ -130,7 +107,8 @@ void screen_diff_screen_update( unsigned char *screen_type )
 		// TODO sfx
 		//engine_player_manager_draw();
 		engine_game_manager_set_difficulty( game_difficulty );
-		*screen_type = screen_type_beat;
+		//*screen_type = screen_type_beat;
+		*screen_type = screen_type_level;
 		return;
 	}
 
@@ -141,48 +119,16 @@ void screen_diff_screen_update( unsigned char *screen_type )
 	*screen_type = screen_type_diff;
 }
 
-//void screen_diff_screen_updateX( unsigned char *screen_type )
-//{
-//	struct_game_object *go = &global_game_object;
-//	struct_player_object *po = &global_player_object;
-//	unsigned char input;
-//
-//	input = engine_input_manager_hold( input_type_left );
-//	if( input && game_difficulty > 0 )
-//	{
-//		engine_util_manager_locale_blank( 1, po->posnX / 8 - 2, player_loadY - 6 );
-//		game_difficulty--;
-//		engine_player_manager_initX( game_difficulty, go->game_world );
-//		engine_font_manager_text( ( unsigned char * ) locale_object_difficulty[ game_difficulty ], po->posnX / 8 - 2, player_loadY - 6 );
-//	}
-//
-//	input = engine_input_manager_hold( input_type_right );
-//	if( input && game_difficulty <= 2 )
-//	{
-//		engine_util_manager_locale_blank( 1, po->posnX / 8 - 2, player_loadY - 6 );
-//		game_difficulty++;
-//		engine_player_manager_initX( game_difficulty, go->game_world );
-//		engine_font_manager_text( ( unsigned char * ) locale_object_difficulty[ game_difficulty ], po->posnX / 8 - 2, player_loadY - 6 );
-//	}
-//
-//	input = engine_input_manager_hold( input_type_fire1 );
-//	if( input )
-//	{
-//		engine_util_manager_locale_blank( 1, po->posnX / 8 - 2, player_loadY - 6 );
-//		engine_util_manager_locale_blank( 2, 7, 5 );
-//		// TODO sfx
-//		//engine_player_manager_draw();
-//		engine_game_manager_set_difficulty( game_difficulty );
-//		*screen_type = screen_type_beat;
-//		return;
-//	}
-//
-//	// TODO - navigate backwards.
-//	//input = engine_input_manager_hold( input_type_fire2 );
-//
-//	engine_player_manager_draw();
-//	*screen_type = screen_type_diff;
-//}
+static void setupPlayer()
+{
+	struct_player_object *po = &global_player_object;
+	struct_game_object *go = &global_game_object;
+
+	engine_player_manager_initX( game_difficulty, go->game_world );
+	engine_player_manager_loadX( go->game_point );
+	player_loadY = level_platforms[ po->lookX ];
+	engine_player_manager_loadY( player_loadY );
+}
 
 static void printCursor()
 {
