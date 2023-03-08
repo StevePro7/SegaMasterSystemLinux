@@ -28,7 +28,7 @@ void engine_debug_manager_initgame()
 	go->game_round = 0;
 	// 9 = turtles
 	// 3 = long512
-	go->game_level = 2;
+	go->game_level = 3;
 	//go->game_level = 17;// 64x screens
 	//go->game_level = 19;	// testing large jumps
 

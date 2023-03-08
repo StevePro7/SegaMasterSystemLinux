@@ -32,17 +32,20 @@ void screen_diff_screen_load()
 	engine_player_manager_initX( go->game_difficulty, go->game_world );
 
 
+	//engine_graphics_manager_common();
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();
 	engine_content_manager_sprite();
-
 	engine_graphics_manager_title();
 	engine_graphics_manager_sea();
+	devkit_SMS_displayOn();
+
 
 	engine_level_manager_draw_point( go->game_point );
 	engine_player_manager_loadX( go->game_point );
 
+	// TODO revert the hard coded zero for testing
 	//player_loadY = level_platforms[ po->lookX ];
 	//engine_player_manager_loadY( player_loadY );
 	engine_player_manager_loadY( 0 );
@@ -50,9 +53,7 @@ void screen_diff_screen_load()
 	engine_font_manager_text( ( unsigned char * ) locale_object_difficulty[ game_difficulty ], po->posnX / 8 - 2, player_loadY - 6 );
 	engine_player_manager_draw();
 
-	engine_util_manager_locale_texts( 5, 7, 5 );
-	devkit_SMS_displayOn();
-
+	engine_util_manager_locale_texts( 5, 7, 7 );
 	engine_scroll_manager_load( go->game_point, lo->level_size );
 }
 
