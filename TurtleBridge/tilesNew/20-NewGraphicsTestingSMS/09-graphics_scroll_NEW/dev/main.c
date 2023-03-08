@@ -94,7 +94,7 @@ static void start()
 	//open_screen_type = screen_type_cont;
 	
 	//open_screen_type = screen_type_func;
-	//open_screen_type = screen_type_start;
+	open_screen_type = screen_type_start;
 	//open_screen_type = screen_type_diff;
 	
 	//open_screen_type = screen_type_demo;
