@@ -47,21 +47,26 @@ void screen_start_screen_load()
 	flag = true;
 }
 
+// TODO add the cheat detect here...
 void screen_start_screen_update( unsigned char *screen_type )
 {
+	struct_hack_object *ho = &global_hack_object;
 	//unsigned char input; 
 	delay = engine_delay_manager_update();
 	if( delay )
 	{
-		flag = !flag;
-		if( flag )
+		if( !ho->hack_delay )
 		{
-			engine_util_manager_locale_texts( 4, 9, 7 );
-		}
-		else
-		{
-			//engine_font_manager_text( LOCALE_BLANK14, 9, 7 );
-			engine_util_manager_locale_blank( 0, 9, 7 );
+			flag = !flag;
+			if( flag )
+			{
+				engine_util_manager_locale_texts( 4, 9, 7 );
+			}
+			else
+			{
+				//engine_font_manager_text( LOCALE_BLANK14, 9, 7 );
+				engine_util_manager_locale_blank( 0, 9, 7 );
+			}
 		}
 	}
 
