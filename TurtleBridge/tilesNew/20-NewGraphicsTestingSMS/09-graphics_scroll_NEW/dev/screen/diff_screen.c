@@ -15,7 +15,9 @@
 #include "../devkit/_sms_manager.h"
 #include "../banks/bank2.h"
 
+#define CURSOR_X	12
 
+static void printCursor();
 static void printTexts();
 
 static unsigned char player_loadY;
@@ -34,7 +36,6 @@ void screen_diff_screen_load()
 
 	engine_level_manager_init( go->game_level );
 	game_difficulty = go->game_difficulty;
-	
 
 
 	//engine_graphics_manager_common();
@@ -56,8 +57,6 @@ void screen_diff_screen_load()
 	//engine_player_manager_loadY( player_loadY );
 	//engine_player_manager_loadY( 0 );
 
-	
-	
 	engine_scroll_manager_load( go->game_point, lo->level_size );
 
 	engine_player_manager_initX( go->game_difficulty, go->game_world );
@@ -69,9 +68,9 @@ void screen_diff_screen_load()
 
 	//engine_font_manager_text( ( unsigned char * ) locale_object_difficulty[ game_difficulty ], po->posnX / 8 - 2, player_loadY - 6 );
 	printTexts();
+	printCursor();
 	//cursorIdx = game_difficulty;
 }
-
 
 void screen_diff_screen_update( unsigned char *screen_type )
 {
@@ -159,13 +158,30 @@ void screen_diff_screen_update( unsigned char *screen_type )
 //	*screen_type = screen_type_diff;
 //}
 
+static void printCursor()
+{
+	unsigned char index;
+	for( index = 0; index < MAX_DIFFICULTY; index++ )
+	{
+		engine_font_manager_char( ' ', CURSOR_X, SHARE_TEXT_ROW_ + index + 1 );
+	}
+
+	engine_font_manager_char( '>', CURSOR_X, SHARE_TEXT_ROW_ + game_difficulty + 1 );
+}
+
 static void printTexts()
 {
-	engine_util_manager_locale_texts( 5, 7, 3 );
-	engine_font_manager_text( "EASIER", 15, 4 );
-	engine_font_manager_text( "NORMAL", 15, 5 );
-	engine_font_manager_text( "HARDER", 15, 6 );
-	engine_font_manager_text( "INSANE", 15, 7 );
+	unsigned char index;
+	engine_util_manager_locale_texts( 5, 7, SHARE_TEXT_ROW_ );
+	for( index = 0; index < MAX_DIFFICULTY; index++ )
+	{
+		engine_font_manager_text( ( unsigned char * ) locale_object_difficulty[ index ], CURSOR_X + 3, SHARE_TEXT_ROW_ + index + 1 );
+	}
+
+	//engine_font_manager_text( "EASIER", 15, 4 );
+	//engine_font_manager_text( "NORMAL", 15, 5 );
+	//engine_font_manager_text( "HARDER", 15, 6 );
+	//engine_font_manager_text( "INSANE", 15, 7 );
 	//engine_font_manager_text( "[WORLD[[[[ROUND[[[[POINT[[/[[", 2, 5 );
 	//engine_font_manager_text( "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX", 2, 5 );
 	//engine_font_manager_text( " EASIER NORMAL  HARDER INSANE", 2, 3 );
