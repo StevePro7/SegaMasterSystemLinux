@@ -18,7 +18,7 @@
 #include "../banks/bank2.h"
 #include <stdbool.h>
 
-#define STARTING_SCROLLING		0
+#define STARTING_SCROLLING		1
 
 static unsigned char screen_intro_screen_delay;
 static unsigned char cheat_count;
@@ -27,15 +27,16 @@ static bool flag;
 
 void screen_start_screen_load()
 {
+	//engine_graphics_manager_common();
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();
 	engine_content_manager_sprite();
 	engine_graphics_manager_title();
 	engine_graphics_manager_sea();
-	engine_util_manager_locale_texts( 4, 9, 7 );
 	devkit_SMS_displayOn();
 
+	//engine_util_manager_locale_texts( 4, 9, 7 );
 	if( STARTING_SCROLLING )
 	{
 		engine_scroll_manager_init();

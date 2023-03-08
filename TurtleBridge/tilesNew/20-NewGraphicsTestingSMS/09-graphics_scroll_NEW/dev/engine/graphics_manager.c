@@ -1,4 +1,6 @@
 #include "graphics_manager.h"
+#include "asm_manager.h"
+#include "content_manager.h"
 #include "enum_manager.h"
 #include "global_manager.h"
 #include "tile_manager.h"
@@ -13,6 +15,17 @@
 #else
 #pragma disable_warning 261
 #endif
+
+void engine_graphics_manager_common()
+{
+	devkit_SMS_displayOff();
+	engine_asm_manager_clear_VRAM();
+	engine_content_manager_bggame();
+	engine_content_manager_sprite();
+	engine_graphics_manager_title();
+	engine_graphics_manager_sea();
+	devkit_SMS_displayOn();
+}
 
 void engine_graphics_manager_level( unsigned char cloud_formation )
 {
