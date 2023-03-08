@@ -62,6 +62,7 @@ void screen_level_screen_load()
 	printStats();
 	engine_font_manager_char( '>', cursorX[ cursorIdx ], DIFFICULTY_ROW );
 	
+	// TODO confirm that will NOT draw player here 
 	//engine_player_manager_initX( go->game_difficulty, go->game_world );
 	//engine_player_manager_loadX( go->game_point );
 	//player_loadY = level_platforms[ po->lookX ];

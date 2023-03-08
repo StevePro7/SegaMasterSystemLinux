@@ -15,8 +15,8 @@ void engine_debug_manager_initgame()
 	struct_player_object *po = &global_player_object;
 	struct_game_object *go = &global_game_object;
 	//go->game_difficulty = difficulty_type_easier;
-	//go->game_difficulty = difficulty_type_normal;
-	go->game_difficulty = difficulty_type_harder;
+	go->game_difficulty = difficulty_type_normal;
+	//go->game_difficulty = difficulty_type_harder;
 	//go->game_difficulty = difficulty_type_insane;
 
 	go->game_world = 1;
@@ -28,7 +28,7 @@ void engine_debug_manager_initgame()
 	go->game_round = 0;
 	// 9 = turtles
 	// 3 = long512
-	go->game_level = 3;
+	go->game_level = 2;
 	//go->game_level = 17;// 64x screens
 	//go->game_level = 19;	// testing large jumps
 
