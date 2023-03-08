@@ -17,7 +17,7 @@ void engine_debug_manager_initgame()
 	go->game_difficulty = difficulty_type_easier;
 	//go->game_difficulty = difficulty_type_normal;
 	//go->game_difficulty = difficulty_type_harder;
-	go->game_difficulty = difficulty_type_insane;
+	//go->game_difficulty = difficulty_type_insane;
 
 	go->game_world = 1;
 	go->game_point = 1;
@@ -29,7 +29,7 @@ void engine_debug_manager_initgame()
 	// 9 = turtles
 	// 3 = long512
 	go->game_level = 2;
-	go->game_level = 3;
+	//go->game_level = 3;
 	//go->game_level = 17;// 64x screens
 	//go->game_level = 19;	// testing large jumps
 
