@@ -493,7 +493,28 @@ void engine_player_manager_pass( unsigned char player_passX, unsigned char playe
 
 void engine_player_manager_dead( unsigned char player_deadX )
 {
+	struct_player_object *po = &global_player_object;
+	signed int deltaY;
 
+	po->posnX += player_deadX;
+	if( po->posnX >= LEVELS_SIDE )
+	{
+		po->posnX = LEVELS_SIDE;
+	}
+
+	po->drawX = po->posnX - 16;
+	if( po->posnY != PLAYER_DEAD )
+	{
+		deltaY = engine_player_manager_get_deltaY();
+		deltaY >>= 1;
+		engine_player_manager_vert( deltaY );
+	}
+
+	if( po->posnY >= PLAYER_DEAD )
+	{
+		po->posnY >= PLAYER_DEAD;
+		updatePlayerY();
+	}
 }
 
 // TODO delete this as replaced by engine_player_manager_animate()

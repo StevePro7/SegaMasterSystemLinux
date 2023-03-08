@@ -9,17 +9,17 @@
 #define PIXELS_WIDE			256
 #define PIXELS_HIGH			192
 #define LEVELS_SIDE			240
-#define DEATH_PX_HI			224
-#define OCEAN_PX_HI			168		// this is the Y value which will switch to death sequence
+#define PLAYER_DEAD			224
+//#define DEATH_PX_HI			224		// TODO delete
+//#define OCEAN_PX_HI			168		// TODO delete
 
 #define SCREEN_WIDE			32
 #define SCREEN_LESS_ONE		SCREEN_WIDE - 1
 #define SCREEN_HIGH			24
 #define OCEANS_HIGH			3		// TODO - in gfx mgr only?
 
-//#define MAX_JUMPS			1024
-
-//#define WAVES_HIGH			21		// TODO
+//#define MAX_JUMPS			1024	// TODO delete
+//#define WAVES_HIGH		21		// TODO delete
 
 #define MAX_WOLRDS			5
 #define MAX_ROUNDS			8
