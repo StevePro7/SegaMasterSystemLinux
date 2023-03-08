@@ -18,7 +18,7 @@ void engine_graphics_manager_level( unsigned char cloud_formation )
 {
 	cloud_formation += 0;
 	//engine_graphics_manager_title();
-	engine_graphics_manager_clouds( cloud_formation );
+	//engine_graphics_manager_clouds( cloud_formation );
 	engine_graphics_manager_sea();
 }
 
