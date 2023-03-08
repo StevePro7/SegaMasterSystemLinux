@@ -62,11 +62,12 @@ void screen_diff_screen_load()
 void screen_diff_screen_update( unsigned char *screen_type )
 {
 	struct_player_object *po = &global_player_object;
-	unsigned char input;
+	unsigned char input1, input2;
 	bool updateDiff = false;
 
-	input = engine_input_manager_hold( input_type_up );
-	if( input )
+	input1 = engine_input_manager_hold( input_type_up );
+	input2 = engine_input_manager_hold( input_type_left );
+	if( input1 || input2 )
 	{
 		updateDiff = true;
 		if( 0 == game_difficulty )
@@ -79,8 +80,9 @@ void screen_diff_screen_update( unsigned char *screen_type )
 		}
 	}
 
-	input = engine_input_manager_hold( input_type_down );
-	if( input )
+	input1 = engine_input_manager_hold( input_type_right );
+	input2 = engine_input_manager_hold( input_type_down );
+	if( input1 || input2 )
 	{
 		updateDiff = true;
 		if( ( MAX_DIFFICULTY - 1 ) == game_difficulty )
@@ -99,22 +101,18 @@ void screen_diff_screen_update( unsigned char *screen_type )
 		setupPlayer();
 	}
 
-	input = engine_input_manager_hold( input_type_fire1 );
-	if( input )
+	input1 = engine_input_manager_hold( input_type_fire1 );
+	if( input1 )
 	{
-		//engine_util_manager_locale_blank( 1, po->posnX / 8 - 2, player_loadY - 6 );
-		//engine_util_manager_locale_blank( 2, 7, 5 );
 		// TODO sfx
 		//engine_player_manager_draw();
 		engine_game_manager_set_difficulty( game_difficulty );
-		//*screen_type = screen_type_beat;
 		*screen_type = screen_type_level;
 		return;
 	}
 
-	// TODO - navigate backwards.
-	input = engine_input_manager_hold( input_type_fire2 );
-	if( input )
+	input1 = engine_input_manager_hold( input_type_fire2 );
+	if( input1 )
 	{
 		*screen_type = screen_type_start;
 		return;

@@ -68,6 +68,12 @@ void screen_start_screen_update( unsigned char *screen_type )
 		*screen_type = screen_type_diff;
 		return;
 	}
+	input = engine_input_manager_hold( input_type_fire2 );
+	if( input )
+	{
+		*screen_type = screen_type_title;
+		return;
+	}
 
 	delay = engine_delay_manager_update();
 	if( delay )
