@@ -74,12 +74,12 @@ static void start()
 	engine_input_manager_init();
 	engine_tile_manager_init();
 
-	//open_screen_type = screen_type_splash;
-	//open_screen_type = screen_type_title;
+	open_screen_type = screen_type_splash;
+	open_screen_type = screen_type_title;
 	//open_screen_type = screen_type_option;
 	//open_screen_type = screen_type_func;
 	//open_screen_type = screen_type_test;
-	open_screen_type = screen_type_init;
+	//open_screen_type = screen_type_init;
 	//open_screen_type = screen_type_level;
 	//open_screen_type = screen_type_intro;
 	//open_screen_type = screen_type_play;
