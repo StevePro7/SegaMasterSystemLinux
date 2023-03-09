@@ -46,7 +46,7 @@ void screen_intro_screen_load()
 	//engine_font_manager_text( "INTRO SCREEN??", 10, 2 );
 
 	engine_scroll_manager_load( go->game_point, lo->level_size );
-	engine_scroll_manager_update( 0 );
+	//engine_scroll_manager_update( 0 );
 
 	complete = false;
 }
