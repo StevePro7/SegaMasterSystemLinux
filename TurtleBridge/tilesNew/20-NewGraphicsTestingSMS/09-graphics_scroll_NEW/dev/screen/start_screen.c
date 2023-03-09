@@ -33,13 +33,14 @@ static bool flag;
 void screen_start_screen_load()
 {
 	//engine_graphics_manager_common();
-	devkit_SMS_displayOff();
-	engine_asm_manager_clear_VRAM();
-	engine_content_manager_bggame();
-	engine_content_manager_sprite();
-	engine_graphics_manager_title();
-	engine_graphics_manager_sea();
-	devkit_SMS_displayOn();
+	//devkit_SMS_displayOff();
+	//engine_asm_manager_clear_VRAM();
+	//engine_content_manager_bggame();
+	//engine_content_manager_sprite();
+	//engine_graphics_manager_title();
+	//engine_graphics_manager_sea();
+	//devkit_SMS_displayOn();
+
 	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_NORMAL() );
 
 	engine_util_manager_locale_texts( 4, 9, 7 );
