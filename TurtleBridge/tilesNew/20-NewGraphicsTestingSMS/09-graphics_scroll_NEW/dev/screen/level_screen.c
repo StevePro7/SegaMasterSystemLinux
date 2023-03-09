@@ -32,7 +32,7 @@ void screen_level_screen_load()
 	struct_game_object *go = &global_game_object;
 
 	// TODO delete this.
-	engine_debug_manager_initgame();
+	//engine_debug_manager_initgame();
 	world = go->game_world;
 	round = go->game_round;
 	level = go->game_level;
@@ -40,14 +40,14 @@ void screen_level_screen_load()
 	cursorIdx = 0;
 
 
-	//engine_graphics_manager_common();
-	devkit_SMS_displayOff();
-	engine_asm_manager_clear_VRAM();
-	engine_content_manager_bggame();
-	engine_content_manager_sprite();
-	engine_graphics_manager_title();
-	engine_graphics_manager_sea();
-	devkit_SMS_displayOn();
+	engine_graphics_manager_common();
+	//devkit_SMS_displayOff();
+	//engine_asm_manager_clear_VRAM();
+	//engine_content_manager_bggame();
+	//engine_content_manager_sprite();
+	//engine_graphics_manager_title();
+	//engine_graphics_manager_sea();
+	//devkit_SMS_displayOn();
 
 
 	engine_level_manager_init( level );
@@ -155,20 +155,20 @@ void screen_level_screen_update( unsigned char *screen_type )
 		printStats();
 	}
 
-		input = engine_input_manager_hold( input_type_fire1 );
-		if( input )
-		{
-			engine_font_manager_text( "YES", 10, 10 );
-			//*screen_type = screen_type_beat;
-			//return;
-		}
+	input = engine_input_manager_hold( input_type_fire1 );
+	if( input )
+	{
+		engine_font_manager_text( "YES", 10, 10 );
+		//*screen_type = screen_type_beat;
+		//return;
+	}
 
-		input = engine_input_manager_hold( input_type_fire2 );
-		if( input )
-		{
-			*screen_type = screen_type_diff;
-			return;
-		}
+	input = engine_input_manager_hold( input_type_fire2 );
+	if( input )
+	{
+		*screen_type = screen_type_diff;
+		return;
+	}
 
 	engine_player_manager_draw();
 	*screen_type = screen_type_level;

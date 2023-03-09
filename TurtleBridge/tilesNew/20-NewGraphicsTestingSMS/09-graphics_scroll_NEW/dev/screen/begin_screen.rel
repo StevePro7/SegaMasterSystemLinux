@@ -1,51 +1,30 @@
 ;!FILE begin_screen.asm
 XL3
-H 9 areas 2A global symbols
+H 9 areas 15 global symbols
 M begin_screen
 O -mz80
-S _engine_graphics_manager_title Ref000000
-S _devkit_SMS_displayOn Ref000000
-S _engine_graphics_manager_sea Ref000000
 S .__.ABS. Def000000
-S _engine_content_manager_sprite Ref000000
 S _engine_debug_manager_initgame Ref000000
-S _devkit_SMS_displayOff Ref000000
-S _engine_asm_manager_clear_VRAM Ref000000
-S _engine_content_manager_bggame Ref000000
-A _CODE size 1F flags 0 addr 0
-S A$begin_screen$112 Def000018
-S A$begin_screen$113 Def000019
-S A$begin_screen$114 Def00001A
-S A$begin_screen$124 Def00001E
-S A$begin_screen$115 Def00001B
-S _screen_begin_screen_update Def000018
-S A$begin_screen$116 Def00001C
-S XG$screen_begin_screen_update$0$0 Def00001E
-S A$begin_screen$80 Def00000C
+A _CODE size A flags 0 addr 0
+S _screen_begin_screen_update Def000003
+S XG$screen_begin_screen_update$0$0 Def000009
+S A$begin_screen$80 Def000006
 S G$screen_begin_screen_load$0$0 Def000000
-S A$begin_screen$72 Def000006
+S A$begin_screen$81 Def000007
 S C$begin_screen.c$10$0_0$86 Def000000
 S A$begin_screen$64 Def000000
-S A$begin_screen$84 Def00000F
-S A$begin_screen$76 Def000009
-S C$begin_screen.c$22$1_0$86 Def000015
 S C$begin_screen.c$13$1_0$86 Def000000
-S A$begin_screen$68 Def000003
-S C$begin_screen.c$30$1_0$88 Def00001E
-S C$begin_screen.c$23$1_0$86 Def000015
-S C$begin_screen.c$14$1_0$86 Def000003
-S C$begin_screen.c$15$1_0$86 Def000006
-S A$begin_screen$88 Def000012
-S C$begin_screen.c$16$1_0$86 Def000009
-S C$begin_screen.c$17$1_0$86 Def00000C
-S A$begin_screen$99 Def000015
-S C$begin_screen.c$25$1_0$88 Def000018
-S C$begin_screen.c$18$1_0$86 Def00000F
-S C$begin_screen.c$19$1_0$86 Def000012
-S C$begin_screen.c$27$1_0$88 Def000018
+S A$begin_screen$77 Def000003
+S C$begin_screen.c$30$1_0$88 Def000009
+S C$begin_screen.c$23$1_0$86 Def000000
+S A$begin_screen$78 Def000004
+S A$begin_screen$79 Def000005
+S A$begin_screen$89 Def000009
+S C$begin_screen.c$25$1_0$88 Def000003
+S C$begin_screen.c$27$1_0$88 Def000003
 S _screen_begin_screen_load Def000000
-S XG$screen_begin_screen_load$0$0 Def000015
-S G$screen_begin_screen_update$0$0 Def000018
+S XG$screen_begin_screen_load$0$0 Def000000
+S G$screen_begin_screen_update$0$0 Def000003
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -56,13 +35,9 @@ A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
-T 00 00 00 CD 00 00 CD 00 00 CD 00 00 CD
-R 00 00 00 00 02 04 06 00 02 07 07 00 02 0A 08 00
-T 0A 00 00 00 00 CD 00 00 CD 00 00 CD
-R 00 00 00 00 02 03 04 00 02 06 00 00 02 09 02 00
-T 13 00 00 00 00 C3 00 00
-R 00 00 00 00 02 03 01 00 02 06 05 00
-T 18 00 00
+T 00 00 00 C3 00 00
+R 00 00 00 00 02 04 01 00
+T 03 00 00
 R 00 00 00 00
-T 18 00 00 C1 E1 E5 C5 36 06 C9
+T 03 00 00 C1 E1 E5 C5 36 06 C9
 R 00 00 00 00

@@ -9,17 +9,17 @@
 
 void screen_begin_screen_load()
 {
-	//engine_graphics_manager_common();
-	devkit_SMS_displayOff();
-	engine_asm_manager_clear_VRAM();
-	engine_content_manager_bggame();
-	engine_content_manager_sprite();
-	engine_graphics_manager_title();
-	engine_graphics_manager_sea();
-	devkit_SMS_displayOn();
-
 	// TODO delete this.
 	engine_debug_manager_initgame();
+
+	//engine_graphics_manager_common();
+	//devkit_SMS_displayOff();
+	//engine_asm_manager_clear_VRAM();
+	//engine_content_manager_bggame();
+	//engine_content_manager_sprite();
+	//engine_graphics_manager_title();
+	//engine_graphics_manager_sea();
+	//devkit_SMS_displayOn();
 }
 
 void screen_begin_screen_update( unsigned char *screen_type )

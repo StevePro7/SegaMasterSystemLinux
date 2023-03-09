@@ -34,10 +34,7 @@ void screen_diff_screen_load()
 	// TODO delete this.
 	//engine_debug_manager_initgame();
 
-	engine_level_manager_init( go->game_level );
-	game_difficulty = go->game_difficulty;
-
-	//engine_graphics_manager_common();
+	engine_graphics_manager_common();
 	//devkit_SMS_displayOff();
 	//engine_asm_manager_clear_VRAM();
 	//engine_content_manager_bggame();
@@ -45,6 +42,7 @@ void screen_diff_screen_load()
 	//engine_graphics_manager_title();
 	//engine_graphics_manager_sea();
 	//devkit_SMS_displayOn();
+
 
 	//	TODO - refactor and still work??
 	engine_font_manager_text( "SELECT  DIFFICULTY", 7, SHARE_TEXT_ROW + 0 );
@@ -54,8 +52,11 @@ void screen_diff_screen_load()
 	engine_font_manager_text( "INSANE", CURSOR_X + 3, SHARE_TEXT_ROW + 4 );
 
 
+	game_difficulty = go->game_difficulty;
+
+	engine_level_manager_init( go->game_level );
 	engine_level_manager_draw_point( go->game_point );
-	engine_scroll_manager_load( go->game_point, lo->level_size );
+	//engine_scroll_manager_load( go->game_point, lo->level_size );
 
 
 	setupPlayer();
@@ -119,6 +120,7 @@ void screen_diff_screen_update( unsigned char *screen_type )
 	input1 = engine_input_manager_hold( input_type_fire2 );
 	if( input1 )
 	{
+		engine_game_manager_set_difficulty( game_difficulty );
 		*screen_type = screen_type_start;
 		return;
 	}
