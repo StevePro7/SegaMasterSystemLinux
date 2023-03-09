@@ -23,10 +23,10 @@
 static bool complete;
 static signed int deltaY;
 
-static unsigned int totalX;
-static unsigned char frameX;
-static unsigned char flag;
-static unsigned char scroll_count;
+//static unsigned int //totalX;
+//static unsigned char //frameX;
+//static unsigned char //flag;
+//static unsigned char scroll_count;
 
 void screen_play_screen_load()
 {
@@ -39,10 +39,10 @@ void screen_play_screen_load()
 	complete = false;
 	deltaY = 0;
 
-	totalX = 0;
-	frameX = 0;
-	flag = 0;
-	scroll_count = 0;
+	//totalX = 0;
+	//frameX = 0;
+	//flag = 0;
+	//scroll_count = 0;
 }
 
 void screen_play_screen_update( unsigned char *screen_type )
@@ -155,16 +155,16 @@ void screen_play_screen_update( unsigned char *screen_type )
 
 		//if( po->player_state == player_state_isintheair )
 		//{
-		//	totalX += deltaX;
-		//	frameX++;
+		//	//totalX += deltaX;
+		//	//frameX++;
 		//}
 		//else
 		//{
-		//	if( fo->frame_count > 1 && po->player_state == player_state_isonground && !flag )
+		//	if( fo->frame_count > 1 && po->player_state == player_state_isonground && !//flag )
 		//	{
-		//		flag = 1;
-		//		engine_font_manager_data( totalX, 30, 2 );
-		//		engine_font_manager_data( frameX, 30, 3 );
+		//		//flag = 1;
+		//		engine_font_manager_data( //totalX, 30, 2 );
+		//		engine_font_manager_data( //frameX, 30, 3 );
 		//	}
 		//}
 
@@ -185,10 +185,10 @@ void screen_play_screen_update( unsigned char *screen_type )
 				if( scroll_state_tile == scroll_state )
 				{
 					engine_level_manager_draw_column( so->scrollColumn );
-					if (fo->frame_count == 0 || po->player_state == 1 )
-					{
-						scroll_count++;		// TODO delete as only used for impossible jump debugging
-					}
+					//if (fo->frame_count == 0 || po->player_state == 1 )
+					//{
+					//	scroll_count++;		// TODO delete as only used for impossible jump debugging
+					//}
 				}
 				else if( scroll_state_comp == scroll_state )
 				{

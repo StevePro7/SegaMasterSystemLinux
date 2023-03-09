@@ -13,6 +13,9 @@ void game_controller_setup_player( unsigned char game_difficulty, unsigned char 
 	player_loadY = level_platforms[ po->lookX ];
 	engine_player_manager_loadY( player_loadY );
 	engine_player_manager_draw();
+
+	// do I want this here?
+	//engine_collision_manager_init( go->game_difficulty );
 }
 
 void Foo()

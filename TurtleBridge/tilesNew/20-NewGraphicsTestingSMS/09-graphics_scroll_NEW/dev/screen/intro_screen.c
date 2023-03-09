@@ -1,25 +1,17 @@
 #include "intro_screen.h"
-//#include "../engine/asm_manager.h"
-////#include "../engine/audio_manager.h"
-//#include "../engine/collision_manager.h"
-//#include "../engine/content_manager.h"
-//#include "../engine/command_manager.h"
-//#include "../engine/debug_manager.h"
+#include "../engine/collision_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/game_manager.h"
 //#include "../engine/global_manager.h"
 #include "../engine/graphics_manager.h"
-//#include "../engine/input_manager.h"
+#include "../engine/input_manager.h"
 #include "../engine/level_manager.h"
 #include "../engine/player_manager.h"
-//#include "../engine/scroll_manager.h"
-//#include "../engine/storage_manager.h"
-//#include "../engine/timer_manager.h"
-//#include "../engine/util_manager.h"
+#include "../engine/scroll_manager.h"
 //#include "../devkit/_sms_manager.h"
 #include "../controller.h"
-//#include <stdbool.h>
+#include <stdbool.h>
 //
 //#ifdef _CONSOLE
 //#else
@@ -27,66 +19,26 @@
 //#pragma disable_warning 261
 //#endif
 //
-//static bool complete;
-//static signed int deltaY;
+static bool complete;
 
 void screen_intro_screen_load()
 {
+	struct_level_object *lo = &global_level_object;
 	struct_game_object *go = &global_game_object;
 
 	engine_graphics_manager_common();
+
 	engine_level_manager_init( go->game_level );
 	engine_level_manager_draw_point( go->game_point );
 
 	game_controller_setup_player( go->game_difficulty, go->game_world, go->game_point );
-	engine_font_manager_text( "INTRO SCREEN??", 10, 2 );
+	engine_collision_manager_init( go->game_difficulty );
+	//engine_font_manager_text( "INTRO SCREEN??", 10, 2 );
 
-	//// init_screen
-	//struct_player_object *po = &global_player_object;
-	//struct_level_object *lo = &global_level_object;
-	
-	//unsigned char player_loadY;
-	//unsigned char cloud_formation = engine_random_manager_next( SPRITE_TILES );
+	engine_scroll_manager_load( go->game_point, lo->level_size );
+	engine_scroll_manager_update( 0 );
 
-	//// TODO delete
-	//engine_debug_manager_initgame();
-	//// TODO delete
-
-	//engine_level_manager_init( go->game_level );
-	//engine_player_manager_initX( go->game_difficulty, go->game_world );
-	//engine_collision_manager_init( go->game_difficulty );
-
-	//// load_screen
-	//devkit_SMS_displayOff();
-	//engine_asm_manager_clear_VRAM();
-	//engine_content_manager_bggame();
-	//engine_content_manager_sprite();
-
-	//engine_graphics_manager_level( cloud_formation );
-
-	//engine_level_manager_draw_point( go->game_point );
-	//engine_player_manager_loadX( go->game_point );
-
-	//player_loadY = level_platforms[ po->lookX ];
-	//engine_player_manager_loadY( player_loadY );
-	////engine_command_manager_init();		TODO delete - dup
-	//engine_player_manager_draw();
-	//devkit_SMS_displayOn();
-
-	//engine_scroll_manager_load( go->game_point, lo->level_size );
-	//engine_scroll_manager_update( 0 );
-
-
-	//// intro_screen
-	//engine_frame_manager_load();
-	//engine_frame_manager_draw();
-	//engine_command_manager_init();
-	////engine_command_manager_draw();
-	//engine_font_manager_text( "INTROX SCREEN", 10, 2 );
-
-	//engine_scroll_manager_update( 0 );
-	//complete = false;
-	//deltaY = 0;
+	complete = false;
 }
 
 void screen_intro_screen_update( unsigned char *screen_type )
