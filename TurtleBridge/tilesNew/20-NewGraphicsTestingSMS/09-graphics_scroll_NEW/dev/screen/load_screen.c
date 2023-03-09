@@ -45,17 +45,20 @@ void screen_load_screen_load()
 	//engine_graphics_manager_clouds( go->game_cloud );
 
 	engine_level_manager_draw_point( go->game_point );
+
+	//engine_player_manager_initX( game_difficulty, go->game_world );
 	engine_player_manager_loadX( go->game_point );
-	
 	player_loadY = level_platforms[ po->lookX ];
 	engine_player_manager_loadY( player_loadY );
+	engine_player_manager_draw();
+
 	engine_command_manager_init();
 	//engine_command_manager_load();		// TODO remove
 
 	// TODO delete 
 	//engine_player_manager_loadY( 18 );
 	// TODO delete 
-	engine_player_manager_draw();
+	
 
 	// TODO delete
 	//engine_debug_manager_printout();

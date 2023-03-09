@@ -138,6 +138,7 @@ static void setupPlayer()
 	engine_player_manager_loadX( go->game_point );
 	player_loadY = level_platforms[ po->lookX ];
 	engine_player_manager_loadY( player_loadY );
+	//engine_player_manager_draw();
 }
 
 static void printCursor()

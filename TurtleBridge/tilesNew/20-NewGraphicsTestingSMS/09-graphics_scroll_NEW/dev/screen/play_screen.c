@@ -33,8 +33,6 @@ void screen_play_screen_load()
 	engine_frame_manager_load();
 	//engine_frame_manager_draw();
 
-	//19-Feb-2023
-	// TODO - iron this out but IMPORTANT - I don't think I want to play music in same function as draw title etc. as causes screen flicker??
 	engine_scroll_manager_update( 0 );
 	engine_music_manager_play( 3 );
 	//engine_debug_manager_printout();
