@@ -6,7 +6,6 @@
 void game_controller_setup_player( unsigned char game_difficulty, unsigned char game_world, unsigned char game_point )
 {
 	struct_player_object *po = &global_player_object;
-	//struct_game_object *go = &global_game_object;
 	unsigned char player_loadY;
 
 	engine_player_manager_initX( game_difficulty, game_world );
@@ -14,6 +13,7 @@ void game_controller_setup_player( unsigned char game_difficulty, unsigned char 
 	player_loadY = level_platforms[ po->lookX ];
 	engine_player_manager_loadY( player_loadY );
 }
+
 void Foo()
 {
 	//struct_game_object *go = &global_game_object;

@@ -105,9 +105,9 @@ void engine_player_manager_loadY( unsigned char player_loadY )
 	else
 	{
 		po->posnY = player_loadY << 3;
+		po->player_frame = updatePlayerFrameFlyingToGround( po->player_frame );
 	}
 
-	//po->initY = po->posnY;		// TODO - don't think I need this
 	po->leapY = po->posnY << 8;
 	updatePlayerY();
 }
