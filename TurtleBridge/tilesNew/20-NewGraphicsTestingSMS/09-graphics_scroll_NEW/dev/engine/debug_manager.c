@@ -33,6 +33,7 @@ void engine_debug_manager_initgame()
 	go->game_level = 9;
 	//go->game_level = 17;// 64x screens
 	go->game_level = 19;	// testing large jumps
+	go->game_level = 0;
 
 	//go->game_level = 3;	// trees
 	//go->game_level = 7;	// trees

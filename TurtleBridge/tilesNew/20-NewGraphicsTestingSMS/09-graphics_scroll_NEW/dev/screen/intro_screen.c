@@ -12,7 +12,7 @@
 #include "../engine/graphics_manager.h"
 //#include "../engine/input_manager.h"
 #include "../engine/level_manager.h"
-//#include "../engine/player_manager.h"
+#include "../engine/player_manager.h"
 //#include "../engine/scroll_manager.h"
 //#include "../engine/storage_manager.h"
 //#include "../engine/timer_manager.h"
@@ -39,7 +39,7 @@ void screen_intro_screen_load()
 	engine_level_manager_draw_point( go->game_point );
 
 	game_controller_setup_player( go->game_difficulty, go->game_world, go->game_point );
-	engine_font_manager_text( "INTRO SCREEN...!!", 10, 2 );
+	engine_font_manager_text( "INTRO SCREEN??", 10, 2 );
 
 	//// init_screen
 	//struct_player_object *po = &global_player_object;
@@ -217,7 +217,7 @@ void screen_intro_screen_update( unsigned char *screen_type )
 	//		engine_scroll_manager_update( 0 );
 	//	}
 
-	//	engine_player_manager_draw();
+		engine_player_manager_draw();
 	//	//engine_debug_manager_printout();
 	//	//	engine_font_manager_data( deltaY, 30, 2 );
 	//	//	engine_font_manager_data( po->posnY, 30, 3 );
