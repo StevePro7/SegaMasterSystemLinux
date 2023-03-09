@@ -1,3 +1,4 @@
+// TODO - check includes
 #include "start_screen.h"
 #include "../engine/asm_manager.h"
 #include "../engine/audio_manager.h"
@@ -6,6 +7,7 @@
 #include "../engine/font_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/graphics_manager.h"
+#include "../engine/game_manager.h"
 #include "../engine/hack_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/level_manager.h"
@@ -68,15 +70,20 @@ void screen_start_screen_load()
 void screen_start_screen_update( unsigned char *screen_type )
 {
 	struct_hack_object *ho = &global_hack_object;
-	unsigned char input; 
+	unsigned char input;
+	unsigned char cloud;
 
 	input = engine_input_manager_hold( input_type_fire1 );
 	if( input )
 	{
 		// TODO riff
 		//engine_font_manager_text( "DIFF SCREEN", 10, 10 );
-		//*screen_type = screen_type_diff;
-		*screen_type = screen_type_intro;
+		*screen_type = screen_type_diff;
+
+		cloud = engine_random_manager_next( SPRITE_TILES );
+		engine_game_manager_set_cloud_form( cloud );
+
+		//*screen_type = screen_type_intro;
 		return;
 	}
 	input = engine_input_manager_hold( input_type_fire2 );
@@ -109,5 +116,6 @@ void screen_start_screen_update( unsigned char *screen_type )
 		//engine_scroll_manager_section( 1 );		// TODO delete
 	}
 
+	engine_random_manager_rand();
 	*screen_type = screen_type_start;
 }

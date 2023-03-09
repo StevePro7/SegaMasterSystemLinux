@@ -3,6 +3,7 @@
 #include "../engine/content_manager.h"
 #include "../engine/debug_manager.h"
 #include "../engine/enum_manager.h"
+//#include "../engine/font_manager.h"
 #include "../engine/game_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/graphics_manager.h"
@@ -11,12 +12,12 @@
 
 void screen_begin_screen_load()
 {
-	unsigned char cloud_form;
+	unsigned char cloud;
 
 	// TODO delete this.
 	engine_debug_manager_initgame();
-	cloud_form = engine_random_manager_next( SPRITE_TILES );
-	engine_game_manager_set_cloud_form( cloud_form );
+	cloud = engine_random_manager_next( SPRITE_TILES );
+	engine_game_manager_set_cloud_form( cloud );
 	// TODO delete this.
 
 	//engine_graphics_manager_common();

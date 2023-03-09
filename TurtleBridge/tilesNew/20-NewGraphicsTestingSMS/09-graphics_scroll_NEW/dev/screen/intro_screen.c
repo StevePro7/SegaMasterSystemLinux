@@ -34,7 +34,7 @@ void screen_intro_screen_load()
 	engine_content_manager_bggame();
 	engine_content_manager_sprite();
 	//engine_graphics_manager_title();
-	engine_graphics_manager_clouds( 127 );
+	engine_graphics_manager_clouds( go->game_cloud );
 	engine_graphics_manager_sea();
 	devkit_SMS_displayOn();
 
@@ -73,12 +73,14 @@ void screen_intro_screen_update( unsigned char *screen_type )
 	input0 = engine_input_manager_hold( input_type_fire1 );
 	if( input0 )
 	{
-		complete = true;
+		// TODO - forward onto game init.
+		*screen_type = screen_type_start;
+		return;
 	}
 
 	if( !complete )
 	{
-		deltaX = 4;
+		deltaX = 0;
 		input1 = engine_input_manager_move( input_type_left );
 		input2 = engine_input_manager_move( input_type_right );
 
@@ -116,7 +118,7 @@ void screen_intro_screen_update( unsigned char *screen_type )
 	{
 		engine_scroll_manager_update( 0 );
 		//engine_font_manager_text( "FINISH", 10, 10 );
-		*screen_type = screen_type_start;
+		//*screen_type = screen_type_start;
 		return;
 	}
 
