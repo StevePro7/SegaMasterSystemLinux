@@ -104,6 +104,7 @@ void screen_intro_screen_update( unsigned char *screen_type )
 				complete = scroll_state_comp == scroll_state;
 				if( complete )
 				{
+					// TODO - do I want to pause on complete??
 					break;
 				}
 			}

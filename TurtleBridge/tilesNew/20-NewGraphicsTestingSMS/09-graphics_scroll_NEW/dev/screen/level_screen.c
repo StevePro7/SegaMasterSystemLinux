@@ -19,8 +19,8 @@
 
 static unsigned char cursorX[] = { 2, 11, 20 };
 static unsigned char cursorIdx;
-static unsigned char world, round, level, point;
-
+static unsigned char game_world, game_round, game_point;
+static unsigned char game_level;
 //static void printCursor();
 static void printStats();
 static void printTexts();
@@ -33,10 +33,10 @@ void screen_level_screen_load()
 
 	// TODO delete this.
 	//engine_debug_manager_initgame();
-	world = go->game_world;
-	round = go->game_round;
-	level = go->game_level;
-	point = go->game_point;
+	game_world = go->game_world;
+	game_round = go->game_round;
+	game_level = go->game_level;
+	game_point = go->game_point;
 	cursorIdx = 0;
 
 
@@ -50,8 +50,8 @@ void screen_level_screen_load()
 	//devkit_SMS_displayOn();
 
 
-	engine_level_manager_init( level );
-	engine_level_manager_draw_point( point );
+	engine_level_manager_init( game_level );
+	engine_level_manager_draw_point( game_point );
 
 	//engine_level_manager_init( go->game_level );
 	//engine_level_manager_draw_point( go->game_point );
@@ -97,22 +97,22 @@ void screen_level_screen_update( unsigned char *screen_type )
 		updateLevel = true;
 		if( 0 == cursorIdx || 1 == cursorIdx )
 		{
-			if( level > 0 )
+			if( game_level > 0 )
 			{
-				world--;
-				level--;
-				point = 0;
-				//engine_level_manager_init( level );
-				//engine_level_manager_draw_point( point );
+				game_world--;
+				game_level--;
+				game_point = 0;
+				//engine_level_manager_init( game_level );
+				//engine_level_manager_draw_point( game_point );
 			}
 		}
 		else
 		{
-			if( point > 0 )
+			if( game_point > 0 )
 			{
-				point--;
-				//engine_level_manager_init( level );
-				//engine_level_manager_draw_point( point );
+				game_point--;
+				//engine_level_manager_init( game_level );
+				//engine_level_manager_draw_point( game_point );
 			}
 		}
 	}
@@ -122,32 +122,32 @@ void screen_level_screen_update( unsigned char *screen_type )
 		updateLevel = true;
 		if( 0 == cursorIdx || 1 == cursorIdx )
 		{
-			if( level < 21 )
+			if( game_level < 21 )
 			{
-				world++;
-				level++;
-				point = 0;
-				//engine_level_manager_init( level );
-				//engine_level_manager_draw_point( point );
+				game_world++;
+				game_level++;
+				game_point = 0;
+				//engine_level_manager_init( game_level );
+				//engine_level_manager_draw_point( game_point );
 			}
 		}
 		else
 		{
-			point++;
-			//engine_level_manager_init( level );
-			//engine_level_manager_draw_point( point );
+			game_point++;
+			//engine_level_manager_init( game_level );
+			//engine_level_manager_draw_point( game_point );
 		}
 	}
 
 	if( updateLevel )
 	{
-		if( level > 0 || point > 0 )
+		if( game_level > 0 || game_point > 0 )
 		{
-			engine_level_manager_init( level );
-			engine_level_manager_draw_point( point );
+			engine_level_manager_init( game_level );
+			engine_level_manager_draw_point( game_point );
 
-			//engine_player_manager_initX( go->game_difficulty, world );
-			engine_player_manager_loadX( point );
+			//engine_player_manager_initX( go->game_difficulty, game_world );
+			engine_player_manager_loadX( game_point );
 			player_loadY = level_platforms[ po->lookX ];
 			engine_player_manager_loadY( player_loadY );
 		}
@@ -158,14 +158,16 @@ void screen_level_screen_update( unsigned char *screen_type )
 	input = engine_input_manager_hold( input_type_fire1 );
 	if( input )
 	{
-		engine_font_manager_text( "YES", 10, 10 );
-		//*screen_type = screen_type_beat;
-		//return;
+		//engine_font_manager_text( "YES", 10, 10 );
+		engine_game_manager_set_level_data( game_world, game_round, game_point );
+		*screen_type = screen_type_intro;		// view screen
+		return;
 	}
 
 	input = engine_input_manager_hold( input_type_fire2 );
 	if( input )
 	{
+		engine_game_manager_set_level_data( game_world, game_round, game_point );
 		*screen_type = screen_type_diff;
 		return;
 	}
@@ -197,19 +199,19 @@ void screen_level_screen_update( unsigned char *screen_type )
 //	input = engine_input_manager_hold( input_type_up );
 //	if( input )
 //	{
-//		if( 0 == cursorIdx && world > 0 )
+//		if( 0 == cursorIdx && game_world > 0 )
 //		{
-//			world--;
+//			game_world--;
 //		}
 //		if( 1 == cursorIdx && round > 0 )
 //		{
 //			round--;
 //		}
-//		if( 2 == cursorIdx && point > 0 )
+//		if( 2 == cursorIdx && game_point > 0 )
 //		{
-//			point--;
-//			//engine_level_manager_init( level );
-//			//engine_level_manager_draw_point( point );
+//			game_point--;
+//			//engine_level_manager_init( game_level );
+//			//engine_level_manager_draw_point( game_point );
 //		}
 //
 //		printStats();
@@ -217,19 +219,19 @@ void screen_level_screen_update( unsigned char *screen_type )
 //	input = engine_input_manager_hold( input_type_down );
 //	if( input )
 //	{
-//		if( 0 == cursorIdx && world < ( MAX_WOLRDS - 1 ) )
+//		if( 0 == cursorIdx && game_world < ( MAX_WOLRDS - 1 ) )
 //		{
-//			world++;
+//			game_world++;
 //		}
 //		if( 1 == cursorIdx && round < ( MAX_ROUNDS - 1 ) )
 //		{
 //			round++;
 //		}
-//		if( 2 == cursorIdx && point < ( MAX_CHECKS - 1 ) )
+//		if( 2 == cursorIdx && game_point < ( MAX_CHECKS - 1 ) )
 //		{
-//			point++;
-//			//engine_level_manager_init( level );
-//			//engine_level_manager_draw_point( point );
+//			game_point++;
+//			//engine_level_manager_init( game_level );
+//			//engine_level_manager_draw_point( game_point );
 //		}
 //
 //		printStats();
@@ -245,10 +247,10 @@ static void printStats()
 
 	delta = 0;
 	delta = 1;
-	engine_font_manager_valu( ( world + delta ), 9, SHARE_TEXT_ROW );
-	engine_font_manager_valu( ( round + delta ), 18, SHARE_TEXT_ROW );
-	engine_font_manager_valu( ( point + delta ), 27, SHARE_TEXT_ROW );		// TODO - revert
-	//engine_font_manager_data( ( point + delta ), 27, SHARE_TEXT_ROW );
+	engine_font_manager_valu( ( game_world + delta ), 9, SHARE_TEXT_ROW );
+	engine_font_manager_valu( ( game_round + delta ), 18, SHARE_TEXT_ROW );
+	engine_font_manager_valu( ( game_point + delta ), 27, SHARE_TEXT_ROW );		// TODO - revert
+	//engine_font_manager_data( ( game_point + delta ), 27, SHARE_TEXT_ROW );
 
 	//engine_font_manager_char( '0', 26, SHARE_TEXT_ROW );
 	//engine_font_manager_char( '/', 28, SHARE_TEXT_ROW );

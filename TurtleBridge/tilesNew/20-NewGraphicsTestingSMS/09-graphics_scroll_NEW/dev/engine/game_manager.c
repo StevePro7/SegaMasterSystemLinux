@@ -1,5 +1,6 @@
 #include "game_manager.h"
 #include "enum_manager.h"
+#include "global_manager.h"
 
 // Global variable.
 struct_game_object global_game_object;
@@ -21,4 +22,14 @@ void engine_game_manager_set_difficulty( unsigned char game_difficulty )
 {
 	struct_game_object *go = &global_game_object;
 	go->game_difficulty = game_difficulty;
+}
+void engine_game_manager_set_level_data( unsigned char game_world, unsigned char game_round, unsigned char game_point )
+{
+	struct_game_object *go = &global_game_object;
+	go->game_world = game_world;
+	go->game_round = game_round;
+	go->game_point = game_point;
+
+	// TODO implement this once all levels set!
+	go->game_level = game_world * MAX_ROUNDS + game_round;
 }
