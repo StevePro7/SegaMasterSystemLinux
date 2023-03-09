@@ -74,7 +74,8 @@ void screen_intro_screen_update( unsigned char *screen_type )
 	if( input0 )
 	{
 		// TODO - forward onto game init.
-		*screen_type = screen_type_start;
+		//*screen_type = screen_type_start;
+		*screen_type = screen_type_init;
 		return;
 	}
 

@@ -28,7 +28,6 @@ void screen_load_screen_load()
 	struct_level_object *lo = &global_level_object;
 	struct_game_object *go = &global_game_object;
 	unsigned char player_loadY;
-	unsigned char cloud_formation = engine_random_manager_next( SPRITE_TILES );
 
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
@@ -36,8 +35,8 @@ void screen_load_screen_load()
 	engine_content_manager_sprite();
 
 	//engine_graphics_manager_level( cloud_formation );
-	engine_graphics_manager_clouds( 127 );		// TODO 
-	//engine_graphics_manager_sea();
+	engine_graphics_manager_clouds( go->game_cloud );
+	engine_graphics_manager_sea();
 
 	//engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 1, 5, 8, 3 );
 	//engine_tile_manager_stevepro2( TILE_CLOUD_LARGE, 9, 5, 8, 3 );

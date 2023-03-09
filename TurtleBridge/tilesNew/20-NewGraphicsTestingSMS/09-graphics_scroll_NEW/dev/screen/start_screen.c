@@ -34,6 +34,8 @@ static bool flag;
 
 void screen_start_screen_load()
 {
+	struct_game_object *go = &global_game_object;
+
 	//engine_graphics_manager_common();
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
@@ -46,7 +48,7 @@ void screen_start_screen_load()
 	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_NORMAL() );
 
 	// TODO for testing
-	engine_level_manager_init( 2 );
+	engine_level_manager_init( go->game_level );
 	engine_level_manager_draw_point( 0 );
 	// TODO for testing
 
