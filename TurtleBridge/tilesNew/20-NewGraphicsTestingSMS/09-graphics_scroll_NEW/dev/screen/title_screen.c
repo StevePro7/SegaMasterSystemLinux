@@ -20,14 +20,16 @@ void screen_title_screen_load()
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_titles();
+	// IMPORTANT must draw title !!
 	engine_graphics_manager_image( titles_tiles__tilemap__bin, TILE_IMAGE_SCREEN, 8, 0, 16, 12 );
 
 	engine_content_manager_sprite();
 	engine_util_manager_locale_texts( 1, 28, 23 );
 	engine_util_manager_locale_texts( 2, 8, 22 );
 	engine_util_manager_locale_texts( 3, 7, 23 );
-	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_ZOOMED() );
 	devkit_SMS_displayOn();
+
+	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_ZOOMED() );
 }
 
 void screen_title_screen_update( unsigned char *screen_type )
@@ -37,6 +39,13 @@ void screen_title_screen_update( unsigned char *screen_type )
 	if( input )
 	{
 		draw_sprite( 4, sprite_mode_zoomed, 176, 128 );
+	}
+
+	input = engine_input_manager_move( input_type_fire1 );
+	if( input )
+	{
+		*screen_type = screen_type_start;
+		return;
 	}
 
 	*screen_type = screen_type_title;

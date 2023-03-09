@@ -5,6 +5,7 @@
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/game_manager.h"
+#include "../engine/global_manager.h"
 #include "../engine/graphics_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/level_manager.h"
@@ -14,8 +15,7 @@
 #include "../engine/util_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/bank2.h"
-
-#define DIFFICULTY_ROW	3
+#include <stdbool.h>
 
 static unsigned char cursorX[] = { 2, 11, 20 };
 static unsigned char cursorIdx;
@@ -24,9 +24,11 @@ static unsigned char world, round, level, point;
 //static void printCursor();
 static void printStats();
 static void printTexts();
+static unsigned char player_loadY;
 
 void screen_level_screen_load()
 {
+	struct_player_object *po = &global_player_object;
 	struct_game_object *go = &global_game_object;
 
 	// TODO delete this.
@@ -37,12 +39,16 @@ void screen_level_screen_load()
 	point = go->game_point;
 	cursorIdx = 0;
 
+
+	//engine_graphics_manager_common();
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();
 	engine_content_manager_sprite();
 	engine_graphics_manager_title();
 	engine_graphics_manager_sea();
+	devkit_SMS_displayOn();
+
 
 	engine_level_manager_init( level );
 	engine_level_manager_draw_point( point );
@@ -53,98 +59,42 @@ void screen_level_screen_load()
 
 	printTexts();
 	printStats();
-	engine_font_manager_char( '>', cursorX[ cursorIdx ], DIFFICULTY_ROW );
-	devkit_SMS_displayOn();
-}
-
-
-void screen_level_screen_updateY( unsigned char *screen_type )
-{
-	unsigned char input;
-
-	input = engine_input_manager_hold( input_type_left );
-	if( input && 0 != cursorIdx )
-	{
-		engine_font_manager_char( ' ', cursorX[ cursorIdx ], DIFFICULTY_ROW );
-		cursorIdx--;
-		engine_font_manager_char( '>', cursorX[ cursorIdx ], DIFFICULTY_ROW );
-	}
-
-	input = engine_input_manager_hold( input_type_right );
-	if( input && 2 != cursorIdx )
-	{
-		engine_font_manager_char( ' ', cursorX[ cursorIdx ], DIFFICULTY_ROW );
-		cursorIdx++;
-		engine_font_manager_char( '>', cursorX[ cursorIdx ], DIFFICULTY_ROW );
-	}
-
-	input = engine_input_manager_hold( input_type_up );
-	if( input )
-	{
-		if( 0 == cursorIdx && world > 0 )
-		{
-			world--;
-		}
-		if( 1 == cursorIdx && round > 0 )
-		{
-			round--;
-		}
-		if( 2 == cursorIdx && point > 0 )
-		{
-			point--;
-			//engine_level_manager_init( level );
-			//engine_level_manager_draw_point( point );
-		}
-
-		printStats();
-	}
-	input = engine_input_manager_hold( input_type_down );
-	if( input )
-	{
-		if( 0 == cursorIdx && world < ( MAX_WOLRDS - 1 ) )
-		{
-			world++;
-		}
-		if( 1 == cursorIdx && round < ( MAX_ROUNDS - 1 ) )
-		{
-			round++;
-		}
-		if( 2 == cursorIdx && point < ( MAX_CHECKS - 1 ) )
-		{
-			point++;
-			//engine_level_manager_init( level );
-			//engine_level_manager_draw_point( point );
-		}
-
-		printStats();
-	}
-
-	*screen_type = screen_type_level;
+	engine_font_manager_char( '>', cursorX[ cursorIdx ], SHARE_TEXT_ROW );
+	
+	// TODO confirm that will NOT draw player here 
+	engine_player_manager_initX( go->game_difficulty, go->game_world );
+	engine_player_manager_loadX( go->game_point );
+	player_loadY = level_platforms[ po->lookX ];
+	engine_player_manager_loadY( player_loadY );
+	engine_player_manager_draw();
 }
 
 void screen_level_screen_update( unsigned char *screen_type )
 {
+	struct_player_object *po = &global_player_object;
 	unsigned char input;
+	bool updateLevel = false;
 
 	input = engine_input_manager_hold( input_type_left );
 	if( input && 0 != cursorIdx )
 	{
-		engine_font_manager_char( ' ', cursorX[ cursorIdx ], DIFFICULTY_ROW );
+		engine_font_manager_char( ' ', cursorX[ cursorIdx ], SHARE_TEXT_ROW );
 		cursorIdx--;
-		engine_font_manager_char( '>', cursorX[ cursorIdx ], DIFFICULTY_ROW );
+		engine_font_manager_char( '>', cursorX[ cursorIdx ], SHARE_TEXT_ROW );
 	}
 
 	input = engine_input_manager_hold( input_type_right );
 	if( input && 2 != cursorIdx )
 	{
-		engine_font_manager_char( ' ', cursorX[ cursorIdx ], DIFFICULTY_ROW );
+		engine_font_manager_char( ' ', cursorX[ cursorIdx ], SHARE_TEXT_ROW );
 		cursorIdx++;
-		engine_font_manager_char( '>', cursorX[ cursorIdx ], DIFFICULTY_ROW );
+		engine_font_manager_char( '>', cursorX[ cursorIdx ], SHARE_TEXT_ROW );
 	}
 
 	input = engine_input_manager_hold( input_type_up );
 	if( input )
 	{
+		updateLevel = true;
 		if( 0 == cursorIdx || 1 == cursorIdx )
 		{
 			if( level > 0 )
@@ -152,8 +102,8 @@ void screen_level_screen_update( unsigned char *screen_type )
 				world--;
 				level--;
 				point = 0;
-				engine_level_manager_init( level );
-				engine_level_manager_draw_point( point );
+				//engine_level_manager_init( level );
+				//engine_level_manager_draw_point( point );
 			}
 		}
 		else
@@ -161,16 +111,15 @@ void screen_level_screen_update( unsigned char *screen_type )
 			if( point > 0 )
 			{
 				point--;
-				engine_level_manager_init( level );
-				engine_level_manager_draw_point( point );
+				//engine_level_manager_init( level );
+				//engine_level_manager_draw_point( point );
 			}
 		}
-
-		printStats();
 	}
 	input = engine_input_manager_hold( input_type_down );
 	if( input )
 	{
+		updateLevel = true;
 		if( 0 == cursorIdx || 1 == cursorIdx )
 		{
 			if( level < 21 )
@@ -178,22 +127,116 @@ void screen_level_screen_update( unsigned char *screen_type )
 				world++;
 				level++;
 				point = 0;
-				engine_level_manager_init( level );
-				engine_level_manager_draw_point( point );
+				//engine_level_manager_init( level );
+				//engine_level_manager_draw_point( point );
 			}
 		}
 		else
 		{
 			point++;
+			//engine_level_manager_init( level );
+			//engine_level_manager_draw_point( point );
+		}
+	}
+
+	if( updateLevel )
+	{
+		if( level > 0 || point > 0 )
+		{
 			engine_level_manager_init( level );
 			engine_level_manager_draw_point( point );
+
+			//engine_player_manager_initX( go->game_difficulty, world );
+			engine_player_manager_loadX( point );
+			player_loadY = level_platforms[ po->lookX ];
+			engine_player_manager_loadY( player_loadY );
 		}
 
 		printStats();
 	}
 
+		input = engine_input_manager_hold( input_type_fire1 );
+		if( input )
+		{
+			engine_font_manager_text( "YES", 10, 10 );
+			//*screen_type = screen_type_beat;
+			//return;
+		}
+
+		input = engine_input_manager_hold( input_type_fire2 );
+		if( input )
+		{
+			*screen_type = screen_type_diff;
+			return;
+		}
+
+	engine_player_manager_draw();
 	*screen_type = screen_type_level;
 }
+
+//void screen_level_screen_updateY( unsigned char *screen_type )
+//{
+//	unsigned char input;
+//
+//	input = engine_input_manager_hold( input_type_left );
+//	if( input && 0 != cursorIdx )
+//	{
+//		engine_font_manager_char( ' ', cursorX[ cursorIdx ], SHARE_TEXT_ROW );
+//		cursorIdx--;
+//		engine_font_manager_char( '>', cursorX[ cursorIdx ], SHARE_TEXT_ROW );
+//	}
+//
+//	input = engine_input_manager_hold( input_type_right );
+//	if( input && 2 != cursorIdx )
+//	{
+//		engine_font_manager_char( ' ', cursorX[ cursorIdx ], SHARE_TEXT_ROW );
+//		cursorIdx++;
+//		engine_font_manager_char( '>', cursorX[ cursorIdx ], SHARE_TEXT_ROW );
+//	}
+//
+//	input = engine_input_manager_hold( input_type_up );
+//	if( input )
+//	{
+//		if( 0 == cursorIdx && world > 0 )
+//		{
+//			world--;
+//		}
+//		if( 1 == cursorIdx && round > 0 )
+//		{
+//			round--;
+//		}
+//		if( 2 == cursorIdx && point > 0 )
+//		{
+//			point--;
+//			//engine_level_manager_init( level );
+//			//engine_level_manager_draw_point( point );
+//		}
+//
+//		printStats();
+//	}
+//	input = engine_input_manager_hold( input_type_down );
+//	if( input )
+//	{
+//		if( 0 == cursorIdx && world < ( MAX_WOLRDS - 1 ) )
+//		{
+//			world++;
+//		}
+//		if( 1 == cursorIdx && round < ( MAX_ROUNDS - 1 ) )
+//		{
+//			round++;
+//		}
+//		if( 2 == cursorIdx && point < ( MAX_CHECKS - 1 ) )
+//		{
+//			point++;
+//			//engine_level_manager_init( level );
+//			//engine_level_manager_draw_point( point );
+//		}
+//
+//		printStats();
+//	}
+//
+//	*screen_type = screen_type_level;
+//}
 
 static void printStats()
 {
@@ -202,19 +245,19 @@ static void printStats()
 
 	delta = 0;
 	delta = 1;
-	engine_font_manager_valu( ( world + delta ), 9, DIFFICULTY_ROW );
-	engine_font_manager_valu( ( round + delta ), 18, DIFFICULTY_ROW );
-	//engine_font_manager_valu( ( point + delta ), 27, DIFFICULTY_ROW );		// TODO - revert
-	engine_font_manager_data( ( point + delta ), 27, DIFFICULTY_ROW );
+	engine_font_manager_valu( ( world + delta ), 9, SHARE_TEXT_ROW );
+	engine_font_manager_valu( ( round + delta ), 18, SHARE_TEXT_ROW );
+	engine_font_manager_valu( ( point + delta ), 27, SHARE_TEXT_ROW );		// TODO - revert
+	//engine_font_manager_data( ( point + delta ), 27, SHARE_TEXT_ROW );
 
-	//engine_font_manager_char( '0', 26, DIFFICULTY_ROW );
-	//engine_font_manager_char( '/', 28, DIFFICULTY_ROW );
-	//engine_font_manager_char( '0', 29, DIFFICULTY_ROW );
-	//engine_font_manager_char( '4', 30, DIFFICULTY_ROW );
+	//engine_font_manager_char( '0', 26, SHARE_TEXT_ROW );
+	//engine_font_manager_char( '/', 28, SHARE_TEXT_ROW );
+	//engine_font_manager_char( '0', 29, SHARE_TEXT_ROW );
+	//engine_font_manager_char( '4', 30, SHARE_TEXT_ROW );
 
-	//engine_util_manager_locale_texts( 6, 3, DIFFICULTY_ROW );
-	//engine_util_manager_locale_texts( 7, 12, DIFFICULTY_ROW );
-	//engine_util_manager_locale_texts( 8, 21, DIFFICULTY_ROW );
+	//engine_util_manager_locale_texts( 6, 3, SHARE_TEXT_ROW );
+	//engine_util_manager_locale_texts( 7, 12, SHARE_TEXT_ROW );
+	//engine_util_manager_locale_texts( 8, 21, SHARE_TEXT_ROW );
 
 	
 	//engine_font_manager_char( '>', 2, 4 );
@@ -227,12 +270,12 @@ static void printTexts()
 	//engine_font_manager_text( "[WORLD[[[[ROUND[[[[POINT[[/[[", 2, 5 );
 
 	// Print hard coded texts.
-	engine_util_manager_locale_texts( 6, 3, DIFFICULTY_ROW );
-	engine_util_manager_locale_texts( 7, 12, DIFFICULTY_ROW );
-	engine_util_manager_locale_texts( 8, 21, DIFFICULTY_ROW );
+	engine_util_manager_locale_texts( 6, 3, SHARE_TEXT_ROW );
+	engine_util_manager_locale_texts( 7, 12, SHARE_TEXT_ROW );
+	engine_util_manager_locale_texts( 8, 21, SHARE_TEXT_ROW );
 
-	engine_font_manager_char( '0', 8, DIFFICULTY_ROW );
-	engine_font_manager_char( '0', 17, DIFFICULTY_ROW );
-	//engine_font_manager_char( '0', 26, DIFFICULTY_ROW );		// TODO - revert
-	engine_font_manager_text( "/04", 28, DIFFICULTY_ROW );
+	engine_font_manager_char( '0', 8, SHARE_TEXT_ROW );
+	engine_font_manager_char( '0', 17, SHARE_TEXT_ROW );
+	engine_font_manager_char( '0', 26, SHARE_TEXT_ROW );		// TODO - revert
+	engine_font_manager_text( "/04", 28, SHARE_TEXT_ROW );
 }

@@ -21,7 +21,7 @@ S:Ldemo_screen.flip_player_frame$input4$1_0$132({1}SC:U),B,1,5
 S:Ldemo_screen.flip_player_frame$po$1_0$133({2}DG,STtag_struct_player_object:S),R,0,0,[]
 T:Fdemo_screen$tag_struct_player_object[({0}S:S$initX$0_0$0({1}SC:U),Z,0,0)({1}S:S$posnX$0_0$0({2}SI:U),Z,0,0)({3}S:S$tileX$0_0$0({1}SC:U),Z,0,0)({4}S:S$lookX$0_0$0({1}SC:U),Z,0,0)({5}S:S$posnY$0_0$0({1}SC:U),Z,0,0)({6}S:S$tileY$0_0$0({1}SC:U),Z,0,0)({7}S:S$leapY$0_0$0({2}SI:U),Z,0,0)({9}S:S$drawX$0_0$0({1}SC:U),Z,0,0)({10}S:S$drawY$0_0$0({1}SC:U),Z,0,0)({11}S:S$player_state$0_0$0({1}SC:U),Z,0,0)({12}S:S$jumper_index$0_0$0({1}SC:U),Z,0,0)({13}S:S$deltaY_index$0_0$0({1}SC:U),Z,0,0)({14}S:S$player_frame$0_0$0({1}SC:U),Z,0,0)({15}S:S$player_lives$0_0$0({1}SC:U),Z,0,0)({16}S:S$motion_count$0_0$0({1}SC:U),Z,0,0)]
 T:Fdemo_screen$tag_struct_scroll_object[({0}S:S$scrollLeftX$0_0$0({1}SC:U),Z,0,0)({1}S:S$scrollRight$0_0$0({1}SC:U),Z,0,0)({2}S:S$scrollColumn$0_0$0({2}SI:U),Z,0,0)({4}S:S$scrollFinish$0_0$0({2}SI:U),Z,0,0)({6}S:S$scrollLeftX0$0_0$0({1}SC:U),Z,0,0)({7}S:S$scrollLeftX1$0_0$0({1}SC:U),Z,0,0)({8}S:S$scrollLeftX2$0_0$0({1}SC:U),Z,0,0)({9}S:S$scrollLeftX3$0_0$0({1}SC:U),Z,0,0)({10}S:S$scrollLeftX4$0_0$0({1}SC:U),Z,0,0)({11}S:S$scrollLeftX5$0_0$0({1}SC:U),Z,0,0)({12}S:S$scroll_half$0_0$0({1}SC:U),Z,0,0)({13}S:S$lineCnt$0_0$0({1}SC:U),Z,0,0)]
-T:Fdemo_screen$tag_struct_hack_object[({0}S:S$hack_isgod$0_0$0({1}SC:U),Z,0,0)({1}S:S$hack_music$0_0$0({1}SC:U),Z,0,0)({2}S:S$hack_sound$0_0$0({1}SC:U),Z,0,0)({3}S:S$hack_riffs$0_0$0({1}SC:U),Z,0,0)]
+T:Fdemo_screen$tag_struct_hack_object[({0}S:S$hack_delay$0_0$0({1}SC:U),Z,0,0)({1}S:S$hack_isgod$0_0$0({1}SC:U),Z,0,0)({2}S:S$hack_music$0_0$0({1}SC:U),Z,0,0)({3}S:S$hack_sound$0_0$0({1}SC:U),Z,0,0)({4}S:S$hack_riffs$0_0$0({1}SC:U),Z,0,0)]
 T:Fdemo_screen$tag_struct_game_object[({0}S:S$game_difficulty$0_0$0({1}SC:U),Z,0,0)({1}S:S$game_world$0_0$0({1}SC:U),Z,0,0)({2}S:S$game_round$0_0$0({1}SC:U),Z,0,0)({3}S:S$game_level$0_0$0({1}SC:U),Z,0,0)({4}S:S$game_point$0_0$0({1}SC:U),Z,0,0)({5}S:S$game_cloud$0_0$0({1}SC:U),Z,0,0)({6}S:S$game_isgod$0_0$0({1}SC:U),Z,0,0)]
 T:Fdemo_screen$tag_struct_frame_object[({0}S:S$frame_count$0_0$0({2}SI:U),Z,0,0)]
 T:Fdemo_screen$tag_struct_delay_object[({0}S:S$delay_value$0_0$0({2}SI:U),Z,0,0)({2}S:S$delay_timer$0_0$0({2}SI:U),Z,0,0)]
@@ -31,7 +31,7 @@ T:Fdemo_screen$tag_struct_reset_object[({0}S:S$reset_value$0_0$0({1}SC:U),Z,0,0)
 S:Fdemo_screen$jumps$0_0$0({158}DA79d,SI:S),E,0,0
 S:G$global_audio_object$0_0$0({6}STtag_struct_audio_object:S),E,0,0
 S:G$global_game_object$0_0$0({7}STtag_struct_game_object:S),E,0,0
-S:G$global_hack_object$0_0$0({4}STtag_struct_hack_object:S),E,0,0
+S:G$global_hack_object$0_0$0({5}STtag_struct_hack_object:S),E,0,0
 S:G$level_platforms$0_0$0({0}DA0d,SC:U),E,0,0
 S:G$global_level_object$0_0$0({6}STtag_struct_level_object:S),E,0,0
 S:G$jump_array_ptr$0_0$0({0}DA0d,DG,SI:S),E,0,0
@@ -48,7 +48,6 @@ S:G$level_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$song_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$locale_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$locale_object_blank$0_0$0({0}DA0d,DG,SC:U),E,0,0
-S:G$locale_object_difficulty$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:Fdemo_screen$player_loadY$0_0$0({1}SC:U),E,0,0
 S:Fdemo_screen$frame$0_0$0({1}SC:U),E,0,0
 S:Fdemo_screen$landingY$0_0$0({1}SC:U),E,0,0
@@ -72,6 +71,7 @@ S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_valu$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_graphics_manager_common$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_level$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_sea$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_clouds$0_0$0({2}DF,SV:S),C,0,0

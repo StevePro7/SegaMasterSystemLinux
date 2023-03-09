@@ -23,7 +23,7 @@
 #pragma disable_warning 126
 #endif
 
-#define STARTING_SCROLLING		0
+#define STARTING_SCROLLING		1
 
 static unsigned char screen_intro_screen_delay;
 static unsigned char cheat_count;
@@ -40,6 +40,7 @@ void screen_start_screen_load()
 	engine_graphics_manager_title();
 	engine_graphics_manager_sea();
 	devkit_SMS_displayOn();
+	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_NORMAL() );
 
 	engine_util_manager_locale_texts( 4, 9, 7 );
 	if( STARTING_SCROLLING )
@@ -64,8 +65,14 @@ void screen_start_screen_update( unsigned char *screen_type )
 	{
 		// TODO riff
 		//engine_font_manager_text( "DIFF SCREEN", 10, 10 );
-		//*screen_type = screen_type_diff;
-		//return;
+		*screen_type = screen_type_diff;
+		return;
+	}
+	input = engine_input_manager_hold( input_type_fire2 );
+	if( input )
+	{
+		*screen_type = screen_type_title;
+		return;
 	}
 
 	delay = engine_delay_manager_update();
@@ -80,7 +87,6 @@ void screen_start_screen_update( unsigned char *screen_type )
 			}
 			else
 			{
-				//engine_font_manager_text( LOCALE_BLANK14, 9, 7 );
 				engine_util_manager_locale_blank( 0, 9, 7 );
 			}
 		}

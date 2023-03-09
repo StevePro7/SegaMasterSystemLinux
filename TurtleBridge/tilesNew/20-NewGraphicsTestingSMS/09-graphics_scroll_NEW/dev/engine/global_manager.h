@@ -24,6 +24,7 @@
 #define MAX_WOLRDS			5
 #define MAX_ROUNDS			8
 #define MAX_CHECKS			4
+#define MAX_DIFFICULTY		4
 #define MAX_LIVES			3
 
 #define MAX_TILE_OBJECTS	16
@@ -31,6 +32,7 @@
 #define INVALID_INDEX		-1
 
 #define TILE_IMAGE_SCREEN	144
+#define SHARE_TEXT_ROW		3
 
 // Delay
 #define NORMAL_DELAY		50

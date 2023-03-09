@@ -106,7 +106,7 @@ void engine_player_manager_loadY( unsigned char player_loadY )
 	{
 		po->posnY = player_loadY << 3;
 	}
-	
+
 	//po->initY = po->posnY;		// TODO - don't think I need this
 	po->leapY = po->posnY << 8;
 	updatePlayerY();

@@ -1,14 +1,14 @@
 M:level_screen
 F:G$screen_level_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Llevel_screen.screen_level_screen_load$po$1_0$122({2}DG,STtag_struct_player_object:S),R,0,0,[]
 S:Llevel_screen.screen_level_screen_load$go$1_0$122({2}DG,STtag_struct_game_object:S),R,0,0,[]
-F:G$screen_level_screen_updateY$0_0$0({2}DF,SV:S),C,0,0,0,0,0
-S:Llevel_screen.screen_level_screen_updateY$screen_type$1_0$123({2}DG,SC:U),B,1,4
-S:Llevel_screen.screen_level_screen_updateY$input$1_0$124({1}SC:U),R,0,0,[a]
 F:G$screen_level_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Llevel_screen.screen_level_screen_update$screen_type$1_0$135({2}DG,SC:U),B,1,4
-S:Llevel_screen.screen_level_screen_update$input$1_0$136({1}SC:U),R,0,0,[a]
+S:Llevel_screen.screen_level_screen_update$screen_type$1_0$123({2}DG,SC:U),B,1,4
+S:Llevel_screen.screen_level_screen_update$po$1_0$124({2}DG,STtag_struct_player_object:S),R,0,0,[]
+S:Llevel_screen.screen_level_screen_update$input$1_0$124({1}SC:U),R,0,0,[a]
+S:Llevel_screen.screen_level_screen_update$updateLevel$1_0$124({1}:S),R,0,0,[c]
 F:Flevel_screen$printStats$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Llevel_screen.printStats$delta$1_0$148({1}SC:U),R,0,0,[]
+S:Llevel_screen.printStats$delta$1_0$140({1}SC:U),R,0,0,[]
 F:Flevel_screen$printTexts$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 T:Flevel_screen$tag_struct_player_object[({0}S:S$initX$0_0$0({1}SC:U),Z,0,0)({1}S:S$posnX$0_0$0({2}SI:U),Z,0,0)({3}S:S$tileX$0_0$0({1}SC:U),Z,0,0)({4}S:S$lookX$0_0$0({1}SC:U),Z,0,0)({5}S:S$posnY$0_0$0({1}SC:U),Z,0,0)({6}S:S$tileY$0_0$0({1}SC:U),Z,0,0)({7}S:S$leapY$0_0$0({2}SI:U),Z,0,0)({9}S:S$drawX$0_0$0({1}SC:U),Z,0,0)({10}S:S$drawY$0_0$0({1}SC:U),Z,0,0)({11}S:S$player_state$0_0$0({1}SC:U),Z,0,0)({12}S:S$jumper_index$0_0$0({1}SC:U),Z,0,0)({13}S:S$deltaY_index$0_0$0({1}SC:U),Z,0,0)({14}S:S$player_frame$0_0$0({1}SC:U),Z,0,0)({15}S:S$player_lives$0_0$0({1}SC:U),Z,0,0)({16}S:S$motion_count$0_0$0({1}SC:U),Z,0,0)]
 T:Flevel_screen$tag_struct_scroll_object[({0}S:S$scrollLeftX$0_0$0({1}SC:U),Z,0,0)({1}S:S$scrollRight$0_0$0({1}SC:U),Z,0,0)({2}S:S$scrollColumn$0_0$0({2}SI:U),Z,0,0)({4}S:S$scrollFinish$0_0$0({2}SI:U),Z,0,0)({6}S:S$scrollLeftX0$0_0$0({1}SC:U),Z,0,0)({7}S:S$scrollLeftX1$0_0$0({1}SC:U),Z,0,0)({8}S:S$scrollLeftX2$0_0$0({1}SC:U),Z,0,0)({9}S:S$scrollLeftX3$0_0$0({1}SC:U),Z,0,0)({10}S:S$scrollLeftX4$0_0$0({1}SC:U),Z,0,0)({11}S:S$scrollLeftX5$0_0$0({1}SC:U),Z,0,0)({12}S:S$scroll_half$0_0$0({1}SC:U),Z,0,0)({13}S:S$lineCnt$0_0$0({1}SC:U),Z,0,0)]
@@ -24,12 +24,12 @@ S:G$global_scroll_object$0_0$0({14}STtag_struct_scroll_object:S),E,0,0
 S:G$song_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$locale_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$locale_object_blank$0_0$0({0}DA0d,DG,SC:U),E,0,0
-S:G$locale_object_difficulty$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:Flevel_screen$cursorIdx$0_0$0({1}SC:U),E,0,0
 S:Flevel_screen$world$0_0$0({1}SC:U),E,0,0
 S:Flevel_screen$round$0_0$0({1}SC:U),E,0,0
 S:Flevel_screen$level$0_0$0({1}SC:U),E,0,0
 S:Flevel_screen$point$0_0$0({1}SC:U),E,0,0
+S:Flevel_screen$player_loadY$0_0$0({1}SC:U),E,0,0
 S:G$engine_asm_manager_clear_VRAM$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_bggame$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_splash$0_0$0({2}DF,SV:S),C,0,0
@@ -45,6 +45,7 @@ S:G$engine_font_manager_data$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_valu$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_set_difficulty$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_graphics_manager_common$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_level$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_sea$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_clouds$0_0$0({2}DF,SV:S),C,0,0
@@ -235,4 +236,3 @@ S:G$devkit_SMS_addSprite_bulk8$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_addSprite_bulk12$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_setTilePriority$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_isCollisionDetected$0_0$0({2}DF,SC:U),C,0,0
-S:G$screen_level_screen_updateY$0_0$0({2}DF,SV:S),C,0,0
