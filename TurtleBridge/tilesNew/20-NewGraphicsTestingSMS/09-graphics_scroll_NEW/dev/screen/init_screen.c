@@ -10,7 +10,7 @@ void screen_init_screen_load()
 {
 	struct_game_object *go = &global_game_object;
 	// TODO delete
-	engine_debug_manager_initgame();
+	//engine_debug_manager_initgame();
 	// TODO delete
 
 	engine_level_manager_init( go->game_level );

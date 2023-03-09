@@ -5,7 +5,6 @@
 #include "../banks/bank3.h"
 
 #define BGGAME_TILES	0
-//#define SPRITE_TILES	256		// todo global_manager.h	??
 
 static void load_tile( unsigned char bank, const unsigned char *tiles, unsigned char tilefrom, const unsigned char *palette );
 

@@ -18,6 +18,11 @@ void engine_game_manager_init()
 //	go->game_difficulty = storage_difficulty;
 //}
 
+void engine_game_manager_set_cloud_form( unsigned char game_cloud )
+{
+	struct_game_object *go = &global_game_object;
+	go->game_cloud = game_cloud;
+}
 void engine_game_manager_set_difficulty( unsigned char game_difficulty )
 {
 	struct_game_object *go = &global_game_object;
