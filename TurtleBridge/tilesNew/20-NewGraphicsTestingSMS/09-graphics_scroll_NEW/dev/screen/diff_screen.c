@@ -32,19 +32,19 @@ void screen_diff_screen_load()
 	struct_game_object *go = &global_game_object;
 
 	// TODO delete this.
-	engine_debug_manager_initgame();
+	//engine_debug_manager_initgame();
 
 	engine_level_manager_init( go->game_level );
 	game_difficulty = go->game_difficulty;
 
 	//engine_graphics_manager_common();
-	devkit_SMS_displayOff();
-	engine_asm_manager_clear_VRAM();
-	engine_content_manager_bggame();
-	engine_content_manager_sprite();
-	engine_graphics_manager_title();
-	engine_graphics_manager_sea();
-	devkit_SMS_displayOn();
+	//devkit_SMS_displayOff();
+	//engine_asm_manager_clear_VRAM();
+	//engine_content_manager_bggame();
+	//engine_content_manager_sprite();
+	//engine_graphics_manager_title();
+	//engine_graphics_manager_sea();
+	//devkit_SMS_displayOn();
 
 	//	TODO - refactor and still work??
 	engine_font_manager_text( "SELECT  DIFFICULTY", 7, SHARE_TEXT_ROW + 0 );
