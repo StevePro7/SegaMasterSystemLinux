@@ -24,7 +24,8 @@ S _engine_graphics_manager_level Ref000000
 S _engine_scroll_manager_load Ref000000
 A _CODE size 80 flags 0 addr 0
 S XG$screen_load_screen_load$0$0 Def00006E
-S C$load_screen.c$101$1_0$126 Def00007F
+S C$load_screen.c$101$1_0$126 Def000079
+S C$load_screen.c$104$1_0$126 Def00007F
 S G$screen_load_screen_update$0$0 Def00006F
 S A$load_screen$200 Def000072
 S A$load_screen$110 Def000025
@@ -49,7 +50,7 @@ S A$load_screen$142 Def000048
 S A$load_screen$133 Def000041
 S A$load_screen$124 Def000035
 S A$load_screen$115 Def000029
-S C$load_screen.c$50$1_0$124 Def00003B
+S C$load_screen.c$50$1_0$124 Def000032
 S _screen_load_screen_update Def00006F
 S A$load_screen$170 Def000064
 S A$load_screen$161 Def00005C
@@ -58,7 +59,7 @@ S A$load_screen$134 Def000042
 S A$load_screen$125 Def000036
 S A$load_screen$116 Def00002C
 S A$load_screen$107 Def000020
-S C$load_screen.c$51$1_0$124 Def000046
+S C$load_screen.c$51$1_0$124 Def00003B
 S C$load_screen.c$33$1_0$124 Def000014
 S C$load_screen.c$25$0_0$124 Def000000
 S A$load_screen$171 Def000065
@@ -67,7 +68,8 @@ S A$load_screen$135 Def000044
 S A$load_screen$126 Def000037
 S A$load_screen$117 Def00002D
 S A$load_screen$108 Def000023
-S C$load_screen.c$52$1_0$124 Def00004C
+S C$load_screen.c$70$1_0$124 Def00006E
+S C$load_screen.c$52$1_0$124 Def000046
 S C$load_screen.c$34$1_0$124 Def000017
 S A$load_screen$172 Def000066
 S A$load_screen$163 Def00005E
@@ -75,40 +77,38 @@ S A$load_screen$136 Def000045
 S A$load_screen$127 Def00003A
 S A$load_screen$118 Def00002E
 S A$load_screen$109 Def000024
+S C$load_screen.c$53$1_0$124 Def00004C
 S C$load_screen.c$35$1_0$124 Def00001A
 S A$load_screen$209 Def000079
 S A$load_screen$173 Def000067
 S A$load_screen$164 Def00005F
 S A$load_screen$155 Def000052
 S A$load_screen$119 Def000031
-S C$load_screen.c$63$1_0$124 Def000052
 S C$load_screen.c$36$1_0$124 Def00001D
 S C$load_screen.c$27$1_0$124 Def000009
 S A$load_screen$174 Def00006A
 S A$load_screen$165 Def000062
 S A$load_screen$147 Def00004C
-S C$load_screen.c$71$1_0$126 Def00006F
+S C$load_screen.c$55$1_0$124 Def00004F
 S C$load_screen.c$28$1_0$124 Def000009
 S A$load_screen$184 Def00006E
 S A$load_screen$166 Def000063
-S C$load_screen.c$72$1_0$126 Def000076
-S C$load_screen.c$65$1_0$124 Def000055
+S C$load_screen.c$72$1_0$126 Def00006F
 S C$load_screen.c$47$1_0$124 Def000029
 S C$load_screen.c$38$1_0$124 Def000020
 S C$load_screen.c$29$1_0$124 Def000009
-S C$load_screen.c$66$1_0$124 Def000064
-S C$load_screen.c$48$1_0$124 Def000032
+S C$load_screen.c$66$1_0$124 Def000052
 S A$load_screen$159 Def000055
-S C$load_screen.c$67$1_0$124 Def00006E
-S C$load_screen.c$58$1_0$124 Def00004F
+S C$load_screen.c$74$1_0$126 Def00006F
 S A$load_screen$178 Def00006B
+S C$load_screen.c$75$1_0$126 Def000076
+S C$load_screen.c$68$1_0$124 Def000055
 S A$load_screen$197 Def00006F
 S A$load_screen$179 Def00006C
+S C$load_screen.c$69$1_0$124 Def000064
 S A$load_screen$198 Def000070
 S A$load_screen$199 Def000071
 S XG$screen_load_screen_update$0$0 Def00007F
-S C$load_screen.c$69$1_0$126 Def00006F
-S C$load_screen.c$98$1_0$126 Def000079
 S A$load_screen$70 Def000008
 S G$screen_load_screen_load$0$0 Def000000
 S A$load_screen$91 Def000014
@@ -146,7 +146,7 @@ R 00 00 00 00 02 03 09 00 02 08 04 00 02 0C 10 00
 T 3F 00 00 04 00 6F 26 00 09 7E F5 33 CD 00 00 33
 R 00 00 00 00 02 03 03 00 02 0D 05 00
 T 4C 00 00 CD 00 00 CD 00 00 CD 00 00 ED 4B
-R 00 00 00 00 02 04 0C 00 02 07 00 00 02 0A 01 00
+R 00 00 00 00 02 04 00 00 02 07 0C 00 02 0A 01 00
 T 57 00 00 02 00 3A 04 00 C5 F5 33 CD 00 00 F1 33
 R 00 00 00 00 02 03 07 00 02 06 09 00 02 0C 12 00
 T 64 00 00 AF F5 33 CD 00 00 33 33 DD E1 C9

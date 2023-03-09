@@ -7,17 +7,18 @@
 //#include "../engine/debug_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
-//#include "../engine/game_manager.h"
+#include "../engine/game_manager.h"
 //#include "../engine/global_manager.h"
-//#include "../engine/graphics_manager.h"
+#include "../engine/graphics_manager.h"
 //#include "../engine/input_manager.h"
-//#include "../engine/level_manager.h"
+#include "../engine/level_manager.h"
 //#include "../engine/player_manager.h"
 //#include "../engine/scroll_manager.h"
 //#include "../engine/storage_manager.h"
 //#include "../engine/timer_manager.h"
 //#include "../engine/util_manager.h"
 //#include "../devkit/_sms_manager.h"
+#include "../controller.h"
 //#include <stdbool.h>
 //
 //#ifdef _CONSOLE
@@ -31,11 +32,19 @@
 
 void screen_intro_screen_load()
 {
-	engine_font_manager_text( "INTRO SCREEN!!", 10, 2 );
+	struct_game_object *go = &global_game_object;
+
+	engine_graphics_manager_common();
+	engine_level_manager_init( go->game_level );
+	engine_level_manager_draw_point( go->game_point );
+
+	game_controller_setup_player( go->game_difficulty, go->game_world, go->game_point );
+	engine_font_manager_text( "INTRO SCREEN...!!", 10, 2 );
+
 	//// init_screen
 	//struct_player_object *po = &global_player_object;
 	//struct_level_object *lo = &global_level_object;
-	//struct_game_object *go = &global_game_object;
+	
 	//unsigned char player_loadY;
 	//unsigned char cloud_formation = engine_random_manager_next( SPRITE_TILES );
 
