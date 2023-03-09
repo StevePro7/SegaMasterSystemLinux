@@ -30,21 +30,21 @@ static void lineScrollHandler( void );
 //static void full_scroll_load( unsigned char screen, int scrollFinish );
 //static enum_scroll_state full_scroll_update( unsigned char delta );
 
-void engine_scroll_manager_init()
-{
-	//if( PARALLAX_SCROLLING )
-	//{
-	//	//load_method = para_scroll_load;
-	//	//update_method = para_scroll_update;
-	//	//update_section = para_scroll_section;
-	//}
-	//else
-	//{
-	//	//load_method = full_scroll_load;
-	//	//update_method = full_scroll_update;
-	//	//update_section = full_scroll_update;
-	//}
-}
+//void engine_scroll_manager_init()
+//{
+//	//if( PARALLAX_SCROLLING )
+//	//{
+//	//	//load_method = para_scroll_load;
+//	//	//update_method = para_scroll_update;
+//	//	//update_section = para_scroll_section;
+//	//}
+//	//else
+//	//{
+//	//	//load_method = full_scroll_load;
+//	//	//update_method = full_scroll_update;
+//	//	//update_section = full_scroll_update;
+//	//}
+//}
 
 void engine_scroll_manager_load( unsigned char screen, int scrollFinish )
 {
@@ -67,7 +67,7 @@ void engine_scroll_manager_full_load( unsigned char screen, int scrollFinish )
 	so->scrollFinish = scrollFinish;
 	devkit_SMS_setBGScrollX( so->scrollLeftX );
 	//TODO test
-	//devkit_SMS_disableLineInterrupt();
+	devkit_SMS_disableLineInterrupt();
 }
 enum_scroll_state engine_scroll_manager_full_update( unsigned char delta )
 {

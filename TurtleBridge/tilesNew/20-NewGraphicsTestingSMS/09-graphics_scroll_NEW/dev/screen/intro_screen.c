@@ -59,7 +59,7 @@ void screen_intro_screen_update( unsigned char *screen_type )
 	//struct_level_object *lo = &global_level_object;
 	//struct_game_object *go = &global_game_object;
 
-	unsigned char input1, input2;// , input3, input4, input5, input6;
+	unsigned char input0, input1, input2;// , input3, input4, input5, input6;
 	//unsigned char command;
 
 	unsigned char deltaX;
@@ -70,19 +70,25 @@ void screen_intro_screen_update( unsigned char *screen_type )
 	//command = COMMAND_NONE_MASK;
 	//player_state = po->player_state;
 
+	input0 = engine_input_manager_hold( input_type_fire1 );
+	if( input0 )
+	{
+		complete = true;
+	}
+
 	if( !complete )
 	{
-		deltaX = 0;
+		deltaX = 4;
 		input1 = engine_input_manager_move( input_type_left );
 		input2 = engine_input_manager_move( input_type_right );
 
 		if( input1 )
 		{
-			deltaX = 1;
+			deltaX = 2;
 		}
 		if( input2 )
 		{
-			deltaX = 4;
+			deltaX = 8;
 		}
 
 
@@ -102,18 +108,17 @@ void screen_intro_screen_update( unsigned char *screen_type )
 				}
 			}
 		}
-
-
-		// Check to see if player completes level.
-		if( complete )
-		{
-			engine_scroll_manager_update( 0 );
-			engine_font_manager_text( "FINISH", 10, 10 );
-			*screen_type = screen_type_start;
-			return;
-		}
-
 	}
+
+	// Check to see if player completes level.
+	if( complete )
+	{
+		engine_scroll_manager_update( 0 );
+		//engine_font_manager_text( "FINISH", 10, 10 );
+		*screen_type = screen_type_start;
+		return;
+	}
+
 	//engine_player_manager_draw();
 	*screen_type = screen_type_intro;
 }

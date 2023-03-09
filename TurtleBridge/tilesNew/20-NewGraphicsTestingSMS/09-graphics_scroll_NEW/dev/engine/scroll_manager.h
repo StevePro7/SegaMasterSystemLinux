@@ -8,8 +8,6 @@
 // Global variable.
 extern struct_scroll_object global_scroll_object;
 
-void engine_scroll_manager_init();
-
 // Main screen scroll routines.
 void engine_scroll_manager_load( unsigned char screen, int scrollFinish );
 enum_scroll_state engine_scroll_manager_update( unsigned char delta );
@@ -23,6 +21,7 @@ void engine_scroll_manager_para_load( unsigned char screen, int scrollFinish );
 enum_scroll_state engine_scroll_manager_para_update( unsigned char delta );
 
 // TODO delete
+//void engine_scroll_manager_init();
 //enum_scroll_state engine_scroll_manager_section( unsigned char delta );
 
 #endif//_SCROLL_MANAGER_H_

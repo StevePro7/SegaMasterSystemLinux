@@ -1,25 +1,27 @@
 ;!FILE begin_screen.asm
 XL3
-H 9 areas 15 global symbols
+H 9 areas 17 global symbols
 M begin_screen
 O -mz80
 S .__.ABS. Def000000
 S _engine_debug_manager_initgame Ref000000
-A _CODE size A flags 0 addr 0
+A _CODE size C flags 0 addr 0
 S _screen_begin_screen_update Def000003
-S XG$screen_begin_screen_update$0$0 Def000009
+S XG$screen_begin_screen_update$0$0 Def00000B
 S A$begin_screen$80 Def000006
 S G$screen_begin_screen_load$0$0 Def000000
 S A$begin_screen$81 Def000007
 S C$begin_screen.c$10$0_0$86 Def000000
 S A$begin_screen$64 Def000000
+S A$begin_screen$93 Def00000B
+S A$begin_screen$85 Def000009
 S C$begin_screen.c$13$1_0$86 Def000000
 S A$begin_screen$77 Def000003
+S C$begin_screen.c$30$1_0$88 Def000009
 S C$begin_screen.c$23$1_0$86 Def000000
 S A$begin_screen$78 Def000004
 S A$begin_screen$79 Def000005
-S C$begin_screen.c$32$1_0$88 Def000009
-S A$begin_screen$89 Def000009
+S C$begin_screen.c$32$1_0$88 Def00000B
 S C$begin_screen.c$25$1_0$88 Def000003
 S C$begin_screen.c$27$1_0$88 Def000003
 S _screen_begin_screen_load Def000000
@@ -39,5 +41,5 @@ T 00 00 00 C3 00 00
 R 00 00 00 00 02 04 01 00
 T 03 00 00
 R 00 00 00 00
-T 03 00 00 C1 E1 E5 C5 36 03 C9
+T 03 00 00 C1 E1 E5 C5 36 03 36 08 C9
 R 00 00 00 00

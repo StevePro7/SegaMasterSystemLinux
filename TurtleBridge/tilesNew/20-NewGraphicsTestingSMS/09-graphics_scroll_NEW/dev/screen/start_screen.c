@@ -32,16 +32,21 @@ static bool flag;
 
 void screen_start_screen_load()
 {
-	engine_graphics_manager_common();
-	//devkit_SMS_displayOff();
-	//engine_asm_manager_clear_VRAM();
-	//engine_content_manager_bggame();
-	//engine_content_manager_sprite();
-	//engine_graphics_manager_title();
-	//engine_graphics_manager_sea();
+	//engine_graphics_manager_common();
+	devkit_SMS_displayOff();
+	engine_asm_manager_clear_VRAM();
+	engine_content_manager_bggame();
+	engine_content_manager_sprite();
+	engine_graphics_manager_title();
+	engine_graphics_manager_sea();
 	//devkit_SMS_displayOn();
 
 	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_NORMAL() );
+
+	// TODO for testing
+	engine_level_manager_init( 2 );
+	engine_level_manager_draw_point( 0 );
+	// TODO for testing
 
 	engine_util_manager_locale_texts( 4, 9, 7 );
 	if( STARTING_SCROLLING )
@@ -50,6 +55,9 @@ void screen_start_screen_load()
 		engine_scroll_manager_para_load( 0, 0 );
 		//engine_scroll_manager_load( 0, 0 );
 	}
+
+	engine_scroll_manager_para_update( 0 );
+	devkit_SMS_displayOn();
 
 	screen_intro_screen_delay = NORMAL_DELAY;
 	engine_delay_manager_load( 50 );

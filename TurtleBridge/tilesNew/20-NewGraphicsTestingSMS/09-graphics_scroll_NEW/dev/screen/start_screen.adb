@@ -86,7 +86,6 @@ S:G$engine_player_manager_dying$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_pass$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_dead$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_count$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_scroll_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_update$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_scroll_manager_full_load$0_0$0({2}DF,SV:S),C,0,0
