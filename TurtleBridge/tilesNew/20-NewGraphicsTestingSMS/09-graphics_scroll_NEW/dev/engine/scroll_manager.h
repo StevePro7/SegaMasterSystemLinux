@@ -16,6 +16,7 @@ enum_scroll_state engine_scroll_manager_update( unsigned char delta );
 
 // Full screen scroll routines.
 void engine_scroll_manager_full_load( unsigned char screen, int scrollFinish );
+enum_scroll_state engine_scroll_manager_full_update( unsigned char delta );
 
 // Parallax scroll routines.
 void engine_scroll_manager_para_load( unsigned char screen, int scrollFinish );
