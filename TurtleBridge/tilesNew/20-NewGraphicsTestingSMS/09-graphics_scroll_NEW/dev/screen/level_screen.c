@@ -160,6 +160,10 @@ void screen_level_screen_update( unsigned char *screen_type )
 	{
 		//engine_font_manager_text( "YES", 10, 10 );
 		engine_game_manager_set_level_data( game_world, game_round, game_point );
+
+		// TODO  wire this up correctly!!
+		engine_game_manager_set_level_test( game_level );
+
 		*screen_type = screen_type_intro;		// view screen
 		return;
 	}
