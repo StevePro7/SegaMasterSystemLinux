@@ -7,12 +7,11 @@ namespace ScreenShotTest
 	{
 		public ConfigManager()
 		{
-			NumScreens = GetValue<int>("NumScreens", 8);
+			NumScreens = GetValue<int>("NumScreens", 16);
 			NumWorld = GetValue<int>("NumWorld", 10);
 			NumRound = GetValue<int>("NumRound", 10);
 			NumBank = GetValue<int>("NumBank", 10);
-			//NumLevels = GetValue<int>("NumLevels", 10);
-			//LevelPrefix = GetValue<string>("LevelPrefix", "level11");
+			TheCopy = GetValue<bool>("TheCopy", false);
 		}
 
 		// Reference: https://stackoverflow.com/questions/6884653/how-to-make-a-generic-type-cast-function
@@ -33,7 +32,6 @@ namespace ScreenShotTest
 		public int NumWorld { get; private set; }
 		public int NumRound { get; private set; }
 		public int NumBank { get; private set; }
-		//public int NumLevels { get; private set; }
-		//public string LevelPrefix { get; private set; }
+		public bool TheCopy { get; private set; }
 	}
 }
