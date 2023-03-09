@@ -46,8 +46,9 @@ void screen_start_screen_load()
 	engine_util_manager_locale_texts( 4, 9, 7 );
 	if( STARTING_SCROLLING )
 	{
-		engine_scroll_manager_init();
-		engine_scroll_manager_load( 0, 0 );
+		//engine_scroll_manager_init();
+		engine_scroll_manager_para_load( 0, 0 );
+		//engine_scroll_manager_load( 0, 0 );
 	}
 
 	screen_intro_screen_delay = NORMAL_DELAY;
@@ -95,7 +96,8 @@ void screen_start_screen_update( unsigned char *screen_type )
 
 	if( STARTING_SCROLLING )
 	{
-		engine_scroll_manager_section( 1 );
+		engine_scroll_manager_para_update( 1 );
+		//engine_scroll_manager_section( 1 );
 	}
 
 	*screen_type = screen_type_start;

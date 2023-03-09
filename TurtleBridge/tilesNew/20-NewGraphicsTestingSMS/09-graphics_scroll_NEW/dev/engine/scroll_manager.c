@@ -21,12 +21,12 @@ struct_scroll_object global_scroll_object;
 // Private helper functions.
 static void( *load_method )( unsigned char screen, int scrollFinish );
 static enum_scroll_state( *update_method )( unsigned char delta );
-static enum_scroll_state( *update_section )( unsigned char delta );
+//static enum_scroll_state( *update_section )( unsigned char delta );
 static void lineScrollHandler( void );
 
-static void para_scroll_load( unsigned char screen, int scrollFinish );
-static enum_scroll_state para_scroll_update( unsigned char delta );
-static enum_scroll_state para_scroll_section( unsigned char delta );
+//static void para_scroll_load( unsigned char screen, int scrollFinish );
+//static enum_scroll_state para_scroll_update( unsigned char delta );
+//static enum_scroll_state para_scroll_section( unsigned char delta );
 static void full_scroll_load( unsigned char screen, int scrollFinish );
 static enum_scroll_state full_scroll_update( unsigned char delta );
 
@@ -34,15 +34,15 @@ void engine_scroll_manager_init()
 {
 	if( PARALLAX_SCROLLING )
 	{
-		load_method = para_scroll_load;
-		update_method = para_scroll_update;
-		update_section = para_scroll_section;
+		//load_method = para_scroll_load;
+		//update_method = para_scroll_update;
+		//update_section = para_scroll_section;
 	}
 	else
 	{
 		load_method = full_scroll_load;
 		update_method = full_scroll_update;
-		update_section = full_scroll_update;
+		//update_section = full_scroll_update;
 	}
 }
 
@@ -56,12 +56,12 @@ enum_scroll_state engine_scroll_manager_update( unsigned char delta )
 	return update_method( delta );
 }
 
-enum_scroll_state engine_scroll_manager_section( unsigned char delta )
-{
-	return update_section( delta );
-}
+//enum_scroll_state engine_scroll_manager_section( unsigned char delta )
+//{
+//	return update_section( delta );
+//}
 
-static void para_scroll_load( unsigned char screen, int scrollFinish )
+void engine_scroll_manager_para_load( unsigned char screen, int scrollFinish )
 {
 	struct_scroll_object *so = &global_scroll_object;
 	so->scrollLeftX = 0;
@@ -83,7 +83,8 @@ static void para_scroll_load( unsigned char screen, int scrollFinish )
 	devkit_SMS_setLineCounter( SCROLL_LINE_COUNT );
 	devkit_SMS_enableLineInterrupt();
 }
-static enum_scroll_state para_scroll_update( unsigned char delta )
+
+enum_scroll_state engine_scroll_manager_para_update( unsigned char delta )
 {
 	struct_scroll_object *so = &global_scroll_object;
 	enum_scroll_state scroll_state;
@@ -108,10 +109,6 @@ static enum_scroll_state para_scroll_update( unsigned char delta )
 			scroll_state = scroll_state_tile;
 			so->scrollColumn++;
 		}
-
-		// Scroll cloud section at half pace.
-		so->scroll_half = 1 - so->scroll_half;
-		so->scrollLeftX0 -= so->scroll_half;
 	}
 
 	// Scroll game screen at full pace.
@@ -124,6 +121,70 @@ static enum_scroll_state para_scroll_update( unsigned char delta )
 
 	return scroll_state;
 }
+
+//static void para_scroll_load( unsigned char screen, int scrollFinish )
+//{
+//	struct_scroll_object *so = &global_scroll_object;
+//	so->scrollLeftX = 0;
+//	so->scrollRight = 0;
+//	so->scrollColumn = ( screen * SCREEN_WIDE ) + SCREEN_LESS_ONE;
+//	so->scrollFinish = scrollFinish;
+//	devkit_SMS_setBGScrollX( so->scrollLeftX );
+//
+//	so->scrollLeftX0 = 0;
+//	so->scrollLeftX1 = 0;
+//	so->scrollLeftX2 = 0;
+//	so->scrollLeftX3 = 0;
+//	so->scrollLeftX4 = 0;
+//	so->scrollLeftX5 = 0;
+//	so->scroll_half = 0;
+//	so->lineCnt = 0;
+//
+//	devkit_SMS_setLineInterruptHandler( &lineScrollHandler );
+//	devkit_SMS_setLineCounter( SCROLL_LINE_COUNT );
+//	devkit_SMS_enableLineInterrupt();
+//}
+//static enum_scroll_state para_scroll_update( unsigned char delta )
+//{
+//	struct_scroll_object *so = &global_scroll_object;
+//	enum_scroll_state scroll_state;
+//
+//	so->scrollLeftX -= delta;
+//	so->scrollRight += delta;
+//	scroll_state = scroll_state_none;
+//
+//	if( so->scrollRight >= SCROLL_COLUMNS )
+//	{
+//		so->scrollRight = 0;
+//		if( so->scrollColumn == so->scrollFinish )
+//		{
+//			scroll_state = scroll_state_comp;
+//		}
+//	}
+//
+//	if( delta > 0 )
+//	{
+//		if( delta == so->scrollRight )
+//		{
+//			scroll_state = scroll_state_tile;
+//			so->scrollColumn++;
+//		}
+//
+//		// Scroll cloud section at half pace.
+//		so->scroll_half = 1 - so->scroll_half;
+//		so->scrollLeftX0 -= so->scroll_half;
+//	}
+//
+//	// Scroll game screen at full pace.
+//	so->scrollLeftX1 -= delta;
+//	so->scrollLeftX2 -= delta;
+//	so->scrollLeftX3 -= delta;
+//	so->scrollLeftX4 -= delta;
+//	so->scrollLeftX5 -= 0;
+//	so->lineCnt = 0;
+//
+//	return scroll_state;
+//}
 static enum_scroll_state para_scroll_section( unsigned char delta )
 {
 	struct_scroll_object *so = &global_scroll_object;
@@ -171,6 +232,8 @@ static void full_scroll_load( unsigned char screen, int scrollFinish )
 	so->scrollColumn = ( screen * SCREEN_WIDE ) + SCREEN_LESS_ONE;
 	so->scrollFinish = scrollFinish;
 	devkit_SMS_setBGScrollX( so->scrollLeftX );
+	//TODO test
+	//devkit_SMS_disableLineInterrupt();
 }
 static enum_scroll_state full_scroll_update( unsigned char delta )
 {
