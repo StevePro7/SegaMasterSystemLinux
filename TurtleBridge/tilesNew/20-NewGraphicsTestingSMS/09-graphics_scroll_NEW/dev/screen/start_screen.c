@@ -46,7 +46,7 @@ void screen_start_screen_load()
 	engine_util_manager_locale_texts( 4, 9, 7 );
 	if( STARTING_SCROLLING )
 	{
-		//engine_scroll_manager_init();
+		//engine_scroll_manager_init();			// TODO delete
 		engine_scroll_manager_para_load( 0, 0 );
 		//engine_scroll_manager_load( 0, 0 );
 	}
@@ -67,7 +67,8 @@ void screen_start_screen_update( unsigned char *screen_type )
 	{
 		// TODO riff
 		//engine_font_manager_text( "DIFF SCREEN", 10, 10 );
-		*screen_type = screen_type_diff;
+		//*screen_type = screen_type_diff;
+		*screen_type = screen_type_intro;
 		return;
 	}
 	input = engine_input_manager_hold( input_type_fire2 );
@@ -97,7 +98,7 @@ void screen_start_screen_update( unsigned char *screen_type )
 	if( STARTING_SCROLLING )
 	{
 		engine_scroll_manager_para_update( 1 );
-		//engine_scroll_manager_section( 1 );
+		//engine_scroll_manager_section( 1 );		// TODO delete
 	}
 
 	*screen_type = screen_type_start;

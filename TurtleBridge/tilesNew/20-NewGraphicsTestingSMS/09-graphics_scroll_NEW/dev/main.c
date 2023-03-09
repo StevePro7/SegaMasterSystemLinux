@@ -99,6 +99,6 @@ static void start()
 	//open_screen_type = screen_type_boss;
 
 	engine_player_manager_init();
-	engine_scroll_manager_init();
+	//engine_scroll_manager_init();		// TODO delete
 	engine_screen_manager_init( open_screen_type );
 }
