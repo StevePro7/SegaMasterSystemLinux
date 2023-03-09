@@ -19,7 +19,7 @@ void engine_debug_manager_initgame()
 	//go->game_difficulty = difficulty_type_harder;
 	//go->game_difficulty = difficulty_type_insane;
 
-	go->game_world = 1;	
+	go->game_world = 5s;	// TODO - currently not aligned with game_level but used for testing...
 	go->game_point = 1;
 
 	go->game_world -= 1;
@@ -30,7 +30,7 @@ void engine_debug_manager_initgame()
 	// 3 = long512
 	//go->game_level = 2;
 	go->game_level = 0;
-	go->game_level = 1;
+	//go->game_level = 1;
 	//go->game_level = 3;
 	//go->game_level = 9;
 	//go->game_level = 17;// 64x screens
@@ -44,7 +44,7 @@ void engine_debug_manager_initgame()
 	//go->game_level = 7;
 	//go->game_level = 9;
 	
-	go->game_cloud = 88;		// TODO will be random
+	//go->game_cloud = 88;		// TODO will be random
 	go->game_isgod = false;
 	//go->game_isgod = true;
 
