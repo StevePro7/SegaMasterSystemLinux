@@ -9,6 +9,7 @@
 #include "../engine/player_manager.h"
 //#include "../engine/scroll_manager.h"
 //#include "../engine/timer_manager.h"
+#include "../devkit/_sms_manager.h"
 
 //static signed char physics_array[ 34 ] = { -11, -8, -7, -6, -5, -4, -4, -3, -3, -3, -2, -2, -2, -1, -1, -1, -1, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5 };
 //static signed char physics_array[ 34 ] = { -11, -9, -9, -9, -9, -9, -9, -9, -9, -9, -9, -9, -9, -3, -2, -1, -1, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5 };
@@ -18,7 +19,8 @@ void screen_cont_screen_load()
 {
 	//engine_frame_manager_load();
 	//engine_frame_manager_draw();
-	engine_font_manager_text( "CONT SCREEN!!", 10, 2 );
+	devkit_SMS_setBGScrollX( 0 );
+	engine_font_manager_text( "CONT SCREEN", 21, 2 );
 	engine_player_manager_draw();
 	//engine_debug_manager_printout();
 }
