@@ -4,7 +4,8 @@
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 //#include "../engine/game_manager.h"
-//#include "../engine/input_manager.h"
+#include "../engine/graphics_manager.h"
+#include "../engine/input_manager.h"
 //#include "../engine/level_manager.h"
 #include "../engine/player_manager.h"
 //#include "../engine/scroll_manager.h"
@@ -15,11 +16,22 @@
 //static signed char physics_array[ 34 ] = { -11, -9, -9, -9, -9, -9, -9, -9, -9, -9, -9, -9, -9, -3, -2, -1, -1, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5 };
 //static signed char physics_array[ 22 ] = { -4, -3, -2, -1, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5 };
 
+//static void fillBackground()
+//{
+//	unsigned int a;
+//
+//	devkit_SMS_setNextTileatXY( 0, 0 );
+//	for( a = 0; a < ( 32 * 28 ); a++ )
+//	{
+//		devkit_SMS_setTile( 0 );
+//	}
+//}
+
 void screen_cont_screen_load()
 {
 	//engine_frame_manager_load();
 	//engine_frame_manager_draw();
-	devkit_SMS_setBGScrollX( 0 );
+	//devkit_SMS_setBGScrollX( 0 );
 	engine_font_manager_text( "CONT SCREEN", 21, 2 );
 	engine_player_manager_draw();
 	//engine_debug_manager_printout();
@@ -32,7 +44,7 @@ void screen_cont_screen_update( unsigned char *screen_type )
 	//struct_level_object *lo = &global_level_object;
 	//struct_frame_object *fo = &global_frame_object;
 	//struct_game_object *go = &global_game_object;
-	//unsigned char input;
+	unsigned char input;
 	//unsigned char deltaX;
 	//unsigned char value;
 	//signed char collision;
@@ -40,9 +52,13 @@ void screen_cont_screen_update( unsigned char *screen_type )
 	//enum_scroll_state scroll_state;
 
 	//deltaX = 0;
-	//input = engine_input_manager_move( input_type_right );
-	//if( input )
-	//{
+	input = engine_input_manager_hold( input_type_down );
+	if( input )
+	{
+		//engine_font_manager_text( "HELO", 10, 10 );
+		//fillBackground();
+		engine_graphics_manager_screen();
+	}
 	//	if( player_state_isonground == po->player_state )
 	//	{
 	//		deltaX = 2;

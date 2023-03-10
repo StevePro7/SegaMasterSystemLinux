@@ -27,6 +27,19 @@ void engine_graphics_manager_common()
 	devkit_SMS_displayOn();
 }
 
+void engine_graphics_manager_screen()
+{
+	unsigned int index;
+	unsigned int maxim;
+
+	devkit_SMS_setNextTileatXY( 0, 0 );
+	maxim = SCREEN_WIDE * SCREEN_HIGH;
+	for( index = 0; index < maxim; index++ )
+	{
+		devkit_SMS_setTile( 0 );
+	}
+}
+
 void engine_graphics_manager_level( unsigned char cloud_formation )
 {
 	cloud_formation += 0;

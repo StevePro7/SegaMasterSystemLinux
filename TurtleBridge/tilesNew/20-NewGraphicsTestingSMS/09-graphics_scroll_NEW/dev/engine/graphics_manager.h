@@ -2,6 +2,7 @@
 #define _GRAPHICS_MANAGER_H_
 
 void engine_graphics_manager_common();
+void engine_graphics_manager_screen();
 void engine_graphics_manager_level( unsigned char cloud_formation );
 void engine_graphics_manager_sea();
 void engine_graphics_manager_clouds( unsigned char data );
