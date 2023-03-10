@@ -78,6 +78,8 @@ void screen_start_screen_update( unsigned char *screen_type )
 	input = engine_input_manager_hold( input_type_fire1 );
 	if( input )
 	{
+		engine_scroll_manager_para_update( 0 );
+
 		// TODO riff
 		//engine_font_manager_text( "DIFF SCREEN", 10, 10 );
 		*screen_type = screen_type_diff;
@@ -91,6 +93,7 @@ void screen_start_screen_update( unsigned char *screen_type )
 	input = engine_input_manager_hold( input_type_fire2 );
 	if( input )
 	{
+		engine_scroll_manager_para_update( 0 );
 		*screen_type = screen_type_title;
 		return;
 	}

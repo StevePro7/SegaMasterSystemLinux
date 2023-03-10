@@ -9,6 +9,7 @@
 #include "../engine/level_manager.h"
 #include "../engine/player_manager.h"
 #include "../engine/scroll_manager.h"
+#include "../engine/timer_manager.h"
 #include "../devkit/_sms_manager.h"
 
 static unsigned char player_passX;
@@ -35,8 +36,29 @@ void screen_pass_screen_update( unsigned char *screen_type )
 	struct_game_object *go = &global_game_object;
 	unsigned char input1, input2;
 	unsigned char game_level;
+	unsigned char check;
 
-	engine_scroll_manager_update( 0 );
+	// Player chance to quit out to start screen.
+	input1 = engine_input_manager_move( input_type_up );
+	if( input1 )
+	{
+		check = engine_reset_manager_update();
+		if( check )
+		{
+			input2 = engine_input_manager_move( input_type_fire2 );
+			if( input2 )
+			{
+				*screen_type = screen_type_start;
+				return;
+			}
+		}
+	}
+	else
+	{
+		engine_reset_manager_reset();
+	}
+
+	//engine_scroll_manager_update( 0 );
 	if( po->posnX >= LEVELS_SIDE )
 	{
 		// Continue invoke function in case player still in air.
