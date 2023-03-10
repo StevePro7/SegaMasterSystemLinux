@@ -11,6 +11,8 @@ namespace ScreenShotTest
 			NumWorld = GetValue<int>("NumWorld", 10);
 			NumRound = GetValue<int>("NumRound", 10);
 			NumBank = GetValue<int>("NumBank", 10);
+			CheckStart = GetValue<int>("CheckStart", 1);
+			CheckDelta = GetValue<int>("CheckDelta", 16);
 			TheCopy = GetValue<bool>("TheCopy", false);
 		}
 
@@ -32,6 +34,8 @@ namespace ScreenShotTest
 		public int NumWorld { get; private set; }
 		public int NumRound { get; private set; }
 		public int NumBank { get; private set; }
+		public int CheckStart { get; private set; }
+		public int CheckDelta { get; private set; }
 		public bool TheCopy { get; private set; }
 	}
 }

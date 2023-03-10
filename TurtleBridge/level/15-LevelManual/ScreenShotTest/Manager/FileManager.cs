@@ -12,6 +12,7 @@ namespace ScreenShotTest
 		private List<int> data1, data2, data3;
 		private int cols;
 		private string filename;
+		private const int screen_wide = 32;
 	//	private int maxLevel;
 
 		public FileManager(ConfigManager configManager, int wide)
@@ -53,7 +54,7 @@ namespace ScreenShotTest
 				foreach (var temp in lines)
 				{
 					var line = temp.Trim();
-					if (line.Contains("const") || line.Contains("{") || line.Contains("}"))
+					if (line.Contains("const") || line.Contains("{") || line.Contains("}") || line.Contains("Check"))
 					{
 						continue;
 					}
@@ -63,12 +64,12 @@ namespace ScreenShotTest
 						line = line.Substring(0, line.Length - 1);
 					}
 					var objs = line.Split(delim);
-					if (objs.Length != 16)
+					if (objs.Length != screen_wide)
 					{
 						throw new Exception("bankX.c NOT 16x elements");
 					}
 
-					for (int cnt = 0; cnt < 16; cnt += 4)
+					for (int cnt = 0; cnt < screen_wide; cnt += 4)
 					{
 						var text = objs[cnt].Trim();
 						int data = Convert.ToInt32(text, 16);
@@ -294,7 +295,7 @@ namespace ScreenShotTest
 		private void DumpData2(List<int> data3, string path)
 		{
 			var file = new List<string>();
-			const int wide = 16;
+			//const int wide = 32;			// TODO 32x cols per screen i.e. 32 * 8 = 256px wide.
 			int bank = configManager.NumBank;
 			int loop = 0;
 			int data = 0;
@@ -304,10 +305,13 @@ namespace ScreenShotTest
 			//string levl = maxLevel.ToString().PadLeft(2, '0');
 			//string name = String.Format("level_{1}{2}_txt", prefix, world, round);
 
+			int start = configManager.CheckStart;
+			int check = 0; 
 			file.Add("const unsigned char " + filename + "[] =");
 			file.Add("{");
 			for (int idx = 0; idx < data3.Count; idx++)
 			{
+				
 				data = data3[idx];
 				type = "0x" + data.ToString("X").ToString().PadLeft(2, '0');
 				if (0 != loop)
@@ -319,13 +323,20 @@ namespace ScreenShotTest
 					line += "\t" + type;
 				}
 				loop++;
-				if (wide != loop)
+				if (screen_wide != loop)
 				{
 					line += ",";
 				}
 				else
 				{
 					line += ",";
+					if (0 == check % configManager.CheckDelta)
+					{
+						file.Add("\t// Checkpoint #" + start);
+						start++;
+					}
+					check++;
+
 					file.Add(line);
 					line = String.Empty;
 					loop = 0;
