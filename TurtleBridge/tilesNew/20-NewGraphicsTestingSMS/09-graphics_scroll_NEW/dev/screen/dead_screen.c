@@ -6,7 +6,7 @@
 #include "../engine/input_manager.h"
 #include "../engine/player_manager.h"
 #include "../engine/scroll_manager.h"
-
+#include "../engine/timer_manager.h"
 
 static unsigned char player_deadX;
 static unsigned char deltaX;
@@ -24,6 +24,7 @@ void screen_dead_screen_load()
 
 	engine_player_manager_draw();
 	engine_player_manager_head();
+	engine_reset_manager_load( NORMAL_DELAY );
 	swap = 0;
 }
 
@@ -31,17 +32,46 @@ void screen_dead_screen_update( unsigned char *screen_type )
 {
 	struct_player_object *po = &global_player_object;
 	unsigned char input1, input2;
+	//unsigned char input;
+	unsigned char check;
 
-	engine_scroll_manager_update( 0 );
+	if( !swap )
+	{
+		// Block play PCM then death music first time.
+		swap = 1;
+	}
+
+	// Player chance to quit out to start screen.
+	input1 = engine_input_manager_move( input_type_up );
+	if( input1 )
+	{
+		check = engine_reset_manager_update();
+		if( check )
+		{
+			input2 = engine_input_manager_move( input_type_fire2 );
+			if( input2 )
+			{
+				*screen_type = screen_type_start;
+				return;
+			}
+		}
+	}
+	else
+	{
+		engine_reset_manager_reset();
+	}
+
+	//engine_scroll_manager_update( 0 );
 	if( po->posnY >= PLAYER_DEAD )
 	{
-		engine_font_manager_text( "NEXT SCREEN!!", 1, 6 );
+		//swap = 1;
+		//
 	}
 	else
 	{
 		input1 = engine_input_manager_hold( input_type_left );
 		input2 = engine_input_manager_move( input_type_right );
-		//input1 = 1;		// TODO delete
+		input1 = 1;		// TODO delete
 		if( input1 || input2 )
 		{
 			engine_player_manager_dead( player_deadX );
