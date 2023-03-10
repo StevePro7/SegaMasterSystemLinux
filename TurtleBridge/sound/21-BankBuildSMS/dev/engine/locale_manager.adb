@@ -1,6 +1,6 @@
 M:locale_manager
-S:G$riff_object_texts2$0_0$0({52}DA26d,DG,SC:U),E,0,0
 S:G$riff_object_texts$0_0$0({52}DA26d,DG,SC:U),E,0,0
+S:G$riff_object_textsOLD$0_0$0({52}DA26d,DG,SC:U),E,0,0
 S:G$song_object_texts$0_0$0({18}DA9d,DG,SC:U),E,0,0
 S:Flocale_manager$__str_0$0_0$0({7}DA7d,SC:U),D,0,0
 S:Flocale_manager$__str_1$0_0$0({7}DA7d,SC:U),D,0,0

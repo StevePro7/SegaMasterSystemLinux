@@ -5,8 +5,8 @@ S:Lsong_screen.screen_song_screen_update$screen_type$1_0$9({2}DG,SC:U),B,1,4
 S:Lsong_screen.screen_song_screen_update$input$1_0$10({1}SC:U),R,0,0,[a]
 T:Fsong_screen$tag_struct_audio_object[({0}S:S$music_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$music_bank$0_0$0({1}SC:U),Z,0,0)({3}S:S$sound_data$0_0$0({2}DG,SC:U),Z,0,0)({5}S:S$sound_bank$0_0$0({1}SC:U),Z,0,0)]
 S:G$global_audio_object$0_0$0({6}STtag_struct_audio_object:S),E,0,0
-S:G$riff_object_texts2$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$riff_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$riff_object_textsOLD$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$song_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:Fsong_screen$index$0_0$0({1}SC:U),E,0,0
 S:G$engine_audio_manager_init$0_0$0({2}DF,SV:S),C,0,0
