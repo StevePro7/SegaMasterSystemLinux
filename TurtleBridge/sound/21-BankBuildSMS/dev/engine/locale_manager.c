@@ -1,5 +1,35 @@
 #include "locale_manager.h"
 
+const unsigned char *riff_object_texts2[] =
+{
+	"SIMPS1",
+	"SIMPS2",
+	"SIMPS3",
+	"SIMPS4",
+	"SIMPS5",
+	"AP YB1",
+	"AP OHB",
+	"APDIMH",
+	"SILID1",
+	"SILID2",
+	"SILID3",
+	"GAOVER",
+	"RUREAD",
+	"UWINTR",
+	"LTODID",
+	"HULKHO",
+	"SHRIEK",
+	"VHJUMP",
+	"VHDOCT",
+	"SUCKED",
+	"OHLILA",
+	"YOUZA ",
+	"WWEXCL",
+	"ENIMEN",
+	"TITLEX",
+	"SPLASH",
+};
+
 const unsigned char *riff_object_texts[] =
 {
 	"SIMPS1",

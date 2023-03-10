@@ -1,8 +1,9 @@
 M:fixedbank
+S:G$riff_sample_data2$0_0$0({114}DA57d,DG,SC:U),E,0,0
 S:G$steven_text$0_0$0({6}DA3d,DG,SC:U),E,0,0
 S:G$riff_sample_data$0_0$0({114}DA57d,DG,SC:U),E,0,0
 S:G$music_object_data$0_0$0({18}DA9d,DG,SC:U),E,0,0
-S:G$sound_object_data$0_0$0({8}DA4d,DG,SC:U),E,0,0
+S:G$sound_object_data$0_0$0({6}DA3d,DG,SC:U),E,0,0
 S:G$locale_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$locale_object_blank$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$locale_object_difficulty$0_0$0({0}DA0d,DG,SC:U),E,0,0
@@ -22,7 +23,6 @@ S:G$animeopening_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$usas_jubaruins_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$mohenjodaro_usas_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$sfx_accept_psg$0_0$0({0}DA0d,SC:U),D,0,0
-S:G$sfx_gem_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$sfx_power_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$sfx_reset_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$mastertracker_psg$0_0$0({0}DA0d,SC:U),D,0,0
@@ -92,10 +92,11 @@ S:G$Riff__Splash__Screen__06_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff__Splash__Screen__07_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff__Splash__Screen__08_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff__Splash__Screen__09_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$riff_sample_bank2$0_0$0({57}DA57d,SC:U),D,0,0
 S:G$steven_data$0_0$0({16}DA16d,SC:U),D,0,0
 S:G$riff_sample_bank$0_0$0({57}DA57d,SC:U),D,0,0
 S:G$music_object_bank$0_0$0({9}DA9d,SC:U),D,0,0
-S:G$sound_object_bank$0_0$0({4}DA4d,SC:U),D,0,0
+S:G$sound_object_bank$0_0$0({3}DA3d,SC:U),D,0,0
 S:Ffixedbank$__str_0$0_0$0({7}DA7d,SC:U),D,0,0
 S:Ffixedbank$__str_1$0_0$0({7}DA7d,SC:U),D,0,0
 S:Ffixedbank$__str_2$0_0$0({7}DA7d,SC:U),D,0,0

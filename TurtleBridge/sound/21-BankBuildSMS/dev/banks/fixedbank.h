@@ -1,6 +1,9 @@
 // Fixed  bank.
 #define FIXED_BANK	15
 
+extern const unsigned char *riff_sample_data2[];
+extern const unsigned char riff_sample_bank2[];
+
 extern const unsigned char *riff_sample_data[];
 extern const unsigned char riff_sample_bank[];
 

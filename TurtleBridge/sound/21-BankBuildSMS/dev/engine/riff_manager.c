@@ -19,8 +19,8 @@ void engine_riff_manager_play( unsigned char index )
 	unsigned char bank;
 
 	devkit_SMS_mapROMBank( FIXED_BANK );
-	data = riff_sample_data[ index ];
-	bank = riff_sample_bank[ index ];
+	data = riff_sample_data2[ index ];
+	bank = riff_sample_bank2[ index ];
 
 	devkit_SMS_mapROMBank( bank );
 	engine_sample_manager_play( data );

@@ -14,9 +14,10 @@ S:Laudio_manager.engine_sound_manager_stop$ao$1_0$115({2}DG,STtag_struct_audio_o
 F:G$engine_audio_manager_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Laudio_manager.engine_audio_manager_update$ao$1_0$116({2}DG,STtag_struct_audio_object:S),R,0,0,[]
 T:Faudio_manager$tag_struct_audio_object[({0}S:S$music_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$music_bank$0_0$0({1}SC:U),Z,0,0)({3}S:S$sound_data$0_0$0({2}DG,SC:U),Z,0,0)({5}S:S$sound_bank$0_0$0({1}SC:U),Z,0,0)]
-S:G$riff_sample_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$riff_sample_data2$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$music_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$sound_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$riff_sample_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$global_audio_object$0_0$0({6}STtag_struct_audio_object:S),E,0,0
 S:G$devkit_SMS_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VDPturnOnFeature$0_0$0({2}DF,SV:S),C,0,0

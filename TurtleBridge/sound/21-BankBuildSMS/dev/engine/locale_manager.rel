@@ -1,5 +1,5 @@
 XL3
-H 9 areas 2A global symbols
+H 9 areas 2D global symbols
 M locale_manager
 O -mz80
 S .__.ABS. Def000000
@@ -40,18 +40,21 @@ S Flocale_manager$__str_7$0_0$0 Def000031
 S Flocale_manager$__str_8$0_0$0 Def000038
 S Flocale_manager$__str_9$0_0$0 Def00003F
 A _DATA size 0 flags 0 addr 0
-A _INITIALIZED size 46 flags 0 addr 0
-S _song_object_texts Def000034
-S G$song_object_texts$0_0$0 Def000034
-S _riff_object_texts Def000000
-S G$riff_object_texts$0_0$0 Def000000
+A _INITIALIZED size 7A flags 0 addr 0
+S _song_object_texts Def000068
+S G$song_object_texts$0_0$0 Def000068
+S _riff_object_texts2 Def000000
+S G$riff_object_texts2$0_0$0 Def000000
+S _riff_object_texts Def000034
+S G$riff_object_texts$0_0$0 Def000034
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
-A _INITIALIZER size 46 flags 0 addr 0
-S Flocale_manager$__xinit_riff_object_texts$0_0$0 Def000000
-S Flocale_manager$__xinit_song_object_texts$0_0$0 Def000034
+A _INITIALIZER size 7A flags 0 addr 0
+S Flocale_manager$__xinit_riff_object_texts2$0_0$0 Def000000
+S Flocale_manager$__xinit_riff_object_texts$0_0$0 Def000034
+S Flocale_manager$__xinit_song_object_texts$0_0$0 Def000068
 A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 02 00
@@ -60,6 +63,10 @@ R 00 00 02 00
 T 34 00 00
 R 00 00 02 00
 T 34 00 00
+R 00 00 02 00
+T 68 00 00
+R 00 00 02 00
+T 68 00 00
 R 00 00 02 00
 T 00 00 00
 R 00 00 00 00
@@ -241,9 +248,29 @@ T 30 00 00 A8 00 AF 00
 R 00 00 07 00 00 03 00 00 00 05 00 00
 T 34 00 00
 R 00 00 07 00
-T 34 00 00 B6 00 C6 00 D6 00
+T 34 00 00 00 00 07 00 0E 00
 R 00 00 07 00 00 03 00 00 00 05 00 00 00 07 00 00
-T 3A 00 00 E6 00 F6 00 06 01
+T 3A 00 00 15 00 1C 00 23 00
 R 00 00 07 00 00 03 00 00 00 05 00 00 00 07 00 00
-T 40 00 00 16 01 26 01 36 01
+T 40 00 00 2A 00 31 00 38 00
+R 00 00 07 00 00 03 00 00 00 05 00 00 00 07 00 00
+T 46 00 00 3F 00 46 00 4D 00
+R 00 00 07 00 00 03 00 00 00 05 00 00 00 07 00 00
+T 4C 00 00 54 00 5B 00 62 00
+R 00 00 07 00 00 03 00 00 00 05 00 00 00 07 00 00
+T 52 00 00 69 00 70 00 77 00
+R 00 00 07 00 00 03 00 00 00 05 00 00 00 07 00 00
+T 58 00 00 7E 00 85 00 8C 00
+R 00 00 07 00 00 03 00 00 00 05 00 00 00 07 00 00
+T 5E 00 00 93 00 9A 00 A1 00
+R 00 00 07 00 00 03 00 00 00 05 00 00 00 07 00 00
+T 64 00 00 A8 00 AF 00
+R 00 00 07 00 00 03 00 00 00 05 00 00
+T 68 00 00
+R 00 00 07 00
+T 68 00 00 B6 00 C6 00 D6 00
+R 00 00 07 00 00 03 00 00 00 05 00 00 00 07 00 00
+T 6E 00 00 E6 00 F6 00 06 01
+R 00 00 07 00 00 03 00 00 00 05 00 00 00 07 00 00
+T 74 00 00 16 01 26 01 36 01
 R 00 00 07 00 00 03 00 00 00 05 00 00 00 07 00 00

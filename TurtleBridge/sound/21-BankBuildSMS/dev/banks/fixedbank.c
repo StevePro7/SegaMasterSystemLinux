@@ -61,6 +61,210 @@
 #include "bank62.h"
 #include "bank63.h"
 
+const unsigned char *riff_sample_data2[] =
+{
+	// Early
+	// GnR
+	Riff_Sound_Youza40_01_wav_pcmenc,
+	// VH
+	Riff_Sound_VHshriek_01_wav_pcmenc,
+	Riff_Sound_VHjump02_01_wav_pcmenc,
+	Riff_Sound_VHjump02_02_wav_pcmenc,
+
+
+	// Point
+	// Simpsons
+	Riff_Sound_Excellent10_01_wav_pcmenc,
+	Riff_Sound_Excellent20_01_wav_pcmenc,
+	Riff_Sound_Excellent30_01_wav_pcmenc,
+	Riff_Sound_Excellent40_01_wav_pcmenc,
+	Riff_Sound_Excellent50_01_wav_pcmenc,
+	// WW
+	Riff_Sound_Wayne_01_wav_pcmenc,
+
+
+	// Death
+	// Silicon Valley
+	Riff_Sound_Silicon01_01_wav_pcmenc,
+	Riff_Sound_Silicon02_01_wav_pcmenc,
+	Riff_Sound_Silicon03_01_wav_pcmenc,
+
+	// Simpsons - move above
+	Riff_Sound_SimpsonsSucked_01_wav_pcmenc,
+
+	// Eminem
+	Riff_Sound_Eminem_01_wav_pcmenc,
+
+	// License to Drive	bank 28-29
+	Riff_Death_Licence_01_wav_pcmenc,
+	Riff_Death_Licence_02_wav_pcmenc,
+
+	// Commando
+	Riff_Sound_Commando_01_wav_pcmenc,
+	Riff_Sound_Commando_02_wav_pcmenc,
+
+	// VH
+	Riff_Sound_VHdoctor_01_wav_pcmenc,
+	Riff_Sound_VHdoctor_02_wav_pcmenc,
+	Riff_Sound_VHdoctor_03_wav_pcmenc,
+
+
+	// Pass
+	// Austin Powers
+	Riff_Sound_Austin01_01_wav_pcmenc,
+	Riff_Sound_Austin02_01_wav_pcmenc,
+	Riff_Sound_Austin02_02_wav_pcmenc,
+	Riff_Sound_Austin03_01_wav_pcmenc,
+	Riff_Sound_Austin03_02_wav_pcmenc,
+
+
+	// Intro
+	// AC/DC ready
+	Riff_Intro_ACDC_01_wav_pcmenc,
+	Riff_Intro_ACDC_02_wav_pcmenc,
+
+	// Hulk Hogan	bank 21-24
+	Riff_Intro_Hulk_01_wav_pcmenc,
+	Riff_Intro_Hulk_02_wav_pcmenc,
+	Riff_Intro_Hulk_03_wav_pcmenc,
+	Riff_Intro_Hulk_04_wav_pcmenc,
+
+	// Ultimate Warrior
+	Riff_Intro_Ultimate_01_wav_pcmenc,
+	Riff_Intro_Ultimate_02_wav_pcmenc,
+	Riff_Intro_Ultimate_03_wav_pcmenc,
+	Riff_Intro_Ultimate_04_wav_pcmenc,
+
+
+	// Game Over
+	Riff_Sound_Over_01_wav_pcmenc,
+	Riff_Sound_Over_02_wav_pcmenc,
+
+
+	// Title riff	bank 41-49	[x9]
+	Riff__Title__Screen__01_wav_pcmenc,
+	Riff__Title__Screen__02_wav_pcmenc,
+	Riff__Title__Screen__03_wav_pcmenc,
+	Riff__Title__Screen__04_wav_pcmenc,
+	Riff__Title__Screen__05_wav_pcmenc,
+	Riff__Title__Screen__06_wav_pcmenc,
+	Riff__Title__Screen__07_wav_pcmenc,
+	Riff__Title__Screen__08_wav_pcmenc,
+	Riff__Title__Screen__09_wav_pcmenc,
+	// Splash riff	bank 51-59	[x9]
+	Riff__Splash__Screen__01_wav_pcmenc,
+	Riff__Splash__Screen__02_wav_pcmenc,
+	Riff__Splash__Screen__03_wav_pcmenc,
+	Riff__Splash__Screen__04_wav_pcmenc,
+	Riff__Splash__Screen__05_wav_pcmenc,
+	Riff__Splash__Screen__06_wav_pcmenc,
+	Riff__Splash__Screen__07_wav_pcmenc,
+	Riff__Splash__Screen__08_wav_pcmenc,
+	Riff__Splash__Screen__09_wav_pcmenc,
+};
+
+const unsigned char riff_sample_bank2[] =
+{
+	// Early
+	// GnR
+	Riff_Sound_Youza40_01_wav_pcmenc_bank,
+	// VH
+	Riff_Sound_VHshriek_01_wav_pcmenc_bank,
+	Riff_Sound_VHjump02_01_wav_pcmenc_bank,
+	Riff_Sound_VHjump02_02_wav_pcmenc_bank,
+
+
+	// Point
+	// Simpsons
+	Riff_Sound_Excellent10_01_wav_pcmenc_bank,
+	Riff_Sound_Excellent20_01_wav_pcmenc_bank,
+	Riff_Sound_Excellent30_01_wav_pcmenc_bank,
+	Riff_Sound_Excellent40_01_wav_pcmenc_bank,
+	Riff_Sound_Excellent50_01_wav_pcmenc_bank,
+	// WW
+	Riff_Sound_Wayne_01_wav_pcmenc_bank,
+
+
+	// Death
+	// Silicon Valley
+	Riff_Sound_Silicon01_01_wav_pcmenc_bank,
+	Riff_Sound_Silicon02_01_wav_pcmenc_bank,
+	Riff_Sound_Silicon03_01_wav_pcmenc_bank,
+
+	// Simpsons - move above
+	Riff_Sound_SimpsonsSucked_01_wav_pcmenc_bank,
+
+	// Eminem
+	Riff_Sound_Eminem_01_wav_pcmenc_bank,
+
+	// License to Drive	bank 28-29
+	Riff_Death_Licence_01_wav_pcmenc_bank,
+	Riff_Death_Licence_02_wav_pcmenc_bank,
+
+	// Commando
+	Riff_Sound_Commando_01_wav_pcmenc_bank,
+	Riff_Sound_Commando_02_wav_pcmenc_bank,
+
+	// VH
+	Riff_Sound_VHdoctor_01_wav_pcmenc_bank,
+	Riff_Sound_VHdoctor_02_wav_pcmenc_bank,
+	Riff_Sound_VHdoctor_03_wav_pcmenc_bank,
+
+
+	// Pass
+	// Austin Powers
+	Riff_Sound_Austin01_01_wav_pcmenc_bank,
+	Riff_Sound_Austin02_01_wav_pcmenc_bank,
+	Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	Riff_Sound_Austin03_01_wav_pcmenc_bank,
+	Riff_Sound_Austin03_02_wav_pcmenc_bank,
+
+
+	// Intro
+	// AC/DC ready
+	Riff_Intro_ACDC_01_wav_pcmenc_bank,
+	Riff_Intro_ACDC_02_wav_pcmenc_bank,
+
+	// Hulk Hogan	bank 21-24
+	Riff_Intro_Hulk_01_wav_pcmenc_bank,
+	Riff_Intro_Hulk_02_wav_pcmenc_bank,
+	Riff_Intro_Hulk_03_wav_pcmenc_bank,
+	Riff_Intro_Hulk_04_wav_pcmenc_bank,
+
+	// Ultimate Warrior
+	Riff_Intro_Ultimate_01_wav_pcmenc_bank,
+	Riff_Intro_Ultimate_02_wav_pcmenc_bank,
+	Riff_Intro_Ultimate_03_wav_pcmenc_bank,
+	Riff_Intro_Ultimate_04_wav_pcmenc_bank,
+
+
+	// Game Over
+	Riff_Sound_Over_01_wav_pcmenc_bank,
+	Riff_Sound_Over_02_wav_pcmenc_bank,
+
+
+	// Title riff	bank 41-49	[x9]
+	Riff__Title__Screen__01_wav_pcmenc_bank,
+	Riff__Title__Screen__02_wav_pcmenc_bank,
+	Riff__Title__Screen__03_wav_pcmenc_bank,
+	Riff__Title__Screen__04_wav_pcmenc_bank,
+	Riff__Title__Screen__05_wav_pcmenc_bank,
+	Riff__Title__Screen__06_wav_pcmenc_bank,
+	Riff__Title__Screen__07_wav_pcmenc_bank,
+	Riff__Title__Screen__08_wav_pcmenc_bank,
+	Riff__Title__Screen__09_wav_pcmenc_bank,
+	// Splash riff	bank 51-59	[x9]
+	Riff__Splash__Screen__01_wav_pcmenc_bank,
+	Riff__Splash__Screen__02_wav_pcmenc_bank,
+	Riff__Splash__Screen__03_wav_pcmenc_bank,
+	Riff__Splash__Screen__04_wav_pcmenc_bank,
+	Riff__Splash__Screen__05_wav_pcmenc_bank,
+	Riff__Splash__Screen__06_wav_pcmenc_bank,
+	Riff__Splash__Screen__07_wav_pcmenc_bank,
+	Riff__Splash__Screen__08_wav_pcmenc_bank,
+	Riff__Splash__Screen__09_wav_pcmenc_bank,
+};
+
 const unsigned char *steven_text[] =
 {
 	"TEST01",
@@ -74,12 +278,23 @@ const unsigned char steven_data[] =
 
 const unsigned char *riff_sample_data[] =
 {
+	// Early
+	// GnR
+	//Riff_Sound_Youza40_01_wav_pcmenc,
+	// VH
+	//Riff_Sound_VHshriek_01_wav_pcmenc,
+	//Riff_Sound_VHjump02_01_wav_pcmenc,
+	//Riff_Sound_VHjump02_02_wav_pcmenc,
+
+	// Point
 	// Simpsons
 	Riff_Sound_Excellent10_01_wav_pcmenc,
 	Riff_Sound_Excellent20_01_wav_pcmenc,
 	Riff_Sound_Excellent30_01_wav_pcmenc,
 	Riff_Sound_Excellent40_01_wav_pcmenc,
 	Riff_Sound_Excellent50_01_wav_pcmenc,
+	// WW
+	//Riff_Sound_Wayne_01_wav_pcmenc,
 
 	// Austin Powers
 	Riff_Sound_Austin01_01_wav_pcmenc,
@@ -138,8 +353,58 @@ const unsigned char *riff_sample_data[] =
 	// WW
 	Riff_Sound_Wayne_01_wav_pcmenc,
 
+
+	// Death
+	// Silicon Valley
+	//Riff_Sound_Silicon01_01_wav_pcmenc,
+	//Riff_Sound_Silicon02_01_wav_pcmenc,
+	//Riff_Sound_Silicon03_01_wav_pcmenc,
+	// Simpsons - move above
+	//Riff_Sound_SimpsonsSucked_01_wav_pcmenc,
 	// Eminem
 	Riff_Sound_Eminem_01_wav_pcmenc,
+	// License to Drive	bank 28-29
+	//Riff_Death_Licence_01_wav_pcmenc,
+	//Riff_Death_Licence_02_wav_pcmenc,
+	// Commando
+	//Riff_Sound_Commando_01_wav_pcmenc,
+	//Riff_Sound_Commando_02_wav_pcmenc,
+	// VN
+	//Riff_Sound_VHdoctor_01_wav_pcmenc,
+	//Riff_Sound_VHdoctor_02_wav_pcmenc,
+	//Riff_Sound_VHdoctor_03_wav_pcmenc,
+	
+
+	// Pass
+	// Austin Powers
+	//Riff_Sound_Austin01_01_wav_pcmenc,
+	//Riff_Sound_Austin02_01_wav_pcmenc,
+	//Riff_Sound_Austin02_02_wav_pcmenc,
+	//Riff_Sound_Austin03_01_wav_pcmenc,
+	//Riff_Sound_Austin03_02_wav_pcmenc,
+	// Pass
+
+	// Intro
+	//// AC/DC ready
+	//Riff_Intro_ACDC_01_wav_pcmenc,
+	//Riff_Intro_ACDC_02_wav_pcmenc,
+
+	//// Hulk Hogan	bank 21-23
+	//Riff_Intro_Hulk_01_wav_pcmenc,
+	//Riff_Intro_Hulk_02_wav_pcmenc,
+	//Riff_Intro_Hulk_03_wav_pcmenc,
+	//Riff_Intro_Hulk_04_wav_pcmenc,
+
+	//// Ultimate Warrior	bank 17-20
+	//Riff_Intro_Ultimate_01_wav_pcmenc,
+	//Riff_Intro_Ultimate_02_wav_pcmenc,
+	//Riff_Intro_Ultimate_03_wav_pcmenc,
+	//Riff_Intro_Ultimate_04_wav_pcmenc,
+	// Intro
+
+	// Game Over
+	//Riff_Sound_Over_01_wav_pcmenc,
+	//Riff_Sound_Over_02_wav_pcmenc,
 
 	// Title riff	bank 41-49	[x9]
 	Riff__Title__Screen__01_wav_pcmenc,
@@ -165,12 +430,23 @@ const unsigned char *riff_sample_data[] =
 };
 const unsigned char riff_sample_bank[] =
 {
+	// Early
+	// GnR
+	//Riff_Sound_Youza40_01_wav_pcmenc_bank,
+	// VH
+	//Riff_Sound_VHshriek_01_wav_pcmenc_bank,
+	//Riff_Sound_VHjump02_01_wav_pcmenc_bank,
+	//Riff_Sound_VHjump02_02_wav_pcmenc_bank,
+
+	// Point
 	// Simpsons
 	Riff_Sound_Excellent10_01_wav_pcmenc_bank,
 	Riff_Sound_Excellent20_01_wav_pcmenc_bank,
 	Riff_Sound_Excellent30_01_wav_pcmenc_bank,
 	Riff_Sound_Excellent40_01_wav_pcmenc_bank,
 	Riff_Sound_Excellent50_01_wav_pcmenc_bank,
+	// WW
+	//Riff_Sound_Wayne_01_wav_pcmenc_bank,
 
 	// Austin Powers
 	Riff_Sound_Austin01_01_wav_pcmenc_bank,
@@ -229,8 +505,63 @@ const unsigned char riff_sample_bank[] =
 	// WW
 	Riff_Sound_Wayne_01_wav_pcmenc_bank,
 
+
+
+	// Death
+	// Silicon Valley
+	//Riff_Sound_Silicon01_01_wav_pcmenc_bank,
+	//Riff_Sound_Silicon02_01_wav_pcmenc_bank,
+	//Riff_Sound_Silicon03_01_wav_pcmenc_bank,
+	// Simpsons - move above
+	//Riff_Sound_SimpsonsSucked_01_wav_pcmenc_bank,
 	// Eminem
 	Riff_Sound_Eminem_01_wav_pcmenc_bank,
+	// License to Drive	bank 28-29
+	//Riff_Death_Licence_01_wav_pcmenc_bank,
+	//Riff_Death_Licence_02_wav_pcmenc_bank,
+	// Commando
+	//Riff_Sound_Commando_01_wav_pcmenc_bank,
+	//Riff_Sound_Commando_02_wav_pcmenc_bank,
+	// VN
+	//Riff_Sound_VHdoctor_01_wav_pcmenc_bank,
+	//Riff_Sound_VHdoctor_02_wav_pcmenc_bank,
+	//Riff_Sound_VHdoctor_03_wav_pcmenc_bank,
+
+
+	// Death
+	// Commando
+	//Riff_Sound_Commando_01_wav_pcmenc_bank,
+	//Riff_Sound_Commando_02_wav_pcmenc_bank,
+	// Simpsons - move above
+	//Riff_Sound_SimpsonsSucked_01_wav_pcmenc_bank,
+
+
+	// Pass
+	// Austin Powers
+	//Riff_Sound_Austin01_01_wav_pcmenc_bank,
+	//Riff_Sound_Austin02_01_wav_pcmenc_bank,
+	//Riff_Sound_Austin02_02_wav_pcmenc_bank,
+	//Riff_Sound_Austin03_01_wav_pcmenc_bank,
+	//Riff_Sound_Austin03_02_wav_pcmenc_bank,
+	// Pass
+
+	// Intro
+	//// AC/DC ready
+	//Riff_Intro_ACDC_01_wav_pcmenc_bank,
+	//Riff_Intro_ACDC_02_wav_pcmenc_bank,
+
+	//// Hulk Hogan	bank 21-23
+	//Riff_Intro_Hulk_01_wav_pcmenc_bank,
+	//Riff_Intro_Hulk_02_wav_pcmenc_bank,
+	//Riff_Intro_Hulk_03_wav_pcmenc_bank,
+	//Riff_Intro_Hulk_04_wav_pcmenc_bank,
+
+	//// Ultimate Warrior	bank 17-20
+	//Riff_Intro_Ultimate_01_wav_pcmenc_bank,
+	//Riff_Intro_Ultimate_02_wav_pcmenc_bank,
+	//Riff_Intro_Ultimate_03_wav_pcmenc_bank,
+	//Riff_Intro_Ultimate_04_wav_pcmenc_bank,
+	// Intro
 
 	// Title
 	Riff__Title__Screen__01_wav_pcmenc_bank,

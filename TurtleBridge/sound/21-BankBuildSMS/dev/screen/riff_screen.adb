@@ -8,11 +8,13 @@ S:Lriff_screen.screen_riff_screen_update$count$1_0$9({1}SC:U),R,0,0,[c]
 S:Lriff_screen.screen_riff_screen_update$value$1_0$9({1}SC:U),R,0,0,[b]
 S:Friff_screen$indexs$0_0$0({26}DA26d,SC:U),E,0,0
 S:Friff_screen$counts$0_0$0({26}DA26d,SC:U),E,0,0
+S:G$riff_object_texts2$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$riff_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$song_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
-S:G$riff_sample_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$riff_sample_data2$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$music_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$sound_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$riff_sample_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:Friff_screen$index$0_0$0({1}SC:U),E,0,0
 S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0
