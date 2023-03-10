@@ -2,7 +2,7 @@ M:cont_screen
 F:G$screen_cont_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_cont_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lcont_screen.screen_cont_screen_update$screen_type$1_0$107({2}DG,SC:U),B,1,4
-S:Lcont_screen.screen_cont_screen_update$input$1_0$108({1}SC:U),R,0,0,[a]
+S:Lcont_screen.screen_cont_screen_update$input$1_0$108({1}SC:U),R,0,0,[c]
 T:Fcont_screen$tag_struct_player_object[({0}S:S$initX$0_0$0({1}SC:U),Z,0,0)({1}S:S$posnX$0_0$0({2}SI:U),Z,0,0)({3}S:S$tileX$0_0$0({1}SC:U),Z,0,0)({4}S:S$lookX$0_0$0({1}SC:U),Z,0,0)({5}S:S$posnY$0_0$0({1}SC:U),Z,0,0)({6}S:S$tileY$0_0$0({1}SC:U),Z,0,0)({7}S:S$leapY$0_0$0({2}SI:U),Z,0,0)({9}S:S$drawX$0_0$0({1}SC:U),Z,0,0)({10}S:S$drawY$0_0$0({1}SC:U),Z,0,0)({11}S:S$player_state$0_0$0({1}SC:U),Z,0,0)({12}S:S$jumper_index$0_0$0({1}SC:U),Z,0,0)({13}S:S$deltaY_index$0_0$0({1}SC:U),Z,0,0)({14}S:S$player_frame$0_0$0({1}SC:U),Z,0,0)({15}S:S$player_lives$0_0$0({1}SC:U),Z,0,0)({16}S:S$motion_count$0_0$0({1}SC:U),Z,0,0)]
 S:G$jump_array_ptr$0_0$0({0}DA0d,DG,SI:S),E,0,0
 S:G$global_player_object$0_0$0({17}STtag_struct_player_object:S),E,0,0
