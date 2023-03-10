@@ -18,6 +18,8 @@ void screen_begin_screen_load()
 	engine_debug_manager_initgame();
 	cloud = engine_random_manager_next( SPRITE_TILES );
 	engine_game_manager_set_cloud_form( cloud );
+
+	devkit_SMS_displayOn();
 	// TODO delete this.
 
 	//engine_graphics_manager_common();

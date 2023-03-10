@@ -67,7 +67,7 @@ void engine_scroll_manager_full_load( unsigned char screen, int scrollFinish )
 	so->scrollFinish = scrollFinish;
 	devkit_SMS_setBGScrollX( so->scrollLeftX );
 	//TODO test
-	devkit_SMS_disableLineInterrupt();
+	//devkit_SMS_disableLineInterrupt();
 }
 enum_scroll_state engine_scroll_manager_full_update( unsigned char delta )
 {

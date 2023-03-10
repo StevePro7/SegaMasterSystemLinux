@@ -5,8 +5,8 @@ S:Llevel_manager.engine_level_manager_init$lo$1_0$99({2}DG,STtag_struct_level_ob
 F:G$engine_level_manager_draw_point$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Llevel_manager.engine_level_manager_draw_point$checkPoint$1_0$100({1}SC:U),B,1,4
 S:Llevel_manager.engine_level_manager_draw_point$lo$1_0$101({2}DG,STtag_struct_level_object:S),R,0,0,[]
-S:Llevel_manager.engine_level_manager_draw_point$index$1_0$101({1}SC:U),R,0,0,[e]
 S:Llevel_manager.engine_level_manager_draw_point$scrollColumn$1_0$101({2}SI:U),R,0,0,[c,b]
+S:Llevel_manager.engine_level_manager_draw_point$index$1_0$101({1}SC:U),R,0,0,[e]
 F:G$engine_level_manager_draw_column$0_0$0({2}DF,SV:S),Z,0,2,0,0,0
 S:Llevel_manager.engine_level_manager_draw_column$scrollColumn$1_0$104({2}SI:U),B,1,4
 S:Llevel_manager.engine_level_manager_draw_column$lo$1_0$105({2}DG,STtag_struct_level_object:S),R,0,0,[]

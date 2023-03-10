@@ -29,7 +29,7 @@ void screen_load_screen_load()
 	struct_game_object *go = &global_game_object;
 	unsigned char player_loadY;
 
-	devkit_SMS_displayOff();
+	//devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();
 	engine_content_manager_sprite();
@@ -45,11 +45,11 @@ void screen_load_screen_load()
 	//engine_graphics_manager_clouds( go->game_cloud );
 
 	engine_scroll_manager_load( go->game_point, lo->level_size );
-	engine_scroll_manager_update( 0 );
+	//engine_scroll_manager_update( 0 );
 
 	engine_level_manager_draw_point( go->game_point );
 
-	//engine_player_manager_initX( go->game_difficulty, go->game_world );
+	engine_player_manager_initX( go->game_difficulty, go->game_world );
 	engine_player_manager_loadX( go->game_point );
 	player_loadY = level_platforms[ po->lookX ];
 	engine_player_manager_loadY( player_loadY );
@@ -66,7 +66,7 @@ void screen_load_screen_load()
 	// TODO delete
 	//engine_debug_manager_printout();
 	//engine_font_manager_text( "WORLD01ROUND01POINT03/04", 4, 3 );
-	devkit_SMS_displayOn();
+	//devkit_SMS_displayOn();
 
 	
 }

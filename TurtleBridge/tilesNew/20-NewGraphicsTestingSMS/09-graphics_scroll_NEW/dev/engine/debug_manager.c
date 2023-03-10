@@ -125,5 +125,4 @@ void engine_debug_manager_initcontent()
 	engine_content_manager_bggame();
 	engine_content_manager_sprite();
 	devkit_SMS_displayOn();
-
 }
