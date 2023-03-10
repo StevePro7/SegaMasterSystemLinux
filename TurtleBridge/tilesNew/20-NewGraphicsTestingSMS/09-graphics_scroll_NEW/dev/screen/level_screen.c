@@ -37,7 +37,7 @@ void screen_level_screen_load()
 	game_round = go->game_round;
 	game_level = go->game_level;
 	game_point = go->game_point;
-	cursorIdx = 0;
+	cursorIdx = 1;
 
 
 	engine_graphics_manager_common();
@@ -95,11 +95,22 @@ void screen_level_screen_update( unsigned char *screen_type )
 	if( input )
 	{
 		updateLevel = true;
-		if( 0 == cursorIdx || 1 == cursorIdx )
+		if( 0 == cursorIdx )
+		{
+			if( game_world > 0 )
+			{
+				game_world--;
+				//game_level--;
+				//game_point = 0;
+				//engine_level_manager_init( game_level );
+				//engine_level_manager_draw_point( game_point );
+			}
+		}
+		else if( 1 == cursorIdx )
 		{
 			if( game_level > 0 )
 			{
-				game_world--;
+				//game_world--;
 				game_level--;
 				game_point = 0;
 				//engine_level_manager_init( game_level );
@@ -120,11 +131,22 @@ void screen_level_screen_update( unsigned char *screen_type )
 	if( input )
 	{
 		updateLevel = true;
-		if( 0 == cursorIdx || 1 == cursorIdx )
+		if( 0 == cursorIdx )
+		{
+			if( game_world < (MAX_WOLRDS-1) )
+			{
+				game_world++;
+				//game_level++;
+				game_point = 0;
+				//engine_level_manager_init( game_level );
+				//engine_level_manager_draw_point( game_point );
+			}
+		}
+		else if( 1 == cursorIdx )
 		{
 			if( game_level < 21 )
 			{
-				game_world++;
+				//game_world++;
 				game_level++;
 				game_point = 0;
 				//engine_level_manager_init( game_level );
@@ -172,6 +194,10 @@ void screen_level_screen_update( unsigned char *screen_type )
 	if( input )
 	{
 		engine_game_manager_set_level_data( game_world, game_round, game_point );
+
+		// TODO  wire this up correctly!!
+		engine_game_manager_set_level_test( game_level );
+
 		*screen_type = screen_type_diff;
 		return;
 	}
@@ -252,7 +278,8 @@ static void printStats()
 	delta = 0;
 	delta = 1;
 	engine_font_manager_valu( ( game_world + delta ), 9, SHARE_TEXT_ROW );
-	engine_font_manager_valu( ( game_round + delta ), 18, SHARE_TEXT_ROW );
+	//engine_font_manager_valu( ( game_round + delta ), 18, SHARE_TEXT_ROW );	// TODO using level instead of round for testing...
+	engine_font_manager_valu( ( game_level /*+ delta*/ ), 18, SHARE_TEXT_ROW );
 	engine_font_manager_valu( ( game_point + delta ), 27, SHARE_TEXT_ROW );		// TODO - revert
 	//engine_font_manager_data( ( game_point + delta ), 27, SHARE_TEXT_ROW );
 

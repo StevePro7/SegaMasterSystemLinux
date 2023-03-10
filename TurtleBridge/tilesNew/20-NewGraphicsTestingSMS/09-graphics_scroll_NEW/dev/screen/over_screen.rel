@@ -1,47 +1,37 @@
 ;!FILE over_screen.asm
 XL3
-H 9 areas 27 global symbols
+H 9 areas 1D global symbols
 M over_screen
 O -mz80
-S _engine_player_manager_draw Ref000000
 S _engine_font_manager_text Ref000000
 S .__.ABS. Def000000
-S _engine_scroll_manager_update Ref000000
-A _CODE size 2D flags 0 addr 0
-S XG$screen_over_screen_update$0$0 Def00002C
+A _CODE size 23 flags 0 addr 0
+S XG$screen_over_screen_update$0$0 Def000022
 S C$over_screen.c$20$1_0$26 Def00000D
-S A$over_screen$60 Def000003
+S A$over_screen$60 Def000007
 S C$over_screen.c$12$1_0$26 Def000000
-S A$over_screen$61 Def000004
-S A$over_screen$62 Def000007
+S A$over_screen$61 Def000008
+S A$over_screen$71 Def00000D
+S A$over_screen$62 Def00000B
 S G$screen_over_screen_load$0$0 Def000000
-S A$over_screen$90 Def00001C
-S A$over_screen$63 Def000008
+S A$over_screen$90 Def00001E
+S A$over_screen$63 Def00000C
 S C$over_screen.c$22$1_0$28 Def00001C
-S A$over_screen$91 Def00001D
-S A$over_screen$73 Def00000D
-S A$over_screen$64 Def00000B
-S A$over_screen$92 Def00001E
-S A$over_screen$65 Def00000C
-S C$over_screen.c$24$1_0$28 Def00001C
-S A$over_screen$93 Def00001F
-S C$over_screen.c$25$1_0$28 Def000023
-S A$over_screen$94 Def000022
-S C$over_screen.c$26$1_0$28 Def000026
-S A$over_screen$59 Def000000
-S C$over_screen.c$27$1_0$28 Def00002C
-S A$over_screen$98 Def000023
+S A$over_screen$91 Def00001F
+S A$over_screen$92 Def000020
+S A$over_screen$57 Def000000
+S A$over_screen$58 Def000003
+S C$over_screen.c$26$1_0$28 Def00001C
+S A$over_screen$59 Def000004
+S C$over_screen.c$27$1_0$28 Def000022
+S A$over_screen$88 Def00001C
+S A$over_screen$89 Def00001D
 S _screen_over_screen_load Def000000
 S C$over_screen.c$7$0_0$26 Def000000
 S Fover_screen$__str_0$0_0$0 Def00000E
 S XG$screen_over_screen_load$0$0 Def00000D
 S G$screen_over_screen_update$0$0 Def00001C
-S A$over_screen$102 Def000026
-S A$over_screen$103 Def000027
-S A$over_screen$104 Def000028
-S A$over_screen$114 Def00002C
-S A$over_screen$105 Def000029
-S A$over_screen$106 Def00002A
+S A$over_screen$100 Def000022
 S _screen_over_screen_update Def00001C
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
@@ -54,7 +44,7 @@ A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
 T 00 00 00 11 0A 03 D5 21 0E 00 E5 CD 00 00 F1 F1
-R 00 00 00 00 00 08 00 00 02 0C 01 00
+R 00 00 00 00 00 08 00 00 02 0C 00 00
 T 0D 00 00 C9
 R 00 00 00 00
 T 0E 00 00
@@ -65,7 +55,5 @@ T 1B 00 00 00
 R 00 00 00 00
 T 1C 00 00
 R 00 00 00 00
-T 1C 00 00 AF F5 33 CD 00 00 33 CD 00 00 C1 E1 E5
-R 00 00 00 00 02 07 03 00 02 0B 00 00
-T 29 00 00 C5 36 10 C9
+T 1C 00 00 C1 E1 E5 C5 36 10 C9
 R 00 00 00 00

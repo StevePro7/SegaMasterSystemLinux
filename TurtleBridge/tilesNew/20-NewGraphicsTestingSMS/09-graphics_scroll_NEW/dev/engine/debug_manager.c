@@ -29,6 +29,7 @@ void engine_debug_manager_initgame()
 	// 9 = turtles
 	// 3 = long512
 	go->game_level = 2;
+	//go->game_level = 3;
 	//go->game_level = 0;
 	//go->game_level = 1;
 	//go->game_level = 3;
@@ -50,7 +51,7 @@ void engine_debug_manager_initgame()
 
 	po->player_frame = 0;// player_frame_ground_left_01;
 
-	po->player_lives = 1;
+	po->player_lives = 3;
 }
 
 void engine_debug_manager_printout()
