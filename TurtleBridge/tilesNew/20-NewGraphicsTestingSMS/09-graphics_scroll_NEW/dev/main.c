@@ -25,7 +25,8 @@ void main( void )
 
 		if( global_pause )
 		{
-			engine_scroll_manager_update( 0 );
+			engine_scroll_manager_para_update( 0 );
+			//engine_scroll_manager_update( 0 );
 			devkit_SMS_waitForVBlank();
 			//engine_audio_manager_update();
 			continue;
@@ -58,7 +59,7 @@ static void start()
 	unsigned char open_screen_type;
 
 	devkit_SMS_init();
-	engine_debug_manager_initcontent();
+	//engine_debug_manager_initcontent();
 
 	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_NORMAL() );
 	devkit_SMS_useFirstHalfTilesforSprites( false );

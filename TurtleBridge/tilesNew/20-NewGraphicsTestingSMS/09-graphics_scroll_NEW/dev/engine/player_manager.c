@@ -44,7 +44,7 @@ void engine_player_manager_init()
 	po->player_state = player_state_isonground;
 	po->jumper_index = 0; po->deltaY_index = 0;
 	po->player_frame = player_frame_ground_rght_01;
-	po->player_lives = MAX_LIVES;
+	//po->player_lives = MAX_LIVES;
 	po->motion_count = 0;
 	jump_ptr = NULL;
 	jump_len = 0;
@@ -110,6 +110,19 @@ void engine_player_manager_loadY( unsigned char player_loadY )
 
 	po->leapY = po->posnY << 8;
 	updatePlayerY();
+}
+
+void engine_player_manager_lives( unsigned char difficulty )
+{
+	struct_player_object *po = &global_player_object;
+	po->player_lives = MAX_LIVES;
+
+	// TODO Do I want to implement this?	Don't think I'll bother with this
+	if( difficulty_type_easier == difficulty || difficulty_type_normal == difficulty )
+	{
+		//po->player_lives += 1;
+		po->player_lives += 0;
+	}
 }
 
 unsigned char engine_player_manager_get_deltaX( unsigned char state, unsigned char command )

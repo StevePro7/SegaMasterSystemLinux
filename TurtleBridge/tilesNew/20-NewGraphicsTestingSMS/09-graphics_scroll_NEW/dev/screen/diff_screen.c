@@ -113,6 +113,7 @@ void screen_diff_screen_update( unsigned char *screen_type )
 		// TODO sfx
 		//engine_player_manager_draw();
 		engine_game_manager_set_difficulty( game_difficulty );
+		engine_player_manager_lives( game_difficulty );
 		*screen_type = screen_type_level;
 		return;
 	}
@@ -121,6 +122,7 @@ void screen_diff_screen_update( unsigned char *screen_type )
 	if( input1 )
 	{
 		engine_game_manager_set_difficulty( game_difficulty );
+		engine_player_manager_lives( game_difficulty );
 		*screen_type = screen_type_start;
 		return;
 	}

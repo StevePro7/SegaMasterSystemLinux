@@ -12,6 +12,7 @@ void engine_player_manager_init();
 void engine_player_manager_initX( unsigned char difficulty, unsigned char world );
 void engine_player_manager_loadX( unsigned char checkPoint );
 void engine_player_manager_loadY( unsigned char player_loadY );
+void engine_player_manager_lives( unsigned char difficulty );
 
 unsigned char engine_player_manager_get_deltaX( unsigned char state, unsigned char command );
 signed int engine_player_manager_get_deltaY();

@@ -3,7 +3,7 @@
 //#include "../engine/debug_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
-//#include "../engine/game_manager.h"
+#include "../engine/game_manager.h"
 #include "../engine/graphics_manager.h"
 #include "../engine/input_manager.h"
 //#include "../engine/level_manager.h"
@@ -25,8 +25,18 @@ void screen_cont_screen_load()
 
 void screen_cont_screen_update( unsigned char *screen_type )
 {
+	struct_player_object *po = &global_player_object;
+	struct_game_object *go = &global_game_object;
 	unsigned char input;
 	
+	input = engine_input_manager_hold( input_type_fire1 );
+	if( input )
+	{
+		// TODO 
+		engine_player_manager_lives( go->game_difficulty );
+		*screen_type = screen_type_load;
+		return;
+	}
 	input = engine_input_manager_hold( input_type_fire2 );
 	if( input )
 	{

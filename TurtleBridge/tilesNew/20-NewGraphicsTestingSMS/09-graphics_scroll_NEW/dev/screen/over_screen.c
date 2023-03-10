@@ -20,14 +20,18 @@ void screen_over_screen_load()
 	//engine_font_manager_data( byte, 10, 10 );
 	//engine_font_manager_data( bit, 10, 11 );
 	//engine_font_manager_data( res, 10, 12 );
+
+	// TODO play Game Over PCM - block
+	// TODO play game over music
 }
 
 void screen_over_screen_update( unsigned char *screen_type )
 {
-	unsigned char input;
+	unsigned char input1, input2;
 
-	input = engine_input_manager_hold( input_type_fire1 );
-	if( input )
+	input1 = engine_input_manager_hold( input_type_fire1 );
+	input2 = engine_input_manager_hold( input_type_fire2 );
+	if( input1 || input2 )
 	{
 		*screen_type = screen_type_start;
 		return;
