@@ -120,8 +120,8 @@ void engine_player_manager_lives( unsigned char difficulty )
 	// TODO Do I want to implement this?	Don't think I'll bother with this
 	if( difficulty_type_easier == difficulty || difficulty_type_normal == difficulty )
 	{
-		//po->player_lives += 1;
-		po->player_lives += 0;
+		po->player_lives += 1;
+		//po->player_lives += 0;
 	}
 }
 

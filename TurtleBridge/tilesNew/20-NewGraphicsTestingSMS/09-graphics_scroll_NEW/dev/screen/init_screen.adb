@@ -3,8 +3,6 @@ F:G$screen_init_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Linit_screen.screen_init_screen_load$go$1_0$27({2}DG,STtag_struct_game_object:S),R,0,0,[]
 F:G$screen_init_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Linit_screen.screen_init_screen_update$screen_type$1_0$28({2}DG,SC:U),B,1,4
-F:G$screen_init_screen_updateX$0_0$0({2}DF,SV:S),C,0,0,0,0,0
-S:Linit_screen.screen_init_screen_updateX$screen_type$1_0$30({2}DG,SC:U),B,1,4
 T:Finit_screen$tag_struct_player_object[({0}S:S$initX$0_0$0({1}SC:U),Z,0,0)({1}S:S$posnX$0_0$0({2}SI:U),Z,0,0)({3}S:S$tileX$0_0$0({1}SC:U),Z,0,0)({4}S:S$lookX$0_0$0({1}SC:U),Z,0,0)({5}S:S$posnY$0_0$0({1}SC:U),Z,0,0)({6}S:S$tileY$0_0$0({1}SC:U),Z,0,0)({7}S:S$leapY$0_0$0({2}SI:U),Z,0,0)({9}S:S$drawX$0_0$0({1}SC:U),Z,0,0)({10}S:S$drawY$0_0$0({1}SC:U),Z,0,0)({11}S:S$player_state$0_0$0({1}SC:U),Z,0,0)({12}S:S$jumper_index$0_0$0({1}SC:U),Z,0,0)({13}S:S$deltaY_index$0_0$0({1}SC:U),Z,0,0)({14}S:S$player_frame$0_0$0({1}SC:U),Z,0,0)({15}S:S$player_lives$0_0$0({1}SC:U),Z,0,0)({16}S:S$motion_count$0_0$0({1}SC:U),Z,0,0)]
 T:Finit_screen$tag_struct_game_object[({0}S:S$game_difficulty$0_0$0({1}SC:U),Z,0,0)({1}S:S$game_world$0_0$0({1}SC:U),Z,0,0)({2}S:S$game_round$0_0$0({1}SC:U),Z,0,0)({3}S:S$game_level$0_0$0({1}SC:U),Z,0,0)({4}S:S$game_point$0_0$0({1}SC:U),Z,0,0)({5}S:S$game_cloud$0_0$0({1}SC:U),Z,0,0)({6}S:S$game_isgod$0_0$0({1}SC:U),Z,0,0)]
 T:Finit_screen$tag_struct_level_object[({0}S:S$level_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$level_size$0_0$0({2}SI:U),Z,0,0)({4}S:S$level_bank$0_0$0({1}SC:U),Z,0,0)({5}S:S$column_draw$0_0$0({1}SC:U),Z,0,0)]
@@ -16,10 +14,6 @@ S:G$global_player_object$0_0$0({17}STtag_struct_player_object:S),E,0,0
 S:G$engine_collision_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_collision_manager_player$0_0$0({2}DF,SC:S),C,0,0
 S:G$engine_collision_manager_finish$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_debug_manager_initgame$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_debug_manager_printout$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_debug_manager_scrollout$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_debug_manager_initcontent$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_set_cloud_form$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_set_difficulty$0_0$0({2}DF,SV:S),C,0,0
@@ -50,4 +44,3 @@ S:G$engine_player_manager_dying$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_pass$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_dead$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_count$0_0$0({2}DF,SV:S),C,0,0
-S:G$screen_init_screen_updateX$0_0$0({2}DF,SV:S),C,0,0
