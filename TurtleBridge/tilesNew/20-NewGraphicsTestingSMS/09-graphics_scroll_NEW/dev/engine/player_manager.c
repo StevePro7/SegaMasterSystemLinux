@@ -391,6 +391,7 @@ void engine_player_manager_dying()
 {
 	struct_player_object *po = &global_player_object;
 	po->posnX = po->initX;
+	po->player_lives--;
 }
 
 unsigned char engine_player_manager_finish()

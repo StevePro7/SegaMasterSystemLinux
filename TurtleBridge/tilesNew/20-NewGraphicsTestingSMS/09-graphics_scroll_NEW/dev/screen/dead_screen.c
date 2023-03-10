@@ -71,7 +71,7 @@ void screen_dead_screen_update( unsigned char *screen_type )
 	{
 		input1 = engine_input_manager_hold( input_type_left );
 		input2 = engine_input_manager_move( input_type_right );
-		input1 = 1;		// TODO delete
+	//	input1 = 1;		// TODO delete
 		if( input1 || input2 )
 		{
 			engine_player_manager_dead( player_deadX );
