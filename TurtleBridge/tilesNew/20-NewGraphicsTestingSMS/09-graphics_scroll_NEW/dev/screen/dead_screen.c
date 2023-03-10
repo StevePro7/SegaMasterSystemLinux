@@ -28,6 +28,7 @@ void screen_dead_screen_load()
 	swap = 0;
 }
 
+// TODO - inject pause before going to next screen...
 void screen_dead_screen_update( unsigned char *screen_type )
 {
 	struct_player_object *po = &global_player_object;
@@ -42,35 +43,44 @@ void screen_dead_screen_update( unsigned char *screen_type )
 	}
 
 	// Player chance to quit out to start screen.
-	input1 = engine_input_manager_move( input_type_up );
-	if( input1 )
-	{
-		check = engine_reset_manager_update();
-		if( check )
-		{
-			input2 = engine_input_manager_move( input_type_fire2 );
-			if( input2 )
-			{
-				*screen_type = screen_type_start;
-				return;
-			}
-		}
-	}
-	else
-	{
-		engine_reset_manager_reset();
-	}
+	//input1 = engine_input_manager_move( input_type_up );
+	//if( input1 )
+	//{
+	//	check = engine_reset_manager_update();
+	//	if( check )
+	//	{
+	//		input2 = engine_input_manager_move( input_type_fire2 );
+	//		if( input2 )
+	//		{
+	//			*screen_type = screen_type_start;
+	//			return;
+	//		}
+	//	}
+	//}
+	//else
+	//{
+	//	engine_reset_manager_reset();
+	//}
 
 	//engine_scroll_manager_update( 0 );
 	if( po->posnY >= PLAYER_DEAD )
 	{
 		//swap = 1;
-		//
+		if( 0 == po->player_lives )
+		{
+			*screen_type = screen_type_cont;
+			return;
+		}
+		else
+		{
+			*screen_type = screen_type_load;
+			return;
+		}
 	}
 	else
 	{
-		input1 = engine_input_manager_hold( input_type_left );
-		input2 = engine_input_manager_move( input_type_right );
+		input1 = engine_input_manager_hold( input_type_up );
+		input2 = engine_input_manager_move( input_type_down );
 	//	input1 = 1;		// TODO delete
 		if( input1 || input2 )
 		{

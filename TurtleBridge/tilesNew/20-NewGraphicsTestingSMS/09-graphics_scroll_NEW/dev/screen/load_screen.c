@@ -44,6 +44,9 @@ void screen_load_screen_load()
 	//engine_tile_manager_stevepro2( TILE_CLOUD_LARGE, 25, 5, 8, 3 );
 	//engine_graphics_manager_clouds( go->game_cloud );
 
+	engine_scroll_manager_load( go->game_point, lo->level_size );
+	engine_scroll_manager_update( 0 );
+
 	engine_level_manager_draw_point( go->game_point );
 
 	//engine_player_manager_initX( go->game_difficulty, go->game_world );
@@ -65,8 +68,7 @@ void screen_load_screen_load()
 	//engine_font_manager_text( "WORLD01ROUND01POINT03/04", 4, 3 );
 	devkit_SMS_displayOn();
 
-	engine_scroll_manager_load( go->game_point, lo->level_size );
-	engine_scroll_manager_update( 0 );
+	
 }
 
 void screen_load_screen_update( unsigned char *screen_type )
