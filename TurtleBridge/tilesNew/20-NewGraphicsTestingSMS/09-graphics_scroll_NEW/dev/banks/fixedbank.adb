@@ -21,7 +21,7 @@ S:G$mus_cont_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$mus_death_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$mus_level_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$mus_over_psg$0_0$0({0}DA0d,SC:U),D,0,0
-S:G$level_0808_txt$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$level_0404_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$level1116_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$level1100_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$level1101_txt$0_0$0({0}DA0d,SC:U),D,0,0

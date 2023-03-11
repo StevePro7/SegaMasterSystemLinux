@@ -14,13 +14,13 @@ void engine_debug_manager_initgame()
 {
 	struct_player_object *po = &global_player_object;
 	struct_game_object *go = &global_game_object;
-	//go->game_difficulty = difficulty_type_easier;
-	go->game_difficulty = difficulty_type_normal;
+	go->game_difficulty = difficulty_type_easier;
+	//go->game_difficulty = difficulty_type_normal;
 	//go->game_difficulty = difficulty_type_harder;
-	go->game_difficulty = difficulty_type_insane;
+	//go->game_difficulty = difficulty_type_insane;
 
-	go->game_world = 5;	// TODO - currently not aligned with game_level but used for testing...
-	go->game_point = 1;
+	go->game_world = 1;	// TODO - currently not aligned with game_level but used for testing...
+	go->game_point = 3;
 
 	go->game_world -= 1;
 	go->game_point -= 1;
@@ -35,7 +35,7 @@ void engine_debug_manager_initgame()
 	//go->game_level = 3;
 	//go->game_level = 9;
 	//go->game_level = 17;// 64x screens
-	//go->game_level = 19;	// testing large jumps
+	go->game_level = 19;	// testing large jumps
 	//go->game_level = 0;
 
 	//go->game_level = 3;	// trees
@@ -51,7 +51,7 @@ void engine_debug_manager_initgame()
 
 	po->player_frame = 0;// player_frame_ground_left_01;
 
-	po->player_lives = 1;
+	po->player_lives = 4;
 }
 
 void engine_debug_manager_printout()
