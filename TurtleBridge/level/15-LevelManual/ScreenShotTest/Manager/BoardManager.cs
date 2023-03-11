@@ -2,7 +2,9 @@
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace ScreenShotTest
 {
@@ -10,19 +12,22 @@ namespace ScreenShotTest
 	{
 		private Game game;
 		private AssetManager assetManager;
+		private ConfigManager configManager;
 		private FileManager fileManager;
 		private InputManager inputManager;
 		private LevelManager levelManager;
 		private SelectorManager selectorManager;
 		private Texture2D stripHorz, stripVert;
+		private RenderTarget2D renderTarget;
 		private SpriteFont font;
 		private List<int> waveCount, wavePosns;
 		private int wide, high;
 
-		public BoardManager(Game game, AssetManager assetManager, FileManager fileManager, InputManager inputManager, LevelManager levelManager, SelectorManager selectorManager, int wide, int high)
+		public BoardManager(Game game, AssetManager assetManager, ConfigManager configManager, FileManager fileManager, InputManager inputManager, LevelManager levelManager, SelectorManager selectorManager, int wide, int high)
 		{
 			this.game = game;
 			this.assetManager = assetManager;
+			this.configManager = configManager;
 			this.fileManager = fileManager;
 			this.inputManager = inputManager;
 			this.levelManager = levelManager;
@@ -40,9 +45,10 @@ namespace ScreenShotTest
 			font = myContentManager.Load<SpriteFont>("Emulogic");
 			stripHorz = myContentManager.Load<Texture2D>("StripHorz");
 			stripVert = myContentManager.Load<Texture2D>("StripVert");
+			renderTarget = new RenderTarget2D(game.GraphicsDevice, wide, high/2, false, SurfaceFormat.Color, DepthFormat.Depth24);
 		}
 
-		public void Update()
+		public void Update(SpriteBatch spriteBatch)
 		{
 			levelManager.Validate();
 			ProcessWaveGaps();
@@ -66,6 +72,26 @@ namespace ScreenShotTest
 			levelManager.UpdateTrees();
 			var tiles = levelManager.Tiles;
 			fileManager.Save(tiles);
+			SaveScreen(spriteBatch);
+		}
+
+		private void SaveScreen(SpriteBatch spriteBatch)
+		{
+			string world = configManager.NumWorld.ToString().PadLeft(2, '0');
+			string round = configManager.NumRound.ToString().PadLeft(2, '0');
+			var filename = String.Format("output/level_{0}{1}.png", world, round);
+
+			game.GraphicsDevice.SetRenderTarget(renderTarget);
+			game.GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.CornflowerBlue, 1, 0);
+
+			spriteBatch.Begin();
+			Draw(spriteBatch);
+			spriteBatch.End();
+
+			game.GraphicsDevice.SetRenderTarget(null);
+			Texture2D resolvedTexture = (Texture2D)renderTarget;
+			Stream stream = File.Create(filename);
+			resolvedTexture.SaveAsPng(stream, high, high);
 		}
 
 		public void Draw(SpriteBatch spriteBatch)

@@ -38,7 +38,7 @@ namespace ScreenShotTest
 			selectorManager = new SelectorManager(inputManager, wide, high);
 			selectorManager.Initialize();
 			levelManager = new LevelManager(this, assetManager, fileManager, inputManager, selectorManager, wide, high);
-			boardManager = new BoardManager(this, assetManager, fileManager, inputManager, levelManager, selectorManager, wide, high);
+			boardManager = new BoardManager(this, assetManager, configManager, fileManager, inputManager, levelManager, selectorManager, wide, high);
 
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = wide;
@@ -65,7 +65,7 @@ namespace ScreenShotTest
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
 			wide = pp.BackBufferWidth;
 			high= pp.BackBufferHeight;
-			renderTarget = new RenderTarget2D(GraphicsDevice, wide, high, false, SurfaceFormat.Color, DepthFormat.Depth24);
+			renderTarget = new RenderTarget2D(GraphicsDevice, wide, high/2, false, SurfaceFormat.Color, DepthFormat.Depth24);
 		}
 
 		protected override void UnloadContent()
@@ -82,7 +82,7 @@ namespace ScreenShotTest
 			}
 
 			inputManager.Update();
-			boardManager.Update();
+			boardManager.Update(spriteBatch);
 			levelManager.Update();
 			selectorManager.Update();
 			inputManager.Reset();
