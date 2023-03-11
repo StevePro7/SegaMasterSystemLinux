@@ -85,12 +85,19 @@ namespace ScreenShotTest
 						line = line.Substring(0, line.Length - 1);
 					}
 					var objs = line.Split(delim);
-					if (objs.Length != screen_wide)
+					int half = screen_wide / 2;
+					if (objs.Length != screen_wide && objs.Length != half)
 					{
-						throw new Exception("bankX.c NOT 16x elements");
+						throw new Exception("bankX.c NOT correct - no. elements " + objs.Length);
 					}
 
-					for (int cnt = 0; cnt < screen_wide; cnt += 4)
+					int size = screen_wide;
+					// include for legacy
+					if (objs.Length == half)
+					{
+						size = half;
+					}
+					for (int cnt = 0; cnt < size; cnt += 4)
 					{
 						var text = objs[cnt].Trim();
 						int data = Convert.ToInt32(text, 16);
@@ -371,11 +378,11 @@ namespace ScreenShotTest
 			var contents = file.ToArray();
 			string banktext = String.Format("level_{0}{1}_{2}", world, round, point);
 			File.WriteAllLines(path + "/" + banktext + ".c", contents);
-			File.WriteAllLines(path + "/../../../../../bankX.c", contents);
+			File.WriteAllLines(path + "/../../../../../../bankX.c", contents);
 			// HACK - avoid copy n' paste during level testing.
 			if (configManager.TheCopy)
 			{
-				File.WriteAllLines(path + "/../../../../../../../../tilesNew/20-NewGraphicsTestingSMS/09-graphics_scroll_NEW/dev/banks/" + banktext + ".c", contents);
+				File.WriteAllLines(path + "/../../../../../../../../../tilesNew/20-NewGraphicsTestingSMS/09-graphics_scroll_NEW/dev/banks/" + banktext + ".c", contents);
 			}
 
 			file.Clear();
