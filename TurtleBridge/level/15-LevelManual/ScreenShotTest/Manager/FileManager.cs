@@ -391,7 +391,7 @@ namespace ScreenShotTest
 			file.Add("#define				" + filename + "_bank " + bank);
 			contents = file.ToArray();
 			File.WriteAllLines(path + "/" + banktext + ".h", contents);
-			File.WriteAllLines(path + "/../../../../../bankX.h", contents);
+			File.WriteAllLines(path + "/../../../../../../bankX.h", contents);
 			// HACK - avoid copy n' paste during level testing.
 			if (configManager.TheCopy)
 			{
