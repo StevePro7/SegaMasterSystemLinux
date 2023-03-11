@@ -10,7 +10,7 @@ namespace ScreenShotTest
 		private List<string> data, text1, text2, total;
 		private List<int> data1, data2, data3;
 		private int cols;
-		private string filename;
+		private string filename, filepath;
 		private const int screen_wide = 32;
 	//	private int maxLevel;
 
@@ -34,9 +34,29 @@ namespace ScreenShotTest
 
 			string world = configManager.NumWorld.ToString().PadLeft(2, '0');
 			string round = configManager.NumRound.ToString().PadLeft(2, '0');
-			filename  = String.Format("level_{0}{1}_txt", world, round);
+			filename = String.Format("level_{0}{1}", world, round);
+			filepath = "output/" + filename;
+			filename += "_txt";
+			
 			//prefix = configManager.LevelPrefix;
 			//maxLevel = configManager.NumLevels;
+		}
+
+		public void Initialize()
+		{
+			//var path = "output";// DateTime.Now.ToString(format);
+			if (!Directory.Exists(filepath))
+			{
+				Directory.CreateDirectory(filepath);
+			}
+			else
+			{
+				var files = Directory.GetFiles(filepath);
+				foreach (var file in files)
+				{
+					File.Delete(file);
+				}
+			}
 		}
 
 		public void LoadContent()
@@ -192,19 +212,7 @@ namespace ScreenShotTest
 		{
 			Tiles = tiles;
 			//string format = "yyyyMMdd-HHmmss";
-			var path = "output";// DateTime.Now.ToString(format);
-			if (!Directory.Exists(path))
-			{
-				Directory.CreateDirectory(path);
-			}
-			else
-			{
-				var files = Directory.GetFiles(path);
-				foreach(var file in files)
-				{
-					File.Delete(file);
-				}
-			}
+			
 
 			// Bytes array #2.
 			data1.Clear();
@@ -226,7 +234,7 @@ namespace ScreenShotTest
 					data3.Add(d3);
 				}
 			}
-			DumpData2(data3, path);
+			DumpData2(data3, filepath);
 
 			// level.csv
 			data.Clear();
@@ -244,7 +252,7 @@ namespace ScreenShotTest
 			}
 
 			lines = data.ToArray();
-			File.WriteAllLines(path + "/level.csv", lines);
+			//File.WriteAllLines(path + "/level.csv", lines);
 			//File.WriteAllText(path + "/level.csv", csv);
 
 			data.Clear();
@@ -255,7 +263,7 @@ namespace ScreenShotTest
 			var contents = data.ToArray();
 			//File.WriteAllLines(path + "/info.txt", contents);
 
-			SaveLevelnfo(path);
+			SaveLevelnfo("output");
 		}
 
 		private void SaveLevelnfo(string path)
@@ -269,14 +277,18 @@ namespace ScreenShotTest
 			data.Add("{");
 			text1.Add("{");
 			text2.Add("{");
-			//for (int idx = 0; idx <= maxLevel; idx++)
-			//{
-			//	//string levl = (idx).ToString().PadLeft(2, '0');
-			//	//string file = String.Format("{0}{1}_txt", prefix, levl);
-			//	data.Add("\t" + filename + ",");
-			//	text1.Add("\t" + filename + "_size,");
-			//	text2.Add("\t" + filename + "_bank,");
-			//}
+
+			string world = configManager.NumWorld.ToString().PadLeft(2, '0');
+			const int maxRounds = 8;
+			for (int idx = 1; idx <= maxRounds; idx++)
+			{
+				string round = idx.ToString().PadLeft(2, '0');
+				var filenameX = String.Format("level_{0}{1}_txt", world, round);
+
+				data.Add("\t" + filenameX + ",");
+				text1.Add("\t" + filenameX + "_size,");
+				text2.Add("\t" + filenameX + "_bank,");
+			}
 			data.Add("};");
 			text1.Add("};");
 			text2.Add("};");
@@ -287,7 +299,8 @@ namespace ScreenShotTest
 			total.AddRange(text2);
 
 			var contents = total.ToArray();
-			//File.WriteAllLines(path + "/fixedbank.c", contents);
+			var filetext = String.Format("output/world_{0}.c", world);
+			File.WriteAllLines(filetext, contents);
 			
 		}
 

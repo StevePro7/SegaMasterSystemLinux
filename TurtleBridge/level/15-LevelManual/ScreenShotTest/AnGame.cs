@@ -49,6 +49,7 @@ namespace ScreenShotTest
 		protected override void Initialize()
 		{
 			IsMouseVisible = true;
+			fileManager.Initialize();
 			base.Initialize();
 			//save = false;
 			//save = true;

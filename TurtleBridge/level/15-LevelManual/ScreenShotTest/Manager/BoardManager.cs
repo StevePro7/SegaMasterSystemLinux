@@ -79,7 +79,10 @@ namespace ScreenShotTest
 		{
 			string world = configManager.NumWorld.ToString().PadLeft(2, '0');
 			string round = configManager.NumRound.ToString().PadLeft(2, '0');
-			var filename = String.Format("output/level_{0}{1}.png", world, round);
+			
+			var filename = String.Format("level_{0}{1}", world, round);
+			var filepath = "output/" + filename;
+			filename = filepath + "/" + filename + ".png";
 
 			game.GraphicsDevice.SetRenderTarget(renderTarget);
 			game.GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.CornflowerBlue, 1, 0);
