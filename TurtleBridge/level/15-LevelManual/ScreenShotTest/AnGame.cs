@@ -51,7 +51,9 @@ namespace ScreenShotTest
 		protected override void Initialize()
 		{
 			IsMouseVisible = true;
+			tilesManager.Initialize();
 			fileManager.Initialize();
+			
 			base.Initialize();
 			//save = false;
 			//save = true;
