@@ -37,7 +37,7 @@ namespace ScreenShotTest
 			inputManager = new InputManager(wide, high);
 			selectorManager = new SelectorManager(inputManager, wide, high);
 			selectorManager.Initialize();
-			levelManager = new LevelManager(this, assetManager, fileManager, inputManager, selectorManager, wide, high);
+			levelManager = new LevelManager(this, assetManager, configManager, fileManager, inputManager, selectorManager, wide, high);
 			boardManager = new BoardManager(this, assetManager, configManager, fileManager, inputManager, levelManager, selectorManager, wide, high);
 
 			graphics = new GraphicsDeviceManager(this);

@@ -35,7 +35,8 @@ namespace ScreenShotTest
 			this.wide = wide;
 			this.high = high;
 
-			game.Window.Title = "Editor";
+			string point = configManager.CheckPoint.ToString().PadLeft(2, '0');
+			game.Window.Title = "CheckPoint-" + point;
 			waveCount = new List<int>();
 			wavePosns = new List<int>();
 		}

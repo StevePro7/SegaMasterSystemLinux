@@ -9,6 +9,7 @@ namespace ScreenShotTest
 	{
 		private Game game;
 		private AssetManager assetManager;
+		private ConfigManager configManager;
 		private FileManager fileManager;
 		private InputManager inputManager;
 		private SelectorManager selectorManager;
@@ -16,10 +17,11 @@ namespace ScreenShotTest
 		private int wide, high;
 		private int rows, cols;
 
-		public LevelManager(Game game, AssetManager assetManager, FileManager fileManager, InputManager inputManager, SelectorManager selectorManager, int wide, int high)
+		public LevelManager(Game game, AssetManager assetManager, ConfigManager configManager, FileManager fileManager, InputManager inputManager, SelectorManager selectorManager, int wide, int high)
 		{
 			this.game = game;
 			this.assetManager = assetManager;
+			this.configManager = configManager;
 			this.fileManager = fileManager;
 			this.inputManager = inputManager;
 			this.selectorManager = selectorManager;
@@ -164,7 +166,8 @@ namespace ScreenShotTest
 
 			if (inputManager.KeyHold(Keys.Back))
 			{
-				game.Window.Title = "Editor";
+				string point = configManager.CheckPoint.ToString().PadLeft(2, '0');
+				game.Window.Title = "CheckPoint-" + point;
 			}
 		}
 
