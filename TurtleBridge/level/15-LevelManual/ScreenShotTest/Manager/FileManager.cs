@@ -263,7 +263,8 @@ namespace ScreenShotTest
 			var contents = data.ToArray();
 			//File.WriteAllLines(path + "/info.txt", contents);
 
-			SaveLevelnfo("output");
+			// Outputs all world / round combos to fixedbank.c
+			//SaveLevelnfo("output");
 		}
 
 		private void SaveLevelnfo(string path)
@@ -278,17 +279,22 @@ namespace ScreenShotTest
 			text1.Add("{");
 			text2.Add("{");
 
-			string world = configManager.NumWorld.ToString().PadLeft(2, '0');
+			const int maxWorlds = 5;
 			const int maxRounds = 8;
-			for (int idx = 1; idx <= maxRounds; idx++)
+			for (int idz = 1; idz <= maxWorlds; idz++)
 			{
-				string round = idx.ToString().PadLeft(2, '0');
-				var filenameX = String.Format("level_{0}{1}_txt", world, round);
+				for (int idx = 1; idx <= maxRounds; idx++)
+				{
+					string world = idz.ToString().PadLeft(2, '0');
+					string round = idx.ToString().PadLeft(2, '0');
+					var filenameX = String.Format("level_{0}{1}_txt", world, round);
 
-				data.Add("\t" + filenameX + ",");
-				text1.Add("\t" + filenameX + "_size,");
-				text2.Add("\t" + filenameX + "_bank,");
+					data.Add("\t" + filenameX + ",");
+					text1.Add("\t" + filenameX + "_size,");
+					text2.Add("\t" + filenameX + "_bank,");
+				}
 			}
+
 			data.Add("};");
 			text1.Add("};");
 			text2.Add("};");
@@ -299,9 +305,9 @@ namespace ScreenShotTest
 			total.AddRange(text2);
 
 			var contents = total.ToArray();
-			var filetext = String.Format("output/world_{0}.c", world);
+			//var filetext = String.Format("output/world_{0}.c", world);
+			var filetext = "output/fixedbank.c";
 			File.WriteAllLines(filetext, contents);
-			
 		}
 
 		private void DumpData2(List<int> data3, string path)
