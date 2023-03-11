@@ -11,10 +11,14 @@ namespace ScreenShotTest
 	{
 		private List<int> lines;
 
-		public TilesManager()
+		public TilesManager(int wide)
 		{
-			int cols = 16;
+			int cols = cols = wide / 16;
 			Tiles = new int[cols];
+			for (int idx = 0; idx < cols; idx++)
+			{
+				Tiles[idx] = 0;
+			}
 			lines = new List<int>();
 		}
 
@@ -29,13 +33,63 @@ namespace ScreenShotTest
 
 			int rowCount = xlRange.Cells.Rows.Count;
 			int colCount = xlRange.Cells.Columns.Count;
-			int tileStart = 0;
 			for (int row = 1; row <= rowCount; row++)
 			{
-				var type = xlRange.Cells[row, 1].Value2.ToString();
-				var valu = Convert.ToInt32(xlRange.Cells[row, 2].Value2.ToString());
-
+				string type = xlRange.Cells[row, 1].Value2.ToString();
+				string lowr = xlRange.Cells[row, 1].Value2.ToString().ToLower();
+				int valu = Convert.ToInt32(xlRange.Cells[row, 2].Value2.ToString());
+				//valu = 3;
+				var datas = GetDatas(type, lowr, valu);
+				lines.AddRange(datas);
 			}
+
+			for (int idx = 0; idx < lines.Count; idx++)
+			{
+				Tiles[idx] = lines[idx];
+			}
+			var bob = Tiles.Length;
+		}
+
+		private List<int> GetDatas(string type, string lowr, int valu)
+		{
+			var datas = new List<int>();
+			if (lowr.Contains("waves"))
+			{
+				return GetDatasWaves(type, lowr, valu);
+			}
+			if (lowr.Contains("bridge"))
+			{
+				return GetDatasBridge(type, lowr, valu);
+			}
+
+			return datas;
+		}
+
+		private List<int> GetDatasBridge(string type, string lowr, int valu)
+		{
+			var datas = new List<int>();
+			if (type == "BridgeBoth" || type == "BridgeLeft")
+			{
+				datas.Add(16);
+			}
+			if (type == "BridgeMidd" || type == "BridgeRght")
+			{
+				datas.Add(1);
+			}
+			for (int idx = 1; idx < valu-1; idx++)
+			{
+				datas.Add(1);
+			}
+			if (type == "BridgeBoth" || type == "BridgeRght")
+			{
+				datas.Add(2);
+			}
+			if (type == "BridgeMidd" || type == "BridgeLeft")
+			{
+				datas.Add(1);
+			}
+
+			return datas;
 		}
 
 		public int[] Tiles { get; private set; }

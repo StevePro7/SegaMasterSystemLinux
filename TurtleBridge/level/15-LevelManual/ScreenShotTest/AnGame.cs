@@ -34,11 +34,12 @@ namespace ScreenShotTest
 			high = 224;
 
 			assetManager = new AssetManager();
-			fileManager = new FileManager(configManager, wide);
+			tilesManager = new TilesManager(wide);
+			fileManager = new FileManager(configManager, tilesManager, wide);
 			inputManager = new InputManager(wide, high);
 			selectorManager = new SelectorManager(inputManager, wide, high);
 			selectorManager.Initialize();
-			tilesManager = new TilesManager();
+			
 			levelManager = new LevelManager(this, assetManager, configManager, fileManager, inputManager, selectorManager, wide, high);
 			boardManager = new BoardManager(this, assetManager, configManager, fileManager, inputManager, levelManager, selectorManager, wide, high);
 

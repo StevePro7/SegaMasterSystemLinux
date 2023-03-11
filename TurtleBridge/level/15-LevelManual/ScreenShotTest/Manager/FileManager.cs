@@ -7,6 +7,7 @@ namespace ScreenShotTest
 	public class FileManager
 	{
 		private ConfigManager configManager;
+		private TilesManager tilesManager;
 		private List<string> data, text1, text2, total;
 		private List<int> data1, data2, data3;
 		private int cols;
@@ -15,9 +16,10 @@ namespace ScreenShotTest
 		private const int screen_wide = 32;
 	//	private int maxLevel;
 
-		public FileManager(ConfigManager configManager, int wide)
+		public FileManager(ConfigManager configManager, TilesManager tilesManager, int wide)
 		{
 			this.configManager = configManager;
+			this.tilesManager = tilesManager;
 			cols = wide / 16;
 			Tiles = new int[cols];
 			for (int idx = 0; idx < cols; idx++)
@@ -68,6 +70,12 @@ namespace ScreenShotTest
 			var delim = new char[] { ',' };
 			string[] lines = null;
 			int idx = 0;
+
+			if (File.Exists("MyTiles.xls"))
+			{
+				Tiles = tilesManager.Tiles;
+				return;
+			}
 
 			if (File.Exists("bankX.c"))
 			{
