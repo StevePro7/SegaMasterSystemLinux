@@ -323,13 +323,12 @@ namespace ScreenShotTest
 			//string levl = maxLevel.ToString().PadLeft(2, '0');
 			//string name = String.Format("level_{1}{2}_txt", prefix, world, round);
 
-			int start = configManager.CheckStart;
+			int point = configManager.CheckPoint;
 			int check = 0; 
 			file.Add("const unsigned char " + filename + "[] =");
 			file.Add("{");
 			for (int idx = 0; idx < data3.Count; idx++)
 			{
-				
 				data = data3[idx];
 				type = "0x" + data.ToString("X").ToString().PadLeft(2, '0');
 				if (0 != loop)
@@ -350,8 +349,8 @@ namespace ScreenShotTest
 					line += ",";
 					if (0 == check % configManager.CheckDelta)
 					{
-						file.Add("\t// Checkpoint #" + start);
-						start++;
+						file.Add("\t// Checkpoint #" + point);
+						point++;
 					}
 					check++;
 
