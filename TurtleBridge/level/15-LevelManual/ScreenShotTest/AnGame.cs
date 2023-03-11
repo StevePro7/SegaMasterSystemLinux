@@ -16,12 +16,13 @@ namespace ScreenShotTest
 		private InputManager inputManager;
 		private LevelManager levelManager;
 		private SelectorManager selectorManager;
+		private TilesManager tilesManager;
 
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
 		RenderTarget2D renderTarget;
 		private int wide, high;
-		//private bool save;
+		//private bool save;	
 
 		public AnGame()
 		{
@@ -37,6 +38,7 @@ namespace ScreenShotTest
 			inputManager = new InputManager(wide, high);
 			selectorManager = new SelectorManager(inputManager, wide, high);
 			selectorManager.Initialize();
+			tilesManager = new TilesManager();
 			levelManager = new LevelManager(this, assetManager, configManager, fileManager, inputManager, selectorManager, wide, high);
 			boardManager = new BoardManager(this, assetManager, configManager, fileManager, inputManager, levelManager, selectorManager, wide, high);
 

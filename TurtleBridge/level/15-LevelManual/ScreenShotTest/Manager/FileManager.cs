@@ -221,7 +221,6 @@ namespace ScreenShotTest
 		{
 			Tiles = tiles;
 			//string format = "yyyyMMdd-HHmmss";
-			
 
 			// Bytes array #2.
 			data1.Clear();
