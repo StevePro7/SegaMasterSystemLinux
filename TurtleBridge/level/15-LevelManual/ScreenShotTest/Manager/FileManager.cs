@@ -378,6 +378,7 @@ namespace ScreenShotTest
 			var contents = file.ToArray();
 			string banktext = String.Format("level_{0}{1}_{2}", world, round, point);
 			File.WriteAllLines(path + "/" + banktext + ".c", contents);
+			File.WriteAllLines(path + "/../../bankX.c", contents);
 			File.WriteAllLines(path + "/../../../../../../bankX.c", contents);
 			// HACK - avoid copy n' paste during level testing.
 			if (configManager.TheCopy)
@@ -391,6 +392,7 @@ namespace ScreenShotTest
 			file.Add("#define				" + filename + "_bank " + bank);
 			contents = file.ToArray();
 			File.WriteAllLines(path + "/" + banktext + ".h", contents);
+			File.WriteAllLines(path + "/../../bankX.h", contents);
 			File.WriteAllLines(path + "/../../../../../../bankX.h", contents);
 			// HACK - avoid copy n' paste during level testing.
 			if (configManager.TheCopy)
