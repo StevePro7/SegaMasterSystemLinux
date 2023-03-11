@@ -25,6 +25,33 @@ namespace ScreenShotTest
 		public void Initialize()
 		{
 			// https://coderwall.com/p/app3ya/read-excel-file-in-c
+			string path = @"MyTiles.csv";
+			var delim = new char[] { ',' };
+
+			var texts = System.IO.File.ReadAllLines(path);
+			int rowCount = texts.Length;
+			for (int row = 0; row < rowCount; row++)
+			{
+				var line = texts[row];
+				var objs = line.Split(delim);
+
+				string type = objs[0].ToString();
+				string lowr =type.ToLower();
+				int valu = Convert.ToInt32(objs[1]);
+				//valu = 3;
+				var datas = GetDatas(type, lowr, valu);
+				lines.AddRange(datas);
+			}
+
+			for (int idx = 0; idx < lines.Count; idx++)
+			{
+				Tiles[idx] = lines[idx];
+			}
+		}
+
+		public void InitializeX()
+		{
+			// https://coderwall.com/p/app3ya/read-excel-file-in-c
 			string path = @"D:\GitHub\StevePro8\SegaMasterSystemLinux\TurtleBridge\level\15-LevelManual\ScreenShotTest\MyTiles.xls";
 			Excel.Application xlApp = new Excel.Application();
 			Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(path);
@@ -47,7 +74,6 @@ namespace ScreenShotTest
 			{
 				Tiles[idx] = lines[idx];
 			}
-			var bob = Tiles.Length;
 		}
 
 		private List<int> GetDatas(string type, string lowr, int valu)
@@ -61,14 +87,19 @@ namespace ScreenShotTest
 			{
 				return GetDatasBridge(type, lowr, valu);
 			}
+			if (lowr.Contains("island"))
+			{
+				return GetDatasIsland(type, lowr, valu);
+			}
 
 			return datas;
 		}
 
+		// TODO test
 		private List<int> GetDatasWaves(string type, string lowr, int valu)
 		{
 			var datas = new List<int>();
-			for (int idx = 1; idx < valu - 1; idx++)
+			for (int idx = 0; idx < valu; idx++)
 			{
 				datas.Add(0);
 			}
@@ -76,6 +107,7 @@ namespace ScreenShotTest
 			return datas;
 		}
 
+		// TODO test
 		private List<int> GetDatasIsland(string type, string lowr, int valu)
 		{
 			var datas = new List<int>();
