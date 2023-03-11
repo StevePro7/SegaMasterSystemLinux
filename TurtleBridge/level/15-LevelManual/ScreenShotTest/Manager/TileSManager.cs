@@ -22,17 +22,15 @@ namespace ScreenShotTest
 			Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
 			Excel.Range xlRange = xlWorksheet.UsedRange;
 
+			var r1 = xlRange.Cells.Rows;
+			int b = r1.Count;
+			var r2 = xlRange.Cells.Columns;
 			int rowCount = 3;
 			int colCount = 2;
 			for (int i = 1; i <= rowCount; i++)
 			{
 				for (int j = 1; j <= colCount; j++)
 				{
-					//new line
-					//if (j == 1)
-					//	Console.Write("\r\n");
-
-					//write the value to the console
 					if (xlRange.Cells[i, j] != null && xlRange.Cells[i, j].Value2 != null)
 					{
 						string text = xlRange.Cells[i, j].Value2.ToString();
