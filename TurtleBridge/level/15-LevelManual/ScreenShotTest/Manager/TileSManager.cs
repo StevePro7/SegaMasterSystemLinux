@@ -91,11 +91,50 @@ namespace ScreenShotTest
 			{
 				return GetDatasIsland(type, lowr, valu);
 			}
+			if (lowr.Contains("turtle"))
+			{
+				return GetDatasTurtle(type, lowr, valu);
+			}
 
 			return datas;
 		}
 
-		// TODO test
+		private List<int> GetDatasTurtle(string type, string lowr, int valu)
+		{
+			var datas = new List<int>();
+			int item = -0;
+			if (type == "TurtleSea1")
+			{
+				item = 10;
+			}
+			if (type == "TurtleSea2")
+			{
+				item = 11;
+			}
+			if (type == "TurtleFly1")
+			{
+				item = 12;
+			}
+			if (type == "TurtleFly2")
+			{
+				item = 13;
+			}
+			if (type == "TurtleFly3")
+			{
+				item = 14;
+			}
+			if (type == "TurtleFly4")
+			{
+				item = 15;
+			}
+			for (int idx = 0; idx < valu; idx++)
+			{
+				datas.Add(item);
+			}
+
+			return datas;
+		}
+
 		private List<int> GetDatasWaves(string type, string lowr, int valu)
 		{
 			var datas = new List<int>();
@@ -107,7 +146,6 @@ namespace ScreenShotTest
 			return datas;
 		}
 
-		// TODO test
 		private List<int> GetDatasIsland(string type, string lowr, int valu)
 		{
 			var datas = new List<int>();
