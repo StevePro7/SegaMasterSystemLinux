@@ -21,7 +21,7 @@ namespace ScreenShotTest
 		SpriteBatch spriteBatch;
 		RenderTarget2D renderTarget;
 		private int wide, high;
-		private bool save;
+		//private bool save;
 
 		public AnGame()
 		{
@@ -50,7 +50,7 @@ namespace ScreenShotTest
 		{
 			IsMouseVisible = true;
 			base.Initialize();
-			save = false;
+			//save = false;
 			//save = true;
 		}
 
@@ -91,25 +91,30 @@ namespace ScreenShotTest
 
 		protected override void Draw(GameTime gameTime)
 		{
-			if (save)
-			{
-				GraphicsDevice.SetRenderTarget(renderTarget);
-				GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.CornflowerBlue, 1, 0);
+			Draw();
+			base.Draw(gameTime);
 
-				Draw();
-				base.Draw(gameTime);
+			// TODO delete!!
+			//if (save)
+			//{
+			//	//GraphicsDevice.SetRenderTarget(renderTarget);
+			//	//GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.CornflowerBlue, 1, 0);
 
-				GraphicsDevice.SetRenderTarget(null);
-				Texture2D resolvedTexture = (Texture2D)renderTarget;
-				Stream stream = File.Create(file + ".png");
-				resolvedTexture.SaveAsPng(stream, wide, high);
-				Exit();
-			}
-			else
-			{
-				Draw();
-				base.Draw(gameTime);
-			}
+			//	//Draw();
+			//	//base.Draw(gameTime);
+
+			//	//GraphicsDevice.SetRenderTarget(null);
+			//	//Texture2D resolvedTexture = (Texture2D)renderTarget;
+			//	//Stream stream = File.Create(file + ".png");
+			//	//resolvedTexture.SaveAsPng(stream, wide, high);
+			//	//Exit();
+			//}
+			//else
+			//{
+			//	Draw();
+			//	base.Draw(gameTime);
+			//}
+			// TODO delete!!
 		}
 
 		private void Draw()
