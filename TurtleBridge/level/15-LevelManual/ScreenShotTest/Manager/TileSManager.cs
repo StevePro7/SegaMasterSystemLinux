@@ -65,6 +65,44 @@ namespace ScreenShotTest
 			return datas;
 		}
 
+		private List<int> GetDatasWaves(string type, string lowr, int valu)
+		{
+			var datas = new List<int>();
+			for (int idx = 1; idx < valu - 1; idx++)
+			{
+				datas.Add(0);
+			}
+
+			return datas;
+		}
+
+		private List<int> GetDatasIsland(string type, string lowr, int valu)
+		{
+			var datas = new List<int>();
+			if (type == "IslandBoth" || type == "IslandLeft")
+			{
+				datas.Add(5);
+			}
+			if (type == "IslandMidd" || type == "IslandRght")
+			{
+				datas.Add(4);
+			}
+			for (int idx = 1; idx < valu - 1; idx++)
+			{
+				datas.Add(4);
+			}
+			if (type == "IslandBoth" || type == "IslandRght")
+			{
+				datas.Add(6);
+			}
+			if (type == "IslandMidd" || type == "IslandLeft")
+			{
+				datas.Add(4);
+			}
+
+			return datas;
+		}
+
 		private List<int> GetDatasBridge(string type, string lowr, int valu)
 		{
 			var datas = new List<int>();
