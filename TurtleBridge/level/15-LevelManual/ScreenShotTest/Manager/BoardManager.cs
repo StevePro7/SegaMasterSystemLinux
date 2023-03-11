@@ -79,10 +79,12 @@ namespace ScreenShotTest
 		{
 			string world = configManager.NumWorld.ToString().PadLeft(2, '0');
 			string round = configManager.NumRound.ToString().PadLeft(2, '0');
-			
+			string point = configManager.CheckPoint.ToString().PadLeft(2, '0');
+
 			var filename = String.Format("level_{0}{1}", world, round);
 			var filepath = "output/" + filename;
-			filename = filepath + "/" + filename + ".png";
+			//filename = filepath + "/" + filename + ".png";
+			filename = String.Format("{0}/{1}_{2}.png", filepath, filename, point);
 
 			game.GraphicsDevice.SetRenderTarget(renderTarget);
 			game.GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.CornflowerBlue, 1, 0);

@@ -11,6 +11,7 @@ namespace ScreenShotTest
 		private List<int> data1, data2, data3;
 		private int cols;
 		private string filename, filepath;
+		private string world, round, point;
 		private const int screen_wide = 32;
 	//	private int maxLevel;
 
@@ -32,8 +33,9 @@ namespace ScreenShotTest
 			data2 = new List<int>();
 			data3 = new List<int>();
 
-			string world = configManager.NumWorld.ToString().PadLeft(2, '0');
-			string round = configManager.NumRound.ToString().PadLeft(2, '0');
+			world = configManager.NumWorld.ToString().PadLeft(2, '0');
+			round = configManager.NumRound.ToString().PadLeft(2, '0');
+			point = configManager.CheckPoint.ToString().PadLeft(2, '0');
 			filename = String.Format("level_{0}{1}", world, round);
 			filepath = "output/" + filename;
 			filename += "_txt";
@@ -323,7 +325,7 @@ namespace ScreenShotTest
 			//string levl = maxLevel.ToString().PadLeft(2, '0');
 			//string name = String.Format("level_{1}{2}_txt", prefix, world, round);
 
-			int point = configManager.CheckPoint;
+			int value = configManager.CheckPoint;
 			int check = 0; 
 			file.Add("const unsigned char " + filename + "[] =");
 			file.Add("{");
@@ -349,8 +351,8 @@ namespace ScreenShotTest
 					line += ",";
 					if (0 == check % configManager.CheckDelta)
 					{
-						file.Add("\t// Checkpoint #" + point);
-						point++;
+						file.Add("\t// Checkpoint #" + value);
+						value++;
 					}
 					check++;
 
@@ -367,7 +369,7 @@ namespace ScreenShotTest
 
 			file.Add("};");
 			var contents = file.ToArray();
-			string banktext = "bank" + bank;
+			string banktext = String.Format("level_{0}{1}_{2}", world, round, point);
 			File.WriteAllLines(path + "/" + banktext + ".c", contents);
 			File.WriteAllLines(path + "/../../../../../bankX.c", contents);
 			// HACK - avoid copy n' paste during level testing.
