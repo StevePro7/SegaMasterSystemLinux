@@ -20,7 +20,7 @@ S:Llevel_manager.engine_level_manager_draw_column$level_column$1_0$110({1}SC:U),
 S:Llevel_manager.engine_level_manager_draw_column$level_object$1_0$110({1}SC:U),B,1,-1
 S:Llevel_manager.engine_level_manager_draw_column$level_platform$1_0$110({1}SC:U),R,0,0,[c]
 S:Llevel_manager.engine_level_manager_draw_column$flip$1_0$110({1}:S),R,0,0,[b]
-T:Flevel_manager$tag_struct_level_object[({0}S:S$level_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$level_size$0_0$0({2}SI:U),Z,0,0)({4}S:S$level_bank$0_0$0({1}SC:U),Z,0,0)({5}S:S$level_check$0_0$0({2}SI:U),Z,0,0)({7}S:S$column_draw$0_0$0({1}SC:U),Z,0,0)]
+T:Flevel_manager$tag_struct_level_object[({0}S:S$level_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$level_size$0_0$0({2}SI:U),Z,0,0)({4}S:S$level_bank$0_0$0({1}SC:U),Z,0,0)({5}S:S$level_check$0_0$0({2}SI:U),Z,0,0)({7}S:S$check_width$0_0$0({1}SC:U),Z,0,0)({8}S:S$column_draw$0_0$0({1}SC:U),Z,0,0)]
 S:G$level_platforms$0_0$0({0}DA0d,SC:U),E,0,0
 S:G$steven_text$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$music_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
@@ -30,7 +30,7 @@ S:G$level_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$song_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$locale_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$locale_object_blank$0_0$0({0}DA0d,DG,SC:U),E,0,0
-S:G$global_level_object$0_0$0({8}STtag_struct_level_object:S),E,0,0
+S:G$global_level_object$0_0$0({9}STtag_struct_level_object:S),E,0,0
 S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0_0$0({2}DF,SV:S),C,0,0

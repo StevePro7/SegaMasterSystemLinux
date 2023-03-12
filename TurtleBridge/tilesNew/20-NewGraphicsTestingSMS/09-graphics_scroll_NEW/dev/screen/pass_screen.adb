@@ -17,7 +17,7 @@ T:Fpass_screen$tag_struct_command_object[({0}S:S$frame_index$0_0$0({2}SI:U),Z,0,
 T:Fpass_screen$tag_struct_frame_object[({0}S:S$frame_count$0_0$0({2}SI:U),Z,0,0)]
 T:Fpass_screen$tag_struct_delay_object[({0}S:S$delay_value$0_0$0({2}SI:U),Z,0,0)({2}S:S$delay_timer$0_0$0({2}SI:U),Z,0,0)]
 T:Fpass_screen$tag_struct_audio_object[({0}S:S$music_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$music_bank$0_0$0({1}SC:U),Z,0,0)({3}S:S$sound_data$0_0$0({2}DG,SC:U),Z,0,0)({5}S:S$sound_bank$0_0$0({1}SC:U),Z,0,0)]
-T:Fpass_screen$tag_struct_level_object[({0}S:S$level_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$level_size$0_0$0({2}SI:U),Z,0,0)({4}S:S$level_bank$0_0$0({1}SC:U),Z,0,0)({5}S:S$level_check$0_0$0({2}SI:U),Z,0,0)({7}S:S$column_draw$0_0$0({1}SC:U),Z,0,0)]
+T:Fpass_screen$tag_struct_level_object[({0}S:S$level_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$level_size$0_0$0({2}SI:U),Z,0,0)({4}S:S$level_bank$0_0$0({1}SC:U),Z,0,0)({5}S:S$level_check$0_0$0({2}SI:U),Z,0,0)({7}S:S$check_width$0_0$0({1}SC:U),Z,0,0)({8}S:S$column_draw$0_0$0({1}SC:U),Z,0,0)]
 T:Fpass_screen$tag_struct_reset_object[({0}S:S$reset_value$0_0$0({1}SC:U),Z,0,0)({1}S:S$reset_timer$0_0$0({1}SC:U),Z,0,0)]
 S:G$global_audio_object$0_0$0({6}STtag_struct_audio_object:S),E,0,0
 S:G$command_frame_index$0_0$0({0}DA0d,SI:U),E,0,0
@@ -25,7 +25,7 @@ S:G$command_this_command$0_0$0({0}DA0d,SC:U),E,0,0
 S:G$global_command_object$0_0$0({4}STtag_struct_command_object:S),E,0,0
 S:G$global_game_object$0_0$0({7}STtag_struct_game_object:S),E,0,0
 S:G$level_platforms$0_0$0({0}DA0d,SC:U),E,0,0
-S:G$global_level_object$0_0$0({8}STtag_struct_level_object:S),E,0,0
+S:G$global_level_object$0_0$0({9}STtag_struct_level_object:S),E,0,0
 S:G$jump_array_ptr$0_0$0({0}DA0d,DG,SI:S),E,0,0
 S:G$global_player_object$0_0$0({17}STtag_struct_player_object:S),E,0,0
 S:G$global_scroll_object$0_0$0({14}STtag_struct_scroll_object:S),E,0,0

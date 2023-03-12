@@ -18,9 +18,9 @@ S:Lcollision_manager.engine_collision_manager_finish$posnY$1_0$22({1}SC:U),B,1,6
 S:Lcollision_manager.engine_collision_manager_finish$player_begY$1_0$22({2}DG,SC:U),B,1,7
 S:Lcollision_manager.engine_collision_manager_finish$player_endY$1_0$22({2}DG,SC:U),B,1,9
 S:Lcollision_manager.engine_collision_manager_finish$lookup_platform$1_0$23({1}SC:U),R,0,0,[e]
-T:Fcollision_manager$tag_struct_level_object[({0}S:S$level_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$level_size$0_0$0({2}SI:U),Z,0,0)({4}S:S$level_bank$0_0$0({1}SC:U),Z,0,0)({5}S:S$level_check$0_0$0({2}SI:U),Z,0,0)({7}S:S$column_draw$0_0$0({1}SC:U),Z,0,0)]
+T:Fcollision_manager$tag_struct_level_object[({0}S:S$level_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$level_size$0_0$0({2}SI:U),Z,0,0)({4}S:S$level_bank$0_0$0({1}SC:U),Z,0,0)({5}S:S$level_check$0_0$0({2}SI:U),Z,0,0)({7}S:S$check_width$0_0$0({1}SC:U),Z,0,0)({8}S:S$column_draw$0_0$0({1}SC:U),Z,0,0)]
 S:G$level_platforms$0_0$0({0}DA0d,SC:U),E,0,0
-S:G$global_level_object$0_0$0({8}STtag_struct_level_object:S),E,0,0
+S:G$global_level_object$0_0$0({9}STtag_struct_level_object:S),E,0,0
 S:Fcollision_manager$collisionDelta$0_0$0({1}SC:U),E,0,0
 S:Fcollision_manager$collisionRange$0_0$0({1}SC:U),E,0,0
 S:Fcollision_manager$moreForgiving$0_0$0({1}:S),E,0,0
