@@ -33,6 +33,8 @@ cd engine
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 input_manager.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 level_manager.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 player_manager.c
+"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 riff_manager.c
+"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 sample_manager.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 screen_manager.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 scroll_manager.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 sprite_manager.c
@@ -109,7 +111,7 @@ engine/asm_manager.rel engine/audio_manager.rel engine/cartoon_manager.rel ^
 engine/collision_manager.rel engine/command_manager.rel engine/content_manager.rel ^
 engine/debug_manager.rel engine/enum_manager.rel engine/game_manager.rel engine/font_manager.rel  engine/global_manager.rel ^
 engine/graphics_manager.rel engine/hack_manager.rel engine/input_manager.rel ^
-engine/level_manager.rel engine/player_manager.rel ^
+engine/level_manager.rel engine/player_manager.rel engine/riff_manager.rel engine/sample_manager.rel ^
 engine/screen_manager.rel engine/scroll_manager.rel engine/sprite_manager.rel ^
 engine/storage_manager.rel engine/tile_manager.rel engine/timer_manager.rel engine/util_manager.rel ^
 object/audio_object.rel object/command_object.rel object/game_object.rel object/hack_object.rel object/level_object.rel ^
