@@ -23,15 +23,16 @@ static unsigned char game_world, game_round, game_point;
 static unsigned int game_screen;
 static unsigned char game_level;
 static unsigned char check_width;
+static unsigned char player_loadY;
+
 //static void printCursor();
 static void printStats();
 static void printTexts();
-static unsigned char player_loadY;
+static void updateCheck();
 
 void screen_level_screen_load()
 {
 	struct_player_object *po = &global_player_object;
-	struct_level_object *lo = &global_level_object;
 	struct_game_object *go = &global_game_object;
 
 	// TODO delete this.
@@ -43,37 +44,20 @@ void screen_level_screen_load()
 	game_screen = 0;
 	cursorIdx = 2;
 
-
 	engine_graphics_manager_common();
-	//devkit_SMS_displayOff();
-	//engine_asm_manager_clear_VRAM();
-	//engine_content_manager_bggame();
-	//engine_content_manager_sprite();
-	//engine_graphics_manager_title();
-	//engine_graphics_manager_sea();
-	//devkit_SMS_displayOn();
 
+	updateCheck();
+	//engine_level_manager_init( game_level );
+	//check_width = lo->level_check / SCREEN_WIDE;
+	//game_screen = check_width * game_point;
+	//engine_level_manager_draw_screen( game_screen );
+	////engine_level_manager_draw_point( game_point );
 
 	printTexts();
 	printStats();
 
-
-	engine_level_manager_init( game_level );
-	check_width = lo->level_check / SCREEN_WIDE;
-
-	game_screen = check_width * game_point;
-
-	
-	engine_level_manager_draw_screen( game_screen );
-
-
-	//engine_level_manager_draw_point( game_point );
-
 	//engine_level_manager_init( go->game_level );
 	//engine_level_manager_draw_point( go->game_point );
-
-
-	
 	engine_font_manager_char( '>', cursorX[ cursorIdx ], SHARE_TEXT_ROW );
 	
 	// TODO confirm that will NOT draw player here 
@@ -124,10 +108,6 @@ void screen_level_screen_update( unsigned char *screen_type )
 			if( game_world > 0 )
 			{
 				game_world--;
-				//game_level--;
-				//game_point = 0;
-				//engine_level_manager_init( game_level );
-				//engine_level_manager_draw_point( game_point );
 			}
 		}
 		else if( 1 == cursorIdx )
@@ -137,8 +117,6 @@ void screen_level_screen_update( unsigned char *screen_type )
 				//game_world--;
 				game_level--;
 				game_point = 0;
-				//engine_level_manager_init( game_level );
-				//engine_level_manager_draw_point( game_point );
 			}
 		}
 		else
@@ -146,8 +124,6 @@ void screen_level_screen_update( unsigned char *screen_type )
 			if( game_point > 0 )
 			{
 				game_point--;
-				//engine_level_manager_init( game_level );
-				//engine_level_manager_draw_point( game_point );
 			}
 		}
 	}
@@ -157,13 +133,11 @@ void screen_level_screen_update( unsigned char *screen_type )
 		updateLevel = true;
 		if( 0 == cursorIdx )
 		{
-			if( game_world < (MAX_WOLRDS-1) )
+			if( game_world < ( MAX_WOLRDS - 1 ) )
 			{
 				game_world++;
 				//game_level++;
 				game_point = 0;
-				//engine_level_manager_init( game_level );
-				//engine_level_manager_draw_point( game_point );
 			}
 		}
 		else if( 1 == cursorIdx )
@@ -173,33 +147,34 @@ void screen_level_screen_update( unsigned char *screen_type )
 				//game_world++;
 				game_level++;
 				game_point = 0;
-				//engine_level_manager_init( game_level );
-				//engine_level_manager_draw_point( game_point );
 			}
 		}
 		else
 		{
-			game_point++;
-			//engine_level_manager_init( game_level );
-			//engine_level_manager_draw_point( game_point );
+			if( game_point < ( MAX_CHECKS - 1 ) )
+			{
+				game_point++;
+			}
 		}
 	}
 
 	if( updateLevel )
 	{
-		printStats();
 		//if( game_level > 0 || game_point > 0 )
 		{
-			engine_level_manager_init( game_level );
-			game_screen = check_width * game_point;
-			engine_level_manager_draw_screen( game_screen );
-			//engine_level_manager_draw_point( game_point );
+			updateCheck();
+			//engine_level_manager_init( game_level );
+			//game_screen = check_width * game_point;
+			//engine_level_manager_draw_screen( game_screen );
+			////engine_level_manager_draw_point( game_point );
 
 			//engine_player_manager_initX( go->game_difficulty, game_world );
 			engine_player_manager_loadX( game_point );
 			player_loadY = level_platforms[ po->lookX ];
 			engine_player_manager_loadY( player_loadY );
 		}
+
+		printStats();
 	}
 
 	input = engine_input_manager_hold( input_type_fire1 );
@@ -298,6 +273,15 @@ void screen_level_screen_update( unsigned char *screen_type )
 //
 //	*screen_type = screen_type_level;
 //}
+static void updateCheck()
+{
+	struct_level_object *lo = &global_level_object;
+	engine_level_manager_init( game_level );
+	check_width = lo->level_check / SCREEN_WIDE;
+	game_screen = check_width * game_point;
+	engine_level_manager_draw_screen( game_screen );
+	//engine_level_manager_draw_point( game_point );
+}
 
 static void printStats()
 {
