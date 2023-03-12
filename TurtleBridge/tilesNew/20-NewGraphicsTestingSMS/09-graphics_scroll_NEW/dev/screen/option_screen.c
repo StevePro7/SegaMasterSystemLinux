@@ -3,6 +3,7 @@
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/global_manager.h"
+#include "../engine/graphics_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/player_manager.h"
 #include "../engine/scroll_manager.h"
@@ -15,6 +16,7 @@ void screen_option_screen_load()
 {
 	unsigned char idx;
 	engine_scroll_manager_update( 0 );
+	engine_graphics_manager_common();
 	for( idx = 0; idx < SCREEN_HIGH; idx++ )
 	{
 		engine_font_manager_text( "                                ", 0, idx );
@@ -40,7 +42,7 @@ void screen_option_screen_update( unsigned char *screen_type )
 		engine_font_manager_char( '>', 10, cursorY );
 	}
 
-	input3 = engine_input_manager_hold( input_type_fire2 );
+	input3 = engine_input_manager_hold( input_type_fire1 );
 	if( input3 )
 	{
 		if( 0 == cursorY )
@@ -65,11 +67,11 @@ void screen_option_screen_update( unsigned char *screen_type )
 	}
 	else
 	{
-		input3 = engine_input_manager_hold( input_type_fire1 );
+		input3 = engine_input_manager_hold( input_type_fire2 );
 		if( input3 )
 		{
-			engine_storage_manager_erase();
-			engine_font_manager_text( "ERASER SCREEN", 10, 2 );
+			//engine_storage_manager_erase();
+			//engine_font_manager_text( "ERASER SCREEN", 10, 2 );
 		}
 	}
 //	engine_player_manager_draw();

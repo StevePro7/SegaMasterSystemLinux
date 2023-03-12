@@ -68,7 +68,7 @@ void screen_func_screen_load()
 
 	// intro_screen
 	engine_frame_manager_load();
-	engine_frame_manager_draw();
+	//engine_frame_manager_draw();
 	engine_command_manager_init();
 	//engine_command_manager_draw();
 	engine_font_manager_text( "INTROX SCREEN", 10, 2 );
@@ -117,13 +117,13 @@ void screen_func_screen_update( unsigned char *screen_type )
 		if( command != co->prev_command )
 		{
 			engine_command_manager_record( fo->frame_count, command );
-			engine_font_manager_data( fo->frame_count, 30, 4 );
-			engine_font_manager_data( command, 30, 5 );
+			//engine_font_manager_data( fo->frame_count, 30, 4 );
+			//engine_font_manager_data( command, 30, 5 );
 			//	engine_command_manager_draw();
 		}
 
 		engine_frame_manager_update();
-		engine_frame_manager_draw();
+		//engine_frame_manager_draw();
 
 
 		if( COMMAND_NONE_MASK != command )
