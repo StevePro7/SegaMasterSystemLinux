@@ -12,8 +12,10 @@ S:Lgame_manager.engine_game_manager_set_level_data$game_world$1_0$10({1}SC:U),B,
 S:Lgame_manager.engine_game_manager_set_level_data$game_round$1_0$10({1}SC:U),B,1,5
 S:Lgame_manager.engine_game_manager_set_level_data$game_point$1_0$10({1}SC:U),B,1,6
 S:Lgame_manager.engine_game_manager_set_level_data$go$1_0$11({2}DG,STtag_struct_game_object:S),R,0,0,[]
+F:G$engine_game_manager_inc_checkpoint$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lgame_manager.engine_game_manager_inc_checkpoint$go$1_0$12({2}DG,STtag_struct_game_object:S),R,0,0,[]
 F:G$engine_game_manager_set_level_test$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lgame_manager.engine_game_manager_set_level_test$game_level$1_0$12({1}SC:U),B,1,4
-S:Lgame_manager.engine_game_manager_set_level_test$go$1_0$13({2}DG,STtag_struct_game_object:S),R,0,0,[]
+S:Lgame_manager.engine_game_manager_set_level_test$game_level$1_0$13({1}SC:U),B,1,4
+S:Lgame_manager.engine_game_manager_set_level_test$go$1_0$14({2}DG,STtag_struct_game_object:S),R,0,0,[]
 T:Fgame_manager$tag_struct_game_object[({0}S:S$game_difficulty$0_0$0({1}SC:U),Z,0,0)({1}S:S$game_world$0_0$0({1}SC:U),Z,0,0)({2}S:S$game_round$0_0$0({1}SC:U),Z,0,0)({3}S:S$game_level$0_0$0({1}SC:U),Z,0,0)({4}S:S$game_point$0_0$0({1}SC:U),Z,0,0)({5}S:S$game_cloud$0_0$0({1}SC:U),Z,0,0)({6}S:S$game_isgod$0_0$0({1}SC:U),Z,0,0)]
 S:G$global_game_object$0_0$0({7}STtag_struct_game_object:S),E,0,0

@@ -20,31 +20,6 @@ struct_scroll_object global_scroll_object;
 
 // Private helper function.
 static void lineScrollHandler( void );
-//static void( *load_method )( unsigned char screen, int scrollFinish );
-//static enum_scroll_state( *update_method )( unsigned char delta );
-//static enum_scroll_state( *update_section )( unsigned char delta );
-
-//static void para_scroll_load( unsigned char screen, int scrollFinish );
-//static enum_scroll_state para_scroll_update( unsigned char delta );
-//static enum_scroll_state para_scroll_section( unsigned char delta );
-//static void full_scroll_load( unsigned char screen, int scrollFinish );
-//static enum_scroll_state full_scroll_update( unsigned char delta );
-
-//void engine_scroll_manager_init()
-//{
-//	//if( PARALLAX_SCROLLING )
-//	//{
-//	//	//load_method = para_scroll_load;
-//	//	//update_method = para_scroll_update;
-//	//	//update_section = para_scroll_section;
-//	//}
-//	//else
-//	//{
-//	//	//load_method = full_scroll_load;
-//	//	//update_method = full_scroll_update;
-//	//	//update_section = full_scroll_update;
-//	//}
-//}
 
 void engine_scroll_manager_load( unsigned char screen, int scrollFinish )
 {

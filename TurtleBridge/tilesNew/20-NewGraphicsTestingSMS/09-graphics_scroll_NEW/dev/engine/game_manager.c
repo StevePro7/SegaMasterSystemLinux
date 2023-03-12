@@ -38,7 +38,11 @@ void engine_game_manager_set_level_data( unsigned char game_world, unsigned char
 	// TODO implement this once all levels set!
 	go->game_level = game_world * MAX_ROUNDS + game_round;
 }
-
+void engine_game_manager_inc_checkpoint()
+{
+	struct_game_object *go = &global_game_object;
+	go->game_point++;
+}
 
 // TODO delete - only used for testing
 void engine_game_manager_set_level_test( unsigned char game_level )

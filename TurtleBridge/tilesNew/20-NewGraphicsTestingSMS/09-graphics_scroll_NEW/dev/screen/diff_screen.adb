@@ -46,6 +46,7 @@ S:G$engine_game_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_set_cloud_form$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_set_difficulty$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_set_level_data$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_game_manager_inc_checkpoint$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_set_level_test$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_common$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_screen$0_0$0({2}DF,SV:S),C,0,0
