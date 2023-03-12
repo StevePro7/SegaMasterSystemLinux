@@ -17,10 +17,10 @@ void engine_debug_manager_initgame()
 	go->game_difficulty = difficulty_type_easier;
 	//go->game_difficulty = difficulty_type_normal;
 	//go->game_difficulty = difficulty_type_harder;
-	go->game_difficulty = difficulty_type_insane;
+	//go->game_difficulty = difficulty_type_insane;
 
-	go->game_world = 2;	// TODO - currently not aligned with game_level but used for testing...
-	go->game_point = 2;
+	go->game_world = 1;	// TODO - currently not aligned with game_level but used for testing...
+	go->game_point = 1;
 
 	go->game_world -= 1;
 	go->game_point -= 1;
