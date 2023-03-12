@@ -46,11 +46,9 @@ void screen_load_screen_load()
 	//engine_tile_manager_stevepro2( TILE_CLOUD_LARGE, 25, 5, 8, 3 );
 	//engine_graphics_manager_clouds( go->game_cloud );
 
-	engine_scroll_manager_load( go->game_point, lo->level_size );
-	//engine_scroll_manager_update( 0 );
-
-	// Draw in terms of screens.
+	// Work in terms of screens.
 	checkScreen = lo->check_width * go->game_point;
+	engine_scroll_manager_load( checkScreen, lo->level_size );
 	engine_level_manager_draw_screen( checkScreen );
 	// TODO - can I delete the int representation i.e game_screen?
 	//game_screen = lo->check_width * go->game_point;
