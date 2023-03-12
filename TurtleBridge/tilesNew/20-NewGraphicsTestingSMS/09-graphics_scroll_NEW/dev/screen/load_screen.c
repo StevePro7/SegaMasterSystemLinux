@@ -28,7 +28,8 @@ void screen_load_screen_load()
 	struct_level_object *lo = &global_level_object;
 	struct_game_object *go = &global_game_object;
 	unsigned char player_loadY;
-	unsigned int game_screen;
+	unsigned char checkScreen;
+	//unsigned int game_screen;
 
 	//devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
@@ -49,8 +50,10 @@ void screen_load_screen_load()
 	//engine_scroll_manager_update( 0 );
 
 	// Draw in terms of screens.
-	game_screen = lo->check_width * go->game_point;
-	engine_level_manager_draw_screen( game_screen );
+	checkScreen = lo->check_width * go->game_point;
+	engine_level_manager_draw_screen( checkScreen );
+	//game_screen = lo->check_width * go->game_point;
+	//engine_level_manager_draw_screen( game_screen );
 	//engine_level_manager_draw_point( go->game_point );
 
 	engine_player_manager_initX( go->game_difficulty, go->game_world );
