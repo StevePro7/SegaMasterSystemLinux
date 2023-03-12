@@ -1,67 +1,75 @@
 ;!FILE riff_manager.asm
 XL3
-H 9 areas 3A global symbols
+H 9 areas 42 global symbols
 M riff_manager
 O -mz80
 S _engine_sample_manager_init Ref000000
 S _engine_sample_manager_play Ref000000
+S _global_hack_object Ref000000
 S .__.ABS. Def000000
 S _riff_sample_data Ref000000
 S _riff_sample_bank Ref000000
 S _devkit_SMS_mapROMBank Ref000000
-A _CODE size 49 flags 0 addr 0
-S A$riff_manager$132 Def000041
-S A$riff_manager$123 Def000039
-S A$riff_manager$114 Def00002E
-S A$riff_manager$105 Def000023
+A _CODE size 50 flags 0 addr 0
+S A$riff_manager$150 Def00004A
+S A$riff_manager$141 Def000042
+S A$riff_manager$132 Def000037
+S A$riff_manager$123 Def000030
+S A$riff_manager$114 Def000024
+S A$riff_manager$105 Def00001D
 S G$psgInit$0_0$0 Def000006
-S A$riff_manager$133 Def000042
-S A$riff_manager$124 Def00003A
-S A$riff_manager$115 Def00002F
-S A$riff_manager$116 Def000030
-S A$riff_manager$145 Def000044
-S A$riff_manager$109 Def000024
-S A$riff_manager$146 Def000046
-S A$riff_manager$137 Def000043
-S A$riff_manager$128 Def00003B
-S A$riff_manager$129 Def00003C
+S A$riff_manager$160 Def00004F
+S A$riff_manager$142 Def000043
+S A$riff_manager$133 Def00003A
+S A$riff_manager$124 Def000032
+S A$riff_manager$115 Def000025
+S A$riff_manager$143 Def000044
+S A$riff_manager$134 Def00003D
+S A$riff_manager$125 Def000033
+S A$riff_manager$116 Def000026
+S A$riff_manager$144 Def000047
+S A$riff_manager$135 Def00003F
+S A$riff_manager$126 Def000034
+S A$riff_manager$117 Def000029
+S A$riff_manager$145 Def000048
+S A$riff_manager$136 Def000040
+S A$riff_manager$127 Def000035
+S A$riff_manager$109 Def00001F
+S A$riff_manager$155 Def00004D
+S A$riff_manager$128 Def000036
+S A$riff_manager$149 Def000049
 S A$riff_manager$60 Def000000
-S C$riff_manager.c$11$0_0$85 Def000000
 S A$riff_manager$91 Def000011
+S C$riff_manager.c$12$0_0$85 Def000000
 S A$riff_manager$92 Def000013
 S A$riff_manager$93 Def000017
-S C$riff_manager.c$13$1_0$85 Def000000
-S C$riff_manager.c$21$1_0$87 Def000019
-S C$riff_manager.c$14$1_0$85 Def000003
+S C$riff_manager.c$30$1_0$87 Def00002A
+S C$riff_manager.c$14$1_0$85 Def000000
 S A$riff_manager$68 Def000003
-S C$riff_manager.c$22$1_0$87 Def00001C
-S C$riff_manager.c$23$1_0$87 Def000024
-S A$riff_manager$97 Def000019
-S C$riff_manager.c$24$1_0$87 Def000031
-S C$riff_manager.c$16$1_0$87 Def000011
-S C$riff_manager.c$26$1_0$87 Def00003B
+S C$riff_manager.c$31$1_0$87 Def000037
+S C$riff_manager.c$15$1_0$85 Def000003
+S C$riff_manager.c$23$1_0$87 Def000019
+S C$riff_manager.c$33$1_0$87 Def000041
+S C$riff_manager.c$34$1_0$87 Def000049
+S C$riff_manager.c$35$1_0$87 Def00004F
+S C$riff_manager.c$17$1_0$87 Def000011
 S G$engine_riff_manager_init$0$0 Def000000
-S C$riff_manager.c$27$1_0$87 Def000043
-S C$riff_manager.c$28$1_0$87 Def000044
+S C$riff_manager.c$25$2_0$88 Def00001D
+S C$riff_manager.c$28$1_0$87 Def00001F
+S C$riff_manager.c$19$1_0$87 Def000019
 S G$engine_riff_manager_play$0$0 Def000011
+S C$riff_manager.c$29$1_0$87 Def000022
 S _engine_riff_manager_init Def000000
 S _engine_riff_manager_play Def000011
 S XG$engine_riff_manager_init$0$0 Def000003
-S XG$engine_riff_manager_play$0$0 Def000044
-S A$riff_manager$110 Def000027
+S XG$engine_riff_manager_play$0$0 Def00004F
+S A$riff_manager$100 Def000019
 S A$riff_manager$101 Def00001C
-S A$riff_manager$120 Def000031
-S A$riff_manager$111 Def00002A
-S A$riff_manager$102 Def00001E
 S _psgInit Def000006
-S A$riff_manager$130 Def00003D
-S A$riff_manager$121 Def000034
-S A$riff_manager$112 Def00002C
-S A$riff_manager$103 Def00001F
-S A$riff_manager$131 Def00003E
-S A$riff_manager$122 Def000037
-S A$riff_manager$113 Def00002D
-S A$riff_manager$104 Def000020
+S A$riff_manager$121 Def00002A
+S A$riff_manager$140 Def000041
+S A$riff_manager$122 Def00002D
+S A$riff_manager$113 Def000022
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -80,13 +88,17 @@ T 06 00 00 9F BF DF FF 81 00 A1 00 00 C1 00
 R 00 00 00 00
 T 11 00 00
 R 00 00 00 00
-T 11 00 00 DD E5 DD 21 00 00 DD 39 CD 00 00 3E 0F
-R 00 00 00 00 00 0C 00 00
-T 1E 00 00 F5 33 CD 00 00 33 01 00 00 DD 6E 04 26
-R 00 00 00 00 02 06 05 00 02 0A 03 00
-T 2B 00 00 00 29 09 5E 23 56 01 00 00 DD 6E 04 26
-R 00 00 00 00 02 0A 04 00
-T 38 00 00 00 09 7E D5 F5 33 CD 00 00 33 D1 EB DD
-R 00 00 00 00 02 0A 05 00
-T 45 00 00 E1 C3 00 00
-R 00 00 00 00 02 05 01 00
+T 11 00 00 DD E5 DD 21 00 00 DD 39 3A 04 00 B7 28
+R 00 00 00 00 02 0C 02 00
+T 1E 00 00 2E CD 00 00 3E 0F F5 33 CD 00 00 33 01
+R 00 00 00 00 00 05 00 00 02 0C 06 00
+T 2B 00 00 00 00 DD 6E 04 26 00 29 09 5E 23 56 01
+R 00 00 00 00 02 03 04 00
+T 38 00 00 00 00 DD 6E 04 26 00 09 7E D5 F5 33 CD
+R 00 00 00 00 02 03 05 00
+T 45 00 00 00 00 33 D1 EB CD 00 00
+R 00 00 00 00 02 03 06 00 02 09 01 00
+T 4D 00 00
+R 00 00 00 00
+T 4D 00 00 DD E1 C9
+R 00 00 00 00

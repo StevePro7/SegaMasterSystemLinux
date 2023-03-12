@@ -23,7 +23,7 @@ void screen_beat_screen_update( unsigned char *screen_type )
 	unsigned char input, index;
 	unsigned char loops, count, value;
 	
-	index = 24;
+	index = 2;
 	input = engine_input_manager_hold( input_type_right );
 	if( input )
 	{

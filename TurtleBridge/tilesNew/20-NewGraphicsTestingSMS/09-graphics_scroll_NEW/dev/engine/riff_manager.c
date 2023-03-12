@@ -1,4 +1,5 @@
 #include "riff_manager.h"
+#include "hack_manager.h"
 #include "sample_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
@@ -15,8 +16,14 @@ void engine_riff_manager_init()
 
 void engine_riff_manager_play( unsigned char index )
 {
+	struct_hack_object *ho = &global_hack_object;
 	const unsigned char *data;
 	unsigned char bank;
+
+	if( !ho->hack_riffs )
+	{
+		return;
+	}
 
 	engine_riff_manager_init();
 	devkit_SMS_mapROMBank( FIXED_BANK );
