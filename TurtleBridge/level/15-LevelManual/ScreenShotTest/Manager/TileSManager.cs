@@ -28,6 +28,7 @@ namespace ScreenShotTest
 			string path = @"MyTiles.csv";
 			var delim = new char[] { ',' };
 
+			lines.Clear();
 			var texts = System.IO.File.ReadAllLines(path);
 			int rowCount = texts.Length;
 			for (int row = 0; row < rowCount; row++)
@@ -47,6 +48,11 @@ namespace ScreenShotTest
 			{
 				Tiles[idx] = lines[idx];
 			}
+		}
+
+		private void Reset()
+		{
+
 		}
 
 		public void InitializeX()

@@ -410,6 +410,7 @@ namespace ScreenShotTest
 			// Make local copy of the CSV file used to render screen.
 			string csvName = banktext.Replace("level_", "tiles_");
 			File.Copy("MyTiles.csv", path + "/" + csvName + ".csv");
+			//File.Copy("MyTiles.csv", path + "/../../MyTiles.csv");
 		}
 
 		void engine_util_manager_convertByteToNibbles(int data, ref int upper_nibble, ref int lower_nibble)
