@@ -22,7 +22,7 @@ static unsigned char cursorIdx;
 static unsigned char game_world, game_round, game_point;
 static unsigned char game_level;
 static unsigned int game_screen, numb_screen;
-static unsigned char check_width;
+//static unsigned char check_width;
 static unsigned char player_loadY;
 
 //static void printCursor();
@@ -48,8 +48,8 @@ void screen_level_screen_load()
 	engine_graphics_manager_common();
 
 	engine_level_manager_init( game_level );
-	check_width = lo->level_check / SCREEN_WIDE;
-	game_screen = check_width * game_point;
+	//check_width = lo->level_check / SCREEN_WIDE;
+	game_screen = lo->check_width * game_point;
 	engine_level_manager_draw_screen( game_screen );
 
 	//engine_level_manager_init( game_level );
@@ -76,6 +76,7 @@ void screen_level_screen_load()
 void screen_level_screen_update( unsigned char *screen_type )
 {
 	struct_player_object *po = &global_player_object;
+	struct_level_object *lo = &global_level_object;
 	unsigned char input;
 	bool updateLevel = false;
 
@@ -96,7 +97,7 @@ void screen_level_screen_update( unsigned char *screen_type )
 			if( game_screen < ( numb_screen - 1 ) )
 			{
 				game_screen++;
-				game_point = game_screen / check_width;
+				game_point = game_screen / lo->check_width;
 				
 			}
 		}
@@ -126,7 +127,7 @@ void screen_level_screen_update( unsigned char *screen_type )
 				//game_world--;
 				game_level--;
 				game_point = 0;
-				game_screen = check_width * game_point;
+				game_screen = lo->check_width * game_point;
 			}
 		}
 		else
@@ -134,7 +135,7 @@ void screen_level_screen_update( unsigned char *screen_type )
 			if( game_point > 0 )
 			{
 				game_point--;
-				game_screen = check_width * game_point;
+				game_screen = lo->check_width * game_point;
 			}
 		}
 	}
@@ -149,7 +150,7 @@ void screen_level_screen_update( unsigned char *screen_type )
 				game_world++;
 				//game_level++;
 				game_point = 0;
-				game_screen = check_width * game_point;
+				game_screen = lo->check_width * game_point;
 			}
 		}
 		else if( 1 == cursorIdx )
@@ -159,7 +160,7 @@ void screen_level_screen_update( unsigned char *screen_type )
 				//game_world++;
 				game_level++;
 				game_point = 0;
-				game_screen = check_width * game_point;
+				game_screen = lo->check_width * game_point;
 			}
 		}
 		else
@@ -167,7 +168,7 @@ void screen_level_screen_update( unsigned char *screen_type )
 			if( game_point < ( MAX_CHECKS - 1 ) )
 			{
 				game_point++;
-				game_screen = check_width * game_point;
+				game_screen = lo->check_width * game_point;
 			}
 		}
 	}
@@ -290,7 +291,7 @@ static void updateCheck()
 {
 	struct_level_object *lo = &global_level_object;
 	engine_level_manager_init( game_level );
-	check_width = lo->level_check >> 5;	// / SCREEN_WIDE 32px;
+	//check_width = lo->level_check >> 5;	// / SCREEN_WIDE 32px;
 	numb_screen = lo->level_check >> 3;	// / 8 blocks per screen;
 	engine_level_manager_draw_screen( game_screen );
 	//engine_level_manager_draw_point( game_point );

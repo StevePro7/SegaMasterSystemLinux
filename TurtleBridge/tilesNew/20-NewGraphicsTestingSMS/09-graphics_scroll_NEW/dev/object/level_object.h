@@ -9,6 +9,7 @@ typedef struct tag_struct_level_object
 	unsigned int level_size;
 	unsigned char level_bank;
 	unsigned int level_check;
+	unsigned char check_width;
 	unsigned char column_draw;
 
 } struct_level_object;

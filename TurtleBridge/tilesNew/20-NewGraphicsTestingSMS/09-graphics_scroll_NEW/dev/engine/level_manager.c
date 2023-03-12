@@ -26,6 +26,7 @@ void engine_level_manager_init( unsigned char level )
 	lo->level_bank = level_object_bank[ level ];
 	//lo->level_check = lo->level_size / MAX_CHECKS;
 	lo->level_check = lo->level_size >> 2;			// equivalent to divide by MAX_CHECKS [4].
+	lo->check_width = lo->level_check >> 5;			// equivalent to divide by SCREEN_WIDE 32.
 	// IMPORTANT
 	// Must store level_size as 1px less to ensure scrolling finishes OK.
 	lo->level_size -= 1;
