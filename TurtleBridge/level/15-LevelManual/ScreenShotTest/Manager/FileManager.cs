@@ -55,7 +55,8 @@ namespace ScreenShotTest
 			}
 			else
 			{
-				var files = Directory.GetFiles(filepath);
+				var searchPattern = String.Format("{0}{1}_{2}", world, round, point);
+				var files = Directory.GetFiles(filepath, searchPattern);
 				foreach (var file in files)
 				{
 					File.Delete(file);
