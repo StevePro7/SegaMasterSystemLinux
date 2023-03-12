@@ -19,7 +19,7 @@
 
 static unsigned char cursorX[] = { 2, 11, 20 };
 static unsigned char cursorIdx;
-static unsigned char game_world, game_round, game_point;
+static unsigned char game_world, game_round, game_point, game_screen;
 static unsigned char game_level;
 //static void printCursor();
 static void printStats();
@@ -37,6 +37,7 @@ void screen_level_screen_load()
 	game_round = go->game_round;
 	game_level = go->game_level;
 	game_point = go->game_point;
+	game_screen = go->game_screen;
 	cursorIdx = 2;
 
 
@@ -281,9 +282,12 @@ static void printStats()
 	delta = 1;
 	engine_font_manager_valu( ( game_world + delta ), 9, SHARE_TEXT_ROW );
 	//engine_font_manager_valu( ( game_round + delta ), 18, SHARE_TEXT_ROW );	// TODO using level instead of round for testing...
-	engine_font_manager_valu( ( game_level /*+ delta*/ ), 18, SHARE_TEXT_ROW );
+	//engine_font_manager_valu( ( game_level /*+ delta*/ ), 18, SHARE_TEXT_ROW );
+	
 	engine_font_manager_valu( ( game_point + delta ), 27, SHARE_TEXT_ROW );		// TODO - revert
 	//engine_font_manager_data( ( game_point + delta ), 27, SHARE_TEXT_ROW );
+
+	engine_font_manager_data( ( game_level ), 18, SHARE_TEXT_ROW + 1 );
 
 	//engine_font_manager_char( '0', 26, SHARE_TEXT_ROW );
 	//engine_font_manager_char( '/', 28, SHARE_TEXT_ROW );
