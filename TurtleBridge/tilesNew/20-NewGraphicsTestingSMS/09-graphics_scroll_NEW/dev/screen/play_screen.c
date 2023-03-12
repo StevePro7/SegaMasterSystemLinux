@@ -30,6 +30,7 @@ static signed int deltaY;
 
 void screen_play_screen_load()
 {
+	struct_game_object *go = &global_game_object;
 	engine_frame_manager_load();
 	//engine_frame_manager_draw();
 
@@ -43,6 +44,7 @@ void screen_play_screen_load()
 	//frameX = 0;
 	//flag = 0;
 	//scroll_count = 0;
+	//engine_font_manager_data( go->game_point, 20, go->game_point );
 }
 
 void screen_play_screen_update( unsigned char *screen_type )
@@ -193,6 +195,8 @@ void screen_play_screen_update( unsigned char *screen_type )
 				else if( scroll_state_line == scroll_state )
 				{
 					engine_game_manager_inc_checkpoint();
+					//TODO used for debugging - remove
+					//engine_font_manager_data( go->game_point, 20, go->game_point );
 				}
 				else if( scroll_state_comp == scroll_state )
 				{

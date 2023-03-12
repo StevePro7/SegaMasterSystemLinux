@@ -10,12 +10,11 @@ S:Lscroll_manager.engine_scroll_manager_full_load$screen$1_0$101({1}SC:U),B,1,4
 S:Lscroll_manager.engine_scroll_manager_full_load$scrollPoints$1_0$101({2}SI:S),B,1,5
 S:Lscroll_manager.engine_scroll_manager_full_load$scrollFinish$1_0$101({2}SI:S),B,1,7
 S:Lscroll_manager.engine_scroll_manager_full_load$so$1_0$102({2}DG,STtag_struct_scroll_object:S),R,0,0,[c,b]
-F:G$engine_scroll_manager_full_update$0_0$0({2}DF,SC:U),Z,0,-2,0,0,0
+F:G$engine_scroll_manager_full_update$0_0$0({2}DF,SC:U),Z,0,0,0,0,0
 S:Lscroll_manager.engine_scroll_manager_full_update$delta$1_0$103({1}SC:U),B,1,4
 S:Lscroll_manager.engine_scroll_manager_full_update$so$1_0$104({2}DG,STtag_struct_scroll_object:S),R,0,0,[]
-S:Lscroll_manager.engine_scroll_manager_full_update$scroll_state$1_0$104({1}SC:U),R,0,0,[c]
-S:Lscroll_manager.engine_scroll_manager_full_update$sloc0$0_1$0({2}SI:U),B,1,-2
-S:Lscroll_manager.engine_scroll_manager_full_update$sloc1$0_1$0({2}SI:U),B,1,-2
+S:Lscroll_manager.engine_scroll_manager_full_update$scroll_state$1_0$104({1}SC:U),B,1,-1
+S:Lscroll_manager.engine_scroll_manager_full_update$sloc0$0_1$0({1}SC:U),B,1,-1
 F:G$engine_scroll_manager_para_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lscroll_manager.engine_scroll_manager_para_load$screen$1_0$110({1}SC:U),B,1,4
 S:Lscroll_manager.engine_scroll_manager_para_load$scrollFinish$1_0$110({2}SI:S),B,1,5

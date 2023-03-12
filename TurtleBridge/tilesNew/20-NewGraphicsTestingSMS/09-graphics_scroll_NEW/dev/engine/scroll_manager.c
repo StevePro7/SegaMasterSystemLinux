@@ -40,7 +40,7 @@ void engine_scroll_manager_full_load( unsigned char screen, int scrollPoints, in
 	so->scrollRight = 0;
 	
 	so->scrollColumn = ( screen * SCREEN_WIDE ) + SCREEN_LESS_ONE;
-	so->scrollChecks = ( screen * SCREEN_WIDE ) + SCREEN_LESS_ONE;
+	so->scrollChecks = 0;// ( screen * SCREEN_WIDE ) + SCREEN_LESS_ONE;
 	so->scrollPoints = scrollPoints;
 	so->scrollFinish = scrollFinish;
 	devkit_SMS_setBGScrollX( so->scrollLeftX );
