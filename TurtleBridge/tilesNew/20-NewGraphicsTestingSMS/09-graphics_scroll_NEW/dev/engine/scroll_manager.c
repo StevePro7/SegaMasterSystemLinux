@@ -38,7 +38,9 @@ void engine_scroll_manager_full_load( unsigned char screen, int scrollPoints, in
 	struct_scroll_object *so = &global_scroll_object;
 	so->scrollLeftX = 0;
 	so->scrollRight = 0;
+	
 	so->scrollColumn = ( screen * SCREEN_WIDE ) + SCREEN_LESS_ONE;
+	so->scrollChecks = ( screen * SCREEN_WIDE ) + SCREEN_LESS_ONE;
 	so->scrollPoints = scrollPoints;
 	so->scrollFinish = scrollFinish;
 	devkit_SMS_setBGScrollX( so->scrollLeftX );
@@ -63,6 +65,11 @@ enum_scroll_state engine_scroll_manager_full_update( unsigned char delta )
 		{
 			scroll_state = scroll_state_comp;
 		}
+		if( so->scrollChecks == so->scrollPoints )
+		{
+			so->scrollChecks = 0;
+			scroll_state = scroll_state_line;
+		}
 	}
 
 	if( delta > 0 )
@@ -71,6 +78,7 @@ enum_scroll_state engine_scroll_manager_full_update( unsigned char delta )
 		{
 			scroll_state = scroll_state_tile;
 			so->scrollColumn++;
+			so->scrollChecks++;
 		}
 	}
 
@@ -83,6 +91,7 @@ void engine_scroll_manager_para_load( unsigned char screen, int scrollFinish )
 	so->scrollLeftX = 0;
 	so->scrollRight = 0;
 	so->scrollColumn = ( screen * SCREEN_WIDE ) + SCREEN_LESS_ONE;
+	//so->scrollChecks = ( screen * SCREEN_WIDE ) + SCREEN_LESS_ONE;
 	so->scrollFinish = scrollFinish;
 	devkit_SMS_setBGScrollX( so->scrollLeftX );
 

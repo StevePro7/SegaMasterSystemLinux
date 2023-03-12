@@ -190,6 +190,10 @@ void screen_play_screen_update( unsigned char *screen_type )
 					//	scroll_count++;		// TODO delete as only used for impossible jump debugging
 					//}
 				}
+				else if( scroll_state_line == scroll_state )
+				{
+					engine_game_manager_inc_checkpoint();
+				}
 				else if( scroll_state_comp == scroll_state )
 				{
 					complete = scroll_state_comp == scroll_state;
