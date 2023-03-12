@@ -25,6 +25,7 @@ S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_valu$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_common$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_graphics_manager_screen$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_level$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_sea$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_clouds$0_0$0({2}DF,SV:S),C,0,0

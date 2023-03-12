@@ -21,6 +21,7 @@ static unsigned char cursorX[] = { 2, 11, 20 };
 static unsigned char cursorIdx;
 static unsigned char game_world, game_round, game_point, game_screen;
 static unsigned char game_level;
+static unsigned char check_width;
 //static void printCursor();
 static void printStats();
 static void printTexts();
@@ -29,6 +30,7 @@ static unsigned char player_loadY;
 void screen_level_screen_load()
 {
 	struct_player_object *po = &global_player_object;
+	struct_level_object *lo = &global_level_object;
 	struct_game_object *go = &global_game_object;
 
 	// TODO delete this.
@@ -37,7 +39,7 @@ void screen_level_screen_load()
 	game_round = go->game_round;
 	game_level = go->game_level;
 	game_point = go->game_point;
-	game_screen = go->game_screen;
+	game_screen = 0;
 	cursorIdx = 2;
 
 
@@ -52,7 +54,10 @@ void screen_level_screen_load()
 
 
 	engine_level_manager_init( game_level );
-	engine_level_manager_draw_point( game_point );
+	//check_width = lo->level_check / SCREEN_WIDE;
+	//game_screen = check_width * game_point;
+	engine_level_manager_draw_screen( game_screen );
+	//engine_level_manager_draw_point( game_point );
 
 	//engine_level_manager_init( go->game_level );
 	//engine_level_manager_draw_point( go->game_point );
@@ -280,6 +285,8 @@ static void printStats()
 
 	delta = 0;
 	delta = 1;
+	engine_font_manager_data( game_level, 8, SHARE_TEXT_ROW + 2 );
+
 	engine_font_manager_valu( ( game_world + delta ), 9, SHARE_TEXT_ROW );
 	//engine_font_manager_valu( ( game_round + delta ), 18, SHARE_TEXT_ROW );	// TODO using level instead of round for testing...
 	//engine_font_manager_valu( ( game_level /*+ delta*/ ), 18, SHARE_TEXT_ROW );
@@ -287,8 +294,8 @@ static void printStats()
 	engine_font_manager_valu( ( game_point + delta ), 27, SHARE_TEXT_ROW );		// TODO - revert
 	//engine_font_manager_data( ( game_point + delta ), 27, SHARE_TEXT_ROW );
 
-	engine_font_manager_data( ( game_level ), 18, SHARE_TEXT_ROW + 1 );
-
+	
+	engine_font_manager_data( ( game_point + delta ), 27, SHARE_TEXT_ROW + 1 );
 	//engine_font_manager_char( '0', 26, SHARE_TEXT_ROW );
 	//engine_font_manager_char( '/', 28, SHARE_TEXT_ROW );
 	//engine_font_manager_char( '0', 29, SHARE_TEXT_ROW );

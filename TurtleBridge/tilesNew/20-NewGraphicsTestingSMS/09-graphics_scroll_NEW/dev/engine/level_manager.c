@@ -25,7 +25,7 @@ void engine_level_manager_init( unsigned char level )
 	lo->level_size = level_object_size[ level ];
 	lo->level_bank = level_object_bank[ level ];
 	//lo->level_check = lo->level_size / MAX_CHECKS;
-	lo->level_check = lo->level_size >> 2;			// equivalent to divide by MAX_CHECKS
+	lo->level_check = lo->level_size >> 2;			// equivalent to divide by MAX_CHECKS [4].
 	// IMPORTANT
 	// Must store level_size as 1px less to ensure scrolling finishes OK.
 	lo->level_size -= 1;
@@ -33,6 +33,22 @@ void engine_level_manager_init( unsigned char level )
 
 // TODO rename 
 // engine_level_manager_load()
+void engine_level_manager_draw_screen( unsigned char checkScreen )
+{
+	struct_level_object *lo = &global_level_object;
+	unsigned int scrollColumn;
+	unsigned char index;
+
+	// Reset column draw each full screen render.
+	lo->column_draw = SCREEN_LESS_ONE;
+
+	scrollColumn = checkScreen * SCREEN_WIDE;
+	for( index = 0; index < SCREEN_WIDE; index++ )
+	{
+		engine_level_manager_draw_column( scrollColumn + index );
+	}
+}
+
 void engine_level_manager_draw_point( unsigned char checkPoint )
 {
 	struct_level_object *lo = &global_level_object;
