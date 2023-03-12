@@ -51,6 +51,7 @@ cd object
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-size --peep-file ../peep-rules.txt --std-c99 hack_object.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-size --peep-file ../peep-rules.txt --std-c99 level_object.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-size --peep-file ../peep-rules.txt --std-c99 player_object.c
+"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-size --peep-file ../peep-rules.txt --std-c99 riff_object.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-size --peep-file ../peep-rules.txt --std-c99 scroll_object.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-size --peep-file ../peep-rules.txt --std-c99 storage_object.c
 ::"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-size --peep-file ../peep-rules.txt --std-c99 tile_object.c
@@ -115,7 +116,7 @@ engine/level_manager.rel engine/player_manager.rel engine/riff_manager.rel engin
 engine/screen_manager.rel engine/scroll_manager.rel engine/sprite_manager.rel ^
 engine/storage_manager.rel engine/tile_manager.rel engine/timer_manager.rel engine/util_manager.rel ^
 object/audio_object.rel object/command_object.rel object/game_object.rel object/hack_object.rel object/level_object.rel ^
-object/player_object.rel object/scroll_object.rel object/storage_object.rel object/timer_object.rel object/tile_object.rel ^
+object/player_object.rel object/riff_object.rel object/scroll_object.rel object/storage_object.rel object/timer_object.rel object/tile_object.rel ^
 screen/beat_screen.rel screen/begin_screen.rel screen/boss_screen.rel screen/cont_screen.rel screen/dead_screen.rel ^
 screen/demo_screen.rel screen/diff_screen.rel ^
 screen/func_screen.rel screen/init_screen.rel screen/intro_screen.rel screen/load_screen.rel screen/level_screen.rel ^
