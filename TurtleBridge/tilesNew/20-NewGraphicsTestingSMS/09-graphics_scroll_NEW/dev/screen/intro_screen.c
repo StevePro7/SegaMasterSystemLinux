@@ -45,7 +45,7 @@ void screen_intro_screen_load()
 	engine_collision_manager_init( go->game_difficulty );
 	//engine_font_manager_text( "INTRO SCREEN??", 10, 2 );
 
-	engine_scroll_manager_load( go->game_point, lo->level_size );
+	engine_scroll_manager_load( go->game_point, lo->level_check, lo->level_size );
 	//engine_scroll_manager_update( 0 );
 
 	complete = false;

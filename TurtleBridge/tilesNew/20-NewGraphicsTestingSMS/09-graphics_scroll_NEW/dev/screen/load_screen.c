@@ -48,7 +48,7 @@ void screen_load_screen_load()
 
 	// Work in terms of screens.
 	checkScreen = lo->check_width * go->game_point;
-	engine_scroll_manager_load( checkScreen, lo->level_size );
+	engine_scroll_manager_load( checkScreen, lo->level_check, lo->level_size );
 	engine_level_manager_draw_screen( checkScreen );
 	// TODO - can I delete the int representation i.e game_screen?
 	//game_screen = lo->check_width * go->game_point;

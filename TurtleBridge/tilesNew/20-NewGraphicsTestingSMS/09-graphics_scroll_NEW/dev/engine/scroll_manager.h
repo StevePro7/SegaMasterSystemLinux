@@ -9,11 +9,11 @@
 extern struct_scroll_object global_scroll_object;
 
 // Main screen scroll routines.
-void engine_scroll_manager_load( unsigned char screen, int scrollFinish );
+void engine_scroll_manager_load( unsigned char screen, int scrollPoints, int scrollFinish );
 enum_scroll_state engine_scroll_manager_update( unsigned char delta );
 
 // Full screen scroll routines.
-void engine_scroll_manager_full_load( unsigned char screen, int scrollFinish );
+void engine_scroll_manager_full_load( unsigned char screen, int scrollPoints, int scrollFinish );
 enum_scroll_state engine_scroll_manager_full_update( unsigned char delta );
 
 // Parallax scroll routines.

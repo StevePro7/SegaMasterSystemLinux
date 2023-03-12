@@ -21,10 +21,10 @@ struct_scroll_object global_scroll_object;
 // Private helper function.
 static void lineScrollHandler( void );
 
-void engine_scroll_manager_load( unsigned char screen, int scrollFinish )
+void engine_scroll_manager_load( unsigned char screen, int scrollPoints, int scrollFinish )
 {
 	//load_method( screen, scrollFinish );
-	engine_scroll_manager_full_load( screen, scrollFinish );
+	engine_scroll_manager_full_load( screen, scrollPoints, scrollFinish );
 }
 
 enum_scroll_state engine_scroll_manager_update( unsigned char delta )
@@ -33,12 +33,13 @@ enum_scroll_state engine_scroll_manager_update( unsigned char delta )
 	return engine_scroll_manager_full_update( delta );
 }
 
-void engine_scroll_manager_full_load( unsigned char screen, int scrollFinish )
+void engine_scroll_manager_full_load( unsigned char screen, int scrollPoints, int scrollFinish )
 {
 	struct_scroll_object *so = &global_scroll_object;
 	so->scrollLeftX = 0;
 	so->scrollRight = 0;
 	so->scrollColumn = ( screen * SCREEN_WIDE ) + SCREEN_LESS_ONE;
+	so->scrollPoints = scrollPoints;
 	so->scrollFinish = scrollFinish;
 	devkit_SMS_setBGScrollX( so->scrollLeftX );
 	devkit_SMS_disableLineInterrupt();

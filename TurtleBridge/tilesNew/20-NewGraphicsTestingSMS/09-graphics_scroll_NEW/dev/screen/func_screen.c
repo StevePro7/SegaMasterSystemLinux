@@ -62,7 +62,7 @@ void screen_func_screen_load()
 	engine_player_manager_draw();
 	devkit_SMS_displayOn();
 
-	engine_scroll_manager_load( go->game_point, lo->level_size );
+	engine_scroll_manager_load( go->game_point, lo->level_check, lo->level_size );
 	engine_scroll_manager_update( 0 );
 
 
