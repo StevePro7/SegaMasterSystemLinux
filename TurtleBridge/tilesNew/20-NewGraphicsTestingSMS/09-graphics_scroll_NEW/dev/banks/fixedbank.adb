@@ -3,7 +3,7 @@ S:G$steven_text$0_0$0({6}DA3d,DG,SC:U),E,0,0
 S:G$music_object_data$0_0$0({18}DA9d,DG,SC:U),E,0,0
 S:G$sound_object_data$0_0$0({6}DA3d,DG,SC:U),E,0,0
 S:G$riff_sample_data$0_0$0({114}DA57d,DG,SC:U),E,0,0
-S:G$level_object_data$0_0$0({40}DA20d,DG,SC:U),E,0,0
+S:G$level_object_data$0_0$0({42}DA21d,DG,SC:U),E,0,0
 S:G$player_object_starts$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff_Sound_Austin02_02_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$titles_tiles__palette__bin$0_0$0({0}DA0d,SC:U),D,0,0
@@ -21,6 +21,7 @@ S:G$mus_cont_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$mus_death_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$mus_level_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$mus_over_psg$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$level_0101_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$level_0404_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$level1116_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$level1100_txt$0_0$0({0}DA0d,SC:U),D,0,0
@@ -45,8 +46,8 @@ S:G$steven_data$0_0$0({16}DA16d,SC:U),D,0,0
 S:G$music_object_bank$0_0$0({9}DA9d,SC:U),D,0,0
 S:G$sound_object_bank$0_0$0({3}DA3d,SC:U),D,0,0
 S:G$riff_sample_bank$0_0$0({57}DA57d,SC:U),D,0,0
-S:G$level_object_size$0_0$0({40}DA20d,SI:U),D,0,0
-S:G$level_object_bank$0_0$0({20}DA20d,SC:U),D,0,0
+S:G$level_object_size$0_0$0({42}DA21d,SI:U),D,0,0
+S:G$level_object_bank$0_0$0({21}DA21d,SC:U),D,0,0
 S:Ffixedbank$__str_0$0_0$0({11}DA11d,SC:U),D,0,0
 S:Ffixedbank$__str_1$0_0$0({11}DA11d,SC:U),D,0,0
 S:Ffixedbank$__str_2$0_0$0({11}DA11d,SC:U),D,0,0

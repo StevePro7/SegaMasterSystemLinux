@@ -1,2 +1,2 @@
 M:bank10
-S:G$bank10_txt$0_0$0({8}DA8d,SC:U),D,0,0
+S:G$level_0101_txt$0_0$0({512}DA512d,SC:U),D,0,0
