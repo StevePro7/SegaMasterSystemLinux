@@ -20,8 +20,8 @@
 static unsigned char cursorX[] = { 2, 11, 20 };
 static unsigned char cursorIdx;
 static unsigned char game_world, game_round, game_point;
-static unsigned int game_screen;
 static unsigned char game_level;
+static unsigned int game_screen, numb_screen;
 static unsigned char check_width;
 static unsigned char player_loadY;
 
@@ -33,6 +33,7 @@ static void updateCheck();
 void screen_level_screen_load()
 {
 	struct_player_object *po = &global_player_object;
+	struct_level_object *lo = &global_level_object;
 	struct_game_object *go = &global_game_object;
 
 	// TODO delete this.
@@ -46,7 +47,11 @@ void screen_level_screen_load()
 
 	engine_graphics_manager_common();
 
-	updateCheck();
+	engine_level_manager_init( game_level );
+	check_width = lo->level_check / SCREEN_WIDE;
+	game_screen = check_width * game_point;
+	engine_level_manager_draw_screen( game_screen );
+
 	//engine_level_manager_init( game_level );
 	//check_width = lo->level_check / SCREEN_WIDE;
 	//game_screen = check_width * game_point;
@@ -87,9 +92,13 @@ void screen_level_screen_update( unsigned char *screen_type )
 	{
 		if( 2 == cursorIdx )
 		{
-			game_screen++;
-			game_point = game_screen / check_width;
 			updateLevel = true;
+			if( game_screen < ( numb_screen - 1 ) )
+			{
+				game_screen++;
+				game_point = game_screen / check_width;
+				
+			}
 		}
 		else
 		{
@@ -117,6 +126,7 @@ void screen_level_screen_update( unsigned char *screen_type )
 				//game_world--;
 				game_level--;
 				game_point = 0;
+				game_screen = check_width * game_point;
 			}
 		}
 		else
@@ -124,6 +134,7 @@ void screen_level_screen_update( unsigned char *screen_type )
 			if( game_point > 0 )
 			{
 				game_point--;
+				game_screen = check_width * game_point;
 			}
 		}
 	}
@@ -138,6 +149,7 @@ void screen_level_screen_update( unsigned char *screen_type )
 				game_world++;
 				//game_level++;
 				game_point = 0;
+				game_screen = check_width * game_point;
 			}
 		}
 		else if( 1 == cursorIdx )
@@ -147,6 +159,7 @@ void screen_level_screen_update( unsigned char *screen_type )
 				//game_world++;
 				game_level++;
 				game_point = 0;
+				game_screen = check_width * game_point;
 			}
 		}
 		else
@@ -154,6 +167,7 @@ void screen_level_screen_update( unsigned char *screen_type )
 			if( game_point < ( MAX_CHECKS - 1 ) )
 			{
 				game_point++;
+				game_screen = check_width * game_point;
 			}
 		}
 	}
@@ -180,7 +194,6 @@ void screen_level_screen_update( unsigned char *screen_type )
 	input = engine_input_manager_hold( input_type_fire1 );
 	if( input )
 	{
-		//engine_font_manager_text( "YES", 10, 10 );
 		engine_game_manager_set_level_data( game_world, game_round, game_point );
 
 		// TODO  wire this up correctly!!
@@ -277,8 +290,8 @@ static void updateCheck()
 {
 	struct_level_object *lo = &global_level_object;
 	engine_level_manager_init( game_level );
-	check_width = lo->level_check / SCREEN_WIDE;
-	game_screen = check_width * game_point;
+	check_width = lo->level_check >> 5;	// / SCREEN_WIDE 32px;
+	numb_screen = lo->level_check >> 3;	// / 8 blocks per screen;
 	engine_level_manager_draw_screen( game_screen );
 	//engine_level_manager_draw_point( game_point );
 }
@@ -290,7 +303,7 @@ static void printStats()
 
 	delta = 0;
 	delta = 1;
-	engine_font_manager_data( game_level, 8, SHARE_TEXT_ROW + 2 );
+	
 
 	engine_font_manager_valu( ( game_world + delta ), 9, SHARE_TEXT_ROW );
 	//engine_font_manager_valu( ( game_round + delta ), 18, SHARE_TEXT_ROW );	// TODO using level instead of round for testing...
@@ -299,8 +312,11 @@ static void printStats()
 	engine_font_manager_valu( ( game_point + delta ), 27, SHARE_TEXT_ROW );		// TODO - revert
 	//engine_font_manager_data( ( game_point + delta ), 27, SHARE_TEXT_ROW );
 
-	
+	// TODO delete - used for debugging / testing only - print level + sceen
+	engine_font_manager_data( game_level, 18, SHARE_TEXT_ROW + 1 );
 	engine_font_manager_data( ( game_screen + delta ), 27, SHARE_TEXT_ROW + 1 );
+	
+
 	//engine_font_manager_char( '0', 26, SHARE_TEXT_ROW );
 	//engine_font_manager_char( '/', 28, SHARE_TEXT_ROW );
 	//engine_font_manager_char( '0', 29, SHARE_TEXT_ROW );
