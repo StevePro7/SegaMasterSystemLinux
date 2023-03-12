@@ -151,6 +151,7 @@ const unsigned char *riff_sample_data2[] =
 	Riff__Title__Screen__07_wav_pcmenc,
 	Riff__Title__Screen__08_wav_pcmenc,
 	Riff__Title__Screen__09_wav_pcmenc,
+
 	// Splash riff	bank 51-59	[x9]
 	Riff__Splash__Screen__01_wav_pcmenc,
 	Riff__Splash__Screen__02_wav_pcmenc,

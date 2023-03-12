@@ -1,6 +1,6 @@
 ;!FILE beat_screen.asm
 XL3
-H 9 areas 3C global symbols
+H 9 areas 3F global symbols
 M beat_screen
 O -mz80
 S _engine_font_manager_text Ref000000
@@ -8,61 +8,64 @@ S _engine_random_manager_next Ref000000
 S _engine_font_manager_data Ref000000
 S .__.ABS. Def000000
 S _engine_input_manager_hold Ref000000
+S _engine_graphics_manager_common Ref000000
 S _engine_random_manager_rand Ref000000
-A _CODE size 47 flags 0 addr 0
-S Fbeat_screen$__str_0$0_0$0 Def00000F
-S XG$screen_beat_screen_load$0$0 Def00000E
-S G$screen_beat_screen_update$0$0 Def00001D
-S A$beat_screen$110 Def00002D
-S A$beat_screen$120 Def00003B
-S A$beat_screen$111 Def000030
-S A$beat_screen$130 Def000040
-S A$beat_screen$121 Def00003C
-S A$beat_screen$103 Def000026
-S A$beat_screen$131 Def000041
-S A$beat_screen$104 Def000027
-S A$beat_screen$132 Def000042
-S A$beat_screen$142 Def000046
-S A$beat_screen$133 Def000043
-S A$beat_screen$115 Def000031
-S _screen_beat_screen_update Def00001D
-S A$beat_screen$134 Def000044
+A _CODE size 4A flags 0 addr 0
+S Fbeat_screen$__str_0$0_0$0 Def000012
+S XG$screen_beat_screen_load$0$0 Def000011
+S G$screen_beat_screen_update$0$0 Def000020
+S A$beat_screen$100 Def000022
+S A$beat_screen$101 Def000023
+S A$beat_screen$120 Def000034
+S A$beat_screen$102 Def000024
+S A$beat_screen$121 Def000036
+S A$beat_screen$103 Def000027
+S A$beat_screen$131 Def000040
+S A$beat_screen$122 Def000039
+S A$beat_screen$113 Def00002C
+S A$beat_screen$104 Def000028
+S A$beat_screen$123 Def00003A
+S A$beat_screen$114 Def00002F
+S A$beat_screen$124 Def00003B
+S A$beat_screen$115 Def000030
+S _screen_beat_screen_update Def000020
+S A$beat_screen$125 Def00003E
 S A$beat_screen$116 Def000033
-S A$beat_screen$126 Def00003D
-S A$beat_screen$117 Def000036
+S A$beat_screen$135 Def000043
+S A$beat_screen$126 Def00003F
 S A$beat_screen$108 Def000029
-S A$beat_screen$118 Def000037
-S A$beat_screen$109 Def00002C
-S A$beat_screen$119 Def000038
-S C$beat_screen.c$13$0_0$13 Def000000
-S XG$screen_beat_screen_update$0$0 Def000046
-S C$beat_screen.c$30$1_0$15 Def00003D
-S C$beat_screen.c$31$1_0$15 Def000040
-S C$beat_screen.c$15$1_0$13 Def000000
-S C$beat_screen.c$32$1_0$15 Def000046
-S C$beat_screen.c$23$1_0$15 Def00001D
-S C$beat_screen.c$16$1_0$13 Def00000E
-S A$beat_screen$61 Def000000
-S C$beat_screen.c$24$1_0$15 Def000026
-S A$beat_screen$62 Def000001
+S A$beat_screen$136 Def000044
+S A$beat_screen$109 Def00002A
+S A$beat_screen$137 Def000045
+S A$beat_screen$147 Def000049
+S A$beat_screen$138 Def000046
+S A$beat_screen$139 Def000047
+S XG$screen_beat_screen_update$0$0 Def000049
+S C$beat_screen.c$20$1_0$18 Def000020
+S C$beat_screen.c$14$0_0$16 Def000000
+S A$beat_screen$70 Def000008
+S A$beat_screen$71 Def00000B
+S A$beat_screen$62 Def000000
 S G$screen_beat_screen_load$0$0 Def000000
-S A$beat_screen$63 Def000002
-S A$beat_screen$64 Def000004
-S C$beat_screen.c$18$1_0$15 Def00001D
-S A$beat_screen$65 Def000005
-S C$beat_screen.c$26$2_0$16 Def000029
-S A$beat_screen$66 Def000008
-S C$beat_screen.c$27$2_0$16 Def000031
-S A$beat_screen$94 Def00001D
-S A$beat_screen$67 Def000009
-S A$beat_screen$95 Def00001F
-S A$beat_screen$77 Def00000E
-S A$beat_screen$68 Def00000C
-S A$beat_screen$96 Def000020
-S A$beat_screen$69 Def00000D
-S A$beat_screen$97 Def000021
-S A$beat_screen$98 Def000024
-S A$beat_screen$99 Def000025
+S A$beat_screen$72 Def00000C
+S C$beat_screen.c$32$1_0$18 Def000040
+S C$beat_screen.c$16$1_0$16 Def000000
+S A$beat_screen$82 Def000011
+S A$beat_screen$73 Def00000F
+S C$beat_screen.c$33$1_0$18 Def000043
+S C$beat_screen.c$17$1_0$16 Def000003
+S A$beat_screen$74 Def000010
+S C$beat_screen.c$34$1_0$18 Def000049
+S C$beat_screen.c$25$1_0$18 Def000020
+S C$beat_screen.c$18$1_0$16 Def000011
+S A$beat_screen$66 Def000003
+S C$beat_screen.c$26$1_0$18 Def000029
+S A$beat_screen$67 Def000004
+S A$beat_screen$68 Def000005
+S A$beat_screen$69 Def000007
+S C$beat_screen.c$28$2_0$19 Def00002C
+S C$beat_screen.c$29$2_0$19 Def000034
+S A$beat_screen$99 Def000020
 S _screen_beat_screen_load Def000000
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
@@ -74,25 +77,25 @@ A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
-T 00 00 00 AF 57 1E 0A D5 21 0F 00 E5 CD 00 00 F1
-R 00 00 00 00 00 09 00 00 02 0D 00 00
-T 0D 00 00 F1 C9
+T 00 00 00 CD 00 00 AF 57 1E 0A D5 21 12 00 E5 CD
+R 00 00 00 00 02 04 05 00 00 0C 00 00
+T 0D 00 00 00 00 F1 F1 C9
+R 00 00 00 00 02 03 00 00
+T 12 00 00
 R 00 00 00 00
-T 0F 00 00
+T 12 00 00 42 45 41 54 20 53 43 52 45 45 4E 21 21
 R 00 00 00 00
-T 0F 00 00 42 45 41 54 20 53 43 52 45 45 4E 21 21
+T 1F 00 00 00
 R 00 00 00 00
-T 1C 00 00 00
+T 20 00 00
 R 00 00 00 00
-T 1D 00 00
-R 00 00 00 00
-T 1D 00 00 3E 08 F5 33 CD 00 00 7D 33 B7 28 14 21
+T 20 00 00 3E 08 F5 33 CD 00 00 7D 33 B7 28 14 21
 R 00 00 00 00 02 08 04 00
-T 2A 00 00 00 01 E5 CD 00 00 F1 26 00 11 0A 0A D5
+T 2D 00 00 00 01 E5 CD 00 00 F1 26 00 11 0A 0A D5
 R 00 00 00 00 02 07 01 00
-T 37 00 00 E5 CD 00 00 F1 F1
+T 3A 00 00 E5 CD 00 00 F1 F1
 R 00 00 00 00 02 05 02 00
-T 3D 00 00
+T 40 00 00
 R 00 00 00 00
-T 3D 00 00 CD 00 00 C1 E1 E5 C5 36 12 C9
-R 00 00 00 00 02 04 05 00
+T 40 00 00 CD 00 00 C1 E1 E5 C5 36 12 C9
+R 00 00 00 00 02 04 06 00

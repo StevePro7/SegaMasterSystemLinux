@@ -2,6 +2,7 @@
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/global_manager.h"
+#include "../engine/graphics_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/util_manager.h"
 
@@ -12,6 +13,7 @@
 
 void screen_beat_screen_load()
 {
+	engine_graphics_manager_common();
 	engine_font_manager_text( "BEAT SCREEN!!", 10, 0 );
 }
 
