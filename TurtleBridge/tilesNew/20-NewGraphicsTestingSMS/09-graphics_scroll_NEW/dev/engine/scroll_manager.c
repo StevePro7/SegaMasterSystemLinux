@@ -40,7 +40,7 @@ void engine_scroll_manager_full_load( unsigned char screen, int scrollPoints, in
 	so->scrollRight = 0;
 	
 	so->scrollColumn = ( screen * SCREEN_WIDE ) + SCREEN_LESS_ONE;
-	so->scrollChecks = 0;// ( screen * SCREEN_WIDE ) + SCREEN_LESS_ONE;
+	so->scrollChecks = 0;
 	so->scrollPoints = scrollPoints;
 	so->scrollFinish = scrollFinish;
 	devkit_SMS_setBGScrollX( so->scrollLeftX );
@@ -91,7 +91,7 @@ void engine_scroll_manager_para_load( unsigned char screen, int scrollFinish )
 	so->scrollLeftX = 0;
 	so->scrollRight = 0;
 	so->scrollColumn = ( screen * SCREEN_WIDE ) + SCREEN_LESS_ONE;
-	//so->scrollChecks = ( screen * SCREEN_WIDE ) + SCREEN_LESS_ONE;
+	so->scrollChecks = 0;
 	so->scrollFinish = scrollFinish;
 	devkit_SMS_setBGScrollX( so->scrollLeftX );
 
@@ -184,154 +184,3 @@ static void lineScrollHandler( void )
 		devkit_SMS_setBGScrollX( value );
 	}
 }
-
-//static void para_scroll_load( unsigned char screen, int scrollFinish )
-//{
-//	struct_scroll_object *so = &global_scroll_object;
-//	so->scrollLeftX = 0;
-//	so->scrollRight = 0;
-//	so->scrollColumn = ( screen * SCREEN_WIDE ) + SCREEN_LESS_ONE;
-//	so->scrollFinish = scrollFinish;
-//	devkit_SMS_setBGScrollX( so->scrollLeftX );
-//
-//	so->scrollLeftX0 = 0;
-//	so->scrollLeftX1 = 0;
-//	so->scrollLeftX2 = 0;
-//	so->scrollLeftX3 = 0;
-//	so->scrollLeftX4 = 0;
-//	so->scrollLeftX5 = 0;
-//	so->scroll_half = 0;
-//	so->lineCnt = 0;
-//
-//	devkit_SMS_setLineInterruptHandler( &lineScrollHandler );
-//	devkit_SMS_setLineCounter( SCROLL_LINE_COUNT );
-//	devkit_SMS_enableLineInterrupt();
-//}
-//static enum_scroll_state para_scroll_update( unsigned char delta )
-//{
-//	struct_scroll_object *so = &global_scroll_object;
-//	enum_scroll_state scroll_state;
-//
-//	so->scrollLeftX -= delta;
-//	so->scrollRight += delta;
-//	scroll_state = scroll_state_none;
-//
-//	if( so->scrollRight >= SCROLL_COLUMNS )
-//	{
-//		so->scrollRight = 0;
-//		if( so->scrollColumn == so->scrollFinish )
-//		{
-//			scroll_state = scroll_state_comp;
-//		}
-//	}
-//
-//	if( delta > 0 )
-//	{
-//		if( delta == so->scrollRight )
-//		{
-//			scroll_state = scroll_state_tile;
-//			so->scrollColumn++;
-//		}
-//
-//		// Scroll cloud section at half pace.
-//		so->scroll_half = 1 - so->scroll_half;
-//		so->scrollLeftX0 -= so->scroll_half;
-//	}
-//
-//	// Scroll game screen at full pace.
-//	so->scrollLeftX1 -= delta;
-//	so->scrollLeftX2 -= delta;
-//	so->scrollLeftX3 -= delta;
-//	so->scrollLeftX4 -= delta;
-//	so->scrollLeftX5 -= 0;
-//	so->lineCnt = 0;
-//
-//	return scroll_state;
-//}
-
-//static enum_scroll_state para_scroll_section( unsigned char delta )
-//{
-//	struct_scroll_object *so = &global_scroll_object;
-//	enum_scroll_state scroll_state;
-//
-//	so->scrollLeftX -= delta;
-//	so->scrollRight += delta;
-//	scroll_state = scroll_state_none;
-//
-//	if( so->scrollRight >= SCROLL_COLUMNS )
-//	{
-//		so->scrollRight = 0;
-//		if( so->scrollColumn == so->scrollFinish )
-//		{
-//			scroll_state = scroll_state_comp;
-//		}
-//	}
-//
-//	if( delta > 0 )
-//	{
-//		if( delta == so->scrollRight )
-//		{
-//			scroll_state = scroll_state_tile;
-//			so->scrollColumn++;
-//		}
-//	}
-//
-//	// Scroll game screen at full pace.
-//	so->scrollLeftX1 -= delta;
-//	so->scrollLeftX2 -= delta;
-//	so->scrollLeftX3 -= delta;
-//	so->scrollLeftX4 -= delta;
-//	so->scrollLeftX5 -= 0;
-//	so->lineCnt = 0;
-//
-//	return scroll_state;
-//}
-
-//static void full_scroll_load( unsigned char screen, int scrollFinish )
-//{
-//	struct_scroll_object *so = &global_scroll_object;
-//	so->scrollLeftX = 0;
-//	so->scrollRight = 0;
-//	so->scrollColumn = ( screen * SCREEN_WIDE ) + SCREEN_LESS_ONE;
-//	so->scrollFinish = scrollFinish;
-//	devkit_SMS_setBGScrollX( so->scrollLeftX );
-//	//TODO test
-//	//devkit_SMS_disableLineInterrupt();
-//}
-//static enum_scroll_state full_scroll_update( unsigned char delta )
-//{
-//	struct_scroll_object *so = &global_scroll_object;
-//	enum_scroll_state scroll_state;
-//
-//	so->scrollLeftX -= delta;
-//	so->scrollRight += delta;
-//	scroll_state = scroll_state_none;
-//
-//	// Scroll pixel by pixel.
-//	devkit_SMS_setBGScrollX( so->scrollLeftX );
-//
-//	if( so->scrollRight >= SCROLL_COLUMNS )
-//	{
-//		so->scrollRight = 0;
-//		if( so->scrollColumn == so->scrollFinish )
-//		{
-//			scroll_state = scroll_state_comp;
-//		}
-//	}
-//
-//	if( delta > 0 )
-//	{
-//		if( delta == so->scrollRight )
-//		{
-//			scroll_state = scroll_state_tile;
-//			so->scrollColumn++;
-//		}
-//	}
-//
-//	return scroll_state;
-//}
-
-//enum_scroll_state engine_scroll_manager_section( unsigned char delta )
-//{
-//	return update_section( delta );
-//}
