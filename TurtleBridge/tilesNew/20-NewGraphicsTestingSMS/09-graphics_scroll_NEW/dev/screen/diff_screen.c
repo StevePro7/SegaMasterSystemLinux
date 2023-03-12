@@ -30,6 +30,7 @@ void screen_diff_screen_load()
 	struct_player_object *po = &global_player_object;
 	struct_level_object *lo = &global_level_object;
 	struct_game_object *go = &global_game_object;
+	unsigned char checkScreen;
 
 	// TODO delete this.
 	//engine_debug_manager_initgame();
@@ -55,7 +56,9 @@ void screen_diff_screen_load()
 	game_difficulty = go->game_difficulty;
 
 	engine_level_manager_init( go->game_level );
-	engine_level_manager_draw_point( go->game_point );
+	checkScreen = lo->check_width * go->game_point;
+	engine_level_manager_draw_screen( checkScreen );
+	//engine_level_manager_draw_point( go->game_point );
 	//engine_scroll_manager_load( go->game_point, lo->level_size );
 
 
