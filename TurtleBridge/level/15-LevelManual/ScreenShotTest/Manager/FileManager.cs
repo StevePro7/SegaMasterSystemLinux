@@ -406,6 +406,10 @@ namespace ScreenShotTest
 			{
 				File.WriteAllLines(path + "/../../../../../../../../tilesNew/20-NewGraphicsTestingSMS/09-graphics_scroll_NEW/dev/banks/" + banktext + ".h", contents);
 			}
+
+			// Make local copy of the CSV file used to render screen.
+			string csvName = banktext.Replace("level_", "tiles_");
+			File.Copy("MyTiles.csv", path + "/" + csvName + ".csv");
 		}
 
 		void engine_util_manager_convertByteToNibbles(int data, ref int upper_nibble, ref int lower_nibble)
