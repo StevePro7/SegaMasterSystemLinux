@@ -21,7 +21,8 @@ static unsigned char cursorX[] = { 2, 11, 20 };
 static unsigned char cursorIdx;
 static unsigned char game_world, game_round, game_point;
 static unsigned char game_level;
-static unsigned int game_screen, numb_screen;
+static unsigned char game_screen;
+static unsigned int numb_screen;
 //static unsigned char check_width;
 static unsigned char player_loadY;
 
@@ -43,12 +44,14 @@ void screen_level_screen_load()
 	game_level = go->game_level;
 	game_point = go->game_point;
 	game_screen = 0;
+	numb_screen = 0;
 	cursorIdx = 2;
 
 	engine_graphics_manager_common();
 
 	engine_level_manager_init( game_level );
 	//check_width = lo->level_check / SCREEN_WIDE;
+	numb_screen = lo->level_check >> 3;	// / 8 blocks per screen;
 	game_screen = lo->check_width * game_point;
 	engine_level_manager_draw_screen( game_screen );
 
@@ -98,7 +101,6 @@ void screen_level_screen_update( unsigned char *screen_type )
 			{
 				game_screen++;
 				game_point = game_screen / lo->check_width;
-				
 			}
 		}
 		else

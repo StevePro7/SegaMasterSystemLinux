@@ -34,7 +34,7 @@ S:Flevel_screen$game_world$0_0$0({1}SC:U),E,0,0
 S:Flevel_screen$game_round$0_0$0({1}SC:U),E,0,0
 S:Flevel_screen$game_point$0_0$0({1}SC:U),E,0,0
 S:Flevel_screen$game_level$0_0$0({1}SC:U),E,0,0
-S:Flevel_screen$game_screen$0_0$0({2}SI:U),E,0,0
+S:Flevel_screen$game_screen$0_0$0({1}SC:U),E,0,0
 S:Flevel_screen$numb_screen$0_0$0({2}SI:U),E,0,0
 S:Flevel_screen$player_loadY$0_0$0({1}SC:U),E,0,0
 S:G$engine_asm_manager_clear_VRAM$0_0$0({2}DF,SV:S),C,0,0

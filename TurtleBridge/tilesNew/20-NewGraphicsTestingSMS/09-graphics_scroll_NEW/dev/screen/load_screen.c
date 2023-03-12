@@ -52,9 +52,11 @@ void screen_load_screen_load()
 	// Draw in terms of screens.
 	checkScreen = lo->check_width * go->game_point;
 	engine_level_manager_draw_screen( checkScreen );
+	// TODO - can I delete the int representation i.e game_screen?
 	//game_screen = lo->check_width * go->game_point;
 	//engine_level_manager_draw_screen( game_screen );
 	//engine_level_manager_draw_point( go->game_point );
+	// TODO - can I delete the int representation i.e game_screen?
 
 	engine_player_manager_initX( go->game_difficulty, go->game_world );
 	engine_player_manager_loadX( go->game_point );
