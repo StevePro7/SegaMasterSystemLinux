@@ -72,8 +72,8 @@ typedef enum tag_enum_scroll_state
 {
 	scroll_state_none = 0,
 	scroll_state_tile = 1,
-	scroll_state_comp = 2,
-	//scroll_state_line = 2		// TODO draw tile and update checkpoint
+	scroll_state_line = 2,
+	scroll_state_comp = 3,
 
 } enum_scroll_state;
 
