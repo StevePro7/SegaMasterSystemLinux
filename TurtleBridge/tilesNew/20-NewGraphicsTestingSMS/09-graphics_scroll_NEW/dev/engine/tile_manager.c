@@ -69,6 +69,7 @@ void engine_tile_manager_draw_cloud( unsigned int tileMap, unsigned char x, unsi
 		}
 	}
 }
+//todo delete this code - not used
 void engine_tile_manager_stevepro( unsigned int tileMap, unsigned char x, unsigned char y, unsigned char w, unsigned char h )
 {
 	const unsigned char *tiles = bggame_tiles__tilemap__bin;
@@ -87,6 +88,7 @@ void engine_tile_manager_stevepro( unsigned int tileMap, unsigned char x, unsign
 		}
 	}
 }
+//todo delete this code - not used
 void engine_tile_manager_stevepro2( unsigned int tileMap, unsigned char x, unsigned char y, unsigned char w, unsigned char h )
 {
 	const unsigned char *tiles = bggame_tiles__tilemap__bin;

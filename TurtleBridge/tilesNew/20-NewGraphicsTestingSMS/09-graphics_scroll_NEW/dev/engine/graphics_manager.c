@@ -84,6 +84,7 @@ void engine_graphics_manager_clouds( unsigned char data )
 		engine_tile_manager_draw_cloud( cloud_tile_type[ cloud_type_large ], CLOUD_COL_START + 3 * CLOUD_COL_WIDES, CLOUD_ROW_START + 1, flip2 );
 	}
 }
+//todo delete this code - not used
 void engine_graphics_manager_cloud()
 {
 	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 1, 5, 8, 3 );

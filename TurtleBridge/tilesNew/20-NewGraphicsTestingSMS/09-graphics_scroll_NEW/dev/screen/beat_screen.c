@@ -1,11 +1,15 @@
 #include "beat_screen.h"
+#include "../engine/asm_manager.h"
 #include "../engine/enum_manager.h"
+#include "../engine/content_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/graphics_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/riff_manager.h"
+#include "../engine/scroll_manager.h"
 #include "../engine/util_manager.h"
+#include "../devkit/_sms_manager.h"
 
 #ifdef _CONSOLE
 #else
@@ -14,8 +18,20 @@
 
 void screen_beat_screen_load()
 {
-	engine_graphics_manager_common();
-	engine_font_manager_text( "BEAT SCREEN!!", 10, 0 );
+	struct_scroll_object *so = &global_scroll_object;
+	unsigned char value;
+	//engine_graphics_manager_common();
+	// TODO - remove this dup.
+	//devkit_SMS_displayOff();
+	//engine_asm_manager_clear_VRAM();
+	//engine_content_manager_bggame();
+	//engine_content_manager_sprite();
+	////engine_graphics_manager_title();
+	//engine_graphics_manager_sea();
+	//devkit_SMS_displayOn();
+	value = so->scrollLeftX >> 3;
+	engine_font_manager_text( "BEAT SCREEN", 21, 0 );
+	engine_font_manager_text( "BEAT SCREEN", value, 2 );
 }
 
 void screen_beat_screen_update( unsigned char *screen_type )

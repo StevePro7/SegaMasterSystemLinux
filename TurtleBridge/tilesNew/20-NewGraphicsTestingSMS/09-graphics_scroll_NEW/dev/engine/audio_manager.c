@@ -31,6 +31,23 @@ void engine_music_manager_play( unsigned char index )
 	ao->music_bank = music_object_bank[ index ];
 
 	devkit_SMS_mapROMBank( ao->music_bank );
+	devkit_PSGPlay( ( unsigned char* ) ao->music_data );
+}
+
+void engine_music_manager_playnorepeat( unsigned char index )
+{
+	struct_audio_object *ao = &global_audio_object;
+	struct_hack_object *ho = &global_hack_object;
+	if( !ho->hack_music )
+	{
+		return;
+	}
+
+	devkit_SMS_mapROMBank( FIXED_BANK );
+	ao->music_data = ( unsigned char* ) music_object_data[ index ];
+	ao->music_bank = music_object_bank[ index ];
+
+	devkit_SMS_mapROMBank( ao->music_bank );
 	devkit_PSGPlayNoRepeat( ( unsigned char* ) ao->music_data );
 	//devkit_PSGPlay( ( unsigned char* ) ao->music_data );
 }

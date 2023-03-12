@@ -27,6 +27,19 @@ static signed int deltaY;
 //static unsigned char //frameX;
 //static unsigned char //flag;
 //static unsigned char scroll_count;
+static void printScrollInfo()
+{
+	struct_scroll_object *so = &global_scroll_object;
+	unsigned char lookup1;
+	unsigned char lookup2;
+	engine_font_manager_data( so->scrollLeftX, 20, 0 );
+	engine_font_manager_data( so->scrollRight, 20, 1 );
+
+	lookup1 = so->scrollLeftX  & SCREEN_LESS_ONE;
+	engine_font_manager_data( lookup1, 20, 2 );
+	lookup2 = so->scrollRight  & SCREEN_LESS_ONE;
+	engine_font_manager_data( lookup2, 20, 3 );
+}
 
 void screen_play_screen_load()
 {
@@ -45,6 +58,7 @@ void screen_play_screen_load()
 	//flag = 0;
 	//scroll_count = 0;
 	//engine_font_manager_data( go->game_point, 20, go->game_point );
+	printScrollInfo();
 }
 
 void screen_play_screen_update( unsigned char *screen_type )
@@ -58,6 +72,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 	struct_game_object *go = &global_game_object;
 	unsigned char input1;// input2, input3, input4, input5, input6;
 	unsigned char input2;
+	unsigned char input3;
 	unsigned char deltaX;
 	//signed int deltaY;
 	unsigned char loops;
@@ -70,6 +85,12 @@ void screen_play_screen_update( unsigned char *screen_type )
 	deltaX = 0;
 	deltaY = 0;
 
+	input3 = engine_input_manager_hold( input_type_fire1 );
+	if( input3 )
+	{
+		*screen_type = screen_type_beat;
+		return;
+	}
 	input1 = engine_input_manager_hold( input_type_left );
 	input2 = engine_input_manager_move( input_type_right );
 	//input1 = 1;		// TODO delete
@@ -151,6 +172,8 @@ void screen_play_screen_update( unsigned char *screen_type )
 		// Get horizontal movement.
 		deltaX = engine_player_manager_get_deltaX( po->player_state, command );
 
+		deltaX = 1; // TODO delete
+
 		// TODO delete this debugging info - for newIndex!!
 		//engine_font_manager_data( deltaX, 31, 6 );
 		// TODO delete this debugging info - for newIndex!!
@@ -184,9 +207,13 @@ void screen_play_screen_update( unsigned char *screen_type )
 			for( loops = 0; loops < deltaX; loops++ )
 			{
 				scroll_state = engine_scroll_manager_update( 1 );
+				printScrollInfo();	// TODO delete
+
+
 				if( scroll_state_tile == scroll_state )
 				{
 					engine_level_manager_draw_column( so->scrollColumn );
+					
 					//if (fo->frame_count == 0 || po->player_state == 1 )
 					//{
 					//	scroll_count++;		// TODO delete as only used for impossible jump debugging
