@@ -4,6 +4,7 @@
 #include "bank5.h"
 #include "bank6.h"
 #include "bank7.h"
+#include "bank8.h"
 #include "bank10.h"
 #include "bank11.h"
 #include "bank12.h"
@@ -292,6 +293,7 @@ const unsigned char *level_object_data[] =
 	level1117_txt,
 	level1118_txt,
 	level_0404_txt,
+	level_0000_txt,
 	level_0101_txt,
 	//level_0808_txt,
 };
@@ -317,6 +319,7 @@ const unsigned int level_object_size[] =
 	level1117_txt_size,
 	level1118_txt_size,
 	level_0404_txt_size,
+	level_0000_txt_size,
 	level_0101_txt_size,
 	//level_0808_txt_size,
 };
@@ -342,6 +345,7 @@ const unsigned char level_object_bank[] =
 	level1117_txt_bank,
 	level1118_txt_bank,
 	level_0404_txt_bank,
+	level_0000_txt_bank,
 	level_0101_txt_bank,
 	//level_0808_txt_bank,
 };

@@ -20,7 +20,7 @@ void engine_debug_manager_initgame()
 	//go->game_difficulty = difficulty_type_insane;
 
 	go->game_world = 1;	// TODO - currently not aligned with game_level but used for testing...
-	go->game_point = 1;
+	go->game_point = 3;
 
 	go->game_world -= 1;
 	go->game_point -= 1;
@@ -35,7 +35,7 @@ void engine_debug_manager_initgame()
 	//go->game_level = 3;
 	//go->game_level = 9;
 	//go->game_level = 17;// 64x screens
-	go->game_level = 20;	// testing large jumps
+	go->game_level = 21;	// testing large jumps
 	//go->game_level = 0;
 
 	//go->game_level = 3;	// trees

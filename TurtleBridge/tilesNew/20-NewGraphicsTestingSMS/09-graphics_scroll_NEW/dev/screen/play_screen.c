@@ -171,8 +171,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 	{
 		// Get horizontal movement.
 		deltaX = engine_player_manager_get_deltaX( po->player_state, command );
-
-		deltaX = 1; // TODO delete
+		//deltaX = 1; // TODO delete
 
 		// TODO delete this debugging info - for newIndex!!
 		//engine_font_manager_data( deltaX, 31, 6 );

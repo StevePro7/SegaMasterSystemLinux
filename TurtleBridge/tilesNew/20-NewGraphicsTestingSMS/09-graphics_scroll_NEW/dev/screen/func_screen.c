@@ -71,7 +71,7 @@ void screen_func_screen_load()
 	//engine_frame_manager_draw();
 	engine_command_manager_init();
 	//engine_command_manager_draw();
-	engine_font_manager_text( "INTROX SCREEN", 10, 2 );
+	engine_font_manager_text( "RECORD SCREEN", 10, 2 );
 
 	engine_scroll_manager_update( 0 );
 	complete = false;
