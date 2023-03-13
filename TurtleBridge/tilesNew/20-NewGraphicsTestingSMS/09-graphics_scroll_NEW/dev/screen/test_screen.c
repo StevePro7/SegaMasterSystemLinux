@@ -96,7 +96,7 @@ void screen_test_screen_load()
 	local_prev_command = COMMAND_NONE_MASK;
 
 	available = engine_storage_manager_available();
-	engine_font_manager_data( available, 31, 1 );
+	//engine_font_manager_data( available, 31, 1 );			
 	if( available )
 	{
 		engine_storage_manager_read();
@@ -186,6 +186,12 @@ void screen_test_screen_update( unsigned char *screen_type )
 					{
 						engine_level_manager_draw_column( so->scrollColumn );
 					}
+					//else if( scroll_state_line == scroll_state )
+					//{
+					//	engine_game_manager_inc_checkpoint();
+					//	//TODO used for debugging - remove
+					//	//engine_font_manager_data( go->game_point, 20, go->game_point );
+					//}
 					else if( scroll_state_comp == scroll_state )
 					{
 						complete = scroll_state_comp == scroll_state;
