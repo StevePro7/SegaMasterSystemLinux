@@ -72,14 +72,15 @@ void engine_player_manager_initX( unsigned char difficulty, unsigned char world 
 }
 
 // TODO - need algorithm to align which individual screen to a checkpoint
-void engine_player_manager_loadX( unsigned char checkPoint )
+void engine_player_manager_loadX( unsigned char checkScreen )
 {
 	struct_player_object *po = &global_player_object;
 	unsigned int offset;
-	unsigned char screen;
+	//unsigned char screen;
 
-	screen = checkPoint;
-	offset = screen * PIXELS_WIDE;
+	//screen = checkPoint;
+	//offset = screen * PIXELS_WIDE;
+	offset = checkScreen * PIXELS_WIDE;
 	po->posnX = po->initX + offset;
 	updatePlayerX();
 }
