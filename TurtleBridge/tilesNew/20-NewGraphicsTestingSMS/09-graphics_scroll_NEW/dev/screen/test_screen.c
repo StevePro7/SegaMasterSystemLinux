@@ -96,12 +96,15 @@ void screen_test_screen_load()
 	local_prev_command = COMMAND_NONE_MASK;
 
 	available = engine_storage_manager_available();
-	//engine_font_manager_data( available, 31, 1 );			
+	//engine_font_manager_data( available, 31, 1 );
 	if( available )
 	{
 		engine_storage_manager_read();
 		//printCmds();
 	}
+
+	//engine_font_manager_text( "CHECK SCREEN FUNC", 10, 0 );
+	//engine_font_manager_data( checkScreen, 10, 1 );
 }
 
 void screen_test_screen_update( unsigned char *screen_type )

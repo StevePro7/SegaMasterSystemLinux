@@ -81,6 +81,9 @@ void screen_func_screen_load()
 	engine_scroll_manager_update( 0 );
 	complete = false;
 	deltaY = 0;
+
+	//engine_font_manager_text( "CHECK SCREEN FUNC", 10, 0 );
+	//engine_font_manager_data( checkScreen, 10, 1 );
 }
 
 void screen_func_screen_update( unsigned char *screen_type )

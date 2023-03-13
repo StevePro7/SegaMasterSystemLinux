@@ -76,7 +76,8 @@ void screen_load_screen_load()
 	//engine_font_manager_text( "WORLD01ROUND01POINT03/04", 4, 3 );
 	//devkit_SMS_displayOn();
 
-	
+	//engine_font_manager_text( "CHECK SCREEN LOAD", 10, 0 );
+	//engine_font_manager_data( checkScreen, 10, 1 );
 }
 
 void screen_load_screen_update( unsigned char *screen_type )

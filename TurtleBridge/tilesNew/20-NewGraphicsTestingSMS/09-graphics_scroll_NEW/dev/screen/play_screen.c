@@ -45,7 +45,7 @@ void screen_play_screen_load()
 {
 	struct_game_object *go = &global_game_object;
 	engine_frame_manager_load();
-	engine_frame_manager_draw();
+	//engine_frame_manager_draw();
 
 	engine_scroll_manager_update( 0 );
 	engine_music_manager_play( 3 );
@@ -144,7 +144,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 		//command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 0 );
 
 		engine_frame_manager_update();
-		engine_frame_manager_draw();
+		//engine_frame_manager_draw();
 		//if( 60 == fo->frame_count )
 		//{
 		//	command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 1, 0 );
