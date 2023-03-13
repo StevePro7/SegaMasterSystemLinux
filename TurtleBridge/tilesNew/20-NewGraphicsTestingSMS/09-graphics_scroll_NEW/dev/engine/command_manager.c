@@ -38,7 +38,6 @@ void engine_command_manager_load( unsigned int *storage_frame_index, unsigned ch
 	}
 }
 
-// TODO - rename this as record
 void engine_command_manager_record( unsigned int frame, unsigned char command )
 {
 	struct_command_object *co = &global_command_object;
