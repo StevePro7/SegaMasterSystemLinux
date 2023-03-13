@@ -85,13 +85,13 @@ void engine_graphics_manager_clouds( unsigned char data )
 	}
 }
 //todo delete this code - not used
-void engine_graphics_manager_cloud()
-{
-	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 1, 5, 8, 3 );
-	engine_tile_manager_stevepro2( TILE_CLOUD_LARGE, 17, 5, 8, 3 );
-	engine_tile_manager_stevepro2( TILE_CLOUD_SMALL, 9, 4, 8, 3 );
-	engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 25, 5, 8, 3 );
-}
+//void engine_graphics_manager_cloud()
+//{
+//	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 1, 5, 8, 3 );
+//	engine_tile_manager_stevepro2( TILE_CLOUD_LARGE, 17, 5, 8, 3 );
+//	engine_tile_manager_stevepro2( TILE_CLOUD_SMALL, 9, 4, 8, 3 );
+//	engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 25, 5, 8, 3 );
+//}
 void engine_graphics_manager_title()
 {
 	engine_graphics_manager_image( bggame_tiles__tilemap__bin, TILE_PLAY_TITLE, 4, 0, 24, 3 );

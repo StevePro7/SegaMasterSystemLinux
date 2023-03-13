@@ -70,45 +70,45 @@ void engine_tile_manager_draw_cloud( unsigned int tileMap, unsigned char x, unsi
 	}
 }
 //todo delete this code - not used
-void engine_tile_manager_stevepro( unsigned int tileMap, unsigned char x, unsigned char y, unsigned char w, unsigned char h )
-{
-	const unsigned char *tiles = bggame_tiles__tilemap__bin;
-	unsigned int idx;
-	unsigned int val;
-	unsigned char row, col;
-
-	for( row = 0; row < h; row++ )
-	{
-		for( col = 0; col < w; col++ )
-		{
-			idx = tileMap + row * 2 * TILMAP_WIDE + col * 2;
-			val = tiles[ idx ];
-			devkit_SMS_setNextTileatXY( x + col, y + row );
-			devkit_SMS_setTile( ( val ) );
-		}
-	}
-}
-//todo delete this code - not used
-void engine_tile_manager_stevepro2( unsigned int tileMap, unsigned char x, unsigned char y, unsigned char w, unsigned char h )
-{
-	const unsigned char *tiles = bggame_tiles__tilemap__bin;
-	unsigned int idx;
-	unsigned int val;
-	unsigned char row, col, tmp;
-
-	for( row = 0; row < h; row++ )
-	{
-		for( col = 0; col < w; col++ )
-		{
-			tmp = w - col - 1;
-			idx = tileMap + row * 2 * TILMAP_WIDE + col * 2;
-			val = tiles[ idx ];
-			val |= devkit_TILE_FLIPPED_X();
-			devkit_SMS_setNextTileatXY( x + tmp, y + row );
-			devkit_SMS_setTile( ( val ) );
-		}
-	}
-}
+//void engine_tile_manager_stevepro( unsigned int tileMap, unsigned char x, unsigned char y, unsigned char w, unsigned char h )
+//{
+//	const unsigned char *tiles = bggame_tiles__tilemap__bin;
+//	unsigned int idx;
+//	unsigned int val;
+//	unsigned char row, col;
+//
+//	for( row = 0; row < h; row++ )
+//	{
+//		for( col = 0; col < w; col++ )
+//		{
+//			idx = tileMap + row * 2 * TILMAP_WIDE + col * 2;
+//			val = tiles[ idx ];
+//			devkit_SMS_setNextTileatXY( x + col, y + row );
+//			devkit_SMS_setTile( ( val ) );
+//		}
+//	}
+//}
+////todo delete this code - not used
+//void engine_tile_manager_stevepro2( unsigned int tileMap, unsigned char x, unsigned char y, unsigned char w, unsigned char h )
+//{
+//	const unsigned char *tiles = bggame_tiles__tilemap__bin;
+//	unsigned int idx;
+//	unsigned int val;
+//	unsigned char row, col, tmp;
+//
+//	for( row = 0; row < h; row++ )
+//	{
+//		for( col = 0; col < w; col++ )
+//		{
+//			tmp = w - col - 1;
+//			idx = tileMap + row * 2 * TILMAP_WIDE + col * 2;
+//			val = tiles[ idx ];
+//			val |= devkit_TILE_FLIPPED_X();
+//			devkit_SMS_setNextTileatXY( x + tmp, y + row );
+//			devkit_SMS_setTile( ( val ) );
+//		}
+//	}
+//}
 //void engine_tile_manager_stevepro3( unsigned int tileMap, unsigned char x, unsigned char y, unsigned char w, unsigned char h )
 //{
 //	const unsigned char *tiles = bggame_tiles__tilemap__bin;

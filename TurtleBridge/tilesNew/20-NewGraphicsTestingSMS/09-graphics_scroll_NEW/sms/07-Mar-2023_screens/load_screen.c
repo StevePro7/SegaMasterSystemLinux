@@ -40,6 +40,11 @@ void screen_load_screen_load()
 	engine_graphics_manager_clouds( go->game_cloud );
 	engine_graphics_manager_sea();
 
+	//engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 1, 5, 8, 3 );
+	//engine_tile_manager_stevepro2( TILE_CLOUD_LARGE, 9, 5, 8, 3 );
+	//engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 17, 5, 8, 3 );
+	//engine_tile_manager_stevepro2( TILE_CLOUD_LARGE, 25, 5, 8, 3 );
+	//engine_graphics_manager_clouds( go->game_cloud );
 
 	// Work in terms of screens.
 	checkScreen = lo->check_width * go->game_point;
@@ -77,9 +82,8 @@ void screen_load_screen_load()
 
 void screen_load_screen_update( unsigned char *screen_type )
 {
-	//engine_scroll_manager_update( 0 );
+	engine_scroll_manager_update( 0 );
 	engine_player_manager_draw();
-
 	//unsigned char input;
 	//input = engine_input_manager_hold( input_type_left );
 	//if( input )
@@ -109,3 +113,37 @@ void screen_load_screen_update( unsigned char *screen_type )
 	//*screen_type = screen_type_intro;				// Integrate input => commands to play game.
 	//*screen_type = screen_type_test;				// Integrate command playback POC
 }
+
+//
+//static void drawScreen()
+//{
+//	unsigned int tile = TILE_TURTLE_FLY4;
+//
+//	devkit_SMS_displayOff();
+//	engine_asm_manager_clear_VRAM();
+//	engine_content_manager_bggame();
+//	engine_content_manager_sprite();
+//	engine_graphics_manager_sea();
+//
+//	engine_tile_manager_stevepro( tile, 0, 8, 4, 14 );
+//	engine_tile_manager_stevepro( tile, 4, 8, 4, 14 );
+//	engine_tile_manager_stevepro( tile, 8, 8, 4, 14 );
+//	engine_tile_manager_stevepro( tile, 12, 8, 4, 14 );
+//	engine_tile_manager_stevepro( tile, 16, 8, 4, 14 );
+//
+//	//engine_tile_manager_stevepro( TILE_ISLAND_MIDD, 0, 8, 4, 14 );
+//	//engine_tile_manager_stevepro( TILE_ISLAND_MIDD, 4, 8, 4, 14 );
+//	//engine_tile_manager_stevepro( TILE_ISLAND_RGHT, 8, 8, 4, 14 );
+//	//engine_tile_manager_stevepro( TILE_TURTLE_SEA1, 12, 8, 4, 14 );
+//	//engine_tile_manager_stevepro( TILE_TURTLE_SEA1, 16, 8, 4, 14 );
+//	//engine_tile_manager_stevepro( tile, 16, 8, 4, 14 );
+//	//engine_tile_manager_stevepro( TILE_BRIDGE_RGHT, 12, 8, 4, 14 );
+//
+//	engine_tile_manager_stevepro( TILE_PLAY_TITLE, 4, 0, 24, 3 );
+//	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 2, 4, 8, 3 );
+//	engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 10, 4, 8, 3 );
+//	engine_tile_manager_stevepro( TILE_CLOUD_LARGE, 18, 4, 8, 3 );
+//	engine_tile_manager_stevepro( TILE_CLOUD_SMALL, 26, 4, 8, 3 );
+//	engine_player_manager_draw();
+//	devkit_SMS_displayOn();
+//}

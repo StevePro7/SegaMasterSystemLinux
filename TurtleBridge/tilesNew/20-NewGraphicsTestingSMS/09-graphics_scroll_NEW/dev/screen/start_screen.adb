@@ -59,7 +59,6 @@ S:G$engine_graphics_manager_screen$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_level$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_sea$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_clouds$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_graphics_manager_cloud$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_title$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_image$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_init$0_0$0({2}DF,SV:S),C,0,0
