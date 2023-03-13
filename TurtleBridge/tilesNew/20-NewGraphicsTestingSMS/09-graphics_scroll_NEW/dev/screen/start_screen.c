@@ -49,7 +49,7 @@ void screen_start_screen_load()
 
 	// TODO for testing
 	engine_level_manager_init( go->game_level );
-	engine_level_manager_draw_point( 0 );
+	engine_level_manager_draw_screen( 0 );
 	// TODO for testing
 
 	engine_util_manager_locale_texts( 4, 9, 7 );

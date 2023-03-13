@@ -50,21 +50,21 @@ void engine_level_manager_draw_screen( unsigned char checkScreen )
 	}
 }
 
-void engine_level_manager_draw_point( unsigned char checkPoint )
-{
-	struct_level_object *lo = &global_level_object;
-	unsigned int scrollColumn;
-	unsigned char index;
-
-	// Reset column draw each full screen render.
-	lo->column_draw = SCREEN_LESS_ONE;
-
-	scrollColumn = checkPoint * SCREEN_WIDE;
-	for( index = 0; index < SCREEN_WIDE; index++ )
-	{
-		engine_level_manager_draw_column( scrollColumn + index );
-	}
-}
+//void engine_level_manager_draw_point( unsigned char checkPoint )
+//{
+//	struct_level_object *lo = &global_level_object;
+//	unsigned int scrollColumn;
+//	unsigned char index;
+//
+//	// Reset column draw each full screen render.
+//	lo->column_draw = SCREEN_LESS_ONE;
+//
+//	scrollColumn = checkPoint * SCREEN_WIDE;
+//	for( index = 0; index < SCREEN_WIDE; index++ )
+//	{
+//		engine_level_manager_draw_column( scrollColumn + index );
+//	}
+//}
 
 // TODO rename 
 // engine_level_manager_draw()
