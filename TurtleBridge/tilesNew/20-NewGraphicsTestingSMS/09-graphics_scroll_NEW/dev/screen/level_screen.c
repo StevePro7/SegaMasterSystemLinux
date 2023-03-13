@@ -69,9 +69,9 @@ void screen_level_screen_load()
 	//engine_level_manager_draw_point( go->game_point );
 	engine_font_manager_char( '>', cursorX[ cursorIdx ], SHARE_TEXT_ROW );
 	
-	// TODO confirm that will NOT draw player here 
 	engine_player_manager_initX( go->game_difficulty, go->game_world );
-	engine_player_manager_loadX( go->game_point );
+	engine_player_manager_loadX( game_screen );
+	//engine_player_manager_loadX( go->game_point );						// TODO - remove as this is wrong!!
 	player_loadY = level_platforms[ po->lookX ];
 	engine_player_manager_loadY( player_loadY );
 	engine_player_manager_draw();
