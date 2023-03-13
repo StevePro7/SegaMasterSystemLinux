@@ -22,9 +22,6 @@ void screen_splash_screen_load()
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_splash();
 	engine_graphics_manager_image( splash_tiles__tilemap__bin, TILE_IMAGE_SCREEN, 4, 4, 24, 16 );
-	//engine_util_manager_locale_texts( 0, 25, 23 );
-	//engine_font_manager_text( LOCALE_SPLASH_SCREEN, 25, 23 );
-	//engine_util_manager_locale_texts( my_splash_text, 25, 23 );
 	devkit_SMS_displayOn();
 	check = 0;
 	erase = 0;
@@ -47,8 +44,6 @@ void screen_splash_screen_update( unsigned char *screen_type )
 		engine_riff_manager_init();
 		for( loops = 0; loops < count; loops++ )
 		{
-			//engine_font_manager_text( "RIFF", 4, loops + 10 );
-			//engine_font_manager_data( loops + value, 24, loops + 10 );
 			engine_riff_manager_play( loops + value );
 
 			engine_input_manager_update();
@@ -70,7 +65,5 @@ void screen_splash_screen_update( unsigned char *screen_type )
 		}
 	}
 
-	engine_font_manager_text( "RIFFS COMPLETE", 4, 20 );
-	*screen_type = screen_type_splash;
-	//*screen_type = screen_type_title;
+	*screen_type = screen_type_title;
 }
