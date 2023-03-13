@@ -5,8 +5,8 @@ typedef struct tag_struct_player_object
 {
 	unsigned char initX;
 	unsigned int posnX;			// max posnX	2,047	i.e. 2048-1
-	//unsigned int tileX;			// 255 * 8		2,047??
-	unsigned char tileX;			// 255 * 8		2,047??
+	unsigned int tileX;			// 255 * 8		2,047??
+	//unsigned char tileX;			// 255 * 8		2,047??
 	unsigned char lookX;
 	unsigned char posnY;
 	unsigned char tileY;

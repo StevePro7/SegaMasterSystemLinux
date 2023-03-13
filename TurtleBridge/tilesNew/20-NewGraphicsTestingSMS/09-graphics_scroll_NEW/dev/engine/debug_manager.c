@@ -19,8 +19,8 @@ void engine_debug_manager_initgame()
 	go->game_difficulty = difficulty_type_harder;
 	//go->game_difficulty = difficulty_type_insane;
 
-	go->game_world = 5;	// TODO - currently not aligned with game_level but used for testing...
-	go->game_point = 1;
+	go->game_world = 4;	// TODO - currently not aligned with game_level but used for testing...
+	go->game_point = 3;
 
 	go->game_world -= 1;
 	go->game_point -= 1;
@@ -52,7 +52,7 @@ void engine_debug_manager_initgame()
 
 	po->player_frame = 0;// player_frame_ground_left_01;
 
-	po->player_lives = 4;
+	po->player_lives = 3;
 }
 
 void engine_debug_manager_printout()
