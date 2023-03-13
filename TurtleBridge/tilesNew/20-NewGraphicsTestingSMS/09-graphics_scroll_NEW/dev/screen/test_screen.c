@@ -39,12 +39,12 @@ void screen_test_screen_load()
 	struct_player_object *po = &global_player_object;
 	struct_level_object *lo = &global_level_object;
 	struct_game_object *go = &global_game_object;
-	
 	unsigned char player_loadY;
+	unsigned char checkScreen;
 	unsigned char cloud_formation = engine_random_manager_next( SPRITE_TILES );
 
 	// TODO delete
-	engine_debug_manager_initgame();
+	//engine_debug_manager_initgame();
 	// TODO delete
 
 	engine_level_manager_init( go->game_level );
@@ -56,12 +56,17 @@ void screen_test_screen_load()
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();
 	engine_content_manager_sprite();
-
 	engine_graphics_manager_level( cloud_formation );
 
-	engine_level_manager_draw_point( go->game_point );
-	engine_player_manager_loadX( go->game_point );
+	// Work in terms of screens.
+	checkScreen = lo->check_width * go->game_point;
+	engine_scroll_manager_load( checkScreen, lo->level_check, lo->level_size );
+	engine_level_manager_draw_screen( checkScreen );
+	//engine_level_manager_draw_point( go->game_point );
 
+	engine_player_manager_initX( go->game_difficulty, go->game_world );
+	engine_player_manager_loadX( checkScreen );
+	//engine_player_manager_loadX( go->game_point );	// TODO - remove as this is wrong!!
 	player_loadY = level_platforms[ po->lookX ];
 	engine_player_manager_loadY( player_loadY );
 	//TODO delete - dup below
@@ -71,8 +76,8 @@ void screen_test_screen_load()
 	engine_player_manager_draw();
 	devkit_SMS_displayOn();
 
-	engine_scroll_manager_load( go->game_point, lo->level_check, lo->level_size );
-	engine_scroll_manager_update( 0 );
+	//engine_scroll_manager_load( go->game_point, lo->level_check, lo->level_size );
+	//engine_scroll_manager_update( 0 );
 
 
 	// test_screen

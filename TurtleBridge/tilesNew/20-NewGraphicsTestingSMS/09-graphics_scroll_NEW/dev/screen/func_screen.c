@@ -60,11 +60,10 @@ void screen_func_screen_load()
 	engine_scroll_manager_load( checkScreen, lo->level_check, lo->level_size );
 	engine_level_manager_draw_screen( checkScreen );
 	//engine_level_manager_draw_point( go->game_point );
-	//engine_player_manager_loadX( go->game_point );
 
-	//engine_player_manager_loadX( game_screen );
 	engine_player_manager_initX( go->game_difficulty, go->game_world );
-	engine_player_manager_loadX( go->game_point );						// TODO - this seems wrong!!
+	engine_player_manager_loadX( checkScreen );
+	//engine_player_manager_loadX( go->game_point );	// TODO - remove as this is wrong!!
 	player_loadY = level_platforms[ po->lookX ];
 	engine_player_manager_loadY( player_loadY );
 	//engine_command_manager_init();		TODO delete - dup

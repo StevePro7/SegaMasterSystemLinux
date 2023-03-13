@@ -1,0 +1,66 @@
+level_screen
+
+	engine_level_manager_init( game_level );
+	//check_width = lo->level_check / SCREEN_WIDE;
+	numb_screen = lo->level_check >> 3;	// / 8 blocks per screen;
+	game_screen = lo->check_width * game_point;
+	engine_scroll_manager_load( game_screen, lo->level_check, lo->level_size );
+	engine_level_manager_draw_screen( game_screen );
+
+	engine_player_manager_initX( go->game_difficulty, go->game_world );
+	engine_player_manager_loadX( game_screen );
+	player_loadY = level_platforms[ po->lookX ];
+	engine_player_manager_loadY( player_loadY );
+	engine_player_manager_draw();
+
+
+
+init_screen
+	engine_level_manager_init( go->game_level );
+	engine_player_manager_initX( go->game_difficulty, go->game_world );
+
+TODO
+	print checkScreen!
+
+load_screen
+	// Work in terms of screens.
+	checkScreen = lo->check_width * go->game_point;
+	engine_scroll_manager_load( checkScreen, lo->level_check, lo->level_size );
+	engine_level_manager_draw_screen( checkScreen );
+
+	engine_player_manager_initX( go->game_difficulty, go->game_world );
+	engine_player_manager_loadX( checkScreen );
+	//engine_player_manager_loadX( go->game_point );	// TODO - remove as this is wrong!!
+	player_loadY = level_platforms[ po->lookX ];
+	engine_player_manager_loadY( player_loadY );
+	engine_player_manager_draw();
+
+
+TODO
+	print checkScreen!
+
+func_screen
+	engine_level_manager_init( go->game_level );
+	engine_player_manager_initX( go->game_difficulty, go->game_world );
+
+	// Work in terms of screens.
+	checkScreen = lo->check_width * go->game_point;
+	engine_scroll_manager_load( checkScreen, lo->level_check, lo->level_size );
+	engine_level_manager_draw_screen( checkScreen );
+
+	engine_player_manager_initX( go->game_difficulty, go->game_world );
+	engine_player_manager_loadX( go->game_point );							// TODO - this seems wrong!!
+	player_loadY = level_platforms[ po->lookX ];
+	engine_player_manager_loadY( player_loadY );
+	//engine_command_manager_init();		TODO delete - dup
+	engine_player_manager_draw();
+
+
+test_screen
+	engine_level_manager_init( go->game_level );
+	engine_player_manager_initX( go->game_difficulty, go->game_world );
+
+	engine_level_manager_draw_point( go->game_point );
+	engine_player_manager_loadX( go->game_point );
+	player_loadY = level_platforms[ po->lookX ];
+	engine_player_manager_loadY( player_loadY );
