@@ -45,7 +45,7 @@ void screen_level_screen_load()
 	game_point = go->game_point;
 	game_screen = 0;
 	numb_screen = 0;
-	cursorIdx = 2;
+	cursorIdx = 1;
 
 	engine_graphics_manager_common();
 
@@ -88,21 +88,21 @@ void screen_level_screen_update( unsigned char *screen_type )
 	if( input && 0 != cursorIdx )
 	{
 		// TODO - take out later - used for level design only!!
-		if( 2 == cursorIdx )
-		{
-			updateLevel = true;
-			if( game_screen > 0 )
-			{
-				game_screen--;
-				game_point = game_screen / lo->check_width;
-			}
-		}
-		else
-		{
+		//if( 2 == cursorIdx )
+		//{
+		//	updateLevel = true;
+		//	if( game_screen > 0 )
+		//	{
+		//		game_screen--;
+		//		game_point = game_screen / lo->check_width;
+		//	}
+		//}
+		//else
+		//{
 			engine_font_manager_char( ' ', cursorX[ cursorIdx ], SHARE_TEXT_ROW );
 			cursorIdx--;
 			engine_font_manager_char( '>', cursorX[ cursorIdx ], SHARE_TEXT_ROW );
-		}
+		//}
 	}
 
 	input = engine_input_manager_hold( input_type_right );
@@ -242,69 +242,8 @@ void screen_level_screen_update( unsigned char *screen_type )
 	*screen_type = screen_type_level;
 }
 
-//void screen_level_screen_updateY( unsigned char *screen_type )
-//{
-//	unsigned char input;
-//
-//	input = engine_input_manager_hold( input_type_left );
-//	if( input && 0 != cursorIdx )
-//	{
-//		engine_font_manager_char( ' ', cursorX[ cursorIdx ], SHARE_TEXT_ROW );
-//		cursorIdx--;
-//		engine_font_manager_char( '>', cursorX[ cursorIdx ], SHARE_TEXT_ROW );
-//	}
-//
-//	input = engine_input_manager_hold( input_type_right );
-//	if( input && 2 != cursorIdx )
-//	{
-//		engine_font_manager_char( ' ', cursorX[ cursorIdx ], SHARE_TEXT_ROW );
-//		cursorIdx++;
-//		engine_font_manager_char( '>', cursorX[ cursorIdx ], SHARE_TEXT_ROW );
-//	}
-//
-//	input = engine_input_manager_hold( input_type_up );
-//	if( input )
-//	{
-//		if( 0 == cursorIdx && game_world > 0 )
-//		{
-//			game_world--;
-//		}
-//		if( 1 == cursorIdx && round > 0 )
-//		{
-//			round--;
-//		}
-//		if( 2 == cursorIdx && game_point > 0 )
-//		{
-//			game_point--;
-//			//engine_level_manager_init( game_level );
-//			//engine_level_manager_draw_point( game_point );
-//		}
-//
-//		printStats();
-//	}
-//	input = engine_input_manager_hold( input_type_down );
-//	if( input )
-//	{
-//		if( 0 == cursorIdx && game_world < ( MAX_WOLRDS - 1 ) )
-//		{
-//			game_world++;
-//		}
-//		if( 1 == cursorIdx && round < ( MAX_ROUNDS - 1 ) )
-//		{
-//			round++;
-//		}
-//		if( 2 == cursorIdx && game_point < ( MAX_CHECKS - 1 ) )
-//		{
-//			game_point++;
-//			//engine_level_manager_init( game_level );
-//			//engine_level_manager_draw_point( game_point );
-//		}
-//
-//		printStats();
-//	}
-//
-//	*screen_type = screen_type_level;
-//}
+
+
 static void updateCheck()
 {
 	struct_level_object *lo = &global_level_object;
@@ -320,7 +259,7 @@ static void printStats()
 	//engine_font_manager_text( "[WORLD[[[[ROUND[[[[POINT[[/[[", 2, 5 );
 	unsigned char delta;
 
-	delta = 0;
+	//delta = 0;
 	delta = 1;
 	
 
@@ -332,9 +271,9 @@ static void printStats()
 	//engine_font_manager_data( ( game_point + delta ), 27, SHARE_TEXT_ROW );
 
 	// TODO delete - used for debugging / testing only - print level + screen
-	engine_font_manager_data( game_level, 8, SHARE_TEXT_ROW + 1 );
+	engine_font_manager_data( game_level + 1, 8, SHARE_TEXT_ROW + 1 );
 	engine_font_manager_data( numb_screen, 18, SHARE_TEXT_ROW + 1 );
-	engine_font_manager_data( ( game_screen + delta ), 27, SHARE_TEXT_ROW + 1 );
+	engine_font_manager_data( game_screen + delta, 27, SHARE_TEXT_ROW + 1 );
 	
 
 	//engine_font_manager_char( '0', 26, SHARE_TEXT_ROW );

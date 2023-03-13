@@ -34,8 +34,8 @@ void engine_debug_manager_initgame()
 	//go->game_level = 1;
 	//go->game_level = 3;
 	//go->game_level = 9;
-	go->game_level = 17;// 64x screens
-	//go->game_level = 20;	// testing large jumps
+	//go->game_level = 17;// 64x screens
+	go->game_level = 20;	// testing large jumps
 	//go->game_level = 21;	// bank8
 	//go->game_level = 0;
 
@@ -44,7 +44,7 @@ void engine_debug_manager_initgame()
 	//go->game_level = 9;	// turtles
 //	go->game_level = 6;
 	//go->game_level = 7;
-	//go->game_level = 9;
+	//go->game_level = 0;
 	
 	//go->game_cloud = 88;		// TODO will be random
 	go->game_isgod = false;
