@@ -43,7 +43,7 @@ void screen_option_screen_update( unsigned char *screen_type )
 	}
 
 	input3 = engine_input_manager_hold( input_type_fire1 );
-	input3 = 1;
+	//input3 = 1;
 	if( input3 )
 	{
 		if( 0 == cursorY )
@@ -73,6 +73,8 @@ void screen_option_screen_update( unsigned char *screen_type )
 		{
 			//engine_storage_manager_erase();
 			//engine_font_manager_text( "ERASER SCREEN", 10, 2 );
+			*screen_type = screen_type_level;
+			return;
 		}
 	}
 //	engine_player_manager_draw();

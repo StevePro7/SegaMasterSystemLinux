@@ -53,6 +53,7 @@ void screen_level_screen_load()
 	//check_width = lo->level_check / SCREEN_WIDE;
 	numb_screen = lo->level_check >> 3;	// / 8 blocks per screen;
 	game_screen = lo->check_width * game_point;
+	engine_scroll_manager_load( game_screen, lo->level_check, lo->level_size );
 	engine_level_manager_draw_screen( game_screen );
 
 	//engine_level_manager_init( game_level );
@@ -204,7 +205,9 @@ void screen_level_screen_update( unsigned char *screen_type )
 
 		// TODO confirm will not go here unless surrounded by hack flag
 		//*screen_type = screen_type_intro;		// view screen
-		*screen_type = screen_type_init;
+		*screen_type = screen_type_option;
+
+		//*screen_type = screen_type_init;
 		return;
 	}
 

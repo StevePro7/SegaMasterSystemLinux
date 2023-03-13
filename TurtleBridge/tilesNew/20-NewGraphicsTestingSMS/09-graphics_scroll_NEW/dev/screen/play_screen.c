@@ -93,7 +93,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 	}
 	input1 = engine_input_manager_hold( input_type_left );
 	input2 = engine_input_manager_move( input_type_right );
-	//input1 = 1;		// TODO delete
+	input1 = 1;		// TODO delete
 	if( input1 || input2 )
 	{
 		//if( 7 == fo->frame_count )
@@ -171,7 +171,8 @@ void screen_play_screen_update( unsigned char *screen_type )
 	{
 		// Get horizontal movement.
 		deltaX = engine_player_manager_get_deltaX( po->player_state, command );
-		//deltaX = 1; // TODO delete
+
+		deltaX = 1; // TODO delete
 
 		// TODO delete this debugging info - for newIndex!!
 		//engine_font_manager_data( deltaX, 31, 6 );
