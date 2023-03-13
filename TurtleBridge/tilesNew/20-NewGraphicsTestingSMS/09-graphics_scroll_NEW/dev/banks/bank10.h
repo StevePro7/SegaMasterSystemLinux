@@ -1,8 +1,13 @@
+extern const unsigned char level_0000_txt[];
+#define				level_0000_txt_size 256		// 8x screens
+#define				level_0000_txt_bank 10
+
+
 //extern const unsigned char level_0101_txt[];
 //#define				level_0101_txt_size 256
 //#define				level_0101_txt_bank 10
 
 
-extern const unsigned char level_0000_txt[];
-#define				level_0000_txt_size 512
-#define				level_0000_txt_bank 10
+//extern const unsigned char level_0000_txt[];
+//#define				level_0000_txt_size 512
+//#define				level_0000_txt_bank 10

@@ -21,7 +21,7 @@ static unsigned char cursorX[] = { 2, 11, 20 };
 static unsigned char cursorIdx;
 static unsigned char game_world, game_round, game_point;
 static unsigned char game_level;
-static unsigned char game_screen;
+static unsigned int game_screen;
 static unsigned int numb_screen;
 //static unsigned char check_width;
 static unsigned char player_loadY;
@@ -87,9 +87,22 @@ void screen_level_screen_update( unsigned char *screen_type )
 	input = engine_input_manager_hold( input_type_left );
 	if( input && 0 != cursorIdx )
 	{
-		engine_font_manager_char( ' ', cursorX[ cursorIdx ], SHARE_TEXT_ROW );
-		cursorIdx--;
-		engine_font_manager_char( '>', cursorX[ cursorIdx ], SHARE_TEXT_ROW );
+		// TODO - take out later - used for level design only!!
+		if( 2 == cursorIdx )
+		{
+			updateLevel = true;
+			if( game_screen > 0 )
+			{
+				game_screen--;
+				game_point = game_screen / lo->check_width;
+			}
+		}
+		else
+		{
+			engine_font_manager_char( ' ', cursorX[ cursorIdx ], SHARE_TEXT_ROW );
+			cursorIdx--;
+			engine_font_manager_char( '>', cursorX[ cursorIdx ], SHARE_TEXT_ROW );
+		}
 	}
 
 	input = engine_input_manager_hold( input_type_right );
@@ -318,8 +331,9 @@ static void printStats()
 	engine_font_manager_valu( ( game_point + delta ), 27, SHARE_TEXT_ROW );		// TODO - revert
 	//engine_font_manager_data( ( game_point + delta ), 27, SHARE_TEXT_ROW );
 
-	// TODO delete - used for debugging / testing only - print level + sceen
-	engine_font_manager_data( game_level, 18, SHARE_TEXT_ROW + 1 );
+	// TODO delete - used for debugging / testing only - print level + screen
+	engine_font_manager_data( game_level, 8, SHARE_TEXT_ROW + 1 );
+	engine_font_manager_data( numb_screen, 18, SHARE_TEXT_ROW + 1 );
 	engine_font_manager_data( ( game_screen + delta ), 27, SHARE_TEXT_ROW + 1 );
 	
 

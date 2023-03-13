@@ -45,7 +45,7 @@ void screen_play_screen_load()
 {
 	struct_game_object *go = &global_game_object;
 	engine_frame_manager_load();
-	//engine_frame_manager_draw();
+	engine_frame_manager_draw();
 
 	engine_scroll_manager_update( 0 );
 	engine_music_manager_play( 3 );
@@ -58,7 +58,7 @@ void screen_play_screen_load()
 	//flag = 0;
 	//scroll_count = 0;
 	//engine_font_manager_data( go->game_point, 20, go->game_point );
-	printScrollInfo();
+//	printScrollInfo();
 }
 
 void screen_play_screen_update( unsigned char *screen_type )
@@ -144,7 +144,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 		//command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 0 );
 
 		engine_frame_manager_update();
-		//engine_frame_manager_draw();
+		engine_frame_manager_draw();
 		//if( 60 == fo->frame_count )
 		//{
 		//	command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 1, 0 );
@@ -171,8 +171,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 	{
 		// Get horizontal movement.
 		deltaX = engine_player_manager_get_deltaX( po->player_state, command );
-
-		deltaX = 1; // TODO delete
+		//deltaX = 1; // TODO delete
 
 		// TODO delete this debugging info - for newIndex!!
 		//engine_font_manager_data( deltaX, 31, 6 );
@@ -207,7 +206,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 			for( loops = 0; loops < deltaX; loops++ )
 			{
 				scroll_state = engine_scroll_manager_update( 1 );
-				printScrollInfo();	// TODO delete
+				//printScrollInfo();	// TODO delete
 
 
 				if( scroll_state_tile == scroll_state )
