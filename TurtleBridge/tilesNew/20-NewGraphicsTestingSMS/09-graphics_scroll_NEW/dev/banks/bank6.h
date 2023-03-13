@@ -1,3 +1,7 @@
+extern const unsigned char level1117_txt[];
+#define				level1117_txt_size 2048
+#define				level1117_txt_bank 6
+
 extern const unsigned char	mohenjodaro_usas_psg[];
 #define				mohenjodaro_usas_psg_size 13113
 #define				mohenjodaro_usas_psg_bank 6

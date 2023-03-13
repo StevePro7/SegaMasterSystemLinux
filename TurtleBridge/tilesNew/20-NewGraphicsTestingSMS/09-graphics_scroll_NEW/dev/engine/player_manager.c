@@ -97,7 +97,8 @@ void engine_player_manager_loadY( unsigned char player_loadY )
 		po->posnY = PLAYER_MIN_HIGH;
 		po->jumper_index = 0;
 		po->deltaY_index = 0;
-		po->player_frame = updatePlayerFrameGroundToFlying( po->player_frame );
+		po->player_frame = player_frame_theair_rght_01;
+		//po->player_frame = updatePlayerFrameGroundToFlying( po->player_frame );
 
 		// Set the jump array information.
 		jump_ptr = jump_array_ptr[ po->jumper_index ];
@@ -106,7 +107,8 @@ void engine_player_manager_loadY( unsigned char player_loadY )
 	else
 	{
 		po->posnY = player_loadY << 3;
-		po->player_frame = updatePlayerFrameFlyingToGround( po->player_frame );
+		po->player_frame = player_frame_ground_rght_01;
+		//po->player_frame = updatePlayerFrameFlyingToGround( po->player_frame );
 	}
 
 	po->leapY = po->posnY << 8;

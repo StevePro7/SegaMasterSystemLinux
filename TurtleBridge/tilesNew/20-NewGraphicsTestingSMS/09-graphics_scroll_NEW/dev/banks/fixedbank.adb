@@ -11,6 +11,7 @@ S:G$titles_tiles__tilemap__bin$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$titles_tiles__tiles__psgcompr$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$animeopening_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$usas_jubaruins_psg$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$level1117_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$mohenjodaro_usas_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$sfx_accept_psg$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$sfx_power_psg$0_0$0({0}DA0d,SC:U),D,0,0
@@ -41,7 +42,6 @@ S:G$level1112_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$level1113_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$level1114_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$level1115_txt$0_0$0({0}DA0d,SC:U),D,0,0
-S:G$level1117_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$level1118_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$steven_data$0_0$0({16}DA16d,SC:U),D,0,0
 S:G$music_object_bank$0_0$0({9}DA9d,SC:U),D,0,0

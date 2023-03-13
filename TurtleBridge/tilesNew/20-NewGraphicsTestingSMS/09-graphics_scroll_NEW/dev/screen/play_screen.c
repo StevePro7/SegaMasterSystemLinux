@@ -47,7 +47,7 @@ void screen_play_screen_load()
 	engine_frame_manager_load();
 	//engine_frame_manager_draw();
 
-	engine_scroll_manager_update( 0 );
+	//engine_scroll_manager_update( 0 );
 	engine_music_manager_play( 3 );
 	//engine_debug_manager_printout();
 	complete = false;
