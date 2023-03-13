@@ -1,10 +1,10 @@
 M:controller
 F:G$game_controller_setup_player$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lcontroller.game_controller_setup_player$game_difficulty$1_0$25({1}SC:U),B,1,4
-S:Lcontroller.game_controller_setup_player$game_world$1_0$25({1}SC:U),B,1,5
-S:Lcontroller.game_controller_setup_player$game_point$1_0$25({1}SC:U),B,1,6
-S:Lcontroller.game_controller_setup_player$po$1_0$26({2}DG,STtag_struct_player_object:S),R,0,0,[]
-S:Lcontroller.game_controller_setup_player$player_loadY$1_0$26({1}SC:U),R,0,0,[a]
+S:Lcontroller.game_controller_setup_player$game_difficulty$1_0$24({1}SC:U),B,1,4
+S:Lcontroller.game_controller_setup_player$game_world$1_0$24({1}SC:U),B,1,5
+S:Lcontroller.game_controller_setup_player$game_point$1_0$24({1}SC:U),B,1,6
+S:Lcontroller.game_controller_setup_player$po$1_0$25({2}DG,STtag_struct_player_object:S),R,0,0,[]
+S:Lcontroller.game_controller_setup_player$player_loadY$1_0$25({1}SC:U),R,0,0,[a]
 F:G$Foo$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 T:Fcontroller$tag_struct_player_object[({0}S:S$initX$0_0$0({1}SC:U),Z,0,0)({1}S:S$posnX$0_0$0({2}SI:U),Z,0,0)({3}S:S$tileX$0_0$0({2}SI:U),Z,0,0)({5}S:S$lookX$0_0$0({1}SC:U),Z,0,0)({6}S:S$posnY$0_0$0({1}SC:U),Z,0,0)({7}S:S$tileY$0_0$0({1}SC:U),Z,0,0)({8}S:S$leapY$0_0$0({2}SI:U),Z,0,0)({10}S:S$drawX$0_0$0({1}SC:U),Z,0,0)({11}S:S$drawY$0_0$0({1}SC:U),Z,0,0)({12}S:S$player_state$0_0$0({1}SC:U),Z,0,0)({13}S:S$jumper_index$0_0$0({1}SC:U),Z,0,0)({14}S:S$deltaY_index$0_0$0({1}SC:U),Z,0,0)({15}S:S$player_frame$0_0$0({1}SC:U),Z,0,0)({16}S:S$player_lives$0_0$0({1}SC:U),Z,0,0)({17}S:S$motion_count$0_0$0({1}SC:U),Z,0,0)]
 T:Fcontroller$tag_struct_game_object[({0}S:S$game_difficulty$0_0$0({1}SC:U),Z,0,0)({1}S:S$game_world$0_0$0({1}SC:U),Z,0,0)({2}S:S$game_round$0_0$0({1}SC:U),Z,0,0)({3}S:S$game_level$0_0$0({1}SC:U),Z,0,0)({4}S:S$game_point$0_0$0({1}SC:U),Z,0,0)({5}S:S$game_cloud$0_0$0({1}SC:U),Z,0,0)({6}S:S$game_isgod$0_0$0({1}SC:U),Z,0,0)]
@@ -22,7 +22,6 @@ S:G$engine_game_manager_inc_checkpoint$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_set_level_test$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_level_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_level_manager_draw_screen$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_level_manager_draw_point$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_level_manager_draw_column$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_initX$0_0$0({2}DF,SV:S),C,0,0
