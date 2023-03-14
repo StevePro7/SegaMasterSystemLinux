@@ -72,11 +72,11 @@ namespace ScreenShotTest
 			string[] lines = null;
 			int idx = 0;
 
-			//if (File.Exists("MyTiles.xls"))
-			//{
-			//	Tiles = tilesManager.Tiles;
-			//	return;
-			//}
+			if (File.Exists("MyTiles.xls"))
+			{
+				Tiles = tilesManager.Tiles;
+				return;
+			}
 
 			if (File.Exists("bankX.c"))
 			{
