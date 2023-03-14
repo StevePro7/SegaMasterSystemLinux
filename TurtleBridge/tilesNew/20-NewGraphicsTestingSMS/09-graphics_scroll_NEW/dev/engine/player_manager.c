@@ -174,6 +174,7 @@ unsigned char engine_player_manager_get_deltaX( unsigned char state, unsigned ch
 	return deltaX;
 }
 
+//TODO delete out-by-one version
 //signed int engine_player_manager_get_deltaY()
 //{
 //	// IMPORTANT this function will only be invoked when player is in the air.
@@ -200,49 +201,13 @@ signed int engine_player_manager_get_deltaY()
 
 	if( NULL != jump_ptr )
 	{
-		
+		deltaY = jump_ptr[ po->deltaY_index ];
+		po->deltaY_index++;
 
-		//if( po->deltaY_index <= jump_len - 1 )
-		//{
-			deltaY = jump_ptr[ po->deltaY_index ];
-			po->deltaY_index++;
-
-			//engine_font_manager_data( po->deltaY_index, 10, 10 );
-			//engine_font_manager_data( jump_len, 10, 11 );
-			//engine_font_manager_data( deltaY, 10, 12 );
-
-			if( po->deltaY_index >= jump_len - 1 )
-			{
-				po->deltaY_index = jump_len - 1;
-			}
-		//}
-		//else
-		//{
-		//	po->deltaY_index = jump_len - 1;
-		//	deltaY = jump_ptr[ po->deltaY_index ];
-		//}
-	
-		//engine_font_manager_data( po->deltaY_index, 10, 13 );
-		//engine_font_manager_data( jump_len, 10, 14 );
-		//engine_font_manager_data( deltaY, 10, 15 );
-
-	//	po->deltaY_index++;
-
-		//engine_font_manager_data( po->deltaY_index, 10, 12 );
-		//engine_font_manager_data( deltaY, 10, 13 );
-
-		//if( po->deltaY_index > jump_len - 1 )
-		//{
-		//	po->deltaY_index = jump_len - 1;
-		//}
-
-		//engine_font_manager_data( po->deltaY_index, 10, 14 );
-		//engine_font_manager_data( deltaY, 10, 15 );
-
-		//deltaY = jump_ptr[ po->deltaY_index ];
-
-		//engine_font_manager_data( po->deltaY_index, 10, 16 );
-		//engine_font_manager_data( deltaY, 10, 17 );
+		if( po->deltaY_index >= jump_len - 1 )
+		{
+			po->deltaY_index = jump_len - 1;
+		}
 	}
 
 	return deltaY;
