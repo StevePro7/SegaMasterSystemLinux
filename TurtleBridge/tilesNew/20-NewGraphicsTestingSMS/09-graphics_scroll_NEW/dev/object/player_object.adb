@@ -8,12 +8,12 @@ S:G$player_moving_deltaX$0_0$0({5}DA5d,SC:U),D,0,0
 S:G$player_ground_deltaX$0_0$0({5}DA5d,SC:U),D,0,0
 S:G$player_flying_deltaX$0_0$0({5}DA5d,SC:U),D,0,0
 S:G$player_lives_headX$0_0$0({3}DA3d,SC:U),D,0,0
-S:G$jump_array_len$0_0$0({5}DA5d,SC:U),D,0,0
 S:G$jump_array_00$0_0$0({34}DA17d,SI:S),D,0,0
 S:G$jump_array_01$0_0$0({106}DA53d,SI:S),D,0,0
 S:G$jump_array_02$0_0$0({162}DA81d,SI:S),D,0,0
 S:G$jump_array_03$0_0$0({266}DA133d,SI:S),D,0,0
 S:G$jump_array_04$0_0$0({354}DA177d,SI:S),D,0,0
+S:G$jump_array_len$0_0$0({5}DA5d,SC:U),D,0,0
 S:G$flip_array_00$0_0$0({9}DA9d,SC:U),D,0,0
 S:G$flip_array_01$0_0$0({9}DA9d,SC:U),D,0,0
 S:G$flip_array_02$0_0$0({9}DA9d,SC:U),D,0,0
