@@ -162,6 +162,7 @@ namespace ScreenShotTest
 				spriteBatch.Draw(stripHorz, new Vector2(row, 112), Color.Black);
 			}
 
+			// Draw wave counts.
 			if (wavePosns.Count > 0)
 			{
 				for (index = 0; index < wavePosns.Count; index++)
@@ -172,6 +173,17 @@ namespace ScreenShotTest
 					pos = new Vector2(yyy * 16, 8);
 					spriteBatch.DrawString(font, cnt.ToString(), pos, Color.Yellow);
 				}
+			}
+
+			// Draw screen numbers
+			int numScreens = configManager.NumScreens;
+			int dltScreens = wide / numScreens;
+			int zzz = dltScreens / 2 - 8;
+			for (int idx = 0; idx < numScreens; idx++)
+			{
+				pos = new Vector2(zzz, 120);
+				spriteBatch.DrawString(font, (idx+1).ToString(), pos, Color.Black);
+				zzz += dltScreens;
 			}
 		}
 

@@ -61,8 +61,10 @@ namespace ScreenShotTest
 			else if (lneCount < cols)
 			{
 				loops = lneCount;
+				var msg = String.Format("Actually  cols: Expect:{0} Actual:{0}", loops);
+				Logger.Info(msg);
 			}
-			
+
 			for (int idx = 0; idx < loops; idx++)
 			{
 				Tiles[idx] = lines[idx];
