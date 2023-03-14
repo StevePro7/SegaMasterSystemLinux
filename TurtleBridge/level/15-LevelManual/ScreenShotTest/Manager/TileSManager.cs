@@ -10,16 +10,22 @@ namespace ScreenShotTest
 	public class TilesManager
 	{
 		private List<int> lines;
+		private int cols;
 
 		public TilesManager(int wide)
 		{
-			int cols = cols = wide / 16;
+			cols = cols = wide / 16;
 			Tiles = new int[cols];
+			ResetTiles();
+			lines = new List<int>();
+		}
+
+		private void ResetTiles()
+		{
 			for (int idx = 0; idx < cols; idx++)
 			{
 				Tiles[idx] = 0;
 			}
-			lines = new List<int>();
 		}
 
 		public void Initialize()
@@ -29,6 +35,7 @@ namespace ScreenShotTest
 			var delim = new char[] { ',' };
 
 			lines.Clear();
+			ResetTiles();
 			var texts = System.IO.File.ReadAllLines(path);
 			int rowCount = texts.Length;
 			for (int row = 0; row < rowCount; row++)
