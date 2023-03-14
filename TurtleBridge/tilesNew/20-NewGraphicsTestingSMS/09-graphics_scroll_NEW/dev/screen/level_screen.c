@@ -17,6 +17,8 @@
 #include "../banks/bank2.h"
 #include <stdbool.h>
 
+#define MAX_LEVELS	22
+
 static unsigned char cursorX[] = { 2, 11, 20 };
 static unsigned char cursorIdx;
 static unsigned char game_world, game_round, game_point;
@@ -171,7 +173,7 @@ void screen_level_screen_update( unsigned char *screen_type )
 		}
 		else if( 1 == cursorIdx )
 		{
-			if( game_level < 21 )
+			if( game_level < MAX_LEVELS )
 			{
 				//game_world++;
 				game_level++;

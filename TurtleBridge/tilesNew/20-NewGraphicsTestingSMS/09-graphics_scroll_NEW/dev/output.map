@@ -42,17 +42,17 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000010  l__CABS4                        
      00000011  l__CABS2                        
      0000002D  l__CABS3                        
-     000000B8  l__BANK15                       
+     000000BB  l__BANK15                       
      000000BE  G$VDPDataPort$0_0$0                asm_manager
      000000BF  G$VDPControlPort$0_0$0             asm_manager
      00000100  l__BANK10                       
      0000012A  l__HEADER5                      
      00000180  l__BANK11                       
-     000001E2  l__INITIALIZED                  
-     000001E2  l__INITIALIZER                  
+     000001E4  l__INITIALIZED                  
+     000001E4  l__INITIALIZER                  
      00000200  s__CODE                         
      000002CC  l__DATA                         
-     00000400  l__BANK8                        
+     00000800  l__BANK8                        
      00001B60  l__BANK13                       
      00002580  l__BANK12                       
      000028B9  l__BANK14                       
@@ -74,8 +74,8 @@ Area                                    Addr        Size        Decimal Bytes (A
      00005CF1  l__CODE                         
      00005EF1  s__HOME                         
      00005EF1  s__INITIALIZER                  
-     000060D3  s__GSINIT                       
-     000060E2  s__GSFINAL                      
+     000060D5  s__GSINIT                       
+     000060E4  s__GSFINAL                      
      00008000  G$SMS_SRAM$0_0$0                   _sms_manager
      00008000  _SMS_SRAM                          SMSlib_autotext
      00008000  s__BANK10                       
@@ -94,9 +94,9 @@ Area                                    Addr        Size        Decimal Bytes (A
      00008000  s__BANK9                        
      0000C000  s__DATA                         
      0000C2CC  s__INITIALIZED                  
-     0000C4AE  s__BSEG                         
-     0000C4AE  s__BSS                          
-     0000C4AE  s__HEAP                         
+     0000C4B0  s__BSEG                         
+     0000C4B0  s__BSS                          
+     0000C4B0  s__HEAP                         
      0000FFFC  G$SRAM_bank_to_be_mapped_on_slot   _sms_manager
      0000FFFC  _SRAM_bank_to_be_mapped_on_slot2   SMSlib_autotext
      0000FFFF  G$ROM_bank_to_be_mapped_on_slot2   _sms_manager
@@ -4191,7 +4191,7 @@ _CODE                               00000200    00005CF1 =       23793. bytes (R
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
      000017C4  A$debug_manager$122                debug_manager
-     000017C4  C$debug_manager.c$38$1_0$114       debug_manager
+     000017C4  C$debug_manager.c$39$1_0$114       debug_manager
      000017C6  A$debug_manager$126                debug_manager
      000017C6  C$debug_manager.c$50$1_0$114       debug_manager
      000017C9  A$debug_manager$127                debug_manager
@@ -9710,7 +9710,7 @@ _CODE                               00000200    00005CF1 =       23793. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     000035D3  C$begin_screen.c$42$1_0$97         begin_screen
+     000035D3  C$begin_screen.c$41$1_0$97         begin_screen
      000035D3  G$screen_begin_screen_update$0$0   begin_screen
      000035D3  _screen_begin_screen_update        begin_screen
      000035D4  A$begin_screen$100                 begin_screen
@@ -11366,20 +11366,20 @@ _CODE                               00000200    00005CF1 =       23793. bytes (R
      00003D9A  C$load_screen.c$111$1_0$131        load_screen
      00003D9A  XG$screen_load_screen_update$0$0   load_screen
      00003D9B  A$level_screen$108                 level_screen
-     00003D9B  C$level_screen.c$34$0_0$127        level_screen
-     00003D9B  C$level_screen.c$36$1_0$127        level_screen
-     00003D9B  C$level_screen.c$37$1_0$127        level_screen
+     00003D9B  C$level_screen.c$36$0_0$127        level_screen
      00003D9B  C$level_screen.c$38$1_0$127        level_screen
-     00003D9B  C$level_screen.c$42$1_0$127        level_screen
+     00003D9B  C$level_screen.c$39$1_0$127        level_screen
+     00003D9B  C$level_screen.c$40$1_0$127        level_screen
+     00003D9B  C$level_screen.c$44$1_0$127        level_screen
      00003D9B  G$screen_level_screen_load$0$0     level_screen
      00003D9B  _screen_level_screen_load          level_screen
      00003D9E  A$level_screen$109                 level_screen
      00003D9F  A$level_screen$110                 level_screen
      00003DA2  A$level_screen$114                 level_screen
-     00003DA2  C$level_screen.c$43$1_0$127        level_screen
+     00003DA2  C$level_screen.c$45$1_0$127        level_screen
      00003DA5  A$level_screen$115                 level_screen
      00003DA8  A$level_screen$119                 level_screen
-     00003DA8  C$level_screen.c$44$1_0$127        level_screen
+     00003DA8  C$level_screen.c$46$1_0$127        level_screen
      00003DAB  A$level_screen$120                 level_screen
 ASxxxx Linker V03.00 + NoICE + sdld,  page 191.
 Hexadecimal  [32-Bits]
@@ -11392,27 +11392,27 @@ _CODE                               00000200    00005CF1 =       23793. bytes (R
       -----  --------------------------------   ------------------------
      00003DAC  A$level_screen$121                 level_screen
      00003DAF  A$level_screen$125                 level_screen
-     00003DAF  C$level_screen.c$45$1_0$127        level_screen
+     00003DAF  C$level_screen.c$47$1_0$127        level_screen
      00003DB2  A$level_screen$126                 level_screen
      00003DB5  A$level_screen$130                 level_screen
-     00003DB5  C$level_screen.c$46$1_0$127        level_screen
+     00003DB5  C$level_screen.c$48$1_0$127        level_screen
      00003DB8  A$level_screen$131                 level_screen
      00003DBB  A$level_screen$135                 level_screen
-     00003DBB  C$level_screen.c$47$1_0$127        level_screen
+     00003DBB  C$level_screen.c$49$1_0$127        level_screen
      00003DBC  A$level_screen$136                 level_screen
      00003DBF  A$level_screen$140                 level_screen
-     00003DBF  C$level_screen.c$48$1_0$127        level_screen
+     00003DBF  C$level_screen.c$50$1_0$127        level_screen
      00003DC2  A$level_screen$141                 level_screen
      00003DC4  A$level_screen$145                 level_screen
-     00003DC4  C$level_screen.c$50$1_0$127        level_screen
+     00003DC4  C$level_screen.c$52$1_0$127        level_screen
      00003DC7  A$level_screen$149                 level_screen
-     00003DC7  C$level_screen.c$52$1_0$127        level_screen
+     00003DC7  C$level_screen.c$54$1_0$127        level_screen
      00003DCA  A$level_screen$150                 level_screen
      00003DCB  A$level_screen$151                 level_screen
      00003DCC  A$level_screen$152                 level_screen
      00003DCF  A$level_screen$153                 level_screen
      00003DD0  A$level_screen$157                 level_screen
-     00003DD0  C$level_screen.c$54$1_0$127        level_screen
+     00003DD0  C$level_screen.c$56$1_0$127        level_screen
      00003DD3  A$level_screen$158                 level_screen
      00003DD6  A$level_screen$159                 level_screen
      00003DDA  A$level_screen$160                 level_screen
@@ -11422,7 +11422,7 @@ _CODE                               00000200    00005CF1 =       23793. bytes (R
      00003DEA  A$level_screen$164                 level_screen
      00003DEE  A$level_screen$165                 level_screen
      00003DF2  A$level_screen$169                 level_screen
-     00003DF2  C$level_screen.c$55$1_0$127        level_screen
+     00003DF2  C$level_screen.c$57$1_0$127        level_screen
      00003DF5  A$level_screen$170                 level_screen
      00003DF6  A$level_screen$171                 level_screen
      00003DF9  A$level_screen$172                 level_screen
@@ -11435,7 +11435,7 @@ _CODE                               00000200    00005CF1 =       23793. bytes (R
      00003E03  A$level_screen$181                 level_screen
      00003E05  A$level_screen$182                 level_screen
      00003E08  A$level_screen$186                 level_screen
-     00003E08  C$level_screen.c$56$1_0$127        level_screen
+     00003E08  C$level_screen.c$58$1_0$127        level_screen
      00003E0C  A$level_screen$187                 level_screen
      00003E10  A$level_screen$188                 level_screen
      00003E13  A$level_screen$189                 level_screen
@@ -11456,17 +11456,17 @@ _CODE                               00000200    00005CF1 =       23793. bytes (R
      00003E1B  A$level_screen$195                 level_screen
      00003E1C  A$level_screen$196                 level_screen
      00003E1D  A$level_screen$200                 level_screen
-     00003E1D  C$level_screen.c$57$1_0$127        level_screen
+     00003E1D  C$level_screen.c$59$1_0$127        level_screen
      00003E20  A$level_screen$201                 level_screen
      00003E21  A$level_screen$202                 level_screen
      00003E22  A$level_screen$203                 level_screen
      00003E25  A$level_screen$204                 level_screen
      00003E26  A$level_screen$208                 level_screen
-     00003E26  C$level_screen.c$65$1_0$127        level_screen
+     00003E26  C$level_screen.c$67$1_0$127        level_screen
      00003E29  A$level_screen$212                 level_screen
-     00003E29  C$level_screen.c$66$1_0$127        level_screen
+     00003E29  C$level_screen.c$68$1_0$127        level_screen
      00003E2C  A$level_screen$216                 level_screen
-     00003E2C  C$level_screen.c$70$1_0$127        level_screen
+     00003E2C  C$level_screen.c$72$1_0$127        level_screen
      00003E2F  A$level_screen$217                 level_screen
      00003E32  A$level_screen$218                 level_screen
      00003E34  A$level_screen$219                 level_screen
@@ -11481,7 +11481,7 @@ _CODE                               00000200    00005CF1 =       23793. bytes (R
      00003E41  A$level_screen$228                 level_screen
      00003E42  A$level_screen$229                 level_screen
      00003E43  A$level_screen$233                 level_screen
-     00003E43  C$level_screen.c$72$1_0$127        level_screen
+     00003E43  C$level_screen.c$74$1_0$127        level_screen
      00003E46  A$level_screen$234                 level_screen
      00003E47  A$level_screen$235                 level_screen
      00003E4A  A$level_screen$236                 level_screen
@@ -11491,13 +11491,13 @@ _CODE                               00000200    00005CF1 =       23793. bytes (R
      00003E4E  A$level_screen$240                 level_screen
      00003E51  A$level_screen$241                 level_screen
      00003E52  A$level_screen$245                 level_screen
-     00003E52  C$level_screen.c$73$1_0$127        level_screen
+     00003E52  C$level_screen.c$75$1_0$127        level_screen
      00003E55  A$level_screen$246                 level_screen
      00003E56  A$level_screen$247                 level_screen
      00003E57  A$level_screen$248                 level_screen
      00003E5A  A$level_screen$249                 level_screen
      00003E5B  A$level_screen$253                 level_screen
-     00003E5B  C$level_screen.c$75$1_0$127        level_screen
+     00003E5B  C$level_screen.c$77$1_0$127        level_screen
      00003E5E  A$level_screen$254                 level_screen
      00003E61  A$level_screen$255                 level_screen
      00003E62  A$level_screen$256                 level_screen
@@ -11514,41 +11514,41 @@ _CODE                               00000200    00005CF1 =       23793. bytes (R
      00003E65  A$level_screen$258                 level_screen
      00003E66  A$level_screen$259                 level_screen
      00003E69  A$level_screen$263                 level_screen
-     00003E69  C$level_screen.c$76$1_0$127        level_screen
+     00003E69  C$level_screen.c$78$1_0$127        level_screen
      00003E6C  A$level_screen$264                 level_screen
      00003E6D  A$level_screen$265                 level_screen
      00003E6E  A$level_screen$266                 level_screen
      00003E71  A$level_screen$267                 level_screen
      00003E72  A$level_screen$278                 level_screen
-     00003E72  C$level_screen.c$77$1_0$127        level_screen
-     00003E72  C$level_screen.c$78$1_0$127        level_screen
+     00003E72  C$level_screen.c$79$1_0$127        level_screen
+     00003E72  C$level_screen.c$80$1_0$127        level_screen
      00003E72  XG$screen_level_screen_load$0$0    level_screen
      00003E75  A$level_screen$288                 level_screen
-     00003E75  C$level_screen.c$80$1_0$129        level_screen
+     00003E75  C$level_screen.c$82$1_0$129        level_screen
      00003E75  G$screen_level_screen_update$0$0   level_screen
      00003E75  _screen_level_screen_update        level_screen
      00003E77  A$level_screen$289                 level_screen
      00003E7B  A$level_screen$290                 level_screen
      00003E7D  A$level_screen$291                 level_screen
      00003E7E  A$level_screen$301                 level_screen
-     00003E7E  C$level_screen.c$82$1_0$129        level_screen
-     00003E7E  C$level_screen.c$83$1_0$129        level_screen
+     00003E7E  C$level_screen.c$84$1_0$129        level_screen
      00003E7E  C$level_screen.c$85$1_0$129        level_screen
+     00003E7E  C$level_screen.c$87$1_0$129        level_screen
      00003E82  A$level_screen$305                 level_screen
-     00003E82  C$level_screen.c$87$1_0$129        level_screen
+     00003E82  C$level_screen.c$89$1_0$129        level_screen
      00003E84  A$level_screen$306                 level_screen
      00003E85  A$level_screen$307                 level_screen
      00003E86  A$level_screen$308                 level_screen
      00003E89  A$level_screen$309                 level_screen
      00003E8A  A$level_screen$310                 level_screen
      00003E8B  A$level_screen$314                 level_screen
-     00003E8B  C$level_screen.c$88$1_0$129        level_screen
+     00003E8B  C$level_screen.c$90$1_0$129        level_screen
      00003E8C  A$level_screen$315                 level_screen
      00003E8E  A$level_screen$316                 level_screen
      00003E91  A$level_screen$317                 level_screen
      00003E92  A$level_screen$318                 level_screen
      00003E94  A$level_screen$322                 level_screen
-     00003E94  C$level_screen.c$102$2_0$130       level_screen
+     00003E94  C$level_screen.c$104$2_0$130       level_screen
      00003E97  A$level_screen$323                 level_screen
      00003E9A  A$level_screen$324                 level_screen
      00003E9C  A$level_screen$325                 level_screen
@@ -11574,10 +11574,10 @@ _CODE                               00000200    00005CF1 =       23793. bytes (R
      00003EAB  A$level_screen$336                 level_screen
      00003EAC  A$level_screen$337                 level_screen
      00003EAD  A$level_screen$341                 level_screen
-     00003EAD  C$level_screen.c$103$2_0$130       level_screen
+     00003EAD  C$level_screen.c$105$2_0$130       level_screen
      00003EB0  A$level_screen$342                 level_screen
      00003EB1  A$level_screen$346                 level_screen
-     00003EB1  C$level_screen.c$104$2_0$130       level_screen
+     00003EB1  C$level_screen.c$106$2_0$130       level_screen
      00003EB4  A$level_screen$347                 level_screen
      00003EB6  A$level_screen$348                 level_screen
      00003EB7  A$level_screen$349                 level_screen
@@ -11591,34 +11591,34 @@ _CODE                               00000200    00005CF1 =       23793. bytes (R
      00003EC3  A$level_screen$357                 level_screen
      00003EC4  A$level_screen$358                 level_screen
      00003EC5  A$level_screen$363                 level_screen
-     00003EC5  C$level_screen.c$108$1_0$129       level_screen
+     00003EC5  C$level_screen.c$110$1_0$129       level_screen
      00003EC7  A$level_screen$364                 level_screen
      00003EC8  A$level_screen$365                 level_screen
      00003EC9  A$level_screen$366                 level_screen
      00003ECC  A$level_screen$367                 level_screen
      00003ECD  A$level_screen$368                 level_screen
      00003ECE  A$level_screen$372                 level_screen
-     00003ECE  C$level_screen.c$109$1_0$129       level_screen
+     00003ECE  C$level_screen.c$111$1_0$129       level_screen
      00003ECF  A$level_screen$373                 level_screen
      00003ED1  A$level_screen$377                 level_screen
-     00003ED1  C$level_screen.c$111$2_0$131       level_screen
+     00003ED1  C$level_screen.c$113$2_0$131       level_screen
      00003ED4  A$level_screen$378                 level_screen
      00003ED6  A$level_screen$379                 level_screen
      00003ED8  A$level_screen$383                 level_screen
-     00003ED8  C$level_screen.c$113$3_0$132       level_screen
+     00003ED8  C$level_screen.c$115$3_0$132       level_screen
      00003EDC  A$level_screen$387                 level_screen
-     00003EDC  C$level_screen.c$114$3_0$132       level_screen
+     00003EDC  C$level_screen.c$116$3_0$132       level_screen
      00003EE0  A$level_screen$388                 level_screen
      00003EE1  A$level_screen$389                 level_screen
      00003EE4  A$level_screen$390                 level_screen
      00003EE5  A$level_screen$391                 level_screen
      00003EE7  A$level_screen$392                 level_screen
      00003EE9  A$level_screen$396                 level_screen
-     00003EE9  C$level_screen.c$116$4_0$133       level_screen
+     00003EE9  C$level_screen.c$118$4_0$133       level_screen
      00003EEC  A$level_screen$397                 level_screen
      00003EED  A$level_screen$398                 level_screen
      00003EF0  A$level_screen$402                 level_screen
-     00003EF0  C$level_screen.c$117$4_0$133       level_screen
+     00003EF0  C$level_screen.c$119$4_0$133       level_screen
      00003EF3  A$level_screen$403                 level_screen
      00003EF4  A$level_screen$404                 level_screen
 ASxxxx Linker V03.00 + NoICE + sdld,  page 195.
@@ -11640,7 +11640,7 @@ _CODE                               00000200    00005CF1 =       23793. bytes (R
      00003F01  A$level_screen$412                 level_screen
      00003F04  A$level_screen$413                 level_screen
      00003F06  A$level_screen$418                 level_screen
-     00003F06  C$level_screen.c$122$3_0$134       level_screen
+     00003F06  C$level_screen.c$124$3_0$134       level_screen
      00003F09  A$level_screen$419                 level_screen
      00003F0C  A$level_screen$420                 level_screen
      00003F0E  A$level_screen$421                 level_screen
@@ -11657,10 +11657,10 @@ _CODE                               00000200    00005CF1 =       23793. bytes (R
      00003F1D  A$level_screen$432                 level_screen
      00003F1E  A$level_screen$433                 level_screen
      00003F1F  A$level_screen$437                 level_screen
-     00003F1F  C$level_screen.c$123$3_0$134       level_screen
+     00003F1F  C$level_screen.c$125$3_0$134       level_screen
      00003F22  A$level_screen$438                 level_screen
      00003F23  A$level_screen$442                 level_screen
-     00003F23  C$level_screen.c$124$3_0$134       level_screen
+     00003F23  C$level_screen.c$126$3_0$134       level_screen
      00003F26  A$level_screen$443                 level_screen
      00003F28  A$level_screen$444                 level_screen
      00003F29  A$level_screen$445                 level_screen
@@ -11674,7 +11674,7 @@ _CODE                               00000200    00005CF1 =       23793. bytes (R
      00003F35  A$level_screen$453                 level_screen
      00003F36  A$level_screen$454                 level_screen
      00003F37  A$level_screen$459                 level_screen
-     00003F37  C$level_screen.c$128$1_0$129       level_screen
+     00003F37  C$level_screen.c$130$1_0$129       level_screen
      00003F39  A$level_screen$460                 level_screen
      00003F3A  A$level_screen$461                 level_screen
      00003F3B  A$level_screen$462                 level_screen
@@ -11690,49 +11690,49 @@ _CODE                               00000200    00005CF1 =       23793. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00003F40  C$level_screen.c$129$1_0$129       level_screen
+     00003F40  C$level_screen.c$131$1_0$129       level_screen
      00003F41  A$level_screen$469                 level_screen
      00003F43  A$level_screen$473                 level_screen
-     00003F43  C$level_screen.c$131$2_0$135       level_screen
+     00003F43  C$level_screen.c$133$2_0$135       level_screen
      00003F47  A$level_screen$477                 level_screen
-     00003F47  C$level_screen.c$132$2_0$135       level_screen
+     00003F47  C$level_screen.c$134$2_0$135       level_screen
      00003F4A  A$level_screen$478                 level_screen
      00003F4B  A$level_screen$479                 level_screen
      00003F4D  A$level_screen$483                 level_screen
-     00003F4D  C$level_screen.c$134$3_0$136       level_screen
+     00003F4D  C$level_screen.c$136$3_0$136       level_screen
      00003F51  A$level_screen$484                 level_screen
      00003F54  A$level_screen$485                 level_screen
      00003F55  A$level_screen$486                 level_screen
      00003F57  A$level_screen$490                 level_screen
-     00003F57  C$level_screen.c$136$4_0$137       level_screen
+     00003F57  C$level_screen.c$138$4_0$137       level_screen
      00003F5A  A$level_screen$491                 level_screen
      00003F5C  A$level_screen$496                 level_screen
-     00003F5C  C$level_screen.c$139$2_0$135       level_screen
+     00003F5C  C$level_screen.c$141$2_0$135       level_screen
      00003F5F  A$level_screen$497                 level_screen
      00003F60  A$level_screen$498                 level_screen
      00003F62  A$level_screen$502                 level_screen
-     00003F62  C$level_screen.c$141$3_0$138       level_screen
+     00003F62  C$level_screen.c$143$3_0$138       level_screen
      00003F66  A$level_screen$503                 level_screen
      00003F69  A$level_screen$504                 level_screen
      00003F6A  A$level_screen$505                 level_screen
      00003F6C  A$level_screen$509                 level_screen
-     00003F6C  C$level_screen.c$144$4_0$139       level_screen
+     00003F6C  C$level_screen.c$146$4_0$139       level_screen
      00003F6F  A$level_screen$513                 level_screen
-     00003F6F  C$level_screen.c$145$4_0$139       level_screen
+     00003F6F  C$level_screen.c$147$4_0$139       level_screen
      00003F72  A$level_screen$514                 level_screen
      00003F74  A$level_screen$518                 level_screen
-     00003F74  C$level_screen.c$146$4_0$139       level_screen
+     00003F74  C$level_screen.c$148$4_0$139       level_screen
      00003F77  A$level_screen$519                 level_screen
      00003F7A  A$level_screen$520                 level_screen
      00003F7C  A$level_screen$525                 level_screen
-     00003F7C  C$level_screen.c$151$3_0$140       level_screen
+     00003F7C  C$level_screen.c$153$3_0$140       level_screen
      00003F80  A$level_screen$526                 level_screen
      00003F83  A$level_screen$527                 level_screen
      00003F84  A$level_screen$528                 level_screen
      00003F86  A$level_screen$532                 level_screen
-     00003F86  C$level_screen.c$153$4_0$141       level_screen
+     00003F86  C$level_screen.c$155$4_0$141       level_screen
      00003F89  A$level_screen$536                 level_screen
-     00003F89  C$level_screen.c$154$4_0$141       level_screen
+     00003F89  C$level_screen.c$156$4_0$141       level_screen
      00003F8C  A$level_screen$537                 level_screen
      00003F8D  A$level_screen$538                 level_screen
      00003F90  A$level_screen$539                 level_screen
@@ -11753,51 +11753,51 @@ _CODE                               00000200    00005CF1 =       23793. bytes (R
      00003F99  A$level_screen$547                 level_screen
      00003F9B  A$level_screen$548                 level_screen
      00003F9E  A$level_screen$553                 level_screen
-     00003F9E  C$level_screen.c$158$1_0$129       level_screen
+     00003F9E  C$level_screen.c$160$1_0$129       level_screen
      00003FA0  A$level_screen$554                 level_screen
      00003FA1  A$level_screen$555                 level_screen
      00003FA2  A$level_screen$556                 level_screen
      00003FA5  A$level_screen$557                 level_screen
      00003FA6  A$level_screen$558                 level_screen
      00003FA7  A$level_screen$562                 level_screen
-     00003FA7  C$level_screen.c$159$1_0$129       level_screen
+     00003FA7  C$level_screen.c$161$1_0$129       level_screen
      00003FA8  A$level_screen$563                 level_screen
      00003FAA  A$level_screen$567                 level_screen
-     00003FAA  C$level_screen.c$161$2_0$142       level_screen
+     00003FAA  C$level_screen.c$163$2_0$142       level_screen
      00003FAE  A$level_screen$571                 level_screen
-     00003FAE  C$level_screen.c$162$2_0$142       level_screen
+     00003FAE  C$level_screen.c$164$2_0$142       level_screen
      00003FB1  A$level_screen$572                 level_screen
      00003FB2  A$level_screen$573                 level_screen
      00003FB4  A$level_screen$577                 level_screen
-     00003FB4  C$level_screen.c$164$3_0$143       level_screen
+     00003FB4  C$level_screen.c$166$3_0$143       level_screen
      00003FB8  A$level_screen$578                 level_screen
      00003FBB  A$level_screen$579                 level_screen
      00003FBD  A$level_screen$580                 level_screen
      00003FBF  A$level_screen$584                 level_screen
-     00003FBF  C$level_screen.c$166$4_0$144       level_screen
+     00003FBF  C$level_screen.c$168$4_0$144       level_screen
      00003FC2  A$level_screen$588                 level_screen
-     00003FC2  C$level_screen.c$168$4_0$144       level_screen
+     00003FC2  C$level_screen.c$170$4_0$144       level_screen
      00003FC5  A$level_screen$589                 level_screen
      00003FC7  A$level_screen$593                 level_screen
-     00003FC7  C$level_screen.c$169$4_0$144       level_screen
+     00003FC7  C$level_screen.c$171$4_0$144       level_screen
      00003FCA  A$level_screen$594                 level_screen
      00003FCD  A$level_screen$595                 level_screen
      00003FCF  A$level_screen$600                 level_screen
-     00003FCF  C$level_screen.c$172$2_0$142       level_screen
+     00003FCF  C$level_screen.c$174$2_0$142       level_screen
      00003FD2  A$level_screen$601                 level_screen
      00003FD3  A$level_screen$602                 level_screen
      00003FD5  A$level_screen$606                 level_screen
-     00003FD5  C$level_screen.c$174$3_0$145       level_screen
+     00003FD5  C$level_screen.c$176$3_0$145       level_screen
      00003FD9  A$level_screen$607                 level_screen
      00003FDC  A$level_screen$608                 level_screen
      00003FDE  A$level_screen$609                 level_screen
      00003FE0  A$level_screen$613                 level_screen
-     00003FE0  C$level_screen.c$177$4_0$146       level_screen
+     00003FE0  C$level_screen.c$179$4_0$146       level_screen
      00003FE3  A$level_screen$617                 level_screen
-     00003FE3  C$level_screen.c$178$4_0$146       level_screen
+     00003FE3  C$level_screen.c$180$4_0$146       level_screen
      00003FE6  A$level_screen$618                 level_screen
      00003FE8  A$level_screen$622                 level_screen
-     00003FE8  C$level_screen.c$179$4_0$146       level_screen
+     00003FE8  C$level_screen.c$181$4_0$146       level_screen
      00003FEB  A$level_screen$623                 level_screen
      00003FEE  A$level_screen$624                 level_screen
      00003FF0  A$level_screen$629                 level_screen
@@ -11810,14 +11810,14 @@ _CODE                               00000200    00005CF1 =       23793. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00003FF0  C$level_screen.c$184$3_0$147       level_screen
+     00003FF0  C$level_screen.c$186$3_0$147       level_screen
      00003FF4  A$level_screen$630                 level_screen
      00003FF7  A$level_screen$631                 level_screen
      00003FF9  A$level_screen$632                 level_screen
      00003FFB  A$level_screen$636                 level_screen
-     00003FFB  C$level_screen.c$186$4_0$148       level_screen
+     00003FFB  C$level_screen.c$188$4_0$148       level_screen
      00003FFE  A$level_screen$640                 level_screen
-     00003FFE  C$level_screen.c$187$4_0$148       level_screen
+     00003FFE  C$level_screen.c$189$4_0$148       level_screen
      00004001  A$level_screen$641                 level_screen
      00004002  A$level_screen$642                 level_screen
      00004005  A$level_screen$643                 level_screen
@@ -11829,18 +11829,18 @@ _CODE                               00000200    00005CF1 =       23793. bytes (R
      0000400E  A$level_screen$651                 level_screen
      00004010  A$level_screen$652                 level_screen
      00004013  A$level_screen$657                 level_screen
-     00004013  C$level_screen.c$192$1_0$129       level_screen
+     00004013  C$level_screen.c$194$1_0$129       level_screen
      00004017  A$level_screen$658                 level_screen
      00004019  A$level_screen$662                 level_screen
-     00004019  C$level_screen.c$196$3_0$150       level_screen
+     00004019  C$level_screen.c$198$3_0$150       level_screen
      0000401C  A$level_screen$666                 level_screen
-     0000401C  C$level_screen.c$203$3_0$150       level_screen
+     0000401C  C$level_screen.c$205$3_0$150       level_screen
      0000401F  A$level_screen$667                 level_screen
      00004020  A$level_screen$668                 level_screen
      00004021  A$level_screen$669                 level_screen
      00004024  A$level_screen$670                 level_screen
      00004025  A$level_screen$674                 level_screen
-     00004025  C$level_screen.c$204$3_0$150       level_screen
+     00004025  C$level_screen.c$206$3_0$150       level_screen
      00004028  A$level_screen$675                 level_screen
      0000402B  A$level_screen$676                 level_screen
      0000402C  A$level_screen$677                 level_screen
@@ -11848,15 +11848,15 @@ _CODE                               00000200    00005CF1 =       23793. bytes (R
      0000402F  A$level_screen$679                 level_screen
      00004030  A$level_screen$680                 level_screen
      00004033  A$level_screen$684                 level_screen
-     00004033  C$level_screen.c$205$3_0$150       level_screen
+     00004033  C$level_screen.c$207$3_0$150       level_screen
      00004036  A$level_screen$685                 level_screen
      00004037  A$level_screen$686                 level_screen
      00004038  A$level_screen$687                 level_screen
      0000403B  A$level_screen$688                 level_screen
      0000403C  A$level_screen$692                 level_screen
-     0000403C  C$level_screen.c$208$2_0$149       level_screen
+     0000403C  C$level_screen.c$210$2_0$149       level_screen
      0000403F  A$level_screen$697                 level_screen
-     0000403F  C$level_screen.c$211$1_0$129       level_screen
+     0000403F  C$level_screen.c$213$1_0$129       level_screen
      00004041  A$level_screen$698                 level_screen
      00004042  A$level_screen$699                 level_screen
      00004043  A$level_screen$700                 level_screen
@@ -11871,14 +11871,14 @@ _CODE                               00000200    00005CF1 =       23793. bytes (R
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
      00004047  A$level_screen$705                 level_screen
-     00004047  C$level_screen.c$221$1_0$129       level_screen
+     00004047  C$level_screen.c$223$1_0$129       level_screen
      0000404A  A$level_screen$706                 level_screen
      0000404D  A$level_screen$710                 level_screen
-     0000404D  C$level_screen.c$212$1_0$129       level_screen
+     0000404D  C$level_screen.c$214$1_0$129       level_screen
      0000404E  A$level_screen$711                 level_screen
      0000404F  A$level_screen$712                 level_screen
      00004051  A$level_screen$716                 level_screen
-     00004051  C$level_screen.c$214$2_0$151       level_screen
+     00004051  C$level_screen.c$216$2_0$151       level_screen
      00004052  A$level_screen$717                 level_screen
      00004055  A$level_screen$718                 level_screen
      00004056  A$level_screen$719                 level_screen
@@ -11898,12 +11898,12 @@ _CODE                               00000200    00005CF1 =       23793. bytes (R
      0000406E  A$level_screen$733                 level_screen
      0000406F  A$level_screen$734                 level_screen
      00004070  A$level_screen$738                 level_screen
-     00004070  C$level_screen.c$221$2_0$151       level_screen
+     00004070  C$level_screen.c$223$2_0$151       level_screen
      00004072  A$level_screen$739                 level_screen
      00004073  A$level_screen$743                 level_screen
-     00004073  C$level_screen.c$224$2_0$151       level_screen
+     00004073  C$level_screen.c$226$2_0$151       level_screen
      00004075  A$level_screen$748                 level_screen
-     00004075  C$level_screen.c$227$1_0$129       level_screen
+     00004075  C$level_screen.c$229$1_0$129       level_screen
      00004076  A$level_screen$749                 level_screen
      00004078  A$level_screen$750                 level_screen
      00004079  A$level_screen$751                 level_screen
@@ -11912,10 +11912,10 @@ _CODE                               00000200    00005CF1 =       23793. bytes (R
      0000407E  A$level_screen$754                 level_screen
      0000407F  A$level_screen$755                 level_screen
      00004080  A$level_screen$759                 level_screen
-     00004080  C$level_screen.c$228$1_0$129       level_screen
+     00004080  C$level_screen.c$230$1_0$129       level_screen
      00004081  A$level_screen$760                 level_screen
      00004083  A$level_screen$764                 level_screen
-     00004083  C$level_screen.c$230$2_0$152       level_screen
+     00004083  C$level_screen.c$232$2_0$152       level_screen
      00004084  A$level_screen$765                 level_screen
      00004087  A$level_screen$766                 level_screen
      00004088  A$level_screen$767                 level_screen
@@ -11944,33 +11944,33 @@ _CODE                               00000200    00005CF1 =       23793. bytes (R
      000040A0  A$level_screen$781                 level_screen
      000040A1  A$level_screen$782                 level_screen
      000040A2  A$level_screen$786                 level_screen
-     000040A2  C$level_screen.c$235$2_0$152       level_screen
+     000040A2  C$level_screen.c$237$2_0$152       level_screen
      000040A4  A$level_screen$787                 level_screen
      000040A5  A$level_screen$791                 level_screen
-     000040A5  C$level_screen.c$236$2_0$152       level_screen
+     000040A5  C$level_screen.c$238$2_0$152       level_screen
      000040A7  A$level_screen$796                 level_screen
-     000040A7  C$level_screen.c$241$1_0$129       level_screen
+     000040A7  C$level_screen.c$243$1_0$129       level_screen
      000040A8  A$level_screen$797                 level_screen
      000040AB  A$level_screen$798                 level_screen
      000040AC  A$level_screen$802                 level_screen
-     000040AC  C$level_screen.c$242$1_0$129       level_screen
+     000040AC  C$level_screen.c$244$1_0$129       level_screen
      000040AE  A$level_screen$803                 level_screen
      000040AF  A$level_screen$808                 level_screen
      000040B0  A$level_screen$809                 level_screen
      000040B2  A$level_screen$814                 level_screen
-     000040B2  C$level_screen.c$243$1_0$129       level_screen
+     000040B2  C$level_screen.c$245$1_0$129       level_screen
      000040B2  XG$screen_level_screen_update$0$   level_screen
      000040B3  A$level_screen$830                 level_screen
-     000040B3  C$level_screen.c$247$1_0$153       level_screen
      000040B3  C$level_screen.c$249$1_0$153       level_screen
-     000040B3  C$level_screen.c$250$1_0$153       level_screen
+     000040B3  C$level_screen.c$251$1_0$153       level_screen
+     000040B3  C$level_screen.c$252$1_0$153       level_screen
      000040B3  Flevel_screen$updateCheck$0$0      level_screen
      000040B6  A$level_screen$831                 level_screen
      000040B7  A$level_screen$832                 level_screen
      000040B8  A$level_screen$833                 level_screen
      000040BB  A$level_screen$834                 level_screen
      000040BC  A$level_screen$838                 level_screen
-     000040BC  C$level_screen.c$252$1_0$153       level_screen
+     000040BC  C$level_screen.c$254$1_0$153       level_screen
      000040BF  A$level_screen$839                 level_screen
      000040C2  A$level_screen$840                 level_screen
      000040C6  A$level_screen$841                 level_screen
@@ -11980,7 +11980,7 @@ _CODE                               00000200    00005CF1 =       23793. bytes (R
      000040D6  A$level_screen$845                 level_screen
      000040DA  A$level_screen$846                 level_screen
      000040DE  A$level_screen$850                 level_screen
-     000040DE  C$level_screen.c$253$1_0$153       level_screen
+     000040DE  C$level_screen.c$255$1_0$153       level_screen
 ASxxxx Linker V03.00 + NoICE + sdld,  page 201.
 Hexadecimal  [32-Bits]
 
@@ -11995,11 +11995,11 @@ _CODE                               00000200    00005CF1 =       23793. bytes (R
      000040E3  A$level_screen$853                 level_screen
      000040E6  A$level_screen$854                 level_screen
      000040E7  A$level_screen$862                 level_screen
-     000040E7  C$level_screen.c$255$1_0$153       level_screen
+     000040E7  C$level_screen.c$257$1_0$153       level_screen
      000040E7  XFlevel_screen$updateCheck$0$0     level_screen
      000040E8  A$level_screen$875                 level_screen
-     000040E8  C$level_screen.c$257$1_0$154       level_screen
-     000040E8  C$level_screen.c$266$1_0$154       level_screen
+     000040E8  C$level_screen.c$259$1_0$154       level_screen
+     000040E8  C$level_screen.c$268$1_0$154       level_screen
      000040E8  Flevel_screen$printStats$0$0       level_screen
      000040EB  A$level_screen$876                 level_screen
      000040EC  A$level_screen$877                 level_screen
@@ -12011,7 +12011,7 @@ _CODE                               00000200    00005CF1 =       23793. bytes (R
      000040F7  A$level_screen$883                 level_screen
      000040F8  A$level_screen$884                 level_screen
      000040F9  A$level_screen$888                 level_screen
-     000040F9  C$level_screen.c$270$1_0$154       level_screen
+     000040F9  C$level_screen.c$272$1_0$154       level_screen
      000040FC  A$level_screen$889                 level_screen
      000040FD  A$level_screen$890                 level_screen
      000040FF  A$level_screen$891                 level_screen
@@ -12022,7 +12022,7 @@ _CODE                               00000200    00005CF1 =       23793. bytes (R
      00004108  A$level_screen$896                 level_screen
      00004109  A$level_screen$897                 level_screen
      0000410A  A$level_screen$901                 level_screen
-     0000410A  C$level_screen.c$274$1_0$154       level_screen
+     0000410A  C$level_screen.c$276$1_0$154       level_screen
      0000410D  A$level_screen$902                 level_screen
      0000410E  A$level_screen$903                 level_screen
      00004110  A$level_screen$904                 level_screen
@@ -12033,7 +12033,7 @@ _CODE                               00000200    00005CF1 =       23793. bytes (R
      00004119  A$level_screen$909                 level_screen
      0000411A  A$level_screen$910                 level_screen
      0000411B  A$level_screen$914                 level_screen
-     0000411B  C$level_screen.c$275$1_0$154       level_screen
+     0000411B  C$level_screen.c$277$1_0$154       level_screen
      0000411E  A$level_screen$915                 level_screen
      0000411F  A$level_screen$916                 level_screen
      00004122  A$level_screen$917                 level_screen
@@ -12050,7 +12050,7 @@ _CODE                               00000200    00005CF1 =       23793. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00004128  C$level_screen.c$276$1_0$154       level_screen
+     00004128  C$level_screen.c$278$1_0$154       level_screen
      0000412B  A$level_screen$925                 level_screen
      0000412C  A$level_screen$926                 level_screen
      0000412F  A$level_screen$927                 level_screen
@@ -12059,11 +12059,11 @@ _CODE                               00000200    00005CF1 =       23793. bytes (R
      00004134  A$level_screen$930                 level_screen
      00004135  A$level_screen$931                 level_screen
      00004136  A$level_screen$939                 level_screen
-     00004136  C$level_screen.c$292$1_0$154       level_screen
+     00004136  C$level_screen.c$294$1_0$154       level_screen
      00004136  XFlevel_screen$printStats$0$0      level_screen
      00004137  A$level_screen$952                 level_screen
-     00004137  C$level_screen.c$294$1_0$155       level_screen
-     00004137  C$level_screen.c$299$1_0$155       level_screen
+     00004137  C$level_screen.c$296$1_0$155       level_screen
+     00004137  C$level_screen.c$301$1_0$155       level_screen
      00004137  Flevel_screen$printTexts$0$0       level_screen
      0000413A  A$level_screen$953                 level_screen
      0000413B  A$level_screen$954                 level_screen
@@ -12073,7 +12073,7 @@ _CODE                               00000200    00005CF1 =       23793. bytes (R
      00004142  A$level_screen$958                 level_screen
      00004143  A$level_screen$959                 level_screen
      00004144  A$level_screen$963                 level_screen
-     00004144  C$level_screen.c$300$1_0$155       level_screen
+     00004144  C$level_screen.c$302$1_0$155       level_screen
      00004147  A$level_screen$964                 level_screen
      00004148  A$level_screen$965                 level_screen
      0000414A  A$level_screen$966                 level_screen
@@ -12082,7 +12082,7 @@ _CODE                               00000200    00005CF1 =       23793. bytes (R
      0000414F  A$level_screen$969                 level_screen
      00004150  A$level_screen$970                 level_screen
      00004151  A$level_screen$974                 level_screen
-     00004151  C$level_screen.c$301$1_0$155       level_screen
+     00004151  C$level_screen.c$303$1_0$155       level_screen
      00004154  A$level_screen$975                 level_screen
      00004155  A$level_screen$976                 level_screen
      00004157  A$level_screen$977                 level_screen
@@ -12091,7 +12091,7 @@ _CODE                               00000200    00005CF1 =       23793. bytes (R
      0000415C  A$level_screen$980                 level_screen
      0000415D  A$level_screen$981                 level_screen
      0000415E  A$level_screen$985                 level_screen
-     0000415E  C$level_screen.c$303$1_0$155       level_screen
+     0000415E  C$level_screen.c$305$1_0$155       level_screen
      00004161  A$level_screen$986                 level_screen
      00004162  A$level_screen$987                 level_screen
      00004164  A$level_screen$988                 level_screen
@@ -12100,7 +12100,7 @@ _CODE                               00000200    00005CF1 =       23793. bytes (R
      00004169  A$level_screen$991                 level_screen
      0000416A  A$level_screen$992                 level_screen
      0000416B  A$level_screen$996                 level_screen
-     0000416B  C$level_screen.c$304$1_0$155       level_screen
+     0000416B  C$level_screen.c$306$1_0$155       level_screen
 ASxxxx Linker V03.00 + NoICE + sdld,  page 203.
 Hexadecimal  [32-Bits]
 
@@ -12118,7 +12118,7 @@ _CODE                               00000200    00005CF1 =       23793. bytes (R
      00004176  A$level_screen$1002                level_screen
      00004177  A$level_screen$1003                level_screen
      00004178  A$level_screen$1007                level_screen
-     00004178  C$level_screen.c$305$1_0$155       level_screen
+     00004178  C$level_screen.c$307$1_0$155       level_screen
      0000417B  A$level_screen$1008                level_screen
      0000417C  A$level_screen$1009                level_screen
      0000417E  A$level_screen$1010                level_screen
@@ -12127,7 +12127,7 @@ _CODE                               00000200    00005CF1 =       23793. bytes (R
      00004183  A$level_screen$1013                level_screen
      00004184  A$level_screen$1014                level_screen
      00004185  A$level_screen$1018                level_screen
-     00004185  C$level_screen.c$306$1_0$155       level_screen
+     00004185  C$level_screen.c$308$1_0$155       level_screen
      00004188  A$level_screen$1019                level_screen
      00004189  A$level_screen$1020                level_screen
      0000418C  A$level_screen$1021                level_screen
@@ -12135,7 +12135,7 @@ _CODE                               00000200    00005CF1 =       23793. bytes (R
      00004190  A$level_screen$1023                level_screen
      00004191  A$level_screen$1024                level_screen
      00004192  A$level_screen$1032                level_screen
-     00004192  C$level_screen.c$307$1_0$155       level_screen
+     00004192  C$level_screen.c$309$1_0$155       level_screen
      00004192  XFlevel_screen$printTexts$0$0      level_screen
      00004193  Flevel_screen$__str_0$0_0$0        level_screen
      00004197  A$none_screen$57                   none_screen
@@ -15067,7 +15067,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_INITIALIZER                        00005EF1    000001E2 =         482. bytes (REL,CON)
+_INITIALIZER                        00005EF1    000001E4 =         484. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -15079,30 +15079,30 @@ _INITIALIZER                        00005EF1    000001E2 =         482. bytes (R
      00005F33  Ffixedbank$__xinit_sound_object_   fixedbank
      00005F39  Ffixedbank$__xinit_riff_sample_d   fixedbank
      00005FAB  Ffixedbank$__xinit_level_object_   fixedbank
-     00005FD7  Finput_manager$__xinit_curr_joyp   input_manager
-     00005FD9  Finput_manager$__xinit_prev_joyp   input_manager
-     00005FDB  Fcommand_object$__xinit_command_   command_object
-     0000605B  Fcommand_object$__xinit_command_   command_object
-     0000609B  Flevel_object$__xinit_level_plat   level_object
-     000060BB  Fplayer_object$__xinit_jump_arra   player_object
-     000060C5  Flevel_screen$__xinit_cursorX$0_   level_screen
+     00005FD9  Finput_manager$__xinit_curr_joyp   input_manager
+     00005FDB  Finput_manager$__xinit_prev_joyp   input_manager
+     00005FDD  Fcommand_object$__xinit_command_   command_object
+     0000605D  Fcommand_object$__xinit_command_   command_object
+     0000609D  Flevel_object$__xinit_level_plat   level_object
+     000060BD  Fplayer_object$__xinit_jump_arra   player_object
+     000060C7  Flevel_screen$__xinit_cursorX$0_   level_screen
 ASxxxx Linker V03.00 + NoICE + sdld,  page 259.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSINIT                             000060D3    0000000F =          15. bytes (REL,CON)
+_GSINIT                             000060D5    0000000F =          15. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     000060D3  gsinit                             crt0
+     000060D5  gsinit                             crt0
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 260.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSFINAL                            000060E2    00000001 =           1. bytes (REL,CON)
+_GSFINAL                            000060E4    00000001 =           1. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -15261,7 +15261,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_INITIALIZED                        0000C2CC    000001E2 =         482. bytes (REL,CON)
+_INITIALIZED                        0000C2CC    000001E4 =         484. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -15281,23 +15281,23 @@ _INITIALIZED                        0000C2CC    000001E2 =         482. bytes (R
      0000C314  _riff_sample_data                  fixedbank
      0000C386  G$level_object_data$0_0$0          fixedbank
      0000C386  _level_object_data                 fixedbank
-     0000C3B2  Finput_manager$curr_joypad1$0_0$   input_manager
-     0000C3B4  Finput_manager$prev_joypad1$0_0$   input_manager
-     0000C3B6  G$command_frame_index$0_0$0        command_object
-     0000C3B6  _command_frame_index               command_object
-     0000C436  G$command_this_command$0_0$0       command_object
-     0000C436  _command_this_command              command_object
-     0000C476  G$level_platforms$0_0$0            level_object
-     0000C476  _level_platforms                   level_object
-     0000C496  G$jump_array_ptr$0_0$0             player_object
-     0000C496  _jump_array_ptr                    player_object
-     0000C4A0  Flevel_screen$cursorX$0_0$0        level_screen
-     0000C4A3  _VDPReg                            SMSlib
-     0000C4A5  _spritesHeight                     SMSlib
-     0000C4A6  _spritesWidth                      SMSlib
-     0000C4A7  _spritesTileOffset                 SMSlib
-     0000C4AC  _clipWin_x1                        SMSlib_spriteClip
-     0000C4AD  _clipWin_y1                        SMSlib_spriteClip
+     0000C3B4  Finput_manager$curr_joypad1$0_0$   input_manager
+     0000C3B6  Finput_manager$prev_joypad1$0_0$   input_manager
+     0000C3B8  G$command_frame_index$0_0$0        command_object
+     0000C3B8  _command_frame_index               command_object
+     0000C438  G$command_this_command$0_0$0       command_object
+     0000C438  _command_this_command              command_object
+     0000C478  G$level_platforms$0_0$0            level_object
+     0000C478  _level_platforms                   level_object
+     0000C498  G$jump_array_ptr$0_0$0             player_object
+     0000C498  _jump_array_ptr                    player_object
+     0000C4A2  Flevel_screen$cursorX$0_0$0        level_screen
+     0000C4A5  _VDPReg                            SMSlib
+     0000C4A7  _spritesHeight                     SMSlib
+     0000C4A8  _spritesWidth                      SMSlib
+     0000C4A9  _spritesTileOffset                 SMSlib
+     0000C4AE  _clipWin_x1                        SMSlib_spriteClip
+     0000C4AF  _clipWin_y1                        SMSlib_spriteClip
 ASxxxx Linker V03.00 + NoICE + sdld,  page 265.
 Hexadecimal  [32-Bits]
 
@@ -15413,12 +15413,14 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK8                              00008000    00000400 =        1024. bytes (REL,CON)
+_BANK8                              00008000    00000800 =        2048. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$level_0101_txt$0_0$0             bank8
-     00008000  _level_0101_txt                    bank8
+     00008000  G$level_0102_txt$0_0$0             bank8
+     00008000  _level_0102_txt                    bank8
+     00008400  G$level_0101_txt$0_0$0             bank8
+     00008400  _level_0101_txt                    bank8
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 272.
 Hexadecimal  [32-Bits]
@@ -15530,7 +15532,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK15                             00008000    000000B8 =         184. bytes (REL,CON)
+_BANK15                             00008000    000000BB =         187. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -15544,9 +15546,9 @@ _BANK15                             00008000    000000B8 =         184. bytes (R
      0000801C  _riff_sample_bank                  fixedbank
      00008055  G$level_object_size$0_0$0          fixedbank
      00008055  _level_object_size                 fixedbank
-     00008081  G$level_object_bank$0_0$0          fixedbank
-     00008081  _level_object_bank                 fixedbank
-     00008097  Ffixedbank$__str_0$0_0$0           fixedbank
+     00008083  G$level_object_bank$0_0$0          fixedbank
+     00008083  _level_object_bank                 fixedbank
+     0000809A  Ffixedbank$__str_0$0_0$0           fixedbank
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 279.
 Hexadecimal  [32-Bits]
