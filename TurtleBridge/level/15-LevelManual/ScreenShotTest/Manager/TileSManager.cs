@@ -61,7 +61,7 @@ namespace ScreenShotTest
 			else if (lneCount < cols)
 			{
 				loops = lneCount;
-				var msg = String.Format("Actually  cols: Expect:{0} Actual:{0}", loops);
+				var msg = String.Format("Actually  cols: Expect:{0} Actual:{1}", cols, loops);
 				Logger.Info(msg);
 			}
 

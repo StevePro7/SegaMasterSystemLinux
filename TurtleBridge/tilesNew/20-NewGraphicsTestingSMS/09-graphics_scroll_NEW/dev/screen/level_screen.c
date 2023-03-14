@@ -155,6 +155,11 @@ void screen_level_screen_update( unsigned char *screen_type )
 				game_point--;
 				game_screen = lo->check_width * game_point;
 			}
+			else
+			{
+				game_point = 0;
+				game_screen = lo->check_width * game_point;
+			}
 		}
 	}
 	input = engine_input_manager_hold( input_type_down );
