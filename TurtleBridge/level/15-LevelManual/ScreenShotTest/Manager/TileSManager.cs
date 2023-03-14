@@ -51,7 +51,14 @@ namespace ScreenShotTest
 				lines.AddRange(datas);
 			}
 
-			for (int idx = 0; idx < lines.Count; idx++)
+			int lneCount = lines.Count;
+			if (lneCount > cols)
+			{
+				var msg = String.Format("EXCESSIVE cols: Expect:{0} Actual:{1}", cols, lneCount);
+				Logger.Error(msg);
+			}
+			
+			for (int idx = 0; idx < cols; idx++)
 			{
 				Tiles[idx] = lines[idx];
 			}
