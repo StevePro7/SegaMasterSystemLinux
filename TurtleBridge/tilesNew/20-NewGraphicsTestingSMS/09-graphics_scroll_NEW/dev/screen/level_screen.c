@@ -17,7 +17,7 @@
 #include "../banks/bank2.h"
 #include <stdbool.h>
 
-#define MAX_LEVELS	23
+#define MAX_LEVELS	24
 
 static unsigned char cursorX[] = { 2, 11, 20 };
 static unsigned char cursorIdx;

@@ -297,6 +297,7 @@ const unsigned char *level_object_data[] =
 	level_0101_txt,
 	level_0102_txt,
 	level_0103_txt,
+	level_0104_txt,
 	//level_0808_txt,
 };
 const unsigned int level_object_size[] =
@@ -325,6 +326,7 @@ const unsigned int level_object_size[] =
 	level_0101_txt_size,
 	level_0102_txt_size,
 	level_0103_txt_size,
+	level_0104_txt_size,
 	//level_0808_txt_size,
 };
 const unsigned char level_object_bank[] =
@@ -353,5 +355,6 @@ const unsigned char level_object_bank[] =
 	level_0101_txt_bank,
 	level_0102_txt_bank,
 	level_0103_txt_bank,
+	level_0104_txt_bank,
 	//level_0808_txt_bank,
 };
