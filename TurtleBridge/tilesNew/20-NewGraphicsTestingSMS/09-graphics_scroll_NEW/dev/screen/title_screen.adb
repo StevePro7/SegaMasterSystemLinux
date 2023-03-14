@@ -8,6 +8,8 @@ S:Ltitle_screen.draw_sprite$idx$1_0$108({1}SC:U),B,1,4
 S:Ltitle_screen.draw_sprite$mode$1_0$108({1}SC:U),B,1,5
 S:Ltitle_screen.draw_sprite$x$1_0$108({1}SC:U),B,1,6
 S:Ltitle_screen.draw_sprite$y$1_0$108({1}SC:U),B,1,7
+S:Ftitle_screen$flip_posX$0_0$0({9}DA9d,SC:U),E,0,0
+S:Ftitle_screen$flip_posY$0_0$0({9}DA9d,SC:U),E,0,0
 S:G$steven_text$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$music_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$sound_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0

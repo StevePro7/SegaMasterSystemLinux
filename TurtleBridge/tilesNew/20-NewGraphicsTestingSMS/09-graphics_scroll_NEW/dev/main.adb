@@ -14,6 +14,7 @@ S:G$global_hack_object$0_0$0({5}STtag_struct_hack_object:S),E,0,0
 S:G$level_platforms$0_0$0({0}DA0d,SC:U),E,0,0
 S:G$global_level_object$0_0$0({9}STtag_struct_level_object:S),E,0,0
 S:G$jump_array_ptr$0_0$0({0}DA0d,DG,SI:S),E,0,0
+S:G$flip_array_ptr$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$global_player_object$0_0$0({18}STtag_struct_player_object:S),E,0,0
 S:G$global_scroll_object$0_0$0({18}STtag_struct_scroll_object:S),E,0,0
 S:Lmain.main$global_pause$1_0$165({1}:S),E,0,0

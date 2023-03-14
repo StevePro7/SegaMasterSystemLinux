@@ -96,6 +96,7 @@ S:Lplayer_manager.engine_player_manager_head$po$1_0$225({2}DG,STtag_struct_playe
 S:Lplayer_manager.engine_player_manager_head$index$1_0$225({1}SC:U),R,0,0,[c]
 T:Fplayer_manager$tag_struct_player_object[({0}S:S$initX$0_0$0({1}SC:U),Z,0,0)({1}S:S$posnX$0_0$0({2}SI:U),Z,0,0)({3}S:S$tileX$0_0$0({2}SI:U),Z,0,0)({5}S:S$lookX$0_0$0({1}SC:U),Z,0,0)({6}S:S$posnY$0_0$0({1}SC:U),Z,0,0)({7}S:S$tileY$0_0$0({1}SC:U),Z,0,0)({8}S:S$leapY$0_0$0({2}SI:U),Z,0,0)({10}S:S$drawX$0_0$0({1}SC:U),Z,0,0)({11}S:S$drawY$0_0$0({1}SC:U),Z,0,0)({12}S:S$player_state$0_0$0({1}SC:U),Z,0,0)({13}S:S$jumper_index$0_0$0({1}SC:U),Z,0,0)({14}S:S$deltaY_index$0_0$0({1}SC:U),Z,0,0)({15}S:S$player_frame$0_0$0({1}SC:U),Z,0,0)({16}S:S$player_lives$0_0$0({1}SC:U),Z,0,0)({17}S:S$motion_count$0_0$0({1}SC:U),Z,0,0)]
 S:G$jump_array_ptr$0_0$0({0}DA0d,DG,SI:S),E,0,0
+S:G$flip_array_ptr$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$steven_text$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$music_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$sound_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0

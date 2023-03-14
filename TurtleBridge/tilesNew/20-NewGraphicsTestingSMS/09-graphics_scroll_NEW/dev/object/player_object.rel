@@ -1,11 +1,25 @@
 XL3
-H 9 areas 1C global symbols
+H 9 areas 2A global symbols
 M player_object
 O -mz80
 S .__.ABS. Def000000
-A _CODE size 3C1 flags 0 addr 0
+A _CODE size 400 flags 0 addr 0
 S _player_object_starts Def000000
 S G$player_object_starts$0_0$0 Def000000
+S _flip_array_00 Def0003C1
+S _flip_array_01 Def0003CA
+S _flip_array_02 Def0003D3
+S G$flip_array_00$0_0$0 Def0003C1
+S _flip_array_03 Def0003DC
+S G$flip_array_01$0_0$0 Def0003CA
+S _flip_array_04 Def0003E5
+S G$flip_array_02$0_0$0 Def0003D3
+S _flip_array_05 Def0003EE
+S G$flip_array_03$0_0$0 Def0003DC
+S _flip_array_06 Def0003F7
+S G$flip_array_04$0_0$0 Def0003E5
+S G$flip_array_05$0_0$0 Def0003EE
+S G$flip_array_06$0_0$0 Def0003F7
 S _player_flying_deltaX Def00001A
 S G$player_flying_deltaX$0_0$0 Def00001A
 S _jump_array_00 Def000027
@@ -238,6 +252,34 @@ R 00 00 00 00
 T AF 03 00 7A 03 83 03 8C 03 95 03 9F 03 A8 03
 R 00 00 00 00
 T BB 03 00 B1 03 BA 03 C3 03
+R 00 00 00 00
+T C1 03 00
+R 00 00 00 00
+T C1 03 00 02 02 02 02 02 02 02 02 02
+R 00 00 00 00
+T CA 03 00
+R 00 00 00 00
+T CA 03 00 02 02 06 06 02 06 06 02 02
+R 00 00 00 00
+T D3 03 00
+R 00 00 00 00
+T D3 03 00 02 03 04 05 02 03 04 05 02
+R 00 00 00 00
+T DC 03 00
+R 00 00 00 00
+T DC 03 00 02 05 04 03 02 05 04 03 02
+R 00 00 00 00
+T E5 03 00
+R 00 00 00 00
+T E5 03 00 02 02 05 09 05 09 05 02 02
+R 00 00 00 00
+T EE 03 00
+R 00 00 00 00
+T EE 03 00 02 05 04 08 04 08 04 03 02
+R 00 00 00 00
+T F7 03 00
+R 00 00 00 00
+T F7 03 00 02 02 02 03 03 03 04 04 05
 R 00 00 00 00
 T 00 00 00
 R 00 00 07 00

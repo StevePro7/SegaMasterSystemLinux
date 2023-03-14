@@ -10,6 +10,7 @@ S:G$global_game_object$0_0$0({7}STtag_struct_game_object:S),E,0,0
 S:G$level_platforms$0_0$0({0}DA0d,SC:U),E,0,0
 S:G$global_level_object$0_0$0({9}STtag_struct_level_object:S),E,0,0
 S:G$jump_array_ptr$0_0$0({0}DA0d,DG,SI:S),E,0,0
+S:G$flip_array_ptr$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$global_player_object$0_0$0({18}STtag_struct_player_object:S),E,0,0
 S:G$engine_collision_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_collision_manager_player$0_0$0({2}DF,SC:S),C,0,0

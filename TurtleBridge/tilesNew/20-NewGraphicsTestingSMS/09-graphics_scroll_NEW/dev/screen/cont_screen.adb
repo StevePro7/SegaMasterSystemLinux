@@ -9,6 +9,7 @@ T:Fcont_screen$tag_struct_player_object[({0}S:S$initX$0_0$0({1}SC:U),Z,0,0)({1}S
 T:Fcont_screen$tag_struct_game_object[({0}S:S$game_difficulty$0_0$0({1}SC:U),Z,0,0)({1}S:S$game_world$0_0$0({1}SC:U),Z,0,0)({2}S:S$game_round$0_0$0({1}SC:U),Z,0,0)({3}S:S$game_level$0_0$0({1}SC:U),Z,0,0)({4}S:S$game_point$0_0$0({1}SC:U),Z,0,0)({5}S:S$game_cloud$0_0$0({1}SC:U),Z,0,0)({6}S:S$game_isgod$0_0$0({1}SC:U),Z,0,0)]
 S:G$global_game_object$0_0$0({7}STtag_struct_game_object:S),E,0,0
 S:G$jump_array_ptr$0_0$0({0}DA0d,DG,SI:S),E,0,0
+S:G$flip_array_ptr$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$global_player_object$0_0$0({18}STtag_struct_player_object:S),E,0,0
 S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0

@@ -14,6 +14,7 @@ S:G$command_frame_index$0_0$0({0}DA0d,SI:U),E,0,0
 S:G$command_this_command$0_0$0({0}DA0d,SC:U),E,0,0
 S:G$global_command_object$0_0$0({4}STtag_struct_command_object:S),E,0,0
 S:G$jump_array_ptr$0_0$0({0}DA0d,DG,SI:S),E,0,0
+S:G$flip_array_ptr$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$global_player_object$0_0$0({18}STtag_struct_player_object:S),E,0,0
 S:G$global_scroll_object$0_0$0({18}STtag_struct_scroll_object:S),E,0,0
 S:G$global_storage_object$0_0$0({209}STtag_struct_storage_object:S),E,0,0

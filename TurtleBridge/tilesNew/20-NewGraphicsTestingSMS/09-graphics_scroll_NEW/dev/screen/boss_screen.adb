@@ -7,6 +7,7 @@ T:Fboss_screen$tag_struct_player_object[({0}S:S$initX$0_0$0({1}SC:U),Z,0,0)({1}S
 T:Fboss_screen$tag_struct_audio_object[({0}S:S$music_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$music_bank$0_0$0({1}SC:U),Z,0,0)({3}S:S$sound_data$0_0$0({2}DG,SC:U),Z,0,0)({5}S:S$sound_bank$0_0$0({1}SC:U),Z,0,0)]
 S:G$global_audio_object$0_0$0({6}STtag_struct_audio_object:S),E,0,0
 S:G$jump_array_ptr$0_0$0({0}DA0d,DG,SI:S),E,0,0
+S:G$flip_array_ptr$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$global_player_object$0_0$0({18}STtag_struct_player_object:S),E,0,0
 S:G$song_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$locale_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0

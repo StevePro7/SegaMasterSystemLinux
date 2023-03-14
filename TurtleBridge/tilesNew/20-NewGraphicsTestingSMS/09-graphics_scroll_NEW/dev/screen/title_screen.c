@@ -13,7 +13,13 @@
 #include "../banks/fixedbank.h"
 #include "../banks/bank3.h"
 
+#define MAX_SPOTS	9
+#define FLIP_INDEX	6		// TODO delete
+
 static void draw_sprite( unsigned char idx, unsigned char mode, unsigned char x, unsigned char y );
+
+static unsigned char flip_posX[ MAX_SPOTS ] = { 8, 30, 52, 74, 96, 118, 140, 162, 184 };
+static unsigned char flip_posY[ MAX_SPOTS ] = { 128, 112, 104, 100, 96, 100, 104, 112, 128 };
 
 void screen_title_screen_load()
 {

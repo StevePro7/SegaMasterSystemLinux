@@ -23,14 +23,6 @@ const unsigned char player_flying_deltaX[] = { 1, 1, 1, 1, 2 };
 const unsigned char player_lives_headX[] = { 220, 196, 172 };
 
 //signed int
-const signed int *jump_array_ptr[] =
-{
-	jump_array_00,
-	jump_array_01,
-	jump_array_02,
-	jump_array_03,
-	jump_array_04,
-};
 
 
 const unsigned char jump_array_len[] = { 17, 54, 82, 134, 178 };
@@ -66,6 +58,30 @@ const signed int jump_array_04[] =
 	-640,-631,-622,-613,-603,-594,-585,-576,-567,-558,-549,-540,-531,-521,-512,-503,-494,-485,-476,-467,-458,-449,-440,-430,-421,-412,-403,-394,-385,-376,-367,-358,-348,-339,-330,-321,-312,-303,-294,-285,-276,-266,-257,-248,-239,-230,-221,-212,-203,-194,-185,-175,-166,-157,-148,-139,-130,-121,-112,-103,-93,-84,-75,-66,-57,-48,-39,-30,-21,-11,-2,7,16,25,34,43,52,61,70,80,89,98,107,116,125,134,143,152,162,171,180,189,198,207,216,225,234,243,253,262,271,280,289,298,307,316,325,335,344,353,362,371,380,389,398,407,417,426,435,444,453,462,471,480,489,498,508,517,526,535,544,553,562,571,580,590,599,608,617,626,635,644,653,662,672,681,690,699,708,717,726,735,744,753,763,772,781,790,799,808,817,826,835,845,854,863,872,881,890,899,908,917,927,936,945,954,963
 };
 
+
+// Total screen jumps.
+const signed int *jump_array_ptr[] =
+{
+	jump_array_00,
+	jump_array_01,
+	jump_array_02,
+	jump_array_03,
+	jump_array_04,
+};
+
+
+
+// Title screen flips.
+const unsigned char flip_array_00[] = { 2, 2, 2, 2, 2, 2, 2, 2, 2 };
+const unsigned char flip_array_01[] = { 2, 2, 6, 6, 2, 6, 6, 2, 2 };
+const unsigned char flip_array_02[] = { 2, 3, 4, 5, 2, 3, 4, 5, 2 };
+const unsigned char flip_array_03[] = { 2, 5, 4, 3, 2, 5, 4, 3, 2 };
+const unsigned char flip_array_04[] = { 2, 2, 5, 9, 5, 9, 5, 2, 2 };
+const unsigned char flip_array_05[] = { 2, 5, 4, 8, 4, 8, 4, 3, 2 };
+
+// Crazy experiments.
+const unsigned char flip_array_06[] = { 2, 2, 2, 3, 3, 3, 4, 4, 5 };
+//const unsigned char flip_array_02[] = { 2, 2, 6, 6, 2, 2, 6, 6, 2 };
 
 
 // TODO delete / archive
