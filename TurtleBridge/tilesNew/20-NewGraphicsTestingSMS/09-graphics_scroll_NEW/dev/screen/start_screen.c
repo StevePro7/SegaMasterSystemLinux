@@ -52,7 +52,7 @@ void screen_start_screen_load()
 	engine_graphics_manager_sea();
 	//devkit_SMS_displayOn();
 
-	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_NORMAL() );
+	
 
 	// TODO for testing
 	engine_level_manager_init( go->game_level );
@@ -65,7 +65,11 @@ void screen_start_screen_load()
 		engine_scroll_manager_para_load( 0, 0 );
 	}
 
-	//engine_
+	engine_font_manager_text( "JUMPS", 27, 3 );
+	engine_font_manager_text( "   UP", 27, 4 );
+	engine_font_manager_text( "RIGHT", 27, 5 );
+	engine_font_manager_text( "FIRE1", 27, 6 );
+
 	engine_scroll_manager_para_update( 0 );
 	devkit_SMS_displayOn();
 

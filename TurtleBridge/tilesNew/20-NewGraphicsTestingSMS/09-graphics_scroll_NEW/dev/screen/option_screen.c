@@ -8,6 +8,7 @@
 #include "../engine/player_manager.h"
 #include "../engine/scroll_manager.h"
 #include "../engine/storage_manager.h"
+#include "../devkit/_sms_manager.h"
 
 static unsigned char cursorY;
 static void printCmds();
@@ -15,8 +16,12 @@ static void printCmds();
 void screen_option_screen_load()
 {
 	unsigned char idx;
+
+	devkit_SMS_displayOff();
+	engine_graphics_manager_screen( CLEAR_TILE_BLUE );
+
+	engine_scroll_manager_load( 0, 0, 0 );
 	engine_scroll_manager_update( 0 );
-	engine_graphics_manager_common();
 	for( idx = 0; idx < SCREEN_HIGH; idx++ )
 	{
 		engine_font_manager_text( "                                ", 0, idx );
@@ -27,6 +32,7 @@ void screen_option_screen_load()
 	engine_font_manager_text( "  PLAYBACK!!!", 10, 1 );
 	cursorY = 0;
 	engine_font_manager_char( '>', 10, cursorY );
+	devkit_SMS_displayOn();
 }
 
 void screen_option_screen_update( unsigned char *screen_type )

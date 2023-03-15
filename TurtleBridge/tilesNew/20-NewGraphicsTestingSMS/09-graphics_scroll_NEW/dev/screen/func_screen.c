@@ -49,11 +49,12 @@ void screen_func_screen_load()
 
 	// load_screen
 	devkit_SMS_displayOff();
-	engine_asm_manager_clear_VRAM();
-	engine_content_manager_bggame();
-	engine_content_manager_sprite();
-
-	engine_graphics_manager_level( cloud_formation );
+	engine_graphics_manager_screen( CLEAR_TILE_BLUE );
+	//engine_asm_manager_clear_VRAM();
+	//engine_content_manager_bggame();
+	//engine_content_manager_sprite();
+	//engine_graphics_manager_level( cloud_formation );
+	
 
 	// Work in terms of screens.
 	checkScreen = lo->check_width * go->game_point;
@@ -67,6 +68,8 @@ void screen_func_screen_load()
 	player_loadY = level_platforms[ po->lookX ];
 	engine_player_manager_loadY( player_loadY );
 	//engine_command_manager_init();		TODO delete - dup
+
+	engine_graphics_manager_sea();
 	engine_player_manager_draw();
 	devkit_SMS_displayOn();
 
@@ -79,11 +82,12 @@ void screen_func_screen_load()
 	engine_font_manager_text( "RECORD SCREEN", 10, 2 );
 
 	engine_scroll_manager_update( 0 );
+
 	complete = false;
 	deltaY = 0;
 
-	//engine_font_manager_text( "CHECK SCREEN FUNC", 10, 0 );
-	//engine_font_manager_data( checkScreen, 10, 1 );
+	engine_font_manager_text( "CHECK SCREEN FUNC", 10, 0 );
+	engine_font_manager_data( checkScreen, 10, 1 );
 }
 
 void screen_func_screen_update( unsigned char *screen_type )

@@ -47,10 +47,10 @@ void screen_title_screen_update( unsigned char *screen_type )
 		draw_sprite( 4, sprite_mode_zoomed, 176, 128 );
 	}
 
-	input = engine_input_manager_move( input_type_fire1 );
+	input = engine_input_manager_hold( input_type_fire1 );
 	if( input )
 	{
-		*screen_type = screen_type_start;
+		*screen_type = screen_type_begin;
 		return;
 	}
 

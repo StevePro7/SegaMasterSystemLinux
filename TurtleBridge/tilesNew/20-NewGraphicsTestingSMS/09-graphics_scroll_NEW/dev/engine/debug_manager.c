@@ -19,7 +19,7 @@ void engine_debug_manager_initgame()
 //	go->game_difficulty = difficulty_type_harder;
 	//go->game_difficulty = difficulty_type_insane;
 
-	go->game_level = 6;
+	go->game_level = 1;
 
 	go->game_world = 1;	// TODO - currently not aligned with game_level but used for testing...
 	go->game_point = 1;
@@ -124,11 +124,11 @@ void engine_debug_manager_scrollout()
 }
 
 
-void engine_debug_manager_initcontent()
-{
-	devkit_SMS_displayOff();
-	engine_asm_manager_clear_VRAM();
-	engine_content_manager_bggame();
-	engine_content_manager_sprite();
-	devkit_SMS_displayOn();
-}
+//void engine_debug_manager_initcontent()
+//{
+//	devkit_SMS_displayOff();
+//	engine_asm_manager_clear_VRAM();
+//	engine_content_manager_bggame();
+//	engine_content_manager_sprite();
+//	devkit_SMS_displayOn();
+//}

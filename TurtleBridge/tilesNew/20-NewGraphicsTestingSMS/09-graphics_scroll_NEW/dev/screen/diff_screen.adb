@@ -8,7 +8,7 @@ F:G$screen_diff_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Ldiff_screen.screen_diff_screen_update$screen_type$1_0$131({2}DG,SC:U),B,1,4
 S:Ldiff_screen.screen_diff_screen_update$po$1_0$132({2}DG,STtag_struct_player_object:S),R,0,0,[]
 S:Ldiff_screen.screen_diff_screen_update$input1$1_0$132({1}SC:U),R,0,0,[l]
-S:Ldiff_screen.screen_diff_screen_update$input2$1_0$132({1}SC:U),R,0,0,[l]
+S:Ldiff_screen.screen_diff_screen_update$input2$1_0$132({1}SC:U),R,0,0,[a]
 S:Ldiff_screen.screen_diff_screen_update$updateDiff$1_0$132({1}:S),R,0,0,[c]
 F:Fdiff_screen$setupPlayer$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Ldiff_screen.setupPlayer$po$1_0$142({2}DG,STtag_struct_player_object:S),R,0,0,[]
@@ -39,7 +39,6 @@ S:G$engine_content_manager_sprite$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_debug_manager_initgame$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_debug_manager_printout$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_debug_manager_scrollout$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_debug_manager_initcontent$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0_0$0({2}DF,SV:S),C,0,0

@@ -35,14 +35,14 @@ void screen_diff_screen_load()
 	// TODO delete this.
 	//engine_debug_manager_initgame();
 
-	engine_graphics_manager_common();
-	//devkit_SMS_displayOff();
+	//engine_graphics_manager_common();
+	devkit_SMS_displayOff();
+	engine_graphics_manager_screen( CLEAR_TILE_BLUE );
 	//engine_asm_manager_clear_VRAM();
 	//engine_content_manager_bggame();
 	//engine_content_manager_sprite();
-	//engine_graphics_manager_title();
-	//engine_graphics_manager_sea();
-	//devkit_SMS_displayOn();
+	engine_graphics_manager_title();
+	engine_graphics_manager_sea();
 
 
 	//	TODO - refactor and still work??
@@ -64,6 +64,7 @@ void screen_diff_screen_load()
 
 	setupPlayer();
 	printCursor();
+	devkit_SMS_displayOn();
 //	printTexts();
 	engine_player_manager_draw();
 }
@@ -74,9 +75,9 @@ void screen_diff_screen_update( unsigned char *screen_type )
 	unsigned char input1, input2;
 	bool updateDiff = false;
 
-	input1 = engine_input_manager_hold( input_type_up );
+	//input1 = engine_input_manager_hold( input_type_up );
 	input2 = engine_input_manager_hold( input_type_left );
-	if( input1 || input2 )
+	if( /*input1 ||*/ input2 )
 	{
 		updateDiff = true;
 		if( 0 == game_difficulty )
@@ -90,8 +91,8 @@ void screen_diff_screen_update( unsigned char *screen_type )
 	}
 
 	input1 = engine_input_manager_hold( input_type_right );
-	input2 = engine_input_manager_hold( input_type_down );
-	if( input1 || input2 )
+	//input2 = engine_input_manager_hold( input_type_down );
+	if( input1 /*|| input2*/ )
 	{
 		updateDiff = true;
 		if( ( MAX_DIFFICULTY - 1 ) == game_difficulty )

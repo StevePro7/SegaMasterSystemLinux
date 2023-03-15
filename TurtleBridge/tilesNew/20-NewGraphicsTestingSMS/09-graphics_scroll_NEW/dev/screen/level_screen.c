@@ -49,7 +49,11 @@ void screen_level_screen_load()
 	numb_screen = 0;
 	cursorIdx = 1;
 
-	engine_graphics_manager_common();
+	//engine_graphics_manager_common();
+	devkit_SMS_displayOff();
+	engine_graphics_manager_screen( CLEAR_TILE_BLUE );
+	engine_graphics_manager_title();
+	engine_graphics_manager_sea();
 
 	engine_level_manager_init( game_level );
 	//check_width = lo->level_check / SCREEN_WIDE;
@@ -77,6 +81,8 @@ void screen_level_screen_load()
 	player_loadY = level_platforms[ po->lookX ];
 	engine_player_manager_loadY( player_loadY );
 	engine_player_manager_draw();
+
+	devkit_SMS_displayOn();
 }
 
 void screen_level_screen_update( unsigned char *screen_type )

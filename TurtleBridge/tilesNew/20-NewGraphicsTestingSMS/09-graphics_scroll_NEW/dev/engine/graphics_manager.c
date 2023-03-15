@@ -23,6 +23,7 @@ void engine_graphics_manager_common()
 	engine_content_manager_bggame();
 	engine_content_manager_sprite();
 	engine_graphics_manager_screen( CLEAR_TILE_BLACK );
+	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_NORMAL() );
 	devkit_SMS_displayOn();
 }
 
@@ -39,6 +40,7 @@ void engine_graphics_manager_screen( unsigned int tile )
 	}
 }
 
+// TODO delete this function and call sea() direct
 void engine_graphics_manager_level( unsigned char cloud_formation )
 {
 	cloud_formation += 0;

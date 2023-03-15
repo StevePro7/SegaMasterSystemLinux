@@ -5,8 +5,7 @@ S:Ltest_screen.screen_test_screen_load$lo$1_0$137({2}DG,STtag_struct_level_objec
 S:Ltest_screen.screen_test_screen_load$go$1_0$137({2}DG,STtag_struct_game_object:S),R,0,0,[]
 S:Ltest_screen.screen_test_screen_load$player_loadY$1_0$137({1}SC:U),R,0,0,[a]
 S:Ltest_screen.screen_test_screen_load$checkScreen$1_0$137({1}SC:U),R,0,0,[c]
-S:Ltest_screen.screen_test_screen_load$cloud_formation$1_0$137({1}SC:U),B,1,-1
-S:Ltest_screen.screen_test_screen_load$sloc0$0_1$0({1}SC:U),B,1,-1
+S:Ltest_screen.screen_test_screen_load$cloud_formation$1_0$137({1}SC:U),R,0,0,[]
 F:G$screen_test_screen_update$0_0$0({2}DF,SV:S),Z,0,-11,0,0,0
 S:Ltest_screen.screen_test_screen_update$screen_type$1_0$139({2}DG,SC:U),B,1,4
 S:Ltest_screen.screen_test_screen_update$fo$1_0$140({2}DG,STtag_struct_frame_object:S),R,0,0,[]
@@ -78,7 +77,6 @@ S:G$engine_command_manager_draw$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_debug_manager_initgame$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_debug_manager_printout$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_debug_manager_scrollout$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_debug_manager_initcontent$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0_0$0({2}DF,SV:S),C,0,0
