@@ -9,21 +9,20 @@ namespace LevelScreen
 	/// </summary>
 	public class AnGame : Microsoft.Xna.Framework.Game
 	{
+		private int[] values = { 1, 3 };
+
+		private const int size = 2;             // Half
+		//private const int size = 4;             // Quarter
+
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
 
 		AssetManager assetManager;
 		ConfigManager configManager;
-		//InputManager inputManager;
-		PlaneManager planeManager;
-		FunctionManager functionManager;
-		LevelManager levelManager;
-		
-		//ScreenManager screenManager;
-		//SelectorManager selectorManager;
 
-		private int width;
-		private int height;
+		RenderTarget2D renderTarget;
+		int wide, high;
+		bool save;
 
 		public AnGame()
 		{
@@ -34,19 +33,6 @@ namespace LevelScreen
 
 			assetManager = new AssetManager();
 			configManager = new ConfigManager();
-			//inputManager = new InputManager(configManager);
-			planeManager = new PlaneManager(configManager);
-			functionManager = new FunctionManager();
-
-			//selectorManager = new SelectorManager(configManager, inputManager);
-			
-			levelManager = new LevelManager(assetManager, configManager, planeManager, functionManager);
-
-			//screenManager = new ScreenManager(
-			//	boardManager,
-			//	inputManager,
-			//	selectorManager
-			//	);
 		}
 
 		/// <summary>
@@ -57,25 +43,14 @@ namespace LevelScreen
 		/// </summary>
 		protected override void Initialize()
 		{
-			//save = false;
-			//if (null != ConfigurationManager.AppSettings["save"])
-			//{
-			//	save = Convert.ToBoolean(ConfigurationManager.AppSettings["save"]);
-			//}
+			save = false;
 			//save = true;
 			IsMouseVisible = true;
 
-			assetManager.Initialize();
 			configManager.Initialize();
-			planeManager.Initialize();
-			levelManager.Initialize();
-			//inputManager.Initialize();
-			//mappingManager.Initialize();
-			//selectorManager.Initialize();
-
-			graphics.PreferredBackBufferWidth = configManager.ScreenWide;
-			graphics.PreferredBackBufferHeight = configManager.ScreenHigh;
-			graphics.ApplyChanges();
+//			graphics.PreferredBackBufferWidth = configManager.ScreenWide;
+			//graphics.PreferredBackBufferHeight = configManager.ScreenHigh;
+			//graphics.ApplyChanges();
 
 			base.Initialize();
 		}
@@ -89,15 +64,23 @@ namespace LevelScreen
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 
-			assetManager.LoadContent(Content);
-			//mappingManager.LoadContent();
-			//screenManager.LoadContent(graphics, spriteBatch);
+			assetManager.LoadContent(Content, configManager.Level, values);
 
+			wide = 0;
+			high = assetManager.Assets[0].Height / size;
+			foreach (var asset in assetManager.Assets)
+			{
+				wide += asset.Width;
+			}
+
+			wide /= size;
+
+			graphics.PreferredBackBufferWidth = wide;
+			graphics.PreferredBackBufferHeight = high;
+			graphics.ApplyChanges();
 
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
-			width = pp.BackBufferWidth;
-			height = pp.BackBufferHeight;
-			//renderTarget = new RenderTarget2D(GraphicsDevice, width, height, 1, GraphicsDevice.DisplayMode.Format);
+			renderTarget = new RenderTarget2D(GraphicsDevice, wide, high, false, SurfaceFormat.Color, DepthFormat.Depth24);
 		}
 
 		/// <summary>
@@ -132,14 +115,14 @@ namespace LevelScreen
 		/// <param name="gameTime">Provides a snapshot of timing values.</param>
 		protected override void Draw(GameTime gameTime)
 		{
-			//if (save)
-			//{
+			if (save)
+			{
 			//	//GraphicsDevice.SetRenderTarget(0, renderTarget);
 			//	GraphicsDevice.SetRenderTarget(renderTarget);
 			//	GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.CornflowerBlue, 1, 0);
 
-			//	Draw();
-			//	base.Draw(gameTime);
+				Draw();
+				base.Draw(gameTime);
 
 			//	//GraphicsDevice.SetRenderTarget(0, null);
 			//	GraphicsDevice.SetRenderTarget(null);
@@ -150,9 +133,9 @@ namespace LevelScreen
 			//	//resolvedTexture.SaveAsJpeg(stream, width, height);
 			//	resolvedTexture.SaveAsPng(stream, width, height);
 		
-			//	Exit();
-			//}
-			//else
+				Exit();
+			}
+			else
 			{
 				Draw();
 				base.Draw(gameTime);
@@ -161,8 +144,27 @@ namespace LevelScreen
 
 		private void Draw()
 		{
-			levelManager.Draw(graphics, spriteBatch);
-			//screenManager.Draw();
+			Texture2D asset = null;
+			int strt = 0;
+			
+			graphics.GraphicsDevice.Clear(Color.CornflowerBlue);
+			spriteBatch.Begin();
+
+			for (int idx = 0; idx < assetManager.Assets.Length; idx++)
+			{
+				asset = assetManager.Assets[idx];
+				int leng = asset.Width / size;
+				Vector2 pos = new Vector2(strt, 0);
+
+				if (0 == idx)
+				{
+					spriteBatch.Draw(asset, pos, null, Color.White, 0.0f, Vector2.Zero, 1 / size, SpriteEffects.None, 1.0f);
+				}
+				
+				strt += leng;
+			}
+			
+			spriteBatch.End();
 		}
 
 	}
