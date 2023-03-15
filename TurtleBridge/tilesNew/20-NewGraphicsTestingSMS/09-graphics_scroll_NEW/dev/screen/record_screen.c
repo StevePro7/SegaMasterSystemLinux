@@ -67,10 +67,12 @@ void screen_record_screen_load()
 	//engine_player_manager_loadX( go->game_point );	// TODO - remove as this is wrong!!
 	player_loadY = level_platforms[ po->lookX ];
 	engine_player_manager_loadY( player_loadY );
+	engine_player_manager_draw();
 	//engine_command_manager_init();		TODO delete - dup
 
 	engine_graphics_manager_sea();
-	engine_player_manager_draw();
+	engine_graphics_manager_clouds( go->game_cloud );
+	engine_level_manager_draw_screen( checkScreen );		// Weird - must draw this twice otherwise clouds + sea don't draw??
 	devkit_SMS_displayOn();
 
 
