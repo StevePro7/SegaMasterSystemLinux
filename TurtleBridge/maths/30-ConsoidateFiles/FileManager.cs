@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace FunctionMgr
+namespace ConsoidateFiles
 {
 	public class FileManager
 	{
@@ -11,6 +11,14 @@ namespace FunctionMgr
 		public FileManager()
 		{
 			output = new List<string>();
+		}
+
+		public void Initialize()
+		{
+			if (!Directory.Exists("output"))
+			{
+				Directory.CreateDirectory("output");
+			}
 		}
 
 		public void Process(string directory)
