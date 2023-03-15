@@ -31,20 +31,21 @@ void screen_load_screen_load()
 	unsigned char checkScreen;
 	//unsigned int game_screen;
 
-	//devkit_SMS_displayOff();
-	engine_asm_manager_clear_VRAM();
-	engine_content_manager_bggame();
-	engine_content_manager_sprite();
+	devkit_SMS_displayOff();
+	engine_graphics_manager_screen( CLEAR_TILE_BLUE );
+	//engine_asm_manager_clear_VRAM();
+	//engine_content_manager_bggame();
+	//engine_content_manager_sprite();
 
 	//engine_graphics_manager_level( cloud_formation );
 	engine_graphics_manager_clouds( go->game_cloud );
+	
+
 	engine_graphics_manager_sea();
-
-
 	// Work in terms of screens.
 	checkScreen = lo->check_width * go->game_point;
 	engine_scroll_manager_load( checkScreen, lo->level_check, lo->level_size );
-	engine_level_manager_draw_screen( checkScreen );
+	//engine_level_manager_draw_screen( checkScreen );
 	// TODO - can I delete the int representation i.e game_screen?
 	//game_screen = lo->check_width * go->game_point;
 	//engine_level_manager_draw_screen( game_screen );
@@ -57,6 +58,9 @@ void screen_load_screen_load()
 	player_loadY = level_platforms[ po->lookX ];
 	engine_player_manager_loadY( player_loadY );
 	engine_player_manager_draw();
+
+	
+	devkit_SMS_displayOn();
 
 	engine_command_manager_init();
 	//engine_command_manager_load();		// TODO remove

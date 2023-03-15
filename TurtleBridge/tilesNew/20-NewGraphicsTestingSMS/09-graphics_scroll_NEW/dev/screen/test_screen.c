@@ -33,7 +33,7 @@ void screen_test_screen_load()
 	complete = false;
 	deltaY = 0;
 
-	engine_font_manager_text( "TEST SCREEN", 10, 2 );
+	engine_font_manager_text( "PLAYING SCREEN", 10, 2 );
 }
 
 void screen_test_screen_update( unsigned char *screen_type )
@@ -68,8 +68,8 @@ void screen_test_screen_update( unsigned char *screen_type )
 	}
 	input1 = engine_input_manager_hold( input_type_left );
 	input2 = engine_input_manager_move( input_type_right );
-	input1 = 1;		// TODO delete
-//	if( input1 || input2 )
+//	input1 = 1;		// TODO delete
+	if( input1 || input2 )
 	{
 		if( 2 == fo->frame_count )
 		{
