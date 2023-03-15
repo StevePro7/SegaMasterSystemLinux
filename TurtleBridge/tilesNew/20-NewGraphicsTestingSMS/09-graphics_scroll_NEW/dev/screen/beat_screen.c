@@ -22,15 +22,9 @@ void screen_beat_screen_load()
 	unsigned char value;
 	value = 1;
 	
-	//engine_graphics_manager_common();
-	// TODO - remove this dup.
 	devkit_SMS_displayOff();
-	engine_graphics_manager_screen( 0 );
-	//engine_graphics_manager_screen();
-	//engine_asm_manager_clear_VRAM();
-	//engine_content_manager_bggame();
-	//engine_content_manager_sprite();
-	////engine_graphics_manager_title();
+	engine_graphics_manager_screen( CLEAR_TILE_BLUE );
+	// Draw screen specific graphics.
 	engine_graphics_manager_sea();
 	engine_font_manager_text( "BEAT SCREEN", 21, 0 );
 	engine_font_manager_text( "BEAT SCREEN", value, 2 );
@@ -48,7 +42,6 @@ void screen_beat_screen_update( unsigned char *screen_type )
 	input = engine_input_manager_hold( input_type_right );
 	if( input )
 	{
-		
 		//value = engine_random_manager_next( SPRITE_TILES );
 		//engine_font_manager_data( value, 10, 10 );
 	}

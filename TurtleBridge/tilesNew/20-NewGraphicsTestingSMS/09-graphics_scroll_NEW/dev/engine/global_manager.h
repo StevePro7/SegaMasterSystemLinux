@@ -34,6 +34,10 @@
 #define TILE_IMAGE_SCREEN	144
 #define SHARE_TEXT_ROW		3
 
+#define CLEAR_TILE_BLACK	59
+#define CLEAR_TILE_BLUE		0
+
+
 // Delay
 #define NORMAL_DELAY		50
 
