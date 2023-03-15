@@ -33,7 +33,7 @@ namespace ScreenShotTest
 		public void Initialize()
 		{
 			//if (configManager.LoadTiles)
-			Initialize1();
+			//Initialize1();
 			//Initialize2();
 		}
 
@@ -82,6 +82,28 @@ namespace ScreenShotTest
 
 		public void Initialize2()
 		{
+			string path = @"adriana.txt";
+			var delim = new char[] { ',' };
+
+			lines.Clear();
+			ResetTiles();
+			var texts = System.IO.File.ReadAllLines(path);
+			int rowCount = texts.Length;
+			int idx = 0;
+			for (int row = 0; row < rowCount; row++)
+			{
+				var line = texts[row];
+				if (line.StartsWith("//"))
+				{
+					continue;
+				}
+
+				var objs = line.Split(delim);
+				int valu = Convert.ToInt32(objs[0]);
+				Tiles[idx] = valu;
+				Tiles[idx] = 7;
+				idx++;
+			}
 		}
 
 		//public void InitializeX()
