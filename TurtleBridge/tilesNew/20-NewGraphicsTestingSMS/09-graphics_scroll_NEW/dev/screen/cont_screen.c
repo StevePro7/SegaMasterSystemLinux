@@ -17,7 +17,7 @@ void screen_cont_screen_load()
 	//engine_frame_manager_load();
 	//engine_frame_manager_draw();
 	//devkit_SMS_setBGScrollX( 0 );
-	engine_graphics_manager_screen();
+	//engine_graphics_manager_screen();
 	engine_font_manager_text( "CONT SCREEN", 21, 2 );
 	engine_player_manager_draw();
 	//engine_debug_manager_printout();

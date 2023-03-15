@@ -3,10 +3,10 @@ XL3
 H 9 areas 25 global symbols
 M begin_screen
 O -mz80
-S _devkit_SMS_displayOn Ref000000
 S _engine_random_manager_next Ref000000
 S .__.ABS. Def000000
 S _engine_debug_manager_initgame Ref000000
+S _engine_graphics_manager_common Ref000000
 S _engine_game_manager_set_cloud_form Ref000000
 A _CODE size 1C flags 0 addr 0
 S A$begin_screen$111 Def00001B
@@ -21,22 +21,22 @@ S A$begin_screen$73 Def00000D
 S A$begin_screen$64 Def000003
 S A$begin_screen$74 Def00000E
 S A$begin_screen$65 Def000006
-S C$begin_screen.c$20$1_0$95 Def00000C
 S A$begin_screen$75 Def000011
 S A$begin_screen$66 Def000007
-S C$begin_screen.c$13$0_0$95 Def000000
+S C$begin_screen.c$20$1_0$96 Def00000C
 S A$begin_screen$67 Def00000A
-S C$begin_screen.c$22$1_0$95 Def000012
+S C$begin_screen.c$13$0_0$96 Def000000
 S A$begin_screen$86 Def000012
 S A$begin_screen$68 Def00000B
-S C$begin_screen.c$33$1_0$95 Def000012
-S C$begin_screen.c$41$1_0$97 Def000015
+S C$begin_screen.c$34$1_0$96 Def000012
+S C$begin_screen.c$25$1_0$96 Def000012
 S A$begin_screen$99 Def000015
-S C$begin_screen.c$18$1_0$95 Def000000
-S C$begin_screen.c$35$1_0$97 Def000015
-S C$begin_screen.c$19$1_0$95 Def000003
+S C$begin_screen.c$18$1_0$96 Def000000
+S C$begin_screen.c$19$1_0$96 Def000003
 S _screen_begin_screen_load Def000000
-S C$begin_screen.c$48$1_0$97 Def00001B
+S C$begin_screen.c$45$1_0$98 Def000015
+S C$begin_screen.c$36$1_0$98 Def000015
+S C$begin_screen.c$49$1_0$98 Def00001B
 S XG$screen_begin_screen_load$0$0 Def000012
 S G$screen_begin_screen_update$0$0 Def000015
 S A$begin_screen$100 Def000016
@@ -52,10 +52,10 @@ A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
 T 00 00 00 CD 00 00 21 00 01 E5 CD 00 00 F1 7D F5
-R 00 00 00 00 02 04 03 00 02 0B 01 00
+R 00 00 00 00 02 04 02 00 02 0B 00 00
 T 0D 00 00 33 CD 00 00 33 C3 00 00
-R 00 00 00 00 02 05 04 00 02 09 00 00
+R 00 00 00 00 02 05 04 00 02 09 03 00
 T 15 00 00
 R 00 00 00 00
-T 15 00 00 C1 E1 E5 C5 36 07 C9
+T 15 00 00 C1 E1 E5 C5 36 12 C9
 R 00 00 00 00

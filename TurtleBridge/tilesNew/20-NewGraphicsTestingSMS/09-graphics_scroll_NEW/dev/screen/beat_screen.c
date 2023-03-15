@@ -20,18 +20,23 @@ void screen_beat_screen_load()
 {
 	struct_scroll_object *so = &global_scroll_object;
 	unsigned char value;
+	value = 1;
+	
 	//engine_graphics_manager_common();
 	// TODO - remove this dup.
-	//devkit_SMS_displayOff();
+	devkit_SMS_displayOff();
+	engine_graphics_manager_screen( 0 );
+	//engine_graphics_manager_screen();
 	//engine_asm_manager_clear_VRAM();
 	//engine_content_manager_bggame();
 	//engine_content_manager_sprite();
 	////engine_graphics_manager_title();
-	//engine_graphics_manager_sea();
-	//devkit_SMS_displayOn();
-	value = so->scrollLeftX >> 3;
+	engine_graphics_manager_sea();
 	engine_font_manager_text( "BEAT SCREEN", 21, 0 );
 	engine_font_manager_text( "BEAT SCREEN", value, 2 );
+	devkit_SMS_displayOn();
+
+	//value = so->scrollLeftX >> 0;
 }
 
 void screen_beat_screen_update( unsigned char *screen_type )

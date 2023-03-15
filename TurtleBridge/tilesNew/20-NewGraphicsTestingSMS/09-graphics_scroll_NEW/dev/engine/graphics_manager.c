@@ -22,12 +22,13 @@ void engine_graphics_manager_common()
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_bggame();
 	engine_content_manager_sprite();
-	engine_graphics_manager_title();
-	engine_graphics_manager_sea();
+	//engine_graphics_manager_title();
+	//engine_graphics_manager_sea();
+	engine_graphics_manager_screen( 59 );
 	devkit_SMS_displayOn();
 }
 
-void engine_graphics_manager_screen()
+void engine_graphics_manager_screen( unsigned int tile )
 {
 	unsigned int index;
 	unsigned int maxim;
@@ -36,9 +37,38 @@ void engine_graphics_manager_screen()
 	maxim = SCREEN_WIDE * SCREEN_HIGH;
 	for( index = 0; index < maxim; index++ )
 	{
-		devkit_SMS_setTile( 0 );
+		devkit_SMS_setTile( tile );
+		//devkit_SMS_setTile( 0 );
+		//devkit_SMS_setTile( 59 );
 	}
 }
+
+//void engine_graphics_manager_black()
+//{
+//	unsigned int index;
+//	unsigned int maxim;
+//
+//	devkit_SMS_setNextTileatXY( 0, 0 );
+//	maxim = SCREEN_WIDE * SCREEN_HIGH;
+//	for( index = 0; index < maxim; index++ )
+//	{
+//		//devkit_SMS_setTile( 0 );
+//		devkit_SMS_setTile( 59 );
+//	}
+//}
+//void engine_graphics_manager_blue()
+//{
+//	unsigned int index;
+//	unsigned int maxim;
+//
+//	devkit_SMS_setNextTileatXY( 0, 0 );
+//	maxim = SCREEN_WIDE * SCREEN_HIGH;
+//	for( index = 0; index < maxim; index++ )
+//	{
+//		devkit_SMS_setTile( 0 );
+//		//devkit_SMS_setTile( 59 );
+//	}
+//}
 
 void engine_graphics_manager_level( unsigned char cloud_formation )
 {

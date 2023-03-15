@@ -19,10 +19,11 @@ void screen_begin_screen_load()
 	cloud = engine_random_manager_next( SPRITE_TILES );
 	engine_game_manager_set_cloud_form( cloud );
 
-	devkit_SMS_displayOn();
+	//devkit_SMS_displayOn();
 	// TODO delete this.
 
-	//engine_graphics_manager_common();
+	engine_graphics_manager_common();
+
 	//devkit_SMS_displayOff();
 	//engine_asm_manager_clear_VRAM();
 	//engine_content_manager_bggame();
@@ -38,10 +39,10 @@ void screen_begin_screen_update( unsigned char *screen_type )
 	//*screen_type = screen_type_cont;
 	//*screen_type = screen_type_init;
 	//*screen_type = screen_type_intro;
-	*screen_type = screen_type_level;
+	//*screen_type = screen_type_level;
 	//*screen_type = screen_type_option;
 	//*screen_type = screen_type_diff;
-	//*screen_type = screen_type_beat;
+	*screen_type = screen_type_beat;
 	//*screen_type = screen_type_demo;
 	//*screen_type = screen_type_start;
 	//*screen_type = screen_type_begin;

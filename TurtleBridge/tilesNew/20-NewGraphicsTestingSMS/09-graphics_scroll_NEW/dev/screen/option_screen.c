@@ -25,7 +25,7 @@ void screen_option_screen_load()
 	engine_font_manager_text( "OPTION SCREEN", 10, 2 );
 	engine_font_manager_text( "  RECORD CMDS", 10, 0 );
 	engine_font_manager_text( "  PLAYBACK!!!", 10, 1 );
-	//cursorY = 0;
+	cursorY = 0;
 	engine_font_manager_char( '>', 10, cursorY );
 }
 
@@ -48,7 +48,7 @@ void screen_option_screen_update( unsigned char *screen_type )
 	{
 		if( 0 == cursorY )
 		{
-			cursorY = 1;
+			//cursorY = 1;
 		//	*screen_type = screen_type_intro;
 			*screen_type = screen_type_func;
 			return;

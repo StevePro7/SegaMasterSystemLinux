@@ -11,7 +11,7 @@ void screen_over_screen_load()
 //	unsigned char byte;
 //	unsigned char bit;
 //	unsigned char res;
-	engine_graphics_manager_screen();
+	//engine_graphics_manager_screen();
 	engine_font_manager_text( "OVER SCREEN!!", 10, 3 );
 
 	//byte = 0b00000100;

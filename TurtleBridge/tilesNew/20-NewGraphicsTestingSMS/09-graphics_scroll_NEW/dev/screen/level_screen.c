@@ -47,7 +47,7 @@ void screen_level_screen_load()
 	game_point = go->game_point;
 	game_screen = 0;
 	numb_screen = 0;
-	cursorIdx = 2;
+	cursorIdx = 1;
 
 	engine_graphics_manager_common();
 
