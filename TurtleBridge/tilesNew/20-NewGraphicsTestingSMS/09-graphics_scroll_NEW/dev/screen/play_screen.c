@@ -27,6 +27,7 @@ static signed int deltaY;
 //static unsigned char //frameX;
 //static unsigned char //flag;
 //static unsigned char scroll_count;
+
 static void printScrollInfo()
 {
 	struct_scroll_object *so = &global_scroll_object;
