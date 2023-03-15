@@ -69,7 +69,8 @@ void screen_option_screen_update( unsigned char *screen_type )
 			//	printCmds();
 			//}
 			//engine_font_manager_data( available, 31, 1 );
-			*screen_type = screen_type_test;
+			//*screen_type = screen_type_test;
+			*screen_type = screen_type_repeat;
 			return;
 		}
 	}
