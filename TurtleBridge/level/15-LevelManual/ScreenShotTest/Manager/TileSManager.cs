@@ -32,9 +32,10 @@ namespace ScreenShotTest
 
 		public void Initialize()
 		{
+			// TODO - toggle full / part by config
 			//if (configManager.LoadTiles)
-			//Initialize1();
-			//Initialize2();
+			Initialize1();			// structural level 
+			//Initialize2();		// tweak part level
 		}
 
 		public void Initialize1()
@@ -101,7 +102,6 @@ namespace ScreenShotTest
 				var objs = line.Split(delim);
 				int valu = Convert.ToInt32(objs[0]);
 				Tiles[idx] = valu;
-				Tiles[idx] = 7;
 				idx++;
 			}
 		}

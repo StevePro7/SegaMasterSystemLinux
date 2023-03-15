@@ -72,7 +72,7 @@ namespace ScreenShotTest
 			string[] lines = null;
 			int idx = 0;
 
-			if (File.Exists("MyTiles.xls"))
+			if (File.Exists("MyTiles.csv"))
 			{
 				Tiles = tilesManager.Tiles;
 				return;
