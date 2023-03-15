@@ -1,6 +1,7 @@
 #include "game_manager.h"
 #include "enum_manager.h"
 #include "global_manager.h"
+#include "util_manager.h"
 
 // Global variable.
 struct_game_object global_game_object;
@@ -36,7 +37,14 @@ void engine_game_manager_set_level_data( unsigned char game_world, unsigned char
 	go->game_point = game_point;
 
 	// TODO implement this once all levels set!
-	go->game_level = game_world * MAX_ROUNDS + game_round;
+	//go->game_level = game_world * MAX_ROUNDS + game_round;
+	go->game_level = engine_util_manager_calculate_level( game_world, game_round );
+}
+void engine_game_manager_set_saved_game( unsigned char game_saved )
+{
+	// Keep track if game has been saved before; i.e. loaded and played.
+	struct_game_object *go = &global_game_object;
+	go->game_saved = game_saved;
 }
 void engine_game_manager_inc_checkpoint()
 {

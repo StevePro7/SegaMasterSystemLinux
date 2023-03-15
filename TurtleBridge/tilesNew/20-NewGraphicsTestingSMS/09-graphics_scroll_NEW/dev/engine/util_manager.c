@@ -1,5 +1,6 @@
 #include "util_manager.h"
 #include "font_manager.h"
+#include "global_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
 #include "../banks/bank2.h"
@@ -26,6 +27,11 @@ void engine_util_manager_locale_blank( unsigned char index, unsigned char x, uns
 }
 
 // Maths Manager.
+unsigned char engine_util_manager_calculate_level( unsigned char world, unsigned char round )
+{
+	// TODO test.
+	return world * MAX_ROUNDS + round;
+}
 void engine_util_manager_convertByteToNibbles( unsigned char byte, unsigned char *upper_nibble, unsigned char *lower_nibble )
 {
 	*upper_nibble = ( byte >> 4 ) & BYTE_NIBBLE_MASK;

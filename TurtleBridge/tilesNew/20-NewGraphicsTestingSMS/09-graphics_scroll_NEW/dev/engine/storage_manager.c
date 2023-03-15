@@ -3,7 +3,9 @@
 #include "font_manager.h"
 #include "game_manager.h"
 #include "global_manager.h"
+#include "util_manager.h"
 #include "../devkit/_sms_manager.h"
+#include <stdbool.h>
 
 #define MAGIC			0xACE0B004
 #define FINAL			0xC9
@@ -29,27 +31,13 @@ void engine_storage_manager_read()
 {
 	struct_storage_object *so = ( struct_storage_object* ) ( devkit_SMS_SRAM() );
 
+	// TODO test!!
 	devkit_SMS_enableSRAM();
-	//command_frame_index[ 0 ] = 0;// command_frame_index[ 0 ];
-	//command_frame_index[ 1 ] = 4;// command_frame_index[ 1 ];
-	//command_frame_index[ 2 ] = 5;// command_frame_index[ 2 ];
-	//command_this_command[ 0 ] = 2;// command_this_command[ 0 ];
-	//command_this_command[ 1 ] = 34;// command_this_command[ 1 ];
-	//command_this_command[ 2 ] = 1;// command_this_command[ 2 ];
-
+	so->storage_saved = true;
+	so->storage_level = engine_util_manager_calculate_level( so->storage_world, so->storage_round );
+	engine_game_manager_set_difficulty( so->storage_difficulty );
+	engine_game_manager_set_level_data( so->storage_world, so->storage_round, so->storage_point );
 	engine_command_manager_load( so->storage_frame_index, so->storage_this_command );
-
-	//command_frame_index[ 0 ] = so->storage_frame_index[ 0 ];
-	//command_frame_index[ 1 ] = so->storage_frame_index[ 1 ];
-	//command_frame_index[ 2 ] = so->storage_frame_index[ 2 ];
-	//command_frame_index[ 3 ] = so->storage_frame_index[ 3 ];
-	//command_frame_index[ 4 ] = so->storage_frame_index[ 4 ];
-	//command_this_command[ 0 ] = so->storage_this_command[ 0 ];
-	//command_this_command[ 1 ] = so->storage_this_command[ 1 ];
-	//command_this_command[ 2 ] = so->storage_this_command[ 2 ];
-	//command_this_command[ 3 ] = so->storage_this_command[ 3 ];
-	//command_this_command[ 4 ] = so->storage_this_command[ 4 ];
-
 	devkit_SMS_disableSRAM();
 }
 
@@ -80,17 +68,6 @@ void engine_storage_manager_write()
 		so->storage_frame_index[ index ] = command_frame_index[ index ];
 		so->storage_this_command[ index ] = command_this_command[ index ];
 	}
-
-	//so->storage_frame_index[ 0 ] = command_frame_index[ 0 ];
-	//so->storage_frame_index[ 1 ] = command_frame_index[ 1 ];
-	//so->storage_frame_index[ 2 ] = command_frame_index[ 2 ];
-	//so->storage_frame_index[ 3 ] = command_frame_index[ 3 ];
-	//so->storage_frame_index[ 4 ] = command_frame_index[ 4 ];
-	//so->storage_this_command[ 0 ] = command_this_command[ 0 ];
-	//so->storage_this_command[ 1 ] = command_this_command[ 1 ];
-	//so->storage_this_command[ 2 ] = command_this_command[ 2 ];
-	//so->storage_this_command[ 3 ] = command_this_command[ 3 ];
-	//so->storage_this_command[ 4 ] = command_this_command[ 4 ];
 
 	so->terminal = FINAL;
 	devkit_SMS_disableSRAM();
