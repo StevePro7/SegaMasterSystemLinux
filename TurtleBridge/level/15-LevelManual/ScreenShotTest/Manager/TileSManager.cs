@@ -71,37 +71,36 @@ namespace ScreenShotTest
 			}
 		}
 
-		private void Reset()
+		public void Initialize2()
 		{
-
 		}
 
-		public void InitializeX()
-		{
-			// https://coderwall.com/p/app3ya/read-excel-file-in-c
-			string path = @"D:\GitHub\StevePro8\SegaMasterSystemLinux\TurtleBridge\level\15-LevelManual\ScreenShotTest\MyTiles.xls";
-			Excel.Application xlApp = new Excel.Application();
-			Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(path);
-			Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
-			Excel.Range xlRange = xlWorksheet.UsedRange;
+		//public void InitializeX()
+		//{
+		//	// https://coderwall.com/p/app3ya/read-excel-file-in-c
+		//	string path = @"D:\GitHub\StevePro8\SegaMasterSystemLinux\TurtleBridge\level\15-LevelManual\ScreenShotTest\MyTiles.xls";
+		//	Excel.Application xlApp = new Excel.Application();
+		//	Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(path);
+		//	Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+		//	Excel.Range xlRange = xlWorksheet.UsedRange;
 
-			int rowCount = xlRange.Cells.Rows.Count;
-			int colCount = xlRange.Cells.Columns.Count;
-			for (int row = 1; row <= rowCount; row++)
-			{
-				string type = xlRange.Cells[row, 1].Value2.ToString();
-				string lowr = xlRange.Cells[row, 1].Value2.ToString().ToLower();
-				int valu = Convert.ToInt32(xlRange.Cells[row, 2].Value2.ToString());
-				//valu = 3;
-				var datas = GetDatas(type, lowr, valu);
-				lines.AddRange(datas);
-			}
+			//	int rowCount = xlRange.Cells.Rows.Count;
+			//	int colCount = xlRange.Cells.Columns.Count;
+			//	for (int row = 1; row <= rowCount; row++)
+			//	{
+			//		string type = xlRange.Cells[row, 1].Value2.ToString();
+			//		string lowr = xlRange.Cells[row, 1].Value2.ToString().ToLower();
+			//		int valu = Convert.ToInt32(xlRange.Cells[row, 2].Value2.ToString());
+			//		//valu = 3;
+			//		var datas = GetDatas(type, lowr, valu);
+			//		lines.AddRange(datas);
+			//	}
 
-			for (int idx = 0; idx < lines.Count; idx++)
-			{
-				Tiles[idx] = lines[idx];
-			}
-		}
+			//	for (int idx = 0; idx < lines.Count; idx++)
+			//	{
+			//		Tiles[idx] = lines[idx];
+			//	}
+			//}
 
 		private List<int> GetDatas(string type, string lowr, int valu)
 		{

@@ -92,6 +92,10 @@ namespace ScreenShotTest
 			{
 				tilesManager.Initialize();
 			}
+			if (inputManager.KeyHold(Keys.T))
+			{
+				tilesManager.Initialize2();
+			}
 			boardManager.Update(spriteBatch);
 			levelManager.Update();
 			selectorManager.Update();

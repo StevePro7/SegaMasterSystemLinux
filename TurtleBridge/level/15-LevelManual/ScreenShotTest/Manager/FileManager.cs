@@ -253,32 +253,27 @@ namespace ScreenShotTest
 			}
 			DumpData2(data3, filepath);
 
-			// level.csv
+			// steven.txt
 			data.Clear();
+			int screen = 0;
 			for (int idx = 0; idx < cols; idx++)
 			{
-				var tile = Tiles[idx].ToString().PadLeft(2, '0');
-				data.Add(tile);
-			}
-			var lines = data.ToArray();
-			data.Clear();
-			for (int idx = 0; idx < cols; idx += 8)
-			{
-				var line = String.Join(",", lines, idx, 8);
-				data.Add(line);
+				if (0 == idx % 8)
+				{
+					screen++;
+					data.Add("//Screen:" + screen.ToString().PadLeft(2, '0'));
+				}
+				var tile = Tiles[idx];
+				var valu = (AssetType)tile;
+				var info = valu.ToString();
+				//var tile = Tiles[idx].ToString().PadLeft(2, '0');
+				data.Add(tile.ToString());
+			//	data.Add(info.ToString());
 			}
 
-			lines = data.ToArray();
-			//File.WriteAllLines(path + "/level.csv", lines);
-			//File.WriteAllText(path + "/level.csv", csv);
-
-			data.Clear();
-			var numTiles = tiles.Length;
-			var scr = numTiles / 8;
-			//string line = $"{tiles}"
-			data.Add("NoScreens," + scr.ToString());
+			string banktext = String.Format("steve_{0}{1}_{2}.txt", world, round, point);
 			var contents = data.ToArray();
-			//File.WriteAllLines(path + "/info.txt", contents);
+			File.WriteAllLines(filepath + "/" + banktext, contents);
 
 			// Outputs all world / round combos to fixedbank.c
 			//SaveLevelnfo("output");
@@ -410,7 +405,7 @@ namespace ScreenShotTest
 
 			// Make local copy of the CSV file used to render screen.
 			string csvName = banktext.Replace("level_", "tiles_");
-			File.Copy("MyTiles.csv", path + "/" + csvName + ".csv");
+			File.Copy("MyTiles.csv", path + "/" + csvName + ".csv");	// TODO revert comment
 			//File.Copy("MyTiles.csv", path + "/../../MyTiles.csv");
 		}
 
