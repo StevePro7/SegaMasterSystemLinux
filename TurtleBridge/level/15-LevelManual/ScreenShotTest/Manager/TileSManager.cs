@@ -3,17 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 //using Microsoft.CSharp.RuntimeBinder.Binder.Convert;
-using Excel = Microsoft.Office.Interop.Excel;
+//using Excel = Microsoft.Office.Interop.Excel;
 
 namespace ScreenShotTest
 {
 	public class TilesManager
 	{
+		private ConfigManager configManager;
 		private List<int> lines;
 		private int cols;
 
-		public TilesManager(int wide)
+		public TilesManager(ConfigManager configManager, int wide)
 		{
+			this.configManager = configManager;
 			cols = cols = wide / 16;
 			Tiles = new int[cols];
 			ResetTiles();
@@ -29,6 +31,13 @@ namespace ScreenShotTest
 		}
 
 		public void Initialize()
+		{
+			//if (configManager.LoadTiles)
+			Initialize1();
+			//Initialize2();
+		}
+
+		public void Initialize1()
 		{
 			// https://coderwall.com/p/app3ya/read-excel-file-in-c
 			string path = @"MyTiles.csv";

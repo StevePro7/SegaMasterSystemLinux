@@ -34,7 +34,7 @@ namespace ScreenShotTest
 			high = 224;
 
 			assetManager = new AssetManager();
-			tilesManager = new TilesManager(wide);
+			tilesManager = new TilesManager(configManager, wide);
 			fileManager = new FileManager(configManager, tilesManager, wide);
 			inputManager = new InputManager(wide, high);
 			selectorManager = new SelectorManager(inputManager, wide, high);

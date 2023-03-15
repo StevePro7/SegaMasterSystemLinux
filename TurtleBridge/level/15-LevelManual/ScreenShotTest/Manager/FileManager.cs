@@ -55,7 +55,7 @@ namespace ScreenShotTest
 			}
 			else
 			{
-				var searchPattern = String.Format("{0}{1}_{2}", world, round, point);
+				var searchPattern = String.Format("*{0}{1}_{2}*", world, round, point);
 				var files = Directory.GetFiles(filepath, searchPattern);
 				foreach (var file in files)
 				{
@@ -261,14 +261,17 @@ namespace ScreenShotTest
 				if (0 == idx % 8)
 				{
 					screen++;
-					data.Add("//Screen:" + screen.ToString().PadLeft(2, '0'));
+					data.Add("// Screen : " + screen.ToString().PadLeft(2, '0'));
 				}
+				//adriana - tweak this output?
 				var tile = Tiles[idx];
+				var tile2 = Tiles[idx].ToString().PadLeft(2, '0');
 				var valu = (AssetType)tile;
 				var info = valu.ToString();
-				//var tile = Tiles[idx].ToString().PadLeft(2, '0');
-				data.Add(tile.ToString());
-			//	data.Add(info.ToString());
+				var msgs = String.Format("{0},{1}", tile2, info);
+				data.Add(msgs.ToString());
+				//data.Add(tile.ToString());
+				//	data.Add(info.ToString());
 			}
 
 			string banktext = String.Format("steve_{0}{1}_{2}.txt", world, round, point);
