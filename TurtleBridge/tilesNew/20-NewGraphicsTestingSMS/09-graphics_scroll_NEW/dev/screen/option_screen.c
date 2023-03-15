@@ -56,7 +56,8 @@ void screen_option_screen_update( unsigned char *screen_type )
 		{
 			//cursorY = 1;
 		//	*screen_type = screen_type_intro;
-			*screen_type = screen_type_func;
+		//	*screen_type = screen_type_func;
+			*screen_type = screen_type_record;
 			return;
 		}
 		if( 1 == cursorY )
