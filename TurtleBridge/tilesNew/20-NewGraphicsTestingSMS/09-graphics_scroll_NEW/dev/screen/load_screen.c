@@ -38,14 +38,12 @@ void screen_load_screen_load()
 	//engine_content_manager_sprite();
 
 	//engine_graphics_manager_level( cloud_formation );
-	engine_graphics_manager_clouds( go->game_cloud );
 	
-
-	engine_graphics_manager_sea();
+	
 	// Work in terms of screens.
 	checkScreen = lo->check_width * go->game_point;
 	engine_scroll_manager_load( checkScreen, lo->level_check, lo->level_size );
-	//engine_level_manager_draw_screen( checkScreen );
+	engine_level_manager_draw_screen( checkScreen );
 	// TODO - can I delete the int representation i.e game_screen?
 	//game_screen = lo->check_width * go->game_point;
 	//engine_level_manager_draw_screen( game_screen );
@@ -59,7 +57,9 @@ void screen_load_screen_load()
 	engine_player_manager_loadY( player_loadY );
 	engine_player_manager_draw();
 
-	
+	engine_graphics_manager_sea();
+	engine_graphics_manager_clouds( go->game_cloud );
+	engine_level_manager_draw_screen( checkScreen );		// Weird - must draw this twice otherwise clouds + sea don't draw??
 	devkit_SMS_displayOn();
 
 	engine_command_manager_init();

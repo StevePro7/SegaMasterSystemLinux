@@ -1,0 +1,457 @@
+;!FILE storage_manager.asm
+XL3
+H 9 areas 153 global symbols
+M storage_manager
+O -mz80
+S _devkit_SMS_SRAM Ref000000
+S _engine_command_manager_load Ref000000
+S _command_this_command Ref000000
+S _devkit_SMS_disableSRAM Ref000000
+S .__.ABS. Def000000
+S _command_frame_index Ref000000
+S _global_game_object Ref000000
+S _devkit_SMS_enableSRAM Ref000000
+A _CODE size 1DB flags 0 addr 0
+S C$storage_manager.c$106$1_1$109 Def0001CD
+S C$storage_manager.c$108$1_1$108 Def0001DA
+S C$storage_manager.c$107$1_1$109 Def0001D3
+S G$engine_storage_manager_erase$0$0 Def000139
+S C$storage_manager.c$21$1_0$101 Def000000
+S C$storage_manager.c$30$1_0$102 Def00002D
+S A$storage_manager$200 Def000067
+S A$storage_manager$300 Def0000E1
+S A$storage_manager$210 Def000073
+S A$storage_manager$201 Def000068
+S C$storage_manager.c$32$1_0$102 Def00002D
+S C$storage_manager.c$24$1_0$101 Def000003
+S A$storage_manager$400 Def000153
+S A$storage_manager$310 Def0000F1
+S A$storage_manager$301 Def0000E4
+S A$storage_manager$220 Def00007E
+S A$storage_manager$211 Def000074
+S A$storage_manager$202 Def00006A
+S A$storage_manager$103 Def000027
+S C$storage_manager.c$50$1_0$103 Def00005B
+S C$storage_manager.c$25$1_0$101 Def000008
+S A$storage_manager$401 Def000154
+S A$storage_manager$320 Def000107
+S A$storage_manager$311 Def0000F4
+S A$storage_manager$302 Def0000E5
+S A$storage_manager$221 Def000081
+S A$storage_manager$212 Def000075
+S A$storage_manager$203 Def00006B
+S A$storage_manager$140 Def000038
+S A$storage_manager$104 Def000028
+S C$storage_manager.c$60$1_0$103 Def000094
+S C$storage_manager.c$51$1_0$103 Def00005E
+S C$storage_manager.c$43$1_0$102 Def00003B
+S C$storage_manager.c$26$1_0$101 Def000027
+S A$storage_manager$510 Def0001CD
+S A$storage_manager$501 Def0001C4
+S A$storage_manager$411 Def00015B
+S A$storage_manager$330 Def000116
+S A$storage_manager$312 Def0000F5
+S A$storage_manager$303 Def0000E8
+S A$storage_manager$213 Def000078
+S A$storage_manager$204 Def00006D
+S A$storage_manager$150 Def000044
+S A$storage_manager$141 Def000039
+S A$storage_manager$105 Def00002B
+S C$storage_manager.c$61$1_0$103 Def00009D
+S C$storage_manager.c$44$1_0$102 Def00004B
+S C$storage_manager.c$35$1_0$102 Def000030
+S C$storage_manager.c$27$1_0$101 Def00002C
+S C$storage_manager.c$19$0_0$101 Def000000
+S A$storage_manager$520 Def0001D6
+S A$storage_manager$511 Def0001D0
+S A$storage_manager$502 Def0001C5
+S A$storage_manager$430 Def000170
+S A$storage_manager$412 Def00015E
+S A$storage_manager$340 Def000123
+S A$storage_manager$331 Def000119
+S A$storage_manager$313 Def0000F6
+S A$storage_manager$304 Def0000EA
+S A$storage_manager$250 Def0000A0
+S A$storage_manager$241 Def000094
+S A$storage_manager$205 Def00006E
+S A$storage_manager$151 Def000045
+S A$storage_manager$133 Def000030
+S C$storage_manager.c$45$1_0$102 Def00004B
+S C$storage_manager.c$36$1_0$102 Def000035
+S C$storage_manager.c$28$1_0$101 Def00002C
+S A$storage_manager$521 Def0001D8
+S A$storage_manager$512 Def0001D1
+S A$storage_manager$503 Def0001C6
+S A$storage_manager$431 Def000171
+S A$storage_manager$413 Def00015F
+S A$storage_manager$350 Def00012F
+S A$storage_manager$341 Def000124
+S A$storage_manager$332 Def00011A
+S A$storage_manager$314 Def0000F9
+S A$storage_manager$305 Def0000EB
+S A$storage_manager$260 Def0000AD
+S A$storage_manager$251 Def0000A1
+S A$storage_manager$242 Def000097
+S A$storage_manager$233 Def00008B
+S A$storage_manager$152 Def000046
+S A$storage_manager$134 Def000031
+S A$storage_manager$116 Def00002C
+S C$storage_manager.c$54$1_0$103 Def00005E
+S A$storage_manager$504 Def0001C8
+S A$storage_manager$450 Def000186
+S A$storage_manager$441 Def000179
+S A$storage_manager$423 Def000167
+S A$storage_manager$405 Def000155
+S A$storage_manager$342 Def000126
+S A$storage_manager$333 Def00011B
+S A$storage_manager$324 Def000108
+S A$storage_manager$315 Def0000FC
+S A$storage_manager$306 Def0000EC
+S A$storage_manager$261 Def0000B0
+S A$storage_manager$252 Def0000A2
+S A$storage_manager$243 Def000098
+S A$storage_manager$234 Def00008E
+S A$storage_manager$225 Def000082
+S A$storage_manager$180 Def00005A
+S A$storage_manager$153 Def000049
+S A$storage_manager$135 Def000034
+S C$storage_manager.c$55$1_0$103 Def000063
+S A$storage_manager$505 Def0001C9
+S A$storage_manager$460 Def000193
+S A$storage_manager$451 Def000189
+S A$storage_manager$442 Def00017C
+S A$storage_manager$424 Def00016A
+S A$storage_manager$406 Def000158
+S A$storage_manager$343 Def000127
+S A$storage_manager$334 Def00011E
+S A$storage_manager$325 Def00010B
+S A$storage_manager$316 Def0000FF
+S A$storage_manager$307 Def0000EE
+S A$storage_manager$253 Def0000A5
+S A$storage_manager$244 Def000099
+S A$storage_manager$235 Def00008F
+S A$storage_manager$226 Def000085
+S A$storage_manager$217 Def000079
+S A$storage_manager$154 Def00004A
+S A$storage_manager$145 Def00003B
+S C$storage_manager.c$63$2_0$104 Def0000BC
+S C$storage_manager.c$56$1_0$103 Def000070
+S G$engine_storage_manager_read$0$0 Def00002D
+S _engine_storage_manager_erase Def000139
+S A$storage_manager$506 Def0001CB
+S A$storage_manager$470 Def0001A0
+S A$storage_manager$461 Def000194
+S A$storage_manager$452 Def00018C
+S A$storage_manager$443 Def00017D
+S A$storage_manager$425 Def00016B
+S A$storage_manager$407 Def000159
+S A$storage_manager$344 Def000129
+S A$storage_manager$335 Def000121
+S A$storage_manager$326 Def00010C
+S A$storage_manager$317 Def000102
+S A$storage_manager$308 Def0000EF
+S A$storage_manager$245 Def00009C
+S A$storage_manager$236 Def000090
+S A$storage_manager$227 Def000086
+S A$storage_manager$218 Def00007C
+S A$storage_manager$209 Def000070
+S A$storage_manager$191 Def00005E
+S A$storage_manager$146 Def00003E
+S C$storage_manager.c$75$1_0$103 Def00012B
+S C$storage_manager.c$57$1_0$103 Def000079
+S C$storage_manager.c$48$1_0$103 Def00004E
+S A$storage_manager$516 Def0001D3
+S A$storage_manager$480 Def0001AC
+S A$storage_manager$471 Def0001A1
+S A$storage_manager$462 Def000196
+S A$storage_manager$453 Def00018D
+S A$storage_manager$444 Def000180
+S A$storage_manager$435 Def000173
+S A$storage_manager$417 Def000161
+S A$storage_manager$354 Def000131
+S A$storage_manager$327 Def00010F
+S A$storage_manager$318 Def000103
+S A$storage_manager$309 Def0000F0
+S A$storage_manager$282 Def0000C5
+S A$storage_manager$273 Def0000BC
+S A$storage_manager$237 Def000093
+S A$storage_manager$228 Def000087
+S A$storage_manager$219 Def00007D
+S A$storage_manager$192 Def00005F
+S A$storage_manager$165 Def00004B
+S A$storage_manager$147 Def00003F
+S A$storage_manager$129 Def00002D
+S C$storage_manager.c$94$2_1$110 Def00018F
+S C$storage_manager.c$80$1_0$108 Def000139
+S C$storage_manager.c$76$1_0$103 Def000131
+S C$storage_manager.c$63$3_0$105 Def0000A6
+S C$storage_manager.c$58$1_0$103 Def000082
+S A$storage_manager$526 Def0001DA
+S A$storage_manager$490 Def0001BA
+S A$storage_manager$481 Def0001AD
+S A$storage_manager$472 Def0001A4
+S A$storage_manager$445 Def000183
+S A$storage_manager$436 Def000176
+S A$storage_manager$418 Def000164
+S A$storage_manager$382 Def000143
+S A$storage_manager$364 Def000138
+S A$storage_manager$328 Def000112
+S A$storage_manager$319 Def000104
+S A$storage_manager$283 Def0000C8
+S A$storage_manager$274 Def0000BD
+S A$storage_manager$229 Def00008A
+S A$storage_manager$193 Def000062
+S A$storage_manager$184 Def00005B
+S A$storage_manager$175 Def00004E
+S A$storage_manager$148 Def000040
+S A$storage_manager$139 Def000035
+S C$storage_manager.c$77$1_0$103 Def000138
+S C$storage_manager.c$71$3_0$107 Def0000D7
+S C$storage_manager.c$59$1_0$103 Def00008B
+S A$storage_manager$482 Def0001AE
+S A$storage_manager$473 Def0001A7
+S A$storage_manager$437 Def000177
+S A$storage_manager$419 Def000165
+S A$storage_manager$392 Def00014B
+S A$storage_manager$374 Def000139
+S A$storage_manager$329 Def000113
+S A$storage_manager$284 Def0000C9
+S A$storage_manager$275 Def0000BE
+S A$storage_manager$266 Def0000B3
+S A$storage_manager$257 Def0000A6
+S A$storage_manager$176 Def000050
+S A$storage_manager$149 Def000043
+S C$storage_manager.c$94$3_1$111 Def000179
+S C$storage_manager.c$82$1_0$108 Def000143
+S C$storage_manager.c$72$3_0$107 Def000108
+S C$storage_manager.c$65$3_0$105 Def0000B3
+S A$storage_manager$483 Def0001B1
+S A$storage_manager$429 Def00016D
+S A$storage_manager$393 Def00014C
+S A$storage_manager$375 Def00013B
+S A$storage_manager$348 Def00012B
+S A$storage_manager$339 Def000122
+S A$storage_manager$294 Def0000D7
+S A$storage_manager$285 Def0000CA
+S A$storage_manager$276 Def0000C0
+S A$storage_manager$267 Def0000B6
+S A$storage_manager$258 Def0000A9
+S A$storage_manager$249 Def00009D
+S A$storage_manager$177 Def000054
+S C$storage_manager.c$90$1_1$109 Def000167
+S C$storage_manager.c$83$1_0$108 Def000146
+S G$engine_storage_manager_available$0$0 Def000000
+S A$storage_manager$484 Def0001B2
+S A$storage_manager$466 Def000198
+S A$storage_manager$457 Def00018F
+S A$storage_manager$394 Def00014D
+S A$storage_manager$376 Def00013F
+S A$storage_manager$358 Def000134
+S A$storage_manager$349 Def00012E
+S A$storage_manager$295 Def0000D8
+S A$storage_manager$286 Def0000CD
+S A$storage_manager$277 Def0000C1
+S A$storage_manager$268 Def0000B9
+S A$storage_manager$259 Def0000AA
+S A$storage_manager$178 Def000056
+S C$storage_manager.c$96$3_1$111 Def000186
+S C$storage_manager.c$91$1_1$109 Def00016D
+S A$storage_manager$494 Def0001BB
+S A$storage_manager$485 Def0001B3
+S A$storage_manager$467 Def00019B
+S A$storage_manager$458 Def000190
+S A$storage_manager$395 Def00014E
+S A$storage_manager$386 Def000146
+S A$storage_manager$377 Def000141
+S A$storage_manager$359 Def000136
+S A$storage_manager$296 Def0000D9
+S A$storage_manager$287 Def0000CE
+S A$storage_manager$278 Def0000C3
+S A$storage_manager$269 Def0000BA
+S A$storage_manager$197 Def000063
+S A$storage_manager$179 Def000059
+S C$storage_manager.c$92$1_1$109 Def000173
+S A$storage_manager$495 Def0001BE
+S A$storage_manager$486 Def0001B6
+S A$storage_manager$468 Def00019C
+S A$storage_manager$459 Def000191
+S A$storage_manager$396 Def00014F
+S A$storage_manager$387 Def000147
+S A$storage_manager$378 Def000142
+S A$storage_manager$297 Def0000DA
+S A$storage_manager$288 Def0000D1
+S A$storage_manager$198 Def000064
+S C$storage_manager.c$69$2_0$106 Def000122
+S A$storage_manager$496 Def0001C1
+S A$storage_manager$487 Def0001B7
+S A$storage_manager$478 Def0001AA
+S A$storage_manager$469 Def00019D
+S A$storage_manager$397 Def000150
+S A$storage_manager$388 Def00014A
+S A$storage_manager$298 Def0000DD
+S A$storage_manager$289 Def0000D4
+S A$storage_manager$199 Def000065
+S A$storage_manager$497 Def0001C2
+S A$storage_manager$488 Def0001B8
+S A$storage_manager$479 Def0001AB
+S A$storage_manager$398 Def000151
+S A$storage_manager$299 Def0000DE
+S C$storage_manager.c$86$1_1$109 Def00014B
+S C$storage_manager.c$69$3_0$107 Def0000C5
+S A$storage_manager$489 Def0001B9
+S A$storage_manager$399 Def000152
+S C$storage_manager.c$87$1_1$109 Def000155
+S XG$engine_storage_manager_erase$0$0 Def0001DA
+S C$storage_manager.c$88$1_1$109 Def00015B
+S _engine_storage_manager_read Def00002D
+S A$storage_manager$70 Def000003
+S C$storage_manager.c$89$1_1$109 Def000161
+S A$storage_manager$80 Def00000C
+S A$storage_manager$71 Def000004
+S A$storage_manager$90 Def00001A
+S A$storage_manager$81 Def00000D
+S A$storage_manager$72 Def000007
+S G$engine_storage_manager_write$0$0 Def00004E
+S A$storage_manager$91 Def00001C
+S A$storage_manager$82 Def00000E
+S A$storage_manager$92 Def00001E
+S A$storage_manager$83 Def00000F
+S _engine_storage_manager_available Def000000
+S A$storage_manager$93 Def00001F
+S A$storage_manager$84 Def000010
+S A$storage_manager$66 Def000000
+S A$storage_manager$94 Def000021
+S A$storage_manager$85 Def000012
+S A$storage_manager$76 Def000008
+S A$storage_manager$95 Def000023
+S A$storage_manager$86 Def000014
+S A$storage_manager$77 Def000009
+S A$storage_manager$87 Def000015
+S A$storage_manager$78 Def00000A
+S A$storage_manager$97 Def000025
+S A$storage_manager$88 Def000017
+S A$storage_manager$79 Def00000B
+S A$storage_manager$89 Def000019
+S A$storage_manager$99 Def000026
+S XG$engine_storage_manager_read$0$0 Def00004B
+S _engine_storage_manager_write Def00004E
+S XG$engine_storage_manager_available$0$0 Def00002C
+S XG$engine_storage_manager_write$0$0 Def000138
+S C$storage_manager.c$100$2_1$112 Def0001C4
+S C$storage_manager.c$100$3_1$113 Def000198
+S C$storage_manager.c$102$3_1$113 Def0001AA
+S C$storage_manager.c$103$3_1$113 Def0001BB
+A _DATA size D1 flags 0 addr 0
+S _global_storage_object Def000000
+S G$global_storage_object$0_0$0 Def000000
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 01 00
+T 00 00 00
+R 00 00 01 00
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 CD 00 00 E5 CD 00 00 E1 4E 23 46 23 5E
+R 00 00 00 00 02 04 00 00 02 08 07 00
+T 0D 00 00 23 56 79 D6 04 20 11 78 D6 B0 20 0C 7B
+R 00 00 00 00
+T 1A 00 00 D6 E0 20 07 7A D6 AC 3E 01 28 01
+R 00 00 00 00
+T 25 00 00
+R 00 00 00 00
+T 25 00 00 AF
+R 00 00 00 00
+T 26 00 00
+R 00 00 00 00
+T 26 00 00 6F E5 CD 00 00 E1 C9
+R 00 00 00 00 02 06 03 00
+T 2D 00 00
+R 00 00 00 00
+T 2D 00 00 CD 00 00 E5 CD 00 00 C1 21 09 00 09 36
+R 00 00 00 00 02 04 00 00 02 08 07 00
+T 3A 00 00 01 21 90 00 09 EB 21 10 00 09 D5 E5 CD
+R 00 00 00 00
+T 47 00 00 00 00 F1 F1 C3 00 00
+R 00 00 00 00 02 03 01 00 02 08 03 00
+T 4E 00 00
+R 00 00 00 00
+T 4E 00 00 DD E5 DD 21 00 00 DD 39 21 F8 FF 39 F9
+R 00 00 00 00
+T 5B 00 00 CD 00 00 E5 CD 00 00 C1 69 60 36 04 23
+R 00 00 00 00 02 04 00 00 02 08 07 00
+T 68 00 00 36 B0 23 36 E0 23 36 AC 21 04 00 09 EB
+R 00 00 00 00
+T 75 00 00 3A 00 00 12 21 05 00 09 EB 3A 01 00 12
+R 00 00 00 00 02 04 06 00 02 0D 06 00
+T 82 00 00 21 06 00 09 EB 3A 02 00 12 21 07 00 09
+R 00 00 00 00 02 09 06 00
+T 8F 00 00 EB 3A 03 00 12 21 08 00 09 EB 3A 04 00
+R 00 00 00 00 02 05 06 00 02 0E 06 00
+T 9C 00 00 12 21 09 00 09 EB 3A 05 00 12 21 0A 00
+R 00 00 00 00 02 0A 06 00
+T A9 00 00 09 DD 75 FE DD 74 FF 11 00 00
+R 00 00 00 00
+T B3 00 00
+R 00 00 00 00
+T B3 00 00 DD 6E FE DD 66 FF 19 36 00 13 7B D6 06
+R 00 00 00 00
+T C0 00 00 7A DE 00 38 EE 21 10 00 09 E3 21 90 00
+R 00 00 00 00
+T CD 00 00 09 DD 75 FA DD 74 FB 11 00 00
+R 00 00 00 00
+T D7 00 00
+R 00 00 00 00
+T D7 00 00 6B 62 29 DD 7E F8 85 DD 77 FC DD 7E F9
+R 00 00 00 00
+T E4 00 00 8C DD 77 FD 3E 00 00 00 85 6F 3E
+R 00 00 00 00 0B 08 05 00
+T ED 00 00 00 00 00 8C 67 7E DD 77 FE 23 7E DD 77
+R 00 00 00 00 8B 03 05 00
+T F8 00 00 FF DD 6E FC DD 66 FD DD 7E FE 77 23 DD
+R 00 00 00 00
+T 05 01 00 7E FF 77 DD 7E FA 83 DD 77 FE DD 7E FB
+R 00 00 00 00
+T 12 01 00 8A DD 77 FF 21 00 00 19 7E DD 6E FE DD
+R 00 00 00 00 02 08 02 00
+T 1F 01 00 66 FF 77 13 7B D6 40 7A DE 00 38 AC 21
+R 00 00 00 00
+T 2C 01 00 D0 00 09 36 C9 CD 00 00 DD F9 DD E1 C9
+R 00 00 00 00 02 09 03 00
+T 39 01 00
+R 00 00 00 00
+T 39 01 00 DD E5 DD 21 00 00 DD 39 F5 F5 CD 00 00
+R 00 00 00 00 02 0E 00 00
+T 46 01 00 E5 CD 00 00 D1 6B 62 AF 77 23 77 23 77
+R 00 00 00 00 02 05 07 00
+T 53 01 00 23 77 21 04 00 19 36 00 21 05 00 19 36
+R 00 00 00 00
+T 60 01 00 00 21 06 00 19 36 00 21 07 00 19 36 00
+R 00 00 00 00
+T 6D 01 00 21 08 00 19 36 00 21 09 00 19 36 00 21
+R 00 00 00 00
+T 7A 01 00 0A 00 19 DD 75 FE DD 74 FF 01 00 00
+R 00 00 00 00
+T 86 01 00
+R 00 00 00 00
+T 86 01 00 DD 6E FE DD 66 FF 09 36 00 03 79 D6 06
+R 00 00 00 00
+T 93 01 00 78 DE 00 38 EE 21 10 00 19 E3 21 90 00
+R 00 00 00 00
+T A0 01 00 19 DD 75 FE DD 74 FF 01 00 00
+R 00 00 00 00
+T AA 01 00
+R 00 00 00 00
+T AA 01 00 69 60 29 7D DD 86 FC 6F 7C DD 8E FD 67
+R 00 00 00 00
+T B7 01 00 AF 77 23 77 DD 6E FE DD 66 FF 09 36 00
+R 00 00 00 00
+T C4 01 00 03 79 D6 40 78 DE 00 38 DD 21 D0 00 19
+R 00 00 00 00
+T D1 01 00 36 C9 CD 00 00 DD F9 DD E1 C9
+R 00 00 00 00 02 06 03 00

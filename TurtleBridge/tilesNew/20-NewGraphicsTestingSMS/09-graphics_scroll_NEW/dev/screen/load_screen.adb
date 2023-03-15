@@ -4,7 +4,8 @@ S:Lload_screen.screen_load_screen_load$po$1_0$132({2}DG,STtag_struct_player_obje
 S:Lload_screen.screen_load_screen_load$lo$1_0$132({2}DG,STtag_struct_level_object:S),R,0,0,[]
 S:Lload_screen.screen_load_screen_load$go$1_0$132({2}DG,STtag_struct_game_object:S),R,0,0,[]
 S:Lload_screen.screen_load_screen_load$player_loadY$1_0$132({1}SC:U),R,0,0,[a]
-S:Lload_screen.screen_load_screen_load$checkScreen$1_0$132({1}SC:U),R,0,0,[c]
+S:Lload_screen.screen_load_screen_load$checkScreen$1_0$132({1}SC:U),B,1,-1
+S:Lload_screen.screen_load_screen_load$sloc0$0_1$0({1}SC:U),B,1,-1
 F:G$screen_load_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lload_screen.screen_load_screen_update$screen_type$1_0$133({2}DG,SC:U),B,1,4
 T:Fload_screen$tag_struct_player_object[({0}S:S$initX$0_0$0({1}SC:U),Z,0,0)({1}S:S$posnX$0_0$0({2}SI:U),Z,0,0)({3}S:S$tileX$0_0$0({2}SI:U),Z,0,0)({5}S:S$lookX$0_0$0({1}SC:U),Z,0,0)({6}S:S$posnY$0_0$0({1}SC:U),Z,0,0)({7}S:S$tileY$0_0$0({1}SC:U),Z,0,0)({8}S:S$leapY$0_0$0({2}SI:U),Z,0,0)({10}S:S$drawX$0_0$0({1}SC:U),Z,0,0)({11}S:S$drawY$0_0$0({1}SC:U),Z,0,0)({12}S:S$player_state$0_0$0({1}SC:U),Z,0,0)({13}S:S$jumper_index$0_0$0({1}SC:U),Z,0,0)({14}S:S$deltaY_index$0_0$0({1}SC:U),Z,0,0)({15}S:S$player_frame$0_0$0({1}SC:U),Z,0,0)({16}S:S$player_lives$0_0$0({1}SC:U),Z,0,0)({17}S:S$motion_count$0_0$0({1}SC:U),Z,0,0)]

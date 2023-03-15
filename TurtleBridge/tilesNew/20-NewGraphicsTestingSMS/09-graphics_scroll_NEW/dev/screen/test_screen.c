@@ -33,7 +33,7 @@ void screen_test_screen_load()
 	complete = false;
 	deltaY = 0;
 
-	engine_font_manager_text( "PLAYING SCREEN", 10, 2 );
+	engine_font_manager_text( "PLAY SCREEN", 10, 2 );
 }
 
 void screen_test_screen_update( unsigned char *screen_type )
@@ -71,12 +71,12 @@ void screen_test_screen_update( unsigned char *screen_type )
 //	input1 = 1;		// TODO delete
 	if( input1 || input2 )
 	{
-		if( 2 == fo->frame_count )
+		if( 2 == fo->frame_count || 8 == fo->frame_count )
 		{
-			//command = engine_command_manager_build( po->player_state, 1, 0, 0, 0, 0, 1 );		//Jump index = 1.
+			command = engine_command_manager_build( po->player_state, 1, 0, 0, 0, 0, 1 );		//Jump index = 1.
 			//command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 1 );		//Jump index = 2.
 			//command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 1 );		//Jump index = 3.
-			command = engine_command_manager_build( po->player_state, 0, 1, 1, 0, 0, 1 );		//Jump index = 4.
+			//scommand = engine_command_manager_build( po->player_state, 0, 1, 1, 0, 0, 1 );		//Jump index = 4.
 		}
 		else
 		{
