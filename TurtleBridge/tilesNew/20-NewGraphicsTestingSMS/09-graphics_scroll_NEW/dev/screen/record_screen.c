@@ -1,9 +1,9 @@
-#include "func_screen.h"
-#include "../engine/asm_manager.h"
+#include "record_screen.h"
+//#include "../engine/asm_manager.h"
 #include "../engine/collision_manager.h"
-#include "../engine/content_manager.h"
+//#include "../engine/content_manager.h"
 #include "../engine/command_manager.h"
-#include "../engine/debug_manager.h"
+//#include "../engine/debug_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/game_manager.h"
@@ -28,7 +28,7 @@
 static bool complete;
 static signed int deltaY;
 
-void screen_func_screen_load()
+void screen_record_screen_load()
 {
 	// init_screen
 	struct_player_object *po = &global_player_object;
@@ -54,7 +54,7 @@ void screen_func_screen_load()
 	//engine_content_manager_bggame();
 	//engine_content_manager_sprite();
 	//engine_graphics_manager_level( cloud_formation );
-	
+
 
 	// Work in terms of screens.
 	checkScreen = lo->check_width * go->game_point;
@@ -79,7 +79,7 @@ void screen_func_screen_load()
 	//engine_frame_manager_draw();
 	engine_command_manager_init();
 	//engine_command_manager_draw();
-	engine_font_manager_text( "RECORD SCREEN", 10, 2 );
+	engine_font_manager_text( "NEW RECORD SCREEN", 10, 2 );
 
 	engine_scroll_manager_update( 0 );
 
@@ -90,7 +90,7 @@ void screen_func_screen_load()
 	//engine_font_manager_data( checkScreen, 10, 1 );
 }
 
-void screen_func_screen_update( unsigned char *screen_type )
+void screen_record_screen_update( unsigned char *screen_type )
 {
 	// TODO delete
 	struct_frame_object *fo = &global_frame_object;
@@ -252,8 +252,5 @@ void screen_func_screen_update( unsigned char *screen_type )
 	}
 
 	engine_player_manager_draw();
-	*screen_type = screen_type_func;
+	*screen_type = screen_type_record;
 }
-
-
-

@@ -23,8 +23,10 @@ typedef enum tag_enum_screen_type
 	screen_type_boss = 17,
 	screen_type_beat = 18,
 	screen_type_option = 19,
-	screen_type_test = 20,
-	screen_type_func = 21,
+	screen_type_record = 20,
+	screen_type_repeat = 21,
+	screen_type_test = 22,
+	screen_type_func = 23,
 
 } enum_screen_type;
 

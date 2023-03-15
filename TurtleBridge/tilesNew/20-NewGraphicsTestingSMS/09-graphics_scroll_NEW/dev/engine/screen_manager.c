@@ -23,6 +23,8 @@
 #include "../screen/boss_screen.h"
 #include "../screen/beat_screen.h"
 #include "../screen/option_screen.h"
+#include "../screen/record_screen.h"
+#include "../screen/repeat_screen.h"
 #include "../screen/test_screen.h"
 #include "../screen/func_screen.h"
 
@@ -58,6 +60,8 @@ void engine_screen_manager_init( unsigned char open_screen_type )
 	load_method[ screen_type_boss ] = screen_boss_screen_load;
 	load_method[ screen_type_beat ] = screen_beat_screen_load;
 	load_method[ screen_type_option ] = screen_option_screen_load;
+	load_method[ screen_type_record ] = screen_record_screen_load;
+	load_method[ screen_type_repeat ] = screen_repeat_screen_load;
 	load_method[ screen_type_test ] = screen_test_screen_load;
 	load_method[ screen_type_func ] = screen_func_screen_load;
 
@@ -82,6 +86,8 @@ void engine_screen_manager_init( unsigned char open_screen_type )
 	update_method[ screen_type_boss ] = screen_boss_screen_update;
 	update_method[ screen_type_beat ] = screen_beat_screen_update;
 	update_method[ screen_type_option ] = screen_option_screen_update;
+	update_method[ screen_type_record ] = screen_record_screen_update;
+	update_method[ screen_type_repeat ] = screen_repeat_screen_update;
 	update_method[ screen_type_test ] = screen_test_screen_update;
 	update_method[ screen_type_func ] = screen_func_screen_update;
 }
