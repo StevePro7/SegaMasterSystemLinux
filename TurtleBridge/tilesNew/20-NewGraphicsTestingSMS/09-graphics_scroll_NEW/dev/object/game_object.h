@@ -8,6 +8,7 @@ typedef struct tag_struct_game_object
 	unsigned char game_round;
 	unsigned char game_level;
 	unsigned char game_point;		// check point.
+	unsigned char game_saved;		// first time play = !saved.
 	unsigned char game_cloud;		// set once for game session.
 	unsigned char game_isgod;
 

@@ -7,7 +7,6 @@
 
 #define MAGIC			0xACE0B004
 #define FINAL			0xC9
-#define BUFFER			6
 
 // Global variable.
 struct_storage_object global_storage_object;
@@ -28,6 +27,9 @@ unsigned char engine_storage_manager_available()
 void engine_storage_manager_read()
 {
 	struct_storage_object *so = ( struct_storage_object* ) ( devkit_SMS_SRAM() );
+	/*	unsigned int num_jumps;
+		unsigned int index;
+		unsigned char value*/;
 
 	devkit_SMS_enableSRAM();
 	//command_frame_index[ 0 ] = 0;// command_frame_index[ 0 ];
@@ -53,23 +55,22 @@ void engine_storage_manager_read()
 	devkit_SMS_disableSRAM();
 }
 
-//void engine_storage_manager_save()
 void engine_storage_manager_write()
 {
 	struct_storage_object *so = ( struct_storage_object* ) ( devkit_SMS_SRAM() );
 	struct_game_object *go = &global_game_object;
+	devkit_SMS_enableSRAM();
 	unsigned int index;
 
-	devkit_SMS_enableSRAM();
 	so->Magic = MAGIC;
 	so->storage_difficulty = go->game_difficulty;
 	so->storage_world = go->game_world;
 	so->storage_round = go->game_round;
 	so->storage_level = go->game_level;
 	so->storage_point = go->game_point;
-	so->storage_saved = go->game_saved;
 
-	for( index = 0; index < BUFFER; index++ )
+	// Padding - TODO replace hardcode 7.
+	for( index = 0; index < 7; index++ )
 	{
 		so->storage_padding[ index ] = 0;
 	}
@@ -96,7 +97,6 @@ void engine_storage_manager_write()
 	devkit_SMS_disableSRAM();
 }
 
-//void engine_storage_manager_kill()
 void engine_storage_manager_erase()
 {
 	struct_storage_object *so = ( struct_storage_object* ) ( devkit_SMS_SRAM() );
@@ -109,9 +109,9 @@ void engine_storage_manager_erase()
 	so->storage_round = 0;
 	so->storage_level = 0;
 	so->storage_point = 0;
-	so->storage_saved = 0;
 
-	for( index = 0; index < BUFFER; index++ )
+	// Padding - TODO replace hardcode 7.
+	for( index = 0; index < 7; index++ )
 	{
 		so->storage_padding[ index ] = 0;
 	}
