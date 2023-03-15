@@ -34,7 +34,7 @@ void screen_option_screen_update( unsigned char *screen_type )
 	unsigned char input1, input2, input3;
 	input1 = engine_input_manager_hold( input_type_up );
 	input2 = engine_input_manager_hold( input_type_down );
-//	unsigned char available;
+	//unsigned char available;
 	if( input1 || input2 )
 	{
 		engine_font_manager_char( ' ', 10, cursorY );
@@ -55,14 +55,13 @@ void screen_option_screen_update( unsigned char *screen_type )
 		}
 		if( 1 == cursorY )
 		{
-			/*available = engine_storage_manager_available();
-			if( available )
-			{
-				engine_storage_manager_read();
-				printCmds();
-
-			}
-			engine_font_manager_data( available, 31, 1 );*/
+			//available = engine_storage_manager_available();
+			//if( available )
+			//{
+			//	engine_storage_manager_read();
+			//	printCmds();
+			//}
+			//engine_font_manager_data( available, 31, 1 );
 			*screen_type = screen_type_test;
 			return;
 		}
@@ -72,7 +71,7 @@ void screen_option_screen_update( unsigned char *screen_type )
 		input3 = engine_input_manager_hold( input_type_fire2 );
 		if( input3 )
 		{
-			//engine_storage_manager_erase();
+			engine_storage_manager_erase();
 			//engine_font_manager_text( "ERASER SCREEN", 10, 2 );
 			*screen_type = screen_type_level;
 			return;
@@ -82,10 +81,10 @@ void screen_option_screen_update( unsigned char *screen_type )
 	*screen_type = screen_type_option;
 }
 
-//static void printCmds()
-//{
-//	engine_font_manager_data( command_frame_index[ 0 ], 21, 1 );
-//	engine_font_manager_data( command_frame_index[ 1 ], 21, 2 );
-//	engine_font_manager_data( command_this_command[ 0 ], 26, 1 );
-//	engine_font_manager_data( command_this_command[ 1 ], 26, 2 );
-//}
+static void printCmds()
+{
+	engine_font_manager_data( command_frame_index[ 0 ], 21, 1 );
+	engine_font_manager_data( command_frame_index[ 1 ], 21, 2 );
+	engine_font_manager_data( command_this_command[ 0 ], 26, 1 );
+	engine_font_manager_data( command_this_command[ 1 ], 26, 2 );
+}

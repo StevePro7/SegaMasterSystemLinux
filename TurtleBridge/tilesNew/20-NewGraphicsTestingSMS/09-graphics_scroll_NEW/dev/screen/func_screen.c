@@ -157,12 +157,13 @@ void screen_func_screen_update( unsigned char *screen_type )
 					{
 						engine_level_manager_draw_column( so->scrollColumn );
 					}
-					else if( scroll_state_line == scroll_state )
-					{
-						engine_game_manager_inc_checkpoint();
-						//TODO used for debugging - remove
-						//engine_font_manager_data( go->game_point, 20, go->game_point );
-					}
+					//IMPORTANT - do NOT implement this code as will mis-align the checkpoint!
+					//else if( scroll_state_line == scroll_state )
+					//{
+					//	engine_game_manager_inc_checkpoint();
+					//	//TODO used for debugging - remove
+					//	//engine_font_manager_data( go->game_point, 20, go->game_point );
+					//}
 					else if( scroll_state_comp == scroll_state )
 					{
 						complete = scroll_state_comp == scroll_state;

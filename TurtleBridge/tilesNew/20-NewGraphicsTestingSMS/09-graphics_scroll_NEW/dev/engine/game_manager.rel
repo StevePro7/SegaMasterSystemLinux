@@ -1,106 +1,121 @@
 ;!FILE game_manager.asm
 XL3
-H 9 areas 62 global symbols
+H 9 areas 71 global symbols
 M game_manager
 O -mz80
 S .__.ABS. Def000000
-A _CODE size 69 flags 0 addr 0
-S C$game_manager.c$41$1_0$12 Def000054
-S C$game_manager.c$33$1_0$11 Def000022
-S C$game_manager.c$34$1_0$11 Def000022
-S C$game_manager.c$50$1_0$14 Def00005B
-S C$game_manager.c$43$1_0$12 Def000054
-S C$game_manager.c$35$1_0$11 Def00002F
-S C$game_manager.c$51$1_0$14 Def00005B
-S C$game_manager.c$44$1_0$12 Def000054
-S C$game_manager.c$36$1_0$11 Def000038
-S C$game_manager.c$52$1_0$14 Def000068
-S C$game_manager.c$45$1_0$12 Def00005A
+S _engine_util_manager_calculate_level Ref000000
+A _CODE size 79 flags 0 addr 0
+S C$game_manager.c$51$1_0$21 Def000064
+S C$game_manager.c$43$1_0$20 Def000056
+S C$game_manager.c$22$1_0$14 Def000006
+S C$game_manager.c$52$1_0$21 Def000064
+S C$game_manager.c$30$1_0$16 Def000014
+S C$game_manager.c$60$1_0$23 Def000078
+S C$game_manager.c$53$1_0$21 Def00006A
+S C$game_manager.c$31$1_0$16 Def000021
+S C$game_manager.c$24$1_0$14 Def000006
+S A$game_manager$70 Def000003
+S C$game_manager.c$46$1_0$20 Def000056
+S C$game_manager.c$25$1_0$14 Def000006
+S C$game_manager.c$47$1_0$20 Def000056
+S C$game_manager.c$26$1_0$14 Def000013
 S _engine_game_manager_set_difficulty Def000014
-S C$game_manager.c$39$1_0$11 Def000041
-S A$game_manager$92 Def000006
+S C$game_manager.c$48$1_0$20 Def000063
+S C$game_manager.c$41$1_0$18 Def000041
+S C$game_manager.c$32$1_0$18 Def000022
+S C$game_manager.c$42$1_0$18 Def000055
+S C$game_manager.c$56$1_0$23 Def00006B
+S C$game_manager.c$49$1_0$21 Def000064
+S C$game_manager.c$34$1_0$18 Def000022
+S C$game_manager.c$27$1_0$16 Def000014
 S XG$engine_game_manager_set_cloud_form$0$0 Def000013
-S A$game_manager$93 Def000009
-S C$game_manager.c$48$1_0$14 Def00005B
-S _engine_game_manager_set_level_test Def00005B
-S A$game_manager$94 Def00000D
-S A$game_manager$76 Def000005
-S A$game_manager$67 Def000000
-S A$game_manager$95 Def00000F
-S A$game_manager$68 Def000003
-S A$game_manager$96 Def000012
-S C$game_manager.c$10$1_0$5 Def000000
-S C$game_manager.c$11$1_0$5 Def000000
+S C$game_manager.c$35$1_0$18 Def000022
+S _engine_game_manager_set_level_test Def00006B
+S A$game_manager$94 Def000006
+S C$game_manager.c$58$1_0$23 Def00006B
+S C$game_manager.c$36$1_0$18 Def00002F
+S C$game_manager.c$29$1_0$16 Def000014
+S A$game_manager$95 Def000009
+S C$game_manager.c$59$1_0$23 Def00006B
+S C$game_manager.c$37$1_0$18 Def000038
+S A$game_manager$96 Def00000D
+S A$game_manager$78 Def000005
+S A$game_manager$69 Def000000
+S A$game_manager$97 Def00000F
+S A$game_manager$98 Def000012
 S G$engine_game_manager_init$0$0 Def000000
-S C$game_manager.c$12$1_0$5 Def000005
 S XG$engine_game_manager_set_difficulty$0$0 Def000021
-S C$game_manager.c$21$1_0$7 Def000006
-S C$game_manager.c$30$1_0$9 Def000021
-S C$game_manager.c$23$1_0$7 Def000006
-S XG$engine_game_manager_set_level_test$0$0 Def000068
-S C$game_manager.c$24$1_0$7 Def000006
-S C$game_manager.c$25$1_0$7 Def000013
+S G$engine_game_manager_set_saved_game$0$0 Def000056
+S C$game_manager.c$9$0_0$12 Def000000
+S XG$engine_game_manager_set_level_test$0$0 Def000078
 S G$engine_game_manager_set_level_data$0$0 Def000022
-S C$game_manager.c$26$1_0$9 Def000014
-S C$game_manager.c$28$1_0$9 Def000014
 S _engine_game_manager_init Def000000
-S G$engine_game_manager_inc_checkpoint$0$0 Def000054
-S C$game_manager.c$29$1_0$9 Def000014
+S G$engine_game_manager_inc_checkpoint$0$0 Def000064
+S _engine_game_manager_set_saved_game Def000056
 S _engine_game_manager_set_level_data Def000022
-S C$game_manager.c$8$0_0$5 Def000000
 S XG$engine_game_manager_init$0$0 Def000005
-S _engine_game_manager_inc_checkpoint Def000054
-S XG$engine_game_manager_set_level_data$0$0 Def000053
-S A$game_manager$120 Def000014
+S _engine_game_manager_inc_checkpoint Def000064
+S XG$engine_game_manager_set_saved_game$0$0 Def000063
+S XG$engine_game_manager_set_level_data$0$0 Def000055
+S A$game_manager$210 Def000062
 S G$engine_game_manager_set_cloud_form$0$0 Def000006
-S A$game_manager$121 Def000017
-S A$game_manager$230 Def00005B
-S A$game_manager$203 Def000054
-S A$game_manager$122 Def00001B
-S A$game_manager$104 Def000013
-S A$game_manager$231 Def00005E
-S A$game_manager$204 Def000057
-S A$game_manager$150 Def000029
-S A$game_manager$132 Def000021
-S A$game_manager$123 Def00001D
-S A$game_manager$232 Def000062
-S A$game_manager$214 Def00005A
-S A$game_manager$205 Def000058
-S A$game_manager$151 Def00002B
-S A$game_manager$124 Def000020
-S XG$engine_game_manager_inc_checkpoint$0$0 Def00005A
-S A$game_manager$242 Def000068
-S A$game_manager$233 Def000064
-S A$game_manager$206 Def000059
-S A$game_manager$170 Def000041
-S A$game_manager$152 Def00002E
-S A$game_manager$234 Def000067
-S A$game_manager$171 Def000044
-S A$game_manager$172 Def000047
-S A$game_manager$163 Def000038
-S A$game_manager$173 Def000049
-S A$game_manager$164 Def00003B
-S A$game_manager$174 Def00004B
-S A$game_manager$165 Def00003E
-S A$game_manager$156 Def00002F
+S A$game_manager$122 Def000014
+S A$game_manager$150 Def000022
+S A$game_manager$123 Def000017
+S A$game_manager$160 Def000035
+S A$game_manager$151 Def000025
+S A$game_manager$124 Def00001B
+S A$game_manager$106 Def000013
+S XG$engine_game_manager_inc_checkpoint$0$0 Def00006A
+S A$game_manager$206 Def000056
+S A$game_manager$161 Def000037
+S A$game_manager$152 Def000029
+S A$game_manager$134 Def000021
+S A$game_manager$125 Def00001D
+S A$game_manager$261 Def00006B
+S A$game_manager$234 Def000064
+S A$game_manager$207 Def000059
+S A$game_manager$180 Def000050
+S A$game_manager$153 Def00002B
+S A$game_manager$126 Def000020
+S A$game_manager$262 Def00006E
+S A$game_manager$235 Def000067
+S A$game_manager$208 Def00005D
+S A$game_manager$190 Def000055
+S A$game_manager$181 Def000051
+S A$game_manager$172 Def000041
+S A$game_manager$154 Def00002E
+S A$game_manager$263 Def000072
+S A$game_manager$245 Def00006A
+S A$game_manager$236 Def000068
+S A$game_manager$218 Def000063
+S A$game_manager$209 Def00005F
+S A$game_manager$182 Def000054
+S A$game_manager$173 Def000044
+S A$game_manager$273 Def000078
+S A$game_manager$264 Def000074
+S A$game_manager$237 Def000069
+S A$game_manager$174 Def000046
+S A$game_manager$165 Def000038
 S G$engine_game_manager_set_difficulty$0$0 Def000014
-S A$game_manager$175 Def00004C
-S A$game_manager$166 Def000040
-S A$game_manager$157 Def000032
-S A$game_manager$148 Def000022
-S A$game_manager$176 Def00004D
-S A$game_manager$158 Def000035
-S A$game_manager$149 Def000025
-S A$game_manager$177 Def00004E
-S A$game_manager$159 Def000037
+S A$game_manager$265 Def000077
+S A$game_manager$175 Def000047
+S A$game_manager$166 Def00003B
+S A$game_manager$176 Def000048
+S A$game_manager$167 Def00003E
+S A$game_manager$158 Def00002F
+S A$game_manager$177 Def00004B
+S A$game_manager$168 Def000040
+S A$game_manager$159 Def000032
 S _engine_game_manager_set_cloud_form Def000006
-S A$game_manager$187 Def000053
-S A$game_manager$178 Def000051
-S G$engine_game_manager_set_level_test$0$0 Def00005B
-S A$game_manager$179 Def000052
-S C$game_manager.c$40$1_0$11 Def000053
-S C$game_manager.c$31$1_0$11 Def000022
-A _DATA size 7 flags 0 addr 0
+S A$game_manager$178 Def00004C
+S G$engine_game_manager_set_level_test$0$0 Def00006B
+S C$game_manager.c$11$1_0$12 Def000000
+S A$game_manager$179 Def00004D
+S C$game_manager.c$12$1_0$12 Def000000
+S C$game_manager.c$13$1_0$12 Def000005
+A _DATA size 8 flags 0 addr 0
 S _global_game_object Def000000
 S G$global_game_object$0_0$0 Def000000
 A _INITIALIZED size 0 flags 0 addr 0
@@ -120,7 +135,7 @@ T 00 00 00 21 00 00 36 01 C9
 R 00 00 00 00 00 04 01 00
 T 06 00 00
 R 00 00 00 00
-T 06 00 00 21 05 00 FD 21 02 00 FD 39 FD 7E 00 77
+T 06 00 00 21 06 00 FD 21 02 00 FD 39 FD 7E 00 77
 R 00 00 00 00 00 04 01 00
 T 13 00 00 C9
 R 00 00 00 00
@@ -136,17 +151,23 @@ T 22 00 00 21 01 00 FD 21 02 00 FD 39 FD 7E 00 77
 R 00 00 00 00 00 04 01 00
 T 2F 00 00 21 02 00 FD 7E 01 FD 23 77 21 04 00 FD
 R 00 00 00 00 00 04 01 00 00 0D 01 00
-T 3C 00 00 7E 01 FD 23 77 01 03 00 FD 7E FE FD 2B
-R 00 00 00 00 00 09 01 00
-T 49 00 00 FD 2B 87 87 87 FD 5E 01 83 02 C9
+T 3C 00 00 7E 01 FD 23 77 FD 7E FF FD 2B F5 33 FD
 R 00 00 00 00
-T 54 00 00
+T 49 00 00 7E FF F5 33 CD 00 00 F1 21 03 00 75 C9
+R 00 00 00 00 02 08 01 00 00 0C 01 00
+T 56 00 00
 R 00 00 00 00
-T 54 00 00 01 04 00 0A 3C 02 C9
+T 56 00 00 21 05 00 FD 21 02 00 FD 39 FD 7E 00 77
 R 00 00 00 00 00 04 01 00
-T 5B 00 00
+T 63 00 00 C9
 R 00 00 00 00
-T 5B 00 00 21 03 00 FD 21 02 00 FD 39 FD 7E 00 77
+T 64 00 00
+R 00 00 00 00
+T 64 00 00 01 04 00 0A 3C 02 C9
 R 00 00 00 00 00 04 01 00
-T 68 00 00 C9
+T 6B 00 00
+R 00 00 00 00
+T 6B 00 00 21 03 00 FD 21 02 00 FD 39 FD 7E 00 77
+R 00 00 00 00 00 04 01 00
+T 78 00 00 C9
 R 00 00 00 00

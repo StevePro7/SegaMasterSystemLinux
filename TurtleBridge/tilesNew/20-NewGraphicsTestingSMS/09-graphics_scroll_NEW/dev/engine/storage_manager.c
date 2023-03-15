@@ -34,9 +34,12 @@ void engine_storage_manager_read()
 	// TODO test!!
 	devkit_SMS_enableSRAM();
 	so->storage_saved = true;
-	so->storage_level = engine_util_manager_calculate_level( so->storage_world, so->storage_round );
-	engine_game_manager_set_difficulty( so->storage_difficulty );
-	engine_game_manager_set_level_data( so->storage_world, so->storage_round, so->storage_point );
+
+	// TODO - mega IMPORTANT - I need to calculate this correctly
+	// during testing I work with game_level directly NOT world/round so this code will break all!!
+//	so->storage_level = engine_util_manager_calculate_level( so->storage_world, so->storage_round );
+//	engine_game_manager_set_difficulty( so->storage_difficulty );
+//	engine_game_manager_set_level_data( so->storage_world, so->storage_round, so->storage_point );
 	engine_command_manager_load( so->storage_frame_index, so->storage_this_command );
 	devkit_SMS_disableSRAM();
 }
