@@ -156,14 +156,12 @@ namespace LevelScreen
 				int leng = asset.Width / size;
 				Vector2 pos = new Vector2(strt, 0);
 
-				if (0 == idx)
-				{
-					spriteBatch.Draw(asset, pos, null, Color.White, 0.0f, Vector2.Zero, 1 / size, SpriteEffects.None, 1.0f);
-				}
-				
+				spriteBatch.Draw(asset, pos, null, Color.White, 0.0f, Vector2.Zero, (float)1 / size, SpriteEffects.None, 1.0f);
 				strt += leng;
 			}
-			
+
+			//spriteBatch.Draw(assetManager.Assets[0], Vector2.Zero, null, Color.White, 0.0f, Vector2.Zero, (float)1 / size, SpriteEffects.None, 1.0f);
+
 			spriteBatch.End();
 		}
 
