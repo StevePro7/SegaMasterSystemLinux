@@ -27,7 +27,7 @@
 
 #define STARTING_SCROLLING		1
 
-static unsigned char screen_intro_screen_delay;
+//static unsigned char screen_intro_screen_delay;
 static unsigned char cheat_count;
 static unsigned char delay;
 static bool flag;
@@ -37,10 +37,17 @@ void screen_start_screen_load()
 	struct_game_object *go = &global_game_object;
 
 	//engine_graphics_manager_common();
+	//devkit_SMS_displayOff();
+	//engine_asm_manager_clear_VRAM();
+	//engine_content_manager_bggame();
+	//engine_content_manager_sprite();
+	//engine_graphics_manager_title();
+	//engine_graphics_manager_sea();
+	//devkit_SMS_displayOn();
+
 	devkit_SMS_displayOff();
-	engine_asm_manager_clear_VRAM();
-	engine_content_manager_bggame();
-	engine_content_manager_sprite();
+	engine_graphics_manager_screen( CLEAR_TILE_BLUE );
+	// Draw screen specific graphics.
 	engine_graphics_manager_title();
 	engine_graphics_manager_sea();
 	//devkit_SMS_displayOn();
@@ -55,16 +62,14 @@ void screen_start_screen_load()
 	engine_util_manager_locale_texts( 4, 9, 7 );
 	if( STARTING_SCROLLING )
 	{
-		//engine_scroll_manager_init();			// TODO delete
 		engine_scroll_manager_para_load( 0, 0 );
-		//engine_scroll_manager_load( 0, 0 );
 	}
 
+	//engine_
 	engine_scroll_manager_para_update( 0 );
 	devkit_SMS_displayOn();
 
-	screen_intro_screen_delay = NORMAL_DELAY;
-	engine_delay_manager_load( 50 );
+	engine_delay_manager_load( NORMAL_DELAY );
 	flag = true;
 }
 

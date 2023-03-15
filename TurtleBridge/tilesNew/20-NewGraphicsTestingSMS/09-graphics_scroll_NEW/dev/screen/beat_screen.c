@@ -21,7 +21,7 @@ void screen_beat_screen_load()
 	struct_scroll_object *so = &global_scroll_object;
 	unsigned char value;
 	value = 1;
-	
+
 	devkit_SMS_displayOff();
 	engine_graphics_manager_screen( CLEAR_TILE_BLUE );
 	// Draw screen specific graphics.
