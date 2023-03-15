@@ -219,7 +219,7 @@ namespace ScreenShotTest
 			{
 				datas.Add(2);
 			}
-			if (type == "BridgeMidd" || type == "BridgeLeft")
+			if ((type == "BridgeMidd" && valu > 1) || type == "BridgeLeft")
 			{
 				datas.Add(1);
 			}
