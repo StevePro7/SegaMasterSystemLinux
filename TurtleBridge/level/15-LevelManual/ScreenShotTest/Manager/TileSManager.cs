@@ -51,6 +51,10 @@ namespace ScreenShotTest
 			for (int row = 0; row < rowCount; row++)
 			{
 				var line = texts[row];
+				if (line.StartsWith("//"))
+				{
+					continue;
+				}
 				var objs = line.Split(delim);
 
 				string type = objs[0].ToString();
