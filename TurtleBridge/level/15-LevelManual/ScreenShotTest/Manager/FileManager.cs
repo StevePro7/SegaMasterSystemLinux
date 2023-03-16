@@ -274,9 +274,9 @@ namespace ScreenShotTest
 				//	data.Add(info.ToString());
 			}
 
-			string banktext = String.Format("steve_{0}{1}_{2}.txt", world, round, point);
-			var contents = data.ToArray();
-			File.WriteAllLines(filepath + "/" + banktext, contents);
+			//string banktext = String.Format("steve_{0}{1}_{2}.txt", world, round, point);
+			//var contents = data.ToArray();
+			//File.WriteAllLines(filepath + "/" + banktext, contents);
 
 			// Outputs all world / round combos to fixedbank.c
 			//SaveLevelnfo("output");
