@@ -6,7 +6,30 @@ namespace ExtractCheckpoints
 {
 	public class FileManager
 	{
-		
+		string[] aa = {
+			"AA-bridge01.csv", "AA-bridge02.csv", "AA-bridge03.csv", 
+			"AA-island01.csv", "AA-island02.csv", "AA-island03.csv",
+			"AA-mixerd01.csv", "AA-mixerd02.csv",
+			"AA-dropsd01.csv", "AA-dropsd02.csv",
+		};
+		string[] bb = {
+			"BB-bridge01.csv", "BB-bridge02.csv", "BB-bridge03.csv",
+			"BB-island01.csv", "BB-island02.csv", "BB-island03.csv",
+			"BB-mixerd01.csv", "BB-mixerd02.csv",
+			 "BB-dropsd01.csv", "BB-dropsd02.csv",
+		};
+		string[] cc = {
+			"CC-bridge01.csv",
+			"CC-island01.csv",
+			"CC-mixerd01.csv", "CC-mixerd02.csv",
+			"CC-dropsd01.csv", "CC-dropsd02.csv",
+		};
+		string[] dd = {
+			"DD-bridge01.csv",
+			"DD-island01.csv",
+			"DD-mixerd01.csv", "DD-mixerd02.csv",
+			"DD-dropsd01.csv", "DD-dropsd02.csv",
+		};
 		string[] xx = { "", "WavesBlock,8", "" };
 
 		private List<string> output;
@@ -26,13 +49,24 @@ namespace ExtractCheckpoints
 
 		public void Process()
 		{
-			var line = "AA-bridge01,BB-bridge03,CC-bridge01,DD-bridge01";
-			var info = line.Split(new char[] { ',' });
-			string a = info[0] + ".csv";
-			string b = info[1] + ".csv";
-			string c = info[2] + ".csv";
-			string d = info[3] + ".csv";
-			Build(a, b, c, d);
+			//string a = "AA-bridge01.csv";
+			//string b = "BB-bridge02.csv";
+			//string c = "CC-dropsd02.csv";
+			//string d = "DD-mixerd02.csv";
+
+			foreach (var a in aa)
+			{
+				foreach (var b in bb)
+				{
+					foreach (var c in cc)
+					{
+						foreach (var d in dd)
+						{
+							Build(a, b, c, d);
+						}
+					}
+				}
+			}
 		}
 
 		private void Build(string a, string b, string c, string d)
