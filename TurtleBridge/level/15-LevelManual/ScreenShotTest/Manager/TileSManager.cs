@@ -50,9 +50,13 @@ namespace ScreenShotTest
 			int rowCount = texts.Length;
 			for (int row = 0; row < rowCount; row++)
 			{
-				var line = texts[row];
-				var objs = line.Split(delim);
+				var line = texts[row].Trim();
+				if (0 == line.Length || line.StartsWith("//"))
+				{
+					continue;
+				}
 
+				var objs = line.Split(delim);
 				string type = objs[0].ToString();
 				string lowr =type.ToLower();
 				int valu = Convert.ToInt32(objs[1]);
@@ -206,11 +210,47 @@ namespace ScreenShotTest
 		private List<int> GetDatasIsland(string type, string lowr, int valu)
 		{
 			var datas = new List<int>();
+			if (type == "IslandGoal")
+			{
+				for (int idx = 1; idx <= 5; idx++)
+				{
+					datas.Add(4);
+				}
+				datas.Add(18);
+				for (int idx = 1; idx <= 1; idx++)
+				{
+					datas.Add(4);
+				}
+				datas.Add(6);
+				return datas;
+			}
+			if (type == "IslandSign")
+			{
+				for (int idx = 0; idx < valu; idx++)
+				{
+					datas.Add(7);
+				}
+				return datas;
+			}
+			if (type == "IslandTree")
+			{
+				int half = valu / 2;
+				if (0 != valu %2)
+				{
+					Logger.Error("NOT an even number of trees: " + valu);
+				}
+				for (int idx =0; idx < half; idx++)
+				{
+					datas.Add(8);
+					datas.Add(9);
+				}
+				return datas;
+			}
 			if (type == "IslandBoth" || type == "IslandLeft")
 			{
 				datas.Add(5);
 			}
-			if (type == "IslandMidd" || type == "IslandRght")
+			if (type == "IslandMidd" || (type == "IslandRght" && valu > 1))
 			{
 				datas.Add(4);
 			}
@@ -222,7 +262,7 @@ namespace ScreenShotTest
 			{
 				datas.Add(6);
 			}
-			if (type == "IslandMidd" || type == "IslandLeft")
+			if ((type == "IslandMidd" && valu > 1) || type == "IslandLeft")
 			{
 				datas.Add(4);
 			}
@@ -233,11 +273,32 @@ namespace ScreenShotTest
 		private List<int> GetDatasBridge(string type, string lowr, int valu)
 		{
 			var datas = new List<int>();
+			if (type == "BridgeGoal")
+			{
+				for (int idx = 1; idx <= 5; idx++)
+				{
+					datas.Add(1);
+				}
+				datas.Add(17);
+				for (int idx = 1; idx <= 2; idx++)
+				{
+					datas.Add(1);
+				}
+				return datas;
+			}
+			if (type == "BridgeSign")
+			{
+				for (int idx = 0; idx < valu; idx++)
+				{
+					datas.Add(3);
+				}
+				return datas;
+			}
 			if (type == "BridgeBoth" || type == "BridgeLeft")
 			{
 				datas.Add(16);
 			}
-			if (type == "BridgeMidd" || type == "BridgeRght")
+			if (type == "BridgeMidd" || (type == "BridgeRght" && valu > 1))
 			{
 				datas.Add(1);
 			}
