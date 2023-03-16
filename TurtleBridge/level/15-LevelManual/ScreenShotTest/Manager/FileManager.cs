@@ -226,7 +226,7 @@ namespace ScreenShotTest
 			return item;
 		}
 
-		public void Save(int[] tiles, string banktext)
+		public void Save(int[] tiles, string myfilePath, string banktext)
 		{
 			Tiles = tiles;
 			//string format = "yyyyMMdd-HHmmss";
@@ -253,7 +253,7 @@ namespace ScreenShotTest
 			}
 
 			//string banktext = String.Format("level_{0}{1}_{2}", world, round, point);
-			DumpData2(data3, filepath, banktext);
+			DumpData2(data3, myfilePath, banktext);
 
 			// steven.txt
 			data.Clear();

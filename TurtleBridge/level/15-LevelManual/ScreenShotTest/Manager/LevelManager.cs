@@ -301,7 +301,7 @@ namespace ScreenShotTest
 			return Tiles;
 		}
 
-		public int[] Tiles { get; private set; }
+		public int[] Tiles { get; set; }
 		public bool IsValid { get; private set; }
 		public int BadCols { get; private set; }
 	}

@@ -44,7 +44,7 @@ namespace ScreenShotTest
 			levelManager = new LevelManager(this, assetManager, configManager, fileManager, inputManager, selectorManager, wide, high);
 			boardManager = new BoardManager(this, assetManager, configManager, fileManager, inputManager, levelManager, selectorManager, wide, high);
 
-			multiManager = new MultiManager(tilesManager, fileManager, boardManager);
+			multiManager = new MultiManager(fileManager, tilesManager, levelManager, boardManager);
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = wide;
 			graphics.PreferredBackBufferHeight = high;
@@ -68,8 +68,11 @@ namespace ScreenShotTest
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 			assetManager.LoadContent(Content);
 			boardManager.LoadContent(Content);
-			levelManager.LoadContent();
-			//multiManager.LoadContent(spriteBatch);
+			//levelManager.LoadContent();
+
+			// stevepro hack during bulk
+			multiManager.LoadContent(spriteBatch);
+			Exit();
 
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
 			wide = pp.BackBufferWidth;
