@@ -220,6 +220,23 @@ namespace ScreenShotTest
 				datas.Add(6);
 				return datas;
 			}
+			if (type == "IslandSign")
+			{
+			}
+			if (type == "IslandTree")
+			{
+				int half = valu / 2;
+				if (0 != valu %2)
+				{
+					Logger.Error("NOT an even number of trees: " + valu);
+				}
+				for (int idx =0; idx < half; idx++)
+				{
+					datas.Add(8);
+					datas.Add(9);
+				}
+				return datas;
+			}
 			if (type == "IslandBoth" || type == "IslandLeft")
 			{
 				datas.Add(5);
