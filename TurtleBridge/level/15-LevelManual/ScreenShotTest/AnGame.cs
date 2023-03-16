@@ -17,6 +17,7 @@ namespace ScreenShotTest
 		private LevelManager levelManager;
 		private SelectorManager selectorManager;
 		private TilesManager tilesManager;
+		private MultiManager multiManager;
 
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
@@ -43,6 +44,7 @@ namespace ScreenShotTest
 			levelManager = new LevelManager(this, assetManager, configManager, fileManager, inputManager, selectorManager, wide, high);
 			boardManager = new BoardManager(this, assetManager, configManager, fileManager, inputManager, levelManager, selectorManager, wide, high);
 
+			multiManager = new MultiManager(tilesManager, fileManager, boardManager);
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = wide;
 			graphics.PreferredBackBufferHeight = high;
@@ -67,6 +69,7 @@ namespace ScreenShotTest
 			assetManager.LoadContent(Content);
 			boardManager.LoadContent(Content);
 			levelManager.LoadContent();
+			//multiManager.LoadContent(spriteBatch);
 
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
 			wide = pp.BackBufferWidth;

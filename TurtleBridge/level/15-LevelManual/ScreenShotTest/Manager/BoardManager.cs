@@ -21,6 +21,7 @@ namespace ScreenShotTest
 		private RenderTarget2D renderTarget;
 		private SpriteFont font;
 		private List<int> waveCount, wavePosns;
+		private string world, round, point;
 		private int wide, high;
 
 		public BoardManager(Game game, AssetManager assetManager, ConfigManager configManager, FileManager fileManager, InputManager inputManager, LevelManager levelManager, SelectorManager selectorManager, int wide, int high)
@@ -35,7 +36,10 @@ namespace ScreenShotTest
 			this.wide = wide;
 			this.high = high;
 
-			string point = configManager.CheckPoint.ToString().PadLeft(2, '0');
+			world = configManager.NumWorld.ToString().PadLeft(2, '0');
+			round = configManager.NumRound.ToString().PadLeft(2, '0');
+			point = configManager.CheckPoint.ToString().PadLeft(2, '0');
+
 			game.Window.Title = "CheckPoint-" + point;
 			waveCount = new List<int>();
 			wavePosns = new List<int>();
@@ -72,18 +76,18 @@ namespace ScreenShotTest
 			game.Window.Title = "EValid";
 			levelManager.UpdateTrees();
 			var tiles = levelManager.Tiles;
-			fileManager.Save(tiles);
 
-			string world = configManager.NumWorld.ToString().PadLeft(2, '0');
-			string round = configManager.NumRound.ToString().PadLeft(2, '0');
-			string point = configManager.CheckPoint.ToString().PadLeft(2, '0');
+			string prefix = "level";
+			string banktext = String.Format("{0}_{1}{2}_{3}", prefix, world, round, point);
+			fileManager.Save(tiles, banktext);
+
 			var filename = String.Format("level_{0}{1}", world, round);
 			var filepath = "output/" + filename;
 			filename = String.Format("{0}/{1}_{2}.png", filepath, filename, point);
 			SaveScreen(spriteBatch, filename);
 		}
 
-		private void SaveScreen(SpriteBatch spriteBatch, string filename)
+		public void SaveScreen(SpriteBatch spriteBatch, string filename)
 		{
 			game.GraphicsDevice.SetRenderTarget(renderTarget);
 			game.GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.CornflowerBlue, 1, 0);
