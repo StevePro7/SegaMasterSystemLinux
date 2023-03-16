@@ -73,20 +73,18 @@ namespace ScreenShotTest
 			levelManager.UpdateTrees();
 			var tiles = levelManager.Tiles;
 			fileManager.Save(tiles);
-			SaveScreen(spriteBatch);
-		}
 
-		private void SaveScreen(SpriteBatch spriteBatch)
-		{
 			string world = configManager.NumWorld.ToString().PadLeft(2, '0');
 			string round = configManager.NumRound.ToString().PadLeft(2, '0');
 			string point = configManager.CheckPoint.ToString().PadLeft(2, '0');
-
 			var filename = String.Format("level_{0}{1}", world, round);
 			var filepath = "output/" + filename;
-			//filename = filepath + "/" + filename + ".png";
 			filename = String.Format("{0}/{1}_{2}.png", filepath, filename, point);
+			SaveScreen(spriteBatch, filename);
+		}
 
+		private void SaveScreen(SpriteBatch spriteBatch, string filename)
+		{
 			game.GraphicsDevice.SetRenderTarget(renderTarget);
 			game.GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.CornflowerBlue, 1, 0);
 

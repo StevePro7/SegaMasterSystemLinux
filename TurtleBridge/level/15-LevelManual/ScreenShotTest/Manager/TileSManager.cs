@@ -30,18 +30,18 @@ namespace ScreenShotTest
 			}
 		}
 
-		public void Initialize()
+		public void Initialize(string path)
 		{
 			// TODO - toggle full / part by config
 			//if (configManager.LoadTiles)
-			Initialize1();			// structural level 
+			Initialize1(path);			// structural level 
 			//Initialize2();		// tweak part level
 		}
 
-		public void Initialize1()
+		public void Initialize1(string path)
 		{
 			// https://coderwall.com/p/app3ya/read-excel-file-in-c
-			string path = @"MyTiles.csv";
+			//string path = @"MyTiles.csv";
 			var delim = new char[] { ',' };
 
 			lines.Clear();

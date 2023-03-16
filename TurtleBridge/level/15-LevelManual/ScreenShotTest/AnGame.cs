@@ -52,7 +52,7 @@ namespace ScreenShotTest
 		protected override void Initialize()
 		{
 			IsMouseVisible = true;
-			tilesManager.Initialize();
+			tilesManager.Initialize("MyTiles.csv");
 			fileManager.Initialize();
 			
 			base.Initialize();
@@ -90,7 +90,7 @@ namespace ScreenShotTest
 			inputManager.Update();
 			if (inputManager.KeyHold(Keys.L))
 			{
-				tilesManager.Initialize();
+				tilesManager.Initialize("MyTiles.csv");
 			}
 			if (inputManager.KeyHold(Keys.T))
 			{

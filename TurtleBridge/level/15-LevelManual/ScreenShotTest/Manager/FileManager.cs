@@ -251,7 +251,9 @@ namespace ScreenShotTest
 					data3.Add(d3);
 				}
 			}
-			DumpData2(data3, filepath);
+
+			string banktext = String.Format("level_{0}{1}_{2}", world, round, point);
+			DumpData2(data3, filepath, banktext);
 
 			// steven.txt
 			data.Clear();
@@ -325,7 +327,7 @@ namespace ScreenShotTest
 			File.WriteAllLines(filetext, contents);
 		}
 
-		private void DumpData2(List<int> data3, string path)
+		private void DumpData2(List<int> data3, string path, string banktext)
 		{
 			var file = new List<string>();
 			//const int wide = 32;			// TODO 32x cols per screen i.e. 32 * 8 = 256px wide.
@@ -382,15 +384,15 @@ namespace ScreenShotTest
 
 			file.Add("};");
 			var contents = file.ToArray();
-			string banktext = String.Format("level_{0}{1}_{2}", world, round, point);
+			//string banktext = String.Format("level_{0}{1}_{2}", world, round, point);
 			File.WriteAllLines(path + "/" + banktext + ".c", contents);
 			File.WriteAllLines(path + "/../../bankX.c", contents);
 			File.WriteAllLines(path + "/../../../../../../bankX.c", contents);
 			// HACK - avoid copy n' paste during level testing.
-			if (configManager.TheCopy)
-			{
-				File.WriteAllLines(path + "/../../../../../../../../../tilesNew/20-NewGraphicsTestingSMS/09-graphics_scroll_NEW/dev/banks/" + banktext + ".c", contents);
-			}
+			//if (configManager.TheCopy)
+			//{
+			//	File.WriteAllLines(path + "/../../../../../../../../../tilesNew/20-NewGraphicsTestingSMS/09-graphics_scroll_NEW/dev/banks/" + banktext + ".c", contents);
+			//}
 
 			file.Clear();
 			file.Add("extern const unsigned char " + filename + "[];");
@@ -401,10 +403,10 @@ namespace ScreenShotTest
 			File.WriteAllLines(path + "/../../bankX.h", contents);
 			File.WriteAllLines(path + "/../../../../../../bankX.h", contents);
 			// HACK - avoid copy n' paste during level testing.
-			if (configManager.TheCopy)
-			{
-				File.WriteAllLines(path + "/../../../../../../../../tilesNew/20-NewGraphicsTestingSMS/09-graphics_scroll_NEW/dev/banks/" + banktext + ".h", contents);
-			}
+			//if (configManager.TheCopy)
+			//{
+			//	File.WriteAllLines(path + "/../../../../../../../../tilesNew/20-NewGraphicsTestingSMS/09-graphics_scroll_NEW/dev/banks/" + banktext + ".h", contents);
+			//}
 
 			// Make local copy of the CSV file used to render screen.
 			string csvName = banktext.Replace("level_", "tiles_");
