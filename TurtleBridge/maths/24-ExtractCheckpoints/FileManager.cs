@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace ConsoidateFiles
+namespace ExtractCheckpoints
 {
 	public class FileManager
 	{
@@ -21,33 +21,41 @@ namespace ConsoidateFiles
 			}
 		}
 
-		public void Process(string directory)
+		public void Process(string inpName)
 		{
-			output.Clear();
-			output.Add("const unsigned char " + directory + "_txt[] =");
-			output.Add("{");
+			var lines = File.ReadAllLines("input/" + inpName + ".csv");
+			var idx = 0;
 
-			var searchPattern = directory + "*.c";
-			var files = Directory.GetFiles("input/", searchPattern);
-			foreach (var file in files)
+			string outName = String.Empty;
+			var cnt = lines.Length;
+			while (idx < cnt)
 			{
-				var lines = File.ReadAllLines(file);
-				foreach (var line in lines)
+				var line = lines[idx];
+				if (line.StartsWith("//"))
 				{
-					if (line.StartsWith("const") || line.StartsWith("{") || line.StartsWith("}"))
-					{
-						continue;
-					}
-
+					outName = line.Substring(3, 11);
+					output.Clear();
 					output.Add(line);
 				}
+				else if (0 == line.Length)
+				{
+					var contents = output.ToArray();
+					var path = "output/" + outName + ".csv";
+					File.WriteAllLines(path, contents);
+				}
+				else
+				{
+					output.Add(line);
+				}
+				idx++;
 			}
 
-			output.Add("};");
-
-			var contents = output.ToArray();
-			var path = String.Format("output/{0}_NEW.c", directory);
-			File.WriteAllLines(path, contents);
+			if (output.Count > 0)
+			{
+				var contents = output.ToArray();
+				var path = "output/" + outName + ".csv";
+				File.WriteAllLines(path, contents);
+			}
 		}
 	}
 }

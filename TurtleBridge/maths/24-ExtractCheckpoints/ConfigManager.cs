@@ -1,6 +1,6 @@
 ﻿using System.Configuration;
 
-namespace ConsoidateFiles
+namespace ExtractCheckpoints
 {
 	public class ConfigManager
 	{
