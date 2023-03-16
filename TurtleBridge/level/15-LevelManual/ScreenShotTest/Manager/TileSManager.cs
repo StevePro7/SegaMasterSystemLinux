@@ -206,6 +206,20 @@ namespace ScreenShotTest
 		private List<int> GetDatasIsland(string type, string lowr, int valu)
 		{
 			var datas = new List<int>();
+			if (type == "IslandGoal")
+			{
+				for (int idx = 1; idx <= 5; idx++)
+				{
+					datas.Add(4);
+				}
+				datas.Add(18);
+				for (int idx = 1; idx <= 1; idx++)
+				{
+					datas.Add(4);
+				}
+				datas.Add(6);
+				return datas;
+			}
 			if (type == "IslandBoth" || type == "IslandLeft")
 			{
 				datas.Add(5);
@@ -233,6 +247,19 @@ namespace ScreenShotTest
 		private List<int> GetDatasBridge(string type, string lowr, int valu)
 		{
 			var datas = new List<int>();
+			if (type == "BridgeGoal")
+			{
+				for (int idx = 1; idx <= 5; idx++)
+				{
+					datas.Add(1);
+				}
+				datas.Add(17);
+				for (int idx = 1; idx <= 2; idx++)
+				{
+					datas.Add(1);
+				}
+				return datas;
+			}
 			if (type == "BridgeBoth" || type == "BridgeLeft")
 			{
 				datas.Add(16);
