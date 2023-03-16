@@ -250,7 +250,7 @@ namespace ScreenShotTest
 			{
 				datas.Add(5);
 			}
-			if (type == "IslandMidd" || type == "IslandRght")
+			if (type == "IslandMidd" || (type == "IslandRght" && valu > 1))
 			{
 				datas.Add(4);
 			}
