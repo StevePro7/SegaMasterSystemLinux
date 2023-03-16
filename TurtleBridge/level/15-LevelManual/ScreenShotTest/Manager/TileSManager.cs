@@ -50,13 +50,13 @@ namespace ScreenShotTest
 			int rowCount = texts.Length;
 			for (int row = 0; row < rowCount; row++)
 			{
-				var line = texts[row];
-				if (line.StartsWith("//"))
+				var line = texts[row].Trim();
+				if (0 == line.Length || line.StartsWith("//"))
 				{
 					continue;
 				}
-				var objs = line.Split(delim);
 
+				var objs = line.Split(delim);
 				string type = objs[0].ToString();
 				string lowr =type.ToLower();
 				int valu = Convert.ToInt32(objs[1]);
