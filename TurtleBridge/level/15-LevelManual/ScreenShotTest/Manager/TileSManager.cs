@@ -222,6 +222,11 @@ namespace ScreenShotTest
 			}
 			if (type == "IslandSign")
 			{
+				for (int idx = 0; idx < valu; idx++)
+				{
+					datas.Add(7);
+				}
+				return datas;
 			}
 			if (type == "IslandTree")
 			{
@@ -274,6 +279,14 @@ namespace ScreenShotTest
 				for (int idx = 1; idx <= 2; idx++)
 				{
 					datas.Add(1);
+				}
+				return datas;
+			}
+			if (type == "BridgeSign")
+			{
+				for (int idx = 0; idx < valu; idx++)
+				{
+					datas.Add(3);
 				}
 				return datas;
 			}
