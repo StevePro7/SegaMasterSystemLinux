@@ -262,7 +262,8 @@ namespace ScreenShotTest
 			{
 				datas.Add(6);
 			}
-			if ((type == "IslandMidd" && valu > 1) || type == "IslandLeft")
+			
+			if ((type == "IslandMidd" && valu > 1) || (type == "IslandLeft" && valu > 1))
 			{
 				datas.Add(4);
 			}
@@ -310,7 +311,7 @@ namespace ScreenShotTest
 			{
 				datas.Add(2);
 			}
-			if ((type == "BridgeMidd" && valu > 1) || type == "BridgeLeft")
+			if ((type == "BridgeMidd" && valu > 1) || (type == "BridgeLeft" && valu > 1))
 			{
 				datas.Add(1);
 			}
