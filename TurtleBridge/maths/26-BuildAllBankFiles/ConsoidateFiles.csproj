@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DB014176-AE07-46CE-81C6-D912C3866B0C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ExtractCheckpoints</RootNamespace>
+    <AssemblyName>ExtractCheckpoints</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConfigManager.cs" />
+    <Content Include="FileManager.txt" />
+    <Compile Include="FileManager.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="input\05\level_0501_AA-mixerd02_BB-island01_CC-dropsd02_DD-dropsd02.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\05\level_0501_AA-mixerd02_BB-island01_CC-dropsd02_DD-dropsd02.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\05\level_0502_AA-dropsd01_BB-bridge01_CC-island01_DD-mixerd01.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\05\level_0502_AA-dropsd01_BB-bridge01_CC-island01_DD-mixerd01.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\05\level_0503_AA-dropsd02_BB-mixerd02_CC-dropsd01_DD-bridge01.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\05\level_0503_AA-dropsd02_BB-mixerd02_CC-dropsd01_DD-bridge01.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\05\level_0504_AA-mixerd01_BB-mixerd01_CC-dropsd02_DD-mixerd01.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\05\level_0504_AA-mixerd01_BB-mixerd01_CC-dropsd02_DD-mixerd01.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\05\level_0505_AA-mixerd02_BB-dropsd02_CC-bridge01_DD-dropsd01.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\05\level_0505_AA-mixerd02_BB-dropsd02_CC-bridge01_DD-dropsd01.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\05\level_0506_AA-bridge03_BB-island01_CC-mixerd02_DD-dropsd01.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\05\level_0506_AA-bridge03_BB-island01_CC-mixerd02_DD-dropsd01.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\05\level_0507_AA-dropsd02_BB-bridge01_CC-dropsd02_DD-mixerd01.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\05\level_0507_AA-dropsd02_BB-bridge01_CC-dropsd02_DD-mixerd01.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\05\level_0508_AA-island03_BB-mixerd02_CC-mixerd01_DD-dropsd02.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\05\level_0508_AA-island03_BB-mixerd02_CC-mixerd01_DD-dropsd02.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\04\level_0401_AA-dropsd02_BB-mixerd01_CC-bridge01_DD-island01.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\04\level_0401_AA-dropsd02_BB-mixerd01_CC-bridge01_DD-island01.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\04\level_0402_AA-island01_BB-dropsd01_CC-island01_DD-dropsd02.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\04\level_0402_AA-island01_BB-dropsd01_CC-island01_DD-dropsd02.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\04\level_0403_AA-dropsd01_BB-bridge02_CC-mixerd02_DD-mixerd02.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\04\level_0403_AA-dropsd01_BB-bridge02_CC-mixerd02_DD-mixerd02.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\04\level_0404_AA-mixerd02_BB-mixerd01_CC-island01_DD-bridge01.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\04\level_0404_AA-mixerd02_BB-mixerd01_CC-island01_DD-bridge01.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\04\level_0405_AA-mixerd01_BB-bridge03_CC-dropsd01_DD-island01.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\04\level_0405_AA-mixerd01_BB-bridge03_CC-dropsd01_DD-island01.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\04\level_0406_AA-bridge01_BB-bridge02_CC-bridge01_DD-dropsd01.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\04\level_0406_AA-bridge01_BB-bridge02_CC-bridge01_DD-dropsd01.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\04\level_0407_AA-island02_BB-island02_CC-dropsd01_DD-island01.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\04\level_0407_AA-island02_BB-island02_CC-dropsd01_DD-island01.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\04\level_0408_AA-bridge02_BB-dropsd01_CC-mixerd01_DD-bridge01.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\04\level_0408_AA-bridge02_BB-dropsd01_CC-mixerd01_DD-bridge01.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\03\level_0301_AA-island01_BB-island03_CC-mixerd01_DD-bridge01.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\03\level_0301_AA-island01_BB-island03_CC-mixerd01_DD-bridge01.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\03\level_0302_AA-bridge01_BB-mixerd01_CC-mixerd02_DD-island01.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\03\level_0302_AA-bridge01_BB-mixerd01_CC-mixerd02_DD-island01.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\03\level_0303_AA-mixerd01_BB-island02_CC-bridge01_DD-mixerd01.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\03\level_0303_AA-mixerd01_BB-island02_CC-bridge01_DD-mixerd01.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\03\level_0304_AA-island03_BB-bridge03_CC-bridge01_DD-mixerd02.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\03\level_0304_AA-island03_BB-bridge03_CC-bridge01_DD-mixerd02.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\03\level_0305_AA-bridge02_BB-bridge02_CC-mixerd02_DD-bridge01.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\03\level_0305_AA-bridge02_BB-bridge02_CC-mixerd02_DD-bridge01.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\03\level_0306_AA-island02_BB-mixerd02_CC-bridge01_DD-island01.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\03\level_0306_AA-island02_BB-mixerd02_CC-bridge01_DD-island01.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\03\level_0307_AA-dropsd01_BB-bridge03_CC-bridge01_DD-bridge01.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\03\level_0307_AA-dropsd01_BB-bridge03_CC-bridge01_DD-bridge01.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\03\level_0308_AA-bridge01_BB-dropsd02_CC-island01_DD-mixerd02.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\03\level_0308_AA-bridge01_BB-dropsd02_CC-island01_DD-mixerd02.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\01\level_0101_AA-bridge01_BB-bridge03_CC-bridge01_DD-bridge01.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\01\level_0101_AA-bridge01_BB-bridge03_CC-bridge01_DD-bridge01.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\01\level_0102_AA-island03_BB-island03_CC-island01_DD-island01.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\01\level_0102_AA-island03_BB-island03_CC-island01_DD-island01.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\01\level_0103_AA-bridge02_BB-island01_CC-bridge01_DD-island01.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\01\level_0103_AA-bridge02_BB-island01_CC-bridge01_DD-island01.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\01\level_0104_AA-mixerd01_BB-bridge02_CC-island01_DD-bridge01.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\01\level_0104_AA-mixerd01_BB-bridge02_CC-island01_DD-bridge01.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\01\level_0105_AA-island01_BB-island03_CC-mixerd02_DD-bridge01.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\01\level_0105_AA-island01_BB-island03_CC-mixerd02_DD-bridge01.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\01\level_0106_AA-island02_BB-mixerd01_CC-bridge01_DD-island01.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\01\level_0106_AA-island02_BB-mixerd01_CC-bridge01_DD-island01.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\01\level_0107_AA-bridge03_BB-bridge01_CC-island01_DD-island01.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\01\level_0107_AA-bridge03_BB-bridge01_CC-island01_DD-island01.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\01\level_0108_AA-bridge02_BB-island02_CC-bridge01_DD-mixerd02.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="input\01\level_0108_AA-bridge02_BB-island02_CC-bridge01_DD-mixerd02.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="input\02\level_0201_AA-mixerd01_BB-bridge02_CC-bridge01_DD-island01.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="input\02\level_0201_AA-mixerd01_BB-bridge02_CC-bridge01_DD-island01.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="input\02\level_0202_AA-bridge01_BB-mixerd02_CC-bridge01_DD-island01.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="input\02\level_0202_AA-bridge01_BB-mixerd02_CC-bridge01_DD-island01.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="input\02\level_0203_AA-mixerd02_BB-bridge03_CC-island01_DD-bridge01.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="input\02\level_0203_AA-mixerd02_BB-bridge03_CC-island01_DD-bridge01.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="input\02\level_0204_AA-island03_BB-island03_CC-island01_DD-bridge01.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="input\02\level_0204_AA-island03_BB-island03_CC-island01_DD-bridge01.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="input\02\level_0205_AA-bridge02_BB-mixerd01_CC-bridge01_DD-island01.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="input\02\level_0205_AA-bridge02_BB-mixerd01_CC-bridge01_DD-island01.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="input\02\level_0206_AA-island01_BB-bridge02_CC-mixerd01_DD-island01.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="input\02\level_0206_AA-island01_BB-bridge02_CC-mixerd01_DD-island01.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="input\02\level_0207_AA-bridge02_BB-island02_CC-island01_DD-mixerd02.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="input\02\level_0207_AA-bridge02_BB-island02_CC-island01_DD-mixerd02.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="input\02\level_0208_AA-island02_BB-bridge03_CC-island01_DD-bridge01.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="input\02\level_0208_AA-island02_BB-bridge03_CC-island01_DD-bridge01.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
