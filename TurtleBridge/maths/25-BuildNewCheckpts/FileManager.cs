@@ -50,10 +50,10 @@ namespace ExtractCheckpoints
 
 		public void Process2()
 		{
-			var dict1 = new Dictionary<string, int>();
-			var dict2 = new Dictionary<string, int>();
-			var dict3 = new Dictionary<string, int>();
-			var dict4 = new Dictionary<string, int>();
+			var dict1 = new SortedDictionary<string, int>();
+			var dict2 = new SortedDictionary<string, int>();
+			var dict3 = new SortedDictionary<string, int>();
+			var dict4 = new SortedDictionary<string, int>();
 
 			var lines = GetLines();
 			//var line = "AA-bridge01,BB-bridge03,CC-bridge01,DD-bridge01,XX-ending01";
@@ -102,6 +102,12 @@ namespace ExtractCheckpoints
 			int c2 = dict2.Keys.Count;
 			int c3 = dict3.Keys.Count;
 			int c4 = dict4.Keys.Count;
+
+			foreach (var k in dict4)
+			{
+				string msg = String.Format("{0},{1}", k.Key, k.Value);
+				Console.WriteLine(msg);
+			}
 		}
 
 		private void Build(string a, string b, string c, string d, string x, int w, int r)
@@ -171,6 +177,14 @@ namespace ExtractCheckpoints
 				"AA-bridge01,BB-bridge02,CC-bridge01,DD-dropsd01,XX-ending02",
 				"AA-island02,BB-island02,CC-dropsd01,DD-island01,XX-ending01",
 				"AA-bridge02,BB-dropsd01,CC-mixerd01,DD-bridge01,XX-ending02",
+				"AA-mixerd02,BB-island01,CC-dropsd02,DD-dropsd02,XX-ending02",
+				"AA-dropsd01,BB-bridge01,CC-island01,DD-mixerd01,XX-ending02",
+				"AA-dropsd02,BB-mixerd02,CC-dropsd01,DD-bridge01,XX-ending01",
+				"AA-mixerd01,BB-mixerd01,CC-dropsd02,DD-mixerd01,XX-ending02",
+				"AA-mixerd02,BB-dropsd02,CC-bridge01,DD-dropsd01,XX-ending02",
+				"AA-bridge03,BB-island01,CC-mixerd02,DD-dropsd01,XX-ending01",
+				"AA-dropsd02,BB-bridge01,CC-dropsd02,DD-mixerd01,XX-ending02",
+				"AA-island03,BB-mixerd02,CC-mixerd01,DD-dropsd02,XX-ending01",
 			};
 		}
 	}
