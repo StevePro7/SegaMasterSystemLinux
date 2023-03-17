@@ -165,7 +165,7 @@ void engine_graphics_manager_sea()
 	{
 		y = 21 + row;
 		//x = 0;
-\		for( x = 0; x < SCREEN_WIDE; x += 4 )
+		for( x = 0; x < SCREEN_WIDE; x += 4 )
 		{
 
 			for( col = 0; col < TILE_STRIP; col++ )

@@ -7,7 +7,6 @@
 #include "bank8.h"
 #include "bank10.h"
 #include "bank11.h"
-//#include "bank12.h"
 
 // Locale Manager.
 //const unsigned char m	y_splash_text[] = { 0x65, 0x65, 0x65 ,0x65 };
