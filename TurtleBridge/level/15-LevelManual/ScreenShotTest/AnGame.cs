@@ -44,7 +44,7 @@ namespace ScreenShotTest
 			levelManager = new LevelManager(this, assetManager, configManager, fileManager, inputManager, selectorManager, wide, high);
 			boardManager = new BoardManager(this, assetManager, configManager, fileManager, inputManager, levelManager, selectorManager, wide, high);
 
-			multiManager = new MultiManager(fileManager, tilesManager, levelManager, boardManager);
+			multiManager = new MultiManager(configManager, fileManager, tilesManager, levelManager, boardManager);
 			graphics = new GraphicsDeviceManager(this);
 			graphics.PreferredBackBufferWidth = wide;
 			graphics.PreferredBackBufferHeight = high;
