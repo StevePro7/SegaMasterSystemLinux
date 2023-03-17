@@ -27,6 +27,7 @@ static const unsigned char *flip_ptr;
 static unsigned char index;
 static unsigned char check;
 
+// TODO - do I want to manually update the X-values i.e. add 8px plus frame + 2..
 void screen_title_screen_load()
 {
 	devkit_SMS_displayOff();
@@ -60,6 +61,7 @@ void screen_title_screen_update( unsigned char *screen_type )
 		input = engine_input_manager_move( input_type_fire1 );
 		if( input )
 		{
+			// TODO - put timer and move on
 			*screen_type = screen_type_begin;
 			return;
 		}
@@ -90,20 +92,6 @@ void screen_title_screen_update( unsigned char *screen_type )
 	}
 
 	index++;
-
-	//input = engine_input_manager_move( input_type_down );
-	//if( input )
-	//{
-	//	draw_sprite( 4, sprite_mode_zoomed, 176, 128 );
-	//}
-
-	//input = engine_input_manager_hold( input_type_fire1 );
-	//if( input )
-	//{
-	//	*screen_type = screen_type_begin;
-	//	return;
-	//}
-
 	*screen_type = screen_type_title;
 }
 

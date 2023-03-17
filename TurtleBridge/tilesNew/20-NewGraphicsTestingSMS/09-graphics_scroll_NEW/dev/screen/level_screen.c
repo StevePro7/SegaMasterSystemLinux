@@ -53,6 +53,7 @@ void screen_level_screen_load()
 	devkit_SMS_displayOff();
 	engine_graphics_manager_screen( CLEAR_TILE_BLUE );
 	engine_graphics_manager_title();
+	engine_graphics_manager_clouds( go->game_cloud );
 	engine_graphics_manager_sea();
 
 	engine_level_manager_init( game_level );
