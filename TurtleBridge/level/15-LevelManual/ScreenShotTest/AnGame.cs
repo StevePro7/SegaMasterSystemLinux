@@ -68,11 +68,11 @@ namespace ScreenShotTest
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 			assetManager.LoadContent(Content);
 			boardManager.LoadContent(Content);
-			levelManager.LoadContent();
+			//levelManager.LoadContent();
 
 			// stevepro hack during bulk
-			//multiManager.LoadContent(spriteBatch);
-			//Exit();
+			multiManager.LoadContent(spriteBatch);
+			Exit();
 
 			PresentationParameters pp = GraphicsDevice.PresentationParameters;
 			wide = pp.BackBufferWidth;
