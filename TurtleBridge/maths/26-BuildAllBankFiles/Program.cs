@@ -6,13 +6,14 @@ namespace ExtractCheckpoints
 	{
 		static void Main()
 		{
-			//var cm = new ConfigManager();
-			//cm.Initialize();
 			var fm = new FileManager();
 			fm.Initialize();
-			fm.Process(1);
+			/fm.Process(1);
+			fm.Process(2);
+			fm.Process(3);
+			fm.Process(4);
+			fm.Process(5);
 
-			//Console.WriteLine("Processed \"" + cm.Directory + "\"");
 			Console.WriteLine("Press [ RETURN ]");
 			Console.Read();
 		}
