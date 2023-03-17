@@ -7,6 +7,8 @@
 #include "../engine/global_manager.h"
 #include "../engine/graphics_manager.h"
 #include "../engine/input_manager.h"
+#include "../engine/player_manager.h"
+#include "../engine/riff_manager.h"
 #include "../engine/sprite_manager.h"
 #include "../engine/util_manager.h"
 #include "../devkit/_sms_manager.h"
@@ -20,6 +22,10 @@ static void draw_sprite( unsigned char idx, unsigned char mode, unsigned char x,
 
 static unsigned char flip_posX[ MAX_SPOTS ] = { 8, 30, 52, 74, 96, 118, 140, 162, 184 };
 static unsigned char flip_posY[ MAX_SPOTS ] = { 128, 112, 104, 100, 96, 100, 104, 112, 128 };
+
+static const unsigned char *flip_ptr;
+static unsigned char index;
+static unsigned char check;
 
 void screen_title_screen_load()
 {
@@ -36,30 +42,74 @@ void screen_title_screen_load()
 	devkit_SMS_displayOn();
 
 	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_ZOOMED() );
+
+	index = 0;
+	check = 0;
+	flip_ptr = flip_array_ptr[ index ];
+	engine_riff_manager_init();
 }
 
 void screen_title_screen_update( unsigned char *screen_type )
 {
 	unsigned char input;
-	input = engine_input_manager_move( input_type_down );
-	if( input )
-	{
-		draw_sprite( 4, sprite_mode_zoomed, 176, 128 );
-	}
+	unsigned char x, y, f;
 
-	input = engine_input_manager_hold( input_type_fire1 );
-	if( input )
+	if( check )
 	{
-		*screen_type = screen_type_begin;
+		engine_input_manager_update();
+		input = engine_input_manager_move( input_type_fire1 );
+		if( input )
+		{
+			*screen_type = screen_type_begin;
+			return;
+		}
+
+		x = flip_posX[ index ];
+		y = flip_posY[ index ];
+		f = flip_ptr[ index ];
+		draw_sprite( f + 2, sprite_mode_zoomed, x, y );
 		return;
 	}
+
+	engine_riff_manager_play( index );
+
+	x = flip_posX[ index ];
+	y = flip_posY[ index ];
+	f = flip_ptr[ index ];
+	draw_sprite( f + 2, sprite_mode_zoomed, x, y );
+	//engine_font_manager_draw_data( f, 30, 0 );
+
+	engine_input_manager_update();
+
+	input = engine_input_manager_move( input_type_fire2 );
+	if( input || index + 1 >= MAX_SPOTS )
+	{
+		check = 1;
+		//*screen_type = screen_type_func;
+		return;
+	}
+
+	index++;
+
+	//input = engine_input_manager_move( input_type_down );
+	//if( input )
+	//{
+	//	draw_sprite( 4, sprite_mode_zoomed, 176, 128 );
+	//}
+
+	//input = engine_input_manager_hold( input_type_fire1 );
+	//if( input )
+	//{
+	//	*screen_type = screen_type_begin;
+	//	return;
+	//}
 
 	*screen_type = screen_type_title;
 }
 
 static void draw_sprite( unsigned char idx, unsigned char mode, unsigned char x, unsigned char y )
 {
-	engine_sprite_manager_mode( idx, mode, x, y );
+	engine_sprite_manager_mode( idx, mode, x - 8, y );
 
 	engine_sprite_manager_zoom( mode, 0, y + mode * 0 );
 	engine_sprite_manager_zoom( mode, 8, y + mode * 0 );
