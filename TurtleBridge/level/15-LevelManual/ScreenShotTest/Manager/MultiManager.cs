@@ -26,12 +26,12 @@ namespace ScreenShotTest
 		public void LoadContent(SpriteBatch spriteBatch)
 		{
 			var files = Directory.GetFiles("Content/Points/");
-			//var inpFileName = "AA-bridge01_BB-bridge01_CC-bridge01_DD-bridge01.csv"; 
-			foreach (var file in files)
-			{
-				var inpFileName = file.Replace("Content/Points/", String.Empty);
+			var inpFileName = "level_0403_AA-dropsd01_BB-bridge02_CC-mixerd02_DD-mixerd02.csv"; 
+			//foreach (var file in files)
+			//{
+			//	var inpFileName = file.Replace("Content/Points/", String.Empty);
 				Process(spriteBatch, inpFileName);
-			}
+			//}
 		}
 
 		private void Process(SpriteBatch spriteBatch, string inpFileName)
@@ -52,11 +52,12 @@ namespace ScreenShotTest
 			}
 			//fileManager.Save(tilesManager.Tiles, )
 			var tmpFileName = dirFileText + ".png";
-
+			var theFilename = dirFileText.Substring(0, 10) + "_txt";
 			tilesManager.Initialize("Content/Points/" + inpFileName);
+
 			// Awfult but too late in dev cycle
 			levelManager.Tiles = tilesManager.Tiles;
-			fileManager.Save(levelManager.Tiles, dirFileName + "/", dirFileText);
+			fileManager.Save(levelManager.Tiles, dirFileName + "/", dirFileText, theFilename);
 			boardManager.SaveScreen(spriteBatch, dirFileName + "/" + tmpFileName);
 		}
 	}

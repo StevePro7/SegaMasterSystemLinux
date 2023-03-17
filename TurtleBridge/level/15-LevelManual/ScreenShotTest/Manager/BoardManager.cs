@@ -82,7 +82,7 @@ namespace ScreenShotTest
 			var filepath = "output/" + filename;
 
 			string banktext = String.Format("{0}_{1}{2}_{3}", prefix, world, round, point);
-			fileManager.Save(tiles, filepath, banktext);
+			fileManager.Save(tiles, filepath, banktext, filename);
 			filename = String.Format("{0}/{1}_{2}.png", filepath, filename, point);
 			SaveScreen(spriteBatch, filename);
 		}

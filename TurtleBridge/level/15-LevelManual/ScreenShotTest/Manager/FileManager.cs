@@ -226,7 +226,7 @@ namespace ScreenShotTest
 			return item;
 		}
 
-		public void Save(int[] tiles, string myfilePath, string banktext)
+		public void Save(int[] tiles, string myfilePath, string banktext, string thefilename)
 		{
 			Tiles = tiles;
 			//string format = "yyyyMMdd-HHmmss";
@@ -253,7 +253,7 @@ namespace ScreenShotTest
 			}
 
 			//string banktext = String.Format("level_{0}{1}_{2}", world, round, point);
-			DumpData2(data3, myfilePath, banktext);
+			DumpData2(data3, myfilePath, banktext, thefilename);
 
 			// steven.txt
 			data.Clear();
@@ -327,7 +327,7 @@ namespace ScreenShotTest
 			File.WriteAllLines(filetext, contents);
 		}
 
-		private void DumpData2(List<int> data3, string path, string banktext)
+		private void DumpData2(List<int> data3, string path, string banktext, string thefilename)
 		{
 			var file = new List<string>();
 			//const int wide = 32;			// TODO 32x cols per screen i.e. 32 * 8 = 256px wide.
@@ -342,7 +342,7 @@ namespace ScreenShotTest
 
 			int value = configManager.CheckPoint;
 			int check = 0; 
-			file.Add("const unsigned char " + filename + "[] =");
+			file.Add("const unsigned char " + thefilename + "[] =");
 			file.Add("{");
 			for (int idx = 0; idx < data3.Count; idx++)
 			{
@@ -395,9 +395,9 @@ namespace ScreenShotTest
 			//}
 
 			file.Clear();
-			file.Add("extern const unsigned char " + filename + "[];");
-			file.Add("#define				" + filename + "_size " + cols * 4);
-			file.Add("#define				" + filename + "_bank " + bank);
+			file.Add("extern const unsigned char " + thefilename + "[];");
+			file.Add("#define				" + thefilename + "_size " + cols * 4);
+			file.Add("#define				" + thefilename + "_bank " + bank);
 			contents = file.ToArray();
 			File.WriteAllLines(path + "/" + banktext + ".h", contents);
 			File.WriteAllLines(path + "/../../bankX.h", contents);
@@ -409,7 +409,7 @@ namespace ScreenShotTest
 			//}
 
 			// Make local copy of the CSV file used to render screen.
-			string csvName = banktext.Replace("level_", "tiles_");
+			string csvName = banktext;// banktext.Replace("level_", "tiles_");
 			File.Copy("MyTiles.csv", path + "/" + csvName + ".csv");	// TODO revert comment
 			//File.Copy("MyTiles.csv", path + "/../../MyTiles.csv");
 		}
