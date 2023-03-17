@@ -10,7 +10,7 @@ namespace ExtractCheckpoints
 			//cm.Initialize();
 			var fm = new FileManager();
 			fm.Initialize();
-			fm.Process();
+			fm.Process2();
 
 			//Console.WriteLine("Processed \"" + cm.Directory + "\"");
 			Console.WriteLine("Press [ RETURN ]");

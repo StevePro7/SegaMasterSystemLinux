@@ -48,6 +48,62 @@ namespace ExtractCheckpoints
 			}
 		}
 
+		public void Process2()
+		{
+			var dict1 = new Dictionary<string, int>();
+			var dict2 = new Dictionary<string, int>();
+			var dict3 = new Dictionary<string, int>();
+			var dict4 = new Dictionary<string, int>();
+
+			var lines = GetLines();
+			//var line = "AA-bridge01,BB-bridge03,CC-bridge01,DD-bridge01,XX-ending01";
+			foreach (var line in lines)
+			{
+				var info = line.Split(new char[] { ',' });
+				string a = info[0];
+				string b = info[1];
+				string c = info[2];
+				string d = info[3];
+				if (dict1.ContainsKey(a))
+				{
+					dict1[a]++;
+				}
+				else
+				{
+					dict1.Add(a, 1);
+				}
+				if (dict2.ContainsKey(b))
+				{
+					dict2[b]++;
+				}
+				else
+				{
+					dict2.Add(b, 1);
+				}
+				if (dict3.ContainsKey(c))
+				{
+					dict3[c]++;
+				}
+				else
+				{
+					dict3.Add(c, 1);
+				}
+				if (dict4.ContainsKey(d))
+				{
+					dict4[d]++;
+				}
+				else
+				{
+					dict4.Add(d, 1);
+				}
+			}
+
+			int c1 = dict1.Keys.Count;
+			int c2 = dict2.Keys.Count;
+			int c3 = dict3.Keys.Count;
+			int c4 = dict4.Keys.Count;
+		}
+
 		private void Build(string a, string b, string c, string d, string x, int w, int r)
 		{
 			output.Clear();
