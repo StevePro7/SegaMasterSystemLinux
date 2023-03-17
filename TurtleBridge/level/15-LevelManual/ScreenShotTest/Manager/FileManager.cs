@@ -409,7 +409,8 @@ namespace ScreenShotTest
 			//}
 
 			// Make local copy of the CSV file used to render screen.
-			string csvName = banktext;// banktext.Replace("level_", "tiles_");
+			//string csvName = banktext;// banktext.Replace("level_", "tiles_");
+			string csvName = banktext.Replace("level_", "tiles_");
 			File.Copy("MyTiles.csv", path + "/" + csvName + ".csv");	// TODO revert comment
 			//File.Copy("MyTiles.csv", path + "/../../MyTiles.csv");
 		}

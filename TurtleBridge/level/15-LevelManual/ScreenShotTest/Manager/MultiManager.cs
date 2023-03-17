@@ -26,12 +26,12 @@ namespace ScreenShotTest
 		public void LoadContent(SpriteBatch spriteBatch)
 		{
 			var files = Directory.GetFiles("Content/Points/");
-			var inpFileName = "level_0403_AA-dropsd01_BB-bridge02_CC-mixerd02_DD-mixerd02.csv"; 
-			//foreach (var file in files)
-			//{
-			//	var inpFileName = file.Replace("Content/Points/", String.Empty);
+			//var inpFileName = "level_0403_AA-dropsd01_BB-bridge02_CC-mixerd02_DD-mixerd02.csv"; 
+			foreach (var file in files)
+			{
+				var inpFileName = file.Replace("Content/Points/", String.Empty);
 				Process(spriteBatch, inpFileName);
-			//}
+			}
 		}
 
 		private void Process(SpriteBatch spriteBatch, string inpFileName)
