@@ -5,7 +5,8 @@
 
 void screen_demo_screen_load()
 {
-	engine_graphics_manager_common();
+	// TODO - delete this
+	//engine_graphics_manager_common();
 	engine_font_manager_text( "DEMO SCREEN", 21, 0 );
 }
 
