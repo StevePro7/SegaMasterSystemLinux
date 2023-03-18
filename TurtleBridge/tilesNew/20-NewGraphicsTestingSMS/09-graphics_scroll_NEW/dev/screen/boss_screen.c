@@ -25,7 +25,6 @@ void screen_boss_screen_load()
 
 	index = 0;
 	engine_font_manager_text( "BOSS SCREEN!!", 10, 2 );
-	//engine_graphics_manager_level( 72 );
 
 	//engine_player_manager_initX( 1, 1 );
 	//engine_player_manager_loadY( 16 );

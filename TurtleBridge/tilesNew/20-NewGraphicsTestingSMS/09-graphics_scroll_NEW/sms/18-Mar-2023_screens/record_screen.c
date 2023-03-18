@@ -1,6 +1,5 @@
-#include "repeat_screen.h"
+#include "record_screen.h"
 //#include "../engine/asm_manager.h"
-//#include "../engine/audio_manager.h"
 #include "../engine/collision_manager.h"
 //#include "../engine/content_manager.h"
 #include "../engine/command_manager.h"
@@ -10,7 +9,7 @@
 #include "../engine/game_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/graphics_manager.h"
-#include "../engine/input_manager.h"	
+#include "../engine/input_manager.h"
 #include "../engine/level_manager.h"
 #include "../engine/player_manager.h"
 #include "../engine/scroll_manager.h"
@@ -28,12 +27,8 @@
 
 static bool complete;
 static signed int deltaY;
-static unsigned char frame_counter;
-static void printCmds();
-static unsigned char available;
-static unsigned char local_prev_command;
 
-void screen_repeat_screen_load()
+void screen_record_screen_load()
 {
 	// init_screen
 	struct_player_object *po = &global_player_object;
@@ -47,6 +42,7 @@ void screen_repeat_screen_load()
 	//engine_debug_manager_initgame();
 	// TODO delete
 
+	// init_screen	clone
 	engine_level_manager_init( go->game_level );
 	engine_player_manager_initX( go->game_difficulty, go->game_world );
 	engine_collision_manager_init( go->game_difficulty );
@@ -54,6 +50,10 @@ void screen_repeat_screen_load()
 	// load_screen
 	devkit_SMS_displayOff();
 	engine_graphics_manager_screen( CLEAR_TILE_BLUE );
+	//engine_asm_manager_clear_VRAM();
+	//engine_content_manager_bggame();
+	//engine_content_manager_sprite();
+	//engine_graphics_manager_level( cloud_formation );
 
 
 	// Work in terms of screens.
@@ -68,105 +68,77 @@ void screen_repeat_screen_load()
 	player_loadY = level_platforms[ po->lookX ];
 	engine_player_manager_loadY( player_loadY );
 	engine_player_manager_draw();
-	//TODO delete - dup below
-	//engine_command_manager_init();
-	//engine_command_manager_load();
-	//TODO delete - dup below
+	//engine_command_manager_init();		TODO delete - dup
 
 	engine_graphics_manager_sea();
 	engine_graphics_manager_clouds( go->game_cloud );
 	engine_level_manager_draw_screen( checkScreen );		// Weird - must draw this twice otherwise clouds + sea don't draw??
 	devkit_SMS_displayOn();
 
-	//engine_scroll_manager_load( go->game_point, lo->level_check, lo->level_size );
-	//engine_scroll_manager_update( 0 );
 
-
-	// test_screen
-	engine_font_manager_text( "NEW REPEAT SCREEN", 10, 2 );
-
+	// intro_screen
 	engine_frame_manager_load();
 	//engine_frame_manager_draw();
 	engine_command_manager_init();
-	//engine_command_manager_load();
-	//engine_storage_manager_read();
+	//engine_command_manager_draw();
+	engine_font_manager_text( "NEW RECORD SCREEN", 10, 2 );
 
 	engine_scroll_manager_update( 0 );
+
 	complete = false;
 	deltaY = 0;
-	frame_counter = 0;
-	local_prev_command = COMMAND_NONE_MASK;
-
-	available = engine_storage_manager_available();
-	//engine_font_manager_data( available, 31, 1 );
-	if( available )
-	{
-		engine_storage_manager_read();
-		//printCmds();
-	}
 
 	//engine_font_manager_text( "CHECK SCREEN FUNC", 10, 0 );
 	//engine_font_manager_data( checkScreen, 10, 1 );
 }
 
-void screen_repeat_screen_update( unsigned char *screen_type )
+void screen_record_screen_update( unsigned char *screen_type )
 {
 	// TODO delete
 	struct_frame_object *fo = &global_frame_object;
 
 	struct_scroll_object *so = &global_scroll_object;
 	struct_player_object *po = &global_player_object;
+	struct_command_object *co = &global_command_object;
 	struct_level_object *lo = &global_level_object;
 	struct_game_object *go = &global_game_object;
-	struct_command_object *co = &global_command_object;
 
-	unsigned char input1;// input2, input3, input4, input5, input6;
-	unsigned char input2;
+	unsigned char input1, input2, input3, input4, input5, input6;
+	unsigned char command;
+
 	unsigned char deltaX;
-	//signed int deltaY;
 	unsigned char loops;
-	//signed char collision;
 	enum_scroll_state scroll_state;
 	enum_player_state player_state;
 
-	unsigned char command = COMMAND_NONE_MASK;
+	command = COMMAND_NONE_MASK;
 	player_state = po->player_state;
-
-	// goto options.
-	if( !available )
-	{
-		*screen_type = screen_type_option;
-		return;
-	}
 
 	if( !complete )
 	{
-		input1 = engine_input_manager_hold( input_type_left );
+		input1 = engine_input_manager_move( input_type_left );
 		input2 = engine_input_manager_move( input_type_right );
-		input1 = 1;		// TODO delete
-		if( input1 || input2 )
+		input3 = engine_input_manager_move( input_type_up );
+		input4 = engine_input_manager_move( input_type_down );
+		//input4 = engine_input_manager_hold( input_type_down );			// increment frame counter.
+		input5 = engine_input_manager_hold( input_type_fire1 );
+		input6 = engine_input_manager_hold( input_type_fire2 );
+
+		command = engine_command_manager_build( po->player_state, input1, input2, input3, input4, input5, input6 );
+		//engine_font_manager_data( po->player_state, 31, 1 );
+		//engine_font_manager_data( command, 31, 2 );
+
+		if( command != co->prev_command )
 		{
-			if( command_frame_index[ frame_counter ] == fo->frame_count )
-			{
-				command = command_this_command[ frame_counter ];
-
-				//engine_font_manager_data( frame_counter, 30, 03 );
-				//engine_font_manager_data( command, 30, 04 );
-
-				//TODO - bad - wrap in API.
-				//co->prev_command = command;
-				local_prev_command = command;
-				frame_counter++;
-			}
-			else
-			{
-				//command = co->prev_command;
-				command = local_prev_command;
-			}
-
-			engine_frame_manager_update();
-			//engine_frame_manager_draw();
+			engine_command_manager_record( fo->frame_count, command );
+			//engine_font_manager_data( fo->frame_count, 30, 4 );
+			//engine_font_manager_data( command, 30, 5 );
+			//	engine_command_manager_draw();
 		}
+
+		engine_frame_manager_update();
+		//engine_frame_manager_draw();
+
 
 		if( COMMAND_NONE_MASK != command )
 		{
@@ -246,6 +218,7 @@ void screen_repeat_screen_update( unsigned char *screen_type )
 				}
 			}
 
+			// TODO - this is done up above ^^
 			// Store command for future use.
 			//engine_command_manager_update( command );
 		}
@@ -263,7 +236,7 @@ void screen_repeat_screen_update( unsigned char *screen_type )
 		if( complete )
 		{
 			engine_scroll_manager_update( 0 );
-			//*screen_type = screen_type_pass;
+			engine_storage_manager_write();
 			*screen_type = screen_type_option;
 			return;
 		}
@@ -272,12 +245,14 @@ void screen_repeat_screen_update( unsigned char *screen_type )
 		if( player_state_isnowdying == player_state )
 		{
 			engine_scroll_manager_update( 0 );
-			//*screen_type = screen_type_dead;
+			engine_storage_manager_write();
 			*screen_type = screen_type_option;
 			return;
+			//*screen_type = screen_type_dead;
+			//return;
 		}
 	}
 
 	engine_player_manager_draw();
-	*screen_type = screen_type_repeat;
+	*screen_type = screen_type_record;
 }

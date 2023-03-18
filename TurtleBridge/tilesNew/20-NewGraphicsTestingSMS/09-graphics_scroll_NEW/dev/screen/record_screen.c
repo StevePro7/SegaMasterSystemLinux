@@ -50,10 +50,6 @@ void screen_record_screen_load()
 	// load_screen
 	devkit_SMS_displayOff();
 	engine_graphics_manager_screen( CLEAR_TILE_BLUE );
-	//engine_asm_manager_clear_VRAM();
-	//engine_content_manager_bggame();
-	//engine_content_manager_sprite();
-	//engine_graphics_manager_level( cloud_formation );
 
 
 	// Work in terms of screens.
