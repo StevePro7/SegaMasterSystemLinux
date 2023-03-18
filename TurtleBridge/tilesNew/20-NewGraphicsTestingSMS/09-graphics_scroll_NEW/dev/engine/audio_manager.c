@@ -95,7 +95,8 @@ void engine_audio_manager_update()
 		devkit_PSGFrame();
 	}
 
-	if( devkit_PSGSFXGetStatus() )
+	//if( devkit_PSGSFXGetStatus() )
+	if( 0 != ao->sound_bank )
 	{
 		devkit_SMS_mapROMBank( ao->sound_bank );
 		devkit_PSGSFXFrame();

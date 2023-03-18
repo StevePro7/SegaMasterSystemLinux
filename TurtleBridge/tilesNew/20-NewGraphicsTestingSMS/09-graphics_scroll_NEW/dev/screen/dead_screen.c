@@ -48,7 +48,7 @@ void screen_dead_screen_load()
 	// TODO - update magic number?
 	maxim = 8;
 	index = engine_random_manager_next( maxim );
-	index = 2;		// TODO - remove this!!
+	index = 7;		// TODO - remove this!!
 	index += RIFF_START_DEAD;
 	value = riff_indexs[ index ];
 	count = riff_counts[ index ];
@@ -67,19 +67,19 @@ void screen_dead_screen_update( unsigned char *screen_type )
 	{
 		if( po->posnY >= PLAYER_DEAD )
 		{
-			// TODO update
-			po->posnY = PLAYER_DEAD;
-
-			if ( !devkit_PSGSFXGetStatus() )
-			if( 0 == po->player_lives )
+			// Check if SFX complete...
+			if( !devkit_PSGSFXGetStatus() )
 			{
-				*screen_type = screen_type_cont;
-				return;
-			}
-			else
-			{
-				*screen_type = screen_type_load;
-				return;
+				if( 0 == po->player_lives )
+				{
+					*screen_type = screen_type_cont;
+					return;
+				}
+				else
+				{
+					*screen_type = screen_type_load;
+					return;
+				}
 			}
 		}
 		else
@@ -105,45 +105,21 @@ void screen_dead_screen_update( unsigned char *screen_type )
 			else
 			{
 				swap = 2;
-				engine_sound_manager_play( 0 );
 				// Play SFX
+				engine_sound_manager_play( 0 );
 			}
 		}
 	}
 
 	if( !swap )
 	{
-		//if( po->posnY >= PLAYER_DEAD )
-		//{
-		//	//swap = 1;
-		//	if( 0 == po->player_lives )
-		//	{
-		//		*screen_type = screen_type_cont;
-		//		return;
-		//	}
-		//	else
-		//	{
-		//		*screen_type = screen_type_load;
-		//		return;
-		//	}
-		//}
-		//else
-		//{
-		//	input1 = engine_input_manager_hold( input_type_up );
-		//	input2 = engine_input_manager_move( input_type_down );
-		//	input1 = 1;		// TODO delete
-		//	if( input1 || input2 )
-		//	{
-		//		engine_player_manager_dead( player_deadX );
-		//	}
-		//}
-
 		engine_player_manager_dead( player_deadX );
 		swap = 1;
 	}
 	
+	// don't draw player here as "blinks"
 	//engine_player_manager_draw();
-	//engine_player_manager_head();
+	engine_player_manager_head();
 
 	*screen_type = screen_type_dead;
 }

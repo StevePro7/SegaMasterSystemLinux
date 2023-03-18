@@ -42,9 +42,9 @@ void screen_test_screen_update( unsigned char *screen_type )
 	if( input )
 	{
 		// Intro
-		start = 20;
+		//start = 20;
 		//maxim = 3;		// MAX_RND()
-		index = 2; playRiff( start + index );
+		//index = 2; playRiff( start + index );
 
 		// Pass
 		//start = 17;
@@ -52,9 +52,9 @@ void screen_test_screen_update( unsigned char *screen_type )
 		//index = 2; playRiff( start + index );
 
 		// Death
-		//start = 9;
+		start = 9;
 		//maxim = 8;	// MAX_RND()
-		//index = 7; playRiff( start + index );
+		index = 5; playRiff( start + index );
 
 		// Check
 		//start = 0;

@@ -10,7 +10,6 @@ S:Ltest_screen.screen_test_screen_update$lo$1_0$53({2}DG,STtag_struct_level_obje
 S:Ltest_screen.screen_test_screen_update$go$1_0$53({2}DG,STtag_struct_game_object:S),R,0,0,[]
 S:Ltest_screen.screen_test_screen_update$input1$1_0$53({1}SC:U),R,0,0,[c]
 S:Ltest_screen.screen_test_screen_update$input2$1_0$53({1}SC:U),R,0,0,[l]
-S:Ltest_screen.screen_test_screen_update$input3$1_0$53({1}SC:U),B,1,-13
 S:Ltest_screen.screen_test_screen_update$deltaX$1_0$53({1}SC:U),R,0,0,[b]
 S:Ltest_screen.screen_test_screen_update$loops$1_0$53({1}SC:U),R,0,0,[c]
 S:Ltest_screen.screen_test_screen_update$scroll_state$1_0$53({1}SC:U),R,0,0,[a]
