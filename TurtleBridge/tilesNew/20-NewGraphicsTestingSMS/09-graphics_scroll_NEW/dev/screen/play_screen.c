@@ -21,7 +21,7 @@
 #endif
 
 static bool complete;
-static signed int deltaY;
+//static signed int deltaY;
 
 static void printScrollInfo()
 {
@@ -45,7 +45,7 @@ void screen_play_screen_load()
 
 	engine_music_manager_play( go->game_music );
 	complete = false;
-	deltaY = 0;
+	//deltaY = 0;
 
 	// TODO delete this
 	engine_font_manager_text( "PLAY SCREEN", 10, 2 );
@@ -64,9 +64,9 @@ void screen_play_screen_update( unsigned char *screen_type )
 	unsigned char input2;
 	unsigned char input3;
 	unsigned char deltaX;
-	//signed int deltaY;
+	signed int deltaY;
 	unsigned char loops;
-	//signed char collision;
+
 	enum_scroll_state scroll_state;
 	enum_player_state player_state;
 
@@ -148,7 +148,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 		engine_player_manager_horz( deltaX );
 
 		// Get / set vertical movement.
-		deltaY = 0;
+		//deltaY = 0;
 		if( player_state_isintheair == po->player_state )
 		{
 			deltaY = engine_player_manager_get_deltaY();
