@@ -1,9 +1,6 @@
 #include "record_screen.h"
-//#include "../engine/asm_manager.h"
 #include "../engine/collision_manager.h"
-//#include "../engine/content_manager.h"
 #include "../engine/command_manager.h"
-//#include "../engine/debug_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/game_manager.h"
@@ -26,7 +23,7 @@
 #endif
 
 static bool complete;
-static signed int deltaY;
+//static signed int deltaY;
 
 void screen_record_screen_load()
 {
@@ -74,10 +71,7 @@ void screen_record_screen_load()
 	//engine_command_manager_draw();
 	engine_font_manager_text( "NEW RECORD SCREEN", 10, 2 );
 
-	//engine_scroll_manager_update( 0 );		// TODO delete
-
 	complete = false;
-	deltaY = 0;
 
 	//engine_font_manager_text( "CHECK SCREEN FUNC", 10, 0 );
 	//engine_font_manager_data( checkScreen, 10, 1 );
@@ -98,21 +92,20 @@ void screen_record_screen_update( unsigned char *screen_type )
 	unsigned char command;
 
 	unsigned char deltaX;
+	signed int deltaY;
 	unsigned char loops;
 	enum_scroll_state scroll_state;
 	enum_player_state player_state;
 
 	command = COMMAND_NONE_MASK;
 	player_state = po->player_state;
+	deltaX = 0;
+	deltaY = 0;
 
-	// TODO - don't think we need this wrap as once complete we move on...
-	//if( !complete )
-	//{
 	input1 = engine_input_manager_move( input_type_left );
 	input2 = engine_input_manager_move( input_type_right );
 	input3 = engine_input_manager_move( input_type_up );
 	input4 = engine_input_manager_move( input_type_down );
-	//input4 = engine_input_manager_hold( input_type_down );			// increment frame counter.
 	input5 = engine_input_manager_hold( input_type_fire1 );
 	input6 = engine_input_manager_hold( input_type_fire2 );
 
@@ -140,14 +133,7 @@ void screen_record_screen_update( unsigned char *screen_type )
 		// Get button action.
 		engine_player_manager_set_action( po->player_frame, command );
 
-		// No scroll.
-		//if( 0 == deltaX )
-		//{
-		//	engine_scroll_manager_update( 0 );
-		//}
-		//else
-		//{
-		//if( !complete ) {}
+		// Implement scrolling.
 		for( loops = 0; loops < deltaX; loops++ )
 		{
 			scroll_state = engine_scroll_manager_update( 1 );
@@ -176,7 +162,6 @@ void screen_record_screen_update( unsigned char *screen_type )
 		engine_player_manager_horz( deltaX );
 
 		// Get / set vertical movement.
-		deltaY = 0;
 		if( player_state_isintheair == po->player_state )
 		{
 			deltaY = engine_player_manager_get_deltaY();
@@ -211,6 +196,7 @@ void screen_record_screen_update( unsigned char *screen_type )
 	}
 
 	engine_player_manager_draw();
+	//engine_player_manager_head();
 	//engine_debug_manager_printout();
 	//	engine_font_manager_data( deltaY, 30, 2 );
 	//	engine_font_manager_data( po->posnY, 30, 3 );

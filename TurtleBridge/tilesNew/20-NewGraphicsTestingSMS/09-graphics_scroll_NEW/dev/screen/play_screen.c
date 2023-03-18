@@ -45,7 +45,6 @@ void screen_play_screen_load()
 
 	engine_music_manager_play( go->game_music );
 	complete = false;
-	//deltaY = 0;
 
 	// TODO delete this
 	engine_font_manager_text( "PLAY SCREEN", 10, 2 );
@@ -58,49 +57,68 @@ void screen_play_screen_update( unsigned char *screen_type )
 
 	struct_scroll_object *so = &global_scroll_object;
 	struct_player_object *po = &global_player_object;
+	struct_command_object *co = &global_command_object;
 	struct_level_object *lo = &global_level_object;
 	struct_game_object *go = &global_game_object;
-	unsigned char input1;// input2, input3, input4, input5, input6;
-	unsigned char input2;
-	unsigned char input3;
+
+	unsigned char input1, input2, input3, input4, input5, input6;
+	unsigned char command;
+
 	unsigned char deltaX;
 	signed int deltaY;
 	unsigned char loops;
-
 	enum_scroll_state scroll_state;
 	enum_player_state player_state;
 
-	unsigned char command = COMMAND_NONE_MASK;
+	command = COMMAND_NONE_MASK;
 	player_state = po->player_state;
 	deltaX = 0;
 	deltaY = 0;
 
-	input3 = engine_input_manager_hold( input_type_fire1 );
-	if( input3 )
-	{
-		*screen_type = screen_type_beat;
-		return;
-	}
-	input1 = engine_input_manager_hold( input_type_left );
+	input1 = engine_input_manager_move( input_type_left );
 	input2 = engine_input_manager_move( input_type_right );
-	//input1 = 1;		// TODO delete
-	if( input1 || input2 )
-	{
-		if( 2 == fo->frame_count )
-		{
-			//command = engine_command_manager_build( po->player_state, 1, 0, 0, 0, 0, 1 );		//Jump index = 1.
-			//command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 1 );		//Jump index = 2.
-			//command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 1 );		//Jump index = 3.
-			//command = engine_command_manager_build( po->player_state, 0, 1, 1, 0, 0, 1 );		//Jump index = 4.
-		}
-		else
-		{
-			command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 0 );
-		}
+	input3 = engine_input_manager_move( input_type_up );
+	input4 = engine_input_manager_move( input_type_down );
+	input5 = engine_input_manager_hold( input_type_fire1 );
+	input6 = engine_input_manager_hold( input_type_fire2 );
 
-		engine_frame_manager_update();
-		//engine_frame_manager_draw();
+	//input1 = engine_input_manager_hold( input_type_left );
+	//input2 = engine_input_manager_move( input_type_right );
+	////input1 = 1;		// TODO delete
+	//if( input1 || input2 )
+	//{
+	//	if( 2 == fo->frame_count )
+	//	{
+	//		//command = engine_command_manager_build( po->player_state, 1, 0, 0, 0, 0, 1 );		//Jump index = 1.
+	//		//command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 1 );		//Jump index = 2.
+	//		//command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 1 );		//Jump index = 3.
+	//		command = engine_command_manager_build( po->player_state, 0, 1, 1, 0, 0, 1 );		//Jump index = 4.
+	//	}
+	//	else
+	//	{
+	//		command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 0 );
+	//	}
+	//}
+
+	command = engine_command_manager_build( po->player_state, input1, input2, input3, input4, input5, input6 );
+	//engine_font_manager_data( po->player_state, 31, 1 );
+	//engine_font_manager_data( command, 31, 2 );
+
+	if( command != co->prev_command )
+	{
+		// Store command for future use.
+		engine_command_manager_update( command );
+
+		// Record command to play back later...
+		//engine_command_manager_record( fo->frame_count, command );
+
+		//engine_font_manager_data( fo->frame_count, 30, 4 );
+		//engine_font_manager_data( command, 30, 5 );
+		//	engine_command_manager_draw();
 	}
+
+	engine_frame_manager_update();
+	//engine_frame_manager_draw();
 
 	if( COMMAND_NONE_MASK != command )
 	{
@@ -112,13 +130,10 @@ void screen_play_screen_update( unsigned char *screen_type )
 		// Get button action.
 		engine_player_manager_set_action( po->player_frame, command );
 
-
+		// Implement scrolling.
 		for( loops = 0; loops < deltaX; loops++ )
 		{
 			scroll_state = engine_scroll_manager_update( 1 );
-			//printScrollInfo();	// TODO delete
-
-
 			if( scroll_state_tile == scroll_state )
 			{
 				engine_level_manager_draw_column( so->scrollColumn );
@@ -126,8 +141,6 @@ void screen_play_screen_update( unsigned char *screen_type )
 			else if( scroll_state_line == scroll_state )
 			{
 				engine_game_manager_inc_checkpoint();
-				//TODO used for debugging - remove
-				//engine_font_manager_data( go->game_point, 20, go->game_point );
 			}
 			else if( scroll_state_comp == scroll_state )
 			{
@@ -139,16 +152,10 @@ void screen_play_screen_update( unsigned char *screen_type )
 			}
 		}
 
-		// TODO delete this debugging info - for newIndex!!
-		//engine_font_manager_data( scroll_count, 31, 8 );
-		//engine_font_manager_data( scroll_count / 4, 31, 9 );
-		// TODO delete this debugging info - for newIndex!!
-
 		// Set horizontal movement.
 		engine_player_manager_horz( deltaX );
 
 		// Get / set vertical movement.
-		//deltaY = 0;
 		if( player_state_isintheair == po->player_state )
 		{
 			deltaY = engine_player_manager_get_deltaY();
@@ -182,8 +189,10 @@ void screen_play_screen_update( unsigned char *screen_type )
 		}
 	}
 
-	// Store command for future use.
-	engine_command_manager_update( command );
+	// TODO delete as invoked above
+	//// Store command for future use.
+	//engine_command_manager_update( command );
+	// TODO delete as invoked above
 
 	engine_player_manager_draw();
 	engine_player_manager_head();
