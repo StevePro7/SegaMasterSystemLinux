@@ -60,6 +60,8 @@ void screen_play_screen_load()
 	//scroll_count = 0;
 	//engine_font_manager_data( go->game_point, 20, go->game_point );
 //	printScrollInfo();
+
+	engine_font_manager_text( "PLAY SCREEN", 10, 2 );
 }
 
 void screen_play_screen_update( unsigned char *screen_type )
@@ -94,7 +96,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 	}
 	input1 = engine_input_manager_hold( input_type_left );
 	input2 = engine_input_manager_move( input_type_right );
-	input1 = 1;		// TODO delete
+	//input1 = 1;		// TODO delete
 	if( input1 || input2 )
 	{
 		if( 2 == fo->frame_count )
