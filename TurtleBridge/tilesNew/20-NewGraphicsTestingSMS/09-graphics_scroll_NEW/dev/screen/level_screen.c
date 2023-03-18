@@ -39,8 +39,6 @@ void screen_level_screen_load()
 	struct_level_object *lo = &global_level_object;
 	struct_game_object *go = &global_game_object;
 
-	// TODO delete this.
-	//engine_debug_manager_initgame();
 	game_world = go->game_world;
 	game_round = go->game_round;
 	game_level = go->game_level;
@@ -49,7 +47,6 @@ void screen_level_screen_load()
 	numb_screen = 0;
 	cursorIdx = 1;
 
-	//engine_graphics_manager_common();
 	devkit_SMS_displayOff();
 	engine_graphics_manager_screen( CLEAR_TILE_BLUE );
 	engine_graphics_manager_title();
@@ -78,7 +75,6 @@ void screen_level_screen_load()
 	
 	engine_player_manager_initX( go->game_difficulty, go->game_world );
 	engine_player_manager_loadX( game_screen );
-	//engine_player_manager_loadX( go->game_point );						// TODO - remove as this is wrong!!
 	player_loadY = level_platforms[ po->lookX ];
 	engine_player_manager_loadY( player_loadY );
 	engine_player_manager_draw();

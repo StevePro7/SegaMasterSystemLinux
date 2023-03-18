@@ -38,10 +38,6 @@ void screen_record_screen_load()
 	unsigned char checkScreen;
 	unsigned char cloud_formation = engine_random_manager_next( SPRITE_TILES );
 
-	// TODO delete
-	//engine_debug_manager_initgame();
-	// TODO delete
-
 	// init_screen	clone
 	engine_level_manager_init( go->game_level );
 	engine_player_manager_initX( go->game_difficulty, go->game_world );
@@ -60,7 +56,6 @@ void screen_record_screen_load()
 
 	engine_player_manager_initX( go->game_difficulty, go->game_world );
 	engine_player_manager_loadX( checkScreen );
-	//engine_player_manager_loadX( go->game_point );	// TODO - remove as this is wrong!!
 	player_loadY = level_platforms[ po->lookX ];
 	engine_player_manager_loadY( player_loadY );
 	engine_player_manager_draw();

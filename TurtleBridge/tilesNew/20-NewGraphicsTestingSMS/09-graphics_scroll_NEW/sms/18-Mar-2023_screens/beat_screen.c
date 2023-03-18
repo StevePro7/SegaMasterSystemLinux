@@ -28,7 +28,6 @@ void screen_beat_screen_load()
 
 	devkit_SMS_displayOff();
 	engine_graphics_manager_screen( CLEAR_TILE_BLUE );
-	
 	// Draw screen specific graphics.
 	engine_graphics_manager_clouds( go->game_cloud );
 	engine_graphics_manager_sea();
@@ -60,8 +59,40 @@ void screen_beat_screen_update( unsigned char *screen_type )
 		checkScreen = lo->check_width * go->game_point;
 		engine_scroll_manager_load( checkScreen, lo->level_check, lo->level_size );
 		engine_level_manager_draw_screen( checkScreen );
+		// TODO - can I delete the int representation i.e game_screen?
+		//game_screen = lo->check_width * go->game_point;
+		//engine_level_manager_draw_screen( game_screen );
+		//engine_level_manager_draw_point( go->game_point );
+		// TODO - can I delete the int representation i.e game_screen?
+
+		//engine_player_manager_initX( go->game_difficulty, go->game_world );
+		//engine_player_manager_loadX( checkScreen );
+		////engine_player_manager_loadX( go->game_point );	// TODO - remove as this is wrong!!
+		//player_loadY = level_platforms[ po->lookX ];
+		//engine_player_manager_loadY( player_loadY );
+		//engine_player_manager_draw();
 	}
 
+
+	//input = engine_input_manager_hold( input_type_fire1 );
+	//if( input )
+	//{
+	//	engine_font_manager_text( "PCM PLAYING", 10, 4 );
+
+	//	count = riff_counts[ index ];
+	//	value = riff_indexs[ index ];
+	//	if( 1 == count )
+	//	{
+	//		engine_riff_manager_play( value );
+	//	}
+	//	else
+	//	{
+	//		for( loops = 0; loops < count; loops++ )
+	//		{
+	//			engine_riff_manager_play( loops + value );
+	//		}
+	//	}
+	//}
 
 	engine_random_manager_rand();
 	*screen_type = screen_type_beat;

@@ -17,22 +17,13 @@ void screen_begin_screen_load()
 	// TODO delete this.
 	engine_debug_manager_initgame();
 	// TODO delete this.
+
 	cloud = engine_random_manager_next( SPRITE_TILES );
 	engine_game_manager_set_cloud_form( cloud );
 
-	//devkit_SMS_displayOn();
-	// TODO delete this.
 
-	// TODO - can run tnis inline as this will be the only consumer eventually...
+	// TODO - can run this inline as this will be the only consumer eventually...
 	engine_graphics_manager_common();
-
-	//devkit_SMS_displayOff();
-	//engine_asm_manager_clear_VRAM();
-	//engine_content_manager_bggame();
-	//engine_content_manager_sprite();
-	//engine_graphics_manager_title();
-	//engine_graphics_manager_sea();
-	//devkit_SMS_displayOn();
 }
 
 void screen_begin_screen_update( unsigned char *screen_type )

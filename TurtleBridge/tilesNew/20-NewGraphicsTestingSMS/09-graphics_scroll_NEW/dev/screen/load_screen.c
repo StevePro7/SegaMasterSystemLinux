@@ -43,7 +43,6 @@ void screen_load_screen_load()
 
 	engine_player_manager_initX( go->game_difficulty, go->game_world );
 	engine_player_manager_loadX( checkScreen );
-	//engine_player_manager_loadX( go->game_point );	// TODO - remove as this is wrong!!
 	player_loadY = level_platforms[ po->lookX ];
 	engine_player_manager_loadY( player_loadY );
 	engine_player_manager_draw();

@@ -32,15 +32,8 @@ void screen_diff_screen_load()
 	struct_game_object *go = &global_game_object;
 	unsigned char checkScreen;
 
-	// TODO delete this.
-	//engine_debug_manager_initgame();
-
-	//engine_graphics_manager_common();
 	devkit_SMS_displayOff();
 	engine_graphics_manager_screen( CLEAR_TILE_BLUE );
-	//engine_asm_manager_clear_VRAM();
-	//engine_content_manager_bggame();
-	//engine_content_manager_sprite();
 	engine_graphics_manager_title();
 	engine_graphics_manager_sea();
 
