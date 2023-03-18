@@ -1,4 +1,5 @@
 #include "dead_screen.h"
+#include "../engine/audio_manager.h"
 #include "../engine/command_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
@@ -47,7 +48,7 @@ void screen_dead_screen_load()
 	// TODO - update magic number?
 	maxim = 8;
 	index = engine_random_manager_next( maxim );
-	index = 7;		// TODO - remove this!!
+	index = 2;		// TODO - remove this!!
 	index += RIFF_START_DEAD;
 	value = riff_indexs[ index ];
 	count = riff_counts[ index ];
@@ -66,7 +67,10 @@ void screen_dead_screen_update( unsigned char *screen_type )
 	{
 		if( po->posnY >= PLAYER_DEAD )
 		{
-			//swap = 1;
+			// TODO update
+			po->posnY = PLAYER_DEAD;
+
+			if ( !devkit_PSGSFXGetStatus() )
 			if( 0 == po->player_lives )
 			{
 				*screen_type = screen_type_cont;
@@ -98,11 +102,12 @@ void screen_dead_screen_update( unsigned char *screen_type )
 				engine_riff_manager_play( loops + value );
 				loops++;
 			}
-		}
-		else
-		{
-			swap = 2;
-			// Play SFX
+			else
+			{
+				swap = 2;
+				engine_sound_manager_play( 0 );
+				// Play SFX
+			}
 		}
 	}
 

@@ -42,12 +42,6 @@ const unsigned char *music_object_data[] =
 	usas_jubaruins_psg,
 	mohenjodaro_usas_psg,
 	mastertracker_psg,
-
-	mus_death_psg,
-	mus_beat_psg,
-	mus_cont_psg,
-	mus_level_psg,
-	mus_over_psg,
 };
 const unsigned char music_object_bank[] =
 {
@@ -55,22 +49,28 @@ const unsigned char music_object_bank[] =
 	usas_jubaruins_psg_bank,
 	mohenjodaro_usas_psg_bank,
 	mastertracker_psg_bank,
-
-	mus_death_psg_bank,
-	mus_beat_psg_bank,
-	mus_cont_psg_bank,
-	mus_level_psg_bank,
-	mus_over_psg_bank,
 };
 
 const unsigned char *sound_object_data[] =
 {
+	mus_death_psg,
+	mus_beat_psg,
+	mus_cont_psg,
+	mus_level_psg,
+	mus_over_psg,
+
 	sfx_accept_psg,
 	sfx_reset_psg,
 	sfx_power_psg,
 };
 const unsigned char sound_object_bank[] =
 {
+	mus_death_psg_bank,
+	mus_beat_psg_bank,
+	mus_cont_psg_bank,
+	mus_level_psg_bank,
+	mus_over_psg_bank,
+
 	sfx_accept_psg_bank,
 	sfx_reset_psg_bank,
 	sfx_power_psg_bank,
