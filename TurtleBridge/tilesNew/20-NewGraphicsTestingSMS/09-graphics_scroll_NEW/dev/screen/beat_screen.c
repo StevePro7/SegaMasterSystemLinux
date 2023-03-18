@@ -32,7 +32,7 @@ void screen_beat_screen_load()
 	// Draw screen specific graphics.
 	engine_graphics_manager_clouds( go->game_cloud );
 	engine_graphics_manager_sea();
-	//engine_font_manager_text( "BEAT SCREEN", 21, 0 );
+	engine_font_manager_text( "BEAT SCREEN", 21, 0 );
 	//engine_font_manager_text( "BEAT SCREEN", value, 2 );
 	devkit_SMS_displayOn();
 
@@ -41,28 +41,28 @@ void screen_beat_screen_load()
 
 void screen_beat_screen_update( unsigned char *screen_type )
 {
-	struct_player_object *po = &global_player_object;
-	struct_level_object *lo = &global_level_object;
-	struct_game_object *go = &global_game_object;
-	unsigned char input;// , index;
-	//unsigned char loops, count, value;
-//	unsigned char player_loadY;
-	unsigned char checkScreen;
-
-//	index = 2;
-	input = engine_input_manager_hold( input_type_right );
-	if( input )
-	{
-		engine_level_manager_init( go->game_level );
-		//value = engine_random_manager_next( SPRITE_TILES );
-		//engine_font_manager_data( value, 10, 10 );
-
-		checkScreen = lo->check_width * go->game_point;
-		engine_scroll_manager_load( checkScreen, lo->level_check, lo->level_size );
-		engine_level_manager_draw_screen( checkScreen );
-	}
-
-
-	engine_random_manager_rand();
+//	struct_player_object *po = &global_player_object;
+//	struct_level_object *lo = &global_level_object;
+//	struct_game_object *go = &global_game_object;
+//	unsigned char input;// , index;
+//	//unsigned char loops, count, value;
+////	unsigned char player_loadY;
+//	unsigned char checkScreen;
+//
+////	index = 2;
+//	input = engine_input_manager_hold( input_type_right );
+//	if( input )
+//	{
+//		engine_level_manager_init( go->game_level );
+//		//value = engine_random_manager_next( SPRITE_TILES );
+//		//engine_font_manager_data( value, 10, 10 );
+//
+//		checkScreen = lo->check_width * go->game_point;
+//		engine_scroll_manager_load( checkScreen, lo->level_check, lo->level_size );
+//		engine_level_manager_draw_screen( checkScreen );
+//	}
+//
+//
+//	engine_random_manager_rand();
 	*screen_type = screen_type_beat;
 }
