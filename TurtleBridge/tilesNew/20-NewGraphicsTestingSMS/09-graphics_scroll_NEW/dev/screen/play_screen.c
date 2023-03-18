@@ -12,6 +12,7 @@
 #include "../engine/player_manager.h"
 #include "../engine/scroll_manager.h"
 #include "../engine/timer_manager.h"
+#include "../devkit/_snd_manager.h"
 #include <stdbool.h>
 
 #ifdef _CONSOLE
@@ -43,7 +44,16 @@ void screen_play_screen_load()
 	engine_frame_manager_load();
 	//engine_frame_manager_draw();
 
-	engine_music_manager_play( go->game_music );
+	if( go->game_start )
+	{
+		engine_music_manager_play( go->game_music );
+		engine_game_manager_set_game_start( switch_mode_no );
+	}
+	else
+	{
+		devkit_PSGResume();
+	}
+
 	complete = false;
 
 	// TODO delete this

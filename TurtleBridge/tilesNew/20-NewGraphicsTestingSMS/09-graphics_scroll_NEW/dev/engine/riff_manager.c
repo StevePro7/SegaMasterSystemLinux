@@ -14,6 +14,20 @@ void engine_riff_manager_init()
 	engine_sample_manager_init( psgInit );
 }
 
+void engine_riff_manager_loop( unsigned char index )
+{
+	// Generic function that loops an entire riff.
+	unsigned char loops, count, value;
+
+	engine_riff_manager_init();
+	value = riff_indexs[ index ];
+	count = riff_counts[ index ];
+	for( loops = 0; loops < count; loops++ )
+	{
+		engine_riff_manager_play( loops + value );
+	}
+}
+
 void engine_riff_manager_play( unsigned char index )
 {
 	struct_hack_object *ho = &global_hack_object;

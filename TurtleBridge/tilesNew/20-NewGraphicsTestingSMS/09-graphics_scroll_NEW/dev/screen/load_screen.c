@@ -10,12 +10,13 @@
 #include "../engine/graphics_manager.h"
 #include "../engine/level_manager.h"
 #include "../engine/player_manager.h"
+#include "../engine/riff_manager.h"
 #include "../engine/scroll_manager.h"
 #include "../engine/tile_manager.h"
 #include "../engine/util_manager.h"
 #include "../devkit/_sms_manager.h"
 
-//static void drawScreen();
+static unsigned char check;
 
 #ifdef _CONSOLE
 #else
@@ -29,7 +30,6 @@ void screen_load_screen_load()
 	struct_game_object *go = &global_game_object;
 	unsigned char player_loadY;
 	unsigned char checkScreen;
-	
 
 	devkit_SMS_displayOff();
 	engine_graphics_manager_screen( CLEAR_TILE_BLUE );
@@ -53,15 +53,38 @@ void screen_load_screen_load()
 	devkit_SMS_displayOn();
 
 	engine_command_manager_init();
+	check = 0;
 }
 
 void screen_load_screen_update( unsigned char *screen_type )
 {
-	engine_player_manager_draw();
+	struct_game_object *go = &global_game_object;
+	unsigned char index, maxim;
+
+	if( !check )
+	{
+		//engine_player_manager_draw();		// TODO - makes blink [I think] so leave out
+		check = 1;
+		*screen_type = screen_type_load;
+		return;
+	}
+	else
+	{
+		if( go->game_start )
+		{
+			engine_player_manager_draw();
+			// TODO - update magic number?
+			maxim = 3;
+			index = engine_random_manager_next( maxim );
+			index = 0;
+			index += RIFF_START_LOAD;
+			engine_riff_manager_loop( index );
+		}
+	}
 
 	//*screen_type = screen_type_dead;
 	//*screen_type = screen_type_over;
 	//*screen_type = screen_type_cont;
+	//*screen_type = screen_type_test;
 	*screen_type = screen_type_play;
-	*screen_type = screen_type_test;
 }

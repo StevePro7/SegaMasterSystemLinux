@@ -88,6 +88,14 @@ typedef enum tag_enum_difficulty_type
 
 } enum_difficulty_type;
 
+typedef enum tag_enum_switch_mode
+{
+	switch_mode_no = 0,
+	switch_mode_yes = 1,
+
+} enum_switch_mode_type;
+
+
 typedef enum tag_enum_tile_type
 {
 	tile_type_waves_block = 0,

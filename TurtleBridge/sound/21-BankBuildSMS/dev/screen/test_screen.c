@@ -12,7 +12,7 @@ static unsigned char counts[] = { 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2
 static unsigned char starts[] = { 0, 0, 9, 17, 20, };
 static unsigned char maxims[] = { 3, 9, 8, 3, 3,};
 
-static void playRiff( unsigned char maxim, unsigned char index )
+static void playRiff( unsigned char index )
 {
 	unsigned char loops, count, value;
 	engine_font_manager_data( index, 14, 9 );
@@ -34,42 +34,53 @@ void screen_test_screen_load()
 void screen_test_screen_update( unsigned char *screen_type )
 {
 	unsigned char input;
-	unsigned char index, start, maxim;
+	unsigned char index, start;
+	//unsigned char maxim;
 
+	start = 0;
 	input = engine_input_manager_hold_right();
 	if( input )
 	{
-		// Splash
-		//start = 25;
-		//maxim = 1; index = 0; playRiff( maxim, start + index );
-
-		// Title
-		start = 24;
-		maxim = 1; index = 0; playRiff( maxim, start + index );
-
-		// Over
-		//start = 23;
-		//maxim = 1; index = 0; playRiff( maxim, start + index );
-
 		// Intro
-		//start = 20;
-		//maxim = 3; index = 2; playRiff( maxim, start + index );
+		start = 20;
+		//maxim = 3;		// MAX_RND()
+		index = 2; playRiff( start + index );
 
 		// Pass
 		//start = 17;
-		//maxim = 3; index = 2; playRiff( maxim, start + index );
+		//maxim = 3;	// MAX_RND()
+		//index = 2; playRiff( start + index );
 
 		// Death
 		//start = 9;
-		//maxim = 8; index = 7; playRiff( maxim, start + index );
+		//maxim = 8;	// MAX_RND()
+		//index = 7; playRiff( start + index );
 
 		// Check
 		//start = 0;
-		//maxim = 9; index = 7; playRiff( maxim, index );
+		//maxim = 9;	// MAX_RND()
+		//index = 7; playRiff( index );
 
 		// Start
 		//start = 0;
-		//maxim = 3; 	index = 1; playRiff( maxim, index );
+		//maxim = 3;	// MAX_RND()
+		//index = 1; playRiff( index );
+
+
+		// Splash
+		//start = 25;
+		//maxim = 1;			// MAX_RND()
+		//index = 0; playRiff( start + index );
+
+		// Title
+		//start = 24;
+		//	maxim = 1;		// MAX_RND()
+		//index = 0; playRiff( start + index );
+
+		// Over
+		//start = 23;
+		//maxim = 1;		// MAX_RND()
+		//index = 0; playRiff( start + index );
 	}
 
 	//input = engine_input_manager_hold_up();

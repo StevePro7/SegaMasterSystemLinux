@@ -7,6 +7,13 @@
 #include "../engine/player_manager.h"
 #include "../engine/scroll_manager.h"
 #include "../engine/timer_manager.h"
+#include "../devkit/_snd_manager.h"
+
+#ifdef _CONSOLE
+#else
+#pragma disable_warning 110
+#pragma disable_warning 126
+#endif
 
 static unsigned char player_deadX;
 static unsigned char deltaX;
@@ -26,6 +33,8 @@ void screen_dead_screen_load()
 	engine_player_manager_head();
 	engine_reset_manager_load( NORMAL_DELAY );
 	swap = 0;
+
+	devkit_PSGStop();
 }
 
 // TODO - inject pause before going to next screen...

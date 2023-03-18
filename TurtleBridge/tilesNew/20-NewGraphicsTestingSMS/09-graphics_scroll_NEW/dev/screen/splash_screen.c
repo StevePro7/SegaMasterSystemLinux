@@ -39,7 +39,7 @@ void screen_splash_screen_update( unsigned char *screen_type )
 	{
 		// TODO - update magic number with enum??
 		check = 1;
-		index = 25;
+		index = RIFF_START_SPLASH;// 25;
 		value = riff_indexs[ index ];
 		count = riff_counts[ index ];
 		engine_riff_manager_init();

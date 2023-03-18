@@ -1,7 +1,6 @@
 M:test_screen
 F:Ftest_screen$playRiff$0_0$0({2}DF,SV:S),C,0,0,0,0,0
-S:Ltest_screen.playRiff$maxim$1_0$7({1}SC:U),B,1,4
-S:Ltest_screen.playRiff$index$1_0$7({1}SC:U),B,1,5
+S:Ltest_screen.playRiff$index$1_0$7({1}SC:U),B,1,4
 S:Ltest_screen.playRiff$loops$1_0$8({1}SC:U),R,0,0,[e]
 S:Ltest_screen.playRiff$count$1_0$8({1}SC:U),R,0,0,[c]
 S:Ltest_screen.playRiff$value$1_0$8({1}SC:U),R,0,0,[b]
@@ -11,7 +10,6 @@ S:Ltest_screen.screen_test_screen_update$screen_type$1_0$12({2}DG,SC:U),B,1,4
 S:Ltest_screen.screen_test_screen_update$input$1_0$13({1}SC:U),R,0,0,[a]
 S:Ltest_screen.screen_test_screen_update$index$1_0$13({1}SC:U),R,0,0,[]
 S:Ltest_screen.screen_test_screen_update$start$1_0$13({1}SC:U),R,0,0,[]
-S:Ltest_screen.screen_test_screen_update$maxim$1_0$13({1}SC:U),R,0,0,[]
 S:Ftest_screen$indexs$0_0$0({26}DA26d,SC:U),E,0,0
 S:Ftest_screen$counts$0_0$0({26}DA26d,SC:U),E,0,0
 S:Ftest_screen$starts$0_0$0({5}DA5d,SC:U),E,0,0

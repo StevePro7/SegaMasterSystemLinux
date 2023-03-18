@@ -18,6 +18,7 @@ void screen_init_screen_load()
 	// Set game music for entire level.
 	game_music = engine_random_manager_next( MAX_MUSIC );
 	engine_game_manager_set_game_music( game_music );
+	engine_game_manager_set_game_start( switch_mode_yes );
 }
 
 void screen_init_screen_update( unsigned char *screen_type )

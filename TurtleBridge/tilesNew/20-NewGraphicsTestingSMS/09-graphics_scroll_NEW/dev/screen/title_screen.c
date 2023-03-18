@@ -73,7 +73,10 @@ void screen_title_screen_update( unsigned char *screen_type )
 		return;
 	}
 
+	// TODO this MUST be wrong..!!
+	// RIFF_START_TITLE
 	engine_riff_manager_play( index );
+	// TODO this MUST be wrong..!!
 
 	x = flip_posX[ index ];
 	y = flip_posY[ index ];
