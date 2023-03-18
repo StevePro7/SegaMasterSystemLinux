@@ -22,7 +22,6 @@ static unsigned char player_deadX;
 static unsigned char deltaX;
 static signed int deltaY;
 static unsigned char swap;
-//static unsigned char index;
 static unsigned char count;
 static unsigned char value;
 static unsigned char loops;
@@ -120,6 +119,5 @@ void screen_dead_screen_update( unsigned char *screen_type )
 	// don't draw player here as "blinks"
 	//engine_player_manager_draw();
 	engine_player_manager_head();
-
 	*screen_type = screen_type_dead;
 }

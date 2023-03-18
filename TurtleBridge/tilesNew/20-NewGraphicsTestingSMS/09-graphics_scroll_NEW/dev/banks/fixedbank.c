@@ -54,10 +54,10 @@ const unsigned char music_object_bank[] =
 const unsigned char *sound_object_data[] =
 {
 	mus_death_psg,
-	mus_beat_psg,
-	mus_cont_psg,
 	mus_level_psg,
+	mus_cont_psg,
 	mus_over_psg,
+	mus_beat_psg,
 
 	sfx_accept_psg,
 	sfx_reset_psg,
@@ -66,10 +66,10 @@ const unsigned char *sound_object_data[] =
 const unsigned char sound_object_bank[] =
 {
 	mus_death_psg_bank,
-	mus_beat_psg_bank,
-	mus_cont_psg_bank,
 	mus_level_psg_bank,
+	mus_cont_psg_bank,
 	mus_over_psg_bank,
+	mus_beat_psg_bank,
 
 	sfx_accept_psg_bank,
 	sfx_reset_psg_bank,

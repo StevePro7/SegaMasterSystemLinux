@@ -8,18 +8,27 @@
 #include "../engine/input_manager.h"
 #include "../engine/level_manager.h"
 #include "../engine/player_manager.h"
+#include "../engine/riff_manager.h"
 #include "../engine/scroll_manager.h"
 #include "../engine/timer_manager.h"
+#include "../engine/util_manager.h"
 #include "../devkit/_sms_manager.h"
+#include "../devkit/_snd_manager.h"
 
 static unsigned char player_passX;
 static unsigned char player_endY;
 static unsigned char swap;
+static unsigned char count;
+static unsigned char value;
+static unsigned char loops;
+
 
 void screen_pass_screen_load()
 {
 	struct_command_object *co = &global_command_object;
 	struct_player_object *po = &global_player_object;
+	static unsigned char index, maxim;
+
 	player_passX = engine_player_manager_get_deltaX( po->player_state, co->prev_command );
 	player_passX >>= 1;
 	player_endY = engine_player_manager_finish();
@@ -27,6 +36,18 @@ void screen_pass_screen_load()
 	engine_player_manager_draw();
 	engine_player_manager_head();
 	swap = 0;
+
+	engine_riff_manager_init();
+	devkit_PSGStop();
+
+	// TODO - update magic number?
+	maxim = 3;
+	index = engine_random_manager_next( maxim );
+	index = 0;		// TODO - remove this!!
+	index += RIFF_START_PASS;
+	value = riff_indexs[ index ];
+	count = riff_counts[ index ];
+	loops = 0;
 }
 
 // TODO - show the world round point text on screen when pass.
@@ -58,48 +79,130 @@ void screen_pass_screen_update( unsigned char *screen_type )
 		engine_reset_manager_reset();
 	}
 
-	//engine_scroll_manager_update( 0 );
-	if( po->posnX >= LEVELS_SIDE )
+	if( swap )
 	{
-		// Continue invoke function in case player still in air.
-		engine_player_manager_pass( player_passX, player_endY );
-		if( !swap )
+		if( po->posnX >= LEVELS_SIDE )
 		{
-			engine_music_manager_stop();
-			swap = 1;
-			po->player_frame = ( player_frame_theair_rght_01 == po->player_frame ) ? player_frame_ground_rght_02 : player_frame_ground_left_02;
+			// Check if SFX complete...
+			if( !devkit_PSGSFXGetStatus() )
+			{
+				input1 = engine_input_manager_hold( input_type_fire1 );
+				input2 = engine_input_manager_move( input_type_down );
+				if( input1 || input2 )
+				{
+					// TODO - pause and goto interim screen to increment level until beat_screen...
+					game_level = go->game_level;
+					game_level += 1;
+					engine_game_manager_set_level_test( game_level );
+					*screen_type = screen_type_beat;
+					return;
+				}
+			}
+			else
+			{
+				// Continue invoke function in case player still in air.
+				input1 = engine_input_manager_hold( input_type_up );
+				input2 = engine_input_manager_move( input_type_down );
+				input1 = 1;
+				if( input1 || input2 )
+				{
+					engine_player_manager_pass( player_passX, player_endY );
+					engine_player_manager_draw();
+					engine_player_manager_head();
+				}
+
+				//engine_player_manager_pass( player_passX, player_endY );
+				//if( !swap )
+				//{
+				//	engine_music_manager_stop();
+				//	swap = 1;
+				po->player_frame = ( player_frame_theair_rght_01 == po->player_frame ) ? player_frame_ground_rght_02 : player_frame_ground_left_02;
+				//}
+				// TODO delete - 7-Mar-2023 was POC'ing scroll / moving player back but won't work with current posnX logic check - TODO remove!!
+			}
 		}
-		// TODO delete - 7-Mar-2023 was POC'ing scroll / moving player back but won't work with current posnX logic check - TODO remove!!
 		else
 		{
-			input1 = engine_input_manager_hold( input_type_fire1 );
+			input1 = engine_input_manager_hold( input_type_up );
 			input2 = engine_input_manager_move( input_type_down );
+			input1 = 1;
 			if( input1 || input2 )
 			{
-				// TODO - pause and goto interim screen to increment level until beat_screen...
-				game_level = go->game_level;
-				game_level += 1;
-				engine_game_manager_set_level_test( game_level );
-				*screen_type = screen_type_intro;		// TODO view screen.
-				return;
-		//		// TODO delete -poc
-		//		po->posnX -= 1;
-		//		po->drawX = po->posnX - 16;
-		//		engine_scroll_manager_update( 1 );
+				engine_player_manager_pass( player_passX, player_endY );
+				engine_player_manager_draw();
+				engine_player_manager_head();
+			}
+		}
+
+		if( 1 == swap )
+		{
+			if( loops < count )
+			{
+				engine_riff_manager_play( loops + value );
+				loops++;
+			}
+			else
+			{
+				swap = 2;
+				// Play SFX
+				engine_sound_manager_play( 1 );
 			}
 		}
 	}
 	else
 	{
-		input1 = engine_input_manager_hold( input_type_up );
-		input2 = engine_input_manager_move( input_type_down );
+		//input1 = engine_input_manager_hold( input_type_up );
+		//input2 = engine_input_manager_move( input_type_down );
+		//input1 = 1;
 		//if( input1 || input2 )
-		{
-			engine_player_manager_pass( player_passX, player_endY );
-		}
+		//{
+		//	engine_player_manager_pass( player_passX, player_endY );
+		//	////engine_player_manager_draw();
+		//	////engine_player_manager_head();
+		//}
+
+		engine_player_manager_pass( player_passX, player_endY );
+		swap = 1;
 	}
 
-	engine_player_manager_draw();
+	//if( po->posnX >= LEVELS_SIDE )
+	//{
+	//	// Continue invoke function in case player still in air.
+	//	engine_player_manager_pass( player_passX, player_endY );
+	//	if( !swap )
+	//	{
+	//		engine_music_manager_stop();
+	//		swap = 1;
+	//		po->player_frame = ( player_frame_theair_rght_01 == po->player_frame ) ? player_frame_ground_rght_02 : player_frame_ground_left_02;
+	//	}
+	//	// TODO delete - 7-Mar-2023 was POC'ing scroll / moving player back but won't work with current posnX logic check - TODO remove!!
+	//	else
+	//	{
+	//		input1 = engine_input_manager_hold( input_type_fire1 );
+	//		input2 = engine_input_manager_move( input_type_down );
+	//		if( input1 || input2 )
+	//		{
+	//			// TODO - pause and goto interim screen to increment level until beat_screen...
+	//			game_level = go->game_level;
+	//			game_level += 1;
+	//			engine_game_manager_set_level_test( game_level );
+	//			*screen_type = screen_type_init;
+	//			return;
+	//		}
+	//	}
+	//}
+	//else
+	//{
+	//	input1 = engine_input_manager_hold( input_type_up );
+	//	input2 = engine_input_manager_move( input_type_down );
+	//	//if( input1 || input2 )
+	//	{
+	//		engine_player_manager_pass( player_passX, player_endY );
+	//	}
+	//}
+
+	// don't draw player here as "blinks"
+	//engine_player_manager_draw();
 	engine_player_manager_head();
 	*screen_type = screen_type_pass;
 }
