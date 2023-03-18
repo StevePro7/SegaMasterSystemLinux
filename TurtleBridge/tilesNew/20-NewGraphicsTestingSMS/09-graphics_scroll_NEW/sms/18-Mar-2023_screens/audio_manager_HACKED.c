@@ -47,8 +47,10 @@ void engine_music_manager_playnorepeat( unsigned char index )
 	ao->music_data = ( unsigned char* ) music_object_data[ index ];
 	ao->music_bank = music_object_bank[ index ];
 
-	devkit_SMS_mapROMBank( ao->music_bank );
-	devkit_PSGPlayNoRepeat( ( unsigned char* ) ao->music_data );
+	//devkit_SMS_mapROMBank( ao->music_bank );
+
+	//devkit_PSGPlayNoRepeat( ( unsigned char* ) ao->music_data );
+	//devkit_PSGPlay( ( unsigned char* ) ao->music_data );
 }
 
 void engine_music_manager_stop()
@@ -72,32 +74,55 @@ void engine_sound_manager_play( unsigned char index )
 	ao->sound_data = ( unsigned char* ) sound_object_data[ index ];
 	ao->sound_bank = sound_object_bank[ index ];
 
-	devkit_SMS_mapROMBank( ao->sound_bank );
-	devkit_PSGSFXPlay( ( unsigned char* ) ao->sound_data, devkit_SFX_CHANNELS2AND3() );
+	//if( ( !devkit_PSGSFXGetStatus() ) )
+	{
+		devkit_SMS_mapROMBank( ao->sound_bank );
+		devkit_PSGSFXPlay( ( unsigned char* ) ao->sound_data, devkit_SFX_CHANNELS2AND3() );
+		//devkit_PSGSFXPlay( sound, devkit_SFX_CHANNEL3() );
+		
+		//changeBank( FIXEDBANKSLOT );
+	}
+
+//	devkit_SMS_mapROMBank( ao->sound_bank );
+//	devkit_PSGSFXPlay( ( unsigned char* ) ao->sound_data, devkit_SFX_CHANNEL2() );
+//	devkit_SMS_mapROMBank( FIXED_BANK );
 }
 
 void engine_sound_manager_stop()
 {
 	struct_audio_object *ao = &global_audio_object;
-	ao->sound_data = NULL;
-	ao->sound_bank = 0;
+	//ao->sound_data = NULL;
+	//ao->sound_bank = 0;
 	devkit_PSGSFXStop();
+	devkit_SMS_mapROMBank( ao->sound_bank );
+	devkit_PSGSFXFrame();
+	devkit_PSGStop();
 }
 
 void engine_audio_manager_update()
 {
 	// Thanks to @eruiz for this code!
 	struct_audio_object *ao = &global_audio_object;
-	if( 0 != ao->music_bank )
-	{
-		devkit_SMS_mapROMBank( ao->music_bank );
-		devkit_PSGFrame();
-	}
+	//if( 0 != ao->music_bank )
+	//{
+	//	devkit_SMS_mapROMBank( ao->music_bank );
+	//	devkit_PSGFrame();
+	//}
 
 	//if( devkit_PSGSFXGetStatus() )
-	if( 0 != ao->sound_bank )
+	//
+	//if( devkit_PSGSFXGetStatus() )
 	{
-		devkit_SMS_mapROMBank( ao->sound_bank );
-		devkit_PSGSFXFrame();
+		if( 0 != ao->sound_bank )
+		{
+			devkit_SMS_mapROMBank( ao->sound_bank );
+			devkit_PSGSFXFrame();
+		}
+		//else
+		//{
+		//	ao->sound_data = NULL;
+		//	ao->sound_bank = 0;
+		//	devkit_PSGSFXStop();
+		//}
 	}
 }

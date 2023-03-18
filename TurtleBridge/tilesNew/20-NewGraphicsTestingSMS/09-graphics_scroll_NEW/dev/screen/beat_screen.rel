@@ -1,62 +1,99 @@
 ;!FILE beat_screen.asm
 XL3
-H 9 areas 36 global symbols
+H 9 areas 5B global symbols
 M beat_screen
 O -mz80
+S _engine_music_manager_playnorepeat Ref000000
+S _engine_frame_manager_draw Ref000000
 S _engine_font_manager_text Ref000000
 S _devkit_SMS_displayOn Ref000000
 S _engine_graphics_manager_sea Ref000000
+S _engine_frame_manager_update Ref000000
 S _engine_graphics_manager_screen Ref000000
 S .__.ABS. Def000000
 S _global_game_object Ref000000
+S _engine_input_manager_hold Ref000000
 S _engine_graphics_manager_clouds Ref000000
 S _devkit_SMS_displayOff Ref000000
-A _CODE size 3B flags 0 addr 0
-S Fbeat_screen$__str_0$0_0$0 Def000028
-S XG$screen_beat_screen_load$0$0 Def000025
-S G$screen_beat_screen_update$0$0 Def000034
-S C$beat_screen.c$30$1_0$131 Def000003
-S C$beat_screen.c$22$0_0$131 Def000000
-S C$beat_screen.c$40$1_0$131 Def000025
-S C$beat_screen.c$33$1_0$131 Def00000B
-S A$beat_screen$124 Def000034
-S C$beat_screen.c$34$1_0$131 Def000014
-S C$beat_screen.c$25$1_0$131 Def000000
-S _screen_beat_screen_update Def000034
-S A$beat_screen$125 Def000035
-S A$beat_screen$107 Def000025
-S C$beat_screen.c$42$1_0$133 Def000034
-S C$beat_screen.c$35$1_0$131 Def000017
-S A$beat_screen$126 Def000036
-S A$beat_screen$136 Def00003A
-S A$beat_screen$127 Def000037
-S C$beat_screen.c$37$1_0$131 Def000025
-S A$beat_screen$128 Def000038
-S C$beat_screen.c$29$1_0$131 Def000000
-S C$beat_screen.c$67$1_0$133 Def000034
-S C$beat_screen.c$68$1_0$133 Def00003A
-S XG$screen_beat_screen_update$0$0 Def00003A
-S A$beat_screen$70 Def000006
-S A$beat_screen$80 Def000013
-S A$beat_screen$71 Def000007
+S _engine_music_manager_stop Ref000000
+S _engine_frame_manager_load Ref000000
+A _CODE size 66 flags 0 addr 0
+S Fbeat_screen$__str_0$0_0$0 Def000036
+S XG$screen_beat_screen_load$0$0 Def000035
+S G$screen_beat_screen_update$0$0 Def000042
+S A$beat_screen$100 Def000023
+S A$beat_screen$120 Def000034
+S A$beat_screen$112 Def00002A
+S A$beat_screen$104 Def000024
+S _screen_beat_screen_update Def000042
+S A$beat_screen$116 Def00002D
+S A$beat_screen$180 Def00005F
+S A$beat_screen$162 Def000053
+S A$beat_screen$153 Def00004A
+S A$beat_screen$117 Def00002F
+S A$beat_screen$108 Def000027
+S C$beat_screen.c$31$1_0$136 Def000000
+S A$beat_screen$181 Def000060
+S A$beat_screen$172 Def000059
+S A$beat_screen$163 Def000054
+S A$beat_screen$154 Def00004C
+S A$beat_screen$145 Def000042
+S A$beat_screen$118 Def000030
+S C$beat_screen.c$41$1_0$136 Def000027
+S C$beat_screen.c$32$1_0$136 Def000003
+S C$beat_screen.c$24$0_0$136 Def000000
+S A$beat_screen$182 Def000061
+S A$beat_screen$155 Def00004D
+S A$beat_screen$146 Def000044
+S A$beat_screen$128 Def000035
+S A$beat_screen$119 Def000031
+S C$beat_screen.c$42$1_0$136 Def00002A
+S A$beat_screen$192 Def000065
+S A$beat_screen$183 Def000062
+S A$beat_screen$156 Def00004E
+S A$beat_screen$147 Def000045
+S A$beat_screen$184 Def000063
+S A$beat_screen$157 Def000051
+S A$beat_screen$148 Def000046
+S C$beat_screen.c$44$1_0$136 Def00002D
+S C$beat_screen.c$35$1_0$136 Def00000B
+S A$beat_screen$176 Def00005C
+S A$beat_screen$167 Def000056
+S A$beat_screen$158 Def000052
+S A$beat_screen$149 Def000049
+S C$beat_screen.c$67$2_0$140 Def000056
+S C$beat_screen.c$36$1_0$136 Def000014
+S C$beat_screen.c$27$1_0$136 Def000000
+S C$beat_screen.c$46$1_0$136 Def000035
+S C$beat_screen.c$37$1_0$136 Def000017
+S C$beat_screen.c$82$1_0$138 Def00005F
+S C$beat_screen.c$64$1_0$138 Def00004A
+S C$beat_screen.c$39$1_0$136 Def000024
+S C$beat_screen.c$83$1_0$138 Def000065
+S C$beat_screen.c$65$1_0$138 Def000053
+S XG$screen_beat_screen_update$0$0 Def000065
+S C$beat_screen.c$48$1_0$138 Def000042
+S C$beat_screen.c$58$1_0$138 Def000042
+S C$beat_screen.c$78$1_0$138 Def000059
+S C$beat_screen.c$79$1_0$138 Def00005C
+S A$beat_screen$71 Def000000
 S G$screen_beat_screen_load$0$0 Def000000
-S A$beat_screen$90 Def000019
-S A$beat_screen$72 Def00000A
-S A$beat_screen$91 Def00001B
-S A$beat_screen$92 Def00001C
-S A$beat_screen$65 Def000000
-S A$beat_screen$93 Def00001F
-S A$beat_screen$84 Def000014
-S A$beat_screen$94 Def000020
-S A$beat_screen$76 Def00000B
-S A$beat_screen$95 Def000023
-S A$beat_screen$77 Def00000E
-S A$beat_screen$96 Def000024
-S A$beat_screen$78 Def00000F
-S A$beat_screen$69 Def000003
-S A$beat_screen$88 Def000017
-S A$beat_screen$79 Def000010
-S A$beat_screen$89 Def000018
+S A$beat_screen$90 Def000014
+S A$beat_screen$82 Def00000B
+S A$beat_screen$83 Def00000E
+S A$beat_screen$84 Def00000F
+S A$beat_screen$75 Def000003
+S A$beat_screen$94 Def000017
+S A$beat_screen$85 Def000010
+S A$beat_screen$76 Def000006
+S A$beat_screen$95 Def00001A
+S A$beat_screen$86 Def000013
+S A$beat_screen$77 Def000007
+S A$beat_screen$96 Def00001B
+S A$beat_screen$78 Def00000A
+S A$beat_screen$97 Def00001E
+S A$beat_screen$98 Def00001F
+S A$beat_screen$99 Def000022
 S _screen_beat_screen_load Def000000
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
@@ -69,18 +106,26 @@ A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
 T 00 00 00 CD 00 00 21 00 00 E5 CD 00 00 F1 3A
-R 00 00 00 00 02 04 07 00 02 0B 03 00
-T 0C 00 00 08 00 F5 33 CD 00 00 33 CD 00 00 AF 57
-R 00 00 00 00 02 03 05 00 02 08 06 00 02 0C 02 00
-T 19 00 00 1E 15 D5 21 28 00 E5 CD 00 00 F1 F1 C3
-R 00 00 00 00 00 07 00 00 02 0B 00 00
-T 26 00 00 00 00
-R 00 00 00 00 02 03 01 00
-T 28 00 00
+R 00 00 00 00 02 04 0B 00 02 0B 06 00
+T 0C 00 00 08 00 F5 33 CD 00 00 33 CD 00 00 11
+R 00 00 00 00 02 03 08 00 02 08 0A 00 02 0C 04 00
+T 18 00 00 15 02 D5 21 36 00 E5 CD 00 00 F1 F1 CD
+R 00 00 00 00 00 07 00 00 02 0B 02 00
+T 25 00 00 00 00 CD 00 00 CD 00 00 3E 06 F5 33 CD
+R 00 00 00 00 02 03 03 00 02 06 0D 00 02 09 01 00
+T 32 00 00 00 00 33 C9
+R 00 00 00 00 02 03 00 00
+T 36 00 00
 R 00 00 00 00
-T 28 00 00 42 45 41 54 20 53 43 52 45 45 4E 00
+T 36 00 00 42 45 41 54 20 53 43 52 45 45 4E 00
 R 00 00 00 00
-T 34 00 00
+T 42 00 00
 R 00 00 00 00
-T 34 00 00 C1 E1 E5 C5 36 12 C9
+T 42 00 00 3E 04 F5 33 CD 00 00 33 3E 08 F5 33 CD
+R 00 00 00 00 02 08 09 00
+T 4F 00 00 00 00 7D 33 B7 28 03 CD 00 00
+R 00 00 00 00 02 03 09 00 02 0B 0C 00
+T 59 00 00
 R 00 00 00 00
+T 59 00 00 CD 00 00 CD 00 00 C1 E1 E5 C5 36 12 C9
+R 00 00 00 00 02 04 05 00 02 07 01 00

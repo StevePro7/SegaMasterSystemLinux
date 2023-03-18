@@ -1,7 +1,7 @@
 M:fixedbank
 S:G$steven_text$0_0$0({6}DA3d,DG,SC:U),E,0,0
-S:G$music_object_data$0_0$0({8}DA4d,DG,SC:U),E,0,0
-S:G$sound_object_data$0_0$0({16}DA8d,DG,SC:U),E,0,0
+S:G$music_object_data$0_0$0({14}DA7d,DG,SC:U),E,0,0
+S:G$sound_object_data$0_0$0({10}DA5d,DG,SC:U),E,0,0
 S:G$riff_sample_data$0_0$0({114}DA57d,DG,SC:U),E,0,0
 S:G$level_object_data$0_0$0({80}DA40d,DG,SC:U),E,0,0
 S:G$player_object_starts$0_0$0({0}DA0d,SC:U),D,0,0
@@ -63,8 +63,8 @@ S:G$level_0506_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$level_0507_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$level_0508_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$steven_data$0_0$0({16}DA16d,SC:U),D,0,0
-S:G$music_object_bank$0_0$0({4}DA4d,SC:U),D,0,0
-S:G$sound_object_bank$0_0$0({8}DA8d,SC:U),D,0,0
+S:G$music_object_bank$0_0$0({7}DA7d,SC:U),D,0,0
+S:G$sound_object_bank$0_0$0({5}DA5d,SC:U),D,0,0
 S:G$riff_sample_bank$0_0$0({57}DA57d,SC:U),D,0,0
 S:G$level_object_size$0_0$0({80}DA40d,SI:U),D,0,0
 S:G$level_object_bank$0_0$0({40}DA40d,SC:U),D,0,0
