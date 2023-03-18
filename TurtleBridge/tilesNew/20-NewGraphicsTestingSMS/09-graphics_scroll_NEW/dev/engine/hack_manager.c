@@ -49,7 +49,7 @@ void engine_hack_manager_load()
 
 	// TODO delete.
 	//ho->hack_delay = 1;
-	ho->hack_music = 1;
+	ho->hack_music = 0;
 	ho->hack_sound = 0;
 	ho->hack_riffs = 1;// !ho->hack_riffs;
 	// TODO delete.

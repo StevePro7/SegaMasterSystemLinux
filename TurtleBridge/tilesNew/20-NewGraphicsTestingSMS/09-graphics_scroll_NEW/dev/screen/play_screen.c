@@ -91,70 +91,15 @@ void screen_play_screen_update( unsigned char *screen_type )
 			//command = engine_command_manager_build( po->player_state, 1, 0, 0, 0, 0, 1 );		//Jump index = 1.
 			//command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 1 );		//Jump index = 2.
 			//command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 1 );		//Jump index = 3.
-			command = engine_command_manager_build( po->player_state, 0, 1, 1, 0, 0, 1 );		//Jump index = 4.
+			//command = engine_command_manager_build( po->player_state, 0, 1, 1, 0, 0, 1 );		//Jump index = 4.
 		}
 		else
 		{
 			command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 0 );
 		}
 
-		//if( 24 == fo->frame_count )
-		{
-			//command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 1, 0 );
-		}
-		//else if( 3 == fo->frame_count )
-		//{
-		//	command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 0 );
-		//}
-
-		//command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 0 );
-
-		//if( 60 == fo->frame_count )
-		//{
-		//	command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 1, 0 );
-		//}
-		//if( 96 == fo->frame_count )//|| 6 == fo->frame_count )//|| 8 == fo->frame_count )
-		//{
-		//	command = engine_command_manager_build( po->player_state, 0, 1, 1, 0, 0, 1 );
-		//}
-		//if( 170 == fo->frame_count )
-		//{
-		//	command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 1 );
-		//}
-		//if( 180 == fo->frame_count )
-		//{
-		////	command = engine_command_manager_build( po->player_state, 1, 0, 0, 0, 0, 1 );
-		//}
-		////if( 5 == fo->frame_count )
-		////{
-		////	//command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 1, 0 );
-		////}
-
-
-		//command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 0 );
-
 		engine_frame_manager_update();
 		//engine_frame_manager_draw();
-		//if( 60 == fo->frame_count )
-		//{
-		//	command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 1, 0 );
-		//}
-		//if( 70 == fo->frame_count )//|| 6 == fo->frame_count )//|| 8 == fo->frame_count )
-		//{
-		//	command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 1 );
-		//}
-		//if( 110 == fo->frame_count )
-		//{
-		//	command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 1 );
-		//}
-		//if( 180 == fo->frame_count )
-		//{
-		//	command = engine_command_manager_build( po->player_state, 0, 1, 1, 0, 0, 1 );
-		//}
-		//if( 250 == fo->frame_count )
-		//{
-		//	command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 1, 0 );
-		//}
 	}
 
 	if( COMMAND_NONE_MASK != command )
@@ -163,36 +108,11 @@ void screen_play_screen_update( unsigned char *screen_type )
 		deltaX = engine_player_manager_get_deltaX( po->player_state, command );
 		//deltaX = 1; // TODO delete
 
-		// TODO delete this debugging info - for newIndex!!
-		//engine_font_manager_data( deltaX, 31, 6 );
-		// TODO delete this debugging info - for newIndex!!
-
-		//if( po->player_state == player_state_isintheair )
-		//{
-		//	//totalX += deltaX;
-		//	//frameX++;
-		//}
-		//else
-		//{
-		//	if( fo->frame_count > 1 && po->player_state == player_state_isonground && !//flag )
-		//	{
-		//		//flag = 1;
-		//		engine_font_manager_data( //totalX, 30, 2 );
-		//		engine_font_manager_data( //frameX, 30, 3 );
-		//	}
-		//}
 
 		// Get button action.
 		engine_player_manager_set_action( po->player_frame, command );
 
-		// No scroll.
-		//if( 0 == deltaX )
-		//{
-		//	engine_scroll_manager_update( 0 );
-		//}
-		//else
-		//{
-			//if( !complete ) {}
+
 		for( loops = 0; loops < deltaX; loops++ )
 		{
 			scroll_state = engine_scroll_manager_update( 1 );
@@ -202,11 +122,6 @@ void screen_play_screen_update( unsigned char *screen_type )
 			if( scroll_state_tile == scroll_state )
 			{
 				engine_level_manager_draw_column( so->scrollColumn );
-					
-				//if (fo->frame_count == 0 || po->player_state == 1 )
-				//{
-				//	scroll_count++;		// TODO delete as only used for impossible jump debugging
-				//}
 			}
 			else if( scroll_state_line == scroll_state )
 			{
@@ -269,11 +184,6 @@ void screen_play_screen_update( unsigned char *screen_type )
 
 	// Store command for future use.
 	engine_command_manager_update( command );
-	//}
-	//else
-	//{
-	//	engine_scroll_manager_update( 0 );
-	//}
 
 	engine_player_manager_draw();
 	engine_player_manager_head();
@@ -285,7 +195,6 @@ void screen_play_screen_update( unsigned char *screen_type )
 	// Check to see if player completes level.
 	if( complete )
 	{
-		engine_scroll_manager_update( 0 );		// TODO remove - nop
 		*screen_type = screen_type_pass;
 		return;
 	}
@@ -293,7 +202,6 @@ void screen_play_screen_update( unsigned char *screen_type )
 	// Check if moving on to the dying sequence.
 	if( player_state_isnowdying == player_state )
 	{
-		//engine_scroll_manager_update( 0 );		// TODO remove - nop
 		*screen_type = screen_type_dead;
 		return;
 	}
