@@ -100,16 +100,21 @@ void screen_pass_screen_update( unsigned char *screen_type )
 			}
 			else
 			{
-				// Continue invoke function in case player still in air.
-				input1 = engine_input_manager_hold( input_type_up );
-				input2 = engine_input_manager_move( input_type_down );
-				input1 = 1;
-				if( input1 || input2 )
+				if( 2 == swap )
 				{
+					engine_player_manager_pass_frame();
+					swap = 3;
+				}
+				// Continue invoke function in case player still in air.
+				//input1 = engine_input_manager_hold( input_type_up );
+				//input2 = engine_input_manager_move( input_type_down );
+				//input1 = 1;
+				//if( input1 || input2 )
+				//{
 					engine_player_manager_pass( player_passX, player_endY );
 					engine_player_manager_draw();
 					engine_player_manager_head();
-				}
+				//}
 
 				//engine_player_manager_pass( player_passX, player_endY );
 				//if( !swap )
@@ -122,15 +127,15 @@ void screen_pass_screen_update( unsigned char *screen_type )
 		}
 		else
 		{
-			input1 = engine_input_manager_hold( input_type_up );
-			input2 = engine_input_manager_move( input_type_down );
-			input1 = 1;
-			if( input1 || input2 )
-			{
+			//input1 = engine_input_manager_hold( input_type_up );
+			//input2 = engine_input_manager_move( input_type_down );
+			//input1 = 1;
+			//if( input1 || input2 )
+			//{
 				engine_player_manager_pass( player_passX, player_endY );
 				engine_player_manager_draw();
 				engine_player_manager_head();
-			}
+			//}
 		}
 
 		if( 1 == swap )
@@ -145,7 +150,6 @@ void screen_pass_screen_update( unsigned char *screen_type )
 				swap = 2;
 				// Play SFX
 				engine_sound_manager_play( 1 );
-				engine_player_manager_pass_frame();
 			}
 		}
 	}
