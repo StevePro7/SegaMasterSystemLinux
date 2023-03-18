@@ -60,26 +60,32 @@ void screen_pass_screen_update( unsigned char *screen_type )
 	unsigned char game_level;
 	unsigned char check;
 
-	// Player chance to quit out to start screen.
-	input1 = engine_input_manager_move( input_type_up );
-	if( input1 )
-	{
-		check = engine_reset_manager_update();
-		if( check )
-		{
-			input2 = engine_input_manager_move( input_type_fire2 );
-			if( input2 )
-			{
-				devkit_PSGSFXStop();
-				*screen_type = screen_type_start;
-				return;
-			}
-		}
-	}
-	else
-	{
-		engine_reset_manager_reset();
-	}
+	// TODO - had to comment out for now as was still playing SFX despite the fact told not to...!!
+	//// Player chance to quit out to start screen.
+	//input1 = engine_input_manager_move( input_type_up );
+	//if( input1 )
+	//{
+	//	check = engine_reset_manager_update();
+	//	if( check )
+	//	{
+	//		input2 = engine_input_manager_move( input_type_fire1 );
+	//		//input3 = engine_input_manager_hold( input_type_fire2 );
+	//		if( input2 )
+	//		{
+	//			engine_music_manager_stop();
+	//			engine_sound_manager_stop();
+
+	//			devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+	//			*screen_type = screen_type_start;
+	//			return;
+	//		}
+	//	}
+	//}
+	//else
+	//{
+	//	engine_reset_manager_reset();
+	//}
+
 
 	if( swap )
 	{
@@ -108,37 +114,18 @@ void screen_pass_screen_update( unsigned char *screen_type )
 					engine_player_manager_pass_frame();
 					swap = 3;
 				}
-				// Continue invoke function in case player still in air.
-				//input1 = engine_input_manager_hold( input_type_up );
-				//input2 = engine_input_manager_move( input_type_down );
-				//input1 = 1;
-				//if( input1 || input2 )
-				//{
-					engine_player_manager_pass( player_passX, player_endY );
-					engine_player_manager_draw();
-					engine_player_manager_head();
-				//}
 
-				//engine_player_manager_pass( player_passX, player_endY );
-				//if( !swap )
-				//{
-				//	engine_music_manager_stop();
-				//	swap = 1;
-				//}
-				// TODO delete - 7-Mar-2023 was POC'ing scroll / moving player back but won't work with current posnX logic check - TODO remove!!
+				// Continue invoke function in case player still in air.
+				engine_player_manager_pass( player_passX, player_endY );
+				engine_player_manager_draw();
+				engine_player_manager_head();
 			}
 		}
 		else
 		{
-			//input1 = engine_input_manager_hold( input_type_up );
-			//input2 = engine_input_manager_move( input_type_down );
-			//input1 = 1;
-			//if( input1 || input2 )
-			//{
-				engine_player_manager_pass( player_passX, player_endY );
-				engine_player_manager_draw();
-				engine_player_manager_head();
-			//}
+			engine_player_manager_pass( player_passX, player_endY );
+			engine_player_manager_draw();
+			engine_player_manager_head();
 		}
 
 		if( 1 == swap )

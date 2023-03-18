@@ -6,7 +6,7 @@ F:G$screen_pass_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lpass_screen.screen_pass_screen_update$screen_type$1_0$151({2}DG,SC:U),B,1,4
 S:Lpass_screen.screen_pass_screen_update$po$1_0$152({2}DG,STtag_struct_player_object:S),R,0,0,[]
 S:Lpass_screen.screen_pass_screen_update$go$1_0$152({2}DG,STtag_struct_game_object:S),R,0,0,[]
-S:Lpass_screen.screen_pass_screen_update$input1$1_0$152({1}SC:U),R,0,0,[l]
+S:Lpass_screen.screen_pass_screen_update$input1$1_0$152({1}SC:U),R,0,0,[a]
 S:Lpass_screen.screen_pass_screen_update$input2$1_0$152({1}SC:U),R,0,0,[a]
 S:Lpass_screen.screen_pass_screen_update$game_level$1_0$152({1}SC:U),R,0,0,[a]
 S:Lpass_screen.screen_pass_screen_update$check$1_0$152({1}SC:U),R,0,0,[a]
