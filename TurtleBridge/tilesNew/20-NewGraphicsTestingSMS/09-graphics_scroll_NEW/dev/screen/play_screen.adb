@@ -66,7 +66,6 @@ S:G$engine_command_manager_record$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_command_manager_draw$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_debug_manager_initgame$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_debug_manager_printout$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_debug_manager_scrollout$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0_0$0({2}DF,SV:S),C,0,0

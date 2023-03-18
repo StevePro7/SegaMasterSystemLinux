@@ -1,15 +1,8 @@
 M:intro_screen
 F:G$screen_intro_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_intro_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lintro_screen.screen_intro_screen_update$screen_type$1_0$11({2}DG,SC:U),B,1,4
+S:Lintro_screen.screen_intro_screen_update$screen_type$1_0$7({2}DG,SC:U),B,1,4
 S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_valu$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_graphics_manager_common$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_graphics_manager_screen$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_graphics_manager_level$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_graphics_manager_sea$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_graphics_manager_clouds$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_graphics_manager_title$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_graphics_manager_image$0_0$0({2}DF,SV:S),C,0,0
