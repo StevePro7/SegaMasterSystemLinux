@@ -529,6 +529,12 @@ void engine_player_manager_pass( unsigned char player_passX, unsigned char playe
 	}
 }
 
+void engine_player_manager_pass_frame()
+{
+	struct_player_object *po = &global_player_object;
+	po->player_frame = ( player_frame_theair_rght_01 != po->player_frame ) ? player_frame_ground_left_02 : player_frame_ground_rght_02;
+}
+
 void engine_player_manager_dead( unsigned char player_deadX )
 {
 	struct_player_object *po = &global_player_object;

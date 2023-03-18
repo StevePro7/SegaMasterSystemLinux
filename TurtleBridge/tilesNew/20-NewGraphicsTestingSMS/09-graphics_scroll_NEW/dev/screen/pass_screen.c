@@ -116,7 +116,6 @@ void screen_pass_screen_update( unsigned char *screen_type )
 				//{
 				//	engine_music_manager_stop();
 				//	swap = 1;
-				po->player_frame = ( player_frame_theair_rght_01 == po->player_frame ) ? player_frame_ground_rght_02 : player_frame_ground_left_02;
 				//}
 				// TODO delete - 7-Mar-2023 was POC'ing scroll / moving player back but won't work with current posnX logic check - TODO remove!!
 			}
@@ -146,21 +145,12 @@ void screen_pass_screen_update( unsigned char *screen_type )
 				swap = 2;
 				// Play SFX
 				engine_sound_manager_play( 1 );
+				engine_player_manager_pass_frame();
 			}
 		}
 	}
 	else
 	{
-		//input1 = engine_input_manager_hold( input_type_up );
-		//input2 = engine_input_manager_move( input_type_down );
-		//input1 = 1;
-		//if( input1 || input2 )
-		//{
-		//	engine_player_manager_pass( player_passX, player_endY );
-		//	////engine_player_manager_draw();
-		//	////engine_player_manager_head();
-		//}
-
 		engine_player_manager_pass( player_passX, player_endY );
 		swap = 1;
 	}

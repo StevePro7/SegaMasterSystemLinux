@@ -33,6 +33,7 @@ void engine_player_manager_head();
 unsigned char engine_player_manager_finish();
 void engine_player_manager_dying();
 void engine_player_manager_pass( unsigned char player_passX, unsigned char player_endY );
+void engine_player_manager_pass_frame();
 void engine_player_manager_dead( unsigned char player_deadX );
 void engine_player_manager_count();
 
