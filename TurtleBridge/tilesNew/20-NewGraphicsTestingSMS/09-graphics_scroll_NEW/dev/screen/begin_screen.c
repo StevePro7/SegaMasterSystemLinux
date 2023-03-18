@@ -18,9 +18,9 @@ void screen_begin_screen_load()
 	engine_debug_manager_initgame();
 	// TODO delete this.
 
+
 	cloud = engine_random_manager_next( SPRITE_TILES );
 	engine_game_manager_set_cloud_form( cloud );
-
 
 	// TODO - can run this inline as this will be the only consumer eventually...
 	engine_graphics_manager_common();
