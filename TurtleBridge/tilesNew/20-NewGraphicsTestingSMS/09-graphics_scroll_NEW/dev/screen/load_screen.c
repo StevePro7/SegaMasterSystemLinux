@@ -109,7 +109,7 @@ void screen_load_screen_update( unsigned char *screen_type )
 	//*screen_type = screen_type_cont;
 	//*screen_type = screen_type_option;
 	//*screen_type = screen_type_ready;
-//	*screen_type = screen_type_play;			// TODO integrate input => command like record
+	*screen_type = screen_type_play;			// TODO integrate input => command like record
 	//*screen_type = screen_type_intro;				// Integrate input => commands to play game.
-	*screen_type = screen_type_test;				// test back up of org. play screen POC
+	//*screen_type = screen_type_test;				// test back up of org. play screen POC
 }

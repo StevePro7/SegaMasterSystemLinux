@@ -1,4 +1,4 @@
-#include "play_screen.h"
+#include "test_screen.h"
 #include "../engine/audio_manager.h"
 #include "../engine/collision_manager.h"
 #include "../engine/command_manager.h"
@@ -23,46 +23,20 @@
 static bool complete;
 static signed int deltaY;
 
-//static unsigned int //totalX;
-//static unsigned char //frameX;
-//static unsigned char //flag;
-//static unsigned char scroll_count;
-
-static void printScrollInfo()
-{
-	struct_scroll_object *so = &global_scroll_object;
-	unsigned char lookup1;
-	unsigned char lookup2;
-	engine_font_manager_data( so->scrollLeftX, 20, 0 );
-	engine_font_manager_data( so->scrollRight, 20, 1 );
-
-	lookup1 = so->scrollLeftX  & SCREEN_LESS_ONE;
-	engine_font_manager_data( lookup1, 20, 2 );
-	lookup2 = so->scrollRight  & SCREEN_LESS_ONE;
-	engine_font_manager_data( lookup2, 20, 3 );
-}
-
-void screen_play_screen_load()
+void screen_test_screen_load()
 {
 	struct_game_object *go = &global_game_object;
 	engine_frame_manager_load();
 	//engine_frame_manager_draw();
 
-	//engine_scroll_manager_update( 0 );
 	engine_music_manager_play( 3 );
-	//engine_debug_manager_printout();
 	complete = false;
 	deltaY = 0;
 
-	//totalX = 0;
-	//frameX = 0;
-	//flag = 0;
-	//scroll_count = 0;
-	//engine_font_manager_data( go->game_point, 20, go->game_point );
-//	printScrollInfo();
+	engine_font_manager_text( "PLAY SCREEN", 10, 2 );
 }
 
-void screen_play_screen_update( unsigned char *screen_type )
+void screen_test_screen_update( unsigned char *screen_type )
 {
 	// TODO delete
 	struct_frame_object *fo = &global_frame_object;
@@ -94,15 +68,15 @@ void screen_play_screen_update( unsigned char *screen_type )
 	}
 	input1 = engine_input_manager_hold( input_type_left );
 	input2 = engine_input_manager_move( input_type_right );
-	input1 = 1;		// TODO delete
+//	input1 = 1;		// TODO delete
 	if( input1 || input2 )
 	{
-		if( 2 == fo->frame_count )
+		if( 2 == fo->frame_count || 8 == fo->frame_count )
 		{
-			//command = engine_command_manager_build( po->player_state, 1, 0, 0, 0, 0, 1 );		//Jump index = 1.
+			command = engine_command_manager_build( po->player_state, 1, 0, 0, 0, 0, 1 );		//Jump index = 1.
 			//command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 1 );		//Jump index = 2.
 			//command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 1 );		//Jump index = 3.
-			command = engine_command_manager_build( po->player_state, 0, 1, 1, 0, 0, 1 );		//Jump index = 4.
+			//scommand = engine_command_manager_build( po->player_state, 0, 1, 1, 0, 0, 1 );		//Jump index = 4.
 		}
 		else
 		{
@@ -197,101 +171,101 @@ void screen_play_screen_update( unsigned char *screen_type )
 		engine_player_manager_set_action( po->player_frame, command );
 
 		// No scroll.
-		//if( 0 == deltaX )
-		//{
-		//	engine_scroll_manager_update( 0 );
-		//}
-		//else
-		//{
+		if( 0 == deltaX )
+		{
+			engine_scroll_manager_update( 0 );
+		}
+		else
+		{
 			//if( !complete ) {}
-		for( loops = 0; loops < deltaX; loops++ )
-		{
-			scroll_state = engine_scroll_manager_update( 1 );
-			//printScrollInfo();	// TODO delete
+			for( loops = 0; loops < deltaX; loops++ )
+			{
+				scroll_state = engine_scroll_manager_update( 1 );
+				//printScrollInfo();	// TODO delete
 
 
-			if( scroll_state_tile == scroll_state )
-			{
-				engine_level_manager_draw_column( so->scrollColumn );
-					
-				//if (fo->frame_count == 0 || po->player_state == 1 )
-				//{
-				//	scroll_count++;		// TODO delete as only used for impossible jump debugging
-				//}
-			}
-			else if( scroll_state_line == scroll_state )
-			{
-				engine_game_manager_inc_checkpoint();
-				//TODO used for debugging - remove
-				//engine_font_manager_data( go->game_point, 20, go->game_point );
-			}
-			else if( scroll_state_comp == scroll_state )
-			{
-				complete = scroll_state_comp == scroll_state;
-				if( complete )
+				if( scroll_state_tile == scroll_state )
 				{
-					break;
+					engine_level_manager_draw_column( so->scrollColumn );
+
+					//if (fo->frame_count == 0 || po->player_state == 1 )
+					//{
+					//	scroll_count++;		// TODO delete as only used for impossible jump debugging
+					//}
+				}
+				else if( scroll_state_line == scroll_state )
+				{
+					engine_game_manager_inc_checkpoint();
+					//TODO used for debugging - remove
+					//engine_font_manager_data( go->game_point, 20, go->game_point );
+				}
+				else if( scroll_state_comp == scroll_state )
+				{
+					complete = scroll_state_comp == scroll_state;
+					if( complete )
+					{
+						break;
+					}
 				}
 			}
-		}
 
-		// TODO delete this debugging info - for newIndex!!
-		//engine_font_manager_data( scroll_count, 31, 8 );
-		//engine_font_manager_data( scroll_count / 4, 31, 9 );
-		// TODO delete this debugging info - for newIndex!!
+			// TODO delete this debugging info - for newIndex!!
+			//engine_font_manager_data( scroll_count, 31, 8 );
+			//engine_font_manager_data( scroll_count / 4, 31, 9 );
+			// TODO delete this debugging info - for newIndex!!
 
-		// Set horizontal movement.
-		engine_player_manager_horz( deltaX );
+			// Set horizontal movement.
+			engine_player_manager_horz( deltaX );
 
-		// Get / set vertical movement.
-		deltaY = 0;
-		if( player_state_isintheair == po->player_state )
-		{
-			deltaY = engine_player_manager_get_deltaY();
-			engine_player_manager_vert( deltaY );
-			engine_player_manager_bounds( deltaY, po->posnY, go->game_isgod );
-		}
-		else if( player_state_isonground == po->player_state )
-		{
-			engine_player_manager_animate( po->player_frame );
-		}
-
-		// General all-purpose collision detection routine.
-		player_state = engine_player_manager_collision( po->player_state, po->lookX, po->tileY, deltaY, po->posnY, go->game_isgod );
-
-		// Finally, check if player forcing downward drop.
-		if( player_state_isintheair == po->player_state )
-		{
-			// If player forces down while in the air then only apply on the descent!
-			if( ( COMMAND_DOWN_MASK & command ) == COMMAND_DOWN_MASK )
+			// Get / set vertical movement.
+			deltaY = 0;
+			if( player_state_isintheair == po->player_state )
 			{
-				if( deltaY > 0 )
-				{
-					deltaY = engine_player_manager_get_deltaY();
-					engine_player_manager_vert( deltaY );
-					engine_player_manager_bounds( deltaY, po->posnY, go->game_isgod );
-				}
+				deltaY = engine_player_manager_get_deltaY();
+				engine_player_manager_vert( deltaY );
+				engine_player_manager_bounds( deltaY, po->posnY, go->game_isgod );
+			}
+			else if( player_state_isonground == po->player_state )
+			{
+				engine_player_manager_animate( po->player_frame );
 			}
 
 			// General all-purpose collision detection routine.
 			player_state = engine_player_manager_collision( po->player_state, po->lookX, po->tileY, deltaY, po->posnY, go->game_isgod );
-		}
-	}
 
-	// Store command for future use.
-	engine_command_manager_update( command );
-	//}
-	//else
-	//{
-	//	engine_scroll_manager_update( 0 );
-	//}
+			// Finally, check if player forcing downward drop.
+			if( player_state_isintheair == po->player_state )
+			{
+				// If player forces down while in the air then only apply on the descent!
+				if( ( COMMAND_DOWN_MASK & command ) == COMMAND_DOWN_MASK )
+				{
+					if( deltaY > 0 )
+					{
+						deltaY = engine_player_manager_get_deltaY();
+						engine_player_manager_vert( deltaY );
+						engine_player_manager_bounds( deltaY, po->posnY, go->game_isgod );
+					}
+				}
+
+				// General all-purpose collision detection routine.
+				player_state = engine_player_manager_collision( po->player_state, po->lookX, po->tileY, deltaY, po->posnY, go->game_isgod );
+			}
+		}
+
+		// Store command for future use.
+		engine_command_manager_update( command );
+	}
+	else
+	{
+		engine_scroll_manager_update( 0 );
+	}
 
 	engine_player_manager_draw();
 	engine_player_manager_head();
 
 	//engine_debug_manager_printout();
-//	engine_font_manager_data( deltaY, 30, 2 );
-//	engine_font_manager_data( po->posnY, 30, 3 );
+	//	engine_font_manager_data( deltaY, 30, 2 );
+	//	engine_font_manager_data( po->posnY, 30, 3 );
 
 	// Check to see if player completes level.
 	if( complete )
@@ -304,10 +278,10 @@ void screen_play_screen_update( unsigned char *screen_type )
 	// Check if moving on to the dying sequence.
 	if( player_state_isnowdying == player_state )
 	{
-		//engine_scroll_manager_update( 0 );		// TODO remove - nop
+		engine_scroll_manager_update( 0 );		// TODO remove - nop
 		*screen_type = screen_type_dead;
 		return;
 	}
 
-	*screen_type = screen_type_play;
+	*screen_type = screen_type_test;
 }
