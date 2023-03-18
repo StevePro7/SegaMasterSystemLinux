@@ -56,9 +56,10 @@ void screen_pass_screen_update( unsigned char *screen_type )
 {
 	struct_player_object *po = &global_player_object;
 	struct_game_object *go = &global_game_object;
-	unsigned char input1, input2;
 	unsigned char game_level;
-	unsigned char check;
+
+	//unsigned char input1, input2;
+	//unsigned char check;
 
 	// TODO - had to comment out for now as was still playing SFX despite the fact told not to...!!
 	//// Player chance to quit out to start screen.
@@ -104,7 +105,7 @@ void screen_pass_screen_update( unsigned char *screen_type )
 
 				// A bit sucks but we MUST go back to tiles bank for further graphics...
 				devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
-				*screen_type = screen_type_diff;
+				*screen_type = screen_type_level;
 				return;
 			}
 			else
@@ -148,42 +149,6 @@ void screen_pass_screen_update( unsigned char *screen_type )
 		engine_player_manager_pass( player_passX, player_endY );
 		swap = 1;
 	}
-
-	//if( po->posnX >= LEVELS_SIDE )
-	//{
-	//	// Continue invoke function in case player still in air.
-	//	engine_player_manager_pass( player_passX, player_endY );
-	//	if( !swap )
-	//	{
-	//		engine_music_manager_stop();
-	//		swap = 1;
-	//		po->player_frame = ( player_frame_theair_rght_01 == po->player_frame ) ? player_frame_ground_rght_02 : player_frame_ground_left_02;
-	//	}
-	//	// TODO delete - 7-Mar-2023 was POC'ing scroll / moving player back but won't work with current posnX logic check - TODO remove!!
-	//	else
-	//	{
-	//		input1 = engine_input_manager_hold( input_type_fire1 );
-	//		input2 = engine_input_manager_move( input_type_down );
-	//		if( input1 || input2 )
-	//		{
-	//			// TODO - pause and goto interim screen to increment level until beat_screen...
-	//			game_level = go->game_level;
-	//			game_level += 1;
-	//			engine_game_manager_set_level_test( game_level );
-	//			*screen_type = screen_type_init;
-	//			return;
-	//		}
-	//	}
-	//}
-	//else
-	//{
-	//	input1 = engine_input_manager_hold( input_type_up );
-	//	input2 = engine_input_manager_move( input_type_down );
-	//	//if( input1 || input2 )
-	//	{
-	//		engine_player_manager_pass( player_passX, player_endY );
-	//	}
-	//}
 
 	// don't draw player here as "blinks"
 	//engine_player_manager_draw();
