@@ -88,21 +88,18 @@ void screen_pass_screen_update( unsigned char *screen_type )
 			// Check if SFX complete...
 			if( !devkit_PSGSFXGetStatus() )
 			{
-				//input1 = engine_input_manager_hold( input_type_fire1 );
-				//input2 = engine_input_manager_move( input_type_down );
-				//if( input1 || input2 )
-				{
-					// TODO - pause and goto interim screen to increment level until beat_screen...
-					game_level = go->game_level;
-					game_level += 1;
-					engine_game_manager_set_level_test( game_level );
-					// TODO - calcluate the next world / round combo and/or beat screen
+				engine_sound_manager_stop();
 
-					// A bit sucks but we MUST goback to tiles bank for further graphics...
-					devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
-					*screen_type = screen_type_diff;
-					return;
-				}
+				// TODO - pause and goto interim screen to increment level until beat_screen...
+				game_level = go->game_level;
+				game_level += 1;
+				engine_game_manager_set_level_test( game_level );
+				// TODO - calculate the next world / round combo and/or beat screen
+
+				// A bit sucks but we MUST go back to tiles bank for further graphics...
+				devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+				*screen_type = screen_type_diff;
+				return;
 			}
 			else
 			{
