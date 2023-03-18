@@ -1,6 +1,6 @@
 ;!FILE load_screen.asm
 XL3
-H 9 areas 84 global symbols
+H 9 areas 86 global symbols
 M load_screen
 O -mz80
 S _engine_player_manager_draw Ref000000
@@ -20,7 +20,7 @@ S _devkit_SMS_displayOff Ref000000
 S _level_platforms Ref000000
 S _engine_level_manager_draw_screen Ref000000
 S _engine_scroll_manager_load Ref000000
-A _CODE size 9C flags 0 addr 0
+A _CODE size 9E flags 0 addr 0
 S XG$screen_load_screen_load$0$0 Def000091
 S G$screen_load_screen_update$0$0 Def000092
 S A$load_screen$100 Def000021
@@ -30,6 +30,7 @@ S A$load_screen$101 Def000022
 S A$load_screen$111 Def000031
 S A$load_screen$102 Def000024
 S A$load_screen$112 Def000032
+S A$load_screen$230 Def00009B
 S A$load_screen$131 Def000047
 S A$load_screen$113 Def000033
 S A$load_screen$104 Def000025
@@ -58,7 +59,6 @@ S A$load_screen$125 Def000042
 S A$load_screen$116 Def000038
 S C$load_screen.c$51$1_0$133 Def000076
 S C$load_screen.c$25$0_0$133 Def000000
-S A$load_screen$234 Def00009B
 S A$load_screen$225 Def000098
 S A$load_screen$171 Def000073
 S A$load_screen$162 Def00006C
@@ -96,6 +96,7 @@ S A$load_screen$138 Def000052
 S C$load_screen.c$55$1_0$133 Def00008B
 S C$load_screen.c$46$1_0$133 Def00005F
 S C$load_screen.c$28$1_0$133 Def000009
+S A$load_screen$238 Def00009D
 S A$load_screen$184 Def000082
 S A$load_screen$175 Def000076
 S A$load_screen$139 Def000055
@@ -113,11 +114,12 @@ S A$load_screen$177 Def00007A
 S C$load_screen.c$65$1_0$135 Def000095
 S A$load_screen$187 Def000087
 S A$load_screen$178 Def00007B
+S C$load_screen.c$66$1_0$135 Def00009B
 S A$load_screen$179 Def00007E
-S C$load_screen.c$67$1_0$135 Def00009B
+S C$load_screen.c$67$1_0$135 Def00009D
 S C$load_screen.c$58$1_0$135 Def000092
 S A$load_screen$199 Def00008E
-S XG$screen_load_screen_update$0$0 Def00009B
+S XG$screen_load_screen_update$0$0 Def00009D
 S G$screen_load_screen_load$0$0 Def000000
 S A$load_screen$81 Def000009
 S A$load_screen$92 Def000014
@@ -178,5 +180,5 @@ T 89 00 00 00 00 CD 00 00 33 DD E1 C9
 R 00 00 00 00 02 03 01 00 02 06 0A 00
 T 92 00 00
 R 00 00 00 00
-T 92 00 00 CD 00 00 C1 E1 E5 C5 36 0C C9
+T 92 00 00 CD 00 00 C1 E1 E5 C5 36 0C 36 16 C9
 R 00 00 00 00 02 04 00 00

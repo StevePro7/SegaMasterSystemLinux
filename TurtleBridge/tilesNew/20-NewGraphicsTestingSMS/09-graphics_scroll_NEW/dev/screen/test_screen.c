@@ -45,9 +45,8 @@ void screen_test_screen_update( unsigned char *screen_type )
 	struct_player_object *po = &global_player_object;
 	struct_level_object *lo = &global_level_object;
 	struct_game_object *go = &global_game_object;
-	unsigned char input1;// input2, input3, input4, input5, input6;
+	unsigned char input1;
 	unsigned char input2;
-	unsigned char input3;
 	unsigned char deltaX;
 	//signed int deltaY;
 	unsigned char loops;
@@ -60,23 +59,17 @@ void screen_test_screen_update( unsigned char *screen_type )
 	deltaX = 0;
 	deltaY = 0;
 
-	input3 = engine_input_manager_hold( input_type_fire1 );
-	if( input3 )
-	{
-		*screen_type = screen_type_beat;
-		return;
-	}
 	input1 = engine_input_manager_hold( input_type_left );
 	input2 = engine_input_manager_move( input_type_right );
 	//input1 = 1;		// TODO delete
 	if( input1 || input2 )
 	{
-		if( 2 == fo->frame_count || 8 == fo->frame_count )
+		if( 2 == fo->frame_count )//|| 8 == fo->frame_count )
 		{
-			command = engine_command_manager_build( po->player_state, 1, 0, 0, 0, 0, 1 );		//Jump index = 1.
+			//command = engine_command_manager_build( po->player_state, 1, 0, 0, 0, 0, 1 );		//Jump index = 1.
 			//command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 1 );		//Jump index = 2.
 			//command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 1 );		//Jump index = 3.
-			//scommand = engine_command_manager_build( po->player_state, 0, 1, 1, 0, 0, 1 );		//Jump index = 4.
+			command = engine_command_manager_build( po->player_state, 0, 1, 1, 0, 0, 1 );		//Jump index = 4.
 		}
 		else
 		{
