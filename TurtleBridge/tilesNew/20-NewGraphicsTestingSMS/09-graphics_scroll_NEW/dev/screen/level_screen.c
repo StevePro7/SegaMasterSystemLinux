@@ -227,8 +227,8 @@ void screen_level_screen_update( unsigned char *screen_type )
 		engine_game_manager_set_level_test( game_level );
 
 		// TODO confirm will not go here unless surrounded by hack flag
-		//*screen_type = screen_type_option;		// use for testing!	TODO - remove
-		*screen_type = screen_type_init;
+		*screen_type = screen_type_option;		// use for testing!	TODO - remove
+		//*screen_type = screen_type_init;
 		return;
 	}
 
