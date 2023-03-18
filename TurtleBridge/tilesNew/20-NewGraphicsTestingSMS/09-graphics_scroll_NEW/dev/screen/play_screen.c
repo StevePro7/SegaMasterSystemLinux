@@ -23,11 +23,6 @@
 static bool complete;
 static signed int deltaY;
 
-//static unsigned int //totalX;
-//static unsigned char //frameX;
-//static unsigned char //flag;
-//static unsigned char scroll_count;
-
 static void printScrollInfo()
 {
 	struct_scroll_object *so = &global_scroll_object;
@@ -48,19 +43,11 @@ void screen_play_screen_load()
 	engine_frame_manager_load();
 	//engine_frame_manager_draw();
 
-	//engine_scroll_manager_update( 0 );
-	engine_music_manager_play( 3 );
-	//engine_debug_manager_printout();
+	engine_music_manager_play( go->game_music );
 	complete = false;
 	deltaY = 0;
 
-	//totalX = 0;
-	//frameX = 0;
-	//flag = 0;
-	//scroll_count = 0;
-	//engine_font_manager_data( go->game_point, 20, go->game_point );
-//	printScrollInfo();
-
+	// TODO delete this
 	engine_font_manager_text( "PLAY SCREEN", 10, 2 );
 }
 

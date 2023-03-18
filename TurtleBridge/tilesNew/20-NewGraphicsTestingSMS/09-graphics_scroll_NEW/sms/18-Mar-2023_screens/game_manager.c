@@ -43,13 +43,13 @@ void engine_game_manager_set_level_data( unsigned char game_world, unsigned char
 	//go->game_level = game_world * MAX_ROUNDS + game_round;
 	go->game_level = engine_util_manager_calculate_level( game_world, game_round );
 }
-void engine_game_manager_set_game_saved( unsigned char game_saved )
+void engine_game_manager_set_saved_game( unsigned char game_saved )
 {
 	// Keep track if game has been saved before; i.e. loaded and played.
 	struct_game_object *go = &global_game_object;
 	go->game_saved = game_saved;
 }
-void engine_game_manager_set_game_start( unsigned char game_start )
+void engine_game_manager_set_start_game( unsigned char game_start )
 {
 	// Keep track if level has start so only play intro riff once
 	struct_game_object *go = &global_game_object;

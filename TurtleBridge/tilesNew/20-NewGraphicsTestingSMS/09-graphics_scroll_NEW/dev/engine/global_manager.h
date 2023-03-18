@@ -27,6 +27,7 @@
 #define MAX_DIFFICULTY		4
 #define MAX_LIVES			3
 
+#define MAX_MUSIC			4
 #define MAX_TILE_OBJECTS	16
 
 #define INVALID_INDEX		-1
