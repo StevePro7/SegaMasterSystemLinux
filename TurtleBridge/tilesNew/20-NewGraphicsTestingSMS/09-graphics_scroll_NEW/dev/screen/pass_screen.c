@@ -14,6 +14,7 @@
 #include "../engine/util_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../devkit/_snd_manager.h"
+#include "../banks/bank2.h"
 
 static unsigned char player_passX;
 static unsigned char player_endY;
@@ -21,7 +22,6 @@ static unsigned char swap;
 static unsigned char count;
 static unsigned char value;
 static unsigned char loops;
-
 
 void screen_pass_screen_load()
 {
@@ -38,7 +38,8 @@ void screen_pass_screen_load()
 	swap = 0;
 
 	engine_riff_manager_init();
-	devkit_PSGStop();
+	//devkit_PSGStop();
+	engine_music_manager_stop();
 
 	// TODO - update magic number?
 	maxim = 3;
@@ -69,6 +70,7 @@ void screen_pass_screen_update( unsigned char *screen_type )
 			input2 = engine_input_manager_move( input_type_fire2 );
 			if( input2 )
 			{
+				devkit_PSGSFXStop();
 				*screen_type = screen_type_start;
 				return;
 			}
@@ -86,15 +88,19 @@ void screen_pass_screen_update( unsigned char *screen_type )
 			// Check if SFX complete...
 			if( !devkit_PSGSFXGetStatus() )
 			{
-				input1 = engine_input_manager_hold( input_type_fire1 );
-				input2 = engine_input_manager_move( input_type_down );
-				if( input1 || input2 )
+				//input1 = engine_input_manager_hold( input_type_fire1 );
+				//input2 = engine_input_manager_move( input_type_down );
+				//if( input1 || input2 )
 				{
 					// TODO - pause and goto interim screen to increment level until beat_screen...
 					game_level = go->game_level;
 					game_level += 1;
 					engine_game_manager_set_level_test( game_level );
-					*screen_type = screen_type_beat;
+					// TODO - calcluate the next world / round combo and/or beat screen
+
+					// A bit sucks but we MUST goback to tiles bank for further graphics...
+					devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+					*screen_type = screen_type_diff;
 					return;
 				}
 			}

@@ -75,6 +75,7 @@ S:G$engine_player_manager_head$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_finish$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_player_manager_dying$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_pass$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_player_manager_pass_frame$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_dead$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_player_manager_count$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_riff_manager_init$0_0$0({2}DF,SV:S),C,0,0
