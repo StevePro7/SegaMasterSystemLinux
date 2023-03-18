@@ -59,7 +59,6 @@ void engine_debug_manager_initgame()
 	po->player_lives = 3;
 }
 
-// TODO - delete this!!
 void engine_debug_manager_printout()
 {
 	struct_player_object *po = &global_player_object;
@@ -88,3 +87,48 @@ void engine_debug_manager_printout()
 	engine_font_manager_data( po->jumper_index, 20, 4 );
 	engine_font_manager_data( po->deltaY_index, 20, 5 );
 }
+
+//void engine_debug_manager_printoutX()
+//{
+//	struct_player_object *po = &global_player_object;
+//	struct_level_object *lo = &global_level_object;
+//	unsigned char lookX;
+//
+//	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+//	//engine_font_manager_data( po->tileX, 8, 0 );
+//	engine_font_manager_data( po->posnX, 8, 0 );
+//	//engine_font_manager_data( po->drawX, 24, 0 );
+//	engine_font_manager_data( po->tileX, 16, 0 );
+//	//engine_font_manager_data( po->lookX, 24, 0 );
+//
+//	lookX = po->lookX;
+//	engine_font_manager_data( lookX - 2, 8, 2 );
+//	engine_font_manager_data( lookX - 1, 8, 3 );
+//	engine_font_manager_data( lookX + 0, 8, 4 );
+//	engine_font_manager_data( lookX + 1, 8, 5 );
+//	engine_font_manager_data( lookX + 2, 8, 6 );
+//
+//	engine_font_manager_data( level_platforms[ lookX - 2 ], 16, 2 );
+//	engine_font_manager_data( level_platforms[ lookX - 1 ], 16, 3 );
+//	engine_font_manager_data( level_platforms[ lookX + 0 ], 16, 4 );
+//	engine_font_manager_data( level_platforms[ lookX + 1 ], 16, 5 );
+//	engine_font_manager_data( level_platforms[ lookX + 2 ], 16, 6 );
+//}
+
+
+void engine_debug_manager_scrollout()
+{
+	struct_scroll_object *so = &global_scroll_object;
+	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+	engine_font_manager_data( so->scrollFinish, 8, 0 );
+}
+
+
+//void engine_debug_manager_initcontent()
+//{
+//	devkit_SMS_displayOff();
+//	engine_asm_manager_clear_VRAM();
+//	engine_content_manager_bggame();
+//	engine_content_manager_sprite();
+//	devkit_SMS_displayOn();
+//}
