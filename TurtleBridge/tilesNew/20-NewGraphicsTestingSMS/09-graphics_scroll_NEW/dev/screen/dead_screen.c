@@ -48,7 +48,7 @@ void screen_dead_screen_load()
 	// TODO - update magic number?
 	maxim = 8;
 	index = engine_random_manager_next( maxim );
-	index = 7;		// TODO - remove this!!
+	index = 1;		// TODO - remove this!!
 	index += RIFF_START_DEAD;
 	value = riff_indexs[ index ];
 	count = riff_counts[ index ];
