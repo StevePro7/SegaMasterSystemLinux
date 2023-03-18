@@ -52,6 +52,7 @@ void screen_load_screen_load()
 	engine_level_manager_draw_screen( checkScreen );		// Weird - must draw this twice otherwise clouds + sea don't draw??
 	devkit_SMS_displayOn();
 
+	engine_riff_manager_init();
 	engine_command_manager_init();
 	check = 0;
 }
@@ -76,9 +77,11 @@ void screen_load_screen_update( unsigned char *screen_type )
 			// TODO - update magic number?
 			maxim = 3;
 			index = engine_random_manager_next( maxim );
-			index = 0;
+			index = 0;		// TODO - remove this!!
 			index += RIFF_START_LOAD;
-			engine_riff_manager_loop( index );
+
+			// TODO -uncomment
+			//engine_riff_manager_loop( index );
 		}
 	}
 

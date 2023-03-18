@@ -6,6 +6,7 @@
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/game_manager.h"
+#include "../engine/hack_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/level_manager.h"
@@ -41,6 +42,7 @@ static void printScrollInfo()
 void screen_play_screen_load()
 {
 	struct_game_object *go = &global_game_object;
+	struct_hack_object *ho = &global_hack_object;
 	engine_frame_manager_load();
 	//engine_frame_manager_draw();
 
@@ -51,7 +53,10 @@ void screen_play_screen_load()
 	}
 	else
 	{
-		devkit_PSGResume();
+		if( ho->hack_music )
+		{
+			devkit_PSGResume();
+		}
 	}
 
 	complete = false;
