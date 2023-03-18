@@ -1,7 +1,7 @@
 M:debug_manager
 F:G$engine_debug_manager_initgame$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Ldebug_manager.engine_debug_manager_initgame$po$1_0$116({2}DG,STtag_struct_player_object:S),R,0,0,[]
-S:Ldebug_manager.engine_debug_manager_initgame$go$1_0$116({2}DG,STtag_struct_game_object:S),R,0,0,[c,b]
+S:Ldebug_manager.engine_debug_manager_initgame$go$1_0$116({2}DG,STtag_struct_game_object:S),R,0,0,[]
 F:G$engine_debug_manager_printout$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Ldebug_manager.engine_debug_manager_printout$po$1_0$117({2}DG,STtag_struct_player_object:S),R,0,0,[]
 S:Ldebug_manager.engine_debug_manager_printout$lo$1_0$117({2}DG,STtag_struct_level_object:S),R,0,0,[]
