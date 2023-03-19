@@ -2,27 +2,31 @@
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/input_manager.h"
+#include "../engine/game_manager.h"
+#include "../engine/global_manager.h"
 #include "../engine/graphics_manager.h"
 #include "../engine/player_manager.h"
-#include "../engine/scroll_manager.h"
+#include "../devkit/_sms_manager.h"
+#include "../devkit/_snd_manager.h"
+
+static void printGameOver()
+{
+
+}
 
 void screen_over_screen_load()
 {
-//	unsigned char byte;
-//	unsigned char bit;
-//	unsigned char res;
-	//engine_graphics_manager_screen();
-	engine_font_manager_text( "OVER SCREEN!!", 10, 3 );
+	struct_game_object *go = &global_game_object;
 
-	//byte = 0b00000100;
-	//bit = 2;
-	//res = ( byte >> bit ) & 0x01;
-	//engine_font_manager_data( byte, 10, 10 );
-	//engine_font_manager_data( bit, 10, 11 );
-	//engine_font_manager_data( res, 10, 12 );
+	devkit_SMS_displayOff();
+	engine_graphics_manager_screen( CLEAR_TILE_BLUE );
 
-	// TODO play Game Over PCM - block
-	// TODO play game over music
+	// Draw screen specific graphics.
+	engine_graphics_manager_clouds( go->game_cloud );
+	engine_graphics_manager_sea();
+	engine_font_manager_text( "OVER SCREEN", 10, 2 );
+	printGameOver();
+	devkit_SMS_displayOn();
 }
 
 void screen_over_screen_update( unsigned char *screen_type )
