@@ -76,7 +76,7 @@ void screen_start_screen_load()
 void screen_start_screen_update( unsigned char *screen_type )
 {
 	struct_hack_object *ho = &global_hack_object;
-	unsigned char index, maxim;
+	//unsigned char index, maxim;
 	unsigned char input;
 	unsigned char cloud;
 
