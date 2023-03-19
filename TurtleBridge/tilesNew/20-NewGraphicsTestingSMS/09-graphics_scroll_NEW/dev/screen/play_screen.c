@@ -56,12 +56,7 @@ void screen_play_screen_load()
 	}
 	else
 	{
-		// stevepro
-		//engine_music_manager_resume();
-		if( ho->hack_music )
-		{
-			devkit_PSGResume();
-		}
+		engine_music_manager_resume();
 	}
 
 	complete = false;
