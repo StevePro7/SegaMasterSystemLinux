@@ -1,6 +1,5 @@
 #include "level_screen.h"
-#include "../engine/asm_manager.h"
-#include "../engine/content_manager.h"
+#include "../engine/audio_manager.h"
 #include "../engine/debug_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
@@ -14,6 +13,7 @@
 #include "../engine/tile_manager.h"
 #include "../engine/util_manager.h"
 #include "../devkit/_sms_manager.h"
+#include "../devkit/_snd_manager.h"
 #include "../banks/bank2.h"
 #include <stdbool.h>
 
@@ -27,6 +27,7 @@ static unsigned int game_screen;
 static unsigned int numb_screen;
 //static unsigned char check_width;
 static unsigned char player_loadY;
+static unsigned char check;
 
 //static void printCursor();
 static void printStats();
@@ -80,6 +81,7 @@ void screen_level_screen_load()
 	engine_player_manager_draw();
 
 	devkit_SMS_displayOn();
+	check = 0;
 }
 
 void screen_level_screen_update( unsigned char *screen_type )
@@ -88,6 +90,20 @@ void screen_level_screen_update( unsigned char *screen_type )
 	struct_level_object *lo = &global_level_object;
 	unsigned char input;
 	bool updateLevel = false;
+
+
+	if( 1 == check )
+	{
+		engine_player_manager_draw();
+		if( !devkit_PSGSFXGetStatus() )
+		{
+			engine_sound_manager_stop();
+			devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+			*screen_type = screen_type_option;		// use for testing!	TODO - remove
+			//*screen_type = screen_type_init;
+			return;
+		}
+	}
 
 	input = engine_input_manager_hold( input_type_left );
 	if( input && 0 != cursorIdx )
@@ -227,8 +243,11 @@ void screen_level_screen_update( unsigned char *screen_type )
 		engine_game_manager_set_level_test( game_level );
 
 		// TODO confirm will not go here unless surrounded by hack flag
-		*screen_type = screen_type_option;		// use for testing!	TODO - remove
+		//*screen_type = screen_type_option;		// use for testing!	TODO - remove
 		//*screen_type = screen_type_init;
+		engine_sound_manager_play( 2 );
+		engine_player_manager_draw();
+		check = 1;
 		return;
 	}
 
@@ -243,8 +262,6 @@ void screen_level_screen_update( unsigned char *screen_type )
 		*screen_type = screen_type_diff;
 		return;
 	}
-
-	
 
 	engine_player_manager_draw();
 	*screen_type = screen_type_level;
