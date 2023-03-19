@@ -417,8 +417,8 @@ void engine_player_manager_animate( unsigned char frame )
 	if( frame < player_frame_theair_rght_01 )
 	{
 		po->motion_count++;
-		//if( po->motion_count > MOTION_ANIMATES )
-		if( po->motion_count > DOUBLE_ANIMATES )
+		//if( po->motion_count > DOUBLE_ANIMATES )		// TODO - overload function for cont_screen
+		if( po->motion_count > MOTION_ANIMATES )
 		{
 			po->motion_count = 0;
 			po->player_frame = engine_cartoon_manager_wave( frame );
