@@ -2,6 +2,7 @@
 #include "asm_manager.h"
 #include "content_manager.h"
 #include "enum_manager.h"
+#include "font_manager.h"
 #include "global_manager.h"
 #include "tile_manager.h"
 #include "../devkit/_sms_manager.h"
@@ -97,6 +98,64 @@ void engine_graphics_manager_image( const unsigned char *tiles, unsigned int til
 			devkit_SMS_setNextTileatXY( x + col, y + row );
 			devkit_SMS_setTile( ( val ) );
 		}
+	}
+}
+
+void engine_graphics_manager_image2( const unsigned char *tiles, unsigned int tileMap, unsigned char x, unsigned char y, unsigned char w, unsigned char h )
+{
+	unsigned int idx;
+	unsigned int tmp;
+	unsigned int val;
+	unsigned char row, col;
+	unsigned int flippedX;
+
+	flippedX = devkit_TILE_FLIPPED_X();
+	for( row = 0; row < h; row++ )
+	{
+		for( col = 0; col < w; col++ )
+		{
+			engine_font_manager_data( col, x, col );
+			engine_font_manager_data( w - col - 1, 20, col );
+			tmp = w - col - 1;
+			//idx = tileMap + row * 2 * TILMAP_WIDE + col * 2;
+			idx = tileMap + row * 2 * TILMAP_WIDE + tmp * 2;
+			val = tiles[ idx ];
+			val |= flippedX;
+			devkit_SMS_setNextTileatXY( x + col, y + row );
+			devkit_SMS_setTile( ( val ) );
+		}
+		//col = 3;
+		//{
+		//	idx = tileMap + row * 2 * TILMAP_WIDE + col * 2;
+		//	val = tiles[ idx ];
+		//	val |= flippedX;
+		//	devkit_SMS_setNextTileatXY( x + 0, y + row );
+		//	devkit_SMS_setTile( ( val ) );
+		//}
+		//col = 2;
+		//{
+		//	idx = tileMap + row * 2 * TILMAP_WIDE + col * 2;
+		//	val = tiles[ idx ];
+		//	val |= flippedX;
+		//	devkit_SMS_setNextTileatXY( x + 1, y + row );
+		//	devkit_SMS_setTile( ( val ) );
+		//}
+		//col = 1;
+		//{
+		//	idx = tileMap + row * 2 * TILMAP_WIDE + col * 2;
+		//	val = tiles[ idx ];
+		//	val |= flippedX;
+		//	devkit_SMS_setNextTileatXY( x + 2, y + row );
+		//	devkit_SMS_setTile( ( val ) );
+		//}
+		//col = 0;
+		//{
+		//	idx = tileMap + row * 2 * TILMAP_WIDE + col * 2;
+		//	val = tiles[ idx ];
+		//	val |= flippedX;
+		//	devkit_SMS_setNextTileatXY( x + 3, y + row );
+		//	devkit_SMS_setTile( ( val ) );
+		//}
 	}
 }
 
