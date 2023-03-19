@@ -53,12 +53,6 @@ namespace ScreenShotTest
 			int col = (int)(inputManager.MousePosition.X);
 			int selector = selectorManager.Selector;
 
-			if (inputManager.KeyHold(Keys.LeftControl))
-			{
-				string msg = String.Format("ROW:{0} COL:{1}", row, col);
-				Logger.Info(msg);
-			}
-
 			// Check delete first.
 			if (inputManager.KeyHold(Keys.Delete))
 			{
