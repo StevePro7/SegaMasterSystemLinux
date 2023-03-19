@@ -80,9 +80,9 @@ namespace ScreenShotTest
 			string prefix = "level";
 			var filename = String.Format("level_{0}{1}", world, round);
 			var filepath = "output/" + filename;
-
+			var thefilename = filename + "_txt";
 			string banktext = String.Format("{0}_{1}{2}_{3}", prefix, world, round, point);
-			fileManager.Save(tiles, filepath, banktext, filename);
+			fileManager.Save(tiles, filepath, banktext, thefilename);
 			filename = String.Format("{0}/{1}_{2}.png", filepath, filename, point);
 			SaveScreen(spriteBatch, filename);
 		}
