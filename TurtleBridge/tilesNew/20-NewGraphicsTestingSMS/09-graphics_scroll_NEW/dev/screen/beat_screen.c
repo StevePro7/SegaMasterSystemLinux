@@ -60,7 +60,7 @@ void screen_beat_screen_load()
 	engine_graphics_manager_screen( CLEAR_TILE_BLUE );
 	
 	// Draw screen specific graphics.
-	engine_graphics_manager_clouds( go->game_cloud );
+//ngine_graphics_manager_clouds( go->game_cloud );
 	engine_graphics_manager_sea();
 	//gine_font_manager_text( "BEAT SCREEN", 21, 2 );
 	//engine_font_manager_text( "BEAT SCREEN", value, 2 );
@@ -70,6 +70,8 @@ void screen_beat_screen_load()
 //ngine_frame_manager_load();
 //ngine_frame_manager_draw();
 
+	// TODO perfect this i.e. w/o debug_mgr
+	//	engine_game_manager_set_level_data( 0, 0, 0 );
 	engine_music_manager_playnorepeat( 6 );
 	//value = so->scrollLeftX >> 0;
 }
@@ -77,9 +79,6 @@ void screen_beat_screen_load()
 void screen_beat_screen_update( unsigned char *screen_type )
 {
 	unsigned char input1, input2;
-	// TODO reset game world, round, point to 1 + test
-	//	engine_game_manager_set_level_data( 0, 0, 0 );
-
 	if( !devkit_PSGGetStatus() )
 	{
 		devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
