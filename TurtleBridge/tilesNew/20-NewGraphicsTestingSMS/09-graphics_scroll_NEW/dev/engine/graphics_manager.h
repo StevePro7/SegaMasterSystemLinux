@@ -7,6 +7,6 @@ void engine_graphics_manager_sea();
 void engine_graphics_manager_clouds( unsigned char data );
 void engine_graphics_manager_title();
 void engine_graphics_manager_image( const unsigned char *tiles, unsigned int tileMap, unsigned char x, unsigned char y, unsigned char w, unsigned char h );
-void engine_graphics_manager_image2( const unsigned char *tiles, unsigned int tileMap, unsigned char x, unsigned char y, unsigned char w, unsigned char h );
+void engine_graphics_manager_image_flip( const unsigned char *tiles, unsigned int tileMap, unsigned char x, unsigned char y, unsigned char w, unsigned char h );
 
 #endif//_GRAPHICS_MANAGER_H_

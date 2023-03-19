@@ -101,7 +101,7 @@ void engine_graphics_manager_image( const unsigned char *tiles, unsigned int til
 	}
 }
 
-void engine_graphics_manager_image2( const unsigned char *tiles, unsigned int tileMap, unsigned char x, unsigned char y, unsigned char w, unsigned char h )
+void engine_graphics_manager_image_flip( const unsigned char *tiles, unsigned int tileMap, unsigned char x, unsigned char y, unsigned char w, unsigned char h )
 {
 	unsigned int idx;
 	unsigned int tmp;
@@ -114,48 +114,13 @@ void engine_graphics_manager_image2( const unsigned char *tiles, unsigned int ti
 	{
 		for( col = 0; col < w; col++ )
 		{
-			engine_font_manager_data( col, x, col );
-			engine_font_manager_data( w - col - 1, 20, col );
 			tmp = w - col - 1;
-			//idx = tileMap + row * 2 * TILMAP_WIDE + col * 2;
 			idx = tileMap + row * 2 * TILMAP_WIDE + tmp * 2;
 			val = tiles[ idx ];
 			val |= flippedX;
 			devkit_SMS_setNextTileatXY( x + col, y + row );
 			devkit_SMS_setTile( ( val ) );
 		}
-		//col = 3;
-		//{
-		//	idx = tileMap + row * 2 * TILMAP_WIDE + col * 2;
-		//	val = tiles[ idx ];
-		//	val |= flippedX;
-		//	devkit_SMS_setNextTileatXY( x + 0, y + row );
-		//	devkit_SMS_setTile( ( val ) );
-		//}
-		//col = 2;
-		//{
-		//	idx = tileMap + row * 2 * TILMAP_WIDE + col * 2;
-		//	val = tiles[ idx ];
-		//	val |= flippedX;
-		//	devkit_SMS_setNextTileatXY( x + 1, y + row );
-		//	devkit_SMS_setTile( ( val ) );
-		//}
-		//col = 1;
-		//{
-		//	idx = tileMap + row * 2 * TILMAP_WIDE + col * 2;
-		//	val = tiles[ idx ];
-		//	val |= flippedX;
-		//	devkit_SMS_setNextTileatXY( x + 2, y + row );
-		//	devkit_SMS_setTile( ( val ) );
-		//}
-		//col = 0;
-		//{
-		//	idx = tileMap + row * 2 * TILMAP_WIDE + col * 2;
-		//	val = tiles[ idx ];
-		//	val |= flippedX;
-		//	devkit_SMS_setNextTileatXY( x + 3, y + row );
-		//	devkit_SMS_setTile( ( val ) );
-		//}
 	}
 }
 

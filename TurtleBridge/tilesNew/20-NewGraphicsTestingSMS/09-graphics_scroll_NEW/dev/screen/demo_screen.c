@@ -4,6 +4,7 @@
 #include "../engine/global_manager.h"
 #include "../engine/graphics_manager.h"
 #include "../engine/input_manager.h"
+#include "../engine/tile_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/bank2.h"
 
@@ -13,7 +14,7 @@ static void draw_tiles( unsigned int tmp );
 void screen_demo_screen_load()
 {
 	// Draw individual turtle
-	tmp = 1768;
+	tmp = TILE_TURTLE_FLIP;
 	devkit_SMS_displayOff();
 	engine_graphics_manager_screen( CLEAR_TILE_BLUE );
 
@@ -50,10 +51,10 @@ static void draw_tiles( unsigned int tmp )
 {
 	const unsigned char *tiles = bggame_tiles__tilemap__bin;
 
-	//engine_graphics_manager_image( tiles, tmp, 5, 10, 4, 3 );
-	//engine_graphics_manager_image( tiles, tmp, 10, 10, 4, 3 );
+	engine_graphics_manager_image( tiles, tmp, 5, 10, 4, 3 );
+	engine_graphics_manager_image( tiles, tmp, 10, 20, 4, 3 );
 
-	engine_graphics_manager_image2( tiles, tmp, 10, 10, 4, 3 );
+	engine_graphics_manager_image_flip( tiles, tmp, 10, 10, 4, 3 );
 	//unsigned int idx;
 	//unsigned int val;
 	//unsigned char row, col;
