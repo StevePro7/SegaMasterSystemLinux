@@ -260,16 +260,16 @@ namespace ScreenShotTest
 			// steven.txt
 			//DumpOutTilesTxt();
 
-			DumpOutTilesCSV();
+			DumpOutTilesCSV(myfilePath, banktext, thefilename);
 		}
 
-		private void DumpOutTilesCSV()
+		private void DumpOutTilesCSV(string path, string banktext, string thefilename)
 		{
 			data.Clear();
 
 			int point = 1;
 			int colum = 0;
-			data.Add("// Screen # " + point);
+			data.Add("// Screen #" + point);
 			int idx = 0;
 
 			var tile1 = Tiles[idx];
@@ -285,7 +285,7 @@ namespace ScreenShotTest
 				colum++;
 				if (8 == colum)
 				{
-					msg = String.Format("{0}.{1}", data1, count);
+					msg = String.Format("{0},{1}", data1, count);
 					data.Add(msg);
 					data1 = data2;
 					tile1 = tile2;
@@ -294,13 +294,14 @@ namespace ScreenShotTest
 					colum = 0;
 					point++;
 					data.Add("");
-					data.Add("// Screen # " + point);
+					data.Add("// Screen #" + point);
 				}
 				else
 				{
-					if (tile1 != tile2)
+					//if (tile1 != tile2)
+					if (data1 != data2)
 					{
-						msg = String.Format("{0}.{1}", data1, count);
+						msg = String.Format("{0},{1}", data1, count);
 						data.Add(msg);
 						data1 = data2;
 						tile1 = tile2;
@@ -315,8 +316,13 @@ namespace ScreenShotTest
 				}
 			}
 
-			msg = String.Format("{0}.{1}", data1, count);
+			msg = String.Format("{0},{1}", data1, count);
 			data.Add(msg);
+
+			var contents = data.ToArray();
+			string csvName = banktext.Replace("level_", "tiles_");
+			string newName = path + "/" + csvName + "_OUT.csv";
+			File.WriteAllLines(newName, contents);
 		}
 
 		private void DumpOutTilesTxt()
