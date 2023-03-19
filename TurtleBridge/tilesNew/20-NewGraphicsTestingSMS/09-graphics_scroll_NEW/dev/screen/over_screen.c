@@ -1,4 +1,5 @@
 #include "over_screen.h"
+#include "../engine/audio_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/input_manager.h"
@@ -100,11 +101,18 @@ void screen_over_screen_load()
 	printContinue();
 	printCursor();
 	devkit_SMS_displayOn();
+
+	engine_music_manager_playnorepeat( 4 );		// cont
 }
 
 void screen_over_screen_update( unsigned char *screen_type )
 {
 	unsigned char input1, input2;
+
+	if( !devkit_PSGGetStatus() )
+	{
+		engine_font_manager_text( "FINISH", 20, 10 );
+	}
 
 	input1 = engine_input_manager_hold( input_type_left );
 	input2 = engine_input_manager_hold( input_type_right );
@@ -112,7 +120,25 @@ void screen_over_screen_update( unsigned char *screen_type )
 	{
 		cursorIdx = 1 - cursorIdx;
 		printCursor();
-		return;
+	}
+
+	input1 = engine_input_manager_hold( input_type_fire1 );
+	if( input1 )
+	{
+		// SFX
+		engine_music_manager_stop();
+		if( 1 == cursorIdx )
+		{
+			// Game Over
+			*screen_type = screen_type_boss;
+			return;
+		}
+		else
+		{
+			// Resume from init
+			*screen_type = screen_type_demo;
+			return;
+		}
 	}
 
 	//engine_scroll_manager_update( 0 );
