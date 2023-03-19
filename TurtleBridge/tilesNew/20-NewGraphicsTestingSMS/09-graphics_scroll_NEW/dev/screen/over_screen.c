@@ -112,6 +112,9 @@ void screen_over_screen_update( unsigned char *screen_type )
 	if( !devkit_PSGGetStatus() )
 	{
 		engine_font_manager_text( "FINISH", 20, 10 );
+		// Resume from init
+		*screen_type = screen_type_demo;
+		return;
 	}
 
 	input1 = engine_input_manager_hold( input_type_left );
