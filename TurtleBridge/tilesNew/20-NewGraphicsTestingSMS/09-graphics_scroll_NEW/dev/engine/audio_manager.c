@@ -59,6 +59,17 @@ void engine_music_manager_stop()
 	devkit_PSGStop();
 }
 
+void engine_music_manager_resume()
+{
+	struct_hack_object *ho = &global_hack_object;
+	if( !ho->hack_music )
+	{
+		return;
+	}
+
+	devkit_PSGResume();
+}
+
 void engine_sound_manager_play( unsigned char index )
 {
 	struct_audio_object *ao = &global_audio_object;

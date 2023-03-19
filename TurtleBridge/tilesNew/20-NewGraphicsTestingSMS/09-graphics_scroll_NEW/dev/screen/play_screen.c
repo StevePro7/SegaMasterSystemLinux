@@ -11,8 +11,10 @@
 #include "../engine/input_manager.h"
 #include "../engine/level_manager.h"
 #include "../engine/player_manager.h"
+#include "../engine/riff_manager.h"
 #include "../engine/scroll_manager.h"
 #include "../engine/timer_manager.h"
+#include "../engine/util_manager.h"
 #include "../devkit/_snd_manager.h"
 #include <stdbool.h>
 
@@ -25,6 +27,7 @@
 static bool complete;
 //static signed int deltaY;
 
+static void play_checkpoint_riff();
 //static void printScrollInfo()
 //{
 //	struct_scroll_object *so = &global_scroll_object;
@@ -53,6 +56,8 @@ void screen_play_screen_load()
 	}
 	else
 	{
+		// stevepro
+		//engine_music_manager_resume();
 		if( ho->hack_music )
 		{
 			devkit_PSGResume();
@@ -156,6 +161,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 			else if( scroll_state_line == scroll_state )
 			{
 				engine_game_manager_inc_checkpoint();
+				play_checkpoint_riff();
 			}
 			else if( scroll_state_comp == scroll_state )
 			{
@@ -231,4 +237,17 @@ void screen_play_screen_update( unsigned char *screen_type )
 	}
 
 	*screen_type = screen_type_play;
+}
+
+static void play_checkpoint_riff()
+{
+	unsigned char index, maxim;
+
+	maxim = 9;
+	index = engine_random_manager_next( maxim );
+	index = 2;
+
+	devkit_PSGStop();
+	engine_riff_manager_loop( index );
+	engine_music_manager_resume();
 }
