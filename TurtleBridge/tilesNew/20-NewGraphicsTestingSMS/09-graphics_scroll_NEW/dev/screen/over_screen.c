@@ -14,43 +14,11 @@
 #include "../devkit/_snd_manager.h"
 #include "../banks/bank2.h"
 
-//static unsigned char turtleX[] = { }
-#define CURSOR_Y	4
-
-static unsigned char cursorX[] = { 12, 17 };
-static unsigned char cursorIdx;
-
 static void printGameOver()
 {
 }
 
-static void printContinue()
-{
-	const unsigned char *tiles = bggame_tiles__tilemap__bin;
-	unsigned char x, y, d;
 
-	x = 4;
-	y = 0;
-	d = 0;
-	//engine_graphics_manager_image( tiles, TILE_TURTLE_FLIP, x + 0, y + 1, 4, 3 );
-	engine_graphics_manager_image( tiles, TILE_TURTLE_FLIP, x + 4, y + 1, 4, 3 );
-	engine_graphics_manager_image( tiles, TILE_TURTLE_FLIP, x + 8, y, 4, 3 );
-	engine_graphics_manager_image_flip( tiles, TILE_TURTLE_FLIP, x + 12 + d, y, 4, 3 );
-	engine_graphics_manager_image_flip( tiles, TILE_TURTLE_FLIP, x + 16 + d, y + 1, 4, 3 );
-	//engine_graphics_manager_image_flip( tiles, TILE_TURTLE_FLIP, x + 20 + d, y + 1, 4, 3 );
-
-	y = 5;
-	//engine_graphics_manager_image( tiles, TILE_TURTLE_FLIP, x + 0, y - 1, 4, 3 );
-	engine_graphics_manager_image( tiles, TILE_TURTLE_FLIP, x + 4, y - 1, 4, 3 );
-	engine_graphics_manager_image( tiles, TILE_TURTLE_FLIP, x + 8, y, 4, 3 );
-	engine_graphics_manager_image_flip( tiles, TILE_TURTLE_FLIP, x + 12 + d, y, 4, 3 );
-	engine_graphics_manager_image_flip( tiles, TILE_TURTLE_FLIP, x + 16 + d, y - 1, 4, 3 );
-	//engine_graphics_manager_image_flip( tiles, TILE_TURTLE_FLIP, x + 20 + d, y - 1, 4, 3 );
-
-	engine_font_manager_text( "CONTINUE", x + 8, 3 );
-	engine_font_manager_text( " YES  NO", x + 8, 4 );
-	
-}
 static void printBeatGame()
 {
 	const unsigned char *tiles = bggame_tiles__tilemap__bin;
@@ -79,16 +47,8 @@ static void printBeatGame()
 	//engine_font_manager_text( "-012345678901234567890123456789-", 0, 4 );
 }
 
-static void printCursor()
-{
-	engine_font_manager_char( ' ', cursorX[ 0 ], CURSOR_Y );
-	engine_font_manager_char( ' ', cursorX[ 1 ], CURSOR_Y );
-	engine_font_manager_char( '>', cursorX[ cursorIdx ], CURSOR_Y );
-}
 void screen_over_screen_load()
 {
-	cursorIdx = 0;
-
 	devkit_SMS_displayOff();
 	engine_graphics_manager_screen( CLEAR_TILE_BLUE );
 
@@ -98,51 +58,16 @@ void screen_over_screen_load()
 	//engine_font_manager_text( "OVER SCREEN", 10, 2 );
 	//printBeatGame();
 	printGameOver();
-	printContinue();
-	printCursor();
 	devkit_SMS_displayOn();
 
-	engine_music_manager_playnorepeat( 4 );		// cont
+//egine_music_manager_playnorepeat( 5);		// cont
 }
 
 void screen_over_screen_update( unsigned char *screen_type )
 {
-	unsigned char input1, input2;
+	//signed char input1, input2;
 
-	if( !devkit_PSGGetStatus() )
-	{
-		engine_font_manager_text( "FINISH", 20, 10 );
-		// Resume from init
-		*screen_type = screen_type_demo;
-		return;
-	}
-
-	input1 = engine_input_manager_hold( input_type_left );
-	input2 = engine_input_manager_hold( input_type_right );
-	if( input1 || input2 )
-	{
-		cursorIdx = 1 - cursorIdx;
-		printCursor();
-	}
-
-	input1 = engine_input_manager_hold( input_type_fire1 );
-	if( input1 )
-	{
-		// SFX
-		engine_music_manager_stop();
-		if( 1 == cursorIdx )
-		{
-			// Game Over
-			*screen_type = screen_type_boss;
-			return;
-		}
-		else
-		{
-			// Resume from init
-			*screen_type = screen_type_demo;
-			return;
-		}
-	}
+	
 
 	//engine_scroll_manager_update( 0 );
 	//engine_player_manager_draw();
