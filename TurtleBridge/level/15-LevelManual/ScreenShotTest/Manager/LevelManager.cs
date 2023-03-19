@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
 using System.Collections.Generic;
 
 namespace ScreenShotTest
@@ -52,6 +53,12 @@ namespace ScreenShotTest
 			int col = (int)(inputManager.MousePosition.X);
 			int selector = selectorManager.Selector;
 
+			if (inputManager.KeyHold(Keys.LeftControl))
+			{
+				string msg = String.Format("ROW:{0} COL:{1}", row, col);
+				Logger.Info(msg);
+			}
+
 			// Check delete first.
 			if (inputManager.KeyHold(Keys.Delete))
 			{
@@ -85,6 +92,7 @@ namespace ScreenShotTest
 
 			bool left = inputManager.LeftButton();
 			bool rght = inputManager.RightButton();
+			bool ctrl = inputManager.KeyDown(Keys.LeftControl);
 			if (left || rght)
 			{
 				bool play = row < rows;
@@ -137,7 +145,20 @@ namespace ScreenShotTest
 					stack.Push(pos);
 				}
 
-				Tiles[col] = selector;
+				if (ctrl)
+				{
+					var tmpRow = row;
+					if (0 == row)
+					{
+						tmpRow = 1;
+					}
+					var tmpSel = 16 - tmpRow;
+					Tiles[col] = tmpSel;
+				}
+				else
+				{
+					Tiles[col] = selector;
+				}
 			}
 
 			if (rght)
