@@ -13,6 +13,7 @@
 #define PLAYER_MIN_HIGH		32
 #define PLAYER_MAX_HIGH		168
 #define MOTION_ANIMATES		25
+#define DOUBLE_ANIMATES		75
 #define PLAYER_HEAD_ROW		172
 #define UFIX(x)				((unsigned char)((x)>>8))
 
@@ -416,7 +417,8 @@ void engine_player_manager_animate( unsigned char frame )
 	if( frame < player_frame_theair_rght_01 )
 	{
 		po->motion_count++;
-		if( po->motion_count > MOTION_ANIMATES )
+		//if( po->motion_count > MOTION_ANIMATES )
+		if( po->motion_count > DOUBLE_ANIMATES )
 		{
 			po->motion_count = 0;
 			po->player_frame = engine_cartoon_manager_wave( frame );
