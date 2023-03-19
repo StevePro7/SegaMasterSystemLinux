@@ -256,6 +256,11 @@ namespace ScreenShotTest
 			DumpData2(data3, myfilePath, banktext, thefilename);
 
 			// steven.txt
+			
+		}
+
+		private void DumpOutTilesTxt()
+		{
 			data.Clear();
 			int screen = 0;
 			for (int idx = 0; idx < cols; idx++)
