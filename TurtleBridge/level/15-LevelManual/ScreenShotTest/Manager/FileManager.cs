@@ -7,6 +7,7 @@ namespace ScreenShotTest
 	public class FileManager
 	{
 		private ConfigManager configManager;
+		private ConvertManager convertManager;
 		private TilesManager tilesManager;
 		private List<string> data, text1, text2, total;
 		private List<int> data1, data2, data3;
@@ -16,9 +17,10 @@ namespace ScreenShotTest
 		private const int screen_wide = 32;
 	//	private int maxLevel;
 
-		public FileManager(ConfigManager configManager, TilesManager tilesManager, int wide)
+		public FileManager(ConfigManager configManager, ConvertManager convertManager, TilesManager tilesManager, int wide)
 		{
 			this.configManager = configManager;
+			this.convertManager = convertManager;
 			this.tilesManager = tilesManager;
 			cols = wide / 16;
 			Tiles = new int[cols];
@@ -256,14 +258,65 @@ namespace ScreenShotTest
 			DumpData2(data3, myfilePath, banktext, thefilename);
 
 			// steven.txt
-			DumpOutTilesTxt();
+			//DumpOutTilesTxt();
 
-
+			DumpOutTilesCSV();
 		}
 
 		private void DumpOutTilesCSV()
 		{
+			data.Clear();
 
+			int point = 1;
+			int colum = 0;
+			data.Add("// Screen # " + point);
+			int idx = 0;
+
+			var tile1 = Tiles[idx];
+			var data1 = convertManager.Convert((AssetType)tile1);
+			int count = 1;
+
+			string msg = String.Empty;
+			for (idx = 1; idx< cols; idx++)
+			{
+				var tile2 = Tiles[idx];
+				var data2 = convertManager.Convert((AssetType)tile2);
+
+				colum++;
+				if (8 == colum)
+				{
+					msg = String.Format("{0}.{1}", data1, count);
+					data.Add(msg);
+					data1 = data2;
+					tile1 = tile2;
+					count = 1;
+
+					colum = 0;
+					point++;
+					data.Add("");
+					data.Add("// Screen # " + point);
+				}
+				else
+				{
+					if (tile1 != tile2)
+					{
+						msg = String.Format("{0}.{1}", data1, count);
+						data.Add(msg);
+						data1 = data2;
+						tile1 = tile2;
+						count = 1;
+					}
+					else
+					{
+						data1 = data2;
+						tile1 = tile2;
+						count++;
+					}
+				}
+			}
+
+			msg = String.Format("{0}.{1}", data1, count);
+			data.Add(msg);
 		}
 
 		private void DumpOutTilesTxt()

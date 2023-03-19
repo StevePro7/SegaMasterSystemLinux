@@ -11,6 +11,7 @@ namespace ScreenShotTest
 
 		private AssetManager assetManager;
 		private ConfigManager configManager;
+		private ConvertManager convertManager;
 		private FileManager fileManager;
 		private BoardManager boardManager;
 		private InputManager inputManager;
@@ -35,8 +36,9 @@ namespace ScreenShotTest
 			high = 224;
 
 			assetManager = new AssetManager();
+			convertManager = new ConvertManager();
 			tilesManager = new TilesManager(configManager, wide);
-			fileManager = new FileManager(configManager, tilesManager, wide);
+			fileManager = new FileManager(configManager, convertManager, tilesManager, wide);
 			inputManager = new InputManager(wide, high);
 			selectorManager = new SelectorManager(inputManager, wide, high);
 			selectorManager.Initialize();
