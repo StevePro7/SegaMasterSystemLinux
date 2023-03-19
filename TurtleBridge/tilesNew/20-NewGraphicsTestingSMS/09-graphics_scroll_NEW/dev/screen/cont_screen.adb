@@ -4,6 +4,8 @@ S:Lcont_screen.printStuff$offset$1_0$114({1}SC:U),B,1,4
 F:G$screen_cont_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lcont_screen.screen_cont_screen_load$so$1_0$116({2}DG,STtag_struct_scroll_object:S),R,0,0,[]
 S:Lcont_screen.screen_cont_screen_load$scroll$1_0$116({1}SC:U),R,0,0,[]
+S:Lcont_screen.screen_cont_screen_load$valueX$1_0$116({1}SC:U),R,0,0,[]
+S:Lcont_screen.screen_cont_screen_load$tester$1_0$116({1}SC:U),R,0,0,[]
 F:G$screen_cont_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lcont_screen.screen_cont_screen_update$screen_type$1_0$117({2}DG,SC:U),B,1,4
 S:Lcont_screen.screen_cont_screen_update$input$1_0$118({1}SC:U),R,0,0,[c]

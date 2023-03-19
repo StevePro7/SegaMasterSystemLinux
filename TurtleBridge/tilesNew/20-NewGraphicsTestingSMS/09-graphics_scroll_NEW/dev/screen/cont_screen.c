@@ -13,7 +13,11 @@
 static unsigned char offset;
 static void printStuff( unsigned char offset )
 {
-	engine_font_manager_text( "CONT SCREEN!!", 1 + offset, 0 );
+	engine_font_manager_text( "CONTINUE?", offset, 0 );
+	engine_font_manager_text( ">YES  NO", offset, 1 );
+	engine_font_manager_text( "  GAME  ", offset, 2 );
+	engine_font_manager_text( "  OVER  ", offset, 3 );
+	engine_font_manager_data( offset, 1 + offset, 4 );
 	//engine_font_manager_text( "-123456789A123456789B123456789C=", 1 + offset, 2 );
 }
 
@@ -21,12 +25,16 @@ void screen_cont_screen_load()
 {
 	struct_scroll_object *so = &global_scroll_object;
 	unsigned char scroll = so->scrollLeftX;
+
+	unsigned char valueX = 256 - scroll;
+	unsigned char tester = valueX >> 3;
 	//unsigned char lookup1;
 	//lookup1 = so->scrollLeftX  & SCREEN_LESS_ONE;
 
 	//unsigned char scroll = 0;
 	//offset = scroll >> 3;
-	offset = 1;
+	devkit_SMS_setBGScrollX( 0 );
+	offset = 1;// 12 + tester;
 
 //	devkit_SMS_displayOff();
 //	engine_graphics_manager_screen( CLEAR_TILE_BLUE );

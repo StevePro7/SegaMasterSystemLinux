@@ -174,7 +174,7 @@ void screen_test_screen_update( unsigned char *screen_type )
 	{
 		// Get horizontal movement.
 		deltaX = engine_player_manager_get_deltaX( po->player_state, command );
-		deltaX = 1; // TODO delete
+		deltaX = 8; // TODO delete
 
 		// TODO delete this debugging info - for newIndex!!
 		//engine_font_manager_data( deltaX, 31, 6 );
@@ -209,7 +209,7 @@ void screen_test_screen_update( unsigned char *screen_type )
 		for( loops = 0; loops < deltaX; loops++ )
 		{
 			scroll_state = engine_scroll_manager_update( 1 );
-			printScrollInfo();	// TODO delete
+			//printScrollInfo();	// TODO delete
 
 
 			if( scroll_state_tile == scroll_state )
@@ -236,6 +236,11 @@ void screen_test_screen_update( unsigned char *screen_type )
 				}
 			}
 		}
+
+		// TODO delete
+		printScrollInfo();	// TODO delete
+		// TODO delete
+
 
 		// TODO delete this debugging info - for newIndex!!
 		//engine_font_manager_data( scroll_count, 31, 8 );
