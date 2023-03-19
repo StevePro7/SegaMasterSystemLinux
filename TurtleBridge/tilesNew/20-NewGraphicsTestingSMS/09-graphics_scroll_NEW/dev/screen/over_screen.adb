@@ -1,10 +1,16 @@
 M:over_screen
 F:Fover_screen$printGameOver$0_0$0({2}DF,SV:S),C,0,0,0,0,0
+S:Lover_screen.printGameOver$tiles$1_0$144({2}DG,SC:U),R,0,0,[c,b]
+S:Lover_screen.printGameOver$x$1_0$144({1}SC:U),R,0,0,[]
+S:Lover_screen.printGameOver$y$1_0$144({1}SC:U),R,0,0,[]
+S:Lover_screen.printGameOver$d$1_0$144({1}SC:U),R,0,0,[]
 F:G$screen_over_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_over_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lover_screen.screen_over_screen_update$screen_type$1_0$145({2}DG,SC:U),B,1,4
+S:Lover_screen.screen_over_screen_update$screen_type$1_0$146({2}DG,SC:U),B,1,4
+S:Lover_screen.screen_over_screen_update$index$1_0$147({1}SC:U),R,0,0,[]
+S:Lover_screen.screen_over_screen_update$maxim$1_0$147({1}SC:U),B,1,-2
 F:G$screen_over_screen_loadX$0_0$0({2}DF,SV:S),C,0,0,0,0,0
-S:Lover_screen.screen_over_screen_loadX$go$1_0$147({2}DG,STtag_struct_game_object:S),R,0,0,[]
+S:Lover_screen.screen_over_screen_loadX$go$1_0$151({2}DG,STtag_struct_game_object:S),R,0,0,[]
 T:Fover_screen$tag_struct_player_object[({0}S:S$initX$0_0$0({1}SC:U),Z,0,0)({1}S:S$posnX$0_0$0({2}SI:U),Z,0,0)({3}S:S$tileX$0_0$0({2}SI:U),Z,0,0)({5}S:S$lookX$0_0$0({1}SC:U),Z,0,0)({6}S:S$posnY$0_0$0({1}SC:U),Z,0,0)({7}S:S$tileY$0_0$0({1}SC:U),Z,0,0)({8}S:S$leapY$0_0$0({2}SI:U),Z,0,0)({10}S:S$drawX$0_0$0({1}SC:U),Z,0,0)({11}S:S$drawY$0_0$0({1}SC:U),Z,0,0)({12}S:S$player_state$0_0$0({1}SC:U),Z,0,0)({13}S:S$jumper_index$0_0$0({1}SC:U),Z,0,0)({14}S:S$deltaY_index$0_0$0({1}SC:U),Z,0,0)({15}S:S$player_frame$0_0$0({1}SC:U),Z,0,0)({16}S:S$player_lives$0_0$0({1}SC:U),Z,0,0)({17}S:S$motion_count$0_0$0({1}SC:U),Z,0,0)]
 T:Fover_screen$tag_struct_scroll_object[({0}S:S$scrollLeftX$0_0$0({1}SC:U),Z,0,0)({1}S:S$scrollRight$0_0$0({1}SC:U),Z,0,0)({2}S:S$scrollColumn$0_0$0({2}SI:U),Z,0,0)({4}S:S$scrollChecks$0_0$0({2}SI:U),Z,0,0)({6}S:S$scrollPoints$0_0$0({2}SI:U),Z,0,0)({8}S:S$scrollFinish$0_0$0({2}SI:U),Z,0,0)({10}S:S$scrollLeftX0$0_0$0({1}SC:U),Z,0,0)({11}S:S$scrollLeftX1$0_0$0({1}SC:U),Z,0,0)({12}S:S$scrollLeftX2$0_0$0({1}SC:U),Z,0,0)({13}S:S$scrollLeftX3$0_0$0({1}SC:U),Z,0,0)({14}S:S$scrollLeftX4$0_0$0({1}SC:U),Z,0,0)({15}S:S$scrollLeftX5$0_0$0({1}SC:U),Z,0,0)({16}S:S$scroll_half$0_0$0({1}SC:U),Z,0,0)({17}S:S$lineCnt$0_0$0({1}SC:U),Z,0,0)]
 T:Fover_screen$tag_struct_game_object[({0}S:S$game_difficulty$0_0$0({1}SC:U),Z,0,0)({1}S:S$game_world$0_0$0({1}SC:U),Z,0,0)({2}S:S$game_round$0_0$0({1}SC:U),Z,0,0)({3}S:S$game_level$0_0$0({1}SC:U),Z,0,0)({4}S:S$game_point$0_0$0({1}SC:U),Z,0,0)({5}S:S$game_saved$0_0$0({1}SC:U),Z,0,0)({6}S:S$game_start$0_0$0({1}SC:U),Z,0,0)({7}S:S$game_music$0_0$0({1}SC:U),Z,0,0)({8}S:S$game_cloud$0_0$0({1}SC:U),Z,0,0)({9}S:S$game_isgod$0_0$0({1}SC:U),Z,0,0)]
@@ -21,6 +27,7 @@ S:G$global_scroll_object$0_0$0({18}STtag_struct_scroll_object:S),E,0,0
 S:G$song_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$locale_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$locale_object_blank$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:Fover_screen$check$0_0$0({1}SC:U),E,0,0
 S:G$engine_audio_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_music_manager_play$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_music_manager_playnorepeat$0_0$0({2}DF,SV:S),C,0,0
@@ -85,6 +92,9 @@ S:G$engine_scroll_manager_full_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_full_update$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_scroll_manager_para_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_para_update$0_0$0({2}DF,SC:U),C,0,0
+S:G$engine_riff_manager_init$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_riff_manager_loop$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_riff_manager_play$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_draw_column$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_draw_cloud$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_init$0_0$0({2}DF,SV:S),C,0,0

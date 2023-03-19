@@ -9,17 +9,41 @@
 #include "../engine/level_manager.h"
 #include "../engine/player_manager.h"
 #include "../engine/scroll_manager.h"
+#include "../engine/riff_manager.h"
 #include "../engine/tile_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../devkit/_snd_manager.h"
 #include "../banks/bank2.h"
 
+static unsigned char check;
+
 static void printGameOver()
 {
+	const unsigned char *tiles = bggame_tiles__tilemap__bin;
+	unsigned char x, y, d;
+
+	x = 4;
+	y = 0;
+	d = 0;
+	//engine_graphics_manager_image( tiles, TILE_TURTLE_FLIP, x + 0, y + 1, 4, 3 );
+	engine_graphics_manager_image( tiles, TILE_TURTLE_FLIP, x + 4, y + 1, 4, 3 );
+	engine_graphics_manager_image( tiles, TILE_TURTLE_FLIP, x + 8, y, 4, 3 );
+	engine_graphics_manager_image_flip( tiles, TILE_TURTLE_FLIP, x + 12 + d, y, 4, 3 );
+	engine_graphics_manager_image_flip( tiles, TILE_TURTLE_FLIP, x + 16 + d, y + 1, 4, 3 );
+	//engine_graphics_manager_image_flip( tiles, TILE_TURTLE_FLIP, x + 20 + d, y + 1, 4, 3 );
+
+	y = 5;
+	//engine_graphics_manager_image( tiles, TILE_TURTLE_FLIP, x + 0, y - 1, 4, 3 );
+	engine_graphics_manager_image( tiles, TILE_TURTLE_FLIP, x + 4, y - 1, 4, 3 );
+	engine_graphics_manager_image( tiles, TILE_TURTLE_FLIP, x + 8, y, 4, 3 );
+	engine_graphics_manager_image_flip( tiles, TILE_TURTLE_FLIP, x + 12 + d, y, 4, 3 );
+	engine_graphics_manager_image_flip( tiles, TILE_TURTLE_FLIP, x + 16 + d, y - 1, 4, 3 );
+	//engine_graphics_manager_image_flip( tiles, TILE_TURTLE_FLIP, x + 20 + d, y - 1, 4, 3 );
+
+	// TODO - localize
+	engine_font_manager_text( "GAME", x + 10, 3 );
+	engine_font_manager_text( "OVER", x + 10, 4 );
 }
-
-
-
 
 void screen_over_screen_load()
 {
@@ -35,13 +59,34 @@ void screen_over_screen_load()
 	devkit_SMS_displayOn();
 
 //egine_music_manager_playnorepeat( 5);		// cont
+
+	check = 0;
 }
 
 void screen_over_screen_update( unsigned char *screen_type )
 {
 	//signed char input1, input2;
-
-	
+	unsigned char index, maxim;
+	if( 1==check )
+	{
+		if( !devkit_PSGGetStatus() )
+		{
+			devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+			engine_music_manager_stop();
+			//engine_font_manager_text( "FINISH", 20, 10 );
+			// Resume from init
+			*screen_type = screen_type_start;
+			return;
+		}
+	}
+	else
+	{
+		index = RIFF_START_OVER;
+		engine_riff_manager_loop( index );
+		check = 1;
+		// TODO magic number.
+		engine_music_manager_playnorepeat( 5 );
+	}
 
 	//engine_scroll_manager_update( 0 );
 	//engine_player_manager_draw();
