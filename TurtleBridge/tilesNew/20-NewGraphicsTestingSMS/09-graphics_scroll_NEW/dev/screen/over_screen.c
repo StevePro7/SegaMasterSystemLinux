@@ -5,28 +5,94 @@
 #include "../engine/game_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/graphics_manager.h"
+#include "../engine/level_manager.h"
 #include "../engine/player_manager.h"
+#include "../engine/scroll_manager.h"
+#include "../engine/tile_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../devkit/_snd_manager.h"
+#include "../banks/bank2.h"
+
+//static unsigned char turtleX[] = { }
 
 static void printGameOver()
 {
 
 }
+static void printBeatGame()
+{
+	const unsigned char *tiles = bggame_tiles__tilemap__bin;
+	unsigned char x, y, d;
+
+	x = 4;
+	y = 0;
+	d = 0;
+	engine_graphics_manager_image( tiles, TILE_TURTLE_FLIP, x + 0, y + 1 ,4, 3 );
+	engine_graphics_manager_image( tiles, TILE_TURTLE_FLIP, x + 4, y, 4, 3 );
+	engine_graphics_manager_image( tiles, TILE_TURTLE_FLIP, x + 8, y, 4, 3 );
+	engine_graphics_manager_image_flip( tiles, TILE_TURTLE_FLIP, x + 12 + d, y, 4, 3 );
+	engine_graphics_manager_image_flip( tiles, TILE_TURTLE_FLIP, x + 16 + d, y, 4, 3 );
+	engine_graphics_manager_image_flip( tiles, TILE_TURTLE_FLIP, x + 20 + d, y + 1,4, 3 );
+
+	y = 5;
+	engine_graphics_manager_image( tiles, TILE_TURTLE_FLIP, x + 0, y - 1, 4, 3 );
+	engine_graphics_manager_image( tiles, TILE_TURTLE_FLIP, x + 4, y, 4, 3 );
+	engine_graphics_manager_image( tiles, TILE_TURTLE_FLIP, x + 8, y, 4, 3 );
+	engine_graphics_manager_image_flip( tiles, TILE_TURTLE_FLIP, x + 12 + d, y, 4, 3 );
+	engine_graphics_manager_image_flip( tiles, TILE_TURTLE_FLIP, x + 16 + d, y, 4, 3 );
+	engine_graphics_manager_image_flip( tiles, TILE_TURTLE_FLIP, x + 20 + d, y - 1, 4, 3 );
+
+	engine_font_manager_text( "CONGLATURATION", 9, 3 );
+	engine_font_manager_text( "AWINNER IS YOU", 9, 4 );
+	//engine_font_manager_text( "-012345678901234567890123456789-", 0, 4 );
+}
 
 void screen_over_screen_load()
 {
-	struct_game_object *go = &global_game_object;
-
 	devkit_SMS_displayOff();
 	engine_graphics_manager_screen( CLEAR_TILE_BLUE );
 
 	// Draw screen specific graphics.
-	engine_graphics_manager_clouds( go->game_cloud );
+	//engine_graphics_manager_clouds( go->game_cloud );
 	engine_graphics_manager_sea();
-	engine_font_manager_text( "OVER SCREEN", 10, 2 );
+	//engine_font_manager_text( "OVER SCREEN", 10, 2 );
+	printBeatGame();
 	printGameOver();
 	devkit_SMS_displayOn();
+}
+
+void screen_over_screen_loadX()
+{
+	//struct_player_object *po = &global_player_object;
+	//struct_level_object *lo = &global_level_object;
+	struct_game_object *go = &global_game_object;
+	//unsigned char player_loadY;
+	//unsigned char checkScreen;
+
+	//devkit_SMS_displayOff();
+	//engine_graphics_manager_screen( CLEAR_TILE_BLUE );
+
+
+	//// Work in terms of screens.
+	//checkScreen = lo->check_width * go->game_point;
+	//engine_scroll_manager_load( checkScreen, lo->level_check, lo->level_size );
+	//engine_level_manager_draw_screen( checkScreen );
+
+
+	//engine_player_manager_initX( go->game_difficulty, go->game_world );
+	//engine_player_manager_loadX( checkScreen );
+	//player_loadY = level_platforms[ po->lookX ];
+	//engine_player_manager_loadY( player_loadY );
+	//engine_player_manager_draw();
+
+	//engine_graphics_manager_sea();
+	//engine_graphics_manager_clouds( go->game_cloud );
+	//engine_level_manager_draw_screen( checkScreen );		// Weird - must draw this twice otherwise clouds + sea don't draw??
+
+	//printStuff();
+	//devkit_SMS_displayOn();
+
+	//struct_game_object *go = &global_game_object;
 }
 
 void screen_over_screen_update( unsigned char *screen_type )
