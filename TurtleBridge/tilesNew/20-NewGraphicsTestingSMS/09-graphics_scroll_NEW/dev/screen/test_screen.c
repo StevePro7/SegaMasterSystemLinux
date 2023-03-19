@@ -23,6 +23,20 @@
 static bool complete;
 static signed int deltaY;
 
+static void printScrollInfo()
+{
+	struct_scroll_object *so = &global_scroll_object;
+	unsigned char lookup1;
+	unsigned char lookup2;
+	engine_font_manager_data( so->scrollLeftX, 20, 0 );
+	engine_font_manager_data( so->scrollRight, 20, 1 );
+
+	lookup1 = so->scrollLeftX  & SCREEN_LESS_ONE;
+	engine_font_manager_data( lookup1, 20, 2 );
+	lookup2 = so->scrollRight  & SCREEN_LESS_ONE;
+	engine_font_manager_data( lookup2, 20, 3 );
+}
+
 void screen_test_screen_load()
 {
 	struct_game_object *go = &global_game_object;
@@ -33,7 +47,8 @@ void screen_test_screen_load()
 	complete = false;
 	deltaY = 0;
 
-	engine_font_manager_text( "TEST SCREEN", 10, 2 );
+	engine_font_manager_text( "TEST SCREEN", 1, 5 );
+	printScrollInfo();
 }
 
 void screen_test_screen_update( unsigned char *screen_type )
@@ -62,10 +77,20 @@ void screen_test_screen_update( unsigned char *screen_type )
 	deltaX = 0;
 	deltaY = 0;
 
+	input3 = engine_input_manager_hold( input_type_up );
+	if( input3 )
+	{
+		engine_font_manager_text( "TEST UPDATE", 1, 7 );
+		//*screen_type = screen_type_beat;
+		//*screen_type = screen_type_cont;
+		return;
+	}
 	input3 = engine_input_manager_hold( input_type_down );
 	if( input3 )
 	{
-		*screen_type = screen_type_beat;
+		//engine_font_manager_text( "TEST UPDATE", 1, 7 );
+		//*screen_type = screen_type_beat;
+		*screen_type = screen_type_cont;
 		return;
 	}
 
@@ -149,7 +174,7 @@ void screen_test_screen_update( unsigned char *screen_type )
 	{
 		// Get horizontal movement.
 		deltaX = engine_player_manager_get_deltaX( po->player_state, command );
-		//deltaX = 1; // TODO delete
+		deltaX = 1; // TODO delete
 
 		// TODO delete this debugging info - for newIndex!!
 		//engine_font_manager_data( deltaX, 31, 6 );
@@ -184,7 +209,7 @@ void screen_test_screen_update( unsigned char *screen_type )
 		for( loops = 0; loops < deltaX; loops++ )
 		{
 			scroll_state = engine_scroll_manager_update( 1 );
-			//printScrollInfo();	// TODO delete
+			printScrollInfo();	// TODO delete
 
 
 			if( scroll_state_tile == scroll_state )

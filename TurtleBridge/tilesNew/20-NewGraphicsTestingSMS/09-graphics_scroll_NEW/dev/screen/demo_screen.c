@@ -22,7 +22,6 @@ void screen_demo_screen_load()
 	engine_font_manager_text( "DEMO SCREEN!!", 10, 0 );
 	draw_tiles( tmp );
 
-	
 	devkit_SMS_displayOn();
 }
 

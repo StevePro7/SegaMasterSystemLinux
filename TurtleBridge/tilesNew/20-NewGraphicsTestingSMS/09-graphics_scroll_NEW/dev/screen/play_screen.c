@@ -25,19 +25,19 @@
 static bool complete;
 //static signed int deltaY;
 
-static void printScrollInfo()
-{
-	struct_scroll_object *so = &global_scroll_object;
-	unsigned char lookup1;
-	unsigned char lookup2;
-	engine_font_manager_data( so->scrollLeftX, 20, 0 );
-	engine_font_manager_data( so->scrollRight, 20, 1 );
-
-	lookup1 = so->scrollLeftX  & SCREEN_LESS_ONE;
-	engine_font_manager_data( lookup1, 20, 2 );
-	lookup2 = so->scrollRight  & SCREEN_LESS_ONE;
-	engine_font_manager_data( lookup2, 20, 3 );
-}
+//static void printScrollInfo()
+//{
+//	struct_scroll_object *so = &global_scroll_object;
+//	unsigned char lookup1;
+//	unsigned char lookup2;
+//	engine_font_manager_data( so->scrollLeftX, 20, 0 );
+//	engine_font_manager_data( so->scrollRight, 20, 1 );
+//
+//	lookup1 = so->scrollLeftX  & SCREEN_LESS_ONE;
+//	engine_font_manager_data( lookup1, 20, 2 );
+//	lookup2 = so->scrollRight  & SCREEN_LESS_ONE;
+//	engine_font_manager_data( lookup2, 20, 3 );
+//}
 
 void screen_play_screen_load()
 {
