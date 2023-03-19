@@ -1,6 +1,7 @@
 #include "diff_screen.h"
-#include "../engine/asm_manager.h"
-#include "../engine/content_manager.h"
+//#include "../engine/asm_manager.h"
+#include "../engine/audio_manager.h"
+//#include "../engine/content_manager.h"
 #include "../engine/debug_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
@@ -13,6 +14,7 @@
 #include "../engine/tile_manager.h"
 #include "../engine/util_manager.h"
 #include "../devkit/_sms_manager.h"
+#include "../devkit/_snd_manager.h"
 #include "../banks/bank2.h"
 #include <stdbool.h>
 
@@ -23,7 +25,8 @@ static void printCursor();
 //static void printTexts();
 
 static unsigned char player_loadY;
-static unsigned char game_difficulty; 
+static unsigned char game_difficulty;
+static unsigned char check;
 
 void screen_diff_screen_load()
 {
@@ -60,6 +63,7 @@ void screen_diff_screen_load()
 	devkit_SMS_displayOn();
 //	printTexts();
 	engine_player_manager_draw();
+	check = 0;
 }
 
 void screen_diff_screen_update( unsigned char *screen_type )
@@ -67,6 +71,18 @@ void screen_diff_screen_update( unsigned char *screen_type )
 	struct_player_object *po = &global_player_object;
 	unsigned char input1, input2;
 	bool updateDiff = false;
+
+	if( 1 == check )
+	{
+		engine_player_manager_draw();
+		if( !devkit_PSGSFXGetStatus() )
+		{
+			engine_sound_manager_stop();
+			devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+			*screen_type = screen_type_level;
+			return;
+		}
+	}
 
 	//input1 = engine_input_manager_hold( input_type_up );
 	input2 = engine_input_manager_hold( input_type_left );
@@ -111,8 +127,13 @@ void screen_diff_screen_update( unsigned char *screen_type )
 		//engine_player_manager_draw();
 		engine_game_manager_set_difficulty( game_difficulty );
 		engine_player_manager_lives( game_difficulty );
-		*screen_type = screen_type_level;
+
+		engine_sound_manager_play( 2 );
+		engine_player_manager_draw();
+		check = 1;
 		return;
+		//*screen_type = screen_type_level;
+		//return;
 	}
 
 	input1 = engine_input_manager_hold( input_type_fire2 );
