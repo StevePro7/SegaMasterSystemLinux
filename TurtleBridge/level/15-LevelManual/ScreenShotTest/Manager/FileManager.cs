@@ -256,7 +256,14 @@ namespace ScreenShotTest
 			DumpData2(data3, myfilePath, banktext, thefilename);
 
 			// steven.txt
-			
+			DumpOutTilesTxt();
+
+
+		}
+
+		private void DumpOutTilesCSV()
+		{
+
 		}
 
 		private void DumpOutTilesTxt()
