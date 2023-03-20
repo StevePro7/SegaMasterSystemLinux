@@ -110,7 +110,7 @@ void screen_cont_screen_load()
 void screen_cont_screen_update( unsigned char *screen_type )
 {
 	struct_player_object *po = &global_player_object;
-	//struct_game_object *go = &global_game_object;
+	struct_game_object *go = &global_game_object;
 	unsigned char input1, input2;
 	
 	if( !devkit_PSGGetStatus() )
@@ -137,6 +137,7 @@ void screen_cont_screen_update( unsigned char *screen_type )
 		// SFX
 		devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
 		engine_music_manager_stop();
+		engine_sound_manager_stop();
 		if( 1 == cursorIdx )
 		{
 			// Game Over
@@ -147,6 +148,8 @@ void screen_cont_screen_update( unsigned char *screen_type )
 		{
 			// todo SOUND FX
 			// Resume from init
+			engine_game_manager_set_game_start( switch_mode_yes );
+			engine_player_manager_lives( go->game_difficulty );
 			*screen_type = screen_type_load;
 			return;
 		}
