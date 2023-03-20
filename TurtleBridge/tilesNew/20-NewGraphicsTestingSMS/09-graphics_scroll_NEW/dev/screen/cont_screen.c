@@ -91,7 +91,7 @@ void screen_cont_screen_load()
 	engine_player_manager_draw();
 
 	engine_graphics_manager_sea();
-	engine_graphics_manager_clouds( go->game_cloud );
+	//engine_graphics_manager_clouds( go->game_cloud );
 	engine_level_manager_draw_screen( checkScreen );		// Weird - must draw this twice otherwise clouds + sea don't draw??
 
 	printContinue();

@@ -62,7 +62,7 @@ void screen_play_screen_load()
 	complete = false;
 
 	// TODO delete this
-	engine_font_manager_text( "PLAY SCREEN", 10, 2 );
+	//engine_font_manager_text( "PLAY SCREEN", 10, 2 );
 }
 
 void screen_play_screen_update( unsigned char *screen_type )
