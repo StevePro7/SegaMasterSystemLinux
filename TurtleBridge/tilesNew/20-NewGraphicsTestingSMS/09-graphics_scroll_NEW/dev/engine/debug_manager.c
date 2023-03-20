@@ -56,7 +56,7 @@ void engine_debug_manager_initgame()
 
 	po->player_frame = 0;// player_frame_ground_left_01;
 
-	po->player_lives = 1;
+	po->player_lives = 2;
 }
 
 // TODO - delete this!!

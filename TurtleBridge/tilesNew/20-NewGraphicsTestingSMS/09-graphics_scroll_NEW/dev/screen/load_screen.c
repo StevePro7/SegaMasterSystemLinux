@@ -51,8 +51,11 @@ void screen_load_screen_load()
 	engine_graphics_manager_clouds( go->game_cloud );
 	engine_level_manager_draw_screen( checkScreen );		// Weird - must draw this twice otherwise clouds + sea don't draw??
 
-	engine_graphics_manager_level_stats( go->game_world, go->game_point );
-	engine_graphics_manager_level_texts();
+	if( go->game_start )
+	{
+		engine_graphics_manager_level_stats( go->game_world, go->game_point );
+		engine_graphics_manager_level_texts();
+	}
 	devkit_SMS_displayOn();
 
 	engine_riff_manager_init();
@@ -86,6 +89,7 @@ void screen_load_screen_update( unsigned char *screen_type )
 			// TODO -uncomment
 			engine_riff_manager_loop( index );
 
+			// Clear out the game level statistics.
 			engine_util_manager_locale_blank( 3, 0, 3 );
 		}
 	}
