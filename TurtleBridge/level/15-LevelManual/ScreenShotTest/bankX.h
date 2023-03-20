@@ -1,3 +1,3 @@
-extern const unsigned char level_2020_txt[];
-#define				level_2020_txt_size 384
-#define				level_2020_txt_bank 11
+extern const unsigned char level_1103_txt[];
+#define				level_1103_txt_size 512
+#define				level_1103_txt_bank 12
