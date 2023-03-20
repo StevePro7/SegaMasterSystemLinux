@@ -56,8 +56,9 @@ void screen_pass_screen_update( unsigned char *screen_type )
 {
 	struct_player_object *po = &global_player_object;
 	struct_game_object *go = &global_game_object;
+	unsigned char game_world, game_round, game_point;
 	unsigned char game_level;
-
+	unsigned char next_screen;
 	//unsigned char input1, input2;
 	//unsigned char check;
 
@@ -96,8 +97,26 @@ void screen_pass_screen_update( unsigned char *screen_type )
 			if( !devkit_PSGSFXGetStatus() )
 			{
 				engine_sound_manager_stop();
+				next_screen = screen_type_init;
 
 				// TODO - pause and goto interim screen to increment level until beat_screen...
+				game_world = go->game_world;
+				game_round = go->game_round;
+				game_point = 0;
+
+				game_round++;
+				if( MAX_ROUNDS == game_round )
+				{
+					game_round = 0;
+					game_world++;
+					if (MAX_WOLRDS == game_world )
+					{
+						game_world = 0;
+						next_screen = screen_type_beat;
+					}
+				}
+				engine_game_manager_set_level_data( game_world, game_round, game_point );
+
 				game_level = go->game_level;
 				game_level += 1;
 				engine_game_manager_set_level_test( game_level );
@@ -105,7 +124,8 @@ void screen_pass_screen_update( unsigned char *screen_type )
 
 				// A bit sucks but we MUST go back to tiles bank for further graphics...
 				devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
-				*screen_type = screen_type_level;
+				//*screen_type = screen_type_level;
+				*screen_type = screen_type_init;
 				return;
 			}
 			else

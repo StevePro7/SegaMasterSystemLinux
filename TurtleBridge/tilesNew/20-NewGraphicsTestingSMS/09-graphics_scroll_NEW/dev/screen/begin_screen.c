@@ -30,7 +30,7 @@ void screen_begin_screen_update( unsigned char *screen_type )
 {
 	//*screen_type = screen_type_over;
 	//*screen_type = screen_type_cont;
-	//*screen_type = screen_type_init;
+	*screen_type = screen_type_init;
 	*screen_type = screen_type_level;
 	//*screen_type = screen_type_option;
 	//*screen_type = screen_type_diff;
