@@ -77,12 +77,10 @@ void screen_cont_screen_load()
 	devkit_SMS_displayOff();
 	engine_graphics_manager_screen( CLEAR_TILE_BLUE );
 
-
 	// Work in terms of screens.
 	checkScreen = lo->check_width * go->game_point;
 	engine_scroll_manager_load( checkScreen, lo->level_check, lo->level_size );
 	engine_level_manager_draw_screen( checkScreen );
-
 
 	engine_player_manager_initX( go->game_difficulty, go->game_world );
 	engine_player_manager_loadX( checkScreen );
@@ -97,7 +95,6 @@ void screen_cont_screen_load()
 	printContinue();
 	printCursor();
 
-	//printStuff( 1 );
 	devkit_SMS_displayOn();
 
 	//engine_riff_manager_init();
