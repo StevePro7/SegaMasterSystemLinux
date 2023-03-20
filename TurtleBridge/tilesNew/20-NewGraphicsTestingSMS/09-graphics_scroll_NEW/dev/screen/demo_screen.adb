@@ -1,11 +1,11 @@
 M:demo_screen
 F:G$screen_demo_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_demo_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Ldemo_screen.screen_demo_screen_update$screen_type$1_0$97({2}DG,SC:U),B,1,4
-S:Ldemo_screen.screen_demo_screen_update$input$1_0$98({1}SC:U),R,0,0,[a]
+S:Ldemo_screen.screen_demo_screen_update$screen_type$1_0$98({2}DG,SC:U),B,1,4
+S:Ldemo_screen.screen_demo_screen_update$input$1_0$99({1}SC:U),R,0,0,[a]
 F:Fdemo_screen$draw_tiles$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Ldemo_screen.draw_tiles$tmp$1_0$101({2}SI:U),B,1,4
-S:Ldemo_screen.draw_tiles$tiles$1_0$102({2}DG,SC:U),R,0,0,[c,b]
+S:Ldemo_screen.draw_tiles$tmp$1_0$102({2}SI:U),B,1,4
+S:Ldemo_screen.draw_tiles$tiles$1_0$103({2}DG,SC:U),R,0,0,[c,b]
 S:G$song_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$locale_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$locale_object_blank$0_0$0({0}DA0d,DG,SC:U),E,0,0
@@ -21,6 +21,8 @@ S:G$engine_graphics_manager_clouds$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_title$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_image$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_image_flip$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_graphics_manager_level_stats$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_graphics_manager_level_texts$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_hold$0_0$0({2}DF,SC:U),C,0,0

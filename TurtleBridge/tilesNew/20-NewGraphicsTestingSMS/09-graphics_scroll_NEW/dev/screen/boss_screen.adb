@@ -1,8 +1,8 @@
 M:boss_screen
 F:G$screen_boss_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_boss_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lboss_screen.screen_boss_screen_update$screen_type$1_0$30({2}DG,SC:U),B,1,4
-S:Lboss_screen.screen_boss_screen_update$input$1_0$31({1}SC:U),R,0,0,[a]
+S:Lboss_screen.screen_boss_screen_update$screen_type$1_0$32({2}DG,SC:U),B,1,4
+S:Lboss_screen.screen_boss_screen_update$input$1_0$33({1}SC:U),R,0,0,[a]
 T:Fboss_screen$tag_struct_player_object[({0}S:S$initX$0_0$0({1}SC:U),Z,0,0)({1}S:S$posnX$0_0$0({2}SI:U),Z,0,0)({3}S:S$tileX$0_0$0({2}SI:U),Z,0,0)({5}S:S$lookX$0_0$0({1}SC:U),Z,0,0)({6}S:S$posnY$0_0$0({1}SC:U),Z,0,0)({7}S:S$tileY$0_0$0({1}SC:U),Z,0,0)({8}S:S$leapY$0_0$0({2}SI:U),Z,0,0)({10}S:S$drawX$0_0$0({1}SC:U),Z,0,0)({11}S:S$drawY$0_0$0({1}SC:U),Z,0,0)({12}S:S$player_state$0_0$0({1}SC:U),Z,0,0)({13}S:S$jumper_index$0_0$0({1}SC:U),Z,0,0)({14}S:S$deltaY_index$0_0$0({1}SC:U),Z,0,0)({15}S:S$player_frame$0_0$0({1}SC:U),Z,0,0)({16}S:S$player_lives$0_0$0({1}SC:U),Z,0,0)({17}S:S$motion_count$0_0$0({1}SC:U),Z,0,0)]
 T:Fboss_screen$tag_struct_audio_object[({0}S:S$music_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$music_bank$0_0$0({1}SC:U),Z,0,0)({3}S:S$sound_data$0_0$0({2}DG,SC:U),Z,0,0)({5}S:S$sound_bank$0_0$0({1}SC:U),Z,0,0)]
 S:G$global_audio_object$0_0$0({6}STtag_struct_audio_object:S),E,0,0
@@ -17,6 +17,7 @@ S:G$engine_audio_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_music_manager_play$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_music_manager_playnorepeat$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_music_manager_stop$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_music_manager_resume$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_sound_manager_play$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_sound_manager_stop$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_audio_manager_update$0_0$0({2}DF,SV:S),C,0,0
@@ -30,6 +31,9 @@ S:G$engine_graphics_manager_sea$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_clouds$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_title$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_graphics_manager_image$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_graphics_manager_image_flip$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_graphics_manager_level_stats$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_graphics_manager_level_texts$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_input_manager_hold$0_0$0({2}DF,SC:U),C,0,0

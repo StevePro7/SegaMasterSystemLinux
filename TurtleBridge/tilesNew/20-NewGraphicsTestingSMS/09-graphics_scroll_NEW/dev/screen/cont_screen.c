@@ -114,6 +114,7 @@ void screen_cont_screen_update( unsigned char *screen_type )
 	{
 		devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
 		engine_music_manager_stop();
+		engine_sound_manager_stop();
 //engine_font_manager_text( "FINISH", 20, 10 );
 		// Resume from init
 		*screen_type = screen_type_over;
