@@ -1,5 +1,5 @@
 XL3
-H A areas 2F global symbols
+H A areas 30 global symbols
 M bank2
 O -mz80
 S .__.ABS. Def000000
@@ -7,6 +7,7 @@ A _CODE size 0 flags 0 addr 0
 S Fbank2$__str_10$0_0$0 Def000000
 S Fbank2$__str_20$0_0$0 Def000000
 S Fbank2$__str_11$0_0$0 Def000000
+S Fbank2$__str_21$0_0$0 Def000000
 S Fbank2$__str_12$0_0$0 Def000000
 S Fbank2$__str_13$0_0$0 Def000000
 S Fbank2$__str_14$0_0$0 Def000000
@@ -25,7 +26,7 @@ S Fbank2$__str_7$0_0$0 Def000000
 S Fbank2$__str_8$0_0$0 Def000000
 S Fbank2$__str_9$0_0$0 Def000000
 A _DATA size 0 flags 0 addr 0
-A _INITIALIZED size 2A flags 0 addr 0
+A _INITIALIZED size 2C flags 0 addr 0
 S _song_object_texts Def000000
 S G$song_object_texts$0_0$0 Def000000
 S _locale_object_blank Def000024
@@ -36,7 +37,7 @@ A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
-A _BANK2 size 356C flags 0 addr 0
+A _BANK2 size 358D flags 0 addr 0
 S G$sprite_tiles__tiles__psgcompr$0_0$0 Def002702
 S _bggame_tiles__tiles__psgcompr Def0009A0
 S _splash_tiles__tilemap__bin Def0019B4
@@ -54,7 +55,7 @@ S G$bggame_tiles__palette__bin$0_0$0 Def000000
 S _splash_tiles__tiles__psgcompr Def001D44
 S G$splash_tiles__tiles__psgcompr$0_0$0 Def001D44
 S _sprite_tiles__tiles__psgcompr Def002702
-A _INITIALIZER size 2A flags 0 addr 0
+A _INITIALIZER size 2C flags 0 addr 0
 S Fbank2$__xinit_locale_object_texts$0_0$0 Def000012
 S Fbank2$__xinit_song_object_texts$0_0$0 Def000000
 S Fbank2$__xinit_locale_object_blank$0_0$0 Def000024
@@ -2271,6 +2272,14 @@ T 59 35 00 20 20 20 20 20 20 20 20 20 20 20 20 20
 R 00 00 07 00
 T 66 35 00 20 20 20 20 20 00
 R 00 00 07 00
+T 6C 35 00
+R 00 00 07 00
+T 6C 35 00 20 20 20 20 20 20 20 20 20 20 20 20 20
+R 00 00 07 00
+T 79 35 00 20 20 20 20 20 20 20 20 20 20 20 20 20
+R 00 00 07 00
+T 86 35 00 20 20 20 20 20 20 00
+R 00 00 07 00
 T 00 00 00
 R 00 00 08 00
 T 00 00 00 4E 34 5E 34 6E 34
@@ -2291,3 +2300,5 @@ T 24 00 00
 R 00 00 08 00
 T 24 00 00 43 35 52 35 59 35
 R 00 00 08 00 00 03 07 00 00 05 07 00 00 07 07 00
+T 2A 00 00 6C 35
+R 00 00 08 00 00 03 07 00

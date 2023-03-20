@@ -66,7 +66,7 @@ void screen_over_screen_load()
 void screen_over_screen_update( unsigned char *screen_type )
 {
 	//signed char input1, input2;
-	unsigned char index, maxim;
+	unsigned char index;// , maxim;
 	if( 1==check )
 	{
 		if( !devkit_PSGGetStatus() )

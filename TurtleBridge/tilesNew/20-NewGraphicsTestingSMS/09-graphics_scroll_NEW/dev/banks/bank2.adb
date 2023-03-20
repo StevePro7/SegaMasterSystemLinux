@@ -1,7 +1,7 @@
 M:bank2
 S:G$song_object_texts$0_0$0({18}DA9d,DG,SC:U),E,0,0
 S:G$locale_object_texts$0_0$0({18}DA9d,DG,SC:U),E,0,0
-S:G$locale_object_blank$0_0$0({6}DA3d,DG,SC:U),E,0,0
+S:G$locale_object_blank$0_0$0({8}DA4d,DG,SC:U),E,0,0
 S:G$bggame_tiles__palette__bin$0_0$0({16}DA16d,SC:U),D,0,0
 S:G$bggame_tiles__tilemap__bin$0_0$0({2448}DA2448d,SC:U),D,0,0
 S:G$bggame_tiles__tiles__psgcompr$0_0$0({4100}DA4100d,SC:U),D,0,0
@@ -31,3 +31,4 @@ S:Fbank2$__str_17$0_0$0({6}DA6d,SC:U),D,0,0
 S:Fbank2$__str_18$0_0$0({15}DA15d,SC:U),D,0,0
 S:Fbank2$__str_19$0_0$0({7}DA7d,SC:U),D,0,0
 S:Fbank2$__str_20$0_0$0({19}DA19d,SC:U),D,0,0
+S:Fbank2$__str_21$0_0$0({33}DA33d,SC:U),D,0,0

@@ -34,6 +34,7 @@ extern const unsigned char *locale_object_blank[] =
 	"              ",		// LOCALE_BLANK14
 	"      ",		// LOCALE_BLANK6
 	"                  ",		// LOCALE_BLANK18
+	"                                ",		// LOCALE_BLANK32
 };
 
 //const unsigned char *locale_object_difficulty[] =

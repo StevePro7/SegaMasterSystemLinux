@@ -5,6 +5,7 @@
 #include "font_manager.h"
 #include "global_manager.h"
 #include "tile_manager.h"
+#include "util_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/bank2.h"
 
@@ -190,4 +191,31 @@ void engine_graphics_manager_sea()
 			}
 		}
 	}
+}
+
+void engine_graphics_manager_level_stats( unsigned char game_world, /*unsigned char game_round,*/ unsigned char game_point )
+{
+	unsigned char delta;
+
+	//delta = 0;
+	delta = 1;
+
+	engine_font_manager_valu( ( game_world + delta ), 9, SHARE_TEXT_ROW );
+	//engine_font_manager_valu( ( game_round + delta ), 18, SHARE_TEXT_ROW );	// TODO using level instead of round for testing...
+	//engine_font_manager_valu( ( game_level /*+ delta*/ ), 18, SHARE_TEXT_ROW );
+
+	engine_font_manager_valu( ( game_point + delta ), 27, SHARE_TEXT_ROW );		// TODO - revert
+	//engine_font_manager_data( ( game_point + delta ), 27, SHARE_TEXT_ROW );
+}
+
+void engine_graphics_manager_level_texts()
+{
+	engine_util_manager_locale_texts( 6, 3, SHARE_TEXT_ROW );
+	engine_util_manager_locale_texts( 7, 12, SHARE_TEXT_ROW );
+	engine_util_manager_locale_texts( 8, 21, SHARE_TEXT_ROW );
+
+	engine_font_manager_char( '0', 8, SHARE_TEXT_ROW );
+	engine_font_manager_char( '0', 17, SHARE_TEXT_ROW );
+	engine_font_manager_char( '0', 26, SHARE_TEXT_ROW );		// TODO - revert
+	engine_font_manager_text( "/04", 28, SHARE_TEXT_ROW );
 }
