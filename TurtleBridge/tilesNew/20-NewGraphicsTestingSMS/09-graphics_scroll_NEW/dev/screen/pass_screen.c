@@ -160,7 +160,12 @@ void screen_pass_screen_update( unsigned char *screen_type )
 		}
 		else
 		{
-			engine_player_manager_pass( player_passX, player_endY );
+			// Wrap to block movement on riff play.
+			if( 2 == swap )
+			{
+				engine_player_manager_pass( player_passX, player_endY );
+			}
+
 			engine_player_manager_draw();
 			engine_player_manager_head();
 		}
