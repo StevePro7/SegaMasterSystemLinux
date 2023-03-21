@@ -76,8 +76,8 @@ namespace ScreenShotTest
 
 			if (File.Exists("MyTiles.csv"))
 			{
-				Tiles = tilesManager.Tiles;
-				return;
+				//Tiles = tilesManager.Tiles;
+				//return;
 			}
 
 			if (File.Exists("bankX.c"))
