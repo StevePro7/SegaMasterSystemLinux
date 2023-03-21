@@ -43,18 +43,18 @@ Area                                    Addr        Size        Decimal Bytes (A
      0000002D  l__CABS3                        
      000000BE  G$VDPDataPort$0_0$0                asm_manager
      000000BF  G$VDPControlPort$0_0$0             asm_manager
-     000000EE  l__BANK15                       
+     000000F1  l__BANK15                       
      0000012A  l__HEADER5                      
      00000200  s__CODE                         
-     0000022C  l__INITIALIZED                  
-     0000022C  l__INITIALIZER                  
+     0000022E  l__INITIALIZED                  
+     0000022E  l__INITIALIZER                  
      000002ED  l__DATA                         
      00000800  l__BANK10                       
      00000800  l__BANK11                       
      00000800  l__BANK9                        
      00001000  l__BANK8                        
      00001B60  l__BANK13                       
-     00002680  l__BANK12                       
+     00002780  l__BANK12                       
      000028B9  l__BANK14                       
      00003086  l__BANK7                        
 ASxxxx Linker V03.00 + NoICE + sdld,  page 2.
@@ -74,8 +74,8 @@ Area                                    Addr        Size        Decimal Bytes (A
      00006937  l__CODE                         
      00006B37  s__HOME                         
      00006B37  s__INITIALIZER                  
-     00006D63  s__GSINIT                       
-     00006D72  s__GSFINAL                      
+     00006D65  s__GSINIT                       
+     00006D74  s__GSFINAL                      
      00008000  G$SMS_SRAM$0_0$0                   _sms_manager
      00008000  _SMS_SRAM                          SMSlib_autotext
      00008000  s__BANK10                       
@@ -94,9 +94,9 @@ Area                                    Addr        Size        Decimal Bytes (A
      00008000  s__BANK9                        
      0000C000  s__DATA                         
      0000C2ED  s__INITIALIZED                  
-     0000C519  s__BSEG                         
-     0000C519  s__BSS                          
-     0000C519  s__HEAP                         
+     0000C51B  s__BSEG                         
+     0000C51B  s__BSS                          
+     0000C51B  s__HEAP                         
      0000FFFC  G$SRAM_bank_to_be_mapped_on_slot   _sms_manager
      0000FFFC  _SRAM_bank_to_be_mapped_on_slot2   SMSlib_autotext
      0000FFFF  G$ROM_bank_to_be_mapped_on_slot2   _sms_manager
@@ -4161,7 +4161,7 @@ _CODE                               00000200    00006937 =       26935. bytes (R
      000017A1  C$debug_manager.c$13$0_0$117       debug_manager
      000017A1  C$debug_manager.c$15$1_0$117       debug_manager
      000017A1  C$debug_manager.c$16$1_0$117       debug_manager
-     000017A1  C$debug_manager.c$19$1_0$117       debug_manager
+     000017A1  C$debug_manager.c$20$1_0$117       debug_manager
      000017A1  G$engine_debug_manager_initgame$   debug_manager
      000017A1  _engine_debug_manager_initgame     debug_manager
      000017A4  A$debug_manager$64                 debug_manager
@@ -17438,7 +17438,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_INITIALIZER                        00006B37    0000022C =         556. bytes (REL,CON)
+_INITIALIZER                        00006B37    0000022E =         558. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -17450,36 +17450,36 @@ _INITIALIZER                        00006B37    0000022C =         556. bytes (R
      00006B77  Ffixedbank$__xinit_sound_object_   fixedbank
      00006B81  Ffixedbank$__xinit_riff_sample_d   fixedbank
      00006BF3  Ffixedbank$__xinit_level_object_   fixedbank
-     00006C43  Finput_manager$__xinit_curr_joyp   input_manager
-     00006C45  Finput_manager$__xinit_prev_joyp   input_manager
-     00006C47  Fcommand_object$__xinit_command_   command_object
-     00006CC7  Fcommand_object$__xinit_command_   command_object
-     00006D07  Flevel_object$__xinit_level_plat   level_object
-     00006D27  Fplayer_object$__xinit_jump_arra   player_object
-     00006D31  Fplayer_object$__xinit_flip_arra   player_object
-     00006D3F  Fcont_screen$__xinit_cursorX$0_0   cont_screen
-     00006D41  Flevel_screen$__xinit_cursorX$0_   level_screen
-     00006D44  Fover_screen$__xinit_go$0_0$0      over_screen
-     00006D46  Ftitle_screen$__xinit_flip_posX$   title_screen
-     00006D4F  Ftitle_screen$__xinit_flip_posY$   title_screen
+     00006C45  Finput_manager$__xinit_curr_joyp   input_manager
+     00006C47  Finput_manager$__xinit_prev_joyp   input_manager
+     00006C49  Fcommand_object$__xinit_command_   command_object
+     00006CC9  Fcommand_object$__xinit_command_   command_object
+     00006D09  Flevel_object$__xinit_level_plat   level_object
+     00006D29  Fplayer_object$__xinit_jump_arra   player_object
+     00006D33  Fplayer_object$__xinit_flip_arra   player_object
+     00006D41  Fcont_screen$__xinit_cursorX$0_0   cont_screen
+     00006D43  Flevel_screen$__xinit_cursorX$0_   level_screen
+     00006D46  Fover_screen$__xinit_go$0_0$0      over_screen
+     00006D48  Ftitle_screen$__xinit_flip_posX$   title_screen
+     00006D51  Ftitle_screen$__xinit_flip_posY$   title_screen
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 298.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSINIT                             00006D63    0000000F =          15. bytes (REL,CON)
+_GSINIT                             00006D65    0000000F =          15. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00006D63  gsinit                             crt0
+     00006D65  gsinit                             crt0
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 299.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSFINAL                            00006D72    00000001 =           1. bytes (REL,CON)
+_GSFINAL                            00006D74    00000001 =           1. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -17659,7 +17659,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_INITIALIZED                        0000C2ED    0000022C =         556. bytes (REL,CON)
+_INITIALIZED                        0000C2ED    0000022E =         558. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -17679,30 +17679,30 @@ _INITIALIZED                        0000C2ED    0000022C =         556. bytes (R
      0000C337  _riff_sample_data                  fixedbank
      0000C3A9  G$level_object_data$0_0$0          fixedbank
      0000C3A9  _level_object_data                 fixedbank
-     0000C3F9  Finput_manager$curr_joypad1$0_0$   input_manager
-     0000C3FB  Finput_manager$prev_joypad1$0_0$   input_manager
-     0000C3FD  G$command_frame_index$0_0$0        command_object
-     0000C3FD  _command_frame_index               command_object
-     0000C47D  G$command_this_command$0_0$0       command_object
-     0000C47D  _command_this_command              command_object
-     0000C4BD  G$level_platforms$0_0$0            level_object
-     0000C4BD  _level_platforms                   level_object
-     0000C4DD  G$jump_array_ptr$0_0$0             player_object
-     0000C4DD  _jump_array_ptr                    player_object
-     0000C4E7  G$flip_array_ptr$0_0$0             player_object
-     0000C4E7  _flip_array_ptr                    player_object
-     0000C4F5  Fcont_screen$cursorX$0_0$0         cont_screen
-     0000C4F7  Flevel_screen$cursorX$0_0$0        level_screen
-     0000C4FA  G$go$0_0$0                         over_screen
-     0000C4FA  _go                                over_screen
-     0000C4FC  Ftitle_screen$flip_posX$0_0$0      title_screen
-     0000C505  Ftitle_screen$flip_posY$0_0$0      title_screen
-     0000C50E  _VDPReg                            SMSlib
-     0000C510  _spritesHeight                     SMSlib
-     0000C511  _spritesWidth                      SMSlib
-     0000C512  _spritesTileOffset                 SMSlib
-     0000C517  _clipWin_x1                        SMSlib_spriteClip
-     0000C518  _clipWin_y1                        SMSlib_spriteClip
+     0000C3FB  Finput_manager$curr_joypad1$0_0$   input_manager
+     0000C3FD  Finput_manager$prev_joypad1$0_0$   input_manager
+     0000C3FF  G$command_frame_index$0_0$0        command_object
+     0000C3FF  _command_frame_index               command_object
+     0000C47F  G$command_this_command$0_0$0       command_object
+     0000C47F  _command_this_command              command_object
+     0000C4BF  G$level_platforms$0_0$0            level_object
+     0000C4BF  _level_platforms                   level_object
+     0000C4DF  G$jump_array_ptr$0_0$0             player_object
+     0000C4DF  _jump_array_ptr                    player_object
+     0000C4E9  G$flip_array_ptr$0_0$0             player_object
+     0000C4E9  _flip_array_ptr                    player_object
+     0000C4F7  Fcont_screen$cursorX$0_0$0         cont_screen
+     0000C4F9  Flevel_screen$cursorX$0_0$0        level_screen
+     0000C4FC  G$go$0_0$0                         over_screen
+     0000C4FC  _go                                over_screen
+     0000C4FE  Ftitle_screen$flip_posX$0_0$0      title_screen
+     0000C507  Ftitle_screen$flip_posY$0_0$0      title_screen
+     0000C510  _VDPReg                            SMSlib
+     0000C512  _spritesHeight                     SMSlib
+     0000C513  _spritesWidth                      SMSlib
+     0000C514  _spritesTileOffset                 SMSlib
+     0000C519  _clipWin_x1                        SMSlib_spriteClip
+     0000C51A  _clipWin_y1                        SMSlib_spriteClip
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 304.
 Hexadecimal  [32-Bits]
@@ -17939,48 +17939,50 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK12                             00008000    00002680 =        9856. bytes (REL,CON)
+_BANK12                             00008000    00002780 =       10112. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00008000  G$level1116_txt$0_0$0              bank12
-     00008000  _level1116_txt                     bank12
-     00008200  G$level1100_txt$0_0$0              bank12
-     00008200  _level1100_txt                     bank12
-     00008380  G$level1101_txt$0_0$0              bank12
-     00008380  _level1101_txt                     bank12
-     00008480  G$level1102_txt$0_0$0              bank12
-     00008480  _level1102_txt                     bank12
-     00008600  G$level1103_txt$0_0$0              bank12
-     00008600  _level1103_txt                     bank12
-     00008640  G$level1104_txt$0_0$0              bank12
-     00008640  _level1104_txt                     bank12
-     00008680  G$level1105_txt$0_0$0              bank12
-     00008680  _level1105_txt                     bank12
-     00008800  G$level1106_txt$0_0$0              bank12
-     00008800  _level1106_txt                     bank12
-     00008980  G$level1107_txt$0_0$0              bank12
-     00008980  _level1107_txt                     bank12
-     00009880  G$level1108_txt$0_0$0              bank12
-     00009880  _level1108_txt                     bank12
-     00009900  G$level1109_txt$0_0$0              bank12
-     00009900  _level1109_txt                     bank12
-     00009A80  G$level1110_txt$0_0$0              bank12
-     00009A80  _level1110_txt                     bank12
-     00009C00  G$level1111_txt$0_0$0              bank12
-     00009C00  _level1111_txt                     bank12
-     00009D80  G$level1112_txt$0_0$0              bank12
-     00009D80  _level1112_txt                     bank12
-     00009F00  G$level1113_txt$0_0$0              bank12
-     00009F00  _level1113_txt                     bank12
-     0000A080  G$level1114_txt$0_0$0              bank12
-     0000A080  _level1114_txt                     bank12
-     0000A200  G$level1115_txt$0_0$0              bank12
-     0000A200  _level1115_txt                     bank12
-     0000A380  G$level1118_txt$0_0$0              bank12
-     0000A380  _level1118_txt                     bank12
-     0000A580  G$level_0000_txt$0_0$0             bank12
-     0000A580  _level_0000_txt                    bank12
+     00008000  G$level_3001_txt$0_0$0             bank12
+     00008000  _level_3001_txt                    bank12
+     00008100  G$level1116_txt$0_0$0              bank12
+     00008100  _level1116_txt                     bank12
+     00008300  G$level1100_txt$0_0$0              bank12
+     00008300  _level1100_txt                     bank12
+     00008480  G$level1101_txt$0_0$0              bank12
+     00008480  _level1101_txt                     bank12
+     00008580  G$level1102_txt$0_0$0              bank12
+     00008580  _level1102_txt                     bank12
+     00008700  G$level1103_txt$0_0$0              bank12
+     00008700  _level1103_txt                     bank12
+     00008740  G$level1104_txt$0_0$0              bank12
+     00008740  _level1104_txt                     bank12
+     00008780  G$level1105_txt$0_0$0              bank12
+     00008780  _level1105_txt                     bank12
+     00008900  G$level1106_txt$0_0$0              bank12
+     00008900  _level1106_txt                     bank12
+     00008A80  G$level1107_txt$0_0$0              bank12
+     00008A80  _level1107_txt                     bank12
+     00009980  G$level1108_txt$0_0$0              bank12
+     00009980  _level1108_txt                     bank12
+     00009A00  G$level1109_txt$0_0$0              bank12
+     00009A00  _level1109_txt                     bank12
+     00009B80  G$level1110_txt$0_0$0              bank12
+     00009B80  _level1110_txt                     bank12
+     00009D00  G$level1111_txt$0_0$0              bank12
+     00009D00  _level1111_txt                     bank12
+     00009E80  G$level1112_txt$0_0$0              bank12
+     00009E80  _level1112_txt                     bank12
+     0000A000  G$level1113_txt$0_0$0              bank12
+     0000A000  _level1113_txt                     bank12
+     0000A180  G$level1114_txt$0_0$0              bank12
+     0000A180  _level1114_txt                     bank12
+     0000A300  G$level1115_txt$0_0$0              bank12
+     0000A300  _level1115_txt                     bank12
+     0000A480  G$level1118_txt$0_0$0              bank12
+     0000A480  _level1118_txt                     bank12
+     0000A680  G$level_0000_txt$0_0$0             bank12
+     0000A680  _level_0000_txt                    bank12
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 315.
 Hexadecimal  [32-Bits]
@@ -18011,7 +18013,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_BANK15                             00008000    000000EE =         238. bytes (REL,CON)
+_BANK15                             00008000    000000F1 =         241. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -18025,9 +18027,9 @@ _BANK15                             00008000    000000EE =         238. bytes (R
      0000801C  _riff_sample_bank                  fixedbank
      00008055  G$level_object_size$0_0$0          fixedbank
      00008055  _level_object_size                 fixedbank
-     000080A5  G$level_object_bank$0_0$0          fixedbank
-     000080A5  _level_object_bank                 fixedbank
-     000080CD  Ffixedbank$__str_0$0_0$0           fixedbank
+     000080A7  G$level_object_bank$0_0$0          fixedbank
+     000080A7  _level_object_bank                 fixedbank
+     000080D0  Ffixedbank$__str_0$0_0$0           fixedbank
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 318.
 Hexadecimal  [32-Bits]
