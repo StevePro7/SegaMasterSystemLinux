@@ -172,7 +172,7 @@ namespace ScreenShotTest
 					var cnt = waveCount[index];
 					var xxx = wavePosns[index];
 					int yyy = 0 == xxx ? 0 : xxx + 1;
-					pos = new Vector2(yyy * 16, 8);
+					pos = new Vector2(yyy * 16, 20);
 					spriteBatch.DrawString(font, cnt.ToString(), pos, Color.Yellow);
 				}
 			}
@@ -180,11 +180,13 @@ namespace ScreenShotTest
 			// Draw screen numbers
 			int numScreens = configManager.NumScreens;
 			int dltScreens = wide / numScreens;
-			int zzz = dltScreens / 2 - 8;
+			int zzz = dltScreens / 2 - 64;
 			for (int idx = 0; idx < numScreens; idx++)
 			{
+				pos = new Vector2(zzz, 0);
+				spriteBatch.DrawString(font, (idx+1).ToString(), pos, Color.White);
 				pos = new Vector2(zzz, 120);
-				spriteBatch.DrawString(font, (idx+1).ToString(), pos, Color.Black);
+				spriteBatch.DrawString(font, (idx + 1).ToString(), pos, Color.Black);
 				zzz += dltScreens;
 			}
 		}
