@@ -8,7 +8,7 @@ namespace ConsoidateFiles
 		{
 			var fm = new FileManager();
 			fm.Initialize();
-			fm.Process(2);
+			fm.Process(6);
 
 			Console.WriteLine("Press [ RETURN ]");
 			Console.Read();
