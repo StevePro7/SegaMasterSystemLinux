@@ -25,6 +25,7 @@ static unsigned char flip_posY[ MAX_SPOTS ] = { 128, 112, 104, 100, 96, 100, 104
 
 static const unsigned char *flip_ptr;
 static unsigned char index;
+static unsigned char value;
 static unsigned char check;
 
 // TODO - do I want to manually update the X-values i.e. add 8px plus frame + 2..
@@ -48,6 +49,7 @@ void screen_title_screen_load()
 	check = 0;
 	flip_ptr = flip_array_ptr[ index ];
 	engine_riff_manager_init();
+	value = riff_indexs[ RIFF_START_TITLE ];
 }
 
 void screen_title_screen_update( unsigned char *screen_type )
@@ -75,7 +77,8 @@ void screen_title_screen_update( unsigned char *screen_type )
 
 	// TODO this MUST be wrong..!!
 	// RIFF_START_TITLE
-	engine_riff_manager_play( index );
+	
+	engine_riff_manager_play( index + value );
 	// TODO this MUST be wrong..!!
 
 	x = flip_posX[ index ];
