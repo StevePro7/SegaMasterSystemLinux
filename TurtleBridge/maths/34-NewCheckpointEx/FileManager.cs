@@ -45,11 +45,14 @@ namespace ExtractCheckpoints
 		public void Process1()
 		{
 			var files = Directory.GetFiles(root1);
-			var file = files[0];
-			var text = file.Replace(root1, String.Empty);
-			var name = text.Substring(0, 10);
-			var dirX = name.Substring(6, 2);
-			Build(file, dirX, name);
+			//var file = files[0];
+			foreach (var file in files)
+			{
+				var text = file.Replace(root1, String.Empty);
+				var name = text.Substring(0, 10);
+				var dirX = name.Substring(6, 2);
+				Build(file, dirX, name);
+			}
 		}
 
 		public void Build(string file, string dirX, string name)
