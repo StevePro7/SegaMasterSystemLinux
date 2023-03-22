@@ -1,11 +1,12 @@
 ;!FILE title_screen.asm
 XL3
-H 9 areas 187 global symbols
+H 9 areas 192 global symbols
 M title_screen
 O -mz80
 S _engine_input_manager_update Ref000000
 S _engine_sprite_manager_mode Ref000000
 S _devkit_SMS_displayOn Ref000000
+S _engine_random_manager_next Ref000000
 S _engine_util_manager_locale_texts Ref000000
 S _titles_tiles__tilemap__bin Ref000000
 S _engine_content_manager_titles Ref000000
@@ -24,367 +25,377 @@ S _riff_indexs Ref000000
 S _engine_input_manager_move Ref000000
 S _engine_delay_manager_load Ref000000
 S _flip_array_ptr Ref000000
-A _CODE size 1FA flags 0 addr 0
-S XG$screen_title_screen_load$0$0 Def000081
-S C$title_screen.c$120$1_0$132 Def000196
-S XFtitle_screen$draw_sprite$0$0 Def0001F9
-S C$title_screen.c$121$1_0$132 Def0001A5
-S C$title_screen.c$105$2_0$130 Def00013F
-S C$title_screen.c$100$1_0$127 Def00011E
-S C$title_screen.c$123$1_0$132 Def0001B4
-S C$title_screen.c$114$1_0$132 Def000150
-S C$title_screen.c$110$1_0$127 Def000145
-S C$title_screen.c$124$1_0$132 Def0001CC
-S C$title_screen.c$111$1_0$127 Def000149
-S C$title_screen.c$107$2_0$130 Def000144
-S C$title_screen.c$102$1_0$127 Def000121
-S C$title_screen.c$125$1_0$132 Def0001DB
-S C$title_screen.c$116$1_0$132 Def000158
-S C$title_screen.c$112$1_0$127 Def00014F
-S C$title_screen.c$103$1_0$127 Def00012A
-S C$title_screen.c$126$1_0$132 Def0001EA
-S C$title_screen.c$127$1_0$132 Def0001F9
-S C$title_screen.c$118$1_0$132 Def000170
-S G$screen_title_screen_update$0$0 Def000082
-S C$title_screen.c$119$1_0$132 Def000187
-S A$title_screen$110 Def00000F
-S A$title_screen$111 Def000011
-S A$title_screen$102 Def000006
-S A$title_screen$310 Def0000DE
-S A$title_screen$202 Def000079
-S A$title_screen$130 Def00002B
-S A$title_screen$112 Def000012
-S A$title_screen$500 Def0001AC
-S A$title_screen$410 Def00014B
-S A$title_screen$320 Def0000EC
-S A$title_screen$311 Def0000DF
-S A$title_screen$302 Def0000D6
-S A$title_screen$203 Def00007C
-S A$title_screen$140 Def000036
-S A$title_screen$131 Def00002C
-S A$title_screen$113 Def000015
-S A$title_screen$510 Def0001B5
-S A$title_screen$501 Def0001AD
-S A$title_screen$420 Def00014F
-S A$title_screen$411 Def00014C
-S A$title_screen$321 Def0000ED
-S A$title_screen$312 Def0000E0
+A _CODE size 208 flags 0 addr 0
+S XG$screen_title_screen_load$0$0 Def00008F
+S C$title_screen.c$120$2_0$131 Def000152
+S XFtitle_screen$draw_sprite$0$0 Def000207
+S C$title_screen.c$140$1_0$133 Def000207
+S C$title_screen.c$131$1_0$133 Def00017E
+S C$title_screen.c$132$1_0$133 Def000195
+S C$title_screen.c$110$1_0$128 Def00011A
+S C$title_screen.c$133$1_0$133 Def0001A4
+S C$title_screen.c$134$1_0$133 Def0001B3
+S C$title_screen.c$118$2_0$131 Def00014D
+S C$title_screen.c$113$1_0$128 Def00012C
+S C$title_screen.c$104$1_0$128 Def0000E5
+S G$screen_title_screen_update$0$0 Def000090
+S C$title_screen.c$136$1_0$133 Def0001C2
+S C$title_screen.c$127$1_0$133 Def00015E
+S C$title_screen.c$123$1_0$128 Def000153
+S C$title_screen.c$137$1_0$133 Def0001DA
+S C$title_screen.c$124$1_0$128 Def000157
+S C$title_screen.c$115$1_0$128 Def00012F
+S C$title_screen.c$138$1_0$133 Def0001E9
+S C$title_screen.c$129$1_0$133 Def000166
+S C$title_screen.c$125$1_0$128 Def00015D
+S C$title_screen.c$116$1_0$128 Def000138
+S C$title_screen.c$107$1_0$128 Def0000F2
+S C$title_screen.c$139$1_0$133 Def0001F8
+S C$title_screen.c$108$1_0$128 Def0000FC
+S C$title_screen.c$109$1_0$128 Def000107
+S A$title_screen$200 Def000079
+S A$title_screen$110 Def00000E
+S A$title_screen$300 Def0000D5
+S A$title_screen$210 Def000083
+S A$title_screen$201 Def00007A
+S A$title_screen$120 Def000021
+S A$title_screen$111 Def00000F
+S A$title_screen$400 Def000149
+S A$title_screen$310 Def0000E2
+S A$title_screen$301 Def0000D6
+S A$title_screen$211 Def000084
+S A$title_screen$130 Def000029
+S A$title_screen$112 Def000011
+S A$title_screen$103 Def000006
+S A$title_screen$500 Def0001AB
+S A$title_screen$401 Def00014B
+S A$title_screen$320 Def0000E5
+S A$title_screen$311 Def0000E3
+S A$title_screen$302 Def0000D7
+S A$title_screen$140 Def000035
+S A$title_screen$131 Def00002B
+S A$title_screen$113 Def000012
+S A$title_screen$510 Def0001B4
+S A$title_screen$501 Def0001AC
+S A$title_screen$411 Def000152
+S A$title_screen$330 Def0000F2
+S A$title_screen$321 Def0000E8
+S A$title_screen$303 Def0000D8
 S A$title_screen$240 Def000093
-S A$title_screen$213 Def000081
-S A$title_screen$204 Def00007D
-S A$title_screen$150 Def000042
-S A$title_screen$141 Def000038
-S A$title_screen$132 Def00002D
-S A$title_screen$123 Def000022
-S A$title_screen$114 Def000016
-S A$title_screen$520 Def0001BF
+S A$title_screen$150 Def00003F
+S A$title_screen$141 Def000036
+S A$title_screen$132 Def00002C
+S A$title_screen$114 Def000015
 S A$title_screen$511 Def0001B6
-S A$title_screen$502 Def0001AE
-S A$title_screen$430 Def000150
-S A$title_screen$412 Def00014D
-S A$title_screen$403 Def000145
-S A$title_screen$340 Def00010A
-S A$title_screen$313 Def0000E3
-S A$title_screen$232 Def000088
-S A$title_screen$205 Def000080
-S A$title_screen$160 Def00004C
-S A$title_screen$151 Def000043
-S A$title_screen$142 Def000039
-S A$title_screen$133 Def000030
-S A$title_screen$115 Def000019
-S A$title_screen$106 Def000009
-S C$title_screen.c$40$1_0$125 Def000009
-S _screen_title_screen_update Def000082
-S A$title_screen$521 Def0001C0
+S A$title_screen$502 Def0001AD
+S A$title_screen$421 Def000157
+S A$title_screen$340 Def000103
+S A$title_screen$331 Def0000F5
+S A$title_screen$322 Def0000EB
+S A$title_screen$304 Def0000D9
+S A$title_screen$241 Def000094
+S A$title_screen$205 Def00007D
+S A$title_screen$151 Def000042
+S A$title_screen$142 Def000038
+S A$title_screen$133 Def00002D
+S A$title_screen$124 Def000022
+S A$title_screen$115 Def000016
+S C$title_screen.c$40$1_0$125 Def000006
+S _screen_title_screen_update Def000090
+S A$title_screen$530 Def0001CA
 S A$title_screen$512 Def0001B7
-S A$title_screen$503 Def0001B1
-S A$title_screen$440 Def000161
-S A$title_screen$431 Def000152
-S A$title_screen$404 Def000148
+S A$title_screen$503 Def0001B0
+S A$title_screen$422 Def000158
 S A$title_screen$350 Def000112
-S A$title_screen$341 Def00010B
-S A$title_screen$260 Def0000A4
-S A$title_screen$233 Def00008B
-S A$title_screen$152 Def000045
-S A$title_screen$143 Def00003A
-S A$title_screen$134 Def000031
-S A$title_screen$116 Def00001A
-S A$title_screen$107 Def00000C
-S C$title_screen.c$50$1_0$125 Def000059
-S A$title_screen$540 Def0001D9
-S A$title_screen$522 Def0001C1
-S A$title_screen$513 Def0001B8
-S A$title_screen$504 Def0001B2
-S A$title_screen$441 Def000162
-S A$title_screen$432 Def000156
+S A$title_screen$341 Def000105
+S A$title_screen$332 Def0000F8
+S A$title_screen$323 Def0000EC
+S A$title_screen$305 Def0000DB
+S A$title_screen$260 Def0000A6
+S A$title_screen$251 Def00009D
+S A$title_screen$215 Def000087
+S A$title_screen$170 Def000058
+S A$title_screen$161 Def00004C
+S A$title_screen$152 Def000043
+S A$title_screen$143 Def000039
+S A$title_screen$134 Def000030
+S A$title_screen$116 Def000019
+S A$title_screen$107 Def000009
+S C$title_screen.c$50$1_0$125 Def00004F
+S A$title_screen$540 Def0001D8
+S A$title_screen$531 Def0001CB
+S A$title_screen$522 Def0001C2
+S A$title_screen$513 Def0001BA
+S A$title_screen$504 Def0001B1
+S A$title_screen$450 Def000169
+S A$title_screen$423 Def000159
+S A$title_screen$360 Def00011D
 S A$title_screen$351 Def000113
-S A$title_screen$333 Def0000F9
-S A$title_screen$261 Def0000A5
-S A$title_screen$252 Def00009B
-S A$title_screen$234 Def00008C
-S A$title_screen$153 Def000046
-S A$title_screen$144 Def00003D
-S A$title_screen$117 Def00001D
-S A$title_screen$108 Def00000D
-S C$title_screen.c$51$1_0$125 Def00005E
-S C$title_screen.c$42$1_0$125 Def000022
+S A$title_screen$342 Def000106
+S A$title_screen$333 Def0000FA
+S A$title_screen$324 Def0000ED
+S A$title_screen$315 Def0000E4
+S A$title_screen$306 Def0000DC
+S A$title_screen$270 Def0000AA
+S A$title_screen$261 Def0000A7
+S A$title_screen$252 Def0000A0
+S A$title_screen$216 Def00008A
+S A$title_screen$180 Def000061
+S A$title_screen$153 Def000045
+S A$title_screen$144 Def00003A
+S A$title_screen$135 Def000031
+S A$title_screen$117 Def00001A
+S A$title_screen$108 Def00000C
+S C$title_screen.c$42$1_0$125 Def000009
 S C$title_screen.c$34$0_0$125 Def000000
-S A$title_screen$550 Def0001E3
-S A$title_screen$541 Def0001DA
+S A$title_screen$550 Def0001E2
+S A$title_screen$541 Def0001D9
 S A$title_screen$532 Def0001CC
-S A$title_screen$523 Def0001C4
-S A$title_screen$514 Def0001B9
-S A$title_screen$505 Def0001B3
+S A$title_screen$523 Def0001C3
+S A$title_screen$514 Def0001BB
+S A$title_screen$505 Def0001B2
 S A$title_screen$460 Def00017C
-S A$title_screen$442 Def000163
-S A$title_screen$370 Def000128
-S A$title_screen$352 Def000115
-S A$title_screen$334 Def0000FC
+S A$title_screen$451 Def00016B
+S A$title_screen$433 Def00015D
+S A$title_screen$424 Def00015A
+S A$title_screen$406 Def00014D
+S A$title_screen$370 Def00012A
+S A$title_screen$361 Def00011E
+S A$title_screen$352 Def000116
+S A$title_screen$334 Def0000FB
 S A$title_screen$325 Def0000EE
-S A$title_screen$307 Def0000D7
-S A$title_screen$280 Def0000C2
-S A$title_screen$244 Def000095
-S A$title_screen$226 Def000082
-S A$title_screen$154 Def000047
-S A$title_screen$145 Def00003E
-S A$title_screen$127 Def000025
-S A$title_screen$118 Def000020
-S A$title_screen$109 Def00000E
-S C$title_screen.c$52$1_0$125 Def000063
-S C$title_screen.c$43$1_0$125 Def000025
-S A$title_screen$560 Def0001ED
-S A$title_screen$551 Def0001E4
+S A$title_screen$307 Def0000DD
+S A$title_screen$280 Def0000BB
+S A$title_screen$271 Def0000AD
+S A$title_screen$253 Def0000A1
+S A$title_screen$226 Def00008F
+S A$title_screen$217 Def00008B
+S A$title_screen$154 Def000046
+S A$title_screen$145 Def00003D
+S A$title_screen$118 Def00001D
+S A$title_screen$109 Def00000D
+S C$title_screen.c$81$3_0$130 Def0000A3
+S C$title_screen.c$52$1_0$125 Def000059
+S A$title_screen$560 Def0001EC
+S A$title_screen$551 Def0001E3
 S A$title_screen$533 Def0001CD
-S A$title_screen$524 Def0001C5
-S A$title_screen$515 Def0001BA
+S A$title_screen$524 Def0001C4
+S A$title_screen$515 Def0001BC
 S A$title_screen$470 Def000187
-S A$title_screen$461 Def00017F
-S A$title_screen$452 Def000170
-S A$title_screen$443 Def000164
-S A$title_screen$380 Def000133
-S A$title_screen$371 Def000129
-S A$title_screen$362 Def00011E
-S A$title_screen$353 Def000116
-S A$title_screen$335 Def000100
+S A$title_screen$461 Def00017D
+S A$title_screen$452 Def00016E
+S A$title_screen$443 Def00015E
+S A$title_screen$425 Def00015B
+S A$title_screen$416 Def000153
+S A$title_screen$407 Def00014F
+S A$title_screen$380 Def000131
+S A$title_screen$371 Def00012B
+S A$title_screen$362 Def00011F
+S A$title_screen$353 Def000118
 S A$title_screen$326 Def0000F1
-S A$title_screen$317 Def0000E4
-S A$title_screen$308 Def0000DA
+S A$title_screen$308 Def0000DE
 S A$title_screen$290 Def0000CA
-S A$title_screen$281 Def0000C3
+S A$title_screen$281 Def0000BD
+S A$title_screen$272 Def0000B0
 S A$title_screen$245 Def000096
-S A$title_screen$227 Def000085
-S A$title_screen$173 Def000059
-S A$title_screen$164 Def00004F
-S A$title_screen$155 Def00004A
-S A$title_screen$128 Def000028
-S A$title_screen$119 Def000021
-S C$title_screen.c$53$1_0$125 Def00006F
-S C$title_screen.c$44$1_0$125 Def000032
-S A$title_screen$561 Def0001F0
-S A$title_screen$552 Def0001E7
-S A$title_screen$534 Def0001CF
-S A$title_screen$525 Def0001C6
-S A$title_screen$516 Def0001BB
+S A$title_screen$218 Def00008E
+S A$title_screen$209 Def000080
+S A$title_screen$155 Def000047
+S A$title_screen$146 Def00003E
+S A$title_screen$128 Def000025
+S A$title_screen$119 Def000020
+S C$title_screen.c$82$3_0$130 Def0000A9
+S C$title_screen.c$53$1_0$125 Def00005E
+S C$title_screen.c$44$1_0$125 Def000022
+S A$title_screen$561 Def0001ED
+S A$title_screen$552 Def0001E6
+S A$title_screen$534 Def0001CE
+S A$title_screen$525 Def0001C5
+S A$title_screen$516 Def0001BF
 S A$title_screen$471 Def000188
-S A$title_screen$462 Def000180
-S A$title_screen$453 Def000173
-S A$title_screen$444 Def000167
-S A$title_screen$408 Def000149
-S A$title_screen$381 Def000134
-S A$title_screen$354 Def000117
-S A$title_screen$345 Def00010C
-S A$title_screen$336 Def000103
-S A$title_screen$327 Def0000F5
-S A$title_screen$318 Def0000E7
-S A$title_screen$309 Def0000DD
+S A$title_screen$453 Def00016F
+S A$title_screen$444 Def000160
+S A$title_screen$417 Def000156
+S A$title_screen$390 Def00013B
+S A$title_screen$381 Def000132
+S A$title_screen$363 Def000120
+S A$title_screen$354 Def000119
+S A$title_screen$309 Def0000DF
 S A$title_screen$291 Def0000CB
-S A$title_screen$273 Def0000B1
-S A$title_screen$246 Def000097
-S A$title_screen$228 Def000086
-S A$title_screen$192 Def00006F
-S A$title_screen$183 Def000063
-S A$title_screen$174 Def00005C
-S A$title_screen$165 Def000052
-S A$title_screen$156 Def00004B
-S A$title_screen$138 Def000032
-S A$title_screen$129 Def000029
-S C$title_screen.c$54$1_0$125 Def000072
-S C$title_screen.c$45$1_0$125 Def00003F
-S C$title_screen.c$36$1_0$125 Def000000
-S A$title_screen$562 Def0001F1
-S A$title_screen$553 Def0001E8
-S A$title_screen$535 Def0001D0
-S A$title_screen$526 Def0001C9
-S A$title_screen$517 Def0001BC
-S A$title_screen$490 Def0001A2
-S A$title_screen$472 Def00018A
-S A$title_screen$463 Def000181
-S A$title_screen$454 Def000176
-S A$title_screen$445 Def00016A
-S A$title_screen$436 Def000158
-S A$title_screen$409 Def00014A
-S A$title_screen$382 Def000135
-S A$title_screen$355 Def000118
-S A$title_screen$346 Def00010E
-S A$title_screen$337 Def000104
-S A$title_screen$328 Def0000F7
-S A$title_screen$319 Def0000EA
-S A$title_screen$292 Def0000CD
-S A$title_screen$274 Def0000B4
-S A$title_screen$265 Def0000A6
-S A$title_screen$247 Def000098
-S A$title_screen$238 Def00008F
-S A$title_screen$184 Def000066
-S A$title_screen$166 Def000053
-S A$title_screen$139 Def000035
-S C$title_screen.c$55$1_0$125 Def000079
-S C$title_screen.c$46$1_0$125 Def00004C
-S C$title_screen.c$37$1_0$125 Def000003
-S A$title_screen$563 Def0001F2
-S A$title_screen$554 Def0001E9
-S A$title_screen$545 Def0001DB
-S A$title_screen$536 Def0001D3
-S A$title_screen$527 Def0001CA
-S A$title_screen$518 Def0001BD
-S A$title_screen$509 Def0001B4
-S A$title_screen$491 Def0001A3
-S A$title_screen$473 Def00018B
-S A$title_screen$464 Def000184
-S A$title_screen$455 Def000177
-S A$title_screen$446 Def00016B
-S A$title_screen$437 Def00015B
-S A$title_screen$383 Def000137
-S A$title_screen$356 Def000119
-S A$title_screen$347 Def00010F
-S A$title_screen$338 Def000105
-S A$title_screen$329 Def0000F8
-S A$title_screen$293 Def0000CE
-S A$title_screen$275 Def0000B8
-S A$title_screen$266 Def0000A9
-S A$title_screen$257 Def00009C
-S A$title_screen$248 Def000099
-S A$title_screen$239 Def000092
-S A$title_screen$185 Def000067
-S A$title_screen$167 Def000054
-S A$title_screen$149 Def00003F
-S C$title_screen.c$63$1_0$127 Def000082
-S C$title_screen.c$56$1_0$125 Def000081
-S C$title_screen.c$38$1_0$125 Def000006
-S A$title_screen$564 Def0001F5
-S A$title_screen$546 Def0001DC
-S A$title_screen$537 Def0001D4
-S A$title_screen$528 Def0001CB
-S A$title_screen$519 Def0001BE
-S A$title_screen$492 Def0001A4
-S A$title_screen$483 Def000196
-S A$title_screen$474 Def00018E
-S A$title_screen$465 Def000185
-S A$title_screen$456 Def000178
-S A$title_screen$447 Def00016E
-S A$title_screen$438 Def00015D
-S A$title_screen$393 Def00013F
-S A$title_screen$384 Def000138
-S A$title_screen$375 Def00012A
-S A$title_screen$366 Def000121
-S A$title_screen$357 Def00011C
-S A$title_screen$348 Def000110
-S A$title_screen$339 Def000108
-S A$title_screen$294 Def0000CF
-S A$title_screen$285 Def0000C4
-S A$title_screen$276 Def0000BB
-S A$title_screen$267 Def0000AD
-S A$title_screen$258 Def00009F
-S A$title_screen$186 Def00006A
-S A$title_screen$168 Def000055
-S C$title_screen.c$91$1_0$127 Def0000D7
-S C$title_screen.c$48$1_0$125 Def00004F
-S A$title_screen$574 Def0001F9
-S A$title_screen$565 Def0001F6
-S A$title_screen$547 Def0001DE
-S A$title_screen$538 Def0001D5
-S A$title_screen$484 Def000197
-S A$title_screen$475 Def00018F
-S A$title_screen$466 Def000186
-S A$title_screen$457 Def000179
-S A$title_screen$448 Def00016F
-S A$title_screen$439 Def000160
-S A$title_screen$394 Def000141
-S A$title_screen$385 Def000139
-S A$title_screen$376 Def00012B
-S A$title_screen$367 Def000123
-S A$title_screen$358 Def00011D
+S A$title_screen$282 Def0000BE
+S A$title_screen$273 Def0000B2
+S A$title_screen$246 Def000099
+S A$title_screen$192 Def00006C
+S A$title_screen$174 Def000059
+S A$title_screen$165 Def00004F
+S A$title_screen$156 Def00004A
+S A$title_screen$129 Def000028
+S C$title_screen.c$45$1_0$125 Def000025
+S A$title_screen$571 Def0001F8
+S A$title_screen$562 Def0001F0
+S A$title_screen$553 Def0001E7
+S A$title_screen$535 Def0001CF
+S A$title_screen$526 Def0001C6
+S A$title_screen$517 Def0001C0
+S A$title_screen$490 Def0001A1
+S A$title_screen$472 Def000189
+S A$title_screen$454 Def000170
+S A$title_screen$445 Def000164
+S A$title_screen$391 Def00013E
+S A$title_screen$382 Def000133
+S A$title_screen$364 Def000121
+S A$title_screen$346 Def000107
+S A$title_screen$292 Def0000CE
+S A$title_screen$274 Def0000B3
+S A$title_screen$265 Def0000A9
+S A$title_screen$247 Def00009A
+S A$title_screen$193 Def00006F
+S A$title_screen$184 Def000063
+S A$title_screen$175 Def00005C
+S A$title_screen$166 Def000052
+S A$title_screen$157 Def00004B
+S A$title_screen$139 Def000032
+S C$title_screen.c$46$1_0$125 Def000032
+S A$title_screen$572 Def0001FA
+S A$title_screen$563 Def0001F1
+S A$title_screen$554 Def0001E8
+S A$title_screen$545 Def0001DA
+S A$title_screen$536 Def0001D2
+S A$title_screen$527 Def0001C7
+S A$title_screen$518 Def0001C1
+S A$title_screen$509 Def0001B3
+S A$title_screen$491 Def0001A2
+S A$title_screen$473 Def00018A
+S A$title_screen$455 Def000171
+S A$title_screen$392 Def00013F
+S A$title_screen$383 Def000136
+S A$title_screen$365 Def000123
+S A$title_screen$347 Def00010A
+S A$title_screen$338 Def0000FC
+S A$title_screen$293 Def0000D0
+S A$title_screen$257 Def0000A3
+S A$title_screen$239 Def000090
+S A$title_screen$194 Def000071
+S A$title_screen$185 Def000066
+S A$title_screen$167 Def000053
+S C$title_screen.c$71$1_0$128 Def000090
+S C$title_screen.c$65$1_0$125 Def00006C
+S C$title_screen.c$47$1_0$125 Def00003F
+S C$title_screen.c$38$1_0$125 Def000000
+S A$title_screen$582 Def000205
+S A$title_screen$573 Def0001FB
+S A$title_screen$564 Def0001F2
+S A$title_screen$546 Def0001DB
+S A$title_screen$537 Def0001D3
+S A$title_screen$528 Def0001C8
+S A$title_screen$492 Def0001A3
+S A$title_screen$483 Def000195
+S A$title_screen$474 Def00018D
+S A$title_screen$465 Def00017E
+S A$title_screen$456 Def000172
+S A$title_screen$393 Def000141
+S A$title_screen$384 Def000137
+S A$title_screen$375 Def00012C
+S A$title_screen$366 Def000124
+S A$title_screen$348 Def00010E
+S A$title_screen$339 Def0000FF
+S A$title_screen$294 Def0000D1
+S A$title_screen$258 Def0000A4
+S A$title_screen$195 Def000072
+S A$title_screen$186 Def000067
+S A$title_screen$168 Def000054
+S C$title_screen.c$66$1_0$125 Def00007D
+S C$title_screen.c$48$1_0$125 Def00004C
+S C$title_screen.c$39$1_0$125 Def000003
+S A$title_screen$574 Def0001FE
+S A$title_screen$565 Def0001F5
+S A$title_screen$547 Def0001DD
+S A$title_screen$538 Def0001D4
+S A$title_screen$529 Def0001C9
+S A$title_screen$484 Def000196
+S A$title_screen$475 Def00018E
+S A$title_screen$466 Def000181
+S A$title_screen$457 Def000175
+S A$title_screen$394 Def000142
+S A$title_screen$367 Def000125
+S A$title_screen$358 Def00011A
 S A$title_screen$349 Def000111
-S A$title_screen$295 Def0000D0
-S A$title_screen$286 Def0000C6
-S A$title_screen$277 Def0000BC
-S A$title_screen$268 Def0000AF
-S A$title_screen$259 Def0000A2
-S A$title_screen$196 Def000072
-S A$title_screen$187 Def00006B
-S A$title_screen$178 Def00005E
-S A$title_screen$169 Def000058
-S C$title_screen.c$81$2_0$128 Def00009C
-S A$title_screen$548 Def0001DF
-S A$title_screen$539 Def0001D8
-S A$title_screen$485 Def000199
-S A$title_screen$476 Def000190
-S A$title_screen$458 Def00017A
-S A$title_screen$386 Def00013A
-S A$title_screen$377 Def00012D
-S A$title_screen$368 Def000124
-S A$title_screen$296 Def0000D1
-S A$title_screen$287 Def0000C7
-S A$title_screen$278 Def0000BD
-S A$title_screen$269 Def0000B0
-S A$title_screen$197 Def000075
-S A$title_screen$188 Def00006C
-S A$title_screen$179 Def000061
-S C$title_screen.c$82$2_0$128 Def0000A6
-S A$title_screen$558 Def0001EA
-S A$title_screen$549 Def0001E2
-S A$title_screen$486 Def00019A
-S A$title_screen$477 Def000193
-S A$title_screen$459 Def00017B
-S A$title_screen$387 Def00013B
-S A$title_screen$378 Def000130
-S A$title_screen$369 Def000125
-S A$title_screen$297 Def0000D4
-S A$title_screen$288 Def0000C8
-S A$title_screen$279 Def0000C0
-S A$title_screen$198 Def000076
-S C$title_screen.c$94$1_0$127 Def0000E4
-S C$title_screen.c$83$2_0$128 Def0000B1
-S C$title_screen.c$65$2_0$128 Def000088
-S C$title_screen.c$58$1_0$127 Def000082
-S A$title_screen$559 Def0001EC
-S A$title_screen$496 Def0001A5
-S A$title_screen$487 Def00019D
-S A$title_screen$478 Def000194
-S A$title_screen$388 Def00013D
-S A$title_screen$379 Def000131
-S A$title_screen$298 Def0000D5
+S A$title_screen$286 Def0000BF
+S A$title_screen$259 Def0000A5
+S A$title_screen$196 Def000073
+S A$title_screen$187 Def00006A
+S A$title_screen$169 Def000055
+S C$title_screen.c$67$1_0$125 Def000080
+S A$title_screen$575 Def0001FF
+S A$title_screen$566 Def0001F6
+S A$title_screen$548 Def0001DE
+S A$title_screen$539 Def0001D7
+S A$title_screen$485 Def000198
+S A$title_screen$476 Def00018F
+S A$title_screen$467 Def000184
+S A$title_screen$458 Def000178
+S A$title_screen$449 Def000166
+S A$title_screen$395 Def000143
+S A$title_screen$368 Def000126
+S A$title_screen$359 Def00011C
+S A$title_screen$287 Def0000C2
+S A$title_screen$278 Def0000B4
+S A$title_screen$197 Def000074
+S A$title_screen$188 Def00006B
+S A$title_screen$179 Def00005E
+S C$title_screen.c$68$1_0$125 Def000087
+S A$title_screen$576 Def000200
+S A$title_screen$567 Def0001F7
+S A$title_screen$558 Def0001E9
+S A$title_screen$549 Def0001E1
+S A$title_screen$486 Def000199
+S A$title_screen$477 Def000192
+S A$title_screen$468 Def000185
+S A$title_screen$459 Def000179
+S A$title_screen$396 Def000145
+S A$title_screen$369 Def000127
+S A$title_screen$288 Def0000C6
+S A$title_screen$279 Def0000B7
+S A$title_screen$198 Def000075
+S C$title_screen.c$69$1_0$125 Def00008F
+S C$title_screen.c$58$2_0$126 Def000063
+S A$title_screen$577 Def000203
+S A$title_screen$559 Def0001EA
+S A$title_screen$496 Def0001A4
+S A$title_screen$487 Def00019C
+S A$title_screen$478 Def000193
+S A$title_screen$469 Def000186
+S A$title_screen$397 Def000146
+S A$title_screen$388 Def000138
+S A$title_screen$379 Def00012F
+S A$title_screen$298 Def0000D2
 S A$title_screen$289 Def0000C9
-S XG$screen_title_screen_update$0$0 Def00014F
-S C$title_screen.c$95$1_0$127 Def0000EE
-S C$title_screen.c$84$2_0$128 Def0000C4
-S C$title_screen.c$66$2_0$128 Def00008F
-S A$title_screen$569 Def0001F7
-S A$title_screen$497 Def0001A6
-S A$title_screen$488 Def00019E
-S A$title_screen$479 Def000195
-S A$title_screen$398 Def000144
-S C$title_screen.c$96$1_0$127 Def0000F9
-S C$title_screen.c$85$2_0$128 Def0000D6
-S A$title_screen$498 Def0001A8
-S A$title_screen$489 Def00019F
-S C$title_screen.c$97$1_0$127 Def00010C
-S A$title_screen$499 Def0001A9
-S C$title_screen.c$68$3_0$129 Def000095
-S C$title_screen.c$69$3_0$129 Def00009B
+S A$title_screen$199 Def000078
+S XG$screen_title_screen_update$0$0 Def00015D
+S C$title_screen.c$76$1_0$128 Def000090
+S A$title_screen$587 Def000207
+S A$title_screen$578 Def000204
+S A$title_screen$497 Def0001A5
+S A$title_screen$488 Def00019D
+S A$title_screen$479 Def000194
+S A$title_screen$398 Def000147
+S A$title_screen$389 Def000139
+S A$title_screen$299 Def0000D4
+S A$title_screen$498 Def0001A7
+S A$title_screen$489 Def00019E
+S A$title_screen$399 Def000148
+S C$title_screen.c$94$2_0$129 Def0000AA
+S A$title_screen$499 Def0001A8
+S C$title_screen.c$95$2_0$129 Def0000B4
+S C$title_screen.c$96$2_0$129 Def0000BF
+S C$title_screen.c$78$2_0$129 Def000096
+S C$title_screen.c$97$2_0$129 Def0000D2
+S C$title_screen.c$79$2_0$129 Def00009D
 S G$screen_title_screen_load$0$0 Def000000
-S A$title_screen$94 Def000000
-S Ftitle_screen$draw_sprite$0$0 Def000150
-S A$title_screen$98 Def000003
+S C$title_screen.c$98$2_0$129 Def0000E4
+S Ftitle_screen$draw_sprite$0$0 Def00015E
+S A$title_screen$95 Def000000
+S A$title_screen$99 Def000003
 S _screen_title_screen_load Def000000
 A _DATA size 6 flags 0 addr 0
 S Ftitle_screen$flip_ptr$0_0$0 Def000000
@@ -434,100 +445,102 @@ R 00 00 02 00
 T 00 00 00
 R 00 00 00 00
 T 00 00 00 CD 00 00 CD 00 00 CD 00 00 11 10 0C D5
-R 00 00 00 00 02 04 0C 00 02 07 0E 00 02 0A 05 00
+R 00 00 00 00 02 04 0D 00 02 07 0F 00 02 0A 06 00
 T 0D 00 00 AF 57 1E 08 D5 21 90 00 E5 21 00 00 E5
-R 00 00 00 00 02 0D 04 00
+R 00 00 00 00 02 0D 05 00
 T 1A 00 00 CD 00 00 21 08 00 39 F9 CD 00 00 11
-R 00 00 00 00 02 04 0A 00 02 0C 07 00
+R 00 00 00 00 02 04 0B 00 02 0C 08 00
 T 26 00 00 1C 17 D5 3E 01 F5 33 CD 00 00 F1 33 11
-R 00 00 00 00 02 0B 03 00
+R 00 00 00 00 02 0B 04 00
 T 33 00 00 08 16 D5 3E 02 F5 33 CD 00 00 F1 33 11
-R 00 00 00 00 02 0B 03 00
+R 00 00 00 00 02 0B 04 00
 T 40 00 00 07 17 D5 3E 03 F5 33 CD 00 00 F1 33 CD
-R 00 00 00 00 02 0B 03 00
+R 00 00 00 00 02 0B 04 00
 T 4D 00 00 00 00 CD 00 00 7D F5 33 CD 00 00 33 21
-R 00 00 00 00 02 03 02 00 02 06 10 00 02 0C 09 00
-T 5A 00 00 02 00 36 00 21 04 00 36 00 21 00 00 7E
-R 00 00 00 00 00 03 01 00 00 08 01 00 02 0D 14 00
-T 67 00 00 32 00 00 23 7E 32 01 00 CD 00 00 21
-R 00 00 00 00 00 04 01 00 00 09 01 00 02 0C 0B 00
-T 73 00 00 18 00 7E 32 03 00 21 32 00 E5 CD 00 00
-R 00 00 00 00 02 03 11 00 00 07 01 00 02 0E 13 00
-T 80 00 00 F1 C9
+R 00 00 00 00 02 03 02 00 02 06 11 00 02 0C 0A 00
+T 5A 00 00 02 00 36 00 21 04 00 36 00 21 07 00 E5
+R 00 00 00 00 00 03 01 00 00 08 01 00
+T 67 00 00 CD 00 00 F1 5D 01 00 00 16 00 EB 29 09
+R 00 00 00 00 02 04 03 00 02 09 15 00
+T 74 00 00 7E 32 00 00 23 7E 32 01 00 CD 00 00 21
+R 00 00 00 00 00 05 01 00 00 0A 01 00 02 0D 0C 00
+T 81 00 00 18 00 7E 32 03 00 21 32 00 E5 CD 00 00
+R 00 00 00 00 02 03 12 00 00 07 01 00 02 0E 14 00
+T 8E 00 00 F1 C9
 R 00 00 00 00
-T 82 00 00
+T 90 00 00
 R 00 00 00 00
-T 82 00 00 3A 04 00 B7 28 4F CD 00 00 7D 32 05 00
-R 00 00 00 00 00 04 01 00 02 0A 08 00 00 0E 01 00
-T 8F 00 00 3A 05 00 B7 28 07 C1 E1 E5 C5 36 02 C9
+T 90 00 00 3A 04 00 B7 28 4F CD 00 00 7D 32 05 00
+R 00 00 00 00 00 04 01 00 02 0A 09 00 00 0E 01 00
+T 9D 00 00 3A 05 00 B7 28 07 C1 E1 E5 C5 36 02 C9
 R 00 00 00 00 00 04 01 00
-T 9C 00 00
+T AA 00 00
 R 00 00 00 00
-T 9C 00 00 01 00 00 2A 02 00 26 00 09 4E 21 09 00
+T AA 00 00 01 00 00 2A 02 00 26 00 09 4E 21 09 00
 R 00 00 00 00 00 04 02 00 00 07 01 00 00 0E 02 00
-T A9 00 00 ED 5B 02 00 16 00 19 46 21 02 00 FD 21
+T B7 00 00 ED 5B 02 00 16 00 19 46 21 02 00 FD 21
 R 00 00 00 00 00 05 01 00 00 0C 01 00
-T B6 00 00 00 00 FD 7E 00 86 5F FD 7E 01 CE 00 57
+T C4 00 00 00 00 FD 7E 00 86 5F FD 7E 01 CE 00 57
 R 00 00 00 00 00 03 01 00
-T C3 00 00 1A C6 02 C5 33 61 E5 33 26 02 E5 33 F5
+T D1 00 00 1A C6 02 C5 33 61 E5 33 26 02 E5 33 F5
 R 00 00 00 00
-T D0 00 00 33 CD 50 01 F1 F1 C9
+T DE 00 00 33 CD 5E 01 F1 F1 C9
 R 00 00 00 00 00 05 00 00
-T D7 00 00
+T E5 00 00
 R 00 00 00 00
-T D7 00 00 21 03 00 3A 02 00 86 F5 33 CD 00 00 33
-R 00 00 00 00 00 04 01 00 00 07 01 00 02 0D 0F 00
-T E4 00 00 01 00 00 2A 02 00 26 00 09 4E 21 09 00
+T E5 00 00 21 03 00 3A 02 00 86 F5 33 CD 00 00 33
+R 00 00 00 00 00 04 01 00 00 07 01 00 02 0D 10 00
+T F2 00 00 01 00 00 2A 02 00 26 00 09 4E 21 09 00
 R 00 00 00 00 00 04 02 00 00 07 01 00 00 0E 02 00
-T F1 00 00 ED 5B 02 00 16 00 19 46 21 02 00 FD 21
+T FF 00 00 ED 5B 02 00 16 00 19 46 21 02 00 FD 21
 R 00 00 00 00 00 05 01 00 00 0C 01 00
-T FE 00 00 00 00 FD 7E 00 86 5F FD 7E 01 CE 00 57
+T 0C 01 00 00 00 FD 7E 00 86 5F FD 7E 01 CE 00 57
 R 00 00 00 00 00 03 01 00
-T 0B 01 00 1A C6 02 C5 33 61 E5 33 26 02 E5 33 F5
+T 19 01 00 1A C6 02 C5 33 61 E5 33 26 02 E5 33 F5
 R 00 00 00 00
-T 18 01 00 33 CD 50 01 F1 F1 CD 00 00 3E 10 F5 33
+T 26 01 00 33 CD 5E 01 F1 F1 CD 00 00 3E 10 F5 33
 R 00 00 00 00 00 05 00 00 02 0A 00 00
-T 25 01 00 CD 00 00 33 7D B7 20 12 3A 02 00 4F 06
-R 00 00 00 00 02 04 12 00 00 0C 01 00
-T 32 01 00 00 03 79 D6 09 78 17 3F 1F DE 80 38 06
+T 33 01 00 CD 00 00 33 7D B7 20 12 3A 02 00 4F 06
+R 00 00 00 00 02 04 13 00 00 0C 01 00
+T 40 01 00 00 03 79 D6 09 78 17 3F 1F DE 80 38 06
 R 00 00 00 00
-T 3F 01 00
+T 4D 01 00
 R 00 00 00 00
-T 3F 01 00 3E 01 32 04 00 C9
+T 4D 01 00 3E 01 32 04 00 C9
 R 00 00 00 00 00 06 01 00
-T 45 01 00
+T 53 01 00
 R 00 00 00 00
-T 45 01 00 21 02 00 34 C1 E1 E5 C5 36 04 C9
+T 53 01 00 21 02 00 34 C1 E1 E5 C5 36 04 C9
 R 00 00 00 00 00 04 01 00
-T 50 01 00
+T 5E 01 00
 R 00 00 00 00
-T 50 01 00 DD E5 DD 21 00 00 DD 39 DD 7E 06 C6 F8
+T 5E 01 00 DD E5 DD 21 00 00 DD 39 DD 7E 06 C6 F8
 R 00 00 00 00
-T 5D 01 00 DD 66 07 E5 33 F5 33 DD 66 05 DD 6E 04
+T 6B 01 00 DD 66 07 E5 33 F5 33 DD 66 05 DD 6E 04
 R 00 00 00 00
-T 6A 01 00 E5 CD 00 00 F1 F1 DD 4E 05 DD 46 07 C5
+T 78 01 00 E5 CD 00 00 F1 F1 DD 4E 05 DD 46 07 C5
 R 00 00 00 00 02 05 01 00
-T 77 01 00 C5 33 AF F5 33 DD 7E 05 F5 33 CD 00 00
-R 00 00 00 00 02 0E 0D 00
-T 84 01 00 F1 33 C1 C5 0E 08 C5 DD 7E 05 F5 33 CD
+T 85 01 00 C5 33 AF F5 33 DD 7E 05 F5 33 CD 00 00
+R 00 00 00 00 02 0E 0E 00
+T 92 01 00 F1 33 C1 C5 0E 08 C5 DD 7E 05 F5 33 CD
 R 00 00 00 00
-T 91 01 00 00 00 F1 33 C1 C5 0E C0 C5 DD 7E 05 F5
-R 00 00 00 00 02 03 0D 00
-T 9E 01 00 33 CD 00 00 F1 33 C1 C5 0E E0 C5 DD 7E
-R 00 00 00 00 02 05 0D 00
-T AB 01 00 05 F5 33 CD 00 00 F1 33 C1 79 87 87 87
-R 00 00 00 00 02 07 0D 00
-T B8 01 00 87 80 47 C5 C5 33 AF F5 33 DD 7E 05 F5
+T 9F 01 00 00 00 F1 33 C1 C5 0E C0 C5 DD 7E 05 F5
+R 00 00 00 00 02 03 0E 00
+T AC 01 00 33 CD 00 00 F1 33 C1 C5 0E E0 C5 DD 7E
+R 00 00 00 00 02 05 0E 00
+T B9 01 00 05 F5 33 CD 00 00 F1 33 C1 79 87 87 87
+R 00 00 00 00 02 07 0E 00
+T C6 01 00 87 80 47 C5 C5 33 AF F5 33 DD 7E 05 F5
 R 00 00 00 00
-T C5 01 00 33 CD 00 00 F1 33 C1 C5 0E 08 C5 DD 7E
-R 00 00 00 00 02 05 0D 00
-T D2 01 00 05 F5 33 CD 00 00 F1 33 C1 C5 0E C0 C5
-R 00 00 00 00 02 07 0D 00
-T DF 01 00 DD 7E 05 F5 33 CD 00 00 F1 33 C1 0E E0
-R 00 00 00 00 02 09 0D 00
-T EC 01 00 C5 DD 7E 05 F5 33 CD 00 00 F1 33 DD E1
-R 00 00 00 00 02 0A 0D 00
-T F9 01 00 C9
+T D3 01 00 33 CD 00 00 F1 33 C1 C5 0E 08 C5 DD 7E
+R 00 00 00 00 02 05 0E 00
+T E0 01 00 05 F5 33 CD 00 00 F1 33 C1 C5 0E C0 C5
+R 00 00 00 00 02 07 0E 00
+T ED 01 00 DD 7E 05 F5 33 CD 00 00 F1 33 C1 0E E0
+R 00 00 00 00 02 09 0E 00
+T FA 01 00 C5 DD 7E 05 F5 33 CD 00 00 F1 33 DD E1
+R 00 00 00 00 02 0A 0E 00
+T 07 02 00 C9
 R 00 00 00 00
 T 00 00 00
 R 00 00 07 00

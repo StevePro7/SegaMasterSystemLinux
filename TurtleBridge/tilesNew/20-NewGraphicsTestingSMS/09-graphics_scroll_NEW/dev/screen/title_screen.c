@@ -17,7 +17,7 @@
 #include "../banks/bank3.h"
 
 #define MAX_SPOTS	9
-#define FLIP_INDEX	6		// TODO delete
+#define MAX_FLIPS	7		// TODO delete
 
 static void draw_sprite( unsigned char idx, unsigned char mode, unsigned char x, unsigned char y );
 
@@ -33,6 +33,8 @@ static unsigned char delay;
 // TODO - do I want to manually update the X-values i.e. add 8px plus frame + 2..
 void screen_title_screen_load()
 {
+	unsigned char flips;
+
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_titles();
@@ -49,7 +51,18 @@ void screen_title_screen_load()
 
 	index = 0;
 	check = 0;
-	flip_ptr = flip_array_ptr[ index ];
+	flips = 0;
+	// TODO - store previous flip value;
+	//while( 1 )
+	{
+		flips = engine_random_manager_next( MAX_FLIPS );
+		//if( 6 == flips )
+		//{
+		//	break;
+		//}
+	}
+	
+	flip_ptr = flip_array_ptr[ flips ];
 	engine_riff_manager_init();
 	value = riff_indexs[ RIFF_START_TITLE ];
 	engine_delay_manager_load( NORMAL_DELAY );
