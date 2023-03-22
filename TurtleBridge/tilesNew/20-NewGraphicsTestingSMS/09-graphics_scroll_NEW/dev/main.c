@@ -71,8 +71,8 @@ static void start()
 	engine_tile_manager_init();
 
 	//open_screen_type = screen_type_splash;
-	//open_screen_type = screen_type_title;
-	open_screen_type = screen_type_begin;
+	open_screen_type = screen_type_title;
+	//open_screen_type = screen_type_begin;
 
 	engine_player_manager_init();
 	engine_screen_manager_init( open_screen_type );

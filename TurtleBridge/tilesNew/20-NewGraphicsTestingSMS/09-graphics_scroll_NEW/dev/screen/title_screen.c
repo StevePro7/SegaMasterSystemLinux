@@ -10,6 +10,7 @@
 #include "../engine/player_manager.h"
 #include "../engine/riff_manager.h"
 #include "../engine/sprite_manager.h"
+#include "../engine/timer_manager.h"
 #include "../engine/util_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
@@ -27,6 +28,7 @@ static const unsigned char *flip_ptr;
 static unsigned char index;
 static unsigned char value;
 static unsigned char check;
+static unsigned char delay;
 
 // TODO - do I want to manually update the X-values i.e. add 8px plus frame + 2..
 void screen_title_screen_load()
@@ -50,6 +52,7 @@ void screen_title_screen_load()
 	flip_ptr = flip_array_ptr[ index ];
 	engine_riff_manager_init();
 	value = riff_indexs[ RIFF_START_TITLE ];
+	engine_delay_manager_load( NORMAL_DELAY );
 }
 
 void screen_title_screen_update( unsigned char *screen_type )
@@ -59,14 +62,21 @@ void screen_title_screen_update( unsigned char *screen_type )
 
 	if( check )
 	{
-		engine_input_manager_update();
-		input = engine_input_manager_move( input_type_fire1 );
-		if( input )
+		delay = engine_delay_manager_update();
+		if( delay )
 		{
-			// TODO - put timer and move on
 			*screen_type = screen_type_begin;
 			return;
 		}
+
+		//engine_input_manager_update();
+		//input = engine_input_manager_move( input_type_fire1 );
+		//if( input )
+		//{
+		//	// TODO - put timer and move on
+		//	*screen_type = screen_type_begin;
+		//	return;
+		//}
 
 		x = flip_posX[ index ];
 		y = flip_posY[ index ];
@@ -89,11 +99,11 @@ void screen_title_screen_update( unsigned char *screen_type )
 
 	engine_input_manager_update();
 
-	input = engine_input_manager_move( input_type_fire2 );
+	input = engine_input_manager_move( input_type_fire1 );
 	if( input || index + 1 >= MAX_SPOTS )
 	{
 		check = 1;
-		//*screen_type = screen_type_func;
+		//*screen_type = screen_type_begin;
 		return;
 	}
 
