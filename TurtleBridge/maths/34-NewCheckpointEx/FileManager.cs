@@ -44,7 +44,7 @@ namespace ExtractCheckpoints
 
 		public void Process1()
 		{
-			var files = Directory.GetFiles(root1);
+			var files = Directory.GetFiles(root1, "level_05*");
 			//var file = files[0];
 			foreach (var file in files)
 			{
