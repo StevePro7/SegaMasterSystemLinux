@@ -40,8 +40,8 @@ void engine_game_manager_set_level_data( unsigned char game_world, unsigned char
 	go->game_point = game_point;
 
 	// TODO implement this once all levels set!
-	//go->game_level = game_world * MAX_ROUNDS + game_round;
-	go->game_level = engine_util_manager_calculate_level( game_world, game_round );
+	go->game_level = game_world * MAX_ROUNDS + game_round;
+	//go->game_level = engine_util_manager_calculate_level( game_world, game_round );		// TODO delete - do not invoke!
 }
 void engine_game_manager_set_game_saved( unsigned char game_saved )
 {
