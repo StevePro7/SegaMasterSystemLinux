@@ -51,13 +51,11 @@ void screen_ready_screen_load()
 	engine_graphics_manager_sea();
 
 	engine_level_manager_init( game_level );
-	//check_width = lo->level_check / SCREEN_WIDE;
 	numb_screen = lo->level_check >> 3;	// / 8 blocks per screen;
 	game_screen = lo->check_width * game_point;
 	engine_scroll_manager_load( game_screen, lo->level_check, lo->level_size );
 	engine_level_manager_draw_screen( game_screen );
 
-	//printTexts();
 	engine_graphics_manager_level_stats( game_world, game_round, game_point );
 	engine_graphics_manager_level_texts();
 	printStats();		// TODO remove
