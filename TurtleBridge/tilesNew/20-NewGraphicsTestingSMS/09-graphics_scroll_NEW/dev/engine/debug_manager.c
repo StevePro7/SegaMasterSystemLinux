@@ -21,9 +21,9 @@ void engine_debug_manager_initgame()
 
 	go->game_level = 1;
 
-	go->game_world = 5;	// TODO - currently not aligned with game_level but used for testing...
-	go->game_round = 3;
-	go->game_point = 2;
+	go->game_world = 2;	// TODO - currently not aligned with game_level but used for testing...
+	go->game_round = 1;
+	go->game_point = 1;
 	
 
 	go->game_world -= 1;

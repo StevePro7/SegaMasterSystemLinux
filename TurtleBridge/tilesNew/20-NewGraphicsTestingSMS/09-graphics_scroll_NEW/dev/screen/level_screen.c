@@ -231,7 +231,7 @@ void screen_level_screen_update( unsigned char *screen_type )
 			engine_player_manager_loadY( player_loadY );
 		}
 
-		printStats();
+//		printStats();
 	}
 
 	input = engine_input_manager_hold( input_type_fire1 );

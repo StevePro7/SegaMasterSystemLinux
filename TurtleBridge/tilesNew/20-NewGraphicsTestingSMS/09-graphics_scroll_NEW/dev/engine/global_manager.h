@@ -8,6 +8,11 @@
 #define MAX_WOLRDS			5
 #define MAX_ROUNDS			8
 #define MAX_LEVELS			40
+#define MAX_CHECKS			4
+
+// Player.
+#define MAX_DIFFICULTY		4
+#define MAX_LIVES			3
 
 // Sprites.
 #define SPRITE_TILES		256
@@ -27,10 +32,6 @@
 //#define MAX_JUMPS			1024	// TODO delete
 //#define WAVES_HIGH		21		// TODO delete
 
-
-#define MAX_CHECKS			4
-#define MAX_DIFFICULTY		4
-#define MAX_LIVES			3
 
 #define MAX_MUSIC			4
 #define MAX_TILE_OBJECTS	16
