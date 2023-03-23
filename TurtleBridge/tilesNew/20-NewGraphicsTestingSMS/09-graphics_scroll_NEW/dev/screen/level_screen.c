@@ -28,7 +28,7 @@ static unsigned char player_loadY;
 static unsigned char check;
 
 //static void printCursor();
-static void printStats();
+//static void printStats();
 //static void printTexts();
 static void updateCheck();
 
@@ -68,7 +68,7 @@ void screen_level_screen_load()
 	//printTexts();
 	engine_graphics_manager_level_stats(game_world, game_round, game_point);
 	engine_graphics_manager_level_texts();
-	printStats();
+	//printStats();
 
 	//engine_level_manager_init( go->game_level );
 	//engine_level_manager_draw_point( go->game_point );
@@ -279,38 +279,18 @@ static void updateCheck()
 	//engine_level_manager_draw_point( game_point );
 }
 
-static void printStats()
-{
-	//engine_font_manager_text( "[WORLD[[[[ROUND[[[[POINT[[/[[", 2, 5 );
-	unsigned char delta;
-
-	//delta = 0;
-	delta = 1;
-
-	//engine_font_manager_valu( ( game_world + delta ), 9, SHARE_TEXT_ROW );
-	////engine_font_manager_valu( ( game_round + delta ), 18, SHARE_TEXT_ROW );	// TODO using level instead of round for testing...
-	////engine_font_manager_valu( ( game_level /*+ delta*/ ), 18, SHARE_TEXT_ROW );
-	//
-	//engine_font_manager_valu( ( game_point + delta ), 27, SHARE_TEXT_ROW );		// TODO - revert
-	////engine_font_manager_data( ( game_point + delta ), 27, SHARE_TEXT_ROW );
-
-	// TODO delete - used for debugging / testing only - print level + screen
-	engine_font_manager_data( game_level + delta, 8, SHARE_TEXT_ROW + 5 );
-	engine_font_manager_data( numb_screen, 18, SHARE_TEXT_ROW + 5 );
-	engine_font_manager_data( game_screen + delta, 27, SHARE_TEXT_ROW + 5 );
-	// TODO delete - used for debugging / testing only - print level + screen
-
-	//engine_font_manager_char( '0', 26, SHARE_TEXT_ROW );
-	//engine_font_manager_char( '/', 28, SHARE_TEXT_ROW );
-	//engine_font_manager_char( '0', 29, SHARE_TEXT_ROW );
-	//engine_font_manager_char( '4', 30, SHARE_TEXT_ROW );
-
-	//engine_util_manager_locale_texts( 6, 3, SHARE_TEXT_ROW );
-	//engine_util_manager_locale_texts( 7, 12, SHARE_TEXT_ROW );
-	//engine_util_manager_locale_texts( 8, 21, SHARE_TEXT_ROW );
-
-	
-	//engine_font_manager_char( '>', 2, 4 );
-	//engine_font_manager_char( '>', 11, 4 );
-	//engine_font_manager_char( '>', 20, 4 );
-}
+//static void printStats()
+//{
+//	unsigned char delta;
+//	delta = 1;
+//
+//	// TODO delete - used for debugging / testing only - print level + screen
+//	engine_font_manager_text( "GAME LEVEL: ", 5, SHARE_TEXT_ROW + 5 );
+//	engine_font_manager_text( "NO.SCREENS: ", 5, SHARE_TEXT_ROW + 6 );
+//	engine_font_manager_text( "SCREEN NO.: ", 5, SHARE_TEXT_ROW + 7 );
+//
+//	engine_font_manager_data( game_level + delta, 20, SHARE_TEXT_ROW + 5 );
+//	engine_font_manager_data( numb_screen, 20, SHARE_TEXT_ROW + 6 );
+//	engine_font_manager_data( game_screen + delta, 20, SHARE_TEXT_ROW + 7 );
+//	// TODO delete - used for debugging / testing only - print level + screen
+//}

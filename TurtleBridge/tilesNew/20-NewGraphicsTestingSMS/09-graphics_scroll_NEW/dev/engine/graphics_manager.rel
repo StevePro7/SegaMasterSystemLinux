@@ -1,6 +1,6 @@
 ;!FILE graphics_manager.asm
 XL3
-H 9 areas 336 global symbols
+H 9 areas 32D global symbols
 M graphics_manager
 O -mz80
 S _engine_font_manager_text Ref000000
@@ -20,7 +20,7 @@ S _engine_asm_manager_clear_VRAM Ref000000
 S _engine_content_manager_bggame Ref000000
 S _devkit_SMS_setTile Ref000000
 S _engine_font_manager_valu Ref000000
-A _CODE size 46F flags 0 addr 0
+A _CODE size 462 flags 0 addr 0
 S _engine_graphics_manager_title Def000201
 S A$graphics_manager$94 Def00000C
 S G$engine_graphics_manager_level_texts$0$0 Def000402
@@ -43,7 +43,7 @@ S XG$engine_graphics_manager_title$0$0 Def00021A
 S C$graphics_manager.c$29$1_0$99 Def00001E
 S _engine_graphics_manager_level_texts Def000402
 S XG$engine_graphics_manager_level_stats$0$0 Def000401
-S Fgraphics_manager$__str_0$0_0$0 Def00046B
+S Fgraphics_manager$__str_0$0_0$0 Def00045E
 S G$engine_graphics_manager_screen$0$0 Def000021
 S G$engine_graphics_manager_image$0$0 Def00021B
 S A$graphics_manager$1100 Def00042C
@@ -51,14 +51,15 @@ S A$graphics_manager$1010 Def0003D0
 S A$graphics_manager$1110 Def000436
 S A$graphics_manager$1101 Def00042D
 S A$graphics_manager$1011 Def0003D2
+S C$graphics_manager.c$201$1_0$131 Def0003CB
 S _engine_graphics_manager_sea Def00030F
 S A$graphics_manager$1111 Def000439
 S A$graphics_manager$1102 Def00042F
 S A$graphics_manager$1030 Def0003ED
 S A$graphics_manager$1021 Def0003DD
 S A$graphics_manager$1012 Def0003D3
-S C$graphics_manager.c$210$1_0$132 Def000402
-S C$graphics_manager.c$202$1_0$131 Def0003CB
+S C$graphics_manager.c$210$1_0$132 Def00041C
+S C$graphics_manager.c$202$1_0$131 Def0003DD
 S A$graphics_manager$1121 Def000443
 S A$graphics_manager$1112 Def00043A
 S A$graphics_manager$1103 Def000430
@@ -66,9 +67,8 @@ S A$graphics_manager$1040 Def0003F7
 S A$graphics_manager$1031 Def0003EE
 S A$graphics_manager$1022 Def0003E0
 S A$graphics_manager$1013 Def0003D6
-S XG$engine_graphics_manager_level_texts$0$0 Def00046A
-S C$graphics_manager.c$211$1_0$132 Def00040F
-S C$graphics_manager.c$203$1_0$131 Def0003DD
+S XG$engine_graphics_manager_level_texts$0$0 Def00045D
+S C$graphics_manager.c$203$1_0$131 Def0003EF
 S C$graphics_manager.c$103$2_0$113 Def000286
 S A$graphics_manager$1122 Def000446
 S A$graphics_manager$1113 Def00043C
@@ -76,7 +76,8 @@ S A$graphics_manager$1104 Def000431
 S A$graphics_manager$1041 Def0003FA
 S A$graphics_manager$1023 Def0003E1
 S A$graphics_manager$1014 Def0003D7
-S C$graphics_manager.c$212$1_0$132 Def00041C
+S C$graphics_manager.c$212$1_0$132 Def000429
+S C$graphics_manager.c$204$1_0$131 Def000401
 S A$graphics_manager$1132 Def000450
 S A$graphics_manager$1123 Def000447
 S A$graphics_manager$1114 Def00043D
@@ -84,7 +85,7 @@ S A$graphics_manager$1105 Def000434
 S A$graphics_manager$1042 Def0003FB
 S A$graphics_manager$1024 Def0003E2
 S A$graphics_manager$1015 Def0003D8
-S C$graphics_manager.c$205$1_0$131 Def0003EF
+S C$graphics_manager.c$213$1_0$132 Def000436
 S C$graphics_manager.c$120$5_0$122 Def0002DB
 S G$engine_graphics_manager_common$0$0 Def000000
 S A$graphics_manager$1133 Def000453
@@ -96,11 +97,9 @@ S A$graphics_manager$1043 Def0003FC
 S A$graphics_manager$1025 Def0003E4
 S A$graphics_manager$1016 Def0003DB
 S A$graphics_manager$1007 Def0003CB
-S C$graphics_manager.c$214$1_0$132 Def000429
-S C$graphics_manager.c$206$1_0$131 Def000401
+S C$graphics_manager.c$214$1_0$132 Def000443
 S C$graphics_manager.c$121$5_0$122 Def0002E2
 S G$engine_graphics_manager_clouds$0$0 Def000043
-S A$graphics_manager$1143 Def00045D
 S A$graphics_manager$1134 Def000454
 S A$graphics_manager$1125 Def00044A
 S A$graphics_manager$1116 Def000441
@@ -112,10 +111,10 @@ S A$graphics_manager$1035 Def0003EF
 S A$graphics_manager$1026 Def0003E5
 S A$graphics_manager$1017 Def0003DC
 S A$graphics_manager$1008 Def0003CE
-S C$graphics_manager.c$215$1_0$132 Def000436
+S C$graphics_manager.c$215$1_0$132 Def000450
+S C$graphics_manager.c$206$1_0$132 Def000402
 S C$graphics_manager.c$122$5_0$122 Def0002EE
-S A$graphics_manager$1144 Def000460
-S A$graphics_manager$1135 Def000456
+S A$graphics_manager$1135 Def000457
 S A$graphics_manager$1126 Def00044B
 S A$graphics_manager$1117 Def000442
 S A$graphics_manager$1090 Def000420
@@ -125,52 +124,44 @@ S A$graphics_manager$1045 Def000400
 S A$graphics_manager$1036 Def0003F2
 S A$graphics_manager$1027 Def0003E8
 S A$graphics_manager$1009 Def0003CF
-S C$graphics_manager.c$216$1_0$132 Def000443
+S C$graphics_manager.c$216$1_0$132 Def00045D
 S C$graphics_manager.c$116$4_0$121 Def000304
 S C$graphics_manager.c$113$1_0$118 Def000292
 S _engine_graphics_manager_screen Def000021
-S A$graphics_manager$1145 Def000461
-S A$graphics_manager$1136 Def000457
+S A$graphics_manager$1136 Def000458
 S A$graphics_manager$1127 Def00044E
 S A$graphics_manager$1091 Def000422
 S A$graphics_manager$1082 Def000417
 S A$graphics_manager$1073 Def00040E
 S A$graphics_manager$1037 Def0003F3
 S A$graphics_manager$1028 Def0003E9
-S C$graphics_manager.c$217$1_0$132 Def000450
 S C$graphics_manager.c$208$1_0$132 Def000402
 S C$graphics_manager.c$152$2_0$124 Def00030F
 S G$engine_graphics_manager_image_flip$0$0 Def000287
-S A$graphics_manager$1146 Def000464
-S A$graphics_manager$1137 Def000458
+S A$graphics_manager$1146 Def00045D
+S A$graphics_manager$1137 Def00045B
 S A$graphics_manager$1128 Def00044F
 S A$graphics_manager$1092 Def000423
 S A$graphics_manager$1083 Def00041A
 S A$graphics_manager$1038 Def0003F4
 S A$graphics_manager$1029 Def0003EA
-S C$graphics_manager.c$218$1_0$132 Def00045D
+S C$graphics_manager.c$209$1_0$132 Def00040F
 S C$graphics_manager.c$180$2_0$124 Def000370
 S C$graphics_manager.c$116$5_0$122 Def00029E
 S C$graphics_manager.c$114$2_0$118 Def000296
 S C$graphics_manager.c$105$2_0$118 Def000287
-S A$graphics_manager$1147 Def000465
-S A$graphics_manager$1138 Def00045B
+S A$graphics_manager$1138 Def00045C
 S A$graphics_manager$1093 Def000424
 S A$graphics_manager$1084 Def00041B
 S A$graphics_manager$1066 Def000402
 S A$graphics_manager$1039 Def0003F6
-S C$graphics_manager.c$219$1_0$132 Def00046A
 S C$graphics_manager.c$114$2_0$119 Def000307
 S _engine_graphics_manager_image Def00021B
-S A$graphics_manager$1157 Def00046A
-S A$graphics_manager$1148 Def000468
-S A$graphics_manager$1139 Def00045C
 S A$graphics_manager$1094 Def000427
 S A$graphics_manager$1067 Def000405
 S C$graphics_manager.c$173$2_0$124 Def0003C0
 S C$graphics_manager.c$155$2_0$124 Def00031C
 S C$graphics_manager.c$118$5_0$122 Def0002BD
-S A$graphics_manager$1149 Def000469
 S A$graphics_manager$1095 Def000428
 S A$graphics_manager$1077 Def00040F
 S A$graphics_manager$1068 Def000406
@@ -1104,13 +1095,11 @@ T 36 04 00 11 11 03 D5 3E 30 F5 33 CD 00 00 F1 33
 R 00 00 00 00 02 0C 09 00
 T 43 04 00 11 1A 03 D5 3E 30 F5 33 CD 00 00 F1 33
 R 00 00 00 00 02 0C 09 00
-T 50 04 00 11 1A 04 D5 3E 30 F5 33 CD 00 00 F1 33
-R 00 00 00 00 02 0C 09 00
-T 5D 04 00 11 1C 03 D5 21 6B 04 E5 CD 00 00 F1 F1
+T 50 04 00 11 1C 03 D5 21 5E 04 E5 CD 00 00 F1 F1
 R 00 00 00 00 00 08 00 00 02 0C 00 00
-T 6A 04 00 C9
+T 5D 04 00 C9
 R 00 00 00 00
-T 6B 04 00
+T 5E 04 00
 R 00 00 00 00
-T 6B 04 00 2F 30 34 00
+T 5E 04 00 2F 30 34 00
 R 00 00 00 00

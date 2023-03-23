@@ -22,14 +22,15 @@ void engine_debug_manager_initgame()
 	go->game_level = 1;
 
 	go->game_world = 5;	// TODO - currently not aligned with game_level but used for testing...
-	go->game_point = 1;
+	go->game_round = 3;
+	go->game_point = 2;
 	
 
 	go->game_world -= 1;
+	go->game_round -= 1;
 	go->game_point -= 1;
 	go->game_level -= 1;
 
-	go->game_round = 0;
 	// 9 = turtles
 	// 3 = long512
 	//go->game_level = 0;

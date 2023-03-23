@@ -17,6 +17,7 @@ S:G$music_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$sound_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$riff_sample_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$level_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$extra_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$engine_hack_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_hack_manager_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_sample_manager_init$0_0$0({2}DF,SV:S),C,0,0

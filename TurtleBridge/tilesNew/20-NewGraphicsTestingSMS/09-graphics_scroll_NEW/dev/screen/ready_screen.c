@@ -47,7 +47,7 @@ void screen_ready_screen_load()
 	devkit_SMS_displayOff();
 	engine_graphics_manager_screen( CLEAR_TILE_BLUE );
 	engine_graphics_manager_title();
-	engine_graphics_manager_clouds( go->game_cloud );
+	//engine_graphics_manager_clouds( go->game_cloud );
 	engine_graphics_manager_sea();
 
 	engine_level_manager_init( game_level );
@@ -82,12 +82,13 @@ void screen_ready_screen_load()
 	check = 0;
 
 	// TODO do not include
-	engine_font_manager_text( "READY-LEVEL", 10, 2 );
+	engine_font_manager_text( "READY-LEVEL", 10, 5 );
 	// TODO do not include
 }
 
 void screen_ready_screen_update( unsigned char *screen_type )
 {
+	engine_player_manager_draw();
 	*screen_type = screen_type_ready;
 }
 
@@ -104,12 +105,15 @@ static void updateCheck()
 static void printStats()
 {
 	unsigned char delta;
-	//delta = 0;
 	delta = 1;
 
 	// TODO delete - used for debugging / testing only - print level + screen
-	engine_font_manager_data( game_level + delta, 8, SHARE_TEXT_ROW + 5 );
-	engine_font_manager_data( numb_screen, 18, SHARE_TEXT_ROW + 5 );
-	engine_font_manager_data( game_screen + delta, 27, SHARE_TEXT_ROW + 5 );
+	engine_font_manager_text( "GAME-LEVEL: ", 5, SHARE_TEXT_ROW + 3 );
+	engine_font_manager_text( "NO.SCREENS: ", 5, SHARE_TEXT_ROW + 4 );
+	engine_font_manager_text( "SCREEN-NO.: ", 5, SHARE_TEXT_ROW + 5 );
+
+	engine_font_manager_data( game_level + delta, 20, SHARE_TEXT_ROW + 3 );
+	engine_font_manager_data( numb_screen, 20, SHARE_TEXT_ROW + 4 );
+	engine_font_manager_data( game_screen + delta, 20, SHARE_TEXT_ROW + 5 );
 	// TODO delete - used for debugging / testing only - print level + screen
 }
