@@ -36,11 +36,13 @@ void screen_level_screen_load()
 
 	game_world = go->game_world;
 	game_round = go->game_round;
-	game_level = go->game_level;
 	game_point = go->game_point;
+	engine_game_manager_set_level_data( game_world, game_round, game_point );
+
+	game_level = go->game_level;
 	game_screen = 0;
 	numb_screen = 0;
-	cursorIdx = 2;
+	cursorIdx = 0;
 
 	devkit_SMS_displayOff();
 	engine_graphics_manager_screen( CLEAR_TILE_BLUE );
@@ -126,14 +128,15 @@ void screen_level_screen_update( unsigned char *screen_type )
 			if( game_world > 0 )
 			{
 				game_world--;
+				game_point = 0;
+				game_screen = lo->check_width * game_point;
 			}
 		}
 		else if( 1 == cursorIdx )
 		{
-			if( game_level > 0 )
+			if( game_round > 0 )
 			{
-				//game_world--;
-				game_level--;
+				game_round--;
 				game_point = 0;
 				game_screen = lo->check_width * game_point;
 			}
@@ -161,17 +164,15 @@ void screen_level_screen_update( unsigned char *screen_type )
 			if( game_world < ( MAX_WOLRDS - 1 ) )
 			{
 				game_world++;
-				//game_level++;
 				game_point = 0;
 				game_screen = lo->check_width * game_point;
 			}
 		}
 		else if( 1 == cursorIdx )
 		{
-			if( game_level < MAX_LEVELS )
+			if( game_round < ( MAX_ROUNDS - 1 ) )
 			{
-				//game_world++;
-				game_level++;
+				game_round++;
 				game_point = 0;
 				game_screen = lo->check_width * game_point;
 			}
@@ -188,16 +189,13 @@ void screen_level_screen_update( unsigned char *screen_type )
 
 	if( updateLevel )
 	{
-		//if( game_level > 0 || game_point > 0 )
-		//{
-			updateCheck();
+		updateCheck();
 
-			engine_player_manager_loadX( game_point );
-			player_loadY = level_platforms[ po->lookX ];
-			engine_player_manager_loadY( player_loadY );
+		engine_player_manager_loadX( game_point );
+		player_loadY = level_platforms[ po->lookX ];
+		engine_player_manager_loadY( player_loadY );
 
-			engine_graphics_manager_level_stats( game_world, game_round, game_point );
-		//}
+		engine_graphics_manager_level_stats( game_world, game_round, game_point );
 	}
 
 	input = engine_input_manager_hold( input_type_fire1 );
@@ -237,6 +235,7 @@ void screen_level_screen_update( unsigned char *screen_type )
 static void updateCheck()
 {
 	struct_level_object *lo = &global_level_object;
+	engine_game_manager_set_level_data( game_world, game_round, game_point );
 	engine_level_manager_init( game_level );
 	numb_screen = lo->level_check >> 3;	// / 8 blocks per screen;
 	engine_level_manager_draw_screen( game_screen );

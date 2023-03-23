@@ -187,7 +187,7 @@ void screen_ready_screen_update( unsigned char *screen_type )
 		}
 		else if( 1 == cursorIdx )
 		{
-			if( game_level < MAX_LEVELS )
+			if( game_level < ( MAX_LEVELS - 1 ) )
 			{
 				game_round++;
 				game_level++;
