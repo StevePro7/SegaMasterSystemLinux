@@ -320,8 +320,12 @@ namespace ScreenShotTest
 			data.Add(msg);
 
 			var contents = data.ToArray();
-			string csvName = banktext.Replace("level_", "tiles_");
-			string newName = path + "/" + csvName + "_OUT.csv";
+			//string csvName = banktext.Replace("level_", "tiles_");
+			//string newName = path + "/" + csvName + "_OUT.csv";
+			//File.WriteAllLines(newName, contents);
+
+			string csvName = banktext;
+			string newName = path + "/" + csvName + ".csv";
 			File.WriteAllLines(newName, contents);
 		}
 
@@ -482,7 +486,7 @@ namespace ScreenShotTest
 			// Make local copy of the CSV file used to render screen.
 			//string csvName = banktext;// banktext.Replace("level_", "tiles_");
 			string csvName = banktext.Replace("level_", "tiles_");
-			File.Copy("MyTiles.csv", path + "/" + csvName + ".csv");	// TODO revert comment
+		//	File.Copy("MyTiles.csv", path + "/" + csvName + ".csv");	// TODO revert comment
 			//File.Copy("MyTiles.csv", path + "/../../MyTiles.csv");
 		}
 
