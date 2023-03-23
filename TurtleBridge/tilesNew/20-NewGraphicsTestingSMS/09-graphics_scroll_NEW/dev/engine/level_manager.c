@@ -21,9 +21,20 @@ void engine_level_manager_init( unsigned char level )
 	lo->column_draw = SCREEN_LESS_ONE;
 
 	devkit_SMS_mapROMBank( FIXED_BANK );
-	lo->level_data = ( unsigned char* ) level_object_data[ level ];
-	lo->level_size = level_object_size[ level ];
-	lo->level_bank = level_object_bank[ level ];
+	
+	// TODO delete
+	if( level >= 40 )
+	{
+		lo->level_data = ( unsigned char* ) extra_object_data[ level - 40 ];
+		lo->level_size = extra_object_size[ level - 40 ];
+		lo->level_bank = extra_object_bank[ level - 40 ];
+	}// TODO delete
+	else
+	{
+		lo->level_data = ( unsigned char* ) level_object_data[ level ];
+		lo->level_size = level_object_size[ level ];
+		lo->level_bank = level_object_bank[ level ];
+	}
 	//lo->level_check = lo->level_size / MAX_CHECKS;
 	lo->level_check = lo->level_size >> 2;			// equivalent to divide by MAX_CHECKS [4].
 	lo->check_width = lo->level_check >> 5;			// equivalent to divide by SCREEN_WIDE 32.

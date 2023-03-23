@@ -41,3 +41,9 @@ extern const unsigned char level_object_bank[];
 // TODO re-instate in fixed bank
 // Player Manager.
 extern const unsigned char player_object_starts[];
+
+
+// todo delete
+extern const unsigned char *extra_object_data[];
+extern const unsigned int extra_object_size[];
+extern const unsigned char extra_object_bank[];
