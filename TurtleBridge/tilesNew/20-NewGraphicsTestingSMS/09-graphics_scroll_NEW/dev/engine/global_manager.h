@@ -1,7 +1,13 @@
 #ifndef _GLOBAL_MANAGER_H_
 #define _GLOBAL_MANAGER_H_
 
+// Screens
 #define MAX_SCREEENS		24
+
+// Levels.
+#define MAX_WOLRDS			5
+#define MAX_ROUNDS			8
+#define MAX_LEVELS			40
 
 // Sprites.
 #define SPRITE_TILES		256
@@ -21,8 +27,7 @@
 //#define MAX_JUMPS			1024	// TODO delete
 //#define WAVES_HIGH		21		// TODO delete
 
-#define MAX_WOLRDS			5
-#define MAX_ROUNDS			8
+
 #define MAX_CHECKS			4
 #define MAX_DIFFICULTY		4
 #define MAX_LIVES			3

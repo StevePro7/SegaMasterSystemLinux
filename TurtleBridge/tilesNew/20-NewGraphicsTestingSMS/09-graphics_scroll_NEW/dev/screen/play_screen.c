@@ -247,7 +247,7 @@ static void play_checkpoint_riff()
 	devkit_PSGStop();
 
 	// TODO wrap this in a hack var
-	engine_graphics_manager_level_stats( go->game_world, go->game_point );
+	engine_graphics_manager_level_stats( go->game_world, go->game_round, go->game_point );
 	engine_graphics_manager_level_texts();
 	// TODO wrap this in a hack var
 

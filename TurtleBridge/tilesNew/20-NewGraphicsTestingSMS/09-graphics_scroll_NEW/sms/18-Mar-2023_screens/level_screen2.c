@@ -66,7 +66,7 @@ void screen_level_screen_load()
 	////engine_level_manager_draw_point( game_point );
 
 	//printTexts();
-	engine_graphics_manager_level_stats(game_world, game_round, game_point);
+	engine_graphics_manager_level_stats(game_world, /*game_round,*/ game_point);
 	engine_graphics_manager_level_texts();
 	printStats();
 
@@ -314,3 +314,18 @@ static void printStats()
 	//engine_font_manager_char( '>', 11, 4 );
 	//engine_font_manager_char( '>', 20, 4 );
 }
+
+//static void printTexts()
+//{
+//	//engine_font_manager_text( "[WORLD[[[[ROUND[[[[POINT[[/[[", 2, 5 );
+//
+//	// Print hard coded texts.
+//	engine_util_manager_locale_texts( 6, 3, SHARE_TEXT_ROW );
+//	engine_util_manager_locale_texts( 7, 12, SHARE_TEXT_ROW );
+//	engine_util_manager_locale_texts( 8, 21, SHARE_TEXT_ROW );
+//
+//	engine_font_manager_char( '0', 8, SHARE_TEXT_ROW );
+//	engine_font_manager_char( '0', 17, SHARE_TEXT_ROW );
+//	engine_font_manager_char( '0', 26, SHARE_TEXT_ROW );		// TODO - revert
+//	engine_font_manager_text( "/04", 28, SHARE_TEXT_ROW );
+//}

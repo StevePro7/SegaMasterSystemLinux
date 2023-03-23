@@ -53,7 +53,7 @@ void screen_load_screen_load()
 
 	if( go->game_start )
 	{
-		engine_graphics_manager_level_stats( go->game_world, go->game_point );
+		engine_graphics_manager_level_stats( go->game_world, go->game_round, go->game_point );
 		engine_graphics_manager_level_texts();
 	}
 	devkit_SMS_displayOn();

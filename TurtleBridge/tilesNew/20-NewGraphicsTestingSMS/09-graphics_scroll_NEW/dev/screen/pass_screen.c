@@ -62,7 +62,7 @@ void screen_pass_screen_load()
 	game_point = go->game_point;
 	game_level = go->game_level;
 	engine_graphics_manager_level_texts();
-	engine_graphics_manager_level_stats( game_world, game_point );
+	engine_graphics_manager_level_stats( game_world, game_round, game_point );
 
 	// TODO - pause and goto interim screen to increment level until beat_screen...
 	game_round++;

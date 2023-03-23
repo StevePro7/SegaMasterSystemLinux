@@ -69,7 +69,8 @@ S:Lgraphics_manager.engine_graphics_manager_sea$sloc0$0_1$0({1}SC:U),B,1,-2
 S:Lgraphics_manager.engine_graphics_manager_sea$sloc1$0_1$0({1}SC:U),B,1,-1
 F:G$engine_graphics_manager_level_stats$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lgraphics_manager.engine_graphics_manager_level_stats$game_world$1_0$130({1}SC:U),B,1,4
-S:Lgraphics_manager.engine_graphics_manager_level_stats$game_point$1_0$130({1}SC:U),B,1,5
+S:Lgraphics_manager.engine_graphics_manager_level_stats$game_round$1_0$130({1}SC:U),B,1,5
+S:Lgraphics_manager.engine_graphics_manager_level_stats$game_point$1_0$130({1}SC:U),B,1,6
 S:Lgraphics_manager.engine_graphics_manager_level_stats$delta$1_0$131({1}SC:U),R,0,0,[]
 F:G$engine_graphics_manager_level_texts$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:G$song_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
