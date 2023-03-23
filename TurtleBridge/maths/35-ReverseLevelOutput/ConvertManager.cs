@@ -7,6 +7,11 @@ namespace ExtractCheckpoints
 		public static string ConvertOt(string input)
 		{
 			string output = String.Empty;
+			if (input.StartsWith("//") || 0 == input.Trim().Length)
+			{
+				return input;
+			}
+
 			var temp = input.Split(new char[] { ',' });
 			if (temp.Length != 2)
 			{
@@ -32,6 +37,11 @@ namespace ExtractCheckpoints
 		public static string ConvertIn(string input)
 		{
 			string output = String.Empty;
+			if (input.StartsWith("//") || 0 == input.Trim().Length)
+			{
+				return input;
+			}
+
 			var temp = input.Split(new char[] { ',' });
 			if (temp.Length != 2)
 			{
