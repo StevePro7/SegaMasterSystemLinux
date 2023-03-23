@@ -44,7 +44,7 @@ void screen_level_screen_load()
 	//game_level = 1;
 	game_screen = 0;
 	numb_screen = 0;
-	cursorIdx = 0;
+	cursorIdx = 1;
 
 	devkit_SMS_displayOff();
 	engine_graphics_manager_screen( CLEAR_TILE_BLUE );
@@ -60,7 +60,7 @@ void screen_level_screen_load()
 
 	engine_graphics_manager_level_stats( game_world, game_round, game_point );
 	engine_graphics_manager_level_texts();
-	//printStats2();
+	printStats2();
 
 	engine_font_manager_char( '>', cursorX[ cursorIdx ], SHARE_TEXT_ROW );
 	engine_player_manager_initX( go->game_difficulty, go->game_world );
@@ -199,6 +199,7 @@ void screen_level_screen_update( unsigned char *screen_type )
 		engine_player_manager_loadY( player_loadY );
 
 		engine_graphics_manager_level_stats( game_world, game_round, game_point );
+		printStats2();
 	}
 
 	input = engine_input_manager_hold( input_type_fire1 );
@@ -238,7 +239,10 @@ void screen_level_screen_update( unsigned char *screen_type )
 static void updateCheck()
 {
 	struct_level_object *lo = &global_level_object;
+	struct_game_object *go = &global_game_object;
 	engine_game_manager_set_level_data( game_world, game_round, game_point );
+
+	game_level = go->game_level;
 	engine_level_manager_init( game_level );
 	numb_screen = lo->level_check >> 3;	// / 8 blocks per screen;
 	engine_level_manager_draw_screen( game_screen );
