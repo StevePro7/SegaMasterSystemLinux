@@ -60,7 +60,7 @@ void screen_level_screen_load()
 
 	engine_graphics_manager_level_stats( game_world, game_round, game_point );
 	engine_graphics_manager_level_texts();
-	printStats2();
+	//printStats2();
 
 	engine_font_manager_char( '>', cursorX[ cursorIdx ], SHARE_TEXT_ROW );
 	engine_player_manager_initX( go->game_difficulty, go->game_world );
