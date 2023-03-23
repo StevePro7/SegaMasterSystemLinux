@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ExtractCheckpoints
 {
 	public class ConvertManager
 	{
-		public string  Convert(string input)
+		public static string ConvertOt(string input)
 		{
 			string output = String.Empty;
 			var temp = input.Split(new char[] { ',' });
@@ -19,17 +15,50 @@ namespace ExtractCheckpoints
 
 			var left = temp[0];
 			var rght = temp[1];
+			output = left;
+			if ("BridgeLeft" == left)
+			{
+				output = "BridgeRght";
+			}
+			if ("IslandLeft" == left)
+			{
+				output = "IslandRght";
+			}
 
+			output += "," + rght;
+			return output;
+		}
+
+		public static string ConvertIn(string input)
+		{
+			string output = String.Empty;
+			var temp = input.Split(new char[] { ',' });
+			if (temp.Length != 2)
+			{
+				throw new Exception("input malformed " + input);
+			}
+
+			var left = temp[0];
+			var rght = temp[1];
+			output = left;
 			if ("WB" == left)
 			{
 				output = "WavesBlock";
 			}
 
+			if ("BL" == left)
+			{
+				output = "BridgeLeft";
+			}
 			if ("BM" == left)
 			{
 				output = "BridgeMidd";
 			}
 
+			if ("IL" == left)
+			{
+				output = "IslandLeft";
+			}
 			if ("IM" == left)
 			{
 				output = "IslandMidd";
@@ -74,5 +103,3 @@ namespace ExtractCheckpoints
 		}
 	}
 }
-
-
