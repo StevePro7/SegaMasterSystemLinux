@@ -8,6 +8,7 @@
 #include "../engine/game_manager.h"
 #include "../engine/hack_manager.h"
 #include "../engine/global_manager.h"
+#include "../engine/graphics_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/level_manager.h"
 #include "../engine/player_manager.h"
@@ -236,6 +237,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 
 static void play_checkpoint_riff()
 {
+	struct_game_object *go = &global_game_object;
 	unsigned char index, maxim;
 
 	maxim = 9;
@@ -243,6 +245,18 @@ static void play_checkpoint_riff()
 	index = 0;
 
 	devkit_PSGStop();
+
+	// TODO wrap this in a hack var
+	engine_graphics_manager_level_stats( go->game_world, go->game_point );
+	engine_graphics_manager_level_texts();
+	// TODO wrap this in a hack var
+
 	engine_riff_manager_loop( index );
+
+	// TODO wrap this in a hack var
+	// Clear out the game level statistics.
+	engine_util_manager_locale_blank( 3, 0, 3 );
+	// TODO wrap this in a hack var
+
 	engine_music_manager_resume();
 }
