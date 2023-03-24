@@ -64,5 +64,24 @@ namespace ScreenShotTest
 			fileManager.Save(levelManager.Tiles, dirFileName + "/", dirFileText, theFilename);
 			boardManager.SaveScreen(spriteBatch, dirFileName + "/" + tmpFileName);
 		}
+
+		// WIP
+		//public void LoadContent(SpriteBatch spriteBatch)
+		//{
+		//	var world = configManager.NumWorld.ToString().PadLeft(2, '0');
+		//	var round = configManager.NumRound.ToString().PadLeft(2, '0');
+		//	var level = String.Format("level_{0}{1}", world, round);
+
+		//	var check = configManager.CheckPoint.ToString().PadLeft(2, '0');
+		//	var point = level + "_" + check;
+		//	var path = String.Format("{0}{1}/{1}{2}/")
+		//	var files = Directory.GetFiles(path);
+		//	//var inpFileName = "level_0403_AA-dropsd01_BB-bridge02_CC-mixerd02_DD-mixerd02.csv"; 
+		//	foreach (var file in files)
+		//	{
+		//		var inpFileName = file.Replace(path, String.Empty);
+		//		Process(spriteBatch, path, inpFileName);
+		//	}
+		//}
 	}
 }
