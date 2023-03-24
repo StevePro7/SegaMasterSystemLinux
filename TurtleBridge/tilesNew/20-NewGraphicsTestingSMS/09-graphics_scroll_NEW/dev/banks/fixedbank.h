@@ -6,6 +6,10 @@ extern const unsigned char *steven_text[];
 extern const unsigned char steven_data[];
 
 
+// Command Manager.
+extern unsigned int beat_command_frame_index[];
+extern unsigned char beat_command_this_command[];
+
 // FIXED bank.
 // Audio Manager.
 extern const unsigned char *music_object_data[];

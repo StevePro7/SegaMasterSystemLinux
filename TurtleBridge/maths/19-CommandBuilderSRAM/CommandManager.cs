@@ -7,7 +7,7 @@ namespace CommandBuilderSRAM
 {
 	public class CommandManager
 	{
-		const int MaxCommands = 32;
+		const int MaxCommands = 64;
 
 		public CommandManager()
 		{
@@ -81,7 +81,7 @@ namespace CommandBuilderSRAM
 			LinesX.Add("};");
 			LinesX.Add("");
 
-			LinesX.Add("unsigned int command_this_command[] =");
+			LinesX.Add("unsigned char command_this_command[] =");
 			LinesX.Add("{");
 			for (int index = 0; index < Lines1.Count; index++)
 			{
