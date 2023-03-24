@@ -1,4 +1,5 @@
 #include "demo_screen.h"
+#include "../engine/command_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/global_manager.h"
@@ -6,13 +7,15 @@
 #include "../engine/input_manager.h"
 #include "../engine/tile_manager.h"
 #include "../devkit/_sms_manager.h"
-#include "../banks/bank2.h"
+#include "../banks/fixedbank.h"
 
 static unsigned int tmp;
 //static void draw_tiles( unsigned int tmp );
 
 void screen_demo_screen_load()
 {
+	struct_command_object *co = &global_command_object;
+	unsigned char idx;
 	// Draw individual turtle
 	tmp = TILE_TURTLE_FLIP;
 	devkit_SMS_displayOff();
@@ -22,7 +25,15 @@ void screen_demo_screen_load()
 	engine_font_manager_text( "DEMO SCREEN!!", 10, 0 );
 	//draw_tiles( tmp );
 
+	
 	devkit_SMS_displayOn();
+
+	idx = 1;
+	engine_command_manager_init();
+	devkit_SMS_mapROMBank( FIXED_BANK );
+	engine_command_manager_load( beat_command_frame_index, beat_command_this_command );
+	engine_font_manager_data( command_frame_index[ idx ], 10, 2 );
+	engine_font_manager_data( command_this_command[ idx ], 10, 3 );
 }
 
 void screen_demo_screen_update( unsigned char *screen_type )

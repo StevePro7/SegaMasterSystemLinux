@@ -1,4 +1,6 @@
 M:fixedbank
+S:G$beat_command_frame_index$0_0$0({128}DA64d,SI:U),E,0,0
+S:G$beat_command_this_command$0_0$0({64}DA64d,SC:U),E,0,0
 S:G$steven_text$0_0$0({6}DA3d,DG,SC:U),E,0,0
 S:G$music_object_data$0_0$0({14}DA7d,DG,SC:U),E,0,0
 S:G$sound_object_data$0_0$0({10}DA5d,DG,SC:U),E,0,0
