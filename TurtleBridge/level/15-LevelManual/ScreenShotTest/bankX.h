@@ -1,3 +1,3 @@
-extern const unsigned char level_0005_txt[];
-#define				level_0005_txt_size 32
-#define				level_0005_txt_bank 12
+extern const unsigned char level_0003_txt[];
+#define				level_0003_txt_size 32
+#define				level_0003_txt_bank 12
