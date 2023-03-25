@@ -164,153 +164,151 @@ void screen_demo_screen_update( unsigned char *screen_type )
 	// TODO - exhaust frames and repeat...
 	if( !complete )
 	{
-		input1 = engine_input_manager_hold( input_type_left );
-		input2 = engine_input_manager_move( input_type_right );
-		input1 = 1;		// TODO delete
-		if( input1 || input2 )
+		//input1 = engine_input_manager_hold( input_type_left );
+		//input2 = engine_input_manager_move( input_type_right );
+		//input1 = 1;		// TODO delete
+		//if( input1 || input2 )
+		//{
+		if( command_frame_index[ frame_counter ] == fo->frame_count )
 		{
-			if( command_frame_index[ frame_counter ] == fo->frame_count )
-			{
-				command = command_this_command[ frame_counter ];
+			command = command_this_command[ frame_counter ];
 
-				//engine_font_manager_data( frame_counter, 30, 03 );
-				//engine_font_manager_data( command, 30, 04 );
+			//engine_font_manager_data( frame_counter, 30, 03 );
+			//engine_font_manager_data( command, 30, 04 );
 
-				local_prev_command = command;
-				frame_counter++;
-			}
-			else
-			{
-				//command = co->prev_command;
-				command = local_prev_command;
-			}
-
-			engine_frame_manager_update();
-			//engine_frame_manager_draw();
-		}
-
-		if( COMMAND_NONE_MASK != command )
-		{
-			// Get horizontal movement.
-			deltaX = engine_player_manager_get_deltaX( po->player_state, command );
-			//deltaX = 0;
-
-			// Get button action.
-			engine_player_manager_set_action( po->player_frame, command );
-
-			// No scroll.
-			if( 0 == deltaX )
-			{
-				// ADI
-				//engine_scroll_manager_update( 0 );
-				engine_scroll_manager_demo_update( 0 );
-			}
-			else
-			{
-
-
-				//if( !complete ) {}
-				for( loops = 0; loops < deltaX; loops++ )
-				{
-					//ADI
-					scroll_state = engine_scroll_manager_demo_update( 1 );
-					//scroll_state = engine_scroll_manager_update( 1 );
-					//scroll_state = engine_scroll_manager_update( 0 );
-					if( scroll_state_tile == scroll_state )
-					{
-						engine_level_manager_draw_column( so->scrollColumn );
-					}
-					//IMPORTANT - do NOT implement this code as will mis-align the checkpoint!
-					//else if( scroll_state_line == scroll_state )
-					//{
-					//	engine_game_manager_inc_checkpoint();
-					//	//TODO used for debugging - remove
-					//	//engine_font_manager_data( go->game_point, 20, go->game_point );
-					//}
-					else if( scroll_state_comp == scroll_state )
-					{
-						complete = scroll_state_comp == scroll_state;
-						if( complete )
-						{
-							break;
-						}
-					}
-				}
-
-
-				// stevepro - is a good spot to render text #1??
-				//delay = engine_delay_manager_update();
-				//if( delay )
-				//{
-				//	if( !ho->hack_delay )
-				//	{
-				//		flag = !flag;
-				//		if( flag )
-				//		{
-				//			engine_font_manager_text( "INSERT COIN(S)", 9, 7 );
-				//			//engine_util_manager_locale_texts( 4, 9, 7 );
-				//		}
-				//		else
-				//		{
-				//			//engine_font_manager_text( "INSERT COIN(S)", 9, 7 );
-				//			engine_font_manager_text( "              ", 9, 7 );
-				//			//engine_util_manager_locale_blank( 0, 9, 7 );
-				//		}
-
-				//		// ADI
-				//		//engine_scroll_manager_update( 0 );
-				//		//engine_scroll_manager_demo_update( 0 );
-				//	}
-				//}
-
-
-				// Set horizontal movement.
-				engine_player_manager_horz( deltaX );
-
-				// Get / set vertical movement.
-				deltaY = 0;
-				if( player_state_isintheair == po->player_state )
-				{
-					deltaY = engine_player_manager_get_deltaY();
-					engine_player_manager_vert( deltaY );
-					engine_player_manager_bounds( deltaY, po->posnY, go->game_isgod );
-				}
-				else if( player_state_isonground == po->player_state )
-				{
-					engine_player_manager_animate( po->player_frame );
-				}
-
-				// General all-purpose collision detection routine.
-				player_state = engine_player_manager_collision( po->player_state, po->lookX, po->tileY, deltaY, po->posnY, go->game_isgod );
-
-				// Finally, check if player forcing downward drop.
-				if( player_state_isintheair == po->player_state )
-				{
-					// If player forces down while in the air then only apply on the descent!
-					if( ( COMMAND_DOWN_MASK & command ) == COMMAND_DOWN_MASK )
-					{
-						if( deltaY > 0 )
-						{
-							deltaY = engine_player_manager_get_deltaY();
-							engine_player_manager_vert( deltaY );
-							engine_player_manager_bounds( deltaY, po->posnY, go->game_isgod );
-						}
-					}
-
-					// General all-purpose collision detection routine.
-					player_state = engine_player_manager_collision( po->player_state, po->lookX, po->tileY, deltaY, po->posnY, go->game_isgod );
-				}
-			}
-
-			// Store command for future use.
-			//engine_command_manager_update( command );
+			local_prev_command = command;
+			frame_counter++;
 		}
 		else
+		{
+			//command = co->prev_command;
+			command = local_prev_command;
+		}
+
+		engine_frame_manager_update();
+		//engine_frame_manager_draw();
+	}
+
+	if( COMMAND_NONE_MASK != command )
+	{
+		// Get horizontal movement.
+		deltaX = engine_player_manager_get_deltaX( po->player_state, command );
+		//deltaX = 0;
+
+		// Get button action.
+		engine_player_manager_set_action( po->player_frame, command );
+
+		// No scroll.
+		if( 0 == deltaX )
 		{
 			// ADI
 			//engine_scroll_manager_update( 0 );
 			engine_scroll_manager_demo_update( 0 );
 		}
+		else
+		{
+			//if( !complete ) {}
+			for( loops = 0; loops < deltaX; loops++ )
+			{
+				//ADI
+				scroll_state = engine_scroll_manager_demo_update( 1 );
+				//scroll_state = engine_scroll_manager_update( 1 );
+				//scroll_state = engine_scroll_manager_update( 0 );
+				if( scroll_state_tile == scroll_state )
+				{
+					engine_level_manager_draw_column( so->scrollColumn );
+				}
+				//IMPORTANT - do NOT implement this code as will mis-align the checkpoint!
+				//else if( scroll_state_line == scroll_state )
+				//{
+				//	engine_game_manager_inc_checkpoint();
+				//	//TODO used for debugging - remove
+				//	//engine_font_manager_data( go->game_point, 20, go->game_point );
+				//}
+				else if( scroll_state_comp == scroll_state )
+				{
+					complete = scroll_state_comp == scroll_state;
+					if( complete )
+					{
+						break;
+					}
+				}
+			}
+
+
+			// stevepro - is a good spot to render text #1??
+			//delay = engine_delay_manager_update();
+			//if( delay )
+			//{
+			//	if( !ho->hack_delay )
+			//	{
+			//		flag = !flag;
+			//		if( flag )
+			//		{
+			//			engine_font_manager_text( "INSERT COIN(S)", 9, 7 );
+			//			//engine_util_manager_locale_texts( 4, 9, 7 );
+			//		}
+			//		else
+			//		{
+			//			//engine_font_manager_text( "INSERT COIN(S)", 9, 7 );
+			//			engine_font_manager_text( "              ", 9, 7 );
+			//			//engine_util_manager_locale_blank( 0, 9, 7 );
+			//		}
+
+			//		// ADI
+			//		//engine_scroll_manager_update( 0 );
+			//		//engine_scroll_manager_demo_update( 0 );
+			//	}
+			//}
+
+
+			// Set horizontal movement.
+			engine_player_manager_horz( deltaX );
+
+			// Get / set vertical movement.
+			deltaY = 0;
+			if( player_state_isintheair == po->player_state )
+			{
+				deltaY = engine_player_manager_get_deltaY();
+				engine_player_manager_vert( deltaY );
+				engine_player_manager_bounds( deltaY, po->posnY, go->game_isgod );
+			}
+			else if( player_state_isonground == po->player_state )
+			{
+				engine_player_manager_animate( po->player_frame );
+			}
+
+			// General all-purpose collision detection routine.
+			player_state = engine_player_manager_collision( po->player_state, po->lookX, po->tileY, deltaY, po->posnY, go->game_isgod );
+
+			// Finally, check if player forcing downward drop.
+			if( player_state_isintheair == po->player_state )
+			{
+				// If player forces down while in the air then only apply on the descent!
+				if( ( COMMAND_DOWN_MASK & command ) == COMMAND_DOWN_MASK )
+				{
+					if( deltaY > 0 )
+					{
+						deltaY = engine_player_manager_get_deltaY();
+						engine_player_manager_vert( deltaY );
+						engine_player_manager_bounds( deltaY, po->posnY, go->game_isgod );
+					}
+				}
+
+				// General all-purpose collision detection routine.
+				player_state = engine_player_manager_collision( po->player_state, po->lookX, po->tileY, deltaY, po->posnY, go->game_isgod );
+			}
+		}
+
+		// Store command for future use.
+		//engine_command_manager_update( command );
+		//}
+		//else
+		//{
+		//	// ADI
+		//	//engine_scroll_manager_update( 0 );
+		//	engine_scroll_manager_demo_update( 0 );
+		//}
 
 
 		//engine_player_manager_draw();

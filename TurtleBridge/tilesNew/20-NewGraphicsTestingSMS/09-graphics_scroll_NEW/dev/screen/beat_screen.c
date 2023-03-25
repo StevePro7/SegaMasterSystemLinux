@@ -2,7 +2,7 @@
 #include "../engine/audio_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/collision_manager.h"
-//#include "../engine/content_manager.h"
+#include "../engine/command_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/game_manager.h"
 #include "../engine/global_manager.h"
@@ -93,7 +93,7 @@ void screen_beat_screen_load()
 	devkit_SMS_displayOn();
 
 	engine_frame_manager_load();
-	//engine_frame_manager_draw();
+	engine_frame_manager_draw();
 
 	// TODO perfect this i.e. w/o debug_mgr
 	//	engine_game_manager_set_level_data( 0, 0, 0 );
@@ -103,7 +103,133 @@ void screen_beat_screen_load()
 
 void screen_beat_screen_update( unsigned char *screen_type )
 {
+	// TODO delete
+	struct_frame_object *fo = &global_frame_object;
+
+	struct_scroll_object *so = &global_scroll_object;
 	struct_player_object *po = &global_player_object;
+	struct_level_object *lo = &global_level_object;
+	struct_game_object *go = &global_game_object;
+	unsigned char input1;
+	unsigned char input2;
+	// TODO TESTING
+//	unsigned char input3;
+
+	unsigned char deltaX;
+	//signed int deltaY;
+	//unsigned char loops;
+	//signed char collision;
+//	enum_scroll_state scroll_state;
+	enum_player_state player_state;
+
+	unsigned char command = COMMAND_NONE_MASK;
+	player_state = po->player_state;
+	deltaX = 0;
+	deltaY = 0;
+
+
+	input1 = engine_input_manager_hold( input_type_left );
+	input2 = engine_input_manager_move( input_type_right );
+	//input1 = 1;		// TODO delete
+	if( input1 || input2 )
+	{
+		if( 2 == fo->frame_count )//|| 8 == fo->frame_count )
+		{
+			//command = engine_command_manager_build( po->player_state, 1, 0, 0, 0, 0, 1 );		//Jump index = 1.
+			//command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 1 );		//Jump index = 2.
+			//command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 1 );		//Jump index = 3.
+			command = engine_command_manager_build( po->player_state, 0, 1, 1, 0, 0, 1 );		//Jump index = 4.
+		}
+		else
+		{
+			command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 0 );
+		}
+
+		engine_frame_manager_update();
+		engine_frame_manager_draw();
+	}
+
+	if( COMMAND_NONE_MASK != command )
+	{
+		// Get horizontal movement.
+	//	deltaX = engine_player_manager_get_deltaX( po->player_state, command );
+		// NO X-movement
+		deltaX = 0; // TODO delete
+
+		// Get button action.
+		engine_player_manager_set_action( po->player_frame, command );
+
+		//for( loops = 0; loops < deltaX; loops++ )
+		//{
+		//	scroll_state = engine_scroll_manager_update( 1 );
+		//	//printScrollInfo();	// TODO delete
+
+		// NO scrolling
+		//	if( scroll_state_tile == scroll_state )
+		//	{
+		//		engine_level_manager_draw_column( so->scrollColumn );
+
+		//		//if (fo->frame_count == 0 || po->player_state == 1 )
+		//		//{
+		//		//	scroll_count++;		// TODO delete as only used for impossible jump debugging
+		//		//}
+		//	}
+		//	else if( scroll_state_line == scroll_state )
+		//	{
+		//		engine_game_manager_inc_checkpoint();
+		//		//TODO used for debugging - remove
+		//		//engine_font_manager_data( go->game_point, 20, go->game_point );
+		//	}
+		//	else if( scroll_state_comp == scroll_state )
+		//	{
+		//		complete = scroll_state_comp == scroll_state;
+		//		if( complete )
+		//		{
+		//			break;
+		//		}
+		//	}
+		//}
+
+		// NO X-movement
+		// Set horizontal movement.
+		engine_player_manager_horz( deltaX );
+
+		// Get / set vertical movement.
+		deltaY = 0;
+		if( player_state_isintheair == po->player_state )
+		{
+			deltaY = engine_player_manager_get_deltaY();
+			engine_player_manager_vert( deltaY );
+			engine_player_manager_bounds( deltaY, po->posnY, go->game_isgod );
+		}
+		else if( player_state_isonground == po->player_state )
+		{
+			engine_player_manager_animate( po->player_frame );
+		}
+
+		// General all-purpose collision detection routine.
+		player_state = engine_player_manager_collision( po->player_state, po->lookX, po->tileY, deltaY, po->posnY, go->game_isgod );
+
+		// Finally, check if player forcing downward drop.
+		if( player_state_isintheair == po->player_state )
+		{
+			// If player forces down while in the air then only apply on the descent!
+			if( ( COMMAND_DOWN_MASK & command ) == COMMAND_DOWN_MASK )
+			{
+				if( deltaY > 0 )
+				{
+					deltaY = engine_player_manager_get_deltaY();
+					engine_player_manager_vert( deltaY );
+					engine_player_manager_bounds( deltaY, po->posnY, go->game_isgod );
+				}
+			}
+
+			// General all-purpose collision detection routine.
+			player_state = engine_player_manager_collision( po->player_state, po->lookX, po->tileY, deltaY, po->posnY, go->game_isgod );
+		}
+	}
+
+	engine_command_manager_update( command );
 
 	//unsigned char input1, input2;
 	//if( !devkit_PSGGetStatus() )
