@@ -66,7 +66,7 @@ void screen_start_screen_load()
 	devkit_SMS_displayOn();
 
 	engine_delay_manager_load( NORMAL_DELAY );
-	engine_reset_manager_load( 10 );
+	engine_reset_manager_load( NORMAL_DELAY * 5 );				// TODO what is good delay here to transition
 	reset = 0;
 	delay = 0;
 	check = 0;
@@ -129,6 +129,13 @@ void screen_start_screen_update( unsigned char *screen_type )
 		{
 			engine_scroll_manager_para_update( 0 );
 			*screen_type = screen_type_title;
+			return;
+		}
+
+		reset = engine_reset_manager_update();
+		if( reset )
+		{
+			*screen_type = screen_type_demo;
 			return;
 		}
 
