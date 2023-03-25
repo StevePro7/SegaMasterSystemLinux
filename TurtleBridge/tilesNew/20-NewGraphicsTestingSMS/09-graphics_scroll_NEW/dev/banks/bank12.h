@@ -1,3 +1,24 @@
+extern const unsigned char level_0001_txt[];
+#define				level_0001_txt_size 32
+#define				level_0001_txt_bank 12
+
+extern const unsigned char level_0002_txt[];
+#define				level_0002_txt_size 32
+#define				level_0002_txt_bank 12
+
+extern const unsigned char level_0003_txt[];
+#define				level_0003_txt_size 32
+#define				level_0003_txt_bank 12
+
+extern const unsigned char level_0004_txt[];
+#define				level_0004_txt_size 32
+#define				level_0004_txt_bank 12
+
+extern const unsigned char level_0005_txt[];
+#define				level_0005_txt_size 32
+#define				level_0005_txt_bank 12
+
+
 extern const unsigned char level_3001_txt[];
 #define				level_3001_txt_size 256
 #define				level_3001_txt_bank 12

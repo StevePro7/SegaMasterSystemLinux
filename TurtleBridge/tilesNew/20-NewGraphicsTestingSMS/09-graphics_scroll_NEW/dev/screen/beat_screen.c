@@ -260,7 +260,7 @@ void screen_beat_screen_update( unsigned char *screen_type )
 	engine_player_manager_draw();
 	//engine_sprite_manager_draw( po->player_frame, po->drawX + 0, po->drawY + 0 );
 	//engine_sprite_manager_draw( po->player_frame, 196, 112 );
-	engine_font_manager_data( po->drawY, 20,10);
+	engine_font_manager_data( po->drawY, 20,10);		// TODO delete
 	*screen_type = screen_type_beat;
 }
 

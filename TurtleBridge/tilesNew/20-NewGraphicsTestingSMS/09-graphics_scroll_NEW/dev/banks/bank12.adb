@@ -1,4 +1,9 @@
 M:bank12
+S:G$level_0001_txt$0_0$0({32}DA32d,SC:U),D,0,0
+S:G$level_0002_txt$0_0$0({32}DA32d,SC:U),D,0,0
+S:G$level_0003_txt$0_0$0({32}DA32d,SC:U),D,0,0
+S:G$level_0004_txt$0_0$0({32}DA32d,SC:U),D,0,0
+S:G$level_0005_txt$0_0$0({32}DA32d,SC:U),D,0,0
 S:G$level_3001_txt$0_0$0({256}DA256d,SC:U),D,0,0
 S:G$level_8888_txt$0_0$0({512}DA512d,SC:U),D,0,0
 S:G$level_9999_txt$0_0$0({32}DA32d,SC:U),D,0,0

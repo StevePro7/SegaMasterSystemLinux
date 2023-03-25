@@ -1,6 +1,13 @@
 M:start_screen
 F:G$screen_start_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lstart_screen.screen_start_screen_load$go$1_0$151({2}DG,STtag_struct_game_object:S),R,0,0,[]
+S:Lstart_screen.screen_start_screen_load$po$1_0$151({2}DG,STtag_struct_player_object:S),R,0,0,[]
+S:Lstart_screen.screen_start_screen_load$lo$1_0$151({2}DG,STtag_struct_level_object:S),R,0,0,[]
+S:Lstart_screen.screen_start_screen_load$player_loadY$1_0$151({1}SC:U),R,0,0,[a]
+S:Lstart_screen.screen_start_screen_load$checkScreen$1_0$151({1}SC:U),R,0,0,[]
+S:Lstart_screen.screen_start_screen_load$game_difficulty$1_0$151({1}SC:U),R,0,0,[]
+S:Lstart_screen.screen_start_screen_load$game_world$1_0$151({1}SC:U),R,0,0,[]
+S:Lstart_screen.screen_start_screen_load$game_point$1_0$151({1}SC:U),R,0,0,[]
+S:Lstart_screen.screen_start_screen_load$start_level$1_0$151({1}SC:U),R,0,0,[]
 F:G$screen_start_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lstart_screen.screen_start_screen_update$screen_type$1_0$153({2}DG,SC:U),B,1,4
 S:Lstart_screen.screen_start_screen_update$ho$1_0$154({2}DG,STtag_struct_hack_object:S),R,0,0,[]

@@ -35,26 +35,42 @@ static bool flag;
 
 void screen_start_screen_load()
 {
-	struct_game_object *go = &global_game_object;
+	struct_player_object *po = &global_player_object;
+	struct_level_object *lo = &global_level_object;
+	unsigned char player_loadY;
+	unsigned char checkScreen;
+	unsigned char game_difficulty;
+	unsigned char game_world;
+	unsigned char game_point;
+	unsigned char start_level;
+
+	game_difficulty = difficulty_type_normal;
+	game_world = 4;
+	game_point = 0;
+	start_level = 43;
+
+	engine_level_manager_init( start_level );
+	engine_player_manager_initX( game_difficulty, game_world );
 
 	devkit_SMS_displayOff();
 	engine_graphics_manager_screen( CLEAR_TILE_BLUE );
 
-	// Draw screen specific graphics.
-	engine_graphics_manager_title();
-	engine_graphics_manager_sea();
-
-
-	// TODO for testing
-	engine_level_manager_init( 40 );
-	engine_level_manager_draw_screen( 0 );
-	// TODO for testing
-
-	engine_util_manager_locale_texts( 4, 9, 7 );
+	// Work in terms of screens.
+	checkScreen = lo->check_width * game_point;
 	if( STARTING_SCROLLING )
 	{
 		engine_scroll_manager_para_load( 0, 0 );
 	}
+	engine_level_manager_draw_screen( checkScreen );
+
+	engine_player_manager_loadX( checkScreen );
+	player_loadY = level_platforms[ po->lookX ];
+	engine_player_manager_loadY( player_loadY );
+	engine_player_manager_draw();
+	// TODO for testing
+
+	engine_util_manager_locale_texts( 4, 9, 7 );
+
 
 	// TODO implement properly
 	//engine_font_manager_text( "JUMPS", 27, 3 );
@@ -62,6 +78,10 @@ void screen_start_screen_load()
 	//engine_font_manager_text( "RIGHT", 27, 5 );
 	//engine_font_manager_text( "FIRE1", 27, 6 );
 
+	// Draw screen specific graphics.
+	engine_graphics_manager_title();
+	engine_graphics_manager_sea();
+	engine_level_manager_draw_screen( checkScreen );
 	engine_scroll_manager_para_update( 0 );
 	devkit_SMS_displayOn();
 
@@ -153,18 +173,19 @@ void screen_start_screen_update( unsigned char *screen_type )
 
 		if( STARTING_SCROLLING )
 		{
-			engine_scroll_manager_para_update( 1 );
+			engine_scroll_manager_para_update( 2 );
 			//engine_scroll_manager_section( 1 );		// TODO delete
 		}
 
 		reset = engine_reset_manager_update();
 		if( reset )
 		{
-			*screen_type = screen_type_demo;
+			//*screen_type = screen_type_demo;
 			return;
 		}
 	}
 
+	engine_player_manager_draw();
 	engine_random_manager_rand();
 	*screen_type = screen_type_start;
 }
