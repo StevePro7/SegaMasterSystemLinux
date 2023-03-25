@@ -29,7 +29,7 @@
 static bool complete;
 static signed int deltaY;
 static unsigned char frame_counter;
-static void printCmds();
+//static void printCmds();
 static unsigned char available;
 static unsigned char local_prev_command;
 
@@ -50,7 +50,6 @@ void screen_demo_screen_load()
 	unsigned char game_difficulty;
 	unsigned char game_world;
 	unsigned char game_point;
-	
 
 	demo_level = 48;
 	game_difficulty = difficulty_type_normal;
