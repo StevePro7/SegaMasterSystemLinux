@@ -61,7 +61,6 @@ S:G$global_delay_object$0_0$0({4}STtag_struct_delay_object:S),E,0,0
 S:G$global_frame_object$0_0$0({2}STtag_struct_frame_object:S),E,0,0
 S:G$global_reset_object$0_0$0({2}STtag_struct_reset_object:S),E,0,0
 S:Frecord_screen$complete$0_0$0({1}:S),E,0,0
-S:Frecord_screen$half$0_0$0({1}SC:U),E,0,0
 S:G$engine_collision_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_collision_manager_player$0_0$0({2}DF,SC:S),C,0,0
 S:G$engine_collision_manager_finish$0_0$0({2}DF,SV:S),C,0,0

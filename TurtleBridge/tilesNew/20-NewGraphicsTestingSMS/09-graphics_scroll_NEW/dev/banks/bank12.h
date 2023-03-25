@@ -2,6 +2,10 @@ extern const unsigned char level_3001_txt[];
 #define				level_3001_txt_size 256
 #define				level_3001_txt_bank 12
 
+extern const unsigned char level_0000_txt[];
+#define				level_0000_txt_size 512
+#define				level_0000_txt_bank 12
+
 
 extern const unsigned char level1116_txt[];
 #define				level1116_txt_size 512
@@ -43,9 +47,9 @@ extern const unsigned char level1108_txt[];
 #define				level1108_txt_size 128
 #define				level1108_txt_bank 12
 
-extern const unsigned char level_0000_txt[];
-#define				level_0000_txt_size 256		// 8x screens
-#define				level_0000_txt_bank 10
+//extern const unsigned char level_0000_txt[];
+//#define				level_0000_txt_size 256		// 8x screens
+//#define				level_0000_txt_bank 10
 
 
 //extern const unsigned char level_0101_txt[];
@@ -91,10 +95,10 @@ extern const unsigned char level1118_txt[];
 
 
 
-// TODO - wip from bank 10
-extern const unsigned char level_0000_txt[];
-#define				level_0000_txt_size 256		// 8x screens
-#define				level_0000_txt_bank 10
+//// TODO - wip from bank 10
+//extern const unsigned char level_0000_txt[];
+//#define				level_0000_txt_size 256		// 8x screens
+//#define				level_0000_txt_bank 10
 
 
 //extern const unsigned char level_0101_txt[];
