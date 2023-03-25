@@ -357,8 +357,7 @@ const unsigned char level_object_bank[] =
 	level_0404_txt_bank,
 	level_0000_txt_bank,
 	level_0101_txt_bank,
-	level_0102_txt_bank,
-	level_0103_txt_bank,
+	level_0102_txt_bank,level_0103_txt_bank,
 	level_0104_txt_bank,
 	//level_0808_txt_bank,
 };
@@ -500,12 +499,15 @@ const unsigned char level_object_bank[] =
 const unsigned char *extra_object_data[] =
 {
 	level_3001_txt,
+	level_0000_txt,
 };
 const unsigned int extra_object_size[] =
 {
 	level_3001_txt_size,
+	level_0000_txt_size,
 };
 const unsigned char extra_object_bank[] =
 {
 	level_3001_txt_bank,
+	level_0000_txt_bank,
 };

@@ -138,7 +138,7 @@ void screen_repeat_screen_update( unsigned char *screen_type )
 	{
 		input1 = engine_input_manager_hold( input_type_left );
 		input2 = engine_input_manager_move( input_type_right );
-		input1 = 1;		// TODO delete
+		//input1 = 1;		// TODO delete
 		if( input1 || input2 )
 		{
 			if( command_frame_index[ frame_counter ] == fo->frame_count )
@@ -180,8 +180,8 @@ void screen_repeat_screen_update( unsigned char *screen_type )
 			//if( !complete ) {}
 			for( loops = 0; loops < deltaX; loops++ )
 			{
-				//scroll_state = engine_scroll_manager_update( 1 );
-				scroll_state = engine_scroll_manager_update( 0 );
+				scroll_state = engine_scroll_manager_update( 1 );
+				//scroll_state = engine_scroll_manager_update( 0 );
 				if( scroll_state_tile == scroll_state )
 				{
 					engine_level_manager_draw_column( so->scrollColumn );
