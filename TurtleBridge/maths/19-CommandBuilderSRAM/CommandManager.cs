@@ -9,8 +9,11 @@ namespace CommandBuilderSRAM
 	{
 		const int MaxCommands = 64;
 
-		public CommandManager()
+		private string prefix;
+
+		public CommandManager(string prefix)
 		{
+			this.prefix = prefix;
 			Lines1 = new List<string>();
 			Lines2 = new List<string>();
 			LinesX = new List<string>();
@@ -71,7 +74,18 @@ namespace CommandBuilderSRAM
 			LinesX.Add("#include \"command_object.h\"");
 			LinesX.Add("");
 
-			LinesX.Add("unsigned int command_frame_index[] =");
+			var myVar1 = "command_frame_index";
+			if (0 != prefix.Length)
+			{
+				myVar1 = prefix + "_" + myVar1;
+			}
+			var myVar2 = "command_this_command";
+			if (0 != prefix.Length)
+			{
+				myVar2 = prefix + "_" + myVar2;
+			}
+
+			LinesX.Add("unsigned int " + myVar1 + "[] =");
 			LinesX.Add("{");
 			for (int index = 0; index < Lines1.Count; index++)
 			{
@@ -81,7 +95,7 @@ namespace CommandBuilderSRAM
 			LinesX.Add("};");
 			LinesX.Add("");
 
-			LinesX.Add("unsigned char command_this_command[] =");
+			LinesX.Add("unsigned char " + myVar2 + "[] =");
 			LinesX.Add("{");
 			for (int index = 0; index < Lines1.Count; index++)
 			{

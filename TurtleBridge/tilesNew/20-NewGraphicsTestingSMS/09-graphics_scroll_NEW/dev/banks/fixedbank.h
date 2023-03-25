@@ -7,8 +7,11 @@ extern const unsigned char steven_data[];
 
 
 // Command Manager.
+extern unsigned int demo_command_frame_index[];
+extern unsigned char demo_command_this_command[];
 extern unsigned int beat_command_frame_index[];
 extern unsigned char beat_command_this_command[];
+
 
 // FIXED bank.
 // Audio Manager.

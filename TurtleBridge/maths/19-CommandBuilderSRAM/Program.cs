@@ -11,7 +11,7 @@ namespace CommandBuilderSRAM
 			//fm.Process("output.ssm");
 			fm.Process("output.sav");
 
-			var cm = new CommandManager();
+			var cm = new CommandManager("demo");
 			cm.Process(fm.Bytes);
 			cm.Save();
 

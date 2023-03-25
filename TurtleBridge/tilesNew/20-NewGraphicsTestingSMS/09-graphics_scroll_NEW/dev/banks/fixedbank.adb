@@ -1,4 +1,6 @@
 M:fixedbank
+S:G$demo_command_frame_index$0_0$0({128}DA64d,SI:U),E,0,0
+S:G$demo_command_this_command$0_0$0({64}DA64d,SC:U),E,0,0
 S:G$beat_command_frame_index$0_0$0({128}DA64d,SI:U),E,0,0
 S:G$beat_command_this_command$0_0$0({64}DA64d,SC:U),E,0,0
 S:G$steven_text$0_0$0({6}DA3d,DG,SC:U),E,0,0
