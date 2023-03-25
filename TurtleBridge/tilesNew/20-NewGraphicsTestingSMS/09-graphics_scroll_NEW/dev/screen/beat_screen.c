@@ -12,6 +12,7 @@
 #include "../engine/player_manager.h"
 #include "../engine/riff_manager.h"
 #include "../engine/scroll_manager.h"
+#include "../engine/sprite_manager.h"
 #include "../engine/tile_manager.h"
 #include "../engine/timer_manager.h"
 #include "../engine/util_manager.h"
@@ -88,7 +89,7 @@ void screen_beat_screen_load()
 	engine_graphics_manager_sea();
 	printBeatGame();
 
-	engine_level_manager_draw_screen( checkScreen );		// Weird - must draw this twice otherwise clouds + sea don't draw??
+	//engine_level_manager_draw_screen( checkScreen );		// Weird - must draw this twice otherwise clouds + sea don't draw??
 	devkit_SMS_displayOn();
 
 	engine_frame_manager_load();
@@ -102,32 +103,37 @@ void screen_beat_screen_load()
 
 void screen_beat_screen_update( unsigned char *screen_type )
 {
-	unsigned char input1, input2;
-	if( !devkit_PSGGetStatus() )
-	{
-		devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
-		engine_music_manager_stop();
-		//engine_font_manager_text( "FINISH", 20, 10 );
-		// Resume from init
-		//*screen_type = screen_type_start;
-		return;
-	}
+	struct_player_object *po = &global_player_object;
+
+	//unsigned char input1, input2;
+	//if( !devkit_PSGGetStatus() )
+	//{
+	//	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+	//	engine_music_manager_stop();
+	//	//engine_font_manager_text( "FINISH", 20, 10 );
+	//	// Resume from init
+	//	//*screen_type = screen_type_start;
+	//	return;
+	//}
 
 
 
-	input1 = engine_input_manager_hold( input_type_fire1 );
-	input2= engine_input_manager_hold( input_type_fire2);
-	if( input1 || input2 )
-	{
-		devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
-		engine_music_manager_stop();
-		//engine_font_manager_text( "FINISH", 20, 10 );
-		// Resume from init
-	//	*screen_type = screen_type_start;
-		return;
-	}
+	//input1 = engine_input_manager_hold( input_type_fire1 );
+	//input2= engine_input_manager_hold( input_type_fire2);
+	//if( input1 || input2 )
+	//{
+	//	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+	//	engine_music_manager_stop();
+	//	//engine_font_manager_text( "FINISH", 20, 10 );
+	//	// Resume from init
+	////	*screen_type = screen_type_start;
+	//	return;
+	//}
 
 	engine_player_manager_draw();
+	//engine_sprite_manager_draw( po->player_frame, po->drawX + 0, po->drawY + 0 );
+	//engine_sprite_manager_draw( po->player_frame, 196, 112 );
+	engine_font_manager_data( po->drawX, 10,10);
 	*screen_type = screen_type_beat;
 }
 
