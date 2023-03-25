@@ -68,7 +68,7 @@ S:G$level_0506_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$level_0507_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$level_0508_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$level_3001_txt$0_0$0({0}DA0d,SC:U),D,0,0
-S:G$level_0000_txt$0_0$0({0}DA0d,SC:U),D,0,0
+S:G$level_8888_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$level_9999_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$level1116_txt$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$level1100_txt$0_0$0({0}DA0d,SC:U),D,0,0
