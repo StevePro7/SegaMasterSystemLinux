@@ -85,7 +85,8 @@ void screen_demo_screen_load()
 
 
 	//engine_font_manager_text( "INSERT COIN(S)", 9, 7 );
-	//engine_font_manager_text( "--GAME OVER--", 9, 6 );
+	//engine_font_manager_text( "567890123456789012345678", 4, 3 );
+	//engine_font_manager_text( "REAL LIFE INGAME FOOTAGE", 4, 3 );
 	devkit_SMS_displayOn();
 
 	// ADI - reset scroll must be here to avoid graphics glitches
@@ -314,18 +315,18 @@ void screen_demo_screen_update( unsigned char *screen_type )
 			//engine_scroll_manager_update( 0 );
 			engine_scroll_manager_para_update( 0 );
 
-			complete = false;
-			deltaY = 0;
-			frame_counter = 0;
-			local_prev_command = COMMAND_NONE_MASK;
+			//complete = false;
+			//deltaY = 0;
+			//frame_counter = 0;
+			//local_prev_command = COMMAND_NONE_MASK;
 
 			//*screen_type = screen_type_pass;
 			//*screen_type = screen_type_option;
-			//return;
+			*screen_type = screen_type_start;
+			return;
 		}
 	}
 
-	
 
 	engine_player_manager_draw();
 	*screen_type = screen_type_demo;
