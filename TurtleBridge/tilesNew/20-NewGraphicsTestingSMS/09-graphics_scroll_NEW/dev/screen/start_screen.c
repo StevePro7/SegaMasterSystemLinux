@@ -132,12 +132,7 @@ void screen_start_screen_update( unsigned char *screen_type )
 			return;
 		}
 
-		reset = engine_reset_manager_update();
-		if( reset )
-		{
-			*screen_type = screen_type_demo;
-			return;
-		}
+		
 
 		delay = engine_delay_manager_update();
 		if( delay )
@@ -160,6 +155,13 @@ void screen_start_screen_update( unsigned char *screen_type )
 		{
 			engine_scroll_manager_para_update( 1 );
 			//engine_scroll_manager_section( 1 );		// TODO delete
+		}
+
+		reset = engine_reset_manager_update();
+		if( reset )
+		{
+			*screen_type = screen_type_demo;
+			return;
 		}
 	}
 
