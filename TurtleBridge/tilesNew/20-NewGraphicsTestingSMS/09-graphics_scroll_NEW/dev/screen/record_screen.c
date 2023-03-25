@@ -136,8 +136,8 @@ void screen_record_screen_update( unsigned char *screen_type )
 		// Implement scrolling.
 		for( loops = 0; loops < deltaX; loops++ )
 		{
-			scroll_state = engine_scroll_manager_update( 1 );
-			//scroll_state = engine_scroll_manager_update( 0 );
+			//scroll_state = engine_scroll_manager_update( 1 );
+			scroll_state = engine_scroll_manager_update( 0 );
 			if( scroll_state_tile == scroll_state )
 			{
 				engine_level_manager_draw_column( so->scrollColumn );
