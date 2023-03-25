@@ -81,10 +81,11 @@ void screen_demo_screen_load()
 
 
 	// test_screen
-	engine_font_manager_text( "DEMO SCREEN", 10, 0 );
+//	engine_font_manager_text( "DEMO SCREEN", 10, 0 );
 
 	engine_frame_manager_load();
-	engine_frame_manager_draw();
+	//engine_frame_manager_draw();
+
 	//engine_command_manager_init();
 	//engine_command_manager_load();
 	//engine_storage_manager_read();
@@ -137,7 +138,7 @@ void screen_demo_screen_update( unsigned char *screen_type )
 	{
 		input1 = engine_input_manager_hold( input_type_left );
 		input2 = engine_input_manager_move( input_type_right );
-		//input1 = 1;		// TODO delete
+		input1 = 1;		// TODO delete
 		if( input1 || input2 )
 		{
 			if( command_frame_index[ frame_counter ] == fo->frame_count )
@@ -157,7 +158,7 @@ void screen_demo_screen_update( unsigned char *screen_type )
 			}
 
 			engine_frame_manager_update();
-			engine_frame_manager_draw();
+			//engine_frame_manager_draw();
 		}
 
 		if( COMMAND_NONE_MASK != command )
