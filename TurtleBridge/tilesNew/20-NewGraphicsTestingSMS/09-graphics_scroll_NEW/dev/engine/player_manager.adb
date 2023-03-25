@@ -101,6 +101,8 @@ T:Fplayer_manager$tag_struct_player_object[({0}S:S$initX$0_0$0({1}SC:U),Z,0,0)({
 S:G$jump_array_ptr$0_0$0({0}DA0d,DG,SI:S),E,0,0
 S:G$flip_array_ptr$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$steven_text$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$beat_command_frame_index$0_0$0({0}DA0d,SI:U),E,0,0
+S:G$beat_command_this_command$0_0$0({0}DA0d,SC:U),E,0,0
 S:G$music_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$sound_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$riff_sample_data$0_0$0({0}DA0d,DG,SC:U),E,0,0

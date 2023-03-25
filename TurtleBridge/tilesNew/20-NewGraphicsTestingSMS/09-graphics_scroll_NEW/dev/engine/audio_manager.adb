@@ -25,6 +25,8 @@ T:Faudio_manager$tag_struct_hack_object[({0}S:S$hack_delay$0_0$0({1}SC:U),Z,0,0)
 T:Faudio_manager$tag_struct_audio_object[({0}S:S$music_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$music_bank$0_0$0({1}SC:U),Z,0,0)({3}S:S$sound_data$0_0$0({2}DG,SC:U),Z,0,0)({5}S:S$sound_bank$0_0$0({1}SC:U),Z,0,0)]
 S:G$global_hack_object$0_0$0({5}STtag_struct_hack_object:S),E,0,0
 S:G$steven_text$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$beat_command_frame_index$0_0$0({0}DA0d,SI:U),E,0,0
+S:G$beat_command_this_command$0_0$0({0}DA0d,SC:U),E,0,0
 S:G$music_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$sound_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$riff_sample_data$0_0$0({0}DA0d,DG,SC:U),E,0,0

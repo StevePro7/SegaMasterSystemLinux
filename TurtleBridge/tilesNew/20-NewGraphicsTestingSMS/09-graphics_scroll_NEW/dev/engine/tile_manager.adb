@@ -31,6 +31,8 @@ S:Ltile_manager.engine_tile_manager_draw_cloud$sloc3$0_1$0({1}SC:U),B,1,-1
 S:Ltile_manager.engine_tile_manager_draw_cloud$sloc4$0_1$0({1}SC:U),B,1,-3
 S:Ltile_manager.engine_tile_manager_draw_cloud$sloc5$0_1$0({1}SC:S),B,1,-3
 S:G$steven_text$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$beat_command_frame_index$0_0$0({0}DA0d,SI:U),E,0,0
+S:G$beat_command_this_command$0_0$0({0}DA0d,SC:U),E,0,0
 S:G$music_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$sound_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$riff_sample_data$0_0$0({0}DA0d,DG,SC:U),E,0,0
