@@ -44,7 +44,7 @@ void screen_demo_screen_load()
 	struct_game_object *go = &global_game_object;
 	unsigned char player_loadY;
 	unsigned char checkScreen;
-	unsigned char cloud_formation = engine_random_manager_next( SPRITE_TILES );
+	//unsigned char cloud_formation = engine_random_manager_next( SPRITE_TILES );
 
 	engine_level_manager_init( go->game_level );
 	engine_player_manager_initX( go->game_difficulty, go->game_world );
@@ -78,7 +78,7 @@ void screen_demo_screen_load()
 	//TODO delete - dup below
 
 	engine_graphics_manager_sea();
-	engine_graphics_manager_clouds( go->game_cloud );
+	//engine_graphics_manager_clouds( go->game_cloud );
 	engine_level_manager_draw_screen( checkScreen );		// Weird - must draw this twice otherwise clouds + sea don't draw??
 	devkit_SMS_displayOn();
 
@@ -130,13 +130,6 @@ void screen_demo_screen_update( unsigned char *screen_type )
 
 	unsigned char command = COMMAND_NONE_MASK;
 	player_state = po->player_state;
-
-	// goto options.
-	//if( !available )
-	//{
-	//	*screen_type = screen_type_option;
-	//	return;
-	//}
 
 	// TODO - exhaust frames and repeat...
 	if( !complete )
