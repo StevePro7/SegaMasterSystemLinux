@@ -57,7 +57,14 @@ void screen_demo_screen_load()
 
 	// Work in terms of screens.
 	checkScreen = lo->check_width * go->game_point;
-	engine_scroll_manager_load( checkScreen, lo->level_check, lo->level_size );
+
+	// ADI
+	//engine_scroll_manager_load( checkScreen, lo->level_check, lo->level_size );
+	//engine_scroll_manager_update( 0 );
+	engine_scroll_manager_para_load( checkScreen, lo->level_size );
+	engine_scroll_manager_para_update( 0 );
+	// ADI
+
 	engine_level_manager_draw_screen( checkScreen );
 	//engine_level_manager_draw_point( go->game_point );
 
@@ -90,7 +97,6 @@ void screen_demo_screen_load()
 	//engine_command_manager_load();
 	//engine_storage_manager_read();
 
-	//engine_scroll_manager_update( 0 );		// TODO delete
 	complete = false;
 	deltaY = 0;
 	frame_counter = 0;
@@ -180,7 +186,9 @@ void screen_demo_screen_update( unsigned char *screen_type )
 			//if( !complete ) {}
 			for( loops = 0; loops < deltaX; loops++ )
 			{
-				scroll_state = engine_scroll_manager_update( 1 );
+				//ADI
+				scroll_state = engine_scroll_manager_para_update( 1 );
+				//scroll_state = engine_scroll_manager_update( 1 );
 				//scroll_state = engine_scroll_manager_update( 0 );
 				if( scroll_state_tile == scroll_state )
 				{

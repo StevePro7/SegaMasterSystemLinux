@@ -92,6 +92,7 @@ void engine_scroll_manager_para_load( unsigned char screen, int scrollFinish )
 	so->scrollRight = 0;
 	so->scrollColumn = ( screen * SCREEN_WIDE ) + SCREEN_LESS_ONE;
 	so->scrollChecks = 0;
+	so->scrollPoints = 0;		// not used here.
 	so->scrollFinish = scrollFinish;
 	devkit_SMS_setBGScrollX( so->scrollLeftX );
 

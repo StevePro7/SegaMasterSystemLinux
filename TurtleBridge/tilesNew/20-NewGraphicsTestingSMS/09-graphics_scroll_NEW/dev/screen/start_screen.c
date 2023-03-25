@@ -57,10 +57,10 @@ void screen_start_screen_load()
 	}
 
 	// TODO implement properly
-	engine_font_manager_text( "JUMPS", 27, 3 );
-	engine_font_manager_text( "   UP", 27, 4 );
-	engine_font_manager_text( "RIGHT", 27, 5 );
-	engine_font_manager_text( "FIRE1", 27, 6 );
+	//engine_font_manager_text( "JUMPS", 27, 3 );
+	//engine_font_manager_text( "   UP", 27, 4 );
+	//engine_font_manager_text( "RIGHT", 27, 5 );
+	//engine_font_manager_text( "FIRE1", 27, 6 );
 
 	engine_scroll_manager_para_update( 0 );
 	devkit_SMS_displayOn();
