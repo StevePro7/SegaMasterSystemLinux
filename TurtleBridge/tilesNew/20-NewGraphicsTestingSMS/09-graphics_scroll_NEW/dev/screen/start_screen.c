@@ -96,6 +96,7 @@ void screen_start_screen_load()
 // TODO add the cheat detect here...
 void screen_start_screen_update( unsigned char *screen_type )
 {
+	struct_player_object *po = &global_player_object;
 	struct_hack_object *ho = &global_hack_object;
 	//unsigned char index, maxim;
 	unsigned char input;
@@ -185,6 +186,7 @@ void screen_start_screen_update( unsigned char *screen_type )
 		}
 	}
 
+	engine_player_manager_animate( po->player_frame );
 	engine_player_manager_draw();
 	engine_random_manager_rand();
 	*screen_type = screen_type_start;
