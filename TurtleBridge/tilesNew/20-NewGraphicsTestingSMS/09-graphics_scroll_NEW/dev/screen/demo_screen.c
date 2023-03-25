@@ -62,7 +62,6 @@ void screen_demo_screen_load()
 	//engine_scroll_manager_load( checkScreen, lo->level_check, lo->level_size );
 	//engine_scroll_manager_update( 0 );
 	engine_scroll_manager_para_load( checkScreen, lo->level_size );
-	engine_scroll_manager_para_update( 0 );
 	// ADI
 
 	engine_level_manager_draw_screen( checkScreen );
@@ -83,9 +82,9 @@ void screen_demo_screen_load()
 	engine_level_manager_draw_screen( checkScreen );		// Weird - must draw this twice otherwise clouds + sea don't draw??
 	devkit_SMS_displayOn();
 
-	//engine_scroll_manager_load( go->game_point, lo->level_check, lo->level_size );
+	// ADI - reset scroll must be here to avoid graphics glitches
 	//engine_scroll_manager_update( 0 );
-
+	engine_scroll_manager_para_update( 0 );
 
 	// test_screen
 //	engine_font_manager_text( "DEMO SCREEN", 10, 0 );
@@ -144,7 +143,7 @@ void screen_demo_screen_update( unsigned char *screen_type )
 	{
 		input1 = engine_input_manager_hold( input_type_left );
 		input2 = engine_input_manager_move( input_type_right );
-		input1 = 1;		// TODO delete
+		//input1 = 1;		// TODO delete
 		if( input1 || input2 )
 		{
 			if( command_frame_index[ frame_counter ] == fo->frame_count )
@@ -177,85 +176,85 @@ void screen_demo_screen_update( unsigned char *screen_type )
 			engine_player_manager_set_action( po->player_frame, command );
 
 			// No scroll.
-			//if( 0 == deltaX )
-			//{
-			//	engine_scroll_manager_update( 0 );
-			//}
-			//else
-			//{
-			//if( !complete ) {}
-			for( loops = 0; loops < deltaX; loops++ )
+			if( 0 == deltaX )
 			{
-				//ADI
-				scroll_state = engine_scroll_manager_para_update( 1 );
-				//scroll_state = engine_scroll_manager_update( 1 );
-				//scroll_state = engine_scroll_manager_update( 0 );
-				if( scroll_state_tile == scroll_state )
+				engine_scroll_manager_update( 0 );
+			}
+			else
+			{
+				//if( !complete ) {}
+				for( loops = 0; loops < deltaX; loops++ )
 				{
-					engine_level_manager_draw_column( so->scrollColumn );
-				}
-				//IMPORTANT - do NOT implement this code as will mis-align the checkpoint!
-				//else if( scroll_state_line == scroll_state )
-				//{
-				//	engine_game_manager_inc_checkpoint();
-				//	//TODO used for debugging - remove
-				//	//engine_font_manager_data( go->game_point, 20, go->game_point );
-				//}
-				else if( scroll_state_comp == scroll_state )
-				{
-					complete = scroll_state_comp == scroll_state;
-					if( complete )
+					//ADI
+					scroll_state = engine_scroll_manager_para_update( 1 );
+					//scroll_state = engine_scroll_manager_update( 1 );
+					//scroll_state = engine_scroll_manager_update( 0 );
+					if( scroll_state_tile == scroll_state )
 					{
-						break;
+						engine_level_manager_draw_column( so->scrollColumn );
+					}
+					//IMPORTANT - do NOT implement this code as will mis-align the checkpoint!
+					//else if( scroll_state_line == scroll_state )
+					//{
+					//	engine_game_manager_inc_checkpoint();
+					//	//TODO used for debugging - remove
+					//	//engine_font_manager_data( go->game_point, 20, go->game_point );
+					//}
+					else if( scroll_state_comp == scroll_state )
+					{
+						complete = scroll_state_comp == scroll_state;
+						if( complete )
+						{
+							break;
+						}
 					}
 				}
-			}
 
-			// Set horizontal movement.
-			engine_player_manager_horz( deltaX );
+				// Set horizontal movement.
+				engine_player_manager_horz( deltaX );
 
-			// Get / set vertical movement.
-			deltaY = 0;
-			if( player_state_isintheair == po->player_state )
-			{
-				deltaY = engine_player_manager_get_deltaY();
-				engine_player_manager_vert( deltaY );
-				engine_player_manager_bounds( deltaY, po->posnY, go->game_isgod );
-			}
-			else if( player_state_isonground == po->player_state )
-			{
-				engine_player_manager_animate( po->player_frame );
-			}
-
-			// General all-purpose collision detection routine.
-			player_state = engine_player_manager_collision( po->player_state, po->lookX, po->tileY, deltaY, po->posnY, go->game_isgod );
-
-			// Finally, check if player forcing downward drop.
-			if( player_state_isintheair == po->player_state )
-			{
-				// If player forces down while in the air then only apply on the descent!
-				if( ( COMMAND_DOWN_MASK & command ) == COMMAND_DOWN_MASK )
+				// Get / set vertical movement.
+				deltaY = 0;
+				if( player_state_isintheair == po->player_state )
 				{
-					if( deltaY > 0 )
-					{
-						deltaY = engine_player_manager_get_deltaY();
-						engine_player_manager_vert( deltaY );
-						engine_player_manager_bounds( deltaY, po->posnY, go->game_isgod );
-					}
+					deltaY = engine_player_manager_get_deltaY();
+					engine_player_manager_vert( deltaY );
+					engine_player_manager_bounds( deltaY, po->posnY, go->game_isgod );
+				}
+				else if( player_state_isonground == po->player_state )
+				{
+					engine_player_manager_animate( po->player_frame );
 				}
 
 				// General all-purpose collision detection routine.
 				player_state = engine_player_manager_collision( po->player_state, po->lookX, po->tileY, deltaY, po->posnY, go->game_isgod );
-			}
-		}
 
-		// Store command for future use.
-		//engine_command_manager_update( command );
-		//}
-		//else
-		//{
-		//	engine_scroll_manager_update( 0 );
-		//}
+				// Finally, check if player forcing downward drop.
+				if( player_state_isintheair == po->player_state )
+				{
+					// If player forces down while in the air then only apply on the descent!
+					if( ( COMMAND_DOWN_MASK & command ) == COMMAND_DOWN_MASK )
+					{
+						if( deltaY > 0 )
+						{
+							deltaY = engine_player_manager_get_deltaY();
+							engine_player_manager_vert( deltaY );
+							engine_player_manager_bounds( deltaY, po->posnY, go->game_isgod );
+						}
+					}
+
+					// General all-purpose collision detection routine.
+					player_state = engine_player_manager_collision( po->player_state, po->lookX, po->tileY, deltaY, po->posnY, go->game_isgod );
+				}
+			}
+
+			// Store command for future use.
+			//engine_command_manager_update( command );
+		}
+		else
+		{
+			engine_scroll_manager_update( 0 );
+		}
 
 		engine_player_manager_draw();
 		//engine_debug_manager_printout();
@@ -265,20 +264,20 @@ void screen_demo_screen_update( unsigned char *screen_type )
 		// Check to see if player completes level.
 		if( complete )
 		{
-			//engine_scroll_manager_update( 0 );		// TODO delete
+			engine_scroll_manager_update( 0 );		// TODO delete
 			//*screen_type = screen_type_pass;
 			*screen_type = screen_type_option;
 			return;
 		}
 
 		// Check if moving on to the dying sequence.
-		if( player_state_isnowdying == player_state )
-		{
-			//engine_scroll_manager_update( 0 );		// TODO delete
-			//*screen_type = screen_type_dead;
-			*screen_type = screen_type_option;
-			return;
-		}
+		//if( player_state_isnowdying == player_state )
+		//{
+		//	//engine_scroll_manager_update( 0 );		// TODO delete
+		//	//*screen_type = screen_type_dead;
+		//	*screen_type = screen_type_option;
+		//	return;
+		//}
 	}
 
 	engine_player_manager_draw();
