@@ -28,6 +28,7 @@
 #define STARTING_SCROLLING		1
 
 //static unsigned char cheat_count;		// TODO delete won't do
+static unsigned char reset;
 static unsigned char delay;
 static unsigned char check;
 static bool flag;
@@ -65,8 +66,11 @@ void screen_start_screen_load()
 	devkit_SMS_displayOn();
 
 	engine_delay_manager_load( NORMAL_DELAY );
-	flag = true;
+	engine_reset_manager_load( 10 );
+	reset = 0;
+	delay = 0;
 	check = 0;
+	flag = true;
 }
 
 // TODO add the cheat detect here...
