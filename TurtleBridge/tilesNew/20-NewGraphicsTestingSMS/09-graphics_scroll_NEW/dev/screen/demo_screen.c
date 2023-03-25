@@ -143,7 +143,14 @@ void screen_demo_screen_update( unsigned char *screen_type )
 	unsigned char command = COMMAND_NONE_MASK;
 	player_state = po->player_state;
 
-	
+	input1 = engine_input_manager_hold( input_type_fire1 );
+	input2 = engine_input_manager_hold( input_type_fire2 );
+	if( input1 || input2 )
+	{
+		engine_scroll_manager_para_update( 0 );
+		*screen_type = screen_type_start;
+		return;
+	}
 
 	// TODO - exhaust frames and repeat...
 	if( !complete )
@@ -191,9 +198,6 @@ void screen_demo_screen_update( unsigned char *screen_type )
 			}
 			else
 			{
-
-
-
 
 
 				//if( !complete ) {}
