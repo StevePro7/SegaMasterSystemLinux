@@ -91,7 +91,7 @@ void screen_demo_screen_load()
 
 	// ADI - reset scroll must be here to avoid graphics glitches
 	//engine_scroll_manager_update( 0 );
-	engine_scroll_manager_para_update( 0 );
+	engine_scroll_manager_demo_update( 0 );
 
 	// test_screen
 //	engine_font_manager_text( "DEMO SCREEN", 10, 0 );
@@ -147,7 +147,7 @@ void screen_demo_screen_update( unsigned char *screen_type )
 	input2 = engine_input_manager_hold( input_type_fire2 );
 	if( input1 || input2 )
 	{
-		engine_scroll_manager_para_update( 0 );
+		engine_scroll_manager_demo_update( 0 );
 		*screen_type = screen_type_start;
 		return;
 	}
@@ -194,7 +194,7 @@ void screen_demo_screen_update( unsigned char *screen_type )
 			{
 				// ADI
 				//engine_scroll_manager_update( 0 );
-				engine_scroll_manager_para_update( 0 );
+				engine_scroll_manager_demo_update( 0 );
 			}
 			else
 			{
@@ -204,7 +204,7 @@ void screen_demo_screen_update( unsigned char *screen_type )
 				for( loops = 0; loops < deltaX; loops++ )
 				{
 					//ADI
-					scroll_state = engine_scroll_manager_para_update( 1 );
+					scroll_state = engine_scroll_manager_demo_update( 1 );
 					//scroll_state = engine_scroll_manager_update( 1 );
 					//scroll_state = engine_scroll_manager_update( 0 );
 					if( scroll_state_tile == scroll_state )
@@ -250,7 +250,7 @@ void screen_demo_screen_update( unsigned char *screen_type )
 
 				//		// ADI
 				//		//engine_scroll_manager_update( 0 );
-				//		//engine_scroll_manager_para_update( 0 );
+				//		//engine_scroll_manager_demo_update( 0 );
 				//	}
 				//}
 
@@ -300,11 +300,8 @@ void screen_demo_screen_update( unsigned char *screen_type )
 		{
 			// ADI
 			//engine_scroll_manager_update( 0 );
-			engine_scroll_manager_para_update( 0 );
+			engine_scroll_manager_demo_update( 0 );
 		}
-
-
-
 
 
 		engine_player_manager_draw();
@@ -317,7 +314,7 @@ void screen_demo_screen_update( unsigned char *screen_type )
 		{
 			// ADI
 			//engine_scroll_manager_update( 0 );
-			engine_scroll_manager_para_update( 0 );
+			engine_scroll_manager_demo_update( 0 );
 
 			//complete = false;
 			//deltaY = 0;

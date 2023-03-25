@@ -136,6 +136,48 @@ enum_scroll_state engine_scroll_manager_para_update( unsigned char delta )
 		}
 
 		// Scroll cloud section at half pace.
+		//so->scroll_half = 1 - so->scroll_half;
+		//so->scrollLeftX0 -= so->scroll_half;
+	}
+
+	// Scroll game screen at full pace.
+	so->scrollLeftX1 -= delta;
+	so->scrollLeftX2 -= delta;
+	so->scrollLeftX3 -= delta;
+	so->scrollLeftX4 -= delta;
+	so->scrollLeftX5 -= 0;
+	so->lineCnt = 0;
+
+	return scroll_state;
+}
+
+enum_scroll_state engine_scroll_manager_demo_update( unsigned char delta )
+{
+	struct_scroll_object *so = &global_scroll_object;
+	enum_scroll_state scroll_state;
+
+	so->scrollLeftX -= delta;
+	so->scrollRight += delta;
+	scroll_state = scroll_state_none;
+
+	if( so->scrollRight >= SCROLL_COLUMNS )
+	{
+		so->scrollRight = 0;
+		if( so->scrollColumn == so->scrollFinish )
+		{
+			scroll_state = scroll_state_comp;
+		}
+	}
+
+	if( delta > 0 )
+	{
+		if( delta == so->scrollRight )
+		{
+			scroll_state = scroll_state_tile;
+			so->scrollColumn++;
+		}
+
+		// Scroll cloud section at half pace.
 		so->scroll_half = 1 - so->scroll_half;
 		so->scrollLeftX0 -= so->scroll_half;
 	}
