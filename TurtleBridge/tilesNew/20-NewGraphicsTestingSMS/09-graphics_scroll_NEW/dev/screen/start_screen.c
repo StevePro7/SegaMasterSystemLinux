@@ -27,8 +27,7 @@
 
 #define STARTING_SCROLLING		1
 
-//static unsigned char screen_intro_screen_delay;
-static unsigned char cheat_count;
+//static unsigned char cheat_count;		// TODO delete won't do
 static unsigned char delay;
 static unsigned char check;
 static bool flag;

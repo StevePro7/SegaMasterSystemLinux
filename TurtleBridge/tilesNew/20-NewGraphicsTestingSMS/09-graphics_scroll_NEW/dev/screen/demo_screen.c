@@ -4,6 +4,7 @@
 #include "../engine/command_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
+#include "../engine/hack_manager.h"
 #include "../engine/game_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/graphics_manager.h"
@@ -17,7 +18,6 @@
 #include "../engine/util_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/fixedbank.h"
-
 #include <stdbool.h>
 
 #ifdef _CONSOLE
@@ -33,8 +33,9 @@ static void printCmds();
 static unsigned char available;
 static unsigned char local_prev_command;
 
-static unsigned int tmp;
-//static void draw_tiles( unsigned int tmp );
+static unsigned char delay;
+static unsigned char check;
+static bool flag;
 
 void screen_demo_screen_load()
 {
@@ -107,6 +108,10 @@ void screen_demo_screen_load()
 	engine_command_manager_load( demo_command_frame_index, demo_command_this_command );
 	//engine_font_manager_data( command_frame_index[ idx ], 10, 2 );
 	//engine_font_manager_data( command_this_command[ idx ], 10, 3 );
+
+	engine_delay_manager_load( NORMAL_DELAY );
+	flag = true;
+	check = 0;
 }
 
 void screen_demo_screen_update( unsigned char *screen_type )
@@ -114,6 +119,7 @@ void screen_demo_screen_update( unsigned char *screen_type )
 	// TODO delete
 	struct_frame_object *fo = &global_frame_object;
 
+	struct_hack_object *ho = &global_hack_object;
 	struct_scroll_object *so = &global_scroll_object;
 	struct_player_object *po = &global_player_object;
 	struct_level_object *lo = &global_level_object;
@@ -132,12 +138,14 @@ void screen_demo_screen_update( unsigned char *screen_type )
 	unsigned char command = COMMAND_NONE_MASK;
 	player_state = po->player_state;
 
+	
+
 	// TODO - exhaust frames and repeat...
 	if( !complete )
 	{
 		input1 = engine_input_manager_hold( input_type_left );
 		input2 = engine_input_manager_move( input_type_right );
-		//input1 = 1;		// TODO delete
+		input1 = 1;		// TODO delete
 		if( input1 || input2 )
 		{
 			if( command_frame_index[ frame_counter ] == fo->frame_count )
@@ -172,7 +180,9 @@ void screen_demo_screen_update( unsigned char *screen_type )
 			// No scroll.
 			if( 0 == deltaX )
 			{
-				engine_scroll_manager_update( 0 );
+				// ADI
+				//engine_scroll_manager_update( 0 );
+				engine_scroll_manager_para_update( 0 );
 			}
 			else
 			{
@@ -252,6 +262,32 @@ void screen_demo_screen_update( unsigned char *screen_type )
 			engine_scroll_manager_para_update( 0 );
 		}
 
+
+		// stevepro - is a good spot to render text??
+		delay = engine_delay_manager_update();
+		if( delay )
+		{
+			if( !ho->hack_delay )
+			{
+				flag = !flag;
+				if( flag )
+				{
+					engine_font_manager_text( "BLAH", 9, 7 );
+					//	engine_util_manager_locale_texts( 4, 9, 7 );
+				}
+				else
+				{
+					engine_font_manager_text( "TEST", 9, 7 );
+					//engine_util_manager_locale_blank( 0, 9, 7 );
+				}
+
+				// ADI
+				//engine_scroll_manager_update( 0 );
+				//engine_scroll_manager_para_update( 0 );
+			}
+		}
+
+
 		engine_player_manager_draw();
 		//engine_debug_manager_printout();
 		//	engine_font_manager_data( deltaY, 30, 2 );
@@ -268,6 +304,8 @@ void screen_demo_screen_update( unsigned char *screen_type )
 			return;
 		}
 	}
+
+	
 
 	engine_player_manager_draw();
 	*screen_type = screen_type_demo;
