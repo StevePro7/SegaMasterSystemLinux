@@ -26,6 +26,7 @@
 #endif
 
 #define STARTING_SCROLLING		1
+#define MAX_START_SCREENS		5
 
 //static unsigned char cheat_count;		// TODO delete won't do
 static unsigned char reset;
@@ -47,7 +48,8 @@ void screen_start_screen_load()
 	game_difficulty = difficulty_type_normal;
 	game_world = 4;
 	game_point = 0;
-	start_level = 43;
+	start_level = engine_random_manager_next( MAX_START_SCREENS );
+	start_level += MAX_LEVELS;
 
 	engine_level_manager_init( start_level );
 	engine_player_manager_initX( game_difficulty, game_world );
@@ -86,7 +88,7 @@ void screen_start_screen_load()
 	devkit_SMS_displayOn();
 
 	engine_delay_manager_load( NORMAL_DELAY );
-	engine_reset_manager_load( NORMAL_DELAY * 5 );				// TODO what is good delay here to transition
+	engine_reset_manager_load( NORMAL_DELAY * 10 );				// TODO what is good delay here to transition
 	reset = 0;
 	delay = 0;
 	check = 0;
@@ -181,7 +183,7 @@ void screen_start_screen_update( unsigned char *screen_type )
 		reset = engine_reset_manager_update();
 		if( reset )
 		{
-			//*screen_type = screen_type_demo;
+			*screen_type = screen_type_demo;
 			return;
 		}
 	}

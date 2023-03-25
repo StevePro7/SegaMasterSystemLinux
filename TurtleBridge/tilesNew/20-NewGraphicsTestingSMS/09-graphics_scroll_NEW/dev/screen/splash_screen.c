@@ -66,5 +66,6 @@ void screen_splash_screen_update( unsigned char *screen_type )
 		}
 	}
 
+	engine_random_manager_rand();
 	*screen_type = screen_type_title;
 }

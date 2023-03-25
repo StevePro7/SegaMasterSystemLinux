@@ -7,7 +7,7 @@ S:Lstart_screen.screen_start_screen_load$checkScreen$1_0$151({1}SC:U),R,0,0,[]
 S:Lstart_screen.screen_start_screen_load$game_difficulty$1_0$151({1}SC:U),R,0,0,[]
 S:Lstart_screen.screen_start_screen_load$game_world$1_0$151({1}SC:U),R,0,0,[]
 S:Lstart_screen.screen_start_screen_load$game_point$1_0$151({1}SC:U),R,0,0,[]
-S:Lstart_screen.screen_start_screen_load$start_level$1_0$151({1}SC:U),R,0,0,[]
+S:Lstart_screen.screen_start_screen_load$start_level$1_0$151({1}SC:U),R,0,0,[a]
 F:G$screen_start_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lstart_screen.screen_start_screen_update$screen_type$1_0$153({2}DG,SC:U),B,1,4
 S:Lstart_screen.screen_start_screen_update$po$1_0$154({2}DG,STtag_struct_player_object:S),R,0,0,[]
@@ -22,7 +22,7 @@ T:Fstart_screen$tag_struct_frame_object[({0}S:S$frame_count$0_0$0({2}SI:U),Z,0,0
 T:Fstart_screen$tag_struct_delay_object[({0}S:S$delay_value$0_0$0({2}SI:U),Z,0,0)({2}S:S$delay_timer$0_0$0({2}SI:U),Z,0,0)]
 T:Fstart_screen$tag_struct_audio_object[({0}S:S$music_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$music_bank$0_0$0({1}SC:U),Z,0,0)({3}S:S$sound_data$0_0$0({2}DG,SC:U),Z,0,0)({5}S:S$sound_bank$0_0$0({1}SC:U),Z,0,0)]
 T:Fstart_screen$tag_struct_level_object[({0}S:S$level_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$level_size$0_0$0({2}SI:U),Z,0,0)({4}S:S$level_bank$0_0$0({1}SC:U),Z,0,0)({5}S:S$level_check$0_0$0({2}SI:U),Z,0,0)({7}S:S$check_width$0_0$0({1}SC:U),Z,0,0)({8}S:S$column_draw$0_0$0({1}SC:U),Z,0,0)]
-T:Fstart_screen$tag_struct_reset_object[({0}S:S$reset_value$0_0$0({1}SC:U),Z,0,0)({1}S:S$reset_timer$0_0$0({1}SC:U),Z,0,0)]
+T:Fstart_screen$tag_struct_reset_object[({0}S:S$reset_value$0_0$0({2}SI:U),Z,0,0)({2}S:S$reset_timer$0_0$0({2}SI:U),Z,0,0)]
 S:G$global_audio_object$0_0$0({6}STtag_struct_audio_object:S),E,0,0
 S:G$global_game_object$0_0$0({10}STtag_struct_game_object:S),E,0,0
 S:G$global_hack_object$0_0$0({5}STtag_struct_hack_object:S),E,0,0
@@ -34,7 +34,7 @@ S:G$global_player_object$0_0$0({18}STtag_struct_player_object:S),E,0,0
 S:G$global_scroll_object$0_0$0({18}STtag_struct_scroll_object:S),E,0,0
 S:G$global_delay_object$0_0$0({4}STtag_struct_delay_object:S),E,0,0
 S:G$global_frame_object$0_0$0({2}STtag_struct_frame_object:S),E,0,0
-S:G$global_reset_object$0_0$0({2}STtag_struct_reset_object:S),E,0,0
+S:G$global_reset_object$0_0$0({4}STtag_struct_reset_object:S),E,0,0
 S:G$steven_text$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$demo_command_frame_index$0_0$0({0}DA0d,SI:U),E,0,0
 S:G$demo_command_this_command$0_0$0({0}DA0d,SC:U),E,0,0

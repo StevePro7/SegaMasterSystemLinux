@@ -121,6 +121,7 @@ void screen_title_screen_update( unsigned char *screen_type )
 	}
 
 	index++;
+	engine_random_manager_rand();
 	*screen_type = screen_type_title;
 }
 
