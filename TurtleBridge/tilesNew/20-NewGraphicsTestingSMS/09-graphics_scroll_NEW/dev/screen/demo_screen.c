@@ -77,6 +77,7 @@ void screen_demo_screen_load()
 	//engine_command_manager_load();
 	//TODO delete - dup below
 
+	engine_graphics_manager_title();
 	engine_graphics_manager_sea();
 	//engine_graphics_manager_clouds( go->game_cloud );
 	engine_level_manager_draw_screen( checkScreen );		// Weird - must draw this twice otherwise clouds + sea don't draw??
@@ -246,7 +247,9 @@ void screen_demo_screen_update( unsigned char *screen_type )
 		}
 		else
 		{
-			engine_scroll_manager_update( 0 );
+			// ADI
+			//engine_scroll_manager_update( 0 );
+			engine_scroll_manager_para_update( 0 );
 		}
 
 		engine_player_manager_draw();
@@ -257,20 +260,13 @@ void screen_demo_screen_update( unsigned char *screen_type )
 		// Check to see if player completes level.
 		if( complete )
 		{
-			engine_scroll_manager_update( 0 );		// TODO delete
+			// ADI
+			//engine_scroll_manager_update( 0 );
+			engine_scroll_manager_para_update( 0 );
 			//*screen_type = screen_type_pass;
 			*screen_type = screen_type_option;
 			return;
 		}
-
-		// Check if moving on to the dying sequence.
-		//if( player_state_isnowdying == player_state )
-		//{
-		//	//engine_scroll_manager_update( 0 );		// TODO delete
-		//	//*screen_type = screen_type_dead;
-		//	*screen_type = screen_type_option;
-		//	return;
-		//}
 	}
 
 	engine_player_manager_draw();
