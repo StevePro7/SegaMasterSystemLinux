@@ -530,16 +530,41 @@ const unsigned char level_object_bank[] =
 
 const unsigned char *extra_object_data[] =
 {
-	level_3001_txt,
-	level_0000_txt,
+	level_3001_txt,	// 40
+	level_3001_txt,	// 41
+	level_3001_txt,	// 42
+	level_3001_txt,	// 43
+	level_3001_txt,	// 44
+	level_3001_txt,	// 45
+	level_3001_txt,	// 46
+	level_3001_txt,	// 47
+	level_0000_txt,	// 48	demo
+	level_9999_txt,	// 49	beat
+	
 };
 const unsigned int extra_object_size[] =
 {
-	level_3001_txt_size,
-	level_0000_txt_size,
+	level_3001_txt_size,	// 40
+	level_3001_txt_size,	// 41
+	level_3001_txt_size,	// 42
+	level_3001_txt_size,	// 43
+	level_3001_txt_size,	// 44
+	level_3001_txt_size,	// 45
+	level_3001_txt_size,	// 46
+	level_3001_txt_size,	// 47
+	level_0000_txt_size,	// 48	demo
+	level_9999_txt_size,	// 49	beat
 };
 const unsigned char extra_object_bank[] =
 {
-	level_3001_txt_bank,
-	level_0000_txt_bank,
+	level_3001_txt_bank,	// 40
+	level_3001_txt_bank,	// 41
+	level_3001_txt_bank,	// 42
+	level_3001_txt_bank,	// 43
+	level_3001_txt_bank,	// 44
+	level_3001_txt_bank,	// 45
+	level_3001_txt_bank,	// 46
+	level_3001_txt_bank,	// 47
+	level_0000_txt_bank,	// 48	demo
+	level_9999_txt_bank,	// 49	beat
 };

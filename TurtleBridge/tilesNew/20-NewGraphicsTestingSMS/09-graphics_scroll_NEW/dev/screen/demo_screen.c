@@ -45,11 +45,21 @@ void screen_demo_screen_load()
 	struct_game_object *go = &global_game_object;
 	unsigned char player_loadY;
 	unsigned char checkScreen;
-	//unsigned char cloud_formation = engine_random_manager_next( SPRITE_TILES );
+	unsigned char demo_level;
 
-	engine_level_manager_init( go->game_level );
-	engine_player_manager_initX( go->game_difficulty, go->game_world );
-	engine_collision_manager_init( go->game_difficulty );
+	unsigned char game_difficulty;
+	unsigned char game_world;
+	unsigned char game_point;
+	
+
+	demo_level = 48;
+	game_difficulty = difficulty_type_normal;
+	game_world = 0;
+	game_point = 0;
+
+	engine_level_manager_init( demo_level );
+	engine_player_manager_initX( game_difficulty, game_world );
+	engine_collision_manager_init( game_difficulty );
 
 	// load_screen
 	devkit_SMS_displayOff();
@@ -57,7 +67,7 @@ void screen_demo_screen_load()
 
 
 	// Work in terms of screens.
-	checkScreen = lo->check_width * go->game_point;
+	checkScreen = lo->check_width * game_point;
 
 	// ADI
 	//engine_scroll_manager_load( checkScreen, lo->level_check, lo->level_size );
@@ -66,9 +76,9 @@ void screen_demo_screen_load()
 	// ADI
 
 	engine_level_manager_draw_screen( checkScreen );
-	//engine_level_manager_draw_point( go->game_point );
+	//engine_level_manager_draw_point( go->game_point );		// TODO delete
 
-	engine_player_manager_initX( go->game_difficulty, go->game_world );
+	engine_player_manager_initX( game_difficulty, game_world );
 	engine_player_manager_loadX( checkScreen );
 	player_loadY = level_platforms[ po->lookX ];
 	engine_player_manager_loadY( player_loadY );

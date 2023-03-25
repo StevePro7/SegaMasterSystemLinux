@@ -23,33 +23,7 @@
 #pragma disable_warning 261
 #endif
 
-static void printBeatGame()
-{
-	const unsigned char *tiles = bggame_tiles__tilemap__bin;
-	unsigned char x, y, d;
-
-	x = 4;
-	y = 0;
-	d = 0;
-	engine_graphics_manager_image( tiles, TILE_TURTLE_FLIP, x + 0, y + 1, 4, 3 );
-	engine_graphics_manager_image( tiles, TILE_TURTLE_FLIP, x + 4, y, 4, 3 );
-	engine_graphics_manager_image( tiles, TILE_TURTLE_FLIP, x + 8, y, 4, 3 );
-	engine_graphics_manager_image_flip( tiles, TILE_TURTLE_FLIP, x + 12 + d, y, 4, 3 );
-	engine_graphics_manager_image_flip( tiles, TILE_TURTLE_FLIP, x + 16 + d, y, 4, 3 );
-	engine_graphics_manager_image_flip( tiles, TILE_TURTLE_FLIP, x + 20 + d, y + 1, 4, 3 );
-
-	y = 5;
-	engine_graphics_manager_image( tiles, TILE_TURTLE_FLIP, x + 0, y - 1, 4, 3 );
-	engine_graphics_manager_image( tiles, TILE_TURTLE_FLIP, x + 4, y, 4, 3 );
-	engine_graphics_manager_image( tiles, TILE_TURTLE_FLIP, x + 8, y, 4, 3 );
-	engine_graphics_manager_image_flip( tiles, TILE_TURTLE_FLIP, x + 12 + d, y, 4, 3 );
-	engine_graphics_manager_image_flip( tiles, TILE_TURTLE_FLIP, x + 16 + d, y, 4, 3 );
-	engine_graphics_manager_image_flip( tiles, TILE_TURTLE_FLIP, x + 20 + d, y - 1, 4, 3 );
-
-	engine_font_manager_text( "CONGLATURATION", 9, 3 );
-	engine_font_manager_text( "AWINNER IS YOU", 9, 4 );
-	//engine_font_manager_text( "-012345678901234567890123456789-", 0, 4 );
-}
+static void printBeatGame();
 
 void screen_beat_screen_load()
 {
@@ -103,4 +77,33 @@ void screen_beat_screen_update( unsigned char *screen_type )
 
 	
 	*screen_type = screen_type_beat;
+}
+
+
+static void printBeatGame()
+{
+	const unsigned char *tiles = bggame_tiles__tilemap__bin;
+	unsigned char x, y, d;
+
+	x = 4;
+	y = 0;
+	d = 0;
+	engine_graphics_manager_image( tiles, TILE_TURTLE_FLIP, x + 0, y + 1, 4, 3 );
+	engine_graphics_manager_image( tiles, TILE_TURTLE_FLIP, x + 4, y, 4, 3 );
+	engine_graphics_manager_image( tiles, TILE_TURTLE_FLIP, x + 8, y, 4, 3 );
+	engine_graphics_manager_image_flip( tiles, TILE_TURTLE_FLIP, x + 12 + d, y, 4, 3 );
+	engine_graphics_manager_image_flip( tiles, TILE_TURTLE_FLIP, x + 16 + d, y, 4, 3 );
+	engine_graphics_manager_image_flip( tiles, TILE_TURTLE_FLIP, x + 20 + d, y + 1, 4, 3 );
+
+	y = 5;
+	engine_graphics_manager_image( tiles, TILE_TURTLE_FLIP, x + 0, y - 1, 4, 3 );
+	engine_graphics_manager_image( tiles, TILE_TURTLE_FLIP, x + 4, y, 4, 3 );
+	engine_graphics_manager_image( tiles, TILE_TURTLE_FLIP, x + 8, y, 4, 3 );
+	engine_graphics_manager_image_flip( tiles, TILE_TURTLE_FLIP, x + 12 + d, y, 4, 3 );
+	engine_graphics_manager_image_flip( tiles, TILE_TURTLE_FLIP, x + 16 + d, y, 4, 3 );
+	engine_graphics_manager_image_flip( tiles, TILE_TURTLE_FLIP, x + 20 + d, y - 1, 4, 3 );
+
+	engine_font_manager_text( "CONGLATURATION", 9, 3 );
+	engine_font_manager_text( "AWINNER IS YOU", 9, 4 );
+	//engine_font_manager_text( "-012345678901234567890123456789-", 0, 4 );
 }
