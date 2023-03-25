@@ -97,9 +97,9 @@ void screen_beat_screen_load()
 	engine_frame_manager_draw();
 
 	// TODO perfect this i.e. w/o debug_mgr
-	//	engine_game_manager_set_level_data( 0, 0, 0 );
-	//engine_music_manager_playnorepeat( 6 );
-	engine_music_manager_playnorepeat( 5 );
+	engine_game_manager_set_level_data( 0, 0, 0 );
+	engine_music_manager_playnorepeat( 6 );
+	//engine_music_manager_playnorepeat( 4 );
 	//value = so->scrollLeftX >> 0;
 }
 
@@ -161,6 +161,11 @@ void screen_beat_screen_update( unsigned char *screen_type )
 
 		engine_frame_manager_update();
 		engine_frame_manager_draw();
+
+		if( fo->frame_count >= 200 )
+		{
+			fo->frame_count = 0;
+		}
 	}
 
 	if( COMMAND_NONE_MASK != command )
