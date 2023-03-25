@@ -99,6 +99,7 @@ void screen_beat_screen_load()
 	// TODO perfect this i.e. w/o debug_mgr
 	//	engine_game_manager_set_level_data( 0, 0, 0 );
 	//engine_music_manager_playnorepeat( 6 );
+	engine_music_manager_playnorepeat( 5 );
 	//value = so->scrollLeftX >> 0;
 }
 
@@ -128,6 +129,18 @@ void screen_beat_screen_update( unsigned char *screen_type )
 	deltaX = 0;
 	deltaY = 0;
 
+	input1 = engine_input_manager_hold( input_type_fire1 );
+	input2 = engine_input_manager_hold( input_type_fire2 );
+	if( !devkit_PSGGetStatus() || input1 || input2 )
+	{
+		devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+		engine_music_manager_stop();
+		engine_sound_manager_stop();
+		//engine_font_manager_text( "FINISH", 20, 10 );
+		// Resume from init
+		*screen_type = screen_type_start;
+		return;
+	}
 
 	input1 = engine_input_manager_hold( input_type_left );
 	input2 = engine_input_manager_move( input_type_right );

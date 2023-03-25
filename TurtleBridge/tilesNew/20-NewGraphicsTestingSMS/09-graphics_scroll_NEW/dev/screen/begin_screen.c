@@ -18,7 +18,7 @@ void screen_begin_screen_load()
 	engine_debug_manager_initgame();
 	// TODO delete this.
 
-
+	// TODO delete here - from start.
 	cloud = engine_random_manager_next( SPRITE_TILES );
 	engine_game_manager_set_cloud_form( cloud );
 
@@ -34,9 +34,9 @@ void screen_begin_screen_update( unsigned char *screen_type )
 	//*screen_type = screen_type_level;
 	//*screen_type = screen_type_option;
 	//*screen_type = screen_type_diff;
-	//*screen_type = screen_type_beat;
+	*screen_type = screen_type_beat;
 	//*screen_type = screen_type_demo;
-	*screen_type = screen_type_start;
+	//*screen_type = screen_type_start;
 	////*screen_type = screen_type_record;
 	//*screen_type = screen_type_ready;
 	//*screen_type = screen_type_begin;

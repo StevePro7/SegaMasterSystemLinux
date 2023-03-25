@@ -44,6 +44,10 @@ void screen_start_screen_load()
 	unsigned char game_world;
 	unsigned char game_point;
 	unsigned char start_level;
+	unsigned char cloud;
+
+	cloud = engine_random_manager_next( SPRITE_TILES );
+	engine_game_manager_set_cloud_form( cloud );
 
 	game_difficulty = difficulty_type_normal;
 	game_world = 4;
