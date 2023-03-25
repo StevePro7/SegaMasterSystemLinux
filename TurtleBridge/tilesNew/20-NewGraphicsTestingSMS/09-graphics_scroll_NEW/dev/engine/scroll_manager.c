@@ -134,6 +134,10 @@ enum_scroll_state engine_scroll_manager_para_update( unsigned char delta )
 			scroll_state = scroll_state_tile;
 			so->scrollColumn++;
 		}
+
+		// Scroll cloud section at half pace.
+		so->scroll_half = 1 - so->scroll_half;
+		so->scrollLeftX0 -= so->scroll_half;
 	}
 
 	// Scroll game screen at full pace.

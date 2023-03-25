@@ -80,8 +80,12 @@ void screen_demo_screen_load()
 
 	engine_graphics_manager_title();
 	engine_graphics_manager_sea();
-	//engine_graphics_manager_clouds( go->game_cloud );
+	engine_graphics_manager_clouds( go->game_cloud );
 	engine_level_manager_draw_screen( checkScreen );		// Weird - must draw this twice otherwise clouds + sea don't draw??
+
+
+	//engine_font_manager_text( "INSERT COIN(S)", 9, 7 );
+	//engine_font_manager_text( "--GAME OVER--", 9, 6 );
 	devkit_SMS_displayOn();
 
 	// ADI - reset scroll must be here to avoid graphics glitches
@@ -186,6 +190,11 @@ void screen_demo_screen_update( unsigned char *screen_type )
 			}
 			else
 			{
+
+
+
+
+
 				//if( !complete ) {}
 				for( loops = 0; loops < deltaX; loops++ )
 				{
@@ -213,6 +222,33 @@ void screen_demo_screen_update( unsigned char *screen_type )
 						}
 					}
 				}
+
+
+				// stevepro - is a good spot to render text #1??
+				//delay = engine_delay_manager_update();
+				//if( delay )
+				//{
+				//	if( !ho->hack_delay )
+				//	{
+				//		flag = !flag;
+				//		if( flag )
+				//		{
+				//			engine_font_manager_text( "INSERT COIN(S)", 9, 7 );
+				//			//engine_util_manager_locale_texts( 4, 9, 7 );
+				//		}
+				//		else
+				//		{
+				//			//engine_font_manager_text( "INSERT COIN(S)", 9, 7 );
+				//			engine_font_manager_text( "              ", 9, 7 );
+				//			//engine_util_manager_locale_blank( 0, 9, 7 );
+				//		}
+
+				//		// ADI
+				//		//engine_scroll_manager_update( 0 );
+				//		//engine_scroll_manager_para_update( 0 );
+				//	}
+				//}
+
 
 				// Set horizontal movement.
 				engine_player_manager_horz( deltaX );
@@ -263,29 +299,7 @@ void screen_demo_screen_update( unsigned char *screen_type )
 		}
 
 
-		// stevepro - is a good spot to render text??
-		delay = engine_delay_manager_update();
-		if( delay )
-		{
-			if( !ho->hack_delay )
-			{
-				flag = !flag;
-				if( flag )
-				{
-					engine_font_manager_text( "BLAH", 9, 7 );
-					//	engine_util_manager_locale_texts( 4, 9, 7 );
-				}
-				else
-				{
-					engine_font_manager_text( "TEST", 9, 7 );
-					//engine_util_manager_locale_blank( 0, 9, 7 );
-				}
 
-				// ADI
-				//engine_scroll_manager_update( 0 );
-				//engine_scroll_manager_para_update( 0 );
-			}
-		}
 
 
 		engine_player_manager_draw();
@@ -299,9 +313,15 @@ void screen_demo_screen_update( unsigned char *screen_type )
 			// ADI
 			//engine_scroll_manager_update( 0 );
 			engine_scroll_manager_para_update( 0 );
+
+			complete = false;
+			deltaY = 0;
+			frame_counter = 0;
+			local_prev_command = COMMAND_NONE_MASK;
+
 			//*screen_type = screen_type_pass;
-			*screen_type = screen_type_option;
-			return;
+			//*screen_type = screen_type_option;
+			//return;
 		}
 	}
 

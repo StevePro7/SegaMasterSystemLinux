@@ -22,7 +22,8 @@ S:Lscroll_manager.engine_scroll_manager_para_load$so$1_0$111({2}DG,STtag_struct_
 F:G$engine_scroll_manager_para_update$0_0$0({2}DF,SC:U),Z,0,0,0,0,0
 S:Lscroll_manager.engine_scroll_manager_para_update$delta$1_0$112({1}SC:U),B,1,4
 S:Lscroll_manager.engine_scroll_manager_para_update$so$1_0$113({2}DG,STtag_struct_scroll_object:S),R,0,0,[]
-S:Lscroll_manager.engine_scroll_manager_para_update$scroll_state$1_0$113({1}SC:U),R,0,0,[e]
+S:Lscroll_manager.engine_scroll_manager_para_update$scroll_state$1_0$113({1}SC:U),B,1,-1
+S:Lscroll_manager.engine_scroll_manager_para_update$sloc0$0_1$0({1}SC:U),B,1,-1
 F:Fscroll_manager$lineScrollHandler$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lscroll_manager.lineScrollHandler$so$1_0$119({2}DG,STtag_struct_scroll_object:S),R,0,0,[]
 S:Lscroll_manager.lineScrollHandler$index$1_0$119({1}SC:U),R,0,0,[c]
