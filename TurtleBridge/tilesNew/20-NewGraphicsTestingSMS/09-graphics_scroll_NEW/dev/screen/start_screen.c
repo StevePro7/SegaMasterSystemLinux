@@ -46,7 +46,7 @@ void screen_start_screen_load()
 
 
 	// TODO for testing
-	engine_level_manager_init( go->game_level );
+	engine_level_manager_init( 40 );
 	engine_level_manager_draw_screen( 0 );
 	// TODO for testing
 
