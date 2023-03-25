@@ -48,17 +48,18 @@ void screen_beat_screen_load()
 	unsigned char checkScreen;
 	unsigned char beat_level;
 
+	unsigned char game_difficulty;
 	unsigned char game_world;
 	unsigned char game_point;
 
 	beat_level = 49;
-	difficulty_type_normal;
+	game_difficulty = difficulty_type_harder;		// make player more central
 	game_world = 4;
 	game_point = 0;
 
 	engine_level_manager_init( beat_level );
-	engine_player_manager_initX( go->game_difficulty, game_world );
-	engine_collision_manager_init( go->game_difficulty );
+	engine_player_manager_initX( game_difficulty, game_world );
+	engine_collision_manager_init( game_difficulty );
 
 
 	devkit_SMS_displayOff();
@@ -76,7 +77,7 @@ void screen_beat_screen_load()
 	engine_level_manager_draw_screen( checkScreen );
 	//engine_level_manager_draw_point( go->game_point );		// TODO delete
 
-	engine_player_manager_initX( go->game_difficulty, game_world );
+	engine_player_manager_initX( game_difficulty, game_world );
 	engine_player_manager_loadX( checkScreen );
 	player_loadY = level_platforms[ po->lookX ];
 	engine_player_manager_loadY( player_loadY );
@@ -130,7 +131,7 @@ void screen_beat_screen_update( unsigned char *screen_type )
 
 	input1 = engine_input_manager_hold( input_type_left );
 	input2 = engine_input_manager_move( input_type_right );
-	//input1 = 1;		// TODO delete
+	input1 = 1;		// TODO delete
 	if( input1 || input2 )
 	{
 		if( 2 == fo->frame_count )//|| 8 == fo->frame_count )
@@ -142,7 +143,7 @@ void screen_beat_screen_update( unsigned char *screen_type )
 		}
 		else
 		{
-			command = engine_command_manager_build( po->player_state, 0, 1, 0, 0, 0, 0 );
+			command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 0 );
 		}
 
 		engine_frame_manager_update();
@@ -259,7 +260,7 @@ void screen_beat_screen_update( unsigned char *screen_type )
 	engine_player_manager_draw();
 	//engine_sprite_manager_draw( po->player_frame, po->drawX + 0, po->drawY + 0 );
 	//engine_sprite_manager_draw( po->player_frame, 196, 112 );
-	//engine_font_manager_data( po->drawX, 10,10);
+	engine_font_manager_data( po->drawY, 20,10);
 	*screen_type = screen_type_beat;
 }
 
