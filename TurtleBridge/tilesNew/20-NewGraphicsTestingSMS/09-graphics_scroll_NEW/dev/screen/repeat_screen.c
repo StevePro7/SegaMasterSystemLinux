@@ -148,8 +148,6 @@ void screen_repeat_screen_update( unsigned char *screen_type )
 				//engine_font_manager_data( frame_counter, 30, 03 );
 				//engine_font_manager_data( command, 30, 04 );
 
-				//TODO - bad - wrap in API.
-				//co->prev_command = command;
 				local_prev_command = command;
 				frame_counter++;
 			}
@@ -167,6 +165,7 @@ void screen_repeat_screen_update( unsigned char *screen_type )
 		{
 			// Get horizontal movement.
 			deltaX = engine_player_manager_get_deltaX( po->player_state, command );
+			//deltaX = 0;
 
 			// Get button action.
 			engine_player_manager_set_action( po->player_frame, command );
@@ -181,7 +180,8 @@ void screen_repeat_screen_update( unsigned char *screen_type )
 			//if( !complete ) {}
 			for( loops = 0; loops < deltaX; loops++ )
 			{
-				scroll_state = engine_scroll_manager_update( 1 );
+				//scroll_state = engine_scroll_manager_update( 1 );
+				scroll_state = engine_scroll_manager_update( 0 );
 				if( scroll_state_tile == scroll_state )
 				{
 					engine_level_manager_draw_column( so->scrollColumn );

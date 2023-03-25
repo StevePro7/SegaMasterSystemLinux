@@ -8,7 +8,8 @@ namespace CommandBuilderSRAM
 		{
 			var fm = new FileManager();
 			fm.Init();
-			fm.Process("output.ssm");
+			//fm.Process("output.ssm");
+			fm.Process("output.sav");
 
 			var cm = new CommandManager();
 			cm.Process(fm.Bytes);
