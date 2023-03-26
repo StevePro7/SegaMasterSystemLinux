@@ -36,6 +36,7 @@ static unsigned char local_prev_command;
 
 static unsigned char delay;
 static unsigned char check;
+static unsigned char lookX;
 static bool flag;
 
 void screen_beat_screen_load()
@@ -53,9 +54,24 @@ void screen_beat_screen_load()
 	unsigned char game_point;
 
 	beat_level = 49;
-	game_difficulty = difficulty_type_harder;		// make player more central
+	game_difficulty = go->game_difficulty;
 	game_world = 4;
 	game_point = 0;
+
+	// Hack to make collision detection work when landing on turtle irrespective of difficulty.
+	
+	if( difficulty_type_easier == game_difficulty )
+	{
+		lookX = 5;		// Easier
+	}
+	else if( difficulty_type_normal == game_difficulty )
+	{
+		lookX = 13;		// Normal
+	}
+	else
+	{
+		lookX = 17;		// Harder + Insane
+	}
 
 	engine_level_manager_init( beat_level );
 	engine_player_manager_initX( game_difficulty, game_world );
@@ -138,16 +154,25 @@ void screen_beat_screen_update( unsigned char *screen_type )
 		engine_sound_manager_stop();
 		//engine_font_manager_text( "FINISH", 20, 10 );
 		// Resume from init
-		*screen_type = screen_type_start;
+		//*screen_type = screen_type_start;
 		return;
 	}
 
 	input1 = engine_input_manager_hold( input_type_left );
 	input2 = engine_input_manager_move( input_type_right );
-	input1 = 1;		// TODO delete
+	//input1 = 1;		// TODO delete
 	if( input1 || input2 )
 	{
-		if( 2 == fo->frame_count )//|| 8 == fo->frame_count )
+		if( 60 == fo->frame_count )
+		{
+			command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 1, 0 );
+		}
+		else if( 20 == fo->frame_count || 40 == fo->frame_count || 80 == fo->frame_count || 100 == fo->frame_count )
+		{
+			command = engine_command_manager_build( po->player_state, 1, 0, 0, 0, 0, 1 );		//Jump index = 4.
+			//command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 1, 0 );		//Jump index = 4.
+		}
+		else if( 2 == fo->frame_count )//|| 8 == fo->frame_count )
 		{
 			//command = engine_command_manager_build( po->player_state, 1, 0, 0, 0, 0, 1 );		//Jump index = 1.
 			//command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 1 );		//Jump index = 2.
@@ -162,7 +187,7 @@ void screen_beat_screen_update( unsigned char *screen_type )
 		engine_frame_manager_update();
 		engine_frame_manager_draw();
 
-		if( fo->frame_count >= 200 )
+		if( fo->frame_count >= 150 )
 		{
 			fo->frame_count = 0;
 		}
@@ -227,25 +252,25 @@ void screen_beat_screen_update( unsigned char *screen_type )
 		}
 
 		// General all-purpose collision detection routine.
-		player_state = engine_player_manager_collision( po->player_state, po->lookX, po->tileY, deltaY, po->posnY, go->game_isgod );
+		engine_player_manager_collision( po->player_state, lookX, po->tileY, deltaY, po->posnY, go->game_isgod );
 
-		// Finally, check if player forcing downward drop.
-		if( player_state_isintheair == po->player_state )
-		{
-			// If player forces down while in the air then only apply on the descent!
-			if( ( COMMAND_DOWN_MASK & command ) == COMMAND_DOWN_MASK )
-			{
-				if( deltaY > 0 )
-				{
-					deltaY = engine_player_manager_get_deltaY();
-					engine_player_manager_vert( deltaY );
-					engine_player_manager_bounds( deltaY, po->posnY, go->game_isgod );
-				}
-			}
+		//// Finally, check if player forcing downward drop.
+		//if( player_state_isintheair == po->player_state )
+		//{
+		//	// If player forces down while in the air then only apply on the descent!
+		//	if( ( COMMAND_DOWN_MASK & command ) == COMMAND_DOWN_MASK )
+		//	{
+		//		if( deltaY > 0 )
+		//		{
+		//			deltaY = engine_player_manager_get_deltaY();
+		//			engine_player_manager_vert( deltaY );
+		//			engine_player_manager_bounds( deltaY, po->posnY, go->game_isgod );
+		//		}
+		//	}
 
-			// General all-purpose collision detection routine.
-			player_state = engine_player_manager_collision( po->player_state, po->lookX, po->tileY, deltaY, po->posnY, go->game_isgod );
-		}
+		//	// General all-purpose collision detection routine.
+		//	player_state = engine_player_manager_collision( po->player_state, po->lookX, po->tileY, deltaY, po->posnY, go->game_isgod );
+		//}
 	}
 
 	engine_command_manager_update( command );

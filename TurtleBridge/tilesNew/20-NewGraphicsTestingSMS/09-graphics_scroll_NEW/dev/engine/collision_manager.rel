@@ -8,12 +8,12 @@ S _level_platforms Ref000000
 A _CODE size DD flags 0 addr 0
 S A$collision_manager$99 Def000010
 S G$engine_collision_manager_init$0$0 Def000010
-S C$collision_manager.c$78$2_0$17 Def000083
-S C$collision_manager.c$88$2_0$19 Def0000A1
-S C$collision_manager.c$30$1_0$8 Def00000A
+S C$collision_manager.c$79$2_0$17 Def000083
 S C$collision_manager.c$21$1_0$8 Def000000
-S C$collision_manager.c$31$1_0$8 Def00000F
+S C$collision_manager.c$89$2_0$19 Def0000A1
+S C$collision_manager.c$31$1_0$8 Def00000A
 S C$collision_manager.c$22$1_0$8 Def000005
+S C$collision_manager.c$32$1_0$8 Def00000F
 S C$collision_manager.c$17$0_0$8 Def000000
 S _engine_collision_manager_init Def000010
 S G$engine_collision_manager_finish$0$0 Def0000AB
@@ -21,19 +21,20 @@ S XG$engine_collision_manager_init$0$0 Def00001F
 S G$engine_collision_manager_initX$0$0 Def000000
 S G$engine_collision_manager_player$0$0 Def000020
 S _engine_collision_manager_finish Def0000AB
-S C$collision_manager.c$100$1_0$21 Def0000B3
+S C$collision_manager.c$110$1_0$21 Def0000DC
+S C$collision_manager.c$101$1_0$21 Def0000B3
 S A$collision_manager$100 Def000012
-S C$collision_manager.c$102$1_0$21 Def0000BD
 S A$collision_manager$200 Def000081
 S A$collision_manager$110 Def00001C
-S C$collision_manager.c$103$1_0$21 Def0000C9
+S C$collision_manager.c$103$1_0$21 Def0000BD
+S C$collision_manager.c$104$1_0$21 Def0000C9
 S A$collision_manager$301 Def0000D6
 S A$collision_manager$130 Def000026
-S C$collision_manager.c$105$1_0$21 Def0000D0
 S A$collision_manager$302 Def0000D9
 S A$collision_manager$140 Def00002F
 S A$collision_manager$131 Def000028
 S A$collision_manager$104 Def000015
+S C$collision_manager.c$106$1_0$21 Def0000D0
 S A$collision_manager$312 Def0000DC
 S A$collision_manager$231 Def00009B
 S A$collision_manager$222 Def000095
@@ -53,8 +54,6 @@ S A$collision_manager$215 Def000090
 S A$collision_manager$206 Def000086
 S A$collision_manager$170 Def000058
 S A$collision_manager$143 Def000035
-S C$collision_manager.c$109$1_0$21 Def0000DC
-S C$collision_manager.c$107$2_0$22 Def0000D6
 S A$collision_manager$270 Def0000B3
 S A$collision_manager$243 Def0000A4
 S A$collision_manager$225 Def000098
@@ -66,6 +65,7 @@ S A$collision_manager$162 Def00004E
 S A$collision_manager$153 Def000042
 S A$collision_manager$144 Def000038
 S A$collision_manager$135 Def000029
+S C$collision_manager.c$108$2_0$22 Def0000D6
 S A$collision_manager$307 Def0000DA
 S A$collision_manager$280 Def0000C3
 S A$collision_manager$271 Def0000B6
@@ -133,33 +133,33 @@ S XG$engine_collision_manager_initX$0$0 Def00000F
 S A$collision_manager$289 Def0000C9
 S A$collision_manager$199 Def00007F
 S XG$engine_collision_manager_player$0$0 Def0000AA
-S C$collision_manager.c$50$1_0$13 Def000020
-S C$collision_manager.c$43$1_0$11 Def000010
-S C$collision_manager.c$34$1_0$11 Def000010
-S C$collision_manager.c$60$1_0$13 Def00002F
-S C$collision_manager.c$44$1_0$11 Def000015
-S C$collision_manager.c$70$1_0$13 Def000063
-S C$collision_manager.c$47$1_0$11 Def00001A
+S C$collision_manager.c$51$1_0$13 Def000020
+S C$collision_manager.c$44$1_0$11 Def000010
+S C$collision_manager.c$35$1_0$11 Def000010
+S C$collision_manager.c$70$1_0$13 Def000058
+S C$collision_manager.c$61$1_0$13 Def00002F
+S C$collision_manager.c$45$1_0$11 Def000015
+S C$collision_manager.c$71$1_0$13 Def000063
 S A$collision_manager$72 Def000005
-S C$collision_manager.c$91$1_0$13 Def0000A4
-S C$collision_manager.c$62$2_0$14 Def000042
-S C$collision_manager.c$48$1_0$11 Def00001F
+S C$collision_manager.c$48$1_0$11 Def00001A
 S A$collision_manager$73 Def000007
-S C$collision_manager.c$92$1_0$13 Def0000AA
-S C$collision_manager.c$56$1_0$13 Def000029
-S C$collision_manager.c$85$1_0$13 Def000095
-S C$collision_manager.c$76$1_0$13 Def00006E
-S C$collision_manager.c$72$2_0$16 Def000069
+S C$collision_manager.c$92$1_0$13 Def0000A4
+S C$collision_manager.c$63$2_0$14 Def000042
+S C$collision_manager.c$49$1_0$11 Def00001F
+S C$collision_manager.c$93$1_0$13 Def0000AA
+S C$collision_manager.c$57$1_0$13 Def000029
 S A$collision_manager$67 Def000000
-S C$collision_manager.c$96$1_0$21 Def0000AB
-S C$collision_manager.c$86$1_0$13 Def00009B
+S C$collision_manager.c$86$1_0$13 Def000095
+S C$collision_manager.c$77$1_0$13 Def00006E
+S C$collision_manager.c$73$2_0$16 Def000069
 S A$collision_manager$86 Def00000F
 S A$collision_manager$77 Def00000A
 S A$collision_manager$68 Def000002
-S C$collision_manager.c$69$1_0$13 Def000058
-S C$collision_manager.c$66$2_0$15 Def00004E
+S C$collision_manager.c$97$1_0$21 Def0000AB
+S C$collision_manager.c$87$1_0$13 Def00009B
 S A$collision_manager$78 Def00000C
-S C$collision_manager.c$82$2_0$18 Def00008D
+S C$collision_manager.c$67$2_0$15 Def00004E
+S C$collision_manager.c$83$2_0$18 Def00008D
 A _DATA size 3 flags 0 addr 0
 S Fcollision_manager$moreForgiving$0_0$0 Def000002
 S Fcollision_manager$collisionDelta$0_0$0 Def000000
@@ -185,7 +185,7 @@ T 02 00 00
 R 00 00 01 00
 T 00 00 00
 R 00 00 00 00
-T 00 00 00 3E 01 32 00 00 3E 00 32 02 00 3E 1F 32
+T 00 00 00 3E 01 32 00 00 3E 00 32 02 00 3E 20 32
 R 00 00 00 00 00 06 01 00 00 0B 01 00
 T 0D 00 00 01 00 C9
 R 00 00 00 00 00 03 01 00

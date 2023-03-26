@@ -28,6 +28,7 @@ void engine_collision_manager_initX( unsigned char difficulty )
 	}
 
 	collisionRange = SCREEN_WIDE - collisionDelta;
+	collisionRange = SCREEN_WIDE;
 }
 
 // ORG
