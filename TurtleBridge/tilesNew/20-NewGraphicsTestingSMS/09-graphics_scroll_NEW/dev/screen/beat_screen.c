@@ -110,7 +110,7 @@ void screen_beat_screen_load()
 	devkit_SMS_displayOn();
 
 	engine_frame_manager_load();
-	engine_frame_manager_draw();
+	//engine_frame_manager_draw();
 
 	// TODO perfect this i.e. w/o debug_mgr
 	engine_game_manager_set_level_data( 0, 0, 0 );
@@ -154,13 +154,13 @@ void screen_beat_screen_update( unsigned char *screen_type )
 		engine_sound_manager_stop();
 		//engine_font_manager_text( "FINISH", 20, 10 );
 		// Resume from init
-		//*screen_type = screen_type_start;
+		*screen_type = screen_type_start;
 		return;
 	}
 
 	input1 = engine_input_manager_hold( input_type_left );
 	input2 = engine_input_manager_move( input_type_right );
-	//input1 = 1;		// TODO delete
+	input1 = 1;		// TODO delete
 	if( input1 || input2 )
 	{
 		if( 60 == fo->frame_count )
@@ -172,7 +172,7 @@ void screen_beat_screen_update( unsigned char *screen_type )
 			command = engine_command_manager_build( po->player_state, 1, 0, 0, 0, 0, 1 );		//Jump index = 4.
 			//command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 1, 0 );		//Jump index = 4.
 		}
-		else if( 2 == fo->frame_count )//|| 8 == fo->frame_count )
+		else if( 10 == fo->frame_count )//|| 8 == fo->frame_count )
 		{
 			//command = engine_command_manager_build( po->player_state, 1, 0, 0, 0, 0, 1 );		//Jump index = 1.
 			//command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 0, 1 );		//Jump index = 2.
@@ -185,7 +185,7 @@ void screen_beat_screen_update( unsigned char *screen_type )
 		}
 
 		engine_frame_manager_update();
-		engine_frame_manager_draw();
+		//engine_frame_manager_draw();
 
 		if( fo->frame_count >= 150 )
 		{
@@ -303,7 +303,7 @@ void screen_beat_screen_update( unsigned char *screen_type )
 	engine_player_manager_draw();
 	//engine_sprite_manager_draw( po->player_frame, po->drawX + 0, po->drawY + 0 );
 	//engine_sprite_manager_draw( po->player_frame, 196, 112 );
-	engine_font_manager_data( po->drawY, 20,10);		// TODO delete
+	//engine_font_manager_data( po->drawY, 20,10);		// TODO delete
 	*screen_type = screen_type_beat;
 }
 
