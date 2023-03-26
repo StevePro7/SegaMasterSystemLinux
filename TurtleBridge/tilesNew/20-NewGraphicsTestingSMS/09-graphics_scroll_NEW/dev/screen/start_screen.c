@@ -50,7 +50,7 @@ void screen_start_screen_load()
 	engine_game_manager_set_cloud_form( cloud );
 
 	game_difficulty = difficulty_type_normal;
-	game_world = 4;
+	game_world = 0;
 	game_point = 0;
 	start_level = engine_random_manager_next( MAX_START_SCREENS );
 	start_level += MAX_LEVELS;
@@ -63,10 +63,7 @@ void screen_start_screen_load()
 
 	// Work in terms of screens.
 	checkScreen = lo->check_width * game_point;
-	if( STARTING_SCROLLING )
-	{
-		engine_scroll_manager_para_load( 0, 0 );
-	}
+	
 	engine_level_manager_draw_screen( checkScreen );
 
 	engine_player_manager_loadX( checkScreen );
@@ -88,9 +85,18 @@ void screen_start_screen_load()
 	engine_graphics_manager_title();
 	engine_graphics_manager_sea();
 	engine_level_manager_draw_screen( checkScreen );
-	engine_scroll_manager_para_update( 0 );
+	
+
+	if( STARTING_SCROLLING )
+	{
+		engine_scroll_manager_para_load( 0, 0 );
+		engine_scroll_manager_para_update( 0 );
+	}
+
 	devkit_SMS_displayOn();
 
+
+	//engine_scroll_manager_para_update( 0 );
 	engine_delay_manager_load( NORMAL_DELAY );
 	engine_reset_manager_load( NORMAL_DELAY * 10 );				// TODO what is good delay here to transition
 	reset = 0;
