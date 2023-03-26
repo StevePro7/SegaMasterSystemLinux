@@ -95,7 +95,7 @@ void screen_start_screen_load()
 
 
 	engine_delay_manager_load( NORMAL_DELAY );
-	engine_reset_manager_load( NORMAL_DELAY * 1 );				// TODO what is good delay here to transition
+	engine_reset_manager_load( NORMAL_DELAY * 10 );				// TODO what is good delay here to transition
 	reset = 0;
 	delay = 0;
 	check = 0;
