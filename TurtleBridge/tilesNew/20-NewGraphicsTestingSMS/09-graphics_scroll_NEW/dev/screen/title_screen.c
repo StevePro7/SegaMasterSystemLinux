@@ -55,10 +55,6 @@ void screen_title_screen_load()
 	index = 0;
 	check = 0;
 
-	// TODO - delete
-	engine_font_manager_data( go->game_saved, 31, 0 );
-	// TODO - delete
-
 	// If we have never saved [played] game before then always play first animation.
 	flips = 0;
 	if( !go->game_saved )
