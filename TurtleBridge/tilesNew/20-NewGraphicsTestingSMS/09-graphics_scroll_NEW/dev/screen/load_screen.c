@@ -6,6 +6,8 @@
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/game_manager.h"
+#include "../engine/hack_manager.h"
+#include "../engine/input_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/graphics_manager.h"
 #include "../engine/level_manager.h"
@@ -13,10 +15,12 @@
 #include "../engine/riff_manager.h"
 #include "../engine/scroll_manager.h"
 #include "../engine/tile_manager.h"
+#include "../engine/timer_manager.h"
 #include "../engine/util_manager.h"
 #include "../devkit/_sms_manager.h"
 
 static unsigned char check;
+static unsigned char delay;
 
 #ifdef _CONSOLE
 #else
@@ -51,22 +55,26 @@ void screen_load_screen_load()
 	engine_graphics_manager_clouds( go->game_cloud );
 	engine_level_manager_draw_screen( checkScreen );		// Weird - must draw this twice otherwise clouds + sea don't draw??
 
-	if( go->game_start )
-	{
+	//if( go->game_start )
+	//{
 		engine_graphics_manager_level_stats( go->game_world, go->game_round, go->game_point );
 		engine_graphics_manager_level_texts();
-	}
+	//}
 	devkit_SMS_displayOn();
 
 	engine_riff_manager_init();
 	engine_command_manager_init();
+	engine_delay_manager_load( NORMAL_DELAY * 2 );
 	check = 0;
+	delay = 0;
 }
 
 void screen_load_screen_update( unsigned char *screen_type )
 {
 	struct_game_object *go = &global_game_object;
+	struct_hack_object *ho = &global_hack_object;
 	unsigned char index, maxim;
+	unsigned char input;
 
 	if( !check )
 	{
@@ -77,9 +85,10 @@ void screen_load_screen_update( unsigned char *screen_type )
 	}
 	else
 	{
-		if( go->game_start )
+		engine_player_manager_draw();
+		engine_player_manager_head();
+		if( go->game_start && ho->hack_riffs )
 		{
-			engine_player_manager_draw();
 			// TODO - update magic number?
 			maxim = 3;
 			index = engine_random_manager_next( maxim );
@@ -91,6 +100,21 @@ void screen_load_screen_update( unsigned char *screen_type )
 
 			// Clear out the game level statistics.
 			engine_util_manager_locale_blank( 3, 0, 3 );
+		}
+		else
+		{
+			input = engine_input_manager_hold( input_type_right );
+			delay = engine_delay_manager_update();
+			if( input || delay )
+			{
+				// Clear out the game level statistics.
+				engine_util_manager_locale_blank( 3, 0, 3 );
+				*screen_type = screen_type_play;
+				return;
+			}
+
+			*screen_type = screen_type_load;
+			return;
 		}
 	}
 

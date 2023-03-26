@@ -16,7 +16,7 @@ void engine_debug_manager_initgame()
 	struct_game_object *go = &global_game_object;
 	//go->game_difficulty = difficulty_type_easier;
 	//go->game_difficulty = difficulty_type_normal;
-	//go->game_difficulty = difficulty_type_harder;
+	go->game_difficulty = difficulty_type_harder;
 	//go->game_difficulty = difficulty_type_insane;
 
 	//go->game_isgod = false;
@@ -24,15 +24,16 @@ void engine_debug_manager_initgame()
 
 	//go->game_level = 1;
 
-	go->game_world = 2;	// TODO - currently not aligned with game_level but used for testing...
-	//go->game_round = 1;
-	//go->game_point = 1;
+	go->game_world = 5;	// TODO - currently not aligned with game_level but used for testing...
+	go->game_round = 2;
+	go->game_point = 3;
 
-	//go->game_world -= 1;
-	//go->game_round -= 1;
-	//go->game_point -= 1;
+	go->game_world -= 1;
+	go->game_round -= 1;
+	go->game_point -= 1;
 	//go->game_level -= 1;
 
+	engine_game_manager_set_level_data( go->game_world, go->game_round, go->game_point );
 	// 9 = turtles
 	// 3 = long512
 	//go->game_level = 0;
@@ -56,7 +57,7 @@ void engine_debug_manager_initgame()
 	
 
 	//po->player_frame = 0;// player_frame_ground_left_01;
-	//po->player_lives = 3;
+	po->player_lives = 3;
 }
 
 // TODO - delete this!!

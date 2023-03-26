@@ -159,8 +159,6 @@ void screen_start_screen_update( unsigned char *screen_type )
 			return;
 		}
 
-		
-
 		delay = engine_delay_manager_update();
 		if( delay )
 		{
