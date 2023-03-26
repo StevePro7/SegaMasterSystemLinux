@@ -80,15 +80,13 @@ void screen_pass_screen_load()
 	engine_game_manager_set_level_data( game_world, game_round, game_point );
 
 	// TODO remove only used for testing
-	game_level += 1;
-
+	//game_level += 1;
 	//engine_font_manager_data( go->game_level, 20, 15 );
 	//engine_font_manager_data( game_level, 20, 16 );
-
-	engine_game_manager_set_level_test( game_level );
-
+	//engine_game_manager_set_level_test( game_level );
 	//engine_font_manager_data( go->game_level, 20, 18 );
 	//engine_font_manager_data( game_level, 20, 19 );
+	// TODO remove only used for testing
 }
 
 // TODO - show the world round point text on screen when pass.

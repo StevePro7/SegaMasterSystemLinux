@@ -19,6 +19,9 @@ void engine_debug_manager_initgame()
 	//go->game_difficulty = difficulty_type_harder;
 	//go->game_difficulty = difficulty_type_insane;
 
+	//go->game_isgod = false;
+	go->game_isgod = true;
+
 	//go->game_level = 1;
 
 	//go->game_world = 1;	// TODO - currently not aligned with game_level but used for testing...
@@ -50,8 +53,7 @@ void engine_debug_manager_initgame()
 	//go->game_level = 0;
 	
 	//go->game_cloud = 88;		// TODO will be random
-	//go->game_isgod = false;
-	//go->game_isgod = true;
+	
 
 	//po->player_frame = 0;// player_frame_ground_left_01;
 	//po->player_lives = 3;

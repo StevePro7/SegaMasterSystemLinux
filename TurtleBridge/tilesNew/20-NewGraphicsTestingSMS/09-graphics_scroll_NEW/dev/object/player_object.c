@@ -22,9 +22,6 @@ const unsigned char player_flying_deltaX[] = { 1, 1, 1, 1, 2 };
 
 const unsigned char player_lives_headX[] = { 220, 196, 172 };
 
-//signed int
-
-
 
 
 // Gravity directly from Platform Explorer but in fixed function mode.
