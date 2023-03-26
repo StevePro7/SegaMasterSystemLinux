@@ -34,6 +34,7 @@ S:Lplay_screen.screen_play_screen_update$sloc8$0_1$0({1}SC:U),B,1,-2
 S:Lplay_screen.screen_play_screen_update$sloc9$0_1$0({1}SC:U),B,1,-1
 F:Fplay_screen$play_checkpoint_riff$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lplay_screen.play_checkpoint_riff$go$1_0$97({2}DG,STtag_struct_game_object:S),R,0,0,[]
+S:Lplay_screen.play_checkpoint_riff$ho$1_0$97({2}DG,STtag_struct_hack_object:S),R,0,0,[]
 S:Lplay_screen.play_checkpoint_riff$index$1_0$97({1}SC:U),R,0,0,[]
 S:Lplay_screen.play_checkpoint_riff$maxim$1_0$97({1}SC:U),R,0,0,[]
 T:Fplay_screen$tag_struct_player_object[({0}S:S$initX$0_0$0({1}SC:U),Z,0,0)({1}S:S$posnX$0_0$0({2}SI:U),Z,0,0)({3}S:S$tileX$0_0$0({2}SI:U),Z,0,0)({5}S:S$lookX$0_0$0({1}SC:U),Z,0,0)({6}S:S$posnY$0_0$0({1}SC:U),Z,0,0)({7}S:S$tileY$0_0$0({1}SC:U),Z,0,0)({8}S:S$leapY$0_0$0({2}SI:U),Z,0,0)({10}S:S$drawX$0_0$0({1}SC:U),Z,0,0)({11}S:S$drawY$0_0$0({1}SC:U),Z,0,0)({12}S:S$player_state$0_0$0({1}SC:U),Z,0,0)({13}S:S$jumper_index$0_0$0({1}SC:U),Z,0,0)({14}S:S$deltaY_index$0_0$0({1}SC:U),Z,0,0)({15}S:S$player_frame$0_0$0({1}SC:U),Z,0,0)({16}S:S$player_lives$0_0$0({1}SC:U),Z,0,0)({17}S:S$motion_count$0_0$0({1}SC:U),Z,0,0)]
@@ -78,7 +79,6 @@ S:G$engine_command_manager_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_command_manager_build$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_command_manager_record$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_command_manager_update$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_command_manager_draw$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_debug_manager_initgame$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0

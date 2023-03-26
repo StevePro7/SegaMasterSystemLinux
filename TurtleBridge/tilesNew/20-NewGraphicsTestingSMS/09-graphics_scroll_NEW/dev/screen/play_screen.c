@@ -238,6 +238,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 static void play_checkpoint_riff()
 {
 	struct_game_object *go = &global_game_object;
+	struct_hack_object *ho = &global_hack_object;
 	unsigned char index, maxim;
 
 	maxim = 9;
@@ -247,11 +248,12 @@ static void play_checkpoint_riff()
 	devkit_PSGStop();
 
 	// TODO wrap this in a hack var
-	engine_graphics_manager_level_stats( go->game_world, go->game_round, go->game_point );
-	engine_graphics_manager_level_texts();
-	// TODO wrap this in a hack var
-
-	engine_riff_manager_loop( index );
+	if( ho->hack_riffs )
+	{
+		engine_graphics_manager_level_stats( go->game_world, go->game_round, go->game_point );
+		engine_graphics_manager_level_texts();
+		engine_riff_manager_loop( index );
+	}
 
 	// TODO wrap this in a hack var
 	// Clear out the game level statistics.
