@@ -10,6 +10,7 @@
 #include "../engine/level_manager.h"
 #include "../engine/player_manager.h"
 #include "../engine/scroll_manager.h"
+#include "../engine/storage_manager.h"
 #include "../engine/tile_manager.h"
 #include "../engine/util_manager.h"
 #include "../devkit/_sms_manager.h"
@@ -49,10 +50,9 @@ void screen_level_screen_load()
 	engine_game_manager_set_level_data( game_world, game_round, game_point );
 
 	game_level = go->game_level;
-	//game_level = 1;
 	game_screen = 0;
 	numb_screen = 0;
-	cursorIdx = 1;
+	cursorIdx = 0;
 
 	devkit_SMS_displayOff();
 	engine_graphics_manager_screen( CLEAR_TILE_BLUE );
@@ -222,9 +222,7 @@ void screen_level_screen_update( unsigned char *screen_type )
 	if( input )
 	{
 		engine_game_manager_set_level_data( game_world, game_round, game_point );
-
-		// TODO  wire this up correctly!!
-		//engine_game_manager_set_level_test( game_level );
+		engine_storage_manager_save();
 
 		// TODO confirm will not go here unless surrounded by hack flag
 		//*screen_type = screen_type_option;		// use for testing!	TODO - remove
@@ -240,9 +238,7 @@ void screen_level_screen_update( unsigned char *screen_type )
 	if( input )
 	{
 		engine_game_manager_set_level_data( game_world, game_round, game_point );
-
-		// TODO  wire this up correctly!!
-		//engine_game_manager_set_level_test( game_level );
+		engine_storage_manager_save();
 
 		*screen_type = screen_type_diff;
 		return;
