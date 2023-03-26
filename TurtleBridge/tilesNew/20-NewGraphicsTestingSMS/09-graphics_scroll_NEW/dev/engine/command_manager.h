@@ -14,6 +14,6 @@ void engine_command_manager_record( unsigned int frame, unsigned char command );
 void engine_command_manager_update( unsigned char command );
 
 // TODO delete - only used for debugging.
-void engine_command_manager_draw();
+//void engine_command_manager_draw();
 
 #endif//_COMMAND_MANAGER_H_

@@ -89,7 +89,6 @@ S:G$engine_command_manager_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_command_manager_build$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_command_manager_record$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_command_manager_update$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_command_manager_draw$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0_0$0({2}DF,SV:S),C,0,0

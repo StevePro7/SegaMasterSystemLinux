@@ -59,17 +59,17 @@ void engine_command_manager_update( unsigned char command )
 
 
 // TODO delete - only used for debugging.
-void engine_command_manager_draw()
-{
-	struct_command_object *co = &global_command_object;
-	unsigned char index;
-
-	for( index = 0; index < MAX_COMMANDS; index++ )
-	{
-		engine_font_manager_data( command_frame_index[ index ], 20, index + 4 );
-		engine_font_manager_data( command_this_command[ index ], 30, index + 4 );
-	}
-}
+//void engine_command_manager_draw()
+//{
+//	struct_command_object *co = &global_command_object;
+//	unsigned char index;
+//
+//	for( index = 0; index < MAX_COMMANDS; index++ )
+//	{
+//		engine_font_manager_data( command_frame_index[ index ], 20, index + 4 );
+//		engine_font_manager_data( command_this_command[ index ], 30, index + 4 );
+//	}
+//}
 
 unsigned char engine_command_manager_build( unsigned char state, unsigned char input1, unsigned char input2, unsigned char input3, unsigned char input4, unsigned char input5, unsigned char input6 )
 {
