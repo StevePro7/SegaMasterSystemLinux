@@ -20,11 +20,11 @@ void engine_debug_manager_initgame()
 	//go->game_difficulty = difficulty_type_insane;
 
 	//go->game_isgod = false;
-	go->game_isgod = true;
+	//go->game_isgod = true;
 
 	//go->game_level = 1;
 
-	//go->game_world = 1;	// TODO - currently not aligned with game_level but used for testing...
+	go->game_world = 2;	// TODO - currently not aligned with game_level but used for testing...
 	//go->game_round = 1;
 	//go->game_point = 1;
 

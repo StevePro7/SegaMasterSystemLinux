@@ -8,9 +8,8 @@ S:Llevel_screen.screen_level_screen_update$screen_type$1_0$151({2}DG,SC:U),B,1,4
 S:Llevel_screen.screen_level_screen_update$po$1_0$152({2}DG,STtag_struct_player_object:S),R,0,0,[]
 S:Llevel_screen.screen_level_screen_update$lo$1_0$152({2}DG,STtag_struct_level_object:S),R,0,0,[]
 S:Llevel_screen.screen_level_screen_update$input$1_0$152({1}SC:U),R,0,0,[a]
-S:Llevel_screen.screen_level_screen_update$updateLevel$1_0$152({1}:S),B,1,-3
-S:Llevel_screen.screen_level_screen_update$sloc0$0_1$0({1}:S),B,1,-3
-S:Llevel_screen.screen_level_screen_update$sloc1$0_1$0({2}DG,SC:U),B,1,-2
+S:Llevel_screen.screen_level_screen_update$updateLevel$1_0$152({1}:S),B,1,-1
+S:Llevel_screen.screen_level_screen_update$sloc0$0_1$0({1}:S),B,1,-1
 F:Flevel_screen$updateCheck$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Llevel_screen.updateCheck$lo$1_0$179({2}DG,STtag_struct_level_object:S),R,0,0,[]
 S:Llevel_screen.updateCheck$go$1_0$179({2}DG,STtag_struct_game_object:S),R,0,0,[]
