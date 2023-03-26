@@ -231,7 +231,8 @@ void engine_player_manager_set_action( unsigned char frame, unsigned char comman
 		if( ( COMMAND_HIGH_MASK & command ) == COMMAND_HIGH_MASK )
 		{
 			//newIndex = jump_type_hurl;	// newIndex = 4;
-			newIndex = jump_type_jump;	// newIndex = 2;
+			//newIndex = jump_type_jump;	// newIndex = 2;
+			newIndex = jump_type_leap;	// newIndex = 3;
 			if( ( COMMAND_LEFT_MASK & command ) == COMMAND_LEFT_MASK )
 			{
 				//newIndex = jump_type_leap;	// newIndex = 3;
@@ -290,7 +291,7 @@ void engine_player_manager_set_action( unsigned char frame, unsigned char comman
 		jump_len = jump_array_len[ po->jumper_index ];
 
 		// TODO delete this debugging info - for newIndex!!
-		engine_font_manager_data( po->jumper_index, 31, 5 );
+		//engine_font_manager_data( po->jumper_index, 31, 5 );
 		// TODO delete this debugging info - for newIndex!!
 
 
