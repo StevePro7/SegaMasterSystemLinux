@@ -233,7 +233,8 @@ void engine_player_manager_set_action( unsigned char frame, unsigned char comman
 			newIndex = jump_type_hurl;	// newIndex = 4;
 			if( ( COMMAND_LEFT_MASK & command ) == COMMAND_LEFT_MASK )
 			{
-				newIndex = jump_type_leap;	// newIndex = 3;
+				//newIndex = jump_type_leap;	// newIndex = 3;
+				newIndex = jump_type_jump;	// newIndex = 2;
 			}
 			if( ( COMMAND_RGHT_MASK & command ) == COMMAND_RGHT_MASK )
 			{
@@ -249,7 +250,8 @@ void engine_player_manager_set_action( unsigned char frame, unsigned char comman
 			}
 			if( ( COMMAND_RGHT_MASK & command ) == COMMAND_RGHT_MASK )
 			{
-				newIndex = jump_type_jump;	// newIndex = 2;
+				//newIndex = jump_type_jump;	// newIndex = 2;
+				newIndex = jump_type_leap;	// newIndex = 3;
 			}
 		}
 		// TODO - calculate this - determine jump index
