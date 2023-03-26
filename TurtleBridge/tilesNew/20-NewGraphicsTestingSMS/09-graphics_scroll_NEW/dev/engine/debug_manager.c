@@ -18,7 +18,7 @@ void engine_debug_manager_initgame()
 	//go->game_difficulty = difficulty_type_normal;
 	//go->game_difficulty = difficulty_type_harder;
 	//go->game_difficulty = difficulty_type_insane;
-	//engine_player_manager_lives( go->game_difficulty );
+	//engine_player_manager_lives( go->game_difficul	ty );
 	go->game_isgod = false;
 	//go->game_isgod = true;
 

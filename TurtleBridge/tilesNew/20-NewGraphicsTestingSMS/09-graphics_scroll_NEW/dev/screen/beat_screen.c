@@ -34,6 +34,7 @@ static unsigned char frame_counter;
 static unsigned char available;
 static unsigned char local_prev_command;
 
+static unsigned char lookXs[] = { 5, 13, 17, 17 };
 static unsigned char delay;
 static unsigned char check;
 static unsigned char lookX;
@@ -59,19 +60,20 @@ void screen_beat_screen_load()
 	game_point = 0;
 
 	// Hack to make collision detection work when landing on turtle irrespective of difficulty.
-	
-	if( difficulty_type_easier == game_difficulty )
-	{
-		lookX = 5;		// Easier
-	}
-	else if( difficulty_type_normal == game_difficulty )
-	{
-		lookX = 13;		// Normal
-	}
-	else
-	{
-		lookX = 17;		// Harder + Insane
-	}
+	//lookX = lookXs[ go->game_difficulty ];
+	lookX = lookXs[ game_difficulty ];
+	//if( difficulty_type_easier == game_difficulty )
+	//{
+	//	lookX = 5;		// Easier
+	//}
+	//else if( difficulty_type_normal == game_difficulty )
+	//{
+	//	lookX = 13;		// Normal
+	//}
+	//else
+	//{
+	//	lookX = 17;		// Harder + Insane
+	//}
 
 	engine_level_manager_init( beat_level );
 	engine_player_manager_initX( game_difficulty, game_world );
@@ -158,11 +160,11 @@ void screen_beat_screen_update( unsigned char *screen_type )
 		return;
 	}
 
-	input1 = engine_input_manager_hold( input_type_left );
-	input2 = engine_input_manager_move( input_type_right );
-	input1 = 1;		// TODO delete
-	if( input1 || input2 )
-	{
+	//input1 = engine_input_manager_hold( input_type_left );
+	//input2 = engine_input_manager_move( input_type_right );
+	//input1 = 1;		// TODO delete
+	//if( input1 || input2 )
+	//{
 		if( 60 == fo->frame_count )
 		{
 			command = engine_command_manager_build( po->player_state, 0, 0, 0, 0, 1, 0 );
@@ -191,7 +193,7 @@ void screen_beat_screen_update( unsigned char *screen_type )
 		{
 			fo->frame_count = 0;
 		}
-	}
+	//}
 
 	if( COMMAND_NONE_MASK != command )
 	{
