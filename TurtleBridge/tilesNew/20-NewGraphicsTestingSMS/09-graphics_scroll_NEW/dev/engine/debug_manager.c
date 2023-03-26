@@ -19,7 +19,7 @@ void engine_debug_manager_initgame()
 	//go->game_difficulty = difficulty_type_harder;
 	//go->game_difficulty = difficulty_type_insane;
 
-	go->game_level = 17;
+	go->game_level = 19;
 
 	go->game_world = 1;	// TODO - currently not aligned with game_level but used for testing...
 	go->game_round = 1;
