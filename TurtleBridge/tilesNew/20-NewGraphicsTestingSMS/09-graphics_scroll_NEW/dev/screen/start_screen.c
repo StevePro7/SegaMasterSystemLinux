@@ -127,6 +127,7 @@ void screen_start_screen_update( unsigned char *screen_type )
 		input = engine_input_manager_hold( input_type_fire1 );
 		if( input )
 		{
+			engine_player_manager_draw();
 			engine_scroll_manager_para_update( 0 );
 
 			// TODO riff
