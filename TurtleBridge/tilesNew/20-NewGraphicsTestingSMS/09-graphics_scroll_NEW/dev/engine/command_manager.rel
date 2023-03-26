@@ -1,53 +1,47 @@
 ;!FILE command_manager.asm
 XL3
-H 9 areas F4 global symbols
+H 9 areas E5 global symbols
 M command_manager
 O -mz80
 S _command_this_command Ref000000
 S .__.ABS. Def000000
 S _command_frame_index Ref000000
-A _CODE size 141 flags 0 addr 0
-S A$command_manager$428 Def000136
-S A$command_manager$374 Def000109
-S A$command_manager$347 Def0000EE
+A _CODE size 129 flags 0 addr 0
+S A$command_manager$419 Def000126
+S A$command_manager$383 Def00010E
+S A$command_manager$365 Def0000FE
 S A$command_manager$338 Def0000EA
 S A$command_manager$293 Def0000C2
 S A$command_manager$176 Def000067
 S A$command_manager$167 Def000060
 S A$command_manager$149 Def00004A
+S C$command_manager.c$106$2_0$29 Def000104
 S G$engine_command_manager_load$0$0 Def00002D
-S A$command_manager$447 Def000140
-S A$command_manager$429 Def000139
-S A$command_manager$384 Def00010E
-S A$command_manager$375 Def00010A
-S A$command_manager$348 Def0000F1
+S A$command_manager$366 Def000101
+S A$command_manager$357 Def0000F6
 S A$command_manager$294 Def0000C6
 S A$command_manager$249 Def0000AF
 S A$command_manager$177 Def000069
 S A$command_manager$168 Def000062
-S A$command_manager$385 Def000111
+S C$command_manager.c$137$3_0$34 Def000124
+S A$command_manager$394 Def000116
 S A$command_manager$367 Def000102
-S A$command_manager$358 Def0000F6
-S A$command_manager$349 Def0000F2
 S A$command_manager$187 Def00006F
 S A$command_manager$169 Def000063
-S C$command_manager.c$135$3_0$37 Def00013C
-S C$command_manager.c$127$4_0$35 Def00012E
-S A$command_manager$395 Def000116
-S A$command_manager$386 Def000112
-S A$command_manager$368 Def000104
-S A$command_manager$359 Def0000F9
+S A$command_manager$377 Def000108
 S A$command_manager$197 Def000070
 S C$command_manager.c$22$2_0$10 Def000026
-S A$command_manager$396 Def000119
+S A$command_manager$378 Def00010B
 S A$command_manager$198 Def000072
-S A$command_manager$397 Def00011A
+S A$command_manager$388 Def000110
 S A$command_manager$379 Def00010C
 S A$command_manager$298 Def0000C8
 S A$command_manager$199 Def000076
 S C$command_manager.c$22$3_0$11 Def000010
+S A$command_manager$389 Def000113
+S A$command_manager$399 Def000118
 S C$command_manager.c$24$3_0$11 Def000015
-S XG$engine_command_manager_build$0$0 Def000140
+S XG$engine_command_manager_build$0$0 Def000128
 S C$command_manager.c$54$1_0$20 Def0000B2
 S C$command_manager.c$25$3_0$11 Def00001E
 S A$command_manager$71 Def000006
@@ -95,13 +89,14 @@ S A$command_manager$89 Def000018
 S C$command_manager.c$48$2_0$18 Def00009F
 S A$command_manager$99 Def000021
 S G$engine_command_manager_init$0$0 Def000000
-S C$command_manager.c$96$2_0$26 Def0000EE
 S C$command_manager.c$94$3_0$27 Def0000EC
 S C$command_manager.c$87$3_0$25 Def0000DE
+S C$command_manager.c$97$2_0$26 Def0000F0
+S C$command_manager.c$95$3_0$27 Def0000EE
 S XG$engine_command_manager_load$0$0 Def00006F
 S C$command_manager.c$20$1_0$9 Def00000B
-S C$command_manager.c$98$3_0$28 Def0000F4
 S C$command_manager.c$14$0_0$9 Def000000
+S C$command_manager.c$99$3_0$28 Def0000F6
 S C$command_manager.c$16$1_0$9 Def000000
 S G$engine_command_manager_record$0$0 Def000070
 S C$command_manager.c$18$1_0$9 Def000000
@@ -114,27 +109,25 @@ S XG$engine_command_manager_init$0$0 Def00002C
 S _engine_command_manager_update Def0000B2
 S G$engine_command_manager_build$0$0 Def0000C0
 S A$command_manager$100 Def000023
+S C$command_manager.c$110$2_0$30 Def000108
 S A$command_manager$101 Def000024
-S C$command_manager.c$120$1_0$22 Def000116
 S A$command_manager$210 Def000080
-S C$command_manager.c$103$1_0$22 Def0000F6
+S A$command_manager$400 Def00011B
 S A$command_manager$310 Def0000D4
 S A$command_manager$220 Def00008B
 S A$command_manager$211 Def000082
-S C$command_manager.c$140$1_0$22 Def000140
-S C$command_manager.c$131$1_0$22 Def000130
-S C$command_manager.c$113$2_0$30 Def00010E
-S C$command_manager.c$111$3_0$31 Def00010C
-S A$command_manager$410 Def000128
+S C$command_manager.c$104$1_0$22 Def0000F8
 S A$command_manager$401 Def00011C
 S A$command_manager$320 Def0000DB
 S A$command_manager$302 Def0000CA
 S A$command_manager$230 Def00009A
 S A$command_manager$221 Def00008E
 S A$command_manager$140 Def00003B
+S C$command_manager.c$141$1_0$22 Def000126
+S C$command_manager.c$114$2_0$30 Def000110
+S C$command_manager.c$112$3_0$31 Def00010E
 S XG$engine_command_manager_record$0$0 Def0000B1
-S A$command_manager$411 Def00012B
-S A$command_manager$402 Def00011F
+S A$command_manager$411 Def000124
 S A$command_manager$330 Def0000E0
 S A$command_manager$321 Def0000DC
 S A$command_manager$303 Def0000CD
@@ -143,9 +136,8 @@ S A$command_manager$222 Def00008F
 S A$command_manager$150 Def00004B
 S A$command_manager$141 Def00003C
 S A$command_manager$105 Def000026
-S A$command_manager$430 Def00013A
-S A$command_manager$412 Def00012C
-S A$command_manager$403 Def000120
+S C$command_manager.c$142$1_0$22 Def000128
+S C$command_manager.c$133$1_0$22 Def000118
 S A$command_manager$331 Def0000E3
 S A$command_manager$304 Def0000CE
 S A$command_manager$232 Def00009E
@@ -155,8 +147,6 @@ S A$command_manager$151 Def00004C
 S A$command_manager$142 Def00003D
 S A$command_manager$133 Def000036
 S A$command_manager$106 Def000027
-S C$command_manager.c$122$2_0$33 Def00011C
-S A$command_manager$422 Def000130
 S A$command_manager$332 Def0000E4
 S A$command_manager$314 Def0000D6
 S A$command_manager$224 Def000093
@@ -168,8 +158,8 @@ S A$command_manager$152 Def00004D
 S A$command_manager$143 Def00003E
 S A$command_manager$116 Def00002C
 S A$command_manager$107 Def000028
-S A$command_manager$423 Def000133
-S A$command_manager$360 Def0000FA
+S A$command_manager$405 Def00011E
+S A$command_manager$351 Def0000F0
 S A$command_manager$342 Def0000EC
 S A$command_manager$270 Def0000B2
 S A$command_manager$243 Def0000A8
@@ -180,12 +170,10 @@ S A$command_manager$153 Def00004E
 S A$command_manager$144 Def000041
 S A$command_manager$126 Def00002D
 S A$command_manager$108 Def00002A
-S C$command_manager.c$115$3_0$32 Def000114
-S C$command_manager.c$109$2_0$30 Def000106
 S XG$engine_command_manager_update$0$0 Def0000BF
-S A$command_manager$442 Def00013E
-S A$command_manager$424 Def000134
-S A$command_manager$361 Def0000FC
+S A$command_manager$424 Def000128
+S A$command_manager$406 Def000121
+S A$command_manager$352 Def0000F3
 S A$command_manager$325 Def0000DE
 S A$command_manager$271 Def0000B5
 S A$command_manager$244 Def0000AB
@@ -196,10 +184,11 @@ S A$command_manager$163 Def000058
 S A$command_manager$154 Def00004F
 S A$command_manager$145 Def000042
 S A$command_manager$127 Def00002F
+S C$command_manager.c$116$3_0$32 Def000116
 S _engine_command_manager_build Def0000C0
-S A$command_manager$434 Def00013C
 S A$command_manager$407 Def000122
-S A$command_manager$362 Def0000FF
+S A$command_manager$371 Def000104
+S A$command_manager$362 Def0000F8
 S A$command_manager$353 Def0000F4
 S A$command_manager$308 Def0000D0
 S A$command_manager$272 Def0000B9
@@ -213,10 +202,10 @@ S A$command_manager$164 Def00005B
 S A$command_manager$155 Def000050
 S A$command_manager$146 Def000043
 S A$command_manager$128 Def000033
-S A$command_manager$417 Def00012E
-S A$command_manager$408 Def000125
+S C$command_manager.c$135$2_0$33 Def00011E
 S A$command_manager$390 Def000114
-S A$command_manager$363 Def000100
+S A$command_manager$372 Def000106
+S A$command_manager$363 Def0000FB
 S A$command_manager$336 Def0000E6
 S A$command_manager$309 Def0000D3
 S A$command_manager$282 Def0000BF
@@ -230,11 +219,8 @@ S A$command_manager$156 Def000051
 S A$command_manager$147 Def000046
 S A$command_manager$138 Def000038
 S A$command_manager$129 Def000035
-S C$command_manager.c$139$1_0$22 Def00013E
-S C$command_manager.c$133$2_0$36 Def000136
-S C$command_manager.c$125$3_0$34 Def000122
-S A$command_manager$409 Def000126
-S A$command_manager$373 Def000106
+S A$command_manager$364 Def0000FC
+S A$command_manager$346 Def0000EE
 S A$command_manager$337 Def0000E9
 S A$command_manager$319 Def0000D8
 S A$command_manager$292 Def0000C0
@@ -245,7 +231,6 @@ S A$command_manager$175 Def000066
 S A$command_manager$166 Def00005D
 S A$command_manager$148 Def000049
 S A$command_manager$139 Def000039
-S C$command_manager.c$105$2_0$29 Def000102
 A _DATA size 4 flags 0 addr 0
 S _global_command_object Def000000
 S G$global_command_object$0_0$0 Def000000
@@ -322,45 +307,35 @@ T D8 00 00 DD 7E 04 3D 20 02 CB F5
 R 00 00 00 00
 T E0 00 00
 R 00 00 00 00
-T E0 00 00 DD 7E 0A B7 28 10 DD 7E 04 B7 20 02 CB
+T E0 00 00 DD 7E 0A B7 28 12 DD 7E 04 B7 20 04 CB
 R 00 00 00 00
-T ED 00 00 ED
+T ED 00 00 ED CB DD
 R 00 00 00 00
-T EE 00 00
+T F0 00 00
 R 00 00 00 00
-T EE 00 00 DD 7E 04 3D 20 02 CB FD
+T F0 00 00 DD 7E 04 3D 20 02 CB FD
 R 00 00 00 00
-T F6 00 00
+T F8 00 00
 R 00 00 00 00
-T F6 00 00 DD 7E 05 B7 20 0A DD 7E 06 B7 20 04 CB
+T F8 00 00 DD 7E 05 B7 20 0A DD 7E 06 B7 20 04 CB
 R 00 00 00 00
-T 03 01 00 CD 18 10
+T 05 01 00 CD 18 10
 R 00 00 00 00
-T 06 01 00
+T 08 01 00
 R 00 00 00 00
-T 06 01 00 DD 7E 05 B7 28 02 CB C5
+T 08 01 00 DD 7E 05 B7 28 02 CB C5
 R 00 00 00 00
-T 0E 01 00
+T 10 01 00
 R 00 00 00 00
-T 0E 01 00 DD 7E 06 B7 28 02 CB D5
+T 10 01 00 DD 7E 06 B7 28 02 CB D5
 R 00 00 00 00
-T 16 01 00
+T 18 01 00
 R 00 00 00 00
-T 16 01 00 DD 7E 07 B7 28 14 DD 7E 04 B7 20 0E DD
+T 18 01 00 DD 7E 08 B7 28 08 DD 7E 04 3D 20 02 CB
 R 00 00 00 00
-T 23 01 00 7E 09 B7 20 06 DD 7E 0A B7 28 02
+T 25 01 00 E5
 R 00 00 00 00
-T 2E 01 00
+T 26 01 00
 R 00 00 00 00
-T 2E 01 00 CB DD
-R 00 00 00 00
-T 30 01 00
-R 00 00 00 00
-T 30 01 00 DD 7E 08 B7 28 08 DD 7E 04 3D 20 02 CB
-R 00 00 00 00
-T 3D 01 00 E5
-R 00 00 00 00
-T 3E 01 00
-R 00 00 00 00
-T 3E 01 00 DD E1 C9
+T 26 01 00 DD E1 C9
 R 00 00 00 00

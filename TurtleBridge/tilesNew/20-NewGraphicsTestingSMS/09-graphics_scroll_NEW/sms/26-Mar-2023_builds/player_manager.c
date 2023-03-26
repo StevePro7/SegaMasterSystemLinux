@@ -224,55 +224,29 @@ void engine_player_manager_set_action( unsigned char frame, unsigned char comman
 	newFrame = po->player_frame;
 	if( ( COMMAND_JUMP_MASK & command ) == COMMAND_JUMP_MASK )
 	{
-		// new logic
 		po->player_state = player_state_isintheair;
 
 		// TODO - calculate this - determine jump index
-		if( ( COMMAND_HIGH_MASK & command ) == COMMAND_HIGH_MASK )
+		newIndex = 2;
+		//newIndex = 6;		// TODO - delete - hard code this value during physics testing!!
+		if( ( COMMAND_LEFT_MASK & command ) == COMMAND_LEFT_MASK )
 		{
-			newIndex = 4;
-			if( ( COMMAND_LEFT_MASK & command ) == COMMAND_LEFT_MASK )
-			{
-				newIndex = 3;
-			}
-			if( ( COMMAND_RGHT_MASK & command ) == COMMAND_RGHT_MASK )
-			{
-				newIndex = 4;
-			}
+			newIndex = 1;
 		}
-		else
+		if( ( COMMAND_RGHT_MASK & command ) == COMMAND_RGHT_MASK )
 		{
-			newIndex = 2;
-			if( ( COMMAND_LEFT_MASK & command ) == COMMAND_LEFT_MASK )
-			{
-				newIndex = 1;
-			}
-			if( ( COMMAND_RGHT_MASK & command ) == COMMAND_RGHT_MASK )
-			{
-				newIndex = 2;
-			}
+			newIndex = 3;
 		}
-		// TODO - calculate this - determine jump index
-		//newIndex = 2;
-		////newIndex = 6;		// TODO - delete - hard code this value during physics testing!!
-		//if( ( COMMAND_LEFT_MASK & command ) == COMMAND_LEFT_MASK )
-		//{
-		//	newIndex = 1;
-		//}
-		//if( ( COMMAND_RGHT_MASK & command ) == COMMAND_RGHT_MASK )
-		//{
-		//	newIndex = 3;
-		//}
 
 		newFrame = updatePlayerFrameGroundToFlying( po->player_frame );
 		//po->player_frame = updatePlayerFrameGroundToFlying( po->player_frame );
 
 		// TODO test this
-		//if( ( COMMAND_HIGH_MASK & command ) == COMMAND_HIGH_MASK )
-		//{
-		//	newIndex += 1;
-		//	//po->jumper_index += 1;
-		//}
+		if( ( COMMAND_HIGH_MASK & command ) == COMMAND_HIGH_MASK )
+		{
+			newIndex += 1;
+			//po->jumper_index += 1;
+		}
 
 		// TODO delete = testing
 		po->jumper_index = newIndex;
@@ -285,48 +259,8 @@ void engine_player_manager_set_action( unsigned char frame, unsigned char comman
 		jump_len = jump_array_len[ po->jumper_index ];
 
 		// TODO delete this debugging info - for newIndex!!
-		engine_font_manager_data( po->jumper_index, 31, 5 );
-		// TODO delete this debugging info - for newIndex!!
-
-
-		// old logic
-		//po->player_state = player_state_isintheair;
-
-		//// TODO - calculate this - determine jump index
-		//newIndex = 2;
-		////newIndex = 6;		// TODO - delete - hard code this value during physics testing!!
-		//if( ( COMMAND_LEFT_MASK & command ) == COMMAND_LEFT_MASK )
-		//{
-		//	newIndex = 1;
-		//}
-		//if( ( COMMAND_RGHT_MASK & command ) == COMMAND_RGHT_MASK )
-		//{
-		//	newIndex = 3;
-		//}
-
-		//newFrame = updatePlayerFrameGroundToFlying( po->player_frame );
-		////po->player_frame = updatePlayerFrameGroundToFlying( po->player_frame );
-
-		//// TODO test this
-		//if( ( COMMAND_HIGH_MASK & command ) == COMMAND_HIGH_MASK )
-		//{
-		//	newIndex += 1;
-		//	//po->jumper_index += 1;
-		//}
-
-		//// TODO delete = testing
-		//po->jumper_index = newIndex;
-		////po->jumper_index = 4;	// TODO delete = testing
-		//// TODO delete = testing
-		//po->deltaY_index = 0;
-
-		//// Set the jump array information.
-		//jump_ptr = jump_array_ptr[ po->jumper_index ];
-		//jump_len = jump_array_len[ po->jumper_index ];
-
-		//// TODO delete this debugging info - for newIndex!!
 		//engine_font_manager_data( po->jumper_index, 31, 5 );
-		//// TODO delete this debugging info - for newIndex!!
+		// TODO delete this debugging info - for newIndex!!
 	}
 	else
 	{
