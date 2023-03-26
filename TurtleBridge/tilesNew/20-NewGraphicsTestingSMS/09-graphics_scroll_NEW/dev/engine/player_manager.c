@@ -230,26 +230,26 @@ void engine_player_manager_set_action( unsigned char frame, unsigned char comman
 		// TODO - calculate this - determine jump index
 		if( ( COMMAND_HIGH_MASK & command ) == COMMAND_HIGH_MASK )
 		{
-			newIndex = 4;
+			newIndex = jump_type_hurl;	// newIndex = 4;
 			if( ( COMMAND_LEFT_MASK & command ) == COMMAND_LEFT_MASK )
 			{
-				newIndex = 3;
+				newIndex = jump_type_leap;	// newIndex = 3;
 			}
 			if( ( COMMAND_RGHT_MASK & command ) == COMMAND_RGHT_MASK )
 			{
-				newIndex = 4;
+				newIndex = jump_type_hurl;	// newIndex = 4;
 			}
 		}
 		else
 		{
-			newIndex = 2;
+			newIndex = jump_type_jump;	// newIndex = 2;
 			if( ( COMMAND_LEFT_MASK & command ) == COMMAND_LEFT_MASK )
 			{
-				newIndex = 1;
+				newIndex = jump_type_skip;	// newIndex = 1;
 			}
 			if( ( COMMAND_RGHT_MASK & command ) == COMMAND_RGHT_MASK )
 			{
-				newIndex = 2;
+				newIndex = jump_type_jump;	// newIndex = 2;
 			}
 		}
 		// TODO - calculate this - determine jump index

@@ -88,6 +88,16 @@ typedef enum tag_enum_difficulty_type
 
 } enum_difficulty_type;
 
+typedef enum tag_enum_jump_type
+{
+	jump_type_fall = 0,
+	jump_type_skip = 1,
+	jump_type_jump = 2,
+	jump_type_leap = 3,
+	jump_type_hurl = 4,
+
+} enum_jump_type;
+
 typedef enum tag_enum_switch_mode
 {
 	switch_mode_no = 0,
