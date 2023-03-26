@@ -4,12 +4,14 @@
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
+#include "../engine/game_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/graphics_manager.h"
 #include "../engine/input_manager.h"
 #include "../engine/player_manager.h"
 #include "../engine/riff_manager.h"
 #include "../engine/sprite_manager.h"
+#include "../engine/storage_manager.h"
 #include "../engine/timer_manager.h"
 #include "../engine/util_manager.h"
 #include "../devkit/_sms_manager.h"
@@ -33,6 +35,7 @@ static unsigned char delay;
 // TODO - do I want to manually update the X-values i.e. add 8px plus frame + 2..
 void screen_title_screen_load()
 {
+	struct_game_object *go = &global_game_object;
 	unsigned char flips;
 
 	devkit_SMS_displayOff();
@@ -51,17 +54,24 @@ void screen_title_screen_load()
 
 	index = 0;
 	check = 0;
+
+	// TODO - delete
+	engine_font_manager_data( go->game_saved, 31, 0 );
+	// TODO - delete
+
+	// If we have never saved [played] game before then always play first animation.
 	flips = 0;
-	// TODO - store previous flip value;
-	//while( 1 )
+	if( !go->game_saved )
 	{
-		flips = engine_random_manager_next( MAX_FLIPS );
-		//if( 6 == flips )
-		//{
-		//	break;
-		//}
+		engine_game_manager_set_game_saved( switch_mode_yes );
+		engine_storage_manager_save();
 	}
-	
+	else
+	{
+		// Otherwise choose random animation on subsequent attempts.
+		flips = engine_random_manager_next( MAX_FLIPS );
+	}
+
 	flip_ptr = flip_array_ptr[ flips ];
 	engine_riff_manager_init();
 	value = riff_indexs[ RIFF_START_TITLE ];

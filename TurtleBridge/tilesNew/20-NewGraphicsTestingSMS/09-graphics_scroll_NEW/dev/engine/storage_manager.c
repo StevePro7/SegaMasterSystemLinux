@@ -31,7 +31,6 @@ void engine_storage_manager_load()
 {
 	struct_storage_object *so = ( struct_storage_object* ) ( devkit_SMS_SRAM() );
 
-	// TODO test!!
 	devkit_SMS_enableSRAM();
 	engine_game_manager_set_difficulty( so->storage_difficulty );
 	engine_game_manager_set_level_data( so->storage_world, so->storage_round, so->storage_point );
