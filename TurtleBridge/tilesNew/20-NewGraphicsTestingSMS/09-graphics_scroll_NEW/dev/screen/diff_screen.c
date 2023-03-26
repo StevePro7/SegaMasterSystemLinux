@@ -9,6 +9,7 @@
 #include "../engine/level_manager.h"
 #include "../engine/player_manager.h"
 #include "../engine/scroll_manager.h"
+#include "../engine/storage_manager.h"
 #include "../engine/tile_manager.h"
 #include "../engine/util_manager.h"
 #include "../devkit/_sms_manager.h"
@@ -125,6 +126,7 @@ void screen_diff_screen_update( unsigned char *screen_type )
 		//engine_player_manager_draw();
 		engine_game_manager_set_difficulty( game_difficulty );
 		engine_player_manager_lives( game_difficulty );
+		engine_storage_manager_save();
 
 		engine_sound_manager_play( 2 );
 		engine_player_manager_draw();
@@ -139,6 +141,8 @@ void screen_diff_screen_update( unsigned char *screen_type )
 	{
 		engine_game_manager_set_difficulty( game_difficulty );
 		engine_player_manager_lives( game_difficulty );
+		engine_storage_manager_save();
+
 		*screen_type = screen_type_start;
 		return;
 	}

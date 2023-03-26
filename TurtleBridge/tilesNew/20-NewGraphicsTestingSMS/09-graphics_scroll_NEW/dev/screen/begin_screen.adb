@@ -11,7 +11,6 @@ S:G$engine_content_manager_splash$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_titles$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_sprite$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_debug_manager_initgame$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_debug_manager_printout$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_set_cloud_form$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_game_manager_set_difficulty$0_0$0({2}DF,SV:S),C,0,0

@@ -64,6 +64,10 @@ static void start()
 	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );
 
 	engine_game_manager_init();
+	if( engine_storage_manager_available() )
+	{
+		engine_storage_manager_load();
+	}
 	engine_hack_manager_init();
 	engine_hack_manager_load();
 	engine_audio_manager_init();

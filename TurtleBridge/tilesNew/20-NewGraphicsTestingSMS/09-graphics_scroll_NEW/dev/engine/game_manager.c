@@ -12,7 +12,13 @@ void engine_game_manager_init()
 	go->game_difficulty = difficulty_type_normal;
 	go->game_world = 0;
 	go->game_round = 0;
+	go->game_level = 0;
 	go->game_point = 0;
+	go->game_saved = switch_mode_no;
+	go->game_start = switch_mode_no;
+	go->game_music = 0;
+	go->game_cloud = 0;
+	go->game_isgod = switch_mode_no;
 }
 
 //TODO complete this

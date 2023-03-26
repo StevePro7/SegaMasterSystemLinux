@@ -206,7 +206,7 @@ void screen_record_screen_update( unsigned char *screen_type )
 	if( complete )
 	{
 		//engine_scroll_manager_update( 0 );		// TODO delete
-		engine_storage_manager_write();
+		engine_storage_manager_save();
 		*screen_type = screen_type_option;
 		return;
 	}
@@ -215,7 +215,7 @@ void screen_record_screen_update( unsigned char *screen_type )
 	if( player_state_isnowdying == player_state )
 	{
 		//engine_scroll_manager_update( 0 );	// TODO delete
-		engine_storage_manager_write();
+		engine_storage_manager_save();
 		*screen_type = screen_type_option;
 		return;
 		//*screen_type = screen_type_dead;

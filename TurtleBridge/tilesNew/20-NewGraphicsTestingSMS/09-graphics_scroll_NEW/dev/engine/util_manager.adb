@@ -21,6 +21,8 @@ F:G$engine_random_manager_rand$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_random_manager_next$0_0$0({2}DF,SC:U),Z,0,0,0,0,0
 S:Lutil_manager.engine_random_manager_next$max$1_0$126({2}SI:U),B,1,4
 S:G$steven_text$0_0$0({0}DA0d,DG,SC:U),E,0,0
+S:G$demo_command_frame_index$0_0$0({0}DA0d,SI:U),E,0,0
+S:G$demo_command_this_command$0_0$0({0}DA0d,SC:U),E,0,0
 S:G$beat_command_frame_index$0_0$0({0}DA0d,SI:U),E,0,0
 S:G$beat_command_this_command$0_0$0({0}DA0d,SC:U),E,0,0
 S:G$music_object_data$0_0$0({0}DA0d,DG,SC:U),E,0,0

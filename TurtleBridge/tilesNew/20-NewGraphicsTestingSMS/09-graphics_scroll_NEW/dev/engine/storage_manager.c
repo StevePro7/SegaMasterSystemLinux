@@ -27,25 +27,20 @@ unsigned char engine_storage_manager_available()
 	return foundMagic;
 }
 
-void engine_storage_manager_read()
+void engine_storage_manager_load()
 {
 	struct_storage_object *so = ( struct_storage_object* ) ( devkit_SMS_SRAM() );
 
 	// TODO test!!
 	devkit_SMS_enableSRAM();
+	engine_game_manager_set_difficulty( so->storage_difficulty );
+	engine_game_manager_set_level_data( so->storage_world, so->storage_round, so->storage_point );
 	so->storage_saved = true;
-
-	// TODO - mega IMPORTANT - I need to calculate this correctly
-	// during testing I work with game_level directly NOT world/round so this code will break all!!
-//	so->storage_level = engine_util_manager_calculate_level( so->storage_world, so->storage_round );
-//	engine_game_manager_set_difficulty( so->storage_difficulty );
-//	engine_game_manager_set_level_data( so->storage_world, so->storage_round, so->storage_point );
 	engine_command_manager_load( so->storage_frame_index, so->storage_this_command );
 	devkit_SMS_disableSRAM();
 }
 
-//void engine_storage_manager_save()
-void engine_storage_manager_write()
+void engine_storage_manager_save()
 {
 	struct_storage_object *so = ( struct_storage_object* ) ( devkit_SMS_SRAM() );
 	struct_game_object *go = &global_game_object;
@@ -76,8 +71,7 @@ void engine_storage_manager_write()
 	devkit_SMS_disableSRAM();
 }
 
-//void engine_storage_manager_kill()
-void engine_storage_manager_erase()
+void engine_storage_manager_kill()
 {
 	struct_storage_object *so = ( struct_storage_object* ) ( devkit_SMS_SRAM() );
 	devkit_SMS_enableSRAM();

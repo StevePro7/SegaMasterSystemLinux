@@ -54,7 +54,7 @@ void screen_splash_screen_update( unsigned char *screen_type )
 				if( !erase )
 				{
 					erase = 1;
-					engine_storage_manager_erase();
+					engine_storage_manager_kill();
 					engine_util_manager_locale_texts( 0, 25, 23 );
 				}
 			}

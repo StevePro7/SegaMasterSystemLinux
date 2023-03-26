@@ -53,9 +53,9 @@ S:G$engine_riff_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_riff_manager_loop$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_riff_manager_play$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_storage_manager_available$0_0$0({2}DF,SC:U),C,0,0
-S:G$engine_storage_manager_read$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_storage_manager_write$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_storage_manager_erase$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_storage_manager_load$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_storage_manager_save$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_storage_manager_kill$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_util_manager_locale_texts$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_util_manager_locale_blank$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_util_manager_convertByteToNibbles$0_0$0({2}DF,SV:S),C,0,0

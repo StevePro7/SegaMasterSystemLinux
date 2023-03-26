@@ -84,7 +84,7 @@ void screen_repeat_screen_load()
 	//engine_frame_manager_draw();
 	engine_command_manager_init();
 	//engine_command_manager_load();
-	//engine_storage_manager_read();
+	//engine_storage_manager_load();
 
 	//engine_scroll_manager_update( 0 );		// TODO delete
 	complete = false;
@@ -96,7 +96,7 @@ void screen_repeat_screen_load()
 	//engine_font_manager_data( available, 31, 1 );
 	if( available )
 	{
-		engine_storage_manager_read();
+		engine_storage_manager_load();
 		//printCmds();
 	}
 

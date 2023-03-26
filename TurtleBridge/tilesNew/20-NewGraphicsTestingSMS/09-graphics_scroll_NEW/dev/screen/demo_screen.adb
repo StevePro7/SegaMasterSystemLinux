@@ -47,7 +47,7 @@ T:Fdemo_screen$tag_struct_storage_object[({0}S:S$Magic$0_0$0({4}SL:U),Z,0,0)({4}
 T:Fdemo_screen$tag_struct_frame_object[({0}S:S$frame_count$0_0$0({2}SI:U),Z,0,0)]
 T:Fdemo_screen$tag_struct_delay_object[({0}S:S$delay_value$0_0$0({2}SI:U),Z,0,0)({2}S:S$delay_timer$0_0$0({2}SI:U),Z,0,0)]
 T:Fdemo_screen$tag_struct_level_object[({0}S:S$level_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$level_size$0_0$0({2}SI:U),Z,0,0)({4}S:S$level_bank$0_0$0({1}SC:U),Z,0,0)({5}S:S$level_check$0_0$0({2}SI:U),Z,0,0)({7}S:S$check_width$0_0$0({1}SC:U),Z,0,0)({8}S:S$column_draw$0_0$0({1}SC:U),Z,0,0)]
-T:Fdemo_screen$tag_struct_reset_object[({0}S:S$reset_value$0_0$0({1}SC:U),Z,0,0)({1}S:S$reset_timer$0_0$0({1}SC:U),Z,0,0)]
+T:Fdemo_screen$tag_struct_reset_object[({0}S:S$reset_value$0_0$0({2}SI:U),Z,0,0)({2}S:S$reset_timer$0_0$0({2}SI:U),Z,0,0)]
 S:G$command_frame_index$0_0$0({0}DA0d,SI:U),E,0,0
 S:G$command_this_command$0_0$0({0}DA0d,SC:U),E,0,0
 S:G$global_command_object$0_0$0({4}STtag_struct_command_object:S),E,0,0
@@ -62,7 +62,7 @@ S:G$global_scroll_object$0_0$0({18}STtag_struct_scroll_object:S),E,0,0
 S:G$global_storage_object$0_0$0({209}STtag_struct_storage_object:S),E,0,0
 S:G$global_delay_object$0_0$0({4}STtag_struct_delay_object:S),E,0,0
 S:G$global_frame_object$0_0$0({2}STtag_struct_frame_object:S),E,0,0
-S:G$global_reset_object$0_0$0({2}STtag_struct_reset_object:S),E,0,0
+S:G$global_reset_object$0_0$0({4}STtag_struct_reset_object:S),E,0,0
 S:G$steven_text$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$demo_command_frame_index$0_0$0({0}DA0d,SI:U),E,0,0
 S:G$demo_command_this_command$0_0$0({0}DA0d,SC:U),E,0,0
@@ -152,9 +152,9 @@ S:G$engine_scroll_manager_para_load$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_scroll_manager_para_update$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_scroll_manager_demo_update$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_storage_manager_available$0_0$0({2}DF,SC:U),C,0,0
-S:G$engine_storage_manager_read$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_storage_manager_write$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_storage_manager_erase$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_storage_manager_load$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_storage_manager_save$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_storage_manager_kill$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_draw_column$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_draw_cloud$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_tile_manager_init$0_0$0({2}DF,SV:S),C,0,0

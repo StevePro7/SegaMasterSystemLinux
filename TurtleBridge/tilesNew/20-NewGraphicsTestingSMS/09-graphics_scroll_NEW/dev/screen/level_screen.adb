@@ -51,7 +51,6 @@ S:G$engine_sound_manager_play$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_sound_manager_stop$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_audio_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_debug_manager_initgame$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_debug_manager_printout$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0_0$0({2}DF,SV:S),C,0,0

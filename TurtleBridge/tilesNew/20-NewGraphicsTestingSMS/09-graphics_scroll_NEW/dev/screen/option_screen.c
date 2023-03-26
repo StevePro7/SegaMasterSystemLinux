@@ -65,7 +65,7 @@ void screen_option_screen_update( unsigned char *screen_type )
 			//available = engine_storage_manager_available();
 			//if( available )
 			//{
-			//	engine_storage_manager_read();
+			//	engine_storage_manager_load();
 			//	printCmds();
 			//}
 			//engine_font_manager_data( available, 31, 1 );
@@ -79,7 +79,7 @@ void screen_option_screen_update( unsigned char *screen_type )
 		input3 = engine_input_manager_hold( input_type_fire2 );
 		if( input3 )
 		{
-			engine_storage_manager_erase();
+			engine_storage_manager_kill();
 			//engine_font_manager_text( "ERASER SCREEN", 10, 2 );
 			*screen_type = screen_type_level;
 			return;
