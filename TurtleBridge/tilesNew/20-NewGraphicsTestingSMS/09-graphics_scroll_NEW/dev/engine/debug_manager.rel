@@ -1,17 +1,21 @@
 ;!FILE debug_manager.asm
 XL3
-H 9 areas 8 global symbols
+H 9 areas C global symbols
 M debug_manager
 O -mz80
 S .__.ABS. Def000000
-A _CODE size 1 flags 0 addr 0
+S _global_game_object Ref000000
+A _CODE size 6 flags 0 addr 0
 S G$engine_debug_manager_initgame$0$0 Def000000
 S C$debug_manager.c$13$0_0$118 Def000000
 S _engine_debug_manager_initgame Def000000
+S C$debug_manager.c$23$1_0$118 Def000000
 S C$debug_manager.c$16$1_0$118 Def000000
-S C$debug_manager.c$55$1_0$118 Def000000
-S XG$engine_debug_manager_initgame$0$0 Def000000
-S A$debug_manager$62 Def000000
+S C$debug_manager.c$55$1_0$118 Def000005
+S XG$engine_debug_manager_initgame$0$0 Def000005
+S A$debug_manager$67 Def000005
+S A$debug_manager$58 Def000000
+S A$debug_manager$59 Def000003
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -22,5 +26,5 @@ A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
-T 00 00 00 C9
-R 00 00 00 00
+T 00 00 00 21 09 00 36 01 C9
+R 00 00 00 00 02 04 01 00

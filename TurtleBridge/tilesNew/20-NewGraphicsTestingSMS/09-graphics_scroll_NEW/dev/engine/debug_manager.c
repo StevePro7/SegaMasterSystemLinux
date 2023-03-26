@@ -20,7 +20,7 @@ void engine_debug_manager_initgame()
 	//go->game_difficulty = difficulty_type_insane;
 	//engine_player_manager_lives( go->game_difficulty );
 	//go->game_isgod = false;
-	//go->game_isgod = true;
+	go->game_isgod = true;
 
 	//go->game_level = 1;
 
