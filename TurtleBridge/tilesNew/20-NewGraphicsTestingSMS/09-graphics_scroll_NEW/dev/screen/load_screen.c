@@ -50,6 +50,7 @@ void screen_load_screen_load()
 	player_loadY = level_platforms[ po->lookX ];
 	engine_player_manager_loadY( player_loadY );
 	engine_player_manager_draw();
+	engine_player_manager_head();
 
 	engine_graphics_manager_sea();
 	engine_graphics_manager_clouds( go->game_cloud );
