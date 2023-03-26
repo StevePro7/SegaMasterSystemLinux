@@ -71,7 +71,7 @@ void screen_demo_screen_load()
 	// ADI
 	//engine_scroll_manager_load( checkScreen, lo->level_check, lo->level_size );
 	//engine_scroll_manager_update( 0 );
-	engine_scroll_manager_para_load( checkScreen, lo->level_size );
+	//engine_scroll_manager_para_load( checkScreen, lo->level_size );
 	// ADI
 
 	engine_level_manager_draw_screen( checkScreen );
@@ -96,11 +96,13 @@ void screen_demo_screen_load()
 	//engine_font_manager_text( "INSERT COIN(S)", 9, 7 );
 	//engine_font_manager_text( "567890123456789012345678", 4, 3 );
 	//engine_font_manager_text( "REAL LIFE INGAME FOOTAGE", 4, 3 );
+	engine_scroll_manager_para_load( checkScreen, lo->level_size );
+	engine_scroll_manager_demo_update( 0 );
 	devkit_SMS_displayOn();
 
 	// ADI - reset scroll must be here to avoid graphics glitches
 	//engine_scroll_manager_update( 0 );
-	engine_scroll_manager_demo_update( 0 );
+	//engine_scroll_manager_demo_update( 0 );
 
 	// test_screen
 //	engine_font_manager_text( "DEMO SCREEN", 10, 0 );

@@ -63,7 +63,6 @@ void screen_start_screen_load()
 
 	// Work in terms of screens.
 	checkScreen = lo->check_width * game_point;
-	
 	engine_level_manager_draw_screen( checkScreen );
 
 	engine_player_manager_loadX( checkScreen );
@@ -85,7 +84,6 @@ void screen_start_screen_load()
 	engine_graphics_manager_title();
 	engine_graphics_manager_sea();
 	engine_level_manager_draw_screen( checkScreen );
-	
 
 	if( STARTING_SCROLLING )
 	{
@@ -96,9 +94,8 @@ void screen_start_screen_load()
 	devkit_SMS_displayOn();
 
 
-	//engine_scroll_manager_para_update( 0 );
 	engine_delay_manager_load( NORMAL_DELAY );
-	engine_reset_manager_load( NORMAL_DELAY * 10 );				// TODO what is good delay here to transition
+	engine_reset_manager_load( NORMAL_DELAY * 1 );				// TODO what is good delay here to transition
 	reset = 0;
 	delay = 0;
 	check = 0;
