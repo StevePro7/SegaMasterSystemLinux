@@ -189,6 +189,7 @@ void screen_start_screen_update( unsigned char *screen_type )
 		reset = engine_reset_manager_update();
 		if( reset )
 		{
+			engine_util_manager_locale_blank( 0, 9, 7 );
 			*screen_type = screen_type_demo;
 			return;
 		}
