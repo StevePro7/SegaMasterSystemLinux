@@ -3,6 +3,7 @@
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
+#include "../engine/game_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/graphics_manager.h"
 #include "../engine/input_manager.h"
@@ -54,7 +55,10 @@ void screen_splash_screen_update( unsigned char *screen_type )
 				if( !erase )
 				{
 					erase = 1;
+
+					// Erase SRAM and re-init game vars.
 					engine_storage_manager_kill();
+					engine_game_manager_init();
 					engine_util_manager_locale_texts( 0, 25, 23 );
 				}
 			}
