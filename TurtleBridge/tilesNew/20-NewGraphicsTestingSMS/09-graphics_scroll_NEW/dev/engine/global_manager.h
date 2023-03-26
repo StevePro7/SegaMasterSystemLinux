@@ -6,7 +6,7 @@
 
 // Levels.
 #define MAX_WOLRDS			5
-#define MAX_ROUNDS			8
+#define MAX_ROUNDS			3	//8
 #define MAX_LEVELS			40
 #define MAX_CHECKS			4
 

@@ -6,8 +6,7 @@ S:Lpass_screen.screen_pass_screen_load$po$1_0$155({2}DG,STtag_struct_player_obje
 S:Lpass_screen.screen_pass_screen_load$game_world$1_0$155({1}SC:U),R,0,0,[c]
 S:Lpass_screen.screen_pass_screen_load$game_round$1_0$155({1}SC:U),R,0,0,[b]
 S:Lpass_screen.screen_pass_screen_load$game_point$1_0$155({1}SC:U),R,0,0,[e]
-S:Lpass_screen.screen_pass_screen_load$game_level$1_0$155({1}SC:U),R,0,0,[a]
-S:Lpass_screen.screen_pass_screen_load$sloc0$0_1$0({1}SC:U),B,1,-1
+S:Lpass_screen.screen_pass_screen_load$game_level$1_0$155({1}SC:U),R,0,0,[]
 F:G$screen_pass_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lpass_screen.screen_pass_screen_update$screen_type$1_0$158({2}DG,SC:U),B,1,4
 S:Lpass_screen.screen_pass_screen_update$po$1_0$159({2}DG,STtag_struct_player_object:S),R,0,0,[]
