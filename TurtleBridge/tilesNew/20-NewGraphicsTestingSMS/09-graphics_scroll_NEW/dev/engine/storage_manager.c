@@ -35,7 +35,7 @@ void engine_storage_manager_load()
 	devkit_SMS_enableSRAM();
 	engine_game_manager_set_difficulty( so->storage_difficulty );
 	engine_game_manager_set_level_data( so->storage_world, so->storage_round, so->storage_point );
-	so->storage_saved = true;
+	engine_game_manager_set_game_saved( so->storage_saved );
 	engine_command_manager_load( so->storage_frame_index, so->storage_this_command );
 	devkit_SMS_disableSRAM();
 }
