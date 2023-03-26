@@ -33,15 +33,16 @@ void engine_collision_manager_initX( unsigned char difficulty )
 // ORG
 void engine_collision_manager_init( unsigned char difficulty )
 {
+	difficulty += 0;
 	// Harder + Insane collision delta = 1px range as is less forgiving.
-	collisionDelta = 1;
-	moreForgiving = false;
-	if( difficulty_type_easier == difficulty || difficulty_type_normal == difficulty )
-	{
+	//collisionDelta = 1;
+	//moreForgiving = false;
+	//if( difficulty_type_easier == difficulty || difficulty_type_normal == difficulty )
+	//{
 		// Easier + Normal collision delta = 2px range as is more forgiving.
 		collisionDelta = 2;
 		moreForgiving = true;
-	}
+	//}
 
 	collisionRange = SCREEN_WIDE - collisionDelta;
 }
