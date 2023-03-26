@@ -130,7 +130,8 @@ void screen_cont_screen_update( unsigned char *screen_type )
 	}
 
 	input1 = engine_input_manager_hold( input_type_fire1 );
-	if( input1 )
+	input2 = engine_input_manager_hold( input_type_fire2 );
+	if( input1 || input2 )
 	{
 		// SFX
 		devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
