@@ -1,9 +1,9 @@
 extern const unsigned char level_0501_txt[];
-#define				level_0501_txt_size 2048
+#define				level_0501_txt_size 1024
 #define				level_0501_txt_bank 11
 
 extern const unsigned char level_0502_txt[];
-#define				level_0502_txt_size 2048
+#define				level_0502_txt_size 1024
 #define				level_0502_txt_bank 11
 
 extern const unsigned char level_0503_txt[];
