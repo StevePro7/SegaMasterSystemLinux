@@ -20,7 +20,7 @@ void engine_collision_manager_initX( unsigned char difficulty )
 	difficulty += 0;
 	collisionDelta = 1;
 	moreForgiving = false;
-	//if( difficulty_type_easier == difficulty || difficulty_type_normal == difficulty )
+	if( difficulty_type_easier == difficulty || difficulty_type_normal == difficulty )
 	{
 		// Easier + Normal collision delta = 2px range as is more forgiving.
 		//collisionDelta = 2;

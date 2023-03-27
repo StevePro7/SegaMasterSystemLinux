@@ -23,6 +23,7 @@ void engine_hack_manager_init()
 
 	ho->hack_delay = 0;
 	ho->hack_isgod = 0;
+	ho->hack_inair = 0;
 	ho->hack_music = 0;
 	ho->hack_sound = 0;
 	ho->hack_riffs = 0;
@@ -36,9 +37,10 @@ void engine_hack_manager_load()
 
 	ho->hack_delay = PEEK( HACKER_START - 1 );			// 0x004F
 	ho->hack_isgod = PEEK( HACKER_START + 1 );			// 0x0050
-	ho->hack_music = PEEK( HACKER_START + 2 );			// 0x0051
-	ho->hack_sound = PEEK( HACKER_START + 3 );			// 0x0052
-	ho->hack_riffs = PEEK( HACKER_START + 0 );			// 0x0053
+	ho->hack_inair = PEEK( HACKER_START + 1 );			// 0x0051
+	ho->hack_music = PEEK( HACKER_START + 2 );			// 0x0052
+	ho->hack_sound = PEEK( HACKER_START + 3 );			// 0x0053
+	ho->hack_riffs = PEEK( HACKER_START + 0 );			// 0x0054
 
 #endif
 
@@ -48,9 +50,10 @@ void engine_hack_manager_load()
 	ho->hack_riffs = !ho->hack_riffs;
 
 	// TODO delete.
-	//ho->hack_delay = 1;
+	ho->hack_inair = 0;
+	ho->hack_delay = 1;
 	ho->hack_music = 1;
 	ho->hack_sound = 1;
-	ho->hack_riffs = 1;// !ho->hack_riffs;
+	ho->hack_riffs = 0;// !ho->hack_riffs;
 	// TODO delete.
 }

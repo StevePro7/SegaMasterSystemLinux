@@ -1,7 +1,9 @@
 #include "command_manager.h"
 #include "enum_manager.h"
 #include "font_manager.h"
+#include "hack_manager.h"
 #include "global_manager.h"
+#include "player_manager.h"
 
 #ifdef _CONSOLE
 #else
@@ -73,6 +75,8 @@ void engine_command_manager_update( unsigned char command )
 
 unsigned char engine_command_manager_build( unsigned char state, unsigned char input1, unsigned char input2, unsigned char input3, unsigned char input4, unsigned char input5, unsigned char input6 )
 {
+	struct_player_object *po = &global_player_object;
+	struct_hack_object *ho = &global_hack_object;
 	unsigned char command = COMMAND_NONE_MASK;
 
 	// Action buttons.
@@ -84,7 +88,15 @@ unsigned char engine_command_manager_build( unsigned char state, unsigned char i
 		}
 		if( player_state_isintheair == state )
 		{
-			command |= COMMAND_SWAP_MASK;
+			// Let play jump while falling!
+			if( ho->hack_inair && !po->jumper_index )
+			{
+				command |= COMMAND_JUMP_MASK;
+			}
+			else
+			{
+				command |= COMMAND_SWAP_MASK;
+			}
 		}
 	}
 	if( input6 )
@@ -96,7 +108,16 @@ unsigned char engine_command_manager_build( unsigned char state, unsigned char i
 		}
 		if( player_state_isintheair == state )
 		{
-			command |= COMMAND_FLIP_MASK;
+			// Let play jump while falling!
+			if( ho->hack_inair && !po->jumper_index )
+			{
+				command |= COMMAND_JUMP_MASK;
+				command |= COMMAND_HIGH_MASK;
+			}
+			else
+			{
+				command |= COMMAND_FLIP_MASK;
+			}
 		}
 	}
 
