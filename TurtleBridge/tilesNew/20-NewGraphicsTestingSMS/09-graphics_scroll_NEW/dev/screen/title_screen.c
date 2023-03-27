@@ -72,6 +72,7 @@ void screen_title_screen_load()
 	engine_riff_manager_init();
 	value = riff_indexs[ RIFF_START_TITLE ];
 	engine_delay_manager_load( NORMAL_DELAY );
+	engine_game_manager_set_game_sheet( switch_mode_no );
 }
 
 void screen_title_screen_update( unsigned char *screen_type )

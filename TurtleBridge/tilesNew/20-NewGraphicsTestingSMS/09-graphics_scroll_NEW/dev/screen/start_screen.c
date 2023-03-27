@@ -59,6 +59,7 @@ void screen_start_screen_load()
 	engine_player_manager_initX( game_difficulty, game_world );
 
 	devkit_SMS_displayOff();
+
 	engine_graphics_manager_screen( CLEAR_TILE_BLUE );
 
 	// Work in terms of screens.
@@ -106,7 +107,9 @@ void screen_start_screen_load()
 void screen_start_screen_update( unsigned char *screen_type )
 {
 	struct_player_object *po = &global_player_object;
+	struct_game_object *go = &global_game_object;
 	struct_hack_object *ho = &global_hack_object;
+
 	//unsigned char index, maxim;
 	unsigned char input;
 	unsigned char cloud;
@@ -118,6 +121,14 @@ void screen_start_screen_update( unsigned char *screen_type )
 		{
 			engine_sound_manager_stop();
 			devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+
+			// Read cheat sheet first time around.
+			if( !go->game_sheet )
+			{
+				*screen_type = screen_type_intro;
+				return;
+			}
+
 			*screen_type = screen_type_diff;
 			return;
 		}

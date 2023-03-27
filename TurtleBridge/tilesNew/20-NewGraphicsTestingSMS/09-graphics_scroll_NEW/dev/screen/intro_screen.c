@@ -4,9 +4,13 @@
 #include "../engine/global_manager.h"
 #include "../engine/graphics_manager.h"
 #include "../engine/input_manager.h"
+#include "../engine/scroll_manager.h"
+#include "../engine/timer_manager.h"
 #include "../engine/util_manager.h"
 #include "../devkit/_sms_manager.h"
 #include "../banks/bank2.h"
+
+static unsigned char delay;
 
 void screen_intro_screen_load()
 {
@@ -49,10 +53,34 @@ void screen_intro_screen_load()
 	engine_font_manager_text( "[FLIP[[SOMERSAULT[[[[[[FIRE2[", col - 1, row + 2 );
 	engine_font_manager_text( "[[[[[[[[[[[[[[[[[[[[[[[[[[[[[", col - 1, 22 );
 	//engine_font_manager_text( "BOBO", 10, 23 );
+
+	engine_scroll_manager_para_load( 0, 0 );
+	engine_scroll_manager_para_update( 0 );
 	devkit_SMS_displayOn();
+
+	engine_delay_manager_load( NORMAL_DELAY * 10 );
 }
 
 void screen_intro_screen_update( unsigned char *screen_type )
 {
+	unsigned char input1, input2;
+	unsigned char delay;
+
+	input1 = engine_input_manager_move( input_type_fire1 );
+	delay = engine_delay_manager_update();
+	if( input1 || delay )
+	{
+		//engine_game_manager_set_game_sheet( switch_mode_yes );
+	//	*screen_type = screen_type_diff;
+		return;
+	}
+
+	input2 = engine_input_manager_move( input_type_fire2 );
+	if( input2 )
+	{
+		*screen_type = screen_type_start;
+		return;
+	}
+
 	*screen_type = screen_type_intro;
 }

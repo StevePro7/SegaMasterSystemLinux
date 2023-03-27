@@ -19,6 +19,7 @@ void engine_game_manager_init()
 	go->game_music = 0;
 	go->game_cloud = 0;
 	go->game_isgod = switch_mode_no;
+	go->game_sheet = switch_mode_no;
 }
 
 //TODO complete this
@@ -66,6 +67,12 @@ void engine_game_manager_set_game_music( unsigned char game_music )
 	// Keep track of music.
 	struct_game_object *go = &global_game_object;
 	go->game_music = game_music;
+}
+void engine_game_manager_set_game_sheet( unsigned char game_sheet )
+{
+	// Keep track of cheat sheet.
+	struct_game_object *go = &global_game_object;
+	go->game_sheet = game_sheet;
 }
 void engine_game_manager_inc_checkpoint()
 {

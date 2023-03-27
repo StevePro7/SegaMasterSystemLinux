@@ -51,7 +51,7 @@ void engine_hack_manager_load()
 	ho->hack_riffs = !ho->hack_riffs;
 
 	// TODO delete.
-	ho->hack_delay = 1;
+	ho->hack_delay = 0;
 	ho->hack_inair = 0;
 	ho->hack_ultra = 0;		// more aggressive collision detection
 

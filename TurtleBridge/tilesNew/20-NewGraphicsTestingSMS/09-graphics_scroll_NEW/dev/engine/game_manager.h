@@ -13,6 +13,7 @@ void engine_game_manager_set_level_data( unsigned char game_world, unsigned char
 void engine_game_manager_set_game_saved( unsigned char game_saved );
 void engine_game_manager_set_game_start( unsigned char game_start );
 void engine_game_manager_set_game_music( unsigned char game_music );
+void engine_game_manager_set_game_sheet( unsigned char game_sheet );
 
 void engine_game_manager_inc_checkpoint();
 

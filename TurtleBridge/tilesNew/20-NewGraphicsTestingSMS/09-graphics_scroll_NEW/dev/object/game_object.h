@@ -13,6 +13,7 @@ typedef struct tag_struct_game_object
 	unsigned char game_music;
 	unsigned char game_cloud;		// set once for game session.
 	unsigned char game_isgod;
+	unsigned char game_sheet;
 
 } struct_game_object;
 
