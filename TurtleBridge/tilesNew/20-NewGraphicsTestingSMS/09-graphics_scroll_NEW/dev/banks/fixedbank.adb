@@ -7,7 +7,7 @@ S:G$steven_text$0_0$0({6}DA3d,DG,SC:U),E,0,0
 S:G$music_object_data$0_0$0({14}DA7d,DG,SC:U),E,0,0
 S:G$sound_object_data$0_0$0({10}DA5d,DG,SC:U),E,0,0
 S:G$riff_sample_data$0_0$0({114}DA57d,DG,SC:U),E,0,0
-S:G$level_object_data$0_0$0({22}DA11d,DG,SC:U),E,0,0
+S:G$level_object_data$0_0$0({20}DA10d,DG,SC:U),E,0,0
 S:G$extra_object_data$0_0$0({20}DA10d,DG,SC:U),E,0,0
 S:G$player_object_starts$0_0$0({0}DA0d,SC:U),D,0,0
 S:G$Riff_Sound_Austin02_02_wav_pcmenc$0_0$0({0}DA0d,SC:U),D,0,0

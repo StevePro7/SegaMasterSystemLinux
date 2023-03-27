@@ -1,5 +1,5 @@
 XL3
-H A areas 52 global symbols
+H A areas 51 global symbols
 M fixedbank
 O -mz80
 S _mastertracker_psg Ref000000
@@ -26,7 +26,6 @@ S _level_0402_txt Ref000000
 S _sfx_reset_psg Ref000000
 S _level_0502_txt Ref000000
 S .__.ABS. Def000000
-S _level_0508_txt Ref000000
 S _sfx_power_psg Ref000000
 S _sfx_accept_psg Ref000000
 S _mus_cont_psg Ref000000
@@ -39,15 +38,15 @@ A _CODE size 0 flags 0 addr 0
 S Ffixedbank$__str_1$0_0$0 Def000000
 S Ffixedbank$__str_2$0_0$0 Def000000
 A _DATA size 0 flags 0 addr 0
-A _INITIALIZED size 23A flags 0 addr 0
+A _INITIALIZED size 238 flags 0 addr 0
 S _level_object_data Def000210
 S G$level_object_data$0_0$0 Def000210
 S _beat_command_this_command Def000140
 S _music_object_data Def000186
 S G$beat_command_this_command$0_0$0 Def000140
 S G$music_object_data$0_0$0 Def000186
-S _extra_object_data Def000226
-S G$extra_object_data$0_0$0 Def000226
+S _extra_object_data Def000224
+S G$extra_object_data$0_0$0 Def000224
 S _demo_command_this_command Def000080
 S _sound_object_data Def000194
 S _steven_text Def000180
@@ -82,10 +81,10 @@ S G$steven_data$0_0$0 Def000000
 S Ffixedbank$__str_0$0_0$0 Def000091
 S _extra_object_size Def000073
 S G$extra_object_size$0_0$0 Def000073
-A _INITIALIZER size 23A flags 0 addr 0
+A _INITIALIZER size 238 flags 0 addr 0
 S Ffixedbank$__xinit_beat_command_this_command$0_0$0 Def000140
 S Ffixedbank$__xinit_music_object_data$0_0$0 Def000186
-S Ffixedbank$__xinit_extra_object_data$0_0$0 Def000226
+S Ffixedbank$__xinit_extra_object_data$0_0$0 Def000224
 S Ffixedbank$__xinit_sound_object_data$0_0$0 Def000194
 S Ffixedbank$__xinit_demo_command_this_command$0_0$0 Def000080
 S Ffixedbank$__xinit_steven_text$0_0$0 Def000180
@@ -130,9 +129,9 @@ T 10 02 00
 R 00 00 02 00
 T 10 02 00
 R 00 00 02 00
-T 26 02 00
+T 24 02 00
 R 00 00 02 00
-T 26 02 00
+T 24 02 00
 R 00 00 02 00
 T 00 00 00
 R 00 00 07 00
@@ -271,17 +270,17 @@ R 00 00 08 00 00 03 07 00 00 05 07 00 00 07 07 00
 T 86 01 00
 R 00 00 08 00
 T 86 01 00 00 00 00 00 00 00
-R 00 00 08 00 02 03 02 00 02 05 1D 00 02 07 20 00
+R 00 00 08 00 02 03 02 00 02 05 1C 00 02 07 1F 00
 T 8C 01 00 00 00 00 00 00 00
-R 00 00 08 00 02 03 00 00 02 05 1B 00 02 07 1E 00
+R 00 00 08 00 02 03 00 00 02 05 1A 00 02 07 1D 00
 T 92 01 00 00 00
 R 00 00 08 00 02 03 0B 00
 T 94 01 00
 R 00 00 08 00
 T 94 01 00 00 00 00 00 00 00
-R 00 00 08 00 02 03 01 00 02 05 04 00 02 07 1A 00
+R 00 00 08 00 02 03 01 00 02 05 04 00 02 07 19 00
 T 9A 01 00 00 00 00 00
-R 00 00 08 00 02 03 15 00 02 05 19 00
+R 00 00 08 00 02 03 15 00 02 05 18 00
 T 9E 01 00
 R 00 00 08 00
 T 9E 01 00 00 00 00 00 00 00
@@ -330,15 +329,15 @@ T 16 02 00 00 00 00 00 00 00
 R 00 00 08 00 02 03 0F 00 02 05 0E 00 02 07 12 00
 T 1C 02 00 00 00 00 00 00 00
 R 00 00 08 00 02 03 11 00 02 05 14 00 02 07 13 00
-T 22 02 00 00 00 00 00
-R 00 00 08 00 02 03 16 00 02 05 18 00
-T 26 02 00
+T 22 02 00 00 00
+R 00 00 08 00 02 03 16 00
+T 24 02 00
 R 00 00 08 00
-T 26 02 00 00 00 00 00 00 00
+T 24 02 00 00 00 00 00 00 00
 R 00 00 08 00 02 03 05 00 02 05 06 00 02 07 08 00
-T 2C 02 00 00 00 00 00 00 00
+T 2A 02 00 00 00 00 00 00 00
 R 00 00 08 00 02 03 0D 00 02 05 10 00 02 07 0C 00
-T 32 02 00 00 00 00 00 00 00
-R 00 00 08 00 02 03 0C 00 02 05 0C 00 02 07 1C 00
-T 38 02 00 00 00
-R 00 00 08 00 02 03 1F 00
+T 30 02 00 00 00 00 00 00 00
+R 00 00 08 00 02 03 0C 00 02 05 0C 00 02 07 1B 00
+T 36 02 00 00 00
+R 00 00 08 00 02 03 1E 00
