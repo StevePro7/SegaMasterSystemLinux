@@ -1,5 +1,6 @@
 #include "collision_manager.h"
 #include "enum_manager.h"
+#include "hack_manager.h"
 #include "global_manager.h"
 #include "level_manager.h"
 #include <stdbool.h>
@@ -13,7 +14,7 @@ static unsigned char collisionDelta;
 static unsigned char collisionRange;
 static bool moreForgiving;
 
-// TESTing
+// TESTing - original logic
 void engine_collision_manager_initX( unsigned char difficulty )
 {
 	// Harder + Insane collision delta = 1px range as is less forgiving.
@@ -23,8 +24,8 @@ void engine_collision_manager_initX( unsigned char difficulty )
 	if( difficulty_type_easier == difficulty || difficulty_type_normal == difficulty )
 	{
 		// Easier + Normal collision delta = 2px range as is more forgiving.
-		//collisionDelta = 2;
-		//moreForgiving = true;
+		collisionDelta = 2;
+		moreForgiving = true;
 	}
 
 	collisionRange = SCREEN_WIDE - collisionDelta;
@@ -34,7 +35,9 @@ void engine_collision_manager_initX( unsigned char difficulty )
 // ORG
 void engine_collision_manager_init( unsigned char difficulty )
 {
+	struct_hack_object *ho = &global_hack_object;
 	difficulty += 0;
+
 	// Harder + Insane collision delta = 1px range as is less forgiving.
 	//collisionDelta = 1;
 	//moreForgiving = false;
@@ -44,6 +47,12 @@ void engine_collision_manager_init( unsigned char difficulty )
 		collisionDelta = 2;
 		moreForgiving = true;
 	//}
+
+	if( ho->hack_ultra )
+	{
+		collisionDelta = 1;
+		moreForgiving = false;
+	}
 
 	collisionRange = SCREEN_WIDE - collisionDelta;
 }

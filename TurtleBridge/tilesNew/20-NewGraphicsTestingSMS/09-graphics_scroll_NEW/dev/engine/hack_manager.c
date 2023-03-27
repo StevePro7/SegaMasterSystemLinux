@@ -24,6 +24,7 @@ void engine_hack_manager_init()
 	ho->hack_delay = 0;
 	ho->hack_isgod = 0;
 	ho->hack_inair = 0;
+	ho->hack_ultra = 0;
 	ho->hack_music = 0;
 	ho->hack_sound = 0;
 	ho->hack_riffs = 0;
@@ -50,8 +51,10 @@ void engine_hack_manager_load()
 	ho->hack_riffs = !ho->hack_riffs;
 
 	// TODO delete.
-	ho->hack_inair = 0;
 	ho->hack_delay = 1;
+	ho->hack_inair = 0;
+	ho->hack_ultra = 0;		// more aggressive collision detection
+
 	ho->hack_music = 1;
 	ho->hack_sound = 1;
 	ho->hack_riffs = 0;// !ho->hack_riffs;

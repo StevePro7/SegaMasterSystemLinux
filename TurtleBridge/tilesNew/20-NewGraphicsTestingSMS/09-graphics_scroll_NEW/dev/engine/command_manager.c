@@ -79,6 +79,10 @@ unsigned char engine_command_manager_build( unsigned char state, unsigned char i
 	struct_hack_object *ho = &global_hack_object;
 	unsigned char command = COMMAND_NONE_MASK;
 
+	// TODO inject ho and po
+	// TODO remove from signature as not used.
+	input3 += 0;
+
 	// Action buttons.
 	if( input5 )
 	{

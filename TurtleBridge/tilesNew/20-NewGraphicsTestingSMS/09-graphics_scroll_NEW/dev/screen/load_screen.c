@@ -112,8 +112,8 @@ void screen_load_screen_update( unsigned char *screen_type )
 				engine_util_manager_locale_blank( 3, 0, 3 );
 
 				// TODO - revert
-				*screen_type = screen_type_test;
-				//*screen_type = screen_type_play;
+				//*screen_type = screen_type_test;
+				*screen_type = screen_type_play;
 				return;
 			}
 
@@ -125,7 +125,7 @@ void screen_load_screen_update( unsigned char *screen_type )
 	//*screen_type = screen_type_dead;
 	//*screen_type = screen_type_over;
 	//*screen_type = screen_type_cont;
-	*screen_type = screen_type_test;
+	//*screen_type = screen_type_test;
 	//*screen_type = screen_type_play;
 
 	//*screen_type = screen_type_load;

@@ -15,7 +15,7 @@ S:Lload_screen.screen_load_screen_update$maxim$1_0$143({1}SC:U),R,0,0,[]
 S:Lload_screen.screen_load_screen_update$input$1_0$143({1}SC:U),R,0,0,[e]
 T:Fload_screen$tag_struct_player_object[({0}S:S$initX$0_0$0({1}SC:U),Z,0,0)({1}S:S$posnX$0_0$0({2}SI:U),Z,0,0)({3}S:S$tileX$0_0$0({2}SI:U),Z,0,0)({5}S:S$lookX$0_0$0({1}SC:U),Z,0,0)({6}S:S$posnY$0_0$0({1}SC:U),Z,0,0)({7}S:S$tileY$0_0$0({1}SC:U),Z,0,0)({8}S:S$leapY$0_0$0({2}SI:U),Z,0,0)({10}S:S$drawX$0_0$0({1}SC:U),Z,0,0)({11}S:S$drawY$0_0$0({1}SC:U),Z,0,0)({12}S:S$player_state$0_0$0({1}SC:U),Z,0,0)({13}S:S$jumper_index$0_0$0({1}SC:U),Z,0,0)({14}S:S$deltaY_index$0_0$0({1}SC:U),Z,0,0)({15}S:S$player_frame$0_0$0({1}SC:U),Z,0,0)({16}S:S$player_lives$0_0$0({1}SC:U),Z,0,0)({17}S:S$motion_count$0_0$0({1}SC:U),Z,0,0)]
 T:Fload_screen$tag_struct_scroll_object[({0}S:S$scrollLeftX$0_0$0({1}SC:U),Z,0,0)({1}S:S$scrollRight$0_0$0({1}SC:U),Z,0,0)({2}S:S$scrollColumn$0_0$0({2}SI:U),Z,0,0)({4}S:S$scrollChecks$0_0$0({2}SI:U),Z,0,0)({6}S:S$scrollPoints$0_0$0({2}SI:U),Z,0,0)({8}S:S$scrollFinish$0_0$0({2}SI:U),Z,0,0)({10}S:S$scrollLeftX0$0_0$0({1}SC:U),Z,0,0)({11}S:S$scrollLeftX1$0_0$0({1}SC:U),Z,0,0)({12}S:S$scrollLeftX2$0_0$0({1}SC:U),Z,0,0)({13}S:S$scrollLeftX3$0_0$0({1}SC:U),Z,0,0)({14}S:S$scrollLeftX4$0_0$0({1}SC:U),Z,0,0)({15}S:S$scrollLeftX5$0_0$0({1}SC:U),Z,0,0)({16}S:S$scroll_half$0_0$0({1}SC:U),Z,0,0)({17}S:S$lineCnt$0_0$0({1}SC:U),Z,0,0)]
-T:Fload_screen$tag_struct_hack_object[({0}S:S$hack_delay$0_0$0({1}SC:U),Z,0,0)({1}S:S$hack_isgod$0_0$0({1}SC:U),Z,0,0)({2}S:S$hack_inair$0_0$0({1}SC:U),Z,0,0)({3}S:S$hack_music$0_0$0({1}SC:U),Z,0,0)({4}S:S$hack_sound$0_0$0({1}SC:U),Z,0,0)({5}S:S$hack_riffs$0_0$0({1}SC:U),Z,0,0)]
+T:Fload_screen$tag_struct_hack_object[({0}S:S$hack_delay$0_0$0({1}SC:U),Z,0,0)({1}S:S$hack_isgod$0_0$0({1}SC:U),Z,0,0)({2}S:S$hack_inair$0_0$0({1}SC:U),Z,0,0)({3}S:S$hack_ultra$0_0$0({1}SC:U),Z,0,0)({4}S:S$hack_music$0_0$0({1}SC:U),Z,0,0)({5}S:S$hack_sound$0_0$0({1}SC:U),Z,0,0)({6}S:S$hack_riffs$0_0$0({1}SC:U),Z,0,0)]
 T:Fload_screen$tag_struct_game_object[({0}S:S$game_difficulty$0_0$0({1}SC:U),Z,0,0)({1}S:S$game_world$0_0$0({1}SC:U),Z,0,0)({2}S:S$game_round$0_0$0({1}SC:U),Z,0,0)({3}S:S$game_level$0_0$0({1}SC:U),Z,0,0)({4}S:S$game_point$0_0$0({1}SC:U),Z,0,0)({5}S:S$game_saved$0_0$0({1}SC:U),Z,0,0)({6}S:S$game_start$0_0$0({1}SC:U),Z,0,0)({7}S:S$game_music$0_0$0({1}SC:U),Z,0,0)({8}S:S$game_cloud$0_0$0({1}SC:U),Z,0,0)({9}S:S$game_isgod$0_0$0({1}SC:U),Z,0,0)]
 T:Fload_screen$tag_struct_command_object[({0}S:S$frame_index$0_0$0({2}SI:U),Z,0,0)({2}S:S$curr_command$0_0$0({1}SC:U),Z,0,0)({3}S:S$prev_command$0_0$0({1}SC:U),Z,0,0)]
 T:Fload_screen$tag_struct_frame_object[({0}S:S$frame_count$0_0$0({2}SI:U),Z,0,0)]
@@ -26,7 +26,7 @@ S:G$command_frame_index$0_0$0({0}DA0d,SI:U),E,0,0
 S:G$command_this_command$0_0$0({0}DA0d,SC:U),E,0,0
 S:G$global_command_object$0_0$0({4}STtag_struct_command_object:S),E,0,0
 S:G$global_game_object$0_0$0({10}STtag_struct_game_object:S),E,0,0
-S:G$global_hack_object$0_0$0({6}STtag_struct_hack_object:S),E,0,0
+S:G$global_hack_object$0_0$0({7}STtag_struct_hack_object:S),E,0,0
 S:G$level_platforms$0_0$0({0}DA0d,SC:U),E,0,0
 S:G$global_level_object$0_0$0({9}STtag_struct_level_object:S),E,0,0
 S:G$jump_array_ptr$0_0$0({0}DA0d,DG,SI:S),E,0,0
