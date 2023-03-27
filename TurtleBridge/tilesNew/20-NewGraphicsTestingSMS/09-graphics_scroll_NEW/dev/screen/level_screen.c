@@ -18,7 +18,7 @@
 #include "../banks/bank2.h"
 #include <stdbool.h>
 
-#define DEBUGGING_INFO		0
+#define DEBUGGING_INFO		1
 
 #ifdef _CONSOLE
 #else
