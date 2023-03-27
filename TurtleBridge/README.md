@@ -40,7 +40,7 @@ Due to time constraints the initial V1.0 build ships with 10x levels only, unfor
 But there are plans immediately to add more levels!  Pls let me know if you would like to contribute ideas...!
 
 ###### RIFFS
-Things you may have missed; riffs from: AC/DC, Gn'R, Simpsons, Van Halen, Wayne's World, WWF Wrestling
+Things you may have missed; riffs from: AC/DC, Austin Powers, Gn'R, Simpsons, Van Halen, Wayne's World, WWF Wrestling
 
 ###### CREDITS
 Extra special thanks to: sverx for [devkitSMS](https://github.com/sverx/devkitSMS) and Calindro for their 24/7 Tech Support!
