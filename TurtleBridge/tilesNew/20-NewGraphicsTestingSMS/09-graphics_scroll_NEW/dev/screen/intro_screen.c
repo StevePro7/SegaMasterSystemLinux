@@ -11,29 +11,36 @@
 void screen_intro_screen_load()
 {
 	unsigned char col, row;
-	col = 2;
+	col = 3;
 	row = 3;
 	devkit_SMS_displayOff();
-	engine_graphics_manager_screen( CLEAR_TILE_BLACK );
+	engine_graphics_manager_screen( CLEAR_TILE_BLUE );
 	engine_graphics_manager_title();
 
-	engine_font_manager_text( "===== CHEAT SHEET ======", col + 2, row + 1 );
+	//engine_font_manager_text( "                              ", col - 1, row + 3 );
+	//engine_font_manager_text( "[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[", col - 1, row + 3 );
+	//engine_font_manager_text( "[[[[[[[[[[[[[[[[[[[[[[[[[[[[[", col - 1, 1 );
+
+	engine_font_manager_text( "[[[[[[[[[[[[[[[[[[[[[[[[[[[[[", col - 1, row + 0 );
+	engine_font_manager_text( "[[=====[CHEAT[SHEET[======[[[", col - 1, row + 1 );
+	engine_font_manager_text( "[[[[[[[[[[[[[[[[[[[[[[[[[[[[[", col - 1, row + 2 );
+	engine_font_manager_text( "[[[[[[[[[[[[[[[[[[[[[[[[[[[[[", col - 1, row + 3 );
 	row += 2;
-	engine_font_manager_text( "JUMP  CATEGORIES", col, row + 2 );
+	engine_font_manager_text( "[JUMP[[CATEGORIES[[ON[GROUND[", col - 1, row + 2 );
 	row += 1;
 	//engine_font_manager_text( "TYPE  DESCRIPTION ACTION", col, row + 0 );
-	//engine_font_manager_text( "----------------------------", col, row + 1 );
-	engine_font_manager_text( "SKIP  SMALLEST    LEFT+FIRE1", col, row + 2 );
-	engine_font_manager_text( "JUMP  STANDARD    LEFT+FIRE2", col, row + 4 );
-	engine_font_manager_text( "                  OR   FIRE1", col, row + 5 );
-	engine_font_manager_text( "LEAP  SIZEABLE   RIGHT+FIRE1", col, row + 7 );
-	engine_font_manager_text( "                 OR    FIRE2", col, row + 8 );
-	engine_font_manager_text( "HURL  COLOSSAL   RIGHT+FIRE2", col, row + 10 );
+	//engine_font_manager_text( "                              ", col- 1, row + 1 );
+	engine_font_manager_text( "SKIP  SMALLEST   LEFT+FIRE1", col - 1, row + 2 );
+	engine_font_manager_text( "JUMP  STANDARD   LEFT+FIRE2", col - 1, row + 4 );
+	engine_font_manager_text( "                 OR   FIRE1", col - 1, row + 5 );
+	engine_font_manager_text( "LEAP  SIZEABLE  RIGHT+FIRE1", col - 1, row + 7 );
+	engine_font_manager_text( "                OR    FIRE2", col - 1, row + 8 );
+	engine_font_manager_text( "HURL  COLOSSAL  RIGHT+FIRE2", col - 1, row + 10 );
 
 	row += 13;
-	engine_font_manager_text( "JUMP  ACTIVITIES", col, row + 1 );
-	engine_font_manager_text( "SWAP  DIRECTION IN AIR FIRE1", col, row + 2 );
-	engine_font_manager_text( "FLIP  SOMERSAULT GAMER FIRE2", col, row + 3 );
+	engine_font_manager_text( "JUMP  ACTIVITIES  AIRBORNE!", col - 1, row + 1 );
+	engine_font_manager_text( "SWAP  DIRECTION       FIRE1", col - 1, row + 2 );
+	engine_font_manager_text( "FLIP  SOMERSAULT      FIRE2", col - 1, row + 3 );
 	engine_font_manager_text( "BOBO", 10, 23 );
 	devkit_SMS_displayOn();
 }
