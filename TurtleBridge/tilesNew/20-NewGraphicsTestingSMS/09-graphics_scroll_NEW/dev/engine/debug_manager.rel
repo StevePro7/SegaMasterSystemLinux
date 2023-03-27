@@ -1,28 +1,17 @@
 ;!FILE debug_manager.asm
 XL3
-H 9 areas 13 global symbols
+H 9 areas 8 global symbols
 M debug_manager
 O -mz80
 S .__.ABS. Def000000
-S _global_game_object Ref000000
-S _engine_player_manager_lives Ref000000
-A _CODE size D flags 0 addr 0
+A _CODE size 1 flags 0 addr 0
 S G$engine_debug_manager_initgame$0$0 Def000000
-S C$debug_manager.c$20$1_0$119 Def000003
 S _engine_debug_manager_initgame Def000000
-S C$debug_manager.c$21$1_0$119 Def000005
 S C$debug_manager.c$13$0_0$119 Def000000
 S C$debug_manager.c$16$1_0$119 Def000000
-S C$debug_manager.c$55$1_0$119 Def00000C
-S XG$engine_debug_manager_initgame$0$0 Def00000C
-S A$debug_manager$60 Def000003
-S A$debug_manager$64 Def000005
-S A$debug_manager$65 Def000006
-S A$debug_manager$56 Def000000
-S A$debug_manager$66 Def000007
-S A$debug_manager$76 Def00000C
-S A$debug_manager$67 Def000008
-S A$debug_manager$68 Def00000B
+S C$debug_manager.c$55$1_0$119 Def000000
+S XG$engine_debug_manager_initgame$0$0 Def000000
+S A$debug_manager$62 Def000000
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -33,5 +22,5 @@ A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
-T 00 00 00 21 00 00 36 03 7E F5 33 CD 00 00 33 C9
-R 00 00 00 00 02 04 01 00 02 0C 02 00
+T 00 00 00 C9
+R 00 00 00 00
