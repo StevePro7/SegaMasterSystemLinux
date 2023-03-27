@@ -1,4 +1,5 @@
 #include "intro_screen.h"
+#include "../engine/audio_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/global_manager.h"
@@ -63,7 +64,7 @@ void screen_intro_screen_load()
 
 void screen_intro_screen_update( unsigned char *screen_type )
 {
-	unsigned char input1, input2;
+	unsigned char input1;// , input2;
 	unsigned char delay;
 
 	input1 = engine_input_manager_move( input_type_fire1 );
@@ -71,16 +72,21 @@ void screen_intro_screen_update( unsigned char *screen_type )
 	if( input1 || delay )
 	{
 		//engine_game_manager_set_game_sheet( switch_mode_yes );
-	//	*screen_type = screen_type_diff;
+
+		devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+		engine_music_manager_stop();
+		engine_sound_manager_stop();
+		*screen_type = screen_type_diff;
 		return;
 	}
 
-	input2 = engine_input_manager_move( input_type_fire2 );
-	if( input2 )
-	{
-		*screen_type = screen_type_start;
-		return;
-	}
+	// Don't go back
+	//input2 = engine_input_manager_move( input_type_fire2 );
+	//if( input2 )
+	//{
+	//	*screen_type = screen_type_start;
+	//	return;
+	//}
 
 	*screen_type = screen_type_intro;
 }
