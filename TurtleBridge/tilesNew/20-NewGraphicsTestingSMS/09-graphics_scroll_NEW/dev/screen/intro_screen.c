@@ -10,11 +10,16 @@
 
 void screen_intro_screen_load()
 {
+	unsigned char row = 5;
 	devkit_SMS_displayOff();
 	engine_graphics_manager_screen( CLEAR_TILE_BLUE );
 	engine_graphics_manager_title();
 
-	engine_font_manager_text( "CHEAT SHEET", 10, 3 );
+	engine_font_manager_text( "===== CHEAT SHEET ======", 4, 3 );
+	engine_font_manager_text( "TYPE  DESCRIPTION       ACTION", 2, row + 0 );
+	engine_font_manager_text( "TYPE  DESCRIPTION       ACTION", 2, row + 0 );
+	engine_font_manager_text( "TYPE  DESCRIPTION       ACTION", 2, row + 0 );
+	engine_font_manager_text( "TYPE  DESCRIPTION       ACTION", 2, row + 0 );
 	devkit_SMS_displayOn();
 }
 

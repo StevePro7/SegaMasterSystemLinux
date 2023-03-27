@@ -1,5 +1,6 @@
 M:intro_screen
 F:G$screen_intro_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Lintro_screen.screen_intro_screen_load$row$1_0$99({1}SC:U),R,0,0,[]
 F:G$screen_intro_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lintro_screen.screen_intro_screen_update$screen_type$1_0$100({2}DG,SC:U),B,1,4
 S:G$song_object_texts$0_0$0({0}DA0d,DG,SC:U),E,0,0
