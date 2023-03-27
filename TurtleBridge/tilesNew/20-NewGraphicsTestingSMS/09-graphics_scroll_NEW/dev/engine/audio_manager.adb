@@ -21,9 +21,9 @@ F:G$engine_sound_manager_stop$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Laudio_manager.engine_sound_manager_stop$ao$1_0$137({2}DG,STtag_struct_audio_object:S),R,0,0,[]
 F:G$engine_audio_manager_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Laudio_manager.engine_audio_manager_update$ao$1_0$138({2}DG,STtag_struct_audio_object:S),R,0,0,[]
-T:Faudio_manager$tag_struct_hack_object[({0}S:S$hack_delay$0_0$0({1}SC:U),Z,0,0)({1}S:S$hack_isgod$0_0$0({1}SC:U),Z,0,0)({2}S:S$hack_music$0_0$0({1}SC:U),Z,0,0)({3}S:S$hack_sound$0_0$0({1}SC:U),Z,0,0)({4}S:S$hack_riffs$0_0$0({1}SC:U),Z,0,0)]
+T:Faudio_manager$tag_struct_hack_object[({0}S:S$hack_delay$0_0$0({1}SC:U),Z,0,0)({1}S:S$hack_isgod$0_0$0({1}SC:U),Z,0,0)({2}S:S$hack_inair$0_0$0({1}SC:U),Z,0,0)({3}S:S$hack_ultra$0_0$0({1}SC:U),Z,0,0)({4}S:S$hack_music$0_0$0({1}SC:U),Z,0,0)({5}S:S$hack_sound$0_0$0({1}SC:U),Z,0,0)({6}S:S$hack_riffs$0_0$0({1}SC:U),Z,0,0)]
 T:Faudio_manager$tag_struct_audio_object[({0}S:S$music_data$0_0$0({2}DG,SC:U),Z,0,0)({2}S:S$music_bank$0_0$0({1}SC:U),Z,0,0)({3}S:S$sound_data$0_0$0({2}DG,SC:U),Z,0,0)({5}S:S$sound_bank$0_0$0({1}SC:U),Z,0,0)]
-S:G$global_hack_object$0_0$0({5}STtag_struct_hack_object:S),E,0,0
+S:G$global_hack_object$0_0$0({7}STtag_struct_hack_object:S),E,0,0
 S:G$steven_text$0_0$0({0}DA0d,DG,SC:U),E,0,0
 S:G$demo_command_frame_index$0_0$0({0}DA0d,SI:U),E,0,0
 S:G$demo_command_this_command$0_0$0({0}DA0d,SC:U),E,0,0

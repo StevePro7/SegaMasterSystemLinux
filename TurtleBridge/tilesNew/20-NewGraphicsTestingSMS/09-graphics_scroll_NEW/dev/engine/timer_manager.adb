@@ -22,11 +22,11 @@ S:Ltimer_manager.engine_reset_manager_update$ro$1_0$19({2}DG,STtag_struct_reset_
 S:Ltimer_manager.engine_reset_manager_update$test$1_0$19({1}SC:U),R,0,0,[c]
 F:G$engine_reset_manager_reset$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Ltimer_manager.engine_reset_manager_reset$ro$1_0$21({2}DG,STtag_struct_reset_object:S),R,0,0,[]
-T:Ftimer_manager$tag_struct_hack_object[({0}S:S$hack_delay$0_0$0({1}SC:U),Z,0,0)({1}S:S$hack_isgod$0_0$0({1}SC:U),Z,0,0)({2}S:S$hack_music$0_0$0({1}SC:U),Z,0,0)({3}S:S$hack_sound$0_0$0({1}SC:U),Z,0,0)({4}S:S$hack_riffs$0_0$0({1}SC:U),Z,0,0)]
+T:Ftimer_manager$tag_struct_hack_object[({0}S:S$hack_delay$0_0$0({1}SC:U),Z,0,0)({1}S:S$hack_isgod$0_0$0({1}SC:U),Z,0,0)({2}S:S$hack_inair$0_0$0({1}SC:U),Z,0,0)({3}S:S$hack_ultra$0_0$0({1}SC:U),Z,0,0)({4}S:S$hack_music$0_0$0({1}SC:U),Z,0,0)({5}S:S$hack_sound$0_0$0({1}SC:U),Z,0,0)({6}S:S$hack_riffs$0_0$0({1}SC:U),Z,0,0)]
 T:Ftimer_manager$tag_struct_frame_object[({0}S:S$frame_count$0_0$0({2}SI:U),Z,0,0)]
 T:Ftimer_manager$tag_struct_delay_object[({0}S:S$delay_value$0_0$0({2}SI:U),Z,0,0)({2}S:S$delay_timer$0_0$0({2}SI:U),Z,0,0)]
 T:Ftimer_manager$tag_struct_reset_object[({0}S:S$reset_value$0_0$0({2}SI:U),Z,0,0)({2}S:S$reset_timer$0_0$0({2}SI:U),Z,0,0)]
-S:G$global_hack_object$0_0$0({5}STtag_struct_hack_object:S),E,0,0
+S:G$global_hack_object$0_0$0({7}STtag_struct_hack_object:S),E,0,0
 S:G$global_delay_object$0_0$0({4}STtag_struct_delay_object:S),E,0,0
 S:G$global_frame_object$0_0$0({2}STtag_struct_frame_object:S),E,0,0
 S:G$global_reset_object$0_0$0({4}STtag_struct_reset_object:S),E,0,0

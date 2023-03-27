@@ -2,6 +2,7 @@
 #include "../engine/audio_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
+#include "../engine/game_manager.h"
 #include "../engine/global_manager.h"
 #include "../engine/graphics_manager.h"
 #include "../engine/input_manager.h"
@@ -67,15 +68,15 @@ void screen_intro_screen_update( unsigned char *screen_type )
 	unsigned char input1;// , input2;
 	unsigned char delay;
 
-	input1 = engine_input_manager_move( input_type_fire1 );
+	input1 = engine_input_manager_hold( input_type_fire1 );
 	delay = engine_delay_manager_update();
 	if( input1 || delay )
 	{
-		//engine_game_manager_set_game_sheet( switch_mode_yes );
+		engine_game_manager_set_game_sheet( switch_mode_yes );
 
-		devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
-		engine_music_manager_stop();
-		engine_sound_manager_stop();
+	//	devkit_SMS_mapROMBank( bggame_tiles__tiles__psgcompr_bank );
+	//	engine_music_manager_stop();
+	//	engine_sound_manager_stop();
 		*screen_type = screen_type_diff;
 		return;
 	}
