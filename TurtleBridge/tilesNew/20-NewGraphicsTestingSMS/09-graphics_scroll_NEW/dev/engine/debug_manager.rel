@@ -1,17 +1,67 @@
 ;!FILE debug_manager.asm
 XL3
-H 9 areas 8 global symbols
+H 9 areas 3A global symbols
 M debug_manager
 O -mz80
 S .__.ABS. Def000000
-A _CODE size 1 flags 0 addr 0
+S _global_game_object Ref000000
+S _engine_game_manager_set_level_data Ref000000
+S _engine_player_manager_lives Ref000000
+A _CODE size 3D flags 0 addr 0
 S G$engine_debug_manager_initgame$0$0 Def000000
+S A$debug_manager$100 Def000026
+S A$debug_manager$101 Def000027
+S A$debug_manager$120 Def000036
+S A$debug_manager$111 Def00002B
+S A$debug_manager$102 Def000028
+S A$debug_manager$121 Def000037
+S A$debug_manager$112 Def00002C
+S A$debug_manager$131 Def00003C
+S A$debug_manager$122 Def00003A
+S A$debug_manager$113 Def00002D
+S A$debug_manager$123 Def00003B
+S A$debug_manager$114 Def00002E
+S A$debug_manager$115 Def000031
+S A$debug_manager$106 Def000029
+S A$debug_manager$116 Def000032
+S A$debug_manager$107 Def00002A
 S _engine_debug_manager_initgame Def000000
+S A$debug_manager$117 Def000033
+S C$debug_manager.c$21$1_0$119 Def000000
 S C$debug_manager.c$13$0_0$119 Def000000
+S A$debug_manager$118 Def000034
+S C$debug_manager.c$31$1_0$119 Def000021
+S C$debug_manager.c$22$1_0$119 Def000009
+S A$debug_manager$119 Def000035
+S C$debug_manager.c$32$1_0$119 Def000026
+S C$debug_manager.c$23$1_0$119 Def00000E
+S C$debug_manager.c$33$1_0$119 Def000029
+S C$debug_manager.c$34$1_0$119 Def00002B
 S C$debug_manager.c$16$1_0$119 Def000000
-S C$debug_manager.c$55$1_0$119 Def000000
-S XG$engine_debug_manager_initgame$0$0 Def000000
-S A$debug_manager$62 Def000000
+S C$debug_manager.c$27$1_0$119 Def000010
+S C$debug_manager.c$55$1_0$119 Def00003C
+S C$debug_manager.c$28$1_0$119 Def000015
+S C$debug_manager.c$29$1_0$119 Def00001B
+S XG$engine_debug_manager_initgame$0$0 Def00003C
+S A$debug_manager$60 Def000000
+S A$debug_manager$61 Def000003
+S A$debug_manager$62 Def000004
+S A$debug_manager$90 Def000020
+S A$debug_manager$63 Def000005
+S A$debug_manager$82 Def000015
+S A$debug_manager$73 Def00000E
+S A$debug_manager$64 Def000008
+S A$debug_manager$83 Def000018
+S A$debug_manager$84 Def00001A
+S A$debug_manager$94 Def000021
+S A$debug_manager$95 Def000024
+S A$debug_manager$77 Def000010
+S A$debug_manager$68 Def000009
+S A$debug_manager$96 Def000025
+S A$debug_manager$78 Def000013
+S A$debug_manager$69 Def00000C
+S A$debug_manager$88 Def00001B
+S A$debug_manager$89 Def00001E
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -22,5 +72,13 @@ A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
-T 00 00 00 C9
-R 00 00 00 00
+T 00 00 00 3A 00 00 F5 33 CD 00 00 33 21 09 00 36
+R 00 00 00 00 02 04 01 00 02 09 03 00 02 0D 01 00
+T 0D 00 00 00 36 01 21 01 00 36 01 01 02 00 3E 02
+R 00 00 00 00 02 07 01 00 02 0C 01 00
+T 1A 00 00 02 11 04 00 3E 04 12 3A 01 00 3D 77 0A
+R 00 00 00 00 02 05 01 00 02 0B 01 00
+T 27 00 00 3D 02 1A 3D 12 5F 0A 21 01 00 4E 63 E5
+R 00 00 00 00 02 0B 01 00
+T 34 00 00 33 47 C5 CD 00 00 F1 33 C9
+R 00 00 00 00 02 07 02 00

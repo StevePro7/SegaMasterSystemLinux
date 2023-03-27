@@ -243,7 +243,6 @@ static void play_checkpoint_riff()
 
 	maxim = 9;
 	index = engine_random_manager_next( maxim );
-	index = 0;
 
 	devkit_PSGStop();
 

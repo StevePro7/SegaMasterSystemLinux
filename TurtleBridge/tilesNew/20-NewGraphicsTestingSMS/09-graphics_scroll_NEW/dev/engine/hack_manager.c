@@ -52,7 +52,7 @@ void engine_hack_manager_load()
 
 	// TODO delete.
 	ho->hack_delay = 0;
-	ho->hack_inair = 0;
+	ho->hack_inair = 1;
 	ho->hack_ultra = 0;		// more aggressive collision detection
 
 	ho->hack_music = 1;

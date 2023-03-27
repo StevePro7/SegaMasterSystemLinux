@@ -93,7 +93,6 @@ void screen_load_screen_update( unsigned char *screen_type )
 			// TODO - update magic number?
 			maxim = 3;
 			index = engine_random_manager_next( maxim );
-			index = 0;		// TODO - remove this!!
 			index += RIFF_START_LOAD;
 
 			// TODO -uncomment

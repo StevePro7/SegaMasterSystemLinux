@@ -50,7 +50,6 @@ void screen_pass_screen_load()
 	// TODO - update magic number?
 	maxim = 3;
 	index = engine_random_manager_next( maxim );
-	index = 0;		// TODO - remove this!!
 	index += RIFF_START_PASS;
 	value = riff_indexs[ index ];
 	count = riff_counts[ index ];
