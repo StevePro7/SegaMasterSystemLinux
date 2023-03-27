@@ -530,14 +530,18 @@ const unsigned char level_object_bank[] =
 // Level Manager.
 const unsigned char *level_object_data[] =
 {
+	// World 01
 	level_0101_txt,
 	level_0102_txt,
 
+	level_0103_txt,
 	level_0201_txt,
+
+	level_0203_txt,
 	level_0202_txt,
 
-	level_0301_txt,
-	level_0302_txt,
+	//level_0301_txt,
+	//level_0302_txt,
 
 	level_0401_txt,
 	level_0402_txt,
@@ -547,17 +551,23 @@ const unsigned char *level_object_data[] =
 };
 const unsigned int level_object_size[] =
 {
+	// World 01
 	level_0101_txt_size,
 	level_0102_txt_size,
 
+	level_0103_txt_size,
 	level_0201_txt_size,
-	level_0202_txt_size,
 
-	level_0301_txt_size,
-	level_0302_txt_size,
+	level_0203_txt_size,
+	level_0402_txt_size,
+//	level_0202_txt_size,
+
+	//level_0301_txt_size,
+	//level_0302_txt_size,
 
 	level_0401_txt_size,
-	level_0402_txt_size,
+	level_0202_txt_size,
+	//level_0402_txt_size,
 
 	level_0501_txt_size,
 	level_0502_txt_size,
@@ -565,14 +575,18 @@ const unsigned int level_object_size[] =
 };
 const unsigned char level_object_bank[] =
 {
+	// World 01
 	level_0101_txt_bank,
 	level_0102_txt_bank,
 
+	level_0103_txt_bank,
 	level_0201_txt_bank,
+
+	level_0203_txt_bank,
 	level_0202_txt_bank,
 
-	level_0301_txt_bank,
-	level_0302_txt_bank,
+	//level_0301_txt_bank,
+	//level_0302_txt_bank,
 
 	level_0401_txt_bank,
 	level_0402_txt_bank,
