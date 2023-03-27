@@ -30,18 +30,25 @@ void screen_intro_screen_load()
 	row += 1;
 	//engine_font_manager_text( "TYPE  DESCRIPTION ACTION", col, row + 0 );
 	//engine_font_manager_text( "                              ", col- 1, row + 1 );
-	engine_font_manager_text( "SKIP  SMALLEST   LEFT+FIRE1", col - 1, row + 2 );
-	engine_font_manager_text( "JUMP  STANDARD   LEFT+FIRE2", col - 1, row + 4 );
-	engine_font_manager_text( "                 OR   FIRE1", col - 1, row + 5 );
-	engine_font_manager_text( "LEAP  SIZEABLE  RIGHT+FIRE1", col - 1, row + 7 );
-	engine_font_manager_text( "                OR    FIRE2", col - 1, row + 8 );
-	engine_font_manager_text( "HURL  COLOSSAL  RIGHT+FIRE2", col - 1, row + 10 );
+	engine_font_manager_text( "[SKIP[[SMALLEST[[[LEFT+FIRE1[", col - 1, row + 2 );
+	engine_font_manager_text( "[[[[[[[[[[[[[[[[[[[[[[[[[[[[[", col - 1, row + 3 );
+	engine_font_manager_text( "[JUMP[[STANDARD[[[LEFT+FIRE2[", col - 1, row + 4 );
+	engine_font_manager_text( "[[[[[[[[[[[[[[[[[[OR[[[FIRE1[", col - 1, row + 5 );
+	engine_font_manager_text( "[[[[[[[[[[[[[[[[[[[[[[[[[[[[[", col - 1, row + 6 );
+	engine_font_manager_text( "[LEAP[[SIZEABLE[[RIGHT+FIRE1[", col - 1, row + 7 );
+	engine_font_manager_text( "[[[[[[[[[[[[[[[[[OR[[[[FIRE2[", col - 1, row + 8 );
+	engine_font_manager_text( "[[[[[[[[[[[[[[[[[[[[[[[[[[[[[", col - 1, row + 9 );
+	engine_font_manager_text( "[HURL[[COLOSSAL[[RIGHT+FIRE2[", col - 1, row + 10 );
 
+	engine_font_manager_text( "[[[[[[[[[[[[[[[[[[[[[[[[[[[[[", col - 1, row + 11 );
+	engine_font_manager_text( "[[[[[[[[[[[[[[[[[[[[[[[[[[[[[", col - 1, row + 12 );
+	engine_font_manager_text( "[[[[[[[[[[[[[[[[[[[[[[[[[[[[[", col - 1, row + 13 );
 	row += 13;
-	engine_font_manager_text( "JUMP  ACTIVITIES  AIRBORNE!", col - 1, row + 1 );
-	engine_font_manager_text( "SWAP  DIRECTION       FIRE1", col - 1, row + 2 );
-	engine_font_manager_text( "FLIP  SOMERSAULT      FIRE2", col - 1, row + 3 );
-	engine_font_manager_text( "BOBO", 10, 23 );
+	engine_font_manager_text( "[JUMP[[ACTIVITIES[[AIRBORNE![", col - 1, row + 0 );
+	engine_font_manager_text( "[SWAP[[DIRECTION[[[[[[[FIRE1[", col - 1, row + 1 );
+	engine_font_manager_text( "[FLIP[[SOMERSAULT[[[[[[FIRE2[", col - 1, row + 2 );
+	engine_font_manager_text( "[[[[[[[[[[[[[[[[[[[[[[[[[[[[[", col - 1, 22 );
+	//engine_font_manager_text( "BOBO", 10, 23 );
 	devkit_SMS_displayOn();
 }
 
