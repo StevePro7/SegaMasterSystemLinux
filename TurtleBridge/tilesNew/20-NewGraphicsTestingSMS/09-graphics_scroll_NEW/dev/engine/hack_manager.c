@@ -57,6 +57,6 @@ void engine_hack_manager_load()
 
 	ho->hack_music = 1;
 	ho->hack_sound = 1;
-	ho->hack_riffs = 0;// !ho->hack_riffs;
+	ho->hack_riffs = 1;// !ho->hack_riffs;
 	// TODO delete.
 }
