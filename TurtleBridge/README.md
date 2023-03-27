@@ -25,28 +25,31 @@ https://github.com/SteveProXNA/LilEvelKnievelSMS
 
 ###### ROM HACKING
 You can hack this ROM!  
-Download and dump Skazka.sms into Hex Editor, e.g. HxD, and modify the bytes:
-- 0x019E	Delay			Used to speed through any game delay.
-- 0x019F	Invincible		Non-zero value enables invincibility.
-- 0x01A0	Current XP		Non-zero sets current experience pts.
-- 0x01A1	Current HP		Non-zero sets default healthy points.
-- 0x01A2	Set Gold 		Non-zero sets current gold available.
-- 0x01A3	Set Weapon 		Set value to 1 or 2 for stock else 0.
-- 0x01A4	Set Armor		Set value to 1 or 2 for armor else 0.
-- 0x01A5	Add Life		Set value to 1=Life otherwise 0=None.
-- 0x01A6	Village Talk	Set value to 1=repeat villagers talk.
+Download and dump LilEvelKnievel.sms into Hex Editor, e.g. HxD, and modify the bytes:
+- 0x004F	Delay			Used to speed through any game delay.
+- 0x0050	Invincible		Non-zero value enables invincibility.
+- 0x0051	GravityJump		Jump once while falling from gravity.
+- 0x0052	HarderLands		Tougher platform collision detection.
 - 0x0053	Music Off		Set 0=Music to play otherwise silent.
 - 0x0054	Sound Off		Set 0=Sound to play otherwise silent.
 - 0x0055	Riffs Off		Set 0=Riffs to play otherwise silent.
 
-
 ###### LEVELS
-- There are 3x levels: 1, 2, 3.  Maximum player HP = 30 and maximum player XP = 99
+Due to time constraints the initial V1.0 build ships with 10x levels only, unfortunately.  World:05 x Round:02.
+<br />
+But there are plans immediately to add more levels!  Pls let me know if you would like to contribute ideas...!
+
+###### RIFFS
+Things you may have missed; riffs from: AC/DC, Gn'R, Simpsons, Van Halen, Wayne's World, WWF Wrestling
 
 ###### CREDITS
 Extra special thanks to: sverx for [devkitSMS](https://github.com/sverx/devkitSMS) and Calindro for their 24/7 Tech Support!
 <br />
-Finally, thanks goes to: Maxim, Bock, Eruiz, Haroldook + Kusfo
+Plus thanks goes to: Maxim, bock, eruiz00, haroldoop + kusfo
+
+###### DOCUMENTATION
+Links to documentation on games written for the Sega Master System using devkitSMS:
+http://steveproxna.blogspot.com/search/label/devkitSMS
 
 ###### CONTACT
 - Blog:		http://steveproxna.blogspot.com
