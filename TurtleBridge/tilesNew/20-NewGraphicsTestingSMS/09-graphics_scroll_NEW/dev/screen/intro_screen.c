@@ -14,7 +14,7 @@ void screen_intro_screen_load()
 	engine_graphics_manager_screen( CLEAR_TILE_BLUE );
 	engine_graphics_manager_title();
 
-	engine_font_manager_text( "INTRO SCREEN??", 10, 2 );
+	engine_font_manager_text( "CHEAT SHEET", 10, 3 );
 	devkit_SMS_displayOn();
 }
 
