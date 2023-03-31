@@ -1,88 +1,82 @@
 ;!FILE sprite_manager.asm
-XL2
-H 9 areas 4F global symbols
+XL3
+H 9 areas 49 global symbols
 M sprite_manager
 O -mz80
-S .__.ABS. Def0000
-S _devkit_SMS_addSprite Ref0000
-A _CODE size 6B flags 0 addr 0
-S A$sprite_manager$61 Def0000
-S A$sprite_manager$80 Def0010
-S A$sprite_manager$71 Def0001
-S A$sprite_manager$90 Def001F
-S A$sprite_manager$81 Def0013
-S A$sprite_manager$72 Def0003
-S A$sprite_manager$91 Def0022
-S A$sprite_manager$82 Def0016
-S A$sprite_manager$73 Def0007
-S A$sprite_manager$92 Def0023
-S A$sprite_manager$83 Def0017
-S A$sprite_manager$93 Def0026
-S A$sprite_manager$84 Def001A
-S G$engine_sprite_manager_draw$0$0 Def0001
-S A$sprite_manager$94 Def0028
-S A$sprite_manager$85 Def001B
-S A$sprite_manager$95 Def0029
-S A$sprite_manager$77 Def0009
-S A$sprite_manager$96 Def002A
-S A$sprite_manager$78 Def000C
-S A$sprite_manager$97 Def002B
-S A$sprite_manager$79 Def000F
-S A$sprite_manager$98 Def002E
-S A$sprite_manager$89 Def001C
-S C$sprite_manager.c$6$0$0 Def0000
-S A$sprite_manager$99 Def002F
-S G$engine_sprite_manager_init$0$0 Def0000
-S _engine_sprite_manager_draw Def0001
-S _engine_sprite_manager_init Def0000
-S XG$engine_sprite_manager_draw$0$0 Def006A
-S XG$engine_sprite_manager_init$0$0 Def0000
-S A$sprite_manager$100 Def0030
-S A$sprite_manager$110 Def003B
-S A$sprite_manager$101 Def0031
-S A$sprite_manager$120 Def004A
-S A$sprite_manager$111 Def003E
-S A$sprite_manager$102 Def0032
-S A$sprite_manager$121 Def004B
-S A$sprite_manager$112 Def003F
-S A$sprite_manager$103 Def0035
-S A$sprite_manager$140 Def0063
-S A$sprite_manager$122 Def004E
-S A$sprite_manager$113 Def0040
-S A$sprite_manager$104 Def0036
-S A$sprite_manager$141 Def0066
-S A$sprite_manager$132 Def0057
-S A$sprite_manager$123 Def004F
-S A$sprite_manager$114 Def0043
-S A$sprite_manager$105 Def0037
-S A$sprite_manager$142 Def0067
-S A$sprite_manager$133 Def005A
-S A$sprite_manager$124 Def0050
-S A$sprite_manager$115 Def0045
-S A$sprite_manager$143 Def0068
-S A$sprite_manager$134 Def005D
-S A$sprite_manager$125 Def0053
-S A$sprite_manager$116 Def0046
-S A$sprite_manager$135 Def005E
-S A$sprite_manager$126 Def0054
-S A$sprite_manager$117 Def0047
-S A$sprite_manager$136 Def005F
-S A$sprite_manager$127 Def0055
-S A$sprite_manager$118 Def0048
-S A$sprite_manager$109 Def0038
-S A$sprite_manager$137 Def0060
-S A$sprite_manager$128 Def0056
-S A$sprite_manager$119 Def0049
-S A$sprite_manager$138 Def0061
-S C$sprite_manager.c$20$1$68 Def0038
-S A$sprite_manager$148 Def006A
-S A$sprite_manager$139 Def0062
-S C$sprite_manager.c$21$1$68 Def0057
-S C$sprite_manager.c$22$1$68 Def006A
-S C$sprite_manager.c$14$0$0 Def0000
-S C$sprite_manager.c$16$0$0 Def0001
-S C$sprite_manager.c$18$1$68 Def0009
-S C$sprite_manager.c$19$1$68 Def001C
+S .__.ABS. Def000000
+S _devkit_SMS_addSprite Ref000000
+A _CODE size 65 flags 0 addr 0
+S A$sprite_manager$61 Def000000
+S A$sprite_manager$80 Def000010
+S A$sprite_manager$71 Def000001
+S A$sprite_manager$90 Def00001F
+S A$sprite_manager$81 Def000013
+S A$sprite_manager$72 Def000003
+S A$sprite_manager$91 Def000022
+S A$sprite_manager$82 Def000016
+S A$sprite_manager$73 Def000007
+S A$sprite_manager$92 Def000023
+S A$sprite_manager$83 Def000017
+S A$sprite_manager$93 Def000026
+S A$sprite_manager$84 Def00001A
+S C$sprite_manager.c$20$1_0$69 Def000035
+S G$engine_sprite_manager_draw$0$0 Def000001
+S C$sprite_manager.c$14$0_0$67 Def000000
+S A$sprite_manager$94 Def000028
+S A$sprite_manager$85 Def00001B
+S C$sprite_manager.c$21$1_0$69 Def000052
+S A$sprite_manager$95 Def000029
+S A$sprite_manager$77 Def000009
+S C$sprite_manager.c$22$1_0$69 Def000064
+S A$sprite_manager$96 Def00002A
+S A$sprite_manager$78 Def00000C
+S A$sprite_manager$97 Def00002B
+S A$sprite_manager$79 Def00000F
+S C$sprite_manager.c$16$0_0$69 Def000001
+S A$sprite_manager$98 Def00002E
+S A$sprite_manager$89 Def00001C
+S A$sprite_manager$99 Def00002F
+S G$engine_sprite_manager_init$0$0 Def000000
+S C$sprite_manager.c$18$1_0$69 Def000009
+S C$sprite_manager.c$19$1_0$69 Def00001C
+S _engine_sprite_manager_draw Def000001
+S C$sprite_manager.c$6$0_0$67 Def000000
+S _engine_sprite_manager_init Def000000
+S XG$engine_sprite_manager_draw$0$0 Def000064
+S XG$engine_sprite_manager_init$0$0 Def000000
+S A$sprite_manager$100 Def000032
+S A$sprite_manager$110 Def00003D
+S A$sprite_manager$101 Def000033
+S A$sprite_manager$120 Def00004C
+S A$sprite_manager$111 Def000040
+S A$sprite_manager$102 Def000034
+S A$sprite_manager$130 Def000059
+S A$sprite_manager$121 Def00004F
+S A$sprite_manager$112 Def000042
+S A$sprite_manager$140 Def000062
+S A$sprite_manager$131 Def00005A
+S A$sprite_manager$122 Def000050
+S A$sprite_manager$113 Def000043
+S A$sprite_manager$132 Def00005B
+S A$sprite_manager$123 Def000051
+S A$sprite_manager$114 Def000044
+S A$sprite_manager$133 Def00005C
+S A$sprite_manager$115 Def000045
+S A$sprite_manager$106 Def000035
+S A$sprite_manager$134 Def00005D
+S A$sprite_manager$116 Def000046
+S A$sprite_manager$107 Def000038
+S A$sprite_manager$135 Def000060
+S A$sprite_manager$117 Def000047
+S A$sprite_manager$108 Def00003B
+S A$sprite_manager$145 Def000064
+S A$sprite_manager$136 Def000061
+S A$sprite_manager$127 Def000052
+S A$sprite_manager$118 Def00004A
+S A$sprite_manager$109 Def00003C
+S A$sprite_manager$128 Def000055
+S A$sprite_manager$119 Def00004B
+S A$sprite_manager$129 Def000058
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -91,25 +85,25 @@ A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
 A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
-T 00 00
+T 00 00 00
 R 00 00 00 00
-T 00 00 C9
+T 00 00 00 C9
 R 00 00 00 00
-T 01 00
+T 01 00 00
 R 00 00 00 00
-T 01 00 DD E5 DD 21 00 00 DD 39 DD 6E 06 DD 66 07
+T 01 00 00 DD E5 DD 21 00 00 DD 39 DD 6E 06 DD 66
 R 00 00 00 00
-T 0F 00 E5 DD 66 05 DD 6E 04 E5 CD 00 00 F1 F1 DD
+T 0E 00 00 07 E5 DD 66 05 DD 6E 04 E5 CD 00 00 F1
+R 00 00 00 00 02 0D 01 00
+T 1B 00 00 F1 DD 4E 06 DD 46 07 03 DD 7E 04 C6 08
+R 00 00 00 00
+T 28 00 00 5F D5 C5 DD 56 05 D5 CD 00 00 F1 F1 D1
 R 00 00 00 00 02 0B 01 00
-T 1D 00 4E 06 DD 46 07 03 DD 7E 04 C6 08 57 D5 C5
+T 35 00 00 DD 4E 06 DD 46 07 03 03 DD 7E 05 C6 08
 R 00 00 00 00
-T 2B 00 DD 7E 05 F5 33 D5 33 CD 00 00 F1 F1 D1 DD
-R 00 00 00 00 02 0A 01 00
-T 39 00 4E 06 DD 46 07 03 03 DD 7E 05 C6 08 67 E5
+T 42 00 00 57 D5 C5 D5 33 DD 7E 04 F5 33 CD 00 00
+R 00 00 00 00 02 0E 01 00
+T 4F 00 00 F1 F1 D1 DD 4E 06 DD 46 07 03 03 03 C5
 R 00 00 00 00
-T 47 00 D5 C5 E5 33 DD 7E 04 F5 33 CD 00 00 F1 F1
-R 00 00 00 00 02 0C 01 00
-T 55 00 D1 E1 DD 4E 06 DD 46 07 03 03 03 C5 6A E5
-R 00 00 00 00
-T 63 00 CD 00 00 F1 F1 DD E1 C9
-R 00 00 00 00 02 03 01 00
+T 5C 00 00 D5 CD 00 00 F1 F1 DD E1 C9
+R 00 00 00 00 02 05 01 00
