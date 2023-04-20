@@ -1,22 +1,32 @@
-#include <stdio.h>
+Notes
+20-Apr-2023
 
-// https://stackoverflow.com/questions/8011700/how-do-i-extract-specific-n-bits-of-a-32-bit-unsigned-integer-in-c
+
+https://learn.microsoft.com/en-us/cpp/build/reference/fi-preprocess-output-file-name?view=msvc-170
+
+
+Debug | x86
+Project properties
+Configuration properties
+C/C++ | Preprocessor
+Proeprocess to a File   Yes
+
+Ctrl+Shfit+B
+error complaining about main.obj
+but don't care about that
+just want the output from
+
+main.i
+21-PreprocessorOutput/Debug
+
+e.g.
 void main()
 {
-	unsigned char value;
-	unsigned char mask;
-	unsigned char X;
-	//unsigned char startBit;
-	unsigned char lastXbits;
-
-	value = 255;
-	X = 3;
-	mask = ( 1 << X ) - 1;
-	lastXbits = value & mask;
-
-    printf( "val	%d\n", value );     // 7
-	printf( "X	%d\n", X );             // 3
-	printf( "bits	%d\n", lastXbits ); // 7
-	printf( "\n" );
+	printf( "jump_array '%d'\n", 18 );
 	return;
 }
+
+
+NOTE
+could have included comments but the output is way too verbose
+so just put some important string in the printf output to find
