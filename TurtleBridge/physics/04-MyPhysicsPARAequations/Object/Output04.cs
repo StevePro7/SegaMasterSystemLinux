@@ -21,8 +21,8 @@ namespace Test
 		private const int startHigh = 112;
 		private const int finshHigh = 224;
 
-		private float[] angles = { 45,65 };
-		private float[] speeds = { 35,35 };
+		//private float[] angles = { 45,65 };
+		//private float[] speeds = { 35,35 };
 
 		public Output04()
 		{
