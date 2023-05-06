@@ -1,5 +1,5 @@
-#ifndef __MAIN__
-#define __MAIN__
+#ifndef __MAIN_H__
+#define __MAIN_H__
 
 #ifdef _CONSOLE
 #include "_genesis.h"
@@ -7,12 +7,16 @@
 #include <genesis.h>
 #endif
 
-#include "gfx_actors.h"
-#include "gfx_sprites.h"
-#include "gfx_tiles.h"
+#include "engine/actor_manager.h"
+#include "engine/audio_manager.h"
+#include "engine/enum_manager.h"
+#include "engine/font_manager.h"
+#include "engine/hack_manager.h"
+#include "engine/input_manager.h"
+#include "engine/quiz_manager.h"
+#include "engine/score_manager.h"
+#include "engine/screen_manager.h"
+#include "engine/select_manager.h"
+#include "engine/sprite_manager.h"
 
-#include "sfx_effects.h"
-#include "sfx_musics.h"
-#include "sfx_results.h"
-
-#endif//__MAIN__
+#endif//__MAIN_H__
