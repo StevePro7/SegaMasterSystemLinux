@@ -1,6 +1,12 @@
 #ifndef _RES_SFX_H_
 #define _RES_SFX_H_
 
+#ifdef _CONSOLE
+#include "_genesis.h"
+#else
+#include <genesis.h>
+#endif
+
 extern const u8 sfx_music_intro[68608];
 extern const u8 sfx_music_boss[41216];
 extern const u8 sfx_music_over[34560];
