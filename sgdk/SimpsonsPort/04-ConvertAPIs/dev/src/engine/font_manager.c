@@ -13,10 +13,6 @@
 #include <genesis.h>
 #endif
 
-// Private helper functions.
-static unsigned char get_tile( unsigned char ch );
-static void draw_char( unsigned int tile, unsigned char x, unsigned char y );
-
 void engine_font_manager_init()
 {
 	unsigned short *data = NULL;
