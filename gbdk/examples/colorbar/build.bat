@@ -30,5 +30,5 @@ if exist "*.noi" del "*.noi" > nul
 if exist "*.sym" del "*.sym" > nul
 
 
-::C:/SEGA/GameBoy/bgb.exe colorbar.gb
+C:/SEGA/GameBoy/bgb.exe colorbar.gb
 ::java -jar C:/SEGA/Emulicious/Emulicious.jar colorbar.gb
