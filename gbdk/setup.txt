@@ -5,3 +5,13 @@ Environment variable
 System | Advanced system settings | Environment Variables
 GBDK
 C:\gbdk
+
+
+
+IMPORTANT
+build.bat
+
+do NOT delete the ASM file
+::if exist "*.asm" del "*.asm" > nul
+
+otherwise VS Code will not be able to debug step thru the C code!

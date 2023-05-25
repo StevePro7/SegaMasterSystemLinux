@@ -21,7 +21,7 @@ echo Time taken: %_sec:~-2%.%_cs:~-2% secs
 echo.
 
 
-if exist "*.asm" del "*.asm" > nul
+::if exist "*.asm" del "*.asm" > nul
 if exist "*.gbm" del "*.gbm" > nul
 if exist "*.gbr" del "*.gbr" > nul
 if exist "*.ihx" del "*.ihx" > nul
@@ -30,5 +30,5 @@ if exist "*.noi" del "*.noi" > nul
 if exist "*.sym" del "*.sym" > nul
 
 
-C:/SEGA/GameBoy/bgb.exe colorbar.gb
+::C:/SEGA/GameBoy/bgb.exe colorbar.gb
 ::java -jar C:/SEGA/Emulicious/Emulicious.jar colorbar.gb
