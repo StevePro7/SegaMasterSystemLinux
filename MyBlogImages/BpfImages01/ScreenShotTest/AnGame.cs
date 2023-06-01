@@ -13,7 +13,9 @@ namespace ScreenShotTest
 
 		private ConfigManager configManager;
 		private ImageManager ImageManager;
+		private Texture2D image;
 		private string name;
+
 		private int wide;
 		private int high;
 
@@ -28,8 +30,6 @@ namespace ScreenShotTest
 
 		protected override void Initialize()
 		{
-			configManager.Init();
-			name = configManager.Name;
 			IsMouseVisible = true;
 			base.Initialize();
 		}
@@ -40,11 +40,7 @@ namespace ScreenShotTest
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 			ImageManager.Load(Content);
 
-			PresentationParameters pp = GraphicsDevice.PresentationParameters;
-			wide = pp.BackBufferWidth;
-			high = pp.BackBufferHeight;
-			//renderTarget = new RenderTarget2D(GraphicsDevice, width, height, 1, GraphicsDevice.DisplayMode.Format);
-			renderTarget = new RenderTarget2D(GraphicsDevice, wide, high, false, SurfaceFormat.Color, DepthFormat.Depth24);
+			Reset();
 		}
 
 		protected override void UnloadContent()
@@ -55,8 +51,15 @@ namespace ScreenShotTest
 		protected override void Update(GameTime gameTime)
 		{
 			// Allows the game to exit
-			if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-				this.Exit();
+			if (Keyboard.GetState().IsKeyDown(Keys.Escape))
+			{
+				Exit();
+			}
+
+			if (Keyboard.GetState().IsKeyDown(Keys.Enter))
+			{
+				//Reset();
+			}
 
 			base.Update(gameTime);
 		}
@@ -65,6 +68,12 @@ namespace ScreenShotTest
 		{
 			if (configManager.Save)
 			{
+				PresentationParameters pp = GraphicsDevice.PresentationParameters;
+				wide = pp.BackBufferWidth;
+				high = pp.BackBufferHeight;
+				//renderTarget = new RenderTarget2D(GraphicsDevice, width, height, 1, GraphicsDevice.DisplayMode.Format);
+				renderTarget = new RenderTarget2D(GraphicsDevice, wide, high, false, SurfaceFormat.Color, DepthFormat.Depth24);
+
 				//GraphicsDevice.SetRenderTarget(0, renderTarget);
 				GraphicsDevice.SetRenderTarget(renderTarget);
 				GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.CornflowerBlue, 1, 0);
@@ -89,13 +98,24 @@ namespace ScreenShotTest
 
 		private void Draw()
 		{
-			graphics.GraphicsDevice.Clear(Color.Black);
+			graphics.GraphicsDevice.Clear(Color.CornflowerBlue);
 			spriteBatch.Begin();
-			ImageManager.Draw(name);
-			//spriteBatch.Draw(images[2], new Vector2(0, 0), Color.OrangeRed);
+			spriteBatch.Draw(image, Vector2.Zero, new Rectangle(configManager.Left, configManager.UpXX, wide, high), Color.White);
 			spriteBatch.End();
 		}
 
+		private void Reset()
+		{
+			configManager.Init();
+			name = configManager.Name;
+
+			image = ImageManager.Images[name];
+			wide = image.Width - configManager.Left - configManager.Rght;
+			high = image.Height - configManager.UpXX - configManager.Down;
+			graphics.PreferredBackBufferWidth = wide;
+			graphics.PreferredBackBufferHeight = high;
+			graphics.ApplyChanges();
+		}
 	}
 
 }
