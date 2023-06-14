@@ -8,7 +8,7 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 
 REM Automatically generated from Makefile
 %GBDK_WIN%/bin/lcc -Wa-l -Wl-m  -c -o colorbar.o colorbar.c
-%GBDK_WIN%/bin/lcc -Wa-l -Wl-m  -Wm-yC -o colorbar.gb colorbar.o
+%GBDK_WIN%/bin/lcc -Wa-l -Wl-m  -Wm-yC -o output.gb colorbar.o
 
 
 :: Time build -END-
@@ -30,5 +30,5 @@ if exist "*.noi" del "*.noi" > nul
 if exist "*.sym" del "*.sym" > nul
 
 
-::C:/SEGA/GameBoy/bgb.exe colorbar.gb
-java -jar C:/SEGA/Emulicious/Emulicious.jar colorbar.gb
+::C:/SEGA/GameBoy/bgb.exe output.gb
+java -jar C:/SEGA/Emulicious/Emulicious.jar output.gb
