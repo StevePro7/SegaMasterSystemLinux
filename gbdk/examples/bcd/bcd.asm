@@ -68,7 +68,7 @@ _len::
 ; Function main
 ; ---------------------------------
 _main::
-;bcd.c:17: font_init();
+;bcd.c:17: font_init();    
 	call	_font_init
 ;bcd.c:18: font_set(font_load(font_spect));
 	ld	de, #_font_spect

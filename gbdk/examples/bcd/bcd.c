@@ -14,7 +14,7 @@ uint8_t len = 0;
 unsigned char buf[10];
 
 void main() {
-    font_init();
+    font_init();    
     font_set(font_load(font_spect));
 
     len = bcd2text(&bcd, 0x10, buf);
