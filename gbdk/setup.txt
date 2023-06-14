@@ -15,3 +15,8 @@ do NOT delete the ASM file
 ::if exist "*.asm" del "*.asm" > nul
 
 otherwise VS Code will not be able to debug step thru the C code!
+
+
+VS2015
+Right click project | Properties | Configuration Properties | C/C++ | General
+%GBDK_WIN%/include;%(AdditionalIncludeDirectories)

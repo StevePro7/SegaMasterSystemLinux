@@ -63,14 +63,14 @@ _len::
 ; code
 ;--------------------------------------------------------
 	.area _CODE
-;bcd.c:16: void main() {
+;bcd.c:16: void main()
 ;	---------------------------------
 ; Function main
 ; ---------------------------------
 _main::
-;bcd.c:17: font_init();    
+;bcd.c:18: font_init();
 	call	_font_init
-;bcd.c:18: font_set(font_load(font_spect));
+;bcd.c:19: font_set( font_load( font_spect ) );
 	ld	de, #_font_spect
 	push	de
 	call	_font_load
@@ -78,7 +78,7 @@ _main::
 	push	de
 	call	_font_set
 	pop	hl
-;bcd.c:20: len = bcd2text(&bcd, 0x10, buf);
+;bcd.c:21: len = bcd2text( &bcd, 0x10, buf );
 	ld	de, #_buf
 	push	de
 	ld	a, #0x10
@@ -90,7 +90,7 @@ _main::
 	add	sp, #5
 	ld	hl, #_len
 	ld	(hl), e
-;bcd.c:21: set_bkg_tiles(5, 5, len, 1, buf);
+;bcd.c:22: set_bkg_tiles( 5, 5, len, 1, buf );
 	ld	de, #_buf
 	push	de
 	ld	a, #0x01
@@ -104,14 +104,14 @@ _main::
 	inc	sp
 	call	_set_bkg_tiles
 	add	sp, #6
-;bcd.c:23: bcd_add(&bcd, &bcd2);
+;bcd.c:24: bcd_add( &bcd, &bcd2 );
 	ld	de, #_bcd2
 	push	de
 	ld	de, #_bcd
 	push	de
 	call	_bcd_add
 	add	sp, #4
-;bcd.c:25: len = bcd2text(&bcd, 0x10, buf);
+;bcd.c:26: len = bcd2text( &bcd, 0x10, buf );
 	ld	de, #_buf
 	push	de
 	ld	a, #0x10
@@ -123,7 +123,7 @@ _main::
 	add	sp, #5
 	ld	hl, #_len
 	ld	(hl), e
-;bcd.c:26: set_bkg_tiles(5, 6, len, 1, buf);
+;bcd.c:27: set_bkg_tiles( 5, 6, len, 1, buf );
 	ld	de, #_buf
 	push	de
 	ld	a, #0x01
@@ -137,14 +137,14 @@ _main::
 	inc	sp
 	call	_set_bkg_tiles
 	add	sp, #6
-;bcd.c:28: bcd_sub(&bcd, &bcd3);
+;bcd.c:29: bcd_sub( &bcd, &bcd3 );
 	ld	de, #_bcd3
 	push	de
 	ld	de, #_bcd
 	push	de
 	call	_bcd_sub
 	add	sp, #4
-;bcd.c:30: len = bcd2text(&bcd, 0x10, buf);
+;bcd.c:31: len = bcd2text( &bcd, 0x10, buf );
 	ld	de, #_buf
 	push	de
 	ld	a, #0x10
@@ -156,7 +156,7 @@ _main::
 	add	sp, #5
 	ld	hl, #_len
 	ld	(hl), e
-;bcd.c:31: set_bkg_tiles(5, 7, len, 1, buf);
+;bcd.c:32: set_bkg_tiles( 5, 7, len, 1, buf );
 	ld	de, #_buf
 	push	de
 	ld	a, #0x01
@@ -170,14 +170,14 @@ _main::
 	inc	sp
 	call	_set_bkg_tiles
 	add	sp, #6
-;bcd.c:33: uint2bcd(12345, &bcd);
+;bcd.c:34: uint2bcd( 12345, &bcd );
 	ld	de, #_bcd
 	push	de
 	ld	de, #0x3039
 	push	de
 	call	_uint2bcd
 	add	sp, #4
-;bcd.c:35: len = bcd2text(&bcd, 0x10, buf);
+;bcd.c:36: len = bcd2text( &bcd, 0x10, buf );
 	ld	de, #_buf
 	push	de
 	ld	a, #0x10
@@ -189,7 +189,7 @@ _main::
 	add	sp, #5
 	ld	hl, #_len
 	ld	(hl), e
-;bcd.c:36: set_bkg_tiles(5, 8, len, 1, buf);
+;bcd.c:37: set_bkg_tiles( 5, 8, len, 1, buf );
 	ld	de, #_buf
 	push	de
 	ld	a, #0x01
@@ -203,7 +203,7 @@ _main::
 	inc	sp
 	call	_set_bkg_tiles
 	add	sp, #6
-;bcd.c:37: }
+;bcd.c:38: }
 	ret
 	.area _CODE
 	.area _INITIALIZER
