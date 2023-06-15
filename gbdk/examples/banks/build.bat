@@ -7,8 +7,12 @@ set /a _hours=100%_time:~0,2%%%100,_min=100%_time:~3,2%%%100,_sec=100%_time:~6,2
 set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 
 :: Automatically generated from Makefile
-%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o galaxy.o galaxy.c
-%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -o output.gb galaxy.o
+%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o banks.o banks.c
+%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -Wf-ba0 -c -o bank_0.o bank_0.c
+%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -Wf-ba0 -c -o bank_1.o bank_1.c
+%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -Wf-ba0 -c -o bank_2.o bank_2.c
+%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -Wf-ba0 -c -o bank_3.o bank_3.c
+%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -Wl-yt0x1A -Wl-yo4 -Wl-ya4 -o output.gb banks.o bank_0.o bank_1.o bank_2.o bank_3.o
 
 :: Time build -END-
 set _time=%time: =0%
