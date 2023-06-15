@@ -7,8 +7,8 @@ set /a _hours=100%_time:~0,2%%%100,_min=100%_time:~3,2%%%100,_sec=100%_time:~6,2
 set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 
 :: Automatically generated from Makefile
-%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o galaxy.o galaxy.c
-%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -o output.gb galaxy.o
+%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o irq.o irq.c
+%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -o output.gb irq.o
 
 :: Time build -END-
 set _time=%time: =0%
