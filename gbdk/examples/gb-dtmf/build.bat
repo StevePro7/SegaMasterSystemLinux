@@ -8,13 +8,13 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 
 :: Automatically generated from Makefile
 %GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o gb-dtmf.o gb-dtmf.c
-%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o brk_btn.o brk_btn.c
-%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o cursor.o cursor.c
-%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o dtmf_lcd.o dtmf_lcd.c
-%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o key_num.o key_num.c
-%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o prs_btn.o prs_btn.c
-::%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -o output.gb gb-dtmf.o
-%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -o output.gb gb-dtmf.o brk_btn.o cursor.o dtmf_lcd.o key_num.o prs_btn.o
+::%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o brk_btn.o brk_btn.c
+::%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o cursor.o cursor.c
+::%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o dtmf_lcd.o dtmf_lcd.c
+::%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o key_num.o key_num.c
+::%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o prs_btn.o prs_btn.c
+::%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -o output.gb gb-dtmf.o brk_btn.o cursor.o dtmf_lcd.o key_num.o prs_btn.o
+%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -o output.gb gb-dtmf.o
 
 :: Time build -END-
 set _time=%time: =0%
