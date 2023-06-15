@@ -1,5 +1,6 @@
 #include <gbdk/platform.h>
 #include <gbdk/incbin.h>
+#include <gb/gb.h>
 #include <stdint.h>
 
 
