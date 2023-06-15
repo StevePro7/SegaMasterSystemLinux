@@ -1,0 +1,43 @@
+anMethod
+15-Jun-2023
+
+00.
+Copy files
+GBDK
+C:\gbdk\examples
+
+emulators
+C:/SEGA/GameBoy/bgb.exe output.gb
+C:/SEGA/Emulicious/Emulicious.jar output.gb
+
+
+01.
+Create folder
+e.g.
+lcd_isr_wobble
+D:\GitHub\StevePro8\SegaMasterSystemLinux\gbdk\examples
+
+from previous folder
+irq
+
+
+02.
+Delete old files
+
+03.
+Copy in new files
+
+04.
+Launch VS2015
+delete old files included in previous project
+adding new files included in currernt project
+
+05.
+Update build.bat from compile.bat
+%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o irq.o irq.c
+%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -o output.gb irq.o
+
+06.
+IMPORANT
+do not try these as not set up yet
+want to have ready for setup on new blog	GBDK setup
