@@ -56,7 +56,7 @@ _main::
 	inc	sp
 	call	_gb_decompress_bkg_data
 	add	sp, #3
-;main.c:26: set_bkg_tiles(0,0, monalisa_mapWidth, monalisa_mapHeight, monalisa_mapPLN0);
+;main.c:26: set_bkg_tiles(0, 0, monalisa_mapWidth, monalisa_mapHeight, monalisa_mapPLN0);
 	ld	de, #_monalisa_mapPLN0
 	push	de
 	ld	hl, #0x1214
@@ -70,11 +70,11 @@ _main::
 	ldh	a, (_LCDC_REG + 0)
 	or	a, #0x01
 	ldh	(_LCDC_REG + 0), a
-;main.c:30: while(1) {
+;main.c:30: while (1)
 00102$:
-;main.c:35: wait_vbl_done();
+;main.c:36: wait_vbl_done();
 	call	_wait_vbl_done
-;main.c:37: }
+;main.c:38: }
 	jr	00102$
 	.area _CODE
 	.area _INITIALIZER
