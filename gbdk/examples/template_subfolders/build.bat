@@ -8,10 +8,10 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 
 :: Automatically generated from Makefile
 ::mkdir -p obj
-%GBDK_WIN%/bin/lcc  -c -o obj\dungeon_map.o res\dungeon_map.c
-%GBDK_WIN%/bin/lcc  -c -o obj\dungeon_tiles.o res\dungeon_tiles.c
-%GBDK_WIN%/bin/lcc  -c -o obj\main.o src\main.c
-%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -o output.gb obj\main.o obj\dungeon_map.o obj\dungeon_tiles.o
+%GBDK_WIN%/bin/lcc  -c -o obj/dungeon_map.o res/dungeon_map.c
+%GBDK_WIN%/bin/lcc  -c -o obj/dungeon_tiles.o res/dungeon_tiles.c
+%GBDK_WIN%/bin/lcc  -c -o obj/main.o src/main.c
+%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -o output.gb obj/main.o obj/dungeon_map.o obj/dungeon_tiles.o
 
 :: Time build -END-
 set _time=%time: =0%
