@@ -1,3 +1,5 @@
+#include "frm_lcd.h"
+
 /*
 
  FRAME_LCD.C

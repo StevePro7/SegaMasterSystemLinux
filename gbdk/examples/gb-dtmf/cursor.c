@@ -1,3 +1,5 @@
+#include "cursor.h"
+
 /*
 
  CURSOR.C

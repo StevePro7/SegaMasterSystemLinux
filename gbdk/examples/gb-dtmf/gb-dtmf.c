@@ -10,15 +10,12 @@
 #include <string.h>
 
 /* BG data */
-#include "frm_lcd.c"	/* Back ground pattern */
 #include "brk_btn.h"	/* button image when broken */
-#include "prs_btn.c"	/* button image when pressed */
-
-#include "dtmf_lcd.c"	/* LCD characters */
-
-/* Sprite data */
-#include "key_num.c"	/* Sprite pattern for each key pad */
-#include "cursor.c"		/* cursor pattern */
+#include "cursor.h"		/* cursor pattern */
+#include "dtmf_lcd.h"	/* LCD characters */
+#include "frm_lcd.h"	/* Back ground pattern */
+#include "key_num.h"	/* Sprite pattern for each key pad */
+#include "prs_btn.h"	/* button image when pressed */
 
 /*
 	usage of BG data

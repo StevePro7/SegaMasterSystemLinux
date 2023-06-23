@@ -38,11 +38,6 @@
 	.globl _dtmf_tile
 	.globl _col
 	.globl _row
-	.globl _cursor_data
-	.globl _key_num
-	.globl _dtmf_lcd
-	.globl _press_btn
-	.globl _frame_lcd
 ;--------------------------------------------------------
 ; special function registers
 ;--------------------------------------------------------
@@ -76,1632 +71,43 @@ _disp_tile::
 ; code
 ;--------------------------------------------------------
 	.area _CODE
-;gb-dtmf.c:170: void init_dial()
+;gb-dtmf.c:167: void init_dial()
 ;	---------------------------------
 ; Function init_dial
 ; ---------------------------------
 _init_dial::
-;gb-dtmf.c:173: NR52_REG = 0x83U;
+;gb-dtmf.c:170: NR52_REG = 0x83U;
 	ld	a, #0x83
 	ldh	(_NR52_REG + 0), a
-;gb-dtmf.c:174: NR51_REG = 0x00U;
+;gb-dtmf.c:171: NR51_REG = 0x00U;
 	xor	a, a
 	ldh	(_NR51_REG + 0), a
-;gb-dtmf.c:175: NR50_REG = 0x77U;
+;gb-dtmf.c:172: NR50_REG = 0x77U;
 	ld	a, #0x77
 	ldh	(_NR50_REG + 0), a
-;gb-dtmf.c:177: NR24_REG = 0x87U;
+;gb-dtmf.c:174: NR24_REG = 0x87U;
 	ld	a, #0x87
 	ldh	(_NR24_REG + 0), a
-;gb-dtmf.c:178: NR22_REG = 0xffU;
+;gb-dtmf.c:175: NR22_REG = 0xffU;
 	ld	a, #0xff
 	ldh	(_NR22_REG + 0), a
-;gb-dtmf.c:179: NR21_REG = 0xbfU;
+;gb-dtmf.c:176: NR21_REG = 0xbfU;
 	ld	a, #0xbf
 	ldh	(_NR21_REG + 0), a
-;gb-dtmf.c:181: NR14_REG = 0x87U;
+;gb-dtmf.c:178: NR14_REG = 0x87U;
 	ld	a, #0x87
 	ldh	(_NR14_REG + 0), a
-;gb-dtmf.c:182: NR12_REG = 0xffU;
+;gb-dtmf.c:179: NR12_REG = 0xffU;
 	ld	a, #0xff
 	ldh	(_NR12_REG + 0), a
-;gb-dtmf.c:183: NR11_REG = 0xbfU;
+;gb-dtmf.c:180: NR11_REG = 0xbfU;
 	ld	a, #0xbf
 	ldh	(_NR11_REG + 0), a
-;gb-dtmf.c:184: NR10_REG = 0x04U;
+;gb-dtmf.c:181: NR10_REG = 0x04U;
 	ld	a, #0x04
 	ldh	(_NR10_REG + 0), a
-;gb-dtmf.c:185: }
+;gb-dtmf.c:182: }
 	ret
-_frame_lcd:
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x1f	; 31
-	.db #0x00	; 0
-	.db #0x1f	; 31
-	.db #0x00	; 0
-	.db #0x18	; 24
-	.db #0x00	; 0
-	.db #0x18	; 24
-	.db #0x00	; 0
-	.db #0x18	; 24
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0xff	; 255
-	.db #0x00	; 0
-	.db #0xff	; 255
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0xf8	; 248
-	.db #0x00	; 0
-	.db #0xf8	; 248
-	.db #0x00	; 0
-	.db #0x18	; 24
-	.db #0x00	; 0
-	.db #0x18	; 24
-	.db #0x00	; 0
-	.db #0x18	; 24
-	.db #0x00	; 0
-	.db #0x18	; 24
-	.db #0x00	; 0
-	.db #0x18	; 24
-	.db #0x00	; 0
-	.db #0x18	; 24
-	.db #0x00	; 0
-	.db #0x18	; 24
-	.db #0x00	; 0
-	.db #0x18	; 24
-	.db #0x00	; 0
-	.db #0x18	; 24
-	.db #0x00	; 0
-	.db #0x18	; 24
-	.db #0x00	; 0
-	.db #0x18	; 24
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x18	; 24
-	.db #0x00	; 0
-	.db #0x18	; 24
-	.db #0x00	; 0
-	.db #0x18	; 24
-	.db #0x00	; 0
-	.db #0x18	; 24
-	.db #0x00	; 0
-	.db #0x18	; 24
-	.db #0x00	; 0
-	.db #0x18	; 24
-	.db #0x00	; 0
-	.db #0x18	; 24
-	.db #0x00	; 0
-	.db #0x18	; 24
-	.db #0x00	; 0
-	.db #0x18	; 24
-	.db #0x00	; 0
-	.db #0x18	; 24
-	.db #0x00	; 0
-	.db #0x18	; 24
-	.db #0x00	; 0
-	.db #0x1f	; 31
-	.db #0x00	; 0
-	.db #0x1f	; 31
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0xff	; 255
-	.db #0x00	; 0
-	.db #0xff	; 255
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x18	; 24
-	.db #0x00	; 0
-	.db #0x18	; 24
-	.db #0x00	; 0
-	.db #0x18	; 24
-	.db #0x00	; 0
-	.db #0xf8	; 248
-	.db #0x00	; 0
-	.db #0xf8	; 248
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-_press_btn:
-	.db #0x00	; 0
-	.db #0xff	; 255
-	.db #0x00	; 0
-	.db #0xff	; 255
-	.db #0x3f	; 63
-	.db #0xc0	; 192
-	.db #0x3f	; 63
-	.db #0xc0	; 192
-	.db #0x3f	; 63
-	.db #0xc0	; 192
-	.db #0x3f	; 63
-	.db #0xc0	; 192
-	.db #0x3f	; 63
-	.db #0xc0	; 192
-	.db #0x3f	; 63
-	.db #0xc0	; 192
-	.db #0x00	; 0
-	.db #0xff	; 255
-	.db #0x00	; 0
-	.db #0xff	; 255
-	.db #0xff	; 255
-	.db #0x00	; 0
-	.db #0xff	; 255
-	.db #0x00	; 0
-	.db #0xff	; 255
-	.db #0x00	; 0
-	.db #0xff	; 255
-	.db #0x00	; 0
-	.db #0xff	; 255
-	.db #0x00	; 0
-	.db #0xff	; 255
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0xfe	; 254
-	.db #0x00	; 0
-	.db #0xfc	; 252
-	.db #0xfc	; 252
-	.db #0x00	; 0
-	.db #0xfc	; 252
-	.db #0x00	; 0
-	.db #0xfc	; 252
-	.db #0x00	; 0
-	.db #0xfc	; 252
-	.db #0x00	; 0
-	.db #0xfc	; 252
-	.db #0x00	; 0
-	.db #0xfc	; 252
-	.db #0x00	; 0
-	.db #0x3f	; 63
-	.db #0xc0	; 192
-	.db #0x3f	; 63
-	.db #0xc0	; 192
-	.db #0x3f	; 63
-	.db #0xc0	; 192
-	.db #0x3f	; 63
-	.db #0xc0	; 192
-	.db #0x3f	; 63
-	.db #0xc0	; 192
-	.db #0x3f	; 63
-	.db #0xc0	; 192
-	.db #0x3f	; 63
-	.db #0xc0	; 192
-	.db #0x3f	; 63
-	.db #0xc0	; 192
-	.db #0xff	; 255
-	.db #0x00	; 0
-	.db #0xff	; 255
-	.db #0x00	; 0
-	.db #0xff	; 255
-	.db #0x00	; 0
-	.db #0xff	; 255
-	.db #0x00	; 0
-	.db #0xff	; 255
-	.db #0x00	; 0
-	.db #0xff	; 255
-	.db #0x00	; 0
-	.db #0xff	; 255
-	.db #0x00	; 0
-	.db #0xff	; 255
-	.db #0x00	; 0
-	.db #0xfc	; 252
-	.db #0x00	; 0
-	.db #0xfc	; 252
-	.db #0x00	; 0
-	.db #0xfc	; 252
-	.db #0x00	; 0
-	.db #0xfc	; 252
-	.db #0x00	; 0
-	.db #0xfc	; 252
-	.db #0x00	; 0
-	.db #0xfc	; 252
-	.db #0x00	; 0
-	.db #0xfc	; 252
-	.db #0x00	; 0
-	.db #0xfc	; 252
-	.db #0x00	; 0
-	.db #0x3f	; 63
-	.db #0xc0	; 192
-	.db #0x3f	; 63
-	.db #0xc0	; 192
-	.db #0x3f	; 63
-	.db #0xc0	; 192
-	.db #0x3f	; 63
-	.db #0xc0	; 192
-	.db #0x3f	; 63
-	.db #0xc0	; 192
-	.db #0x3f	; 63
-	.db #0xc0	; 192
-	.db #0x00	; 0
-	.db #0xc0	; 192
-	.db #0x00	; 0
-	.db #0x80	; 128
-	.db #0xff	; 255
-	.db #0x00	; 0
-	.db #0xff	; 255
-	.db #0x00	; 0
-	.db #0xff	; 255
-	.db #0x00	; 0
-	.db #0xff	; 255
-	.db #0x00	; 0
-	.db #0xff	; 255
-	.db #0x00	; 0
-	.db #0xff	; 255
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0xfc	; 252
-	.db #0x00	; 0
-	.db #0xfc	; 252
-	.db #0x00	; 0
-	.db #0xfc	; 252
-	.db #0x00	; 0
-	.db #0xfc	; 252
-	.db #0x00	; 0
-	.db #0xfc	; 252
-	.db #0x00	; 0
-	.db #0xfc	; 252
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-_dtmf_lcd:
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x02	; 2
-	.db #0x7f	; 127
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x3c	; 60
-	.db #0x00	; 0
-	.db #0x3c	; 60
-	.db #0x00	; 0
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x7f	; 127
-	.db #0x03	; 3
-	.db #0x3e	; 62
-	.db #0x02	; 2
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x22	; 34
-	.db #0x7f	; 127
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x7f	; 127
-	.db #0x03	; 3
-	.db #0x3e	; 62
-	.db #0x02	; 2
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x3e	; 62
-	.db #0x00	; 0
-	.db #0x3e	; 62
-	.db #0x00	; 0
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x7f	; 127
-	.db #0x03	; 3
-	.db #0x3e	; 62
-	.db #0x02	; 2
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x7f	; 127
-	.db #0x63	; 99	'c'
-	.db #0x3e	; 62
-	.db #0x00	; 0
-	.db #0x3e	; 62
-	.db #0x20	; 32
-	.db #0x7f	; 127
-	.db #0x60	; 96
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x3e	; 62
-	.db #0x20	; 32
-	.db #0x3e	; 62
-	.db #0x20	; 32
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x02	; 2
-	.db #0x7f	; 127
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x36	; 54	'6'
-	.db #0x36	; 54	'6'
-	.db #0x36	; 54	'6'
-	.db #0x36	; 54	'6'
-	.db #0x36	; 54	'6'
-	.db #0x36	; 54	'6'
-	.db #0x36	; 54	'6'
-	.db #0x36	; 54	'6'
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x36	; 54	'6'
-	.db #0x36	; 54	'6'
-	.db #0x36	; 54	'6'
-	.db #0x36	; 54	'6'
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x36	; 54	'6'
-	.db #0x36	; 54	'6'
-	.db #0x36	; 54	'6'
-	.db #0x36	; 54	'6'
-	.db #0x36	; 54	'6'
-	.db #0x36	; 54	'6'
-	.db #0x36	; 54	'6'
-	.db #0x36	; 54	'6'
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x2a	; 42
-	.db #0x2a	; 42
-	.db #0x6b	; 107	'k'
-	.db #0x6b	; 107	'k'
-	.db #0x6b	; 107	'k'
-	.db #0x6b	; 107	'k'
-	.db #0x6b	; 107	'k'
-	.db #0x6b	; 107	'k'
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x1c	; 28
-	.db #0x1c	; 28
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x6b	; 107	'k'
-	.db #0x6b	; 107	'k'
-	.db #0x6b	; 107	'k'
-	.db #0x6b	; 107	'k'
-	.db #0x6b	; 107	'k'
-	.db #0x6b	; 107	'k'
-	.db #0x2a	; 42
-	.db #0x2a	; 42
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x3e	; 62
-	.db #0x00	; 0
-	.db #0x7f	; 127
-	.db #0x00	; 0
-	.db #0x63	; 99	'c'
-	.db #0x00	; 0
-	.db #0x63	; 99	'c'
-	.db #0x00	; 0
-	.db #0x63	; 99	'c'
-	.db #0x00	; 0
-	.db #0x63	; 99	'c'
-	.db #0x00	; 0
-	.db #0x63	; 99	'c'
-	.db #0x00	; 0
-	.db #0x3e	; 62
-	.db #0x00	; 0
-	.db #0x3e	; 62
-	.db #0x00	; 0
-	.db #0x63	; 99	'c'
-	.db #0x00	; 0
-	.db #0x63	; 99	'c'
-	.db #0x00	; 0
-	.db #0x63	; 99	'c'
-	.db #0x00	; 0
-	.db #0x63	; 99	'c'
-	.db #0x00	; 0
-	.db #0x63	; 99	'c'
-	.db #0x00	; 0
-	.db #0x7f	; 127
-	.db #0x00	; 0
-	.db #0x3e	; 62
-	.db #0x00	; 0
-	.db #0x3e	; 62
-	.db #0x22	; 34
-	.db #0x7f	; 127
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x63	; 99	'c'
-	.db #0x03	; 3
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x22	; 34
-	.db #0x7f	; 127
-	.db #0x63	; 99	'c'
-	.db #0x77	; 119	'w'
-	.db #0x77	; 119	'w'
-	.db #0x77	; 119	'w'
-	.db #0x77	; 119	'w'
-	.db #0x77	; 119	'w'
-	.db #0x77	; 119	'w'
-	.db #0x77	; 119	'w'
-	.db #0x77	; 119	'w'
-	.db #0x6b	; 107	'k'
-	.db #0x6b	; 107	'k'
-	.db #0x2a	; 42
-	.db #0x2a	; 42
-	.db #0x2a	; 42
-	.db #0x2a	; 42
-	.db #0x6b	; 107	'k'
-	.db #0x6b	; 107	'k'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x7f	; 127
-	.db #0x63	; 99	'c'
-	.db #0x3e	; 62
-	.db #0x22	; 34
-	.db #0x3e	; 62
-	.db #0x22	; 34
-	.db #0x7f	; 127
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x3e	; 62
-	.db #0x22	; 34
-	.db #0x3e	; 62
-	.db #0x22	; 34
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x3f	; 63
-	.db #0x27	; 39
-	.db #0x3f	; 63
-	.db #0x27	; 39
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x67	; 103	'g'
-	.db #0x67	; 103	'g'
-	.db #0x67	; 103	'g'
-	.db #0x67	; 103	'g'
-	.db #0x18	; 24
-	.db #0x18	; 24
-	.db #0x18	; 24
-	.db #0x18	; 24
-	.db #0x18	; 24
-	.db #0x18	; 24
-	.db #0x18	; 24
-	.db #0x18	; 24
-	.db #0x18	; 24
-	.db #0x18	; 24
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x18	; 24
-	.db #0x18	; 24
-	.db #0x18	; 24
-	.db #0x18	; 24
-	.db #0x18	; 24
-	.db #0x18	; 24
-	.db #0x18	; 24
-	.db #0x18	; 24
-	.db #0x18	; 24
-	.db #0x18	; 24
-	.db #0x18	; 24
-	.db #0x18	; 24
-	.db #0x18	; 24
-	.db #0x18	; 24
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x0c	; 12
-	.db #0x0c	; 12
-	.db #0x1e	; 30
-	.db #0x1e	; 30
-	.db #0x1e	; 30
-	.db #0x1e	; 30
-	.db #0x1e	; 30
-	.db #0x1e	; 30
-	.db #0x0c	; 12
-	.db #0x0c	; 12
-	.db #0x04	; 4
-	.db #0x04	; 4
-	.db #0x08	; 8
-	.db #0x08	; 8
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x7e	; 126
-	.db #0x7e	; 126
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x63	; 99	'c'
-	.db #0x60	; 96
-	.db #0x7f	; 127
-	.db #0x60	; 96
-	.db #0x3e	; 62
-	.db #0x20	; 32
-_key_num:
-	.db #0xff	; 255
-	.db #0x3c	; 60
-	.db #0xff	; 255
-	.db #0x7e	; 126
-	.db #0xff	; 255
-	.db #0x66	; 102	'f'
-	.db #0xff	; 255
-	.db #0x66	; 102	'f'
-	.db #0xff	; 255
-	.db #0x66	; 102	'f'
-	.db #0xff	; 255
-	.db #0x66	; 102	'f'
-	.db #0xff	; 255
-	.db #0x7e	; 126
-	.db #0xff	; 255
-	.db #0x3c	; 60
-	.db #0xff	; 255
-	.db #0x18	; 24
-	.db #0xff	; 255
-	.db #0x38	; 56	'8'
-	.db #0xff	; 255
-	.db #0x38	; 56	'8'
-	.db #0xff	; 255
-	.db #0x18	; 24
-	.db #0xff	; 255
-	.db #0x18	; 24
-	.db #0xff	; 255
-	.db #0x18	; 24
-	.db #0xff	; 255
-	.db #0x18	; 24
-	.db #0xff	; 255
-	.db #0x18	; 24
-	.db #0xff	; 255
-	.db #0x3c	; 60
-	.db #0xff	; 255
-	.db #0x66	; 102	'f'
-	.db #0xff	; 255
-	.db #0x6e	; 110	'n'
-	.db #0xff	; 255
-	.db #0x1c	; 28
-	.db #0xff	; 255
-	.db #0x38	; 56	'8'
-	.db #0xff	; 255
-	.db #0x70	; 112	'p'
-	.db #0xff	; 255
-	.db #0x7e	; 126
-	.db #0xff	; 255
-	.db #0x7e	; 126
-	.db #0xff	; 255
-	.db #0x7c	; 124
-	.db #0xff	; 255
-	.db #0x7e	; 126
-	.db #0xff	; 255
-	.db #0x06	; 6
-	.db #0xff	; 255
-	.db #0x3e	; 62
-	.db #0xff	; 255
-	.db #0x3e	; 62
-	.db #0xff	; 255
-	.db #0x06	; 6
-	.db #0xff	; 255
-	.db #0x7e	; 126
-	.db #0xff	; 255
-	.db #0x7c	; 124
-	.db #0xff	; 255
-	.db #0x0c	; 12
-	.db #0xff	; 255
-	.db #0x1c	; 28
-	.db #0xff	; 255
-	.db #0x3c	; 60
-	.db #0xff	; 255
-	.db #0x6c	; 108	'l'
-	.db #0xff	; 255
-	.db #0x6e	; 110	'n'
-	.db #0xff	; 255
-	.db #0x7e	; 126
-	.db #0xff	; 255
-	.db #0x0c	; 12
-	.db #0xff	; 255
-	.db #0x0c	; 12
-	.db #0xff	; 255
-	.db #0x7c	; 124
-	.db #0xff	; 255
-	.db #0x7c	; 124
-	.db #0xff	; 255
-	.db #0x60	; 96
-	.db #0xff	; 255
-	.db #0x7c	; 124
-	.db #0xff	; 255
-	.db #0x06	; 6
-	.db #0xff	; 255
-	.db #0x06	; 6
-	.db #0xff	; 255
-	.db #0x7e	; 126
-	.db #0xff	; 255
-	.db #0x7c	; 124
-	.db #0x3c	; 60
-	.db #0x3c	; 60
-	.db #0x62	; 98	'b'
-	.db #0x62	; 98	'b'
-	.db #0x60	; 96
-	.db #0x60	; 96
-	.db #0x7c	; 124
-	.db #0x7c	; 124
-	.db #0x7e	; 126
-	.db #0x7e	; 126
-	.db #0x62	; 98	'b'
-	.db #0x62	; 98	'b'
-	.db #0x62	; 98	'b'
-	.db #0x62	; 98	'b'
-	.db #0x3c	; 60
-	.db #0x3c	; 60
-	.db #0x7e	; 126
-	.db #0x7e	; 126
-	.db #0x06	; 6
-	.db #0x06	; 6
-	.db #0x06	; 6
-	.db #0x06	; 6
-	.db #0x0c	; 12
-	.db #0x0c	; 12
-	.db #0x18	; 24
-	.db #0x18	; 24
-	.db #0x18	; 24
-	.db #0x18	; 24
-	.db #0x18	; 24
-	.db #0x18	; 24
-	.db #0x18	; 24
-	.db #0x18	; 24
-	.db #0x3c	; 60
-	.db #0x3c	; 60
-	.db #0x66	; 102	'f'
-	.db #0x66	; 102	'f'
-	.db #0x66	; 102	'f'
-	.db #0x66	; 102	'f'
-	.db #0x3c	; 60
-	.db #0x3c	; 60
-	.db #0x7e	; 126
-	.db #0x7e	; 126
-	.db #0x66	; 102	'f'
-	.db #0x66	; 102	'f'
-	.db #0x66	; 102	'f'
-	.db #0x66	; 102	'f'
-	.db #0x3c	; 60
-	.db #0x3c	; 60
-	.db #0x3c	; 60
-	.db #0x3c	; 60
-	.db #0x7e	; 126
-	.db #0x7e	; 126
-	.db #0x46	; 70	'F'
-	.db #0x46	; 70	'F'
-	.db #0x46	; 70	'F'
-	.db #0x46	; 70	'F'
-	.db #0x3e	; 62
-	.db #0x3e	; 62
-	.db #0x06	; 6
-	.db #0x06	; 6
-	.db #0x46	; 70	'F'
-	.db #0x46	; 70	'F'
-	.db #0x3c	; 60
-	.db #0x3c	; 60
-	.db #0x3c	; 60
-	.db #0x3c	; 60
-	.db #0x66	; 102	'f'
-	.db #0x66	; 102	'f'
-	.db #0x66	; 102	'f'
-	.db #0x66	; 102	'f'
-	.db #0x7e	; 126
-	.db #0x7e	; 126
-	.db #0x7e	; 126
-	.db #0x7e	; 126
-	.db #0x66	; 102	'f'
-	.db #0x66	; 102	'f'
-	.db #0x66	; 102	'f'
-	.db #0x66	; 102	'f'
-	.db #0x66	; 102	'f'
-	.db #0x66	; 102	'f'
-	.db #0x7e	; 126
-	.db #0x7e	; 126
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x41	; 65	'A'
-	.db #0x41	; 65	'A'
-	.db #0x7e	; 126
-	.db #0x7e	; 126
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x41	; 65	'A'
-	.db #0x41	; 65	'A'
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x7e	; 126
-	.db #0x7e	; 126
-	.db #0x3c	; 60
-	.db #0x3c	; 60
-	.db #0x7e	; 126
-	.db #0x7e	; 126
-	.db #0xc2	; 194
-	.db #0xc2	; 194
-	.db #0xc0	; 192
-	.db #0xc0	; 192
-	.db #0xc0	; 192
-	.db #0xc0	; 192
-	.db #0xc2	; 194
-	.db #0xc2	; 194
-	.db #0x7e	; 126
-	.db #0x7e	; 126
-	.db #0x3c	; 60
-	.db #0x3c	; 60
-	.db #0x7e	; 126
-	.db #0x7e	; 126
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x63	; 99	'c'
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x7e	; 126
-	.db #0x7e	; 126
-	.db #0x36	; 54	'6'
-	.db #0x36	; 54	'6'
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x36	; 54	'6'
-	.db #0x36	; 54	'6'
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x7f	; 127
-	.db #0x36	; 54	'6'
-	.db #0x36	; 54	'6'
-	.db #0x36	; 54	'6'
-	.db #0x36	; 54	'6'
-	.db #0xc3	; 195
-	.db #0xc3	; 195
-	.db #0x66	; 102	'f'
-	.db #0x66	; 102	'f'
-	.db #0x3c	; 60
-	.db #0x3c	; 60
-	.db #0xff	; 255
-	.db #0xff	; 255
-	.db #0xff	; 255
-	.db #0xff	; 255
-	.db #0x3c	; 60
-	.db #0x3c	; 60
-	.db #0x66	; 102	'f'
-	.db #0x66	; 102	'f'
-	.db #0xc3	; 195
-	.db #0xc3	; 195
-	.db #0xf0	; 240
-	.db #0xf0	; 240
-	.db #0x90	; 144
-	.db #0x90	; 144
-	.db #0xf0	; 240
-	.db #0xf0	; 240
-	.db #0x90	; 144
-	.db #0x90	; 144
-	.db #0x97	; 151
-	.db #0x97	; 151
-	.db #0x08	; 8
-	.db #0x08	; 8
-	.db #0x08	; 8
-	.db #0x08	; 8
-	.db #0x07	; 7
-	.db #0x07	; 7
-	.db #0x0c	; 12
-	.db #0x0c	; 12
-	.db #0x1c	; 28
-	.db #0x1c	; 28
-	.db #0x3c	; 60
-	.db #0x3c	; 60
-	.db #0x7c	; 124
-	.db #0x7c	; 124
-	.db #0x7c	; 124
-	.db #0x7c	; 124
-	.db #0x3c	; 60
-	.db #0x3c	; 60
-	.db #0x1c	; 28
-	.db #0x1c	; 28
-	.db #0x0c	; 12
-	.db #0x0c	; 12
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x18	; 24
-	.db #0x18	; 24
-	.db #0x3c	; 60
-	.db #0x3c	; 60
-	.db #0x3c	; 60
-	.db #0x3c	; 60
-	.db #0x1c	; 28
-	.db #0x1c	; 28
-	.db #0x0c	; 12
-	.db #0x0c	; 12
-	.db #0x38	; 56	'8'
-	.db #0x38	; 56	'8'
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x3c	; 60
-	.db #0x3c	; 60
-	.db #0x42	; 66	'B'
-	.db #0x42	; 66	'B'
-	.db #0x02	; 2
-	.db #0x02	; 2
-	.db #0x1c	; 28
-	.db #0x1c	; 28
-	.db #0x18	; 24
-	.db #0x18	; 24
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x18	; 24
-	.db #0x18	; 24
-	.db #0x18	; 24
-	.db #0x18	; 24
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x18	; 24
-	.db #0x18	; 24
-	.db #0x3c	; 60
-	.db #0x3c	; 60
-	.db #0x7e	; 126
-	.db #0x7e	; 126
-	.db #0xff	; 255
-	.db #0xff	; 255
-	.db #0xff	; 255
-	.db #0xff	; 255
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0xff	; 255
-	.db #0xff	; 255
-	.db #0xff	; 255
-	.db #0xff	; 255
-	.db #0x7e	; 126
-	.db #0x7e	; 126
-	.db #0x3c	; 60
-	.db #0x3c	; 60
-	.db #0x18	; 24
-	.db #0x18	; 24
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x12	; 18
-	.db #0x12	; 18
-	.db #0x34	; 52	'4'
-	.db #0x34	; 52	'4'
-	.db #0xf1	; 241
-	.db #0xf1	; 241
-	.db #0xf2	; 242
-	.db #0xf2	; 242
-	.db #0xf2	; 242
-	.db #0xf2	; 242
-	.db #0xf1	; 241
-	.db #0xf1	; 241
-	.db #0x34	; 52	'4'
-	.db #0x34	; 52	'4'
-	.db #0x12	; 18
-	.db #0x12	; 18
-_cursor_data:
-	.db #0x06	; 6
-	.db #0x06	; 6
-	.db #0x09	; 9
-	.db #0x09	; 9
-	.db #0x09	; 9
-	.db #0x09	; 9
-	.db #0x09	; 9
-	.db #0x0f	; 15
-	.db #0x09	; 9
-	.db #0x0f	; 15
-	.db #0x69	; 105	'i'
-	.db #0x6f	; 111	'o'
-	.db #0x19	; 25
-	.db #0x3f	; 63
-	.db #0x59	; 89	'Y'
-	.db #0x7f	; 127
-	.db #0x49	; 73	'I'
-	.db #0x7f	; 127
-	.db #0x49	; 73	'I'
-	.db #0x7f	; 127
-	.db #0x40	; 64
-	.db #0x7f	; 127
-	.db #0x40	; 64
-	.db #0x7f	; 127
-	.db #0x20	; 32
-	.db #0x3f	; 63
-	.db #0x10	; 16
-	.db #0x1f	; 31
-	.db #0x08	; 8
-	.db #0x0f	; 15
-	.db #0x0f	; 15
-	.db #0x0f	; 15
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0xa8	; 168
-	.db #0xa8	; 168
-	.db #0x54	; 84	'T'
-	.db #0xfc	; 252
-	.db #0x54	; 84	'T'
-	.db #0xfc	; 252
-	.db #0x54	; 84	'T'
-	.db #0xfc	; 252
-	.db #0x04	; 4
-	.db #0xfc	; 252
-	.db #0x04	; 4
-	.db #0xfc	; 252
-	.db #0x08	; 8
-	.db #0xf8	; 248
-	.db #0x10	; 16
-	.db #0xf0	; 240
-	.db #0x20	; 32
-	.db #0xe0	; 224
-	.db #0xe0	; 224
-	.db #0xe0	; 224
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x06	; 6
-	.db #0x06	; 6
-	.db #0x09	; 9
-	.db #0x09	; 9
-	.db #0x09	; 9
-	.db #0x0f	; 15
-	.db #0x09	; 9
-	.db #0x0f	; 15
-	.db #0x69	; 105	'i'
-	.db #0x6f	; 111	'o'
-	.db #0x19	; 25
-	.db #0x3f	; 63
-	.db #0x59	; 89	'Y'
-	.db #0x7f	; 127
-	.db #0x49	; 73	'I'
-	.db #0x7f	; 127
-	.db #0x49	; 73	'I'
-	.db #0x7f	; 127
-	.db #0x40	; 64
-	.db #0x7f	; 127
-	.db #0x40	; 64
-	.db #0x7f	; 127
-	.db #0x20	; 32
-	.db #0x3f	; 63
-	.db #0x10	; 16
-	.db #0x1f	; 31
-	.db #0x08	; 8
-	.db #0x0f	; 15
-	.db #0x0f	; 15
-	.db #0x0f	; 15
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0x00	; 0
-	.db #0xa8	; 168
-	.db #0xa8	; 168
-	.db #0x54	; 84	'T'
-	.db #0xfc	; 252
-	.db #0x54	; 84	'T'
-	.db #0xfc	; 252
-	.db #0x54	; 84	'T'
-	.db #0xfc	; 252
-	.db #0x04	; 4
-	.db #0xfc	; 252
-	.db #0x04	; 4
-	.db #0xfc	; 252
-	.db #0x08	; 8
-	.db #0xf8	; 248
-	.db #0x10	; 16
-	.db #0xf0	; 240
-	.db #0x20	; 32
-	.db #0xe0	; 224
-	.db #0xe0	; 224
-	.db #0xe0	; 224
 _row:
 	.db #0x44	; 68	'D'
 	.db #0x56	; 86	'V'
@@ -2193,14 +599,14 @@ _pad:
 	.db #0x44	;  68	'D'
 	.db #0x73	;  115	's'
 	.db #0x73	;  115	's'
-;gb-dtmf.c:188: void dialtone(uint16_t dtmf_on, uint16_t dtmf_off, char str[20])
+;gb-dtmf.c:185: void dialtone(uint16_t dtmf_on, uint16_t dtmf_off, char str[20])
 ;	---------------------------------
 ; Function dialtone
 ; ---------------------------------
 _dialtone::
 	add	sp, #-1
 	push	de
-;gb-dtmf.c:192: while(str[i]){
+;gb-dtmf.c:189: while(str[i]){
 	ldhl	sp,	#2
 	ld	(hl), #0x00
 00125$:
@@ -2217,7 +623,7 @@ _dialtone::
 	ld	a, (de)
 	or	a, a
 	jp	Z, 00128$
-;gb-dtmf.c:193: switch(str[i]){
+;gb-dtmf.c:190: switch(str[i]){
 	cp	a, #0x23
 	jp	Z,00118$
 	cp	a, #0x2a
@@ -2261,169 +667,169 @@ _dialtone::
 	sub	a, #0x64
 	jp	Z,00120$
 	jp	00122$
-;gb-dtmf.c:194: case '1':
+;gb-dtmf.c:191: case '1':
 00101$:
-;gb-dtmf.c:195: NR13_REG = R1;
+;gb-dtmf.c:192: NR13_REG = R1;
 	ld	a, #0x44
 	ldh	(_NR13_REG + 0), a
-;gb-dtmf.c:196: NR23_REG = C1;
+;gb-dtmf.c:193: NR23_REG = C1;
 	ld	a, #0x94
 	ldh	(_NR23_REG + 0), a
-;gb-dtmf.c:197: break;
+;gb-dtmf.c:194: break;
 	jp	00123$
-;gb-dtmf.c:198: case '2':
+;gb-dtmf.c:195: case '2':
 00102$:
-;gb-dtmf.c:199: NR13_REG = R1;
+;gb-dtmf.c:196: NR13_REG = R1;
 	ld	a, #0x44
 	ldh	(_NR13_REG + 0), a
-;gb-dtmf.c:200: NR23_REG = C2;
+;gb-dtmf.c:197: NR23_REG = C2;
 	ld	a, #0x9e
 	ldh	(_NR23_REG + 0), a
-;gb-dtmf.c:201: break;
+;gb-dtmf.c:198: break;
 	jp	00123$
-;gb-dtmf.c:202: case '3':
+;gb-dtmf.c:199: case '3':
 00103$:
-;gb-dtmf.c:203: NR13_REG = R1;
+;gb-dtmf.c:200: NR13_REG = R1;
 	ld	a, #0x44
 	ldh	(_NR13_REG + 0), a
-;gb-dtmf.c:204: NR23_REG = C3;
+;gb-dtmf.c:201: NR23_REG = C3;
 	ld	a, #0xa7
 	ldh	(_NR23_REG + 0), a
-;gb-dtmf.c:205: break;
+;gb-dtmf.c:202: break;
 	jp	00123$
-;gb-dtmf.c:207: case 'a':
+;gb-dtmf.c:204: case 'a':
 00105$:
-;gb-dtmf.c:208: NR13_REG = R1;
+;gb-dtmf.c:205: NR13_REG = R1;
 	ld	a, #0x44
 	ldh	(_NR13_REG + 0), a
-;gb-dtmf.c:209: NR23_REG = C4;
+;gb-dtmf.c:206: NR23_REG = C4;
 	ld	a, #0xb0
 	ldh	(_NR23_REG + 0), a
-;gb-dtmf.c:210: break;
+;gb-dtmf.c:207: break;
 	jp	00123$
-;gb-dtmf.c:211: case '4':
+;gb-dtmf.c:208: case '4':
 00106$:
-;gb-dtmf.c:212: NR13_REG = R2;
+;gb-dtmf.c:209: NR13_REG = R2;
 	ld	a, #0x56
 	ldh	(_NR13_REG + 0), a
-;gb-dtmf.c:213: NR23_REG = C1;
+;gb-dtmf.c:210: NR23_REG = C1;
 	ld	a, #0x94
 	ldh	(_NR23_REG + 0), a
-;gb-dtmf.c:214: break;
+;gb-dtmf.c:211: break;
 	jp	00123$
-;gb-dtmf.c:215: case '5':
+;gb-dtmf.c:212: case '5':
 00107$:
-;gb-dtmf.c:216: NR13_REG = R2;
+;gb-dtmf.c:213: NR13_REG = R2;
 	ld	a, #0x56
 	ldh	(_NR13_REG + 0), a
-;gb-dtmf.c:217: NR23_REG = C2;
+;gb-dtmf.c:214: NR23_REG = C2;
 	ld	a, #0x9e
 	ldh	(_NR23_REG + 0), a
-;gb-dtmf.c:218: break;
+;gb-dtmf.c:215: break;
 	jr	00123$
-;gb-dtmf.c:219: case '6':
+;gb-dtmf.c:216: case '6':
 00108$:
-;gb-dtmf.c:220: NR13_REG = R2;
+;gb-dtmf.c:217: NR13_REG = R2;
 	ld	a, #0x56
 	ldh	(_NR13_REG + 0), a
-;gb-dtmf.c:221: NR23_REG = C3;
+;gb-dtmf.c:218: NR23_REG = C3;
 	ld	a, #0xa7
 	ldh	(_NR23_REG + 0), a
-;gb-dtmf.c:222: break;
+;gb-dtmf.c:219: break;
 	jr	00123$
-;gb-dtmf.c:224: case 'b':
+;gb-dtmf.c:221: case 'b':
 00110$:
-;gb-dtmf.c:225: NR13_REG = R2;
+;gb-dtmf.c:222: NR13_REG = R2;
 	ld	a, #0x56
 	ldh	(_NR13_REG + 0), a
-;gb-dtmf.c:226: NR23_REG = C4;
+;gb-dtmf.c:223: NR23_REG = C4;
 	ld	a, #0xb0
 	ldh	(_NR23_REG + 0), a
-;gb-dtmf.c:227: break;
+;gb-dtmf.c:224: break;
 	jr	00123$
-;gb-dtmf.c:228: case '7':
+;gb-dtmf.c:225: case '7':
 00111$:
-;gb-dtmf.c:229: NR13_REG = R3;
+;gb-dtmf.c:226: NR13_REG = R3;
 	ld	a, #0x66
 	ldh	(_NR13_REG + 0), a
-;gb-dtmf.c:230: NR23_REG = C1;
+;gb-dtmf.c:227: NR23_REG = C1;
 	ld	a, #0x94
 	ldh	(_NR23_REG + 0), a
-;gb-dtmf.c:231: break;
+;gb-dtmf.c:228: break;
 	jr	00123$
-;gb-dtmf.c:232: case '8':
+;gb-dtmf.c:229: case '8':
 00112$:
-;gb-dtmf.c:233: NR13_REG = R3;
+;gb-dtmf.c:230: NR13_REG = R3;
 	ld	a, #0x66
 	ldh	(_NR13_REG + 0), a
-;gb-dtmf.c:234: NR23_REG = C2;
+;gb-dtmf.c:231: NR23_REG = C2;
 	ld	a, #0x9e
 	ldh	(_NR23_REG + 0), a
-;gb-dtmf.c:235: break;
+;gb-dtmf.c:232: break;
 	jr	00123$
-;gb-dtmf.c:236: case '9':
+;gb-dtmf.c:233: case '9':
 00113$:
-;gb-dtmf.c:237: NR13_REG = R3;
+;gb-dtmf.c:234: NR13_REG = R3;
 	ld	a, #0x66
 	ldh	(_NR13_REG + 0), a
-;gb-dtmf.c:238: NR23_REG = C3;
+;gb-dtmf.c:235: NR23_REG = C3;
 	ld	a, #0xa7
 	ldh	(_NR23_REG + 0), a
-;gb-dtmf.c:239: break;
+;gb-dtmf.c:236: break;
 	jr	00123$
-;gb-dtmf.c:241: case 'c':
+;gb-dtmf.c:238: case 'c':
 00115$:
-;gb-dtmf.c:242: NR13_REG = R3;
+;gb-dtmf.c:239: NR13_REG = R3;
 	ld	a, #0x66
 	ldh	(_NR13_REG + 0), a
-;gb-dtmf.c:243: NR23_REG = C4;
+;gb-dtmf.c:240: NR23_REG = C4;
 	ld	a, #0xb0
 	ldh	(_NR23_REG + 0), a
-;gb-dtmf.c:244: break;
+;gb-dtmf.c:241: break;
 	jr	00123$
-;gb-dtmf.c:245: case '*':
+;gb-dtmf.c:242: case '*':
 00116$:
-;gb-dtmf.c:246: NR13_REG = R4;
+;gb-dtmf.c:243: NR13_REG = R4;
 	ld	a, #0x75
 	ldh	(_NR13_REG + 0), a
-;gb-dtmf.c:247: NR23_REG = C1;
+;gb-dtmf.c:244: NR23_REG = C1;
 	ld	a, #0x94
 	ldh	(_NR23_REG + 0), a
-;gb-dtmf.c:248: break;
+;gb-dtmf.c:245: break;
 	jr	00123$
-;gb-dtmf.c:249: case '0':
+;gb-dtmf.c:246: case '0':
 00117$:
-;gb-dtmf.c:250: NR13_REG = R4;
+;gb-dtmf.c:247: NR13_REG = R4;
 	ld	a, #0x75
 	ldh	(_NR13_REG + 0), a
-;gb-dtmf.c:251: NR23_REG = C2;
+;gb-dtmf.c:248: NR23_REG = C2;
 	ld	a, #0x9e
 	ldh	(_NR23_REG + 0), a
-;gb-dtmf.c:252: break;
+;gb-dtmf.c:249: break;
 	jr	00123$
-;gb-dtmf.c:253: case '#':
+;gb-dtmf.c:250: case '#':
 00118$:
-;gb-dtmf.c:254: NR13_REG = R4;
+;gb-dtmf.c:251: NR13_REG = R4;
 	ld	a, #0x75
 	ldh	(_NR13_REG + 0), a
-;gb-dtmf.c:255: NR23_REG = C3;
+;gb-dtmf.c:252: NR23_REG = C3;
 	ld	a, #0xa7
 	ldh	(_NR23_REG + 0), a
-;gb-dtmf.c:256: break;
+;gb-dtmf.c:253: break;
 	jr	00123$
-;gb-dtmf.c:258: case 'd':
+;gb-dtmf.c:255: case 'd':
 00120$:
-;gb-dtmf.c:259: NR13_REG = R4;
+;gb-dtmf.c:256: NR13_REG = R4;
 	ld	a, #0x75
 	ldh	(_NR13_REG + 0), a
-;gb-dtmf.c:260: NR23_REG = C4;
+;gb-dtmf.c:257: NR23_REG = C4;
 	ld	a, #0xb0
 	ldh	(_NR23_REG + 0), a
-;gb-dtmf.c:261: break;
+;gb-dtmf.c:258: break;
 	jr	00123$
-;gb-dtmf.c:262: case ',':
+;gb-dtmf.c:259: case ',':
 00121$:
-;gb-dtmf.c:263: delay(dtmf_on);	/* keep on */
+;gb-dtmf.c:260: delay(dtmf_on);	/* keep on */
 	push	bc
 	ldhl	sp,	#2
 	ld	a, (hl+)
@@ -2431,28 +837,28 @@ _dialtone::
 	ld	d, (hl)
 	call	_delay
 	pop	bc
-;gb-dtmf.c:264: delay(dtmf_off);	/* keep off */
+;gb-dtmf.c:261: delay(dtmf_off);	/* keep off */
 	push	bc
 	ld	e, c
 	ld	d, b
 	call	_delay
 	pop	bc
-;gb-dtmf.c:266: default:
+;gb-dtmf.c:263: default:
 00122$:
-;gb-dtmf.c:267: NR51_REG = 0x00U;	/* sound off */
+;gb-dtmf.c:264: NR51_REG = 0x00U;	/* sound off */
 	xor	a, a
 	ldh	(_NR51_REG + 0), a
-;gb-dtmf.c:268: goto skip;
+;gb-dtmf.c:265: goto skip;
 	jr	00124$
-;gb-dtmf.c:270: }
+;gb-dtmf.c:267: }
 00123$:
-;gb-dtmf.c:271: NR24_REG = 0x87U;	/* ch2 tips */
+;gb-dtmf.c:268: NR24_REG = 0x87U;	/* ch2 tips */
 	ld	a, #0x87
 	ldh	(_NR24_REG + 0), a
-;gb-dtmf.c:272: NR51_REG = 0x33U;	/* sound on */
+;gb-dtmf.c:269: NR51_REG = 0x33U;	/* sound on */
 	ld	a, #0x33
 	ldh	(_NR51_REG + 0), a
-;gb-dtmf.c:273: delay(dtmf_on);		/* keep on */
+;gb-dtmf.c:270: delay(dtmf_on);		/* keep on */
 	push	bc
 	ldhl	sp,	#2
 	ld	a, (hl+)
@@ -2460,28 +866,28 @@ _dialtone::
 	ld	d, (hl)
 	call	_delay
 	pop	bc
-;gb-dtmf.c:275: NR51_REG = 0x00U;	/* sound off */
+;gb-dtmf.c:272: NR51_REG = 0x00U;	/* sound off */
 	xor	a, a
 	ldh	(_NR51_REG + 0), a
-;gb-dtmf.c:276: delay(dtmf_off);	/* keep off */
+;gb-dtmf.c:273: delay(dtmf_off);	/* keep off */
 	push	bc
 	ld	e, c
 	ld	d, b
 	call	_delay
 	pop	bc
-;gb-dtmf.c:278: skip:
+;gb-dtmf.c:275: skip:
 00124$:
-;gb-dtmf.c:279: i++;
+;gb-dtmf.c:276: i++;
 	ldhl	sp,	#2
 	inc	(hl)
 	jp	00125$
 00128$:
-;gb-dtmf.c:281: }
+;gb-dtmf.c:278: }
 	add	sp, #3
 	pop	hl
 	pop	af
 	jp	(hl)
-;gb-dtmf.c:285: void disp_lcd(uint8_t len, char str[MAX_DTMF])
+;gb-dtmf.c:282: void disp_lcd(uint8_t len, char str[MAX_DTMF])
 ;	---------------------------------
 ; Function disp_lcd
 ; ---------------------------------
@@ -2491,12 +897,12 @@ _disp_lcd::
 	ldhl	sp,	#1
 	ld	a, e
 	ld	(hl+), a
-;gb-dtmf.c:289: j = len;
+;gb-dtmf.c:286: j = len;
 	ld	a, d
 	ld	(hl-), a
 	dec	hl
 	ld	(hl), c
-;gb-dtmf.c:292: while(str[i]){
+;gb-dtmf.c:289: while(str[i]){
 	ldhl	sp,	#3
 	ld	(hl), #0x00
 00121$:
@@ -2511,7 +917,7 @@ _disp_lcd::
 	ld	c, l
 	ld	b, h
 	ld	a, (bc)
-;gb-dtmf.c:293: if(str[i] >= '0'||'9' <= str[i]){
+;gb-dtmf.c:290: if(str[i] >= '0'||'9' <= str[i]){
 	ld	c,a
 	or	a,a
 	jp	Z,00124$
@@ -2523,7 +929,7 @@ _disp_lcd::
 	sub	a, #0xb9
 	jr	C, 00102$
 00101$:
-;gb-dtmf.c:294: disp_tile[i] = OFFSET + (str[i] - '0') * 2;
+;gb-dtmf.c:291: disp_tile[i] = OFFSET + (str[i] - '0') * 2;
 	ld	de, #_disp_tile
 	ldhl	sp,	#3
 	ld	l, (hl)
@@ -2546,7 +952,7 @@ _disp_lcd::
 	add	a, a
 	add	a, #0x1b
 	ld	(bc), a
-;gb-dtmf.c:295: disp_tile[i+j] = OFFSET + (str[i] - '0') * 2 + 1;
+;gb-dtmf.c:292: disp_tile[i+j] = OFFSET + (str[i] - '0') * 2 + 1;
 	ldhl	sp,	#3
 	ld	a, (hl)
 	ldhl	sp,	#0
@@ -2561,7 +967,7 @@ _disp_lcd::
 	add	a, #0x1c
 	ld	(hl), a
 00102$:
-;gb-dtmf.c:297: switch(str[i]){
+;gb-dtmf.c:294: switch(str[i]){
 	ldhl	sp,#1
 	ld	a, (hl+)
 	ld	e, a
@@ -2606,16 +1012,16 @@ _disp_lcd::
 	sub	a, #0x59
 	jp	Z,00111$
 	jp	00120$
-;gb-dtmf.c:298: case 'A':
+;gb-dtmf.c:295: case 'A':
 00104$:
-;gb-dtmf.c:299: disp_tile[i] = OFFSET + 10 * 2;
+;gb-dtmf.c:296: disp_tile[i] = OFFSET + 10 * 2;
 	ld	de, #_disp_tile
 	ldhl	sp,	#3
 	ld	l, (hl)
 	ld	h, #0x00
 	add	hl, de
 	ld	(hl), #0x2f
-;gb-dtmf.c:300: disp_tile[i+j] = OFFSET + 10 * 2 + 1;
+;gb-dtmf.c:297: disp_tile[i+j] = OFFSET + 10 * 2 + 1;
 	ldhl	sp,	#3
 	ld	a, (hl)
 	ldhl	sp,	#0
@@ -2625,18 +1031,18 @@ _disp_lcd::
 	ld	b, #0x00
 	add	hl, bc
 	ld	(hl), #0x30
-;gb-dtmf.c:301: break;
+;gb-dtmf.c:298: break;
 	jp	00120$
-;gb-dtmf.c:302: case 'B':
+;gb-dtmf.c:299: case 'B':
 00105$:
-;gb-dtmf.c:303: disp_tile[i] = OFFSET + 11 * 2;
+;gb-dtmf.c:300: disp_tile[i] = OFFSET + 11 * 2;
 	ld	de, #_disp_tile
 	ldhl	sp,	#3
 	ld	l, (hl)
 	ld	h, #0x00
 	add	hl, de
 	ld	(hl), #0x31
-;gb-dtmf.c:304: disp_tile[i+j] = OFFSET + 11 * 2 + 1;
+;gb-dtmf.c:301: disp_tile[i+j] = OFFSET + 11 * 2 + 1;
 	ldhl	sp,	#3
 	ld	a, (hl)
 	ldhl	sp,	#0
@@ -2646,18 +1052,18 @@ _disp_lcd::
 	ld	b, #0x00
 	add	hl, bc
 	ld	(hl), #0x32
-;gb-dtmf.c:305: break;
+;gb-dtmf.c:302: break;
 	jp	00120$
-;gb-dtmf.c:306: case 'C':
+;gb-dtmf.c:303: case 'C':
 00106$:
-;gb-dtmf.c:307: disp_tile[i] = OFFSET + 12 * 2;
+;gb-dtmf.c:304: disp_tile[i] = OFFSET + 12 * 2;
 	ld	de, #_disp_tile
 	ldhl	sp,	#3
 	ld	l, (hl)
 	ld	h, #0x00
 	add	hl, de
 	ld	(hl), #0x33
-;gb-dtmf.c:308: disp_tile[i+j] = OFFSET + 12 * 2 + 1;
+;gb-dtmf.c:305: disp_tile[i+j] = OFFSET + 12 * 2 + 1;
 	ldhl	sp,	#3
 	ld	a, (hl)
 	ldhl	sp,	#0
@@ -2667,18 +1073,18 @@ _disp_lcd::
 	ld	b, #0x00
 	add	hl, bc
 	ld	(hl), #0x34
-;gb-dtmf.c:309: break;
+;gb-dtmf.c:306: break;
 	jp	00120$
-;gb-dtmf.c:310: case 'D':
+;gb-dtmf.c:307: case 'D':
 00107$:
-;gb-dtmf.c:311: disp_tile[i] = OFFSET + 13 * 2;
+;gb-dtmf.c:308: disp_tile[i] = OFFSET + 13 * 2;
 	ld	de, #_disp_tile
 	ldhl	sp,	#3
 	ld	l, (hl)
 	ld	h, #0x00
 	add	hl, de
 	ld	(hl), #0x35
-;gb-dtmf.c:312: disp_tile[i+j] = OFFSET + 13 * 2 + 1;
+;gb-dtmf.c:309: disp_tile[i+j] = OFFSET + 13 * 2 + 1;
 	ldhl	sp,	#3
 	ld	a, (hl)
 	ldhl	sp,	#0
@@ -2688,18 +1094,18 @@ _disp_lcd::
 	ld	b, #0x00
 	add	hl, bc
 	ld	(hl), #0x36
-;gb-dtmf.c:313: break;
+;gb-dtmf.c:310: break;
 	jp	00120$
-;gb-dtmf.c:314: case '#':
+;gb-dtmf.c:311: case '#':
 00108$:
-;gb-dtmf.c:315: disp_tile[i] = OFFSET + 14 * 2;
+;gb-dtmf.c:312: disp_tile[i] = OFFSET + 14 * 2;
 	ld	de, #_disp_tile
 	ldhl	sp,	#3
 	ld	l, (hl)
 	ld	h, #0x00
 	add	hl, de
 	ld	(hl), #0x37
-;gb-dtmf.c:316: disp_tile[i+j] = OFFSET + 14 * 2 + 1;
+;gb-dtmf.c:313: disp_tile[i+j] = OFFSET + 14 * 2 + 1;
 	ldhl	sp,	#3
 	ld	a, (hl)
 	ldhl	sp,	#0
@@ -2709,18 +1115,18 @@ _disp_lcd::
 	ld	b, #0x00
 	add	hl, bc
 	ld	(hl), #0x38
-;gb-dtmf.c:317: break;
+;gb-dtmf.c:314: break;
 	jp	00120$
-;gb-dtmf.c:318: case '*':
+;gb-dtmf.c:315: case '*':
 00109$:
-;gb-dtmf.c:319: disp_tile[i] = OFFSET + 15 * 2;
+;gb-dtmf.c:316: disp_tile[i] = OFFSET + 15 * 2;
 	ld	de, #_disp_tile
 	ldhl	sp,	#3
 	ld	l, (hl)
 	ld	h, #0x00
 	add	hl, de
 	ld	(hl), #0x39
-;gb-dtmf.c:320: disp_tile[i+j] = OFFSET + 15 * 2 + 1;
+;gb-dtmf.c:317: disp_tile[i+j] = OFFSET + 15 * 2 + 1;
 	ldhl	sp,	#3
 	ld	a, (hl)
 	ldhl	sp,	#0
@@ -2730,11 +1136,11 @@ _disp_lcd::
 	ld	b, #0x00
 	add	hl, bc
 	ld	(hl), #0x3a
-;gb-dtmf.c:321: break;
+;gb-dtmf.c:318: break;
 	jp	00120$
-;gb-dtmf.c:322: case ' ':
+;gb-dtmf.c:319: case ' ':
 00110$:
-;gb-dtmf.c:323: disp_tile[i] = OFFSET + 16 * 2;
+;gb-dtmf.c:320: disp_tile[i] = OFFSET + 16 * 2;
 	ld	de, #_disp_tile
 	ldhl	sp,	#3
 	ld	l, (hl)
@@ -2742,7 +1148,7 @@ _disp_lcd::
 	add	hl, de
 	ld	b, h
 	ld	(hl), #0x3b
-;gb-dtmf.c:324: disp_tile[i+j] = OFFSET + 16 * 2 + 1;
+;gb-dtmf.c:321: disp_tile[i+j] = OFFSET + 16 * 2 + 1;
 	ldhl	sp,	#3
 	ld	a, (hl)
 	ldhl	sp,	#0
@@ -2752,18 +1158,18 @@ _disp_lcd::
 	ld	b, #0x00
 	add	hl, bc
 	ld	(hl), #0x3c
-;gb-dtmf.c:325: break;
+;gb-dtmf.c:322: break;
 	jp	00120$
-;gb-dtmf.c:326: case 'Y':
+;gb-dtmf.c:323: case 'Y':
 00111$:
-;gb-dtmf.c:327: disp_tile[i] = OFFSET + 17 * 2;
+;gb-dtmf.c:324: disp_tile[i] = OFFSET + 17 * 2;
 	ld	de, #_disp_tile
 	ldhl	sp,	#3
 	ld	l, (hl)
 	ld	h, #0x00
 	add	hl, de
 	ld	(hl), #0x3d
-;gb-dtmf.c:328: disp_tile[i+j] = OFFSET + 17 * 2 + 1;
+;gb-dtmf.c:325: disp_tile[i+j] = OFFSET + 17 * 2 + 1;
 	ldhl	sp,	#3
 	ld	a, (hl)
 	ldhl	sp,	#0
@@ -2773,18 +1179,18 @@ _disp_lcd::
 	ld	b, #0x00
 	add	hl, bc
 	ld	(hl), #0x3e
-;gb-dtmf.c:329: break;
+;gb-dtmf.c:326: break;
 	jp	00120$
-;gb-dtmf.c:330: case 'M':
+;gb-dtmf.c:327: case 'M':
 00112$:
-;gb-dtmf.c:331: disp_tile[i] = OFFSET + 18 * 2;
+;gb-dtmf.c:328: disp_tile[i] = OFFSET + 18 * 2;
 	ld	de, #_disp_tile
 	ldhl	sp,	#3
 	ld	l, (hl)
 	ld	h, #0x00
 	add	hl, de
 	ld	(hl), #0x3f
-;gb-dtmf.c:332: disp_tile[i+j] = OFFSET + 18 * 2 + 1;
+;gb-dtmf.c:329: disp_tile[i+j] = OFFSET + 18 * 2 + 1;
 	ldhl	sp,	#3
 	ld	a, (hl)
 	ldhl	sp,	#0
@@ -2794,18 +1200,18 @@ _disp_lcd::
 	ld	b, #0x00
 	add	hl, bc
 	ld	(hl), #0x40
-;gb-dtmf.c:333: break;
+;gb-dtmf.c:330: break;
 	jp	00120$
-;gb-dtmf.c:334: case 'U':
+;gb-dtmf.c:331: case 'U':
 00113$:
-;gb-dtmf.c:335: disp_tile[i] = OFFSET + 19 * 2;
+;gb-dtmf.c:332: disp_tile[i] = OFFSET + 19 * 2;
 	ld	de, #_disp_tile
 	ldhl	sp,	#3
 	ld	l, (hl)
 	ld	h, #0x00
 	add	hl, de
 	ld	(hl), #0x41
-;gb-dtmf.c:336: disp_tile[i+j] = OFFSET + 19 * 2 + 1;
+;gb-dtmf.c:333: disp_tile[i+j] = OFFSET + 19 * 2 + 1;
 	ldhl	sp,	#3
 	ld	a, (hl)
 	ldhl	sp,	#0
@@ -2815,18 +1221,18 @@ _disp_lcd::
 	ld	b, #0x00
 	add	hl, bc
 	ld	(hl), #0x42
-;gb-dtmf.c:337: break;
+;gb-dtmf.c:334: break;
 	jp	00120$
-;gb-dtmf.c:338: case 'G':
+;gb-dtmf.c:335: case 'G':
 00114$:
-;gb-dtmf.c:339: disp_tile[i] = OFFSET + 20 * 2;
+;gb-dtmf.c:336: disp_tile[i] = OFFSET + 20 * 2;
 	ld	de, #_disp_tile
 	ldhl	sp,	#3
 	ld	l, (hl)
 	ld	h, #0x00
 	add	hl, de
 	ld	(hl), #0x43
-;gb-dtmf.c:340: disp_tile[i+j] = OFFSET + 20 * 2 + 1;
+;gb-dtmf.c:337: disp_tile[i+j] = OFFSET + 20 * 2 + 1;
 	ldhl	sp,	#3
 	ld	a, (hl)
 	ldhl	sp,	#0
@@ -2836,18 +1242,18 @@ _disp_lcd::
 	ld	b, #0x00
 	add	hl, bc
 	ld	(hl), #0x44
-;gb-dtmf.c:341: break;
+;gb-dtmf.c:338: break;
 	jp	00120$
-;gb-dtmf.c:342: case '-':
+;gb-dtmf.c:339: case '-':
 00115$:
-;gb-dtmf.c:343: disp_tile[i] = OFFSET + 21 * 2;
+;gb-dtmf.c:340: disp_tile[i] = OFFSET + 21 * 2;
 	ld	de, #_disp_tile
 	ldhl	sp,	#3
 	ld	l, (hl)
 	ld	h, #0x00
 	add	hl, de
 	ld	(hl), #0x45
-;gb-dtmf.c:344: disp_tile[i+j] = OFFSET + 21 * 2 + 1;
+;gb-dtmf.c:341: disp_tile[i+j] = OFFSET + 21 * 2 + 1;
 	ldhl	sp,	#3
 	ld	a, (hl)
 	ldhl	sp,	#0
@@ -2857,18 +1263,18 @@ _disp_lcd::
 	ld	b, #0x00
 	add	hl, bc
 	ld	(hl), #0x46
-;gb-dtmf.c:345: break;
+;gb-dtmf.c:342: break;
 	jr	00120$
-;gb-dtmf.c:346: case 'T':
+;gb-dtmf.c:343: case 'T':
 00116$:
-;gb-dtmf.c:347: disp_tile[i] = OFFSET + 22 * 2;
+;gb-dtmf.c:344: disp_tile[i] = OFFSET + 22 * 2;
 	ld	de, #_disp_tile
 	ldhl	sp,	#3
 	ld	l, (hl)
 	ld	h, #0x00
 	add	hl, de
 	ld	(hl), #0x47
-;gb-dtmf.c:348: disp_tile[i+j] = OFFSET + 22 * 2 + 1;
+;gb-dtmf.c:345: disp_tile[i+j] = OFFSET + 22 * 2 + 1;
 	ldhl	sp,	#3
 	ld	a, (hl)
 	ldhl	sp,	#0
@@ -2878,18 +1284,18 @@ _disp_lcd::
 	ld	b, #0x00
 	add	hl, bc
 	ld	(hl), #0x48
-;gb-dtmf.c:349: break;
+;gb-dtmf.c:346: break;
 	jr	00120$
-;gb-dtmf.c:350: case ',':
+;gb-dtmf.c:347: case ',':
 00117$:
-;gb-dtmf.c:351: disp_tile[i] = OFFSET + 23 * 2;
+;gb-dtmf.c:348: disp_tile[i] = OFFSET + 23 * 2;
 	ld	de, #_disp_tile
 	ldhl	sp,	#3
 	ld	l, (hl)
 	ld	h, #0x00
 	add	hl, de
 	ld	(hl), #0x49
-;gb-dtmf.c:352: disp_tile[i+j] = OFFSET + 23 * 2 + 1;
+;gb-dtmf.c:349: disp_tile[i+j] = OFFSET + 23 * 2 + 1;
 	ldhl	sp,	#3
 	ld	a, (hl)
 	ldhl	sp,	#0
@@ -2899,11 +1305,11 @@ _disp_lcd::
 	ld	b, #0x00
 	add	hl, bc
 	ld	(hl), #0x4a
-;gb-dtmf.c:353: break;
+;gb-dtmf.c:350: break;
 	jr	00120$
-;gb-dtmf.c:354: case 'F':
+;gb-dtmf.c:351: case 'F':
 00118$:
-;gb-dtmf.c:355: disp_tile[i] = OFFSET + 24 * 2;
+;gb-dtmf.c:352: disp_tile[i] = OFFSET + 24 * 2;
 	ld	de, #_disp_tile
 	ldhl	sp,	#3
 	ld	l, (hl)
@@ -2911,7 +1317,7 @@ _disp_lcd::
 	add	hl, de
 	ld	b, h
 	ld	(hl), #0x4b
-;gb-dtmf.c:356: disp_tile[i+j] = OFFSET + 24 * 2 + 1;
+;gb-dtmf.c:353: disp_tile[i+j] = OFFSET + 24 * 2 + 1;
 	ldhl	sp,	#3
 	ld	a, (hl)
 	ldhl	sp,	#0
@@ -2921,18 +1327,18 @@ _disp_lcd::
 	ld	b, #0x00
 	add	hl, bc
 	ld	(hl), #0x4c
-;gb-dtmf.c:357: break;
+;gb-dtmf.c:354: break;
 	jr	00120$
-;gb-dtmf.c:358: case 'S':
+;gb-dtmf.c:355: case 'S':
 00119$:
-;gb-dtmf.c:359: disp_tile[i] = OFFSET + ('5' - '0') * 2;
+;gb-dtmf.c:356: disp_tile[i] = OFFSET + ('5' - '0') * 2;
 	ld	de, #_disp_tile
 	ldhl	sp,	#3
 	ld	l, (hl)
 	ld	h, #0x00
 	add	hl, de
 	ld	(hl), #0x25
-;gb-dtmf.c:360: disp_tile[i+j] = OFFSET + ('5' - '0') * 2 + 1;
+;gb-dtmf.c:357: disp_tile[i+j] = OFFSET + ('5' - '0') * 2 + 1;
 	ldhl	sp,	#3
 	ld	a, (hl)
 	ldhl	sp,	#0
@@ -2942,29 +1348,29 @@ _disp_lcd::
 	ld	b, #0x00
 	add	hl, bc
 	ld	(hl), #0x26
-;gb-dtmf.c:362: }
+;gb-dtmf.c:359: }
 00120$:
-;gb-dtmf.c:363: i++;
+;gb-dtmf.c:360: i++;
 	ldhl	sp,	#3
 	inc	(hl)
 	jp	00121$
 00124$:
-;gb-dtmf.c:365: }
+;gb-dtmf.c:362: }
 	add	sp, #4
 	ret
-;gb-dtmf.c:368: void clr_disp()
+;gb-dtmf.c:365: void clr_disp()
 ;	---------------------------------
 ; Function clr_disp
 ; ---------------------------------
 _clr_disp::
-;gb-dtmf.c:370: set_bkg_data(OFFSET, 50, dtmf_lcd);
+;gb-dtmf.c:367: set_bkg_data(OFFSET, 50, dtmf_lcd);
 	ld	de, #_dtmf_lcd
 	push	de
 	ld	hl, #0x321b
 	push	hl
 	call	_set_bkg_data
 	add	sp, #4
-;gb-dtmf.c:371: set_bkg_tiles(LCD_X, LCD_Y, LCD_WIDTH, LCD_HIGHT, init_disp);
+;gb-dtmf.c:368: set_bkg_tiles(LCD_X, LCD_Y, LCD_WIDTH, LCD_HIGHT, init_disp);
 	ld	de, #_init_disp
 	push	de
 	ld	hl, #0x212
@@ -2973,9 +1379,9 @@ _clr_disp::
 	push	hl
 	call	_set_bkg_tiles
 	add	sp, #6
-;gb-dtmf.c:372: }
+;gb-dtmf.c:369: }
 	ret
-;gb-dtmf.c:377: void disp(const char *str)
+;gb-dtmf.c:374: void disp(const char *str)
 ;	---------------------------------
 ; Function disp
 ; ---------------------------------
@@ -2985,9 +1391,9 @@ _disp::
 	ld	a, e
 	ld	(hl+), a
 	ld	(hl), d
-;gb-dtmf.c:383: clr_disp();
+;gb-dtmf.c:380: clr_disp();
 	call	_clr_disp
-;gb-dtmf.c:386: while(str[no]){
+;gb-dtmf.c:383: while(str[no]){
 	ld	e, #0x00
 00101$:
 	push	de
@@ -3003,28 +1409,28 @@ _disp::
 	ld	a, (bc)
 	or	a, a
 	jr	Z, 00103$
-;gb-dtmf.c:387: no++;
+;gb-dtmf.c:384: no++;
 	inc	e
 	jr	00101$
 00103$:
-;gb-dtmf.c:390: if(no >= LCD_WIDTH){
-;gb-dtmf.c:391: start_ch = no - LCD_WIDTH;
+;gb-dtmf.c:387: if(no >= LCD_WIDTH){
+;gb-dtmf.c:388: start_ch = no - LCD_WIDTH;
 	ld	a,e
 	cp	a,#0x12
 	jr	C, 00105$
 	add	a, #0xee
 	ld	c, a
-;gb-dtmf.c:392: end_ch = LCD_WIDTH;
+;gb-dtmf.c:389: end_ch = LCD_WIDTH;
 	ldhl	sp,	#32
 	ld	(hl), #0x12
 	jr	00117$
 00105$:
-;gb-dtmf.c:395: start_ch = 0;
+;gb-dtmf.c:392: start_ch = 0;
 	ld	c, #0x00
-;gb-dtmf.c:396: end_ch = no;
+;gb-dtmf.c:393: end_ch = no;
 	ldhl	sp,	#32
 	ld	(hl), e
-;gb-dtmf.c:398: for(i = 0;i < end_ch;i++){
+;gb-dtmf.c:395: for(i = 0;i < end_ch;i++){
 00117$:
 	ld	b, #0x00
 00109$:
@@ -3032,7 +1438,7 @@ _disp::
 	ldhl	sp,	#32
 	sub	a, (hl)
 	jr	NC, 00107$
-;gb-dtmf.c:399: work[i] = str[i+start_ch];
+;gb-dtmf.c:396: work[i] = str[i+start_ch];
 	push	hl
 	ld	hl, #4
 	add	hl, sp
@@ -3067,11 +1473,11 @@ _disp::
 	pop	hl
 	push	hl
 	ld	(hl), a
-;gb-dtmf.c:398: for(i = 0;i < end_ch;i++){
+;gb-dtmf.c:395: for(i = 0;i < end_ch;i++){
 	inc	b
 	jr	00109$
 00107$:
-;gb-dtmf.c:401: work[end_ch] = 0x00;
+;gb-dtmf.c:398: work[end_ch] = 0x00;
 	push	hl
 	ld	hl, #4
 	add	hl, sp
@@ -3086,7 +1492,7 @@ _disp::
 	ld	b, h
 	xor	a, a
 	ld	(bc), a
-;gb-dtmf.c:403: disp_lcd(end_ch, work);
+;gb-dtmf.c:400: disp_lcd(end_ch, work);
 	ld	hl, #2
 	add	hl, sp
 	ld	e, l
@@ -3094,13 +1500,13 @@ _disp::
 	ldhl	sp,	#32
 	ld	a, (hl)
 	call	_disp_lcd
-;gb-dtmf.c:405: left_pos = 19 - end_ch;
+;gb-dtmf.c:402: left_pos = 19 - end_ch;
 	ldhl	sp,	#32
 	ld	a, (hl+)
 	ld	c, a
 	ld	a, #0x13
 	sub	a, c
-;gb-dtmf.c:406: set_bkg_tiles(left_pos, 2, end_ch, LCD_HIGHT, disp_tile);
+;gb-dtmf.c:403: set_bkg_tiles(left_pos, 2, end_ch, LCD_HIGHT, disp_tile);
 	ld	(hl-), a
 	ld	de, #_disp_tile
 	push	de
@@ -3115,10 +1521,10 @@ _disp::
 	push	af
 	inc	sp
 	call	_set_bkg_tiles
-;gb-dtmf.c:407: }
+;gb-dtmf.c:404: }
 	add	sp, #42
 	ret
-;gb-dtmf.c:409: void press_button(uint8_t x, uint8_t y)
+;gb-dtmf.c:406: void press_button(uint8_t x, uint8_t y)
 ;	---------------------------------
 ; Function press_button
 ; ---------------------------------
@@ -3127,7 +1533,7 @@ _press_button::
 	dec	sp
 	ld	b, a
 	ld	c, e
-;gb-dtmf.c:412: set_bkg_tiles(x * 3 + 1, y * 3 + 5, 3, 3, press_tile);
+;gb-dtmf.c:409: set_bkg_tiles(x * 3 + 1, y * 3 + 5, 3, 3, press_tile);
 	ld	a, c
 	ldhl	sp,	#1
 	ld	(hl), b
@@ -3144,13 +1550,13 @@ _press_button::
 	ld	a, (hl)
 	add	a, #0x05
 	ld	d, a
-;gb-dtmf.c:411: if(x <= 3 && y <= 3){
+;gb-dtmf.c:408: if(x <= 3 && y <= 3){
 	ld	a,#0x03
 	cp	a,b
 	jr	C, 00102$
 	sub	a, c
 	jr	C, 00102$
-;gb-dtmf.c:412: set_bkg_tiles(x * 3 + 1, y * 3 + 5, 3, 3, press_tile);
+;gb-dtmf.c:409: set_bkg_tiles(x * 3 + 1, y * 3 + 5, 3, 3, press_tile);
 	inc	hl
 	ld	a, (hl)
 	inc	a
@@ -3173,7 +1579,7 @@ _press_button::
 	add	sp, #6
 	pop	de
 00102$:
-;gb-dtmf.c:414: if((x == 4 || x == 5) && (y <= 2)){
+;gb-dtmf.c:411: if((x == 4 || x == 5) && (y <= 2)){
 	ld	a, b
 	sub	a, #0x04
 	ld	a, #0x01
@@ -3197,7 +1603,7 @@ _press_button::
 	ld	a, #0x02
 	sub	a, c
 	jr	C, 00105$
-;gb-dtmf.c:415: set_bkg_tiles(x * 3 + 2, y * 3 + 5, 3, 3, press_tile);
+;gb-dtmf.c:412: set_bkg_tiles(x * 3 + 2, y * 3 + 5, 3, 3, press_tile);
 	ldhl	sp,	#1
 	ld	a, (hl)
 	inc	a
@@ -3221,7 +1627,7 @@ _press_button::
 	add	sp, #6
 	pop	de
 00105$:
-;gb-dtmf.c:417: if((x == 4 || x == 5) && (y == 3)){
+;gb-dtmf.c:414: if((x == 4 || x == 5) && (y == 3)){
 	ld	a, e
 	or	a,a
 	jr	NZ, 00111$
@@ -3231,7 +1637,7 @@ _press_button::
 	ld	a, c
 	sub	a, #0x03
 	jr	NZ, 00112$
-;gb-dtmf.c:418: set_bkg_tiles(14, 14, 6, 3, dialing_press);
+;gb-dtmf.c:415: set_bkg_tiles(14, 14, 6, 3, dialing_press);
 	ld	de, #_dialing_press
 	push	de
 	ld	hl, #0x306
@@ -3241,11 +1647,11 @@ _press_button::
 	call	_set_bkg_tiles
 	add	sp, #6
 00112$:
-;gb-dtmf.c:420: }
+;gb-dtmf.c:417: }
 	inc	sp
 	inc	sp
 	ret
-;gb-dtmf.c:422: void break_button(uint8_t x, uint8_t y)
+;gb-dtmf.c:419: void break_button(uint8_t x, uint8_t y)
 ;	---------------------------------
 ; Function break_button
 ; ---------------------------------
@@ -3254,7 +1660,7 @@ _break_button::
 	dec	sp
 	ld	b, a
 	ld	c, e
-;gb-dtmf.c:425: set_bkg_tiles(x * 3 + 1, y * 3 + 5, 3, 3, break_tile);
+;gb-dtmf.c:422: set_bkg_tiles(x * 3 + 1, y * 3 + 5, 3, 3, break_tile);
 	ld	a, c
 	ldhl	sp,	#1
 	ld	(hl), b
@@ -3271,13 +1677,13 @@ _break_button::
 	ld	a, (hl)
 	add	a, #0x05
 	ld	d, a
-;gb-dtmf.c:424: if(x <= 3 && y <= 3){
+;gb-dtmf.c:421: if(x <= 3 && y <= 3){
 	ld	a,#0x03
 	cp	a,b
 	jr	C, 00102$
 	sub	a, c
 	jr	C, 00102$
-;gb-dtmf.c:425: set_bkg_tiles(x * 3 + 1, y * 3 + 5, 3, 3, break_tile);
+;gb-dtmf.c:422: set_bkg_tiles(x * 3 + 1, y * 3 + 5, 3, 3, break_tile);
 	inc	hl
 	ld	a, (hl)
 	inc	a
@@ -3300,7 +1706,7 @@ _break_button::
 	add	sp, #6
 	pop	de
 00102$:
-;gb-dtmf.c:427: if((x == 4 || x == 5) && (y <= 2)){
+;gb-dtmf.c:424: if((x == 4 || x == 5) && (y <= 2)){
 	ld	a, b
 	sub	a, #0x04
 	ld	a, #0x01
@@ -3324,7 +1730,7 @@ _break_button::
 	ld	a, #0x02
 	sub	a, c
 	jr	C, 00105$
-;gb-dtmf.c:428: set_bkg_tiles(x * 3 + 2, y * 3 + 5, 3, 3, break_tile);
+;gb-dtmf.c:425: set_bkg_tiles(x * 3 + 2, y * 3 + 5, 3, 3, break_tile);
 	ldhl	sp,	#1
 	ld	a, (hl)
 	inc	a
@@ -3348,7 +1754,7 @@ _break_button::
 	add	sp, #6
 	pop	de
 00105$:
-;gb-dtmf.c:430: if((x == 4 || x == 5) && (y == 3)){
+;gb-dtmf.c:427: if((x == 4 || x == 5) && (y == 3)){
 	ld	a, e
 	or	a,a
 	jr	NZ, 00111$
@@ -3358,7 +1764,7 @@ _break_button::
 	ld	a, c
 	sub	a, #0x03
 	jr	NZ, 00112$
-;gb-dtmf.c:431: set_bkg_tiles(14, 14, 6, 3, dialing_break);
+;gb-dtmf.c:428: set_bkg_tiles(14, 14, 6, 3, dialing_break);
 	ld	de, #_dialing_break
 	push	de
 	ld	hl, #0x306
@@ -3368,27 +1774,27 @@ _break_button::
 	call	_set_bkg_tiles
 	add	sp, #6
 00112$:
-;gb-dtmf.c:433: }
+;gb-dtmf.c:430: }
 	inc	sp
 	inc	sp
 	ret
-;gb-dtmf.c:436: void init_key()
+;gb-dtmf.c:433: void init_key()
 ;	---------------------------------
 ; Function init_key
 ; ---------------------------------
 _init_key::
 	add	sp, #-3
-;gb-dtmf.c:441: set_sprite_data(0, 24, key_num);
+;gb-dtmf.c:438: set_sprite_data(0, 24, key_num);
 	ld	de, #_key_num
 	push	de
 	ld	hl, #0x1800
 	push	hl
 	call	_set_sprite_data
 	add	sp, #4
-;gb-dtmf.c:445: for(i = 1;i <= 3;i++){
+;gb-dtmf.c:442: for(i = 1;i <= 3;i++){
 	ld	c, #0x01
 00127$:
-;gb-dtmf.c:446: key_x = i * KEY_STEP;
+;gb-dtmf.c:443: key_x = i * KEY_STEP;
 	ld	a, c
 	add	a, a
 	add	a, c
@@ -3418,15 +1824,15 @@ _init_key::
 	ld	a, #0x40
 	ld	(hl+), a
 	ld	(hl), b
-;gb-dtmf.c:445: for(i = 1;i <= 3;i++){
+;gb-dtmf.c:442: for(i = 1;i <= 3;i++){
 	inc	c
 	ld	a, #0x03
 	sub	a, c
 	jr	NC, 00127$
-;gb-dtmf.c:453: for(i = 4;i <= 6;i++){
+;gb-dtmf.c:450: for(i = 4;i <= 6;i++){
 	ld	c, #0x04
 00129$:
-;gb-dtmf.c:454: key_x = (i - 3) * KEY_STEP;
+;gb-dtmf.c:451: key_x = (i - 3) * KEY_STEP;
 	ld	a, c
 	add	a, #0xfd
 	ld	e, a
@@ -3458,15 +1864,15 @@ _init_key::
 	ld	a, #0x58
 	ld	(hl+), a
 	ld	(hl), b
-;gb-dtmf.c:453: for(i = 4;i <= 6;i++){
+;gb-dtmf.c:450: for(i = 4;i <= 6;i++){
 	inc	c
 	ld	a, #0x06
 	sub	a, c
 	jr	NC, 00129$
-;gb-dtmf.c:461: for(i = 7;i <= 9;i++){
+;gb-dtmf.c:458: for(i = 7;i <= 9;i++){
 	ld	c, #0x07
 00131$:
-;gb-dtmf.c:462: key_x = (i - 6) * KEY_STEP;
+;gb-dtmf.c:459: key_x = (i - 6) * KEY_STEP;
 	ld	a, c
 	add	a, #0xfa
 	ld	e, a
@@ -3498,16 +1904,16 @@ _init_key::
 	ld	a, #0x70
 	ld	(hl+), a
 	ld	(hl), b
-;gb-dtmf.c:461: for(i = 7;i <= 9;i++){
+;gb-dtmf.c:458: for(i = 7;i <= 9;i++){
 	inc	c
 	ld	a, #0x09
 	sub	a, c
 	jr	NC, 00131$
-;gb-dtmf.c:469: for(i = 0;i <= 3;i++){
+;gb-dtmf.c:466: for(i = 0;i <= 3;i++){
 	ldhl	sp,	#2
 	ld	(hl), #0x00
 00133$:
-;gb-dtmf.c:470: key_y = (i+1) * KEY_STEP + 40;
+;gb-dtmf.c:467: key_y = (i+1) * KEY_STEP + 40;
 	ldhl	sp,	#2
 	ld	a, (hl-)
 	dec	hl
@@ -3520,7 +1926,7 @@ _init_key::
 	add	a, a
 	add	a, a
 	add	a, #0x28
-;gb-dtmf.c:471: set_sprite_tile(i+10, i+10);
+;gb-dtmf.c:468: set_sprite_tile(i+10, i+10);
 	ld	(hl+), a
 	ld	a, c
 	add	a, #0x0a
@@ -3544,7 +1950,7 @@ _init_key::
 	ldhl	sp,	#1
 	ld	a, (hl)
 	ld	(bc), a
-;gb-dtmf.c:472: move_sprite(i+10, key_x, key_y);
+;gb-dtmf.c:469: move_sprite(i+10, key_x, key_y);
 ;C:/gbdk/include/gb/gb.h:1675: OAM_item_t * itm = &shadow_OAM[nb];
 	ld	bc, #_shadow_OAM+0
 	ld	l, e
@@ -3560,7 +1966,7 @@ _init_key::
 	ld	b, h
 ;C:/gbdk/include/gb/gb.h:1676: itm->y=y, itm->x=x;
 	ldhl	sp,	#0
-;gb-dtmf.c:469: for(i = 0;i <= 3;i++){
+;gb-dtmf.c:466: for(i = 0;i <= 3;i++){
 	ld	a, (hl+)
 	inc	hl
 	ld	(bc), a
@@ -3598,11 +2004,11 @@ _init_key::
 	ld	a, #0x88
 	ld	(hl+), a
 	ld	(hl), #0x48
-;gb-dtmf.c:485: for(i = 0;i <= 2;i++){
+;gb-dtmf.c:482: for(i = 0;i <= 2;i++){
 	ldhl	sp,	#2
 	ld	(hl), #0x00
 00135$:
-;gb-dtmf.c:486: key_y = (i+1) * KEY_STEP + 40;
+;gb-dtmf.c:483: key_y = (i+1) * KEY_STEP + 40;
 	ldhl	sp,	#2
 	ld	a, (hl-)
 	dec	hl
@@ -3615,7 +2021,7 @@ _init_key::
 	add	a, a
 	add	a, a
 	add	a, #0x28
-;gb-dtmf.c:487: set_sprite_tile(i+16, i+16);
+;gb-dtmf.c:484: set_sprite_tile(i+16, i+16);
 	ld	(hl+), a
 	ld	a, c
 	add	a, #0x10
@@ -3639,7 +2045,7 @@ _init_key::
 	ldhl	sp,	#1
 	ld	a, (hl)
 	ld	(bc), a
-;gb-dtmf.c:488: move_sprite(i+16, key_x, key_y);
+;gb-dtmf.c:485: move_sprite(i+16, key_x, key_y);
 ;C:/gbdk/include/gb/gb.h:1675: OAM_item_t * itm = &shadow_OAM[nb];
 	ld	bc, #_shadow_OAM+0
 	ld	l, e
@@ -3655,7 +2061,7 @@ _init_key::
 	ld	b, h
 ;C:/gbdk/include/gb/gb.h:1676: itm->y=y, itm->x=x;
 	ldhl	sp,	#0
-;gb-dtmf.c:485: for(i = 0;i <= 2;i++){
+;gb-dtmf.c:482: for(i = 0;i <= 2;i++){
 	ld	a, (hl+)
 	inc	hl
 	ld	(bc), a
@@ -3666,10 +2072,10 @@ _init_key::
 	ld	a, #0x02
 	sub	a, (hl)
 	jr	NC, 00135$
-;gb-dtmf.c:493: for(i = 0;i <= 2;i++){
+;gb-dtmf.c:490: for(i = 0;i <= 2;i++){
 	ld	(hl), #0x00
 00137$:
-;gb-dtmf.c:494: key_y = (i+1) * KEY_STEP + 40;
+;gb-dtmf.c:491: key_y = (i+1) * KEY_STEP + 40;
 	ldhl	sp,	#2
 	ld	a, (hl-)
 	dec	hl
@@ -3682,7 +2088,7 @@ _init_key::
 	add	a, a
 	add	a, a
 	add	a, #0x28
-;gb-dtmf.c:495: set_sprite_tile(i+19, i+19);
+;gb-dtmf.c:492: set_sprite_tile(i+19, i+19);
 	ld	(hl+), a
 	ld	a, c
 	add	a, #0x13
@@ -3706,7 +2112,7 @@ _init_key::
 	ldhl	sp,	#1
 	ld	a, (hl)
 	ld	(bc), a
-;gb-dtmf.c:496: move_sprite(i+19, key_x, key_y);
+;gb-dtmf.c:493: move_sprite(i+19, key_x, key_y);
 ;C:/gbdk/include/gb/gb.h:1675: OAM_item_t * itm = &shadow_OAM[nb];
 	ld	bc, #_shadow_OAM+0
 	ld	l, e
@@ -3722,7 +2128,7 @@ _init_key::
 	ld	b, h
 ;C:/gbdk/include/gb/gb.h:1676: itm->y=y, itm->x=x;
 	ldhl	sp,	#0
-;gb-dtmf.c:493: for(i = 0;i <= 2;i++){
+;gb-dtmf.c:490: for(i = 0;i <= 2;i++){
 	ld	a, (hl+)
 	inc	hl
 	ld	(bc), a
@@ -3742,37 +2148,37 @@ _init_key::
 	ld	a, #0x88
 	ld	(hl+), a
 	ld	(hl), #0x8c
-;gb-dtmf.c:503: move_sprite(22, key_x, key_y);
-;gb-dtmf.c:504: }
+;gb-dtmf.c:500: move_sprite(22, key_x, key_y);
+;gb-dtmf.c:501: }
 	add	sp, #3
 	ret
-;gb-dtmf.c:506: void init_background()
+;gb-dtmf.c:503: void init_background()
 ;	---------------------------------
 ; Function init_background
 ; ---------------------------------
 _init_background::
-;gb-dtmf.c:509: set_bkg_data( 0, 9, frame_lcd);
+;gb-dtmf.c:506: set_bkg_data( 0, 9, frame_lcd);
 	ld	de, #_frame_lcd
 	push	de
 	ld	hl, #0x900
 	push	hl
 	call	_set_bkg_data
 	add	sp, #4
-;gb-dtmf.c:510: set_bkg_data( 9, 9, break_btn);
+;gb-dtmf.c:507: set_bkg_data( 9, 9, break_btn);
 	ld	de, #_break_btn
 	push	de
 	ld	hl, #0x909
 	push	hl
 	call	_set_bkg_data
 	add	sp, #4
-;gb-dtmf.c:511: set_bkg_data(18, 9, press_btn);
+;gb-dtmf.c:508: set_bkg_data(18, 9, press_btn);
 	ld	de, #_press_btn
 	push	de
 	ld	hl, #0x912
 	push	hl
 	call	_set_bkg_data
 	add	sp, #4
-;gb-dtmf.c:513: set_bkg_tiles(0, 0, 20, 18, dtmf_tile);
+;gb-dtmf.c:510: set_bkg_tiles(0, 0, 20, 18, dtmf_tile);
 	ld	de, #_dtmf_tile
 	push	de
 	ld	hl, #0x1214
@@ -3782,21 +2188,21 @@ _init_background::
 	push	af
 	call	_set_bkg_tiles
 	add	sp, #6
-;gb-dtmf.c:514: }
+;gb-dtmf.c:511: }
 	ret
-;gb-dtmf.c:516: void init_cursor()
+;gb-dtmf.c:513: void init_cursor()
 ;	---------------------------------
 ; Function init_cursor
 ; ---------------------------------
 _init_cursor::
-;gb-dtmf.c:521: set_sprite_data(23, 8, cursor_data);
+;gb-dtmf.c:518: set_sprite_data(23, 8, cursor_data);
 	ld	de, #_cursor_data
 	push	de
 	ld	hl, #0x817
 	push	hl
 	call	_set_sprite_data
 	add	sp, #4
-;gb-dtmf.c:523: for(i = 23;i <= 30;i++){
+;gb-dtmf.c:520: for(i = 23;i <= 30;i++){
 	ld	c, #0x17
 00103$:
 ;C:/gbdk/include/gb/gb.h:1602: shadow_OAM[nb].tile=tile;
@@ -3813,14 +2219,14 @@ _init_cursor::
 	inc	hl
 	inc	hl
 	ld	(hl), c
-;gb-dtmf.c:523: for(i = 23;i <= 30;i++){
+;gb-dtmf.c:520: for(i = 23;i <= 30;i++){
 	inc	c
 	ld	a, #0x1e
 	sub	a, c
 	jr	NC, 00103$
-;gb-dtmf.c:526: }
+;gb-dtmf.c:523: }
 	ret
-;gb-dtmf.c:528: void move_cursor(uint8_t x, uint8_t y)
+;gb-dtmf.c:525: void move_cursor(uint8_t x, uint8_t y)
 ;	---------------------------------
 ; Function move_cursor
 ; ---------------------------------
@@ -3833,7 +2239,7 @@ _move_cursor::
 	ld	a, e
 	ld	(hl+), a
 	ld	(hl), c
-;gb-dtmf.c:531: move_sprite(24, x, y+8);
+;gb-dtmf.c:528: move_sprite(24, x, y+8);
 	ld	a, e
 	add	a, #0x08
 	ldhl	sp,	#0
@@ -3844,7 +2250,7 @@ _move_cursor::
 	ld	hl, #(_shadow_OAM + 96)
 	ld	(hl+), a
 	ld	(hl), c
-;gb-dtmf.c:532: move_sprite(25, x+8, y);
+;gb-dtmf.c:529: move_sprite(25, x+8, y);
 	ld	a, c
 	add	a, #0x08
 	ld	c, a
@@ -3864,28 +2270,28 @@ _move_cursor::
 	inc	de
 	ld	a, c
 	ld	(de), a
-;gb-dtmf.c:533: move_sprite(26, x+8, y+8);
-;gb-dtmf.c:534: }
+;gb-dtmf.c:530: move_sprite(26, x+8, y+8);
+;gb-dtmf.c:531: }
 	inc	sp
 	ret
-;gb-dtmf.c:536: void main()
+;gb-dtmf.c:533: void main()
 ;	---------------------------------
 ; Function main
 ; ---------------------------------
 _main::
 	add	sp, #-59
-;gb-dtmf.c:539: uint8_t non_flick = OFF;
+;gb-dtmf.c:536: uint8_t non_flick = OFF;
 	ldhl	sp,	#40
-;gb-dtmf.c:546: key2 = 0;
+;gb-dtmf.c:543: key2 = 0;
 	xor	a, a
 	ld	(hl+), a
-;gb-dtmf.c:549: on_time = DTMF_ON;
+;gb-dtmf.c:546: on_time = DTMF_ON;
 	xor	a, a
 	ld	(hl+), a
 	ld	a, #0x64
 	ld	(hl+), a
 	xor	a, a
-;gb-dtmf.c:550: off_time = DTMF_OFF;
+;gb-dtmf.c:547: off_time = DTMF_OFF;
 	ld	(hl+), a
 	ld	a, #0x64
 	ld	(hl+), a
@@ -3893,58 +2299,58 @@ _main::
 	ld	(hl), a
 ;C:/gbdk/include/gb/gb.h:743: __asm__("di");
 	di
-;gb-dtmf.c:554: SPRITES_8x8;   /* sprites are 8x8 */
+;gb-dtmf.c:551: SPRITES_8x8;   /* sprites are 8x8 */
 	ldh	a, (_LCDC_REG + 0)
 	and	a, #0xfb
 	ldh	(_LCDC_REG + 0), a
-;gb-dtmf.c:556: init_dial();
+;gb-dtmf.c:553: init_dial();
 	call	_init_dial
-;gb-dtmf.c:558: init_background();
+;gb-dtmf.c:555: init_background();
 	call	_init_background
-;gb-dtmf.c:560: init_key();
+;gb-dtmf.c:557: init_key();
 	call	_init_key
-;gb-dtmf.c:562: init_cursor();
+;gb-dtmf.c:559: init_cursor();
 	call	_init_cursor
-;gb-dtmf.c:564: disp(TITLE);
+;gb-dtmf.c:561: disp(TITLE);
 	ld	de, #___str_0
 	call	_disp
-;gb-dtmf.c:566: SHOW_BKG;
+;gb-dtmf.c:563: SHOW_BKG;
 	ldh	a, (_LCDC_REG + 0)
 	or	a, #0x01
 	ldh	(_LCDC_REG + 0), a
-;gb-dtmf.c:567: SHOW_SPRITES;
+;gb-dtmf.c:564: SHOW_SPRITES;
 	ldh	a, (_LCDC_REG + 0)
 	or	a, #0x02
 	ldh	(_LCDC_REG + 0), a
-;gb-dtmf.c:568: DISPLAY_ON;
+;gb-dtmf.c:565: DISPLAY_ON;
 	ldh	a, (_LCDC_REG + 0)
 	or	a, #0x80
 	ldh	(_LCDC_REG + 0), a
 ;C:/gbdk/include/gb/gb.h:727: __asm__("ei");
 	ei
-;gb-dtmf.c:572: i = j = 0;
+;gb-dtmf.c:569: i = j = 0;
 	ldhl	sp,	#56
 	ld	(hl), #0x00
 	inc	hl
 	ld	(hl), #0x00
-;gb-dtmf.c:574: ch_pos = 0;
+;gb-dtmf.c:571: ch_pos = 0;
 	inc	hl
 	ld	(hl), #0x00
-;gb-dtmf.c:576: while(1) {
+;gb-dtmf.c:573: while(1) {
 00187$:
-;gb-dtmf.c:577: wait_vbl_done();
+;gb-dtmf.c:574: wait_vbl_done();
 	call	_wait_vbl_done
-;gb-dtmf.c:578: key1 = joypad();
+;gb-dtmf.c:575: key1 = joypad();
 	call	_joypad
 	ldhl	sp,	#46
 	ld	(hl), a
-;gb-dtmf.c:580: if(key1 != key2){
+;gb-dtmf.c:577: if(key1 != key2){
 	ldhl	sp,	#41
 	ld	a, (hl)
 	ldhl	sp,	#46
 	sub	a, (hl)
 	jr	Z, 00102$
-;gb-dtmf.c:581: pos_x = i * KEY_STEP + START_CURSOR_X;
+;gb-dtmf.c:578: pos_x = i * KEY_STEP + START_CURSOR_X;
 	ldhl	sp,	#57
 	ld	a, (hl-)
 	dec	hl
@@ -3955,7 +2361,7 @@ _main::
 	add	a, a
 	add	a, a
 	ld	(hl), a
-;gb-dtmf.c:582: pos_y = j * KEY_STEP + START_CURSOR_Y;
+;gb-dtmf.c:579: pos_y = j * KEY_STEP + START_CURSOR_Y;
 	ld	a, (hl+)
 	add	a, #0x18
 	ld	c, a
@@ -3968,17 +2374,17 @@ _main::
 	add	a, a
 	add	a, #0x48
 	ld	e, a
-;gb-dtmf.c:583: move_cursor(pos_x, pos_y);
+;gb-dtmf.c:580: move_cursor(pos_x, pos_y);
 	ld	a, c
 	call	_move_cursor
 00102$:
-;gb-dtmf.c:587: if(key1 & J_A){
+;gb-dtmf.c:584: if(key1 & J_A){
 	ldhl	sp,	#46
 	ld	a, (hl+)
 	and	a, #0x10
 	ld	(hl+), a
 	ld	(hl), #0x00
-;gb-dtmf.c:589: if(i <= 3 && j <= 3){
+;gb-dtmf.c:586: if(i <= 3 && j <= 3){
 	ld	a, #0x03
 	ldhl	sp,	#57
 	sub	a, (hl)
@@ -3993,7 +2399,7 @@ _main::
 	rla
 	ldhl	sp,	#50
 	ld	(hl), a
-;gb-dtmf.c:601: if(i == 5 && j == 0 && !non_flick){
+;gb-dtmf.c:598: if(i == 5 && j == 0 && !non_flick){
 	ldhl	sp,	#57
 	ld	a, (hl)
 	sub	a, #0x05
@@ -4003,7 +2409,7 @@ _main::
 00445$:
 	ldhl	sp,	#51
 	ld	(hl), a
-;gb-dtmf.c:609: if(i == 5 && (j == 1 || j == 2) && !non_flick){
+;gb-dtmf.c:606: if(i == 5 && (j == 1 || j == 2) && !non_flick){
 	ldhl	sp,	#56
 	ld	a, (hl)
 	dec	a
@@ -4022,18 +2428,18 @@ _main::
 00449$:
 	ldhl	sp,	#53
 	ld	(hl), a
-;gb-dtmf.c:586: if(key2 & J_A){
+;gb-dtmf.c:583: if(key2 & J_A){
 	push	hl
 	ldhl	sp,	#43
 	bit	4, (hl)
 	pop	hl
 	jp	Z,00164$
-;gb-dtmf.c:587: if(key1 & J_A){
+;gb-dtmf.c:584: if(key1 & J_A){
 	ldhl	sp,	#48
 	ld	a, (hl-)
 	or	a, (hl)
 	jp	Z, 00124$
-;gb-dtmf.c:589: if(i <= 3 && j <= 3){
+;gb-dtmf.c:586: if(i <= 3 && j <= 3){
 	inc	hl
 	inc	hl
 	bit	0, (hl)
@@ -4041,7 +2447,7 @@ _main::
 	inc	hl
 	bit	0, (hl)
 	jr	NZ, 00104$
-;gb-dtmf.c:591: NR13_REG = row[i];
+;gb-dtmf.c:588: NR13_REG = row[i];
 	ld	de, #_row
 	ldhl	sp,	#57
 	ld	l, (hl)
@@ -4057,7 +2463,7 @@ _main::
 	ld	(hl-), a
 	ld	a, (hl+)
 	ld	e, a
-;gb-dtmf.c:592: NR23_REG = col[j];
+;gb-dtmf.c:589: NR23_REG = col[j];
 	ld	a, (hl+)
 	ld	d, a
 	ld	a, (de)
@@ -4079,14 +2485,14 @@ _main::
 	ld	d, (hl)
 	ld	a, (de)
 	ldh	(_NR23_REG + 0), a
-;gb-dtmf.c:593: NR24_REG = 0x87U;
+;gb-dtmf.c:590: NR24_REG = 0x87U;
 	ld	a, #0x87
 	ldh	(_NR24_REG + 0), a
-;gb-dtmf.c:596: NR51_REG = 0x33U;
+;gb-dtmf.c:593: NR51_REG = 0x33U;
 	ld	a, #0x33
 	ldh	(_NR51_REG + 0), a
 00104$:
-;gb-dtmf.c:601: if(i == 5 && j == 0 && !non_flick){
+;gb-dtmf.c:598: if(i == 5 && j == 0 && !non_flick){
 	ldhl	sp,	#51
 	ld	a, (hl)
 	or	a, a
@@ -4099,14 +2505,14 @@ _main::
 	ld	a, (hl)
 	or	a, a
 	jr	NZ, 00107$
-;gb-dtmf.c:602: disp(TITLE);
+;gb-dtmf.c:599: disp(TITLE);
 	ld	de, #___str_0
 	call	_disp
-;gb-dtmf.c:603: non_flick = ON;
+;gb-dtmf.c:600: non_flick = ON;
 	ldhl	sp,	#40
 	ld	(hl), #0x01
 00107$:
-;gb-dtmf.c:609: if(i == 5 && (j == 1 || j == 2) && !non_flick){
+;gb-dtmf.c:606: if(i == 5 && (j == 1 || j == 2) && !non_flick){
 	ldhl	sp,	#51
 	ld	a, (hl)
 	or	a, a
@@ -4124,7 +2530,7 @@ _main::
 	ld	a, (hl)
 	or	a, a
 	jp	NZ, 00165$
-;gb-dtmf.c:610: sprintf(str_ms, "%u MS", on_time);
+;gb-dtmf.c:607: sprintf(str_ms, "%u MS", on_time);
 	inc	hl
 	inc	hl
 	ld	a, (hl+)
@@ -4138,27 +2544,27 @@ _main::
 	push	hl
 	call	_sprintf
 	add	sp, #6
-;gb-dtmf.c:611: disp(str_ms);
+;gb-dtmf.c:608: disp(str_ms);
 	ld	hl, #30
 	add	hl, sp
 	ld	e, l
 	ld	d, h
 	call	_disp
-;gb-dtmf.c:612: non_flick = ON;
+;gb-dtmf.c:609: non_flick = ON;
 	ldhl	sp,	#40
 	ld	(hl), #0x01
 	jp	00165$
 00124$:
-;gb-dtmf.c:617: NR51_REG = 0x00U;
+;gb-dtmf.c:614: NR51_REG = 0x00U;
 	xor	a, a
 	ldh	(_NR51_REG + 0), a
-;gb-dtmf.c:619: break_button(i, j);
+;gb-dtmf.c:616: break_button(i, j);
 	ldhl	sp,	#56
 	ld	a, (hl+)
 	ld	e, a
 	ld	a, (hl)
 	call	_break_button
-;gb-dtmf.c:625: if(i == 5 && (j == 0 || j == 1 || j == 2)){
+;gb-dtmf.c:622: if(i == 5 && (j == 0 || j == 1 || j == 2)){
 	ldhl	sp,	#51
 	ld	a, (hl)
 	or	a, a
@@ -4176,37 +2582,37 @@ _main::
 	or	a, a
 	jp	Z, 00165$
 00118$:
-;gb-dtmf.c:626: non_flick = OFF;
+;gb-dtmf.c:623: non_flick = OFF;
 	ldhl	sp,	#40
 	ld	(hl), #0x00
-;gb-dtmf.c:627: if(ch_pos == 0)
+;gb-dtmf.c:624: if(ch_pos == 0)
 	ldhl	sp,	#58
 	ld	a, (hl)
 	or	a, a
 	jr	NZ, 00116$
-;gb-dtmf.c:628: clr_disp();
+;gb-dtmf.c:625: clr_disp();
 	call	_clr_disp
 	jp	00165$
 00116$:
-;gb-dtmf.c:630: disp(str);
+;gb-dtmf.c:627: disp(str);
 	ldhl	sp,	#0
 	ld	e, l
 	ld	d, h
 	call	_disp
 	jp	00165$
 00164$:
-;gb-dtmf.c:635: if(key1 & J_A){
+;gb-dtmf.c:632: if(key1 & J_A){
 	ldhl	sp,	#48
 	ld	a, (hl-)
 	or	a, (hl)
 	jp	Z, 00165$
-;gb-dtmf.c:637: press_button(i, j);
+;gb-dtmf.c:634: press_button(i, j);
 	ldhl	sp,	#56
 	ld	a, (hl+)
 	ld	e, a
 	ld	a, (hl)
 	call	_press_button
-;gb-dtmf.c:643: str[ch_pos] = pad[j][i];
+;gb-dtmf.c:640: str[ch_pos] = pad[j][i];
 	ldhl	sp,	#56
 	ld	c, (hl)
 	ld	b, #0x00
@@ -4223,19 +2629,19 @@ _main::
 	ld	a, h
 	ldhl	sp,	#55
 	ld	(hl), a
-;gb-dtmf.c:640: if(i <= 3 && j <= 3){
+;gb-dtmf.c:637: if(i <= 3 && j <= 3){
 	ldhl	sp,	#49
 	bit	0, (hl)
 	jr	NZ, 00129$
 	inc	hl
 	bit	0, (hl)
 	jr	NZ, 00129$
-;gb-dtmf.c:642: if(ch_pos < MAX_DTMF-1){
+;gb-dtmf.c:639: if(ch_pos < MAX_DTMF-1){
 	ldhl	sp,	#58
 	ld	a, (hl)
 	sub	a, #0x1d
 	jr	NC, 00129$
-;gb-dtmf.c:643: str[ch_pos] = pad[j][i];
+;gb-dtmf.c:640: str[ch_pos] = pad[j][i];
 	ldhl	sp,	#0
 	ld	c, l
 	ld	b, h
@@ -4273,10 +2679,10 @@ _main::
 	ld	l, a
 	pop	af
 	ld	(hl), a
-;gb-dtmf.c:644: ch_pos++;
+;gb-dtmf.c:641: ch_pos++;
 	ldhl	sp,	#58
 	inc	(hl)
-;gb-dtmf.c:645: str[ch_pos] = 0x00;
+;gb-dtmf.c:642: str[ch_pos] = 0x00;
 	ld	l, (hl)
 	ld	h, #0x00
 	add	hl, bc
@@ -4284,12 +2690,12 @@ _main::
 	ld	d, h
 	xor	a, a
 	ld	(de), a
-;gb-dtmf.c:646: disp(str);
+;gb-dtmf.c:643: disp(str);
 	ld	e, c
 	ld	d, b
 	call	_disp
 00129$:
-;gb-dtmf.c:651: if(i == 4 && j == 2){
+;gb-dtmf.c:648: if(i == 4 && j == 2){
 	ldhl	sp,	#57
 	ld	a, (hl)
 	sub	a, #0x04
@@ -4304,12 +2710,12 @@ _main::
 	ld	a, (hl)
 	or	a, a
 	jr	Z, 00134$
-;gb-dtmf.c:653: if(ch_pos < MAX_DTMF-1){
+;gb-dtmf.c:650: if(ch_pos < MAX_DTMF-1){
 	ldhl	sp,	#58
 	ld	a, (hl)
 	sub	a, #0x1d
 	jr	NC, 00134$
-;gb-dtmf.c:654: str[ch_pos] = pad[j][i];
+;gb-dtmf.c:651: str[ch_pos] = pad[j][i];
 	push	hl
 	ld	hl, #2
 	add	hl, sp
@@ -4349,10 +2755,10 @@ _main::
 	ld	h, (hl)
 	ld	l, a
 	ld	(hl), c
-;gb-dtmf.c:655: ch_pos++;
+;gb-dtmf.c:652: ch_pos++;
 	ldhl	sp,	#58
 	inc	(hl)
-;gb-dtmf.c:656: str[ch_pos] = 0x00;
+;gb-dtmf.c:653: str[ch_pos] = 0x00;
 	push	hl
 	ld	hl, #2
 	add	hl, sp
@@ -4367,7 +2773,7 @@ _main::
 	ld	d, h
 	xor	a, a
 	ld	(de), a
-;gb-dtmf.c:657: disp(str);
+;gb-dtmf.c:654: disp(str);
 	push	bc
 	ld	hl, #2
 	add	hl, sp
@@ -4376,7 +2782,7 @@ _main::
 	call	_disp
 	pop	bc
 00134$:
-;gb-dtmf.c:662: if(i == 4 && j == 0){
+;gb-dtmf.c:659: if(i == 4 && j == 0){
 	ld	a, b
 	or	a, a
 	jr	Z, 00137$
@@ -4384,11 +2790,11 @@ _main::
 	ld	a, (hl)
 	or	a, a
 	jr	NZ, 00137$
-;gb-dtmf.c:663: ch_pos = 0x00;
+;gb-dtmf.c:660: ch_pos = 0x00;
 	inc	hl
 	inc	hl
 	ld	(hl), #0x00
-;gb-dtmf.c:664: strcpy(str,"");
+;gb-dtmf.c:661: strcpy(str,"");
 	ldhl	sp,	#0
 	ld	e, l
 	ld	d, h
@@ -4397,12 +2803,12 @@ _main::
 	push	de
 	call	_strcpy
 	add	sp, #4
-;gb-dtmf.c:665: clr_disp();
+;gb-dtmf.c:662: clr_disp();
 	push	bc
 	call	_clr_disp
 	pop	bc
 00137$:
-;gb-dtmf.c:669: if(i == 4 && j == 1){
+;gb-dtmf.c:666: if(i == 4 && j == 1){
 	ld	a, b
 	or	a, a
 	jr	Z, 00145$
@@ -4410,14 +2816,14 @@ _main::
 	ld	a, (hl)
 	or	a, a
 	jr	Z, 00145$
-;gb-dtmf.c:670: if(ch_pos > 0){
+;gb-dtmf.c:667: if(ch_pos > 0){
 	ldhl	sp,	#58
 	ld	a, (hl)
 	or	a, a
 	jr	Z, 00145$
-;gb-dtmf.c:671: ch_pos--;
+;gb-dtmf.c:668: ch_pos--;
 	dec	(hl)
-;gb-dtmf.c:672: str[ch_pos] = 0x00;
+;gb-dtmf.c:669: str[ch_pos] = 0x00;
 	push	hl
 	ld	hl, #2
 	add	hl, sp
@@ -4432,18 +2838,18 @@ _main::
 	ld	d, h
 	xor	a, a
 	ld	(de), a
-;gb-dtmf.c:673: if(ch_pos == 0)
+;gb-dtmf.c:670: if(ch_pos == 0)
 	ldhl	sp,	#58
 	ld	a, (hl)
 	or	a, a
 	jr	NZ, 00140$
-;gb-dtmf.c:674: clr_disp();
+;gb-dtmf.c:671: clr_disp();
 	push	bc
 	call	_clr_disp
 	pop	bc
 	jr	00145$
 00140$:
-;gb-dtmf.c:676: disp(str);
+;gb-dtmf.c:673: disp(str);
 	push	bc
 	ld	hl, #2
 	add	hl, sp
@@ -4452,7 +2858,7 @@ _main::
 	call	_disp
 	pop	bc
 00145$:
-;gb-dtmf.c:681: if(i == 5 && j == 1){
+;gb-dtmf.c:678: if(i == 5 && j == 1){
 	ldhl	sp,	#51
 	ld	a, (hl)
 	or	a, a
@@ -4461,14 +2867,14 @@ _main::
 	ld	a, (hl)
 	or	a, a
 	jr	Z, 00150$
-;gb-dtmf.c:682: if(on_time >= DTMF_ON / 2){
+;gb-dtmf.c:679: if(on_time >= DTMF_ON / 2){
 	ldhl	sp,	#42
 	ld	a, (hl+)
 	sub	a, #0x32
 	ld	a, (hl)
 	sbc	a, #0x00
 	jr	C, 00150$
-;gb-dtmf.c:683: on_time = on_time - 10;
+;gb-dtmf.c:680: on_time = on_time - 10;
 	dec	hl
 	ld	a, (hl+)
 	ld	e, (hl)
@@ -4479,7 +2885,7 @@ _main::
 	adc	a, #0xff
 	ld	(hl), c
 	inc	hl
-;gb-dtmf.c:684: off_time = off_time - 10;
+;gb-dtmf.c:681: off_time = off_time - 10;
 	ld	(hl+), a
 	ld	a, (hl+)
 	ld	e, (hl)
@@ -4492,7 +2898,7 @@ _main::
 	inc	hl
 	ld	(hl), a
 00150$:
-;gb-dtmf.c:689: if(i == 5 && j == 2){
+;gb-dtmf.c:686: if(i == 5 && j == 2){
 	ldhl	sp,	#51
 	ld	a, (hl)
 	or	a, a
@@ -4502,7 +2908,7 @@ _main::
 	ld	a, (hl)
 	or	a, a
 	jr	Z, 00155$
-;gb-dtmf.c:690: if(on_time <= DTMF_ON * 2){
+;gb-dtmf.c:687: if(on_time <= DTMF_ON * 2){
 	ldhl	sp,	#42
 	ld	a, #0xc8
 	sub	a, (hl)
@@ -4510,7 +2916,7 @@ _main::
 	ld	a, #0x00
 	sbc	a, (hl)
 	jr	C, 00155$
-;gb-dtmf.c:691: on_time = on_time + 10;
+;gb-dtmf.c:688: on_time = on_time + 10;
 	ldhl	sp,	#42
 	ld	a, (hl+)
 	ld	e, (hl)
@@ -4521,7 +2927,7 @@ _main::
 	adc	a, #0x00
 	ld	(hl), c
 	inc	hl
-;gb-dtmf.c:692: off_time = off_time + 10;
+;gb-dtmf.c:689: off_time = off_time + 10;
 	ld	(hl+), a
 	ld	a, (hl+)
 	ld	e, (hl)
@@ -4534,7 +2940,7 @@ _main::
 	inc	hl
 	ld	(hl), a
 00155$:
-;gb-dtmf.c:697: if((i==4 || i==5) && j==3){
+;gb-dtmf.c:694: if((i==4 || i==5) && j==3){
 	ld	a, b
 	or	a, a
 	jr	NZ, 00160$
@@ -4547,7 +2953,7 @@ _main::
 	ld	a, (hl)
 	sub	a, #0x03
 	jr	NZ, 00165$
-;gb-dtmf.c:698: dialtone(on_time, off_time, str);
+;gb-dtmf.c:695: dialtone(on_time, off_time, str);
 	ld	hl, #0
 	add	hl, sp
 	push	hl
@@ -4561,12 +2967,12 @@ _main::
 	ld	d, (hl)
 	call	_dialtone
 00165$:
-;gb-dtmf.c:702: if(!(key1 & J_A)){
+;gb-dtmf.c:699: if(!(key1 & J_A)){
 	ldhl	sp,	#48
 	ld	a, (hl-)
 	or	a, (hl)
 	jr	NZ, 00185$
-;gb-dtmf.c:703: if((key1 & J_UP) && !(key2 & J_UP) && j > 0)
+;gb-dtmf.c:700: if((key1 & J_UP) && !(key2 & J_UP) && j > 0)
 	push	hl
 	dec	hl
 	bit	2, (hl)
@@ -4581,11 +2987,11 @@ _main::
 	ld	a, (hl)
 	or	a, a
 	jr	Z, 00171$
-;gb-dtmf.c:704: j--;
+;gb-dtmf.c:701: j--;
 	dec	(hl)
 	jr	00172$
 00171$:
-;gb-dtmf.c:705: else if((key1 & J_DOWN) && !(key2 & J_DOWN) && j < 3)
+;gb-dtmf.c:702: else if((key1 & J_DOWN) && !(key2 & J_DOWN) && j < 3)
 	push	hl
 	ldhl	sp,	#48
 	bit	3, (hl)
@@ -4600,10 +3006,10 @@ _main::
 	ld	a, (hl)
 	sub	a, #0x03
 	jr	NC, 00172$
-;gb-dtmf.c:706: j++;
+;gb-dtmf.c:703: j++;
 	inc	(hl)
 00172$:
-;gb-dtmf.c:708: if((key1 & J_LEFT) && !(key2 & J_LEFT) && i > 0)
+;gb-dtmf.c:705: if((key1 & J_LEFT) && !(key2 & J_LEFT) && i > 0)
 	push	hl
 	ldhl	sp,	#48
 	bit	1, (hl)
@@ -4618,11 +3024,11 @@ _main::
 	ld	a, (hl)
 	or	a, a
 	jr	Z, 00180$
-;gb-dtmf.c:709: i--;
+;gb-dtmf.c:706: i--;
 	dec	(hl)
 	jr	00185$
 00180$:
-;gb-dtmf.c:710: else if((key1 & J_RIGHT) && !(key2 & J_RIGHT) && i < 5)
+;gb-dtmf.c:707: else if((key1 & J_RIGHT) && !(key2 & J_RIGHT) && i < 5)
 	push	hl
 	ldhl	sp,	#48
 	bit	0, (hl)
@@ -4637,16 +3043,16 @@ _main::
 	ld	a, (hl)
 	sub	a, #0x05
 	jr	NC, 00185$
-;gb-dtmf.c:711: i++;
+;gb-dtmf.c:708: i++;
 	inc	(hl)
 00185$:
-;gb-dtmf.c:713: key2 = key1;
+;gb-dtmf.c:710: key2 = key1;
 	ldhl	sp,	#46
 	ld	a, (hl)
 	ldhl	sp,	#41
 	ld	(hl), a
 	jp	00187$
-;gb-dtmf.c:715: }
+;gb-dtmf.c:712: }
 	add	sp, #59
 	ret
 ___str_0:
