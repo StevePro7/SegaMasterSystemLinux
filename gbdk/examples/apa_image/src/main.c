@@ -1,8 +1,10 @@
 #include <gbdk/platform.h>
+#include <gb/cgb.h>
 #include <gb/drawing.h>
+#include <gb/gb.h>
 #include <stdint.h>
 
-#include <res/scenery.h>
+#include "../obj/res/scenery.h"
 
 
 #define CGB_BKG_PAL_0 0u
