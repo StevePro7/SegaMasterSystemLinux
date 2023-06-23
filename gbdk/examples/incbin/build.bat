@@ -8,11 +8,8 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 
 :: Automatically generated from Makefile
 ::mkdir -p obj
-::mkdir -p res
-%GBDK_WIN%/bin/lcc -Wl-yt1 -Wl-yo4 -c -o obj/sample_player.o src/sample_player.c
-%GBDK_WIN%/bin/lcc -Wl-yt1 -Wl-yo4 -c -o obj/samples_bank2.o src/samples_bank2.c
-%GBDK_WIN%/bin/lcc -Wl-yt1 -Wl-yo4 -c -o obj/samples_bank3.o src/samples_bank3.c
-%GBDK_WIN%/bin/lcc -Wl-yt1 -Wl-yo4 -o output.gb obj/sample_player.o obj/samples_bank2.o obj/samples_bank3.o obj/samptest.o 
+%GBDK_WIN%/bin/lcc -Wl-yt1 -Wl-yo4 -c -o obj/main.o src/main.c
+%GBDK_WIN%/bin/lcc -Wl-yt1 -Wl-yo4 -o output.gb obj/main.o
 
 
 :: Time build -END-
