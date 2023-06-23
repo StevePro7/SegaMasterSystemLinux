@@ -15,7 +15,6 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 %GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o key_num.o key_num.c
 %GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o prs_btn.o prs_btn.c
 %GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -o output.gb gb-dtmf.o brk_btn.o cursor.o dtmf_lcd.o frm_lcd.o key_num.o prs_btn.o
-::%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -o output.gb gb-dtmf.o
 
 :: Time build -END-
 set _time=%time: =0%

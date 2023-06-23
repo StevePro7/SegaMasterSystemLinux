@@ -13,8 +13,6 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 %GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o bkg_m.o bkg_m.c
 %GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o fore.o fore.c
 %GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -o output.gb dscan.o bkg.o bkg_c.o bkg_m.o fore.o
-::%GBDK_WIN%/bin/lcc -Wm-yc -c -o dscan.o dscan.c
-::%GBDK_WIN%/bin/lcc -Wm-yc -o output.gb dscan.o
 
 :: Time build -END-
 set _time=%time: =0%
