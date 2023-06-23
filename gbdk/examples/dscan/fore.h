@@ -1,3 +1,7 @@
+#ifndef _FORE_H_
+#define _FORE_H_
+
+
 /*
 
  FORE.H
@@ -97,9 +101,10 @@
 #define foreCGBPal7c1 25368
 #define foreCGBPal7c2 19026
 #define foreCGBPal7c3 0
+
 /* CGBpalette entries. */
 extern const unsigned char foreCGB[];
 /* Start of tile array. */
 extern const unsigned char fore[];
 
-/* End of FORE.H */
+#endif//_FORE_H_

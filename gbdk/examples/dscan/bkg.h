@@ -1,3 +1,6 @@
+#ifndef _BKG_H_
+#define _BKG_H_
+
 /*
 
  BKG.H
@@ -97,9 +100,10 @@
 #define bkgCGBPal7c1 32736
 #define bkgCGBPal7c2 0
 #define bkgCGBPal7c3 31744
+
 /* CGBpalette entries. */
 extern const unsigned char bkgCGB[];
 /* Start of tile array. */
 extern const unsigned char bkg[];
 
-/* End of BKG.H */
+#endif//_BKG_H_

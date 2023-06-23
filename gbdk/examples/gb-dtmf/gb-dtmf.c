@@ -11,7 +11,7 @@
 
 /* BG data */
 #include "frm_lcd.c"	/* Back ground pattern */
-#include "brk_btn.c"	/* button image when broken */
+#include "brk_btn.h"	/* button image when broken */
 #include "prs_btn.c"	/* button image when pressed */
 
 #include "dtmf_lcd.c"	/* LCD characters */

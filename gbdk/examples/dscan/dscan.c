@@ -12,11 +12,13 @@
 
 /* bitmaps */
 #include "bkg.h"
-#include "bkg.c"
-#include "bkg_m.c"
-#include "bkg_c.c"
+//#include "bkg.c"
+#include "bkg_c.h"
+//#include "bkg_c.c"
+#include "bkg_m.h"
+//#include "bkg_m.c"
 #include "fore.h"
-#include "fore.c"
+//#include "fore.c"
 
 /* ************************************************************ */
 

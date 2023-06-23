@@ -7,14 +7,14 @@ set /a _hours=100%_time:~0,2%%%100,_min=100%_time:~3,2%%%100,_sec=100%_time:~6,2
 set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 
 :: Automatically generated from Makefile
-::%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o dscan.o dscan.c
-::%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o bkg.o bkg.c
-::%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o bkg_c.o bkg_c.c
-::%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o bkg_m.o bkg_m.c
-::%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o fore.o fore.c
-::%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -o output.gb dscan.o bkg.o bkg_c.o bkg_m.o fore.o
-%GBDK_WIN%/bin/lcc -Wm-yc -c -o dscan.o dscan.c
-%GBDK_WIN%/bin/lcc -Wm-yc -o dscan.gb dscan.o
+%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o dscan.o dscan.c
+%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o bkg.o bkg.c
+%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o bkg_c.o bkg_c.c
+%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o bkg_m.o bkg_m.c
+%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o fore.o fore.c
+%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -o output.gb dscan.o bkg.o bkg_c.o bkg_m.o fore.o
+::%GBDK_WIN%/bin/lcc -Wm-yc -c -o dscan.o dscan.c
+::%GBDK_WIN%/bin/lcc -Wm-yc -o output.gb dscan.o
 
 :: Time build -END-
 set _time=%time: =0%
