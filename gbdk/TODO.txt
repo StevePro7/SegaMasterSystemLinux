@@ -17,6 +17,17 @@ if so then prefer the other #include
 #include <asm/sm83/types.h>
 
 
+UINT8
+$ find -L -type f -name '*.c' -exec grep -HnI 'UINT8' {} \;
+./simple_physics/phys.c:12:UINT8 sprite_data[] = {
+./simple_physics/phys.c:25:UINT8 Jump;
+./wav_sample/src/sample_player.c:3:UINT8 play_bank = 1;
+./wav_sample/src/sample_player.c:4:const UINT8 * play_sample = 0;
+./wav_sample/src/sample_player.c:65:void set_sample(UINT8 bank, const UINT8 * sample, UINT16 length) __critical {
+./wav_sample/src/samptest.c:27:        UINT8 j = joypad();
+
+
+
 examples
 retest
 
