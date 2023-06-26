@@ -1,6 +1,6 @@
 #include <gb/gb.h>
-#include "simplebackground.c"
-#include "simplebackgroundmap.c"
+#include "simplebackground.h"
+#include "simplebackgroundmap.h"
 
 void main(){
     set_bkg_data(0, 7, backgroundtiles);
