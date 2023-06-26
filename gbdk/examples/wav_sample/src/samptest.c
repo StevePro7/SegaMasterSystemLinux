@@ -1,8 +1,8 @@
 #include <gb/gb.h>
 #include <stdio.h>
+#include <asm/sm83/types.h>
 
 #include "sample_player.h"
-
 #include "samples_bank2.h"
 #include "samples_bank3.h" 
 

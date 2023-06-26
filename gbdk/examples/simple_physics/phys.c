@@ -1,5 +1,6 @@
 #include <gb/gb.h>
 #include <gb/sgb.h>
+#include <asm/sm83/types.h>
 
 #include <stdio.h>
 
