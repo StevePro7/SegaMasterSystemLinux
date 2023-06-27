@@ -10,7 +10,8 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 %GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o main.o main.c
 %GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o simplebackground.o simplebackground.c
 %GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o simplebackgroundmap.o simplebackgroundmap.c
-%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -o output.gb main.o simplebackground.o simplebackgroundmap.o
+%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o windowmap.o windowmap.c
+%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -o output.gb main.o simplebackground.o simplebackgroundmap.o windowmap.o
 
 :: Time build -END-
 set _time=%time: =0%

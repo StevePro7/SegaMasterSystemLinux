@@ -1,8 +1,8 @@
 #include <gb/gb.h>
-#include "simplebackground.c"
-#include "simplebackgroundmap.c"
-#include "windowmap.c"
-#include <gb/font.h>
+#include <gbdk/font.h>
+#include "simplebackground.h"
+#include "simplebackgroundmap.h"
+#include "windowmap.h"
 
 void interruptLCD(){
     HIDE_WIN;
