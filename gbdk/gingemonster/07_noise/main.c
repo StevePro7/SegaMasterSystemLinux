@@ -10,7 +10,7 @@ void main(){
 
 	while(1) {
 		UBYTE joypad_state = joypad();
-        
+		
 		if(joypad_state) {   
 			// bit 5-0 Sound length
 			// 0001 1111 is 0x1F the maximum length

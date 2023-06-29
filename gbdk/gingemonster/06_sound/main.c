@@ -10,7 +10,7 @@ void main(){
 
 	while(1) {
 		UBYTE joypad_state = joypad();
-        
+		
 		if(joypad_state) {   
 			// see https://github.com/bwhitman/pushpin/blob/master/src/gbsound.txt
 			// chanel 1 register 0, Frequency sweep settings
