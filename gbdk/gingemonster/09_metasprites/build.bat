@@ -8,7 +8,9 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 
 :: Automatically generated from Makefile
 %GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o main.o main.c
-%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -o output.gb main.o
+%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o GameCharacter.o GameCharacter.c
+%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o GameSprites.o GameSprites.c
+%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -o output.gb main.o GameCharacter.o GameSprites.o
 
 :: Time build -END-
 set _time=%time: =0%

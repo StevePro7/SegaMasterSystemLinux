@@ -1,7 +1,7 @@
 #include <gb/gb.h>
 #include <stdio.h>
-#include "GameCharacter.c"
-#include "GameSprites.c"
+#include "GameCharacter.h"
+#include "GameSprites.h"
 
 struct GameCharacter ship;
 struct GameCharacter bug;
