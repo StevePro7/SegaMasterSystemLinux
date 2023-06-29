@@ -1,10 +1,10 @@
 #include <gb/gb.h>
 #include <stdio.h>
-#include "GameCharacter.h"
-#include "GameSprites.h"
+#include "GameCharacter.c"
+#include "GameSprites.c"
 
-struct GameCharacter ship;
-struct GameCharacter bug;
+GameCharacter ship;
+GameCharacter bug;
 UBYTE spritesize = 8;
 
 void performantdelay(UINT8 numloops){
@@ -14,7 +14,11 @@ void performantdelay(UINT8 numloops){
     }     
 }
 
-void movegamecharacter(struct GameCharacter* character, UINT8 x, UINT8 y){
+UBYTE checkcollisions(GameCharacter* one, GameCharacter* two){
+    return (one->x >= two->x && one->x <= two->x + two->width) && (one->y >= two->y && one->y <= two->y + two->height) || (two->x >= one->x && two->x <= one->x + one->width) && (two->y >= one->y && two->y <= one->y + one->height);
+}
+
+void movegamecharacter(GameCharacter* character, UINT8 x, UINT8 y){
     move_sprite(character->spritids[0], x, y);
     move_sprite(character->spritids[1], x + spritesize, y);
     move_sprite(character->spritids[2], x, y + spritesize);
@@ -67,7 +71,7 @@ void main(){
     SHOW_SPRITES;
     DISPLAY_ON;
 
-    while(1){
+    while(!checkcollisions(&ship, &bug)){
        if(joypad() & J_LEFT){
            ship.x -= 2;
            movegamecharacter(&ship, ship.x, ship.y);
@@ -88,4 +92,6 @@ void main(){
 
        performantdelay(5);      
     }
+
+    printf("\n \n \n \n \n \n \n === GAME  OVER ===");
 }
