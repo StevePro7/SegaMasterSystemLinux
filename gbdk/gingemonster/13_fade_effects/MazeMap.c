@@ -18,9 +18,9 @@
 
 */
 
-#define MazeMapWidth 20
-#define MazeMapHeight 18
-#define MazeMapBank 0
+//#define MazeMapWidth 20
+//#define MazeMapHeight 18
+//#define MazeMapBank 0
 
 unsigned char MazeMap[] =
 {

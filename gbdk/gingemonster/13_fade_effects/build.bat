@@ -10,7 +10,9 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 %GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o main.o main.c
 %GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o mario_data.o mario_data.c
 %GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o mario_map.o mario_map.c
-%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -o output.gb main.o mario_data.o mario_map.o
+%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o MazeMap.o MazeMap.c
+%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o MazeSprites.o MazeSprites.c
+%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -o output.gb main.o mario_data.o mario_map.o MazeMap.o MazeSprites.o
 
 :: Time build -END-
 set _time=%time: =0%
