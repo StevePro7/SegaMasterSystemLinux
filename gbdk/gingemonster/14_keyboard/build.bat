@@ -8,11 +8,11 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 
 :: Automatically generated from Makefile
 %GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o main.o main.c
-%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o mario_data.o mario_data.c
-%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o mario_map.o mario_map.c
-%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o MazeMap.o MazeMap.c
-%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o MazeSprites.o MazeSprites.c
-%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -o output.gb main.o mario_data.o mario_map.o MazeMap.o MazeSprites.o
+%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o cursor.o cursor.c
+%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o keyboarddata.o keyboarddata.c
+%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o keyboardmap.o keyboardmap.c
+%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o sprites.o sprites.c
+%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -o output.gb main.o cursor.o keyboarddata.o keyboardmap.o sprites.o
 
 :: Time build -END-
 set _time=%time: =0%
