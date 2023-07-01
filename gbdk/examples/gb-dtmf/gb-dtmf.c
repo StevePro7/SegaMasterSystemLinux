@@ -182,179 +182,179 @@ void init_dial()
 }
 
 /* sound engine for DTMF */
-void dialtone(uint16_t dtmf_on, uint16_t dtmf_off, char str[20])
+void dialtone( uint16_t dtmf_on, uint16_t dtmf_off, char str[ 20 ] )
 {
 	uint8_t i = 0;
 
-	while(str[i]){
-		switch(str[i]){
-		    case '1':
-			  NR13_REG = R1;
-			  NR23_REG = C1;
-			  break;
-		    case '2':
-			  NR13_REG = R1;
-			  NR23_REG = C2;
-			  break;
-		    case '3':
-			  NR13_REG = R1;
-			  NR23_REG = C3;
-			  break;
-		    case 'A':
-		    case 'a':
-			  NR13_REG = R1;
-			  NR23_REG = C4;
-			  break;
-		    case '4':
-			  NR13_REG = R2;
-			  NR23_REG = C1;
-			  break;
-		    case '5':
-			  NR13_REG = R2;
-			  NR23_REG = C2;
-			  break;
-		    case '6':
-			  NR13_REG = R2;
-			  NR23_REG = C3;
-			  break;
-			case 'B':
-			case 'b':
-			  NR13_REG = R2;
-			  NR23_REG = C4;
-			  break;
-			case '7':
-			  NR13_REG = R3;
-			  NR23_REG = C1;
-			  break;
-			case '8':
-			  NR13_REG = R3;
-			  NR23_REG = C2;
-			  break;
-			case '9':
-			  NR13_REG = R3;
-			  NR23_REG = C3;
-			  break;
-			case 'C':
-			case 'c':
-			  NR13_REG = R3;
-			  NR23_REG = C4;
-			  break;
-			case '*':
-			  NR13_REG = R4;
-			  NR23_REG = C1;
-			  break;
-			case '0':
-			  NR13_REG = R4;
-			  NR23_REG = C2;
-			  break;
-			case '#':
-			  NR13_REG = R4;
-			  NR23_REG = C3;
-			  break;
-			case 'D':
-			case 'd':
-			  NR13_REG = R4;
-			  NR23_REG = C4;
-			  break;
-			case ',':
-			  delay(dtmf_on);	/* keep on */
-			  delay(dtmf_off);	/* keep off */
+	while( str[ i ] ) {
+		switch( str[ i ] ) {
+		case '1':
+			NR13_REG = R1;
+			NR23_REG = C1;
+			break;
+		case '2':
+			NR13_REG = R1;
+			NR23_REG = C2;
+			break;
+		case '3':
+			NR13_REG = R1;
+			NR23_REG = C3;
+			break;
+		case 'A':
+		case 'a':
+			NR13_REG = R1;
+			NR23_REG = C4;
+			break;
+		case '4':
+			NR13_REG = R2;
+			NR23_REG = C1;
+			break;
+		case '5':
+			NR13_REG = R2;
+			NR23_REG = C2;
+			break;
+		case '6':
+			NR13_REG = R2;
+			NR23_REG = C3;
+			break;
+		case 'B':
+		case 'b':
+			NR13_REG = R2;
+			NR23_REG = C4;
+			break;
+		case '7':
+			NR13_REG = R3;
+			NR23_REG = C1;
+			break;
+		case '8':
+			NR13_REG = R3;
+			NR23_REG = C2;
+			break;
+		case '9':
+			NR13_REG = R3;
+			NR23_REG = C3;
+			break;
+		case 'C':
+		case 'c':
+			NR13_REG = R3;
+			NR23_REG = C4;
+			break;
+		case '*':
+			NR13_REG = R4;
+			NR23_REG = C1;
+			break;
+		case '0':
+			NR13_REG = R4;
+			NR23_REG = C2;
+			break;
+		case '#':
+			NR13_REG = R4;
+			NR23_REG = C3;
+			break;
+		case 'D':
+		case 'd':
+			NR13_REG = R4;
+			NR23_REG = C4;
+			break;
+		case ',':
+			delay( dtmf_on );	/* keep on */
+			delay( dtmf_off );	/* keep off */
 
-			default:
-			  NR51_REG = 0x00U;	/* sound off */
-			  goto skip;
+		default:
+			NR51_REG = 0x00U;	/* sound off */
+			goto skip;
 
-		  }
+		}
 		NR24_REG = 0x87U;	/* ch2 tips */
 		NR51_REG = 0x33U;	/* sound on */
-		delay(dtmf_on);		/* keep on */
+		delay( dtmf_on );		/* keep on */
 
 		NR51_REG = 0x00U;	/* sound off */
-		delay(dtmf_off);	/* keep off */
+		delay( dtmf_off );	/* keep off */
 
-	  skip:
+	skip:
 		i++;
 	}
 }
 
 
 /* Display looks like 7-SEGMENT LED */
-void disp_lcd(uint8_t len, char str[MAX_DTMF])
+void disp_lcd( uint8_t len, char str[ MAX_DTMF ] )
 {
-	uint8_t i,j;
+	uint8_t i, j;
 
 	j = len;
 
-	i=0;
-	while(str[i]){
-		if(str[i] >= '0'||'9' <= str[i]){
-			disp_tile[i] = OFFSET + (str[i] - '0') * 2;
-			disp_tile[i+j] = OFFSET + (str[i] - '0') * 2 + 1;
+	i = 0;
+	while( str[ i ] ) {
+		if( str[ i ] >= '0' || '9' <= str[ i ] ) {
+			disp_tile[ i ] = OFFSET + ( str[ i ] - '0' ) * 2;
+			disp_tile[ i + j ] = OFFSET + ( str[ i ] - '0' ) * 2 + 1;
 		}
-		switch(str[i]){
-			case 'A':
-				disp_tile[i] = OFFSET + 10 * 2;
-				disp_tile[i+j] = OFFSET + 10 * 2 + 1;
+		switch( str[ i ] ) {
+		case 'A':
+			disp_tile[ i ] = OFFSET + 10 * 2;
+			disp_tile[ i + j ] = OFFSET + 10 * 2 + 1;
 			break;
-			case 'B':
-				disp_tile[i] = OFFSET + 11 * 2;
-				disp_tile[i+j] = OFFSET + 11 * 2 + 1;
+		case 'B':
+			disp_tile[ i ] = OFFSET + 11 * 2;
+			disp_tile[ i + j ] = OFFSET + 11 * 2 + 1;
 			break;
-			case 'C':
-				disp_tile[i] = OFFSET + 12 * 2;
-				disp_tile[i+j] = OFFSET + 12 * 2 + 1;
+		case 'C':
+			disp_tile[ i ] = OFFSET + 12 * 2;
+			disp_tile[ i + j ] = OFFSET + 12 * 2 + 1;
 			break;
-			case 'D':
-				disp_tile[i] = OFFSET + 13 * 2;
-				disp_tile[i+j] = OFFSET + 13 * 2 + 1;
+		case 'D':
+			disp_tile[ i ] = OFFSET + 13 * 2;
+			disp_tile[ i + j ] = OFFSET + 13 * 2 + 1;
 			break;
-			case '#':
-				disp_tile[i] = OFFSET + 14 * 2;
-				disp_tile[i+j] = OFFSET + 14 * 2 + 1;
+		case '#':
+			disp_tile[ i ] = OFFSET + 14 * 2;
+			disp_tile[ i + j ] = OFFSET + 14 * 2 + 1;
 			break;
-			case '*':
-				disp_tile[i] = OFFSET + 15 * 2;
-				disp_tile[i+j] = OFFSET + 15 * 2 + 1;
+		case '*':
+			disp_tile[ i ] = OFFSET + 15 * 2;
+			disp_tile[ i + j ] = OFFSET + 15 * 2 + 1;
 			break;
-			case ' ':
-				disp_tile[i] = OFFSET + 16 * 2;
-				disp_tile[i+j] = OFFSET + 16 * 2 + 1;
+		case ' ':
+			disp_tile[ i ] = OFFSET + 16 * 2;
+			disp_tile[ i + j ] = OFFSET + 16 * 2 + 1;
 			break;
-			case 'Y':
-				disp_tile[i] = OFFSET + 17 * 2;
-				disp_tile[i+j] = OFFSET + 17 * 2 + 1;
+		case 'Y':
+			disp_tile[ i ] = OFFSET + 17 * 2;
+			disp_tile[ i + j ] = OFFSET + 17 * 2 + 1;
 			break;
-			case 'M':
-				disp_tile[i] = OFFSET + 18 * 2;
-				disp_tile[i+j] = OFFSET + 18 * 2 + 1;
+		case 'M':
+			disp_tile[ i ] = OFFSET + 18 * 2;
+			disp_tile[ i + j ] = OFFSET + 18 * 2 + 1;
 			break;
-			case 'U':
-				disp_tile[i] = OFFSET + 19 * 2;
-				disp_tile[i+j] = OFFSET + 19 * 2 + 1;
+		case 'U':
+			disp_tile[ i ] = OFFSET + 19 * 2;
+			disp_tile[ i + j ] = OFFSET + 19 * 2 + 1;
 			break;
-			case 'G':
-				disp_tile[i] = OFFSET + 20 * 2;
-				disp_tile[i+j] = OFFSET + 20 * 2 + 1;
+		case 'G':
+			disp_tile[ i ] = OFFSET + 20 * 2;
+			disp_tile[ i + j ] = OFFSET + 20 * 2 + 1;
 			break;
-			case '-':
-				disp_tile[i] = OFFSET + 21 * 2;
-				disp_tile[i+j] = OFFSET + 21 * 2 + 1;
+		case '-':
+			disp_tile[ i ] = OFFSET + 21 * 2;
+			disp_tile[ i + j ] = OFFSET + 21 * 2 + 1;
 			break;
-			case 'T':
-				disp_tile[i] = OFFSET + 22 * 2;
-				disp_tile[i+j] = OFFSET + 22 * 2 + 1;
+		case 'T':
+			disp_tile[ i ] = OFFSET + 22 * 2;
+			disp_tile[ i + j ] = OFFSET + 22 * 2 + 1;
 			break;
-			case ',':
-				disp_tile[i] = OFFSET + 23 * 2;
-				disp_tile[i+j] = OFFSET + 23 * 2 + 1;
+		case ',':
+			disp_tile[ i ] = OFFSET + 23 * 2;
+			disp_tile[ i + j ] = OFFSET + 23 * 2 + 1;
 			break;
-			case 'F':
-				disp_tile[i] = OFFSET + 24 * 2;
-				disp_tile[i+j] = OFFSET + 24 * 2 + 1;
+		case 'F':
+			disp_tile[ i ] = OFFSET + 24 * 2;
+			disp_tile[ i + j ] = OFFSET + 24 * 2 + 1;
 			break;
-			case 'S':
-				disp_tile[i] = OFFSET + ('5' - '0') * 2;
-				disp_tile[i+j] = OFFSET + ('5' - '0') * 2 + 1;
+		case 'S':
+			disp_tile[ i ] = OFFSET + ( '5' - '0' ) * 2;
+			disp_tile[ i + j ] = OFFSET + ( '5' - '0' ) * 2 + 1;
 			break;
 		}
 		i++;
@@ -371,61 +371,61 @@ void clr_disp()
 /*
 	CAUTION: Don't display the NULL code
 */
-void disp(const char *str)
+void disp( const char *str )
 {
 	uint8_t no, left_pos;
 	uint8_t i, start_ch, end_ch;
-	char work[MAX_DTMF];
+	char work[ MAX_DTMF ];
 
 	clr_disp();
 
 	no = 0;
-	while(str[no]){
+	while( str[ no ] ) {
 		no++;
 	}
 
-	if(no >= LCD_WIDTH){
+	if( no >= LCD_WIDTH ) {
 		start_ch = no - LCD_WIDTH;
 		end_ch = LCD_WIDTH;
 	}
-	else{
+	else {
 		start_ch = 0;
 		end_ch = no;
 	}
-	for(i = 0;i < end_ch;i++){
-		work[i] = str[i+start_ch];
+	for( i = 0; i < end_ch; i++ ) {
+		work[ i ] = str[ i + start_ch ];
 	}
-	work[end_ch] = 0x00;
+	work[ end_ch ] = 0x00;
 
-	disp_lcd(end_ch, work);
+	disp_lcd( end_ch, work );
 
 	left_pos = 19 - end_ch;
-	set_bkg_tiles(left_pos, 2, end_ch, LCD_HIGHT, disp_tile);
+	set_bkg_tiles( left_pos, 2, end_ch, LCD_HIGHT, disp_tile );
 }
 
-void press_button(uint8_t x, uint8_t y)
+void press_button( uint8_t x, uint8_t y )
 {
-	if(x <= 3 && y <= 3){
-		set_bkg_tiles(x * 3 + 1, y * 3 + 5, 3, 3, press_tile);
+	if( x <= 3 && y <= 3 ) {
+		set_bkg_tiles( x * 3 + 1, y * 3 + 5, 3, 3, press_tile );
 	}
-	if((x == 4 || x == 5) && (y <= 2)){
-		set_bkg_tiles(x * 3 + 2, y * 3 + 5, 3, 3, press_tile);
+	if( ( x == 4 || x == 5 ) && ( y <= 2 ) ) {
+		set_bkg_tiles( x * 3 + 2, y * 3 + 5, 3, 3, press_tile );
 	}
-	if((x == 4 || x == 5) && (y == 3)){
-		set_bkg_tiles(14, 14, 6, 3, dialing_press);
+	if( ( x == 4 || x == 5 ) && ( y == 3 ) ) {
+		set_bkg_tiles( 14, 14, 6, 3, dialing_press );
 	}
 }
 
-void break_button(uint8_t x, uint8_t y)
+void break_button( uint8_t x, uint8_t y )
 {
-	if(x <= 3 && y <= 3){
-		set_bkg_tiles(x * 3 + 1, y * 3 + 5, 3, 3, break_tile);
+	if( x <= 3 && y <= 3 ) {
+		set_bkg_tiles( x * 3 + 1, y * 3 + 5, 3, 3, break_tile );
 	}
-	if((x == 4 || x == 5) && (y <= 2)){
-		set_bkg_tiles(x * 3 + 2, y * 3 + 5, 3, 3, break_tile);
+	if( ( x == 4 || x == 5 ) && ( y <= 2 ) ) {
+		set_bkg_tiles( x * 3 + 2, y * 3 + 5, 3, 3, break_tile );
 	}
-	if((x == 4 || x == 5) && (y == 3)){
-		set_bkg_tiles(14, 14, 6, 3, dialing_break);
+	if( ( x == 4 || x == 5 ) && ( y == 3 ) ) {
+		set_bkg_tiles( 14, 14, 6, 3, dialing_break );
 	}
 }
 
@@ -435,79 +435,79 @@ void init_key()
 	uint8_t key_x, key_y, i;
 
 	/* To make numeric KeyPad */
-	set_sprite_data(0, 24, key_num);
+	set_sprite_data( 0, 24, key_num );
 
 	/* key pad 1 - 3 */
 	key_y = KEY_STEP + 40;
-	for(i = 1;i <= 3;i++){
+	for( i = 1; i <= 3; i++ ) {
 		key_x = i * KEY_STEP;
-		set_sprite_tile(i, i);
-		move_sprite(i, key_x, key_y);
+		set_sprite_tile( i, i );
+		move_sprite( i, key_x, key_y );
 	}
 
 	/* key pad 4 - 6 */
 	key_y = KEY_STEP * 2 + 40;
-	for(i = 4;i <= 6;i++){
-		key_x = (i - 3) * KEY_STEP;
-		set_sprite_tile(i, i);
-		move_sprite(i, key_x, key_y);
+	for( i = 4; i <= 6; i++ ) {
+		key_x = ( i - 3 ) * KEY_STEP;
+		set_sprite_tile( i, i );
+		move_sprite( i, key_x, key_y );
 	}
 
 	/* key pad 7 - 9 */
 	key_y = KEY_STEP * 3 + 40;
-		for(i = 7;i <= 9;i++){
-			key_x = (i - 6) * KEY_STEP;
-			set_sprite_tile(i, i);
-			move_sprite(i, key_x, key_y);
-		}
+	for( i = 7; i <= 9; i++ ) {
+		key_x = ( i - 6 ) * KEY_STEP;
+		set_sprite_tile( i, i );
+		move_sprite( i, key_x, key_y );
+	}
 
 	/* key pad 'A' - 'D' */
 	key_x = KEY_STEP * 4;
-	for(i = 0;i <= 3;i++){
-		key_y = (i+1) * KEY_STEP + 40;
-		set_sprite_tile(i+10, i+10);
-		move_sprite(i+10, key_x, key_y);
+	for( i = 0; i <= 3; i++ ) {
+		key_y = ( i + 1 ) * KEY_STEP + 40;
+		set_sprite_tile( i + 10, i + 10 );
+		move_sprite( i + 10, key_x, key_y );
 	}
 
 	/* key pad '*', '0', '#' */
-	set_sprite_tile(15, 15);
-	move_sprite(15, KEY_STEP * 1, KEY_STEP * 4 + 40U);
-	set_sprite_tile(0, 0);
-	move_sprite(0, KEY_STEP * 2, KEY_STEP * 4 + 40U);
-	set_sprite_tile(14, 14);
-	move_sprite(14, KEY_STEP * 3, KEY_STEP * 4 + 40U);
+	set_sprite_tile( 15, 15 );
+	move_sprite( 15, KEY_STEP * 1, KEY_STEP * 4 + 40U );
+	set_sprite_tile( 0, 0 );
+	move_sprite( 0, KEY_STEP * 2, KEY_STEP * 4 + 40U );
+	set_sprite_tile( 14, 14 );
+	move_sprite( 14, KEY_STEP * 3, KEY_STEP * 4 + 40U );
 
 	/* func left */
 	key_x = KEY_STEP * 5 + 8U;
-	for(i = 0;i <= 2;i++){
-		key_y = (i+1) * KEY_STEP + 40;
-		set_sprite_tile(i+16, i+16);
-		move_sprite(i+16, key_x, key_y);
+	for( i = 0; i <= 2; i++ ) {
+		key_y = ( i + 1 ) * KEY_STEP + 40;
+		set_sprite_tile( i + 16, i + 16 );
+		move_sprite( i + 16, key_x, key_y );
 	}
 
 	/* func right */
 	key_x = KEY_STEP * 6 + 8U;
-	for(i = 0;i <= 2;i++){
-		key_y = (i+1) * KEY_STEP + 40;
-		set_sprite_tile(i+19, i+19);
-		move_sprite(i+19, key_x, key_y);
+	for( i = 0; i <= 2; i++ ) {
+		key_y = ( i + 1 ) * KEY_STEP + 40;
+		set_sprite_tile( i + 19, i + 19 );
+		move_sprite( i + 19, key_x, key_y );
 	}
 
 	/* dialing button */
 	key_x = KEY_STEP * 5 + 20U;
 	key_y = KEY_STEP * 4 + 40U;
-	set_sprite_tile(22, 22);
-	move_sprite(22, key_x, key_y);
+	set_sprite_tile( 22, 22 );
+	move_sprite( 22, key_x, key_y );
 }
 
 void init_background()
 {
 	/* Initialize the background */
-	set_bkg_data( 0, 9, frame_lcd);
-	set_bkg_data( 9, 9, break_btn);
-	set_bkg_data(18, 9, press_btn);
+	set_bkg_data( 0, 9, frame_lcd );
+	set_bkg_data( 9, 9, break_btn );
+	set_bkg_data( 18, 9, press_btn );
 
-	set_bkg_tiles(0, 0, 20, 18, dtmf_tile);
+	set_bkg_tiles( 0, 0, 20, 18, dtmf_tile );
 }
 
 void init_cursor()
@@ -536,10 +536,10 @@ void main()
 	uint8_t non_flick = OFF;
 	uint16_t on_time, off_time;
 
-	char str[MAX_DTMF];
-	char str_ms[10];
+	char str[ MAX_DTMF ];
+	char str_ms[ 10 ];
 
-        /* PENDING: sdcc is broken and needs this to be initalised. */
+	/* PENDING: sdcc is broken and needs this to be initalised. */
 	key2 = 0;
 
 	/* default dialling time setting */
@@ -558,7 +558,7 @@ void main()
 
 	init_cursor();
 
-	disp(TITLE);
+	disp( TITLE );
 
 	SHOW_BKG;
 	SHOW_SPRITES;
@@ -570,23 +570,23 @@ void main()
 
 	ch_pos = 0;
 
-	while(1) {
+	while( 1 ) {
 		wait_vbl_done();
 		key1 = joypad();
 
-		if(key1 != key2){
+		if( key1 != key2 ) {
 			pos_x = i * KEY_STEP + START_CURSOR_X;
 			pos_y = j * KEY_STEP + START_CURSOR_Y;
-			move_cursor(pos_x, pos_y);
+			move_cursor( pos_x, pos_y );
 		}
 
-		if(key2 & J_A){
-			if(key1 & J_A){
+		if( key2 & J_A ) {
+			if( key1 & J_A ) {
 				/* value set for each sound reg only numeric key pad*/
-				if(i <= 3 && j <= 3){
+				if( i <= 3 && j <= 3 ) {
 					/* frequncy register set up for DTMF */
-					NR13_REG = row[i];
-					NR23_REG = col[j];
+					NR13_REG = row[ i ];
+					NR23_REG = col[ j ];
 					NR24_REG = 0x87U;
 
 					/* sound output on */
@@ -595,116 +595,116 @@ void main()
 
 				/* '?' button */
 				/* appear the title during press A button */
-				if(i == 5 && j == 0 && !non_flick){
-					disp(TITLE);
+				if( i == 5 && j == 0 && !non_flick ) {
+					disp( TITLE );
 					non_flick = ON;
 				}
 
 				/* incremental button */
 				/* decremental button */
 				/* appear the delay during press A button */
-				if(i == 5 && (j == 1 || j == 2) && !non_flick){
-					sprintf(str_ms, "%u MS", on_time);
-					disp(str_ms);
+				if( i == 5 && ( j == 1 || j == 2 ) && !non_flick ) {
+					sprintf( str_ms, "%u MS", on_time );
+					disp( str_ms );
 					non_flick = ON;
 				}
 			}
-			else{
+			else {
 				/* sound output off */
 				NR51_REG = 0x00U;
 
-				break_button(i, j);
+				break_button( i, j );
 
 				/* '?' button */
 				/* incremental button */
 				/* decremental button */
 				/* return to normal display at release the A button */
-				if(i == 5 && (j == 0 || j == 1 || j == 2)){
+				if( i == 5 && ( j == 0 || j == 1 || j == 2 ) ) {
 					non_flick = OFF;
-					if(ch_pos == 0)
+					if( ch_pos == 0 )
 						clr_disp();
 					else
-						disp(str);
+						disp( str );
 				}
 			}
 		}
-		else{
-			if(key1 & J_A){
+		else {
+			if( key1 & J_A ) {
 				/* button display handle */
-				press_button(i, j);
+				press_button( i, j );
 
 				/* numeric key pad handling */
-				if(i <= 3 && j <= 3){
+				if( i <= 3 && j <= 3 ) {
 					/* string length check */
-					if(ch_pos < MAX_DTMF-1){
-						str[ch_pos] = pad[j][i];
+					if( ch_pos < MAX_DTMF - 1 ) {
+						str[ ch_pos ] = pad[ j ][ i ];
 						ch_pos++;
-						str[ch_pos] = 0x00;
-						disp(str);
+						str[ ch_pos ] = 0x00;
+						disp( str );
 					}
 				}
 
 				/* ',' button */
-				if(i == 4 && j == 2){
+				if( i == 4 && j == 2 ) {
 					/* string length check */
-					if(ch_pos < MAX_DTMF-1){
-						str[ch_pos] = pad[j][i];
+					if( ch_pos < MAX_DTMF - 1 ) {
+						str[ ch_pos ] = pad[ j ][ i ];
 						ch_pos++;
-						str[ch_pos] = 0x00;
-						disp(str);
+						str[ ch_pos ] = 0x00;
+						disp( str );
 					}
 				}
 
 				/* all clear button */
-				if(i == 4 && j == 0){
+				if( i == 4 && j == 0 ) {
 					ch_pos = 0x00;
-					strcpy(str,"");
+					strcpy( str, "" );
 					clr_disp();
 				}
 
 				/* delete button */
-				if(i == 4 && j == 1){
-					if(ch_pos > 0){
+				if( i == 4 && j == 1 ) {
+					if( ch_pos > 0 ) {
 						ch_pos--;
-						str[ch_pos] = 0x00;
-						if(ch_pos == 0)
+						str[ ch_pos ] = 0x00;
+						if( ch_pos == 0 )
 							clr_disp();
 						else
-							disp(str);
+							disp( str );
 					}
 				}
 
 				/* incremental button */
-				if(i == 5 && j == 1){
-					if(on_time >= DTMF_ON / 2){
+				if( i == 5 && j == 1 ) {
+					if( on_time >= DTMF_ON / 2 ) {
 						on_time = on_time - 10;
 						off_time = off_time - 10;
 					}
 				}
 
 				/* decremental button */
-				if(i == 5 && j == 2){
-					if(on_time <= DTMF_ON * 2){
+				if( i == 5 && j == 2 ) {
+					if( on_time <= DTMF_ON * 2 ) {
 						on_time = on_time + 10;
 						off_time = off_time + 10;
 					}
 				}
 
 				/* dialing button */
-				if((i==4 || i==5) && j==3){
-					dialtone(on_time, off_time, str);
+				if( ( i == 4 || i == 5 ) && j == 3 ) {
+					dialtone( on_time, off_time, str );
 				}
 			}
 		}
-		if(!(key1 & J_A)){
-			if((key1 & J_UP) && !(key2 & J_UP) && j > 0)
+		if( !( key1 & J_A ) ) {
+			if( ( key1 & J_UP ) && !( key2 & J_UP ) && j > 0 )
 				j--;
-			else if((key1 & J_DOWN) && !(key2 & J_DOWN) && j < 3)
+			else if( ( key1 & J_DOWN ) && !( key2 & J_DOWN ) && j < 3 )
 				j++;
 
-			if((key1 & J_LEFT) && !(key2 & J_LEFT) && i > 0)
+			if( ( key1 & J_LEFT ) && !( key2 & J_LEFT ) && i > 0 )
 				i--;
-			else if((key1 & J_RIGHT) && !(key2 & J_RIGHT) && i < 5)
+			else if( ( key1 & J_RIGHT ) && !( key2 & J_RIGHT ) && i < 5 )
 				i++;
 		}
 		key2 = key1;

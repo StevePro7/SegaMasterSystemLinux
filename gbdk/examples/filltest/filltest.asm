@@ -49,7 +49,7 @@
 ; code
 ;--------------------------------------------------------
 	.area _CODE
-;filltest.c:8: void linetest(uint8_t x, uint8_t y, uint8_t w) {
+;filltest.c:8: void linetest( uint8_t x, uint8_t y, uint8_t w ) {
 ;	---------------------------------
 ; Function linetest
 ; ---------------------------------
@@ -58,7 +58,7 @@ _linetest::
 	ldhl	sp,	#8
 	ld	(hl-), a
 	ld	(hl), e
-;filltest.c:9: color(DKGREY,WHITE,SOLID);
+;filltest.c:9: color( DKGREY, WHITE, SOLID );
 	xor	a, a
 	rrca
 	push	af
@@ -68,7 +68,7 @@ _linetest::
 	inc	sp
 	call	_color
 	add	sp, #3
-;filltest.c:10: for (int i = -w; i <= w; i++) line(x,y,x+i,y-w);
+;filltest.c:10: for( int i = -w; i <= w; i++ ) line( x, y, x + i, y - w );
 	ldhl	sp,	#13
 	ld	a, (hl)
 	ldhl	sp,	#0
@@ -156,7 +156,7 @@ _linetest::
 	inc	(hl)
 	jr	00106$
 00101$:
-;filltest.c:11: for (int i = -w; i <= w; i++) line(x,y,x+w,y+i);
+;filltest.c:11: for( int i = -w; i <= w; i++ ) line( x, y, x + w, y + i );
 	ldhl	sp,	#8
 	ld	a, (hl)
 	ldhl	sp,	#13
@@ -212,7 +212,7 @@ _linetest::
 	inc	bc
 	jr	00109$
 00102$:
-;filltest.c:12: for (int i = -w; i <= w; i++) line(x,y,x+i,y+w);
+;filltest.c:12: for( int i = -w; i <= w; i++ ) line( x, y, x + i, y + w );
 	ldhl	sp,	#7
 	ld	a, (hl)
 	ldhl	sp,	#13
@@ -266,7 +266,7 @@ _linetest::
 	inc	bc
 	jr	00112$
 00103$:
-;filltest.c:13: for (int i = -w; i <= w; i++) line(x,y,x-w,y+i);	
+;filltest.c:13: for( int i = -w; i <= w; i++ ) line( x, y, x - w, y + i );
 	ldhl	sp,	#8
 	ld	a, (hl)
 	ldhl	sp,	#13
@@ -324,25 +324,25 @@ _linetest::
 	pop	hl
 	inc	sp
 	jp	(hl)
-;filltest.c:16: void main(void)
+;filltest.c:16: void main( void )
 ;	---------------------------------
 ; Function main
 ; ---------------------------------
 _main::
 	add	sp, #-7
-;filltest.c:19: c=0;
+;filltest.c:19: c = 0;
 	ld	c, #0x00
-;filltest.c:21: for (a=0; a<=15; a++) {
+;filltest.c:21: for( a = 0; a <= 15; a++ ) {
 	ldhl	sp,	#4
 	ld	(hl), #0x00
-;filltest.c:22: for (b=0; b<=15; b++) {
+;filltest.c:22: for( b = 0; b <= 15; b++ ) {
 00125$:
 	ldhl	sp,	#5
 	ld	a, c
 	ld	(hl+), a
 	ld	(hl), #0x00
 00108$:
-;filltest.c:23: gotogxy(b,a);
+;filltest.c:23: gotogxy( b, a );
 	ldhl	sp,	#4
 	ld	a, (hl+)
 	inc	hl
@@ -353,7 +353,7 @@ _main::
 	inc	sp
 	call	_gotogxy
 	pop	hl
-;filltest.c:24: d=a/4;
+;filltest.c:24: d = a / 4;
 	ldhl	sp,	#4
 	ld	a, (hl)
 	ldhl	sp,	#0
@@ -391,7 +391,7 @@ _main::
 	sra	b
 	rr	c
 	ld	(hl), c
-;filltest.c:25: e=b/4;
+;filltest.c:25: e = b / 4;
 	ldhl	sp,	#6
 	ld	c, (hl)
 	ld	b, #0x00
@@ -418,19 +418,19 @@ _main::
 	rr	b
 	sra	h
 	rr	b
-;filltest.c:26: if (d==e) {
+;filltest.c:26: if( d == e ) {
 	ldhl	sp,	#3
 	ld	a, (hl)
 	sub	a, b
 	jr	NZ, 00102$
-;filltest.c:27: d=3-e;
+;filltest.c:27: d = 3 - e;
 	ld	c, b
 	ld	a, #0x03
 	sub	a, c
 	ldhl	sp,	#3
 	ld	(hl), a
 00102$:
-;filltest.c:29: color(d,e,SOLID);
+;filltest.c:29: color( d, e, SOLID );
 	xor	a, a
 	push	af
 	inc	sp
@@ -442,7 +442,7 @@ _main::
 	inc	sp
 	call	_color
 	add	sp, #3
-;filltest.c:30: gprintf("%c",c++);
+;filltest.c:30: gprintf( "%c", c++ );
 	ldhl	sp,	#5
 	ld	c, (hl)
 	ld	b, #0x00
@@ -452,13 +452,13 @@ _main::
 	push	de
 	call	_gprintf
 	add	sp, #4
-;filltest.c:22: for (b=0; b<=15; b++) {
+;filltest.c:22: for( b = 0; b <= 15; b++ ) {
 	ldhl	sp,	#6
 	inc	(hl)
 	ld	a, #0x0f
 	sub	a, (hl)
 	jp	NC, 00108$
-;filltest.c:21: for (a=0; a<=15; a++) {
+;filltest.c:21: for( a = 0; a <= 15; a++ ) {
 	dec	hl
 	ld	a, (hl-)
 	ld	c, a
@@ -466,7 +466,7 @@ _main::
 	ld	a, #0x0f
 	sub	a, (hl)
 	jp	NC, 00125$
-;filltest.c:35: color(LTGREY,WHITE,SOLID);
+;filltest.c:35: color( LTGREY, WHITE, SOLID );
 	xor	a, a
 	rrca
 	push	af
@@ -476,14 +476,14 @@ _main::
 	inc	sp
 	call	_color
 	add	sp, #3
-;filltest.c:36: circle(140,20,15,M_FILL);
+;filltest.c:36: circle( 140, 20, 15, M_FILL );
 	ld	hl, #0x10f
 	push	hl
 	ld	hl, #0x148c
 	push	hl
 	call	_circle
 	add	sp, #4
-;filltest.c:37: color(BLACK,WHITE,SOLID);
+;filltest.c:37: color( BLACK, WHITE, SOLID );
 	xor	a, a
 	rrca
 	push	af
@@ -493,14 +493,14 @@ _main::
 	inc	sp
 	call	_color
 	add	sp, #3
-;filltest.c:38: circle(140,20,10,M_NOFILL);
+;filltest.c:38: circle( 140, 20, 10, M_NOFILL );
 	ld	hl, #0x0a
 	push	hl
 	ld	hl, #0x148c
 	push	hl
 	call	_circle
 	add	sp, #4
-;filltest.c:39: color(DKGREY,WHITE,XOR);
+;filltest.c:39: color( DKGREY, WHITE, XOR );
 	ld	a, #0x02
 	push	af
 	inc	sp
@@ -508,14 +508,14 @@ _main::
 	push	hl
 	call	_color
 	add	sp, #3
-;filltest.c:40: circle(120,40,30,M_FILL);
+;filltest.c:40: circle( 120, 40, 30, M_FILL );
 	ld	hl, #0x11e
 	push	hl
 	ld	hl, #0x2878
 	push	hl
 	call	_circle
 	add	sp, #4
-;filltest.c:41: line(0,0,159,143);
+;filltest.c:41: line( 0, 0, 159, 143 );
 	ld	hl, #0x8f9f
 	push	hl
 	xor	a, a
@@ -523,7 +523,7 @@ _main::
 	push	af
 	call	_line
 	add	sp, #4
-;filltest.c:42: color(BLACK,LTGREY,SOLID);
+;filltest.c:42: color( BLACK, LTGREY, SOLID );
 	xor	a, a
 	ld	h, a
 	ld	l, #0x01
@@ -533,7 +533,7 @@ _main::
 	inc	sp
 	call	_color
 	add	sp, #3
-;filltest.c:43: box(0,130,40,143,M_NOFILL);
+;filltest.c:43: box( 0, 130, 40, 143, M_NOFILL );
 	ld	hl, #0x8f
 	push	hl
 	ld	hl, #0x2882
@@ -543,7 +543,7 @@ _main::
 	inc	sp
 	call	_box
 	add	sp, #5
-;filltest.c:44: box(50,130,90,143,M_FILL);
+;filltest.c:44: box( 50, 130, 90, 143, M_FILL );
 	ld	hl, #0x18f
 	push	hl
 	ld	hl, #0x5a82
@@ -553,25 +553,25 @@ _main::
 	inc	sp
 	call	_box
 	add	sp, #5
-;filltest.c:47: linetest(130, 100, 20);
+;filltest.c:47: linetest( 130, 100, 20 );
 	ld	a, #0x14
 	push	af
 	inc	sp
 	ld	e, #0x64
 	ld	a, #0x82
 	call	_linetest
-;filltest.c:50: for (c=0; c<=143; c++) {
+;filltest.c:50: for( c = 0; c <= 143; c++ ) {
 	ld	e, #0x00
-;filltest.c:51: for (b=0; b<=142; b++) {
+;filltest.c:51: for( b = 0; b <= 142; b++ ) {
 00131$:
 	ld	d, #0x00
-;filltest.c:52: for (a=0; a<=159; a++) {
+;filltest.c:52: for( a = 0; a <= 159; a++ ) {
 00129$:
 	ld	l, #0x00
 ;	spillPairReg hl
 ;	spillPairReg hl
 00112$:
-;filltest.c:53: color(getpix(a,b+1),WHITE,SOLID);
+;filltest.c:53: color( getpix( a, b + 1 ), WHITE, SOLID );
 	ld	a, d
 	inc	a
 	push	hl
@@ -593,7 +593,7 @@ _main::
 	add	sp, #3
 	pop	de
 	pop	hl
-;filltest.c:54: plot_point(a,b);
+;filltest.c:54: plot_point( a, b );
 	push	hl
 	push	de
 	ld	e, l
@@ -602,12 +602,12 @@ _main::
 	pop	hl
 	pop	de
 	pop	hl
-;filltest.c:52: for (a=0; a<=159; a++) {
+;filltest.c:52: for( a = 0; a <= 159; a++ ) {
 	inc	l
 	ld	a, #0x9f
 	sub	a, l
 	jr	NC, 00112$
-;filltest.c:56: color(WHITE,WHITE,SOLID);
+;filltest.c:56: color( WHITE, WHITE, SOLID );
 	push	de
 	xor	a, a
 	rrca
@@ -618,12 +618,12 @@ _main::
 	call	_color
 	add	sp, #3
 	pop	de
-;filltest.c:51: for (b=0; b<=142; b++) {
+;filltest.c:51: for( b = 0; b <= 142; b++ ) {
 	inc	d
 	ld	a, #0x8e
 	sub	a, d
 	jr	NC, 00129$
-;filltest.c:58: line(0,143,159,143);
+;filltest.c:58: line( 0, 143, 159, 143 );
 	push	de
 	ld	hl, #0x8f9f
 	push	hl
@@ -632,7 +632,7 @@ _main::
 	call	_line
 	add	sp, #4
 	pop	de
-;filltest.c:50: for (c=0; c<=143; c++) {
+;filltest.c:50: for( c = 0; c <= 143; c++ ) {
 	inc	e
 	ld	a, #0x8f
 	sub	a, e

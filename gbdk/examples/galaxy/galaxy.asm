@@ -120,12 +120,12 @@ _sframe::
 ; Function fade
 ; ---------------------------------
 _fade::
-;galaxy.c:392: if(color == 0)
+;galaxy.c:392: if( color == 0 )
 	ld	a, (#_color)
 	or	a, a
 ;galaxy.c:393: return;
 	ret	Z
-;galaxy.c:394: switch(color)
+;galaxy.c:394: switch( color )
 	ld	a, (#_color)
 	sub	a, #0x10
 	jr	Z, 00108$
@@ -144,28 +144,28 @@ _fade::
 	ld	a, (#_color)
 	sub	a, #0x60
 	jr	NZ, 00109$
-;galaxy.c:397: case STARTFADE-4*FADESTEP:
+;galaxy.c:397: case STARTFADE - 4 * FADESTEP:
 00104$:
 ;galaxy.c:398: BGP_REG = 0xF9U;
 	ld	a, #0xf9
 	ldh	(_BGP_REG + 0), a
 ;galaxy.c:399: break;
 	jr	00109$
-;galaxy.c:401: case STARTFADE-3*FADESTEP:
+;galaxy.c:401: case STARTFADE - 3 * FADESTEP:
 00106$:
 ;galaxy.c:402: BGP_REG = 0xFEU;
 	ld	a, #0xfe
 	ldh	(_BGP_REG + 0), a
 ;galaxy.c:403: break;
 	jr	00109$
-;galaxy.c:404: case STARTFADE-2*FADESTEP:
+;galaxy.c:404: case STARTFADE - 2 * FADESTEP:
 00107$:
 ;galaxy.c:405: BGP_REG = 0xFFU;
 	ld	a, #0xff
 	ldh	(_BGP_REG + 0), a
 ;galaxy.c:406: break;
 	jr	00109$
-;galaxy.c:407: case STARTFADE-5*FADESTEP:
+;galaxy.c:407: case STARTFADE - 5 * FADESTEP:
 00108$:
 ;galaxy.c:408: BGP_REG = 0xE4U;
 	ld	a, #0xe4
@@ -2802,7 +2802,7 @@ _scroll::
 ;galaxy.c:421: SCY_REG = bposy.b.h;
 	ld	a, (#(_bposy + 1) + 0)
 	ldh	(_SCY_REG + 0), a
-;galaxy.c:424: wposx.w += wspx.w ;
+;galaxy.c:424: wposx.w += wspx.w;
 	ld	hl, #_wposx
 	ld	a, (hl+)
 	ld	c, a
@@ -2821,7 +2821,7 @@ _scroll::
 	ld	a, c
 	ld	(hl+), a
 	ld	(hl), b
-;galaxy.c:425: wposy.w += wspy.w ;
+;galaxy.c:425: wposy.w += wspy.w;
 	ld	hl, #_wposy
 	ld	a, (hl+)
 	ld	c, a
@@ -2840,7 +2840,7 @@ _scroll::
 	ld	a, c
 	ld	(hl+), a
 	ld	(hl), b
-;galaxy.c:427: if(wposx.b.h >= MAXWINX) {
+;galaxy.c:427: if( wposx.b.h >= MAXWINX ) {
 	ld	a, (#(_wposx + 1) + 0)
 	ldhl	sp,#3
 	ld	(hl), a
@@ -2850,7 +2850,7 @@ _scroll::
 ;galaxy.c:428: wposx.b.h = MAXWINX;
 	ld	hl, #(_wposx + 1)
 	ld	(hl), #0xa6
-;galaxy.c:430: wspx.w = -(int16_t)wspx.w;
+;galaxy.c:430: wspx.w = -( int16_t ) wspx.w;
 	ld	de, #_wspx
 	ld	a, (de)
 	ldhl	sp,	#2
@@ -2884,15 +2884,15 @@ _scroll::
 	ld	(de), a
 	jr	00105$
 00104$:
-;galaxy.c:431: } else if(wposx.b.h <= MINWINX) {
+;galaxy.c:432: else if( wposx.b.h <= MINWINX ) {
 	ld	a, #0x27
 	ldhl	sp,	#3
 	sub	a, (hl)
 	jr	C, 00105$
-;galaxy.c:432: wposx.b.h = MINWINX;
+;galaxy.c:433: wposx.b.h = MINWINX;
 	ld	hl, #(_wposx + 1)
 	ld	(hl), #0x27
-;galaxy.c:434: wspx.w = -(int16_t)wspx.w;
+;galaxy.c:435: wspx.w = -( int16_t ) wspx.w;
 	ld	hl, #_wspx
 	ld	a, (hl+)
 	ld	c, a
@@ -2908,19 +2908,19 @@ _scroll::
 	ld	(hl+), a
 	ld	(hl), b
 00105$:
-;galaxy.c:436: WX_REG = wposx.b.h;
+;galaxy.c:437: WX_REG = wposx.b.h;
 	ld	a, (#(_wposx + 1) + 0)
 	ldh	(_WX_REG + 0), a
-;galaxy.c:438: if(wposy.b.h >= MAXWINY) {
+;galaxy.c:439: if( wposy.b.h >= MAXWINY ) {
 	ld	hl, #(_wposy + 1)
 	ld	b, (hl)
 	ld	a, b
 	sub	a, #0x8f
 	jr	C, 00109$
-;galaxy.c:439: wposy.b.h = MAXWINY;
+;galaxy.c:440: wposy.b.h = MAXWINY;
 	ld	hl, #(_wposy + 1)
 	ld	(hl), #0x8f
-;galaxy.c:441: wspy.w = -(int16_t)wspy.w;
+;galaxy.c:442: wspy.w = -( int16_t ) wspy.w;
 	ld	hl, #_wspy
 	ld	a, (hl+)
 	ld	c, a
@@ -2937,14 +2937,14 @@ _scroll::
 	ld	(hl), b
 	jr	00110$
 00109$:
-;galaxy.c:442: } else if(wposy.b.h <= MINWINY) {
+;galaxy.c:444: else if( wposy.b.h <= MINWINY ) {
 	ld	a, #0x40
 	sub	a, b
 	jr	C, 00110$
-;galaxy.c:443: wposy.b.h = MINWINY;
+;galaxy.c:445: wposy.b.h = MINWINY;
 	ld	hl, #(_wposy + 1)
 	ld	(hl), #0x40
-;galaxy.c:445: wspy.w = -(int16_t)wspy.w;
+;galaxy.c:447: wspy.w = -( int16_t ) wspy.w;
 	ld	hl, #_wspy
 	ld	a, (hl+)
 	ld	c, a
@@ -2960,10 +2960,10 @@ _scroll::
 	ld	(hl+), a
 	ld	(hl), b
 00110$:
-;galaxy.c:447: WY_REG = wposy.b.h;
+;galaxy.c:449: WY_REG = wposy.b.h;
 	ld	a, (#(_wposy + 1) + 0)
 	ldh	(_WY_REG + 0), a
-;galaxy.c:450: sposx.w += sspx.w;
+;galaxy.c:452: sposx.w += sspx.w;
 	ld	hl, #_sposx
 	ld	a, (hl+)
 	ld	c, a
@@ -2982,7 +2982,7 @@ _scroll::
 	ld	a, c
 	ld	(hl+), a
 	ld	(hl), b
-;galaxy.c:451: sposy.w += sspy.w;
+;galaxy.c:453: sposy.w += sspy.w;
 	ld	hl, #_sposy
 	ld	a, (hl+)
 	ld	c, a
@@ -3001,24 +3001,24 @@ _scroll::
 	ld	a, c
 	ld	(hl+), a
 	ld	(hl), b
-;galaxy.c:452: place_sprite();
+;galaxy.c:454: place_sprite();
 	call	_place_sprite
-;galaxy.c:453: }
+;galaxy.c:455: }
 	add	sp, #4
 	ret
-;galaxy.c:456: void door()
+;galaxy.c:458: void door()
 ;	---------------------------------
 ; Function door
 ; ---------------------------------
 _door::
-;galaxy.c:458: if(doorstate == OPENING) {
+;galaxy.c:460: if( doorstate == OPENING ) {
 	ld	a, (#_doorstate)
 	dec	a
 	jr	NZ, 00108$
-;galaxy.c:459: doorpos++;
+;galaxy.c:461: doorpos++;
 	ld	hl, #_doorpos
 	inc	(hl)
-;galaxy.c:461: set_win_tiles(2, 2, 12, 6, (unsigned char*)film[doorpos]);
+;galaxy.c:463: set_win_tiles( 2, 2, 12, 6, ( unsigned char* ) film[ doorpos ] );
 	ld	bc, #_film+0
 	ld	l, (hl)
 ;	spillPairReg hl
@@ -3038,23 +3038,23 @@ _door::
 	push	hl
 	call	_set_win_tiles
 	add	sp, #6
-;galaxy.c:462: if(doorpos == NBDFRAMES)
+;galaxy.c:464: if( doorpos == NBDFRAMES )
 	ld	a, (#_doorpos)
 	sub	a, #0x18
 	ret	NZ
-;galaxy.c:463: doorstate = OPENED;
+;galaxy.c:465: doorstate = OPENED;
 	ld	hl, #_doorstate
 	ld	(hl), #0x02
 	ret
 00108$:
-;galaxy.c:464: } else if(doorstate == CLOSING) {
+;galaxy.c:467: else if( doorstate == CLOSING ) {
 	ld	a, (#_doorstate)
 	sub	a, #0x03
 	ret	NZ
-;galaxy.c:465: doorpos--;
+;galaxy.c:468: doorpos--;
 	ld	hl, #_doorpos
 	dec	(hl)
-;galaxy.c:467: set_win_tiles(2, 2, 12, 6, (unsigned char*)film[doorpos]);
+;galaxy.c:470: set_win_tiles( 2, 2, 12, 6, ( unsigned char* ) film[ doorpos ] );
 	ld	bc, #_film+0
 	ld	l, (hl)
 ;	spillPairReg hl
@@ -3074,47 +3074,47 @@ _door::
 	push	hl
 	call	_set_win_tiles
 	add	sp, #6
-;galaxy.c:468: if(doorpos == 0)
+;galaxy.c:471: if( doorpos == 0 )
 	ld	a, (#_doorpos)
 	or	a, a
 	ret	NZ
-;galaxy.c:469: doorstate = CLOSED;
+;galaxy.c:472: doorstate = CLOSED;
 	ld	hl, #_doorstate
 	ld	(hl), #0x00
-;galaxy.c:471: }
+;galaxy.c:474: }
 	ret
-;galaxy.c:474: void animate_sprite()
+;galaxy.c:477: void animate_sprite()
 ;	---------------------------------
 ; Function animate_sprite
 ; ---------------------------------
 _animate_sprite::
-;galaxy.c:476: if((time&0x07) == 0) {
+;galaxy.c:479: if( ( time & 0x07 ) == 0 ) {
 	ld	a, (#_time)
 	and	a, #0x07
 	ret	NZ
-;galaxy.c:477: sframe++;
+;galaxy.c:480: sframe++;
 	ld	hl, #_sframe
 	inc	(hl)
-;galaxy.c:478: if(sframe == NBSFRAMES)
+;galaxy.c:481: if( sframe == NBSFRAMES )
 	ld	a, (hl)
 	sub	a, #0x07
 	jp	NZ,_tile_sprite
-;galaxy.c:479: sframe = 0;
+;galaxy.c:482: sframe = 0;
 	ld	hl, #_sframe
 	ld	(hl), #0x00
-;galaxy.c:480: tile_sprite();
-;galaxy.c:482: }
+;galaxy.c:483: tile_sprite();
+;galaxy.c:485: }
 	jp	_tile_sprite
-;galaxy.c:485: void tile_sprite()
+;galaxy.c:488: void tile_sprite()
 ;	---------------------------------
 ; Function tile_sprite
 ; ---------------------------------
 _tile_sprite::
-;galaxy.c:489: s = sframe<<1;
+;galaxy.c:492: s = sframe<<1;
 	ld	a, (#_sframe)
 	add	a, a
 	ld	c, a
-;galaxy.c:490: set_sprite_tile(0, earth_tiles[s]);
+;galaxy.c:493: set_sprite_tile(0, earth_tiles[s]);
 	ld	hl, #_earth_tiles
 	ld	b, #0x00
 	add	hl, bc
@@ -3122,7 +3122,7 @@ _tile_sprite::
 ;C:/gbdk/include/gb/gb.h:1602: shadow_OAM[nb].tile=tile;
 	ld	hl, #(_shadow_OAM + 2)
 	ld	(hl), b
-;galaxy.c:491: set_sprite_tile(1, earth_tiles[s+1]);
+;galaxy.c:494: set_sprite_tile(1, earth_tiles[s+1]);
 	inc	c
 	ld	a, c
 	rlca
@@ -3134,15 +3134,15 @@ _tile_sprite::
 ;C:/gbdk/include/gb/gb.h:1602: shadow_OAM[nb].tile=tile;
 	ld	hl, #(_shadow_OAM + 6)
 	ld	(hl), c
-;galaxy.c:491: set_sprite_tile(1, earth_tiles[s+1]);
-;galaxy.c:492: }
+;galaxy.c:494: set_sprite_tile(1, earth_tiles[s+1]);
+;galaxy.c:495: }
 	ret
-;galaxy.c:495: void place_sprite()
+;galaxy.c:498: void place_sprite()
 ;	---------------------------------
 ; Function place_sprite
 ; ---------------------------------
 _place_sprite::
-;galaxy.c:497: move_sprite(0, sposx.b.h, sposy.b.h);
+;galaxy.c:500: move_sprite(0, sposx.b.h, sposy.b.h);
 	ld	hl, #(_sposy + 1)
 	ld	b, (hl)
 	ld	hl, #(_sposx + 1)
@@ -3153,7 +3153,7 @@ _place_sprite::
 	ld	a, b
 	ld	(hl+), a
 	ld	(hl), c
-;galaxy.c:498: move_sprite(1, sposx.b.h+8, sposy.b.h);
+;galaxy.c:501: move_sprite(1, sposx.b.h+8, sposy.b.h);
 	ld	hl, #(_sposy + 1)
 	ld	b, (hl)
 	ld	a, (#(_sposx + 1) + 0)
@@ -3165,10 +3165,10 @@ _place_sprite::
 	ld	a, b
 	ld	(hl+), a
 	ld	(hl), c
-;galaxy.c:498: move_sprite(1, sposx.b.h+8, sposy.b.h);
-;galaxy.c:499: }
+;galaxy.c:501: move_sprite(1, sposx.b.h+8, sposy.b.h);
+;galaxy.c:502: }
 	ret
-;galaxy.c:501: void main()
+;galaxy.c:504: void main()
 ;	---------------------------------
 ; Function main
 ; ---------------------------------
@@ -3176,42 +3176,42 @@ _main::
 	add	sp, #-10
 ;C:/gbdk/include/gb/gb.h:743: __asm__("di");
 	di
-;galaxy.c:506: DISPLAY_OFF;
+;galaxy.c:509: DISPLAY_OFF;
 	call	_display_off
-;galaxy.c:507: LCDC_REG = LCDCF_OFF | LCDCF_WIN9C00 | LCDCF_WINON | LCDCF_BG8800 | LCDCF_BG9800 | LCDCF_OBJ16 | LCDCF_OBJON | LCDCF_BGON;
+;galaxy.c:510: LCDC_REG = LCDCF_OFF | LCDCF_WIN9C00 | LCDCF_WINON | LCDCF_BG8800 | LCDCF_BG9800 | LCDCF_OBJ16 | LCDCF_OBJON | LCDCF_BGON;
 	ld	a, #0x67
 	ldh	(_LCDC_REG + 0), a
-;galaxy.c:519: doorstate = CLOSED;
+;galaxy.c:522: doorstate = CLOSED;
 	ld	hl, #_doorstate
 	ld	(hl), #0x00
-;galaxy.c:522: BGP_REG = OBP0_REG = OBP1_REG = 0xE4U;
+;galaxy.c:525: BGP_REG = OBP0_REG = OBP1_REG = 0xE4U;
 	ld	a, #0xe4
 	ldh	(_OBP1_REG + 0), a
 	ld	a, #0xe4
 	ldh	(_OBP0_REG + 0), a
 	ld	a, #0xe4
 	ldh	(_BGP_REG + 0), a
-;galaxy.c:525: set_bkg_data(0xFC, 0x04, std_data);
+;galaxy.c:528: set_bkg_data( 0xFC, 0x04, std_data );
 	ld	de, #_std_data
 	push	de
 	ld	hl, #0x4fc
 	push	hl
 	call	_set_bkg_data
 	add	sp, #4
-;galaxy.c:526: set_bkg_data(0x00, 0x2D, bkg_data);
+;galaxy.c:529: set_bkg_data( 0x00, 0x2D, bkg_data );
 	ld	de, #_bkg_data
 	push	de
 	ld	hl, #0x2d00
 	push	hl
 	call	_set_bkg_data
 	add	sp, #4
-;galaxy.c:533: for(i = 0; i < 32; i+=8)
+;galaxy.c:536: for( i = 0; i < 32; i += 8 )
 	ld	c, #0x00
 00152$:
-;galaxy.c:534: for(j = 0; j < 32; j+=8)
+;galaxy.c:537: for( j = 0; j < 32; j += 8 )
 	ld	b, #0x00
 00150$:
-;galaxy.c:535: set_bkg_tiles(i, j, 8, 8, bkg_tiles);
+;galaxy.c:538: set_bkg_tiles( i, j, 8, 8, bkg_tiles );
 	ld	de, #_bkg_tiles
 	push	de
 	ld	hl, #0x808
@@ -3223,52 +3223,52 @@ _main::
 	inc	sp
 	call	_set_bkg_tiles
 	add	sp, #6
-;galaxy.c:534: for(j = 0; j < 32; j+=8)
+;galaxy.c:537: for( j = 0; j < 32; j += 8 )
 	ld	a, b
 	add	a, #0x08
 	ld	b, a
 	sub	a, #0x20
 	jr	C, 00150$
-;galaxy.c:533: for(i = 0; i < 32; i+=8)
+;galaxy.c:536: for( i = 0; i < 32; i += 8 )
 	ld	a, c
 	add	a, #0x08
 	ld	c, a
 	sub	a, #0x20
 	jr	C, 00152$
-;galaxy.c:536: bposx.w = 0;
+;galaxy.c:539: bposx.w = 0;
 	ld	hl, #_bposx
 	xor	a, a
 	ld	(hl+), a
 	ld	(hl), a
-;galaxy.c:537: SCX_REG = 0;
+;galaxy.c:540: SCX_REG = 0;
 	xor	a, a
 	ldh	(_SCX_REG + 0), a
-;galaxy.c:538: bposy.w = 0;
+;galaxy.c:541: bposy.w = 0;
 	ld	hl, #_bposy
 	xor	a, a
 	ld	(hl+), a
 	ld	(hl), a
-;galaxy.c:539: SCY_REG = 0;
+;galaxy.c:542: SCY_REG = 0;
 	xor	a, a
 	ldh	(_SCY_REG + 0), a
-;galaxy.c:540: bspx.w = 0xFF00;
+;galaxy.c:543: bspx.w = 0xFF00;
 	ld	hl, #_bspx
 	xor	a, a
 	ld	(hl+), a
 	ld	(hl), #0xff
-;galaxy.c:541: bspy.w = 0x0080;
+;galaxy.c:544: bspy.w = 0x0080;
 	ld	hl, #_bspy
 	ld	a, #0x80
 	ld	(hl+), a
 	ld	(hl), #0x00
-;galaxy.c:544: set_win_data(0x80, 0x21, frame_data);
+;galaxy.c:547: set_win_data( 0x80, 0x21, frame_data );
 	ld	de, #_frame_data
 	push	de
 	ld	hl, #0x2180
 	push	hl
 	call	_set_win_data
 	add	sp, #4
-;galaxy.c:551: set_win_tiles(0, 0, 16, 10, frame_tiles);
+;galaxy.c:554: set_win_tiles( 0, 0, 16, 10, frame_tiles );
 	ld	de, #_frame_tiles
 	push	de
 	ld	hl, #0xa10
@@ -3278,7 +3278,7 @@ _main::
 	push	af
 	call	_set_win_tiles
 	add	sp, #6
-;galaxy.c:558: set_win_tiles(2, 2, 12, 6, door1_tiles);
+;galaxy.c:561: set_win_tiles( 2, 2, 12, 6, door1_tiles );
 	ld	de, #_door1_tiles
 	push	de
 	ld	hl, #0x60c
@@ -3291,35 +3291,35 @@ _main::
 	inc	sp
 	call	_set_win_tiles
 	add	sp, #6
-;galaxy.c:559: wposx.b.h = MAXWNDPOSX;
+;galaxy.c:562: wposx.b.h = MAXWNDPOSX;
 	ld	hl, #(_wposx + 1)
 	ld	(hl), #0xa6
-;galaxy.c:560: wposx.b.l = 0;
+;galaxy.c:563: wposx.b.l = 0;
 	ld	hl, #_wposx
 	ld	(hl), #0x00
-;galaxy.c:561: WX_REG = MAXWNDPOSX;
+;galaxy.c:564: WX_REG = MAXWNDPOSX;
 	ld	a, #0xa6
 	ldh	(_WX_REG + 0), a
-;galaxy.c:562: wposy.b.h = MAXWNDPOSY;
+;galaxy.c:565: wposy.b.h = MAXWNDPOSY;
 	ld	hl, #(_wposy + 1)
 	ld	(hl), #0x8f
-;galaxy.c:563: wposy.b.l = 0;
+;galaxy.c:566: wposy.b.l = 0;
 	ld	hl, #_wposy
 	ld	(hl), #0x00
-;galaxy.c:564: WY_REG = MAXWNDPOSY;
+;galaxy.c:567: WY_REG = MAXWNDPOSY;
 	ld	a, #0x8f
 	ldh	(_WY_REG + 0), a
-;galaxy.c:565: wspx.w = 0xFF80;
+;galaxy.c:568: wspx.w = 0xFF80;
 	ld	hl, #_wspx
 	ld	a, #0x80
 	ld	(hl+), a
 	ld	(hl), #0xff
-;galaxy.c:566: wspy.w = 0xFFC0;
+;galaxy.c:569: wspy.w = 0xFFC0;
 	ld	hl, #_wspy
 	ld	a, #0xc0
 	ld	(hl+), a
 	ld	(hl), #0xff
-;galaxy.c:569: set_sprite_data(0x00, 0x1C, earth_data);
+;galaxy.c:572: set_sprite_data( 0x00, 0x1C, earth_data );
 	ld	de, #_earth_data
 	push	de
 	ld	hl, #0x1c00
@@ -3331,93 +3331,93 @@ _main::
 	ld	(hl), #0x00
 	ld	hl, #(_shadow_OAM + 7)
 	ld	(hl), #0x00
-;galaxy.c:572: sframe = 0;
+;galaxy.c:575: sframe = 0;
 	ld	hl, #_sframe
 	ld	(hl), #0x00
-;galaxy.c:573: sposx.w  = 0x1000;
+;galaxy.c:576: sposx.w = 0x1000;
 	ld	hl, #_sposx
 	xor	a, a
 	ld	(hl+), a
 	ld	(hl), #0x10
-;galaxy.c:574: sposy.w  = 0x1000;
+;galaxy.c:577: sposy.w = 0x1000;
 	ld	hl, #_sposy
 	xor	a, a
 	ld	(hl+), a
 	ld	(hl), #0x10
-;galaxy.c:575: sspx.w  = 0x0040;
+;galaxy.c:578: sspx.w = 0x0040;
 	ld	hl, #_sspx
 	ld	a, #0x40
 	ld	(hl+), a
 	ld	(hl), #0x00
-;galaxy.c:576: sspy.w  = 0x0040;
+;galaxy.c:579: sspy.w = 0x0040;
 	ld	hl, #_sspy
 	ld	a, #0x40
 	ld	(hl+), a
 	ld	(hl), #0x00
-;galaxy.c:577: tile_sprite();
+;galaxy.c:580: tile_sprite();
 	call	_tile_sprite
-;galaxy.c:578: place_sprite();
+;galaxy.c:581: place_sprite();
 	call	_place_sprite
-;galaxy.c:580: DISPLAY_ON;
+;galaxy.c:583: DISPLAY_ON;
 	ldh	a, (_LCDC_REG + 0)
 	or	a, #0x80
 	ldh	(_LCDC_REG + 0), a
 ;C:/gbdk/include/gb/gb.h:727: __asm__("ei");
 	ei
-;galaxy.c:585: for(i = 0; i < 4; i++)
+;galaxy.c:588: for( i = 0; i < 4; i++ )
 00163$:
 	ld	c, #0x04
 00156$:
-;galaxy.c:586: wait_vbl_done();
+;galaxy.c:589: wait_vbl_done();
 	call	_wait_vbl_done
-;galaxy.c:585: for(i = 0; i < 4; i++)
+;galaxy.c:588: for( i = 0; i < 4; i++ )
 	dec	c
 	ld	a, c
 	jr	NZ, 00156$
-;galaxy.c:587: time++;
+;galaxy.c:590: time++;
 	ld	hl, #_time
 	inc	(hl)
-;galaxy.c:588: fade();
+;galaxy.c:591: fade();
 	call	_fade
-;galaxy.c:589: door();
+;galaxy.c:592: door();
 	call	_door
-;galaxy.c:590: scroll();
+;galaxy.c:593: scroll();
 	call	_scroll
-;galaxy.c:591: animate_sprite();
+;galaxy.c:594: animate_sprite();
 	call	_animate_sprite
-;galaxy.c:592: i = joypad();
+;galaxy.c:595: i = joypad();
 	call	_joypad
-;galaxy.c:594: if(i & J_UP)
+;galaxy.c:597: if( i & J_UP )
 	ld	c, a
 	and	a, #0x04
 	ld	e, a
 	ld	d, #0x00
-;galaxy.c:596: if(i & J_DOWN)
+;galaxy.c:599: if( i & J_DOWN )
 	ld	a, c
 	and	a, #0x08
 	ldhl	sp,	#0
 	ld	(hl+), a
-;galaxy.c:598: if(i & J_LEFT)
+;galaxy.c:601: if( i & J_LEFT )
 	xor	a, a
 	ld	(hl+), a
 	ld	a, c
 	and	a, #0x02
 	ld	(hl+), a
-;galaxy.c:600: if(i & J_RIGHT)
+;galaxy.c:603: if( i & J_RIGHT )
 	xor	a, a
 	ld	(hl+), a
 	ld	a, c
 	and	a, #0x01
 	ld	(hl+), a
 	ld	(hl), #0x00
-;galaxy.c:593: if(i & J_B) {
+;galaxy.c:596: if( i & J_B ) {
 	bit	5, c
 	jp	Z,00141$
-;galaxy.c:594: if(i & J_UP)
+;galaxy.c:597: if( i & J_UP )
 	ld	a, d
 	or	a, e
 	jr	Z, 00105$
-;galaxy.c:595: bspy.w -= 0x0010;
+;galaxy.c:598: bspy.w -= 0x0010;
 	ld	de, #_bspy
 	ld	a, (de)
 	ldhl	sp,	#6
@@ -3444,12 +3444,12 @@ _main::
 	ld	a, (hl)
 	ld	(de), a
 00105$:
-;galaxy.c:596: if(i & J_DOWN)
+;galaxy.c:599: if( i & J_DOWN )
 	ldhl	sp,	#1
 	ld	a, (hl-)
 	or	a, (hl)
 	jr	Z, 00107$
-;galaxy.c:597: bspy.w += 0x0010;
+;galaxy.c:600: bspy.w += 0x0010;
 	ld	de, #_bspy
 	ld	a, (de)
 	ldhl	sp,	#6
@@ -3477,12 +3477,12 @@ _main::
 	ld	a, (hl)
 	ld	(de), a
 00107$:
-;galaxy.c:598: if(i & J_LEFT)
+;galaxy.c:601: if( i & J_LEFT )
 	ldhl	sp,	#3
 	ld	a, (hl-)
 	or	a, (hl)
 	jr	Z, 00109$
-;galaxy.c:599: bspx.w -= 0x0010;
+;galaxy.c:602: bspx.w -= 0x0010;
 	ld	hl, #_bspx
 	ld	a, (hl+)
 	ld	c, a
@@ -3498,12 +3498,12 @@ _main::
 	ld	(hl+), a
 	ld	(hl), b
 00109$:
-;galaxy.c:600: if(i & J_RIGHT)
+;galaxy.c:603: if( i & J_RIGHT )
 	ldhl	sp,	#5
 	ld	a, (hl-)
 	or	a, (hl)
 	jp	Z, 00163$
-;galaxy.c:601: bspx.w += 0x0010;
+;galaxy.c:604: bspx.w += 0x0010;
 	ld	hl, #_bspx
 	ld	a, (hl+)
 	ld	c, a
@@ -3518,14 +3518,14 @@ _main::
 	ld	(hl), b
 	jp	00163$
 00141$:
-;galaxy.c:602: } else if(i & J_A) {
+;galaxy.c:606: else if( i & J_A ) {
 	bit	4, c
 	jr	Z, 00138$
-;galaxy.c:603: if(i & J_UP)
+;galaxy.c:607: if( i & J_UP )
 	ld	a, d
 	or	a, e
 	jr	Z, 00113$
-;galaxy.c:604: wspy.w -= 0x0010;
+;galaxy.c:608: wspy.w -= 0x0010;
 	ld	de, #_wspy
 	ld	a, (de)
 	ldhl	sp,	#6
@@ -3552,12 +3552,12 @@ _main::
 	ld	a, (hl)
 	ld	(de), a
 00113$:
-;galaxy.c:605: if(i & J_DOWN)
+;galaxy.c:609: if( i & J_DOWN )
 	ldhl	sp,	#1
 	ld	a, (hl-)
 	or	a, (hl)
 	jr	Z, 00115$
-;galaxy.c:606: wspy.w += 0x0010;
+;galaxy.c:610: wspy.w += 0x0010;
 	ld	hl, #_wspy
 	ld	a, (hl+)
 	ld	c, a
@@ -3571,12 +3571,12 @@ _main::
 	ld	(hl+), a
 	ld	(hl), b
 00115$:
-;galaxy.c:607: if(i & J_LEFT)
+;galaxy.c:611: if( i & J_LEFT )
 	ldhl	sp,	#3
 	ld	a, (hl-)
 	or	a, (hl)
 	jr	Z, 00117$
-;galaxy.c:608: wspx.w -= 0x0010;
+;galaxy.c:612: wspx.w -= 0x0010;
 	ld	hl, #_wspx
 	ld	a, (hl+)
 	ld	c, a
@@ -3592,12 +3592,12 @@ _main::
 	ld	(hl+), a
 	ld	(hl), b
 00117$:
-;galaxy.c:609: if(i & J_RIGHT)
+;galaxy.c:613: if( i & J_RIGHT )
 	ldhl	sp,	#5
 	ld	a, (hl-)
 	or	a, (hl)
 	jp	Z, 00163$
-;galaxy.c:610: wspx.w += 0x0010;
+;galaxy.c:614: wspx.w += 0x0010;
 	ld	hl, #_wspx
 	ld	a, (hl+)
 	ld	c, a
@@ -3612,44 +3612,44 @@ _main::
 	ld	(hl), b
 	jp	00163$
 00138$:
-;galaxy.c:612: if(i & J_SELECT)
+;galaxy.c:617: if( i & J_SELECT )
 	bit	6, c
 	jr	Z, 00121$
-;galaxy.c:613: color = STARTFADE;
+;galaxy.c:618: color = STARTFADE;
 	ld	hl, #_color
 	ld	(hl), #0x60
 00121$:
-;galaxy.c:614: if(i & J_START)
+;galaxy.c:619: if( i & J_START )
 	bit	7, c
 	jr	Z, 00128$
-;galaxy.c:615: if(doorstate == CLOSED) {
+;galaxy.c:620: if( doorstate == CLOSED ) {
 	ld	hl, #_doorstate
 	ld	a, (hl)
 	or	a, a
 	jr	NZ, 00125$
-;galaxy.c:616: doorstate = OPENING;
+;galaxy.c:621: doorstate = OPENING;
 	ld	(hl), #0x01
-;galaxy.c:617: doorpos = 0;
+;galaxy.c:622: doorpos = 0;
 	ld	hl, #_doorpos
 	ld	(hl), #0x00
 	jr	00128$
 00125$:
-;galaxy.c:618: } else if(doorstate == OPENED) {
+;galaxy.c:624: else if( doorstate == OPENED ) {
 	ld	a, (#_doorstate)
 	sub	a, #0x02
 	jr	NZ, 00128$
-;galaxy.c:619: doorstate = CLOSING;
+;galaxy.c:625: doorstate = CLOSING;
 	ld	hl, #_doorstate
 	ld	(hl), #0x03
-;galaxy.c:620: doorpos = NBDFRAMES;
+;galaxy.c:626: doorpos = NBDFRAMES;
 	ld	hl, #_doorpos
 	ld	(hl), #0x18
 00128$:
-;galaxy.c:622: if(i & J_UP)
+;galaxy.c:628: if( i & J_UP )
 	ld	a, d
 	or	a, e
 	jr	Z, 00130$
-;galaxy.c:623: sspy.w -= 0x0010;
+;galaxy.c:629: sspy.w -= 0x0010;
 	ld	hl, #_sspy
 	ld	a, (hl+)
 	ld	c, a
@@ -3665,12 +3665,12 @@ _main::
 	ld	(hl+), a
 	ld	(hl), b
 00130$:
-;galaxy.c:624: if(i & J_DOWN)
+;galaxy.c:630: if( i & J_DOWN )
 	ldhl	sp,	#1
 	ld	a, (hl-)
 	or	a, (hl)
 	jr	Z, 00132$
-;galaxy.c:625: sspy.w += 0x0010;
+;galaxy.c:631: sspy.w += 0x0010;
 	ld	de, #_sspy
 	ld	a, (de)
 	ldhl	sp,	#6
@@ -3698,12 +3698,12 @@ _main::
 	ld	a, (hl)
 	ld	(de), a
 00132$:
-;galaxy.c:626: if(i & J_LEFT)
+;galaxy.c:632: if( i & J_LEFT )
 	ldhl	sp,	#3
 	ld	a, (hl-)
 	or	a, (hl)
 	jr	Z, 00134$
-;galaxy.c:627: sspx.w -= 0x0010;
+;galaxy.c:633: sspx.w -= 0x0010;
 	ld	hl, #_sspx
 	ld	a, (hl+)
 	ld	c, a
@@ -3719,12 +3719,12 @@ _main::
 	ld	(hl+), a
 	ld	(hl), b
 00134$:
-;galaxy.c:628: if(i & J_RIGHT)
+;galaxy.c:634: if( i & J_RIGHT )
 	ldhl	sp,	#5
 	ld	a, (hl-)
 	or	a, (hl)
 	jp	Z, 00163$
-;galaxy.c:629: sspx.w += 0x0010;
+;galaxy.c:635: sspx.w += 0x0010;
 	ld	hl, #_sspx
 	ld	a, (hl+)
 	ld	c, a
@@ -3738,7 +3738,7 @@ _main::
 	ld	(hl+), a
 	ld	(hl), b
 	jp	00163$
-;galaxy.c:632: }
+;galaxy.c:638: }
 	add	sp, #10
 	ret
 	.area _CODE
