@@ -42,12 +42,12 @@
 ; code
 ;--------------------------------------------------------
 	.area _CODE
-;border.c:22: void main(void) {
+;border.c:22: void main( void ) {
 ;	---------------------------------
 ; Function main
 ; ---------------------------------
 _main::
-;border.c:26: for (uint8_t i = 4; i != 0; i--) wait_vbl_done();
+;border.c:26: for( uint8_t i = 4; i != 0; i-- ) wait_vbl_done();
 	ld	c, #0x04
 00106$:
 	ld	a, c
@@ -61,7 +61,7 @@ _main::
 	ldh	a, (_LCDC_REG + 0)
 	or	a, #0x80
 	ldh	(_LCDC_REG + 0), a
-;border.c:30: set_sgb_border(border_data_tiles, sizeof(border_data_tiles), border_data_map, sizeof(border_data_map), border_data_palettes, sizeof(border_data_palettes));
+;border.c:30: set_sgb_border( border_data_tiles, sizeof( border_data_tiles ), border_data_map, sizeof( border_data_map ), border_data_palettes, sizeof( border_data_palettes ) );
 	ld	de, #0x0020
 	push	de
 	ld	de, #_border_data_palettes
@@ -73,7 +73,7 @@ _main::
 	ld	bc, #0x0d60
 	ld	de, #_border_data_tiles
 	call	_set_sgb_border
-;border.c:31: while(1) {
+;border.c:31: while( 1 ) {
 00103$:
 ;border.c:32: wait_vbl_done();
 	call	_wait_vbl_done

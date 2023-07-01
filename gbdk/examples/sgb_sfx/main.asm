@@ -77,17 +77,17 @@ _sfx_num_b::
 ; code
 ;--------------------------------------------------------
 	.area _CODE
-;main.c:35: void sgb_sound_effect(uint8_t sfx_a, uint8_t sfx_b) {
+;main.c:35: void sgb_sound_effect( uint8_t sfx_a, uint8_t sfx_b ) {
 ;	---------------------------------
 ; Function sgb_sound_effect
 ; ---------------------------------
 _sgb_sound_effect::
 	ld	d, a
-;main.c:36: sgb_buf[0] = (SGB_SOUND << 3) | 1;  // 1 is number of packets to transfer
+;main.c:36: sgb_buf[ 0 ] = ( SGB_SOUND << 3 ) | 1;  // 1 is number of packets to transfer
 	ld	bc, #_sgb_buf+0
 	ld	a, #0x41
 	ld	(bc), a
-;main.c:37: sgb_buf[1] = sfx_a;  // Effect A
+;main.c:37: sgb_buf[ 1 ] = sfx_a;  // Effect A
 	ld	l, c
 ;	spillPairReg hl
 ;	spillPairReg hl
@@ -96,7 +96,7 @@ _sgb_sound_effect::
 ;	spillPairReg hl
 	inc	hl
 	ld	(hl), d
-;main.c:38: sgb_buf[2] = sfx_b;  // Effect B
+;main.c:38: sgb_buf[ 2 ] = sfx_b;  // Effect B
 	ld	l, c
 ;	spillPairReg hl
 ;	spillPairReg hl
@@ -106,7 +106,7 @@ _sgb_sound_effect::
 	inc	hl
 	inc	hl
 	ld	(hl), e
-;main.c:39: sgb_buf[3] = sgb_sfx_a_pitch | (sgb_sfx_a_vol << 2) | (sgb_sfx_b_pitch << 4) | (sgb_sfx_b_vol << 6);
+;main.c:39: sgb_buf[ 3 ] = sgb_sfx_a_pitch | ( sgb_sfx_a_vol << 2 ) | ( sgb_sfx_b_pitch << 4 ) | ( sgb_sfx_b_vol << 6 );
 	ld	a, (#_sgb_sfx_a_vol)
 	add	a, a
 	add	a, a
@@ -124,10 +124,10 @@ _sgb_sound_effect::
 	and	a, #0xc0
 	or	a, e
 	ld	(#(_sgb_buf + 3)),a
-;main.c:40: sgb_buf[4] = SGB_MUSIC_SCORE_CODE_NONE; // Must be zero if not used
+;main.c:40: sgb_buf[ 4 ] = SGB_MUSIC_SCORE_CODE_NONE; // Must be zero if not used
 	ld	hl, #(_sgb_buf + 4)
 	ld	(hl), #0x00
-;main.c:41: sgb_transfer(sgb_buf);
+;main.c:41: sgb_transfer( sgb_buf );
 	push	bc
 	call	_sgb_transfer
 	pop	hl
@@ -138,26 +138,26 @@ _sgb_sound_effect::
 ; Function init_display
 ; ---------------------------------
 _init_display::
-;main.c:50: gotoxy(0,1);
+;main.c:50: gotoxy( 0, 1 );
 	xor	a, a
 	inc	a
 	push	af
 	call	_gotoxy
 	pop	hl
-;main.c:51: printf("SGB BUILT-IN SFX");
+;main.c:51: printf( "SGB BUILT-IN SFX" );
 	ld	de, #___str_0
 	push	de
 	call	_printf
 	pop	hl
-;main.c:53: gotoxy(0,DISP_SFX_A_START);
+;main.c:53: gotoxy( 0, DISP_SFX_A_START );
 	ld	hl, #0x300
 	push	hl
 	call	_gotoxy
 	pop	hl
-;main.c:57: printf(" TYPE: UP / DOWN\n");
+;main.c:57: printf( " TYPE: UP / DOWN\n" );
 	ld	de, #___str_19
 	call	_puts
-;main.c:59: gotoxy(0,DISP_SFX_B_START);
+;main.c:59: gotoxy( 0, DISP_SFX_B_START );
 	ld	a, #0x0a
 	push	af
 	inc	sp
@@ -166,7 +166,7 @@ _init_display::
 	inc	sp
 	call	_gotoxy
 	pop	de
-;main.c:63: printf(" TYPE: LEFT / RIGHT\n");
+;main.c:63: printf( " TYPE: LEFT / RIGHT\n" );
 	ld	de, #___str_22
 ;main.c:64: }
 	jp	_puts
@@ -191,17 +191,17 @@ ___str_22:
 	.db 0x0a
 	.ascii " TYPE: LEFT / RIGHT"
 	.db 0x00
-;main.c:68: void update_display(void) {
+;main.c:68: void update_display( void ) {
 ;	---------------------------------
 ; Function update_display
 ; ---------------------------------
 _update_display::
-;main.c:70: gotoxy(7u, DISP_SFX_A_START);
+;main.c:70: gotoxy( 7u, DISP_SFX_A_START );
 	ld	hl, #0x307
 	push	hl
 	call	_gotoxy
 	pop	hl
-;main.c:71: printf("0x%hx", (uint8_t)sfx_num_a);
+;main.c:71: printf( "0x%hx", ( uint8_t ) sfx_num_a );
 	ld	a, (#_sfx_num_a)
 	push	af
 	inc	sp
@@ -209,12 +209,12 @@ _update_display::
 	push	de
 	call	_printf
 	add	sp, #3
-;main.c:72: gotoxy(1u, DISP_SFX_A_START + 4u);
+;main.c:72: gotoxy( 1u, DISP_SFX_A_START + 4u );
 	ld	hl, #0x701
 	push	hl
 	call	_gotoxy
 	pop	hl
-;main.c:73: printf("%s", (const char *)sgb_sfx_names_table_a[sfx_num_a]);
+;main.c:73: printf( "%s", ( const char * ) sgb_sfx_names_table_a[ sfx_num_a ] );
 	ld	bc, #_sgb_sfx_names_table_a+0
 	ld	hl, #_sfx_num_a
 	ld	l, (hl)
@@ -233,12 +233,12 @@ _update_display::
 	push	de
 	call	_printf
 	add	sp, #4
-;main.c:76: gotoxy(7u, DISP_SFX_B_START);
+;main.c:76: gotoxy( 7u, DISP_SFX_B_START );
 	ld	hl, #0xa07
 	push	hl
 	call	_gotoxy
 	pop	hl
-;main.c:77: printf("0x%hx", (uint8_t)sfx_num_b);
+;main.c:77: printf( "0x%hx", ( uint8_t ) sfx_num_b );
 	ld	a, (#_sfx_num_b)
 	push	af
 	inc	sp
@@ -246,12 +246,12 @@ _update_display::
 	push	de
 	call	_printf
 	add	sp, #3
-;main.c:78: gotoxy(1u, DISP_SFX_B_START + 4u);
+;main.c:78: gotoxy( 1u, DISP_SFX_B_START + 4u );
 	ld	hl, #0xe01
 	push	hl
 	call	_gotoxy
 	pop	hl
-;main.c:79: printf("%s", (const char *)sgb_sfx_names_table_b[sfx_num_b]);
+;main.c:79: printf( "%s", ( const char * ) sgb_sfx_names_table_b[ sfx_num_b ] );
 	ld	bc, #_sgb_sfx_names_table_b+0
 	ld	hl, #_sfx_num_b
 	ld	l, (hl)
@@ -278,7 +278,7 @@ ___str_23:
 ___str_24:
 	.ascii "%s"
 	.db 0x00
-;main.c:84: void handle_input(void) {
+;main.c:84: void handle_input( void ) {
 ;	---------------------------------
 ; Function handle_input
 ; ---------------------------------
@@ -287,7 +287,7 @@ _handle_input::
 ;main.c:86: bool display_update_queued = false;
 	ldhl	sp,	#0
 	ld	(hl), #0x00
-;main.c:89: switch ((keys ^ keys_last) & keys) {
+;main.c:89: switch( ( keys ^ keys_last ) & keys ) {
 	ld	a, (#_keys)
 	ld	hl, #_keys_last
 	xor	a, (hl)
@@ -301,7 +301,7 @@ _handle_input::
 	jr	Z, 00109$
 	cp	a, #0x08
 	jr	Z, 00112$
-;main.c:92: case J_A: if (keys & J_SELECT) {
+;main.c:92: case J_A: if( keys & J_SELECT ) {
 	ld	c, (hl)
 	push	af
 	ld	a, c
@@ -309,124 +309,124 @@ _handle_input::
 	ld	c, a
 	ld	b, #0x00
 	pop	af
-;main.c:89: switch ((keys ^ keys_last) & keys) {
+;main.c:89: switch( ( keys ^ keys_last ) & keys ) {
 	cp	a, #0x10
 	jr	Z, 00101$
 	sub	a, #0x20
 	jr	Z, 00105$
 	jr	00121$
-;main.c:92: case J_A: if (keys & J_SELECT) {
+;main.c:92: case J_A: if( keys & J_SELECT ) {
 00101$:
 	ld	a, b
 	or	a, c
 	jr	Z, 00103$
-;main.c:94: sgb_sound_effect(SGB_SND_EFFECT_STOP, SGB_SND_EFFECT_EMPTY);
+;main.c:94: sgb_sound_effect( SGB_SND_EFFECT_STOP, SGB_SND_EFFECT_EMPTY );
 	ld	e, #0x00
 	ld	a, #0x80
 	call	_sgb_sound_effect
 	jr	00121$
 00103$:
-;main.c:97: sgb_sound_effect(sfx_num_a, SGB_SND_EFFECT_EMPTY);
+;main.c:98: sgb_sound_effect( sfx_num_a, SGB_SND_EFFECT_EMPTY );
 	ld	e, #0x00
 	ld	a, (#_sfx_num_a)
 	call	_sgb_sound_effect
-;main.c:99: break;
+;main.c:100: break;
 	jr	00121$
-;main.c:102: case J_B: if (keys & J_SELECT) {
+;main.c:103: case J_B: if( keys & J_SELECT ) {
 00105$:
 	ld	a, b
 	or	a, c
 	jr	Z, 00107$
-;main.c:104: sgb_sound_effect(SGB_SND_EFFECT_EMPTY, SGB_SND_EFFECT_STOP);
+;main.c:105: sgb_sound_effect( SGB_SND_EFFECT_EMPTY, SGB_SND_EFFECT_STOP );
 	ld	e, #0x80
 	xor	a, a
 	call	_sgb_sound_effect
 	jr	00121$
 00107$:
-;main.c:107: sgb_sound_effect(SGB_SND_EFFECT_EMPTY, sfx_num_b);
+;main.c:109: sgb_sound_effect( SGB_SND_EFFECT_EMPTY, sfx_num_b );
 	ld	hl, #_sfx_num_b
 	ld	e, (hl)
 	xor	a, a
 	call	_sgb_sound_effect
-;main.c:109: break;
+;main.c:111: break;
 	jr	00121$
-;main.c:113: case (J_UP): sfx_num_a++;
+;main.c:115: case ( J_UP ): sfx_num_a++;
 00109$:
 	ld	hl, #_sfx_num_a
 	inc	(hl)
-;main.c:114: if (sfx_num_a > SGB_SND_EFFECT_A_MAX) sfx_num_a = SGB_SND_EFFECT_A_MIN;
+;main.c:116: if( sfx_num_a > SGB_SND_EFFECT_A_MAX ) sfx_num_a = SGB_SND_EFFECT_A_MIN;
 	ld	a, #0x30
 	sub	a, (hl)
 	jr	NC, 00111$
 	ld	(hl), #0x01
 00111$:
-;main.c:115: display_update_queued = true;
+;main.c:117: display_update_queued = true;
 	ldhl	sp,	#0
 	ld	(hl), #0x01
-;main.c:116: break;
+;main.c:118: break;
 	jr	00121$
-;main.c:118: case (J_DOWN): sfx_num_a--;
+;main.c:120: case ( J_DOWN ): sfx_num_a--;
 00112$:
 	ld	hl, #_sfx_num_a
 	dec	(hl)
-;main.c:119: if (sfx_num_a < SGB_SND_EFFECT_A_MIN) sfx_num_a = SGB_SND_EFFECT_A_MAX;
+;main.c:121: if( sfx_num_a < SGB_SND_EFFECT_A_MIN ) sfx_num_a = SGB_SND_EFFECT_A_MAX;
 	ld	a, (hl)
 	sub	a, #0x01
 	jr	NC, 00114$
 	ld	(hl), #0x30
 00114$:
-;main.c:120: display_update_queued = true;
+;main.c:122: display_update_queued = true;
 	ldhl	sp,	#0
 	ld	(hl), #0x01
-;main.c:121: break;
+;main.c:123: break;
 	jr	00121$
-;main.c:123: case (J_RIGHT): sfx_num_b++;
+;main.c:125: case ( J_RIGHT ): sfx_num_b++;
 00115$:
 	ld	hl, #_sfx_num_b
 	inc	(hl)
-;main.c:124: if (sfx_num_b > SGB_SND_EFFECT_B_MAX) sfx_num_b = SGB_SND_EFFECT_B_MIN;
+;main.c:126: if( sfx_num_b > SGB_SND_EFFECT_B_MAX ) sfx_num_b = SGB_SND_EFFECT_B_MIN;
 	ld	a, #0x19
 	sub	a, (hl)
 	jr	NC, 00117$
 	ld	(hl), #0x01
 00117$:
-;main.c:125: display_update_queued = true;
+;main.c:127: display_update_queued = true;
 	ldhl	sp,	#0
 	ld	(hl), #0x01
-;main.c:126: break;
+;main.c:128: break;
 	jr	00121$
-;main.c:128: case (J_LEFT): sfx_num_b--;
+;main.c:130: case ( J_LEFT ): sfx_num_b--;
 00118$:
 	ld	hl, #_sfx_num_b
 	dec	(hl)
-;main.c:129: if (sfx_num_b < SGB_SND_EFFECT_B_MIN) sfx_num_b = SGB_SND_EFFECT_B_MAX;
+;main.c:131: if( sfx_num_b < SGB_SND_EFFECT_B_MIN ) sfx_num_b = SGB_SND_EFFECT_B_MAX;
 	ld	a, (hl)
 	sub	a, #0x01
 	jr	NC, 00120$
 	ld	(hl), #0x19
 00120$:
-;main.c:130: display_update_queued = true;
+;main.c:132: display_update_queued = true;
 	ldhl	sp,	#0
 	ld	(hl), #0x01
-;main.c:132: }
+;main.c:134: }
 00121$:
-;main.c:134: if (display_update_queued)
+;main.c:136: if( display_update_queued )
 	ldhl	sp,	#0
 	bit	0, (hl)
 	jr	Z, 00124$
-;main.c:135: update_display();
+;main.c:137: update_display();
 	inc	sp
 	jp	_update_display
 00124$:
-;main.c:136: }
+;main.c:138: }
 	inc	sp
 	ret
-;main.c:139: void main(void) {
+;main.c:141: void main( void ) {
 ;	---------------------------------
 ; Function main
 ; ---------------------------------
 _main::
-;main.c:143: for (uint8_t i = 4; i != 0; i--) wait_vbl_done();
+;main.c:145: for( uint8_t i = 4; i != 0; i-- ) wait_vbl_done();
 	ld	c, #0x04
 00109$:
 	ld	a, c
@@ -436,39 +436,39 @@ _main::
 	dec	c
 	jr	00109$
 00101$:
-;main.c:145: DISPLAY_ON;
+;main.c:147: DISPLAY_ON;
 	ldh	a, (_LCDC_REG + 0)
 	or	a, #0x80
 	ldh	(_LCDC_REG + 0), a
-;main.c:147: if (sgb_check()) {
+;main.c:149: if( sgb_check() ) {
 	call	_sgb_check
 	ld	a, e
 	or	a, a
 	jr	Z, 00106$
-;main.c:149: init_display();
+;main.c:151: init_display();
 	call	_init_display
-;main.c:150: update_display();
+;main.c:152: update_display();
 	call	_update_display
-;main.c:152: while(1) {
+;main.c:154: while( 1 ) {
 00103$:
-;main.c:153: wait_vbl_done();
+;main.c:155: wait_vbl_done();
 	call	_wait_vbl_done
-;main.c:155: keys_last = keys;
+;main.c:157: keys_last = keys;
 	ld	a, (#_keys)
 	ld	(#_keys_last),a
-;main.c:156: keys = joypad();
+;main.c:158: keys = joypad();
 	call	_joypad
 	ld	(#_keys),a
-;main.c:158: handle_input();
+;main.c:160: handle_input();
 	call	_handle_input
 	jr	00103$
 00106$:
-;main.c:161: printf("NO SGB DETECTED");
+;main.c:164: printf( "NO SGB DETECTED" );
 	ld	de, #___str_25
 	push	de
 	call	_printf
 	pop	hl
-;main.c:164: }
+;main.c:167: }
 	ret
 ___str_25:
 	.ascii "NO SGB DETECTED"

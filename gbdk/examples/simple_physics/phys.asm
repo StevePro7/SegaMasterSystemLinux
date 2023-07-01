@@ -65,7 +65,7 @@ _sprite_data::
 ; code
 ;--------------------------------------------------------
 	.area _CODE
-;phys.c:29: void main(void) {
+;phys.c:29: void main( void ) {
 ;	---------------------------------
 ; Function main
 ; ---------------------------------
@@ -77,7 +77,7 @@ _main::
 	ldh	(_OBP0_REG + 0), a
 	ld	a, #0xe4
 	ldh	(_BGP_REG + 0), a
-;phys.c:34: set_sprite_data(0, 4, sprite_data);
+;phys.c:34: set_sprite_data( 0, 4, sprite_data );
 	ld	de, #_sprite_data
 	push	de
 	ld	hl, #0x400
@@ -94,7 +94,7 @@ _main::
 	ldh	a, (_LCDC_REG + 0)
 	or	a, #0x02
 	ldh	(_LCDC_REG + 0), a
-;phys.c:43: joypad_init(1, &joypads);
+;phys.c:43: joypad_init( 1, &joypads );
 	ld	de, #_joypads
 	push	de
 	ld	a, #0x01
@@ -122,12 +122,12 @@ _main::
 	ld	(hl), a
 	ld	hl, #_Jump
 	ld	(hl), #0x00
-;phys.c:48: while(1) {        
+;phys.c:48: while( 1 ) {
 00137$:
-;phys.c:50: joypad_ex(&joypads);
+;phys.c:50: joypad_ex( &joypads );
 	ld	de, #_joypads
 	call	_joypad_ex
-;phys.c:53: if (joypads.joy0 & J_UP) {
+;phys.c:53: if( joypads.joy0 & J_UP ) {
 	ld	bc, #_joypads + 1
 	ld	a, (bc)
 	bit	2, a
@@ -142,7 +142,7 @@ _main::
 	dec	de
 	ld	a, e
 	ld	(hl+), a
-;phys.c:55: if (SpdY < -64) SpdY = -64;
+;phys.c:55: if( SpdY < -64 ) SpdY = -64;
 	ld	a, d
 	ld	(hl-), a
 	ld	a, (hl+)
@@ -169,17 +169,17 @@ _main::
 	ld	(hl), #0xff
 	jr	00109$
 00108$:
-;phys.c:56: } else if (joypads.joy0 & J_DOWN) {
+;phys.c:57: else if( joypads.joy0 & J_DOWN ) {
 	bit	3, a
 	jr	Z, 00109$
-;phys.c:57: SpdY += 2;
+;phys.c:58: SpdY += 2;
 	ld	hl, #_SpdY
 	ld	a, (hl)
 	add	a, #0x02
 	ld	(hl+), a
 	ld	a, (hl)
 	adc	a, #0x00
-;phys.c:58: if (SpdY > 64) SpdY = 64;
+;phys.c:59: if( SpdY > 64 ) SpdY = 64;
 	ld	(hl-), a
 	ld	a, #0x40
 	sub	a, (hl)
@@ -206,11 +206,11 @@ _main::
 	xor	a, a
 	ld	(hl), a
 00109$:
-;phys.c:60: if (joypads.joy0 & J_LEFT) {
+;phys.c:61: if( joypads.joy0 & J_LEFT ) {
 	ld	a, (bc)
 	bit	1, a
 	jr	Z, 00117$
-;phys.c:61: SpdX -= 2;
+;phys.c:62: SpdX -= 2;
 	ld	hl, #_SpdX
 	ld	a, (hl+)
 	ld	e, a
@@ -220,7 +220,7 @@ _main::
 	dec	de
 	ld	a, e
 	ld	(hl+), a
-;phys.c:62: if (SpdX < -64) SpdX = -64;
+;phys.c:63: if( SpdX < -64 ) SpdX = -64;
 	ld	a, d
 	ld	(hl-), a
 	ld	a, (hl+)
@@ -247,17 +247,17 @@ _main::
 	ld	(hl), #0xff
 	jr	00118$
 00117$:
-;phys.c:63: } else if (joypads.joy0 & J_RIGHT) {
+;phys.c:65: else if( joypads.joy0 & J_RIGHT ) {
 	rrca
 	jr	NC, 00118$
-;phys.c:64: SpdX += 2;
+;phys.c:66: SpdX += 2;
 	ld	hl, #_SpdX
 	ld	a, (hl)
 	add	a, #0x02
 	ld	(hl+), a
 	ld	a, (hl)
 	adc	a, #0x00
-;phys.c:65: if (SpdX > 64) SpdX = 64;
+;phys.c:67: if( SpdX > 64 ) SpdX = 64;
 	ld	(hl-), a
 	ld	a, #0x40
 	sub	a, (hl)
@@ -284,7 +284,7 @@ _main::
 	xor	a, a
 	ld	(hl), a
 00118$:
-;phys.c:67: if ((joypads.joy0 & J_A) && (!Jump)) {
+;phys.c:69: if( ( joypads.joy0 & J_A ) && ( !Jump ) ) {
 	ld	a, (bc)
 	bit	4, a
 	jr	Z, 00120$
@@ -292,21 +292,21 @@ _main::
 	ld	a, (hl)
 	or	a, a
 	jr	NZ, 00120$
-;phys.c:68: Jump = 3;
+;phys.c:70: Jump = 3;
 	ld	(hl), #0x03
 00120$:
-;phys.c:72: if (Jump) {
+;phys.c:74: if( Jump ) {
 	ld	a, (#_Jump)
 	or	a, a
 	jr	Z, 00125$
-;phys.c:73: SpdY -= 8;
+;phys.c:75: SpdY -= 8;
 	ld	hl, #_SpdY
 	ld	a, (hl)
 	add	a, #0xf8
 	ld	(hl+), a
 	ld	a, (hl)
 	adc	a, #0xff
-;phys.c:74: if (SpdY < -32) SpdY = -32;
+;phys.c:76: if( SpdY < -32 ) SpdY = -32;
 	ld	(hl-), a
 	ld	a, (hl+)
 	sub	a, #0xe0
@@ -331,11 +331,11 @@ _main::
 	ld	(hl+), a
 	ld	(hl), #0xff
 00123$:
-;phys.c:75: Jump--;
+;phys.c:77: Jump--;
 	ld	hl, #_Jump
 	dec	(hl)
 00125$:
-;phys.c:78: PosX += SpdX, PosY += SpdY; 
+;phys.c:80: PosX += SpdX, PosY += SpdY;
 	ld	hl, #_SpdX
 	ld	a, (hl+)
 	ld	c, a
@@ -357,7 +357,7 @@ _main::
 	ld	(hl+), a
 	ld	a, (hl)
 	adc	a, b
-;phys.c:82: move_sprite(0, PosX >> 4, PosY >> 4);
+;phys.c:84: move_sprite( 0, PosX >> 4, PosY >> 4 );
 	ld	(hl-), a
 	ld	a, (hl+)
 	ld	c, a
@@ -388,11 +388,11 @@ _main::
 	ld	a, c
 	ld	(hl+), a
 	ld	(hl), b
-;phys.c:85: if (SpdY >= 0) {
+;phys.c:87: if( SpdY >= 0 ) {
 	ld	hl, #_SpdY + 1
 	bit	7, (hl)
 	jr	NZ, 00129$
-;phys.c:86: if (SpdY) SpdY--; 
+;phys.c:88: if( SpdY ) SpdY--;
 	ld	a, (hl-)
 	or	a, (hl)
 	jr	Z, 00130$
@@ -406,7 +406,7 @@ _main::
 	ld	(hl), d
 	jr	00130$
 00129$:
-;phys.c:87: } else SpdY ++;
+;phys.c:90: else SpdY++;
 	ld	hl, #_SpdY
 	inc	(hl)
 	jr	NZ, 00243$
@@ -414,11 +414,11 @@ _main::
 	inc	(hl)
 00243$:
 00130$:
-;phys.c:88: if (SpdX >= 0) {
+;phys.c:91: if( SpdX >= 0 ) {
 	ld	hl, #_SpdX + 1
 	bit	7, (hl)
 	jr	NZ, 00134$
-;phys.c:89: if (SpdX) SpdX--; 
+;phys.c:92: if( SpdX ) SpdX--;
 	ld	a, (hl-)
 	or	a, (hl)
 	jr	Z, 00135$
@@ -432,7 +432,7 @@ _main::
 	ld	(hl), d
 	jr	00135$
 00134$:
-;phys.c:90: } else SpdX ++;
+;phys.c:94: else SpdX++;
 	ld	hl, #_SpdX
 	inc	(hl)
 	jr	NZ, 00244$
@@ -440,9 +440,9 @@ _main::
 	inc	(hl)
 00244$:
 00135$:
-;phys.c:93: wait_vbl_done();
+;phys.c:97: wait_vbl_done();
 	call	_wait_vbl_done
-;phys.c:95: }
+;phys.c:99: }
 	jp	00137$
 	.area _CODE
 	.area _INITIALIZER

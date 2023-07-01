@@ -50,7 +50,7 @@ _sprite_data::
 ; code
 ;--------------------------------------------------------
 	.area _CODE
-;sgb_multiplayer.c:14: void main(void) {
+;sgb_multiplayer.c:14: void main( void ) {
 ;	---------------------------------
 ; Function main
 ; ---------------------------------
@@ -62,14 +62,14 @@ _main::
 	ldh	(_OBP0_REG + 0), a
 	ld	a, #0xe4
 	ldh	(_BGP_REG + 0), a
-;sgb_multiplayer.c:16: set_sprite_data(0, 4, sprite_data);
+;sgb_multiplayer.c:16: set_sprite_data( 0, 4, sprite_data );
 	ld	de, #_sprite_data
 	push	de
 	ld	hl, #0x400
 	push	hl
 	call	_set_sprite_data
 	add	sp, #4
-;sgb_multiplayer.c:17: for (uint8_t i = 0; i < 4; i++) {
+;sgb_multiplayer.c:17: for( uint8_t i = 0; i < 4; i++ ) {
 	ld	c, #0x00
 00126$:
 	ld	a, c
@@ -90,7 +90,7 @@ _main::
 	add	hl,de
 	inc	hl
 	ld	(hl), c
-;sgb_multiplayer.c:19: move_sprite(i, (i << 3) + 64, 64);
+;sgb_multiplayer.c:19: move_sprite( i, ( i << 3 ) + 64, 64 );
 	ld	a, c
 	add	a, a
 	add	a, a
@@ -104,7 +104,7 @@ _main::
 	ld	a, #0x40
 	ld	(hl+), a
 	ld	(hl), b
-;sgb_multiplayer.c:17: for (uint8_t i = 0; i < 4; i++) {
+;sgb_multiplayer.c:17: for( uint8_t i = 0; i < 4; i++ ) {
 	inc	c
 	jr	00126$
 00101$:
@@ -112,7 +112,7 @@ _main::
 	ldh	a, (_LCDC_REG + 0)
 	or	a, #0x02
 	ldh	(_LCDC_REG + 0), a
-;sgb_multiplayer.c:25: for (uint8_t i = 4; i != 0; i--) wait_vbl_done();
+;sgb_multiplayer.c:25: for( uint8_t i = 4; i != 0; i-- ) wait_vbl_done();
 	ld	c, #0x04
 00129$:
 	ld	a, c
@@ -122,7 +122,7 @@ _main::
 	dec	c
 	jr	00129$
 00102$:
-;sgb_multiplayer.c:28: joypad_init(4, &joypads);
+;sgb_multiplayer.c:28: joypad_init( 4, &joypads );
 	ld	de, #_joypads
 	push	de
 	ld	a, #0x04
@@ -130,12 +130,12 @@ _main::
 	inc	sp
 	call	_joypad_init
 	add	sp, #3
-;sgb_multiplayer.c:30: while(1) {
+;sgb_multiplayer.c:30: while( 1 ) {
 00116$:
-;sgb_multiplayer.c:32: joypad_ex(&joypads);
+;sgb_multiplayer.c:32: joypad_ex( &joypads );
 	ld	de, #_joypads
 	call	_joypad_ex
-;sgb_multiplayer.c:34: for (uint8_t i = 0; i < joypads.npads; i++) {
+;sgb_multiplayer.c:34: for( uint8_t i = 0; i < joypads.npads; i++ ) {
 	ld	c, #0x00
 00132$:
 	ld	hl, #_joypads
@@ -143,12 +143,12 @@ _main::
 	ld	a, c
 	sub	a, b
 	jr	NC, 00111$
-;sgb_multiplayer.c:35: uint8_t joy = joypads.joypads[i];
+;sgb_multiplayer.c:35: uint8_t joy = joypads.joypads[ i ];
 	ld	hl, #(_joypads + 1)
 	ld	b, #0x00
 	add	hl, bc
 	ld	b, (hl)
-;sgb_multiplayer.c:36: if (joy & J_LEFT) scroll_sprite(i, -1, 0);
+;sgb_multiplayer.c:36: if( joy & J_LEFT ) scroll_sprite( i, -1, 0 );
 	bit	1, b
 	jr	Z, 00104$
 ;C:/gbdk/include/gb/gb.h:1691: OAM_item_t * itm = &shadow_OAM[nb];
@@ -167,9 +167,9 @@ _main::
 	ld	(hl+), a
 	dec	(hl)
 	ld	a, (hl)
-;sgb_multiplayer.c:36: if (joy & J_LEFT) scroll_sprite(i, -1, 0);
+;sgb_multiplayer.c:36: if( joy & J_LEFT ) scroll_sprite( i, -1, 0 );
 00104$:
-;sgb_multiplayer.c:37: if (joy & J_RIGHT) scroll_sprite(i, 1, 0);
+;sgb_multiplayer.c:37: if( joy & J_RIGHT ) scroll_sprite( i, 1, 0 );
 	bit	0, b
 	jr	Z, 00106$
 ;C:/gbdk/include/gb/gb.h:1691: OAM_item_t * itm = &shadow_OAM[nb];
@@ -188,9 +188,9 @@ _main::
 	ld	(hl+), a
 	inc	(hl)
 	ld	a, (hl)
-;sgb_multiplayer.c:37: if (joy & J_RIGHT) scroll_sprite(i, 1, 0);
+;sgb_multiplayer.c:37: if( joy & J_RIGHT ) scroll_sprite( i, 1, 0 );
 00106$:
-;sgb_multiplayer.c:38: if (joy & J_UP) scroll_sprite(i, 0, -1);
+;sgb_multiplayer.c:38: if( joy & J_UP ) scroll_sprite( i, 0, -1 );
 	bit	2, b
 	jr	Z, 00108$
 ;C:/gbdk/include/gb/gb.h:1691: OAM_item_t * itm = &shadow_OAM[nb];
@@ -210,9 +210,9 @@ _main::
 	ld	(hl+), a
 	ld	a, (hl)
 	ld	(hl), a
-;sgb_multiplayer.c:38: if (joy & J_UP) scroll_sprite(i, 0, -1);
+;sgb_multiplayer.c:38: if( joy & J_UP ) scroll_sprite( i, 0, -1 );
 00108$:
-;sgb_multiplayer.c:39: if (joy & J_DOWN) scroll_sprite(i, 0, 1);
+;sgb_multiplayer.c:39: if( joy & J_DOWN ) scroll_sprite( i, 0, 1 );
 	bit	3, b
 	jr	Z, 00133$
 ;C:/gbdk/include/gb/gb.h:1691: OAM_item_t * itm = &shadow_OAM[nb];
@@ -232,17 +232,17 @@ _main::
 	ld	(hl+), a
 	ld	a, (hl)
 	ld	(hl), a
-;sgb_multiplayer.c:39: if (joy & J_DOWN) scroll_sprite(i, 0, 1);
+;sgb_multiplayer.c:39: if( joy & J_DOWN ) scroll_sprite( i, 0, 1 );
 00133$:
-;sgb_multiplayer.c:34: for (uint8_t i = 0; i < joypads.npads; i++) {
+;sgb_multiplayer.c:34: for( uint8_t i = 0; i < joypads.npads; i++ ) {
 	inc	c
 	jr	00132$
 00111$:
-;sgb_multiplayer.c:42: if (joypads.joy0 & J_START) {
+;sgb_multiplayer.c:42: if( joypads.joy0 & J_START ) {
 	ld	a, (#(_joypads + 1) + 0)
 	rlca
 	jr	NC, 00114$
-;sgb_multiplayer.c:43: for (uint8_t i = 0; i < 4; i++) move_sprite(i, (i << 3) + 64, 64);
+;sgb_multiplayer.c:43: for( uint8_t i = 0; i < 4; i++ ) move_sprite( i, ( i << 3 ) + 64, 64 );
 	ld	c, #0x00
 00135$:
 	ld	a,c
@@ -268,7 +268,7 @@ _main::
 	ld	a, #0x40
 	ld	(hl+), a
 	ld	(hl), b
-;sgb_multiplayer.c:43: for (uint8_t i = 0; i < 4; i++) move_sprite(i, (i << 3) + 64, 64);
+;sgb_multiplayer.c:43: for( uint8_t i = 0; i < 4; i++ ) move_sprite( i, ( i << 3 ) + 64, 64 );
 	inc	c
 	jr	00135$
 00114$:

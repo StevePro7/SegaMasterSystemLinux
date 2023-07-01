@@ -25,7 +25,7 @@ uint8_t PosF;
 uint8_t hide, jitter;
 uint8_t idx, rot;
 
-// main funxction
+// main function
 void main( void )
 {
 	// init palettes

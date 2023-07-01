@@ -78,12 +78,12 @@ _sprite_data::
 ; code
 ;--------------------------------------------------------
 	.area _CODE
-;sgb_pong.c:17: void init_pad(uint8_t n) {
+;sgb_pong.c:17: void init_pad( uint8_t n ) {
 ;	---------------------------------
 ; Function init_pad
 ; ---------------------------------
 _init_pad::
-;sgb_pong.c:18: set_sprite_tile(n << 2, n);
+;sgb_pong.c:18: set_sprite_tile( n << 2, n );
 	ld	c, a
 	add	a, a
 	add	a, a
@@ -102,7 +102,7 @@ _init_pad::
 	inc	hl
 	inc	hl
 	ld	(hl), c
-;sgb_pong.c:19: set_sprite_tile((n << 2) + 1, n);
+;sgb_pong.c:19: set_sprite_tile( ( n << 2 ) + 1, n );
 	ld	e, b
 	inc	e
 ;C:/gbdk/include/gb/gb.h:1602: shadow_OAM[nb].tile=tile;
@@ -119,7 +119,7 @@ _init_pad::
 	inc	hl
 	inc	hl
 	ld	(hl), c
-;sgb_pong.c:20: set_sprite_tile((n << 2) + 2, n);
+;sgb_pong.c:20: set_sprite_tile( ( n << 2 ) + 2, n );
 	inc	b
 	inc	b
 ;C:/gbdk/include/gb/gb.h:1602: shadow_OAM[nb].tile=tile;
@@ -136,10 +136,10 @@ _init_pad::
 	inc	hl
 	inc	hl
 	ld	(hl), c
-;sgb_pong.c:20: set_sprite_tile((n << 2) + 2, n);
+;sgb_pong.c:20: set_sprite_tile( ( n << 2 ) + 2, n );
 ;sgb_pong.c:21: }
 	ret
-;sgb_pong.c:52: void main(void) {
+;sgb_pong.c:52: void main( void ) {
 ;	---------------------------------
 ; Function main
 ; ---------------------------------
@@ -152,17 +152,17 @@ _main::
 	ldh	(_OBP0_REG + 0), a
 	ld	a, #0xe4
 	ldh	(_BGP_REG + 0), a
-;sgb_pong.c:57: set_sprite_data(0, 4, sprite_data);
+;sgb_pong.c:57: set_sprite_data( 0, 4, sprite_data );
 	ld	de, #_sprite_data
 	push	de
 	ld	hl, #0x400
 	push	hl
 	call	_set_sprite_data
 	add	sp, #4
-;sgb_pong.c:60: init_pad(0);
+;sgb_pong.c:60: init_pad( 0 );
 	xor	a, a
 	call	_init_pad
-;sgb_pong.c:61: init_pad(1);
+;sgb_pong.c:61: init_pad( 1 );
 	ld	a, #0x01
 	call	_init_pad
 ;C:/gbdk/include/gb/gb.h:1602: shadow_OAM[nb].tile=tile;
@@ -175,7 +175,7 @@ _main::
 	ldh	a, (_LCDC_REG + 0)
 	or	a, #0x02
 	ldh	(_LCDC_REG + 0), a
-;sgb_pong.c:70: if (joypad_init(2, &joypads) != 2) {
+;sgb_pong.c:70: if( joypad_init( 2, &joypads ) != 2 ) {
 	ld	de, #_joypads
 	push	de
 	ld	a, #0x02
@@ -186,7 +186,7 @@ _main::
 	ld	a, e
 	sub	a, #0x02
 	jr	Z, 00102$
-;sgb_pong.c:71: printf(" This program must\n  be executed  on\n   Super GameBoy");
+;sgb_pong.c:71: printf( " This program must\n  be executed  on\n   Super GameBoy" );
 	ld	de, #___str_0
 	push	de
 	call	_printf
@@ -208,7 +208,7 @@ _main::
 	ld	hl, #_player1_score
 	ld	(hl+), a
 	ld	(hl), a
-;sgb_pong.c:80: printf(HUD, player1_score, player2_score);
+;sgb_pong.c:80: printf( HUD, player1_score, player2_score );
 	ld	de, #0x0000
 	push	de
 	push	de
@@ -226,44 +226,44 @@ _main::
 	ld	(hl), #0x01
 	ld	hl, #_spd_ballY
 	ld	(hl), #0x01
-;sgb_pong.c:86: while(1) {
+;sgb_pong.c:86: while( 1 ) {
 00143$:
-;sgb_pong.c:88: joypad_ex(&joypads);
+;sgb_pong.c:88: joypad_ex( &joypads );
 	ld	de, #_joypads
 	call	_joypad_ex
-;sgb_pong.c:91: if (joypads.joy0 & J_UP) {
+;sgb_pong.c:91: if( joypads.joy0 & J_UP ) {
 	ld	hl, #(_joypads + 1)
 	ld	c, (hl)
 ;sgb_pong.c:92: player1 -= 2;
 	ld	a, (#_player1)
-;sgb_pong.c:91: if (joypads.joy0 & J_UP) {
+;sgb_pong.c:91: if( joypads.joy0 & J_UP ) {
 	bit	2, c
 	jr	Z, 00110$
 ;sgb_pong.c:92: player1 -= 2;
 	add	a, #0xfe
 	ld	hl, #_player1
 	ld	(hl), a
-;sgb_pong.c:93: if (player1 < YMIN) player1 = YMIN;
+;sgb_pong.c:93: if( player1 < YMIN ) player1 = YMIN;
 	ld	a, (hl)
 	sub	a, #0x1c
 	jr	NC, 00111$
 	ld	(hl), #0x1c
 	jr	00111$
 00110$:
-;sgb_pong.c:94: } else if (joypads.joy0 & J_DOWN) {
+;sgb_pong.c:95: else if( joypads.joy0 & J_DOWN ) {
 	bit	3, c
 	jr	Z, 00111$
-;sgb_pong.c:95: player1 += 2;
+;sgb_pong.c:96: player1 += 2;
 	add	a, #0x02
 	ld	hl, #_player1
 	ld	(hl), a
-;sgb_pong.c:96: if (player1 > YMAX) player1 = YMAX;            
+;sgb_pong.c:97: if( player1 > YMAX ) player1 = YMAX;
 	ld	a, #0x64
 	sub	a, (hl)
 	jr	NC, 00111$
 	ld	(hl), #0x64
 00111$:
-;sgb_pong.c:98: draw_pad(0, PLAYER1_X, player1);
+;sgb_pong.c:99: draw_pad( 0, PLAYER1_X, player1 );
 	ld	hl, #_player1
 	ld	c, (hl)
 	ld	b, c
@@ -273,7 +273,7 @@ _main::
 	ld	a, c
 	ld	(hl+), a
 	ld	(hl), #0x10
-;sgb_pong.c:26: move_sprite((n << 2) + 1, x, y + 8);
+;sgb_pong.c:26: move_sprite( ( n << 2 ) + 1, x, y + 8 );
 	ld	a, b
 	add	a, #0x08
 ;C:/gbdk/include/gb/gb.h:1675: OAM_item_t * itm = &shadow_OAM[nb];
@@ -281,7 +281,7 @@ _main::
 	ld	hl, #(_shadow_OAM + 4)
 	ld	(hl+), a
 	ld	(hl), #0x10
-;sgb_pong.c:27: move_sprite((n << 2) + 2, x, y + 16);
+;sgb_pong.c:27: move_sprite( ( n << 2 ) + 2, x, y + 16 );
 	ld	a, b
 	add	a, #0x10
 ;C:/gbdk/include/gb/gb.h:1675: OAM_item_t * itm = &shadow_OAM[nb];
@@ -289,39 +289,39 @@ _main::
 	ld	hl, #(_shadow_OAM + 8)
 	ld	(hl+), a
 	ld	(hl), #0x10
-;sgb_pong.c:101: if (joypads.joy1 & J_UP) {
+;sgb_pong.c:102: if( joypads.joy1 & J_UP ) {
 	ld	hl, #(_joypads + 2)
 	ld	c, (hl)
-;sgb_pong.c:102: player2 -= 2;
+;sgb_pong.c:103: player2 -= 2;
 	ld	a, (#_player2)
-;sgb_pong.c:101: if (joypads.joy1 & J_UP) {
+;sgb_pong.c:102: if( joypads.joy1 & J_UP ) {
 	bit	2, c
 	jr	Z, 00119$
-;sgb_pong.c:102: player2 -= 2;
+;sgb_pong.c:103: player2 -= 2;
 	add	a, #0xfe
 	ld	hl, #_player2
 	ld	(hl), a
-;sgb_pong.c:103: if (player2 < YMIN) player2 = YMIN;
+;sgb_pong.c:104: if( player2 < YMIN ) player2 = YMIN;
 	ld	a, (hl)
 	sub	a, #0x1c
 	jr	NC, 00120$
 	ld	(hl), #0x1c
 	jr	00120$
 00119$:
-;sgb_pong.c:104: } else if (joypads.joy1 & J_DOWN) {
+;sgb_pong.c:106: else if( joypads.joy1 & J_DOWN ) {
 	bit	3, c
 	jr	Z, 00120$
-;sgb_pong.c:105: player2 += 2;
+;sgb_pong.c:107: player2 += 2;
 	add	a, #0x02
 	ld	hl, #_player2
 	ld	(hl), a
-;sgb_pong.c:106: if (player2 > YMAX) player2 = YMAX;            
+;sgb_pong.c:108: if( player2 > YMAX ) player2 = YMAX;
 	ld	a, #0x64
 	sub	a, (hl)
 	jr	NC, 00120$
 	ld	(hl), #0x64
 00120$:
-;sgb_pong.c:108: draw_pad(1, PLAYER2_X, player2);
+;sgb_pong.c:110: draw_pad( 1, PLAYER2_X, player2 );
 	ld	hl, #_player2
 	ld	c, (hl)
 	ld	b, c
@@ -331,7 +331,7 @@ _main::
 	ld	a, c
 	ld	(hl+), a
 	ld	(hl), #0x98
-;sgb_pong.c:26: move_sprite((n << 2) + 1, x, y + 8);
+;sgb_pong.c:26: move_sprite( ( n << 2 ) + 1, x, y + 8 );
 	ld	a, b
 	add	a, #0x08
 ;C:/gbdk/include/gb/gb.h:1675: OAM_item_t * itm = &shadow_OAM[nb];
@@ -339,7 +339,7 @@ _main::
 	ld	hl, #(_shadow_OAM + 20)
 	ld	(hl+), a
 	ld	(hl), #0x98
-;sgb_pong.c:27: move_sprite((n << 2) + 2, x, y + 16);
+;sgb_pong.c:27: move_sprite( ( n << 2 ) + 2, x, y + 16 );
 	ld	a, b
 	add	a, #0x10
 ;C:/gbdk/include/gb/gb.h:1675: OAM_item_t * itm = &shadow_OAM[nb];
@@ -347,7 +347,7 @@ _main::
 	ld	hl, #(_shadow_OAM + 24)
 	ld	(hl+), a
 	ld	(hl), #0x98
-;sgb_pong.c:111: ballX += spd_ballX, ballY += spd_ballY;
+;sgb_pong.c:113: ballX += spd_ballX, ballY += spd_ballY;
 	ld	a, (#_ballX)
 	ld	hl, #_spd_ballX
 	add	a, (hl)
@@ -357,7 +357,7 @@ _main::
 	add	a, (hl)
 	ld	hl, #_ballY
 	ld	(hl), a
-;sgb_pong.c:113: if ((ballY < YMIN) || (ballY > (YMAX + 24))) {
+;sgb_pong.c:115: if( ( ballY < YMIN ) || ( ballY > ( YMAX + 24 ) ) ) {
 	ld	a, (hl)
 	sub	a, #0x1c
 	jr	C, 00121$
@@ -365,28 +365,28 @@ _main::
 	sub	a, (hl)
 	jr	NC, 00122$
 00121$:
-;sgb_pong.c:114: spd_ballY = -spd_ballY; 
+;sgb_pong.c:116: spd_ballY = -spd_ballY;
 	xor	a, a
 	ld	hl, #_spd_ballY
 	sub	a, (hl)
 	ld	(hl), a
 00122$:
-;sgb_pong.c:118: if ((ballY > player1) && (ballY < (player1 + 24)) && (spd_ballX < 0)) 
+;sgb_pong.c:120: if( ( ballY > player1 ) && ( ballY < ( player1 + 24 ) ) && ( spd_ballX < 0 ) )
 	ld	a, (#_ballY)
 	ldhl	sp,	#0
 	ld	(hl+), a
 	ld	(hl), #0x00
-;sgb_pong.c:119: spd_ballX = -spd_ballX;
+;sgb_pong.c:121: spd_ballX = -spd_ballX;
 	xor	a, a
 	ld	hl, #_spd_ballX
 	sub	a, (hl)
 	ldhl	sp,	#2
 	ld	(hl), a
-;sgb_pong.c:117: if (ballX < (PLAYER1_X + 8)) {
+;sgb_pong.c:119: if( ballX < ( PLAYER1_X + 8 ) ) {
 	ld	a, (#_ballX)
 	sub	a, #0x18
 	jr	NC, 00135$
-;sgb_pong.c:118: if ((ballY > player1) && (ballY < (player1 + 24)) && (spd_ballX < 0)) 
+;sgb_pong.c:120: if( ( ballY > player1 ) && ( ballY < ( player1 + 24 ) ) && ( spd_ballX < 0 ) )
 	ld	a, (#_player1)
 	ld	hl, #_ballY
 	sub	a, (hl)
@@ -420,18 +420,18 @@ _main::
 	ld	a, (#_spd_ballX)
 	bit	7, a
 	jr	Z, 00136$
-;sgb_pong.c:119: spd_ballX = -spd_ballX;
+;sgb_pong.c:121: spd_ballX = -spd_ballX;
 	ldhl	sp,	#2
 	ld	a, (hl)
 	ld	(#_spd_ballX),a
 	jr	00136$
 00135$:
-;sgb_pong.c:120: } else if (ballX > (PLAYER2_X - 8)) {
+;sgb_pong.c:123: else if( ballX > ( PLAYER2_X - 8 ) ) {
 	ld	a, #0x90
 	ld	hl, #_ballX
 	sub	a, (hl)
 	jr	NC, 00136$
-;sgb_pong.c:121: if ((ballY > player2) && (ballY < (player2 + 24)) && (spd_ballX > 0)) 
+;sgb_pong.c:124: if( ( ballY > player2 ) && ( ballY < ( player2 + 24 ) ) && ( spd_ballX > 0 ) )
 	ld	a, (#_player2)
 	ld	hl, #_ballY
 	sub	a, (hl)
@@ -479,36 +479,36 @@ _main::
 	scf
 00274$:
 	jr	NC, 00136$
-;sgb_pong.c:122: spd_ballX = -spd_ballX;
+;sgb_pong.c:125: spd_ballX = -spd_ballX;
 	ldhl	sp,	#2
 	ld	a, (hl)
 	ld	(#_spd_ballX),a
 00136$:
-;sgb_pong.c:119: spd_ballX = -spd_ballX;
+;sgb_pong.c:121: spd_ballX = -spd_ballX;
 	xor	a, a
 	ld	hl, #_spd_ballX
 	sub	a, (hl)
 	ld	c, a
-;sgb_pong.c:125: if (ballX < PLAYER1_X) {
+;sgb_pong.c:128: if( ballX < PLAYER1_X ) {
 	ld	hl, #_ballX
 	ld	a, (hl)
 	sub	a, #0x10
 	jr	NC, 00140$
-;sgb_pong.c:127: ballX = INITBALLX, ballY = INITBALLY;
+;sgb_pong.c:130: ballX = INITBALLX, ballY = INITBALLY;
 	ld	(hl), #0x54
 	ld	hl, #_ballY
 	ld	(hl), #0x48
-;sgb_pong.c:128: spd_ballX = -spd_ballX;
+;sgb_pong.c:131: spd_ballX = -spd_ballX;
 	ld	hl, #_spd_ballX
 	ld	(hl), c
-;sgb_pong.c:129: player2_score++;
+;sgb_pong.c:132: player2_score++;
 	ld	hl, #_player2_score
 	inc	(hl)
 	jr	NZ, 00275$
 	inc	hl
 	inc	(hl)
 00275$:
-;sgb_pong.c:130: gotoxy(0, 0); printf(HUD, player1_score, player2_score);
+;sgb_pong.c:133: gotoxy( 0, 0 ); printf( HUD, player1_score, player2_score );
 	xor	a, a
 	rrca
 	push	af
@@ -530,26 +530,26 @@ _main::
 	add	sp, #6
 	jr	00141$
 00140$:
-;sgb_pong.c:131: } else if (ballX > PLAYER2_X) {
+;sgb_pong.c:135: else if( ballX > PLAYER2_X ) {
 	ld	a, #0x98
 	ld	hl, #_ballX
 	sub	a, (hl)
 	jr	NC, 00141$
-;sgb_pong.c:133: ballX = INITBALLX, ballY = INITBALLY;
+;sgb_pong.c:137: ballX = INITBALLX, ballY = INITBALLY;
 	ld	(hl), #0x54
 	ld	hl, #_ballY
 	ld	(hl), #0x48
-;sgb_pong.c:134: spd_ballX = -spd_ballX;
+;sgb_pong.c:138: spd_ballX = -spd_ballX;
 	ld	hl, #_spd_ballX
 	ld	(hl), c
-;sgb_pong.c:135: player1_score++;
+;sgb_pong.c:139: player1_score++;
 	ld	hl, #_player1_score
 	inc	(hl)
 	jr	NZ, 00276$
 	inc	hl
 	inc	(hl)
 00276$:
-;sgb_pong.c:136: gotoxy(0, 0); printf(HUD, player1_score, player2_score);
+;sgb_pong.c:140: gotoxy( 0, 0 ); printf( HUD, player1_score, player2_score );
 	xor	a, a
 	rrca
 	push	af
@@ -570,7 +570,7 @@ _main::
 	call	_printf
 	add	sp, #6
 00141$:
-;sgb_pong.c:139: move_sprite(3, ballX, ballY);
+;sgb_pong.c:143: move_sprite( 3, ballX, ballY );
 	ld	hl, #_ballY
 	ld	c, (hl)
 	ld	hl, #_ballX
@@ -581,11 +581,11 @@ _main::
 	ld	a, c
 	ld	(hl+), a
 	ld	(hl), b
-;sgb_pong.c:142: wait_vbl_done();
+;sgb_pong.c:146: wait_vbl_done();
 	call	_wait_vbl_done
 	jp	00143$
 00155$:
-;sgb_pong.c:144: }
+;sgb_pong.c:148: }
 	add	sp, #3
 	ret
 _HUD:

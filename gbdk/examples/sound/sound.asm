@@ -154,15 +154,15 @@ _print::
 ___str_1:
 	.ascii "%s"
 	.db 0x00
-;sound.c:46: void printn(uint16_t n, uint8_t base, uint8_t sign) {
+;sound.c:46: void printn( uint16_t n, uint8_t base, uint8_t sign ) {
 ;	---------------------------------
 ; Function printn
 ; ---------------------------------
 _printn::
-;sound.c:48: if(base == 16u) {
+;sound.c:48: if( base == 16u ) {
 	sub	a, #0x10
 	jr	NZ, 00102$
-;sound.c:49: printf("%c", hex[0x000Fu & (n >> 4u)]);
+;sound.c:49: printf( "%c", hex[ 0x000Fu & ( n >> 4u ) ] );
 	ld	c, e
 	ld	b, d
 	srl	b
@@ -191,7 +191,7 @@ _printn::
 	call	_printf
 	add	sp, #4
 	pop	de
-;sound.c:50: printf("%c", hex[0x000Fu & (n)]);
+;sound.c:50: printf( "%c", hex[ 0x000Fu & ( n ) ] );
 	ld	a, e
 	and	a, #0x0f
 	ld	c, a
@@ -210,14 +210,14 @@ _printn::
 	add	sp, #4
 	jr	00104$
 00102$:
-;sound.c:52: printf("%d", n);
+;sound.c:53: printf( "%d", n );
 	push	de
 	ld	de, #___str_3
 	push	de
 	call	_printf
 	add	sp, #4
 00104$:
-;sound.c:54: }
+;sound.c:55: }
 	pop	hl
 	inc	sp
 	jp	(hl)
@@ -230,34 +230,34 @@ ___str_2:
 ___str_3:
 	.ascii "%d"
 	.db 0x00
-;sound.c:57: void println(uint16_t n, uint8_t base, uint8_t sign) {
+;sound.c:58: void println( uint16_t n, uint8_t base, uint8_t sign ) {
 ;	---------------------------------
 ; Function println
 ; ---------------------------------
 _println::
 	ld	c, a
-;sound.c:58: printn(n, base, sign);
+;sound.c:59: printn( n, base, sign );
 	ldhl	sp,	#2
 	ld	a, (hl)
 	push	af
 	inc	sp
 	ld	a, c
 	call	_printn
-;sound.c:59: printf("\n");
+;sound.c:60: printf( "\n" );
 	ld	de, #___str_6
 	call	_puts
-;sound.c:60: }
+;sound.c:61: }
 	pop	hl
 	inc	sp
 	jp	(hl)
 ___str_6:
 	.db 0x00
-;sound.c:326: uint8_t NR10() {
+;sound.c:327: uint8_t NR10() {
 ;	---------------------------------
 ; Function NR10
 ; ---------------------------------
 _NR10::
-;sound.c:327: return soundReg->mode1.sweepShifts | (soundReg->mode1.sweepMode << 3) | (soundReg->mode1.sweepTime << 4);
+;sound.c:328: return soundReg->mode1.sweepShifts | ( soundReg->mode1.sweepMode << 3 ) | ( soundReg->mode1.sweepTime << 4 );
 	ld	hl, #_soundReg
 	ld	l, (hl)
 ;	spillPairReg hl
@@ -285,7 +285,7 @@ _NR10::
 	swap	a
 	and	a, #0xf0
 	or	a, c
-;sound.c:328: }
+;sound.c:329: }
 	ret
 _frequencies:
 	.dw #0x002c
@@ -616,12 +616,12 @@ __str_34:
 __str_35:
 	.ascii "Poly Cnt Div"
 	.db 0x00
-;sound.c:330: uint8_t NR11() {
+;sound.c:331: uint8_t NR11() {
 ;	---------------------------------
 ; Function NR11
 ; ---------------------------------
 _NR11::
-;sound.c:331: return soundReg->mode1.soundLength | (soundReg->mode1.patternDuty << 6);
+;sound.c:332: return soundReg->mode1.soundLength | ( soundReg->mode1.patternDuty << 6 );
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -636,14 +636,14 @@ _NR11::
 	rrca
 	and	a, #0xc0
 	or	a, e
-;sound.c:332: }
+;sound.c:333: }
 	ret
-;sound.c:334: uint8_t NR12() {
+;sound.c:335: uint8_t NR12() {
 ;	---------------------------------
 ; Function NR12
 ; ---------------------------------
 _NR12::
-;sound.c:335: return soundReg->mode1.envNbSweep | (soundReg->mode1.envMode << 3) | (soundReg->mode1.envInitialValue << 4);
+;sound.c:336: return soundReg->mode1.envNbSweep | ( soundReg->mode1.envMode << 3 ) | ( soundReg->mode1.envInitialValue << 4 );
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -665,14 +665,14 @@ _NR12::
 	swap	a
 	and	a, #0xf0
 	or	a, e
-;sound.c:336: }
+;sound.c:337: }
 	ret
-;sound.c:338: uint8_t NR13() {
+;sound.c:339: uint8_t NR13() {
 ;	---------------------------------
 ; Function NR13
 ; ---------------------------------
 _NR13::
-;sound.c:339: return soundReg->mode1.frequencyLow;
+;sound.c:340: return soundReg->mode1.frequencyLow;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -680,14 +680,14 @@ _NR13::
 	ld	hl, #0x0012
 	add	hl, bc
 	ld	a, (hl)
-;sound.c:340: }
+;sound.c:341: }
 	ret
-;sound.c:342: uint8_t NR14() {
+;sound.c:343: uint8_t NR14() {
 ;	---------------------------------
 ; Function NR14
 ; ---------------------------------
 _NR14::
-;sound.c:343: return soundReg->mode1.frequencyHigh | (soundReg->mode1.counter_ConsSel << 6) | (soundReg->mode1.restart << 7);
+;sound.c:344: return soundReg->mode1.frequencyHigh | ( soundReg->mode1.counter_ConsSel << 6 ) | ( soundReg->mode1.restart << 7 );
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -709,14 +709,14 @@ _NR14::
 	rrca
 	and	a, #0x80
 	or	a, e
-;sound.c:344: }
+;sound.c:345: }
 	ret
-;sound.c:347: uint8_t NR21() {
+;sound.c:348: uint8_t NR21() {
 ;	---------------------------------
 ; Function NR21
 ; ---------------------------------
 _NR21::
-;sound.c:348: return soundReg->mode2.soundLength | (soundReg->mode2.patternDuty << 6);
+;sound.c:349: return soundReg->mode2.soundLength | ( soundReg->mode2.patternDuty << 6 );
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -731,14 +731,14 @@ _NR21::
 	rrca
 	and	a, #0xc0
 	or	a, e
-;sound.c:349: }
+;sound.c:350: }
 	ret
-;sound.c:351: uint8_t NR22() {
+;sound.c:352: uint8_t NR22() {
 ;	---------------------------------
 ; Function NR22
 ; ---------------------------------
 _NR22::
-;sound.c:352: return soundReg->mode2.envNbStep | (soundReg->mode2.envMode << 3) | (soundReg->mode2.envInitialValue << 4);
+;sound.c:353: return soundReg->mode2.envNbStep | (soundReg->mode2.envMode << 3) | (soundReg->mode2.envInitialValue << 4);
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -760,14 +760,14 @@ _NR22::
 	swap	a
 	and	a, #0xf0
 	or	a, e
-;sound.c:353: }
+;sound.c:354: }
 	ret
-;sound.c:355: uint8_t NR23() {
+;sound.c:356: uint8_t NR23() {
 ;	---------------------------------
 ; Function NR23
 ; ---------------------------------
 _NR23::
-;sound.c:356: return soundReg->mode2.frequencyLow;
+;sound.c:357: return soundReg->mode2.frequencyLow;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -775,14 +775,14 @@ _NR23::
 	ld	hl, #0x0028
 	add	hl, bc
 	ld	a, (hl)
-;sound.c:357: }
+;sound.c:358: }
 	ret
-;sound.c:359: uint8_t NR24() {
+;sound.c:360: uint8_t NR24() {
 ;	---------------------------------
 ; Function NR24
 ; ---------------------------------
 _NR24::
-;sound.c:360: return soundReg->mode2.frequencyHigh | (soundReg->mode2.counter_ConsSel << 6) | (soundReg->mode2.restart << 7);
+;sound.c:361: return soundReg->mode2.frequencyHigh | ( soundReg->mode2.counter_ConsSel << 6 ) | ( soundReg->mode2.restart << 7 );
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -804,14 +804,14 @@ _NR24::
 	rrca
 	and	a, #0x80
 	or	a, e
-;sound.c:361: }
+;sound.c:362: }
 	ret
-;sound.c:364: uint8_t NR30() {
+;sound.c:365: uint8_t NR30() {
 ;	---------------------------------
 ; Function NR30
 ; ---------------------------------
 _NR30::
-;sound.c:365: return soundReg->mode3.on_Off << 7;
+;sound.c:366: return soundReg->mode3.on_Off << 7;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -821,14 +821,14 @@ _NR30::
 	ld	a, (hl)
 	rrca
 	and	a, #0x80
-;sound.c:366: }
+;sound.c:367: }
 	ret
-;sound.c:368: uint8_t NR31() {
+;sound.c:369: uint8_t NR31() {
 ;	---------------------------------
 ; Function NR31
 ; ---------------------------------
 _NR31::
-;sound.c:369: return soundReg->mode3.soundLength;
+;sound.c:370: return soundReg->mode3.soundLength;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -836,14 +836,14 @@ _NR31::
 	ld	hl, #0x0036
 	add	hl, bc
 	ld	a, (hl)
-;sound.c:370: }
+;sound.c:371: }
 	ret
-;sound.c:372: uint8_t NR32() {
+;sound.c:373: uint8_t NR32() {
 ;	---------------------------------
 ; Function NR32
 ; ---------------------------------
 _NR32::
-;sound.c:373: return soundReg->mode3.selOutputLevel << 5;
+;sound.c:374: return soundReg->mode3.selOutputLevel << 5;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -854,14 +854,14 @@ _NR32::
 	swap	a
 	rlca
 	and	a, #0xe0
-;sound.c:374: }
+;sound.c:375: }
 	ret
-;sound.c:376: uint8_t NR33() {
+;sound.c:377: uint8_t NR33() {
 ;	---------------------------------
 ; Function NR33
 ; ---------------------------------
 _NR33::
-;sound.c:377: return soundReg->mode3.frequencyLow;
+;sound.c:378: return soundReg->mode3.frequencyLow;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -869,14 +869,14 @@ _NR33::
 	ld	hl, #0x003e
 	add	hl, bc
 	ld	a, (hl)
-;sound.c:378: }
+;sound.c:379: }
 	ret
-;sound.c:380: uint8_t NR34() {
+;sound.c:381: uint8_t NR34() {
 ;	---------------------------------
 ; Function NR34
 ; ---------------------------------
 _NR34::
-;sound.c:381: return soundReg->mode3.frequencyHigh | (soundReg->mode3.counter_ConsSel << 6) | (soundReg->mode3.restart << 7);
+;sound.c:382: return soundReg->mode3.frequencyHigh | ( soundReg->mode3.counter_ConsSel << 6 ) | ( soundReg->mode3.restart << 7 );
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -898,14 +898,14 @@ _NR34::
 	rrca
 	and	a, #0x80
 	or	a, e
-;sound.c:382: }
+;sound.c:383: }
 	ret
-;sound.c:385: uint8_t NR41() {
+;sound.c:386: uint8_t NR41() {
 ;	---------------------------------
 ; Function NR41
 ; ---------------------------------
 _NR41::
-;sound.c:386: return soundReg->mode4.soundLength;
+;sound.c:387: return soundReg->mode4.soundLength;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -913,14 +913,14 @@ _NR41::
 	ld	hl, #0x004a
 	add	hl, bc
 	ld	a, (hl)
-;sound.c:387: }
+;sound.c:388: }
 	ret
-;sound.c:389: uint8_t NR42() {
+;sound.c:390: uint8_t NR42() {
 ;	---------------------------------
 ; Function NR42
 ; ---------------------------------
 _NR42::
-;sound.c:390: return soundReg->mode4.envNbStep | (soundReg->mode4.envMode << 3) | (soundReg->mode4.envInitialValue << 4);
+;sound.c:391: return soundReg->mode4.envNbStep | ( soundReg->mode4.envMode << 3 ) | ( soundReg->mode4.envInitialValue << 4 );
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -942,14 +942,14 @@ _NR42::
 	swap	a
 	and	a, #0xf0
 	or	a, e
-;sound.c:391: }
+;sound.c:392: }
 	ret
-;sound.c:393: uint8_t NR43() {
+;sound.c:394: uint8_t NR43() {
 ;	---------------------------------
 ; Function NR43
 ; ---------------------------------
 _NR43::
-;sound.c:394: return soundReg->mode4.polyCounterDiv | (soundReg->mode4.polyCounterStep << 3) | (soundReg->mode4.polyCounterFreq << 4);
+;sound.c:395: return soundReg->mode4.polyCounterDiv | ( soundReg->mode4.polyCounterStep << 3 ) | ( soundReg->mode4.polyCounterFreq << 4 );
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -971,14 +971,14 @@ _NR43::
 	swap	a
 	and	a, #0xf0
 	or	a, e
-;sound.c:395: }
+;sound.c:396: }
 	ret
-;sound.c:397: uint8_t NR44() {
+;sound.c:398: uint8_t NR44() {
 ;	---------------------------------
 ; Function NR44
 ; ---------------------------------
 _NR44::
-;sound.c:398: return (soundReg->mode4.counter_ConsSel << 6) | (soundReg->mode4.restart << 7);
+;sound.c:399: return ( soundReg->mode4.counter_ConsSel << 6 ) | ( soundReg->mode4.restart << 7 );
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -996,14 +996,14 @@ _NR44::
 	rrca
 	and	a, #0x80
 	or	a, e
-;sound.c:399: }
+;sound.c:400: }
 	ret
-;sound.c:402: uint8_t NR50() {
+;sound.c:403: uint8_t NR50() {
 ;	---------------------------------
 ; Function NR50
 ; ---------------------------------
 _NR50::
-;sound.c:403: return soundReg->control.SO1_OutputLevel | (soundReg->control.Vin_SO1 << 3u) | (soundReg->control.SO2_OutputLevel << 4u) |
+;sound.c:404: return soundReg->control.SO1_OutputLevel | ( soundReg->control.Vin_SO1 << 3u ) | ( soundReg->control.SO2_OutputLevel << 4u ) |
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1026,21 +1026,21 @@ _NR50::
 	and	a, #0xf0
 	or	a, e
 	ld	e, a
-;sound.c:404: (soundReg->control.Vin_SO2 << 7u);
+;sound.c:405: ( soundReg->control.Vin_SO2 << 7u );
 	ld	hl, #0x0066
 	add	hl, bc
 	ld	a, (hl)
 	rrca
 	and	a, #0x80
 	or	a, e
-;sound.c:405: }
+;sound.c:406: }
 	ret
-;sound.c:407: uint8_t NR51() {
+;sound.c:408: uint8_t NR51() {
 ;	---------------------------------
 ; Function NR51
 ; ---------------------------------
 _NR51::
-;sound.c:408: return soundReg->control.Sound1_To_SO1 | (soundReg->control.Sound2_To_SO1 << 1) | (soundReg->control.Sound3_To_SO1 << 2) |
+;sound.c:409: return soundReg->control.Sound1_To_SO1 | ( soundReg->control.Sound2_To_SO1 << 1 ) | ( soundReg->control.Sound3_To_SO1 << 2 ) |
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1061,7 +1061,7 @@ _NR51::
 	add	a, a
 	or	a, e
 	ld	e, a
-;sound.c:409: (soundReg->control.Sound4_To_SO1 << 3) | (soundReg->control.Sound1_To_SO2 << 4) | (soundReg->control.Sound2_To_SO2 << 5) |
+;sound.c:410: ( soundReg->control.Sound4_To_SO1 << 3 ) | ( soundReg->control.Sound1_To_SO2 << 4 ) | ( soundReg->control.Sound2_To_SO2 << 5 ) |
 	ld	hl, #0x006e
 	add	hl, bc
 	ld	a, (hl)
@@ -1085,7 +1085,7 @@ _NR51::
 	and	a, #0xe0
 	or	a, e
 	ld	e, a
-;sound.c:410: (soundReg->control.Sound3_To_SO2 << 6)| (soundReg->control.Sound4_To_SO2 << 7);
+;sound.c:411: ( soundReg->control.Sound3_To_SO2 << 6 ) | ( soundReg->control.Sound4_To_SO2 << 7 );
 	ld	hl, #0x0074
 	add	hl, bc
 	ld	a, (hl)
@@ -1100,14 +1100,14 @@ _NR51::
 	rrca
 	and	a, #0x80
 	or	a, e
-;sound.c:411: }
+;sound.c:412: }
 	ret
-;sound.c:413: uint8_t NR52() {
+;sound.c:414: uint8_t NR52() {
 ;	---------------------------------
 ; Function NR52
 ; ---------------------------------
 _NR52::
-;sound.c:414: return soundReg->control.global_On_Off << 7;
+;sound.c:415: return soundReg->control.global_On_Off << 7;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1117,18 +1117,18 @@ _NR52::
 	ld	a, (hl)
 	rrca
 	and	a, #0x80
-;sound.c:415: }
+;sound.c:416: }
 	ret
-;sound.c:418: uint16_t current_value(uint8_t mode, uint8_t line)
+;sound.c:419: uint16_t current_value( uint8_t mode, uint8_t line )
 ;	---------------------------------
 ; Function current_value
 ; ---------------------------------
 _current_value::
-;sound.c:420: if(mode == 0) {
+;sound.c:421: if( mode == 0 ) {
 	ld	c, a
 	or	a, a
 	jr	NZ, 00168$
-;sound.c:421: switch(line)
+;sound.c:422: switch( line )
 	ld	a, #0x04
 	sub	a, e
 	jp	C, 00169$
@@ -1136,7 +1136,7 @@ _current_value::
 	ld	hl, #00377$
 	add	hl, de
 	add	hl, de
-;sound.c:423: case 0: // global_On_Off
+;sound.c:424: case 0: // global_On_Off
 	jp	(hl)
 00377$:
 	jr	00101$
@@ -1145,7 +1145,7 @@ _current_value::
 	jr	00104$
 	jr	00105$
 00101$:
-;sound.c:424: return soundReg->control.global_On_Off;
+;sound.c:425: return soundReg->control.global_On_Off;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1156,9 +1156,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:425: case 1: // Vin_SO1
+;sound.c:426: case 1: // Vin_SO1
 00102$:
-;sound.c:426: return soundReg->control.Vin_SO1;
+;sound.c:427: return soundReg->control.Vin_SO1;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1169,9 +1169,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:427: case 2: // Vin_SO2
+;sound.c:428: case 2: // Vin_SO2
 00103$:
-;sound.c:428: return soundReg->control.Vin_SO2;
+;sound.c:429: return soundReg->control.Vin_SO2;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1182,9 +1182,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:429: case 3: // SO1_OutputLevel
+;sound.c:430: case 3: // SO1_OutputLevel
 00104$:
-;sound.c:430: return soundReg->control.SO1_OutputLevel;
+;sound.c:431: return soundReg->control.SO1_OutputLevel;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1195,9 +1195,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:431: case 4: // SO2_OutputLevel
+;sound.c:432: case 4: // SO2_OutputLevel
 00105$:
-;sound.c:432: return soundReg->control.SO2_OutputLevel;
+;sound.c:433: return soundReg->control.SO2_OutputLevel;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1208,13 +1208,13 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:433: }
+;sound.c:434: }
 00168$:
-;sound.c:434: } else if(mode == 1) {
+;sound.c:436: else if( mode == 1 ) {
 	ld	a, c
 	dec	a
 	jp	NZ,00165$
-;sound.c:435: switch(line)
+;sound.c:437: switch( line )
 	ld	a, e
 	or	a, a
 	jr	Z, 00107$
@@ -1247,9 +1247,9 @@ _current_value::
 	sub	a, #0x21
 	jr	Z, 00116$
 	jp	00169$
-;sound.c:437: case 0: // sweepTime
+;sound.c:439: case 0: // sweepTime
 00107$:
-;sound.c:438: return soundReg->mode1.sweepTime;
+;sound.c:440: return soundReg->mode1.sweepTime;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1260,9 +1260,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:439: case 1: // sweepMode
+;sound.c:441: case 1: // sweepMode
 00108$:
-;sound.c:440: return soundReg->mode1.sweepMode;
+;sound.c:442: return soundReg->mode1.sweepMode;
 	ld	hl, #_soundReg
 	ld	l, (hl)
 ;	spillPairReg hl
@@ -1277,9 +1277,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:441: case 2: // sweepShifts
+;sound.c:443: case 2: // sweepShifts
 00109$:
-;sound.c:442: return soundReg->mode1.sweepShifts;
+;sound.c:444: return soundReg->mode1.sweepShifts;
 	ld	hl, #_soundReg
 	ld	l, (hl)
 ;	spillPairReg hl
@@ -1292,9 +1292,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:443: case 3: // patternDuty
+;sound.c:445: case 3: // patternDuty
 00110$:
-;sound.c:444: return soundReg->mode1.patternDuty;
+;sound.c:446: return soundReg->mode1.patternDuty;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1305,9 +1305,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:445: case 4: // soundLength
+;sound.c:447: case 4: // soundLength
 00111$:
-;sound.c:446: return soundReg->mode1.soundLength;
+;sound.c:448: return soundReg->mode1.soundLength;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1318,9 +1318,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:447: case 5: // envInitialValue
+;sound.c:449: case 5: // envInitialValue
 00112$:
-;sound.c:448: return soundReg->mode1.envInitialValue;
+;sound.c:450: return soundReg->mode1.envInitialValue;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1331,9 +1331,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:449: case 6: // envMode
+;sound.c:451: case 6: // envMode
 00113$:
-;sound.c:450: return soundReg->mode1.envMode;
+;sound.c:452: return soundReg->mode1.envMode;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1344,9 +1344,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:451: case 7: // envNbSweep
+;sound.c:453: case 7: // envNbSweep
 00114$:
-;sound.c:452: return soundReg->mode1.envNbSweep;
+;sound.c:454: return soundReg->mode1.envNbSweep;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1357,9 +1357,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:454: case FREQUENCY:
+;sound.c:456: case FREQUENCY:
 00116$:
-;sound.c:455: return (soundReg->mode1.frequencyHigh << 8) | soundReg->mode1.frequencyLow;
+;sound.c:457: return ( soundReg->mode1.frequencyHigh << 8 ) | soundReg->mode1.frequencyLow;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1384,9 +1384,9 @@ _current_value::
 	or	a, b
 	ld	b, a
 	ret
-;sound.c:456: case 9: // counter_ConsSel
+;sound.c:458: case 9: // counter_ConsSel
 00117$:
-;sound.c:457: return soundReg->mode1.counter_ConsSel;
+;sound.c:459: return soundReg->mode1.counter_ConsSel;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1397,9 +1397,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:458: case 10: // Sound1_To_SO1
+;sound.c:460: case 10: // Sound1_To_SO1
 00118$:
-;sound.c:459: return soundReg->control.Sound1_To_SO1;
+;sound.c:461: return soundReg->control.Sound1_To_SO1;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1410,9 +1410,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:460: case 11: // Sound1_To_SO2
+;sound.c:462: case 11: // Sound1_To_SO2
 00119$:
-;sound.c:461: return soundReg->control.Sound1_To_SO2;
+;sound.c:463: return soundReg->control.Sound1_To_SO2;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1423,9 +1423,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:462: case 12: // Sound1_On_Off
+;sound.c:464: case 12: // Sound1_On_Off
 00120$:
-;sound.c:463: return soundReg->control.Sound1_On_Off;
+;sound.c:465: return soundReg->control.Sound1_On_Off;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1436,11 +1436,11 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:464: }
+;sound.c:466: }
 00165$:
-;sound.c:465: } else if(mode == 2) {
+;sound.c:468: else if( mode == 2 ) {
 	ld	a, c
-;sound.c:466: switch(line)
+;sound.c:469: switch( line )
 	sub	a,#0x02
 	jp	NZ,00162$
 	or	a,e
@@ -1468,9 +1468,9 @@ _current_value::
 	sub	a, #0x21
 	jr	Z, 00128$
 	jp	00169$
-;sound.c:468: case 0: // patternDuty
+;sound.c:471: case 0: // patternDuty
 00122$:
-;sound.c:469: return soundReg->mode2.patternDuty;
+;sound.c:472: return soundReg->mode2.patternDuty;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1481,9 +1481,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:470: case 1: // soundLength
+;sound.c:473: case 1: // soundLength
 00123$:
-;sound.c:471: return soundReg->mode2.soundLength;
+;sound.c:474: return soundReg->mode2.soundLength;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1494,9 +1494,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:472: case 2: // envInitialValue
+;sound.c:475: case 2: // envInitialValue
 00124$:
-;sound.c:473: return soundReg->mode2.envInitialValue;
+;sound.c:476: return soundReg->mode2.envInitialValue;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1507,9 +1507,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:474: case 3: // envMode
+;sound.c:477: case 3: // envMode
 00125$:
-;sound.c:475: return soundReg->mode2.envMode;
+;sound.c:478: return soundReg->mode2.envMode;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1520,9 +1520,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:476: case 4: // envNbStep
+;sound.c:479: case 4: // envNbStep
 00126$:
-;sound.c:477: return soundReg->mode2.envNbStep;
+;sound.c:480: return soundReg->mode2.envNbStep;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1533,9 +1533,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:479: case FREQUENCY:
+;sound.c:482: case FREQUENCY:
 00128$:
-;sound.c:480: return (soundReg->mode2.frequencyHigh << 8) | soundReg->mode2.frequencyLow;
+;sound.c:483: return ( soundReg->mode2.frequencyHigh << 8 ) | soundReg->mode2.frequencyLow;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1560,9 +1560,9 @@ _current_value::
 	or	a, b
 	ld	b, a
 	ret
-;sound.c:481: case 6: // counter_ConsSel
+;sound.c:484: case 6: // counter_ConsSel
 00129$:
-;sound.c:482: return soundReg->mode2.counter_ConsSel;
+;sound.c:485: return soundReg->mode2.counter_ConsSel;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1573,9 +1573,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:483: case 7: // Sound2_To_SO1
+;sound.c:486: case 7: // Sound2_To_SO1
 00130$:
-;sound.c:484: return soundReg->control.Sound2_To_SO1;
+;sound.c:487: return soundReg->control.Sound2_To_SO1;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1586,9 +1586,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:485: case 8: // Sound2_To_SO2
+;sound.c:488: case 8: // Sound2_To_SO2
 00131$:
-;sound.c:486: return soundReg->control.Sound2_To_SO2;
+;sound.c:489: return soundReg->control.Sound2_To_SO2;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1599,9 +1599,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:487: case 9: // Sound2_On_Off
+;sound.c:490: case 9: // Sound2_On_Off
 00132$:
-;sound.c:488: return soundReg->control.Sound2_On_Off;
+;sound.c:491: return soundReg->control.Sound2_On_Off;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1612,11 +1612,11 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:489: }
+;sound.c:492: }
 00162$:
-;sound.c:490: } else if(mode == 3) {
+;sound.c:494: else if( mode == 3 ) {
 	ld	a, c
-;sound.c:491: switch(line)
+;sound.c:495: switch( line )
 	sub	a,#0x03
 	jp	NZ,00159$
 	or	a,e
@@ -1640,9 +1640,9 @@ _current_value::
 	sub	a, #0x21
 	jr	Z, 00138$
 	jp	00169$
-;sound.c:493: case 0: // on_Off
+;sound.c:497: case 0: // on_Off
 00134$:
-;sound.c:494: return soundReg->mode3.on_Off;
+;sound.c:498: return soundReg->mode3.on_Off;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1653,9 +1653,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:495: case 1: // soundLength
+;sound.c:499: case 1: // soundLength
 00135$:
-;sound.c:496: return soundReg->mode3.soundLength;
+;sound.c:500: return soundReg->mode3.soundLength;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1666,9 +1666,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:497: case 2: // selOutputLevel
+;sound.c:501: case 2: // selOutputLevel
 00136$:
-;sound.c:498: return soundReg->mode3.selOutputLevel;
+;sound.c:502: return soundReg->mode3.selOutputLevel;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1679,9 +1679,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:500: case FREQUENCY:
+;sound.c:504: case FREQUENCY:
 00138$:
-;sound.c:501: return (soundReg->mode3.frequencyHigh << 8) | soundReg->mode3.frequencyLow;
+;sound.c:505: return ( soundReg->mode3.frequencyHigh << 8 ) | soundReg->mode3.frequencyLow;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1706,9 +1706,9 @@ _current_value::
 	or	a, b
 	ld	b, a
 	ret
-;sound.c:502: case 4: // counter_ConsSel
+;sound.c:506: case 4: // counter_ConsSel
 00139$:
-;sound.c:503: return soundReg->mode3.counter_ConsSel;
+;sound.c:507: return soundReg->mode3.counter_ConsSel;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1719,9 +1719,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:504: case 5: // Sound3_To_SO1
+;sound.c:508: case 5: // Sound3_To_SO1
 00140$:
-;sound.c:505: return soundReg->control.Sound3_To_SO1;
+;sound.c:509: return soundReg->control.Sound3_To_SO1;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1732,9 +1732,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:506: case 6: // Sound3_To_SO2
+;sound.c:510: case 6: // Sound3_To_SO2
 00141$:
-;sound.c:507: return soundReg->control.Sound3_To_SO2;
+;sound.c:511: return soundReg->control.Sound3_To_SO2;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1745,9 +1745,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:508: case 7: // Sound3_On_Off
+;sound.c:512: case 7: // Sound3_On_Off
 00142$:
-;sound.c:509: return soundReg->control.Sound3_On_Off;
+;sound.c:513: return soundReg->control.Sound3_On_Off;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1758,13 +1758,13 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:510: }
+;sound.c:514: }
 00159$:
-;sound.c:511: } else if(mode == 4) {
+;sound.c:516: else if( mode == 4 ) {
 	ld	a, c
 	sub	a, #0x04
 	jp	NZ,00169$
-;sound.c:512: switch(line)
+;sound.c:517: switch( line )
 	ld	a, #0x0a
 	sub	a, e
 	jp	C, 00169$
@@ -1786,9 +1786,9 @@ _current_value::
 	jp	00152$
 	jp	00153$
 	jp	00154$
-;sound.c:514: case 0: // soundLength
+;sound.c:519: case 0: // soundLength
 00144$:
-;sound.c:515: return soundReg->mode4.soundLength;
+;sound.c:520: return soundReg->mode4.soundLength;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1799,9 +1799,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:516: case 1: // envInitialValue
+;sound.c:521: case 1: // envInitialValue
 00145$:
-;sound.c:517: return soundReg->mode4.envInitialValue;
+;sound.c:522: return soundReg->mode4.envInitialValue;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1812,9 +1812,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:518: case 2: // envMode
+;sound.c:523: case 2: // envMode
 00146$:
-;sound.c:519: return soundReg->mode4.envMode;
+;sound.c:524: return soundReg->mode4.envMode;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1825,9 +1825,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:520: case 3: // envNbStep
+;sound.c:525: case 3: // envNbStep
 00147$:
-;sound.c:521: return soundReg->mode4.envNbStep;
+;sound.c:526: return soundReg->mode4.envNbStep;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1838,9 +1838,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:522: case 4: // polyCounterFreq
+;sound.c:527: case 4: // polyCounterFreq
 00148$:
-;sound.c:523: return soundReg->mode4.polyCounterFreq;
+;sound.c:528: return soundReg->mode4.polyCounterFreq;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1851,9 +1851,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:524: case 5: // polyCounterStep
+;sound.c:529: case 5: // polyCounterStep
 00149$:
-;sound.c:525: return soundReg->mode4.polyCounterStep;
+;sound.c:530: return soundReg->mode4.polyCounterStep;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1864,9 +1864,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:526: case 6: // polyCounterDiv
+;sound.c:531: case 6: // polyCounterDiv
 00150$:
-;sound.c:527: return soundReg->mode4.polyCounterDiv;
+;sound.c:532: return soundReg->mode4.polyCounterDiv;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1877,9 +1877,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:528: case 7: // counter_ConsSel
+;sound.c:533: case 7: // counter_ConsSel
 00151$:
-;sound.c:529: return soundReg->mode4.counter_ConsSel;
+;sound.c:534: return soundReg->mode4.counter_ConsSel;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1890,9 +1890,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:530: case 8: // Sound4_To_SO1
+;sound.c:535: case 8: // Sound4_To_SO1
 00152$:
-;sound.c:531: return soundReg->control.Sound4_To_SO1;
+;sound.c:536: return soundReg->control.Sound4_To_SO1;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1903,9 +1903,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:532: case 9: // Sound4_To_SO2
+;sound.c:537: case 9: // Sound4_To_SO2
 00153$:
-;sound.c:533: return soundReg->control.Sound4_To_SO2;
+;sound.c:538: return soundReg->control.Sound4_To_SO2;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1916,9 +1916,9 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:534: case 10: // Sound4_On_Off
+;sound.c:539: case 10: // Sound4_On_Off
 00154$:
-;sound.c:535: return soundReg->control.Sound4_On_Off;
+;sound.c:540: return soundReg->control.Sound4_On_Off;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1929,23 +1929,23 @@ _current_value::
 	ld	c, a
 	ld	b, (hl)
 	ret
-;sound.c:536: }
+;sound.c:541: }
 00169$:
-;sound.c:538: return 0;
+;sound.c:543: return 0;
 	ld	bc, #0x0000
-;sound.c:539: }
+;sound.c:544: }
 	ret
-;sound.c:541: void update_value(uint8_t mode, uint8_t line, uint16_t value)
+;sound.c:546: void update_value( uint8_t mode, uint8_t line, uint16_t value )
 ;	---------------------------------
 ; Function update_value
 ; ---------------------------------
 _update_value::
 ;	spillPairReg hl
 ;	spillPairReg hl
-;sound.c:543: if(mode == 0) {
+;sound.c:548: if( mode == 0 ) {
 	ld	l, a
 	ld	b, e
-;sound.c:544: switch(line)
+;sound.c:549: switch( line )
 	or	a,a
 	jp	NZ,00174$
 	or	a,b
@@ -1965,9 +1965,9 @@ _update_value::
 	sub	a, #0x21
 	jp	Z,00106$
 	jp	00176$
-;sound.c:546: case 0: // global_On_Off
+;sound.c:551: case 0: // global_On_Off
 00101$:
-;sound.c:547: soundReg->control.global_On_Off = value;
+;sound.c:552: soundReg->control.global_On_Off = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -1982,14 +1982,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:548: NR52_REG = NR52();
+;sound.c:553: NR52_REG = NR52();
 	call	_NR52
 	ldh	(_NR52_REG + 0), a
-;sound.c:549: break;
+;sound.c:554: break;
 	jp	00176$
-;sound.c:550: case 1: // Vin_SO1
+;sound.c:555: case 1: // Vin_SO1
 00102$:
-;sound.c:551: soundReg->control.Vin_SO1 = value;
+;sound.c:556: soundReg->control.Vin_SO1 = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -2004,14 +2004,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:552: NR50_REG = NR50();
+;sound.c:557: NR50_REG = NR50();
 	call	_NR50
 	ldh	(_NR50_REG + 0), a
-;sound.c:553: break;
+;sound.c:558: break;
 	jp	00176$
-;sound.c:554: case 2: // Vin_SO2
+;sound.c:559: case 2: // Vin_SO2
 00103$:
-;sound.c:555: soundReg->control.Vin_SO2 = value;
+;sound.c:560: soundReg->control.Vin_SO2 = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -2026,14 +2026,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:556: NR50_REG = NR50();
+;sound.c:561: NR50_REG = NR50();
 	call	_NR50
 	ldh	(_NR50_REG + 0), a
-;sound.c:557: break;
+;sound.c:562: break;
 	jp	00176$
-;sound.c:558: case 3: // SO1_OutputLevel
+;sound.c:563: case 3: // SO1_OutputLevel
 00104$:
-;sound.c:559: soundReg->control.SO1_OutputLevel = value;
+;sound.c:564: soundReg->control.SO1_OutputLevel = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -2048,14 +2048,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:560: NR50_REG = NR50();
+;sound.c:565: NR50_REG = NR50();
 	call	_NR50
 	ldh	(_NR50_REG + 0), a
-;sound.c:561: break;
+;sound.c:566: break;
 	jp	00176$
-;sound.c:562: case 4: // SO2_OutputLevel
+;sound.c:567: case 4: // SO2_OutputLevel
 00105$:
-;sound.c:563: soundReg->control.SO2_OutputLevel = value;
+;sound.c:568: soundReg->control.SO2_OutputLevel = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -2070,45 +2070,45 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:564: NR50_REG = NR50();
+;sound.c:569: NR50_REG = NR50();
 	call	_NR50
 	ldh	(_NR50_REG + 0), a
-;sound.c:565: break;
-	jp	00176$
-;sound.c:566: case FREQUENCY:
-00106$:
-;sound.c:567: update_value(1, FREQUENCY, value);
-	ldhl	sp,	#2
-	ld	a, (hl+)
-	ld	e, a
-	ld	d, (hl)
-	push	de
-	ld	e, #0x21
-	ld	a, #0x01
-	call	_update_value
-;sound.c:568: update_value(2, FREQUENCY, value);
-	ldhl	sp,	#2
-	ld	a, (hl+)
-	ld	e, a
-	ld	d, (hl)
-	push	de
-	ld	e, #0x21
-	ld	a, #0x02
-	call	_update_value
-;sound.c:569: update_value(3, FREQUENCY, value);
-	ldhl	sp,	#2
-	ld	a, (hl+)
-	ld	e, a
-	ld	d, (hl)
-	push	de
-	ld	e, #0x21
-	ld	a, #0x03
-	call	_update_value
 ;sound.c:570: break;
 	jp	00176$
-;sound.c:571: case PLAY: // restart
+;sound.c:571: case FREQUENCY:
+00106$:
+;sound.c:572: update_value( 1, FREQUENCY, value );
+	ldhl	sp,	#2
+	ld	a, (hl+)
+	ld	e, a
+	ld	d, (hl)
+	push	de
+	ld	e, #0x21
+	ld	a, #0x01
+	call	_update_value
+;sound.c:573: update_value( 2, FREQUENCY, value );
+	ldhl	sp,	#2
+	ld	a, (hl+)
+	ld	e, a
+	ld	d, (hl)
+	push	de
+	ld	e, #0x21
+	ld	a, #0x02
+	call	_update_value
+;sound.c:574: update_value( 3, FREQUENCY, value );
+	ldhl	sp,	#2
+	ld	a, (hl+)
+	ld	e, a
+	ld	d, (hl)
+	push	de
+	ld	e, #0x21
+	ld	a, #0x03
+	call	_update_value
+;sound.c:575: break;
+	jp	00176$
+;sound.c:576: case PLAY: // restart
 00107$:
-;sound.c:572: update_value(1, FREQUENCY, current_value(1, FREQUENCY));
+;sound.c:577: update_value( 1, FREQUENCY, current_value( 1, FREQUENCY ) );
 	ld	e, #0x21
 	ld	a, #0x01
 	call	_current_value
@@ -2116,7 +2116,7 @@ _update_value::
 	ld	e, #0x21
 	ld	a, #0x01
 	call	_update_value
-;sound.c:573: update_value(2, FREQUENCY, current_value(2, FREQUENCY));
+;sound.c:578: update_value( 2, FREQUENCY, current_value( 2, FREQUENCY ) );
 	ld	e, #0x21
 	ld	a, #0x02
 	call	_current_value
@@ -2124,7 +2124,7 @@ _update_value::
 	ld	e, #0x21
 	ld	a, #0x02
 	call	_update_value
-;sound.c:574: update_value(3, FREQUENCY, current_value(3, FREQUENCY));
+;sound.c:579: update_value( 3, FREQUENCY, current_value( 3, FREQUENCY ) );
 	ld	e, #0x21
 	ld	a, #0x03
 	call	_current_value
@@ -2132,7 +2132,7 @@ _update_value::
 	ld	e, #0x21
 	ld	a, #0x03
 	call	_update_value
-;sound.c:575: soundReg->mode1.restart = value;
+;sound.c:580: soundReg->mode1.restart = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -2147,7 +2147,7 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:576: soundReg->mode2.restart = value;
+;sound.c:581: soundReg->mode2.restart = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -2162,7 +2162,7 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:577: soundReg->mode3.restart = value;
+;sound.c:582: soundReg->mode3.restart = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -2177,7 +2177,7 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:578: soundReg->mode4.restart = value;
+;sound.c:583: soundReg->mode4.restart = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -2192,19 +2192,19 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:579: NR14_REG = NR14();
+;sound.c:584: NR14_REG = NR14();
 	call	_NR14
 	ldh	(_NR14_REG + 0), a
-;sound.c:580: NR24_REG = NR24();
+;sound.c:585: NR24_REG = NR24();
 	call	_NR24
 	ldh	(_NR24_REG + 0), a
-;sound.c:581: NR34_REG = NR34();
+;sound.c:586: NR34_REG = NR34();
 	call	_NR34
 	ldh	(_NR34_REG + 0), a
-;sound.c:582: NR44_REG = NR44();
+;sound.c:587: NR44_REG = NR44();
 	call	_NR44
 	ldh	(_NR44_REG + 0), a
-;sound.c:583: soundReg->mode1.restart = 0;
+;sound.c:588: soundReg->mode1.restart = 0;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -2214,7 +2214,7 @@ _update_value::
 	xor	a, a
 	ld	(hl+), a
 	ld	(hl), a
-;sound.c:584: soundReg->mode2.restart = 0;
+;sound.c:589: soundReg->mode2.restart = 0;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -2224,7 +2224,7 @@ _update_value::
 	xor	a, a
 	ld	(hl+), a
 	ld	(hl), a
-;sound.c:585: soundReg->mode3.restart = 0;
+;sound.c:590: soundReg->mode3.restart = 0;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -2234,7 +2234,7 @@ _update_value::
 	xor	a, a
 	ld	(hl+), a
 	ld	(hl), a
-;sound.c:586: soundReg->mode4.restart = 0;
+;sound.c:591: soundReg->mode4.restart = 0;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -2244,14 +2244,14 @@ _update_value::
 	xor	a, a
 	ld	(hl+), a
 	ld	(hl), a
-;sound.c:588: }
+;sound.c:593: }
 	jp	00176$
 00174$:
-;sound.c:589: } else if(mode == 1) {
+;sound.c:595: else if( mode == 1 ) {
 	ld	a, l
 	dec	a
 	jp	NZ,00171$
-;sound.c:590: switch(line)
+;sound.c:596: switch( line )
 	ld	a, b
 	or	a, a
 	jr	Z, 00109$
@@ -2286,9 +2286,9 @@ _update_value::
 	sub	a, #0x21
 	jp	Z,00118$
 	jp	00176$
-;sound.c:592: case 0: // sweepTime
+;sound.c:598: case 0: // sweepTime
 00109$:
-;sound.c:593: soundReg->mode1.sweepTime = value;
+;sound.c:599: soundReg->mode1.sweepTime = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -2303,14 +2303,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:594: NR10_REG = NR10();
+;sound.c:600: NR10_REG = NR10();
 	call	_NR10
 	ldh	(_NR10_REG + 0), a
-;sound.c:595: break;
+;sound.c:601: break;
 	jp	00176$
-;sound.c:596: case 1: // sweepMode
+;sound.c:602: case 1: // sweepMode
 00110$:
-;sound.c:597: soundReg->mode1.sweepMode = value;
+;sound.c:603: soundReg->mode1.sweepMode = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -2323,14 +2323,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:598: NR10_REG = NR10();
+;sound.c:604: NR10_REG = NR10();
 	call	_NR10
 	ldh	(_NR10_REG + 0), a
-;sound.c:599: break;
+;sound.c:605: break;
 	jp	00176$
-;sound.c:600: case 2: // sweepShifts
+;sound.c:606: case 2: // sweepShifts
 00111$:
-;sound.c:601: soundReg->mode1.sweepShifts = value;
+;sound.c:607: soundReg->mode1.sweepShifts = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -2341,14 +2341,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:602: NR10_REG = NR10();
+;sound.c:608: NR10_REG = NR10();
 	call	_NR10
 	ldh	(_NR10_REG + 0), a
-;sound.c:603: break;
+;sound.c:609: break;
 	jp	00176$
-;sound.c:604: case 3: // patternDuty
+;sound.c:610: case 3: // patternDuty
 00112$:
-;sound.c:605: soundReg->mode1.patternDuty = value;
+;sound.c:611: soundReg->mode1.patternDuty = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -2363,14 +2363,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:606: NR11_REG = NR11();
+;sound.c:612: NR11_REG = NR11();
 	call	_NR11
 	ldh	(_NR11_REG + 0), a
-;sound.c:607: break;
+;sound.c:613: break;
 	jp	00176$
-;sound.c:608: case 4: // soundLength
+;sound.c:614: case 4: // soundLength
 00113$:
-;sound.c:609: soundReg->mode1.soundLength = value;
+;sound.c:615: soundReg->mode1.soundLength = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -2385,14 +2385,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:610: NR11_REG = NR11();
+;sound.c:616: NR11_REG = NR11();
 	call	_NR11
 	ldh	(_NR11_REG + 0), a
-;sound.c:611: break;
+;sound.c:617: break;
 	jp	00176$
-;sound.c:612: case 5: // envInitialValue
+;sound.c:618: case 5: // envInitialValue
 00114$:
-;sound.c:613: soundReg->mode1.envInitialValue = value;
+;sound.c:619: soundReg->mode1.envInitialValue = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -2407,14 +2407,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:614: NR12_REG = NR12();
+;sound.c:620: NR12_REG = NR12();
 	call	_NR12
 	ldh	(_NR12_REG + 0), a
-;sound.c:615: break;
+;sound.c:621: break;
 	jp	00176$
-;sound.c:616: case 6: // envMode
+;sound.c:622: case 6: // envMode
 00115$:
-;sound.c:617: soundReg->mode1.envMode = value;
+;sound.c:623: soundReg->mode1.envMode = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -2429,14 +2429,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:618: NR12_REG = NR12();
+;sound.c:624: NR12_REG = NR12();
 	call	_NR12
 	ldh	(_NR12_REG + 0), a
-;sound.c:619: break;
+;sound.c:625: break;
 	jp	00176$
-;sound.c:620: case 7: // envNbSweep
+;sound.c:626: case 7: // envNbSweep
 00116$:
-;sound.c:621: soundReg->mode1.envNbSweep = value;
+;sound.c:627: soundReg->mode1.envNbSweep = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -2451,14 +2451,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:622: NR12_REG = NR12();
+;sound.c:628: NR12_REG = NR12();
 	call	_NR12
 	ldh	(_NR12_REG + 0), a
-;sound.c:623: break;
+;sound.c:629: break;
 	jp	00176$
-;sound.c:625: case FREQUENCY:
+;sound.c:631: case FREQUENCY:
 00118$:
-;sound.c:626: soundReg->mode1.frequencyHigh = value >> 8;
+;sound.c:632: soundReg->mode1.frequencyHigh = value >> 8;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -2475,7 +2475,7 @@ _update_value::
 	inc	bc
 	ld	a, d
 	ld	(bc), a
-;sound.c:627: soundReg->mode1.frequencyLow  = 0xFF & value;
+;sound.c:633: soundReg->mode1.frequencyLow = 0xFF & value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -2494,17 +2494,17 @@ _update_value::
 	inc	bc
 	ld	a, d
 	ld	(bc), a
-;sound.c:628: NR13_REG = NR13();
+;sound.c:634: NR13_REG = NR13();
 	call	_NR13
 	ldh	(_NR13_REG + 0), a
-;sound.c:629: NR14_REG = NR14();
+;sound.c:635: NR14_REG = NR14();
 	call	_NR14
 	ldh	(_NR14_REG + 0), a
-;sound.c:630: break;
+;sound.c:636: break;
 	jp	00176$
-;sound.c:631: case 9: // counter_ConsSel
+;sound.c:637: case 9: // counter_ConsSel
 00119$:
-;sound.c:632: soundReg->mode1.counter_ConsSel = value;
+;sound.c:638: soundReg->mode1.counter_ConsSel = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -2519,14 +2519,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:633: NR14_REG = NR14();
+;sound.c:639: NR14_REG = NR14();
 	call	_NR14
 	ldh	(_NR14_REG + 0), a
-;sound.c:634: break;
+;sound.c:640: break;
 	jp	00176$
-;sound.c:635: case 10: // Sound1_To_SO1
+;sound.c:641: case 10: // Sound1_To_SO1
 00120$:
-;sound.c:636: soundReg->control.Sound1_To_SO1 = value;
+;sound.c:642: soundReg->control.Sound1_To_SO1 = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -2541,14 +2541,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:637: NR51_REG = NR51();
+;sound.c:643: NR51_REG = NR51();
 	call	_NR51
 	ldh	(_NR51_REG + 0), a
-;sound.c:638: break;
+;sound.c:644: break;
 	jp	00176$
-;sound.c:639: case 11: // Sound1_To_SO2
+;sound.c:645: case 11: // Sound1_To_SO2
 00121$:
-;sound.c:640: soundReg->control.Sound1_To_SO2 = value;
+;sound.c:646: soundReg->control.Sound1_To_SO2 = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -2563,14 +2563,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:641: NR51_REG = NR51();
+;sound.c:647: NR51_REG = NR51();
 	call	_NR51
 	ldh	(_NR51_REG + 0), a
-;sound.c:642: break;
+;sound.c:648: break;
 	jp	00176$
-;sound.c:643: case 12: // Sound1_On_Off
+;sound.c:649: case 12: // Sound1_On_Off
 00122$:
-;sound.c:644: soundReg->control.Sound1_On_Off = value;
+;sound.c:650: soundReg->control.Sound1_On_Off = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -2585,14 +2585,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:645: NR52_REG = NR52();
+;sound.c:651: NR52_REG = NR52();
 	call	_NR52
 	ldh	(_NR52_REG + 0), a
-;sound.c:646: break;
+;sound.c:652: break;
 	jp	00176$
-;sound.c:647: case PLAY: // restart
+;sound.c:653: case PLAY: // restart
 00123$:
-;sound.c:648: update_value(mode, FREQUENCY, current_value(mode, FREQUENCY));
+;sound.c:654: update_value( mode, FREQUENCY, current_value( mode, FREQUENCY ) );
 	push	hl
 	ld	e, #0x21
 	ld	a, l
@@ -2602,7 +2602,7 @@ _update_value::
 	ld	e, #0x21
 	ld	a, l
 	call	_update_value
-;sound.c:649: soundReg->mode1.restart = value;
+;sound.c:655: soundReg->mode1.restart = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -2617,10 +2617,10 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:650: NR14_REG = NR14();
+;sound.c:656: NR14_REG = NR14();
 	call	_NR14
 	ldh	(_NR14_REG + 0), a
-;sound.c:651: soundReg->mode1.restart = 0;
+;sound.c:657: soundReg->mode1.restart = 0;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -2630,12 +2630,12 @@ _update_value::
 	xor	a, a
 	ld	(hl+), a
 	ld	(hl), a
-;sound.c:653: }
+;sound.c:659: }
 	jp	00176$
 00171$:
-;sound.c:654: } else if(mode == 2) {
+;sound.c:661: else if( mode == 2 ) {
 	ld	a, l
-;sound.c:655: switch(line)
+;sound.c:662: switch( line )
 	sub	a,#0x02
 	jp	NZ,00168$
 	or	a,b
@@ -2665,9 +2665,9 @@ _update_value::
 	sub	a, #0x21
 	jp	Z,00131$
 	jp	00176$
-;sound.c:657: case 0: // patternDuty
+;sound.c:664: case 0: // patternDuty
 00125$:
-;sound.c:658: soundReg->mode2.patternDuty = value;
+;sound.c:665: soundReg->mode2.patternDuty = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -2682,14 +2682,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:659: NR21_REG = NR21();
+;sound.c:666: NR21_REG = NR21();
 	call	_NR21
 	ldh	(_NR21_REG + 0), a
-;sound.c:660: break;
+;sound.c:667: break;
 	jp	00176$
-;sound.c:661: case 1: // soundLength
+;sound.c:668: case 1: // soundLength
 00126$:
-;sound.c:662: soundReg->mode2.soundLength = value;
+;sound.c:669: soundReg->mode2.soundLength = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -2704,14 +2704,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:663: NR21_REG = NR21();
+;sound.c:670: NR21_REG = NR21();
 	call	_NR21
 	ldh	(_NR21_REG + 0), a
-;sound.c:664: break;
+;sound.c:671: break;
 	jp	00176$
-;sound.c:665: case 2: // envInitialValue
+;sound.c:672: case 2: // envInitialValue
 00127$:
-;sound.c:666: soundReg->mode2.envInitialValue = value;
+;sound.c:673: soundReg->mode2.envInitialValue = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -2726,14 +2726,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:667: NR22_REG = NR22();
+;sound.c:674: NR22_REG = NR22();
 	call	_NR22
 	ldh	(_NR22_REG + 0), a
-;sound.c:668: break;
+;sound.c:675: break;
 	jp	00176$
-;sound.c:669: case 3: // envMode
+;sound.c:676: case 3: // envMode
 00128$:
-;sound.c:670: soundReg->mode2.envMode = value;
+;sound.c:677: soundReg->mode2.envMode = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -2748,14 +2748,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:671: NR22_REG = NR22();
+;sound.c:678: NR22_REG = NR22();
 	call	_NR22
 	ldh	(_NR22_REG + 0), a
-;sound.c:672: break;
+;sound.c:679: break;
 	jp	00176$
-;sound.c:673: case 4: // envNbStep
+;sound.c:680: case 4: // envNbStep
 00129$:
-;sound.c:674: soundReg->mode2.envNbStep = value;
+;sound.c:681: soundReg->mode2.envNbStep = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -2770,14 +2770,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:675: NR22_REG = NR22();
+;sound.c:682: NR22_REG = NR22();
 	call	_NR22
 	ldh	(_NR22_REG + 0), a
-;sound.c:676: break;
+;sound.c:683: break;
 	jp	00176$
-;sound.c:678: case FREQUENCY:
+;sound.c:685: case FREQUENCY:
 00131$:
-;sound.c:679: soundReg->mode2.frequencyHigh = value >> 8;
+;sound.c:686: soundReg->mode2.frequencyHigh = value >> 8;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -2794,7 +2794,7 @@ _update_value::
 	inc	bc
 	ld	a, d
 	ld	(bc), a
-;sound.c:680: soundReg->mode2.frequencyLow  = 0xFF & value;
+;sound.c:687: soundReg->mode2.frequencyLow = 0xFF & value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -2813,17 +2813,17 @@ _update_value::
 	inc	bc
 	ld	a, d
 	ld	(bc), a
-;sound.c:681: NR23_REG = NR23();
+;sound.c:688: NR23_REG = NR23();
 	call	_NR23
 	ldh	(_NR23_REG + 0), a
-;sound.c:682: NR24_REG = NR24();
+;sound.c:689: NR24_REG = NR24();
 	call	_NR24
 	ldh	(_NR24_REG + 0), a
-;sound.c:683: break;
+;sound.c:690: break;
 	jp	00176$
-;sound.c:684: case 6: // counter_ConsSel
+;sound.c:691: case 6: // counter_ConsSel
 00132$:
-;sound.c:685: soundReg->mode2.counter_ConsSel = value;
+;sound.c:692: soundReg->mode2.counter_ConsSel = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -2838,14 +2838,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:686: NR24_REG = NR24();
+;sound.c:693: NR24_REG = NR24();
 	call	_NR24
 	ldh	(_NR24_REG + 0), a
-;sound.c:687: break;
+;sound.c:694: break;
 	jp	00176$
-;sound.c:688: case 7: // Sound2_To_SO1
+;sound.c:695: case 7: // Sound2_To_SO1
 00133$:
-;sound.c:689: soundReg->control.Sound2_To_SO1 = value;
+;sound.c:696: soundReg->control.Sound2_To_SO1 = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -2860,14 +2860,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:690: NR51_REG = NR51();
+;sound.c:697: NR51_REG = NR51();
 	call	_NR51
 	ldh	(_NR51_REG + 0), a
-;sound.c:691: break;
+;sound.c:698: break;
 	jp	00176$
-;sound.c:692: case 8: // Sound2_To_SO2
+;sound.c:699: case 8: // Sound2_To_SO2
 00134$:
-;sound.c:693: soundReg->control.Sound2_To_SO2 = value;
+;sound.c:700: soundReg->control.Sound2_To_SO2 = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -2882,14 +2882,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:694: NR51_REG = NR51();
+;sound.c:701: NR51_REG = NR51();
 	call	_NR51
 	ldh	(_NR51_REG + 0), a
-;sound.c:695: break;
+;sound.c:702: break;
 	jp	00176$
-;sound.c:696: case 9: // Sound2_On_Off
+;sound.c:703: case 9: // Sound2_On_Off
 00135$:
-;sound.c:697: soundReg->control.Sound2_On_Off = value;
+;sound.c:704: soundReg->control.Sound2_On_Off = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -2904,14 +2904,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:698: NR52_REG = NR52();
+;sound.c:705: NR52_REG = NR52();
 	call	_NR52
 	ldh	(_NR52_REG + 0), a
-;sound.c:699: break;
+;sound.c:706: break;
 	jp	00176$
-;sound.c:700: case PLAY: // restart
+;sound.c:707: case PLAY: // restart
 00136$:
-;sound.c:701: update_value(mode, FREQUENCY, current_value(mode, FREQUENCY));
+;sound.c:708: update_value( mode, FREQUENCY, current_value( mode, FREQUENCY ) );
 	push	hl
 	ld	e, #0x21
 	ld	a, l
@@ -2921,7 +2921,7 @@ _update_value::
 	ld	e, #0x21
 	ld	a, l
 	call	_update_value
-;sound.c:702: soundReg->mode2.restart = value;
+;sound.c:709: soundReg->mode2.restart = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -2936,10 +2936,10 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:703: NR24_REG = NR24();
+;sound.c:710: NR24_REG = NR24();
 	call	_NR24
 	ldh	(_NR24_REG + 0), a
-;sound.c:704: soundReg->mode2.restart = 0;
+;sound.c:711: soundReg->mode2.restart = 0;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -2949,12 +2949,12 @@ _update_value::
 	xor	a, a
 	ld	(hl+), a
 	ld	(hl), a
-;sound.c:706: }
+;sound.c:713: }
 	jp	00176$
 00168$:
-;sound.c:707: } else if(mode == 3) {
+;sound.c:715: else if( mode == 3 ) {
 	ld	a, l
-;sound.c:708: switch(line)
+;sound.c:716: switch( line )
 	sub	a,#0x03
 	jp	NZ,00165$
 	or	a,b
@@ -2980,9 +2980,9 @@ _update_value::
 	sub	a, #0x21
 	jr	Z, 00142$
 	jp	00176$
-;sound.c:710: case 0: // on_Off
+;sound.c:718: case 0: // on_Off
 00138$:
-;sound.c:711: soundReg->mode3.on_Off = value;
+;sound.c:719: soundReg->mode3.on_Off = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -2997,14 +2997,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:712: NR30_REG = NR30();
+;sound.c:720: NR30_REG = NR30();
 	call	_NR30
 	ldh	(_NR30_REG + 0), a
-;sound.c:713: break;
+;sound.c:721: break;
 	jp	00176$
-;sound.c:714: case 1: // soundLength
+;sound.c:722: case 1: // soundLength
 00139$:
-;sound.c:715: soundReg->mode3.soundLength = value;
+;sound.c:723: soundReg->mode3.soundLength = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -3019,14 +3019,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:716: NR31_REG = NR31();
+;sound.c:724: NR31_REG = NR31();
 	call	_NR31
 	ldh	(_NR31_REG + 0), a
-;sound.c:717: break;
+;sound.c:725: break;
 	jp	00176$
-;sound.c:718: case 2: // selOutputLevel
+;sound.c:726: case 2: // selOutputLevel
 00140$:
-;sound.c:719: soundReg->mode3.selOutputLevel = value;
+;sound.c:727: soundReg->mode3.selOutputLevel = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -3041,14 +3041,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:720: NR32_REG = NR32();
+;sound.c:728: NR32_REG = NR32();
 	call	_NR32
 	ldh	(_NR32_REG + 0), a
-;sound.c:721: break;
+;sound.c:729: break;
 	jp	00176$
-;sound.c:723: case FREQUENCY:
+;sound.c:731: case FREQUENCY:
 00142$:
-;sound.c:724: soundReg->mode3.frequencyHigh = value >> 8;
+;sound.c:732: soundReg->mode3.frequencyHigh = value >> 8;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -3065,7 +3065,7 @@ _update_value::
 	inc	bc
 	ld	a, d
 	ld	(bc), a
-;sound.c:725: soundReg->mode3.frequencyLow  = 0xFF & value;
+;sound.c:733: soundReg->mode3.frequencyLow = 0xFF & value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -3084,17 +3084,17 @@ _update_value::
 	inc	bc
 	ld	a, d
 	ld	(bc), a
-;sound.c:726: NR33_REG = NR33();
+;sound.c:734: NR33_REG = NR33();
 	call	_NR33
 	ldh	(_NR33_REG + 0), a
-;sound.c:727: NR34_REG = NR34();
+;sound.c:735: NR34_REG = NR34();
 	call	_NR34
 	ldh	(_NR34_REG + 0), a
-;sound.c:728: break;
+;sound.c:736: break;
 	jp	00176$
-;sound.c:729: case 4: // counter_ConsSel
+;sound.c:737: case 4: // counter_ConsSel
 00143$:
-;sound.c:730: soundReg->mode3.counter_ConsSel = value;
+;sound.c:738: soundReg->mode3.counter_ConsSel = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -3109,14 +3109,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:731: NR34_REG = NR34();
+;sound.c:739: NR34_REG = NR34();
 	call	_NR34
 	ldh	(_NR34_REG + 0), a
-;sound.c:732: break;
+;sound.c:740: break;
 	jp	00176$
-;sound.c:733: case 5: // Sound3_To_SO1
+;sound.c:741: case 5: // Sound3_To_SO1
 00144$:
-;sound.c:734: soundReg->control.Sound3_To_SO1 = value;
+;sound.c:742: soundReg->control.Sound3_To_SO1 = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -3131,14 +3131,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:735: NR51_REG = NR51();
+;sound.c:743: NR51_REG = NR51();
 	call	_NR51
 	ldh	(_NR51_REG + 0), a
-;sound.c:736: break;
+;sound.c:744: break;
 	jp	00176$
-;sound.c:737: case 6: // Sound3_To_SO2
+;sound.c:745: case 6: // Sound3_To_SO2
 00145$:
-;sound.c:738: soundReg->control.Sound3_To_SO2 = value;
+;sound.c:746: soundReg->control.Sound3_To_SO2 = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -3153,14 +3153,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:739: NR51_REG = NR51();
+;sound.c:747: NR51_REG = NR51();
 	call	_NR51
 	ldh	(_NR51_REG + 0), a
-;sound.c:740: break;
+;sound.c:748: break;
 	jp	00176$
-;sound.c:741: case 7: // Sound3_On_Off
+;sound.c:749: case 7: // Sound3_On_Off
 00146$:
-;sound.c:742: soundReg->control.Sound3_On_Off = value;
+;sound.c:750: soundReg->control.Sound3_On_Off = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -3175,14 +3175,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:743: NR52_REG = NR52();
+;sound.c:751: NR52_REG = NR52();
 	call	_NR52
 	ldh	(_NR52_REG + 0), a
-;sound.c:744: break;
+;sound.c:752: break;
 	jp	00176$
-;sound.c:745: case PLAY: // restart
+;sound.c:753: case PLAY: // restart
 00147$:
-;sound.c:746: update_value(mode, FREQUENCY, current_value(mode, FREQUENCY));
+;sound.c:754: update_value( mode, FREQUENCY, current_value( mode, FREQUENCY ) );
 	push	hl
 	ld	e, #0x21
 	ld	a, l
@@ -3192,7 +3192,7 @@ _update_value::
 	ld	e, #0x21
 	ld	a, l
 	call	_update_value
-;sound.c:747: soundReg->mode3.restart = value;
+;sound.c:755: soundReg->mode3.restart = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -3207,10 +3207,10 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:748: NR34_REG = NR34();
+;sound.c:756: NR34_REG = NR34();
 	call	_NR34
 	ldh	(_NR34_REG + 0), a
-;sound.c:749: soundReg->mode3.restart = 0;
+;sound.c:757: soundReg->mode3.restart = 0;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -3220,12 +3220,12 @@ _update_value::
 	xor	a, a
 	ld	(hl+), a
 	ld	(hl), a
-;sound.c:751: }
+;sound.c:759: }
 	jp	00176$
 00165$:
-;sound.c:752: } else if(mode == 4) {
+;sound.c:761: else if( mode == 4 ) {
 	ld	a, l
-;sound.c:753: switch(line)
+;sound.c:762: switch( line )
 	sub	a,#0x04
 	jp	NZ,00176$
 	or	a,b
@@ -3255,9 +3255,9 @@ _update_value::
 	sub	a, #0x20
 	jp	Z,00160$
 	jp	00176$
-;sound.c:755: case 0: // soundLength
+;sound.c:764: case 0: // soundLength
 00149$:
-;sound.c:756: soundReg->mode4.soundLength = value;
+;sound.c:765: soundReg->mode4.soundLength = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -3272,14 +3272,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:757: NR41_REG = NR41();
+;sound.c:766: NR41_REG = NR41();
 	call	_NR41
 	ldh	(_NR41_REG + 0), a
-;sound.c:758: break;
+;sound.c:767: break;
 	jp	00176$
-;sound.c:759: case 1: // envInitialValue
+;sound.c:768: case 1: // envInitialValue
 00150$:
-;sound.c:760: soundReg->mode4.envInitialValue = value;
+;sound.c:769: soundReg->mode4.envInitialValue = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -3294,14 +3294,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:761: NR42_REG = NR42();
+;sound.c:770: NR42_REG = NR42();
 	call	_NR42
 	ldh	(_NR42_REG + 0), a
-;sound.c:762: break;
+;sound.c:771: break;
 	jp	00176$
-;sound.c:763: case 2: // envMode
+;sound.c:772: case 2: // envMode
 00151$:
-;sound.c:764: soundReg->mode4.envMode = value;
+;sound.c:773: soundReg->mode4.envMode = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -3316,14 +3316,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:765: NR42_REG = NR42();
+;sound.c:774: NR42_REG = NR42();
 	call	_NR42
 	ldh	(_NR42_REG + 0), a
-;sound.c:766: break;
+;sound.c:775: break;
 	jp	00176$
-;sound.c:767: case 3: // envNbStep
+;sound.c:776: case 3: // envNbStep
 00152$:
-;sound.c:768: soundReg->mode4.envNbStep = value;
+;sound.c:777: soundReg->mode4.envNbStep = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -3338,14 +3338,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:769: NR42_REG = NR42();
+;sound.c:778: NR42_REG = NR42();
 	call	_NR42
 	ldh	(_NR42_REG + 0), a
-;sound.c:770: break;
+;sound.c:779: break;
 	jp	00176$
-;sound.c:771: case 4: // polyCounterFreq
+;sound.c:780: case 4: // polyCounterFreq
 00153$:
-;sound.c:772: soundReg->mode4.polyCounterFreq = value;
+;sound.c:781: soundReg->mode4.polyCounterFreq = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -3360,14 +3360,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:773: NR43_REG = NR43();
+;sound.c:782: NR43_REG = NR43();
 	call	_NR43
 	ldh	(_NR43_REG + 0), a
-;sound.c:774: break;
+;sound.c:783: break;
 	jp	00176$
-;sound.c:775: case 5: // polyCounterStep
+;sound.c:784: case 5: // polyCounterStep
 00154$:
-;sound.c:776: soundReg->mode4.polyCounterStep = value;
+;sound.c:785: soundReg->mode4.polyCounterStep = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -3382,14 +3382,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:777: NR43_REG = NR43();
+;sound.c:786: NR43_REG = NR43();
 	call	_NR43
 	ldh	(_NR43_REG + 0), a
-;sound.c:778: break;
+;sound.c:787: break;
 	jp	00176$
-;sound.c:779: case 6: // polyCounterDiv
+;sound.c:788: case 6: // polyCounterDiv
 00155$:
-;sound.c:780: soundReg->mode4.polyCounterDiv = value;
+;sound.c:789: soundReg->mode4.polyCounterDiv = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -3404,14 +3404,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:781: NR43_REG = NR43();
+;sound.c:790: NR43_REG = NR43();
 	call	_NR43
 	ldh	(_NR43_REG + 0), a
-;sound.c:782: break;
+;sound.c:791: break;
 	jp	00176$
-;sound.c:783: case 7: // counter_ConsSel
+;sound.c:792: case 7: // counter_ConsSel
 00156$:
-;sound.c:784: soundReg->mode4.counter_ConsSel = value;
+;sound.c:793: soundReg->mode4.counter_ConsSel = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -3426,14 +3426,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:785: NR44_REG = NR44();
+;sound.c:794: NR44_REG = NR44();
 	call	_NR44
 	ldh	(_NR44_REG + 0), a
-;sound.c:786: break;
+;sound.c:795: break;
 	jr	00176$
-;sound.c:787: case 8: // Sound4_To_SO1
+;sound.c:796: case 8: // Sound4_To_SO1
 00157$:
-;sound.c:788: soundReg->control.Sound4_To_SO1 = value;
+;sound.c:797: soundReg->control.Sound4_To_SO1 = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -3448,14 +3448,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:789: NR51_REG = NR51();
+;sound.c:798: NR51_REG = NR51();
 	call	_NR51
 	ldh	(_NR51_REG + 0), a
-;sound.c:790: break;
+;sound.c:799: break;
 	jr	00176$
-;sound.c:791: case 9: // Sound4_To_SO2
+;sound.c:800: case 9: // Sound4_To_SO2
 00158$:
-;sound.c:792: soundReg->control.Sound4_To_SO2 = value;
+;sound.c:801: soundReg->control.Sound4_To_SO2 = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -3470,14 +3470,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:793: NR51_REG = NR51();
+;sound.c:802: NR51_REG = NR51();
 	call	_NR51
 	ldh	(_NR51_REG + 0), a
-;sound.c:794: break;
+;sound.c:803: break;
 	jr	00176$
-;sound.c:795: case 10: // Sound4_On_Off
+;sound.c:804: case 10: // Sound4_On_Off
 00159$:
-;sound.c:796: soundReg->control.Sound4_On_Off = value;
+;sound.c:805: soundReg->control.Sound4_On_Off = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -3492,14 +3492,14 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:797: NR52_REG = NR52();
+;sound.c:806: NR52_REG = NR52();
 	call	_NR52
 	ldh	(_NR52_REG + 0), a
-;sound.c:798: break;
+;sound.c:807: break;
 	jr	00176$
-;sound.c:799: case PLAY: // restart
+;sound.c:808: case PLAY: // restart
 00160$:
-;sound.c:800: soundReg->mode4.restart = value;
+;sound.c:809: soundReg->mode4.restart = value;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	b, (hl)
@@ -3514,10 +3514,10 @@ _update_value::
 	inc	bc
 	ld	a, (hl)
 	ld	(bc), a
-;sound.c:801: NR44_REG = NR44();
+;sound.c:810: NR44_REG = NR44();
 	call	_NR44
 	ldh	(_NR44_REG + 0), a
-;sound.c:802: soundReg->mode4.restart = 0;
+;sound.c:811: soundReg->mode4.restart = 0;
 	ld	hl, #_soundReg
 	ld	a, (hl+)
 	ld	c, a
@@ -3527,13 +3527,13 @@ _update_value::
 	xor	a, a
 	ld	(hl+), a
 	ld	(hl), a
-;sound.c:804: }
+;sound.c:813: }
 00176$:
-;sound.c:806: }
+;sound.c:815: }
 	pop	hl
 	pop	af
 	jp	(hl)
-;sound.c:808: uint8_t draw_screen(uint8_t mode)
+;sound.c:817: uint8_t draw_screen( uint8_t mode )
 ;	---------------------------------
 ; Function draw_screen
 ; ---------------------------------
@@ -3541,14 +3541,14 @@ _draw_screen::
 	add	sp, #-5
 	ldhl	sp,	#3
 	ld	(hl), a
-;sound.c:812: clss();
+;sound.c:821: clss();
 	call	_clss
-;sound.c:813: gotoxy(FIRST_X, TITLE_Y);
+;sound.c:822: gotoxy( FIRST_X, TITLE_Y );
 	ld	hl, #0x01
 	push	hl
 	call	_gotoxy
 	pop	hl
-;sound.c:814: print(params[0].name);
+;sound.c:823: print( params[ 0 ].name );
 	ld	hl, #_params
 	ld	l, (hl)
 ;	spillPairReg hl
@@ -3563,7 +3563,7 @@ _draw_screen::
 	ld	e, c
 	ld	d, b
 	call	_print
-;sound.c:816: for(i = 0; params[i+1].name; i++) {
+;sound.c:825: for( i = 0; params[ i + 1 ].name; i++ ) {
 	ldhl	sp,	#4
 	ld	(hl), #0x00
 00103$:
@@ -3588,14 +3588,14 @@ _draw_screen::
 	ld	a, (hl+)
 	ld	c, a
 	ld	b, (hl)
-;sound.c:817: gotoxy(FIRST_X, FIRST_Y+i);
+;sound.c:826: gotoxy( FIRST_X, FIRST_Y + i );
 	ldhl	sp,	#4
 	ld	e, (hl)
-;sound.c:816: for(i = 0; params[i+1].name; i++) {
+;sound.c:825: for( i = 0; params[ i + 1 ].name; i++ ) {
 	ld	a, b
 	or	a, c
 	jr	Z, 00101$
-;sound.c:817: gotoxy(FIRST_X, FIRST_Y+i);
+;sound.c:826: gotoxy( FIRST_X, FIRST_Y + i );
 	dec	hl
 	dec	hl
 	ld	a, e
@@ -3606,7 +3606,7 @@ _draw_screen::
 	push	hl
 	call	_gotoxy
 	pop	hl
-;sound.c:818: print(params[i+1].name);
+;sound.c:827: print( params[ i + 1 ].name );
 	pop	de
 	push	de
 	ld	hl, #_params
@@ -3620,14 +3620,14 @@ _draw_screen::
 	ld	e, c
 	ld	d, b
 	call	_print
-;sound.c:819: gotoxy(VAL_X, FIRST_Y+i);
+;sound.c:828: gotoxy( VAL_X, FIRST_Y + i );
 	ldhl	sp,	#2
 	ld	h, (hl)
 	ld	l, #0x0f
 	push	hl
 	call	_gotoxy
 	pop	hl
-;sound.c:820: println(current_value(mode, i), 10, UNSIGNED);
+;sound.c:829: println( current_value( mode, i ), 10, UNSIGNED );
 	ldhl	sp,	#4
 	ld	a, (hl-)
 	ld	e, a
@@ -3640,24 +3640,24 @@ _draw_screen::
 	ld	e, c
 	ld	d, b
 	call	_println
-;sound.c:816: for(i = 0; params[i+1].name; i++) {
+;sound.c:825: for( i = 0; params[ i + 1 ].name; i++ ) {
 	ldhl	sp,	#4
 	inc	(hl)
 	jr	00103$
 00101$:
-;sound.c:823: return i-1;
+;sound.c:832: return i - 1;
 	ld	a, e
 	dec	a
-;sound.c:824: }
+;sound.c:833: }
 	add	sp, #5
 	ret
-;sound.c:827: void play_music(uint8_t mode)
+;sound.c:836: void play_music( uint8_t mode )
 ;	---------------------------------
 ; Function play_music
 ; ---------------------------------
 _play_music::
 	ld	c, a
-;sound.c:831: while(music[i] != END) {
+;sound.c:840: while( music[ i ] != END ) {
 	ld	b, #0x00
 00103$:
 	ld	a, #<(_music)
@@ -3669,10 +3669,10 @@ _play_music::
 	ld	a, (de)
 	cp	a, #0x49
 	ret	Z
-;sound.c:832: if(music[i] != SILENCE) {
+;sound.c:841: if( music[ i ] != SILENCE ) {
 	cp	a, #0x48
 	jr	Z, 00102$
-;sound.c:833: update_value(mode, FREQUENCY, frequencies[music[i]]);
+;sound.c:842: update_value( mode, FREQUENCY, frequencies[ music[ i ] ] );
 	ld	h, #0x00
 ;	spillPairReg hl
 ;	spillPairReg hl
@@ -3692,7 +3692,7 @@ _play_music::
 	ld	a, c
 	call	_update_value
 	pop	bc
-;sound.c:834: update_value(mode, PLAY, 1);
+;sound.c:843: update_value( mode, PLAY, 1 );
 	push	bc
 	ld	de, #0x0001
 	push	de
@@ -3701,22 +3701,22 @@ _play_music::
 	call	_update_value
 	pop	bc
 00102$:
-;sound.c:836: delay(500);
+;sound.c:845: delay( 500 );
 	push	bc
 	ld	de, #0x01f4
 	call	_delay
 	pop	bc
-;sound.c:837: i++;
+;sound.c:846: i++;
 	inc	b
-;sound.c:839: }
+;sound.c:848: }
 	jr	00103$
-;sound.c:842: void show_register_channel(uint8_t mode) {
+;sound.c:851: void show_register_channel( uint8_t mode ) {
 ;	---------------------------------
 ; Function show_register_channel
 ; ---------------------------------
 _show_register_channel::
 	ld	c, a
-;sound.c:844: switch (mode) {
+;sound.c:853: switch( mode ) {
 	ld	a, #0x04
 	sub	a, c
 	ret	C
@@ -3732,17 +3732,17 @@ _show_register_channel::
 	jp	00102$
 	jp	00103$
 	jp	00104$
-;sound.c:845: case 1:
+;sound.c:854: case 1:
 00101$:
-;sound.c:846: gotoxy(0, 16);
+;sound.c:855: gotoxy( 0, 16 );
 	ld	hl, #0x1000
 	push	hl
 	call	_gotoxy
 	pop	hl
-;sound.c:847: print("NR10-14:");
+;sound.c:856: print( "NR10-14:" );
 	ld	de, #___str_36
 	call	_print
-;sound.c:849: gotoxy(1, 17); // Last line
+;sound.c:858: gotoxy( 1, 17 ); // Last line
 	ld	a, #0x11
 	push	af
 	inc	sp
@@ -3751,7 +3751,7 @@ _show_register_channel::
 	inc	sp
 	call	_gotoxy
 	pop	hl
-;sound.c:850: printn(NR10(), 16, UNSIGNED); print(", ");
+;sound.c:859: printn( NR10(), 16, UNSIGNED ); print( ", " );
 	call	_NR10
 	ld	e, a
 	xor	a, a
@@ -3762,7 +3762,7 @@ _show_register_channel::
 	call	_printn
 	ld	de, #___str_37
 	call	_print
-;sound.c:851: printn(NR11(), 16, UNSIGNED); print(", ");
+;sound.c:860: printn( NR11(), 16, UNSIGNED ); print( ", " );
 	call	_NR11
 	ld	e, a
 	xor	a, a
@@ -3773,7 +3773,7 @@ _show_register_channel::
 	call	_printn
 	ld	de, #___str_37
 	call	_print
-;sound.c:852: printn(NR12(), 16, UNSIGNED); print(", ");
+;sound.c:861: printn( NR12(), 16, UNSIGNED ); print( ", " );
 	call	_NR12
 	ld	e, a
 	xor	a, a
@@ -3784,7 +3784,7 @@ _show_register_channel::
 	call	_printn
 	ld	de, #___str_37
 	call	_print
-;sound.c:853: printn(NR13(), 16, UNSIGNED); print(", ");
+;sound.c:862: printn( NR13(), 16, UNSIGNED ); print( ", " );
 	call	_NR13
 	ld	e, a
 	xor	a, a
@@ -3795,7 +3795,7 @@ _show_register_channel::
 	call	_printn
 	ld	de, #___str_37
 	call	_print
-;sound.c:854: printn(0x80 | NR14(), 16, UNSIGNED);
+;sound.c:863: printn( 0x80 | NR14(), 16, UNSIGNED );
 	call	_NR14
 	set	7, a
 	ld	e, a
@@ -3805,19 +3805,19 @@ _show_register_channel::
 	inc	sp
 	ld	a, #0x10
 	call	_printn
-;sound.c:856: break;
+;sound.c:865: break;
 	ret
-;sound.c:858: case 2:
+;sound.c:867: case 2:
 00102$:
-;sound.c:859: gotoxy(0, 16);
+;sound.c:868: gotoxy( 0, 16 );
 	ld	hl, #0x1000
 	push	hl
 	call	_gotoxy
 	pop	hl
-;sound.c:860: print("NR21-24:");
+;sound.c:869: print( "NR21-24:" );
 	ld	de, #___str_38
 	call	_print
-;sound.c:862: gotoxy(1, 17); // Last line
+;sound.c:871: gotoxy( 1, 17 ); // Last line
 	ld	a, #0x11
 	push	af
 	inc	sp
@@ -3826,7 +3826,7 @@ _show_register_channel::
 	inc	sp
 	call	_gotoxy
 	pop	hl
-;sound.c:863: printn(NR21(), 16, UNSIGNED); print(", ");
+;sound.c:872: printn( NR21(), 16, UNSIGNED ); print( ", " );
 	call	_NR21
 	ld	e, a
 	xor	a, a
@@ -3837,7 +3837,7 @@ _show_register_channel::
 	call	_printn
 	ld	de, #___str_37
 	call	_print
-;sound.c:864: printn(NR22(), 16, UNSIGNED); print(", ");
+;sound.c:873: printn( NR22(), 16, UNSIGNED ); print( ", " );
 	call	_NR22
 	ld	e, a
 	xor	a, a
@@ -3848,7 +3848,7 @@ _show_register_channel::
 	call	_printn
 	ld	de, #___str_37
 	call	_print
-;sound.c:865: printn(NR23(), 16, UNSIGNED); print(", ");
+;sound.c:874: printn( NR23(), 16, UNSIGNED ); print( ", " );
 	call	_NR23
 	ld	e, a
 	xor	a, a
@@ -3859,7 +3859,7 @@ _show_register_channel::
 	call	_printn
 	ld	de, #___str_37
 	call	_print
-;sound.c:866: printn(0x80 | NR24(), 16, UNSIGNED);
+;sound.c:875: printn( 0x80 | NR24(), 16, UNSIGNED );
 	call	_NR24
 	set	7, a
 	ld	e, a
@@ -3869,19 +3869,19 @@ _show_register_channel::
 	inc	sp
 	ld	a, #0x10
 	call	_printn
-;sound.c:868: break;
+;sound.c:877: break;
 	ret
-;sound.c:870: case 3:
+;sound.c:879: case 3:
 00103$:
-;sound.c:871: gotoxy(0, 16);
+;sound.c:880: gotoxy( 0, 16 );
 	ld	hl, #0x1000
 	push	hl
 	call	_gotoxy
 	pop	hl
-;sound.c:872: print("NR30-34:");
+;sound.c:881: print( "NR30-34:" );
 	ld	de, #___str_39
 	call	_print
-;sound.c:874: gotoxy(1, 17); // Last line
+;sound.c:883: gotoxy( 1, 17 ); // Last line
 	ld	a, #0x11
 	push	af
 	inc	sp
@@ -3890,7 +3890,7 @@ _show_register_channel::
 	inc	sp
 	call	_gotoxy
 	pop	hl
-;sound.c:875: printn(NR30(), 16, UNSIGNED); print(", ");
+;sound.c:884: printn( NR30(), 16, UNSIGNED ); print( ", " );
 	call	_NR30
 	ld	e, a
 	xor	a, a
@@ -3901,7 +3901,7 @@ _show_register_channel::
 	call	_printn
 	ld	de, #___str_37
 	call	_print
-;sound.c:876: printn(NR31(), 16, UNSIGNED); print(", ");
+;sound.c:885: printn( NR31(), 16, UNSIGNED ); print( ", " );
 	call	_NR31
 	ld	e, a
 	xor	a, a
@@ -3912,7 +3912,7 @@ _show_register_channel::
 	call	_printn
 	ld	de, #___str_37
 	call	_print
-;sound.c:877: printn(NR32(), 16, UNSIGNED); print(", ");
+;sound.c:886: printn( NR32(), 16, UNSIGNED ); print( ", " );
 	call	_NR32
 	ld	e, a
 	xor	a, a
@@ -3923,7 +3923,7 @@ _show_register_channel::
 	call	_printn
 	ld	de, #___str_37
 	call	_print
-;sound.c:878: printn(NR33(), 16, UNSIGNED); print(", ");
+;sound.c:887: printn( NR33(), 16, UNSIGNED ); print( ", " );
 	call	_NR33
 	ld	e, a
 	xor	a, a
@@ -3934,7 +3934,7 @@ _show_register_channel::
 	call	_printn
 	ld	de, #___str_37
 	call	_print
-;sound.c:879: printn(0x80 | NR34(), 16, UNSIGNED);
+;sound.c:888: printn( 0x80 | NR34(), 16, UNSIGNED );
 	call	_NR34
 	set	7, a
 	ld	e, a
@@ -3944,19 +3944,19 @@ _show_register_channel::
 	inc	sp
 	ld	a, #0x10
 	call	_printn
-;sound.c:881: break;
+;sound.c:890: break;
 	ret
-;sound.c:883: case 4:
+;sound.c:892: case 4:
 00104$:
-;sound.c:884: gotoxy(0, 16);
+;sound.c:893: gotoxy( 0, 16 );
 	ld	hl, #0x1000
 	push	hl
 	call	_gotoxy
 	pop	hl
-;sound.c:885: print("NR41-44:");
+;sound.c:894: print( "NR41-44:" );
 	ld	de, #___str_40
 	call	_print
-;sound.c:887: gotoxy(1, 17); // Last line
+;sound.c:896: gotoxy( 1, 17 ); // Last line
 	ld	a, #0x11
 	push	af
 	inc	sp
@@ -3965,7 +3965,7 @@ _show_register_channel::
 	inc	sp
 	call	_gotoxy
 	pop	hl
-;sound.c:888: printn(NR41(), 16, UNSIGNED); print(", ");
+;sound.c:897: printn( NR41(), 16, UNSIGNED ); print( ", " );
 	call	_NR41
 	ld	e, a
 	xor	a, a
@@ -3976,7 +3976,7 @@ _show_register_channel::
 	call	_printn
 	ld	de, #___str_37
 	call	_print
-;sound.c:889: printn(NR42(), 16, UNSIGNED); print(", ");
+;sound.c:898: printn( NR42(), 16, UNSIGNED ); print( ", " );
 	call	_NR42
 	ld	e, a
 	xor	a, a
@@ -3987,7 +3987,7 @@ _show_register_channel::
 	call	_printn
 	ld	de, #___str_37
 	call	_print
-;sound.c:890: printn(NR43(), 16, UNSIGNED); print(", ");
+;sound.c:899: printn( NR43(), 16, UNSIGNED ); print( ", " );
 	call	_NR43
 	ld	e, a
 	xor	a, a
@@ -3998,7 +3998,7 @@ _show_register_channel::
 	call	_printn
 	ld	de, #___str_37
 	call	_print
-;sound.c:891: printn(0x80 | NR44(), 16, UNSIGNED);
+;sound.c:900: printn( 0x80 | NR44(), 16, UNSIGNED );
 	call	_NR44
 	set	7, a
 	ld	e, a
@@ -4008,19 +4008,19 @@ _show_register_channel::
 	inc	sp
 	ld	a, #0x10
 	call	_printn
-;sound.c:893: break;
+;sound.c:902: break;
 	ret
-;sound.c:895: case 0:
+;sound.c:904: case 0:
 00105$:
-;sound.c:896: gotoxy(0, 16);
+;sound.c:905: gotoxy( 0, 16 );
 	ld	hl, #0x1000
 	push	hl
 	call	_gotoxy
 	pop	hl
-;sound.c:897: print("NR50-52:");
+;sound.c:906: print( "NR50-52:" );
 	ld	de, #___str_41
 	call	_print
-;sound.c:899: gotoxy(1, 17); // Last line
+;sound.c:908: gotoxy( 1, 17 ); // Last line
 	ld	a, #0x11
 	push	af
 	inc	sp
@@ -4029,7 +4029,7 @@ _show_register_channel::
 	inc	sp
 	call	_gotoxy
 	pop	hl
-;sound.c:900: printn(NR50(), 16, UNSIGNED); print(", ");
+;sound.c:909: printn( NR50(), 16, UNSIGNED ); print( ", " );
 	call	_NR50
 	ld	e, a
 	xor	a, a
@@ -4040,7 +4040,7 @@ _show_register_channel::
 	call	_printn
 	ld	de, #___str_37
 	call	_print
-;sound.c:901: printn(NR51(), 16, UNSIGNED); print(", ");
+;sound.c:910: printn( NR51(), 16, UNSIGNED ); print( ", " );
 	call	_NR51
 	ld	e, a
 	xor	a, a
@@ -4051,7 +4051,7 @@ _show_register_channel::
 	call	_printn
 	ld	de, #___str_37
 	call	_print
-;sound.c:902: printn(NR52(), 16, UNSIGNED); print(", ");
+;sound.c:911: printn( NR52(), 16, UNSIGNED ); print( ", " );
 	call	_NR52
 	ld	e, a
 	xor	a, a
@@ -4061,8 +4061,8 @@ _show_register_channel::
 	ld	a, #0x10
 	call	_printn
 	ld	de, #___str_37
-;sound.c:906: }
-;sound.c:907: }
+;sound.c:915: }
+;sound.c:916: }
 	jp	_print
 ___str_36:
 	.ascii "NR10-14:"
@@ -4082,14 +4082,14 @@ ___str_40:
 ___str_41:
 	.ascii "NR50-52:"
 	.db 0x00
-;sound.c:910: void dump_registers()
+;sound.c:919: void dump_registers()
 ;	---------------------------------
 ; Function dump_registers
 ; ---------------------------------
 _dump_registers::
-;sound.c:912: clss();
+;sound.c:921: clss();
 	call	_clss
-;sound.c:913: gotoxy(FIRST_X, TITLE_Y);
+;sound.c:922: gotoxy( FIRST_X, TITLE_Y );
 	xor	a, a
 	push	af
 	inc	sp
@@ -4098,10 +4098,10 @@ _dump_registers::
 	inc	sp
 	call	_gotoxy
 	pop	hl
-;sound.c:914: print("Register Dump\n\n");
+;sound.c:923: print( "Register Dump\n\n" );
 	ld	de, #___str_42
 	call	_print
-;sound.c:916: print("NR10:");println(NR10(), 16, UNSIGNED);
+;sound.c:925: print( "NR10:" ); println( NR10(), 16, UNSIGNED );
 	ld	de, #___str_43
 	call	_print
 	call	_NR10
@@ -4112,7 +4112,7 @@ _dump_registers::
 	inc	sp
 	ld	a, #0x10
 	call	_println
-;sound.c:917: print("NR11:");printn(NR11(), 16, UNSIGNED);        print(" NR21:");println(NR21(), 16, UNSIGNED);
+;sound.c:926: print( "NR11:" ); printn( NR11(), 16, UNSIGNED );        print( " NR21:" ); println( NR21(), 16, UNSIGNED );
 	ld	de, #___str_44
 	call	_print
 	call	_NR11
@@ -4133,7 +4133,7 @@ _dump_registers::
 	inc	sp
 	ld	a, #0x10
 	call	_println
-;sound.c:918: print("NR12:");printn(NR12(), 16, UNSIGNED);        print(" NR22:");println(NR22(), 16, UNSIGNED);
+;sound.c:927: print( "NR12:" ); printn( NR12(), 16, UNSIGNED );        print( " NR22:" ); println( NR22(), 16, UNSIGNED );
 	ld	de, #___str_46
 	call	_print
 	call	_NR12
@@ -4154,7 +4154,7 @@ _dump_registers::
 	inc	sp
 	ld	a, #0x10
 	call	_println
-;sound.c:919: print("NR13:");printn(NR13(), 16, UNSIGNED);        print(" NR23:");println(NR23(), 16, UNSIGNED);
+;sound.c:928: print( "NR13:" ); printn( NR13(), 16, UNSIGNED );        print( " NR23:" ); println( NR23(), 16, UNSIGNED );
 	ld	de, #___str_48
 	call	_print
 	call	_NR13
@@ -4175,7 +4175,7 @@ _dump_registers::
 	inc	sp
 	ld	a, #0x10
 	call	_println
-;sound.c:920: print("NR14:");printn(0x80 | NR14(), 16, UNSIGNED); print(" NR24:");println(0x80 | NR24(), 16, UNSIGNED);
+;sound.c:929: print( "NR14:" ); printn( 0x80 | NR14(), 16, UNSIGNED ); print( " NR24:" ); println( 0x80 | NR24(), 16, UNSIGNED );
 	ld	de, #___str_50
 	call	_print
 	call	_NR14
@@ -4198,10 +4198,10 @@ _dump_registers::
 	inc	sp
 	ld	a, #0x10
 	call	_println
-;sound.c:921: printf("\n");
+;sound.c:930: printf( "\n" );
 	ld	de, #___str_53
 	call	_puts
-;sound.c:923: print("NR30:");println(NR30(), 16, UNSIGNED);
+;sound.c:932: print( "NR30:" ); println( NR30(), 16, UNSIGNED );
 	ld	de, #___str_54
 	call	_print
 	call	_NR30
@@ -4212,7 +4212,7 @@ _dump_registers::
 	inc	sp
 	ld	a, #0x10
 	call	_println
-;sound.c:924: print("NR31:");printn(NR31(), 16, UNSIGNED);        print(" NR41:");println(NR41(), 16, UNSIGNED);
+;sound.c:933: print( "NR31:" ); printn( NR31(), 16, UNSIGNED );        print( " NR41:" ); println( NR41(), 16, UNSIGNED );
 	ld	de, #___str_55
 	call	_print
 	call	_NR31
@@ -4233,7 +4233,7 @@ _dump_registers::
 	inc	sp
 	ld	a, #0x10
 	call	_println
-;sound.c:925: print("NR32:");printn(NR32(), 16, UNSIGNED);        print(" NR42:");println(NR42(), 16, UNSIGNED);
+;sound.c:934: print( "NR32:" ); printn( NR32(), 16, UNSIGNED );        print( " NR42:" ); println( NR42(), 16, UNSIGNED );
 	ld	de, #___str_57
 	call	_print
 	call	_NR32
@@ -4254,7 +4254,7 @@ _dump_registers::
 	inc	sp
 	ld	a, #0x10
 	call	_println
-;sound.c:926: print("NR33:");printn(NR33(), 16, UNSIGNED);        print(" NR43:");println(NR43(), 16, UNSIGNED);
+;sound.c:935: print( "NR33:" ); printn( NR33(), 16, UNSIGNED );        print( " NR43:" ); println( NR43(), 16, UNSIGNED );
 	ld	de, #___str_59
 	call	_print
 	call	_NR33
@@ -4275,7 +4275,7 @@ _dump_registers::
 	inc	sp
 	ld	a, #0x10
 	call	_println
-;sound.c:927: print("NR34:");printn(0x80 | NR34(), 16, UNSIGNED); print(" NR44:");println(0x80 | NR44(), 16, UNSIGNED);
+;sound.c:936: print( "NR34:" ); printn( 0x80 | NR34(), 16, UNSIGNED ); print( " NR44:" ); println( 0x80 | NR44(), 16, UNSIGNED );
 	ld	de, #___str_61
 	call	_print
 	call	_NR34
@@ -4298,10 +4298,10 @@ _dump_registers::
 	inc	sp
 	ld	a, #0x10
 	call	_println
-;sound.c:928: printf("\n");
+;sound.c:937: printf( "\n" );
 	ld	de, #___str_53
 	call	_puts
-;sound.c:930: print("NR50:");println(NR50(), 16, UNSIGNED);
+;sound.c:939: print( "NR50:" ); println( NR50(), 16, UNSIGNED );
 	ld	de, #___str_64
 	call	_print
 	call	_NR50
@@ -4312,7 +4312,7 @@ _dump_registers::
 	inc	sp
 	ld	a, #0x10
 	call	_println
-;sound.c:931: print("NR51:");println(NR51(), 16, UNSIGNED);
+;sound.c:940: print( "NR51:" ); println( NR51(), 16, UNSIGNED );
 	ld	de, #___str_65
 	call	_print
 	call	_NR51
@@ -4323,7 +4323,7 @@ _dump_registers::
 	inc	sp
 	ld	a, #0x10
 	call	_println
-;sound.c:932: print("NR52:");println(NR52(), 16, UNSIGNED);
+;sound.c:941: print( "NR52:" ); println( NR52(), 16, UNSIGNED );
 	ld	de, #___str_66
 	call	_print
 	call	_NR52
@@ -4334,7 +4334,7 @@ _dump_registers::
 	inc	sp
 	ld	a, #0x10
 	call	_println
-;sound.c:933: }
+;sound.c:942: }
 	ret
 ___str_42:
 	.ascii "Register Dump"
@@ -4406,7 +4406,7 @@ ___str_65:
 ___str_66:
 	.ascii "NR52:"
 	.db 0x00
-;sound.c:935: void wait_event(uint8_t mode)
+;sound.c:944: void wait_event( uint8_t mode )
 ;	---------------------------------
 ; Function wait_event
 ; ---------------------------------
@@ -4414,9 +4414,9 @@ _wait_event::
 	add	sp, #-12
 	ldhl	sp,	#8
 	ld	(hl), a
-;sound.c:941: while(1) {
+;sound.c:950: while( 1 ) {
 00165$:
-;sound.c:942: params = params_array[mode];
+;sound.c:951: params = params_array[ mode ];
 	ldhl	sp,	#8
 	ld	a, (hl)
 	ldhl	sp,	#0
@@ -4436,34 +4436,34 @@ _wait_event::
 	inc	de
 	ld	a, (de)
 	ld	(hl), a
-;sound.c:943: last_y = draw_screen(mode) + FIRST_Y;
+;sound.c:952: last_y = draw_screen( mode ) + FIRST_Y;
 	ldhl	sp,	#8
 	ld	a, (hl)
 	call	_draw_screen
 	add	a, #0x02
 	ldhl	sp,	#2
 	ld	(hl), a
-;sound.c:944: y = FIRST_Y;
+;sound.c:953: y = FIRST_Y;
 	ldhl	sp,	#9
-;sound.c:945: gotoxy(ARROW_X, y);
+;sound.c:954: gotoxy( ARROW_X, y );
 	ld	(hl), #0x02
 	ld	hl, #0x200
 	push	hl
 	call	_gotoxy
 	pop	hl
-;sound.c:946: setchar(ARROW_CHAR);
+;sound.c:955: setchar( ARROW_CHAR );
 	ld	a, #0x3e
 	push	af
 	inc	sp
 	call	_setchar
 	inc	sp
-;sound.c:948: show_register_channel(mode);
+;sound.c:957: show_register_channel( mode );
 	ldhl	sp,	#8
 	ld	a, (hl)
 	call	_show_register_channel
-;sound.c:950: while(1) {
+;sound.c:959: while( 1 ) {
 00162$:
-;sound.c:951: if(KEY_TICKED(J_UP)) {
+;sound.c:960: if( KEY_TICKED( J_UP ) ) {
 	ld	a, (#_keys)
 	ldhl	sp,	#11
 	ld	(hl), a
@@ -4476,7 +4476,7 @@ _wait_event::
 	jr	Z, 00158$
 	bit	2, c
 	jr	NZ, 00158$
-;sound.c:952: gotoxy(ARROW_X, y); setchar(SPACE_CHAR);
+;sound.c:961: gotoxy( ARROW_X, y ); setchar( SPACE_CHAR );
 	ldhl	sp,	#9
 	ld	h, (hl)
 	ld	l, #0x00
@@ -4488,19 +4488,19 @@ _wait_event::
 	inc	sp
 	call	_setchar
 	inc	sp
-;sound.c:953: if(--y < FIRST_Y)
+;sound.c:962: if( --y < FIRST_Y )
 	ldhl	sp,	#9
 	dec	(hl)
 	ld	a, (hl)
 	sub	a, #0x02
 	jr	NC, 00102$
-;sound.c:954: y = last_y;
+;sound.c:963: y = last_y;
 	ldhl	sp,	#2
 	ld	a, (hl)
 	ldhl	sp,	#9
 	ld	(hl), a
 00102$:
-;sound.c:955: gotoxy(ARROW_X, y); setchar(ARROW_CHAR);
+;sound.c:964: gotoxy( ARROW_X, y ); setchar( ARROW_CHAR );
 	ldhl	sp,	#9
 	ld	h, (hl)
 	ld	l, #0x00
@@ -4514,7 +4514,7 @@ _wait_event::
 	inc	sp
 	jp	00159$
 00158$:
-;sound.c:957: } else if(KEY_TICKED(J_DOWN)) {
+;sound.c:967: else if( KEY_TICKED( J_DOWN ) ) {
 	push	hl
 	ldhl	sp,	#13
 	bit	3, (hl)
@@ -4522,7 +4522,7 @@ _wait_event::
 	jr	Z, 00154$
 	bit	3, c
 	jr	NZ, 00154$
-;sound.c:958: gotoxy(ARROW_X, y); setchar(SPACE_CHAR);
+;sound.c:968: gotoxy( ARROW_X, y ); setchar( SPACE_CHAR );
 	ldhl	sp,	#9
 	ld	h, (hl)
 	ld	l, #0x00
@@ -4534,7 +4534,7 @@ _wait_event::
 	inc	sp
 	call	_setchar
 	inc	sp
-;sound.c:959: if(++y > last_y)
+;sound.c:969: if( ++y > last_y )
 	ldhl	sp,	#9
 	inc	(hl)
 	ldhl	sp,	#2
@@ -4542,10 +4542,10 @@ _wait_event::
 	ldhl	sp,	#9
 	sub	a, (hl)
 	jr	NC, 00104$
-;sound.c:960: y = FIRST_Y;
+;sound.c:970: y = FIRST_Y;
 	ld	(hl), #0x02
 00104$:
-;sound.c:961: gotoxy(ARROW_X, y); setchar(ARROW_CHAR);
+;sound.c:971: gotoxy( ARROW_X, y ); setchar( ARROW_CHAR );
 	ldhl	sp,	#9
 	ld	h, (hl)
 	ld	l, #0x00
@@ -4559,13 +4559,13 @@ _wait_event::
 	inc	sp
 	jp	00159$
 00154$:
-;sound.c:964: l = current_value(mode, y-FIRST_Y);
+;sound.c:975: l = current_value( mode, y - FIRST_Y );
 	ldhl	sp,	#9
 	ld	a, (hl)
 	add	a, #0xfe
 	ldhl	sp,	#3
 	ld	(hl), a
-;sound.c:963: } else if(KEY_TICKED(J_LEFT)) {
+;sound.c:974: else if( KEY_TICKED( J_LEFT ) ) {
 	push	hl
 	ldhl	sp,	#13
 	bit	1, (hl)
@@ -4573,7 +4573,7 @@ _wait_event::
 	jp	Z,00150$
 	bit	1, c
 	jp	NZ,00150$
-;sound.c:964: l = current_value(mode, y-FIRST_Y);
+;sound.c:975: l = current_value( mode, y - FIRST_Y );
 	ldhl	sp,	#3
 	ld	e, (hl)
 	ldhl	sp,	#8
@@ -4581,14 +4581,14 @@ _wait_event::
 	call	_current_value
 	ldhl	sp,	#10
 	ld	a, c
-;sound.c:965: if(l != 0) {
+;sound.c:976: if( l != 0 ) {
 	ld	(hl+), a
 	ld	(hl), b
 	or	a, b
 	jp	Z, 00116$
-;sound.c:951: if(KEY_TICKED(J_UP)) {
+;sound.c:960: if( KEY_TICKED( J_UP ) ) {
 	ld	a, (#_keys)
-;sound.c:966: if(KEY_PRESSED(J_A) && KEY_PRESSED(J_B))
+;sound.c:977: if( KEY_PRESSED( J_A ) && KEY_PRESSED( J_B ) )
 	push	af
 	and	a, #0x10
 	ld	e, a
@@ -4604,23 +4604,23 @@ _wait_event::
 	ld	a, (hl-)
 	or	a, (hl)
 	jr	Z, 00112$
-;sound.c:967: l = 0;
+;sound.c:978: l = 0;
 	xor	a, a
 	ldhl	sp,	#10
 	ld	(hl+), a
 	ld	(hl), a
 	jr	00113$
 00112$:
-;sound.c:969: l = (l > 10) ? (l - 10) : 0;
+;sound.c:980: l = ( l > 10 ) ? ( l - 10 ) : 0;
 	ldhl	sp,	#10
 	ld	a, (hl+)
 	ld	c, a
 	ld	b, (hl)
-;sound.c:968: else if(KEY_PRESSED(J_A))
+;sound.c:979: else if( KEY_PRESSED( J_A ) )
 	ld	a, d
 	or	a, e
 	jr	Z, 00109$
-;sound.c:969: l = (l > 10) ? (l - 10) : 0;
+;sound.c:980: l = ( l > 10 ) ? ( l - 10 ) : 0;
 	ld	a, #0x0a
 	cp	a, c
 	ld	a, #0x00
@@ -4642,12 +4642,12 @@ _wait_event::
 	ld	(hl), a
 	jr	00113$
 00109$:
-;sound.c:970: else if(KEY_PRESSED(J_B))
+;sound.c:981: else if( KEY_PRESSED( J_B ) )
 	ldhl	sp,	#7
 	ld	a, (hl-)
 	or	a, (hl)
 	jr	Z, 00106$
-;sound.c:971: l = (l > 100) ? (l - 100) : 0;
+;sound.c:982: l = ( l > 100 ) ? ( l - 100 ) : 0;
 	ld	a, #0x64
 	cp	a, c
 	ld	a, #0x00
@@ -4670,7 +4670,7 @@ _wait_event::
 	ld	(hl), a
 	jr	00113$
 00106$:
-;sound.c:973: l--;
+;sound.c:984: l--;
 	ldhl	sp,#10
 	ld	a, (hl+)
 	ld	e, a
@@ -4681,7 +4681,7 @@ _wait_event::
 	ld	(hl+), a
 	ld	(hl), d
 00113$:
-;sound.c:974: update_value(mode, y-FIRST_Y, l);
+;sound.c:985: update_value( mode, y - FIRST_Y, l );
 	ldhl	sp,	#10
 	ld	a, (hl+)
 	ld	e, a
@@ -4693,7 +4693,7 @@ _wait_event::
 	ld	a, (hl)
 	call	_update_value
 00116$:
-;sound.c:976: gotoxy(VAL_X, y); print("    ");
+;sound.c:987: gotoxy( VAL_X, y ); print( "    " );
 	ldhl	sp,	#9
 	ld	h, (hl)
 	ld	l, #0x0f
@@ -4702,7 +4702,7 @@ _wait_event::
 	pop	hl
 	ld	de, #___str_67
 	call	_print
-;sound.c:977: gotoxy(VAL_X, y); println(l, 10, UNSIGNED);
+;sound.c:988: gotoxy( VAL_X, y ); println( l, 10, UNSIGNED );
 	ldhl	sp,	#9
 	ld	h, (hl)
 	ld	l, #0x0f
@@ -4718,13 +4718,13 @@ _wait_event::
 	inc	hl
 	ld	d, (hl)
 	call	_println
-;sound.c:979: show_register_channel(mode);
+;sound.c:990: show_register_channel( mode );
 	ldhl	sp,	#8
 	ld	a, (hl)
 	call	_show_register_channel
 	jp	00159$
 00150$:
-;sound.c:981: } else if(KEY_TICKED(J_RIGHT)) {
+;sound.c:993: else if( KEY_TICKED( J_RIGHT ) ) {
 	push	hl
 	ldhl	sp,	#13
 	bit	0, (hl)
@@ -4732,7 +4732,7 @@ _wait_event::
 	jp	Z,00146$
 	bit	0, c
 	jp	NZ,00146$
-;sound.c:982: l = current_value(mode, y-FIRST_Y);
+;sound.c:994: l = current_value( mode, y - FIRST_Y );
 	ldhl	sp,	#3
 	ld	e, (hl)
 	ldhl	sp,	#8
@@ -4741,7 +4741,7 @@ _wait_event::
 	ldhl	sp,	#10
 	ld	a, c
 	ld	(hl+), a
-;sound.c:983: m = params[y-(FIRST_Y-1)].max;
+;sound.c:995: m = params[ y - ( FIRST_Y - 1 ) ].max;
 	ld	a, b
 	ld	(hl-), a
 	dec	hl
@@ -4769,7 +4769,7 @@ _wait_event::
 	ld	a, (hl+)
 	ld	c, a
 	ld	b, (hl)
-;sound.c:984: if(l != m) {
+;sound.c:996: if( l != m ) {
 	ldhl	sp,	#10
 	ld	a, (hl)
 	sub	a, c
@@ -4779,9 +4779,9 @@ _wait_event::
 	sub	a, b
 	jr	Z, 00132$
 00341$:
-;sound.c:951: if(KEY_TICKED(J_UP)) {
+;sound.c:960: if( KEY_TICKED( J_UP ) ) {
 	ld	a, (#_keys)
-;sound.c:966: if(KEY_PRESSED(J_A) && KEY_PRESSED(J_B))
+;sound.c:977: if( KEY_PRESSED( J_A ) && KEY_PRESSED( J_B ) )
 	push	af
 	and	a, #0x10
 	ldhl	sp,	#6
@@ -4791,7 +4791,7 @@ _wait_event::
 	pop	af
 	and	a, #0x20
 	ld	(hl+), a
-;sound.c:985: if(KEY_PRESSED(J_A) && KEY_PRESSED(J_B)) {
+;sound.c:997: if( KEY_PRESSED( J_A ) && KEY_PRESSED( J_B ) ) {
 	xor	a, a
 	ld	(hl-), a
 	dec	hl
@@ -4802,24 +4802,24 @@ _wait_event::
 	ld	a, (hl-)
 	or	a, (hl)
 	jr	Z, 00128$
-;sound.c:986: l = m;
+;sound.c:998: l = m;
 	ldhl	sp,	#10
 	ld	a, c
 	ld	(hl+), a
 	ld	(hl), b
 	jr	00129$
 00128$:
-;sound.c:969: l = (l > 10) ? (l - 10) : 0;
+;sound.c:980: l = ( l > 10 ) ? ( l - 10 ) : 0;
 	ldhl	sp,	#10
 	ld	a, (hl+)
 	ld	e, a
 	ld	d, (hl)
-;sound.c:988: else if(KEY_PRESSED(J_A)) {
+;sound.c:1000: else if( KEY_PRESSED( J_A ) ) {
 	ldhl	sp,	#5
 	ld	a, (hl-)
 	or	a, (hl)
 	jr	Z, 00125$
-;sound.c:989: l += 10;
+;sound.c:1001: l += 10;
 	ld	hl, #0x000a
 	add	hl, de
 	ld	e, l
@@ -4827,7 +4827,7 @@ _wait_event::
 	ldhl	sp,	#10
 	ld	(hl), e
 	inc	hl
-;sound.c:990: if(l > m)
+;sound.c:1002: if( l > m )
 	ld	(hl-), a
 	ld	a, c
 	sub	a, (hl)
@@ -4835,19 +4835,19 @@ _wait_event::
 	ld	a, b
 	sbc	a, (hl)
 	jr	NC, 00129$
-;sound.c:991: l = m;
+;sound.c:1003: l = m;
 	ldhl	sp,	#10
 	ld	a, c
 	ld	(hl+), a
 	ld	(hl), b
 	jr	00129$
 00125$:
-;sound.c:992: } else if(KEY_PRESSED(J_B)) {
+;sound.c:1005: else if( KEY_PRESSED( J_B ) ) {
 	ldhl	sp,	#7
 	ld	a, (hl-)
 	or	a, (hl)
 	jr	Z, 00122$
-;sound.c:993: l += 100;
+;sound.c:1006: l += 100;
 	ld	hl, #0x0064
 	add	hl, de
 	ld	e, l
@@ -4855,7 +4855,7 @@ _wait_event::
 	ldhl	sp,	#10
 	ld	(hl), e
 	inc	hl
-;sound.c:994: if(l > m)
+;sound.c:1007: if( l > m )
 	ld	(hl-), a
 	ld	a, c
 	sub	a, (hl)
@@ -4863,14 +4863,14 @@ _wait_event::
 	ld	a, b
 	sbc	a, (hl)
 	jr	NC, 00129$
-;sound.c:995: l = m;
+;sound.c:1008: l = m;
 	ldhl	sp,	#10
 	ld	a, c
 	ld	(hl+), a
 	ld	(hl), b
 	jr	00129$
 00122$:
-;sound.c:998: l++;
+;sound.c:1011: l++;
 	ldhl	sp,	#10
 	inc	(hl)
 	jr	NZ, 00342$
@@ -4878,7 +4878,7 @@ _wait_event::
 	inc	(hl)
 00342$:
 00129$:
-;sound.c:999: update_value(mode, y-FIRST_Y, l);
+;sound.c:1012: update_value( mode, y - FIRST_Y, l );
 	ldhl	sp,	#10
 	ld	a, (hl+)
 	ld	e, a
@@ -4890,7 +4890,7 @@ _wait_event::
 	ld	a, (hl)
 	call	_update_value
 00132$:
-;sound.c:1001: gotoxy(VAL_X, y); print("    ");
+;sound.c:1014: gotoxy( VAL_X, y ); print( "    " );
 	ldhl	sp,	#9
 	ld	h, (hl)
 	ld	l, #0x0f
@@ -4899,7 +4899,7 @@ _wait_event::
 	pop	hl
 	ld	de, #___str_67
 	call	_print
-;sound.c:1002: gotoxy(VAL_X, y); println(l, 10, UNSIGNED);
+;sound.c:1015: gotoxy( VAL_X, y ); println( l, 10, UNSIGNED );
 	ldhl	sp,	#9
 	ld	h, (hl)
 	ld	l, #0x0f
@@ -4915,34 +4915,34 @@ _wait_event::
 	inc	hl
 	ld	d, (hl)
 	call	_println
-;sound.c:1004: show_register_channel(mode);
+;sound.c:1017: show_register_channel( mode );
 	ldhl	sp,	#8
 	ld	a, (hl)
 	call	_show_register_channel
 	jr	00159$
 00146$:
-;sound.c:966: if(KEY_PRESSED(J_A) && KEY_PRESSED(J_B))
+;sound.c:977: if( KEY_PRESSED( J_A ) && KEY_PRESSED( J_B ) )
 	ldhl	sp,	#11
 	ld	a, (hl)
 	and	a, #0x10
 	ld	b, #0x00
-;sound.c:1006: } else if(KEY_TICKED(J_START)) {
+;sound.c:1020: else if( KEY_TICKED( J_START ) ) {
 	push	hl
 	bit	7, (hl)
 	pop	hl
 	jr	Z, 00142$
 	bit	7, c
 	jr	NZ, 00142$
-;sound.c:1007: if (KEY_PRESSED(J_A))
+;sound.c:1021: if( KEY_PRESSED( J_A ) )
 	or	a, b
 	jr	Z, 00134$
-;sound.c:1008: play_music(mode);
+;sound.c:1022: play_music( mode );
 	ldhl	sp,	#8
 	ld	a, (hl)
 	call	_play_music
 	jr	00159$
 00134$:
-;sound.c:1010: update_value(mode, PLAY, 1);
+;sound.c:1024: update_value( mode, PLAY, 1 );
 	ld	de, #0x0001
 	push	de
 	ld	e, #0x20
@@ -4951,20 +4951,20 @@ _wait_event::
 	call	_update_value
 	jr	00159$
 00142$:
-;sound.c:1012: } else if(KEY_PRESSED(J_SELECT)) {
+;sound.c:1027: else if( KEY_PRESSED( J_SELECT ) ) {
 	push	hl
 	ldhl	sp,	#13
 	bit	6, (hl)
 	pop	hl
 	jr	Z, 00159$
-;sound.c:1013: if(KEY_PRESSED(J_A))
+;sound.c:1028: if( KEY_PRESSED( J_A ) )
 	or	a, b
 	jr	Z, 00137$
-;sound.c:1014: dump_registers();
+;sound.c:1029: dump_registers();
 	call	_dump_registers
 	jr	00138$
 00137$:
-;sound.c:1016: mode = (mode+1) % NB_MODES;
+;sound.c:1031: mode = ( mode + 1 ) % NB_MODES;
 	pop	de
 	push	de
 	inc	de
@@ -4973,109 +4973,109 @@ _wait_event::
 	ldhl	sp,	#8
 	ld	(hl), c
 00138$:
-;sound.c:1018: waitpadup();
+;sound.c:1033: waitpadup();
 	call	_waitpadup
-;sound.c:1019: keys = 0;
+;sound.c:1034: keys = 0;
 	ld	hl, #_keys
 	ld	(hl), #0x00
-;sound.c:1020: break;
+;sound.c:1035: break;
 	jp	00165$
 00159$:
-;sound.c:1022: wait_vbl_done();
+;sound.c:1037: wait_vbl_done();
 	call	_wait_vbl_done
-;sound.c:1023: UPDATE_KEYS();
+;sound.c:1038: UPDATE_KEYS();
 	ld	a, (#_keys)
 	ld	(#_previous_keys),a
 	call	_joypad
 	ld	(#_keys),a
 	jp	00162$
-;sound.c:1026: }
+;sound.c:1041: }
 	add	sp, #12
 	ret
 ___str_67:
 	.ascii "    "
 	.db 0x00
-;sound.c:1028: void main()
+;sound.c:1043: void main()
 ;	---------------------------------
 ; Function main
 ; ---------------------------------
 _main::
-;sound.c:1034: NR52_REG = 0x80;
+;sound.c:1049: NR52_REG = 0x80;
 	ld	a, #0x80
 	ldh	(_NR52_REG + 0), a
-;sound.c:1036: soundReg = &s;
+;sound.c:1051: soundReg = &s;
 	ld	hl, #_soundReg
 	ld	(hl), #<(_s)
 	inc	hl
 	ld	(hl), #>(_s)
-;sound.c:1037: NR10_REG = NR10();
+;sound.c:1052: NR10_REG = NR10();
 	call	_NR10
 	ldh	(_NR10_REG + 0), a
-;sound.c:1038: NR11_REG = NR11();
+;sound.c:1053: NR11_REG = NR11();
 	call	_NR11
 	ldh	(_NR11_REG + 0), a
-;sound.c:1039: NR12_REG = NR12();
+;sound.c:1054: NR12_REG = NR12();
 	call	_NR12
 	ldh	(_NR12_REG + 0), a
-;sound.c:1040: NR13_REG = NR13();
+;sound.c:1055: NR13_REG = NR13();
 	call	_NR13
 	ldh	(_NR13_REG + 0), a
-;sound.c:1041: NR14_REG = NR14();
+;sound.c:1056: NR14_REG = NR14();
 	call	_NR14
 	ldh	(_NR14_REG + 0), a
-;sound.c:1043: NR21_REG = NR21();
+;sound.c:1058: NR21_REG = NR21();
 	call	_NR21
 	ldh	(_NR21_REG + 0), a
-;sound.c:1044: NR22_REG = NR22();
+;sound.c:1059: NR22_REG = NR22();
 	call	_NR22
 	ldh	(_NR22_REG + 0), a
-;sound.c:1045: NR23_REG = NR23();
+;sound.c:1060: NR23_REG = NR23();
 	call	_NR23
 	ldh	(_NR23_REG + 0), a
-;sound.c:1046: NR24_REG = NR24();
+;sound.c:1061: NR24_REG = NR24();
 	call	_NR24
 	ldh	(_NR24_REG + 0), a
-;sound.c:1048: NR30_REG = NR30();
+;sound.c:1063: NR30_REG = NR30();
 	call	_NR30
 	ldh	(_NR30_REG + 0), a
-;sound.c:1049: NR31_REG = NR31();
+;sound.c:1064: NR31_REG = NR31();
 	call	_NR31
 	ldh	(_NR31_REG + 0), a
-;sound.c:1050: NR32_REG = NR32();
+;sound.c:1065: NR32_REG = NR32();
 	call	_NR32
 	ldh	(_NR32_REG + 0), a
-;sound.c:1051: NR33_REG = NR33();
+;sound.c:1066: NR33_REG = NR33();
 	call	_NR33
 	ldh	(_NR33_REG + 0), a
-;sound.c:1052: NR34_REG = NR34();
+;sound.c:1067: NR34_REG = NR34();
 	call	_NR34
 	ldh	(_NR34_REG + 0), a
-;sound.c:1054: NR41_REG = NR41();
+;sound.c:1069: NR41_REG = NR41();
 	call	_NR41
 	ldh	(_NR41_REG + 0), a
-;sound.c:1055: NR42_REG = NR42();
+;sound.c:1070: NR42_REG = NR42();
 	call	_NR42
 	ldh	(_NR42_REG + 0), a
-;sound.c:1056: NR43_REG = NR43();
+;sound.c:1071: NR43_REG = NR43();
 	call	_NR43
 	ldh	(_NR43_REG + 0), a
-;sound.c:1057: NR44_REG = NR44();
+;sound.c:1072: NR44_REG = NR44();
 	call	_NR44
 	ldh	(_NR44_REG + 0), a
-;sound.c:1059: NR50_REG = NR50();
+;sound.c:1074: NR50_REG = NR50();
 	call	_NR50
 	ldh	(_NR50_REG + 0), a
-;sound.c:1060: NR51_REG = NR51();
+;sound.c:1075: NR51_REG = NR51();
 	call	_NR51
 	ldh	(_NR51_REG + 0), a
-;sound.c:1061: NR52_REG = NR52();
+;sound.c:1076: NR52_REG = NR52();
 	call	_NR52
 	ldh	(_NR52_REG + 0), a
-;sound.c:1063: clss();
+;sound.c:1078: clss();
 	call	_clss
-;sound.c:1065: wait_event(1);
+;sound.c:1080: wait_event( 1 );
 	ld	a, #0x01
-;sound.c:1066: }
+;sound.c:1081: }
 	jp	_wait_event
 	.area _CODE
 	.area _INITIALIZER
