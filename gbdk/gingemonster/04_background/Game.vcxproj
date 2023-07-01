@@ -148,11 +148,13 @@
     <None Include="build.bat" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.c" />
-    <ClCompile Include="SmilerSprites.c" />
+    <ClInclude Include="simplebackground.h" />
+    <ClInclude Include="simplebackgroundmap.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SmilerSprites.h" />
+    <ClCompile Include="main.c" />
+    <ClCompile Include="simplebackground.c" />
+    <ClCompile Include="simplebackgroundmap.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
