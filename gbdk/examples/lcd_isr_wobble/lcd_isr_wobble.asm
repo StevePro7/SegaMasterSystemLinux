@@ -56,7 +56,7 @@ _scanline_offsets::
 ; Function scanline_isr
 ; ---------------------------------
 _scanline_isr::
-;lcd_isr_wobble.c:11: SCX_REG = scanline_offsets[LY_REG & (uint8_t)7];
+;lcd_isr_wobble.c:11: SCX_REG = scanline_offsets[ LY_REG & ( uint8_t ) 7 ];
 	ldh	a, (_LY_REG + 0)
 	and	a, #0x07
 	ld	c, a
@@ -93,7 +93,7 @@ _scanline_offsets_tbl:
 ; Function main
 ; ---------------------------------
 _main::
-;lcd_isr_wobble.c:16: printf("This is\na wobble\ntest\nfor DMG\n|\n|\n|\n|\n|");
+;lcd_isr_wobble.c:16: printf( "This is\na wobble\ntest\nfor DMG\n|\n|\n|\n|\n|" );
 	ld	de, #___str_0
 	push	de
 	call	_printf
@@ -103,23 +103,23 @@ _main::
 ;lcd_isr_wobble.c:19: STAT_REG = STATF_MODE01 | STATF_MODE00;
 	ld	a, #0x18
 	ldh	(_STAT_REG + 0), a
-;lcd_isr_wobble.c:20: add_LCD(scanline_isr);
+;lcd_isr_wobble.c:20: add_LCD( scanline_isr );
 	ld	de, #_scanline_isr
 	push	de
 	call	_add_LCD
 	pop	hl
 	ei
-;lcd_isr_wobble.c:22: set_interrupts(VBL_IFLAG | LCD_IFLAG);
+;lcd_isr_wobble.c:22: set_interrupts( VBL_IFLAG | LCD_IFLAG );
 	ld	a, #0x03
 	push	af
 	inc	sp
 	call	_set_interrupts
 	inc	sp
-;lcd_isr_wobble.c:24: while (1) {
+;lcd_isr_wobble.c:24: while( 1 ) {
 00102$:
-;lcd_isr_wobble.c:25: wait_vbl_done();        
+;lcd_isr_wobble.c:25: wait_vbl_done();
 	call	_wait_vbl_done
-;lcd_isr_wobble.c:26: scanline_offsets = &scanline_offsets_tbl[(uint8_t)(sys_time >> 2) & 0x07u];
+;lcd_isr_wobble.c:26: scanline_offsets = &scanline_offsets_tbl[ ( uint8_t ) ( sys_time >> 2 ) & 0x07u ];
 	ld	hl, #_sys_time
 	ld	a, (hl+)
 	ld	c, a

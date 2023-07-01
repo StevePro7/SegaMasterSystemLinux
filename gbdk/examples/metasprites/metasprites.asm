@@ -78,7 +78,7 @@ _rot::
 ; code
 ;--------------------------------------------------------
 	.area _CODE
-;metasprites.c:29: void main(void)
+;metasprites.c:29: void main( void )
 ;	---------------------------------
 ; Function main
 ; ---------------------------------
@@ -92,7 +92,7 @@ _main::
 ;metasprites.c:33: OBP1_REG = 0xE0;
 	ld	a, #0xe0
 	ldh	(_OBP1_REG + 0), a
-;metasprites.c:36: fill_bkg_rect(0, 0, 20, 18, 0);
+;metasprites.c:36: fill_bkg_rect( 0, 0, 20, 18, 0 );
 	xor	a, a
 	ld	h, a
 	ld	l, #0x12
@@ -105,7 +105,7 @@ _main::
 	push	af
 	call	_fill_bkg_rect
 	add	sp, #5
-;metasprites.c:37: set_bkg_data(0, 1, pattern);
+;metasprites.c:37: set_bkg_data( 0, 1, pattern );
 	ld	de, #_pattern
 	push	de
 	xor	a, a
@@ -113,7 +113,7 @@ _main::
 	push	af
 	call	_set_bkg_data
 	add	sp, #4
-;metasprites.c:40: set_sprite_data(TILE_NUM_START, sizeof(sprite_tiles) >> 4, sprite_tiles);
+;metasprites.c:40: set_sprite_data( TILE_NUM_START, sizeof( sprite_tiles ) >> 4, sprite_tiles );
 	ld	de, #_sprite_tiles
 	push	de
 	ld	hl, #0x3800
@@ -132,7 +132,7 @@ _main::
 	ldh	a, (_LCDC_REG + 0)
 	or	a, #0x04
 	ldh	(_LCDC_REG + 0), a
-;metasprites.c:54: joypad_init(1, &joypads);
+;metasprites.c:54: joypad_init( 1, &joypads );
 	ld	de, #_joypads
 	push	de
 	ld	a, #0x01
@@ -170,15 +170,15 @@ _main::
 ;metasprites.c:63: rot = 0;
 	ld	hl, #_rot
 	ld	(hl), #0x00
-;metasprites.c:65: while (1)
+;metasprites.c:65: while( 1 )
 00157$:
-;metasprites.c:68: joypad_ex(&joypads);
+;metasprites.c:68: joypad_ex( &joypads );
 	ld	de, #_joypads
 	call	_joypad_ex
 ;metasprites.c:70: PosF = 0;
 	ld	hl, #_PosF
 	ld	(hl), #0x00
-;metasprites.c:72: if (joypads.joy0 & J_UP)
+;metasprites.c:72: if( joypads.joy0 & J_UP )
 	ld	hl, #(_joypads + 1)
 	ld	c, (hl)
 ;metasprites.c:74: SpdY -= 2;
@@ -191,7 +191,7 @@ _main::
 	or	a, #0x02
 	ldhl	sp,	#5
 	ld	(hl), a
-;metasprites.c:72: if (joypads.joy0 & J_UP)
+;metasprites.c:72: if( joypads.joy0 & J_UP )
 	bit	2, c
 	jr	Z, 00108$
 ;metasprites.c:74: SpdY -= 2;
@@ -200,7 +200,7 @@ _main::
 	ld	hl, #_SpdY
 	ld	a, e
 	ld	(hl+), a
-;metasprites.c:75: if (SpdY < -32)
+;metasprites.c:75: if( SpdY < -32 )
 	ld	a, d
 	ld	(hl-), a
 	ld	a, (hl+)
@@ -233,7 +233,7 @@ _main::
 	ld	(#_PosF),a
 	jr	00109$
 00108$:
-;metasprites.c:79: else if (joypads.joy0 & J_DOWN)
+;metasprites.c:79: else if( joypads.joy0 & J_DOWN )
 	bit	3, c
 	jr	Z, 00109$
 ;metasprites.c:81: SpdY += 2;
@@ -242,7 +242,7 @@ _main::
 	ld	hl, #_SpdY
 	ld	a, e
 	ld	(hl+), a
-;metasprites.c:82: if (SpdY > 32)
+;metasprites.c:82: if( SpdY > 32 )
 	ld	a, d
 	ld	(hl-), a
 	ld	a, (hl+)
@@ -278,7 +278,7 @@ _main::
 	ld	a, (hl)
 	ld	(#_PosF),a
 00109$:
-;metasprites.c:87: if (joypads.joy0 & J_LEFT)
+;metasprites.c:87: if( joypads.joy0 & J_LEFT )
 	ld	a, (#(_joypads + 1) + 0)
 	ldhl	sp,	#2
 	ld	(hl), a
@@ -294,7 +294,7 @@ _main::
 	or	a, #0x01
 	ldhl	sp,	#5
 	ld	(hl), a
-;metasprites.c:87: if (joypads.joy0 & J_LEFT)
+;metasprites.c:87: if( joypads.joy0 & J_LEFT )
 	push	hl
 	ldhl	sp,	#4
 	bit	1, (hl)
@@ -310,7 +310,7 @@ _main::
 	ld	hl, #_SpdX
 	ld	a, c
 	ld	(hl+), a
-;metasprites.c:90: if (SpdX < -32)
+;metasprites.c:90: if( SpdX < -32 )
 	ld	a, b
 	ld	(hl-), a
 	ld	a, (hl+)
@@ -343,7 +343,7 @@ _main::
 	ld	(#_PosF),a
 	jr	00118$
 00117$:
-;metasprites.c:94: else if (joypads.joy0 & J_RIGHT)
+;metasprites.c:94: else if( joypads.joy0 & J_RIGHT )
 	push	hl
 	ldhl	sp,	#4
 	bit	0, (hl)
@@ -359,7 +359,7 @@ _main::
 	ld	hl, #_SpdX
 	ld	a, c
 	ld	(hl+), a
-;metasprites.c:97: if (SpdX > 32)
+;metasprites.c:97: if( SpdX > 32 )
 	ld	a, b
 	ld	(hl-), a
 	ld	a, (hl+)
@@ -395,14 +395,14 @@ _main::
 	ld	a, (hl)
 	ld	(#_PosF),a
 00118$:
-;metasprites.c:103: if ((joypads.joy0 & J_A) && (!jitter))
+;metasprites.c:103: if( ( joypads.joy0 & J_A ) && ( !jitter ) )
 	ld	a, (#(_joypads + 1) + 0)
 	bit	4, a
 	jr	Z, 00120$
 	ld	a, (#_jitter)
 	or	a, a
 	jr	NZ, 00120$
-;metasprites.c:105: hide = (!hide);
+;metasprites.c:105: hide = ( !hide );
 	ld	hl, #_hide
 	ld	a, (hl)
 	sub	a,#0x01
@@ -413,7 +413,7 @@ _main::
 	ld	hl, #_jitter
 	ld	(hl), #0x14
 00120$:
-;metasprites.c:110: if ((joypads.joy0 & J_B) && (!jitter) && (!hide))
+;metasprites.c:110: if( ( joypads.joy0 & J_B ) && ( !jitter ) && ( !hide ) )
 	ld	a, (#(_joypads + 1) + 0)
 	bit	5, a
 	jr	Z, 00125$
@@ -426,7 +426,7 @@ _main::
 ;metasprites.c:112: idx++;
 	ld	hl, #_idx
 	inc	(hl)
-;metasprites.c:113: if (idx >= (sizeof(sprite_metasprites) >> 1))
+;metasprites.c:113: if( idx >= ( sizeof( sprite_metasprites ) >> 1 ) )
 	ld	a, (hl)
 	sub	a, #0x05
 	jr	C, 00123$
@@ -437,7 +437,7 @@ _main::
 	ld	hl, #_jitter
 	ld	(hl), #0x0a
 00125$:
-;metasprites.c:119: if ((joypads.joy0 & J_SELECT) && (!jitter) && (!hide))
+;metasprites.c:119: if( ( joypads.joy0 & J_SELECT ) && ( !jitter ) && ( !hide ) )
 	ld	a, (#(_joypads + 1) + 0)
 	bit	6, a
 	jr	Z, 00129$
@@ -458,7 +458,7 @@ _main::
 	ld	hl, #_jitter
 	ld	(hl), #0x14
 00129$:
-;metasprites.c:127: if (jitter)
+;metasprites.c:127: if( jitter )
 	ld	hl, #_jitter
 	ld	a, (hl)
 	or	a, a
@@ -492,7 +492,7 @@ _main::
 ;metasprites.c:132: uint8_t hiwater = 0;
 	ldhl	sp,	#3
 	ld	(hl), #0x00
-;metasprites.c:142: hide_metasprite(sprite_metasprites[idx], SPR_NUM_START);
+;metasprites.c:142: hide_metasprite( sprite_metasprites[ idx ], SPR_NUM_START );
 	ld	a, (#_idx)
 	ld	c, #0x00
 	add	a, a
@@ -500,11 +500,11 @@ _main::
 	ldhl	sp,	#0
 	ld	(hl+), a
 	ld	(hl), c
-;metasprites.c:141: if (hide)
+;metasprites.c:141: if( hide )
 	ld	a, (#_hide)
 	or	a, a
 	jr	Z, 00140$
-;metasprites.c:142: hide_metasprite(sprite_metasprites[idx], SPR_NUM_START);
+;metasprites.c:142: hide_metasprite( sprite_metasprites[ idx ], SPR_NUM_START );
 	ld	bc, #_sprite_metasprites+0
 	pop	hl
 	push	hl
@@ -523,10 +523,10 @@ _main::
 	inc	sp
 	call	___hide_metasprite
 	inc	sp
-;metasprites.c:142: hide_metasprite(sprite_metasprites[idx], SPR_NUM_START);
+;metasprites.c:142: hide_metasprite( sprite_metasprites[ idx ], SPR_NUM_START );
 	jp	00141$
 00140$:
-;metasprites.c:147: hiwater = move_metasprite(sprite_metasprites[idx], TILE_NUM_START, SPR_NUM_START, (PosX >> 4), (PosY >> 4));
+;metasprites.c:147: hiwater = move_metasprite( sprite_metasprites[ idx ], TILE_NUM_START, SPR_NUM_START, ( PosX >> 4 ), ( PosY >> 4 ) );
 	ld	hl, #_PosY
 	ld	a, (hl+)
 	ld	e, a
@@ -555,7 +555,7 @@ _main::
 	ld	a, e
 	ld	(hl+), a
 	ld	(hl), c
-;metasprites.c:144: switch (rot)
+;metasprites.c:144: switch( rot )
 	ld	a, (#_rot)
 	or	a, a
 	jr	Z, 00134$
@@ -571,7 +571,7 @@ _main::
 	jp	00141$
 ;metasprites.c:146: case 0:
 00134$:
-;metasprites.c:147: hiwater = move_metasprite(sprite_metasprites[idx], TILE_NUM_START, SPR_NUM_START, (PosX >> 4), (PosY >> 4));
+;metasprites.c:147: hiwater = move_metasprite( sprite_metasprites[ idx ], TILE_NUM_START, SPR_NUM_START, ( PosX >> 4 ), ( PosY >> 4 ) );
 	ld	de, #_sprite_metasprites
 	pop	hl
 	push	hl
@@ -597,14 +597,14 @@ _main::
 	push	hl
 	call	___move_metasprite
 	add	sp, #3
-;metasprites.c:147: hiwater = move_metasprite(sprite_metasprites[idx], TILE_NUM_START, SPR_NUM_START, (PosX >> 4), (PosY >> 4));
+;metasprites.c:147: hiwater = move_metasprite( sprite_metasprites[ idx ], TILE_NUM_START, SPR_NUM_START, ( PosX >> 4 ), ( PosY >> 4 ) );
 	ldhl	sp,	#3
 	ld	(hl), e
 ;metasprites.c:148: break;
 	jp	00141$
 ;metasprites.c:149: case 1:
 00135$:
-;metasprites.c:150: hiwater = move_metasprite_hflip(sprite_metasprites[idx], TILE_NUM_START, SPR_NUM_START, (PosX >> 4), (PosY >> 4));
+;metasprites.c:150: hiwater = move_metasprite_hflip( sprite_metasprites[ idx ], TILE_NUM_START, SPR_NUM_START, ( PosX >> 4 ), ( PosY >> 4 ) );
 	ldhl	sp,	#4
 	ld	a, (hl+)
 	ld	c, a
@@ -666,14 +666,14 @@ _main::
 	inc	sp
 	call	___move_metasprite_hflip
 	add	sp, #3
-;metasprites.c:150: hiwater = move_metasprite_hflip(sprite_metasprites[idx], TILE_NUM_START, SPR_NUM_START, (PosX >> 4), (PosY >> 4));
+;metasprites.c:150: hiwater = move_metasprite_hflip( sprite_metasprites[ idx ], TILE_NUM_START, SPR_NUM_START, ( PosX >> 4 ), ( PosY >> 4 ) );
 	ldhl	sp,	#3
 	ld	(hl), e
 ;metasprites.c:151: break;
 	jp	00141$
 ;metasprites.c:152: case 2:
 00136$:
-;metasprites.c:153: hiwater = move_metasprite_hvflip(sprite_metasprites[idx], TILE_NUM_START, SPR_NUM_START, (PosX >> 4), (PosY >> 4));
+;metasprites.c:153: hiwater = move_metasprite_hvflip( sprite_metasprites[ idx ], TILE_NUM_START, SPR_NUM_START, ( PosX >> 4 ), ( PosY >> 4 ) );
 	ld	de, #_sprite_metasprites
 	pop	hl
 	push	hl
@@ -724,14 +724,14 @@ _main::
 	push	hl
 	call	___move_metasprite_hvflip
 	add	sp, #3
-;metasprites.c:153: hiwater = move_metasprite_hvflip(sprite_metasprites[idx], TILE_NUM_START, SPR_NUM_START, (PosX >> 4), (PosY >> 4));
+;metasprites.c:153: hiwater = move_metasprite_hvflip( sprite_metasprites[ idx ], TILE_NUM_START, SPR_NUM_START, ( PosX >> 4 ), ( PosY >> 4 ) );
 	ldhl	sp,	#3
 	ld	(hl), e
 ;metasprites.c:154: break;
 	jr	00141$
 ;metasprites.c:155: case 3:
 00137$:
-;metasprites.c:156: hiwater = move_metasprite_vflip(sprite_metasprites[idx], TILE_NUM_START, SPR_NUM_START, (PosX >> 4), (PosY >> 4));
+;metasprites.c:156: hiwater = move_metasprite_vflip( sprite_metasprites[ idx ], TILE_NUM_START, SPR_NUM_START, ( PosX >> 4 ), ( PosY >> 4 ) );
 	ldhl	sp,	#4
 	ld	a, (hl-)
 	dec	hl
@@ -788,12 +788,12 @@ _main::
 	push	hl
 	call	___move_metasprite_vflip
 	add	sp, #3
-;metasprites.c:156: hiwater = move_metasprite_vflip(sprite_metasprites[idx], TILE_NUM_START, SPR_NUM_START, (PosX >> 4), (PosY >> 4));
+;metasprites.c:156: hiwater = move_metasprite_vflip( sprite_metasprites[ idx ], TILE_NUM_START, SPR_NUM_START, ( PosX >> 4 ), ( PosY >> 4 ) );
 	ldhl	sp,	#3
 	ld	(hl), e
 ;metasprites.c:158: };
 00141$:
-;metasprites.c:161: hide_sprites_range(hiwater, 40);
+;metasprites.c:161: hide_sprites_range( hiwater, 40 );
 	ld	a, #0x28
 	push	af
 	inc	sp
@@ -803,7 +803,7 @@ _main::
 	inc	sp
 	call	_hide_sprites_range
 	pop	hl
-;metasprites.c:164: if (!(PosF & ACC_Y))
+;metasprites.c:164: if( !( PosF & ACC_Y ) )
 	ld	a, (#_PosF)
 	ldhl	sp,	#3
 	ld	(hl), a
@@ -811,12 +811,12 @@ _main::
 	bit	1, (hl)
 	pop	hl
 	jr	NZ, 00148$
-;metasprites.c:166: if (SpdY != 0)
+;metasprites.c:166: if( SpdY != 0 )
 	ld	hl, #_SpdY + 1
 	ld	a, (hl-)
 	or	a, (hl)
 	jr	Z, 00148$
-;metasprites.c:168: if (SpdY > 0)
+;metasprites.c:168: if( SpdY > 0 )
 	ld	a, (hl)
 	ldhl	sp,	#4
 	ld	(hl), a
@@ -862,18 +862,18 @@ _main::
 	inc	(hl)
 00356$:
 00148$:
-;metasprites.c:176: if (!(PosF & ACC_X))
+;metasprites.c:176: if( !( PosF & ACC_X ) )
 	push	hl
 	ldhl	sp,	#5
 	bit	0, (hl)
 	pop	hl
 	jr	NZ, 00155$
-;metasprites.c:178: if (SpdX != 0)
+;metasprites.c:178: if( SpdX != 0 )
 	ld	hl, #_SpdX + 1
 	ld	a, (hl-)
 	or	a, (hl)
 	jr	Z, 00155$
-;metasprites.c:180: if (SpdX > 0)
+;metasprites.c:180: if( SpdX > 0 )
 	ld	a, (hl+)
 	ld	c, a
 	ld	b, (hl)

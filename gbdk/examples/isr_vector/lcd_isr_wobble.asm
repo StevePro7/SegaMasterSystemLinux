@@ -66,7 +66,7 @@ _scanline_isr::
 	push bc
 	push de
 	push hl
-;lcd_isr_wobble.c:18: SCX_REG = scanline_offsets[LY_REG & (uint8_t)7];
+;lcd_isr_wobble.c:18: SCX_REG = scanline_offsets[ LY_REG & ( uint8_t ) 7 ];
 	ldh	a, (_LY_REG + 0)
 	and	a, #0x07
 	ld	c, a
@@ -112,7 +112,7 @@ _main::
 ;lcd_isr_wobble.c:36: STAT_REG = STATF_MODE00;
 	ld	a, #0x08
 	ldh	(_STAT_REG + 0), a
-;lcd_isr_wobble.c:37: set_interrupts(VBL_IFLAG | LCD_IFLAG);
+;lcd_isr_wobble.c:37: set_interrupts( VBL_IFLAG | LCD_IFLAG );
 	ld	a, #0x03
 	push	af
 	inc	sp
@@ -122,11 +122,11 @@ _main::
 	ldh	a, (_LCDC_REG + 0)
 	or	a, #0x01
 	ldh	(_LCDC_REG + 0), a
-;lcd_isr_wobble.c:42: while (TRUE) {
+;lcd_isr_wobble.c:42: while( TRUE ) {
 00102$:
-;lcd_isr_wobble.c:43: wait_vbl_done();        
+;lcd_isr_wobble.c:43: wait_vbl_done();
 	call	_wait_vbl_done
-;lcd_isr_wobble.c:44: scanline_offsets = &scanline_offsets_tbl[(uint8_t)(sys_time >> 2) & 0x07u];
+;lcd_isr_wobble.c:44: scanline_offsets = &scanline_offsets_tbl[ ( uint8_t ) ( sys_time >> 2 ) & 0x07u ];
 	ld	hl, #_sys_time
 	ld	a, (hl+)
 	ld	c, a
@@ -198,14 +198,14 @@ _blank_tile_data::
 ; Function init_gfx
 ; ---------------------------------
 _init_gfx::
-;lcd_isr_wobble.c:76: set_bkg_data(0x80u, 1u, blank_tile_data); // The first 0x80u here is the tile ID
+;lcd_isr_wobble.c:76: set_bkg_data( 0x80u, 1u, blank_tile_data ); // The first 0x80u here is the tile ID
 	ld	de, #_blank_tile_data
 	push	de
 	ld	hl, #0x180
 	push	hl
 	call	_set_bkg_data
 	add	sp, #4
-;lcd_isr_wobble.c:77: fill_bkg_rect(0u, 0u, DEVICE_SCREEN_BUFFER_WIDTH, DEVICE_SCREEN_BUFFER_HEIGHT, 0x80u);   // The last 0x80u here is the tile ID 
+;lcd_isr_wobble.c:77: fill_bkg_rect( 0u, 0u, DEVICE_SCREEN_BUFFER_WIDTH, DEVICE_SCREEN_BUFFER_HEIGHT, 0x80u );   // The last 0x80u here is the tile ID 
 	ld	hl, #0x8020
 	push	hl
 	ld	a, #0x20
@@ -216,7 +216,7 @@ _init_gfx::
 	push	af
 	call	_fill_bkg_rect
 	add	sp, #5
-;lcd_isr_wobble.c:81: set_bkg_data(0u, INCBIN_SIZE(logo_tiles_data) / TILE_BYTES, logo_tiles_data);
+;lcd_isr_wobble.c:81: set_bkg_data( 0u, INCBIN_SIZE( logo_tiles_data ) / TILE_BYTES, logo_tiles_data );
 	ld	bc, #_logo_tiles_data+0
 	ld	de, #___size_logo_tiles_data+0
 	srl	d
@@ -234,8 +234,8 @@ _init_gfx::
 	push	hl
 	call	_set_bkg_data
 	add	sp, #4
-;lcd_isr_wobble.c:84: logo_map);
-;lcd_isr_wobble.c:82: set_bkg_tiles(LOGO_MAP_X, LOGO_MAP_Y,
+;lcd_isr_wobble.c:84: logo_map );
+;lcd_isr_wobble.c:82: set_bkg_tiles( LOGO_MAP_X, LOGO_MAP_Y,
 	ld	de, #_logo_map
 	push	de
 	ld	hl, #0xc07

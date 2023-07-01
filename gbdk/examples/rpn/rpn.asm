@@ -182,21 +182,21 @@ _top::
 ___str_2:
 	.ascii "Stack empty"
 	.db 0x00
-;rpn.c:42: int8_t read_op(void)
+;rpn.c:42: int8_t read_op( void )
 ;	---------------------------------
 ; Function read_op
 ; ---------------------------------
 _read_op::
-;rpn.c:44: if(pos == 0) {
+;rpn.c:44: if( pos == 0 ) {
 	ld	a, (#_pos)
 	or	a, a
 	jr	NZ, 00118$
-;rpn.c:45: gets(s);
+;rpn.c:45: gets( s );
 	ld	de, #_s
 	push	de
 	call	_gets
 	pop	hl
-;rpn.c:48: while(s[pos] == ' ' || s[pos] == '\t')
+;rpn.c:48: while( s[ pos ] == ' ' || s[ pos ] == '\t' )
 00118$:
 00104$:
 	ld	a, #<(_s)
@@ -219,23 +219,23 @@ _read_op::
 	inc	(hl)
 	jr	00104$
 00106$:
-;rpn.c:51: if(s[pos] == '\0') {
+;rpn.c:51: if( s[ pos ] == '\0' ) {
 	ld	a, c
 	or	a, a
 	jr	NZ, 00108$
 ;rpn.c:52: pos = 0;
 	ld	hl, #_pos
 	ld	(hl), #0x00
-;rpn.c:53: return('\n');
+;rpn.c:53: return( '\n' );
 	ld	a, #0x0a
 	ret
 00108$:
-;rpn.c:56: if(!isdigit(s[pos]))
+;rpn.c:56: if( !isdigit( s[ pos ] ) )
 	ld	a, c
 	call	_isdigit
 	bit	0,a
 	jr	NZ, 00110$
-;rpn.c:57: return(s[pos++]);
+;rpn.c:57: return( s[ pos++ ] );
 	ld	hl, #_pos
 	ld	c, (hl)
 	inc	(hl)
@@ -245,7 +245,7 @@ _read_op::
 	ld	a, (hl)
 	ret
 00110$:
-;rpn.c:59: n = s[pos] - '0';
+;rpn.c:59: n = s[ pos ] - '0';
 	ld	a, #<(_s)
 	ld	hl, #_pos
 	add	a, (hl)
@@ -267,7 +267,7 @@ _read_op::
 	ld	(hl), c
 	inc	hl
 	ld	(hl), a
-;rpn.c:60: while(isdigit(s[++pos]))
+;rpn.c:60: while( isdigit( s[ ++pos ] ) )
 00111$:
 	ld	hl, #_pos
 	inc	(hl)
@@ -281,7 +281,7 @@ _read_op::
 	call	_isdigit
 	bit	0,a
 	jr	Z, 00113$
-;rpn.c:61: n = 10 * n + s[pos] - '0';
+;rpn.c:61: n = 10 * n + s[ pos ] - '0';
 	ld	hl, #_n
 	ld	a, (hl+)
 	ld	c, a
@@ -325,13 +325,13 @@ _read_op::
 	ld	a, #0x30
 ;rpn.c:64: }
 	ret
-;rpn.c:66: void main(void)
+;rpn.c:66: void main( void )
 ;	---------------------------------
 ; Function main
 ; ---------------------------------
 _main::
 	dec	sp
-;rpn.c:71: puts("RPN Calculator");
+;rpn.c:71: puts( "RPN Calculator" );
 	ld	de, #___str_3
 	call	_puts
 ;rpn.c:72: sp = 0;
@@ -340,13 +340,13 @@ _main::
 ;rpn.c:73: pos = 0;
 	ld	hl, #_pos
 	ld	(hl), #0x00
-;rpn.c:75: while((type = read_op()) != 0) {
+;rpn.c:75: while( ( type = read_op() ) != 0 ) {
 00111$:
 	call	_read_op
 	ld	c, a
 	ldhl	sp,	#0
 	ld	a,c
-;rpn.c:76: switch(type) {
+;rpn.c:76: switch( type ) {
 	ld	(hl),a
 	or	a,a
 	jp	Z,00114$
@@ -372,7 +372,7 @@ _main::
 	ld	a, (hl)
 	sub	a, #0x30
 	jr	NZ, 00111$
-;rpn.c:78: push(n);
+;rpn.c:78: push( n );
 	ld	hl, #_n
 	ld	e, (hl)
 	inc	hl
@@ -382,7 +382,7 @@ _main::
 	jr	00111$
 ;rpn.c:80: case '+':
 00102$:
-;rpn.c:81: push(pop() + pop());
+;rpn.c:81: push( pop() + pop() );
 	call	_pop
 	push	bc
 	call	_pop
@@ -401,7 +401,7 @@ _main::
 	jr	00111$
 ;rpn.c:83: case '*':
 00103$:
-;rpn.c:84: push(pop() * pop());
+;rpn.c:84: push( pop() * pop() );
 	call	_pop
 	push	bc
 	call	_pop
@@ -416,7 +416,7 @@ _main::
 00104$:
 ;rpn.c:87: op2 = pop();
 	call	_pop
-;rpn.c:88: push(pop() - op2);
+;rpn.c:88: push( pop() - op2 );
 	push	bc
 	call	_pop
 	ld	e, c
@@ -435,11 +435,11 @@ _main::
 00105$:
 ;rpn.c:91: op2 = pop();
 	call	_pop
-;rpn.c:92: if(op2 != 0)
+;rpn.c:92: if( op2 != 0 )
 	ld	a, b
 	or	a, c
 	jr	Z, 00107$
-;rpn.c:93: push(pop() / op2);
+;rpn.c:93: push( pop() / op2 );
 	push	bc
 	call	_pop
 	ld	e, c
@@ -451,14 +451,14 @@ _main::
 	call	_push
 	jp	00111$
 00107$:
-;rpn.c:95: puts("Divide by 0");
+;rpn.c:95: puts( "Divide by 0" );
 	ld	de, #___str_4
 	call	_puts
 ;rpn.c:96: break;
 	jp	00111$
 ;rpn.c:97: case '\n':
 00109$:
-;rpn.c:98: printf("==> %d\n", top());
+;rpn.c:98: printf( "==> %d\n", top() );
 	call	_top
 	push	bc
 	ld	de, #___str_5

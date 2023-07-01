@@ -74,7 +74,7 @@ _scroller_next_char::
 ; Function scanline_isr
 ; ---------------------------------
 _scanline_isr::
-;text_scroller.c:17: switch (LYC_REG) {
+;text_scroller.c:17: switch( LYC_REG ) {
 	ldh	a, (_LYC_REG + 0)
 	or	a, a
 	jr	Z, 00101$
@@ -83,7 +83,7 @@ _scanline_isr::
 	sub	a, #0x7f
 	jr	Z, 00103$
 	ret
-;text_scroller.c:18: case 0: 
+;text_scroller.c:18: case 0:
 00101$:
 ;text_scroller.c:19: SCX_REG = 0;
 	xor	a, a
@@ -135,7 +135,7 @@ _scanline_offsets_tbl:
 ; Function main
 ; ---------------------------------
 _main::
-;text_scroller.c:42: printf("Scrolling %d chars", sizeof(scroller_text) - 1);
+;text_scroller.c:42: printf( "Scrolling %d chars", sizeof( scroller_text ) - 1 );
 	ld	de, #0x0168
 	push	de
 	ld	de, #___str_0
@@ -150,19 +150,19 @@ _main::
 	ldh	(_STAT_REG + 0), a
 	xor	a, a
 	ldh	(_LYC_REG + 0), a
-;text_scroller.c:46: add_LCD(scanline_isr);
+;text_scroller.c:46: add_LCD( scanline_isr );
 	ld	de, #_scanline_isr
 	push	de
 	call	_add_LCD
 	pop	hl
 	ei
-;text_scroller.c:48: set_interrupts(VBL_IFLAG | LCD_IFLAG);
+;text_scroller.c:48: set_interrupts( VBL_IFLAG | LCD_IFLAG );
 	ld	a, #0x03
 	push	af
 	inc	sp
 	call	_set_interrupts
 	inc	sp
-;text_scroller.c:50: scroller_vram_addr = get_bkg_xy_addr(20, SCROLL_POS);
+;text_scroller.c:50: scroller_vram_addr = get_bkg_xy_addr( 20, SCROLL_POS );
 	ld	hl, #0xf14
 	push	hl
 	call	_get_bkg_xy_addr
@@ -171,7 +171,7 @@ _main::
 	ld	a, e
 	ld	(hl+), a
 	ld	(hl), d
-;text_scroller.c:51: set_vram_byte(scroller_vram_addr, *scroller_next_char - 0x20);
+;text_scroller.c:51: set_vram_byte( scroller_vram_addr, *scroller_next_char - 0x20 );
 	ld	hl, #_scroller_next_char
 	ld	a, (hl+)
 	ld	c, a
@@ -187,7 +187,7 @@ _main::
 	push	de
 	call	_set_vram_byte
 	add	sp, #3
-;text_scroller.c:53: base = (uint16_t) scroller_vram_addr & 0xffe0;
+;text_scroller.c:53: base = ( uint16_t ) scroller_vram_addr & 0xffe0;
 	ld	hl, #_scroller_vram_addr
 	ld	a, (hl+)
 	ld	c, a
@@ -209,12 +209,12 @@ _main::
 	ld	(hl), c
 	inc	hl
 	ld	(hl), a
-;text_scroller.c:56: while (1) {
+;text_scroller.c:56: while( 1 ) {
 00108$:
 ;text_scroller.c:57: scroller_x++;
 	ld	hl, #_scroller_x
 	inc	(hl)
-;text_scroller.c:58: if ((scroller_x & 0x07) == 0) {
+;text_scroller.c:58: if( ( scroller_x & 0x07 ) == 0 ) {
 	ld	a, (hl)
 	and	a, #0x07
 	jr	NZ, 00106$
@@ -225,7 +225,7 @@ _main::
 	inc	hl
 	inc	(hl)
 00136$:
-;text_scroller.c:61: if (*scroller_next_char == 0) scroller_next_char = scroller_text;
+;text_scroller.c:61: if( *scroller_next_char == 0 ) scroller_next_char = scroller_text;
 	ld	hl, #_scroller_next_char
 	ld	a, (hl+)
 	ld	c, a
@@ -245,7 +245,7 @@ _main::
 	inc	hl
 	inc	(hl)
 00137$:
-;text_scroller.c:65: if (scroller_vram_addr == (uint8_t *)limit) scroller_vram_addr = (uint8_t *)base;
+;text_scroller.c:65: if( scroller_vram_addr == ( uint8_t * ) limit ) scroller_vram_addr = ( uint8_t * ) base;
 	ld	hl, #_limit
 	ld	a, (hl+)
 	ld	c, a
@@ -263,7 +263,7 @@ _main::
 	ld	a, (#_base + 1)
 	ld	(#_scroller_vram_addr + 1),a
 00104$:
-;text_scroller.c:68: set_vram_byte(scroller_vram_addr, *scroller_next_char - 0x20);
+;text_scroller.c:68: set_vram_byte( scroller_vram_addr, *scroller_next_char - 0x20 );
 	ld	hl, #_scroller_next_char
 	ld	a, (hl+)
 	ld	c, a
@@ -280,7 +280,7 @@ _main::
 	call	_set_vram_byte
 	add	sp, #3
 00106$:
-;text_scroller.c:70: wait_vbl_done();        
+;text_scroller.c:70: wait_vbl_done();
 	call	_wait_vbl_done
 ;text_scroller.c:72: }
 	jr	00108$

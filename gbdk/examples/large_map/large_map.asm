@@ -81,12 +81,12 @@ _redraw::
 ; Function set_camera
 ; ---------------------------------
 _set_camera::
-;large_map.c:23: SCY_REG = camera_y; SCX_REG = camera_x; 
+;large_map.c:23: SCY_REG = camera_y; SCX_REG = camera_x;
 	ld	a, (#_camera_y)
 	ldh	(_SCY_REG + 0), a
 	ld	a, (#_camera_x)
 	ldh	(_SCX_REG + 0), a
-;large_map.c:25: map_pos_y = (uint8_t)(camera_y >> 3u);
+;large_map.c:25: map_pos_y = ( uint8_t ) ( camera_y >> 3u );
 	ld	hl, #_camera_y
 	ld	a, (hl+)
 	ld	c, a
@@ -99,12 +99,12 @@ _set_camera::
 	rr	c
 	ld	hl, #_map_pos_y
 	ld	(hl), c
-;large_map.c:26: if (map_pos_y != old_map_pos_y) { 
+;large_map.c:26: if( map_pos_y != old_map_pos_y ) {
 	ld	a, (hl)
 	ld	hl, #_old_map_pos_y
 	sub	a, (hl)
 	jp	Z,00107$
-;large_map.c:28: set_bkg_submap(map_pos_x, map_pos_y, MIN(21u, bigmap_mapWidth-map_pos_x), 1, bigmap_map, bigmap_mapWidth);
+;large_map.c:28: set_bkg_submap( map_pos_x, map_pos_y, MIN( 21u, bigmap_mapWidth - map_pos_x ), 1, bigmap_map, bigmap_mapWidth );
 	ld	hl, #_map_pos_x
 	ld	e, (hl)
 	ld	d, #0x00
@@ -126,7 +126,7 @@ _set_camera::
 	ld	a, #0x00
 	rla
 	ld	e, a
-;large_map.c:27: if (camera_y < old_camera_y) {
+;large_map.c:27: if( camera_y < old_camera_y ) {
 	push	de
 	ld	de, #_camera_y
 	ld	hl, #_old_camera_y
@@ -138,7 +138,7 @@ _set_camera::
 	sbc	a, (hl)
 	pop	de
 	jr	NC, 00104$
-;large_map.c:28: set_bkg_submap(map_pos_x, map_pos_y, MIN(21u, bigmap_mapWidth-map_pos_x), 1, bigmap_map, bigmap_mapWidth);
+;large_map.c:28: set_bkg_submap( map_pos_x, map_pos_y, MIN( 21u, bigmap_mapWidth - map_pos_x ), 1, bigmap_map, bigmap_mapWidth );
 	ld	a, e
 	or	a, a
 	jr	Z, 00117$
@@ -168,7 +168,7 @@ _set_camera::
 	add	sp, #7
 	jr	00105$
 00104$:
-;large_map.c:30: if ((bigmap_mapHeight - 18u) > map_pos_y) set_bkg_submap(map_pos_x, map_pos_y + 18u, MIN(21u, bigmap_mapWidth-map_pos_x), 1, bigmap_map, bigmap_mapWidth);     
+;large_map.c:31: if( ( bigmap_mapHeight - 18u ) > map_pos_y ) set_bkg_submap( map_pos_x, map_pos_y + 18u, MIN( 21u, bigmap_mapWidth - map_pos_x ), 1, bigmap_map, bigmap_mapWidth );
 	ld	a, (#_map_pos_y)
 	sub	a, #0x30
 	jr	NC, 00105$
@@ -205,11 +205,11 @@ _set_camera::
 	call	_set_bkg_submap
 	add	sp, #7
 00105$:
-;large_map.c:32: old_map_pos_y = map_pos_y; 
+;large_map.c:33: old_map_pos_y = map_pos_y;
 	ld	a, (#_map_pos_y)
 	ld	(#_old_map_pos_y),a
 00107$:
-;large_map.c:35: map_pos_x = (uint8_t)(camera_x >> 3u);
+;large_map.c:36: map_pos_x = ( uint8_t ) ( camera_x >> 3u );
 	ld	hl, #_camera_x
 	ld	a, (hl+)
 	ld	c, a
@@ -222,12 +222,12 @@ _set_camera::
 	rr	c
 	ld	hl, #_map_pos_x
 	ld	(hl), c
-;large_map.c:36: if (map_pos_x != old_map_pos_x) {
+;large_map.c:37: if( map_pos_x != old_map_pos_x ) {
 	ld	a, (hl)
 	ld	hl, #_old_map_pos_x
 	sub	a, (hl)
 	jp	Z,00114$
-;large_map.c:38: set_bkg_submap(map_pos_x, map_pos_y, 1, MIN(19u, bigmap_mapHeight - map_pos_y), bigmap_map, bigmap_mapWidth);     
+;large_map.c:39: set_bkg_submap( map_pos_x, map_pos_y, 1, MIN( 19u, bigmap_mapHeight - map_pos_y ), bigmap_map, bigmap_mapWidth );
 	ld	hl, #_map_pos_y
 	ld	e, (hl)
 	ld	d, #0x00
@@ -249,7 +249,7 @@ _set_camera::
 	ld	a, #0x00
 	rla
 	ld	e, a
-;large_map.c:37: if (camera_x < old_camera_x) {
+;large_map.c:38: if( camera_x < old_camera_x ) {
 	push	de
 	ld	de, #_camera_x
 	ld	hl, #_old_camera_x
@@ -261,7 +261,7 @@ _set_camera::
 	sbc	a, (hl)
 	pop	de
 	jr	NC, 00111$
-;large_map.c:38: set_bkg_submap(map_pos_x, map_pos_y, 1, MIN(19u, bigmap_mapHeight - map_pos_y), bigmap_map, bigmap_mapWidth);     
+;large_map.c:39: set_bkg_submap( map_pos_x, map_pos_y, 1, MIN( 19u, bigmap_mapHeight - map_pos_y ), bigmap_map, bigmap_mapWidth );
 	ld	a, e
 	or	a, a
 	jr	Z, 00121$
@@ -287,7 +287,7 @@ _set_camera::
 	add	sp, #7
 	jr	00112$
 00111$:
-;large_map.c:40: if ((bigmap_mapWidth - 20u) > map_pos_x) set_bkg_submap(map_pos_x + 20u, map_pos_y, 1, MIN(19u, bigmap_mapHeight - map_pos_y), bigmap_map, bigmap_mapWidth);     
+;large_map.c:42: if( ( bigmap_mapWidth - 20u ) > map_pos_x ) set_bkg_submap( map_pos_x + 20u, map_pos_y, 1, MIN( 19u, bigmap_mapHeight - map_pos_y ), bigmap_map, bigmap_mapWidth );
 	ld	a, (#_map_pos_x)
 	sub	a, #0xe3
 	jr	NC, 00112$
@@ -327,11 +327,11 @@ _set_camera::
 	call	_set_bkg_submap
 	add	sp, #7
 00112$:
-;large_map.c:42: old_map_pos_x = map_pos_x;
+;large_map.c:44: old_map_pos_x = map_pos_x;
 	ld	a, (#_map_pos_x)
 	ld	(#_old_map_pos_x),a
 00114$:
-;large_map.c:45: old_camera_x = camera_x, old_camera_y = camera_y;
+;large_map.c:47: old_camera_x = camera_x, old_camera_y = camera_y;
 	ld	a, (#_camera_x)
 	ld	(#_old_camera_x),a
 	ld	a, (#_camera_x + 1)
@@ -340,37 +340,37 @@ _set_camera::
 	ld	(#_old_camera_y),a
 	ld	a, (#_camera_y + 1)
 	ld	(#_old_camera_y + 1),a
-;large_map.c:46: }
+;large_map.c:48: }
 	ret
-;large_map.c:48: void main(){
+;large_map.c:50: void main() {
 ;	---------------------------------
 ; Function main
 ; ---------------------------------
 _main::
-;large_map.c:49: DISPLAY_OFF;
+;large_map.c:51: DISPLAY_OFF;
 	call	_display_off
-;large_map.c:50: SHOW_BKG;
+;large_map.c:52: SHOW_BKG;
 	ldh	a, (_LCDC_REG + 0)
 	or	a, #0x01
 	ldh	(_LCDC_REG + 0), a
-;large_map.c:51: set_bkg_data(0, 241u, bigmap_tiles);
+;large_map.c:53: set_bkg_data( 0, 241u, bigmap_tiles );
 	ld	de, #_bigmap_tiles
 	push	de
 	ld	hl, #0xf100
 	push	hl
 	call	_set_bkg_data
 	add	sp, #4
-;large_map.c:53: map_pos_x = map_pos_y = 0; 
+;large_map.c:55: map_pos_x = map_pos_y = 0;
 	ld	hl, #_map_pos_y
 	ld	(hl), #0x00
 	ld	hl, #_map_pos_x
 	ld	(hl), #0x00
-;large_map.c:54: old_map_pos_x = old_map_pos_y = 255;
+;large_map.c:56: old_map_pos_x = old_map_pos_y = 255;
 	ld	hl, #_old_map_pos_y
 	ld	(hl), #0xff
 	ld	hl, #_old_map_pos_x
 	ld	(hl), #0xff
-;large_map.c:55: set_bkg_submap(map_pos_x, map_pos_y, 20, 18, bigmap_map, bigmap_mapWidth);
+;large_map.c:57: set_bkg_submap( map_pos_x, map_pos_y, 20, 18, bigmap_map, bigmap_mapWidth );
 	ld	a, #0xf7
 	push	af
 	inc	sp
@@ -383,11 +383,11 @@ _main::
 	push	af
 	call	_set_bkg_submap
 	add	sp, #7
-;large_map.c:56: DISPLAY_ON;
+;large_map.c:58: DISPLAY_ON;
 	ldh	a, (_LCDC_REG + 0)
 	or	a, #0x80
 	ldh	(_LCDC_REG + 0), a
-;large_map.c:58: camera_x = camera_y = 0;
+;large_map.c:60: camera_x = camera_y = 0;
 	xor	a, a
 	ld	hl, #_camera_y
 	ld	(hl+), a
@@ -396,7 +396,7 @@ _main::
 	ld	hl, #_camera_x
 	ld	(hl+), a
 	ld	(hl), a
-;large_map.c:59: old_camera_x = camera_x; old_camera_y = camera_y;
+;large_map.c:61: old_camera_x = camera_x; old_camera_y = camera_y;
 	xor	a, a
 	ld	hl, #_old_camera_x
 	ld	(hl+), a
@@ -405,30 +405,30 @@ _main::
 	ld	hl, #_old_camera_y
 	ld	(hl+), a
 	ld	(hl), a
-;large_map.c:61: redraw = FALSE;
+;large_map.c:63: redraw = FALSE;
 	ld	hl, #_redraw
 	ld	(hl), #0x00
-;large_map.c:63: SCX_REG = camera_x; SCY_REG = camera_y; 
+;large_map.c:65: SCX_REG = camera_x; SCY_REG = camera_y;
 	xor	a, a
 	ldh	(_SCX_REG + 0), a
 	xor	a, a
 	ldh	(_SCY_REG + 0), a
-;large_map.c:64: while (TRUE) {
+;large_map.c:66: while( TRUE ) {
 00123$:
-;large_map.c:65: joy = joypad();
+;large_map.c:67: joy = joypad();
 	call	_joypad
 	ld	hl, #_joy
 	ld	(hl), a
-;large_map.c:67: if (joy & J_UP) {
+;large_map.c:69: if( joy & J_UP ) {
 	ld	c, (hl)
 	bit	2, c
 	jr	Z, 00108$
-;large_map.c:68: if (camera_y) {
+;large_map.c:70: if( camera_y ) {
 	ld	hl, #_camera_y + 1
 	ld	a, (hl-)
 	or	a, (hl)
 	jr	Z, 00109$
-;large_map.c:69: camera_y--;
+;large_map.c:71: camera_y--;
 	ld	a, (hl+)
 	ld	e, a
 	ld	a, (hl-)
@@ -437,15 +437,15 @@ _main::
 	ld	a, e
 	ld	(hl+), a
 	ld	(hl), d
-;large_map.c:70: redraw = TRUE;
+;large_map.c:72: redraw = TRUE;
 	ld	hl, #_redraw
 	ld	(hl), #0x01
 	jr	00109$
 00108$:
-;large_map.c:72: } else if (joy & J_DOWN) {
+;large_map.c:75: else if( joy & J_DOWN ) {
 	bit	3, c
 	jr	Z, 00109$
-;large_map.c:73: if (camera_y < camera_max_y) {
+;large_map.c:76: if( camera_y < camera_max_y ) {
 	ld	hl, #_camera_y
 	ld	a, (hl+)
 	ld	e, (hl)
@@ -453,26 +453,26 @@ _main::
 	ld	a, e
 	sbc	a, #0x01
 	jr	NC, 00109$
-;large_map.c:74: camera_y++;
+;large_map.c:77: camera_y++;
 	dec	hl
 	inc	(hl)
 	jr	NZ, 00179$
 	inc	hl
 	inc	(hl)
 00179$:
-;large_map.c:75: redraw = TRUE;
+;large_map.c:78: redraw = TRUE;
 	ld	hl, #_redraw
 	ld	(hl), #0x01
 00109$:
-;large_map.c:79: if (joy & J_LEFT) {
+;large_map.c:82: if( joy & J_LEFT ) {
 	bit	1, c
 	jr	Z, 00117$
-;large_map.c:80: if (camera_x) {
+;large_map.c:83: if( camera_x ) {
 	ld	hl, #_camera_x + 1
 	ld	a, (hl-)
 	or	a, (hl)
 	jr	Z, 00118$
-;large_map.c:81: camera_x--;
+;large_map.c:84: camera_x--;
 	ld	a, (hl+)
 	ld	e, a
 	ld	a, (hl-)
@@ -481,15 +481,15 @@ _main::
 	ld	a, e
 	ld	(hl+), a
 	ld	(hl), d
-;large_map.c:82: redraw = TRUE;
+;large_map.c:85: redraw = TRUE;
 	ld	hl, #_redraw
 	ld	(hl), #0x01
 	jr	00118$
 00117$:
-;large_map.c:84: } else if (joy & J_RIGHT) {
+;large_map.c:88: else if( joy & J_RIGHT ) {
 	bit	0, c
 	jr	Z, 00118$
-;large_map.c:85: if (camera_x < camera_max_x) {
+;large_map.c:89: if( camera_x < camera_max_x ) {
 	ld	hl, #_camera_x
 	ld	a, (hl+)
 	ld	c, a
@@ -499,33 +499,33 @@ _main::
 	ld	a, b
 	sbc	a, #0x07
 	jr	NC, 00118$
-;large_map.c:86: camera_x++;
+;large_map.c:90: camera_x++;
 	dec	hl
 	inc	(hl)
 	jr	NZ, 00182$
 	inc	hl
 	inc	(hl)
 00182$:
-;large_map.c:87: redraw = TRUE;
+;large_map.c:91: redraw = TRUE;
 	ld	hl, #_redraw
 	ld	(hl), #0x01
 00118$:
-;large_map.c:90: if (redraw) {
+;large_map.c:94: if( redraw ) {
 	ld	a, (#_redraw)
 	or	a, a
 	jr	Z, 00120$
-;large_map.c:91: wait_vbl_done();
+;large_map.c:95: wait_vbl_done();
 	call	_wait_vbl_done
-;large_map.c:92: set_camera();
+;large_map.c:96: set_camera();
 	call	_set_camera
-;large_map.c:93: redraw = FALSE;
+;large_map.c:97: redraw = FALSE;
 	ld	hl, #_redraw
 	ld	(hl), #0x00
 	jp	00123$
 00120$:
-;large_map.c:94: } else wait_vbl_done();
+;large_map.c:99: else wait_vbl_done();
 	call	_wait_vbl_done
-;large_map.c:96: }
+;large_map.c:101: }
 	jp	00123$
 	.area _CODE
 	.area _INITIALIZER

@@ -41,12 +41,12 @@
 ; code
 ;--------------------------------------------------------
 	.area _CODE
-;main.c:5: void main(void)
+;main.c:5: void main( void )
 ;	---------------------------------
 ; Function main
 ; ---------------------------------
 _main::
-;main.c:8: while(1) {
+;main.c:8: while( 1 ) {
 00102$:
 ;main.c:13: wait_vbl_done();
 	call	_wait_vbl_done

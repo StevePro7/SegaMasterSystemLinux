@@ -93,7 +93,7 @@ _cursor_y::
 _set_cursor::
 	add	sp, #-5
 ;paint.c:266: i = 0;
-;paint.c:267: for(x = 0; x < cursors[current_cursor].w; x++)
+;paint.c:267: for( x = 0; x < cursors[ current_cursor ].w; x++ )
 	ld	bc, #0x0
 00111$:
 	ld	hl, #_current_cursor
@@ -124,7 +124,7 @@ _set_cursor::
 	ld	a, b
 	sub	a, e
 	jr	NC, 00123$
-;paint.c:268: for(y = 0; y < cursors[current_cursor].h; y++) {
+;paint.c:268: for( y = 0; y < cursors[ current_cursor ].h; y++ ) {
 	ldhl	sp,	#4
 	ld	(hl), #0x00
 00108$:
@@ -162,7 +162,7 @@ _set_cursor::
 	ld	a, (hl)
 	sub	a, e
 	jr	NC, 00124$
-;paint.c:271: cursors_data[cursors[current_cursor].data_idx+i]);
+;paint.c:271: cursors_data[ cursors[ current_cursor ].data_idx + i ] );
 	dec	hl
 	dec	hl
 	ld	a, (hl+)
@@ -210,17 +210,17 @@ _set_cursor::
 	ld	(hl), #0x10
 ;paint.c:274: i++;
 	inc	c
-;paint.c:268: for(y = 0; y < cursors[current_cursor].h; y++) {
+;paint.c:268: for( y = 0; y < cursors[ current_cursor ].h; y++ ) {
 	ldhl	sp,	#4
 	inc	(hl)
 	jr	00108$
 00124$:
-;paint.c:267: for(x = 0; x < cursors[current_cursor].w; x++)
+;paint.c:267: for( x = 0; x < cursors[ current_cursor ].w; x++ )
 	inc	b
 	jp	00111$
 00123$:
 00114$:
-;paint.c:277: for(; i < 4; i++) {
+;paint.c:277: for( ; i < 4; i++ ) {
 	ld	a, c
 	sub	a, #0x04
 	jr	NC, 00116$
@@ -239,7 +239,7 @@ _set_cursor::
 	xor	a, a
 	ld	(hl+), a
 	ld	(hl), a
-;paint.c:277: for(; i < 4; i++) {
+;paint.c:277: for( ; i < 4; i++ ) {
 	inc	c
 	jr	00114$
 00116$:
@@ -2349,7 +2349,7 @@ _modes:
 ; ---------------------------------
 _move_cursor::
 	add	sp, #-3
-;paint.c:286: for(x = 0; x < cursors[current_cursor].w; x++)
+;paint.c:286: for( x = 0; x < cursors[ current_cursor ].w; x++ )
 	ldhl	sp,	#2
 	ld	(hl), #0x00
 00108$:
@@ -2369,7 +2369,7 @@ _move_cursor::
 	ld	a, (hl)
 	sub	a, c
 	jr	NC, 00110$
-;paint.c:287: for(y = 0; y < cursors[current_cursor].h; y++)
+;paint.c:287: for( y = 0; y < cursors[ current_cursor ].h; y++ )
 	ld	c, #0x00
 00105$:
 	ld	hl, #_current_cursor
@@ -2399,7 +2399,7 @@ _move_cursor::
 	ld	a, c
 	sub	a, b
 	jr	NC, 00109$
-;paint.c:290: cursor_y+16 - cursors[current_cursor].hot_y + (y<<3));
+;paint.c:290: cursor_y + 16 - cursors[ current_cursor ].hot_y + ( y << 3 ) );
 	ld	a, (#_cursor_y)
 	add	a, #0x10
 	ld	b, a
@@ -2418,7 +2418,7 @@ _move_cursor::
 	add	a, a
 	add	a, b
 	ld	b, a
-;paint.c:289: cursor_x+8 - cursors[current_cursor].hot_x + (x<<3),
+;paint.c:289: cursor_x + 8 - cursors[ current_cursor ].hot_x + ( x << 3 ),
 	ld	a, (#_cursor_x)
 	add	a, #0x08
 	ld	l, a
@@ -2442,13 +2442,13 @@ _move_cursor::
 	add	a, a
 	add	a, e
 	ld	e, a
-;paint.c:288: move_sprite((x<<1)+y,
+;paint.c:288: move_sprite( ( x << 1 ) + y,
 	ld	a, l
 	add	a, a
 	ldhl	sp,	#1
 	add	a, (hl)
 	ld	d, a
-;paint.c:290: cursor_y+16 - cursors[current_cursor].hot_y + (y<<3));
+;paint.c:290: cursor_y + 16 - cursors[ current_cursor ].hot_y + ( y << 3 ) );
 ;C:/gbdk/include/gb/gb.h:1675: OAM_item_t * itm = &shadow_OAM[nb];
 	ld	l, d
 ;	spillPairReg hl
@@ -2466,11 +2466,11 @@ _move_cursor::
 	ld	a, b
 	ld	(hl+), a
 	ld	(hl), e
-;paint.c:287: for(y = 0; y < cursors[current_cursor].h; y++)
+;paint.c:287: for( y = 0; y < cursors[ current_cursor ].h; y++ )
 	inc	c
 	jr	00105$
 00109$:
-;paint.c:286: for(x = 0; x < cursors[current_cursor].w; x++)
+;paint.c:286: for( x = 0; x < cursors[ current_cursor ].w; x++ )
 	ldhl	sp,	#2
 	inc	(hl)
 	jp	00108$
@@ -2483,7 +2483,7 @@ _move_cursor::
 ; Function move_menu_cursor
 ; ---------------------------------
 _move_menu_cursor::
-;paint.c:297: ((icons[menu_cursor_pos].y+icons[menu_cursor_pos].h)<<3) + 12);
+;paint.c:297: ( ( icons[ menu_cursor_pos ].y + icons[ menu_cursor_pos ].h ) << 3 ) + 12 );
 	ld	hl, #_menu_cursor_pos
 	ld	c, (hl)
 	ld	b, #0x00
@@ -2513,7 +2513,7 @@ _move_menu_cursor::
 	add	a, a
 	add	a, #0x0c
 	ld	b, a
-;paint.c:296: ((icons[menu_cursor_pos].x+icons[menu_cursor_pos].w)<<3) + 4,
+;paint.c:296: ( ( icons[ menu_cursor_pos ].x + icons[ menu_cursor_pos ].w ) << 3 ) + 4,
 	ld	l, e
 ;	spillPairReg hl
 ;	spillPairReg hl
@@ -2538,10 +2538,10 @@ _move_menu_cursor::
 	ld	a, b
 	ld	(hl+), a
 	ld	(hl), c
-;paint.c:297: ((icons[menu_cursor_pos].y+icons[menu_cursor_pos].h)<<3) + 12);
+;paint.c:297: ( ( icons[ menu_cursor_pos ].y + icons[ menu_cursor_pos ].h ) << 3 ) + 12 );
 ;paint.c:298: }
 	ret
-;paint.c:300: void set_icon(uint8_t icon, uint8_t selected)
+;paint.c:300: void set_icon( uint8_t icon, uint8_t selected )
 ;	---------------------------------
 ; Function set_icon
 ; ---------------------------------
@@ -2550,7 +2550,7 @@ _set_icon::
 	ld	c, a
 	ldhl	sp,	#13
 	ld	(hl), e
-;paint.c:304: for(x = 0; x < icons[icon].w; x++)
+;paint.c:304: for( x = 0; x < icons[ icon ].w; x++ )
 	ld	b, #0x00
 	ld	l, c
 	ld	h, b
@@ -2588,7 +2588,7 @@ _set_icon::
 	ld	a, (hl)
 	sub	a, c
 	jp	NC, 00109$
-;paint.c:305: for(y = 0; y < icons[icon].h; y++) {
+;paint.c:305: for( y = 0; y < icons[ icon ].h; y++ ) {
 	pop	de
 	push	de
 	ld	hl, #0x0002
@@ -2639,7 +2639,7 @@ _set_icon::
 	ld	a, (hl)
 	sub	a, c
 	jr	NC, 00108$
-;paint.c:306: uint16_t index = icons[icon].data_idx+((uint16_t)x<<1)+y;
+;paint.c:306: uint16_t index = icons[ icon ].data_idx + ( ( uint16_t ) x << 1 ) + y;
 	dec	hl
 	pop	de
 	push	de
@@ -2660,7 +2660,7 @@ _set_icon::
 	ld	l, e
 	ld	h, d
 	add	hl, bc
-;paint.c:310: data_buffer[index]);
+;paint.c:310: data_buffer[ index ] );
 	add	hl, hl
 	add	hl, hl
 	add	hl, hl
@@ -2674,7 +2674,7 @@ _set_icon::
 	ldhl	sp,	#10
 	ld	(hl), e
 	inc	hl
-;paint.c:309: selected ? selected_data[index] : data[index],
+;paint.c:309: selected ? selected_data[ index ] : data[ index ],
 	ld	(hl+), a
 	inc	hl
 	ld	a, (hl)
@@ -2689,7 +2689,7 @@ _set_icon::
 00112$:
 	ld	c, l
 	ld	b, h
-;paint.c:308: icons[icon].y + y,
+;paint.c:308: icons[ icon ].y + y,
 	ldhl	sp,#4
 	ld	a, (hl+)
 	ld	e, a
@@ -2699,7 +2699,7 @@ _set_icon::
 	add	a, (hl)
 	ldhl	sp,	#12
 	ld	(hl), a
-;paint.c:307: switch_data(icons[icon].x + x,
+;paint.c:307: switch_data( icons[ icon ].x + x,
 	ldhl	sp,#6
 	ld	a, (hl+)
 	ld	e, a
@@ -2723,12 +2723,12 @@ _set_icon::
 	inc	sp
 	call	_switch_data
 	add	sp, #6
-;paint.c:305: for(y = 0; y < icons[icon].h; y++) {
+;paint.c:305: for( y = 0; y < icons[ icon ].h; y++ ) {
 	ldhl	sp,	#15
 	inc	(hl)
 	jr	00104$
 00108$:
-;paint.c:304: for(x = 0; x < icons[icon].w; x++)
+;paint.c:304: for( x = 0; x < icons[ icon ].w; x++ )
 	ldhl	sp,	#14
 	inc	(hl)
 	jp	00107$
@@ -2736,7 +2736,7 @@ _set_icon::
 ;paint.c:312: }
 	add	sp, #16
 	ret
-;paint.c:314: void change_icon(uint8_t icon, uint8_t selected)
+;paint.c:314: void change_icon( uint8_t icon, uint8_t selected )
 ;	---------------------------------
 ; Function change_icon
 ; ---------------------------------
@@ -2745,7 +2745,7 @@ _change_icon::
 	ld	c, a
 	ldhl	sp,	#13
 	ld	(hl), e
-;paint.c:318: for(x = 0; x < icons[icon].w; x++)
+;paint.c:318: for( x = 0; x < icons[ icon ].w; x++ )
 	ld	b, #0x00
 	ld	l, c
 	ld	h, b
@@ -2789,7 +2789,7 @@ _change_icon::
 	ld	a, (hl)
 	sub	a, c
 	jp	NC, 00109$
-;paint.c:319: for(y = 0; y < icons[icon].h; y++)
+;paint.c:319: for( y = 0; y < icons[ icon ].h; y++ )
 	ldhl	sp,#2
 	ld	a, (hl+)
 	ld	e, a
@@ -2846,7 +2846,7 @@ _change_icon::
 	ld	a, (hl)
 	sub	a, c
 	jr	NC, 00108$
-;paint.c:323: selected_data[icons[icon].data_idx+((uint16_t)x<<1)+y] :
+;paint.c:323: selected_data[ icons[ icon ].data_idx + ( ( uint16_t ) x << 1 ) + y ] :
 	ldhl	sp,#2
 	ld	a, (hl+)
 	ld	e, a
@@ -2882,12 +2882,12 @@ _change_icon::
 	ld	(hl), c
 	inc	hl
 	ld	(hl), a
-;paint.c:322: (selected ?
+;paint.c:322: ( selected ?
 	ldhl	sp,	#13
 	ld	a, (hl)
 	or	a, a
 	jr	Z, 00111$
-;paint.c:323: selected_data[icons[icon].data_idx+((uint16_t)x<<1)+y] :
+;paint.c:323: selected_data[ icons[ icon ].data_idx + ( ( uint16_t ) x << 1 ) + y ] :
 	pop	de
 	push	de
 	ld	hl, #_selected_data
@@ -2896,7 +2896,7 @@ _change_icon::
 	ld	b, h
 	jr	00112$
 00111$:
-;paint.c:324: data[icons[icon].data_idx+((uint16_t)x<<1)+y]),
+;paint.c:324: data[ icons[ icon ].data_idx + ( ( uint16_t ) x << 1 ) + y ] ),
 	ld	de, #_data
 	pop	hl
 	push	hl
@@ -2904,7 +2904,7 @@ _change_icon::
 	ld	c, l
 	ld	b, h
 00112$:
-;paint.c:321: icons[icon].y + y,
+;paint.c:321: icons[ icon ].y + y,
 	ldhl	sp,#6
 	ld	a, (hl+)
 	ld	e, a
@@ -2914,7 +2914,7 @@ _change_icon::
 	add	a, (hl)
 	ldhl	sp,	#12
 	ld	(hl), a
-;paint.c:320: switch_data(icons[icon].x + x,
+;paint.c:320: switch_data( icons[ icon ].x + x,
 	ldhl	sp,#8
 	ld	a, (hl+)
 	ld	e, a
@@ -2936,12 +2936,12 @@ _change_icon::
 	inc	sp
 	call	_switch_data
 	add	sp, #6
-;paint.c:319: for(y = 0; y < icons[icon].h; y++)
+;paint.c:319: for( y = 0; y < icons[ icon ].h; y++ )
 	ldhl	sp,	#15
 	inc	(hl)
 	jr	00104$
 00108$:
-;paint.c:318: for(x = 0; x < icons[icon].w; x++)
+;paint.c:318: for( x = 0; x < icons[ icon ].w; x++ )
 	ldhl	sp,	#14
 	inc	(hl)
 	jp	00107$
@@ -2949,14 +2949,14 @@ _change_icon::
 ;paint.c:326: }
 	add	sp, #16
 	ret
-;paint.c:328: void reset_icon(uint8_t icon)
+;paint.c:328: void reset_icon( uint8_t icon )
 ;	---------------------------------
 ; Function reset_icon
 ; ---------------------------------
 _reset_icon::
 	add	sp, #-13
 	ld	c, a
-;paint.c:332: for(x = 0; x < icons[icon].w; x++)
+;paint.c:332: for( x = 0; x < icons[ icon ].w; x++ )
 	ld	b, #0x00
 	ld	l, c
 	ld	h, b
@@ -2994,7 +2994,7 @@ _reset_icon::
 	ld	a, (hl)
 	sub	a, c
 	jp	NC, 00109$
-;paint.c:333: for(y = 0; y < icons[icon].h; y++)
+;paint.c:333: for( y = 0; y < icons[ icon ].h; y++ )
 	pop	de
 	push	de
 	ld	hl, #0x0002
@@ -3045,7 +3045,7 @@ _reset_icon::
 	ld	a, (hl)
 	sub	a, c
 	jr	NC, 00108$
-;paint.c:336: data_buffer[icons[icon].data_idx+(x<<1)+y],
+;paint.c:336: data_buffer[ icons[ icon ].data_idx + ( x << 1 ) + y ],
 	dec	hl
 	pop	de
 	push	de
@@ -3070,7 +3070,7 @@ _reset_icon::
 	add	hl, de
 	ld	c, l
 	ld	b, h
-;paint.c:335: icons[icon].y + y,
+;paint.c:335: icons[ icon ].y + y,
 	ldhl	sp,#4
 	ld	a, (hl+)
 	ld	e, a
@@ -3081,7 +3081,7 @@ _reset_icon::
 	dec	hl
 	dec	hl
 	ld	(hl), a
-;paint.c:334: switch_data(icons[icon].x + x,
+;paint.c:334: switch_data( icons[ icon ].x + x,
 	ldhl	sp,#6
 	ld	a, (hl+)
 	ld	e, a
@@ -3102,12 +3102,12 @@ _reset_icon::
 	inc	sp
 	call	_switch_data
 	add	sp, #6
-;paint.c:333: for(y = 0; y < icons[icon].h; y++)
+;paint.c:333: for( y = 0; y < icons[ icon ].h; y++ )
 	ldhl	sp,	#12
 	inc	(hl)
 	jr	00104$
 00108$:
-;paint.c:332: for(x = 0; x < icons[icon].w; x++)
+;paint.c:332: for( x = 0; x < icons[ icon ].w; x++ )
 	ldhl	sp,	#11
 	inc	(hl)
 	jp	00107$
@@ -3138,7 +3138,7 @@ _splash::
 	or	a, #0x02
 	ldh	(_LCDC_REG + 0), a
 00108$:
-;paint.c:351: for(; cursor_x < 120; cursor_x++) {
+;paint.c:351: for( ; cursor_x < 120; cursor_x++ ) {
 	ld	a, (#_cursor_x)
 	sub	a, #0x78
 	jr	NC, 00111$
@@ -3146,7 +3146,7 @@ _splash::
 	call	_wait_vbl_done
 ;paint.c:353: move_cursor();
 	call	_move_cursor
-;paint.c:354: plot(cursor_x, cursor_y, BLACK, SOLID);
+;paint.c:354: plot( cursor_x, cursor_y, BLACK, SOLID );
 	ld	hl, #0x03
 	push	hl
 	ld	a, (#_cursor_y)
@@ -3156,12 +3156,12 @@ _splash::
 	push	hl
 	call	_plot
 	add	sp, #4
-;paint.c:351: for(; cursor_x < 120; cursor_x++) {
+;paint.c:351: for( ; cursor_x < 120; cursor_x++ ) {
 	ld	hl, #_cursor_x
 	inc	(hl)
 	jr	00108$
 00111$:
-;paint.c:356: for(; cursor_y < 94; cursor_y++) {
+;paint.c:356: for( ; cursor_y < 94; cursor_y++ ) {
 	ld	a, (#_cursor_y)
 	sub	a, #0x5e
 	jr	NC, 00114$
@@ -3169,7 +3169,7 @@ _splash::
 	call	_wait_vbl_done
 ;paint.c:358: move_cursor();
 	call	_move_cursor
-;paint.c:359: plot(cursor_x, cursor_y, BLACK, SOLID);
+;paint.c:359: plot( cursor_x, cursor_y, BLACK, SOLID );
 	ld	hl, #0x03
 	push	hl
 	ld	a, (#_cursor_y)
@@ -3179,12 +3179,12 @@ _splash::
 	push	hl
 	call	_plot
 	add	sp, #4
-;paint.c:356: for(; cursor_y < 94; cursor_y++) {
+;paint.c:356: for( ; cursor_y < 94; cursor_y++ ) {
 	ld	hl, #_cursor_y
 	inc	(hl)
 	jr	00111$
 00114$:
-;paint.c:361: for(; cursor_x > 40; cursor_x--) {
+;paint.c:361: for( ; cursor_x > 40; cursor_x-- ) {
 	ld	a, #0x28
 	ld	hl, #_cursor_x
 	sub	a, (hl)
@@ -3193,7 +3193,7 @@ _splash::
 	call	_wait_vbl_done
 ;paint.c:363: move_cursor();
 	call	_move_cursor
-;paint.c:364: plot(cursor_x, cursor_y, BLACK, SOLID);
+;paint.c:364: plot( cursor_x, cursor_y, BLACK, SOLID );
 	ld	hl, #0x03
 	push	hl
 	ld	a, (#_cursor_y)
@@ -3203,12 +3203,12 @@ _splash::
 	push	hl
 	call	_plot
 	add	sp, #4
-;paint.c:361: for(; cursor_x > 40; cursor_x--) {
+;paint.c:361: for( ; cursor_x > 40; cursor_x-- ) {
 	ld	hl, #_cursor_x
 	dec	(hl)
 	jr	00114$
 00117$:
-;paint.c:366: for(; cursor_y > 50; cursor_y--) {
+;paint.c:366: for( ; cursor_y > 50; cursor_y-- ) {
 	ld	a, #0x32
 	ld	hl, #_cursor_y
 	sub	a, (hl)
@@ -3217,7 +3217,7 @@ _splash::
 	call	_wait_vbl_done
 ;paint.c:368: move_cursor();
 	call	_move_cursor
-;paint.c:369: plot(cursor_x, cursor_y, BLACK, SOLID);
+;paint.c:369: plot( cursor_x, cursor_y, BLACK, SOLID );
 	ld	hl, #0x03
 	push	hl
 	ld	a, (#_cursor_y)
@@ -3227,15 +3227,15 @@ _splash::
 	push	hl
 	call	_plot
 	add	sp, #4
-;paint.c:366: for(; cursor_y > 50; cursor_y--) {
+;paint.c:366: for( ; cursor_y > 50; cursor_y-- ) {
 	ld	hl, #_cursor_y
 	dec	(hl)
 	jr	00117$
 00104$:
-;paint.c:371: cursor_x = 160/2;
+;paint.c:371: cursor_x = 160 / 2;
 	ld	hl, #_cursor_x
 	ld	(hl), #0x50
-;paint.c:372: cursor_y = 144/2;
+;paint.c:372: cursor_y = 144 / 2;
 	ld	hl, #_cursor_y
 	ld	(hl), #0x48
 ;paint.c:373: current_cursor = FILL;
@@ -3245,13 +3245,13 @@ _splash::
 	call	_set_cursor
 ;paint.c:375: move_cursor();
 	call	_move_cursor
-;paint.c:377: for(y = 51; y < 94; y++)
+;paint.c:377: for( y = 51; y < 94; y++ )
 	ld	c, #0x33
-;paint.c:378: for(x = 41; x < 120; x++)
+;paint.c:378: for( x = 41; x < 120; x++ )
 00133$:
 	ld	b, #0x29
 00119$:
-;paint.c:379: plot(x, y, LTGREY, SOLID);
+;paint.c:379: plot( x, y, LTGREY, SOLID );
 	push	bc
 	xor	a, a
 	ld	h, a
@@ -3265,12 +3265,12 @@ _splash::
 	call	_plot
 	add	sp, #4
 	pop	bc
-;paint.c:378: for(x = 41; x < 120; x++)
+;paint.c:378: for( x = 41; x < 120; x++ )
 	inc	b
 	ld	a, b
 	sub	a, #0x78
 	jr	C, 00119$
-;paint.c:377: for(y = 51; y < 94; y++)
+;paint.c:377: for( y = 51; y < 94; y++ )
 	inc	c
 	ld	a, c
 	sub	a, #0x5e
@@ -3286,7 +3286,7 @@ _menu::
 ;paint.c:390: slowdown = 50;
 	ldhl	sp,	#0
 	ld	(hl), #0x32
-;paint.c:392: for(i = 0; i < NB_TOOLS; i++)
+;paint.c:392: for( i = 0; i < NB_TOOLS; i++ )
 	ld	l, #0x00
 ;	spillPairReg hl
 ;	spillPairReg hl
@@ -3325,7 +3325,7 @@ _menu::
 	sub	a, d
 	jr	Z, 00146$
 00286$:
-;paint.c:396: i == FIRST_MODE + current_mode);
+;paint.c:396: i == FIRST_MODE + current_mode );
 	push	hl
 	ld	a, (#_current_mode)
 	pop	hl
@@ -3347,12 +3347,12 @@ _menu::
 00146$:
 	ld	e, #0x01
 00147$:
-;paint.c:393: set_icon(i,
+;paint.c:393: set_icon( i,
 	push	hl
 	ld	a, l
 	call	_set_icon
 	pop	hl
-;paint.c:392: for(i = 0; i < NB_TOOLS; i++)
+;paint.c:392: for( i = 0; i < NB_TOOLS; i++ )
 	inc	l
 	ld	a, l
 	sub	a, #0x12
@@ -3382,17 +3382,17 @@ _menu::
 	call	_joypad
 	ldhl	sp,	#2
 	ld	(hl), a
-;paint.c:407: if(key & (J_UP|J_DOWN|J_LEFT|J_RIGHT)) {
+;paint.c:407: if( key & ( J_UP | J_DOWN | J_LEFT | J_RIGHT ) ) {
 	ld	a, (hl)
 	and	a, #0x0f
 	jp	Z,00115$
-;paint.c:408: if(key & J_UP)
+;paint.c:408: if( key & J_UP )
 	push	hl
 	ldhl	sp,	#4
 	bit	2, (hl)
 	pop	hl
 	jr	Z, 00103$
-;paint.c:409: menu_cursor_pos = icons[menu_cursor_pos].up;
+;paint.c:409: menu_cursor_pos = icons[ menu_cursor_pos ].up;
 	ld	hl, #_menu_cursor_pos
 	ld	c, (hl)
 	ld	b, #0x00
@@ -3410,13 +3410,13 @@ _menu::
 	ld	hl, #_menu_cursor_pos
 	ld	(hl), a
 00103$:
-;paint.c:410: if(key & J_DOWN)
+;paint.c:410: if( key & J_DOWN )
 	push	hl
 	ldhl	sp,	#4
 	bit	3, (hl)
 	pop	hl
 	jr	Z, 00105$
-;paint.c:411: menu_cursor_pos = icons[menu_cursor_pos].down;
+;paint.c:411: menu_cursor_pos = icons[ menu_cursor_pos ].down;
 	ld	hl, #_menu_cursor_pos
 	ld	c, (hl)
 	ld	b, #0x00
@@ -3434,13 +3434,13 @@ _menu::
 	ld	hl, #_menu_cursor_pos
 	ld	(hl), a
 00105$:
-;paint.c:412: if(key & J_LEFT)
+;paint.c:412: if( key & J_LEFT )
 	push	hl
 	ldhl	sp,	#4
 	bit	1, (hl)
 	pop	hl
 	jr	Z, 00107$
-;paint.c:413: menu_cursor_pos = icons[menu_cursor_pos].left;
+;paint.c:413: menu_cursor_pos = icons[ menu_cursor_pos ].left;
 	ld	hl, #_menu_cursor_pos
 	ld	c, (hl)
 	ld	b, #0x00
@@ -3458,13 +3458,13 @@ _menu::
 	ld	hl, #_menu_cursor_pos
 	ld	(hl), a
 00107$:
-;paint.c:414: if(key & J_RIGHT)
+;paint.c:414: if( key & J_RIGHT )
 	push	hl
 	ldhl	sp,	#4
 	bit	0, (hl)
 	pop	hl
 	jr	Z, 00109$
-;paint.c:415: menu_cursor_pos = icons[menu_cursor_pos].right;
+;paint.c:415: menu_cursor_pos = icons[ menu_cursor_pos ].right;
 	ld	hl, #_menu_cursor_pos
 	ld	c, (hl)
 	ld	b, #0x00
@@ -3483,7 +3483,7 @@ _menu::
 00109$:
 ;paint.c:416: move_menu_cursor();
 	call	_move_menu_cursor
-;paint.c:417: while(slowdown && key == joypad()) {
+;paint.c:417: while( slowdown && key == joypad() ) {
 	ldhl	sp,	#0
 	ld	c, (hl)
 00111$:
@@ -3507,39 +3507,39 @@ _menu::
 	ld	(hl), #0x0a
 	jr	00116$
 00115$:
-;paint.c:423: slowdown = 50;
+;paint.c:424: slowdown = 50;
 	ldhl	sp,	#0
 	ld	(hl), #0x32
 00116$:
-;paint.c:424: if(key & J_A) {
+;paint.c:425: if( key & J_A ) {
 	push	hl
 	ldhl	sp,	#4
 	bit	4, (hl)
 	pop	hl
 	jp	Z,00136$
-;paint.c:425: if( /* menu_cursor_pos >= FIRST_TOOL && */ menu_cursor_pos <= LAST_TOOL) {
+;paint.c:426: if( /* menu_cursor_pos >= FIRST_TOOL && */ menu_cursor_pos <= LAST_TOOL ) {
 	ld	a, #0x09
 	ld	hl, #_menu_cursor_pos
 	sub	a, (hl)
 	jr	C, 00131$
-;paint.c:426: if(menu_cursor_pos != /* FIRST_TOOL + */ current_tool) {
+;paint.c:427: if( menu_cursor_pos != /* FIRST_TOOL + */ current_tool ) {
 	ld	a, (hl)
 	ld	hl, #_current_tool
 	sub	a, (hl)
 	jp	Z,00136$
-;paint.c:427: change_icon(/* FIRST_TOOL + */ current_tool, UNSELECTED);
+;paint.c:428: change_icon(/* FIRST_TOOL + */ current_tool, UNSELECTED );
 	ld	e, #0x00
 	ld	a, (#_current_tool)
 	call	_change_icon
-;paint.c:428: current_tool = menu_cursor_pos /* - FIRST_TOOL */;
+;paint.c:429: current_tool = menu_cursor_pos /* - FIRST_TOOL */;
 	ld	a, (#_menu_cursor_pos)
 	ld	hl, #_current_tool
 	ld	(hl), a
-;paint.c:429: change_icon(/* FIRST_TOOL + */ current_tool, SELECTED);
+;paint.c:430: change_icon(/* FIRST_TOOL + */ current_tool, SELECTED );
 	ld	e, #0x01
 	ld	a, (hl)
 	call	_change_icon
-;paint.c:430: cursor = icons[/* FIRST_TOOL + */ current_tool].cursor;
+;paint.c:431: cursor = icons[/* FIRST_TOOL + */ current_tool ].cursor;
 	ld	hl, #_current_tool
 	ld	c, (hl)
 	ld	b, #0x00
@@ -3558,12 +3558,12 @@ _menu::
 	ld	(hl), a
 	jp	00136$
 00131$:
-;paint.c:433: if(menu_cursor_pos != FIRST_COLOR + current_color) {
+;paint.c:435: if( menu_cursor_pos != FIRST_COLOR + current_color ) {
 	ld	a, (#_menu_cursor_pos)
 	ldhl	sp,	#3
 	ld	(hl+), a
 	ld	(hl), #0x00
-;paint.c:432: } else if(menu_cursor_pos >= FIRST_COLOR && menu_cursor_pos <= LAST_COLOR) {
+;paint.c:434: else if( menu_cursor_pos >= FIRST_COLOR && menu_cursor_pos <= LAST_COLOR ) {
 	ld	hl, #_menu_cursor_pos
 	ld	a, (hl)
 	sub	a, #0x0a
@@ -3571,7 +3571,7 @@ _menu::
 	ld	a, #0x0d
 	sub	a, (hl)
 	jr	C, 00127$
-;paint.c:433: if(menu_cursor_pos != FIRST_COLOR + current_color) {
+;paint.c:435: if( menu_cursor_pos != FIRST_COLOR + current_color ) {
 	ld	a, (#_current_color)
 	ldhl	sp,	#5
 	ld	(hl+), a
@@ -3601,24 +3601,24 @@ _menu::
 	sub	a, (hl)
 	jr	Z, 00136$
 00298$:
-;paint.c:434: change_icon(FIRST_COLOR + current_color, UNSELECTED);
+;paint.c:436: change_icon( FIRST_COLOR + current_color, UNSELECTED );
 	ld	a, (#_current_color)
 	add	a, #0x0a
 	ld	e, #0x00
 	call	_change_icon
-;paint.c:435: current_color = menu_cursor_pos - FIRST_COLOR;
+;paint.c:437: current_color = menu_cursor_pos - FIRST_COLOR;
 	ld	a, (#_menu_cursor_pos)
 	add	a, #0xf6
 	ld	hl, #_current_color
 	ld	(hl), a
-;paint.c:436: change_icon(FIRST_COLOR + current_color, SELECTED);
+;paint.c:438: change_icon( FIRST_COLOR + current_color, SELECTED );
 	ld	a, (hl)
 	add	a, #0x0a
 	ld	e, #0x01
 	call	_change_icon
 	jr	00136$
 00127$:
-;paint.c:438: } else if(menu_cursor_pos >= FIRST_MODE && menu_cursor_pos <= LAST_MODE) {
+;paint.c:441: else if( menu_cursor_pos >= FIRST_MODE && menu_cursor_pos <= LAST_MODE ) {
 	ld	hl, #_menu_cursor_pos
 	ld	a, (hl)
 	sub	a, #0x0e
@@ -3626,7 +3626,7 @@ _menu::
 	ld	a, #0x11
 	sub	a, (hl)
 	jr	C, 00136$
-;paint.c:439: if(menu_cursor_pos != FIRST_MODE + current_mode) {
+;paint.c:442: if( menu_cursor_pos != FIRST_MODE + current_mode ) {
 	ld	a, (#_current_mode)
 	ldhl	sp,	#5
 	ld	(hl+), a
@@ -3656,131 +3656,131 @@ _menu::
 	sub	a, (hl)
 	jr	Z, 00136$
 00299$:
-;paint.c:440: change_icon(FIRST_MODE + current_mode, UNSELECTED);
+;paint.c:443: change_icon( FIRST_MODE + current_mode, UNSELECTED );
 	ld	a, (#_current_mode)
 	add	a, #0x0e
 	ld	e, #0x00
 	call	_change_icon
-;paint.c:441: current_mode = menu_cursor_pos - FIRST_MODE;
+;paint.c:444: current_mode = menu_cursor_pos - FIRST_MODE;
 	ld	a, (#_menu_cursor_pos)
 	add	a, #0xf2
 	ld	hl, #_current_mode
 	ld	(hl), a
-;paint.c:442: change_icon(FIRST_MODE + current_mode, SELECTED);
+;paint.c:445: change_icon( FIRST_MODE + current_mode, SELECTED );
 	ld	a, (hl)
 	add	a, #0x0e
 	ld	e, #0x01
 	call	_change_icon
 00136$:
-;paint.c:446: } while(key != J_SELECT);
+;paint.c:449: } while( key != J_SELECT );
 	ldhl	sp,	#2
 	ld	a, (hl)
 	sub	a, #0x40
 	jp	NZ,00135$
-;paint.c:447: waitpadup();
+;paint.c:450: waitpadup();
 	call	_waitpadup
-;paint.c:448: for(i = 0; i < NB_TOOLS; i++)
+;paint.c:451: for( i = 0; i < NB_TOOLS; i++ )
 	ld	c, #0x00
 00141$:
-;paint.c:449: reset_icon(i);
+;paint.c:452: reset_icon( i );
 	push	bc
 	ld	a, c
 	call	_reset_icon
 	pop	bc
-;paint.c:448: for(i = 0; i < NB_TOOLS; i++)
+;paint.c:451: for( i = 0; i < NB_TOOLS; i++ )
 	inc	c
 	ld	a, c
 	sub	a, #0x12
 	jr	C, 00141$
-;paint.c:450: HIDE_SPRITES;
+;paint.c:453: HIDE_SPRITES;
 	ldh	a, (_LCDC_REG + 0)
 	and	a, #0xfd
 	ldh	(_LCDC_REG + 0), a
-;paint.c:451: current_cursor = cursor;
+;paint.c:454: current_cursor = cursor;
 	ldhl	sp,	#1
 	ld	a, (hl)
 	ld	(#_current_cursor),a
-;paint.c:452: }
+;paint.c:455: }
 	add	sp, #9
 	ret
-;paint.c:454: void run()
+;paint.c:457: void run()
 ;	---------------------------------
 ; Function run
 ; ---------------------------------
 _run::
 	add	sp, #-4
-;paint.c:460: slowdown = 10;
+;paint.c:463: slowdown = 10;
 	ldhl	sp,	#0
-;paint.c:461: drawn = erased = 0;
+;paint.c:464: drawn = erased = 0;
 	ld	a, #0x0a
 	ld	(hl+), a
 	inc	hl
 	xor	a, a
 	ld	(hl+), a
 	ld	(hl), a
-;paint.c:463: set_cursor();
+;paint.c:466: set_cursor();
 	call	_set_cursor
-;paint.c:464: move_cursor();
+;paint.c:467: move_cursor();
 	call	_move_cursor
-;paint.c:465: SHOW_SPRITES;
+;paint.c:468: SHOW_SPRITES;
 	ldh	a, (_LCDC_REG + 0)
 	or	a, #0x02
 	ldh	(_LCDC_REG + 0), a
-;paint.c:467: while(1) {
+;paint.c:470: while( 1 ) {
 00133$:
-;paint.c:468: wait_vbl_done();
+;paint.c:471: wait_vbl_done();
 	call	_wait_vbl_done
-;paint.c:469: key = joypad();
+;paint.c:472: key = joypad();
 	call	_joypad
-;paint.c:470: if(key & (J_UP|J_DOWN|J_LEFT|J_RIGHT)) {
+;paint.c:473: if( key & ( J_UP | J_DOWN | J_LEFT | J_RIGHT ) ) {
 	ld	b, a
 	and	a, #0x0f
 	jr	Z, 00118$
-;paint.c:471: if(key & J_UP && cursor_y > 0)
+;paint.c:474: if( key & J_UP && cursor_y > 0 )
 	bit	2, b
 	jr	Z, 00102$
 	ld	hl, #_cursor_y
 	ld	a, (hl)
 	or	a, a
 	jr	Z, 00102$
-;paint.c:472: cursor_y--;
+;paint.c:475: cursor_y--;
 	dec	(hl)
 00102$:
-;paint.c:473: if(key & J_DOWN && cursor_y < 143)
+;paint.c:476: if( key & J_DOWN && cursor_y < 143 )
 	bit	3, b
 	jr	Z, 00105$
 	ld	hl, #_cursor_y
 	ld	a, (hl)
 	sub	a, #0x8f
 	jr	NC, 00105$
-;paint.c:474: cursor_y++;
+;paint.c:477: cursor_y++;
 	inc	(hl)
 00105$:
-;paint.c:475: if(key & J_LEFT && cursor_x > 0)
+;paint.c:478: if( key & J_LEFT && cursor_x > 0 )
 	bit	1, b
 	jr	Z, 00108$
 	ld	hl, #_cursor_x
 	ld	a, (hl)
 	or	a, a
 	jr	Z, 00108$
-;paint.c:476: cursor_x--;
+;paint.c:479: cursor_x--;
 	dec	(hl)
 00108$:
-;paint.c:477: if(key & J_RIGHT && cursor_x < 159)
+;paint.c:480: if( key & J_RIGHT && cursor_x < 159 )
 	bit	0, b
 	jr	Z, 00111$
 	ld	hl, #_cursor_x
 	ld	a, (hl)
 	sub	a, #0x9f
 	jr	NC, 00111$
-;paint.c:478: cursor_x++;
+;paint.c:481: cursor_x++;
 	inc	(hl)
 00111$:
-;paint.c:479: move_cursor();
+;paint.c:482: move_cursor();
 	push	bc
 	call	_move_cursor
 	pop	bc
-;paint.c:480: while(slowdown && key == joypad()) {
+;paint.c:483: while( slowdown && key == joypad() ) {
 	ldhl	sp,	#0
 	ld	c, (hl)
 00114$:
@@ -3792,15 +3792,15 @@ _run::
 	ld	a, b
 	sub	a, e
 	jr	NZ, 00116$
-;paint.c:481: wait_vbl_done();
+;paint.c:484: wait_vbl_done();
 	call	_wait_vbl_done
-;paint.c:482: slowdown--;
+;paint.c:485: slowdown--;
 	dec	c
 	jr	00114$
 00116$:
-;paint.c:484: slowdown = 1;
+;paint.c:487: slowdown = 1;
 	ldhl	sp,	#0
-;paint.c:485: drawn = erased = 0;
+;paint.c:488: drawn = erased = 0;
 	ld	a, #0x01
 	ld	(hl+), a
 	inc	hl
@@ -3809,29 +3809,29 @@ _run::
 	ld	(hl), a
 	jr	00119$
 00118$:
-;paint.c:487: slowdown = 10;
+;paint.c:491: slowdown = 10;
 	ldhl	sp,	#0
 	ld	(hl), #0x0a
 00119$:
-;paint.c:488: if(key & J_SELECT) {
+;paint.c:492: if( key & J_SELECT ) {
 	bit	6, b
 	jr	Z, 00121$
-;paint.c:489: HIDE_SPRITES;
+;paint.c:493: HIDE_SPRITES;
 	ldh	a, (_LCDC_REG + 0)
 	and	a, #0xfd
 	ldh	(_LCDC_REG + 0), a
-;paint.c:490: menu();
+;paint.c:494: menu();
 	push	bc
 	call	_menu
 	call	_set_cursor
 	call	_move_cursor
 	pop	bc
-;paint.c:493: SHOW_SPRITES;
+;paint.c:497: SHOW_SPRITES;
 	ldh	a, (_LCDC_REG + 0)
 	or	a, #0x02
 	ldh	(_LCDC_REG + 0), a
 00121$:
-;paint.c:495: if((key & (J_A|J_B)) == J_A) {
+;paint.c:499: if( ( key & ( J_A | J_B ) ) == J_A ) {
 	ld	c, b
 	ld	a, c
 	and	a, #0x30
@@ -3841,14 +3841,14 @@ _run::
 	sub	a, #0x10
 	or	a, d
 	jr	NZ, 00125$
-;paint.c:496: if(!drawn) {
+;paint.c:500: if( !drawn ) {
 	ldhl	sp,	#3
 	ld	a, (hl)
 	or	a, a
 	jr	NZ, 00126$
-;paint.c:497: drawn++;
+;paint.c:501: drawn++;
 	inc	(hl)
-;paint.c:498: plot(cursor_x, cursor_y, colors[current_color], modes[current_mode]);
+;paint.c:502: plot( cursor_x, cursor_y, colors[ current_color ], modes[ current_mode ] );
 	ld	bc, #_modes+0
 	ld	a, c
 	ld	hl, #_current_mode
@@ -3888,23 +3888,23 @@ _run::
 	pop	de
 	jr	00126$
 00125$:
-;paint.c:501: drawn = 0;
+;paint.c:506: drawn = 0;
 	ldhl	sp,	#3
 	ld	(hl), #0x00
 00126$:
-;paint.c:502: if((key & (J_A|J_B)) == J_B) {
+;paint.c:507: if( ( key & ( J_A | J_B ) ) == J_B ) {
 	ld	a, e
 	sub	a, #0x20
 	or	a, d
 	jr	NZ, 00130$
-;paint.c:503: if(!erased) {
+;paint.c:508: if( !erased ) {
 	ldhl	sp,	#2
 	ld	a, (hl)
 	or	a, a
 	jp	NZ, 00133$
-;paint.c:504: erased++;
+;paint.c:509: erased++;
 	inc	(hl)
-;paint.c:505: plot(cursor_x, cursor_y, WHITE, SOLID);
+;paint.c:510: plot( cursor_x, cursor_y, WHITE, SOLID );
 	xor	a, a
 	rrca
 	push	af
@@ -3917,46 +3917,46 @@ _run::
 	add	sp, #4
 	jp	00133$
 00130$:
-;paint.c:508: erased = 0;
+;paint.c:514: erased = 0;
 	ldhl	sp,	#2
 	ld	(hl), #0x00
 	jp	00133$
-;paint.c:510: }
+;paint.c:516: }
 	add	sp, #4
 	ret
-;paint.c:512: void main()
+;paint.c:518: void main()
 ;	---------------------------------
 ; Function main
 ; ---------------------------------
 _main::
-;paint.c:515: OBP1_REG = 0xE0U;
+;paint.c:521: OBP1_REG = 0xE0U;
 	ld	a, #0xe0
 	ldh	(_OBP1_REG + 0), a
-;paint.c:517: splash();
+;paint.c:523: splash();
 	call	_splash
-;paint.c:519: current_tool = 0;
+;paint.c:525: current_tool = 0;
 	ld	hl, #_current_tool
 	ld	(hl), #0x00
-;paint.c:520: current_color = BLACK;
+;paint.c:526: current_color = BLACK;
 	ld	hl, #_current_color
 	ld	(hl), #0x03
-;paint.c:521: current_mode = SOLID;
+;paint.c:527: current_mode = SOLID;
 	ld	hl, #_current_mode
 	ld	(hl), #0x00
-;paint.c:522: current_cursor = PEN;
+;paint.c:528: current_cursor = PEN;
 	ld	hl, #_current_cursor
 	ld	(hl), #0x01
-;paint.c:523: menu_cursor_pos = 0;
+;paint.c:529: menu_cursor_pos = 0;
 	ld	hl, #_menu_cursor_pos
 	ld	(hl), #0x00
-;paint.c:524: cursor_x = 160/2;
+;paint.c:530: cursor_x = 160 / 2;
 	ld	hl, #_cursor_x
 	ld	(hl), #0x50
-;paint.c:525: cursor_y = 144/2;
+;paint.c:531: cursor_y = 144 / 2;
 	ld	hl, #_cursor_y
 	ld	(hl), #0x48
-;paint.c:527: run();
-;paint.c:528: }
+;paint.c:533: run();
+;paint.c:534: }
 	jp	_run
 	.area _CODE
 	.area _INITIALIZER

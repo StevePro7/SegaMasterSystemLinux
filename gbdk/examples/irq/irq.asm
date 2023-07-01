@@ -89,19 +89,19 @@ _tim::
 _print_counter::
 ;irq.c:30: }
 	di
-;irq.c:29: cnt = tim_cnt; 
+;irq.c:29: cnt = tim_cnt;
 	ld	hl, #_tim_cnt
 	ld	a, (hl+)
 	ld	c, a
 	ld	b, (hl)
 	ei
-;irq.c:32: printf(" TIM %u", cnt);
+;irq.c:32: printf( " TIM %u", cnt );
 	push	bc
 	ld	de, #___str_0
 	push	de
 	call	_printf
 	add	sp, #4
-;irq.c:33: gotoxy(9, posy());
+;irq.c:33: gotoxy( 9, posy() );
 	call	_posy
 	ld	h, e
 	ld	l, #0x09
@@ -110,13 +110,13 @@ _print_counter::
 	pop	hl
 ;irq.c:38: }
 	di
-;irq.c:37: cnt = vbl_cnt; 
+;irq.c:37: cnt = vbl_cnt;
 	ld	hl, #_vbl_cnt
 	ld	a, (hl+)
 	ld	c, a
 	ld	b, (hl)
 	ei
-;irq.c:40: printf("- VBL %u\n", cnt);
+;irq.c:40: printf( "- VBL %u\n", cnt );
 	push	bc
 	ld	de, #___str_1
 	push	de
@@ -147,12 +147,12 @@ _main::
 	ld	hl, #_vbl_cnt
 	ld	(hl+), a
 	ld	(hl), a
-;irq.c:48: add_VBL(vbl);
+;irq.c:48: add_VBL( vbl );
 	ld	de, #_vbl
 	push	de
 	call	_add_VBL
 	pop	hl
-;irq.c:49: add_TIM(tim);
+;irq.c:49: add_TIM( tim );
 	ld	de, #_tim
 	push	de
 	call	_add_TIM
@@ -164,17 +164,17 @@ _main::
 ;irq.c:55: TAC_REG = 0x04U;
 	ld	a, #0x04
 	ldh	(_TAC_REG + 0), a
-;irq.c:57: set_interrupts(VBL_IFLAG | TIM_IFLAG);
+;irq.c:57: set_interrupts( VBL_IFLAG | TIM_IFLAG );
 	ld	a, #0x05
 	push	af
 	inc	sp
 	call	_set_interrupts
 	inc	sp
-;irq.c:59: while(1) {
+;irq.c:59: while( 1 ) {
 00102$:
 ;irq.c:60: print_counter();
 	call	_print_counter
-;irq.c:61: delay(1000UL);
+;irq.c:61: delay( 1000UL );
 	ld	de, #0x03e8
 	call	_delay
 ;irq.c:63: }
