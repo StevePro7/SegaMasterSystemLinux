@@ -12,7 +12,8 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 %GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o keyboarddata.o keyboarddata.c
 %GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o keyboardmap.o keyboardmap.c
 %GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o sprites.o sprites.c
-%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -o output.gb main.o cursor.o keyboarddata.o keyboardmap.o sprites.o
+%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o welcomemap.o welcomemap.c
+%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -o output.gb main.o cursor.o keyboarddata.o keyboardmap.o sprites.o welcomemap.o
 
 :: Time build -END-
 set _time=%time: =0%
