@@ -1,11 +1,6 @@
-#include <gb/gb.h>
-#include "cursor.h"
-#include "keyboarddata.h"
-#include "keyboardmap.h"
-#include "sprites.h"
-#include "welcomemap.h"
+#include "main.h"
 
-extern UINT8 playername[18];
+UINT8 playername[18];
 struct Cursor cursor;
 UBYTE keydown;
 const UINT8 mincursorx = 12;
