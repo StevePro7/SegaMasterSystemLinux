@@ -1,17 +1,17 @@
 #include <gb/gb.h>
 #include <stdio.h>
 
-void main(){
+void main() {
 	// these registers must be in this specific order!
 	NR52_REG = 0x80; // is 1000 0000 in binary and turns on sound
 	NR50_REG = 0x77; // sets the volume for both left and right channel just set to max 0x77
 	NR51_REG = 0xFF; // is 1111 1111 in binary, select which chanels we want to use in this case all of them. One bit for the L one bit for the R of all four channels
 
 
-	while(1) {
+	while( 1 ) {
 		UBYTE joypad_state = joypad();
-		
-		if(joypad_state) {   
+
+		if( joypad_state ) {
 			// bit 5-0 Sound length
 			// 0001 1111 is 0x1F the maximum length
 			NR41_REG = 0x1F;
@@ -37,9 +37,9 @@ void main(){
 			// (1=Stop output when length in NR41 expires)
 			// bit 5-0	Unused
 			// 1100 0000, start sound, not continuous
-			NR44_REG = 0xC0;  
+			NR44_REG = 0xC0;
 
-			delay(1000);
+			delay( 1000 );
 		}
 	}
 }
