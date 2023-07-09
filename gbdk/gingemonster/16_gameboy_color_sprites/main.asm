@@ -45,7 +45,7 @@
 ; code
 ;--------------------------------------------------------
 	.area _CODE
-;main.c:27: void main(){
+;main.c:27: void main() {
 ;	---------------------------------
 ; Function main
 ; ---------------------------------
@@ -54,7 +54,7 @@ _main::
 	ldh	a, (_LCDC_REG + 0)
 	or	a, #0x04
 	ldh	(_LCDC_REG + 0), a
-;main.c:31: set_bkg_palette(0,1,&backgroundpalette[0]);
+;main.c:31: set_bkg_palette( 0, 1, &backgroundpalette[ 0 ] );
 	ld	de, #_backgroundpalette
 	push	de
 	xor	a, a
@@ -62,14 +62,14 @@ _main::
 	push	af
 	call	_set_bkg_palette
 	add	sp, #4
-;main.c:33: set_sprite_palette(0,3,&spritepalette[0]);
+;main.c:33: set_sprite_palette( 0, 3, &spritepalette[ 0 ] );
 	ld	de, #_spritepalette
 	push	de
 	ld	hl, #0x300
 	push	hl
 	call	_set_sprite_palette
 	add	sp, #4
-;main.c:35: set_sprite_data(0, 6, sprites);
+;main.c:35: set_sprite_data( 0, 6, sprites );
 	ld	de, #_sprites
 	push	de
 	ld	hl, #0x600
