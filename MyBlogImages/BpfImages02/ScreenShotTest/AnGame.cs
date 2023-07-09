@@ -101,8 +101,8 @@ namespace ScreenShotTest
 		{
 			graphics.GraphicsDevice.Clear(Color.CornflowerBlue);
 			spriteBatch.Begin();
-			//spriteBatch.Draw(image, Vector2.Zero, new Rectangle(0, 0, wide, high), Color.White);
-			spriteBatch.Draw(image2, Vector2.Zero, new Rectangle(configManager.Left, configManager.UpXX, wide, high), Color.White);
+			spriteBatch.Draw(image, Vector2.Zero, new Rectangle(0, 0, image.Width, image.Height), Color.White);
+			spriteBatch.Draw(image2, new Vector2(0, 64), new Rectangle(configManager.Left, configManager.UpXX, wide, high), Color.White);
 			spriteBatch.End();
 		}
 
@@ -115,8 +115,8 @@ namespace ScreenShotTest
 			image2 = ImageManager.Images["02b-ceedling"];
 			wide = image.Width - configManager.Left - configManager.Rght;
 			high = image.Height - configManager.UpXX - configManager.Down;
-			graphics.PreferredBackBufferWidth = wide;
-			graphics.PreferredBackBufferHeight = high;
+			graphics.PreferredBackBufferWidth = wide+20;// wide;
+			graphics.PreferredBackBufferHeight = 396;// high;
 			graphics.ApplyChanges();
 		}
 	}
