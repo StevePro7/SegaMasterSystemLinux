@@ -8,12 +8,8 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 
 :: Automatically generated from Makefile
 %GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o main.o main.c
-%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o cursor.o cursor.c
-%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o keyboarddata.o keyboarddata.c
-%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o keyboardmap.o keyboardmap.c
 %GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o sprites.o sprites.c
-%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o welcomemap.o welcomemap.c
-%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -o output.gb main.o cursor.o keyboarddata.o keyboardmap.o sprites.o welcomemap.o
+%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -o output.gb main.o sprites.o
 
 :: Time build -END-
 set _time=%time: =0%
