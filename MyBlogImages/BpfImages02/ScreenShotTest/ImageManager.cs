@@ -1,0 +1,39 @@
+﻿using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Generic;
+
+namespace ScreenShotTest
+{
+	public class ImageManager
+	{
+		private const int MAX = 8;
+
+		private string[] names = new string[MAX] 
+		{
+			"01-bpftool",
+			"01-ceedling",
+			"01-unity",
+			"02a-ceedling",
+			"02b-ceedling",
+			"02-bpftool",
+			"02-unity",
+			"03-bpftool",
+		};
+
+		public void Load(ContentManager content)
+		{
+			Images = new Dictionary<string, Texture2D>();
+			for (int idx = 0; idx < MAX; idx++)
+			{
+				string name = names[idx];
+				Images[name] = content.Load<Texture2D>(names[idx]);
+			}
+		}
+
+		public void Draw(string name)
+		{
+		}
+
+		public IDictionary<string, Texture2D> Images { get; private set; }
+	}
+}
