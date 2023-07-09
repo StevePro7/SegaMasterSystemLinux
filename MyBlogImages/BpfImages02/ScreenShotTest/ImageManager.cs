@@ -6,18 +6,12 @@ namespace ScreenShotTest
 {
 	public class ImageManager
 	{
-		private const int MAX = 8;
+		private const int MAX = 2;
 
 		private string[] names = new string[MAX] 
 		{
-			"01-bpftool",
-			"01-ceedling",
-			"01-unity",
 			"02a-ceedling",
 			"02b-ceedling",
-			"02-bpftool",
-			"02-unity",
-			"03-bpftool",
 		};
 
 		public void Load(ContentManager content)

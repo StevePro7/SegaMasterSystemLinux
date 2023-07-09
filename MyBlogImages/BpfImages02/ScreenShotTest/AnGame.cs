@@ -14,6 +14,7 @@ namespace ScreenShotTest
 		private ConfigManager configManager;
 		private ImageManager ImageManager;
 		private Texture2D image;
+		private Texture2D image2;
 		private string name;
 
 		private int wide;
@@ -100,7 +101,8 @@ namespace ScreenShotTest
 		{
 			graphics.GraphicsDevice.Clear(Color.CornflowerBlue);
 			spriteBatch.Begin();
-			spriteBatch.Draw(image, Vector2.Zero, new Rectangle(configManager.Left, configManager.UpXX, wide, high), Color.White);
+			//spriteBatch.Draw(image, Vector2.Zero, new Rectangle(0, 0, wide, high), Color.White);
+			spriteBatch.Draw(image2, Vector2.Zero, new Rectangle(configManager.Left, configManager.UpXX, wide, high), Color.White);
 			spriteBatch.End();
 		}
 
@@ -109,7 +111,8 @@ namespace ScreenShotTest
 			configManager.Init();
 			name = configManager.Name;
 
-			image = ImageManager.Images[name];
+			image = ImageManager.Images["02a-ceedling"];
+			image2 = ImageManager.Images["02b-ceedling"];
 			wide = image.Width - configManager.Left - configManager.Rght;
 			high = image.Height - configManager.UpXX - configManager.Down;
 			graphics.PreferredBackBufferWidth = wide;
