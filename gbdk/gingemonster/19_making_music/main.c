@@ -1,6 +1,6 @@
 #include "main.h"
 
-const unsigned char * song_Data[];
+//const unsigned char * song_Data[];
 
 void main()
 {
