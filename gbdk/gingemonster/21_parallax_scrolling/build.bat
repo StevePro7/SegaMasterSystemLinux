@@ -8,10 +8,9 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 
 :: Automatically generated from Makefile
 %GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o main.o main.c
-%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o BackgroundData.o BackgroundData.c
-%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o BackgroundMap.o BackgroundMap.c
-%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o examplesprite.o examplesprite.c
-%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -o output.gb main.o BackgroundData.o BackgroundMap.o examplesprite.o
+%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o parallax_background_data.o parallax_background_data.c
+%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -c -o parallax_background_map.o parallax_background_map.c
+%GBDK_WIN%/bin/lcc -Wa-l -Wl-m -Wl-j -o output.gb main.o parallax_background_data.o parallax_background_map.o
 
 :: Time build -END-
 set _time=%time: =0%

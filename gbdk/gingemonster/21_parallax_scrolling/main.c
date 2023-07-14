@@ -1,9 +1,10 @@
 #include <gb/gb.h>
-#include <stdio.h>
 #include <asm/sm83/types.h>
-#include "examplesprite.h"
-#include "BackgroundData.h"
-#include "BackgroundMap.h"
+#include "parallax_background_data.h"
+#include "parallax_background_map.h"
+UINT8 backgroundoffset1x;
+UINT8 backgroundoffset2x;
+UINT8 backgroundoffset3x;
 
 void performantdelay( UINT8 numloops ) {
 	UINT8 i;
@@ -12,51 +13,49 @@ void performantdelay( UINT8 numloops ) {
 	}
 }
 
+void interruptLCD() {
+	switch( LYC_REG )
+	{
+	case 0x00:
+		move_bkg( backgroundoffset1x, 0 );
+		LYC_REG = 0x35;
+		break;
+	case 0x35:
+		move_bkg( backgroundoffset2x, 0 );
+		LYC_REG = 0x6c;
+		break;
+	case 0x6c:
+		move_bkg( backgroundoffset3x, 0 );
+		LYC_REG = 0x00;
+		break;
+	}
+}
+
 void main() {
+	backgroundoffset1x = 0;
+	backgroundoffset2x = 0;
+	backgroundoffset3x = 0;
 
-	set_bkg_data( 0, 4, BackgroundData );
-	set_bkg_tiles( 0, 0, 20, 18, BackgroundMap );
+	set_bkg_data( 0, 189, parallax_background_data );
+	set_bkg_tiles( 0, 0, 32, 18, parallax_background_map );
 
-	set_sprite_data( 0, 2, ExampleSprite );
+	STAT_REG = 0x45; // enable LYC=LY interrupt so that we can set a specific line it will fire at
+	LYC_REG = 0x00;
 
-	set_sprite_tile( 0, 0 );
-	set_sprite_tile( 1, 0 );
-	set_sprite_tile( 2, 0 );
-	set_sprite_tile( 3, 0 );
-	set_sprite_tile( 4, 0 );
+	disable_interrupts();
+	add_LCD( interruptLCD );
+	enable_interrupts();
 
-	move_sprite( 0, 22, 78 );
-	move_sprite( 1, 44, 78 );
-	move_sprite( 2, 66, 78 );
-	move_sprite( 3, 88, 78 );
-	move_sprite( 4, 26, 59 );
+	set_interrupts( VBL_IFLAG | LCD_IFLAG );
 
-	set_sprite_prop( 1, S_FLIPX );
-	set_sprite_prop( 2, S_FLIPY );
-	set_sprite_prop( 3, S_FLIPX | S_FLIPY );
-
-	set_sprite_prop( 4, S_PRIORITY | S_FLIPX );
-
-	SHOW_SPRITES;
 	SHOW_BKG;
+	DISPLAY_ON;
 
 	while( 1 ) {
-		switch( joypad() ) {
-		case J_LEFT:
-			scroll_sprite( 4, -1, 0 );
-			break;
-		case J_RIGHT:
-			scroll_sprite( 4, 1, 0 );
-			break;
-		case J_UP:
-			scroll_sprite( 4, 0, -1 );
+		backgroundoffset1x += 1;
+		backgroundoffset2x += 2;
+		backgroundoffset3x += 10;
 
-			set_sprite_prop( 4, get_sprite_prop( 4 ) & ~S_PRIORITY );
-			break;
-		case J_DOWN:
-			scroll_sprite( 4, 0, 1 );
-			break;
-		}
-		performantdelay( 2 );
+		performantdelay( 7 );
 	}
 }
