@@ -3,7 +3,7 @@
 #include "GameCharacter.h"
 #include "level01map.h"
 #include "levelsprites.h"
-#include "man.c"
+#include "man.h"
 #include <asm/sm83/types.h>
 
 GameCharacter player;
@@ -33,7 +33,7 @@ UBYTE istouchingground( GameCharacter* character ) {
 
 	tileindexTL = 20 * indexTLy + indexTLx; // will have to change as level scrolls?
 
-	result = level01map[ tileindexTL ] != blankmap[ 0 ]; // todo will have to look for specific tiles when we have platforms you can jump through
+	result = level01map[ tileindexTL ] != ( UBYTE ) blankmap[ 0 ]; // todo will have to look for specific tiles when we have platforms you can jump through
 
 	if( result ) {
 		//printf("%u %u %u %u \n", (UINT16)tileindexTL, (UINT16)indexTLx, (UINT16)indexTLy, (UINT16)character->y);
