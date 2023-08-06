@@ -28,7 +28,7 @@ SET "COMPILE_OBJECT_FILES="
 
 :: loop for all files in the default source folder
 FOR /R "source/gen/" %%X IN (*.c) DO (
-::    echo Compiling %%~nX ...
+    echo Compiling %%~nX ...
     %LCC_COMPILE% bin/gen_%%~nX.o %%X
     SET "COMPILE_OBJECT_FILES=bin/gen_%%~nX.o !COMPILE_OBJECT_FILES!"
 
@@ -37,7 +37,7 @@ FOR /R "source/gen/" %%X IN (*.c) DO (
 
 :: loop for all files in the default source folder
 FOR /R "source/default/" %%X IN (*.c) DO (
-::    echo Compiling %%~nX ...
+    echo Compiling %%~nX ...
     %LCC_COMPILE% bin/%%~nX.o %%X
     SET "COMPILE_OBJECT_FILES=bin/%%~nX.o !COMPILE_OBJECT_FILES!"
 
