@@ -146,9 +146,34 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="build.bat" />
+    <None Include="generate-graphics.bat" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.c" />
+    <ClCompile Include="source\default\ball.c" />
+    <ClCompile Include="source\default\brick.c" />
+    <ClCompile Include="source\default\collisions.c" />
+    <ClCompile Include="source\default\common.c" />
+    <ClCompile Include="source\default\main.c" />
+    <ClCompile Include="source\default\paddle.c" />
+    <ClCompile Include="source\default\userinterface.c" />
+    <ClCompile Include="source\gen\graphics\ball.c" />
+    <ClCompile Include="source\gen\graphics\Bricks.c" />
+    <ClCompile Include="source\gen\graphics\Font.c" />
+    <ClCompile Include="source\gen\graphics\paddle.c" />
+    <ClCompile Include="source\gen\graphics\UserInterface.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="headers\gen\graphics\ball.h" />
+    <ClInclude Include="headers\gen\graphics\Bricks.h" />
+    <ClInclude Include="headers\gen\graphics\Font.h" />
+    <ClInclude Include="headers\gen\graphics\paddle.h" />
+    <ClInclude Include="headers\gen\graphics\UserInterface.h" />
+    <ClInclude Include="headers\main\ball.h" />
+    <ClInclude Include="headers\main\brick.h" />
+    <ClInclude Include="headers\main\collisions.h" />
+    <ClInclude Include="headers\main\common.h" />
+    <ClInclude Include="headers\main\paddle.h" />
+    <ClInclude Include="headers\main\userinterface.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
