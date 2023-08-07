@@ -11,7 +11,7 @@ mkdir dist
 
 SET GBDK_HOME=C:/gbdk
 
-SET LCC_COMPILE_BASE=%GBDK_HOME%\bin\lcc -Iheaders -Wa-l -Wl-m -Wl-j -DUSE_SFR_FOR_REG
+SET LCC_COMPILE_BASE=%GBDK_HOME%\bin\lcc -Iheaders/main -Iheaders/gen -Wa-l -Wl-m -Wl-j -DUSE_SFR_FOR_REG
 SET LCC_COMPILE=%LCC_COMPILE_BASE% -c -o 
 
 :: Required to concatenate the "COMPILE_OBJECT_FILES" via a for loop
@@ -19,10 +19,16 @@ SETLOCAL ENABLEDELAYEDEXPANSION
 
 SET "COMPILE_OBJECT_FILES="
 
-::%GBDK_HOME%/bin/png2Asset.exe graphics/FlappyBirdTitle.png -c source/default/Graphics/FlappyBirdTitle.c -map -use_map_attributes 
-::%GBDK_HOME%/bin/png2Asset.exe graphics/FlappyBirdBackground.png -c source/default/Graphics/FlappyBirdBackground.c -map -use_map_attributes
-::%GBDK_HOME%/bin/png2Asset.exe graphics/FlappyBirdMedals.png -c source/default/Graphics/FlappyBirdMedals.c -sw 32 -sh 32 -spr8x16 
-::%GBDK_HOME%/bin/png2Asset.exe graphics/FlappyBirdEnd.png -c source/default/Graphics/FlappyBirdEnd.c -map -use_map_attributes
+call generate-graphics.bat
+
+
+:: loop for all files in the default source folder
+FOR /R "source/gen/" %%X IN (*.c) DO (
+    echo Compiling %%~nX ...
+    %LCC_COMPILE% bin/gen_%%~nX.o %%X
+    SET "COMPILE_OBJECT_FILES=bin/gen_%%~nX.o !COMPILE_OBJECT_FILES!"
+
+)
 
 
 :: loop for all files in the default source folder
@@ -35,12 +41,12 @@ FOR /R "source/default/" %%X IN (*.c) DO (
 
 
 :: Compile a .gb file from the compiled .o files
-%LCC_COMPILE_BASE% -Wm-yC -Wl-yt3 -o dist/FlappyBird.gb !COMPILE_OBJECT_FILES!
+%LCC_COMPILE_BASE% -Wm-yc -o dist/Pacman.gb !COMPILE_OBJECT_FILES!
 
 endlocal
 
 :: Use the romusage.exe to show the size of the ROM and what makes it up
-"lib/romusage" dist\FlappyBird.noi -a
+"lib/romusage" dist\Pacman.noi -a
 
 ::if exist "*.asm" del "*.asm" > nul
 cd bin
@@ -52,5 +58,5 @@ if exist "*.noi" del "*.noi" > nul
 if exist "*.sym" del "*.sym" > nul
 cd ..
 
-C:/SEGA/GameBoy/bgb.exe dist/FlappyBird.gb
-::java -jar C:/SEGA/Emulicious/Emulicious.jar dist/FlappyBird.gb
+C:/SEGA/GameBoy/bgb.exe dist/Pacman.gb
+::java -jar C:/SEGA/Emulicious/Emulicious.jar dist/Pacman.gb

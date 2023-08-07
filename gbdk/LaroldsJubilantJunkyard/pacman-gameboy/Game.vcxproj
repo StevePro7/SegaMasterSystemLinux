@@ -146,37 +146,58 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="build.bat" />
+    <None Include="generate-graphics.bat" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="headers\Common.h" />
-    <ClInclude Include="headers\Graphics\BirdAndPipes.h" />
-    <ClInclude Include="headers\Graphics\FlappyBirdBackground.h" />
-    <ClInclude Include="headers\Graphics\FlappyBirdEnd.h" />
-    <ClInclude Include="headers\Graphics\FlappyBirdMedals.h" />
-    <ClInclude Include="headers\Graphics\FlappyBirdTitle.h" />
-    <ClInclude Include="headers\Graphics\ScoreTiles.h" />
-    <ClInclude Include="headers\Graphics\TapToStartSprites.h" />
-    <ClInclude Include="headers\States\CoreGameLoop.h" />
-    <ClInclude Include="headers\States\GameFirstLoad.h" />
-    <ClInclude Include="headers\States\GameplayEnd.h" />
-    <ClInclude Include="headers\States\GameplayStart.h" />
-    <ClInclude Include="headers\Utilities.h" />
+    <ClInclude Include="headers\gen\graphics\BlackSquare.h" />
+    <ClInclude Include="headers\gen\graphics\Dots.h" />
+    <ClInclude Include="headers\gen\graphics\Ghosts.h" />
+    <ClInclude Include="headers\gen\graphics\GhostsEaten.h" />
+    <ClInclude Include="headers\gen\graphics\GhostsScared.h" />
+    <ClInclude Include="headers\gen\graphics\HighText.h" />
+    <ClInclude Include="headers\gen\graphics\Map.h" />
+    <ClInclude Include="headers\gen\graphics\Numbers.h" />
+    <ClInclude Include="headers\gen\graphics\OneUpText.h" />
+    <ClInclude Include="headers\gen\graphics\Pacman.h" />
+    <ClInclude Include="headers\gen\graphics\PacmanEatenDown.h" />
+    <ClInclude Include="headers\gen\graphics\PacmanEatenLeft.h" />
+    <ClInclude Include="headers\gen\graphics\PacmanEatenRight.h" />
+    <ClInclude Include="headers\gen\graphics\PacmanEatenUp.h" />
+    <ClInclude Include="headers\gen\graphics\ReadyText.h" />
+    <ClInclude Include="headers\gen\graphics\TargetTiles.h" />
+    <ClInclude Include="headers\main\common.h" />
+    <ClInclude Include="headers\main\Gameplay.h" />
+    <ClInclude Include="headers\main\Gameplay\Character.h" />
+    <ClInclude Include="headers\main\Gameplay\dots.h" />
+    <ClInclude Include="headers\main\Gameplay\ghosts.h" />
+    <ClInclude Include="headers\main\Gameplay\hud.h" />
+    <ClInclude Include="headers\main\Gameplay\pacman.h" />
+    <ClInclude Include="headers\main\util.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\default\Common.c" />
-    <ClCompile Include="source\default\Graphics\BirdAndPipes.c" />
-    <ClCompile Include="source\default\Graphics\FlappyBirdBackground.c" />
-    <ClCompile Include="source\default\Graphics\FlappyBirdEnd.c" />
-    <ClCompile Include="source\default\Graphics\FlappyBirdMedals.c" />
-    <ClCompile Include="source\default\Graphics\FlappyBirdTitle.c" />
-    <ClCompile Include="source\default\Graphics\ScoreTiles.c" />
-    <ClCompile Include="source\default\Graphics\TapToStartSprites.c" />
+    <ClCompile Include="source\default\Gameplay\Character.c" />
+    <ClCompile Include="source\default\Gameplay\dots.c" />
+    <ClCompile Include="source\default\Gameplay\ghosts.c" />
+    <ClCompile Include="source\default\Gameplay\hud.c" />
+    <ClCompile Include="source\default\Gameplay\pacman.c" />
     <ClCompile Include="source\default\main.c" />
-    <ClCompile Include="source\default\States\CoreGameLoop.c" />
-    <ClCompile Include="source\default\States\GameFirstLoad.c" />
-    <ClCompile Include="source\default\States\GameplayEnd.c" />
-    <ClCompile Include="source\default\States\GameplayStart.c" />
-    <ClCompile Include="source\default\Utilities.c" />
+    <ClCompile Include="source\default\util.c" />
+    <ClCompile Include="source\gen\default\graphics\BlackSquare.c" />
+    <ClCompile Include="source\gen\default\graphics\Dots.c" />
+    <ClCompile Include="source\gen\default\graphics\Ghosts.c" />
+    <ClCompile Include="source\gen\default\graphics\GhostsEaten.c" />
+    <ClCompile Include="source\gen\default\graphics\GhostsScared.c" />
+    <ClCompile Include="source\gen\default\graphics\HighText.c" />
+    <ClCompile Include="source\gen\default\graphics\Map.c" />
+    <ClCompile Include="source\gen\default\graphics\Numbers.c" />
+    <ClCompile Include="source\gen\default\graphics\OneUpText.c" />
+    <ClCompile Include="source\gen\default\graphics\Pacman.c" />
+    <ClCompile Include="source\gen\default\graphics\PacmanEatenDown.c" />
+    <ClCompile Include="source\gen\default\graphics\PacmanEatenLeft.c" />
+    <ClCompile Include="source\gen\default\graphics\PacmanEatenRight.c" />
+    <ClCompile Include="source\gen\default\graphics\PacmanEatenUp.c" />
+    <ClCompile Include="source\gen\default\graphics\ReadyText.c" />
+    <ClCompile Include="source\gen\default\graphics\TargetTiles.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
