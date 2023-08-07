@@ -44,3 +44,17 @@ FOR /R "source/main/default/" %%X IN (*.c) DO (
 endlocal
 
 "lib/romusage" dist\SpaceInvaders.noi -a
+
+
+::if exist "*.asm" del "*.asm" > nul
+cd bin
+if exist "*.gbm" del "*.gbm" > nul
+if exist "*.gbr" del "*.gbr" > nul
+if exist "*.ihx" del "*.ihx" > nul
+if exist "*.lst" del "*.lst" > nul
+if exist "*.noi" del "*.noi" > nul
+if exist "*.sym" del "*.sym" > nul
+cd ..
+
+C:/SEGA/GameBoy/bgb.exe dist/SpaceInvaders.gb
+::java -jar C:/SEGA/Emulicious/Emulicious.jar dist/SpaceInvaders.gb
