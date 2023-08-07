@@ -41,3 +41,16 @@ endlocal
 
 :: Use the romusage.exe to show the size of the ROM and what makes it up
 "lib/romusage" dist\FlappyBird.noi -a
+
+::if exist "*.asm" del "*.asm" > nul
+cd bin
+if exist "*.gbm" del "*.gbm" > nul
+if exist "*.gbr" del "*.gbr" > nul
+if exist "*.ihx" del "*.ihx" > nul
+if exist "*.lst" del "*.lst" > nul
+if exist "*.noi" del "*.noi" > nul
+if exist "*.sym" del "*.sym" > nul
+cd ..
+
+C:/SEGA/GameBoy/bgb.exe dist/FlappyBird.gb
+::java -jar C:/SEGA/Emulicious/Emulicious.jar dist/FlappyBird.gb
