@@ -7,7 +7,7 @@
 BANKREF(Player)
 
 const palette_color_t Player_palettes[4] = {
-	RGB8(255,255,255), RGB8(  0,  0,  0), RGB8( 80,  1, 66), RGB8(139,  1,  0)
+	RGB8(255,255,255), RGB8(  0,  0,  0), RGB8( 80,  1,255), RGB8( 18,  2,  0)
 	
 };
 

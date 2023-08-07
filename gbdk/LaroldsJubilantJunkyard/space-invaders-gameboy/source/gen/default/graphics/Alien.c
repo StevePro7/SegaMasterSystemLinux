@@ -7,7 +7,7 @@
 BANKREF(Alien)
 
 const palette_color_t Alien_palettes[4] = {
-	RGB8(255,255,255), RGB8(  0,  0,  0), RGB8( 80,  1,159), RGB8(163,  2,  0)
+	RGB8(255,255,255), RGB8(  0,  0,  0), RGB8( 80,  1, 36), RGB8(204,  2,  0)
 	
 };
 
