@@ -22,101 +22,107 @@
     <Filter Include="Header Files\headers">
       <UniqueIdentifier>{9b12774b-faa1-4623-bccb-cc3430401829}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\source\gen">
-      <UniqueIdentifier>{e39ffe67-c864-4eb5-a22d-72e7f048c895}</UniqueIdentifier>
+    <Filter Include="Source Files\source\default\Graphics">
+      <UniqueIdentifier>{723f8f27-c45b-4795-ac6a-a23c0cc889b3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\source\gen\graphics">
-      <UniqueIdentifier>{d091ec4c-5c98-46c6-8d03-21c1844335d3}</UniqueIdentifier>
+    <Filter Include="Header Files\headers\Graphics">
+      <UniqueIdentifier>{55b50f87-2c77-4256-8612-0314f47365aa}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\headers\gen">
-      <UniqueIdentifier>{e166a088-60ca-46f9-b681-02e92db6dcbf}</UniqueIdentifier>
+    <Filter Include="Header Files\headers\States">
+      <UniqueIdentifier>{4b40507a-1dda-4eae-a039-c3d7f8a07400}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\headers\main">
-      <UniqueIdentifier>{88509732-a078-4e22-b3bc-d7117b006e77}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\headers\gen\graphics">
-      <UniqueIdentifier>{1f6a7d84-1b2e-48a1-8f32-6397030e65f6}</UniqueIdentifier>
+    <Filter Include="Source Files\source\default\States">
+      <UniqueIdentifier>{3d7f5d28-f8b6-40eb-a5f2-a91993023cf8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="build.bat">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="generate-graphics.bat">
-      <Filter>Resource Files</Filter>
-    </None>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\gen\graphics\ball.c">
-      <Filter>Source Files\source\gen\graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="source\gen\graphics\Bricks.c">
-      <Filter>Source Files\source\gen\graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="source\gen\graphics\Font.c">
-      <Filter>Source Files\source\gen\graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="source\gen\graphics\paddle.c">
-      <Filter>Source Files\source\gen\graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="source\gen\graphics\UserInterface.c">
-      <Filter>Source Files\source\gen\graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="source\default\ball.c">
-      <Filter>Source Files\source\default</Filter>
-    </ClCompile>
-    <ClCompile Include="source\default\brick.c">
-      <Filter>Source Files\source\default</Filter>
-    </ClCompile>
-    <ClCompile Include="source\default\collisions.c">
-      <Filter>Source Files\source\default</Filter>
-    </ClCompile>
-    <ClCompile Include="source\default\common.c">
+    <ClInclude Include="headers\Common.h">
+      <Filter>Header Files\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\Utilities.h">
+      <Filter>Header Files\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\Graphics\BirdAndPipes.h">
+      <Filter>Header Files\headers\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\Graphics\FlappyBirdBackground.h">
+      <Filter>Header Files\headers\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\Graphics\FlappyBirdEnd.h">
+      <Filter>Header Files\headers\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\Graphics\FlappyBirdMedals.h">
+      <Filter>Header Files\headers\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\Graphics\FlappyBirdTitle.h">
+      <Filter>Header Files\headers\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\Graphics\ScoreTiles.h">
+      <Filter>Header Files\headers\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\Graphics\TapToStartSprites.h">
+      <Filter>Header Files\headers\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\States\CoreGameLoop.h">
+      <Filter>Header Files\headers\States</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\States\GameFirstLoad.h">
+      <Filter>Header Files\headers\States</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\States\GameplayEnd.h">
+      <Filter>Header Files\headers\States</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\States\GameplayStart.h">
+      <Filter>Header Files\headers\States</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\default\Common.c">
       <Filter>Source Files\source\default</Filter>
     </ClCompile>
     <ClCompile Include="source\default\main.c">
       <Filter>Source Files\source\default</Filter>
     </ClCompile>
-    <ClCompile Include="source\default\paddle.c">
+    <ClCompile Include="source\default\Utilities.c">
       <Filter>Source Files\source\default</Filter>
     </ClCompile>
-    <ClCompile Include="source\default\userinterface.c">
-      <Filter>Source Files\source\default</Filter>
+    <ClCompile Include="source\default\Graphics\BirdAndPipes.c">
+      <Filter>Source Files\source\default\Graphics</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="headers\gen\graphics\ball.h">
-      <Filter>Header Files\headers\gen\graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="headers\gen\graphics\Bricks.h">
-      <Filter>Header Files\headers\gen\graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="headers\gen\graphics\Font.h">
-      <Filter>Header Files\headers\gen\graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="headers\gen\graphics\paddle.h">
-      <Filter>Header Files\headers\gen\graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="headers\gen\graphics\UserInterface.h">
-      <Filter>Header Files\headers\gen\graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="headers\main\ball.h">
-      <Filter>Header Files\headers\main</Filter>
-    </ClInclude>
-    <ClInclude Include="headers\main\brick.h">
-      <Filter>Header Files\headers\main</Filter>
-    </ClInclude>
-    <ClInclude Include="headers\main\collisions.h">
-      <Filter>Header Files\headers\main</Filter>
-    </ClInclude>
-    <ClInclude Include="headers\main\common.h">
-      <Filter>Header Files\headers\main</Filter>
-    </ClInclude>
-    <ClInclude Include="headers\main\paddle.h">
-      <Filter>Header Files\headers\main</Filter>
-    </ClInclude>
-    <ClInclude Include="headers\main\userinterface.h">
-      <Filter>Header Files\headers\main</Filter>
-    </ClInclude>
+    <ClCompile Include="source\default\Graphics\FlappyBirdBackground.c">
+      <Filter>Source Files\source\default\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="source\default\Graphics\FlappyBirdEnd.c">
+      <Filter>Source Files\source\default\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="source\default\Graphics\FlappyBirdMedals.c">
+      <Filter>Source Files\source\default\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="source\default\Graphics\FlappyBirdTitle.c">
+      <Filter>Source Files\source\default\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="source\default\Graphics\ScoreTiles.c">
+      <Filter>Source Files\source\default\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="source\default\Graphics\TapToStartSprites.c">
+      <Filter>Source Files\source\default\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="source\default\States\CoreGameLoop.c">
+      <Filter>Source Files\source\default\States</Filter>
+    </ClCompile>
+    <ClCompile Include="source\default\States\GameFirstLoad.c">
+      <Filter>Source Files\source\default\States</Filter>
+    </ClCompile>
+    <ClCompile Include="source\default\States\GameplayEnd.c">
+      <Filter>Source Files\source\default\States</Filter>
+    </ClCompile>
+    <ClCompile Include="source\default\States\GameplayStart.c">
+      <Filter>Source Files\source\default\States</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
