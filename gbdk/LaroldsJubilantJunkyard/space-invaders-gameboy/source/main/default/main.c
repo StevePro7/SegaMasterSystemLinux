@@ -1,4 +1,5 @@
 #include <gb/gb.h>
+#include <gb/cgb.h>
 #include "common.h"
 #include "States/StartScreen.h"
 #include "States/MenuScreen.h"

@@ -7,7 +7,7 @@
 BANKREF(SpaceInvadersTitle)
 
 const palette_color_t SpaceInvadersTitle_palettes[4] = {
-	RGB8(255,255,255), RGB8(  0,  0,  0), RGB8( 80,  1,125), RGB8( 64,  2,  0)
+	RGB8(255,255,255), RGB8(  0,  0,  0), RGB8( 80,  1, 34), RGB8( 74,  2,  0)
 	
 };
 

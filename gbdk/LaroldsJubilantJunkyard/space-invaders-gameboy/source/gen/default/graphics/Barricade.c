@@ -7,7 +7,7 @@
 BANKREF(Barricade)
 
 const palette_color_t Barricade_palettes[4] = {
-	RGB8(255,255,255), RGB8(  0,  0,  0), RGB8( 80,  1, 45), RGB8(151,  1,  0)
+	RGB8(255,255,255), RGB8(  0,  0,  0), RGB8( 80,  1,244), RGB8(119,  2,  0)
 	
 };
 
