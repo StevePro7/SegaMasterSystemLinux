@@ -31,29 +31,14 @@
     <Filter Include="Source Files\source\gen">
       <UniqueIdentifier>{0032aa7b-abfd-4b8e-b7cf-d27041029181}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\source\gen\default">
-      <UniqueIdentifier>{7dadef6d-fa97-4d8e-abc3-3bf945ec4829}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\source\gen\default\graphics">
-      <UniqueIdentifier>{1607a129-d209-471e-8406-1c4f9ae4628a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\headers\main\States">
-      <UniqueIdentifier>{587f4d04-61fc-4af7-abd1-f5f4fb2b92b7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\headers\main\States\Gameplay">
-      <UniqueIdentifier>{fb432af8-6d2a-4f4e-8fdf-b7352f3a518a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\source\main">
       <UniqueIdentifier>{4e014471-d5ce-4997-b2bd-52ce19ed51d5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\source\main\default">
-      <UniqueIdentifier>{5fa023bb-603a-417d-b165-4dca1c856735}</UniqueIdentifier>
+    <Filter Include="Source Files\source\gen\graphics">
+      <UniqueIdentifier>{1607a129-d209-471e-8406-1c4f9ae4628a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\source\main\default\States">
-      <UniqueIdentifier>{dd963660-7e6e-4926-9988-60df93c7f053}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\source\main\default\States\Gameplay">
-      <UniqueIdentifier>{7b6eabe5-403f-4ac9-9003-87bf1b7cb7fd}</UniqueIdentifier>
+    <Filter Include="Source Files\source\asm">
+      <UniqueIdentifier>{803549cc-d389-412f-b092-f7507d33f9a7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -63,150 +48,114 @@
     <None Include="generate-graphics.bat">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="source\asm\hUGEDriver.asm">
+      <Filter>Source Files\source\asm</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\main\default\States\Gameplay\alien.c">
-      <Filter>Source Files\source\main\default\States\Gameplay</Filter>
+    <ClCompile Include="source\gen\graphics\Numbers.c">
+      <Filter>Source Files\source\gen\graphics</Filter>
     </ClCompile>
-    <ClCompile Include="source\main\default\States\Gameplay\bullets.c">
-      <Filter>Source Files\source\main\default\States\Gameplay</Filter>
+    <ClCompile Include="source\gen\graphics\Palette.c">
+      <Filter>Source Files\source\gen\graphics</Filter>
     </ClCompile>
-    <ClCompile Include="source\main\default\States\Gameplay\invaders.c">
-      <Filter>Source Files\source\main\default\States\Gameplay</Filter>
+    <ClCompile Include="source\gen\graphics\Tetromino1.c">
+      <Filter>Source Files\source\gen\graphics</Filter>
     </ClCompile>
-    <ClCompile Include="source\main\default\States\Gameplay\player.c">
-      <Filter>Source Files\source\main\default\States\Gameplay</Filter>
+    <ClCompile Include="source\gen\graphics\Tetromino2.c">
+      <Filter>Source Files\source\gen\graphics</Filter>
     </ClCompile>
-    <ClCompile Include="source\main\default\States\GameOverScreen.c">
-      <Filter>Source Files\source\main\default\States</Filter>
+    <ClCompile Include="source\gen\graphics\Tetromino3.c">
+      <Filter>Source Files\source\gen\graphics</Filter>
     </ClCompile>
-    <ClCompile Include="source\main\default\States\GamplayScreen.c">
-      <Filter>Source Files\source\main\default\States</Filter>
+    <ClCompile Include="source\gen\graphics\Tetromino4.c">
+      <Filter>Source Files\source\gen\graphics</Filter>
     </ClCompile>
-    <ClCompile Include="source\main\default\States\MenuScreen.c">
-      <Filter>Source Files\source\main\default\States</Filter>
+    <ClCompile Include="source\gen\graphics\Tetromino5.c">
+      <Filter>Source Files\source\gen\graphics</Filter>
     </ClCompile>
-    <ClCompile Include="source\main\default\States\NextLevelScreen.c">
-      <Filter>Source Files\source\main\default\States</Filter>
+    <ClCompile Include="source\gen\graphics\Tetromino6.c">
+      <Filter>Source Files\source\gen\graphics</Filter>
     </ClCompile>
-    <ClCompile Include="source\main\default\States\StartScreen.c">
-      <Filter>Source Files\source\main\default\States</Filter>
+    <ClCompile Include="source\gen\graphics\Tetromino7.c">
+      <Filter>Source Files\source\gen\graphics</Filter>
     </ClCompile>
-    <ClCompile Include="source\main\default\Common.c">
-      <Filter>Source Files\source\main\default</Filter>
+    <ClCompile Include="source\gen\graphics\TileAnimation.c">
+      <Filter>Source Files\source\gen\graphics</Filter>
     </ClCompile>
-    <ClCompile Include="source\main\default\Hud.c">
-      <Filter>Source Files\source\main\default</Filter>
+    <ClCompile Include="source\gen\graphics\UserInterface.c">
+      <Filter>Source Files\source\gen\graphics</Filter>
     </ClCompile>
-    <ClCompile Include="source\main\default\main.c">
-      <Filter>Source Files\source\main\default</Filter>
+    <ClCompile Include="source\main\Board.c">
+      <Filter>Source Files\source\main</Filter>
     </ClCompile>
-    <ClCompile Include="source\gen\default\graphics\Alien.c">
-      <Filter>Source Files\source\gen\default\graphics</Filter>
+    <ClCompile Include="source\main\common.c">
+      <Filter>Source Files\source\main</Filter>
     </ClCompile>
-    <ClCompile Include="source\gen\default\graphics\Barricade.c">
-      <Filter>Source Files\source\gen\default\graphics</Filter>
+    <ClCompile Include="source\main\hud.c">
+      <Filter>Source Files\source\main</Filter>
     </ClCompile>
-    <ClCompile Include="source\gen\default\graphics\BulletA.c">
-      <Filter>Source Files\source\gen\default\graphics</Filter>
+    <ClCompile Include="source\main\main.c">
+      <Filter>Source Files\source\main</Filter>
     </ClCompile>
-    <ClCompile Include="source\gen\default\graphics\BulletB.c">
-      <Filter>Source Files\source\gen\default\graphics</Filter>
+    <ClCompile Include="source\main\tetris_music.c">
+      <Filter>Source Files\source\main</Filter>
     </ClCompile>
-    <ClCompile Include="source\gen\default\graphics\BulletC.c">
-      <Filter>Source Files\source\gen\default\graphics</Filter>
+    <ClCompile Include="source\main\Tetrominos.c">
+      <Filter>Source Files\source\main</Filter>
     </ClCompile>
-    <ClCompile Include="source\gen\default\graphics\Explosion.c">
-      <Filter>Source Files\source\gen\default\graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="source\gen\default\graphics\Invader1.c">
-      <Filter>Source Files\source\gen\default\graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="source\gen\default\graphics\Invader2.c">
-      <Filter>Source Files\source\gen\default\graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="source\gen\default\graphics\Invader3.c">
-      <Filter>Source Files\source\gen\default\graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="source\gen\default\graphics\Player.c">
-      <Filter>Source Files\source\gen\default\graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="source\gen\default\graphics\SpaceInvadersFont.c">
-      <Filter>Source Files\source\gen\default\graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="source\gen\default\graphics\SpaceInvadersTitle.c">
-      <Filter>Source Files\source\gen\default\graphics</Filter>
+    <ClCompile Include="source\main\UserInterface.c">
+      <Filter>Source Files\source\main</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="headers\gen\graphics\Alien.h">
+    <ClInclude Include="headers\gen\graphics\Numbers.h">
       <Filter>Header Files\headers\gen\graphics</Filter>
     </ClInclude>
-    <ClInclude Include="headers\gen\graphics\Barricade.h">
+    <ClInclude Include="headers\gen\graphics\Palette.h">
       <Filter>Header Files\headers\gen\graphics</Filter>
     </ClInclude>
-    <ClInclude Include="headers\gen\graphics\BulletA.h">
+    <ClInclude Include="headers\gen\graphics\Tetromino1.h">
       <Filter>Header Files\headers\gen\graphics</Filter>
     </ClInclude>
-    <ClInclude Include="headers\gen\graphics\BulletB.h">
+    <ClInclude Include="headers\gen\graphics\Tetromino2.h">
       <Filter>Header Files\headers\gen\graphics</Filter>
     </ClInclude>
-    <ClInclude Include="headers\gen\graphics\BulletC.h">
+    <ClInclude Include="headers\gen\graphics\Tetromino3.h">
       <Filter>Header Files\headers\gen\graphics</Filter>
     </ClInclude>
-    <ClInclude Include="headers\gen\graphics\Explosion.h">
+    <ClInclude Include="headers\gen\graphics\Tetromino4.h">
       <Filter>Header Files\headers\gen\graphics</Filter>
     </ClInclude>
-    <ClInclude Include="headers\gen\graphics\Invader1.h">
+    <ClInclude Include="headers\gen\graphics\Tetromino5.h">
       <Filter>Header Files\headers\gen\graphics</Filter>
     </ClInclude>
-    <ClInclude Include="headers\gen\graphics\Invader2.h">
+    <ClInclude Include="headers\gen\graphics\Tetromino6.h">
       <Filter>Header Files\headers\gen\graphics</Filter>
     </ClInclude>
-    <ClInclude Include="headers\gen\graphics\Invader3.h">
+    <ClInclude Include="headers\gen\graphics\Tetromino7.h">
       <Filter>Header Files\headers\gen\graphics</Filter>
     </ClInclude>
-    <ClInclude Include="headers\gen\graphics\Player.h">
+    <ClInclude Include="headers\gen\graphics\TileAnimation.h">
       <Filter>Header Files\headers\gen\graphics</Filter>
     </ClInclude>
-    <ClInclude Include="headers\gen\graphics\SpaceInvadersFont.h">
+    <ClInclude Include="headers\gen\graphics\UserInterface.h">
       <Filter>Header Files\headers\gen\graphics</Filter>
     </ClInclude>
-    <ClInclude Include="headers\gen\graphics\SpaceInvadersTitle.h">
-      <Filter>Header Files\headers\gen\graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="headers\main\Common.h">
+    <ClInclude Include="headers\main\board.h">
       <Filter>Header Files\headers\main</Filter>
     </ClInclude>
-    <ClInclude Include="headers\main\Hud.h">
+    <ClInclude Include="headers\main\common.h">
       <Filter>Header Files\headers\main</Filter>
     </ClInclude>
-    <ClInclude Include="headers\main\States\GameOverScreen.h">
-      <Filter>Header Files\headers\main\States</Filter>
+    <ClInclude Include="headers\main\hud.h">
+      <Filter>Header Files\headers\main</Filter>
     </ClInclude>
-    <ClInclude Include="headers\main\States\GameplayScreen.h">
-      <Filter>Header Files\headers\main\States</Filter>
+    <ClInclude Include="headers\main\Tetrominos.h">
+      <Filter>Header Files\headers\main</Filter>
     </ClInclude>
-    <ClInclude Include="headers\main\States\MenuScreen.h">
-      <Filter>Header Files\headers\main\States</Filter>
-    </ClInclude>
-    <ClInclude Include="headers\main\States\NextLevelScreen.h">
-      <Filter>Header Files\headers\main\States</Filter>
-    </ClInclude>
-    <ClInclude Include="headers\main\States\StartScreen.h">
-      <Filter>Header Files\headers\main\States</Filter>
-    </ClInclude>
-    <ClInclude Include="headers\main\States\Gameplay\Alien.h">
-      <Filter>Header Files\headers\main\States\Gameplay</Filter>
-    </ClInclude>
-    <ClInclude Include="headers\main\States\Gameplay\bullets.h">
-      <Filter>Header Files\headers\main\States\Gameplay</Filter>
-    </ClInclude>
-    <ClInclude Include="headers\main\States\Gameplay\invaders.h">
-      <Filter>Header Files\headers\main\States\Gameplay</Filter>
-    </ClInclude>
-    <ClInclude Include="headers\main\States\Gameplay\player.h">
-      <Filter>Header Files\headers\main\States\Gameplay</Filter>
+    <ClInclude Include="headers\main\UserInterface.h">
+      <Filter>Header Files\headers\main</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
