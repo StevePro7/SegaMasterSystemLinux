@@ -33,18 +33,7 @@ namespace FunctionMgr
 				}
 			}
 
-			path = "scripts";
-			if (Directory.Exists(path))
-			{
-				var files = Directory.GetFiles(path);
-				foreach (var file in files)
-				{
-					File.Delete(file);
-				}
-			}
-
 			Directory.CreateDirectory("banks");
-			Directory.CreateDirectory("scripts");
 			lines = new List<string>();
 		}
 
@@ -66,13 +55,6 @@ namespace FunctionMgr
 			lines.Add(name);
 			var path = string.Format("banks/{0}/{0}.txt", name);
 			File.WriteAllLines(path, lines.ToArray());
-		}
-
-		public void Scripts(int bank, List<string> script)
-		{
-			string name = "bank" + bank.ToString();
-			var path = string.Format("scripts/{0}.bat", name);
-			File.WriteAllLines(path, script.ToArray());
 		}
 
 	}
