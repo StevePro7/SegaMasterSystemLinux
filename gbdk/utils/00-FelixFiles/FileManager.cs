@@ -37,6 +37,23 @@ namespace FunctionMgr
 			lines = new List<string>();
 		}
 
+		public void ProcessH()
+		{
+			var datas = File.ReadAllLines("bobH.txt");
+			foreach (var head in datas)
+			{
+				var text = head.Replace(".h", "_h");
+				text = text.ToUpper();
+				text = "__CALI_" + text + "__";
+				lines.Clear();
+				lines.Add("#ifndef " + text);
+				lines.Add("#define " + text);
+				lines.Add("");
+				lines.Add("#endif//" + text);
+				File.WriteAllLines("banks/" + head, lines.ToArray());
+			}
+		}
+
 		public void ProcessC()
 		{
 			var datas = File.ReadAllLines("bobC.txt");
@@ -58,26 +75,6 @@ namespace FunctionMgr
 				lines.Add("#endif//" + text);
 				File.WriteAllLines("banks/" + head, lines.ToArray());
 			}
-		}
-
-		public void Banks(int bank)
-		{
-			string name = "bank" + bank.ToString();
-			if (Directory.Exists(name))
-			{
-				var files = Directory.GetFiles(name);
-				foreach (var file in files)
-				{
-					File.Delete(file);
-				}
-			}
-
-			Directory.CreateDirectory("banks/" + name);
-
-			lines.Clear();
-			lines.Add(name);
-			var path = string.Format("banks/{0}/{0}.txt", name);
-			File.WriteAllLines(path, lines.ToArray());
 		}
 
 	}
