@@ -37,6 +37,29 @@ namespace FunctionMgr
 			lines = new List<string>();
 		}
 
+		public void ProcessC()
+		{
+			var datas = File.ReadAllLines("bobC.txt");
+			//var data = datas[0];
+			foreach (var data in datas)
+			{
+				var head = data.Replace(".c", ".h");
+				lines.Clear();
+				lines.Add("#include \"" + head + "\"");
+				File.WriteAllLines("banks/" + data, lines.ToArray());
+
+				var text = head.Replace(".h", "_h");
+				text = text.ToUpper();
+				text = "__CALI_" + text + "__";
+				lines.Clear();
+				lines.Add("#ifndef " + text);
+				lines.Add("#define " + text);
+				lines.Add("");
+				lines.Add("#endif//" + text);
+				File.WriteAllLines("banks/" + head, lines.ToArray());
+			}
+		}
+
 		public void Banks(int bank)
 		{
 			string name = "bank" + bank.ToString();

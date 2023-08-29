@@ -9,9 +9,10 @@ namespace FunctionMgr
 		{
 			var fm = new FileManager();
 			fm.Init();
+			fm.ProcessC();
 
-			var bm = new BankManager(fm);
-			bm.Init();
+			//var bm = new BankManager(fm);
+			//bm.Init();
 			//bm.ProcessBank(2);
 			//bm.ProcessBank02(2);
 
