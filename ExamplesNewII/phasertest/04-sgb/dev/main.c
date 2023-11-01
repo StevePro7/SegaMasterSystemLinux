@@ -37,9 +37,10 @@ void engine_asm_manager_clear_VRAM()
 
 void main( void )
 {
-	//char i, y;
+	char i;
+	//char y;
 	//char bright_bg = 0;
-	//char controllerPort = 99;
+	char controllerPort = 99;
 	//struct inlibDevice *device;
 
 	///* Position and visiblity of mouse pointers */
@@ -52,7 +53,7 @@ void main( void )
 	engine_asm_manager_clear_VRAM();
 	//devkit_SMS_setBGPaletteColor( 0, devkit_RGB( 0, 0, 0 ) );
 	//devkit_SMS_setSpritePaletteColor( 0, devkit_RGB( 0, 3, 0 ) );
-
+		
 	devkit_inlib_init();
 
 	/* Clear VRAM */
@@ -88,7 +89,17 @@ void main( void )
 	devkit_SMS_setNextTileatXY( 1, 2 );
 	printf( "Pull trigger to begin..." );
 
-	
+	while( controllerPort == 99 ) {
+
+		for( i = 0; i < 2; i++ ) {
+			devkit_inlib_pollLightPhaser_trigger( i );
+			if( devkit_inlib_keysStatus( i ) & devkit_INLIB_BTN_1() ) {
+				controllerPort = i;
+				break;
+			}
+		}
+	}
+
 	for( ;; )
 	{
 		devkit_SMS_waitForVBlank();
