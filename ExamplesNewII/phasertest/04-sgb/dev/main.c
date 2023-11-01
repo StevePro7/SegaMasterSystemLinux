@@ -38,10 +38,10 @@ void engine_asm_manager_clear_VRAM()
 void main( void )
 {
 	char i;
-	//char y;
-	//char bright_bg = 0;
+	char y;
+	char bright_bg = 0;
 	char controllerPort = 99;
-	struct inlibDevice *device;
+	//struct inlibDevice *device;
 
 	///* Position and visiblity of mouse pointers */
 	//unsigned char px[ 2 ] = { 64, 168 };
@@ -103,10 +103,51 @@ void main( void )
 	devkit_SMS_setNextTileatXY( 1, 2 );
 	printf( "Using light phaser in port %d", controllerPort );
 
-	device = devkit_inlib_getPortPtr( controllerPort );
+	//device = devkit_inlib_getPortPtr( controllerPort );
+	devkit_inlib_getPortPtr( controllerPort );
 
 	for( ;; )
 	{
+		devkit_SMS_waitForVBlank();
+		devkit_SMS_copySpritestoSAT();
+		devkit_SMS_initSprites();
+
+		if( !bright_bg ) {
+			devkit_SMS_setBGPaletteColor( 0, DEFAULT_BG_COLOR );
+		}
+
+		bright_bg = 0;
+		y = 6;
+
+		devkit_inlib_pollLightPhaser_trigger( controllerPort );
+		if( devkit_inlib_keysStatus( controllerPort ) & devkit_INLIB_BTN_1() ) {
+			bright_bg = 1;
+			devkit_SMS_setBGPaletteColor( 0, HIGH_BG_COLOR );
+			devkit_SMS_waitForVBlank();
+			devkit_inlib_pollLightPhaser_position( i );
+		}
+
+		devkit_SMS_setNextTileatXY( 3, y++ );
+		if( devkit_inlib_keysStatus( controllerPort ) & devkit_INLIB_BTN_1() ) {
+			printf( "Trigger ON " );
+		}
+		else {
+			printf( "Trigger OFF" );
+		}
+
+		if( devkit_get_device_type() == devkit_INLIB_TYPE_PHASER_HIT() )
+		{
+			// Center sprite 8x8 sprite on the position
+			if( devkit_get_device_absx() > 4 )
+			{
+				px[ i ] = device->abs.x - 4; 
+			}
+			else {
+				px[ i ] = 0; 
+			}
+		}
+	
+
 		devkit_SMS_waitForVBlank();
 	}
 }

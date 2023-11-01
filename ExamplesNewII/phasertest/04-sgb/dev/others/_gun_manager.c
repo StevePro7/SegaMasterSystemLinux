@@ -6,6 +6,13 @@
 #include "../../lib/inlib.h"
 #endif
 
+struct inlibDevice *device;
+
+unsigned char devkit_get_device_type()
+{
+	return device->type;
+}
+
 //#define INLIB_TYPE_NONE      0x00
 //#define INLIB_TYPE_SMS       0x01
 //#define INLIB_TYPE_MD3	     0x02
@@ -18,7 +25,10 @@
 
 //#define INLIB_TYPE_PHASER      0x04
 //#define INLIB_TYPE_PHASER_HIT  0x81
-
+unsigned char devkit_INLIB_TYPE_PHASER_HIT()
+{
+	return INLIB_TYPE_PHASER_HIT;
+}
 //#define INLIB_ISGAMEPAD(type)  (!(type & 0xC0))
 //#define INLIB_ISPADDLE(type) (type == INLIB_TYPE_PADDLE)
 //#define INLIB_ISGRAPHICBOARD(type) (type == INLIB_GRAPHIC_BOARD)
@@ -66,9 +76,10 @@ void devkit_inlib_init()
 
 //#define inlib_getPortPtr(id) ((id) ? &inlib_portB : &inlib_portA)
 //struct inlibDevice devkit_inlib_getPortPtr( unsigned char port )
-struct inlibDevice* devkit_inlib_getPortPtr( unsigned char port )
+void devkit_inlib_getPortPtr( unsigned char port )
 {
-	return inlib_getPortPtr( port );
+	device = inlib_getPortPtr( port );
+	//return inlib_getPortPtr( port );
 	//inlib_getPortPtr( port );
 }
 //extern volatile struct inlibDevice inlib_portA;
@@ -93,6 +104,10 @@ void devkit_inlib_pollLightPhaser_trigger( unsigned char port )
 }
 
 //void devkit_inlib_pollLightPhaser_position(unsigned char port) /*__naked __z88dk_fastcall*/ {}
+void devkit_inlib_pollLightPhaser_position( unsigned char port )
+{
+	inlib_pollLightPhaser_position( port );
+}
 //void devkit_inlib_readGraphicBoard(unsigned char port) /*__z88dk_fastcall __naked*/ {}
 //void devkit_inlib_getportA(void) /*__naked __z88dk_fastcall __preserves_regs(b,c,d,e,iyl,iyh)*/ {}
 //void devkit_inlib_getportB(void) /*__naked __z88dk_fastcall __preserves_regs(b,c,d,e,iyl,iyh)*/ {}
