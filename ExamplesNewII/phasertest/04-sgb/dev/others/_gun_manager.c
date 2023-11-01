@@ -65,7 +65,12 @@ void devkit_inlib_init()
 //#define INLIB_PORTB	1
 
 //#define inlib_getPortPtr(id) ((id) ? &inlib_portB : &inlib_portA)
-
+//struct inlibDevice devkit_inlib_getPortPtr( unsigned char port )
+void devkit_inlib_getPortPtr( unsigned char port )
+{
+	//return *inlib_getPortPtr( port );
+	inlib_getPortPtr( port );
+}
 //extern volatile struct inlibDevice inlib_portA;
 //extern volatile struct inlibDevice inlib_portB;
 
