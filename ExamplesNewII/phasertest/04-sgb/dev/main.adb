@@ -1,6 +1,11 @@
 M:main
 F:G$engine_asm_manager_clear_VRAM$0_0$0({2}DF,SV:S),C,0,0,0,0,0
 F:G$main$0_0$0({2}DF,SV:S),C,0,0,0,0,0
+S:Lmain.main$i$1_0$98({1}SC:U),R,0,0,[c]
+S:Lmain.main$controllerPort$1_0$98({1}SC:U),B,1,-1
+S:Lmain.main$device$1_0$98({2}DG,STinlibDevice:S),R,0,0,[]
+S:Lmain.main$sloc0$0_1$0({1}SC:U),B,1,-1
+T:Fmain$inlibDevice[]
 S:G$VDPControlPort$0_0$0({1}SC:U),I,0,0
 S:G$VDPDataPort$0_0$0({1}SC:U),I,0,0
 S:G$devkit_SMS_init$0_0$0({2}DF,SV:S),C,0,0
@@ -144,7 +149,11 @@ S:G$devkit_SMS_addSprite_bulk8$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_addSprite_bulk12$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_setTilePriority$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_isCollisionDetected$0_0$0({2}DF,SC:U),C,0,0
+S:G$devkit_INLIB_BTN_1$0_0$0({2}DF,SI:U),C,0,0
 S:G$devkit_inlib_init$0_0$0({2}DF,SV:S),C,0,0
+S:G$devkit_inlib_getPortPtr$0_0$0({2}DF,DG,STinlibDevice:S),C,0,0
+S:G$devkit_inlib_keysStatus$0_0$0({2}DF,SI:U),C,0,0
+S:G$devkit_inlib_pollLightPhaser_trigger$0_0$0({2}DF,SV:S),C,0,0
 S:G$_print_format$0_0$0({2}DF,SI:S),C,0,0
 S:G$printf_small$0_0$0({2}DF,SV:S),C,0,0
 S:G$printf$0_0$0({2}DF,SI:S),C,0,0

@@ -1,5 +1,12 @@
 M:_gun_manager
+F:G$devkit_INLIB_BTN_1$0_0$0({2}DF,SI:U),Z,0,0,0,0,0
 F:G$devkit_inlib_init$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+F:G$devkit_inlib_getPortPtr$0_0$0({2}DF,DG,STinlibDevice:S),Z,0,0,0,0,0
+S:L_gun_manager.devkit_inlib_getPortPtr$port$1_0$34({1}SC:U),B,1,4
+F:G$devkit_inlib_keysStatus$0_0$0({2}DF,SI:U),Z,0,0,0,0,0
+S:L_gun_manager.devkit_inlib_keysStatus$port$1_0$36({1}SC:U),B,1,4
+F:G$devkit_inlib_pollLightPhaser_trigger$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:L_gun_manager.devkit_inlib_pollLightPhaser_trigger$port$1_0$38({1}SC:U),B,1,4
 T:F_gun_manager$__00000000[({0}S:S$rel16$0_0$0({4}STinlib_16bit_relative_data:S),Z,0,0)({0}S:S$rel$0_0$0({2}STinlib_relative_data:S),Z,0,0)({0}S:S$abs$0_0$0({2}STinlib_absolute_data:S),Z,0,0)({0}S:S$paddle$0_0$0({1}STinlib_paddle_data:S),Z,0,0)({0}S:S$graph$0_0$0({3}STinlib_graphicboard_data:S),Z,0,0)]
 T:F_gun_manager$inlib_graphicboard_data[({0}S:S$pressure$0_0$0({1}SC:U),Z,0,0)({1}S:S$x$0_0$0({1}SC:U),Z,0,0)({2}S:S$y$0_0$0({1}SC:U),Z,0,0)]
 T:F_gun_manager$inlibDevice[({0}S:S$type$0_0$0({1}SC:U),Z,0,0)({1}S:S$buttons$0_0$0({2}SI:U),Z,0,0)({3}S:S$prev_buttons$0_0$0({2}SI:U),Z,0,0)({5}S:S$rel16$0_0$0({4}STinlib_16bit_relative_data:S),Z,0,0)({5}S:S$rel$0_0$0({2}STinlib_relative_data:S),Z,0,0)({5}S:S$abs$0_0$0({2}STinlib_absolute_data:S),Z,0,0)({5}S:S$paddle$0_0$0({1}STinlib_paddle_data:S),Z,0,0)({5}S:S$graph$0_0$0({3}STinlib_graphicboard_data:S),Z,0,0)]
