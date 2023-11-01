@@ -145,5 +145,15 @@ S:G$devkit_SMS_addSprite_bulk12$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_setTilePriority$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_isCollisionDetected$0_0$0({2}DF,SC:U),C,0,0
 S:G$devkit_inlib_init$0_0$0({2}DF,SV:S),C,0,0
+S:G$_print_format$0_0$0({2}DF,SI:S),C,0,0
+S:G$printf_small$0_0$0({2}DF,SV:S),C,0,0
+S:G$printf$0_0$0({2}DF,SI:S),C,0,0
+S:G$vprintf$0_0$0({2}DF,SI:S),C,0,0
+S:G$sprintf$0_0$0({2}DF,SI:S),C,0,0
+S:G$vsprintf$0_0$0({2}DF,SI:S),C,0,0
+S:G$puts$0_0$0({2}DF,SI:S),C,0,0
+S:G$gets$0_0$0({2}DF,DG,SC:U),C,0,0
+S:G$getchar$0_0$0({2}DF,SI:S),C,0,0
+S:G$putchar$0_0$0({2}DF,SI:S),C,0,0
 S:G$engine_asm_manager_clear_VRAM$0_0$0({2}DF,SV:S),C,0,0
 S:G$main$0_0$0({2}DF,SV:S),C,0,0

@@ -27,9 +27,9 @@
 #define INLIB_ISABSOLUTE(type) (type & 0x80)
 
 struct inlib_graphicboard_data {
-  unsigned char pressure;
-  unsigned char x;
-  unsigned char y;
+	unsigned char pressure;
+	unsigned char x;
+	unsigned char y;
 };
 
 struct inlib_absolute_data {
@@ -57,7 +57,7 @@ struct inlibDevice {
 		struct inlib_relative_data rel;
 		struct inlib_absolute_data abs;
 		struct inlib_paddle_data paddle;
-    struct inlib_graphicboard_data graph;
+	struct inlib_graphicboard_data graph;
 	};
 };
 
