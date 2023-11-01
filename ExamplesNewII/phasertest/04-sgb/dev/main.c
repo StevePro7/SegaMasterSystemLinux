@@ -41,7 +41,7 @@ void main( void )
 	//char y;
 	//char bright_bg = 0;
 	char controllerPort = 99;
-	//struct inlibDevice device;
+	struct inlibDevice *device;
 
 	///* Position and visiblity of mouse pointers */
 	//unsigned char px[ 2 ] = { 64, 168 };
@@ -103,7 +103,7 @@ void main( void )
 	devkit_SMS_setNextTileatXY( 1, 2 );
 	printf( "Using light phaser in port %d", controllerPort );
 
-//	device = devkit_inlib_getPortPtr( controllerPort );
+	device = devkit_inlib_getPortPtr( controllerPort );
 
 
 	for( ;; )

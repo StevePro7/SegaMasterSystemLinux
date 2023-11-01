@@ -98,8 +98,8 @@ void inlib_init( void ) {}
 // Convenience macro to get a pointer to one of the ports
 #define inlib_getPortPtr(id) ((id) ? &inlib_portB : &inlib_portA)
 
-extern volatile struct inlibDevice inlib_portA = { 0 };
-extern volatile struct inlibDevice inlib_portB = { 1 };
+extern /*volatile*/ struct inlibDevice inlib_portA = { 0 };
+extern /*volatile*/ struct inlibDevice inlib_portB = { 1 };
 
 // Returns the current status of the button bits for the specified ports.
 //
