@@ -85,7 +85,7 @@ struct inlibDevice {
 #define INLIB_BTN_ANYDIR   (INLIB_BTN_UP|INLIB_BTN_DOWN|INLIB_BTN_LEFT|INLIB_BTN_RIGHT)
 
 // Initialize library internals
-void inlib_init(void);
+void inlib_init( void ) {}
 
 // All read functions update inlib_portA or inlib_portB according to the port argument
 // and set the type field depending on the outcome.
@@ -104,41 +104,41 @@ extern volatile struct inlibDevice inlib_portB;
 // Returns the current status of the button bits for the specified ports.
 //
 // Bit field of INLIB_BTN_*
-unsigned short inlib_keysStatus(unsigned char port) /*__z88dk_fastcall __naked*/;
+unsigned short inlib_keysStatus( unsigned char port ) /*__z88dk_fastcall __naked*/ { return 0; }
 
 // Looks at current a previous buttons bits for specified port and returns
 // bits set for newly pressed buttons (button down events).
 //
 // Bit field of INLIB_BTN_*
-unsigned short inlib_keysPressed(unsigned char port) /*__z88dk_fastcall __naked*/;
+unsigned short inlib_keysPressed( unsigned char port ) /*__z88dk_fastcall __naked*/ { return 0; }
 
 
 // Reads a standard SMS gamepad. Cannot fail.
-void inlib_pollSMS(unsigned char port) /*__naked __z88dk_fastcall*/;
+void inlib_pollSMS(unsigned char port) /*__naked __z88dk_fastcall*/ {}
 
 // Sets the type field to INLIB_TYPE_NONE on timeout
-void inlib_readPaddle (unsigned char port) /*__z88dk_fastcall __naked*/;
+void inlib_readPaddle (unsigned char port) /*__z88dk_fastcall __naked*/ {}
 
 // Hotswapping SMS, 3 Button and 6 Button controllers will work,
 // the type field will change accordingly.
-void inlib_readMDpad(unsigned char port) /*__naked __z88dk_fastcall*/;
+void inlib_readMDpad(unsigned char port) /*__naked __z88dk_fastcall*/ {}
 
 // Read a Sports Pad. Cannot fail / detect disconnection.
-void inlib_readSportsPad(unsigned char port) /*__z88dk_fastcall __naked*/;
+void inlib_readSportsPad(unsigned char port) /*__z88dk_fastcall __naked*/ {}
 
 // Reads a Mega Mouse. Sets the type to INLIB_TYPE_NONE on timeout
-void inlib_readMDmouse(unsigned char port) /*__naked __z88dk_fastcall*/;
+void inlib_readMDmouse(unsigned char port) /*__naked __z88dk_fastcall*/ {}
 
 // Read a Sports Pad in mark III mode. This will only work on mark III,
 // or on Japanese SMS if the game quickly sets TH low at startup.
-void inlib_readSportsPad_markIII(unsigned char port) /*__naked __z88dk_fastcall*/;
+void inlib_readSportsPad_markIII(unsigned char port) /*__naked __z88dk_fastcall*/ {}
 
 // Read the light phaser button status. This is equivalent to reading a SMS
 // controller, but only Button 1 exists and the type will always be set
 // to INLIB_TYPE_PHASER.
 //
 // This function, unlike inlib_pollLightPhaser_frame() returns very quickly.
-void inlib_pollLightPhaser_trigger(unsigned char port) /*__naked __z88dk_fastcall*/;
+void inlib_pollLightPhaser_trigger(unsigned char port) /*__naked __z88dk_fastcall*/ {}
 
 // Read the light phaser position. Due to how this works, this function runs
 // for a full frame.
@@ -155,7 +155,7 @@ void inlib_pollLightPhaser_trigger(unsigned char port) /*__naked __z88dk_fastcal
 //
 // Depending on your game, before calling this you may want to brigten the colors or draw a
 // solid box over the target to make sure it is detected reliably by the light gun.
-void inlib_pollLightPhaser_position(unsigned char port) /*__naked __z88dk_fastcall*/;
+void inlib_pollLightPhaser_position(unsigned char port) /*__naked __z88dk_fastcall*/ {}
 
 // Reads the status of a Graphic Board.
 //
@@ -173,33 +173,33 @@ void inlib_pollLightPhaser_position(unsigned char port) /*__naked __z88dk_fastca
 //
 // The "Mode Select" buttons are defined as INLIB_BTN_GRAF_1/2/3 but I am
 // uncertain if they match the order of their physical counterparts.
-void inlib_readGraphicBoard(unsigned char port) /*__z88dk_fastcall __naked*/;
+void inlib_readGraphicBoard(unsigned char port) /*__z88dk_fastcall __naked*/ {}
 
 /* From this point, mostly internal functions and vars */
 
 // Returns port A raw value (bits 0-6 from port DC)
-void inlib_getportA(void) /*__naked __z88dk_fastcall __preserves_regs(b,c,d,e,iyl,iyh)*/;
+void inlib_getportA(void) /*__naked __z88dk_fastcall __preserves_regs(b,c,d,e,iyl,iyh)*/ {}
 
 // Returns port B raw value, bit aligned as for port A
 // (i.e. combines bits 6-7 of port DC with bits 0-3 of port DC, then rotate left 2 times)
-void inlib_getportB(void) /*__naked __z88dk_fastcall __preserves_regs(b,c,d,e,iyl,iyh)*/;
+void inlib_getportB(void) /*__naked __z88dk_fastcall __preserves_regs(b,c,d,e,iyl,iyh)*/ {}
 
 // Functions to configure TH and TR in particular ways. Use inlib_port3F_last to avoid
 // side effects.
-void inlib_portA_TH_in_TR_in(void) /*__naked __z88dk_fastcall*/;
-void inlib_portB_TH_in_TR_in(void) /*__naked __z88dk_fastcall*/;
-void inlib_portA_TH_out_TR_in(void) /*__naked __z88dk_fastcall*/;
-void inlib_portB_TH_out_TR_in(void) /*__naked __z88dk_fastcall*/;
-void inlib_portA_TH_out_TR_out(void) /*__naked __z88dk_fastcall*/;
-void inlib_portB_TH_out_TR_out(void) /*__naked __z88dk_fastcall*/;
-void inlib_portA_TH_low(void) /*__naked __z88dk_fastcall*/;
-void inlib_portA_TH_high(void) /*__naked __z88dk_fastcall*/;
-void inlib_portB_TH_low(void) /*__naked __z88dk_fastcall*/;
-void inlib_portB_TH_high(void) /*__naked __z88dk_fastcall*/;
-void inlib_portA_TR_low(void) /*__naked __z88dk_fastcall*/;
-void inlib_portA_TR_high(void) /*__naked __z88dk_fastcall*/;
-void inlib_portB_TR_low(void) /*__naked __z88dk_fastcall*/;
-void inlib_portB_TR_high(void) /*__naked __z88dk_fastcall*/;
+void inlib_portA_TH_in_TR_in(void) /*__naked __z88dk_fastcall*/ {}
+void inlib_portB_TH_in_TR_in(void) /*__naked __z88dk_fastcall*/ {}
+void inlib_portA_TH_out_TR_in(void) /*__naked __z88dk_fastcall*/ {}
+void inlib_portB_TH_out_TR_in(void) /*__naked __z88dk_fastcall*/ {}
+void inlib_portA_TH_out_TR_out(void) /*__naked __z88dk_fastcall*/ {}
+void inlib_portB_TH_out_TR_out(void) /*__naked __z88dk_fastcall*/ {}
+void inlib_portA_TH_low(void) /*__naked __z88dk_fastcall*/ {}
+void inlib_portA_TH_high(void) /*__naked __z88dk_fastcall*/ {}
+void inlib_portB_TH_low(void) /*__naked __z88dk_fastcall*/ {}
+void inlib_portB_TH_high(void) /*__naked __z88dk_fastcall*/ {}
+void inlib_portA_TR_low(void) /*__naked __z88dk_fastcall*/ {}
+void inlib_portA_TR_high(void) /*__naked __z88dk_fastcall*/ {}
+void inlib_portB_TR_low(void) /*__naked __z88dk_fastcall*/ {}
+void inlib_portB_TR_high(void) /*__naked __z88dk_fastcall*/ {}
 
 // Holds the last value written to port 3F. Used internally to avoid resetting direction
 // configuration (e.g: For instance, mouse code configures TR as an output on port A, if reading

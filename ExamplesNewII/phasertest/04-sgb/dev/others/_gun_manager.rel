@@ -1,15 +1,17 @@
 ;!FILE _gun_manager.asm
 XL3
-H 9 areas 7 global symbols
+H 9 areas 9 global symbols
 M _gun_manager
 O -mz80
+S _inlib_init Ref000000
 S .__.ABS. Def000000
-A _CODE size 1 flags 0 addr 0
-S A$_gun_manager$59 Def000000
+A _CODE size 3 flags 0 addr 0
+S C$_gun_manager.c$11$1_0$29 Def000000
+S A$_gun_manager$63 Def000000
+S C$_gun_manager.c$12$1_0$29 Def000000
 S G$devkit_inlib_init$0$0 Def000000
 S _devkit_inlib_init Def000000
-S C$_gun_manager.c$3$0_0$2 Def000000
-S C$_gun_manager.c$5$0_0$2 Def000000
+S C$_gun_manager.c$9$0_0$29 Def000000
 S XG$devkit_inlib_init$0$0 Def000000
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
@@ -21,5 +23,5 @@ A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
-T 00 00 00 C9
-R 00 00 00 00
+T 00 00 00 C3 00 00
+R 00 00 00 00 02 04 00 00

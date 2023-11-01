@@ -33,6 +33,7 @@ void engine_asm_manager_clear_VRAM()
 
 void main( void )
 {
+	devkit_inlib_init();
 	devkit_SMS_init();
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();

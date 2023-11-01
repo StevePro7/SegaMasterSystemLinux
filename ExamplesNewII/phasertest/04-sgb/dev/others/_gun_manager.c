@@ -8,4 +8,5 @@
 
 void devkit_inlib_init()
 {
+	inlib_init();
 }
