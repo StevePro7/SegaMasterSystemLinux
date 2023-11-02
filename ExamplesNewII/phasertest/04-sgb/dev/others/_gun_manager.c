@@ -12,7 +12,23 @@ unsigned char devkit_get_device_type()
 {
 	return device->type;
 }
+unsigned char devkit_get_device_absx()
+{
+	return device->abs.x;
+}
+unsigned char devkit_get_device_absy()
+{
+	return device->abs.y;
+}
 
+void devkit_set_device_absx( unsigned char x )
+{
+	device->abs.x = x;
+}
+void devkit_set_device_absy( unsigned char y )
+{
+	device->abs.y = y;
+}
 //#define INLIB_TYPE_NONE      0x00
 //#define INLIB_TYPE_SMS       0x01
 //#define INLIB_TYPE_MD3	     0x02

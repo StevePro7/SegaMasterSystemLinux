@@ -44,7 +44,7 @@ void main( void )
 	//struct inlibDevice *device;
 
 	///* Position and visiblity of mouse pointers */
-	//unsigned char px[ 2 ] = { 64, 168 };
+	unsigned char px[ 2 ] = { 64, 168 };
 	//unsigned char py[ 2 ] = { 96, 96 };
 	//char pvisible[ 2 ] = { 0, 0 };
 
@@ -138,9 +138,10 @@ void main( void )
 		if( devkit_get_device_type() == devkit_INLIB_TYPE_PHASER_HIT() )
 		{
 			// Center sprite 8x8 sprite on the position
-			if( devkit_get_device_absx() > 4 )
+			unsigned char absx = devkit_get_device_absx();
+			if( absx > 4 )
 			{
-				px[ i ] = device->abs.x - 4; 
+				px[ i ] = absx- 4; 
 			}
 			else {
 				px[ i ] = 0; 
