@@ -1,8 +1,12 @@
+#include <stdio.h>
 #include "SMSlib.h"
+#include "inlib.h"
+
 
 void main(void)
 {
 	SMS_init();
+	SMS_VRAMmemsetW(0, 0x0000, 16384);
 	SMS_setSpritePaletteColor(0, RGB(3, 3, 3));
 	SMS_displayOn();
 	for (;;)
