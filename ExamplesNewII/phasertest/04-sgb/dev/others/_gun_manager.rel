@@ -1,6 +1,6 @@
 ;!FILE _gun_manager.asm
 XL3
-H 9 areas 38 global symbols
+H 9 areas 89 global symbols
 M _gun_manager
 O -mz80
 S _inlib_init Ref000000
@@ -9,58 +9,139 @@ S _inlib_portA Ref000000
 S _inlib_portB Ref000000
 S .__.ABS. Def000000
 S _inlib_pollLightPhaser_trigger Ref000000
-A _CODE size 2F flags 0 addr 0
-S A$_gun_manager$103 Def000007
-S A$_gun_manager$104 Def00000A
-S G$devkit_inlib_getPortPtr$0$0 Def000007
-S A$_gun_manager$132 Def000017
-S A$_gun_manager$105 Def00000B
-S A$_gun_manager$142 Def000020
-S A$_gun_manager$133 Def00001B
-S A$_gun_manager$106 Def00000C
-S A$_gun_manager$134 Def00001D
+S _inlib_pollLightPhaser_position Ref000000
+A _CODE size 7D flags 0 addr 0
+S A$_gun_manager$301 Def000062
+S A$_gun_manager$121 Def000011
+S A$_gun_manager$131 Def000016
+S A$_gun_manager$122 Def000014
+S G$devkit_inlib_getPortPtr$0$0 Def000045
+S XG$devkit_get_device_type$0$0 Def000004
+S A$_gun_manager$150 Def000027
+S A$_gun_manager$123 Def000015
+S C$_gun_manager.c$100$1_0$46 Def000058
+S A$_gun_manager$314 Def000065
+S A$_gun_manager$260 Def000045
+S A$_gun_manager$206 Def00003D
 S A$_gun_manager$107 Def00000D
-S A$_gun_manager$108 Def00000F
-S A$_gun_manager$109 Def000012
-S _devkit_INLIB_BTN_1 Def000000
-S A$_gun_manager$155 Def000023
-S A$_gun_manager$119 Def000016
-S A$_gun_manager$165 Def00002C
-S A$_gun_manager$156 Def000027
-S A$_gun_manager$157 Def000029
-S G$devkit_inlib_pollLightPhaser_trigger$0$0 Def000023
-S _devkit_inlib_getPortPtr Def000007
-S XG$devkit_INLIB_BTN_1$0$0 Def000003
-S A$_gun_manager$70 Def000003
-S C$_gun_manager.c$60$1_0$33 Def000004
-S C$_gun_manager.c$35$0_0$32 Def000000
-S A$_gun_manager$62 Def000000
-S A$_gun_manager$90 Def000004
-S C$_gun_manager.c$37$1_0$32 Def000000
-S C$_gun_manager.c$71$1_0$35 Def000007
-S C$_gun_manager.c$38$1_0$32 Def000003
-S _devkit_inlib_pollLightPhaser_trigger Def000023
-S C$_gun_manager.c$80$1_0$37 Def000017
-S XG$devkit_inlib_getPortPtr$0$0 Def000016
-S C$_gun_manager.c$73$1_0$35 Def000016
-S C$_gun_manager.c$57$1_0$33 Def000004
-S C$_gun_manager.c$81$1_0$37 Def000020
-S G$devkit_inlib_init$0$0 Def000004
-S C$_gun_manager.c$59$1_0$33 Def000004
-S C$_gun_manager.c$90$1_0$39 Def000023
-S C$_gun_manager.c$92$1_0$39 Def000023
-S C$_gun_manager.c$69$1_0$35 Def000007
-S C$_gun_manager.c$93$1_0$39 Def00002C
-S C$_gun_manager.c$78$1_0$37 Def000017
-S XG$devkit_inlib_pollLightPhaser_trigger$0$0 Def00002C
-S G$devkit_inlib_keysStatus$0$0 Def000017
-S _devkit_inlib_init Def000004
-S XG$devkit_inlib_init$0$0 Def000004
-S _devkit_inlib_keysStatus Def000017
-S G$devkit_INLIB_BTN_1$0$0 Def000000
-S XG$devkit_inlib_keysStatus$0$0 Def000020
-S A$_gun_manager$111 Def000013
-A _DATA size 0 flags 0 addr 0
+S C$_gun_manager.c$123$1_0$52 Def000071
+S A$_gun_manager$324 Def00006E
+S A$_gun_manager$315 Def000069
+S A$_gun_manager$270 Def000055
+S A$_gun_manager$261 Def000048
+S A$_gun_manager$171 Def000029
+S A$_gun_manager$144 Def000017
+S C$_gun_manager.c$117$1_0$50 Def000065
+S A$_gun_manager$316 Def00006B
+S A$_gun_manager$262 Def000049
+S A$_gun_manager$172 Def00002C
+S A$_gun_manager$145 Def00001A
+S C$_gun_manager.c$125$1_0$52 Def000071
+S XG$devkit_INLIB_TYPE_PHASER_HIT$0$0 Def00003D
+S _devkit_INLIB_BTN_1 Def00003E
+S A$_gun_manager$263 Def00004A
+S A$_gun_manager$227 Def000041
+S A$_gun_manager$173 Def00002F
+S A$_gun_manager$146 Def00001D
+S C$_gun_manager.c$126$1_0$52 Def00007A
+S C$_gun_manager.c$119$1_0$50 Def000065
+S A$_gun_manager$291 Def000059
+S A$_gun_manager$264 Def00004B
+S A$_gun_manager$219 Def00003E
+S A$_gun_manager$174 Def000030
+S A$_gun_manager$147 Def00001E
+S A$_gun_manager$337 Def000071
+S A$_gun_manager$292 Def00005D
+S A$_gun_manager$265 Def00004D
+S A$_gun_manager$247 Def000042
+S A$_gun_manager$175 Def000034
+S A$_gun_manager$148 Def000022
+S C$_gun_manager.c$105$1_0$48 Def000059
+S A$_gun_manager$347 Def00007A
+S A$_gun_manager$338 Def000075
+S A$_gun_manager$293 Def00005F
+S A$_gun_manager$266 Def000050
+S A$_gun_manager$185 Def00003A
+S A$_gun_manager$176 Def000036
+S A$_gun_manager$158 Def000028
+S A$_gun_manager$149 Def000024
+S A$_gun_manager$339 Def000077
+S A$_gun_manager$177 Def000039
+S G$devkit_inlib_pollLightPhaser_trigger$0$0 Def000065
+S C$_gun_manager.c$107$1_0$48 Def000059
+S A$_gun_manager$268 Def000052
+S G$devkit_inlib_pollLightPhaser_position$0$0 Def000071
+S C$_gun_manager.c$108$1_0$48 Def000062
+S A$_gun_manager$278 Def000058
+S _devkit_inlib_getPortPtr Def000045
+S A$_gun_manager$198 Def00003B
+S C$_gun_manager.c$30$1_0$41 Def000029
+S C$_gun_manager.c$31$1_0$41 Def00003A
+S C$_gun_manager.c$11$0_0$35 Def000000
+S XG$devkit_INLIB_BTN_1$0$0 Def000041
+S C$_gun_manager.c$13$1_0$35 Def000000
+S C$_gun_manager.c$21$1_0$37 Def00000E
+S C$_gun_manager.c$14$1_0$35 Def000004
+S C$_gun_manager.c$61$1_0$43 Def00003E
+S C$_gun_manager.c$44$1_0$42 Def00003B
+S C$_gun_manager.c$22$1_0$37 Def000016
+S G$devkit_get_device_absx$0$0 Def000005
+S C$_gun_manager.c$28$1_0$41 Def000029
+S G$devkit_get_device_absy$0$0 Def00000E
+S C$_gun_manager.c$15$1_0$36 Def000005
+S A$_gun_manager$83 Def000004
+S A$_gun_manager$74 Def000000
+S C$_gun_manager.c$63$1_0$43 Def00003E
+S C$_gun_manager.c$46$1_0$42 Def00003B
+S _devkit_inlib_pollLightPhaser_trigger Def000065
+S A$_gun_manager$75 Def000003
+S C$_gun_manager.c$64$1_0$43 Def000041
+S C$_gun_manager.c$47$1_0$42 Def00003D
+S C$_gun_manager.c$17$1_0$36 Def000005
+S _devkit_inlib_pollLightPhaser_position Def000071
+S XG$devkit_inlib_getPortPtr$0$0 Def000058
+S C$_gun_manager.c$24$1_0$39 Def000017
+S C$_gun_manager.c$18$1_0$36 Def00000D
+S C$_gun_manager.c$83$1_0$44 Def000042
+S G$devkit_inlib_init$0$0 Def000042
+S A$_gun_manager$96 Def000005
+S C$_gun_manager.c$26$1_0$39 Def000017
+S C$_gun_manager.c$19$1_0$37 Def00000E
+S A$_gun_manager$97 Def000008
+S C$_gun_manager.c$85$1_0$44 Def000042
+S C$_gun_manager.c$27$1_0$39 Def000028
+S A$_gun_manager$98 Def00000B
+S C$_gun_manager.c$86$1_0$44 Def000042
+S A$_gun_manager$99 Def00000C
+S C$_gun_manager.c$95$1_0$46 Def000045
+S C$_gun_manager.c$97$1_0$46 Def000045
+S G$devkit_set_device_absx$0$0 Def000017
+S _devkit_get_device_absx Def000005
+S G$devkit_set_device_absy$0$0 Def000029
+S _devkit_get_device_absy Def00000E
+S XG$devkit_inlib_pollLightPhaser_trigger$0$0 Def00006E
+S XG$devkit_inlib_pollLightPhaser_position$0$0 Def00007A
+S G$devkit_inlib_keysStatus$0$0 Def000059
+S _devkit_inlib_init Def000042
+S G$devkit_get_device_type$0$0 Def000000
+S XG$devkit_get_device_absx$0$0 Def00000D
+S _devkit_set_device_absx Def000017
+S G$devkit_INLIB_TYPE_PHASER_HIT$0$0 Def00003B
+S XG$devkit_get_device_absy$0$0 Def000016
+S _devkit_set_device_absy Def000029
+S XG$devkit_inlib_init$0$0 Def000042
+S _devkit_inlib_keysStatus Def000059
+S _devkit_get_device_type Def000000
+S XG$devkit_set_device_absx$0$0 Def000028
+S G$devkit_INLIB_BTN_1$0$0 Def00003E
+S XG$devkit_set_device_absy$0$0 Def00003A
+S _devkit_INLIB_TYPE_PHASER_HIT Def00003B
+S XG$devkit_inlib_keysStatus$0$0 Def000062
+S A$_gun_manager$120 Def00000E
+S C$_gun_manager.c$120$1_0$50 Def00006E
+A _DATA size 2 flags 0 addr 0
+S _device Def000000
+S G$device$0_0$0 Def000000
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
@@ -69,26 +150,66 @@ A _GSFINAL size 0 flags 0 addr 0
 A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00 00
+R 00 00 01 00
+T 00 00 00
+R 00 00 01 00
+T 00 00 00
 R 00 00 00 00
-T 00 00 00 21 10 00 C9
+T 00 00 00 2A 00 00 6E C9
+R 00 00 00 00 00 04 01 00
+T 05 00 00
 R 00 00 00 00
-T 04 00 00
+T 05 00 00 2A 00 00 11 05 00 19 6E C9
+R 00 00 00 00 00 04 01 00
+T 0E 00 00
 R 00 00 00 00
-T 04 00 00 C3 00 00
-R 00 00 00 00 02 04 00 00
-T 07 00 00
-R 00 00 00 00
-T 07 00 00 21 02 00 39 7E B7 28 04 21 00 00 C9
-R 00 00 00 00 02 0C 03 00
-T 13 00 00
-R 00 00 00 00
-T 13 00 00 21 00 00 C9
-R 00 00 00 00 02 04 02 00
+T 0E 00 00 2A 00 00 11 06 00 19 6E C9
+R 00 00 00 00 00 04 01 00
 T 17 00 00
 R 00 00 00 00
-T 17 00 00 FD 21 02 00 FD 39 FD 6E 00 C3 00 00
-R 00 00 00 00 02 0D 01 00
-T 23 00 00
+T 17 00 00 2A 00 00 01 05 00 09 FD 21 02 00 FD 39
+R 00 00 00 00 00 04 01 00
+T 24 00 00 FD 7E 00 77 C9
 R 00 00 00 00
-T 23 00 00 FD 21 02 00 FD 39 FD 6E 00 C3 00 00
+T 29 00 00
+R 00 00 00 00
+T 29 00 00 2A 00 00 01 06 00 09 FD 21 02 00 FD 39
+R 00 00 00 00 00 04 01 00
+T 36 00 00 FD 7E 00 77 C9
+R 00 00 00 00
+T 3B 00 00
+R 00 00 00 00
+T 3B 00 00 2E 81 C9
+R 00 00 00 00
+T 3E 00 00
+R 00 00 00 00
+T 3E 00 00 21 10 00 C9
+R 00 00 00 00
+T 42 00 00
+R 00 00 00 00
+T 42 00 00 C3 00 00
+R 00 00 00 00 02 04 00 00
+T 45 00 00
+R 00 00 00 00
+T 45 00 00 21 02 00 39 7E B7 28 05 21 00 00 18 03
+R 00 00 00 00 02 0C 03 00
+T 52 00 00
+R 00 00 00 00
+T 52 00 00 21 00 00
+R 00 00 00 00 02 04 02 00
+T 55 00 00
+R 00 00 00 00
+T 55 00 00 22 00 00 C9
+R 00 00 00 00 00 04 01 00
+T 59 00 00
+R 00 00 00 00
+T 59 00 00 FD 21 02 00 FD 39 FD 6E 00 C3 00 00
+R 00 00 00 00 02 0D 01 00
+T 65 00 00
+R 00 00 00 00
+T 65 00 00 FD 21 02 00 FD 39 FD 6E 00 C3 00 00
 R 00 00 00 00 02 0D 05 00
+T 71 00 00
+R 00 00 00 00
+T 71 00 00 FD 21 02 00 FD 39 FD 6E 00 C3 00 00
+R 00 00 00 00 02 0D 06 00

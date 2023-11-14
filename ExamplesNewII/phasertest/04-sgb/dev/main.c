@@ -43,10 +43,10 @@ void main( void )
 	char controllerPort = 99;
 	//struct inlibDevice *device;
 
-	///* Position and visiblity of mouse pointers */
+	///* Position and visibility of mouse pointers */
 	unsigned char px[ 2 ] = { 64, 168 };
-	//unsigned char py[ 2 ] = { 96, 96 };
-	//char pvisible[ 2 ] = { 0, 0 };
+	unsigned char py[ 2 ] = { 96, 96 };
+	char pvisible[ 2 ] = { 0, 0 };
 
 	devkit_SMS_init();
 	devkit_SMS_displayOff();
@@ -146,9 +146,23 @@ void main( void )
 			else {
 				px[ i ] = 0; 
 			}
-		}
-	
+			unsigned char absy = devkit_get_device_absy();
+			if( absy > 4 )
+			{
+				py[ i ] = absy - 4;
+			}
+			else {
+				py[ i ] = 0;
+			}
 
-		devkit_SMS_waitForVBlank();
+			pvisible[ i ] = 1;
+		}
+
+		if( pvisible[ i ] ) 
+		{
+			devkit_SMS_addSprite( px[ i ], py[ i ], 16 + i );
+			devkit_SMS_setNextTileatXY( 3, y++ );
+			printf( "Position: %03u,%03u", px[ i ], py[ i ] );
+		}
 	}
 }
