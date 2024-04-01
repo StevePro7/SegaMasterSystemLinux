@@ -17,6 +17,7 @@ void main(void)
 	engine_content_manager_load_back_tiles();
 
 	devkit_SMS_setSpritePaletteColor( 0, devkit_RGB( 3, 3, 3 ) );
+	engine_font_manager_draw_text( "BS MAIN THEME", 4, 2 );
 	devkit_SMS_displayOn();
 	flags = 0;
 	for (;;)
@@ -39,7 +40,7 @@ void main(void)
 		if( input )
 		{
 			flags = 1;
-			//engine_font_manager_draw_text( "FIRST HALF", 4, 4 );
+			engine_font_manager_draw_text( "FIRST HALF", 4, 4 );
 			engine_audio_manager_music_game( 0 );
 		}
 
