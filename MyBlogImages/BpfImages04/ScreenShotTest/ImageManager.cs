@@ -6,12 +6,14 @@ namespace ScreenShotTest
 {
 	public class ImageManager
 	{
-		private const int MAX = 2;
+		private const int MAX = 4;
 
 		private string[] names = new string[MAX] 
 		{
-			"HelloUnity",
-			"HelloCeedling",
+			"Doom1",
+			"Doom2",
+			"Plutonia",
+			"Tnt",
 		};
 
 		public void Load(ContentManager content)
