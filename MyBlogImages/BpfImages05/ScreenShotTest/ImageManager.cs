@@ -6,13 +6,14 @@ namespace ScreenShotTest
 {
 	public class ImageManager
 	{
-		private const int MAX = 3;
+		private const int MAX = 4;
 
 		private string[] names = new string[MAX] 
 		{
 			"BlankProject",
 			"CICDvariables",
 			"NewProject",
+			"VScodeDebug",
 		};
 
 		public void Load(ContentManager content)
