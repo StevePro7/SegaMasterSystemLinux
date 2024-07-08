@@ -6,7 +6,7 @@ namespace ScreenShotTest
 {
 	public class ImageManager
 	{
-		private const int MAX = 5;
+		private const int MAX = 6;
 
 		private string[] names = new string[MAX] 
 		{
