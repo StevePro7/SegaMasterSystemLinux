@@ -15,6 +15,7 @@ namespace ScreenShotTest
 			"NewProject",
 			"PrBoomKeys",
 			"VScodeDebug",
+			"JetBrainsLogin",
 		};
 
 		public void Load(ContentManager content)
