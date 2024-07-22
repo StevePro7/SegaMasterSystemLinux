@@ -10,12 +10,12 @@ namespace ScreenShotTest
 
 		private string[] names = new string[MAX] 
 		{
-			"BlankProject",
-			"CICDvariables",
-			"NewProject",
-			"PrBoomKeys",
-			"VScodeDebug",
-			"JetBrainsLogin",
+			"ForkFarma01",
+			"ForkFarma02",
+			"ForkFarma03",
+			"ForkFarma04",
+			"ForkFarma05",
+			"ForkFarma06",
 		};
 
 		public void Load(ContentManager content)
