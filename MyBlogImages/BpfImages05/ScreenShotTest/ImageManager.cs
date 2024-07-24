@@ -10,12 +10,12 @@ namespace ScreenShotTest
 
 		private string[] names = new string[MAX] 
 		{
-			"ForkFarma01",
-			"ForkFarma02",
-			"ForkFarma03",
-			"ForkFarma04",
-			"ForkFarma05",
-			"ForkFarma06",
+			"ForkRetro01",
+			"ForkRetro02",
+			"ForkRetro03",
+			"ForkRetro04",
+			"ForkRetro05",
+			"ForkRetro06",
 		};
 
 		public void Load(ContentManager content)
