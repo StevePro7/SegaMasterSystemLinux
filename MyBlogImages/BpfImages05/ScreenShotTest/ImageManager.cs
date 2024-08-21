@@ -6,16 +6,12 @@ namespace ScreenShotTest
 {
 	public class ImageManager
 	{
-		private const int MAX = 6;
+		private const int MAX = 2;
 
 		private string[] names = new string[MAX] 
 		{
-			"ForkRetro01",
-			"ForkRetro02",
-			"ForkRetro03",
-			"ForkRetro04",
-			"ForkRetro05",
-			"ForkRetro06",
+			"PyCharmGym",
+			"PyCharmGymnasium",
 		};
 
 		public void Load(ContentManager content)
