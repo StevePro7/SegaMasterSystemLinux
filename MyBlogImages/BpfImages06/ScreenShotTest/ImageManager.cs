@@ -6,13 +6,11 @@ namespace ScreenShotTest
 {
 	public class ImageManager
 	{
-		private const int MAX = 3;
+		private const int MAX = 1;
 
 		private string[] names = new string[MAX] 
 		{
-			"FarmaCheatSheetProject",
-			"FarmaCheatSheetVenv",
-			"FarmaExamples",
+			"Ant-v4",
 		};
 
 		public void Load(ContentManager content)
