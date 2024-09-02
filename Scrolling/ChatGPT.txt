@@ -1,0 +1,78 @@
+Chat GPT
+02-Sep-2024
+
+devkitsms example with line interrupts to achieve scolling part of the screen only
+
+
+
+#include <sms.h>  // Include the SMS header for accessing SMS functions
+#include <stdbool.h>
+
+// Define the scrolling speeds and positions
+#define SCROLL_SPEED 1
+unsigned int scroll_x = 0;
+unsigned int line_interrupt_position = 64;  // Where the scroll effect starts
+
+// Line interrupt handler
+void line_interrupt_handler() {
+    // Check the current scanline (line number)
+    unsigned char line = SMS_getLineCounter();
+    
+    // Set the scroll for the top part of the screen (before the interrupt line)
+    if (line == line_interrupt_position) {
+        // Set scroll for the part below the interrupt
+        SMS_setBGScrollX(scroll_x);
+    }
+
+    // Re-enable the line interrupt for the next frame
+    SMS_setLineCounter(line_interrupt_position);
+}
+
+void main() {
+    // Initialize the VDP and enable line interrupts
+    SMS_init();
+    
+    // Load the tiles and tilemap
+    SMS_loadBGPalette(background_palette);
+    SMS_loadTiles(background_tiles, 0, sizeof(background_tiles));
+    SMS_loadTileMap(0, 0, background_map, 32 * 28);
+    
+    // Set up the line interrupt
+    SMS_setLineCounter(line_interrupt_position);
+    SMS_setLineInterruptHandler(line_interrupt_handler);
+
+    // Enable line interrupts globally
+    SMS_enableLineInterrupt();
+
+    // Main game loop
+    while (true) {
+        // Scroll the background (lower part of the screen)
+        scroll_x += SCROLL_SPEED;
+
+        // Wait for the VBlank
+        SMS_waitForVBlank();
+    }
+}
+
+// Example tiles and map data (replace these with actual data)
+const unsigned char background_palette[16] = { /* Your palette data here */ };
+const unsigned char background_tiles[256] = { /* Your tiles data here */ };
+const unsigned char background_map[32 * 28] = { /* Your map data here */ };
+
+
+
+
+
+
+
+
+Explanation
+Line Interrupts: Line interrupts are used to execute a specific routine at a designated scanline during the rendering of the screen. In this example, the interrupt is set to trigger at line_interrupt_position, which is scanline 64. This means that the first 64 lines of the screen will remain static, and scrolling will only affect the lines below this point.
+
+Scroll Variable: scroll_x keeps track of the horizontal scroll position for the portion of the screen below the interrupt line.
+
+Handler Setup: SMS_setLineInterruptHandler(line_interrupt_handler) assigns the line_interrupt_handler function to be called whenever the interrupt occurs. Inside this handler, we adjust the scroll position of the background based on the current line being rendered.
+
+Line Counter: SMS_setLineCounter(line_interrupt_position) sets up the VDP to trigger the interrupt at the specified line. This is important to ensure that only part of the screen scrolls.
+
+Main Loop: The main game loop simply increments the scroll position and waits for the vertical blanking interval (VBlank) using SMS_waitForVBlank() to update the screen without tearing.
