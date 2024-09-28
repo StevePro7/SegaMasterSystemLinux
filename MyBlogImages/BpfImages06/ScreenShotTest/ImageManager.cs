@@ -6,11 +6,18 @@ namespace ScreenShotTest
 {
 	public class ImageManager
 	{
-		private const int MAX = 1;
+		private const int MAX = 8;
 
 		private string[] names = new string[MAX] 
 		{
-			"Ant-v4",
+			"FarmaRetroVenv",
+			"ForkRetro02",
+			"ForkRetro05",
+			"HelloGymRetro",
+			"HelloStableRetro",
+			"StableRetroVenv",
+			"gym-retro-integration-cmake",
+			"gym-retro-integration-debug",
 		};
 
 		public void Load(ContentManager content)
