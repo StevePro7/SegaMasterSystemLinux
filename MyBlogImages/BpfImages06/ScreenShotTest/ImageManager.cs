@@ -6,27 +6,33 @@ namespace ScreenShotTest
 {
 	public class ImageManager
 	{
-		private const int MAX = 16;
+		private const int MAX = 2;
 
 		private string[] names = new string[MAX]
 		{
-			"AlienSyndrome-Sms",
-			"BladeEagle-Sms",
-			"DickTracy-Sms",
-			"JamesPond2CodenameRoboCod-Sms",
-			"RType-Sms",
-			"Shinobi-Sms",
-			"SonicTheHedgehog-Sms",
-			"Transbot-Sms",
-			"AlteredBeast-Genesis",
-			"Flicky-Genesis",
-			"GhoulsnGhosts-Genesis",
-			"RevengeOfShinobi-Genesis",
-			"SonicTheHedgehog2-Genesis",
-			"SonicTheHedgehog3-Genesis",
-			"StreetsOfRage2-Genesis",
-			"Strider-Genesis",
+			"RetroCheatSheetProject",
+			"RetroCheatSheetVenv",
 		};
+
+		//private string[] names = new string[MAX]
+		//{
+		//	"AlienSyndrome-Sms",
+		//	"BladeEagle-Sms",
+		//	"DickTracy-Sms",
+		//	"JamesPond2CodenameRoboCod-Sms",
+		//	"RType-Sms",
+		//	"Shinobi-Sms",
+		//	"SonicTheHedgehog-Sms",
+		//	"Transbot-Sms",
+		//	"AlteredBeast-Genesis",
+		//	"Flicky-Genesis",
+		//	"GhoulsnGhosts-Genesis",
+		//	"RevengeOfShinobi-Genesis",
+		//	"SonicTheHedgehog2-Genesis",
+		//	"SonicTheHedgehog3-Genesis",
+		//	"StreetsOfRage2-Genesis",
+		//	"Strider-Genesis",
+		//};
 
 		//private string[] names = new string[MAX] 
 		//{
