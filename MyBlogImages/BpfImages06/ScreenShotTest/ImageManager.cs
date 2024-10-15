@@ -6,15 +6,21 @@ namespace ScreenShotTest
 {
 	public class ImageManager
 	{
-		private const int MAX = 4;
+		private const int MAX = 2;
 
 		private string[] names = new string[MAX]
-{
-			"gym-retro-integration-debug",
-			"gym-retro-integration-tests",
-			"SelectCMakeLists01",
-			"SelectCMakeLists02",
+		{
+			"PyCharmDebugGames",
+			"PyCharmDebugTests",
 		};
+
+		//private string[] names = new string[MAX]
+		//{
+		//	"gym-retro-integration-debug",
+		//	"gym-retro-integration-tests",
+		//	"SelectCMakeLists01",
+		//	"SelectCMakeLists02",
+		//};
 
 		//private string[] names = new string[MAX]
 		//{
