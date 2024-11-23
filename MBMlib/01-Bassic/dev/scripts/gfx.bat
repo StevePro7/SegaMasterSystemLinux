@@ -17,5 +17,5 @@ del *.asm > nul
 del *.lst > nul
 del *.sym > nul
 
-cd ..
+::cd ..
 cd scripts
