@@ -22,19 +22,19 @@ void MBMFadeOut (unsigned char fade_fraction) __z88dk_fastcall;
 void MBMFrame (void) {} /*__naked;*/
 
 /*  functions to detect and enable FM/PSG audio hardware */
-/*
+
 #define SMS_AUDIO_NO_FM    0
 #define SMS_AUDIO_FM_ONLY  1
 #define SMS_AUDIO_FM_PSG   2
 
-unsigned char SMS_GetFMAudioCapabilities (void) __naked;
+unsigned char SMS_GetFMAudioCapabilities( void ) { return 0; } /*__naked;*/
 
 #define SMS_ENABLE_AUDIO_FM_ONLY   0x01
 #define SMS_ENABLE_AUDIO_FM_PSG    0x03
 #define SMS_ENABLE_AUDIO_PSG_ONLY  0x00
 #define SMS_ENABLE_AUDIO_NONE      0x02
 
-void SMS_EnableAudio (unsigned char chips) __z88dk_fastcall __naked;
+void SMS_EnableAudio( unsigned char chips ) {} /*__z88dk_fastcall __naked;*/
 
 /* SFX */
 
@@ -47,6 +47,6 @@ void MBMSFXCancelLoop (void);
 */
 //void MBMSFXStop (void) __naked;
 
-unsigned char MBMSFXGetStatus (void) {return 0; }
+unsigned char MBMSFXGetStatus (void) { return 0; }
 
 //void MBMSFXFrame (void) __naked;

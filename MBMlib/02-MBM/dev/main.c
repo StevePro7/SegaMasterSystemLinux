@@ -14,6 +14,8 @@ void main( void )
 	devkit_SMS_useFirstHalfTilesforSprites( false );
 	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );
 
+	//devkit_SMS_EnableAudio();
+
 	open_screen_type = screen_type_start;
 	//open_screen_type = screen_type_music;
 	engine_screen_manager_init( open_screen_type );
