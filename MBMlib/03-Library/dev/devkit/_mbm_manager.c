@@ -6,19 +6,29 @@
 #include "../../lib/MBMlib.h"
 #endif
 
-unsigned char devkit_SMS_GetFMAudioCapabilities()
-{
-	return SMS_GetFMAudioCapabilities();
-}
-void devkit_SMS_EnableAudio( unsigned char chips )
-{
-	SMS_EnableAudio( chips );
-}
-
 void devkit_MBMPlay( void *module )
 {
 	MBMPlay( module );
 }
+void devkit_MBMCancelLoop( void )
+{
+	MBMCancelLoop();
+}
+void devkit_MBMPlayNoRepeat( void *module )
+{
+	MBMPlayNoRepeat( module );
+}
+
+void devkit_MBMStop( void )
+{
+	MBMStop();
+}
+void devkit_MBMResume( void )
+{
+	MBMResume();
+}
+
+
 void devkit_MBMFrame( void )
 {
 	MBMFrame();
@@ -26,4 +36,14 @@ void devkit_MBMFrame( void )
 unsigned char devkit_MBMSFXGetStatus( void )
 {
 	return MBMSFXGetStatus();
+}
+
+
+unsigned char devkit_SMS_GetFMAudioCapabilities()
+{
+	return SMS_GetFMAudioCapabilities();
+}
+void devkit_SMS_EnableAudio( unsigned char chips )
+{
+	SMS_EnableAudio( chips );
 }
