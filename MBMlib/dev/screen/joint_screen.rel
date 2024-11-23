@@ -1,0 +1,81 @@
+XL2
+H 9 areas E global symbols
+M joint_screen
+O -mz80
+S _devkit_PSGGetStatus Ref0000
+S _devkit_PSGStop Ref0000
+S _engine_input_manager_hold_fire2 Ref0000
+S .__.ABS. Def0000
+S _devkit_PSGResume Ref0000
+S _engine_input_manager_hold_right Ref0000
+S _engine_music_manager_play Ref0000
+S _engine_input_manager_hold_up Ref0000
+S _engine_sound_manager_play Ref0000
+S _engine_input_manager_hold_left Ref0000
+S _engine_text_manager_title Ref0000
+S _engine_input_manager_hold_down Ref0000
+A _CODE size 8C flags 0 addr 0
+S _screen_joint_screen_load Def0000
+S _screen_joint_screen_update Def000E
+A _DATA size 2 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 01 00
+T 00 00
+R 00 00 01 00
+T 01 00
+R 00 00 01 00
+T 01 00
+R 00 00 01 00
+T 00 00
+R 00 00 00 00
+T 00 00 CD 00 00 21 00 00 36 04 21 01 00 36 04 C9
+R 00 00 00 00 02 03 0A 00 00 06 01 00 00 0B 01 00
+T 0E 00
+R 00 00 00 00
+T 0E 00 CD 00 00 D1 C1 C5 D5 7D B7 28 04 3E 03 02
+R 00 00 00 00 02 03 02 00
+T 1C 00 C9
+R 00 00 00 00
+T 1D 00
+R 00 00 00 00
+T 1D 00 C5 CD 00 00 C1 7D B7 28 24 3A 00 00 D6 04
+R 00 00 00 00 02 04 09 00 00 0C 01 00
+T 2B 00 20 13 3A 01 00 D6 04 20 0C C5 CD 00 00 C1
+R 00 00 00 00 00 05 01 00 02 0D 06 00
+T 39 00 21 01 00 36 01 18 0A
+R 00 00 00 00 00 03 01 00
+T 40 00
+R 00 00 00 00
+T 40 00 C5 CD 00 00 C1 21 01 00 36 03
+R 00 00 00 00 02 04 04 00 00 08 01 00
+T 4A 00
+R 00 00 00 00
+T 4A 00 C5 CD 00 00 C1 7D B7 28 10 3A 01 00 32
+R 00 00 00 00 02 04 05 00 00 0C 01 00
+T 57 00 00 00 C5 CD 00 00 C1 21 01 00 36 02
+R 00 00 00 00 00 02 01 00 02 06 01 00 00 0A 01 00
+T 63 00
+R 00 00 00 00
+T 63 00 C5 CD 00 00 C1 7D B7 20 09 C5 CD 00 00 C1
+R 00 00 00 00 02 04 07 00 02 0D 0B 00
+T 71 00 7D B7 28 05
+R 00 00 00 00
+T 75 00
+R 00 00 00 00
+T 75 00 C5 CD 00 00 C1
+R 00 00 00 00 02 04 08 00
+T 7A 00
+R 00 00 00 00
+T 7A 00 C5 CD 00 00 C1 7D B7 20 05 21 01 00 36 04
+R 00 00 00 00 02 04 00 00 00 0C 01 00
+T 88 00
+R 00 00 00 00
+T 88 00 3E 04 02 C9
+R 00 00 00 00
