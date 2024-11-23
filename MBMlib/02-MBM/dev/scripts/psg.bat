@@ -1,4 +1,4 @@
-REM gfx		Commonly used gfx	not banked
+REM psg		Commonly used gfx	not banked
 @echo off
 
 cd ..

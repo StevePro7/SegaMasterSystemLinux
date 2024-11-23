@@ -1,10 +1,10 @@
-REM gfx		Commonly used gfx	not banked
+REM mbm		Commonly used gfx	not banked
 @echo off
 
 cd ..
-folder2c ../psg psg
+folder2c ../mbm mbm
 
-sdcc -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 psg.c
+sdcc -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 mbm.c
 
 del *.asm > nul
 del *.lst > nul
