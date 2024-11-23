@@ -7,15 +7,6 @@ set /a _hours=100%_time:~0,2%%%100,_min=100%_time:~3,2%%%100,_sec=100%_time:~6,2
 set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 
 
-
-:: Content
-::folder2c ../gfx gfx
-::sdcc -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 gfx.c
-
-folder2c ../psg psg
-::sdcc -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 psg.c
-
-
 :: Compile
 cd devkit
 sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _mbm_manager.c
@@ -30,7 +21,7 @@ sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 audio_man
 ::sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 font_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 input_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 screen_manager.c
-sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 sound_manager.c
+::sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 sound_manager.c
 cd ..
 
 cd screen
@@ -70,6 +61,7 @@ engine/sound_manager.rel ^
 screen/none_screen.rel ^
 screen/start_screen.rel ^
 gfx.rel ^
+mbm.rel ^
 psg.rel
 
 :: Execute

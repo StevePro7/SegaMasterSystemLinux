@@ -7,7 +7,7 @@
 #define MBM_STOPPED         0
 #define MBM_PLAYING         (~MBM_STOPPED)
 
-//void MBMPlay (void *module) {} /*__z88dk_fastcall __naked;*/
+void MBMPlay (void *module) {} /*__z88dk_fastcall __naked;*/
 /*
 void MBMCancelLoop (void) __naked;
 void MBMPlayNoRepeat (void *module) __z88dk_fastcall __naked;
@@ -18,8 +18,8 @@ void MBMResume (void) __naked;
 unsigned char MBMGetStatus (void);
 
 void MBMFadeOut (unsigned char fade_fraction) __z88dk_fastcall;
-
-void MBMFrame (void) __naked;
+*/
+void MBMFrame (void) {} /*__naked;*/
 
 /*  functions to detect and enable FM/PSG audio hardware */
 /*

@@ -20,12 +20,12 @@ void screen_start_screen_load()
 void screen_start_screen_update( unsigned char *screen_type )
 {
 	unsigned char input = engine_input_manager_hold_fire1();
-	int data;
+	//int data = 9;
 	if( input )
 	{
 		engine_font_manager_draw_text( "HELLO AUDIO", 4, 4 );
-		data = engine_audio_manager_play();
-		engine_font_manager_draw_data( data, 10, 7 );
+		engine_audio_manager_play();
+		//engine_font_manager_draw_data( data, 10, 7 );
 		//engine_music_manager_play();
 
 		//engine_font_manager_draw_text( "HELLO SOUND", 4, 4 );

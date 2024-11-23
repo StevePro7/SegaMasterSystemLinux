@@ -6,6 +6,14 @@
 #include "../../lib/MBMlib.h"
 #endif
 
+void devkit_MBMPlay( void *module )
+{
+	MBMPlay( module );
+}
+void devkit_MBMFrame( void )
+{
+	MBMFrame();
+}
 unsigned char devkit_MBMSFXGetStatus( void )
 {
 	return MBMSFXGetStatus();
