@@ -12,7 +12,6 @@ void screen_start_screen_load()
 	devkit_SMS_displayOff();
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_load_tiles();
-	engine_content_manager_load_sprites();
 	engine_font_manager_draw_text( "PRESS FIRE1", 4, 2 );
 	devkit_SMS_displayOn();
 }
