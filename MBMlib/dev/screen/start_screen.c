@@ -5,6 +5,7 @@
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
 #include "../engine/input_manager.h"
+#include "../engine/sound_manager.h"
 
 void screen_start_screen_load()
 {
@@ -21,6 +22,9 @@ void screen_start_screen_update( unsigned char *screen_type )
 	unsigned char input = engine_input_manager_hold_fire1();
 	if( input )
 	{
+		engine_font_manager_draw_text( "HELLO WORLD", 4, 4 );
+		//engine_sound_manager_play();
+		engine_music_manager_play();
 		//*screen_type = screen_type_music;
 		return;
 	}
