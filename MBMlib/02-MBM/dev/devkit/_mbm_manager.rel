@@ -1,7 +1,8 @@
 XL3
-H 9 areas 2 global symbols
+H 9 areas 3 global symbols
 M _mbm_manager
 O -mz80
+S _MBMSFXGetStatus Ref000000
 S .__.ABS. Def000000
 A _CODE size 3 flags 0 addr 0
 S _devkit_MBMSFXGetStatus Def000000
@@ -15,5 +16,5 @@ A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
-T 00 00 00 2E 02 C9
-R 00 00 00 00
+T 00 00 00 C3 00 00
+R 00 00 00 00 02 04 00 00
