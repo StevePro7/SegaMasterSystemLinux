@@ -1,15 +1,18 @@
 XL3
-H 9 areas 9 global symbols
+H 9 areas C global symbols
 M sound_manager
 O -mz80
 S _devkit_SFX_CHANNEL2 Ref000000
 S _rand Ref000000
 S .__.ABS. Def000000
+S _sound1_psg Ref000000
 S _phone_psg Ref000000
+S _sound2_psg Ref000000
 S _devkit_PSGPlayNoRepeat Ref000000
 S _sound3_psg Ref000000
 S _devkit_PSGSFXPlay Ref000000
-A _CODE size 1C flags 0 addr 0
+S __modsint Ref000000
+A _CODE size 3A flags 0 addr 0
 S _engine_music_manager_play Def000000
 S _engine_sound_manager_play Def000009
 A _DATA size 0 flags 0 addr 0
@@ -23,10 +26,24 @@ A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
 T 00 00 00 21 00 00 E5 CD 00 00 F1 C9
-R 00 00 00 00 02 04 03 00 02 08 04 00
+R 00 00 00 00 02 04 04 00 02 08 06 00
 T 09 00 00
 R 00 00 00 00
-T 09 00 00 CD 00 00 CD 00 00 7D F5 33 21 00 00 E5
-R 00 00 00 00 02 04 01 00 02 07 00 00 02 0D 05 00
-T 16 00 00 CD 00 00 F1 33 C9
-R 00 00 00 00 02 04 06 00
+T 09 00 00 CD 00 00 11 03 00 D5 E5 CD 00 00 F1 F1
+R 00 00 00 00 02 04 01 00 02 0C 09 00
+T 16 00 00 7D 5F B7 20 05 01 00 00 18 0B
+R 00 00 00 00 02 09 03 00
+T 20 00 00
+R 00 00 00 00
+T 20 00 00 1D 20 05 01 00 00 18 03
+R 00 00 00 00 02 07 05 00
+T 28 00 00
+R 00 00 00 00
+T 28 00 00 01 00 00
+R 00 00 00 00 02 04 07 00
+T 2B 00 00
+R 00 00 00 00
+T 2B 00 00 C5 CD 00 00 7D C1 F5 33 C5 CD 00 00 F1
+R 00 00 00 00 02 05 00 00 02 0D 08 00
+T 38 00 00 33 C9
+R 00 00 00 00

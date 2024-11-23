@@ -28,16 +28,19 @@ void devkit_MBMResume( void )
 	MBMResume();
 }
 
-
+/*  functions to detect and enable FM/PSG audio hardware */
+unsigned char devkit_MBMGetStatus( void )
+{
+	return MBMGetStatus();
+}
+void devkit_MBMFadeOut( unsigned char fade_fraction )
+{
+	MBMFadeOut( fade_fraction );
+}
 void devkit_MBMFrame( void )
 {
 	MBMFrame();
 }
-unsigned char devkit_MBMSFXGetStatus( void )
-{
-	return MBMSFXGetStatus();
-}
-
 
 unsigned char devkit_SMS_GetFMAudioCapabilities()
 {
@@ -46,4 +49,11 @@ unsigned char devkit_SMS_GetFMAudioCapabilities()
 void devkit_SMS_EnableAudio( unsigned char chips )
 {
 	SMS_EnableAudio( chips );
+}
+
+/* SFX */
+
+unsigned char devkit_MBMSFXGetStatus( void )
+{
+	return MBMSFXGetStatus();
 }

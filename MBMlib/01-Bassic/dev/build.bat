@@ -7,15 +7,6 @@ set /a _hours=100%_time:~0,2%%%100,_min=100%_time:~3,2%%%100,_sec=100%_time:~6,2
 set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 
 
-
-:: Content
-::folder2c ../gfx gfx
-::sdcc -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 gfx.c
-
-folder2c ../psg psg
-::sdcc -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 psg.c
-
-
 :: Compile
 cd devkit
 ::sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _sms_manager.c
@@ -25,14 +16,14 @@ cd ..
 cd engine
 :sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 asm_manager.c
 sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 content_manager.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 font_manager.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 input_manager.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 screen_manager.c
+sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 font_manager.c
+sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 input_manager.c
+sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 screen_manager.c
 sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 sound_manager.c
 cd ..
 
 cd screen
-::sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 none_screen.c
+sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 none_screen.c
 sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 start_screen.c
 cd ..
 
@@ -97,5 +88,5 @@ if exist "*.noi" del "*.noi" > nul
 if exist "*.sym" del "*.sym" > nul
 
 :: Run
-::java -jar C:/SEGA/Emulicious/Emulicious.jar output.sms
-output.sms
+java -jar C:/SEGA/Emulicious/Emulicious.jar output.sms
+::output.sms

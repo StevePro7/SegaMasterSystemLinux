@@ -18,15 +18,18 @@ void screen_start_screen_load()
 
 void screen_start_screen_update( unsigned char *screen_type )
 {
-	unsigned char input = engine_input_manager_hold_fire1();
-	if( input )
+	unsigned char input1 = engine_input_manager_hold_fire1();
+	unsigned char input2 = engine_input_manager_hold_fire2();
+	if( input1 )
 	{
 		engine_font_manager_draw_text( "HELLO MUSIC", 4, 4 );
 		engine_music_manager_play();
+	}
 
-		//engine_font_manager_draw_text( "HELLO SOUND", 4, 4 );
-		//engine_sound_manager_play();
-		return;
+	if( input2 )
+	{
+		engine_font_manager_draw_text( "HELLO SOUND", 4, 4 );
+		engine_sound_manager_play();
 	}
 
 	*screen_type = screen_type_start;

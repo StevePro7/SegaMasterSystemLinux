@@ -14,9 +14,9 @@ void MBMPlayNoRepeat( void *module ) {} /*__z88dk_fastcall __naked;*/
 void MBMStop( void ) {} /*__naked;*/
 void MBMResume( void ) {} /*__naked; */
 
-//unsigned char MBMGetStatus (void);
+unsigned char MBMGetStatus( void ) { return 0; }
 
-//void MBMFadeOut (unsigned char fade_fraction) __z88dk_fastcall;
+void MBMFadeOut( unsigned char fade_fraction ) {} /* __z88dk_fastcall;*/
 
 void MBMFrame (void) {} /*__naked;*/
 
