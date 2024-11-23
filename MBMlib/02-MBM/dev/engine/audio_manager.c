@@ -2,5 +2,5 @@
 
 int engine_audio_manager_play()
 {
-	return 7;
+	return 25;
 }

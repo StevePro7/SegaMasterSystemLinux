@@ -1,13 +1,10 @@
 XL3
-H 9 areas 5 global symbols
-M sound_manager
+H 9 areas 2 global symbols
+M _mbm_manager
 O -mz80
 S .__.ABS. Def000000
-S _phone_psg Ref000000
-S _devkit_PSGPlayNoRepeat Ref000000
-A _CODE size A flags 0 addr 0
-S _engine_music_manager_play Def000000
-S _engine_sound_manager_play Def000009
+A _CODE size 3 flags 0 addr 0
+S _devkit_MBMSFXGetStatus Def000000
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -18,9 +15,5 @@ A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
-T 00 00 00 21 00 00 E5 CD 00 00 F1 C9
-R 00 00 00 00 02 04 01 00 02 08 02 00
-T 09 00 00
-R 00 00 00 00
-T 09 00 00 C9
+T 00 00 00 2E 02 C9
 R 00 00 00 00

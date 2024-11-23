@@ -1,32 +1,52 @@
 /* **************************************************
-   PSGlib - C programming library for the SEGA PSG
+   MBMlib - C programming library for Moonblaster modules replay
    ( part of devkitSMS - github.com/sverx/devkitSMS )
+   code: 'Remco Schrijvers / MoonSoft', Kagesan, sverx
    ************************************************** */
 
-#define PSG_STOPPED         0
-#define PSG_PLAYING         1
+#define MBM_STOPPED         0
+#define MBM_PLAYING         (~MBM_STOPPED)
 
-#define SFX_CHANNEL2        0x01
-#define SFX_CHANNEL3        0x02
-#define SFX_CHANNELS2AND3   SFX_CHANNEL2|SFX_CHANNEL3
+//void MBMPlay (void *module) {} /*__z88dk_fastcall __naked;*/
+/*
+void MBMCancelLoop (void) __naked;
+void MBMPlayNoRepeat (void *module) __z88dk_fastcall __naked;
 
-void PSGPlay (void *song) {}
-void PSGPlayLoops (void *song, unsigned char loops) {}
-void PSGCancelLoop (void) {}
-void PSGPlayNoRepeat (void *song) {}
-void PSGStop (void) {}
-void PSGResume (void) {}
-unsigned char PSGGetStatus (void) { return 1; }
-void PSGSetMusicVolumeAttenuation (unsigned char attenuation) {}
+void MBMStop (void) __naked;
+void MBMResume (void) __naked;
 
-void PSGSFXPlay (void *sfx, unsigned char channels) {}
-void PSGSFXPlayLoop (void *sfx, unsigned char channels) {}
-void PSGSFXCancelLoop (void) {}
-void PSGSFXStop (void) {}
-unsigned char PSGSFXGetStatus (void) { return 0; }
+unsigned char MBMGetStatus (void);
 
-void PSGSilenceChannels (void) {}
-void PSGRestoreVolumes (void) {}
+void MBMFadeOut (unsigned char fade_fraction) __z88dk_fastcall;
 
-void PSGFrame (void) {}
-void PSGSFXFrame (void) {}
+void MBMFrame (void) __naked;
+
+/*  functions to detect and enable FM/PSG audio hardware */
+/*
+#define SMS_AUDIO_NO_FM    0
+#define SMS_AUDIO_FM_ONLY  1
+#define SMS_AUDIO_FM_PSG   2
+
+unsigned char SMS_GetFMAudioCapabilities (void) __naked;
+
+#define SMS_ENABLE_AUDIO_FM_ONLY   0x01
+#define SMS_ENABLE_AUDIO_FM_PSG    0x03
+#define SMS_ENABLE_AUDIO_PSG_ONLY  0x00
+#define SMS_ENABLE_AUDIO_NONE      0x02
+
+void SMS_EnableAudio (unsigned char chips) __z88dk_fastcall __naked;
+
+/* SFX */
+
+#define MBMSFX_STOPPED         0
+#define MBMSFX_PLAYING         1
+/*
+void MBMSFXPlay (void *sound_effect) __z88dk_fastcall __naked;
+void MBMSFXPlayLoop (void *sound_effect) __z88dk_fastcall;
+void MBMSFXCancelLoop (void);
+*/
+//void MBMSFXStop (void) __naked;
+
+unsigned char MBMSFXGetStatus (void) {return 0; }
+
+//void MBMSFXFrame (void) __naked;

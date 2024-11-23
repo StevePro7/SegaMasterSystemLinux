@@ -17,23 +17,23 @@ void engine_music_manager_play()
 
 void engine_sound_manager_play()
 {
-	unsigned char sound;
-	void *sfx;
+	//unsigned char sound;
+	//void *sfx;
 
-	sound = rand() % SOUNDS_MAX;
-	sound = 2;
-	if( 0 == sound )
-	{
-		sfx = ( unsigned char* ) SOUND1_PSG;
-	}
-	else if( 1 == sound )
-	{
-		sfx = ( unsigned char* ) SOUND2_PSG;
-	}
-	else
-	{
-		sfx = ( unsigned char* ) SOUND3_PSG;
-	}
+	//sound = rand() % SOUNDS_MAX;
+	//sound = 2;
+	//if( 0 == sound )
+	//{
+	//	sfx = ( unsigned char* ) SOUND1_PSG;
+	//}
+	//else if( 1 == sound )
+	//{
+	//	sfx = ( unsigned char* ) SOUND2_PSG;
+	//}
+	//else
+	//{
+	//	sfx = ( unsigned char* ) SOUND3_PSG;
+	//}
 
-	devkit_PSGSFXPlay( sfx, devkit_SFX_CHANNEL2() );
+	//devkit_PSGSFXPlay( sfx, devkit_SFX_CHANNEL2() );
 }
