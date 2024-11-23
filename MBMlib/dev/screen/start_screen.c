@@ -1,11 +1,10 @@
 #include "start_screen.h"
-#include "..\devkit\_sms_manager.h"
-#include "..\engine\asm_manager.h"
-#include "..\engine\content_manager.h"
-#include "..\engine\enum_manager.h"
-#include "..\engine\input_manager.h"
-#include "..\engine\text_manager.h"
-#include "..\engine\tree_manager.h"
+#include "../devkit/_sms_manager.h"
+#include "../engine/asm_manager.h"
+#include "../engine/content_manager.h"
+#include "../engine/enum_manager.h"
+#include "../engine/font_manager.h"
+#include "../engine/input_manager.h"
 
 void screen_start_screen_load()
 {
@@ -13,6 +12,7 @@ void screen_start_screen_load()
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_load_tiles();
 	engine_content_manager_load_sprites();
+	engine_font_manager_draw_text( "HELLO WORLD", 4, 2 );
 	devkit_SMS_displayOn();
 }
 
