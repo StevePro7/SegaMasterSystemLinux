@@ -15,7 +15,8 @@ void screen_start_screen_load()
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_load_tiles();
 	engine_font_manager_draw_text( "PRESS FIRE1", 4, 2 );
-	devkit_SMS_EnableAudio( 1 );
+	//engine_audio_manager_enable_audio();
+	//devkit_SMS_EnableAudio( 1 );
 	devkit_SMS_displayOn();
 }
 
@@ -27,8 +28,7 @@ void screen_start_screen_update( unsigned char *screen_type )
 	{
 		engine_font_manager_draw_text( "HELLO AUDIO", 4, 4 );
 		caps = devkit_SMS_GetFMAudioCapabilities();
-
-		engine_font_manager_draw_data( caps, 10, 17 );
+		engine_font_manager_draw_data( caps, 10, 7 );
 		engine_audio_manager_play();
 		//engine_music_manager_play();
 
