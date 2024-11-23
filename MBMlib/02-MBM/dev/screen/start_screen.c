@@ -1,6 +1,7 @@
 #include "start_screen.h"
 #include "../devkit/_sms_manager.h"
 #include "../engine/asm_manager.h"
+#include "../engine/audio_manager.h"
 #include "../engine/content_manager.h"
 #include "../engine/enum_manager.h"
 #include "../engine/font_manager.h"
@@ -19,10 +20,13 @@ void screen_start_screen_load()
 void screen_start_screen_update( unsigned char *screen_type )
 {
 	unsigned char input = engine_input_manager_hold_fire1();
+	int data;
 	if( input )
 	{
-		engine_font_manager_draw_text( "HELLO MUSIC", 4, 4 );
-		engine_music_manager_play();
+		engine_font_manager_draw_text( "HELLO AUDIO", 4, 4 );
+		data = engine_audio_manager_play();
+		engine_font_manager_draw_data( data, 10, 7 );
+		//engine_music_manager_play();
 
 		//engine_font_manager_draw_text( "HELLO SOUND", 4, 4 );
 		//engine_sound_manager_play();

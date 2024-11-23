@@ -1,16 +1,17 @@
 XL3
-H 9 areas A global symbols
+H 9 areas B global symbols
 M start_screen
 O -mz80
 S _devkit_SMS_displayOn Ref000000
+S _engine_audio_manager_play Ref000000
 S _engine_font_manager_draw_text Ref000000
 S _engine_input_manager_hold_fire1 Ref000000
 S .__.ABS. Def000000
-S _engine_music_manager_play Ref000000
 S _devkit_SMS_displayOff Ref000000
 S _engine_content_manager_load_tiles Ref000000
 S _engine_asm_manager_clear_VRAM Ref000000
-A _CODE size 4F flags 0 addr 0
+S _engine_font_manager_draw_data Ref000000
+A _CODE size 5A flags 0 addr 0
 S _screen_start_screen_load Def000000
 S _screen_start_screen_update Def000025
 A _DATA size 0 flags 0 addr 0
@@ -26,22 +27,24 @@ R 00 00 00 00
 T 00 00 00 CD 00 00 CD 00 00 CD 00 00 11 04 02 D5
 R 00 00 00 00 02 04 05 00 02 07 07 00 02 0A 06 00
 T 0D 00 00 21 19 00 E5 CD 00 00 F1 F1 C3 00 00
-R 00 00 00 00 00 04 00 00 02 08 01 00 02 0D 00 00
+R 00 00 00 00 00 04 00 00 02 08 02 00 02 0D 00 00
 T 19 00 00
 R 00 00 00 00
 T 19 00 00 50 52 45 53 53 20 46 49 52 45 31 00
 R 00 00 00 00
 T 25 00 00
 R 00 00 00 00
-T 25 00 00 CD 00 00 7D B7 28 10 11 04 04 D5 21
-R 00 00 00 00 02 04 02 00
-T 31 00 00 43 00 E5 CD 00 00 F1 F1 C3 00 00
-R 00 00 00 00 00 03 00 00 02 07 01 00 02 0C 04 00
-T 3C 00 00
+T 25 00 00 CD 00 00 7D B7 28 1B 11 04 04 D5 21
+R 00 00 00 00 02 04 03 00
+T 31 00 00 4E 00 E5 CD 00 00 F1 F1 CD 00 00 11
+R 00 00 00 00 00 03 00 00 02 07 02 00 02 0C 01 00
+T 3D 00 00 0A 07 D5 E5 CD 00 00 F1 F1 C9
+R 00 00 00 00 02 08 08 00
+T 47 00 00
 R 00 00 00 00
-T 3C 00 00 C1 E1 E5 C5 36 01 C9
+T 47 00 00 C1 E1 E5 C5 36 01 C9
 R 00 00 00 00
-T 43 00 00
+T 4E 00 00
 R 00 00 00 00
-T 43 00 00 48 45 4C 4C 4F 20 4D 55 53 49 43 00
+T 4E 00 00 48 45 4C 4C 4F 20 41 55 44 49 4F 00
 R 00 00 00 00

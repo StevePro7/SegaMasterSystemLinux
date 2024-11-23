@@ -1,6 +1,6 @@
 #include "sound_manager.h"
-#include "..\devkit\_snd_manager.h"
-#include "..\psg.h"
+#include "../devkit/_snd_manager.h"
+#include "../psg.h"
 #include <stdlib.h>
 
 #define MUSIC_PSG			music_psg
