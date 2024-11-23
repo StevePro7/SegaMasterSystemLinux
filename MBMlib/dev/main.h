@@ -11,7 +11,6 @@
 #include "engine\asm_manager.h"
 #include "engine\enum_manager.h"
 #include "engine\font_manager.h"
-#include "engine\hack_manager.h"
 #include "engine\input_manager.h"
 #include "engine\locale_manager.h"
 #include "engine\screen_manager.h"

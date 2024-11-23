@@ -1,6 +1,5 @@
 #include "sound_manager.h"
 #include "..\devkit\_snd_manager.h"
-#include "..\engine\hack_manager.h"
 #include "..\psg.h"
 #include <stdlib.h>
 
@@ -13,25 +12,13 @@
 
 void engine_music_manager_play()
 {
-	struct_hack_object *ho = &global_hack_object;
-	if( !ho->hack_music )
-	{
-		return;
-	}
-
 	devkit_PSGPlayNoRepeat( ( unsigned char* ) PHONE_PSG );
 }
 
 void engine_sound_manager_play()
 {
-	struct_hack_object *ho = &global_hack_object;
 	unsigned char sound;
 	void *sfx;
-
-	if( !ho->hack_sound )
-	{
-		return;
-	}
 
 	sound = rand() % SOUNDS_MAX;
 	if( 0 == sound )
