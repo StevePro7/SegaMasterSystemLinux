@@ -52,8 +52,29 @@ void devkit_SMS_EnableAudio( unsigned char chips )
 }
 
 /* SFX */
+void devkit_MBMSFXPlay( void *sound_effect )
+{
+	MBMSFXPlay( sound_effect );
+}
+void devkit_MBMSFXPlayLoop( void *sound_effect )
+{
+	MBMSFXPlayLoop( sound_effect );
+}
+void devkit_MBMSFXCancelLoop( void )
+{
+	MBMSFXCancelLoop();
+}
+
+void devkit_MBMSFXStop( void )
+{
+	MBMSFXStop();
+}
 
 unsigned char devkit_MBMSFXGetStatus( void )
 {
 	return MBMSFXGetStatus();
+}
+void devkit_MBMSFXFrame( void )
+{
+	MBMSFXFrame();
 }

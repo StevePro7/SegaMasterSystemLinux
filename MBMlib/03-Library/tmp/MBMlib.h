@@ -39,13 +39,13 @@ void SMS_EnableAudio( unsigned char chips ) {} /*__z88dk_fastcall __naked;*/
 
 #define MBMSFX_STOPPED         0
 #define MBMSFX_PLAYING         1
-/*
-void MBMSFXPlay (void *sound_effect) __z88dk_fastcall __naked;
-void MBMSFXPlayLoop (void *sound_effect) __z88dk_fastcall;
-void MBMSFXCancelLoop (void);
-*/
-//void MBMSFXStop (void) __naked;
+
+void MBMSFXPlay( void *sound_effect ) {} /*__z88dk_fastcall __naked;*/
+void MBMSFXPlayLoop( void *sound_effect ) {} /*__z88dk_fastcall;*/
+void MBMSFXCancelLoop( void ) {}
+
+void MBMSFXStop( void ) {} /*__naked;*/
 
 unsigned char MBMSFXGetStatus (void) { return 0; }
 
-//void MBMSFXFrame (void) __naked;
+void MBMSFXFrame( void ) {} /*__naked;*/
