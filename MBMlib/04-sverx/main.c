@@ -1,15 +1,40 @@
 #include "SMSlib.h"
+#include "MBMlib.h"
+#include "mbm.h"
 
-void main(void)
-{
-	SMS_init();
-	SMS_setSpritePaletteColor(0, RGB(0, 3, 0));
-	SMS_displayOn();
-	for (;;)
-	{
-		SMS_waitForVBlank();
-	}
+#define theModule  example_mbm
+
+void main (void) {
+
+  if (SMS_GetFMAudioCapabilities())
+    SMS_EnableAudio (SMS_ENABLE_AUDIO_FM_ONLY);
+
+  MBMPlay(theModule);
+
+  for (;;) {
+    SMS_waitForVBlank();
+    MBMFrame();
+
+    unsigned char kp=SMS_getKeysPressed();
+
+    if (kp & PORT_A_KEY_1) {
+      if (MBMGetStatus())
+        MBMStop();
+      else
+        MBMResume();
+    } else if (kp & PORT_A_KEY_2) {
+      if (MBMGetStatus())
+        MBMStop();
+      else
+        MBMPlay(theModule);
+    } else if (kp & PORT_A_KEY_DOWN) {
+      if (MBMGetStatus())
+        MBMFadeOut(15);
+    } else if (kp & PORT_A_KEY_UP) {
+      if (MBMGetStatus())
+        MBMCancelLoop();
+    }
+  }
 }
 
-SMS_EMBED_SEGA_ROM_HEADER(9999, 0);
-SMS_EMBED_SDSC_HEADER(1, 0, 2022, 4, 1, "StevePro Studios", "Simple Hello World", "Simple Sega Master System demo to run on real hardware");
+SMS_EMBED_SEGA_ROM_HEADER_16KB(9999,0);
