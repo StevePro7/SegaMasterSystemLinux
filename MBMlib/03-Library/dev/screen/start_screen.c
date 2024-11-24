@@ -34,6 +34,7 @@ void screen_start_screen_update( unsigned char *screen_type )
 
 		//engine_font_manager_draw_text( "HELLO SOUND", 4, 4 );
 		//engine_sound_manager_play();
+		return;
 	}
 
 	*screen_type = screen_type_start;

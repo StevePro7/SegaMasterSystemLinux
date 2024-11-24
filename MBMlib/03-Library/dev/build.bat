@@ -1,4 +1,4 @@
-@echo off
+echo off
 
 :: Time build START
 :: Reference: https://stackoverflow.com/questions/673523/how-do-i-measure-execution-time-of-a-command-on-the-windows-command-line
@@ -9,21 +9,23 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 
 :: Compile
 cd devkit
+sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _mbm_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _sms_manager.c
 ::sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _snd_manager.c
 cd ..
 
 cd engine
 :sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 asm_manager.c
-sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 content_manager.c
-sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 font_manager.c
-sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 input_manager.c
-sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 screen_manager.c
-sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 sound_manager.c
+sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 audio_manager.c
+::sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 content_manager.c
+::sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 font_manager.c
+::sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 input_manager.c
+::sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 screen_manager.c
+::sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 sound_manager.c
 cd ..
 
 cd screen
-sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 none_screen.c
+::sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 none_screen.c
 sdcc -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 start_screen.c
 cd ..
 
@@ -43,11 +45,14 @@ echo.
 :: Link
 sdcc -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-loc 0xC000 ^
 ../crt0/crt0_sms.rel main.rel ^
+../lib/MBMlib.rel ^
 ../lib/SMSlib.lib ^
 ../lib/PSGlib.rel ^
+devkit/_mbm_manager.rel ^
 devkit/_sms_manager.rel ^
 devkit/_snd_manager.rel ^
 engine/asm_manager.rel ^
+engine/audio_manager.rel ^
 engine/content_manager.rel ^
 engine/font_manager.rel ^
 engine/input_manager.rel ^
@@ -56,6 +61,7 @@ engine/sound_manager.rel ^
 screen/none_screen.rel ^
 screen/start_screen.rel ^
 gfx.rel ^
+mbm.rel ^
 psg.rel
 
 :: Execute
@@ -88,5 +94,5 @@ if exist "*.noi" del "*.noi" > nul
 if exist "*.sym" del "*.sym" > nul
 
 :: Run
-java -jar C:/SEGA/Emulicious/Emulicious.jar output.sms
-::output.sms
+::java -jar C:/SEGA/Emulicious/Emulicious.jar output.sms
+output.sms

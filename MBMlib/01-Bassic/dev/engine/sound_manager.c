@@ -21,7 +21,6 @@ void engine_sound_manager_play()
 	void *sfx;
 
 	sound = rand() % SOUNDS_MAX;
-	//sound = 2;
 	if( 0 == sound )
 	{
 		sfx = ( unsigned char* ) SOUND1_PSG;
