@@ -1,15 +1,9 @@
-extern const unsigned char	music_psg[];
-#define				music_psg_size 1573
+extern const unsigned char	new_file_psg[];
+#define				new_file_psg_size 102
 
-extern const unsigned char	phone_psg[];
-#define				phone_psg_size 4728
+extern const unsigned char	sfx_stevepro_psg[];
+#define				sfx_stevepro_psg_size 26
 
 extern const unsigned char	sound1_psg[];
 #define				sound1_psg_size 43
-
-extern const unsigned char	sound2_psg[];
-#define				sound2_psg_size 32
-
-extern const unsigned char	sound3_psg[];
-#define				sound3_psg_size 35
 

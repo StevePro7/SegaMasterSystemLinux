@@ -28,7 +28,7 @@ void screen_start_screen_update( unsigned char *screen_type )
 
 	if( input2 )
 	{
-		engine_font_manager_draw_text( "HELLO SOUND", 4, 4 );
+		engine_font_manager_draw_text( "HELLO SOUND", 4, 14 );
 		engine_sound_manager_play();
 	}
 
