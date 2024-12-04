@@ -1,0 +1,87 @@
+;!FILE content_manager.asm
+XL3
+H 9 areas 3B global symbols
+M content_manager
+O -mz80
+S _splash__tilemap__stmcompr Ref000000
+S _devkit_SMS_loadSTMcompressedTileMap Ref000000
+S _splash__palette__bin Ref000000
+S _devkit_SMS_loadBGPalette Ref000000
+S _devkit_SMS_loadPSGaidencompressedTiles Ref000000
+S .__.ABS. Def000000
+S _devkit_SMS_setSpritePaletteColor Ref000000
+S _splash__tiles__psgcompr Ref000000
+A _CODE size 35 flags 0 addr 0
+S A$content_manager$100 Def00001D
+S A$content_manager$110 Def000026
+S A$content_manager$120 Def000033
+S A$content_manager$111 Def000027
+S A$content_manager$112 Def000028
+S A$content_manager$113 Def00002B
+S A$content_manager$104 Def00001E
+S A$content_manager$105 Def000021
+S A$content_manager$106 Def000022
+S A$content_manager$107 Def000023
+S A$content_manager$117 Def00002C
+S A$content_manager$108 Def000024
+S A$content_manager$118 Def00002F
+S A$content_manager$109 Def000025
+S A$content_manager$128 Def000034
+S A$content_manager$119 Def000030
+S G$engine_content_manager_load_sprite_palette$0$0 Def000000
+S C$content_manager.c$10$1_0$18 Def000011
+S A$content_manager$60 Def000000
+S A$content_manager$70 Def00000A
+S A$content_manager$61 Def000001
+S G$engine_content_manager_load_splash_screen$0$0 Def000012
+S A$content_manager$71 Def00000B
+S A$content_manager$62 Def000002
+S C$content_manager.c$12$1_0$19 Def000012
+S A$content_manager$72 Def00000C
+S A$content_manager$63 Def000003
+S A$content_manager$82 Def000011
+S A$content_manager$73 Def00000F
+S A$content_manager$64 Def000004
+S C$content_manager.c$14$1_0$19 Def000012
+S A$content_manager$74 Def000010
+S A$content_manager$65 Def000005
+S C$content_manager.c$15$1_0$19 Def00001E
+S A$content_manager$66 Def000006
+S C$content_manager.c$16$1_0$19 Def00002C
+S A$content_manager$67 Def000007
+S C$content_manager.c$17$1_0$19 Def000034
+S A$content_manager$95 Def000012
+S A$content_manager$68 Def000008
+S _engine_content_manager_load_sprite_palette Def000000
+S A$content_manager$96 Def000015
+S A$content_manager$69 Def000009
+S A$content_manager$97 Def000016
+S A$content_manager$98 Def000019
+S A$content_manager$99 Def00001A
+S _engine_content_manager_load_splash_screen Def000012
+S XG$engine_content_manager_load_sprite_palette$0$0 Def000011
+S C$content_manager.c$7$0_0$18 Def000000
+S C$content_manager.c$9$1_0$18 Def000000
+S XG$engine_content_manager_load_splash_screen$0$0 Def000034
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 AF F5 33 AF F5 33 AF F5 33 AF F5 33 CD
+R 00 00 00 00
+T 0D 00 00 00 00 F1 F1 C9
+R 00 00 00 00 02 03 06 00
+T 12 00 00
+R 00 00 00 00
+T 12 00 00 21 80 00 E5 21 00 00 E5 CD 00 00 F1 21
+R 00 00 00 00 02 08 07 00 02 0C 04 00
+T 1F 00 00 00 00 E3 AF F5 33 AF F5 33 CD 00 00 F1
+R 00 00 00 00 02 03 00 00 02 0D 01 00
+T 2C 00 00 21 00 00 E3 CD 00 00 F1 C9
+R 00 00 00 00 02 04 02 00 02 08 03 00
