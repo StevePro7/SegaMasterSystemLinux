@@ -463,7 +463,9 @@ void manage_player_crouched_status(unsigned char player_number, unsigned int key
 	}	
 }
 
-void update_player_positions(signed char delta_x, signed char delta_y) {
+void update_player_positions(signed char delta_x, signed char delta_y)
+{
+	delta_y += 0;
 	if(delta_x != 0) {
 		move_entity(player1.entityreference->entityIndex, 0, UFIX2CHAR(player1.vy)*player1.ydirection);	
 	} else {

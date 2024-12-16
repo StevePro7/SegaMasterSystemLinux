@@ -1,6 +1,6 @@
 ;!FILE enemy.asm
 XL3
-H 9 areas 3C global symbols
+H 9 areas 41 global symbols
 M enemy
 O -mz80
 S _enemyanimation0frame0_bin Ref000000
@@ -21,33 +21,39 @@ S _enemyanimation1frame2mirrored_bin Ref000000
 S G$SMS_SRAM$0_0$0 Def008000
 S _enemyanimation1frame3mirrored_bin Ref000000
 A _CODE size 263C flags 0 addr 0
-S A$enemy$9934 Def00263B
-S A$enemy$9917 Def00263A
-S C$enemy.c$104$0_0$92 Def00263A
-S A$enemy$9883 Def002638
-S A$enemy$9866 Def002637
-S C$enemy.c$102$0_0$89 Def002639
+S A$enemy$9909 Def002639
+S A$enemy$9929 Def00263A
+S C$enemy.c$111$1_0$88 Def00263A
 S _add_enemy Def000000
-S C$enemy.c$172$0_0$92 Def00263A
+S A$enemy$9949 Def00263B
+S A$enemy$9869 Def002637
+S C$enemy.c$184$1_0$90 Def00263B
+S C$enemy.c$114$1_0$88 Def00263A
 S G$manage_enemy_walking_status$0$0 Def00263A
-S C$enemy.c$174$0_0$95 Def00263B
+S A$enemy$9889 Def002638
+S C$enemy.c$109$1_0$86 Def002639
+S C$enemy.c$187$1_0$90 Def00263B
 S G$decide_action_enemy$0$0 Def002638
-S C$enemy.c$184$0_0$95 Def00263B
+S C$enemy.c$197$1_0$90 Def00263B
+S C$enemy.c$182$1_0$88 Def00263A
 S G$decide_action$0$0 Def002637
-S C$enemy.c$50$0_0$83 Def002637
+S C$enemy.c$16$0_0$80 Def000000
 S XG$add_enemy$0$0 Def000000
-S C$enemy.c$34$0_0$81 Def000000
-S C$enemy.c$16$0_0$81 Def000000
-S A$enemy$85 Def000000
+S C$enemy.c$52$1_0$82 Def002637
+S C$enemy.c$36$1_0$80 Def000000
+S C$enemy.c$18$1_0$80 Def000000
 S _manage_enemy_walking_status Def00263A
-S C$enemy.c$36$0_0$83 Def002637
-S C$enemy.c$52$0_0$86 Def002638
+S A$enemy$88 Def000000
+S C$enemy.c$70$1_0$86 Def002639
+S C$enemy.c$54$1_0$84 Def002638
+S C$enemy.c$38$1_0$82 Def002637
 S _decide_action_enemy Def002638
-S C$enemy.c$64$0_0$86 Def002638
+S C$enemy.c$56$1_0$84 Def002638
 S G$update_enemy_positions$0$0 Def00263B
+S C$enemy.c$73$1_0$86 Def002639
 S _decide_action Def002637
+S C$enemy.c$68$1_0$84 Def002638
 S G$manage_enemy_iddle_status$0$0 Def002639
-S C$enemy.c$66$0_0$89 Def002639
 S XG$manage_enemy_walking_status$0$0 Def00263A
 S XG$decide_action_enemy$0$0 Def002638
 S XG$decide_action$0$0 Def002637
@@ -56,7 +62,6 @@ S Fenemy$enemy_character$0_0$0 Def000001
 S _manage_enemy_iddle_status Def002639
 S XG$update_enemy_positions$0$0 Def00263B
 S XG$manage_enemy_iddle_status$0$0 Def002639
-S A$enemy$9900 Def002639
 S G$add_enemy$0$0 Def000000
 A _DATA size 1E flags 0 addr 0
 S _enemy1 Def000000

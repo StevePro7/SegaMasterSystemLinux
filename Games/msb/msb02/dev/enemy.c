@@ -13,7 +13,9 @@ enemy enemy1;
 enemy enemy2;
 enemy enemy3;
 
-void add_enemy(unsigned char enemy_number) {
+void add_enemy(unsigned char enemy_number)
+{
+	enemy_number += 0;
 /*	enemy* enemypointer = 0;
 	if(enemy_number == 0) {
 		enemypointer = &enemy1;
@@ -49,7 +51,9 @@ void decide_action() {
 	}*/
 }
 
-void decide_action_enemy(enemy* enemypointer) {
+void decide_action_enemy(enemy* enemypointer)
+{
+	enemypointer = 0;
 /*	unsigned int action = PORT_A_KEY_LEFT;
 	switch(enemypointer->status) {
 		case ENEMY_STATUS_IDDLE:
@@ -63,7 +67,10 @@ void decide_action_enemy(enemy* enemypointer) {
 	}*/
 }
 
-void manage_enemy_iddle_status(enemy* enemypointer, unsigned int action) {
+void manage_enemy_iddle_status(enemy* enemypointer, unsigned int action)
+{
+	enemypointer = 0;
+	action = 0;
 /*	if(enemypointer->status2 == ENEMY_STATUS2_PUNCHING) {
 		if(isAnimationEnded(enemypointer->entityreference->entityIndex)) {
 			enemypointer->status2 = ENEMY_STATUS2_IDDLE;
@@ -101,7 +108,10 @@ void manage_enemy_iddle_status(enemy* enemypointer, unsigned int action) {
 	}*/	
 }
 
-void manage_enemy_walking_status(enemy* enemypointer, unsigned int action) {
+void manage_enemy_walking_status(enemy* enemypointer, unsigned int action)
+{
+	enemypointer = 0;
+	action = 0;
 	/*if(enemypointer->status2 == ENEMY_STATUS2_PUNCHING) {	
 		if(isAnimationEnded(enemypointer->entityreference->entityIndex)) {
 			enemypointer->status2 = ENEMY_STATUS2_IDDLE;
@@ -171,7 +181,10 @@ void manage_enemy_walking_status(enemy* enemypointer, unsigned int action) {
 	}*/
 }
 
-void update_enemy_positions(signed char delta_x, signed char delta_y) {
+void update_enemy_positions(signed char delta_x, signed char delta_y)
+{
+	delta_x += 0;
+	delta_y += 0;
 	/*if(enemy1.entityreference != 0) {
 		move_entity(enemy1.entityreference->entityIndex, UFIX2CHAR(enemy1.vx)*enemy1.xdirection + (delta_x * -1), UFIX2CHAR(enemy1.vy)*enemy1.ydirection);		
 	}
