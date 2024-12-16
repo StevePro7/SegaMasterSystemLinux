@@ -90,20 +90,20 @@ _CODE                               00000200    00005808 =       22536. bytes (R
       -----  --------------------------------   ------------------------
      00000200  __clock                            crt0
      00000204  _exit                              crt0
-     0000020A  A$game$71                          game
-     0000020A  C$game.c$4$0_0$65                  game
-     0000020A  C$game.c$5$1_0$65                  game
-     0000020A  G$main$0$0                         game
-     0000020A  _main                              game
-     0000020D  A$game$79                          game
-     0000020D  C$game.c$6$1_0$65                  game
-     0000020D  C$game.c$7$2_0$66                  game
-     00000210  A$game$87                          game
-     00000210  C$game.c$9$1_0$65                  game
-     00000210  XG$main$0$0                        game
-     00000212  Fgame$__str_0$0_0$0                game
-     00000222  Fgame$__str_1$0_0$0                game
-     0000022B  Fgame$__str_2$0_0$0                game
+     0000020A  A$main$71                          main
+     0000020A  C$main.c$3$0_0$65                  main
+     0000020A  C$main.c$4$1_0$65                  main
+     0000020A  G$main$0$0                         main
+     0000020A  _main                              main
+     0000020D  A$main$79                          main
+     0000020D  C$main.c$5$1_0$65                  main
+     0000020D  C$main.c$6$2_0$66                  main
+     00000210  A$main$87                          main
+     00000210  C$main.c$8$1_0$65                  main
+     00000210  XG$main$0$0                        main
+     00000212  Fmain$__str_0$0_0$0                main
+     00000222  Fmain$__str_1$0_0$0                main
+     0000022B  Fmain$__str_2$0_0$0                main
      00000244  _PSGStop                           PSGlib
      0000026B  _PSGResume                         PSGlib
      000002B7  _PSGPlay                           PSGlib
@@ -7369,8 +7369,8 @@ _CABS0                              00000000    00000010 =          16. bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00007FF0  G$__SMS__SEGA_signature$0_0$0      game
-     00007FF0  ___SMS__SEGA_signature             game
+     00007FF0  G$__SMS__SEGA_signature$0_0$0      main
+     00007FF0  ___SMS__SEGA_signature             main
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 135.
 Hexadecimal  [32-Bits]
@@ -7381,8 +7381,8 @@ _CABS1                              00000000    00000010 =          16. bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00007FD0  G$__SMS__SDSC_author$0_0$0         game
-     00007FD0  ___SMS__SDSC_author                game
+     00007FD0  G$__SMS__SDSC_author$0_0$0         main
+     00007FD0  ___SMS__SDSC_author                main
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 136.
 Hexadecimal  [32-Bits]
@@ -7393,8 +7393,8 @@ _CABS2                              00000000    00000009 =           9. bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00007FC7  G$__SMS__SDSC_name$0_0$0           game
-     00007FC7  ___SMS__SDSC_name                  game
+     00007FC7  G$__SMS__SDSC_name$0_0$0           main
+     00007FC7  ___SMS__SDSC_name                  main
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 137.
 Hexadecimal  [32-Bits]
@@ -7405,8 +7405,8 @@ _CABS3                              00000000    00000019 =          25. bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00007FAE  G$__SMS__SDSC_descr$0_0$0          game
-     00007FAE  ___SMS__SDSC_descr                 game
+     00007FAE  G$__SMS__SDSC_descr$0_0$0          main
+     00007FAE  ___SMS__SDSC_descr                 main
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 138.
 Hexadecimal  [32-Bits]
@@ -7417,8 +7417,8 @@ _CABS4                              00000000    00000010 =          16. bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00007FE0  G$__SMS__SDSC_signature$0_0$0      game
-     00007FE0  ___SMS__SDSC_signature             game
+     00007FE0  G$__SMS__SDSC_signature$0_0$0      main
+     00007FE0  ___SMS__SDSC_signature             main
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 139.
 Hexadecimal  [32-Bits]
@@ -7617,12 +7617,12 @@ _HEAP_END                           0000AC81    00000001 =           1. bytes (R
 Files Linked                              [ module(s) ]
 
 ../crt0/crt0_sms.rel                      [ crt0 ]
-game.rel                                  [ game ]
+main.rel                                  [ main ]
 ../lib/PSGLib.rel                         [ PSGlib ]
 ../lib/GSLib.rel                          [ GSLib ]
-bank2.rel                                 [ bank2 ]
-bank3.rel                                 [ bank3 ]
-bank4.rel                                 [ bank4 ]
+banks/bank2.rel                           [ bank2 ]
+banks/bank3.rel                           [ bank3 ]
+banks/bank4.rel                           [ bank4 ]
 montylib.rel                              [ montylib ]
 gamelogic.rel                             [ gamelogic ]
 resources.rel                             [ resources ]

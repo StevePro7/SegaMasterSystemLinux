@@ -7,9 +7,11 @@ set /a _hours=100%_time:~0,2%%%100,_min=100%_time:~3,2%%%100,_sec=100%_time:~6,2
 set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 
 :: Compile
+::cd banks
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 --constseg BANK2 bank2.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 --constseg BANK3 bank3.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 --constseg BANK4 bank4.c
+::cd ..
 
 ::cd ../lib
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../dev/peep-rules.txt --std-c99 GSLib.c
@@ -22,7 +24,7 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 player.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 enemy.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 soundengine.c
-sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 game.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
 
 
 :: Time build -END- 
@@ -37,10 +39,10 @@ echo.
 
 :: Link
 sdcc --debug -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-loc 0xC000 ^
-../crt0/crt0_sms.rel game.rel ^
+../crt0/crt0_sms.rel main.rel ^
  -Wl-b_BANK2=0x8000 -Wl-b_BANK3=0x8000 -Wl-b_BANK4=0x8000 ^
 ../lib/SMSlib.lib ../lib/PSGLib.rel ../lib/GSLib.rel ^
-bank2.rel bank3.rel bank4.rel ^
+banks/bank2.rel banks/bank3.rel banks/bank4.rel ^
 montylib.rel gamelogic.rel resources.rel spriteengine.rel player.rel soundengine.rel
 
 
