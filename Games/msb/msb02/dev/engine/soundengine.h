@@ -7,4 +7,5 @@ void play_game_music();
 void play_punch_sound1();
 void play_punch_sound2();
 void manage_sound_frame();
+
 #endif

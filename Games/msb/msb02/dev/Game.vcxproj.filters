@@ -25,6 +25,18 @@
     <Filter Include="Source Files\engine">
       <UniqueIdentifier>{d3f2c16c-932b-4723-a5da-a541d3b647f4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\devkit">
+      <UniqueIdentifier>{c5bdce60-f1b1-44ae-b98f-8e4ecede3eba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\devkit">
+      <UniqueIdentifier>{6d8753ef-9c77-4de3-af75-5ca658b9e70d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\object">
+      <UniqueIdentifier>{9f931ad0-dacd-482a-ab5a-4a813ae70f6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\object">
+      <UniqueIdentifier>{ca3cc16d-5e75-4ae9-9055-a767ba3f88f3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="build.bat">
@@ -32,82 +44,103 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="enemy.h">
+    <ClInclude Include="main.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="enemycharacter.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="gamelogic.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="montylib.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="player.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="playercharacter.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="randLut.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="resources.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="bank2.h">
+    <ClInclude Include="banks\bank2.h">
       <Filter>Header Files\banks</Filter>
     </ClInclude>
-    <ClInclude Include="bank3.h">
+    <ClInclude Include="banks\bank3.h">
       <Filter>Header Files\banks</Filter>
     </ClInclude>
-    <ClInclude Include="bank4.h">
+    <ClInclude Include="banks\bank4.h">
       <Filter>Header Files\banks</Filter>
     </ClInclude>
-    <ClInclude Include="spriteengine.h">
+    <ClInclude Include="devkit\_sms_manager.h">
+      <Filter>Header Files\devkit</Filter>
+    </ClInclude>
+    <ClInclude Include="devkit\_snd_manager.h">
+      <Filter>Header Files\devkit</Filter>
+    </ClInclude>
+    <ClInclude Include="game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\soundengine.h">
       <Filter>Header Files\engine</Filter>
     </ClInclude>
-    <ClInclude Include="soundengine.h">
+    <ClInclude Include="engine\spriteengine.h">
       <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="object\enemy.h">
+      <Filter>Header Files\object</Filter>
+    </ClInclude>
+    <ClInclude Include="object\enemycharacter.h">
+      <Filter>Header Files\object</Filter>
+    </ClInclude>
+    <ClInclude Include="object\gamelogic.h">
+      <Filter>Header Files\object</Filter>
+    </ClInclude>
+    <ClInclude Include="object\montylib.h">
+      <Filter>Header Files\object</Filter>
+    </ClInclude>
+    <ClInclude Include="object\player.h">
+      <Filter>Header Files\object</Filter>
+    </ClInclude>
+    <ClInclude Include="object\playercharacter.h">
+      <Filter>Header Files\object</Filter>
+    </ClInclude>
+    <ClInclude Include="object\randLut.h">
+      <Filter>Header Files\object</Filter>
+    </ClInclude>
+    <ClInclude Include="object\resources.h">
+      <Filter>Header Files\object</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="enemy.c">
+    <ClCompile Include="main.c">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="banks\bank2.c">
+      <Filter>Source Files\banks</Filter>
+    </ClCompile>
+    <ClCompile Include="banks\bank3.c">
+      <Filter>Source Files\banks</Filter>
+    </ClCompile>
+    <ClCompile Include="banks\bank4.c">
+      <Filter>Source Files\banks</Filter>
+    </ClCompile>
+    <ClCompile Include="devkit\_sms_manager.c">
+      <Filter>Source Files\devkit</Filter>
+    </ClCompile>
+    <ClCompile Include="devkit\_snd_manager.c">
+      <Filter>Source Files\devkit</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\soundengine.c">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\spriteengine.c">
+      <Filter>Source Files\engine</Filter>
     </ClCompile>
     <ClCompile Include="game.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="gamelogic.c">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="object\enemy.c">
+      <Filter>Source Files\object</Filter>
     </ClCompile>
-    <ClCompile Include="montylib.c">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="object\gamelogic.c">
+      <Filter>Source Files\object</Filter>
     </ClCompile>
-    <ClCompile Include="player.c">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="object\montylib.c">
+      <Filter>Source Files\object</Filter>
     </ClCompile>
-    <ClCompile Include="resources.c">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="object\player.c">
+      <Filter>Source Files\object</Filter>
     </ClCompile>
-    <ClCompile Include="scrolltester.c">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="object\resources.c">
+      <Filter>Source Files\object</Filter>
     </ClCompile>
-    <ClCompile Include="bank2.c">
-      <Filter>Source Files\banks</Filter>
-    </ClCompile>
-    <ClCompile Include="bank3.c">
-      <Filter>Source Files\banks</Filter>
-    </ClCompile>
-    <ClCompile Include="bank4.c">
-      <Filter>Source Files\banks</Filter>
-    </ClCompile>
-    <ClCompile Include="spriteengine.c">
-      <Filter>Source Files\engine</Filter>
-    </ClCompile>
-    <ClCompile Include="soundengine.c">
-      <Filter>Source Files\engine</Filter>
+    <ClCompile Include="object\scrolltester.c">
+      <Filter>Source Files\object</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

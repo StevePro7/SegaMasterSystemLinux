@@ -23,16 +23,20 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 ::cd ../dev
 
 ::cd engine
-::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 spriteengine.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 soundengine.c
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 spriteengine.c
 ::cd ..
+
+::cd object
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 enemy.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 gamelogic.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 montylib.c
-::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 resources.c
-::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 spriteengine.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 player.c
-::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 enemy.c
-::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 soundengine.c
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 resources.c
+
+
+::cd ..
+
 sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
 
 
@@ -53,7 +57,7 @@ sdcc --debug -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-
 ../lib/SMSlib.lib ../lib/PSGLib.rel ../lib/GSLib.rel ^
 banks/bank2.rel banks/bank3.rel banks/bank4.rel ^
 engine/spriteengine.rel engine/soundengine.rel ^
-montylib.rel gamelogic.rel resources.rel player.rel
+object/montylib.rel object/gamelogic.rel object/resources.rel object/player.rel
 
 
 :: Execute

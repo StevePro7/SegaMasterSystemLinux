@@ -1,13 +1,13 @@
-#include <stdbool.h>
-#include "spriteengine.h"
 #include "player.h"
-#include "bank2.h"
-#include "bank3.h"
-#include "bank4.h"
 #include "playercharacter.h"
 #include "montylib.h"
-#include "soundengine.h"
-#include "../lib/SMSlib.h"
+#include "../banks/bank2.h"
+#include "../banks/bank3.h"
+#include "../banks/bank4.h"
+#include "../engine/soundengine.h"
+#include "../engine/spriteengine.h"
+#include "../../lib/SMSlib.h"
+#include <stdbool.h>
 
 player player1;
 player player2;

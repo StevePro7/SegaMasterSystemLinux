@@ -1,13 +1,13 @@
-#include <stdbool.h>
-#include "spriteengine.h"
 #include "enemy.h"
-#include "bank2.h"
-#include "bank3.h"
-#include "bank4.h"
 #include "enemycharacter.h"
 #include "montylib.h"
-#include "soundengine.h"
-#include "../lib/SMSlib.h"
+#include "../banks/bank2.h"
+#include "../banks/bank3.h"
+#include "../banks/bank4.h"
+#include "../engine/spriteengine.h"
+#include "../engine/soundengine.h"
+#include "../../lib/SMSlib.h"
+#include <stdbool.h>
 
 enemy enemy1;
 enemy enemy2;

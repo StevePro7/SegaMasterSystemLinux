@@ -1,9 +1,9 @@
-#include "../lib/SMSlib.h"
-#include "../lib/PSGlib.h"
 #include "soundengine.h"
-#include "bank2.h"
-#include "bank3.h"
-#include "bank4.h"
+#include "../banks/bank2.h"
+#include "../banks/bank3.h"
+#include "../banks/bank4.h"
+#include "../../lib/SMSlib.h"
+#include "../../lib/PSGlib.h"
 
 unsigned char current_music_bank = 0;
 unsigned char current_fx_bank = 0;

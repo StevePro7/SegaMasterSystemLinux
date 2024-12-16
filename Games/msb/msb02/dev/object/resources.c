@@ -1,12 +1,12 @@
 #include <stdbool.h>
-#include "resources.h"
-#include "../lib/SMSlib.h"
-#include "../lib/PSGlib.h"
-#include "bank2.h" 
-#include "bank3.h"
-#include "bank4.h"
 #include "montylib.h"
-#include "spriteengine.h"
+#include "resources.h"
+#include "../banks/bank2.h" 
+#include "../banks/bank3.h"
+#include "../banks/bank4.h"
+#include "../engine/spriteengine.h"
+#include "../../lib/SMSlib.h"
+#include "../../lib/PSGlib.h"
 
 unsigned int scroll_x;
 unsigned int scroll_y;

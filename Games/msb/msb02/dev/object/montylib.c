@@ -1,13 +1,13 @@
 //
 // Created by Jordi Montornes on 04/04/2017.
 //
-#include <stdbool.h>
 #include "montylib.h"
-#include "../lib/SMSlib.h"
-#include "../lib/PSGlib.h"
-#include "../lib/GSlib.h"
 #include "randLut.h"
-#include "soundengine.h"
+#include "../engine/soundengine.h"
+#include "../../lib/SMSlib.h"
+#include "../../lib/PSGlib.h"
+#include "../../lib/GSlib.h"
+#include <stdbool.h>
 
 bool pause;
 unsigned char rand_index =  0;

@@ -1,12 +1,12 @@
-#include <stdbool.h>
-#include "../lib/SMSlib.h"
 #include "gamelogic.h"
-#include "resources.h"
-#include "spriteengine.h"
-#include "soundengine.h"
 #include "player.h"
 #include "enemy.h"
 #include "montylib.h"
+#include "resources.h"
+#include "../engine/soundengine.h"
+#include "../engine/spriteengine.h"
+#include "../../lib/SMSlib.h"
+#include <stdbool.h>
 
 unsigned char game_status;
 unsigned int score;

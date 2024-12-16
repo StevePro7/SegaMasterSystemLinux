@@ -1,7 +1,7 @@
-#include <stdlib.h>
-#include <stdbool.h>
 #include "spriteengine.h"
-#include "../lib/SMSlib.h"
+#include "../../lib/SMSlib.h"
+#include <stdbool.h>
+#include <stdlib.h>
 
 entity *entitylist[MAX_ENTITIES];
 unsigned char entityIndex = 0;
