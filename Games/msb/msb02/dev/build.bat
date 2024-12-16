@@ -16,7 +16,7 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 ::cd devkit
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _sms_manager.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _snd_manager.c
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _gsl_manager.c
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _gsl_manager.c
 ::cd ..
 
 ::cd ../lib
@@ -55,6 +55,7 @@ sdcc --debug -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-
  -Wl-b_BANK2=0x8000 -Wl-b_BANK3=0x8000 -Wl-b_BANK4=0x8000 ^
 ../lib/SMSlib.lib ../lib/PSGLib.rel ../lib/GSLib.rel ^
 banks/bank2.rel banks/bank3.rel banks/bank4.rel ^
+devkit/_sms_manager.rel devkit/_snd_manager.rel devkit/_gsl_manager.rel ^
 engine/spriteengine.rel engine/soundengine.rel ^
 object/montylib.rel object/gamelogic.rel object/resources.rel object/player.rel
 

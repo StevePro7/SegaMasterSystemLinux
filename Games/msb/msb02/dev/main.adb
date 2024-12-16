@@ -79,6 +79,3 @@ S:G$presentation_screen$0_0$0({2}DF,SV:S),C,0,0
 S:G$game_loop$0_0$0({2}DF,SV:S),C,0,0
 S:G$execute_game_logic$0_0$0({2}DF,SV:S),C,0,0
 S:G$main$0_0$0({2}DF,SV:S),C,0,0
-S:Fmain$__str_0$0_0$0({16}DA16d,SC:U),D,0,0
-S:Fmain$__str_1$0_0$0({9}DA9d,SC:U),D,0,0
-S:Fmain$__str_2$0_0$0({25}DA25d,SC:U),D,0,0

@@ -9,8 +9,8 @@
 #define dateYear	2022
 #define dateMonth	7
 #define dateDay		21
-#define author		"kusfo"
-#define name		"1985Alternativol"
-#define descr		"KatKills"
+#define author		"1985Alternativol"
+#define name		"KatKills"
+#define descr		"Punk Cat Brawler for SMS"
 
 #endif//_GAME_H_
