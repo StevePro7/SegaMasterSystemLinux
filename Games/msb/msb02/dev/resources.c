@@ -1,7 +1,7 @@
 #include <stdbool.h>
 #include "resources.h"
-#include "libs/SMSlib.h"
-#include "libs/PSGlib.h"
+#include "../lib/SMSlib.h"
+#include "../lib/PSGlib.h"
 #include "bank2.h" 
 #include "bank3.h"
 #include "bank4.h"

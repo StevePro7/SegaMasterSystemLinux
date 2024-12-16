@@ -7,7 +7,7 @@
 #include "enemycharacter.h"
 #include "montylib.h"
 #include "soundengine.h"
-#include "libs/SMSlib.h"
+#include "../lib/SMSlib.h"
 
 enemy enemy1;
 enemy enemy2;

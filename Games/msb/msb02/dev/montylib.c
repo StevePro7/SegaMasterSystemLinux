@@ -3,9 +3,9 @@
 //
 #include <stdbool.h>
 #include "montylib.h"
-#include "libs/SMSlib.h"
-#include "libs/PSGlib.h"
-#include "libs/GSlib.h"
+#include "../lib/SMSlib.h"
+#include "../lib/PSGlib.h"
+#include "../lib/GSlib.h"
 #include "randLut.h"
 #include "soundengine.h"
 

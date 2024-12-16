@@ -1,6 +1,6 @@
 #include "bank2.h"
-#include "libs\SMSlib.h"
-#include "libs\GSLib.h"
+#include "../lib/SMSlib.h"
+#include "../lib/GSLib.h"
 
 signed char scrollXOffset = 0;
 signed char scrollYOffset = 0;

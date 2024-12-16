@@ -1,5 +1,5 @@
 #include <stdbool.h>
-#include "libs/SMSlib.h"
+#include "../lib/SMSlib.h"
 #include "gamelogic.h"
 #include "resources.h"
 #include "spriteengine.h"
