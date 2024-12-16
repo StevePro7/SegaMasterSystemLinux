@@ -13,10 +13,19 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 --constseg BANK4 bank4.c
 ::cd ..
 
+::cd devkit
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _sms_manager.c
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _snd_manager.c
+::cd ..
+
 ::cd ../lib
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../dev/peep-rules.txt --std-c99 GSLib.c
 ::cd ../dev
 
+::cd engine
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 spriteengine.c
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 soundengine.c
+::cd ..
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 gamelogic.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 montylib.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 resources.c
@@ -43,7 +52,8 @@ sdcc --debug -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-
  -Wl-b_BANK2=0x8000 -Wl-b_BANK3=0x8000 -Wl-b_BANK4=0x8000 ^
 ../lib/SMSlib.lib ../lib/PSGLib.rel ../lib/GSLib.rel ^
 banks/bank2.rel banks/bank3.rel banks/bank4.rel ^
-montylib.rel gamelogic.rel resources.rel spriteengine.rel player.rel soundengine.rel
+engine/spriteengine.rel engine/soundengine.rel ^
+montylib.rel gamelogic.rel resources.rel player.rel
 
 
 :: Execute
@@ -57,4 +67,4 @@ if exist "*.lst" del "*.lst" > nul; if exist "*.sym" del "*.sym" > nul;
 
 :: Run
 ::java -jar C:/SEGA/Emulicious/Emulicious.jar output.sms
-::output.sms
+output.sms
