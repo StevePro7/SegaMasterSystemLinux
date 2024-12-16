@@ -1,0 +1,12 @@
+M:bank2
+S:G$gatopresentaciontiles_psgcompr$0_0$0({3771}DA3771d,SC:U),D,0,0
+S:G$gatopresentaciontilemap_bin$0_0$0({1536}DA1536d,SC:U),D,0,0
+S:G$gatopresentacionpalette_bin$0_0$0({12}DA12d,SC:U),D,0,0
+S:G$presentation_psg$0_0$0({3267}DA3267d,SC:U),D,0,0
+S:G$level1_metatiles_bin$0_0$0({952}DA952d,SC:U),D,0,0
+S:G$level1_palette_bin$0_0$0({13}DA13d,SC:U),D,0,0
+S:G$level1_scrolltable_bin$0_0$0({1549}DA1549d,SC:U),D,0,0
+S:G$level1_tiles_bin$0_0$0({4352}DA4352d,SC:U),D,0,0
+S:G$levelbackgroundtiles_psgcompr$0_0$0({442}DA442d,SC:U),D,0,0
+S:G$playeranimation1frame1_bin$0_0$0({256}DA256d,SC:U),D,0,0
+S:G$levelbackgroundpalette_bin$0_0$0({15}DA15d,SC:U),D,0,0
