@@ -1,4 +1,4 @@
-@echo off
+::@echo off
 
 :: Time build START
 :: Reference: https://stackoverflow.com/questions/673523/how-do-i-measure-execution-time-of-a-command-on-the-windows-command-line
@@ -11,7 +11,10 @@ sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 --co
 sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 --constseg BANK3 bank3.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 --constseg BANK4 bank4.c
 
-sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 libs/GSLib.c
+cd ../lib
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../dev/peep-rules.txt --std-c99 GSLib.c
+cd ../dev
+
 sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 gamelogic.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 montylib.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 resources.c
