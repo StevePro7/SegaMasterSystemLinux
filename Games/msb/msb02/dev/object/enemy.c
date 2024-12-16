@@ -4,7 +4,6 @@
 #include "../banks/bank2.h"
 #include "../banks/bank3.h"
 #include "../banks/bank4.h"
-#include "../engine/spriteengine.h"
 #include "../engine/soundengine.h"
 #include "../../lib/SMSlib.h"
 #include <stdbool.h>

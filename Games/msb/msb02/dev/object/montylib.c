@@ -7,7 +7,6 @@
 #include "../../lib/SMSlib.h"
 #include "../../lib/PSGlib.h"
 #include "../../lib/GSlib.h"
-#include <stdbool.h>
 
 bool pause;
 unsigned char rand_index =  0;

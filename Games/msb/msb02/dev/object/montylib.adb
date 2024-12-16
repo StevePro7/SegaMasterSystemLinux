@@ -24,6 +24,12 @@ S:G$SMS_VDPFlags$0_0$0({1}SC:U),E,0,0
 S:G$SMS_Port3EBIOSvalue$0_0$0({1}SC:U),E,0,0
 S:G$pause$0_0$0({1}:S),E,0,0
 S:G$frame_cnt$0_0$0({2}SI:U),E,0,0
+S:G$play_logo_music$0_0$0({2}DF,SV:S),C,0,0
+S:G$play_presentation_music$0_0$0({2}DF,SV:S),C,0,0
+S:G$play_game_music$0_0$0({2}DF,SV:S),C,0,0
+S:G$play_punch_sound1$0_0$0({2}DF,SV:S),C,0,0
+S:G$play_punch_sound2$0_0$0({2}DF,SV:S),C,0,0
+S:G$manage_sound_frame$0_0$0({2}DF,SV:S),C,0,0
 S:G$SMS_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$SMS_VDPturnOnFeature$0_0$0({2}DF,SV:S),C,0,0
 S:G$SMS_VDPturnOffFeature$0_0$0({2}DF,SV:S),C,0,0
@@ -122,9 +128,3 @@ S:G$GSL_getCurrentX$0_0$0({2}DF,SI:U),C,0,0
 S:G$GSL_getCurrentY$0_0$0({2}DF,SI:U),C,0,0
 S:G$GSL_getCollisionCount$0_0$0({2}DF,SC:U),C,0,0
 S:G$GSL_getScrolltableAddress$0_0$0({2}DF,DG,SC:U),C,0,0
-S:G$play_logo_music$0_0$0({2}DF,SV:S),C,0,0
-S:G$play_presentation_music$0_0$0({2}DF,SV:S),C,0,0
-S:G$play_game_music$0_0$0({2}DF,SV:S),C,0,0
-S:G$play_punch_sound1$0_0$0({2}DF,SV:S),C,0,0
-S:G$play_punch_sound2$0_0$0({2}DF,SV:S),C,0,0
-S:G$manage_sound_frame$0_0$0({2}DF,SV:S),C,0,0

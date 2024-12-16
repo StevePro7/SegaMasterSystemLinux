@@ -1,0 +1,885 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 4.1.0 #12072 (MINGW64)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module resources
+                                      6 	.optsdcc -mz80
+                                      7 	
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl _SMS_VRAMmemcpy
+                                     12 	.globl _SMS_zeroBGPalette
+                                     13 	.globl _SMS_loadBGPaletteHalfBrightness
+                                     14 	.globl _SMS_loadSpritePalette
+                                     15 	.globl _SMS_loadBGPalette
+                                     16 	.globl _SMS_loadPSGaidencompressedTilesatAddr
+                                     17 	.globl _SMS_crt0_RST18
+                                     18 	.globl _SMS_crt0_RST08
+                                     19 	.globl _drawEntities
+                                     20 	.globl _updateTiles
+                                     21 	.globl _updateAnimations
+                                     22 	.globl _get_scroll_y
+                                     23 	.globl _get_scroll_x
+                                     24 	.globl _move_scroll
+                                     25 	.globl _init_scroll
+                                     26 	.globl _scroll_y
+                                     27 	.globl _scroll_x
+                                     28 	.globl _SMS_SRAM
+                                     29 	.globl _SRAM_bank_to_be_mapped_on_slot2
+                                     30 	.globl _ROM_bank_to_be_mapped_on_slot2
+                                     31 	.globl _load_logo_assets
+                                     32 	.globl _load_logo_halfpalette
+                                     33 	.globl _load_logo_fullpalette
+                                     34 	.globl _load_fnaclogo_assets
+                                     35 	.globl _load_fnaclogo_halfpalette
+                                     36 	.globl _load_fnaclogo_fullpalette
+                                     37 	.globl _load_presentation_assets
+                                     38 	.globl _load_presentation_halfpalette
+                                     39 	.globl _load_presentation_fullpalette
+                                     40 	.globl _load_level1_assets
+                                     41 	.globl _init_level1_scroll
+                                     42 	.globl _update_scroll
+                                     43 	.globl _get_scroll_position_x
+                                     44 	.globl _get_scroll_position_y
+                                     45 	.globl _update_resources
+                                     46 	.globl _load_background_blackpalette
+                                     47 	.globl _load_system_font
+                                     48 	.globl _print_debug_info
+                                     49 	.globl _print_unsigned_char
+                                     50 	.globl _print_signed_char
+                                     51 ;--------------------------------------------------------
+                                     52 ; special function registers
+                                     53 ;--------------------------------------------------------
+                                     54 ;--------------------------------------------------------
+                                     55 ; ram data
+                                     56 ;--------------------------------------------------------
+                                     57 	.area _DATA
+                           00FFFF    58 G$ROM_bank_to_be_mapped_on_slot2$0_0$0 == 0xffff
+                           00FFFF    59 _ROM_bank_to_be_mapped_on_slot2	=	0xffff
+                           00FFFC    60 G$SRAM_bank_to_be_mapped_on_slot2$0_0$0 == 0xfffc
+                           00FFFC    61 _SRAM_bank_to_be_mapped_on_slot2	=	0xfffc
+                           008000    62 G$SMS_SRAM$0_0$0 == 0x8000
+                           008000    63 _SMS_SRAM	=	0x8000
+                           000000    64 G$scroll_x$0_0$0==.
+      000000                         65 _scroll_x::
+      000000                         66 	.ds 2
+                           000002    67 G$scroll_y$0_0$0==.
+      000002                         68 _scroll_y::
+      000002                         69 	.ds 2
+                                     70 ;--------------------------------------------------------
+                                     71 ; ram data
+                                     72 ;--------------------------------------------------------
+                                     73 	.area _INITIALIZED
+                                     74 ;--------------------------------------------------------
+                                     75 ; absolute external ram data
+                                     76 ;--------------------------------------------------------
+                                     77 	.area _DABS (ABS)
+                                     78 ;--------------------------------------------------------
+                                     79 ; global & static initialisations
+                                     80 ;--------------------------------------------------------
+                                     81 	.area _HOME
+                                     82 	.area _GSINIT
+                                     83 	.area _GSFINAL
+                                     84 	.area _GSINIT
+                                     85 ;--------------------------------------------------------
+                                     86 ; Home
+                                     87 ;--------------------------------------------------------
+                                     88 	.area _HOME
+                                     89 	.area _HOME
+                                     90 ;--------------------------------------------------------
+                                     91 ; code
+                                     92 ;--------------------------------------------------------
+                                     93 	.area _CODE
+                           000000    94 	G$load_logo_assets$0$0	= .
+                                     95 	.globl	G$load_logo_assets$0$0
+                           000000    96 	C$resources.c$14$0_0$94	= .
+                                     97 	.globl	C$resources.c$14$0_0$94
+                                     98 ;resources.c:14: void load_logo_assets() {
+                                     99 ;	---------------------------------
+                                    100 ; Function load_logo_assets
+                                    101 ; ---------------------------------
+      000000                        102 _load_logo_assets::
+                           000000   103 	C$resources.c$15$1_0$94	= .
+                                    104 	.globl	C$resources.c$15$1_0$94
+                                    105 ;resources.c:15: SMS_mapROMBank(logo1985tiles_bin_bank);
+      000000 21 FF FF         [10]  106 	ld	hl, #_ROM_bank_to_be_mapped_on_slot2
+      000003 36 03            [10]  107 	ld	(hl), #0x03
+                           000005   108 	C$resources.c$16$1_0$94	= .
+                                    109 	.globl	C$resources.c$16$1_0$94
+                                    110 ;resources.c:16: SMS_loadTiles(logo1985tiles_bin, 0, logo1985tiles_bin_size);
+      000005 21 C0 0C         [10]  111 	ld	hl, #0x0cc0
+      000008 E5               [11]  112 	push	hl
+      000009 21r00r00         [10]  113 	ld	hl, #_logo1985tiles_bin
+      00000C E5               [11]  114 	push	hl
+      00000D 21 00 40         [10]  115 	ld	hl, #0x4000
+      000010 E5               [11]  116 	push	hl
+      000011 CDr00r00         [17]  117 	call	_SMS_VRAMmemcpy
+                           000014   118 	C$resources.c$17$1_0$94	= .
+                                    119 	.globl	C$resources.c$17$1_0$94
+                                    120 ;resources.c:17: SMS_loadTileMap(0, 0, logo1985tilemap_bin, logo1985tilemap_bin_size);
+      000014 21 00 06         [10]  121 	ld	hl, #0x0600
+      000017 E5               [11]  122 	push	hl
+      000018 21r00r00         [10]  123 	ld	hl, #_logo1985tilemap_bin
+      00001B E5               [11]  124 	push	hl
+      00001C 21 00 78         [10]  125 	ld	hl, #0x7800
+      00001F E5               [11]  126 	push	hl
+      000020 CDr00r00         [17]  127 	call	_SMS_VRAMmemcpy
+                           000023   128 	C$resources.c$18$1_0$94	= .
+                                    129 	.globl	C$resources.c$18$1_0$94
+                                    130 ;resources.c:18: }
+                           000023   131 	C$resources.c$18$1_0$94	= .
+                                    132 	.globl	C$resources.c$18$1_0$94
+                           000023   133 	XG$load_logo_assets$0$0	= .
+                                    134 	.globl	XG$load_logo_assets$0$0
+      000023 C9               [10]  135 	ret
+                           000024   136 	G$load_logo_halfpalette$0$0	= .
+                                    137 	.globl	G$load_logo_halfpalette$0$0
+                           000024   138 	C$resources.c$20$1_0$95	= .
+                                    139 	.globl	C$resources.c$20$1_0$95
+                                    140 ;resources.c:20: void load_logo_halfpalette() {
+                                    141 ;	---------------------------------
+                                    142 ; Function load_logo_halfpalette
+                                    143 ; ---------------------------------
+      000024                        144 _load_logo_halfpalette::
+                           000024   145 	C$resources.c$21$1_0$95	= .
+                                    146 	.globl	C$resources.c$21$1_0$95
+                                    147 ;resources.c:21: SMS_loadBGPaletteHalfBrightness(logo1985palette_bin);
+      000024 21r00r00         [10]  148 	ld	hl, #_logo1985palette_bin
+                           000027   149 	C$resources.c$22$1_0$95	= .
+                                    150 	.globl	C$resources.c$22$1_0$95
+                                    151 ;resources.c:22: }
+                           000027   152 	C$resources.c$22$1_0$95	= .
+                                    153 	.globl	C$resources.c$22$1_0$95
+                           000027   154 	XG$load_logo_halfpalette$0$0	= .
+                                    155 	.globl	XG$load_logo_halfpalette$0$0
+      000027 C3r00r00         [10]  156 	jp	_SMS_loadBGPaletteHalfBrightness
+                           00002A   157 	G$load_logo_fullpalette$0$0	= .
+                                    158 	.globl	G$load_logo_fullpalette$0$0
+                           00002A   159 	C$resources.c$24$1_0$96	= .
+                                    160 	.globl	C$resources.c$24$1_0$96
+                                    161 ;resources.c:24: void load_logo_fullpalette() {
+                                    162 ;	---------------------------------
+                                    163 ; Function load_logo_fullpalette
+                                    164 ; ---------------------------------
+      00002A                        165 _load_logo_fullpalette::
+                           00002A   166 	C$resources.c$25$1_0$96	= .
+                                    167 	.globl	C$resources.c$25$1_0$96
+                                    168 ;resources.c:25: SMS_loadBGPalette(logo1985palette_bin);
+      00002A 21r00r00         [10]  169 	ld	hl, #_logo1985palette_bin
+                           00002D   170 	C$resources.c$26$1_0$96	= .
+                                    171 	.globl	C$resources.c$26$1_0$96
+                                    172 ;resources.c:26: }
+                           00002D   173 	C$resources.c$26$1_0$96	= .
+                                    174 	.globl	C$resources.c$26$1_0$96
+                           00002D   175 	XG$load_logo_fullpalette$0$0	= .
+                                    176 	.globl	XG$load_logo_fullpalette$0$0
+      00002D C3r00r00         [10]  177 	jp	_SMS_loadBGPalette
+                           000030   178 	G$load_fnaclogo_assets$0$0	= .
+                                    179 	.globl	G$load_fnaclogo_assets$0$0
+                           000030   180 	C$resources.c$28$1_0$97	= .
+                                    181 	.globl	C$resources.c$28$1_0$97
+                                    182 ;resources.c:28: void load_fnaclogo_assets() {
+                                    183 ;	---------------------------------
+                                    184 ; Function load_fnaclogo_assets
+                                    185 ; ---------------------------------
+      000030                        186 _load_fnaclogo_assets::
+                           000030   187 	C$resources.c$29$1_0$97	= .
+                                    188 	.globl	C$resources.c$29$1_0$97
+                                    189 ;resources.c:29: SMS_mapROMBank(fnaclogotiles_psgcompr_bank);
+      000030 21 FF FF         [10]  190 	ld	hl, #_ROM_bank_to_be_mapped_on_slot2
+      000033 36 03            [10]  191 	ld	(hl), #0x03
+                           000035   192 	C$resources.c$30$1_0$97	= .
+                                    193 	.globl	C$resources.c$30$1_0$97
+                                    194 ;resources.c:30: SMS_loadPSGaidencompressedTiles(fnaclogotiles_psgcompr,0);
+      000035 21 00 40         [10]  195 	ld	hl, #0x4000
+      000038 E5               [11]  196 	push	hl
+      000039 21r00r00         [10]  197 	ld	hl, #_fnaclogotiles_psgcompr
+      00003C E5               [11]  198 	push	hl
+      00003D CDr00r00         [17]  199 	call	_SMS_loadPSGaidencompressedTilesatAddr
+      000040 F1               [10]  200 	pop	af
+                           000041   201 	C$resources.c$31$1_0$97	= .
+                                    202 	.globl	C$resources.c$31$1_0$97
+                                    203 ;resources.c:31: SMS_loadTileMap(0, 0, fnaclogotilemap_bin, fnaclogotilemap_bin_size);
+      000041 21 00 06         [10]  204 	ld	hl, #0x0600
+      000044 E3               [19]  205 	ex	(sp),hl
+      000045 21r00r00         [10]  206 	ld	hl, #_fnaclogotilemap_bin
+      000048 E5               [11]  207 	push	hl
+      000049 21 00 78         [10]  208 	ld	hl, #0x7800
+      00004C E5               [11]  209 	push	hl
+      00004D CDr00r00         [17]  210 	call	_SMS_VRAMmemcpy
+                           000050   211 	C$resources.c$32$1_0$97	= .
+                                    212 	.globl	C$resources.c$32$1_0$97
+                                    213 ;resources.c:32: }
+                           000050   214 	C$resources.c$32$1_0$97	= .
+                                    215 	.globl	C$resources.c$32$1_0$97
+                           000050   216 	XG$load_fnaclogo_assets$0$0	= .
+                                    217 	.globl	XG$load_fnaclogo_assets$0$0
+      000050 C9               [10]  218 	ret
+                           000051   219 	G$load_fnaclogo_halfpalette$0$0	= .
+                                    220 	.globl	G$load_fnaclogo_halfpalette$0$0
+                           000051   221 	C$resources.c$34$1_0$98	= .
+                                    222 	.globl	C$resources.c$34$1_0$98
+                                    223 ;resources.c:34: void load_fnaclogo_halfpalette() {
+                                    224 ;	---------------------------------
+                                    225 ; Function load_fnaclogo_halfpalette
+                                    226 ; ---------------------------------
+      000051                        227 _load_fnaclogo_halfpalette::
+                           000051   228 	C$resources.c$35$1_0$98	= .
+                                    229 	.globl	C$resources.c$35$1_0$98
+                                    230 ;resources.c:35: SMS_mapROMBank(fnaclogopalette_bin_bank);
+      000051 FD 21 FF FF      [14]  231 	ld	iy, #_ROM_bank_to_be_mapped_on_slot2
+      000055 FD 36 00 03      [19]  232 	ld	0 (iy), #0x03
+                           000059   233 	C$resources.c$36$1_0$98	= .
+                                    234 	.globl	C$resources.c$36$1_0$98
+                                    235 ;resources.c:36: SMS_loadBGPaletteHalfBrightness(fnaclogopalette_bin);
+      000059 21r00r00         [10]  236 	ld	hl, #_fnaclogopalette_bin
+                           00005C   237 	C$resources.c$37$1_0$98	= .
+                                    238 	.globl	C$resources.c$37$1_0$98
+                                    239 ;resources.c:37: }
+                           00005C   240 	C$resources.c$37$1_0$98	= .
+                                    241 	.globl	C$resources.c$37$1_0$98
+                           00005C   242 	XG$load_fnaclogo_halfpalette$0$0	= .
+                                    243 	.globl	XG$load_fnaclogo_halfpalette$0$0
+      00005C C3r00r00         [10]  244 	jp	_SMS_loadBGPaletteHalfBrightness
+                           00005F   245 	G$load_fnaclogo_fullpalette$0$0	= .
+                                    246 	.globl	G$load_fnaclogo_fullpalette$0$0
+                           00005F   247 	C$resources.c$39$1_0$99	= .
+                                    248 	.globl	C$resources.c$39$1_0$99
+                                    249 ;resources.c:39: void load_fnaclogo_fullpalette() {
+                                    250 ;	---------------------------------
+                                    251 ; Function load_fnaclogo_fullpalette
+                                    252 ; ---------------------------------
+      00005F                        253 _load_fnaclogo_fullpalette::
+                           00005F   254 	C$resources.c$40$1_0$99	= .
+                                    255 	.globl	C$resources.c$40$1_0$99
+                                    256 ;resources.c:40: SMS_mapROMBank(fnaclogopalette_bin_bank);
+      00005F FD 21 FF FF      [14]  257 	ld	iy, #_ROM_bank_to_be_mapped_on_slot2
+      000063 FD 36 00 03      [19]  258 	ld	0 (iy), #0x03
+                           000067   259 	C$resources.c$41$1_0$99	= .
+                                    260 	.globl	C$resources.c$41$1_0$99
+                                    261 ;resources.c:41: SMS_loadBGPalette(fnaclogopalette_bin);
+      000067 21r00r00         [10]  262 	ld	hl, #_fnaclogopalette_bin
+                           00006A   263 	C$resources.c$42$1_0$99	= .
+                                    264 	.globl	C$resources.c$42$1_0$99
+                                    265 ;resources.c:42: }
+                           00006A   266 	C$resources.c$42$1_0$99	= .
+                                    267 	.globl	C$resources.c$42$1_0$99
+                           00006A   268 	XG$load_fnaclogo_fullpalette$0$0	= .
+                                    269 	.globl	XG$load_fnaclogo_fullpalette$0$0
+      00006A C3r00r00         [10]  270 	jp	_SMS_loadBGPalette
+                           00006D   271 	G$load_presentation_assets$0$0	= .
+                                    272 	.globl	G$load_presentation_assets$0$0
+                           00006D   273 	C$resources.c$44$1_0$100	= .
+                                    274 	.globl	C$resources.c$44$1_0$100
+                                    275 ;resources.c:44: void load_presentation_assets() {
+                                    276 ;	---------------------------------
+                                    277 ; Function load_presentation_assets
+                                    278 ; ---------------------------------
+      00006D                        279 _load_presentation_assets::
+                           00006D   280 	C$resources.c$45$1_0$100	= .
+                                    281 	.globl	C$resources.c$45$1_0$100
+                                    282 ;resources.c:45: SMS_mapROMBank(gatopresentaciontiles_psgcompr_bank);
+      00006D 21 FF FF         [10]  283 	ld	hl, #_ROM_bank_to_be_mapped_on_slot2
+      000070 36 02            [10]  284 	ld	(hl), #0x02
+                           000072   285 	C$resources.c$46$1_0$100	= .
+                                    286 	.globl	C$resources.c$46$1_0$100
+                                    287 ;resources.c:46: SMS_loadPSGaidencompressedTiles(gatopresentaciontiles_psgcompr,0);
+      000072 21 00 40         [10]  288 	ld	hl, #0x4000
+      000075 E5               [11]  289 	push	hl
+      000076 21r00r00         [10]  290 	ld	hl, #_gatopresentaciontiles_psgcompr
+      000079 E5               [11]  291 	push	hl
+      00007A CDr00r00         [17]  292 	call	_SMS_loadPSGaidencompressedTilesatAddr
+      00007D F1               [10]  293 	pop	af
+                           00007E   294 	C$resources.c$47$1_0$100	= .
+                                    295 	.globl	C$resources.c$47$1_0$100
+                                    296 ;resources.c:47: SMS_loadTileMap(0, 0, gatopresentaciontilemap_bin, gatopresentaciontilemap_bin_size);	
+      00007E 21 00 06         [10]  297 	ld	hl, #0x0600
+      000081 E3               [19]  298 	ex	(sp),hl
+      000082 21r00r00         [10]  299 	ld	hl, #_gatopresentaciontilemap_bin
+      000085 E5               [11]  300 	push	hl
+      000086 21 00 78         [10]  301 	ld	hl, #0x7800
+      000089 E5               [11]  302 	push	hl
+      00008A CDr00r00         [17]  303 	call	_SMS_VRAMmemcpy
+                           00008D   304 	C$resources.c$48$1_0$100	= .
+                                    305 	.globl	C$resources.c$48$1_0$100
+                                    306 ;resources.c:48: }
+                           00008D   307 	C$resources.c$48$1_0$100	= .
+                                    308 	.globl	C$resources.c$48$1_0$100
+                           00008D   309 	XG$load_presentation_assets$0$0	= .
+                                    310 	.globl	XG$load_presentation_assets$0$0
+      00008D C9               [10]  311 	ret
+                           00008E   312 	G$load_presentation_halfpalette$0$0	= .
+                                    313 	.globl	G$load_presentation_halfpalette$0$0
+                           00008E   314 	C$resources.c$50$1_0$101	= .
+                                    315 	.globl	C$resources.c$50$1_0$101
+                                    316 ;resources.c:50: void load_presentation_halfpalette() {
+                                    317 ;	---------------------------------
+                                    318 ; Function load_presentation_halfpalette
+                                    319 ; ---------------------------------
+      00008E                        320 _load_presentation_halfpalette::
+                           00008E   321 	C$resources.c$51$1_0$101	= .
+                                    322 	.globl	C$resources.c$51$1_0$101
+                                    323 ;resources.c:51: SMS_mapROMBank(gatopresentacionpalette_bin_bank);
+      00008E FD 21 FF FF      [14]  324 	ld	iy, #_ROM_bank_to_be_mapped_on_slot2
+      000092 FD 36 00 02      [19]  325 	ld	0 (iy), #0x02
+                           000096   326 	C$resources.c$52$1_0$101	= .
+                                    327 	.globl	C$resources.c$52$1_0$101
+                                    328 ;resources.c:52: SMS_loadBGPaletteHalfBrightness(gatopresentacionpalette_bin);
+      000096 21r00r00         [10]  329 	ld	hl, #_gatopresentacionpalette_bin
+                           000099   330 	C$resources.c$53$1_0$101	= .
+                                    331 	.globl	C$resources.c$53$1_0$101
+                                    332 ;resources.c:53: }
+                           000099   333 	C$resources.c$53$1_0$101	= .
+                                    334 	.globl	C$resources.c$53$1_0$101
+                           000099   335 	XG$load_presentation_halfpalette$0$0	= .
+                                    336 	.globl	XG$load_presentation_halfpalette$0$0
+      000099 C3r00r00         [10]  337 	jp	_SMS_loadBGPaletteHalfBrightness
+                           00009C   338 	G$load_presentation_fullpalette$0$0	= .
+                                    339 	.globl	G$load_presentation_fullpalette$0$0
+                           00009C   340 	C$resources.c$55$1_0$102	= .
+                                    341 	.globl	C$resources.c$55$1_0$102
+                                    342 ;resources.c:55: void load_presentation_fullpalette() {
+                                    343 ;	---------------------------------
+                                    344 ; Function load_presentation_fullpalette
+                                    345 ; ---------------------------------
+      00009C                        346 _load_presentation_fullpalette::
+                           00009C   347 	C$resources.c$56$1_0$102	= .
+                                    348 	.globl	C$resources.c$56$1_0$102
+                                    349 ;resources.c:56: SMS_mapROMBank(gatopresentacionpalette_bin_bank);
+      00009C FD 21 FF FF      [14]  350 	ld	iy, #_ROM_bank_to_be_mapped_on_slot2
+      0000A0 FD 36 00 02      [19]  351 	ld	0 (iy), #0x02
+                           0000A4   352 	C$resources.c$57$1_0$102	= .
+                                    353 	.globl	C$resources.c$57$1_0$102
+                                    354 ;resources.c:57: SMS_loadBGPalette(gatopresentacionpalette_bin);
+      0000A4 21r00r00         [10]  355 	ld	hl, #_gatopresentacionpalette_bin
+                           0000A7   356 	C$resources.c$58$1_0$102	= .
+                                    357 	.globl	C$resources.c$58$1_0$102
+                                    358 ;resources.c:58: }
+                           0000A7   359 	C$resources.c$58$1_0$102	= .
+                                    360 	.globl	C$resources.c$58$1_0$102
+                           0000A7   361 	XG$load_presentation_fullpalette$0$0	= .
+                                    362 	.globl	XG$load_presentation_fullpalette$0$0
+      0000A7 C3r00r00         [10]  363 	jp	_SMS_loadBGPalette
+                           0000AA   364 	G$load_level1_assets$0$0	= .
+                                    365 	.globl	G$load_level1_assets$0$0
+                           0000AA   366 	C$resources.c$60$1_0$103	= .
+                                    367 	.globl	C$resources.c$60$1_0$103
+                                    368 ;resources.c:60: void load_level1_assets() {
+                                    369 ;	---------------------------------
+                                    370 ; Function load_level1_assets
+                                    371 ; ---------------------------------
+      0000AA                        372 _load_level1_assets::
+                           0000AA   373 	C$resources.c$61$1_0$103	= .
+                                    374 	.globl	C$resources.c$61$1_0$103
+                                    375 ;resources.c:61: SMS_mapROMBank(level1_palette_bin_bank);
+      0000AA 21 FF FF         [10]  376 	ld	hl, #_ROM_bank_to_be_mapped_on_slot2
+      0000AD 36 02            [10]  377 	ld	(hl), #0x02
+                           0000AF   378 	C$resources.c$62$1_0$103	= .
+                                    379 	.globl	C$resources.c$62$1_0$103
+                                    380 ;resources.c:62: SMS_loadBGPalette(level1_palette_bin);
+      0000AF 21r00r00         [10]  381 	ld	hl, #_level1_palette_bin
+      0000B2 CDr00r00         [17]  382 	call	_SMS_loadBGPalette
+                           0000B5   383 	C$resources.c$63$1_0$103	= .
+                                    384 	.globl	C$resources.c$63$1_0$103
+                                    385 ;resources.c:63: SMS_loadTiles(level1_tiles_bin,0, level1_tiles_bin_size);
+      0000B5 21 00 11         [10]  386 	ld	hl, #0x1100
+      0000B8 E5               [11]  387 	push	hl
+      0000B9 21r00r00         [10]  388 	ld	hl, #_level1_tiles_bin
+      0000BC E5               [11]  389 	push	hl
+      0000BD 21 00 40         [10]  390 	ld	hl, #0x4000
+      0000C0 E5               [11]  391 	push	hl
+      0000C1 CDr00r00         [17]  392 	call	_SMS_VRAMmemcpy
+                           0000C4   393 	C$resources.c$64$1_0$103	= .
+                                    394 	.globl	C$resources.c$64$1_0$103
+                                    395 ;resources.c:64: SMS_mapROMBank(player_palette_bin_bank);
+      0000C4 FD 21 FF FF      [14]  396 	ld	iy, #_ROM_bank_to_be_mapped_on_slot2
+      0000C8 FD 36 00 03      [19]  397 	ld	0 (iy), #0x03
+                           0000CC   398 	C$resources.c$65$1_0$103	= .
+                                    399 	.globl	C$resources.c$65$1_0$103
+                                    400 ;resources.c:65: SMS_loadSpritePalette(player_palette_bin);
+      0000CC 21r00r00         [10]  401 	ld	hl, #_player_palette_bin
+                           0000CF   402 	C$resources.c$66$1_0$103	= .
+                                    403 	.globl	C$resources.c$66$1_0$103
+                                    404 ;resources.c:66: }
+                           0000CF   405 	C$resources.c$66$1_0$103	= .
+                                    406 	.globl	C$resources.c$66$1_0$103
+                           0000CF   407 	XG$load_level1_assets$0$0	= .
+                                    408 	.globl	XG$load_level1_assets$0$0
+      0000CF C3r00r00         [10]  409 	jp	_SMS_loadSpritePalette
+                           0000D2   410 	G$init_level1_scroll$0$0	= .
+                                    411 	.globl	G$init_level1_scroll$0$0
+                           0000D2   412 	C$resources.c$68$1_0$104	= .
+                                    413 	.globl	C$resources.c$68$1_0$104
+                                    414 ;resources.c:68: void init_level1_scroll() {
+                                    415 ;	---------------------------------
+                                    416 ; Function init_level1_scroll
+                                    417 ; ---------------------------------
+      0000D2                        418 _init_level1_scroll::
+                           0000D2   419 	C$resources.c$69$1_0$104	= .
+                                    420 	.globl	C$resources.c$69$1_0$104
+                                    421 ;resources.c:69: scroll_x = 0;
+      0000D2 21 00 00         [10]  422 	ld	hl, #0x0000
+      0000D5 22r00r00         [16]  423 	ld	(_scroll_x), hl
+                           0000D8   424 	C$resources.c$70$1_0$104	= .
+                                    425 	.globl	C$resources.c$70$1_0$104
+                                    426 ;resources.c:70: scroll_y = 0;
+      0000D8 6C               [ 4]  427 	ld	l, h
+      0000D9 22r02r00         [16]  428 	ld	(_scroll_y), hl
+                           0000DC   429 	C$resources.c$71$1_0$104	= .
+                                    430 	.globl	C$resources.c$71$1_0$104
+                                    431 ;resources.c:71: SMS_mapROMBank(level1_metatiles_bin_bank);
+      0000DC 3E 02            [ 7]  432 	ld	a, #0x02
+      0000DE 32 FF FF         [13]  433 	ld	(#_ROM_bank_to_be_mapped_on_slot2), a
+                           0000E1   434 	C$resources.c$72$1_0$104	= .
+                                    435 	.globl	C$resources.c$72$1_0$104
+                                    436 ;resources.c:72: init_scroll(&level1_scrolltable_bin, &level1_metatiles_bin, scroll_x, scroll_y);
+      0000E1 6C               [ 4]  437 	ld	l, h
+      0000E2 E5               [11]  438 	push	hl
+      0000E3 6C               [ 4]  439 	ld	l, h
+      0000E4 E5               [11]  440 	push	hl
+      0000E5 21r00r00         [10]  441 	ld	hl, #_level1_metatiles_bin
+      0000E8 E5               [11]  442 	push	hl
+      0000E9 21r00r00         [10]  443 	ld	hl, #_level1_scrolltable_bin
+      0000EC E5               [11]  444 	push	hl
+      0000ED CDr00r00         [17]  445 	call	_init_scroll
+      0000F0 21 08 00         [10]  446 	ld	hl, #8
+      0000F3 39               [11]  447 	add	hl, sp
+      0000F4 F9               [ 6]  448 	ld	sp, hl
+                           0000F5   449 	C$resources.c$73$1_0$104	= .
+                                    450 	.globl	C$resources.c$73$1_0$104
+                                    451 ;resources.c:73: }
+                           0000F5   452 	C$resources.c$73$1_0$104	= .
+                                    453 	.globl	C$resources.c$73$1_0$104
+                           0000F5   454 	XG$init_level1_scroll$0$0	= .
+                                    455 	.globl	XG$init_level1_scroll$0$0
+      0000F5 C9               [10]  456 	ret
+                           0000F6   457 	G$update_scroll$0$0	= .
+                                    458 	.globl	G$update_scroll$0$0
+                           0000F6   459 	C$resources.c$75$1_0$106	= .
+                                    460 	.globl	C$resources.c$75$1_0$106
+                                    461 ;resources.c:75: void update_scroll(signed char delta_x, signed char delta_y) {
+                                    462 ;	---------------------------------
+                                    463 ; Function update_scroll
+                                    464 ; ---------------------------------
+      0000F6                        465 _update_scroll::
+                           0000F6   466 	C$resources.c$76$1_0$106	= .
+                                    467 	.globl	C$resources.c$76$1_0$106
+                                    468 ;resources.c:76: SMS_mapROMBank(level1_metatiles_bin_bank);
+      0000F6 21 FF FF         [10]  469 	ld	hl, #_ROM_bank_to_be_mapped_on_slot2
+      0000F9 36 02            [10]  470 	ld	(hl), #0x02
+                           0000FB   471 	C$resources.c$77$1_0$106	= .
+                                    472 	.globl	C$resources.c$77$1_0$106
+                                    473 ;resources.c:77: move_scroll(delta_x, delta_y);
+      0000FB FD 21 03 00      [14]  474 	ld	iy, #3
+      0000FF FD 39            [15]  475 	add	iy, sp
+      000101 FD 66 00         [19]  476 	ld	h, 0 (iy)
+      000104 FD 6E FF         [19]  477 	ld	l, -1 (iy)
+      000107 E5               [11]  478 	push	hl
+      000108 CDr00r00         [17]  479 	call	_move_scroll
+      00010B F1               [10]  480 	pop	af
+                           00010C   481 	C$resources.c$78$1_0$106	= .
+                                    482 	.globl	C$resources.c$78$1_0$106
+                                    483 ;resources.c:78: }
+                           00010C   484 	C$resources.c$78$1_0$106	= .
+                                    485 	.globl	C$resources.c$78$1_0$106
+                           00010C   486 	XG$update_scroll$0$0	= .
+                                    487 	.globl	XG$update_scroll$0$0
+      00010C C9               [10]  488 	ret
+                           00010D   489 	G$get_scroll_position_x$0$0	= .
+                                    490 	.globl	G$get_scroll_position_x$0$0
+                           00010D   491 	C$resources.c$80$1_0$107	= .
+                                    492 	.globl	C$resources.c$80$1_0$107
+                                    493 ;resources.c:80: unsigned int get_scroll_position_x() {
+                                    494 ;	---------------------------------
+                                    495 ; Function get_scroll_position_x
+                                    496 ; ---------------------------------
+      00010D                        497 _get_scroll_position_x::
+                           00010D   498 	C$resources.c$81$1_0$107	= .
+                                    499 	.globl	C$resources.c$81$1_0$107
+                                    500 ;resources.c:81: return get_scroll_x();
+                           00010D   501 	C$resources.c$82$1_0$107	= .
+                                    502 	.globl	C$resources.c$82$1_0$107
+                                    503 ;resources.c:82: }
+                           00010D   504 	C$resources.c$82$1_0$107	= .
+                                    505 	.globl	C$resources.c$82$1_0$107
+                           00010D   506 	XG$get_scroll_position_x$0$0	= .
+                                    507 	.globl	XG$get_scroll_position_x$0$0
+      00010D C3r00r00         [10]  508 	jp	_get_scroll_x
+                           000110   509 	G$get_scroll_position_y$0$0	= .
+                                    510 	.globl	G$get_scroll_position_y$0$0
+                           000110   511 	C$resources.c$84$1_0$108	= .
+                                    512 	.globl	C$resources.c$84$1_0$108
+                                    513 ;resources.c:84: unsigned int get_scroll_position_y() {
+                                    514 ;	---------------------------------
+                                    515 ; Function get_scroll_position_y
+                                    516 ; ---------------------------------
+      000110                        517 _get_scroll_position_y::
+                           000110   518 	C$resources.c$85$1_0$108	= .
+                                    519 	.globl	C$resources.c$85$1_0$108
+                                    520 ;resources.c:85: return get_scroll_y();
+                           000110   521 	C$resources.c$86$1_0$108	= .
+                                    522 	.globl	C$resources.c$86$1_0$108
+                                    523 ;resources.c:86: }
+                           000110   524 	C$resources.c$86$1_0$108	= .
+                                    525 	.globl	C$resources.c$86$1_0$108
+                           000110   526 	XG$get_scroll_position_y$0$0	= .
+                                    527 	.globl	XG$get_scroll_position_y$0$0
+      000110 C3r00r00         [10]  528 	jp	_get_scroll_y
+                           000113   529 	G$update_resources$0$0	= .
+                                    530 	.globl	G$update_resources$0$0
+                           000113   531 	C$resources.c$89$1_0$109	= .
+                                    532 	.globl	C$resources.c$89$1_0$109
+                                    533 ;resources.c:89: void update_resources() {
+                                    534 ;	---------------------------------
+                                    535 ; Function update_resources
+                                    536 ; ---------------------------------
+      000113                        537 _update_resources::
+                           000113   538 	C$resources.c$90$1_0$109	= .
+                                    539 	.globl	C$resources.c$90$1_0$109
+                                    540 ;resources.c:90: updateTiles();
+      000113 CDr00r00         [17]  541 	call	_updateTiles
+                           000116   542 	C$resources.c$91$1_0$109	= .
+                                    543 	.globl	C$resources.c$91$1_0$109
+                                    544 ;resources.c:91: updateAnimations();
+      000116 CDr00r00         [17]  545 	call	_updateAnimations
+                           000119   546 	C$resources.c$92$1_0$109	= .
+                                    547 	.globl	C$resources.c$92$1_0$109
+                                    548 ;resources.c:92: drawEntities();
+                           000119   549 	C$resources.c$93$1_0$109	= .
+                                    550 	.globl	C$resources.c$93$1_0$109
+                                    551 ;resources.c:93: }
+                           000119   552 	C$resources.c$93$1_0$109	= .
+                                    553 	.globl	C$resources.c$93$1_0$109
+                           000119   554 	XG$update_resources$0$0	= .
+                                    555 	.globl	XG$update_resources$0$0
+      000119 C3r00r00         [10]  556 	jp	_drawEntities
+                           00011C   557 	G$load_background_blackpalette$0$0	= .
+                                    558 	.globl	G$load_background_blackpalette$0$0
+                           00011C   559 	C$resources.c$95$1_0$110	= .
+                                    560 	.globl	C$resources.c$95$1_0$110
+                                    561 ;resources.c:95: void load_background_blackpalette() {
+                                    562 ;	---------------------------------
+                                    563 ; Function load_background_blackpalette
+                                    564 ; ---------------------------------
+      00011C                        565 _load_background_blackpalette::
+                           00011C   566 	C$resources.c$96$1_0$110	= .
+                                    567 	.globl	C$resources.c$96$1_0$110
+                                    568 ;resources.c:96: SMS_zeroBGPalette();
+                           00011C   569 	C$resources.c$97$1_0$110	= .
+                                    570 	.globl	C$resources.c$97$1_0$110
+                                    571 ;resources.c:97: }
+                           00011C   572 	C$resources.c$97$1_0$110	= .
+                                    573 	.globl	C$resources.c$97$1_0$110
+                           00011C   574 	XG$load_background_blackpalette$0$0	= .
+                                    575 	.globl	XG$load_background_blackpalette$0$0
+      00011C C3r00r00         [10]  576 	jp	_SMS_zeroBGPalette
+                           00011F   577 	G$load_system_font$0$0	= .
+                                    578 	.globl	G$load_system_font$0$0
+                           00011F   579 	C$resources.c$99$1_0$111	= .
+                                    580 	.globl	C$resources.c$99$1_0$111
+                                    581 ;resources.c:99: void load_system_font() {
+                                    582 ;	---------------------------------
+                                    583 ; Function load_system_font
+                                    584 ; ---------------------------------
+      00011F                        585 _load_system_font::
+                           00011F   586 	C$resources.c$100$1_0$111	= .
+                                    587 	.globl	C$resources.c$100$1_0$111
+                                    588 ;resources.c:100: SMS_mapROMBank(systemfont_psgcompr_bank);
+      00011F 21 FF FF         [10]  589 	ld	hl, #_ROM_bank_to_be_mapped_on_slot2
+      000122 36 04            [10]  590 	ld	(hl), #0x04
+                           000124   591 	C$resources.c$101$1_0$111	= .
+                                    592 	.globl	C$resources.c$101$1_0$111
+                                    593 ;resources.c:101: SMS_loadPSGaidencompressedTiles(systemfont_psgcompr,0);
+      000124 21 00 40         [10]  594 	ld	hl, #0x4000
+      000127 E5               [11]  595 	push	hl
+      000128 21r00r00         [10]  596 	ld	hl, #_systemfont_psgcompr
+      00012B E5               [11]  597 	push	hl
+      00012C CDr00r00         [17]  598 	call	_SMS_loadPSGaidencompressedTilesatAddr
+      00012F F1               [10]  599 	pop	af
+      000130 F1               [10]  600 	pop	af
+                           000131   601 	C$resources.c$102$1_0$111	= .
+                                    602 	.globl	C$resources.c$102$1_0$111
+                                    603 ;resources.c:102: }
+                           000131   604 	C$resources.c$102$1_0$111	= .
+                                    605 	.globl	C$resources.c$102$1_0$111
+                           000131   606 	XG$load_system_font$0$0	= .
+                                    607 	.globl	XG$load_system_font$0$0
+      000131 C9               [10]  608 	ret
+                           000132   609 	G$print_debug_info$0$0	= .
+                                    610 	.globl	G$print_debug_info$0$0
+                           000132   611 	C$resources.c$104$1_0$112	= .
+                                    612 	.globl	C$resources.c$104$1_0$112
+                                    613 ;resources.c:104: void print_debug_info() {
+                                    614 ;	---------------------------------
+                                    615 ; Function print_debug_info
+                                    616 ; ---------------------------------
+      000132                        617 _print_debug_info::
+                           000132   618 	C$resources.c$106$1_0$112	= .
+                                    619 	.globl	C$resources.c$106$1_0$112
+                                    620 ;resources.c:106: i = 0;
+                           000132   621 	C$resources.c$108$1_0$112	= .
+                                    622 	.globl	C$resources.c$108$1_0$112
+                                    623 ;resources.c:108: }
+                           000132   624 	C$resources.c$108$1_0$112	= .
+                                    625 	.globl	C$resources.c$108$1_0$112
+                           000132   626 	XG$print_debug_info$0$0	= .
+                                    627 	.globl	XG$print_debug_info$0$0
+      000132 C9               [10]  628 	ret
+                           000133   629 	G$print_unsigned_char$0$0	= .
+                                    630 	.globl	G$print_unsigned_char$0$0
+                           000133   631 	C$resources.c$110$1_0$114	= .
+                                    632 	.globl	C$resources.c$110$1_0$114
+                                    633 ;resources.c:110: void print_unsigned_char(unsigned char number) {
+                                    634 ;	---------------------------------
+                                    635 ; Function print_unsigned_char
+                                    636 ; ---------------------------------
+      000133                        637 _print_unsigned_char::
+      000133 DD E5            [15]  638 	push	ix
+      000135 DD 21 00 00      [14]  639 	ld	ix,#0
+      000139 DD 39            [15]  640 	add	ix,sp
+      00013B 3B               [ 6]  641 	dec	sp
+                           00013C   642 	C$resources.c$112$1_0$114	= .
+                                    643 	.globl	C$resources.c$112$1_0$114
+                                    644 ;resources.c:112: SMS_setNextTileatXY(1,0);
+      00013C 21 02 78         [10]  645 	ld	hl, #0x7802
+      00013F CF               [11]  646 	rst	#0x08
+                           000140   647 	C$resources.c$113$1_0$114	= .
+                                    648 	.globl	C$resources.c$113$1_0$114
+                                    649 ;resources.c:113: tmpHundreds = number / 100;
+      000140 DD 4E 04         [19]  650 	ld	c, 4 (ix)
+      000143 06 00            [ 7]  651 	ld	b, #0x00
+      000145 C5               [11]  652 	push	bc
+      000146 21 64 00         [10]  653 	ld	hl, #0x0064
+      000149 E5               [11]  654 	push	hl
+      00014A C5               [11]  655 	push	bc
+      00014B CDr00r00         [17]  656 	call	__divsint
+      00014E F1               [10]  657 	pop	af
+      00014F F1               [10]  658 	pop	af
+      000150 C1               [10]  659 	pop	bc
+                           000151   660 	C$resources.c$114$1_0$114	= .
+                                    661 	.globl	C$resources.c$114$1_0$114
+                                    662 ;resources.c:114: SMS_setTile(96 + tmpHundreds);
+      000151 DD 75 FF         [19]  663 	ld	-1 (ix), l
+      000154 5D               [ 4]  664 	ld	e, l
+      000155 16 00            [ 7]  665 	ld	d, #0x00
+      000157 21 60 00         [10]  666 	ld	hl, #0x0060
+      00015A 19               [11]  667 	add	hl, de
+      00015B DF               [11]  668 	rst	#0x18
+                           00015C   669 	C$resources.c$115$1_0$114	= .
+                                    670 	.globl	C$resources.c$115$1_0$114
+                                    671 ;resources.c:115: tmpTens = (number - (tmpHundreds * 100)) / 10;
+      00015C 6B               [ 4]  672 	ld	l, e
+      00015D 62               [ 4]  673 	ld	h, d
+      00015E 29               [11]  674 	add	hl, hl
+      00015F 19               [11]  675 	add	hl, de
+      000160 29               [11]  676 	add	hl, hl
+      000161 29               [11]  677 	add	hl, hl
+      000162 29               [11]  678 	add	hl, hl
+      000163 19               [11]  679 	add	hl, de
+      000164 29               [11]  680 	add	hl, hl
+      000165 29               [11]  681 	add	hl, hl
+      000166 79               [ 4]  682 	ld	a, c
+      000167 95               [ 4]  683 	sub	a, l
+      000168 4F               [ 4]  684 	ld	c, a
+      000169 78               [ 4]  685 	ld	a, b
+      00016A 9C               [ 4]  686 	sbc	a, h
+      00016B 47               [ 4]  687 	ld	b, a
+      00016C 21 0A 00         [10]  688 	ld	hl, #0x000a
+      00016F E5               [11]  689 	push	hl
+      000170 C5               [11]  690 	push	bc
+      000171 CDr00r00         [17]  691 	call	__divsint
+      000174 F1               [10]  692 	pop	af
+      000175 F1               [10]  693 	pop	af
+      000176 EB               [ 4]  694 	ex	de, hl
+                           000177   695 	C$resources.c$116$1_0$114	= .
+                                    696 	.globl	C$resources.c$116$1_0$114
+                                    697 ;resources.c:116: SMS_setTile(96 + tmpTens);
+      000177 26 00            [ 7]  698 	ld	h, #0x00
+      000179 6B               [ 4]  699 	ld	l, e
+      00017A 01 60 00         [10]  700 	ld	bc, #0x0060
+      00017D 09               [11]  701 	add	hl, bc
+      00017E DF               [11]  702 	rst	#0x18
+                           00017F   703 	C$resources.c$117$1_0$114	= .
+                                    704 	.globl	C$resources.c$117$1_0$114
+                                    705 ;resources.c:117: tmpUnits = (number - (tmpHundreds * 100) - (tmpTens * 10));
+      00017F DD 7E FF         [19]  706 	ld	a, -1 (ix)
+      000182 4F               [ 4]  707 	ld	c, a
+      000183 87               [ 4]  708 	add	a, a
+      000184 81               [ 4]  709 	add	a, c
+      000185 87               [ 4]  710 	add	a, a
+      000186 87               [ 4]  711 	add	a, a
+      000187 87               [ 4]  712 	add	a, a
+      000188 81               [ 4]  713 	add	a, c
+      000189 87               [ 4]  714 	add	a, a
+      00018A 87               [ 4]  715 	add	a, a
+      00018B 4F               [ 4]  716 	ld	c, a
+      00018C DD 7E 04         [19]  717 	ld	a, 4 (ix)
+      00018F 91               [ 4]  718 	sub	a, c
+      000190 4F               [ 4]  719 	ld	c, a
+      000191 7B               [ 4]  720 	ld	a, e
+      000192 87               [ 4]  721 	add	a, a
+      000193 87               [ 4]  722 	add	a, a
+      000194 83               [ 4]  723 	add	a, e
+      000195 87               [ 4]  724 	add	a, a
+      000196 47               [ 4]  725 	ld	b, a
+      000197 79               [ 4]  726 	ld	a, c
+      000198 90               [ 4]  727 	sub	a, b
+                           000199   728 	C$resources.c$118$1_0$114	= .
+                                    729 	.globl	C$resources.c$118$1_0$114
+                                    730 ;resources.c:118: SMS_setTile(96 + tmpUnits);
+      000199 26 00            [ 7]  731 	ld	h, #0x00
+      00019B 6F               [ 4]  732 	ld	l, a
+      00019C 11 60 00         [10]  733 	ld	de, #0x0060
+      00019F 19               [11]  734 	add	hl, de
+      0001A0 DF               [11]  735 	rst	#0x18
+                           0001A1   736 	C$resources.c$119$1_0$114	= .
+                                    737 	.globl	C$resources.c$119$1_0$114
+                                    738 ;resources.c:119: }
+      0001A1 33               [ 6]  739 	inc	sp
+      0001A2 DD E1            [14]  740 	pop	ix
+                           0001A4   741 	C$resources.c$119$1_0$114	= .
+                                    742 	.globl	C$resources.c$119$1_0$114
+                           0001A4   743 	XG$print_unsigned_char$0$0	= .
+                                    744 	.globl	XG$print_unsigned_char$0$0
+      0001A4 C9               [10]  745 	ret
+                           0001A5   746 	G$print_signed_char$0$0	= .
+                                    747 	.globl	G$print_signed_char$0$0
+                           0001A5   748 	C$resources.c$121$1_0$116	= .
+                                    749 	.globl	C$resources.c$121$1_0$116
+                                    750 ;resources.c:121: void print_signed_char(signed char number) {
+                                    751 ;	---------------------------------
+                                    752 ; Function print_signed_char
+                                    753 ; ---------------------------------
+      0001A5                        754 _print_signed_char::
+      0001A5 DD E5            [15]  755 	push	ix
+      0001A7 DD 21 00 00      [14]  756 	ld	ix,#0
+      0001AB DD 39            [15]  757 	add	ix,sp
+      0001AD 3B               [ 6]  758 	dec	sp
+                           0001AE   759 	C$resources.c$123$1_0$116	= .
+                                    760 	.globl	C$resources.c$123$1_0$116
+                                    761 ;resources.c:123: SMS_setNextTileatXY(1,0);
+      0001AE 21 02 78         [10]  762 	ld	hl, #0x7802
+      0001B1 CF               [11]  763 	rst	#0x08
+                           0001B2   764 	C$resources.c$124$1_0$116	= .
+                                    765 	.globl	C$resources.c$124$1_0$116
+                                    766 ;resources.c:124: if(number < 0) {
+      0001B2 DD CB 04 7E      [20]  767 	bit	7, 4 (ix)
+      0001B6 28 0B            [12]  768 	jr	Z, 00102$
+                           0001B8   769 	C$resources.c$125$2_0$117	= .
+                                    770 	.globl	C$resources.c$125$2_0$117
+                                    771 ;resources.c:125: SMS_setTile(93);
+      0001B8 21 5D 00         [10]  772 	ld	hl, #0x005d
+      0001BB DF               [11]  773 	rst	#0x18
+                           0001BC   774 	C$resources.c$126$2_0$117	= .
+                                    775 	.globl	C$resources.c$126$2_0$117
+                                    776 ;resources.c:126: number = number * -1;	
+      0001BC AF               [ 4]  777 	xor	a, a
+      0001BD DD 96 04         [19]  778 	sub	a, 4 (ix)
+      0001C0 DD 77 04         [19]  779 	ld	4 (ix), a
+      0001C3                        780 00102$:
+                           0001C3   781 	C$resources.c$128$1_0$116	= .
+                                    782 	.globl	C$resources.c$128$1_0$116
+                                    783 ;resources.c:128: tmpHundreds = number / 100;
+      0001C3 DD 7E 04         [19]  784 	ld	a, 4 (ix)
+      0001C6 4F               [ 4]  785 	ld	c, a
+      0001C7 17               [ 4]  786 	rla
+      0001C8 9F               [ 4]  787 	sbc	a, a
+      0001C9 47               [ 4]  788 	ld	b, a
+      0001CA C5               [11]  789 	push	bc
+      0001CB 21 64 00         [10]  790 	ld	hl, #0x0064
+      0001CE E5               [11]  791 	push	hl
+      0001CF C5               [11]  792 	push	bc
+      0001D0 CDr00r00         [17]  793 	call	__divsint
+      0001D3 F1               [10]  794 	pop	af
+      0001D4 F1               [10]  795 	pop	af
+      0001D5 C1               [10]  796 	pop	bc
+                           0001D6   797 	C$resources.c$129$1_0$116	= .
+                                    798 	.globl	C$resources.c$129$1_0$116
+                                    799 ;resources.c:129: SMS_setTile(96 + tmpHundreds);
+      0001D6 DD 75 FF         [19]  800 	ld	-1 (ix), l
+      0001D9 5D               [ 4]  801 	ld	e, l
+      0001DA 16 00            [ 7]  802 	ld	d, #0x00
+      0001DC 21 60 00         [10]  803 	ld	hl, #0x0060
+      0001DF 19               [11]  804 	add	hl, de
+      0001E0 DF               [11]  805 	rst	#0x18
+                           0001E1   806 	C$resources.c$130$1_0$116	= .
+                                    807 	.globl	C$resources.c$130$1_0$116
+                                    808 ;resources.c:130: tmpTens = (number - (tmpHundreds * 100)) / 10;
+      0001E1 6B               [ 4]  809 	ld	l, e
+      0001E2 62               [ 4]  810 	ld	h, d
+      0001E3 29               [11]  811 	add	hl, hl
+      0001E4 19               [11]  812 	add	hl, de
+      0001E5 29               [11]  813 	add	hl, hl
+      0001E6 29               [11]  814 	add	hl, hl
+      0001E7 29               [11]  815 	add	hl, hl
+      0001E8 19               [11]  816 	add	hl, de
+      0001E9 29               [11]  817 	add	hl, hl
+      0001EA 29               [11]  818 	add	hl, hl
+      0001EB 79               [ 4]  819 	ld	a, c
+      0001EC 95               [ 4]  820 	sub	a, l
+      0001ED 4F               [ 4]  821 	ld	c, a
+      0001EE 78               [ 4]  822 	ld	a, b
+      0001EF 9C               [ 4]  823 	sbc	a, h
+      0001F0 47               [ 4]  824 	ld	b, a
+      0001F1 21 0A 00         [10]  825 	ld	hl, #0x000a
+      0001F4 E5               [11]  826 	push	hl
+      0001F5 C5               [11]  827 	push	bc
+      0001F6 CDr00r00         [17]  828 	call	__divsint
+      0001F9 F1               [10]  829 	pop	af
+      0001FA F1               [10]  830 	pop	af
+      0001FB EB               [ 4]  831 	ex	de, hl
+                           0001FC   832 	C$resources.c$131$1_0$116	= .
+                                    833 	.globl	C$resources.c$131$1_0$116
+                                    834 ;resources.c:131: SMS_setTile(96 + tmpTens);
+      0001FC 26 00            [ 7]  835 	ld	h, #0x00
+      0001FE 6B               [ 4]  836 	ld	l, e
+      0001FF 01 60 00         [10]  837 	ld	bc, #0x0060
+      000202 09               [11]  838 	add	hl, bc
+      000203 DF               [11]  839 	rst	#0x18
+                           000204   840 	C$resources.c$132$1_0$116	= .
+                                    841 	.globl	C$resources.c$132$1_0$116
+                                    842 ;resources.c:132: tmpUnits = (number - (tmpHundreds * 100) - (tmpTens * 10));
+      000204 DD 7E FF         [19]  843 	ld	a, -1 (ix)
+      000207 4F               [ 4]  844 	ld	c, a
+      000208 87               [ 4]  845 	add	a, a
+      000209 81               [ 4]  846 	add	a, c
+      00020A 87               [ 4]  847 	add	a, a
+      00020B 87               [ 4]  848 	add	a, a
+      00020C 87               [ 4]  849 	add	a, a
+      00020D 81               [ 4]  850 	add	a, c
+      00020E 87               [ 4]  851 	add	a, a
+      00020F 87               [ 4]  852 	add	a, a
+      000210 4F               [ 4]  853 	ld	c, a
+      000211 DD 7E 04         [19]  854 	ld	a, 4 (ix)
+      000214 91               [ 4]  855 	sub	a, c
+      000215 4F               [ 4]  856 	ld	c, a
+      000216 7B               [ 4]  857 	ld	a, e
+      000217 87               [ 4]  858 	add	a, a
+      000218 87               [ 4]  859 	add	a, a
+      000219 83               [ 4]  860 	add	a, e
+      00021A 87               [ 4]  861 	add	a, a
+      00021B 47               [ 4]  862 	ld	b, a
+      00021C 79               [ 4]  863 	ld	a, c
+      00021D 90               [ 4]  864 	sub	a, b
+                           00021E   865 	C$resources.c$133$1_0$116	= .
+                                    866 	.globl	C$resources.c$133$1_0$116
+                                    867 ;resources.c:133: SMS_setTile(96 + tmpUnits);	
+      00021E 26 00            [ 7]  868 	ld	h, #0x00
+      000220 6F               [ 4]  869 	ld	l, a
+      000221 11 60 00         [10]  870 	ld	de, #0x0060
+      000224 19               [11]  871 	add	hl, de
+      000225 DF               [11]  872 	rst	#0x18
+                           000226   873 	C$resources.c$134$1_0$116	= .
+                                    874 	.globl	C$resources.c$134$1_0$116
+                                    875 ;resources.c:134: }
+      000226 33               [ 6]  876 	inc	sp
+      000227 DD E1            [14]  877 	pop	ix
+                           000229   878 	C$resources.c$134$1_0$116	= .
+                                    879 	.globl	C$resources.c$134$1_0$116
+                           000229   880 	XG$print_signed_char$0$0	= .
+                                    881 	.globl	XG$print_signed_char$0$0
+      000229 C9               [10]  882 	ret
+                                    883 	.area _CODE
+                                    884 	.area _INITIALIZER
+                                    885 	.area _CABS (ABS)

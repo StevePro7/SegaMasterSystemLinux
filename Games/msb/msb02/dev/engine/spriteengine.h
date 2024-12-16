@@ -5,6 +5,8 @@
 #define RIGHT_DIRECTION 0
 #define LEFT_DIRECTION 1
 
+#include <stdbool.h>
+
 typedef struct {
     const unsigned char tile;
     const signed char dpx;

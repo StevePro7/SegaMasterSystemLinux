@@ -1,6 +1,5 @@
 #include "spriteengine.h"
 #include "../../lib/SMSlib.h"
-#include <stdbool.h>
 #include <stdlib.h>
 
 entity *entitylist[MAX_ENTITIES];

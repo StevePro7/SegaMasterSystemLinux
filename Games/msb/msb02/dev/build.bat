@@ -23,18 +23,16 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 ::cd ../dev
 
 ::cd engine
-::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 soundengine.c
-::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 spriteengine.c
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 soundengine.c
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 spriteengine.c
 ::cd ..
 
 ::cd object
-::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 enemy.c
-::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 gamelogic.c
-::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 montylib.c
-::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 player.c
-::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 resources.c
-
-
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 enemy.c
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 gamelogic.c
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 montylib.c
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 player.c
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 resources.c
 ::cd ..
 
 sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c

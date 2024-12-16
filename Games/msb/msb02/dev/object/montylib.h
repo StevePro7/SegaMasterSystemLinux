@@ -10,6 +10,8 @@
 #define UFIX2CHAR(x)      ((unsigned char)((x)>>8))
 #define CHAR2UFIX(x)      ((unsigned int)(x)<<8)
 
+#include <stdbool.h>
+
 extern bool pause;
 extern unsigned char rand_index;
 extern unsigned int frame_cnt;

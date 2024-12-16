@@ -1,3 +1,5 @@
+#include "../banks/bank4.h"
+
 static const character enemy_character = 
 {
 	2,//numanimations

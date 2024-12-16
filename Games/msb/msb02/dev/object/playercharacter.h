@@ -1,3 +1,5 @@
+#include "../banks/bank3.h"
+
 static const character player_character = 
 {
 	10,//numanimations

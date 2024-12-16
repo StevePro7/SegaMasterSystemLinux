@@ -10,6 +10,8 @@
 #define PLAYER_STATUS2_PUNCHING 1
 #define PLAYER_STATUS2_HITTED 2
 
+#include "../engine/spriteengine.h"
+
 typedef struct {
 	entity *entityreference;
 	unsigned int vx;
