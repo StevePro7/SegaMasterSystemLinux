@@ -23,7 +23,7 @@ unsigned int get_scroll_position_y();
 void update_resources();
 
 void load_background_blackpalette();
-unsigned char get_music_bank();
+//unsigned char get_music_bank();
 
 void load_system_font();
 void print_debug_info();

@@ -10,7 +10,8 @@
 
 #include "../engine/spriteengine.h"
 
-typedef struct {
+typedef struct
+{
 	entity *entityreference;
 	unsigned int vx;
 	unsigned int vy;
@@ -30,4 +31,5 @@ void decide_action_enemy(enemy* enemypointer);
 void manage_enemy_iddle_status(enemy* enemypointer, unsigned int action);
 void manage_enemy_walking_status(enemy* enemypointer, unsigned int action);
 void update_enemy_positions(signed char delta_x, signed char delta_y);
+
 #endif //MSB_ENEMY_H

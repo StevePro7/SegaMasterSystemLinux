@@ -1,4 +1,3 @@
-
 #ifndef MSB_GAMELOGIC_H
 #define MSB_GAMELOGIC_H
 
@@ -17,4 +16,5 @@ void fnaclogo_screen();
 void presentation_screen();
 void game_loop();
 void execute_game_logic();
+
 #endif //MSB_GAMELOGIC_H

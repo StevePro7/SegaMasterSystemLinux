@@ -23,10 +23,10 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../dev/peep-rules.txt --std-c99 GSLib.c
 ::cd ../dev
 
-cd engine
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 soundengine.c
+::cd engine
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 soundengine.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 spriteengine.c
-cd ..
+::cd ..
 
 ::cd object
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 enemy.c

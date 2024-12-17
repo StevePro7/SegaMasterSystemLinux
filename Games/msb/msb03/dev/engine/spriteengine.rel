@@ -1,1470 +1,1438 @@
 ;!FILE spriteengine.asm
 XL3
-H 9 areas 5BE global symbols
+H 9 areas 59E global symbols
 M spriteengine
 O -mz80
 S _free Ref000000
-S _SMS_initSprites Ref000000
-S _SMS_addSprite Ref000000
-S _ROM_bank_to_be_mapped_on_slot2 Def00FFFF
+S _devkit_SMS_finalizeSprites Ref000000
 S _malloc Ref000000
-S G$ROM_bank_to_be_mapped_on_slot2$0_0$0 Def00FFFF
-S _SRAM_bank_to_be_mapped_on_slot2 Def00FFFC
-S G$SRAM_bank_to_be_mapped_on_slot2$0_0$0 Def00FFFC
 S .__.ABS. Def000000
-S _SMS_SRAM Def008000
-S G$SMS_SRAM$0_0$0 Def008000
-S _SMS_finalizeSprites Ref000000
-S _SMS_VRAMmemcpy Ref000000
-A _CODE size 90A flags 0 addr 0
+S _devkit_SMS_initSprites Ref000000
+S _devkit_SMS_addSprite Ref000000
+S _devkit_SMS_loadTiles Ref000000
+S _devkit_SMS_mapROMBank Ref000000
+A _CODE size 878 flags 0 addr 0
+S A$spriteengine$998 Def000423
+S A$spriteengine$899 Def000392
+S A$spriteengine$91 Def000005
+S C$spriteengine.c$89$5_0$136 Def000376
 S G$setDirection$0$0 Def000218
-S A$spriteengine$92 Def000000
+S C$spriteengine.c$9$0_0$115 Def000000
+S A$spriteengine$999 Def000424
+S A$spriteengine$92 Def000006
 S XG$updateAnimations$0$0 Def0003A0
+S A$spriteengine$93 Def000009
+S A$spriteengine$84 Def000000
+S A$spriteengine$94 Def00000A
+S A$spriteengine$95 Def00000B
+S A$spriteengine$96 Def00000C
 S _forceReload Def0001C0
 S _addEntity Def00002D
-S A$spriteengine$97 Def000003
-S G$move_entity$0$0 Def0008DB
-S G$drawEntities$0$0 Def000661
-S C$spriteengine.c$11$2_0$99 Def00001B
+S A$spriteengine$97 Def00000D
+S G$move_entity$0$0 Def000849
+S G$drawEntities$0$0 Def00058C
 S _isFrameEnded Def0001DE
-S A$spriteengine$98 Def000004
+S A$spriteengine$98 Def00000E
+S A$spriteengine$89 Def000003
 S XG$isAnimationEnded$0$0 Def000217
-S A$spriteengine$99 Def000005
-S C$spriteengine.c$15$1_0$98 Def000027
-S C$spriteengine.c$16$1_0$98 Def00002C
+S A$spriteengine$99 Def00000F
 S _setAnimation Def000152
 S _setDirection Def000218
 S XG$forceReload$0$0 Def0001DD
 S XG$addEntity$0$0 Def000151
 S XG$isFrameEnded$0$0 Def0001FA
-S _move_entity Def0008DB
-S _drawEntities Def000661
-S A$spriteengine$1000 Def000417
+S _move_entity Def000849
+S _drawEntities Def00058C
+S A$spriteengine$1000 Def000425
 S G$updateTiles$0$0 Def0003A1
 S XG$setAnimation$0$0 Def0001BF
-S A$spriteengine$1100 Def000498
-S A$spriteengine$1010 Def00042D
-S A$spriteengine$1001 Def00041A
+S A$spriteengine$1100 Def00049F
+S A$spriteengine$1010 Def00043B
+S A$spriteengine$1001 Def000428
 S XG$setDirection$0$0 Def000243
-S A$spriteengine$1200 Def00051E
-S A$spriteengine$1110 Def0004A2
-S A$spriteengine$1101 Def000499
-S A$spriteengine$1020 Def000440
-S A$spriteengine$1011 Def00042E
-S A$spriteengine$1002 Def00041D
-S A$spriteengine$1300 Def0005F0
-S A$spriteengine$1210 Def000533
-S A$spriteengine$1120 Def0004AE
-S A$spriteengine$1111 Def0004A3
-S A$spriteengine$1102 Def00049A
-S A$spriteengine$1030 Def00044B
-S A$spriteengine$1021 Def000442
-S A$spriteengine$1012 Def000431
-S A$spriteengine$1003 Def00041E
-S C$spriteengine.c$9$0_0$98 Def000000
-S A$spriteengine$1400 Def000685
-S A$spriteengine$1310 Def000606
-S A$spriteengine$1301 Def0005F3
-S A$spriteengine$1220 Def000547
-S A$spriteengine$1211 Def000536
-S A$spriteengine$1130 Def0004B9
-S A$spriteengine$1121 Def0004AF
-S A$spriteengine$1112 Def0004A4
-S A$spriteengine$1103 Def00049B
-S A$spriteengine$1040 Def000455
-S A$spriteengine$1031 Def00044C
-S A$spriteengine$1022 Def000443
-S A$spriteengine$1013 Def000434
-S A$spriteengine$1004 Def00041F
-S A$spriteengine$1500 Def00071E
-S A$spriteengine$1410 Def000694
-S A$spriteengine$1401 Def000686
-S A$spriteengine$1320 Def000621
-S A$spriteengine$1311 Def000609
-S A$spriteengine$1302 Def0005F6
-S A$spriteengine$1230 Def000551
-S A$spriteengine$1221 Def000548
-S A$spriteengine$1212 Def000537
-S A$spriteengine$1140 Def0004C3
-S A$spriteengine$1131 Def0004BA
-S A$spriteengine$1122 Def0004B1
-S A$spriteengine$1113 Def0004A5
-S A$spriteengine$1104 Def00049C
-S A$spriteengine$1050 Def000463
-S A$spriteengine$1041 Def000456
-S A$spriteengine$1032 Def00044D
-S A$spriteengine$1023 Def000444
-S A$spriteengine$1014 Def000437
-S A$spriteengine$1005 Def000420
-S C$spriteengine.c$101$1_0$126 Def00066E
-S A$spriteengine$1600 Def0007B6
-S A$spriteengine$1510 Def00072B
-S A$spriteengine$1501 Def00071F
-S A$spriteengine$1420 Def0006B2
-S A$spriteengine$1411 Def000697
-S A$spriteengine$1402 Def000689
-S A$spriteengine$1330 Def000634
-S A$spriteengine$1321 Def000624
-S A$spriteengine$1312 Def00060C
-S A$spriteengine$1303 Def0005F9
-S A$spriteengine$1240 Def00056B
-S A$spriteengine$1231 Def000552
-S A$spriteengine$1222 Def000549
-S A$spriteengine$1213 Def000538
-S A$spriteengine$1204 Def000521
-S A$spriteengine$1150 Def0004D3
-S A$spriteengine$1141 Def0004C4
-S A$spriteengine$1132 Def0004BB
-S A$spriteengine$1123 Def0004B2
-S A$spriteengine$1114 Def0004A6
-S A$spriteengine$1105 Def00049D
-S A$spriteengine$1060 Def000470
-S A$spriteengine$1051 Def000464
-S A$spriteengine$1042 Def000457
-S A$spriteengine$1033 Def00044E
-S A$spriteengine$1024 Def000445
-S A$spriteengine$1015 Def000438
-S A$spriteengine$1006 Def000423
+S A$spriteengine$1200 Def00050E
+S A$spriteengine$1110 Def0004A9
+S A$spriteengine$1101 Def0004A0
+S A$spriteengine$1020 Def000447
+S A$spriteengine$1011 Def00043C
+S A$spriteengine$1002 Def00042B
+S A$spriteengine$1300 Def000587
+S A$spriteengine$1210 Def000519
+S A$spriteengine$1201 Def00050F
+S A$spriteengine$1120 Def0004B5
+S A$spriteengine$1111 Def0004AA
+S A$spriteengine$1102 Def0004A1
+S A$spriteengine$1030 Def000455
+S A$spriteengine$1021 Def000448
+S A$spriteengine$1012 Def00043E
+S A$spriteengine$1003 Def00042E
+S A$spriteengine$1400 Def00061E
+S A$spriteengine$1301 Def000589
+S A$spriteengine$1220 Def000523
+S A$spriteengine$1211 Def00051A
+S A$spriteengine$1202 Def000510
+S A$spriteengine$1130 Def0004C0
+S A$spriteengine$1121 Def0004B6
+S A$spriteengine$1112 Def0004AB
+S A$spriteengine$1103 Def0004A2
+S A$spriteengine$1040 Def00045F
+S A$spriteengine$1031 Def000456
+S A$spriteengine$1022 Def000449
+S A$spriteengine$1013 Def00043F
+S A$spriteengine$1004 Def00042F
+S A$spriteengine$1500 Def0006A3
+S A$spriteengine$1410 Def000629
+S A$spriteengine$1401 Def000620
+S A$spriteengine$1320 Def000597
+S A$spriteengine$1230 Def000531
+S A$spriteengine$1221 Def000524
+S A$spriteengine$1212 Def00051B
+S A$spriteengine$1203 Def000512
+S A$spriteengine$1140 Def0004CA
+S A$spriteengine$1131 Def0004C1
+S A$spriteengine$1122 Def0004B8
+S A$spriteengine$1113 Def0004AC
+S A$spriteengine$1104 Def0004A3
+S A$spriteengine$1050 Def000473
+S A$spriteengine$1041 Def000460
+S A$spriteengine$1032 Def000457
+S A$spriteengine$1023 Def00044A
+S A$spriteengine$1014 Def000440
+S A$spriteengine$1005 Def000430
+S A$spriteengine$1600 Def00073D
+S A$spriteengine$1510 Def0006B3
+S A$spriteengine$1501 Def0006A4
+S A$spriteengine$1420 Def000633
+S A$spriteengine$1411 Def00062A
+S A$spriteengine$1402 Def000621
+S A$spriteengine$1330 Def00059D
+S A$spriteengine$1321 Def000598
+S A$spriteengine$1240 Def00053C
+S A$spriteengine$1231 Def000532
+S A$spriteengine$1222 Def000527
+S A$spriteengine$1213 Def00051C
+S A$spriteengine$1204 Def000513
+S A$spriteengine$1150 Def0004DA
+S A$spriteengine$1141 Def0004CB
+S A$spriteengine$1132 Def0004C2
+S A$spriteengine$1123 Def0004B9
+S A$spriteengine$1114 Def0004AD
+S A$spriteengine$1105 Def0004A4
+S A$spriteengine$1051 Def000474
+S A$spriteengine$1042 Def000463
+S A$spriteengine$1033 Def000458
+S A$spriteengine$1024 Def00044B
+S A$spriteengine$1015 Def000442
+S A$spriteengine$1006 Def000433
 S G$initEngine$0$0 Def000000
-S A$spriteengine$1700 Def000864
-S A$spriteengine$1610 Def0007C8
-S A$spriteengine$1601 Def0007B7
-S A$spriteengine$1520 Def000738
-S A$spriteengine$1511 Def00072C
-S A$spriteengine$1502 Def000720
-S A$spriteengine$1430 Def0006C4
-S A$spriteengine$1421 Def0006B5
-S A$spriteengine$1412 Def00069A
-S A$spriteengine$1331 Def000637
-S A$spriteengine$1322 Def000627
-S A$spriteengine$1313 Def00060F
-S A$spriteengine$1304 Def0005FC
-S A$spriteengine$1250 Def000587
-S A$spriteengine$1241 Def00056E
-S A$spriteengine$1232 Def000553
-S A$spriteengine$1223 Def00054A
-S A$spriteengine$1214 Def00053B
-S A$spriteengine$1205 Def000524
-S A$spriteengine$1160 Def0004DF
-S A$spriteengine$1151 Def0004D6
-S A$spriteengine$1142 Def0004C7
-S A$spriteengine$1133 Def0004BC
-S A$spriteengine$1124 Def0004B3
-S A$spriteengine$1115 Def0004A7
-S A$spriteengine$1106 Def00049E
-S A$spriteengine$1070 Def00047A
-S A$spriteengine$1052 Def000467
-S A$spriteengine$1043 Def000458
-S A$spriteengine$1034 Def00044F
-S A$spriteengine$1025 Def000446
-S A$spriteengine$1016 Def000439
-S A$spriteengine$1007 Def000426
-S XG$move_entity$0$0 Def000909
-S XG$drawEntities$0$0 Def0008DA
-S C$spriteengine.c$104$5_0$130 Def00078C
-S A$spriteengine$1710 Def00087C
-S A$spriteengine$1701 Def000865
-S A$spriteengine$1620 Def0007D7
-S A$spriteengine$1611 Def0007CB
-S A$spriteengine$1602 Def0007BA
-S A$spriteengine$1530 Def000748
-S A$spriteengine$1521 Def000739
-S A$spriteengine$1512 Def00072F
-S A$spriteengine$1503 Def000721
-S A$spriteengine$1440 Def0006D7
-S A$spriteengine$1422 Def0006B8
-S A$spriteengine$1413 Def00069E
-S A$spriteengine$1404 Def00068B
-S A$spriteengine$1341 Def000645
-S A$spriteengine$1332 Def00063A
-S A$spriteengine$1323 Def00062A
-S A$spriteengine$1314 Def000612
-S A$spriteengine$1305 Def0005FF
-S A$spriteengine$1260 Def00059A
-S A$spriteengine$1251 Def00058A
-S A$spriteengine$1242 Def000570
-S A$spriteengine$1233 Def000556
-S A$spriteengine$1224 Def00054B
-S A$spriteengine$1215 Def00053E
-S A$spriteengine$1206 Def000527
-S A$spriteengine$1161 Def0004E0
-S A$spriteengine$1152 Def0004D7
-S A$spriteengine$1143 Def0004C8
-S A$spriteengine$1134 Def0004BD
-S A$spriteengine$1125 Def0004B4
-S A$spriteengine$1116 Def0004AA
-S A$spriteengine$1107 Def00049F
-S A$spriteengine$1080 Def000481
-S A$spriteengine$1071 Def00047B
-S A$spriteengine$1053 Def000468
-S A$spriteengine$1044 Def000459
-S A$spriteengine$1035 Def000450
-S A$spriteengine$1026 Def000447
-S A$spriteengine$1017 Def00043C
-S A$spriteengine$1008 Def000429
-S C$spriteengine.c$113$1_0$126 Def0008D3
-S C$spriteengine.c$102$2_0$127 Def0008C7
-S A$spriteengine$1810 Def000901
-S A$spriteengine$1720 Def000892
-S A$spriteengine$1711 Def00087D
-S A$spriteengine$1702 Def000868
-S A$spriteengine$1630 Def0007E1
-S A$spriteengine$1621 Def0007D8
-S A$spriteengine$1612 Def0007CE
-S A$spriteengine$1603 Def0007BD
-S A$spriteengine$1540 Def000756
-S A$spriteengine$1531 Def000749
-S A$spriteengine$1522 Def00073A
-S A$spriteengine$1513 Def000730
-S A$spriteengine$1504 Def000722
-S A$spriteengine$1450 Def0006E6
-S A$spriteengine$1423 Def0006B9
-S A$spriteengine$1414 Def0006A2
-S A$spriteengine$1342 Def000646
-S A$spriteengine$1333 Def00063B
-S A$spriteengine$1324 Def00062C
-S A$spriteengine$1315 Def000615
-S A$spriteengine$1306 Def000600
-S A$spriteengine$1270 Def0005AA
-S A$spriteengine$1261 Def00059B
-S A$spriteengine$1252 Def00058D
-S A$spriteengine$1243 Def000573
-S A$spriteengine$1234 Def000559
-S A$spriteengine$1225 Def00054C
-S A$spriteengine$1216 Def000542
-S A$spriteengine$1207 Def00052A
-S A$spriteengine$1180 Def0004F9
-S A$spriteengine$1162 Def0004E2
-S A$spriteengine$1153 Def0004D8
-S A$spriteengine$1144 Def0004C9
-S A$spriteengine$1135 Def0004BE
-S A$spriteengine$1126 Def0004B5
-S A$spriteengine$1117 Def0004AB
-S A$spriteengine$1108 Def0004A0
-S A$spriteengine$1090 Def00048D
-S A$spriteengine$1081 Def000482
-S A$spriteengine$1072 Def00047C
-S A$spriteengine$1054 Def000469
-S A$spriteengine$1045 Def00045A
-S A$spriteengine$1036 Def000451
-S A$spriteengine$1027 Def000448
-S A$spriteengine$1018 Def00043D
-S A$spriteengine$1009 Def00042C
-S C$spriteengine.c$114$1_0$126 Def0008DA
-S A$spriteengine$1811 Def000902
-S A$spriteengine$1730 Def0008AA
-S A$spriteengine$1721 Def000893
-S A$spriteengine$1712 Def000880
-S A$spriteengine$1703 Def00086B
-S A$spriteengine$1640 Def0007F4
-S A$spriteengine$1631 Def0007E2
-S A$spriteengine$1622 Def0007D9
-S A$spriteengine$1613 Def0007CF
-S A$spriteengine$1604 Def0007C0
-S A$spriteengine$1550 Def000764
-S A$spriteengine$1541 Def000757
-S A$spriteengine$1532 Def00074C
-S A$spriteengine$1523 Def00073B
-S A$spriteengine$1514 Def000733
-S A$spriteengine$1505 Def000723
-S A$spriteengine$1460 Def0006F2
-S A$spriteengine$1451 Def0006E7
-S A$spriteengine$1442 Def0006DA
-S A$spriteengine$1424 Def0006BA
-S A$spriteengine$1415 Def0006A5
-S A$spriteengine$1361 Def00065C
-S A$spriteengine$1343 Def000647
-S A$spriteengine$1334 Def00063E
-S A$spriteengine$1325 Def00062F
-S A$spriteengine$1307 Def000601
-S A$spriteengine$1280 Def0005C8
-S A$spriteengine$1271 Def0005AD
-S A$spriteengine$1262 Def00059C
-S A$spriteengine$1253 Def000590
-S A$spriteengine$1244 Def000576
-S A$spriteengine$1235 Def00055C
-S A$spriteengine$1226 Def00054D
-S A$spriteengine$1217 Def000543
-S A$spriteengine$1208 Def00052D
-S A$spriteengine$1190 Def000508
-S A$spriteengine$1181 Def0004FA
-S A$spriteengine$1163 Def0004E5
-S A$spriteengine$1154 Def0004D9
-S A$spriteengine$1145 Def0004CC
-S A$spriteengine$1136 Def0004BF
-S A$spriteengine$1127 Def0004B6
-S A$spriteengine$1118 Def0004AC
-S A$spriteengine$1109 Def0004A1
-S A$spriteengine$1091 Def00048E
-S A$spriteengine$1082 Def000483
-S A$spriteengine$1073 Def00047D
-S A$spriteengine$1064 Def000473
-S A$spriteengine$1046 Def00045D
-S A$spriteengine$1037 Def000452
-S A$spriteengine$1028 Def000449
-S A$spriteengine$1019 Def00043E
-S C$spriteengine.c$105$6_0$131 Def000738
-S C$spriteengine.c$102$3_0$128 Def000671
-S A$spriteengine$1812 Def000903
-S A$spriteengine$1803 Def0008FA
-S A$spriteengine$1731 Def0008AD
-S A$spriteengine$1722 Def000896
-S A$spriteengine$1713 Def000883
-S A$spriteengine$1704 Def00086E
-S A$spriteengine$1650 Def0007FE
-S A$spriteengine$1641 Def0007F5
-S A$spriteengine$1632 Def0007E5
-S A$spriteengine$1623 Def0007DA
-S A$spriteengine$1614 Def0007D0
-S A$spriteengine$1605 Def0007C1
-S A$spriteengine$1560 Def000776
-S A$spriteengine$1551 Def000767
-S A$spriteengine$1542 Def00075A
-S A$spriteengine$1533 Def00074F
-S A$spriteengine$1524 Def00073E
-S A$spriteengine$1506 Def000724
-S A$spriteengine$1470 Def0006FD
-S A$spriteengine$1461 Def0006F3
-S A$spriteengine$1452 Def0006E8
-S A$spriteengine$1443 Def0006DD
-S A$spriteengine$1434 Def0006C7
-S A$spriteengine$1425 Def0006BB
-S A$spriteengine$1416 Def0006A7
-S A$spriteengine$1380 Def000669
-S A$spriteengine$1362 Def00065E
-S A$spriteengine$1353 Def000650
-S A$spriteengine$1344 Def000648
-S A$spriteengine$1335 Def000641
-S A$spriteengine$1326 Def000630
-S A$spriteengine$1317 Def000617
-S A$spriteengine$1308 Def000604
-S A$spriteengine$1290 Def0005DE
-S A$spriteengine$1281 Def0005CB
-S A$spriteengine$1272 Def0005B0
-S A$spriteengine$1263 Def00059D
-S A$spriteengine$1254 Def000591
-S A$spriteengine$1245 Def000578
-S A$spriteengine$1236 Def00055F
-S A$spriteengine$1227 Def00054E
-S A$spriteengine$1218 Def000545
-S A$spriteengine$1209 Def000530
-S A$spriteengine$1191 Def000509
-S A$spriteengine$1182 Def0004FD
-S A$spriteengine$1173 Def0004F1
-S A$spriteengine$1164 Def0004E8
-S A$spriteengine$1155 Def0004DA
-S A$spriteengine$1146 Def0004CF
-S A$spriteengine$1137 Def0004C0
-S A$spriteengine$1128 Def0004B7
-S A$spriteengine$1119 Def0004AD
-S A$spriteengine$1092 Def000490
-S A$spriteengine$1083 Def000484
-S A$spriteengine$1065 Def000476
-S A$spriteengine$1047 Def000460
-S A$spriteengine$1038 Def000453
-S A$spriteengine$1029 Def00044A
-S C$spriteengine.c$103$3_0$128 Def00068E
-S A$spriteengine$1822 Def000909
-S A$spriteengine$1813 Def000906
-S A$spriteengine$1804 Def0008FB
-S A$spriteengine$1750 Def0008C7
-S A$spriteengine$1732 Def0008B0
-S A$spriteengine$1723 Def000899
-S A$spriteengine$1714 Def000886
-S A$spriteengine$1705 Def000871
-S A$spriteengine$1660 Def00080D
-S A$spriteengine$1651 Def0007FF
-S A$spriteengine$1642 Def0007F6
-S A$spriteengine$1633 Def0007E6
-S A$spriteengine$1624 Def0007DB
-S A$spriteengine$1615 Def0007D2
-S A$spriteengine$1606 Def0007C2
-S A$spriteengine$1570 Def000784
-S A$spriteengine$1561 Def000777
-S A$spriteengine$1552 Def000768
-S A$spriteengine$1543 Def00075D
-S A$spriteengine$1534 Def000750
-S A$spriteengine$1525 Def00073F
-S A$spriteengine$1516 Def000735
-S A$spriteengine$1507 Def000725
-S A$spriteengine$1480 Def000707
-S A$spriteengine$1471 Def0006FE
-S A$spriteengine$1462 Def0006F5
-S A$spriteengine$1453 Def0006E9
-S A$spriteengine$1444 Def0006E0
-S A$spriteengine$1435 Def0006CA
-S A$spriteengine$1426 Def0006BE
-S A$spriteengine$1417 Def0006AA
-S A$spriteengine$1408 Def00068E
-S A$spriteengine$1390 Def000671
-S A$spriteengine$1381 Def00066C
-S A$spriteengine$1354 Def000653
-S A$spriteengine$1345 Def000649
-S A$spriteengine$1336 Def000642
-S A$spriteengine$1327 Def000631
-S A$spriteengine$1318 Def00061B
-S A$spriteengine$1309 Def000605
-S A$spriteengine$1291 Def0005DF
-S A$spriteengine$1282 Def0005CE
-S A$spriteengine$1273 Def0005B3
-S A$spriteengine$1264 Def00059E
-S A$spriteengine$1255 Def000592
-S A$spriteengine$1246 Def00057B
-S A$spriteengine$1237 Def000562
-S A$spriteengine$1228 Def00054F
-S A$spriteengine$1219 Def000546
-S A$spriteengine$1192 Def00050C
-S A$spriteengine$1183 Def0004FE
-S A$spriteengine$1174 Def0004F4
-S A$spriteengine$1165 Def0004E9
-S A$spriteengine$1156 Def0004DB
-S A$spriteengine$1147 Def0004D0
-S A$spriteengine$1138 Def0004C1
-S A$spriteengine$1129 Def0004B8
-S A$spriteengine$1093 Def000491
-S A$spriteengine$1084 Def000485
-S A$spriteengine$1048 Def000461
-S A$spriteengine$1039 Def000454
-S C$spriteengine.c$116$1_0$136 Def0008DB
-S C$spriteengine.c$108$1_0$126 Def000798
+S A$spriteengine$1700 Def000824
+S A$spriteengine$1601 Def00073E
+S A$spriteengine$1520 Def0006C5
+S A$spriteengine$1511 Def0006B4
+S A$spriteengine$1502 Def0006A5
+S A$spriteengine$1430 Def00063F
+S A$spriteengine$1421 Def000634
+S A$spriteengine$1412 Def00062B
+S A$spriteengine$1403 Def000622
+S A$spriteengine$1340 Def0005B1
+S A$spriteengine$1331 Def0005A0
+S A$spriteengine$1250 Def000546
+S A$spriteengine$1241 Def00053D
+S A$spriteengine$1232 Def000533
+S A$spriteengine$1223 Def000528
+S A$spriteengine$1214 Def00051D
+S A$spriteengine$1205 Def000514
+S A$spriteengine$1160 Def0004EA
+S A$spriteengine$1151 Def0004DD
+S A$spriteengine$1142 Def0004CE
+S A$spriteengine$1133 Def0004C3
+S A$spriteengine$1124 Def0004BA
+S A$spriteengine$1115 Def0004AE
+S A$spriteengine$1106 Def0004A5
+S A$spriteengine$1070 Def000481
+S A$spriteengine$1061 Def000479
+S A$spriteengine$1043 Def000466
+S A$spriteengine$1034 Def000459
+S A$spriteengine$1025 Def00044C
+S A$spriteengine$1016 Def000443
+S A$spriteengine$1007 Def000436
+S XG$move_entity$0$0 Def000877
+S XG$drawEntities$0$0 Def000848
+S C$spriteengine.c$140$1_0$143 Def000848
+S C$spriteengine.c$122$1_0$143 Def000599
+S C$spriteengine.c$104$4_0$140 Def000475
+S A$spriteengine$1701 Def000827
+S A$spriteengine$1620 Def00075F
+S A$spriteengine$1602 Def000740
+S A$spriteengine$1521 Def0006C6
+S A$spriteengine$1512 Def0006B7
+S A$spriteengine$1503 Def0006A8
+S A$spriteengine$1440 Def00064A
+S A$spriteengine$1431 Def000641
+S A$spriteengine$1422 Def000635
+S A$spriteengine$1413 Def00062C
+S A$spriteengine$1404 Def000623
+S A$spriteengine$1350 Def0005C2
+S A$spriteengine$1341 Def0005B4
+S A$spriteengine$1260 Def000556
+S A$spriteengine$1251 Def000547
+S A$spriteengine$1242 Def00053E
+S A$spriteengine$1233 Def000534
+S A$spriteengine$1224 Def000529
+S A$spriteengine$1215 Def00051E
+S A$spriteengine$1206 Def000515
+S A$spriteengine$1170 Def0004F5
+S A$spriteengine$1161 Def0004ED
+S A$spriteengine$1152 Def0004DE
+S A$spriteengine$1143 Def0004CF
+S A$spriteengine$1134 Def0004C4
+S A$spriteengine$1125 Def0004BB
+S A$spriteengine$1116 Def0004B1
+S A$spriteengine$1107 Def0004A6
+S A$spriteengine$1080 Def000488
+S A$spriteengine$1071 Def000482
+S A$spriteengine$1062 Def00047A
+S A$spriteengine$1044 Def000467
+S A$spriteengine$1035 Def00045A
+S A$spriteengine$1026 Def00044F
+S A$spriteengine$1017 Def000444
+S A$spriteengine$1008 Def000439
+S C$spriteengine.c$100$2_0$138 Def00057B
+S C$spriteengine.c$114$4_0$140 Def000570
+S C$spriteengine.c$111$5_0$142 Def0004F4
+S A$spriteengine$1702 Def000828
+S A$spriteengine$1630 Def000775
+S A$spriteengine$1621 Def000760
+S A$spriteengine$1603 Def000743
+S A$spriteengine$1513 Def0006BA
+S A$spriteengine$1504 Def0006A9
+S A$spriteengine$1450 Def000657
+S A$spriteengine$1441 Def00064B
+S A$spriteengine$1432 Def000642
+S A$spriteengine$1423 Def000636
+S A$spriteengine$1414 Def00062D
+S A$spriteengine$1405 Def000624
+S A$spriteengine$1360 Def0005E0
+S A$spriteengine$1351 Def0005C5
+S A$spriteengine$1333 Def0005A3
+S A$spriteengine$1306 Def00058B
+S A$spriteengine$1270 Def000566
+S A$spriteengine$1261 Def000557
+S A$spriteengine$1252 Def000548
+S A$spriteengine$1243 Def00053F
+S A$spriteengine$1234 Def000536
+S A$spriteengine$1225 Def00052A
+S A$spriteengine$1216 Def00051F
+S A$spriteengine$1207 Def000516
+S A$spriteengine$1180 Def0004FE
+S A$spriteengine$1171 Def0004F6
+S A$spriteengine$1162 Def0004F0
+S A$spriteengine$1153 Def0004DF
+S A$spriteengine$1144 Def0004D0
+S A$spriteengine$1135 Def0004C5
+S A$spriteengine$1126 Def0004BC
+S A$spriteengine$1117 Def0004B2
+S A$spriteengine$1108 Def0004A7
+S A$spriteengine$1090 Def000494
+S A$spriteengine$1081 Def000489
+S A$spriteengine$1072 Def000483
+S A$spriteengine$1063 Def00047B
+S A$spriteengine$1045 Def000468
+S A$spriteengine$1036 Def00045B
+S A$spriteengine$1027 Def000452
+S A$spriteengine$1018 Def000445
+S A$spriteengine$1009 Def00043A
+S C$spriteengine.c$133$1_0$143 Def0006D3
+S C$spriteengine.c$112$5_0$142 Def000507
+S A$spriteengine$1640 Def00078F
+S A$spriteengine$1631 Def000776
+S A$spriteengine$1622 Def000763
+S A$spriteengine$1613 Def000750
+S A$spriteengine$1604 Def000744
+S A$spriteengine$1550 Def0006FB
+S A$spriteengine$1541 Def0006E6
+S A$spriteengine$1514 Def0006BB
+S A$spriteengine$1505 Def0006AC
+S A$spriteengine$1460 Def000664
+S A$spriteengine$1451 Def00065A
+S A$spriteengine$1442 Def00064C
+S A$spriteengine$1433 Def000643
+S A$spriteengine$1424 Def000637
+S A$spriteengine$1415 Def00062E
+S A$spriteengine$1406 Def000625
+S A$spriteengine$1361 Def0005E3
+S A$spriteengine$1352 Def0005C9
+S A$spriteengine$1343 Def0005B6
+S A$spriteengine$1334 Def0005A6
+S A$spriteengine$1325 Def000599
+S A$spriteengine$1316 Def00058C
+S A$spriteengine$1280 Def000570
+S A$spriteengine$1271 Def000567
+S A$spriteengine$1262 Def000558
+S A$spriteengine$1253 Def000549
+S A$spriteengine$1244 Def000540
+S A$spriteengine$1235 Def000537
+S A$spriteengine$1226 Def00052B
+S A$spriteengine$1217 Def000520
+S A$spriteengine$1208 Def000517
+S A$spriteengine$1190 Def000505
+S A$spriteengine$1181 Def0004FF
+S A$spriteengine$1172 Def0004F7
+S A$spriteengine$1163 Def0004F1
+S A$spriteengine$1154 Def0004E0
+S A$spriteengine$1145 Def0004D3
+S A$spriteengine$1136 Def0004C6
+S A$spriteengine$1127 Def0004BD
+S A$spriteengine$1118 Def0004B3
+S A$spriteengine$1109 Def0004A8
+S A$spriteengine$1091 Def000495
+S A$spriteengine$1082 Def00048A
+S A$spriteengine$1073 Def000484
+S A$spriteengine$1064 Def00047C
+S A$spriteengine$1055 Def000475
+S A$spriteengine$1046 Def000469
+S A$spriteengine$1037 Def00045C
+S A$spriteengine$1028 Def000453
+S A$spriteengine$1019 Def000446
+S C$spriteengine.c$142$1_0$153 Def000849
+S C$spriteengine.c$123$2_0$144 Def000835
+S C$spriteengine.c$102$2_0$138 Def0004FB
+S C$spriteengine.c$100$3_0$139 Def0003AE
+S A$spriteengine$1722 Def000841
+S A$spriteengine$1650 Def0007AC
+S A$spriteengine$1641 Def000792
+S A$spriteengine$1632 Def000777
+S A$spriteengine$1623 Def000766
+S A$spriteengine$1614 Def000753
+S A$spriteengine$1605 Def000747
+S A$spriteengine$1560 Def00070B
+S A$spriteengine$1551 Def0006FC
+S A$spriteengine$1542 Def0006E9
+S A$spriteengine$1533 Def0006D3
+S A$spriteengine$1515 Def0006BE
+S A$spriteengine$1506 Def0006AF
+S A$spriteengine$1470 Def000674
+S A$spriteengine$1461 Def000665
+S A$spriteengine$1452 Def00065B
+S A$spriteengine$1443 Def00064D
+S A$spriteengine$1434 Def000644
+S A$spriteengine$1425 Def00063A
+S A$spriteengine$1416 Def00062F
+S A$spriteengine$1407 Def000626
+S A$spriteengine$1362 Def0005E4
+S A$spriteengine$1353 Def0005CD
+S A$spriteengine$1335 Def0005A7
+S A$spriteengine$1317 Def00058E
+S A$spriteengine$1281 Def000571
+S A$spriteengine$1272 Def000568
+S A$spriteengine$1263 Def00055B
+S A$spriteengine$1254 Def00054C
+S A$spriteengine$1245 Def000541
+S A$spriteengine$1236 Def000538
+S A$spriteengine$1227 Def00052C
+S A$spriteengine$1218 Def000521
+S A$spriteengine$1209 Def000518
+S A$spriteengine$1191 Def000506
+S A$spriteengine$1173 Def0004FA
+S A$spriteengine$1164 Def0004F2
+S A$spriteengine$1155 Def0004E1
+S A$spriteengine$1146 Def0004D6
+S A$spriteengine$1137 Def0004C7
+S A$spriteengine$1128 Def0004BE
+S A$spriteengine$1119 Def0004B4
+S A$spriteengine$1092 Def000497
+S A$spriteengine$1083 Def00048B
+S A$spriteengine$1065 Def00047F
+S A$spriteengine$1056 Def000476
+S A$spriteengine$1047 Def00046C
+S A$spriteengine$1038 Def00045D
+S A$spriteengine$1029 Def000454
+S C$spriteengine.c$133$5_0$150 Def000829
+S C$spriteengine.c$106$5_0$141 Def000479
+S A$spriteengine$1750 Def000857
+S A$spriteengine$1732 Def000848
+S A$spriteengine$1714 Def000835
+S A$spriteengine$1660 Def0007C8
+S A$spriteengine$1651 Def0007AF
+S A$spriteengine$1642 Def000795
+S A$spriteengine$1633 Def00077A
+S A$spriteengine$1624 Def000767
+S A$spriteengine$1615 Def000756
+S A$spriteengine$1606 Def000748
+S A$spriteengine$1570 Def000716
+S A$spriteengine$1561 Def00070D
+S A$spriteengine$1552 Def0006FD
+S A$spriteengine$1543 Def0006EC
+S A$spriteengine$1534 Def0006D6
+S A$spriteengine$1525 Def0006C7
+S A$spriteengine$1516 Def0006BF
+S A$spriteengine$1507 Def0006B0
+S A$spriteengine$1480 Def000684
+S A$spriteengine$1471 Def000677
+S A$spriteengine$1462 Def000666
+S A$spriteengine$1453 Def00065E
+S A$spriteengine$1444 Def00064E
+S A$spriteengine$1435 Def000645
+S A$spriteengine$1426 Def00063B
+S A$spriteengine$1417 Def000630
+S A$spriteengine$1408 Def000627
+S A$spriteengine$1390 Def000612
+S A$spriteengine$1381 Def000605
+S A$spriteengine$1363 Def0005E5
+S A$spriteengine$1354 Def0005D0
+S A$spriteengine$1336 Def0005A9
+S A$spriteengine$1318 Def000592
+S A$spriteengine$1282 Def000572
+S A$spriteengine$1273 Def00056B
+S A$spriteengine$1264 Def00055C
+S A$spriteengine$1255 Def00054D
+S A$spriteengine$1246 Def000542
+S A$spriteengine$1237 Def000539
+S A$spriteengine$1228 Def00052F
+S A$spriteengine$1219 Def000522
+S A$spriteengine$1156 Def0004E4
+S A$spriteengine$1147 Def0004D7
+S A$spriteengine$1138 Def0004C8
+S A$spriteengine$1129 Def0004BF
+S A$spriteengine$1093 Def000498
+S A$spriteengine$1084 Def00048C
+S A$spriteengine$1057 Def000477
+S A$spriteengine$1048 Def00046F
+S A$spriteengine$1039 Def00045E
+S C$spriteengine.c$144$1_0$153 Def000851
+S C$spriteengine.c$123$3_0$145 Def00059C
 S _updateTiles Def0003A1
-S A$spriteengine$1805 Def0008FC
-S A$spriteengine$1751 Def0008CA
-S A$spriteengine$1742 Def0008BB
-S A$spriteengine$1733 Def0008B1
-S A$spriteengine$1724 Def00089C
-S A$spriteengine$1715 Def000889
-S A$spriteengine$1706 Def000874
-S A$spriteengine$1670 Def00081E
-S A$spriteengine$1661 Def000810
-S A$spriteengine$1652 Def000800
-S A$spriteengine$1643 Def0007F7
-S A$spriteengine$1634 Def0007E7
-S A$spriteengine$1625 Def0007DC
-S A$spriteengine$1616 Def0007D3
-S A$spriteengine$1607 Def0007C3
-S A$spriteengine$1580 Def00078F
-S A$spriteengine$1571 Def000785
-S A$spriteengine$1562 Def000778
-S A$spriteengine$1553 Def000769
-S A$spriteengine$1544 Def00075E
-S A$spriteengine$1535 Def000751
-S A$spriteengine$1526 Def000740
-S A$spriteengine$1508 Def000726
-S A$spriteengine$1490 Def000713
-S A$spriteengine$1481 Def000708
-S A$spriteengine$1472 Def0006FF
-S A$spriteengine$1463 Def0006F6
-S A$spriteengine$1454 Def0006EA
-S A$spriteengine$1445 Def0006E1
-S A$spriteengine$1436 Def0006CD
-S A$spriteengine$1427 Def0006BF
-S A$spriteengine$1418 Def0006AD
-S A$spriteengine$1409 Def000691
-S A$spriteengine$1391 Def000672
-S A$spriteengine$1382 Def00066D
-S A$spriteengine$1355 Def000656
-S A$spriteengine$1346 Def00064A
-S A$spriteengine$1328 Def000632
-S A$spriteengine$1319 Def00061F
-S A$spriteengine$1292 Def0005E0
-S A$spriteengine$1283 Def0005CF
-S A$spriteengine$1274 Def0005B6
-S A$spriteengine$1265 Def00059F
-S A$spriteengine$1256 Def000595
-S A$spriteengine$1247 Def00057E
-S A$spriteengine$1238 Def000565
-S A$spriteengine$1229 Def000550
-S A$spriteengine$1193 Def00050D
-S A$spriteengine$1184 Def0004FF
-S A$spriteengine$1166 Def0004EA
-S A$spriteengine$1157 Def0004DC
-S A$spriteengine$1148 Def0004D1
-S A$spriteengine$1139 Def0004C2
-S A$spriteengine$1094 Def000492
-S A$spriteengine$1085 Def000486
-S A$spriteengine$1058 Def00046C
-S A$spriteengine$1049 Def000462
-S C$spriteengine.c$117$1_0$136 Def0008E3
-S A$spriteengine$1806 Def0008FD
-S A$spriteengine$1752 Def0008CD
-S A$spriteengine$1743 Def0008BE
-S A$spriteengine$1734 Def0008B4
-S A$spriteengine$1725 Def00089D
-S A$spriteengine$1716 Def00088C
-S A$spriteengine$1707 Def000877
-S A$spriteengine$1680 Def000830
-S A$spriteengine$1671 Def00081F
-S A$spriteengine$1653 Def000801
-S A$spriteengine$1644 Def0007F8
-S A$spriteengine$1635 Def0007EA
-S A$spriteengine$1626 Def0007DD
-S A$spriteengine$1617 Def0007D4
-S A$spriteengine$1608 Def0007C4
-S A$spriteengine$1590 Def0007A1
-S A$spriteengine$1581 Def000792
-S A$spriteengine$1572 Def000786
-S A$spriteengine$1563 Def000779
-S A$spriteengine$1554 Def00076A
-S A$spriteengine$1545 Def00075F
-S A$spriteengine$1536 Def000752
-S A$spriteengine$1527 Def000741
-S A$spriteengine$1509 Def000728
-S A$spriteengine$1491 Def000714
-S A$spriteengine$1482 Def000709
-S A$spriteengine$1473 Def000700
-S A$spriteengine$1464 Def0006F7
-S A$spriteengine$1455 Def0006EB
-S A$spriteengine$1446 Def0006E2
-S A$spriteengine$1437 Def0006D0
-S A$spriteengine$1428 Def0006C0
-S A$spriteengine$1419 Def0006AF
-S A$spriteengine$1392 Def000675
-S A$spriteengine$1356 Def000659
-S A$spriteengine$1347 Def00064D
-S A$spriteengine$1329 Def000633
-S A$spriteengine$1293 Def0005E1
-S A$spriteengine$1284 Def0005D0
-S A$spriteengine$1275 Def0005B9
-S A$spriteengine$1266 Def0005A0
-S A$spriteengine$1257 Def000596
-S A$spriteengine$1248 Def000581
-S A$spriteengine$1239 Def000568
-S A$spriteengine$1194 Def00050E
-S A$spriteengine$1167 Def0004EB
-S A$spriteengine$1158 Def0004DD
-S A$spriteengine$1149 Def0004D2
-S A$spriteengine$1095 Def000493
-S A$spriteengine$1086 Def000487
-S A$spriteengine$1077 Def00047E
-S A$spriteengine$1059 Def00046F
-S C$spriteengine.c$118$1_0$136 Def0008FA
-S C$spriteengine.c$108$5_0$133 Def0008BB
-S A$spriteengine$1807 Def0008FE
-S A$spriteengine$1780 Def0008E1
-S A$spriteengine$1762 Def0008D6
-S A$spriteengine$1753 Def0008D0
-S A$spriteengine$1744 Def0008C1
-S A$spriteengine$1735 Def0008B5
-S A$spriteengine$1726 Def00089E
-S A$spriteengine$1717 Def00088F
-S A$spriteengine$1708 Def00087A
-S A$spriteengine$1690 Def00084A
-S A$spriteengine$1681 Def000831
-S A$spriteengine$1672 Def000820
-S A$spriteengine$1663 Def000812
-S A$spriteengine$1654 Def000802
-S A$spriteengine$1645 Def0007F9
-S A$spriteengine$1636 Def0007ED
-S A$spriteengine$1627 Def0007DE
-S A$spriteengine$1618 Def0007D5
-S A$spriteengine$1609 Def0007C5
-S A$spriteengine$1591 Def0007A4
-S A$spriteengine$1582 Def000795
-S A$spriteengine$1573 Def000787
-S A$spriteengine$1564 Def00077A
-S A$spriteengine$1555 Def00076B
-S A$spriteengine$1546 Def000760
-S A$spriteengine$1537 Def000753
-S A$spriteengine$1528 Def000744
-S A$spriteengine$1492 Def000716
-S A$spriteengine$1483 Def00070A
-S A$spriteengine$1474 Def000701
-S A$spriteengine$1465 Def0006F8
-S A$spriteengine$1456 Def0006EC
-S A$spriteengine$1447 Def0006E3
-S A$spriteengine$1438 Def0006D3
-S A$spriteengine$1429 Def0006C3
-S A$spriteengine$1348 Def00064E
-S A$spriteengine$1294 Def0005E2
-S A$spriteengine$1285 Def0005D3
-S A$spriteengine$1276 Def0005BC
-S A$spriteengine$1267 Def0005A1
-S A$spriteengine$1258 Def000598
-S A$spriteengine$1249 Def000584
-S A$spriteengine$1195 Def000511
-S A$spriteengine$1168 Def0004EE
-S A$spriteengine$1159 Def0004DE
-S A$spriteengine$1096 Def000494
-S A$spriteengine$1087 Def000488
-S A$spriteengine$1078 Def00047F
-S A$spriteengine$1069 Def000479
-S C$spriteengine.c$119$1_0$136 Def000909
-S C$spriteengine.c$20$1_0$102 Def000050
-S C$spriteengine.c$11$3_0$100 Def000000
-S A$spriteengine$1817 Def000907
-S A$spriteengine$1808 Def0008FF
-S A$spriteengine$1790 Def0008EE
-S A$spriteengine$1763 Def0008D8
-S A$spriteengine$1745 Def0008C4
-S A$spriteengine$1736 Def0008B6
-S A$spriteengine$1727 Def0008A1
-S A$spriteengine$1718 Def000890
-S A$spriteengine$1709 Def00087B
-S A$spriteengine$1691 Def00084D
-S A$spriteengine$1682 Def000832
-S A$spriteengine$1673 Def000823
-S A$spriteengine$1655 Def000803
-S A$spriteengine$1646 Def0007FA
-S A$spriteengine$1637 Def0007F0
-S A$spriteengine$1628 Def0007DF
-S A$spriteengine$1619 Def0007D6
-S A$spriteengine$1592 Def0007A5
-S A$spriteengine$1574 Def00078A
-S A$spriteengine$1565 Def00077B
-S A$spriteengine$1556 Def00076C
-S A$spriteengine$1547 Def000761
-S A$spriteengine$1538 Def000754
-S A$spriteengine$1529 Def000747
-S A$spriteengine$1493 Def000717
-S A$spriteengine$1484 Def00070B
-S A$spriteengine$1475 Def000702
-S A$spriteengine$1466 Def0006F9
-S A$spriteengine$1457 Def0006ED
-S A$spriteengine$1448 Def0006E4
-S A$spriteengine$1439 Def0006D4
-S A$spriteengine$1394 Def000678
-S A$spriteengine$1367 Def000660
-S A$spriteengine$1295 Def0005E5
-S A$spriteengine$1286 Def0005D4
-S A$spriteengine$1277 Def0005BF
-S A$spriteengine$1268 Def0005A4
-S A$spriteengine$1259 Def000599
-S A$spriteengine$1196 Def000514
-S A$spriteengine$1178 Def0004F7
-S A$spriteengine$1097 Def000495
-S A$spriteengine$1088 Def00048B
-S A$spriteengine$1079 Def000480
-S A$spriteengine$100 Def000006
-S C$spriteengine.c$30$1_0$102 Def0000FB
-S C$spriteengine.c$21$1_0$102 Def000064
-S C$spriteengine.c$12$3_0$100 Def000003
-S A$spriteengine$1809 Def000900
-S A$spriteengine$1791 Def0008EF
-S A$spriteengine$1737 Def0008B9
-S A$spriteengine$1728 Def0008A4
-S A$spriteengine$1719 Def000891
-S A$spriteengine$1692 Def000850
-S A$spriteengine$1683 Def000835
-S A$spriteengine$1674 Def000826
-S A$spriteengine$1656 Def000805
-S A$spriteengine$1647 Def0007FB
-S A$spriteengine$1638 Def0007F1
-S A$spriteengine$1629 Def0007E0
-S A$spriteengine$1593 Def0007A8
-S A$spriteengine$1575 Def00078B
-S A$spriteengine$1566 Def00077E
-S A$spriteengine$1557 Def00076F
-S A$spriteengine$1548 Def000762
-S A$spriteengine$1539 Def000755
-S A$spriteengine$1494 Def000718
-S A$spriteengine$1485 Def00070C
-S A$spriteengine$1476 Def000703
-S A$spriteengine$1467 Def0006FA
-S A$spriteengine$1458 Def0006F0
-S A$spriteengine$1449 Def0006E5
-S A$spriteengine$1395 Def00067B
-S A$spriteengine$1386 Def00066E
-S A$spriteengine$1377 Def000661
-S A$spriteengine$1296 Def0005E6
-S A$spriteengine$1287 Def0005D5
-S A$spriteengine$1278 Def0005C2
-S A$spriteengine$1269 Def0005A7
-S A$spriteengine$1197 Def000516
-S A$spriteengine$1188 Def000502
-S A$spriteengine$1179 Def0004F8
-S A$spriteengine$1098 Def000496
-S A$spriteengine$1089 Def00048C
-S A$spriteengine$200 Def00006B
-S A$spriteengine$110 Def000014
-S A$spriteengine$101 Def000009
-S C$spriteengine.c$109$6_0$134 Def000815
-S C$spriteengine.c$31$1_0$102 Def00010B
-S C$spriteengine.c$22$1_0$102 Def000074
-S C$spriteengine.c$13$3_0$100 Def000017
-S A$spriteengine$1792 Def0008F0
-S A$spriteengine$1738 Def0008BA
-S A$spriteengine$1729 Def0008A7
-S A$spriteengine$1693 Def000851
-S A$spriteengine$1684 Def000838
-S A$spriteengine$1675 Def000827
-S A$spriteengine$1657 Def000808
-S A$spriteengine$1648 Def0007FC
-S A$spriteengine$1639 Def0007F2
-S A$spriteengine$1567 Def00077F
-S A$spriteengine$1558 Def000770
-S A$spriteengine$1549 Def000763
-S A$spriteengine$1495 Def000719
-S A$spriteengine$1486 Def00070F
-S A$spriteengine$1477 Def000704
-S A$spriteengine$1468 Def0006FB
-S A$spriteengine$1459 Def0006F1
-S A$spriteengine$1396 Def00067C
-S A$spriteengine$1378 Def000663
-S A$spriteengine$1297 Def0005E7
-S A$spriteengine$1288 Def0005D8
-S A$spriteengine$1279 Def0005C5
-S A$spriteengine$1198 Def000519
-S A$spriteengine$1189 Def000505
-S A$spriteengine$1099 Def000497
-S A$spriteengine$300 Def0000E5
-S A$spriteengine$210 Def000077
-S A$spriteengine$201 Def00006C
-S A$spriteengine$111 Def000015
-S A$spriteengine$102 Def00000A
+S A$spriteengine$1760 Def000862
+S A$spriteengine$1751 Def000859
+S A$spriteengine$1742 Def000849
+S A$spriteengine$1715 Def000838
+S A$spriteengine$1706 Def000829
+S A$spriteengine$1670 Def0007DC
+S A$spriteengine$1661 Def0007C9
+S A$spriteengine$1652 Def0007B2
+S A$spriteengine$1643 Def000796
+S A$spriteengine$1634 Def00077D
+S A$spriteengine$1625 Def00076A
+S A$spriteengine$1616 Def000759
+S A$spriteengine$1607 Def00074B
+S A$spriteengine$1580 Def000722
+S A$spriteengine$1571 Def000717
+S A$spriteengine$1562 Def00070E
+S A$spriteengine$1553 Def0006FE
+S A$spriteengine$1544 Def0006ED
+S A$spriteengine$1535 Def0006D9
+S A$spriteengine$1526 Def0006CA
+S A$spriteengine$1517 Def0006C0
+S A$spriteengine$1508 Def0006B1
+S A$spriteengine$1490 Def000697
+S A$spriteengine$1481 Def000685
+S A$spriteengine$1472 Def000678
+S A$spriteengine$1463 Def000669
+S A$spriteengine$1445 Def00064F
+S A$spriteengine$1436 Def000646
+S A$spriteengine$1427 Def00063C
+S A$spriteengine$1418 Def000631
+S A$spriteengine$1409 Def000628
+S A$spriteengine$1391 Def000613
+S A$spriteengine$1382 Def000608
+S A$spriteengine$1373 Def0005F2
+S A$spriteengine$1364 Def0005E6
+S A$spriteengine$1355 Def0005D2
+S A$spriteengine$1337 Def0005AC
+S A$spriteengine$1319 Def000594
+S A$spriteengine$1292 Def00057B
+S A$spriteengine$1283 Def000573
+S A$spriteengine$1274 Def00056E
+S A$spriteengine$1265 Def00055D
+S A$spriteengine$1256 Def00054E
+S A$spriteengine$1247 Def000543
+S A$spriteengine$1238 Def00053A
+S A$spriteengine$1229 Def000530
+S A$spriteengine$1157 Def0004E7
+S A$spriteengine$1148 Def0004D8
+S A$spriteengine$1139 Def0004C9
+S A$spriteengine$1094 Def000499
+S A$spriteengine$1085 Def00048D
+S A$spriteengine$1049 Def000470
+S C$spriteengine.c$145$1_0$153 Def000868
+S A$spriteengine$1770 Def00086B
+S A$spriteengine$1761 Def000863
+S A$spriteengine$1752 Def00085A
+S A$spriteengine$1743 Def00084B
+S A$spriteengine$1716 Def00083B
+S A$spriteengine$1707 Def00082C
+S A$spriteengine$1680 Def0007F8
+S A$spriteengine$1671 Def0007DD
+S A$spriteengine$1662 Def0007CC
+S A$spriteengine$1653 Def0007B5
+S A$spriteengine$1644 Def000799
+S A$spriteengine$1635 Def000780
+S A$spriteengine$1626 Def00076D
+S A$spriteengine$1617 Def00075A
+S A$spriteengine$1590 Def000733
+S A$spriteengine$1581 Def000725
+S A$spriteengine$1572 Def000718
+S A$spriteengine$1563 Def00070F
+S A$spriteengine$1554 Def0006FF
+S A$spriteengine$1545 Def0006F0
+S A$spriteengine$1536 Def0006DC
+S A$spriteengine$1527 Def0006CD
+S A$spriteengine$1518 Def0006C1
+S A$spriteengine$1509 Def0006B2
+S A$spriteengine$1491 Def000698
+S A$spriteengine$1482 Def000686
+S A$spriteengine$1473 Def000679
+S A$spriteengine$1464 Def00066A
+S A$spriteengine$1455 Def000660
+S A$spriteengine$1446 Def000650
+S A$spriteengine$1437 Def000647
+S A$spriteengine$1428 Def00063D
+S A$spriteengine$1419 Def000632
+S A$spriteengine$1392 Def000614
+S A$spriteengine$1383 Def00060B
+S A$spriteengine$1374 Def0005F5
+S A$spriteengine$1365 Def0005E9
+S A$spriteengine$1356 Def0005D5
+S A$spriteengine$1347 Def0005B9
+S A$spriteengine$1338 Def0005AD
+S A$spriteengine$1329 Def00059C
+S A$spriteengine$1293 Def00057E
+S A$spriteengine$1284 Def000574
+S A$spriteengine$1275 Def00056F
+S A$spriteengine$1266 Def00055E
+S A$spriteengine$1257 Def000551
+S A$spriteengine$1248 Def000544
+S A$spriteengine$1239 Def00053B
+S A$spriteengine$1185 Def000500
+S A$spriteengine$1158 Def0004E8
+S A$spriteengine$1149 Def0004D9
+S A$spriteengine$1095 Def00049A
+S A$spriteengine$1086 Def00048E
+S A$spriteengine$1077 Def000485
+S C$spriteengine.c$146$1_0$153 Def000877
+S C$spriteengine.c$125$3_0$145 Def0005B9
+S C$spriteengine.c$119$2_0$143 Def00058C
+S C$spriteengine.c$106$2_0$138 Def000414
+S A$spriteengine$1771 Def00086C
+S A$spriteengine$1762 Def000864
+S A$spriteengine$1753 Def00085B
+S A$spriteengine$1744 Def00084F
+S A$spriteengine$1726 Def000844
+S A$spriteengine$1717 Def00083E
+S A$spriteengine$1708 Def00082F
+S A$spriteengine$1690 Def00080A
+S A$spriteengine$1681 Def0007FB
+S A$spriteengine$1672 Def0007E0
+S A$spriteengine$1663 Def0007CF
+S A$spriteengine$1654 Def0007B8
+S A$spriteengine$1645 Def00079C
+S A$spriteengine$1636 Def000783
+S A$spriteengine$1627 Def000770
+S A$spriteengine$1618 Def00075B
+S A$spriteengine$1609 Def00074D
+S A$spriteengine$1591 Def000734
+S A$spriteengine$1582 Def000728
+S A$spriteengine$1573 Def000719
+S A$spriteengine$1564 Def000710
+S A$spriteengine$1555 Def000700
+S A$spriteengine$1546 Def0006F1
+S A$spriteengine$1537 Def0006DF
+S A$spriteengine$1528 Def0006D0
+S A$spriteengine$1519 Def0006C2
+S A$spriteengine$1492 Def000699
+S A$spriteengine$1483 Def000687
+S A$spriteengine$1474 Def00067C
+S A$spriteengine$1465 Def00066B
+S A$spriteengine$1447 Def000651
+S A$spriteengine$1438 Def000648
+S A$spriteengine$1429 Def00063E
+S A$spriteengine$1393 Def000615
+S A$spriteengine$1384 Def00060C
+S A$spriteengine$1375 Def0005F8
+S A$spriteengine$1366 Def0005EA
+S A$spriteengine$1357 Def0005D8
+S A$spriteengine$1348 Def0005BC
+S A$spriteengine$1339 Def0005B0
+S A$spriteengine$1294 Def000581
+S A$spriteengine$1285 Def000575
+S A$spriteengine$1267 Def00055F
+S A$spriteengine$1258 Def000554
+S A$spriteengine$1249 Def000545
+S A$spriteengine$1195 Def000507
+S A$spriteengine$1186 Def000501
+S A$spriteengine$1177 Def0004FB
+S A$spriteengine$1159 Def0004E9
+S A$spriteengine$1096 Def00049B
+S A$spriteengine$1087 Def00048F
+S A$spriteengine$1078 Def000486
+S A$spriteengine$1069 Def000480
+S C$spriteengine.c$139$1_0$143 Def000841
+S C$spriteengine.c$135$6_0$151 Def000750
+S C$spriteengine.c$107$2_0$138 Def000500
+S A$spriteengine$1781 Def000875
+S A$spriteengine$1772 Def00086D
+S A$spriteengine$1763 Def000867
+S A$spriteengine$1754 Def00085C
+S A$spriteengine$1727 Def000846
+S A$spriteengine$1709 Def000832
+S A$spriteengine$1691 Def00080D
+S A$spriteengine$1682 Def0007FC
+S A$spriteengine$1673 Def0007E3
+S A$spriteengine$1664 Def0007D2
+S A$spriteengine$1655 Def0007BB
+S A$spriteengine$1646 Def0007A0
+S A$spriteengine$1637 Def000786
+S A$spriteengine$1628 Def000773
+S A$spriteengine$1619 Def00075E
+S A$spriteengine$1592 Def000735
+S A$spriteengine$1583 Def00072B
+S A$spriteengine$1574 Def00071A
+S A$spriteengine$1565 Def000711
+S A$spriteengine$1556 Def000703
+S A$spriteengine$1547 Def0006F2
+S A$spriteengine$1538 Def0006E0
+S A$spriteengine$1493 Def00069A
+S A$spriteengine$1484 Def000689
+S A$spriteengine$1475 Def00067F
+S A$spriteengine$1466 Def00066C
+S A$spriteengine$1448 Def000653
+S A$spriteengine$1439 Def000649
+S A$spriteengine$1394 Def000616
+S A$spriteengine$1385 Def00060D
+S A$spriteengine$1376 Def0005FB
+S A$spriteengine$1367 Def0005EB
+S A$spriteengine$1358 Def0005DA
+S A$spriteengine$1349 Def0005BF
+S A$spriteengine$1295 Def000584
+S A$spriteengine$1286 Def000578
+S A$spriteengine$1268 Def000562
+S A$spriteengine$1259 Def000555
+S A$spriteengine$1196 Def000508
+S A$spriteengine$1187 Def000502
+S A$spriteengine$1178 Def0004FC
+S A$spriteengine$1169 Def0004F4
+S A$spriteengine$1097 Def00049C
+S A$spriteengine$1088 Def000492
+S A$spriteengine$1079 Def000487
+S A$spriteengine$100 Def000010
+S C$spriteengine.c$117$2_0$138 Def00058B
+S A$spriteengine$1773 Def00086E
+S A$spriteengine$1755 Def00085D
+S A$spriteengine$1692 Def000810
+S A$spriteengine$1683 Def0007FD
+S A$spriteengine$1674 Def0007E6
+S A$spriteengine$1665 Def0007D5
+S A$spriteengine$1656 Def0007BE
+S A$spriteengine$1647 Def0007A3
+S A$spriteengine$1638 Def000789
+S A$spriteengine$1629 Def000774
+S A$spriteengine$1593 Def000736
+S A$spriteengine$1584 Def00072C
+S A$spriteengine$1575 Def00071B
+S A$spriteengine$1566 Def000712
+S A$spriteengine$1557 Def000706
+S A$spriteengine$1548 Def0006F5
+S A$spriteengine$1539 Def0006E3
+S A$spriteengine$1494 Def00069B
+S A$spriteengine$1485 Def00068C
+S A$spriteengine$1476 Def000680
+S A$spriteengine$1467 Def00066F
+S A$spriteengine$1449 Def000656
+S A$spriteengine$1395 Def000617
+S A$spriteengine$1386 Def00060E
+S A$spriteengine$1377 Def0005FE
+S A$spriteengine$1368 Def0005EE
+S A$spriteengine$1359 Def0005DD
+S A$spriteengine$1287 Def000579
+S A$spriteengine$1269 Def000565
+S A$spriteengine$1197 Def000509
+S A$spriteengine$1188 Def000503
+S A$spriteengine$1179 Def0004FD
+S A$spriteengine$1098 Def00049D
+S A$spriteengine$1089 Def000493
+S A$spriteengine$110 Def000019
+S A$spriteengine$101 Def000011
+S A$spriteengine$1774 Def00086F
+S A$spriteengine$1756 Def00085E
+S A$spriteengine$1693 Def000813
+S A$spriteengine$1684 Def0007FE
+S A$spriteengine$1675 Def0007E9
+S A$spriteengine$1666 Def0007D8
+S A$spriteengine$1657 Def0007C1
+S A$spriteengine$1648 Def0007A6
+S A$spriteengine$1639 Def00078C
+S A$spriteengine$1594 Def000737
+S A$spriteengine$1585 Def00072D
+S A$spriteengine$1576 Def00071C
+S A$spriteengine$1567 Def000713
+S A$spriteengine$1558 Def000709
+S A$spriteengine$1549 Def0006F8
+S A$spriteengine$1495 Def00069C
+S A$spriteengine$1486 Def00068F
+S A$spriteengine$1477 Def000681
+S A$spriteengine$1468 Def000670
+S A$spriteengine$1459 Def000663
+S A$spriteengine$1396 Def000618
+S A$spriteengine$1387 Def00060F
+S A$spriteengine$1378 Def0005FF
+S A$spriteengine$1369 Def0005EF
+S A$spriteengine$1198 Def00050A
+S A$spriteengine$1189 Def000504
+S A$spriteengine$1099 Def00049E
+S A$spriteengine$300 Def0000EF
+S A$spriteengine$210 Def000082
+S A$spriteengine$201 Def000074
+S A$spriteengine$120 Def000021
+S A$spriteengine$111 Def00001A
+S A$spriteengine$102 Def000014
 S G$updateAnimations$0$0 Def000244
-S C$spriteengine.c$32$1_0$102 Def000126
-S C$spriteengine.c$23$1_0$102 Def000084
+S C$spriteengine.c$40$1_0$121 Def000152
 S _initEngine Def000000
-S A$spriteengine$1793 Def0008F1
-S A$spriteengine$1784 Def0008E3
-S A$spriteengine$1694 Def000854
-S A$spriteengine$1685 Def00083B
-S A$spriteengine$1676 Def000828
-S A$spriteengine$1667 Def000815
-S A$spriteengine$1658 Def000809
-S A$spriteengine$1649 Def0007FD
-S A$spriteengine$1595 Def0007AB
-S A$spriteengine$1568 Def000780
-S A$spriteengine$1559 Def000773
-S A$spriteengine$1496 Def00071A
-S A$spriteengine$1487 Def000710
-S A$spriteengine$1478 Def000705
-S A$spriteengine$1469 Def0006FC
-S A$spriteengine$1397 Def00067E
-S A$spriteengine$1379 Def000667
-S A$spriteengine$1298 Def0005EA
-S A$spriteengine$1289 Def0005DB
-S A$spriteengine$1199 Def00051C
-S A$spriteengine$310 Def0000F1
-S A$spriteengine$301 Def0000E8
-S A$spriteengine$211 Def000079
-S A$spriteengine$202 Def00006D
-S A$spriteengine$130 Def000023
-S A$spriteengine$112 Def000016
-S A$spriteengine$103 Def00000B
-S C$spriteengine.c$33$1_0$102 Def00013A
-S C$spriteengine.c$24$1_0$102 Def000094
-S A$spriteengine$1794 Def0008F2
-S A$spriteengine$1785 Def0008E6
-S A$spriteengine$1758 Def0008D3
-S A$spriteengine$1695 Def000857
-S A$spriteengine$1686 Def00083E
-S A$spriteengine$1677 Def00082B
-S A$spriteengine$1668 Def000818
-S A$spriteengine$1659 Def00080C
-S A$spriteengine$1596 Def0007AE
-S A$spriteengine$1587 Def000798
-S A$spriteengine$1569 Def000783
-S A$spriteengine$1497 Def00071B
-S A$spriteengine$1488 Def000711
-S A$spriteengine$1479 Def000706
-S A$spriteengine$1398 Def000681
-S A$spriteengine$1299 Def0005ED
-S A$spriteengine$410 Def00015D
-S A$spriteengine$311 Def0000F2
-S A$spriteengine$230 Def000091
-S A$spriteengine$212 Def00007A
-S A$spriteengine$203 Def00006E
-S A$spriteengine$131 Def000025
-S A$spriteengine$104 Def00000C
-S C$spriteengine.c$41$1_0$104 Def000185
-S C$spriteengine.c$34$1_0$102 Def000141
-S C$spriteengine.c$25$1_0$102 Def0000A4
-S A$spriteengine$1795 Def0008F3
-S A$spriteengine$1786 Def0008E9
-S A$spriteengine$1768 Def0008DA
-S A$spriteengine$1696 Def00085A
-S A$spriteengine$1687 Def000841
-S A$spriteengine$1678 Def00082E
-S A$spriteengine$1669 Def00081B
-S A$spriteengine$1597 Def0007B1
-S A$spriteengine$1588 Def00079B
-S A$spriteengine$1579 Def00078C
-S A$spriteengine$1498 Def00071C
-S A$spriteengine$1489 Def000712
-S A$spriteengine$1399 Def000682
-S A$spriteengine$420 Def00016A
-S A$spriteengine$411 Def000160
-S A$spriteengine$330 Def000109
-S A$spriteengine$321 Def0000FB
-S A$spriteengine$312 Def0000F3
-S A$spriteengine$240 Def00009C
-S A$spriteengine$231 Def000092
-S A$spriteengine$222 Def000084
-S A$spriteengine$213 Def00007B
-S A$spriteengine$204 Def000071
-S A$spriteengine$123 Def00001B
-S A$spriteengine$105 Def00000D
-S C$spriteengine.c$60$1_0$113 Def000218
-S C$spriteengine.c$42$1_0$104 Def000192
-S C$spriteengine.c$35$1_0$102 Def000151
-S C$spriteengine.c$26$1_0$102 Def0000B4
-S A$spriteengine$1796 Def0008F4
-S A$spriteengine$1787 Def0008EB
-S A$spriteengine$1778 Def0008DB
-S A$spriteengine$1697 Def00085D
-S A$spriteengine$1688 Def000844
-S A$spriteengine$1679 Def00082F
-S A$spriteengine$1598 Def0007B2
-S A$spriteengine$1589 Def00079E
-S A$spriteengine$1499 Def00071D
-S A$spriteengine$700 Def000275
-S A$spriteengine$520 Def0001CB
-S A$spriteengine$430 Def00017A
-S A$spriteengine$421 Def00016B
-S A$spriteengine$412 Def000162
-S A$spriteengine$403 Def000152
-S A$spriteengine$340 Def000114
-S A$spriteengine$322 Def0000FE
-S A$spriteengine$313 Def0000F4
-S A$spriteengine$250 Def0000A9
-S A$spriteengine$241 Def00009D
-S A$spriteengine$223 Def000087
-S A$spriteengine$214 Def00007C
-S A$spriteengine$205 Def000072
-S A$spriteengine$160 Def000035
-S A$spriteengine$124 Def00001C
-S A$spriteengine$106 Def00000E
-S C$spriteengine.c$61$1_0$113 Def000220
-S C$spriteengine.c$43$1_0$104 Def00019D
-S C$spriteengine.c$27$1_0$102 Def0000C4
-S C$spriteengine.c$18$1_0$102 Def00002D
-S A$spriteengine$1797 Def0008F5
-S A$spriteengine$1788 Def0008EC
-S A$spriteengine$1779 Def0008DD
-S A$spriteengine$1698 Def000860
-S A$spriteengine$1689 Def000847
-S A$spriteengine$1599 Def0007B5
-S A$spriteengine$800 Def0002FF
-S A$spriteengine$701 Def000276
-S A$spriteengine$620 Def00021E
-S A$spriteengine$521 Def0001CE
-S A$spriteengine$503 Def0001BF
-S A$spriteengine$431 Def00017D
-S A$spriteengine$422 Def00016C
-S A$spriteengine$413 Def000163
-S A$spriteengine$404 Def000154
-S A$spriteengine$341 Def000115
-S A$spriteengine$323 Def000100
-S A$spriteengine$314 Def0000F5
-S A$spriteengine$305 Def0000E9
-S A$spriteengine$251 Def0000AA
-S A$spriteengine$242 Def00009E
-S A$spriteengine$224 Def000089
-S A$spriteengine$215 Def00007D
-S A$spriteengine$170 Def000046
-S A$spriteengine$161 Def000038
-S A$spriteengine$125 Def00001D
-S A$spriteengine$116 Def000017
-S A$spriteengine$107 Def00000F
-S C$spriteengine.c$62$1_0$113 Def000237
-S C$spriteengine.c$50$1_0$107 Def0001DD
-S C$spriteengine.c$44$1_0$104 Def0001A8
-S C$spriteengine.c$28$1_0$102 Def0000D7
-S C$spriteengine.c$19$1_0$102 Def000035
-S A$spriteengine$1798 Def0008F6
-S A$spriteengine$1789 Def0008ED
-S A$spriteengine$1699 Def000863
-S A$spriteengine$810 Def000317
-S A$spriteengine$801 Def000300
-S A$spriteengine$720 Def000290
-S A$spriteengine$711 Def00027F
-S A$spriteengine$702 Def000277
-S A$spriteengine$630 Def00022B
-S A$spriteengine$603 Def000215
-S A$spriteengine$522 Def0001D0
-S A$spriteengine$513 Def0001C0
-S A$spriteengine$450 Def00018E
-S A$spriteengine$423 Def00016F
-S A$spriteengine$414 Def000164
-S A$spriteengine$405 Def000158
-S A$spriteengine$360 Def000135
-S A$spriteengine$342 Def000118
-S A$spriteengine$324 Def000101
-S A$spriteengine$315 Def0000F6
-S A$spriteengine$306 Def0000EC
-S A$spriteengine$270 Def0000C2
-S A$spriteengine$261 Def0000B4
-S A$spriteengine$252 Def0000AB
-S A$spriteengine$243 Def0000A1
-S A$spriteengine$225 Def00008A
-S A$spriteengine$216 Def00007E
-S A$spriteengine$171 Def000049
-S A$spriteengine$162 Def00003B
-S A$spriteengine$144 Def00002C
-S A$spriteengine$135 Def000027
-S A$spriteengine$126 Def00001F
-S A$spriteengine$117 Def000018
-S A$spriteengine$108 Def000010
-S XG$updateTiles$0$0 Def000660
-S C$spriteengine.c$63$1_0$113 Def000243
-S C$spriteengine.c$56$1_0$111 Def0001FB
+S A$spriteengine$1775 Def000870
+S A$spriteengine$1757 Def00085F
+S A$spriteengine$1748 Def000851
+S A$spriteengine$1694 Def000816
+S A$spriteengine$1685 Def0007FF
+S A$spriteengine$1676 Def0007EC
+S A$spriteengine$1667 Def0007D9
+S A$spriteengine$1658 Def0007C4
+S A$spriteengine$1649 Def0007A9
+S A$spriteengine$1595 Def000738
+S A$spriteengine$1586 Def00072F
+S A$spriteengine$1577 Def00071D
+S A$spriteengine$1568 Def000714
+S A$spriteengine$1559 Def00070A
+S A$spriteengine$1496 Def00069D
+S A$spriteengine$1487 Def000690
+S A$spriteengine$1478 Def000682
+S A$spriteengine$1469 Def000671
+S A$spriteengine$1397 Def00061B
+S A$spriteengine$1388 Def000610
+S A$spriteengine$1379 Def000602
+S A$spriteengine$1199 Def00050D
+S A$spriteengine$301 Def0000F0
+S A$spriteengine$220 Def00008D
+S A$spriteengine$202 Def000077
+S A$spriteengine$121 Def000022
+S A$spriteengine$103 Def000015
+S C$spriteengine.c$126$5_0$147 Def0006C7
+S C$spriteengine.c$50$1_0$121 Def0001B3
+S A$spriteengine$1776 Def000871
+S A$spriteengine$1767 Def000868
+S A$spriteengine$1758 Def000860
+S A$spriteengine$1749 Def000854
+S A$spriteengine$1695 Def000819
+S A$spriteengine$1686 Def000802
+S A$spriteengine$1677 Def0007EF
+S A$spriteengine$1668 Def0007DA
+S A$spriteengine$1659 Def0007C7
+S A$spriteengine$1596 Def000739
+S A$spriteengine$1587 Def000730
+S A$spriteengine$1578 Def000720
+S A$spriteengine$1569 Def000715
+S A$spriteengine$1497 Def0006A0
+S A$spriteengine$1488 Def000693
+S A$spriteengine$1479 Def000683
+S A$spriteengine$1398 Def00061C
+S A$spriteengine$1389 Def000611
+S A$spriteengine$410 Def000168
+S A$spriteengine$401 Def00015A
+S A$spriteengine$320 Def000105
+S A$spriteengine$302 Def0000F1
+S A$spriteengine$230 Def00009A
+S A$spriteengine$221 Def00008E
+S A$spriteengine$203 Def000079
+S A$spriteengine$122 Def000023
+S A$spriteengine$104 Def000016
+S C$spriteengine.c$51$1_0$121 Def0001BF
+S C$spriteengine.c$42$1_0$121 Def00015A
+S A$spriteengine$1786 Def000877
+S A$spriteengine$1777 Def000874
+S A$spriteengine$1768 Def000869
+S A$spriteengine$1759 Def000861
+S A$spriteengine$1696 Def00081C
+S A$spriteengine$1687 Def000805
+S A$spriteengine$1678 Def0007F2
+S A$spriteengine$1669 Def0007DB
+S A$spriteengine$1597 Def00073A
+S A$spriteengine$1588 Def000731
+S A$spriteengine$1579 Def000721
+S A$spriteengine$1498 Def0006A1
+S A$spriteengine$1489 Def000696
+S A$spriteengine$1399 Def00061D
+S A$spriteengine$600 Def000217
+S A$spriteengine$420 Def000177
+S A$spriteengine$411 Def000169
+S A$spriteengine$402 Def00015D
+S A$spriteengine$330 Def000112
+S A$spriteengine$321 Def000108
+S A$spriteengine$303 Def0000F2
+S A$spriteengine$240 Def0000A4
+S A$spriteengine$231 Def00009B
+S A$spriteengine$222 Def000091
+S A$spriteengine$204 Def00007A
+S A$spriteengine$123 Def000025
+S C$spriteengine.c$70$1_0$130 Def000220
+S A$spriteengine$1769 Def00086A
+S A$spriteengine$1697 Def00081D
+S A$spriteengine$1688 Def000808
+S A$spriteengine$1679 Def0007F5
+S A$spriteengine$1598 Def00073B
+S A$spriteengine$1589 Def000732
+S A$spriteengine$1499 Def0006A2
+S A$spriteengine$610 Def000218
+S A$spriteengine$520 Def0001D8
+S A$spriteengine$511 Def0001C8
+S A$spriteengine$430 Def000183
+S A$spriteengine$421 Def000179
+S A$spriteengine$412 Def00016A
+S A$spriteengine$403 Def000160
+S A$spriteengine$340 Def000125
+S A$spriteengine$331 Def000113
+S A$spriteengine$322 Def000109
+S A$spriteengine$313 Def0000FB
+S A$spriteengine$304 Def0000F3
+S A$spriteengine$241 Def0000A7
+S A$spriteengine$232 Def00009C
+S A$spriteengine$223 Def000092
+S A$spriteengine$214 Def000084
+S A$spriteengine$205 Def00007B
+S A$spriteengine$160 Def000042
+S A$spriteengine$115 Def00001B
+S C$spriteengine.c$71$1_0$130 Def000237
+S C$spriteengine.c$12$2_0$116 Def00001B
+S A$spriteengine$1698 Def000820
+S A$spriteengine$1689 Def000809
+S A$spriteengine$1599 Def00073C
+S A$spriteengine$800 Def000311
+S A$spriteengine$710 Def00028A
+S A$spriteengine$620 Def000229
+S A$spriteengine$611 Def00021A
+S A$spriteengine$530 Def0001DD
+S A$spriteengine$521 Def0001D9
+S A$spriteengine$512 Def0001CB
+S A$spriteengine$440 Def00018A
+S A$spriteengine$422 Def00017A
+S A$spriteengine$413 Def00016B
+S A$spriteengine$404 Def000162
+S A$spriteengine$350 Def000133
+S A$spriteengine$332 Def000114
+S A$spriteengine$314 Def0000FE
+S A$spriteengine$305 Def0000F4
+S A$spriteengine$260 Def0000BE
+S A$spriteengine$242 Def0000A9
+S A$spriteengine$233 Def00009D
+S A$spriteengine$215 Def000087
+S A$spriteengine$206 Def00007C
+S A$spriteengine$161 Def000045
+S A$spriteengine$152 Def000035
+S A$spriteengine$116 Def00001C
+S C$spriteengine.c$128$6_0$148 Def000663
+S C$spriteengine.c$72$1_0$130 Def000243
+S C$spriteengine.c$20$1_0$119 Def00002D
+S A$spriteengine$1699 Def000823
+S A$spriteengine$900 Def000395
+S A$spriteengine$810 Def000327
+S A$spriteengine$801 Def000314
+S A$spriteengine$720 Def0002A0
+S A$spriteengine$711 Def00028D
+S A$spriteengine$621 Def00022A
+S A$spriteengine$612 Def00021E
+S A$spriteengine$540 Def0001DE
+S A$spriteengine$513 Def0001CE
+S A$spriteengine$450 Def000195
+S A$spriteengine$441 Def00018D
+S A$spriteengine$423 Def00017D
+S A$spriteengine$414 Def00016C
+S A$spriteengine$405 Def000163
+S A$spriteengine$360 Def00013A
+S A$spriteengine$351 Def000134
+S A$spriteengine$333 Def000115
+S A$spriteengine$315 Def000100
+S A$spriteengine$306 Def0000F5
+S A$spriteengine$270 Def0000CB
+S A$spriteengine$261 Def0000C1
+S A$spriteengine$243 Def0000AA
+S A$spriteengine$234 Def00009E
+S A$spriteengine$216 Def000089
+S A$spriteengine$207 Def00007D
+S A$spriteengine$180 Def00005D
+S A$spriteengine$162 Def000046
+S A$spriteengine$153 Def000038
+S A$spriteengine$117 Def00001D
+S A$spriteengine$108 Def000017
+S XG$updateTiles$0$0 Def00058B
 S G$isAnimationEnded$0$0 Def0001FB
-S C$spriteengine.c$45$1_0$104 Def0001B3
-S C$spriteengine.c$29$1_0$102 Def0000E9
-S A$spriteengine$1799 Def0008F9
-S A$spriteengine$820 Def000329
-S A$spriteengine$811 Def00031A
-S A$spriteengine$802 Def000301
-S A$spriteengine$730 Def0002A2
-S A$spriteengine$721 Def000293
-S A$spriteengine$712 Def000280
-S A$spriteengine$703 Def000278
-S A$spriteengine$631 Def00022C
-S A$spriteengine$550 Def0001E4
-S A$spriteengine$523 Def0001D1
-S A$spriteengine$514 Def0001C2
-S A$spriteengine$460 Def000197
-S A$spriteengine$451 Def000191
-S A$spriteengine$424 Def000170
-S A$spriteengine$415 Def000165
-S A$spriteengine$361 Def000136
-S A$spriteengine$352 Def000126
-S A$spriteengine$343 Def000119
-S A$spriteengine$334 Def00010B
-S A$spriteengine$325 Def000102
-S A$spriteengine$316 Def0000F7
-S A$spriteengine$307 Def0000EE
-S A$spriteengine$280 Def0000CD
-S A$spriteengine$262 Def0000B7
-S A$spriteengine$253 Def0000AC
-S A$spriteengine$244 Def0000A2
-S A$spriteengine$235 Def000094
-S A$spriteengine$226 Def00008B
-S A$spriteengine$217 Def000081
-S A$spriteengine$190 Def00005F
-S A$spriteengine$181 Def000050
-S A$spriteengine$172 Def00004A
-S A$spriteengine$163 Def00003C
-S A$spriteengine$154 Def00002D
-S A$spriteengine$136 Def000029
-S A$spriteengine$127 Def000020
-S A$spriteengine$118 Def000019
-S A$spriteengine$109 Def000011
-S C$spriteengine.c$57$1_0$111 Def000203
-S C$spriteengine.c$46$1_0$104 Def0001BF
-S C$spriteengine.c$37$1_0$104 Def000152
-S A$spriteengine$920 Def00039C
-S A$spriteengine$902 Def00038D
-S A$spriteengine$830 Def00033A
-S A$spriteengine$821 Def00032C
-S A$spriteengine$812 Def00031B
-S A$spriteengine$803 Def000304
-S A$spriteengine$740 Def0002B3
-S A$spriteengine$731 Def0002A3
-S A$spriteengine$722 Def000294
-S A$spriteengine$713 Def000281
-S A$spriteengine$704 Def000279
-S A$spriteengine$641 Def000237
-S A$spriteengine$632 Def00022D
-S A$spriteengine$560 Def0001F1
-S A$spriteengine$533 Def0001DB
-S A$spriteengine$524 Def0001D2
-S A$spriteengine$515 Def0001C6
-S A$spriteengine$470 Def0001A1
-S A$spriteengine$461 Def00019A
-S A$spriteengine$443 Def000185
-S A$spriteengine$425 Def000171
-S A$spriteengine$416 Def000166
-S A$spriteengine$380 Def00014A
-S A$spriteengine$362 Def000137
-S A$spriteengine$353 Def000129
-S A$spriteengine$344 Def00011D
-S A$spriteengine$335 Def00010E
-S A$spriteengine$326 Def000103
-S A$spriteengine$317 Def0000FA
-S A$spriteengine$308 Def0000EF
-S A$spriteengine$290 Def0000DA
-S A$spriteengine$281 Def0000CE
-S A$spriteengine$263 Def0000B9
-S A$spriteengine$254 Def0000AD
-S A$spriteengine$236 Def000097
-S A$spriteengine$227 Def00008C
-S A$spriteengine$218 Def000082
-S A$spriteengine$209 Def000074
-S A$spriteengine$191 Def000060
-S A$spriteengine$182 Def000054
-S A$spriteengine$173 Def00004B
-S A$spriteengine$164 Def00003E
-S A$spriteengine$155 Def00002F
-S A$spriteengine$128 Def000021
-S A$spriteengine$119 Def00001A
-S C$spriteengine.c$83$2_0$121 Def0003A1
-S C$spriteengine.c$58$1_0$111 Def000217
-S C$spriteengine.c$38$1_0$104 Def00015A
-S A$spriteengine$921 Def00039E
-S A$spriteengine$903 Def00038E
-S A$spriteengine$840 Def000344
-S A$spriteengine$831 Def00033B
-S A$spriteengine$822 Def00032F
-S A$spriteengine$813 Def00031E
-S A$spriteengine$804 Def000307
-S A$spriteengine$750 Def0002BD
-S A$spriteengine$741 Def0002B4
-S A$spriteengine$732 Def0002A6
-S A$spriteengine$723 Def000295
-S A$spriteengine$714 Def000282
-S A$spriteengine$705 Def00027A
-S A$spriteengine$651 Def000241
-S A$spriteengine$642 Def000238
-S A$spriteengine$633 Def00022E
-S A$spriteengine$624 Def000220
-S A$spriteengine$561 Def0001F2
-S A$spriteengine$525 Def0001D3
-S A$spriteengine$480 Def0001AB
-S A$spriteengine$471 Def0001A2
-S A$spriteengine$462 Def00019B
-S A$spriteengine$444 Def000186
-S A$spriteengine$426 Def000173
-S A$spriteengine$417 Def000167
-S A$spriteengine$381 Def00014B
-S A$spriteengine$363 Def000138
-S A$spriteengine$354 Def00012C
-S A$spriteengine$345 Def000120
-S A$spriteengine$336 Def000110
-S A$spriteengine$327 Def000104
-S A$spriteengine$309 Def0000F0
-S A$spriteengine$291 Def0000DC
-S A$spriteengine$282 Def0000D1
-S A$spriteengine$264 Def0000BA
-S A$spriteengine$255 Def0000AE
-S A$spriteengine$237 Def000099
-S A$spriteengine$228 Def00008D
-S A$spriteengine$192 Def000063
-S A$spriteengine$183 Def000057
-S A$spriteengine$174 Def00004C
-S A$spriteengine$165 Def00003F
-S A$spriteengine$156 Def000033
-S A$spriteengine$129 Def000022
-S C$spriteengine.c$81$2_0$115 Def0003A0
-S C$spriteengine.c$52$1_0$109 Def0001DE
-S A$spriteengine$940 Def0003AC
-S A$spriteengine$904 Def00038F
-S A$spriteengine$850 Def000351
-S A$spriteengine$841 Def000345
-S A$spriteengine$832 Def00033C
-S A$spriteengine$823 Def000330
-S A$spriteengine$814 Def000321
-S A$spriteengine$805 Def000309
-S A$spriteengine$760 Def0002C9
-S A$spriteengine$751 Def0002BE
-S A$spriteengine$742 Def0002B5
-S A$spriteengine$733 Def0002A9
-S A$spriteengine$724 Def000298
-S A$spriteengine$715 Def000285
-S A$spriteengine$706 Def00027D
-S A$spriteengine$670 Def00024F
-S A$spriteengine$643 Def000239
-S A$spriteengine$634 Def00022F
-S A$spriteengine$625 Def000223
-S A$spriteengine$562 Def0001F3
-S A$spriteengine$526 Def0001D4
-S A$spriteengine$490 Def0001B5
-S A$spriteengine$481 Def0001AC
-S A$spriteengine$472 Def0001A5
-S A$spriteengine$445 Def000187
-S A$spriteengine$436 Def00017F
-S A$spriteengine$427 Def000174
-S A$spriteengine$418 Def000168
-S A$spriteengine$409 Def00015A
-S A$spriteengine$382 Def00014C
-S A$spriteengine$373 Def000141
-S A$spriteengine$364 Def000139
-S A$spriteengine$355 Def00012D
-S A$spriteengine$346 Def000121
-S A$spriteengine$337 Def000111
-S A$spriteengine$328 Def000105
-S A$spriteengine$292 Def0000DD
-S A$spriteengine$283 Def0000D2
-S A$spriteengine$274 Def0000C4
-S A$spriteengine$265 Def0000BB
-S A$spriteengine$256 Def0000B1
-S A$spriteengine$238 Def00009A
-S A$spriteengine$229 Def00008E
-S A$spriteengine$184 Def000059
-S A$spriteengine$175 Def00004D
-S A$spriteengine$166 Def000040
-S C$spriteengine.c$85$2_0$121 Def000650
-S C$spriteengine.c$65$1_0$115 Def000244
-S C$spriteengine.c$53$1_0$109 Def0001E6
-S A$spriteengine$950 Def0003B8
-S A$spriteengine$941 Def0003AD
-S A$spriteengine$914 Def000398
-S A$spriteengine$905 Def000390
-S A$spriteengine$851 Def000353
-S A$spriteengine$842 Def000346
-S A$spriteengine$833 Def00033D
-S A$spriteengine$824 Def000333
-S A$spriteengine$815 Def000324
-S A$spriteengine$806 Def00030C
-S A$spriteengine$770 Def0002D8
-S A$spriteengine$761 Def0002CC
-S A$spriteengine$752 Def0002BF
-S A$spriteengine$743 Def0002B6
-S A$spriteengine$734 Def0002AA
-S A$spriteengine$725 Def00029B
-S A$spriteengine$716 Def000286
-S A$spriteengine$707 Def00027E
-S A$spriteengine$680 Def00025A
-S A$spriteengine$671 Def000250
-S A$spriteengine$644 Def00023A
-S A$spriteengine$635 Def000232
-S A$spriteengine$626 Def000226
-S A$spriteengine$608 Def000217
-S A$spriteengine$590 Def000206
-S A$spriteengine$563 Def0001F6
-S A$spriteengine$554 Def0001E6
-S A$spriteengine$527 Def0001D5
-S A$spriteengine$491 Def0001B6
-S A$spriteengine$482 Def0001AD
-S A$spriteengine$473 Def0001A6
-S A$spriteengine$455 Def000192
-S A$spriteengine$446 Def000188
-S A$spriteengine$437 Def000182
-S A$spriteengine$428 Def000177
-S A$spriteengine$419 Def000169
-S A$spriteengine$383 Def00014D
-S A$spriteengine$374 Def000144
-S A$spriteengine$356 Def00012E
-S A$spriteengine$347 Def000122
-S A$spriteengine$338 Def000112
-S A$spriteengine$329 Def000108
-S A$spriteengine$293 Def0000DE
-S A$spriteengine$284 Def0000D3
-S A$spriteengine$275 Def0000C7
-S A$spriteengine$266 Def0000BC
-S A$spriteengine$257 Def0000B2
-S A$spriteengine$248 Def0000A4
-S A$spriteengine$239 Def00009B
-S A$spriteengine$185 Def00005A
-S A$spriteengine$176 Def00004E
-S A$spriteengine$167 Def000041
-S C$spriteengine.c$86$2_0$121 Def0004F7
-S C$spriteengine.c$70$4_0$117 Def0002ED
-S C$spriteengine.c$54$1_0$109 Def0001FA
-S C$spriteengine.c$39$2_0$105 Def00017F
-S A$spriteengine$951 Def0003B9
-S A$spriteengine$915 Def000399
-S A$spriteengine$906 Def000391
-S A$spriteengine$870 Def00036A
-S A$spriteengine$861 Def00035E
-S A$spriteengine$852 Def000354
-S A$spriteengine$843 Def000347
-S A$spriteengine$834 Def00033E
-S A$spriteengine$825 Def000334
-S A$spriteengine$816 Def000325
-S A$spriteengine$807 Def00030F
-S A$spriteengine$780 Def0002E2
-S A$spriteengine$771 Def0002D9
-S A$spriteengine$762 Def0002CD
-S A$spriteengine$753 Def0002C0
-S A$spriteengine$744 Def0002B7
-S A$spriteengine$735 Def0002AD
-S A$spriteengine$726 Def00029E
-S A$spriteengine$717 Def000287
-S A$spriteengine$681 Def00025B
-S A$spriteengine$645 Def00023B
-S A$spriteengine$636 Def000233
-S A$spriteengine$627 Def000228
-S A$spriteengine$618 Def000218
-S A$spriteengine$591 Def000208
-S A$spriteengine$573 Def0001FA
-S A$spriteengine$564 Def0001F7
-S A$spriteengine$555 Def0001E9
-S A$spriteengine$528 Def0001D8
-S A$spriteengine$519 Def0001C8
-S A$spriteengine$492 Def0001B7
-S A$spriteengine$483 Def0001B0
-S A$spriteengine$456 Def000193
-S A$spriteengine$447 Def000189
-S A$spriteengine$438 Def000183
-S A$spriteengine$429 Def000179
-S A$spriteengine$393 Def000151
-S A$spriteengine$384 Def00014E
-S A$spriteengine$375 Def000145
-S A$spriteengine$357 Def000130
-S A$spriteengine$348 Def000125
-S A$spriteengine$339 Def000113
-S A$spriteengine$294 Def0000DF
-S A$spriteengine$285 Def0000D6
-S A$spriteengine$276 Def0000C9
-S A$spriteengine$267 Def0000BD
-S A$spriteengine$249 Def0000A7
-S A$spriteengine$186 Def00005B
-S A$spriteengine$177 Def00004F
-S A$spriteengine$168 Def000042
-S C$spriteengine.c$85$3_0$122 Def0003AE
-S C$spriteengine.c$71$4_0$117 Def0002F9
-S C$spriteengine.c$48$1_0$107 Def0001C0
+S C$spriteengine.c$46$1_0$121 Def000185
+S C$spriteengine.c$44$2_0$122 Def00017F
+S C$spriteengine.c$30$1_0$119 Def0000C4
+S C$spriteengine.c$12$3_0$117 Def000000
+S A$spriteengine$901 Def000396
+S A$spriteengine$820 Def000338
+S A$spriteengine$811 Def000328
+S A$spriteengine$802 Def000317
+S A$spriteengine$730 Def0002B0
+S A$spriteengine$721 Def0002A1
+S A$spriteengine$712 Def000290
+S A$spriteengine$703 Def00027F
+S A$spriteengine$622 Def00022B
+S A$spriteengine$550 Def0001EF
+S A$spriteengine$541 Def0001E0
+S A$spriteengine$514 Def0001D0
+S A$spriteengine$505 Def0001C0
+S A$spriteengine$460 Def00019F
+S A$spriteengine$451 Def000196
+S A$spriteengine$442 Def00018E
+S A$spriteengine$415 Def00016F
+S A$spriteengine$406 Def000164
+S A$spriteengine$370 Def000148
+S A$spriteengine$361 Def00013E
+S A$spriteengine$352 Def000135
+S A$spriteengine$334 Def000118
+S A$spriteengine$316 Def000101
+S A$spriteengine$307 Def0000F6
+S A$spriteengine$271 Def0000CC
+S A$spriteengine$262 Def0000C2
+S A$spriteengine$253 Def0000B4
+S A$spriteengine$244 Def0000AB
+S A$spriteengine$235 Def0000A1
+S A$spriteengine$217 Def00008A
+S A$spriteengine$208 Def00007E
+S A$spriteengine$190 Def000069
+S A$spriteengine$181 Def00005E
+S A$spriteengine$163 Def000049
+S A$spriteengine$154 Def00003B
+S A$spriteengine$136 Def00002C
+S A$spriteengine$127 Def000027
+S A$spriteengine$118 Def00001F
+S A$spriteengine$109 Def000018
+S C$spriteengine.c$60$1_0$126 Def0001E6
+S C$spriteengine.c$53$1_0$124 Def0001C0
+S C$spriteengine.c$47$1_0$121 Def000192
+S C$spriteengine.c$31$1_0$119 Def0000D7
+S C$spriteengine.c$22$1_0$119 Def000035
+S C$spriteengine.c$17$1_0$115 Def000027
+S A$spriteengine$830 Def000342
+S A$spriteengine$821 Def000339
+S A$spriteengine$812 Def000329
+S A$spriteengine$803 Def00031A
+S A$spriteengine$740 Def0002BB
+S A$spriteengine$731 Def0002B2
+S A$spriteengine$722 Def0002A2
+S A$spriteengine$713 Def000293
+S A$spriteengine$704 Def000280
+S A$spriteengine$623 Def00022C
+S A$spriteengine$560 Def0001F8
+S A$spriteengine$551 Def0001F0
+S A$spriteengine$542 Def0001E4
+S A$spriteengine$515 Def0001D1
+S A$spriteengine$506 Def0001C2
+S A$spriteengine$470 Def0001A9
+S A$spriteengine$461 Def0001A0
+S A$spriteengine$452 Def000197
+S A$spriteengine$443 Def000191
+S A$spriteengine$416 Def000170
+S A$spriteengine$407 Def000165
+S A$spriteengine$380 Def00014F
+S A$spriteengine$371 Def000149
+S A$spriteengine$353 Def000136
+S A$spriteengine$344 Def000126
+S A$spriteengine$335 Def000119
+S A$spriteengine$326 Def00010B
+S A$spriteengine$317 Def000102
+S A$spriteengine$308 Def0000F7
+S A$spriteengine$290 Def0000E3
+S A$spriteengine$281 Def0000D7
+S A$spriteengine$272 Def0000CD
+S A$spriteengine$254 Def0000B7
+S A$spriteengine$245 Def0000AC
+S A$spriteengine$236 Def0000A2
+S A$spriteengine$227 Def000094
+S A$spriteengine$218 Def00008B
+S A$spriteengine$209 Def000081
+S A$spriteengine$191 Def00006A
+S A$spriteengine$182 Def00005F
+S A$spriteengine$173 Def000050
+S A$spriteengine$164 Def00004A
+S A$spriteengine$155 Def00003C
+S A$spriteengine$146 Def00002D
+S A$spriteengine$128 Def000029
+S A$spriteengine$119 Def000020
+S C$spriteengine.c$61$1_0$126 Def0001FA
+S C$spriteengine.c$48$1_0$121 Def00019D
+S C$spriteengine.c$32$1_0$119 Def0000E9
+S C$spriteengine.c$23$1_0$119 Def000050
+S C$spriteengine.c$18$1_0$115 Def00002C
+S C$spriteengine.c$14$3_0$117 Def000003
+S A$spriteengine$930 Def0003A7
+S A$spriteengine$912 Def00039C
+S A$spriteengine$840 Def00034D
+S A$spriteengine$831 Def000343
+S A$spriteengine$822 Def00033A
+S A$spriteengine$813 Def00032C
+S A$spriteengine$804 Def00031B
+S A$spriteengine$750 Def0002C5
+S A$spriteengine$741 Def0002BC
+S A$spriteengine$732 Def0002B3
+S A$spriteengine$723 Def0002A3
+S A$spriteengine$714 Def000294
+S A$spriteengine$705 Def000281
+S A$spriteengine$660 Def00024A
+S A$spriteengine$633 Def000237
+S A$spriteengine$624 Def00022D
+S A$spriteengine$552 Def0001F1
+S A$spriteengine$525 Def0001DB
+S A$spriteengine$516 Def0001D2
+S A$spriteengine$507 Def0001C6
+S A$spriteengine$480 Def0001B3
+S A$spriteengine$471 Def0001AA
+S A$spriteengine$462 Def0001A1
+S A$spriteengine$453 Def00019A
+S A$spriteengine$435 Def000185
+S A$spriteengine$417 Def000171
+S A$spriteengine$408 Def000166
+S A$spriteengine$372 Def00014A
+S A$spriteengine$354 Def000137
+S A$spriteengine$345 Def000129
+S A$spriteengine$336 Def00011D
+S A$spriteengine$327 Def00010E
+S A$spriteengine$318 Def000103
+S A$spriteengine$309 Def0000FA
+S A$spriteengine$291 Def0000E4
+S A$spriteengine$282 Def0000DA
+S A$spriteengine$273 Def0000CE
+S A$spriteengine$255 Def0000B9
+S A$spriteengine$246 Def0000AD
+S A$spriteengine$228 Def000097
+S A$spriteengine$219 Def00008C
+S A$spriteengine$192 Def00006B
+S A$spriteengine$183 Def000060
+S A$spriteengine$174 Def000054
+S A$spriteengine$165 Def00004B
+S A$spriteengine$156 Def00003E
+S A$spriteengine$147 Def00002F
+S C$spriteengine.c$80$3_0$133 Def00027F
+S C$spriteengine.c$74$1_0$132 Def000244
+S C$spriteengine.c$55$1_0$124 Def0001C8
+S C$spriteengine.c$49$1_0$121 Def0001A8
+S C$spriteengine.c$33$1_0$119 Def0000FB
+S C$spriteengine.c$24$1_0$119 Def000064
+S C$spriteengine.c$15$3_0$117 Def000017
+S A$spriteengine$931 Def0003A9
+S A$spriteengine$913 Def00039E
+S A$spriteengine$841 Def00034E
+S A$spriteengine$832 Def000344
+S A$spriteengine$823 Def00033B
+S A$spriteengine$814 Def00032F
+S A$spriteengine$805 Def00031E
+S A$spriteengine$760 Def0002D5
+S A$spriteengine$751 Def0002C6
+S A$spriteengine$742 Def0002BD
+S A$spriteengine$733 Def0002B4
+S A$spriteengine$724 Def0002A6
+S A$spriteengine$715 Def000295
+S A$spriteengine$706 Def000282
+S A$spriteengine$670 Def000257
+S A$spriteengine$661 Def00024C
+S A$spriteengine$643 Def000241
+S A$spriteengine$634 Def000238
+S A$spriteengine$625 Def00022E
+S A$spriteengine$616 Def000220
+S A$spriteengine$553 Def0001F2
+S A$spriteengine$517 Def0001D3
+S A$spriteengine$490 Def0001BD
+S A$spriteengine$481 Def0001B4
+S A$spriteengine$472 Def0001AB
+S A$spriteengine$463 Def0001A2
+S A$spriteengine$454 Def00019B
+S A$spriteengine$436 Def000186
+S A$spriteengine$418 Def000173
+S A$spriteengine$409 Def000167
+S A$spriteengine$373 Def00014B
+S A$spriteengine$355 Def000138
+S A$spriteengine$346 Def00012C
+S A$spriteengine$337 Def000120
+S A$spriteengine$328 Def000110
+S A$spriteengine$319 Def000104
+S A$spriteengine$292 Def0000E5
+S A$spriteengine$283 Def0000DC
+S A$spriteengine$274 Def0000D1
+S A$spriteengine$256 Def0000BA
+S A$spriteengine$247 Def0000AE
+S A$spriteengine$229 Def000099
+S A$spriteengine$193 Def00006C
+S A$spriteengine$184 Def000063
+S A$spriteengine$175 Def000057
+S A$spriteengine$166 Def00004C
+S A$spriteengine$157 Def00003F
+S A$spriteengine$148 Def000033
+S C$spriteengine.c$68$1_0$130 Def000218
+S C$spriteengine.c$56$1_0$124 Def0001DD
+S C$spriteengine.c$34$1_0$119 Def00010B
+S C$spriteengine.c$25$1_0$119 Def000074
+S A$spriteengine$941 Def0003B5
+S A$spriteengine$932 Def0003AC
+S A$spriteengine$842 Def000351
+S A$spriteengine$833 Def000345
+S A$spriteengine$824 Def00033C
+S A$spriteengine$815 Def000330
+S A$spriteengine$806 Def000321
+S A$spriteengine$770 Def0002E0
+S A$spriteengine$761 Def0002D7
+S A$spriteengine$752 Def0002C9
+S A$spriteengine$743 Def0002BE
+S A$spriteengine$734 Def0002B5
+S A$spriteengine$725 Def0002A9
+S A$spriteengine$716 Def000298
+S A$spriteengine$707 Def000285
+S A$spriteengine$671 Def000258
+S A$spriteengine$662 Def00024F
+S A$spriteengine$635 Def000239
+S A$spriteengine$626 Def00022F
+S A$spriteengine$617 Def000223
+S A$spriteengine$590 Def000213
+S A$spriteengine$581 Def000203
+S A$spriteengine$554 Def0001F3
+S A$spriteengine$518 Def0001D4
+S A$spriteengine$482 Def0001B5
+S A$spriteengine$473 Def0001AC
+S A$spriteengine$464 Def0001A5
+S A$spriteengine$437 Def000187
+S A$spriteengine$428 Def00017F
+S A$spriteengine$419 Def000174
+S A$spriteengine$374 Def00014C
+S A$spriteengine$365 Def000141
+S A$spriteengine$356 Def000139
+S A$spriteengine$347 Def00012D
+S A$spriteengine$338 Def000121
+S A$spriteengine$329 Def000111
+S A$spriteengine$293 Def0000E8
+S A$spriteengine$284 Def0000DD
+S A$spriteengine$275 Def0000D2
+S A$spriteengine$266 Def0000C4
+S A$spriteengine$257 Def0000BB
+S A$spriteengine$248 Def0000B1
+S A$spriteengine$194 Def00006D
+S A$spriteengine$176 Def000059
+S A$spriteengine$167 Def00004D
+S A$spriteengine$158 Def000040
+S C$spriteengine.c$35$1_0$119 Def000126
+S C$spriteengine.c$26$1_0$119 Def000084
+S A$spriteengine$960 Def0003DB
+S A$spriteengine$951 Def0003C8
+S A$spriteengine$942 Def0003B8
+S A$spriteengine$933 Def0003AD
+S A$spriteengine$906 Def000398
+S A$spriteengine$861 Def000369
+S A$spriteengine$843 Def000353
+S A$spriteengine$834 Def000346
+S A$spriteengine$825 Def00033D
+S A$spriteengine$816 Def000333
+S A$spriteengine$807 Def000324
+S A$spriteengine$780 Def0002ED
+S A$spriteengine$771 Def0002E1
+S A$spriteengine$762 Def0002D8
+S A$spriteengine$753 Def0002CC
+S A$spriteengine$744 Def0002BF
+S A$spriteengine$735 Def0002B6
+S A$spriteengine$726 Def0002AA
+S A$spriteengine$717 Def00029B
+S A$spriteengine$708 Def000286
+S A$spriteengine$690 Def000270
+S A$spriteengine$672 Def00025A
+S A$spriteengine$663 Def000250
+S A$spriteengine$636 Def00023A
+S A$spriteengine$627 Def000232
+S A$spriteengine$618 Def000226
+S A$spriteengine$591 Def000214
+S A$spriteengine$582 Def000206
+S A$spriteengine$555 Def0001F6
+S A$spriteengine$546 Def0001E6
+S A$spriteengine$519 Def0001D5
+S A$spriteengine$483 Def0001B6
+S A$spriteengine$474 Def0001AD
+S A$spriteengine$465 Def0001A6
+S A$spriteengine$447 Def000192
+S A$spriteengine$438 Def000188
+S A$spriteengine$429 Def000182
+S A$spriteengine$375 Def00014D
+S A$spriteengine$366 Def000144
+S A$spriteengine$348 Def00012E
+S A$spriteengine$339 Def000122
+S A$spriteengine$285 Def0000DE
+S A$spriteengine$276 Def0000D3
+S A$spriteengine$267 Def0000C7
+S A$spriteengine$258 Def0000BC
+S A$spriteengine$249 Def0000B2
+S A$spriteengine$195 Def00006E
+S A$spriteengine$177 Def00005A
+S A$spriteengine$168 Def00004E
+S A$spriteengine$159 Def000041
+S C$spriteengine.c$63$1_0$128 Def0001FB
+S C$spriteengine.c$36$1_0$119 Def00013A
+S C$spriteengine.c$27$1_0$119 Def000094
 S XG$initEngine$0$0 Def00002C
 S _updateAnimations Def000244
-S A$spriteengine$970 Def0003E2
-S A$spriteengine$952 Def0003BB
-S A$spriteengine$907 Def000392
-S A$spriteengine$871 Def00036B
-S A$spriteengine$862 Def000361
-S A$spriteengine$853 Def000355
-S A$spriteengine$844 Def000348
-S A$spriteengine$835 Def00033F
-S A$spriteengine$826 Def000335
-S A$spriteengine$817 Def000326
-S A$spriteengine$808 Def000311
-S A$spriteengine$790 Def0002F3
-S A$spriteengine$781 Def0002E5
-S A$spriteengine$772 Def0002DA
-S A$spriteengine$763 Def0002D0
-S A$spriteengine$754 Def0002C1
-S A$spriteengine$745 Def0002B8
-S A$spriteengine$736 Def0002AE
-S A$spriteengine$727 Def00029F
-S A$spriteengine$718 Def00028A
-S A$spriteengine$691 Def000266
-S A$spriteengine$682 Def00025C
-S A$spriteengine$646 Def00023E
-S A$spriteengine$637 Def000236
-S A$spriteengine$628 Def000229
-S A$spriteengine$619 Def00021A
-S A$spriteengine$592 Def000209
-S A$spriteengine$583 Def0001FB
-S A$spriteengine$556 Def0001EB
-S A$spriteengine$538 Def0001DD
-S A$spriteengine$529 Def0001D9
-S A$spriteengine$493 Def0001BA
-S A$spriteengine$484 Def0001B1
-S A$spriteengine$466 Def00019D
-S A$spriteengine$457 Def000194
-S A$spriteengine$448 Def00018A
-S A$spriteengine$376 Def000146
-S A$spriteengine$358 Def000133
-S A$spriteengine$295 Def0000E0
-S A$spriteengine$277 Def0000CA
-S A$spriteengine$268 Def0000BE
-S A$spriteengine$196 Def000064
-S A$spriteengine$187 Def00005C
-S A$spriteengine$169 Def000045
-S C$spriteengine.c$97$2_0$121 Def000660
-S C$spriteengine.c$88$2_0$121 Def000417
-S C$spriteengine.c$67$2_0$115 Def000398
-S C$spriteengine.c$49$1_0$107 Def0001C8
-S A$spriteengine$980 Def0003F6
-S A$spriteengine$971 Def0003E4
-S A$spriteengine$953 Def0003BE
-S A$spriteengine$926 Def0003A0
-S A$spriteengine$908 Def000395
-S A$spriteengine$890 Def000382
-S A$spriteengine$872 Def00036C
-S A$spriteengine$863 Def000362
-S A$spriteengine$854 Def000356
-S A$spriteengine$845 Def000349
-S A$spriteengine$836 Def000340
-S A$spriteengine$827 Def000336
-S A$spriteengine$818 Def000327
-S A$spriteengine$809 Def000314
-S A$spriteengine$791 Def0002F6
-S A$spriteengine$782 Def0002E6
-S A$spriteengine$773 Def0002DB
-S A$spriteengine$764 Def0002D1
-S A$spriteengine$755 Def0002C2
-S A$spriteengine$746 Def0002B9
-S A$spriteengine$737 Def0002AF
-S A$spriteengine$728 Def0002A0
-S A$spriteengine$719 Def00028D
-S A$spriteengine$692 Def000267
-S A$spriteengine$683 Def00025D
-S A$spriteengine$656 Def000243
-S A$spriteengine$647 Def00023F
-S A$spriteengine$629 Def00022A
-S A$spriteengine$593 Def00020C
-S A$spriteengine$584 Def0001FD
-S A$spriteengine$557 Def0001EC
-S A$spriteengine$548 Def0001DE
-S A$spriteengine$494 Def0001BB
-S A$spriteengine$467 Def00019E
-S A$spriteengine$458 Def000195
-S A$spriteengine$449 Def00018D
-S A$spriteengine$377 Def000147
-S A$spriteengine$368 Def00013A
-S A$spriteengine$359 Def000134
-S A$spriteengine$296 Def0000E1
-S A$spriteengine$278 Def0000CB
-S A$spriteengine$269 Def0000C1
-S A$spriteengine$197 Def000067
-S A$spriteengine$188 Def00005D
-S C$spriteengine.c$94$4_0$123 Def000645
-S C$spriteengine.c$91$5_0$125 Def0004F1
-S C$spriteengine.c$89$2_0$121 Def000502
-S C$spriteengine.c$68$2_0$115 Def000266
-S A$spriteengine$981 Def0003F7
-S A$spriteengine$972 Def0003E7
-S A$spriteengine$963 Def0003CB
-S A$spriteengine$954 Def0003BF
-S A$spriteengine$945 Def0003AE
-S A$spriteengine$936 Def0003A1
-S A$spriteengine$909 Def000396
-S A$spriteengine$891 Def000383
-S A$spriteengine$882 Def000376
-S A$spriteengine$873 Def00036D
-S A$spriteengine$864 Def000365
-S A$spriteengine$855 Def000359
-S A$spriteengine$846 Def00034A
-S A$spriteengine$837 Def000341
-S A$spriteengine$828 Def000338
-S A$spriteengine$819 Def000328
-S A$spriteengine$792 Def0002F7
-S A$spriteengine$783 Def0002E7
-S A$spriteengine$774 Def0002DC
-S A$spriteengine$765 Def0002D2
-S A$spriteengine$756 Def0002C3
-S A$spriteengine$747 Def0002BA
-S A$spriteengine$738 Def0002B0
-S A$spriteengine$729 Def0002A1
-S A$spriteengine$693 Def000268
-S A$spriteengine$684 Def00025E
-S A$spriteengine$675 Def000251
-S A$spriteengine$666 Def000244
-S A$spriteengine$594 Def00020D
-S A$spriteengine$585 Def000201
-S A$spriteengine$558 Def0001EF
-S A$spriteengine$549 Def0001E0
-S A$spriteengine$477 Def0001A8
-S A$spriteengine$468 Def00019F
-S A$spriteengine$459 Def000196
-S A$spriteengine$378 Def000148
-S A$spriteengine$369 Def00013E
-S A$spriteengine$297 Def0000E2
-S A$spriteengine$279 Def0000CC
-S A$spriteengine$198 Def000069
-S A$spriteengine$189 Def00005E
-S C$spriteengine.c$92$5_0$125 Def000521
-S C$spriteengine.c$72$5_0$118 Def00035E
-S C$spriteengine.c$67$3_0$116 Def000251
-S A$spriteengine$991 Def000409
-S A$spriteengine$982 Def0003FA
-S A$spriteengine$973 Def0003EA
-S A$spriteengine$964 Def0003CE
-S A$spriteengine$955 Def0003C2
-S A$spriteengine$946 Def0003AF
-S A$spriteengine$937 Def0003A3
-S A$spriteengine$892 Def000384
-S A$spriteengine$883 Def000379
-S A$spriteengine$874 Def00036E
-S A$spriteengine$865 Def000368
-S A$spriteengine$847 Def00034B
-S A$spriteengine$838 Def000342
-S A$spriteengine$829 Def000339
-S A$spriteengine$784 Def0002EA
-S A$spriteengine$775 Def0002DD
-S A$spriteengine$766 Def0002D3
-S A$spriteengine$757 Def0002C4
-S A$spriteengine$748 Def0002BB
-S A$spriteengine$739 Def0002B2
-S A$spriteengine$694 Def000269
-S A$spriteengine$685 Def000261
-S A$spriteengine$667 Def000246
-S A$spriteengine$595 Def00020E
-S A$spriteengine$568 Def0001F8
-S A$spriteengine$559 Def0001F0
-S A$spriteengine$478 Def0001A9
-S A$spriteengine$469 Def0001A0
-S A$spriteengine$388 Def00014F
-S A$spriteengine$379 Def000149
-S A$spriteengine$298 Def0000E3
-S A$spriteengine$289 Def0000D7
-S A$spriteengine$199 Def00006A
-S C$spriteengine.c$87$4_0$123 Def00046C
-S C$spriteengine.c$73$5_0$118 Def000369
+S A$spriteengine$970 Def0003F2
+S A$spriteengine$961 Def0003DF
+S A$spriteengine$943 Def0003B9
+S A$spriteengine$907 Def000399
+S A$spriteengine$862 Def00036A
+S A$spriteengine$853 Def00035E
+S A$spriteengine$844 Def000354
+S A$spriteengine$835 Def000347
+S A$spriteengine$826 Def00033E
+S A$spriteengine$817 Def000334
+S A$spriteengine$808 Def000325
+S A$spriteengine$790 Def0002FB
+S A$spriteengine$781 Def0002F0
+S A$spriteengine$772 Def0002E2
+S A$spriteengine$763 Def0002D9
+S A$spriteengine$754 Def0002CD
+S A$spriteengine$745 Def0002C0
+S A$spriteengine$736 Def0002B7
+S A$spriteengine$727 Def0002AD
+S A$spriteengine$718 Def00029E
+S A$spriteengine$709 Def000287
+S A$spriteengine$691 Def000272
+S A$spriteengine$673 Def00025B
+S A$spriteengine$637 Def00023B
+S A$spriteengine$628 Def000233
+S A$spriteengine$619 Def000228
+S A$spriteengine$583 Def000208
+S A$spriteengine$565 Def0001FA
+S A$spriteengine$556 Def0001F7
+S A$spriteengine$547 Def0001E9
+S A$spriteengine$484 Def0001B7
+S A$spriteengine$475 Def0001B0
+S A$spriteengine$448 Def000193
+S A$spriteengine$439 Def000189
+S A$spriteengine$385 Def000151
+S A$spriteengine$376 Def00014E
+S A$spriteengine$367 Def000145
+S A$spriteengine$349 Def000130
+S A$spriteengine$286 Def0000DF
+S A$spriteengine$277 Def0000D6
+S A$spriteengine$268 Def0000C9
+S A$spriteengine$259 Def0000BD
+S A$spriteengine$196 Def000071
+S A$spriteengine$178 Def00005B
+S A$spriteengine$169 Def00004F
+S C$spriteengine.c$95$2_0$132 Def0003A0
+S C$spriteengine.c$77$2_0$132 Def000398
+S C$spriteengine.c$82$4_0$134 Def0002ED
+S C$spriteengine.c$37$1_0$119 Def000141
+S C$spriteengine.c$28$1_0$119 Def0000A4
+S A$spriteengine$971 Def0003F5
+S A$spriteengine$962 Def0003E2
+S A$spriteengine$944 Def0003BB
+S A$spriteengine$863 Def00036B
+S A$spriteengine$854 Def000361
+S A$spriteengine$845 Def000355
+S A$spriteengine$836 Def000348
+S A$spriteengine$827 Def00033F
+S A$spriteengine$818 Def000335
+S A$spriteengine$809 Def000326
+S A$spriteengine$791 Def0002FC
+S A$spriteengine$782 Def0002F3
+S A$spriteengine$773 Def0002E5
+S A$spriteengine$764 Def0002DA
+S A$spriteengine$755 Def0002D0
+S A$spriteengine$746 Def0002C1
+S A$spriteengine$737 Def0002B8
+S A$spriteengine$728 Def0002AE
+S A$spriteengine$719 Def00029F
+S A$spriteengine$692 Def000275
+S A$spriteengine$683 Def000266
+S A$spriteengine$674 Def00025C
+S A$spriteengine$638 Def00023E
+S A$spriteengine$629 Def000236
+S A$spriteengine$584 Def000209
+S A$spriteengine$575 Def0001FB
+S A$spriteengine$548 Def0001EB
+S A$spriteengine$485 Def0001BA
+S A$spriteengine$476 Def0001B1
+S A$spriteengine$458 Def00019D
+S A$spriteengine$449 Def000194
+S A$spriteengine$395 Def000152
+S A$spriteengine$368 Def000146
+S A$spriteengine$287 Def0000E0
+S A$spriteengine$269 Def0000CA
+S A$spriteengine$197 Def000072
+S A$spriteengine$188 Def000064
+S A$spriteengine$179 Def00005C
+S C$spriteengine.c$92$4_0$134 Def00038D
+S C$spriteengine.c$83$4_0$134 Def0002F9
+S C$spriteengine.c$65$1_0$128 Def000203
+S C$spriteengine.c$58$1_0$126 Def0001DE
+S C$spriteengine.c$38$1_0$119 Def000151
+S C$spriteengine.c$29$1_0$119 Def0000B4
+S A$spriteengine$972 Def0003F6
+S A$spriteengine$963 Def0003E4
+S A$spriteengine$945 Def0003BE
+S A$spriteengine$918 Def0003A0
+S A$spriteengine$882 Def000382
+S A$spriteengine$864 Def00036C
+S A$spriteengine$855 Def000362
+S A$spriteengine$846 Def000356
+S A$spriteengine$837 Def000349
+S A$spriteengine$828 Def000340
+S A$spriteengine$819 Def000336
+S A$spriteengine$792 Def0002FF
+S A$spriteengine$783 Def0002F6
+S A$spriteengine$774 Def0002E6
+S A$spriteengine$765 Def0002DB
+S A$spriteengine$756 Def0002D1
+S A$spriteengine$747 Def0002C2
+S A$spriteengine$738 Def0002B9
+S A$spriteengine$729 Def0002AF
+S A$spriteengine$693 Def000276
+S A$spriteengine$684 Def000267
+S A$spriteengine$675 Def00025D
+S A$spriteengine$648 Def000243
+S A$spriteengine$639 Def00023F
+S A$spriteengine$585 Def00020C
+S A$spriteengine$576 Def0001FD
+S A$spriteengine$549 Def0001EC
+S A$spriteengine$495 Def0001BF
+S A$spriteengine$486 Def0001BB
+S A$spriteengine$459 Def00019E
+S A$spriteengine$396 Def000154
+S A$spriteengine$369 Def000147
+S A$spriteengine$297 Def0000E9
+S A$spriteengine$288 Def0000E1
+S A$spriteengine$189 Def000067
+S C$spriteengine.c$90$5_0$136 Def000382
+S C$spriteengine.c$79$2_0$132 Def000266
+S C$spriteengine.c$77$3_0$133 Def000251
+S C$spriteengine.c$66$1_0$128 Def000217
+S A$spriteengine$991 Def000414
+S A$spriteengine$973 Def0003F7
+S A$spriteengine$964 Def0003E7
+S A$spriteengine$955 Def0003CB
+S A$spriteengine$946 Def0003BF
+S A$spriteengine$937 Def0003AE
+S A$spriteengine$928 Def0003A1
+S A$spriteengine$883 Def000383
+S A$spriteengine$874 Def000376
+S A$spriteengine$865 Def00036D
+S A$spriteengine$856 Def000365
+S A$spriteengine$847 Def000359
+S A$spriteengine$838 Def00034A
+S A$spriteengine$829 Def000341
+S A$spriteengine$793 Def000300
+S A$spriteengine$784 Def0002F7
+S A$spriteengine$775 Def0002E7
+S A$spriteengine$766 Def0002DC
+S A$spriteengine$757 Def0002D2
+S A$spriteengine$748 Def0002C3
+S A$spriteengine$739 Def0002BA
+S A$spriteengine$694 Def000277
+S A$spriteengine$685 Def000268
+S A$spriteengine$676 Def00025E
+S A$spriteengine$667 Def000251
+S A$spriteengine$658 Def000244
+S A$spriteengine$595 Def000215
+S A$spriteengine$586 Def00020D
+S A$spriteengine$577 Def000201
+S A$spriteengine$469 Def0001A8
+S A$spriteengine$397 Def000158
+S A$spriteengine$298 Def0000EC
+S A$spriteengine$289 Def0000E2
 S G$forceReload$0$0 Def0001C0
 S G$addEntity$0$0 Def00002D
-S A$spriteengine$992 Def00040C
-S A$spriteengine$983 Def0003FD
-S A$spriteengine$974 Def0003EC
-S A$spriteengine$965 Def0003D1
-S A$spriteengine$956 Def0003C3
-S A$spriteengine$947 Def0003B2
-S A$spriteengine$938 Def0003A7
-S A$spriteengine$893 Def000385
-S A$spriteengine$884 Def00037C
-S A$spriteengine$875 Def000371
-S A$spriteengine$857 Def00035B
-S A$spriteengine$848 Def00034D
-S A$spriteengine$839 Def000343
-S A$spriteengine$776 Def0002DE
-S A$spriteengine$767 Def0002D4
-S A$spriteengine$758 Def0002C5
-S A$spriteengine$749 Def0002BC
-S A$spriteengine$695 Def00026A
-S A$spriteengine$677 Def000254
-S A$spriteengine$668 Def00024A
-S A$spriteengine$596 Def00020F
-S A$spriteengine$488 Def0001B3
-S A$spriteengine$479 Def0001AA
-S A$spriteengine$299 Def0000E4
-S C$spriteengine.c$69$3_0$116 Def00027F
+S A$spriteengine$992 Def000417
+S A$spriteengine$983 Def000409
+S A$spriteengine$974 Def0003FA
+S A$spriteengine$965 Def0003EA
+S A$spriteengine$956 Def0003CE
+S A$spriteengine$947 Def0003C2
+S A$spriteengine$938 Def0003AF
+S A$spriteengine$929 Def0003A3
+S A$spriteengine$884 Def000384
+S A$spriteengine$875 Def000379
+S A$spriteengine$866 Def00036E
+S A$spriteengine$857 Def000368
+S A$spriteengine$839 Def00034B
+S A$spriteengine$794 Def000301
+S A$spriteengine$776 Def0002EA
+S A$spriteengine$767 Def0002DD
+S A$spriteengine$758 Def0002D3
+S A$spriteengine$749 Def0002C4
+S A$spriteengine$695 Def000278
+S A$spriteengine$686 Def000269
+S A$spriteengine$677 Def000261
+S A$spriteengine$659 Def000246
+S A$spriteengine$587 Def00020E
+S A$spriteengine$299 Def0000EE
+S C$spriteengine.c$84$5_0$135 Def00035E
 S G$isFrameEnded$0$0 Def0001DE
-S A$spriteengine$993 Def00040F
-S A$spriteengine$984 Def000400
-S A$spriteengine$975 Def0003EF
-S A$spriteengine$966 Def0003D4
-S A$spriteengine$957 Def0003C6
-S A$spriteengine$939 Def0003A9
-S A$spriteengine$894 Def000386
-S A$spriteengine$885 Def00037F
-S A$spriteengine$876 Def000372
-S A$spriteengine$849 Def00034E
-S A$spriteengine$777 Def0002DF
-S A$spriteengine$768 Def0002D5
-S A$spriteengine$759 Def0002C6
-S A$spriteengine$696 Def00026C
-S A$spriteengine$687 Def000263
-S A$spriteengine$678 Def000257
-S A$spriteengine$669 Def00024C
-S A$spriteengine$597 Def000210
-S A$spriteengine$498 Def0001BD
-S A$spriteengine$489 Def0001B4
+S A$spriteengine$993 Def00041A
+S A$spriteengine$984 Def00040C
+S A$spriteengine$975 Def0003FD
+S A$spriteengine$966 Def0003EC
+S A$spriteengine$957 Def0003D1
+S A$spriteengine$948 Def0003C3
+S A$spriteengine$939 Def0003B2
+S A$spriteengine$894 Def00038D
+S A$spriteengine$885 Def000385
+S A$spriteengine$876 Def00037C
+S A$spriteengine$867 Def000371
+S A$spriteengine$849 Def00035B
+S A$spriteengine$795 Def000304
+S A$spriteengine$768 Def0002DE
+S A$spriteengine$759 Def0002D4
+S A$spriteengine$696 Def000279
+S A$spriteengine$687 Def00026A
+S A$spriteengine$669 Def000254
+S A$spriteengine$588 Def00020F
+S C$spriteengine.c$85$5_0$135 Def000369
 S _isAnimationEnded Def0001FB
-S A$spriteengine$994 Def000412
-S A$spriteengine$985 Def000403
-S A$spriteengine$976 Def0003F0
-S A$spriteengine$967 Def0003D7
-S A$spriteengine$949 Def0003B5
-S A$spriteengine$895 Def000387
-S A$spriteengine$886 Def000380
-S A$spriteengine$877 Def000374
-S A$spriteengine$796 Def0002F9
-S A$spriteengine$778 Def0002E0
-S A$spriteengine$769 Def0002D7
-S A$spriteengine$697 Def00026F
-S A$spriteengine$679 Def000258
-S A$spriteengine$598 Def000213
-S A$spriteengine$589 Def000203
-S C$spriteengine.c$88$5_0$124 Def000473
-S C$spriteengine.c$78$4_0$117 Def00038D
-S C$spriteengine.c$75$5_0$119 Def000376
-S A$spriteengine$995 Def000413
-S A$spriteengine$986 Def000404
-S A$spriteengine$977 Def0003F1
-S A$spriteengine$968 Def0003DB
-S A$spriteengine$959 Def0003C8
-S A$spriteengine$896 Def00038A
-S A$spriteengine$869 Def000369
-S A$spriteengine$797 Def0002FA
-S A$spriteengine$788 Def0002ED
-S A$spriteengine$779 Def0002E1
-S A$spriteengine$698 Def000270
-S A$spriteengine$599 Def000214
-S C$spriteengine.c$99$2_0$126 Def000661
-S C$spriteengine.c$76$5_0$119 Def000382
-S A$spriteengine$996 Def000414
-S A$spriteengine$987 Def000406
-S A$spriteengine$978 Def0003F2
-S A$spriteengine$969 Def0003DF
-S A$spriteengine$897 Def00038B
-S A$spriteengine$798 Def0002FB
-S A$spriteengine$789 Def0002F0
-S A$spriteengine$699 Def000272
-S A$spriteengine$979 Def0003F5
-S A$spriteengine$799 Def0002FC
+S A$spriteengine$994 Def00041B
+S A$spriteengine$985 Def00040F
+S A$spriteengine$976 Def000400
+S A$spriteengine$967 Def0003EF
+S A$spriteengine$958 Def0003D4
+S A$spriteengine$949 Def0003C6
+S A$spriteengine$895 Def00038E
+S A$spriteengine$886 Def000386
+S A$spriteengine$877 Def00037F
+S A$spriteengine$868 Def000372
+S A$spriteengine$796 Def000307
+S A$spriteengine$769 Def0002DF
+S A$spriteengine$697 Def00027A
+S A$spriteengine$688 Def00026C
+S A$spriteengine$679 Def000263
+S A$spriteengine$589 Def000210
+S A$spriteengine$995 Def00041C
+S A$spriteengine$986 Def000412
+S A$spriteengine$977 Def000403
+S A$spriteengine$968 Def0003F0
+S A$spriteengine$959 Def0003D7
+S A$spriteengine$896 Def00038F
+S A$spriteengine$887 Def000387
+S A$spriteengine$878 Def000380
+S A$spriteengine$869 Def000374
+S A$spriteengine$797 Def000309
+S A$spriteengine$788 Def0002F9
+S A$spriteengine$698 Def00027D
+S A$spriteengine$689 Def00026F
+S A$spriteengine$996 Def00041D
+S A$spriteengine$987 Def000413
+S A$spriteengine$978 Def000404
+S A$spriteengine$969 Def0003F1
+S A$spriteengine$897 Def000390
+S A$spriteengine$888 Def00038A
+S A$spriteengine$798 Def00030C
+S A$spriteengine$789 Def0002FA
+S A$spriteengine$699 Def00027E
+S C$spriteengine.c$97$2_0$138 Def0003A1
+S A$spriteengine$997 Def000420
+S A$spriteengine$979 Def000406
+S A$spriteengine$898 Def000391
+S A$spriteengine$889 Def00038B
+S A$spriteengine$799 Def00030F
+S A$spriteengine$90 Def000004
 S G$setAnimation$0$0 Def000152
 A _DATA size A flags 0 addr 0
 S _entitylist Def000000
@@ -1515,7 +1483,7 @@ R 00 00 00 00 00 0C 01 00
 T 39 00 00 00 00 6F 26 00 29 09 E5 C5 11 0E 00 D5
 R 00 00 00 00 00 03 02 00
 T 46 00 00 CD 00 00 F1 EB C1 E1 73 23 72 FD 21
-R 00 00 00 00 02 04 04 00
+R 00 00 00 00 02 04 02 00
 T 52 00 00 00 00 FD 6E 00 26 00 29 09 5E 23 56 13
 R 00 00 00 00 00 03 02 00
 T 5F 00 00 13 FD 7E 00 12 FD 6E 00 26 00 29 09 5E
@@ -1698,7 +1666,7 @@ T 9C 03 00 DD F9 DD E1 C9
 R 00 00 00 00
 T A1 03 00
 R 00 00 00 00
-T A1 03 00 DD E5 DD 21 00 00 DD 39 21 F4 FF 39 F9
+T A1 03 00 DD E5 DD 21 00 00 DD 39 21 F8 FF 39 F9
 R 00 00 00 00
 T AE 03 00 AF DD 77 FE DD 77 FF
 R 00 00 00 00
@@ -1710,259 +1678,233 @@ T C2 03 00 98 E2 C8 03 EE 80
 R 00 00 00 00 00 05 00 00
 T C8 03 00
 R 00 00 00 00
-T C8 03 00 F2 5C 06 DD 7E FE DD 77 FC DD 7E FF DD
+T C8 03 00 F2 87 05 DD 7E FE DD 77 FC DD 7E FF DD
 R 00 00 00 00 00 04 00 00
 T D5 03 00 77 FD DD CB FC 26 DD CB FD 16 DD 7E FC
 R 00 00 00 00
-T E2 03 00 C6 00 00 00 DD 77 F4 DD 7E FD CE
+T E2 03 00 C6 00 00 00 DD 77 F8 DD 7E FD CE
 R 00 00 00 00 09 04 01 00
-T EB 03 00 00 00 00 DD 77 F5 E1 E5 7E DD 77 FA 23
+T EB 03 00 00 00 00 DD 77 F9 E1 E5 7E DD 77 FC 23
 R 00 00 00 00 89 03 01 00
-T F6 03 00 7E DD 77 FB DD 4E FA DD 46 FB 21 0B 00
+T F6 03 00 7E DD 77 FD DD 4E FC DD 46 FD 21 0B 00
 R 00 00 00 00
-T 03 04 00 09 CB 46 CA 50 06 DD 4E FA DD 46 FB 21
+T 03 04 00 09 CB 46 CA 7B 05 DD 4E FC DD 46 FD 21
 R 00 00 00 00 00 07 00 00
-T 10 04 00 05 00 09 7E DD 77 FC DD 6E FA DD 66 FB
+T 10 04 00 05 00 09 4E DD 6E FC DD 66 FD 5E 23 56
 R 00 00 00 00
-T 1D 04 00 4E 23 46 DD 6E FA DD 66 FB DD 5E FA DD
+T 1D 04 00 DD 6E FC DD 66 FD 13 13 DD 73 FA DD 72
 R 00 00 00 00
-T 2A 04 00 56 FB 03 03 DD 71 FA DD 70 FB 01 06 00
+T 2A 04 00 FB 11 06 00 19 7E DD 6E FC DD 66 FD 11
 R 00 00 00 00
-T 37 04 00 09 4E 21 07 00 19 5E 06 00 16 00 6B 62
+T 37 04 00 07 00 19 46 5F 16 00 D5 58 16 00 6B 62
 R 00 00 00 00
-T 44 04 00 29 29 29 29 29 29 19 EB 69 60 29 29 09
+T 44 04 00 29 29 29 29 29 29 19 D1 DD 75 FC DD 74
 R 00 00 00 00
-T 51 04 00 29 29 29 29 09 29 09 29 29 DD 4E FA DD
+T 51 04 00 FD 6B 62 29 29 19 29 29 29 29 19 29 19
 R 00 00 00 00
-T 5E 04 00 46 FB 09 23 23 19 11 07 00 19 7E DD 77
+T 5E 04 00 29 29 DD 5E FA DD 56 FB 19 23 23 DD 5E
 R 00 00 00 00
-T 6B 04 00 FD DD 7E FC B7 C2 F1 04 DD 7E FD 32
-R 00 00 00 00 00 09 00 00
-T 77 04 00 FF FF E1 E5 4E 23 46 69 60 5E 23 56 13
+T 6B 04 00 FC DD 56 FD 19 11 07 00 19 5E 79 B7 20
 R 00 00 00 00
-T 84 04 00 13 69 60 C5 01 06 00 09 C1 6E 26 00 D5
+T 78 04 00 7B 7B F5 33 CD 00 00 33 E1 E5 4E 23 46
+R 00 00 00 00 02 08 07 00
+T 85 04 00 69 60 5E 23 56 13 13 69 60 C5 01 06 00
 R 00 00 00 00
-T 91 04 00 5D 54 29 29 19 29 29 29 29 19 29 19 29
+T 92 04 00 09 C1 6E 26 00 D5 5D 54 29 29 19 29 29
 R 00 00 00 00
-T 9E 04 00 29 D1 19 EB 13 13 69 60 C5 01 07 00 09
+T 9F 04 00 29 29 19 29 19 29 29 D1 19 EB 13 13 69
 R 00 00 00 00
-T AB 04 00 C1 7E D5 5F 16 00 6B 62 29 29 29 29 29
+T AC 04 00 60 C5 01 07 00 09 C1 7E D5 5F 16 00 6B
 R 00 00 00 00
-T B8 04 00 29 19 D1 19 5D 54 23 23 23 23 23 7E DD
+T B9 04 00 62 29 29 29 29 29 29 19 D1 19 5D 54 23
 R 00 00 00 00
-T C5 04 00 77 FC 23 7E DD 77 FD 21 03 00 19 5E 23
+T C6 04 00 23 23 23 23 7E DD 77 FC 23 7E DD 77 FD
 R 00 00 00 00
-T D2 04 00 56 21 09 00 09 7E 23 66 6F 29 29 29 29
+T D3 04 00 21 09 00 09 4E 23 46 21 03 00 19 5E 23
 R 00 00 00 00
-T DF 04 00 29 CB F4 DD 4E FC DD 46 FD C5 D5 E5 CD
+T E0 04 00 56 DD 6E FC DD 66 FD E5 C5 D5 CD 00 00
+R 00 00 00 00 02 0E 06 00
+T ED 04 00 21 06 00 39 F9 18 7C
 R 00 00 00 00
-T EC 04 00 00 00 C3 45 06
-R 00 00 00 00 02 03 0C 00 00 06 00 00
-T F1 04 00
+T F4 04 00
 R 00 00 00 00
-T F1 04 00 DD 7E FD 32 FF FF E1 E5 7E DD 77 FC 23
+T F4 04 00 7B F5 33 CD 00 00 33 E1 E5 4E 23 46 69
+R 00 00 00 00 02 07 07 00
+T 01 05 00 60 5E 23 56 13 13 69 60 C5 01 06 00 09
 R 00 00 00 00
-T FE 04 00 7E DD 77 FD DD 6E FC DD 66 FD 7E DD 77
+T 0E 05 00 C1 6E 26 00 D5 5D 54 29 29 19 29 29 29
 R 00 00 00 00
-T 0B 05 00 FA 23 7E DD 77 FB DD 7E FA C6 02 DD 77
+T 1B 05 00 29 19 29 19 29 29 D1 19 EB 21 47 01 19
 R 00 00 00 00
-T 18 05 00 F6 DD 7E FB CE 00 DD 77 F7 DD 7E FC DD
+T 28 05 00 EB 69 60 C5 01 07 00 09 C1 7E D5 5F 16
 R 00 00 00 00
-T 25 05 00 77 FA DD 7E FD DD 77 FB DD 6E FA DD 66
+T 35 05 00 00 6B 62 29 29 29 29 29 29 19 D1 19 5D
 R 00 00 00 00
-T 32 05 00 FB 11 06 00 19 7E DD 77 FB DD 77 FA DD
+T 42 05 00 54 23 23 23 23 23 7E DD 77 FC 23 7E DD
 R 00 00 00 00
-T 3F 05 00 36 FB 00 4F 06 00 69 60 29 29 09 29 29
+T 4F 05 00 77 FD 21 09 00 09 4E 23 46 21 03 00 19
 R 00 00 00 00
-T 4C 05 00 29 29 09 29 09 29 29 DD 75 F8 DD 74 F9
+T 5C 05 00 5E 23 56 DD 6E FC DD 66 FD E5 C5 D5 CD
 R 00 00 00 00
-T 59 05 00 DD 7E F6 DD 86 F8 DD 77 FA DD 7E F7 DD
+T 69 05 00 00 00 21 06 00 39 F9
+R 00 00 00 00 02 03 06 00
+T 70 05 00
 R 00 00 00 00
-T 66 05 00 8E F9 DD 77 FB DD 7E FA C6 47 DD 77 F6
+T 70 05 00 E1 E5 4E 23 46 21 0B 00 09 36 00
 R 00 00 00 00
-T 73 05 00 DD 7E FB CE 01 DD 77 F7 DD 7E FC DD 77
+T 7B 05 00
 R 00 00 00 00
-T 80 05 00 FA DD 7E FD DD 77 FB DD 6E FA DD 66 FB
-R 00 00 00 00
-T 8D 05 00 11 07 00 19 7E DD 77 FB 4F 06 00 69 60
-R 00 00 00 00
-T 9A 05 00 29 29 29 29 29 29 09 DD 75 F8 DD 74 F9
-R 00 00 00 00
-T A7 05 00 DD 7E F6 DD 86 F8 DD 77 FA DD 7E F7 DD
-R 00 00 00 00
-T B4 05 00 8E F9 DD 77 FB DD 7E FA DD 77 F8 DD 7E
-R 00 00 00 00
-T C1 05 00 FB DD 77 F9 DD 6E F8 DD 66 F9 11 05 00
-R 00 00 00 00
-T CE 05 00 19 7E DD 77 F6 23 7E DD 77 F7 DD 6E FA
-R 00 00 00 00
-T DB 05 00 DD 66 FB 23 23 23 7E DD 77 FA 23 7E DD
-R 00 00 00 00
-T E8 05 00 77 FB DD 7E FA DD 77 F8 DD 7E FB DD 77
-R 00 00 00 00
-T F5 05 00 F9 DD 6E FC DD 66 FD 11 09 00 19 7E DD
-R 00 00 00 00
-T 02 06 00 77 FC 23 7E DD 77 FD DD 7E FC DD 77 FA
-R 00 00 00 00
-T 0F 06 00 DD 7E FD DD 77 FB 06 05
-R 00 00 00 00
-T 17 06 00
-R 00 00 00 00
-T 17 06 00 DD CB FA 26 DD CB FB 16 10 F6 DD 7E FA
-R 00 00 00 00
-T 24 06 00 DD 77 FC DD 7E FB F6 40 DD 77 FD C1 E1
-R 00 00 00 00
-T 31 06 00 E5 C5 E5 DD 6E F8 DD 66 F9 E5 DD 6E FC
-R 00 00 00 00
-T 3E 06 00 DD 66 FD E5 CD 00 00
-R 00 00 00 00 02 08 0C 00
-T 45 06 00
-R 00 00 00 00
-T 45 06 00 E1 E5 4E 23 46 21 0B 00 09 36 00
-R 00 00 00 00
-T 50 06 00
-R 00 00 00 00
-T 50 06 00 DD 34 FE C2 B5 03 DD 34 FF C3 B5 03
+T 7B 05 00 DD 34 FE C2 B5 03 DD 34 FF C3 B5 03
 R 00 00 00 00 00 07 00 00 00 0D 00 00
-T 5C 06 00
+T 87 05 00
 R 00 00 00 00
-T 5C 06 00 DD F9 DD E1 C9
+T 87 05 00 DD F9 DD E1 C9
 R 00 00 00 00
-T 61 06 00
+T 8C 05 00
 R 00 00 00 00
-T 61 06 00 DD E5 DD 21 00 00 DD 39 21 EF FF 39 F9
+T 8C 05 00 DD E5 DD 21 00 00 DD 39 21 EF FF 39 F9
 R 00 00 00 00
-T 6E 06 00 CD 00 00 AF DD 77 FC DD 77 FD
-R 00 00 00 00 02 04 01 00
-T 78 06 00
+T 99 05 00 CD 00 00 AF DD 77 FC DD 77 FD
+R 00 00 00 00 02 04 04 00
+T A3 05 00
 R 00 00 00 00
-T 78 06 00 3A 00 00 4F 06 00 DD 7E FC 91 DD 7E FD
+T A3 05 00 3A 00 00 4F 06 00 DD 7E FC 91 DD 7E FD
 R 00 00 00 00 00 04 02 00
-T 85 06 00 98 E2 8B 06 EE 80
+T B0 05 00 98 E2 B6 05 EE 80
 R 00 00 00 00 00 05 00 00
-T 8B 06 00
+T B6 05 00
 R 00 00 00 00
-T 8B 06 00 F2 D3 08 DD 7E FC DD 77 FA DD 7E FD DD
+T B6 05 00 F2 41 08 DD 7E FC DD 77 FA DD 7E FD DD
 R 00 00 00 00 00 04 00 00
-T 98 06 00 77 FB DD CB FA 26 DD CB FB 16 DD 7E FA
+T C3 05 00 77 FB DD CB FA 26 DD CB FB 16 DD 7E FA
 R 00 00 00 00
-T A5 06 00 C6 00 00 00 DD 77 FE DD 7E FB CE
+T D0 05 00 C6 00 00 00 DD 77 FE DD 7E FB CE
 R 00 00 00 00 09 04 01 00
-T AE 06 00 00 00 00 DD 77 FF DD 6E FE DD 66 FF 4E
+T D9 05 00 00 00 00 DD 77 FF DD 6E FE DD 66 FF 4E
 R 00 00 00 00 89 03 01 00
-T B9 06 00 23 46 21 05 00 09 7E DD 77 FB B7 C2
+T E4 05 00 23 46 21 05 00 09 7E DD 77 FB B7 C2
 R 00 00 00 00
-T C5 06 00 98 07 DD 7E FE DD 77 F8 DD 7E FF DD 77
+T F0 05 00 D3 06 DD 7E FE DD 77 F7 DD 7E FF DD 77
 R 00 00 00 00 00 03 00 00
-T D2 06 00 F9 AF DD 77 FE DD 77 FF
+T FD 05 00 F8 AF DD 77 FE DD 77 FF
 R 00 00 00 00
-T DA 06 00
+T 05 06 00
 R 00 00 00 00
-T DA 06 00 DD 6E F8 DD 66 F9 4E 23 46 69 60 5E 23
+T 05 06 00 DD 6E F7 DD 66 F8 4E 23 46 69 60 5E 23
 R 00 00 00 00
-T E7 06 00 56 13 13 69 60 C5 01 06 00 09 C1 6E 26
+T 12 06 00 56 13 13 69 60 C5 01 06 00 09 C1 6E 26
 R 00 00 00 00
-T F4 06 00 00 D5 5D 54 29 29 19 29 29 29 29 19 29
+T 1F 06 00 00 D5 5D 54 29 29 19 29 29 29 29 19 29
 R 00 00 00 00
-T 01 07 00 19 29 29 D1 19 EB 13 13 69 60 C5 01
+T 2C 06 00 19 29 29 D1 19 EB 13 13 69 60 C5 01
 R 00 00 00 00
-T 0D 07 00 07 00 09 C1 7E D5 5F 16 00 6B 62 29 29
+T 38 06 00 07 00 09 C1 7E D5 5F 16 00 6B 62 29 29
 R 00 00 00 00
-T 1A 07 00 29 29 29 29 19 D1 19 5D 54 23 23 6E 26
+T 45 06 00 29 29 29 29 19 D1 19 5D 54 23 23 6E 26
 R 00 00 00 00
-T 27 07 00 00 DD 7E FE 95 DD 7E FF 9C E2 35 07 EE
+T 52 06 00 00 DD 7E FE 95 DD 7E FF 9C E2 60 06 EE
 R 00 00 00 00 00 0D 00 00
-T 34 07 00 80
+T 5F 06 00 80
 R 00 00 00 00
-T 35 07 00
+T 60 06 00
 R 00 00 00 00
-T 35 07 00 F2 C7 08 69 60 C5 01 09 00 09 C1 7E DD
+T 60 06 00 F2 35 08 69 60 C5 01 09 00 09 C1 7E DD
 R 00 00 00 00 00 04 00 00
-T 42 07 00 77 FB 21 11 00 19 E5 DD 5E FE DD 56 FF
+T 6D 06 00 77 F5 23 7E DD 77 F6 21 11 00 19 E5 DD
 R 00 00 00 00
-T 4F 07 00 6B 62 29 19 D1 19 EB 1A DD 86 FB DD 77
+T 7A 06 00 5E FE DD 56 FF 6B 62 29 19 D1 19 EB 1A
 R 00 00 00 00
-T 5C 07 00 FA 69 60 23 23 23 23 7E DD 77 FB 6B 62
+T 87 06 00 26 00 DD 86 F5 DD 77 F9 7C DD 8E F6 DD
 R 00 00 00 00
-T 69 07 00 23 23 7E DD 6E FB 85 DD 77 FB 21 03 00
+T 94 06 00 77 FA 69 60 23 23 23 23 7E DD 77 FB 6B
 R 00 00 00 00
-T 76 07 00 09 4E 13 1A 81 DD 66 FA E5 33 DD 66 FB
+T A1 06 00 62 23 23 7E DD 6E FB 85 DD 77 FB 21
 R 00 00 00 00
-T 83 07 00 E5 33 F5 33 CD 00 00 F1 33 DD 34 FE C2
-R 00 00 00 00 02 08 02 00
-T 90 07 00 DA 06 DD 34 FF C3 DA 06
-R 00 00 00 00 00 03 00 00 00 09 00 00
-T 98 07 00
+T AD 06 00 03 00 09 4E 13 1A 81 DD 6E F9 DD 66 FA
 R 00 00 00 00
-T 98 07 00 DD 7E FE DD 77 F3 DD 7E FF DD 77 F4 AF
+T BA 06 00 E5 DD 66 FB E5 33 F5 33 CD 00 00 F1 F1
+R 00 00 00 00 02 0C 05 00
+T C7 06 00 DD 34 FE C2 05 06 DD 34 FF C3 05 06
+R 00 00 00 00 00 07 00 00 00 0D 00 00
+T D3 06 00
 R 00 00 00 00
-T A5 07 00 DD 77 FE DD 77 FF
+T D3 06 00 DD 7E FE DD 77 F1 DD 7E FF DD 77 F2 AF
 R 00 00 00 00
-T AB 07 00
+T E0 06 00 DD 77 FE DD 77 FF
 R 00 00 00 00
-T AB 07 00 DD 6E F3 DD 66 F4 7E DD 77 F5 23 7E DD
+T E6 06 00
 R 00 00 00 00
-T B8 07 00 77 F6 DD 6E F5 DD 66 F6 4E 23 46 03 03
+T E6 06 00 DD 6E F1 DD 66 F2 7E DD 77 F3 23 7E DD
 R 00 00 00 00
-T C5 07 00 DD 5E F5 DD 56 F6 21 06 00 19 5E 16 00
+T F3 06 00 77 F4 DD 6E F3 DD 66 F4 4E 23 46 03 03
 R 00 00 00 00
-T D2 07 00 6B 62 29 29 19 29 29 29 29 19 29 19 29
+T 00 07 00 DD 5E F3 DD 56 F4 21 06 00 19 5E 16 00
 R 00 00 00 00
-T DF 07 00 29 09 EB 21 47 01 19 EB DD 4E F5 DD 46
+T 0D 07 00 6B 62 29 29 19 29 29 29 29 19 29 19 29
 R 00 00 00 00
-T EC 07 00 F6 21 07 00 09 4E 06 00 69 60 29 29 29
+T 1A 07 00 29 09 EB 21 47 01 19 EB DD 4E F3 DD 46
 R 00 00 00 00
-T F9 07 00 29 29 29 09 19 4D 44 23 23 5E 16 00 DD
+T 27 07 00 F4 21 07 00 09 4E 06 00 69 60 29 29 29
 R 00 00 00 00
-T 06 08 00 7E FE 93 DD 7E FF 9A E2 12 08 EE 80
+T 34 07 00 29 29 29 09 19 4D 44 23 23 5E 16 00 DD
+R 00 00 00 00
+T 41 07 00 7E FE 93 DD 7E FF 9A E2 4D 07 EE 80
 R 00 00 00 00 00 0B 00 00
-T 12 08 00
+T 4D 07 00
 R 00 00 00 00
-T 12 08 00 F2 C7 08 DD 5E F5 DD 56 F6 21 09 00 19
+T 4D 07 00 F2 35 08 DD 6E F3 DD 66 F4 11 09 00 19
 R 00 00 00 00 00 04 00 00
-T 1F 08 00 7E DD 77 FA 21 11 00 09 E3 DD 4E FE DD
+T 5A 07 00 7E DD 77 EF 23 7E DD 77 F0 21 11 00 09
 R 00 00 00 00
-T 2C 08 00 46 FF 69 60 29 09 DD 75 F1 DD 74 F2 DD
+T 67 07 00 DD 75 F8 DD 74 F9 DD 4E FE DD 46 FF 69
 R 00 00 00 00
-T 39 08 00 7E F1 DD 86 EF DD 77 F7 DD 7E F2 DD 8E
+T 74 07 00 60 29 09 DD 75 FA DD 74 FB DD 7E FA DD
 R 00 00 00 00
-T 46 08 00 F0 DD 77 F8 DD 6E F7 DD 66 F8 7E DD 77
+T 81 07 00 86 F8 DD 77 F5 DD 7E FB DD 8E F9 DD 77
 R 00 00 00 00
-T 53 08 00 FB DD 86 FA DD 77 FA DD 4E F5 DD 46 F6
+T 8E 07 00 F6 DD 6E F5 DD 66 F6 7E DD 77 FB DD 77
 R 00 00 00 00
-T 60 08 00 21 04 00 09 7E DD 77 FB DD 7E F7 DD 77
+T 9B 07 00 FA DD 36 FB 00 DD 7E FA DD 86 EF DD 77
 R 00 00 00 00
-T 6D 08 00 F1 DD 7E F8 DD 77 F2 DD 6E F1 DD 66 F2
+T A8 07 00 F7 DD 7E FB DD 8E F0 DD 77 F8 DD 7E F3
 R 00 00 00 00
-T 7A 08 00 23 23 7E DD 77 F9 DD 7E FB DD 86 F9 DD
+T B5 07 00 DD 77 FA DD 7E F4 DD 77 FB DD 6E FA DD
 R 00 00 00 00
-T 87 08 00 77 FB DD 6E F5 DD 66 F6 23 23 23 7E DD
+T C2 07 00 66 FB 11 04 00 19 7E DD 77 FB DD 7E F5
 R 00 00 00 00
-T 94 08 00 77 F9 DD 6E F7 DD 66 F8 23 7E DD 77 F8
+T CF 07 00 DD 77 EF DD 7E F6 DD 77 F0 E1 E5 23 23
 R 00 00 00 00
-T A1 08 00 DD 7E F9 DD 86 F8 DD 77 F9 DD 66 FA DD
+T DC 07 00 7E DD 77 F9 DD 7E FB DD 86 F9 DD 77 FB
 R 00 00 00 00
-T AE 08 00 6E FB E5 DD 7E F9 F5 33 CD 00 00 F1 33
-R 00 00 00 00 02 0C 02 00
-T BB 08 00 DD 34 FE C2 AB 07 DD 34 FF C3 AB 07
+T E9 07 00 DD 7E F3 DD 77 F9 DD 7E F4 DD 77 FA DD
+R 00 00 00 00
+T F6 07 00 6E F9 DD 66 FA 23 23 23 7E DD 77 FA DD
+R 00 00 00 00
+T 03 08 00 6E F5 DD 66 F6 23 7E DD 77 F9 DD 7E FA
+R 00 00 00 00
+T 10 08 00 DD 86 F9 DD 77 FA DD 6E F7 DD 66 F8 E5
+R 00 00 00 00
+T 1D 08 00 DD 66 FB DD 6E FA E5 CD 00 00 F1 F1 DD
+R 00 00 00 00 02 0B 05 00
+T 2A 08 00 34 FE C2 E6 06 DD 34 FF C3 E6 06
+R 00 00 00 00 00 06 00 00 00 0C 00 00
+T 35 08 00
+R 00 00 00 00
+T 35 08 00 DD 34 FC C2 A3 05 DD 34 FD C3 A3 05
 R 00 00 00 00 00 07 00 00 00 0D 00 00
-T C7 08 00
+T 41 08 00
 R 00 00 00 00
-T C7 08 00 DD 34 FC C2 78 06 DD 34 FD C3 78 06
-R 00 00 00 00 00 07 00 00 00 0D 00 00
-T D3 08 00
+T 41 08 00 CD 00 00 DD F9 DD E1 C9
+R 00 00 00 00 02 04 01 00
+T 49 08 00
 R 00 00 00 00
-T D3 08 00 CD 00 00 DD F9 DD E1 C9
-R 00 00 00 00 02 04 0B 00
-T DB 08 00
-R 00 00 00 00
-T DB 08 00 DD E5 DD 21 00 00 DD 39 01 00 00 DD 6E
+T 49 08 00 DD E5 DD 21 00 00 DD 39 01 00 00 DD 6E
 R 00 00 00 00 00 0C 01 00
-T E8 08 00 04 26 00 29 09 5D 54 4E 23 46 03 03 03
+T 56 08 00 04 26 00 29 09 5D 54 4E 23 46 03 03 03
 R 00 00 00 00
-T F5 08 00 0A DD 86 05 02 EB 4E 23 46 03 03 03 03
+T 63 08 00 0A DD 86 05 02 EB 4E 23 46 03 03 03 03
 R 00 00 00 00
-T 02 09 00 0A DD 86 06 02 DD E1 C9
+T 70 08 00 0A DD 86 06 02 DD E1 C9
 R 00 00 00 00
 T 00 00 00
 R 00 00 07 00

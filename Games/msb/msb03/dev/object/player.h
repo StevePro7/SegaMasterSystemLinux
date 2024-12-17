@@ -12,7 +12,8 @@
 
 #include "../engine/spriteengine.h"
 
-typedef struct {
+typedef struct
+{
 	entity *entityreference;
 	unsigned int vx;
 	unsigned int vy;
@@ -32,4 +33,5 @@ void manage_player_walking_status(unsigned char player_number, unsigned int keys
 void manage_player_jumping_status(unsigned char player_number, unsigned int keys);
 void manage_player_crouched_status(unsigned char player_number, unsigned int keys);
 void update_player_positions(signed char delta_x, signed char delta_y);
+
 #endif //MSB_PLAYER_H
