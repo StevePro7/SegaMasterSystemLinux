@@ -7,7 +7,7 @@
 #include "../engine/spriteengine.h"
 #include "../../lib/SMSlib.h"
 #include "../../lib/PSGlib.h"
-
+#include "../devkit/_sms_manager.h"
 unsigned int scroll_x;
 unsigned int scroll_y;
 
@@ -18,7 +18,7 @@ void load_logo_assets() {
 }
 
 void load_logo_halfpalette() {
-	SMS_loadBGPaletteHalfBrightness(logo1985palette_bin);
+	devkit_SMS_loadBGPaletteHalfBrightness(logo1985palette_bin);
 }
 
 void load_logo_fullpalette() {

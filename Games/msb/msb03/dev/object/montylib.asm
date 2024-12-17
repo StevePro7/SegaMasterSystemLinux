@@ -8,29 +8,29 @@
 ;--------------------------------------------------------
 ; Public variables in this module
 ;--------------------------------------------------------
-	.globl _GSL_getCurrentY
-	.globl _GSL_getCurrentX
-	.globl _GSL_getMapHeightInPixels
-	.globl _GSL_getMapWidthInPixels
-	.globl _GSL_VBlank
-	.globl _GSL_scroll
-	.globl _GSL_refreshVDP
-	.globl _GSL_positionWindow
-	.globl _GSL_initializeMap
-	.globl _SMS_VRAMmemset
-	.globl _SMS_copySpritestoSAT
-	.globl _SMS_waitForVBlank
-	.globl _SMS_setSpriteMode
-	.globl _SMS_setBackdropColor
-	.globl _SMS_VDPturnOnFeature
-	.globl _SMS_init
+	.globl _devkit_GSL_getCurrentY
+	.globl _devkit_GSL_getCurrentX
+	.globl _devkit_GSL_getMapHeightInPixels
+	.globl _devkit_GSL_getMapWidthInPixels
+	.globl _devkit_GSL_VBlank
+	.globl _devkit_GSL_scroll
+	.globl _devkit_GSL_refreshVDP
+	.globl _devkit_GSL_positionWindow
+	.globl _devkit_GSL_initializeMap
+	.globl _devkit_SMS_VRAMmemset
+	.globl _devkit_SMS_copySpritestoSAT
+	.globl _devkit_SMS_waitForVBlank
+	.globl _devkit_SPRITEMODE_NORMAL
+	.globl _devkit_SMS_setSpriteMode
+	.globl _devkit_SMS_setBackdropColor
+	.globl _devkit_SMS_displayOn
+	.globl _devkit_VDPFEATURE_LEFTCOLBLANK
+	.globl _devkit_SMS_VDPturnOnFeature
+	.globl _devkit_SMS_init
 	.globl _manage_sound_frame
 	.globl _rand_index
 	.globl _frame_cnt
 	.globl _pause
-	.globl _SMS_SRAM
-	.globl _SRAM_bank_to_be_mapped_on_slot2
-	.globl _ROM_bank_to_be_mapped_on_slot2
 	.globl _randLUT
 	.globl _init_console
 	.globl _init_scroll
@@ -46,12 +46,6 @@
 ; ram data
 ;--------------------------------------------------------
 	.area _DATA
-G$ROM_bank_to_be_mapped_on_slot2$0_0$0 == 0xffff
-_ROM_bank_to_be_mapped_on_slot2	=	0xffff
-G$SRAM_bank_to_be_mapped_on_slot2$0_0$0 == 0xfffc
-_SRAM_bank_to_be_mapped_on_slot2	=	0xfffc
-G$SMS_SRAM$0_0$0 == 0x8000
-_SMS_SRAM	=	0x8000
 G$pause$0_0$0==.
 _pause::
 	.ds 1
@@ -87,20 +81,20 @@ _rand_index::
 	.area _CODE
 	G$init_console$0$0	= .
 	.globl	G$init_console$0$0
-	C$montylib.c$16$0_0$90	= .
-	.globl	C$montylib.c$16$0_0$90
-;montylib.c:16: void init_console() {
+	C$montylib.c$16$0_0$103	= .
+	.globl	C$montylib.c$16$0_0$103
+;montylib.c:16: void init_console()
 ;	---------------------------------
 ; Function init_console
 ; ---------------------------------
 _init_console::
-	C$montylib.c$17$1_0$90	= .
-	.globl	C$montylib.c$17$1_0$90
-;montylib.c:17: SMS_init();
-	call	_SMS_init
-	C$montylib.c$18$1_0$90	= .
-	.globl	C$montylib.c$18$1_0$90
-;montylib.c:18: SMS_VRAMmemset(0x4000, 0x00, 0x4000);
+	C$montylib.c$18$1_0$103	= .
+	.globl	C$montylib.c$18$1_0$103
+;montylib.c:18: devkit_SMS_init();
+	call	_devkit_SMS_init
+	C$montylib.c$19$1_0$103	= .
+	.globl	C$montylib.c$19$1_0$103
+;montylib.c:19: devkit_SMS_VRAMmemset(0x4000, 0x00, 0x4000);
 	ld	hl, #0x4000
 	push	hl
 	xor	a, a
@@ -108,11 +102,11 @@ _init_console::
 	inc	sp
 	ld	l, #0x00
 	push	hl
-	call	_SMS_VRAMmemset
+	call	_devkit_SMS_VRAMmemset
 	pop	af
-	C$montylib.c$19$1_0$90	= .
-	.globl	C$montylib.c$19$1_0$90
-;montylib.c:19: SMS_VRAMmemset(0xC000, 0x00, 0x0020);
+	C$montylib.c$20$1_0$103	= .
+	.globl	C$montylib.c$20$1_0$103
+;montylib.c:20: devkit_SMS_VRAMmemset(0xC000, 0x00, 0x0020);
 	inc	sp
 	ld	hl,#0x0020
 	ex	(sp),hl
@@ -121,40 +115,48 @@ _init_console::
 	inc	sp
 	ld	hl, #0xc000
 	push	hl
-	call	_SMS_VRAMmemset
+	call	_devkit_SMS_VRAMmemset
 	pop	af
 	pop	af
 	inc	sp
-	C$montylib.c$20$1_0$90	= .
-	.globl	C$montylib.c$20$1_0$90
-;montylib.c:20: SMS_setSpriteMode(SPRITEMODE_NORMAL);
-	ld	l, #0x00
-	call	_SMS_setSpriteMode
-	C$montylib.c$21$1_0$90	= .
-	.globl	C$montylib.c$21$1_0$90
-;montylib.c:21: SMS_displayOn();
-	ld	hl, #0x0140
-	call	_SMS_VDPturnOnFeature
-	C$montylib.c$22$1_0$90	= .
-	.globl	C$montylib.c$22$1_0$90
-;montylib.c:22: SMS_VDPturnOnFeature(VDPFEATURE_LEFTCOLBLANK);
-	ld	hl, #0x0020
-	call	_SMS_VDPturnOnFeature
-	C$montylib.c$23$1_0$90	= .
-	.globl	C$montylib.c$23$1_0$90
-;montylib.c:23: SMS_setBackdropColor(0);
-	ld	l, #0x00
-	call	_SMS_setBackdropColor
-	C$montylib.c$24$1_0$90	= .
-	.globl	C$montylib.c$24$1_0$90
-;montylib.c:24: pause = false;
+	C$montylib.c$21$1_0$103	= .
+	.globl	C$montylib.c$21$1_0$103
+;montylib.c:21: devkit_SMS_setSpriteMode(devkit_SPRITEMODE_NORMAL());
+	call	_devkit_SPRITEMODE_NORMAL
+	ld	a, l
+	push	af
+	inc	sp
+	call	_devkit_SMS_setSpriteMode
+	inc	sp
+	C$montylib.c$22$1_0$103	= .
+	.globl	C$montylib.c$22$1_0$103
+;montylib.c:22: devkit_SMS_displayOn();
+	call	_devkit_SMS_displayOn
+	C$montylib.c$23$1_0$103	= .
+	.globl	C$montylib.c$23$1_0$103
+;montylib.c:23: devkit_SMS_VDPturnOnFeature(devkit_VDPFEATURE_LEFTCOLBLANK());
+	call	_devkit_VDPFEATURE_LEFTCOLBLANK
+	push	hl
+	call	_devkit_SMS_VDPturnOnFeature
+	pop	af
+	C$montylib.c$24$1_0$103	= .
+	.globl	C$montylib.c$24$1_0$103
+;montylib.c:24: devkit_SMS_setBackdropColor(0);
+	xor	a, a
+	push	af
+	inc	sp
+	call	_devkit_SMS_setBackdropColor
+	inc	sp
+	C$montylib.c$25$1_0$103	= .
+	.globl	C$montylib.c$25$1_0$103
+;montylib.c:25: pause = false;
 	ld	a, #0x00
 	ld	(#_pause), a
-	C$montylib.c$25$1_0$90	= .
-	.globl	C$montylib.c$25$1_0$90
-;montylib.c:25: }
-	C$montylib.c$25$1_0$90	= .
-	.globl	C$montylib.c$25$1_0$90
+	C$montylib.c$26$1_0$103	= .
+	.globl	C$montylib.c$26$1_0$103
+;montylib.c:26: }
+	C$montylib.c$26$1_0$103	= .
+	.globl	C$montylib.c$26$1_0$103
 	XG$init_console$0$0	= .
 	.globl	XG$init_console$0$0
 	ret
@@ -418,16 +420,16 @@ _randLUT:
 	.db 0x00
 	G$init_scroll$0$0	= .
 	.globl	G$init_scroll$0$0
-	C$montylib.c$27$1_0$92	= .
-	.globl	C$montylib.c$27$1_0$92
-;montylib.c:27: void init_scroll(void *scrolltable, void *metatiles, unsigned int scroll_x, unsigned int scroll_y) {
+	C$montylib.c$28$1_0$105	= .
+	.globl	C$montylib.c$28$1_0$105
+;montylib.c:28: void init_scroll(void *scrolltable, void *metatiles, unsigned int scroll_x, unsigned int scroll_y)
 ;	---------------------------------
 ; Function init_scroll
 ; ---------------------------------
 _init_scroll::
-	C$montylib.c$28$1_0$92	= .
-	.globl	C$montylib.c$28$1_0$92
-;montylib.c:28: GSL_initializeMap(scrolltable, metatiles);
+	C$montylib.c$30$1_0$105	= .
+	.globl	C$montylib.c$30$1_0$105
+;montylib.c:30: devkit_GSL_initializeMap(scrolltable, metatiles);
 	ld	iy, #4
 	add	iy, sp
 	ld	l, 0 (iy)
@@ -436,12 +438,12 @@ _init_scroll::
 	ld	l, -2 (iy)
 	ld	h, -1 (iy)
 	push	hl
-	call	_GSL_initializeMap
+	call	_devkit_GSL_initializeMap
 	pop	af
 	pop	af
-	C$montylib.c$29$1_0$92	= .
-	.globl	C$montylib.c$29$1_0$92
-;montylib.c:29: GSL_positionWindow(scroll_x,scroll_y);
+	C$montylib.c$31$1_0$105	= .
+	.globl	C$montylib.c$31$1_0$105
+;montylib.c:31: devkit_GSL_positionWindow(scroll_x,scroll_y);
 	ld	iy, #8
 	add	iy, sp
 	ld	l, 0 (iy)
@@ -450,25 +452,25 @@ _init_scroll::
 	ld	l, -2 (iy)
 	ld	h, -1 (iy)
 	push	hl
-	call	_GSL_positionWindow
+	call	_devkit_GSL_positionWindow
 	pop	af
 	pop	af
-	C$montylib.c$30$1_0$92	= .
-	.globl	C$montylib.c$30$1_0$92
-;montylib.c:30: GSL_refreshVDP();
-	C$montylib.c$31$1_0$92	= .
-	.globl	C$montylib.c$31$1_0$92
-;montylib.c:31: }
-	C$montylib.c$31$1_0$92	= .
-	.globl	C$montylib.c$31$1_0$92
+	C$montylib.c$32$1_0$105	= .
+	.globl	C$montylib.c$32$1_0$105
+;montylib.c:32: devkit_GSL_refreshVDP();
+	C$montylib.c$33$1_0$105	= .
+	.globl	C$montylib.c$33$1_0$105
+;montylib.c:33: }
+	C$montylib.c$33$1_0$105	= .
+	.globl	C$montylib.c$33$1_0$105
 	XG$init_scroll$0$0	= .
 	.globl	XG$init_scroll$0$0
-	jp	_GSL_refreshVDP
+	jp	_devkit_GSL_refreshVDP
 	G$move_scroll$0$0	= .
 	.globl	G$move_scroll$0$0
-	C$montylib.c$33$1_0$94	= .
-	.globl	C$montylib.c$33$1_0$94
-;montylib.c:33: void move_scroll(signed char delta_x, signed char delta_y) {
+	C$montylib.c$35$1_0$107	= .
+	.globl	C$montylib.c$35$1_0$107
+;montylib.c:35: void move_scroll(signed char delta_x, signed char delta_y)
 ;	---------------------------------
 ; Function move_scroll
 ; ---------------------------------
@@ -476,21 +478,21 @@ _move_scroll::
 	push	ix
 	ld	ix,#0
 	add	ix,sp
-	C$montylib.c$34$1_0$94	= .
-	.globl	C$montylib.c$34$1_0$94
-;montylib.c:34: signed int currentx = GSL_getCurrentX();
-	call	_GSL_getCurrentX
-	C$montylib.c$35$1_0$94	= .
-	.globl	C$montylib.c$35$1_0$94
-;montylib.c:35: signed int currenty = GSL_getCurrentY();
+	C$montylib.c$37$1_0$107	= .
+	.globl	C$montylib.c$37$1_0$107
+;montylib.c:37: signed int currentx = devkit_GSL_getCurrentX();
+	call	_devkit_GSL_getCurrentX
+	C$montylib.c$38$1_0$107	= .
+	.globl	C$montylib.c$38$1_0$107
+;montylib.c:38: signed int currenty = devkit_GSL_getCurrentY();
 	push	hl
-	call	_GSL_getCurrentY
+	call	_devkit_GSL_getCurrentY
 	pop	de
 	ld	c, l
 	ld	b, h
-	C$montylib.c$36$1_0$94	= .
-	.globl	C$montylib.c$36$1_0$94
-;montylib.c:36: if((currentx + delta_x) < 0) delta_x = 0;
+	C$montylib.c$39$1_0$107	= .
+	.globl	C$montylib.c$39$1_0$107
+;montylib.c:39: if((currentx + delta_x) < 0) delta_x = 0;
 	ld	a, 4 (ix)
 	ld	l, a
 	rla
@@ -501,9 +503,9 @@ _move_scroll::
 	jr	Z, 00102$
 	ld	4 (ix), #0
 00102$:
-	C$montylib.c$37$1_0$94	= .
-	.globl	C$montylib.c$37$1_0$94
-;montylib.c:37: if((currentx + delta_x) > (GSL_getMapWidthInPixels() - 256)) delta_x = 0;
+	C$montylib.c$40$1_0$107	= .
+	.globl	C$montylib.c$40$1_0$107
+;montylib.c:40: if((currentx + delta_x) > (devkit_GSL_getMapWidthInPixels() - 256)) delta_x = 0;
 	ld	a, 4 (ix)
 	ld	l, a
 	rla
@@ -512,7 +514,7 @@ _move_scroll::
 	add	hl, de
 	push	bc
 	push	hl
-	call	_GSL_getMapWidthInPixels
+	call	_devkit_GSL_getMapWidthInPixels
 	pop	de
 	pop	bc
 	ld	a,h
@@ -523,9 +525,9 @@ _move_scroll::
 	jr	NC, 00104$
 	ld	4 (ix), #0
 00104$:
-	C$montylib.c$38$1_0$94	= .
-	.globl	C$montylib.c$38$1_0$94
-;montylib.c:38: if((currenty + delta_y) < 0) delta_y = 0;
+	C$montylib.c$41$1_0$107	= .
+	.globl	C$montylib.c$41$1_0$107
+;montylib.c:41: if((currenty + delta_y) < 0) delta_y = 0;
 	ld	a, 5 (ix)
 	ld	l, a
 	rla
@@ -536,9 +538,9 @@ _move_scroll::
 	jr	Z, 00106$
 	ld	5 (ix), #0
 00106$:
-	C$montylib.c$39$1_0$94	= .
-	.globl	C$montylib.c$39$1_0$94
-;montylib.c:39: if((currenty + delta_y) > (GSL_getMapHeightInPixels() - 192)) delta_y = 0;
+	C$montylib.c$42$1_0$107	= .
+	.globl	C$montylib.c$42$1_0$107
+;montylib.c:42: if((currenty + delta_y) > (devkit_GSL_getMapHeightInPixels() - 192)) delta_y = 0;
 	ld	a, 5 (ix)
 	ld	l, a
 	rla
@@ -546,7 +548,7 @@ _move_scroll::
 	ld	h, a
 	add	hl, bc
 	push	hl
-	call	_GSL_getMapHeightInPixels
+	call	_devkit_GSL_getMapHeightInPixels
 	pop	de
 	ld	a, l
 	add	a, #0x40
@@ -559,114 +561,114 @@ _move_scroll::
 	jr	NC, 00108$
 	ld	5 (ix), #0
 00108$:
-	C$montylib.c$41$1_0$94	= .
-	.globl	C$montylib.c$41$1_0$94
-;montylib.c:41: GSL_scroll(delta_x,delta_y);
+	C$montylib.c$44$1_0$107	= .
+	.globl	C$montylib.c$44$1_0$107
+;montylib.c:44: devkit_GSL_scroll(delta_x,delta_y);
 	ld	h, 5 (ix)
 	ld	l, 4 (ix)
 	push	hl
-	call	_GSL_scroll
+	call	_devkit_GSL_scroll
 	pop	af
-	C$montylib.c$42$1_0$94	= .
-	.globl	C$montylib.c$42$1_0$94
-;montylib.c:42: }
+	C$montylib.c$45$1_0$107	= .
+	.globl	C$montylib.c$45$1_0$107
+;montylib.c:45: }
 	pop	ix
-	C$montylib.c$42$1_0$94	= .
-	.globl	C$montylib.c$42$1_0$94
+	C$montylib.c$45$1_0$107	= .
+	.globl	C$montylib.c$45$1_0$107
 	XG$move_scroll$0$0	= .
 	.globl	XG$move_scroll$0$0
 	ret
 	G$get_scroll_x$0$0	= .
 	.globl	G$get_scroll_x$0$0
-	C$montylib.c$44$1_0$95	= .
-	.globl	C$montylib.c$44$1_0$95
-;montylib.c:44: unsigned int get_scroll_x() {
+	C$montylib.c$47$1_0$108	= .
+	.globl	C$montylib.c$47$1_0$108
+;montylib.c:47: unsigned int get_scroll_x()
 ;	---------------------------------
 ; Function get_scroll_x
 ; ---------------------------------
 _get_scroll_x::
-	C$montylib.c$45$1_0$95	= .
-	.globl	C$montylib.c$45$1_0$95
-;montylib.c:45: return GSL_getCurrentX();
-	C$montylib.c$46$1_0$95	= .
-	.globl	C$montylib.c$46$1_0$95
-;montylib.c:46: }
-	C$montylib.c$46$1_0$95	= .
-	.globl	C$montylib.c$46$1_0$95
+	C$montylib.c$49$1_0$108	= .
+	.globl	C$montylib.c$49$1_0$108
+;montylib.c:49: return devkit_GSL_getCurrentX();
+	C$montylib.c$50$1_0$108	= .
+	.globl	C$montylib.c$50$1_0$108
+;montylib.c:50: }
+	C$montylib.c$50$1_0$108	= .
+	.globl	C$montylib.c$50$1_0$108
 	XG$get_scroll_x$0$0	= .
 	.globl	XG$get_scroll_x$0$0
-	jp	_GSL_getCurrentX
+	jp	_devkit_GSL_getCurrentX
 	G$get_scroll_y$0$0	= .
 	.globl	G$get_scroll_y$0$0
-	C$montylib.c$48$1_0$96	= .
-	.globl	C$montylib.c$48$1_0$96
-;montylib.c:48: unsigned int get_scroll_y() {
+	C$montylib.c$52$1_0$109	= .
+	.globl	C$montylib.c$52$1_0$109
+;montylib.c:52: unsigned int get_scroll_y()
 ;	---------------------------------
 ; Function get_scroll_y
 ; ---------------------------------
 _get_scroll_y::
-	C$montylib.c$49$1_0$96	= .
-	.globl	C$montylib.c$49$1_0$96
-;montylib.c:49: return GSL_getCurrentY();
-	C$montylib.c$50$1_0$96	= .
-	.globl	C$montylib.c$50$1_0$96
-;montylib.c:50: }
-	C$montylib.c$50$1_0$96	= .
-	.globl	C$montylib.c$50$1_0$96
+	C$montylib.c$54$1_0$109	= .
+	.globl	C$montylib.c$54$1_0$109
+;montylib.c:54: return devkit_GSL_getCurrentY();
+	C$montylib.c$55$1_0$109	= .
+	.globl	C$montylib.c$55$1_0$109
+;montylib.c:55: }
+	C$montylib.c$55$1_0$109	= .
+	.globl	C$montylib.c$55$1_0$109
 	XG$get_scroll_y$0$0	= .
 	.globl	XG$get_scroll_y$0$0
-	jp	_GSL_getCurrentY
+	jp	_devkit_GSL_getCurrentY
 	G$waitForFrame$0$0	= .
 	.globl	G$waitForFrame$0$0
-	C$montylib.c$52$1_0$97	= .
-	.globl	C$montylib.c$52$1_0$97
-;montylib.c:52: void waitForFrame(){
+	C$montylib.c$57$1_0$110	= .
+	.globl	C$montylib.c$57$1_0$110
+;montylib.c:57: void waitForFrame()
 ;	---------------------------------
 ; Function waitForFrame
 ; ---------------------------------
 _waitForFrame::
-	C$montylib.c$53$1_0$97	= .
-	.globl	C$montylib.c$53$1_0$97
-;montylib.c:53: if(!pause) {
+	C$montylib.c$59$1_0$110	= .
+	.globl	C$montylib.c$59$1_0$110
+;montylib.c:59: if(!pause)
 	ld	hl, #_pause
 	bit	0, (hl)
 	jr	NZ, 00102$
-	C$montylib.c$54$2_0$98	= .
-	.globl	C$montylib.c$54$2_0$98
-;montylib.c:54: manage_sound_frame();
+	C$montylib.c$61$2_0$111	= .
+	.globl	C$montylib.c$61$2_0$111
+;montylib.c:61: manage_sound_frame();
 	call	_manage_sound_frame
 00102$:
-	C$montylib.c$56$1_0$97	= .
-	.globl	C$montylib.c$56$1_0$97
-;montylib.c:56: SMS_waitForVBlank();
-	call	_SMS_waitForVBlank
-	C$montylib.c$57$1_0$97	= .
-	.globl	C$montylib.c$57$1_0$97
-;montylib.c:57: GSL_VBlank();
-	call	_GSL_VBlank
-	C$montylib.c$58$1_0$97	= .
-	.globl	C$montylib.c$58$1_0$97
-;montylib.c:58: SMS_copySpritestoSAT();
-	C$montylib.c$59$1_0$97	= .
-	.globl	C$montylib.c$59$1_0$97
-;montylib.c:59: }
-	C$montylib.c$59$1_0$97	= .
-	.globl	C$montylib.c$59$1_0$97
+	C$montylib.c$63$1_0$110	= .
+	.globl	C$montylib.c$63$1_0$110
+;montylib.c:63: devkit_SMS_waitForVBlank();
+	call	_devkit_SMS_waitForVBlank
+	C$montylib.c$64$1_0$110	= .
+	.globl	C$montylib.c$64$1_0$110
+;montylib.c:64: devkit_GSL_VBlank();
+	call	_devkit_GSL_VBlank
+	C$montylib.c$65$1_0$110	= .
+	.globl	C$montylib.c$65$1_0$110
+;montylib.c:65: devkit_SMS_copySpritestoSAT();
+	C$montylib.c$66$1_0$110	= .
+	.globl	C$montylib.c$66$1_0$110
+;montylib.c:66: }
+	C$montylib.c$66$1_0$110	= .
+	.globl	C$montylib.c$66$1_0$110
 	XG$waitForFrame$0$0	= .
 	.globl	XG$waitForFrame$0$0
-	jp	_SMS_copySpritestoSAT
+	jp	_devkit_SMS_copySpritestoSAT
 	G$rand$0$0	= .
 	.globl	G$rand$0$0
-	C$montylib.c$61$1_0$99	= .
-	.globl	C$montylib.c$61$1_0$99
-;montylib.c:61: unsigned char rand() {
+	C$montylib.c$68$1_0$112	= .
+	.globl	C$montylib.c$68$1_0$112
+;montylib.c:68: unsigned char rand() {
 ;	---------------------------------
 ; Function rand
 ; ---------------------------------
 _rand::
-	C$montylib.c$63$1_0$99	= .
-	.globl	C$montylib.c$63$1_0$99
-;montylib.c:63: return randLUT[rand_index++];
+	C$montylib.c$70$1_0$112	= .
+	.globl	C$montylib.c$70$1_0$112
+;montylib.c:70: return randLUT[rand_index++];
 	ld	iy, #_rand_index
 	ld	c, 0 (iy)
 	inc	0 (iy)
@@ -674,11 +676,11 @@ _rand::
 	ld	b, #0x00
 	add	hl, bc
 	ld	l, (hl)
-	C$montylib.c$64$1_0$99	= .
-	.globl	C$montylib.c$64$1_0$99
-;montylib.c:64: }
-	C$montylib.c$64$1_0$99	= .
-	.globl	C$montylib.c$64$1_0$99
+	C$montylib.c$71$1_0$112	= .
+	.globl	C$montylib.c$71$1_0$112
+;montylib.c:71: }
+	C$montylib.c$71$1_0$112	= .
+	.globl	C$montylib.c$71$1_0$112
 	XG$rand$0$0	= .
 	.globl	XG$rand$0$0
 	ret

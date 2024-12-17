@@ -1,6 +1,6 @@
 ;!FILE enemy.asm
 XL3
-H 9 areas 41 global symbols
+H 9 areas 3B global symbols
 M enemy
 O -mz80
 S _enemyanimation0frame0_bin Ref000000
@@ -8,52 +8,39 @@ S _enemyanimation1frame0_bin Ref000000
 S _enemyanimation1frame1_bin Ref000000
 S _enemyanimation1frame2_bin Ref000000
 S _enemyanimation1frame3_bin Ref000000
-S _ROM_bank_to_be_mapped_on_slot2 Def00FFFF
-S G$ROM_bank_to_be_mapped_on_slot2$0_0$0 Def00FFFF
-S _SRAM_bank_to_be_mapped_on_slot2 Def00FFFC
-S G$SRAM_bank_to_be_mapped_on_slot2$0_0$0 Def00FFFC
 S .__.ABS. Def000000
 S _enemyanimation0frame0mirrored_bin Ref000000
-S _SMS_SRAM Def008000
 S _enemyanimation1frame0mirrored_bin Ref000000
 S _enemyanimation1frame1mirrored_bin Ref000000
 S _enemyanimation1frame2mirrored_bin Ref000000
-S G$SMS_SRAM$0_0$0 Def008000
 S _enemyanimation1frame3mirrored_bin Ref000000
 A _CODE size 263C flags 0 addr 0
-S A$enemy$9909 Def002639
-S A$enemy$9929 Def00263A
-S C$enemy.c$110$1_0$88 Def00263A
+S A$enemy$9880 Def002638
+S C$enemy.c$181$1_0$24 Def00263A
 S _add_enemy Def000000
-S A$enemy$9949 Def00263B
-S A$enemy$9869 Def002637
-S C$enemy.c$183$1_0$90 Def00263B
-S C$enemy.c$113$1_0$88 Def00263A
+S C$enemy.c$183$1_0$26 Def00263B
 S G$manage_enemy_walking_status$0$0 Def00263A
-S A$enemy$9889 Def002638
-S C$enemy.c$108$1_0$86 Def002639
-S C$enemy.c$186$1_0$90 Def00263B
-S C$enemy.c$196$1_0$90 Def00263B
+S C$enemy.c$186$1_0$26 Def00263B
+S C$enemy.c$196$1_0$26 Def00263B
 S G$decide_action_enemy$0$0 Def002638
-S C$enemy.c$181$1_0$88 Def00263A
+S C$enemy.c$53$1_0$20 Def002638
+S C$enemy.c$14$0_0$16 Def000000
+S C$enemy.c$55$1_0$20 Def002638
 S G$decide_action$0$0 Def002637
-S C$enemy.c$15$0_0$80 Def000000
+S C$enemy.c$72$1_0$22 Def002639
+S C$enemy.c$34$1_0$16 Def000000
+S C$enemy.c$16$1_0$16 Def000000
+S C$enemy.c$67$1_0$20 Def002638
+S C$enemy.c$51$1_0$18 Def002637
 S XG$add_enemy$0$0 Def000000
-S C$enemy.c$51$1_0$82 Def002637
-S C$enemy.c$35$1_0$80 Def000000
-S C$enemy.c$17$1_0$80 Def000000
+S C$enemy.c$36$1_0$18 Def002637
 S _manage_enemy_walking_status Def00263A
-S C$enemy.c$53$1_0$84 Def002638
-S C$enemy.c$37$1_0$82 Def002637
-S A$enemy$88 Def000000
+S C$enemy.c$69$1_0$22 Def002639
+S A$enemy$79 Def000000
 S _decide_action_enemy Def002638
-S C$enemy.c$55$1_0$84 Def002638
-S C$enemy.c$72$1_0$86 Def002639
 S G$update_enemy_positions$0$0 Def00263B
 S _decide_action Def002637
-S C$enemy.c$67$1_0$84 Def002638
 S G$manage_enemy_iddle_status$0$0 Def002639
-S C$enemy.c$69$1_0$86 Def002639
 S XG$manage_enemy_walking_status$0$0 Def00263A
 S XG$decide_action_enemy$0$0 Def002638
 S XG$decide_action$0$0 Def002637
@@ -62,7 +49,14 @@ S Fenemy$enemy_character$0_0$0 Def000001
 S _manage_enemy_iddle_status Def002639
 S XG$update_enemy_positions$0$0 Def00263B
 S XG$manage_enemy_iddle_status$0$0 Def002639
+S A$enemy$9900 Def002639
 S G$add_enemy$0$0 Def000000
+S C$enemy.c$110$1_0$24 Def00263A
+S A$enemy$9920 Def00263A
+S A$enemy$9940 Def00263B
+S C$enemy.c$113$1_0$24 Def00263A
+S A$enemy$9860 Def002637
+S C$enemy.c$108$1_0$22 Def002639
 A _DATA size 1E flags 0 addr 0
 S _enemy1 Def000000
 S _enemy2 Def00000A
@@ -146,7 +140,7 @@ R 00 00 00 00
 T 39 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 R 00 00 00 00
 T 46 01 00 00 00 00 00 00 01 08 00 00 00 01 04 0A
-R 00 00 00 00 02 0A 0A 00
+R 00 00 00 00 02 0A 06 00
 T 53 01 00 FD 03 F0 20 00 00 00 00 00 00 00 01 F8
 R 00 00 00 00
 T 60 01 00 00 02 00 08 03 F8 08 04 00 10 05 F8 10
@@ -246,7 +240,7 @@ R 00 00 00 00
 T C3 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 R 00 00 00 00
 T D0 03 00 00 00 00 00 00 00 00 01 08 00 00 00 01
-R 00 00 00 00 02 0C 0C 00
+R 00 00 00 00 02 0C 07 00
 T DD 03 00 04 05 FD 03 F0 20 00 00 00 00 00 00 00
 R 00 00 00 00
 T EA 03 00 01 F8 00 02 00 08 03 F8 08 04 00 10 05
@@ -256,7 +250,7 @@ R 00 00 00 00
 T 04 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 R 00 00 00 00
 T 11 04 00 00 00 00 00 00 00 01 01 08 00 00 00 01
-R 00 00 00 00 02 0C 0D 00
+R 00 00 00 00 02 0C 08 00
 T 1E 04 00 04 05 FD 03 F0 20 00 00 00 00 00 00 00
 R 00 00 00 00
 T 2B 04 00 01 F8 00 02 00 08 03 F8 08 04 00 10 05
@@ -266,7 +260,7 @@ R 00 00 00 00
 T 45 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 R 00 00 00 00
 T 52 04 00 00 00 00 00 00 00 02 01 08 00 00 00 01
-R 00 00 00 00 02 0C 0E 00
+R 00 00 00 00 02 0C 09 00
 T 5F 04 00 04 05 FD 03 F0 20 00 00 00 00 00 00 00
 R 00 00 00 00
 T 6C 04 00 01 F8 00 02 00 08 03 F8 08 04 00 10 05
@@ -276,7 +270,7 @@ R 00 00 00 00
 T 86 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 R 00 00 00 00
 T 93 04 00 00 00 00 00 00 00 03 01 08 00 00 00 01
-R 00 00 00 00 02 0C 10 00
+R 00 00 00 00 02 0C 0A 00
 T A0 04 00 04 05 FD 03 F0 20 00 00 00 00 00 00 00
 R 00 00 00 00
 T AD 04 00 01 F8 00 02 00 08 03 F8 08 04 00 10 05

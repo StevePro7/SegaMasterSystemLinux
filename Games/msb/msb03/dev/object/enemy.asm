@@ -11,9 +11,6 @@
 	.globl _enemy3
 	.globl _enemy2
 	.globl _enemy1
-	.globl _SMS_SRAM
-	.globl _SRAM_bank_to_be_mapped_on_slot2
-	.globl _ROM_bank_to_be_mapped_on_slot2
 	.globl _add_enemy
 	.globl _decide_action
 	.globl _decide_action_enemy
@@ -27,12 +24,6 @@
 ; ram data
 ;--------------------------------------------------------
 	.area _DATA
-G$ROM_bank_to_be_mapped_on_slot2$0_0$0 == 0xffff
-_ROM_bank_to_be_mapped_on_slot2	=	0xffff
-G$SRAM_bank_to_be_mapped_on_slot2$0_0$0 == 0xfffc
-_SRAM_bank_to_be_mapped_on_slot2	=	0xfffc
-G$SMS_SRAM$0_0$0 == 0x8000
-_SMS_SRAM	=	0x8000
 G$enemy1$0_0$0==.
 _enemy1::
 	.ds 10
@@ -68,21 +59,21 @@ _enemy3::
 	.area _CODE
 	G$add_enemy$0$0	= .
 	.globl	G$add_enemy$0$0
-	C$enemy.c$15$0_0$80	= .
-	.globl	C$enemy.c$15$0_0$80
-;enemy.c:15: void add_enemy(unsigned char enemy_number)
+	C$enemy.c$14$0_0$16	= .
+	.globl	C$enemy.c$14$0_0$16
+;enemy.c:14: void add_enemy(unsigned char enemy_number)
 ;	---------------------------------
 ; Function add_enemy
 ; ---------------------------------
 _add_enemy::
-	C$enemy.c$17$1_0$80	= .
-	.globl	C$enemy.c$17$1_0$80
-;enemy.c:17: enemy_number += 0;
-	C$enemy.c$35$1_0$80	= .
-	.globl	C$enemy.c$35$1_0$80
-;enemy.c:35: }
-	C$enemy.c$35$1_0$80	= .
-	.globl	C$enemy.c$35$1_0$80
+	C$enemy.c$16$1_0$16	= .
+	.globl	C$enemy.c$16$1_0$16
+;enemy.c:16: enemy_number += 0;
+	C$enemy.c$34$1_0$16	= .
+	.globl	C$enemy.c$34$1_0$16
+;enemy.c:34: }
+	C$enemy.c$34$1_0$16	= .
+	.globl	C$enemy.c$34$1_0$16
 	XG$add_enemy$0$0	= .
 	.globl	XG$add_enemy$0$0
 	ret
@@ -9852,98 +9843,98 @@ _enemy_character:
 	.db 0x00
 	G$decide_action$0$0	= .
 	.globl	G$decide_action$0$0
-	C$enemy.c$37$1_0$82	= .
-	.globl	C$enemy.c$37$1_0$82
-;enemy.c:37: void decide_action() {
+	C$enemy.c$36$1_0$18	= .
+	.globl	C$enemy.c$36$1_0$18
+;enemy.c:36: void decide_action()
 ;	---------------------------------
 ; Function decide_action
 ; ---------------------------------
 _decide_action::
-	C$enemy.c$51$1_0$82	= .
-	.globl	C$enemy.c$51$1_0$82
+	C$enemy.c$51$1_0$18	= .
+	.globl	C$enemy.c$51$1_0$18
 ;enemy.c:51: }
-	C$enemy.c$51$1_0$82	= .
-	.globl	C$enemy.c$51$1_0$82
+	C$enemy.c$51$1_0$18	= .
+	.globl	C$enemy.c$51$1_0$18
 	XG$decide_action$0$0	= .
 	.globl	XG$decide_action$0$0
 	ret
 	G$decide_action_enemy$0$0	= .
 	.globl	G$decide_action_enemy$0$0
-	C$enemy.c$53$1_0$84	= .
-	.globl	C$enemy.c$53$1_0$84
+	C$enemy.c$53$1_0$20	= .
+	.globl	C$enemy.c$53$1_0$20
 ;enemy.c:53: void decide_action_enemy(enemy* enemypointer)
 ;	---------------------------------
 ; Function decide_action_enemy
 ; ---------------------------------
 _decide_action_enemy::
-	C$enemy.c$55$1_0$84	= .
-	.globl	C$enemy.c$55$1_0$84
+	C$enemy.c$55$1_0$20	= .
+	.globl	C$enemy.c$55$1_0$20
 ;enemy.c:55: enemypointer = 0;
-	C$enemy.c$67$1_0$84	= .
-	.globl	C$enemy.c$67$1_0$84
+	C$enemy.c$67$1_0$20	= .
+	.globl	C$enemy.c$67$1_0$20
 ;enemy.c:67: }
-	C$enemy.c$67$1_0$84	= .
-	.globl	C$enemy.c$67$1_0$84
+	C$enemy.c$67$1_0$20	= .
+	.globl	C$enemy.c$67$1_0$20
 	XG$decide_action_enemy$0$0	= .
 	.globl	XG$decide_action_enemy$0$0
 	ret
 	G$manage_enemy_iddle_status$0$0	= .
 	.globl	G$manage_enemy_iddle_status$0$0
-	C$enemy.c$69$1_0$86	= .
-	.globl	C$enemy.c$69$1_0$86
+	C$enemy.c$69$1_0$22	= .
+	.globl	C$enemy.c$69$1_0$22
 ;enemy.c:69: void manage_enemy_iddle_status(enemy* enemypointer, unsigned int action)
 ;	---------------------------------
 ; Function manage_enemy_iddle_status
 ; ---------------------------------
 _manage_enemy_iddle_status::
-	C$enemy.c$72$1_0$86	= .
-	.globl	C$enemy.c$72$1_0$86
+	C$enemy.c$72$1_0$22	= .
+	.globl	C$enemy.c$72$1_0$22
 ;enemy.c:72: action = 0;
-	C$enemy.c$108$1_0$86	= .
-	.globl	C$enemy.c$108$1_0$86
+	C$enemy.c$108$1_0$22	= .
+	.globl	C$enemy.c$108$1_0$22
 ;enemy.c:108: }
-	C$enemy.c$108$1_0$86	= .
-	.globl	C$enemy.c$108$1_0$86
+	C$enemy.c$108$1_0$22	= .
+	.globl	C$enemy.c$108$1_0$22
 	XG$manage_enemy_iddle_status$0$0	= .
 	.globl	XG$manage_enemy_iddle_status$0$0
 	ret
 	G$manage_enemy_walking_status$0$0	= .
 	.globl	G$manage_enemy_walking_status$0$0
-	C$enemy.c$110$1_0$88	= .
-	.globl	C$enemy.c$110$1_0$88
+	C$enemy.c$110$1_0$24	= .
+	.globl	C$enemy.c$110$1_0$24
 ;enemy.c:110: void manage_enemy_walking_status(enemy* enemypointer, unsigned int action)
 ;	---------------------------------
 ; Function manage_enemy_walking_status
 ; ---------------------------------
 _manage_enemy_walking_status::
-	C$enemy.c$113$1_0$88	= .
-	.globl	C$enemy.c$113$1_0$88
+	C$enemy.c$113$1_0$24	= .
+	.globl	C$enemy.c$113$1_0$24
 ;enemy.c:113: action = 0;
-	C$enemy.c$181$1_0$88	= .
-	.globl	C$enemy.c$181$1_0$88
+	C$enemy.c$181$1_0$24	= .
+	.globl	C$enemy.c$181$1_0$24
 ;enemy.c:181: }
-	C$enemy.c$181$1_0$88	= .
-	.globl	C$enemy.c$181$1_0$88
+	C$enemy.c$181$1_0$24	= .
+	.globl	C$enemy.c$181$1_0$24
 	XG$manage_enemy_walking_status$0$0	= .
 	.globl	XG$manage_enemy_walking_status$0$0
 	ret
 	G$update_enemy_positions$0$0	= .
 	.globl	G$update_enemy_positions$0$0
-	C$enemy.c$183$1_0$90	= .
-	.globl	C$enemy.c$183$1_0$90
+	C$enemy.c$183$1_0$26	= .
+	.globl	C$enemy.c$183$1_0$26
 ;enemy.c:183: void update_enemy_positions(signed char delta_x, signed char delta_y)
 ;	---------------------------------
 ; Function update_enemy_positions
 ; ---------------------------------
 _update_enemy_positions::
-	C$enemy.c$186$1_0$90	= .
-	.globl	C$enemy.c$186$1_0$90
+	C$enemy.c$186$1_0$26	= .
+	.globl	C$enemy.c$186$1_0$26
 ;enemy.c:186: delta_y += 0;
-	C$enemy.c$196$1_0$90	= .
-	.globl	C$enemy.c$196$1_0$90
+	C$enemy.c$196$1_0$26	= .
+	.globl	C$enemy.c$196$1_0$26
 ;enemy.c:196: }
-	C$enemy.c$196$1_0$90	= .
-	.globl	C$enemy.c$196$1_0$90
+	C$enemy.c$196$1_0$26	= .
+	.globl	C$enemy.c$196$1_0$26
 	XG$update_enemy_positions$0$0	= .
 	.globl	XG$update_enemy_positions$0$0
 	ret

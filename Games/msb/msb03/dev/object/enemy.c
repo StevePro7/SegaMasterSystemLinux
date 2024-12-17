@@ -5,7 +5,6 @@
 #include "../banks/bank3.h"
 #include "../banks/bank4.h"
 #include "../engine/soundengine.h"
-#include "../../lib/SMSlib.h"
 #include <stdbool.h>
 
 enemy enemy1;
@@ -34,7 +33,8 @@ void add_enemy(unsigned char enemy_number)
 	}*/
 }
 
-void decide_action() {
+void decide_action()
+{
 /*	enemy* enemypointer;
 	if(enemy1.entityreference != 0) {
 		enemypointer = &enemy1;
