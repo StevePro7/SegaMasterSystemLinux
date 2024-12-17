@@ -8,302 +8,329 @@
                                       8 ;--------------------------------------------------------
                                       9 ; Public variables in this module
                                      10 ;--------------------------------------------------------
-                                     11 	.globl _PSGSFXFrame
-                                     12 	.globl _PSGFrame
-                                     13 	.globl _PSGSFXGetStatus
-                                     14 	.globl _PSGSFXStop
-                                     15 	.globl _PSGSFXPlay
-                                     16 	.globl _PSGGetStatus
-                                     17 	.globl _PSGPlay
-                                     18 	.globl _current_fx_bank
-                                     19 	.globl _current_music_bank
-                                     20 	.globl _SMS_SRAM
-                                     21 	.globl _SRAM_bank_to_be_mapped_on_slot2
-                                     22 	.globl _ROM_bank_to_be_mapped_on_slot2
-                                     23 	.globl _play_logo_music
-                                     24 	.globl _play_presentation_music
-                                     25 	.globl _play_game_music
-                                     26 	.globl _play_punch_sound1
-                                     27 	.globl _play_punch_sound2
-                                     28 	.globl _manage_sound_frame
-                                     29 ;--------------------------------------------------------
-                                     30 ; special function registers
-                                     31 ;--------------------------------------------------------
+                                     11 	.globl _devkit_SFX_CHANNEL3
+                                     12 	.globl _devkit_SFX_CHANNEL2
+                                     13 	.globl _devkit_PSG_PLAYING
+                                     14 	.globl _devkit_PSGSFXFrame
+                                     15 	.globl _devkit_PSGFrame
+                                     16 	.globl _devkit_PSGSFXGetStatus
+                                     17 	.globl _devkit_PSGSFXStop
+                                     18 	.globl _devkit_PSGSFXPlay
+                                     19 	.globl _devkit_PSGGetStatus
+                                     20 	.globl _devkit_PSGPlay
+                                     21 	.globl _devkit_SMS_mapROMBank
+                                     22 	.globl _current_fx_bank
+                                     23 	.globl _current_music_bank
+                                     24 	.globl _play_logo_music
+                                     25 	.globl _play_presentation_music
+                                     26 	.globl _play_game_music
+                                     27 	.globl _play_punch_sound1
+                                     28 	.globl _play_punch_sound2
+                                     29 	.globl _manage_sound_frame
+                                     30 ;--------------------------------------------------------
+                                     31 ; special function registers
                                      32 ;--------------------------------------------------------
-                                     33 ; ram data
-                                     34 ;--------------------------------------------------------
-                                     35 	.area _DATA
-                           00FFFF    36 G$ROM_bank_to_be_mapped_on_slot2$0_0$0 == 0xffff
-                           00FFFF    37 _ROM_bank_to_be_mapped_on_slot2	=	0xffff
-                           00FFFC    38 G$SRAM_bank_to_be_mapped_on_slot2$0_0$0 == 0xfffc
-                           00FFFC    39 _SRAM_bank_to_be_mapped_on_slot2	=	0xfffc
-                           008000    40 G$SMS_SRAM$0_0$0 == 0x8000
-                           008000    41 _SMS_SRAM	=	0x8000
-                                     42 ;--------------------------------------------------------
-                                     43 ; ram data
-                                     44 ;--------------------------------------------------------
-                                     45 	.area _INITIALIZED
-                           000000    46 G$current_music_bank$0_0$0==.
-      000000                         47 _current_music_bank::
-      000000                         48 	.ds 1
-                           000001    49 G$current_fx_bank$0_0$0==.
-      000001                         50 _current_fx_bank::
-      000001                         51 	.ds 1
-                                     52 ;--------------------------------------------------------
-                                     53 ; absolute external ram data
-                                     54 ;--------------------------------------------------------
-                                     55 	.area _DABS (ABS)
-                                     56 ;--------------------------------------------------------
-                                     57 ; global & static initialisations
+                                     33 ;--------------------------------------------------------
+                                     34 ; ram data
+                                     35 ;--------------------------------------------------------
+                                     36 	.area _DATA
+                                     37 ;--------------------------------------------------------
+                                     38 ; ram data
+                                     39 ;--------------------------------------------------------
+                                     40 	.area _INITIALIZED
+                           000000    41 G$current_music_bank$0_0$0==.
+      000000                         42 _current_music_bank::
+      000000                         43 	.ds 1
+                           000001    44 G$current_fx_bank$0_0$0==.
+      000001                         45 _current_fx_bank::
+      000001                         46 	.ds 1
+                                     47 ;--------------------------------------------------------
+                                     48 ; absolute external ram data
+                                     49 ;--------------------------------------------------------
+                                     50 	.area _DABS (ABS)
+                                     51 ;--------------------------------------------------------
+                                     52 ; global & static initialisations
+                                     53 ;--------------------------------------------------------
+                                     54 	.area _HOME
+                                     55 	.area _GSINIT
+                                     56 	.area _GSFINAL
+                                     57 	.area _GSINIT
                                      58 ;--------------------------------------------------------
-                                     59 	.area _HOME
-                                     60 	.area _GSINIT
-                                     61 	.area _GSFINAL
-                                     62 	.area _GSINIT
+                                     59 ; Home
+                                     60 ;--------------------------------------------------------
+                                     61 	.area _HOME
+                                     62 	.area _HOME
                                      63 ;--------------------------------------------------------
-                                     64 ; Home
+                                     64 ; code
                                      65 ;--------------------------------------------------------
-                                     66 	.area _HOME
-                                     67 	.area _HOME
-                                     68 ;--------------------------------------------------------
-                                     69 ; code
-                                     70 ;--------------------------------------------------------
-                                     71 	.area _CODE
-                           000000    72 	G$play_logo_music$0$0	= .
-                                     73 	.globl	G$play_logo_music$0$0
-                           000000    74 	C$soundengine.c$11$0_0$82	= .
-                                     75 	.globl	C$soundengine.c$11$0_0$82
-                                     76 ;soundengine.c:11: void play_logo_music() {
-                                     77 ;	---------------------------------
-                                     78 ; Function play_logo_music
-                                     79 ; ---------------------------------
-      000000                         80 _play_logo_music::
-                           000000    81 	C$soundengine.c$12$1_0$82	= .
-                                     82 	.globl	C$soundengine.c$12$1_0$82
-                                     83 ;soundengine.c:12: SMS_mapROMBank(logo1985music_psg_bank);
-      000000 21 FF FF         [10]   84 	ld	hl, #_ROM_bank_to_be_mapped_on_slot2
-      000003 36 03            [10]   85 	ld	(hl), #0x03
-                           000005    86 	C$soundengine.c$13$1_0$82	= .
-                                     87 	.globl	C$soundengine.c$13$1_0$82
-                                     88 ;soundengine.c:13: current_music_bank = logo1985music_psg_bank;
-      000005 21r00r00         [10]   89 	ld	hl, #_current_music_bank
-      000008 36 03            [10]   90 	ld	(hl), #0x03
-                           00000A    91 	C$soundengine.c$14$1_0$82	= .
-                                     92 	.globl	C$soundengine.c$14$1_0$82
-                                     93 ;soundengine.c:14: PSGPlay(logo1985music_psg);
-      00000A 21r00r00         [10]   94 	ld	hl, #_logo1985music_psg
-      00000D E5               [11]   95 	push	hl
-      00000E CDr00r00         [17]   96 	call	_PSGPlay
-      000011 F1               [10]   97 	pop	af
-                           000012    98 	C$soundengine.c$15$1_0$82	= .
-                                     99 	.globl	C$soundengine.c$15$1_0$82
-                                    100 ;soundengine.c:15: }
-                           000012   101 	C$soundengine.c$15$1_0$82	= .
-                                    102 	.globl	C$soundengine.c$15$1_0$82
-                           000012   103 	XG$play_logo_music$0$0	= .
-                                    104 	.globl	XG$play_logo_music$0$0
-      000012 C9               [10]  105 	ret
-                           000013   106 	G$play_presentation_music$0$0	= .
-                                    107 	.globl	G$play_presentation_music$0$0
-                           000013   108 	C$soundengine.c$17$1_0$83	= .
-                                    109 	.globl	C$soundengine.c$17$1_0$83
-                                    110 ;soundengine.c:17: void play_presentation_music() {
-                                    111 ;	---------------------------------
-                                    112 ; Function play_presentation_music
-                                    113 ; ---------------------------------
-      000013                        114 _play_presentation_music::
-                           000013   115 	C$soundengine.c$18$1_0$83	= .
-                                    116 	.globl	C$soundengine.c$18$1_0$83
-                                    117 ;soundengine.c:18: SMS_mapROMBank(presentation_psg_bank);
-      000013 21 FF FF         [10]  118 	ld	hl, #_ROM_bank_to_be_mapped_on_slot2
-      000016 36 02            [10]  119 	ld	(hl), #0x02
-                           000018   120 	C$soundengine.c$19$1_0$83	= .
-                                    121 	.globl	C$soundengine.c$19$1_0$83
-                                    122 ;soundengine.c:19: current_music_bank = presentation_psg_bank;
-      000018 21r00r00         [10]  123 	ld	hl, #_current_music_bank
-      00001B 36 02            [10]  124 	ld	(hl), #0x02
-                           00001D   125 	C$soundengine.c$20$1_0$83	= .
-                                    126 	.globl	C$soundengine.c$20$1_0$83
-                                    127 ;soundengine.c:20: PSGPlay(presentation_psg);
-      00001D 21r00r00         [10]  128 	ld	hl, #_presentation_psg
-      000020 E5               [11]  129 	push	hl
-      000021 CDr00r00         [17]  130 	call	_PSGPlay
-      000024 F1               [10]  131 	pop	af
-                           000025   132 	C$soundengine.c$21$1_0$83	= .
-                                    133 	.globl	C$soundengine.c$21$1_0$83
-                                    134 ;soundengine.c:21: }
-                           000025   135 	C$soundengine.c$21$1_0$83	= .
-                                    136 	.globl	C$soundengine.c$21$1_0$83
-                           000025   137 	XG$play_presentation_music$0$0	= .
-                                    138 	.globl	XG$play_presentation_music$0$0
-      000025 C9               [10]  139 	ret
-                           000026   140 	G$play_game_music$0$0	= .
-                                    141 	.globl	G$play_game_music$0$0
-                           000026   142 	C$soundengine.c$23$1_0$84	= .
-                                    143 	.globl	C$soundengine.c$23$1_0$84
-                                    144 ;soundengine.c:23: void play_game_music() {
-                                    145 ;	---------------------------------
-                                    146 ; Function play_game_music
-                                    147 ; ---------------------------------
-      000026                        148 _play_game_music::
-                           000026   149 	C$soundengine.c$24$1_0$84	= .
-                                    150 	.globl	C$soundengine.c$24$1_0$84
-                                    151 ;soundengine.c:24: SMS_mapROMBank(level1music_psg_bank);
-      000026 21 FF FF         [10]  152 	ld	hl, #_ROM_bank_to_be_mapped_on_slot2
-      000029 36 04            [10]  153 	ld	(hl), #0x04
-                           00002B   154 	C$soundengine.c$25$1_0$84	= .
-                                    155 	.globl	C$soundengine.c$25$1_0$84
-                                    156 ;soundengine.c:25: current_music_bank = level1music_psg_bank;
-      00002B 21r00r00         [10]  157 	ld	hl, #_current_music_bank
-      00002E 36 04            [10]  158 	ld	(hl), #0x04
-                           000030   159 	C$soundengine.c$26$1_0$84	= .
-                                    160 	.globl	C$soundengine.c$26$1_0$84
-                                    161 ;soundengine.c:26: PSGPlay(level1music_psg);
-      000030 21r00r00         [10]  162 	ld	hl, #_level1music_psg
-      000033 E5               [11]  163 	push	hl
-      000034 CDr00r00         [17]  164 	call	_PSGPlay
-      000037 F1               [10]  165 	pop	af
-                           000038   166 	C$soundengine.c$27$1_0$84	= .
-                                    167 	.globl	C$soundengine.c$27$1_0$84
-                                    168 ;soundengine.c:27: }
-                           000038   169 	C$soundengine.c$27$1_0$84	= .
-                                    170 	.globl	C$soundengine.c$27$1_0$84
-                           000038   171 	XG$play_game_music$0$0	= .
-                                    172 	.globl	XG$play_game_music$0$0
-      000038 C9               [10]  173 	ret
-                           000039   174 	G$play_punch_sound1$0$0	= .
-                                    175 	.globl	G$play_punch_sound1$0$0
-                           000039   176 	C$soundengine.c$29$1_0$85	= .
-                                    177 	.globl	C$soundengine.c$29$1_0$85
-                                    178 ;soundengine.c:29: void play_punch_sound1() {
-                                    179 ;	---------------------------------
-                                    180 ; Function play_punch_sound1
-                                    181 ; ---------------------------------
-      000039                        182 _play_punch_sound1::
-                           000039   183 	C$soundengine.c$30$1_0$85	= .
-                                    184 	.globl	C$soundengine.c$30$1_0$85
-                                    185 ;soundengine.c:30: SMS_mapROMBank(punch1_psg_bank);
-      000039 21 FF FF         [10]  186 	ld	hl, #_ROM_bank_to_be_mapped_on_slot2
-      00003C 36 04            [10]  187 	ld	(hl), #0x04
-                           00003E   188 	C$soundengine.c$31$1_0$85	= .
-                                    189 	.globl	C$soundengine.c$31$1_0$85
-                                    190 ;soundengine.c:31: current_fx_bank = punch1_psg_bank;
-      00003E 21r01r00         [10]  191 	ld	hl, #_current_fx_bank
-      000041 36 04            [10]  192 	ld	(hl), #0x04
-                           000043   193 	C$soundengine.c$32$1_0$85	= .
-                                    194 	.globl	C$soundengine.c$32$1_0$85
-                                    195 ;soundengine.c:32: PSGSFXPlay(punch1_psg, SFX_CHANNEL2);
-      000043 3E 01            [ 7]  196 	ld	a, #0x01
-      000045 F5               [11]  197 	push	af
-      000046 33               [ 6]  198 	inc	sp
-      000047 21r00r00         [10]  199 	ld	hl, #_punch1_psg
-      00004A E5               [11]  200 	push	hl
-      00004B CDr00r00         [17]  201 	call	_PSGSFXPlay
-      00004E F1               [10]  202 	pop	af
-      00004F 33               [ 6]  203 	inc	sp
-                           000050   204 	C$soundengine.c$33$1_0$85	= .
-                                    205 	.globl	C$soundengine.c$33$1_0$85
-                                    206 ;soundengine.c:33: }
-                           000050   207 	C$soundengine.c$33$1_0$85	= .
-                                    208 	.globl	C$soundengine.c$33$1_0$85
-                           000050   209 	XG$play_punch_sound1$0$0	= .
-                                    210 	.globl	XG$play_punch_sound1$0$0
-      000050 C9               [10]  211 	ret
-                           000051   212 	G$play_punch_sound2$0$0	= .
-                                    213 	.globl	G$play_punch_sound2$0$0
-                           000051   214 	C$soundengine.c$35$1_0$86	= .
-                                    215 	.globl	C$soundengine.c$35$1_0$86
-                                    216 ;soundengine.c:35: void play_punch_sound2() {
-                                    217 ;	---------------------------------
-                                    218 ; Function play_punch_sound2
-                                    219 ; ---------------------------------
-      000051                        220 _play_punch_sound2::
-                           000051   221 	C$soundengine.c$36$1_0$86	= .
-                                    222 	.globl	C$soundengine.c$36$1_0$86
-                                    223 ;soundengine.c:36: SMS_mapROMBank(punch2_psg_bank);
-      000051 21 FF FF         [10]  224 	ld	hl, #_ROM_bank_to_be_mapped_on_slot2
-      000054 36 04            [10]  225 	ld	(hl), #0x04
-                           000056   226 	C$soundengine.c$37$1_0$86	= .
-                                    227 	.globl	C$soundengine.c$37$1_0$86
-                                    228 ;soundengine.c:37: current_fx_bank = punch2_psg_bank;
-      000056 21r01r00         [10]  229 	ld	hl, #_current_fx_bank
-      000059 36 04            [10]  230 	ld	(hl), #0x04
-                           00005B   231 	C$soundengine.c$38$1_0$86	= .
-                                    232 	.globl	C$soundengine.c$38$1_0$86
-                                    233 ;soundengine.c:38: PSGSFXPlay(punch1_psg, SFX_CHANNEL3);
-      00005B 3E 02            [ 7]  234 	ld	a, #0x02
-      00005D F5               [11]  235 	push	af
-      00005E 33               [ 6]  236 	inc	sp
-      00005F 21r00r00         [10]  237 	ld	hl, #_punch1_psg
-      000062 E5               [11]  238 	push	hl
-      000063 CDr00r00         [17]  239 	call	_PSGSFXPlay
-      000066 F1               [10]  240 	pop	af
-      000067 33               [ 6]  241 	inc	sp
-                           000068   242 	C$soundengine.c$39$1_0$86	= .
-                                    243 	.globl	C$soundengine.c$39$1_0$86
-                                    244 ;soundengine.c:39: }
-                           000068   245 	C$soundengine.c$39$1_0$86	= .
-                                    246 	.globl	C$soundengine.c$39$1_0$86
-                           000068   247 	XG$play_punch_sound2$0$0	= .
-                                    248 	.globl	XG$play_punch_sound2$0$0
-      000068 C9               [10]  249 	ret
-                           000069   250 	G$manage_sound_frame$0$0	= .
-                                    251 	.globl	G$manage_sound_frame$0$0
-                           000069   252 	C$soundengine.c$41$1_0$87	= .
-                                    253 	.globl	C$soundengine.c$41$1_0$87
-                                    254 ;soundengine.c:41: void manage_sound_frame() {
-                                    255 ;	---------------------------------
-                                    256 ; Function manage_sound_frame
-                                    257 ; ---------------------------------
-      000069                        258 _manage_sound_frame::
-                           000069   259 	C$soundengine.c$42$1_0$87	= .
-                                    260 	.globl	C$soundengine.c$42$1_0$87
-                                    261 ;soundengine.c:42: if(PSGGetStatus() == PSG_PLAYING){
-      000069 CDr00r00         [17]  262 	call	_PSGGetStatus
-      00006C 2D               [ 4]  263 	dec	l
-      00006D 20 09            [12]  264 	jr	NZ, 00102$
-                           00006F   265 	C$soundengine.c$43$2_0$88	= .
-                                    266 	.globl	C$soundengine.c$43$2_0$88
-                                    267 ;soundengine.c:43: SMS_mapROMBank(current_music_bank);
-      00006F 3Ar00r00         [13]  268 	ld	a,(#_current_music_bank + 0)
-      000072 32 FF FF         [13]  269 	ld	(#_ROM_bank_to_be_mapped_on_slot2),a
-                           000075   270 	C$soundengine.c$44$2_0$88	= .
-                                    271 	.globl	C$soundengine.c$44$2_0$88
-                                    272 ;soundengine.c:44: PSGFrame();
-      000075 CDr00r00         [17]  273 	call	_PSGFrame
-      000078                        274 00102$:
-                           000078   275 	C$soundengine.c$46$1_0$87	= .
-                                    276 	.globl	C$soundengine.c$46$1_0$87
-                                    277 ;soundengine.c:46: if(PSGSFXGetStatus() == PSG_PLAYING){
-      000078 CDr00r00         [17]  278 	call	_PSGSFXGetStatus
-      00007B 2D               [ 4]  279 	dec	l
-      00007C C2r00r00         [10]  280 	jp	NZ,_PSGSFXStop
-                           00007F   281 	C$soundengine.c$47$2_0$89	= .
-                                    282 	.globl	C$soundengine.c$47$2_0$89
-                                    283 ;soundengine.c:47: SMS_mapROMBank(current_fx_bank);
-      00007F 3Ar01r00         [13]  284 	ld	a,(#_current_fx_bank + 0)
-      000082 FD 21 FF FF      [14]  285 	ld	iy, #_ROM_bank_to_be_mapped_on_slot2
-      000086 FD 77 00         [19]  286 	ld	0 (iy), a
-                           000089   287 	C$soundengine.c$48$2_0$89	= .
-                                    288 	.globl	C$soundengine.c$48$2_0$89
-                                    289 ;soundengine.c:48: PSGSFXFrame();
-                           000089   290 	C$soundengine.c$50$2_0$90	= .
-                                    291 	.globl	C$soundengine.c$50$2_0$90
-                                    292 ;soundengine.c:50: PSGSFXStop();
-                           000089   293 	C$soundengine.c$52$1_0$87	= .
-                                    294 	.globl	C$soundengine.c$52$1_0$87
-                                    295 ;soundengine.c:52: }
-                           000089   296 	C$soundengine.c$52$1_0$87	= .
-                                    297 	.globl	C$soundengine.c$52$1_0$87
-                           000089   298 	XG$manage_sound_frame$0$0	= .
-                                    299 	.globl	XG$manage_sound_frame$0$0
-      000089 C3r00r00         [10]  300 	jp	_PSGSFXFrame
-                                    301 	.area _CODE
-                                    302 	.area _INITIALIZER
-                           000000   303 Fsoundengine$__xinit_current_music_bank$0_0$0 == .
-      000000                        304 __xinit__current_music_bank:
-      000000 00                     305 	.db #0x00	; 0
-                           000001   306 Fsoundengine$__xinit_current_fx_bank$0_0$0 == .
-      000001                        307 __xinit__current_fx_bank:
-      000001 00                     308 	.db #0x00	; 0
-                                    309 	.area _CABS (ABS)
+                                     66 	.area _CODE
+                           000000    67 	G$play_logo_music$0$0	= .
+                                     68 	.globl	G$play_logo_music$0$0
+                           000000    69 	C$soundengine.c$11$0_0$95	= .
+                                     70 	.globl	C$soundengine.c$11$0_0$95
+                                     71 ;soundengine.c:11: void play_logo_music()
+                                     72 ;	---------------------------------
+                                     73 ; Function play_logo_music
+                                     74 ; ---------------------------------
+      000000                         75 _play_logo_music::
+                           000000    76 	C$soundengine.c$13$1_0$95	= .
+                                     77 	.globl	C$soundengine.c$13$1_0$95
+                                     78 ;soundengine.c:13: devkit_SMS_mapROMBank( logo1985music_psg_bank );
+      000000 3E 03            [ 7]   79 	ld	a, #0x03
+      000002 F5               [11]   80 	push	af
+      000003 33               [ 6]   81 	inc	sp
+      000004 CDr00r00         [17]   82 	call	_devkit_SMS_mapROMBank
+      000007 33               [ 6]   83 	inc	sp
+                           000008    84 	C$soundengine.c$14$1_0$95	= .
+                                     85 	.globl	C$soundengine.c$14$1_0$95
+                                     86 ;soundengine.c:14: current_music_bank = logo1985music_psg_bank;
+      000008 21r00r00         [10]   87 	ld	hl, #_current_music_bank
+      00000B 36 03            [10]   88 	ld	(hl), #0x03
+                           00000D    89 	C$soundengine.c$15$1_0$95	= .
+                                     90 	.globl	C$soundengine.c$15$1_0$95
+                                     91 ;soundengine.c:15: devkit_PSGPlay( logo1985music_psg );
+      00000D 21r00r00         [10]   92 	ld	hl, #_logo1985music_psg
+      000010 E5               [11]   93 	push	hl
+      000011 CDr00r00         [17]   94 	call	_devkit_PSGPlay
+      000014 F1               [10]   95 	pop	af
+                           000015    96 	C$soundengine.c$16$1_0$95	= .
+                                     97 	.globl	C$soundengine.c$16$1_0$95
+                                     98 ;soundengine.c:16: }
+                           000015    99 	C$soundengine.c$16$1_0$95	= .
+                                    100 	.globl	C$soundengine.c$16$1_0$95
+                           000015   101 	XG$play_logo_music$0$0	= .
+                                    102 	.globl	XG$play_logo_music$0$0
+      000015 C9               [10]  103 	ret
+                           000016   104 	G$play_presentation_music$0$0	= .
+                                    105 	.globl	G$play_presentation_music$0$0
+                           000016   106 	C$soundengine.c$18$1_0$96	= .
+                                    107 	.globl	C$soundengine.c$18$1_0$96
+                                    108 ;soundengine.c:18: void play_presentation_music()
+                                    109 ;	---------------------------------
+                                    110 ; Function play_presentation_music
+                                    111 ; ---------------------------------
+      000016                        112 _play_presentation_music::
+                           000016   113 	C$soundengine.c$20$1_0$96	= .
+                                    114 	.globl	C$soundengine.c$20$1_0$96
+                                    115 ;soundengine.c:20: devkit_SMS_mapROMBank( presentation_psg_bank );
+      000016 3E 02            [ 7]  116 	ld	a, #0x02
+      000018 F5               [11]  117 	push	af
+      000019 33               [ 6]  118 	inc	sp
+      00001A CDr00r00         [17]  119 	call	_devkit_SMS_mapROMBank
+      00001D 33               [ 6]  120 	inc	sp
+                           00001E   121 	C$soundengine.c$21$1_0$96	= .
+                                    122 	.globl	C$soundengine.c$21$1_0$96
+                                    123 ;soundengine.c:21: current_music_bank = presentation_psg_bank;
+      00001E 21r00r00         [10]  124 	ld	hl, #_current_music_bank
+      000021 36 02            [10]  125 	ld	(hl), #0x02
+                           000023   126 	C$soundengine.c$22$1_0$96	= .
+                                    127 	.globl	C$soundengine.c$22$1_0$96
+                                    128 ;soundengine.c:22: devkit_PSGPlay( presentation_psg );
+      000023 21r00r00         [10]  129 	ld	hl, #_presentation_psg
+      000026 E5               [11]  130 	push	hl
+      000027 CDr00r00         [17]  131 	call	_devkit_PSGPlay
+      00002A F1               [10]  132 	pop	af
+                           00002B   133 	C$soundengine.c$23$1_0$96	= .
+                                    134 	.globl	C$soundengine.c$23$1_0$96
+                                    135 ;soundengine.c:23: }
+                           00002B   136 	C$soundengine.c$23$1_0$96	= .
+                                    137 	.globl	C$soundengine.c$23$1_0$96
+                           00002B   138 	XG$play_presentation_music$0$0	= .
+                                    139 	.globl	XG$play_presentation_music$0$0
+      00002B C9               [10]  140 	ret
+                           00002C   141 	G$play_game_music$0$0	= .
+                                    142 	.globl	G$play_game_music$0$0
+                           00002C   143 	C$soundengine.c$25$1_0$97	= .
+                                    144 	.globl	C$soundengine.c$25$1_0$97
+                                    145 ;soundengine.c:25: void play_game_music()
+                                    146 ;	---------------------------------
+                                    147 ; Function play_game_music
+                                    148 ; ---------------------------------
+      00002C                        149 _play_game_music::
+                           00002C   150 	C$soundengine.c$27$1_0$97	= .
+                                    151 	.globl	C$soundengine.c$27$1_0$97
+                                    152 ;soundengine.c:27: devkit_SMS_mapROMBank( level1music_psg_bank );
+      00002C 3E 04            [ 7]  153 	ld	a, #0x04
+      00002E F5               [11]  154 	push	af
+      00002F 33               [ 6]  155 	inc	sp
+      000030 CDr00r00         [17]  156 	call	_devkit_SMS_mapROMBank
+      000033 33               [ 6]  157 	inc	sp
+                           000034   158 	C$soundengine.c$28$1_0$97	= .
+                                    159 	.globl	C$soundengine.c$28$1_0$97
+                                    160 ;soundengine.c:28: current_music_bank = level1music_psg_bank;
+      000034 21r00r00         [10]  161 	ld	hl, #_current_music_bank
+      000037 36 04            [10]  162 	ld	(hl), #0x04
+                           000039   163 	C$soundengine.c$29$1_0$97	= .
+                                    164 	.globl	C$soundengine.c$29$1_0$97
+                                    165 ;soundengine.c:29: devkit_PSGPlay( level1music_psg );
+      000039 21r00r00         [10]  166 	ld	hl, #_level1music_psg
+      00003C E5               [11]  167 	push	hl
+      00003D CDr00r00         [17]  168 	call	_devkit_PSGPlay
+      000040 F1               [10]  169 	pop	af
+                           000041   170 	C$soundengine.c$30$1_0$97	= .
+                                    171 	.globl	C$soundengine.c$30$1_0$97
+                                    172 ;soundengine.c:30: }
+                           000041   173 	C$soundengine.c$30$1_0$97	= .
+                                    174 	.globl	C$soundengine.c$30$1_0$97
+                           000041   175 	XG$play_game_music$0$0	= .
+                                    176 	.globl	XG$play_game_music$0$0
+      000041 C9               [10]  177 	ret
+                           000042   178 	G$play_punch_sound1$0$0	= .
+                                    179 	.globl	G$play_punch_sound1$0$0
+                           000042   180 	C$soundengine.c$32$1_0$98	= .
+                                    181 	.globl	C$soundengine.c$32$1_0$98
+                                    182 ;soundengine.c:32: void play_punch_sound1()
+                                    183 ;	---------------------------------
+                                    184 ; Function play_punch_sound1
+                                    185 ; ---------------------------------
+      000042                        186 _play_punch_sound1::
+                           000042   187 	C$soundengine.c$34$1_0$98	= .
+                                    188 	.globl	C$soundengine.c$34$1_0$98
+                                    189 ;soundengine.c:34: devkit_SMS_mapROMBank( punch1_psg_bank );
+      000042 3E 04            [ 7]  190 	ld	a, #0x04
+      000044 F5               [11]  191 	push	af
+      000045 33               [ 6]  192 	inc	sp
+      000046 CDr00r00         [17]  193 	call	_devkit_SMS_mapROMBank
+      000049 33               [ 6]  194 	inc	sp
+                           00004A   195 	C$soundengine.c$35$1_0$98	= .
+                                    196 	.globl	C$soundengine.c$35$1_0$98
+                                    197 ;soundengine.c:35: current_fx_bank = punch1_psg_bank;
+      00004A 21r01r00         [10]  198 	ld	hl, #_current_fx_bank
+      00004D 36 04            [10]  199 	ld	(hl), #0x04
+                           00004F   200 	C$soundengine.c$36$1_0$98	= .
+                                    201 	.globl	C$soundengine.c$36$1_0$98
+                                    202 ;soundengine.c:36: devkit_PSGSFXPlay( punch1_psg, devkit_SFX_CHANNEL2() );
+      00004F CDr00r00         [17]  203 	call	_devkit_SFX_CHANNEL2
+      000052 01r00r00         [10]  204 	ld	bc, #_punch1_psg+0
+      000055 7D               [ 4]  205 	ld	a, l
+      000056 F5               [11]  206 	push	af
+      000057 33               [ 6]  207 	inc	sp
+      000058 C5               [11]  208 	push	bc
+      000059 CDr00r00         [17]  209 	call	_devkit_PSGSFXPlay
+      00005C F1               [10]  210 	pop	af
+      00005D 33               [ 6]  211 	inc	sp
+                           00005E   212 	C$soundengine.c$37$1_0$98	= .
+                                    213 	.globl	C$soundengine.c$37$1_0$98
+                                    214 ;soundengine.c:37: }
+                           00005E   215 	C$soundengine.c$37$1_0$98	= .
+                                    216 	.globl	C$soundengine.c$37$1_0$98
+                           00005E   217 	XG$play_punch_sound1$0$0	= .
+                                    218 	.globl	XG$play_punch_sound1$0$0
+      00005E C9               [10]  219 	ret
+                           00005F   220 	G$play_punch_sound2$0$0	= .
+                                    221 	.globl	G$play_punch_sound2$0$0
+                           00005F   222 	C$soundengine.c$39$1_0$99	= .
+                                    223 	.globl	C$soundengine.c$39$1_0$99
+                                    224 ;soundengine.c:39: void play_punch_sound2()
+                                    225 ;	---------------------------------
+                                    226 ; Function play_punch_sound2
+                                    227 ; ---------------------------------
+      00005F                        228 _play_punch_sound2::
+                           00005F   229 	C$soundengine.c$41$1_0$99	= .
+                                    230 	.globl	C$soundengine.c$41$1_0$99
+                                    231 ;soundengine.c:41: devkit_SMS_mapROMBank( punch2_psg_bank );
+      00005F 3E 04            [ 7]  232 	ld	a, #0x04
+      000061 F5               [11]  233 	push	af
+      000062 33               [ 6]  234 	inc	sp
+      000063 CDr00r00         [17]  235 	call	_devkit_SMS_mapROMBank
+      000066 33               [ 6]  236 	inc	sp
+                           000067   237 	C$soundengine.c$42$1_0$99	= .
+                                    238 	.globl	C$soundengine.c$42$1_0$99
+                                    239 ;soundengine.c:42: current_fx_bank = punch2_psg_bank;
+      000067 21r01r00         [10]  240 	ld	hl, #_current_fx_bank
+      00006A 36 04            [10]  241 	ld	(hl), #0x04
+                           00006C   242 	C$soundengine.c$43$1_0$99	= .
+                                    243 	.globl	C$soundengine.c$43$1_0$99
+                                    244 ;soundengine.c:43: devkit_PSGSFXPlay( punch1_psg, devkit_SFX_CHANNEL3() );
+      00006C CDr00r00         [17]  245 	call	_devkit_SFX_CHANNEL3
+      00006F 01r00r00         [10]  246 	ld	bc, #_punch1_psg+0
+      000072 7D               [ 4]  247 	ld	a, l
+      000073 F5               [11]  248 	push	af
+      000074 33               [ 6]  249 	inc	sp
+      000075 C5               [11]  250 	push	bc
+      000076 CDr00r00         [17]  251 	call	_devkit_PSGSFXPlay
+      000079 F1               [10]  252 	pop	af
+      00007A 33               [ 6]  253 	inc	sp
+                           00007B   254 	C$soundengine.c$44$1_0$99	= .
+                                    255 	.globl	C$soundengine.c$44$1_0$99
+                                    256 ;soundengine.c:44: }
+                           00007B   257 	C$soundengine.c$44$1_0$99	= .
+                                    258 	.globl	C$soundengine.c$44$1_0$99
+                           00007B   259 	XG$play_punch_sound2$0$0	= .
+                                    260 	.globl	XG$play_punch_sound2$0$0
+      00007B C9               [10]  261 	ret
+                           00007C   262 	G$manage_sound_frame$0$0	= .
+                                    263 	.globl	G$manage_sound_frame$0$0
+                           00007C   264 	C$soundengine.c$46$1_0$100	= .
+                                    265 	.globl	C$soundengine.c$46$1_0$100
+                                    266 ;soundengine.c:46: void manage_sound_frame()
+                                    267 ;	---------------------------------
+                                    268 ; Function manage_sound_frame
+                                    269 ; ---------------------------------
+      00007C                        270 _manage_sound_frame::
+                           00007C   271 	C$soundengine.c$48$1_0$100	= .
+                                    272 	.globl	C$soundengine.c$48$1_0$100
+                                    273 ;soundengine.c:48: if( devkit_PSGGetStatus() == devkit_PSG_PLAYING() )
+      00007C CDr00r00         [17]  274 	call	_devkit_PSGGetStatus
+      00007F 4D               [ 4]  275 	ld	c, l
+      000080 C5               [11]  276 	push	bc
+      000081 CDr00r00         [17]  277 	call	_devkit_PSG_PLAYING
+      000084 C1               [10]  278 	pop	bc
+      000085 79               [ 4]  279 	ld	a, c
+      000086 95               [ 4]  280 	sub	a, l
+      000087 20 0C            [12]  281 	jr	NZ, 00102$
+                           000089   282 	C$soundengine.c$50$2_0$101	= .
+                                    283 	.globl	C$soundengine.c$50$2_0$101
+                                    284 ;soundengine.c:50: devkit_SMS_mapROMBank( current_music_bank );
+      000089 3Ar00r00         [13]  285 	ld	a,(#_current_music_bank + 0)
+      00008C F5               [11]  286 	push	af
+      00008D 33               [ 6]  287 	inc	sp
+      00008E CDr00r00         [17]  288 	call	_devkit_SMS_mapROMBank
+      000091 33               [ 6]  289 	inc	sp
+                           000092   290 	C$soundengine.c$51$2_0$101	= .
+                                    291 	.globl	C$soundengine.c$51$2_0$101
+                                    292 ;soundengine.c:51: devkit_PSGFrame();
+      000092 CDr00r00         [17]  293 	call	_devkit_PSGFrame
+      000095                        294 00102$:
+                           000095   295 	C$soundengine.c$53$1_0$100	= .
+                                    296 	.globl	C$soundengine.c$53$1_0$100
+                                    297 ;soundengine.c:53: if( devkit_PSGSFXGetStatus() == devkit_PSG_PLAYING() )
+      000095 CDr00r00         [17]  298 	call	_devkit_PSGSFXGetStatus
+      000098 4D               [ 4]  299 	ld	c, l
+      000099 C5               [11]  300 	push	bc
+      00009A CDr00r00         [17]  301 	call	_devkit_PSG_PLAYING
+      00009D C1               [10]  302 	pop	bc
+      00009E 79               [ 4]  303 	ld	a, c
+      00009F 95               [ 4]  304 	sub	a, l
+      0000A0 C2r00r00         [10]  305 	jp	NZ,_devkit_PSGSFXStop
+                           0000A3   306 	C$soundengine.c$55$2_0$102	= .
+                                    307 	.globl	C$soundengine.c$55$2_0$102
+                                    308 ;soundengine.c:55: devkit_SMS_mapROMBank( current_fx_bank );
+      0000A3 3Ar01r00         [13]  309 	ld	a,(#_current_fx_bank + 0)
+      0000A6 F5               [11]  310 	push	af
+      0000A7 33               [ 6]  311 	inc	sp
+      0000A8 CDr00r00         [17]  312 	call	_devkit_SMS_mapROMBank
+      0000AB 33               [ 6]  313 	inc	sp
+                           0000AC   314 	C$soundengine.c$56$2_0$102	= .
+                                    315 	.globl	C$soundengine.c$56$2_0$102
+                                    316 ;soundengine.c:56: devkit_PSGSFXFrame();
+                           0000AC   317 	C$soundengine.c$60$2_0$103	= .
+                                    318 	.globl	C$soundengine.c$60$2_0$103
+                                    319 ;soundengine.c:60: devkit_PSGSFXStop();
+                           0000AC   320 	C$soundengine.c$62$1_0$100	= .
+                                    321 	.globl	C$soundengine.c$62$1_0$100
+                                    322 ;soundengine.c:62: }
+                           0000AC   323 	C$soundengine.c$62$1_0$100	= .
+                                    324 	.globl	C$soundengine.c$62$1_0$100
+                           0000AC   325 	XG$manage_sound_frame$0$0	= .
+                                    326 	.globl	XG$manage_sound_frame$0$0
+      0000AC C3r00r00         [10]  327 	jp	_devkit_PSGSFXFrame
+                                    328 	.area _CODE
+                                    329 	.area _INITIALIZER
+                           000000   330 Fsoundengine$__xinit_current_music_bank$0_0$0 == .
+      000000                        331 __xinit__current_music_bank:
+      000000 00                     332 	.db #0x00	; 0
+                           000001   333 Fsoundengine$__xinit_current_fx_bank$0_0$0 == .
+      000001                        334 __xinit__current_fx_bank:
+      000001 00                     335 	.db #0x00	; 0
+                                    336 	.area _CABS (ABS)

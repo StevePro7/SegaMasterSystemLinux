@@ -1,145 +1,175 @@
 ;!FILE soundengine.asm
 XL3
-H 9 areas 8E global symbols
+H 9 areas AC global symbols
 M soundengine
 O -mz80
-S _PSGSFXPlay Ref000000
-S _ROM_bank_to_be_mapped_on_slot2 Def00FFFF
+S _devkit_SFX_CHANNEL2 Ref000000
+S _devkit_SFX_CHANNEL3 Ref000000
+S _devkit_PSGSFXGetStatus Ref000000
+S _devkit_PSGPlay Ref000000
+S _devkit_PSGSFXStop Ref000000
+S _devkit_PSGSFXFrame Ref000000
+S _devkit_PSGGetStatus Ref000000
 S _punch1_psg Ref000000
-S G$ROM_bank_to_be_mapped_on_slot2$0_0$0 Def00FFFF
-S _SRAM_bank_to_be_mapped_on_slot2 Def00FFFC
-S G$SRAM_bank_to_be_mapped_on_slot2$0_0$0 Def00FFFC
-S _PSGSFXGetStatus Ref000000
+S _devkit_PSGFrame Ref000000
 S .__.ABS. Def000000
-S _PSGPlay Ref000000
-S _PSGSFXStop Ref000000
+S _devkit_PSG_PLAYING Ref000000
 S _presentation_psg Ref000000
-S _SMS_SRAM Def008000
-S _PSGSFXFrame Ref000000
-S G$SMS_SRAM$0_0$0 Def008000
-S _PSGGetStatus Ref000000
 S _logo1985music_psg Ref000000
 S _level1music_psg Ref000000
-S _PSGFrame Ref000000
-A _CODE size 8C flags 0 addr 0
-S A$soundengine$224 Def000051
-S A$soundengine$152 Def000026
-S G$play_punch_sound2$0$0 Def000051
-S A$soundengine$234 Def00005B
-S A$soundengine$225 Def000054
-S A$soundengine$162 Def000030
-S A$soundengine$153 Def000029
-S A$soundengine$280 Def00007C
-S A$soundengine$262 Def000069
-S A$soundengine$235 Def00005D
-S A$soundengine$163 Def000033
-S A$soundengine$118 Def000013
-S G$play_game_music$0$0 Def000026
-S A$soundengine$263 Def00006C
-S A$soundengine$236 Def00005E
-S A$soundengine$191 Def00003E
-S A$soundengine$173 Def000038
-S A$soundengine$164 Def000034
-S A$soundengine$128 Def00001D
-S A$soundengine$119 Def000016
-S A$soundengine$273 Def000075
-S A$soundengine$264 Def00006D
-S A$soundengine$237 Def00005F
-S A$soundengine$192 Def000041
-S A$soundengine$165 Def000037
-S A$soundengine$129 Def000020
-S G$play_presentation_music$0$0 Def000013
-S A$soundengine$238 Def000062
-S A$soundengine$229 Def000056
-S A$soundengine$157 Def00002B
-S A$soundengine$139 Def000025
-S A$soundengine$284 Def00007F
-S A$soundengine$239 Def000063
-S A$soundengine$158 Def00002E
-S XG$manage_sound_frame$0$0 Def000089
-S A$soundengine$285 Def000082
-S A$soundengine$249 Def000068
-S A$soundengine$186 Def000039
-S A$soundengine$286 Def000086
-S A$soundengine$268 Def00006F
-S A$soundengine$196 Def000043
-S A$soundengine$187 Def00003C
-S A$soundengine$278 Def000078
-S A$soundengine$269 Def000072
-S A$soundengine$197 Def000045
-S A$soundengine$279 Def00007B
-S A$soundengine$198 Def000046
-S A$soundengine$199 Def000047
-S _play_punch_sound1 Def000039
-S _play_punch_sound2 Def000051
-S C$soundengine.c$11$0_0$82 Def000000
-S _play_game_music Def000026
-S C$soundengine.c$20$1_0$83 Def00001D
-S C$soundengine.c$12$1_0$82 Def000000
-S _play_presentation_music Def000013
-S A$soundengine$90 Def000008
-S C$soundengine.c$21$1_0$83 Def000025
-S C$soundengine.c$13$1_0$82 Def000005
-S C$soundengine.c$50$2_0$90 Def000089
-S C$soundengine.c$14$1_0$82 Def00000A
-S C$soundengine.c$30$1_0$85 Def000039
-S C$soundengine.c$15$1_0$82 Def000012
-S A$soundengine$84 Def000000
-S C$soundengine.c$31$1_0$85 Def00003E
-S C$soundengine.c$23$1_0$84 Def000026
-S A$soundengine$94 Def00000A
-S A$soundengine$85 Def000003
-S C$soundengine.c$32$1_0$85 Def000043
-S C$soundengine.c$24$1_0$84 Def000026
-S A$soundengine$95 Def00000D
-S C$soundengine.c$33$1_0$85 Def000050
-S C$soundengine.c$25$1_0$84 Def00002B
-S C$soundengine.c$17$1_0$83 Def000013
-S A$soundengine$96 Def00000E
-S C$soundengine.c$41$1_0$87 Def000069
-S XG$play_punch_sound1$0$0 Def000050
-S C$soundengine.c$26$1_0$84 Def000030
-S C$soundengine.c$18$1_0$83 Def000013
-S A$soundengine$97 Def000011
-S C$soundengine.c$42$1_0$87 Def000069
-S XG$play_punch_sound2$0$0 Def000068
-S C$soundengine.c$27$1_0$84 Def000038
-S C$soundengine.c$19$1_0$83 Def000018
-S A$soundengine$89 Def000005
-S C$soundengine.c$52$1_0$87 Def000089
-S C$soundengine.c$35$1_0$86 Def000051
+S _devkit_PSGSFXPlay Ref000000
+S _devkit_SMS_mapROMBank Ref000000
+A _CODE size AF flags 0 addr 0
+S A$soundengine$305 Def0000A0
+S A$soundengine$251 Def000076
+S A$soundengine$233 Def000061
+S A$soundengine$206 Def000056
+S A$soundengine$161 Def000034
+S A$soundengine$125 Def000021
+S A$soundengine$116 Def000016
+S C$soundengine.c$48$1_0$100 Def00007C
+S G$play_punch_sound2$0$0 Def00005F
+S A$soundengine$261 Def00007B
+S A$soundengine$252 Def000079
+S A$soundengine$234 Def000062
+S A$soundengine$207 Def000057
+S A$soundengine$162 Def000037
+S A$soundengine$153 Def00002C
+S A$soundengine$117 Def000018
+S C$soundengine.c$55$2_0$102 Def0000A3
+S A$soundengine$280 Def000086
+S A$soundengine$253 Def00007A
+S A$soundengine$235 Def000063
+S A$soundengine$208 Def000058
+S A$soundengine$190 Def000042
+S A$soundengine$154 Def00002E
+S A$soundengine$118 Def000019
+S C$soundengine.c$56$2_0$102 Def0000AC
+S G$play_game_music$0$0 Def00002C
+S A$soundengine$281 Def000087
+S A$soundengine$245 Def00006C
+S A$soundengine$236 Def000066
+S A$soundengine$209 Def000059
+S A$soundengine$191 Def000044
+S A$soundengine$155 Def00002F
+S A$soundengine$119 Def00001A
+S A$soundengine$327 Def0000AC
+S A$soundengine$309 Def0000A3
+S A$soundengine$246 Def00006F
+S A$soundengine$219 Def00005E
+S A$soundengine$192 Def000045
+S A$soundengine$156 Def000030
+S A$soundengine$129 Def000023
+S G$play_presentation_music$0$0 Def000016
+S A$soundengine$274 Def00007C
+S A$soundengine$247 Def000072
+S A$soundengine$193 Def000046
+S A$soundengine$166 Def000039
+S A$soundengine$157 Def000033
+S A$soundengine$293 Def000092
+S A$soundengine$275 Def00007F
+S A$soundengine$248 Def000073
+S A$soundengine$194 Def000049
+S A$soundengine$167 Def00003C
+S XG$manage_sound_frame$0$0 Def0000AC
+S A$soundengine$285 Def000089
+S A$soundengine$276 Def000080
+S A$soundengine$249 Def000074
+S A$soundengine$177 Def000041
+S A$soundengine$168 Def00003D
+S A$soundengine$286 Def00008C
+S A$soundengine$277 Def000081
+S A$soundengine$169 Def000040
+S A$soundengine$287 Def00008D
+S A$soundengine$278 Def000084
+S A$soundengine$288 Def00008E
+S A$soundengine$279 Def000085
+S A$soundengine$198 Def00004A
+S A$soundengine$298 Def000095
+S A$soundengine$289 Def000091
+S A$soundengine$199 Def00004D
+S _play_punch_sound1 Def000042
+S A$soundengine$299 Def000098
+S _play_punch_sound2 Def00005F
+S _play_game_music Def00002C
+S A$soundengine$80 Def000002
+S _play_presentation_music Def000016
+S A$soundengine$81 Def000003
+S A$soundengine$82 Def000004
+S C$soundengine.c$11$0_0$95 Def000000
+S A$soundengine$92 Def00000D
+S A$soundengine$83 Def000007
+S A$soundengine$93 Def000010
+S C$soundengine.c$20$1_0$96 Def000016
+S A$soundengine$94 Def000011
+S C$soundengine.c$21$1_0$96 Def00001E
+S C$soundengine.c$13$1_0$95 Def000000
+S A$soundengine$95 Def000014
+S C$soundengine.c$30$1_0$97 Def000041
+S C$soundengine.c$22$1_0$96 Def000023
+S C$soundengine.c$14$1_0$95 Def000008
+S A$soundengine$87 Def000008
+S XG$play_punch_sound1$0$0 Def00005E
+S C$soundengine.c$23$1_0$96 Def00002B
+S C$soundengine.c$15$1_0$95 Def00000D
+S A$soundengine$88 Def00000B
+S A$soundengine$79 Def000000
+S XG$play_punch_sound2$0$0 Def00007B
+S C$soundengine.c$16$1_0$95 Def000015
+S C$soundengine.c$32$1_0$98 Def000042
 S G$play_logo_music$0$0 Def000000
-S C$soundengine.c$36$1_0$86 Def000051
-S XG$play_game_music$0$0 Def000038
-S C$soundengine.c$43$2_0$88 Def00006F
-S C$soundengine.c$37$1_0$86 Def000056
-S C$soundengine.c$29$1_0$85 Def000039
-S C$soundengine.c$46$1_0$87 Def000078
-S C$soundengine.c$44$2_0$88 Def000075
-S C$soundengine.c$38$1_0$86 Def00005B
-S XG$play_presentation_music$0$0 Def000025
-S C$soundengine.c$39$1_0$86 Def000068
-S C$soundengine.c$47$2_0$89 Def00007F
-S C$soundengine.c$48$2_0$89 Def000089
+S C$soundengine.c$41$1_0$99 Def00005F
+S XG$play_game_music$0$0 Def000041
+S C$soundengine.c$25$1_0$97 Def00002C
+S C$soundengine.c$42$1_0$99 Def000067
+S C$soundengine.c$34$1_0$98 Def000042
+S C$soundengine.c$18$1_0$96 Def000016
+S C$soundengine.c$43$1_0$99 Def00006C
+S C$soundengine.c$35$1_0$98 Def00004A
+S C$soundengine.c$27$1_0$97 Def00002C
+S XG$play_presentation_music$0$0 Def00002B
+S C$soundengine.c$44$1_0$99 Def00007B
+S C$soundengine.c$36$1_0$98 Def00004F
+S C$soundengine.c$28$1_0$97 Def000034
+S C$soundengine.c$37$1_0$98 Def00005E
+S C$soundengine.c$29$1_0$97 Def000039
+S C$soundengine.c$39$1_0$99 Def00005F
 S _play_logo_music Def000000
-S G$manage_sound_frame$0$0 Def000069
-S XG$play_logo_music$0$0 Def000012
-S A$soundengine$200 Def00004A
-S _manage_sound_frame Def000069
-S A$soundengine$300 Def000089
-S A$soundengine$201 Def00004B
-S A$soundengine$211 Def000050
-S A$soundengine$202 Def00004E
-S A$soundengine$130 Def000021
-S A$soundengine$230 Def000059
+S G$manage_sound_frame$0$0 Def00007C
+S XG$play_logo_music$0$0 Def000015
+S _manage_sound_frame Def00007C
+S A$soundengine$300 Def000099
+S A$soundengine$210 Def00005C
+S A$soundengine$120 Def00001D
+S C$soundengine.c$50$2_0$101 Def000089
+S A$soundengine$310 Def0000A6
+S A$soundengine$301 Def00009A
+S A$soundengine$211 Def00005D
+S A$soundengine$130 Def000026
+S A$soundengine$103 Def000015
+S C$soundengine.c$62$1_0$100 Def0000AC
+S C$soundengine.c$53$1_0$100 Def000095
+S C$soundengine.c$51$2_0$101 Def000092
+S A$soundengine$311 Def0000A7
+S A$soundengine$302 Def00009D
 S A$soundengine$203 Def00004F
-S A$soundengine$131 Def000024
-S A$soundengine$240 Def000066
-S A$soundengine$123 Def000018
-S A$soundengine$105 Def000012
-S A$soundengine$241 Def000067
-S A$soundengine$124 Def00001B
-S G$play_punch_sound1$0$0 Def000039
+S A$soundengine$140 Def00002B
+S A$soundengine$131 Def000027
+S A$soundengine$312 Def0000A8
+S A$soundengine$303 Def00009E
+S A$soundengine$240 Def000067
+S A$soundengine$204 Def000052
+S A$soundengine$132 Def00002A
+S C$soundengine.c$60$2_0$103 Def0000AC
+S C$soundengine.c$46$1_0$100 Def00007C
+S A$soundengine$313 Def0000AB
+S A$soundengine$304 Def00009F
+S A$soundengine$250 Def000075
+S A$soundengine$241 Def00006A
+S A$soundengine$232 Def00005F
+S A$soundengine$205 Def000055
+S A$soundengine$124 Def00001E
+S G$play_punch_sound1$0$0 Def000042
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 2 flags 0 addr 0
 S _current_fx_bank Def000001
@@ -164,46 +194,52 @@ T 01 00 00
 R 00 00 02 00
 T 00 00 00
 R 00 00 00 00
-T 00 00 00 21 FF FF 36 03 21 00 00 36 03 21 00 00
-R 00 00 00 00 00 09 02 00 02 0E 0F 00
-T 0D 00 00 E5 CD 00 00 F1 C9
-R 00 00 00 00 02 05 08 00
-T 13 00 00
+T 00 00 00 3E 03 F5 33 CD 00 00 33 21 00 00 36 03
+R 00 00 00 00 02 08 0F 00 00 0C 02 00
+T 0D 00 00 21 00 00 E5 CD 00 00 F1 C9
+R 00 00 00 00 02 04 0C 00 02 08 03 00
+T 16 00 00
 R 00 00 00 00
-T 13 00 00 21 FF FF 36 02 21 00 00 36 02 21 00 00
-R 00 00 00 00 00 09 02 00 02 0E 0A 00
-T 20 00 00 E5 CD 00 00 F1 C9
-R 00 00 00 00 02 05 08 00
-T 26 00 00
+T 16 00 00 3E 02 F5 33 CD 00 00 33 21 00 00 36 02
+R 00 00 00 00 02 08 0F 00 00 0C 02 00
+T 23 00 00 21 00 00 E5 CD 00 00 F1 C9
+R 00 00 00 00 02 04 0B 00 02 08 03 00
+T 2C 00 00
 R 00 00 00 00
-T 26 00 00 21 FF FF 36 04 21 00 00 36 04 21 00 00
-R 00 00 00 00 00 09 02 00 02 0E 10 00
-T 33 00 00 E5 CD 00 00 F1 C9
-R 00 00 00 00 02 05 08 00
-T 39 00 00
+T 2C 00 00 3E 04 F5 33 CD 00 00 33 21 00 00 36 04
+R 00 00 00 00 02 08 0F 00 00 0C 02 00
+T 39 00 00 21 00 00 E5 CD 00 00 F1 C9
+R 00 00 00 00 02 04 0D 00 02 08 03 00
+T 42 00 00
 R 00 00 00 00
-T 39 00 00 21 FF FF 36 04 21 01 00 36 04 3E 01 F5
-R 00 00 00 00 00 09 02 00
-T 46 00 00 33 21 00 00 E5 CD 00 00 F1 33 C9
-R 00 00 00 00 02 05 02 00 02 09 00 00
-T 51 00 00
+T 42 00 00 3E 04 F5 33 CD 00 00 33 21 01 00 36 04
+R 00 00 00 00 02 08 0F 00 00 0C 02 00
+T 4F 00 00 CD 00 00 01 00 00 7D F5 33 C5 CD 00 00
+R 00 00 00 00 02 04 00 00 02 07 07 00 02 0E 0E 00
+T 5C 00 00 F1 33 C9
 R 00 00 00 00
-T 51 00 00 21 FF FF 36 04 21 01 00 36 04 3E 02 F5
-R 00 00 00 00 00 09 02 00
-T 5E 00 00 33 21 00 00 E5 CD 00 00 F1 33 C9
-R 00 00 00 00 02 05 02 00 02 09 00 00
-T 69 00 00
+T 5F 00 00
 R 00 00 00 00
-T 69 00 00 CD 00 00 2D 20 09 3A 00 00 32 FF FF CD
-R 00 00 00 00 02 04 0E 00 00 0A 02 00
-T 76 00 00 00 00
-R 00 00 00 00 02 03 11 00
-T 78 00 00
+T 5F 00 00 3E 04 F5 33 CD 00 00 33 21 01 00 36 04
+R 00 00 00 00 02 08 0F 00 00 0C 02 00
+T 6C 00 00 CD 00 00 01 00 00 7D F5 33 C5 CD 00 00
+R 00 00 00 00 02 04 01 00 02 07 07 00 02 0E 0E 00
+T 79 00 00 F1 33 C9
 R 00 00 00 00
-T 78 00 00 CD 00 00 2D C2 00 00 3A 01 00 FD 21
-R 00 00 00 00 02 04 06 00 02 08 09 00 00 0B 02 00
-T 84 00 00 FF FF FD 77 00 C3 00 00
-R 00 00 00 00 02 09 0C 00
+T 7C 00 00
+R 00 00 00 00
+T 7C 00 00 CD 00 00 4D C5 CD 00 00 C1 79 95 20 0C
+R 00 00 00 00 02 04 06 00 02 09 0A 00
+T 89 00 00 3A 00 00 F5 33 CD 00 00 33 CD 00 00
+R 00 00 00 00 00 04 02 00 02 09 0F 00 02 0D 08 00
+T 95 00 00
+R 00 00 00 00
+T 95 00 00 CD 00 00 4D C5 CD 00 00 C1 79 95 C2
+R 00 00 00 00 02 04 02 00 02 09 0A 00
+T A1 00 00 00 00 3A 01 00 F5 33 CD 00 00 33 C3
+R 00 00 00 00 02 03 04 00 00 06 02 00 02 0B 0F 00
+T AD 00 00 00 00
+R 00 00 00 00 02 03 05 00
 T 00 00 00
 R 00 00 07 00
 T 00 00 00 00

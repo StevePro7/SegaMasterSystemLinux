@@ -17,6 +17,8 @@ F:G$devkit_PSGSilenceChannels$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$devkit_PSGRestoreVolumes$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$devkit_PSGFrame$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$devkit_PSGSFXFrame$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+F:G$devkit_PSG_STOPPED$0_0$0({2}DF,SC:U),Z,0,0,0,0,0
+F:G$devkit_PSG_PLAYING$0_0$0({2}DF,SC:U),Z,0,0,0,0,0
 F:G$devkit_SFX_CHANNEL2$0_0$0({2}DF,SC:U),Z,0,0,0,0,0
 F:G$devkit_SFX_CHANNEL3$0_0$0({2}DF,SC:U),Z,0,0,0,0,0
 F:G$devkit_SFX_CHANNELS2AND3$0_0$0({2}DF,SC:U),Z,0,0,0,0,0
