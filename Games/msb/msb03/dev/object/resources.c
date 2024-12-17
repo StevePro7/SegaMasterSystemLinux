@@ -13,8 +13,8 @@ unsigned int scroll_y;
 void load_logo_assets()
 {
 	devkit_SMS_mapROMBank(logo1985tiles_bin_bank);
-    devkit_SMS_loadTiles(logo1985tiles_bin, 0, logo1985tiles_bin_size);
-    devkit_SMS_loadTileMap(0, 0, logo1985tilemap_bin, logo1985tilemap_bin_size);
+	devkit_SMS_loadTiles(logo1985tiles_bin, 0, logo1985tiles_bin_size);
+	devkit_SMS_loadTileMap(0, 0, logo1985tilemap_bin, logo1985tilemap_bin_size);
 }
 
 void load_logo_halfpalette()
@@ -30,8 +30,8 @@ void load_logo_fullpalette()
 void load_fnaclogo_assets()
 {
 	devkit_SMS_mapROMBank(fnaclogotiles_psgcompr_bank);
-    devkit_SMS_loadPSGaidencompressedTiles(fnaclogotiles_psgcompr,0);
-    devkit_SMS_loadTileMap(0, 0, fnaclogotilemap_bin, fnaclogotilemap_bin_size);
+	devkit_SMS_loadPSGaidencompressedTiles(fnaclogotiles_psgcompr,0);
+	devkit_SMS_loadTileMap(0, 0, fnaclogotilemap_bin, fnaclogotilemap_bin_size);
 }
 
 void load_fnaclogo_halfpalette()
@@ -48,8 +48,8 @@ void load_fnaclogo_fullpalette()
 
 void load_presentation_assets() {
 	devkit_SMS_mapROMBank(gatopresentaciontiles_psgcompr_bank);
-    devkit_SMS_loadPSGaidencompressedTiles(gatopresentaciontiles_psgcompr,0);
-    devkit_SMS_loadTileMap(0, 0, gatopresentaciontilemap_bin, gatopresentaciontilemap_bin_size);	
+	devkit_SMS_loadPSGaidencompressedTiles(gatopresentaciontiles_psgcompr,0);
+	devkit_SMS_loadTileMap(0, 0, gatopresentaciontilemap_bin, gatopresentaciontilemap_bin_size);	
 }
 
 void load_presentation_halfpalette() {
@@ -65,9 +65,9 @@ void load_presentation_fullpalette() {
 void load_level1_assets() {
 	devkit_SMS_mapROMBank(level1_palette_bin_bank);
 	devkit_SMS_loadBGPalette(level1_palette_bin);
-    devkit_SMS_loadTiles(level1_tiles_bin,0, level1_tiles_bin_size);
-    devkit_SMS_mapROMBank(player_palette_bin_bank);
-    devkit_SMS_loadSpritePalette(player_palette_bin);
+	devkit_SMS_loadTiles(level1_tiles_bin,0, level1_tiles_bin_size);
+	devkit_SMS_mapROMBank(player_palette_bin_bank);
+	devkit_SMS_loadSpritePalette(player_palette_bin);
 }
 
 void init_level1_scroll() {
