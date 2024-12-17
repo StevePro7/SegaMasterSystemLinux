@@ -5,13 +5,14 @@
 #include "../banks/bank3.h"
 #include "../banks/bank4.h"
 #include "../engine/soundengine.h"
-#include "../../lib/SMSlib.h"
+#include "../devkit/_sms_manager.h"
 #include <stdbool.h>
 
 player player1;
 player player2;
 
-void add_player(unsigned char player_number) {
+void add_player(unsigned char player_number)
+{
 	player* playerpointer; 
 	if(player_number == 1) {
 		initEngine();
@@ -74,28 +75,28 @@ void manage_player_iddle_status(unsigned char player_number, unsigned int keys) 
 				player1.status2 = PLAYER_STATUS2_IDDLE;
 				play_punch_sound2();
 				setAnimation(player1.entityreference->entityIndex,0);
-			} else if(isFrameEnded(player1.entityreference->entityIndex) && !(keys & PORT_A_KEY_1)) {
+			} else if(isFrameEnded(player1.entityreference->entityIndex) && !(keys & devkit_PORT_A_KEY_1())) {
 				player1.status2 = PLAYER_STATUS2_IDDLE;
 				play_punch_sound2();
 				setAnimation(player1.entityreference->entityIndex,0);
 			}
 		} else {
-			if(keys & PORT_A_KEY_RIGHT) {
+			if(keys & devkit_PORT_A_KEY_RIGHT()) {
 				player1.status = PLAYER_STATUS_WALKING;
 				player1.vx = CHAR2UFIX(1);
 				player1.xdirection = 1;
 				player1.entityreference->direction = RIGHT_DIRECTION;
-			} else if(keys & PORT_A_KEY_LEFT) {
+			} else if(keys & devkit_PORT_A_KEY_LEFT()) {
 				player1.status = PLAYER_STATUS_WALKING;
 				player1.vx = CHAR2UFIX(1);
 				player1.xdirection = -1;
 				player1.entityreference->direction = LEFT_DIRECTION;
-			} else if(keys & PORT_A_KEY_UP) {
+			} else if(keys & devkit_PORT_A_KEY_UP()) {
 				player1.status = PLAYER_STATUS_WALKING;
 				player1.vy = CHAR2UFIX(1);
 				player1.ydirection = -1;
-			} else if(keys & PORT_A_KEY_DOWN) {
-				if(keys & PORT_A_KEY_1) {
+			} else if(keys & devkit_PORT_A_KEY_DOWN()) {
+				if(keys & devkit_PORT_A_KEY_1()) {
 					player1.status = PLAYER_STATUS_CROUCHED;
 					setAnimation(player1.entityreference->entityIndex,6);
 				} else {
@@ -103,12 +104,12 @@ void manage_player_iddle_status(unsigned char player_number, unsigned int keys) 
 					player1.vy = CHAR2UFIX(1);
 					player1.ydirection = 1;	
 				}
-			} else if((keys & PORT_A_KEY_1) && player1.status2 == PLAYER_STATUS2_IDDLE) {
+			} else if((keys & devkit_PORT_A_KEY_1()) && player1.status2 == PLAYER_STATUS2_IDDLE) {
 				player1.status2 = PLAYER_STATUS2_PUNCHING;
 				setAnimation(player1.entityreference->entityIndex,3);
 				play_punch_sound1();
 
-			} else if(keys & PORT_A_KEY_2) {
+			} else if(keys & devkit_PORT_A_KEY_2()) {
 				player1.status = PLAYER_STATUS_JUMPING;
 				player1.vy = CHAR2UFIX(3);
 				player1.ydirection = -1;
@@ -121,28 +122,28 @@ void manage_player_iddle_status(unsigned char player_number, unsigned int keys) 
 				player2.status2 = PLAYER_STATUS2_IDDLE;
 				setAnimation(player2.entityreference->entityIndex,0);
 				play_punch_sound2();
-			} else if(isFrameEnded(player2.entityreference->entityIndex) && !(keys & PORT_B_KEY_1)) {
+			} else if(isFrameEnded(player2.entityreference->entityIndex) && !(keys & devkit_PORT_B_KEY_1())) {
 				player2.status2 = PLAYER_STATUS2_IDDLE;
 				play_punch_sound2();
 				setAnimation(player2.entityreference->entityIndex,0);
 			}
 		} else {
-			if(keys & PORT_B_KEY_RIGHT) {
+			if(keys & devkit_PORT_B_KEY_RIGHT()) {
 				player2.status = PLAYER_STATUS_WALKING;
 				player2.vx = CHAR2UFIX(1);
 				player2.xdirection = 1;
 				player2.entityreference->direction = RIGHT_DIRECTION;
-			} else if(keys & PORT_B_KEY_LEFT) {
+			} else if(keys & devkit_PORT_B_KEY_LEFT()) {
 				player2.status = PLAYER_STATUS_WALKING;
 				player2.vx = CHAR2UFIX(1);
 				player2.xdirection = -1;
 				player2.entityreference->direction = LEFT_DIRECTION;
-			} else if(keys & PORT_B_KEY_UP) {
+			} else if(keys & devkit_PORT_B_KEY_UP()) {
 				player2.status = PLAYER_STATUS_WALKING;
 				player2.vy = CHAR2UFIX(1);
 				player2.ydirection = -1;
-			} else if(keys & PORT_B_KEY_DOWN) {
-				if(keys & PORT_B_KEY_1) {
+			} else if(keys & devkit_PORT_B_KEY_DOWN()) {
+				if(keys & devkit_PORT_B_KEY_1()) {
 					player2.status = PLAYER_STATUS_CROUCHED;
 					setAnimation(player2.entityreference->entityIndex,6);
 				} else {
@@ -150,11 +151,11 @@ void manage_player_iddle_status(unsigned char player_number, unsigned int keys) 
 					player2.vy = CHAR2UFIX(1);
 					player2.ydirection = 1;	
 				}
-			}else if((keys & PORT_B_KEY_1) && player2.status2 == PLAYER_STATUS2_IDDLE) {
+			}else if((keys & devkit_PORT_B_KEY_1()) && player2.status2 == PLAYER_STATUS2_IDDLE) {
 				player2.status2 = PLAYER_STATUS2_PUNCHING;
 				setAnimation(player2.entityreference->entityIndex,3);
 				play_punch_sound1();
-			} else if(keys & PORT_B_KEY_2) {
+			} else if(keys & devkit_PORT_B_KEY_2()) {
 				player2.status = PLAYER_STATUS_JUMPING;
 				player2.vy = CHAR2UFIX(3);
 				player2.ydirection = -1;
@@ -166,7 +167,7 @@ void manage_player_iddle_status(unsigned char player_number, unsigned int keys) 
 void manage_player_walking_status(unsigned char player_number, unsigned int keys) {
 	if(player_number == 1) {
 		if(player1.status2 == PLAYER_STATUS2_PUNCHING) {
-			if(keys & PORT_A_KEY_DOWN) {
+			if(keys & devkit_PORT_A_KEY_DOWN()) {
 				player1.status = PLAYER_STATUS_CROUCHED;
 				setAnimation(player1.entityreference->entityIndex,7);
 				player1.vy = 0;
@@ -177,7 +178,7 @@ void manage_player_walking_status(unsigned char player_number, unsigned int keys
 					player1.vx = 0;
 					setAnimation(player1.entityreference->entityIndex,0);
 					play_punch_sound2();
-				} else if(isFrameEnded(player1.entityreference->entityIndex) && !(keys & PORT_A_KEY_1)) {
+				} else if(isFrameEnded(player1.entityreference->entityIndex) && !(keys & devkit_PORT_A_KEY_1())) {
 					player1.status2 = PLAYER_STATUS2_IDDLE;
 					player1.status = PLAYER_STATUS_IDDLE;
 					player1.vx = 0;
@@ -186,7 +187,7 @@ void manage_player_walking_status(unsigned char player_number, unsigned int keys
 				}
 			}
 		} else {
-			if(keys & PORT_A_KEY_RIGHT) {
+			if(keys & devkit_PORT_A_KEY_RIGHT()) {
 				if(isAnimationEnded(player1.entityreference->entityIndex)) {
 					setAnimation(player1.entityreference->entityIndex,2);	
 				}
@@ -195,7 +196,7 @@ void manage_player_walking_status(unsigned char player_number, unsigned int keys
 				}
 				player1.xdirection = 1;
 				player1.entityreference->direction = RIGHT_DIRECTION;
-			} else if(keys & PORT_A_KEY_LEFT) {
+			} else if(keys & devkit_PORT_A_KEY_LEFT()) {
 				if(isAnimationEnded(player1.entityreference->entityIndex)) {
 					setAnimation(player1.entityreference->entityIndex,2);
 				}
@@ -209,13 +210,13 @@ void manage_player_walking_status(unsigned char player_number, unsigned int keys
 					player1.vx = 0;
 				}
 			}
-			if(keys & PORT_A_KEY_UP) {
+			if(keys & devkit_PORT_A_KEY_UP()) {
 				if(isAnimationEnded(player1.entityreference->entityIndex)) {
 					setAnimation(player1.entityreference->entityIndex,2);	
 				}
 				player1.vy = CHAR2UFIX(1);
 				player1.ydirection = -1;
-			} else if(keys & PORT_A_KEY_DOWN) {
+			} else if(keys & devkit_PORT_A_KEY_DOWN()) {
 				if(isAnimationEnded(player1.entityreference->entityIndex)) {
 					setAnimation(player1.entityreference->entityIndex,2);	
 				}
@@ -231,12 +232,12 @@ void manage_player_walking_status(unsigned char player_number, unsigned int keys
 				setAnimation(player1.entityreference->entityIndex,0);
 				player1.status = PLAYER_STATUS_IDDLE;
 			}
-			if(keys & PORT_A_KEY_2) {
+			if(keys & devkit_PORT_A_KEY_2()) {
 				player1.status = PLAYER_STATUS_JUMPING;
 				player1.vy = CHAR2UFIX(3);
 				player1.ydirection = -1;
 			}
-			if((keys & PORT_A_KEY_1) && player1.status2 == PLAYER_STATUS2_IDDLE) {
+			if((keys & devkit_PORT_A_KEY_1()) && player1.status2 == PLAYER_STATUS2_IDDLE) {
 				player1.status2 = PLAYER_STATUS2_PUNCHING;
 				setAnimation(player1.entityreference->entityIndex,3);
 				play_punch_sound1();
@@ -244,7 +245,7 @@ void manage_player_walking_status(unsigned char player_number, unsigned int keys
 		}
 	} else {
 		if(player2.status2 == PLAYER_STATUS2_PUNCHING) {
-			if(keys & PORT_B_KEY_DOWN) {
+			if(keys & devkit_PORT_B_KEY_DOWN()) {
 				player2.status = PLAYER_STATUS_CROUCHED;
 				setAnimation(player2.entityreference->entityIndex,7);
 				player2.vy = 0;
@@ -255,7 +256,7 @@ void manage_player_walking_status(unsigned char player_number, unsigned int keys
 					player2.vx = 0;
 					setAnimation(player2.entityreference->entityIndex,0);
 					play_punch_sound2();
-				} else if(isFrameEnded(player2.entityreference->entityIndex) && !(keys & PORT_B_KEY_1)) {
+				} else if(isFrameEnded(player2.entityreference->entityIndex) && !(keys & devkit_PORT_B_KEY_1())) {
 					player2.status2 = PLAYER_STATUS2_IDDLE;
 					player2.status = PLAYER_STATUS_IDDLE;
 					player2.vx = 0;
@@ -264,7 +265,7 @@ void manage_player_walking_status(unsigned char player_number, unsigned int keys
 				}
 			}
 		} else {
-			if(keys & PORT_B_KEY_RIGHT) {
+			if(keys & devkit_PORT_B_KEY_RIGHT()) {
 				if(isAnimationEnded(player2.entityreference->entityIndex)) {
 					setAnimation(player2.entityreference->entityIndex,2);	
 				}
@@ -273,7 +274,7 @@ void manage_player_walking_status(unsigned char player_number, unsigned int keys
 				}
 				player2.xdirection = 1;
 				player2.entityreference->direction = RIGHT_DIRECTION;
-			} else if(keys & PORT_B_KEY_LEFT) {
+			} else if(keys & devkit_PORT_B_KEY_LEFT()) {
 				if(isAnimationEnded(player2.entityreference->entityIndex)) {
 					setAnimation(player2.entityreference->entityIndex,2);
 				}
@@ -287,13 +288,13 @@ void manage_player_walking_status(unsigned char player_number, unsigned int keys
 					player2.vx = 0;
 				}
 			}
-			if(keys & PORT_B_KEY_UP) {
+			if(keys & devkit_PORT_B_KEY_UP()) {
 				if(isAnimationEnded(player2.entityreference->entityIndex)) {
 					setAnimation(player2.entityreference->entityIndex,2);	
 				}
 				player2.vy = CHAR2UFIX(1);
 				player2.ydirection = -1;
-			} else if(keys & PORT_B_KEY_DOWN) {
+			} else if(keys & devkit_PORT_B_KEY_DOWN()) {
 				if(isAnimationEnded(player2.entityreference->entityIndex)) {
 					setAnimation(player2.entityreference->entityIndex,2);	
 				}
@@ -308,12 +309,12 @@ void manage_player_walking_status(unsigned char player_number, unsigned int keys
 				setAnimation(player2.entityreference->entityIndex,0);
 				player2.status = PLAYER_STATUS_IDDLE;
 			}
-			if(keys & PORT_B_KEY_2) {
+			if(keys & devkit_PORT_B_KEY_2()) {
 				player2.status = PLAYER_STATUS_JUMPING;
 				player2.vy = CHAR2UFIX(3);
 				player2.ydirection = -1;
 			}
-			if((keys & PORT_B_KEY_1) && player2.status2 == PLAYER_STATUS2_IDDLE) {
+			if((keys & devkit_PORT_B_KEY_1()) && player2.status2 == PLAYER_STATUS2_IDDLE) {
 				player2.status2 = PLAYER_STATUS2_PUNCHING;
 				setAnimation(player2.entityreference->entityIndex,3);
 				play_punch_sound1();
@@ -324,14 +325,14 @@ void manage_player_walking_status(unsigned char player_number, unsigned int keys
 
 void manage_player_jumping_status(unsigned char player_number, unsigned int keys) {
 	if(player_number == 1) {
-		if(keys & PORT_A_KEY_RIGHT) {
+		if(keys & devkit_PORT_A_KEY_RIGHT()) {
 			if(player1.xdirection == -1) {
 				forceReload(player1.entityreference->entityIndex);
 			}
 			player1.xdirection = 1;
 			player1.entityreference->direction = RIGHT_DIRECTION;
 			player1.vx = CHAR2UFIX(1);
-		} else if(keys & PORT_A_KEY_LEFT) {
+		} else if(keys & devkit_PORT_A_KEY_LEFT()) {
 			if(player1.xdirection == 1) {
 				forceReload(player1.entityreference->entityIndex);
 			}
@@ -362,20 +363,20 @@ void manage_player_jumping_status(unsigned char player_number, unsigned int keys
 			player1.vx = 0;
 			player1.vy = 0;
 		}
-		if((keys & PORT_A_KEY_1) && player1.status2 == PLAYER_STATUS2_IDDLE) {
+		if((keys & devkit_PORT_A_KEY_1()) && player1.status2 == PLAYER_STATUS2_IDDLE) {
 			player1.status2 = PLAYER_STATUS2_PUNCHING;
 			setAnimation(player1.entityreference->entityIndex,5);
 			play_punch_sound1();
 		}
 	} else {
-		if(keys & PORT_B_KEY_RIGHT) {
+		if(keys & devkit_PORT_B_KEY_RIGHT()) {
 			if(player2.xdirection == -1) {
 				forceReload(player2.entityreference->entityIndex);
 			}
 			player2.xdirection = 1;
 			player2.entityreference->direction = RIGHT_DIRECTION;
 			player2.vx = CHAR2UFIX(1);
-		} else if(keys & PORT_B_KEY_LEFT) {
+		} else if(keys & devkit_PORT_B_KEY_LEFT()) {
 			if(player2.xdirection == 1) {
 				forceReload(player2.entityreference->entityIndex);
 			}
@@ -406,7 +407,7 @@ void manage_player_jumping_status(unsigned char player_number, unsigned int keys
 			player2.vx = 0;
 			player2.vy = 0;
 		}
-		if((keys & PORT_B_KEY_1) && player2.status2 == PLAYER_STATUS2_IDDLE) {
+		if((keys & devkit_PORT_B_KEY_1()) && player2.status2 == PLAYER_STATUS2_IDDLE) {
 			player2.status2 = PLAYER_STATUS2_PUNCHING;
 			setAnimation(player2.entityreference->entityIndex,5);
 			play_punch_sound1();
@@ -424,13 +425,13 @@ void manage_player_crouched_status(unsigned char player_number, unsigned int key
 				player1.vy = 0;
 			}
 		} else {
-			if(!(keys & PORT_A_KEY_DOWN)) {
+			if(!(keys & devkit_PORT_A_KEY_DOWN())) {
 				if(isAnimationEnded(player1.entityreference->entityIndex)) {
 					setAnimation(player1.entityreference->entityIndex,0);
 					player1.status = PLAYER_STATUS_IDDLE;
 				}
 			} else {
-				if(keys & PORT_A_KEY_1) {
+				if(keys & devkit_PORT_A_KEY_1()) {
 					player1.status2 = PLAYER_STATUS2_PUNCHING;
 					setAnimation(player1.entityreference->entityIndex,7);
 					play_punch_sound1();
@@ -446,13 +447,13 @@ void manage_player_crouched_status(unsigned char player_number, unsigned int key
 				player2.vy = 0;
 			}
 		} else {
-			if(!(keys & PORT_B_KEY_DOWN)) {
+			if(!(keys & devkit_PORT_B_KEY_DOWN())) {
 				if(isAnimationEnded(player2.entityreference->entityIndex)) {
 					setAnimation(player2.entityreference->entityIndex,0);
 					player2.status = PLAYER_STATUS_IDDLE;
 				}
 			} else {
-				if(keys & PORT_B_KEY_1) {
+				if(keys & devkit_PORT_B_KEY_1()) {
 					player2.status2 = PLAYER_STATUS2_PUNCHING;
 					setAnimation(player2.entityreference->entityIndex,7);
 					play_punch_sound1();

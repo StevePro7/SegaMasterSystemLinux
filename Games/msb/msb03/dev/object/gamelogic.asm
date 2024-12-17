@@ -8,8 +8,9 @@
 ;--------------------------------------------------------
 ; Public variables in this module
 ;--------------------------------------------------------
-	.globl _SMS_getKeysStatus
-	.globl _SMS_setBackdropColor
+	.globl _devkit_PORT_A_KEY_1
+	.globl _devkit_SMS_getKeysStatus
+	.globl _devkit_SMS_setBackdropColor
 	.globl _play_game_music
 	.globl _play_presentation_music
 	.globl _play_logo_music
@@ -36,9 +37,6 @@
 	.globl _scroll_enabled
 	.globl _score
 	.globl _game_status
-	.globl _SMS_SRAM
-	.globl _SRAM_bank_to_be_mapped_on_slot2
-	.globl _ROM_bank_to_be_mapped_on_slot2
 	.globl _init_game
 	.globl _play_game
 	.globl _logo_screen
@@ -54,12 +52,6 @@
 ; ram data
 ;--------------------------------------------------------
 	.area _DATA
-G$ROM_bank_to_be_mapped_on_slot2$0_0$0 == 0xffff
-_ROM_bank_to_be_mapped_on_slot2	=	0xffff
-G$SRAM_bank_to_be_mapped_on_slot2$0_0$0 == 0xfffc
-_SRAM_bank_to_be_mapped_on_slot2	=	0xfffc
-G$SMS_SRAM$0_0$0 == 0x8000
-_SMS_SRAM	=	0x8000
 G$game_status$0_0$0==.
 _game_status::
 	.ds 1
@@ -95,93 +87,93 @@ _scroll_enabled::
 	.area _CODE
 	G$init_game$0$0	= .
 	.globl	G$init_game$0$0
-	C$gamelogic.c$15$0_0$89	= .
-	.globl	C$gamelogic.c$15$0_0$89
-;gamelogic.c:15: void init_game() {
+	C$gamelogic.c$15$0_0$106	= .
+	.globl	C$gamelogic.c$15$0_0$106
+;gamelogic.c:15: void init_game()
 ;	---------------------------------
 ; Function init_game
 ; ---------------------------------
 _init_game::
-	C$gamelogic.c$16$1_0$89	= .
-	.globl	C$gamelogic.c$16$1_0$89
-;gamelogic.c:16: init_console();
-	C$gamelogic.c$17$1_0$89	= .
-	.globl	C$gamelogic.c$17$1_0$89
-;gamelogic.c:17: }
-	C$gamelogic.c$17$1_0$89	= .
-	.globl	C$gamelogic.c$17$1_0$89
+	C$gamelogic.c$17$1_0$106	= .
+	.globl	C$gamelogic.c$17$1_0$106
+;gamelogic.c:17: init_console();
+	C$gamelogic.c$18$1_0$106	= .
+	.globl	C$gamelogic.c$18$1_0$106
+;gamelogic.c:18: }
+	C$gamelogic.c$18$1_0$106	= .
+	.globl	C$gamelogic.c$18$1_0$106
 	XG$init_game$0$0	= .
 	.globl	XG$init_game$0$0
 	jp	_init_console
 	G$play_game$0$0	= .
 	.globl	G$play_game$0$0
-	C$gamelogic.c$19$1_0$90	= .
-	.globl	C$gamelogic.c$19$1_0$90
-;gamelogic.c:19: void play_game(){
+	C$gamelogic.c$20$1_0$107	= .
+	.globl	C$gamelogic.c$20$1_0$107
+;gamelogic.c:20: void play_game()
 ;	---------------------------------
 ; Function play_game
 ; ---------------------------------
 _play_game::
-	C$gamelogic.c$20$1_0$90	= .
-	.globl	C$gamelogic.c$20$1_0$90
-;gamelogic.c:20: logo_screen();
+	C$gamelogic.c$22$1_0$107	= .
+	.globl	C$gamelogic.c$22$1_0$107
+;gamelogic.c:22: logo_screen();
 	call	_logo_screen
-	C$gamelogic.c$21$1_0$90	= .
-	.globl	C$gamelogic.c$21$1_0$90
-;gamelogic.c:21: fnaclogo_screen();
+	C$gamelogic.c$23$1_0$107	= .
+	.globl	C$gamelogic.c$23$1_0$107
+;gamelogic.c:23: fnaclogo_screen();
 	call	_fnaclogo_screen
-	C$gamelogic.c$22$1_0$90	= .
-	.globl	C$gamelogic.c$22$1_0$90
-;gamelogic.c:22: presentation_screen();
+	C$gamelogic.c$24$1_0$107	= .
+	.globl	C$gamelogic.c$24$1_0$107
+;gamelogic.c:24: presentation_screen();
 	call	_presentation_screen
-	C$gamelogic.c$23$1_0$90	= .
-	.globl	C$gamelogic.c$23$1_0$90
-;gamelogic.c:23: while(game_status != GAME_STATUS_GAME_OVER) {
+	C$gamelogic.c$25$1_0$107	= .
+	.globl	C$gamelogic.c$25$1_0$107
+;gamelogic.c:25: while(game_status != GAME_STATUS_GAME_OVER)
 00101$:
 	ld	a,(#_game_status + 0)
 	dec	a
 	ret	Z
-	C$gamelogic.c$24$2_0$91	= .
-	.globl	C$gamelogic.c$24$2_0$91
-;gamelogic.c:24: game_loop();
+	C$gamelogic.c$27$2_0$108	= .
+	.globl	C$gamelogic.c$27$2_0$108
+;gamelogic.c:27: game_loop();
 	call	_game_loop
-	C$gamelogic.c$26$1_0$90	= .
-	.globl	C$gamelogic.c$26$1_0$90
-;gamelogic.c:26: }
-	C$gamelogic.c$26$1_0$90	= .
-	.globl	C$gamelogic.c$26$1_0$90
+	C$gamelogic.c$29$1_0$107	= .
+	.globl	C$gamelogic.c$29$1_0$107
+;gamelogic.c:29: }
+	C$gamelogic.c$29$1_0$107	= .
+	.globl	C$gamelogic.c$29$1_0$107
 	XG$play_game$0$0	= .
 	.globl	XG$play_game$0$0
 	jr	00101$
 	G$logo_screen$0$0	= .
 	.globl	G$logo_screen$0$0
-	C$gamelogic.c$28$1_0$92	= .
-	.globl	C$gamelogic.c$28$1_0$92
-;gamelogic.c:28: void logo_screen() {
+	C$gamelogic.c$31$1_0$109	= .
+	.globl	C$gamelogic.c$31$1_0$109
+;gamelogic.c:31: void logo_screen()
 ;	---------------------------------
 ; Function logo_screen
 ; ---------------------------------
 _logo_screen::
-	C$gamelogic.c$29$1_0$92	= .
-	.globl	C$gamelogic.c$29$1_0$92
-;gamelogic.c:29: load_logo_assets();
+	C$gamelogic.c$33$1_0$109	= .
+	.globl	C$gamelogic.c$33$1_0$109
+;gamelogic.c:33: load_logo_assets();
 	call	_load_logo_assets
-	C$gamelogic.c$30$1_0$92	= .
-	.globl	C$gamelogic.c$30$1_0$92
-;gamelogic.c:30: load_background_blackpalette();
+	C$gamelogic.c$34$1_0$109	= .
+	.globl	C$gamelogic.c$34$1_0$109
+;gamelogic.c:34: load_background_blackpalette();
 	call	_load_background_blackpalette
-	C$gamelogic.c$31$1_0$92	= .
-	.globl	C$gamelogic.c$31$1_0$92
-;gamelogic.c:31: frame_cnt = 0;
+	C$gamelogic.c$35$1_0$109	= .
+	.globl	C$gamelogic.c$35$1_0$109
+;gamelogic.c:35: frame_cnt = 0;
 	ld	hl, #0x0000
 	ld	(_frame_cnt), hl
-	C$gamelogic.c$32$1_0$92	= .
-	.globl	C$gamelogic.c$32$1_0$92
-;gamelogic.c:32: play_logo_music();
+	C$gamelogic.c$36$1_0$109	= .
+	.globl	C$gamelogic.c$36$1_0$109
+;gamelogic.c:36: play_logo_music();
 	call	_play_logo_music
-	C$gamelogic.c$33$1_0$92	= .
-	.globl	C$gamelogic.c$33$1_0$92
-;gamelogic.c:33: while (frame_cnt < 300) {
+	C$gamelogic.c$37$1_0$109	= .
+	.globl	C$gamelogic.c$37$1_0$109
+;gamelogic.c:37: while (frame_cnt < 300)
 00109$:
 	ld	iy, #_frame_cnt
 	ld	a, 0 (iy)
@@ -189,53 +181,53 @@ _logo_screen::
 	ld	a, 1 (iy)
 	sbc	a, #0x01
 	ret	NC
-	C$gamelogic.c$34$2_0$93	= .
-	.globl	C$gamelogic.c$34$2_0$93
-;gamelogic.c:34: frame_cnt++;
+	C$gamelogic.c$39$2_0$110	= .
+	.globl	C$gamelogic.c$39$2_0$110
+;gamelogic.c:39: frame_cnt++;
 	ld	hl, (_frame_cnt)
 	inc	hl
 	ld	(_frame_cnt), hl
-	C$gamelogic.c$35$2_0$93	= .
-	.globl	C$gamelogic.c$35$2_0$93
-;gamelogic.c:35: if(frame_cnt == 25) {
+	C$gamelogic.c$40$2_0$110	= .
+	.globl	C$gamelogic.c$40$2_0$110
+;gamelogic.c:40: if(frame_cnt == 25)
 	ld	a, 0 (iy)
 	sub	a, #0x19
 	or	a, 1 (iy)
 	jr	NZ, 00102$
-	C$gamelogic.c$36$3_0$94	= .
-	.globl	C$gamelogic.c$36$3_0$94
-;gamelogic.c:36: load_logo_halfpalette();
+	C$gamelogic.c$42$3_0$111	= .
+	.globl	C$gamelogic.c$42$3_0$111
+;gamelogic.c:42: load_logo_halfpalette();
 	call	_load_logo_halfpalette
 00102$:
-	C$gamelogic.c$38$2_0$93	= .
-	.globl	C$gamelogic.c$38$2_0$93
-;gamelogic.c:38: if(frame_cnt == 50) {
+	C$gamelogic.c$44$2_0$110	= .
+	.globl	C$gamelogic.c$44$2_0$110
+;gamelogic.c:44: if(frame_cnt == 50)
 	ld	iy, #_frame_cnt
 	ld	a, 0 (iy)
 	sub	a, #0x32
 	or	a, 1 (iy)
 	jr	NZ, 00104$
-	C$gamelogic.c$39$3_0$95	= .
-	.globl	C$gamelogic.c$39$3_0$95
-;gamelogic.c:39: load_logo_fullpalette();
+	C$gamelogic.c$46$3_0$112	= .
+	.globl	C$gamelogic.c$46$3_0$112
+;gamelogic.c:46: load_logo_fullpalette();
 	call	_load_logo_fullpalette
 00104$:
-	C$gamelogic.c$41$2_0$93	= .
-	.globl	C$gamelogic.c$41$2_0$93
-;gamelogic.c:41: if(frame_cnt == 250) {
+	C$gamelogic.c$48$2_0$110	= .
+	.globl	C$gamelogic.c$48$2_0$110
+;gamelogic.c:48: if(frame_cnt == 250)
 	ld	iy, #_frame_cnt
 	ld	a, 0 (iy)
 	sub	a, #0xfa
 	or	a, 1 (iy)
 	jr	NZ, 00106$
-	C$gamelogic.c$42$3_0$96	= .
-	.globl	C$gamelogic.c$42$3_0$96
-;gamelogic.c:42: load_logo_halfpalette();
+	C$gamelogic.c$50$3_0$113	= .
+	.globl	C$gamelogic.c$50$3_0$113
+;gamelogic.c:50: load_logo_halfpalette();
 	call	_load_logo_halfpalette
 00106$:
-	C$gamelogic.c$44$2_0$93	= .
-	.globl	C$gamelogic.c$44$2_0$93
-;gamelogic.c:44: if(frame_cnt == 275) {
+	C$gamelogic.c$52$2_0$110	= .
+	.globl	C$gamelogic.c$52$2_0$110
+;gamelogic.c:52: if(frame_cnt == 275)
 	ld	iy, #_frame_cnt
 	ld	a, 0 (iy)
 	sub	a, #0x13
@@ -243,48 +235,48 @@ _logo_screen::
 	ld	a, 1 (iy)
 	dec	a
 	jr	NZ, 00108$
-	C$gamelogic.c$45$3_0$97	= .
-	.globl	C$gamelogic.c$45$3_0$97
-;gamelogic.c:45: load_background_blackpalette();
+	C$gamelogic.c$54$3_0$114	= .
+	.globl	C$gamelogic.c$54$3_0$114
+;gamelogic.c:54: load_background_blackpalette();
 	call	_load_background_blackpalette
 00108$:
-	C$gamelogic.c$47$2_0$93	= .
-	.globl	C$gamelogic.c$47$2_0$93
-;gamelogic.c:47: waitForFrame();
+	C$gamelogic.c$56$2_0$110	= .
+	.globl	C$gamelogic.c$56$2_0$110
+;gamelogic.c:56: waitForFrame();
 	call	_waitForFrame
-	C$gamelogic.c$49$1_0$92	= .
-	.globl	C$gamelogic.c$49$1_0$92
-;gamelogic.c:49: }
-	C$gamelogic.c$49$1_0$92	= .
-	.globl	C$gamelogic.c$49$1_0$92
+	C$gamelogic.c$58$1_0$109	= .
+	.globl	C$gamelogic.c$58$1_0$109
+;gamelogic.c:58: }
+	C$gamelogic.c$58$1_0$109	= .
+	.globl	C$gamelogic.c$58$1_0$109
 	XG$logo_screen$0$0	= .
 	.globl	XG$logo_screen$0$0
 	jr	00109$
 	G$fnaclogo_screen$0$0	= .
 	.globl	G$fnaclogo_screen$0$0
-	C$gamelogic.c$51$1_0$98	= .
-	.globl	C$gamelogic.c$51$1_0$98
-;gamelogic.c:51: void fnaclogo_screen() {
+	C$gamelogic.c$60$1_0$115	= .
+	.globl	C$gamelogic.c$60$1_0$115
+;gamelogic.c:60: void fnaclogo_screen()
 ;	---------------------------------
 ; Function fnaclogo_screen
 ; ---------------------------------
 _fnaclogo_screen::
-	C$gamelogic.c$52$1_0$98	= .
-	.globl	C$gamelogic.c$52$1_0$98
-;gamelogic.c:52: load_fnaclogo_assets();
+	C$gamelogic.c$62$1_0$115	= .
+	.globl	C$gamelogic.c$62$1_0$115
+;gamelogic.c:62: load_fnaclogo_assets();
 	call	_load_fnaclogo_assets
-	C$gamelogic.c$53$1_0$98	= .
-	.globl	C$gamelogic.c$53$1_0$98
-;gamelogic.c:53: load_background_blackpalette();
+	C$gamelogic.c$63$1_0$115	= .
+	.globl	C$gamelogic.c$63$1_0$115
+;gamelogic.c:63: load_background_blackpalette();
 	call	_load_background_blackpalette
-	C$gamelogic.c$54$1_0$98	= .
-	.globl	C$gamelogic.c$54$1_0$98
-;gamelogic.c:54: frame_cnt = 0;
+	C$gamelogic.c$64$1_0$115	= .
+	.globl	C$gamelogic.c$64$1_0$115
+;gamelogic.c:64: frame_cnt = 0;
 	ld	hl, #0x0000
 	ld	(_frame_cnt), hl
-	C$gamelogic.c$55$1_0$98	= .
-	.globl	C$gamelogic.c$55$1_0$98
-;gamelogic.c:55: while (frame_cnt < 300) {
+	C$gamelogic.c$65$1_0$115	= .
+	.globl	C$gamelogic.c$65$1_0$115
+;gamelogic.c:65: while (frame_cnt < 300)
 00109$:
 	ld	iy, #_frame_cnt
 	ld	a, 0 (iy)
@@ -292,53 +284,53 @@ _fnaclogo_screen::
 	ld	a, 1 (iy)
 	sbc	a, #0x01
 	ret	NC
-	C$gamelogic.c$56$2_0$99	= .
-	.globl	C$gamelogic.c$56$2_0$99
-;gamelogic.c:56: frame_cnt++;
+	C$gamelogic.c$67$2_0$116	= .
+	.globl	C$gamelogic.c$67$2_0$116
+;gamelogic.c:67: frame_cnt++;
 	ld	hl, (_frame_cnt)
 	inc	hl
 	ld	(_frame_cnt), hl
-	C$gamelogic.c$57$2_0$99	= .
-	.globl	C$gamelogic.c$57$2_0$99
-;gamelogic.c:57: if(frame_cnt == 25) {
+	C$gamelogic.c$68$2_0$116	= .
+	.globl	C$gamelogic.c$68$2_0$116
+;gamelogic.c:68: if(frame_cnt == 25)
 	ld	a, 0 (iy)
 	sub	a, #0x19
 	or	a, 1 (iy)
 	jr	NZ, 00102$
-	C$gamelogic.c$58$3_0$100	= .
-	.globl	C$gamelogic.c$58$3_0$100
-;gamelogic.c:58: load_fnaclogo_halfpalette();
+	C$gamelogic.c$70$3_0$117	= .
+	.globl	C$gamelogic.c$70$3_0$117
+;gamelogic.c:70: load_fnaclogo_halfpalette();
 	call	_load_fnaclogo_halfpalette
 00102$:
-	C$gamelogic.c$60$2_0$99	= .
-	.globl	C$gamelogic.c$60$2_0$99
-;gamelogic.c:60: if(frame_cnt == 50) {
+	C$gamelogic.c$72$2_0$116	= .
+	.globl	C$gamelogic.c$72$2_0$116
+;gamelogic.c:72: if(frame_cnt == 50)
 	ld	iy, #_frame_cnt
 	ld	a, 0 (iy)
 	sub	a, #0x32
 	or	a, 1 (iy)
 	jr	NZ, 00104$
-	C$gamelogic.c$61$3_0$101	= .
-	.globl	C$gamelogic.c$61$3_0$101
-;gamelogic.c:61: load_fnaclogo_fullpalette();
+	C$gamelogic.c$74$3_0$118	= .
+	.globl	C$gamelogic.c$74$3_0$118
+;gamelogic.c:74: load_fnaclogo_fullpalette();
 	call	_load_fnaclogo_fullpalette
 00104$:
-	C$gamelogic.c$63$2_0$99	= .
-	.globl	C$gamelogic.c$63$2_0$99
-;gamelogic.c:63: if(frame_cnt == 250) {
+	C$gamelogic.c$76$2_0$116	= .
+	.globl	C$gamelogic.c$76$2_0$116
+;gamelogic.c:76: if(frame_cnt == 250)
 	ld	iy, #_frame_cnt
 	ld	a, 0 (iy)
 	sub	a, #0xfa
 	or	a, 1 (iy)
 	jr	NZ, 00106$
-	C$gamelogic.c$64$3_0$102	= .
-	.globl	C$gamelogic.c$64$3_0$102
-;gamelogic.c:64: load_fnaclogo_halfpalette();
+	C$gamelogic.c$78$3_0$119	= .
+	.globl	C$gamelogic.c$78$3_0$119
+;gamelogic.c:78: load_fnaclogo_halfpalette();
 	call	_load_fnaclogo_halfpalette
 00106$:
-	C$gamelogic.c$66$2_0$99	= .
-	.globl	C$gamelogic.c$66$2_0$99
-;gamelogic.c:66: if(frame_cnt == 275) {
+	C$gamelogic.c$80$2_0$116	= .
+	.globl	C$gamelogic.c$80$2_0$116
+;gamelogic.c:80: if(frame_cnt == 275)
 	ld	iy, #_frame_cnt
 	ld	a, 0 (iy)
 	sub	a, #0x13
@@ -346,52 +338,52 @@ _fnaclogo_screen::
 	ld	a, 1 (iy)
 	dec	a
 	jr	NZ, 00108$
-	C$gamelogic.c$67$3_0$103	= .
-	.globl	C$gamelogic.c$67$3_0$103
-;gamelogic.c:67: load_background_blackpalette();
+	C$gamelogic.c$82$3_0$120	= .
+	.globl	C$gamelogic.c$82$3_0$120
+;gamelogic.c:82: load_background_blackpalette();
 	call	_load_background_blackpalette
 00108$:
-	C$gamelogic.c$69$2_0$99	= .
-	.globl	C$gamelogic.c$69$2_0$99
-;gamelogic.c:69: waitForFrame();
+	C$gamelogic.c$84$2_0$116	= .
+	.globl	C$gamelogic.c$84$2_0$116
+;gamelogic.c:84: waitForFrame();
 	call	_waitForFrame
-	C$gamelogic.c$71$1_0$98	= .
-	.globl	C$gamelogic.c$71$1_0$98
-;gamelogic.c:71: }
-	C$gamelogic.c$71$1_0$98	= .
-	.globl	C$gamelogic.c$71$1_0$98
+	C$gamelogic.c$86$1_0$115	= .
+	.globl	C$gamelogic.c$86$1_0$115
+;gamelogic.c:86: }
+	C$gamelogic.c$86$1_0$115	= .
+	.globl	C$gamelogic.c$86$1_0$115
 	XG$fnaclogo_screen$0$0	= .
 	.globl	XG$fnaclogo_screen$0$0
 	jr	00109$
 	G$presentation_screen$0$0	= .
 	.globl	G$presentation_screen$0$0
-	C$gamelogic.c$73$1_0$104	= .
-	.globl	C$gamelogic.c$73$1_0$104
-;gamelogic.c:73: void presentation_screen() {
+	C$gamelogic.c$88$1_0$121	= .
+	.globl	C$gamelogic.c$88$1_0$121
+;gamelogic.c:88: void presentation_screen()
 ;	---------------------------------
 ; Function presentation_screen
 ; ---------------------------------
 _presentation_screen::
-	C$gamelogic.c$75$1_0$104	= .
-	.globl	C$gamelogic.c$75$1_0$104
-;gamelogic.c:75: load_presentation_assets();
+	C$gamelogic.c$91$1_0$121	= .
+	.globl	C$gamelogic.c$91$1_0$121
+;gamelogic.c:91: load_presentation_assets();
 	call	_load_presentation_assets
-	C$gamelogic.c$76$1_0$104	= .
-	.globl	C$gamelogic.c$76$1_0$104
-;gamelogic.c:76: load_background_blackpalette();
+	C$gamelogic.c$92$1_0$121	= .
+	.globl	C$gamelogic.c$92$1_0$121
+;gamelogic.c:92: load_background_blackpalette();
 	call	_load_background_blackpalette
-	C$gamelogic.c$77$1_0$104	= .
-	.globl	C$gamelogic.c$77$1_0$104
-;gamelogic.c:77: play_presentation_music();
+	C$gamelogic.c$93$1_0$121	= .
+	.globl	C$gamelogic.c$93$1_0$121
+;gamelogic.c:93: play_presentation_music();
 	call	_play_presentation_music
-	C$gamelogic.c$78$1_0$104	= .
-	.globl	C$gamelogic.c$78$1_0$104
-;gamelogic.c:78: frame_cnt = 0;
+	C$gamelogic.c$94$1_0$121	= .
+	.globl	C$gamelogic.c$94$1_0$121
+;gamelogic.c:94: frame_cnt = 0;
 	ld	hl, #0x0000
 	ld	(_frame_cnt), hl
-	C$gamelogic.c$79$1_0$104	= .
-	.globl	C$gamelogic.c$79$1_0$104
-;gamelogic.c:79: while (frame_cnt < 800) {
+	C$gamelogic.c$95$1_0$121	= .
+	.globl	C$gamelogic.c$95$1_0$121
+;gamelogic.c:95: while (frame_cnt < 800)
 00112$:
 	ld	iy, #_frame_cnt
 	ld	a, 0 (iy)
@@ -399,40 +391,40 @@ _presentation_screen::
 	ld	a, 1 (iy)
 	sbc	a, #0x03
 	ret	NC
-	C$gamelogic.c$80$2_0$105	= .
-	.globl	C$gamelogic.c$80$2_0$105
-;gamelogic.c:80: frame_cnt++;
+	C$gamelogic.c$97$2_0$122	= .
+	.globl	C$gamelogic.c$97$2_0$122
+;gamelogic.c:97: frame_cnt++;
 	ld	hl, (_frame_cnt)
 	inc	hl
 	ld	(_frame_cnt), hl
-	C$gamelogic.c$81$2_0$105	= .
-	.globl	C$gamelogic.c$81$2_0$105
-;gamelogic.c:81: if(frame_cnt == 25) {
+	C$gamelogic.c$98$2_0$122	= .
+	.globl	C$gamelogic.c$98$2_0$122
+;gamelogic.c:98: if(frame_cnt == 25)
 	ld	a, 0 (iy)
 	sub	a, #0x19
 	or	a, 1 (iy)
 	jr	NZ, 00102$
-	C$gamelogic.c$82$3_0$106	= .
-	.globl	C$gamelogic.c$82$3_0$106
-;gamelogic.c:82: load_presentation_halfpalette();
+	C$gamelogic.c$100$3_0$123	= .
+	.globl	C$gamelogic.c$100$3_0$123
+;gamelogic.c:100: load_presentation_halfpalette();
 	call	_load_presentation_halfpalette
 00102$:
-	C$gamelogic.c$84$2_0$105	= .
-	.globl	C$gamelogic.c$84$2_0$105
-;gamelogic.c:84: if(frame_cnt == 50) {
+	C$gamelogic.c$102$2_0$122	= .
+	.globl	C$gamelogic.c$102$2_0$122
+;gamelogic.c:102: if(frame_cnt == 50)
 	ld	iy, #_frame_cnt
 	ld	a, 0 (iy)
 	sub	a, #0x32
 	or	a, 1 (iy)
 	jr	NZ, 00104$
-	C$gamelogic.c$85$3_0$107	= .
-	.globl	C$gamelogic.c$85$3_0$107
-;gamelogic.c:85: load_presentation_fullpalette();
+	C$gamelogic.c$104$3_0$124	= .
+	.globl	C$gamelogic.c$104$3_0$124
+;gamelogic.c:104: load_presentation_fullpalette();
 	call	_load_presentation_fullpalette
 00104$:
-	C$gamelogic.c$87$2_0$105	= .
-	.globl	C$gamelogic.c$87$2_0$105
-;gamelogic.c:87: if(frame_cnt == 750) {
+	C$gamelogic.c$106$2_0$122	= .
+	.globl	C$gamelogic.c$106$2_0$122
+;gamelogic.c:106: if(frame_cnt == 750)
 	ld	iy, #_frame_cnt
 	ld	a, 0 (iy)
 	sub	a, #0xee
@@ -440,14 +432,14 @@ _presentation_screen::
 	ld	a, 1 (iy)
 	sub	a, #0x02
 	jr	NZ, 00106$
-	C$gamelogic.c$88$3_0$108	= .
-	.globl	C$gamelogic.c$88$3_0$108
-;gamelogic.c:88: load_presentation_halfpalette();
+	C$gamelogic.c$108$3_0$125	= .
+	.globl	C$gamelogic.c$108$3_0$125
+;gamelogic.c:108: load_presentation_halfpalette();
 	call	_load_presentation_halfpalette
 00106$:
-	C$gamelogic.c$90$2_0$105	= .
-	.globl	C$gamelogic.c$90$2_0$105
-;gamelogic.c:90: if(frame_cnt == 775) {
+	C$gamelogic.c$110$2_0$122	= .
+	.globl	C$gamelogic.c$110$2_0$122
+;gamelogic.c:110: if(frame_cnt == 775)
 	ld	iy, #_frame_cnt
 	ld	a, 0 (iy)
 	sub	a, #0x07
@@ -455,19 +447,27 @@ _presentation_screen::
 	ld	a, 1 (iy)
 	sub	a, #0x03
 	jr	NZ, 00108$
-	C$gamelogic.c$91$3_0$109	= .
-	.globl	C$gamelogic.c$91$3_0$109
-;gamelogic.c:91: load_background_blackpalette();
+	C$gamelogic.c$112$3_0$126	= .
+	.globl	C$gamelogic.c$112$3_0$126
+;gamelogic.c:112: load_background_blackpalette();
 	call	_load_background_blackpalette
 00108$:
-	C$gamelogic.c$93$2_0$105	= .
-	.globl	C$gamelogic.c$93$2_0$105
-;gamelogic.c:93: keys = SMS_getKeysStatus();
-	call	_SMS_getKeysStatus
-	C$gamelogic.c$94$2_0$105	= .
-	.globl	C$gamelogic.c$94$2_0$105
-;gamelogic.c:94: if(keys & PORT_A_KEY_1 && (frame_cnt < 740)) {
-	bit	4, l
+	C$gamelogic.c$114$2_0$122	= .
+	.globl	C$gamelogic.c$114$2_0$122
+;gamelogic.c:114: keys = devkit_SMS_getKeysStatus();
+	call	_devkit_SMS_getKeysStatus
+	C$gamelogic.c$115$2_0$122	= .
+	.globl	C$gamelogic.c$115$2_0$122
+;gamelogic.c:115: if(keys & devkit_PORT_A_KEY_1() && (frame_cnt < 740))
+	push	hl
+	call	_devkit_PORT_A_KEY_1
+	pop	de
+	ld	a, l
+	and	a, e
+	ld	c, a
+	ld	a, h
+	and	a, d
+	or	a, c
 	jr	Z, 00110$
 	ld	iy, #_frame_cnt
 	ld	a, 0 (iy)
@@ -475,158 +475,161 @@ _presentation_screen::
 	ld	a, 1 (iy)
 	sbc	a, #0x02
 	jr	NC, 00110$
-	C$gamelogic.c$95$3_0$110	= .
-	.globl	C$gamelogic.c$95$3_0$110
-;gamelogic.c:95: frame_cnt = 740;
+	C$gamelogic.c$117$3_0$127	= .
+	.globl	C$gamelogic.c$117$3_0$127
+;gamelogic.c:117: frame_cnt = 740;
 	ld	hl, #0x02e4
 	ld	(_frame_cnt), hl
 00110$:
-	C$gamelogic.c$97$2_0$105	= .
-	.globl	C$gamelogic.c$97$2_0$105
-;gamelogic.c:97: waitForFrame();
+	C$gamelogic.c$119$2_0$122	= .
+	.globl	C$gamelogic.c$119$2_0$122
+;gamelogic.c:119: waitForFrame();
 	call	_waitForFrame
-	C$gamelogic.c$99$1_0$104	= .
-	.globl	C$gamelogic.c$99$1_0$104
-;gamelogic.c:99: }
-	C$gamelogic.c$99$1_0$104	= .
-	.globl	C$gamelogic.c$99$1_0$104
+	C$gamelogic.c$121$1_0$121	= .
+	.globl	C$gamelogic.c$121$1_0$121
+;gamelogic.c:121: }
+	C$gamelogic.c$121$1_0$121	= .
+	.globl	C$gamelogic.c$121$1_0$121
 	XG$presentation_screen$0$0	= .
 	.globl	XG$presentation_screen$0$0
 	jp	00112$
 	G$game_loop$0$0	= .
 	.globl	G$game_loop$0$0
-	C$gamelogic.c$101$1_0$111	= .
-	.globl	C$gamelogic.c$101$1_0$111
-;gamelogic.c:101: void game_loop() {
+	C$gamelogic.c$123$1_0$128	= .
+	.globl	C$gamelogic.c$123$1_0$128
+;gamelogic.c:123: void game_loop()
 ;	---------------------------------
 ; Function game_loop
 ; ---------------------------------
 _game_loop::
-	C$gamelogic.c$102$1_0$111	= .
-	.globl	C$gamelogic.c$102$1_0$111
-;gamelogic.c:102: SMS_setBackdropColor(1);
-	ld	l, #0x01
-	call	_SMS_setBackdropColor
-	C$gamelogic.c$103$1_0$111	= .
-	.globl	C$gamelogic.c$103$1_0$111
-;gamelogic.c:103: load_level1_assets();
+	C$gamelogic.c$125$1_0$128	= .
+	.globl	C$gamelogic.c$125$1_0$128
+;gamelogic.c:125: devkit_SMS_setBackdropColor(1);
+	ld	a, #0x01
+	push	af
+	inc	sp
+	call	_devkit_SMS_setBackdropColor
+	inc	sp
+	C$gamelogic.c$126$1_0$128	= .
+	.globl	C$gamelogic.c$126$1_0$128
+;gamelogic.c:126: load_level1_assets();
 	call	_load_level1_assets
-	C$gamelogic.c$104$1_0$111	= .
-	.globl	C$gamelogic.c$104$1_0$111
-;gamelogic.c:104: init_gamestatus();
+	C$gamelogic.c$127$1_0$128	= .
+	.globl	C$gamelogic.c$127$1_0$128
+;gamelogic.c:127: init_gamestatus();
 	call	_init_gamestatus
-	C$gamelogic.c$105$1_0$111	= .
-	.globl	C$gamelogic.c$105$1_0$111
-;gamelogic.c:105: init_level1_scroll();
+	C$gamelogic.c$128$1_0$128	= .
+	.globl	C$gamelogic.c$128$1_0$128
+;gamelogic.c:128: init_level1_scroll();
 	call	_init_level1_scroll
-	C$gamelogic.c$106$1_0$111	= .
-	.globl	C$gamelogic.c$106$1_0$111
-;gamelogic.c:106: play_game_music();
+	C$gamelogic.c$129$1_0$128	= .
+	.globl	C$gamelogic.c$129$1_0$128
+;gamelogic.c:129: play_game_music();
 	call	_play_game_music
-	C$gamelogic.c$107$1_0$111	= .
-	.globl	C$gamelogic.c$107$1_0$111
-;gamelogic.c:107: add_player(1);
+	C$gamelogic.c$130$1_0$128	= .
+	.globl	C$gamelogic.c$130$1_0$128
+;gamelogic.c:130: add_player(1);
 	ld	a, #0x01
 	push	af
 	inc	sp
 	call	_add_player
 	inc	sp
-	C$gamelogic.c$109$1_0$111	= .
-	.globl	C$gamelogic.c$109$1_0$111
-;gamelogic.c:109: frame_cnt = 0;
+	C$gamelogic.c$132$1_0$128	= .
+	.globl	C$gamelogic.c$132$1_0$128
+;gamelogic.c:132: frame_cnt = 0;
 	ld	hl, #0x0000
 	ld	(_frame_cnt), hl
-	C$gamelogic.c$110$1_0$111	= .
-	.globl	C$gamelogic.c$110$1_0$111
-;gamelogic.c:110: scroll_enabled = true;
+	C$gamelogic.c$133$1_0$128	= .
+	.globl	C$gamelogic.c$133$1_0$128
+;gamelogic.c:133: scroll_enabled = true;
 	ld	hl, #_scroll_enabled
 	ld	(hl), #0x01
-	C$gamelogic.c$111$1_0$111	= .
-	.globl	C$gamelogic.c$111$1_0$111
-;gamelogic.c:111: while (1) {
+	C$gamelogic.c$134$1_0$128	= .
+	.globl	C$gamelogic.c$134$1_0$128
+;gamelogic.c:134: while (1)
 00104$:
-	C$gamelogic.c$112$2_0$112	= .
-	.globl	C$gamelogic.c$112$2_0$112
-;gamelogic.c:112: if(!pause) {
+	C$gamelogic.c$136$2_0$129	= .
+	.globl	C$gamelogic.c$136$2_0$129
+;gamelogic.c:136: if(!pause)
 	ld	hl, #_pause
 	bit	0, (hl)
 	jr	NZ, 00102$
-	C$gamelogic.c$113$3_0$113	= .
-	.globl	C$gamelogic.c$113$3_0$113
-;gamelogic.c:113: execute_game_logic();
+	C$gamelogic.c$138$3_0$130	= .
+	.globl	C$gamelogic.c$138$3_0$130
+;gamelogic.c:138: execute_game_logic();
 	call	_execute_game_logic
 00102$:
-	C$gamelogic.c$115$2_0$112	= .
-	.globl	C$gamelogic.c$115$2_0$112
-;gamelogic.c:115: waitForFrame();
+	C$gamelogic.c$140$2_0$129	= .
+	.globl	C$gamelogic.c$140$2_0$129
+;gamelogic.c:140: waitForFrame();
 	call	_waitForFrame
-	C$gamelogic.c$117$1_0$111	= .
-	.globl	C$gamelogic.c$117$1_0$111
-;gamelogic.c:117: }
-	C$gamelogic.c$117$1_0$111	= .
-	.globl	C$gamelogic.c$117$1_0$111
+	C$gamelogic.c$142$1_0$128	= .
+	.globl	C$gamelogic.c$142$1_0$128
+;gamelogic.c:142: }
+	C$gamelogic.c$142$1_0$128	= .
+	.globl	C$gamelogic.c$142$1_0$128
 	XG$game_loop$0$0	= .
 	.globl	XG$game_loop$0$0
 	jr	00104$
 	G$init_gamestatus$0$0	= .
 	.globl	G$init_gamestatus$0$0
-	C$gamelogic.c$119$1_0$114	= .
-	.globl	C$gamelogic.c$119$1_0$114
-;gamelogic.c:119: void init_gamestatus() {
+	C$gamelogic.c$144$1_0$131	= .
+	.globl	C$gamelogic.c$144$1_0$131
+;gamelogic.c:144: void init_gamestatus() {
 ;	---------------------------------
 ; Function init_gamestatus
 ; ---------------------------------
 _init_gamestatus::
-	C$gamelogic.c$120$1_0$114	= .
-	.globl	C$gamelogic.c$120$1_0$114
-;gamelogic.c:120: game_status = GAME_STATUS_PLAYING;
+	C$gamelogic.c$145$1_0$131	= .
+	.globl	C$gamelogic.c$145$1_0$131
+;gamelogic.c:145: game_status = GAME_STATUS_PLAYING;
 	ld	hl, #_game_status
 	ld	(hl), #0x00
-	C$gamelogic.c$121$1_0$114	= .
-	.globl	C$gamelogic.c$121$1_0$114
-;gamelogic.c:121: score = 0;
+	C$gamelogic.c$146$1_0$131	= .
+	.globl	C$gamelogic.c$146$1_0$131
+;gamelogic.c:146: score = 0;
 	ld	hl, #0x0000
 	ld	(_score), hl
-	C$gamelogic.c$122$1_0$114	= .
-	.globl	C$gamelogic.c$122$1_0$114
-;gamelogic.c:122: }
-	C$gamelogic.c$122$1_0$114	= .
-	.globl	C$gamelogic.c$122$1_0$114
+	C$gamelogic.c$147$1_0$131	= .
+	.globl	C$gamelogic.c$147$1_0$131
+;gamelogic.c:147: }
+	C$gamelogic.c$147$1_0$131	= .
+	.globl	C$gamelogic.c$147$1_0$131
 	XG$init_gamestatus$0$0	= .
 	.globl	XG$init_gamestatus$0$0
 	ret
 	G$execute_game_logic$0$0	= .
 	.globl	G$execute_game_logic$0$0
-	C$gamelogic.c$124$1_0$115	= .
-	.globl	C$gamelogic.c$124$1_0$115
-;gamelogic.c:124: void execute_game_logic() {
+	C$gamelogic.c$149$1_0$132	= .
+	.globl	C$gamelogic.c$149$1_0$132
+;gamelogic.c:149: void execute_game_logic()
 ;	---------------------------------
 ; Function execute_game_logic
 ; ---------------------------------
 _execute_game_logic::
-	C$gamelogic.c$126$1_0$115	= .
-	.globl	C$gamelogic.c$126$1_0$115
-;gamelogic.c:126: switch (game_status) {
+	C$gamelogic.c$152$1_0$132	= .
+	.globl	C$gamelogic.c$152$1_0$132
+;gamelogic.c:152: switch (game_status)
 	ld	a,(#_game_status + 0)
 	or	a, a
 	ret	NZ
-	C$gamelogic.c$129$2_0$116	= .
-	.globl	C$gamelogic.c$129$2_0$116
-;gamelogic.c:129: keys = SMS_getKeysStatus();
-	call	_SMS_getKeysStatus
-	C$gamelogic.c$130$2_0$116	= .
-	.globl	C$gamelogic.c$130$2_0$116
-;gamelogic.c:130: manage_input(keys);
+	C$gamelogic.c$156$2_0$133	= .
+	.globl	C$gamelogic.c$156$2_0$133
+;gamelogic.c:156: keys = devkit_SMS_getKeysStatus();
+	call	_devkit_SMS_getKeysStatus
+	C$gamelogic.c$157$2_0$133	= .
+	.globl	C$gamelogic.c$157$2_0$133
+;gamelogic.c:157: manage_input(keys);
 	push	hl
 	call	_manage_input
 	pop	af
-	C$gamelogic.c$133$2_0$116	= .
-	.globl	C$gamelogic.c$133$2_0$116
-;gamelogic.c:133: update_resources();
+	C$gamelogic.c$160$2_0$133	= .
+	.globl	C$gamelogic.c$160$2_0$133
+;gamelogic.c:160: update_resources();
 	call	_update_resources
-	C$gamelogic.c$135$2_0$116	= .
-	.globl	C$gamelogic.c$135$2_0$116
-;gamelogic.c:135: if(player1.vx > 0 && scroll_enabled) {
+	C$gamelogic.c$162$2_0$133	= .
+	.globl	C$gamelogic.c$162$2_0$133
+;gamelogic.c:162: if(player1.vx > 0 && scroll_enabled)
 	ld	bc, (#(_player1 + 0x0002) + 0)
 	ld	a, b
 	or	a, c
@@ -634,9 +637,9 @@ _execute_game_logic::
 	ld	hl, #_scroll_enabled
 	bit	0, (hl)
 	jr	Z, 00113$
-	C$gamelogic.c$136$3_0$117	= .
-	.globl	C$gamelogic.c$136$3_0$117
-;gamelogic.c:136: if(player1.entityreference->px > 200 && player1.xdirection == 1) {
+	C$gamelogic.c$164$3_0$134	= .
+	.globl	C$gamelogic.c$164$3_0$134
+;gamelogic.c:164: if(player1.entityreference->px > 200 && player1.xdirection == 1)
 	ld	hl, (#_player1 + 0)
 	inc	hl
 	inc	hl
@@ -648,9 +651,9 @@ _execute_game_logic::
 	ld	a, (#_player1 + 6)
 	dec	a
 	jr	NZ, 00109$
-	C$gamelogic.c$137$4_0$118	= .
-	.globl	C$gamelogic.c$137$4_0$118
-;gamelogic.c:137: update_scroll(UFIX2CHAR(player1.vx),0);
+	C$gamelogic.c$166$4_0$135	= .
+	.globl	C$gamelogic.c$166$4_0$135
+;gamelogic.c:166: update_scroll(UFIX2CHAR(player1.vx),0);
 	ld	a, b
 	ld	h, #0x00
 	push	hl
@@ -659,24 +662,24 @@ _execute_game_logic::
 	inc	sp
 	call	_update_scroll
 	pop	af
-	C$gamelogic.c$138$4_0$118	= .
-	.globl	C$gamelogic.c$138$4_0$118
-;gamelogic.c:138: if(get_scroll_position_x() > 1200){
+	C$gamelogic.c$167$4_0$135	= .
+	.globl	C$gamelogic.c$167$4_0$135
+;gamelogic.c:167: if(get_scroll_position_x() > 1200){
 	call	_get_scroll_position_x
 	ld	a, #0xb0
 	cp	a, l
 	ld	a, #0x04
 	sbc	a, h
 	jr	NC, 00103$
-	C$gamelogic.c$139$5_0$119	= .
-	.globl	C$gamelogic.c$139$5_0$119
-;gamelogic.c:139: scroll_enabled = false;
+	C$gamelogic.c$168$5_0$136	= .
+	.globl	C$gamelogic.c$168$5_0$136
+;gamelogic.c:168: scroll_enabled = false;
 	ld	hl, #_scroll_enabled
 	ld	(hl), #0x00
 00103$:
-	C$gamelogic.c$142$4_0$118	= .
-	.globl	C$gamelogic.c$142$4_0$118
-;gamelogic.c:142: update_player_positions(UFIX2CHAR(player1.vx),0); 
+	C$gamelogic.c$171$4_0$135	= .
+	.globl	C$gamelogic.c$171$4_0$135
+;gamelogic.c:171: update_player_positions(UFIX2CHAR(player1.vx),0); 
 	ld	hl, (#(_player1 + 0x0002) + 0)
 	ld	a, h
 	ld	h, #0x00
@@ -688,18 +691,18 @@ _execute_game_logic::
 	pop	af
 	jr	00114$
 00109$:
-	C$gamelogic.c$143$3_0$117	= .
-	.globl	C$gamelogic.c$143$3_0$117
-;gamelogic.c:143: } else if(player1.entityreference->px < 56 && player1.xdirection == -1) {
+	C$gamelogic.c$173$3_0$134	= .
+	.globl	C$gamelogic.c$173$3_0$134
+;gamelogic.c:173: else if(player1.entityreference->px < 56 && player1.xdirection == -1)
 	ld	a, e
 	sub	a, #0x38
 	jr	NC, 00105$
 	ld	a, (#_player1 + 6)
 	inc	a
 	jr	NZ, 00105$
-	C$gamelogic.c$144$4_0$120	= .
-	.globl	C$gamelogic.c$144$4_0$120
-;gamelogic.c:144: update_scroll(UFIX2CHAR(player1.vx)*-1,0);
+	C$gamelogic.c$175$4_0$137	= .
+	.globl	C$gamelogic.c$175$4_0$137
+;gamelogic.c:175: update_scroll(UFIX2CHAR(player1.vx)*-1,0);
 	ld	c, b
 	xor	a, a
 	sub	a, c
@@ -710,9 +713,9 @@ _execute_game_logic::
 	inc	sp
 	call	_update_scroll
 	pop	af
-	C$gamelogic.c$145$4_0$120	= .
-	.globl	C$gamelogic.c$145$4_0$120
-;gamelogic.c:145: update_player_positions(UFIX2CHAR(player1.vx)*-1,0); 
+	C$gamelogic.c$176$4_0$137	= .
+	.globl	C$gamelogic.c$176$4_0$137
+;gamelogic.c:176: update_player_positions(UFIX2CHAR(player1.vx)*-1,0); 
 	ld	hl, (#(_player1 + 0x0002) + 0)
 	ld	c, h
 	xor	a, a
@@ -726,9 +729,9 @@ _execute_game_logic::
 	pop	af
 	jr	00114$
 00105$:
-	C$gamelogic.c$147$4_0$121	= .
-	.globl	C$gamelogic.c$147$4_0$121
-;gamelogic.c:147: update_player_positions(0,0); 
+	C$gamelogic.c$180$4_0$138	= .
+	.globl	C$gamelogic.c$180$4_0$138
+;gamelogic.c:180: update_player_positions(0,0); 
 	xor	a, a
 	push	af
 	inc	sp
@@ -739,9 +742,9 @@ _execute_game_logic::
 	pop	af
 	jr	00114$
 00113$:
-	C$gamelogic.c$150$3_0$122	= .
-	.globl	C$gamelogic.c$150$3_0$122
-;gamelogic.c:150: update_player_positions(0,0);    
+	C$gamelogic.c$185$3_0$139	= .
+	.globl	C$gamelogic.c$185$3_0$139
+;gamelogic.c:185: update_player_positions(0,0);    
 	xor	a, a
 	push	af
 	inc	sp
@@ -751,20 +754,20 @@ _execute_game_logic::
 	call	_update_player_positions
 	pop	af
 00114$:
-	C$gamelogic.c$152$2_0$116	= .
-	.globl	C$gamelogic.c$152$2_0$116
-;gamelogic.c:152: frame_cnt++;
+	C$gamelogic.c$187$2_0$133	= .
+	.globl	C$gamelogic.c$187$2_0$133
+;gamelogic.c:187: frame_cnt++;
 	ld	hl, (_frame_cnt)
 	inc	hl
 	ld	(_frame_cnt), hl
-	C$gamelogic.c$156$1_0$115	= .
-	.globl	C$gamelogic.c$156$1_0$115
-;gamelogic.c:156: }
-	C$gamelogic.c$157$1_0$115	= .
-	.globl	C$gamelogic.c$157$1_0$115
-;gamelogic.c:157: }
-	C$gamelogic.c$157$1_0$115	= .
-	.globl	C$gamelogic.c$157$1_0$115
+	C$gamelogic.c$191$1_0$132	= .
+	.globl	C$gamelogic.c$191$1_0$132
+;gamelogic.c:191: }
+	C$gamelogic.c$192$1_0$132	= .
+	.globl	C$gamelogic.c$192$1_0$132
+;gamelogic.c:192: }
+	C$gamelogic.c$192$1_0$132	= .
+	.globl	C$gamelogic.c$192$1_0$132
 	XG$execute_game_logic$0$0	= .
 	.globl	XG$execute_game_logic$0$0
 	ret

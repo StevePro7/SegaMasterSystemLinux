@@ -5,14 +5,15 @@
 #include "resources.h"
 #include "../engine/soundengine.h"
 #include "../engine/spriteengine.h"
-#include "../../lib/SMSlib.h"
+#include "../devkit/_sms_manager.h"
 #include <stdbool.h>
 
 unsigned char game_status;
 unsigned int score;
 bool scroll_enabled;
 
-void init_game() {
+void init_game()
+{
 	init_console();
 }
 
@@ -21,78 +22,97 @@ void play_game()
 	logo_screen();
 	fnaclogo_screen();
 	presentation_screen();
-	while(game_status != GAME_STATUS_GAME_OVER) {
+	while(game_status != GAME_STATUS_GAME_OVER)
+	{
 		game_loop();
 	}
 }
 
-void logo_screen() {
+void logo_screen()
+{
 	load_logo_assets();
 	load_background_blackpalette();
 	frame_cnt = 0;
 	play_logo_music();
-	while (frame_cnt < 300) {
+	while (frame_cnt < 300)
+	{
 		frame_cnt++;
-		if(frame_cnt == 25) {
+		if(frame_cnt == 25)
+		{
 			load_logo_halfpalette();
 		}
-		if(frame_cnt == 50) {
+		if(frame_cnt == 50)
+		{
 			load_logo_fullpalette();
 		}
-		if(frame_cnt == 250) {
+		if(frame_cnt == 250)
+		{
 			load_logo_halfpalette();
 		} 
-		if(frame_cnt == 275) {
+		if(frame_cnt == 275)
+		{
 			load_background_blackpalette();
 		}
 		waitForFrame();
 	}
 }
 
-void fnaclogo_screen() {
+void fnaclogo_screen()
+{
 	load_fnaclogo_assets();
 	load_background_blackpalette();
 	frame_cnt = 0;
-	while (frame_cnt < 300) {
+	while (frame_cnt < 300)
+	{
 		frame_cnt++;
-		if(frame_cnt == 25) {
+		if(frame_cnt == 25)
+		{
 			load_fnaclogo_halfpalette();
 		}
-		if(frame_cnt == 50) {
+		if(frame_cnt == 50)
+		{
 			load_fnaclogo_fullpalette();
 		}
-		if(frame_cnt == 250) {
+		if(frame_cnt == 250)
+		{
 			load_fnaclogo_halfpalette();
 		} 
-		if(frame_cnt == 275) {
+		if(frame_cnt == 275)
+		{
 			load_background_blackpalette();
 		}
 		waitForFrame();
 	}
 }
 
-void presentation_screen() {
+void presentation_screen()
+{
 	unsigned int keys;
 	load_presentation_assets();
 	load_background_blackpalette();
 	play_presentation_music();
 	frame_cnt = 0;
-	while (frame_cnt < 800) {
+	while (frame_cnt < 800)
+	{
 		frame_cnt++;
-		if(frame_cnt == 25) {
+		if(frame_cnt == 25)
+		{
 			load_presentation_halfpalette();
 		}
-		if(frame_cnt == 50) {
+		if(frame_cnt == 50)
+		{
 			load_presentation_fullpalette();
 		}
-		if(frame_cnt == 750) {
+		if(frame_cnt == 750)
+		{
 			load_presentation_halfpalette();
 		} 
-		if(frame_cnt == 775) {
+		if(frame_cnt == 775)
+		{
 			load_background_blackpalette();
 		}
-		keys = SMS_getKeysStatus();
-		if(keys & PORT_A_KEY_1 && (frame_cnt < 740))
+		keys = devkit_SMS_getKeysStatus();
+		if(keys & devkit_PORT_A_KEY_1() && (frame_cnt < 740))
 		{
 			frame_cnt = 740;
 		}
@@ -102,7 +122,7 @@ void presentation_screen() {
 
 void game_loop()
 {
-	SMS_setBackdropColor(1);
+	devkit_SMS_setBackdropColor(1);
 	load_level1_assets();
 	init_gamestatus();
 	init_level1_scroll();
@@ -133,7 +153,7 @@ void execute_game_logic()
 	{
 		case GAME_STATUS_PLAYING:
 			//if(frame_cnt & 1) {
-				keys = SMS_getKeysStatus();
+				keys = devkit_SMS_getKeysStatus();
 				manage_input(keys);
 				//decide_action();
 			//} else {

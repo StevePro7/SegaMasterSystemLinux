@@ -1,9 +1,11 @@
 ;!FILE gamelogic.asm
 XL3
-H 9 areas 1B4 global symbols
+H 9 areas 1BA global symbols
 M gamelogic
 O -mz80
 S _load_logo_assets Ref000000
+S _devkit_PORT_A_KEY_1 Ref000000
+S _devkit_SMS_setBackdropColor Ref000000
 S _load_background_blackpalette Ref000000
 S _frame_cnt Ref000000
 S _play_game_music Ref000000
@@ -11,429 +13,433 @@ S _load_logo_fullpalette Ref000000
 S _load_fnaclogo_halfpalette Ref000000
 S _update_scroll Ref000000
 S _play_presentation_music Ref000000
-S _SMS_getKeysStatus Ref000000
-S _ROM_bank_to_be_mapped_on_slot2 Def00FFFF
 S _update_player_positions Ref000000
 S _manage_input Ref000000
-S G$ROM_bank_to_be_mapped_on_slot2$0_0$0 Def00FFFF
 S _load_fnaclogo_assets Ref000000
 S _load_level1_assets Ref000000
-S _SRAM_bank_to_be_mapped_on_slot2 Def00FFFC
 S _update_resources Ref000000
 S _player1 Ref000000
-S G$SRAM_bank_to_be_mapped_on_slot2$0_0$0 Def00FFFC
 S .__.ABS. Def000000
-S _SMS_setBackdropColor Ref000000
 S _load_presentation_halfpalette Ref000000
-S _SMS_SRAM Def008000
 S _init_console Ref000000
 S _play_logo_music Ref000000
 S _waitForFrame Ref000000
-S G$SMS_SRAM$0_0$0 Def008000
 S _load_fnaclogo_fullpalette Ref000000
 S _init_level1_scroll Ref000000
 S _load_presentation_assets Ref000000
 S _add_player Ref000000
+S _devkit_SMS_getKeysStatus Ref000000
 S _load_logo_halfpalette Ref000000
 S _get_scroll_position_x Ref000000
 S _load_presentation_fullpalette Ref000000
 S _pause Ref000000
-A _CODE size 260 flags 0 addr 0
-S C$gamelogic.c$157$1_0$115 Def00025F
-S C$gamelogic.c$142$4_0$118 Def000208
+A _CODE size 26C flags 0 addr 0
+S C$gamelogic.c$156$2_0$133 Def0001CD
+S C$gamelogic.c$149$1_0$132 Def0001C8
+S C$gamelogic.c$126$1_0$128 Def00018E
 S G$init_game$0$0 Def000000
-S C$gamelogic.c$136$3_0$117 Def0001DB
-S C$gamelogic.c$129$2_0$116 Def0001C1
+S C$gamelogic.c$173$3_0$134 Def000224
+S C$gamelogic.c$171$4_0$135 Def000214
+S C$gamelogic.c$164$3_0$134 Def0001E7
+S C$gamelogic.c$157$2_0$133 Def0001D0
+S C$gamelogic.c$127$1_0$128 Def000191
+S C$gamelogic.c$117$3_0$127 Def00017A
+S C$gamelogic.c$128$1_0$128 Def000194
 S G$play_game$0$0 Def000003
-S A$gamelogic$300 Def0000A2
-S A$gamelogic$201 Def00003B
-S XG$execute_game_logic$0$0 Def00025F
-S C$gamelogic.c$137$4_0$118 Def0001ED
-S A$gamelogic$400 Def000108
-S A$gamelogic$202 Def00003E
-S C$gamelogic.c$138$4_0$118 Def0001F8
-S A$gamelogic$401 Def00010A
-S A$gamelogic$320 Def0000BE
-S A$gamelogic$311 Def0000AF
-S A$gamelogic$230 Def000065
-S A$gamelogic$221 Def000056
-S A$gamelogic$203 Def000040
-S G$game_loop$0$0 Def00017D
-S A$gamelogic$411 Def000112
-S A$gamelogic$330 Def0000C7
-S A$gamelogic$240 Def00006E
-S A$gamelogic$213 Def000048
-S A$gamelogic$204 Def000043
-S A$gamelogic$141 Def00000C
-S A$gamelogic$132 Def000006
-S C$gamelogic.c$61$3_0$101 Def0000C0
+S A$gamelogic$200 Def000045
+S C$gamelogic.c$136$2_0$129 Def0001AD
+S C$gamelogic.c$129$1_0$128 Def000197
+S C$gamelogic.c$40$2_0$110 Def00003B
+S A$gamelogic$120 Def000003
+S XG$execute_game_logic$0$0 Def00026B
+S C$gamelogic.c$187$2_0$133 Def000264
+S C$gamelogic.c$180$4_0$138 Def00024E
+S A$gamelogic$310 Def0000B9
+S A$gamelogic$220 Def000060
+S C$gamelogic.c$166$4_0$135 Def0001F9
+S A$gamelogic$410 Def00011C
+S A$gamelogic$311 Def0000BB
+S A$gamelogic$221 Def000062
+S C$gamelogic.c$167$4_0$135 Def000204
+S G$game_loop$0$0 Def000186
+S C$gamelogic.c$52$2_0$110 Def00006A
+S C$gamelogic.c$20$1_0$107 Def000003
+S A$gamelogic$600 Def0001C7
+S A$gamelogic$510 Def000189
+S A$gamelogic$321 Def0000C3
+S A$gamelogic$312 Def0000BE
+S A$gamelogic$303 Def0000AF
+S A$gamelogic$231 Def00006A
+S A$gamelogic$222 Def000065
+S A$gamelogic$213 Def000056
+S C$gamelogic.c$175$4_0$137 Def00022F
+S C$gamelogic.c$44$2_0$110 Def000048
+S C$gamelogic.c$42$3_0$111 Def000045
 S _fnaclogo_screen Def000083
-S A$gamelogic$610 Def0001BC
-S A$gamelogic$412 Def000115
-S A$gamelogic$331 Def0000CA
-S A$gamelogic$304 Def0000A5
-S A$gamelogic$241 Def000071
-S A$gamelogic$214 Def00004C
-S A$gamelogic$142 Def00000F
-S A$gamelogic$115 Def000000
-S C$gamelogic.c$139$5_0$119 Def000203
-S A$gamelogic$710 Def00022B
-S A$gamelogic$620 Def0001C4
-S A$gamelogic$611 Def0001BF
-S A$gamelogic$530 Def000190
-S A$gamelogic$521 Def000188
-S A$gamelogic$440 Def00013B
-S A$gamelogic$431 Def00012D
-S A$gamelogic$413 Def000117
-S A$gamelogic$332 Def0000CC
-S A$gamelogic$305 Def0000A8
-S A$gamelogic$242 Def000073
-S A$gamelogic$215 Def00004F
-S A$gamelogic$143 Def000010
-S A$gamelogic$720 Def000236
-S A$gamelogic$711 Def00022C
-S A$gamelogic$630 Def0001CC
-S A$gamelogic$621 Def0001C5
-S A$gamelogic$612 Def0001C0
-S A$gamelogic$531 Def000191
-S A$gamelogic$513 Def000182
-S A$gamelogic$441 Def00013E
-S A$gamelogic$423 Def00011F
-S A$gamelogic$414 Def00011A
-S A$gamelogic$405 Def00010B
-S A$gamelogic$342 Def0000D4
-S A$gamelogic$333 Def0000CF
-S A$gamelogic$324 Def0000C0
-S A$gamelogic$306 Def0000AA
-S A$gamelogic$243 Def000075
-S A$gamelogic$234 Def000067
-S A$gamelogic$216 Def000051
-S A$gamelogic$721 Def000238
-S A$gamelogic$712 Def00022F
-S A$gamelogic$703 Def000223
-S A$gamelogic$640 Def0001DB
-S A$gamelogic$631 Def0001D0
-S A$gamelogic$622 Def0001C8
-S A$gamelogic$532 Def000192
-S A$gamelogic$451 Def000145
-S A$gamelogic$442 Def000140
-S A$gamelogic$424 Def000123
-S A$gamelogic$406 Def00010E
-S A$gamelogic$352 Def0000E5
-S A$gamelogic$343 Def0000D8
-S A$gamelogic$316 Def0000B2
-S A$gamelogic$307 Def0000AD
-S A$gamelogic$262 Def000081
-S A$gamelogic$244 Def000078
-S A$gamelogic$226 Def000059
-S A$gamelogic$217 Def000054
-S A$gamelogic$208 Def000045
-S A$gamelogic$190 Def000031
-S A$gamelogic$181 Def000022
-S A$gamelogic$172 Def000019
-S A$gamelogic$136 Def000009
-S C$gamelogic.c$80$2_0$105 Def00010B
-S C$gamelogic.c$73$1_0$104 Def0000ED
-S C$gamelogic.c$64$3_0$102 Def0000D1
-S A$gamelogic$740 Def00024C
-S A$gamelogic$722 Def000239
-S A$gamelogic$704 Def000224
-S A$gamelogic$650 Def0001EB
-S A$gamelogic$641 Def0001DE
-S A$gamelogic$632 Def0001D1
-S A$gamelogic$551 Def0001A1
-S A$gamelogic$542 Def00019C
-S A$gamelogic$533 Def000195
-S A$gamelogic$470 Def00015D
-S A$gamelogic$461 Def000157
-S A$gamelogic$452 Def000149
-S A$gamelogic$425 Def000126
-S A$gamelogic$407 Def00010F
-S A$gamelogic$344 Def0000DB
-S A$gamelogic$317 Def0000B6
-S A$gamelogic$290 Def000093
-S A$gamelogic$254 Def00007E
-S A$gamelogic$245 Def000079
-S A$gamelogic$227 Def00005D
-S A$gamelogic$191 Def000033
-S A$gamelogic$155 Def000014
-S A$gamelogic$128 Def000003
-S C$gamelogic.c$90$2_0$105 Def000145
-S C$gamelogic.c$81$2_0$105 Def000112
-S C$gamelogic.c$58$3_0$100 Def0000AF
+S A$gamelogic$700 Def000229
+S A$gamelogic$520 Def000191
+S A$gamelogic$511 Def00018A
+S A$gamelogic$430 Def000137
+S A$gamelogic$403 Def000112
+S A$gamelogic$340 Def0000E3
+S A$gamelogic$322 Def0000C7
+S A$gamelogic$241 Def00007B
+S A$gamelogic$232 Def00006E
+S A$gamelogic$205 Def000048
+S A$gamelogic$160 Def000016
+S A$gamelogic$133 Def00000C
+S A$gamelogic$124 Def000006
+S C$gamelogic.c$176$4_0$137 Def00023C
+S C$gamelogic.c$50$3_0$113 Def000067
+S C$gamelogic.c$22$1_0$107 Def000003
+S C$gamelogic.c$15$0_0$106 Def000000
+S A$gamelogic$710 Def000234
+S A$gamelogic$701 Def00022C
+S A$gamelogic$512 Def00018D
+S A$gamelogic$431 Def000139
+S A$gamelogic$404 Def000115
+S A$gamelogic$323 Def0000CA
+S A$gamelogic$233 Def000071
+S A$gamelogic$206 Def00004C
+S A$gamelogic$134 Def00000F
+S A$gamelogic$107 Def000000
+S C$gamelogic.c$185$3_0$139 Def00025A
+S C$gamelogic.c$168$5_0$136 Def00020F
+S C$gamelogic.c$60$1_0$115 Def000083
+S C$gamelogic.c$23$1_0$107 Def000006
+S A$gamelogic$720 Def00023F
+S A$gamelogic$711 Def000235
+S A$gamelogic$702 Def00022D
+S A$gamelogic$540 Def0001A2
+S A$gamelogic$432 Def00013B
+S A$gamelogic$423 Def00012D
+S A$gamelogic$405 Def000117
+S A$gamelogic$324 Def0000CC
+S A$gamelogic$234 Def000073
+S A$gamelogic$207 Def00004F
+S A$gamelogic$180 Def00002C
+S A$gamelogic$135 Def000010
+S C$gamelogic.c$91$1_0$121 Def0000ED
+S C$gamelogic.c$56$2_0$110 Def00007E
+S C$gamelogic.c$31$1_0$109 Def000016
+S C$gamelogic.c$24$1_0$107 Def000009
+S A$gamelogic$730 Def00024C
+S A$gamelogic$721 Def000240
+S A$gamelogic$712 Def000236
+S A$gamelogic$613 Def0001C8
+S A$gamelogic$541 Def0001A5
+S A$gamelogic$532 Def00019A
+S A$gamelogic$433 Def00013E
+S A$gamelogic$415 Def00011F
+S A$gamelogic$406 Def00011A
+S A$gamelogic$370 Def0000ED
+S A$gamelogic$334 Def0000D4
+S A$gamelogic$325 Def0000CF
+S A$gamelogic$316 Def0000C0
+S A$gamelogic$271 Def000086
+S A$gamelogic$235 Def000075
+S A$gamelogic$226 Def000067
+S A$gamelogic$208 Def000051
+S A$gamelogic$181 Def00002E
+S C$gamelogic.c$92$1_0$121 Def0000F0
+S C$gamelogic.c$82$3_0$120 Def0000E5
+S C$gamelogic.c$62$1_0$115 Def000083
+S C$gamelogic.c$48$2_0$110 Def000059
+S C$gamelogic.c$39$2_0$110 Def000034
+S C$gamelogic.c$25$1_0$107 Def00000C
+S C$gamelogic.c$17$1_0$106 Def000000
+S A$gamelogic$740 Def000253
+S A$gamelogic$722 Def000241
+S A$gamelogic$713 Def000237
+S A$gamelogic$650 Def0001F1
+S A$gamelogic$623 Def0001D0
+S A$gamelogic$614 Def0001CB
+S A$gamelogic$560 Def0001B4
+S A$gamelogic$533 Def00019C
+S A$gamelogic$524 Def000194
+S A$gamelogic$470 Def000167
+S A$gamelogic$443 Def000145
+S A$gamelogic$434 Def000140
+S A$gamelogic$416 Def000123
+S A$gamelogic$344 Def0000E5
+S A$gamelogic$335 Def0000D8
+S A$gamelogic$308 Def0000B2
+S A$gamelogic$290 Def00009E
+S A$gamelogic$281 Def00008F
+S A$gamelogic$254 Def000081
+S A$gamelogic$236 Def000078
+S A$gamelogic$218 Def000059
+S A$gamelogic$209 Def000054
+S A$gamelogic$182 Def000031
+S A$gamelogic$173 Def000022
+S A$gamelogic$164 Def000019
+S A$gamelogic$128 Def000009
+S C$gamelogic.c$93$1_0$121 Def0000F3
+S C$gamelogic.c$63$1_0$115 Def000086
+S C$gamelogic.c$46$3_0$112 Def000056
+S C$gamelogic.c$33$1_0$109 Def000016
+S C$gamelogic.c$18$1_0$106 Def000000
 S _init_game Def000000
-S A$gamelogic$750 Def000253
-S A$gamelogic$732 Def000242
-S A$gamelogic$723 Def00023A
-S A$gamelogic$705 Def000225
-S A$gamelogic$660 Def0001F4
-S A$gamelogic$642 Def0001DF
-S A$gamelogic$633 Def0001D2
-S A$gamelogic$570 Def0001AE
-S A$gamelogic$552 Def0001A4
-S A$gamelogic$543 Def00019F
-S A$gamelogic$525 Def00018B
-S A$gamelogic$471 Def00015F
-S A$gamelogic$453 Def00014C
-S A$gamelogic$426 Def000128
-S A$gamelogic$390 Def0000F6
-S A$gamelogic$345 Def0000DD
-S A$gamelogic$318 Def0000B9
-S A$gamelogic$291 Def000096
-S A$gamelogic$228 Def000060
-S A$gamelogic$147 Def000011
-S C$gamelogic.c$75$1_0$104 Def0000ED
-S A$gamelogic$751 Def000254
-S A$gamelogic$733 Def000243
-S A$gamelogic$724 Def00023B
-S A$gamelogic$706 Def000226
-S A$gamelogic$670 Def000201
-S A$gamelogic$661 Def0001F7
-S A$gamelogic$643 Def0001E0
-S A$gamelogic$634 Def0001D4
-S A$gamelogic$616 Def0001C1
-S A$gamelogic$562 Def0001AB
-S A$gamelogic$553 Def0001A6
-S A$gamelogic$517 Def000185
-S A$gamelogic$508 Def00017D
-S A$gamelogic$481 Def000171
-S A$gamelogic$472 Def000161
-S A$gamelogic$454 Def00014E
-S A$gamelogic$436 Def000130
-S A$gamelogic$427 Def00012B
-S A$gamelogic$418 Def00011C
-S A$gamelogic$391 Def0000F9
-S A$gamelogic$382 Def0000F0
-S A$gamelogic$346 Def0000DF
-S A$gamelogic$337 Def0000D1
-S A$gamelogic$319 Def0000BB
-S A$gamelogic$292 Def000098
-S A$gamelogic$283 Def000089
-S A$gamelogic$229 Def000062
-S C$gamelogic.c$95$3_0$110 Def000171
-S C$gamelogic.c$76$1_0$104 Def0000F0
+S A$gamelogic$750 Def00025C
+S A$gamelogic$741 Def000254
+S A$gamelogic$723 Def000242
+S A$gamelogic$714 Def000238
+S A$gamelogic$660 Def0001FD
+S A$gamelogic$651 Def0001F3
+S A$gamelogic$633 Def0001D8
+S A$gamelogic$624 Def0001D1
+S A$gamelogic$615 Def0001CC
+S A$gamelogic$534 Def00019D
+S A$gamelogic$516 Def00018E
+S A$gamelogic$471 Def000168
+S A$gamelogic$462 Def00015D
+S A$gamelogic$453 Def000157
+S A$gamelogic$444 Def000149
+S A$gamelogic$417 Def000126
+S A$gamelogic$390 Def000103
+S A$gamelogic$336 Def0000DB
+S A$gamelogic$309 Def0000B6
+S A$gamelogic$291 Def0000A1
+S A$gamelogic$282 Def000093
+S A$gamelogic$246 Def00007E
+S A$gamelogic$237 Def000079
+S A$gamelogic$219 Def00005D
+S A$gamelogic$183 Def000033
+S A$gamelogic$147 Def000014
+S C$gamelogic.c$94$1_0$121 Def0000F6
+S C$gamelogic.c$80$2_0$116 Def0000D4
+S C$gamelogic.c$64$1_0$115 Def000089
+S C$gamelogic.c$54$3_0$114 Def00007B
+S C$gamelogic.c$34$1_0$109 Def000019
+S A$gamelogic$760 Def000264
+S A$gamelogic$751 Def00025D
+S A$gamelogic$742 Def000257
+S A$gamelogic$724 Def000244
+S A$gamelogic$715 Def00023B
+S A$gamelogic$706 Def00022F
+S A$gamelogic$670 Def000209
+S A$gamelogic$661 Def0001FE
+S A$gamelogic$652 Def0001F6
+S A$gamelogic$643 Def0001E7
+S A$gamelogic$634 Def0001DC
+S A$gamelogic$625 Def0001D4
+S A$gamelogic$535 Def00019E
+S A$gamelogic$508 Def000186
+S A$gamelogic$481 Def00017A
+S A$gamelogic$472 Def00016A
+S A$gamelogic$463 Def00015E
+S A$gamelogic$445 Def00014C
+S A$gamelogic$418 Def000128
+S A$gamelogic$391 Def000105
+S A$gamelogic$382 Def0000F6
+S A$gamelogic$337 Def0000DD
+S A$gamelogic$292 Def0000A2
+S A$gamelogic$283 Def000096
+S A$gamelogic$193 Def00003B
+S A$gamelogic$139 Def000011
+S C$gamelogic.c$95$1_0$121 Def0000FC
 S G$presentation_screen$0$0 Def0000ED
+S C$gamelogic.c$72$2_0$116 Def0000B2
+S C$gamelogic.c$70$3_0$117 Def0000AF
+S C$gamelogic.c$65$1_0$115 Def00008F
+S C$gamelogic.c$35$1_0$109 Def00001C
 S _play_game Def000003
-S A$gamelogic$770 Def00025F
-S A$gamelogic$752 Def000257
-S A$gamelogic$734 Def000244
-S A$gamelogic$725 Def00023C
-S A$gamelogic$716 Def000230
-S A$gamelogic$707 Def000228
-S A$gamelogic$680 Def000208
-S A$gamelogic$644 Def0001E1
-S A$gamelogic$635 Def0001D7
-S A$gamelogic$626 Def0001C9
-S A$gamelogic$509 Def00017F
-S A$gamelogic$482 Def000174
-S A$gamelogic$473 Def000165
-S A$gamelogic$455 Def000150
-S A$gamelogic$446 Def000142
-S A$gamelogic$437 Def000134
-S A$gamelogic$365 Def0000EB
-S A$gamelogic$347 Def0000E2
-S A$gamelogic$329 Def0000C3
-S A$gamelogic$293 Def00009B
-S A$gamelogic$284 Def00008C
-S A$gamelogic$275 Def000083
-S A$gamelogic$239 Def00006A
-S A$gamelogic$176 Def00001C
-S C$gamelogic.c$93$2_0$105 Def00015A
-S C$gamelogic.c$84$2_0$105 Def00011F
-S C$gamelogic.c$82$3_0$106 Def00011C
-S C$gamelogic.c$77$1_0$104 Def0000F3
-S C$gamelogic.c$67$3_0$103 Def0000E5
-S A$gamelogic$735 Def000245
-S A$gamelogic$726 Def00023F
-S A$gamelogic$717 Def000233
-S A$gamelogic$708 Def000229
-S A$gamelogic$681 Def00020B
-S A$gamelogic$654 Def0001ED
-S A$gamelogic$645 Def0001E2
-S A$gamelogic$636 Def0001D9
-S A$gamelogic$537 Def000196
-S A$gamelogic$474 Def000168
-S A$gamelogic$456 Def000153
-S A$gamelogic$438 Def000137
-S A$gamelogic$357 Def0000E8
-S A$gamelogic$348 Def0000E3
-S A$gamelogic$294 Def00009D
-S A$gamelogic$249 Def00007B
-S A$gamelogic$195 Def000034
-S A$gamelogic$186 Def000025
-S A$gamelogic$177 Def00001F
-S A$gamelogic$168 Def000016
-S C$gamelogic.c$94$2_0$105 Def00015D
-S C$gamelogic.c$78$1_0$104 Def0000F6
-S A$gamelogic$745 Def00024E
-S A$gamelogic$736 Def000246
-S A$gamelogic$727 Def000240
-S A$gamelogic$718 Def000234
-S A$gamelogic$709 Def00022A
-S A$gamelogic$682 Def00020C
-S A$gamelogic$655 Def0001EE
-S A$gamelogic$646 Def0001E4
-S A$gamelogic$583 Def0001B0
-S A$gamelogic$538 Def000199
-S A$gamelogic$529 Def00018E
-S A$gamelogic$475 Def00016A
-S A$gamelogic$466 Def00015A
-S A$gamelogic$457 Def000155
-S A$gamelogic$439 Def000139
-S A$gamelogic$196 Def000037
-S A$gamelogic$187 Def000029
-S C$gamelogic.c$79$1_0$104 Def0000FC
-S A$gamelogic$746 Def00024F
-S A$gamelogic$737 Def000247
-S A$gamelogic$719 Def000235
-S A$gamelogic$683 Def00020E
-S A$gamelogic$674 Def000203
-S A$gamelogic$665 Def0001F8
-S A$gamelogic$656 Def0001F0
-S A$gamelogic$647 Def0001E5
-S A$gamelogic$584 Def0001B3
-S A$gamelogic$557 Def0001A8
-S A$gamelogic$476 Def00016D
-S A$gamelogic$386 Def0000F3
-S A$gamelogic$197 Def000038
-S A$gamelogic$188 Def00002C
-S C$gamelogic.c$91$3_0$109 Def000157
-S C$gamelogic.c$87$2_0$105 Def000130
-S _game_loop Def00017D
-S A$gamelogic$747 Def000250
-S A$gamelogic$738 Def000248
-S A$gamelogic$684 Def00020F
-S A$gamelogic$675 Def000206
-S A$gamelogic$666 Def0001FB
-S A$gamelogic$657 Def0001F1
-S A$gamelogic$648 Def0001E7
-S A$gamelogic$495 Def00017A
-S A$gamelogic$477 Def00016F
-S A$gamelogic$396 Def0000FC
-S A$gamelogic$378 Def0000ED
-S A$gamelogic$279 Def000086
-S A$gamelogic$189 Def00002E
-S C$gamelogic.c$99$1_0$104 Def00017A
-S C$gamelogic.c$97$2_0$105 Def000177
-S C$gamelogic.c$85$3_0$107 Def00012D
+S A$gamelogic$761 Def000267
+S A$gamelogic$752 Def00025E
+S A$gamelogic$743 Def000258
+S A$gamelogic$725 Def000245
+S A$gamelogic$707 Def000230
+S A$gamelogic$671 Def00020A
+S A$gamelogic$662 Def0001FF
+S A$gamelogic$653 Def0001F7
+S A$gamelogic$644 Def0001EA
+S A$gamelogic$635 Def0001DD
+S A$gamelogic$554 Def0001AD
+S A$gamelogic$545 Def0001A8
+S A$gamelogic$536 Def0001A1
+S A$gamelogic$509 Def000188
+S A$gamelogic$482 Def00017D
+S A$gamelogic$473 Def00016E
+S A$gamelogic$464 Def000161
+S A$gamelogic$446 Def00014E
+S A$gamelogic$428 Def000130
+S A$gamelogic$419 Def00012B
+S A$gamelogic$392 Def000108
+S A$gamelogic$383 Def0000F9
+S A$gamelogic$374 Def0000F0
+S A$gamelogic$338 Def0000DF
+S A$gamelogic$329 Def0000D1
+S A$gamelogic$284 Def000098
+S A$gamelogic$275 Def000089
+S A$gamelogic$194 Def00003E
+S C$gamelogic.c$36$1_0$109 Def000022
+S C$gamelogic.c$29$1_0$107 Def000014
+S C$gamelogic.c$27$2_0$108 Def000011
+S A$gamelogic$762 Def000268
+S A$gamelogic$753 Def00025F
+S A$gamelogic$735 Def00024E
+S A$gamelogic$726 Def000246
+S A$gamelogic$708 Def000231
+S A$gamelogic$690 Def00021E
+S A$gamelogic$672 Def00020C
+S A$gamelogic$663 Def000200
+S A$gamelogic$645 Def0001EB
+S A$gamelogic$636 Def0001DE
+S A$gamelogic$591 Def0001C1
+S A$gamelogic$573 Def0001BA
+S A$gamelogic$555 Def0001B0
+S A$gamelogic$546 Def0001AB
+S A$gamelogic$528 Def000197
+S A$gamelogic$474 Def000171
+S A$gamelogic$465 Def000162
+S A$gamelogic$447 Def000150
+S A$gamelogic$438 Def000142
+S A$gamelogic$429 Def000134
+S A$gamelogic$393 Def00010A
+S A$gamelogic$357 Def0000EB
+S A$gamelogic$339 Def0000E2
+S A$gamelogic$285 Def00009B
+S A$gamelogic$276 Def00008C
+S A$gamelogic$267 Def000083
+S A$gamelogic$195 Def000040
+S A$gamelogic$168 Def00001C
+S C$gamelogic.c$88$1_0$121 Def0000ED
+S C$gamelogic.c$37$1_0$109 Def000025
+S A$gamelogic$754 Def000260
+S A$gamelogic$736 Def00024F
+S A$gamelogic$727 Def000247
+S A$gamelogic$709 Def000232
+S A$gamelogic$691 Def000221
+S A$gamelogic$673 Def00020D
+S A$gamelogic$664 Def000203
+S A$gamelogic$646 Def0001EC
+S A$gamelogic$637 Def0001E0
+S A$gamelogic$619 Def0001CD
+S A$gamelogic$592 Def0001C4
+S A$gamelogic$565 Def0001B7
+S A$gamelogic$556 Def0001B2
+S A$gamelogic$475 Def000173
+S A$gamelogic$466 Def000163
+S A$gamelogic$448 Def000153
+S A$gamelogic$349 Def0000E8
+S A$gamelogic$286 Def00009D
+S A$gamelogic$196 Def000043
+S A$gamelogic$187 Def000034
+S A$gamelogic$178 Def000025
+S A$gamelogic$169 Def00001F
+S C$gamelogic.c$86$1_0$115 Def0000EB
+S C$gamelogic.c$84$2_0$116 Def0000E8
+S A$gamelogic$773 Def00026B
+S A$gamelogic$755 Def000263
+S A$gamelogic$737 Def000250
+S A$gamelogic$728 Def000248
+S A$gamelogic$719 Def00023C
+S A$gamelogic$692 Def000222
+S A$gamelogic$683 Def000214
+S A$gamelogic$647 Def0001ED
+S A$gamelogic$638 Def0001E3
+S A$gamelogic$629 Def0001D5
+S A$gamelogic$476 Def000176
+S A$gamelogic$467 Def000164
+S A$gamelogic$458 Def00015A
+S A$gamelogic$449 Def000155
+S A$gamelogic$296 Def0000A5
+S A$gamelogic$188 Def000037
+S A$gamelogic$179 Def000029
+S C$gamelogic.c$97$2_0$122 Def00010B
+S C$gamelogic.c$76$2_0$116 Def0000C3
+S C$gamelogic.c$67$2_0$116 Def00009E
+S _game_loop Def000186
+S A$gamelogic$738 Def000251
+S A$gamelogic$729 Def00024B
+S A$gamelogic$684 Def000217
+S A$gamelogic$657 Def0001F9
+S A$gamelogic$648 Def0001EE
+S A$gamelogic$639 Def0001E5
+S A$gamelogic$495 Def000183
+S A$gamelogic$477 Def000178
+S A$gamelogic$468 Def000165
+S A$gamelogic$378 Def0000F3
+S A$gamelogic$297 Def0000A8
+S A$gamelogic$189 Def000038
+S C$gamelogic.c$98$2_0$122 Def000112
 S XG$fnaclogo_screen$0$0 Def0000EB
-S A$gamelogic$757 Def000258
-S A$gamelogic$748 Def000251
-S A$gamelogic$739 Def00024B
-S A$gamelogic$694 Def000218
-S A$gamelogic$685 Def000210
-S A$gamelogic$667 Def0001FD
-S A$gamelogic$658 Def0001F2
-S A$gamelogic$649 Def0001EA
-S A$gamelogic$487 Def000177
-S A$gamelogic$397 Def000100
-S A$gamelogic$298 Def00009E
-S A$gamelogic$289 Def00008F
-S A$gamelogic$758 Def00025B
-S A$gamelogic$749 Def000252
-S A$gamelogic$695 Def000219
-S A$gamelogic$686 Def000211
-S A$gamelogic$668 Def0001FE
-S A$gamelogic$659 Def0001F3
-S A$gamelogic$398 Def000103
-S A$gamelogic$299 Def0000A1
-S A$gamelogic$759 Def00025C
-S A$gamelogic$696 Def00021B
-S A$gamelogic$687 Def000212
-S A$gamelogic$669 Def000200
-S A$gamelogic$597 Def0001BB
-S A$gamelogic$588 Def0001B5
-S A$gamelogic$399 Def000105
-S A$gamelogic$697 Def00021D
-S A$gamelogic$688 Def000215
-S A$gamelogic$589 Def0001B8
-S C$gamelogic.c$88$3_0$108 Def000142
-S C$gamelogic.c$20$1_0$90 Def000003
-S A$gamelogic$698 Def000220
-S A$gamelogic$689 Def000216
-S C$gamelogic.c$21$1_0$90 Def000006
+S C$gamelogic.c$74$3_0$118 Def0000C0
+S C$gamelogic.c$68$2_0$116 Def0000A5
+S C$gamelogic.c$58$1_0$109 Def000081
+S A$gamelogic$748 Def00025A
+S A$gamelogic$739 Def000252
+S A$gamelogic$685 Def000218
+S A$gamelogic$658 Def0001FA
+S A$gamelogic$649 Def0001F0
+S A$gamelogic$586 Def0001BC
+S A$gamelogic$487 Def000180
+S A$gamelogic$469 Def000166
+S A$gamelogic$397 Def00010B
+S A$gamelogic$388 Def0000FC
+S A$gamelogic$298 Def0000AA
+S A$gamelogic$749 Def00025B
+S A$gamelogic$686 Def00021A
+S A$gamelogic$677 Def00020F
+S A$gamelogic$668 Def000204
+S A$gamelogic$659 Def0001FC
+S A$gamelogic$587 Def0001BF
+S A$gamelogic$398 Def00010E
+S A$gamelogic$389 Def000100
+S A$gamelogic$299 Def0000AD
+S A$gamelogic$687 Def00021B
+S A$gamelogic$678 Def000212
+S A$gamelogic$669 Def000207
+S A$gamelogic$399 Def00010F
+S A$gamelogic$697 Def000224
+S A$gamelogic$688 Def00021C
+S A$gamelogic$698 Def000225
+S A$gamelogic$689 Def00021D
+S C$gamelogic.c$78$3_0$119 Def0000D1
 S XG$init_game$0$0 Def000000
-S A$gamelogic$699 Def000221
-S C$gamelogic.c$22$1_0$90 Def000009
-S C$gamelogic.c$30$1_0$92 Def000019
+S A$gamelogic$699 Def000227
 S XG$play_game$0$0 Def000014
-S C$gamelogic.c$23$1_0$90 Def00000C
 S _presentation_screen Def0000ED
-S C$gamelogic.c$31$1_0$92 Def00001C
-S C$gamelogic.c$32$1_0$92 Def000022
-S C$gamelogic.c$33$1_0$92 Def000025
-S C$gamelogic.c$26$1_0$90 Def000014
-S C$gamelogic.c$24$2_0$91 Def000011
-S XG$game_loop$0$0 Def0001AE
-S C$gamelogic.c$41$2_0$93 Def000059
-S C$gamelogic.c$19$1_0$90 Def000003
-S C$gamelogic.c$34$2_0$93 Def000034
-S C$gamelogic.c$44$2_0$93 Def00006A
-S C$gamelogic.c$35$2_0$93 Def00003B
-S C$gamelogic.c$28$1_0$92 Def000016
-S C$gamelogic.c$29$1_0$92 Def000016
-S C$gamelogic.c$15$0_0$89 Def000000
-S C$gamelogic.c$51$1_0$98 Def000083
-S C$gamelogic.c$42$3_0$96 Def000067
+S XG$game_loop$0$0 Def0001BA
 S G$logo_screen$0$0 Def000016
-S G$init_gamestatus$0$0 Def0001B0
-S C$gamelogic.c$52$1_0$98 Def000083
-S C$gamelogic.c$49$1_0$92 Def000081
-S C$gamelogic.c$47$2_0$93 Def00007E
-S C$gamelogic.c$38$2_0$93 Def000048
-S C$gamelogic.c$36$3_0$94 Def000045
-S C$gamelogic.c$16$1_0$89 Def000000
-S C$gamelogic.c$71$1_0$98 Def0000EB
-S C$gamelogic.c$60$2_0$99 Def0000B2
-S C$gamelogic.c$53$1_0$98 Def000086
-S C$gamelogic.c$17$1_0$89 Def000000
-S XG$presentation_screen$0$0 Def00017A
-S C$gamelogic.c$54$1_0$98 Def000089
-S C$gamelogic.c$55$1_0$98 Def00008F
-S C$gamelogic.c$45$3_0$97 Def00007B
-S C$gamelogic.c$63$2_0$99 Def0000C3
-S C$gamelogic.c$39$3_0$95 Def000056
-S C$gamelogic.c$56$2_0$99 Def00009E
-S C$gamelogic.c$66$2_0$99 Def0000D4
-S C$gamelogic.c$57$2_0$99 Def0000A5
-S G$execute_game_logic$0$0 Def0001BC
-S C$gamelogic.c$69$2_0$99 Def0000E8
+S G$init_gamestatus$0$0 Def0001BC
+S XG$presentation_screen$0$0 Def000183
+S G$execute_game_logic$0$0 Def0001C8
 S _logo_screen Def000016
-S _init_gamestatus Def0001B0
-S C$gamelogic.c$110$1_0$111 Def00019C
-S C$gamelogic.c$101$1_0$111 Def00017D
-S C$gamelogic.c$111$1_0$111 Def0001A1
-S C$gamelogic.c$102$1_0$111 Def00017D
-S C$gamelogic.c$103$1_0$111 Def000182
-S C$gamelogic.c$104$1_0$111 Def000185
-S C$gamelogic.c$120$1_0$114 Def0001B0
-S C$gamelogic.c$112$2_0$112 Def0001A1
-S C$gamelogic.c$105$1_0$111 Def000188
-S C$gamelogic.c$121$1_0$114 Def0001B5
-S C$gamelogic.c$106$1_0$111 Def00018B
-S C$gamelogic.c$122$1_0$114 Def0001BB
-S C$gamelogic.c$107$1_0$111 Def00018E
-S C$gamelogic.c$117$1_0$111 Def0001AE
-S C$gamelogic.c$115$2_0$112 Def0001AB
-S C$gamelogic.c$113$3_0$113 Def0001A8
-S _execute_game_logic Def0001BC
-S C$gamelogic.c$150$3_0$122 Def00024E
-S C$gamelogic.c$130$2_0$116 Def0001C4
-S C$gamelogic.c$109$1_0$111 Def000196
-S C$gamelogic.c$124$1_0$115 Def0001BC
-S C$gamelogic.c$144$4_0$120 Def000223
+S _init_gamestatus Def0001BC
+S C$gamelogic.c$121$1_0$121 Def000183
+S C$gamelogic.c$110$2_0$122 Def000145
+S C$gamelogic.c$102$2_0$122 Def00011F
+S C$gamelogic.c$100$3_0$123 Def00011C
+S C$gamelogic.c$114$2_0$122 Def00015A
+S _execute_game_logic Def0001C8
+S C$gamelogic.c$115$2_0$122 Def00015D
+S C$gamelogic.c$106$2_0$122 Def000130
+S C$gamelogic.c$152$1_0$132 Def0001C8
+S C$gamelogic.c$144$1_0$131 Def0001BC
+S C$gamelogic.c$104$3_0$124 Def00012D
+S C$gamelogic.c$160$2_0$133 Def0001D5
+S C$gamelogic.c$145$1_0$131 Def0001BC
+S C$gamelogic.c$130$1_0$128 Def00019A
+S C$gamelogic.c$112$3_0$126 Def000157
 S G$fnaclogo_screen$0$0 Def000083
 S XG$logo_screen$0$0 Def000081
-S C$gamelogic.c$145$4_0$120 Def000230
-S C$gamelogic.c$133$2_0$116 Def0001C9
-S C$gamelogic.c$126$1_0$115 Def0001BC
-S XG$init_gamestatus$0$0 Def0001BB
-S C$gamelogic.c$152$2_0$116 Def000258
-S C$gamelogic.c$119$1_0$114 Def0001B0
-S C$gamelogic.c$135$2_0$116 Def0001CC
-S C$gamelogic.c$156$1_0$115 Def00025F
-S C$gamelogic.c$147$4_0$121 Def000242
-S C$gamelogic.c$143$3_0$117 Def000218
+S XG$init_gamestatus$0$0 Def0001C7
+S C$gamelogic.c$146$1_0$131 Def0001C1
+S C$gamelogic.c$191$1_0$132 Def00026B
+S C$gamelogic.c$162$2_0$133 Def0001D8
+S C$gamelogic.c$147$1_0$131 Def0001C7
+S C$gamelogic.c$132$1_0$128 Def0001A2
+S C$gamelogic.c$123$1_0$128 Def000186
+S C$gamelogic.c$119$2_0$122 Def000180
+S C$gamelogic.c$192$1_0$132 Def00026B
+S C$gamelogic.c$142$1_0$128 Def0001BA
+S C$gamelogic.c$140$2_0$129 Def0001B7
+S C$gamelogic.c$138$3_0$130 Def0001B4
+S C$gamelogic.c$133$1_0$128 Def0001A8
+S C$gamelogic.c$134$1_0$128 Def0001AD
+S C$gamelogic.c$125$1_0$128 Def000186
+S C$gamelogic.c$108$3_0$125 Def000142
 A _DATA size 4 flags 0 addr 0
 S _scroll_enabled Def000003
 S G$scroll_enabled$0_0$0 Def000003
@@ -463,188 +469,190 @@ R 00 00 01 00
 T 00 00 00
 R 00 00 00 00
 T 00 00 00 C3 00 00
-R 00 00 00 00 02 04 17 00
+R 00 00 00 00 02 04 12 00
 T 03 00 00
 R 00 00 00 00
 T 03 00 00 CD 16 00 CD 83 00 CD ED 00
 R 00 00 00 00 00 04 00 00 00 07 00 00 00 0A 00 00
 T 0C 00 00
 R 00 00 00 00
-T 0C 00 00 3A 00 00 3D C8 CD 7D 01 18 F6
+T 0C 00 00 3A 00 00 3D C8 CD 86 01 18 F6
 R 00 00 00 00 00 04 01 00 00 09 00 00
 T 16 00 00
 R 00 00 00 00
 T 16 00 00 CD 00 00 CD 00 00 21 00 00 22 00 00 CD
-R 00 00 00 00 02 04 00 00 02 07 01 00 02 0D 02 00
+R 00 00 00 00 02 04 00 00 02 07 03 00 02 0D 04 00
 T 23 00 00 00 00
-R 00 00 00 00 02 03 18 00
+R 00 00 00 00 02 03 13 00
 T 25 00 00
 R 00 00 00 00
 T 25 00 00 FD 21 00 00 FD 7E 00 D6 2C FD 7E 01 DE
-R 00 00 00 00 02 05 02 00
+R 00 00 00 00 02 05 04 00
 T 32 00 00 01 D0 2A 00 00 23 22 00 00 FD 7E 00 D6
-R 00 00 00 00 02 06 02 00 02 0A 02 00
+R 00 00 00 00 02 06 04 00 02 0A 04 00
 T 3F 00 00 19 FD B6 01 20 03 CD 00 00
-R 00 00 00 00 02 0A 1F 00
+R 00 00 00 00 02 0A 1A 00
 T 48 00 00
 R 00 00 00 00
 T 48 00 00 FD 21 00 00 FD 7E 00 D6 32 FD B6 01 20
-R 00 00 00 00 02 05 02 00
-T 55 00 00 03 CD 00 00
 R 00 00 00 00 02 05 04 00
+T 55 00 00 03 CD 00 00
+R 00 00 00 00 02 05 06 00
 T 59 00 00
 R 00 00 00 00
 T 59 00 00 FD 21 00 00 FD 7E 00 D6 FA FD B6 01 20
-R 00 00 00 00 02 05 02 00
+R 00 00 00 00 02 05 04 00
 T 66 00 00 03 CD 00 00
-R 00 00 00 00 02 05 1F 00
+R 00 00 00 00 02 05 1A 00
 T 6A 00 00
 R 00 00 00 00
 T 6A 00 00 FD 21 00 00 FD 7E 00 D6 13 20 09 FD 7E
-R 00 00 00 00 02 05 02 00
+R 00 00 00 00 02 05 04 00
 T 77 00 00 01 3D 20 03 CD 00 00
-R 00 00 00 00 02 08 01 00
+R 00 00 00 00 02 08 03 00
 T 7E 00 00
 R 00 00 00 00
 T 7E 00 00 CD 00 00 18 A2
-R 00 00 00 00 02 04 19 00
+R 00 00 00 00 02 04 14 00
 T 83 00 00
 R 00 00 00 00
 T 83 00 00 CD 00 00 CD 00 00 21 00 00 22 00 00
-R 00 00 00 00 02 04 0D 00 02 07 01 00 02 0D 02 00
+R 00 00 00 00 02 04 0C 00 02 07 03 00 02 0D 04 00
 T 8F 00 00
 R 00 00 00 00
 T 8F 00 00 FD 21 00 00 FD 7E 00 D6 2C FD 7E 01 DE
-R 00 00 00 00 02 05 02 00
+R 00 00 00 00 02 05 04 00
 T 9C 00 00 01 D0 2A 00 00 23 22 00 00 FD 7E 00 D6
-R 00 00 00 00 02 06 02 00 02 0A 02 00
+R 00 00 00 00 02 06 04 00 02 0A 04 00
 T A9 00 00 19 FD B6 01 20 03 CD 00 00
-R 00 00 00 00 02 0A 05 00
+R 00 00 00 00 02 0A 07 00
 T B2 00 00
 R 00 00 00 00
 T B2 00 00 FD 21 00 00 FD 7E 00 D6 32 FD B6 01 20
-R 00 00 00 00 02 05 02 00
+R 00 00 00 00 02 05 04 00
 T BF 00 00 03 CD 00 00
-R 00 00 00 00 02 05 1B 00
+R 00 00 00 00 02 05 15 00
 T C3 00 00
 R 00 00 00 00
 T C3 00 00 FD 21 00 00 FD 7E 00 D6 FA FD B6 01 20
-R 00 00 00 00 02 05 02 00
+R 00 00 00 00 02 05 04 00
 T D0 00 00 03 CD 00 00
-R 00 00 00 00 02 05 05 00
+R 00 00 00 00 02 05 07 00
 T D4 00 00
 R 00 00 00 00
 T D4 00 00 FD 21 00 00 FD 7E 00 D6 13 20 09 FD 7E
-R 00 00 00 00 02 05 02 00
+R 00 00 00 00 02 05 04 00
 T E1 00 00 01 3D 20 03 CD 00 00
-R 00 00 00 00 02 08 01 00
+R 00 00 00 00 02 08 03 00
 T E8 00 00
 R 00 00 00 00
 T E8 00 00 CD 00 00 18 A2
-R 00 00 00 00 02 04 19 00
+R 00 00 00 00 02 04 14 00
 T ED 00 00
 R 00 00 00 00
 T ED 00 00 CD 00 00 CD 00 00 CD 00 00 21 00 00 22
-R 00 00 00 00 02 04 1D 00 02 07 01 00 02 0A 07 00
+R 00 00 00 00 02 04 17 00 02 07 03 00 02 0A 09 00
 T FA 00 00 00 00
-R 00 00 00 00 02 03 02 00
+R 00 00 00 00 02 03 04 00
 T FC 00 00
 R 00 00 00 00
 T FC 00 00 FD 21 00 00 FD 7E 00 D6 20 FD 7E 01 DE
-R 00 00 00 00 02 05 02 00
+R 00 00 00 00 02 05 04 00
 T 09 01 00 03 D0 2A 00 00 23 22 00 00 FD 7E 00 D6
-R 00 00 00 00 02 06 02 00 02 0A 02 00
+R 00 00 00 00 02 06 04 00 02 0A 04 00
 T 16 01 00 19 FD B6 01 20 03 CD 00 00
-R 00 00 00 00 02 0A 15 00
+R 00 00 00 00 02 0A 11 00
 T 1F 01 00
 R 00 00 00 00
 T 1F 01 00 FD 21 00 00 FD 7E 00 D6 32 FD B6 01 20
-R 00 00 00 00 02 05 02 00
+R 00 00 00 00 02 05 04 00
 T 2C 01 00 03 CD 00 00
-R 00 00 00 00 02 05 21 00
+R 00 00 00 00 02 05 1C 00
 T 30 01 00
 R 00 00 00 00
 T 30 01 00 FD 21 00 00 FD 7E 00 D6 EE 20 0A FD 7E
-R 00 00 00 00 02 05 02 00
+R 00 00 00 00 02 05 04 00
 T 3D 01 00 01 D6 02 20 03 CD 00 00
-R 00 00 00 00 02 09 15 00
+R 00 00 00 00 02 09 11 00
 T 45 01 00
 R 00 00 00 00
 T 45 01 00 FD 21 00 00 FD 7E 00 D6 07 20 0A FD 7E
-R 00 00 00 00 02 05 02 00
+R 00 00 00 00 02 05 04 00
 T 52 01 00 01 D6 03 20 03 CD 00 00
-R 00 00 00 00 02 09 01 00
+R 00 00 00 00 02 09 03 00
 T 5A 01 00
 R 00 00 00 00
-T 5A 01 00 CD 00 00 CB 65 28 16 FD 21 00 00 FD 7E
-R 00 00 00 00 02 04 08 00 02 0C 02 00
-T 67 01 00 00 D6 E4 FD 7E 01 DE 02 30 06 21 E4 02
+T 5A 01 00 CD 00 00 E5 CD 00 00 D1 7D A3 4F 7C A2
+R 00 00 00 00 02 04 19 00 02 08 01 00
+T 67 01 00 B1 28 16 FD 21 00 00 FD 7E 00 D6 E4 FD
+R 00 00 00 00 02 08 04 00
+T 74 01 00 7E 01 DE 02 30 06 21 E4 02 22 00 00
+R 00 00 00 00 02 0D 04 00
+T 80 01 00
 R 00 00 00 00
-T 74 01 00 22 00 00
-R 00 00 00 00 02 04 02 00
-T 77 01 00
+T 80 01 00 CD 00 00 C3 FC 00
+R 00 00 00 00 02 04 14 00 00 07 00 00
+T 86 01 00
 R 00 00 00 00
-T 77 01 00 CD 00 00 C3 FC 00
-R 00 00 00 00 02 04 19 00 00 07 00 00
-T 7D 01 00
+T 86 01 00 3E 01 F5 33 CD 00 00 33 CD 00 00 CD
+R 00 00 00 00 02 08 02 00 02 0C 0D 00
+T 92 01 00 BC 01 CD 00 00 CD 00 00 3E 01 F5 33 CD
+R 00 00 00 00 00 03 00 00 02 06 16 00 02 09 05 00
+T 9F 01 00 00 00 33 21 00 00 22 00 00 21 03 00 36
+R 00 00 00 00 02 03 18 00 02 0A 04 00 00 0D 01 00
+T AC 01 00 01
 R 00 00 00 00
-T 7D 01 00 2E 01 CD 00 00 CD 00 00 CD B0 01 CD
-R 00 00 00 00 02 06 14 00 02 09 0E 00 00 0C 00 00
-T 89 01 00 00 00 CD 00 00 3E 01 F5 33 CD 00 00 33
-R 00 00 00 00 02 03 1C 00 02 06 03 00 02 0D 1E 00
-T 96 01 00 21 00 00 22 00 00 21 03 00 36 01
-R 00 00 00 00 02 07 02 00 00 0A 01 00
-T A1 01 00
+T AD 01 00
 R 00 00 00 00
-T A1 01 00 21 00 00 CB 46 20 03 CD BC 01
-R 00 00 00 00 02 04 22 00 00 0B 00 00
-T AB 01 00
+T AD 01 00 21 00 00 CB 46 20 03 CD C8 01
+R 00 00 00 00 02 04 1D 00 00 0B 00 00
+T B7 01 00
 R 00 00 00 00
-T AB 01 00 CD 00 00 18 F1
-R 00 00 00 00 02 04 19 00
-T B0 01 00
-R 00 00 00 00
-T B0 01 00 21 00 00 36 00 21 00 00 22 01 00 C9
-R 00 00 00 00 00 04 01 00 00 0C 01 00
+T B7 01 00 CD 00 00 18 F1
+R 00 00 00 00 02 04 14 00
 T BC 01 00
 R 00 00 00 00
-T BC 01 00 3A 00 00 B7 C0 CD 00 00 E5 CD 00 00 F1
-R 00 00 00 00 00 04 01 00 02 09 08 00 02 0D 0B 00
-T C9 01 00 CD 00 00 ED 4B 02 00 78 B1 28 7A 21
-R 00 00 00 00 02 04 10 00 02 08 11 00
-T D5 01 00 03 00 CB 46 28 73 2A 00 00 23 23 23 5E
-R 00 00 00 00 00 03 01 00 02 0A 11 00
-T E2 01 00 3E C8 93 30 31 3A 06 00 3D 20 2B 78 26
-R 00 00 00 00 02 09 11 00
-T EF 01 00 00 E5 33 F5 33 CD 00 00 F1 CD 00 00 3E
-R 00 00 00 00 02 09 06 00 02 0D 20 00
-T FC 01 00 B0 BD 3E 04 9C 30 05 21 03 00 36 00
+T BC 01 00 21 00 00 36 00 21 00 00 22 01 00 C9
+R 00 00 00 00 00 04 01 00 00 0C 01 00
+T C8 01 00
+R 00 00 00 00
+T C8 01 00 3A 00 00 B7 C0 CD 00 00 E5 CD 00 00 F1
+R 00 00 00 00 00 04 01 00 02 09 19 00 02 0D 0B 00
+T D5 01 00 CD 00 00 ED 4B 02 00 78 B1 28 7A 21
+R 00 00 00 00 02 04 0E 00 02 08 0F 00
+T E1 01 00 03 00 CB 46 28 73 2A 00 00 23 23 23 5E
+R 00 00 00 00 00 03 01 00 02 0A 0F 00
+T EE 01 00 3E C8 93 30 31 3A 06 00 3D 20 2B 78 26
+R 00 00 00 00 02 09 0F 00
+T FB 01 00 00 E5 33 F5 33 CD 00 00 F1 CD 00 00 3E
+R 00 00 00 00 02 09 08 00 02 0D 1B 00
+T 08 02 00 B0 BD 3E 04 9C 30 05 21 03 00 36 00
 R 00 00 00 00 00 0B 01 00
-T 08 02 00
+T 14 02 00
 R 00 00 00 00
-T 08 02 00 2A 02 00 7C 26 00 E5 33 F5 33 CD 00 00
-R 00 00 00 00 02 04 11 00 02 0E 0A 00
-T 15 02 00 F1 18 40
+T 14 02 00 2A 02 00 7C 26 00 E5 33 F5 33 CD 00 00
+R 00 00 00 00 02 04 0F 00 02 0E 0A 00
+T 21 02 00 F1 18 40
 R 00 00 00 00
-T 18 02 00
+T 24 02 00
 R 00 00 00 00
-T 18 02 00 7B D6 38 30 25 3A 06 00 3C 20 1F 48 AF
-R 00 00 00 00 02 09 11 00
-T 25 02 00 91 26 00 E5 33 F5 33 CD 00 00 F1 2A
-R 00 00 00 00 02 0B 06 00
-T 31 02 00 02 00 4C AF 91 26 00 E5 33 F5 33 CD
-R 00 00 00 00 02 03 11 00
-T 3D 02 00 00 00 F1 18 16
+T 24 02 00 7B D6 38 30 25 3A 06 00 3C 20 1F 48 AF
+R 00 00 00 00 02 09 0F 00
+T 31 02 00 91 26 00 E5 33 F5 33 CD 00 00 F1 2A
+R 00 00 00 00 02 0B 08 00
+T 3D 02 00 02 00 4C AF 91 26 00 E5 33 F5 33 CD
+R 00 00 00 00 02 03 0F 00
+T 49 02 00 00 00 F1 18 16
 R 00 00 00 00 02 03 0A 00
-T 42 02 00
-R 00 00 00 00
-T 42 02 00 AF F5 33 AF F5 33 CD 00 00 F1 18 0A
-R 00 00 00 00 02 0A 0A 00
 T 4E 02 00
 R 00 00 00 00
-T 4E 02 00 AF F5 33 AF F5 33 CD 00 00 F1
+T 4E 02 00 AF F5 33 AF F5 33 CD 00 00 F1 18 0A
 R 00 00 00 00 02 0A 0A 00
-T 58 02 00
+T 5A 02 00
 R 00 00 00 00
-T 58 02 00 2A 00 00 23 22 00 00 C9
-R 00 00 00 00 02 04 02 00 02 08 02 00
+T 5A 02 00 AF F5 33 AF F5 33 CD 00 00 F1
+R 00 00 00 00 02 0A 0A 00
+T 64 02 00
+R 00 00 00 00
+T 64 02 00 2A 00 00 23 22 00 00 C9
+R 00 00 00 00 02 04 04 00 02 08 04 00

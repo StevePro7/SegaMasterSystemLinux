@@ -8,6 +8,18 @@
 ;--------------------------------------------------------
 ; Public variables in this module
 ;--------------------------------------------------------
+	.globl _devkit_PORT_B_KEY_2
+	.globl _devkit_PORT_B_KEY_1
+	.globl _devkit_PORT_B_KEY_RIGHT
+	.globl _devkit_PORT_B_KEY_LEFT
+	.globl _devkit_PORT_B_KEY_DOWN
+	.globl _devkit_PORT_B_KEY_UP
+	.globl _devkit_PORT_A_KEY_2
+	.globl _devkit_PORT_A_KEY_1
+	.globl _devkit_PORT_A_KEY_RIGHT
+	.globl _devkit_PORT_A_KEY_LEFT
+	.globl _devkit_PORT_A_KEY_DOWN
+	.globl _devkit_PORT_A_KEY_UP
 	.globl _play_punch_sound2
 	.globl _play_punch_sound1
 	.globl _move_entity
@@ -19,9 +31,6 @@
 	.globl _initEngine
 	.globl _player2
 	.globl _player1
-	.globl _SMS_SRAM
-	.globl _SRAM_bank_to_be_mapped_on_slot2
-	.globl _ROM_bank_to_be_mapped_on_slot2
 	.globl _add_player
 	.globl _manage_input
 	.globl _manage_player_iddle_status
@@ -36,12 +45,6 @@
 ; ram data
 ;--------------------------------------------------------
 	.area _DATA
-G$ROM_bank_to_be_mapped_on_slot2$0_0$0 == 0xffff
-_ROM_bank_to_be_mapped_on_slot2	=	0xffff
-G$SRAM_bank_to_be_mapped_on_slot2$0_0$0 == 0xfffc
-_SRAM_bank_to_be_mapped_on_slot2	=	0xfffc
-G$SMS_SRAM$0_0$0 == 0x8000
-_SMS_SRAM	=	0x8000
 G$player1$0_0$0==.
 _player1::
 	.ds 10
@@ -74,49 +77,49 @@ _player2::
 	.area _CODE
 	G$add_player$0$0	= .
 	.globl	G$add_player$0$0
-	C$player.c$14$0_0$82	= .
-	.globl	C$player.c$14$0_0$82
-;player.c:14: void add_player(unsigned char player_number) {
+	C$player.c$14$0_0$99	= .
+	.globl	C$player.c$14$0_0$99
+;player.c:14: void add_player(unsigned char player_number)
 ;	---------------------------------
 ; Function add_player
 ; ---------------------------------
 _add_player::
 	push	ix
-	C$player.c$16$1_0$82	= .
-	.globl	C$player.c$16$1_0$82
-;player.c:16: if(player_number == 1) {
+	C$player.c$17$1_0$99	= .
+	.globl	C$player.c$17$1_0$99
+;player.c:17: if(player_number == 1) {
 	ld	hl, #0 + 4
 	add	hl, sp
 	ld	a, (hl)
 	dec	a
 	jr	NZ, 00102$
-	C$player.c$17$2_0$83	= .
-	.globl	C$player.c$17$2_0$83
-;player.c:17: initEngine();
+	C$player.c$18$2_0$100	= .
+	.globl	C$player.c$18$2_0$100
+;player.c:18: initEngine();
 	call	_initEngine
-	C$player.c$18$2_0$83	= .
-	.globl	C$player.c$18$2_0$83
-;player.c:18: playerpointer = &player1;
+	C$player.c$19$2_0$100	= .
+	.globl	C$player.c$19$2_0$100
+;player.c:19: playerpointer = &player1;
 	ld	bc, #_player1+0
 	jr	00103$
 00102$:
-	C$player.c$20$2_0$84	= .
-	.globl	C$player.c$20$2_0$84
-;player.c:20: playerpointer = &player2;
+	C$player.c$21$2_0$101	= .
+	.globl	C$player.c$21$2_0$101
+;player.c:21: playerpointer = &player2;
 	ld	bc, #_player2
 00103$:
-	C$player.c$22$1_0$82	= .
-	.globl	C$player.c$22$1_0$82
-;player.c:22: if(playerpointer->entityreference == 0) {
+	C$player.c$23$1_0$99	= .
+	.globl	C$player.c$23$1_0$99
+;player.c:23: if(playerpointer->entityreference == 0) {
 	ld	l, c
 	ld	h, b
 	ld	a, (hl)
 	inc	hl
 	or	a, (hl)
 	jr	NZ, 00106$
-	C$player.c$23$2_0$85	= .
-	.globl	C$player.c$23$2_0$85
-;player.c:23: playerpointer->vx = 0;
+	C$player.c$24$2_0$102	= .
+	.globl	C$player.c$24$2_0$102
+;player.c:24: playerpointer->vx = 0;
 	ld	e, c
 	ld	d, b
 	inc	de
@@ -125,30 +128,30 @@ _add_player::
 	ld	(de), a
 	inc	de
 	ld	(de), a
-	C$player.c$24$2_0$85	= .
-	.globl	C$player.c$24$2_0$85
-;player.c:24: playerpointer->vy = 0;
+	C$player.c$25$2_0$102	= .
+	.globl	C$player.c$25$2_0$102
+;player.c:25: playerpointer->vy = 0;
 	ld	hl, #0x0004
 	add	hl, bc
 	xor	a, a
 	ld	(hl), a
 	inc	hl
 	ld	(hl), a
-	C$player.c$25$2_0$85	= .
-	.globl	C$player.c$25$2_0$85
-;player.c:25: playerpointer->xdirection = 1;
+	C$player.c$26$2_0$102	= .
+	.globl	C$player.c$26$2_0$102
+;player.c:26: playerpointer->xdirection = 1;
 	ld	hl, #0x0006
 	add	hl, bc
 	ld	(hl), #0x01
-	C$player.c$26$2_0$85	= .
-	.globl	C$player.c$26$2_0$85
-;player.c:26: playerpointer->ydirection = 1;
+	C$player.c$27$2_0$102	= .
+	.globl	C$player.c$27$2_0$102
+;player.c:27: playerpointer->ydirection = 1;
 	ld	hl, #0x0007
 	add	hl, bc
 	ld	(hl), #0x01
-	C$player.c$27$2_0$85	= .
-	.globl	C$player.c$27$2_0$85
-;player.c:27: playerpointer->entityreference = addEntity(&player_character, 32, 100);
+	C$player.c$28$2_0$102	= .
+	.globl	C$player.c$28$2_0$102
+;player.c:28: playerpointer->entityreference = addEntity(&player_character, 32, 100);
 	push	bc
 	ld	de, #0x6420
 	push	de
@@ -164,25 +167,25 @@ _add_player::
 	ld	(hl), e
 	inc	hl
 	ld	(hl), d
-	C$player.c$28$2_0$85	= .
-	.globl	C$player.c$28$2_0$85
-;player.c:28: playerpointer->status = PLAYER_STATUS_IDDLE;
+	C$player.c$29$2_0$102	= .
+	.globl	C$player.c$29$2_0$102
+;player.c:29: playerpointer->status = PLAYER_STATUS_IDDLE;
 	ld	hl, #0x0008
 	add	hl, bc
 	ld	(hl), #0x00
-	C$player.c$29$2_0$85	= .
-	.globl	C$player.c$29$2_0$85
-;player.c:29: playerpointer->status2 = PLAYER_STATUS2_IDDLE;
+	C$player.c$30$2_0$102	= .
+	.globl	C$player.c$30$2_0$102
+;player.c:30: playerpointer->status2 = PLAYER_STATUS2_IDDLE;
 	ld	hl, #0x0009
 	add	hl, bc
 	ld	(hl), #0x00
 00106$:
-	C$player.c$31$1_0$82	= .
-	.globl	C$player.c$31$1_0$82
-;player.c:31: }
+	C$player.c$32$1_0$99	= .
+	.globl	C$player.c$32$1_0$99
+;player.c:32: }
 	pop	ix
-	C$player.c$31$1_0$82	= .
-	.globl	C$player.c$31$1_0$82
+	C$player.c$32$1_0$99	= .
+	.globl	C$player.c$32$1_0$99
 	XG$add_player$0$0	= .
 	.globl	XG$add_player$0$0
 	ret
@@ -9908,9 +9911,9 @@ _player_character:
 	.db 0x00
 	G$manage_input$0$0	= .
 	.globl	G$manage_input$0$0
-	C$player.c$33$1_0$87	= .
-	.globl	C$player.c$33$1_0$87
-;player.c:33: void manage_input(unsigned int keys) {
+	C$player.c$34$1_0$104	= .
+	.globl	C$player.c$34$1_0$104
+;player.c:34: void manage_input(unsigned int keys) {
 ;	---------------------------------
 ; Function manage_input
 ; ---------------------------------
@@ -9918,9 +9921,9 @@ _manage_input::
 	push	ix
 	ld	ix,#0
 	add	ix,sp
-	C$player.c$34$1_0$87	= .
-	.globl	C$player.c$34$1_0$87
-;player.c:34: switch(player1.status) {
+	C$player.c$35$1_0$104	= .
+	.globl	C$player.c$35$1_0$104
+;player.c:35: switch(player1.status) {
 	ld	a, (#(_player1 + 0x0008) + 0)
 	or	a, a
 	jr	Z, 00101$
@@ -9931,13 +9934,13 @@ _manage_input::
 	sub	a, #0x03
 	jr	Z, 00104$
 	jr	00106$
-	C$player.c$35$2_0$88	= .
-	.globl	C$player.c$35$2_0$88
-;player.c:35: case PLAYER_STATUS_IDDLE:
+	C$player.c$36$2_0$105	= .
+	.globl	C$player.c$36$2_0$105
+;player.c:36: case PLAYER_STATUS_IDDLE:
 00101$:
-	C$player.c$36$2_0$88	= .
-	.globl	C$player.c$36$2_0$88
-;player.c:36: manage_player_iddle_status(1, keys);
+	C$player.c$37$2_0$105	= .
+	.globl	C$player.c$37$2_0$105
+;player.c:37: manage_player_iddle_status(1, keys);
 	ld	l, 4 (ix)
 	ld	h, 5 (ix)
 	push	hl
@@ -9947,17 +9950,17 @@ _manage_input::
 	call	_manage_player_iddle_status
 	pop	af
 	inc	sp
-	C$player.c$37$2_0$88	= .
-	.globl	C$player.c$37$2_0$88
-;player.c:37: break;
+	C$player.c$38$2_0$105	= .
+	.globl	C$player.c$38$2_0$105
+;player.c:38: break;
 	jr	00106$
-	C$player.c$38$2_0$88	= .
-	.globl	C$player.c$38$2_0$88
-;player.c:38: case PLAYER_STATUS_WALKING:
+	C$player.c$39$2_0$105	= .
+	.globl	C$player.c$39$2_0$105
+;player.c:39: case PLAYER_STATUS_WALKING:
 00102$:
-	C$player.c$39$2_0$88	= .
-	.globl	C$player.c$39$2_0$88
-;player.c:39: manage_player_walking_status(1, keys);
+	C$player.c$40$2_0$105	= .
+	.globl	C$player.c$40$2_0$105
+;player.c:40: manage_player_walking_status(1, keys);
 	ld	l, 4 (ix)
 	ld	h, 5 (ix)
 	push	hl
@@ -9967,17 +9970,17 @@ _manage_input::
 	call	_manage_player_walking_status
 	pop	af
 	inc	sp
-	C$player.c$40$2_0$88	= .
-	.globl	C$player.c$40$2_0$88
-;player.c:40: break;
+	C$player.c$41$2_0$105	= .
+	.globl	C$player.c$41$2_0$105
+;player.c:41: break;
 	jr	00106$
-	C$player.c$41$2_0$88	= .
-	.globl	C$player.c$41$2_0$88
-;player.c:41: case PLAYER_STATUS_JUMPING:
+	C$player.c$42$2_0$105	= .
+	.globl	C$player.c$42$2_0$105
+;player.c:42: case PLAYER_STATUS_JUMPING:
 00103$:
-	C$player.c$42$2_0$88	= .
-	.globl	C$player.c$42$2_0$88
-;player.c:42: manage_player_jumping_status(1, keys);
+	C$player.c$43$2_0$105	= .
+	.globl	C$player.c$43$2_0$105
+;player.c:43: manage_player_jumping_status(1, keys);
 	ld	l, 4 (ix)
 	ld	h, 5 (ix)
 	push	hl
@@ -9987,17 +9990,17 @@ _manage_input::
 	call	_manage_player_jumping_status
 	pop	af
 	inc	sp
-	C$player.c$43$2_0$88	= .
-	.globl	C$player.c$43$2_0$88
-;player.c:43: break;
+	C$player.c$44$2_0$105	= .
+	.globl	C$player.c$44$2_0$105
+;player.c:44: break;
 	jr	00106$
-	C$player.c$44$2_0$88	= .
-	.globl	C$player.c$44$2_0$88
-;player.c:44: case PLAYER_STATUS_CROUCHED:
+	C$player.c$45$2_0$105	= .
+	.globl	C$player.c$45$2_0$105
+;player.c:45: case PLAYER_STATUS_CROUCHED:
 00104$:
-	C$player.c$45$2_0$88	= .
-	.globl	C$player.c$45$2_0$88
-;player.c:45: manage_player_crouched_status(1, keys);
+	C$player.c$46$2_0$105	= .
+	.globl	C$player.c$46$2_0$105
+;player.c:46: manage_player_crouched_status(1, keys);
 	ld	l, 4 (ix)
 	ld	h, 5 (ix)
 	push	hl
@@ -10007,20 +10010,20 @@ _manage_input::
 	call	_manage_player_crouched_status
 	pop	af
 	inc	sp
-	C$player.c$49$1_0$87	= .
-	.globl	C$player.c$49$1_0$87
-;player.c:49: }
+	C$player.c$50$1_0$104	= .
+	.globl	C$player.c$50$1_0$104
+;player.c:50: }
 00106$:
-	C$player.c$50$1_0$87	= .
-	.globl	C$player.c$50$1_0$87
-;player.c:50: if(player2.entityreference != 0) {
+	C$player.c$51$1_0$104	= .
+	.globl	C$player.c$51$1_0$104
+;player.c:51: if(player2.entityreference != 0) {
 	ld	hl, (#_player2 + 0)
 	ld	a, h
 	or	a, l
 	jr	Z, 00115$
-	C$player.c$51$2_0$89	= .
-	.globl	C$player.c$51$2_0$89
-;player.c:51: switch(player2.status) {
+	C$player.c$52$2_0$106	= .
+	.globl	C$player.c$52$2_0$106
+;player.c:52: switch(player2.status) {
 	ld	a, (#(_player2 + 0x0008) + 0)
 	or	a, a
 	jr	Z, 00107$
@@ -10031,13 +10034,13 @@ _manage_input::
 	sub	a, #0x03
 	jr	Z, 00110$
 	jr	00115$
-	C$player.c$52$3_0$90	= .
-	.globl	C$player.c$52$3_0$90
-;player.c:52: case PLAYER_STATUS_IDDLE:
+	C$player.c$53$3_0$107	= .
+	.globl	C$player.c$53$3_0$107
+;player.c:53: case PLAYER_STATUS_IDDLE:
 00107$:
-	C$player.c$53$3_0$90	= .
-	.globl	C$player.c$53$3_0$90
-;player.c:53: manage_player_iddle_status(2, keys);
+	C$player.c$54$3_0$107	= .
+	.globl	C$player.c$54$3_0$107
+;player.c:54: manage_player_iddle_status(2, keys);
 	ld	l, 4 (ix)
 	ld	h, 5 (ix)
 	push	hl
@@ -10047,17 +10050,17 @@ _manage_input::
 	call	_manage_player_iddle_status
 	pop	af
 	inc	sp
-	C$player.c$54$3_0$90	= .
-	.globl	C$player.c$54$3_0$90
-;player.c:54: break;
+	C$player.c$55$3_0$107	= .
+	.globl	C$player.c$55$3_0$107
+;player.c:55: break;
 	jr	00115$
-	C$player.c$55$3_0$90	= .
-	.globl	C$player.c$55$3_0$90
-;player.c:55: case PLAYER_STATUS_WALKING:
+	C$player.c$56$3_0$107	= .
+	.globl	C$player.c$56$3_0$107
+;player.c:56: case PLAYER_STATUS_WALKING:
 00108$:
-	C$player.c$56$3_0$90	= .
-	.globl	C$player.c$56$3_0$90
-;player.c:56: manage_player_walking_status(2, keys);
+	C$player.c$57$3_0$107	= .
+	.globl	C$player.c$57$3_0$107
+;player.c:57: manage_player_walking_status(2, keys);
 	ld	l, 4 (ix)
 	ld	h, 5 (ix)
 	push	hl
@@ -10067,17 +10070,17 @@ _manage_input::
 	call	_manage_player_walking_status
 	pop	af
 	inc	sp
-	C$player.c$57$3_0$90	= .
-	.globl	C$player.c$57$3_0$90
-;player.c:57: break;
+	C$player.c$58$3_0$107	= .
+	.globl	C$player.c$58$3_0$107
+;player.c:58: break;
 	jr	00115$
-	C$player.c$58$3_0$90	= .
-	.globl	C$player.c$58$3_0$90
-;player.c:58: case PLAYER_STATUS_JUMPING:
+	C$player.c$59$3_0$107	= .
+	.globl	C$player.c$59$3_0$107
+;player.c:59: case PLAYER_STATUS_JUMPING:
 00109$:
-	C$player.c$59$3_0$90	= .
-	.globl	C$player.c$59$3_0$90
-;player.c:59: manage_player_jumping_status(2, keys);
+	C$player.c$60$3_0$107	= .
+	.globl	C$player.c$60$3_0$107
+;player.c:60: manage_player_jumping_status(2, keys);
 	ld	l, 4 (ix)
 	ld	h, 5 (ix)
 	push	hl
@@ -10087,17 +10090,17 @@ _manage_input::
 	call	_manage_player_jumping_status
 	pop	af
 	inc	sp
-	C$player.c$60$3_0$90	= .
-	.globl	C$player.c$60$3_0$90
-;player.c:60: break;
+	C$player.c$61$3_0$107	= .
+	.globl	C$player.c$61$3_0$107
+;player.c:61: break;
 	jr	00115$
-	C$player.c$61$3_0$90	= .
-	.globl	C$player.c$61$3_0$90
-;player.c:61: case PLAYER_STATUS_CROUCHED:
+	C$player.c$62$3_0$107	= .
+	.globl	C$player.c$62$3_0$107
+;player.c:62: case PLAYER_STATUS_CROUCHED:
 00110$:
-	C$player.c$62$3_0$90	= .
-	.globl	C$player.c$62$3_0$90
-;player.c:62: manage_player_crouched_status(2, keys);
+	C$player.c$63$3_0$107	= .
+	.globl	C$player.c$63$3_0$107
+;player.c:63: manage_player_crouched_status(2, keys);
 	ld	l, 4 (ix)
 	ld	h, 5 (ix)
 	push	hl
@@ -10107,24 +10110,24 @@ _manage_input::
 	call	_manage_player_crouched_status
 	pop	af
 	inc	sp
-	C$player.c$66$1_0$87	= .
-	.globl	C$player.c$66$1_0$87
-;player.c:66: }	
+	C$player.c$67$1_0$104	= .
+	.globl	C$player.c$67$1_0$104
+;player.c:67: }	
 00115$:
-	C$player.c$68$1_0$87	= .
-	.globl	C$player.c$68$1_0$87
-;player.c:68: }
+	C$player.c$69$1_0$104	= .
+	.globl	C$player.c$69$1_0$104
+;player.c:69: }
 	pop	ix
-	C$player.c$68$1_0$87	= .
-	.globl	C$player.c$68$1_0$87
+	C$player.c$69$1_0$104	= .
+	.globl	C$player.c$69$1_0$104
 	XG$manage_input$0$0	= .
 	.globl	XG$manage_input$0$0
 	ret
 	G$manage_player_iddle_status$0$0	= .
 	.globl	G$manage_player_iddle_status$0$0
-	C$player.c$70$1_0$92	= .
-	.globl	C$player.c$70$1_0$92
-;player.c:70: void manage_player_iddle_status(unsigned char player_number, unsigned int keys) {
+	C$player.c$71$1_0$109	= .
+	.globl	C$player.c$71$1_0$109
+;player.c:71: void manage_player_iddle_status(unsigned char player_number, unsigned int keys) {
 ;	---------------------------------
 ; Function manage_player_iddle_status
 ; ---------------------------------
@@ -10132,47 +10135,43 @@ _manage_player_iddle_status::
 	push	ix
 	ld	ix,#0
 	add	ix,sp
-	C$player.c$71$1_0$92	= .
-	.globl	C$player.c$71$1_0$92
-;player.c:71: if(player_number == 1) {
+	C$player.c$72$1_0$109	= .
+	.globl	C$player.c$72$1_0$109
+;player.c:72: if(player_number == 1) {
 	ld	a, 4 (ix)
 	dec	a
 	jp	NZ,00162$
-	C$player.c$72$2_0$93	= .
-	.globl	C$player.c$72$2_0$93
-;player.c:72: if(player1.status2 == PLAYER_STATUS2_PUNCHING) {
-	ld	bc, #_player1 + 9
-	ld	a, (bc)
-	ld	l, a
+	C$player.c$73$2_0$110	= .
+	.globl	C$player.c$73$2_0$110
+;player.c:73: if(player1.status2 == PLAYER_STATUS2_PUNCHING) {
+	ld	a, (#(_player1 + 0x0009) + 0)
 	dec	a
 	jr	NZ, 00129$
-	C$player.c$73$3_0$94	= .
-	.globl	C$player.c$73$3_0$94
-;player.c:73: if(isAnimationEnded(player1.entityreference->entityIndex)) {
+	C$player.c$74$3_0$111	= .
+	.globl	C$player.c$74$3_0$111
+;player.c:74: if(isAnimationEnded(player1.entityreference->entityIndex)) {
 	ld	hl, (#_player1 + 0)
 	inc	hl
 	inc	hl
 	ld	a, (hl)
-	push	bc
 	push	af
 	inc	sp
 	call	_isAnimationEnded
 	inc	sp
-	pop	bc
 	bit	0, l
 	jr	Z, 00105$
-	C$player.c$74$4_0$95	= .
-	.globl	C$player.c$74$4_0$95
-;player.c:74: player1.status2 = PLAYER_STATUS2_IDDLE;
-	xor	a, a
-	ld	(bc), a
-	C$player.c$75$4_0$95	= .
-	.globl	C$player.c$75$4_0$95
-;player.c:75: play_punch_sound2();
+	C$player.c$75$4_0$112	= .
+	.globl	C$player.c$75$4_0$112
+;player.c:75: player1.status2 = PLAYER_STATUS2_IDDLE;
+	ld	hl, #(_player1 + 0x0009)
+	ld	(hl), #0x00
+	C$player.c$76$4_0$112	= .
+	.globl	C$player.c$76$4_0$112
+;player.c:76: play_punch_sound2();
 	call	_play_punch_sound2
-	C$player.c$76$4_0$95	= .
-	.globl	C$player.c$76$4_0$95
-;player.c:76: setAnimation(player1.entityreference->entityIndex,0);
+	C$player.c$77$4_0$112	= .
+	.globl	C$player.c$77$4_0$112
+;player.c:77: setAnimation(player1.entityreference->entityIndex,0);
 	ld	hl, (#_player1 + 0)
 	inc	hl
 	inc	hl
@@ -10186,35 +10185,39 @@ _manage_player_iddle_status::
 	inc	sp
 	jp	00164$
 00105$:
-	C$player.c$77$3_0$94	= .
-	.globl	C$player.c$77$3_0$94
-;player.c:77: } else if(isFrameEnded(player1.entityreference->entityIndex) && !(keys & PORT_A_KEY_1)) {
+	C$player.c$78$3_0$111	= .
+	.globl	C$player.c$78$3_0$111
+;player.c:78: } else if(isFrameEnded(player1.entityreference->entityIndex) && !(keys & devkit_PORT_A_KEY_1())) {
 	ld	hl, (#_player1 + 0)
 	inc	hl
 	inc	hl
 	ld	a, (hl)
-	push	bc
 	push	af
 	inc	sp
 	call	_isFrameEnded
 	inc	sp
-	pop	bc
 	bit	0, l
 	jp	Z, 00164$
-	bit	4, 5 (ix)
-	jp	NZ,00164$
-	C$player.c$78$4_0$96	= .
-	.globl	C$player.c$78$4_0$96
-;player.c:78: player1.status2 = PLAYER_STATUS2_IDDLE;
-	xor	a, a
-	ld	(bc), a
-	C$player.c$79$4_0$96	= .
-	.globl	C$player.c$79$4_0$96
-;player.c:79: play_punch_sound2();
+	call	_devkit_PORT_A_KEY_1
+	ld	a, l
+	and	a, 5 (ix)
+	ld	c, a
+	ld	a, h
+	and	a, 6 (ix)
+	or	a, c
+	jp	NZ, 00164$
+	C$player.c$79$4_0$113	= .
+	.globl	C$player.c$79$4_0$113
+;player.c:79: player1.status2 = PLAYER_STATUS2_IDDLE;
+	ld	hl, #(_player1 + 0x0009)
+	ld	(hl), #0x00
+	C$player.c$80$4_0$113	= .
+	.globl	C$player.c$80$4_0$113
+;player.c:80: play_punch_sound2();
 	call	_play_punch_sound2
-	C$player.c$80$4_0$96	= .
-	.globl	C$player.c$80$4_0$96
-;player.c:80: setAnimation(player1.entityreference->entityIndex,0);
+	C$player.c$81$4_0$113	= .
+	.globl	C$player.c$81$4_0$113
+;player.c:81: setAnimation(player1.entityreference->entityIndex,0);
 	ld	hl, (#_player1 + 0)
 	inc	hl
 	inc	hl
@@ -10228,115 +10231,141 @@ _manage_player_iddle_status::
 	inc	sp
 	jp	00164$
 00129$:
-	C$player.c$83$3_0$97	= .
-	.globl	C$player.c$83$3_0$97
-;player.c:83: if(keys & PORT_A_KEY_RIGHT) {
-	bit	3, 5 (ix)
+	C$player.c$84$3_0$114	= .
+	.globl	C$player.c$84$3_0$114
+;player.c:84: if(keys & devkit_PORT_A_KEY_RIGHT()) {
+	call	_devkit_PORT_A_KEY_RIGHT
+	ld	a, l
+	and	a, 5 (ix)
+	ld	c, a
+	ld	a, h
+	and	a, 6 (ix)
+	or	a, c
 	jr	Z, 00126$
-	C$player.c$84$4_0$98	= .
-	.globl	C$player.c$84$4_0$98
-;player.c:84: player1.status = PLAYER_STATUS_WALKING;
+	C$player.c$85$4_0$115	= .
+	.globl	C$player.c$85$4_0$115
+;player.c:85: player1.status = PLAYER_STATUS_WALKING;
 	ld	hl, #(_player1 + 0x0008)
 	ld	(hl), #0x01
-	C$player.c$85$4_0$98	= .
-	.globl	C$player.c$85$4_0$98
-;player.c:85: player1.vx = CHAR2UFIX(1);
+	C$player.c$86$4_0$115	= .
+	.globl	C$player.c$86$4_0$115
+;player.c:86: player1.vx = CHAR2UFIX(1);
 	ld	hl, #0x0100
 	ld	((_player1 + 0x0002)), hl
-	C$player.c$86$4_0$98	= .
-	.globl	C$player.c$86$4_0$98
-;player.c:86: player1.xdirection = 1;
+	C$player.c$87$4_0$115	= .
+	.globl	C$player.c$87$4_0$115
+;player.c:87: player1.xdirection = 1;
 	ld	hl, #(_player1 + 0x0006)
 	ld	(hl), #0x01
-	C$player.c$87$4_0$98	= .
-	.globl	C$player.c$87$4_0$98
-;player.c:87: player1.entityreference->direction = RIGHT_DIRECTION;
+	C$player.c$88$4_0$115	= .
+	.globl	C$player.c$88$4_0$115
+;player.c:88: player1.entityreference->direction = RIGHT_DIRECTION;
 	ld	hl, (#_player1 + 0)
 	ld	bc, #0x0005
 	add	hl, bc
 	ld	(hl), #0x00
 	jp	00164$
 00126$:
-	C$player.c$88$3_0$97	= .
-	.globl	C$player.c$88$3_0$97
-;player.c:88: } else if(keys & PORT_A_KEY_LEFT) {
-	bit	2, 5 (ix)
+	C$player.c$89$3_0$114	= .
+	.globl	C$player.c$89$3_0$114
+;player.c:89: } else if(keys & devkit_PORT_A_KEY_LEFT()) {
+	call	_devkit_PORT_A_KEY_LEFT
+	ld	a, l
+	and	a, 5 (ix)
+	ld	c, a
+	ld	a, h
+	and	a, 6 (ix)
+	or	a, c
 	jr	Z, 00123$
-	C$player.c$89$4_0$99	= .
-	.globl	C$player.c$89$4_0$99
-;player.c:89: player1.status = PLAYER_STATUS_WALKING;
+	C$player.c$90$4_0$116	= .
+	.globl	C$player.c$90$4_0$116
+;player.c:90: player1.status = PLAYER_STATUS_WALKING;
 	ld	hl, #(_player1 + 0x0008)
 	ld	(hl), #0x01
-	C$player.c$90$4_0$99	= .
-	.globl	C$player.c$90$4_0$99
-;player.c:90: player1.vx = CHAR2UFIX(1);
+	C$player.c$91$4_0$116	= .
+	.globl	C$player.c$91$4_0$116
+;player.c:91: player1.vx = CHAR2UFIX(1);
 	ld	hl, #0x0100
 	ld	((_player1 + 0x0002)), hl
-	C$player.c$91$4_0$99	= .
-	.globl	C$player.c$91$4_0$99
-;player.c:91: player1.xdirection = -1;
+	C$player.c$92$4_0$116	= .
+	.globl	C$player.c$92$4_0$116
+;player.c:92: player1.xdirection = -1;
 	ld	hl, #(_player1 + 0x0006)
 	ld	(hl), #0xff
-	C$player.c$92$4_0$99	= .
-	.globl	C$player.c$92$4_0$99
-;player.c:92: player1.entityreference->direction = LEFT_DIRECTION;
+	C$player.c$93$4_0$116	= .
+	.globl	C$player.c$93$4_0$116
+;player.c:93: player1.entityreference->direction = LEFT_DIRECTION;
 	ld	hl, (#_player1 + 0)
 	ld	bc, #0x0005
 	add	hl, bc
 	ld	(hl), #0x01
 	jp	00164$
 00123$:
-	C$player.c$93$3_0$97	= .
-	.globl	C$player.c$93$3_0$97
-;player.c:93: } else if(keys & PORT_A_KEY_UP) {
-	bit	0, 5 (ix)
+	C$player.c$94$3_0$114	= .
+	.globl	C$player.c$94$3_0$114
+;player.c:94: } else if(keys & devkit_PORT_A_KEY_UP()) {
+	call	_devkit_PORT_A_KEY_UP
+	ld	a, l
+	and	a, 5 (ix)
+	ld	c, a
+	ld	a, h
+	and	a, 6 (ix)
+	or	a, c
 	jr	Z, 00120$
-	C$player.c$94$4_0$100	= .
-	.globl	C$player.c$94$4_0$100
-;player.c:94: player1.status = PLAYER_STATUS_WALKING;
+	C$player.c$95$4_0$117	= .
+	.globl	C$player.c$95$4_0$117
+;player.c:95: player1.status = PLAYER_STATUS_WALKING;
 	ld	hl, #(_player1 + 0x0008)
 	ld	(hl), #0x01
-	C$player.c$95$4_0$100	= .
-	.globl	C$player.c$95$4_0$100
-;player.c:95: player1.vy = CHAR2UFIX(1);
+	C$player.c$96$4_0$117	= .
+	.globl	C$player.c$96$4_0$117
+;player.c:96: player1.vy = CHAR2UFIX(1);
 	ld	hl, #0x0100
 	ld	((_player1 + 0x0004)), hl
-	C$player.c$96$4_0$100	= .
-	.globl	C$player.c$96$4_0$100
-;player.c:96: player1.ydirection = -1;
+	C$player.c$97$4_0$117	= .
+	.globl	C$player.c$97$4_0$117
+;player.c:97: player1.ydirection = -1;
 	ld	hl, #(_player1 + 0x0007)
 	ld	(hl), #0xff
 	jp	00164$
 00120$:
-	C$player.c$77$1_0$92	= .
-	.globl	C$player.c$77$1_0$92
-;player.c:77: } else if(isFrameEnded(player1.entityreference->entityIndex) && !(keys & PORT_A_KEY_1)) {
-	ld	a, 5 (ix)
-	and	a, #0x10
-	ld	e, a
-	ld	d, #0x00
-	C$player.c$97$3_0$97	= .
-	.globl	C$player.c$97$3_0$97
-;player.c:97: } else if(keys & PORT_A_KEY_DOWN) {
-	bit	1, 5 (ix)
+	C$player.c$98$3_0$114	= .
+	.globl	C$player.c$98$3_0$114
+;player.c:98: } else if(keys & devkit_PORT_A_KEY_DOWN()) {
+	call	_devkit_PORT_A_KEY_DOWN
+	ld	a, l
+	and	a, 5 (ix)
+	ld	c, a
+	ld	a, h
+	and	a, 6 (ix)
+	or	a, c
 	jr	Z, 00117$
-	C$player.c$84$1_0$92	= .
-	.globl	C$player.c$84$1_0$92
-;player.c:84: player1.status = PLAYER_STATUS_WALKING;
+	C$player.c$99$4_0$118	= .
+	.globl	C$player.c$99$4_0$118
+;player.c:99: if(keys & devkit_PORT_A_KEY_1()) {
+	call	_devkit_PORT_A_KEY_1
+	ex	de, hl
+	C$player.c$85$1_0$109	= .
+	.globl	C$player.c$85$1_0$109
+;player.c:85: player1.status = PLAYER_STATUS_WALKING;
 	ld	hl, #_player1 + 8
-	C$player.c$98$4_0$101	= .
-	.globl	C$player.c$98$4_0$101
-;player.c:98: if(keys & PORT_A_KEY_1) {
-	ld	a, d
-	or	a, e
+	C$player.c$99$4_0$118	= .
+	.globl	C$player.c$99$4_0$118
+;player.c:99: if(keys & devkit_PORT_A_KEY_1()) {
+	ld	a, 5 (ix)
+	and	a, e
+	ld	c, a
+	ld	a, 6 (ix)
+	and	a, d
+	or	a, c
 	jr	Z, 00108$
-	C$player.c$99$5_0$102	= .
-	.globl	C$player.c$99$5_0$102
-;player.c:99: player1.status = PLAYER_STATUS_CROUCHED;
+	C$player.c$100$5_0$119	= .
+	.globl	C$player.c$100$5_0$119
+;player.c:100: player1.status = PLAYER_STATUS_CROUCHED;
 	ld	(hl), #0x03
-	C$player.c$100$5_0$102	= .
-	.globl	C$player.c$100$5_0$102
-;player.c:100: setAnimation(player1.entityreference->entityIndex,6);
+	C$player.c$101$5_0$119	= .
+	.globl	C$player.c$101$5_0$119
+;player.c:101: setAnimation(player1.entityreference->entityIndex,6);
 	ld	hl, (#_player1 + 0)
 	inc	hl
 	inc	hl
@@ -10350,39 +10379,44 @@ _manage_player_iddle_status::
 	inc	sp
 	jp	00164$
 00108$:
-	C$player.c$102$5_0$103	= .
-	.globl	C$player.c$102$5_0$103
-;player.c:102: player1.status = PLAYER_STATUS_WALKING;
+	C$player.c$103$5_0$120	= .
+	.globl	C$player.c$103$5_0$120
+;player.c:103: player1.status = PLAYER_STATUS_WALKING;
 	ld	(hl), #0x01
-	C$player.c$103$5_0$103	= .
-	.globl	C$player.c$103$5_0$103
-;player.c:103: player1.vy = CHAR2UFIX(1);
+	C$player.c$104$5_0$120	= .
+	.globl	C$player.c$104$5_0$120
+;player.c:104: player1.vy = CHAR2UFIX(1);
 	ld	hl, #0x0100
 	ld	((_player1 + 0x0004)), hl
-	C$player.c$104$5_0$103	= .
-	.globl	C$player.c$104$5_0$103
-;player.c:104: player1.ydirection = 1;	
+	C$player.c$105$5_0$120	= .
+	.globl	C$player.c$105$5_0$120
+;player.c:105: player1.ydirection = 1;	
 	ld	hl, #(_player1 + 0x0007)
 	ld	(hl), #0x01
 	jp	00164$
 00117$:
-	C$player.c$106$3_0$97	= .
-	.globl	C$player.c$106$3_0$97
-;player.c:106: } else if((keys & PORT_A_KEY_1) && player1.status2 == PLAYER_STATUS2_IDDLE) {
-	ld	a, d
-	or	a, e
-	jr	Z, 00113$
+	C$player.c$107$3_0$114	= .
+	.globl	C$player.c$107$3_0$114
+;player.c:107: } else if((keys & devkit_PORT_A_KEY_1()) && player1.status2 == PLAYER_STATUS2_IDDLE) {
+	call	_devkit_PORT_A_KEY_1
 	ld	a, l
+	and	a, 5 (ix)
+	ld	c, a
+	ld	a, h
+	and	a, 6 (ix)
+	or	a, c
+	jr	Z, 00113$
+	ld	a, (#(_player1 + 0x0009) + 0)
 	or	a, a
 	jr	NZ, 00113$
-	C$player.c$107$4_0$104	= .
-	.globl	C$player.c$107$4_0$104
-;player.c:107: player1.status2 = PLAYER_STATUS2_PUNCHING;
-	ld	a, #0x01
-	ld	(bc), a
-	C$player.c$108$4_0$104	= .
-	.globl	C$player.c$108$4_0$104
-;player.c:108: setAnimation(player1.entityreference->entityIndex,3);
+	C$player.c$108$4_0$121	= .
+	.globl	C$player.c$108$4_0$121
+;player.c:108: player1.status2 = PLAYER_STATUS2_PUNCHING;
+	ld	hl, #(_player1 + 0x0009)
+	ld	(hl), #0x01
+	C$player.c$109$4_0$121	= .
+	.globl	C$player.c$109$4_0$121
+;player.c:109: setAnimation(player1.entityreference->entityIndex,3);
 	ld	hl, (#_player1 + 0)
 	inc	hl
 	inc	hl
@@ -10394,65 +10428,67 @@ _manage_player_iddle_status::
 	call	_setAnimation
 	pop	af
 	inc	sp
-	C$player.c$109$4_0$104	= .
-	.globl	C$player.c$109$4_0$104
-;player.c:109: play_punch_sound1();
+	C$player.c$110$4_0$121	= .
+	.globl	C$player.c$110$4_0$121
+;player.c:110: play_punch_sound1();
 	call	_play_punch_sound1
 	jp	00164$
 00113$:
-	C$player.c$111$3_0$97	= .
-	.globl	C$player.c$111$3_0$97
-;player.c:111: } else if(keys & PORT_A_KEY_2) {
-	bit	5, 5 (ix)
-	jp	Z,00164$
-	C$player.c$112$4_0$105	= .
-	.globl	C$player.c$112$4_0$105
-;player.c:112: player1.status = PLAYER_STATUS_JUMPING;
+	C$player.c$112$3_0$114	= .
+	.globl	C$player.c$112$3_0$114
+;player.c:112: } else if(keys & devkit_PORT_A_KEY_2()) {
+	call	_devkit_PORT_A_KEY_2
+	ld	a, l
+	and	a, 5 (ix)
+	ld	c, a
+	ld	a, h
+	and	a, 6 (ix)
+	or	a, c
+	jp	Z, 00164$
+	C$player.c$113$4_0$122	= .
+	.globl	C$player.c$113$4_0$122
+;player.c:113: player1.status = PLAYER_STATUS_JUMPING;
 	ld	hl, #(_player1 + 0x0008)
 	ld	(hl), #0x02
-	C$player.c$113$4_0$105	= .
-	.globl	C$player.c$113$4_0$105
-;player.c:113: player1.vy = CHAR2UFIX(3);
+	C$player.c$114$4_0$122	= .
+	.globl	C$player.c$114$4_0$122
+;player.c:114: player1.vy = CHAR2UFIX(3);
 	ld	hl, #0x0300
 	ld	((_player1 + 0x0004)), hl
-	C$player.c$114$4_0$105	= .
-	.globl	C$player.c$114$4_0$105
-;player.c:114: player1.ydirection = -1;
+	C$player.c$115$4_0$122	= .
+	.globl	C$player.c$115$4_0$122
+;player.c:115: player1.ydirection = -1;
 	ld	hl, #(_player1 + 0x0007)
 	ld	(hl), #0xff
 	jp	00164$
 00162$:
-	C$player.c$119$2_0$106	= .
-	.globl	C$player.c$119$2_0$106
-;player.c:119: if(player2.status2 == PLAYER_STATUS2_PUNCHING) {
-	ld	bc, #_player2 + 9
-	ld	a, (bc)
-	ld	e, a
+	C$player.c$120$2_0$123	= .
+	.globl	C$player.c$120$2_0$123
+;player.c:120: if(player2.status2 == PLAYER_STATUS2_PUNCHING) {
+	ld	a, (#(_player2 + 0x0009) + 0)
 	dec	a
 	jr	NZ, 00159$
-	C$player.c$120$3_0$107	= .
-	.globl	C$player.c$120$3_0$107
-;player.c:120: if(isAnimationEnded(player2.entityreference->entityIndex)) {
+	C$player.c$121$3_0$124	= .
+	.globl	C$player.c$121$3_0$124
+;player.c:121: if(isAnimationEnded(player2.entityreference->entityIndex)) {
 	ld	hl, (#_player2 + 0)
 	inc	hl
 	inc	hl
 	ld	a, (hl)
-	push	bc
 	push	af
 	inc	sp
 	call	_isAnimationEnded
 	inc	sp
-	pop	bc
 	bit	0, l
 	jr	Z, 00135$
-	C$player.c$121$4_0$108	= .
-	.globl	C$player.c$121$4_0$108
-;player.c:121: player2.status2 = PLAYER_STATUS2_IDDLE;
-	xor	a, a
-	ld	(bc), a
-	C$player.c$122$4_0$108	= .
-	.globl	C$player.c$122$4_0$108
-;player.c:122: setAnimation(player2.entityreference->entityIndex,0);
+	C$player.c$122$4_0$125	= .
+	.globl	C$player.c$122$4_0$125
+;player.c:122: player2.status2 = PLAYER_STATUS2_IDDLE;
+	ld	hl, #(_player2 + 0x0009)
+	ld	(hl), #0x00
+	C$player.c$123$4_0$125	= .
+	.globl	C$player.c$123$4_0$125
+;player.c:123: setAnimation(player2.entityreference->entityIndex,0);
 	ld	hl, (#_player2 + 0)
 	inc	hl
 	inc	hl
@@ -10464,41 +10500,45 @@ _manage_player_iddle_status::
 	call	_setAnimation
 	pop	af
 	inc	sp
-	C$player.c$123$4_0$108	= .
-	.globl	C$player.c$123$4_0$108
-;player.c:123: play_punch_sound2();
+	C$player.c$124$4_0$125	= .
+	.globl	C$player.c$124$4_0$125
+;player.c:124: play_punch_sound2();
 	call	_play_punch_sound2
 	jp	00164$
 00135$:
-	C$player.c$124$3_0$107	= .
-	.globl	C$player.c$124$3_0$107
-;player.c:124: } else if(isFrameEnded(player2.entityreference->entityIndex) && !(keys & PORT_B_KEY_1)) {
+	C$player.c$125$3_0$124	= .
+	.globl	C$player.c$125$3_0$124
+;player.c:125: } else if(isFrameEnded(player2.entityreference->entityIndex) && !(keys & devkit_PORT_B_KEY_1())) {
 	ld	hl, (#_player2 + 0)
 	inc	hl
 	inc	hl
 	ld	a, (hl)
-	push	bc
 	push	af
 	inc	sp
 	call	_isFrameEnded
 	inc	sp
-	pop	bc
 	bit	0, l
 	jp	Z, 00164$
-	bit	2, 6 (ix)
-	jp	NZ,00164$
-	C$player.c$125$4_0$109	= .
-	.globl	C$player.c$125$4_0$109
-;player.c:125: player2.status2 = PLAYER_STATUS2_IDDLE;
-	xor	a, a
-	ld	(bc), a
-	C$player.c$126$4_0$109	= .
-	.globl	C$player.c$126$4_0$109
-;player.c:126: play_punch_sound2();
+	call	_devkit_PORT_B_KEY_1
+	ld	a, l
+	and	a, 5 (ix)
+	ld	c, a
+	ld	a, h
+	and	a, 6 (ix)
+	or	a, c
+	jp	NZ, 00164$
+	C$player.c$126$4_0$126	= .
+	.globl	C$player.c$126$4_0$126
+;player.c:126: player2.status2 = PLAYER_STATUS2_IDDLE;
+	ld	hl, #(_player2 + 0x0009)
+	ld	(hl), #0x00
+	C$player.c$127$4_0$126	= .
+	.globl	C$player.c$127$4_0$126
+;player.c:127: play_punch_sound2();
 	call	_play_punch_sound2
-	C$player.c$127$4_0$109	= .
-	.globl	C$player.c$127$4_0$109
-;player.c:127: setAnimation(player2.entityreference->entityIndex,0);
+	C$player.c$128$4_0$126	= .
+	.globl	C$player.c$128$4_0$126
+;player.c:128: setAnimation(player2.entityreference->entityIndex,0);
 	ld	hl, (#_player2 + 0)
 	inc	hl
 	inc	hl
@@ -10512,116 +10552,141 @@ _manage_player_iddle_status::
 	inc	sp
 	jp	00164$
 00159$:
-	C$player.c$130$3_0$110	= .
-	.globl	C$player.c$130$3_0$110
-;player.c:130: if(keys & PORT_B_KEY_RIGHT) {
-	bit	1, 6 (ix)
+	C$player.c$131$3_0$127	= .
+	.globl	C$player.c$131$3_0$127
+;player.c:131: if(keys & devkit_PORT_B_KEY_RIGHT()) {
+	call	_devkit_PORT_B_KEY_RIGHT
+	ld	a, l
+	and	a, 5 (ix)
+	ld	c, a
+	ld	a, h
+	and	a, 6 (ix)
+	or	a, c
 	jr	Z, 00156$
-	C$player.c$131$4_0$111	= .
-	.globl	C$player.c$131$4_0$111
-;player.c:131: player2.status = PLAYER_STATUS_WALKING;
+	C$player.c$132$4_0$128	= .
+	.globl	C$player.c$132$4_0$128
+;player.c:132: player2.status = PLAYER_STATUS_WALKING;
 	ld	hl, #(_player2 + 0x0008)
 	ld	(hl), #0x01
-	C$player.c$132$4_0$111	= .
-	.globl	C$player.c$132$4_0$111
-;player.c:132: player2.vx = CHAR2UFIX(1);
+	C$player.c$133$4_0$128	= .
+	.globl	C$player.c$133$4_0$128
+;player.c:133: player2.vx = CHAR2UFIX(1);
 	ld	hl, #0x0100
 	ld	((_player2 + 0x0002)), hl
-	C$player.c$133$4_0$111	= .
-	.globl	C$player.c$133$4_0$111
-;player.c:133: player2.xdirection = 1;
+	C$player.c$134$4_0$128	= .
+	.globl	C$player.c$134$4_0$128
+;player.c:134: player2.xdirection = 1;
 	ld	hl, #(_player2 + 0x0006)
 	ld	(hl), #0x01
-	C$player.c$134$4_0$111	= .
-	.globl	C$player.c$134$4_0$111
-;player.c:134: player2.entityreference->direction = RIGHT_DIRECTION;
+	C$player.c$135$4_0$128	= .
+	.globl	C$player.c$135$4_0$128
+;player.c:135: player2.entityreference->direction = RIGHT_DIRECTION;
 	ld	hl, (#_player2 + 0)
 	ld	bc, #0x0005
 	add	hl, bc
 	ld	(hl), #0x00
 	jp	00164$
 00156$:
-	C$player.c$135$3_0$110	= .
-	.globl	C$player.c$135$3_0$110
-;player.c:135: } else if(keys & PORT_B_KEY_LEFT) {
-	bit	0, 6 (ix)
+	C$player.c$136$3_0$127	= .
+	.globl	C$player.c$136$3_0$127
+;player.c:136: } else if(keys & devkit_PORT_B_KEY_LEFT()) {
+	call	_devkit_PORT_B_KEY_LEFT
+	ld	a, l
+	and	a, 5 (ix)
+	ld	c, a
+	ld	a, h
+	and	a, 6 (ix)
+	or	a, c
 	jr	Z, 00153$
-	C$player.c$136$4_0$112	= .
-	.globl	C$player.c$136$4_0$112
-;player.c:136: player2.status = PLAYER_STATUS_WALKING;
+	C$player.c$137$4_0$129	= .
+	.globl	C$player.c$137$4_0$129
+;player.c:137: player2.status = PLAYER_STATUS_WALKING;
 	ld	hl, #(_player2 + 0x0008)
 	ld	(hl), #0x01
-	C$player.c$137$4_0$112	= .
-	.globl	C$player.c$137$4_0$112
-;player.c:137: player2.vx = CHAR2UFIX(1);
+	C$player.c$138$4_0$129	= .
+	.globl	C$player.c$138$4_0$129
+;player.c:138: player2.vx = CHAR2UFIX(1);
 	ld	hl, #0x0100
 	ld	((_player2 + 0x0002)), hl
-	C$player.c$138$4_0$112	= .
-	.globl	C$player.c$138$4_0$112
-;player.c:138: player2.xdirection = -1;
+	C$player.c$139$4_0$129	= .
+	.globl	C$player.c$139$4_0$129
+;player.c:139: player2.xdirection = -1;
 	ld	hl, #(_player2 + 0x0006)
 	ld	(hl), #0xff
-	C$player.c$139$4_0$112	= .
-	.globl	C$player.c$139$4_0$112
-;player.c:139: player2.entityreference->direction = LEFT_DIRECTION;
+	C$player.c$140$4_0$129	= .
+	.globl	C$player.c$140$4_0$129
+;player.c:140: player2.entityreference->direction = LEFT_DIRECTION;
 	ld	hl, (#_player2 + 0)
 	ld	bc, #0x0005
 	add	hl, bc
 	ld	(hl), #0x01
 	jp	00164$
 00153$:
-	C$player.c$140$3_0$110	= .
-	.globl	C$player.c$140$3_0$110
-;player.c:140: } else if(keys & PORT_B_KEY_UP) {
-	bit	6, 5 (ix)
+	C$player.c$141$3_0$127	= .
+	.globl	C$player.c$141$3_0$127
+;player.c:141: } else if(keys & devkit_PORT_B_KEY_UP()) {
+	call	_devkit_PORT_B_KEY_UP
+	ld	a, l
+	and	a, 5 (ix)
+	ld	c, a
+	ld	a, h
+	and	a, 6 (ix)
+	or	a, c
 	jr	Z, 00150$
-	C$player.c$141$4_0$113	= .
-	.globl	C$player.c$141$4_0$113
-;player.c:141: player2.status = PLAYER_STATUS_WALKING;
+	C$player.c$142$4_0$130	= .
+	.globl	C$player.c$142$4_0$130
+;player.c:142: player2.status = PLAYER_STATUS_WALKING;
 	ld	hl, #(_player2 + 0x0008)
 	ld	(hl), #0x01
-	C$player.c$142$4_0$113	= .
-	.globl	C$player.c$142$4_0$113
-;player.c:142: player2.vy = CHAR2UFIX(1);
+	C$player.c$143$4_0$130	= .
+	.globl	C$player.c$143$4_0$130
+;player.c:143: player2.vy = CHAR2UFIX(1);
 	ld	hl, #0x0100
 	ld	((_player2 + 0x0004)), hl
-	C$player.c$143$4_0$113	= .
-	.globl	C$player.c$143$4_0$113
-;player.c:143: player2.ydirection = -1;
+	C$player.c$144$4_0$130	= .
+	.globl	C$player.c$144$4_0$130
+;player.c:144: player2.ydirection = -1;
 	ld	hl, #(_player2 + 0x0007)
 	ld	(hl), #0xff
-	jr	00164$
+	jp	00164$
 00150$:
-	C$player.c$124$1_0$92	= .
-	.globl	C$player.c$124$1_0$92
-;player.c:124: } else if(isFrameEnded(player2.entityreference->entityIndex) && !(keys & PORT_B_KEY_1)) {
-	ld	l, #0x00
-	ld	a, 6 (ix)
-	and	a, #0x04
-	ld	h, a
-	C$player.c$144$3_0$110	= .
-	.globl	C$player.c$144$3_0$110
-;player.c:144: } else if(keys & PORT_B_KEY_DOWN) {
-	bit	7, 5 (ix)
-	jr	Z, 00147$
-	C$player.c$131$1_0$92	= .
-	.globl	C$player.c$131$1_0$92
-;player.c:131: player2.status = PLAYER_STATUS_WALKING;
-	ld	bc, #_player2 + 8
-	C$player.c$145$4_0$114	= .
-	.globl	C$player.c$145$4_0$114
-;player.c:145: if(keys & PORT_B_KEY_1) {
+	C$player.c$145$3_0$127	= .
+	.globl	C$player.c$145$3_0$127
+;player.c:145: } else if(keys & devkit_PORT_B_KEY_DOWN()) {
+	call	_devkit_PORT_B_KEY_DOWN
+	ld	a, l
+	and	a, 5 (ix)
+	ld	c, a
 	ld	a, h
-	or	a, l
+	and	a, 6 (ix)
+	or	a, c
+	jr	Z, 00147$
+	C$player.c$146$4_0$131	= .
+	.globl	C$player.c$146$4_0$131
+;player.c:146: if(keys & devkit_PORT_B_KEY_1()) {
+	call	_devkit_PORT_B_KEY_1
+	ex	de, hl
+	C$player.c$132$1_0$109	= .
+	.globl	C$player.c$132$1_0$109
+;player.c:132: player2.status = PLAYER_STATUS_WALKING;
+	ld	hl, #_player2 + 8
+	C$player.c$146$4_0$131	= .
+	.globl	C$player.c$146$4_0$131
+;player.c:146: if(keys & devkit_PORT_B_KEY_1()) {
+	ld	a, 5 (ix)
+	and	a, e
+	ld	c, a
+	ld	a, 6 (ix)
+	and	a, d
+	or	a, c
 	jr	Z, 00138$
-	C$player.c$146$5_0$115	= .
-	.globl	C$player.c$146$5_0$115
-;player.c:146: player2.status = PLAYER_STATUS_CROUCHED;
-	ld	a, #0x03
-	ld	(bc), a
-	C$player.c$147$5_0$115	= .
-	.globl	C$player.c$147$5_0$115
-;player.c:147: setAnimation(player2.entityreference->entityIndex,6);
+	C$player.c$147$5_0$132	= .
+	.globl	C$player.c$147$5_0$132
+;player.c:147: player2.status = PLAYER_STATUS_CROUCHED;
+	ld	(hl), #0x03
+	C$player.c$148$5_0$132	= .
+	.globl	C$player.c$148$5_0$132
+;player.c:148: setAnimation(player2.entityreference->entityIndex,6);
 	ld	hl, (#_player2 + 0)
 	inc	hl
 	inc	hl
@@ -10635,40 +10700,44 @@ _manage_player_iddle_status::
 	inc	sp
 	jr	00164$
 00138$:
-	C$player.c$149$5_0$116	= .
-	.globl	C$player.c$149$5_0$116
-;player.c:149: player2.status = PLAYER_STATUS_WALKING;
-	ld	a, #0x01
-	ld	(bc), a
-	C$player.c$150$5_0$116	= .
-	.globl	C$player.c$150$5_0$116
-;player.c:150: player2.vy = CHAR2UFIX(1);
+	C$player.c$150$5_0$133	= .
+	.globl	C$player.c$150$5_0$133
+;player.c:150: player2.status = PLAYER_STATUS_WALKING;
+	ld	(hl), #0x01
+	C$player.c$151$5_0$133	= .
+	.globl	C$player.c$151$5_0$133
+;player.c:151: player2.vy = CHAR2UFIX(1);
 	ld	hl, #0x0100
 	ld	((_player2 + 0x0004)), hl
-	C$player.c$151$5_0$116	= .
-	.globl	C$player.c$151$5_0$116
-;player.c:151: player2.ydirection = 1;	
+	C$player.c$152$5_0$133	= .
+	.globl	C$player.c$152$5_0$133
+;player.c:152: player2.ydirection = 1;	
 	ld	hl, #(_player2 + 0x0007)
 	ld	(hl), #0x01
 	jr	00164$
 00147$:
-	C$player.c$153$3_0$110	= .
-	.globl	C$player.c$153$3_0$110
-;player.c:153: }else if((keys & PORT_B_KEY_1) && player2.status2 == PLAYER_STATUS2_IDDLE) {
+	C$player.c$154$3_0$127	= .
+	.globl	C$player.c$154$3_0$127
+;player.c:154: }else if((keys & devkit_PORT_B_KEY_1()) && player2.status2 == PLAYER_STATUS2_IDDLE) {
+	call	_devkit_PORT_B_KEY_1
+	ld	a, l
+	and	a, 5 (ix)
+	ld	c, a
 	ld	a, h
-	or	a, l
+	and	a, 6 (ix)
+	or	a, c
 	jr	Z, 00143$
-	ld	a, e
+	ld	a, (#(_player2 + 0x0009) + 0)
 	or	a, a
 	jr	NZ, 00143$
-	C$player.c$154$4_0$117	= .
-	.globl	C$player.c$154$4_0$117
-;player.c:154: player2.status2 = PLAYER_STATUS2_PUNCHING;
-	ld	a, #0x01
-	ld	(bc), a
-	C$player.c$155$4_0$117	= .
-	.globl	C$player.c$155$4_0$117
-;player.c:155: setAnimation(player2.entityreference->entityIndex,3);
+	C$player.c$155$4_0$134	= .
+	.globl	C$player.c$155$4_0$134
+;player.c:155: player2.status2 = PLAYER_STATUS2_PUNCHING;
+	ld	hl, #(_player2 + 0x0009)
+	ld	(hl), #0x01
+	C$player.c$156$4_0$134	= .
+	.globl	C$player.c$156$4_0$134
+;player.c:156: setAnimation(player2.entityreference->entityIndex,3);
 	ld	hl, (#_player2 + 0)
 	inc	hl
 	inc	hl
@@ -10680,47 +10749,53 @@ _manage_player_iddle_status::
 	call	_setAnimation
 	pop	af
 	inc	sp
-	C$player.c$156$4_0$117	= .
-	.globl	C$player.c$156$4_0$117
-;player.c:156: play_punch_sound1();
+	C$player.c$157$4_0$134	= .
+	.globl	C$player.c$157$4_0$134
+;player.c:157: play_punch_sound1();
 	call	_play_punch_sound1
 	jr	00164$
 00143$:
-	C$player.c$157$3_0$110	= .
-	.globl	C$player.c$157$3_0$110
-;player.c:157: } else if(keys & PORT_B_KEY_2) {
-	bit	3, 6 (ix)
+	C$player.c$158$3_0$127	= .
+	.globl	C$player.c$158$3_0$127
+;player.c:158: } else if(keys & devkit_PORT_B_KEY_2()) {
+	call	_devkit_PORT_B_KEY_2
+	ld	a, l
+	and	a, 5 (ix)
+	ld	c, a
+	ld	a, h
+	and	a, 6 (ix)
+	or	a, c
 	jr	Z, 00164$
-	C$player.c$158$4_0$118	= .
-	.globl	C$player.c$158$4_0$118
-;player.c:158: player2.status = PLAYER_STATUS_JUMPING;
+	C$player.c$159$4_0$135	= .
+	.globl	C$player.c$159$4_0$135
+;player.c:159: player2.status = PLAYER_STATUS_JUMPING;
 	ld	hl, #(_player2 + 0x0008)
 	ld	(hl), #0x02
-	C$player.c$159$4_0$118	= .
-	.globl	C$player.c$159$4_0$118
-;player.c:159: player2.vy = CHAR2UFIX(3);
+	C$player.c$160$4_0$135	= .
+	.globl	C$player.c$160$4_0$135
+;player.c:160: player2.vy = CHAR2UFIX(3);
 	ld	hl, #0x0300
 	ld	((_player2 + 0x0004)), hl
-	C$player.c$160$4_0$118	= .
-	.globl	C$player.c$160$4_0$118
-;player.c:160: player2.ydirection = -1;
+	C$player.c$161$4_0$135	= .
+	.globl	C$player.c$161$4_0$135
+;player.c:161: player2.ydirection = -1;
 	ld	hl, #(_player2 + 0x0007)
 	ld	(hl), #0xff
 00164$:
-	C$player.c$164$1_0$92	= .
-	.globl	C$player.c$164$1_0$92
-;player.c:164: }
+	C$player.c$165$1_0$109	= .
+	.globl	C$player.c$165$1_0$109
+;player.c:165: }
 	pop	ix
-	C$player.c$164$1_0$92	= .
-	.globl	C$player.c$164$1_0$92
+	C$player.c$165$1_0$109	= .
+	.globl	C$player.c$165$1_0$109
 	XG$manage_player_iddle_status$0$0	= .
 	.globl	XG$manage_player_iddle_status$0$0
 	ret
 	G$manage_player_walking_status$0$0	= .
 	.globl	G$manage_player_walking_status$0$0
-	C$player.c$166$1_0$120	= .
-	.globl	C$player.c$166$1_0$120
-;player.c:166: void manage_player_walking_status(unsigned char player_number, unsigned int keys) {
+	C$player.c$167$1_0$137	= .
+	.globl	C$player.c$167$1_0$137
+;player.c:167: void manage_player_walking_status(unsigned char player_number, unsigned int keys) {
 ;	---------------------------------
 ; Function manage_player_walking_status
 ; ---------------------------------
@@ -10728,31 +10803,38 @@ _manage_player_walking_status::
 	push	ix
 	ld	ix,#0
 	add	ix,sp
-	C$player.c$167$1_0$120	= .
-	.globl	C$player.c$167$1_0$120
-;player.c:167: if(player_number == 1) {
+	dec	sp
+	C$player.c$168$1_0$137	= .
+	.globl	C$player.c$168$1_0$137
+;player.c:168: if(player_number == 1) {
 	ld	a, 4 (ix)
 	dec	a
 	jp	NZ,00198$
-	C$player.c$168$2_0$121	= .
-	.globl	C$player.c$168$2_0$121
-;player.c:168: if(player1.status2 == PLAYER_STATUS2_PUNCHING) {
+	C$player.c$169$2_0$138	= .
+	.globl	C$player.c$169$2_0$138
+;player.c:169: if(player1.status2 == PLAYER_STATUS2_PUNCHING) {
 	ld	a, (#(_player1 + 0x0009) + 0)
 	dec	a
 	jp	NZ,00147$
-	C$player.c$169$3_0$122	= .
-	.globl	C$player.c$169$3_0$122
-;player.c:169: if(keys & PORT_A_KEY_DOWN) {
-	bit	1, 5 (ix)
+	C$player.c$170$3_0$139	= .
+	.globl	C$player.c$170$3_0$139
+;player.c:170: if(keys & devkit_PORT_A_KEY_DOWN()) {
+	call	_devkit_PORT_A_KEY_DOWN
+	ld	a, l
+	and	a, 5 (ix)
+	ld	c, a
+	ld	a, h
+	and	a, 6 (ix)
+	or	a, c
 	jr	Z, 00108$
-	C$player.c$170$4_0$123	= .
-	.globl	C$player.c$170$4_0$123
-;player.c:170: player1.status = PLAYER_STATUS_CROUCHED;
+	C$player.c$171$4_0$140	= .
+	.globl	C$player.c$171$4_0$140
+;player.c:171: player1.status = PLAYER_STATUS_CROUCHED;
 	ld	hl, #(_player1 + 0x0008)
 	ld	(hl), #0x03
-	C$player.c$171$4_0$123	= .
-	.globl	C$player.c$171$4_0$123
-;player.c:171: setAnimation(player1.entityreference->entityIndex,7);
+	C$player.c$172$4_0$140	= .
+	.globl	C$player.c$172$4_0$140
+;player.c:172: setAnimation(player1.entityreference->entityIndex,7);
 	ld	hl, (#_player1 + 0)
 	inc	hl
 	inc	hl
@@ -10764,16 +10846,16 @@ _manage_player_walking_status::
 	call	_setAnimation
 	pop	af
 	inc	sp
-	C$player.c$172$4_0$123	= .
-	.globl	C$player.c$172$4_0$123
-;player.c:172: player1.vy = 0;
+	C$player.c$173$4_0$140	= .
+	.globl	C$player.c$173$4_0$140
+;player.c:173: player1.vy = 0;
 	ld	hl, #0x0000
 	ld	((_player1 + 0x0004)), hl
 	jp	00200$
 00108$:
-	C$player.c$174$4_0$124	= .
-	.globl	C$player.c$174$4_0$124
-;player.c:174: if(isAnimationEnded(player1.entityreference->entityIndex)) {
+	C$player.c$175$4_0$141	= .
+	.globl	C$player.c$175$4_0$141
+;player.c:175: if(isAnimationEnded(player1.entityreference->entityIndex)) {
 	ld	hl, (#_player1 + 0)
 	inc	hl
 	inc	hl
@@ -10784,24 +10866,24 @@ _manage_player_walking_status::
 	inc	sp
 	bit	0, l
 	jr	Z, 00105$
-	C$player.c$175$5_0$125	= .
-	.globl	C$player.c$175$5_0$125
-;player.c:175: player1.status2 = PLAYER_STATUS2_IDDLE;
+	C$player.c$176$5_0$142	= .
+	.globl	C$player.c$176$5_0$142
+;player.c:176: player1.status2 = PLAYER_STATUS2_IDDLE;
 	ld	hl, #(_player1 + 0x0009)
 	ld	(hl), #0x00
-	C$player.c$176$5_0$125	= .
-	.globl	C$player.c$176$5_0$125
-;player.c:176: player1.status = PLAYER_STATUS_IDDLE;
+	C$player.c$177$5_0$142	= .
+	.globl	C$player.c$177$5_0$142
+;player.c:177: player1.status = PLAYER_STATUS_IDDLE;
 	ld	hl, #(_player1 + 0x0008)
 	ld	(hl), #0x00
-	C$player.c$177$5_0$125	= .
-	.globl	C$player.c$177$5_0$125
-;player.c:177: player1.vx = 0;
+	C$player.c$178$5_0$142	= .
+	.globl	C$player.c$178$5_0$142
+;player.c:178: player1.vx = 0;
 	ld	hl, #0x0000
 	ld	((_player1 + 0x0002)), hl
-	C$player.c$178$5_0$125	= .
-	.globl	C$player.c$178$5_0$125
-;player.c:178: setAnimation(player1.entityreference->entityIndex,0);
+	C$player.c$179$5_0$142	= .
+	.globl	C$player.c$179$5_0$142
+;player.c:179: setAnimation(player1.entityreference->entityIndex,0);
 	ld	hl, (#_player1 + 0)
 	inc	hl
 	inc	hl
@@ -10813,15 +10895,15 @@ _manage_player_walking_status::
 	call	_setAnimation
 	pop	af
 	inc	sp
-	C$player.c$179$5_0$125	= .
-	.globl	C$player.c$179$5_0$125
-;player.c:179: play_punch_sound2();
+	C$player.c$180$5_0$142	= .
+	.globl	C$player.c$180$5_0$142
+;player.c:180: play_punch_sound2();
 	call	_play_punch_sound2
 	jp	00200$
 00105$:
-	C$player.c$180$4_0$124	= .
-	.globl	C$player.c$180$4_0$124
-;player.c:180: } else if(isFrameEnded(player1.entityreference->entityIndex) && !(keys & PORT_A_KEY_1)) {
+	C$player.c$181$4_0$141	= .
+	.globl	C$player.c$181$4_0$141
+;player.c:181: } else if(isFrameEnded(player1.entityreference->entityIndex) && !(keys & devkit_PORT_A_KEY_1())) {
 	ld	hl, (#_player1 + 0)
 	inc	hl
 	inc	hl
@@ -10832,30 +10914,36 @@ _manage_player_walking_status::
 	inc	sp
 	bit	0, l
 	jp	Z, 00200$
-	bit	4, 5 (ix)
-	jp	NZ,00200$
-	C$player.c$181$5_0$126	= .
-	.globl	C$player.c$181$5_0$126
-;player.c:181: player1.status2 = PLAYER_STATUS2_IDDLE;
+	call	_devkit_PORT_A_KEY_1
+	ld	a, l
+	and	a, 5 (ix)
+	ld	c, a
+	ld	a, h
+	and	a, 6 (ix)
+	or	a, c
+	jp	NZ, 00200$
+	C$player.c$182$5_0$143	= .
+	.globl	C$player.c$182$5_0$143
+;player.c:182: player1.status2 = PLAYER_STATUS2_IDDLE;
 	ld	hl, #(_player1 + 0x0009)
 	ld	(hl), #0x00
-	C$player.c$182$5_0$126	= .
-	.globl	C$player.c$182$5_0$126
-;player.c:182: player1.status = PLAYER_STATUS_IDDLE;
+	C$player.c$183$5_0$143	= .
+	.globl	C$player.c$183$5_0$143
+;player.c:183: player1.status = PLAYER_STATUS_IDDLE;
 	ld	hl, #(_player1 + 0x0008)
 	ld	(hl), #0x00
-	C$player.c$183$5_0$126	= .
-	.globl	C$player.c$183$5_0$126
-;player.c:183: player1.vx = 0;
+	C$player.c$184$5_0$143	= .
+	.globl	C$player.c$184$5_0$143
+;player.c:184: player1.vx = 0;
 	ld	hl, #0x0000
 	ld	((_player1 + 0x0002)), hl
-	C$player.c$184$5_0$126	= .
-	.globl	C$player.c$184$5_0$126
-;player.c:184: play_punch_sound2();
+	C$player.c$185$5_0$143	= .
+	.globl	C$player.c$185$5_0$143
+;player.c:185: play_punch_sound2();
 	call	_play_punch_sound2
-	C$player.c$185$5_0$126	= .
-	.globl	C$player.c$185$5_0$126
-;player.c:185: setAnimation(player1.entityreference->entityIndex,0);
+	C$player.c$186$5_0$143	= .
+	.globl	C$player.c$186$5_0$143
+;player.c:186: setAnimation(player1.entityreference->entityIndex,0);
 	ld	hl, (#_player1 + 0)
 	inc	hl
 	inc	hl
@@ -10869,36 +10957,39 @@ _manage_player_walking_status::
 	inc	sp
 	jp	00200$
 00147$:
-	C$player.c$171$1_0$120	= .
-	.globl	C$player.c$171$1_0$120
-;player.c:171: setAnimation(player1.entityreference->entityIndex,7);
+	C$player.c$190$3_0$144	= .
+	.globl	C$player.c$190$3_0$144
+;player.c:190: if(keys & devkit_PORT_A_KEY_RIGHT()) {
+	call	_devkit_PORT_A_KEY_RIGHT
+	C$player.c$178$1_0$137	= .
+	.globl	C$player.c$178$1_0$137
+;player.c:178: player1.vx = 0;
+	C$player.c$190$3_0$144	= .
+	.globl	C$player.c$190$3_0$144
+;player.c:190: if(keys & devkit_PORT_A_KEY_RIGHT()) {
+	ld	a, l
+	and	a, 5 (ix)
+	ld	c, a
+	ld	a, h
+	and	a, 6 (ix)
+	or	a, c
+	jr	Z, 00124$
+	C$player.c$191$4_0$145	= .
+	.globl	C$player.c$191$4_0$145
+;player.c:191: if(isAnimationEnded(player1.entityreference->entityIndex)) {
 	ld	hl, (#_player1 + 0)
-	C$player.c$177$1_0$120	= .
-	.globl	C$player.c$177$1_0$120
-;player.c:177: player1.vx = 0;
-	C$player.c$190$1_0$120	= .
-	.globl	C$player.c$190$1_0$120
-;player.c:190: if(isAnimationEnded(player1.entityreference->entityIndex)) {
 	inc	hl
 	inc	hl
 	ld	a, (hl)
-	C$player.c$189$3_0$127	= .
-	.globl	C$player.c$189$3_0$127
-;player.c:189: if(keys & PORT_A_KEY_RIGHT) {
-	bit	3, 5 (ix)
-	jr	Z, 00124$
-	C$player.c$190$4_0$128	= .
-	.globl	C$player.c$190$4_0$128
-;player.c:190: if(isAnimationEnded(player1.entityreference->entityIndex)) {
 	push	af
 	inc	sp
 	call	_isAnimationEnded
 	inc	sp
 	bit	0, l
 	jr	Z, 00111$
-	C$player.c$191$5_0$129	= .
-	.globl	C$player.c$191$5_0$129
-;player.c:191: setAnimation(player1.entityreference->entityIndex,2);	
+	C$player.c$192$5_0$146	= .
+	.globl	C$player.c$192$5_0$146
+;player.c:192: setAnimation(player1.entityreference->entityIndex,2);	
 	ld	hl, (#_player1 + 0)
 	inc	hl
 	inc	hl
@@ -10911,15 +11002,15 @@ _manage_player_walking_status::
 	pop	af
 	inc	sp
 00111$:
-	C$player.c$193$4_0$128	= .
-	.globl	C$player.c$193$4_0$128
-;player.c:193: if(player1.xdirection == -1) {
+	C$player.c$194$4_0$145	= .
+	.globl	C$player.c$194$4_0$145
+;player.c:194: if(player1.xdirection == -1) {
 	ld	a, (#(_player1 + 0x0006) + 0)
 	inc	a
 	jr	NZ, 00113$
-	C$player.c$194$5_0$130	= .
-	.globl	C$player.c$194$5_0$130
-;player.c:194: forceReload(player1.entityreference->entityIndex);
+	C$player.c$195$5_0$147	= .
+	.globl	C$player.c$195$5_0$147
+;player.c:195: forceReload(player1.entityreference->entityIndex);
 	ld	hl, (#_player1 + 0)
 	inc	hl
 	inc	hl
@@ -10929,37 +11020,59 @@ _manage_player_walking_status::
 	call	_forceReload
 	inc	sp
 00113$:
-	C$player.c$196$4_0$128	= .
-	.globl	C$player.c$196$4_0$128
-;player.c:196: player1.xdirection = 1;
+	C$player.c$197$4_0$145	= .
+	.globl	C$player.c$197$4_0$145
+;player.c:197: player1.xdirection = 1;
 	ld	hl, #(_player1 + 0x0006)
 	ld	(hl), #0x01
-	C$player.c$197$4_0$128	= .
-	.globl	C$player.c$197$4_0$128
-;player.c:197: player1.entityreference->direction = RIGHT_DIRECTION;
+	C$player.c$198$4_0$145	= .
+	.globl	C$player.c$198$4_0$145
+;player.c:198: player1.entityreference->direction = RIGHT_DIRECTION;
 	ld	hl, (#_player1 + 0)
 	ld	bc, #0x0005
 	add	hl, bc
 	ld	(hl), #0x00
 	jr	00125$
 00124$:
-	C$player.c$198$3_0$127	= .
-	.globl	C$player.c$198$3_0$127
-;player.c:198: } else if(keys & PORT_A_KEY_LEFT) {
-	bit	2, 5 (ix)
+	C$player.c$199$3_0$144	= .
+	.globl	C$player.c$199$3_0$144
+;player.c:199: } else if(keys & devkit_PORT_A_KEY_LEFT()) {
+	call	_devkit_PORT_A_KEY_LEFT
+	ex	de, hl
+	C$player.c$172$1_0$137	= .
+	.globl	C$player.c$172$1_0$137
+;player.c:172: setAnimation(player1.entityreference->entityIndex,7);
+	ld	hl, (#_player1 + 0)
+	C$player.c$200$1_0$137	= .
+	.globl	C$player.c$200$1_0$137
+;player.c:200: if(isAnimationEnded(player1.entityreference->entityIndex)) {
+	inc	hl
+	inc	hl
+	ld	a, (hl)
+	ld	-1 (ix), a
+	C$player.c$199$3_0$144	= .
+	.globl	C$player.c$199$3_0$144
+;player.c:199: } else if(keys & devkit_PORT_A_KEY_LEFT()) {
+	ld	a, 5 (ix)
+	and	a, e
+	ld	c, a
+	ld	a, 6 (ix)
+	and	a, d
+	or	a, c
 	jr	Z, 00121$
-	C$player.c$199$4_0$131	= .
-	.globl	C$player.c$199$4_0$131
-;player.c:199: if(isAnimationEnded(player1.entityreference->entityIndex)) {
+	C$player.c$200$4_0$148	= .
+	.globl	C$player.c$200$4_0$148
+;player.c:200: if(isAnimationEnded(player1.entityreference->entityIndex)) {
+	ld	a, -1 (ix)
 	push	af
 	inc	sp
 	call	_isAnimationEnded
 	inc	sp
 	bit	0, l
 	jr	Z, 00115$
-	C$player.c$200$5_0$132	= .
-	.globl	C$player.c$200$5_0$132
-;player.c:200: setAnimation(player1.entityreference->entityIndex,2);
+	C$player.c$201$5_0$149	= .
+	.globl	C$player.c$201$5_0$149
+;player.c:201: setAnimation(player1.entityreference->entityIndex,2);
 	ld	hl, (#_player1 + 0)
 	inc	hl
 	inc	hl
@@ -10972,15 +11085,15 @@ _manage_player_walking_status::
 	pop	af
 	inc	sp
 00115$:
-	C$player.c$202$4_0$131	= .
-	.globl	C$player.c$202$4_0$131
-;player.c:202: if(player1.xdirection == 1) {
+	C$player.c$203$4_0$148	= .
+	.globl	C$player.c$203$4_0$148
+;player.c:203: if(player1.xdirection == 1) {
 	ld	a, (#(_player1 + 0x0006) + 0)
 	dec	a
 	jr	NZ, 00117$
-	C$player.c$203$5_0$133	= .
-	.globl	C$player.c$203$5_0$133
-;player.c:203: forceReload(player1.entityreference->entityIndex);
+	C$player.c$204$5_0$150	= .
+	.globl	C$player.c$204$5_0$150
+;player.c:204: forceReload(player1.entityreference->entityIndex);
 	ld	hl, (#_player1 + 0)
 	inc	hl
 	inc	hl
@@ -10990,62 +11103,63 @@ _manage_player_walking_status::
 	call	_forceReload
 	inc	sp
 00117$:
-	C$player.c$205$4_0$131	= .
-	.globl	C$player.c$205$4_0$131
-;player.c:205: player1.xdirection = -1;
+	C$player.c$206$4_0$148	= .
+	.globl	C$player.c$206$4_0$148
+;player.c:206: player1.xdirection = -1;
 	ld	hl, #(_player1 + 0x0006)
 	ld	(hl), #0xff
-	C$player.c$206$4_0$131	= .
-	.globl	C$player.c$206$4_0$131
-;player.c:206: player1.entityreference->direction = LEFT_DIRECTION;
+	C$player.c$207$4_0$148	= .
+	.globl	C$player.c$207$4_0$148
+;player.c:207: player1.entityreference->direction = LEFT_DIRECTION;
 	ld	hl, (#_player1 + 0)
 	ld	bc, #0x0005
 	add	hl, bc
 	ld	(hl), #0x01
 	jr	00125$
 00121$:
-	C$player.c$208$4_0$134	= .
-	.globl	C$player.c$208$4_0$134
-;player.c:208: if(isFrameEnded(player1.entityreference->entityIndex)) {
+	C$player.c$209$4_0$151	= .
+	.globl	C$player.c$209$4_0$151
+;player.c:209: if(isFrameEnded(player1.entityreference->entityIndex)) {
+	ld	a, -1 (ix)
 	push	af
 	inc	sp
 	call	_isFrameEnded
 	inc	sp
 	bit	0, l
 	jr	Z, 00125$
-	C$player.c$209$5_0$135	= .
-	.globl	C$player.c$209$5_0$135
-;player.c:209: player1.vx = 0;
+	C$player.c$210$5_0$152	= .
+	.globl	C$player.c$210$5_0$152
+;player.c:210: player1.vx = 0;
 	ld	hl, #0x0000
 	ld	((_player1 + 0x0002)), hl
 00125$:
-	C$player.c$171$1_0$120	= .
-	.globl	C$player.c$171$1_0$120
-;player.c:171: setAnimation(player1.entityreference->entityIndex,7);
+	C$player.c$213$3_0$144	= .
+	.globl	C$player.c$213$3_0$144
+;player.c:213: if(keys & devkit_PORT_A_KEY_UP()) {
+	call	_devkit_PORT_A_KEY_UP
+	ld	a, l
+	and	a, 5 (ix)
+	ld	c, a
+	ld	a, h
+	and	a, 6 (ix)
+	or	a, c
+	jr	Z, 00136$
+	C$player.c$214$4_0$153	= .
+	.globl	C$player.c$214$4_0$153
+;player.c:214: if(isAnimationEnded(player1.entityreference->entityIndex)) {
 	ld	hl, (#_player1 + 0)
-	C$player.c$190$1_0$120	= .
-	.globl	C$player.c$190$1_0$120
-;player.c:190: if(isAnimationEnded(player1.entityreference->entityIndex)) {
 	inc	hl
 	inc	hl
 	ld	a, (hl)
-	C$player.c$212$3_0$127	= .
-	.globl	C$player.c$212$3_0$127
-;player.c:212: if(keys & PORT_A_KEY_UP) {
-	bit	0, 5 (ix)
-	jr	Z, 00136$
-	C$player.c$213$4_0$136	= .
-	.globl	C$player.c$213$4_0$136
-;player.c:213: if(isAnimationEnded(player1.entityreference->entityIndex)) {
 	push	af
 	inc	sp
 	call	_isAnimationEnded
 	inc	sp
 	bit	0, l
 	jr	Z, 00127$
-	C$player.c$214$5_0$137	= .
-	.globl	C$player.c$214$5_0$137
-;player.c:214: setAnimation(player1.entityreference->entityIndex,2);	
+	C$player.c$215$5_0$154	= .
+	.globl	C$player.c$215$5_0$154
+;player.c:215: setAnimation(player1.entityreference->entityIndex,2);	
 	ld	hl, (#_player1 + 0)
 	inc	hl
 	inc	hl
@@ -11058,35 +11172,57 @@ _manage_player_walking_status::
 	pop	af
 	inc	sp
 00127$:
-	C$player.c$216$4_0$136	= .
-	.globl	C$player.c$216$4_0$136
-;player.c:216: player1.vy = CHAR2UFIX(1);
+	C$player.c$217$4_0$153	= .
+	.globl	C$player.c$217$4_0$153
+;player.c:217: player1.vy = CHAR2UFIX(1);
 	ld	hl, #0x0100
 	ld	((_player1 + 0x0004)), hl
-	C$player.c$217$4_0$136	= .
-	.globl	C$player.c$217$4_0$136
-;player.c:217: player1.ydirection = -1;
+	C$player.c$218$4_0$153	= .
+	.globl	C$player.c$218$4_0$153
+;player.c:218: player1.ydirection = -1;
 	ld	hl, #(_player1 + 0x0007)
 	ld	(hl), #0xff
 	jr	00137$
 00136$:
-	C$player.c$218$3_0$127	= .
-	.globl	C$player.c$218$3_0$127
-;player.c:218: } else if(keys & PORT_A_KEY_DOWN) {
-	bit	1, 5 (ix)
+	C$player.c$219$3_0$144	= .
+	.globl	C$player.c$219$3_0$144
+;player.c:219: } else if(keys & devkit_PORT_A_KEY_DOWN()) {
+	call	_devkit_PORT_A_KEY_DOWN
+	ex	de, hl
+	C$player.c$172$1_0$137	= .
+	.globl	C$player.c$172$1_0$137
+;player.c:172: setAnimation(player1.entityreference->entityIndex,7);
+	ld	hl, (#_player1 + 0)
+	C$player.c$200$1_0$137	= .
+	.globl	C$player.c$200$1_0$137
+;player.c:200: if(isAnimationEnded(player1.entityreference->entityIndex)) {
+	inc	hl
+	inc	hl
+	ld	a, (hl)
+	ld	-1 (ix), a
+	C$player.c$219$3_0$144	= .
+	.globl	C$player.c$219$3_0$144
+;player.c:219: } else if(keys & devkit_PORT_A_KEY_DOWN()) {
+	ld	a, 5 (ix)
+	and	a, e
+	ld	c, a
+	ld	a, 6 (ix)
+	and	a, d
+	or	a, c
 	jr	Z, 00133$
-	C$player.c$219$4_0$138	= .
-	.globl	C$player.c$219$4_0$138
-;player.c:219: if(isAnimationEnded(player1.entityreference->entityIndex)) {
+	C$player.c$220$4_0$155	= .
+	.globl	C$player.c$220$4_0$155
+;player.c:220: if(isAnimationEnded(player1.entityreference->entityIndex)) {
+	ld	a, -1 (ix)
 	push	af
 	inc	sp
 	call	_isAnimationEnded
 	inc	sp
 	bit	0, l
 	jr	Z, 00129$
-	C$player.c$220$5_0$139	= .
-	.globl	C$player.c$220$5_0$139
-;player.c:220: setAnimation(player1.entityreference->entityIndex,2);	
+	C$player.c$221$5_0$156	= .
+	.globl	C$player.c$221$5_0$156
+;player.c:221: setAnimation(player1.entityreference->entityIndex,2);	
 	ld	hl, (#_player1 + 0)
 	inc	hl
 	inc	hl
@@ -11099,36 +11235,37 @@ _manage_player_walking_status::
 	pop	af
 	inc	sp
 00129$:
-	C$player.c$222$4_0$138	= .
-	.globl	C$player.c$222$4_0$138
-;player.c:222: player1.vy = CHAR2UFIX(1);
+	C$player.c$223$4_0$155	= .
+	.globl	C$player.c$223$4_0$155
+;player.c:223: player1.vy = CHAR2UFIX(1);
 	ld	hl, #0x0100
 	ld	((_player1 + 0x0004)), hl
-	C$player.c$223$4_0$138	= .
-	.globl	C$player.c$223$4_0$138
-;player.c:223: player1.ydirection = 1;
+	C$player.c$224$4_0$155	= .
+	.globl	C$player.c$224$4_0$155
+;player.c:224: player1.ydirection = 1;
 	ld	hl, #(_player1 + 0x0007)
 	ld	(hl), #0x01
 	jr	00137$
 00133$:
-	C$player.c$225$4_0$140	= .
-	.globl	C$player.c$225$4_0$140
-;player.c:225: if(isFrameEnded(player1.entityreference->entityIndex)) {
+	C$player.c$226$4_0$157	= .
+	.globl	C$player.c$226$4_0$157
+;player.c:226: if(isFrameEnded(player1.entityreference->entityIndex)) {
+	ld	a, -1 (ix)
 	push	af
 	inc	sp
 	call	_isFrameEnded
 	inc	sp
 	bit	0, l
 	jr	Z, 00137$
-	C$player.c$226$5_0$141	= .
-	.globl	C$player.c$226$5_0$141
-;player.c:226: player1.vy = 0;
+	C$player.c$227$5_0$158	= .
+	.globl	C$player.c$227$5_0$158
+;player.c:227: player1.vy = 0;
 	ld	hl, #0x0000
 	ld	((_player1 + 0x0004)), hl
 00137$:
-	C$player.c$230$3_0$127	= .
-	.globl	C$player.c$230$3_0$127
-;player.c:230: if(player1.vx == 0 && player1.vy == 0) {
+	C$player.c$231$3_0$144	= .
+	.globl	C$player.c$231$3_0$144
+;player.c:231: if(player1.vx == 0 && player1.vy == 0) {
 	ld	bc, (#(_player1 + 0x0002) + 0)
 	ld	a, b
 	or	a, c
@@ -11137,9 +11274,9 @@ _manage_player_walking_status::
 	ld	a, h
 	or	a, l
 	jr	NZ, 00139$
-	C$player.c$231$4_0$142	= .
-	.globl	C$player.c$231$4_0$142
-;player.c:231: setAnimation(player1.entityreference->entityIndex,0);
+	C$player.c$232$4_0$159	= .
+	.globl	C$player.c$232$4_0$159
+;player.c:232: setAnimation(player1.entityreference->entityIndex,0);
 	ld	hl, (#_player1 + 0)
 	inc	hl
 	inc	hl
@@ -11151,49 +11288,61 @@ _manage_player_walking_status::
 	call	_setAnimation
 	pop	af
 	inc	sp
-	C$player.c$232$4_0$142	= .
-	.globl	C$player.c$232$4_0$142
-;player.c:232: player1.status = PLAYER_STATUS_IDDLE;
+	C$player.c$233$4_0$159	= .
+	.globl	C$player.c$233$4_0$159
+;player.c:233: player1.status = PLAYER_STATUS_IDDLE;
 	ld	hl, #(_player1 + 0x0008)
 	ld	(hl), #0x00
 00139$:
-	C$player.c$234$3_0$127	= .
-	.globl	C$player.c$234$3_0$127
-;player.c:234: if(keys & PORT_A_KEY_2) {
-	bit	5, 5 (ix)
+	C$player.c$235$3_0$144	= .
+	.globl	C$player.c$235$3_0$144
+;player.c:235: if(keys & devkit_PORT_A_KEY_2()) {
+	call	_devkit_PORT_A_KEY_2
+	ld	a, l
+	and	a, 5 (ix)
+	ld	c, a
+	ld	a, h
+	and	a, 6 (ix)
+	or	a, c
 	jr	Z, 00142$
-	C$player.c$235$4_0$143	= .
-	.globl	C$player.c$235$4_0$143
-;player.c:235: player1.status = PLAYER_STATUS_JUMPING;
-	ld	hl, #(_player1 + 0x0008)
+	C$player.c$236$4_0$160	= .
+	.globl	C$player.c$236$4_0$160
+;player.c:236: player1.status = PLAYER_STATUS_JUMPING;
+	ld	hl, #_player1 + 8
 	ld	(hl), #0x02
-	C$player.c$236$4_0$143	= .
-	.globl	C$player.c$236$4_0$143
-;player.c:236: player1.vy = CHAR2UFIX(3);
+	C$player.c$237$4_0$160	= .
+	.globl	C$player.c$237$4_0$160
+;player.c:237: player1.vy = CHAR2UFIX(3);
 	ld	hl, #0x0300
 	ld	((_player1 + 0x0004)), hl
-	C$player.c$237$4_0$143	= .
-	.globl	C$player.c$237$4_0$143
-;player.c:237: player1.ydirection = -1;
+	C$player.c$238$4_0$160	= .
+	.globl	C$player.c$238$4_0$160
+;player.c:238: player1.ydirection = -1;
 	ld	hl, #(_player1 + 0x0007)
 	ld	(hl), #0xff
 00142$:
-	C$player.c$239$3_0$127	= .
-	.globl	C$player.c$239$3_0$127
-;player.c:239: if((keys & PORT_A_KEY_1) && player1.status2 == PLAYER_STATUS2_IDDLE) {
-	bit	4, 5 (ix)
-	jp	Z,00200$
+	C$player.c$240$3_0$144	= .
+	.globl	C$player.c$240$3_0$144
+;player.c:240: if((keys & devkit_PORT_A_KEY_1()) && player1.status2 == PLAYER_STATUS2_IDDLE) {
+	call	_devkit_PORT_A_KEY_1
+	ld	a, l
+	and	a, 5 (ix)
+	ld	c, a
+	ld	a, h
+	and	a, 6 (ix)
+	or	a, c
+	jp	Z, 00200$
 	ld	a, (#(_player1 + 0x0009) + 0)
 	or	a, a
 	jp	NZ, 00200$
-	C$player.c$240$4_0$144	= .
-	.globl	C$player.c$240$4_0$144
-;player.c:240: player1.status2 = PLAYER_STATUS2_PUNCHING;
+	C$player.c$241$4_0$161	= .
+	.globl	C$player.c$241$4_0$161
+;player.c:241: player1.status2 = PLAYER_STATUS2_PUNCHING;
 	ld	hl, #(_player1 + 0x0009)
 	ld	(hl), #0x01
-	C$player.c$241$4_0$144	= .
-	.globl	C$player.c$241$4_0$144
-;player.c:241: setAnimation(player1.entityreference->entityIndex,3);
+	C$player.c$242$4_0$161	= .
+	.globl	C$player.c$242$4_0$161
+;player.c:242: setAnimation(player1.entityreference->entityIndex,3);
 	ld	hl, (#_player1 + 0)
 	inc	hl
 	inc	hl
@@ -11205,32 +11354,37 @@ _manage_player_walking_status::
 	call	_setAnimation
 	pop	af
 	inc	sp
-	C$player.c$242$4_0$144	= .
-	.globl	C$player.c$242$4_0$144
-;player.c:242: play_punch_sound1();
+	C$player.c$243$4_0$161	= .
+	.globl	C$player.c$243$4_0$161
+;player.c:243: play_punch_sound1();
 	call	_play_punch_sound1
 	jp	00200$
 00198$:
-	C$player.c$246$2_0$145	= .
-	.globl	C$player.c$246$2_0$145
-;player.c:246: if(player2.status2 == PLAYER_STATUS2_PUNCHING) {
-	ld	bc, #_player2 + 9
-	ld	a, (bc)
+	C$player.c$247$2_0$162	= .
+	.globl	C$player.c$247$2_0$162
+;player.c:247: if(player2.status2 == PLAYER_STATUS2_PUNCHING) {
+	ld	a, (#(_player2 + 0x0009) + 0)
 	dec	a
 	jp	NZ,00195$
-	C$player.c$247$3_0$146	= .
-	.globl	C$player.c$247$3_0$146
-;player.c:247: if(keys & PORT_B_KEY_DOWN) {
-	bit	7, 5 (ix)
+	C$player.c$248$3_0$163	= .
+	.globl	C$player.c$248$3_0$163
+;player.c:248: if(keys & devkit_PORT_B_KEY_DOWN()) {
+	call	_devkit_PORT_B_KEY_DOWN
+	ld	a, l
+	and	a, 5 (ix)
+	ld	c, a
+	ld	a, h
+	and	a, 6 (ix)
+	or	a, c
 	jr	Z, 00156$
-	C$player.c$248$4_0$147	= .
-	.globl	C$player.c$248$4_0$147
-;player.c:248: player2.status = PLAYER_STATUS_CROUCHED;
+	C$player.c$249$4_0$164	= .
+	.globl	C$player.c$249$4_0$164
+;player.c:249: player2.status = PLAYER_STATUS_CROUCHED;
 	ld	hl, #(_player2 + 0x0008)
 	ld	(hl), #0x03
-	C$player.c$249$4_0$147	= .
-	.globl	C$player.c$249$4_0$147
-;player.c:249: setAnimation(player2.entityreference->entityIndex,7);
+	C$player.c$250$4_0$164	= .
+	.globl	C$player.c$250$4_0$164
+;player.c:250: setAnimation(player2.entityreference->entityIndex,7);
 	ld	hl, (#_player2 + 0)
 	inc	hl
 	inc	hl
@@ -11242,46 +11396,44 @@ _manage_player_walking_status::
 	call	_setAnimation
 	pop	af
 	inc	sp
-	C$player.c$250$4_0$147	= .
-	.globl	C$player.c$250$4_0$147
-;player.c:250: player2.vy = 0;
+	C$player.c$251$4_0$164	= .
+	.globl	C$player.c$251$4_0$164
+;player.c:251: player2.vy = 0;
 	ld	hl, #0x0000
 	ld	((_player2 + 0x0004)), hl
 	jp	00200$
 00156$:
-	C$player.c$252$4_0$148	= .
-	.globl	C$player.c$252$4_0$148
-;player.c:252: if(isAnimationEnded(player2.entityreference->entityIndex)) {
+	C$player.c$253$4_0$165	= .
+	.globl	C$player.c$253$4_0$165
+;player.c:253: if(isAnimationEnded(player2.entityreference->entityIndex)) {
 	ld	hl, (#_player2 + 0)
 	inc	hl
 	inc	hl
 	ld	a, (hl)
-	push	bc
 	push	af
 	inc	sp
 	call	_isAnimationEnded
 	inc	sp
-	pop	bc
 	bit	0, l
 	jr	Z, 00153$
-	C$player.c$253$5_0$149	= .
-	.globl	C$player.c$253$5_0$149
-;player.c:253: player2.status2 = PLAYER_STATUS2_IDDLE;
-	xor	a, a
-	ld	(bc), a
-	C$player.c$254$5_0$149	= .
-	.globl	C$player.c$254$5_0$149
-;player.c:254: player2.status = PLAYER_STATUS_IDDLE;
+	C$player.c$254$5_0$166	= .
+	.globl	C$player.c$254$5_0$166
+;player.c:254: player2.status2 = PLAYER_STATUS2_IDDLE;
+	ld	hl, #(_player2 + 0x0009)
+	ld	(hl), #0x00
+	C$player.c$255$5_0$166	= .
+	.globl	C$player.c$255$5_0$166
+;player.c:255: player2.status = PLAYER_STATUS_IDDLE;
 	ld	hl, #(_player2 + 0x0008)
 	ld	(hl), #0x00
-	C$player.c$255$5_0$149	= .
-	.globl	C$player.c$255$5_0$149
-;player.c:255: player2.vx = 0;
+	C$player.c$256$5_0$166	= .
+	.globl	C$player.c$256$5_0$166
+;player.c:256: player2.vx = 0;
 	ld	hl, #0x0000
 	ld	((_player2 + 0x0002)), hl
-	C$player.c$256$5_0$149	= .
-	.globl	C$player.c$256$5_0$149
-;player.c:256: setAnimation(player2.entityreference->entityIndex,0);
+	C$player.c$257$5_0$166	= .
+	.globl	C$player.c$257$5_0$166
+;player.c:257: setAnimation(player2.entityreference->entityIndex,0);
 	ld	hl, (#_player2 + 0)
 	inc	hl
 	inc	hl
@@ -11293,51 +11445,55 @@ _manage_player_walking_status::
 	call	_setAnimation
 	pop	af
 	inc	sp
-	C$player.c$257$5_0$149	= .
-	.globl	C$player.c$257$5_0$149
-;player.c:257: play_punch_sound2();
+	C$player.c$258$5_0$166	= .
+	.globl	C$player.c$258$5_0$166
+;player.c:258: play_punch_sound2();
 	call	_play_punch_sound2
 	jp	00200$
 00153$:
-	C$player.c$258$4_0$148	= .
-	.globl	C$player.c$258$4_0$148
-;player.c:258: } else if(isFrameEnded(player2.entityreference->entityIndex) && !(keys & PORT_B_KEY_1)) {
+	C$player.c$259$4_0$165	= .
+	.globl	C$player.c$259$4_0$165
+;player.c:259: } else if(isFrameEnded(player2.entityreference->entityIndex) && !(keys & devkit_PORT_B_KEY_1())) {
 	ld	hl, (#_player2 + 0)
 	inc	hl
 	inc	hl
 	ld	a, (hl)
-	push	bc
 	push	af
 	inc	sp
 	call	_isFrameEnded
 	inc	sp
-	pop	bc
 	bit	0, l
 	jp	Z, 00200$
-	bit	2, 6 (ix)
-	jp	NZ,00200$
-	C$player.c$259$5_0$150	= .
-	.globl	C$player.c$259$5_0$150
-;player.c:259: player2.status2 = PLAYER_STATUS2_IDDLE;
-	xor	a, a
-	ld	(bc), a
-	C$player.c$260$5_0$150	= .
-	.globl	C$player.c$260$5_0$150
-;player.c:260: player2.status = PLAYER_STATUS_IDDLE;
+	call	_devkit_PORT_B_KEY_1
+	ld	a, l
+	and	a, 5 (ix)
+	ld	c, a
+	ld	a, h
+	and	a, 6 (ix)
+	or	a, c
+	jp	NZ, 00200$
+	C$player.c$260$5_0$167	= .
+	.globl	C$player.c$260$5_0$167
+;player.c:260: player2.status2 = PLAYER_STATUS2_IDDLE;
+	ld	hl, #(_player2 + 0x0009)
+	ld	(hl), #0x00
+	C$player.c$261$5_0$167	= .
+	.globl	C$player.c$261$5_0$167
+;player.c:261: player2.status = PLAYER_STATUS_IDDLE;
 	ld	hl, #(_player2 + 0x0008)
 	ld	(hl), #0x00
-	C$player.c$261$5_0$150	= .
-	.globl	C$player.c$261$5_0$150
-;player.c:261: player2.vx = 0;
+	C$player.c$262$5_0$167	= .
+	.globl	C$player.c$262$5_0$167
+;player.c:262: player2.vx = 0;
 	ld	hl, #0x0000
 	ld	((_player2 + 0x0002)), hl
-	C$player.c$262$5_0$150	= .
-	.globl	C$player.c$262$5_0$150
-;player.c:262: play_punch_sound2();
+	C$player.c$263$5_0$167	= .
+	.globl	C$player.c$263$5_0$167
+;player.c:263: play_punch_sound2();
 	call	_play_punch_sound2
-	C$player.c$263$5_0$150	= .
-	.globl	C$player.c$263$5_0$150
-;player.c:263: setAnimation(player2.entityreference->entityIndex,0);
+	C$player.c$264$5_0$167	= .
+	.globl	C$player.c$264$5_0$167
+;player.c:264: setAnimation(player2.entityreference->entityIndex,0);
 	ld	hl, (#_player2 + 0)
 	inc	hl
 	inc	hl
@@ -11351,43 +11507,43 @@ _manage_player_walking_status::
 	inc	sp
 	jp	00200$
 00195$:
-	C$player.c$249$1_0$120	= .
-	.globl	C$player.c$249$1_0$120
-;player.c:249: setAnimation(player2.entityreference->entityIndex,7);
+	C$player.c$268$3_0$168	= .
+	.globl	C$player.c$268$3_0$168
+;player.c:268: if(keys & devkit_PORT_B_KEY_RIGHT()) {
+	call	_devkit_PORT_B_KEY_RIGHT
+	C$player.c$256$1_0$137	= .
+	.globl	C$player.c$256$1_0$137
+;player.c:256: player2.vx = 0;
+	C$player.c$268$3_0$168	= .
+	.globl	C$player.c$268$3_0$168
+;player.c:268: if(keys & devkit_PORT_B_KEY_RIGHT()) {
+	ld	a, l
+	and	a, 5 (ix)
+	ld	c, a
+	ld	a, h
+	and	a, 6 (ix)
+	or	a, c
+	jr	Z, 00172$
+	C$player.c$269$4_0$169	= .
+	.globl	C$player.c$269$4_0$169
+;player.c:269: if(isAnimationEnded(player2.entityreference->entityIndex)) {
 	ld	hl, (#_player2 + 0)
-	C$player.c$255$1_0$120	= .
-	.globl	C$player.c$255$1_0$120
-;player.c:255: player2.vx = 0;
-	C$player.c$268$1_0$120	= .
-	.globl	C$player.c$268$1_0$120
-;player.c:268: if(isAnimationEnded(player2.entityreference->entityIndex)) {
 	inc	hl
 	inc	hl
 	ld	a, (hl)
-	C$player.c$267$3_0$151	= .
-	.globl	C$player.c$267$3_0$151
-;player.c:267: if(keys & PORT_B_KEY_RIGHT) {
-	bit	1, 6 (ix)
-	jr	Z, 00172$
-	C$player.c$268$4_0$152	= .
-	.globl	C$player.c$268$4_0$152
-;player.c:268: if(isAnimationEnded(player2.entityreference->entityIndex)) {
-	push	bc
 	push	af
 	inc	sp
 	call	_isAnimationEnded
 	inc	sp
-	pop	bc
 	bit	0, l
 	jr	Z, 00159$
-	C$player.c$269$5_0$153	= .
-	.globl	C$player.c$269$5_0$153
-;player.c:269: setAnimation(player2.entityreference->entityIndex,2);	
+	C$player.c$270$5_0$170	= .
+	.globl	C$player.c$270$5_0$170
+;player.c:270: setAnimation(player2.entityreference->entityIndex,2);	
 	ld	hl, (#_player2 + 0)
 	inc	hl
 	inc	hl
 	ld	a, (hl)
-	push	bc
 	ld	hl, #0x0002
 	push	hl
 	push	af
@@ -11395,66 +11551,82 @@ _manage_player_walking_status::
 	call	_setAnimation
 	pop	af
 	inc	sp
-	pop	bc
 00159$:
-	C$player.c$271$4_0$152	= .
-	.globl	C$player.c$271$4_0$152
-;player.c:271: if(player2.xdirection == -1) {
+	C$player.c$272$4_0$169	= .
+	.globl	C$player.c$272$4_0$169
+;player.c:272: if(player2.xdirection == -1) {
 	ld	a, (#(_player2 + 0x0006) + 0)
 	inc	a
 	jr	NZ, 00161$
-	C$player.c$272$5_0$154	= .
-	.globl	C$player.c$272$5_0$154
-;player.c:272: forceReload(player2.entityreference->entityIndex);
+	C$player.c$273$5_0$171	= .
+	.globl	C$player.c$273$5_0$171
+;player.c:273: forceReload(player2.entityreference->entityIndex);
 	ld	hl, (#_player2 + 0)
 	inc	hl
 	inc	hl
 	ld	a, (hl)
-	push	bc
 	push	af
 	inc	sp
 	call	_forceReload
 	inc	sp
-	pop	bc
 00161$:
-	C$player.c$274$4_0$152	= .
-	.globl	C$player.c$274$4_0$152
-;player.c:274: player2.xdirection = 1;
+	C$player.c$275$4_0$169	= .
+	.globl	C$player.c$275$4_0$169
+;player.c:275: player2.xdirection = 1;
 	ld	hl, #(_player2 + 0x0006)
 	ld	(hl), #0x01
-	C$player.c$275$4_0$152	= .
-	.globl	C$player.c$275$4_0$152
-;player.c:275: player2.entityreference->direction = RIGHT_DIRECTION;
+	C$player.c$276$4_0$169	= .
+	.globl	C$player.c$276$4_0$169
+;player.c:276: player2.entityreference->direction = RIGHT_DIRECTION;
 	ld	hl, (#_player2 + 0)
-	ld	de, #0x0005
-	add	hl, de
+	ld	bc, #0x0005
+	add	hl, bc
 	ld	(hl), #0x00
 	jr	00173$
 00172$:
-	C$player.c$276$3_0$151	= .
-	.globl	C$player.c$276$3_0$151
-;player.c:276: } else if(keys & PORT_B_KEY_LEFT) {
-	bit	0, 6 (ix)
+	C$player.c$277$3_0$168	= .
+	.globl	C$player.c$277$3_0$168
+;player.c:277: } else if(keys & devkit_PORT_B_KEY_LEFT()) {
+	call	_devkit_PORT_B_KEY_LEFT
+	ex	de, hl
+	C$player.c$250$1_0$137	= .
+	.globl	C$player.c$250$1_0$137
+;player.c:250: setAnimation(player2.entityreference->entityIndex,7);
+	ld	hl, (#_player2 + 0)
+	C$player.c$278$1_0$137	= .
+	.globl	C$player.c$278$1_0$137
+;player.c:278: if(isAnimationEnded(player2.entityreference->entityIndex)) {
+	inc	hl
+	inc	hl
+	ld	a, (hl)
+	ld	-1 (ix), a
+	C$player.c$277$3_0$168	= .
+	.globl	C$player.c$277$3_0$168
+;player.c:277: } else if(keys & devkit_PORT_B_KEY_LEFT()) {
+	ld	a, 5 (ix)
+	and	a, e
+	ld	c, a
+	ld	a, 6 (ix)
+	and	a, d
+	or	a, c
 	jr	Z, 00169$
-	C$player.c$277$4_0$155	= .
-	.globl	C$player.c$277$4_0$155
-;player.c:277: if(isAnimationEnded(player2.entityreference->entityIndex)) {
-	push	bc
+	C$player.c$278$4_0$172	= .
+	.globl	C$player.c$278$4_0$172
+;player.c:278: if(isAnimationEnded(player2.entityreference->entityIndex)) {
+	ld	a, -1 (ix)
 	push	af
 	inc	sp
 	call	_isAnimationEnded
 	inc	sp
-	pop	bc
 	bit	0, l
 	jr	Z, 00163$
-	C$player.c$278$5_0$156	= .
-	.globl	C$player.c$278$5_0$156
-;player.c:278: setAnimation(player2.entityreference->entityIndex,2);
+	C$player.c$279$5_0$173	= .
+	.globl	C$player.c$279$5_0$173
+;player.c:279: setAnimation(player2.entityreference->entityIndex,2);
 	ld	hl, (#_player2 + 0)
 	inc	hl
 	inc	hl
 	ld	a, (hl)
-	push	bc
 	ld	hl, #0x0002
 	push	hl
 	push	af
@@ -11462,93 +11634,86 @@ _manage_player_walking_status::
 	call	_setAnimation
 	pop	af
 	inc	sp
-	pop	bc
 00163$:
-	C$player.c$280$4_0$155	= .
-	.globl	C$player.c$280$4_0$155
-;player.c:280: if(player2.xdirection == 1) {
+	C$player.c$281$4_0$172	= .
+	.globl	C$player.c$281$4_0$172
+;player.c:281: if(player2.xdirection == 1) {
 	ld	a, (#(_player2 + 0x0006) + 0)
 	dec	a
 	jr	NZ, 00165$
-	C$player.c$281$5_0$157	= .
-	.globl	C$player.c$281$5_0$157
-;player.c:281: forceReload(player2.entityreference->entityIndex);
+	C$player.c$282$5_0$174	= .
+	.globl	C$player.c$282$5_0$174
+;player.c:282: forceReload(player2.entityreference->entityIndex);
 	ld	hl, (#_player2 + 0)
 	inc	hl
 	inc	hl
 	ld	a, (hl)
-	push	bc
 	push	af
 	inc	sp
 	call	_forceReload
 	inc	sp
-	pop	bc
 00165$:
-	C$player.c$283$4_0$155	= .
-	.globl	C$player.c$283$4_0$155
-;player.c:283: player2.xdirection = -1;
+	C$player.c$284$4_0$172	= .
+	.globl	C$player.c$284$4_0$172
+;player.c:284: player2.xdirection = -1;
 	ld	hl, #(_player2 + 0x0006)
 	ld	(hl), #0xff
-	C$player.c$284$4_0$155	= .
-	.globl	C$player.c$284$4_0$155
-;player.c:284: player2.entityreference->direction = LEFT_DIRECTION;
+	C$player.c$285$4_0$172	= .
+	.globl	C$player.c$285$4_0$172
+;player.c:285: player2.entityreference->direction = LEFT_DIRECTION;
 	ld	hl, (#_player2 + 0)
-	ld	de, #0x0005
-	add	hl, de
+	ld	bc, #0x0005
+	add	hl, bc
 	ld	(hl), #0x01
 	jr	00173$
 00169$:
-	C$player.c$286$4_0$158	= .
-	.globl	C$player.c$286$4_0$158
-;player.c:286: if(isFrameEnded(player2.entityreference->entityIndex)) {
-	push	bc
+	C$player.c$287$4_0$175	= .
+	.globl	C$player.c$287$4_0$175
+;player.c:287: if(isFrameEnded(player2.entityreference->entityIndex)) {
+	ld	a, -1 (ix)
 	push	af
 	inc	sp
 	call	_isFrameEnded
 	inc	sp
-	pop	bc
 	bit	0, l
 	jr	Z, 00173$
-	C$player.c$287$5_0$159	= .
-	.globl	C$player.c$287$5_0$159
-;player.c:287: player2.vx = 0;
+	C$player.c$288$5_0$176	= .
+	.globl	C$player.c$288$5_0$176
+;player.c:288: player2.vx = 0;
 	ld	hl, #0x0000
 	ld	((_player2 + 0x0002)), hl
 00173$:
-	C$player.c$249$1_0$120	= .
-	.globl	C$player.c$249$1_0$120
-;player.c:249: setAnimation(player2.entityreference->entityIndex,7);
+	C$player.c$291$3_0$168	= .
+	.globl	C$player.c$291$3_0$168
+;player.c:291: if(keys & devkit_PORT_B_KEY_UP()) {
+	call	_devkit_PORT_B_KEY_UP
+	ld	a, l
+	and	a, 5 (ix)
+	ld	c, a
+	ld	a, h
+	and	a, 6 (ix)
+	or	a, c
+	jr	Z, 00184$
+	C$player.c$292$4_0$177	= .
+	.globl	C$player.c$292$4_0$177
+;player.c:292: if(isAnimationEnded(player2.entityreference->entityIndex)) {
 	ld	hl, (#_player2 + 0)
-	C$player.c$268$1_0$120	= .
-	.globl	C$player.c$268$1_0$120
-;player.c:268: if(isAnimationEnded(player2.entityreference->entityIndex)) {
 	inc	hl
 	inc	hl
 	ld	a, (hl)
-	C$player.c$290$3_0$151	= .
-	.globl	C$player.c$290$3_0$151
-;player.c:290: if(keys & PORT_B_KEY_UP) {
-	bit	6, 5 (ix)
-	jr	Z, 00184$
-	C$player.c$291$4_0$160	= .
-	.globl	C$player.c$291$4_0$160
-;player.c:291: if(isAnimationEnded(player2.entityreference->entityIndex)) {
-	push	bc
 	push	af
 	inc	sp
 	call	_isAnimationEnded
 	inc	sp
-	pop	bc
 	bit	0, l
 	jr	Z, 00175$
-	C$player.c$292$5_0$161	= .
-	.globl	C$player.c$292$5_0$161
-;player.c:292: setAnimation(player2.entityreference->entityIndex,2);	
+	C$player.c$293$5_0$178	= .
+	.globl	C$player.c$293$5_0$178
+;player.c:293: setAnimation(player2.entityreference->entityIndex,2);	
 	ld	hl, (#_player2 + 0)
 	inc	hl
 	inc	hl
 	ld	a, (hl)
-	push	bc
 	ld	hl, #0x0002
 	push	hl
 	push	af
@@ -11556,44 +11721,62 @@ _manage_player_walking_status::
 	call	_setAnimation
 	pop	af
 	inc	sp
-	pop	bc
 00175$:
-	C$player.c$294$4_0$160	= .
-	.globl	C$player.c$294$4_0$160
-;player.c:294: player2.vy = CHAR2UFIX(1);
+	C$player.c$295$4_0$177	= .
+	.globl	C$player.c$295$4_0$177
+;player.c:295: player2.vy = CHAR2UFIX(1);
 	ld	hl, #0x0100
 	ld	((_player2 + 0x0004)), hl
-	C$player.c$295$4_0$160	= .
-	.globl	C$player.c$295$4_0$160
-;player.c:295: player2.ydirection = -1;
+	C$player.c$296$4_0$177	= .
+	.globl	C$player.c$296$4_0$177
+;player.c:296: player2.ydirection = -1;
 	ld	hl, #(_player2 + 0x0007)
 	ld	(hl), #0xff
 	jr	00185$
 00184$:
-	C$player.c$296$3_0$151	= .
-	.globl	C$player.c$296$3_0$151
-;player.c:296: } else if(keys & PORT_B_KEY_DOWN) {
-	bit	7, 5 (ix)
+	C$player.c$297$3_0$168	= .
+	.globl	C$player.c$297$3_0$168
+;player.c:297: } else if(keys & devkit_PORT_B_KEY_DOWN()) {
+	call	_devkit_PORT_B_KEY_DOWN
+	ex	de, hl
+	C$player.c$250$1_0$137	= .
+	.globl	C$player.c$250$1_0$137
+;player.c:250: setAnimation(player2.entityreference->entityIndex,7);
+	ld	hl, (#_player2 + 0)
+	C$player.c$278$1_0$137	= .
+	.globl	C$player.c$278$1_0$137
+;player.c:278: if(isAnimationEnded(player2.entityreference->entityIndex)) {
+	inc	hl
+	inc	hl
+	ld	a, (hl)
+	ld	-1 (ix), a
+	C$player.c$297$3_0$168	= .
+	.globl	C$player.c$297$3_0$168
+;player.c:297: } else if(keys & devkit_PORT_B_KEY_DOWN()) {
+	ld	a, 5 (ix)
+	and	a, e
+	ld	c, a
+	ld	a, 6 (ix)
+	and	a, d
+	or	a, c
 	jr	Z, 00181$
-	C$player.c$297$4_0$162	= .
-	.globl	C$player.c$297$4_0$162
-;player.c:297: if(isAnimationEnded(player2.entityreference->entityIndex)) {
-	push	bc
+	C$player.c$298$4_0$179	= .
+	.globl	C$player.c$298$4_0$179
+;player.c:298: if(isAnimationEnded(player2.entityreference->entityIndex)) {
+	ld	a, -1 (ix)
 	push	af
 	inc	sp
 	call	_isAnimationEnded
 	inc	sp
-	pop	bc
 	bit	0, l
 	jr	Z, 00177$
-	C$player.c$298$5_0$163	= .
-	.globl	C$player.c$298$5_0$163
-;player.c:298: setAnimation(player2.entityreference->entityIndex,2);	
+	C$player.c$299$5_0$180	= .
+	.globl	C$player.c$299$5_0$180
+;player.c:299: setAnimation(player2.entityreference->entityIndex,2);	
 	ld	hl, (#_player2 + 0)
 	inc	hl
 	inc	hl
 	ld	a, (hl)
-	push	bc
 	ld	hl, #0x0002
 	push	hl
 	push	af
@@ -11601,56 +11784,53 @@ _manage_player_walking_status::
 	call	_setAnimation
 	pop	af
 	inc	sp
-	pop	bc
 00177$:
-	C$player.c$300$4_0$162	= .
-	.globl	C$player.c$300$4_0$162
-;player.c:300: player2.vy = CHAR2UFIX(1);
+	C$player.c$301$4_0$179	= .
+	.globl	C$player.c$301$4_0$179
+;player.c:301: player2.vy = CHAR2UFIX(1);
 	ld	hl, #0x0100
 	ld	((_player2 + 0x0004)), hl
-	C$player.c$301$4_0$162	= .
-	.globl	C$player.c$301$4_0$162
-;player.c:301: player2.ydirection = 1;
+	C$player.c$302$4_0$179	= .
+	.globl	C$player.c$302$4_0$179
+;player.c:302: player2.ydirection = 1;
 	ld	hl, #(_player2 + 0x0007)
 	ld	(hl), #0x01
 	jr	00185$
 00181$:
-	C$player.c$303$4_0$164	= .
-	.globl	C$player.c$303$4_0$164
-;player.c:303: if(isFrameEnded(player2.entityreference->entityIndex)) {
-	push	bc
+	C$player.c$304$4_0$181	= .
+	.globl	C$player.c$304$4_0$181
+;player.c:304: if(isFrameEnded(player2.entityreference->entityIndex)) {
+	ld	a, -1 (ix)
 	push	af
 	inc	sp
 	call	_isFrameEnded
 	inc	sp
-	pop	bc
 	bit	0, l
 	jr	Z, 00185$
-	C$player.c$304$5_0$165	= .
-	.globl	C$player.c$304$5_0$165
-;player.c:304: player2.vy = 0;
+	C$player.c$305$5_0$182	= .
+	.globl	C$player.c$305$5_0$182
+;player.c:305: player2.vy = 0;
 	ld	hl, #0x0000
 	ld	((_player2 + 0x0004)), hl
 00185$:
-	C$player.c$307$3_0$151	= .
-	.globl	C$player.c$307$3_0$151
-;player.c:307: if(player2.vx == 0 && player2.vy == 0) {
-	ld	de, (#(_player2 + 0x0002) + 0)
-	ld	a, d
-	or	a, e
+	C$player.c$308$3_0$168	= .
+	.globl	C$player.c$308$3_0$168
+;player.c:308: if(player2.vx == 0 && player2.vy == 0) {
+	ld	bc, (#(_player2 + 0x0002) + 0)
+	ld	a, b
+	or	a, c
 	jr	NZ, 00187$
 	ld	hl, (#_player2 + 4)
 	ld	a, h
 	or	a, l
 	jr	NZ, 00187$
-	C$player.c$308$4_0$166	= .
-	.globl	C$player.c$308$4_0$166
-;player.c:308: setAnimation(player2.entityreference->entityIndex,0);
+	C$player.c$309$4_0$183	= .
+	.globl	C$player.c$309$4_0$183
+;player.c:309: setAnimation(player2.entityreference->entityIndex,0);
 	ld	hl, (#_player2 + 0)
 	inc	hl
 	inc	hl
 	ld	a, (hl)
-	push	bc
 	ld	hl, #0x0000
 	push	hl
 	push	af
@@ -11658,50 +11838,61 @@ _manage_player_walking_status::
 	call	_setAnimation
 	pop	af
 	inc	sp
-	pop	bc
-	C$player.c$309$4_0$166	= .
-	.globl	C$player.c$309$4_0$166
-;player.c:309: player2.status = PLAYER_STATUS_IDDLE;
+	C$player.c$310$4_0$183	= .
+	.globl	C$player.c$310$4_0$183
+;player.c:310: player2.status = PLAYER_STATUS_IDDLE;
 	ld	hl, #(_player2 + 0x0008)
 	ld	(hl), #0x00
 00187$:
-	C$player.c$311$3_0$151	= .
-	.globl	C$player.c$311$3_0$151
-;player.c:311: if(keys & PORT_B_KEY_2) {
-	bit	3, 6 (ix)
+	C$player.c$312$3_0$168	= .
+	.globl	C$player.c$312$3_0$168
+;player.c:312: if(keys & devkit_PORT_B_KEY_2()) {
+	call	_devkit_PORT_B_KEY_2
+	ld	a, l
+	and	a, 5 (ix)
+	ld	c, a
+	ld	a, h
+	and	a, 6 (ix)
+	or	a, c
 	jr	Z, 00190$
-	C$player.c$312$4_0$167	= .
-	.globl	C$player.c$312$4_0$167
-;player.c:312: player2.status = PLAYER_STATUS_JUMPING;
+	C$player.c$313$4_0$184	= .
+	.globl	C$player.c$313$4_0$184
+;player.c:313: player2.status = PLAYER_STATUS_JUMPING;
 	ld	hl, #(_player2 + 0x0008)
 	ld	(hl), #0x02
-	C$player.c$313$4_0$167	= .
-	.globl	C$player.c$313$4_0$167
-;player.c:313: player2.vy = CHAR2UFIX(3);
+	C$player.c$314$4_0$184	= .
+	.globl	C$player.c$314$4_0$184
+;player.c:314: player2.vy = CHAR2UFIX(3);
 	ld	hl, #0x0300
 	ld	((_player2 + 0x0004)), hl
-	C$player.c$314$4_0$167	= .
-	.globl	C$player.c$314$4_0$167
-;player.c:314: player2.ydirection = -1;
+	C$player.c$315$4_0$184	= .
+	.globl	C$player.c$315$4_0$184
+;player.c:315: player2.ydirection = -1;
 	ld	hl, #(_player2 + 0x0007)
 	ld	(hl), #0xff
 00190$:
-	C$player.c$316$3_0$151	= .
-	.globl	C$player.c$316$3_0$151
-;player.c:316: if((keys & PORT_B_KEY_1) && player2.status2 == PLAYER_STATUS2_IDDLE) {
-	bit	2, 6 (ix)
+	C$player.c$317$3_0$168	= .
+	.globl	C$player.c$317$3_0$168
+;player.c:317: if((keys & devkit_PORT_B_KEY_1()) && player2.status2 == PLAYER_STATUS2_IDDLE) {
+	call	_devkit_PORT_B_KEY_1
+	ld	a, l
+	and	a, 5 (ix)
+	ld	c, a
+	ld	a, h
+	and	a, 6 (ix)
+	or	a, c
 	jr	Z, 00200$
-	ld	a, (bc)
+	ld	a, (#(_player2 + 0x0009) + 0)
 	or	a, a
 	jr	NZ, 00200$
-	C$player.c$317$4_0$168	= .
-	.globl	C$player.c$317$4_0$168
-;player.c:317: player2.status2 = PLAYER_STATUS2_PUNCHING;
-	ld	a, #0x01
-	ld	(bc), a
-	C$player.c$318$4_0$168	= .
-	.globl	C$player.c$318$4_0$168
-;player.c:318: setAnimation(player2.entityreference->entityIndex,3);
+	C$player.c$318$4_0$185	= .
+	.globl	C$player.c$318$4_0$185
+;player.c:318: player2.status2 = PLAYER_STATUS2_PUNCHING;
+	ld	hl, #(_player2 + 0x0009)
+	ld	(hl), #0x01
+	C$player.c$319$4_0$185	= .
+	.globl	C$player.c$319$4_0$185
+;player.c:319: setAnimation(player2.entityreference->entityIndex,3);
 	ld	hl, (#_player2 + 0)
 	inc	hl
 	inc	hl
@@ -11713,25 +11904,26 @@ _manage_player_walking_status::
 	call	_setAnimation
 	pop	af
 	inc	sp
-	C$player.c$319$4_0$168	= .
-	.globl	C$player.c$319$4_0$168
-;player.c:319: play_punch_sound1();
+	C$player.c$320$4_0$185	= .
+	.globl	C$player.c$320$4_0$185
+;player.c:320: play_punch_sound1();
 	call	_play_punch_sound1
 00200$:
-	C$player.c$323$1_0$120	= .
-	.globl	C$player.c$323$1_0$120
-;player.c:323: }
+	C$player.c$324$1_0$137	= .
+	.globl	C$player.c$324$1_0$137
+;player.c:324: }
+	inc	sp
 	pop	ix
-	C$player.c$323$1_0$120	= .
-	.globl	C$player.c$323$1_0$120
+	C$player.c$324$1_0$137	= .
+	.globl	C$player.c$324$1_0$137
 	XG$manage_player_walking_status$0$0	= .
 	.globl	XG$manage_player_walking_status$0$0
 	ret
 	G$manage_player_jumping_status$0$0	= .
 	.globl	G$manage_player_jumping_status$0$0
-	C$player.c$325$1_0$170	= .
-	.globl	C$player.c$325$1_0$170
-;player.c:325: void manage_player_jumping_status(unsigned char player_number, unsigned int keys) {
+	C$player.c$326$1_0$187	= .
+	.globl	C$player.c$326$1_0$187
+;player.c:326: void manage_player_jumping_status(unsigned char player_number, unsigned int keys) {
 ;	---------------------------------
 ; Function manage_player_jumping_status
 ; ---------------------------------
@@ -11739,26 +11931,32 @@ _manage_player_jumping_status::
 	push	ix
 	ld	ix,#0
 	add	ix,sp
-	C$player.c$326$1_0$170	= .
-	.globl	C$player.c$326$1_0$170
-;player.c:326: if(player_number == 1) {
+	C$player.c$327$1_0$187	= .
+	.globl	C$player.c$327$1_0$187
+;player.c:327: if(player_number == 1) {
 	ld	a, 4 (ix)
 	dec	a
 	jp	NZ,00150$
-	C$player.c$327$2_0$171	= .
-	.globl	C$player.c$327$2_0$171
-;player.c:327: if(keys & PORT_A_KEY_RIGHT) {
-	bit	3, 5 (ix)
+	C$player.c$328$2_0$188	= .
+	.globl	C$player.c$328$2_0$188
+;player.c:328: if(keys & devkit_PORT_A_KEY_RIGHT()) {
+	call	_devkit_PORT_A_KEY_RIGHT
+	ld	a, l
+	and	a, 5 (ix)
+	ld	c, a
+	ld	a, h
+	and	a, 6 (ix)
+	or	a, c
 	jr	Z, 00111$
-	C$player.c$328$3_0$172	= .
-	.globl	C$player.c$328$3_0$172
-;player.c:328: if(player1.xdirection == -1) {
+	C$player.c$329$3_0$189	= .
+	.globl	C$player.c$329$3_0$189
+;player.c:329: if(player1.xdirection == -1) {
 	ld	a, (#(_player1 + 0x0006) + 0)
 	inc	a
 	jr	NZ, 00102$
-	C$player.c$329$4_0$173	= .
-	.globl	C$player.c$329$4_0$173
-;player.c:329: forceReload(player1.entityreference->entityIndex);
+	C$player.c$330$4_0$190	= .
+	.globl	C$player.c$330$4_0$190
+;player.c:330: forceReload(player1.entityreference->entityIndex);
 	ld	hl, (#_player1 + 0)
 	inc	hl
 	inc	hl
@@ -11768,39 +11966,45 @@ _manage_player_jumping_status::
 	call	_forceReload
 	inc	sp
 00102$:
-	C$player.c$331$3_0$172	= .
-	.globl	C$player.c$331$3_0$172
-;player.c:331: player1.xdirection = 1;
+	C$player.c$332$3_0$189	= .
+	.globl	C$player.c$332$3_0$189
+;player.c:332: player1.xdirection = 1;
 	ld	hl, #(_player1 + 0x0006)
 	ld	(hl), #0x01
-	C$player.c$332$3_0$172	= .
-	.globl	C$player.c$332$3_0$172
-;player.c:332: player1.entityreference->direction = RIGHT_DIRECTION;
+	C$player.c$333$3_0$189	= .
+	.globl	C$player.c$333$3_0$189
+;player.c:333: player1.entityreference->direction = RIGHT_DIRECTION;
 	ld	hl, (#_player1 + 0)
 	ld	bc, #0x0005
 	add	hl, bc
 	ld	(hl), #0x00
-	C$player.c$333$3_0$172	= .
-	.globl	C$player.c$333$3_0$172
-;player.c:333: player1.vx = CHAR2UFIX(1);
+	C$player.c$334$3_0$189	= .
+	.globl	C$player.c$334$3_0$189
+;player.c:334: player1.vx = CHAR2UFIX(1);
 	ld	hl, #0x0100
 	ld	((_player1 + 0x0002)), hl
 	jr	00112$
 00111$:
-	C$player.c$334$2_0$171	= .
-	.globl	C$player.c$334$2_0$171
-;player.c:334: } else if(keys & PORT_A_KEY_LEFT) {
-	bit	2, 5 (ix)
+	C$player.c$335$2_0$188	= .
+	.globl	C$player.c$335$2_0$188
+;player.c:335: } else if(keys & devkit_PORT_A_KEY_LEFT()) {
+	call	_devkit_PORT_A_KEY_LEFT
+	ld	a, l
+	and	a, 5 (ix)
+	ld	c, a
+	ld	a, h
+	and	a, 6 (ix)
+	or	a, c
 	jr	Z, 00108$
-	C$player.c$335$3_0$174	= .
-	.globl	C$player.c$335$3_0$174
-;player.c:335: if(player1.xdirection == 1) {
+	C$player.c$336$3_0$191	= .
+	.globl	C$player.c$336$3_0$191
+;player.c:336: if(player1.xdirection == 1) {
 	ld	a, (#(_player1 + 0x0006) + 0)
 	dec	a
 	jr	NZ, 00104$
-	C$player.c$336$4_0$175	= .
-	.globl	C$player.c$336$4_0$175
-;player.c:336: forceReload(player1.entityreference->entityIndex);
+	C$player.c$337$4_0$192	= .
+	.globl	C$player.c$337$4_0$192
+;player.c:337: forceReload(player1.entityreference->entityIndex);
 	ld	hl, (#_player1 + 0)
 	inc	hl
 	inc	hl
@@ -11810,28 +12014,28 @@ _manage_player_jumping_status::
 	call	_forceReload
 	inc	sp
 00104$:
-	C$player.c$338$3_0$174	= .
-	.globl	C$player.c$338$3_0$174
-;player.c:338: player1.xdirection = -1;
+	C$player.c$339$3_0$191	= .
+	.globl	C$player.c$339$3_0$191
+;player.c:339: player1.xdirection = -1;
 	ld	hl, #(_player1 + 0x0006)
 	ld	(hl), #0xff
-	C$player.c$339$3_0$174	= .
-	.globl	C$player.c$339$3_0$174
-;player.c:339: player1.entityreference->direction = LEFT_DIRECTION;
+	C$player.c$340$3_0$191	= .
+	.globl	C$player.c$340$3_0$191
+;player.c:340: player1.entityreference->direction = LEFT_DIRECTION;
 	ld	hl, (#_player1 + 0)
 	ld	bc, #0x0005
 	add	hl, bc
 	ld	(hl), #0x01
-	C$player.c$340$3_0$174	= .
-	.globl	C$player.c$340$3_0$174
-;player.c:340: player1.vx = CHAR2UFIX(1);
+	C$player.c$341$3_0$191	= .
+	.globl	C$player.c$341$3_0$191
+;player.c:341: player1.vx = CHAR2UFIX(1);
 	ld	hl, #0x0100
 	ld	((_player1 + 0x0002)), hl
 	jr	00112$
 00108$:
-	C$player.c$342$3_0$176	= .
-	.globl	C$player.c$342$3_0$176
-;player.c:342: if(isAnimationEnded(player1.entityreference->entityIndex)) {
+	C$player.c$343$3_0$193	= .
+	.globl	C$player.c$343$3_0$193
+;player.c:343: if(isAnimationEnded(player1.entityreference->entityIndex)) {
 	ld	hl, (#_player1 + 0)
 	inc	hl
 	inc	hl
@@ -11842,15 +12046,15 @@ _manage_player_jumping_status::
 	inc	sp
 	bit	0, l
 	jr	Z, 00112$
-	C$player.c$343$4_0$177	= .
-	.globl	C$player.c$343$4_0$177
-;player.c:343: player1.vx = 0;
+	C$player.c$344$4_0$194	= .
+	.globl	C$player.c$344$4_0$194
+;player.c:344: player1.vx = 0;
 	ld	hl, #0x0000
 	ld	((_player1 + 0x0002)), hl
 00112$:
-	C$player.c$346$2_0$171	= .
-	.globl	C$player.c$346$2_0$171
-;player.c:346: if(isAnimationEnded(player1.entityreference->entityIndex)) {
+	C$player.c$347$2_0$188	= .
+	.globl	C$player.c$347$2_0$188
+;player.c:347: if(isAnimationEnded(player1.entityreference->entityIndex)) {
 	ld	hl, (#_player1 + 0)
 	inc	hl
 	inc	hl
@@ -11861,9 +12065,9 @@ _manage_player_jumping_status::
 	inc	sp
 	bit	0, l
 	jr	Z, 00114$
-	C$player.c$347$3_0$178	= .
-	.globl	C$player.c$347$3_0$178
-;player.c:347: setAnimation(player1.entityreference->entityIndex,4);	
+	C$player.c$348$3_0$195	= .
+	.globl	C$player.c$348$3_0$195
+;player.c:348: setAnimation(player1.entityreference->entityIndex,4);	
 	ld	hl, (#_player1 + 0)
 	inc	hl
 	inc	hl
@@ -11876,26 +12080,26 @@ _manage_player_jumping_status::
 	pop	af
 	inc	sp
 00114$:
-	C$player.c$349$2_0$171	= .
-	.globl	C$player.c$349$2_0$171
-;player.c:349: if(player1.ydirection == -1) {
+	C$player.c$350$2_0$188	= .
+	.globl	C$player.c$350$2_0$188
+;player.c:350: if(player1.ydirection == -1) {
 	ld	hl, #(_player1 + 0x0007)
 	ld	e, (hl)
-	C$player.c$350$1_0$170	= .
-	.globl	C$player.c$350$1_0$170
-;player.c:350: player1.vy = player1.vy - 32;	
-	C$player.c$355$1_0$170	= .
-	.globl	C$player.c$355$1_0$170
-;player.c:355: if(player1.vy == 0) {
+	C$player.c$351$1_0$187	= .
+	.globl	C$player.c$351$1_0$187
+;player.c:351: player1.vy = player1.vy - 32;	
+	C$player.c$356$1_0$187	= .
+	.globl	C$player.c$356$1_0$187
+;player.c:356: if(player1.vy == 0) {
 	ld	bc, (#(_player1 + 0x0004) + 0)
-	C$player.c$349$2_0$171	= .
-	.globl	C$player.c$349$2_0$171
-;player.c:349: if(player1.ydirection == -1) {
+	C$player.c$350$2_0$188	= .
+	.globl	C$player.c$350$2_0$188
+;player.c:350: if(player1.ydirection == -1) {
 	inc	e
 	jr	NZ, 00116$
-	C$player.c$350$3_0$179	= .
-	.globl	C$player.c$350$3_0$179
-;player.c:350: player1.vy = player1.vy - 32;	
+	C$player.c$351$3_0$196	= .
+	.globl	C$player.c$351$3_0$196
+;player.c:351: player1.vy = player1.vy - 32;	
 	ld	a, c
 	add	a, #0xe0
 	ld	c, a
@@ -11905,37 +12109,37 @@ _manage_player_jumping_status::
 	ld	((_player1 + 0x0004)), bc
 	jr	00117$
 00116$:
-	C$player.c$352$3_0$180	= .
-	.globl	C$player.c$352$3_0$180
-;player.c:352: player1.vy = player1.vy + 32;
+	C$player.c$353$3_0$197	= .
+	.globl	C$player.c$353$3_0$197
+;player.c:353: player1.vy = player1.vy + 32;
 	ld	hl, #0x0020
 	add	hl, bc
 	ex	de, hl
 	ld	((_player1 + 0x0004)), de
 00117$:
-	C$player.c$355$2_0$171	= .
-	.globl	C$player.c$355$2_0$171
-;player.c:355: if(player1.vy == 0) {
+	C$player.c$356$2_0$188	= .
+	.globl	C$player.c$356$2_0$188
+;player.c:356: if(player1.vy == 0) {
 	ld	hl, (#(_player1 + 0x0004) + 0)
 	ld	a, h
 	or	a, l
 	jr	NZ, 00119$
-	C$player.c$356$3_0$181	= .
-	.globl	C$player.c$356$3_0$181
-;player.c:356: player1.ydirection = 1;	
+	C$player.c$357$3_0$198	= .
+	.globl	C$player.c$357$3_0$198
+;player.c:357: player1.ydirection = 1;	
 	ld	hl, #(_player1 + 0x0007)
 	ld	(hl), #0x01
 00119$:
-	C$player.c$358$2_0$171	= .
-	.globl	C$player.c$358$2_0$171
-;player.c:358: if(player1.vy >= CHAR2UFIX(3)) {
+	C$player.c$359$2_0$188	= .
+	.globl	C$player.c$359$2_0$188
+;player.c:359: if(player1.vy >= CHAR2UFIX(3)) {
 	ld	hl, (#(_player1 + 0x0004) + 0)
 	ld	a, h
 	sub	a, #0x03
 	jr	C, 00121$
-	C$player.c$359$3_0$182	= .
-	.globl	C$player.c$359$3_0$182
-;player.c:359: setAnimation(player1.entityreference->entityIndex,0);
+	C$player.c$360$3_0$199	= .
+	.globl	C$player.c$360$3_0$199
+;player.c:360: setAnimation(player1.entityreference->entityIndex,0);
 	ld	hl, (#_player1 + 0)
 	inc	hl
 	inc	hl
@@ -11947,43 +12151,49 @@ _manage_player_jumping_status::
 	call	_setAnimation
 	pop	af
 	inc	sp
-	C$player.c$360$3_0$182	= .
-	.globl	C$player.c$360$3_0$182
-;player.c:360: player1.status = PLAYER_STATUS_IDDLE;
+	C$player.c$361$3_0$199	= .
+	.globl	C$player.c$361$3_0$199
+;player.c:361: player1.status = PLAYER_STATUS_IDDLE;
 	ld	hl, #(_player1 + 0x0008)
 	ld	(hl), #0x00
-	C$player.c$361$3_0$182	= .
-	.globl	C$player.c$361$3_0$182
-;player.c:361: player1.status2 = PLAYER_STATUS2_IDDLE;
+	C$player.c$362$3_0$199	= .
+	.globl	C$player.c$362$3_0$199
+;player.c:362: player1.status2 = PLAYER_STATUS2_IDDLE;
 	ld	hl, #(_player1 + 0x0009)
 	ld	(hl), #0x00
-	C$player.c$362$3_0$182	= .
-	.globl	C$player.c$362$3_0$182
-;player.c:362: player1.vx = 0;
+	C$player.c$363$3_0$199	= .
+	.globl	C$player.c$363$3_0$199
+;player.c:363: player1.vx = 0;
 	ld	hl, #0x0000
 	ld	((_player1 + 0x0002)), hl
-	C$player.c$363$3_0$182	= .
-	.globl	C$player.c$363$3_0$182
-;player.c:363: player1.vy = 0;
+	C$player.c$364$3_0$199	= .
+	.globl	C$player.c$364$3_0$199
+;player.c:364: player1.vy = 0;
 	ld	l, h
 	ld	((_player1 + 0x0004)), hl
 00121$:
-	C$player.c$365$2_0$171	= .
-	.globl	C$player.c$365$2_0$171
-;player.c:365: if((keys & PORT_A_KEY_1) && player1.status2 == PLAYER_STATUS2_IDDLE) {
-	bit	4, 5 (ix)
-	jp	Z,00152$
+	C$player.c$366$2_0$188	= .
+	.globl	C$player.c$366$2_0$188
+;player.c:366: if((keys & devkit_PORT_A_KEY_1()) && player1.status2 == PLAYER_STATUS2_IDDLE) {
+	call	_devkit_PORT_A_KEY_1
+	ld	a, l
+	and	a, 5 (ix)
+	ld	c, a
+	ld	a, h
+	and	a, 6 (ix)
+	or	a, c
+	jp	Z, 00152$
 	ld	hl, #_player1 + 9
 	ld	a, (hl)
 	or	a, a
 	jp	NZ, 00152$
-	C$player.c$366$3_0$183	= .
-	.globl	C$player.c$366$3_0$183
-;player.c:366: player1.status2 = PLAYER_STATUS2_PUNCHING;
+	C$player.c$367$3_0$200	= .
+	.globl	C$player.c$367$3_0$200
+;player.c:367: player1.status2 = PLAYER_STATUS2_PUNCHING;
 	ld	(hl), #0x01
-	C$player.c$367$3_0$183	= .
-	.globl	C$player.c$367$3_0$183
-;player.c:367: setAnimation(player1.entityreference->entityIndex,5);
+	C$player.c$368$3_0$200	= .
+	.globl	C$player.c$368$3_0$200
+;player.c:368: setAnimation(player1.entityreference->entityIndex,5);
 	ld	hl, (#_player1 + 0)
 	inc	hl
 	inc	hl
@@ -11995,26 +12205,32 @@ _manage_player_jumping_status::
 	call	_setAnimation
 	pop	af
 	inc	sp
-	C$player.c$368$3_0$183	= .
-	.globl	C$player.c$368$3_0$183
-;player.c:368: play_punch_sound1();
+	C$player.c$369$3_0$200	= .
+	.globl	C$player.c$369$3_0$200
+;player.c:369: play_punch_sound1();
 	call	_play_punch_sound1
 	jp	00152$
 00150$:
-	C$player.c$371$2_0$184	= .
-	.globl	C$player.c$371$2_0$184
-;player.c:371: if(keys & PORT_B_KEY_RIGHT) {
-	bit	1, 6 (ix)
+	C$player.c$372$2_0$201	= .
+	.globl	C$player.c$372$2_0$201
+;player.c:372: if(keys & devkit_PORT_B_KEY_RIGHT()) {
+	call	_devkit_PORT_B_KEY_RIGHT
+	ld	a, l
+	and	a, 5 (ix)
+	ld	c, a
+	ld	a, h
+	and	a, 6 (ix)
+	or	a, c
 	jr	Z, 00135$
-	C$player.c$372$3_0$185	= .
-	.globl	C$player.c$372$3_0$185
-;player.c:372: if(player2.xdirection == -1) {
+	C$player.c$373$3_0$202	= .
+	.globl	C$player.c$373$3_0$202
+;player.c:373: if(player2.xdirection == -1) {
 	ld	a, (#(_player2 + 0x0006) + 0)
 	inc	a
 	jr	NZ, 00126$
-	C$player.c$373$4_0$186	= .
-	.globl	C$player.c$373$4_0$186
-;player.c:373: forceReload(player2.entityreference->entityIndex);
+	C$player.c$374$4_0$203	= .
+	.globl	C$player.c$374$4_0$203
+;player.c:374: forceReload(player2.entityreference->entityIndex);
 	ld	hl, (#_player2 + 0)
 	inc	hl
 	inc	hl
@@ -12024,39 +12240,45 @@ _manage_player_jumping_status::
 	call	_forceReload
 	inc	sp
 00126$:
-	C$player.c$375$3_0$185	= .
-	.globl	C$player.c$375$3_0$185
-;player.c:375: player2.xdirection = 1;
+	C$player.c$376$3_0$202	= .
+	.globl	C$player.c$376$3_0$202
+;player.c:376: player2.xdirection = 1;
 	ld	hl, #(_player2 + 0x0006)
 	ld	(hl), #0x01
-	C$player.c$376$3_0$185	= .
-	.globl	C$player.c$376$3_0$185
-;player.c:376: player2.entityreference->direction = RIGHT_DIRECTION;
+	C$player.c$377$3_0$202	= .
+	.globl	C$player.c$377$3_0$202
+;player.c:377: player2.entityreference->direction = RIGHT_DIRECTION;
 	ld	hl, (#_player2 + 0)
 	ld	bc, #0x0005
 	add	hl, bc
 	ld	(hl), #0x00
-	C$player.c$377$3_0$185	= .
-	.globl	C$player.c$377$3_0$185
-;player.c:377: player2.vx = CHAR2UFIX(1);
+	C$player.c$378$3_0$202	= .
+	.globl	C$player.c$378$3_0$202
+;player.c:378: player2.vx = CHAR2UFIX(1);
 	ld	hl, #0x0100
 	ld	((_player2 + 0x0002)), hl
 	jr	00136$
 00135$:
-	C$player.c$378$2_0$184	= .
-	.globl	C$player.c$378$2_0$184
-;player.c:378: } else if(keys & PORT_B_KEY_LEFT) {
-	bit	0, 6 (ix)
+	C$player.c$379$2_0$201	= .
+	.globl	C$player.c$379$2_0$201
+;player.c:379: } else if(keys & devkit_PORT_B_KEY_LEFT()) {
+	call	_devkit_PORT_B_KEY_LEFT
+	ld	a, l
+	and	a, 5 (ix)
+	ld	c, a
+	ld	a, h
+	and	a, 6 (ix)
+	or	a, c
 	jr	Z, 00132$
-	C$player.c$379$3_0$187	= .
-	.globl	C$player.c$379$3_0$187
-;player.c:379: if(player2.xdirection == 1) {
+	C$player.c$380$3_0$204	= .
+	.globl	C$player.c$380$3_0$204
+;player.c:380: if(player2.xdirection == 1) {
 	ld	a, (#(_player2 + 0x0006) + 0)
 	dec	a
 	jr	NZ, 00128$
-	C$player.c$380$4_0$188	= .
-	.globl	C$player.c$380$4_0$188
-;player.c:380: forceReload(player2.entityreference->entityIndex);
+	C$player.c$381$4_0$205	= .
+	.globl	C$player.c$381$4_0$205
+;player.c:381: forceReload(player2.entityreference->entityIndex);
 	ld	hl, (#_player2 + 0)
 	inc	hl
 	inc	hl
@@ -12066,28 +12288,28 @@ _manage_player_jumping_status::
 	call	_forceReload
 	inc	sp
 00128$:
-	C$player.c$382$3_0$187	= .
-	.globl	C$player.c$382$3_0$187
-;player.c:382: player2.xdirection = -1;
+	C$player.c$383$3_0$204	= .
+	.globl	C$player.c$383$3_0$204
+;player.c:383: player2.xdirection = -1;
 	ld	hl, #(_player2 + 0x0006)
 	ld	(hl), #0xff
-	C$player.c$383$3_0$187	= .
-	.globl	C$player.c$383$3_0$187
-;player.c:383: player2.entityreference->direction = LEFT_DIRECTION;
+	C$player.c$384$3_0$204	= .
+	.globl	C$player.c$384$3_0$204
+;player.c:384: player2.entityreference->direction = LEFT_DIRECTION;
 	ld	hl, (#_player2 + 0)
 	ld	bc, #0x0005
 	add	hl, bc
 	ld	(hl), #0x01
-	C$player.c$384$3_0$187	= .
-	.globl	C$player.c$384$3_0$187
-;player.c:384: player2.vx = CHAR2UFIX(1);
+	C$player.c$385$3_0$204	= .
+	.globl	C$player.c$385$3_0$204
+;player.c:385: player2.vx = CHAR2UFIX(1);
 	ld	hl, #0x0100
 	ld	((_player2 + 0x0002)), hl
 	jr	00136$
 00132$:
-	C$player.c$386$3_0$189	= .
-	.globl	C$player.c$386$3_0$189
-;player.c:386: if(isAnimationEnded(player2.entityreference->entityIndex)) {
+	C$player.c$387$3_0$206	= .
+	.globl	C$player.c$387$3_0$206
+;player.c:387: if(isAnimationEnded(player2.entityreference->entityIndex)) {
 	ld	hl, (#_player2 + 0)
 	inc	hl
 	inc	hl
@@ -12098,15 +12320,15 @@ _manage_player_jumping_status::
 	inc	sp
 	bit	0, l
 	jr	Z, 00136$
-	C$player.c$387$4_0$190	= .
-	.globl	C$player.c$387$4_0$190
-;player.c:387: player2.vx = 0;
+	C$player.c$388$4_0$207	= .
+	.globl	C$player.c$388$4_0$207
+;player.c:388: player2.vx = 0;
 	ld	hl, #0x0000
 	ld	((_player2 + 0x0002)), hl
 00136$:
-	C$player.c$390$2_0$184	= .
-	.globl	C$player.c$390$2_0$184
-;player.c:390: if(isAnimationEnded(player2.entityreference->entityIndex)) {
+	C$player.c$391$2_0$201	= .
+	.globl	C$player.c$391$2_0$201
+;player.c:391: if(isAnimationEnded(player2.entityreference->entityIndex)) {
 	ld	hl, (#_player2 + 0)
 	inc	hl
 	inc	hl
@@ -12117,9 +12339,9 @@ _manage_player_jumping_status::
 	inc	sp
 	bit	0, l
 	jr	Z, 00138$
-	C$player.c$391$3_0$191	= .
-	.globl	C$player.c$391$3_0$191
-;player.c:391: setAnimation(player2.entityreference->entityIndex,4);	
+	C$player.c$392$3_0$208	= .
+	.globl	C$player.c$392$3_0$208
+;player.c:392: setAnimation(player2.entityreference->entityIndex,4);	
 	ld	hl, (#_player2 + 0)
 	inc	hl
 	inc	hl
@@ -12132,26 +12354,26 @@ _manage_player_jumping_status::
 	pop	af
 	inc	sp
 00138$:
-	C$player.c$393$2_0$184	= .
-	.globl	C$player.c$393$2_0$184
-;player.c:393: if(player2.ydirection == -1) {
+	C$player.c$394$2_0$201	= .
+	.globl	C$player.c$394$2_0$201
+;player.c:394: if(player2.ydirection == -1) {
 	ld	hl, #(_player2 + 0x0007)
 	ld	e, (hl)
-	C$player.c$394$1_0$170	= .
-	.globl	C$player.c$394$1_0$170
-;player.c:394: player2.vy = player2.vy - 32;	
-	C$player.c$399$1_0$170	= .
-	.globl	C$player.c$399$1_0$170
-;player.c:399: if(player2.vy == 0) {
+	C$player.c$395$1_0$187	= .
+	.globl	C$player.c$395$1_0$187
+;player.c:395: player2.vy = player2.vy - 32;	
+	C$player.c$400$1_0$187	= .
+	.globl	C$player.c$400$1_0$187
+;player.c:400: if(player2.vy == 0) {
 	ld	bc, (#(_player2 + 0x0004) + 0)
-	C$player.c$393$2_0$184	= .
-	.globl	C$player.c$393$2_0$184
-;player.c:393: if(player2.ydirection == -1) {
+	C$player.c$394$2_0$201	= .
+	.globl	C$player.c$394$2_0$201
+;player.c:394: if(player2.ydirection == -1) {
 	inc	e
 	jr	NZ, 00140$
-	C$player.c$394$3_0$192	= .
-	.globl	C$player.c$394$3_0$192
-;player.c:394: player2.vy = player2.vy - 32;	
+	C$player.c$395$3_0$209	= .
+	.globl	C$player.c$395$3_0$209
+;player.c:395: player2.vy = player2.vy - 32;	
 	ld	a, c
 	add	a, #0xe0
 	ld	c, a
@@ -12161,37 +12383,37 @@ _manage_player_jumping_status::
 	ld	((_player2 + 0x0004)), bc
 	jr	00141$
 00140$:
-	C$player.c$396$3_0$193	= .
-	.globl	C$player.c$396$3_0$193
-;player.c:396: player2.vy = player2.vy + 32;
+	C$player.c$397$3_0$210	= .
+	.globl	C$player.c$397$3_0$210
+;player.c:397: player2.vy = player2.vy + 32;
 	ld	hl, #0x0020
 	add	hl, bc
 	ex	de, hl
 	ld	((_player2 + 0x0004)), de
 00141$:
-	C$player.c$399$2_0$184	= .
-	.globl	C$player.c$399$2_0$184
-;player.c:399: if(player2.vy == 0) {
+	C$player.c$400$2_0$201	= .
+	.globl	C$player.c$400$2_0$201
+;player.c:400: if(player2.vy == 0) {
 	ld	hl, (#(_player2 + 0x0004) + 0)
 	ld	a, h
 	or	a, l
 	jr	NZ, 00143$
-	C$player.c$400$3_0$194	= .
-	.globl	C$player.c$400$3_0$194
-;player.c:400: player2.ydirection = 1;	
+	C$player.c$401$3_0$211	= .
+	.globl	C$player.c$401$3_0$211
+;player.c:401: player2.ydirection = 1;	
 	ld	hl, #(_player2 + 0x0007)
 	ld	(hl), #0x01
 00143$:
-	C$player.c$402$2_0$184	= .
-	.globl	C$player.c$402$2_0$184
-;player.c:402: if(player2.vy >= CHAR2UFIX(3)) {
+	C$player.c$403$2_0$201	= .
+	.globl	C$player.c$403$2_0$201
+;player.c:403: if(player2.vy >= CHAR2UFIX(3)) {
 	ld	hl, (#(_player2 + 0x0004) + 0)
 	ld	a, h
 	sub	a, #0x03
 	jr	C, 00145$
-	C$player.c$403$3_0$195	= .
-	.globl	C$player.c$403$3_0$195
-;player.c:403: setAnimation(player2.entityreference->entityIndex,0);
+	C$player.c$404$3_0$212	= .
+	.globl	C$player.c$404$3_0$212
+;player.c:404: setAnimation(player2.entityreference->entityIndex,0);
 	ld	hl, (#_player2 + 0)
 	inc	hl
 	inc	hl
@@ -12203,43 +12425,49 @@ _manage_player_jumping_status::
 	call	_setAnimation
 	pop	af
 	inc	sp
-	C$player.c$404$3_0$195	= .
-	.globl	C$player.c$404$3_0$195
-;player.c:404: player2.status = PLAYER_STATUS_IDDLE;
+	C$player.c$405$3_0$212	= .
+	.globl	C$player.c$405$3_0$212
+;player.c:405: player2.status = PLAYER_STATUS_IDDLE;
 	ld	hl, #(_player2 + 0x0008)
 	ld	(hl), #0x00
-	C$player.c$405$3_0$195	= .
-	.globl	C$player.c$405$3_0$195
-;player.c:405: player2.status2 = PLAYER_STATUS2_IDDLE;
+	C$player.c$406$3_0$212	= .
+	.globl	C$player.c$406$3_0$212
+;player.c:406: player2.status2 = PLAYER_STATUS2_IDDLE;
 	ld	hl, #(_player2 + 0x0009)
 	ld	(hl), #0x00
-	C$player.c$406$3_0$195	= .
-	.globl	C$player.c$406$3_0$195
-;player.c:406: player2.vx = 0;
+	C$player.c$407$3_0$212	= .
+	.globl	C$player.c$407$3_0$212
+;player.c:407: player2.vx = 0;
 	ld	hl, #0x0000
 	ld	((_player2 + 0x0002)), hl
-	C$player.c$407$3_0$195	= .
-	.globl	C$player.c$407$3_0$195
-;player.c:407: player2.vy = 0;
+	C$player.c$408$3_0$212	= .
+	.globl	C$player.c$408$3_0$212
+;player.c:408: player2.vy = 0;
 	ld	l, h
 	ld	((_player2 + 0x0004)), hl
 00145$:
-	C$player.c$409$2_0$184	= .
-	.globl	C$player.c$409$2_0$184
-;player.c:409: if((keys & PORT_B_KEY_1) && player2.status2 == PLAYER_STATUS2_IDDLE) {
-	bit	2, 6 (ix)
+	C$player.c$410$2_0$201	= .
+	.globl	C$player.c$410$2_0$201
+;player.c:410: if((keys & devkit_PORT_B_KEY_1()) && player2.status2 == PLAYER_STATUS2_IDDLE) {
+	call	_devkit_PORT_B_KEY_1
+	ld	a, l
+	and	a, 5 (ix)
+	ld	c, a
+	ld	a, h
+	and	a, 6 (ix)
+	or	a, c
 	jr	Z, 00152$
 	ld	hl, #_player2 + 9
 	ld	a, (hl)
 	or	a, a
 	jr	NZ, 00152$
-	C$player.c$410$3_0$196	= .
-	.globl	C$player.c$410$3_0$196
-;player.c:410: player2.status2 = PLAYER_STATUS2_PUNCHING;
+	C$player.c$411$3_0$213	= .
+	.globl	C$player.c$411$3_0$213
+;player.c:411: player2.status2 = PLAYER_STATUS2_PUNCHING;
 	ld	(hl), #0x01
-	C$player.c$411$3_0$196	= .
-	.globl	C$player.c$411$3_0$196
-;player.c:411: setAnimation(player2.entityreference->entityIndex,5);
+	C$player.c$412$3_0$213	= .
+	.globl	C$player.c$412$3_0$213
+;player.c:412: setAnimation(player2.entityreference->entityIndex,5);
 	ld	hl, (#_player2 + 0)
 	inc	hl
 	inc	hl
@@ -12251,25 +12479,25 @@ _manage_player_jumping_status::
 	call	_setAnimation
 	pop	af
 	inc	sp
-	C$player.c$412$3_0$196	= .
-	.globl	C$player.c$412$3_0$196
-;player.c:412: play_punch_sound1();
+	C$player.c$413$3_0$213	= .
+	.globl	C$player.c$413$3_0$213
+;player.c:413: play_punch_sound1();
 	call	_play_punch_sound1
 00152$:
-	C$player.c$415$1_0$170	= .
-	.globl	C$player.c$415$1_0$170
-;player.c:415: }
+	C$player.c$416$1_0$187	= .
+	.globl	C$player.c$416$1_0$187
+;player.c:416: }
 	pop	ix
-	C$player.c$415$1_0$170	= .
-	.globl	C$player.c$415$1_0$170
+	C$player.c$416$1_0$187	= .
+	.globl	C$player.c$416$1_0$187
 	XG$manage_player_jumping_status$0$0	= .
 	.globl	XG$manage_player_jumping_status$0$0
 	ret
 	G$manage_player_crouched_status$0$0	= .
 	.globl	G$manage_player_crouched_status$0$0
-	C$player.c$417$1_0$198	= .
-	.globl	C$player.c$417$1_0$198
-;player.c:417: void manage_player_crouched_status(unsigned char player_number, unsigned int keys) {
+	C$player.c$418$1_0$215	= .
+	.globl	C$player.c$418$1_0$215
+;player.c:418: void manage_player_crouched_status(unsigned char player_number, unsigned int keys) {
 ;	---------------------------------
 ; Function manage_player_crouched_status
 ; ---------------------------------
@@ -12277,42 +12505,39 @@ _manage_player_crouched_status::
 	push	ix
 	ld	ix,#0
 	add	ix,sp
-	C$player.c$418$1_0$198	= .
-	.globl	C$player.c$418$1_0$198
-;player.c:418: if(player_number == 1) {
+	C$player.c$419$1_0$215	= .
+	.globl	C$player.c$419$1_0$215
+;player.c:419: if(player_number == 1) {
 	ld	a, 4 (ix)
 	dec	a
 	jp	NZ,00126$
-	C$player.c$419$2_0$199	= .
-	.globl	C$player.c$419$2_0$199
-;player.c:419: if(player1.status2 == PLAYER_STATUS2_PUNCHING) {
-	ld	bc, #_player1 + 9
-	ld	a, (bc)
+	C$player.c$420$2_0$216	= .
+	.globl	C$player.c$420$2_0$216
+;player.c:420: if(player1.status2 == PLAYER_STATUS2_PUNCHING) {
+	ld	a, (#(_player1 + 0x0009) + 0)
 	dec	a
 	jr	NZ, 00111$
-	C$player.c$420$3_0$200	= .
-	.globl	C$player.c$420$3_0$200
-;player.c:420: if(isAnimationEnded(player1.entityreference->entityIndex)) {
+	C$player.c$421$3_0$217	= .
+	.globl	C$player.c$421$3_0$217
+;player.c:421: if(isAnimationEnded(player1.entityreference->entityIndex)) {
 	ld	hl, (#_player1 + 0)
 	inc	hl
 	inc	hl
 	ld	a, (hl)
-	push	bc
 	push	af
 	inc	sp
 	call	_isAnimationEnded
 	inc	sp
-	pop	bc
 	bit	0, l
 	jp	Z, 00128$
-	C$player.c$421$4_0$201	= .
-	.globl	C$player.c$421$4_0$201
-;player.c:421: player1.status2 = PLAYER_STATUS2_IDDLE;
-	xor	a, a
-	ld	(bc), a
-	C$player.c$422$4_0$201	= .
-	.globl	C$player.c$422$4_0$201
-;player.c:422: setAnimation(player1.entityreference->entityIndex,6);
+	C$player.c$422$4_0$218	= .
+	.globl	C$player.c$422$4_0$218
+;player.c:422: player1.status2 = PLAYER_STATUS2_IDDLE;
+	ld	hl, #(_player1 + 0x0009)
+	ld	(hl), #0x00
+	C$player.c$423$4_0$218	= .
+	.globl	C$player.c$423$4_0$218
+;player.c:423: setAnimation(player1.entityreference->entityIndex,6);
 	ld	hl, (#_player1 + 0)
 	inc	hl
 	inc	hl
@@ -12324,26 +12549,32 @@ _manage_player_crouched_status::
 	call	_setAnimation
 	pop	af
 	inc	sp
-	C$player.c$423$4_0$201	= .
-	.globl	C$player.c$423$4_0$201
-;player.c:423: player1.vx = 0;
+	C$player.c$424$4_0$218	= .
+	.globl	C$player.c$424$4_0$218
+;player.c:424: player1.vx = 0;
 	ld	hl, #0x0000
 	ld	((_player1 + 0x0002)), hl
-	C$player.c$424$4_0$201	= .
-	.globl	C$player.c$424$4_0$201
-;player.c:424: player1.vy = 0;
+	C$player.c$425$4_0$218	= .
+	.globl	C$player.c$425$4_0$218
+;player.c:425: player1.vy = 0;
 	ld	l, h
 	ld	((_player1 + 0x0004)), hl
 	jp	00128$
 00111$:
-	C$player.c$427$3_0$202	= .
-	.globl	C$player.c$427$3_0$202
-;player.c:427: if(!(keys & PORT_A_KEY_DOWN)) {
-	bit	1, 5 (ix)
+	C$player.c$428$3_0$219	= .
+	.globl	C$player.c$428$3_0$219
+;player.c:428: if(!(keys & devkit_PORT_A_KEY_DOWN())) {
+	call	_devkit_PORT_A_KEY_DOWN
+	ld	a, l
+	and	a, 5 (ix)
+	ld	c, a
+	ld	a, h
+	and	a, 6 (ix)
+	or	a, c
 	jr	NZ, 00108$
-	C$player.c$428$4_0$203	= .
-	.globl	C$player.c$428$4_0$203
-;player.c:428: if(isAnimationEnded(player1.entityreference->entityIndex)) {
+	C$player.c$429$4_0$220	= .
+	.globl	C$player.c$429$4_0$220
+;player.c:429: if(isAnimationEnded(player1.entityreference->entityIndex)) {
 	ld	hl, (#_player1 + 0)
 	inc	hl
 	inc	hl
@@ -12354,9 +12585,9 @@ _manage_player_crouched_status::
 	inc	sp
 	bit	0, l
 	jp	Z, 00128$
-	C$player.c$429$5_0$204	= .
-	.globl	C$player.c$429$5_0$204
-;player.c:429: setAnimation(player1.entityreference->entityIndex,0);
+	C$player.c$430$5_0$221	= .
+	.globl	C$player.c$430$5_0$221
+;player.c:430: setAnimation(player1.entityreference->entityIndex,0);
 	ld	hl, (#_player1 + 0)
 	inc	hl
 	inc	hl
@@ -12368,26 +12599,32 @@ _manage_player_crouched_status::
 	call	_setAnimation
 	pop	af
 	inc	sp
-	C$player.c$430$5_0$204	= .
-	.globl	C$player.c$430$5_0$204
-;player.c:430: player1.status = PLAYER_STATUS_IDDLE;
+	C$player.c$431$5_0$221	= .
+	.globl	C$player.c$431$5_0$221
+;player.c:431: player1.status = PLAYER_STATUS_IDDLE;
 	ld	hl, #(_player1 + 0x0008)
 	ld	(hl), #0x00
 	jp	00128$
 00108$:
-	C$player.c$433$4_0$205	= .
-	.globl	C$player.c$433$4_0$205
-;player.c:433: if(keys & PORT_A_KEY_1) {
-	bit	4, 5 (ix)
-	jp	Z,00128$
-	C$player.c$434$5_0$206	= .
-	.globl	C$player.c$434$5_0$206
-;player.c:434: player1.status2 = PLAYER_STATUS2_PUNCHING;
-	ld	a, #0x01
-	ld	(bc), a
-	C$player.c$435$5_0$206	= .
-	.globl	C$player.c$435$5_0$206
-;player.c:435: setAnimation(player1.entityreference->entityIndex,7);
+	C$player.c$434$4_0$222	= .
+	.globl	C$player.c$434$4_0$222
+;player.c:434: if(keys & devkit_PORT_A_KEY_1()) {
+	call	_devkit_PORT_A_KEY_1
+	ld	a, l
+	and	a, 5 (ix)
+	ld	c, a
+	ld	a, h
+	and	a, 6 (ix)
+	or	a, c
+	jp	Z, 00128$
+	C$player.c$435$5_0$223	= .
+	.globl	C$player.c$435$5_0$223
+;player.c:435: player1.status2 = PLAYER_STATUS2_PUNCHING;
+	ld	hl, #(_player1 + 0x0009)
+	ld	(hl), #0x01
+	C$player.c$436$5_0$223	= .
+	.globl	C$player.c$436$5_0$223
+;player.c:436: setAnimation(player1.entityreference->entityIndex,7);
 	ld	hl, (#_player1 + 0)
 	inc	hl
 	inc	hl
@@ -12399,22 +12636,22 @@ _manage_player_crouched_status::
 	call	_setAnimation
 	pop	af
 	inc	sp
-	C$player.c$436$5_0$206	= .
-	.globl	C$player.c$436$5_0$206
-;player.c:436: play_punch_sound1();
+	C$player.c$437$5_0$223	= .
+	.globl	C$player.c$437$5_0$223
+;player.c:437: play_punch_sound1();
 	call	_play_punch_sound1
 	jp	00128$
 00126$:
-	C$player.c$441$2_0$207	= .
-	.globl	C$player.c$441$2_0$207
-;player.c:441: if(player2.status2 == PLAYER_STATUS2_PUNCHING) {
+	C$player.c$442$2_0$224	= .
+	.globl	C$player.c$442$2_0$224
+;player.c:442: if(player2.status2 == PLAYER_STATUS2_PUNCHING) {
 	ld	bc, #_player2 + 9
 	ld	a, (bc)
 	dec	a
 	jr	NZ, 00123$
-	C$player.c$442$3_0$208	= .
-	.globl	C$player.c$442$3_0$208
-;player.c:442: if(isAnimationEnded(player2.entityreference->entityIndex)) {
+	C$player.c$443$3_0$225	= .
+	.globl	C$player.c$443$3_0$225
+;player.c:443: if(isAnimationEnded(player2.entityreference->entityIndex)) {
 	ld	hl, (#_player2 + 0)
 	inc	hl
 	inc	hl
@@ -12426,15 +12663,15 @@ _manage_player_crouched_status::
 	inc	sp
 	pop	bc
 	bit	0, l
-	jr	Z, 00128$
-	C$player.c$443$4_0$209	= .
-	.globl	C$player.c$443$4_0$209
-;player.c:443: player2.status2 = PLAYER_STATUS2_IDDLE;
+	jp	Z, 00128$
+	C$player.c$444$4_0$226	= .
+	.globl	C$player.c$444$4_0$226
+;player.c:444: player2.status2 = PLAYER_STATUS2_IDDLE;
 	xor	a, a
 	ld	(bc), a
-	C$player.c$444$4_0$209	= .
-	.globl	C$player.c$444$4_0$209
-;player.c:444: setAnimation(player2.entityreference->entityIndex,6);
+	C$player.c$445$4_0$226	= .
+	.globl	C$player.c$445$4_0$226
+;player.c:445: setAnimation(player2.entityreference->entityIndex,6);
 	ld	hl, (#_player2 + 0)
 	inc	hl
 	inc	hl
@@ -12446,26 +12683,34 @@ _manage_player_crouched_status::
 	call	_setAnimation
 	pop	af
 	inc	sp
-	C$player.c$445$4_0$209	= .
-	.globl	C$player.c$445$4_0$209
-;player.c:445: player2.vx = 0;
+	C$player.c$446$4_0$226	= .
+	.globl	C$player.c$446$4_0$226
+;player.c:446: player2.vx = 0;
 	ld	hl, #0x0000
 	ld	((_player2 + 0x0002)), hl
-	C$player.c$446$4_0$209	= .
-	.globl	C$player.c$446$4_0$209
-;player.c:446: player2.vy = 0;
+	C$player.c$447$4_0$226	= .
+	.globl	C$player.c$447$4_0$226
+;player.c:447: player2.vy = 0;
 	ld	l, h
 	ld	((_player2 + 0x0004)), hl
 	jr	00128$
 00123$:
-	C$player.c$449$3_0$210	= .
-	.globl	C$player.c$449$3_0$210
-;player.c:449: if(!(keys & PORT_B_KEY_DOWN)) {
-	bit	7, 5 (ix)
+	C$player.c$450$3_0$227	= .
+	.globl	C$player.c$450$3_0$227
+;player.c:450: if(!(keys & devkit_PORT_B_KEY_DOWN())) {
+	push	bc
+	call	_devkit_PORT_B_KEY_DOWN
+	pop	bc
+	ld	a, l
+	and	a, 5 (ix)
+	ld	e, a
+	ld	a, h
+	and	a, 6 (ix)
+	or	a, e
 	jr	NZ, 00120$
-	C$player.c$450$4_0$211	= .
-	.globl	C$player.c$450$4_0$211
-;player.c:450: if(isAnimationEnded(player2.entityreference->entityIndex)) {
+	C$player.c$451$4_0$228	= .
+	.globl	C$player.c$451$4_0$228
+;player.c:451: if(isAnimationEnded(player2.entityreference->entityIndex)) {
 	ld	hl, (#_player2 + 0)
 	inc	hl
 	inc	hl
@@ -12476,9 +12721,9 @@ _manage_player_crouched_status::
 	inc	sp
 	bit	0, l
 	jr	Z, 00128$
-	C$player.c$451$5_0$212	= .
-	.globl	C$player.c$451$5_0$212
-;player.c:451: setAnimation(player2.entityreference->entityIndex,0);
+	C$player.c$452$5_0$229	= .
+	.globl	C$player.c$452$5_0$229
+;player.c:452: setAnimation(player2.entityreference->entityIndex,0);
 	ld	hl, (#_player2 + 0)
 	inc	hl
 	inc	hl
@@ -12490,26 +12735,34 @@ _manage_player_crouched_status::
 	call	_setAnimation
 	pop	af
 	inc	sp
-	C$player.c$452$5_0$212	= .
-	.globl	C$player.c$452$5_0$212
-;player.c:452: player2.status = PLAYER_STATUS_IDDLE;
+	C$player.c$453$5_0$229	= .
+	.globl	C$player.c$453$5_0$229
+;player.c:453: player2.status = PLAYER_STATUS_IDDLE;
 	ld	hl, #(_player2 + 0x0008)
 	ld	(hl), #0x00
 	jr	00128$
 00120$:
-	C$player.c$455$4_0$213	= .
-	.globl	C$player.c$455$4_0$213
-;player.c:455: if(keys & PORT_B_KEY_1) {
-	bit	2, 6 (ix)
+	C$player.c$456$4_0$230	= .
+	.globl	C$player.c$456$4_0$230
+;player.c:456: if(keys & devkit_PORT_B_KEY_1()) {
+	push	bc
+	call	_devkit_PORT_B_KEY_1
+	pop	bc
+	ld	a, l
+	and	a, 5 (ix)
+	ld	e, a
+	ld	a, h
+	and	a, 6 (ix)
+	or	a, e
 	jr	Z, 00128$
-	C$player.c$456$5_0$214	= .
-	.globl	C$player.c$456$5_0$214
-;player.c:456: player2.status2 = PLAYER_STATUS2_PUNCHING;
+	C$player.c$457$5_0$231	= .
+	.globl	C$player.c$457$5_0$231
+;player.c:457: player2.status2 = PLAYER_STATUS2_PUNCHING;
 	ld	a, #0x01
 	ld	(bc), a
-	C$player.c$457$5_0$214	= .
-	.globl	C$player.c$457$5_0$214
-;player.c:457: setAnimation(player2.entityreference->entityIndex,7);
+	C$player.c$458$5_0$231	= .
+	.globl	C$player.c$458$5_0$231
+;player.c:458: setAnimation(player2.entityreference->entityIndex,7);
 	ld	hl, (#_player2 + 0)
 	inc	hl
 	inc	hl
@@ -12521,25 +12774,25 @@ _manage_player_crouched_status::
 	call	_setAnimation
 	pop	af
 	inc	sp
-	C$player.c$458$5_0$214	= .
-	.globl	C$player.c$458$5_0$214
-;player.c:458: play_punch_sound1();
+	C$player.c$459$5_0$231	= .
+	.globl	C$player.c$459$5_0$231
+;player.c:459: play_punch_sound1();
 	call	_play_punch_sound1
 00128$:
-	C$player.c$463$1_0$198	= .
-	.globl	C$player.c$463$1_0$198
-;player.c:463: }
+	C$player.c$464$1_0$215	= .
+	.globl	C$player.c$464$1_0$215
+;player.c:464: }
 	pop	ix
-	C$player.c$463$1_0$198	= .
-	.globl	C$player.c$463$1_0$198
+	C$player.c$464$1_0$215	= .
+	.globl	C$player.c$464$1_0$215
 	XG$manage_player_crouched_status$0$0	= .
 	.globl	XG$manage_player_crouched_status$0$0
 	ret
 	G$update_player_positions$0$0	= .
 	.globl	G$update_player_positions$0$0
-	C$player.c$465$1_0$216	= .
-	.globl	C$player.c$465$1_0$216
-;player.c:465: void update_player_positions(signed char delta_x, signed char delta_y)
+	C$player.c$466$1_0$233	= .
+	.globl	C$player.c$466$1_0$233
+;player.c:466: void update_player_positions(signed char delta_x, signed char delta_y)
 ;	---------------------------------
 ; Function update_player_positions
 ; ---------------------------------
@@ -12547,15 +12800,15 @@ _update_player_positions::
 	push	ix
 	ld	ix,#0
 	add	ix,sp
-	C$player.c$468$1_0$216	= .
-	.globl	C$player.c$468$1_0$216
-;player.c:468: if(delta_x != 0) {
+	C$player.c$469$1_0$233	= .
+	.globl	C$player.c$469$1_0$233
+;player.c:469: if(delta_x != 0) {
 	ld	a, 4 (ix)
 	or	a, a
 	jr	Z, 00102$
-	C$player.c$469$2_0$217	= .
-	.globl	C$player.c$469$2_0$217
-;player.c:469: move_entity(player1.entityreference->entityIndex, 0, UFIX2CHAR(player1.vy)*player1.ydirection);	
+	C$player.c$470$2_0$234	= .
+	.globl	C$player.c$470$2_0$234
+;player.c:470: move_entity(player1.entityreference->entityIndex, 0, UFIX2CHAR(player1.vy)*player1.ydirection);	
 	ld	hl, (#_player1 + 4)
 	ld	e, h
 	ld	a, (#_player1 + 7)
@@ -12586,9 +12839,9 @@ _update_player_positions::
 	inc	sp
 	jr	00103$
 00102$:
-	C$player.c$471$2_0$218	= .
-	.globl	C$player.c$471$2_0$218
-;player.c:471: move_entity(player1.entityreference->entityIndex, UFIX2CHAR(player1.vx)*player1.xdirection, UFIX2CHAR(player1.vy)*player1.ydirection);	
+	C$player.c$472$2_0$235	= .
+	.globl	C$player.c$472$2_0$235
+;player.c:472: move_entity(player1.entityreference->entityIndex, UFIX2CHAR(player1.vx)*player1.xdirection, UFIX2CHAR(player1.vy)*player1.ydirection);	
 	ld	hl, (#_player1 + 4)
 	ld	e, h
 	ld	a, (#_player1 + 7)
@@ -12630,9 +12883,9 @@ _update_player_positions::
 	pop	af
 	inc	sp
 00103$:
-	C$player.c$474$1_0$216	= .
-	.globl	C$player.c$474$1_0$216
-;player.c:474: if(player1.entityreference->py > 160) {
+	C$player.c$475$1_0$233	= .
+	.globl	C$player.c$475$1_0$233
+;player.c:475: if(player1.entityreference->py > 160) {
 	ld	hl, (#_player1 + 0)
 	ld	bc, #0x0004
 	add	hl, bc
@@ -12640,32 +12893,32 @@ _update_player_positions::
 	ld	a, #0xa0
 	sub	a, e
 	jr	NC, 00108$
-	C$player.c$475$2_0$219	= .
-	.globl	C$player.c$475$2_0$219
-;player.c:475: player1.entityreference->py = 160;
+	C$player.c$476$2_0$236	= .
+	.globl	C$player.c$476$2_0$236
+;player.c:476: player1.entityreference->py = 160;
 	ld	(hl), #0xa0
 	jr	00109$
 00108$:
-	C$player.c$476$1_0$216	= .
-	.globl	C$player.c$476$1_0$216
-;player.c:476: } else if(player1.entityreference->py < 68 && player1.status != PLAYER_STATUS_JUMPING) {
+	C$player.c$477$1_0$233	= .
+	.globl	C$player.c$477$1_0$233
+;player.c:477: } else if(player1.entityreference->py < 68 && player1.status != PLAYER_STATUS_JUMPING) {
 	ld	a, e
 	sub	a, #0x44
 	jr	NC, 00109$
 	ld	a, (#_player1 + 8)
 	sub	a, #0x02
 	jr	Z, 00109$
-	C$player.c$477$2_0$220	= .
-	.globl	C$player.c$477$2_0$220
-;player.c:477: player1.entityreference->py = 68;
+	C$player.c$478$2_0$237	= .
+	.globl	C$player.c$478$2_0$237
+;player.c:478: player1.entityreference->py = 68;
 	ld	hl, (#_player1 + 0)
 	ld	bc, #0x0004
 	add	hl, bc
 	ld	(hl), #0x44
 00109$:
-	C$player.c$479$1_0$216	= .
-	.globl	C$player.c$479$1_0$216
-;player.c:479: if(player1.entityreference->px < 12) {
+	C$player.c$480$1_0$233	= .
+	.globl	C$player.c$480$1_0$233
+;player.c:480: if(player1.entityreference->px < 12) {
 	ld	hl, (#_player1 + 0)
 	inc	hl
 	inc	hl
@@ -12674,26 +12927,26 @@ _update_player_positions::
 	ld	a, c
 	sub	a, #0x0c
 	jr	NC, 00113$
-	C$player.c$480$2_0$221	= .
-	.globl	C$player.c$480$2_0$221
-;player.c:480: player1.entityreference->px = 12;
+	C$player.c$481$2_0$238	= .
+	.globl	C$player.c$481$2_0$238
+;player.c:481: player1.entityreference->px = 12;
 	ld	(hl), #0x0c
 	jr	00114$
 00113$:
-	C$player.c$481$1_0$216	= .
-	.globl	C$player.c$481$1_0$216
-;player.c:481: } else if(player1.entityreference->px > 240) {
+	C$player.c$482$1_0$233	= .
+	.globl	C$player.c$482$1_0$233
+;player.c:482: } else if(player1.entityreference->px > 240) {
 	ld	a, #0xf0
 	sub	a, c
 	jr	NC, 00114$
-	C$player.c$482$2_0$222	= .
-	.globl	C$player.c$482$2_0$222
-;player.c:482: player1.entityreference->px = 240;
+	C$player.c$483$2_0$239	= .
+	.globl	C$player.c$483$2_0$239
+;player.c:483: player1.entityreference->px = 240;
 	ld	(hl), #0xf0
 00114$:
-	C$player.c$485$1_0$216	= .
-	.globl	C$player.c$485$1_0$216
-;player.c:485: move_entity(player2.entityreference->entityIndex, UFIX2CHAR(player2.vx)*player2.xdirection + (delta_x * -1), UFIX2CHAR(player2.vy)*player2.ydirection);
+	C$player.c$486$1_0$233	= .
+	.globl	C$player.c$486$1_0$233
+;player.c:486: move_entity(player2.entityreference->entityIndex, UFIX2CHAR(player2.vx)*player2.xdirection + (delta_x * -1), UFIX2CHAR(player2.vy)*player2.ydirection);
 	ld	hl, (#_player2 + 4)
 	ld	e, h
 	ld	a, (#_player2 + 7)
@@ -12736,9 +12989,9 @@ _update_player_positions::
 	call	_move_entity
 	pop	af
 	inc	sp
-	C$player.c$487$1_0$216	= .
-	.globl	C$player.c$487$1_0$216
-;player.c:487: if(player2.entityreference->py > 160) {
+	C$player.c$488$1_0$233	= .
+	.globl	C$player.c$488$1_0$233
+;player.c:488: if(player2.entityreference->py > 160) {
 	ld	bc, (#_player2 + 0)
 	inc	bc
 	inc	bc
@@ -12746,33 +12999,33 @@ _update_player_positions::
 	inc	bc
 	ld	a, (bc)
 	ld	e, a
-	C$player.c$488$2_0$223	= .
-	.globl	C$player.c$488$2_0$223
-;player.c:488: player2.entityreference->py = 160;
+	C$player.c$489$2_0$240	= .
+	.globl	C$player.c$489$2_0$240
+;player.c:489: player2.entityreference->py = 160;
 	ld	a,#0xa0
 	cp	a,e
 	jr	NC, 00119$
 	ld	(bc), a
 	jr	00120$
 00119$:
-	C$player.c$489$1_0$216	= .
-	.globl	C$player.c$489$1_0$216
-;player.c:489: } else if(player2.entityreference->py < 68 && player2.status != PLAYER_STATUS_JUMPING) {
+	C$player.c$490$1_0$233	= .
+	.globl	C$player.c$490$1_0$233
+;player.c:490: } else if(player2.entityreference->py < 68 && player2.status != PLAYER_STATUS_JUMPING) {
 	ld	a, e
 	sub	a, #0x44
 	jr	NC, 00120$
 	ld	a, (#_player2 + 8)
 	sub	a, #0x02
 	jr	Z, 00120$
-	C$player.c$490$2_0$224	= .
-	.globl	C$player.c$490$2_0$224
-;player.c:490: player2.entityreference->py = 68;
+	C$player.c$491$2_0$241	= .
+	.globl	C$player.c$491$2_0$241
+;player.c:491: player2.entityreference->py = 68;
 	ld	a, #0x44
 	ld	(bc), a
 00120$:
-	C$player.c$492$1_0$216	= .
-	.globl	C$player.c$492$1_0$216
-;player.c:492: if(player2.entityreference->px < 12) {
+	C$player.c$493$1_0$233	= .
+	.globl	C$player.c$493$1_0$233
+;player.c:493: if(player2.entityreference->px < 12) {
 	ld	hl, (#_player2 + 0)
 	inc	hl
 	inc	hl
@@ -12781,29 +13034,29 @@ _update_player_positions::
 	ld	a, c
 	sub	a, #0x0c
 	jr	NC, 00124$
-	C$player.c$493$2_0$225	= .
-	.globl	C$player.c$493$2_0$225
-;player.c:493: player2.entityreference->px = 12;
+	C$player.c$494$2_0$242	= .
+	.globl	C$player.c$494$2_0$242
+;player.c:494: player2.entityreference->px = 12;
 	ld	(hl), #0x0c
 	jr	00126$
 00124$:
-	C$player.c$494$1_0$216	= .
-	.globl	C$player.c$494$1_0$216
-;player.c:494: } else if(player2.entityreference->px > 240) {
+	C$player.c$495$1_0$233	= .
+	.globl	C$player.c$495$1_0$233
+;player.c:495: } else if(player2.entityreference->px > 240) {
 	ld	a, #0xf0
 	sub	a, c
 	jr	NC, 00126$
-	C$player.c$495$2_0$226	= .
-	.globl	C$player.c$495$2_0$226
-;player.c:495: player2.entityreference->px = 240;
+	C$player.c$496$2_0$243	= .
+	.globl	C$player.c$496$2_0$243
+;player.c:496: player2.entityreference->px = 240;
 	ld	(hl), #0xf0
 00126$:
-	C$player.c$497$1_0$216	= .
-	.globl	C$player.c$497$1_0$216
-;player.c:497: }
+	C$player.c$498$1_0$233	= .
+	.globl	C$player.c$498$1_0$233
+;player.c:498: }
 	pop	ix
-	C$player.c$497$1_0$216	= .
-	.globl	C$player.c$497$1_0$216
+	C$player.c$498$1_0$233	= .
+	.globl	C$player.c$498$1_0$233
 	XG$update_player_positions$0$0	= .
 	.globl	XG$update_player_positions$0$0
 	ret
