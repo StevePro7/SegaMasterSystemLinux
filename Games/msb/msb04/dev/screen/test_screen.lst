@@ -8,135 +8,219 @@
                                       8 ;--------------------------------------------------------
                                       9 ; Public variables in this module
                                      10 ;--------------------------------------------------------
-                                     11 	.globl _devkit_SMS_mapROMBank
-                                     12 	.globl _devkit_SMS_displayOff
-                                     13 	.globl _devkit_SMS_displayOn
-                                     14 	.globl _engine_input_manager_hold
-                                     15 	.globl _engine_font_manager_text
-                                     16 	.globl _engine_content_manager_load_level1_assets
-                                     17 	.globl _screen_test_screen_load
-                                     18 	.globl _screen_test_screen_update
-                                     19 ;--------------------------------------------------------
-                                     20 ; special function registers
-                                     21 ;--------------------------------------------------------
-                                     22 ;--------------------------------------------------------
-                                     23 ; ram data
+                                     11 	.globl _init_scroll
+                                     12 	.globl _devkit_GSL_refreshVDP
+                                     13 	.globl _devkit_GSL_positionWindow
+                                     14 	.globl _devkit_GSL_initializeMap
+                                     15 	.globl _devkit_SMS_mapROMBank
+                                     16 	.globl _devkit_SMS_setBackdropColor
+                                     17 	.globl _devkit_SMS_displayOff
+                                     18 	.globl _devkit_SMS_displayOn
+                                     19 	.globl _engine_input_manager_hold
+                                     20 	.globl _engine_font_manager_text
+                                     21 	.globl _engine_content_manager_load_level1_assets
+                                     22 	.globl _screen_test_screen_load
+                                     23 	.globl _screen_test_screen_update
                                      24 ;--------------------------------------------------------
-                                     25 	.area _DATA
+                                     25 ; special function registers
                                      26 ;--------------------------------------------------------
-                                     27 ; ram data
-                                     28 ;--------------------------------------------------------
-                                     29 	.area _INITIALIZED
-                                     30 ;--------------------------------------------------------
-                                     31 ; absolute external ram data
-                                     32 ;--------------------------------------------------------
-                                     33 	.area _DABS (ABS)
-                                     34 ;--------------------------------------------------------
-                                     35 ; global & static initialisations
-                                     36 ;--------------------------------------------------------
-                                     37 	.area _HOME
-                                     38 	.area _GSINIT
-                                     39 	.area _GSFINAL
-                                     40 	.area _GSINIT
+                                     27 ;--------------------------------------------------------
+                                     28 ; ram data
+                                     29 ;--------------------------------------------------------
+                                     30 	.area _DATA
+                                     31 ;--------------------------------------------------------
+                                     32 ; ram data
+                                     33 ;--------------------------------------------------------
+                                     34 	.area _INITIALIZED
+                                     35 ;--------------------------------------------------------
+                                     36 ; absolute external ram data
+                                     37 ;--------------------------------------------------------
+                                     38 	.area _DABS (ABS)
+                                     39 ;--------------------------------------------------------
+                                     40 ; global & static initialisations
                                      41 ;--------------------------------------------------------
-                                     42 ; Home
-                                     43 ;--------------------------------------------------------
-                                     44 	.area _HOME
-                                     45 	.area _HOME
+                                     42 	.area _HOME
+                                     43 	.area _GSINIT
+                                     44 	.area _GSFINAL
+                                     45 	.area _GSINIT
                                      46 ;--------------------------------------------------------
-                                     47 ; code
+                                     47 ; Home
                                      48 ;--------------------------------------------------------
-                                     49 	.area _CODE
-                           000000    50 	G$screen_test_screen_load$0$0	= .
-                                     51 	.globl	G$screen_test_screen_load$0$0
-                           000000    52 	C$test_screen.c$18$0_0$102	= .
-                                     53 	.globl	C$test_screen.c$18$0_0$102
-                                     54 ;test_screen.c:18: void screen_test_screen_load()
-                                     55 ;	---------------------------------
-                                     56 ; Function screen_test_screen_load
-                                     57 ; ---------------------------------
-      000000                         58 _screen_test_screen_load::
-                           000000    59 	C$test_screen.c$20$1_0$102	= .
-                                     60 	.globl	C$test_screen.c$20$1_0$102
-                                     61 ;test_screen.c:20: devkit_SMS_displayOff();
-      000000 CDr00r00         [17]   62 	call	_devkit_SMS_displayOff
-                           000003    63 	C$test_screen.c$23$1_0$102	= .
-                                     64 	.globl	C$test_screen.c$23$1_0$102
-                                     65 ;test_screen.c:23: engine_content_manager_load_level1_assets();
-      000003 CDr00r00         [17]   66 	call	_engine_content_manager_load_level1_assets
-                           000006    67 	C$test_screen.c$24$1_0$102	= .
-                                     68 	.globl	C$test_screen.c$24$1_0$102
-                                     69 ;test_screen.c:24: devkit_SMS_displayOn();
-                           000006    70 	C$test_screen.c$25$1_0$102	= .
-                                     71 	.globl	C$test_screen.c$25$1_0$102
-                                     72 ;test_screen.c:25: }
-                           000006    73 	C$test_screen.c$25$1_0$102	= .
-                                     74 	.globl	C$test_screen.c$25$1_0$102
-                           000006    75 	XG$screen_test_screen_load$0$0	= .
-                                     76 	.globl	XG$screen_test_screen_load$0$0
-      000006 C3r00r00         [10]   77 	jp	_devkit_SMS_displayOn
-                           000009    78 	G$screen_test_screen_update$0$0	= .
-                                     79 	.globl	G$screen_test_screen_update$0$0
-                           000009    80 	C$test_screen.c$27$1_0$104	= .
-                                     81 	.globl	C$test_screen.c$27$1_0$104
-                                     82 ;test_screen.c:27: void screen_test_screen_update( unsigned char *screen_type )
-                                     83 ;	---------------------------------
-                                     84 ; Function screen_test_screen_update
-                                     85 ; ---------------------------------
-      000009                         86 _screen_test_screen_update::
-                           000009    87 	C$test_screen.c$29$1_0$104	= .
-                                     88 	.globl	C$test_screen.c$29$1_0$104
-                                     89 ;test_screen.c:29: unsigned char input = engine_input_manager_hold(1);
-      000009 3E 01            [ 7]   90 	ld	a, #0x01
-      00000B F5               [11]   91 	push	af
-      00000C 33               [ 6]   92 	inc	sp
-      00000D CDr00r00         [17]   93 	call	_engine_input_manager_hold
-      000010 7D               [ 4]   94 	ld	a, l
-      000011 33               [ 6]   95 	inc	sp
-                           000012    96 	C$test_screen.c$30$1_0$104	= .
-                                     97 	.globl	C$test_screen.c$30$1_0$104
-                                     98 ;test_screen.c:30: if( input )
-      000012 B7               [ 4]   99 	or	a, a
-      000013 28 14            [12]  100 	jr	Z, 00102$
-                           000015   101 	C$test_screen.c$32$2_0$105	= .
-                                    102 	.globl	C$test_screen.c$32$2_0$105
-                                    103 ;test_screen.c:32: engine_font_manager_text( "TEST SCREEN", 11, 7 );
-      000015 11 0B 07         [10]  104 	ld	de, #0x070b
-      000018 D5               [11]  105 	push	de
-      000019 21r30r00         [10]  106 	ld	hl, #___str_0
-      00001C E5               [11]  107 	push	hl
-      00001D CDr00r00         [17]  108 	call	_engine_font_manager_text
-      000020 F1               [10]  109 	pop	af
-                           000021   110 	C$test_screen.c$33$2_0$105	= .
-                                    111 	.globl	C$test_screen.c$33$2_0$105
-                                    112 ;test_screen.c:33: devkit_SMS_mapROMBank( level1music_psg_bank );
-      000021 26 04            [ 7]  113 	ld	h,#0x04
-      000023 E3               [19]  114 	ex	(sp),hl
-      000024 33               [ 6]  115 	inc	sp
-      000025 CDr00r00         [17]  116 	call	_devkit_SMS_mapROMBank
-      000028 33               [ 6]  117 	inc	sp
-      000029                        118 00102$:
-                           000029   119 	C$test_screen.c$38$1_0$104	= .
-                                    120 	.globl	C$test_screen.c$38$1_0$104
-                                    121 ;test_screen.c:38: *screen_type = screen_type_test;
-      000029 C1               [10]  122 	pop	bc
-      00002A E1               [10]  123 	pop	hl
-      00002B E5               [11]  124 	push	hl
-      00002C C5               [11]  125 	push	bc
-      00002D 36 16            [10]  126 	ld	(hl), #0x16
-                           00002F   127 	C$test_screen.c$39$1_0$104	= .
-                                    128 	.globl	C$test_screen.c$39$1_0$104
-                                    129 ;test_screen.c:39: }
-                           00002F   130 	C$test_screen.c$39$1_0$104	= .
-                                    131 	.globl	C$test_screen.c$39$1_0$104
-                           00002F   132 	XG$screen_test_screen_update$0$0	= .
-                                    133 	.globl	XG$screen_test_screen_update$0$0
-      00002F C9               [10]  134 	ret
-                           000030   135 Ftest_screen$__str_0$0_0$0 == .
-      000030                        136 ___str_0:
-      000030 54 45 53 54 20 53 43   137 	.ascii "TEST SCREEN"
+                                     49 	.area _HOME
+                                     50 	.area _HOME
+                                     51 ;--------------------------------------------------------
+                                     52 ; code
+                                     53 ;--------------------------------------------------------
+                                     54 	.area _CODE
+                           000000    55 	G$init_scroll$0$0	= .
+                                     56 	.globl	G$init_scroll$0$0
+                           000000    57 	C$test_screen.c$19$0_0$109	= .
+                                     58 	.globl	C$test_screen.c$19$0_0$109
+                                     59 ;test_screen.c:19: void init_scroll( void *scrolltable, void *metatiles, unsigned int scroll_x, unsigned int scroll_y )
+                                     60 ;	---------------------------------
+                                     61 ; Function init_scroll
+                                     62 ; ---------------------------------
+      000000                         63 _init_scroll::
+                           000000    64 	C$test_screen.c$21$1_0$109	= .
+                                     65 	.globl	C$test_screen.c$21$1_0$109
+                                     66 ;test_screen.c:21: devkit_GSL_initializeMap( scrolltable, metatiles );
+      000000 FD 21 04 00      [14]   67 	ld	iy, #4
+      000004 FD 39            [15]   68 	add	iy, sp
+      000006 FD 6E 00         [19]   69 	ld	l, 0 (iy)
+      000009 FD 66 01         [19]   70 	ld	h, 1 (iy)
+      00000C E5               [11]   71 	push	hl
+      00000D FD 6E FE         [19]   72 	ld	l, -2 (iy)
+      000010 FD 66 FF         [19]   73 	ld	h, -1 (iy)
+      000013 E5               [11]   74 	push	hl
+      000014 CDr00r00         [17]   75 	call	_devkit_GSL_initializeMap
+      000017 F1               [10]   76 	pop	af
+      000018 F1               [10]   77 	pop	af
+                           000019    78 	C$test_screen.c$22$1_0$109	= .
+                                     79 	.globl	C$test_screen.c$22$1_0$109
+                                     80 ;test_screen.c:22: devkit_GSL_positionWindow( scroll_x, scroll_y );
+      000019 FD 21 08 00      [14]   81 	ld	iy, #8
+      00001D FD 39            [15]   82 	add	iy, sp
+      00001F FD 6E 00         [19]   83 	ld	l, 0 (iy)
+      000022 FD 66 01         [19]   84 	ld	h, 1 (iy)
+      000025 E5               [11]   85 	push	hl
+      000026 FD 6E FE         [19]   86 	ld	l, -2 (iy)
+      000029 FD 66 FF         [19]   87 	ld	h, -1 (iy)
+      00002C E5               [11]   88 	push	hl
+      00002D CDr00r00         [17]   89 	call	_devkit_GSL_positionWindow
+      000030 F1               [10]   90 	pop	af
+      000031 F1               [10]   91 	pop	af
+                           000032    92 	C$test_screen.c$23$1_0$109	= .
+                                     93 	.globl	C$test_screen.c$23$1_0$109
+                                     94 ;test_screen.c:23: devkit_GSL_refreshVDP();
+                           000032    95 	C$test_screen.c$24$1_0$109	= .
+                                     96 	.globl	C$test_screen.c$24$1_0$109
+                                     97 ;test_screen.c:24: }
+                           000032    98 	C$test_screen.c$24$1_0$109	= .
+                                     99 	.globl	C$test_screen.c$24$1_0$109
+                           000032   100 	XG$init_scroll$0$0	= .
+                                    101 	.globl	XG$init_scroll$0$0
+      000032 C3r00r00         [10]  102 	jp	_devkit_GSL_refreshVDP
+                           000035   103 	G$screen_test_screen_load$0$0	= .
+                                    104 	.globl	G$screen_test_screen_load$0$0
+                           000035   105 	C$test_screen.c$26$1_0$110	= .
+                                    106 	.globl	C$test_screen.c$26$1_0$110
+                                    107 ;test_screen.c:26: void screen_test_screen_load()
+                                    108 ;	---------------------------------
+                                    109 ; Function screen_test_screen_load
+                                    110 ; ---------------------------------
+      000035                        111 _screen_test_screen_load::
+                           000035   112 	C$test_screen.c$28$1_0$110	= .
+                                    113 	.globl	C$test_screen.c$28$1_0$110
+                                    114 ;test_screen.c:28: devkit_SMS_displayOff();
+      000035 CDr00r00         [17]  115 	call	_devkit_SMS_displayOff
+                           000038   116 	C$test_screen.c$31$1_0$110	= .
+                                    117 	.globl	C$test_screen.c$31$1_0$110
+                                    118 ;test_screen.c:31: devkit_SMS_setBackdropColor( 1 );
+      000038 3E 01            [ 7]  119 	ld	a, #0x01
+      00003A F5               [11]  120 	push	af
+      00003B 33               [ 6]  121 	inc	sp
+      00003C CDr00r00         [17]  122 	call	_devkit_SMS_setBackdropColor
+      00003F 33               [ 6]  123 	inc	sp
+                           000040   124 	C$test_screen.c$32$1_0$110	= .
+                                    125 	.globl	C$test_screen.c$32$1_0$110
+                                    126 ;test_screen.c:32: engine_content_manager_load_level1_assets();
+      000040 CDr00r00         [17]  127 	call	_engine_content_manager_load_level1_assets
+                           000043   128 	C$test_screen.c$33$1_0$110	= .
+                                    129 	.globl	C$test_screen.c$33$1_0$110
+                                    130 ;test_screen.c:33: devkit_SMS_mapROMBank( level1_metatiles_bin_bank );
+      000043 3E 02            [ 7]  131 	ld	a, #0x02
+      000045 F5               [11]  132 	push	af
+      000046 33               [ 6]  133 	inc	sp
+      000047 CDr00r00         [17]  134 	call	_devkit_SMS_mapROMBank
+      00004A 33               [ 6]  135 	inc	sp
+                           00004B   136 	C$test_screen.c$34$1_0$110	= .
+                                    137 	.globl	C$test_screen.c$34$1_0$110
+                                    138 ;test_screen.c:34: init_scroll( ( unsigned char * ) &level1_scrolltable_bin, ( unsigned char * ) &level1_metatiles_bin, 0, 0 );
+      00004B 21 00 00         [10]  139 	ld	hl, #0x0000
+      00004E E5               [11]  140 	push	hl
+      00004F 6C               [ 4]  141 	ld	l, h
+      000050 E5               [11]  142 	push	hl
+      000051 21r00r00         [10]  143 	ld	hl, #_level1_metatiles_bin
+      000054 E5               [11]  144 	push	hl
+      000055 21r00r00         [10]  145 	ld	hl, #_level1_scrolltable_bin
+      000058 E5               [11]  146 	push	hl
+      000059 CDr00r00         [17]  147 	call	_init_scroll
+      00005C 21 08 00         [10]  148 	ld	hl, #8
+      00005F 39               [11]  149 	add	hl, sp
+      000060 F9               [ 6]  150 	ld	sp, hl
+                           000061   151 	C$test_screen.c$35$1_0$110	= .
+                                    152 	.globl	C$test_screen.c$35$1_0$110
+                                    153 ;test_screen.c:35: devkit_SMS_displayOn();
+                           000061   154 	C$test_screen.c$36$1_0$110	= .
+                                    155 	.globl	C$test_screen.c$36$1_0$110
+                                    156 ;test_screen.c:36: }
+                           000061   157 	C$test_screen.c$36$1_0$110	= .
+                                    158 	.globl	C$test_screen.c$36$1_0$110
+                           000061   159 	XG$screen_test_screen_load$0$0	= .
+                                    160 	.globl	XG$screen_test_screen_load$0$0
+      000061 C3r00r00         [10]  161 	jp	_devkit_SMS_displayOn
+                           000064   162 	G$screen_test_screen_update$0$0	= .
+                                    163 	.globl	G$screen_test_screen_update$0$0
+                           000064   164 	C$test_screen.c$38$1_0$112	= .
+                                    165 	.globl	C$test_screen.c$38$1_0$112
+                                    166 ;test_screen.c:38: void screen_test_screen_update( unsigned char *screen_type )
+                                    167 ;	---------------------------------
+                                    168 ; Function screen_test_screen_update
+                                    169 ; ---------------------------------
+      000064                        170 _screen_test_screen_update::
+                           000064   171 	C$test_screen.c$40$1_0$112	= .
+                                    172 	.globl	C$test_screen.c$40$1_0$112
+                                    173 ;test_screen.c:40: unsigned char input = engine_input_manager_hold(1);
+      000064 3E 01            [ 7]  174 	ld	a, #0x01
+      000066 F5               [11]  175 	push	af
+      000067 33               [ 6]  176 	inc	sp
+      000068 CDr00r00         [17]  177 	call	_engine_input_manager_hold
+      00006B 7D               [ 4]  178 	ld	a, l
+      00006C 33               [ 6]  179 	inc	sp
+                           00006D   180 	C$test_screen.c$41$1_0$112	= .
+                                    181 	.globl	C$test_screen.c$41$1_0$112
+                                    182 ;test_screen.c:41: if( input )
+      00006D B7               [ 4]  183 	or	a, a
+      00006E 28 14            [12]  184 	jr	Z, 00102$
+                           000070   185 	C$test_screen.c$43$2_0$113	= .
+                                    186 	.globl	C$test_screen.c$43$2_0$113
+                                    187 ;test_screen.c:43: engine_font_manager_text( "TEST SCREEN", 11, 7 );
+      000070 11 0B 07         [10]  188 	ld	de, #0x070b
+      000073 D5               [11]  189 	push	de
+      000074 21r8Br00         [10]  190 	ld	hl, #___str_0
+      000077 E5               [11]  191 	push	hl
+      000078 CDr00r00         [17]  192 	call	_engine_font_manager_text
+      00007B F1               [10]  193 	pop	af
+                           00007C   194 	C$test_screen.c$44$2_0$113	= .
+                                    195 	.globl	C$test_screen.c$44$2_0$113
+                                    196 ;test_screen.c:44: devkit_SMS_mapROMBank( level1music_psg_bank );
+      00007C 26 04            [ 7]  197 	ld	h,#0x04
+      00007E E3               [19]  198 	ex	(sp),hl
+      00007F 33               [ 6]  199 	inc	sp
+      000080 CDr00r00         [17]  200 	call	_devkit_SMS_mapROMBank
+      000083 33               [ 6]  201 	inc	sp
+      000084                        202 00102$:
+                           000084   203 	C$test_screen.c$49$1_0$112	= .
+                                    204 	.globl	C$test_screen.c$49$1_0$112
+                                    205 ;test_screen.c:49: *screen_type = screen_type_test;
+      000084 C1               [10]  206 	pop	bc
+      000085 E1               [10]  207 	pop	hl
+      000086 E5               [11]  208 	push	hl
+      000087 C5               [11]  209 	push	bc
+      000088 36 16            [10]  210 	ld	(hl), #0x16
+                           00008A   211 	C$test_screen.c$50$1_0$112	= .
+                                    212 	.globl	C$test_screen.c$50$1_0$112
+                                    213 ;test_screen.c:50: }
+                           00008A   214 	C$test_screen.c$50$1_0$112	= .
+                                    215 	.globl	C$test_screen.c$50$1_0$112
+                           00008A   216 	XG$screen_test_screen_update$0$0	= .
+                                    217 	.globl	XG$screen_test_screen_update$0$0
+      00008A C9               [10]  218 	ret
+                           00008B   219 Ftest_screen$__str_0$0_0$0 == .
+      00008B                        220 ___str_0:
+      00008B 54 45 53 54 20 53 43   221 	.ascii "TEST SCREEN"
              52 45 45 4E
-      00003B 00                     138 	.db 0x00
-                                    139 	.area _CODE
-                                    140 	.area _INITIALIZER
-                                    141 	.area _CABS (ABS)
+      000096 00                     222 	.db 0x00
+                                    223 	.area _CODE
+                                    224 	.area _INITIALIZER
+                                    225 	.area _CABS (ABS)

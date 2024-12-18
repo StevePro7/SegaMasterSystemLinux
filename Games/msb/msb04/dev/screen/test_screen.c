@@ -8,12 +8,20 @@
 #include "../banks/bank4.h"
 #include "../devkit/_sms_manager.h"
 #include "../devkit/_snd_manager.h"
+#include "../devkit/_gsl_manager.h"
 
 #ifdef _CONSOLE
 #else
 #pragma disable_warning 110
 #pragma disable_warning 261
 #endif
+
+void init_scroll( void *scrolltable, void *metatiles, unsigned int scroll_x, unsigned int scroll_y )
+{
+	devkit_GSL_initializeMap( scrolltable, metatiles );
+	devkit_GSL_positionWindow( scroll_x, scroll_y );
+	devkit_GSL_refreshVDP();
+}
 
 void screen_test_screen_load()
 {
@@ -22,6 +30,8 @@ void screen_test_screen_load()
 	//engine_font_manager_text( "TEST SCREEN", 11, 5 );
 	devkit_SMS_setBackdropColor( 1 );
 	engine_content_manager_load_level1_assets();
+	devkit_SMS_mapROMBank( level1_metatiles_bin_bank );
+	init_scroll( ( unsigned char * ) &level1_scrolltable_bin, ( unsigned char * ) &level1_metatiles_bin, 0, 0 );
 	devkit_SMS_displayOn();
 }
 

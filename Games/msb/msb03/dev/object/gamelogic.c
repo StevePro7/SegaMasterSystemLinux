@@ -19,9 +19,9 @@ void init_game()
 
 void play_game()
 {
-	logo_screen();
-	fnaclogo_screen();
-	presentation_screen();
+	//logo_screen();
+	//fnaclogo_screen();
+	//presentation_screen();
 	while(game_status != GAME_STATUS_GAME_OVER)
 	{
 		game_loop();
