@@ -8,97 +8,178 @@
                                       8 ;--------------------------------------------------------
                                       9 ; Public variables in this module
                                      10 ;--------------------------------------------------------
-                                     11 	.globl _engine_font_manager_text
-                                     12 	.globl _screen_test_screen_load
-                                     13 	.globl _screen_test_screen_update
-                                     14 ;--------------------------------------------------------
-                                     15 ; special function registers
-                                     16 ;--------------------------------------------------------
-                                     17 ;--------------------------------------------------------
-                                     18 ; ram data
-                                     19 ;--------------------------------------------------------
-                                     20 	.area _DATA
+                                     11 	.globl _devkit_PSGPlay
+                                     12 	.globl _devkit_RGB
+                                     13 	.globl _devkit_SMS_setSpritePaletteColor
+                                     14 	.globl _devkit_SMS_mapROMBank
+                                     15 	.globl _devkit_SMS_displayOff
+                                     16 	.globl _devkit_SMS_displayOn
+                                     17 	.globl _engine_input_manager_hold
+                                     18 	.globl _engine_font_manager_text
+                                     19 	.globl _screen_test_screen_load
+                                     20 	.globl _screen_test_screen_update
                                      21 ;--------------------------------------------------------
-                                     22 ; ram data
+                                     22 ; special function registers
                                      23 ;--------------------------------------------------------
-                                     24 	.area _INITIALIZED
-                                     25 ;--------------------------------------------------------
-                                     26 ; absolute external ram data
-                                     27 ;--------------------------------------------------------
-                                     28 	.area _DABS (ABS)
-                                     29 ;--------------------------------------------------------
-                                     30 ; global & static initialisations
-                                     31 ;--------------------------------------------------------
-                                     32 	.area _HOME
-                                     33 	.area _GSINIT
-                                     34 	.area _GSFINAL
-                                     35 	.area _GSINIT
+                                     24 ;--------------------------------------------------------
+                                     25 ; ram data
+                                     26 ;--------------------------------------------------------
+                                     27 	.area _DATA
+                                     28 ;--------------------------------------------------------
+                                     29 ; ram data
+                                     30 ;--------------------------------------------------------
+                                     31 	.area _INITIALIZED
+                                     32 ;--------------------------------------------------------
+                                     33 ; absolute external ram data
+                                     34 ;--------------------------------------------------------
+                                     35 	.area _DABS (ABS)
                                      36 ;--------------------------------------------------------
-                                     37 ; Home
+                                     37 ; global & static initialisations
                                      38 ;--------------------------------------------------------
                                      39 	.area _HOME
-                                     40 	.area _HOME
-                                     41 ;--------------------------------------------------------
-                                     42 ; code
+                                     40 	.area _GSINIT
+                                     41 	.area _GSFINAL
+                                     42 	.area _GSINIT
                                      43 ;--------------------------------------------------------
-                                     44 	.area _CODE
-                           000000    45 	G$screen_test_screen_load$0$0	= .
-                                     46 	.globl	G$screen_test_screen_load$0$0
-                           000000    47 	C$test_screen.c$11$0_0$6	= .
-                                     48 	.globl	C$test_screen.c$11$0_0$6
-                                     49 ;test_screen.c:11: void screen_test_screen_load()
-                                     50 ;	---------------------------------
-                                     51 ; Function screen_test_screen_load
-                                     52 ; ---------------------------------
-      000000                         53 _screen_test_screen_load::
-                           000000    54 	C$test_screen.c$13$1_0$6	= .
-                                     55 	.globl	C$test_screen.c$13$1_0$6
-                                     56 ;test_screen.c:13: engine_font_manager_text( "TEST SCREEN", 1, 5 );
-      000000 11 01 05         [10]   57 	ld	de, #0x0501
-      000003 D5               [11]   58 	push	de
-      000004 21r0Er00         [10]   59 	ld	hl, #___str_0
-      000007 E5               [11]   60 	push	hl
-      000008 CDr00r00         [17]   61 	call	_engine_font_manager_text
-      00000B F1               [10]   62 	pop	af
-      00000C F1               [10]   63 	pop	af
-                           00000D    64 	C$test_screen.c$14$1_0$6	= .
-                                     65 	.globl	C$test_screen.c$14$1_0$6
-                                     66 ;test_screen.c:14: }
-                           00000D    67 	C$test_screen.c$14$1_0$6	= .
-                                     68 	.globl	C$test_screen.c$14$1_0$6
-                           00000D    69 	XG$screen_test_screen_load$0$0	= .
-                                     70 	.globl	XG$screen_test_screen_load$0$0
-      00000D C9               [10]   71 	ret
-                           00000E    72 Ftest_screen$__str_0$0_0$0 == .
-      00000E                         73 ___str_0:
-      00000E 54 45 53 54 20 53 43    74 	.ascii "TEST SCREEN"
+                                     44 ; Home
+                                     45 ;--------------------------------------------------------
+                                     46 	.area _HOME
+                                     47 	.area _HOME
+                                     48 ;--------------------------------------------------------
+                                     49 ; code
+                                     50 ;--------------------------------------------------------
+                                     51 	.area _CODE
+                           000000    52 	G$screen_test_screen_load$0$0	= .
+                                     53 	.globl	G$screen_test_screen_load$0$0
+                           000000    54 	C$test_screen.c$17$0_0$102	= .
+                                     55 	.globl	C$test_screen.c$17$0_0$102
+                                     56 ;test_screen.c:17: void screen_test_screen_load()
+                                     57 ;	---------------------------------
+                                     58 ; Function screen_test_screen_load
+                                     59 ; ---------------------------------
+      000000                         60 _screen_test_screen_load::
+                           000000    61 	C$test_screen.c$19$1_0$102	= .
+                                     62 	.globl	C$test_screen.c$19$1_0$102
+                                     63 ;test_screen.c:19: devkit_SMS_displayOff();
+      000000 CDr00r00         [17]   64 	call	_devkit_SMS_displayOff
+                           000003    65 	C$test_screen.c$20$1_0$102	= .
+                                     66 	.globl	C$test_screen.c$20$1_0$102
+                                     67 ;test_screen.c:20: devkit_SMS_setSpritePaletteColor( 0, devkit_RGB( 0, 0, 3 ) );
+      000003 3E 03            [ 7]   68 	ld	a, #0x03
+      000005 F5               [11]   69 	push	af
+      000006 33               [ 6]   70 	inc	sp
+      000007 AF               [ 4]   71 	xor	a, a
+      000008 F5               [11]   72 	push	af
+      000009 33               [ 6]   73 	inc	sp
+      00000A AF               [ 4]   74 	xor	a, a
+      00000B F5               [11]   75 	push	af
+      00000C 33               [ 6]   76 	inc	sp
+      00000D CDr00r00         [17]   77 	call	_devkit_RGB
+      000010 F1               [10]   78 	pop	af
+      000011 7D               [ 4]   79 	ld	a, l
+      000012 33               [ 6]   80 	inc	sp
+      000013 F5               [11]   81 	push	af
+      000014 33               [ 6]   82 	inc	sp
+      000015 AF               [ 4]   83 	xor	a, a
+      000016 F5               [11]   84 	push	af
+      000017 33               [ 6]   85 	inc	sp
+      000018 CDr00r00         [17]   86 	call	_devkit_SMS_setSpritePaletteColor
+      00001B F1               [10]   87 	pop	af
+                           00001C    88 	C$test_screen.c$21$1_0$102	= .
+                                     89 	.globl	C$test_screen.c$21$1_0$102
+                                     90 ;test_screen.c:21: engine_font_manager_text( "TEST SCREEN", 11, 5 );
+      00001C 11 0B 05         [10]   91 	ld	de, #0x050b
+      00001F D5               [11]   92 	push	de
+      000020 21r2Cr00         [10]   93 	ld	hl, #___str_0
+      000023 E5               [11]   94 	push	hl
+      000024 CDr00r00         [17]   95 	call	_engine_font_manager_text
+      000027 F1               [10]   96 	pop	af
+      000028 F1               [10]   97 	pop	af
+                           000029    98 	C$test_screen.c$22$1_0$102	= .
+                                     99 	.globl	C$test_screen.c$22$1_0$102
+                                    100 ;test_screen.c:22: devkit_SMS_displayOn();
+                           000029   101 	C$test_screen.c$23$1_0$102	= .
+                                    102 	.globl	C$test_screen.c$23$1_0$102
+                                    103 ;test_screen.c:23: }
+                           000029   104 	C$test_screen.c$23$1_0$102	= .
+                                    105 	.globl	C$test_screen.c$23$1_0$102
+                           000029   106 	XG$screen_test_screen_load$0$0	= .
+                                    107 	.globl	XG$screen_test_screen_load$0$0
+      000029 C3r00r00         [10]  108 	jp	_devkit_SMS_displayOn
+                           00002C   109 Ftest_screen$__str_0$0_0$0 == .
+      00002C                        110 ___str_0:
+      00002C 54 45 53 54 20 53 43   111 	.ascii "TEST SCREEN"
              52 45 45 4E
-      000019 00                      75 	.db 0x00
-                           00001A    76 	G$screen_test_screen_update$0$0	= .
-                                     77 	.globl	G$screen_test_screen_update$0$0
-                           00001A    78 	C$test_screen.c$16$1_0$8	= .
-                                     79 	.globl	C$test_screen.c$16$1_0$8
-                                     80 ;test_screen.c:16: void screen_test_screen_update( unsigned char *screen_type )
-                                     81 ;	---------------------------------
-                                     82 ; Function screen_test_screen_update
-                                     83 ; ---------------------------------
-      00001A                         84 _screen_test_screen_update::
-                           00001A    85 	C$test_screen.c$18$1_0$8	= .
-                                     86 	.globl	C$test_screen.c$18$1_0$8
-                                     87 ;test_screen.c:18: *screen_type = screen_type_test;
-      00001A C1               [10]   88 	pop	bc
-      00001B E1               [10]   89 	pop	hl
-      00001C E5               [11]   90 	push	hl
-      00001D C5               [11]   91 	push	bc
-      00001E 36 16            [10]   92 	ld	(hl), #0x16
-                           000020    93 	C$test_screen.c$19$1_0$8	= .
-                                     94 	.globl	C$test_screen.c$19$1_0$8
-                                     95 ;test_screen.c:19: }
-                           000020    96 	C$test_screen.c$19$1_0$8	= .
-                                     97 	.globl	C$test_screen.c$19$1_0$8
-                           000020    98 	XG$screen_test_screen_update$0$0	= .
-                                     99 	.globl	XG$screen_test_screen_update$0$0
-      000020 C9               [10]  100 	ret
-                                    101 	.area _CODE
-                                    102 	.area _INITIALIZER
-                                    103 	.area _CABS (ABS)
+      000037 00                     112 	.db 0x00
+                           000038   113 	G$screen_test_screen_update$0$0	= .
+                                    114 	.globl	G$screen_test_screen_update$0$0
+                           000038   115 	C$test_screen.c$25$1_0$104	= .
+                                    116 	.globl	C$test_screen.c$25$1_0$104
+                                    117 ;test_screen.c:25: void screen_test_screen_update( unsigned char *screen_type )
+                                    118 ;	---------------------------------
+                                    119 ; Function screen_test_screen_update
+                                    120 ; ---------------------------------
+      000038                        121 _screen_test_screen_update::
+                           000038   122 	C$test_screen.c$27$1_0$104	= .
+                                    123 	.globl	C$test_screen.c$27$1_0$104
+                                    124 ;test_screen.c:27: unsigned char input = engine_input_manager_hold(1);
+      000038 3E 01            [ 7]  125 	ld	a, #0x01
+      00003A F5               [11]  126 	push	af
+      00003B 33               [ 6]  127 	inc	sp
+      00003C CDr00r00         [17]  128 	call	_engine_input_manager_hold
+      00003F 7D               [ 4]  129 	ld	a, l
+      000040 33               [ 6]  130 	inc	sp
+                           000041   131 	C$test_screen.c$28$1_0$104	= .
+                                    132 	.globl	C$test_screen.c$28$1_0$104
+                                    133 ;test_screen.c:28: if( input )
+      000041 B7               [ 4]  134 	or	a, a
+      000042 28 1C            [12]  135 	jr	Z, 00102$
+                           000044   136 	C$test_screen.c$30$2_0$105	= .
+                                    137 	.globl	C$test_screen.c$30$2_0$105
+                                    138 ;test_screen.c:30: engine_font_manager_text( "TEST SCREEN", 11, 7 );
+      000044 11 0B 07         [10]  139 	ld	de, #0x070b
+      000047 D5               [11]  140 	push	de
+      000048 21r67r00         [10]  141 	ld	hl, #___str_1
+      00004B E5               [11]  142 	push	hl
+      00004C CDr00r00         [17]  143 	call	_engine_font_manager_text
+      00004F F1               [10]  144 	pop	af
+                           000050   145 	C$test_screen.c$31$2_0$105	= .
+                                    146 	.globl	C$test_screen.c$31$2_0$105
+                                    147 ;test_screen.c:31: devkit_SMS_mapROMBank( level1music_psg_bank );
+      000050 26 04            [ 7]  148 	ld	h,#0x04
+      000052 E3               [19]  149 	ex	(sp),hl
+      000053 33               [ 6]  150 	inc	sp
+      000054 CDr00r00         [17]  151 	call	_devkit_SMS_mapROMBank
+      000057 33               [ 6]  152 	inc	sp
+                           000058   153 	C$test_screen.c$33$2_0$105	= .
+                                    154 	.globl	C$test_screen.c$33$2_0$105
+                                    155 ;test_screen.c:33: devkit_PSGPlay( ( unsigned char * ) level1music_psg );
+      000058 21r00r00         [10]  156 	ld	hl, #_level1music_psg
+      00005B E5               [11]  157 	push	hl
+      00005C CDr00r00         [17]  158 	call	_devkit_PSGPlay
+      00005F F1               [10]  159 	pop	af
+      000060                        160 00102$:
+                           000060   161 	C$test_screen.c$36$1_0$104	= .
+                                    162 	.globl	C$test_screen.c$36$1_0$104
+                                    163 ;test_screen.c:36: *screen_type = screen_type_test;
+      000060 C1               [10]  164 	pop	bc
+      000061 E1               [10]  165 	pop	hl
+      000062 E5               [11]  166 	push	hl
+      000063 C5               [11]  167 	push	bc
+      000064 36 16            [10]  168 	ld	(hl), #0x16
+                           000066   169 	C$test_screen.c$37$1_0$104	= .
+                                    170 	.globl	C$test_screen.c$37$1_0$104
+                                    171 ;test_screen.c:37: }
+                           000066   172 	C$test_screen.c$37$1_0$104	= .
+                                    173 	.globl	C$test_screen.c$37$1_0$104
+                           000066   174 	XG$screen_test_screen_update$0$0	= .
+                                    175 	.globl	XG$screen_test_screen_update$0$0
+      000066 C9               [10]  176 	ret
+                           000067   177 Ftest_screen$__str_1$0_0$0 == .
+      000067                        178 ___str_1:
+      000067 54 45 53 54 20 53 43   179 	.ascii "TEST SCREEN"
+             52 45 45 4E
+      000072 00                     180 	.db 0x00
+                                    181 	.area _CODE
+                                    182 	.area _INITIALIZER
+                                    183 	.area _CABS (ABS)

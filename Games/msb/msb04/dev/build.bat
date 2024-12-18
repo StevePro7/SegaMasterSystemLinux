@@ -71,5 +71,5 @@ if exist "*.lst" del "*.lst" > nul; if exist "*.sym" del "*.sym" > nul;
 :: if exist "*.noi"  del "*.noi"  > nul
 
 :: Run
-java -jar C:/SEGA/Emulicious/Emulicious.jar output.sms
-::output.sms
+::java -jar C:/SEGA/Emulicious/Emulicious.jar output.sms
+output.sms
