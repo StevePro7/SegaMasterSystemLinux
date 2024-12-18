@@ -8,6 +8,15 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 
 :: Compile
 ::cd engine
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 asm_manager.c
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 content_manager.c
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 enum_manager.c
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 font_manager.c
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 global_manager.c
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 input_manager.c
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 screen_manager.c
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 util_manager.c
+
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 soundengine.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 spriteengine.c
 ::cd ..
