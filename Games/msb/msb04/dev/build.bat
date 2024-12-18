@@ -58,7 +58,8 @@ devkit/_sms_manager.rel devkit/_snd_manager.rel ^devkit/_gsl_manager.rel ^
 engine/asm_manager.rel engine/content_manager.rel engine/enum_manager.rel ^
 engine/font_manager.rel engine/global_manager.rel engine/input_manager.rel ^
 engine/screen_manager.rel ^
-screen/none_screen.rel screen/func_screen.rel screen/test_screen.rel
+screen/none_screen.rel screen/func_screen.rel screen/test_screen.rel ^
+gfx.rel
 
 :: Execute
 ihx2sms output.ihx output.sms

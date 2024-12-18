@@ -1,8 +1,7 @@
 #include "content_manager.h"
 #include "../engine/global_manager.h"
 #include "../devkit/_sms_manager.h"
-#include "../banks/bank2.h"
-#include "../banks/bank3.h"
+#include "../gfx.h"
 
 #define BGGAME_TILES	0
 
@@ -10,7 +9,8 @@ static void load_tile( unsigned char bank, const unsigned char *tiles, unsigned 
 
 void engine_content_manager_bggame()
 {
-	//load_tile( bggame_tiles__tiles__psgcompr_bank, bggame_tiles__tiles__psgcompr, BGGAME_TILES, bggame_tiles__palette__bin );
+	devkit_SMS_loadPSGaidencompressedTiles( font_tiles__tiles__psgcompr, 0 );
+	devkit_SMS_loadBGPalette( ( void * ) font_tiles__palette__bin );
 }
 
 void engine_content_manager_splash()

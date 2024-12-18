@@ -5,6 +5,9 @@ void main( void )
 	unsigned char open_screen_type;
 	//bool global_pause;
 
+	engine_asm_manager_clear_VRAM();
+	engine_content_manager_bggame();
+
 	open_screen_type = screen_type_func;
 	//open_screen_type = screen_type_title;
 	//open_screen_type = screen_type_begin;
