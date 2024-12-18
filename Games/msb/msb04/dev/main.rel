@@ -1,34 +1,40 @@
 ;!FILE main.asm
 XL3
-H 9 areas 1A global symbols
+H 9 areas 20 global symbols
 M main
 O -mz80
 S _engine_screen_manager_init Ref000000
 S _engine_screen_manager_update Ref000000
 S .__.ABS. Def000000
 S _devkit_UNSAFE_SMS_copySpritestoSAT Ref000000
+S _engine_asm_manager_clear_VRAM Ref000000
+S _engine_content_manager_bggame Ref000000
 S _devkit_SMS_waitForVBlank Ref000000
 S _devkit_SMS_initSprites Ref000000
-A _CODE size 16 flags 0 addr 0
-S C$main.c$11$1_0$123 Def000000
+A _CODE size 1C flags 0 addr 0
+S C$main.c$14$1_0$123 Def000006
 S _main Def000000
-S C$main.c$20$3_0$125 Def00000E
-S C$main.c$24$2_0$123 Def000014
-S C$main.c$22$3_0$125 Def000011
-S C$main.c$15$3_0$125 Def000008
-S C$main.c$18$3_0$125 Def00000B
-S XG$main$0$0 Def000014
+S C$main.c$21$3_0$125 Def000011
+S C$main.c$23$3_0$125 Def000014
+S C$main.c$27$2_0$123 Def00001A
+S C$main.c$25$3_0$125 Def000017
+S C$main.c$18$3_0$125 Def00000E
+S XG$main$0$0 Def00001A
 S C$main.c$3$0_0$123 Def000000
-S A$main$60 Def000000
-S A$main$61 Def000002
-S A$main$62 Def000003
-S A$main$81 Def000011
-S A$main$63 Def000004
-S A$main$73 Def00000B
-S A$main$64 Def000007
-S A$main$77 Def00000E
-S A$main$69 Def000008
-S A$main$89 Def000014
+S A$main$70 Def000006
+S A$main$71 Def000008
+S A$main$62 Def000000
+S A$main$72 Def000009
+S C$main.c$8$1_0$123 Def000000
+S A$main$91 Def000017
+S A$main$73 Def00000A
+S C$main.c$9$1_0$123 Def000003
+S A$main$83 Def000011
+S A$main$74 Def00000D
+S A$main$66 Def000003
+S A$main$87 Def000014
+S A$main$79 Def00000E
+S A$main$99 Def00001A
 S G$main$0$0 Def000000
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
@@ -40,11 +46,13 @@ A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
-T 00 00 00 3E 17 F5 33 CD 00 00 33
-R 00 00 00 00 02 08 00 00
-T 08 00 00
+T 00 00 00 CD 00 00 CD 00 00 3E 17 F5 33 CD 00 00
+R 00 00 00 00 02 04 04 00 02 07 05 00 02 0E 00 00
+T 0D 00 00 33
 R 00 00 00 00
-T 08 00 00 CD 00 00 CD 00 00 CD 00 00 CD
-R 00 00 00 00 02 04 05 00 02 07 01 00 02 0A 04 00
-T 12 00 00 00 00 18 F2
+T 0E 00 00
+R 00 00 00 00
+T 0E 00 00 CD 00 00 CD 00 00 CD 00 00 CD
+R 00 00 00 00 02 04 07 00 02 07 01 00 02 0A 06 00
+T 18 00 00 00 00 18 F2
 R 00 00 00 00 02 03 03 00

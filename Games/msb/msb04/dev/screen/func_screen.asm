@@ -18,6 +18,7 @@
 	.globl _devkit_VDPFEATURE_HIDEFIRSTCOL
 	.globl _devkit_SMS_VDPturnOnFeature
 	.globl _devkit_SMS_init
+	.globl _engine_font_manager_text
 	.globl _screen_func_screen_load
 	.globl _screen_func_screen_update
 ;--------------------------------------------------------
@@ -117,37 +118,51 @@ _screen_func_screen_load::
 	pop	af
 	C$func_screen.c$15$1_0$87	= .
 	.globl	C$func_screen.c$15$1_0$87
-;func_screen.c:15: devkit_SMS_displayOn();
+;func_screen.c:15: engine_font_manager_text( "FUNC SCREEN", 1, 5 );
+	ld	de, #0x0501
+	push	de
+	ld	hl, #___str_0
+	push	hl
+	call	_engine_font_manager_text
+	pop	af
+	pop	af
 	C$func_screen.c$16$1_0$87	= .
 	.globl	C$func_screen.c$16$1_0$87
-;func_screen.c:16: }
-	C$func_screen.c$16$1_0$87	= .
-	.globl	C$func_screen.c$16$1_0$87
+;func_screen.c:16: devkit_SMS_displayOn();
+	C$func_screen.c$17$1_0$87	= .
+	.globl	C$func_screen.c$17$1_0$87
+;func_screen.c:17: }
+	C$func_screen.c$17$1_0$87	= .
+	.globl	C$func_screen.c$17$1_0$87
 	XG$screen_func_screen_load$0$0	= .
 	.globl	XG$screen_func_screen_load$0$0
 	jp	_devkit_SMS_displayOn
+Ffunc_screen$__str_0$0_0$0 == .
+___str_0:
+	.ascii "FUNC SCREEN"
+	.db 0x00
 	G$screen_func_screen_update$0$0	= .
 	.globl	G$screen_func_screen_update$0$0
-	C$func_screen.c$18$1_0$89	= .
-	.globl	C$func_screen.c$18$1_0$89
-;func_screen.c:18: void screen_func_screen_update( unsigned char *screen_type )
+	C$func_screen.c$19$1_0$89	= .
+	.globl	C$func_screen.c$19$1_0$89
+;func_screen.c:19: void screen_func_screen_update( unsigned char *screen_type )
 ;	---------------------------------
 ; Function screen_func_screen_update
 ; ---------------------------------
 _screen_func_screen_update::
-	C$func_screen.c$20$1_0$89	= .
-	.globl	C$func_screen.c$20$1_0$89
-;func_screen.c:20: *screen_type = screen_type_func;
+	C$func_screen.c$21$1_0$89	= .
+	.globl	C$func_screen.c$21$1_0$89
+;func_screen.c:21: *screen_type = screen_type_func;
 	pop	bc
 	pop	hl
 	push	hl
 	push	bc
 	ld	(hl), #0x17
-	C$func_screen.c$21$1_0$89	= .
-	.globl	C$func_screen.c$21$1_0$89
-;func_screen.c:21: }
-	C$func_screen.c$21$1_0$89	= .
-	.globl	C$func_screen.c$21$1_0$89
+	C$func_screen.c$22$1_0$89	= .
+	.globl	C$func_screen.c$22$1_0$89
+;func_screen.c:22: }
+	C$func_screen.c$22$1_0$89	= .
+	.globl	C$func_screen.c$22$1_0$89
 	XG$screen_func_screen_update$0$0	= .
 	.globl	XG$screen_func_screen_update$0$0
 	ret

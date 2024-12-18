@@ -12,6 +12,7 @@ void screen_func_screen_load()
 
 	devkit_SMS_displayOff();
 	devkit_SMS_setSpritePaletteColor( 0, devkit_RGB( 0, 0, 3 ) );
+	engine_font_manager_text( "FUNC SCREEN", 1, 5 );
 	devkit_SMS_displayOn();
 }
 
