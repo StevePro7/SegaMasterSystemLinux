@@ -8,180 +8,243 @@
                                       8 ;--------------------------------------------------------
                                       9 ; Public variables in this module
                                      10 ;--------------------------------------------------------
-                                     11 	.globl _devkit_SMS_loadBGPalette
-                                     12 	.globl _devkit_SMS_loadPSGaidencompressedTiles
-                                     13 	.globl _devkit_SMS_mapROMBank
-                                     14 	.globl _engine_content_manager_bggame
-                                     15 	.globl _engine_content_manager_splash
-                                     16 	.globl _engine_content_manager_titles
-                                     17 	.globl _engine_content_manager_sprite
-                                     18 ;--------------------------------------------------------
-                                     19 ; special function registers
-                                     20 ;--------------------------------------------------------
+                                     11 	.globl _devkit_SMS_loadSpritePalette
+                                     12 	.globl _devkit_SMS_loadBGPalette
+                                     13 	.globl _devkit_SMS_loadPSGaidencompressedTiles
+                                     14 	.globl _devkit_SMS_loadTiles
+                                     15 	.globl _devkit_SMS_mapROMBank
+                                     16 	.globl _engine_content_manager_bggame
+                                     17 	.globl _engine_content_manager_splash
+                                     18 	.globl _engine_content_manager_titles
+                                     19 	.globl _engine_content_manager_sprite
+                                     20 	.globl _engine_content_manager_load_level1_assets
                                      21 ;--------------------------------------------------------
-                                     22 ; ram data
+                                     22 ; special function registers
                                      23 ;--------------------------------------------------------
-                                     24 	.area _DATA
-                                     25 ;--------------------------------------------------------
-                                     26 ; ram data
-                                     27 ;--------------------------------------------------------
-                                     28 	.area _INITIALIZED
-                                     29 ;--------------------------------------------------------
-                                     30 ; absolute external ram data
-                                     31 ;--------------------------------------------------------
-                                     32 	.area _DABS (ABS)
-                                     33 ;--------------------------------------------------------
-                                     34 ; global & static initialisations
-                                     35 ;--------------------------------------------------------
-                                     36 	.area _HOME
-                                     37 	.area _GSINIT
-                                     38 	.area _GSFINAL
-                                     39 	.area _GSINIT
-                                     40 ;--------------------------------------------------------
-                                     41 ; Home
-                                     42 ;--------------------------------------------------------
-                                     43 	.area _HOME
-                                     44 	.area _HOME
+                                     24 ;--------------------------------------------------------
+                                     25 ; ram data
+                                     26 ;--------------------------------------------------------
+                                     27 	.area _DATA
+                                     28 ;--------------------------------------------------------
+                                     29 ; ram data
+                                     30 ;--------------------------------------------------------
+                                     31 	.area _INITIALIZED
+                                     32 ;--------------------------------------------------------
+                                     33 ; absolute external ram data
+                                     34 ;--------------------------------------------------------
+                                     35 	.area _DABS (ABS)
+                                     36 ;--------------------------------------------------------
+                                     37 ; global & static initialisations
+                                     38 ;--------------------------------------------------------
+                                     39 	.area _HOME
+                                     40 	.area _GSINIT
+                                     41 	.area _GSFINAL
+                                     42 	.area _GSINIT
+                                     43 ;--------------------------------------------------------
+                                     44 ; Home
                                      45 ;--------------------------------------------------------
-                                     46 ; code
-                                     47 ;--------------------------------------------------------
-                                     48 	.area _CODE
-                           000000    49 	G$engine_content_manager_bggame$0$0	= .
-                                     50 	.globl	G$engine_content_manager_bggame$0$0
-                           000000    51 	C$content_manager.c$10$0_0$83	= .
-                                     52 	.globl	C$content_manager.c$10$0_0$83
-                                     53 ;content_manager.c:10: void engine_content_manager_bggame()
-                                     54 ;	---------------------------------
-                                     55 ; Function engine_content_manager_bggame
-                                     56 ; ---------------------------------
-      000000                         57 _engine_content_manager_bggame::
-                           000000    58 	C$content_manager.c$12$1_0$83	= .
-                                     59 	.globl	C$content_manager.c$12$1_0$83
-                                     60 ;content_manager.c:12: devkit_SMS_loadPSGaidencompressedTiles( font_tiles__tiles__psgcompr, 0 );
-      000000 21 00 00         [10]   61 	ld	hl, #0x0000
-      000003 E5               [11]   62 	push	hl
-      000004 21r00r00         [10]   63 	ld	hl, #_font_tiles__tiles__psgcompr
-      000007 E5               [11]   64 	push	hl
-      000008 CDr00r00         [17]   65 	call	_devkit_SMS_loadPSGaidencompressedTiles
-      00000B F1               [10]   66 	pop	af
-                           00000C    67 	C$content_manager.c$13$1_0$83	= .
-                                     68 	.globl	C$content_manager.c$13$1_0$83
-                                     69 ;content_manager.c:13: devkit_SMS_loadBGPalette( ( void * ) font_tiles__palette__bin );
-      00000C 21r00r00         [10]   70 	ld	hl, #_font_tiles__palette__bin
-      00000F E3               [19]   71 	ex	(sp),hl
-      000010 CDr00r00         [17]   72 	call	_devkit_SMS_loadBGPalette
-      000013 F1               [10]   73 	pop	af
-                           000014    74 	C$content_manager.c$14$1_0$83	= .
-                                     75 	.globl	C$content_manager.c$14$1_0$83
-                                     76 ;content_manager.c:14: }
-                           000014    77 	C$content_manager.c$14$1_0$83	= .
-                                     78 	.globl	C$content_manager.c$14$1_0$83
-                           000014    79 	XG$engine_content_manager_bggame$0$0	= .
-                                     80 	.globl	XG$engine_content_manager_bggame$0$0
-      000014 C9               [10]   81 	ret
-                           000015    82 	G$engine_content_manager_splash$0$0	= .
-                                     83 	.globl	G$engine_content_manager_splash$0$0
-                           000015    84 	C$content_manager.c$16$1_0$85	= .
-                                     85 	.globl	C$content_manager.c$16$1_0$85
-                                     86 ;content_manager.c:16: void engine_content_manager_splash()
-                                     87 ;	---------------------------------
-                                     88 ; Function engine_content_manager_splash
-                                     89 ; ---------------------------------
-      000015                         90 _engine_content_manager_splash::
-                           000015    91 	C$content_manager.c$19$1_0$85	= .
-                                     92 	.globl	C$content_manager.c$19$1_0$85
-                                     93 ;content_manager.c:19: }
-                           000015    94 	C$content_manager.c$19$1_0$85	= .
-                                     95 	.globl	C$content_manager.c$19$1_0$85
-                           000015    96 	XG$engine_content_manager_splash$0$0	= .
-                                     97 	.globl	XG$engine_content_manager_splash$0$0
-      000015 C9               [10]   98 	ret
-                           000016    99 	G$engine_content_manager_titles$0$0	= .
-                                    100 	.globl	G$engine_content_manager_titles$0$0
-                           000016   101 	C$content_manager.c$21$1_0$87	= .
-                                    102 	.globl	C$content_manager.c$21$1_0$87
-                                    103 ;content_manager.c:21: void engine_content_manager_titles()
-                                    104 ;	---------------------------------
-                                    105 ; Function engine_content_manager_titles
-                                    106 ; ---------------------------------
-      000016                        107 _engine_content_manager_titles::
-                           000016   108 	C$content_manager.c$24$1_0$87	= .
-                                    109 	.globl	C$content_manager.c$24$1_0$87
-                                    110 ;content_manager.c:24: }
-                           000016   111 	C$content_manager.c$24$1_0$87	= .
-                                    112 	.globl	C$content_manager.c$24$1_0$87
-                           000016   113 	XG$engine_content_manager_titles$0$0	= .
-                                    114 	.globl	XG$engine_content_manager_titles$0$0
-      000016 C9               [10]  115 	ret
-                           000017   116 	G$engine_content_manager_sprite$0$0	= .
-                                    117 	.globl	G$engine_content_manager_sprite$0$0
-                           000017   118 	C$content_manager.c$26$1_0$89	= .
-                                    119 	.globl	C$content_manager.c$26$1_0$89
-                                    120 ;content_manager.c:26: void engine_content_manager_sprite()
-                                    121 ;	---------------------------------
-                                    122 ; Function engine_content_manager_sprite
-                                    123 ; ---------------------------------
-      000017                        124 _engine_content_manager_sprite::
-                           000017   125 	C$content_manager.c$32$1_0$89	= .
-                                    126 	.globl	C$content_manager.c$32$1_0$89
-                                    127 ;content_manager.c:32: }
-                           000017   128 	C$content_manager.c$32$1_0$89	= .
-                                    129 	.globl	C$content_manager.c$32$1_0$89
-                           000017   130 	XG$engine_content_manager_sprite$0$0	= .
-                                    131 	.globl	XG$engine_content_manager_sprite$0$0
-      000017 C9               [10]  132 	ret
-                           000018   133 	Fcontent_manager$load_tile$0$0	= .
-                                    134 	.globl	Fcontent_manager$load_tile$0$0
-                           000018   135 	C$content_manager.c$34$1_0$91	= .
-                                    136 	.globl	C$content_manager.c$34$1_0$91
-                                    137 ;content_manager.c:34: static void load_tile( unsigned char bank, const unsigned char *tiles, unsigned char tilefrom, const unsigned char *palette )
-                                    138 ;	---------------------------------
-                                    139 ; Function load_tile
-                                    140 ; ---------------------------------
-      000018                        141 _load_tile:
-                           000018   142 	C$content_manager.c$36$1_0$91	= .
-                                    143 	.globl	C$content_manager.c$36$1_0$91
-                                    144 ;content_manager.c:36: devkit_SMS_mapROMBank( bank );
-      000018 21 02 00         [10]  145 	ld	hl, #2
-      00001B 39               [11]  146 	add	hl, sp
-      00001C 7E               [ 7]  147 	ld	a, (hl)
-      00001D F5               [11]  148 	push	af
-      00001E 33               [ 6]  149 	inc	sp
-      00001F CDr00r00         [17]  150 	call	_devkit_SMS_mapROMBank
-      000022 33               [ 6]  151 	inc	sp
-                           000023   152 	C$content_manager.c$37$1_0$91	= .
-                                    153 	.globl	C$content_manager.c$37$1_0$91
-                                    154 ;content_manager.c:37: devkit_SMS_loadPSGaidencompressedTiles( tiles, tilefrom );
-      000023 FD 21 05 00      [14]  155 	ld	iy, #5
-      000027 FD 39            [15]  156 	add	iy, sp
-      000029 FD 5E 00         [19]  157 	ld	e, 0 (iy)
-      00002C 16 00            [ 7]  158 	ld	d, #0x00
-      00002E FD 4E FE         [19]  159 	ld	c, -2 (iy)
-      000031 FD 46 FF         [19]  160 	ld	b, -1 (iy)
-      000034 D5               [11]  161 	push	de
-      000035 C5               [11]  162 	push	bc
-      000036 CDr00r00         [17]  163 	call	_devkit_SMS_loadPSGaidencompressedTiles
-      000039 F1               [10]  164 	pop	af
-      00003A F1               [10]  165 	pop	af
-                           00003B   166 	C$content_manager.c$38$1_0$91	= .
-                                    167 	.globl	C$content_manager.c$38$1_0$91
-                                    168 ;content_manager.c:38: devkit_SMS_loadBGPalette( ( void * ) palette );
-      00003B 21 06 00         [10]  169 	ld	hl, #6
-      00003E 39               [11]  170 	add	hl, sp
-      00003F 4E               [ 7]  171 	ld	c, (hl)
-      000040 23               [ 6]  172 	inc	hl
-      000041 46               [ 7]  173 	ld	b, (hl)
-      000042 C5               [11]  174 	push	bc
-      000043 CDr00r00         [17]  175 	call	_devkit_SMS_loadBGPalette
-      000046 F1               [10]  176 	pop	af
-                           000047   177 	C$content_manager.c$39$1_0$91	= .
-                                    178 	.globl	C$content_manager.c$39$1_0$91
-                                    179 ;content_manager.c:39: }
-                           000047   180 	C$content_manager.c$39$1_0$91	= .
-                                    181 	.globl	C$content_manager.c$39$1_0$91
-                           000047   182 	XFcontent_manager$load_tile$0$0	= .
-                                    183 	.globl	XFcontent_manager$load_tile$0$0
-      000047 C9               [10]  184 	ret
-                                    185 	.area _CODE
-                                    186 	.area _INITIALIZER
-                                    187 	.area _CABS (ABS)
+                                     46 	.area _HOME
+                                     47 	.area _HOME
+                                     48 ;--------------------------------------------------------
+                                     49 ; code
+                                     50 ;--------------------------------------------------------
+                                     51 	.area _CODE
+                           000000    52 	G$engine_content_manager_bggame$0$0	= .
+                                     53 	.globl	G$engine_content_manager_bggame$0$0
+                           000000    54 	C$content_manager.c$13$0_0$83	= .
+                                     55 	.globl	C$content_manager.c$13$0_0$83
+                                     56 ;content_manager.c:13: void engine_content_manager_bggame()
+                                     57 ;	---------------------------------
+                                     58 ; Function engine_content_manager_bggame
+                                     59 ; ---------------------------------
+      000000                         60 _engine_content_manager_bggame::
+                           000000    61 	C$content_manager.c$15$1_0$83	= .
+                                     62 	.globl	C$content_manager.c$15$1_0$83
+                                     63 ;content_manager.c:15: devkit_SMS_loadPSGaidencompressedTiles( font_tiles__tiles__psgcompr, 0 );
+      000000 21 00 00         [10]   64 	ld	hl, #0x0000
+      000003 E5               [11]   65 	push	hl
+      000004 21r00r00         [10]   66 	ld	hl, #_font_tiles__tiles__psgcompr
+      000007 E5               [11]   67 	push	hl
+      000008 CDr00r00         [17]   68 	call	_devkit_SMS_loadPSGaidencompressedTiles
+      00000B F1               [10]   69 	pop	af
+                           00000C    70 	C$content_manager.c$16$1_0$83	= .
+                                     71 	.globl	C$content_manager.c$16$1_0$83
+                                     72 ;content_manager.c:16: devkit_SMS_loadBGPalette( ( void * ) font_tiles__palette__bin );
+      00000C 21r00r00         [10]   73 	ld	hl, #_font_tiles__palette__bin
+      00000F E3               [19]   74 	ex	(sp),hl
+      000010 CDr00r00         [17]   75 	call	_devkit_SMS_loadBGPalette
+      000013 F1               [10]   76 	pop	af
+                           000014    77 	C$content_manager.c$17$1_0$83	= .
+                                     78 	.globl	C$content_manager.c$17$1_0$83
+                                     79 ;content_manager.c:17: }
+                           000014    80 	C$content_manager.c$17$1_0$83	= .
+                                     81 	.globl	C$content_manager.c$17$1_0$83
+                           000014    82 	XG$engine_content_manager_bggame$0$0	= .
+                                     83 	.globl	XG$engine_content_manager_bggame$0$0
+      000014 C9               [10]   84 	ret
+                           000015    85 	G$engine_content_manager_splash$0$0	= .
+                                     86 	.globl	G$engine_content_manager_splash$0$0
+                           000015    87 	C$content_manager.c$19$1_0$85	= .
+                                     88 	.globl	C$content_manager.c$19$1_0$85
+                                     89 ;content_manager.c:19: void engine_content_manager_splash()
+                                     90 ;	---------------------------------
+                                     91 ; Function engine_content_manager_splash
+                                     92 ; ---------------------------------
+      000015                         93 _engine_content_manager_splash::
+                           000015    94 	C$content_manager.c$22$1_0$85	= .
+                                     95 	.globl	C$content_manager.c$22$1_0$85
+                                     96 ;content_manager.c:22: }
+                           000015    97 	C$content_manager.c$22$1_0$85	= .
+                                     98 	.globl	C$content_manager.c$22$1_0$85
+                           000015    99 	XG$engine_content_manager_splash$0$0	= .
+                                    100 	.globl	XG$engine_content_manager_splash$0$0
+      000015 C9               [10]  101 	ret
+                           000016   102 	G$engine_content_manager_titles$0$0	= .
+                                    103 	.globl	G$engine_content_manager_titles$0$0
+                           000016   104 	C$content_manager.c$24$1_0$87	= .
+                                    105 	.globl	C$content_manager.c$24$1_0$87
+                                    106 ;content_manager.c:24: void engine_content_manager_titles()
+                                    107 ;	---------------------------------
+                                    108 ; Function engine_content_manager_titles
+                                    109 ; ---------------------------------
+      000016                        110 _engine_content_manager_titles::
+                           000016   111 	C$content_manager.c$27$1_0$87	= .
+                                    112 	.globl	C$content_manager.c$27$1_0$87
+                                    113 ;content_manager.c:27: }
+                           000016   114 	C$content_manager.c$27$1_0$87	= .
+                                    115 	.globl	C$content_manager.c$27$1_0$87
+                           000016   116 	XG$engine_content_manager_titles$0$0	= .
+                                    117 	.globl	XG$engine_content_manager_titles$0$0
+      000016 C9               [10]  118 	ret
+                           000017   119 	G$engine_content_manager_sprite$0$0	= .
+                                    120 	.globl	G$engine_content_manager_sprite$0$0
+                           000017   121 	C$content_manager.c$29$1_0$89	= .
+                                    122 	.globl	C$content_manager.c$29$1_0$89
+                                    123 ;content_manager.c:29: void engine_content_manager_sprite()
+                                    124 ;	---------------------------------
+                                    125 ; Function engine_content_manager_sprite
+                                    126 ; ---------------------------------
+      000017                        127 _engine_content_manager_sprite::
+                           000017   128 	C$content_manager.c$35$1_0$89	= .
+                                    129 	.globl	C$content_manager.c$35$1_0$89
+                                    130 ;content_manager.c:35: }
+                           000017   131 	C$content_manager.c$35$1_0$89	= .
+                                    132 	.globl	C$content_manager.c$35$1_0$89
+                           000017   133 	XG$engine_content_manager_sprite$0$0	= .
+                                    134 	.globl	XG$engine_content_manager_sprite$0$0
+      000017 C9               [10]  135 	ret
+                           000018   136 	G$engine_content_manager_load_level1_assets$0$0	= .
+                                    137 	.globl	G$engine_content_manager_load_level1_assets$0$0
+                           000018   138 	C$content_manager.c$37$1_0$90	= .
+                                    139 	.globl	C$content_manager.c$37$1_0$90
+                                    140 ;content_manager.c:37: void engine_content_manager_load_level1_assets()
+                                    141 ;	---------------------------------
+                                    142 ; Function engine_content_manager_load_level1_assets
+                                    143 ; ---------------------------------
+      000018                        144 _engine_content_manager_load_level1_assets::
+                           000018   145 	C$content_manager.c$39$1_0$90	= .
+                                    146 	.globl	C$content_manager.c$39$1_0$90
+                                    147 ;content_manager.c:39: devkit_SMS_mapROMBank( level1_palette_bin_bank );
+      000018 3E 02            [ 7]  148 	ld	a, #0x02
+      00001A F5               [11]  149 	push	af
+      00001B 33               [ 6]  150 	inc	sp
+      00001C CDr00r00         [17]  151 	call	_devkit_SMS_mapROMBank
+      00001F 33               [ 6]  152 	inc	sp
+                           000020   153 	C$content_manager.c$40$1_0$90	= .
+                                    154 	.globl	C$content_manager.c$40$1_0$90
+                                    155 ;content_manager.c:40: devkit_SMS_loadBGPalette( (unsigned char *) level1_palette_bin );
+      000020 21r00r00         [10]  156 	ld	hl, #_level1_palette_bin
+      000023 E5               [11]  157 	push	hl
+      000024 CDr00r00         [17]  158 	call	_devkit_SMS_loadBGPalette
+      000027 F1               [10]  159 	pop	af
+                           000028   160 	C$content_manager.c$41$1_0$90	= .
+                                    161 	.globl	C$content_manager.c$41$1_0$90
+                                    162 ;content_manager.c:41: devkit_SMS_loadTiles( ( unsigned char * )level1_tiles_bin, 0, level1_tiles_bin_size );
+      000028 21 00 11         [10]  163 	ld	hl, #0x1100
+      00002B E5               [11]  164 	push	hl
+      00002C 65               [ 4]  165 	ld	h, l
+      00002D E5               [11]  166 	push	hl
+      00002E 21r00r00         [10]  167 	ld	hl, #_level1_tiles_bin
+      000031 E5               [11]  168 	push	hl
+      000032 CDr00r00         [17]  169 	call	_devkit_SMS_loadTiles
+      000035 21 06 00         [10]  170 	ld	hl, #6
+      000038 39               [11]  171 	add	hl, sp
+      000039 F9               [ 6]  172 	ld	sp, hl
+                           00003A   173 	C$content_manager.c$42$1_0$90	= .
+                                    174 	.globl	C$content_manager.c$42$1_0$90
+                                    175 ;content_manager.c:42: devkit_SMS_mapROMBank( player_palette_bin_bank );
+      00003A 3E 03            [ 7]  176 	ld	a, #0x03
+      00003C F5               [11]  177 	push	af
+      00003D 33               [ 6]  178 	inc	sp
+      00003E CDr00r00         [17]  179 	call	_devkit_SMS_mapROMBank
+      000041 33               [ 6]  180 	inc	sp
+                           000042   181 	C$content_manager.c$43$1_0$90	= .
+                                    182 	.globl	C$content_manager.c$43$1_0$90
+                                    183 ;content_manager.c:43: devkit_SMS_loadSpritePalette( ( unsigned char * ) player_palette_bin );
+      000042 21r00r00         [10]  184 	ld	hl, #_player_palette_bin
+      000045 E5               [11]  185 	push	hl
+      000046 CDr00r00         [17]  186 	call	_devkit_SMS_loadSpritePalette
+      000049 F1               [10]  187 	pop	af
+                           00004A   188 	C$content_manager.c$44$1_0$90	= .
+                                    189 	.globl	C$content_manager.c$44$1_0$90
+                                    190 ;content_manager.c:44: }
+                           00004A   191 	C$content_manager.c$44$1_0$90	= .
+                                    192 	.globl	C$content_manager.c$44$1_0$90
+                           00004A   193 	XG$engine_content_manager_load_level1_assets$0$0	= .
+                                    194 	.globl	XG$engine_content_manager_load_level1_assets$0$0
+      00004A C9               [10]  195 	ret
+                           00004B   196 	Fcontent_manager$load_tile$0$0	= .
+                                    197 	.globl	Fcontent_manager$load_tile$0$0
+                           00004B   198 	C$content_manager.c$46$1_0$92	= .
+                                    199 	.globl	C$content_manager.c$46$1_0$92
+                                    200 ;content_manager.c:46: static void load_tile( unsigned char bank, const unsigned char *tiles, unsigned char tilefrom, const unsigned char *palette )
+                                    201 ;	---------------------------------
+                                    202 ; Function load_tile
+                                    203 ; ---------------------------------
+      00004B                        204 _load_tile:
+                           00004B   205 	C$content_manager.c$48$1_0$92	= .
+                                    206 	.globl	C$content_manager.c$48$1_0$92
+                                    207 ;content_manager.c:48: devkit_SMS_mapROMBank( bank );
+      00004B 21 02 00         [10]  208 	ld	hl, #2
+      00004E 39               [11]  209 	add	hl, sp
+      00004F 7E               [ 7]  210 	ld	a, (hl)
+      000050 F5               [11]  211 	push	af
+      000051 33               [ 6]  212 	inc	sp
+      000052 CDr00r00         [17]  213 	call	_devkit_SMS_mapROMBank
+      000055 33               [ 6]  214 	inc	sp
+                           000056   215 	C$content_manager.c$49$1_0$92	= .
+                                    216 	.globl	C$content_manager.c$49$1_0$92
+                                    217 ;content_manager.c:49: devkit_SMS_loadPSGaidencompressedTiles( tiles, tilefrom );
+      000056 FD 21 05 00      [14]  218 	ld	iy, #5
+      00005A FD 39            [15]  219 	add	iy, sp
+      00005C FD 5E 00         [19]  220 	ld	e, 0 (iy)
+      00005F 16 00            [ 7]  221 	ld	d, #0x00
+      000061 FD 4E FE         [19]  222 	ld	c, -2 (iy)
+      000064 FD 46 FF         [19]  223 	ld	b, -1 (iy)
+      000067 D5               [11]  224 	push	de
+      000068 C5               [11]  225 	push	bc
+      000069 CDr00r00         [17]  226 	call	_devkit_SMS_loadPSGaidencompressedTiles
+      00006C F1               [10]  227 	pop	af
+      00006D F1               [10]  228 	pop	af
+                           00006E   229 	C$content_manager.c$50$1_0$92	= .
+                                    230 	.globl	C$content_manager.c$50$1_0$92
+                                    231 ;content_manager.c:50: devkit_SMS_loadBGPalette( ( void * ) palette );
+      00006E 21 06 00         [10]  232 	ld	hl, #6
+      000071 39               [11]  233 	add	hl, sp
+      000072 4E               [ 7]  234 	ld	c, (hl)
+      000073 23               [ 6]  235 	inc	hl
+      000074 46               [ 7]  236 	ld	b, (hl)
+      000075 C5               [11]  237 	push	bc
+      000076 CDr00r00         [17]  238 	call	_devkit_SMS_loadBGPalette
+      000079 F1               [10]  239 	pop	af
+                           00007A   240 	C$content_manager.c$51$1_0$92	= .
+                                    241 	.globl	C$content_manager.c$51$1_0$92
+                                    242 ;content_manager.c:51: }
+                           00007A   243 	C$content_manager.c$51$1_0$92	= .
+                                    244 	.globl	C$content_manager.c$51$1_0$92
+                           00007A   245 	XFcontent_manager$load_tile$0$0	= .
+                                    246 	.globl	XFcontent_manager$load_tile$0$0
+      00007A C9               [10]  247 	ret
+                                    248 	.area _CODE
+                                    249 	.area _INITIALIZER
+                                    250 	.area _CABS (ABS)

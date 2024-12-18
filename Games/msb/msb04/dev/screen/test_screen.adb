@@ -3,6 +3,11 @@ F:G$screen_test_screen_load$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$screen_test_screen_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Ltest_screen.screen_test_screen_update$screen_type$1_0$103({2}DG,SC:U),B,1,4
 S:Ltest_screen.screen_test_screen_update$input$1_0$104({1}SC:U),R,0,0,[a]
+S:G$engine_content_manager_bggame$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_content_manager_splash$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_content_manager_titles$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_content_manager_sprite$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_content_manager_load_level1_assets$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_char$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_text$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_data$0_0$0({2}DF,SV:S),C,0,0
