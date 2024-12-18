@@ -1,0 +1,254 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 4.1.0 #12072 (MINGW64)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module input_manager
+                                      6 	.optsdcc -mz80
+                                      7 	
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl _devkit_SMS_getKeysStatus
+                                     12 	.globl _engine_input_manager_init
+                                     13 	.globl _engine_input_manager_update
+                                     14 	.globl _engine_input_manager_hold
+                                     15 	.globl _engine_input_manager_move
+                                     16 ;--------------------------------------------------------
+                                     17 ; special function registers
+                                     18 ;--------------------------------------------------------
+                                     19 ;--------------------------------------------------------
+                                     20 ; ram data
+                                     21 ;--------------------------------------------------------
+                                     22 	.area _DATA
+                           000000    23 Finput_manager$hold_method$0_0$0==.
+      000000                         24 _hold_method:
+      000000                         25 	.ds 2
+                           000002    26 Finput_manager$move_method$0_0$0==.
+      000002                         27 _move_method:
+      000002                         28 	.ds 2
+                                     29 ;--------------------------------------------------------
+                                     30 ; ram data
+                                     31 ;--------------------------------------------------------
+                                     32 	.area _INITIALIZED
+                           000000    33 Finput_manager$curr_joypad1$0_0$0==.
+      000000                         34 _curr_joypad1:
+      000000                         35 	.ds 2
+                           000002    36 Finput_manager$prev_joypad1$0_0$0==.
+      000002                         37 _prev_joypad1:
+      000002                         38 	.ds 2
+                                     39 ;--------------------------------------------------------
+                                     40 ; absolute external ram data
+                                     41 ;--------------------------------------------------------
+                                     42 	.area _DABS (ABS)
+                                     43 ;--------------------------------------------------------
+                                     44 ; global & static initialisations
+                                     45 ;--------------------------------------------------------
+                                     46 	.area _HOME
+                                     47 	.area _GSINIT
+                                     48 	.area _GSFINAL
+                                     49 	.area _GSINIT
+                                     50 ;--------------------------------------------------------
+                                     51 ; Home
+                                     52 ;--------------------------------------------------------
+                                     53 	.area _HOME
+                                     54 	.area _HOME
+                                     55 ;--------------------------------------------------------
+                                     56 ; code
+                                     57 ;--------------------------------------------------------
+                                     58 	.area _CODE
+                           000000    59 	G$engine_input_manager_init$0$0	= .
+                                     60 	.globl	G$engine_input_manager_init$0$0
+                           000000    61 	C$input_manager.c$23$0_0$88	= .
+                                     62 	.globl	C$input_manager.c$23$0_0$88
+                                     63 ;input_manager.c:23: void engine_input_manager_init()
+                                     64 ;	---------------------------------
+                                     65 ; Function engine_input_manager_init
+                                     66 ; ---------------------------------
+      000000                         67 _engine_input_manager_init::
+                           000000    68 	C$input_manager.c$27$2_0$89	= .
+                                     69 	.globl	C$input_manager.c$27$2_0$89
+                                     70 ;input_manager.c:27: hold_method = my_hold_method;
+      000000 FD 21r00r00      [14]   71 	ld	iy, #_hold_method
+      000004 FD 36 00r44      [19]   72 	ld	0 (iy), #<(_my_hold_method)
+      000008 FD 36 01s00      [19]   73 	ld	1 (iy), #>(_my_hold_method)
+                           00000C    74 	C$input_manager.c$28$2_0$89	= .
+                                     75 	.globl	C$input_manager.c$28$2_0$89
+                                     76 ;input_manager.c:28: move_method = my_move_method;
+      00000C FD 21r02r00      [14]   77 	ld	iy, #_move_method
+      000010 FD 36 00r75      [19]   78 	ld	0 (iy), #<(_my_move_method)
+      000014 FD 36 01s00      [19]   79 	ld	1 (iy), #>(_my_move_method)
+                           000018    80 	C$input_manager.c$34$1_0$88	= .
+                                     81 	.globl	C$input_manager.c$34$1_0$88
+                                     82 ;input_manager.c:34: move_method = my_hold_method;
+                           000018    83 	C$input_manager.c$36$1_0$88	= .
+                                     84 	.globl	C$input_manager.c$36$1_0$88
+                                     85 ;input_manager.c:36: }
+                           000018    86 	C$input_manager.c$36$1_0$88	= .
+                                     87 	.globl	C$input_manager.c$36$1_0$88
+                           000018    88 	XG$engine_input_manager_init$0$0	= .
+                                     89 	.globl	XG$engine_input_manager_init$0$0
+      000018 C9               [10]   90 	ret
+                           000019    91 	G$engine_input_manager_update$0$0	= .
+                                     92 	.globl	G$engine_input_manager_update$0$0
+                           000019    93 	C$input_manager.c$37$1_0$91	= .
+                                     94 	.globl	C$input_manager.c$37$1_0$91
+                                     95 ;input_manager.c:37: void engine_input_manager_update()
+                                     96 ;	---------------------------------
+                                     97 ; Function engine_input_manager_update
+                                     98 ; ---------------------------------
+      000019                         99 _engine_input_manager_update::
+                           000019   100 	C$input_manager.c$39$1_0$91	= .
+                                    101 	.globl	C$input_manager.c$39$1_0$91
+                                    102 ;input_manager.c:39: prev_joypad1 = curr_joypad1;
+      000019 2Ar00r00         [16]  103 	ld	hl, (_curr_joypad1)
+      00001C 22r02r00         [16]  104 	ld	(_prev_joypad1), hl
+                           00001F   105 	C$input_manager.c$40$1_0$91	= .
+                                    106 	.globl	C$input_manager.c$40$1_0$91
+                                    107 ;input_manager.c:40: curr_joypad1 = devkit_SMS_getKeysStatus();
+      00001F CDr00r00         [17]  108 	call	_devkit_SMS_getKeysStatus
+      000022 22r00r00         [16]  109 	ld	(_curr_joypad1), hl
+                           000025   110 	C$input_manager.c$41$1_0$91	= .
+                                    111 	.globl	C$input_manager.c$41$1_0$91
+                                    112 ;input_manager.c:41: }
+                           000025   113 	C$input_manager.c$41$1_0$91	= .
+                                    114 	.globl	C$input_manager.c$41$1_0$91
+                           000025   115 	XG$engine_input_manager_update$0$0	= .
+                                    116 	.globl	XG$engine_input_manager_update$0$0
+      000025 C9               [10]  117 	ret
+                           000026   118 	G$engine_input_manager_hold$0$0	= .
+                                    119 	.globl	G$engine_input_manager_hold$0$0
+                           000026   120 	C$input_manager.c$43$1_0$93	= .
+                                    121 	.globl	C$input_manager.c$43$1_0$93
+                                    122 ;input_manager.c:43: unsigned char engine_input_manager_hold( unsigned char data )
+                                    123 ;	---------------------------------
+                                    124 ; Function engine_input_manager_hold
+                                    125 ; ---------------------------------
+      000026                        126 _engine_input_manager_hold::
+                           000026   127 	C$input_manager.c$45$1_0$93	= .
+                                    128 	.globl	C$input_manager.c$45$1_0$93
+                                    129 ;input_manager.c:45: return hold_method( data );
+      000026 21 02 00         [10]  130 	ld	hl, #2
+      000029 39               [11]  131 	add	hl, sp
+      00002A 7E               [ 7]  132 	ld	a, (hl)
+      00002B F5               [11]  133 	push	af
+      00002C 33               [ 6]  134 	inc	sp
+      00002D 2Ar00r00         [16]  135 	ld	hl, (_hold_method)
+      000030 CDr00r00         [17]  136 	call	___sdcc_call_hl
+      000033 33               [ 6]  137 	inc	sp
+                           000034   138 	C$input_manager.c$46$1_0$93	= .
+                                    139 	.globl	C$input_manager.c$46$1_0$93
+                                    140 ;input_manager.c:46: }
+                           000034   141 	C$input_manager.c$46$1_0$93	= .
+                                    142 	.globl	C$input_manager.c$46$1_0$93
+                           000034   143 	XG$engine_input_manager_hold$0$0	= .
+                                    144 	.globl	XG$engine_input_manager_hold$0$0
+      000034 C9               [10]  145 	ret
+                           000035   146 	G$engine_input_manager_move$0$0	= .
+                                    147 	.globl	G$engine_input_manager_move$0$0
+                           000035   148 	C$input_manager.c$48$1_0$95	= .
+                                    149 	.globl	C$input_manager.c$48$1_0$95
+                                    150 ;input_manager.c:48: unsigned char engine_input_manager_move( unsigned char data )
+                                    151 ;	---------------------------------
+                                    152 ; Function engine_input_manager_move
+                                    153 ; ---------------------------------
+      000035                        154 _engine_input_manager_move::
+                           000035   155 	C$input_manager.c$50$1_0$95	= .
+                                    156 	.globl	C$input_manager.c$50$1_0$95
+                                    157 ;input_manager.c:50: return move_method( data );
+      000035 21 02 00         [10]  158 	ld	hl, #2
+      000038 39               [11]  159 	add	hl, sp
+      000039 7E               [ 7]  160 	ld	a, (hl)
+      00003A F5               [11]  161 	push	af
+      00003B 33               [ 6]  162 	inc	sp
+      00003C 2Ar02r00         [16]  163 	ld	hl, (_move_method)
+      00003F CDr00r00         [17]  164 	call	___sdcc_call_hl
+      000042 33               [ 6]  165 	inc	sp
+                           000043   166 	C$input_manager.c$51$1_0$95	= .
+                                    167 	.globl	C$input_manager.c$51$1_0$95
+                                    168 ;input_manager.c:51: }
+                           000043   169 	C$input_manager.c$51$1_0$95	= .
+                                    170 	.globl	C$input_manager.c$51$1_0$95
+                           000043   171 	XG$engine_input_manager_move$0$0	= .
+                                    172 	.globl	XG$engine_input_manager_move$0$0
+      000043 C9               [10]  173 	ret
+                           000044   174 	Finput_manager$my_hold_method$0$0	= .
+                                    175 	.globl	Finput_manager$my_hold_method$0$0
+                           000044   176 	C$input_manager.c$53$1_0$97	= .
+                                    177 	.globl	C$input_manager.c$53$1_0$97
+                                    178 ;input_manager.c:53: static unsigned char my_hold_method( unsigned char data )
+                                    179 ;	---------------------------------
+                                    180 ; Function my_hold_method
+                                    181 ; ---------------------------------
+      000044                        182 _my_hold_method:
+                           000044   183 	C$input_manager.c$55$1_0$97	= .
+                                    184 	.globl	C$input_manager.c$55$1_0$97
+                                    185 ;input_manager.c:55: return curr_joypad1 & data && !( prev_joypad1 & data );
+      000044 FD 21 02 00      [14]  186 	ld	iy, #2
+      000048 FD 39            [15]  187 	add	iy, sp
+      00004A FD 4E 00         [19]  188 	ld	c, 0 (iy)
+      00004D 06 00            [ 7]  189 	ld	b, #0x00
+      00004F FD 21r00r00      [14]  190 	ld	iy, #_curr_joypad1
+      000053 FD 7E 00         [19]  191 	ld	a, 0 (iy)
+      000056 A1               [ 4]  192 	and	a, c
+      000057 5F               [ 4]  193 	ld	e, a
+      000058 FD 7E 01         [19]  194 	ld	a, 1 (iy)
+      00005B A0               [ 4]  195 	and	a, b
+      00005C B3               [ 4]  196 	or	a, e
+      00005D 28 10            [12]  197 	jr	Z, 00103$
+      00005F FD 21r02r00      [14]  198 	ld	iy, #_prev_joypad1
+      000063 FD 7E 00         [19]  199 	ld	a, 0 (iy)
+      000066 A1               [ 4]  200 	and	a, c
+      000067 4F               [ 4]  201 	ld	c, a
+      000068 FD 7E 01         [19]  202 	ld	a, 1 (iy)
+      00006B A0               [ 4]  203 	and	a, b
+      00006C B1               [ 4]  204 	or	a, c
+      00006D 28 03            [12]  205 	jr	Z, 00104$
+      00006F                        206 00103$:
+      00006F 2E 00            [ 7]  207 	ld	l, #0x00
+      000071 C9               [10]  208 	ret
+      000072                        209 00104$:
+      000072 2E 01            [ 7]  210 	ld	l, #0x01
+                           000074   211 	C$input_manager.c$56$1_0$97	= .
+                                    212 	.globl	C$input_manager.c$56$1_0$97
+                                    213 ;input_manager.c:56: }
+                           000074   214 	C$input_manager.c$56$1_0$97	= .
+                                    215 	.globl	C$input_manager.c$56$1_0$97
+                           000074   216 	XFinput_manager$my_hold_method$0$0	= .
+                                    217 	.globl	XFinput_manager$my_hold_method$0$0
+      000074 C9               [10]  218 	ret
+                           000075   219 	Finput_manager$my_move_method$0$0	= .
+                                    220 	.globl	Finput_manager$my_move_method$0$0
+                           000075   221 	C$input_manager.c$58$1_0$99	= .
+                                    222 	.globl	C$input_manager.c$58$1_0$99
+                                    223 ;input_manager.c:58: static unsigned char my_move_method( unsigned char data )
+                                    224 ;	---------------------------------
+                                    225 ; Function my_move_method
+                                    226 ; ---------------------------------
+      000075                        227 _my_move_method:
+                           000075   228 	C$input_manager.c$60$1_0$99	= .
+                                    229 	.globl	C$input_manager.c$60$1_0$99
+                                    230 ;input_manager.c:60: return curr_joypad1 & data;
+      000075 FD 21 02 00      [14]  231 	ld	iy, #2
+      000079 FD 39            [15]  232 	add	iy, sp
+      00007B FD 7E 00         [19]  233 	ld	a, 0 (iy)
+      00007E FD 21r00r00      [14]  234 	ld	iy, #_curr_joypad1
+      000082 FD 4E 00         [19]  235 	ld	c, 0 (iy)
+      000085 A1               [ 4]  236 	and	a, c
+      000086 6F               [ 4]  237 	ld	l, a
+                           000087   238 	C$input_manager.c$61$1_0$99	= .
+                                    239 	.globl	C$input_manager.c$61$1_0$99
+                                    240 ;input_manager.c:61: }
+                           000087   241 	C$input_manager.c$61$1_0$99	= .
+                                    242 	.globl	C$input_manager.c$61$1_0$99
+                           000087   243 	XFinput_manager$my_move_method$0$0	= .
+                                    244 	.globl	XFinput_manager$my_move_method$0$0
+      000087 C9               [10]  245 	ret
+                                    246 	.area _CODE
+                                    247 	.area _INITIALIZER
+                           000000   248 Finput_manager$__xinit_curr_joypad1$0_0$0 == .
+      000000                        249 __xinit__curr_joypad1:
+      000000 00 00                  250 	.dw #0x0000
+                           000002   251 Finput_manager$__xinit_prev_joypad1$0_0$0 == .
+      000002                        252 __xinit__prev_joypad1:
+      000002 00 00                  253 	.dw #0x0000
+                                    254 	.area _CABS (ABS)

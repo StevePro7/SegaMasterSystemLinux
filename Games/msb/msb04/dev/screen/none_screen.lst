@@ -1,0 +1,105 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 4.1.0 #12072 (MINGW64)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module none_screen
+                                      6 	.optsdcc -mz80
+                                      7 	
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl _engine_font_manager_text
+                                     12 	.globl _screen_none_screen_load
+                                     13 	.globl _screen_none_screen_update
+                                     14 ;--------------------------------------------------------
+                                     15 ; special function registers
+                                     16 ;--------------------------------------------------------
+                                     17 ;--------------------------------------------------------
+                                     18 ; ram data
+                                     19 ;--------------------------------------------------------
+                                     20 	.area _DATA
+                                     21 ;--------------------------------------------------------
+                                     22 ; ram data
+                                     23 ;--------------------------------------------------------
+                                     24 	.area _INITIALIZED
+                                     25 ;--------------------------------------------------------
+                                     26 ; absolute external ram data
+                                     27 ;--------------------------------------------------------
+                                     28 	.area _DABS (ABS)
+                                     29 ;--------------------------------------------------------
+                                     30 ; global & static initialisations
+                                     31 ;--------------------------------------------------------
+                                     32 	.area _HOME
+                                     33 	.area _GSINIT
+                                     34 	.area _GSFINAL
+                                     35 	.area _GSINIT
+                                     36 ;--------------------------------------------------------
+                                     37 ; Home
+                                     38 ;--------------------------------------------------------
+                                     39 	.area _HOME
+                                     40 	.area _HOME
+                                     41 ;--------------------------------------------------------
+                                     42 ; code
+                                     43 ;--------------------------------------------------------
+                                     44 	.area _CODE
+                           000000    45 	G$screen_none_screen_load$0$0	= .
+                                     46 	.globl	G$screen_none_screen_load$0$0
+                           000000    47 	C$none_screen.c$5$0_0$6	= .
+                                     48 	.globl	C$none_screen.c$5$0_0$6
+                                     49 ;none_screen.c:5: void screen_none_screen_load()
+                                     50 ;	---------------------------------
+                                     51 ; Function screen_none_screen_load
+                                     52 ; ---------------------------------
+      000000                         53 _screen_none_screen_load::
+                           000000    54 	C$none_screen.c$7$1_0$6	= .
+                                     55 	.globl	C$none_screen.c$7$1_0$6
+                                     56 ;none_screen.c:7: engine_font_manager_text( "NONE SCREEN!!", 10, 2 );
+      000000 11 0A 02         [10]   57 	ld	de, #0x020a
+      000003 D5               [11]   58 	push	de
+      000004 21r0Er00         [10]   59 	ld	hl, #___str_0
+      000007 E5               [11]   60 	push	hl
+      000008 CDr00r00         [17]   61 	call	_engine_font_manager_text
+      00000B F1               [10]   62 	pop	af
+      00000C F1               [10]   63 	pop	af
+                           00000D    64 	C$none_screen.c$8$1_0$6	= .
+                                     65 	.globl	C$none_screen.c$8$1_0$6
+                                     66 ;none_screen.c:8: }
+                           00000D    67 	C$none_screen.c$8$1_0$6	= .
+                                     68 	.globl	C$none_screen.c$8$1_0$6
+                           00000D    69 	XG$screen_none_screen_load$0$0	= .
+                                     70 	.globl	XG$screen_none_screen_load$0$0
+      00000D C9               [10]   71 	ret
+                           00000E    72 Fnone_screen$__str_0$0_0$0 == .
+      00000E                         73 ___str_0:
+      00000E 4E 4F 4E 45 20 53 43    74 	.ascii "NONE SCREEN!!"
+             52 45 45 4E 21 21
+      00001B 00                      75 	.db 0x00
+                           00001C    76 	G$screen_none_screen_update$0$0	= .
+                                     77 	.globl	G$screen_none_screen_update$0$0
+                           00001C    78 	C$none_screen.c$10$1_0$8	= .
+                                     79 	.globl	C$none_screen.c$10$1_0$8
+                                     80 ;none_screen.c:10: void screen_none_screen_update( unsigned char *screen_type )
+                                     81 ;	---------------------------------
+                                     82 ; Function screen_none_screen_update
+                                     83 ; ---------------------------------
+      00001C                         84 _screen_none_screen_update::
+                           00001C    85 	C$none_screen.c$12$1_0$8	= .
+                                     86 	.globl	C$none_screen.c$12$1_0$8
+                                     87 ;none_screen.c:12: *screen_type = screen_type_none;
+      00001C D1               [10]   88 	pop	de
+      00001D C1               [10]   89 	pop	bc
+      00001E C5               [11]   90 	push	bc
+      00001F D5               [11]   91 	push	de
+      000020 AF               [ 4]   92 	xor	a, a
+      000021 02               [ 7]   93 	ld	(bc), a
+                           000022    94 	C$none_screen.c$13$1_0$8	= .
+                                     95 	.globl	C$none_screen.c$13$1_0$8
+                                     96 ;none_screen.c:13: }
+                           000022    97 	C$none_screen.c$13$1_0$8	= .
+                                     98 	.globl	C$none_screen.c$13$1_0$8
+                           000022    99 	XG$screen_none_screen_update$0$0	= .
+                                    100 	.globl	XG$screen_none_screen_update$0$0
+      000022 C9               [10]  101 	ret
+                                    102 	.area _CODE
+                                    103 	.area _INITIALIZER
+                                    104 	.area _CABS (ABS)

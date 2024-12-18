@@ -1,0 +1,156 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 4.1.0 #12072 (MINGW64)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module func_screen
+                                      6 	.optsdcc -mz80
+                                      7 	
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl _devkit_RGB
+                                     12 	.globl _devkit_SMS_setSpritePaletteColor
+                                     13 	.globl _devkit_SPRITEMODE_NORMAL
+                                     14 	.globl _devkit_SMS_setSpriteMode
+                                     15 	.globl _devkit_SMS_useFirstHalfTilesforSprites
+                                     16 	.globl _devkit_SMS_displayOff
+                                     17 	.globl _devkit_SMS_displayOn
+                                     18 	.globl _devkit_VDPFEATURE_HIDEFIRSTCOL
+                                     19 	.globl _devkit_SMS_VDPturnOnFeature
+                                     20 	.globl _devkit_SMS_init
+                                     21 	.globl _screen_func_screen_load
+                                     22 	.globl _screen_func_screen_update
+                                     23 ;--------------------------------------------------------
+                                     24 ; special function registers
+                                     25 ;--------------------------------------------------------
+                                     26 ;--------------------------------------------------------
+                                     27 ; ram data
+                                     28 ;--------------------------------------------------------
+                                     29 	.area _DATA
+                                     30 ;--------------------------------------------------------
+                                     31 ; ram data
+                                     32 ;--------------------------------------------------------
+                                     33 	.area _INITIALIZED
+                                     34 ;--------------------------------------------------------
+                                     35 ; absolute external ram data
+                                     36 ;--------------------------------------------------------
+                                     37 	.area _DABS (ABS)
+                                     38 ;--------------------------------------------------------
+                                     39 ; global & static initialisations
+                                     40 ;--------------------------------------------------------
+                                     41 	.area _HOME
+                                     42 	.area _GSINIT
+                                     43 	.area _GSFINAL
+                                     44 	.area _GSINIT
+                                     45 ;--------------------------------------------------------
+                                     46 ; Home
+                                     47 ;--------------------------------------------------------
+                                     48 	.area _HOME
+                                     49 	.area _HOME
+                                     50 ;--------------------------------------------------------
+                                     51 ; code
+                                     52 ;--------------------------------------------------------
+                                     53 	.area _CODE
+                           000000    54 	G$screen_func_screen_load$0$0	= .
+                                     55 	.globl	G$screen_func_screen_load$0$0
+                           000000    56 	C$func_screen.c$6$0_0$87	= .
+                                     57 	.globl	C$func_screen.c$6$0_0$87
+                                     58 ;func_screen.c:6: void screen_func_screen_load()
+                                     59 ;	---------------------------------
+                                     60 ; Function screen_func_screen_load
+                                     61 ; ---------------------------------
+      000000                         62 _screen_func_screen_load::
+                           000000    63 	C$func_screen.c$8$1_0$87	= .
+                                     64 	.globl	C$func_screen.c$8$1_0$87
+                                     65 ;func_screen.c:8: devkit_SMS_init();
+      000000 CDr00r00         [17]   66 	call	_devkit_SMS_init
+                           000003    67 	C$func_screen.c$9$1_0$87	= .
+                                     68 	.globl	C$func_screen.c$9$1_0$87
+                                     69 ;func_screen.c:9: devkit_SMS_setSpriteMode( devkit_SPRITEMODE_NORMAL() );
+      000003 CDr00r00         [17]   70 	call	_devkit_SPRITEMODE_NORMAL
+      000006 7D               [ 4]   71 	ld	a, l
+      000007 F5               [11]   72 	push	af
+      000008 33               [ 6]   73 	inc	sp
+      000009 CDr00r00         [17]   74 	call	_devkit_SMS_setSpriteMode
+      00000C 33               [ 6]   75 	inc	sp
+                           00000D    76 	C$func_screen.c$10$1_0$87	= .
+                                     77 	.globl	C$func_screen.c$10$1_0$87
+                                     78 ;func_screen.c:10: devkit_SMS_useFirstHalfTilesforSprites( 0 );
+      00000D AF               [ 4]   79 	xor	a, a
+      00000E F5               [11]   80 	push	af
+      00000F 33               [ 6]   81 	inc	sp
+      000010 CDr00r00         [17]   82 	call	_devkit_SMS_useFirstHalfTilesforSprites
+      000013 33               [ 6]   83 	inc	sp
+                           000014    84 	C$func_screen.c$11$1_0$87	= .
+                                     85 	.globl	C$func_screen.c$11$1_0$87
+                                     86 ;func_screen.c:11: devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );
+      000014 CDr00r00         [17]   87 	call	_devkit_VDPFEATURE_HIDEFIRSTCOL
+      000017 E5               [11]   88 	push	hl
+      000018 CDr00r00         [17]   89 	call	_devkit_SMS_VDPturnOnFeature
+      00001B F1               [10]   90 	pop	af
+                           00001C    91 	C$func_screen.c$13$1_0$87	= .
+                                     92 	.globl	C$func_screen.c$13$1_0$87
+                                     93 ;func_screen.c:13: devkit_SMS_displayOff();
+      00001C CDr00r00         [17]   94 	call	_devkit_SMS_displayOff
+                           00001F    95 	C$func_screen.c$14$1_0$87	= .
+                                     96 	.globl	C$func_screen.c$14$1_0$87
+                                     97 ;func_screen.c:14: devkit_SMS_setSpritePaletteColor( 0, devkit_RGB( 0, 0, 3 ) );
+      00001F 3E 03            [ 7]   98 	ld	a, #0x03
+      000021 F5               [11]   99 	push	af
+      000022 33               [ 6]  100 	inc	sp
+      000023 AF               [ 4]  101 	xor	a, a
+      000024 F5               [11]  102 	push	af
+      000025 33               [ 6]  103 	inc	sp
+      000026 AF               [ 4]  104 	xor	a, a
+      000027 F5               [11]  105 	push	af
+      000028 33               [ 6]  106 	inc	sp
+      000029 CDr00r00         [17]  107 	call	_devkit_RGB
+      00002C F1               [10]  108 	pop	af
+      00002D 7D               [ 4]  109 	ld	a, l
+      00002E 33               [ 6]  110 	inc	sp
+      00002F F5               [11]  111 	push	af
+      000030 33               [ 6]  112 	inc	sp
+      000031 AF               [ 4]  113 	xor	a, a
+      000032 F5               [11]  114 	push	af
+      000033 33               [ 6]  115 	inc	sp
+      000034 CDr00r00         [17]  116 	call	_devkit_SMS_setSpritePaletteColor
+      000037 F1               [10]  117 	pop	af
+                           000038   118 	C$func_screen.c$15$1_0$87	= .
+                                    119 	.globl	C$func_screen.c$15$1_0$87
+                                    120 ;func_screen.c:15: devkit_SMS_displayOn();
+                           000038   121 	C$func_screen.c$16$1_0$87	= .
+                                    122 	.globl	C$func_screen.c$16$1_0$87
+                                    123 ;func_screen.c:16: }
+                           000038   124 	C$func_screen.c$16$1_0$87	= .
+                                    125 	.globl	C$func_screen.c$16$1_0$87
+                           000038   126 	XG$screen_func_screen_load$0$0	= .
+                                    127 	.globl	XG$screen_func_screen_load$0$0
+      000038 C3r00r00         [10]  128 	jp	_devkit_SMS_displayOn
+                           00003B   129 	G$screen_func_screen_update$0$0	= .
+                                    130 	.globl	G$screen_func_screen_update$0$0
+                           00003B   131 	C$func_screen.c$18$1_0$89	= .
+                                    132 	.globl	C$func_screen.c$18$1_0$89
+                                    133 ;func_screen.c:18: void screen_func_screen_update( unsigned char *screen_type )
+                                    134 ;	---------------------------------
+                                    135 ; Function screen_func_screen_update
+                                    136 ; ---------------------------------
+      00003B                        137 _screen_func_screen_update::
+                           00003B   138 	C$func_screen.c$20$1_0$89	= .
+                                    139 	.globl	C$func_screen.c$20$1_0$89
+                                    140 ;func_screen.c:20: *screen_type = screen_type_func;
+      00003B C1               [10]  141 	pop	bc
+      00003C E1               [10]  142 	pop	hl
+      00003D E5               [11]  143 	push	hl
+      00003E C5               [11]  144 	push	bc
+      00003F 36 17            [10]  145 	ld	(hl), #0x17
+                           000041   146 	C$func_screen.c$21$1_0$89	= .
+                                    147 	.globl	C$func_screen.c$21$1_0$89
+                                    148 ;func_screen.c:21: }
+                           000041   149 	C$func_screen.c$21$1_0$89	= .
+                                    150 	.globl	C$func_screen.c$21$1_0$89
+                           000041   151 	XG$screen_func_screen_update$0$0	= .
+                                    152 	.globl	XG$screen_func_screen_update$0$0
+      000041 C9               [10]  153 	ret
+                                    154 	.area _CODE
+                                    155 	.area _INITIALIZER
+                                    156 	.area _CABS (ABS)

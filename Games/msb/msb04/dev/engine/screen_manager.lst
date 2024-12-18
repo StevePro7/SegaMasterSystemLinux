@@ -1,0 +1,185 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 4.1.0 #12072 (MINGW64)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module screen_manager
+                                      6 	.optsdcc -mz80
+                                      7 	
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl _screen_func_screen_update
+                                     12 	.globl _screen_func_screen_load
+                                     13 	.globl _screen_test_screen_update
+                                     14 	.globl _screen_test_screen_load
+                                     15 	.globl _screen_none_screen_update
+                                     16 	.globl _screen_none_screen_load
+                                     17 	.globl _engine_screen_manager_init
+                                     18 	.globl _engine_screen_manager_update
+                                     19 ;--------------------------------------------------------
+                                     20 ; special function registers
+                                     21 ;--------------------------------------------------------
+                                     22 ;--------------------------------------------------------
+                                     23 ; ram data
+                                     24 ;--------------------------------------------------------
+                                     25 	.area _DATA
+                           000000    26 Fscreen_manager$curr_screen_type$0_0$0==.
+      000000                         27 _curr_screen_type:
+      000000                         28 	.ds 1
+                           000001    29 Fscreen_manager$next_screen_type$0_0$0==.
+      000001                         30 _next_screen_type:
+      000001                         31 	.ds 1
+                           000002    32 Fscreen_manager$load_method$0_0$0==.
+      000002                         33 _load_method:
+      000002                         34 	.ds 48
+                           000032    35 Fscreen_manager$update_method$0_0$0==.
+      000032                         36 _update_method:
+      000032                         37 	.ds 48
+                                     38 ;--------------------------------------------------------
+                                     39 ; ram data
+                                     40 ;--------------------------------------------------------
+                                     41 	.area _INITIALIZED
+                                     42 ;--------------------------------------------------------
+                                     43 ; absolute external ram data
+                                     44 ;--------------------------------------------------------
+                                     45 	.area _DABS (ABS)
+                                     46 ;--------------------------------------------------------
+                                     47 ; global & static initialisations
+                                     48 ;--------------------------------------------------------
+                                     49 	.area _HOME
+                                     50 	.area _GSINIT
+                                     51 	.area _GSFINAL
+                                     52 	.area _GSINIT
+                                     53 ;--------------------------------------------------------
+                                     54 ; Home
+                                     55 ;--------------------------------------------------------
+                                     56 	.area _HOME
+                                     57 	.area _HOME
+                                     58 ;--------------------------------------------------------
+                                     59 ; code
+                                     60 ;--------------------------------------------------------
+                                     61 	.area _CODE
+                           000000    62 	G$engine_screen_manager_init$0$0	= .
+                                     63 	.globl	G$engine_screen_manager_init$0$0
+                           000000    64 	C$screen_manager.c$37$0_0$7	= .
+                                     65 	.globl	C$screen_manager.c$37$0_0$7
+                                     66 ;screen_manager.c:37: void engine_screen_manager_init( unsigned char open_screen_type )
+                                     67 ;	---------------------------------
+                                     68 ; Function engine_screen_manager_init
+                                     69 ; ---------------------------------
+      000000                         70 _engine_screen_manager_init::
+                           000000    71 	C$screen_manager.c$39$1_0$7	= .
+                                     72 	.globl	C$screen_manager.c$39$1_0$7
+                                     73 ;screen_manager.c:39: next_screen_type = open_screen_type;
+      000000 21 02 00         [10]   74 	ld	hl, #2
+      000003 39               [11]   75 	add	hl, sp
+      000004 7E               [ 7]   76 	ld	a, (hl)
+      000005 32r01r00         [13]   77 	ld	(_next_screen_type+0), a
+                           000008    78 	C$screen_manager.c$40$1_0$7	= .
+                                     79 	.globl	C$screen_manager.c$40$1_0$7
+                                     80 ;screen_manager.c:40: curr_screen_type = screen_type_none;
+      000008 21r00r00         [10]   81 	ld	hl, #_curr_screen_type
+      00000B 36 00            [10]   82 	ld	(hl), #0x00
+                           00000D    83 	C$screen_manager.c$43$1_0$7	= .
+                                     84 	.globl	C$screen_manager.c$43$1_0$7
+                                     85 ;screen_manager.c:43: load_method[ screen_type_none ] = screen_none_screen_load;
+      00000D 21r00r00         [10]   86 	ld	hl, #_screen_none_screen_load
+      000010 22r02r00         [16]   87 	ld	(_load_method), hl
+                           000013    88 	C$screen_manager.c$65$1_0$7	= .
+                                     89 	.globl	C$screen_manager.c$65$1_0$7
+                                     90 ;screen_manager.c:65: load_method[ screen_type_test ] = screen_test_screen_load;
+      000013 21r00r00         [10]   91 	ld	hl, #_screen_test_screen_load
+      000016 22r2Er00         [16]   92 	ld	((_load_method + 0x002c)), hl
+                           000019    93 	C$screen_manager.c$66$1_0$7	= .
+                                     94 	.globl	C$screen_manager.c$66$1_0$7
+                                     95 ;screen_manager.c:66: load_method[ screen_type_func ] = screen_func_screen_load;
+      000019 21r00r00         [10]   96 	ld	hl, #_screen_func_screen_load
+      00001C 22r30r00         [16]   97 	ld	((_load_method + 0x002e)), hl
+                           00001F    98 	C$screen_manager.c$69$1_0$7	= .
+                                     99 	.globl	C$screen_manager.c$69$1_0$7
+                                    100 ;screen_manager.c:69: update_method[ screen_type_none ] = screen_none_screen_update;
+      00001F 21r00r00         [10]  101 	ld	hl, #_screen_none_screen_update
+      000022 22r32r00         [16]  102 	ld	(_update_method), hl
+                           000025   103 	C$screen_manager.c$91$1_0$7	= .
+                                    104 	.globl	C$screen_manager.c$91$1_0$7
+                                    105 ;screen_manager.c:91: update_method[ screen_type_test ] = screen_test_screen_update;
+      000025 21r00r00         [10]  106 	ld	hl, #_screen_test_screen_update
+      000028 22r5Er00         [16]  107 	ld	((_update_method + 0x002c)), hl
+                           00002B   108 	C$screen_manager.c$92$1_0$7	= .
+                                    109 	.globl	C$screen_manager.c$92$1_0$7
+                                    110 ;screen_manager.c:92: update_method[ screen_type_func ] = screen_func_screen_update;
+      00002B 21r00r00         [10]  111 	ld	hl, #_screen_func_screen_update
+      00002E 22r60r00         [16]  112 	ld	((_update_method + 0x002e)), hl
+                           000031   113 	C$screen_manager.c$93$1_0$7	= .
+                                    114 	.globl	C$screen_manager.c$93$1_0$7
+                                    115 ;screen_manager.c:93: }
+                           000031   116 	C$screen_manager.c$93$1_0$7	= .
+                                    117 	.globl	C$screen_manager.c$93$1_0$7
+                           000031   118 	XG$engine_screen_manager_init$0$0	= .
+                                    119 	.globl	XG$engine_screen_manager_init$0$0
+      000031 C9               [10]  120 	ret
+                           000032   121 	G$engine_screen_manager_update$0$0	= .
+                                    122 	.globl	G$engine_screen_manager_update$0$0
+                           000032   123 	C$screen_manager.c$95$1_0$8	= .
+                                    124 	.globl	C$screen_manager.c$95$1_0$8
+                                    125 ;screen_manager.c:95: void engine_screen_manager_update()
+                                    126 ;	---------------------------------
+                                    127 ; Function engine_screen_manager_update
+                                    128 ; ---------------------------------
+      000032                        129 _engine_screen_manager_update::
+                           000032   130 	C$screen_manager.c$97$1_0$8	= .
+                                    131 	.globl	C$screen_manager.c$97$1_0$8
+                                    132 ;screen_manager.c:97: if( curr_screen_type != next_screen_type )
+      000032 3Ar00r00         [13]  133 	ld	a,(#_curr_screen_type + 0)
+      000035 FD 21r01r00      [14]  134 	ld	iy, #_next_screen_type
+      000039 FD 96 00         [19]  135 	sub	a, 0 (iy)
+      00003C 28 1B            [12]  136 	jr	Z, 00102$
+                           00003E   137 	C$screen_manager.c$99$2_0$9	= .
+                                    138 	.globl	C$screen_manager.c$99$2_0$9
+                                    139 ;screen_manager.c:99: curr_screen_type = next_screen_type;
+      00003E FD 7E 00         [19]  140 	ld	a, 0 (iy)
+      000041 FD 21r00r00      [14]  141 	ld	iy, #_curr_screen_type
+      000045 FD 77 00         [19]  142 	ld	0 (iy), a
+                           000048   143 	C$screen_manager.c$100$2_0$9	= .
+                                    144 	.globl	C$screen_manager.c$100$2_0$9
+                                    145 ;screen_manager.c:100: load_method[ curr_screen_type ]();
+      000048 01r02r00         [10]  146 	ld	bc, #_load_method+0
+      00004B FD 6E 00         [19]  147 	ld	l, 0 (iy)
+      00004E 26 00            [ 7]  148 	ld	h, #0x00
+      000050 29               [11]  149 	add	hl, hl
+      000051 09               [11]  150 	add	hl, bc
+      000052 4E               [ 7]  151 	ld	c, (hl)
+      000053 23               [ 6]  152 	inc	hl
+      000054 66               [ 7]  153 	ld	h, (hl)
+      000055 69               [ 4]  154 	ld	l, c
+      000056 CDr00r00         [17]  155 	call	___sdcc_call_hl
+      000059                        156 00102$:
+                           000059   157 	C$screen_manager.c$103$1_0$8	= .
+                                    158 	.globl	C$screen_manager.c$103$1_0$8
+                                    159 ;screen_manager.c:103: update_method[ curr_screen_type ]( &next_screen_type );
+      000059 01r32r00         [10]  160 	ld	bc, #_update_method+0
+      00005C 3Ar00r00         [13]  161 	ld	a, (#_curr_screen_type + 0)
+      00005F 6F               [ 4]  162 	ld	l, a
+      000060 26 00            [ 7]  163 	ld	h, #0x00
+      000062 29               [11]  164 	add	hl, hl
+      000063 09               [11]  165 	add	hl, bc
+      000064 4E               [ 7]  166 	ld	c, (hl)
+      000065 23               [ 6]  167 	inc	hl
+      000066 46               [ 7]  168 	ld	b, (hl)
+      000067 21r01r00         [10]  169 	ld	hl, #_next_screen_type
+      00006A E5               [11]  170 	push	hl
+      00006B 69               [ 4]  171 	ld	l, c
+      00006C 60               [ 4]  172 	ld	h, b
+      00006D CDr00r00         [17]  173 	call	___sdcc_call_hl
+      000070 F1               [10]  174 	pop	af
+                           000071   175 	C$screen_manager.c$104$1_0$8	= .
+                                    176 	.globl	C$screen_manager.c$104$1_0$8
+                                    177 ;screen_manager.c:104: }
+                           000071   178 	C$screen_manager.c$104$1_0$8	= .
+                                    179 	.globl	C$screen_manager.c$104$1_0$8
+                           000071   180 	XG$engine_screen_manager_update$0$0	= .
+                                    181 	.globl	XG$engine_screen_manager_update$0$0
+      000071 C9               [10]  182 	ret
+                                    183 	.area _CODE
+                                    184 	.area _INITIALIZER
+                                    185 	.area _CABS (ABS)

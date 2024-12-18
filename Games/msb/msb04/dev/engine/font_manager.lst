@@ -1,0 +1,175 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 4.1.0 #12072 (MINGW64)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module font_manager
+                                      6 	.optsdcc -mz80
+                                      7 	
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl _engine_font_manager_char
+                                     12 	.globl _engine_font_manager_text
+                                     13 	.globl _engine_font_manager_data
+                                     14 	.globl _engine_font_manager_valu
+                                     15 ;--------------------------------------------------------
+                                     16 ; special function registers
+                                     17 ;--------------------------------------------------------
+                                     18 ;--------------------------------------------------------
+                                     19 ; ram data
+                                     20 ;--------------------------------------------------------
+                                     21 	.area _DATA
+                                     22 ;--------------------------------------------------------
+                                     23 ; ram data
+                                     24 ;--------------------------------------------------------
+                                     25 	.area _INITIALIZED
+                                     26 ;--------------------------------------------------------
+                                     27 ; absolute external ram data
+                                     28 ;--------------------------------------------------------
+                                     29 	.area _DABS (ABS)
+                                     30 ;--------------------------------------------------------
+                                     31 ; global & static initialisations
+                                     32 ;--------------------------------------------------------
+                                     33 	.area _HOME
+                                     34 	.area _GSINIT
+                                     35 	.area _GSFINAL
+                                     36 	.area _GSINIT
+                                     37 ;--------------------------------------------------------
+                                     38 ; Home
+                                     39 ;--------------------------------------------------------
+                                     40 	.area _HOME
+                                     41 	.area _HOME
+                                     42 ;--------------------------------------------------------
+                                     43 ; code
+                                     44 ;--------------------------------------------------------
+                                     45 	.area _CODE
+                           000000    46 	G$engine_font_manager_char$0$0	= .
+                                     47 	.globl	G$engine_font_manager_char$0$0
+                           000000    48 	C$font_manager.c$13$0_0$89	= .
+                                     49 	.globl	C$font_manager.c$13$0_0$89
+                                     50 ;font_manager.c:13: void engine_font_manager_char( unsigned char ch, unsigned char x, unsigned char y )
+                                     51 ;	---------------------------------
+                                     52 ; Function engine_font_manager_char
+                                     53 ; ---------------------------------
+      000000                         54 _engine_font_manager_char::
+                           000000    55 	C$font_manager.c$21$0_0$89	= .
+                                     56 	.globl	C$font_manager.c$21$0_0$89
+                                     57 ;font_manager.c:21: }
+                           000000    58 	C$font_manager.c$21$0_0$89	= .
+                                     59 	.globl	C$font_manager.c$21$0_0$89
+                           000000    60 	XG$engine_font_manager_char$0$0	= .
+                                     61 	.globl	XG$engine_font_manager_char$0$0
+      000000 C9               [10]   62 	ret
+                           000001    63 	G$engine_font_manager_text$0$0	= .
+                                     64 	.globl	G$engine_font_manager_text$0$0
+                           000001    65 	C$font_manager.c$23$0_0$92	= .
+                                     66 	.globl	C$font_manager.c$23$0_0$92
+                                     67 ;font_manager.c:23: void engine_font_manager_text( unsigned char *text, unsigned char x, unsigned char y )
+                                     68 ;	---------------------------------
+                                     69 ; Function engine_font_manager_text
+                                     70 ; ---------------------------------
+      000001                         71 _engine_font_manager_text::
+                           000001    72 	C$font_manager.c$36$0_0$92	= .
+                                     73 	.globl	C$font_manager.c$36$0_0$92
+                                     74 ;font_manager.c:36: }
+                           000001    75 	C$font_manager.c$36$0_0$92	= .
+                                     76 	.globl	C$font_manager.c$36$0_0$92
+                           000001    77 	XG$engine_font_manager_text$0$0	= .
+                                     78 	.globl	XG$engine_font_manager_text$0$0
+      000001 C9               [10]   79 	ret
+                           000002    80 	G$engine_font_manager_data$0$0	= .
+                                     81 	.globl	G$engine_font_manager_data$0$0
+                           000002    82 	C$font_manager.c$38$0_0$94	= .
+                                     83 	.globl	C$font_manager.c$38$0_0$94
+                                     84 ;font_manager.c:38: void engine_font_manager_data( unsigned int data, unsigned char x, unsigned char y )
+                                     85 ;	---------------------------------
+                                     86 ; Function engine_font_manager_data
+                                     87 ; ---------------------------------
+      000002                         88 _engine_font_manager_data::
+                           000002    89 	C$font_manager.c$40$1_0$94	= .
+                                     90 	.globl	C$font_manager.c$40$1_0$94
+                                     91 ;font_manager.c:40: print_data( DATA_LONG, data, x, y );
+      000002 FD 21 05 00      [14]   92 	ld	iy, #5
+      000006 FD 39            [15]   93 	add	iy, sp
+      000008 FD 7E 00         [19]   94 	ld	a, 0 (iy)
+      00000B F5               [11]   95 	push	af
+      00000C 33               [ 6]   96 	inc	sp
+      00000D FD 7E FF         [19]   97 	ld	a, -1 (iy)
+      000010 FD 2B            [10]   98 	dec	iy
+      000012 F5               [11]   99 	push	af
+      000013 33               [ 6]  100 	inc	sp
+      000014 FD 6E FE         [19]  101 	ld	l, -2 (iy)
+      000017 FD 66 FF         [19]  102 	ld	h, -1 (iy)
+      00001A E5               [11]  103 	push	hl
+      00001B 21 05 00         [10]  104 	ld	hl, #0x0005
+      00001E E5               [11]  105 	push	hl
+      00001F CDr4Er00         [17]  106 	call	_print_data
+      000022 21 06 00         [10]  107 	ld	hl, #6
+      000025 39               [11]  108 	add	hl, sp
+      000026 F9               [ 6]  109 	ld	sp, hl
+                           000027   110 	C$font_manager.c$41$1_0$94	= .
+                                    111 	.globl	C$font_manager.c$41$1_0$94
+                                    112 ;font_manager.c:41: }
+                           000027   113 	C$font_manager.c$41$1_0$94	= .
+                                    114 	.globl	C$font_manager.c$41$1_0$94
+                           000027   115 	XG$engine_font_manager_data$0$0	= .
+                                    116 	.globl	XG$engine_font_manager_data$0$0
+      000027 C9               [10]  117 	ret
+                           000028   118 	G$engine_font_manager_valu$0$0	= .
+                                    119 	.globl	G$engine_font_manager_valu$0$0
+                           000028   120 	C$font_manager.c$43$1_0$96	= .
+                                    121 	.globl	C$font_manager.c$43$1_0$96
+                                    122 ;font_manager.c:43: void engine_font_manager_valu( unsigned int data, unsigned char x, unsigned char y )
+                                    123 ;	---------------------------------
+                                    124 ; Function engine_font_manager_valu
+                                    125 ; ---------------------------------
+      000028                        126 _engine_font_manager_valu::
+                           000028   127 	C$font_manager.c$45$1_0$96	= .
+                                    128 	.globl	C$font_manager.c$45$1_0$96
+                                    129 ;font_manager.c:45: print_data( SING_LONG, data, x, y );
+      000028 FD 21 05 00      [14]  130 	ld	iy, #5
+      00002C FD 39            [15]  131 	add	iy, sp
+      00002E FD 7E 00         [19]  132 	ld	a, 0 (iy)
+      000031 F5               [11]  133 	push	af
+      000032 33               [ 6]  134 	inc	sp
+      000033 FD 7E FF         [19]  135 	ld	a, -1 (iy)
+      000036 FD 2B            [10]  136 	dec	iy
+      000038 F5               [11]  137 	push	af
+      000039 33               [ 6]  138 	inc	sp
+      00003A FD 6E FE         [19]  139 	ld	l, -2 (iy)
+      00003D FD 66 FF         [19]  140 	ld	h, -1 (iy)
+      000040 E5               [11]  141 	push	hl
+      000041 21 01 00         [10]  142 	ld	hl, #0x0001
+      000044 E5               [11]  143 	push	hl
+      000045 CDr4Er00         [17]  144 	call	_print_data
+      000048 21 06 00         [10]  145 	ld	hl, #6
+      00004B 39               [11]  146 	add	hl, sp
+      00004C F9               [ 6]  147 	ld	sp, hl
+                           00004D   148 	C$font_manager.c$46$1_0$96	= .
+                                    149 	.globl	C$font_manager.c$46$1_0$96
+                                    150 ;font_manager.c:46: }
+                           00004D   151 	C$font_manager.c$46$1_0$96	= .
+                                    152 	.globl	C$font_manager.c$46$1_0$96
+                           00004D   153 	XG$engine_font_manager_valu$0$0	= .
+                                    154 	.globl	XG$engine_font_manager_valu$0$0
+      00004D C9               [10]  155 	ret
+                           00004E   156 	Ffont_manager$print_data$0$0	= .
+                                    157 	.globl	Ffont_manager$print_data$0$0
+                           00004E   158 	C$font_manager.c$48$1_0$99	= .
+                                    159 	.globl	C$font_manager.c$48$1_0$99
+                                    160 ;font_manager.c:48: static void print_data( unsigned wide, unsigned int data, unsigned char x, unsigned char y )
+                                    161 ;	---------------------------------
+                                    162 ; Function print_data
+                                    163 ; ---------------------------------
+      00004E                        164 _print_data:
+                           00004E   165 	C$font_manager.c$77$1_0$99	= .
+                                    166 	.globl	C$font_manager.c$77$1_0$99
+                                    167 ;font_manager.c:77: }
+                           00004E   168 	C$font_manager.c$77$1_0$99	= .
+                                    169 	.globl	C$font_manager.c$77$1_0$99
+                           00004E   170 	XFfont_manager$print_data$0$0	= .
+                                    171 	.globl	XFfont_manager$print_data$0$0
+      00004E C9               [10]  172 	ret
+                                    173 	.area _CODE
+                                    174 	.area _INITIALIZER
+                                    175 	.area _CABS (ABS)

@@ -1,0 +1,103 @@
+;!FILE func_screen.asm
+XL3
+H 9 areas 49 global symbols
+M func_screen
+O -mz80
+S _devkit_SMS_displayOn Ref000000
+S _devkit_SMS_init Ref000000
+S _devkit_SMS_VDPturnOnFeature Ref000000
+S _devkit_SMS_useFirstHalfTilesforSprites Ref000000
+S _devkit_VDPFEATURE_HIDEFIRSTCOL Ref000000
+S .__.ABS. Def000000
+S _devkit_SMS_setSpriteMode Ref000000
+S _devkit_RGB Ref000000
+S _devkit_SMS_displayOff Ref000000
+S _devkit_SMS_setSpritePaletteColor Ref000000
+S _devkit_SPRITEMODE_NORMAL Ref000000
+A _CODE size 42 flags 0 addr 0
+S A$func_screen$75 Def00000C
+S A$func_screen$66 Def000000
+S C$func_screen.c$11$1_0$87 Def000014
+S A$func_screen$94 Def00001C
+S C$func_screen.c$20$1_0$89 Def00003B
+S C$func_screen.c$13$1_0$87 Def00001C
+S A$func_screen$87 Def000014
+S C$func_screen.c$21$1_0$89 Def000041
+S C$func_screen.c$14$1_0$87 Def00001F
+S A$func_screen$88 Def000017
+S A$func_screen$79 Def00000D
+S C$func_screen.c$15$1_0$87 Def000038
+S A$func_screen$98 Def00001F
+S A$func_screen$89 Def000018
+S C$func_screen.c$16$1_0$87 Def000038
+S A$func_screen$99 Def000021
+S _screen_func_screen_load Def000000
+S C$func_screen.c$18$1_0$89 Def00003B
+S C$func_screen.c$6$0_0$87 Def000000
+S XG$screen_func_screen_load$0$0 Def000038
+S C$func_screen.c$8$1_0$87 Def000000
+S C$func_screen.c$9$1_0$87 Def000003
+S G$screen_func_screen_update$0$0 Def00003B
+S A$func_screen$100 Def000022
+S A$func_screen$110 Def00002E
+S A$func_screen$101 Def000023
+S A$func_screen$111 Def00002F
+S A$func_screen$102 Def000024
+S A$func_screen$112 Def000030
+S A$func_screen$103 Def000025
+S A$func_screen$113 Def000031
+S A$func_screen$104 Def000026
+S A$func_screen$141 Def00003B
+S A$func_screen$114 Def000032
+S A$func_screen$105 Def000027
+S A$func_screen$142 Def00003C
+S A$func_screen$115 Def000033
+S A$func_screen$106 Def000028
+S _screen_func_screen_update Def00003B
+S A$func_screen$143 Def00003D
+S A$func_screen$116 Def000034
+S A$func_screen$107 Def000029
+S A$func_screen$153 Def000041
+S A$func_screen$144 Def00003E
+S A$func_screen$117 Def000037
+S A$func_screen$108 Def00002C
+S A$func_screen$145 Def00003F
+S A$func_screen$109 Def00002D
+S A$func_screen$128 Def000038
+S XG$screen_func_screen_update$0$0 Def000041
+S A$func_screen$70 Def000003
+S A$func_screen$80 Def00000E
+S A$func_screen$71 Def000006
+S G$screen_func_screen_load$0$0 Def000000
+S A$func_screen$90 Def00001B
+S A$func_screen$81 Def00000F
+S A$func_screen$72 Def000007
+S A$func_screen$82 Def000010
+S A$func_screen$73 Def000008
+S A$func_screen$83 Def000013
+S A$func_screen$74 Def000009
+S C$func_screen.c$10$1_0$87 Def00000D
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 CD 00 00 CD 00 00 7D F5 33 CD 00 00 33
+R 00 00 00 00 02 04 01 00 02 07 0A 00 02 0D 06 00
+T 0D 00 00 AF F5 33 CD 00 00 33 CD 00 00 E5 CD
+R 00 00 00 00 02 07 03 00 02 0B 04 00
+T 19 00 00 00 00 F1 CD 00 00 3E 03 F5 33 AF F5 33
+R 00 00 00 00 02 03 02 00 02 07 08 00
+T 26 00 00 AF F5 33 CD 00 00 F1 7D 33 F5 33 AF F5
+R 00 00 00 00 02 07 07 00
+T 33 00 00 33 CD 00 00 F1 C3 00 00
+R 00 00 00 00 02 05 09 00 02 09 00 00
+T 3B 00 00
+R 00 00 00 00
+T 3B 00 00 C1 E1 E5 C5 36 17 C9
+R 00 00 00 00

@@ -1,0 +1,104 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 4.1.0 #12072 (MINGW64)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module test_screen
+                                      6 	.optsdcc -mz80
+                                      7 	
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl _engine_font_manager_text
+                                     12 	.globl _screen_test_screen_load
+                                     13 	.globl _screen_test_screen_update
+                                     14 ;--------------------------------------------------------
+                                     15 ; special function registers
+                                     16 ;--------------------------------------------------------
+                                     17 ;--------------------------------------------------------
+                                     18 ; ram data
+                                     19 ;--------------------------------------------------------
+                                     20 	.area _DATA
+                                     21 ;--------------------------------------------------------
+                                     22 ; ram data
+                                     23 ;--------------------------------------------------------
+                                     24 	.area _INITIALIZED
+                                     25 ;--------------------------------------------------------
+                                     26 ; absolute external ram data
+                                     27 ;--------------------------------------------------------
+                                     28 	.area _DABS (ABS)
+                                     29 ;--------------------------------------------------------
+                                     30 ; global & static initialisations
+                                     31 ;--------------------------------------------------------
+                                     32 	.area _HOME
+                                     33 	.area _GSINIT
+                                     34 	.area _GSFINAL
+                                     35 	.area _GSINIT
+                                     36 ;--------------------------------------------------------
+                                     37 ; Home
+                                     38 ;--------------------------------------------------------
+                                     39 	.area _HOME
+                                     40 	.area _HOME
+                                     41 ;--------------------------------------------------------
+                                     42 ; code
+                                     43 ;--------------------------------------------------------
+                                     44 	.area _CODE
+                           000000    45 	G$screen_test_screen_load$0$0	= .
+                                     46 	.globl	G$screen_test_screen_load$0$0
+                           000000    47 	C$test_screen.c$11$0_0$6	= .
+                                     48 	.globl	C$test_screen.c$11$0_0$6
+                                     49 ;test_screen.c:11: void screen_test_screen_load()
+                                     50 ;	---------------------------------
+                                     51 ; Function screen_test_screen_load
+                                     52 ; ---------------------------------
+      000000                         53 _screen_test_screen_load::
+                           000000    54 	C$test_screen.c$13$1_0$6	= .
+                                     55 	.globl	C$test_screen.c$13$1_0$6
+                                     56 ;test_screen.c:13: engine_font_manager_text( "TEST SCREEN", 1, 5 );
+      000000 11 01 05         [10]   57 	ld	de, #0x0501
+      000003 D5               [11]   58 	push	de
+      000004 21r0Er00         [10]   59 	ld	hl, #___str_0
+      000007 E5               [11]   60 	push	hl
+      000008 CDr00r00         [17]   61 	call	_engine_font_manager_text
+      00000B F1               [10]   62 	pop	af
+      00000C F1               [10]   63 	pop	af
+                           00000D    64 	C$test_screen.c$14$1_0$6	= .
+                                     65 	.globl	C$test_screen.c$14$1_0$6
+                                     66 ;test_screen.c:14: }
+                           00000D    67 	C$test_screen.c$14$1_0$6	= .
+                                     68 	.globl	C$test_screen.c$14$1_0$6
+                           00000D    69 	XG$screen_test_screen_load$0$0	= .
+                                     70 	.globl	XG$screen_test_screen_load$0$0
+      00000D C9               [10]   71 	ret
+                           00000E    72 Ftest_screen$__str_0$0_0$0 == .
+      00000E                         73 ___str_0:
+      00000E 54 45 53 54 20 53 43    74 	.ascii "TEST SCREEN"
+             52 45 45 4E
+      000019 00                      75 	.db 0x00
+                           00001A    76 	G$screen_test_screen_update$0$0	= .
+                                     77 	.globl	G$screen_test_screen_update$0$0
+                           00001A    78 	C$test_screen.c$16$1_0$8	= .
+                                     79 	.globl	C$test_screen.c$16$1_0$8
+                                     80 ;test_screen.c:16: void screen_test_screen_update( unsigned char *screen_type )
+                                     81 ;	---------------------------------
+                                     82 ; Function screen_test_screen_update
+                                     83 ; ---------------------------------
+      00001A                         84 _screen_test_screen_update::
+                           00001A    85 	C$test_screen.c$18$1_0$8	= .
+                                     86 	.globl	C$test_screen.c$18$1_0$8
+                                     87 ;test_screen.c:18: *screen_type = screen_type_test;
+      00001A C1               [10]   88 	pop	bc
+      00001B E1               [10]   89 	pop	hl
+      00001C E5               [11]   90 	push	hl
+      00001D C5               [11]   91 	push	bc
+      00001E 36 16            [10]   92 	ld	(hl), #0x16
+                           000020    93 	C$test_screen.c$19$1_0$8	= .
+                                     94 	.globl	C$test_screen.c$19$1_0$8
+                                     95 ;test_screen.c:19: }
+                           000020    96 	C$test_screen.c$19$1_0$8	= .
+                                     97 	.globl	C$test_screen.c$19$1_0$8
+                           000020    98 	XG$screen_test_screen_update$0$0	= .
+                                     99 	.globl	XG$screen_test_screen_update$0$0
+      000020 C9               [10]  100 	ret
+                                    101 	.area _CODE
+                                    102 	.area _INITIALIZER
+                                    103 	.area _CABS (ABS)
