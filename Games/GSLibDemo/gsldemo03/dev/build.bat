@@ -1,6 +1,6 @@
 ::cd banks
-sdcc -c -mz80 --constseg BANK2 assets2.c
-sdcc -c -mz80 --constseg BANK3 assets3.c
+sdcc -c -mz80 --constseg BANK2 bank2.c
+sdcc -c -mz80 --constseg BANK3 bank3.c
 ::cd ..
 
 
