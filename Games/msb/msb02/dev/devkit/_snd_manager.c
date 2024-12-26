@@ -63,6 +63,15 @@ void devkit_PSGSFXFrame( void )
 }
 
 // #defines
+unsigned char devkit_PSG_STOPPED()
+{
+	return PSG_STOPPED;
+}
+unsigned char devkit_PSG_PLAYING()
+{
+	return PSG_PLAYING;
+}
+
 unsigned char devkit_SFX_CHANNEL2()
 {
 	return SFX_CHANNEL2;
