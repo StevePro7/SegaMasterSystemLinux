@@ -17,4 +17,4 @@ extern const unsigned char spriteAttackLeftMeta[];
 extern const unsigned char spriteAttackRightMeta[];
 extern const unsigned char metatilesMetaLUT[];
 
-#ending//_GSL_RESOURCES_
+#endif//_GSL_RESOURCES_

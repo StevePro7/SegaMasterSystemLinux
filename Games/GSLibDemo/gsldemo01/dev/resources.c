@@ -1,4 +1,4 @@
-
+#include "resources.h"
 
 const unsigned int spriteMoveUp[] = { 0x0080, 0x0000, 0x0080, 0x0100 };
 const unsigned int spriteMoveDown[] = { 0x0200, 0x0180, 0x0200, 0x0280 };
