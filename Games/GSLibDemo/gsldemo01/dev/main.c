@@ -76,10 +76,13 @@ void main( void )
 		// copy scrolltable to RAM
 		// NOTE: this allows us to modify the map for hightened player interaction
 		// in this case cutting down lots of trees, activating bridges, etc.
+		SMS_mapROMBank( 2 );
 		for( int i = 0; i < scrolltable_bin_size; i++ ) scrolltable[ i ] = *( scrolltable_bin + i );
 
 		// initalise General Scroll Library
+		SMS_mapROMBank( 2 );
 		GSL_initializeMap( &scrolltable, &metatiles_bin );
+		SMS_mapROMBank( 3 );
 		GSL_positionWindow( 768, 832 );
 		GSL_refreshVDP();
 
