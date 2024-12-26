@@ -4254,7 +4254,7 @@ __str_1:
 	.db 0x00
 F_sms_manager$__str_2$0_0$0 == .
 __str_2:
-	.ascii "SMS Power tutorial on how to use General Scroll Library"
+	.ascii "SMS Power tutorial for General Scroll Library"
 	.db 0x00
 	.area _INITIALIZER
 	.area _CABS (ABS)
@@ -4287,10 +4287,10 @@ G$__SMS__SDSC_name$0_0$0 == .
 ___SMS__SDSC_name:
 	.ascii "GSLdemo"
 	.db 0x00
-	.org 0x7F97
+	.org 0x7FA1
 G$__SMS__SDSC_descr$0_0$0 == .
 ___SMS__SDSC_descr:
-	.ascii "SMS Power tutorial on how to use General Scroll Library"
+	.ascii "SMS Power tutorial for General Scroll Library"
 	.db 0x00
 	.org 0x7FE0
 G$__SMS__SDSC_signature$0_0$0 == .
@@ -4309,5 +4309,5 @@ ___SMS__SDSC_signature:
 	.db #0x7f	; 127
 	.db #0xcf	; 207
 	.db #0x7f	; 127
-	.db #0x97	; 151
+	.db #0xa1	; 161
 	.db #0x7f	; 127

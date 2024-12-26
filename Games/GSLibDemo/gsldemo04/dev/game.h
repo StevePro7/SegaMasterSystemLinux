@@ -11,6 +11,6 @@
 #define dateDay		21
 #define author		"stevepro"
 #define name		"GSLdemo"
-#define descr		"SMS Power tutorial on how to use General Scroll Library"
+#define descr		"SMS Power tutorial for General Scroll Library"
 
 #endif//_GAME_H_

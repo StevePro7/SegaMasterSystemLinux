@@ -57,7 +57,7 @@ unsigned char direction = DIRECTION_DOWN;
 
 unsigned char scrolltable[scrolltable_bin_size];
 
-SMS_EMBED_SEGA_ROM_HEADER(9999,1);	
+//SMS_EMBED_SEGA_ROM_HEADER(9999,1);	
 
 void main(void) 
 {
