@@ -25,19 +25,37 @@
     <Filter Include="Source Files\content">
       <UniqueIdentifier>{a4fcd5a4-b610-4546-a958-305583ac19cf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\devkit">
+      <UniqueIdentifier>{04cb3cac-b102-49ed-b877-70799109ba0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\devkit">
+      <UniqueIdentifier>{1b45460d-b4a4-46bf-8d02-57e1e360c00d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="resources.c">
+    <ClCompile Include="banks\bank2.c">
+      <Filter>Source Files\banks</Filter>
+    </ClCompile>
+    <ClCompile Include="banks\bank3.c">
+      <Filter>Source Files\banks</Filter>
+    </ClCompile>
+    <ClCompile Include="content\resources.c">
       <Filter>Source Files\content</Filter>
     </ClCompile>
-    <ClCompile Include="bank2.c">
-      <Filter>Source Files\banks</Filter>
+    <ClCompile Include="devkit\_gsl_manager.c">
+      <Filter>Source Files\devkit</Filter>
     </ClCompile>
-    <ClCompile Include="bank3.c">
-      <Filter>Source Files\banks</Filter>
+    <ClCompile Include="devkit\_sms_manager.c">
+      <Filter>Source Files\devkit</Filter>
+    </ClCompile>
+    <ClCompile Include="devkit\_snd_manager.c">
+      <Filter>Source Files\devkit</Filter>
+    </ClCompile>
+    <ClCompile Include="game.c">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -49,11 +67,26 @@
     <ClInclude Include="main.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="bank2.h">
+    <ClInclude Include="banks\bank2.h">
       <Filter>Header Files\banks</Filter>
     </ClInclude>
-    <ClInclude Include="bank3.h">
+    <ClInclude Include="banks\bank3.h">
       <Filter>Header Files\banks</Filter>
+    </ClInclude>
+    <ClInclude Include="content\resources.h">
+      <Filter>Header Files\content</Filter>
+    </ClInclude>
+    <ClInclude Include="devkit\_gsl_manager.h">
+      <Filter>Header Files\devkit</Filter>
+    </ClInclude>
+    <ClInclude Include="devkit\_sms_manager.h">
+      <Filter>Header Files\devkit</Filter>
+    </ClInclude>
+    <ClInclude Include="devkit\_snd_manager.h">
+      <Filter>Header Files\devkit</Filter>
+    </ClInclude>
+    <ClInclude Include="game.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

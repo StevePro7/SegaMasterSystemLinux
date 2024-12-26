@@ -346,6 +346,6 @@ S:G$UNSAFE_SMS_VRAMmemcpy64$0_0$0({2}DF,SV:S),C,0,0
 S:G$UNSAFE_SMS_VRAMmemcpy128$0_0$0({2}DF,SV:S),C,0,0
 S:G$SMS_isr$0_0$0({2}DF,SV:S),C,0,0
 S:G$SMS_nmi_isr$0_0$0({2}DF,SV:S),C,0,0
-S:F_sms_manager$__str_0$0_0$0({17}DA17d,SC:U),D,0,0
-S:F_sms_manager$__str_1$0_0$0({9}DA9d,SC:U),D,0,0
-S:F_sms_manager$__str_2$0_0$0({25}DA25d,SC:U),D,0,0
+S:F_sms_manager$__str_0$0_0$0({9}DA9d,SC:U),D,0,0
+S:F_sms_manager$__str_1$0_0$0({8}DA8d,SC:U),D,0,0
+S:F_sms_manager$__str_2$0_0$0({56}DA56d,SC:U),D,0,0
