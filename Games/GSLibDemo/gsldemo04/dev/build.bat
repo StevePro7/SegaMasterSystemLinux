@@ -1,6 +1,15 @@
+@echo off
+
+:: Time build START
+:: Reference: https://stackoverflow.com/questions/673523/how-do-i-measure-execution-time-of-a-command-on-the-windows-command-line
+set _time=%time: =0%
+set /a _hours=100%_time:~0,2%%%100,_min=100%_time:~3,2%%%100,_sec=100%_time:~6,2%%%100,_cs=%_time:~9,2%
+set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
+
+:: Compile
 ::cd banks
-sdcc --debug -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK2 bank2.c
-sdcc --debug -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK3 bank3.c
+::sdcc --debug -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK2 bank2.c
+::sdcc --debug -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK3 bank3.c
 ::cd ..
 
 ::cd content
@@ -8,11 +17,22 @@ sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 reso
 ::cd ..
 sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
 
+:: Time build -END- 
+set _time=%time: =0%
+set /a _hours=100%_time:~0,2%%%100,_min=100%_time:~3,2%%%100,_sec=100%_time:~6,2%%%100,_cs=%_time:~9,2%
+set /a _duration=_hours*60*60*100+_min*60*100+_sec*100+_cs-_started
+set /a _hours=_duration/60/60/100,_min=100+_duration/60/100%%60,_sec=100+(_duration/100%%60%%60),_cs=100+_duration%%100
+echo.
+echo Time taken: %_sec:~-2%.%_cs:~-2% secs
+echo.
+
+
+:: Link
 sdcc --debug  -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-loc 0xC000 ^
 ../crt0/crt0_sms.rel main.rel ^
 -Wl-b_BANK2=0x4000 -Wl-b_BANK3=0x4000 ^
 ../lib/SMSlib.lib ../lib/PSGlib.rel ../lib/GSLib.rel ^
-bank2.rel bank3.rel ^
+banks/bank2.rel banks/bank3.rel ^
 resources.rel
 
 ihx2sms output.ihx output.sms
