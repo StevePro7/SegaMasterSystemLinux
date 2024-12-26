@@ -1028,3 +1028,4 @@ const unsigned char palette_bin[ 13 ] = {
 
 const unsigned char sprite_palette_bin[ 7 ] = {
 	0x04,0x00,0x30,0x06,0x38,0x1b,0x3f };
+
