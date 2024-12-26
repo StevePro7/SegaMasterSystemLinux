@@ -1,3 +1,9 @@
+::cd banks
+sdcc -c -mz80 --constseg BANK2 assets2.c
+sdcc -c -mz80 --constseg BANK3 assets3.c
+::cd ..
+
+
 sdcc -c -mz80 main.c
 
 sdcc -o output.ihx -mz80 --no-std-crt0 --data-loc 0xC000 ^
