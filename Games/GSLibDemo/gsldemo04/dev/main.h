@@ -3,7 +3,7 @@
 
 #include "banks/bank2.h"
 #include "banks/bank3.h"
-#include "resources.h"
+#include "content/resources.h"
 #include "../lib/SMSlib.h"
 #include "../lib/PSGlib.h"
 #include "../lib/GSLib.h"
