@@ -5,7 +5,7 @@
 #include "bank3.h"
 #include "resources.c"
 #include "../lib/SMSlib.h"
-#include "../lib/GSLib.c"
-#include "../lib/PSGlib.c"
+#include "../lib/PSGlib.h"
+#include "../lib/GSLib.h"
 
 #endif//__MAIN__

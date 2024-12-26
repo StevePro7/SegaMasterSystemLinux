@@ -35,22 +35,22 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000026  l__HEADER3                      
      00000104  l__HEADER4                      
      00000200  s__CODE                         
-     00001208  l__DATA                         
+     00001209  l__DATA                         
      0000121D  l__BANK3                        
-     00001DC6  l__CODE                         
-     00001FC6  s__HOME                         
-     00001FC6  s__INITIALIZER                  
-     00001FE0  s__GSINIT                       
-     00001FEF  s__GSFINAL                      
+     00001E33  l__CODE                         
+     00002033  s__HOME                         
+     00002033  s__INITIALIZER                  
+     0000204D  s__GSINIT                       
+     0000205C  s__GSFINAL                      
      00003F9F  l__BANK2                        
      00004000  s__BANK2                        
      00004000  s__BANK3                        
      00008000  _SMS_SRAM                          SMSlib_VRAMmemcpy
      0000C000  s__DATA                         
-     0000D208  s__INITIALIZED                  
-     0000D222  s__BSEG                         
-     0000D222  s__BSS                          
-     0000D222  s__HEAP                         
+     0000D209  s__INITIALIZED                  
+     0000D223  s__BSEG                         
+     0000D223  s__BSS                          
+     0000D223  s__HEAP                         
      0000FFFC  _SRAM_bank_to_be_mapped_on_slot2   SMSlib_VRAMmemcpy
      0000FFFF  _ROM_bank_to_be_mapped_on_slot2    SMSlib_VRAMmemcpy
 
@@ -59,119 +59,1502 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001DC6 =        7622. bytes (REL,CON)
+_CODE                               00000200    00001E33 =        7731. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00000200  _GSL_positionWindow                main
-     0000020A  _spriteMoveUp                      main
-     00000212  _spriteMoveDown                    main
-     0000021A  _spriteMoveLeft                    main
-     00000222  _spriteMoveRight                   main
-     0000022A  _spriteAttackUp                    main
-     00000234  _spriteAttackDown                  main
-     0000023E  _spriteAttackLeft                  main
-     00000248  _spriteAttackRight                 main
-     00000252  _spriteAttackUpMeta                main
-     0000029E  _spriteAttackDownMeta              main
-     000002EA  _spriteAttackLeftMeta              main
-     00000336  _spriteAttackRightMeta             main
-     00000382  _metatilesMetaLUT                  main
-     00000482  _GSL_metatileLookup                main
-     0000048C  _GSL_tileLookup                    main
-     00000496  _GSL_refreshVDP                    main
-     0000049E  _GSL_scroll                        main
-     000004B2  _GSL_VBlank                        main
-     000004BA  _GSL_metatileUpdate                main
-     000004BE  _GSL_metatileUpdateCustom          main
-     000004D8  _GSL_getMapWidthInPixels           main
-     000004DC  _GSL_getMapHeightInPixels          main
-     000004E0  _GSL_getMapWidthInMetatiles        main
-     000004E4  _GSL_getMapHeightInMetatiles       main
-     000004E8  _GSL_getScrolltableSize            main
-     000004EC  _GSL_getCurrentX                   main
-     000004F0  _GSL_getCurrentY                   main
-     000004F4  _GSL_getCollisionCount             main
-     000004F9  _GSL_getScrolltableAddress         main
-     000004FD  _GSL_initializeMap                 main
-     00000C37  _PSGStop                           main
-     00000C5E  _GSL_LUTColumnUpdate               main
-     00000CCE  _GSL_LUTRowUpdate                  main
-     00000D4E  _PSGResume                         main
-     00000D9A  _PSGPlay                           main
-     00000DC8  _PSGCancelLoop                     main
-     00000DCE  _PSGPlayNoRepeat                   main
-     00000DDD  _PSGGetStatus                      main
-     00000DE2  _PSGSilenceChannels                main
-     00000DF3  _PSGRestoreVolumes                 main
-     00000EC4  _PSGSetMusicVolumeAttenuation      main
-     00000F8B  _PSGSFXStop                        main
-     00001053  _PSGSFXPlay                        main
-     000010A5  _PSGSFXCancelLoop                  main
-     000010AB  _PSGSFXGetStatus                   main
-     000010B0  _PSGSFXPlayLoop                    main
-     000010CD  _PSGFrame                          main
-     000011E6  _PSGSFXFrame                       main
-     0000126C  _main                              main
+     00000200  _main                              main
+     0000034C  _spriteMoveUp                      main
+     00000354  _spriteMoveDown                    main
+     0000035C  _spriteMoveLeft                    main
+     00000364  _spriteMoveRight                   main
+     0000036C  _spriteAttackUp                    main
+     00000376  _spriteAttackDown                  main
+     00000380  _spriteAttackLeft                  main
+     0000038A  _spriteAttackRight                 main
+     00000394  _spriteAttackUpMeta                main
+     000003E0  _spriteAttackDownMeta              main
+     0000042C  _spriteAttackLeftMeta              main
+     00000478  _spriteAttackRightMeta             main
+     000004C4  _metatilesMetaLUT                  main
+     000005C4  _processSpritesActiveDisplay       main
+     000006EB  _processSpritesVBlank              main
+     0000075C  _processUserInput                  main
+     000007A5  _processUpKey                      main
+     000008F4  _processDownKey                    main
+     00000A57  _processLeftKey                    main
+     00000B35  _processRightKey                   main
+     00000C11  _processAttackKey                  main
+     00000C84  _checkForAttackInteraction         main
+     00000D7F  _processAttackInteraction          main
+     00000E50  _PSGStop                           PSGlib
+     00000E77  _PSGResume                         PSGlib
+     00000EC3  _PSGPlay                           PSGlib
+     00000EF0  _PSGPlayLoops                      PSGlib
+     00000F07  _PSGCancelLoop                     PSGlib
+     00000F12  _PSGPlayNoRepeat                   PSGlib
+     00000F26  _PSGGetStatus                      PSGlib
+     00000F2B  _PSGSilenceChannels                PSGlib
+     00000F3C  _PSGRestoreVolumes                 PSGlib
+     00001037  _PSGSetMusicVolumeAttenuation      PSGlib
+     0000111B  _PSGSFXStop                        PSGlib
+     000011E3  _PSGSFXPlay                        PSGlib
+     00001230  _PSGSFXCancelLoop                  PSGlib
+     00001236  _PSGSFXGetStatus                   PSGlib
+     0000123B  _PSGSFXPlayLoop                    PSGlib
+     00001258  _PSGFrame                          PSGlib
+     0000137C  _PSGSFXFrame                       PSGlib
+     00001402  A$GSLib$78                         GSLib
+     00001402  C$GSLib.c$56$0_0$8                 GSLib
+     00001402  C$GSLib.c$68$1_0$8                 GSLib
+     00001402  G$GSL_positionWindow$0$0           GSLib
+     00001402  _GSL_positionWindow                GSLib
+     00001403  A$GSLib$79                         GSLib
+     00001404  A$GSLib$80                         GSLib
+     00001405  A$GSLib$81                         GSLib
+     00001406  A$GSLib$82                         GSLib
 ASxxxx Linker V03.00 + NoICE + sdld,  page 3.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00001DC6 =        7622. bytes (REL,CON)
+_CODE                               00000200    00001E33 =        7731. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     000013B8  _processSpritesActiveDisplay       main
-     000014DF  _processSpritesVBlank              main
-     00001550  _processUserInput                  main
-     00001599  _processUpKey                      main
-     000016E8  _processDownKey                    main
-     0000184B  _processLeftKey                    main
-     00001929  _processRightKey                   main
-     00001A05  _processAttackKey                  main
-     00001A78  _checkForAttackInteraction         main
-     00001B73  _processAttackInteraction          main
-     00001C44  _UNSAFE_SMS_copySpritestoSAT       SMSlib_UNSAFE
-     00001C8B  _UNSAFE_SMS_VRAMmemcpy32           SMSlib_UNSAFE
-     00001CAB  _UNSAFE_SMS_VRAMmemcpy64           SMSlib_UNSAFE
-     00001CCB  _UNSAFE_SMS_VRAMmemcpy128          SMSlib_UNSAFE
-     00001CEB  _SMS_init                          SMSlib
-     00001D1D  _VDPReg_init                       SMSlib
-     00001D28  _SMS_VDPturnOnFeature              SMSlib
-     00001D3D  _SMS_VDPturnOffFeature             SMSlib
-     00001D55  _SMS_setBGScrollX                  SMSlib
-     00001D5F  _SMS_setBGScrollY                  SMSlib
-     00001D69  _SMS_setBackdropColor              SMSlib
-     00001D73  _SMS_useFirstHalfTilesforSprites   SMSlib
-     00001D89  _SMS_setSpriteMode                 SMSlib
-     00001DD7  _SMS_setBGPaletteColor             SMSlib
-     00001DEB  _SMS_setSpritePaletteColor         SMSlib
-     00001DFF  _SMS_loadBGPalette                 SMSlib
-     00001E14  _SMS_loadSpritePalette             SMSlib
-     00001E29  _SMS_setColor                      SMSlib
-     00001E2D  _SMS_waitForVBlank                 SMSlib
-     00001E3A  _SMS_getKeysStatus                 SMSlib
-     00001E3E  _SMS_getKeysPressed                SMSlib
-     00001E5B  _SMS_getKeysHeld                   SMSlib
-     00001E6F  _SMS_getKeysReleased               SMSlib
-     00001E8C  _SMS_queryPauseRequested           SMSlib
-     00001E91  _SMS_resetPauseRequest             SMSlib
-     00001E97  _SMS_setLineInterruptHandler       SMSlib
-     00001E9B  _SMS_setLineCounter                SMSlib
-     00001EA5  _SMS_getVCount                     SMSlib
-     00001EA9  _SMS_getHCount                     SMSlib
-     00001EAD  _SMS_isr                           SMSlib
-     00001EE3  _SMS_nmi_isr                       SMSlib
-     00001EEC  _SMS_initSprites                   SMSlib_sprite
-     00001EF2  _SMS_addSprite                     SMSlib_sprite
-     00001F25  _SMS_copySpritestoSAT              SMSlib_sprite
-     00001F5B  ___sdcc_call_hl                    
-     00001F5C  _SMS_VRAMmemset                    SMSlib_VRAMmemset
-     00001F7F  _SMS_VRAMmemsetW                   SMSlib_VRAMmemset
-     00001FAD  _SMS_VRAMmemcpy                    SMSlib_VRAMmemcpy
-
+     00001407  A$GSLib$83                         GSLib
+     00001408  A$GSLib$84                         GSLib
+     0000140B  A$GSLib$92                         GSLib
+     0000140B  C$GSLib.c$69$1_0$8                 GSLib
+     0000140B  XG$GSL_positionWindow$0$0          GSLib
+     0000140C  A$GSLib$105                        GSLib
+     0000140C  C$GSLib.c$73$1_0$10                GSLib
+     0000140C  C$GSLib.c$84$1_0$10                GSLib
+     0000140C  G$GSL_metatileLookup$0$0           GSLib
+     0000140C  _GSL_metatileLookup                GSLib
+     0000140D  A$GSLib$106                        GSLib
+     0000140E  A$GSLib$107                        GSLib
+     0000140F  A$GSLib$108                        GSLib
+     00001410  A$GSLib$109                        GSLib
+     00001411  A$GSLib$110                        GSLib
+     00001412  A$GSLib$111                        GSLib
+     00001415  A$GSLib$119                        GSLib
+     00001415  C$GSLib.c$85$1_0$10                GSLib
+     00001415  XG$GSL_metatileLookup$0$0          GSLib
+     00001416  A$GSLib$132                        GSLib
+     00001416  C$GSLib.c$101$1_0$12               GSLib
+     00001416  C$GSLib.c$89$1_0$12                GSLib
+     00001416  G$GSL_tileLookup$0$0               GSLib
+     00001416  _GSL_tileLookup                    GSLib
+     00001417  A$GSLib$133                        GSLib
+     00001418  A$GSLib$134                        GSLib
+     00001419  A$GSLib$135                        GSLib
+     0000141A  A$GSLib$136                        GSLib
+     0000141B  A$GSLib$137                        GSLib
+     0000141C  A$GSLib$138                        GSLib
+     0000141F  A$GSLib$146                        GSLib
+     0000141F  C$GSLib.c$102$1_0$12               GSLib
+     0000141F  XG$GSL_tileLookup$0$0              GSLib
+     00001420  A$GSLib$159                        GSLib
+     00001420  C$GSLib.c$106$1_0$13               GSLib
+     00001420  C$GSLib.c$112$1_0$13               GSLib
+     00001420  G$GSL_refreshVDP$0$0               GSLib
+     00001420  _GSL_refreshVDP                    GSLib
+     00001422  A$GSLib$160                        GSLib
+     00001425  A$GSLib$161                        GSLib
+     00001427  A$GSLib$169                        GSLib
+     00001427  C$GSLib.c$113$1_0$13               GSLib
+     00001427  XG$GSL_refreshVDP$0$0              GSLib
+     00001428  A$GSLib$182                        GSLib
+     00001428  C$GSLib.c$117$1_0$15               GSLib
+     00001428  C$GSLib.c$135$1_0$15               GSLib
+     00001428  G$GSL_scroll$0$0                   GSLib
+     00001428  _GSL_scroll                        GSLib
+     00001429  A$GSLib$183                        GSLib
+     0000142A  A$GSLib$184                        GSLib
+     0000142B  A$GSLib$185                        GSLib
 ASxxxx Linker V03.00 + NoICE + sdld,  page 4.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001E33 =        7731. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     0000142C  A$GSLib$186                        GSLib
+     0000142E  A$GSLib$187                        GSLib
+     0000142F  A$GSLib$188                        GSLib
+     00001432  A$GSLib$189                        GSLib
+     00001433  A$GSLib$190                        GSLib
+     00001436  A$GSLib$191                        GSLib
+     00001439  A$GSLib$192                        GSLib
+     0000143B  A$GSLib$200                        GSLib
+     0000143B  C$GSLib.c$136$1_0$15               GSLib
+     0000143B  XG$GSL_scroll$0$0                  GSLib
+     0000143C  A$GSLib$213                        GSLib
+     0000143C  C$GSLib.c$140$1_0$16               GSLib
+     0000143C  C$GSLib.c$146$1_0$16               GSLib
+     0000143C  G$GSL_VBlank$0$0                   GSLib
+     0000143C  _GSL_VBlank                        GSLib
+     0000143E  A$GSLib$214                        GSLib
+     00001441  A$GSLib$215                        GSLib
+     00001443  A$GSLib$223                        GSLib
+     00001443  C$GSLib.c$147$1_0$16               GSLib
+     00001443  XG$GSL_VBlank$0$0                  GSLib
+     00001444  A$GSLib$236                        GSLib
+     00001444  C$GSLib.c$151$1_0$17               GSLib
+     00001444  C$GSLib.c$155$1_0$17               GSLib
+     00001444  G$GSL_metatileUpdate$0$0           GSLib
+     00001444  _GSL_metatileUpdate                GSLib
+     00001447  A$GSLib$244                        GSLib
+     00001447  C$GSLib.c$156$1_0$17               GSLib
+     00001447  XG$GSL_metatileUpdate$0$0          GSLib
+     00001448  A$GSLib$257                        GSLib
+     00001448  C$GSLib.c$160$1_0$19               GSLib
+     00001448  C$GSLib.c$178$1_0$19               GSLib
+     00001448  G$GSL_metatileUpdateCustom$0$0     GSLib
+     00001448  _GSL_metatileUpdateCustom          GSLib
+     00001449  A$GSLib$258                        GSLib
+     0000144A  A$GSLib$259                        GSLib
+     0000144D  A$GSLib$260                        GSLib
+     0000144E  A$GSLib$261                        GSLib
+     00001451  A$GSLib$262                        GSLib
+     00001452  A$GSLib$263                        GSLib
+     00001456  A$GSLib$264                        GSLib
+     00001457  A$GSLib$265                        GSLib
+     0000145A  A$GSLib$266                        GSLib
+     0000145B  A$GSLib$267                        GSLib
+     0000145C  A$GSLib$268                        GSLib
+     0000145D  A$GSLib$269                        GSLib
+     0000145E  A$GSLib$270                        GSLib
+     00001461  A$GSLib$278                        GSLib
+     00001461  C$GSLib.c$179$1_0$19               GSLib
+     00001461  XG$GSL_metatileUpdateCustom$0$0    GSLib
+     00001462  A$GSLib$291                        GSLib
+     00001462  C$GSLib.c$182$1_0$20               GSLib
+ASxxxx Linker V03.00 + NoICE + sdld,  page 5.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001E33 =        7731. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00001462  C$GSLib.c$184$1_0$20               GSLib
+     00001462  G$GSL_getMapWidthInPixels$0$0      GSLib
+     00001462  _GSL_getMapWidthInPixels           GSLib
+     00001465  A$GSLib$299                        GSLib
+     00001465  C$GSLib.c$185$1_0$20               GSLib
+     00001465  XG$GSL_getMapWidthInPixels$0$0     GSLib
+     00001466  A$GSLib$312                        GSLib
+     00001466  C$GSLib.c$189$1_0$21               GSLib
+     00001466  C$GSLib.c$191$1_0$21               GSLib
+     00001466  G$GSL_getMapHeightInPixels$0$0     GSLib
+     00001466  _GSL_getMapHeightInPixels          GSLib
+     00001469  A$GSLib$320                        GSLib
+     00001469  C$GSLib.c$192$1_0$21               GSLib
+     00001469  XG$GSL_getMapHeightInPixels$0$0    GSLib
+     0000146A  A$GSLib$333                        GSLib
+     0000146A  C$GSLib.c$196$1_0$22               GSLib
+     0000146A  C$GSLib.c$198$1_0$22               GSLib
+     0000146A  G$GSL_getMapWidthInMetatiles$0$0   GSLib
+     0000146A  _GSL_getMapWidthInMetatiles        GSLib
+     0000146D  A$GSLib$341                        GSLib
+     0000146D  C$GSLib.c$199$1_0$22               GSLib
+     0000146D  XG$GSL_getMapWidthInMetatiles$0$   GSLib
+     0000146E  A$GSLib$354                        GSLib
+     0000146E  C$GSLib.c$203$1_0$23               GSLib
+     0000146E  C$GSLib.c$205$1_0$23               GSLib
+     0000146E  G$GSL_getMapHeightInMetatiles$0$   GSLib
+     0000146E  _GSL_getMapHeightInMetatiles       GSLib
+     00001471  A$GSLib$362                        GSLib
+     00001471  C$GSLib.c$206$1_0$23               GSLib
+     00001471  XG$GSL_getMapHeightInMetatiles$0   GSLib
+     00001472  A$GSLib$375                        GSLib
+     00001472  C$GSLib.c$210$1_0$24               GSLib
+     00001472  C$GSLib.c$212$1_0$24               GSLib
+     00001472  G$GSL_getScrolltableSize$0$0       GSLib
+     00001472  _GSL_getScrolltableSize            GSLib
+     00001475  A$GSLib$383                        GSLib
+     00001475  C$GSLib.c$213$1_0$24               GSLib
+     00001475  XG$GSL_getScrolltableSize$0$0      GSLib
+     00001476  A$GSLib$396                        GSLib
+     00001476  C$GSLib.c$217$1_0$25               GSLib
+     00001476  C$GSLib.c$219$1_0$25               GSLib
+     00001476  G$GSL_getCurrentX$0$0              GSLib
+     00001476  _GSL_getCurrentX                   GSLib
+     00001479  A$GSLib$404                        GSLib
+     00001479  C$GSLib.c$220$1_0$25               GSLib
+     00001479  XG$GSL_getCurrentX$0$0             GSLib
+     0000147A  A$GSLib$417                        GSLib
+     0000147A  C$GSLib.c$224$1_0$26               GSLib
+     0000147A  C$GSLib.c$226$1_0$26               GSLib
+     0000147A  G$GSL_getCurrentY$0$0              GSLib
+     0000147A  _GSL_getCurrentY                   GSLib
+ASxxxx Linker V03.00 + NoICE + sdld,  page 6.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001E33 =        7731. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     0000147D  A$GSLib$425                        GSLib
+     0000147D  C$GSLib.c$227$1_0$26               GSLib
+     0000147D  XG$GSL_getCurrentY$0$0             GSLib
+     0000147E  A$GSLib$438                        GSLib
+     0000147E  C$GSLib.c$231$1_0$27               GSLib
+     0000147E  C$GSLib.c$233$1_0$27               GSLib
+     0000147E  G$GSL_getCollisionCount$0$0        GSLib
+     0000147E  _GSL_getCollisionCount             GSLib
+     00001481  A$GSLib$439                        GSLib
+     00001482  A$GSLib$447                        GSLib
+     00001482  C$GSLib.c$234$1_0$27               GSLib
+     00001482  XG$GSL_getCollisionCount$0$0       GSLib
+     00001483  A$GSLib$460                        GSLib
+     00001483  C$GSLib.c$237$1_0$28               GSLib
+     00001483  C$GSLib.c$239$1_0$28               GSLib
+     00001483  G$GSL_getScrolltableAddress$0$0    GSLib
+     00001483  _GSL_getScrolltableAddress         GSLib
+     00001486  A$GSLib$468                        GSLib
+     00001486  C$GSLib.c$240$1_0$28               GSLib
+     00001486  XG$GSL_getScrolltableAddress$0$0   GSLib
+     00001487  A$GSLib$481                        GSLib
+     00001487  C$GSLib.c$1724$1_0$30              GSLib
+     00001487  C$GSLib.c$244$1_0$30               GSLib
+     00001487  G$GSL_initializeMap$0$0            GSLib
+     00001487  _GSL_initializeMap                 GSLib
+     00001488  A$GSLib$482                        GSLib
+     00001489  A$GSLib$483                        GSLib
+     0000148A  A$GSLib$484                        GSLib
+     0000148B  A$GSLib$485                        GSLib
+     0000148C  A$GSLib$486                        GSLib
+     0000148D  A$GSLib$487                        GSLib
+     00001490  A$GSLib$488                        GSLib
+     00001493  A$GSLib$493                        GSLib
+     00001497  A$GSLib$495                        GSLib
+     00001498  A$GSLib$496                        GSLib
+     00001499  A$GSLib$497                        GSLib
+     0000149A  A$GSLib$498                        GSLib
+     0000149B  A$GSLib$499                        GSLib
+     0000149E  A$GSLib$501                        GSLib
+     000014A1  A$GSLib$502                        GSLib
+     000014A4  A$GSLib$503                        GSLib
+     000014A6  A$GSLib$505                        GSLib
+     000014A9  A$GSLib$507                        GSLib
+     000014AC  A$GSLib$508                        GSLib
+     000014AF  A$GSLib$509                        GSLib
+     000014B0  A$GSLib$510                        GSLib
+     000014B3  A$GSLib$511                        GSLib
+     000014B6  A$GSLib$512                        GSLib
+     000014B9  A$GSLib$513                        GSLib
+     000014BA  A$GSLib$516                        GSLib
+     000014BE  A$GSLib$517                        GSLib
+ASxxxx Linker V03.00 + NoICE + sdld,  page 7.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001E33 =        7731. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000014C1  A$GSLib$519                        GSLib
+     000014C4  A$GSLib$521                        GSLib
+     000014C7  A$GSLib$524                        GSLib
+     000014CA  A$GSLib$525                        GSLib
+     000014CC  A$GSLib$526                        GSLib
+     000014CE  A$GSLib$528                        GSLib
+     000014D0  A$GSLib$529                        GSLib
+     000014D1  A$GSLib$530                        GSLib
+     000014D3  A$GSLib$531                        GSLib
+     000014D4  A$GSLib$532                        GSLib
+     000014D6  A$GSLib$534                        GSLib
+     000014D7  A$GSLib$535                        GSLib
+     000014D8  A$GSLib$536                        GSLib
+     000014D9  A$GSLib$538                        GSLib
+     000014DB  A$GSLib$539                        GSLib
+     000014DC  A$GSLib$540                        GSLib
+     000014DD  A$GSLib$541                        GSLib
+     000014DE  A$GSLib$543                        GSLib
+     000014DF  A$GSLib$544                        GSLib
+     000014E2  A$GSLib$547                        GSLib
+     000014E4  A$GSLib$548                        GSLib
+     000014E5  A$GSLib$549                        GSLib
+     000014E6  A$GSLib$550                        GSLib
+     000014E7  A$GSLib$551                        GSLib
+     000014E8  A$GSLib$552                        GSLib
+     000014E9  A$GSLib$553                        GSLib
+     000014EA  A$GSLib$554                        GSLib
+     000014EB  A$GSLib$555                        GSLib
+     000014EC  A$GSLib$558                        GSLib
+     000014EF  A$GSLib$559                        GSLib
+     000014F1  A$GSLib$560                        GSLib
+     000014F2  A$GSLib$561                        GSLib
+     000014F3  A$GSLib$562                        GSLib
+     000014F4  A$GSLib$563                        GSLib
+     000014F5  A$GSLib$565                        GSLib
+     000014F8  A$GSLib$566                        GSLib
+     000014F9  A$GSLib$568                        GSLib
+     000014FA  A$GSLib$569                        GSLib
+     000014FB  A$GSLib$570                        GSLib
+     000014FE  A$GSLib$572                        GSLib
+     00001501  A$GSLib$573                        GSLib
+     00001503  A$GSLib$574                        GSLib
+     00001505  A$GSLib$575                        GSLib
+     00001507  A$GSLib$576                        GSLib
+     0000150A  A$GSLib$577                        GSLib
+     0000150C  A$GSLib$578                        GSLib
+     0000150E  A$GSLib$579                        GSLib
+     00001510  A$GSLib$580                        GSLib
+     00001511  A$GSLib$583                        GSLib
+     00001514  A$GSLib$584                        GSLib
+     00001518  A$GSLib$586                        GSLib
+ASxxxx Linker V03.00 + NoICE + sdld,  page 8.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001E33 =        7731. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00001519  A$GSLib$587                        GSLib
+     0000151B  A$GSLib$588                        GSLib
+     0000151C  A$GSLib$589                        GSLib
+     0000151E  A$GSLib$590                        GSLib
+     0000151F  A$GSLib$591                        GSLib
+     00001521  A$GSLib$592                        GSLib
+     00001522  A$GSLib$593                        GSLib
+     00001524  A$GSLib$594                        GSLib
+     00001525  A$GSLib$595                        GSLib
+     00001526  A$GSLib$597                        GSLib
+     0000152A  A$GSLib$598                        GSLib
+     0000152D  A$GSLib$599                        GSLib
+     0000152E  A$GSLib$600                        GSLib
+     00001530  A$GSLib$602                        GSLib
+     00001531  A$GSLib$603                        GSLib
+     00001533  A$GSLib$604                        GSLib
+     00001534  A$GSLib$605                        GSLib
+     00001536  A$GSLib$606                        GSLib
+     00001537  A$GSLib$608                        GSLib
+     00001539  A$GSLib$610                        GSLib
+     0000153D  A$GSLib$611                        GSLib
+     0000153E  A$GSLib$612                        GSLib
+     00001540  A$GSLib$613                        GSLib
+     00001541  A$GSLib$614                        GSLib
+     00001543  A$GSLib$615                        GSLib
+     00001544  A$GSLib$616                        GSLib
+     00001546  A$GSLib$617                        GSLib
+     00001547  A$GSLib$618                        GSLib
+     00001549  A$GSLib$619                        GSLib
+     0000154A  A$GSLib$620                        GSLib
+     0000154B  A$GSLib$621                        GSLib
+     0000154C  A$GSLib$623                        GSLib
+     00001550  A$GSLib$624                        GSLib
+     00001551  A$GSLib$626                        GSLib
+     00001554  A$GSLib$627                        GSLib
+     00001555  A$GSLib$630                        GSLib
+     00001557  A$GSLib$631                        GSLib
+     00001558  A$GSLib$632                        GSLib
+     00001559  A$GSLib$633                        GSLib
+     0000155A  A$GSLib$634                        GSLib
+     0000155B  A$GSLib$635                        GSLib
+     0000155D  A$GSLib$636                        GSLib
+     0000155E  A$GSLib$637                        GSLib
+     0000155F  A$GSLib$638                        GSLib
+     00001560  A$GSLib$639                        GSLib
+     00001561  A$GSLib$641                        GSLib
+     00001564  A$GSLib$643                        GSLib
+     00001565  A$GSLib$644                        GSLib
+     00001566  A$GSLib$645                        GSLib
+     00001568  A$GSLib$646                        GSLib
+     00001569  A$GSLib$647                        GSLib
+ASxxxx Linker V03.00 + NoICE + sdld,  page 9.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001E33 =        7731. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     0000156A  A$GSLib$648                        GSLib
+     0000156C  A$GSLib$649                        GSLib
+     0000156D  A$GSLib$650                        GSLib
+     0000156E  A$GSLib$651                        GSLib
+     0000156F  A$GSLib$652                        GSLib
+     00001570  A$GSLib$653                        GSLib
+     00001574  A$GSLib$654                        GSLib
+     00001575  A$GSLib$656                        GSLib
+     00001576  A$GSLib$657                        GSLib
+     00001577  A$GSLib$658                        GSLib
+     00001578  A$GSLib$659                        GSLib
+     00001579  A$GSLib$660                        GSLib
+     0000157A  A$GSLib$663                        GSLib
+     0000157D  A$GSLib$664                        GSLib
+     00001580  A$GSLib$666                        GSLib
+     00001583  A$GSLib$667                        GSLib
+     00001586  A$GSLib$668                        GSLib
+     00001589  A$GSLib$669                        GSLib
+     0000158B  A$GSLib$670                        GSLib
+     0000158D  A$GSLib$671                        GSLib
+     0000158F  A$GSLib$672                        GSLib
+     00001591  A$GSLib$673                        GSLib
+     00001594  A$GSLib$674                        GSLib
+     00001596  A$GSLib$675                        GSLib
+     00001599  A$GSLib$678                        GSLib
+     0000159C  A$GSLib$679                        GSLib
+     0000159E  A$GSLib$680                        GSLib
+     000015A0  A$GSLib$681                        GSLib
+     000015A2  A$GSLib$683                        GSLib
+     000015A6  A$GSLib$684                        GSLib
+     000015A9  A$GSLib$685                        GSLib
+     000015AC  A$GSLib$687                        GSLib
+     000015AD  A$GSLib$688                        GSLib
+     000015AF  A$GSLib$690                        GSLib
+     000015B2  A$GSLib$691                        GSLib
+     000015B4  A$GSLib$692                        GSLib
+     000015B5  A$GSLib$693                        GSLib
+     000015B8  A$GSLib$694                        GSLib
+     000015BB  A$GSLib$696                        GSLib
+     000015BE  A$GSLib$697                        GSLib
+     000015BF  A$GSLib$698                        GSLib
+     000015C0  A$GSLib$699                        GSLib
+     000015C2  A$GSLib$700                        GSLib
+     000015C4  A$GSLib$701                        GSLib
+     000015C7  A$GSLib$702                        GSLib
+     000015C8  A$GSLib$703                        GSLib
+     000015C9  A$GSLib$704                        GSLib
+     000015CA  A$GSLib$705                        GSLib
+     000015CB  A$GSLib$707                        GSLib
+     000015CE  A$GSLib$708                        GSLib
+     000015D0  A$GSLib$709                        GSLib
+ASxxxx Linker V03.00 + NoICE + sdld,  page 10.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001E33 =        7731. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000015D2  A$GSLib$710                        GSLib
+     000015D3  A$GSLib$711                        GSLib
+     000015D4  A$GSLib$712                        GSLib
+     000015D5  A$GSLib$713                        GSLib
+     000015D7  A$GSLib$714                        GSLib
+     000015D8  A$GSLib$715                        GSLib
+     000015DA  A$GSLib$716                        GSLib
+     000015DB  A$GSLib$718                        GSLib
+     000015DD  A$GSLib$720                        GSLib
+     000015DF  A$GSLib$721                        GSLib
+     000015E0  A$GSLib$722                        GSLib
+     000015E3  A$GSLib$724                        GSLib
+     000015E7  A$GSLib$725                        GSLib
+     000015E9  A$GSLib$726                        GSLib
+     000015EB  A$GSLib$727                        GSLib
+     000015EC  A$GSLib$728                        GSLib
+     000015EE  A$GSLib$729                        GSLib
+     000015F0  A$GSLib$731                        GSLib
+     000015F3  A$GSLib$732                        GSLib
+     000015F5  A$GSLib$733                        GSLib
+     000015F7  A$GSLib$734                        GSLib
+     000015F8  A$GSLib$735                        GSLib
+     000015F9  A$GSLib$736                        GSLib
+     000015FA  A$GSLib$737                        GSLib
+     000015FC  A$GSLib$740                        GSLib
+     000015FE  A$GSLib$741                        GSLib
+     000015FF  A$GSLib$742                        GSLib
+     00001602  A$GSLib$745                        GSLib
+     00001605  A$GSLib$746                        GSLib
+     00001608  A$GSLib$747                        GSLib
+     00001609  A$GSLib$748                        GSLib
+     0000160C  A$GSLib$750                        GSLib
+     0000160F  A$GSLib$751                        GSLib
+     00001610  A$GSLib$752                        GSLib
+     00001611  A$GSLib$753                        GSLib
+     00001614  A$GSLib$755                        GSLib
+     00001617  A$GSLib$756                        GSLib
+     00001618  A$GSLib$757                        GSLib
+     0000161B  A$GSLib$758                        GSLib
+     0000161E  A$GSLib$759                        GSLib
+     00001621  A$GSLib$760                        GSLib
+     00001623  A$GSLib$761                        GSLib
+     00001625  A$GSLib$762                        GSLib
+     00001626  A$GSLib$763                        GSLib
+     00001627  A$GSLib$764                        GSLib
+     0000162A  A$GSLib$767                        GSLib
+     0000162D  A$GSLib$768                        GSLib
+     0000162F  A$GSLib$769                        GSLib
+     00001631  A$GSLib$770                        GSLib
+     00001632  A$GSLib$771                        GSLib
+     00001635  A$GSLib$772                        GSLib
+ASxxxx Linker V03.00 + NoICE + sdld,  page 11.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001E33 =        7731. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00001638  A$GSLib$775                        GSLib
+     0000163B  A$GSLib$776                        GSLib
+     0000163F  A$GSLib$778                        GSLib
+     00001642  A$GSLib$779                        GSLib
+     00001643  A$GSLib$780                        GSLib
+     00001646  A$GSLib$784                        GSLib
+     00001649  A$GSLib$785                        GSLib
+     0000164B  A$GSLib$786                        GSLib
+     0000164D  A$GSLib$788                        GSLib
+     0000164F  A$GSLib$789                        GSLib
+     00001650  A$GSLib$790                        GSLib
+     00001652  A$GSLib$791                        GSLib
+     00001653  A$GSLib$792                        GSLib
+     00001655  A$GSLib$794                        GSLib
+     00001656  A$GSLib$795                        GSLib
+     00001657  A$GSLib$796                        GSLib
+     00001658  A$GSLib$798                        GSLib
+     0000165A  A$GSLib$799                        GSLib
+     0000165B  A$GSLib$800                        GSLib
+     0000165C  A$GSLib$801                        GSLib
+     0000165D  A$GSLib$802                        GSLib
+     0000165E  A$GSLib$803                        GSLib
+     0000165F  A$GSLib$804                        GSLib
+     00001660  A$GSLib$805                        GSLib
+     00001661  A$GSLib$806                        GSLib
+     00001662  A$GSLib$807                        GSLib
+     00001664  A$GSLib$808                        GSLib
+     00001666  A$GSLib$809                        GSLib
+     00001667  A$GSLib$810                        GSLib
+     00001668  A$GSLib$811                        GSLib
+     00001669  A$GSLib$812                        GSLib
+     0000166A  A$GSLib$813                        GSLib
+     0000166C  A$GSLib$814                        GSLib
+     0000166E  A$GSLib$816                        GSLib
+     00001671  A$GSLib$817                        GSLib
+     00001673  A$GSLib$818                        GSLib
+     00001674  A$GSLib$819                        GSLib
+     00001675  A$GSLib$820                        GSLib
+     00001676  A$GSLib$821                        GSLib
+     00001677  A$GSLib$823                        GSLib
+     00001678  A$GSLib$824                        GSLib
+     0000167B  A$GSLib$825                        GSLib
+     0000167C  A$GSLib$826                        GSLib
+     0000167D  A$GSLib$827                        GSLib
+     0000167E  A$GSLib$828                        GSLib
+     0000167F  A$GSLib$829                        GSLib
+     00001680  A$GSLib$831                        GSLib
+     00001683  A$GSLib$832                        GSLib
+     00001684  A$GSLib$833                        GSLib
+     00001685  A$GSLib$834                        GSLib
+     00001687  A$GSLib$836                        GSLib
+ASxxxx Linker V03.00 + NoICE + sdld,  page 12.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001E33 =        7731. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00001688  A$GSLib$837                        GSLib
+     00001689  A$GSLib$838                        GSLib
+     0000168B  A$GSLib$839                        GSLib
+     0000168C  A$GSLib$840                        GSLib
+     00001690  A$GSLib$841                        GSLib
+     00001691  A$GSLib$843                        GSLib
+     00001693  A$GSLib$844                        GSLib
+     00001695  A$GSLib$845                        GSLib
+     00001697  A$GSLib$846                        GSLib
+     00001699  A$GSLib$847                        GSLib
+     0000169B  A$GSLib$848                        GSLib
+     0000169D  A$GSLib$849                        GSLib
+     0000169F  A$GSLib$850                        GSLib
+     000016A1  A$GSLib$852                        GSLib
+     000016A5  A$GSLib$853                        GSLib
+     000016A8  A$GSLib$854                        GSLib
+     000016A9  A$GSLib$855                        GSLib
+     000016AA  A$GSLib$857                        GSLib
+     000016AD  A$GSLib$858                        GSLib
+     000016AF  A$GSLib$860                        GSLib
+     000016B2  A$GSLib$861                        GSLib
+     000016B3  A$GSLib$862                        GSLib
+     000016B5  A$GSLib$863                        GSLib
+     000016B6  A$GSLib$864                        GSLib
+     000016B7  A$GSLib$865                        GSLib
+     000016B9  A$GSLib$866                        GSLib
+     000016BA  A$GSLib$867                        GSLib
+     000016BD  A$GSLib$868                        GSLib
+     000016BE  A$GSLib$869                        GSLib
+     000016BF  A$GSLib$870                        GSLib
+     000016C0  A$GSLib$871                        GSLib
+     000016C4  A$GSLib$872                        GSLib
+     000016C5  A$GSLib$873                        GSLib
+     000016C6  A$GSLib$874                        GSLib
+     000016C8  A$GSLib$875                        GSLib
+     000016CA  A$GSLib$876                        GSLib
+     000016CC  A$GSLib$877                        GSLib
+     000016CE  A$GSLib$878                        GSLib
+     000016CF  A$GSLib$879                        GSLib
+     000016D0  A$GSLib$880                        GSLib
+     000016D1  A$GSLib$881                        GSLib
+     000016D3  A$GSLib$882                        GSLib
+     000016D6  A$GSLib$884                        GSLib
+     000016D9  A$GSLib$885                        GSLib
+     000016DB  A$GSLib$887                        GSLib
+     000016DE  A$GSLib$888                        GSLib
+     000016DF  A$GSLib$889                        GSLib
+     000016E1  A$GSLib$890                        GSLib
+     000016E2  A$GSLib$891                        GSLib
+     000016E3  A$GSLib$892                        GSLib
+     000016E5  A$GSLib$893                        GSLib
+ASxxxx Linker V03.00 + NoICE + sdld,  page 13.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001E33 =        7731. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000016E6  A$GSLib$894                        GSLib
+     000016E9  A$GSLib$895                        GSLib
+     000016EA  A$GSLib$896                        GSLib
+     000016EB  A$GSLib$897                        GSLib
+     000016EC  A$GSLib$898                        GSLib
+     000016F0  A$GSLib$899                        GSLib
+     000016F1  A$GSLib$900                        GSLib
+     000016F2  A$GSLib$901                        GSLib
+     000016F4  A$GSLib$902                        GSLib
+     000016F6  A$GSLib$903                        GSLib
+     000016F7  A$GSLib$904                        GSLib
+     000016F8  A$GSLib$905                        GSLib
+     000016FA  A$GSLib$906                        GSLib
+     000016FC  A$GSLib$907                        GSLib
+     000016FD  A$GSLib$908                        GSLib
+     000016FE  A$GSLib$909                        GSLib
+     000016FF  A$GSLib$910                        GSLib
+     00001702  A$GSLib$911                        GSLib
+     00001703  A$GSLib$912                        GSLib
+     00001705  A$GSLib$913                        GSLib
+     00001706  A$GSLib$914                        GSLib
+     00001709  A$GSLib$917                        GSLib
+     0000170D  A$GSLib$918                        GSLib
+     0000170E  A$GSLib$919                        GSLib
+     00001711  A$GSLib$920                        GSLib
+     00001714  A$GSLib$923                        GSLib
+     00001717  A$GSLib$924                        GSLib
+     00001718  A$GSLib$925                        GSLib
+     0000171B  A$GSLib$926                        GSLib
+     0000171E  A$GSLib$929                        GSLib
+     00001721  A$GSLib$930                        GSLib
+     00001722  A$GSLib$931                        GSLib
+     00001723  A$GSLib$932                        GSLib
+     00001725  A$GSLib$933                        GSLib
+     00001726  A$GSLib$935                        GSLib
+     00001727  A$GSLib$936                        GSLib
+     00001728  A$GSLib$937                        GSLib
+     00001729  A$GSLib$938                        GSLib
+     0000172C  A$GSLib$941                        GSLib
+     0000172E  A$GSLib$942                        GSLib
+     00001731  A$GSLib$944                        GSLib
+     00001733  A$GSLib$945                        GSLib
+     00001736  A$GSLib$946                        GSLib
+     00001739  A$GSLib$947                        GSLib
+     0000173A  A$GSLib$948                        GSLib
+     0000173C  A$GSLib$949                        GSLib
+     0000173D  A$GSLib$950                        GSLib
+     0000173E  A$GSLib$951                        GSLib
+     00001740  A$GSLib$952                        GSLib
+     00001742  A$GSLib$953                        GSLib
+     00001743  A$GSLib$954                        GSLib
+ASxxxx Linker V03.00 + NoICE + sdld,  page 14.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001E33 =        7731. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00001746  A$GSLib$957                        GSLib
+     00001747  A$GSLib$958                        GSLib
+     00001749  A$GSLib$959                        GSLib
+     0000174C  A$GSLib$961                        GSLib
+     0000174F  A$GSLib$962                        GSLib
+     00001750  A$GSLib$963                        GSLib
+     00001753  A$GSLib$964                        GSLib
+     00001756  A$GSLib$967                        GSLib
+     00001759  A$GSLib$968                        GSLib
+     0000175A  A$GSLib$969                        GSLib
+     0000175B  A$GSLib$970                        GSLib
+     0000175D  A$GSLib$971                        GSLib
+     0000175E  A$GSLib$973                        GSLib
+     0000175F  A$GSLib$974                        GSLib
+     00001760  A$GSLib$975                        GSLib
+     00001761  A$GSLib$976                        GSLib
+     00001764  A$GSLib$979                        GSLib
+     00001766  A$GSLib$980                        GSLib
+     00001769  A$GSLib$982                        GSLib
+     0000176B  A$GSLib$983                        GSLib
+     0000176E  A$GSLib$984                        GSLib
+     00001771  A$GSLib$985                        GSLib
+     00001772  A$GSLib$986                        GSLib
+     00001774  A$GSLib$987                        GSLib
+     00001775  A$GSLib$988                        GSLib
+     00001776  A$GSLib$989                        GSLib
+     00001778  A$GSLib$990                        GSLib
+     0000177A  A$GSLib$991                        GSLib
+     0000177B  A$GSLib$992                        GSLib
+     0000177E  A$GSLib$995                        GSLib
+     0000177F  A$GSLib$996                        GSLib
+     00001781  A$GSLib$997                        GSLib
+     00001784  A$GSLib$999                        GSLib
+     00001787  A$GSLib$1000                       GSLib
+     00001788  A$GSLib$1001                       GSLib
+     0000178B  A$GSLib$1004                       GSLib
+     0000178E  A$GSLib$1005                       GSLib
+     0000178F  A$GSLib$1006                       GSLib
+     00001792  A$GSLib$1007                       GSLib
+     00001795  A$GSLib$1010                       GSLib
+     00001796  A$GSLib$1011                       GSLib
+     00001799  A$GSLib$1012                       GSLib
+     0000179A  A$GSLib$1013                       GSLib
+     0000179C  A$GSLib$1014                       GSLib
+     0000179F  A$GSLib$1015                       GSLib
+     000017A1  A$GSLib$1017                       GSLib
+     000017A4  A$GSLib$1018                       GSLib
+     000017A5  A$GSLib$1020                       GSLib
+     000017A8  A$GSLib$1021                       GSLib
+     000017A9  A$GSLib$1022                       GSLib
+     000017AA  A$GSLib$1023                       GSLib
+ASxxxx Linker V03.00 + NoICE + sdld,  page 15.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001E33 =        7731. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000017AC  A$GSLib$1024                       GSLib
+     000017AD  A$GSLib$1026                       GSLib
+     000017AE  A$GSLib$1027                       GSLib
+     000017AF  A$GSLib$1028                       GSLib
+     000017B0  A$GSLib$1029                       GSLib
+     000017B3  A$GSLib$1032                       GSLib
+     000017B5  A$GSLib$1033                       GSLib
+     000017B8  A$GSLib$1035                       GSLib
+     000017BA  A$GSLib$1036                       GSLib
+     000017BD  A$GSLib$1037                       GSLib
+     000017C0  A$GSLib$1038                       GSLib
+     000017C3  A$GSLib$1039                       GSLib
+     000017C4  A$GSLib$1040                       GSLib
+     000017C6  A$GSLib$1041                       GSLib
+     000017C7  A$GSLib$1042                       GSLib
+     000017CA  A$GSLib$1043                       GSLib
+     000017CC  A$GSLib$1045                       GSLib
+     000017CF  A$GSLib$1048                       GSLib
+     000017D0  A$GSLib$1049                       GSLib
+     000017D2  A$GSLib$1050                       GSLib
+     000017D5  A$GSLib$1052                       GSLib
+     000017D8  A$GSLib$1053                       GSLib
+     000017DC  A$GSLib$1054                       GSLib
+     000017DD  A$GSLib$1055                       GSLib
+     000017E0  A$GSLib$1056                       GSLib
+     000017E3  A$GSLib$1059                       GSLib
+     000017E4  A$GSLib$1060                       GSLib
+     000017E7  A$GSLib$1061                       GSLib
+     000017E8  A$GSLib$1062                       GSLib
+     000017EB  A$GSLib$1063                       GSLib
+     000017ED  A$GSLib$1065                       GSLib
+     000017F0  A$GSLib$1066                       GSLib
+     000017F1  A$GSLib$1068                       GSLib
+     000017F4  A$GSLib$1069                       GSLib
+     000017F5  A$GSLib$1070                       GSLib
+     000017F6  A$GSLib$1071                       GSLib
+     000017F8  A$GSLib$1072                       GSLib
+     000017F9  A$GSLib$1074                       GSLib
+     000017FA  A$GSLib$1075                       GSLib
+     000017FB  A$GSLib$1076                       GSLib
+     000017FC  A$GSLib$1077                       GSLib
+     000017FF  A$GSLib$1080                       GSLib
+     00001800  A$GSLib$1081                       GSLib
+     00001802  A$GSLib$1082                       GSLib
+     00001805  A$GSLib$1084                       GSLib
+     00001807  A$GSLib$1085                       GSLib
+     0000180A  A$GSLib$1086                       GSLib
+     0000180D  A$GSLib$1087                       GSLib
+     00001810  A$GSLib$1088                       GSLib
+     00001811  A$GSLib$1089                       GSLib
+     00001813  A$GSLib$1090                       GSLib
+ASxxxx Linker V03.00 + NoICE + sdld,  page 16.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001E33 =        7731. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00001815  A$GSLib$1091                       GSLib
+     00001816  A$GSLib$1092                       GSLib
+     00001819  A$GSLib$1093                       GSLib
+     0000181B  A$GSLib$1095                       GSLib
+     0000181E  A$GSLib$1098                       GSLib
+     0000181F  A$GSLib$1099                       GSLib
+     00001821  A$GSLib$1100                       GSLib
+     00001824  A$GSLib$1102                       GSLib
+     00001827  A$GSLib$1103                       GSLib
+     0000182B  A$GSLib$1104                       GSLib
+     0000182C  A$GSLib$1105                       GSLib
+     0000182E  A$GSLib$1106                       GSLib
+     00001831  A$GSLib$1110                       GSLib
+     00001834  A$GSLib$1111                       GSLib
+     00001835  A$GSLib$1112                       GSLib
+     00001838  A$GSLib$1113                       GSLib
+     0000183B  A$GSLib$1116                       GSLib
+     0000183F  A$GSLib$1117                       GSLib
+     00001842  A$GSLib$1118                       GSLib
+     00001844  A$GSLib$1120                       GSLib
+     00001847  A$GSLib$1121                       GSLib
+     00001849  A$GSLib$1122                       GSLib
+     0000184A  A$GSLib$1123                       GSLib
+     0000184B  A$GSLib$1124                       GSLib
+     0000184E  A$GSLib$1126                       GSLib
+     00001851  A$GSLib$1128                       GSLib
+     00001854  A$GSLib$1129                       GSLib
+     00001855  A$GSLib$1130                       GSLib
+     00001857  A$GSLib$1131                       GSLib
+     00001858  A$GSLib$1132                       GSLib
+     00001859  A$GSLib$1133                       GSLib
+     0000185B  A$GSLib$1134                       GSLib
+     0000185D  A$GSLib$1135                       GSLib
+     0000185E  A$GSLib$1136                       GSLib
+     00001861  A$GSLib$1137                       GSLib
+     00001864  A$GSLib$1138                       GSLib
+     00001867  A$GSLib$1139                       GSLib
+     0000186A  A$GSLib$1142                       GSLib
+     0000186B  A$GSLib$1143                       GSLib
+     0000186E  A$GSLib$1145                       GSLib
+     00001872  A$GSLib$1146                       GSLib
+     00001875  A$GSLib$1147                       GSLib
+     00001877  A$GSLib$1148                       GSLib
+     00001879  A$GSLib$1149                       GSLib
+     0000187C  A$GSLib$1150                       GSLib
+     0000187E  A$GSLib$1153                       GSLib
+     0000187F  A$GSLib$1154                       GSLib
+     00001880  A$GSLib$1155                       GSLib
+     00001883  A$GSLib$1157                       GSLib
+     00001886  A$GSLib$1159                       GSLib
+     00001889  A$GSLib$1160                       GSLib
+ASxxxx Linker V03.00 + NoICE + sdld,  page 17.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001E33 =        7731. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     0000188C  A$GSLib$1163                       GSLib
+     0000188F  A$GSLib$1164                       GSLib
+     00001890  A$GSLib$1165                       GSLib
+     00001891  A$GSLib$1166                       GSLib
+     00001894  A$GSLib$1169                       GSLib
+     00001895  A$GSLib$1170                       GSLib
+     00001896  A$GSLib$1172                       GSLib
+     0000189A  A$GSLib$1173                       GSLib
+     0000189E  A$GSLib$1174                       GSLib
+     000018A0  A$GSLib$1175                       GSLib
+     000018A4  A$GSLib$1176                       GSLib
+     000018A7  A$GSLib$1177                       GSLib
+     000018A9  A$GSLib$1178                       GSLib
+     000018AB  A$GSLib$1179                       GSLib
+     000018AE  A$GSLib$1180                       GSLib
+     000018B0  A$GSLib$1182                       GSLib
+     000018B1  A$GSLib$1183                       GSLib
+     000018B4  A$GSLib$1185                       GSLib
+     000018B7  A$GSLib$1187                       GSLib
+     000018BA  A$GSLib$1188                       GSLib
+     000018BD  A$GSLib$1189                       GSLib
+     000018BE  A$GSLib$1190                       GSLib
+     000018C0  A$GSLib$1191                       GSLib
+     000018C2  A$GSLib$1192                       GSLib
+     000018C3  A$GSLib$1193                       GSLib
+     000018C6  A$GSLib$1194                       GSLib
+     000018C8  A$GSLib$1196                       GSLib
+     000018CB  A$GSLib$1197                       GSLib
+     000018CC  A$GSLib$1200                       GSLib
+     000018CD  A$GSLib$1201                       GSLib
+     000018CE  A$GSLib$1203                       GSLib
+     000018D2  A$GSLib$1205                       GSLib
+     000018D5  A$GSLib$1206                       GSLib
+     000018D7  A$GSLib$1207                       GSLib
+     000018D8  A$GSLib$1208                       GSLib
+     000018DB  A$GSLib$1209                       GSLib
+     000018DE  A$GSLib$1211                       GSLib
+     000018E1  A$GSLib$1212                       GSLib
+     000018E4  A$GSLib$1213                       GSLib
+     000018E5  A$GSLib$1216                       GSLib
+     000018E8  A$GSLib$1217                       GSLib
+     000018E9  A$GSLib$1218                       GSLib
+     000018EC  A$GSLib$1221                       GSLib
+     000018ED  A$GSLib$1222                       GSLib
+     000018F0  A$GSLib$1223                       GSLib
+     000018F2  A$GSLib$1224                       GSLib
+     000018F4  A$GSLib$1225                       GSLib
+     000018F6  A$GSLib$1226                       GSLib
+     000018F7  A$GSLib$1227                       GSLib
+     000018F9  A$GSLib$1229                       GSLib
+     000018FC  A$GSLib$1230                       GSLib
+ASxxxx Linker V03.00 + NoICE + sdld,  page 18.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001E33 =        7731. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000018FE  A$GSLib$1231                       GSLib
+     000018FF  A$GSLib$1232                       GSLib
+     00001900  A$GSLib$1233                       GSLib
+     00001903  A$GSLib$1234                       GSLib
+     00001904  A$GSLib$1235                       GSLib
+     00001907  A$GSLib$1236                       GSLib
+     00001908  A$GSLib$1238                       GSLib
+     00001909  A$GSLib$1239                       GSLib
+     0000190A  A$GSLib$1242                       GSLib
+     0000190B  A$GSLib$1243                       GSLib
+     0000190C  A$GSLib$1244                       GSLib
+     0000190D  A$GSLib$1245                       GSLib
+     00001911  A$GSLib$1246                       GSLib
+     00001913  A$GSLib$1248                       GSLib
+     00001916  A$GSLib$1249                       GSLib
+     00001917  A$GSLib$1250                       GSLib
+     00001918  A$GSLib$1251                       GSLib
+     0000191A  A$GSLib$1252                       GSLib
+     0000191C  A$GSLib$1253                       GSLib
+     0000191F  A$GSLib$1254                       GSLib
+     00001920  A$GSLib$1255                       GSLib
+     00001921  A$GSLib$1256                       GSLib
+     00001922  A$GSLib$1257                       GSLib
+     00001923  A$GSLib$1258                       GSLib
+     00001926  A$GSLib$1262                       GSLib
+     00001927  A$GSLib$1263                       GSLib
+     00001929  A$GSLib$1264                       GSLib
+     0000192A  A$GSLib$1265                       GSLib
+     0000192C  A$GSLib$1266                       GSLib
+     0000192E  A$GSLib$1267                       GSLib
+     0000192F  A$GSLib$1269                       GSLib
+     00001930  A$GSLib$1270                       GSLib
+     00001931  A$GSLib$1271                       GSLib
+     00001933  A$GSLib$1272                       GSLib
+     00001934  A$GSLib$1273                       GSLib
+     00001935  A$GSLib$1274                       GSLib
+     00001938  A$GSLib$1275                       GSLib
+     00001939  A$GSLib$1279                       GSLib
+     0000193A  A$GSLib$1280                       GSLib
+     0000193B  A$GSLib$1281                       GSLib
+     0000193C  A$GSLib$1282                       GSLib
+     00001940  A$GSLib$1283                       GSLib
+     00001942  A$GSLib$1284                       GSLib
+     00001943  A$GSLib$1285                       GSLib
+     00001945  A$GSLib$1286                       GSLib
+     00001948  A$GSLib$1289                       GSLib
+     0000194B  A$GSLib$1290                       GSLib
+     0000194C  A$GSLib$1291                       GSLib
+     0000194F  A$GSLib$1293                       GSLib
+     00001950  A$GSLib$1294                       GSLib
+     00001953  A$GSLib$1295                       GSLib
+ASxxxx Linker V03.00 + NoICE + sdld,  page 19.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001E33 =        7731. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00001956  A$GSLib$1296                       GSLib
+     00001958  A$GSLib$1297                       GSLib
+     00001959  A$GSLib$1298                       GSLib
+     0000195B  A$GSLib$1300                       GSLib
+     0000195E  A$GSLib$1301                       GSLib
+     00001960  A$GSLib$1302                       GSLib
+     00001961  A$GSLib$1303                       GSLib
+     00001962  A$GSLib$1304                       GSLib
+     00001965  A$GSLib$1305                       GSLib
+     00001966  A$GSLib$1306                       GSLib
+     00001969  A$GSLib$1307                       GSLib
+     0000196A  A$GSLib$1309                       GSLib
+     0000196B  A$GSLib$1310                       GSLib
+     0000196C  A$GSLib$1313                       GSLib
+     0000196D  A$GSLib$1314                       GSLib
+     0000196E  A$GSLib$1315                       GSLib
+     0000196F  A$GSLib$1316                       GSLib
+     00001973  A$GSLib$1317                       GSLib
+     00001975  A$GSLib$1319                       GSLib
+     00001978  A$GSLib$1320                       GSLib
+     0000197A  A$GSLib$1321                       GSLib
+     0000197B  A$GSLib$1322                       GSLib
+     0000197C  A$GSLib$1323                       GSLib
+     0000197F  A$GSLib$1324                       GSLib
+     00001980  A$GSLib$1325                       GSLib
+     00001981  A$GSLib$1326                       GSLib
+     00001982  A$GSLib$1327                       GSLib
+     00001983  A$GSLib$1328                       GSLib
+     00001986  A$GSLib$1332                       GSLib
+     00001987  A$GSLib$1333                       GSLib
+     0000198A  A$GSLib$1334                       GSLib
+     0000198C  A$GSLib$1335                       GSLib
+     0000198E  A$GSLib$1336                       GSLib
+     0000198F  A$GSLib$1337                       GSLib
+     00001990  A$GSLib$1339                       GSLib
+     00001991  A$GSLib$1340                       GSLib
+     00001992  A$GSLib$1341                       GSLib
+     00001994  A$GSLib$1342                       GSLib
+     00001995  A$GSLib$1343                       GSLib
+     00001996  A$GSLib$1344                       GSLib
+     00001999  A$GSLib$1345                       GSLib
+     0000199A  A$GSLib$1349                       GSLib
+     0000199B  A$GSLib$1350                       GSLib
+     0000199C  A$GSLib$1351                       GSLib
+     0000199D  A$GSLib$1352                       GSLib
+     000019A1  A$GSLib$1353                       GSLib
+     000019A3  A$GSLib$1354                       GSLib
+     000019A4  A$GSLib$1355                       GSLib
+     000019A6  A$GSLib$1356                       GSLib
+     000019A9  A$GSLib$1359                       GSLib
+     000019AC  A$GSLib$1360                       GSLib
+ASxxxx Linker V03.00 + NoICE + sdld,  page 20.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001E33 =        7731. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000019AD  A$GSLib$1361                       GSLib
+     000019B0  A$GSLib$1362                       GSLib
+     000019B3  A$GSLib$1363                       GSLib
+     000019B4  A$GSLib$1366                       GSLib
+     000019B6  A$GSLib$1367                       GSLib
+     000019B7  A$GSLib$1368                       GSLib
+     000019B8  A$GSLib$1370                       GSLib
+     000019B9  A$GSLib$1371                       GSLib
+     000019BA  A$GSLib$1372                       GSLib
+     000019BB  A$GSLib$1373                       GSLib
+     000019BC  A$GSLib$1374                       GSLib
+     000019BE  A$GSLib$1375                       GSLib
+     000019C0  A$GSLib$1376                       GSLib
+     000019C2  A$GSLib$1378                       GSLib
+     000019C3  A$GSLib$1379                       GSLib
+     000019C5  A$GSLib$1380                       GSLib
+     000019C7  A$GSLib$1381                       GSLib
+     000019C9  A$GSLib$1382                       GSLib
+     000019CB  A$GSLib$1384                       GSLib
+     000019CD  A$GSLib$1385                       GSLib
+     000019CE  A$GSLib$1386                       GSLib
+     000019CF  A$GSLib$1387                       GSLib
+     000019D0  A$GSLib$1388                       GSLib
+     000019D2  A$GSLib$1389                       GSLib
+     000019D4  A$GSLib$1391                       GSLib
+     000019D5  A$GSLib$1392                       GSLib
+     000019D7  A$GSLib$1393                       GSLib
+     000019D9  A$GSLib$1394                       GSLib
+     000019DB  A$GSLib$1395                       GSLib
+     000019DD  A$GSLib$1397                       GSLib
+     000019DE  A$GSLib$1398                       GSLib
+     000019DF  A$GSLib$1399                       GSLib
+     000019E2  A$GSLib$1402                       GSLib
+     000019E5  A$GSLib$1403                       GSLib
+     000019E8  A$GSLib$1404                       GSLib
+     000019E9  A$GSLib$1405                       GSLib
+     000019EC  A$GSLib$1406                       GSLib
+     000019EF  A$GSLib$1407                       GSLib
+     000019F2  A$GSLib$1409                       GSLib
+     000019F5  A$GSLib$1410                       GSLib
+     000019F7  A$GSLib$1411                       GSLib
+     000019F9  A$GSLib$1412                       GSLib
+     000019FB  A$GSLib$1413                       GSLib
+     000019FD  A$GSLib$1414                       GSLib
+     00001A00  A$GSLib$1415                       GSLib
+     00001A02  A$GSLib$1416                       GSLib
+     00001A04  A$GSLib$1417                       GSLib
+     00001A06  A$GSLib$1418                       GSLib
+     00001A07  A$GSLib$1420                       GSLib
+     00001A09  A$GSLib$1421                       GSLib
+     00001A0A  A$GSLib$1422                       GSLib
+ASxxxx Linker V03.00 + NoICE + sdld,  page 21.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001E33 =        7731. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00001A0C  A$GSLib$1423                       GSLib
+     00001A0E  A$GSLib$1424                       GSLib
+     00001A10  A$GSLib$1425                       GSLib
+     00001A12  A$GSLib$1426                       GSLib
+     00001A14  A$GSLib$1427                       GSLib
+     00001A16  A$GSLib$1428                       GSLib
+     00001A18  A$GSLib$1429                       GSLib
+     00001A1A  A$GSLib$1430                       GSLib
+     00001A1C  A$GSLib$1431                       GSLib
+     00001A1E  A$GSLib$1432                       GSLib
+     00001A20  A$GSLib$1433                       GSLib
+     00001A22  A$GSLib$1434                       GSLib
+     00001A24  A$GSLib$1435                       GSLib
+     00001A26  A$GSLib$1436                       GSLib
+     00001A28  A$GSLib$1437                       GSLib
+     00001A2A  A$GSLib$1438                       GSLib
+     00001A2C  A$GSLib$1439                       GSLib
+     00001A2E  A$GSLib$1440                       GSLib
+     00001A30  A$GSLib$1441                       GSLib
+     00001A32  A$GSLib$1442                       GSLib
+     00001A34  A$GSLib$1443                       GSLib
+     00001A36  A$GSLib$1444                       GSLib
+     00001A38  A$GSLib$1445                       GSLib
+     00001A3A  A$GSLib$1446                       GSLib
+     00001A3C  A$GSLib$1447                       GSLib
+     00001A3E  A$GSLib$1448                       GSLib
+     00001A40  A$GSLib$1449                       GSLib
+     00001A42  A$GSLib$1450                       GSLib
+     00001A44  A$GSLib$1451                       GSLib
+     00001A46  A$GSLib$1452                       GSLib
+     00001A48  A$GSLib$1453                       GSLib
+     00001A4A  A$GSLib$1454                       GSLib
+     00001A4C  A$GSLib$1455                       GSLib
+     00001A4E  A$GSLib$1456                       GSLib
+     00001A50  A$GSLib$1457                       GSLib
+     00001A52  A$GSLib$1458                       GSLib
+     00001A54  A$GSLib$1459                       GSLib
+     00001A56  A$GSLib$1460                       GSLib
+     00001A58  A$GSLib$1461                       GSLib
+     00001A5A  A$GSLib$1462                       GSLib
+     00001A5C  A$GSLib$1463                       GSLib
+     00001A5E  A$GSLib$1464                       GSLib
+     00001A60  A$GSLib$1465                       GSLib
+     00001A62  A$GSLib$1466                       GSLib
+     00001A64  A$GSLib$1467                       GSLib
+     00001A66  A$GSLib$1468                       GSLib
+     00001A68  A$GSLib$1469                       GSLib
+     00001A6A  A$GSLib$1470                       GSLib
+     00001A6C  A$GSLib$1471                       GSLib
+     00001A6E  A$GSLib$1472                       GSLib
+     00001A70  A$GSLib$1473                       GSLib
+ASxxxx Linker V03.00 + NoICE + sdld,  page 22.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001E33 =        7731. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00001A72  A$GSLib$1474                       GSLib
+     00001A74  A$GSLib$1475                       GSLib
+     00001A76  A$GSLib$1476                       GSLib
+     00001A78  A$GSLib$1477                       GSLib
+     00001A7A  A$GSLib$1478                       GSLib
+     00001A7C  A$GSLib$1479                       GSLib
+     00001A7E  A$GSLib$1480                       GSLib
+     00001A80  A$GSLib$1481                       GSLib
+     00001A82  A$GSLib$1482                       GSLib
+     00001A84  A$GSLib$1483                       GSLib
+     00001A86  A$GSLib$1484                       GSLib
+     00001A88  A$GSLib$1485                       GSLib
+     00001A8A  A$GSLib$1487                       GSLib
+     00001A8B  A$GSLib$1488                       GSLib
+     00001A8C  A$GSLib$1489                       GSLib
+     00001A8E  A$GSLib$1490                       GSLib
+     00001A90  A$GSLib$1491                       GSLib
+     00001A91  A$GSLib$1492                       GSLib
+     00001A92  A$GSLib$1493                       GSLib
+     00001A94  A$GSLib$1494                       GSLib
+     00001A96  A$GSLib$1495                       GSLib
+     00001A97  A$GSLib$1496                       GSLib
+     00001A99  A$GSLib$1497                       GSLib
+     00001A9B  A$GSLib$1498                       GSLib
+     00001A9C  A$GSLib$1499                       GSLib
+     00001A9D  A$GSLib$1500                       GSLib
+     00001A9F  A$GSLib$1501                       GSLib
+     00001AA1  A$GSLib$1502                       GSLib
+     00001AA2  A$GSLib$1503                       GSLib
+     00001AA4  A$GSLib$1504                       GSLib
+     00001AA6  A$GSLib$1505                       GSLib
+     00001AA7  A$GSLib$1506                       GSLib
+     00001AA8  A$GSLib$1507                       GSLib
+     00001AAA  A$GSLib$1508                       GSLib
+     00001AAC  A$GSLib$1509                       GSLib
+     00001AAD  A$GSLib$1510                       GSLib
+     00001AAF  A$GSLib$1511                       GSLib
+     00001AB1  A$GSLib$1512                       GSLib
+     00001AB2  A$GSLib$1513                       GSLib
+     00001AB3  A$GSLib$1514                       GSLib
+     00001AB5  A$GSLib$1515                       GSLib
+     00001AB7  A$GSLib$1516                       GSLib
+     00001AB8  A$GSLib$1517                       GSLib
+     00001ABA  A$GSLib$1518                       GSLib
+     00001ABC  A$GSLib$1519                       GSLib
+     00001ABD  A$GSLib$1520                       GSLib
+     00001ABE  A$GSLib$1521                       GSLib
+     00001AC0  A$GSLib$1522                       GSLib
+     00001AC2  A$GSLib$1523                       GSLib
+     00001AC3  A$GSLib$1524                       GSLib
+     00001AC5  A$GSLib$1525                       GSLib
+ASxxxx Linker V03.00 + NoICE + sdld,  page 23.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001E33 =        7731. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00001AC7  A$GSLib$1526                       GSLib
+     00001AC8  A$GSLib$1527                       GSLib
+     00001AC9  A$GSLib$1528                       GSLib
+     00001ACB  A$GSLib$1529                       GSLib
+     00001ACD  A$GSLib$1530                       GSLib
+     00001ACE  A$GSLib$1531                       GSLib
+     00001AD0  A$GSLib$1532                       GSLib
+     00001AD2  A$GSLib$1533                       GSLib
+     00001AD3  A$GSLib$1534                       GSLib
+     00001AD4  A$GSLib$1535                       GSLib
+     00001AD6  A$GSLib$1536                       GSLib
+     00001AD8  A$GSLib$1537                       GSLib
+     00001AD9  A$GSLib$1538                       GSLib
+     00001ADB  A$GSLib$1539                       GSLib
+     00001ADD  A$GSLib$1540                       GSLib
+     00001ADE  A$GSLib$1541                       GSLib
+     00001ADF  A$GSLib$1542                       GSLib
+     00001AE1  A$GSLib$1543                       GSLib
+     00001AE3  A$GSLib$1544                       GSLib
+     00001AE4  A$GSLib$1545                       GSLib
+     00001AE6  A$GSLib$1546                       GSLib
+     00001AE8  A$GSLib$1547                       GSLib
+     00001AE9  A$GSLib$1548                       GSLib
+     00001AEA  A$GSLib$1549                       GSLib
+     00001AEC  A$GSLib$1550                       GSLib
+     00001AEE  A$GSLib$1551                       GSLib
+     00001AEF  A$GSLib$1552                       GSLib
+     00001AF1  A$GSLib$1553                       GSLib
+     00001AF3  A$GSLib$1554                       GSLib
+     00001AF4  A$GSLib$1555                       GSLib
+     00001AF5  A$GSLib$1556                       GSLib
+     00001AF7  A$GSLib$1557                       GSLib
+     00001AF9  A$GSLib$1558                       GSLib
+     00001AFA  A$GSLib$1559                       GSLib
+     00001AFC  A$GSLib$1560                       GSLib
+     00001AFE  A$GSLib$1561                       GSLib
+     00001AFF  A$GSLib$1562                       GSLib
+     00001B00  A$GSLib$1563                       GSLib
+     00001B02  A$GSLib$1564                       GSLib
+     00001B04  A$GSLib$1565                       GSLib
+     00001B05  A$GSLib$1566                       GSLib
+     00001B07  A$GSLib$1567                       GSLib
+     00001B09  A$GSLib$1568                       GSLib
+     00001B0A  A$GSLib$1569                       GSLib
+     00001B0B  A$GSLib$1570                       GSLib
+     00001B0D  A$GSLib$1571                       GSLib
+     00001B0F  A$GSLib$1572                       GSLib
+     00001B10  A$GSLib$1573                       GSLib
+     00001B12  A$GSLib$1574                       GSLib
+     00001B14  A$GSLib$1575                       GSLib
+     00001B15  A$GSLib$1576                       GSLib
+ASxxxx Linker V03.00 + NoICE + sdld,  page 24.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001E33 =        7731. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00001B16  A$GSLib$1577                       GSLib
+     00001B18  A$GSLib$1578                       GSLib
+     00001B1A  A$GSLib$1579                       GSLib
+     00001B1B  A$GSLib$1580                       GSLib
+     00001B1D  A$GSLib$1581                       GSLib
+     00001B1F  A$GSLib$1582                       GSLib
+     00001B20  A$GSLib$1583                       GSLib
+     00001B21  A$GSLib$1584                       GSLib
+     00001B23  A$GSLib$1585                       GSLib
+     00001B25  A$GSLib$1586                       GSLib
+     00001B26  A$GSLib$1587                       GSLib
+     00001B28  A$GSLib$1588                       GSLib
+     00001B2A  A$GSLib$1589                       GSLib
+     00001B2B  A$GSLib$1590                       GSLib
+     00001B2C  A$GSLib$1591                       GSLib
+     00001B2E  A$GSLib$1592                       GSLib
+     00001B30  A$GSLib$1593                       GSLib
+     00001B31  A$GSLib$1594                       GSLib
+     00001B33  A$GSLib$1595                       GSLib
+     00001B35  A$GSLib$1596                       GSLib
+     00001B36  A$GSLib$1597                       GSLib
+     00001B37  A$GSLib$1598                       GSLib
+     00001B39  A$GSLib$1599                       GSLib
+     00001B3B  A$GSLib$1600                       GSLib
+     00001B3C  A$GSLib$1601                       GSLib
+     00001B3E  A$GSLib$1602                       GSLib
+     00001B40  A$GSLib$1603                       GSLib
+     00001B41  A$GSLib$1604                       GSLib
+     00001B42  A$GSLib$1605                       GSLib
+     00001B44  A$GSLib$1606                       GSLib
+     00001B46  A$GSLib$1607                       GSLib
+     00001B47  A$GSLib$1608                       GSLib
+     00001B49  A$GSLib$1609                       GSLib
+     00001B4B  A$GSLib$1610                       GSLib
+     00001B4C  A$GSLib$1611                       GSLib
+     00001B4D  A$GSLib$1612                       GSLib
+     00001B4F  A$GSLib$1613                       GSLib
+     00001B51  A$GSLib$1614                       GSLib
+     00001B52  A$GSLib$1615                       GSLib
+     00001B54  A$GSLib$1616                       GSLib
+     00001B56  A$GSLib$1617                       GSLib
+     00001B57  A$GSLib$1618                       GSLib
+     00001B58  A$GSLib$1619                       GSLib
+     00001B5A  A$GSLib$1620                       GSLib
+     00001B5C  A$GSLib$1621                       GSLib
+     00001B5D  A$GSLib$1622                       GSLib
+     00001B5F  A$GSLib$1623                       GSLib
+     00001B61  A$GSLib$1624                       GSLib
+     00001B62  A$GSLib$1625                       GSLib
+     00001B63  A$GSLib$1626                       GSLib
+     00001B65  A$GSLib$1627                       GSLib
+ASxxxx Linker V03.00 + NoICE + sdld,  page 25.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001E33 =        7731. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00001B67  A$GSLib$1628                       GSLib
+     00001B68  A$GSLib$1629                       GSLib
+     00001B6A  A$GSLib$1630                       GSLib
+     00001B6C  A$GSLib$1631                       GSLib
+     00001B6D  A$GSLib$1632                       GSLib
+     00001B6E  A$GSLib$1633                       GSLib
+     00001B70  A$GSLib$1634                       GSLib
+     00001B72  A$GSLib$1635                       GSLib
+     00001B73  A$GSLib$1636                       GSLib
+     00001B75  A$GSLib$1637                       GSLib
+     00001B77  A$GSLib$1638                       GSLib
+     00001B78  A$GSLib$1639                       GSLib
+     00001B79  A$GSLib$1640                       GSLib
+     00001B7B  A$GSLib$1641                       GSLib
+     00001B7D  A$GSLib$1642                       GSLib
+     00001B7E  A$GSLib$1643                       GSLib
+     00001B80  A$GSLib$1644                       GSLib
+     00001B82  A$GSLib$1645                       GSLib
+     00001B83  A$GSLib$1646                       GSLib
+     00001B84  A$GSLib$1647                       GSLib
+     00001B86  A$GSLib$1648                       GSLib
+     00001B88  A$GSLib$1649                       GSLib
+     00001B89  A$GSLib$1650                       GSLib
+     00001B8B  A$GSLib$1651                       GSLib
+     00001B8D  A$GSLib$1652                       GSLib
+     00001B8E  A$GSLib$1653                       GSLib
+     00001B8F  A$GSLib$1654                       GSLib
+     00001B91  A$GSLib$1655                       GSLib
+     00001B93  A$GSLib$1656                       GSLib
+     00001B94  A$GSLib$1657                       GSLib
+     00001B96  A$GSLib$1658                       GSLib
+     00001B98  A$GSLib$1659                       GSLib
+     00001B99  A$GSLib$1660                       GSLib
+     00001B9A  A$GSLib$1661                       GSLib
+     00001B9C  A$GSLib$1662                       GSLib
+     00001B9E  A$GSLib$1663                       GSLib
+     00001B9F  A$GSLib$1664                       GSLib
+     00001BA1  A$GSLib$1665                       GSLib
+     00001BA3  A$GSLib$1666                       GSLib
+     00001BA4  A$GSLib$1667                       GSLib
+     00001BA5  A$GSLib$1668                       GSLib
+     00001BA7  A$GSLib$1669                       GSLib
+     00001BA9  A$GSLib$1670                       GSLib
+     00001BAA  A$GSLib$1671                       GSLib
+     00001BAC  A$GSLib$1672                       GSLib
+     00001BAE  A$GSLib$1673                       GSLib
+     00001BAF  A$GSLib$1674                       GSLib
+     00001BB0  A$GSLib$1675                       GSLib
+     00001BB2  A$GSLib$1676                       GSLib
+     00001BB4  A$GSLib$1677                       GSLib
+     00001BB5  A$GSLib$1678                       GSLib
+ASxxxx Linker V03.00 + NoICE + sdld,  page 26.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000200    00001E33 =        7731. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00001BB7  A$GSLib$1679                       GSLib
+     00001BB9  A$GSLib$1680                       GSLib
+     00001BBA  A$GSLib$1681                       GSLib
+     00001BBB  A$GSLib$1682                       GSLib
+     00001BBD  A$GSLib$1683                       GSLib
+     00001BBF  A$GSLib$1685                       GSLib
+     00001BC0  A$GSLib$1694                       GSLib
+     00001BC0  C$GSLib.c$1725$1_0$30              GSLib
+     00001BC0  XG$GSL_initializeMap$0$0           GSLib
+     00001BC1  G$GSL_LUTColumnUpdate$0_0$0        GSLib
+     00001BC1  _GSL_LUTColumnUpdate               GSLib
+     00001C31  G$GSL_LUTRowUpdate$0_0$0           GSLib
+     00001C31  _GSL_LUTRowUpdate                  GSLib
+     00001CB1  _UNSAFE_SMS_copySpritestoSAT       SMSlib_UNSAFE
+     00001CF8  _UNSAFE_SMS_VRAMmemcpy32           SMSlib_UNSAFE
+     00001D18  _UNSAFE_SMS_VRAMmemcpy64           SMSlib_UNSAFE
+     00001D38  _UNSAFE_SMS_VRAMmemcpy128          SMSlib_UNSAFE
+     00001D58  _SMS_init                          SMSlib
+     00001D8A  _VDPReg_init                       SMSlib
+     00001D95  _SMS_VDPturnOnFeature              SMSlib
+     00001DAA  _SMS_VDPturnOffFeature             SMSlib
+     00001DC2  _SMS_setBGScrollX                  SMSlib
+     00001DCC  _SMS_setBGScrollY                  SMSlib
+     00001DD6  _SMS_setBackdropColor              SMSlib
+     00001DE0  _SMS_useFirstHalfTilesforSprites   SMSlib
+     00001DF6  _SMS_setSpriteMode                 SMSlib
+     00001E44  _SMS_setBGPaletteColor             SMSlib
+     00001E58  _SMS_setSpritePaletteColor         SMSlib
+     00001E6C  _SMS_loadBGPalette                 SMSlib
+     00001E81  _SMS_loadSpritePalette             SMSlib
+     00001E96  _SMS_setColor                      SMSlib
+     00001E9A  _SMS_waitForVBlank                 SMSlib
+     00001EA7  _SMS_getKeysStatus                 SMSlib
+     00001EAB  _SMS_getKeysPressed                SMSlib
+     00001EC8  _SMS_getKeysHeld                   SMSlib
+     00001EDC  _SMS_getKeysReleased               SMSlib
+     00001EF9  _SMS_queryPauseRequested           SMSlib
+     00001EFE  _SMS_resetPauseRequest             SMSlib
+     00001F04  _SMS_setLineInterruptHandler       SMSlib
+     00001F08  _SMS_setLineCounter                SMSlib
+     00001F12  _SMS_getVCount                     SMSlib
+     00001F16  _SMS_getHCount                     SMSlib
+     00001F1A  _SMS_isr                           SMSlib
+     00001F50  _SMS_nmi_isr                       SMSlib
+     00001F59  _SMS_initSprites                   SMSlib_sprite
+     00001F5F  _SMS_addSprite                     SMSlib_sprite
+     00001F92  _SMS_copySpritestoSAT              SMSlib_sprite
+     00001FC8  ___sdcc_call_hl                    
+     00001FC9  _SMS_VRAMmemset                    SMSlib_VRAMmemset
+     00001FEC  _SMS_VRAMmemsetW                   SMSlib_VRAMmemset
+     0000201A  _SMS_VRAMmemcpy                    SMSlib_VRAMmemcpy
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 27.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -182,7 +1565,7 @@ _HEADER0                            00000000    00000008 =           8. bytes (A
       -----  --------------------------------   ------------------------
      00000008  _SMS_crt0_RST08                    crt0
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 5.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 28.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -193,7 +1576,7 @@ _HEADER1                            00000000    00000009 =           9. bytes (A
       -----  --------------------------------   ------------------------
      00000011  _SMS_crt0_RST18                    crt0
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 6.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 29.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -202,7 +1585,7 @@ _HEADER2                            00000000    00000018 =          24. bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-ASxxxx Linker V03.00 + NoICE + sdld,  page 7.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 30.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -211,7 +1594,7 @@ _HEADER3                            00000000    00000026 =          38. bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-ASxxxx Linker V03.00 + NoICE + sdld,  page 8.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 31.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -225,119 +1608,120 @@ _HEADER4                            00000000    00000104 =         260. bytes (A
      00000129  _OUTI32                            crt0
      00000169  _outi_block                        crt0
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 9.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 32.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_INITIALIZER                        00001FC6    0000001A =          26. bytes (REL,CON)
+_INITIALIZER                        00002033    0000001A =          26. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-ASxxxx Linker V03.00 + NoICE + sdld,  page 10.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 33.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSINIT                             00001FE0    0000000F =          15. bytes (REL,CON)
+_GSINIT                             0000204D    0000000F =          15. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00001FE0  gsinit                             crt0
+     0000204D  gsinit                             crt0
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 11.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 34.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSFINAL                            00001FEF    00000001 =           1. bytes (REL,CON)
+_GSFINAL                            0000205C    00000001 =           1. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-ASxxxx Linker V03.00 + NoICE + sdld,  page 12.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 35.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_DATA                               0000C000    00001208 =        4616. bytes (REL,CON)
+_DATA                               0000C000    00001209 =        4617. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     0000C000  _GSL_RAM                           main
-     0000C107  _PSGMusicStatus                    main
-     0000C108  _PSGMusicStart                     main
-     0000C10A  _PSGMusicPointer                   main
-     0000C10C  _PSGMusicLoopPoint                 main
-     0000C10E  _PSGMusicSkipFrames                main
-     0000C10F  _PSGLoopFlag                       main
-     0000C110  _PSGMusicLastLatch                 main
-     0000C111  _PSGMusicVolumeAttenuation         main
-     0000C112  _PSGMusicSubstringLen              main
-     0000C113  _PSGMusicSubstringRetAddr          main
-     0000C115  _PSGChan0Volume                    main
-     0000C116  _PSGChan1Volume                    main
-     0000C117  _PSGChan2Volume                    main
-     0000C118  _PSGChan3Volume                    main
-     0000C119  _PSGChan2LowTone                   main
-     0000C11A  _PSGChan2HighTone                  main
-     0000C11B  _PSGChan3LowTone                   main
-     0000C11C  _PSGChannel2SFX                    main
-     0000C11D  _PSGChannel3SFX                    main
-     0000C11E  _PSGSFXChan2Volume                 main
-     0000C11F  _PSGSFXChan3Volume                 main
-     0000C120  _PSGSFXStatus                      main
-     0000C121  _PSGSFXStart                       main
-     0000C123  _PSGSFXPointer                     main
-     0000C125  _PSGSFXLoopPoint                   main
-     0000C127  _PSGSFXSkipFrames                  main
-     0000C128  _PSGSFXLoopFlag                    main
-     0000C129  _PSGSFXSubstringLen                main
-     0000C12A  _PSGSFXSubstringRetAddr            main
-     0000C12C  _attackSprites                     main
-     0000C12E  _currentAttackSprites              main
-     0000C130  _scrolltable                       main
-     0000D13D  _VDPBlank                          SMSlib
-     0000D13E  _SMS_VDPFlags                      SMSlib
-     0000D13F  _PauseRequested                    SMSlib
-     0000D140  _SMS_Port3EBIOSvalue               SMSlib
-     0000D141  _KeysStatus                        SMSlib
-     0000D143  _PreviousKeysStatus                SMSlib
-     0000D145  _SMS_theLineInterruptHandler       SMSlib
-     0000D147  _SpriteTableY                      SMSlib_sprite
-     0000D187  _SpriteTableXN                     SMSlib_sprite
-     0000D207  _SpriteNextFree                    SMSlib_sprite
-
-ASxxxx Linker V03.00 + NoICE + sdld,  page 13.
+     0000C000  _attackSprites                     main
+     0000C002  _currentAttackSprites              main
+     0000C004  _scrolltable                       main
+     0000D011  _PSGMusicStatus                    PSGlib
+     0000D012  _PSGMusicStart                     PSGlib
+     0000D014  _PSGMusicPointer                   PSGlib
+     0000D016  _PSGMusicLoopPoint                 PSGlib
+     0000D018  _PSGMusicSkipFrames                PSGlib
+     0000D019  _PSGLoopFlag                       PSGlib
+     0000D01A  _PSGLoopCounter                    PSGlib
+     0000D01B  _PSGMusicLastLatch                 PSGlib
+     0000D01C  _PSGMusicVolumeAttenuation         PSGlib
+     0000D01D  _PSGMusicSubstringLen              PSGlib
+     0000D01E  _PSGMusicSubstringRetAddr          PSGlib
+     0000D020  _PSGChan0Volume                    PSGlib
+     0000D021  _PSGChan1Volume                    PSGlib
+     0000D022  _PSGChan2Volume                    PSGlib
+     0000D023  _PSGChan3Volume                    PSGlib
+     0000D024  _PSGChan2LowTone                   PSGlib
+     0000D025  _PSGChan2HighTone                  PSGlib
+     0000D026  _PSGChan3LowTone                   PSGlib
+     0000D027  _PSGChannel2SFX                    PSGlib
+     0000D028  _PSGChannel3SFX                    PSGlib
+     0000D029  _PSGSFXChan2Volume                 PSGlib
+     0000D02A  _PSGSFXChan3Volume                 PSGlib
+     0000D02B  _PSGSFXStatus                      PSGlib
+     0000D02C  _PSGSFXStart                       PSGlib
+     0000D02E  _PSGSFXPointer                     PSGlib
+     0000D030  _PSGSFXLoopPoint                   PSGlib
+     0000D032  _PSGSFXSkipFrames                  PSGlib
+     0000D033  _PSGSFXLoopFlag                    PSGlib
+     0000D034  _PSGSFXSubstringLen                PSGlib
+     0000D035  _PSGSFXSubstringRetAddr            PSGlib
+     0000D037  G$GSL_RAM$0_0$0                    GSLib
+     0000D037  _GSL_RAM                           GSLib
+     0000D13E  _VDPBlank                          SMSlib
+     0000D13F  _SMS_VDPFlags                      SMSlib
+     0000D140  _PauseRequested                    SMSlib
+     0000D141  _SMS_Port3EBIOSvalue               SMSlib
+     0000D142  _KeysStatus                        SMSlib
+     0000D144  _PreviousKeysStatus                SMSlib
+     0000D146  _SMS_theLineInterruptHandler       SMSlib
+     0000D148  _SpriteTableY                      SMSlib_sprite
+     0000D188  _SpriteTableXN                     SMSlib_sprite
+     0000D208  _SpriteNextFree                    SMSlib_sprite
+ASxxxx Linker V03.00 + NoICE + sdld,  page 36.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_INITIALIZED                        0000D208    0000001A =          26. bytes (REL,CON)
+_INITIALIZED                        0000D209    0000001A =          26. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     0000D208  _playerX                           main
-     0000D20A  _playerY                           main
-     0000D20C  _playerSpriteX                     main
-     0000D20D  _playerSpriteY                     main
-     0000D20E  _animationCount                    main
-     0000D20F  _actionCount                       main
-     0000D210  _action                            main
-     0000D211  _actionButtonWatch                 main
-     0000D212  _spriteTileOffsets                 main
-     0000D214  _scrollXOffset                     main
-     0000D215  _scrollYOffset                     main
-     0000D216  _spriteXOffset                     main
-     0000D217  _spriteYOffset                     main
-     0000D218  _playerXOffset                     main
-     0000D21A  _playerYOffset                     main
-     0000D21C  _direction                         main
-     0000D21D  _VDPReg                            SMSlib
-     0000D21F  _spritesHeight                     SMSlib
-     0000D220  _spritesWidth                      SMSlib
-     0000D221  _spritesTileOffset                 SMSlib
+     0000D209  _playerX                           main
+     0000D20B  _playerY                           main
+     0000D20D  _playerSpriteX                     main
+     0000D20E  _playerSpriteY                     main
+     0000D20F  _animationCount                    main
+     0000D210  _actionCount                       main
+     0000D211  _action                            main
+     0000D212  _actionButtonWatch                 main
+     0000D213  _spriteTileOffsets                 main
+     0000D215  _scrollXOffset                     main
+     0000D216  _scrollYOffset                     main
+     0000D217  _spriteXOffset                     main
+     0000D218  _spriteYOffset                     main
+     0000D219  _playerXOffset                     main
+     0000D21B  _playerYOffset                     main
+     0000D21D  _direction                         main
+     0000D21E  _VDPReg                            SMSlib
+     0000D220  _spritesHeight                     SMSlib
+     0000D221  _spritesWidth                      SMSlib
+     0000D222  _spritesTileOffset                 SMSlib
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 14.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 37.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -348,7 +1732,7 @@ _CABS0                              00000000    00000010 =          16. bytes (A
       -----  --------------------------------   ------------------------
      00007FF0  ___SMS__SEGA_signature             main
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 15.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 38.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -363,7 +1747,7 @@ _BANK2                              00004000    00003F9F =       16287. bytes (R
      00007B6E  _village_psg                       bank2
      00007F8B  _palette_bin                       bank2
      00007F98  _sprite_palette_bin                bank2
-ASxxxx Linker V03.00 + NoICE + sdld,  page 16.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 39.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -375,12 +1759,14 @@ _BANK3                              00004000    0000121D =        4637. bytes (R
      00004000  _scrolltable_bin                   bank3
      0000500D  _metatiles_bin                     bank3
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 17.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 40.
 
 Files Linked                              [ module(s) ]
 
 ../crt0/crt0_sms.rel                      [ crt0 ]
 main.rel                                  [ main ]
+../lib/PSGlib.rel                         [ PSGlib ]
+../lib/GSLib.rel                          [ GSLib ]
 bank2.rel                                 [ bank2 ]
 bank3.rel                                 [ bank3 ]
 
@@ -395,7 +1781,7 @@ C:\Program Files\SDCC\bin\..\lib\z80/z80.lib
 ../lib/SMSlib.lib                         [ SMSlib_VRAMmemset.rel ]
 ../lib/SMSlib.lib                         [ SMSlib_VRAMmemcpy.rel ]
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 18.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 41.
 
 User Base Address Definitions
 
