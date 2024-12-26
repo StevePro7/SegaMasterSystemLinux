@@ -1,0 +1,15 @@
+-mjwx
+-i output.ihx
+-b _CODE = 0x0200
+-b _DATA = 0xc000
+-b_BANK2=0x4000
+-b_BANK3=0x4000
+-k C:\Program Files\SDCC\bin\..\lib\z80
+-l SMSlib.lib
+-l z80
+libs\crt0_sms.rel
+main.rel
+bank2.rel
+bank3.rel
+
+-e

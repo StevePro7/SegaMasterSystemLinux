@@ -1,0 +1,299 @@
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 1.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    .__.$$$.                                                    =  002710 L
+    .__.ABS.                                                    =  000000 G
+    .__.CPU.                                                    =  000000 L
+    .__.H$L.                                                    =  000000 L
+  0 GSL_ActiveDisplayRoutine                                       00057F R
+  0 GSL_InitialiseMap                                              000309 R
+  0 GSL_MetatileLookup                                             000387 R
+  0 GSL_MetatileUpdate                                             0004BC R
+  0 GSL_MetatileUpdateSpecific                                     0004AE R
+  0 GSL_PositionWindow                                             000330 R
+  0 GSL_TileLookup                                                 0003CB R
+  0 GSL_VBlankRoutine                                              00075B R
+  0 GSL_refreshVDP                                                 0003F0 R
+  0 IYJump                                                         00087D R
+  0 _AdjustTempYValue                                              0004A0 R
+  0 _DivCarry1                                                     00034C R
+  0 _DivCarry2                                                     00034F R
+  0 _DivLoop                                                       000344 R
+  0 _Finalise                                                      000A36 R
+  0 _GSL_LUTColumnUpdate                                           000A5E GR
+  0 _GSL_LUTRowUpdate                                              000ACE GR
+  1 _GSL_RAM                                                       000000 GR
+  0 _GSL_VBlank                                                    0002B2 GR
+  0 _GSL_getCollisionCount                                         0002F4 GR
+  0 _GSL_getCurrentX                                               0002EC GR
+  0 _GSL_getCurrentY                                               0002F0 GR
+  0 _GSL_getMapHeightInMetatiles                                   0002E4 GR
+  0 _GSL_getMapHeightInPixels                                      0002DC GR
+  0 _GSL_getMapWidthInMetatiles                                    0002E0 GR
+  0 _GSL_getMapWidthInPixels                                       0002D8 GR
+  0 _GSL_getScrolltableAddress                                     0002F9 GR
+  0 _GSL_getScrolltableSize                                        0002E8 GR
+  0 _GSL_initializeMap                                             0002FD GR
+  0 _GSL_metatileLookup                                            000282 GR
+  0 _GSL_metatileUpdate                                            0002BA GR
+  0 _GSL_metatileUpdateCustom                                      0002BE GR
+  0 _GSL_positionWindow                                            000000 GR
+  0 _GSL_refreshVDP                                                000296 GR
+  0 _GSL_scroll                                                    00029E GR
+  0 _GSL_tileLookup                                                00028C GR
+  0 _MDivCarry1                                                    0004CB R
+  0 _MDivCarry2                                                    0004CE R
+  0 _MDivLoop                                                      0004C3 R
+  0 _MetatileUpdates                                               00081F R
+  0 _MetatileUpdatesLoop                                           00082A R
+  0 _Mult16Loop                                                    0003A6 R
+  0 _Mult16NoAdd                                                   0003AD R
+  0 _PSGCancelLoop                                                 000BC8 GR
+  1 _PSGChan0Volume                                                000115 GR
+  1 _PSGChan1Volume                                                000116 GR
+  1 _PSGChan2HighTone                                              00011A GR
+  1 _PSGChan2LowTone                                               000119 GR
+  1 _PSGChan2Volume                                                000117 GR
+  1 _PSGChan3LowTone                                               00011B GR
+  1 _PSGChan3Volume                                                000118 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 2.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+  1 _PSGChannel2SFX                                                00011C GR
+  1 _PSGChannel3SFX                                                00011D GR
+  0 _PSGFrame                                                      000ECD GR
+  0 _PSGGetStatus                                                  000BDD GR
+  1 _PSGLoopFlag                                                   00010F GR
+  1 _PSGMusicLastLatch                                             000110 GR
+  1 _PSGMusicLoopPoint                                             00010C GR
+  1 _PSGMusicPointer                                               00010A GR
+  1 _PSGMusicSkipFrames                                            00010E GR
+  1 _PSGMusicStart                                                 000108 GR
+  1 _PSGMusicStatus                                                000107 GR
+  1 _PSGMusicSubstringLen                                          000112 GR
+  1 _PSGMusicSubstringRetAddr                                      000113 GR
+  1 _PSGMusicVolumeAttenuation                                     000111 GR
+  0 _PSGPlay                                                       000B9A GR
+  0 _PSGPlayNoRepeat                                               000BCE GR
+    _PSGPort                                                    =  00007F 
+  0 _PSGRestoreVolumes                                             000BF3 GR
+  0 _PSGResume                                                     000B4E GR
+  0 _PSGSFXCancelLoop                                              000EA5 GR
+  1 _PSGSFXChan2Volume                                             00011E GR
+  1 _PSGSFXChan3Volume                                             00011F GR
+  0 _PSGSFXFrame                                                   000FE6 GR
+  0 _PSGSFXGetStatus                                               000EAB GR
+  1 _PSGSFXLoopFlag                                                000128 GR
+  1 _PSGSFXLoopPoint                                               000125 GR
+  0 _PSGSFXPlay                                                    000E53 GR
+  0 _PSGSFXPlayLoop                                                000EB0 GR
+  1 _PSGSFXPointer                                                 000123 GR
+  1 _PSGSFXSkipFrames                                              000127 GR
+  1 _PSGSFXStart                                                   000121 GR
+  1 _PSGSFXStatus                                                  000120 GR
+  0 _PSGSFXStop                                                    000D8B GR
+  1 _PSGSFXSubstringLen                                            000129 GR
+  1 _PSGSFXSubstringRetAddr                                        00012A GR
+  0 _PSGSetMusicVolumeAttenuation                                  000CC4 GR
+  0 _PSGSilenceChannels                                            000BE2 GR
+  0 _PSGStop                                                       000A37 GR
+    _ROM_bank_to_be_mapped_on_slot2                             =  00FFFF G
+  0 _RefreshLoop                                                   00040F R
+  0 _SFXcommand                                                    001026 R
+  0 _SFXcontinue                                                   001006 R
+  0 _SFXdone                                                       001031 R
+  0 _SFXotherCommands                                              001035 R
+  0 _SFXoutbyte                                                    00101C R
+  0 _SFXsetLoopPoint                                               001042 R
+  0 _SFXsubstring                                                  001058 R
+  0 _SFXvolumechn3                                                 001019 R
+    _SMS_SRAM                                                   =  008000 G
+    _SMS_VDPturnOffFeature                                         ****** GX
+    _SMS_VDPturnOnFeature                                          ****** GX
+    _SMS_VRAMmemset                                                ****** GX
+    _SMS_addSprite                                                 ****** GX
+    _SMS_getKeysStatus                                             ****** GX
+    _SMS_initSprites                                               ****** GX
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 3.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    _SMS_loadBGPalette                                             ****** GX
+    _SMS_loadSpritePalette                                         ****** GX
+    _SMS_loadTiles                                                 ****** GX
+    _SMS_waitForVBlank                                             ****** GX
+    _SRAM_bank_to_be_mapped_on_slot2                            =  00FFFC G
+    _UNSAFE_SMS_VRAMmemcpy128                                      ****** GX
+    _UNSAFE_SMS_copySpritestoSAT                                   ****** GX
+  0 _UnrolledColumnWrites                                          000A35 R
+  0 _UnrolledRowWrites                                             000900 R
+  0 _VBlankCleanup                                                 000858 R
+  0 _WriteRow1Loop                                                 000453 R
+  0 _WriteRow2Loop                                                 000472 R
+  9 ___SMS__SEGA_signature                                         007FF0 GR
+  7 __xinit__action                                                000008 R
+  7 __xinit__actionButtonWatch                                     000009 R
+  7 __xinit__actionCount                                           000007 R
+  7 __xinit__animationCount                                        000006 R
+  7 __xinit__direction                                             000014 R
+  7 __xinit__playerSpriteX                                         000004 R
+  7 __xinit__playerSpriteY                                         000005 R
+  7 __xinit__playerX                                               000000 R
+  7 __xinit__playerXOffset                                         000010 R
+  7 __xinit__playerY                                               000002 R
+  7 __xinit__playerYOffset                                         000012 R
+  7 __xinit__scrollXOffset                                         00000C R
+  7 __xinit__scrollYOffset                                         00000D R
+  7 __xinit__spriteTileOffsets                                     00000A R
+  7 __xinit__spriteXOffset                                         00000E R
+  7 __xinit__spriteYOffset                                         00000F R
+  2 _action                                                        000008 GR
+  2 _actionButtonWatch                                             000009 GR
+  2 _actionCount                                                   000007 GR
+  2 _animationCount                                                000006 GR
+  1 _attackSprites                                                 00012C GR
+  0 _checkForAttackInteraction                                     001880 GR
+  0 _chn0                                                          000F3F R
+  0 _chn2                                                          000F55 R
+  0 _columnExtractJumpAddress                                      000810 R
+  0 _command                                                       000F70 R
+  0 _continue                                                      000EED R
+  0 _createXOffset                                                 0006F4 R
+  0 _createYOffset                                                 000726 R
+  1 _currentAttackSprites                                          00012E GR
+  2 _direction                                                     000014 GR
+  0 _done                                                          000F7B R
+  0 _downNametableCheck                                            000629 R
+  0 _downNoCrossBoundary                                           000617 R
+  0 _downNoResetNTHighByte                                         000642 R
+  0 _downScroll                                                    00060B R
+  0 _downScrolltableCheck                                          000645 R
+  0 _finaliseLUTColumnAddress                                      0007E0 R
+  0 _finaliseLUTRowAddress                                         00077E R
+  0 _high_part_Tone                                                000FD8 R
+  0 _ifchn2                                                        000F25 R
+  0 _intLoop                                                       000EDC R
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 4.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+  0 _intSFXLoop                                                    000FF5 R
+  0 _latch_Volume                                                  000F31 R
+  0 _latch_Volume_23                                               000F45 R
+  0 _leftNametableCheck                                            0005DA R
+  0 _leftScroll                                                    0005CC R
+  0 _leftScrolltableCheck                                          0005F4 R
+  0 _main                                                          00106C GR
+  0 _metatilesMetaLUT                                              000182 GR
+    _metatiles_bin                                                 ****** GX
+  0 _musicLoop                                                     000FB8 R
+  0 _noDownHighByteCarry                                           000623 R
+  0 _noLatch                                                       000F66 R
+  0 _noLeftHighByteCarry                                           0005D4 R
+  0 _noRightHighByteCarry                                          00059C R
+  0 _noUpHighByteCarry                                             00066F R
+  0 _noYNametableWrap                                              00073E R
+  0 _no_overflow                                                   000FA1 R
+  0 _otherCommands                                                 000F7F R
+  0 _output_NoLatch                                                000FAB R
+    _palette_bin                                                   ****** GX
+  2 _playerSpriteX                                                 000004 GR
+  2 _playerSpriteY                                                 000005 GR
+  2 _playerX                                                       000000 GR
+  2 _playerXOffset                                                 000010 GR
+  2 _playerY                                                       000002 GR
+  2 _playerYOffset                                                 000012 GR
+  0 _processAttackInteraction                                      00197B GR
+  0 _processAttackKey                                              00180D GR
+  0 _processDownKey                                                0014F0 GR
+  0 _processLeftKey                                                001653 GR
+  0 _processRightKey                                               001731 GR
+  0 _processSpritesActiveDisplay                                   0011C0 GR
+  0 _processSpritesVBlank                                          0012E7 GR
+  0 _processUpKey                                                  0013A1 GR
+  0 _processUpdateBuffers                                          0006A7 R
+  0 _processUserInput                                              001358 GR
+  0 _rightNametableCheck                                           0005A2 R
+  0 _rightScroll                                                   000594 R
+  0 _rightScrolltableCheck                                         0005BC R
+  0 _rowExtractJumpAddress                                         0007AF R
+  2 _scrollXOffset                                                 00000C GR
+  2 _scrollYOffset                                                 00000D GR
+  1 _scrolltable                                                   000130 GR
+    _scrolltable_bin                                               ****** GX
+  0 _send2PSG_A                                                    000F8D R
+  0 _send2PSG_B                                                    000F8C R
+  0 _sendVolume2PSG_A                                              000F93 R
+  0 _sendVolume2PSG_B                                              000F92 R
+  0 _setLoopPoint                                                  000FB2 R
+  0 _sfxLoop                                                       001048 R
+  0 _skipFrame                                                     000F61 R
+  0 _skipSFXFrame                                                  001021 R
+  0 _spriteAttackDown                                              000034 GR
+  0 _spriteAttackDownMeta                                          00009E GR
+  0 _spriteAttackLeft                                              00003E GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 5.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+  0 _spriteAttackLeftMeta                                          0000EA GR
+  0 _spriteAttackRight                                             000048 GR
+  0 _spriteAttackRightMeta                                         000136 GR
+  0 _spriteAttackUp                                                00002A GR
+  0 _spriteAttackUpMeta                                            000052 GR
+  0 _spriteMoveDown                                                000012 GR
+  0 _spriteMoveLeft                                                00001A GR
+  0 _spriteMoveRight                                               000022 GR
+  0 _spriteMoveUp                                                  00000A GR
+  2 _spriteTileOffsets                                             00000A GR
+  2 _spriteXOffset                                                 00000E GR
+  2 _spriteYOffset                                                 00000F GR
+    _sprite_palette_bin                                            ****** GX
+    _sprite_tiles_bin                                              ****** GX
+  0 _substring                                                     000FC5 R
+    _tiles_bin                                                     ****** GX
+  0 _unrollColumnForNTUpdate                                       00054C R
+  0 _unrollMetaTileColumn                                          000551 R
+  0 _unrollMetaTileRow                                             000525 R
+  0 _unrollRowForNTUpdate                                          000520 R
+  0 _upNametableCheck                                              000675 R
+  0 _upNoCrossBoundary                                             000663 R
+  0 _upNoResetNTHighByte                                           000691 R
+  0 _upScroll                                                      000659 R
+  0 _upScrolltableCheck                                            000694 R
+  0 _updateBufferDown                                              00070A R
+  0 _updateBufferLeft                                              0006E0 R
+  0 _updateBufferRight                                             0006B1 R
+  0 _updateBufferUp                                                000742 R
+  0 _updateColumn                                                  0007BE R
+  0 _updateX                                                       0006A7 R
+  0 _updateY                                                       000702 R
+    _village_psg                                                   ****** GX
+  0 _writeRow                                                      000762 R
+  0 _xScroll                                                       00058A R
+  0 _yScroll                                                       000601 R
+
+
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 6.
+Hexadecimal [24-Bits]
+
+Area Table
+
+   0 _CODE                                      size   1A4C   flags    0
+   1 _DATA                                      size   113D   flags    0
+   2 _INITIALIZED                               size     15   flags    0
+   3 _DABS                                      size      0   flags    8
+   4 _HOME                                      size      0   flags    0
+   5 _GSINIT                                    size      0   flags    0
+   6 _GSFINAL                                   size      0   flags    0
+   7 _INITIALIZER                               size     15   flags    0
+   8 _CABS                                      size      0   flags    8
+   9 _CABS0                                     size     10   flags    8
+
