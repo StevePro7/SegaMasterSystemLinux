@@ -67,10 +67,10 @@ void main(void)
 	devkit_SMS_VRAMmemset(0x4000, 0x00, 0x4000);
 	devkit_SMS_VRAMmemset(0xC000, 0x00, 0x0020);
 	devkit_SMS_mapROMBank( tiles_bin_bank );
-	devkit_SMS_loadTiles(&tiles_bin, 0, tiles_bin_size);
-	devkit_SMS_loadBGPalette(&palette_bin);
-	devkit_SMS_loadTiles(&sprite_tiles_bin, 256, sprite_tiles_bin_size);
-	devkit_SMS_loadSpritePalette(&sprite_palette_bin);
+	devkit_SMS_loadTiles( ( unsigned char* ) &tiles_bin, 0, tiles_bin_size );
+	devkit_SMS_loadBGPalette( ( unsigned char* ) &palette_bin);
+	devkit_SMS_loadTiles( ( unsigned char* ) &sprite_tiles_bin, 256, sprite_tiles_bin_size);
+	devkit_SMS_loadSpritePalette( ( unsigned char* ) &sprite_palette_bin);
 	
 	for(;;)
 	{
@@ -84,14 +84,14 @@ void main(void)
 		}
 
 		// initalise General Scroll Library
-		devkit_GSL_initializeMap(&scrolltable, &metatiles_bin);
+		devkit_GSL_initializeMap( ( unsigned char* ) &scrolltable, ( unsigned char* ) &metatiles_bin);
 		devkit_GSL_positionWindow(768,832);
 		devkit_GSL_refreshVDP();
 		devkit_SMS_mapROMBank( sprite_palette_bin_bank );
 		devkit_SMS_VDPturnOnFeature(devkit_VDPFEATURE_HIDEFIRSTCOL());
 		devkit_SMS_displayOn();
 		
-		devkit_PSGPlay(&village_psg);
+		devkit_PSGPlay( ( unsigned char* ) &village_psg);
 		
 		playerX = 904;
         playerY = 928;
@@ -167,12 +167,12 @@ void processSpritesVBlank()
 	// Attack animations require max 8 tiles be copied to vram.
 	if (action == ACTION_ATTACK) 
 	{
-		devkit_UNSAFE_SMS_load4Tiles(sprite_tiles_bin + *(spriteTileOffsets + ((actionCount & 14) >> 1)), 256);
-		devkit_UNSAFE_SMS_load4Tiles(128 + sprite_tiles_bin + *(spriteTileOffsets + ((actionCount & 14) >> 1)), 260);
+		devkit_UNSAFE_SMS_load4Tiles( ( unsigned char* ) sprite_tiles_bin + *(spriteTileOffsets + ((actionCount & 14) >> 1)), 256);
+		devkit_UNSAFE_SMS_load4Tiles(128 + ( unsigned char* ) sprite_tiles_bin + *(spriteTileOffsets + ((actionCount & 14) >> 1)), 260);
 		
 	}
 	// Other animations only require 4 tiles be copied to vram.
-	else devkit_UNSAFE_SMS_load4Tiles(sprite_tiles_bin + *(spriteTileOffsets + animationCount), 256);
+	else devkit_UNSAFE_SMS_load4Tiles(( unsigned char* )sprite_tiles_bin + *(spriteTileOffsets + animationCount), 256);
 }
 
 
@@ -513,17 +513,17 @@ void processAttackKey()
 */
 void checkForAttackInteraction()
 {
-	unsigned char * metatile;
-	
+	//unsigned char * metatile;
+	unsigned int* metatile;
 	// lookup first metatile then test the result against known interactive metatiles.
-	if (direction == DIRECTION_UP) 
-		metatile = devkit_GSL_metatileLookup(playerX - 8, playerY - 1);
+	if( direction == DIRECTION_UP )
+		metatile = devkit_GSL_metatileLookup( playerX - 8, playerY - 1 );
 	else if (direction == DIRECTION_DOWN) 
 		metatile = devkit_GSL_metatileLookup(playerX - 8, playerY + 8);
 	else if (direction == DIRECTION_LEFT) 
 		metatile = devkit_GSL_metatileLookup(playerX - 9, playerY - 8);
 	else metatile = devkit_GSL_metatileLookup(playerX + 8, playerY - 8);
-	processAttackInteraction(metatile);
+	processAttackInteraction((unsigned char *)metatile);
 	
 	// lookup second metatile then test the result against known interactive metatiles.
 	if (direction == DIRECTION_UP) 
@@ -533,7 +533,7 @@ void checkForAttackInteraction()
 	else if (direction == DIRECTION_LEFT) 
 		metatile = devkit_GSL_metatileLookup(playerX - 9, playerY + 7);
 	else metatile = devkit_GSL_metatileLookup(playerX + 8, playerY + 7);
-	processAttackInteraction(metatile);
+	processAttackInteraction(( unsigned char *)metatile);
 }
 
 
