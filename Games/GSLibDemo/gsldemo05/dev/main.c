@@ -55,38 +55,43 @@ unsigned int playerXOffset = 0;
 unsigned int playerYOffset = 0;
 unsigned char direction = DIRECTION_DOWN;
 
-unsigned char scrolltable[scrolltable_bin_size];
+unsigned char scrolltable[ 4109 ];
 
-//SMS_EMBED_SEGA_ROM_HEADER(9999,1);	
+//devkit_SMS_EMBED_SEGA_ROM_HEADER(9999,1);	
 
 void main(void) 
 {
 	unsigned int ks; 
 	unsigned char playerMetatile;
 	
-	SMS_VRAMmemset(0x4000, 0x00, 0x4000);
-	SMS_VRAMmemset(0xC000, 0x00, 0x0020);
-	SMS_loadTiles(&tiles_bin, 0, tiles_bin_size);
-	SMS_loadBGPalette(&palette_bin);
-	SMS_loadTiles(&sprite_tiles_bin, 256, sprite_tiles_bin_size);
-	SMS_loadSpritePalette(&sprite_palette_bin);
+	devkit_SMS_VRAMmemset(0x4000, 0x00, 0x4000);
+	devkit_SMS_VRAMmemset(0xC000, 0x00, 0x0020);
+	devkit_SMS_mapROMBank( tiles_bin_bank );
+	devkit_SMS_loadTiles(&tiles_bin, 0, tiles_bin_size);
+	devkit_SMS_loadBGPalette(&palette_bin);
+	devkit_SMS_loadTiles(&sprite_tiles_bin, 256, sprite_tiles_bin_size);
+	devkit_SMS_loadSpritePalette(&sprite_palette_bin);
 	
 	for(;;)
 	{
 		// copy scrolltable to RAM
 		// NOTE: this allows us to modify the map for hightened player interaction
 		// in this case cutting down lots of trees, activating bridges, etc.
-		for (int i = 0; i < scrolltable_bin_size; i++) scrolltable[i] = *(scrolltable_bin + i);
-		
+		devkit_SMS_mapROMBank( scrolltable_bin_bank );
+		for( int i = 0; i < scrolltable_bin_size; i++ )
+		{
+			scrolltable[ i ] = *( scrolltable_bin + i );
+		}
+
 		// initalise General Scroll Library
-		GSL_initializeMap(&scrolltable, &metatiles_bin);
-		GSL_positionWindow(768,832);
-		GSL_refreshVDP();
+		devkit_GSL_initializeMap(&scrolltable, &metatiles_bin);
+		devkit_GSL_positionWindow(768,832);
+		devkit_GSL_refreshVDP();
+		devkit_SMS_mapROMBank( sprite_palette_bin_bank );
+		devkit_SMS_VDPturnOnFeature(devkit_VDPFEATURE_HIDEFIRSTCOL());
+		devkit_SMS_displayOn();
 		
-		SMS_VDPturnOnFeature(VDPFEATURE_HIDEFIRSTCOL);
-		SMS_displayOn();
-		
-		PSGPlay(&village_psg);
+		devkit_PSGPlay(&village_psg);
 		
 		playerX = 904;
         playerY = 928;
@@ -97,12 +102,12 @@ void main(void)
 		for(;;)
 		{
 			// check if player is standing on dungeon entrance (completion status)
-			playerMetatile = *(GSL_metatileLookup(playerX, playerY)); 
+			playerMetatile = *(devkit_GSL_metatileLookup(playerX, playerY)); 
 			if (playerMetatile == METATILE_DUNGEON_ENTRANCE) break;
 			
-			SMS_initSprites(); 
-			ks = SMS_getKeysStatus(); 
-			if (!(ks & PORT_A_KEY_2)) actionButtonWatch = 0;
+			devkit_SMS_initSprites(); 
+			ks = devkit_SMS_getKeysStatus(); 
+			if (!(ks & devkit_PORT_A_KEY_2())) actionButtonWatch = 0;
 			
 			// Player actions take so many steps to complete. 
 			//   if actionCount == 0 then new actions can be started.
@@ -114,17 +119,17 @@ void main(void)
 			playerY += playerYOffset;
 			playerSpriteX += spriteXOffset;
 			playerSpriteY += spriteYOffset;
-			GSL_scroll(scrollXOffset,scrollYOffset); // << GSL_scroll with offsets to scroll map.
+			devkit_GSL_scroll(scrollXOffset,scrollYOffset); // << devkit_GSL_scroll with offsets to scroll map.
 			
 			processSpritesActiveDisplay();
 			
-			SMS_waitForVBlank(); 
-			GSL_VBlank();  // <<< Call GSL_VBlank to process any pending scroll / metatile updates.
+			devkit_SMS_waitForVBlank(); 
+			devkit_GSL_VBlank();  // <<< Call devkit_GSL_VBlank to process any pending scroll / metatile updates.
 			processSpritesVBlank();
-			PSGFrame();
+			devkit_PSGFrame();
 		} 
 		
-		SMS_displayOff();
+		devkit_SMS_displayOff();
 	}
 }
 
@@ -133,10 +138,10 @@ void main(void)
 void processSpritesActiveDisplay()
 {
 	// Add player sprite to sprite table for this frame.
-	SMS_addSprite(playerSpriteX + 0xF8, playerSpriteY + 0xF8, 0);
-	SMS_addSprite(playerSpriteX + 0x00, playerSpriteY + 0xF8, 1);
-	SMS_addSprite(playerSpriteX + 0xF8, playerSpriteY + 0x00, 2);
-	SMS_addSprite(playerSpriteX + 0x00, playerSpriteY + 0x00, 3);
+	devkit_SMS_addSprite(playerSpriteX + 0xF8, playerSpriteY + 0xF8, 0);
+	devkit_SMS_addSprite(playerSpriteX + 0x00, playerSpriteY + 0xF8, 1);
+	devkit_SMS_addSprite(playerSpriteX + 0xF8, playerSpriteY + 0x00, 2);
+	devkit_SMS_addSprite(playerSpriteX + 0x00, playerSpriteY + 0x00, 3);
 	
 	
 	// Attack animations require additional sprites
@@ -146,10 +151,10 @@ void processSpritesActiveDisplay()
 		if (actionCount == 5) checkForAttackInteraction();
 		
 		currentAttackSprites = attackSprites + ((actionCount & 14) << 3);
-		SMS_addSprite(playerSpriteX + *(currentAttackSprites + 0), playerSpriteY + *(currentAttackSprites + 1), *(currentAttackSprites + 2));
-		SMS_addSprite(playerSpriteX + *(currentAttackSprites + 3), playerSpriteY + *(currentAttackSprites + 4), *(currentAttackSprites + 5));
-		SMS_addSprite(playerSpriteX + *(currentAttackSprites + 6), playerSpriteY + *(currentAttackSprites + 7), *(currentAttackSprites + 8));
-		SMS_addSprite(playerSpriteX + *(currentAttackSprites + 9), playerSpriteY + *(currentAttackSprites + 10), *(currentAttackSprites + 11));
+		devkit_SMS_addSprite(playerSpriteX + *(currentAttackSprites + 0), playerSpriteY + *(currentAttackSprites + 1), *(currentAttackSprites + 2));
+		devkit_SMS_addSprite(playerSpriteX + *(currentAttackSprites + 3), playerSpriteY + *(currentAttackSprites + 4), *(currentAttackSprites + 5));
+		devkit_SMS_addSprite(playerSpriteX + *(currentAttackSprites + 6), playerSpriteY + *(currentAttackSprites + 7), *(currentAttackSprites + 8));
+		devkit_SMS_addSprite(playerSpriteX + *(currentAttackSprites + 9), playerSpriteY + *(currentAttackSprites + 10), *(currentAttackSprites + 11));
 	}
 }
 
@@ -157,17 +162,17 @@ void processSpritesActiveDisplay()
 void processSpritesVBlank()
 {
 	// Update player sprites in VRAM. Tiles are updated each frame.
-	UNSAFE_SMS_copySpritestoSAT();
+	devkit_UNSAFE_SMS_copySpritestoSAT();
 	
 	// Attack animations require max 8 tiles be copied to vram.
 	if (action == ACTION_ATTACK) 
 	{
-		UNSAFE_SMS_load4Tiles(sprite_tiles_bin + *(spriteTileOffsets + ((actionCount & 14) >> 1)), 256);
-		UNSAFE_SMS_load4Tiles(128 + sprite_tiles_bin + *(spriteTileOffsets + ((actionCount & 14) >> 1)), 260);
+		devkit_UNSAFE_SMS_load4Tiles(sprite_tiles_bin + *(spriteTileOffsets + ((actionCount & 14) >> 1)), 256);
+		devkit_UNSAFE_SMS_load4Tiles(128 + sprite_tiles_bin + *(spriteTileOffsets + ((actionCount & 14) >> 1)), 260);
 		
 	}
 	// Other animations only require 4 tiles be copied to vram.
-	else UNSAFE_SMS_load4Tiles(sprite_tiles_bin + *(spriteTileOffsets + animationCount), 256);
+	else devkit_UNSAFE_SMS_load4Tiles(sprite_tiles_bin + *(spriteTileOffsets + animationCount), 256);
 }
 
 
@@ -175,7 +180,7 @@ void processSpritesVBlank()
 // Test for user input and call appropriate method if so.
 void processUserInput()
 {
-	unsigned int ks = SMS_getKeysStatus(); 
+	unsigned int ks = devkit_SMS_getKeysStatus(); 
 	
 	// reset offsets to 0 clearing previous action.
 	action = ACTION_STATIONARY;
@@ -186,30 +191,30 @@ void processUserInput()
 	spriteXOffset = 0;
 	spriteYOffset = 0;
 	
-	if (actionButtonWatch == 0 && (ks & PORT_A_KEY_2))
+	if (actionButtonWatch == 0 && (ks & devkit_PORT_A_KEY_2()))
 	{
 		processAttackKey();
 		return;
 	}
-	else if (ks & PORT_A_KEY_UP)
+	else if (ks & devkit_PORT_A_KEY_UP())
 	{
 		processUpKey();
 		return;
 	}
 	
-	else if (ks & PORT_A_KEY_DOWN)
+	else if (ks & devkit_PORT_A_KEY_DOWN())
 	{
 		processDownKey();
 		return;
 	}
 	
-	else if (ks & PORT_A_KEY_LEFT)
+	else if (ks & devkit_PORT_A_KEY_LEFT())
 	{
 		processLeftKey();
 		return;
 	}
 	
-	else if (ks & PORT_A_KEY_RIGHT)
+	else if (ks & devkit_PORT_A_KEY_RIGHT())
 	{
 		processRightKey();
 		return;
@@ -221,8 +226,8 @@ void processUpKey()
 {
 	// lookup metatile directly above player
 	// NOTE: hitbox of player is 2 tiles wide, we need to make 2 metatile checks.
-	unsigned char topLeftMetatile = *(GSL_metatileLookup(playerX - 8, playerY - 1));
-	unsigned char topRightMetatile = *(GSL_metatileLookup(playerX + 7, playerY - 1));
+	unsigned char topLeftMetatile = *(devkit_GSL_metatileLookup(playerX - 8, playerY - 1));
+	unsigned char topRightMetatile = *(devkit_GSL_metatileLookup(playerX + 7, playerY - 1));
 	
 	// Is movement up blocked via metatile or end of screen?
 	if (playerY == 8 || ((metatilesMetaLUT[topLeftMetatile] & 1) == 0 && (metatilesMetaLUT[topRightMetatile] & 1)  == 0))
@@ -271,7 +276,7 @@ void processUpKey()
 	
 	// Basic window management.
 	// Keep player centered except when at edge of screen.
-	if (playerY <= 96 || playerY > GSL_getMapHeightInPixels() - 96)
+	if (playerY <= 96 || playerY > devkit_GSL_getMapHeightInPixels() - 96)
 	{
 		spriteYOffset = 0xFE;
 		scrollYOffset = 0;
@@ -288,11 +293,11 @@ void processDownKey()
 {
 	// lookup metatile directly below player
 	// NOTE: hitbox of player is 2 tiles wide, we need to make 2 metatile checks.
-	unsigned char bottomLeftMetatile = *(GSL_metatileLookup(playerX - 8, playerY + 8));
-	unsigned char bottomRightMetatile = *(GSL_metatileLookup(playerX + 7, playerY + 8));
+	unsigned char bottomLeftMetatile = *(devkit_GSL_metatileLookup(playerX - 8, playerY + 8));
+	unsigned char bottomRightMetatile = *(devkit_GSL_metatileLookup(playerX + 7, playerY + 8));
 	
 	// Is movement down blocked via metatile or end of screen?
-	if (playerY == GSL_getMapHeightInPixels() - 8 || ((metatilesMetaLUT[bottomLeftMetatile] & 1) == 0 && (metatilesMetaLUT[bottomRightMetatile] & 1) == 0))
+	if (playerY == devkit_GSL_getMapHeightInPixels() - 8 || ((metatilesMetaLUT[bottomLeftMetatile] & 1) == 0 && (metatilesMetaLUT[bottomRightMetatile] & 1) == 0))
 	{
 		// animate but do not move.
 		action = ACTION_MOVE;
@@ -338,7 +343,7 @@ void processDownKey()
 	
 	// Basic window management.
 	// Keep player centered except when at edge of screen.
-	if (playerY < 96 || playerY >= GSL_getMapHeightInPixels() - 96)
+	if (playerY < 96 || playerY >= devkit_GSL_getMapHeightInPixels() - 96)
 	{
 		spriteYOffset = 2;
 		scrollYOffset = 0;
@@ -355,7 +360,7 @@ void processLeftKey()
 {
 	// lookup metatile directly to the left of player
 	// NOTE: hitbox of player is only 1 tile high, top half has no collision!
-	unsigned char lowerLeftMetatile = *(GSL_metatileLookup(playerX - 9, playerY));
+	unsigned char lowerLeftMetatile = *(devkit_GSL_metatileLookup(playerX - 9, playerY));
 	
 	// Is movement left blocked via metatile or end of screen?
 	if (playerX == 16 || (metatilesMetaLUT[lowerLeftMetatile] & 1) == 0)
@@ -391,7 +396,7 @@ void processLeftKey()
 	
 	// Basic window management.
 	// Keep player centered except when at edge of screen.
-	if (playerX <= 136 || playerX > GSL_getMapWidthInPixels() - 120)
+	if (playerX <= 136 || playerX > devkit_GSL_getMapWidthInPixels() - 120)
 	{
 		spriteXOffset = 0xFE;
 		scrollXOffset = 0;
@@ -409,10 +414,10 @@ void processRightKey()
 {
 	// lookup metatile directly to right of player.
 	// NOTE: hitbox of player is only 1 tile high, top half has no collision!
-	unsigned char lowerRightMetatile = *(GSL_metatileLookup(playerX + 8, playerY));
+	unsigned char lowerRightMetatile = *(devkit_GSL_metatileLookup(playerX + 8, playerY));
 	
 	// Is movement right blocked via metatile or end of screen?
-	if (playerX == GSL_getMapWidthInPixels() - 8 || (metatilesMetaLUT[lowerRightMetatile] & 1) == 0)
+	if (playerX == devkit_GSL_getMapWidthInPixels() - 8 || (metatilesMetaLUT[lowerRightMetatile] & 1) == 0)
 	{
 		// animate but do not move.
 		action = ACTION_MOVE;
@@ -445,7 +450,7 @@ void processRightKey()
 	
 	// Basic window management.
 	// Keep player centered except when at edge of screen.
-	if (playerX < 136 || playerX >= GSL_getMapWidthInPixels() - 120)
+	if (playerX < 136 || playerX >= devkit_GSL_getMapWidthInPixels() - 120)
 	{
 		spriteXOffset = 2;
 		scrollXOffset = 0;
@@ -512,22 +517,22 @@ void checkForAttackInteraction()
 	
 	// lookup first metatile then test the result against known interactive metatiles.
 	if (direction == DIRECTION_UP) 
-		metatile = GSL_metatileLookup(playerX - 8, playerY - 1);
+		metatile = devkit_GSL_metatileLookup(playerX - 8, playerY - 1);
 	else if (direction == DIRECTION_DOWN) 
-		metatile = GSL_metatileLookup(playerX - 8, playerY + 8);
+		metatile = devkit_GSL_metatileLookup(playerX - 8, playerY + 8);
 	else if (direction == DIRECTION_LEFT) 
-		metatile = GSL_metatileLookup(playerX - 9, playerY - 8);
-	else metatile = GSL_metatileLookup(playerX + 8, playerY - 8);
+		metatile = devkit_GSL_metatileLookup(playerX - 9, playerY - 8);
+	else metatile = devkit_GSL_metatileLookup(playerX + 8, playerY - 8);
 	processAttackInteraction(metatile);
 	
 	// lookup second metatile then test the result against known interactive metatiles.
 	if (direction == DIRECTION_UP) 
-		metatile = GSL_metatileLookup(playerX + 7, playerY - 1);
+		metatile = devkit_GSL_metatileLookup(playerX + 7, playerY - 1);
 	else if (direction == DIRECTION_DOWN) 
-		metatile = GSL_metatileLookup(playerX + 7, playerY + 8);
+		metatile = devkit_GSL_metatileLookup(playerX + 7, playerY + 8);
 	else if (direction == DIRECTION_LEFT) 
-		metatile = GSL_metatileLookup(playerX - 9, playerY + 7);
-	else metatile = GSL_metatileLookup(playerX + 8, playerY + 7);
+		metatile = devkit_GSL_metatileLookup(playerX - 9, playerY + 7);
+	else metatile = devkit_GSL_metatileLookup(playerX + 8, playerY + 7);
 	processAttackInteraction(metatile);
 }
 
@@ -548,8 +553,8 @@ void processAttackInteraction(unsigned char * metatile)
 	// The following two are simple metatile interactions / updates.
 	// The metatile is tested and if matching replaced by another metatile.
 	
-	// GSL_metatileUpdate() will update the screen contents based on the last GSL_metatileLookup() call
-	// so as long as there are no additional GSL_metatileLookup() between our first lookup and update we
+	// devkit_GSL_metatileUpdate() will update the screen contents based on the last devkit_GSL_metatileLookup() call
+	// so as long as there are no additional devkit_GSL_metatileLookup() between our first lookup and update we
 	// we are set!
 	
 	
@@ -560,7 +565,7 @@ void processAttackInteraction(unsigned char * metatile)
 		*metatile = METATILE_TREE_STUMP;
 		
 		// que this change to be updated on screen in next vblank.
-		GSL_metatileUpdate();
+		devkit_GSL_metatileUpdate();
 	}
 	
 	
@@ -571,7 +576,7 @@ void processAttackInteraction(unsigned char * metatile)
 		*metatile = METATILE_SAND; 
 		
 		// que this change to be updated on screen in next vblank.
-		GSL_metatileUpdate();
+		devkit_GSL_metatileUpdate();
 	}
 	
 	
@@ -579,7 +584,7 @@ void processAttackInteraction(unsigned char * metatile)
 	// The following two are more complex interactions.
 	// In these cases the metatiles we want to update extend beyond the looked up metatile.
 	
-	// We use GSL_metatileUpdateCustom(). This method requires the coder to 
+	// We use devkit_GSL_metatileUpdateCustom(). This method requires the coder to 
 	// provide both an (x,y) coodinate pointing to the metatile within the map as well as 
 	// an offset for scrolltable pointing to the entry to be updated.
 	
@@ -589,22 +594,22 @@ void processAttackInteraction(unsigned char * metatile)
 	{
 		// Replace the interactive tombstone with a regular non interactive one.
 		// We do this to remove any further unnecessary updates in future.
-		// We don't need to GSL_metatileUpdate() since the graphics are the same.
+		// We don't need to devkit_GSL_metatileUpdate() since the graphics are the same.
 		*metatile = METATILE_TOMBSTONE; 
 		
 		// Next remove a fence consisting of two metatiles.
 		// First we update the underlying scrolltable (which is in ram)
 		// changing those fence metatiles to passable grass metatiles.
 		// We add the offset to the base scrolltable address and change value.
-		*(GSL_getScrolltableAddress() + (51*64 + 28)) = METATILE_GRASS;
+		*(devkit_GSL_getScrolltableAddress() + (51*64 + 28)) = METATILE_GRASS;
 		
-		// Secondly we call our GSL_metatileUpdateCustom() method passing an (x,y) as 
+		// Secondly we call our devkit_GSL_metatileUpdateCustom() method passing an (x,y) as 
 		// well as the offset. Offset is calculates as (y*mapwidth + x)
-		GSL_metatileUpdateCustom(448, 816, (51*64 + 28));
+		devkit_GSL_metatileUpdateCustom(448, 816, (51*64 + 28));
 		
 		// This is a repeat of above for the second fence metatile.
-		*(GSL_getScrolltableAddress() + (51*64 + 29)) = METATILE_GRASS;
-		GSL_metatileUpdateCustom(464, 816, (51*64 + 29));
+		*(devkit_GSL_getScrolltableAddress() + (51*64 + 29)) = METATILE_GRASS;
+		devkit_GSL_metatileUpdateCustom(464, 816, (51*64 + 29));
 	}
 	
 	
@@ -615,14 +620,14 @@ void processAttackInteraction(unsigned char * metatile)
 		*metatile = METATILE_TOMBSTONE; 
 		
 		// Three more custom updates just like the above.
-		*(GSL_getScrolltableAddress() + (43*64 + 28)) = METATILE_VERTICAL_BRIDGE;
-		GSL_metatileUpdateCustom(448, 688, (43*64 + 28));
+		*(devkit_GSL_getScrolltableAddress() + (43*64 + 28)) = METATILE_VERTICAL_BRIDGE;
+		devkit_GSL_metatileUpdateCustom(448, 688, (43*64 + 28));
 		
-		*(GSL_getScrolltableAddress() + (44*64 + 28)) = METATILE_VERTICAL_BRIDGE;
-		GSL_metatileUpdateCustom(448, 704, (44*64 + 28));
+		*(devkit_GSL_getScrolltableAddress() + (44*64 + 28)) = METATILE_VERTICAL_BRIDGE;
+		devkit_GSL_metatileUpdateCustom(448, 704, (44*64 + 28));
 		
-		*(GSL_getScrolltableAddress() + (45*64 + 28)) = METATILE_VERTICAL_BRIDGE;
-		GSL_metatileUpdateCustom(448, 720, (45*64 + 28));
+		*(devkit_GSL_getScrolltableAddress() + (45*64 + 28)) = METATILE_VERTICAL_BRIDGE;
+		devkit_GSL_metatileUpdateCustom(448, 720, (45*64 + 28));
 	}
 }
 
