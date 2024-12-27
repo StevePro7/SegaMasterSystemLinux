@@ -1,0 +1,14 @@
+M:resources
+S:G$spriteMoveUp$0_0$0({8}DA4d,SI:U),D,0,0
+S:G$spriteMoveDown$0_0$0({8}DA4d,SI:U),D,0,0
+S:G$spriteMoveLeft$0_0$0({8}DA4d,SI:U),D,0,0
+S:G$spriteMoveRight$0_0$0({8}DA4d,SI:U),D,0,0
+S:G$spriteAttackUp$0_0$0({10}DA5d,SI:U),D,0,0
+S:G$spriteAttackDown$0_0$0({10}DA5d,SI:U),D,0,0
+S:G$spriteAttackLeft$0_0$0({10}DA5d,SI:U),D,0,0
+S:G$spriteAttackRight$0_0$0({10}DA5d,SI:U),D,0,0
+S:G$spriteAttackUpMeta$0_0$0({76}DA76d,SC:U),D,0,0
+S:G$spriteAttackDownMeta$0_0$0({76}DA76d,SC:U),D,0,0
+S:G$spriteAttackLeftMeta$0_0$0({76}DA76d,SC:U),D,0,0
+S:G$spriteAttackRightMeta$0_0$0({76}DA76d,SC:U),D,0,0
+S:G$metatilesMetaLUT$0_0$0({256}DA256d,SC:U),D,0,0
