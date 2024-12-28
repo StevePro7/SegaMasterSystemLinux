@@ -49,5 +49,5 @@ ihx2sms output.ihx output.sms
 if exist "*.asm" del "*.asm" > nul; if exist "*.ihx" del "*.ihx" > nul; if exist "*.lk"  del "*.lk"  > nul
 if exist "*.lst" del "*.lst" > nul; if exist "*.sym" del "*.sym" > nul
 
-output.sms
-::java -jar C:/SEGA/Emulicious/Emulicious.jar output.sms
+::output.sms
+java -jar C:/SEGA/Emulicious/Emulicious.jar output.sms
