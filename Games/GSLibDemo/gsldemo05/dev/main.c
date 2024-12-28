@@ -553,6 +553,7 @@ void checkForAttackInteraction()
 */
 void processAttackInteraction(unsigned char * metatile)
 {
+	devkit_SMS_mapROMBank( scrolltable_bin_bank );
 	// *************************************************************
 	// The following two are simple metatile interactions / updates.
 	// The metatile is tested and if matching replaced by another metatile.
@@ -633,4 +634,6 @@ void processAttackInteraction(unsigned char * metatile)
 		*(devkit_GSL_getScrolltableAddress() + (45*64 + 28)) = METATILE_VERTICAL_BRIDGE;
 		devkit_GSL_metatileUpdateCustom(448, 720, (45*64 + 28));
 	}
+
+	devkit_SMS_mapROMBank( sprite_palette_bin_bank );
 }
