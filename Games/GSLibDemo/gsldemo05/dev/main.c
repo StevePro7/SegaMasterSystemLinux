@@ -66,7 +66,7 @@ void main(void)
 	
 	devkit_SMS_VRAMmemset(0x4000, 0x00, 0x4000);
 	devkit_SMS_VRAMmemset(0xC000, 0x00, 0x0020);
-	devkit_SMS_mapROMBank( tiles_bin_bank );
+	////devkit_SMS_mapROMBank( tiles_bin_bank );
 	devkit_SMS_loadTiles( ( unsigned char* ) &tiles_bin, 0, tiles_bin_size );
 	devkit_SMS_loadBGPalette( ( unsigned char* ) &palette_bin);
 	devkit_SMS_loadTiles( ( unsigned char* ) &sprite_tiles_bin, 256, sprite_tiles_bin_size);
@@ -77,7 +77,7 @@ void main(void)
 		// copy scrolltable to RAM
 		// NOTE: this allows us to modify the map for hightened player interaction
 		// in this case cutting down lots of trees, activating bridges, etc.
-		devkit_SMS_mapROMBank( scrolltable_bin_bank );
+		////devkit_SMS_mapROMBank( scrolltable_bin_bank );
 		for( int i = 0; i < scrolltable_bin_size; i++ )
 		{
 			scrolltable[ i ] = *( scrolltable_bin + i );
@@ -87,7 +87,7 @@ void main(void)
 		devkit_GSL_initializeMap( ( unsigned char* ) &scrolltable, ( unsigned char* ) &metatiles_bin);
 		devkit_GSL_positionWindow(768,832);
 		devkit_GSL_refreshVDP();
-		devkit_SMS_mapROMBank( sprite_palette_bin_bank );
+		//devkit_SMS_mapROMBank( sprite_palette_bin_bank );
 		devkit_SMS_VDPturnOnFeature(devkit_VDPFEATURE_HIDEFIRSTCOL());
 		devkit_SMS_displayOn();
 		

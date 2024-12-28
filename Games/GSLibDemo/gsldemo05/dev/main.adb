@@ -22,7 +22,7 @@ F:G$processRightKey$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lmain.processRightKey$lowerRightMetatile$1_0$136({1}SC:U),R,0,0,[c]
 F:G$processAttackKey$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$checkForAttackInteraction$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lmain.checkForAttackInteraction$metatile$1_0$142({2}DG,SC:U),R,0,0,[e,d]
+S:Lmain.checkForAttackInteraction$metatile$1_0$142({2}DG,SI:U),R,0,0,[e,d]
 F:G$processAttackInteraction$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lmain.processAttackInteraction$metatile$1_0$143({2}DG,SC:U),B,1,4
 S:G$playerX$0_0$0({2}SI:U),E,0,0
