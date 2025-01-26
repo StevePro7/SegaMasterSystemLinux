@@ -17,6 +17,7 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 ::cd ..
 
 
+"C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 bank.c
 "C:/Program Files/SDCC/bin/sdcc.exe" --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
 
 
@@ -36,7 +37,8 @@ echo.
 ../lib/SMSlib.lib ^
 ../lib/PSGlib.rel ^
 devkit/_sms_manager.rel ^
-devkit/_snd_manager.rel
+devkit/_snd_manager.rel ^
+bank.rel
 
 :: Execute
 "C:/Program Files/SDCC/bin/ihx2sms.exe" output.ihx output.sms
