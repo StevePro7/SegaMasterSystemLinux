@@ -7,7 +7,6 @@ F:G$engine_sample_manager_stop$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_sample_manager_isPlaying$0_0$0({2}DF,SC:U),Z,0,0,0,0,0
 F:G$engine_sample_manager_step$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_sample_manager_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lsample_manager.engine_sample_manager_update$i$2_0$19({2}SI:S),R,0,0,[c,b]
 S:Fsample_manager$sm_pcm_ptr$0_0$0({2}DG,SC:U),E,0,0
 S:Fsample_manager$sm_pcm_len$0_0$0({2}SI:U),E,0,0
 S:Fsample_manager$sm_pcm_playing$0_0$0({1}SC:U),E,0,0
