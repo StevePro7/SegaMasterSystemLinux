@@ -1,97 +1,137 @@
 ;!FILE sample_manager.asm
 XL3
-H 9 areas 50 global symbols
+H 9 areas 6C global symbols
 M sample_manager
 O -mz80
 S .__.ABS. Def000000
-A _CODE size 7F flags 0 addr 0
+A _CODE size 8A flags 0 addr 0
+S C$sample_manager.c$29$0_0$7 Def000000
+S C$sample_manager.c$46$1_0$9 Def000006
 S _engine_sample_manager_init Def000000
 S _engine_sample_manager_play Def000006
-S A$sample_manager$110 Def000021
-S A$sample_manager$120 Def00002D
-S A$sample_manager$130 Def00003A
-S A$sample_manager$121 Def00002F
-S A$sample_manager$103 Def000017
-S A$sample_manager$140 Def000046
-S A$sample_manager$131 Def00003B
-S A$sample_manager$104 Def000018
-S A$sample_manager$150 Def000054
-S A$sample_manager$141 Def000047
-S A$sample_manager$132 Def00003D
-S A$sample_manager$114 Def000025
-S A$sample_manager$105 Def00001A
-S A$sample_manager$160 Def000061
-S A$sample_manager$142 Def000049
-S A$sample_manager$133 Def00003F
-S A$sample_manager$115 Def000026
-S A$sample_manager$106 Def00001C
-S A$sample_manager$170 Def00006F
-S A$sample_manager$161 Def000062
-S A$sample_manager$143 Def00004B
-S A$sample_manager$125 Def000033
-S A$sample_manager$116 Def000028
-S A$sample_manager$107 Def00001D
-S A$sample_manager$180 Def00007B
-S A$sample_manager$171 Def000070
-S A$sample_manager$162 Def000064
-S A$sample_manager$153 Def00005A
-S A$sample_manager$144 Def00004D
-S A$sample_manager$126 Def000034
-S A$sample_manager$117 Def00002A
-S A$sample_manager$108 Def00001E
-S A$sample_manager$181 Def00007C
-S A$sample_manager$172 Def000072
-S A$sample_manager$163 Def000066
-S A$sample_manager$145 Def00004F
-S A$sample_manager$136 Def000040
-S A$sample_manager$127 Def000036
-S A$sample_manager$118 Def00002B
-S A$sample_manager$109 Def00001F
-S A$sample_manager$182 Def00007E
-S A$sample_manager$173 Def000074
-S A$sample_manager$155 Def00005D
-S A$sample_manager$146 Def000050
-S A$sample_manager$128 Def000038
-S A$sample_manager$119 Def00002C
-S A$sample_manager$165 Def000068
-S A$sample_manager$129 Def000039
-S A$sample_manager$166 Def000069
-S A$sample_manager$157 Def00005F
-S A$sample_manager$148 Def000051
-S A$sample_manager$139 Def000045
-S A$sample_manager$176 Def000076
-S A$sample_manager$167 Def00006B
-S A$sample_manager$158 Def000060
-S A$sample_manager$177 Def000077
-S A$sample_manager$168 Def00006D
-S A$sample_manager$179 Def000079
-S A$sample_manager$90 Def000006
-S A$sample_manager$92 Def000007
-S C$sample_manager.c$163$1_0$6 Def000006
-S A$sample_manager$93 Def000009
-S A$sample_manager$57 Def000000
-S C$sample_manager.c$164$1_0$6 Def00007F
-S A$sample_manager$94 Def00000C
-S A$sample_manager$58 Def000003
-S A$sample_manager$95 Def00000F
-S A$sample_manager$59 Def000005
-S A$sample_manager$96 Def000010
-S A$sample_manager$98 Def000013
-S A$sample_manager$99 Def000014
-S C$sample_manager.c$30$1_0$4 Def000006
+S G$engine_sample_manager_update$0$0 Def00007F
+S G$engine_sample_manager_stop$0$0 Def000084
+S XG$engine_sample_manager_isPlaying$0$0 Def000083
+S _engine_sample_manager_update Def00007F
+S _engine_sample_manager_stop Def000084
+S A$sample_manager$110 Def000013
+S A$sample_manager$120 Def00001E
+S A$sample_manager$111 Def000014
+S A$sample_manager$102 Def000006
+S A$sample_manager$130 Def00002B
+S A$sample_manager$121 Def00001F
+S A$sample_manager$140 Def000038
+S A$sample_manager$131 Def00002C
+S A$sample_manager$122 Def000021
+S A$sample_manager$104 Def000007
+S A$sample_manager$141 Def000039
+S A$sample_manager$132 Def00002D
+S A$sample_manager$105 Def000009
+S A$sample_manager$160 Def000051
+S A$sample_manager$151 Def000045
+S A$sample_manager$142 Def00003A
+S A$sample_manager$133 Def00002F
+S A$sample_manager$115 Def000017
+S A$sample_manager$106 Def00000C
+S C$sample_manager.c$180$1_0$12 Def00007F
+S A$sample_manager$233 Def000083
+S A$sample_manager$224 Def00007F
+S A$sample_manager$170 Def000060
+S A$sample_manager$152 Def000046
+S A$sample_manager$143 Def00003B
+S A$sample_manager$116 Def000018
+S A$sample_manager$107 Def00000F
+S A$sample_manager$225 Def000082
+S A$sample_manager$180 Def00006D
+S A$sample_manager$162 Def000054
+S A$sample_manager$153 Def000047
+S A$sample_manager$144 Def00003D
+S A$sample_manager$126 Def000025
+S A$sample_manager$117 Def00001A
+S A$sample_manager$108 Def000010
+S C$sample_manager.c$182$1_0$12 Def00007F
+S A$sample_manager$172 Def000061
+S A$sample_manager$154 Def000049
+S A$sample_manager$145 Def00003F
+S A$sample_manager$127 Def000026
+S A$sample_manager$118 Def00001C
+S A$sample_manager$191 Def000079
+S A$sample_manager$182 Def00006F
+S A$sample_manager$173 Def000062
+S A$sample_manager$155 Def00004B
+S A$sample_manager$137 Def000033
+S A$sample_manager$128 Def000028
+S A$sample_manager$119 Def00001D
+S A$sample_manager$255 Def000089
+S A$sample_manager$246 Def000084
+S A$sample_manager$192 Def00007B
+S A$sample_manager$183 Def000070
+S A$sample_manager$174 Def000064
+S A$sample_manager$165 Def00005A
+S A$sample_manager$156 Def00004D
+S A$sample_manager$138 Def000034
+S A$sample_manager$129 Def00002A
+S XG$engine_sample_manager_stop$0$0 Def000089
+S A$sample_manager$247 Def000086
+S A$sample_manager$193 Def00007C
+S A$sample_manager$184 Def000072
+S A$sample_manager$175 Def000066
+S A$sample_manager$157 Def00004F
+S A$sample_manager$148 Def000040
+S A$sample_manager$139 Def000036
+S C$sample_manager.c$191$1_0$16 Def000084
+S C$sample_manager.c$184$1_0$14 Def00007F
+S A$sample_manager$194 Def00007E
+S A$sample_manager$185 Def000074
+S A$sample_manager$167 Def00005D
+S A$sample_manager$158 Def000050
+S C$sample_manager.c$192$1_0$16 Def000089
+S A$sample_manager$177 Def000068
+S C$sample_manager.c$186$1_0$14 Def00007F
+S A$sample_manager$178 Def000069
+S A$sample_manager$169 Def00005F
+S C$sample_manager.c$187$1_0$14 Def000083
+S A$sample_manager$188 Def000076
+S A$sample_manager$179 Def00006B
+S A$sample_manager$189 Def000077
+S C$sample_manager.c$189$1_0$16 Def000084
+S A$sample_manager$70 Def000003
+S A$sample_manager$71 Def000005
+S G$engine_sample_manager_isPlaying$0$0 Def00007F
+S A$sample_manager$69 Def000000
 S G$engine_sample_manager_init$0$0 Def000000
+S C$sample_manager.c$177$1_0$9 Def000006
+S C$sample_manager.c$178$1_0$9 Def00007F
 S G$engine_sample_manager_play$0$0 Def000006
-S C$sample_manager.c$15$0_0$4 Def000000
-S C$sample_manager.c$32$1_0$6 Def000006
-S C$sample_manager.c$29$1_0$4 Def000000
+S C$sample_manager.c$43$1_0$7 Def000000
+S C$sample_manager.c$44$1_0$7 Def000006
+S _engine_sample_manager_isPlaying Def00007F
 A _DATA size 0 flags 0 addr 0
-A _INITIALIZED size 0 flags 0 addr 0
+A _INITIALIZED size 5 flags 0 addr 0
+S Fsample_manager$sm_pcm_ptr$0_0$0 Def000000
+S Fsample_manager$sm_pcm_playing$0_0$0 Def000004
+S Fsample_manager$sm_pcm_len$0_0$0 Def000002
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
-A _INITIALIZER size 0 flags 0 addr 0
+A _INITIALIZER size 5 flags 0 addr 0
+S Fsample_manager$__xinit_sm_pcm_len$0_0$0 Def000002
+S Fsample_manager$__xinit_sm_pcm_ptr$0_0$0 Def000000
+S Fsample_manager$__xinit_sm_pcm_playing$0_0$0 Def000004
 A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 02 00
+T 00 00 00
+R 00 00 02 00
+T 02 00 00
+R 00 00 02 00
+T 02 00 00
+R 00 00 02 00
+T 04 00 00
+R 00 00 02 00
+T 04 00 00
+R 00 00 02 00
 T 00 00 00
 R 00 00 00 00
 T 00 00 00 01 7F 0B ED B3 C9
@@ -148,3 +188,25 @@ T 79 00 00
 R 00 00 00 00
 T 79 00 00 10 FE C1 DB 7F C9
 R 00 00 00 00
+T 7F 00 00
+R 00 00 00 00
+T 7F 00 00
+R 00 00 00 00
+T 7F 00 00 3A 04 00 6F C9
+R 00 00 00 00 00 04 02 00
+T 84 00 00
+R 00 00 00 00
+T 84 00 00 3E 00 32 04 00 C9
+R 00 00 00 00 00 06 02 00
+T 00 00 00
+R 00 00 07 00
+T 00 00 00 00 00
+R 00 00 07 00
+T 02 00 00
+R 00 00 07 00
+T 02 00 00 00 00
+R 00 00 07 00
+T 04 00 00
+R 00 00 07 00
+T 04 00 00 00
+R 00 00 07 00

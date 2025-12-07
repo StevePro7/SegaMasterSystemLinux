@@ -1,5 +1,9 @@
 #include "sample_manager.h"
 
+static const unsigned char *sm_pcm_ptr = 0;
+static unsigned int sm_pcm_len = 0;
+static unsigned char sm_pcm_playing = 0;
+
 #ifdef _CONSOLE
 
 void engine_sample_manager_init( const void *psginit )
@@ -7,6 +11,16 @@ void engine_sample_manager_init( const void *psginit )
 }
 
 void engine_sample_manager_play( const void *sample )
+{
+}
+void engine_sample_manager_update( void )
+{
+}
+unsigned char engine_sample_manager_isPlaying( void )
+{
+	return 0;
+}
+void engine_sample_manager_stop( void )
 {
 }
 
@@ -161,6 +175,20 @@ void engine_sample_manager_play( const void *sample )  __naked __z88dk_fastcall
 		; -- -
 		; 139
 		__endasm;
+}
+
+void engine_sample_manager_update( void ) __naked
+{
+}
+
+unsigned char engine_sample_manager_isPlaying( void )
+{
+	return sm_pcm_playing;
+}
+
+void engine_sample_manager_stop( void )
+{
+	sm_pcm_playing = 0;
 }
 
 #endif

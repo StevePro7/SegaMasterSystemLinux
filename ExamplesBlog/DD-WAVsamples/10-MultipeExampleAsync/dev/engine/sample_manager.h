@@ -18,13 +18,22 @@
 
 #ifdef _CONSOLE
 
-void engine_sample_manager_init( const void *psginit ) /*__z88dk_fastcall*/;
-void engine_sample_manager_play( const void *sample ) /*__z88dk_fastcall*/;
+//void engine_sample_manager_init( const void *psginit ) /*__z88dk_fastcall*/;
+//void engine_sample_manager_play( const void *sample ) /*__z88dk_fastcall*/;
+
+void engine_sample_manager_init( const void *psginit );
+void engine_sample_manager_play( const void *sample );
+void engine_sample_manager_update( void );
+unsigned char engine_sample_manager_isPlaying( void );
+void engine_sample_manager_stop( void );
 
 #else
 
-void engine_sample_manager_init( const void *psginit ) __z88dk_fastcall;
+void engine_sample_manager_init( const void *psginit ) __naked __z88dk_fastcall;
 void engine_sample_manager_play( const void *sample ) __z88dk_fastcall;
+void engine_sample_manager_update( void ) __naked;
+unsigned char engine_sample_manager_isPlaying( void );
+void engine_sample_manager_stop( void );
 
 #endif 
 
