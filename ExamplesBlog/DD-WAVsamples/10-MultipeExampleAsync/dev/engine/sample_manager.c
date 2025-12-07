@@ -2,6 +2,7 @@
 
 #define PCM_RATE 8008   // PCMENC sample rate
 #define FRAME_RATE 60   // VBlank / frames per second
+#define TRIPLETS_PER_FRAME (PCM_RATE / FRAME_RATE) 
 
 static const unsigned char *sm_pcm_ptr = 0;
 static unsigned int sm_pcm_len = 0;
@@ -47,15 +48,12 @@ void engine_sample_manager_play( const void *sample ) __z88dk_fastcall
 {
 	sm_pcm_ptr = ( const unsigned char* ) sample;
 
-	// Two-byte little-endian length at start of sample
+	// Two-byte little-endian length at start of sample (triplet count)
 	sm_pcm_len = sm_pcm_ptr[ 0 ];
 	sm_pcm_len |= ( unsigned int ) sm_pcm_ptr[ 1 ] << 8;
 
 	sm_pcm_ptr += 2;
 	sm_pcm_playing = 1;
-
-	// Reset accumulator
-	pcm_accumulator = 0;
 }
 
 void engine_sample_manager_stop( void )
@@ -150,7 +148,7 @@ void engine_sample_manager_step( void ) __naked
 		; decrement IX
 		dec ix
 		push ix
-		pop  de
+		pop de
 
 		; store sm_pcm_len back
 		ld  hl, #_sm_pcm_len
@@ -172,23 +170,18 @@ void engine_sample_manager_step( void ) __naked
 		ld( #_sm_pcm_playing ), a
 
 		StepDone :
-	; enable interrupts
-		ei
+	ei
 		ret
 		__endasm;
 }
+
 
 void engine_sample_manager_update( void )
 {
 	if( !sm_pcm_playing ) return;
 
-	pcm_accumulator += PCM_RATE;
-
-	while( pcm_accumulator >= FRAME_RATE )
-	{
-		pcm_accumulator -= FRAME_RATE;
+	for( int i = 0; i < TRIPLETS_PER_FRAME; i++ )
 		engine_sample_manager_step();
-	}
 }
 
 
