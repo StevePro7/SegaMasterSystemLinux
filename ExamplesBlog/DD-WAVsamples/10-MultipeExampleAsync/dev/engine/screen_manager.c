@@ -21,41 +21,43 @@ void engine_screen_manager_update()
 {
 	//unsigned char status;
 	unsigned char input;
-	unsigned char index;
+	//unsigned char index;
 
 	if( flag )
 	{
-		engine_font_manager_draw_text( "PLAYING", 4, 12 );
+		//engine_font_manager_draw_text( "PLAYING", 4, 12 );
 		engine_sample_manager_update();
 
-		input = engine_input_manager_hold_up();
-		if( input )
-		{
-			flag = 0;
-			engine_font_manager_draw_data( flag, 4, 11 );
-		}
+		//input = engine_input_manager_hold_up();
+		//if( input )
+		//{
+		//	flag = 0;
+		//	engine_font_manager_draw_data( flag, 4, 11 );
+		//}
 	}
 	else
 	{
 		input = engine_input_manager_hold_fire1();
 		if( input )
 		{
-			flag = 1;
-			engine_font_manager_draw_data( flag, 4, 11 );
+			
 			engine_riff_manager_init();
 			engine_riff_manager_play( 0 );
-		}
-		input = engine_input_manager_hold_fire2();
-		if( input )
-		{
+
 			flag = 1;
 			engine_font_manager_draw_data( flag, 4, 11 );
-			engine_riff_manager_init();
-			for( index = 0; index < 4; index++ )
-			{
-				engine_riff_manager_play( index + 1 );
-			}
 		}
+		//input = engine_input_manager_hold_fire2();
+		//if( input )
+		//{
+		//	flag = 1;
+		//	engine_font_manager_draw_data( flag, 4, 11 );
+		//	engine_riff_manager_init();
+		//	for( index = 0; index < 4; index++ )
+		//	{
+		//		engine_riff_manager_play( index + 1 );
+		//	}
+		//}
 	}
 
 }

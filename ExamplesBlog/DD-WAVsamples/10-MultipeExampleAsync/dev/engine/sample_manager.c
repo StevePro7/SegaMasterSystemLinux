@@ -60,18 +60,12 @@ unsigned char engine_sample_manager_isPlaying( void )
 void engine_sample_manager_update( void ) __naked
 {
 	__asm
-
-	; -------------------------------------- -
-		; Check playing flag
-		; -------------------------------------- -
+	; check playing
 		ld  a, ( #_sm_pcm_playing )
 		or a
 		ret z
 
-		; -------------------------------------- -
-		; Load sm_pcm_ptr → HL
-		; HL = &_sm_pcm_ptr
-		; -------------------------------------- -
+		; load sm_pcm_ptr->HL
 		ld  hl, #_sm_pcm_ptr
 		ld  e, ( hl )
 		inc hl
@@ -79,35 +73,31 @@ void engine_sample_manager_update( void ) __naked
 		ld  h, d
 		ld  l, e; HL = sm_pcm_ptr
 
-		; -------------------------------------- -
-		; Load sm_pcm_len → IX
-		; -------------------------------------- -
-		ld  hl, #_sm_pcm_len
-		ld  e, ( hl )
-		inc hl
-		ld  d, ( hl )
-		push de
-		pop ix; IX = sm_pcm_len
+		; load sm_pcm_len->IX( via DE / push because ld ix, ( sym ) not allowed)
+			ld  hl, #_sm_pcm_len
+			ld  e, ( hl )
+			inc hl
+			ld  d, ( hl )
+			push de
+			pop  ix
 
-		; -------------------------------------- -
-		; One PCMENC fragment
-		; -------------------------------------- -
-		ld   a, ( hl )
-		inc  hl
+			; fetch next byte, increment pointer
+			ld   a, ( hl )
+			inc  hl
 
-		; == = CHANNEL A == =
-		ld   b, a
-		sub  #0x10
-		jr   nc, PsgWaitA
-		ld   a, ( hl )
-		inc  hl
-		ld   b, a
-		and  #0x0f
-		or #0x90
-		LDIYHA
-		PsgWaitA :
+			; == = channel A == =
+			ld   b, a
+			sub  #0x10
+			jr   nc, PsgWaitA
+			ld   a, ( hl )
+			inc  hl
+			ld   b, a
+			and  #0x0f
+			or #0x90
+			LDIYHA
+			PsgWaitA :
 
-	; == = CHANNEL B == =
+	; == = channel B == =
 		ld   d, a
 		sub  #0x10
 		jr   nc, PsgWaitB
@@ -119,7 +109,7 @@ void engine_sample_manager_update( void ) __naked
 		LDIYLA
 		PsgWaitB :
 
-	; == = CHANNEL C == =
+	; == = channel C == =
 		ld   e, a
 		sub  #0x10
 		jr   nc, PsgWaitC
@@ -133,7 +123,7 @@ void engine_sample_manager_update( void ) __naked
 
 	push de
 		LDDIYH
-		LDDIYL
+		LDEIYL
 		ld a, c
 		push bc
 		ld c, #0x7f
@@ -143,39 +133,32 @@ void engine_sample_manager_update( void ) __naked
 		pop bc
 		pop de
 
-		; -------------------------------------- -
-		; Decrement IX = length
-		; -------------------------------------- -
+		; decrement IX
 		dec ix
 		push ix
 		pop  de
 
+		; store sm_pcm_len back
 		ld  hl, #_sm_pcm_len
 		ld( hl ), e
 		inc hl
 		ld( hl ), d
 
-		; -------------------------------------- -
-		; Store updated pointer
-		; -------------------------------------- -
+		; store sm_pcm_ptr back( HL currently points after consumed bytes )
 		ld  hl, #_sm_pcm_ptr
 		ld( hl ), l
 		inc hl
 		ld( hl ), h
 
-		; -------------------------------------- -
-		; Stop if length == 0
-		; -------------------------------------- -
+		; if IX != 0 continue else stop
 		ld a, d
 		or e
-		jr nz, UpdateDone
-
+		jr nz, Done
 		xor a
 		ld( #_sm_pcm_playing ), a
 
-		UpdateDone :
+		Done :
 	ret
-
 		__endasm;
 }
 
