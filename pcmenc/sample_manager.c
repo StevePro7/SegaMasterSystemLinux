@@ -14,31 +14,31 @@ static unsigned char sm_pcm_playing = 0;
 // Init PSG (your original implementation unchanged)
 // ---------------------------------------------------------------------
 void engine_sample_manager_init(const void *psginit) __naked __z88dk_fastcall
-        {
-                (void)psginit;
-        __asm
+{
+    (void)psginit;
+
+    __asm
 
         ld bc,#0x0b7f
         otir
         ret
 
-        __endasm;
-        }
+    __endasm;
+}
 
 // ---------------------------------------------------------------------
 // Start sample (non-blocking)
 // ---------------------------------------------------------------------
 void engine_sample_manager_play(const void *sample) __z88dk_fastcall
 {
-sm_pcm_ptr = (const unsigned char*)sample;
+    sm_pcm_ptr = (const unsigned char*)sample;
 
-// IX length: 2 bytes little endian at start of sample
-sm_pcm_len  = sm_pcm_ptr[0];
-sm_pcm_len |= (unsigned int)sm_pcm_ptr[1] << 8;
+    // IX length: 2 bytes little endian at start of sample
+    sm_pcm_len  = sm_pcm_ptr[0];
+    sm_pcm_len |= (unsigned int)sm_pcm_ptr[1] << 8;
 
-sm_pcm_ptr += 2;
-
-sm_pcm_playing = 1;
+    sm_pcm_ptr += 2;
+    sm_pcm_playing = 1;
 }
 
 // ---------------------------------------------------------------------
@@ -64,94 +64,94 @@ void engine_sample_manager_update(void) __naked
 {
 __asm
 
-; Check if playing
-ld   a,(_sm_pcm_playing)
-or   a
-ret  z
+    ; Check if playing
+    ld   a,(_sm_pcm_playing)
+    or   a
+    ret  z
 
-; Load pointer and length
-ld   hl,(_sm_pcm_ptr)
-ld   ix,(_sm_pcm_len)
+    ; Load pointer and length
+    ld   hl,(_sm_pcm_ptr)
+    ld   ix,(_sm_pcm_len)
 
-; --- BEGIN PCMENC PER-FRAME WORK (trimmed from your blocking loop) ---
+    ; --- BEGIN PCMENC PER-FRAME WORK (trimmed from your blocking loop) ---
 
-; Read next data nibble
-ld   a,(hl)
-inc  hl
+    ; Read next data nibble
+    ld   a,(hl)
+    inc  hl
 
-; Your PCMENC logic: update volumes and emit 3 PSG writes
-; (this preserves your existing logic and timing structure)
+    ; Your PCMENC logic: update volumes and emit 3 PSG writes
+    ; (this preserves your existing logic and timing structure)
 
-; ---------- CHANNEL A ----------
-ld   b,a
-sub  #0x10
-jr   nc, PsgWaitA
-ld   a,(hl)
-inc  hl
-ld   b,a
-and  #0x0f
-or   #0x90
-LDIYHA
+    ; ---------- CHANNEL A ----------
+    ld   b,a
+    sub  #0x10
+    jr   nc, PsgWaitA
+    ld   a,(hl)
+    inc  hl
+    ld   b,a
+    and  #0x0f
+    or   #0x90
+    LDIYHA
 PsgWaitA:
 
-; ---------- CHANNEL B ----------
-ld   d,a
-sub  #0x10
-jr   nc, PsgWaitB
-ld   a,(hl)
-inc  hl
-ld   d,a
-and  #0x0f
-or   #0xb0
-LDIYLA
+    ; ---------- CHANNEL B ----------
+    ld   d,a
+    sub  #0x10
+    jr   nc, PsgWaitB
+    ld   a,(hl)
+    inc  hl
+    ld   d,a
+    and  #0x0f
+    or   #0xb0
+    LDIYLA
 PsgWaitB:
 
-; ---------- CHANNEL C ----------
-ld   e,a
-sub  #0x10
-jr   nc, PsgWaitC
-ld   a,(hl)
-inc  hl
-ld   e,a
-and  #0x0f
-or   #0xd0
-ld   c,a
+    ; ---------- CHANNEL C ----------
+    ld   e,a
+    sub  #0x10
+    jr   nc, PsgWaitC
+    ld   a,(hl)
+    inc  hl
+    ld   e,a
+    and  #0x0f
+    or   #0xd0
+    ld   c,a
 PsgWaitC:
 
-push de
-LDDIYH
-LDEIYL
-ld a,c
-push bc
-ld c,#0x7f
+    push de
+    LDDIYH
+    LDEIYL
+    ld a,c
+    push bc
+    ld c,#0x7f
 
-out (c),d
-out (c),e
-out (c),a
+    out (c),d
+    out (c),e
+    out (c),a
 
-pop bc
-pop de
+    pop bc
+    pop de
 
-; --- END PCMENC PER-FRAME WORK ---
+    ; --- END PCMENC PER-FRAME WORK ---
 
-; Update state
-dec ix
-ld (_sm_pcm_len),ix
+    ; Update state
+    dec ix
+    ld (_sm_pcm_len),ix
 
-ld (_sm_pcm_ptr),hl
+    ld (_sm_pcm_ptr),hl
 
-ld a,ixh
-or ixl
-jr nz, done
+    ld a,ixh
+    or ixl
+    jr nz, done
 
-; length = 0 → stop
-        xor a
-        ld (_sm_pcm_playing),a
+    ; length = 0 → stop
+    xor a
+    ld (_sm_pcm_playing),a
 
 done:
-ret
+    ret
 
-        __endasm;
+__endasm;
 }
 
 #else
