@@ -23,6 +23,7 @@ void engine_screen_manager_update()
 	unsigned char input;
 	//unsigned char index;
 
+	engine_sample_manager_update();
 	if( flag )
 	{
 		//engine_font_manager_draw_text( "PLAYING", 4, 12 );

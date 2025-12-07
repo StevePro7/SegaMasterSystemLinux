@@ -19,7 +19,7 @@ cd engine
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 content_manager.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 font_manager.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 input_manager.c
-::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 riff_manager.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 riff_manager.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 sample_manager.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 screen_manager.c
 cd ..

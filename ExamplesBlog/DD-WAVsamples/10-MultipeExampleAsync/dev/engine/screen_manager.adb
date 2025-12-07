@@ -1,7 +1,7 @@
 M:screen_manager
 F:G$engine_screen_manager_init$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_screen_manager_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lscreen_manager.engine_screen_manager_update$input$1_0$26({1}SC:U),R,0,0,[a]
+S:Lscreen_manager.engine_screen_manager_update$input$1_0$27({1}SC:U),R,0,0,[a]
 S:Fscreen_manager$flag$0_0$0({1}SC:U),E,0,0
 S:G$engine_audio_manager_sfx_play$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_font_manager_draw_char$0_0$0({2}DF,SV:S),C,0,0
@@ -25,6 +25,7 @@ S:G$engine_riff_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_riff_manager_play$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_sample_manager_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_sample_manager_play$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_sample_manager_step$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_sample_manager_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_sample_manager_isPlaying$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_sample_manager_stop$0_0$0({2}DF,SV:S),C,0,0
