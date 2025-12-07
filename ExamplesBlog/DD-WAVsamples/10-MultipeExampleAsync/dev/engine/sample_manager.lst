@@ -1,0 +1,330 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 4.1.0 #12072 (MINGW64)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module sample_manager
+                                      6 	.optsdcc -mz80
+                                      7 	
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl _engine_sample_manager_init
+                                     12 	.globl _engine_sample_manager_play
+                                     13 	.globl _engine_sample_manager_stop
+                                     14 	.globl _engine_sample_manager_isPlaying
+                                     15 	.globl _engine_sample_manager_step
+                                     16 ;--------------------------------------------------------
+                                     17 ; special function registers
+                                     18 ;--------------------------------------------------------
+                                     19 ;--------------------------------------------------------
+                                     20 ; ram data
+                                     21 ;--------------------------------------------------------
+                                     22 	.area _DATA
+                                     23 ;--------------------------------------------------------
+                                     24 ; ram data
+                                     25 ;--------------------------------------------------------
+                                     26 	.area _INITIALIZED
+                           000000    27 Fsample_manager$sm_pcm_ptr$0_0$0==.
+      000000                         28 _sm_pcm_ptr:
+      000000                         29 	.ds 2
+                           000002    30 Fsample_manager$sm_pcm_len$0_0$0==.
+      000002                         31 _sm_pcm_len:
+      000002                         32 	.ds 2
+                           000004    33 Fsample_manager$sm_pcm_playing$0_0$0==.
+      000004                         34 _sm_pcm_playing:
+      000004                         35 	.ds 1
+                                     36 ;--------------------------------------------------------
+                                     37 ; absolute external ram data
+                                     38 ;--------------------------------------------------------
+                                     39 	.area _DABS (ABS)
+                                     40 ;--------------------------------------------------------
+                                     41 ; global & static initialisations
+                                     42 ;--------------------------------------------------------
+                                     43 	.area _HOME
+                                     44 	.area _GSINIT
+                                     45 	.area _GSFINAL
+                                     46 	.area _GSINIT
+                                     47 ;--------------------------------------------------------
+                                     48 ; Home
+                                     49 ;--------------------------------------------------------
+                                     50 	.area _HOME
+                                     51 	.area _HOME
+                                     52 ;--------------------------------------------------------
+                                     53 ; code
+                                     54 ;--------------------------------------------------------
+                                     55 	.area _CODE
+                           000000    56 	G$engine_sample_manager_init$0$0	= .
+                                     57 	.globl	G$engine_sample_manager_init$0$0
+                           000000    58 	C$sample_manager.c$32$0_0$8	= .
+                                     59 	.globl	C$sample_manager.c$32$0_0$8
+                                     60 ;sample_manager.c:32: void engine_sample_manager_init( const void *psginit ) __naked __z88dk_fastcall
+                                     61 ;	---------------------------------
+                                     62 ; Function engine_sample_manager_init
+                                     63 ; ---------------------------------
+      000000                         64 _engine_sample_manager_init::
+                           000000    65 	C$sample_manager.c$39$1_0$8	= .
+                                     66 	.globl	C$sample_manager.c$39$1_0$8
+                                     67 ;sample_manager.c:39: __endasm;
+      000000 01 7F 0B         [10]   68 	ld	bc, #0x0b7f
+      000003 ED B3            [21]   69 	otir
+      000005 C9               [10]   70 	ret
+                           000006    71 	C$sample_manager.c$40$1_0$8	= .
+                                     72 	.globl	C$sample_manager.c$40$1_0$8
+                                     73 ;sample_manager.c:40: }
+                           000006    74 	G$engine_sample_manager_play$0$0	= .
+                                     75 	.globl	G$engine_sample_manager_play$0$0
+                           000006    76 	C$sample_manager.c$42$1_0$10	= .
+                                     77 	.globl	C$sample_manager.c$42$1_0$10
+                                     78 ;sample_manager.c:42: void engine_sample_manager_play( const void *sample )
+                                     79 ;	---------------------------------
+                                     80 ; Function engine_sample_manager_play
+                                     81 ; ---------------------------------
+      000006                         82 _engine_sample_manager_play::
+                           000006    83 	C$sample_manager.c$44$1_0$10	= .
+                                     84 	.globl	C$sample_manager.c$44$1_0$10
+                                     85 ;sample_manager.c:44: sm_pcm_ptr = ( const unsigned char* ) sample;
+      000006 FD 21 02 00      [14]   86 	ld	iy, #2
+      00000A FD 39            [15]   87 	add	iy, sp
+      00000C FD 7E 00         [19]   88 	ld	a, 0 (iy)
+      00000F 32r00r00         [13]   89 	ld	(_sm_pcm_ptr+0), a
+      000012 FD 7E 01         [19]   90 	ld	a, 1 (iy)
+      000015 32r01r00         [13]   91 	ld	(_sm_pcm_ptr+1), a
+                           000018    92 	C$sample_manager.c$45$1_0$10	= .
+                                     93 	.globl	C$sample_manager.c$45$1_0$10
+                                     94 ;sample_manager.c:45: sm_pcm_len = sm_pcm_ptr[ 0 ] | ( ( unsigned int ) sm_pcm_ptr[ 1 ] << 8 );
+      000018 2Ar00r00         [16]   95 	ld	hl, (_sm_pcm_ptr)
+      00001B 5E               [ 7]   96 	ld	e, (hl)
+      00001C 2Ar00r00         [16]   97 	ld	hl, (_sm_pcm_ptr)
+      00001F 23               [ 6]   98 	inc	hl
+      000020 4E               [ 7]   99 	ld	c, (hl)
+      000021 3E 00            [ 7]  100 	ld	a, #0x00
+      000023 06 00            [ 7]  101 	ld	b, #0x00
+      000025 B3               [ 4]  102 	or	a, e
+      000026 32r02r00         [13]  103 	ld	(_sm_pcm_len+0), a
+      000029 79               [ 4]  104 	ld	a, c
+      00002A B0               [ 4]  105 	or	a, b
+      00002B 32r03r00         [13]  106 	ld	(_sm_pcm_len+1), a
+                           00002E   107 	C$sample_manager.c$46$1_0$10	= .
+                                    108 	.globl	C$sample_manager.c$46$1_0$10
+                                    109 ;sample_manager.c:46: sm_pcm_ptr += 2;
+      00002E 2Ar00r00         [16]  110 	ld	hl, (_sm_pcm_ptr)
+      000031 23               [ 6]  111 	inc	hl
+      000032 23               [ 6]  112 	inc	hl
+      000033 22r00r00         [16]  113 	ld	(_sm_pcm_ptr), hl
+                           000036   114 	C$sample_manager.c$47$1_0$10	= .
+                                    115 	.globl	C$sample_manager.c$47$1_0$10
+                                    116 ;sample_manager.c:47: sm_pcm_playing = 1;
+      000036 3E 01            [ 7]  117 	ld	a, #0x01
+      000038 32r04r00         [13]  118 	ld	(#_sm_pcm_playing), a
+                           00003B   119 	C$sample_manager.c$48$1_0$10	= .
+                                    120 	.globl	C$sample_manager.c$48$1_0$10
+                                    121 ;sample_manager.c:48: }
+                           00003B   122 	C$sample_manager.c$48$1_0$10	= .
+                                    123 	.globl	C$sample_manager.c$48$1_0$10
+                           00003B   124 	XG$engine_sample_manager_play$0$0	= .
+                                    125 	.globl	XG$engine_sample_manager_play$0$0
+      00003B C9               [10]  126 	ret
+                           00003C   127 	G$engine_sample_manager_stop$0$0	= .
+                                    128 	.globl	G$engine_sample_manager_stop$0$0
+                           00003C   129 	C$sample_manager.c$50$1_0$12	= .
+                                    130 	.globl	C$sample_manager.c$50$1_0$12
+                                    131 ;sample_manager.c:50: void engine_sample_manager_stop( void )
+                                    132 ;	---------------------------------
+                                    133 ; Function engine_sample_manager_stop
+                                    134 ; ---------------------------------
+      00003C                        135 _engine_sample_manager_stop::
+                           00003C   136 	C$sample_manager.c$52$1_0$12	= .
+                                    137 	.globl	C$sample_manager.c$52$1_0$12
+                                    138 ;sample_manager.c:52: sm_pcm_playing = 0;
+      00003C 3E 00            [ 7]  139 	ld	a, #0x00
+      00003E 32r04r00         [13]  140 	ld	(#_sm_pcm_playing), a
+                           000041   141 	C$sample_manager.c$53$1_0$12	= .
+                                    142 	.globl	C$sample_manager.c$53$1_0$12
+                                    143 ;sample_manager.c:53: }
+                           000041   144 	C$sample_manager.c$53$1_0$12	= .
+                                    145 	.globl	C$sample_manager.c$53$1_0$12
+                           000041   146 	XG$engine_sample_manager_stop$0$0	= .
+                                    147 	.globl	XG$engine_sample_manager_stop$0$0
+      000041 C9               [10]  148 	ret
+                           000042   149 	G$engine_sample_manager_isPlaying$0$0	= .
+                                    150 	.globl	G$engine_sample_manager_isPlaying$0$0
+                           000042   151 	C$sample_manager.c$55$1_0$14	= .
+                                    152 	.globl	C$sample_manager.c$55$1_0$14
+                                    153 ;sample_manager.c:55: unsigned char engine_sample_manager_isPlaying( void )
+                                    154 ;	---------------------------------
+                                    155 ; Function engine_sample_manager_isPlaying
+                                    156 ; ---------------------------------
+      000042                        157 _engine_sample_manager_isPlaying::
+                           000042   158 	C$sample_manager.c$57$1_0$14	= .
+                                    159 	.globl	C$sample_manager.c$57$1_0$14
+                                    160 ;sample_manager.c:57: return sm_pcm_playing;
+      000042 3Ar04r00         [13]  161 	ld	a, (#_sm_pcm_playing + 0)
+      000045 6F               [ 4]  162 	ld	l, a
+                           000046   163 	C$sample_manager.c$58$1_0$14	= .
+                                    164 	.globl	C$sample_manager.c$58$1_0$14
+                                    165 ;sample_manager.c:58: }
+                           000046   166 	C$sample_manager.c$58$1_0$14	= .
+                                    167 	.globl	C$sample_manager.c$58$1_0$14
+                           000046   168 	XG$engine_sample_manager_isPlaying$0$0	= .
+                                    169 	.globl	XG$engine_sample_manager_isPlaying$0$0
+      000046 C9               [10]  170 	ret
+                           000047   171 	G$engine_sample_manager_step$0$0	= .
+                                    172 	.globl	G$engine_sample_manager_step$0$0
+                           000047   173 	C$sample_manager.c$63$1_0$16	= .
+                                    174 	.globl	C$sample_manager.c$63$1_0$16
+                                    175 ;sample_manager.c:63: void engine_sample_manager_step( void )
+                                    176 ;	---------------------------------
+                                    177 ; Function engine_sample_manager_step
+                                    178 ; ---------------------------------
+      000047                        179 _engine_sample_manager_step::
+                           000047   180 	C$sample_manager.c$65$1_0$16	= .
+                                    181 	.globl	C$sample_manager.c$65$1_0$16
+                                    182 ;sample_manager.c:65: if( !sm_pcm_playing ) return;
+      000047 FD 21r04r00      [14]  183 	ld	iy, #_sm_pcm_playing
+      00004B FD 7E 00         [19]  184 	ld	a, 0 (iy)
+      00004E B7               [ 4]  185 	or	a, a
+      00004F CArEBr00         [10]  186 	jp	Z,00103$
+                           000052   187 	C$sample_manager.c$68$1_1$17	= .
+                                    188 	.globl	C$sample_manager.c$68$1_1$17
+                                    189 ;sample_manager.c:68: unsigned char hl_l = ( unsigned int ) sm_pcm_ptr & 0xFF;
+      000052 3Ar00r00         [13]  190 	ld	a, (#_sm_pcm_ptr + 0)
+      000055 4F               [ 4]  191 	ld	c, a
+                           000056   192 	C$sample_manager.c$69$1_1$17	= .
+                                    193 	.globl	C$sample_manager.c$69$1_1$17
+                                    194 ;sample_manager.c:69: unsigned char hl_h = ( ( unsigned int ) sm_pcm_ptr >> 8 ) & 0xFF;
+      000056 2Ar00r00         [16]  195 	ld	hl, (_sm_pcm_ptr)
+      000059 DD 74 FF         [19]  196 	ld	-1 (ix), h
+                           00005C   197 	C$sample_manager.c$70$1_1$16	= .
+                                    198 	.globl	C$sample_manager.c$70$1_1$16
+                                    199 ;sample_manager.c:70: unsigned char ix_l = sm_pcm_len & 0xFF;
+      00005C FD 21r02r00      [14]  200 	ld	iy, #_sm_pcm_len
+      000060 FD 5E 00         [19]  201 	ld	e, 0 (iy)
+                           000063   202 	C$sample_manager.c$71$1_1$17	= .
+                                    203 	.globl	C$sample_manager.c$71$1_1$17
+                                    204 ;sample_manager.c:71: unsigned char ix_h = sm_pcm_len >> 8;
+      000063 FD 6E 01         [19]  205 	ld	l, 1 (iy)
+      000066 06 00            [ 7]  206 	ld	b, #0x00
+      000068 7D               [ 4]  207 	ld	a, l
+                           000069   208 	C$sample_manager.c$163$1_1$17	= .
+                                    209 	.globl	C$sample_manager.c$163$1_1$17
+                                    210 ;sample_manager.c:163: __endasm;
+      000069 F3               [ 4]  211 	di
+                                    212 ;	Load HL from locals
+      00006A 3Ar00r00         [13]  213 	ld	a, ( _hl_l )
+      00006D 6F               [ 4]  214 	ld	l, a
+      00006E 3Ar00r00         [13]  215 	ld	a, ( _hl_h )
+      000071 67               [ 4]  216 	ld	h, a
+                                    217 ;	Load IX from locals
+      000072 3Ar00r00         [13]  218 	ld	a, ( _ix_l )
+a     000075                  [13]  219 	ld	ixl, a
+      000075 3Ar00r00         [13]  220 	ld	a, ( _ix_h )
+a     000078                  [13]  221 	ld	ixh, a
+                                    222 ;	-- - PCMENC triplet loop-- -
+      000078 7E               [ 7]  223 	ld	a, ( hl )
+      000079 23               [ 6]  224 	inc	hl
+      00007A 47               [ 4]  225 	ld	b, a
+                                    226 ;	CHANNEL A
+      00007B D6 10            [ 7]  227 	sub	#0x10
+q     00007D 30p01            [12]  228 	jr	nc, 1f
+      00007F 7E               [ 7]  229 	ld	a, ( hl )
+      000080 23               [ 6]  230 	inc	hl
+      000081 47               [ 4]  231 	ld	b, a
+      000082 E6 0F            [ 7]  232 	and	#0x0f
+      000084 F6 90            [ 7]  233 	or	#0x90
+      000086 FD 67                  234 	.dw	#0x67FD
+q                                   235 	  1:
+                                    236 ;	CHANNEL B
+      000088 57               [ 4]  237 	ld	d, a
+      000089 D6 10            [ 7]  238 	sub	#0x10
+q     00008B 30p02            [12]  239 	jr	nc, 2f
+      00008D 7E               [ 7]  240 	ld	a, ( hl )
+      00008E 23               [ 6]  241 	inc	hl
+      00008F 57               [ 4]  242 	ld	d, a
+      000090 E6 0F            [ 7]  243 	and	#0x0f
+      000092 F6 B0            [ 7]  244 	or	#0xb0
+      000094 FD 6F                  245 	.dw	#0x6FFD
+q                                   246 	  2:
+                                    247 ;	CHANNEL C
+      000096 5F               [ 4]  248 	ld	e, a
+      000097 D6 10            [ 7]  249 	sub	#0x10
+q     000099 30p03            [12]  250 	jr	nc, 3f
+      00009B 7E               [ 7]  251 	ld	a, ( hl )
+      00009C 23               [ 6]  252 	inc	hl
+      00009D 5F               [ 4]  253 	ld	e, a
+      00009E E6 0F            [ 7]  254 	and	#0x0f
+      0000A0 F6 D0            [ 7]  255 	or	#0xd0
+      0000A2 4F               [ 4]  256 	ld	c, a
+q                                   257 	  3:
+                                    258 ;	PSG output
+      0000A3 D5               [11]  259 	push	de
+      0000A4 FD 54                  260 	.dw	#0x54FD
+      0000A6 FD 5D                  261 	.dw	#0x5DFD
+      0000A8 79               [ 4]  262 	ld	a, c
+      0000A9 C5               [11]  263 	push	bc
+      0000AA 0E 7F            [ 7]  264 	ld	c, #0x7f
+      0000AC ED 51            [12]  265 	out(	c ), d
+      0000AE ED 59            [12]  266 	out(	c ), e
+      0000B0 ED 79            [12]  267 	out(	c ), a
+      0000B2 C1               [10]  268 	pop	bc
+      0000B3 D1               [10]  269 	pop	de
+                                    270 ;	Write back HL to locals
+      0000B4 7D               [ 4]  271 	ld	a, l
+      0000B5 32r00r00         [13]  272 	ld(	_hl_l ), a
+      0000B8 7C               [ 4]  273 	ld	a, h
+      0000B9 32r00r00         [13]  274 	ld(	_hl_h ), a
+                                    275 ;	Decrement IX
+      0000BC DD 2B            [10]  276 	dec	ix
+a     0000BE                  [10]  277 	ld	a, ixl
+      0000BE 32r00r00         [13]  278 	ld(	_ix_l ), a
+a     0000C1                  [13]  279 	ld	a, ixh
+      0000C1 32r00r00         [13]  280 	ld(	_ix_h ), a
+                                    281 ;	Stop playback if IX = 0
+a     0000C4                  [13]  282 	ld	a, ixh
+a     0000C4                  [13]  283 	or	ixl
+q     0000C4 20p04            [12]  284 	jr	nz, 4f
+      0000C6 AF               [ 4]  285 	xor	a
+      0000C7 32r04r00         [13]  286 	ld(	_sm_pcm_playing ), a
+q                                   287 	  4:
+      0000CA FB               [ 4]  288 	ei
+                           0000CB   289 	C$sample_manager.c$166$1_1$17	= .
+                                    290 	.globl	C$sample_manager.c$166$1_1$17
+                                    291 ;sample_manager.c:166: sm_pcm_ptr = ( const unsigned char* ) ( ( ( unsigned int ) hl_h << 8 ) | hl_l );
+      0000CB DD 66 FF         [19]  292 	ld	h, -1 (ix)
+      0000CE 2E 00            [ 7]  293 	ld	l, #0x00
+      0000D0 06 00            [ 7]  294 	ld	b, #0x00
+      0000D2 F5               [11]  295 	push	af
+      0000D3 7D               [ 4]  296 	ld	a, l
+      0000D4 B1               [ 4]  297 	or	a, c
+      0000D5 6F               [ 4]  298 	ld	l, a
+      0000D6 7C               [ 4]  299 	ld	a, h
+      0000D7 B0               [ 4]  300 	or	a, b
+      0000D8 67               [ 4]  301 	ld	h, a
+      0000D9 F1               [10]  302 	pop	af
+      0000DA 22r00r00         [16]  303 	ld	(_sm_pcm_ptr), hl
+                           0000DD   304 	C$sample_manager.c$167$1_1$17	= .
+                                    305 	.globl	C$sample_manager.c$167$1_1$17
+                                    306 ;sample_manager.c:167: sm_pcm_len = ( ( unsigned int ) ix_h << 8 ) | ix_l;
+      0000DD 4F               [ 4]  307 	ld	c, a
+      0000DE 3E 00            [ 7]  308 	ld	a, #0x00
+      0000E0 06 00            [ 7]  309 	ld	b, #0x00
+      0000E2 B3               [ 4]  310 	or	a, e
+      0000E3 32r02r00         [13]  311 	ld	(_sm_pcm_len+0), a
+      0000E6 79               [ 4]  312 	ld	a, c
+      0000E7 B0               [ 4]  313 	or	a, b
+      0000E8 32r03r00         [13]  314 	ld	(_sm_pcm_len+1), a
+      0000EB                        315 00103$:
+                           0000EB   316 	C$sample_manager.c$168$1_1$16	= .
+                                    317 	.globl	C$sample_manager.c$168$1_1$16
+                                    318 ;sample_manager.c:168: }
+                                    319 	.area _CODE
+                                    320 	.area _INITIALIZER
+                           000000   321 Fsample_manager$__xinit_sm_pcm_ptr$0_0$0 == .
+      000000                        322 __xinit__sm_pcm_ptr:
+      000000 00 00                  323 	.dw #0x0000
+                           000002   324 Fsample_manager$__xinit_sm_pcm_len$0_0$0 == .
+      000002                        325 __xinit__sm_pcm_len:
+      000002 00 00                  326 	.dw #0x0000
+                           000004   327 Fsample_manager$__xinit_sm_pcm_playing$0_0$0 == .
+      000004                        328 __xinit__sm_pcm_playing:
+      000004 00                     329 	.db #0x00	; 0
+                                    330 	.area _CABS (ABS)

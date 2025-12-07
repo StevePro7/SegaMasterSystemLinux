@@ -1,6 +1,6 @@
 ;!FILE screen_manager.asm
 XL3
-H 9 areas 5D global symbols
+H 9 areas 5B global symbols
 M screen_manager
 O -mz80
 S _engine_sample_manager_update Ref000000
@@ -10,7 +10,7 @@ S .__.ABS. Def000000
 S _engine_riff_manager_init Ref000000
 S _engine_riff_manager_play Ref000000
 S _engine_font_manager_draw_data Ref000000
-A _CODE size BC flags 0 addr 0
+A _CODE size B6 flags 0 addr 0
 S Fscreen_manager$__str_0$0_0$0 Def00003D
 S _engine_screen_manager_init Def000000
 S Fscreen_manager$__str_1$0_0$0 Def000057
@@ -25,35 +25,34 @@ S A$screen_manager$103 Def000032
 S A$screen_manager$104 Def000035
 S A$screen_manager$141 Def00008B
 S A$screen_manager$105 Def000036
-S A$screen_manager$160 Def00009D
-S A$screen_manager$151 Def000096
+S A$screen_manager$151 Def000093
 S A$screen_manager$106 Def000037
-S A$screen_manager$170 Def0000A3
-S A$screen_manager$161 Def00009E
+S A$screen_manager$161 Def000099
+S A$screen_manager$152 Def000096
 S A$screen_manager$116 Def00003C
 S A$screen_manager$107 Def00003A
-S A$screen_manager$171 Def0000A4
+S A$screen_manager$180 Def0000AC
 S A$screen_manager$108 Def00003B
-S XG$engine_screen_manager_update$0$0 Def0000BB
-S A$screen_manager$172 Def0000A5
+S XG$engine_screen_manager_update$0$0 Def0000B5
+S A$screen_manager$181 Def0000AF
 S A$screen_manager$145 Def00008E
-S A$screen_manager$182 Def0000AE
-S A$screen_manager$173 Def0000A8
-S A$screen_manager$155 Def000099
-S A$screen_manager$146 Def000092
-S A$screen_manager$183 Def0000B1
-S A$screen_manager$165 Def00009F
-S A$screen_manager$156 Def00009C
-S A$screen_manager$147 Def000095
-S A$screen_manager$184 Def0000B2
-S A$screen_manager$185 Def0000B5
-S A$screen_manager$186 Def0000B6
-S A$screen_manager$177 Def0000A9
-S A$screen_manager$196 Def0000BB
-S A$screen_manager$187 Def0000B9
-S A$screen_manager$178 Def0000AC
+S A$screen_manager$182 Def0000B0
+S A$screen_manager$173 Def0000A3
+S A$screen_manager$146 Def000091
+S A$screen_manager$192 Def0000B5
+S A$screen_manager$183 Def0000B3
+S A$screen_manager$174 Def0000A6
+S A$screen_manager$165 Def00009C
+S A$screen_manager$156 Def000097
+S A$screen_manager$147 Def000092
+S A$screen_manager$184 Def0000B4
+S A$screen_manager$166 Def00009D
+S A$screen_manager$157 Def000098
+S A$screen_manager$167 Def00009E
+S A$screen_manager$168 Def00009F
+S A$screen_manager$178 Def0000A8
 S A$screen_manager$169 Def0000A2
-S A$screen_manager$188 Def0000BA
+S A$screen_manager$179 Def0000AB
 S C$screen_manager.c$11$0_0$26 Def000000
 S C$screen_manager.c$20$1_0$27 Def00008B
 S A$screen_manager$70 Def000005
@@ -64,13 +63,12 @@ S C$screen_manager.c$14$1_0$26 Def000005
 S A$screen_manager$90 Def00001F
 S A$screen_manager$81 Def000015
 S A$screen_manager$72 Def000009
-S C$screen_manager.c$45$3_0$30 Def00009F
-S C$screen_manager.c$30$2_0$28 Def000096
+S C$screen_manager.c$45$3_0$30 Def000099
 S C$screen_manager.c$15$1_0$26 Def000012
 S A$screen_manager$91 Def000022
 S A$screen_manager$82 Def000016
 S A$screen_manager$73 Def00000C
-S C$screen_manager.c$46$3_0$30 Def0000A2
+S C$screen_manager.c$46$3_0$30 Def00009C
 S C$screen_manager.c$16$1_0$26 Def00001F
 S A$screen_manager$92 Def000023
 S A$screen_manager$83 Def000019
@@ -81,19 +79,19 @@ S A$screen_manager$93 Def000026
 S A$screen_manager$84 Def00001A
 S A$screen_manager$75 Def000010
 S A$screen_manager$66 Def000003
-S C$screen_manager.c$48$3_0$30 Def0000A9
-S C$screen_manager.c$41$2_0$29 Def000099
+S C$screen_manager.c$48$3_0$30 Def0000A3
+S C$screen_manager.c$41$2_0$29 Def000093
 S C$screen_manager.c$26$1_0$27 Def00008B
 S C$screen_manager.c$18$1_0$26 Def00003C
 S A$screen_manager$94 Def000027
 S A$screen_manager$85 Def00001D
 S A$screen_manager$76 Def000011
-S C$screen_manager.c$49$3_0$30 Def0000AE
-S C$screen_manager.c$42$2_0$29 Def00009D
+S C$screen_manager.c$49$3_0$30 Def0000A8
+S C$screen_manager.c$42$2_0$29 Def000097
 S C$screen_manager.c$27$1_0$27 Def00008E
 S A$screen_manager$95 Def00002A
 S A$screen_manager$86 Def00001E
-S C$screen_manager.c$64$1_0$27 Def0000BB
+S C$screen_manager.c$64$1_0$27 Def0000B5
 S A$screen_manager$96 Def00002B
 S G$engine_screen_manager_init$0$0 Def000000
 A _DATA size 1 flags 0 addr 0
@@ -141,11 +139,11 @@ T 7E 00 00 20 50 4C 41 59 20 53 41 4D 50 4C 45 00
 R 00 00 00 00
 T 8B 00 00
 R 00 00 00 00
-T 8B 00 00 CD 00 00 FD 21 00 00 FD 7E 00 B7 C2
-R 00 00 00 00 02 04 00 00 00 08 01 00
-T 97 00 00 00 00 CD 00 00 7D B7 C8 CD 00 00 AF F5
-R 00 00 00 00 02 03 00 00 02 06 02 00 02 0C 04 00
-T A4 00 00 33 CD 00 00 33 21 00 00 36 01 11 04 0B
-R 00 00 00 00 02 05 05 00 00 09 01 00
-T B1 00 00 D5 21 01 00 E5 CD 00 00 F1 F1 C9
-R 00 00 00 00 02 09 06 00
+T 8B 00 00 CD 00 00 3A 00 00 B7 C0 CD 00 00 7D B7
+R 00 00 00 00 02 04 00 00 00 07 01 00 02 0C 02 00
+T 98 00 00 C8 CD 00 00 AF F5 33 CD 00 00 33 21
+R 00 00 00 00 02 05 04 00 02 0B 05 00
+T A4 00 00 00 00 36 01 11 04 0B D5 21 01 00 E5 CD
+R 00 00 00 00 00 03 01 00
+T B1 00 00 00 00 F1 F1 C9
+R 00 00 00 00 02 03 06 00

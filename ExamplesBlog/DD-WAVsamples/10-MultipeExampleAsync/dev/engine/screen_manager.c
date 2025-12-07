@@ -27,7 +27,7 @@ void engine_screen_manager_update()
 	if( flag )
 	{
 		//engine_font_manager_draw_text( "PLAYING", 4, 12 );
-		engine_sample_manager_update();
+		//engine_sample_manager_update();
 
 		//input = engine_input_manager_hold_up();
 		//if( input )
