@@ -1,0 +1,53 @@
+Game Boy Advance
+10-Dec-2025
+
+Zero Suits Samus
+https://romhack.ing/database/content/entry/ImxhRm-QSimQ4T_yTGkSWw
+
+mGBA
+https://mgba.io/downloads.html
+
+Windows
+https://github.com/mgba-emu/mgba/releases/download/0.10.5/mGBA-0.10.5-win64-installer.exe
+
+
+Ubuntu (64-bit, 20.04)
+mGBA-0.10.5-ubuntu64-focal.tar.xz
+
+cd ~/Downloads
+tar -xf mgba-mGBA-0.10.5-ubuntu64-focal.tar.xz
+
+Package libmgba is not installed.
+sudo apt install build-essential cmake qtbase5-dev libsdl2-dev
+
+
+sudo apt update
+sudo apt install mgba-qt mgba-sdl libmgba-dev
+
+in the mGBA-0.10.5-ubuntu64-focal there are 3x deb files libmgba.deb mgba-qt.deb mgba-sdl.deb
+
+sudo apt install ./libmgba.deb ./mgba-qt.deb ./mgba-sdl.deb
+OR
+sudo dpkg -i libmgba.deb mgba-qt.deb mgba-sdl.deb
+
+
+sudo apt --fix-broken install
+mgba-qt
+
+
+Zero Suits Samus
+is a patch
+zerosuitssamus.bps
+
+beat patch.bps original.gba patched.gba
+https://www.romsgames.net/gameboy-advance-rom-metroid-zero-mission
+
+
+mGBA settings
+arrow keys
+Top Left    F1
+Top Right   F2
+B           Z
+A           X
+Select      Backspace
+Start       Return
