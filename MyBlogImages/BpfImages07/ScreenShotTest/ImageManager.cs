@@ -6,15 +6,18 @@ namespace ScreenShotTest
 {
 	public class ImageManager
 	{
-		private const int MAX = 5;
+		private const int MAX = 8;
 
 		private string[] names = new string[MAX]
 		{
-			"01-Venv",
-			"02-Conda",
-			"03-Poetry",
-			"04-UV",
-			"PyBind_Debugging"
+			"01-uv_init",
+			"02-uv_venv",
+			"03-which_python",
+			"04-uv_add",
+			"04-uv_add_bak",
+			"05-uv_tree",
+			"06-uv_tool",
+			"07-uvx",
 		};
 
 	
