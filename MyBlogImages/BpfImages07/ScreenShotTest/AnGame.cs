@@ -112,7 +112,6 @@ namespace ScreenShotTest
 			image = ImageManager.Images[name];
 			wide = image.Width - configManager.Left - configManager.Rght;
 			high = image.Height - configManager.UpXX - configManager.Down;
-			high = 800;
 			graphics.PreferredBackBufferWidth = wide;
 			graphics.PreferredBackBufferHeight = high;
 			graphics.ApplyChanges();
