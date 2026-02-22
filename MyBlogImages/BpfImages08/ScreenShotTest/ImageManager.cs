@@ -6,13 +6,16 @@ namespace ScreenShotTest
 {
 	public class ImageManager
 	{
-		private const int MAX = 4;
+		private const int MAX = 7;
 
 		private string[] names = new string[MAX]
 		{
 			"HelloPybind01a_ORG",
 			"HelloPybind01b_ORG",
-			"HelloPybind02ORG",
+			"HelloPybind02_ORG",
+			"HelloPybind04a_ORG",
+			"HelloPybind04b_ORG",
+			"HelloPybind04c_ORG",
 			"PyBind_Debugging",
 		};
 
