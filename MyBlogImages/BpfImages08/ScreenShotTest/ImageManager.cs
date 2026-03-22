@@ -10,9 +10,9 @@ namespace ScreenShotTest
 
 		private string[] names = new string[MAX]
 		{
-			"HelloPyTorch3d_ORG",
-			"nvcc_ORG",
-			"nvidia-smi_ORG",
+			"HelloCuda_ORG",
+			"HelloCUDAoutput_ORG",
+			"HelloPyTorch3dOutput_ORG",
 		};
 
 	
