@@ -6,13 +6,12 @@ namespace ScreenShotTest
 {
 	public class ImageManager
 	{
-		private const int MAX = 3;
+		private const int MAX = 2;
 
 		private string[] names = new string[MAX]
 		{
-			"HelloAzmlinfsrv_ORG",
-			"HelloAzScoring_ORG",
-			"HelloPyTorch3dWheels_ORG",
+			"HelloPyGameORG",
+			"SimpsonsTriviaProjectORG",
 		};
 
 	
