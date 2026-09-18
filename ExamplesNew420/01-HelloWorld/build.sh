@@ -7,6 +7,7 @@ sdcc --debug -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-
 
 echo Run
 ihx2sms output.ihx output.sms
+# makesms output.ihx output.sms
 
 #Cleanup
 rm -f -- *.asm
@@ -16,5 +17,5 @@ rm -f -- *.lst
 rm -f -- *.noi
 rm -f -- *.sym
 
-java -jar ~/Sega/Emulicious/Emulicious.jar output.sms
+java -jar ~/SEGA/Emulicious/Emulicious.jar output.sms
 #output.sms
