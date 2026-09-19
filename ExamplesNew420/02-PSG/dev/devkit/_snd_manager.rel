@@ -1,170 +1,299 @@
 ;!FILE _snd_manager.asm
 XL3
-H 9 areas A1 global symbols
+H 9 areas 122 global symbols
 M _snd_manager
 O -mz80
 S _PSGSFXPlay Ref000000
 S _PSGRestoreVolumes Ref000000
+S _PSGSFXCancelLoop Ref000000
 S _PSGSFXGetStatus Ref000000
 S .__.ABS. Def000000
 S _PSGPlay Ref000000
 S _PSGSFXStop Ref000000
 S _PSGSFXFrame Ref000000
+S _PSGCancelLoop Ref000000
+S _PSGSetSFXVolumeAttenuation Ref000000
+S _PSGSFXPlayLoop Ref000000
+S _PSGSetMusicVolumeChannelsAttenuation_f Ref000000
+S _PSGPlayLoops Ref000000
 S _PSGGetStatus Ref000000
 S _PSGStop Ref000000
 S _PSGFrame Ref000000
 S _PSGSilenceChannels Ref000000
 S _PSGResume Ref000000
-S _PSGSetMusicVolumeAttenuation Ref000000
 S _PSGPlayNoRepeat Ref000000
-A _CODE size 5C flags 0 addr 0
-S A$_snd_manager$342 Def00004D
-S A$_snd_manager$234 Def00003F
-S A$_snd_manager$225 Def00002D
-S A$_snd_manager$144 Def000014
-S _devkit_SFX_CHANNEL2 Def000053
-S A$_snd_manager$262 Def000041
-S A$_snd_manager$226 Def00002F
-S _devkit_SFX_CHANNEL3 Def000056
-S A$_snd_manager$425 Def00005B
-S A$_snd_manager$362 Def000050
-S A$_snd_manager$227 Def000032
-S A$_snd_manager$164 Def000017
-S XG$devkit_PSGSFXPlay$0$0 Def000040
-S A$_snd_manager$417 Def000059
-S A$_snd_manager$282 Def000044
-S A$_snd_manager$228 Def000033
-S A$_snd_manager$229 Def000034
-S A$_snd_manager$184 Def00001A
-S _devkit_PSGSFXGetStatus Def000044
-S A$_snd_manager$383 Def000055
-S _devkit_PSGPlay Def000000
-S A$_snd_manager$375 Def000053
-S _devkit_PSGSFXStop Def000041
-S G$devkit_PSGGetStatus$0$0 Def00001A
-S A$_snd_manager$197 Def00001D
-S A$_snd_manager$396 Def000056
-S A$_snd_manager$198 Def000020
-S G$devkit_PSGStop$0$0 Def000014
-S C$_snd_manager.c$11$1_0$32 Def000000
-S A$_snd_manager$199 Def000021
-S XG$devkit_PSGRestoreVolumes$0$0 Def00004A
-S C$_snd_manager.c$12$1_0$32 Def000009
-S _devkit_PSGSFXFrame Def000050
-S XG$devkit_SFX_CHANNEL2$0$0 Def000055
-S C$_snd_manager.c$50$1_0$50 Def000047
-S C$_snd_manager.c$31$1_0$42 Def00001D
-S G$devkit_SFX_CHANNELS2AND3$0$0 Def000059
-S XG$devkit_SFX_CHANNEL3$0$0 Def000058
-S C$_snd_manager.c$32$1_0$42 Def000028
-S C$_snd_manager.c$25$1_0$40 Def00001A
-S C$_snd_manager.c$20$1_0$36 Def000014
-S C$_snd_manager.c$13$1_0$34 Def00000A
-S G$devkit_PSGFrame$0$0 Def00004D
-S C$_snd_manager.c$51$1_0$52 Def00004A
-S C$_snd_manager.c$27$1_0$40 Def00001A
-S C$_snd_manager.c$15$1_0$34 Def00000A
-S XG$devkit_PSGSFXGetStatus$0$0 Def000044
-S C$_snd_manager.c$40$1_0$46 Def000041
-S C$_snd_manager.c$28$1_0$40 Def00001A
-S C$_snd_manager.c$21$1_0$38 Def000017
-S C$_snd_manager.c$16$1_0$34 Def000013
-S C$_snd_manager.c$53$1_0$52 Def00004A
-S C$_snd_manager.c$41$1_0$46 Def000041
-S C$_snd_manager.c$34$1_0$44 Def000029
-S XG$devkit_PSGPlay$0$0 Def000009
-S A$_snd_manager$83 Def000000
-S C$_snd_manager.c$54$1_0$52 Def00004A
-S C$_snd_manager.c$47$1_0$50 Def000047
-S G$devkit_PSGSilenceChannels$0$0 Def000047
-S XG$devkit_PSGSFXStop$0$0 Def000041
-S C$_snd_manager.c$23$1_0$38 Def000017
-S A$_snd_manager$84 Def000001
-S C$_snd_manager.c$60$1_0$56 Def000050
-S C$_snd_manager.c$36$1_0$44 Def000029
-S C$_snd_manager.c$29$1_0$42 Def00001D
-S C$_snd_manager.c$24$1_0$38 Def000017
-S C$_snd_manager.c$17$1_0$36 Def000014
-S _devkit_PSGGetStatus Def00001A
-S A$_snd_manager$85 Def000002
-S C$_snd_manager.c$49$1_0$50 Def000047
-S C$_snd_manager.c$42$1_0$48 Def000044
-S C$_snd_manager.c$37$1_0$44 Def000040
-S G$devkit_PSGSetMusicVolumeAttenuation$0$0 Def00001D
-S G$devkit_PSGResume$0$0 Def000017
-S A$_snd_manager$86 Def000003
-S C$_snd_manager.c$62$1_0$56 Def000050
-S C$_snd_manager.c$19$1_0$36 Def000014
-S _devkit_PSGStop Def000014
-S A$_snd_manager$87 Def000004
-S C$_snd_manager.c$70$1_0$58 Def000056
-S C$_snd_manager.c$63$1_0$56 Def000050
-S C$_snd_manager.c$56$1_0$54 Def00004D
-S C$_snd_manager.c$44$1_0$48 Def000044
-S A$_snd_manager$97 Def000009
-S A$_snd_manager$88 Def000005
-S XG$devkit_PSGSFXFrame$0$0 Def000050
-S C$_snd_manager.c$45$1_0$48 Def000044
-S C$_snd_manager.c$38$1_0$46 Def000041
-S G$devkit_PSGPlayNoRepeat$0$0 Def00000A
-S A$_snd_manager$89 Def000008
-S C$_snd_manager.c$72$1_0$58 Def000056
-S C$_snd_manager.c$58$1_0$54 Def00004D
-S C$_snd_manager.c$73$1_0$58 Def000058
-S C$_snd_manager.c$59$1_0$54 Def00004D
-S _devkit_SFX_CHANNELS2AND3 Def000059
-S C$_snd_manager.c$66$1_0$57 Def000053
-S _devkit_PSGFrame Def00004D
-S C$_snd_manager.c$74$1_0$59 Def000059
-S C$_snd_manager.c$68$1_0$57 Def000053
-S C$_snd_manager.c$76$1_0$59 Def000059
-S C$_snd_manager.c$69$1_0$57 Def000055
-S C$_snd_manager.c$77$1_0$59 Def00005B
-S _devkit_PSGSilenceChannels Def000047
-S XG$devkit_PSGGetStatus$0$0 Def00001A
-S C$_snd_manager.c$9$0_0$32 Def000000
-S _devkit_PSGSetMusicVolumeAttenuation Def00001D
-S _devkit_PSGResume Def000017
-S XG$devkit_PSGStop$0$0 Def000014
-S _devkit_PSGPlayNoRepeat Def00000A
-S XG$devkit_SFX_CHANNELS2AND3$0$0 Def00005B
-S XG$devkit_PSGFrame$0$0 Def00004D
-S XG$devkit_PSGSilenceChannels$0$0 Def000047
-S G$devkit_PSGSFXPlay$0$0 Def000029
-S XG$devkit_PSGSetMusicVolumeAttenuation$0$0 Def000028
-S XG$devkit_PSGResume$0$0 Def000017
-S XG$devkit_PSGPlayNoRepeat$0$0 Def000013
-S G$devkit_PSGRestoreVolumes$0$0 Def00004A
-S G$devkit_SFX_CHANNEL2$0$0 Def000053
-S G$devkit_SFX_CHANNEL3$0$0 Def000056
-S _devkit_PSGSFXPlay Def000029
-S G$devkit_PSGSFXGetStatus$0$0 Def000044
-S A$_snd_manager$200 Def000022
-S A$_snd_manager$110 Def00000A
-S G$devkit_PSGPlay$0$0 Def000000
-S A$_snd_manager$201 Def000023
-S A$_snd_manager$111 Def00000B
-S G$devkit_PSGSFXStop$0$0 Def000041
-S A$_snd_manager$211 Def000028
-S A$_snd_manager$202 Def000024
-S A$_snd_manager$112 Def00000C
-S A$_snd_manager$302 Def000047
-S A$_snd_manager$230 Def000037
-S A$_snd_manager$203 Def000027
-S A$_snd_manager$113 Def00000D
-S A$_snd_manager$231 Def00003A
-S A$_snd_manager$114 Def00000E
-S A$_snd_manager$322 Def00004A
-S A$_snd_manager$232 Def00003B
-S A$_snd_manager$124 Def000013
-S A$_snd_manager$115 Def00000F
-S _devkit_PSGRestoreVolumes Def00004A
-S A$_snd_manager$404 Def000058
-S A$_snd_manager$242 Def000040
-S A$_snd_manager$233 Def00003E
-S A$_snd_manager$224 Def000029
-S A$_snd_manager$116 Def000012
-S G$devkit_PSGSFXFrame$0$0 Def000050
+A _CODE size BD flags 0 addr 0
+S A$_snd_manager$540 Def000094
+S A$_snd_manager$531 Def00008C
+S A$_snd_manager$450 Def00006C
+S A$_snd_manager$441 Def000063
+S A$_snd_manager$432 Def00005D
+S A$_snd_manager$423 Def000052
+S A$_snd_manager$270 Def000021
+S A$_snd_manager$225 Def000011
+S A$_snd_manager$162 Def000008
+S C$_snd_manager.c$131$1_0$81 Def0000B4
+S C$_snd_manager.c$100$1_0$67 Def00007E
+S G$devkit_PSGSetMusicVolumeChannelsAttenuation$0$0 Def000039
+S _devkit_PSGSFXCancelLoop Def0000A8
+S _devkit_SFX_CHANNEL2 Def000005
+S A$_snd_manager$550 Def000095
+S A$_snd_manager$532 Def00008D
+S A$_snd_manager$514 Def00007F
+S A$_snd_manager$451 Def00006D
+S A$_snd_manager$442 Def000064
+S A$_snd_manager$424 Def000053
+S A$_snd_manager$271 Def000022
+S A$_snd_manager$253 Def000014
+S C$_snd_manager.c$113$1_0$73 Def0000A8
+S C$_snd_manager.c$101$1_0$67 Def00007F
+S _devkit_SFX_CHANNEL3 Def000008
+S A$_snd_manager$560 Def0000A2
+S A$_snd_manager$533 Def00008E
+S A$_snd_manager$524 Def000082
+S A$_snd_manager$506 Def00007E
+S A$_snd_manager$461 Def000075
+S A$_snd_manager$452 Def00006E
+S A$_snd_manager$443 Def000065
+S A$_snd_manager$425 Def000055
+S A$_snd_manager$407 Def00004D
+S A$_snd_manager$272 Def000023
+S A$_snd_manager$263 Def000017
+S A$_snd_manager$191 Def00000D
+S A$_snd_manager$128 Def000004
+S C$_snd_manager.c$114$1_0$73 Def0000A8
+S C$_snd_manager.c$107$1_0$71 Def000095
+S A$_snd_manager$606 Def0000AB
+S A$_snd_manager$534 Def00008F
+S A$_snd_manager$462 Def000076
+S A$_snd_manager$453 Def00006F
+S A$_snd_manager$444 Def000066
+S A$_snd_manager$435 Def00005E
+S A$_snd_manager$426 Def000056
+S A$_snd_manager$408 Def00004E
+S A$_snd_manager$390 Def00003A
+S A$_snd_manager$273 Def000024
+S A$_snd_manager$183 Def00000B
+S G$devkit_PSGCancelLoop$0$0 Def00002D
+S A$_snd_manager$706 Def0000BA
+S A$_snd_manager$463 Def000077
+S A$_snd_manager$454 Def000070
+S A$_snd_manager$445 Def000067
+S A$_snd_manager$427 Def000057
+S A$_snd_manager$409 Def00004F
+S A$_snd_manager$319 Def00002D
+S C$_snd_manager.c$140$1_0$85 Def0000BA
+S C$_snd_manager.c$133$1_0$83 Def0000B7
+S C$_snd_manager.c$121$1_0$77 Def0000AE
+S C$_snd_manager.c$109$1_0$71 Def000096
+S G$devkit_PSGSFXPlayLoop$0$0 Def000095
+S G$devkit_PSGSetSFXVolumeAttenuation$0$0 Def00007E
+S _devkit_PSGSFXGetStatus Def0000AE
+S A$_snd_manager$626 Def0000AE
+S A$_snd_manager$554 Def000096
+S A$_snd_manager$473 Def000078
+S A$_snd_manager$455 Def000071
+S A$_snd_manager$446 Def000068
+S A$_snd_manager$428 Def000058
+S A$_snd_manager$149 Def000007
+S C$_snd_manager.c$122$1_0$77 Def0000AE
+S C$_snd_manager.c$115$1_0$75 Def0000AB
+S C$_snd_manager.c$103$1_0$69 Def000082
+S G$devkit_PSGSetMusicVolumeChannelsAttenuation_f$0$0 Def00007B
+S _devkit_PSGPlay Def000014
+S A$_snd_manager$564 Def0000A5
+S A$_snd_manager$555 Def00009A
+S A$_snd_manager$528 Def000083
+S A$_snd_manager$456 Def000072
+S A$_snd_manager$447 Def000069
+S A$_snd_manager$438 Def000060
+S A$_snd_manager$429 Def000059
+S A$_snd_manager$339 Def000030
+S A$_snd_manager$267 Def000018
+S C$_snd_manager.c$135$1_0$83 Def0000B7
+S C$_snd_manager.c$128$1_0$81 Def0000B4
+S G$devkit_PSGPlayLoops$0$0 Def000017
+S _devkit_PSGSFXStop Def0000AB
+S A$_snd_manager$646 Def0000B1
+S A$_snd_manager$565 Def0000A6
+S A$_snd_manager$556 Def00009C
+S A$_snd_manager$538 Def000092
+S A$_snd_manager$529 Def000087
+S A$_snd_manager$493 Def00007B
+S A$_snd_manager$457 Def000073
+S A$_snd_manager$448 Def00006A
+S A$_snd_manager$439 Def000061
+S A$_snd_manager$394 Def00003B
+S A$_snd_manager$277 Def000027
+S A$_snd_manager$268 Def00001C
+S C$_snd_manager.c$136$1_0$83 Def0000B7
+S C$_snd_manager.c$117$1_0$75 Def0000AB
+S C$_snd_manager.c$105$1_0$69 Def000083
+S G$devkit_PSGGetStatus$0$0 Def000036
+S A$_snd_manager$566 Def0000A7
+S A$_snd_manager$557 Def00009F
+S A$_snd_manager$539 Def000093
+S A$_snd_manager$458 Def000074
+S A$_snd_manager$449 Def00006B
+S A$_snd_manager$395 Def00003F
+S A$_snd_manager$359 Def000033
+S A$_snd_manager$278 Def000028
+S A$_snd_manager$269 Def00001E
+S C$_snd_manager.c$118$1_0$75 Def0000AB
+S C$_snd_manager.c$106$1_0$69 Def000092
+S A$_snd_manager$666 Def0000B4
+S A$_snd_manager$558 Def0000A0
+S A$_snd_manager$396 Def000041
+S A$_snd_manager$279 Def000029
+S C$_snd_manager.c$124$1_0$79 Def0000B1
+S G$devkit_PSGStop$0$0 Def000030
+S A$_snd_manager$586 Def0000A8
+S A$_snd_manager$559 Def0000A1
+S A$_snd_manager$397 Def000044
+S A$_snd_manager$379 Def000036
+S C$_snd_manager.c$137$1_0$85 Def0000BA
+S XG$devkit_PSGRestoreVolumes$0$0 Def0000B4
+S XG$devkit_SFX_CHANNEL0$0$0 Def000010
+S C$_snd_manager.c$21$1_0$41 Def000005
+S A$_snd_manager$686 Def0000B7
+S A$_snd_manager$398 Def000047
+S A$_snd_manager$389 Def000039
+S A$_snd_manager$299 Def00002A
+S C$_snd_manager.c$126$1_0$79 Def0000B1
+S C$_snd_manager.c$119$1_0$77 Def0000AE
+S XG$devkit_SFX_CHANNEL1$0$0 Def000013
+S C$_snd_manager.c$22$1_0$41 Def000007
+S C$_snd_manager.c$14$1_0$40 Def000002
+S _devkit_PSGSFXFrame Def0000BA
+S A$_snd_manager$399 Def000048
+S C$_snd_manager.c$139$1_0$85 Def0000BA
+S C$_snd_manager.c$127$1_0$79 Def0000B1
+S XG$devkit_PSGSFXCancelLoop$0$0 Def0000A8
+S C$_snd_manager.c$30$1_0$43 Def00000D
+S XG$devkit_SFX_CHANNEL2$0$0 Def000007
+S _devkit_PSGSetMusicVolumeChannelsAttenuation Def000039
+S G$devkit_SFX_CHANNELS2AND3$0$0 Def00000B
+S XG$devkit_SFX_CHANNEL3$0$0 Def00000A
+S C$_snd_manager.c$23$1_0$42 Def000008
+S C$_snd_manager.c$16$1_0$40 Def000002
+S G$devkit_PSGFrame$0$0 Def0000B7
+S C$_snd_manager.c$31$1_0$44 Def00000E
+S C$_snd_manager.c$17$1_0$40 Def000004
+S C$_snd_manager.c$10$0_0$39 Def000000
+S C$_snd_manager.c$25$1_0$42 Def000008
+S _devkit_PSGCancelLoop Def00002D
+S XG$devkit_PSGSFXGetStatus$0$0 Def0000AE
+S C$_snd_manager.c$62$1_0$51 Def00002A
+S C$_snd_manager.c$33$1_0$44 Def00000E
+S C$_snd_manager.c$26$1_0$42 Def00000A
+S _devkit_PSGSFXPlayLoop Def000095
+S _devkit_PSGSetSFXVolumeAttenuation Def00007E
+S C$_snd_manager.c$70$1_0$53 Def00002D
+S XG$devkit_PSGPlay$0$0 Def000014
+S C$_snd_manager.c$34$1_0$44 Def000010
+S C$_snd_manager.c$19$1_0$41 Def000005
+S C$_snd_manager.c$12$1_0$39 Def000000
+S _devkit_PSGSetMusicVolumeChannelsAttenuation_f Def00007B
+S G$devkit_PSGSilenceChannels$0$0 Def0000B1
+S XG$devkit_PSGSFXStop$0$0 Def0000AB
+S C$_snd_manager.c$71$1_0$53 Def00002D
+S C$_snd_manager.c$64$1_0$51 Def00002A
+S C$_snd_manager.c$27$1_0$43 Def00000B
+S C$_snd_manager.c$13$1_0$39 Def000001
+S _devkit_PSGPlayLoops Def000017
+S C$_snd_manager.c$65$1_0$51 Def00002A
+S C$_snd_manager.c$35$1_0$45 Def000011
+S _devkit_PSGGetStatus Def000036
+S C$_snd_manager.c$90$1_0$63 Def000050
+S G$devkit_PSGSetMusicVolumeAttenuation$0$0 Def000050
+S G$devkit_PSGResume$0$0 Def000033
+S C$_snd_manager.c$29$1_0$43 Def00000B
+S C$_snd_manager.c$72$1_0$55 Def000030
+S C$_snd_manager.c$60$1_0$49 Def000018
+S C$_snd_manager.c$37$1_0$45 Def000011
+S _devkit_PSGStop Def000030
+S C$_snd_manager.c$92$1_0$63 Def000050
+S C$_snd_manager.c$61$1_0$49 Def000027
+S C$_snd_manager.c$54$1_0$47 Def000014
+S C$_snd_manager.c$38$1_0$45 Def000013
+S G$devkit_PSG_PLAYING$0$0 Def000002
+S XG$devkit_PSGSFXFrame$0$0 Def0000BA
+S C$_snd_manager.c$93$1_0$63 Def000078
+S C$_snd_manager.c$86$1_0$61 Def000039
+S C$_snd_manager.c$74$1_0$55 Def000030
+S G$devkit_PSGPlayNoRepeat$0$0 Def00002A
+S C$_snd_manager.c$80$1_0$59 Def000036
+S C$_snd_manager.c$75$1_0$55 Def000030
+S C$_snd_manager.c$68$1_0$53 Def00002D
+S C$_snd_manager.c$56$1_0$47 Def000014
+S A$_snd_manager$99 Def000000
+S C$_snd_manager.c$88$1_0$61 Def00003B
+S C$_snd_manager.c$57$1_0$47 Def000014
+S _devkit_SFX_CHANNELS2AND3 Def00000B
+S C$_snd_manager.c$94$1_0$65 Def00007B
+S C$_snd_manager.c$89$1_0$61 Def00004D
+S C$_snd_manager.c$82$1_0$59 Def000036
+S _devkit_PSGFrame Def0000B7
+S C$_snd_manager.c$83$1_0$59 Def000036
+S C$_snd_manager.c$76$1_0$57 Def000033
+S XG$devkit_PSGCancelLoop$0$0 Def00002D
+S XG$devkit_PSGSetSFXVolumeAttenuation$0$0 Def00007F
+S C$_snd_manager.c$96$1_0$65 Def00007B
+S C$_snd_manager.c$58$1_0$49 Def000017
+S XG$devkit_PSGSetMusicVolumeChannelsAttenuation_f$0$0 Def00007B
+S C$_snd_manager.c$97$1_0$65 Def00007B
+S C$_snd_manager.c$78$1_0$57 Def000033
+S C$_snd_manager.c$79$1_0$57 Def000033
+S _devkit_PSGSilenceChannels Def0000B1
+S XG$devkit_PSGGetStatus$0$0 Def000036
+S C$_snd_manager.c$98$1_0$67 Def00007E
+S _devkit_PSGSetMusicVolumeAttenuation Def000050
+S _devkit_PSGResume Def000033
+S XG$devkit_PSGStop$0$0 Def000030
+S G$devkit_PSG_STOPPED$0$0 Def000000
+S _devkit_PSG_PLAYING Def000002
+S _devkit_PSGPlayNoRepeat Def00002A
+S XG$devkit_SFX_CHANNELS2AND3$0$0 Def00000D
+S XG$devkit_PSGFrame$0$0 Def0000B7
+S XG$devkit_PSGSilenceChannels$0$0 Def0000B1
+S G$devkit_PSGSFXPlay$0$0 Def000082
+S XG$devkit_PSGSetMusicVolumeAttenuation$0$0 Def000078
+S XG$devkit_PSGResume$0$0 Def000033
+S _devkit_PSG_STOPPED Def000000
+S XG$devkit_PSG_PLAYING$0$0 Def000004
+S XG$devkit_PSGPlayNoRepeat$0$0 Def00002A
+S G$devkit_PSGRestoreVolumes$0$0 Def0000B4
+S G$devkit_SFX_CHANNEL0$0$0 Def00000E
+S G$devkit_SFX_CHANNEL1$0$0 Def000011
+S G$devkit_PSGSFXCancelLoop$0$0 Def0000A8
+S G$devkit_SFX_CHANNEL2$0$0 Def000005
+S G$devkit_SFX_CHANNEL3$0$0 Def000008
+S _devkit_PSGSFXPlay Def000082
+S G$devkit_PSGSFXGetStatus$0$0 Def0000AE
+S G$devkit_PSGPlay$0$0 Def000014
+S XG$devkit_PSG_STOPPED$0$0 Def000001
+S A$_snd_manager$120 Def000002
+S G$devkit_PSGSFXStop$0$0 Def0000AB
+S A$_snd_manager$212 Def000010
+S C$_snd_manager.c$110$1_0$71 Def0000A5
+S A$_snd_manager$402 Def000049
+S A$_snd_manager$204 Def00000E
+S A$_snd_manager$141 Def000005
+S A$_snd_manager$430 Def00005A
+S A$_snd_manager$403 Def00004A
+S _devkit_PSGRestoreVolumes Def0000B4
+S _devkit_SFX_CHANNEL0 Def00000E
+S A$_snd_manager$530 Def000089
+S A$_snd_manager$440 Def000062
+S A$_snd_manager$431 Def00005B
+S A$_snd_manager$422 Def000050
+S A$_snd_manager$233 Def000013
+S A$_snd_manager$170 Def00000A
+S A$_snd_manager$107 Def000001
+S G$devkit_PSGSFXFrame$0$0 Def0000BA
+S C$_snd_manager.c$130$1_0$81 Def0000B4
+S C$_snd_manager.c$111$1_0$73 Def0000A8
+S _devkit_SFX_CHANNEL1 Def000011
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -175,67 +304,123 @@ A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00 00
 R 00 00 00 00
-T 00 00 00 C1 E1 E5 C5 E5 CD 00 00 F1 C9
-R 00 00 00 00 02 09 04 00
-T 0A 00 00
+T 00 00 00 AF C9
 R 00 00 00 00
-T 0A 00 00 C1 E1 E5 C5 E5 CD 00 00 F1 C9
-R 00 00 00 00 02 09 0D 00
+T 02 00 00
+R 00 00 00 00
+T 02 00 00 3E 01 C9
+R 00 00 00 00
+T 05 00 00
+R 00 00 00 00
+T 05 00 00 3E 01 C9
+R 00 00 00 00
+T 08 00 00
+R 00 00 00 00
+T 08 00 00 3E 02 C9
+R 00 00 00 00
+T 0B 00 00
+R 00 00 00 00
+T 0B 00 00 3E 03 C9
+R 00 00 00 00
+T 0E 00 00
+R 00 00 00 00
+T 0E 00 00 3E 04 C9
+R 00 00 00 00
+T 11 00 00
+R 00 00 00 00
+T 11 00 00 3E 08 C9
+R 00 00 00 00
 T 14 00 00
 R 00 00 00 00
 T 14 00 00 C3 00 00
-R 00 00 00 00 02 04 08 00
+R 00 00 00 00 02 04 05 00
 T 17 00 00
 R 00 00 00 00
-T 17 00 00 C3 00 00
-R 00 00 00 00 02 04 0B 00
-T 1A 00 00
+T 17 00 00 EB FD 21 02 00 FD 39 FD 7E 00 F5 33 EB
 R 00 00 00 00
-T 1A 00 00 C3 00 00
-R 00 00 00 00 02 04 07 00
-T 1D 00 00
+T 24 00 00 CD 00 00 E1 33 E9
+R 00 00 00 00 02 04 0C 00
+T 2A 00 00
 R 00 00 00 00
-T 1D 00 00 21 02 00 39 7E F5 33 CD 00 00 33 C9
-R 00 00 00 00 02 0B 0C 00
-T 29 00 00
+T 2A 00 00 C3 00 00
+R 00 00 00 00 02 04 12 00
+T 2D 00 00
 R 00 00 00 00
-T 29 00 00 FD 21 04 00 FD 39 FD 7E 00 F5 33 FD 6E
+T 2D 00 00 C3 00 00
+R 00 00 00 00 02 04 08 00
+T 30 00 00
 R 00 00 00 00
-T 36 00 00 FE FD 66 FF E5 CD 00 00 F1 33 C9
-R 00 00 00 00 02 09 00 00
-T 41 00 00
+T 30 00 00 C3 00 00
+R 00 00 00 00 02 04 0E 00
+T 33 00 00
 R 00 00 00 00
-T 41 00 00 C3 00 00
-R 00 00 00 00 02 04 05 00
-T 44 00 00
+T 33 00 00 C3 00 00
+R 00 00 00 00 02 04 11 00
+T 36 00 00
 R 00 00 00 00
-T 44 00 00 C3 00 00
-R 00 00 00 00 02 04 02 00
-T 47 00 00
+T 36 00 00 C3 00 00
+R 00 00 00 00 02 04 0D 00
+T 39 00 00
 R 00 00 00 00
-T 47 00 00 C3 00 00
-R 00 00 00 00 02 04 0A 00
-T 4A 00 00
+T 39 00 00 4F 45 FD 21 03 00 FD 39 FD 66 00 FD 6E
 R 00 00 00 00
-T 4A 00 00 C3 00 00
-R 00 00 00 00 02 04 01 00
-T 4D 00 00
-R 00 00 00 00
-T 4D 00 00 C3 00 00
-R 00 00 00 00 02 04 09 00
+T 46 00 00 FF E5 68 79 CD 39 00 E1 F1 E9
+R 00 00 00 00 00 08 00 00
 T 50 00 00
 R 00 00 00 00
-T 50 00 00 C3 00 00
+T 50 00 00 E6 0F 4F 06 00 79 87 87 87 87 57 1E 00
+R 00 00 00 00
+T 5D 00 00 61 2E 00 7B B5 5F 7A B4 57 69 60 29 29
+R 00 00 00 00
+T 6A 00 00 29 29 7B B5 5F 7A B4 F5 7B B1 6F F1 B0
+R 00 00 00 00
+T 77 00 00 67 C3 00 00
+R 00 00 00 00 02 05 0B 00
+T 7B 00 00
+R 00 00 00 00
+T 7B 00 00 C3 00 00
+R 00 00 00 00 02 04 0B 00
+T 7E 00 00
+R 00 00 00 00
+T 7E 00 00 4F C3 00 00
+R 00 00 00 00 02 05 09 00
+T 82 00 00
+R 00 00 00 00
+T 82 00 00 EB FD 21 02 00 FD 39 FD 7E 00 F5 33 EB
+R 00 00 00 00
+T 8F 00 00 CD 00 00 E1 33 E9
+R 00 00 00 00 02 04 00 00
+T 95 00 00
+R 00 00 00 00
+T 95 00 00 EB FD 21 02 00 FD 39 FD 7E 00 F5 33 EB
+R 00 00 00 00
+T A2 00 00 CD 00 00 E1 33 E9
+R 00 00 00 00 02 04 0A 00
+T A8 00 00
+R 00 00 00 00
+T A8 00 00 C3 00 00
+R 00 00 00 00 02 04 02 00
+T AB 00 00
+R 00 00 00 00
+T AB 00 00 C3 00 00
 R 00 00 00 00 02 04 06 00
-T 53 00 00
+T AE 00 00
 R 00 00 00 00
-T 53 00 00 2E 01 C9
+T AE 00 00 C3 00 00
+R 00 00 00 00 02 04 03 00
+T B1 00 00
 R 00 00 00 00
-T 56 00 00
+T B1 00 00 C3 00 00
+R 00 00 00 00 02 04 10 00
+T B4 00 00
 R 00 00 00 00
-T 56 00 00 2E 02 C9
+T B4 00 00 C3 00 00
+R 00 00 00 00 02 04 01 00
+T B7 00 00
 R 00 00 00 00
-T 59 00 00
+T B7 00 00 C3 00 00
+R 00 00 00 00 02 04 0F 00
+T BA 00 00
 R 00 00 00 00
-T 59 00 00 2E 03 C9
-R 00 00 00 00
+T BA 00 00 C3 00 00
+R 00 00 00 00 02 04 07 00
