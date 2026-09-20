@@ -178,7 +178,7 @@ unsigned int SMS_getTile(void) { return 0; } /*__naked __z88dk_fastcall __preser
 
 /* Functions for reading back tilemap and VRAM */
 void SMS_saveTileMapArea(unsigned char x, unsigned char y, void *dst, unsigned char width, unsigned char height) {}
-void * SMS_saveTileMapColumnatAddr(unsigned int src, void *dst, unsigned int height) {} /*__naked __z88dk_callee __sdcccall(1);*/
+void * SMS_saveTileMapColumnatAddr( unsigned int src, void *dst, unsigned int height ) { return 0; } /*__naked __z88dk_callee __sdcccall(1);*/
 #define SMS_saveTileMapColumn(x,y,dst,height)   SMS_saveTileMapColumnatAddr(XYtoADDR((x),(y)),(dst),(height))
 void SMS_readVRAM(void *dst, unsigned int src, unsigned int size) {} /*__naked __z88dk_callee __preserves_regs(iyh,iyl) __sdcccall(1);*/
 
@@ -373,7 +373,7 @@ unsigned char SMS_VDPType( void ) { return 0x80; }
 #define VDPFLAG_SPRITEOVERFLOW  0x40
 #define VDPFLAG_SPRITECOLLISION 0x20
 
-/*extern*/ unsigned char SMS_Port3EBIOSvalue { return 0; }
+/*extern*/ unsigned char SMS_Port3EBIOSvalue;
 
 /* vertical interrupt hook */
 #ifndef NO_FRAME_INT_HOOK
@@ -407,11 +407,11 @@ void SMS_VRAMmemsetW (unsigned int dst, unsigned int value, unsigned int size) {
 
 /* VRAM unsafe functions. Fast, but dangerous! */
 void UNSAFE_SMS_copySpritestoSAT (void) {}
-void * UNSAFE_SMS_VRAMmemcpy32 (unsigned int dst, const void *src) { return NULL; } /*__naked __preserves_regs(a,iyh,iyl) __sdcccall(1);*/
-void * UNSAFE_SMS_VRAMmemcpy64 (unsigned int dst, const void *src) { return NULL; } /*__naked __preserves_regs(a,iyh,iyl) __sdcccall(1);*/
-void * UNSAFE_SMS_VRAMmemcpy96 (unsigned int dst, const void *src) { return NULL; } /*__naked __preserves_regs(a,iyh,iyl) __sdcccall(1);*/
-void * UNSAFE_SMS_VRAMmemcpy128 (unsigned int dst, const void *src) { return NULL; } /*__naked __preserves_regs(a,iyh,iyl) __sdcccall(1);*/
-void * UNSAFE_SMS_VRAMmemcpy (unsigned int dst, const void *src, unsigned int size) { return NULL; } /*__naked __z88dk_callee __preserves_regs(iyh,iyl) __sdcccall(1);*/
+void * UNSAFE_SMS_VRAMmemcpy32 (unsigned int dst, const void *src) { return 0; } /*__naked __preserves_regs(a,iyh,iyl) __sdcccall(1);*/
+void * UNSAFE_SMS_VRAMmemcpy64 (unsigned int dst, const void *src) { return 0; } /*__naked __preserves_regs(a,iyh,iyl) __sdcccall(1);*/
+void * UNSAFE_SMS_VRAMmemcpy96 (unsigned int dst, const void *src) { return 0; } /*__naked __preserves_regs(a,iyh,iyl) __sdcccall(1);*/
+void * UNSAFE_SMS_VRAMmemcpy128 (unsigned int dst, const void *src) { return 0; } /*__naked __preserves_regs(a,iyh,iyl) __sdcccall(1);*/
+void * UNSAFE_SMS_VRAMmemcpy (unsigned int dst, const void *src, unsigned int size) { return 0; } /*__naked __z88dk_callee __preserves_regs(iyh,iyl) __sdcccall(1);*/
 
 /* handy macros for UNSAFE_SMS_VRAMmemcpy* */
 #define UNSAFE_SMS_load1Tile(src,theTile)               UNSAFE_SMS_VRAMmemcpy32((theTile)*32,(src))

@@ -90,8 +90,6 @@ void devkit_SMS_loadPSGaidencompressedTilesatAddr( const void *src, unsigned int
 void devkit_SMS_loadPSGaidencompressedTiles( const void *src, unsigned int tilefrom );
 
 /* UNSAFE functions to load compressed tiles into VRAM */
-void devkit_UNSAFE_SMS_loadZX7compressedTilesatAddr( const void *src, unsigned int dst );
-void devkit_UNSAFE_SMS_loadZX7compressedTiles( const void *src, unsigned int tilefrom );
 void devkit_UNSAFE_SMS_loadaPLibcompressedTilesatAddr( const void *src, unsigned int dst );
 void devkit_UNSAFE_SMS_loadaPLibcompressedTiles( const void *src, unsigned int tilefrom );
 
@@ -207,8 +205,6 @@ void devkit_SMS_disableLineInterrupt(); /* turns off line IRQ */
 
 /* Vcount */
 unsigned char devkit_SMS_getVCount( void );
-/* Hcount */
-unsigned char devkit_SMS_getHCount( void );
 
 /* low level functions */
 void devkit_SMS_VRAMmemcpy( unsigned int dst, const void *src, unsigned int size ); // __naked __z88dk_callee __preserves_regs( iyh, iyl );

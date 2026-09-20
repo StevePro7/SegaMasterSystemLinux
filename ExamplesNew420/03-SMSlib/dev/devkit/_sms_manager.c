@@ -246,14 +246,6 @@ void devkit_SMS_loadPSGaidencompressedTiles( const void *src, unsigned int tilef
 }
 
 /* UNSAFE functions to load compressed tiles into VRAM */
-void devkit_UNSAFE_SMS_loadZX7compressedTilesatAddr( const void *src, unsigned int dst )
-{
-	UNSAFE_SMS_loadZX7compressedTilesatAddr( src, dst );
-}
-void devkit_UNSAFE_SMS_loadZX7compressedTiles( const void *src, unsigned int tilefrom )
-{
-	UNSAFE_SMS_loadZX7compressedTiles( src, tilefrom );
-}
 void devkit_UNSAFE_SMS_loadaPLibcompressedTilesatAddr( const void *src, unsigned int dst )
 {
 	UNSAFE_SMS_loadaPLibcompressedTilesatAddr( src, dst );
@@ -593,11 +585,6 @@ void devkit_SMS_disableLineInterrupt()
 unsigned char devkit_SMS_getVCount( void )
 {
 	return SMS_getVCount();
-}
-/* Hcount */
-unsigned char devkit_SMS_getHCount( void )
-{
-	return SMS_getHCount();
 }
 
 /* low level functions */
