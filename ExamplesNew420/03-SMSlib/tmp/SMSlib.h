@@ -71,7 +71,6 @@ void SMS_waitForVBlank (void) {}
 
 /* macro to retrieve the currently mapped ROM bank */
 #define SMS_getROMBank()        (ROM_bank_to_be_mapped_on_slot2)
-
 /* macros to preserve and restore the currently mapped ROM bank */
 /* NOTE: they need to be used within the same scope (they use local variables) */
 /* Typical use: In functions using SMS_mapROMBank(), to make sure the mapped bank */
@@ -79,6 +78,7 @@ void SMS_waitForVBlank (void) {}
 /* Use only one SMS_saveROMBank() before the first SMS_mapROMBank() in the function, */
 /* and at least one SMS_restoreROMBank() per following return statement. */
 /* SMS_restoreROMBank() may be used several times, for instance to access data in the original bank. */
+unsigned char _saved_slot2_ROM_bank;
 #define SMS_saveROMBank()       unsigned char _saved_slot2_ROM_bank = ROM_bank_to_be_mapped_on_slot2
 #define SMS_restoreROMBank()    SMS_mapROMBank(_saved_slot2_ROM_bank)
 
@@ -174,7 +174,7 @@ unsigned int SMS_getTile(void) { return 0; } /*__naked __z88dk_fastcall __preser
 #define SMS_readNextTilefromLoc(loc) SMS_setAddr(SMS_PNTAddress_READ|((unsigned int)(loc)<<1))
 #define SMS_readNextTilefromAddr(a)  SMS_setAddr(a)
 
-#define SMS_getTileatXY(x,y)         (SMS_setAddr(XYtoREADADDR((x),(y))),SMS_getTile())
+#define SMS_getTileatXY(x,y)         //(SMS_setAddr(XYtoREADADDR((x),(y))),SMS_getTile())
 
 /* Functions for reading back tilemap and VRAM */
 void SMS_saveTileMapArea(unsigned char x, unsigned char y, void *dst, unsigned char width, unsigned char height) {}

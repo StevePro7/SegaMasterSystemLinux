@@ -40,9 +40,19 @@ unsigned char devkit_SPRITEMODE_TALL();
 unsigned char devkit_SPRITEMODE_ZOOMED();
 unsigned char devkit_SPRITEMODE_TALL_ZOOMED();
 
+/* wait until next VBlank starts */
+void devkit_SMS_waitForVBlank();
+
 /* macro for ROM bankswitching */
 ///*volatile __at (0xffff)*/ unsigned char ROM_bank_to_be_mapped_on_slot2;
 void devkit_SMS_mapROMBank( unsigned char n );
+
+/* macro to retrieve the currently mapped ROM bank */
+void devkit_SMS_getROMBank();
+
+/* macros to preserve and restore the currently mapped ROM bank */
+void devkit_SMS_saveROMBank();
+void devkit_SMS_restoreROMBank();
 
 /* macro for SRAM access */
 ///*volatile __at (0xfffc)*/ unsigned char SRAM_bank_to_be_mapped_on_slot2;
@@ -53,9 +63,7 @@ void devkit_SMS_disableSRAM();
 /* SRAM access is as easy as accessing an array of char */
 unsigned char* devkit_SMS_SRAM();
 
-/* wait until next VBlank starts */
-void devkit_SMS_waitForVBlank();
-
+/* Tiles / Background handling */
 void devkit_SMS_crt0_RST08( unsigned int addr );
 void devkit_SMS_crt0_RST18( unsigned int tile );
 
@@ -69,6 +77,7 @@ void devkit_XYtoADDR( unsigned int x, unsigned char y );
 void devkit_SMS_setNextTileatXY( unsigned char x, unsigned char y );
 void devkit_SMS_setNextTileatLoc( unsigned int loc );
 void devkit_SMS_setNextTileatAddr( const unsigned char a	);
+
 void devkit_SMS_setTileatXY( unsigned int x, unsigned char y, unsigned int tile );
 
 //#define SMS_VDPVRAMWrite          0x4000
@@ -84,23 +93,57 @@ unsigned int devkit_TILE_PRIORITY();
 /* functions to load tiles into VRAM */
 void devkit_SMS_loadTiles( void *src, unsigned int tilefrom, unsigned int size );
 void devkit_SMS_load1bppTiles( const void *src, unsigned int tilefrom, unsigned int size, unsigned char color0, unsigned char color1 );
+void devkit_SMS_load2bppTiles( void *src, unsigned int tilefrom, unsigned int size );
+void devkit_SMS_load2bppTilesatAddr( const void *src, unsigned int dest, unsigned int size );
 
 /* functions to load compressed tiles into VRAM */
-void devkit_SMS_loadPSGaidencompressedTilesatAddr( const void *src, unsigned int dst );
+void devkit_SMS_loadSTC0compressedTiles( const void *src, unsigned int tilefrom );
+void devkit_SMS_loadSTC0compressedTilesatAddr( const void *src, unsigned int dst );
+void devkit_SMS_loadSTC4compressedTiles( const void *src, unsigned int tilefrom );
+void devkit_SMS_loadSTC4compressedTilesatAddr( const void *src, unsigned int dst );
 void devkit_SMS_loadPSGaidencompressedTiles( const void *src, unsigned int tilefrom );
+void devkit_SMS_loadPSGaidencompressedTilesatAddr( const void *src, unsigned int dst );
+void devkit_SMS_loadZX7compressedTiles( const void *src, unsigned int tilefrom );
+void devkit_SMS_loadZX7compressedTilesatAddr( const void *src, unsigned int dst );
+void devkit_SMS_decompressZX7toVRAM( const void *src, unsigned int dst );
 
 /* UNSAFE functions to load compressed tiles into VRAM */
-void devkit_UNSAFE_SMS_loadaPLibcompressedTilesatAddr( const void *src, unsigned int dst );
 void devkit_UNSAFE_SMS_loadaPLibcompressedTiles( const void *src, unsigned int tilefrom );
+void devkit_UNSAFE_SMS_loadaPLibcompressedTilesatAddr( const void *src, unsigned int dst );
 
 /* functions for the tilemap */
 void devkit_SMS_loadTileMap( unsigned char x, unsigned char y, unsigned char *src, int size );
+
+void devkit_SMS_loadTileMapAreaatAddr( unsigned int dst, const void *src, unsigned char width, unsigned char height );
 void devkit_SMS_loadTileMapArea( unsigned char x, unsigned char y, void *src, unsigned char width, unsigned char height );
+
+void devkit_SMS_loadTileMapColumnatAddr( unsigned int dst, const void *src, unsigned int height );
+void devkit_SMS_loadTileMapColumn( unsigned char x, unsigned char y, const void *src, unsigned char height );
 
 void devkit_SMS_loadSTMcompressedTileMapatAddr( unsigned int dst, const void *src );
 void devkit_SMS_loadSTMcompressedTileMap( unsigned char x, unsigned char y, unsigned char *src );
-void devkit_SMS_loadSTMcompressedTileMapArea( unsigned char x, unsigned char y, unsigned char *src /*, unsigned char w*/ );
+void devkit_SMS_loadSTMcompressedTileMapArea( unsigned char x, unsigned char y, unsigned char *src, unsigned char w );
 // SMS_loadSTMcompressedTileMapArea *DEPRECATED* - will be dropped at some point in 201818
+
+/* function for reading back tiles from PNT */
+unsigned int devkit_SMS_getTile( void );
+
+/* PNT define (address and VDP flags for reading) */
+//#define SMS_PNTAddress_READ       0x3800
+
+/* macros for turning x,y into VRAM addr for reading */
+void devkit_XYtoREADADDR( unsigned char x, unsigned char y );
+void devkit_SMS_readNextTilefromXY( unsigned char x, unsigned char y );
+void devkit_SMS_readNextTilefromLoc( unsigned int loc );
+void devkit_SMS_readNextTilefromAddr( unsigned int a );
+
+void devkit_SMS_getTileatXY( unsigned char x, unsigned char y );
+
+/* Functions for reading back tilemap and VRAM */
+void devkit_SMS_saveTileMapArea( unsigned char x, unsigned char y, void *dst, unsigned char width, unsigned char height );
+void * devkit_SMS_saveTileMapColumnatAddr( unsigned int src, void *dst, unsigned int height );
+void devkit_SMS_saveTileMapColumn( unsigned char x, unsigned char y, void *dst, unsigned int height );
+void devkit_SMS_readVRAM( void *dst, unsigned int src, unsigned int size );
 
 /* functions for sprites handling */
 void devkit_SMS_initSprites();
