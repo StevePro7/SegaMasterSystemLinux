@@ -110,6 +110,7 @@ S:G$devkit_SMS_initSprites$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_addSprite$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_addTwoAdjoiningSprites$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_addThreeAdjoiningSprites$0_0$0({2}DF,SV:S),C,0,0
+S:G$devkit_SMS_addFourAdjoiningSprites$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_reserveSprite$0_0$0({2}DF,SC:S),C,0,0
 S:G$devkit_SMS_updateSpritePosition$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_updateSpriteImage$0_0$0({2}DF,SV:S),C,0,0
@@ -127,6 +128,7 @@ S:G$devkit_SMS_setNextSpriteColoratIndex$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_setColor$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_RGB$0_0$0({2}DF,SC:U),C,0,0
 S:G$devkit_RGB8$0_0$0({2}DF,SC:U),C,0,0
+S:G$devkit_RGBHTML$0_0$0({2}DF,SI:U),C,0,0
 S:G$devkit_SMS_loadBGPaletteHalfBrightness$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_loadSpritePaletteHalfBrightness$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_zeroBGPalette$0_0$0({2}DF,SV:S),C,0,0

@@ -147,12 +147,13 @@ void devkit_SMS_readVRAM( void *dst, unsigned int src, unsigned int size );
 
 /* functions for sprites handling */
 void devkit_SMS_initSprites();
-void devkit_SMS_addSprite( unsigned char x, unsigned char y, int tile );
-void devkit_SMS_addTwoAdjoiningSprites( unsigned char x, unsigned char y, unsigned char tile ); /*__naked __preserves_regs( iyh, iyl )*/     /* doesn't return anything */
-void devkit_SMS_addThreeAdjoiningSprites( unsigned char x, unsigned char y, unsigned char tile );  /*__naked __preserves_regs( iyh, iyl )*/   /* doesn't return anything */
+void devkit_SMS_addSprite( unsigned char x, unsigned char y, unsigned int tile ); /*__naked __preserves_regs(d,e,iyh,iyl) __sdcccall(1);*/                /* doesn't return anything */
+void devkit_SMS_addTwoAdjoiningSprites( unsigned char x, unsigned char y, unsigned int tile ); /*__naked __preserves_regs(d,e,iyh,iyl) __sdcccall(1);*/   /* doesn't return anything */
+void devkit_SMS_addThreeAdjoiningSprites( unsigned char x, unsigned char y, unsigned int tile ); /*__naked __preserves_regs(d,e,iyh,iyl) __sdcccall(1);*/ /* doesn't return anything */
+void devkit_SMS_addFourAdjoiningSprites( unsigned char x, unsigned char y, unsigned int tile ); /*__naked __preserves_regs(d,e,iyh,iyl) __sdcccall(1);*/  /* doesn't return anything */
 signed char devkit_SMS_reserveSprite( void );
 void devkit_SMS_updateSpritePosition( signed char sprite, unsigned char x, unsigned char y );
-void devkit_SMS_updateSpriteImage( signed char sprite, unsigned char tile );
+void devkit_SMS_updateSpriteImage( signed char sprite, unsigned char image );
 void devkit_SMS_hideSprite( signed char sprite );
 void devkit_SMS_setClippingWindow( unsigned char x0, unsigned char y0, unsigned char x1, unsigned char y1 );
 signed char devkit_SMS_addSpriteClipping( int x, int y, unsigned char tile );   /* returns -1 if no more sprites are available or sprite clipped */
@@ -178,7 +179,9 @@ void devkit_SMS_setColor( unsigned char color ); /*__z88dk_fastcall __preserves_
 /* SMS macros for colors */
 unsigned char devkit_RGB( const unsigned char r, const unsigned char g, const unsigned char b );
 unsigned char devkit_RGB8( const unsigned char r, const unsigned char g, const unsigned char b );
-//unsigned char devkit_RGBHTML( const unsigned int RGB24bit );
+unsigned int devkit_RGBHTML( const unsigned long RGB24bit );
+
+/* advanced functions for palettes */
 void devkit_SMS_loadBGPaletteHalfBrightness( void *palette );
 void devkit_SMS_loadSpritePaletteHalfBrightness( void *palette );
 void devkit_SMS_zeroBGPalette( void );

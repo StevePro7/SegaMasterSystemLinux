@@ -20,8 +20,8 @@ F:G$devkit_PSGGetStatus$0_0$0({2}DF,SC:U),Z,0,0,0,0,0
 F:G$devkit_PSGSetMusicVolumeChannelsAttenuation$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:L_snd_manager.devkit_PSGSetMusicVolumeChannelsAttenuation$chn2_attenuation$1_0$60({1}SC:U),B,1,4
 S:L_snd_manager.devkit_PSGSetMusicVolumeChannelsAttenuation$chn3_attenuation$1_0$60({1}SC:U),B,1,5
-S:L_snd_manager.devkit_PSGSetMusicVolumeChannelsAttenuation$chn1_attenuation$1_0$0({1}SC:U),R,0,0,[b]
-S:L_snd_manager.devkit_PSGSetMusicVolumeChannelsAttenuation$chn0_attenuation$1_0$0({1}SC:U),R,0,0,[c]
+S:L_snd_manager.devkit_PSGSetMusicVolumeChannelsAttenuation$chn1_attenuation$1_0$0({1}SC:U),R,0,0,[d]
+S:L_snd_manager.devkit_PSGSetMusicVolumeChannelsAttenuation$chn0_attenuation$1_0$0({1}SC:U),R,0,0,[e]
 F:G$devkit_PSGSetMusicVolumeAttenuation$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:L_snd_manager.devkit_PSGSetMusicVolumeAttenuation$attenuation$1_0$0({1}SC:U),R,0,0,[c]
 F:G$devkit_PSGSetMusicVolumeChannelsAttenuation_f$0_0$0({2}DF,SV:S),Z,0,0,0,0,0

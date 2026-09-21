@@ -145,13 +145,19 @@ void devkit_SMS_getROMBank()
 }
 
 /* macros to preserve and restore the currently mapped ROM bank */
+/* NOTE: SMS_saveROMBank()/SMS_restoreROMBank() expand to a local variable  */
+/* declaration/use named '_saved_slot2_ROM_bank', which only works when    */
+/* both macros are used within the same function. Since these wrappers    */
+/* call them from two separate functions, that variable can't be shared   */
+/* between them, so we keep our own file-scope copy instead.              */
+static unsigned char _devkit_saved_slot2_ROM_bank;
 void devkit_SMS_saveROMBank()
 {
-	SMS_saveROMBank();
+	_devkit_saved_slot2_ROM_bank = SMS_getROMBank();
 }
 void devkit_SMS_restoreROMBank()
 {
-	SMS_restoreROMBank();
+	SMS_mapROMBank( _devkit_saved_slot2_ROM_bank );
 }
 
 /* macro for SRAM access */
@@ -343,6 +349,7 @@ void devkit_SMS_loadSTMcompressedTileMap( unsigned char x, unsigned char y, unsi
 }
 void devkit_SMS_loadSTMcompressedTileMapArea( unsigned char x, unsigned char y, unsigned char *src , unsigned char w )
 {
+	(void)w; /* 'w' is unused: SMS_loadSTMcompressedTileMapArea() is deprecated and ignores it */
 	SMS_loadSTMcompressedTileMapArea( x, y, src, w );
 }
 // SMS_loadSTMcompressedTileMapArea *DEPRECATED* - will be dropped at some point in 201818
@@ -402,17 +409,21 @@ void devkit_SMS_initSprites()
 {
 	SMS_initSprites();
 }
-void devkit_SMS_addSprite( unsigned char x, unsigned char y, int tile )
+void devkit_SMS_addSprite( unsigned char x, unsigned char y, unsigned int tile )
 {
 	SMS_addSprite( x, y, tile );
 }
-void devkit_SMS_addTwoAdjoiningSprites( unsigned char x, unsigned char y, unsigned char tile )
+void devkit_SMS_addTwoAdjoiningSprites( unsigned char x, unsigned char y, unsigned int tile )
 {
 	SMS_addTwoAdjoiningSprites( x, y, tile );
 }
-void devkit_SMS_addThreeAdjoiningSprites( unsigned char x, unsigned char y, unsigned char tile )
+void devkit_SMS_addThreeAdjoiningSprites( unsigned char x, unsigned char y, unsigned int tile )
 {
 	SMS_addThreeAdjoiningSprites( x, y, tile );
+}
+void devkit_SMS_addFourAdjoiningSprites( unsigned char x, unsigned char y, unsigned int tile )
+{
+	SMS_addFourAdjoiningSprites( x, y, tile );
 }
 signed char devkit_SMS_reserveSprite( void )
 {
@@ -422,9 +433,9 @@ void devkit_SMS_updateSpritePosition( signed char sprite, unsigned char x, unsig
 {
 	SMS_updateSpritePosition( sprite, x, y );
 }
-void devkit_SMS_updateSpriteImage( signed char sprite, unsigned char tile )
+void devkit_SMS_updateSpriteImage( signed char sprite, unsigned char image )
 {
-	SMS_updateSpriteImage( sprite, tile );
+	SMS_updateSpriteImage( sprite, image );
 }
 void devkit_SMS_hideSprite( signed char sprite )
 {
@@ -493,11 +504,17 @@ unsigned char devkit_RGB8( const unsigned char r, const unsigned char g, const u
 {
 	return RGB8( r, g, b );
 }
-//_sms_manager.c:388: warning 116: right shifting more than size of object changed to zero
-//unsigned char devkit_RGBHTML( const unsigned int RGB24bit )
-//{
-//	return RGBHTML( RGB24bit );
-//}
+unsigned int devkit_RGBHTML( const unsigned long RGB24bit )
+{
+	/* RGBHTML() shifts its argument right by up to 20 bits. Expanding it   */
+	/* directly on a 16-bit 'unsigned int' triggers an SDCC code generator */
+	/* crash (shift width > object width); widen to unsigned long first so */
+	/* the macro's arithmetic stays within a valid object size.            */
+	//unsigned long _RGB24bit_wide = RGB24bit;
+	return RGBHTML( RGB24bit );
+}
+
+/* advanced functions for palettes */
 void devkit_SMS_loadBGPaletteHalfBrightness( void *palette )
 {
 	SMS_loadBGPaletteHalfBrightness( palette );
