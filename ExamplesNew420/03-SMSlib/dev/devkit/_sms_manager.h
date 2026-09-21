@@ -186,13 +186,23 @@ void devkit_SMS_loadBGPaletteHalfBrightness( void *palette );
 void devkit_SMS_loadSpritePaletteHalfBrightness( void *palette );
 void devkit_SMS_zeroBGPalette( void );
 void devkit_SMS_zeroSpritePalette( void );
+void devkit_SMS_loadBGPaletteafterColorAddition( const void *palette, const unsigned char addition_color );
+void devkit_SMS_loadSpritePaletteafterColorAddition( const void *palette, const unsigned char addition_color );
+void devkit_SMS_loadBGPaletteafterColorSubtraction( const void *palette, const unsigned char subtraction_color );
+void devkit_SMS_loadSpritePaletteafterColorSubtraction( const void *palette, const unsigned char subtraction_color );
 
 /* text renderer */
 void devkit_SMS_configureTextRenderer( signed int ascii_to_tile_offset );
 void devkit_SMS_autoSetUpTextRenderer( void );
+void devkit_SMS_putchar( unsigned char c );
+void devkit_SMS_print( const unsigned char *str );
 
-/* decompress ZX7-compressed data to RAM */
+/* Macro to print a string at a given location */
+void devkit_SMS_printatXY( unsigned char x, unsigned char y, const unsigned char *s );
+
+/* decompress compressed data to RAM */
 void devkit_SMS_decompressZX7( const void *src, void *dst );
+void devkit_SMS_decompressaPLib( const void *src, void *dst );
 
 /* functions to read joypad(s) */
 unsigned int devkit_SMS_getKeysStatus();
@@ -248,6 +258,8 @@ void devkit_SMS_setLineInterruptHandler( void( *theHandlerFunction )( void ) ); 
 void devkit_SMS_setLineCounter( unsigned char count );
 void devkit_SMS_enableLineInterrupt(); /* turns on line IRQ */
 void devkit_SMS_disableLineInterrupt(); /* turns off line IRQ */
+
+void devkit_INLINE_SMS_setBGScrollX( unsigned char scrollX );
 
 /* Vcount */
 unsigned char devkit_SMS_getVCount( void );

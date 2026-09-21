@@ -531,6 +531,22 @@ void devkit_SMS_zeroSpritePalette( void )
 {
 	SMS_zeroSpritePalette();
 }
+void devkit_SMS_loadBGPaletteafterColorAddition( const void *palette, const unsigned char addition_color )
+{
+	SMS_loadBGPaletteafterColorAddition( palette, addition_color );
+}
+void devkit_SMS_loadSpritePaletteafterColorAddition( const void *palette, const unsigned char addition_color )
+{
+	SMS_loadSpritePaletteafterColorAddition( palette, addition_color );
+}
+void devkit_SMS_loadBGPaletteafterColorSubtraction( const void *palette, const unsigned char subtraction_color )
+{
+	SMS_loadBGPaletteafterColorSubtraction( palette, subtraction_color );
+}
+void devkit_SMS_loadSpritePaletteafterColorSubtraction( const void *palette, const unsigned char subtraction_color )
+{
+	SMS_loadSpritePaletteafterColorSubtraction( palette, subtraction_color );
+}
 
 /* text renderer */
 void devkit_SMS_configureTextRenderer( signed int ascii_to_tile_offset )
@@ -541,11 +557,29 @@ void devkit_SMS_autoSetUpTextRenderer( void )
 {
 	SMS_autoSetUpTextRenderer();
 }
+void devkit_SMS_putchar( unsigned char c )
+{
+	SMS_putchar( c );
+}
+void devkit_SMS_print( const unsigned char *str )
+{
+	SMS_print( str );
+}
 
-/* decompress ZX7-compressed data to RAM */
+/* Macro to print a string at a given location */
+void devkit_SMS_printatXY( unsigned char x, unsigned char y, const unsigned char *s )
+{
+	SMS_printatXY( x, y, s );
+}
+
+/* decompress compressed data to RAM */
 void devkit_SMS_decompressZX7( const void *src, void *dst )
 {
 	SMS_decompressZX7( src, dst );
+}
+void devkit_SMS_decompressaPLib( const void *src, void *dst )
+{
+	SMS_decompressaPLib( src, dst );
 }
 
 /* functions to read joypad(s) */
@@ -715,6 +749,11 @@ void devkit_SMS_enableLineInterrupt()
 void devkit_SMS_disableLineInterrupt()
 {
 	SMS_disableLineInterrupt();
+}
+
+void devkit_INLINE_SMS_setBGScrollX( unsigned char scrollX )
+{
+	INLINE_SMS_setBGScrollX( scrollX );
 }
 
 /* Vcount */

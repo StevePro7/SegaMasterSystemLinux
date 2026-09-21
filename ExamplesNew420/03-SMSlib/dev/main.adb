@@ -133,9 +133,17 @@ S:G$devkit_SMS_loadBGPaletteHalfBrightness$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_loadSpritePaletteHalfBrightness$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_zeroBGPalette$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_zeroSpritePalette$0_0$0({2}DF,SV:S),C,0,0
+S:G$devkit_SMS_loadBGPaletteafterColorAddition$0_0$0({2}DF,SV:S),C,0,0
+S:G$devkit_SMS_loadSpritePaletteafterColorAddition$0_0$0({2}DF,SV:S),C,0,0
+S:G$devkit_SMS_loadBGPaletteafterColorSubtraction$0_0$0({2}DF,SV:S),C,0,0
+S:G$devkit_SMS_loadSpritePaletteafterColorSubtraction$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_configureTextRenderer$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_autoSetUpTextRenderer$0_0$0({2}DF,SV:S),C,0,0
+S:G$devkit_SMS_putchar$0_0$0({2}DF,SV:S),C,0,0
+S:G$devkit_SMS_print$0_0$0({2}DF,SV:S),C,0,0
+S:G$devkit_SMS_printatXY$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_decompressZX7$0_0$0({2}DF,SV:S),C,0,0
+S:G$devkit_SMS_decompressaPLib$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_getKeysStatus$0_0$0({2}DF,SI:U),C,0,0
 S:G$devkit_SMS_getKeysPressed$0_0$0({2}DF,SI:U),C,0,0
 S:G$devkit_SMS_getKeysHeld$0_0$0({2}DF,SI:U),C,0,0
@@ -171,6 +179,7 @@ S:G$devkit_SMS_setLineInterruptHandler$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_setLineCounter$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_enableLineInterrupt$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_disableLineInterrupt$0_0$0({2}DF,SV:S),C,0,0
+S:G$devkit_INLINE_SMS_setBGScrollX$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_getVCount$0_0$0({2}DF,SC:U),C,0,0
 S:G$devkit_SMS_VRAMmemcpy$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VRAMmemcpy_brief$0_0$0({2}DF,SV:S),C,0,0
