@@ -391,7 +391,7 @@ void SMS_setLineCounter (unsigned char count) {}
 /* Game Gear NMI handling */
 void GG_setNMIHandler (void (*theHandlerFunction)(void)) {} /*__z88dk_fastcall;*/
 
-/*__sfr __at (0xbf)*/ SMS_VDPControlPort;
+/*__sfr __at (0xbf)*/ unsigned char SMS_VDPControlPort;
 /* alternative version of SMS_setBGScrollX to be used in the line interrupt handler for raster effects */
 #define INLINE_SMS_setBGScrollX(scrollX)      do{SMS_VDPControlPort=(scrollX);SMS_VDPControlPort=0x88;}while(0)
 
