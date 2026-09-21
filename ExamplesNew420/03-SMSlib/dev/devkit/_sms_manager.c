@@ -785,33 +785,64 @@ void devkit_UNSAFE_SMS_copySpritestoSAT( void )
 {
 	UNSAFE_SMS_copySpritestoSAT();
 }
-void devkit_UNSAFE_SMS_VRAMmemcpy32( unsigned int dst, void *src )
+void* devkit_UNSAFE_SMS_VRAMmemcpy32( unsigned int dst, const void *src )
 {
-	UNSAFE_SMS_VRAMmemcpy32( dst, src );
+	return UNSAFE_SMS_VRAMmemcpy32( dst, src );
 }
-void devkit_UNSAFE_SMS_VRAMmemcpy64( unsigned int dst, void *src )
+void* devkit_UNSAFE_SMS_VRAMmemcpy64( unsigned int dst, const void *src )
 {
-	UNSAFE_SMS_VRAMmemcpy64( dst, src );
+	return UNSAFE_SMS_VRAMmemcpy64( dst, src );
 }
-void devkit_UNSAFE_SMS_VRAMmemcpy128( unsigned int dst, void *src )
+void* devkit_UNSAFE_SMS_VRAMmemcpy96( unsigned int dst, const void *src )
 {
-	UNSAFE_SMS_VRAMmemcpy128( dst, src );
+	return UNSAFE_SMS_VRAMmemcpy96( dst, src );
+}
+void* devkit_UNSAFE_SMS_VRAMmemcpy128( unsigned int dst, const void *src )
+{
+	return UNSAFE_SMS_VRAMmemcpy128( dst, src );
+}
+void* devkit_UNSAFE_SMS_VRAMmemcpy( unsigned int dst, void *src, unsigned int size )
+{
+	return UNSAFE_SMS_VRAMmemcpy( dst, src, size );
 }
 
 /* handy macros for UNSAFE_SMS_VRAMmemcpy* */
 void devkit_UNSAFE_SMS_load1Tile( void *src, unsigned int theTile )
 {
-	UNSAFE_SMS_VRAMmemcpy32( ( theTile ) * 32, ( src ) );
+	UNSAFE_SMS_load1Tile( src, theTile );
 }
 void devkit_UNSAFE_SMS_load2Tiles( void *src, unsigned int tilefrom )
 {
-	UNSAFE_SMS_VRAMmemcpy64( ( tilefrom ) * 32, ( src ) );
+	UNSAFE_SMS_load2Tiles( src, tilefrom );
+}
+void devkit_UNSAFE_SMS_load3Tiles( void *src, unsigned int tilefrom )
+{
+	UNSAFE_SMS_load3Tiles( src, tilefrom );
 }
 void devkit_UNSAFE_SMS_load4Tiles( void *src, unsigned int tilefrom )
 {
-	UNSAFE_SMS_VRAMmemcpy128( ( tilefrom ) * 32, ( src ) );
+	UNSAFE_SMS_load4Tiles( src, tilefrom );
+}
+void devkit_UNSAFE_SMS_loadNTiles( void *src, unsigned int tilefrom, unsigned char tilecount )
+{
+	UNSAFE_SMS_loadNTiles( src, tilefrom, tilecount );
+}
+void devkit_UNSAFE_SMS_loadTiles( void *src, unsigned int tilefrom, unsigned char size )
+{
+	UNSAFE_SMS_loadTiles( src, tilefrom, size );
 }
 
+void devkit_SMS_debugPrintf( const unsigned char *format, ... )
+{
+#ifdef _CONSOLE
+	SMS_debugPrintf( format );
+#else
+	(void)format;
+	__asm
+		jp _SMS_debugPrintf
+	__endasm;
+#endif
+}
 
 /* the Interrupt Service Routines (do not modify) */
 void dekvit_SMS_isr( void )
