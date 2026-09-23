@@ -1,0 +1,63 @@
+;!FILE content_manager.asm
+XL3
+H 9 areas 25 global symbols
+M content_manager
+O -mz80
+S _sprites_palette_bin Ref000000
+S _devkit_SMS_loadBGPalette Ref000000
+S _devkit_SMS_loadPSGaidencompressedTiles Ref000000
+S .__.ABS. Def000000
+S _tileset_tiles_psgcompr Ref000000
+S _devkit_SMS_setSpritePaletteColor Ref000000
+S _sprites_tiles_psgcompr Ref000000
+S _devkit_SMS_loadSpritePalette Ref000000
+S _tileset_palette_bin Ref000000
+A _CODE size 23 flags 0 addr 0
+S G$engine_content_manager_load_sprites$0$0 Def00000F
+S A$content_manager$100 Def00001E
+S A$content_manager$101 Def00001F
+S _engine_content_manager_load_sprites Def00000F
+S C$content_manager.c$10$1_0$118 Def000009
+S C$content_manager.c$11$1_0$118 Def00000C
+S C$content_manager.c$12$1_0$119 Def00000F
+S A$content_manager$109 Def000020
+S C$content_manager.c$15$1_0$119 Def00000F
+S C$content_manager.c$16$1_0$119 Def000018
+S C$content_manager.c$17$1_0$119 Def00001E
+S XG$engine_content_manager_load_sprites$0$0 Def000020
+S C$content_manager.c$18$1_0$119 Def000020
+S A$content_manager$60 Def000000
+S A$content_manager$61 Def000003
+S G$engine_content_manager_load_bgtiles$0$0 Def000000
+S A$content_manager$62 Def000006
+S C$content_manager.c$6$0_0$118 Def000000
+S A$content_manager$74 Def00000C
+S A$content_manager$93 Def000018
+S A$content_manager$66 Def000009
+S A$content_manager$94 Def00001B
+S C$content_manager.c$9$1_0$118 Def000000
+S A$content_manager$87 Def00000F
+S A$content_manager$88 Def000012
+S A$content_manager$89 Def000015
+S _engine_content_manager_load_bgtiles Def000000
+S XG$engine_content_manager_load_bgtiles$0$0 Def00000C
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 11 00 01 21 00 00 CD 00 00 21 00 00 C3
+R 00 00 00 00 02 07 04 00 02 0A 02 00 02 0D 08 00
+T 0D 00 00 00 00
+R 00 00 00 00 02 03 01 00
+T 0F 00 00
+R 00 00 00 00
+T 0F 00 00 11 00 00 21 00 00 CD 00 00 21 00 00 CD
+R 00 00 00 00 02 07 06 00 02 0A 02 00 02 0D 00 00
+T 1C 00 00 00 00 AF 6F C3 00 00
+R 00 00 00 00 02 03 07 00 02 08 05 00
