@@ -1,0 +1,69 @@
+;!FILE content_manager.asm
+XL3
+H 9 areas 29 global symbols
+M content_manager
+O -mz80
+S _game_tiles__tiles__psgcompr Ref000000
+S _sprites__palette__bin Ref000000
+S _devkit_SMS_loadBGPalette Ref000000
+S _devkit_SMS_loadPSGaidencompressedTiles Ref000000
+S _game_tiles__palette__bin Ref000000
+S _font_tiles__tiles__psgcompr Ref000000
+S .__.ABS. Def000000
+S _sprites__tiles__psgcompr Ref000000
+S _font_tiles__palette__bin Ref000000
+S _devkit_SMS_loadSpritePalette Ref000000
+A _CODE size 2D flags 0 addr 0
+S G$engine_content_manager_load_sprites$0$0 Def00001E
+S A$content_manager$111 Def00002A
+S _engine_content_manager_load_sprites Def00001E
+S A$content_manager$103 Def000027
+S C$content_manager.c$20$1_0$119 Def00001E
+S C$content_manager.c$12$1_0$118 Def000000
+S C$content_manager.c$13$1_0$118 Def000009
+S C$content_manager.c$23$1_0$119 Def00001E
+S C$content_manager.c$24$1_0$119 Def000027
+S C$content_manager.c$16$1_0$118 Def00000F
+S C$content_manager.c$25$1_0$119 Def00002A
+S C$content_manager.c$17$1_0$118 Def000018
+S C$content_manager.c$18$1_0$118 Def00001B
+S G$engine_content_manager_load_tiles$0$0 Def000000
+S XG$engine_content_manager_load_sprites$0$0 Def00002A
+S A$content_manager$60 Def000003
+S A$content_manager$70 Def00000F
+S A$content_manager$61 Def000006
+S A$content_manager$71 Def000012
+S A$content_manager$72 Def000015
+S _engine_content_manager_load_tiles Def000000
+S A$content_manager$65 Def000009
+S A$content_manager$84 Def00001B
+S A$content_manager$66 Def00000C
+S A$content_manager$76 Def000018
+S C$content_manager.c$9$0_0$118 Def000000
+S A$content_manager$59 Def000000
+S A$content_manager$97 Def00001E
+S A$content_manager$98 Def000021
+S A$content_manager$99 Def000024
+S XG$engine_content_manager_load_tiles$0$0 Def00001B
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 11 00 00 21 00 00 CD 00 00 21 00 00 CD
+R 00 00 00 00 02 07 05 00 02 0A 03 00 02 0D 08 00
+T 0D 00 00 00 00 11 40 00 21 00 00 CD 00 00 21
+R 00 00 00 00 02 03 02 00 02 09 00 00 02 0C 03 00
+T 19 00 00 00 00 C3 00 00
+R 00 00 00 00 02 03 04 00 02 06 02 00
+T 1E 00 00
+R 00 00 00 00
+T 1E 00 00 11 00 01 21 00 00 CD 00 00 21 00 00 C3
+R 00 00 00 00 02 07 07 00 02 0A 03 00 02 0D 01 00
+T 2B 00 00 00 00
+R 00 00 00 00 02 03 09 00
