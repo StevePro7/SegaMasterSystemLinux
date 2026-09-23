@@ -24,7 +24,7 @@ sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 font_manager.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 input_manager.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 screen_manager.c
-cd .
+cd ..
 
 sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
 
@@ -37,12 +37,18 @@ echo.
 echo Time taken: %_sec:~-2%.%_cs:~-2% secs
 echo.
 
+:: crt0b_sms.rel (the banked crt0) ships without the _OUTI96 block that
+:: newer SMSlib.lib builds need for UNSAFE_SMS_load3Tiles / VRAMmemcpy96.
+:: Assemble the small stub that supplies it (see ../crt0/outi96_fix.s).
+::sdasz80 -g -o ../crt0/outi96_fix.s
+
 :: Link
 sdcc --debug -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-loc 0xC000 ^
 -Wl-b_BANK1=0x14000 ^
 -Wl-b_BANK2=0x24000 ^
 -Wl-b_BANK3=0x34000 ^
 ../crt0/crt0b_sms.rel ^
+../crt0/outi96_fix.rel ^
 ../lib/SMSlib.lib ^
 ../lib/PSGlib.lib ^
 main.rel ^
