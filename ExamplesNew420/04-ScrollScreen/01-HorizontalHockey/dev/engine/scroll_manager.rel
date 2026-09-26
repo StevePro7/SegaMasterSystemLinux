@@ -1,0 +1,469 @@
+;!FILE scroll_manager.asm
+XL3
+H 9 areas 127 global symbols
+M scroll_manager
+O -mz80
+S _hockey__tilemap__bin Ref000000
+S __mulint Ref000000
+S .__.ABS. Def000000
+S _devkit_SMS_loadTileMap Ref000000
+S _devkit_SMS_setBGScrollX Ref000000
+A _CODE size 1AF flags 0 addr 0
+S A$scroll_manager$95 Def00000C
+S A$scroll_manager$86 Def000000
+S A$scroll_manager$96 Def00000D
+S A$scroll_manager$88 Def000002
+S A$scroll_manager$89 Def000003
+S XG$engine_scroll_manager_load$0$0 Def000043
+S G$engine_scroll_manager_update_right$0$0 Def0000EC
+S C$scroll_manager.c$102$1_0$156 Def0001AE
+S _engine_scroll_manager_update_right Def0000EC
+S G$engine_scroll_manager_update_left$0$0 Def000044
+S A$scroll_manager$100 Def00000F
+S A$scroll_manager$200 Def00006C
+S A$scroll_manager$110 Def00001C
+S A$scroll_manager$101 Def000010
+S A$scroll_manager$210 Def00007E
+S A$scroll_manager$201 Def00006D
+S A$scroll_manager$120 Def000022
+S A$scroll_manager$111 Def00001D
+S A$scroll_manager$102 Def000013
+S A$scroll_manager$400 Def00016B
+S A$scroll_manager$220 Def000099
+S A$scroll_manager$211 Def000082
+S A$scroll_manager$121 Def000023
+S A$scroll_manager$103 Def000016
+S A$scroll_manager$410 Def00017B
+S A$scroll_manager$401 Def00016C
+S A$scroll_manager$320 Def0000F6
+S A$scroll_manager$302 Def0000EB
+S A$scroll_manager$230 Def0000A3
+S A$scroll_manager$212 Def000086
+S A$scroll_manager$140 Def000033
+S A$scroll_manager$122 Def000024
+S A$scroll_manager$104 Def000017
+S A$scroll_manager$420 Def000183
+S A$scroll_manager$402 Def00016D
+S A$scroll_manager$330 Def000105
+S A$scroll_manager$321 Def0000F9
+S A$scroll_manager$312 Def0000EC
+S A$scroll_manager$240 Def0000B0
+S A$scroll_manager$213 Def00008A
+S A$scroll_manager$141 Def000036
+S A$scroll_manager$132 Def00002B
+S A$scroll_manager$123 Def000025
+S A$scroll_manager$105 Def000018
+S XG$engine_scroll_manager_update_right$0$0 Def0001AE
+S A$scroll_manager$421 Def000184
+S A$scroll_manager$331 Def000106
+S A$scroll_manager$322 Def0000FC
+S A$scroll_manager$313 Def0000EE
+S A$scroll_manager$250 Def0000BA
+S A$scroll_manager$232 Def0000A5
+S A$scroll_manager$214 Def00008E
+S A$scroll_manager$205 Def00006E
+S A$scroll_manager$142 Def000039
+S A$scroll_manager$133 Def00002C
+S A$scroll_manager$115 Def00001E
+S _engine_scroll_manager_update_left Def000044
+S A$scroll_manager$440 Def00019C
+S A$scroll_manager$422 Def000186
+S A$scroll_manager$350 Def00011B
+S A$scroll_manager$332 Def000108
+S A$scroll_manager$323 Def0000FD
+S A$scroll_manager$314 Def0000F2
+S A$scroll_manager$260 Def0000C0
+S A$scroll_manager$233 Def0000A6
+S A$scroll_manager$224 Def00009C
+S A$scroll_manager$215 Def000092
+S A$scroll_manager$206 Def000071
+S A$scroll_manager$170 Def00004C
+S A$scroll_manager$143 Def00003A
+S A$scroll_manager$116 Def000021
+S C$scroll_manager.c$70$1_0$150 Def0000EB
+S C$scroll_manager.c$61$1_0$150 Def0000B2
+S A$scroll_manager$450 Def0001A7
+S A$scroll_manager$441 Def00019D
+S A$scroll_manager$423 Def000189
+S A$scroll_manager$414 Def00017C
+S A$scroll_manager$360 Def000130
+S A$scroll_manager$333 Def00010B
+S A$scroll_manager$324 Def0000FE
+S A$scroll_manager$315 Def0000F4
+S A$scroll_manager$261 Def0000C1
+S A$scroll_manager$234 Def0000A8
+S A$scroll_manager$225 Def00009F
+S A$scroll_manager$207 Def000074
+S A$scroll_manager$171 Def00004D
+S A$scroll_manager$144 Def00003B
+S A$scroll_manager$126 Def000026
+S C$scroll_manager.c$51$2_0$151 Def000058
+S A$scroll_manager$433 Def000194
+S A$scroll_manager$424 Def00018C
+S A$scroll_manager$415 Def00017F
+S A$scroll_manager$406 Def00016F
+S A$scroll_manager$370 Def000148
+S A$scroll_manager$361 Def000134
+S A$scroll_manager$343 Def000112
+S A$scroll_manager$334 Def00010C
+S A$scroll_manager$325 Def000101
+S A$scroll_manager$316 Def0000F5
+S A$scroll_manager$280 Def0000DB
+S A$scroll_manager$262 Def0000C4
+S A$scroll_manager$244 Def0000B2
+S A$scroll_manager$235 Def0000AB
+S A$scroll_manager$226 Def0000A1
+S A$scroll_manager$208 Def000077
+S A$scroll_manager$190 Def000063
+S A$scroll_manager$145 Def00003C
+S A$scroll_manager$127 Def000027
+S A$scroll_manager$109 Def000019
+S C$scroll_manager.c$63$1_0$150 Def0000C0
+S C$scroll_manager.c$52$2_0$151 Def000064
+S A$scroll_manager$461 Def0001AE
+S A$scroll_manager$434 Def000197
+S A$scroll_manager$425 Def00018E
+S A$scroll_manager$416 Def000180
+S A$scroll_manager$407 Def000173
+S A$scroll_manager$371 Def000149
+S A$scroll_manager$362 Def000138
+S A$scroll_manager$344 Def000115
+S A$scroll_manager$335 Def00010D
+S A$scroll_manager$326 Def000102
+S A$scroll_manager$290 Def0000E4
+S A$scroll_manager$281 Def0000DC
+S A$scroll_manager$272 Def0000D2
+S A$scroll_manager$263 Def0000C7
+S A$scroll_manager$254 Def0000BB
+S A$scroll_manager$245 Def0000B5
+S A$scroll_manager$236 Def0000AC
+S A$scroll_manager$209 Def00007A
+S A$scroll_manager$182 Def000058
+S A$scroll_manager$146 Def00003F
+S A$scroll_manager$128 Def00002A
+S C$scroll_manager.c$53$2_0$151 Def00006E
+S A$scroll_manager$444 Def0001A0
+S A$scroll_manager$426 Def00018F
+S A$scroll_manager$408 Def000177
+S A$scroll_manager$372 Def00014A
+S A$scroll_manager$363 Def00013C
+S A$scroll_manager$354 Def00011C
+S A$scroll_manager$345 Def000116
+S A$scroll_manager$336 Def00010E
+S A$scroll_manager$291 Def0000E5
+S A$scroll_manager$273 Def0000D5
+S A$scroll_manager$264 Def0000C8
+S A$scroll_manager$255 Def0000BC
+S A$scroll_manager$237 Def0000AD
+S A$scroll_manager$219 Def000096
+S A$scroll_manager$183 Def00005A
+S A$scroll_manager$147 Def000040
+S A$scroll_manager$138 Def00002F
+S C$scroll_manager.c$54$2_0$151 Def000096
+S A$scroll_manager$445 Def0001A1
+S A$scroll_manager$427 Def000191
+S A$scroll_manager$409 Def000179
+S A$scroll_manager$373 Def00014D
+S A$scroll_manager$364 Def000140
+S A$scroll_manager$355 Def00011F
+S A$scroll_manager$346 Def000117
+S A$scroll_manager$337 Def00010F
+S A$scroll_manager$265 Def0000CC
+S A$scroll_manager$256 Def0000BD
+S A$scroll_manager$238 Def0000AE
+S A$scroll_manager$184 Def00005B
+S A$scroll_manager$175 Def00004E
+S A$scroll_manager$157 Def000043
+S A$scroll_manager$148 Def000041
+S A$scroll_manager$139 Def000032
+S C$scroll_manager.c$39$1_0$150 Def000044
+S C$scroll_manager.c$30$3_0$148 Def000019
+S A$scroll_manager$455 Def0001AA
+S A$scroll_manager$428 Def000192
+S A$scroll_manager$392 Def00015C
+S A$scroll_manager$356 Def000122
+S A$scroll_manager$347 Def000118
+S A$scroll_manager$338 Def000110
+S A$scroll_manager$284 Def0000DF
+S A$scroll_manager$266 Def0000CE
+S A$scroll_manager$248 Def0000B6
+S A$scroll_manager$239 Def0000AF
+S A$scroll_manager$194 Def000064
+S A$scroll_manager$185 Def00005E
+S A$scroll_manager$176 Def000051
+S A$scroll_manager$167 Def000044
+S A$scroll_manager$149 Def000042
+S C$scroll_manager.c$56$2_0$151 Def00009C
+S C$scroll_manager.c$49$1_0$150 Def00004E
+S C$scroll_manager.c$31$3_0$148 Def00001E
+S G$engine_scroll_manager_load$0$0 Def000000
+S A$scroll_manager$456 Def0001AC
+S A$scroll_manager$438 Def000198
+S A$scroll_manager$429 Def000193
+S A$scroll_manager$384 Def000154
+S A$scroll_manager$357 Def000125
+S A$scroll_manager$348 Def000119
+S A$scroll_manager$339 Def000111
+S A$scroll_manager$285 Def0000E0
+S A$scroll_manager$267 Def0000D0
+S A$scroll_manager$249 Def0000B9
+S A$scroll_manager$195 Def000067
+S A$scroll_manager$186 Def00005F
+S A$scroll_manager$177 Def000054
+S A$scroll_manager$168 Def000046
+S C$scroll_manager.c$36$1_0$146 Def00002F
+S C$scroll_manager.c$19$0_0$146 Def000000
+S A$scroll_manager$439 Def00019B
+S A$scroll_manager$394 Def000160
+S A$scroll_manager$385 Def000156
+S A$scroll_manager$358 Def000128
+S A$scroll_manager$349 Def00011A
+S A$scroll_manager$286 Def0000E3
+S A$scroll_manager$277 Def0000D6
+S A$scroll_manager$268 Def0000D1
+S A$scroll_manager$196 Def000068
+S A$scroll_manager$187 Def000060
+S A$scroll_manager$178 Def000055
+S A$scroll_manager$169 Def00004A
+S C$scroll_manager.c$91$5_0$160 Def00015C
+S C$scroll_manager.c$72$1_0$156 Def0000EC
+S C$scroll_manager.c$37$1_0$146 Def000043
+S C$scroll_manager.c$26$2_0$147 Def00002B
+S C$scroll_manager.c$33$3_0$148 Def000022
+S A$scroll_manager$449 Def0001A4
+S A$scroll_manager$395 Def000163
+S A$scroll_manager$386 Def000157
+S A$scroll_manager$377 Def00014E
+S A$scroll_manager$368 Def000144
+S A$scroll_manager$359 Def00012C
+S A$scroll_manager$296 Def0000E8
+S A$scroll_manager$278 Def0000D7
+S A$scroll_manager$197 Def000069
+S A$scroll_manager$188 Def000061
+S C$scroll_manager.c$82$1_0$156 Def0000F6
+S C$scroll_manager.c$62$5_0$154 Def0000BB
+S C$scroll_manager.c$29$1_0$146 Def00000F
+S A$scroll_manager$396 Def000165
+S A$scroll_manager$387 Def000158
+S A$scroll_manager$378 Def000151
+S A$scroll_manager$369 Def000147
+S A$scroll_manager$297 Def0000E9
+S A$scroll_manager$279 Def0000DA
+S A$scroll_manager$198 Def00006A
+S A$scroll_manager$189 Def000062
+S C$scroll_manager.c$93$5_0$160 Def00016F
+S C$scroll_manager.c$26$3_0$148 Def000000
+S A$scroll_manager$397 Def000168
+S A$scroll_manager$388 Def00015A
+S A$scroll_manager$379 Def000153
+S A$scroll_manager$199 Def00006B
+S C$scroll_manager.c$94$5_0$160 Def00017C
+S XG$engine_scroll_manager_update_left$0$0 Def0000EB
+S C$scroll_manager.c$64$5_0$154 Def0000D2
+S A$scroll_manager$398 Def000169
+S C$scroll_manager.c$58$4_0$153 Def0000E4
+S A$scroll_manager$399 Def00016A
+S C$scroll_manager.c$96$5_0$160 Def000194
+S C$scroll_manager.c$95$1_0$156 Def000183
+S C$scroll_manager.c$84$2_0$157 Def000105
+S C$scroll_manager.c$66$5_0$154 Def0000D6
+S C$scroll_manager.c$85$2_0$157 Def000112
+S C$scroll_manager.c$58$5_0$154 Def0000A3
+S C$scroll_manager.c$91$4_0$159 Def0001A4
+S C$scroll_manager.c$98$5_0$160 Def000198
+S C$scroll_manager.c$86$2_0$157 Def00011C
+S C$scroll_manager.c$87$2_0$157 Def000144
+S A$scroll_manager$90 Def000005
+S A$scroll_manager$91 Def000008
+S C$scroll_manager.c$89$2_0$157 Def00014E
+S _engine_scroll_manager_load Def000000
+S A$scroll_manager$92 Def000009
+S A$scroll_manager$93 Def00000A
+S A$scroll_manager$94 Def00000B
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 10 flags 0 addr 0
+S _X_TILE_MAX Def000002
+S _Y_TILE_MAX Def000004
+S G$X_TILE_MAX$0_0$0 Def000002
+S G$Y_TILE_MAX$0_0$0 Def000004
+S _BG_TILE_WIDTH Def000000
+S G$BG_TILE_WIDTH$0_0$0 Def000000
+S Fscroll_manager$scrollRightDivided8$0_0$0 Def00000C
+S Fscroll_manager$scrollDivided8$0_0$0 Def000008
+S Fscroll_manager$scrollRight$0_0$0 Def00000A
+S Fscroll_manager$scrollWidth$0_0$0 Def00000E
+S Fscroll_manager$scroll$0_0$0 Def000006
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 10 flags 0 addr 0
+S Fscroll_manager$__xinit_scrollRight$0_0$0 Def00000A
+S Fscroll_manager$__xinit_scrollWidth$0_0$0 Def00000E
+S Fscroll_manager$__xinit_scroll$0_0$0 Def000006
+S Fscroll_manager$__xinit_X_TILE_MAX$0_0$0 Def000002
+S Fscroll_manager$__xinit_Y_TILE_MAX$0_0$0 Def000004
+S Fscroll_manager$__xinit_BG_TILE_WIDTH$0_0$0 Def000000
+S Fscroll_manager$__xinit_scrollRightDivided8$0_0$0 Def00000C
+S Fscroll_manager$__xinit_scrollDivided8$0_0$0 Def000008
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 02 00
+T 00 00 00
+R 00 00 02 00
+T 02 00 00
+R 00 00 02 00
+T 02 00 00
+R 00 00 02 00
+T 04 00 00
+R 00 00 02 00
+T 04 00 00
+R 00 00 02 00
+T 06 00 00
+R 00 00 02 00
+T 06 00 00
+R 00 00 02 00
+T 08 00 00
+R 00 00 02 00
+T 08 00 00
+R 00 00 02 00
+T 0A 00 00
+R 00 00 02 00
+T 0A 00 00
+R 00 00 02 00
+T 0C 00 00
+R 00 00 02 00
+T 0C 00 00
+R 00 00 02 00
+T 0E 00 00
+R 00 00 02 00
+T 0E 00 00
+R 00 00 02 00
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 0E 00
+R 00 00 00 00
+T 02 00 00
+R 00 00 00 00
+T 02 00 00 59 16 00 21 04 00 7B 96 23 7A 9E 30 20
+R 00 00 00 00 00 07 02 00
+T 0F 00 00 C5 2A 00 00 CD 00 00 EB C1 29 11 00 00
+R 00 00 00 00 00 05 02 00 02 08 01 00 02 0E 00 00
+T 1C 00 00 19 EB 2A 02 00 29 C5 E5 D5 69 AF CD
+R 00 00 00 00 00 06 02 00
+T 28 00 00 00 00 C1 0C C3 02 00
+R 00 00 00 00 02 03 03 00 00 08 00 00
+T 2F 00 00
+R 00 00 00 00
+T 2F 00 00 21 02 00 D5 11 0E 00 3A 00 00 96 23 12
+R 00 00 00 00 00 04 02 00 00 08 02 00 00 0B 02 00
+T 3C 00 00 3A 01 00 9E 13 12 D1 C9
+R 00 00 00 00 00 04 02 00
+T 44 00 00
+R 00 00 00 00
+T 44 00 00 DD E5 DD 21 00 00 DD 39 3B 4F 3A 0B 00
+R 00 00 00 00 00 0E 02 00
+T 51 00 00 21 0A 00 B6 CA E8 00 1E 00 79 21 06 00
+R 00 00 00 00 00 04 02 00 00 08 00 00 00 0E 02 00
+T 5E 00 00 86 77 23 7B 8E 77 21 0A 00 7E 91 77 23
+R 00 00 00 00 00 0A 02 00
+T 6B 00 00 7E 9B 77 3A 0A 00 32 0C 00 3A 0B 00 32
+R 00 00 00 00 00 07 02 00 00 0A 02 00 00 0D 02 00
+T 78 00 00 0D 00 FD 21 0C 00 FD CB 01 3E FD CB 00
+R 00 00 00 00 00 03 02 00 00 07 02 00
+T 85 00 00 1E FD CB 01 3E FD CB 00 1E FD CB 01 3E
+R 00 00 00 00
+T 92 00 00 FD CB 00 1E 3A 06 00 CD 00 00 3A 0A 00
+R 00 00 00 00 00 08 02 00 02 0B 04 00 00 0E 02 00
+T 9F 00 00 E6 07 20 45 0E 01
+R 00 00 00 00
+T A5 00 00
+R 00 00 00 00
+T A5 00 00 59 16 00 21 04 00 7B 96 23 7A 9E 30 36
+R 00 00 00 00 00 07 02 00
+T B2 00 00 3A 02 00 6F 3A 0C 00 85 47 79 3D DD 77
+R 00 00 00 00 00 04 02 00 00 08 02 00
+T BF 00 00 FF C5 2A 00 00 CD 00 00 C1 FD 2A 0C 00
+R 00 00 00 00 00 06 02 00 02 09 01 00 00 0E 02 00
+T CC 00 00 FD 19 FD E5 E1 29 11 00 00 19 C5 11
+R 00 00 00 00 02 0A 00 00
+T D8 00 00 02 00 D5 E5 DD 6E FF 78 CD 00 00 C1 0C
+R 00 00 00 00 02 0C 03 00
+T E5 00 00 C3 A5 00
+R 00 00 00 00 00 04 00 00
+T E8 00 00
+R 00 00 00 00
+T E8 00 00 33 DD E1 C9
+R 00 00 00 00
+T EC 00 00
+R 00 00 00 00
+T EC 00 00 DD E5 DD 21 00 00 DD 39 F5 4F 21 0E 00
+R 00 00 00 00 00 0E 02 00
+T F9 00 00 3A 0C 00 96 23 3A 0D 00 9E D2 AA 01 59
+R 00 00 00 00 00 04 02 00 00 09 02 00 00 0D 00 00
+T 06 01 00 16 00 21 06 00 7E 93 77 23 7E 9A 77 21
+R 00 00 00 00 00 06 02 00
+T 13 01 00 0A 00 7E 83 77 23 7E 8A 77 3A 0A 00 32
+R 00 00 00 00 00 03 02 00 00 0D 02 00
+T 20 01 00 0C 00 3A 0B 00 32 0D 00 FD 21
+R 00 00 00 00 00 03 02 00 00 06 02 00 00 09 02 00
+T 2A 01 00 0C 00 FD CB 01 3E FD CB 00 1E FD CB 01
+R 00 00 00 00 00 03 02 00
+T 37 01 00 3E FD CB 00 1E FD CB 01 3E FD CB 00 1E
+R 00 00 00 00
+T 44 01 00 3A 06 00 47 C5 78 CD 00 00 C1 3A 0A 00
+R 00 00 00 00 00 04 02 00 02 0A 04 00 00 0E 02 00
+T 51 01 00 E6 07 6F 26 00 44 BF ED 42 20 4E DD 36
+R 00 00 00 00
+T 5E 01 00 FF 01
+R 00 00 00 00
+T 60 01 00
+R 00 00 00 00
+T 60 01 00 DD 5E FF 16 00 21 04 00 7B 96 23 7A 9E
+R 00 00 00 00 00 09 02 00
+T 6D 01 00 30 3B FD 2A 02 00 ED 4B 0C 00 FD 09 FD
+R 00 00 00 00 00 07 02 00 00 0B 02 00
+T 7A 01 00 E5 C1 DD 7E FF 3D DD 77 FE C5 FD E5 2A
+R 00 00 00 00
+T 87 01 00 00 00 CD 00 00 FD E1 C1 FD E5 E1 19 29
+R 00 00 00 00 00 03 02 00 02 06 01 00
+T 94 01 00 11 00 00 19 11 02 00 D5 E5 DD 6E FE 79
+R 00 00 00 00 02 04 00 00
+T A1 01 00 CD 00 00 DD 34 FF C3 60 01
+R 00 00 00 00 02 04 03 00 00 0A 00 00
+T AA 01 00
+R 00 00 00 00
+T AA 01 00 DD F9 DD E1 C9
+R 00 00 00 00
+T 00 00 00
+R 00 00 07 00
+T 00 00 00 32 00
+R 00 00 07 00
+T 02 00 00
+R 00 00 07 00
+T 02 00 00 20 00
+R 00 00 07 00
+T 04 00 00
+R 00 00 07 00
+T 04 00 00 18 00
+R 00 00 07 00
+T 06 00 00
+R 00 00 07 00
+T 06 00 00 00 00
+R 00 00 07 00
+T 08 00 00
+R 00 00 07 00
+T 08 00 00 00 00
+R 00 00 07 00
+T 0A 00 00
+R 00 00 07 00
+T 0A 00 00 00 00
+R 00 00 07 00
+T 0C 00 00
+R 00 00 07 00
+T 0C 00 00 00 00
+R 00 00 07 00
+T 0E 00 00
+R 00 00 07 00
+T 0E 00 00 00 00
+R 00 00 07 00
