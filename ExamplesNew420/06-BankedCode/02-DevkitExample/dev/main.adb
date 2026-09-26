@@ -186,16 +186,7 @@ S:G$devkit_SMS_VRAMmemcpy_brief$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VRAMmemset$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_VRAMmemsetW$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_UNSAFE_SMS_copySpritestoSAT$0_0$0({2}DF,SV:S),C,0,0
-S:G$devkit_UNSAFE_SMS_VRAMmemcpy32$0_0$0({2}DF,DG,SV:S),C,0,0
-S:G$devkit_UNSAFE_SMS_VRAMmemcpy64$0_0$0({2}DF,DG,SV:S),C,0,0
-S:G$devkit_UNSAFE_SMS_VRAMmemcpy96$0_0$0({2}DF,DG,SV:S),C,0,0
-S:G$devkit_UNSAFE_SMS_VRAMmemcpy128$0_0$0({2}DF,DG,SV:S),C,0,0
 S:G$devkit_UNSAFE_SMS_VRAMmemcpy$0_0$0({2}DF,DG,SV:S),C,0,0
-S:G$devkit_UNSAFE_SMS_load1Tile$0_0$0({2}DF,SV:S),C,0,0
-S:G$devkit_UNSAFE_SMS_load2Tiles$0_0$0({2}DF,SV:S),C,0,0
-S:G$devkit_UNSAFE_SMS_load3Tiles$0_0$0({2}DF,SV:S),C,0,0
-S:G$devkit_UNSAFE_SMS_load4Tiles$0_0$0({2}DF,SV:S),C,0,0
-S:G$devkit_UNSAFE_SMS_loadNTiles$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_UNSAFE_SMS_loadTiles$0_0$0({2}DF,SV:S),C,0,0
 S:G$devkit_SMS_debugPrintf$0_0$0({2}DF,SV:S),C,0,0
 S:G$dekvit_SMS_isr$0_0$0({2}DF,SV:S),C,0,0

@@ -7,24 +7,24 @@ set /a _hours=100%_time:~0,2%%%100,_min=100%_time:~3,2%%%100,_sec=100%_time:~6,2
 set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 
 :: Compile
-cd banks
-sdcc --debug -c -mz80 --codeseg BANK1 banked_code_1.c
-sdcc --debug -c -mz80 --codeseg BANK2 banked_code_2.c
-sdcc --debug -c -mz80 --codeseg BANK3 banked_code_3.c
-cd ..
-
-::cd devkit
-::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _sms_manager.c
-::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _snd_manager.c
+::cd banks
+::sdcc --debug -c -mz80 --codeseg BANK1 banked_code_1.c
+::sdcc --debug -c -mz80 --codeseg BANK2 banked_code_2.c
+::sdcc --debug -c -mz80 --codeseg BANK3 banked_code_3.c
 ::cd ..
 
-cd engine
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 asm_manager.c
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 content_manager.c
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 font_manager.c
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 input_manager.c
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 screen_manager.c
+cd devkit
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _sms_manager.c
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _snd_manager.c
 cd ..
+
+::cd engine
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 asm_manager.c
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 content_manager.c
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 font_manager.c
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 input_manager.c
+::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 screen_manager.c
+::cd ..
 
 sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
 
@@ -37,10 +37,6 @@ echo.
 echo Time taken: %_sec:~-2%.%_cs:~-2% secs
 echo.
 
-:: crt0b_sms.rel (the banked crt0) ships without the _OUTI96 block that
-:: newer SMSlib.lib builds need for UNSAFE_SMS_load3Tiles / VRAMmemcpy96.
-:: Assemble the small stub that supplies it (see ../crt0/outi96_fix.s).
-::sdasz80 -g -o ../crt0/outi96_fix.s
 
 :: Link
 sdcc --debug -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-loc 0xC000 ^
@@ -48,7 +44,6 @@ sdcc --debug -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-
 -Wl-b_BANK2=0x24000 ^
 -Wl-b_BANK3=0x34000 ^
 ../crt0/crt0b_sms.rel ^
-../crt0/outi96_fix.rel ^
 ../lib/SMSlib.lib ^
 ../lib/PSGlib.lib ^
 main.rel ^
@@ -73,10 +68,10 @@ cd banks
 if exist "*.asm" del "*.asm" > nul; if exist "*.lst" del "*.lst" > nul; if exist "*.sym" del "*.sym" > nul
 cd ..
 
-::cd devkit
-::if exist "*.asm" del "*.asm" > nul; if exist "*.lst" del "*.lst" > nul; if exist "*.sym" del "*.sym" > nul
-::if exist "*.lst" del "*.lst" > nul; if exist "*.sym" del "*.sym" > nul;
-::cd ..
+cd devkit
+if exist "*.asm" del "*.asm" > nul; if exist "*.lst" del "*.lst" > nul; if exist "*.sym" del "*.sym" > nul
+if exist "*.lst" del "*.lst" > nul; if exist "*.sym" del "*.sym" > nul;
+cd ..
 
 cd engine
 if exist "*.asm" del "*.asm" > nul; if exist "*.lst" del "*.lst" > nul; if exist "*.sym" del "*.sym" > nul

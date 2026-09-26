@@ -272,18 +272,18 @@ void devkit_SMS_VRAMmemsetW( unsigned int dst, unsigned int value, unsigned int 
 
 /* VRAM unsafe functions. Fast, but dangerous! */
 void devkit_UNSAFE_SMS_copySpritestoSAT( void );
-void* devkit_UNSAFE_SMS_VRAMmemcpy32( unsigned int dst, const void *src );	/*__naked __preserves_regs(a,iyh,iyl) __sdcccall(1);*/
-void* devkit_UNSAFE_SMS_VRAMmemcpy64( unsigned int dst, const void *src );	/*__naked __preserves_regs(a,iyh,iyl) __sdcccall(1);*/
-void* devkit_UNSAFE_SMS_VRAMmemcpy96( unsigned int dst, const void *src );	/*__naked __preserves_regs(a,iyh,iyl) __sdcccall(1);*/
-void* devkit_UNSAFE_SMS_VRAMmemcpy128( unsigned int dst, const void *src );	/*__naked __preserves_regs(a,iyh,iyl) __sdcccall(1);*/
+//void* devkit_UNSAFE_SMS_VRAMmemcpy32( unsigned int dst, const void *src );	/*__naked __preserves_regs(a,iyh,iyl) __sdcccall(1);*/
+//void* devkit_UNSAFE_SMS_VRAMmemcpy64( unsigned int dst, const void *src );	/*__naked __preserves_regs(a,iyh,iyl) __sdcccall(1);*/
+//void* devkit_UNSAFE_SMS_VRAMmemcpy96( unsigned int dst, const void *src );	/*__naked __preserves_regs(a,iyh,iyl) __sdcccall(1);*/
+//void* devkit_UNSAFE_SMS_VRAMmemcpy128( unsigned int dst, const void *src );	/*__naked __preserves_regs(a,iyh,iyl) __sdcccall(1);*/
 void* devkit_UNSAFE_SMS_VRAMmemcpy( unsigned int dst, const void *src, unsigned int size );	/*__naked __z88dk_callee __preserves_regs(iyh,iyl) __sdcccall(1);*/
 
 /* handy macros for UNSAFE_SMS_VRAMmemcpy* */
-void devkit_UNSAFE_SMS_load1Tile( void *src, unsigned int theTile );
-void devkit_UNSAFE_SMS_load2Tiles( void *src, unsigned int tilefrom );
-void devkit_UNSAFE_SMS_load3Tiles( void *src, unsigned int tilefrom );
-void devkit_UNSAFE_SMS_load4Tiles( void *src, unsigned int tilefrom );
-void devkit_UNSAFE_SMS_loadNTiles( void *src, unsigned int tilefrom, unsigned char tilecount );
+//void devkit_UNSAFE_SMS_load1Tile( void *src, unsigned int theTile );
+//void devkit_UNSAFE_SMS_load2Tiles( void *src, unsigned int tilefrom );
+//void devkit_UNSAFE_SMS_load3Tiles( void *src, unsigned int tilefrom );
+//void devkit_UNSAFE_SMS_load4Tiles( void *src, unsigned int tilefrom );
+//void devkit_UNSAFE_SMS_loadNTiles( void *src, unsigned int tilefrom, unsigned char tilecount );
 void devkit_UNSAFE_SMS_loadTiles( void *src, unsigned int tilefrom, unsigned char size);
 
 /* function to print messages to the debug console of emulators */
