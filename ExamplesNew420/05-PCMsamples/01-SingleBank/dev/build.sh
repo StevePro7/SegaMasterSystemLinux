@@ -14,15 +14,18 @@
 
 cd engine
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 asm_manager.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 audio_manager.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 content_manager.c
-::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 global_manager.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 font_manager.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 input_manager.c
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 map_manager.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 riff_manager.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 sample_manager.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 screen_manager.c
 cd ..
 
 cd object
-sdcc --debug -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 map_object.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 audio_object.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 riff_object.c
 cd ..
 
 sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
@@ -38,18 +41,24 @@ sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main
 
 ## Link
 sdcc --debug  -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-loc 0xC000 \
+-Wl-b_BANK2=0x8000 -Wl-b_BANK3=0x8000 \
 ../crt0/crt0_sms.rel main.rel \
 ../lib/SMSlib.lib \
 ../lib/PSGlib.lib \
+banks/bank2.rel \
+banks/bank3.rel \
 devkit/_sms_manager.rel \
 devkit/_snd_manager.rel \
 engine/asm_manager.rel \
+engine/audio_manager.rel \
 engine/content_manager.rel \
-engine/global_manager.rel \
+engine/font_manager.rel \
 engine/input_manager.rel \
-engine/map_manager.rel \
+engine/riff_manager.rel \
+engine/sample_manager.rel \
 engine/screen_manager.rel \
-object/map_object.rel \
+object/audio_object.rel \
+object/riff_object.rel \
 content/gfx.rel
 
 ## Execute

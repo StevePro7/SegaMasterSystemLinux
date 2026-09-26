@@ -13,10 +13,10 @@ sdcc --debug -c -mz80 --codeseg BANK2 banked_code_2.c
 sdcc --debug -c -mz80 --codeseg BANK3 banked_code_3.c
 cd ..
 
-##cd devkit
-##sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _sms_manager.c
-##sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _snd_manager.c
-##cd ..
+cd devkit
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _sms_manager.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 _snd_manager.c
+cd ..
 
 cd engine
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 asm_manager.c
@@ -37,10 +37,6 @@ sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main
 ##echo Time taken: %_sec:~-2%.%_cs:~-2% secs
 ##echo.
 
-## crt0b_sms.rel (the banked crt0) ships without the _OUTI96 block that
-## newer SMSlib.lib builds need for UNSAFE_SMS_load3Tiles / VRAMmemcpy96.
-## Assemble the small stub that supplies it (see ../crt0/outi96_fix.s).
-sdasz80 -g -o ../crt0/outi96_fix.s
 
 ## Link
 sdcc --debug -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-loc 0xC000 \
@@ -48,7 +44,6 @@ sdcc --debug -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-
 -Wl-b_BANK2=0x24000 \
 -Wl-b_BANK3=0x34000 \
 ../crt0/crt0b_sms.rel \
-../crt0/outi96_fix.rel \
 ../lib/SMSlib.lib \
 ../lib/PSGlib.lib \
 main.rel \
@@ -73,10 +68,10 @@ cd banks
 rm -f *.asm 2> /dev/null; rm -f *.lst 2> /dev/null; rm -f *.sym 2> /dev/null
 cd ..
 
-##cd  devkit
-##rm -f *.asm 2> /dev/null; rm -f *.lst 2> /dev/null; rm -f *.sym 2> /dev/null
-#rm -f *.lst > /dev/null; rm -f *.sym > /dev/null;
-##cd ..
+cd  devkit
+rm -f *.asm 2> /dev/null; rm -f *.lst 2> /dev/null; rm -f *.sym 2> /dev/null
+m -f *.lst > /dev/null; rm -f *.sym > /dev/null;
+cd ..
 
 cd engine
 rm -f *.asm 2> /dev/null; rm -f *.lst 2> /dev/null; rm -f *.sym 2> /dev/null
