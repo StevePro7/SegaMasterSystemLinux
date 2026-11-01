@@ -1,0 +1,37 @@
+;!FILE none_screen.asm
+XL3
+H 9 areas F global symbols
+M none_screen
+O -mz80
+S .__.ABS. Def000000
+A _CODE size 4 flags 0 addr 0
+S G$screen_none_screen_load$0$0 Def000000
+S A$none_screen$81 Def000003
+S A$none_screen$73 Def000001
+S C$none_screen.c$10$0_0$7 Def000001
+S _screen_none_screen_load Def000000
+S C$none_screen.c$12$1_0$7 Def000001
+S C$none_screen.c$13$1_0$7 Def000003
+S XG$screen_none_screen_load$0$0 Def000000
+S C$none_screen.c$6$0_0$5 Def000000
+S C$none_screen.c$8$0_0$5 Def000000
+S G$screen_none_screen_update$0$0 Def000001
+S _screen_none_screen_update Def000001
+S XG$screen_none_screen_update$0$0 Def000003
+S A$none_screen$60 Def000000
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 C9
+R 00 00 00 00
+T 01 00 00
+R 00 00 00 00
+T 01 00 00 36 00 C9
+R 00 00 00 00

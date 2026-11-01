@@ -1,0 +1,121 @@
+;!FILE main.asm
+XL3
+H 9 areas 4F global symbols
+M main
+O -mz80
+S _engine_input_manager_update Ref000000
+S _engine_screen_manager_init Ref000000
+S _devkit_SMS_copySpritestoSAT Ref000000
+S _devkit_SMS_displayOn Ref000000
+S _devkit_SMS_init Ref000000
+S _engine_screen_manager_update Ref000000
+S _devkit_SMS_VDPturnOnFeature Ref000000
+S _devkit_SMS_finalizeSprites Ref000000
+S _devkit_SMS_useFirstHalfTilesforSprites Ref000000
+S _devkit_VDPFEATURE_HIDEFIRSTCOL Ref000000
+S .__.ABS. Def000000
+S _devkit_SMS_setSpriteMode Ref000000
+S _devkit_SMS_resetPauseRequest Ref000000
+S _devkit_SMS_displayOff Ref000000
+S _engine_content_manager_load_tiles Ref000000
+S _devkit_SPRITEMODE_NORMAL Ref000000
+S _engine_asm_manager_clear_VRAM Ref000000
+S _devkit_SMS_waitForVBlank Ref000000
+S _devkit_SMS_initSprites Ref000000
+S _engine_scroll_manager_load Ref000000
+S _devkit_SMS_queryPauseRequested Ref000000
+A _CODE size 55 flags 0 addr 0
+S A$main$101 Def000016
+S A$main$111 Def00001F
+S A$main$102 Def000017
+S A$main$130 Def00002E
+S A$main$141 Def000039
+S _main Def000000
+S A$main$151 Def000043
+S A$main$142 Def00003C
+S A$main$124 Def000028
+S A$main$115 Def000022
+S A$main$106 Def00001A
+S C$main.c$40$3_0$150 Def000049
+S C$main.c$31$3_0$150 Def000039
+S A$main$143 Def00003E
+S A$main$134 Def000031
+S A$main$125 Def00002B
+S A$main$107 Def00001C
+S C$main.c$41$3_0$150 Def00004C
+S A$main$135 Def000034
+S A$main$126 Def00002C
+S C$main.c$42$3_0$150 Def00004F
+S C$main.c$10$1_0$148 Def000003
+S A$main$163 Def00004C
+S A$main$136 Def000036
+S C$main.c$25$3_0$150 Def000028
+S C$main.c$20$1_0$148 Def000022
+S C$main.c$11$1_0$148 Def000006
+S A$main$155 Def000046
+S A$main$119 Def000025
+S A$main$147 Def000040
+S C$main.c$36$3_0$150 Def000040
+S C$main.c$22$1_0$148 Def000025
+S C$main.c$13$1_0$148 Def000009
+S A$main$175 Def000052
+S C$main.c$37$3_0$150 Def000043
+S C$main.c$14$1_0$148 Def00000F
+S A$main$167 Def00004F
+S C$main.c$38$3_0$150 Def000046
+S C$main.c$27$4_0$151 Def00002E
+S C$main.c$15$1_0$148 Def000013
+S A$main$159 Def000049
+S C$main.c$28$4_0$151 Def000031
+S C$main.c$44$2_0$148 Def000052
+S C$main.c$18$1_0$148 Def00001A
+S XG$main$0$0 Def000052
+S C$main.c$19$1_0$148 Def00001F
+S A$main$90 Def000009
+S A$main$91 Def00000C
+S A$main$82 Def000003
+S C$main.c$3$0_0$148 Def000000
+S A$main$95 Def00000F
+S A$main$86 Def000006
+S A$main$96 Def000010
+S A$main$78 Def000000
+S C$main.c$9$1_0$148 Def000000
+S G$main$0$0 Def000000
+S A$main$100 Def000013
+A _DATA size 1 flags 0 addr 0
+S Lmain.main$global_pause$1_0$148 Def000000
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 01 00
+T 00 00 00
+R 00 00 01 00
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 CD 00 00 CD 00 00 CD 00 00 CD
+R 00 00 00 00 02 04 04 00 02 07 0D 00 02 0A 10 00
+T 0A 00 00 00 00 CD 00 00 AF CD 00 00 CD
+R 00 00 00 00 02 03 0F 00 02 06 0B 00 02 0A 08 00
+T 14 00 00 00 00 EB CD 00 00 3E 01 CD 00 00 CD
+R 00 00 00 00 02 03 09 00 02 07 06 00 02 0C 01 00
+T 20 00 00 00 00 CD 00 00 CD 00 00
+R 00 00 00 00 02 03 0E 00 02 06 13 00 02 09 03 00
+T 28 00 00
+R 00 00 00 00
+T 28 00 00 CD 00 00 B7 28 0B CD 00 00 3A 00 00 EE
+R 00 00 00 00 02 04 14 00 02 0A 0C 00 00 0D 01 00
+T 35 00 00 01 32 00 00
+R 00 00 00 00 00 05 01 00
+T 39 00 00
+R 00 00 00 00
+T 39 00 00 21 00 00 CB 46 20 E8 CD 00 00 CD 00 00
+R 00 00 00 00 00 04 01 00 02 0B 12 00 02 0E 00 00
+T 46 00 00 CD 00 00 CD 00 00 CD 00 00 CD
+R 00 00 00 00 02 04 05 00 02 07 07 00 02 0A 11 00
+T 50 00 00 00 00 C3 28 00
+R 00 00 00 00 02 03 02 00 00 06 00 00
