@@ -28,7 +28,7 @@ sdcc --debug  -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data
 ihx2sms output.ihx output.sms
 
 :: Cleanup
-if exist "*.asm" del "*.asm" > nul
+::if exist "*.asm" del "*.asm" > nul
 if exist "*.ihx" del "*.ihx" > nul
 if exist "*.lk"  del "*.lk"  > nul
 if exist "*.lst" del "*.lst" > nul
