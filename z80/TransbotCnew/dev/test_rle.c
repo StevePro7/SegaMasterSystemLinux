@@ -1,72 +1,34 @@
-#include "rle.h"
+#include <assert.h>
+#include <stdio.h>
+#include <string.h>
 
-/* Translation of the interleaved RLE routine at $291A. */
-unsigned char rle_decode( const unsigned char *source, unsigned int source_size,
-	unsigned char *destination, unsigned int lane_length,
-	unsigned char lanes, unsigned char last_lane_prefix )
+#include "../src/rle.h"
+
+int main(void)
 {
-	unsigned int pos = 0;
-	unsigned char lane;
+    const unsigned char input[] = {
+        0x02, 0x11, 0x82, 0x22, 0x33, 0,
+        0x84, 0x44, 0x55, 0x66, 0x77, 0
+    };
+    const unsigned char expected[] = {
+        0x11, 0x44, 0x11, 0x55, 0x22, 0x66, 0x33, 0x77
+    };
+    const unsigned char short_repeat[] = { 2 };
+    const unsigned char overflow[] = { 3, 1, 0 };
+    const unsigned char zero_count[] = { 0x80 };
+    unsigned char output[8];
 
-	if( !lanes || !lane_length || lane_length > 65536u / lanes )
-	{
-		return 0;
-	}
-
-	for( lane = 0; lane < lanes; ++lane )
-	{
-		unsigned int written = 0;
-		while( written < lane_length )
-		{
-			unsigned char command, count, value = 0;
-			unsigned int i;
-
-			if( pos >= source_size )
-			{
-				return 0;
-			}
-
-			command = source[ pos++ ];
-			count = command & 0x7f;
-			if( !count || count > lane_length - written )
-			{
-				return 0;
-			}
-
-			if( !( command & 0x80 ) )
-			{
-				if( pos >= source_size )
-				{
-					return 0;
-				}
-				value = source[ pos++ ];
-			}
-
-			for( i = 0; i < count; ++i )
-			{
-				if( command & 0x80 )
-				{
-					if( pos >= source_size )
-					{
-						return 0;
-					}
-					value = source[ pos++ ];
-				}
-				destination[ ( written + i ) * lanes + lane ] = value;
-			}
-
-			written += count;
-		}
-
-		if( !( last_lane_prefix && lane == lanes - 1 ) )
-		{
-			if( pos >= source_size || source[ pos++ ] != 0 )
-			{
-				return 0;
-			}
-		}
-
-	}
-
-	return pos == source_size;
+    assert(rle_decode(input, sizeof(input), output, 4, 2, 0));
+    assert(memcmp(output, expected, sizeof(expected)) == 0);
+    assert(rle_decode(input, sizeof(input) - 1, output, 4, 2, 1));
+    assert(memcmp(output, expected, sizeof(expected)) == 0);
+    assert(!rle_decode(input, sizeof(input) - 1, output, 4, 2, 0));
+    assert(!rle_decode(input, sizeof(input), output, 4, 2, 1));
+    assert(!rle_decode(short_repeat, sizeof(short_repeat), output, 2, 1, 0));
+    assert(!rle_decode(overflow, sizeof(overflow), output, 2, 1, 0));
+    assert(!rle_decode(zero_count, sizeof(zero_count), output, 2, 1, 0));
+    assert(!rle_decode(input, sizeof(input), output, 0, 2, 0));
+    assert(!rle_decode(input, sizeof(input), output, 4, 0, 0));
+    puts("RLE tests passed");
+    return 0;
 }
