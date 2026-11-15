@@ -7,7 +7,11 @@ set /a _hours=100%_time:~0,2%%%100,_min=100%_time:~3,2%%%100,_sec=100%_time:~6,2
 set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 
 ::echo Build
+sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 assets.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 rle.c
+
 sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
+
 
 :: Time build -END-
 set _time=%time: =0%
@@ -22,7 +26,9 @@ echo.
 sdcc --debug  -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-loc 0xC000 ^
 ../crt0/crt0_sms.rel main.rel ^
 ../lib/SMSlib.lib ^
-../lib/PSGlib.lib
+../lib/PSGlib.lib ^
+assets.rel ^
+rle.rel
 
 ::echo Run
 ihx2sms output.ihx output.sms

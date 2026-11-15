@@ -10,8 +10,10 @@
 
 #ifdef _CONSOLE
 #include "../tmp/SMSlib.h"
+#include "../tmp/PSGlib.h"
 #else
 #include "../lib/SMSlib.h"
+#include "../lib/PSGlib.h"
 #endif
 
 #include "assets.h"
