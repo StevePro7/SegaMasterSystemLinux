@@ -6,6 +6,7 @@
 #include <assert.h>
 #include <stdint.h>
 #include <stdio.h>
+#include <string.h>
 
 #ifdef _CONSOLE
 #include "../tmp/SMSlib.h"
