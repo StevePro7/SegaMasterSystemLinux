@@ -3,6 +3,9 @@
 
 #include <stdbool.h>
 #include <stdlib.h>
+#include <assert.h>
+#include <stdio.h>
+#include <string.h>
 
 #ifdef _CONSOLE
 #include "../tmp/SMSlib.h"
@@ -10,5 +13,6 @@
 #include "../lib/SMSlib.h"
 #endif
 
+#include "rle.h"
 
 #endif//__MAIN__

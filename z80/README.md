@@ -22,3 +22,13 @@ D:\GitHubX\sverx420\devkitSMS\crt0\src\crt0_sms.s
 DIFF
 D:\Code\testing2\TransbotCnew\dev\crt0_sms.s
 
+
+
+Avast
+Settings | Exceptions
+Add Exception
+D:\GitHub\StevePro8\SegaMasterSystemLinux\z80\*\Game.exe
+
+
+RLE
+Run Length Encoding

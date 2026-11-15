@@ -1,13 +1,13 @@
 #include "main.h"
 
-void main(void)
+void main( void )
 {
-  SMS_setSpritePaletteColor(0, RGB(0, 0, 3));
-  SMS_displayOn();
-  for (;;)
-  {
-    SMS_waitForVBlank();
-  }
+	SMS_setSpritePaletteColor( 0, RGB( 3, 0, 0 ) );
+	SMS_displayOn();
+	for( ;;)
+	{
+		SMS_waitForVBlank();
+	}
 }
 
 #ifdef _CONSOLE

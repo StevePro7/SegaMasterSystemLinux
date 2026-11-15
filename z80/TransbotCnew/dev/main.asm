@@ -67,36 +67,36 @@ _SMS_SRAM	=	0x8000
 	.area _CODE
 	G$main$0$0	= .
 	.globl	G$main$0$0
-	C$main.c$3$0_0$116	= .
-	.globl	C$main.c$3$0_0$116
-;main.c:3: void main(void)
+	C$main.c$3$0_0$153	= .
+	.globl	C$main.c$3$0_0$153
+;main.c:3: void main( void )
 ;	---------------------------------
 ; Function main
 ; ---------------------------------
 _main::
-	C$main.c$5$1_0$116	= .
-	.globl	C$main.c$5$1_0$116
-;main.c:5: SMS_setSpritePaletteColor(0, RGB(0, 0, 3));
-	ld	l, #0x30
+	C$main.c$5$1_0$153	= .
+	.globl	C$main.c$5$1_0$153
+;main.c:5: SMS_setSpritePaletteColor( 0, RGB( 3, 0, 0 ) );
+	ld	l, #0x03
 ;	spillPairReg hl
 ;	spillPairReg hl
 	xor	a, a
 	call	_SMS_setSpritePaletteColor
-	C$main.c$6$1_0$116	= .
-	.globl	C$main.c$6$1_0$116
+	C$main.c$6$1_0$153	= .
+	.globl	C$main.c$6$1_0$153
 ;main.c:6: SMS_displayOn();
 	ld	hl, #0x0140
 	call	_SMS_VDPturnOnFeature
 00102$:
-	C$main.c$9$3_0$118	= .
-	.globl	C$main.c$9$3_0$118
+	C$main.c$9$3_0$155	= .
+	.globl	C$main.c$9$3_0$155
 ;main.c:9: SMS_waitForVBlank();
 	call	_SMS_waitForVBlank
-	C$main.c$11$2_0$116	= .
-	.globl	C$main.c$11$2_0$116
+	C$main.c$11$2_0$153	= .
+	.globl	C$main.c$11$2_0$153
 ;main.c:11: }
-	C$main.c$11$2_0$116	= .
-	.globl	C$main.c$11$2_0$116
+	C$main.c$11$2_0$153	= .
+	.globl	C$main.c$11$2_0$153
 	XG$main$0$0	= .
 	.globl	XG$main$0$0
 	jp	00102$
