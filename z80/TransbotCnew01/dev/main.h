@@ -3,20 +3,8 @@
 
 #include <stdbool.h>
 #include <stdlib.h>
-#include <assert.h>
-#include <stdint.h>
-#include <stdio.h>
-#include <string.h>
+#include "game.h"
 
-#ifdef _CONSOLE
-#include "../tmp/SMSlib.h"
-#include "../tmp/PSGlib.h"
-#else
-#include "../lib/SMSlib.h"
-#include "../lib/PSGlib.h"
-#endif
-
-//#include "content/assets.h"
-//#include "engine/rle_manager.h"
+#include "screen/title_screen.h"
 
 #endif//__MAIN__

@@ -8,6 +8,9 @@
 ;--------------------------------------------------------
 ; Public variables in this module
 ;--------------------------------------------------------
+	.globl _SMS_VRAMmemcpy
+	.globl _engine_rle_decode_4
+	.globl _engine_rle_decode_2
 	.globl _SMS_SRAM
 	.globl _SRAM_bank_to_be_mapped_on_slot2
 	.globl _ROM_bank_to_be_mapped_on_slot0
@@ -60,18 +63,70 @@ _SMS_SRAM	=	0x8000
 	.area _CODE
 	G$engine_content_manager_load_boot_tiles$0$0	= .
 	.globl	G$engine_content_manager_load_boot_tiles$0$0
-	C$content_manager.c$13$0_0$113	= .
-	.globl	C$content_manager.c$13$0_0$113
-;content_manager.c:13: void engine_content_manager_load_boot_tiles( void )
+	C$content_manager.c$16$0_0$112	= .
+	.globl	C$content_manager.c$16$0_0$112
+;content_manager.c:16: void engine_content_manager_load_boot_tiles( void )
 ;	---------------------------------
 ; Function engine_content_manager_load_boot_tiles
 ; ---------------------------------
 _engine_content_manager_load_boot_tiles::
-	C$content_manager.c$15$0_0$113	= .
-	.globl	C$content_manager.c$15$0_0$113
-;content_manager.c:15: }
-	C$content_manager.c$15$0_0$113	= .
-	.globl	C$content_manager.c$15$0_0$113
+	C$content_manager.c$18$1_0$112	= .
+	.globl	C$content_manager.c$18$1_0$112
+;content_manager.c:18: engine_rle_decode_4( boot_font );
+	ld	hl, #_boot_font
+	call	_engine_rle_decode_4
+	C$content_manager.c$19$1_0$112	= .
+	.globl	C$content_manager.c$19$1_0$112
+;content_manager.c:19: SMS_VRAMmemcpy( 0x2000, engine_rle_buffer, 0x0c00 );
+	ld	hl, #0x0c00
+	push	hl
+	ld	de, #_engine_rle_buffer
+	ld	h, #0x20
+	call	_SMS_VRAMmemcpy
+	C$content_manager.c$20$1_0$112	= .
+	.globl	C$content_manager.c$20$1_0$112
+;content_manager.c:20: engine_rle_decode_2( boot_tiles_a );
+	ld	hl, #_boot_tiles_a
+	call	_engine_rle_decode_2
+	C$content_manager.c$21$1_0$112	= .
+	.globl	C$content_manager.c$21$1_0$112
+;content_manager.c:21: SMS_VRAMmemcpy( 0x0000, engine_rle_buffer, 0x0c00 );
+	ld	hl, #0x0c00
+	push	hl
+	ld	de, #_engine_rle_buffer
+	ld	h, l
+	call	_SMS_VRAMmemcpy
+	C$content_manager.c$22$1_0$112	= .
+	.globl	C$content_manager.c$22$1_0$112
+;content_manager.c:22: engine_rle_decode_2( boot_tiles_b );
+	ld	hl, #_boot_tiles_b
+	call	_engine_rle_decode_2
+	C$content_manager.c$23$1_0$112	= .
+	.globl	C$content_manager.c$23$1_0$112
+;content_manager.c:23: SMS_VRAMmemcpy( 0x0c00, engine_rle_buffer, 0x0a00 );
+	ld	hl, #0x0a00
+	push	hl
+	ld	de, #_engine_rle_buffer
+	ld	h, #0x0c
+	call	_SMS_VRAMmemcpy
+	C$content_manager.c$24$1_0$112	= .
+	.globl	C$content_manager.c$24$1_0$112
+;content_manager.c:24: engine_rle_decode_2( boot_tiles_c );
+	ld	hl, #_boot_tiles_c
+	call	_engine_rle_decode_2
+	C$content_manager.c$25$1_0$112	= .
+	.globl	C$content_manager.c$25$1_0$112
+;content_manager.c:25: SMS_VRAMmemcpy( 0x1600, engine_rle_buffer, 0x0a00 );
+	ld	hl, #0x0a00
+	push	hl
+	ld	de, #_engine_rle_buffer
+	ld	h, #0x16
+	call	_SMS_VRAMmemcpy
+	C$content_manager.c$26$1_0$112	= .
+	.globl	C$content_manager.c$26$1_0$112
+;content_manager.c:26: }
+	C$content_manager.c$26$1_0$112	= .
+	.globl	C$content_manager.c$26$1_0$112
 	XG$engine_content_manager_load_boot_tiles$0$0	= .
 	.globl	XG$engine_content_manager_load_boot_tiles$0$0
 	ret
@@ -10971,20 +11026,56 @@ _title_text:
 	.db #0x11	; 17
 	.db #0x00	; 0
 	.db #0x11	; 17
+Fcontent_manager$title_bg_palette$0_0$0 == .
+_title_bg_palette:
+	.db #0x30	; 48	'0'
+	.db #0x3f	; 63
+	.db #0x2f	; 47
+	.db #0x1b	; 27
+	.db #0x17	; 23
+	.db #0x13	; 19
+	.db #0x3e	; 62
+	.db #0x10	; 16
+	.db #0x3f	; 63
+	.db #0x3f	; 63
+	.db #0x3f	; 63
+	.db #0x3f	; 63
+	.db #0x3f	; 63
+	.db #0x3f	; 63
+	.db #0x3f	; 63
+	.db #0x3f	; 63
+Fcontent_manager$title_sprite_palette$0_0$0 == .
+_title_sprite_palette:
+	.db #0x30	; 48	'0'
+	.db #0x3f	; 63
+	.db #0x3a	; 58
+	.db #0x35	; 53	'5'
+	.db #0x2f	; 47
+	.db #0x2a	; 42
+	.db #0x25	; 37
+	.db #0x0b	; 11
+	.db #0x03	; 3
+	.db #0x02	; 2
+	.db #0x0e	; 14
+	.db #0x0c	; 12
+	.db #0x08	; 8
+	.db #0x3e	; 62
+	.db #0x38	; 56	'8'
+	.db #0x00	; 0
 	G$engine_content_manager_load_title$0$0	= .
 	.globl	G$engine_content_manager_load_title$0$0
-	C$content_manager.c$17$0_0$116	= .
-	.globl	C$content_manager.c$17$0_0$116
-;content_manager.c:17: void engine_content_manager_load_title( void )
+	C$content_manager.c$28$1_0$115	= .
+	.globl	C$content_manager.c$28$1_0$115
+;content_manager.c:28: void engine_content_manager_load_title( void )
 ;	---------------------------------
 ; Function engine_content_manager_load_title
 ; ---------------------------------
 _engine_content_manager_load_title::
-	C$content_manager.c$20$0_0$116	= .
-	.globl	C$content_manager.c$20$0_0$116
-;content_manager.c:20: }
-	C$content_manager.c$20$0_0$116	= .
-	.globl	C$content_manager.c$20$0_0$116
+	C$content_manager.c$31$1_0$115	= .
+	.globl	C$content_manager.c$31$1_0$115
+;content_manager.c:31: }
+	C$content_manager.c$31$1_0$115	= .
+	.globl	C$content_manager.c$31$1_0$115
 	XG$engine_content_manager_load_title$0$0	= .
 	.globl	XG$engine_content_manager_load_title$0$0
 	ret

@@ -8,18 +8,12 @@
 ;--------------------------------------------------------
 ; Public variables in this module
 ;--------------------------------------------------------
-	.globl ___SMS__SDSC_signature
-	.globl ___SMS__SDSC_descr
-	.globl ___SMS__SDSC_name
-	.globl ___SMS__SDSC_author
-	.globl ___SMS__SEGA_signature
 	.globl _main
+	.globl _screen_title_screen_load
 	.globl _PSGSFXFrame
 	.globl _PSGFrame
 	.globl _PSGSilenceChannels
-	.globl _SMS_setSpritePaletteColor
 	.globl _SMS_waitForVBlank
-	.globl _SMS_VDPturnOnFeature
 	.globl _SMS_SRAM
 	.globl _SRAM_bank_to_be_mapped_on_slot2
 	.globl _ROM_bank_to_be_mapped_on_slot0
@@ -70,116 +64,42 @@ _SMS_SRAM	=	0x8000
 	.area _CODE
 	G$main$0$0	= .
 	.globl	G$main$0$0
-	C$main.c$3$0_0$170	= .
-	.globl	C$main.c$3$0_0$170
+	C$main.c$3$0_0$135	= .
+	.globl	C$main.c$3$0_0$135
 ;main.c:3: void main( void )
 ;	---------------------------------
 ; Function main
 ; ---------------------------------
 _main::
-	C$main.c$5$1_0$170	= .
-	.globl	C$main.c$5$1_0$170
+	C$main.c$5$1_0$135	= .
+	.globl	C$main.c$5$1_0$135
 ;main.c:5: PSGSilenceChannels();
 	call	_PSGSilenceChannels
-	C$main.c$7$1_0$170	= .
-	.globl	C$main.c$7$1_0$170
-;main.c:7: SMS_setSpritePaletteColor( 0, RGB( 0, 0, 0 ) );
-;	spillPairReg hl
-;	spillPairReg hl
-	xor	a, a
-	ld	l, a
-	call	_SMS_setSpritePaletteColor
-	C$main.c$8$1_0$170	= .
-	.globl	C$main.c$8$1_0$170
-;main.c:8: SMS_displayOn();
-	ld	hl, #0x0140
-	call	_SMS_VDPturnOnFeature
+	C$main.c$6$1_0$135	= .
+	.globl	C$main.c$6$1_0$135
+;main.c:6: screen_title_screen_load();
+	call	_screen_title_screen_load
 00102$:
-	C$main.c$11$3_0$172	= .
-	.globl	C$main.c$11$3_0$172
-;main.c:11: SMS_waitForVBlank();
+	C$main.c$10$3_0$137	= .
+	.globl	C$main.c$10$3_0$137
+;main.c:10: SMS_waitForVBlank();
 	call	_SMS_waitForVBlank
-	C$main.c$12$3_0$172	= .
-	.globl	C$main.c$12$3_0$172
-;main.c:12: PSGFrame();
+	C$main.c$11$3_0$137	= .
+	.globl	C$main.c$11$3_0$137
+;main.c:11: PSGFrame();
 	call	_PSGFrame
-	C$main.c$13$3_0$172	= .
-	.globl	C$main.c$13$3_0$172
-;main.c:13: PSGSFXFrame();
+	C$main.c$12$3_0$137	= .
+	.globl	C$main.c$12$3_0$137
+;main.c:12: PSGSFXFrame();
 	call	_PSGSFXFrame
-	C$main.c$15$2_0$170	= .
-	.globl	C$main.c$15$2_0$170
-;main.c:15: }
-	C$main.c$15$2_0$170	= .
-	.globl	C$main.c$15$2_0$170
+	C$main.c$14$2_0$135	= .
+	.globl	C$main.c$14$2_0$135
+;main.c:14: }
+	C$main.c$14$2_0$135	= .
+	.globl	C$main.c$14$2_0$135
 	XG$main$0$0	= .
 	.globl	XG$main$0$0
 	jp	00102$
 	.area _CODE
-Fmain$__str_0$0_0$0 == .
-__str_0:
-	.ascii "StevePro Studios"
-	.db 0x00
-Fmain$__str_1$0_0$0 == .
-__str_1:
-	.ascii "Hello World"
-	.db 0x00
-Fmain$__str_2$0_0$0 == .
-__str_2:
-	.ascii "Simple Sega Master System demo to run on real hardware"
-	.db 0x00
 	.area _INITIALIZER
 	.area _CABS (ABS)
-	.org 0x7FF0
-G$__SMS__SEGA_signature$0_0$0 == .
-___SMS__SEGA_signature:
-	.db #0x54	; 84	'T'
-	.db #0x4d	; 77	'M'
-	.db #0x52	; 82	'R'
-	.db #0x20	; 32
-	.db #0x53	; 83	'S'
-	.db #0x45	; 69	'E'
-	.db #0x47	; 71	'G'
-	.db #0x41	; 65	'A'
-	.db #0xff	; 255
-	.db #0xff	; 255
-	.db #0xff	; 255
-	.db #0xff	; 255
-	.db #0x99	; 153
-	.db #0x99	; 153
-	.db #0x00	; 0
-	.db #0x4c	; 76	'L'
-	.org 0x7FCF
-G$__SMS__SDSC_author$0_0$0 == .
-___SMS__SDSC_author:
-	.ascii "StevePro Studios"
-	.db 0x00
-	.org 0x7FC3
-G$__SMS__SDSC_name$0_0$0 == .
-___SMS__SDSC_name:
-	.ascii "Hello World"
-	.db 0x00
-	.org 0x7F8C
-G$__SMS__SDSC_descr$0_0$0 == .
-___SMS__SDSC_descr:
-	.ascii "Simple Sega Master System demo to run on real hardware"
-	.db 0x00
-	.org 0x7FE0
-G$__SMS__SDSC_signature$0_0$0 == .
-___SMS__SDSC_signature:
-	.db #0x53	; 83	'S'
-	.db #0x44	; 68	'D'
-	.db #0x53	; 83	'S'
-	.db #0x43	; 67	'C'
-	.db #0x01	; 1
-	.db #0x00	; 0
-	.db #0x15	; 21
-	.db #0x09	; 9
-	.db #0x21	; 33
-	.db #0x20	; 32
-	.db #0xcf	; 207
-	.db #0x7f	; 127
-	.db #0xc3	; 195
-	.db #0x7f	; 127
-	.db #0x8c	; 140
-	.db #0x7f	; 127

@@ -7,14 +7,22 @@ set /a _hours=100%_time:~0,2%%%100,_min=100%_time:~3,2%%%100,_sec=100%_time:~6,2
 set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 
 ::echo Build
-::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 assets.c
-::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 rle.c
 cd engine
-::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 content_manager.c
-::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 rle_manager.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 content_manager.c
+if errorlevel 1 (echo Failed to compile content_manager.c & cd .. & exit /b 1)
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 rle_manager.c
+if errorlevel 1 (echo Failed to compile rle_manager.c & cd .. & exit /b 1)
 cd ..
 
+cd screen
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 title_screen.c
+if errorlevel 1 (echo Failed to compile title_screen.c & cd .. & exit /b 1)
+cd ..
+
+sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 game.c
+if errorlevel 1 (echo Failed to compile game.c & exit /b 1)
 sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
+if errorlevel 1 (echo Failed to compile main.c & exit /b 1)
 
 
 :: Time build -END-
@@ -28,17 +36,23 @@ echo.
 
 ::echo Link
 sdcc --debug  -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-loc 0xC000 ^
-../crt0/crt0_sms.rel main.rel ^
+../crt0/crt0_sms.rel main.rel game.rel ^
 ../lib/SMSlib.lib ^
 ../lib/PSGlib.lib ^
 engine/content_manager.rel ^
-engine/rle_manager.rel
+engine/rle_manager.rel ^
+screen/title_screen.rel
+if errorlevel 1 (echo Linking failed & exit /b 1)
 
 ::echo Run
 ihx2sms output.ihx output.sms
+if errorlevel 1 (echo ROM conversion failed & exit /b 1)
 
 :: Cleanup
 cd engine
+if exist "*.lst" del "*.lst" > nul; if exist "*.sym" del "*.sym" > nul
+cd ..
+cd screen
 if exist "*.lst" del "*.lst" > nul; if exist "*.sym" del "*.sym" > nul
 cd ..
 
@@ -49,5 +63,5 @@ if exist "*.lst" del "*.lst" > nul
 if exist "*.noi" del "*.noi" > nul
 if exist "*.sym" del "*.sym" > nul
 
-::java -jar C:/SEGA/Emulicious/Emulicious.jar output.sms
-output.sms
+java -jar C:/SEGA/Emulicious/Emulicious.jar output.sms
+::output.sms

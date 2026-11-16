@@ -2,7 +2,11 @@
 
 unsigned char engine_rle_buffer[ RLE_BUFFER_SIZE ];
 
-void engine_rle_decode_2( const unsigned char *source )	// __naked __z88dk_fastcall
+#ifdef _CONSOLE
+void engine_rle_decode_2( const unsigned char *source )
+#else
+void engine_rle_decode_2( const unsigned char *source ) __naked __z88dk_fastcall
+#endif
 {
 	( void ) source;
 #ifdef _CONSOLE
@@ -14,7 +18,11 @@ void engine_rle_decode_2( const unsigned char *source )	// __naked __z88dk_fastc
 #endif
 }
 
-void engine_rle_decode_4( const unsigned char *source )	// __naked __z88dk_fastcall
+#ifdef _CONSOLE
+void engine_rle_decode_4( const unsigned char *source )
+#else
+void engine_rle_decode_4( const unsigned char *source ) __naked __z88dk_fastcall
+#endif
 {
 	( void ) source;
 #ifdef _CONSOLE
@@ -48,7 +56,7 @@ rle_decode_core:
 4$:
 		res 7, a
 		ld b, a
-6$ :
+6$:
 		inc ix
 		ld a, 0( ix )
 		ld( hl ), a
