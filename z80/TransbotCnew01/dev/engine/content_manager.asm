@@ -9,6 +9,8 @@
 ; Public variables in this module
 ;--------------------------------------------------------
 	.globl _SMS_VRAMmemcpy
+	.globl _SMS_loadSpritePalette
+	.globl _SMS_loadBGPalette
 	.globl _engine_rle_decode_4
 	.globl _engine_rle_decode_2
 	.globl _SMS_SRAM
@@ -11064,18 +11066,215 @@ _title_sprite_palette:
 	.db #0x00	; 0
 	G$engine_content_manager_load_title$0$0	= .
 	.globl	G$engine_content_manager_load_title$0$0
-	C$content_manager.c$28$1_0$115	= .
-	.globl	C$content_manager.c$28$1_0$115
+	C$content_manager.c$28$1_0$114	= .
+	.globl	C$content_manager.c$28$1_0$114
 ;content_manager.c:28: void engine_content_manager_load_title( void )
 ;	---------------------------------
 ; Function engine_content_manager_load_title
 ; ---------------------------------
 _engine_content_manager_load_title::
-	C$content_manager.c$31$1_0$115	= .
-	.globl	C$content_manager.c$31$1_0$115
-;content_manager.c:31: }
-	C$content_manager.c$31$1_0$115	= .
-	.globl	C$content_manager.c$31$1_0$115
+	push	ix
+	ld	ix,#0
+	add	ix,sp
+	push	af
+	C$content_manager.c$30$2_0$114	= .
+	.globl	C$content_manager.c$30$2_0$114
+;content_manager.c:30: const unsigned char *text = title_text;
+	C$content_manager.c$34$1_0$114	= .
+	.globl	C$content_manager.c$34$1_0$114
+;content_manager.c:34: SMS_loadBGPalette( ( unsigned char * ) title_bg_palette );
+	ld	hl, #_title_bg_palette
+	call	_SMS_loadBGPalette
+	C$content_manager.c$35$1_0$114	= .
+	.globl	C$content_manager.c$35$1_0$114
+;content_manager.c:35: SMS_loadSpritePalette( ( unsigned char *) title_sprite_palette );
+	ld	hl, #_title_sprite_palette
+	call	_SMS_loadSpritePalette
+	C$content_manager.c$36$1_0$114	= .
+	.globl	C$content_manager.c$36$1_0$114
+;content_manager.c:36: engine_rle_decode_4( title_tiles );
+	ld	hl, #_title_tiles
+	call	_engine_rle_decode_4
+	C$content_manager.c$37$1_0$114	= .
+	.globl	C$content_manager.c$37$1_0$114
+;content_manager.c:37: SMS_VRAMmemcpy( 0x2c00, engine_rle_buffer, 0x0680 );
+	ld	hl, #0x0680
+	push	hl
+	ld	de, #_engine_rle_buffer
+	ld	hl, #0x2c00
+	call	_SMS_VRAMmemcpy
+	C$content_manager.c$39$1_0$114	= .
+	.globl	C$content_manager.c$39$1_0$114
+;content_manager.c:39: engine_rle_decode_2( title_map );
+	ld	hl, #_title_map
+	call	_engine_rle_decode_2
+	C$content_manager.c$40$1_0$114	= .
+	.globl	C$content_manager.c$40$1_0$114
+;content_manager.c:40: for( row = 0; row < 4; ++row )
+	ld	-1 (ix), #0x00
+00105$:
+	C$content_manager.c$42$3_0$116	= .
+	.globl	C$content_manager.c$42$3_0$116
+;content_manager.c:42: SMS_VRAMmemcpy( 0x398e + ( unsigned int ) row * 64, engine_rle_buffer + ( unsigned int ) row * 34, 34 );
+	ld	c, -1 (ix)
+	ld	b, #0x00
+	ld	l, c
+	ld	h, b
+	add	hl, hl
+	add	hl, hl
+	add	hl, hl
+	add	hl, hl
+	add	hl, bc
+	add	hl, hl
+	ld	de, #_engine_rle_buffer
+	add	hl, de
+	ex	de, hl
+	ld	l, c
+	ld	h, b
+	add	hl, hl
+	add	hl, hl
+	add	hl, hl
+	add	hl, hl
+	add	hl, hl
+	add	hl, hl
+	ld	bc, #0x398e
+	add	hl, bc
+	ld	bc, #0x0022
+	push	bc
+	call	_SMS_VRAMmemcpy
+	C$content_manager.c$40$2_0$115	= .
+	.globl	C$content_manager.c$40$2_0$115
+;content_manager.c:40: for( row = 0; row < 4; ++row )
+	inc	-1 (ix)
+	ld	a, -1 (ix)
+	sub	a, #0x04
+	jr	C, 00105$
+	C$content_manager.c$45$1_0$114	= .
+	.globl	C$content_manager.c$45$1_0$114
+;content_manager.c:45: count = *text++;
+	ld	hl, #_title_text
+	ld	c, (hl)
+	ld	de, #_title_text + 1
+	C$content_manager.c$46$1_0$114	= .
+	.globl	C$content_manager.c$46$1_0$114
+;content_manager.c:46: while( count-- )
+00102$:
+	ld	a, c
+	dec	c
+	or	a, a
+	jr	Z, 00107$
+	C$content_manager.c$48$2_0$117	= .
+	.globl	C$content_manager.c$48$2_0$117
+;content_manager.c:48: unsigned int address = text[ 0 ] | ( ( unsigned int ) text[ 1 ] << 8 );
+	ld	a, (de)
+	ld	l, e
+;	spillPairReg hl
+;	spillPairReg hl
+	ld	h, d
+;	spillPairReg hl
+;	spillPairReg hl
+	inc	hl
+;	spillPairReg hl
+;	spillPairReg hl
+;	spillPairReg hl
+	ld	h, (hl)
+;	spillPairReg hl
+;	spillPairReg hl
+;	spillPairReg hl
+;	spillPairReg hl
+	ld	l, #0x00
+	ld	b, l
+	or	a, l
+	ld	l, a
+;	spillPairReg hl
+;	spillPairReg hl
+	ld	a, b
+	or	a, h
+	ld	h, a
+;	spillPairReg hl
+;	spillPairReg hl
+	push	hl
+	pop	iy
+	C$content_manager.c$49$2_0$117	= .
+	.globl	C$content_manager.c$49$2_0$117
+;content_manager.c:49: unsigned int size = text[ 2 ] | ( ( unsigned int ) text[ 3 ] << 8 );
+	ld	l, e
+;	spillPairReg hl
+;	spillPairReg hl
+	ld	h, d
+;	spillPairReg hl
+;	spillPairReg hl
+	inc	hl
+	inc	hl
+	ld	a, (hl)
+	ld	l, e
+;	spillPairReg hl
+;	spillPairReg hl
+	ld	h, d
+;	spillPairReg hl
+;	spillPairReg hl
+	inc	hl
+	inc	hl
+	inc	hl
+;	spillPairReg hl
+;	spillPairReg hl
+;	spillPairReg hl
+	ld	h, (hl)
+;	spillPairReg hl
+;	spillPairReg hl
+;	spillPairReg hl
+;	spillPairReg hl
+	ld	l, #0x00
+	ld	b, l
+	or	a, l
+	ld	l, a
+;	spillPairReg hl
+;	spillPairReg hl
+	ld	a, b
+	or	a, h
+	ld	h, a
+;	spillPairReg hl
+;	spillPairReg hl
+	C$content_manager.c$50$2_0$117	= .
+	.globl	C$content_manager.c$50$2_0$117
+;content_manager.c:50: text += 4;
+	ld	a, e
+	add	a, #0x04
+	ld	-2 (ix), a
+	ld	a, d
+	adc	a, #0x00
+	ld	-1 (ix), a
+	C$content_manager.c$51$2_0$117	= .
+	.globl	C$content_manager.c$51$2_0$117
+;content_manager.c:51: SMS_VRAMmemcpy( address, text, size );
+	pop	de
+	push	de
+	push	hl
+	push	bc
+	push	hl
+	push	iy
+	pop	hl
+	call	_SMS_VRAMmemcpy
+	pop	bc
+	pop	hl
+	C$content_manager.c$52$2_0$117	= .
+	.globl	C$content_manager.c$52$2_0$117
+;content_manager.c:52: text += size;
+	ld	a, -2 (ix)
+	add	a, l
+	ld	e, a
+	ld	a, -1 (ix)
+	adc	a, h
+	ld	d, a
+	jp	00102$
+00107$:
+	C$content_manager.c$54$1_0$114	= .
+	.globl	C$content_manager.c$54$1_0$114
+;content_manager.c:54: }
+	ld	sp, ix
+	pop	ix
+	C$content_manager.c$54$1_0$114	= .
+	.globl	C$content_manager.c$54$1_0$114
 	XG$engine_content_manager_load_title$0$0	= .
 	.globl	XG$engine_content_manager_load_title$0$0
 	ret

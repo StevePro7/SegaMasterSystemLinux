@@ -27,5 +27,28 @@ void engine_content_manager_load_boot_tiles( void )
 
 void engine_content_manager_load_title( void )
 {
+	const unsigned char *text = title_text;
+	unsigned char count;
+	unsigned char row;
 
+	SMS_loadBGPalette( ( unsigned char * ) title_bg_palette );
+	SMS_loadSpritePalette( ( unsigned char *) title_sprite_palette );
+	engine_rle_decode_4( title_tiles );
+	SMS_VRAMmemcpy( 0x2c00, engine_rle_buffer, 0x0680 );
+
+	engine_rle_decode_2( title_map );
+	for( row = 0; row < 4; ++row )
+	{
+		SMS_VRAMmemcpy( 0x398e + ( unsigned int ) row * 64, engine_rle_buffer + ( unsigned int ) row * 34, 34 );
+	}
+
+	count = *text++;
+	while( count-- )
+	{
+		unsigned int address = text[ 0 ] | ( ( unsigned int ) text[ 1 ] << 8 );
+		unsigned int size = text[ 2 ] | ( ( unsigned int ) text[ 3 ] << 8 );
+		text += 4;
+		SMS_VRAMmemcpy( address, text, size );
+		text += size;
+	}
 }

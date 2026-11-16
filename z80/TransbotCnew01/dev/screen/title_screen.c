@@ -11,5 +11,9 @@ void screen_title_screen_load( void )
 	SMS_setBGScrollY( 0 );
 	engine_content_manager_load_boot_tiles();
 
+	SMS_VRAMmemsetW( 0x3800, 0x1100, 0x0700 );
+	SMS_initSprites();
+	SMS_copySpritestoSAT();
+	engine_content_manager_load_title();
 	SMS_displayOn();
 }

@@ -9,10 +9,13 @@
 ; Public variables in this module
 ;--------------------------------------------------------
 	.globl _SMS_VRAMmemsetW
+	.globl _SMS_copySpritestoSAT
+	.globl _SMS_initSprites
 	.globl _SMS_setBGScrollY
 	.globl _SMS_setBGScrollX
 	.globl _SMS_VDPturnOffFeature
 	.globl _SMS_VDPturnOnFeature
+	.globl _engine_content_manager_load_title
 	.globl _engine_content_manager_load_boot_tiles
 	.globl _SMS_SRAM
 	.globl _SRAM_bank_to_be_mapped_on_slot2
@@ -110,13 +113,33 @@ _screen_title_screen_load::
 	call	_engine_content_manager_load_boot_tiles
 	C$title_screen.c$14$1_0$111	= .
 	.globl	C$title_screen.c$14$1_0$111
-;title_screen.c:14: SMS_displayOn();
+;title_screen.c:14: SMS_VRAMmemsetW( 0x3800, 0x1100, 0x0700 );
+	ld	hl, #0x0700
+	push	hl
+	ld	de, #0x1100
+	ld	h, #0x38
+	call	_SMS_VRAMmemsetW
+	C$title_screen.c$15$1_0$111	= .
+	.globl	C$title_screen.c$15$1_0$111
+;title_screen.c:15: SMS_initSprites();
+	call	_SMS_initSprites
+	C$title_screen.c$16$1_0$111	= .
+	.globl	C$title_screen.c$16$1_0$111
+;title_screen.c:16: SMS_copySpritestoSAT();
+	call	_SMS_copySpritestoSAT
+	C$title_screen.c$17$1_0$111	= .
+	.globl	C$title_screen.c$17$1_0$111
+;title_screen.c:17: engine_content_manager_load_title();
+	call	_engine_content_manager_load_title
+	C$title_screen.c$18$1_0$111	= .
+	.globl	C$title_screen.c$18$1_0$111
+;title_screen.c:18: SMS_displayOn();
 	ld	hl, #0x0140
-	C$title_screen.c$15$1_0$111	= .
-	.globl	C$title_screen.c$15$1_0$111
-;title_screen.c:15: }
-	C$title_screen.c$15$1_0$111	= .
-	.globl	C$title_screen.c$15$1_0$111
+	C$title_screen.c$19$1_0$111	= .
+	.globl	C$title_screen.c$19$1_0$111
+;title_screen.c:19: }
+	C$title_screen.c$19$1_0$111	= .
+	.globl	C$title_screen.c$19$1_0$111
 	XG$screen_title_screen_load$0$0	= .
 	.globl	XG$screen_title_screen_load$0$0
 	jp	_SMS_VDPturnOnFeature
