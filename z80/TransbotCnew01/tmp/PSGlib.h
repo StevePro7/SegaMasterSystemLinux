@@ -37,35 +37,35 @@
  */
 
 #ifdef PSGLIB_MULTIBANK
-void PSGPlay( void *song, unsigned char bank ) {}
-void PSGPlayLoops( void *song, unsigned char loops, unsigned char bank ) {}
-void PSGPlayNoRepeat( void *song, unsigned char bank ) {}
+void PSGPlay( void *song, unsigned char bank );
+void PSGPlayLoops( void *song, unsigned char loops, unsigned char bank );
+void PSGPlayNoRepeat( void *song, unsigned char bank );
 #else
-void PSGPlay( void *song ) {}
-void PSGPlayLoops( void *song, unsigned char loops ) {}
-void PSGPlayNoRepeat( void *song ) {}
+void PSGPlay( void *song );
+void PSGPlayLoops( void *song, unsigned char loops );
+void PSGPlayNoRepeat( void *song );
 #endif
 
-void PSGCancelLoop( void ) {}
-void PSGStop( void ) {}
-void PSGResume( void ) {}
-unsigned char PSGGetStatus( void ) { return 1; }
+void PSGCancelLoop( void );
+void PSGStop( void );
+void PSGResume( void );
+unsigned char PSGGetStatus( void );
 
 #define PSGSetMusicVolumeChannelsAttenuation(chn0_attenuation,chn1_attenuation,chn2_attenuation,chn3_attenuation)    PSGSetMusicVolumeChannelsAttenuation_f(((((unsigned int)(chn3_attenuation)&0x0F)<<12)|(((unsigned int)(chn2_attenuation)&0x0F)<<8)|(((unsigned int)(chn1_attenuation)&0x0F)<<4)|((unsigned int)(chn0_attenuation)&0x0F)))
 #define PSGSetMusicVolumeAttenuation(attenuation)                                                                    PSGSetMusicVolumeChannelsAttenuation((attenuation),(attenuation),(attenuation),(attenuation))
-void PSGSetMusicVolumeChannelsAttenuation_f( unsigned int channels_attenuation ) {}
-void PSGSetSFXVolumeAttenuation( unsigned char attenuation ) {}
+void PSGSetMusicVolumeChannelsAttenuation_f( unsigned int channels_attenuation );
+void PSGSetSFXVolumeAttenuation( unsigned char attenuation );
 
-void PSGSFXPlay( void *sfx, unsigned char channels ) {}
-void PSGSFXPlayLoop( void *sfx, unsigned char channels ) {}
-void PSGSFXCancelLoop( void ) {}
-void PSGSFXStop( void ) {}
-unsigned char PSGSFXGetStatus( void ) { return 0; }
+void PSGSFXPlay( void *sfx, unsigned char channels );
+void PSGSFXPlayLoop( void *sfx, unsigned char channels );
+void PSGSFXCancelLoop( void );
+void PSGSFXStop( void );
+unsigned char PSGSFXGetStatus( void );
 
-void PSGSilenceChannels( void ) {}
-void PSGRestoreVolumes( void ) {}
+void PSGSilenceChannels( void );
+void PSGRestoreVolumes( void );
 
-void PSGFrame( void ) {}
-void PSGSFXFrame( void ) {}
+void PSGFrame( void );
+void PSGSFXFrame( void );
 
 #endif//__PSG_LIB_H__
