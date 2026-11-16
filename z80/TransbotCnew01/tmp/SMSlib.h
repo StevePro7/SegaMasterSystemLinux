@@ -1,3 +1,6 @@
+#ifndef __SMS_LIB_H__
+#define __SMS_LIB_H__
+
 /* **************************************************
    SMSlib - C programming library for the SMS/GG
    ( part of devkitSMS - github.com/sverx/devkitSMS )
@@ -499,3 +502,5 @@ void SMS_isr (void) {} /*__naked;*/
 void SMS_nmi_isr (void) {} /*__naked;*/
 
 /* EOF */
+
+#endif//__SMS_LIB_H__

@@ -9,6 +9,10 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 ::echo Build
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 assets.c
 ::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 rle.c
+cd engine
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 content_manager.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 rle_manager.c
+cd ..
 
 sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
 
@@ -26,12 +30,18 @@ echo.
 sdcc --debug  -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-loc 0xC000 ^
 ../crt0/crt0_sms.rel main.rel ^
 ../lib/SMSlib.lib ^
-../lib/PSGlib.lib
+../lib/PSGlib.lib ^
+engine/content_manager.rel ^
+engine/rle_manager.rel
 
 ::echo Run
 ihx2sms output.ihx output.sms
 
 :: Cleanup
+cd engine
+if exist "*.lst" del "*.lst" > nul; if exist "*.sym" del "*.sym" > nul
+cd ..
+
 ::if exist "*.asm" del "*.asm" > nul
 if exist "*.ihx" del "*.ihx" > nul
 if exist "*.lk"  del "*.lk"  > nul

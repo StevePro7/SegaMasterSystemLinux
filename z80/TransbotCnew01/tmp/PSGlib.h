@@ -1,3 +1,6 @@
+#ifndef __PSG_LIB_H__
+#define __PSG_LIB_H__
+
 /* **************************************************
    PSGlib - C programming library for the SEGA PSG
    ( part of devkitSMS - github.com/sverx/devkitSMS )
@@ -64,3 +67,5 @@ void PSGRestoreVolumes( void ) {}
 
 void PSGFrame( void ) {}
 void PSGSFXFrame( void ) {}
+
+#endif//__PSG_LIB_H__

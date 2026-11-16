@@ -7,6 +7,7 @@ S:G$SRAM_bank_to_be_mapped_on_slot2$0_0$0({1}SC:U),E,0,0
 S:G$SMS_SRAM$0_0$0({16384}DA16384d,SC:U),E,0,0
 S:G$SMS_VDPFlags$0_0$0({1}SC:U),E,0,0
 S:G$SMS_Port3EBIOSvalue$0_0$0({1}SC:U),E,0,0
+S:G$engine_rle_buffer$0_0$0({3072}DA3072d,SC:U),E,0,0
 S:G$SMS_VDPControlPort$0_0$0({1}SC:U),I,0,0
 S:G$atof$0_0$0({2}DF,SF:S),C,0,0
 S:G$atoi$0_0$0({2}DF,SI:S),C,0,0
@@ -170,6 +171,8 @@ S:G$PSGSilenceChannels$0_0$0({2}DF,SV:S),C,0,0
 S:G$PSGRestoreVolumes$0_0$0({2}DF,SV:S),C,0,0
 S:G$PSGFrame$0_0$0({2}DF,SV:S),C,0,0
 S:G$PSGSFXFrame$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_rle_decode_2$0_0$0({2}DF,SV:S),C,0,0
+S:G$engine_rle_decode_4$0_0$0({2}DF,SV:S),C,0,0
 S:G$main$0_0$0({2}DF,SV:S),C,0,0
 S:Fmain$__str_0$0_0$0({17}DA17d,SC:U),D,0,0
 S:Fmain$__str_1$0_0$0({12}DA12d,SC:U),D,0,0
