@@ -75,7 +75,7 @@ _engine_rle_decode_4::
 	.globl	C$rle_manager.c$79$1_0$6
 ;rle_manager.c:79: __endasm;
 	ld	e, #4
-	  rle_decode_core:
+	rle_decode_core:
 	push	ix
 	push	hl
 	pop	ix
@@ -84,7 +84,7 @@ _engine_rle_decode_4::
 	ld	c, e
 	  1$:
 	push	hl
-	  2$:
+	2$:
 	ld	a, 0( ix )
 	or	a
 	jr	z, 5$
@@ -93,16 +93,16 @@ _engine_rle_decode_4::
 	ld	b, a
 	inc	ix
 	ld	a, 0( ix )
-	  3$:
+	3$:
 	ld(	hl ), a
 	add	hl, de
 	djnz	3$
 	inc	ix
 	jr	2$
-	  4$:
+	4$:
 	res	7, a
 	ld	b, a
-	  6$:
+	6$:
 	inc	ix
 	ld	a, 0( ix )
 	ld(	hl ), a
@@ -110,7 +110,7 @@ _engine_rle_decode_4::
 	djnz	6$
 	inc	ix
 	jr	2$
-	  5$:
+	5$:
 	inc	ix
 	pop	hl
 	inc	hl
