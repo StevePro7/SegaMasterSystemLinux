@@ -3,7 +3,7 @@
 #include "../content/assets.h"
 
 #ifdef _CONSOLE
-//#include "../../tmp/SMSlib.h"
+#include "../../tmp/SMSlib.h"
 #include "../../tmp/PSGlib.h"
 #else
 #include "../../lib/SMSlib.h"

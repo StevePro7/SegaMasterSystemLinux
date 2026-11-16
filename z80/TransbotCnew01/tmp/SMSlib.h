@@ -17,13 +17,13 @@
 
 /* library initialization. you don't need to call this if you use devkitSMS crt0.rel */
 #define _Bool unsigned char
-void SMS_init (void) {}
+void SMS_init (void);
 
 /* ***************************************************************** */
 /* VDP features handling                                             */
 /* ***************************************************************** */
-void SMS_VDPturnOnFeature (unsigned int feature) {} /*__z88dk_fastcall;*/
-void SMS_VDPturnOffFeature (unsigned int feature) {} /*__z88dk_fastcall;*/
+void SMS_VDPturnOnFeature (unsigned int feature); /*__z88dk_fastcall;*/
+void SMS_VDPturnOffFeature (unsigned int feature); /*__z88dk_fastcall;*/
 /* turns on/off a VDP feature */
 /* feature can be one of the following: */
 
@@ -50,11 +50,11 @@ void SMS_VDPturnOffFeature (unsigned int feature) {} /*__z88dk_fastcall;*/
 #define SMS_displayOn()   SMS_VDPturnOnFeature(VDPFEATURE_SHOWDISPLAY)   /* turns on display */
 #define SMS_displayOff()  SMS_VDPturnOffFeature(VDPFEATURE_SHOWDISPLAY)  /* turns off display */
 
-void SMS_setBGScrollX (unsigned char scrollX) {} /*__z88dk_fastcall;*/
-void SMS_setBGScrollY (unsigned char scrollY) {} /*__z88dk_fastcall;*/
-void SMS_setBackdropColor (unsigned char entry) {} /*__z88dk_fastcall;*/
-void SMS_useFirstHalfTilesforSprites (_Bool usefirsthalf) {} /*__z88dk_fastcall;*/
-void SMS_setSpriteMode (unsigned char mode) {} /*__z88dk_fastcall;*/
+void SMS_setBGScrollX (unsigned char scrollX); /*__z88dk_fastcall;*/
+void SMS_setBGScrollY (unsigned char scrollY); /*__z88dk_fastcall;*/
+void SMS_setBackdropColor (unsigned char entry); /*__z88dk_fastcall;*/
+void SMS_useFirstHalfTilesforSprites (_Bool usefirsthalf); /*__z88dk_fastcall;*/
+void SMS_setSpriteMode (unsigned char mode); /*__z88dk_fastcall;*/
 /* modes for SMS_setSpriteMode */
 #define SPRITEMODE_NORMAL         0x00
 #define SPRITEMODE_TALL           0x01
@@ -62,7 +62,7 @@ void SMS_setSpriteMode (unsigned char mode) {} /*__z88dk_fastcall;*/
 #define SPRITEMODE_TALL_ZOOMED    0x03
 
 /* wait until next VBlank starts */
-void SMS_waitForVBlank (void) {}
+void SMS_waitForVBlank (void);
 
 /* ***************************************************************** */
 /* Cartridge mapper handling                                         */
@@ -102,9 +102,9 @@ unsigned char _saved_slot2_ROM_bank;
 /* Tiles / Background handling                                       */
 /* ***************************************************************** */
 
-void SMS_crt0_RST08(unsigned int addr) {} /*__z88dk_fastcall __preserves_regs(a,b,d,e,h,l,iyh,iyl);*/
-void SMS_crt0_RST18(unsigned int tile) {} /*__z88dk_fastcall __preserves_regs(b,c,d,e,h,l,iyh,iyl);*/
-void outi_block(void) {}
+void SMS_crt0_RST08(unsigned int addr); /*__z88dk_fastcall __preserves_regs(a,b,d,e,h,l,iyh,iyl);*/
+void SMS_crt0_RST18(unsigned int tile); /*__z88dk_fastcall __preserves_regs(b,c,d,e,h,l,iyh,iyl);*/
+void outi_block(void);
 
 /* function for setting tiles/moving 'cursor' */
 #define SMS_setTile(tile)         //SMS_crt0_RST18(tile)
@@ -132,41 +132,41 @@ void outi_block(void) {}
 
 /* functions to load tiles into VRAM */
 #define SMS_loadTiles(src,tilefrom,size) SMS_VRAMmemcpy((tilefrom)*32,(src),(size))
-void SMS_load1bppTiles( const void *src, unsigned int tilefrom, unsigned int size, unsigned char color0, unsigned char color1 ) {}
+void SMS_load1bppTiles( const void *src, unsigned int tilefrom, unsigned int size, unsigned char color0, unsigned char color1 );
 #define SMS_load2bppTiles(src,tilefrom,size) SMS_load2bppTilesatAddr((src),TILEtoADDR(tilefrom),(size))
-void SMS_load2bppTilesatAddr (const void *src, unsigned int dest, unsigned int size) {} /*__naked __z88dk_callee __preserves_regs(iyh,iyl) __sdcccall(1);*/
+void SMS_load2bppTilesatAddr (const void *src, unsigned int dest, unsigned int size); /*__naked __z88dk_callee __preserves_regs(iyh,iyl) __sdcccall(1);*/
 
 /* functions to load compressed tiles into VRAM */
 #define SMS_loadSTC0compressedTiles(src,tilefrom) SMS_loadSTC0compressedTilesatAddr((src),TILEtoADDR(tilefrom))
-void SMS_loadSTC0compressedTilesatAddr (const void *src, unsigned int dst) {} /*__naked __sdcccall(1);*/
+void SMS_loadSTC0compressedTilesatAddr (const void *src, unsigned int dst); /*__naked __sdcccall(1);*/
 #define SMS_loadSTC4compressedTiles(src,tilefrom) SMS_loadSTC4compressedTilesatAddr((src),TILEtoADDR(tilefrom))
-void SMS_loadSTC4compressedTilesatAddr (const void *src, unsigned int dst) {} /*__naked __sdcccall(1);*/
+void SMS_loadSTC4compressedTilesatAddr (const void *src, unsigned int dst); /*__naked __sdcccall(1);*/
 #define SMS_loadPSGaidencompressedTiles(src,tilefrom) SMS_loadPSGaidencompressedTilesatAddr((src),TILEtoADDR(tilefrom))
-void SMS_loadPSGaidencompressedTilesatAddr( const void *src, unsigned int dst ) {} /*__naked __sdcccall(1);*/
+void SMS_loadPSGaidencompressedTilesatAddr( const void *src, unsigned int dst ); /*__naked __sdcccall(1);*/
 #define SMS_loadZX7compressedTiles(src,tilefrom) SMS_decompressZX7toVRAM((src),TILEtoADDR(tilefrom))
 #define SMS_loadZX7compressedTilesatAddr(src,dst) SMS_decompressZX7toVRAM((src),(dst))
-void SMS_decompressZX7toVRAM (const void *src, unsigned int dst) {} /*__naked __sdcccall(1);*/
+void SMS_decompressZX7toVRAM (const void *src, unsigned int dst); /*__naked __sdcccall(1);*/
 
 /* UNSAFE functions to load compressed tiles into VRAM */
 #define UNSAFE_SMS_loadaPLibcompressedTiles(src,tilefrom) UNSAFE_SMS_loadaPLibcompressedTilesatAddr((src),TILEtoADDR(tilefrom))
-void UNSAFE_SMS_loadaPLibcompressedTilesatAddr (const void *src, unsigned int dst) {} /*__naked __sdcccall(1);*/
+void UNSAFE_SMS_loadaPLibcompressedTilesatAddr (const void *src, unsigned int dst); /*__naked __sdcccall(1);*/
 
 /* functions for the tilemap */
 #define SMS_loadTileMap(x,y,src,size)               SMS_VRAMmemcpy (XYtoADDR((x),(y)),(src),(size))
 
-void SMS_loadTileMapAreaatAddr (unsigned int dst, const void *src, unsigned char width, unsigned char height) {} /*__naked __z88dk_callee __sdcccall(1);*/
+void SMS_loadTileMapAreaatAddr (unsigned int dst, const void *src, unsigned char width, unsigned char height); /*__naked __z88dk_callee __sdcccall(1);*/
 #define SMS_loadTileMapArea(x,y,src,width,height)   SMS_loadTileMapAreaatAddr(XYtoADDR((x),(y)),(src),(width),(height))
 
-void SMS_loadTileMapColumnatAddr (unsigned int dst, const void *src, unsigned int height) {} /*__naked __z88dk_callee __sdcccall(1);*/
+void SMS_loadTileMapColumnatAddr (unsigned int dst, const void *src, unsigned int height); /*__naked __z88dk_callee __sdcccall(1);*/
 #define SMS_loadTileMapColumn(x,y,src,height)       SMS_loadTileMapColumnatAddr(XYtoADDR((x),(y)),(src),(height))
 
-void SMS_loadSTMcompressedTileMapatAddr( unsigned int dst, const void *src ) {}
+void SMS_loadSTMcompressedTileMapatAddr( unsigned int dst, const void *src );
 #define SMS_loadSTMcompressedTileMap(x,y,src)       SMS_loadSTMcompressedTileMapatAddr(XYtoADDR((x),(y)),(src))
 #define SMS_loadSTMcompressedTileMapArea(x,y,src,w) SMS_loadSTMcompressedTileMapatAddr(XYtoADDR((x),(y)),(src))
 // SMS_loadSTMcompressedTileMapArea *DEPRECATED* - will be dropped at some point in 201818
 
 /* function for reading back tiles from PNT */
-unsigned int SMS_getTile(void) { return 0; } /*__naked __z88dk_fastcall __preserves_regs(b,c,d,e,iyh,iyl);*/
+unsigned int SMS_getTile(void); /*__naked __z88dk_fastcall __preserves_regs(b,c,d,e,iyh,iyl);*/
 
 /* PNT define (address and VDP flags for reading) */
 #define SMS_PNTAddress_READ       0x3800
@@ -180,44 +180,44 @@ unsigned int SMS_getTile(void) { return 0; } /*__naked __z88dk_fastcall __preser
 #define SMS_getTileatXY(x,y)         //(SMS_setAddr(XYtoREADADDR((x),(y))),SMS_getTile())
 
 /* Functions for reading back tilemap and VRAM */
-void SMS_saveTileMapArea(unsigned char x, unsigned char y, void *dst, unsigned char width, unsigned char height) {}
-void * SMS_saveTileMapColumnatAddr( unsigned int src, void *dst, unsigned int height ) { return 0; } /*__naked __z88dk_callee __sdcccall(1);*/
+void SMS_saveTileMapArea(unsigned char x, unsigned char y, void *dst, unsigned char width, unsigned char height);
+void * SMS_saveTileMapColumnatAddr( unsigned int src, void *dst, unsigned int height ); /*__naked __z88dk_callee __sdcccall(1);*/
 #define SMS_saveTileMapColumn(x,y,dst,height)   SMS_saveTileMapColumnatAddr(XYtoADDR((x),(y)),(dst),(height))
-void SMS_readVRAM(void *dst, unsigned int src, unsigned int size) {} /*__naked __z88dk_callee __preserves_regs(iyh,iyl) __sdcccall(1);*/
+void SMS_readVRAM(void *dst, unsigned int src, unsigned int size); /*__naked __z88dk_callee __preserves_regs(iyh,iyl) __sdcccall(1);*/
 
 /* ***************************************************************** */
 /* Sprites handling                                                  */
 /* ***************************************************************** */
 
-void SMS_initSprites (void) {}
+void SMS_initSprites (void);
 #define SMS_addSprite(x,y,tile)                   SMS_addSprite_f((y),(((unsigned int)(x)&0xff)<<8)|(((tile)&0xff)))
 #define SMS_addTwoAdjoiningSprites(x,y,tile)      SMS_addTwoAdjoiningSprites_f((y),(((unsigned int)(x)&0xff)<<8)|(((tile)&0xff)))
 #define SMS_addThreeAdjoiningSprites(x,y,tile)    SMS_addThreeAdjoiningSprites_f((y),(((unsigned int)(x)&0xff)<<8)|(((tile)&0xff)))
 #define SMS_addFourAdjoiningSprites(x,y,tile)     SMS_addFourAdjoiningSprites_f((y),(((unsigned int)(x)&0xff)<<8)|(((tile)&0xff)))
 #ifdef NO_SPRITE_CHECKS
-void SMS_addSprite_f (unsigned char y, unsigned int x_tile) {} /*__naked __preserves_regs(d,e,iyh,iyl) __sdcccall(1);*/                /* doesn't return anything */
-void SMS_addTwoAdjoiningSprites_f (unsigned char y, unsigned int x_tile) {} /*__naked __preserves_regs(d,e,iyh,iyl) __sdcccall(1);*/   /* doesn't return anything */
-void SMS_addThreeAdjoiningSprites_f (unsigned char y, unsigned int x_tile) {} /*__naked __preserves_regs(d,e,iyh,iyl) __sdcccall(1);*/ /* doesn't return anything */
-void SMS_addFourAdjoiningSprites_f (unsigned char y, unsigned int x_tile) {} /*__naked __preserves_regs(d,e,iyh,iyl) __sdcccall(1);*/  /* doesn't return anything */
+void SMS_addSprite_f (unsigned char y, unsigned int x_tile); /*__naked __preserves_regs(d,e,iyh,iyl) __sdcccall(1);*/                /* doesn't return anything */
+void SMS_addTwoAdjoiningSprites_f (unsigned char y, unsigned int x_tile); /*__naked __preserves_regs(d,e,iyh,iyl) __sdcccall(1);*/   /* doesn't return anything */
+void SMS_addThreeAdjoiningSprites_f (unsigned char y, unsigned int x_tile); /*__naked __preserves_regs(d,e,iyh,iyl) __sdcccall(1);*/ /* doesn't return anything */
+void SMS_addFourAdjoiningSprites_f (unsigned char y, unsigned int x_tile); /*__naked __preserves_regs(d,e,iyh,iyl) __sdcccall(1);*/  /* doesn't return anything */
 #else
-signed char SMS_addSprite_f (unsigned int y, unsigned int x_tile) { return -1; } /*__naked __preserves_regs(d,e,iyh,iyl) __sdcccall(1);*/          /* returns -1 if no more sprites are available, -2 if invalid Y coord */
-void SMS_addTwoAdjoiningSprites_f (unsigned int y, unsigned int x_tile) {} /*__naked __preserves_regs(d,e,iyh,iyl) __sdcccall(1);*/    /* doesn't return anything */
-void SMS_addThreeAdjoiningSprites_f (unsigned int y, unsigned int x_tile) {} /*__naked __preserves_regs(d,e,iyh,iyl) __sdcccall(1);*/  /* doesn't return anything */
-void SMS_addFourAdjoiningSprites_f (unsigned int y, unsigned int x_tile) {} /*__naked __preserves_regs(d,e,iyh,iyl) __sdcccall(1);*/   /* doesn't return anything */
+signed char SMS_addSprite_f (unsigned int y, unsigned int x_tile); /*__naked __preserves_regs(d,e,iyh,iyl) __sdcccall(1);*/          /* returns -1 if no more sprites are available, -2 if invalid Y coord */
+void SMS_addTwoAdjoiningSprites_f (unsigned int y, unsigned int x_tile); /*__naked __preserves_regs(d,e,iyh,iyl) __sdcccall(1);*/    /* doesn't return anything */
+void SMS_addThreeAdjoiningSprites_f (unsigned int y, unsigned int x_tile); /*__naked __preserves_regs(d,e,iyh,iyl) __sdcccall(1);*/  /* doesn't return anything */
+void SMS_addFourAdjoiningSprites_f (unsigned int y, unsigned int x_tile); /*__naked __preserves_regs(d,e,iyh,iyl) __sdcccall(1);*/   /* doesn't return anything */
 #endif
-signed char SMS_reserveSprite (void) { return -1; }
-void SMS_updateSpritePosition (signed char sprite, unsigned char x, unsigned char y) {}
-void SMS_updateSpriteImage (signed char sprite, unsigned char image) {}
-void SMS_hideSprite (signed char sprite) {}
-void SMS_setClippingWindow (unsigned char x0, unsigned char y0, unsigned char x1, unsigned char y1) {}
-signed char SMS_addSpriteClipping (int x, int y, unsigned char tile) { return -1; }   /* returns -1 if no more sprites are available or sprite clipped */
-void SMS_finalizeSprites( void ) {}     // *DEPRECATED* - will be dropped at some point in 2018
-void SMS_copySpritestoSAT( void ) {}
+signed char SMS_reserveSprite (void);
+void SMS_updateSpritePosition (signed char sprite, unsigned char x, unsigned char y);
+void SMS_updateSpriteImage (signed char sprite, unsigned char image);
+void SMS_hideSprite (signed char sprite);
+void SMS_setClippingWindow (unsigned char x0, unsigned char y0, unsigned char x1, unsigned char y1);
+signed char SMS_addSpriteClipping (int x, int y, unsigned char tile);   /* returns -1 if no more sprites are available or sprite clipped */
+void SMS_finalizeSprites( void );     // *DEPRECATED* - will be dropped at some point in 2018
+void SMS_copySpritestoSAT( void );
 
 /* metasprites */
 #define METASPRITE_END   0x80
 #define SMS_addMetaSprite(x,y,metasprite)               SMS_addMetaSprite_f(((x)&0xff)|(((unsigned int)(y)&0xff)<<8),(metasprite))
-void SMS_addMetaSprite_f (unsigned int origin_yx, void *metasprite) {} /*__naked __sdcccall(1);*/                                     /* doesn't return anything */
+void SMS_addMetaSprite_f (unsigned int origin_yx, void *metasprite); /*__naked __sdcccall(1);*/                                     /* doesn't return anything */
 
 /* ***************************************************************** */
 /* Colors / palettes handling                                        */
@@ -228,10 +228,10 @@ void SMS_addMetaSprite_f (unsigned int origin_yx, void *metasprite) {} /*__naked
 
 #ifdef TARGET_GG
 /* GG functions to set a color / load a palette */
-void GG_setBGPaletteColor( unsigned char entry, unsigned int color ) {}
-void GG_setSpritePaletteColor( unsigned char entry, unsigned int color ) {}
-void GG_loadBGPalette( const void *palette ) {} /*__z88dk_fastcall;*/
-void GG_loadSpritePalette( const void *palette ) {} /*__z88dk_fastcall;*/
+void GG_setBGPaletteColor( unsigned char entry, unsigned int color );
+void GG_setSpritePaletteColor( unsigned char entry, unsigned int color );
+void GG_loadBGPalette( const void *palette ); /*__z88dk_fastcall;*/
+void GG_loadSpritePalette( const void *palette ); /*__z88dk_fastcall;*/
 #define GG_setNextBGColoratIndex(i)       SMS_setAddr(SMS_CRAMAddress|((i)<<1))
 #define GG_setNextSpriteColoratIndex(i)   SMS_setAddr(SMS_CRAMAddress|0x20|((i)<<1))
 #define GG_setColor(color)       SMS_crt0_RST18(color)
@@ -240,59 +240,59 @@ void GG_loadSpritePalette( const void *palette ) {} /*__z88dk_fastcall;*/
 #define RGB8(r,g,b)       (((r)>>4)|(((g)>>4)<<4)|(((b)>>4)<<8))
 #define RGBHTML(RGB24bit) (((RGB24bit)>>20)|((((RGB24bit)&0xFFFF)>>12)<<4)|((((RGB24bit)&0xFF)>>4)<<8))
 /* advanced functions for palettes */
-void GG_loadBGPaletteHalfBrightness (const void *palette) {} /*__z88dk_fastcall;*/
-void GG_loadSpritePaletteHalfBrightness (const void *palette) {} /*__z88dk_fastcall;*/
-void GG_zeroBGPalette (void) {}
-void GG_zeroSpritePalette (void) {}
-void GG_loadBGPaletteafterColorAddition (const void *palette, const unsigned int addition_color) {}
-void GG_loadSpritePaletteafterColorAddition (const void *palette, const unsigned int addition_color) {}
-void GG_loadBGPaletteafterColorSubtraction (const void *palette, const unsigned int subtraction_color) {}
-void GG_loadSpritePaletteafterColorSubtraction (const void *palette, const unsigned int subtraction_color) {}
+void GG_loadBGPaletteHalfBrightness (const void *palette); /*__z88dk_fastcall;*/
+void GG_loadSpritePaletteHalfBrightness (const void *palette); /*__z88dk_fastcall;*/
+void GG_zeroBGPalette (void);
+void GG_zeroSpritePalette (void);
+void GG_loadBGPaletteafterColorAddition (const void *palette, const unsigned int addition_color);
+void GG_loadSpritePaletteafterColorAddition (const void *palette, const unsigned int addition_color);
+void GG_loadBGPaletteafterColorSubtraction (const void *palette, const unsigned int subtraction_color);
+void GG_loadSpritePaletteafterColorSubtraction (const void *palette, const unsigned int subtraction_color);
 #else
 /* SMS functions to set a color / load a palette */
-void SMS_setBGPaletteColor (unsigned char entry, unsigned char color) {}
-void SMS_setSpritePaletteColor (unsigned char entry, unsigned char color) {}
-void SMS_loadBGPalette (void *palette) {} /*__z88dk_fastcall;*/
-void SMS_loadSpritePalette (void *palette) {} /*__z88dk_fastcall;*/
+void SMS_setBGPaletteColor (unsigned char entry, unsigned char color);
+void SMS_setSpritePaletteColor (unsigned char entry, unsigned char color);
+void SMS_loadBGPalette (void *palette); /*__z88dk_fastcall;*/
+void SMS_loadSpritePalette (void *palette); /*__z88dk_fastcall;*/
 #define SMS_setNextBGColoratIndex(i)       SMS_setAddr(SMS_CRAMAddress|(i))
 #define SMS_setNextSpriteColoratIndex(i)   SMS_setAddr(SMS_CRAMAddress|0x10|(i))
-void SMS_setColor (unsigned char color) {} /*__z88dk_fastcall __preserves_regs(b,c,d,e,h,l,iyh,iyl);*/
+void SMS_setColor (unsigned char color); /*__z88dk_fastcall __preserves_regs(b,c,d,e,h,l,iyh,iyl);*/
 /* SMS macros for colors */
 #define RGB(r,g,b)        ((r)|((g)<<2)|((b)<<4))
 #define RGB8(r,g,b)       (((r)>>6)|(((g)>>6)<<2)|(((b)>>6)<<4))
 #define RGBHTML(RGB24bit) (((RGB24bit)>>22)|((((RGB24bit)&0xFFFF)>>14)<<2)|((((RGB24bit)&0xFF)>>6)<<4))
 /* advanced functions for palettes */
-void SMS_loadBGPaletteHalfBrightness (void *palette) {} /*__z88dk_fastcall;*/
-void SMS_loadSpritePaletteHalfBrightness (void *palette) {} /*__z88dk_fastcall;*/
-void SMS_zeroBGPalette (void) {}
-void SMS_zeroSpritePalette (void) {}
-void SMS_loadBGPaletteafterColorAddition (const void *palette, const unsigned char addition_color) {}
-void SMS_loadSpritePaletteafterColorAddition (const void *palette, const unsigned char addition_color) {}
-void SMS_loadBGPaletteafterColorSubtraction (const void *palette, const unsigned char subtraction_color) {}
-void SMS_loadSpritePaletteafterColorSubtraction (const void *palette, const unsigned char subtraction_color) {}
+void SMS_loadBGPaletteHalfBrightness (void *palette); /*__z88dk_fastcall;*/
+void SMS_loadSpritePaletteHalfBrightness (void *palette); /*__z88dk_fastcall;*/
+void SMS_zeroBGPalette (void);
+void SMS_zeroSpritePalette (void);
+void SMS_loadBGPaletteafterColorAddition (const void *palette, const unsigned char addition_color);
+void SMS_loadSpritePaletteafterColorAddition (const void *palette, const unsigned char addition_color);
+void SMS_loadBGPaletteafterColorSubtraction (const void *palette, const unsigned char subtraction_color);
+void SMS_loadSpritePaletteafterColorSubtraction (const void *palette, const unsigned char subtraction_color);
 #endif
 
 /* text renderer */
-void SMS_configureTextRenderer( signed int ascii_to_tile_offset ) {} /*__z88dk_fastcall;*/
-void SMS_autoSetUpTextRenderer( void ) {}
-void SMS_putchar (unsigned char c) {}         /* faster than plain putchar() */
-void SMS_print (const unsigned char *str) {}  /* faster than printf() for unformatted strings */
+void SMS_configureTextRenderer( signed int ascii_to_tile_offset ); /*__z88dk_fastcall;*/
+void SMS_autoSetUpTextRenderer( void );
+void SMS_putchar (unsigned char c);         /* faster than plain putchar() */
+void SMS_print (const unsigned char *str);  /* faster than printf() for unformatted strings */
 /* Macro to print a string at a given location */
 #define SMS_printatXY(x,y,s) do{SMS_setNextTileatXY(x,y);SMS_print(s);}while(0)
 	
 /* decompress compressed data to RAM */
-void SMS_decompressZX7( const void *src, void *dst ) {}
-void SMS_decompressaPLib (const void *src, void *dst) {} /*__naked __sdcccall(1);*/
+void SMS_decompressZX7( const void *src, void *dst );
+void SMS_decompressaPLib (const void *src, void *dst); /*__naked __sdcccall(1);*/
 
 /* ***************************************************************** */
 /* Input handling (joypads)                                          */
 /* ***************************************************************** */
 
 /* functions to read joypad(s) */
-unsigned int SMS_getKeysStatus (void) { return 0; }
-unsigned int SMS_getKeysPressed (void) { return 0; }
-unsigned int SMS_getKeysHeld (void) { return 0; }
-unsigned int SMS_getKeysReleased (void) { return 0; }
+unsigned int SMS_getKeysStatus (void);
+unsigned int SMS_getKeysPressed (void);
+unsigned int SMS_getKeysHeld (void);
+unsigned int SMS_getKeysReleased (void);
 
 /* handy defines for joypad(s) handling */
 #ifndef CONTROLLER_PORTS
@@ -325,10 +325,10 @@ unsigned int SMS_getKeysReleased (void) { return 0; }
 
 #ifdef MD_PAD_SUPPORT
 /* functions to read additional MD buttons */
-unsigned int SMS_getMDKeysStatus (void) { return 0; }
-unsigned int SMS_getMDKeysPressed (void) { return 0; }
-unsigned int SMS_getMDKeysHeld (void) { return 0; }
-unsigned int SMS_getMDKeysReleased (void) { return 0; }
+unsigned int SMS_getMDKeysStatus (void);
+unsigned int SMS_getMDKeysPressed (void);
+unsigned int SMS_getMDKeysHeld (void);
+unsigned int SMS_getMDKeysReleased (void);
 
 /* handy defines for additional MD joypad(s) handling */
 #define PORT_A_MD_KEY_Z         0x0001
@@ -340,7 +340,7 @@ unsigned int SMS_getMDKeysReleased (void) { return 0; }
 /* port B still missing */
 
 #define SMS_getDetectedPadType()  (DetectedPadType)
-/*extern volatile*/ unsigned char DetectedPadType { return 0; }
+/*extern volatile*/ unsigned char DetectedPadType;
 
 /* defines for SMS_getDetectedPadType */
 #define PAD_TYPE_SMS      0
@@ -352,20 +352,20 @@ unsigned int SMS_getMDKeysReleased (void) { return 0; }
 /* paddle controller handling (SMS only) */
 #define PORT_A      0
 #define PORT_B      1
-_Bool SMS_detectPaddle( unsigned char port ) { return 1; } /*__z88dk_fastcall __naked8;*/
-unsigned char SMS_readPaddle( unsigned char port ) { return 1; } /*__z88dk_fastcall __naked;*/
+_Bool SMS_detectPaddle( unsigned char port ); /*__z88dk_fastcall __naked8;*/
+unsigned char SMS_readPaddle( unsigned char port ); /*__z88dk_fastcall __naked;*/
 #endif
 
 #ifndef TARGET_GG
 /* pause handling (SMS only) */
-_Bool SMS_queryPauseRequested (void) { return 0; }
-void SMS_resetPauseRequest (void) {}
+_Bool SMS_queryPauseRequested (void);
+void SMS_resetPauseRequest (void);
 #endif
 
 #ifndef TARGET_GG
 #ifdef  VDPTYPE_DETECTION
 /* VDPType handling (SMS only) */
-unsigned char SMS_VDPType( void ) { return 0x80; }
+unsigned char SMS_VDPType( void );
 /* WARNING: these constants may change value later, please use defines */
 #define VDP_PAL                 0x80
 #define VDP_NTSC                0x40
@@ -382,39 +382,39 @@ unsigned char SMS_VDPType( void ) { return 0x80; }
 #ifndef NO_FRAME_INT_HOOK
 /* If non-NULL, the specified function will be called by SMS_isr after acknowledging */
 /* the interrupt and reading controller status. */
-void SMS_setFrameInterruptHandler (void (*theHandlerFunction)(void)) {} /*__z88dk_fastcall;*/
+void SMS_setFrameInterruptHandler (void (*theHandlerFunction)(void)); /*__z88dk_fastcall;*/
 #endif
 
 /* line interrupt */
-void SMS_setLineInterruptHandler (void (*theHandlerFunction)(void)) {}
-void SMS_setLineCounter (unsigned char count) {}
+void SMS_setLineInterruptHandler (void (*theHandlerFunction)(void));
+void SMS_setLineCounter (unsigned char count);
 #define SMS_enableLineInterrupt()   SMS_VDPturnOnFeature(0x0010)   /* turns on line IRQ */
 #define SMS_disableLineInterrupt()  SMS_VDPturnOffFeature(0x0010)  /* turns off line IRQ */
 
 /* Game Gear NMI handling */
-void GG_setNMIHandler (void (*theHandlerFunction)(void)) {} /*__z88dk_fastcall;*/
+void GG_setNMIHandler( void( *theHandlerFunction )( void ) ); /*__z88dk_fastcall;*/
 
 /*__sfr __at (0xbf)*/ unsigned char SMS_VDPControlPort;
 /* alternative version of SMS_setBGScrollX to be used in the line interrupt handler for raster effects */
 #define INLINE_SMS_setBGScrollX(scrollX)      do{SMS_VDPControlPort=(scrollX);SMS_VDPControlPort=0x88;}while(0)
 
 /* Vcount  */
-unsigned char SMS_getVCount (void) { return 1; } /*__naked __preserves_regs(c,d,e,h,l,iyh,iyl);*/
+unsigned char SMS_getVCount (void); /*__naked __preserves_regs(c,d,e,h,l,iyh,iyl);*/
 
 /* low level functions */
-void SMS_VRAMmemcpy( unsigned int dst, const void *src, unsigned int size ) {} /*__naked __z88dk_callee __preserves_regs(iyh,iyl) __sdcccall(1);*/
-void SMS_VRAMmemcpy_brief( unsigned int dst, const void *src, unsigned char size ) {} /*__naked __z88dk_callee __preserves_regs(iyh,iyl) __sdcccall(1);*/
+void SMS_VRAMmemcpy( unsigned int dst, const void *src, unsigned int size ); /*__naked __z88dk_callee __preserves_regs(iyh,iyl) __sdcccall(1);*/
+void SMS_VRAMmemcpy_brief( unsigned int dst, const void *src, unsigned char size ); /*__naked __z88dk_callee __preserves_regs(iyh,iyl) __sdcccall(1);*/
 #define SMS_VRAMmemset(dst,value,size)   SMS_VRAMmemset_f((value),(dst),(size))
-void SMS_VRAMmemset_f (unsigned char value, unsigned int dst, unsigned int size) {} /*__naked __z88dk_callee __preserves_regs(a,h,l,iyh,iyl) __sdcccall(1);*/
-void SMS_VRAMmemsetW (unsigned int dst, unsigned int value, unsigned int size) {} /*__naked __z88dk_callee __preserves_regs(d,e,iyh,iyl) __sdcccall(1);*/
+void SMS_VRAMmemset_f (unsigned char value, unsigned int dst, unsigned int size); /*__naked __z88dk_callee __preserves_regs(a,h,l,iyh,iyl) __sdcccall(1);*/
+void SMS_VRAMmemsetW (unsigned int dst, unsigned int value, unsigned int size); /*__naked __z88dk_callee __preserves_regs(d,e,iyh,iyl) __sdcccall(1);*/
 
 /* VRAM unsafe functions. Fast, but dangerous! */
-void UNSAFE_SMS_copySpritestoSAT (void) {}
-void * UNSAFE_SMS_VRAMmemcpy32 (unsigned int dst, const void *src) { return 0; } /*__naked __preserves_regs(a,iyh,iyl) __sdcccall(1);*/
-void * UNSAFE_SMS_VRAMmemcpy64 (unsigned int dst, const void *src) { return 0; } /*__naked __preserves_regs(a,iyh,iyl) __sdcccall(1);*/
-void * UNSAFE_SMS_VRAMmemcpy96 (unsigned int dst, const void *src) { return 0; } /*__naked __preserves_regs(a,iyh,iyl) __sdcccall(1);*/
-void * UNSAFE_SMS_VRAMmemcpy128 (unsigned int dst, const void *src) { return 0; } /*__naked __preserves_regs(a,iyh,iyl) __sdcccall(1);*/
-void * UNSAFE_SMS_VRAMmemcpy (unsigned int dst, const void *src, unsigned int size) { return 0; } /*__naked __z88dk_callee __preserves_regs(iyh,iyl) __sdcccall(1);*/
+void UNSAFE_SMS_copySpritestoSAT (void);
+void * UNSAFE_SMS_VRAMmemcpy32 (unsigned int dst, const void *src); /*__naked __preserves_regs(a,iyh,iyl) __sdcccall(1);*/
+void * UNSAFE_SMS_VRAMmemcpy64 (unsigned int dst, const void *src); /*__naked __preserves_regs(a,iyh,iyl) __sdcccall(1);*/
+void * UNSAFE_SMS_VRAMmemcpy96 (unsigned int dst, const void *src); /*__naked __preserves_regs(a,iyh,iyl) __sdcccall(1);*/
+void * UNSAFE_SMS_VRAMmemcpy128 (unsigned int dst, const void *src); /*__naked __preserves_regs(a,iyh,iyl) __sdcccall(1);*/
+void * UNSAFE_SMS_VRAMmemcpy (unsigned int dst, const void *src, unsigned int size); /*__naked __z88dk_callee __preserves_regs(iyh,iyl) __sdcccall(1);*/
 
 /* handy macros for UNSAFE_SMS_VRAMmemcpy* */
 #define UNSAFE_SMS_load1Tile(src,theTile)               UNSAFE_SMS_VRAMmemcpy32((theTile)*32,(src))
@@ -425,7 +425,7 @@ void * UNSAFE_SMS_VRAMmemcpy (unsigned int dst, const void *src, unsigned int si
 #define UNSAFE_SMS_loadTiles(src,tilefrom,size)         UNSAFE_SMS_VRAMmemcpy((tilefrom)*32,(src),(size))
 
 /* function to print messages to the debug console of emulators */
-void SMS_debugPrintf(const unsigned char *format, ...) {} /*__naked __preserves_regs(a,b,c,iyh,iyl);*/
+void SMS_debugPrintf(const unsigned char *format, ...); /*__naked __preserves_regs(a,b,c,iyh,iyl);*/
 
 /* macros for SEGA and SDSC headers */
 #define SMS_BYTE_TO_BCD(n) (((n)/10)*16+((n)%10))
@@ -498,8 +498,8 @@ void SMS_debugPrintf(const unsigned char *format, ...) {} /*__naked __preserves_
                   SMS_EMBED_SDSC_HEADER_16KB((verMaj),(verMin),0,0,0,(author),(name),(descr))
 
 /* the Interrupt Service Routines (do not modify) */
-void SMS_isr (void) {} /*__naked;*/
-void SMS_nmi_isr (void) {} /*__naked;*/
+void SMS_isr (void); /*__naked;*/
+void SMS_nmi_isr (void); /*__naked;*/
 
 /* EOF */
 
