@@ -1,6 +1,6 @@
 ;!FILE game_screen.asm
 XL3
-H 9 areas 9C global symbols
+H 9 areas 9D global symbols
 M game_screen
 O -mz80
 S _SMS_VRAMmemsetW Ref000000
@@ -30,7 +30,7 @@ S _SMS_VDPturnOnFeature Ref000000
 S _SMS_setFrameInterruptHandler Ref000000
 S _engine_scroll_sequence Ref000000
 S _engine_content_manager_load_boot_tiles Ref000000
-A _CODE size BB flags 0 addr 0
+A _CODE size BD flags 0 addr 0
 S XG$screen_game_screen_load$0$0 Def0000B7
 S G$screen_game_screen_update$0$0 Def0000BA
 S XFgame_screen$game_line_interrupt$0$0 Def00002C
@@ -43,7 +43,6 @@ S A$game_screen$220 Def000068
 S A$game_screen$112 Def000012
 S C$game_screen.c$20$1_0$142 Def000015
 S A$game_screen$230 Def000071
-S A$game_screen$321 Def0000BA
 S A$game_screen$240 Def00007C
 S A$game_screen$231 Def000074
 S A$game_screen$204 Def000051
@@ -62,6 +61,7 @@ S A$game_screen$215 Def000060
 S A$game_screen$134 Def00001B
 S A$game_screen$125 Def000015
 S C$game_screen.c$22$2_0$143 Def00001A
+S A$game_screen$324 Def0000BA
 S A$game_screen$270 Def00009A
 S A$game_screen$216 Def000062
 S A$game_screen$135 Def00001E
@@ -145,9 +145,10 @@ S C$game_screen.c$48$1_0$146 Def00006D
 S C$game_screen.c$39$1_0$146 Def000049
 S XG$screen_game_screen_update$0$0 Def0000BA
 S C$game_screen.c$49$1_0$146 Def000079
+S C$game_screen.c$66$1_0$148 Def0000BA
 S C$game_screen.c$59$1_0$146 Def00009D
-S C$game_screen.c$66$1_0$149 Def0000BA
-S C$game_screen.c$68$1_0$149 Def0000BA
+S C$game_screen.c$68$1_0$148 Def0000BA
+S C$game_screen.c$69$1_0$148 Def0000BA
 S G$screen_game_screen_load$0$0 Def00002D
 S A$game_screen$90 Def000006
 S A$game_screen$91 Def000008
@@ -208,5 +209,5 @@ T B5 00 00 40 01 C3 00 00
 R 00 00 00 00 02 06 17 00
 T BA 00 00
 R 00 00 00 00
-T BA 00 00 C9
-R 00 00 00 00
+T BA 00 00 C3 00 00
+R 00 00 00 00 02 04 06 00

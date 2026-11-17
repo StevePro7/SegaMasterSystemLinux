@@ -9,6 +9,7 @@
 ; Public variables in this module
 ;--------------------------------------------------------
 	.globl _main
+	.globl _screen_game_screen_update
 	.globl _screen_game_screen_load
 	.globl _PSGSFXFrame
 	.globl _PSGFrame
@@ -86,17 +87,21 @@ _main::
 	call	_SMS_waitForVBlank
 	C$main.c$11$3_0$138	= .
 	.globl	C$main.c$11$3_0$138
-;main.c:11: PSGFrame();
+;main.c:11: screen_game_screen_update();
+	call	_screen_game_screen_update
+	C$main.c$13$3_0$138	= .
+	.globl	C$main.c$13$3_0$138
+;main.c:13: PSGFrame();
 	call	_PSGFrame
-	C$main.c$12$3_0$138	= .
-	.globl	C$main.c$12$3_0$138
-;main.c:12: PSGSFXFrame();
+	C$main.c$14$3_0$138	= .
+	.globl	C$main.c$14$3_0$138
+;main.c:14: PSGSFXFrame();
 	call	_PSGSFXFrame
-	C$main.c$14$2_0$136	= .
-	.globl	C$main.c$14$2_0$136
-;main.c:14: }
-	C$main.c$14$2_0$136	= .
-	.globl	C$main.c$14$2_0$136
+	C$main.c$16$2_0$136	= .
+	.globl	C$main.c$16$2_0$136
+;main.c:16: }
+	C$main.c$16$2_0$136	= .
+	.globl	C$main.c$16$2_0$136
 	XG$main$0$0	= .
 	.globl	XG$main$0$0
 	jp	00102$

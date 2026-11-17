@@ -65,4 +65,5 @@ void screen_game_screen_load( void )
 
 void screen_game_screen_update( void )
 {
+	engine_scroll_prepare();
 }

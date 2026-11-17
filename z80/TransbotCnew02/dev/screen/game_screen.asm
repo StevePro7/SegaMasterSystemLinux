@@ -304,21 +304,24 @@ _screen_game_screen_load::
 	jp	_SMS_VDPturnOnFeature
 	G$screen_game_screen_update$0$0	= .
 	.globl	G$screen_game_screen_update$0$0
-	C$game_screen.c$66$1_0$149	= .
-	.globl	C$game_screen.c$66$1_0$149
+	C$game_screen.c$66$1_0$148	= .
+	.globl	C$game_screen.c$66$1_0$148
 ;game_screen.c:66: void screen_game_screen_update( void )
 ;	---------------------------------
 ; Function screen_game_screen_update
 ; ---------------------------------
 _screen_game_screen_update::
-	C$game_screen.c$68$1_0$149	= .
-	.globl	C$game_screen.c$68$1_0$149
-;game_screen.c:68: }
-	C$game_screen.c$68$1_0$149	= .
-	.globl	C$game_screen.c$68$1_0$149
+	C$game_screen.c$68$1_0$148	= .
+	.globl	C$game_screen.c$68$1_0$148
+;game_screen.c:68: engine_scroll_prepare();
+	C$game_screen.c$69$1_0$148	= .
+	.globl	C$game_screen.c$69$1_0$148
+;game_screen.c:69: }
+	C$game_screen.c$69$1_0$148	= .
+	.globl	C$game_screen.c$69$1_0$148
 	XG$screen_game_screen_update$0$0	= .
 	.globl	XG$screen_game_screen_update$0$0
-	ret
+	jp	_engine_scroll_prepare
 	.area _CODE
 	.area _INITIALIZER
 	.area _CABS (ABS)

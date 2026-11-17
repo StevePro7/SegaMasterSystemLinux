@@ -8,6 +8,8 @@ void main( void )
 	for( ;;)
 	{
 		SMS_waitForVBlank();
+		screen_game_screen_update();
+
 		PSGFrame();
 		PSGSFXFrame();
 	}
