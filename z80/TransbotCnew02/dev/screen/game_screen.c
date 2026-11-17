@@ -58,6 +58,7 @@ void screen_game_screen_load( void )
 
 	SMS_setLineCounter( 0x7f );
 	SMS_setFrameInterruptHandler( game_frame_interrupt );
+	SMS_VDPturnOnFeature( VDPFEATURE_FRAMEIRQ );
 	SMS_setLineInterruptHandler( game_line_interrupt );
 	SMS_enableLineInterrupt();
 	SMS_displayOn();

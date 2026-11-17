@@ -282,43 +282,48 @@ _screen_game_screen_load::
 	call	_SMS_setFrameInterruptHandler
 	C$game_screen.c$61$1_0$146	= .
 	.globl	C$game_screen.c$61$1_0$146
-;game_screen.c:61: SMS_setLineInterruptHandler( game_line_interrupt );
-	ld	hl, #_game_line_interrupt
-	call	_SMS_setLineInterruptHandler
+;game_screen.c:61: SMS_VDPturnOnFeature( VDPFEATURE_FRAMEIRQ );
+	ld	hl, #0x0120
+	call	_SMS_VDPturnOnFeature
 	C$game_screen.c$62$1_0$146	= .
 	.globl	C$game_screen.c$62$1_0$146
-;game_screen.c:62: SMS_enableLineInterrupt();
-	ld	hl, #0x0010
-	call	_SMS_VDPturnOnFeature
+;game_screen.c:62: SMS_setLineInterruptHandler( game_line_interrupt );
+	ld	hl, #_game_line_interrupt
+	call	_SMS_setLineInterruptHandler
 	C$game_screen.c$63$1_0$146	= .
 	.globl	C$game_screen.c$63$1_0$146
-;game_screen.c:63: SMS_displayOn();
+;game_screen.c:63: SMS_enableLineInterrupt();
+	ld	hl, #0x0010
+	call	_SMS_VDPturnOnFeature
+	C$game_screen.c$64$1_0$146	= .
+	.globl	C$game_screen.c$64$1_0$146
+;game_screen.c:64: SMS_displayOn();
 	ld	hl, #0x0140
-	C$game_screen.c$64$1_0$146	= .
-	.globl	C$game_screen.c$64$1_0$146
-;game_screen.c:64: }
-	C$game_screen.c$64$1_0$146	= .
-	.globl	C$game_screen.c$64$1_0$146
+	C$game_screen.c$65$1_0$146	= .
+	.globl	C$game_screen.c$65$1_0$146
+;game_screen.c:65: }
+	C$game_screen.c$65$1_0$146	= .
+	.globl	C$game_screen.c$65$1_0$146
 	XG$screen_game_screen_load$0$0	= .
 	.globl	XG$screen_game_screen_load$0$0
 	jp	_SMS_VDPturnOnFeature
 	G$screen_game_screen_update$0$0	= .
 	.globl	G$screen_game_screen_update$0$0
-	C$game_screen.c$66$1_0$148	= .
-	.globl	C$game_screen.c$66$1_0$148
-;game_screen.c:66: void screen_game_screen_update( void )
+	C$game_screen.c$67$1_0$148	= .
+	.globl	C$game_screen.c$67$1_0$148
+;game_screen.c:67: void screen_game_screen_update( void )
 ;	---------------------------------
 ; Function screen_game_screen_update
 ; ---------------------------------
 _screen_game_screen_update::
-	C$game_screen.c$68$1_0$148	= .
-	.globl	C$game_screen.c$68$1_0$148
-;game_screen.c:68: engine_scroll_prepare();
 	C$game_screen.c$69$1_0$148	= .
 	.globl	C$game_screen.c$69$1_0$148
-;game_screen.c:69: }
-	C$game_screen.c$69$1_0$148	= .
-	.globl	C$game_screen.c$69$1_0$148
+;game_screen.c:69: engine_scroll_prepare();
+	C$game_screen.c$70$1_0$148	= .
+	.globl	C$game_screen.c$70$1_0$148
+;game_screen.c:70: }
+	C$game_screen.c$70$1_0$148	= .
+	.globl	C$game_screen.c$70$1_0$148
 	XG$screen_game_screen_update$0$0	= .
 	.globl	XG$screen_game_screen_update$0$0
 	jp	_engine_scroll_prepare

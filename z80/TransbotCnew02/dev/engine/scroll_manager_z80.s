@@ -125,7 +125,7 @@ al_p1_3:
 	dec hl
 	dec hl
 	dec hl
-	ld de,#0x2B49
+	ld de,#_DATA_2B49_
 	or a,a
 	sbc hl,de
 	jr c,al_p1_4
@@ -133,7 +133,7 @@ al_p1_3:
 	ld (0xC153),hl
 	jr al_p2_1
 al_p1_4:
-	ld de,#0x2C0B
+	ld de,#_DATA_2C0C_ - 1
 	add hl,de
 	ld (0xC153),hl
 al_p2_1:
@@ -465,7 +465,7 @@ _LABEL_2D01_:
 	jr al_p2_7
 al_p1_14:
 	push de
-	ld de,#0x2C0B
+	ld de,#_DATA_2C0C_ - 1
 	or a,a
 	push hl
 	sbc hl,de
