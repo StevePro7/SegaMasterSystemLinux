@@ -8,10 +8,6 @@ Area                                    Addr        Size        Decimal Bytes (A
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
      00000000  .__.ABS.                           PSGRestoreVolumes
-     00000000  _engine_scroll_advance          
-     00000000  _engine_scroll_draw_columns     
-     00000000  _engine_scroll_prepare_z80      
-     00000000  _engine_scroll_sequence         
      00000000  l__BSEG                         
      00000000  l__BSS                          
      00000000  l__CABS                         
@@ -49,14 +45,18 @@ Area                                    Addr        Size        Decimal Bytes (A
      000000FF  l__DATA                         
      00000104  l__HEADER4                      
      00000200  s__CODE                         
-     00004427  l__CODE                         
-     00004627  s__HOME                         
-     00004627  s__INITIALIZER                  
-     0000462C  s__GSINIT                       
-     0000463B  s__GSFINAL                      
+     000048F3  l__CODE                         
+     00004AF3  s__HOME                         
+     00004AF3  s__INITIALIZER                  
+     00004AF8  s__GSINIT                       
+     00004B07  s__GSFINAL                      
      00008000  G$SMS_SRAM$0_0$0                   title_screen
      00008000  _SMS_SRAM                          SMSlib_VRAMmemcpy
      0000C000  s__DATA                         
+     0000C0FF  s__INITIALIZED                  
+     0000C104  s__BSEG                         
+     0000C104  s__BSS                          
+     0000C104  s__HEAP                         
 ASxxxx Linker V03.00 + NoICE + sdld,  page 2.
 Hexadecimal  [32-Bits]
 
@@ -66,10 +66,6 @@ Area                                    Addr        Size        Decimal Bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     0000C0FF  s__INITIALIZED                  
-     0000C104  s__BSEG                         
-     0000C104  s__BSS                          
-     0000C104  s__HEAP                         
      0000D000  G$engine_rle_buffer$0_0$0          rle_manager
      0000D000  _engine_rle_buffer                 rle_manager
      0000FFFC  G$SRAM_bank_to_be_mapped_on_slot   title_screen
@@ -80,13 +76,12 @@ Area                                    Addr        Size        Decimal Bytes (A
      0000FFFE  _ROM_bank_to_be_mapped_on_slot1    SMSlib_VRAMmemcpy
      0000FFFF  G$ROM_bank_to_be_mapped_on_slot2   title_screen
      0000FFFF  _ROM_bank_to_be_mapped_on_slot2    SMSlib_VRAMmemcpy
-
 ASxxxx Linker V03.00 + NoICE + sdld,  page 3.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00004427 =       17447. bytes (REL,CON)
+_CODE                               00000200    000048F3 =       18675. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -145,7 +140,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00004427 =       17447. bytes (REL,CON)
+_CODE                               00000200    000048F3 =       18675. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -205,7 +200,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00004427 =       17447. bytes (REL,CON)
+_CODE                               00000200    000048F3 =       18675. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -265,7 +260,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00004427 =       17447. bytes (REL,CON)
+_CODE                               00000200    000048F3 =       18675. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -325,7 +320,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00004427 =       17447. bytes (REL,CON)
+_CODE                               00000200    000048F3 =       18675. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -385,7 +380,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00004427 =       17447. bytes (REL,CON)
+_CODE                               00000200    000048F3 =       18675. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -436,273 +431,282 @@ _CODE                               00000200    00004427 =       17447. bytes (R
      00003BB4  A$scroll_manager$81                scroll_manager
      00003BB6  A$scroll_manager$82                scroll_manager
      00003BB8  A$scroll_manager$83                scroll_manager
-     00003BB9  A$original_ram$59                  original_ram
-     00003BB9  C$original_ram.c$3$0_0$2           original_ram
-     00003BB9  C$original_ram.c$5$0_0$2           original_ram
      00003BB9  C$scroll_manager.c$42$1_0$6        scroll_manager
+     00003BBD  _engine_vdp_display_on             scroll_manager_z80
+     00003BC2  _engine_vdp_display_off            scroll_manager_z80
+     00003BCD  _engine_vdp_set_address            scroll_manager_z80
 ASxxxx Linker V03.00 + NoICE + sdld,  page 9.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00004427 =       17447. bytes (REL,CON)
+_CODE                               00000200    000048F3 =       18675. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00003BB9  G$foo$0$0                          original_ram
-     00003BB9  XG$foo$0$0                         original_ram
-     00003BB9  _foo                               original_ram
-     00003BBA  A$game_screen$87                   game_screen
-     00003BBA  C$game_screen.c$11$2_0$140         game_screen
-     00003BBA  C$game_screen.c$9$0_0$139          game_screen
-     00003BBA  Fgame_screen$game_frame_interrup   game_screen
-     00003BBD  A$game_screen$88                   game_screen
-     00003BBE  A$game_screen$89                   game_screen
-     00003BC0  A$game_screen$90                   game_screen
-     00003BC2  A$game_screen$91                   game_screen
-     00003BC4  A$game_screen$95                   game_screen
-     00003BC4  C$game_screen.c$12$1_0$139         game_screen
-     00003BC6  A$game_screen$96                   game_screen
-     00003BC8  A$game_screen$100                  game_screen
-     00003BC8  C$game_screen.c$13$1_0$139         game_screen
-     00003BCA  A$game_screen$101                  game_screen
-     00003BCC  A$game_screen$112                  game_screen
-     00003BCC  C$game_screen.c$14$1_0$139         game_screen
-     00003BCC  C$game_screen.c$15$1_0$139         game_screen
-     00003BCC  XFgame_screen$game_frame_interru   game_screen
-     00003BCF  A$game_screen$125                  game_screen
-     00003BCF  C$game_screen.c$18$1_0$142         game_screen
-     00003BCF  C$game_screen.c$20$1_0$142         game_screen
-     00003BCF  Fgame_screen$game_line_interrupt   game_screen
-     00003BD2  A$game_screen$126                  game_screen
-     00003BD4  A$game_screen$133                  game_screen
-     00003BD4  C$game_screen.c$22$2_0$143         game_screen
-     00003BD4  C$game_screen.c$25$1_0$142         game_screen
-     00003BD5  A$game_screen$134                  game_screen
-     00003BD8  A$game_screen$135                  game_screen
-     00003BDA  A$game_screen$136                  game_screen
-     00003BDC  A$game_screen$137                  game_screen
-     00003BDE  A$game_screen$141                  game_screen
-     00003BDE  C$game_screen.c$26$1_0$142         game_screen
-     00003BE0  A$game_screen$142                  game_screen
-     00003BE2  A$game_screen$146                  game_screen
-     00003BE2  C$game_screen.c$27$1_0$142         game_screen
-     00003BE4  A$game_screen$147                  game_screen
-     00003BE6  A$game_screen$155                  game_screen
-     00003BE6  C$game_screen.c$28$1_0$142         game_screen
-     00003BE6  XFgame_screen$game_line_interrup   game_screen
-     00003BE7  A$game_screen$168                  game_screen
-     00003BE7  C$game_screen.c$31$1_0$146         game_screen
-     00003BE7  C$game_screen.c$33$1_0$146         game_screen
-     00003BE7  G$screen_game_screen_load$0$0      game_screen
-     00003BE7  _screen_game_screen_load           game_screen
-     00003BEA  A$game_screen$169                  game_screen
-     00003BED  A$game_screen$173                  game_screen
-     00003BED  C$game_screen.c$36$1_0$146         game_screen
-     00003BF0  A$game_screen$174                  game_screen
+     00003C28  _engine_scroll_prepare_z80         scroll_manager_z80
+     00003CCB  _engine_scroll_advance             scroll_manager_z80
+     00003E1E  _engine_scroll_sequence            scroll_manager_z80
+     00003F66  _engine_scroll_draw                scroll_manager_z80
+     00004028  _engine_scroll_copy_column         scroll_manager_z80
+     00004041  _engine_scroll_draw_columns        scroll_manager_z80
+     00004085  A$original_ram$59                  original_ram
+     00004085  C$original_ram.c$3$0_0$2           original_ram
+     00004085  C$original_ram.c$5$0_0$2           original_ram
+     00004085  G$foo$0$0                          original_ram
+     00004085  XG$foo$0$0                         original_ram
+     00004085  _foo                               original_ram
+     00004086  A$game_screen$87                   game_screen
+     00004086  C$game_screen.c$11$2_0$140         game_screen
+     00004086  C$game_screen.c$9$0_0$139          game_screen
+     00004086  Fgame_screen$game_frame_interrup   game_screen
+     00004089  A$game_screen$88                   game_screen
+     0000408A  A$game_screen$89                   game_screen
+     0000408C  A$game_screen$90                   game_screen
+     0000408E  A$game_screen$91                   game_screen
+     00004090  A$game_screen$95                   game_screen
+     00004090  C$game_screen.c$12$1_0$139         game_screen
+     00004092  A$game_screen$96                   game_screen
+     00004094  A$game_screen$100                  game_screen
+     00004094  C$game_screen.c$13$1_0$139         game_screen
+     00004096  A$game_screen$101                  game_screen
+     00004098  A$game_screen$112                  game_screen
+     00004098  C$game_screen.c$14$1_0$139         game_screen
+     00004098  C$game_screen.c$15$1_0$139         game_screen
+     00004098  XFgame_screen$game_frame_interru   game_screen
+     0000409B  A$game_screen$125                  game_screen
+     0000409B  C$game_screen.c$18$1_0$142         game_screen
+     0000409B  C$game_screen.c$20$1_0$142         game_screen
+     0000409B  Fgame_screen$game_line_interrupt   game_screen
+     0000409E  A$game_screen$126                  game_screen
+     000040A0  A$game_screen$133                  game_screen
+     000040A0  C$game_screen.c$22$2_0$143         game_screen
+     000040A0  C$game_screen.c$25$1_0$142         game_screen
+     000040A1  A$game_screen$134                  game_screen
+     000040A4  A$game_screen$135                  game_screen
+     000040A6  A$game_screen$136                  game_screen
+     000040A8  A$game_screen$137                  game_screen
+     000040AA  A$game_screen$141                  game_screen
+     000040AA  C$game_screen.c$26$1_0$142         game_screen
+     000040AC  A$game_screen$142                  game_screen
+     000040AE  A$game_screen$146                  game_screen
+     000040AE  C$game_screen.c$27$1_0$142         game_screen
+     000040B0  A$game_screen$147                  game_screen
+     000040B2  A$game_screen$155                  game_screen
+     000040B2  C$game_screen.c$28$1_0$142         game_screen
+     000040B2  XFgame_screen$game_line_interrup   game_screen
 ASxxxx Linker V03.00 + NoICE + sdld,  page 10.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00004427 =       17447. bytes (REL,CON)
+_CODE                               00000200    000048F3 =       18675. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00003BF1  A$game_screen$175                  game_screen
-     00003BF4  A$game_screen$176                  game_screen
-     00003BF5  A$game_screen$177                  game_screen
-     00003BF8  A$game_screen$181                  game_screen
-     00003BF8  C$game_screen.c$37$1_0$146         game_screen
-     00003BFB  A$game_screen$182                  game_screen
-     00003BFE  A$game_screen$186                  game_screen
-     00003BFE  C$game_screen.c$38$1_0$146         game_screen
-     00003C00  A$game_screen$189                  game_screen
-     00003C03  A$game_screen$193                  game_screen
-     00003C03  C$game_screen.c$39$1_0$146         game_screen
-     00003C05  A$game_screen$196                  game_screen
-     00003C08  A$game_screen$200                  game_screen
-     00003C08  C$game_screen.c$40$1_0$146         game_screen
-     00003C0B  A$game_screen$204                  game_screen
-     00003C0B  C$game_screen.c$43$1_0$146         game_screen
-     00003C0E  A$game_screen$205                  game_screen
-     00003C11  A$game_screen$209                  game_screen
-     00003C11  C$game_screen.c$44$1_0$146         game_screen
-     00003C14  A$game_screen$210                  game_screen
-     00003C17  A$game_screen$214                  game_screen
-     00003C17  C$game_screen.c$45$1_0$146         game_screen
-     00003C1A  A$game_screen$215                  game_screen
-     00003C1C  A$game_screen$216                  game_screen
-     00003C1D  A$game_screen$217                  game_screen
-     00003C1E  A$game_screen$218                  game_screen
-     00003C1F  A$game_screen$219                  game_screen
-     00003C22  A$game_screen$220                  game_screen
-     00003C24  A$game_screen$224                  game_screen
-     00003C24  C$game_screen.c$47$1_0$146         game_screen
-     00003C27  A$game_screen$228                  game_screen
-     00003C27  C$game_screen.c$48$1_0$146         game_screen
-     00003C2A  A$game_screen$229                  game_screen
-     00003C2B  A$game_screen$230                  game_screen
-     00003C2E  A$game_screen$231                  game_screen
-     00003C30  A$game_screen$232                  game_screen
-     00003C33  A$game_screen$236                  game_screen
-     00003C33  C$game_screen.c$49$1_0$146         game_screen
-     00003C36  A$game_screen$240                  game_screen
-     00003C36  C$game_screen.c$50$1_0$146         game_screen
-     00003C39  A$game_screen$244                  game_screen
-     00003C39  C$game_screen.c$52$1_0$146         game_screen
-     00003C3C  A$game_screen$245                  game_screen
-     00003C3F  A$game_screen$249                  game_screen
-     00003C3F  C$game_screen.c$53$1_0$146         game_screen
-     00003C42  A$game_screen$250                  game_screen
-     00003C44  A$game_screen$254                  game_screen
-     00003C44  C$game_screen.c$54$1_0$146         game_screen
-     00003C46  A$game_screen$255                  game_screen
-     00003C48  A$game_screen$259                  game_screen
-     00003C48  C$game_screen.c$55$1_0$146         game_screen
+     000040B3  A$game_screen$168                  game_screen
+     000040B3  C$game_screen.c$31$1_0$146         game_screen
+     000040B3  C$game_screen.c$33$1_0$146         game_screen
+     000040B3  G$screen_game_screen_load$0$0      game_screen
+     000040B3  _screen_game_screen_load           game_screen
+     000040B6  A$game_screen$169                  game_screen
+     000040B9  A$game_screen$173                  game_screen
+     000040B9  C$game_screen.c$36$1_0$146         game_screen
+     000040BC  A$game_screen$174                  game_screen
+     000040BD  A$game_screen$175                  game_screen
+     000040C0  A$game_screen$176                  game_screen
+     000040C1  A$game_screen$177                  game_screen
+     000040C4  A$game_screen$181                  game_screen
+     000040C4  C$game_screen.c$37$1_0$146         game_screen
+     000040C7  A$game_screen$182                  game_screen
+     000040CA  A$game_screen$186                  game_screen
+     000040CA  C$game_screen.c$38$1_0$146         game_screen
+     000040CC  A$game_screen$189                  game_screen
+     000040CF  A$game_screen$193                  game_screen
+     000040CF  C$game_screen.c$39$1_0$146         game_screen
+     000040D1  A$game_screen$196                  game_screen
+     000040D4  A$game_screen$200                  game_screen
+     000040D4  C$game_screen.c$40$1_0$146         game_screen
+     000040D7  A$game_screen$204                  game_screen
+     000040D7  C$game_screen.c$43$1_0$146         game_screen
+     000040DA  A$game_screen$205                  game_screen
+     000040DD  A$game_screen$209                  game_screen
+     000040DD  C$game_screen.c$44$1_0$146         game_screen
+     000040E0  A$game_screen$210                  game_screen
+     000040E3  A$game_screen$214                  game_screen
+     000040E3  C$game_screen.c$45$1_0$146         game_screen
+     000040E6  A$game_screen$215                  game_screen
+     000040E8  A$game_screen$216                  game_screen
+     000040E9  A$game_screen$217                  game_screen
+     000040EA  A$game_screen$218                  game_screen
+     000040EB  A$game_screen$219                  game_screen
+     000040EE  A$game_screen$220                  game_screen
+     000040F0  A$game_screen$224                  game_screen
+     000040F0  C$game_screen.c$47$1_0$146         game_screen
+     000040F3  A$game_screen$228                  game_screen
+     000040F3  C$game_screen.c$48$1_0$146         game_screen
+     000040F6  A$game_screen$229                  game_screen
+     000040F7  A$game_screen$230                  game_screen
+     000040FA  A$game_screen$231                  game_screen
+     000040FC  A$game_screen$232                  game_screen
+     000040FF  A$game_screen$236                  game_screen
+     000040FF  C$game_screen.c$49$1_0$146         game_screen
+     00004102  A$game_screen$240                  game_screen
+     00004102  C$game_screen.c$50$1_0$146         game_screen
+     00004105  A$game_screen$244                  game_screen
+     00004105  C$game_screen.c$52$1_0$146         game_screen
 ASxxxx Linker V03.00 + NoICE + sdld,  page 11.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00004427 =       17447. bytes (REL,CON)
+_CODE                               00000200    000048F3 =       18675. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00003C4A  A$game_screen$260                  game_screen
-     00003C4C  A$game_screen$264                  game_screen
-     00003C4C  C$game_screen.c$56$1_0$146         game_screen
-     00003C4F  A$game_screen$268                  game_screen
-     00003C4F  C$game_screen.c$57$1_0$146         game_screen
-     00003C52  A$game_screen$269                  game_screen
-     00003C54  A$game_screen$270                  game_screen
-     00003C57  A$game_screen$274                  game_screen
-     00003C57  C$game_screen.c$59$1_0$146         game_screen
-     00003C59  A$game_screen$277                  game_screen
-     00003C5C  A$game_screen$281                  game_screen
-     00003C5C  C$game_screen.c$60$1_0$146         game_screen
-     00003C5F  A$game_screen$282                  game_screen
-     00003C62  A$game_screen$286                  game_screen
-     00003C62  C$game_screen.c$61$1_0$146         game_screen
-     00003C65  A$game_screen$287                  game_screen
-     00003C68  A$game_screen$291                  game_screen
-     00003C68  C$game_screen.c$62$1_0$146         game_screen
-     00003C6B  A$game_screen$292                  game_screen
-     00003C6E  A$game_screen$296                  game_screen
-     00003C6E  C$game_screen.c$63$1_0$146         game_screen
-     00003C71  A$game_screen$304                  game_screen
-     00003C71  C$game_screen.c$64$1_0$146         game_screen
-     00003C71  XG$screen_game_screen_load$0$0     game_screen
-     00003C74  A$game_screen$321                  game_screen
-     00003C74  C$game_screen.c$66$1_0$149         game_screen
-     00003C74  C$game_screen.c$68$1_0$149         game_screen
-     00003C74  G$screen_game_screen_update$0$0    game_screen
-     00003C74  XG$screen_game_screen_update$0$0   game_screen
-     00003C74  _screen_game_screen_update         game_screen
-     00003C75  A$title_screen$81                  title_screen
-     00003C75  C$title_screen.c$5$0_0$112         title_screen
-     00003C75  C$title_screen.c$7$1_0$112         title_screen
-     00003C75  G$screen_title_screen_load$0$0     title_screen
-     00003C75  _screen_title_screen_load          title_screen
-     00003C78  A$title_screen$82                  title_screen
-     00003C7B  A$title_screen$86                  title_screen
-     00003C7B  C$title_screen.c$8$1_0$112         title_screen
-     00003C7E  A$title_screen$87                  title_screen
-     00003C7F  A$title_screen$88                  title_screen
-     00003C82  A$title_screen$89                  title_screen
-     00003C83  A$title_screen$90                  title_screen
-     00003C86  A$title_screen$94                  title_screen
-     00003C86  C$title_screen.c$9$1_0$112         title_screen
-     00003C89  A$title_screen$95                  title_screen
-     00003C8C  A$title_screen$99                  title_screen
-     00003C8C  C$title_screen.c$10$1_0$112        title_screen
-     00003C8E  A$title_screen$102                 title_screen
-     00003C91  A$title_screen$106                 title_screen
-     00003C91  C$title_screen.c$11$1_0$112        title_screen
-     00003C93  A$title_screen$109                 title_screen
+     00004108  A$game_screen$245                  game_screen
+     0000410B  A$game_screen$249                  game_screen
+     0000410B  C$game_screen.c$53$1_0$146         game_screen
+     0000410E  A$game_screen$250                  game_screen
+     00004110  A$game_screen$254                  game_screen
+     00004110  C$game_screen.c$54$1_0$146         game_screen
+     00004112  A$game_screen$255                  game_screen
+     00004114  A$game_screen$259                  game_screen
+     00004114  C$game_screen.c$55$1_0$146         game_screen
+     00004116  A$game_screen$260                  game_screen
+     00004118  A$game_screen$264                  game_screen
+     00004118  C$game_screen.c$56$1_0$146         game_screen
+     0000411B  A$game_screen$268                  game_screen
+     0000411B  C$game_screen.c$57$1_0$146         game_screen
+     0000411E  A$game_screen$269                  game_screen
+     00004120  A$game_screen$270                  game_screen
+     00004123  A$game_screen$274                  game_screen
+     00004123  C$game_screen.c$59$1_0$146         game_screen
+     00004125  A$game_screen$277                  game_screen
+     00004128  A$game_screen$281                  game_screen
+     00004128  C$game_screen.c$60$1_0$146         game_screen
+     0000412B  A$game_screen$282                  game_screen
+     0000412E  A$game_screen$286                  game_screen
+     0000412E  C$game_screen.c$61$1_0$146         game_screen
+     00004131  A$game_screen$287                  game_screen
+     00004134  A$game_screen$291                  game_screen
+     00004134  C$game_screen.c$62$1_0$146         game_screen
+     00004137  A$game_screen$292                  game_screen
+     0000413A  A$game_screen$296                  game_screen
+     0000413A  C$game_screen.c$63$1_0$146         game_screen
+     0000413D  A$game_screen$304                  game_screen
+     0000413D  C$game_screen.c$64$1_0$146         game_screen
+     0000413D  XG$screen_game_screen_load$0$0     game_screen
+     00004140  A$game_screen$321                  game_screen
+     00004140  C$game_screen.c$66$1_0$149         game_screen
+     00004140  C$game_screen.c$68$1_0$149         game_screen
+     00004140  G$screen_game_screen_update$0$0    game_screen
+     00004140  XG$screen_game_screen_update$0$0   game_screen
+     00004140  _screen_game_screen_update         game_screen
+     00004141  A$title_screen$81                  title_screen
+     00004141  C$title_screen.c$5$0_0$112         title_screen
+     00004141  C$title_screen.c$7$1_0$112         title_screen
+     00004141  G$screen_title_screen_load$0$0     title_screen
+     00004141  _screen_title_screen_load          title_screen
+     00004144  A$title_screen$82                  title_screen
+     00004147  A$title_screen$86                  title_screen
+     00004147  C$title_screen.c$8$1_0$112         title_screen
+     0000414A  A$title_screen$87                  title_screen
+     0000414B  A$title_screen$88                  title_screen
+     0000414E  A$title_screen$89                  title_screen
+     0000414F  A$title_screen$90                  title_screen
 ASxxxx Linker V03.00 + NoICE + sdld,  page 12.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00004427 =       17447. bytes (REL,CON)
+_CODE                               00000200    000048F3 =       18675. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00003C96  A$title_screen$113                 title_screen
-     00003C96  C$title_screen.c$12$1_0$112        title_screen
-     00003C99  A$title_screen$117                 title_screen
-     00003C99  C$title_screen.c$14$1_0$112        title_screen
-     00003C9C  A$title_screen$118                 title_screen
-     00003C9D  A$title_screen$119                 title_screen
-     00003CA0  A$title_screen$120                 title_screen
-     00003CA2  A$title_screen$121                 title_screen
-     00003CA5  A$title_screen$125                 title_screen
-     00003CA5  C$title_screen.c$15$1_0$112        title_screen
-     00003CA8  A$title_screen$129                 title_screen
-     00003CA8  C$title_screen.c$16$1_0$112        title_screen
-     00003CAB  A$title_screen$133                 title_screen
-     00003CAB  C$title_screen.c$17$1_0$112        title_screen
-     00003CAE  A$title_screen$137                 title_screen
-     00003CAE  C$title_screen.c$18$1_0$112        title_screen
-     00003CB1  A$title_screen$145                 title_screen
-     00003CB1  C$title_screen.c$19$1_0$112        title_screen
-     00003CB1  XG$screen_title_screen_load$0$0    title_screen
-     00003CB4  _SMS_VRAMmemset_f                  SMSlib_VRAMmemset
-     00003CD0  _SMS_VRAMmemsetW                   SMSlib_VRAMmemset
-     00003CE3  _SMS_init                          SMSlib
-     00003D22  _VDPReg_init                       SMSlib
-     00003D2D  _SMS_VDPturnOnFeature              SMSlib
-     00003D42  _SMS_VDPturnOffFeature             SMSlib
-     00003D5A  _SMS_setBGScrollX                  SMSlib
-     00003D64  _SMS_setBGScrollY                  SMSlib
-     00003D6E  _SMS_setBackdropColor              SMSlib
-     00003D78  _SMS_useFirstHalfTilesforSprites   SMSlib
-     00003D8E  _SMS_setSpriteMode                 SMSlib
-     00003DDB  _SMS_setBGPaletteColor             SMSlib
-     00003DE8  _SMS_setSpritePaletteColor         SMSlib
-     00003DF5  _SMS_loadBGPalette                 SMSlib
-     00003E09  _SMS_loadSpritePalette             SMSlib
-     00003E1D  _SMS_setColor                      SMSlib
-     00003E21  _SMS_waitForVBlank                 SMSlib
-     00003E2E  _SMS_getKeysStatus                 SMSlib
-     00003E33  _SMS_getKeysPressed                SMSlib
-     00003E48  _SMS_getKeysHeld                   SMSlib
-     00003E5B  _SMS_getKeysReleased               SMSlib
-     00003E74  _SMS_queryPauseRequested           SMSlib
-     00003E78  _SMS_resetPauseRequest             SMSlib
-     00003E7E  _SMS_setFrameInterruptHandler      SMSlib
-     00003E82  _SMS_setLineInterruptHandler       SMSlib
-     00003E97  _SMS_setLineCounter                SMSlib
-     00003EA1  _SMS_getVCount                     SMSlib
-     00003EAB  _SMS_isr                           SMSlib
-     00003EEA  _SMS_nmi_isr                       SMSlib
-     00003EF3  _SMS_initSprites                   SMSlib_sprite
-     00003EF9  _SMS_addSprite_f                   SMSlib_sprite
-     00003F24  _SMS_copySpritestoSAT              SMSlib_sprite
+     00004152  A$title_screen$94                  title_screen
+     00004152  C$title_screen.c$9$1_0$112         title_screen
+     00004155  A$title_screen$95                  title_screen
+     00004158  A$title_screen$99                  title_screen
+     00004158  C$title_screen.c$10$1_0$112        title_screen
+     0000415A  A$title_screen$102                 title_screen
+     0000415D  A$title_screen$106                 title_screen
+     0000415D  C$title_screen.c$11$1_0$112        title_screen
+     0000415F  A$title_screen$109                 title_screen
+     00004162  A$title_screen$113                 title_screen
+     00004162  C$title_screen.c$12$1_0$112        title_screen
+     00004165  A$title_screen$117                 title_screen
+     00004165  C$title_screen.c$14$1_0$112        title_screen
+     00004168  A$title_screen$118                 title_screen
+     00004169  A$title_screen$119                 title_screen
+     0000416C  A$title_screen$120                 title_screen
+     0000416E  A$title_screen$121                 title_screen
+     00004171  A$title_screen$125                 title_screen
+     00004171  C$title_screen.c$15$1_0$112        title_screen
+     00004174  A$title_screen$129                 title_screen
+     00004174  C$title_screen.c$16$1_0$112        title_screen
+     00004177  A$title_screen$133                 title_screen
+     00004177  C$title_screen.c$17$1_0$112        title_screen
+     0000417A  A$title_screen$137                 title_screen
+     0000417A  C$title_screen.c$18$1_0$112        title_screen
+     0000417D  A$title_screen$145                 title_screen
+     0000417D  C$title_screen.c$19$1_0$112        title_screen
+     0000417D  XG$screen_title_screen_load$0$0    title_screen
+     00004180  _SMS_VRAMmemset_f                  SMSlib_VRAMmemset
+     0000419C  _SMS_VRAMmemsetW                   SMSlib_VRAMmemset
+     000041AF  _SMS_init                          SMSlib
+     000041EE  _VDPReg_init                       SMSlib
+     000041F9  _SMS_VDPturnOnFeature              SMSlib
+     0000420E  _SMS_VDPturnOffFeature             SMSlib
+     00004226  _SMS_setBGScrollX                  SMSlib
+     00004230  _SMS_setBGScrollY                  SMSlib
+     0000423A  _SMS_setBackdropColor              SMSlib
+     00004244  _SMS_useFirstHalfTilesforSprites   SMSlib
+     0000425A  _SMS_setSpriteMode                 SMSlib
+     000042A7  _SMS_setBGPaletteColor             SMSlib
+     000042B4  _SMS_setSpritePaletteColor         SMSlib
+     000042C1  _SMS_loadBGPalette                 SMSlib
+     000042D5  _SMS_loadSpritePalette             SMSlib
+     000042E9  _SMS_setColor                      SMSlib
+     000042ED  _SMS_waitForVBlank                 SMSlib
+     000042FA  _SMS_getKeysStatus                 SMSlib
+     000042FF  _SMS_getKeysPressed                SMSlib
+     00004314  _SMS_getKeysHeld                   SMSlib
+     00004327  _SMS_getKeysReleased               SMSlib
+     00004340  _SMS_queryPauseRequested           SMSlib
+     00004344  _SMS_resetPauseRequest             SMSlib
 ASxxxx Linker V03.00 + NoICE + sdld,  page 13.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE                               00000200    00004427 =       17447. bytes (REL,CON)
+_CODE                               00000200    000048F3 =       18675. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00003F58  _PSGStop                           PSGlib
-     00003F8B  _PSGPlay                           PSGlib
-     00003FCA  _PSGGetStatus                      PSGlib
-     00003FCE  _PSGSFXStop                        PSGlib
-     0000412A  _PSGSFXPlay                        PSGlib
-     0000418E  _PSGSFXCancelLoop                  PSGlib
-     00004194  _PSGSFXGetStatus                   PSGlib
-     00004198  _PSGSFXPlayLoop                    PSGlib
-     000041B3  _PSGFrame                          PSGlib
-     0000432A  _PSGSFXFrame                       PSGlib
-     000043DB  ___sdcc_call_hl                    
-     000043DC  _SMS_VRAMmemcpy                    SMSlib_VRAMmemcpy
-     000043F3  _PSGSilenceChannels                PSGRestoreVolumes
-     00004404  _PSGRestoreVolumes                 PSGRestoreVolumes
+     0000434A  _SMS_setFrameInterruptHandler      SMSlib
+     0000434E  _SMS_setLineInterruptHandler       SMSlib
+     00004363  _SMS_setLineCounter                SMSlib
+     0000436D  _SMS_getVCount                     SMSlib
+     00004377  _SMS_isr                           SMSlib
+     000043B6  _SMS_nmi_isr                       SMSlib
+     000043BF  _SMS_initSprites                   SMSlib_sprite
+     000043C5  _SMS_addSprite_f                   SMSlib_sprite
+     000043F0  _SMS_copySpritestoSAT              SMSlib_sprite
+     00004424  _PSGStop                           PSGlib
+     00004457  _PSGPlay                           PSGlib
+     00004496  _PSGGetStatus                      PSGlib
+     0000449A  _PSGSFXStop                        PSGlib
+     000045F6  _PSGSFXPlay                        PSGlib
+     0000465A  _PSGSFXCancelLoop                  PSGlib
+     00004660  _PSGSFXGetStatus                   PSGlib
+     00004664  _PSGSFXPlayLoop                    PSGlib
+     0000467F  _PSGFrame                          PSGlib
+     000047F6  _PSGSFXFrame                       PSGlib
+     000048A7  ___sdcc_call_hl                    
+     000048A8  _SMS_VRAMmemcpy                    SMSlib_VRAMmemcpy
+     000048BF  _PSGSilenceChannels                PSGRestoreVolumes
+     000048D0  _PSGRestoreVolumes                 PSGRestoreVolumes
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 14.
 Hexadecimal  [32-Bits]
@@ -765,7 +769,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_INITIALIZER                        00004627    00000005 =           5. bytes (REL,CON)
+_INITIALIZER                        00004AF3    00000005 =           5. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -774,18 +778,18 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSINIT                             0000462C    0000000F =          15. bytes (REL,CON)
+_GSINIT                             00004AF8    0000000F =          15. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     0000462C  crt0_gsinit                        crt0
+     00004AF8  crt0_gsinit                        crt0
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 21.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_GSFINAL                            0000463B    00000001 =           1. bytes (REL,CON)
+_GSFINAL                            00004B07    00000001 =           1. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -933,6 +937,7 @@ game.rel                                  [ game ]
 engine/content_manager.rel                [ content_manager ]
 engine/rle_manager.rel                    [ rle_manager ]
 engine/scroll_manager.rel                 [ scroll_manager ]
+engine/scroll_manager_z80.rel             [ scroll_manager_z80 ]
 object/original_ram.rel                   [ original_ram ]
 screen/game_screen.rel                    [ game_screen ]
 screen/title_screen.rel                   [ title_screen ]
@@ -957,10 +962,3 @@ _CODE = 0x0200
 _DATA = 0xc000
 
 
-?ASlink-Warning-Undefined Global '_engine_scroll_prepare_z80' referenced by module 'scroll_manager'
-
-?ASlink-Warning-Undefined Global '_engine_scroll_draw_columns' referenced by module 'scroll_manager'
-
-?ASlink-Warning-Undefined Global '_engine_scroll_advance' referenced by module 'scroll_manager'
-
-?ASlink-Warning-Undefined Global '_engine_scroll_sequence' referenced by module 'game_screen'
