@@ -135,5 +135,6 @@ S:G$PSGSilenceChannels$0_0$0({2}DF,SV:S),C,0,0
 S:G$PSGRestoreVolumes$0_0$0({2}DF,SV:S),C,0,0
 S:G$PSGFrame$0_0$0({2}DF,SV:S),C,0,0
 S:G$PSGSFXFrame$0_0$0({2}DF,SV:S),C,0,0
-S:G$screen_title_screen_load$0_0$0({2}DF,SV:S),C,0,0
+S:G$screen_game_screen_load$0_0$0({2}DF,SV:S),C,0,0
+S:G$screen_game_screen_update$0_0$0({2}DF,SV:S),C,0,0
 S:G$main$0_0$0({2}DF,SV:S),C,0,0

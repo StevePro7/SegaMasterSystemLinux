@@ -68,78 +68,78 @@ _SMS_SRAM	=	0x8000
 	.area _CODE
 	G$screen_title_screen_load$0$0	= .
 	.globl	G$screen_title_screen_load$0$0
-	C$title_screen.c$5$0_0$111	= .
-	.globl	C$title_screen.c$5$0_0$111
+	C$title_screen.c$5$0_0$112	= .
+	.globl	C$title_screen.c$5$0_0$112
 ;title_screen.c:5: void screen_title_screen_load( void )
 ;	---------------------------------
 ; Function screen_title_screen_load
 ; ---------------------------------
 _screen_title_screen_load::
-	C$title_screen.c$7$1_0$111	= .
-	.globl	C$title_screen.c$7$1_0$111
+	C$title_screen.c$7$1_0$112	= .
+	.globl	C$title_screen.c$7$1_0$112
 ;title_screen.c:7: SMS_displayOff();
 	ld	hl, #0x0140
 	call	_SMS_VDPturnOffFeature
-	C$title_screen.c$8$1_0$111	= .
-	.globl	C$title_screen.c$8$1_0$111
+	C$title_screen.c$8$1_0$112	= .
+	.globl	C$title_screen.c$8$1_0$112
 ;title_screen.c:8: SMS_VRAMmemsetW( 0, 0, 0x4000 );
 	ld	hl, #0x4000
 	push	hl
 	ld	de, #0x0000
 	ld	h, l
 	call	_SMS_VRAMmemsetW
-	C$title_screen.c$9$1_0$111	= .
-	.globl	C$title_screen.c$9$1_0$111
+	C$title_screen.c$9$1_0$112	= .
+	.globl	C$title_screen.c$9$1_0$112
 ;title_screen.c:9: SMS_VDPturnOnFeature( VDPFEATURE_LEFTCOLBLANK | VDPFEATURE_LOCKHSCROLL );
 	ld	hl, #0x0060
 	call	_SMS_VDPturnOnFeature
-	C$title_screen.c$10$1_0$111	= .
-	.globl	C$title_screen.c$10$1_0$111
+	C$title_screen.c$10$1_0$112	= .
+	.globl	C$title_screen.c$10$1_0$112
 ;title_screen.c:10: SMS_setBGScrollX( 0 );
 	ld	l, #0x00
 ;	spillPairReg hl
 ;	spillPairReg hl
 	call	_SMS_setBGScrollX
-	C$title_screen.c$11$1_0$111	= .
-	.globl	C$title_screen.c$11$1_0$111
+	C$title_screen.c$11$1_0$112	= .
+	.globl	C$title_screen.c$11$1_0$112
 ;title_screen.c:11: SMS_setBGScrollY( 0 );
 	ld	l, #0x00
 ;	spillPairReg hl
 ;	spillPairReg hl
 	call	_SMS_setBGScrollY
-	C$title_screen.c$12$1_0$111	= .
-	.globl	C$title_screen.c$12$1_0$111
+	C$title_screen.c$12$1_0$112	= .
+	.globl	C$title_screen.c$12$1_0$112
 ;title_screen.c:12: engine_content_manager_load_boot_tiles();
 	call	_engine_content_manager_load_boot_tiles
-	C$title_screen.c$14$1_0$111	= .
-	.globl	C$title_screen.c$14$1_0$111
+	C$title_screen.c$14$1_0$112	= .
+	.globl	C$title_screen.c$14$1_0$112
 ;title_screen.c:14: SMS_VRAMmemsetW( 0x3800, 0x1100, 0x0700 );
 	ld	hl, #0x0700
 	push	hl
 	ld	de, #0x1100
 	ld	h, #0x38
 	call	_SMS_VRAMmemsetW
-	C$title_screen.c$15$1_0$111	= .
-	.globl	C$title_screen.c$15$1_0$111
+	C$title_screen.c$15$1_0$112	= .
+	.globl	C$title_screen.c$15$1_0$112
 ;title_screen.c:15: SMS_initSprites();
 	call	_SMS_initSprites
-	C$title_screen.c$16$1_0$111	= .
-	.globl	C$title_screen.c$16$1_0$111
+	C$title_screen.c$16$1_0$112	= .
+	.globl	C$title_screen.c$16$1_0$112
 ;title_screen.c:16: SMS_copySpritestoSAT();
 	call	_SMS_copySpritestoSAT
-	C$title_screen.c$17$1_0$111	= .
-	.globl	C$title_screen.c$17$1_0$111
+	C$title_screen.c$17$1_0$112	= .
+	.globl	C$title_screen.c$17$1_0$112
 ;title_screen.c:17: engine_content_manager_load_title();
 	call	_engine_content_manager_load_title
-	C$title_screen.c$18$1_0$111	= .
-	.globl	C$title_screen.c$18$1_0$111
+	C$title_screen.c$18$1_0$112	= .
+	.globl	C$title_screen.c$18$1_0$112
 ;title_screen.c:18: SMS_displayOn();
 	ld	hl, #0x0140
-	C$title_screen.c$19$1_0$111	= .
-	.globl	C$title_screen.c$19$1_0$111
+	C$title_screen.c$19$1_0$112	= .
+	.globl	C$title_screen.c$19$1_0$112
 ;title_screen.c:19: }
-	C$title_screen.c$19$1_0$111	= .
-	.globl	C$title_screen.c$19$1_0$111
+	C$title_screen.c$19$1_0$112	= .
+	.globl	C$title_screen.c$19$1_0$112
 	XG$screen_title_screen_load$0$0	= .
 	.globl	XG$screen_title_screen_load$0$0
 	jp	_SMS_VDPturnOnFeature

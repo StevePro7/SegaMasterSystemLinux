@@ -9,7 +9,7 @@
 ; Public variables in this module
 ;--------------------------------------------------------
 	.globl _main
-	.globl _screen_title_screen_load
+	.globl _screen_game_screen_load
 	.globl _PSGSFXFrame
 	.globl _PSGFrame
 	.globl _PSGSilenceChannels
@@ -64,39 +64,39 @@ _SMS_SRAM	=	0x8000
 	.area _CODE
 	G$main$0$0	= .
 	.globl	G$main$0$0
-	C$main.c$3$0_0$135	= .
-	.globl	C$main.c$3$0_0$135
+	C$main.c$3$0_0$136	= .
+	.globl	C$main.c$3$0_0$136
 ;main.c:3: void main( void )
 ;	---------------------------------
 ; Function main
 ; ---------------------------------
 _main::
-	C$main.c$5$1_0$135	= .
-	.globl	C$main.c$5$1_0$135
+	C$main.c$5$1_0$136	= .
+	.globl	C$main.c$5$1_0$136
 ;main.c:5: PSGSilenceChannels();
 	call	_PSGSilenceChannels
-	C$main.c$6$1_0$135	= .
-	.globl	C$main.c$6$1_0$135
-;main.c:6: screen_title_screen_load();
-	call	_screen_title_screen_load
+	C$main.c$6$1_0$136	= .
+	.globl	C$main.c$6$1_0$136
+;main.c:6: screen_game_screen_load();
+	call	_screen_game_screen_load
 00102$:
-	C$main.c$10$3_0$137	= .
-	.globl	C$main.c$10$3_0$137
+	C$main.c$10$3_0$138	= .
+	.globl	C$main.c$10$3_0$138
 ;main.c:10: SMS_waitForVBlank();
 	call	_SMS_waitForVBlank
-	C$main.c$11$3_0$137	= .
-	.globl	C$main.c$11$3_0$137
+	C$main.c$11$3_0$138	= .
+	.globl	C$main.c$11$3_0$138
 ;main.c:11: PSGFrame();
 	call	_PSGFrame
-	C$main.c$12$3_0$137	= .
-	.globl	C$main.c$12$3_0$137
+	C$main.c$12$3_0$138	= .
+	.globl	C$main.c$12$3_0$138
 ;main.c:12: PSGSFXFrame();
 	call	_PSGSFXFrame
-	C$main.c$14$2_0$135	= .
-	.globl	C$main.c$14$2_0$135
+	C$main.c$14$2_0$136	= .
+	.globl	C$main.c$14$2_0$136
 ;main.c:14: }
-	C$main.c$14$2_0$135	= .
-	.globl	C$main.c$14$2_0$135
+	C$main.c$14$2_0$136	= .
+	.globl	C$main.c$14$2_0$136
 	XG$main$0$0	= .
 	.globl	XG$main$0$0
 	jp	00102$

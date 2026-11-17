@@ -1,7 +1,10 @@
 #include "rle_manager.h"
 
+#ifdef _CONSOLE
 unsigned char engine_rle_buffer[ RLE_BUFFER_SIZE ];
-
+#else
+__at( 0xd000 ) unsigned char engine_rle_buffer[ RLE_BUFFER_SIZE ];
+#endif
 /*
 * $291A-$2956 from vdp_manager.inc, adapted for SDCC's assembler and ABI.
 * HL is the source on entry; the two entry points select the interleave.

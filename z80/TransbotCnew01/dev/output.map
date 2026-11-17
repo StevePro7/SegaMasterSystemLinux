@@ -42,9 +42,9 @@ Area                                    Addr        Size        Decimal Bytes (A
      0000002B  l__HEADER3                      
      00000037  l__CABS3                        
      000000BF  G$SMS_VDPControlPort$0_0$0         title_screen
+     000000FF  l__DATA                         
      00000104  l__HEADER4                      
      00000200  s__CODE                         
-     00000CFF  l__DATA                         
      00003602  l__CODE                         
      00003802  s__HOME                         
      00003802  s__INITIALIZER                  
@@ -53,10 +53,10 @@ Area                                    Addr        Size        Decimal Bytes (A
      00008000  G$SMS_SRAM$0_0$0                   title_screen
      00008000  _SMS_SRAM                          SMSlib_VRAMmemcpy
      0000C000  s__DATA                         
-     0000CCFF  s__INITIALIZED                  
-     0000CD04  s__BSEG                         
-     0000CD04  s__BSS                          
-     0000CD04  s__HEAP                         
+     0000C0FF  s__INITIALIZED                  
+     0000C104  s__BSEG                         
+     0000C104  s__BSS                          
+     0000C104  s__HEAP                         
 ASxxxx Linker V03.00 + NoICE + sdld,  page 2.
 Hexadecimal  [32-Bits]
 
@@ -66,6 +66,8 @@ Area                                    Addr        Size        Decimal Bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     0000D000  G$engine_rle_buffer$0_0$0          rle_manager
+     0000D000  _engine_rle_buffer                 rle_manager
      0000FFFC  G$SRAM_bank_to_be_mapped_on_slot   title_screen
      0000FFFC  _SRAM_bank_to_be_mapped_on_slot2   SMSlib_VRAMmemcpy
      0000FFFD  G$ROM_bank_to_be_mapped_on_slot0   title_screen
@@ -74,7 +76,6 @@ Area                                    Addr        Size        Decimal Bytes (A
      0000FFFE  _ROM_bank_to_be_mapped_on_slot1    SMSlib_VRAMmemcpy
      0000FFFF  G$ROM_bank_to_be_mapped_on_slot2   title_screen
      0000FFFF  _ROM_bank_to_be_mapped_on_slot2    SMSlib_VRAMmemcpy
-
 ASxxxx Linker V03.00 + NoICE + sdld,  page 3.
 Hexadecimal  [32-Bits]
 
@@ -203,15 +204,15 @@ _CODE                               00000200    00003602 =       13826. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00002D87  A$content_manager$11121            content_manager
-     00002D88  A$content_manager$11122            content_manager
-     00002D89  A$content_manager$11123            content_manager
-     00002D8A  A$content_manager$11124            content_manager
-     00002D8B  A$content_manager$11125            content_manager
-     00002D8C  A$content_manager$11126            content_manager
-     00002D8D  A$content_manager$11127            content_manager
-     00002D8E  A$content_manager$11128            content_manager
-     00002D8F  A$content_manager$11129            content_manager
+     00002D88  A$content_manager$11121            content_manager
+     00002D8A  A$content_manager$11122            content_manager
+     00002D8B  A$content_manager$11123            content_manager
+     00002D8C  A$content_manager$11124            content_manager
+     00002D8D  A$content_manager$11125            content_manager
+     00002D8E  A$content_manager$11126            content_manager
+     00002D8F  A$content_manager$11127            content_manager
+     00002D90  A$content_manager$11128            content_manager
+     00002D91  A$content_manager$11129            content_manager
      00002D92  A$content_manager$11130            content_manager
      00002D93  A$content_manager$11131            content_manager
      00002D94  A$content_manager$11132            content_manager
@@ -324,56 +325,56 @@ _CODE                               00000200    00003602 =       13826. bytes (R
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
      00002E0A  XG$engine_content_manager_load_t   content_manager
-     00002E0B  A$rle_manager$60                   rle_manager
-     00002E0B  C$rle_manager.c$12$0_0$4           rle_manager
-     00002E0B  C$rle_manager.c$21$1_0$4           rle_manager
+     00002E0B  A$rle_manager$59                   rle_manager
+     00002E0B  C$rle_manager.c$15$0_0$4           rle_manager
+     00002E0B  C$rle_manager.c$24$1_0$4           rle_manager
      00002E0B  G$engine_rle_decode_2$0$0          rle_manager
      00002E0B  _engine_rle_decode_2               rle_manager
-     00002E0D  A$rle_manager$61                   rle_manager
-     00002E10  A$rle_manager$77                   rle_manager
-     00002E10  C$rle_manager.c$23$1_0$4           rle_manager
-     00002E10  C$rle_manager.c$28$1_0$6           rle_manager
-     00002E10  C$rle_manager.c$79$1_0$6           rle_manager
+     00002E0D  A$rle_manager$60                   rle_manager
+     00002E10  A$rle_manager$76                   rle_manager
+     00002E10  C$rle_manager.c$26$1_0$4           rle_manager
+     00002E10  C$rle_manager.c$31$1_0$6           rle_manager
+     00002E10  C$rle_manager.c$82$1_0$6           rle_manager
      00002E10  G$engine_rle_decode_4$0$0          rle_manager
      00002E10  _engine_rle_decode_4               rle_manager
-     00002E12  A$rle_manager$79                   rle_manager
-     00002E14  A$rle_manager$80                   rle_manager
-     00002E15  A$rle_manager$81                   rle_manager
-     00002E17  A$rle_manager$82                   rle_manager
-     00002E1A  A$rle_manager$83                   rle_manager
-     00002E1C  A$rle_manager$84                   rle_manager
-     00002E1D  A$rle_manager$86                   rle_manager
-     00002E1E  A$rle_manager$88                   rle_manager
-     00002E21  A$rle_manager$89                   rle_manager
-     00002E22  A$rle_manager$90                   rle_manager
-     00002E24  A$rle_manager$91                   rle_manager
-     00002E26  A$rle_manager$92                   rle_manager
-     00002E28  A$rle_manager$93                   rle_manager
-     00002E29  A$rle_manager$94                   rle_manager
-     00002E2B  A$rle_manager$95                   rle_manager
-     00002E2E  A$rle_manager$97                   rle_manager
-     00002E2F  A$rle_manager$98                   rle_manager
-     00002E30  A$rle_manager$99                   rle_manager
-     00002E32  A$rle_manager$100                  rle_manager
-     00002E34  A$rle_manager$101                  rle_manager
-     00002E36  A$rle_manager$103                  rle_manager
-     00002E38  A$rle_manager$104                  rle_manager
-     00002E39  A$rle_manager$106                  rle_manager
-     00002E3B  A$rle_manager$107                  rle_manager
-     00002E3E  A$rle_manager$108                  rle_manager
-     00002E3F  A$rle_manager$109                  rle_manager
-     00002E40  A$rle_manager$110                  rle_manager
-     00002E42  A$rle_manager$111                  rle_manager
-     00002E44  A$rle_manager$112                  rle_manager
-     00002E46  A$rle_manager$114                  rle_manager
-     00002E48  A$rle_manager$115                  rle_manager
-     00002E49  A$rle_manager$116                  rle_manager
-     00002E4A  A$rle_manager$117                  rle_manager
-     00002E4B  A$rle_manager$118                  rle_manager
-     00002E4D  A$rle_manager$119                  rle_manager
-     00002E4F  A$rle_manager$120                  rle_manager
+     00002E12  A$rle_manager$78                   rle_manager
+     00002E14  A$rle_manager$79                   rle_manager
+     00002E15  A$rle_manager$80                   rle_manager
+     00002E17  A$rle_manager$81                   rle_manager
+     00002E1A  A$rle_manager$82                   rle_manager
+     00002E1C  A$rle_manager$83                   rle_manager
+     00002E1D  A$rle_manager$85                   rle_manager
+     00002E1E  A$rle_manager$87                   rle_manager
+     00002E21  A$rle_manager$88                   rle_manager
+     00002E22  A$rle_manager$89                   rle_manager
+     00002E24  A$rle_manager$90                   rle_manager
+     00002E26  A$rle_manager$91                   rle_manager
+     00002E28  A$rle_manager$92                   rle_manager
+     00002E29  A$rle_manager$93                   rle_manager
+     00002E2B  A$rle_manager$94                   rle_manager
+     00002E2E  A$rle_manager$96                   rle_manager
+     00002E2F  A$rle_manager$97                   rle_manager
+     00002E30  A$rle_manager$98                   rle_manager
+     00002E32  A$rle_manager$99                   rle_manager
+     00002E34  A$rle_manager$100                  rle_manager
+     00002E36  A$rle_manager$102                  rle_manager
+     00002E38  A$rle_manager$103                  rle_manager
+     00002E39  A$rle_manager$105                  rle_manager
+     00002E3B  A$rle_manager$106                  rle_manager
+     00002E3E  A$rle_manager$107                  rle_manager
+     00002E3F  A$rle_manager$108                  rle_manager
+     00002E40  A$rle_manager$109                  rle_manager
+     00002E42  A$rle_manager$110                  rle_manager
+     00002E44  A$rle_manager$111                  rle_manager
+     00002E46  A$rle_manager$113                  rle_manager
+     00002E48  A$rle_manager$114                  rle_manager
+     00002E49  A$rle_manager$115                  rle_manager
+     00002E4A  A$rle_manager$116                  rle_manager
+     00002E4B  A$rle_manager$117                  rle_manager
+     00002E4D  A$rle_manager$118                  rle_manager
+     00002E4F  A$rle_manager$119                  rle_manager
      00002E50  A$title_screen$81                  title_screen
-     00002E50  C$rle_manager.c$81$1_0$6           rle_manager
+     00002E50  C$rle_manager.c$84$1_0$6           rle_manager
 ASxxxx Linker V03.00 + NoICE + sdld,  page 8.
 Hexadecimal  [32-Bits]
 
@@ -567,87 +568,76 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_DATA                               0000C000    00000CFF =        3327. bytes (REL,CON)
+_DATA                               0000C000    000000FF =         255. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     0000C000  G$engine_rle_buffer$0_0$0          rle_manager
-     0000C000  _engine_rle_buffer                 rle_manager
-     0000CC00  _VDPBlank                          SMSlib
-     0000CC01  _SMS_VDPFlags                      SMSlib
-     0000CC02  _PauseRequested                    SMSlib
-     0000CC03  _SMS_Port3EBIOSvalue               SMSlib
-     0000CC04  _SMS_theFrameInterruptHandler      SMSlib
-     0000CC06  _KeysStatus                        SMSlib
-     0000CC08  _PreviousKeysStatus                SMSlib
-     0000CC0A  _SMS_theLineInterruptHandler       SMSlib
-     0000CC0C  _SpriteTableY                      SMSlib_sprite
-     0000CC4C  _SpriteTableXN                     SMSlib_sprite
-     0000CCCC  _SpriteNextFree                    SMSlib_sprite
-     0000CCCD  _PSGMusicStatus                    PSGlib
-     0000CCCE  _PSGMusicStart                     PSGlib
-     0000CCD0  _PSGMusicPointer                   PSGlib
-     0000CCD2  _PSGMusicLoopPoint                 PSGlib
-     0000CCD4  _PSGMusicSkipFrames                PSGlib
-     0000CCD5  _PSGLoopFlag                       PSGlib
-     0000CCD6  _PSGLoopCounter                    PSGlib
-     0000CCD7  _PSGMusicLastLatch                 PSGlib
-     0000CCD8  _PSGMusicVolumeAttenuationChn      PSGlib
-     0000CCDC  _PSGMusicSubstringLen              PSGlib
-     0000CCDD  _PSGMusicSubstringRetAddr          PSGlib
-     0000CCDF  _PSGChan0Volume                    PSGlib
-     0000CCE0  _PSGChan1Volume                    PSGlib
-     0000CCE1  _PSGChan2Volume                    PSGlib
-     0000CCE2  _PSGChan3Volume                    PSGlib
-     0000CCE3  _PSGChan0LowTone                   PSGlib
-     0000CCE4  _PSGChan0HighTone                  PSGlib
-     0000CCE5  _PSGChan1LowTone                   PSGlib
-     0000CCE6  _PSGChan1HighTone                  PSGlib
-     0000CCE7  _PSGChan2LowTone                   PSGlib
-     0000CCE8  _PSGChan2HighTone                  PSGlib
-     0000CCE9  _PSGChan3LowTone                   PSGlib
-     0000CCEA  _PSGChannel0SFX                    PSGlib
-     0000CCEB  _PSGChannel1SFX                    PSGlib
-     0000CCEC  _PSGChannel2SFX                    PSGlib
-     0000CCED  _PSGChannel3SFX                    PSGlib
-     0000CCEE  _PSGSFXChan0Volume                 PSGlib
-     0000CCEF  _PSGSFXChan1Volume                 PSGlib
-     0000CCF0  _PSGSFXChan2Volume                 PSGlib
-     0000CCF1  _PSGSFXChan3Volume                 PSGlib
-     0000CCF2  _PSGSFXStatus                      PSGlib
-     0000CCF3  _PSGSFXStart                       PSGlib
-     0000CCF5  _PSGSFXPointer                     PSGlib
-     0000CCF7  _PSGSFXLoopPoint                   PSGlib
-     0000CCF9  _PSGSFXSkipFrames                  PSGlib
-     0000CCFA  _PSGSFXLoopFlag                    PSGlib
-     0000CCFB  _PSGSFXVolumeAttenuation           PSGlib
+     0000C000  _VDPBlank                          SMSlib
+     0000C001  _SMS_VDPFlags                      SMSlib
+     0000C002  _PauseRequested                    SMSlib
+     0000C003  _SMS_Port3EBIOSvalue               SMSlib
+     0000C004  _SMS_theFrameInterruptHandler      SMSlib
+     0000C006  _KeysStatus                        SMSlib
+     0000C008  _PreviousKeysStatus                SMSlib
+     0000C00A  _SMS_theLineInterruptHandler       SMSlib
+     0000C00C  _SpriteTableY                      SMSlib_sprite
+     0000C04C  _SpriteTableXN                     SMSlib_sprite
+     0000C0CC  _SpriteNextFree                    SMSlib_sprite
+     0000C0CD  _PSGMusicStatus                    PSGlib
+     0000C0CE  _PSGMusicStart                     PSGlib
+     0000C0D0  _PSGMusicPointer                   PSGlib
+     0000C0D2  _PSGMusicLoopPoint                 PSGlib
+     0000C0D4  _PSGMusicSkipFrames                PSGlib
+     0000C0D5  _PSGLoopFlag                       PSGlib
+     0000C0D6  _PSGLoopCounter                    PSGlib
+     0000C0D7  _PSGMusicLastLatch                 PSGlib
+     0000C0D8  _PSGMusicVolumeAttenuationChn      PSGlib
+     0000C0DC  _PSGMusicSubstringLen              PSGlib
+     0000C0DD  _PSGMusicSubstringRetAddr          PSGlib
+     0000C0DF  _PSGChan0Volume                    PSGlib
+     0000C0E0  _PSGChan1Volume                    PSGlib
+     0000C0E1  _PSGChan2Volume                    PSGlib
+     0000C0E2  _PSGChan3Volume                    PSGlib
+     0000C0E3  _PSGChan0LowTone                   PSGlib
+     0000C0E4  _PSGChan0HighTone                  PSGlib
+     0000C0E5  _PSGChan1LowTone                   PSGlib
+     0000C0E6  _PSGChan1HighTone                  PSGlib
+     0000C0E7  _PSGChan2LowTone                   PSGlib
+     0000C0E8  _PSGChan2HighTone                  PSGlib
+     0000C0E9  _PSGChan3LowTone                   PSGlib
+     0000C0EA  _PSGChannel0SFX                    PSGlib
+     0000C0EB  _PSGChannel1SFX                    PSGlib
+     0000C0EC  _PSGChannel2SFX                    PSGlib
+     0000C0ED  _PSGChannel3SFX                    PSGlib
+     0000C0EE  _PSGSFXChan0Volume                 PSGlib
+     0000C0EF  _PSGSFXChan1Volume                 PSGlib
+     0000C0F0  _PSGSFXChan2Volume                 PSGlib
+     0000C0F1  _PSGSFXChan3Volume                 PSGlib
+     0000C0F2  _PSGSFXStatus                      PSGlib
+     0000C0F3  _PSGSFXStart                       PSGlib
+     0000C0F5  _PSGSFXPointer                     PSGlib
+     0000C0F7  _PSGSFXLoopPoint                   PSGlib
+     0000C0F9  _PSGSFXSkipFrames                  PSGlib
+     0000C0FA  _PSGSFXLoopFlag                    PSGlib
+     0000C0FB  _PSGSFXVolumeAttenuation           PSGlib
+     0000C0FC  _PSGSFXSubstringLen                PSGlib
+     0000C0FD  _PSGSFXSubstringRetAddr            PSGlib
+
 ASxxxx Linker V03.00 + NoICE + sdld,  page 19.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_DATA                               0000C000    00000CFF =        3327. bytes (REL,CON)
+_INITIALIZED                        0000C0FF    00000005 =           5. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     0000CCFC  _PSGSFXSubstringLen                PSGlib
-     0000CCFD  _PSGSFXSubstringRetAddr            PSGlib
+     0000C0FF  _VDPReg                            SMSlib
+     0000C101  _spritesHeight                     SMSlib
+     0000C102  _spritesWidth                      SMSlib
+     0000C103  _spritesTileOffset                 SMSlib
 
 ASxxxx Linker V03.00 + NoICE + sdld,  page 20.
-Hexadecimal  [32-Bits]
-
-Area                                    Addr        Size        Decimal Bytes (Attributes)
---------------------------------        ----        ----        ------- ----- ------------
-_INITIALIZED                        0000CCFF    00000005 =           5. bytes (REL,CON)
-
-      Value  Global                              Global Defined In Module
-      -----  --------------------------------   ------------------------
-     0000CCFF  _VDPReg                            SMSlib
-     0000CD01  _spritesHeight                     SMSlib
-     0000CD02  _spritesWidth                      SMSlib
-     0000CD03  _spritesTileOffset                 SMSlib
-
-ASxxxx Linker V03.00 + NoICE + sdld,  page 21.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -659,7 +649,7 @@ _CABS0                              00000000    00000010 =          16. bytes (A
      00007FF0  G$__SMS__SEGA_signature$0_0$0      game
      00007FF0  ___SMS__SEGA_signature             game
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 22.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 21.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -671,7 +661,7 @@ _CABS1                              00000000    00000011 =          17. bytes (A
      00007FCF  G$__SMS__SDSC_author$0_0$0         game
      00007FCF  ___SMS__SDSC_author                game
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 23.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 22.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -683,7 +673,7 @@ _CABS2                              00000000    0000000C =          12. bytes (A
      00007FC3  G$__SMS__SDSC_name$0_0$0           game
      00007FC3  ___SMS__SDSC_name                  game
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 24.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 23.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -695,7 +685,7 @@ _CABS3                              00000000    00000037 =          55. bytes (A
      00007F8C  G$__SMS__SDSC_descr$0_0$0          game
      00007F8C  ___SMS__SDSC_descr                 game
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 25.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 24.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -707,7 +697,7 @@ _CABS4                              00000000    00000010 =          16. bytes (A
      00007FE0  G$__SMS__SDSC_signature$0_0$0      game
      00007FE0  ___SMS__SDSC_signature             game
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 26.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 25.
 
 Files Linked                              [ module(s) ]
 
@@ -730,7 +720,7 @@ C:\Program Files\SDCC\bin\..\lib\z80/z80.lib
 ../lib/SMSlib.lib                         [ SMSlib_VRAMmemcpy.rel ]
 ../lib/PSGlib.lib                         [ PSGRestoreVolumes.rel ]
 
-ASxxxx Linker V03.00 + NoICE + sdld,  page 27.
+ASxxxx Linker V03.00 + NoICE + sdld,  page 26.
 
 User Base Address Definitions
 

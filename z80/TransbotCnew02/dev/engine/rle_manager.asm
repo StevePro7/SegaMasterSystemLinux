@@ -18,9 +18,8 @@
 ; ram data
 ;--------------------------------------------------------
 	.area _DATA
-G$engine_rle_buffer$0_0$0==.
-_engine_rle_buffer::
-	.ds 3072
+G$engine_rle_buffer$0_0$0 == 0xd000
+_engine_rle_buffer	=	0xd000
 ;--------------------------------------------------------
 ; ram data
 ;--------------------------------------------------------
@@ -47,33 +46,33 @@ _engine_rle_buffer::
 	.area _CODE
 	G$engine_rle_decode_2$0$0	= .
 	.globl	G$engine_rle_decode_2$0$0
-	C$rle_manager.c$12$0_0$4	= .
-	.globl	C$rle_manager.c$12$0_0$4
-;rle_manager.c:12: void engine_rle_decode_2( const unsigned char *source ) __naked __z88dk_fastcall
+	C$rle_manager.c$15$0_0$4	= .
+	.globl	C$rle_manager.c$15$0_0$4
+;rle_manager.c:15: void engine_rle_decode_2( const unsigned char *source ) __naked __z88dk_fastcall
 ;	---------------------------------
 ; Function engine_rle_decode_2
 ; ---------------------------------
 _engine_rle_decode_2::
-	C$rle_manager.c$21$1_0$4	= .
-	.globl	C$rle_manager.c$21$1_0$4
-;rle_manager.c:21: __endasm;
+	C$rle_manager.c$24$1_0$4	= .
+	.globl	C$rle_manager.c$24$1_0$4
+;rle_manager.c:24: __endasm;
 	ld	e, #2
 	jp	rle_decode_core
-	C$rle_manager.c$23$1_0$4	= .
-	.globl	C$rle_manager.c$23$1_0$4
-;rle_manager.c:23: }
+	C$rle_manager.c$26$1_0$4	= .
+	.globl	C$rle_manager.c$26$1_0$4
+;rle_manager.c:26: }
 	G$engine_rle_decode_4$0$0	= .
 	.globl	G$engine_rle_decode_4$0$0
-	C$rle_manager.c$28$1_0$6	= .
-	.globl	C$rle_manager.c$28$1_0$6
-;rle_manager.c:28: void engine_rle_decode_4( const unsigned char *source ) __naked __z88dk_fastcall
+	C$rle_manager.c$31$1_0$6	= .
+	.globl	C$rle_manager.c$31$1_0$6
+;rle_manager.c:31: void engine_rle_decode_4( const unsigned char *source ) __naked __z88dk_fastcall
 ;	---------------------------------
 ; Function engine_rle_decode_4
 ; ---------------------------------
 _engine_rle_decode_4::
-	C$rle_manager.c$79$1_0$6	= .
-	.globl	C$rle_manager.c$79$1_0$6
-;rle_manager.c:79: __endasm;
+	C$rle_manager.c$82$1_0$6	= .
+	.globl	C$rle_manager.c$82$1_0$6
+;rle_manager.c:82: __endasm;
 	ld	e, #4
 	rle_decode_core:
 	push	ix
@@ -118,9 +117,9 @@ _engine_rle_decode_4::
 	jr	nz, 1$
 	pop	ix
 	ret
-	C$rle_manager.c$81$1_0$6	= .
-	.globl	C$rle_manager.c$81$1_0$6
-;rle_manager.c:81: }
+	C$rle_manager.c$84$1_0$6	= .
+	.globl	C$rle_manager.c$84$1_0$6
+;rle_manager.c:84: }
 	.area _CODE
 	.area _INITIALIZER
 	.area _CABS (ABS)

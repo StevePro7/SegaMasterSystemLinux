@@ -11116,6 +11116,7 @@ _engine_content_manager_load_title::
 	C$content_manager.c$42$3_0$116	= .
 	.globl	C$content_manager.c$42$3_0$116
 ;content_manager.c:42: SMS_VRAMmemcpy( 0x398e + ( unsigned int ) row * 64, engine_rle_buffer + ( unsigned int ) row * 34, 34 );
+	ld	de, #_engine_rle_buffer+0
 	ld	c, -1 (ix)
 	ld	b, #0x00
 	ld	l, c
@@ -11126,7 +11127,6 @@ _engine_content_manager_load_title::
 	add	hl, hl
 	add	hl, bc
 	add	hl, hl
-	ld	de, #_engine_rle_buffer
 	add	hl, de
 	ex	de, hl
 	ld	l, c

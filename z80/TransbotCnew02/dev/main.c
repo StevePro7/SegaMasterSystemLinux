@@ -3,7 +3,7 @@
 void main( void )
 {
 	PSGSilenceChannels();
-	screen_title_screen_load();
+	screen_game_screen_load();
 
 	for( ;;)
 	{

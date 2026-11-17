@@ -5,6 +5,6 @@
 #include <stdlib.h>
 #include "game.h"
 
-#include "screen/title_screen.h"
+#include "screen/game_screen.h"
 
 #endif//__MAIN__
