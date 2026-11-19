@@ -44,7 +44,6 @@ echo.
 sdcc --debug  -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-loc 0xC000 ^
 ../crt0/crt0_sms.rel main.rel game.rel ^
 ../lib/SMSlib.lib ^
-../lib/PSGlib.lib ^
 engine/content_manager.rel ^
 engine/rle_manager.rel ^
 object/original_ram.rel ^

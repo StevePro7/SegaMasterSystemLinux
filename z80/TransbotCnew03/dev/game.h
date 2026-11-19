@@ -15,10 +15,10 @@
 
 #ifdef _CONSOLE
 #include "../tmp/SMSlib.h"
-#include "../tmp/PSGlib.h"
+//#include "../tmp/PSGlib.h"
 #else
 #include "../lib/SMSlib.h"
-#include "../lib/PSGlib.h"
+//#include "../lib/PSGlib.h"
 #endif
 
 #endif//_GAME_H_
