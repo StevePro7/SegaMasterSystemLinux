@@ -1,17 +1,51 @@
 #include "game_screen.h"
 #include "../engine/content_manager.h"
-#include "../engine/scroll_manager.h"
 #include "../object/original_ram.h"
+#include "../source/original_game.h"
 #include "../game.h"
 #include <string.h>
 
-/* VBlank part of $0FA6: top-region scroll, line counter, then the ported scroll engine. */
+static void game_frame_body( void );
+
+/*
+* VBlank part of $0FA6. SMSlib's handler preserves AF/BC/DE/HL/IX/IY, but the
+* original code also uses the alternate register set, so this wrapper saves it.
+*/
+#ifdef _CONSOLE
 static void game_frame_interrupt( void )
+{
+}
+#else
+static void game_frame_interrupt( void ) __naked
+{
+	__asm
+		.db 0x08; exchange af with the alternate af
+		push af
+		.db 0x08; exchange af with the alternate af
+		exx
+		push bc
+		push de
+		push hl
+		exx
+		call _game_frame_body
+		exx
+		pop hl
+		pop de
+		pop bc
+		exx
+		.db 0x08; exchange af with the alternate af
+		pop af
+		.db 0x08; exchange af with the alternate af
+		ret
+	__endasm;
+}
+#endif
+
+static void game_frame_body( void )
 {
 	INLINE_SMS_setBGScrollX( ORIG_SCROLL_X_TOP );
 	SMS_VDPControlPort = 0x7f;
 	SMS_VDPControlPort = 0x8a;
-	engine_scroll_frame();
 }
 
 /* Line-interrupt part of $0FA6: scroll for the lower region of the screen. */
@@ -25,9 +59,34 @@ static void game_line_interrupt( void )
 	INLINE_SMS_setBGScrollX( ORIG_SCROLL_X_BOTTOM );
 	SMS_VDPControlPort = 0xff;
 	SMS_VDPControlPort = 0x8a;
+
+	if( ORIG_FRAME_COUNTER < 0x0f )
+	{
+		++ORIG_FRAME_COUNTER;
+	}
+	if( ORIG_FRAME_READY )
+	{
+		return;
+	}
+
+	if( ORIG_SAT_FLAGS & 0x80 )
+	{
+		SMS_VRAMmemcpy( 0x3f00, ( const void * )0xc240, 0x40 );
+		SMS_VRAMmemcpy( 0x3f80, ( const void * )0xc280, 0x80 );
+		ORIG_SAT_FLAGS &= 0x7f;
+	}
+	orig_vblank_columns();
+	orig_scroll_advance();
+	orig_input_update();
+	orig_player_update();
+	orig_timer_update();
+	orig_score_update();
+	orig_hud_update();
+	orig_stage_timer();
+	ORIG_FRAME_READY = 1;
 }
 
-/* Scroll-related part of $0429 and the stage-1 start of $03B2; objects are not ported yet. */
+/* Gameplay start of the original state 4 ($03B2): stage 1, one player. */
 void screen_game_screen_load( void )
 {
 	SMS_displayOff();
@@ -42,23 +101,37 @@ void screen_game_screen_load( void )
 	// Game screen
 	SMS_setFrameInterruptHandler( 0 );
 	SMS_setLineInterruptHandler( 0 );
+
 	memset( ( void * ) ORIGINAL_RAM_START, 0, ORIGINAL_RAM_SIZE );
+	memset( ( void * ) ORIGINAL_WORK_RAM_START, 0, ORIGINAL_WORK_RAM_SIZE );
+	ORIG_FRAME_READY = 0;
+	ORIG_FRAME_COUNTER = 0;
+	ORIG_PAD_DETECT = 0xff;
+	ORIG_MODE_FLAGS = 0x50;
 
-	engine_content_manager_load_stage();
-	SMS_VRAMmemsetW( 0x3800, 0x1100, 0x0700 );
-	SMS_initSprites();
-	SMS_copySpritestoSAT();
-
-	ORIG_SCROLL_ROW_PTR = ( unsigned int ) engine_scroll_sequence;
-	ORIG_ROW_INDEX = 0xff;
-	ORIG_ROW_INDEX_2 = 0xff;
-	ORIG_STAGE_STATE = 1;
-	engine_scroll_prepare();
-	ORIG_SCROLL_FLAGS |= SCROLL_FLAG_ACTIVE;
+	/* The original performs screen and object initialization with interrupts disabled. */
+#ifdef _CONSOLE
+#else
+	__asm
+		di
+	__endasm;
+#endif
+		orig_screen_setup();
+		orig_stage_start();
+		ORIG_STAGE_STATE = 1;
+		/* The original init table ($003B) puts sprite tiles at VRAM $0000; SMSlib defaults to $2000. */
+		SMS_VDPControlPort = 0xfb;
+		SMS_VDPControlPort = 0x86;
+#ifdef _CONSOLE
+#else
+	__asm
+		ei
+	__endasm;
+#endif
 
 	SMS_setLineCounter( 0x7f );
 	SMS_setFrameInterruptHandler( game_frame_interrupt );
-	SMS_VDPturnOnFeature( VDPFEATURE_FRAMEIRQ );
+	//SMS_VDPturnOnFeature( VDPFEATURE_FRAMEIRQ );
 	SMS_setLineInterruptHandler( game_line_interrupt );
 	SMS_enableLineInterrupt();
 	SMS_displayOn();
@@ -66,5 +139,28 @@ void screen_game_screen_load( void )
 
 void screen_game_screen_update( void )
 {
-	engine_scroll_prepare();
+	if( !ORIG_FRAME_READY )
+	{
+		return;
+	}
+
+	ORIG_FRAME_READY = 0;
+#ifdef _CONSOLE
+#else
+	__asm
+	di
+		__endasm;
+#endif
+	orig_object_update();
+	orig_stage_sequencer();
+	orig_scroll_prepare();
+	orig_map_trigger();
+	orig_map_next();
+	orig_spawn_pending();
+#ifdef _CONSOLE
+#else
+	__asm
+	ei
+		__endasm;
+#endif
 }

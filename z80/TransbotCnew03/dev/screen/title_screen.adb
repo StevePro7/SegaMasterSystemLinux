@@ -10,7 +10,6 @@ S:G$SMS_Port3EBIOSvalue$0_0$0({1}SC:U),E,0,0
 S:G$SMS_VDPControlPort$0_0$0({1}SC:U),I,0,0
 S:G$engine_content_manager_load_boot_tiles$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_title$0_0$0({2}DF,SV:S),C,0,0
-S:G$engine_content_manager_load_stage$0_0$0({2}DF,SV:S),C,0,0
 S:G$SMS_init$0_0$0({2}DF,SV:S),C,0,0
 S:G$SMS_VDPturnOnFeature$0_0$0({2}DF,SV:S),C,0,0
 S:G$SMS_VDPturnOffFeature$0_0$0({2}DF,SV:S),C,0,0

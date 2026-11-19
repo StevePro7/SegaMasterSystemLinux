@@ -10,8 +10,6 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 cd engine
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 content_manager.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 rle_manager.c
-sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 scroll_manager.c
-sdasz80 -plosgffjy scroll_manager_z80.rel scroll_manager_z80.s
 cd ..
 
 cd object
@@ -49,8 +47,6 @@ sdcc --debug  -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data
 ../lib/PSGlib.lib ^
 engine/content_manager.rel ^
 engine/rle_manager.rel ^
-engine/scroll_manager.rel ^
-engine/scroll_manager_z80.rel ^
 object/original_ram.rel ^
 screen/game_screen.rel ^
 screen/title_screen.rel ^
@@ -62,16 +58,19 @@ ihx2sms output.ihx output.sms
 
 :: Cleanup
 cd engine
-if exist "*.lst" del "*.lst" > nul; if exist "*.sym" del "*.sym" > nul
+if exist "*.asm" del "*.asm" > nul; if exist "*.lst" del "*.lst" > nul; if exist "*.sym" del "*.sym" > nul
 cd ..
 cd object
-if exist "*.lst" del "*.lst" > nul; if exist "*.sym" del "*.sym" > nul
+if exist "*.asm" del "*.asm" > nul; if exist "*.lst" del "*.lst" > nul; if exist "*.sym" del "*.sym" > nul
 cd ..
 cd screen
-if exist "*.lst" del "*.lst" > nul; if exist "*.sym" del "*.sym" > nul
+if exist "*.asm" del "*.asm" > nul; if exist "*.lst" del "*.lst" > nul; if exist "*.sym" del "*.sym" > nul
+cd ..
+cd source
+if exist "*.asm" del "*.asm" > nul; if exist "*.lst" del "*.lst" > nul; if exist "*.sym" del "*.sym" > nul
 cd ..
 
-::if exist "*.asm" del "*.asm" > nul
+if exist "*.asm" del "*.asm" > nul
 if exist "*.ihx" del "*.ihx" > nul
 if exist "*.lk"  del "*.lk"  > nul
 if exist "*.lst" del "*.lst" > nul

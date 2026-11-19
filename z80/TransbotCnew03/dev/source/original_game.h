@@ -38,4 +38,4 @@ void orig_score_update(void);    /* $2DFD */
 void orig_hud_update(void);      /* $2E3E */
 void orig_stage_timer(void);     /* $0934 */
 
-#endif
+#endif//ORIGINAL_GAME_H

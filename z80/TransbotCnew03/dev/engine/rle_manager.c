@@ -43,7 +43,7 @@ rle_decode_core:
 		ld hl, #_engine_rle_buffer
 		ld d, #0
 		ld c, e
-		1$:
+1$:
 		push hl
 2$:
 		ld a, 0( ix )

@@ -13,12 +13,12 @@ static const unsigned char title_sprite_palette[ 16 ] = {
 	0x03, 0x02, 0x0e, 0x0c, 0x08, 0x3e, 0x38, 0x00
 };
 
-static const unsigned char stage_palette[ 32 ] = {
-	0x00, 0x15, 0x1a, 0x1f, 0x2f, 0x2a, 0x25, 0x35,
-	0x3a, 0x3f, 0x13, 0x17, 0x12, 0x22, 0x32, 0x00,
-	0x00, 0x3f, 0x3a, 0x35, 0x2f, 0x2a, 0x25, 0x0b,
-	0x03, 0x02, 0x0e, 0x0c, 0x08, 0x3e, 0x38, 0x00
-};
+//static const unsigned char stage_palette[ 32 ] = {
+//	0x00, 0x15, 0x1a, 0x1f, 0x2f, 0x2a, 0x25, 0x35,
+//	0x3a, 0x3f, 0x13, 0x17, 0x12, 0x22, 0x32, 0x00,
+//	0x00, 0x3f, 0x3a, 0x35, 0x2f, 0x2a, 0x25, 0x0b,
+//	0x03, 0x02, 0x0e, 0x0c, 0x08, 0x3e, 0x38, 0x00
+//};
 
 void engine_content_manager_load_boot_tiles( void )
 {
@@ -60,12 +60,12 @@ void engine_content_manager_load_title( void )
 	}
 }
 
-/* Mirrors $0429: palette, sprite tiles, then the stage map left in the decode buffer. */
-void engine_content_manager_load_stage( void )
-{
-	SMS_loadBGPalette( ( unsigned char * ) stage_palette );
-	SMS_loadSpritePalette( ( unsigned char * ) stage_palette + 16 );
-	engine_rle_decode_4( stage_tiles );
-	SMS_VRAMmemcpy( 0x2c00, engine_rle_buffer, 0x0c00 );
-	engine_rle_decode_2( stage_map );
-}
+///* Mirrors $0429: palette, sprite tiles, then the stage map left in the decode buffer. */
+//void engine_content_manager_load_stage( void )
+//{
+//	SMS_loadBGPalette( ( unsigned char * ) stage_palette );
+//	SMS_loadSpritePalette( ( unsigned char * ) stage_palette + 16 );
+//	engine_rle_decode_4( stage_tiles );
+//	SMS_VRAMmemcpy( 0x2c00, engine_rle_buffer, 0x0c00 );
+//	engine_rle_decode_2( stage_map );
+//}
