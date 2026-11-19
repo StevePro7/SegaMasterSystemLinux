@@ -1,0 +1,138 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 4.2.0 #13081 (MINGW64)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module main
+                                      6 	.optsdcc -mz80
+                                      7 	
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl _main
+                                     12 	.globl _screen_game_screen_update
+                                     13 	.globl _screen_game_screen_load
+                                     14 	.globl _SMS_waitForVBlank
+                                     15 	.globl _SMS_SRAM
+                                     16 	.globl _SRAM_bank_to_be_mapped_on_slot2
+                                     17 	.globl _ROM_bank_to_be_mapped_on_slot0
+                                     18 	.globl _ROM_bank_to_be_mapped_on_slot1
+                                     19 	.globl _ROM_bank_to_be_mapped_on_slot2
+                                     20 ;--------------------------------------------------------
+                                     21 ; special function registers
+                                     22 ;--------------------------------------------------------
+                           0000BF    23 G$SMS_VDPControlPort$0_0$0 == 0x00bf
+                           0000BF    24 _SMS_VDPControlPort	=	0x00bf
+                           00007F    25 G$PSGPort$0_0$0 == 0x007f
+                           00007F    26 _PSGPort	=	0x007f
+                                     27 ;--------------------------------------------------------
+                                     28 ; ram data
+                                     29 ;--------------------------------------------------------
+                                     30 	.area _DATA
+                           00FFFF    31 G$ROM_bank_to_be_mapped_on_slot2$0_0$0 == 0xffff
+                           00FFFF    32 _ROM_bank_to_be_mapped_on_slot2	=	0xffff
+                           00FFFE    33 G$ROM_bank_to_be_mapped_on_slot1$0_0$0 == 0xfffe
+                           00FFFE    34 _ROM_bank_to_be_mapped_on_slot1	=	0xfffe
+                           00FFFD    35 G$ROM_bank_to_be_mapped_on_slot0$0_0$0 == 0xfffd
+                           00FFFD    36 _ROM_bank_to_be_mapped_on_slot0	=	0xfffd
+                           00FFFC    37 G$SRAM_bank_to_be_mapped_on_slot2$0_0$0 == 0xfffc
+                           00FFFC    38 _SRAM_bank_to_be_mapped_on_slot2	=	0xfffc
+                           008000    39 G$SMS_SRAM$0_0$0 == 0x8000
+                           008000    40 _SMS_SRAM	=	0x8000
+                                     41 ;--------------------------------------------------------
+                                     42 ; ram data
+                                     43 ;--------------------------------------------------------
+                                     44 	.area _INITIALIZED
+                                     45 ;--------------------------------------------------------
+                                     46 ; absolute external ram data
+                                     47 ;--------------------------------------------------------
+                                     48 	.area _DABS (ABS)
+                                     49 ;--------------------------------------------------------
+                                     50 ; global & static initialisations
+                                     51 ;--------------------------------------------------------
+                                     52 	.area _HOME
+                                     53 	.area _GSINIT
+                                     54 	.area _GSFINAL
+                                     55 	.area _GSINIT
+                                     56 ;--------------------------------------------------------
+                                     57 ; Home
+                                     58 ;--------------------------------------------------------
+                                     59 	.area _HOME
+                                     60 	.area _HOME
+                                     61 ;--------------------------------------------------------
+                                     62 ; code
+                                     63 ;--------------------------------------------------------
+                                     64 	.area _CODE
+                           000000    65 	Fmain$silence_psg$0$0	= .
+                                     66 	.globl	Fmain$silence_psg$0$0
+                           000000    67 	C$main.c$8$0_0$118	= .
+                                     68 	.globl	C$main.c$8$0_0$118
+                                     69 ;main.c:8: static void silence_psg( void )
+                                     70 ;	---------------------------------
+                                     71 ; Function silence_psg
+                                     72 ; ---------------------------------
+      000000                         73 _silence_psg:
+                           000000    74 	C$main.c$13$1_0$118	= .
+                                     75 	.globl	C$main.c$13$1_0$118
+                                     76 ;main.c:13: PSGPort = 0x9f;
+      000000 3E 9F            [ 7]   77 	ld	a, #0x9f
+      000002 D3 7F            [11]   78 	out	(_PSGPort), a
+                           000004    79 	C$main.c$14$1_0$118	= .
+                                     80 	.globl	C$main.c$14$1_0$118
+                                     81 ;main.c:14: PSGPort = 0xbf;
+      000004 3E BF            [ 7]   82 	ld	a, #0xbf
+      000006 D3 7F            [11]   83 	out	(_PSGPort), a
+                           000008    84 	C$main.c$15$1_0$118	= .
+                                     85 	.globl	C$main.c$15$1_0$118
+                                     86 ;main.c:15: PSGPort = 0xdf;
+      000008 3E DF            [ 7]   87 	ld	a, #0xdf
+      00000A D3 7F            [11]   88 	out	(_PSGPort), a
+                           00000C    89 	C$main.c$16$1_0$118	= .
+                                     90 	.globl	C$main.c$16$1_0$118
+                                     91 ;main.c:16: PSGPort = 0xff;
+      00000C 3E FF            [ 7]   92 	ld	a, #0xff
+      00000E D3 7F            [11]   93 	out	(_PSGPort), a
+                           000010    94 	C$main.c$18$1_0$118	= .
+                                     95 	.globl	C$main.c$18$1_0$118
+                                     96 ;main.c:18: }
+                           000010    97 	C$main.c$18$1_0$118	= .
+                                     98 	.globl	C$main.c$18$1_0$118
+                           000010    99 	XFmain$silence_psg$0$0	= .
+                                    100 	.globl	XFmain$silence_psg$0$0
+      000010 C9               [10]  101 	ret
+                           000011   102 	G$main$0$0	= .
+                                    103 	.globl	G$main$0$0
+                           000011   104 	C$main.c$21$1_0$120	= .
+                                    105 	.globl	C$main.c$21$1_0$120
+                                    106 ;main.c:21: void main( void )
+                                    107 ;	---------------------------------
+                                    108 ; Function main
+                                    109 ; ---------------------------------
+      000011                        110 _main::
+                           000011   111 	C$main.c$23$1_0$120	= .
+                                    112 	.globl	C$main.c$23$1_0$120
+                                    113 ;main.c:23: silence_psg();
+      000011 CDr00r00         [17]  114 	call	_silence_psg
+                           000014   115 	C$main.c$24$1_0$120	= .
+                                    116 	.globl	C$main.c$24$1_0$120
+                                    117 ;main.c:24: screen_game_screen_load();
+      000014 CDr00r00         [17]  118 	call	_screen_game_screen_load
+      000017                        119 00102$:
+                           000017   120 	C$main.c$28$3_0$122	= .
+                                    121 	.globl	C$main.c$28$3_0$122
+                                    122 ;main.c:28: SMS_waitForVBlank();
+      000017 CDr00r00         [17]  123 	call	_SMS_waitForVBlank
+                           00001A   124 	C$main.c$29$3_0$122	= .
+                                    125 	.globl	C$main.c$29$3_0$122
+                                    126 ;main.c:29: screen_game_screen_update();
+      00001A CDr00r00         [17]  127 	call	_screen_game_screen_update
+                           00001D   128 	C$main.c$31$2_0$120	= .
+                                    129 	.globl	C$main.c$31$2_0$120
+                                    130 ;main.c:31: }
+                           00001D   131 	C$main.c$31$2_0$120	= .
+                                    132 	.globl	C$main.c$31$2_0$120
+                           00001D   133 	XG$main$0$0	= .
+                                    134 	.globl	XG$main$0$0
+      00001D C3r17r00         [10]  135 	jp	00102$
+                                    136 	.area _CODE
+                                    137 	.area _INITIALIZER
+                                    138 	.area _CABS (ABS)

@@ -46,6 +46,31 @@ static void game_frame_body( void )
 	INLINE_SMS_setBGScrollX( ORIG_SCROLL_X_TOP );
 	SMS_VDPControlPort = 0x7f;
 	SMS_VDPControlPort = 0x8a;
+
+	if( ORIG_FRAME_COUNTER < 0x0f )
+	{
+		++ORIG_FRAME_COUNTER;
+	}
+	if( ORIG_FRAME_READY )
+	{
+		return;
+	}
+
+	if( ORIG_SAT_FLAGS & 0x80 )
+	{
+		SMS_VRAMmemcpy( 0x3f00, ( const void * ) 0xc240, 0x40 );
+		SMS_VRAMmemcpy( 0x3f80, ( const void * ) 0xc280, 0x80 );
+		ORIG_SAT_FLAGS &= 0x7f;
+	}
+	orig_vblank_columns();
+	orig_scroll_advance();
+	orig_input_update();
+	orig_player_update();
+	orig_timer_update();
+	orig_score_update();
+	orig_hud_update();
+	orig_stage_timer();
+	ORIG_FRAME_READY = 1;
 }
 
 /* Line-interrupt part of $0FA6: scroll for the lower region of the screen. */
@@ -59,31 +84,6 @@ static void game_line_interrupt( void )
 	INLINE_SMS_setBGScrollX( ORIG_SCROLL_X_BOTTOM );
 	SMS_VDPControlPort = 0xff;
 	SMS_VDPControlPort = 0x8a;
-
-	if( ORIG_FRAME_COUNTER < 0x0f )
-	{
-		++ORIG_FRAME_COUNTER;
-	}
-	if( ORIG_FRAME_READY )
-	{
-		return;
-	}
-
-	if( ORIG_SAT_FLAGS & 0x80 )
-	{
-		SMS_VRAMmemcpy( 0x3f00, ( const void * )0xc240, 0x40 );
-		SMS_VRAMmemcpy( 0x3f80, ( const void * )0xc280, 0x80 );
-		ORIG_SAT_FLAGS &= 0x7f;
-	}
-	orig_vblank_columns();
-	orig_scroll_advance();
-	orig_input_update();
-	orig_player_update();
-	orig_timer_update();
-	orig_score_update();
-	orig_hud_update();
-	orig_stage_timer();
-	ORIG_FRAME_READY = 1;
 }
 
 /* Gameplay start of the original state 4 ($03B2): stage 1, one player. */
