@@ -8,10 +8,10 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 
 ::echo Build
 cd engine
-::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 content_manager.c
-::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 rle_manager.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 content_manager.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 rle_manager.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 scroll_manager.c
-sdasz80 -plosgff scroll_manager_z80.rel scroll_manager_z80.s
+sdasz80 -plosgffjy scroll_manager_z80.rel scroll_manager_z80.s
 cd ..
 
 cd object
@@ -20,10 +20,16 @@ cd ..
 
 cd screen
 sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 game_screen.c
-::sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 title_screen.c
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 title_screen.c
 cd ..
 
-::sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 game.c
+cd source
+sdcc --debug -c -mz80 --opt-code-speed --peep-file ../peep-rules.txt --std-c99 original_game.c
+sdasz80 -plosgffjy original_game_z80.rel original_game_z80.s
+cd ..
+
+
+sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 game.c
 sdcc --debug -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
 
 
@@ -47,7 +53,9 @@ engine/scroll_manager.rel ^
 engine/scroll_manager_z80.rel ^
 object/original_ram.rel ^
 screen/game_screen.rel ^
-screen/title_screen.rel
+screen/title_screen.rel ^
+source/original_game.rel ^
+source/original_game_z80.rel
 
 ::echo Run
 ihx2sms output.ihx output.sms

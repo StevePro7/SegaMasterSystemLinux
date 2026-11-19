@@ -1,6 +1,6 @@
 #include "content_manager.h"
 #include "rle_manager.h"
-#include "../content/assets.h"
+#include "../source/original_game.h"
 #include "../game.h"
 
 static const unsigned char title_bg_palette[ 16 ] = {
