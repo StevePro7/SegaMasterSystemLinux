@@ -41,6 +41,8 @@ echo Time taken: %_sec:~-2%.%_cs:~-2% secs
 echo.
 
 ::echo Link
+sdasz80 -plosgffjy ../crt0/crt0_sms.rel ../crt0/src/crt0_sms.s
+if errorlevel 1 exit /b 1
 sdcc --debug  -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-loc 0xC620 ^
 ../crt0/crt0_sms.rel main.rel game.rel ^
 ../lib/SMSlib.lib ^

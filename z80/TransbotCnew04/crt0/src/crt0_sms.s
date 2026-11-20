@@ -1,5 +1,11 @@
 ;--------------------------------------------------------------------------
 ; ***** this is a modified version aimed to SMS homebrew - sverx\2022 *****
+; ***** TransbotCnew: copy of devkitSMS crt0_sms.s with one change: the *****
+; ***** startup clears all work RAM ($C000-$DFEE), not just l__DATA bytes. *****
+; ***** The original game's variables live at $C000-$C61F and SDCC data *****
+; ***** starts at $C620, so the stock clear never reached SMSlib's own  *****
+; ***** variables (handler pointers, key state) on emulators/hardware   *****
+; ***** that do not power on with zeroed RAM.                           *****
 ;--------------------------------------------------------------------------
 ;--------------------------------------------------------------------------
 ;  crt0.s - Generic crt0.s for a Z80
@@ -81,7 +87,7 @@ crt0_clear_ram:
         ld b,#0x00                      ; clear RAM (to value 0x00) by setting
         ld (hl),b                       ;   value 0 to $c000 and
         ld de,#0xc001                   ;   copying (LDIR) it to next byte
-        ld bc,#l__DATA-1                ;   for the unitialized statics
+        ld bc,#0x1eee                   ;   $C001-$DFEE (the stack at $DFF0 is not touched)
         ldir                            ;   do that
         ld (_SMS_Port3EBIOSvalue),a     ; restore contents of $c000 to SMS_Port3EBIOSvalue var
 

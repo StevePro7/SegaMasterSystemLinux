@@ -1,0 +1,285 @@
+                                      1 ;--------------------------------------------------------------------------
+                                      2 ; ***** this is a modified version aimed to SMS homebrew - sverx\2022 *****
+                                      3 ; ***** TransbotCnew: copy of devkitSMS crt0_sms.s with one change: the *****
+                                      4 ; ***** startup clears all work RAM ($C000-$DFEE), not just l__DATA bytes. *****
+                                      5 ; ***** The original game's variables live at $C000-$C61F and SDCC data *****
+                                      6 ; ***** starts at $C620, so the stock clear never reached SMSlib's own  *****
+                                      7 ; ***** variables (handler pointers, key state) on emulators/hardware   *****
+                                      8 ; ***** that do not power on with zeroed RAM.                           *****
+                                      9 ;--------------------------------------------------------------------------
+                                     10 ;--------------------------------------------------------------------------
+                                     11 ;  crt0.s - Generic crt0.s for a Z80
+                                     12 ;
+                                     13 ;  Copyright (C) 2000, Michael Hope
+                                     14 ;
+                                     15 ;  This library is free software; you can redistribute it and/or modify it
+                                     16 ;  under the terms of the GNU General Public License as published by the
+                                     17 ;  Free Software Foundation; either version 2, or (at your option) any
+                                     18 ;  later version.
+                                     19 ;
+                                     20 ;  This library is distributed in the hope that it will be useful,
+                                     21 ;  but WITHOUT ANY WARRANTY; without even the implied warranty of
+                                     22 ;  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+                                     23 ;  GNU General Public License for more details.
+                                     24 ;
+                                     25 ;  You should have received a copy of the GNU General Public License
+                                     26 ;  along with this library; see the file COPYING. If not, write to the
+                                     27 ;  Free Software Foundation, 51 Franklin Street, Fifth Floor, Boston,
+                                     28 ;   MA 02110-1301, USA.
+                                     29 ;
+                                     30 ;  As a special exception, if you link this library with other files,
+                                     31 ;  some of which are compiled with SDCC, to produce an executable,
+                                     32 ;  this library does not by itself cause the resulting executable to
+                                     33 ;  be covered by the GNU General Public License. This exception does
+                                     34 ;  not however invalidate any other reasons why the executable file
+                                     35 ;  might be covered by the GNU General Public License.
+                                     36 ;--------------------------------------------------------------------------
+                                     37 
+                                     38         .module crt0
+                                     39         .globl _main
+                                     40 
+                                     41         .area _HEADER (ABS)
+      000000                         42         .org    0                       ; Reset 00h
+      000000 F3               [ 4]   43         di                              ; disable interrupt
+      000001 ED 56            [ 8]   44         im 1                            ; interrupt mode 1 (this will never change)
+      000003 31 F0 DF         [10]   45         ld sp, #0xdff0                  ; set stack pointer at end of RAM
+      000006 18p21            [12]   46         jr crt0_init
+                                     47 ;--------------------------------------------------------------------------
+      000008                         48         .org    0x08                    ; Reset 08h - write HL to VDP Control Port
+      000008                         49 _SMS_crt0_RST08::
+      000008 0E BF            [ 7]   50         ld c, #0xBF                     ; set VDP Control Port
+      00000A F3               [ 4]   51         di                              ; make it interrupt SAFE
+      00000B ED 69            [12]   52         out (c),l
+      00000D ED 61            [12]   53         out (c),h
+      00000F FB               [ 4]   54         ei
+      000010 C9               [10]   55         ret
+                                     56 ;--------------------------------------------------------------------------
+      000018                         57         .org    0x18                    ; Reset 18h - write HL to VDP Data Port
+      000018                         58 _SMS_crt0_RST18::
+      000018 7D               [ 4]   59         ld a,l                          ; (respecting VRAM time costraints)
+      000019 D3 BE            [11]   60         out (#0xBE),a                   ; 11
+      00001B 7C               [ 4]   61         ld a,h                          ; 4
+      00001C 23               [ 6]   62         inc hl                          ; 6
+      00001D 2B               [ 6]   63         dec hl                          ; 6 = 27 (VRAM SAFE on every GameGear)
+      00001E D3 BE            [11]   64         out (#0xBE),a
+      000020 C9               [10]   65         ret
+                                     66 ;--------------------------------------------------------------------------
+      000021                         67 crt0_init:
+      000021 21 00 00         [10]   68         ld hl,#0x0000                   ; initialize mappers
+      000024 22 FC FF         [16]   69         ld (#0xfffc),hl                 ; [0xfffc]=$00, [0xfffd]=$00
+      000027 21 01 02         [10]   70         ld hl,#0x0201
+      00002A 22 FE FF         [16]   71         ld (#0xfffe),hl                 ; [0xfffe]=$01, [0xffff]=$02
+      00002D 18p3B            [12]   72         jr crt0_clear_ram
+                                     73 ;--------------------------------------------------------------------------
+      00002F                         74 get_bank::                              ; get current code bank num into A
+      00002F 3A FE FF         [13]   75         ld a,(#0xfffe)                  ; (read current page from mapper)
+      000032 C9               [10]   76         ret
+      000033                         77 set_bank::                              ; set current code bank num to A
+      000033 32 FE FF         [13]   78         ld (#0xfffe),a                  ; (restore caller page)
+      000036 C9               [10]   79         ret
+                                     80 ;--------------------------------------------------------------------------
+      000038                         81         .org    0x38                    ; handle IRQ
+      000038 C3r00r00         [10]   82         jp _SMS_isr
+                                     83 ;--------------------------------------------------------------------------
+      00003B                         84 crt0_clear_ram:
+      00003B 21 00 C0         [10]   85         ld hl,#0xc000                   ; save contents of $c000
+      00003E 7E               [ 7]   86         ld a,(hl)                       ;   before clearing RAM
+      00003F 06 00            [ 7]   87         ld b,#0x00                      ; clear RAM (to value 0x00) by setting
+      000041 70               [ 7]   88         ld (hl),b                       ;   value 0 to $c000 and
+      000042 11 01 C0         [10]   89         ld de,#0xc001                   ;   copying (LDIR) it to next byte
+      000045 01 EE 1E         [10]   90         ld bc,#0x1eee                   ;   $C001-$DFEE (the stack at $DFF0 is not touched)
+      000048 ED B0            [21]   91         ldir                            ;   do that
+      00004A 32r00r00         [13]   92         ld (_SMS_Port3EBIOSvalue),a     ; restore contents of $c000 to SMS_Port3EBIOSvalue var
+                                     93 
+                                     94         ;; Initialise global variables
+      00004D CDr00r00         [17]   95         call crt0_gsinit
+      000050 CDr00r00         [17]   96         call _SMS_init
+      000053 FB               [ 4]   97         ei                              ; re-enable interrupts before going to main()
+      000054 CDr00r00         [17]   98         call _main
+      000057                         99 1$:
+      000057 76               [ 4]  100         halt
+      000058 18 FD            [12]  101         jr 1$
+                                    102 ;--------------------------------------------------------------------------
+      00005A 64 65 76 6B 69 74 53   103         .ascii 'devkitSMS'              ; this is shameless
+             4D 53
+                                    104 ;--------------------------------------------------------------------------
+      000066                        105         .org     0x66                   ; handle NMI
+      000066 C3r00r00         [10]  106         jp _SMS_nmi_isr
+                                    107 ;--------------------------------------------------------------------------
+                                    108         ; here is a block of 128 OUTI instructions, made for enabling
+                                    109         ; UNSAFE but FAST short data transfers to VRAM
+                                    110 ;--------------------------------------------------------------------------
+      000069                        111 _OUTI128::                              ; _OUTI128 label points to a block of 128 OUTI and a RET
+                                    112         .rept 32
+                                    113         outi
+                                    114         .endm
+      000069 ED A3            [16]    1         outi
+      00006B ED A3            [16]    1         outi
+      00006D ED A3            [16]    1         outi
+      00006F ED A3            [16]    1         outi
+      000071 ED A3            [16]    1         outi
+      000073 ED A3            [16]    1         outi
+      000075 ED A3            [16]    1         outi
+      000077 ED A3            [16]    1         outi
+      000079 ED A3            [16]    1         outi
+      00007B ED A3            [16]    1         outi
+      00007D ED A3            [16]    1         outi
+      00007F ED A3            [16]    1         outi
+      000081 ED A3            [16]    1         outi
+      000083 ED A3            [16]    1         outi
+      000085 ED A3            [16]    1         outi
+      000087 ED A3            [16]    1         outi
+      000089 ED A3            [16]    1         outi
+      00008B ED A3            [16]    1         outi
+      00008D ED A3            [16]    1         outi
+      00008F ED A3            [16]    1         outi
+      000091 ED A3            [16]    1         outi
+      000093 ED A3            [16]    1         outi
+      000095 ED A3            [16]    1         outi
+      000097 ED A3            [16]    1         outi
+      000099 ED A3            [16]    1         outi
+      00009B ED A3            [16]    1         outi
+      00009D ED A3            [16]    1         outi
+      00009F ED A3            [16]    1         outi
+      0000A1 ED A3            [16]    1         outi
+      0000A3 ED A3            [16]    1         outi
+      0000A5 ED A3            [16]    1         outi
+      0000A7 ED A3            [16]    1         outi
+      0000A9                        115 _OUTI96::                               ; _OUTI96 label points to a block of 96 OUTI and a RET
+                                    116         .rept 32
+                                    117         outi
+                                    118         .endm
+      0000A9 ED A3            [16]    1         outi
+      0000AB ED A3            [16]    1         outi
+      0000AD ED A3            [16]    1         outi
+      0000AF ED A3            [16]    1         outi
+      0000B1 ED A3            [16]    1         outi
+      0000B3 ED A3            [16]    1         outi
+      0000B5 ED A3            [16]    1         outi
+      0000B7 ED A3            [16]    1         outi
+      0000B9 ED A3            [16]    1         outi
+      0000BB ED A3            [16]    1         outi
+      0000BD ED A3            [16]    1         outi
+      0000BF ED A3            [16]    1         outi
+      0000C1 ED A3            [16]    1         outi
+      0000C3 ED A3            [16]    1         outi
+      0000C5 ED A3            [16]    1         outi
+      0000C7 ED A3            [16]    1         outi
+      0000C9 ED A3            [16]    1         outi
+      0000CB ED A3            [16]    1         outi
+      0000CD ED A3            [16]    1         outi
+      0000CF ED A3            [16]    1         outi
+      0000D1 ED A3            [16]    1         outi
+      0000D3 ED A3            [16]    1         outi
+      0000D5 ED A3            [16]    1         outi
+      0000D7 ED A3            [16]    1         outi
+      0000D9 ED A3            [16]    1         outi
+      0000DB ED A3            [16]    1         outi
+      0000DD ED A3            [16]    1         outi
+      0000DF ED A3            [16]    1         outi
+      0000E1 ED A3            [16]    1         outi
+      0000E3 ED A3            [16]    1         outi
+      0000E5 ED A3            [16]    1         outi
+      0000E7 ED A3            [16]    1         outi
+      0000E9                        119 _OUTI64::                               ; _OUTI64 label points to a block of 64 OUTI and a RET
+                                    120         .rept 32
+                                    121         outi
+                                    122         .endm
+      0000E9 ED A3            [16]    1         outi
+      0000EB ED A3            [16]    1         outi
+      0000ED ED A3            [16]    1         outi
+      0000EF ED A3            [16]    1         outi
+      0000F1 ED A3            [16]    1         outi
+      0000F3 ED A3            [16]    1         outi
+      0000F5 ED A3            [16]    1         outi
+      0000F7 ED A3            [16]    1         outi
+      0000F9 ED A3            [16]    1         outi
+      0000FB ED A3            [16]    1         outi
+      0000FD ED A3            [16]    1         outi
+      0000FF ED A3            [16]    1         outi
+      000101 ED A3            [16]    1         outi
+      000103 ED A3            [16]    1         outi
+      000105 ED A3            [16]    1         outi
+      000107 ED A3            [16]    1         outi
+      000109 ED A3            [16]    1         outi
+      00010B ED A3            [16]    1         outi
+      00010D ED A3            [16]    1         outi
+      00010F ED A3            [16]    1         outi
+      000111 ED A3            [16]    1         outi
+      000113 ED A3            [16]    1         outi
+      000115 ED A3            [16]    1         outi
+      000117 ED A3            [16]    1         outi
+      000119 ED A3            [16]    1         outi
+      00011B ED A3            [16]    1         outi
+      00011D ED A3            [16]    1         outi
+      00011F ED A3            [16]    1         outi
+      000121 ED A3            [16]    1         outi
+      000123 ED A3            [16]    1         outi
+      000125 ED A3            [16]    1         outi
+      000127 ED A3            [16]    1         outi
+      000129                        123 _OUTI32::                               ; _OUTI32 label points to a block of 32 OUTI and a RET
+                                    124         .rept 32
+                                    125         outi
+                                    126         .endm
+      000129 ED A3            [16]    1         outi
+      00012B ED A3            [16]    1         outi
+      00012D ED A3            [16]    1         outi
+      00012F ED A3            [16]    1         outi
+      000131 ED A3            [16]    1         outi
+      000133 ED A3            [16]    1         outi
+      000135 ED A3            [16]    1         outi
+      000137 ED A3            [16]    1         outi
+      000139 ED A3            [16]    1         outi
+      00013B ED A3            [16]    1         outi
+      00013D ED A3            [16]    1         outi
+      00013F ED A3            [16]    1         outi
+      000141 ED A3            [16]    1         outi
+      000143 ED A3            [16]    1         outi
+      000145 ED A3            [16]    1         outi
+      000147 ED A3            [16]    1         outi
+      000149 ED A3            [16]    1         outi
+      00014B ED A3            [16]    1         outi
+      00014D ED A3            [16]    1         outi
+      00014F ED A3            [16]    1         outi
+      000151 ED A3            [16]    1         outi
+      000153 ED A3            [16]    1         outi
+      000155 ED A3            [16]    1         outi
+      000157 ED A3            [16]    1         outi
+      000159 ED A3            [16]    1         outi
+      00015B ED A3            [16]    1         outi
+      00015D ED A3            [16]    1         outi
+      00015F ED A3            [16]    1         outi
+      000161 ED A3            [16]    1         outi
+      000163 ED A3            [16]    1         outi
+      000165 ED A3            [16]    1         outi
+      000167 ED A3            [16]    1         outi
+      000169                        127 _outi_block::                           ; _outi_block label points to END of OUTI block
+      000169 C9               [10]  128         ret
+                                    129 ;--------------------------------------------------------------------------
+                                    130         ;; Ordering of segments for the linker.
+                                    131         .area   _HOME
+                                    132         .area   _CODE
+                                    133         .area   _INITIALIZER
+                                    134         .area   _GSINIT
+                                    135         .area   _GSFINAL
+                                    136 
+                                    137         .area   _DATA
+                                    138         .area   _INITIALIZED
+                                    139         .area   _BSEG
+                                    140         .area   _BSS
+                                    141         .area   _HEAP
+                                    142 
+                                    143         .area   _CODE
+                                    144         .area   _GSINIT
+      000000                        145 crt0_gsinit::
+      000000 01r00r00         [10]  146         ld bc, #l__INITIALIZER
+      000003 78               [ 4]  147         ld a, b
+      000004 B1               [ 4]  148         or a, c
+      000005 28 08            [12]  149         jr Z, crt0_gsinit_next
+      000007 11r00r00         [10]  150         ld de, #s__INITIALIZED
+      00000A 21r00r00         [10]  151         ld hl, #s__INITIALIZER
+      00000D ED B0            [21]  152         ldir
+      00000F                        153 crt0_gsinit_next:
+                                    154         .area   _GSFINAL
+      000000 C9               [10]  155         ret
+                                    156 

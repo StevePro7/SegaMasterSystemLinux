@@ -1,7 +1,7 @@
+;!FILE ../crt0/src/crt0_sms.s
 XL3
-H 10 areas 14 global symbols
+H 10 areas 79 global symbols
 M crt0
-S l__DATA Ref000000
 S _main Ref000000
 S _SMS_Port3EBIOSvalue Ref000000
 S .__.ABS. Def000000
@@ -14,24 +14,126 @@ S _SMS_isr Ref000000
 A _CODE size 0 flags 0 addr 0
 A _HEADER size 0 flags 8 addr 0
 A _HEADER0 size 8 flags 8 addr 0
+S crt0_sms.43 Def000000
+S crt0_sms.44 Def000001
+S crt0_sms.45 Def000003
+S crt0_sms.46 Def000006
+S A$crt0_sms$43 Def000000
+S A$crt0_sms$44 Def000001
+S A$crt0_sms$45 Def000003
+S A$crt0_sms$46 Def000006
 A _HEADER1 size 9 flags 8 addr 8
+S crt0_sms.52 Def00000B
+S crt0_sms.53 Def00000D
+S crt0_sms.54 Def00000F
+S crt0_sms.55 Def000010
+S A$crt0_sms$50 Def000008
+S A$crt0_sms$51 Def00000A
+S A$crt0_sms$52 Def00000B
+S A$crt0_sms$53 Def00000D
+S A$crt0_sms$54 Def00000F
+S A$crt0_sms$55 Def000010
 S _SMS_crt0_RST08 Def000008
+S crt0_sms.50 Def000008
+S crt0_sms.51 Def00000A
 A _HEADER2 size 1F flags 8 addr 18
+S crt0_sms.70 Def000027
+S crt0_sms.61 Def00001B
+S crt0_sms.71 Def00002A
+S crt0_sms.62 Def00001C
+S crt0_sms.72 Def00002D
+S crt0_sms.63 Def00001D
+S crt0_sms.64 Def00001E
+S crt0_sms.65 Def000020
+S crt0_sms.75 Def00002F
+S crt0_sms.76 Def000032
+S crt0_sms.68 Def000021
+S crt0_sms.59 Def000018
 S set_bank Def000033
+S crt0_sms.78 Def000033
+S crt0_sms.69 Def000024
+S crt0_sms.79 Def000036
+S A$crt0_sms$60 Def000019
+S A$crt0_sms$70 Def000027
+S A$crt0_sms$61 Def00001B
+S A$crt0_sms$71 Def00002A
+S A$crt0_sms$62 Def00001C
+S A$crt0_sms$72 Def00002D
+S A$crt0_sms$63 Def00001D
+S A$crt0_sms$64 Def00001E
+S A$crt0_sms$65 Def000020
+S A$crt0_sms$75 Def00002F
+S A$crt0_sms$76 Def000032
+S A$crt0_sms$68 Def000021
+S A$crt0_sms$59 Def000018
+S A$crt0_sms$78 Def000033
+S A$crt0_sms$69 Def000024
+S A$crt0_sms$79 Def000036
 S _SMS_crt0_RST18 Def000018
 S get_bank Def00002F
+S crt0_sms.60 Def000019
 A _HEADER3 size 2B flags 8 addr 38
+S crt0_sms.90 Def000045
+S crt0_sms.91 Def000048
+S crt0_sms.82 Def000038
+S crt0_sms.92 Def00004A
+S A$crt0_sms$100 Def000057
+S A$crt0_sms$101 Def000058
+S crt0_sms.85 Def00003B
+S crt0_sms.95 Def00004D
+S crt0_sms.86 Def00003E
+S crt0_sms.96 Def000050
+S crt0_sms.87 Def00003F
+S crt0_sms.97 Def000053
+S crt0_sms.88 Def000041
+S crt0_sms.98 Def000054
+S crt0_sms.89 Def000042
+S A$crt0_sms$90 Def000045
+S A$crt0_sms$91 Def000048
+S A$crt0_sms$82 Def000038
+S A$crt0_sms$92 Def00004A
+S A$crt0_sms$85 Def00003B
+S A$crt0_sms$95 Def00004D
+S A$crt0_sms$86 Def00003E
+S A$crt0_sms$96 Def000050
+S A$crt0_sms$87 Def00003F
+S A$crt0_sms$97 Def000053
+S A$crt0_sms$88 Def000041
+S A$crt0_sms$98 Def000054
+S A$crt0_sms$89 Def000042
+S crt0_sms.100 Def000057
+S crt0_sms.101 Def000058
 A _HEADER4 size 104 flags 8 addr 66
 S _OUTI32 Def000129
 S _outi_block Def000169
 S _OUTI64 Def0000E9
+S A$crt0_sms$106 Def000066
+S A$crt0_sms$128 Def000169
 S _OUTI96 Def0000A9
+S crt0_sms.106 Def000066
+S crt0_sms.128 Def000169
 S _OUTI128 Def000069
 A _HOME size 0 flags 0 addr 0
 A _INITIALIZER size 0 flags 0 addr 0
 A _GSINIT size F flags 0 addr 0
+S A$crt0_sms$150 Def000007
+S A$crt0_sms$151 Def00000A
+S A$crt0_sms$152 Def00000D
+S A$crt0_sms$146 Def000000
+S A$crt0_sms$147 Def000003
+S A$crt0_sms$148 Def000004
+S A$crt0_sms$149 Def000005
 S crt0_gsinit Def000000
+S crt0_sms.150 Def000007
+S crt0_sms.151 Def00000A
+S crt0_sms.152 Def00000D
+S crt0_sms.146 Def000000
+S crt0_sms.147 Def000003
+S crt0_sms.148 Def000004
+S crt0_sms.149 Def000005
 A _GSFINAL size 1 flags 0 addr 0
+S A$crt0_sms$155 Def000000
+S crt0_sms.155 Def000000
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _BSEG size 0 flags 0 addr 0
@@ -70,15 +172,15 @@ R 00 00 04 00
 T 38 00 00
 R 00 00 05 00
 T 38 00 00 C3 00 00
-R 00 00 05 00 02 04 09 00
+R 00 00 05 00 02 04 08 00
 T 3B 00 00
 R 00 00 05 00
-T 3B 00 00 21 00 C0 7E 06 00 70 11 01 C0 01 FF FF
-R 00 00 05 00 02 0E 00 00
+T 3B 00 00 21 00 C0 7E 06 00 70 11 01 C0 01 EE 1E
+R 00 00 05 00
 T 48 00 00 ED B0 32 00 00 CD 00 00 CD 00 00 FB CD
-R 00 00 05 00 02 06 02 00 00 09 09 00 02 0C 05 00
+R 00 00 05 00 02 06 01 00 00 09 09 00 02 0C 04 00
 T 55 00 00 00 00
-R 00 00 05 00 02 03 01 00
+R 00 00 05 00 02 03 00 00
 T 57 00 00
 R 00 00 05 00
 T 57 00 00 76 18 FD 64 65 76 6B 69 74 53 4D 53
@@ -86,7 +188,7 @@ R 00 00 05 00
 T 66 00 00
 R 00 00 06 00
 T 66 00 00 C3 00 00
-R 00 00 06 00 02 04 04 00
+R 00 00 06 00 02 04 03 00
 T 69 00 00
 R 00 00 06 00
 T 69 00 00 ED A3 ED A3 ED A3 ED A3 ED A3 ED A3 ED
@@ -142,7 +244,7 @@ R 00 00 06 00
 T 00 00 00
 R 00 00 09 00
 T 00 00 00 01 00 00 78 B1 28 08 11 00 00 21 00 00
-R 00 00 09 00 02 04 07 00 02 0B 06 00 02 0E 08 00
+R 00 00 09 00 02 04 06 00 02 0B 05 00 02 0E 07 00
 T 0D 00 00 ED B0
 R 00 00 09 00
 T 0F 00 00
