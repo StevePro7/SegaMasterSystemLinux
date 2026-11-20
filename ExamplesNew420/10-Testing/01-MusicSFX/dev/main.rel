@@ -1,0 +1,96 @@
+;!FILE main.asm
+XL3
+H 9 areas 40 global symbols
+M main
+O -mz80
+S _engine_input_manager_update Ref000000
+S _engine_screen_manager_init Ref000000
+S _devkit_SMS_copySpritestoSAT Ref000000
+S _devkit_SMS_displayOn Ref000000
+S _devkit_SMS_init Ref000000
+S _devkit_PSGSFXFrame Ref000000
+S _engine_screen_manager_update Ref000000
+S _devkit_SMS_VDPturnOnFeature Ref000000
+S _devkit_SMS_finalizeSprites Ref000000
+S _devkit_SMS_useFirstHalfTilesforSprites Ref000000
+S _devkit_VDPFEATURE_HIDEFIRSTCOL Ref000000
+S _devkit_PSGFrame Ref000000
+S .__.ABS. Def000000
+S _devkit_SMS_setSpriteMode Ref000000
+S _devkit_SMS_displayOff Ref000000
+S _engine_content_manager_load_tiles Ref000000
+S _devkit_SPRITEMODE_NORMAL Ref000000
+S _engine_asm_manager_clear_VRAM Ref000000
+S _devkit_SMS_waitForVBlank Ref000000
+S _devkit_SMS_initSprites Ref000000
+A _CODE size 3E flags 0 addr 0
+S A$main$110 Def000020
+S A$main$102 Def00001A
+S A$main$131 Def00002F
+S A$main$123 Def000029
+S _main Def000000
+S A$main$151 Def00003B
+S A$main$115 Def000023
+S A$main$106 Def00001D
+S A$main$143 Def000038
+S C$main.c$20$3_0$171 Def000026
+S A$main$135 Def000032
+S C$main.c$21$3_0$171 Def000029
+S A$main$127 Def00002C
+S A$main$119 Def000026
+S C$main.c$23$3_0$171 Def00002C
+S C$main.c$24$3_0$171 Def00002F
+S C$main.c$10$1_0$169 Def00000F
+S A$main$139 Def000035
+S C$main.c$25$3_0$171 Def000032
+S C$main.c$11$1_0$169 Def000013
+S C$main.c$30$2_0$169 Def00003B
+S C$main.c$27$3_0$171 Def000035
+S C$main.c$13$1_0$169 Def00001A
+S C$main.c$28$3_0$171 Def000038
+S C$main.c$19$3_0$171 Def000023
+S C$main.c$14$1_0$169 Def00001D
+S XG$main$0$0 Def00003B
+S C$main.c$16$1_0$169 Def000020
+S A$main$91 Def00000F
+S A$main$82 Def000006
+S A$main$92 Def000010
+S A$main$74 Def000000
+S C$main.c$3$0_0$169 Def000000
+S A$main$86 Def000009
+S A$main$96 Def000013
+S A$main$87 Def00000C
+S A$main$78 Def000003
+S A$main$97 Def000016
+S C$main.c$5$1_0$169 Def000000
+S A$main$98 Def000017
+S C$main.c$6$1_0$169 Def000003
+S C$main.c$7$1_0$169 Def000006
+S C$main.c$9$1_0$169 Def000009
+S G$main$0$0 Def000000
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 CD 00 00 CD 00 00 CD 00 00 CD
+R 00 00 00 00 02 04 04 00 02 07 0E 00 02 0A 11 00
+T 0A 00 00 00 00 CD 00 00 AF CD 00 00 CD
+R 00 00 00 00 02 03 10 00 02 06 0D 00 02 0A 09 00
+T 14 00 00 00 00 EB CD 00 00 CD 00 00 CD
+R 00 00 00 00 02 03 0A 00 02 07 07 00 02 0A 0F 00
+T 1E 00 00 00 00 CD 00 00
+R 00 00 00 00 02 03 01 00 02 06 03 00
+T 23 00 00
+R 00 00 00 00
+T 23 00 00 CD 00 00 CD 00 00 CD 00 00 CD
+R 00 00 00 00 02 04 13 00 02 07 00 00 02 0A 06 00
+T 2D 00 00 00 00 CD 00 00 CD 00 00 CD
+R 00 00 00 00 02 03 08 00 02 06 12 00 02 09 02 00
+T 36 00 00 00 00 CD 00 00 C3 23 00
+R 00 00 00 00 02 03 0B 00 02 06 05 00 00 09 00 00

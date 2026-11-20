@@ -1,0 +1,266 @@
+;!FILE input_manager.asm
+XL3
+H 9 areas A4 global symbols
+M input_manager
+O -mz80
+S _devkit_PORT_A_KEY_1 Ref000000
+S _devkit_PORT_A_KEY_2 Ref000000
+S _devkit_PORT_A_KEY_DOWN Ref000000
+S _devkit_PORT_A_KEY_RIGHT Ref000000
+S .__.ABS. Def000000
+S _devkit_PORT_A_KEY_UP Ref000000
+S _devkit_SMS_getKeysStatus Ref000000
+S _devkit_PORT_A_KEY_LEFT Ref000000
+A _CODE size 85 flags 0 addr 0
+S _engine_input_manager_update Def000000
+S Finput_manager$engine_input_manager_hold$0$0 Def000062
+S XG$engine_input_manager_move_up$0$0 Def00003C
+S C$input_manager.c$20$1_0$121 Def00000E
+S C$input_manager.c$13$0_0$120 Def000000
+S C$input_manager.c$22$1_0$121 Def00000E
+S A$input_manager$130 Def000018
+S C$input_manager.c$30$1_0$123 Def00001C
+S XG$engine_input_manager_hold_down$0$0 Def000019
+S C$input_manager.c$23$1_0$121 Def000012
+S C$input_manager.c$15$1_0$120 Def000000
+S C$input_manager.c$60$1_0$130 Def00004D
+S C$input_manager.c$31$1_0$123 Def000020
+S C$input_manager.c$16$1_0$120 Def000006
+S A$input_manager$420 Def000084
+S A$input_manager$411 Def000080
+S A$input_manager$240 Def00003B
+S A$input_manager$204 Def00002E
+S C$input_manager.c$61$1_0$130 Def000051
+S C$input_manager.c$24$1_0$122 Def000015
+S C$input_manager.c$17$1_0$120 Def00000D
+S A$input_manager$412 Def000083
+S A$input_manager$160 Def000020
+S A$input_manager$151 Def00001C
+S XG$engine_input_manager_move_left$0$0 Def00004A
+S C$input_manager.c$32$1_0$124 Def000023
+S A$input_manager$350 Def00005E
+S A$input_manager$314 Def000051
+S A$input_manager$305 Def00004D
+S A$input_manager$152 Def00001F
+S A$input_manager$116 Def000012
+S A$input_manager$107 Def00000E
+S C$input_manager.c$62$1_0$131 Def000054
+S C$input_manager.c$40$1_0$126 Def000031
+S C$input_manager.c$26$1_0$122 Def000015
+S _engine_input_manager_move_down Def00003F
+S A$input_manager$306 Def000050
+S A$input_manager$270 Def000043
+S A$input_manager$261 Def00003F
+S A$input_manager$108 Def000011
+S C$input_manager.c$34$1_0$124 Def000023
+S C$input_manager.c$27$1_0$122 Def000019
+S XG$engine_input_manager_update$0$0 Def00000D
+S A$input_manager$262 Def000042
+S A$input_manager$226 Def000035
+S A$input_manager$217 Def000031
+S C$input_manager.c$64$1_0$131 Def000054
+S C$input_manager.c$42$1_0$126 Def000031
+S C$input_manager.c$35$1_0$124 Def000027
+S A$input_manager$380 Def000072
+S A$input_manager$218 Def000034
+S A$input_manager$182 Def000027
+S A$input_manager$173 Def000023
+S C$input_manager.c$65$1_0$131 Def000058
+S C$input_manager.c$50$1_0$128 Def00003F
+S C$input_manager.c$43$1_0$126 Def000035
+S G$engine_input_manager_hold_fire1$0$0 Def00002A
+S C$input_manager.c$28$1_0$123 Def00001C
+S A$input_manager$390 Def00007D
+S A$input_manager$381 Def000073
+S A$input_manager$372 Def000063
+S A$input_manager$336 Def000058
+S A$input_manager$327 Def000054
+S A$input_manager$174 Def000026
+S A$input_manager$138 Def000019
+S A$input_manager$129 Def000015
+S C$input_manager.c$72$1_0$134 Def000062
+S C$input_manager.c$58$1_0$130 Def00004D
+S G$engine_input_manager_hold_fire2$0$0 Def000031
+S C$input_manager.c$36$1_0$125 Def00002A
+S A$input_manager$382 Def000074
+S A$input_manager$373 Def000066
+S A$input_manager$328 Def000057
+S A$input_manager$292 Def00004A
+S A$input_manager$283 Def000046
+S C$input_manager.c$66$1_0$132 Def00005B
+S C$input_manager.c$52$1_0$128 Def00003F
+S A$input_manager$383 Def000077
+S A$input_manager$374 Def000067
+S A$input_manager$284 Def000049
+S A$input_manager$248 Def00003C
+S A$input_manager$239 Def000038
+S Finput_manager$engine_input_manager_move$0$0 Def000080
+S C$input_manager.c$74$1_0$134 Def000063
+S C$input_manager.c$53$1_0$128 Def000043
+S C$input_manager.c$38$1_0$125 Def00002A
+S A$input_manager$384 Def000078
+S A$input_manager$375 Def000068
+S A$input_manager$195 Def00002A
+S C$input_manager.c$75$1_0$134 Def00007F
+S C$input_manager.c$68$1_0$132 Def00005B
+S C$input_manager.c$46$1_0$127 Def000038
+S C$input_manager.c$39$1_0$125 Def00002E
+S A$input_manager$385 Def000079
+S A$input_manager$376 Def00006B
+S A$input_manager$358 Def00005F
+S A$input_manager$349 Def00005B
+S A$input_manager$196 Def00002D
+S C$input_manager.c$69$1_0$132 Def00005F
+S C$input_manager.c$54$1_0$129 Def000046
+S A$input_manager$377 Def00006C
+S A$input_manager$368 Def000062
+S C$input_manager.c$48$1_0$127 Def000038
+S A$input_manager$387 Def00007B
+S A$input_manager$378 Def00006D
+S C$input_manager.c$76$1_0$136 Def000080
+S C$input_manager.c$56$1_0$129 Def000046
+S C$input_manager.c$49$1_0$127 Def00003C
+S G$engine_input_manager_hold_right$0$0 Def000023
+S A$input_manager$388 Def00007C
+S A$input_manager$379 Def00006F
+S C$input_manager.c$57$1_0$129 Def00004A
+S A$input_manager$398 Def00007F
+S C$input_manager.c$78$1_0$136 Def000080
+S XG$engine_input_manager_move_down$0$0 Def000043
+S C$input_manager.c$79$1_0$136 Def000084
+S XFinput_manager$engine_input_manager_hold$0$0 Def00007F
+S _engine_input_manager_hold_fire1 Def00002A
+S A$input_manager$80 Def000000
+S _engine_input_manager_hold_fire2 Def000031
+S A$input_manager$81 Def000003
+S G$engine_input_manager_hold_up$0$0 Def00000E
+S G$engine_input_manager_move_fire1$0$0 Def000054
+S G$engine_input_manager_move_fire2$0$0 Def00005B
+S A$input_manager$94 Def00000D
+S A$input_manager$85 Def000006
+S A$input_manager$86 Def000009
+S _engine_input_manager_hold_right Def000023
+S G$engine_input_manager_hold_left$0$0 Def00001C
+S G$engine_input_manager_move_right$0$0 Def00004D
+S XG$engine_input_manager_hold_fire1$0$0 Def00002E
+S XG$engine_input_manager_hold_fire2$0$0 Def000035
+S _engine_input_manager_hold_up Def00000E
+S XFinput_manager$engine_input_manager_move$0$0 Def000084
+S _engine_input_manager_move_fire1 Def000054
+S _engine_input_manager_move_fire2 Def00005B
+S G$engine_input_manager_move_up$0$0 Def000038
+S XG$engine_input_manager_hold_right$0$0 Def000027
+S _engine_input_manager_hold_left Def00001C
+S G$engine_input_manager_hold_down$0$0 Def000015
+S _engine_input_manager_move_right Def00004D
+S G$engine_input_manager_move_left$0$0 Def000046
+S XG$engine_input_manager_hold_up$0$0 Def000012
+S G$engine_input_manager_update$0$0 Def000000
+S XG$engine_input_manager_move_fire1$0$0 Def000058
+S XG$engine_input_manager_move_fire2$0$0 Def00005F
+S _engine_input_manager_move_up Def000038
+S XG$engine_input_manager_hold_left$0$0 Def000020
+S _engine_input_manager_hold_down Def000015
+S XG$engine_input_manager_move_right$0$0 Def000051
+S _engine_input_manager_move_left Def000046
+S G$engine_input_manager_move_down$0$0 Def00003F
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 4 flags 0 addr 0
+S Finput_manager$curr_joypad1$0_0$0 Def000000
+S Finput_manager$prev_joypad1$0_0$0 Def000002
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 4 flags 0 addr 0
+S Finput_manager$__xinit_curr_joypad1$0_0$0 Def000000
+S Finput_manager$__xinit_prev_joypad1$0_0$0 Def000002
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 02 00
+T 00 00 00
+R 00 00 02 00
+T 02 00 00
+R 00 00 02 00
+T 02 00 00
+R 00 00 02 00
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 2A 00 00 22 02 00 CD 00 00 ED 53
+R 00 00 00 00 00 04 02 00 00 07 02 00 02 0A 06 00
+T 0B 00 00 00 00 C9
+R 00 00 00 00 00 03 02 00
+T 0E 00 00
+R 00 00 00 00
+T 0E 00 00 CD 00 00 EB C3 62 00
+R 00 00 00 00 02 04 05 00 00 08 00 00
+T 15 00 00
+R 00 00 00 00
+T 15 00 00 CD 00 00 EB C3 62 00
+R 00 00 00 00 02 04 02 00 00 08 00 00
+T 1C 00 00
+R 00 00 00 00
+T 1C 00 00 CD 00 00 EB C3 62 00
+R 00 00 00 00 02 04 07 00 00 08 00 00
+T 23 00 00
+R 00 00 00 00
+T 23 00 00 CD 00 00 EB C3 62 00
+R 00 00 00 00 02 04 03 00 00 08 00 00
+T 2A 00 00
+R 00 00 00 00
+T 2A 00 00 CD 00 00 EB C3 62 00
+R 00 00 00 00 02 04 00 00 00 08 00 00
+T 31 00 00
+R 00 00 00 00
+T 31 00 00 CD 00 00 EB C3 62 00
+R 00 00 00 00 02 04 01 00 00 08 00 00
+T 38 00 00
+R 00 00 00 00
+T 38 00 00 CD 00 00 EB C3 80 00
+R 00 00 00 00 02 04 05 00 00 08 00 00
+T 3F 00 00
+R 00 00 00 00
+T 3F 00 00 CD 00 00 EB C3 80 00
+R 00 00 00 00 02 04 02 00 00 08 00 00
+T 46 00 00
+R 00 00 00 00
+T 46 00 00 CD 00 00 EB C3 80 00
+R 00 00 00 00 02 04 07 00 00 08 00 00
+T 4D 00 00
+R 00 00 00 00
+T 4D 00 00 CD 00 00 EB C3 80 00
+R 00 00 00 00 02 04 03 00 00 08 00 00
+T 54 00 00
+R 00 00 00 00
+T 54 00 00 CD 00 00 EB C3 80 00
+R 00 00 00 00 02 04 00 00 00 08 00 00
+T 5B 00 00
+R 00 00 00 00
+T 5B 00 00 CD 00 00 EB C3 80 00
+R 00 00 00 00 02 04 01 00 00 08 00 00
+T 62 00 00
+R 00 00 00 00
+T 62 00 00 EB 3A 00 00 A3 4F 3A 01 00 A2 B1 28 0C
+R 00 00 00 00 00 05 02 00 00 0A 02 00
+T 6F 00 00 3A 02 00 A3 4F 3A 03 00 A2 B1 28 02
+R 00 00 00 00 00 04 02 00 00 09 02 00
+T 7B 00 00
+R 00 00 00 00
+T 7B 00 00 AF C9
+R 00 00 00 00
+T 7D 00 00
+R 00 00 00 00
+T 7D 00 00 3E 01 C9
+R 00 00 00 00
+T 80 00 00
+R 00 00 00 00
+T 80 00 00 3A 00 00 A5 C9
+R 00 00 00 00 00 04 02 00
+T 00 00 00
+R 00 00 07 00
+T 00 00 00 00 00
+R 00 00 07 00
+T 02 00 00
+R 00 00 07 00
+T 02 00 00 00 00
+R 00 00 07 00
