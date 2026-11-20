@@ -17,6 +17,7 @@
 #define ORIG_FRAME_READY     ORIG_BYTE(0xc001)
 #define ORIG_PAD_DETECT      ORIG_BYTE(0xc002)
 #define ORIG_FRAME_COUNTER   ORIG_BYTE(0xc00c)
+#define ORIG_SECRET_FLAGS    ORIG_BYTE(0xc100)
 #define ORIG_SAT_FLAGS       ORIG_BYTE(0xc181)  /* bit7: sprite buffers ready for upload */
 #define ORIG_SCROLL_X_BOTTOM ORIG_BYTE(0xc145)
 #define ORIG_SCROLL_X_TOP    ORIG_BYTE(0xc14f)

@@ -129,6 +129,7 @@ void screen_game_screen_load( void )
 	ORIG_FRAME_COUNTER = 0;
 	ORIG_PAD_DETECT = 0xff;
 	ORIG_MODE_FLAGS = 0x50;
+	ORIG_SECRET_FLAGS = 0x0f;
 
 	/* The original performs screen and object initialization with interrupts disabled. */
 #ifdef _CONSOLE

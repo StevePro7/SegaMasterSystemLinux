@@ -1,6 +1,6 @@
 ;!FILE game_screen.asm
 XL3
-H 9 areas 120 global symbols
+H 9 areas 123 global symbols
 M game_screen
 O -mz80
 S _orig_map_trigger Ref000000
@@ -41,63 +41,63 @@ S _orig_timer_update Ref000000
 S _SMS_setFrameInterruptHandler Ref000000
 S _engine_content_manager_load_boot_tiles Ref000000
 S _orig_screen_setup Ref000000
-A _CODE size 15E flags 0 addr 0
-S XG$screen_game_screen_load$0$0 Def00013F
+A _CODE size 162 flags 0 addr 0
+S XG$screen_game_screen_load$0$0 Def000143
 S C$game_screen.c$120$1_0$152 Def0000D6
 S C$game_screen.c$111$1_0$152 Def0000B5
 S C$game_screen.c$130$1_0$152 Def000108
-S C$game_screen.c$140$1_0$152 Def000111
 S C$game_screen.c$131$1_0$152 Def00010C
 S C$game_screen.c$113$1_0$152 Def0000B5
-S C$game_screen.c$150$1_0$152 Def000124
-S C$game_screen.c$141$1_0$152 Def000114
+S C$game_screen.c$141$1_0$152 Def000115
+S C$game_screen.c$132$1_0$152 Def000110
 S C$game_screen.c$123$1_0$152 Def0000D9
 S C$game_screen.c$100$1_0$148 Def00009D
 S Fgame_screen$vram_write$0$0 Def000000
-S C$game_screen.c$142$1_0$152 Def000117
+S C$game_screen.c$160$1_0$152 Def000143
+S C$game_screen.c$151$1_0$152 Def000128
+S C$game_screen.c$142$1_0$152 Def000118
 S C$game_screen.c$124$1_0$152 Def0000DF
-S G$screen_game_screen_update$0$0 Def000142
+S G$screen_game_screen_update$0$0 Def000146
+S C$game_screen.c$143$1_0$152 Def00011B
 S C$game_screen.c$116$1_0$152 Def0000BB
-S C$game_screen.c$153$1_0$152 Def000125
-S C$game_screen.c$144$1_0$152 Def00011C
 S C$game_screen.c$126$1_0$152 Def0000E5
 S C$game_screen.c$117$1_0$152 Def0000C6
-S C$game_screen.c$161$1_0$154 Def000142
-S C$game_screen.c$154$1_0$152 Def00012A
+S C$game_screen.c$154$1_0$152 Def000129
 S C$game_screen.c$145$1_0$152 Def000120
 S C$game_screen.c$127$1_0$152 Def0000F2
 S C$game_screen.c$118$1_0$152 Def0000CC
 S C$game_screen.c$102$2_0$149 Def0000A2
-S C$game_screen.c$180$1_0$154 Def00015B
+S C$game_screen.c$180$1_0$154 Def00015C
+S C$game_screen.c$162$1_0$154 Def000146
+S C$game_screen.c$155$1_0$152 Def00012E
+S C$game_screen.c$146$1_0$152 Def000124
 S C$game_screen.c$128$1_0$152 Def0000FF
 S C$game_screen.c$119$1_0$152 Def0000D1
 S XFgame_screen$game_line_interrupt$0$0 Def0000B4
 S C$game_screen.c$105$1_0$148 Def0000A2
-S C$game_screen.c$163$1_0$154 Def000142
-S C$game_screen.c$156$1_0$152 Def000130
-S C$game_screen.c$138$1_0$152 Def000110
+S C$game_screen.c$181$1_0$154 Def00015F
 S C$game_screen.c$129$1_0$152 Def000104
 S C$game_screen.c$106$1_0$148 Def0000AC
-S C$game_screen.c$157$1_0$152 Def000136
+S C$game_screen.c$164$1_0$154 Def000146
+S C$game_screen.c$157$1_0$152 Def000134
+S C$game_screen.c$139$1_0$152 Def000114
 S C$game_screen.c$107$1_0$148 Def0000B0
 S A$game_screen$100 Def000000
-S C$game_screen.c$158$1_0$152 Def00013C
+S C$game_screen.c$158$1_0$152 Def00013A
 S C$game_screen.c$108$1_0$148 Def0000B4
 S A$game_screen$101 Def000001
-S C$game_screen.c$175$1_0$154 Def00014C
-S C$game_screen.c$159$1_0$152 Def00013F
+S C$game_screen.c$159$1_0$152 Def000140
 S A$game_screen$210 Def000053
 S A$game_screen$120 Def000015
 S A$game_screen$111 Def000008
-S C$game_screen.c$176$1_0$154 Def00014F
-S C$game_screen.c$165$2_0$155 Def000146
+S C$game_screen.c$176$1_0$154 Def000150
 S A$game_screen$310 Def0000A2
 S A$game_screen$220 Def00005B
 S A$game_screen$211 Def000056
 S A$game_screen$121 Def000017
 S A$game_screen$112 Def00000C
-S C$game_screen.c$177$1_0$154 Def000152
-S C$game_screen.c$168$1_0$154 Def000147
+S C$game_screen.c$177$1_0$154 Def000153
+S C$game_screen.c$166$2_0$155 Def00014A
 S C$game_screen.c$40$1_0$140 Def000020
 S A$game_screen$401 Def0000F2
 S A$game_screen$311 Def0000A3
@@ -105,8 +105,8 @@ S A$game_screen$302 Def00009D
 S A$game_screen$221 Def00005C
 S A$game_screen$203 Def00004C
 S A$game_screen$113 Def00000E
-S C$game_screen.c$187$1_0$154 Def00015B
-S C$game_screen.c$178$1_0$154 Def000155
+S C$game_screen.c$178$1_0$154 Def000156
+S C$game_screen.c$169$1_0$154 Def00014B
 S A$game_screen$510 Def000146
 S A$game_screen$411 Def0000FF
 S A$game_screen$402 Def0000F5
@@ -117,7 +117,10 @@ S A$game_screen$150 Def000023
 S A$game_screen$132 Def00001D
 S A$game_screen$114 Def000011
 S A$game_screen$105 Def000003
-S C$game_screen.c$179$1_0$154 Def000158
+S C$game_screen.c$188$1_0$154 Def00015F
+S C$game_screen.c$179$1_0$154 Def000159
+S A$game_screen$520 Def00014E
+S A$game_screen$511 Def000149
 S A$game_screen$421 Def000108
 S A$game_screen$412 Def000102
 S A$game_screen$403 Def0000F7
@@ -129,7 +132,8 @@ S A$game_screen$151 Def000024
 S A$game_screen$133 Def00001E
 S A$game_screen$106 Def000004
 S C$game_screen.c$61$1_0$140 Def000020
-S _screen_game_screen_update Def000142
+S _screen_game_screen_update Def000146
+S A$game_screen$440 Def000115
 S A$game_screen$431 Def000110
 S A$game_screen$422 Def00010A
 S A$game_screen$404 Def0000F8
@@ -147,7 +151,8 @@ S A$game_screen$125 Def000018
 S A$game_screen$107 Def000006
 S C$game_screen.c$62$1_0$140 Def000034
 S C$game_screen.c$21$0_0$137 Def000000
-S A$game_screen$531 Def000155
+S A$game_screen$540 Def00015C
+S A$game_screen$432 Def000112
 S A$game_screen$405 Def0000F9
 S A$game_screen$351 Def0000BE
 S A$game_screen$324 Def0000B2
@@ -160,9 +165,7 @@ S A$game_screen$162 Def000031
 S A$game_screen$153 Def000026
 S A$game_screen$126 Def000019
 S Fgame_screen$game_frame_interrupt$0$0 Def000020
-S A$game_screen$523 Def00014F
-S A$game_screen$514 Def000147
-S A$game_screen$505 Def000142
+S A$game_screen$532 Def000156
 S A$game_screen$406 Def0000FA
 S A$game_screen$370 Def0000D1
 S A$game_screen$352 Def0000BF
@@ -175,10 +178,10 @@ S A$game_screen$127 Def00001A
 S C$game_screen.c$80$1_0$142 Def000058
 S C$game_screen.c$71$1_0$142 Def000045
 S Fgame_screen$game_frame_body$0$0 Def000034
+S A$game_screen$551 Def00015F
+S A$game_screen$524 Def000150
 S A$game_screen$515 Def00014A
-S A$game_screen$506 Def000145
-S A$game_screen$470 Def00012D
-S A$game_screen$443 Def000117
+S A$game_screen$470 Def00012B
 S A$game_screen$416 Def000104
 S A$game_screen$407 Def0000FD
 S A$game_screen$353 Def0000C2
@@ -193,11 +196,9 @@ S A$game_screen$128 Def00001B
 S A$game_screen$119 Def000014
 S C$game_screen.c$90$1_0$142 Def00008B
 S C$game_screen.c$23$1_0$137 Def000000
-S A$game_screen$480 Def000139
-S A$game_screen$462 Def000125
+S A$game_screen$480 Def000137
 S A$game_screen$453 Def000120
-S A$game_screen$444 Def00011A
-S A$game_screen$435 Def000111
+S A$game_screen$444 Def000118
 S A$game_screen$426 Def00010C
 S A$game_screen$417 Def000106
 S A$game_screen$381 Def0000D9
@@ -214,8 +215,9 @@ S A$game_screen$183 Def00003B
 S A$game_screen$156 Def00002B
 S C$game_screen.c$91$1_0$142 Def00008E
 S C$game_screen.c$24$1_0$137 Def000003
-S A$game_screen$535 Def000158
+S A$game_screen$463 Def000128
 S A$game_screen$454 Def000122
+S A$game_screen$436 Def000114
 S A$game_screen$427 Def00010E
 S A$game_screen$391 Def0000E5
 S A$game_screen$382 Def0000DC
@@ -230,27 +232,24 @@ S A$game_screen$148 Def000021
 S C$game_screen.c$92$1_0$142 Def000091
 S C$game_screen.c$65$1_0$142 Def000034
 S C$game_screen.c$25$1_0$137 Def000008
-S A$game_screen$527 Def000152
+S A$game_screen$536 Def000159
 S A$game_screen$392 Def0000E8
 S A$game_screen$248 Def00007F
 S A$game_screen$158 Def00002D
 S C$game_screen.c$93$1_0$142 Def000094
 S C$game_screen.c$75$1_0$142 Def000053
-S A$game_screen$546 Def00015B
-S A$game_screen$519 Def00014C
-S A$game_screen$492 Def00013F
-S A$game_screen$474 Def000130
-S A$game_screen$465 Def000127
+S A$game_screen$528 Def000153
+S A$game_screen$519 Def00014B
+S A$game_screen$474 Def00012E
 S A$game_screen$393 Def0000EA
 S A$game_screen$366 Def0000CE
 S A$game_screen$276 Def000094
 S A$game_screen$159 Def00002E
 S C$game_screen.c$94$1_0$142 Def000097
 S C$game_screen.c$73$2_0$144 Def00004C
-S A$game_screen$484 Def00013C
-S A$game_screen$475 Def000133
-S A$game_screen$448 Def00011C
-S A$game_screen$439 Def000114
+S A$game_screen$484 Def00013A
+S A$game_screen$475 Def000131
+S A$game_screen$448 Def00011B
 S A$game_screen$394 Def0000EB
 S A$game_screen$358 Def0000C6
 S A$game_screen$268 Def00008E
@@ -259,6 +258,8 @@ S C$game_screen.c$95$1_0$142 Def00009C
 S C$game_screen.c$86$1_0$142 Def00007F
 S C$game_screen.c$68$1_0$142 Def00003D
 S C$game_screen.c$28$1_0$137 Def000018
+S A$game_screen$485 Def00013D
+S A$game_screen$467 Def000129
 S A$game_screen$458 Def000124
 S A$game_screen$449 Def00011E
 S A$game_screen$395 Def0000EC
@@ -273,20 +274,22 @@ S C$game_screen.c$69$1_0$142 Def000041
 S C$game_screen.c$67$2_0$143 Def000034
 S C$game_screen.c$29$1_0$137 Def00001D
 S C$game_screen.c$27$2_0$138 Def000014
+S A$game_screen$459 Def000126
 S A$game_screen$396 Def0000ED
 S A$game_screen$387 Def0000E2
 S A$game_screen$198 Def000048
 S C$game_screen.c$88$1_0$142 Def000085
 S C$game_screen.c$83$2_0$146 Def00006B
-S A$game_screen$469 Def00012A
 S A$game_screen$397 Def0000F0
 S A$game_screen$289 Def00009C
 S A$game_screen$199 Def00004A
-S XG$screen_game_screen_update$0$0 Def00015B
+S XG$screen_game_screen_update$0$0 Def00015F
 S C$game_screen.c$89$1_0$142 Def000088
 S C$game_screen.c$84$2_0$146 Def000077
-S A$game_screen$479 Def000136
+S A$game_screen$497 Def000143
+S A$game_screen$479 Def000134
 S C$game_screen.c$77$2_0$145 Def000057
+S A$game_screen$489 Def000140
 S G$screen_game_screen_load$0$0 Def0000B5
 S C$game_screen.c$98$1_0$148 Def00009D
 S XFgame_screen$game_frame_body$0$0 Def00009C
@@ -364,21 +367,21 @@ T F6 00 00 00 5D 54 13 01 01 0F ED B0 21 01 C0 36
 R 00 00 00 00
 T 03 01 00 00 2E 0C 36 00 2E 02 36 FF 2E 00 36 50
 R 00 00 00 00
-T 10 01 00 F3 CD 00 00 CD 00 00 21 6E C1 36 01 3E
-R 00 00 00 00 02 05 25 00 02 08 0C 00
-T 1D 01 00 FB D3 BF 3E 86 D3 BF FB 2E 7F CD 00 00
-R 00 00 00 00 02 0E 1C 00
-T 2A 01 00 21 20 00 CD 00 00 21 9D 00 CD
-R 00 00 00 00 00 04 00 00 02 07 23 00 00 0A 00 00
-T 34 01 00 00 00 21 10 00 CD 00 00 21 40 01 C3
-R 00 00 00 00 02 03 0D 00 02 09 20 00
-T 40 01 00 00 00
-R 00 00 00 00 02 03 20 00
-T 42 01 00
+T 10 01 00 26 C1 36 0F F3 CD 00 00 CD 00 00 21
+R 00 00 00 00 02 09 25 00 02 0C 0C 00
+T 1C 01 00 6E C1 36 01 3E FB D3 BF 3E 86 D3 BF FB
 R 00 00 00 00
-T 42 01 00 3A 01 C0 B7 C8 21 01 C0 36 00 CD 00 00
+T 29 01 00 2E 7F CD 00 00 21 20 00 CD 00 00 21
+R 00 00 00 00 02 06 1C 00 00 09 00 00 02 0C 23 00
+T 35 01 00 9D 00 CD 00 00 21 10 00 CD 00 00 21
+R 00 00 00 00 00 03 00 00 02 06 0D 00 02 0C 20 00
+T 41 01 00 40 01 C3 00 00
+R 00 00 00 00 02 06 20 00
+T 46 01 00
+R 00 00 00 00
+T 46 01 00 3A 01 C0 B7 C8 21 01 C0 36 00 CD 00 00
 R 00 00 00 00 02 0E 03 00
-T 4F 01 00 CD 00 00 CD 00 00 CD 00 00 CD
+T 53 01 00 CD 00 00 CD 00 00 CD 00 00 CD
 R 00 00 00 00 02 04 1E 00 02 07 08 00 02 0A 00 00
-T 59 01 00 00 00 C3 00 00
+T 5D 01 00 00 00 C3 00 00
 R 00 00 00 00 02 03 06 00 02 06 16 00
