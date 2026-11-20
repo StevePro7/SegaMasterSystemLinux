@@ -1,0 +1,148 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 4.2.0 #13081 (MINGW64)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module title_screen
+                                      6 	.optsdcc -mz80
+                                      7 	
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl _SMS_VRAMmemsetW
+                                     12 	.globl _SMS_copySpritestoSAT
+                                     13 	.globl _SMS_initSprites
+                                     14 	.globl _SMS_setBGScrollY
+                                     15 	.globl _SMS_setBGScrollX
+                                     16 	.globl _SMS_VDPturnOffFeature
+                                     17 	.globl _SMS_VDPturnOnFeature
+                                     18 	.globl _engine_content_manager_load_title
+                                     19 	.globl _engine_content_manager_load_boot_tiles
+                                     20 	.globl _SMS_SRAM
+                                     21 	.globl _SRAM_bank_to_be_mapped_on_slot2
+                                     22 	.globl _ROM_bank_to_be_mapped_on_slot0
+                                     23 	.globl _ROM_bank_to_be_mapped_on_slot1
+                                     24 	.globl _ROM_bank_to_be_mapped_on_slot2
+                                     25 	.globl _screen_title_screen_load
+                                     26 ;--------------------------------------------------------
+                                     27 ; special function registers
+                                     28 ;--------------------------------------------------------
+                           0000BF    29 G$SMS_VDPControlPort$0_0$0 == 0x00bf
+                           0000BF    30 _SMS_VDPControlPort	=	0x00bf
+                                     31 ;--------------------------------------------------------
+                                     32 ; ram data
+                                     33 ;--------------------------------------------------------
+                                     34 	.area _DATA
+                           00FFFF    35 G$ROM_bank_to_be_mapped_on_slot2$0_0$0 == 0xffff
+                           00FFFF    36 _ROM_bank_to_be_mapped_on_slot2	=	0xffff
+                           00FFFE    37 G$ROM_bank_to_be_mapped_on_slot1$0_0$0 == 0xfffe
+                           00FFFE    38 _ROM_bank_to_be_mapped_on_slot1	=	0xfffe
+                           00FFFD    39 G$ROM_bank_to_be_mapped_on_slot0$0_0$0 == 0xfffd
+                           00FFFD    40 _ROM_bank_to_be_mapped_on_slot0	=	0xfffd
+                           00FFFC    41 G$SRAM_bank_to_be_mapped_on_slot2$0_0$0 == 0xfffc
+                           00FFFC    42 _SRAM_bank_to_be_mapped_on_slot2	=	0xfffc
+                           008000    43 G$SMS_SRAM$0_0$0 == 0x8000
+                           008000    44 _SMS_SRAM	=	0x8000
+                                     45 ;--------------------------------------------------------
+                                     46 ; ram data
+                                     47 ;--------------------------------------------------------
+                                     48 	.area _INITIALIZED
+                                     49 ;--------------------------------------------------------
+                                     50 ; absolute external ram data
+                                     51 ;--------------------------------------------------------
+                                     52 	.area _DABS (ABS)
+                                     53 ;--------------------------------------------------------
+                                     54 ; global & static initialisations
+                                     55 ;--------------------------------------------------------
+                                     56 	.area _HOME
+                                     57 	.area _GSINIT
+                                     58 	.area _GSFINAL
+                                     59 	.area _GSINIT
+                                     60 ;--------------------------------------------------------
+                                     61 ; Home
+                                     62 ;--------------------------------------------------------
+                                     63 	.area _HOME
+                                     64 	.area _HOME
+                                     65 ;--------------------------------------------------------
+                                     66 ; code
+                                     67 ;--------------------------------------------------------
+                                     68 	.area _CODE
+                           000000    69 	G$screen_title_screen_load$0$0	= .
+                                     70 	.globl	G$screen_title_screen_load$0$0
+                           000000    71 	C$title_screen.c$5$0_0$93	= .
+                                     72 	.globl	C$title_screen.c$5$0_0$93
+                                     73 ;screen/title_screen.c:5: void screen_title_screen_load( void )
+                                     74 ;	---------------------------------
+                                     75 ; Function screen_title_screen_load
+                                     76 ; ---------------------------------
+      000000                         77 _screen_title_screen_load::
+                           000000    78 	C$title_screen.c$7$1_0$93	= .
+                                     79 	.globl	C$title_screen.c$7$1_0$93
+                                     80 ;screen/title_screen.c:7: SMS_displayOff();
+      000000 21 40 01         [10]   81 	ld	hl, #0x0140
+      000003 CDr00r00         [17]   82 	call	_SMS_VDPturnOffFeature
+                           000006    83 	C$title_screen.c$8$1_0$93	= .
+                                     84 	.globl	C$title_screen.c$8$1_0$93
+                                     85 ;screen/title_screen.c:8: SMS_VRAMmemsetW( 0, 0, 0x4000 );
+      000006 21 00 40         [10]   86 	ld	hl, #0x4000
+      000009 E5               [11]   87 	push	hl
+      00000A 11 00 00         [10]   88 	ld	de, #0x0000
+      00000D 65               [ 4]   89 	ld	h, l
+      00000E CDr00r00         [17]   90 	call	_SMS_VRAMmemsetW
+                           000011    91 	C$title_screen.c$9$1_0$93	= .
+                                     92 	.globl	C$title_screen.c$9$1_0$93
+                                     93 ;screen/title_screen.c:9: SMS_VDPturnOnFeature( VDPFEATURE_LEFTCOLBLANK | VDPFEATURE_LOCKHSCROLL );
+      000011 21 60 00         [10]   94 	ld	hl, #0x0060
+      000014 CDr00r00         [17]   95 	call	_SMS_VDPturnOnFeature
+                           000017    96 	C$title_screen.c$10$1_0$93	= .
+                                     97 	.globl	C$title_screen.c$10$1_0$93
+                                     98 ;screen/title_screen.c:10: SMS_setBGScrollX( 0 );
+      000017 2E 00            [ 7]   99 	ld	l, #0x00
+                                    100 ;	spillPairReg hl
+                                    101 ;	spillPairReg hl
+      000019 CDr00r00         [17]  102 	call	_SMS_setBGScrollX
+                           00001C   103 	C$title_screen.c$11$1_0$93	= .
+                                    104 	.globl	C$title_screen.c$11$1_0$93
+                                    105 ;screen/title_screen.c:11: SMS_setBGScrollY( 0 );
+      00001C 2E 00            [ 7]  106 	ld	l, #0x00
+                                    107 ;	spillPairReg hl
+                                    108 ;	spillPairReg hl
+      00001E CDr00r00         [17]  109 	call	_SMS_setBGScrollY
+                           000021   110 	C$title_screen.c$12$1_0$93	= .
+                                    111 	.globl	C$title_screen.c$12$1_0$93
+                                    112 ;screen/title_screen.c:12: engine_content_manager_load_boot_tiles();
+      000021 CDr00r00         [17]  113 	call	_engine_content_manager_load_boot_tiles
+                           000024   114 	C$title_screen.c$14$1_0$93	= .
+                                    115 	.globl	C$title_screen.c$14$1_0$93
+                                    116 ;screen/title_screen.c:14: SMS_VRAMmemsetW( 0x3800, 0x1100, 0x0700 );
+      000024 21 00 07         [10]  117 	ld	hl, #0x0700
+      000027 E5               [11]  118 	push	hl
+      000028 11 00 11         [10]  119 	ld	de, #0x1100
+      00002B 26 38            [ 7]  120 	ld	h, #0x38
+      00002D CDr00r00         [17]  121 	call	_SMS_VRAMmemsetW
+                           000030   122 	C$title_screen.c$15$1_0$93	= .
+                                    123 	.globl	C$title_screen.c$15$1_0$93
+                                    124 ;screen/title_screen.c:15: SMS_initSprites();
+      000030 CDr00r00         [17]  125 	call	_SMS_initSprites
+                           000033   126 	C$title_screen.c$16$1_0$93	= .
+                                    127 	.globl	C$title_screen.c$16$1_0$93
+                                    128 ;screen/title_screen.c:16: SMS_copySpritestoSAT();
+      000033 CDr00r00         [17]  129 	call	_SMS_copySpritestoSAT
+                           000036   130 	C$title_screen.c$17$1_0$93	= .
+                                    131 	.globl	C$title_screen.c$17$1_0$93
+                                    132 ;screen/title_screen.c:17: engine_content_manager_load_title();
+      000036 CDr00r00         [17]  133 	call	_engine_content_manager_load_title
+                           000039   134 	C$title_screen.c$18$1_0$93	= .
+                                    135 	.globl	C$title_screen.c$18$1_0$93
+                                    136 ;screen/title_screen.c:18: SMS_displayOn();
+      000039 21 40 01         [10]  137 	ld	hl, #0x0140
+                           00003C   138 	C$title_screen.c$19$1_0$93	= .
+                                    139 	.globl	C$title_screen.c$19$1_0$93
+                                    140 ;screen/title_screen.c:19: }
+                           00003C   141 	C$title_screen.c$19$1_0$93	= .
+                                    142 	.globl	C$title_screen.c$19$1_0$93
+                           00003C   143 	XG$screen_title_screen_load$0$0	= .
+                                    144 	.globl	XG$screen_title_screen_load$0$0
+      00003C C3r00r00         [10]  145 	jp	_SMS_VDPturnOnFeature
+                                    146 	.area _CODE
+                                    147 	.area _INITIALIZER
+                                    148 	.area _CABS (ABS)

@@ -1,0 +1,87 @@
+;!FILE screen/title_screen.asm
+XL3
+H 9 areas 3D global symbols
+M title_screen
+O -mz80
+S _SMS_VRAMmemsetW Ref000000
+S _SMS_VDPturnOffFeature Ref000000
+S _SMS_setBGScrollX Ref000000
+S _SMS_setBGScrollY Ref000000
+S _SMS_initSprites Ref000000
+S _ROM_bank_to_be_mapped_on_slot0 Def00FFFD
+S _ROM_bank_to_be_mapped_on_slot1 Def00FFFE
+S _ROM_bank_to_be_mapped_on_slot2 Def00FFFF
+S G$ROM_bank_to_be_mapped_on_slot0$0_0$0 Def00FFFD
+S G$ROM_bank_to_be_mapped_on_slot1$0_0$0 Def00FFFE
+S G$ROM_bank_to_be_mapped_on_slot2$0_0$0 Def00FFFF
+S _SRAM_bank_to_be_mapped_on_slot2 Def00FFFC
+S G$SRAM_bank_to_be_mapped_on_slot2$0_0$0 Def00FFFC
+S .__.ABS. Def000000
+S _SMS_copySpritestoSAT Ref000000
+S G$SMS_VDPControlPort$0_0$0 Def0000BF
+S _SMS_SRAM Def008000
+S G$SMS_SRAM$0_0$0 Def008000
+S _engine_content_manager_load_title Ref000000
+S _SMS_VDPturnOnFeature Ref000000
+S _engine_content_manager_load_boot_tiles Ref000000
+A _CODE size 3F flags 0 addr 0
+S C$title_screen.c$5$0_0$93 Def000000
+S C$title_screen.c$7$1_0$93 Def000000
+S C$title_screen.c$8$1_0$93 Def000006
+S XG$screen_title_screen_load$0$0 Def00003C
+S C$title_screen.c$9$1_0$93 Def000011
+S A$title_screen$120 Def00002B
+S A$title_screen$102 Def000019
+S A$title_screen$121 Def00002D
+S A$title_screen$113 Def000021
+S A$title_screen$133 Def000036
+S A$title_screen$106 Def00001C
+S A$title_screen$125 Def000030
+S A$title_screen$117 Def000024
+S A$title_screen$145 Def00003C
+S A$title_screen$118 Def000027
+S A$title_screen$109 Def00001E
+S A$title_screen$137 Def000039
+S A$title_screen$119 Def000028
+S A$title_screen$129 Def000033
+S C$title_screen.c$10$1_0$93 Def000017
+S G$screen_title_screen_load$0$0 Def000000
+S A$title_screen$90 Def00000E
+S A$title_screen$81 Def000000
+S C$title_screen.c$11$1_0$93 Def00001C
+S A$title_screen$82 Def000003
+S C$title_screen.c$12$1_0$93 Def000021
+S C$title_screen.c$14$1_0$93 Def000024
+S A$title_screen$94 Def000011
+S C$title_screen.c$15$1_0$93 Def000030
+S A$title_screen$95 Def000014
+S A$title_screen$86 Def000006
+S C$title_screen.c$16$1_0$93 Def000033
+S A$title_screen$87 Def000009
+S C$title_screen.c$17$1_0$93 Def000036
+S A$title_screen$88 Def00000A
+S C$title_screen.c$18$1_0$93 Def000039
+S A$title_screen$89 Def00000D
+S C$title_screen.c$19$1_0$93 Def00003C
+S A$title_screen$99 Def000017
+S _screen_title_screen_load Def000000
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 21 40 01 CD 00 00 21 00 40 E5 11 00 00
+R 00 00 00 00 02 07 01 00
+T 0D 00 00 65 CD 00 00 21 60 00 CD 00 00 2E 00 CD
+R 00 00 00 00 02 05 00 00 02 0B 13 00
+T 1A 00 00 00 00 2E 00 CD 00 00 CD 00 00 21 00 07
+R 00 00 00 00 02 03 02 00 02 08 03 00 02 0B 14 00
+T 27 00 00 E5 11 00 11 26 38 CD 00 00 CD 00 00 CD
+R 00 00 00 00 02 0A 00 00 02 0D 04 00
+T 34 00 00 00 00 CD 00 00 21 40 01 C3 00 00
+R 00 00 00 00 02 03 0E 00 02 06 12 00 02 0C 13 00

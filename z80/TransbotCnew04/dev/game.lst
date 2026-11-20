@@ -1,0 +1,151 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 4.2.0 #13081 (MINGW64)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module game
+                                      6 	.optsdcc -mz80
+                                      7 	
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl ___SMS__SDSC_signature
+                                     12 	.globl ___SMS__SDSC_descr
+                                     13 	.globl ___SMS__SDSC_name
+                                     14 	.globl ___SMS__SDSC_author
+                                     15 	.globl ___SMS__SEGA_signature
+                                     16 	.globl _SMS_SRAM
+                                     17 	.globl _SRAM_bank_to_be_mapped_on_slot2
+                                     18 	.globl _ROM_bank_to_be_mapped_on_slot0
+                                     19 	.globl _ROM_bank_to_be_mapped_on_slot1
+                                     20 	.globl _ROM_bank_to_be_mapped_on_slot2
+                                     21 ;--------------------------------------------------------
+                                     22 ; special function registers
+                                     23 ;--------------------------------------------------------
+                           0000BF    24 G$SMS_VDPControlPort$0_0$0 == 0x00bf
+                           0000BF    25 _SMS_VDPControlPort	=	0x00bf
+                                     26 ;--------------------------------------------------------
+                                     27 ; ram data
+                                     28 ;--------------------------------------------------------
+                                     29 	.area _DATA
+                           00FFFF    30 G$ROM_bank_to_be_mapped_on_slot2$0_0$0 == 0xffff
+                           00FFFF    31 _ROM_bank_to_be_mapped_on_slot2	=	0xffff
+                           00FFFE    32 G$ROM_bank_to_be_mapped_on_slot1$0_0$0 == 0xfffe
+                           00FFFE    33 _ROM_bank_to_be_mapped_on_slot1	=	0xfffe
+                           00FFFD    34 G$ROM_bank_to_be_mapped_on_slot0$0_0$0 == 0xfffd
+                           00FFFD    35 _ROM_bank_to_be_mapped_on_slot0	=	0xfffd
+                           00FFFC    36 G$SRAM_bank_to_be_mapped_on_slot2$0_0$0 == 0xfffc
+                           00FFFC    37 _SRAM_bank_to_be_mapped_on_slot2	=	0xfffc
+                           008000    38 G$SMS_SRAM$0_0$0 == 0x8000
+                           008000    39 _SMS_SRAM	=	0x8000
+                                     40 ;--------------------------------------------------------
+                                     41 ; ram data
+                                     42 ;--------------------------------------------------------
+                                     43 	.area _INITIALIZED
+                                     44 ;--------------------------------------------------------
+                                     45 ; absolute external ram data
+                                     46 ;--------------------------------------------------------
+                                     47 	.area _DABS (ABS)
+                                     48 ;--------------------------------------------------------
+                                     49 ; global & static initialisations
+                                     50 ;--------------------------------------------------------
+                                     51 	.area _HOME
+                                     52 	.area _GSINIT
+                                     53 	.area _GSFINAL
+                                     54 	.area _GSINIT
+                                     55 ;--------------------------------------------------------
+                                     56 ; Home
+                                     57 ;--------------------------------------------------------
+                                     58 	.area _HOME
+                                     59 	.area _HOME
+                                     60 ;--------------------------------------------------------
+                                     61 ; code
+                                     62 ;--------------------------------------------------------
+                                     63 	.area _CODE
+                                     64 	.area _CODE
+                           000000    65 Fgame$__str_0$0_0$0 == .
+      000000                         66 __str_0:
+      000000 53 74 65 76 65 50 72    67 	.ascii "StevePro Studios"
+             6F 20 53 74 75 64 69
+             6F 73
+      000010 00                      68 	.db 0x00
+                           000011    69 Fgame$__str_1$0_0$0 == .
+      000011                         70 __str_1:
+      000011 48 65 6C 6C 6F 20 57    71 	.ascii "Hello World"
+             6F 72 6C 64
+      00001C 00                      72 	.db 0x00
+                           00001D    73 Fgame$__str_2$0_0$0 == .
+      00001D                         74 __str_2:
+      00001D 53 69 6D 70 6C 65 20    75 	.ascii "Simple Sega Master System demo to run on real hardware"
+             53 65 67 61 20 4D 61
+             73 74 65 72 20 53 79
+             73 74 65 6D 20 64 65
+             6D 6F 20 74 6F 20 72
+             75 6E 20 6F 6E 20 72
+             65 61 6C 20 68 61 72
+             64 77 61 72 65
+      000053 00                      76 	.db 0x00
+                                     77 	.area _INITIALIZER
+                                     78 	.area _CABS (ABS)
+      007FF0                         79 	.org 0x7FF0
+                           007FF0    80 G$__SMS__SEGA_signature$0_0$0 == .
+      007FF0                         81 ___SMS__SEGA_signature:
+      007FF0 54                      82 	.db #0x54	; 84	'T'
+      007FF1 4D                      83 	.db #0x4d	; 77	'M'
+      007FF2 52                      84 	.db #0x52	; 82	'R'
+      007FF3 20                      85 	.db #0x20	; 32
+      007FF4 53                      86 	.db #0x53	; 83	'S'
+      007FF5 45                      87 	.db #0x45	; 69	'E'
+      007FF6 47                      88 	.db #0x47	; 71	'G'
+      007FF7 41                      89 	.db #0x41	; 65	'A'
+      007FF8 FF                      90 	.db #0xff	; 255
+      007FF9 FF                      91 	.db #0xff	; 255
+      007FFA FF                      92 	.db #0xff	; 255
+      007FFB FF                      93 	.db #0xff	; 255
+      007FFC 99                      94 	.db #0x99	; 153
+      007FFD 99                      95 	.db #0x99	; 153
+      007FFE 00                      96 	.db #0x00	; 0
+      007FFF 4C                      97 	.db #0x4c	; 76	'L'
+      007FCF                         98 	.org 0x7FCF
+                           007FCF    99 G$__SMS__SDSC_author$0_0$0 == .
+      007FCF                        100 ___SMS__SDSC_author:
+      007FCF 53 74 65 76 65 50 72   101 	.ascii "StevePro Studios"
+             6F 20 53 74 75 64 69
+             6F 73
+      007FDF 00                     102 	.db 0x00
+      007FC3                        103 	.org 0x7FC3
+                           007FC3   104 G$__SMS__SDSC_name$0_0$0 == .
+      007FC3                        105 ___SMS__SDSC_name:
+      007FC3 48 65 6C 6C 6F 20 57   106 	.ascii "Hello World"
+             6F 72 6C 64
+      007FCE 00                     107 	.db 0x00
+      007F8C                        108 	.org 0x7F8C
+                           007F8C   109 G$__SMS__SDSC_descr$0_0$0 == .
+      007F8C                        110 ___SMS__SDSC_descr:
+      007F8C 53 69 6D 70 6C 65 20   111 	.ascii "Simple Sega Master System demo to run on real hardware"
+             53 65 67 61 20 4D 61
+             73 74 65 72 20 53 79
+             73 74 65 6D 20 64 65
+             6D 6F 20 74 6F 20 72
+             75 6E 20 6F 6E 20 72
+             65 61 6C 20 68 61 72
+             64 77 61 72 65
+      007FC2 00                     112 	.db 0x00
+      007FE0                        113 	.org 0x7FE0
+                           007FE0   114 G$__SMS__SDSC_signature$0_0$0 == .
+      007FE0                        115 ___SMS__SDSC_signature:
+      007FE0 53                     116 	.db #0x53	; 83	'S'
+      007FE1 44                     117 	.db #0x44	; 68	'D'
+      007FE2 53                     118 	.db #0x53	; 83	'S'
+      007FE3 43                     119 	.db #0x43	; 67	'C'
+      007FE4 01                     120 	.db #0x01	; 1
+      007FE5 00                     121 	.db #0x00	; 0
+      007FE6 01                     122 	.db #0x01	; 1
+      007FE7 01                     123 	.db #0x01	; 1
+      007FE8 26                     124 	.db #0x26	; 38
+      007FE9 20                     125 	.db #0x20	; 32
+      007FEA CF                     126 	.db #0xcf	; 207
+      007FEB 7F                     127 	.db #0x7f	; 127
+      007FEC C3                     128 	.db #0xc3	; 195
+      007FED 7F                     129 	.db #0x7f	; 127
+      007FEE 8C                     130 	.db #0x8c	; 140
+      007FEF 7F                     131 	.db #0x7f	; 127

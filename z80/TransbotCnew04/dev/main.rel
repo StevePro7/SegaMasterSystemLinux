@@ -1,0 +1,75 @@
+;!FILE main.asm
+XL3
+H 9 areas 2F global symbols
+M main
+O -mz80
+S _SMS_waitForVBlank Ref000000
+S _ROM_bank_to_be_mapped_on_slot0 Def00FFFD
+S _ROM_bank_to_be_mapped_on_slot1 Def00FFFE
+S _ROM_bank_to_be_mapped_on_slot2 Def00FFFF
+S G$ROM_bank_to_be_mapped_on_slot0$0_0$0 Def00FFFD
+S G$ROM_bank_to_be_mapped_on_slot1$0_0$0 Def00FFFE
+S G$ROM_bank_to_be_mapped_on_slot2$0_0$0 Def00FFFF
+S _screen_game_screen_update Ref000000
+S _SRAM_bank_to_be_mapped_on_slot2 Def00FFFC
+S G$SRAM_bank_to_be_mapped_on_slot2$0_0$0 Def00FFFC
+S .__.ABS. Def000000
+S G$SMS_VDPControlPort$0_0$0 Def0000BF
+S _SMS_SRAM Def008000
+S G$SMS_SRAM$0_0$0 Def008000
+S G$PSGPort$0_0$0 Def00007F
+S _screen_game_screen_load Ref000000
+A _CODE size 20 flags 0 addr 0
+S A$main$101 Def000010
+S C$main.c$31$2_0$120 Def00001D
+S C$main.c$23$1_0$120 Def000011
+S C$main.c$24$1_0$120 Def000014
+S Fmain$silence_psg$0$0 Def000000
+S A$main$123 Def000017
+S A$main$114 Def000011
+S _main Def000011
+S A$main$135 Def00001D
+S C$main.c$13$1_0$118 Def000000
+S A$main$127 Def00001A
+S A$main$118 Def000014
+S C$main.c$14$1_0$118 Def000004
+S C$main.c$15$1_0$118 Def000008
+S C$main.c$28$3_0$122 Def000017
+S C$main.c$16$1_0$118 Def00000C
+S C$main.c$29$3_0$122 Def00001A
+S C$main.c$18$1_0$118 Def000010
+S XG$main$0$0 Def00001D
+S A$main$82 Def000004
+S A$main$92 Def00000C
+S A$main$83 Def000006
+S A$main$93 Def00000E
+S C$main.c$8$0_0$118 Def000000
+S XFmain$silence_psg$0$0 Def000010
+S A$main$77 Def000000
+S A$main$87 Def000008
+S A$main$78 Def000002
+S A$main$88 Def00000A
+S G$main$0$0 Def000011
+S C$main.c$21$1_0$120 Def000011
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 3E 9F D3 7F 3E BF D3 7F 3E DF D3 7F 3E
+R 00 00 00 00
+T 0D 00 00 FF D3 7F C9
+R 00 00 00 00
+T 11 00 00
+R 00 00 00 00
+T 11 00 00 CD 00 00 CD 00 00
+R 00 00 00 00 00 04 00 00 02 07 0F 00
+T 17 00 00
+R 00 00 00 00
+T 17 00 00 CD 00 00 CD 00 00 C3 17 00
+R 00 00 00 00 02 04 00 00 02 07 07 00 00 0A 00 00
