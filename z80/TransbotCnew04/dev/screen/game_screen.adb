@@ -1,4 +1,8 @@
 M:game_screen
+F:Fgame_screen$vram_write$0_0$0({2}DF,SV:S),C,0,0,0,0,0
+S:Lgame_screen.vram_write$size$1_0$136({2}SI:U),B,1,4
+S:Lgame_screen.vram_write$source$1_0$0({2}DG,SC:U),R,0,0,[e,d]
+S:Lgame_screen.vram_write$address$1_0$0({2}SI:U),R,0,0,[l,h]
 F:Fgame_screen$game_frame_interrupt$0_0$0({2}DF,SV:S),C,0,0,0,0,0
 F:Fgame_screen$game_frame_body$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:Fgame_screen$game_line_interrupt$0_0$0({2}DF,SV:S),C,0,0,0,0,0
@@ -12,6 +16,7 @@ S:G$SMS_SRAM$0_0$0({16384}DA16384d,SC:U),E,0,0
 S:G$SMS_VDPFlags$0_0$0({1}SC:U),E,0,0
 S:G$SMS_Port3EBIOSvalue$0_0$0({1}SC:U),E,0,0
 S:G$SMS_VDPControlPort$0_0$0({1}SC:U),I,0,0
+S:G$vdp_data_port$0_0$0({1}SC:U),I,0,0
 S:G$engine_content_manager_load_boot_tiles$0_0$0({2}DF,SV:S),C,0,0
 S:G$engine_content_manager_load_title$0_0$0({2}DF,SV:S),C,0,0
 S:G$orig_screen_setup$0_0$0({2}DF,SV:S),C,0,0
@@ -141,5 +146,6 @@ S:G$strtok$0_0$0({2}DF,DG,SC:U),C,0,0
 S:G$memset$0_0$0({2}DF,DG,SV:S),C,0,0
 S:G$memset_explicit$0_0$0({2}DF,DG,SV:S),C,0,0
 S:G$strlen$0_0$0({2}DF,SI:U),C,0,0
+S:Fgame_screen$vram_write$0_0$0({2}DF,SV:S),C,0,0
 S:Fgame_screen$game_frame_interrupt$0_0$0({2}DF,SV:S),C,0,0
 S:Fgame_screen$game_line_interrupt$0_0$0({2}DF,SV:S),C,0,0

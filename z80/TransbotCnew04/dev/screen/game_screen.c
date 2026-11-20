@@ -7,6 +7,27 @@
 
 static void game_frame_body( void );
 
+#ifdef _CONSOLE
+unsigned char vdp_data_port;
+#else
+__sfr __at( 0xbe ) vdp_data_port;
+#endif
+
+/*
+* Copies to VRAM without SMSlib's helpers: those re-enable interrupts, and the
+* original handler keeps them off, so a line interrupt cannot corrupt the VDP
+* address in the middle of a transfer.
+*/
+static void vram_write( unsigned int address, const unsigned char *source, unsigned int size )
+{
+	SMS_VDPControlPort = ( unsigned char ) address;
+	SMS_VDPControlPort = ( unsigned char ) ( address >> 8 ) | 0x40;
+	do 
+	{
+		vdp_data_port = *source;
+	} while (--size);
+}
+
 /*
 * VBlank part of $0FA6. SMSlib's handler preserves AF/BC/DE/HL/IX/IY, but the
 * original code also uses the alternate register set, so this wrapper saves it.
@@ -58,8 +79,8 @@ static void game_frame_body( void )
 
 	if( ORIG_SAT_FLAGS & 0x80 )
 	{
-		SMS_VRAMmemcpy( 0x3f00, ( const void * ) 0xc240, 0x40 );
-		SMS_VRAMmemcpy( 0x3f80, ( const void * ) 0xc280, 0x80 );
+		SMS_VRAMmemcpy( 0x3f00, ( const unsigned char * ) 0xc240, 0x40 );
+		SMS_VRAMmemcpy( 0x3f80, ( const unsigned char* ) 0xc280, 0x80 );
 		ORIG_SAT_FLAGS &= 0x7f;
 	}
 	orig_vblank_columns();
@@ -145,22 +166,22 @@ void screen_game_screen_update( void )
 	}
 
 	ORIG_FRAME_READY = 0;
-#ifdef _CONSOLE
-#else
-	__asm
-	di
-		__endasm;
-#endif
+//#ifdef _CONSOLE
+//#else
+//	__asm
+//	di
+//		__endasm;
+//#endif
 	orig_object_update();
 	orig_stage_sequencer();
 	orig_scroll_prepare();
 	orig_map_trigger();
 	orig_map_next();
 	orig_spawn_pending();
-#ifdef _CONSOLE
-#else
-	__asm
-	ei
-		__endasm;
-#endif
+//#ifdef _CONSOLE
+//#else
+//	__asm
+//	ei
+//		__endasm;
+//#endif
 }
