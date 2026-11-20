@@ -24,7 +24,7 @@ static void vram_write( unsigned int address, const unsigned char *source, unsig
 	SMS_VDPControlPort = ( unsigned char ) ( address >> 8 ) | 0x40;
 	do 
 	{
-		vdp_data_port = *source;
+		vdp_data_port = *source++;
 	} while (--size);
 }
 
@@ -79,8 +79,8 @@ static void game_frame_body( void )
 
 	if( ORIG_SAT_FLAGS & 0x80 )
 	{
-		SMS_VRAMmemcpy( 0x3f00, ( const unsigned char * ) 0xc240, 0x40 );
-		SMS_VRAMmemcpy( 0x3f80, ( const unsigned char* ) 0xc280, 0x80 );
+		vram_write( 0x3f00, ( const unsigned char * ) 0xc240, 0x40 );
+		vram_write( 0x3f80, ( const unsigned char * ) 0xc280, 0x80 );
 		ORIG_SAT_FLAGS &= 0x7f;
 	}
 	orig_vblank_columns();
