@@ -1,0 +1,71 @@
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 1.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    .__.$$$.=  002710 L   |     .__.ABS.=  000000 G   |     .__.CPU.=  000000 L
+    .__.H$L.=  000000 L   |   5 A$crt0_s   000057 GR  |   5 A$crt0_s   000058 GR
+  6 A$crt0_s   000066 GR  |   6 A$crt0_s   000169 GR  |   9 A$crt0_s   000000 GR
+  9 A$crt0_s   000003 GR  |   9 A$crt0_s   000004 GR  |   9 A$crt0_s   000005 GR
+  9 A$crt0_s   000007 GR  |   9 A$crt0_s   00000A GR  |   9 A$crt0_s   00000D GR
+  A A$crt0_s   000000 GR  |   2 A$crt0_s   000000 GR  |   2 A$crt0_s   000001 GR
+  2 A$crt0_s   000003 GR  |   2 A$crt0_s   000006 GR  |   3 A$crt0_s   000008 GR
+  3 A$crt0_s   00000A GR  |   3 A$crt0_s   00000B GR  |   3 A$crt0_s   00000D GR
+  3 A$crt0_s   00000F GR  |   3 A$crt0_s   000010 GR  |   4 A$crt0_s   000018 GR
+  4 A$crt0_s   000019 GR  |   4 A$crt0_s   00001B GR  |   4 A$crt0_s   00001C GR
+  4 A$crt0_s   00001D GR  |   4 A$crt0_s   00001E GR  |   4 A$crt0_s   000020 GR
+  4 A$crt0_s   000021 GR  |   4 A$crt0_s   000024 GR  |   4 A$crt0_s   000027 GR
+  4 A$crt0_s   00002A GR  |   4 A$crt0_s   00002D GR  |   4 A$crt0_s   00002F GR
+  4 A$crt0_s   000032 GR  |   4 A$crt0_s   000033 GR  |   4 A$crt0_s   000036 GR
+  5 A$crt0_s   000038 GR  |   5 A$crt0_s   00003B GR  |   5 A$crt0_s   00003E GR
+  5 A$crt0_s   00003F GR  |   5 A$crt0_s   000041 GR  |   5 A$crt0_s   000042 GR
+  5 A$crt0_s   000045 GR  |   5 A$crt0_s   000048 GR  |   5 A$crt0_s   00004A GR
+  5 A$crt0_s   00004D GR  |   5 A$crt0_s   000050 GR  |   5 A$crt0_s   000053 GR
+  5 A$crt0_s   000054 GR  |   6 _OUTI128   000069 GR  |   6 _OUTI32    000129 GR
+  6 _OUTI64    0000E9 GR  |   6 _OUTI96    0000A9 GR  |     _SMS_Por   ****** GX
+  3 _SMS_crt   000008 GR  |   4 _SMS_crt   000018 GR  |     _SMS_ini   ****** GX
+    _SMS_isr   ****** GX  |     _SMS_nmi   ****** GX  |     _main      ****** GX
+  6 _outi_bl   000169 GR  |   5 crt0_cle   00003B R   |   9 crt0_gsi   000000 GR
+  9 crt0_gsi   00000F R   |   4 crt0_ini   000021 R   |   5 crt0_sms   000057 GR
+  5 crt0_sms   000058 GR  |   6 crt0_sms   000066 GR  |   6 crt0_sms   000169 GR
+  9 crt0_sms   000000 GR  |   9 crt0_sms   000003 GR  |   9 crt0_sms   000004 GR
+  9 crt0_sms   000005 GR  |   9 crt0_sms   000007 GR  |   9 crt0_sms   00000A GR
+  9 crt0_sms   00000D GR  |   A crt0_sms   000000 GR  |   2 crt0_sms   000000 GR
+  2 crt0_sms   000001 GR  |   2 crt0_sms   000003 GR  |   2 crt0_sms   000006 GR
+  3 crt0_sms   000008 GR  |   3 crt0_sms   00000A GR  |   3 crt0_sms   00000B GR
+  3 crt0_sms   00000D GR  |   3 crt0_sms   00000F GR  |   3 crt0_sms   000010 GR
+  4 crt0_sms   000018 GR  |   4 crt0_sms   000019 GR  |   4 crt0_sms   00001B GR
+  4 crt0_sms   00001C GR  |   4 crt0_sms   00001D GR  |   4 crt0_sms   00001E GR
+  4 crt0_sms   000020 GR  |   4 crt0_sms   000021 GR  |   4 crt0_sms   000024 GR
+  4 crt0_sms   000027 GR  |   4 crt0_sms   00002A GR  |   4 crt0_sms   00002D GR
+  4 crt0_sms   00002F GR  |   4 crt0_sms   000032 GR  |   4 crt0_sms   000033 GR
+  4 crt0_sms   000036 GR  |   5 crt0_sms   000038 GR  |   5 crt0_sms   00003B GR
+  5 crt0_sms   00003E GR  |   5 crt0_sms   00003F GR  |   5 crt0_sms   000041 GR
+  5 crt0_sms   000042 GR  |   5 crt0_sms   000045 GR  |   5 crt0_sms   000048 GR
+  5 crt0_sms   00004A GR  |   5 crt0_sms   00004D GR  |   5 crt0_sms   000050 GR
+  5 crt0_sms   000053 GR  |   5 crt0_sms   000054 GR  |   4 get_bank   00002F GR
+    l__INITI   ****** GX  |     s__INITI   ****** GX  |     s__INITI   ****** GX
+  4 set_bank   000033 GR
+
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 2.
+Hexadecimal [24-Bits]
+
+Area Table
+
+   0 _CODE      size      0   flags    0
+   1 _HEADER    size      0   flags    8
+   2 _HEADER0   size      8   flags    8
+   3 _HEADER1   size      9   flags    8
+   4 _HEADER2   size     1F   flags    8
+   5 _HEADER3   size     2B   flags    8
+   6 _HEADER4   size    104   flags    8
+   7 _HOME      size      0   flags    0
+   8 _INITIAL   size      0   flags    0
+   9 _GSINIT    size      F   flags    0
+   A _GSFINAL   size      1   flags    0
+   B _DATA      size      0   flags    0
+   C _INITIAL   size      0   flags    0
+   D _BSEG      size      0   flags    0
+   E _BSS       size      0   flags    0
+   F _HEAP      size      0   flags    0
+
