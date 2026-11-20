@@ -38,13 +38,13 @@ echo.
 
 :: Link
 sdcc --debug  -o output.ihx --Werror --opt-code-speed -mz80 --no-std-crt0 --data-loc 0xC000 ^
--Wl-b_BANK2=0x8000 -Wl-b_BANK3=0x8000 ^
 ../crt0/crt0_sms.rel main.rel ^
 ../lib/SMSlib.lib ^
 ../lib/PSGlib.lib ^
 devkit/_sms_manager.rel ^
 devkit/_snd_manager.rel ^
 engine/asm_manager.rel ^
+engine/audio_manager.rel ^
 engine/audio_manager.rel ^
 engine/content_manager.rel ^
 engine/font_manager.rel ^

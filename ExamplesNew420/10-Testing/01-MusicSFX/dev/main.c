@@ -13,6 +13,7 @@ void main( void )
 	engine_content_manager_load_tiles();
 	engine_screen_manager_init();
 
+	audio_init();
 	devkit_SMS_displayOn();
 	for( ;; )
 	{
@@ -21,6 +22,11 @@ void main( void )
 		engine_screen_manager_update();
 
 		devkit_SMS_finalizeSprites();
+
+		// **CRITICAL: Update audio exactly once per frame**
+		// This MUST be called after game logic but doesn't have to wait
+		audio_update();
+
 		devkit_SMS_waitForVBlank();
 		devkit_SMS_copySpritestoSAT();
 
