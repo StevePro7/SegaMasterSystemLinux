@@ -45,7 +45,6 @@ devkit/_sms_manager.rel ^
 devkit/_snd_manager.rel ^
 engine/asm_manager.rel ^
 engine/audio_manager.rel ^
-engine/audio_manager.rel ^
 engine/content_manager.rel ^
 engine/font_manager.rel ^
 engine/input_manager.rel ^
