@@ -32,7 +32,7 @@ audio_play_sfx( num )
 00 = noop
 01 = boing boing boing x6
 02 = letter changing
-03 = long explode
+03 = E shoot [?]
 04 = C shoot [?]
 05 = 00 = noop
 06 = 00 = noop

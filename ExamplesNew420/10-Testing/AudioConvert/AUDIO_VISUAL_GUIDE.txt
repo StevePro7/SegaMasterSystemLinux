@@ -1,0 +1,342 @@
+# Transbot Audio System - Visual Guide
+
+## 1. Data Flow Diagram
+
+```
+Original Game                Extract Audio Data          C Implementation
+─────────────────────────────────────────────────────────────────────────
+
+TransbotASM/              extract_audio_data.py         TransbotCnew/
+ ├─ main_org.asm                 ↓                      ├─ dev/engine/
+ ├─ content/                      │                      │  ├─ audio_manager.h
+ │  └─ psg_data.inc ───────────→ │ ───→ audio_data.h   │  ├─ audio_manager.c
+ │                                │      (hex arrays)    │  └─ audio_data.h
+ │                                │                      │       (generated)
+ ├─ engine/                        │                      ├─ main.c
+ │  └─ sound_manager.inc ─────────┘                      │  (integrates audio)
+ │                                                        └─ ...
+ └─ ...
+```
+
+## 2. Frame Synchronization Flow
+
+```
+Game Frame N:
+┌─────────────────────────────────────────────────────────┐
+│                   Main Game Loop                         │
+└─────────────────────────────────────────────────────────┘
+  ↓
+  update_game()           ← Handle input, physics, etc.
+  ↓
+  render_frame()          ← Draw graphics to frame buffer
+  ↓
+  audio_update()          ← **CRITICAL: Call once per frame**
+  │                           ├─ PSGFrame()
+  │                           │   └─ Advance music playback
+  │                           └─ PSGSFXFrame()
+  │                               └─ Advance SFX playback
+  ↓
+  wait_vblank()           ← Wait for vertical blank
+  │                           └─ NTSC: 16.67ms (60 Hz)
+  │                           └─ PAL:  20.00ms (50 Hz)
+  ↓
+  Audio PSG Hardware      ← PSG updated with this frame's data
+  │
+  Music Plays: ♪ ♪ ♪
+  SFX Plays:    ✓ ✓
+
+Game Frame N+1:
+  ...
+```
+
+## 3. Audio Manager State Machine
+
+```
+                     ┌─────────────────┐
+                     │  UNINITIALIZED  │
+                     └────────┬────────┘
+                              │
+                     audio_init()
+                              ↓
+                     ┌─────────────────┐
+        ┌────────────│    STOPPED      │◄─────────┐
+        │            └────────┬────────┘          │
+        │                     │                   │
+        │            audio_play_music()           │
+        │                     ↓                   │
+        │            ┌─────────────────┐          │
+        └────────────│    PLAYING      │          │
+                     └────────┬────────┘          │
+                              │                   │
+                              │ audio_pause()     │
+                              ↓                   │
+                     ┌─────────────────┐          │
+                     │    PAUSED       │          │
+                     └────────┬────────┘          │
+                              │                   │
+                              │ audio_resume()   │
+                              ↑                   │
+                              │                   │
+                     audio_stop_music()          │
+                              ├──────────────────┘
+                              │
+                     ┌─────────v──────┐
+                     │  STOPPED/IDLE  │
+                     └────────────────┘
+```
+
+## 4. Memory Layout
+
+```
+SMS Cartridge ROM
+─────────────────────────────────────────────
+  $0000-$3FFF: Bank 0 (16 KB)
+    ├─ $0000: Interrupt vectors
+    ├─ $0100-$2FFF: Game code
+    ├─ $3000-$3B4F: Audio system
+    │  ├─ $303A-$349A: Sound engine code
+    │  ├─ $349B-$349E: PSG init data
+    │  ├─ $349F-$3530: Frequency table (73 frequencies)
+    │  └─ $3531-$3B4F: Audio tracks (10 tracks + envelopes)
+    └─ $3C00-$3FFF: Other data
+
+SMS RAM ($C000-$DFFF)
+─────────────────────────────────────────────
+  $C000-$CFFF: Game variables
+  $D000-$DEFF: Game work RAM
+  $DE00-$DFFF: Audio system RAM
+    ├─ $DE00: Music/SFX command register
+    ├─ $DE01: Status/control flags
+    ├─ $DE02-$DEC1: 6 voice structures (32 bytes each)
+    └─ $DEC2-$DFFF: Remaining voice/PSGlib state
+
+Audio Manager RAM (C Implementation)
+─────────────────────────────────────────────
+  ~32 bytes: audio_manager state structure
+  ~256 bytes: PSGlib work area
+  Total: ~288 bytes
+```
+
+## 5. PSG Hardware Interface
+
+```
+SMS Sound Output (Programmable Sound Generator)
+─────────────────────────────────────────────
+
+PSG Control Ports:
+  Port $7F (write): Data port
+  Port $7E (write): Control/address port
+
+4 Channels:
+  ┌──────────────┐
+  │ Channel 0    │ Tone (notes)
+  │ (10-bit freq)│
+  │ (4-bit vol)  │
+  └──────────────┘
+  
+  ┌──────────────┐
+  │ Channel 1    │ Tone (notes)
+  │ (10-bit freq)│
+  │ (4-bit vol)  │
+  └──────────────┘
+  
+  ┌──────────────┐
+  │ Channel 2    │ Tone (notes)
+  │ (10-bit freq)│
+  │ (4-bit vol)  │
+  └──────────────┘
+  
+  ┌──────────────┐
+  │ Channel 3    │ Noise
+  │ (3-bit ctrl) │
+  │ (4-bit vol)  │
+  └──────────────┘
+
+Volume Attenuation (4-bit):
+  0  = ████ Maximum volume
+  7  = ██░░ 50% volume (~-7dB)
+  15 = ░░░░ Silent (-∞ dB)
+```
+
+## 6. Audio Track Layout
+
+```
+Transbot Audio Tracks (10 Total)
+─────────────────────────────────
+
+Track 0: 132 bytes  → Likely title/menu music
+Track 1:  55 bytes  → Short musical phrase
+Track 2: 374 bytes  → Longest (likely main gameplay)
+Track 3: 279 bytes  → Stage/level variant
+Track 4:  50 bytes  → SFX or stinger
+Track 5:  40 bytes  → SFX or stinger
+Track 6:  42 bytes  → SFX or stinger
+Track 7:  18 bytes  → Very short SFX
+Track 8:  42 bytes  → SFX or stinger
+Track 9: 373 bytes  → Complex/long sequence
+
+16 Envelopes:
+  Envelope 0-15: Volume/waveform shapes
+  Used for sound character (attack, decay, sustain)
+```
+
+## 7. Build Process
+
+```
+Source Files                Build Steps              Output
+──────────────────────────────────────────────────────────
+
+TransbotASM/              1. Extract Audio
+ └─ content/
+    └─ psg_data.inc ────→ extract_audio_data.py ──→ audio_data.h
+                           (Python script)          (C hex arrays)
+                                                    
+                          2. Compile
+TransbotCnew/             ┌──────────────┐
+ ├─ dev/engine/           │              │
+ │  ├─ audio_manager.c ──→│   SDCC or    │          transbot.sms
+ │  ├─ audio_data.h ─────→│   GCC        │ ───────→ (Game binary)
+ │  └─ *.h                │  Compiler    │
+ │                        │              │
+ ├─ dev/main.c ──────────→│              │
+ ├─ dev/screen/*.c ──────→│              │
+ └─ dev/engine/*.c ──────→│              │
+                          └──────────────┘
+                                 ↓
+                          3. Link with PSGlib
+                          
+                          4. Test on emulator
+```
+
+## 8. Function Call Graph
+
+```
+Game Main Loop
+  │
+  ├─→ update_game()
+  │     └─→ ...
+  │
+  ├─→ render_frame()
+  │     └─→ ...
+  │
+  ├─→ audio_update()                ← MUST call once per frame
+  │     ├─→ PSGFrame()
+  │     │     └─→ Read music data
+  │     │         └─→ Output to PSG
+  │     │
+  │     └─→ PSGSFXFrame()
+  │           └─→ Read SFX data
+  │               └─→ Output to PSG
+  │
+  ├─→ wait_vblank()
+  │     └─→ Wait for VBLANK interrupt
+  │
+  └─→ loop
+```
+
+## 9. Timeline: Audio Processing Per Frame
+
+```
+NTSC (60 Hz) → 16.67ms per frame
+PAL (50 Hz)  → 20.00ms per frame
+
+Frame Duration:
+┌─────────────────────────────────────────────┐
+│                 16.67ms (NTSC)              │
+│                 20.00ms (PAL)               │
+├─────────────────────────────────────────────┤
+│                                             │
+│  game logic  → render  → audio  → vblank   │
+│  (10ms)      (3ms)     (1ms)   (wait)      │
+│                                             │
+│  Total = ~14ms, then wait for VBLANK       │
+│                                             │
+└─────────────────────────────────────────────┘
+
+PSG samples this once per VBLANK interrupt:
+  60 times/second (NTSC)
+  50 times/second (PAL)
+```
+
+## 10. File Dependency Graph
+
+```
+audio_manager.h (Public API)
+  ├─ Declares all public functions
+  ├─ Type definitions
+  └─ Enumerations
+
+audio_manager.c (Implementation)
+  ├─ Includes audio_manager.h
+  ├─ Includes audio_data.h
+  ├─ PSGlib declarations
+  └─ State management code
+
+audio_data.h (Auto-generated)
+  ├─ Created by extract_audio_data.py
+  ├─ Contains: MUSIC_TRACK_* arrays
+  ├─ Contains: PSG_FREQUENCIES array
+  └─ Contains: PSG_ENVELOPE_* arrays
+
+main.c (Game entry point)
+  ├─ Includes audio_manager.h
+  ├─ Calls audio_init()
+  ├─ Calls audio_update() each frame
+  └─ Triggers audio_play_* functions
+
+game_screen.c, title_screen.c, etc.
+  ├─ Include audio_manager.h
+  └─ Call audio_* functions as needed
+```
+
+## 11. NTSC vs PAL Frame Timing
+
+```
+NTSC (60 Hz) - North America, Japan
+┌──────────────────┬──────────────────┬──────────────────┐
+│ Frame 1          │ Frame 2          │ Frame 3          │
+│ 0.000ms - 16.67ms│16.67ms - 33.34ms │33.34ms - 50.01ms │
+│ audio_update(1)  │ audio_update(2)  │ audio_update(3)  │
+└──────────────────┴──────────────────┴──────────────────┘
+
+PAL (50 Hz) - Europe, Australia
+┌──────────────────┬──────────────────┬──────────────────┐
+│ Frame 1          │ Frame 2          │ Frame 3          │
+│ 0.000ms - 20.00ms│20.00ms - 40.00ms │40.00ms - 60.00ms │
+│ audio_update(1)  │ audio_update(2)  │ audio_update(3)  │
+└──────────────────┴──────────────────┴──────────────────┘
+```
+
+## 12. Quick Reference: Critical Path
+
+```
+START
+  │
+  ├─→ [ Game Loop ]
+  │     │
+  │     ├─→ 1. update_game()
+  │     │     └─→ Game logic updates
+  │     │
+  │     ├─→ 2. render_frame()
+  │     │     └─→ Graphics updates
+  │     │
+  │     ├─→ 3. audio_update() ◄─── CRITICAL: Must call exactly once per frame
+  │     │     ├─→ PSGFrame()
+  │     │     ├─→ PSGSFXFrame()
+  │     │     └─→ Frame counter increment
+  │     │
+  │     ├─→ 4. wait_vblank() ◄─── Waits for next frame
+  │     │     └─→ Automatic NTSC/PAL timing
+  │     │
+  │     └─→ [ Loop back to step 1 ]
+  │
+  └─→ END
+
+✓ Correct: Call audio_update() once per game loop
+✗ Wrong:   Multiple calls or skipping calls
+✗ Wrong:   Calling before wait_vblank()
+```
+
+---
+
+**All diagrams are ASCII for easy viewing and copying.**

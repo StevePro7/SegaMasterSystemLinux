@@ -1,0 +1,29 @@
+21-N0V-2026
+
+Files that make up the working build
+File	Status	Purpose
+devkit/sound_engine.c	Rewritten	C port of the original Z80 driver in sound_manager.inc ($303A–$349A). It keeps the original 32-byte channel layout and runs once per frame, so timing matches the original on NTSC and PAL.
+devkit/sound_engine.h	Rewritten	Public API: init, update, play_cmd(n), play_track, stop, get_state.
+object/psg_data.c and object/psg_data.h	New (generated)	The 1717 original ROM bytes from $349B to $3B4F: frequency table, all music and SFX tracks, envelope tables and pointers. They keep their original addresses, because the track data contains absolute ROM pointers.
+gen_psg_data.py	New (tool)	Regenerates psg_data.c/h from TransbotASM\content\psg_data.inc.
+engine/audio_manager.c	Modified	Cleaned up duplicate functions and return-type mismatches. audio_play_music calls sound_engine_play_track. audio_play_sfx calls sound_engine_play_cmd(11 + sfx_id).
+engine/audio_manager.h	Modified	The 3 placeholder SFX ids became SFX_00 to SFX_11 (NUM_SFX = 12).
+build.bat	Modified	Compiles object/psg_data.c and links object/psg_data.rel.
+devkit/host_test.c	New (optional)	PC-side test harness: build with gcc -DHOST_TEST to dump the PSG writes.
+Files you had already set up and that still apply: main.c (audio_init() and audio_update() once per frame), engine/screen_manager.c (audio_play_music(0, 0xFF)), and object/audio_data.c/h. audio_data is no longer used by the engine. The engine reads from psg_rom instead, and it uses the wrapped-C approach you asked for.
+
+Leftovers from earlier attempts
+These are not in the link list in build.bat, so they have no effect:
+
+devkit/: sound_z80_inline.c, sound_z80_wrapper.c, audio_z80_wrapper.c, sound_z80.s, sound_z80.h, psg_player.c, psg_player.h, psg_diagnostic.c, psg_simple_test.c, _simple_psg.c/h, _transbot_psg.c, sound_manager.h, sound_manager.asm, sound_manager_z80.asm, psg_data_z80.asm
+Generated build artifacts (.asm, .lst, .rel, .sym, .adb)
+I haven't deleted any of them. They are safe to remove, and I can clean them up if you want.
+
+Why the earlier attempts gave no sound or noise
+The earlier C engine was an invented format interpreter, not the real driver.
+The earlier psg_write wrote the wrong bytes.
+The track data also holds absolute ROM pointers, which only work with the psg_rom addressing.
+Notes
+I checked the port on the PC by running all 22 sound commands for 6000 frames each; the final run in the emulator confirmed it works.
+SFX ids 0 to 11 map to the original commands 11 to 22. I haven't given them descriptive names.
+I removed the outdated D:\Code\testing2\session-summary.md I had written earlier.

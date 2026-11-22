@@ -24,7 +24,7 @@ static AudioManager audio_manager = {
 	.current_music_track = 0xFF,
 	.music_volume = 0,
 	.sfx_volume = 0,
-	.frame_counter = 0,
+//	.frame_counter = 0,
 	.muted = false,
 	.initialized = false
 };
@@ -53,7 +53,7 @@ bool audio_init( void ) {
 	audio_manager.current_music_track = 0xFF;
 	audio_manager.music_volume = 0;
 	audio_manager.sfx_volume = 0;
-	audio_manager.frame_counter = 0;
+	//audio_manager.frame_counter = 0;
 	audio_manager.muted = false;
 
 	saved_music_volume = 0;
@@ -193,11 +193,12 @@ uint8_t audio_get_current_track( void ) {
 }
 
 uint16_t audio_get_frame_count( void ) {
-	return audio_manager.frame_counter;
+	return 0;
+//	return audio_manager.frame_counter;
 }
 
 void audio_set_frame_count( uint16_t new_count ) {
-	audio_manager.frame_counter = new_count;
+//	audio_manager.frame_counter = new_count;
 }
 
 bool audio_is_initialized( void ) {
@@ -231,7 +232,7 @@ void audio_update( void ) {
 	sound_engine_update();
 
 	// Increment frame counter
-	audio_manager.frame_counter++;
+	//audio_manager.frame_counter++;
 }
 
 bool audio_play_stage_music( uint8_t variant ) {

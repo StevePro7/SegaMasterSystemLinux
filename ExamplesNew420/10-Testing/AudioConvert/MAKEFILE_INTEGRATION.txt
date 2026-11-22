@@ -1,0 +1,236 @@
+# Transbot Audio Build System Integration
+#
+# Add these snippets to your TransbotCnew/Makefile to integrate audio support
+#
+
+# ============================================================================
+# 1. AUDIO SOURCE FILES
+# ============================================================================
+
+# Add to your SOURCES or object file list:
+AUDIO_SOURCES = \
+	dev/engine/audio_manager.c
+
+# If using object files, add:
+AUDIO_OBJECTS = \
+	$(BUILD)/dev/engine/audio_manager.o
+
+# Add to main OBJECTS list:
+# OBJECTS += $(AUDIO_OBJECTS)
+
+# ============================================================================
+# 2. AUDIO HEADER DEPENDENCIES
+# ============================================================================
+
+# Ensure audio_data.h is generated before compilation:
+AUDIO_DATA_H = dev/engine/audio_data.h
+
+# This target generates audio_data.h from assembly
+$(AUDIO_DATA_H): TransbotASM/content/psg_data.inc extract_audio_data.py
+	python3 extract_audio_data.py TransbotASM/content/psg_data.inc $(AUDIO_DATA_H)
+	@echo "Generated $(AUDIO_DATA_H)"
+
+# Or if using main_org.asm:
+# $(AUDIO_DATA_H): TransbotASM/main_org.asm extract_audio_data.py
+#	python3 extract_audio_data.py TransbotASM/main_org.asm $(AUDIO_DATA_H)
+#	@echo "Generated $(AUDIO_DATA_H)"
+
+# Add to your main build target dependencies:
+# all: $(AUDIO_DATA_H) $(TARGET)
+
+# ============================================================================
+# 3. ASSEMBLY INCLUDES
+# ============================================================================
+
+# If using WLA-DX or similar assembler, ensure PSGlib is included:
+
+ASFLAGS += -i dev/engine/
+
+# Or specify PSGlib include path explicitly:
+# ASFLAGS += -i$(PSGLIB_PATH)
+
+# ============================================================================
+# 4. COMPILER FLAGS
+# ============================================================================
+
+# Ensure audio_manager.c can find headers:
+CFLAGS += -Idev/engine/
+
+# Optional: Enable audio debug output
+# CFLAGS += -DAUDIO_DEBUG=1
+
+# ============================================================================
+# 5. COMPLETE MAKEFILE EXAMPLE
+# ============================================================================
+
+# Here's how it might look in your Makefile:
+
+# --- Variables ---
+BUILD = build
+TARGET = $(BUILD)/transbot.sms
+
+SOURCES = \
+	dev/main.c \
+	dev/engine/audio_manager.c
+
+OBJECTS = $(SOURCES:.c=.o)
+OBJECTS := $(OBJECTS:%=$(BUILD)/%)
+
+CFLAGS = -Idev/engine/ -c -O2
+ASFLAGS = -i dev/engine/
+
+AUDIO_DATA_H = dev/engine/audio_data.h
+
+# --- Targets ---
+all: $(AUDIO_DATA_H) $(TARGET)
+
+$(TARGET): $(OBJECTS)
+	sdcc -o $@ $(OBJECTS)
+
+$(BUILD)/%.o: %.c $(AUDIO_DATA_H)
+	mkdir -p $(dir $@)
+	sdcc $(CFLAGS) -o $@ $<
+
+$(AUDIO_DATA_H): TransbotASM/content/psg_data.inc extract_audio_data.py
+	python3 extract_audio_data.py TransbotASM/content/psg_data.inc $@
+
+clean:
+	rm -rf $(BUILD)/
+	rm -f $(AUDIO_DATA_H)
+
+.PHONY: all clean
+
+# ============================================================================
+# 6. QUICK BUILD COMMANDS
+# ============================================================================
+
+# To build with audio:
+#   make clean
+#   make
+
+# To regenerate audio data:
+#   rm dev/engine/audio_data.h
+#   make
+
+# To force rebuild:
+#   make clean
+#   make
+
+# ============================================================================
+# 7. OPTIONAL: CMAKE BUILD SYSTEM
+# ============================================================================
+
+# If using CMake instead, add to CMakeLists.txt:
+
+# find_program(PYTHON3 python3 REQUIRED)
+# 
+# add_custom_command(
+#     OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/dev/engine/audio_data.h
+#     COMMAND ${PYTHON3} extract_audio_data.py 
+#             TransbotASM/content/psg_data.inc 
+#             dev/engine/audio_data.h
+#     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+#     DEPENDS extract_audio_data.py TransbotASM/content/psg_data.inc
+# )
+# 
+# add_library(audio_manager STATIC
+#     dev/engine/audio_manager.c
+#     ${CMAKE_CURRENT_SOURCE_DIR}/dev/engine/audio_data.h
+# )
+# 
+# target_include_directories(audio_manager PUBLIC dev/engine)
+# 
+# add_executable(transbot ${GAME_SOURCES})
+# target_link_libraries(transbot audio_manager)
+
+# ============================================================================
+# 8. OPTIONAL: BUILD SCRIPT (.sh/.bat)
+# ============================================================================
+
+# build.sh:
+# #!/bin/bash
+# 
+# # Generate audio data if not present
+# if [ ! -f dev/engine/audio_data.h ]; then
+#     echo "Generating audio data..."
+#     python3 extract_audio_data.py TransbotASM/content/psg_data.inc dev/engine/audio_data.h
+# fi
+# 
+# # Compile
+# make clean
+# make
+# 
+# # Check for errors
+# if [ $? -eq 0 ]; then
+#     echo "Build successful!"
+#     ls -la build/transbot.sms
+# else
+#     echo "Build failed!"
+#     exit 1
+# fi
+
+# build.bat:
+# @echo off
+# 
+# REM Generate audio data if not present
+# if not exist dev\engine\audio_data.h (
+#     echo Generating audio data...
+#     python3 extract_audio_data.py TransbotASM\content\psg_data.inc dev\engine\audio_data.h
+# )
+# 
+# REM Compile
+# mingw32-make clean
+# mingw32-make
+# 
+# REM Check for errors
+# if %ERRORLEVEL% EQU 0 (
+#     echo Build successful!
+#     dir build\transbot.sms
+# ) else (
+#     echo Build failed!
+#     exit /b 1
+# )
+
+# ============================================================================
+# 9. GITHUB ACTIONS / CI/CD
+# ============================================================================
+
+# If using GitHub Actions, add to .github/workflows/build.yml:
+
+# name: Build Transbot
+# 
+# on: [push, pull_request]
+# 
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
+#       
+#       - name: Setup Python
+#         uses: actions/setup-python@v2
+#         with:
+#           python-version: '3.9'
+#       
+#       - name: Extract Audio Data
+#         run: python3 extract_audio_data.py TransbotASM/content/psg_data.inc dev/engine/audio_data.h
+#       
+#       - name: Build Project
+#         run: make
+
+# ============================================================================
+# 10. TROUBLESHOOTING BUILD ISSUES
+# ============================================================================
+
+# Problem: audio_data.h not found
+# Solution: Run: python3 extract_audio_data.py TransbotASM/content/psg_data.inc dev/engine/audio_data.h
+# 
+# Problem: audio_manager.c compilation error
+# Solution: Verify includes are correct in audio_manager.c
+#           Check that PSGlib declarations match your PSGlib version
+# 
+# Problem: PSGlib symbols not found at link time
+# Solution: Ensure PSGlib.inc is included in assembly build
+#           Check assembler include paths (-i flag)
+#           Verify PSGlib symbols are exported
+

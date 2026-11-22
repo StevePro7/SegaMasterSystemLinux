@@ -21,7 +21,7 @@ F:G$audio_get_sfx_state$0_0$0({2}DF,SC:U),Z,0,0,0,0,0
 F:G$audio_get_current_track$0_0$0({2}DF,SC:U),Z,0,0,0,0,0
 F:G$audio_get_frame_count$0_0$0({2}DF,SI:U),Z,0,0,0,0,0
 F:G$audio_set_frame_count$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Laudio_manager.audio_set_frame_count$new_count$1_0$0({2}SI:U),R,0,0,[e,d]
+S:Laudio_manager.audio_set_frame_count$new_count$1_0$102({2}SI:U),R,0,0,[]
 F:G$audio_is_initialized$0_0$0({2}DF,:S),Z,0,0,0,0,0
 F:G$audio_get_video_system$0_0$0({2}DF,SC:U),Z,0,0,0,0,0
 F:G$audio_set_video_system$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
