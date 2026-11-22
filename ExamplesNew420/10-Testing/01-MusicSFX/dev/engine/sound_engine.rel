@@ -1,0 +1,116 @@
+;!FILE sound_engine.asm
+XL3
+H 9 areas 34 global symbols
+M sound_engine
+O -mz80
+S .__.ABS. Def000000
+S G$PSGPort$0_0$0 Def00007F
+A _CODE size 65 flags 0 addr 0
+S C$sound_engine.c$70$1_0$7 Def00005F
+S C$sound_engine.c$65$1_0$3 Def000025
+S C$sound_engine.c$71$1_0$7 Def000064
+S C$sound_engine.c$57$2_0$4 Def00000A
+S C$sound_engine.c$57$3_0$5 Def000000
+S C$sound_engine.c$67$1_0$7 Def00005C
+S C$sound_engine.c$58$3_0$5 Def000002
+S C$sound_engine.c$69$1_0$7 Def00005C
+S XFsound_engine$hard_reset$0$0 Def000025
+S Fsound_engine$tbl_freq_latch$0_0$0 Def000054
+S A$sound_engine$103 Def00001C
+S A$sound_engine$104 Def00001E
+S A$sound_engine$180 Def000064
+S A$sound_engine$171 Def00005F
+S A$sound_engine$117 Def000025
+S A$sound_engine$108 Def000020
+S A$sound_engine$172 Def000062
+S A$sound_engine$109 Def000023
+S G$sound_engine_init$0$0 Def00005C
+S A$sound_engine$167 Def00005C
+S Fsound_engine$track_ptr$0_0$0 Def000026
+S A$sound_engine$81 Def00000A
+S _sound_engine_init Def00005C
+S A$sound_engine$82 Def00000B
+S Fsound_engine$hard_reset$0$0 Def000000
+S A$sound_engine$83 Def00000C
+S A$sound_engine$74 Def000002
+S A$sound_engine$93 Def000014
+S A$sound_engine$84 Def00000E
+S A$sound_engine$75 Def000005
+S A$sound_engine$94 Def000016
+S A$sound_engine$76 Def000007
+S A$sound_engine$77 Def000008
+S A$sound_engine$69 Def000000
+S A$sound_engine$88 Def000010
+S A$sound_engine$98 Def000018
+S A$sound_engine$89 Def000012
+S A$sound_engine$99 Def00001A
+S C$sound_engine.c$60$1_0$3 Def000010
+S XG$sound_engine_init$0$0 Def000064
+S Fsound_engine$tbl_vol_latch$0_0$0 Def000058
+S C$sound_engine.c$61$1_0$3 Def000014
+S C$sound_engine.c$53$0_0$3 Def000000
+S C$sound_engine.c$62$1_0$3 Def000018
+S C$sound_engine.c$63$1_0$3 Def00001C
+S C$sound_engine.c$64$1_0$3 Def000020
+A _DATA size C3 flags 0 addr 0
+S Fsound_engine$ram_ch$0_0$0 Def000002
+S Fsound_engine$ram_flags$0_0$0 Def000001
+S Fsound_engine$ram_cmd$0_0$0 Def000000
+S Fsound_engine$carry_flag$0_0$0 Def0000C2
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 01 00
+T 00 00 00
+R 00 00 01 00
+T 01 00 00
+R 00 00 01 00
+T 01 00 00
+R 00 00 01 00
+T 02 00 00
+R 00 00 01 00
+T 02 00 00
+R 00 00 01 00
+T C2 00 00
+R 00 00 01 00
+T C2 00 00
+R 00 00 01 00
+T 00 00 00
+R 00 00 00 00
+T 00 00 00 0E 00
+R 00 00 00 00
+T 02 00 00
+R 00 00 00 00
+T 02 00 00 21 02 00 06 00 09 36 00 0C 79 D6 C0 38
+R 00 00 00 00 00 04 01 00
+T 0F 00 00 F2 3E 9F D3 7F 3E BF D3 7F 3E DF D3 7F
+R 00 00 00 00
+T 1C 00 00 3E FF D3 7F 21 01 00 36 00 C9
+R 00 00 00 00 00 08 01 00
+T 26 00 00
+R 00 00 00 00
+T 26 00 00 00 00 31 35 B5 35 EC 35 62 37 79 38
+R 00 00 00 00
+T 32 00 00 AB 38 D3 38 FD 38 0F 39 39 39 B3 31
+R 00 00 00 00
+T 3E 00 00 6A 39 7F 39 94 39 C7 39 B3 31 B3 31
+R 00 00 00 00
+T 4A 00 00 FC 39 35 3A 47 3A 55 3A 8C 3A
+R 00 00 00 00
+T 54 00 00
+R 00 00 00 00
+T 54 00 00 80 A0 C0 C0
+R 00 00 00 00
+T 58 00 00
+R 00 00 00 00
+T 58 00 00 90 B0 D0 F0
+R 00 00 00 00
+T 5C 00 00
+R 00 00 00 00
+T 5C 00 00 CD 00 00 21 00 00 36 80 C9
+R 00 00 00 00 00 04 00 00 00 07 01 00

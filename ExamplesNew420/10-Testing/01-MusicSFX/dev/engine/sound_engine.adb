@@ -1,0 +1,10 @@
+M:sound_engine
+F:Fsound_engine$hard_reset$0_0$0({2}DF,SV:S),C,0,0,0,0,0
+S:Lsound_engine.hard_reset$i$1_0$3({1}SC:U),R,0,0,[c]
+F:G$sound_engine_init$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
+S:Fsound_engine$ram_cmd$0_0$0({1}SC:U),E,0,0
+S:Fsound_engine$ram_flags$0_0$0({1}SC:U),E,0,0
+S:Fsound_engine$ram_ch$0_0$0({192}DA192d,SC:U),E,0,0
+S:Fsound_engine$carry_flag$0_0$0({1}SC:U),E,0,0
+S:G$PSGPort$0_0$0({1}SC:U),I,0,0
+S:Fsound_engine$hard_reset$0_0$0({2}DF,SV:S),C,0,0

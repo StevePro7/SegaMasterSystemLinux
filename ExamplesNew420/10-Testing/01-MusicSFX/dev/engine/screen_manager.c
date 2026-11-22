@@ -7,7 +7,7 @@
 
 void engine_screen_manager_init()
 {
-	engine_font_manager_draw_text( " == HELLO SOUND == ", 4, 6 );
+	engine_font_manager_draw_text( " == HELLO SOUND !! ", 4, 6 );
 }
 
 void engine_screen_manager_update()
