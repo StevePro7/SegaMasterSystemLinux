@@ -7,9 +7,7 @@
 
 void engine_screen_manager_init()
 {
-	engine_font_manager_draw_text( " == HELLO WORLD == ", 4, 6 );
-	//engine_font_manager_draw_text( "PRESS LEFT, RIGHT OR DOWN", 4, 8 );
-	//engine_font_manager_draw_text( "PRESS FIRE TO PLAY SAMPLE", 4, 9 );
+	engine_font_manager_draw_text( " == HELLO SOUND == ", 4, 6 );
 }
 
 void engine_screen_manager_update()
@@ -27,21 +25,18 @@ void engine_screen_manager_update()
 	input = engine_input_manager_hold_left();
 	if( input )
 	{
-		audio_play_music( MUSIC_TRACK_0, 0xFF );
-		engine_font_manager_draw_text( "PRESS LEFT, RIGHT OR DOWN", 4, 8 );
-		//engine_audio_manager_sfx_play( 0 );
+		//audio_play_music( MUSIC_TRACK_0, 0xFF );
+		engine_font_manager_draw_text( "PRESS LEFT", 4, 8 );
 	}
 
 	input = engine_input_manager_hold_right();
 	if( input )
 	{
-		//engine_audio_manager_sfx_play( 1 );
 	}
 
 	input = engine_input_manager_hold_down();
 	if( input )
 	{
-		//engine_audio_manager_sfx_play( 2 );
 	}
 
 	input = engine_input_manager_hold_fire1();
