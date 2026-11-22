@@ -1,11 +1,13 @@
 M:screen_manager
 F:G$engine_screen_manager_init$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 F:G$engine_screen_manager_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lscreen_manager.engine_screen_manager_update$status$1_0$48({1}SC:U),R,0,0,[a]
-S:Lscreen_manager.engine_screen_manager_update$input$1_0$48({1}SC:U),R,0,0,[a]
+S:Lscreen_manager.engine_screen_manager_update$input$1_0$49({1}SC:U),R,0,0,[a]
 T:Fscreen_manager$__00000000[({0}S:S$music_state$0_0$0({1}SC:U),Z,0,0)({1}S:S$sfx_state$0_0$0({1}SC:U),Z,0,0)({2}S:S$current_music_track$0_0$0({1}SC:U),Z,0,0)({3}S:S$music_volume$0_0$0({1}SC:U),Z,0,0)({4}S:S$sfx_volume$0_0$0({1}SC:U),Z,0,0)({5}S:S$frame_counter$0_0$0({2}SI:U),Z,0,0)({7}S:S$muted$0_0$0({1}:S),Z,0,0)({8}S:S$initialized$0_0$0({1}:S),Z,0,0)]
+S:Fscreen_manager$num1$0_0$0({1}SC:U),E,0,0
+S:Fscreen_manager$num2$0_0$0({1}SC:U),E,0,0
 S:G$audio_init$0_0$0({2}DF,:S),C,0,0
 S:G$audio_play_music$0_0$0({2}DF,:S),C,0,0
+S:G$audio_play_stage_music$0_0$0({2}DF,:S),C,0,0
 S:G$audio_play_sfx$0_0$0({2}DF,:S),C,0,0
 S:G$audio_stop_music$0_0$0({2}DF,SV:S),C,0,0
 S:G$audio_stop_sfx$0_0$0({2}DF,SV:S),C,0,0

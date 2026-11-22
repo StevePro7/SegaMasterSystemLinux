@@ -58,11 +58,11 @@ typedef enum {
 * - Jump, land, coin, powerup, enemy hit, game over, level complete, etc.
 */
 typedef enum {
-	SFX_PLACEHOLDER_00 = 0,
-	SFX_PLACEHOLDER_01 = 1,
-	SFX_PLACEHOLDER_02 = 2,
-	// ... add more as identified
-	NUM_SFX = 3
+	// SFX id N plays original sound command (11 + N) of the Transbot driver
+	SFX_00 = 0, SFX_01 = 1, SFX_02 = 2, SFX_03 = 3,
+	SFX_04 = 4, SFX_05 = 5, SFX_06 = 6, SFX_07 = 7,
+	SFX_08 = 8, SFX_09 = 9, SFX_10 = 10, SFX_11 = 11,
+	NUM_SFX = 12
 } SoundEffectID;
 
 /**
@@ -116,7 +116,18 @@ bool audio_init( void );
 * @param loop_count  Number of times to loop (0xFF = infinite)
 * @return true if track started successfully, false otherwise
 */
-bool audio_play_music( uint8_t track_id, uint8_t loop_count );
+bool audio_play_music( unsigned char track_id, uint8_t loop_count );
+
+/**
+* Play the stage start sequence, as in the original game
+*
+* Plays the intro melody (original sound command $95) for 288 frames, then
+* automatically starts the stage music (track 2 or track 3). Timing is frame
+* based, so it matches the original on both NTSC and PAL.
+*
+* @param variant 0 = stage music track 2 (original $83), 1 = track 3 ($84)
+*/
+bool audio_play_stage_music( uint8_t variant );
 
 /**
 * Play sound effect
@@ -300,4 +311,4 @@ void audio_set_video_system( uint8_t is_pal );
 */
 void audio_print_debug_info( void );
 
-#endif /* AUDIO_MANAGER_H */
+#endif//AUDIO_MANAGER_H

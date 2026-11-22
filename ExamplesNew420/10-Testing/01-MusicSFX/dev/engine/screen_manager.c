@@ -5,42 +5,58 @@
 #include "../object/audio_data.h"
 #include "../devkit/_snd_manager.h"
 
+static unsigned char num1;
+static unsigned char num2;
+
 void engine_screen_manager_init()
 {
-	engine_font_manager_draw_text( " == HELLO SOUND ?? ", 4, 6 );
+	num1 = 1;
+	num2 = 4;
+	engine_font_manager_draw_text( " !? HELLO SOUND ?! ", 4, 6 );
+	engine_font_manager_draw_data( num1, 12, 8 );
+	engine_font_manager_draw_data( num2, 12, 9 );
 }
 
 void engine_screen_manager_update()
 {
-	unsigned char status;
 	unsigned char input;
-
-	// If sound effect already playing then return.
-	status = devkit_PSGSFXGetStatus();
-	if( status )
-	{
-		return;
-	}
 
 	input = engine_input_manager_hold_left();
 	if( input )
 	{
-		//audio_play_music( MUSIC_TRACK_0, 0xFF );
-		engine_font_manager_draw_text( "PRESS LEFT..", 4, 8 );
+		num2--;
+		engine_font_manager_draw_data( num2, 12, 9 );
 	}
 
 	input = engine_input_manager_hold_right();
 	if( input )
 	{
+		num2++;
+		engine_font_manager_draw_data( num2, 12, 9 );
+	}
+
+	input = engine_input_manager_hold_up();
+	if( input )
+	{
+		num1--;
+		engine_font_manager_draw_data( num1, 12, 8 );
 	}
 
 	input = engine_input_manager_hold_down();
 	if( input )
 	{
+		num1++;
+		engine_font_manager_draw_data( num1, 12, 8 );
 	}
 
 	input = engine_input_manager_hold_fire1();
 	if( input )
 	{
+		audio_play_sfx( num1 );
+	}
+	input = engine_input_manager_hold_fire2();
+	if( input )
+	{
+		audio_play_music( num2, 0xFF );
 	}
 }
