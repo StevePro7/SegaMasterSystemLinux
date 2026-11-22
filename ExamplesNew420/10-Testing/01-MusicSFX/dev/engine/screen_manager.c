@@ -7,7 +7,7 @@
 
 void engine_screen_manager_init()
 {
-	engine_font_manager_draw_text( " == HELLO SOUND !! ", 4, 6 );
+	engine_font_manager_draw_text( " == HELLO SOUND ?? ", 4, 6 );
 }
 
 void engine_screen_manager_update()
@@ -26,7 +26,7 @@ void engine_screen_manager_update()
 	if( input )
 	{
 		//audio_play_music( MUSIC_TRACK_0, 0xFF );
-		engine_font_manager_draw_text( "PRESS LEFT", 4, 8 );
+		engine_font_manager_draw_text( "PRESS LEFT..", 4, 8 );
 	}
 
 	input = engine_input_manager_hold_right();
