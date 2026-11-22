@@ -8,12 +8,12 @@ Original Game                Extract Audio Data          C Implementation
 
 TransbotASM/              extract_audio_data.py         TransbotCnew/
  ├─ main_org.asm                 ↓                      ├─ dev/engine/
- ├─ content/                      │                      │  ├─ audio_manager.h
- │  └─ psg_data.inc ───────────→ │ ───→ audio_data.h   │  ├─ audio_manager.c
- │                                │      (hex arrays)    │  └─ audio_data.h
- │                                │                      │       (generated)
- ├─ engine/                        │                      ├─ main.c
- │  └─ sound_manager.inc ─────────┘                      │  (integrates audio)
+ ├─ content/                     │                      │  ├─ audio_manager.h
+ │  └─ psg_data.inc ───────────→ │ ───→ audio_data.h    │  ├─ audio_manager.c
+ │                               │      (hex arrays)    │  └─ audio_data.h
+ │                               │                      │       (generated)
+ ├─ engine/                      │                      ├─ main.c
+ │  └─ sound_manager.inc ────────┘                      │  (integrates audio)
  │                                                        └─ ...
  └─ ...
 ```
@@ -23,7 +23,7 @@ TransbotASM/              extract_audio_data.py         TransbotCnew/
 ```
 Game Frame N:
 ┌─────────────────────────────────────────────────────────┐
-│                   Main Game Loop                         │
+│                   Main Game Loop                        │
 └─────────────────────────────────────────────────────────┘
   ↓
   update_game()           ← Handle input, physics, etc.
@@ -74,13 +74,13 @@ Game Frame N+1:
                      │    PAUSED       │          │
                      └────────┬────────┘          │
                               │                   │
-                              │ audio_resume()   │
+                              │ audio_resume()    │
                               ↑                   │
                               │                   │
-                     audio_stop_music()          │
-                              ├──────────────────┘
+                     audio_stop_music()           │
+                              ├───────────────────┘
                               │
-                     ┌─────────v──────┐
+                     ┌────────v───────┐
                      │  STOPPED/IDLE  │
                      └────────────────┘
 ```
@@ -246,10 +246,10 @@ Frame Duration:
 │                 20.00ms (PAL)               │
 ├─────────────────────────────────────────────┤
 │                                             │
-│  game logic  → render  → audio  → vblank   │
-│  (10ms)      (3ms)     (1ms)   (wait)      │
+│  game logic  → render  → audio  → vblank    │
+│  (10ms)      (3ms)     (1ms)   (wait)       │
 │                                             │
-│  Total = ~14ms, then wait for VBLANK       │
+│  Total = ~14ms, then wait for VBLANK        │
 │                                             │
 └─────────────────────────────────────────────┘
 
