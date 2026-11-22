@@ -7,7 +7,7 @@
 */
 
 #include "audio_manager.h"
-#include "sound_engine.h"
+#include "sound_manager.h"
 #include <stdlib.h>
 
 #ifdef _CONSOLE
@@ -34,7 +34,7 @@ static uint8_t saved_music_volume = 0;
 static uint8_t saved_sfx_volume = 0;
 
 // Video system: 0 = NTSC (60Hz), 1 = PAL (50Hz)
-static uint8_t video_system = 0;
+static uint8_t video_system = 1;
 
 // Stage start: original plays the intro melody (command 21) for 288 frames, then the stage music
 #define STAGE_INTRO_FRAMES 288
@@ -198,6 +198,7 @@ uint16_t audio_get_frame_count( void ) {
 }
 
 void audio_set_frame_count( uint16_t new_count ) {
+	new_count = 0;
 //	audio_manager.frame_counter = new_count;
 }
 

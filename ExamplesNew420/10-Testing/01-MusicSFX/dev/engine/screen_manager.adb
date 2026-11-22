@@ -1,6 +1,5 @@
 M:screen_manager
 F:G$engine_screen_manager_init$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
-S:Lscreen_manager.engine_screen_manager_init$res$1_0$28({1}SC:U),R,0,0,[e]
 F:G$engine_screen_manager_update$0_0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Lscreen_manager.engine_screen_manager_update$input$1_0$29({1}SC:U),R,0,0,[a]
 T:Fscreen_manager$__00000000[({0}S:S$music_state$0_0$0({1}SC:U),Z,0,0)({1}S:S$sfx_state$0_0$0({1}SC:U),Z,0,0)({2}S:S$current_music_track$0_0$0({1}SC:U),Z,0,0)({3}S:S$music_volume$0_0$0({1}SC:U),Z,0,0)({4}S:S$sfx_volume$0_0$0({1}SC:U),Z,0,0)({5}S:S$frame_counter$0_0$0({2}SI:U),Z,0,0)({7}S:S$muted$0_0$0({1}:S),Z,0,0)({8}S:S$initialized$0_0$0({1}:S),Z,0,0)]
@@ -46,4 +45,3 @@ S:G$engine_input_manager_move_left$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_right$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire1$0_0$0({2}DF,SC:U),C,0,0
 S:G$engine_input_manager_move_fire2$0_0$0({2}DF,SC:U),C,0,0
-S:G$foo$0_0$0({2}DF,SI:S),C,0,0

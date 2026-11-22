@@ -1,19 +1,1929 @@
 ;!FILE sound_manager.asm
 XL3
-H 9 areas 9 global symbols
+H 9 areas 77F global symbols
 M sound_manager
 O -mz80
+S _psg_rom Ref000000
 S .__.ABS. Def000000
-A _CODE size 4 flags 0 addr 0
-S A$sound_manager$63 Def000003
-S A$sound_manager$55 Def000000
-S G$foo$0$0 Def000000
-S _foo Def000000
-S C$sound_manager.c$3$0_0$1 Def000000
-S C$sound_manager.c$5$1_0$1 Def000000
-S C$sound_manager.c$6$1_0$1 Def000003
-S XG$foo$0$0 Def000003
-A _DATA size 0 flags 0 addr 0
+S G$PSGPort$0_0$0 Def00007F
+A _CODE size B7C flags 0 addr 0
+S A$sound_manager$2990 Def000AFC
+S A$sound_manager$2981 Def000AF6
+S A$sound_manager$2864 Def000AB7
+S A$sound_manager$2855 Def000AB3
+S A$sound_manager$2846 Def000AB1
+S A$sound_manager$2738 Def000A5E
+S A$sound_manager$2675 Def000A34
+S A$sound_manager$2666 Def000A30
+S A$sound_manager$2657 Def000A2E
+S A$sound_manager$2594 Def0009D4
+S A$sound_manager$2585 Def0009C6
+S A$sound_manager$2567 Def0009B2
+S A$sound_manager$2495 Def000987
+S A$sound_manager$2486 Def000976
+S A$sound_manager$2468 Def000965
+S A$sound_manager$2459 Def00095F
+S A$sound_manager$2396 Def000900
+S A$sound_manager$2387 Def0008E2
+S A$sound_manager$2369 Def0008CC
+S A$sound_manager$2297 Def00087E
+S A$sound_manager$2198 Def00081B
+S A$sound_manager$1982 Def000719
+S A$sound_manager$1955 Def000707
+S A$sound_manager$1946 Def0006FB
+S A$sound_manager$1937 Def0006F4
+S A$sound_manager$1919 Def0006E5
+S A$sound_manager$1883 Def0006C3
+S A$sound_manager$1874 Def0006B2
+S A$sound_manager$1793 Def000668
+S A$sound_manager$1784 Def000657
+S A$sound_manager$1766 Def000648
+S A$sound_manager$1748 Def000639
+S A$sound_manager$1694 Def00060B
+S A$sound_manager$1676 Def0005F7
+S A$sound_manager$1658 Def0005D9
+S A$sound_manager$1586 Def00057F
+S A$sound_manager$1577 Def000578
+S A$sound_manager$1559 Def000562
+S A$sound_manager$1487 Def000518
+S A$sound_manager$1478 Def000516
+S A$sound_manager$1298 Def00046D
+S A$sound_manager$1289 Def000467
+S A$sound_manager$400 Def00012A
+S A$sound_manager$310 Def0000D2
+S A$sound_manager$220 Def00007F
+S C$sound_manager.c$132$1_0$30 Def0001C2
+S C$sound_manager.c$123$1_0$30 Def000171
+S Fsound_manager$load_channels$0$0 Def000171
+S A$sound_manager$3099 Def000B58
+S A$sound_manager$2982 Def000AF8
+S A$sound_manager$2865 Def000AB9
+S A$sound_manager$2829 Def000A9D
+S A$sound_manager$2766 Def000A72
+S A$sound_manager$2739 Def000A62
+S A$sound_manager$2694 Def000A41
+S A$sound_manager$2685 Def000A3D
+S A$sound_manager$2676 Def000A36
+S A$sound_manager$2595 Def0009D7
+S A$sound_manager$2586 Def0009C7
+S A$sound_manager$2568 Def0009B3
+S A$sound_manager$2559 Def0009AB
+S A$sound_manager$2496 Def000988
+S A$sound_manager$2487 Def000977
+S A$sound_manager$2469 Def000966
+S A$sound_manager$2397 Def000902
+S A$sound_manager$2388 Def0008E5
+S A$sound_manager$2379 Def0008D4
+S A$sound_manager$2298 Def00087F
+S A$sound_manager$2199 Def00081E
+S A$sound_manager$1992 Def00071A
+S A$sound_manager$1965 Def00070E
+S A$sound_manager$1947 Def0006FC
+S A$sound_manager$1938 Def0006F5
+S A$sound_manager$1884 Def0006C6
+S A$sound_manager$1875 Def0006B5
+S A$sound_manager$1848 Def00069A
+S A$sound_manager$1839 Def000690
+S A$sound_manager$1785 Def00065A
+S A$sound_manager$1767 Def000649
+S A$sound_manager$1758 Def00063F
+S A$sound_manager$1749 Def00063A
+S A$sound_manager$1695 Def00060D
+S A$sound_manager$1677 Def0005F8
+S A$sound_manager$1668 Def0005ED
+S A$sound_manager$1659 Def0005DC
+S A$sound_manager$1596 Def000586
+S A$sound_manager$1488 Def00051A
+S A$sound_manager$1389 Def0004C8
+S A$sound_manager$1299 Def00046E
+S A$sound_manager$401 Def00012B
+S A$sound_manager$320 Def0000D3
+S A$sound_manager$221 Def000080
+S A$sound_manager$2956 Def000AE7
+S A$sound_manager$2767 Def000A73
+S A$sound_manager$2695 Def000A42
+S A$sound_manager$2686 Def000A40
+S A$sound_manager$2596 Def0009DA
+S A$sound_manager$2587 Def0009C8
+S A$sound_manager$2569 Def0009B4
+S A$sound_manager$2497 Def000989
+S A$sound_manager$2488 Def000979
+S A$sound_manager$2398 Def000905
+S A$sound_manager$2389 Def0008E9
+S A$sound_manager$2299 Def000880
+S A$sound_manager$1993 Def00071C
+S A$sound_manager$1966 Def000711
+S A$sound_manager$1948 Def0006FF
+S A$sound_manager$1894 Def0006CE
+S A$sound_manager$1885 Def0006C7
+S A$sound_manager$1876 Def0006B8
+S A$sound_manager$1849 Def00069E
+S A$sound_manager$1786 Def00065B
+S A$sound_manager$1777 Def00064F
+S A$sound_manager$1759 Def000640
+S A$sound_manager$1696 Def000610
+S A$sound_manager$1687 Def000601
+S A$sound_manager$1597 Def000589
+S A$sound_manager$1489 Def00051C
+S A$sound_manager$1399 Def0004CC
+S A$sound_manager$420 Def000139
+S A$sound_manager$402 Def00012C
+S A$sound_manager$321 Def0000D5
+S A$sound_manager$240 Def00008D
+S A$sound_manager$222 Def000081
+S C$sound_manager.c$125$1_0$30 Def00017B
+S C$sound_manager.c$120$1_0$26 Def000170
+S _sound_engine_stop Def000B6F
+S A$sound_manager$2795 Def000A84
+S A$sound_manager$2786 Def000A80
+S A$sound_manager$2777 Def000A7C
+S A$sound_manager$2768 Def000A75
+S A$sound_manager$2597 Def0009DD
+S A$sound_manager$2588 Def0009C9
+S A$sound_manager$2579 Def0009BA
+S A$sound_manager$2498 Def00098A
+S A$sound_manager$2489 Def00097A
+S A$sound_manager$2399 Def000908
+S A$sound_manager$1994 Def000720
+S A$sound_manager$1976 Def000715
+S A$sound_manager$1967 Def000712
+S A$sound_manager$1895 Def0006D1
+S A$sound_manager$1877 Def0006B9
+S A$sound_manager$1868 Def0006AC
+S A$sound_manager$1787 Def00065C
+S A$sound_manager$1778 Def000650
+S A$sound_manager$1697 Def000611
+S A$sound_manager$1598 Def00058B
+S A$sound_manager$601 Def0001D1
+S A$sound_manager$430 Def00013F
+S A$sound_manager$421 Def00013A
+S A$sound_manager$340 Def0000EE
+S A$sound_manager$322 Def0000D9
+S A$sound_manager$304 Def0000CE
+S A$sound_manager$241 Def00008F
+S A$sound_manager$223 Def000082
+S A$sound_manager$205 Def000074
+S A$sound_manager$160 Def00005C
+S A$sound_manager$151 Def00004E
+S C$sound_manager.c$133$2_0$31 Def0001CB
+S A$sound_manager$2796 Def000A85
+S A$sound_manager$2787 Def000A81
+S A$sound_manager$2778 Def000A7F
+S A$sound_manager$2598 Def0009E0
+S A$sound_manager$2589 Def0009CA
+S A$sound_manager$2499 Def00098B
+S A$sound_manager$1995 Def000722
+S A$sound_manager$1977 Def000717
+S A$sound_manager$1959 Def000708
+S A$sound_manager$1896 Def0006D2
+S A$sound_manager$1878 Def0006BA
+S A$sound_manager$1869 Def0006AF
+S A$sound_manager$1797 Def000669
+S A$sound_manager$1788 Def00065D
+S A$sound_manager$1779 Def000652
+S A$sound_manager$1698 Def000612
+S A$sound_manager$710 Def00022E
+S A$sound_manager$620 Def0001E6
+S A$sound_manager$602 Def0001D4
+S A$sound_manager$530 Def000181
+S A$sound_manager$440 Def000146
+S A$sound_manager$431 Def000140
+S A$sound_manager$422 Def00013C
+S A$sound_manager$350 Def000100
+S A$sound_manager$341 Def0000F1
+S A$sound_manager$323 Def0000DB
+S A$sound_manager$305 Def0000D0
+S A$sound_manager$260 Def0000A4
+S A$sound_manager$251 Def000095
+S A$sound_manager$233 Def000089
+S A$sound_manager$224 Def000083
+S A$sound_manager$206 Def000075
+S A$sound_manager$170 Def000062
+S A$sound_manager$152 Def00004F
+S C$sound_manager.c$134$2_0$31 Def0001D1
+S C$sound_manager.c$130$4_0$33 Def0001A1
+S A$sound_manager$2995 Def000AFE
+S A$sound_manager$2986 Def000AF9
+S A$sound_manager$2896 Def000AC8
+S A$sound_manager$2887 Def000AC4
+S A$sound_manager$2878 Def000AC0
+S A$sound_manager$2869 Def000ABC
+S A$sound_manager$2797 Def000A87
+S A$sound_manager$2599 Def0009E3
+S A$sound_manager$1996 Def000726
+S A$sound_manager$1879 Def0006BB
+S A$sound_manager$1798 Def00066B
+S A$sound_manager$1789 Def000660
+S A$sound_manager$1699 Def000615
+S A$sound_manager$900 Def000301
+S A$sound_manager$801 Def00027D
+S A$sound_manager$711 Def00022F
+S A$sound_manager$702 Def000226
+S A$sound_manager$621 Def0001E7
+S A$sound_manager$603 Def0001D5
+S A$sound_manager$540 Def000189
+S A$sound_manager$522 Def00017B
+S A$sound_manager$504 Def000170
+S A$sound_manager$441 Def000148
+S A$sound_manager$414 Def000134
+S A$sound_manager$342 Def0000F4
+S A$sound_manager$333 Def0000DF
+S A$sound_manager$324 Def0000DC
+S A$sound_manager$270 Def0000B8
+S A$sound_manager$261 Def0000A5
+S A$sound_manager$252 Def000098
+S A$sound_manager$207 Def000076
+S A$sound_manager$153 Def000052
+S C$sound_manager.c$200$2_0$47 Def000353
+S C$sound_manager.c$135$2_0$31 Def0001D7
+S C$sound_manager.c$128$1_0$30 Def000189
+S C$sound_manager.c$112$2_0$27 Def000155
+S _sound_engine_play_cmd Def000B63
+S A$sound_manager$2969 Def000AEF
+S A$sound_manager$2897 Def000AC9
+S A$sound_manager$2888 Def000AC7
+S A$sound_manager$2879 Def000AC1
+S A$sound_manager$1997 Def000728
+S A$sound_manager$1889 Def0006CA
+S A$sound_manager$1799 Def00066C
+S A$sound_manager$910 Def000314
+S A$sound_manager$901 Def000302
+S A$sound_manager$802 Def00027E
+S A$sound_manager$730 Def00023F
+S A$sound_manager$712 Def000232
+S A$sound_manager$703 Def000227
+S A$sound_manager$622 Def0001E8
+S A$sound_manager$613 Def0001DD
+S A$sound_manager$541 Def00018C
+S A$sound_manager$523 Def00017C
+S A$sound_manager$514 Def000171
+S A$sound_manager$442 Def000149
+S A$sound_manager$343 Def0000F7
+S A$sound_manager$334 Def0000E2
+S A$sound_manager$271 Def0000BB
+S A$sound_manager$262 Def0000A8
+S A$sound_manager$253 Def000099
+S A$sound_manager$217 Def000077
+S A$sound_manager$154 Def000053
+S C$sound_manager.c$311$4_0$61 Def000625
+S C$sound_manager.c$210$2_0$47 Def0003A3
+S C$sound_manager.c$161$4_0$40 Def000249
+S C$sound_manager.c$142$1_0$35 Def0001F5
+S C$sound_manager.c$136$2_0$31 Def0001DD
+S C$sound_manager.c$129$1_0$30 Def00019B
+S C$sound_manager.c$115$1_0$26 Def00015B
+S Fsound_manager$chan_out$0$0 Def000064
+S A$sound_manager$2979 Def000AF0
+S A$sound_manager$1998 Def00072A
+S A$sound_manager$911 Def000317
+S A$sound_manager$902 Def000303
+S A$sound_manager$830 Def000293
+S A$sound_manager$812 Def000288
+S A$sound_manager$803 Def00027F
+S A$sound_manager$740 Def000246
+S A$sound_manager$722 Def000238
+S A$sound_manager$713 Def000233
+S A$sound_manager$704 Def000228
+S A$sound_manager$632 Def0001F0
+S A$sound_manager$614 Def0001E0
+S A$sound_manager$560 Def0001A1
+S A$sound_manager$542 Def00018F
+S A$sound_manager$533 Def000182
+S A$sound_manager$524 Def00017D
+S A$sound_manager$515 Def000173
+S A$sound_manager$470 Def000157
+S A$sound_manager$461 Def00014D
+S A$sound_manager$443 Def00014A
+S A$sound_manager$380 Def00011C
+S A$sound_manager$371 Def000111
+S A$sound_manager$362 Def00010B
+S A$sound_manager$353 Def000101
+S A$sound_manager$344 Def0000F8
+S A$sound_manager$335 Def0000E3
+S A$sound_manager$272 Def0000BC
+S A$sound_manager$263 Def0000AB
+S A$sound_manager$245 Def000092
+S A$sound_manager$218 Def000079
+S A$sound_manager$191 Def000064
+S A$sound_manager$155 Def000054
+S Fsound_manager$cmd_process$0$0 Def000999
+S C$sound_manager.c$312$4_0$61 Def000629
+S C$sound_manager.c$303$5_0$60 Def0005C3
+S C$sound_manager.c$220$2_0$47 Def0003CB
+S C$sound_manager.c$202$2_0$47 Def000356
+S C$sound_manager.c$139$1_0$30 Def0001EB
+S C$sound_manager.c$137$2_0$31 Def0001E3
+S C$sound_manager.c$116$1_0$26 Def00015F
+S C$sound_manager.c$112$3_0$28 Def00014B
+S A$sound_manager$2998 Def000AFF
+S A$sound_manager$1999 Def00072D
+S A$sound_manager$930 Def000335
+S A$sound_manager$912 Def00031A
+S A$sound_manager$903 Def000304
+S A$sound_manager$831 Def000296
+S A$sound_manager$822 Def00028F
+S A$sound_manager$813 Def000289
+S A$sound_manager$804 Def000281
+S A$sound_manager$723 Def00023B
+S A$sound_manager$633 Def0001F2
+S A$sound_manager$615 Def0001E1
+S A$sound_manager$570 Def0001B0
+S A$sound_manager$561 Def0001A4
+S A$sound_manager$543 Def000190
+S A$sound_manager$534 Def000185
+S A$sound_manager$525 Def00017E
+S A$sound_manager$516 Def000177
+S A$sound_manager$480 Def00015F
+S A$sound_manager$471 Def000159
+S A$sound_manager$462 Def000150
+S A$sound_manager$435 Def000143
+S A$sound_manager$426 Def00013E
+S A$sound_manager$408 Def00012D
+S A$sound_manager$390 Def000122
+S A$sound_manager$363 Def00010C
+S A$sound_manager$354 Def000102
+S A$sound_manager$345 Def0000FB
+S A$sound_manager$336 Def0000E5
+S A$sound_manager$291 Def0000C5
+S A$sound_manager$264 Def0000AE
+S A$sound_manager$246 Def000093
+S A$sound_manager$228 Def000086
+S A$sound_manager$219 Def00007D
+S A$sound_manager$192 Def000065
+S A$sound_manager$165 Def00005D
+S A$sound_manager$156 Def000055
+S XG$sound_engine_get_state$0$0 Def000B7B
+S C$sound_manager.c$500$1_0$84 Def000AE7
+S C$sound_manager.c$310$3_0$56 Def00061F
+S C$sound_manager.c$304$5_0$60 Def0005F9
+S C$sound_manager.c$230$2_0$47 Def000406
+S C$sound_manager.c$221$2_0$47 Def0003DB
+S C$sound_manager.c$203$2_0$47 Def000356
+S C$sound_manager.c$144$1_0$35 Def0001F6
+S C$sound_manager.c$117$1_0$26 Def000163
+S C$sound_manager.c$113$3_0$28 Def00014D
+S C$sound_manager.c$108$1_0$26 Def00014B
+S A$sound_manager$913 Def00031D
+S A$sound_manager$841 Def0002A4
+S A$sound_manager$832 Def000299
+S A$sound_manager$805 Def000282
+S A$sound_manager$751 Def000250
+S A$sound_manager$724 Def00023C
+S A$sound_manager$652 Def0001F6
+S A$sound_manager$607 Def0001D7
+S A$sound_manager$580 Def0001BB
+S A$sound_manager$571 Def0001B1
+S A$sound_manager$562 Def0001A6
+S A$sound_manager$553 Def00019B
+S A$sound_manager$544 Def000191
+S A$sound_manager$535 Def000186
+S A$sound_manager$526 Def00017F
+S A$sound_manager$517 Def000179
+S A$sound_manager$490 Def000167
+S A$sound_manager$481 Def000161
+S A$sound_manager$463 Def000152
+S A$sound_manager$409 Def000131
+S A$sound_manager$364 Def00010E
+S A$sound_manager$355 Def000105
+S A$sound_manager$337 Def0000E7
+S A$sound_manager$328 Def0000DD
+S A$sound_manager$292 Def0000C6
+S A$sound_manager$283 Def0000C2
+S A$sound_manager$265 Def0000B1
+S A$sound_manager$247 Def000094
+S A$sound_manager$238 Def00008B
+S A$sound_manager$229 Def000087
+S A$sound_manager$193 Def000067
+S A$sound_manager$166 Def00005E
+S A$sound_manager$157 Def000057
+S XFsound_manager$chan_update$0$0 Def000998
+S C$sound_manager.c$342$1_0$54 Def0006AC
+S C$sound_manager.c$330$4_0$63 Def000689
+S C$sound_manager.c$320$3_0$56 Def000645
+S C$sound_manager.c$262$3_0$51 Def0004CF
+S C$sound_manager.c$240$2_0$47 Def00043C
+S C$sound_manager.c$231$2_0$47 Def000406
+S C$sound_manager.c$222$2_0$47 Def0003DE
+S C$sound_manager.c$211$3_0$48 Def0003AA
+S C$sound_manager.c$204$2_0$47 Def00036C
+S C$sound_manager.c$145$1_0$35 Def0001FE
+S C$sound_manager.c$118$1_0$26 Def000167
+S A$sound_manager$950 Def000343
+S A$sound_manager$914 Def000320
+S A$sound_manager$905 Def000305
+S A$sound_manager$860 Def0002B1
+S A$sound_manager$842 Def0002A6
+S A$sound_manager$833 Def00029C
+S A$sound_manager$806 Def000284
+S A$sound_manager$752 Def000251
+S A$sound_manager$734 Def000242
+S A$sound_manager$725 Def00023D
+S A$sound_manager$707 Def000229
+S A$sound_manager$680 Def00020F
+S A$sound_manager$653 Def0001F8
+S A$sound_manager$608 Def0001DA
+S A$sound_manager$590 Def0001C8
+S A$sound_manager$581 Def0001BE
+S A$sound_manager$572 Def0001B4
+S A$sound_manager$563 Def0001A7
+S A$sound_manager$554 Def00019C
+S A$sound_manager$545 Def000193
+S A$sound_manager$527 Def000180
+S A$sound_manager$518 Def00017A
+S A$sound_manager$491 Def000169
+S A$sound_manager$464 Def000153
+S A$sound_manager$419 Def000138
+S A$sound_manager$356 Def000106
+S A$sound_manager$338 Def0000EA
+S A$sound_manager$275 Def0000BD
+S A$sound_manager$266 Def0000B2
+S A$sound_manager$257 Def00009B
+S A$sound_manager$239 Def00008C
+S A$sound_manager$167 Def00005F
+S A$sound_manager$158 Def000058
+S C$sound_manager.c$502$1_0$84 Def000AE7
+S C$sound_manager.c$440$2_0$82 Def000A10
+S C$sound_manager.c$410$1_0$68 Def00091F
+S C$sound_manager.c$352$1_0$54 Def0006EB
+S C$sound_manager.c$321$3_0$56 Def00064A
+S C$sound_manager.c$280$1_0$54 Def000520
+S C$sound_manager.c$250$2_0$47 Def000473
+S C$sound_manager.c$241$2_0$47 Def000443
+S C$sound_manager.c$232$2_0$47 Def00040A
+S C$sound_manager.c$223$2_0$47 Def0003DE
+S C$sound_manager.c$205$2_0$47 Def00036E
+S C$sound_manager.c$180$1_0$37 Def0002A8
+S C$sound_manager.c$165$4_0$40 Def000256
+S C$sound_manager.c$162$5_0$42 Def000250
+S C$sound_manager.c$156$4_0$40 Def000238
+S C$sound_manager.c$129$3_0$32 Def0001B8
+S C$sound_manager.c$119$1_0$26 Def00016B
+S XFsound_manager$rd16$0$0 Def000063
+S A$sound_manager$960 Def000351
+S A$sound_manager$951 Def000346
+S A$sound_manager$942 Def000340
+S A$sound_manager$933 Def000338
+S A$sound_manager$915 Def000323
+S A$sound_manager$906 Def000308
+S A$sound_manager$870 Def0002C1
+S A$sound_manager$861 Def0002B5
+S A$sound_manager$834 Def00029D
+S A$sound_manager$807 Def000285
+S A$sound_manager$762 Def000256
+S A$sound_manager$753 Def000252
+S A$sound_manager$735 Def000243
+S A$sound_manager$726 Def00023E
+S A$sound_manager$717 Def000234
+S A$sound_manager$708 Def00022A
+S A$sound_manager$681 Def000212
+S A$sound_manager$663 Def0001FE
+S A$sound_manager$654 Def0001FA
+S A$sound_manager$627 Def0001EB
+S A$sound_manager$609 Def0001DB
+S A$sound_manager$591 Def0001C9
+S A$sound_manager$582 Def0001C0
+S A$sound_manager$573 Def0001B5
+S A$sound_manager$564 Def0001A8
+S A$sound_manager$555 Def00019D
+S A$sound_manager$546 Def000194
+S A$sound_manager$456 Def00014B
+S A$sound_manager$393 Def000124
+S A$sound_manager$375 Def000112
+S A$sound_manager$357 Def000107
+S A$sound_manager$348 Def0000FC
+S A$sound_manager$339 Def0000ED
+S A$sound_manager$276 Def0000C0
+S A$sound_manager$267 Def0000B3
+S A$sound_manager$258 Def00009E
+S A$sound_manager$168 Def000060
+S A$sound_manager$159 Def00005B
+S XG$sound_engine_update$0$0 Def000B62
+S C$sound_manager.c$503$1_0$84 Def000AEA
+S C$sound_manager.c$450$2_0$82 Def000A39
+S C$sound_manager.c$441$2_0$82 Def000A15
+S C$sound_manager.c$433$2_0$81 Def0009AA
+S C$sound_manager.c$380$2_0$71 Def0007E9
+S C$sound_manager.c$411$1_0$68 Def0007CF
+S C$sound_manager.c$353$1_0$54 Def0006F1
+S C$sound_manager.c$300$4_0$59 Def000597
+S C$sound_manager.c$260$2_0$47 Def0004C9
+S C$sound_manager.c$251$2_0$47 Def000498
+S C$sound_manager.c$242$2_0$47 Def000449
+S C$sound_manager.c$233$2_0$47 Def000417
+S C$sound_manager.c$224$2_0$47 Def0003E2
+S C$sound_manager.c$215$2_0$47 Def0003B5
+S C$sound_manager.c$206$2_0$47 Def000385
+S C$sound_manager.c$163$5_0$42 Def000253
+S C$sound_manager.c$157$4_0$40 Def00023F
+S Fsound_manager$rd$0$0 Def000000
+S A$sound_manager$961 Def000352
+S A$sound_manager$952 Def000347
+S A$sound_manager$916 Def000326
+S A$sound_manager$907 Def00030B
+S A$sound_manager$871 Def0002C4
+S A$sound_manager$862 Def0002B7
+S A$sound_manager$835 Def0002A0
+S A$sound_manager$817 Def00028C
+S A$sound_manager$808 Def000287
+S A$sound_manager$790 Def000277
+S A$sound_manager$772 Def000261
+S A$sound_manager$763 Def000259
+S A$sound_manager$745 Def000249
+S A$sound_manager$736 Def000245
+S A$sound_manager$718 Def000236
+S A$sound_manager$709 Def00022B
+S A$sound_manager$691 Def000215
+S A$sound_manager$682 Def000213
+S A$sound_manager$673 Def000201
+S A$sound_manager$655 Def0001FD
+S A$sound_manager$628 Def0001EE
+S A$sound_manager$619 Def0001E3
+S A$sound_manager$574 Def0001B6
+S A$sound_manager$565 Def0001AA
+S A$sound_manager$547 Def000196
+S A$sound_manager$475 Def00015B
+S A$sound_manager$439 Def000144
+S A$sound_manager$394 Def000125
+S A$sound_manager$385 Def00011E
+S A$sound_manager$376 Def000115
+S A$sound_manager$358 Def00010A
+S A$sound_manager$349 Def0000FD
+S A$sound_manager$277 Def0000C1
+S A$sound_manager$268 Def0000B6
+S A$sound_manager$259 Def0000A1
+S A$sound_manager$178 Def000063
+S A$sound_manager$169 Def000061
+S C$sound_manager.c$523$2_0$91 Def000B58
+S C$sound_manager.c$504$1_0$84 Def000AEF
+S C$sound_manager.c$460$2_0$82 Def000A5E
+S C$sound_manager.c$451$2_0$82 Def000A3D
+S C$sound_manager.c$442$2_0$82 Def000A19
+S C$sound_manager.c$411$2_0$77 Def000929
+S C$sound_manager.c$404$2_0$75 Def0008BE
+S C$sound_manager.c$403$1_0$68 Def0008AD
+S C$sound_manager.c$354$1_0$54 Def0006F7
+S C$sound_manager.c$324$4_0$63 Def000654
+S C$sound_manager.c$323$3_0$56 Def00064F
+S C$sound_manager.c$301$4_0$59 Def00059F
+S C$sound_manager.c$282$1_0$54 Def000530
+S C$sound_manager.c$270$2_0$47 Def0004FF
+S C$sound_manager.c$264$3_0$52 Def0004DE
+S C$sound_manager.c$261$2_0$47 Def0004CC
+S C$sound_manager.c$257$3_0$50 Def0004BE
+S C$sound_manager.c$252$2_0$47 Def00049E
+S C$sound_manager.c$243$2_0$47 Def00044C
+S C$sound_manager.c$234$2_0$47 Def00041A
+S C$sound_manager.c$225$2_0$47 Def0003EF
+S C$sound_manager.c$216$2_0$47 Def0003B8
+S C$sound_manager.c$213$3_0$49 Def0003B1
+S C$sound_manager.c$207$2_0$47 Def00038A
+S A$sound_manager$980 Def000364
+S A$sound_manager$953 Def000348
+S A$sound_manager$917 Def000329
+S A$sound_manager$908 Def00030E
+S A$sound_manager$890 Def0002E9
+S A$sound_manager$872 Def0002C7
+S A$sound_manager$863 Def0002B9
+S A$sound_manager$836 Def0002A1
+S A$sound_manager$818 Def00028D
+S A$sound_manager$791 Def000279
+S A$sound_manager$764 Def00025B
+S A$sound_manager$746 Def00024C
+S A$sound_manager$692 Def000218
+S A$sound_manager$683 Def000214
+S A$sound_manager$674 Def000203
+S A$sound_manager$638 Def0001F4
+S A$sound_manager$575 Def0001B7
+S A$sound_manager$566 Def0001AB
+S A$sound_manager$548 Def000197
+S A$sound_manager$485 Def000163
+S A$sound_manager$476 Def00015D
+S A$sound_manager$395 Def000127
+S A$sound_manager$386 Def00011F
+S A$sound_manager$377 Def000116
+S A$sound_manager$296 Def0000C8
+S A$sound_manager$269 Def0000B7
+S A$sound_manager$197 Def000069
+S C$sound_manager.c$512$1_0$86 Def000AF9
+S C$sound_manager.c$470$2_0$82 Def000A84
+S C$sound_manager.c$461$2_0$82 Def000A66
+S C$sound_manager.c$452$2_0$82 Def000A41
+S C$sound_manager.c$443$2_0$82 Def000A1D
+S C$sound_manager.c$412$2_0$77 Def000950
+S C$sound_manager.c$373$3_0$70 Def00079E
+S C$sound_manager.c$355$1_0$54 Def000700
+S C$sound_manager.c$346$1_0$54 Def0006CE
+S C$sound_manager.c$343$2_0$65 Def0006B2
+S C$sound_manager.c$333$3_0$56 Def00068C
+S C$sound_manager.c$325$4_0$63 Def000669
+S C$sound_manager.c$317$4_0$62 Def000635
+S C$sound_manager.c$315$3_0$56 Def00062C
+S C$sound_manager.c$302$4_0$59 Def0005BE
+S C$sound_manager.c$273$1_0$46 Def00050C
+S C$sound_manager.c$271$2_0$47 Def0004FF
+S C$sound_manager.c$253$2_0$47 Def0004A1
+S C$sound_manager.c$244$2_0$47 Def00044E
+S C$sound_manager.c$235$2_0$47 Def00041A
+S C$sound_manager.c$226$2_0$47 Def0003F2
+S C$sound_manager.c$217$2_0$47 Def0003B8
+S C$sound_manager.c$208$2_0$47 Def00038A
+S C$sound_manager.c$170$3_0$39 Def000264
+S C$sound_manager.c$50$1_0$10 Def00004E
+S A$sound_manager$981 Def000367
+S A$sound_manager$936 Def00033B
+S A$sound_manager$927 Def000332
+S A$sound_manager$918 Def00032C
+S A$sound_manager$909 Def000311
+S A$sound_manager$891 Def0002EC
+S A$sound_manager$882 Def0002D2
+S A$sound_manager$873 Def0002C8
+S A$sound_manager$864 Def0002BA
+S A$sound_manager$837 Def0002A3
+S A$sound_manager$783 Def000267
+S A$sound_manager$747 Def00024E
+S A$sound_manager$693 Def00021A
+S A$sound_manager$675 Def000207
+S A$sound_manager$648 Def0001F5
+S A$sound_manager$567 Def0001AC
+S A$sound_manager$549 Def000199
+S A$sound_manager$495 Def00016B
+S A$sound_manager$486 Def000165
+S A$sound_manager$468 Def000155
+S A$sound_manager$396 Def000128
+S A$sound_manager$378 Def000118
+S A$sound_manager$297 Def0000CB
+S A$sound_manager$198 Def00006D
+S XG$sound_engine_stop$0$0 Def000B77
+S C$sound_manager.c$480$2_0$82 Def000AB2
+S C$sound_manager.c$471$2_0$82 Def000A89
+S C$sound_manager.c$462$2_0$82 Def000A6A
+S C$sound_manager.c$453$2_0$82 Def000A45
+S C$sound_manager.c$444$2_0$82 Def000A1D
+S C$sound_manager.c$428$2_0$80 Def0009A3
+S C$sound_manager.c$421$1_0$79 Def000999
+S C$sound_manager.c$413$2_0$77 Def000961
+S C$sound_manager.c$390$2_0$73 Def00085C
+S C$sound_manager.c$356$1_0$54 Def000708
+S C$sound_manager.c$344$2_0$65 Def0006CA
+S C$sound_manager.c$334$3_0$56 Def00069A
+S C$sound_manager.c$326$4_0$63 Def000673
+S C$sound_manager.c$316$3_0$56 Def000631
+S C$sound_manager.c$254$2_0$47 Def0004A1
+S C$sound_manager.c$245$2_0$47 Def000455
+S C$sound_manager.c$236$2_0$47 Def00041E
+S C$sound_manager.c$227$2_0$47 Def0003F2
+S C$sound_manager.c$218$2_0$47 Def0003C8
+S C$sound_manager.c$209$2_0$47 Def000398
+S C$sound_manager.c$171$3_0$39 Def000267
+S C$sound_manager.c$158$5_0$41 Def000242
+S C$sound_manager.c$148$1_0$37 Def000201
+S Fsound_manager$mul_h_e$0$0 Def000077
+S Fsound_manager$track_ptr$0_0$0 Def000018
+S A$sound_manager$973 Def000356
+S A$sound_manager$937 Def00033E
+S A$sound_manager$928 Def000333
+S A$sound_manager$919 Def00032F
+S A$sound_manager$892 Def0002EE
+S A$sound_manager$883 Def0002D5
+S A$sound_manager$874 Def0002C9
+S A$sound_manager$847 Def0002A8
+S A$sound_manager$784 Def00026A
+S A$sound_manager$757 Def000253
+S A$sound_manager$694 Def00021B
+S A$sound_manager$676 Def000209
+S A$sound_manager$595 Def0001CB
+S A$sound_manager$586 Def0001C2
+S A$sound_manager$568 Def0001AD
+S A$sound_manager$496 Def00016E
+S A$sound_manager$469 Def000156
+S A$sound_manager$397 Def000129
+S A$sound_manager$379 Def000119
+S A$sound_manager$199 Def00006F
+S C$sound_manager.c$531$2_0$95 Def000B63
+S C$sound_manager.c$524$3_0$92 Def000B43
+S C$sound_manager.c$490$2_0$82 Def000AD1
+S C$sound_manager.c$481$2_0$82 Def000AB6
+S C$sound_manager.c$472$2_0$82 Def000A91
+S C$sound_manager.c$463$2_0$82 Def000A6E
+S C$sound_manager.c$454$2_0$82 Def000A45
+S C$sound_manager.c$445$2_0$82 Def000A23
+S C$sound_manager.c$431$1_0$79 Def0009A6
+S C$sound_manager.c$429$2_0$80 Def0009A3
+S C$sound_manager.c$406$2_0$76 Def0008D4
+S C$sound_manager.c$391$2_0$73 Def00085D
+S C$sound_manager.c$370$1_0$68 Def000762
+S C$sound_manager.c$357$1_0$54 Def00070E
+S C$sound_manager.c$327$4_0$63 Def00067B
+S C$sound_manager.c$346$2_0$55 Def000551
+S C$sound_manager.c$285$1_0$54 Def000549
+S C$sound_manager.c$275$1_0$46 Def00050C
+S C$sound_manager.c$255$2_0$47 Def0004B3
+S C$sound_manager.c$246$2_0$47 Def00045D
+S C$sound_manager.c$237$2_0$47 Def00042B
+S C$sound_manager.c$228$2_0$47 Def0003F6
+S C$sound_manager.c$219$2_0$47 Def0003CB
+S C$sound_manager.c$194$1_0$46 Def0002D2
+S C$sound_manager.c$175$4_0$44 Def00028F
+S C$sound_manager.c$172$3_0$39 Def00027D
+S C$sound_manager.c$166$5_0$43 Def00025D
+S C$sound_manager.c$159$5_0$41 Def000246
+S C$sound_manager.c$154$3_0$39 Def000215
+S C$sound_manager.c$52$1_0$10 Def00004E
+S A$sound_manager$992 Def00036E
+S A$sound_manager$983 Def000369
+S A$sound_manager$974 Def000359
+S A$sound_manager$965 Def000353
+S A$sound_manager$956 Def00034B
+S A$sound_manager$938 Def00033F
+S A$sound_manager$929 Def000334
+S A$sound_manager$893 Def0002F1
+S A$sound_manager$884 Def0002D7
+S A$sound_manager$875 Def0002CA
+S A$sound_manager$857 Def0002A9
+S A$sound_manager$794 Def00027A
+S A$sound_manager$785 Def00026C
+S A$sound_manager$695 Def00021E
+S A$sound_manager$677 Def00020A
+S A$sound_manager$596 Def0001CE
+S A$sound_manager$587 Def0001C3
+S A$sound_manager$569 Def0001AE
+S C$sound_manager.c$533$1_0$95 Def000B63
+S C$sound_manager.c$525$3_0$92 Def000B4F
+S C$sound_manager.c$523$2_0$86 Def000B41
+S C$sound_manager.c$491$2_0$82 Def000AD9
+S C$sound_manager.c$482$2_0$82 Def000AB6
+S C$sound_manager.c$473$2_0$82 Def000A95
+S C$sound_manager.c$464$2_0$82 Def000A6E
+S C$sound_manager.c$455$2_0$82 Def000A4A
+S C$sound_manager.c$446$2_0$82 Def000A2B
+S C$sound_manager.c$432$1_0$79 Def0009A8
+S C$sound_manager.c$416$1_0$68 Def000970
+S C$sound_manager.c$407$2_0$76 Def0008DC
+S C$sound_manager.c$384$2_0$72 Def000817
+S C$sound_manager.c$371$1_0$68 Def00078E
+S C$sound_manager.c$362$1_0$68 Def00071A
+S C$sound_manager.c$358$1_0$54 Def000714
+S C$sound_manager.c$328$4_0$63 Def000680
+S C$sound_manager.c$291$3_0$56 Def000566
+S C$sound_manager.c$286$1_0$54 Def00054D
+S C$sound_manager.c$276$1_0$46 Def000517
+S C$sound_manager.c$256$2_0$47 Def0004BA
+S C$sound_manager.c$247$2_0$47 Def000467
+S C$sound_manager.c$238$2_0$47 Def00042E
+S C$sound_manager.c$229$2_0$47 Def000403
+S C$sound_manager.c$173$3_0$39 Def000288
+S C$sound_manager.c$167$5_0$43 Def000261
+S C$sound_manager.c$155$3_0$39 Def000234
+S C$sound_manager.c$53$1_0$10 Def000063
+S A$sound_manager$993 Def000371
+S A$sound_manager$975 Def00035B
+S A$sound_manager$894 Def0002F4
+S A$sound_manager$885 Def0002D9
+S A$sound_manager$876 Def0002CD
+S A$sound_manager$858 Def0002AB
+S A$sound_manager$786 Def00026F
+S A$sound_manager$777 Def000264
+S A$sound_manager$768 Def00025D
+S A$sound_manager$696 Def000220
+S A$sound_manager$678 Def00020B
+S A$sound_manager$597 Def0001CF
+S A$sound_manager$588 Def0001C4
+S A$sound_manager$579 Def0001B8
+S XG$sound_engine_play_cmd$0$0 Def000B69
+S C$sound_manager.c$534$1_0$95 Def000B69
+S C$sound_manager.c$507$1_0$86 Def000AF0
+S C$sound_manager.c$492$2_0$82 Def000ADD
+S C$sound_manager.c$483$2_0$82 Def000ABC
+S C$sound_manager.c$474$2_0$82 Def000A99
+S C$sound_manager.c$465$2_0$82 Def000A72
+S C$sound_manager.c$456$2_0$82 Def000A50
+S C$sound_manager.c$447$2_0$82 Def000A2F
+S C$sound_manager.c$423$2_0$79 Def000999
+S C$sound_manager.c$417$1_0$68 Def000970
+S C$sound_manager.c$385$2_0$72 Def00081F
+S C$sound_manager.c$359$1_0$54 Def000719
+S C$sound_manager.c$339$2_0$55 Def0006AC
+S C$sound_manager.c$337$3_0$56 Def0006A0
+S C$sound_manager.c$329$4_0$63 Def000685
+S C$sound_manager.c$319$3_0$56 Def00063F
+S C$sound_manager.c$306$4_0$59 Def000618
+S C$sound_manager.c$277$1_0$46 Def000518
+S C$sound_manager.c$266$2_0$47 Def0004E5
+S C$sound_manager.c$248$2_0$47 Def00046A
+S C$sound_manager.c$239$2_0$47 Def00042E
+S C$sound_manager.c$187$1_0$46 Def0002A9
+S C$sound_manager.c$174$3_0$39 Def00028C
+S C$sound_manager.c$61$1_0$12 Def000074
+S A$sound_manager$976 Def00035E
+S A$sound_manager$886 Def0002DC
+S A$sound_manager$877 Def0002CE
+S A$sound_manager$868 Def0002BB
+S A$sound_manager$859 Def0002AF
+S A$sound_manager$787 Def000272
+S A$sound_manager$778 Def000265
+S A$sound_manager$697 Def000221
+S A$sound_manager$679 Def00020C
+S A$sound_manager$589 Def0001C5
+S C$sound_manager.c$515$2_0$87 Def000B3B
+S C$sound_manager.c$519$4_0$90 Def000B36
+S C$sound_manager.c$484$2_0$82 Def000AC0
+S C$sound_manager.c$475$2_0$82 Def000A9D
+S C$sound_manager.c$466$2_0$82 Def000A78
+S C$sound_manager.c$457$2_0$82 Def000A54
+S C$sound_manager.c$448$2_0$82 Def000A33
+S C$sound_manager.c$439$2_0$82 Def000A10
+S C$sound_manager.c$418$1_0$68 Def000998
+S C$sound_manager.c$394$2_0$73 Def000864
+S C$sound_manager.c$392$3_0$74 Def000861
+S C$sound_manager.c$347$2_0$66 Def0006D4
+S C$sound_manager.c$338$3_0$56 Def0006A8
+S C$sound_manager.c$307$4_0$59 Def00061C
+S C$sound_manager.c$267$2_0$47 Def0004E8
+S C$sound_manager.c$249$2_0$47 Def00046A
+S C$sound_manager.c$195$2_0$47 Def000332
+S C$sound_manager.c$179$1_0$37 Def000293
+S C$sound_manager.c$177$2_0$38 Def000293
+S A$sound_manager$977 Def000360
+S A$sound_manager$959 Def00034E
+S A$sound_manager$896 Def0002F6
+S A$sound_manager$887 Def0002E0
+S A$sound_manager$878 Def0002CF
+S A$sound_manager$869 Def0002BE
+S A$sound_manager$797 Def00027C
+S A$sound_manager$788 Def000275
+S A$sound_manager$779 Def000266
+S A$sound_manager$698 Def000222
+S C$sound_manager.c$541$1_0$99 Def000B6F
+S C$sound_manager.c$526$4_0$93 Def000B53
+S C$sound_manager.c$517$2_0$86 Def000B16
+S C$sound_manager.c$485$2_0$82 Def000AC4
+S C$sound_manager.c$476$2_0$82 Def000A9D
+S C$sound_manager.c$467$2_0$82 Def000A7C
+S C$sound_manager.c$458$2_0$82 Def000A58
+S C$sound_manager.c$449$2_0$82 Def000A33
+S C$sound_manager.c$435$1_0$79 Def0009AB
+S C$sound_manager.c$395$2_0$73 Def000872
+S C$sound_manager.c$383$1_0$68 Def000813
+S C$sound_manager.c$379$2_0$71 Def0007E3
+S C$sound_manager.c$372$2_0$69 Def000794
+S C$sound_manager.c$348$2_0$66 Def0006E1
+S C$sound_manager.c$292$4_0$57 Def00056D
+S C$sound_manager.c$268$2_0$47 Def0004E8
+S C$sound_manager.c$259$2_0$47 Def0004C8
+S C$sound_manager.c$196$2_0$47 Def000332
+S C$sound_manager.c$189$1_0$46 Def0002BB
+S A$sound_manager$996 Def000372
+S A$sound_manager$987 Def00036C
+S A$sound_manager$978 Def000361
+S A$sound_manager$897 Def0002F9
+S A$sound_manager$888 Def0002E4
+S A$sound_manager$789 Def000276
+S A$sound_manager$699 Def000224
+S C$sound_manager.c$515$3_0$88 Def000AFC
+S C$sound_manager.c$486$2_0$82 Def000AC4
+S C$sound_manager.c$477$2_0$82 Def000AA2
+S C$sound_manager.c$468$2_0$82 Def000A80
+S C$sound_manager.c$459$2_0$82 Def000A58
+S C$sound_manager.c$436$1_0$79 Def0009B6
+S C$sound_manager.c$427$1_0$79 Def00099C
+S C$sound_manager.c$387$2_0$73 Def000829
+S C$sound_manager.c$384$1_0$68 Def0007F3
+S C$sound_manager.c$349$2_0$66 Def0006E6
+S Fsound_manager$note_fetch$0$0 Def000520
+S C$sound_manager.c$269$2_0$47 Def0004FC
+S C$sound_manager.c$197$2_0$47 Def000340
+S C$sound_manager.c$179$2_0$38 Def000215
+S C$sound_manager.c$70$1_0$15 Def000089
+S A$sound_manager$988 Def00036D
+S A$sound_manager$898 Def0002FC
+S A$sound_manager$889 Def0002E7
+S A$sound_manager$90 Def000014
+S A$sound_manager$81 Def000006
+S C$sound_manager.c$543$1_0$99 Def000B6F
+S C$sound_manager.c$536$1_0$97 Def000B6A
+S C$sound_manager.c$516$3_0$88 Def000B2A
+S C$sound_manager.c$487$2_0$82 Def000AC8
+S C$sound_manager.c$478$2_0$82 Def000AAA
+S C$sound_manager.c$469$2_0$82 Def000A84
+S C$sound_manager.c$397$2_0$73 Def00089C
+S C$sound_manager.c$388$2_0$73 Def00084B
+S C$sound_manager.c$385$1_0$68 Def000803
+S C$sound_manager.c$367$1_0$68 Def000730
+S C$sound_manager.c$198$2_0$47 Def000343
+S C$sound_manager.c$84$1_0$20 Def0000D3
+S C$sound_manager.c$80$1_0$15 Def0000CE
+S C$sound_manager.c$56$1_0$12 Def000064
+S A$sound_manager$899 Def0002FE
+S A$sound_manager$91 Def000015
+S A$sound_manager$82 Def000007
+S C$sound_manager.c$544$1_0$99 Def000B72
+S C$sound_manager.c$529$2_0$86 Def000B62
+S C$sound_manager.c$488$2_0$82 Def000ACC
+S C$sound_manager.c$479$2_0$82 Def000AAE
+S C$sound_manager.c$438$1_0$79 Def0009BA
+S C$sound_manager.c$398$2_0$73 Def00089E
+S C$sound_manager.c$389$2_0$73 Def00084E
+S C$sound_manager.c$377$1_0$68 Def0007A1
+S C$sound_manager.c$368$1_0$68 Def00075C
+S C$sound_manager.c$295$4_0$57 Def000586
+S C$sound_manager.c$293$5_0$58 Def000581
+S C$sound_manager.c$199$2_0$47 Def000343
+S Fsound_manager$hard_reset$0$0 Def00014B
+S C$sound_manager.c$90$3_0$22 Def0000DF
+S C$sound_manager.c$81$1_0$15 Def0000D2
+S A$sound_manager$999 Def000373
+S A$sound_manager$83 Def000008
+S A$sound_manager$74 Def000000
+S C$sound_manager.c$545$1_0$99 Def000B77
+S C$sound_manager.c$538$1_0$97 Def000B6A
+S C$sound_manager.c$489$2_0$82 Def000ACC
+S C$sound_manager.c$399$2_0$73 Def0008A6
+S C$sound_manager.c$396$1_0$68 Def00088A
+S C$sound_manager.c$378$1_0$68 Def0007DF
+S C$sound_manager.c$369$1_0$68 Def000760
+S C$sound_manager.c$296$4_0$57 Def00058E
+S C$sound_manager.c$289$3_0$56 Def000551
+S C$sound_manager.c$91$3_0$22 Def00010B
+S C$sound_manager.c$64$1_0$15 Def000077
+S C$sound_manager.c$58$1_0$12 Def000064
+S A$sound_manager$93 Def000016
+S A$sound_manager$84 Def000009
+S A$sound_manager$75 Def000003
+S C$sound_manager.c$539$1_0$97 Def000B6C
+S C$sound_manager.c$517$4_0$89 Def000B2E
+S C$sound_manager.c$379$1_0$68 Def0007BF
+S C$sound_manager.c$299$3_0$56 Def000591
+S XFsound_manager$load_channels$0$0 Def0001F4
+S C$sound_manager.c$92$3_0$22 Def000111
+S C$sound_manager.c$70$3_0$17 Def0000C5
+S A$sound_manager$85 Def00000B
+S A$sound_manager$76 Def000004
+S C$sound_manager.c$495$1_0$79 Def000AE1
+S Fsound_manager$env_step$0$0 Def000201
+S C$sound_manager.c$93$3_0$22 Def000111
+S C$sound_manager.c$71$3_0$17 Def00008B
+S C$sound_manager.c$66$1_0$15 Def000086
+S A$sound_manager$86 Def00000C
+S A$sound_manager$77 Def000005
+S G$sound_engine_play_track$0$0 Def000B6A
+S C$sound_manager.c$94$3_0$22 Def000112
+S C$sound_manager.c$89$1_0$20 Def0000DD
+S C$sound_manager.c$72$3_0$17 Def000092
+S C$sound_manager.c$59$2_0$13 Def000069
+S A$sound_manager$87 Def00000E
+S C$sound_manager.c$497$1_0$79 Def000AE1
+S Fsound_manager$do_cmd$0$0 Def0002A9
+S C$sound_manager.c$73$3_0$17 Def000095
+S A$sound_manager$88 Def000010
+S C$sound_manager.c$498$1_0$79 Def000AE6
+S Fsound_manager$freq_lookup$0$0 Def0001F5
+S C$sound_manager.c$89$2_0$21 Def000138
+S A$sound_manager$89 Def000013
+S C$sound_manager.c$95$4_0$23 Def00011E
+S C$sound_manager.c$79$1_0$15 Def0000C8
+S C$sound_manager.c$96$4_0$23 Def000122
+S C$sound_manager.c$74$4_0$18 Def00009B
+S XFsound_manager$cmd_process$0$0 Def000AE6
+S C$sound_manager.c$97$4_0$23 Def00012D
+S C$sound_manager.c$75$4_0$18 Def0000C2
+S C$sound_manager.c$76$4_0$18 Def0000C5
+S Fsound_manager$tbl_vol_latch$0_0$0 Def00004A
+S C$sound_manager.c$99$4_0$24 Def000134
+S XFsound_manager$rd$0$0 Def000017
+S G$sound_engine_init$0$0 Def000AE7
+S XFsound_manager$mul_h_e$0$0 Def0000D2
+S C$sound_manager.c$44$0_0$8 Def000000
+S _sound_engine_play_track Def000B6A
+S C$sound_manager.c$46$1_0$8 Def000000
+S C$sound_manager.c$47$1_0$8 Def000006
+S C$sound_manager.c$48$1_0$8 Def000017
+S XFsound_manager$note_fetch$0$0 Def000719
+S A$sound_manager$1000 Def000374
+S A$sound_manager$1100 Def0003C0
+S A$sound_manager$1010 Def00037A
+S XFsound_manager$hard_reset$0$0 Def000170
+S A$sound_manager$2100 Def00079A
+S A$sound_manager$2010 Def000741
+S A$sound_manager$1011 Def00037B
+S Fsound_manager$div_hl_e$0$0 Def0000D3
+S A$sound_manager$3100 Def000B59
+S A$sound_manager$3010 Def000B0A
+S A$sound_manager$3001 Def000B01
+S A$sound_manager$2110 Def0007A1
+S A$sound_manager$2101 Def00079D
+S A$sound_manager$2011 Def000742
+S A$sound_manager$1300 Def00046F
+S A$sound_manager$1210 Def00041E
+S A$sound_manager$1120 Def0003CE
+S A$sound_manager$1021 Def000382
+S A$sound_manager$1012 Def00037C
+S A$sound_manager$1003 Def000375
+S G$sound_engine_get_state$0$0 Def000B78
+S _sound_engine_init Def000AE7
+S A$sound_manager$3101 Def000B5A
+S A$sound_manager$3020 Def000B17
+S A$sound_manager$3011 Def000B0B
+S A$sound_manager$3002 Def000B02
+S A$sound_manager$2300 Def000881
+S A$sound_manager$2120 Def0007B8
+S A$sound_manager$2111 Def0007A4
+S A$sound_manager$2030 Def000755
+S A$sound_manager$2012 Def000743
+S A$sound_manager$2003 Def000730
+S A$sound_manager$1400 Def0004CD
+S A$sound_manager$1310 Def00047B
+S A$sound_manager$1301 Def000470
+S A$sound_manager$1211 Def000421
+S A$sound_manager$1130 Def0003DB
+S A$sound_manager$1103 Def0003C3
+S A$sound_manager$1013 Def00037E
+S A$sound_manager$1004 Def000377
+S Fsound_manager$chan_update$0$0 Def00071A
+S XFsound_manager$env_step$0$0 Def0002A8
+S A$sound_manager$3102 Def000B5C
+S A$sound_manager$3030 Def000B27
+S A$sound_manager$3021 Def000B18
+S A$sound_manager$3012 Def000B0C
+S A$sound_manager$3003 Def000B03
+S A$sound_manager$2400 Def00090A
+S A$sound_manager$2301 Def000882
+S A$sound_manager$2220 Def000839
+S A$sound_manager$2211 Def000829
+S A$sound_manager$2130 Def0007BF
+S A$sound_manager$2121 Def0007B9
+S A$sound_manager$2112 Def0007A7
+S A$sound_manager$2040 Def00075C
+S A$sound_manager$2031 Def000756
+S A$sound_manager$2013 Def000745
+S A$sound_manager$2004 Def000733
+S A$sound_manager$1410 Def0004D1
+S A$sound_manager$1320 Def000489
+S A$sound_manager$1311 Def00047E
+S A$sound_manager$1230 Def000432
+S A$sound_manager$1212 Def000424
+S A$sound_manager$1140 Def0003E1
+S A$sound_manager$1104 Def0003C6
+S A$sound_manager$1050 Def00039A
+S A$sound_manager$1041 Def000391
+S A$sound_manager$1014 Def00037F
+S XG$sound_engine_play_track$0$0 Def000B6C
+S Fsound_manager$rd16$0$0 Def00004E
+S A$sound_manager$3112 Def000B62
+S A$sound_manager$3031 Def000B28
+S A$sound_manager$3022 Def000B19
+S A$sound_manager$3013 Def000B0D
+S A$sound_manager$3004 Def000B04
+S A$sound_manager$2401 Def00090D
+S A$sound_manager$2320 Def000893
+S A$sound_manager$2302 Def000884
+S A$sound_manager$2212 Def00082C
+S A$sound_manager$2203 Def00081F
+S A$sound_manager$2140 Def0007D2
+S A$sound_manager$2131 Def0007C2
+S A$sound_manager$2122 Def0007BA
+S A$sound_manager$2113 Def0007AA
+S A$sound_manager$2041 Def00075D
+S A$sound_manager$2032 Def000757
+S A$sound_manager$2014 Def000748
+S A$sound_manager$2005 Def000735
+S A$sound_manager$1420 Def0004DF
+S A$sound_manager$1411 Def0004D4
+S A$sound_manager$1330 Def000498
+S A$sound_manager$1321 Def00048A
+S A$sound_manager$1312 Def000482
+S A$sound_manager$1240 Def00043C
+S A$sound_manager$1213 Def000425
+S A$sound_manager$1204 Def00041A
+S A$sound_manager$1123 Def0003D1
+S A$sound_manager$1105 Def0003C7
+S A$sound_manager$1060 Def0003A2
+S A$sound_manager$1051 Def00039B
+S A$sound_manager$1042 Def000394
+S A$sound_manager$1015 Def000380
+S C$sound_manager.c$550$1_0$101 Def000B7B
+S G$sound_engine_update$0$0 Def000AF0
+S A$sound_manager$3050 Def000B36
+S A$sound_manager$3041 Def000B2E
+S A$sound_manager$3032 Def000B29
+S A$sound_manager$3023 Def000B1A
+S A$sound_manager$3014 Def000B11
+S A$sound_manager$3005 Def000B05
+S A$sound_manager$2600 Def0009E6
+S A$sound_manager$2510 Def000994
+S A$sound_manager$2420 Def000922
+S A$sound_manager$2411 Def000919
+S A$sound_manager$2321 Def000894
+S A$sound_manager$2312 Def00088B
+S A$sound_manager$2303 Def000885
+S A$sound_manager$2231 Def000843
+S A$sound_manager$2213 Def00082F
+S A$sound_manager$2204 Def000822
+S A$sound_manager$2150 Def0007E1
+S A$sound_manager$2141 Def0007D4
+S A$sound_manager$2132 Def0007C4
+S A$sound_manager$2123 Def0007BB
+S A$sound_manager$2114 Def0007AB
+S A$sound_manager$2105 Def00079E
+S A$sound_manager$2060 Def000778
+S A$sound_manager$2042 Def00075E
+S A$sound_manager$2033 Def000758
+S A$sound_manager$2024 Def000752
+S A$sound_manager$2015 Def00074A
+S A$sound_manager$2006 Def000738
+S A$sound_manager$1700 Def000616
+S A$sound_manager$1520 Def000535
+S A$sound_manager$1502 Def000520
+S A$sound_manager$1421 Def0004E2
+S A$sound_manager$1412 Def0004D5
+S A$sound_manager$1331 Def00049B
+S A$sound_manager$1322 Def00048B
+S A$sound_manager$1241 Def00043F
+S A$sound_manager$1214 Def000428
+S A$sound_manager$1205 Def00041B
+S A$sound_manager$1160 Def0003F2
+S A$sound_manager$1124 Def0003D4
+S A$sound_manager$1052 Def00039C
+S A$sound_manager$1043 Def000395
+S A$sound_manager$1034 Def00038A
+S A$sound_manager$1025 Def000385
+S A$sound_manager$1007 Def000378
+S XFsound_manager$freq_lookup$0$0 Def0001FE
+S A$sound_manager$3204 Def000B7B
+S A$sound_manager$3060 Def000B3D
+S A$sound_manager$3051 Def000B38
+S A$sound_manager$3042 Def000B30
+S A$sound_manager$3024 Def000B1B
+S A$sound_manager$3015 Def000B13
+S A$sound_manager$3006 Def000B06
+S A$sound_manager$2610 Def000A04
+S A$sound_manager$2601 Def0009E9
+S A$sound_manager$2511 Def000996
+S A$sound_manager$2502 Def00098E
+S A$sound_manager$2430 Def000932
+S A$sound_manager$2421 Def000925
+S A$sound_manager$2340 Def0008A5
+S A$sound_manager$2322 Def000895
+S A$sound_manager$2304 Def000888
+S A$sound_manager$2250 Def000853
+S A$sound_manager$2232 Def000844
+S A$sound_manager$2223 Def00083C
+S A$sound_manager$2214 Def000832
+S A$sound_manager$2205 Def000825
+S A$sound_manager$2142 Def0007D7
+S A$sound_manager$2133 Def0007C7
+S A$sound_manager$2124 Def0007BC
+S A$sound_manager$2115 Def0007AC
+S A$sound_manager$2070 Def000785
+S A$sound_manager$2061 Def000779
+S A$sound_manager$2052 Def000762
+S A$sound_manager$2043 Def00075F
+S A$sound_manager$2034 Def000759
+S A$sound_manager$2016 Def00074B
+S A$sound_manager$2007 Def00073B
+S A$sound_manager$1800 Def00066D
+S A$sound_manager$1710 Def00061C
+S A$sound_manager$1701 Def000617
+S A$sound_manager$1620 Def00059F
+S A$sound_manager$1602 Def00058E
+S A$sound_manager$1530 Def000540
+S A$sound_manager$1521 Def000536
+S A$sound_manager$1503 Def000522
+S A$sound_manager$1413 Def0004D8
+S A$sound_manager$1404 Def0004CF
+S A$sound_manager$1332 Def00049D
+S A$sound_manager$1323 Def00048E
+S A$sound_manager$1305 Def000473
+S A$sound_manager$1242 Def000442
+S A$sound_manager$1233 Def000435
+S A$sound_manager$1206 Def00041D
+S A$sound_manager$1170 Def000400
+S A$sound_manager$1161 Def0003F3
+S A$sound_manager$1152 Def0003EF
+S A$sound_manager$1125 Def0003D5
+S A$sound_manager$1080 Def0003B1
+S A$sound_manager$1044 Def000397
+S A$sound_manager$1035 Def00038B
+S A$sound_manager$1026 Def000387
+S A$sound_manager$3106 Def000B5E
+S A$sound_manager$3070 Def000B43
+S A$sound_manager$3061 Def000B3F
+S A$sound_manager$3052 Def000B39
+S A$sound_manager$3043 Def000B31
+S A$sound_manager$3025 Def000B1C
+S A$sound_manager$3007 Def000B07
+S A$sound_manager$2710 Def000A4D
+S A$sound_manager$2611 Def000A07
+S A$sound_manager$2602 Def0009EC
+S A$sound_manager$2440 Def000944
+S A$sound_manager$2431 Def000933
+S A$sound_manager$2422 Def000927
+S A$sound_manager$2404 Def000910
+S A$sound_manager$2332 Def00089C
+S A$sound_manager$2323 Def000896
+S A$sound_manager$2305 Def000889
+S A$sound_manager$2251 Def000854
+S A$sound_manager$2242 Def00084B
+S A$sound_manager$2233 Def000845
+S A$sound_manager$2224 Def00083D
+S A$sound_manager$2215 Def000833
+S A$sound_manager$2206 Def000826
+S A$sound_manager$2143 Def0007DA
+S A$sound_manager$2134 Def0007CA
+S A$sound_manager$2125 Def0007BD
+S A$sound_manager$2116 Def0007AE
+S A$sound_manager$2080 Def00078C
+S A$sound_manager$2071 Def000786
+S A$sound_manager$2062 Def00077B
+S A$sound_manager$2053 Def000765
+S A$sound_manager$2035 Def00075A
+S A$sound_manager$2017 Def00074E
+S A$sound_manager$2008 Def00073D
+S A$sound_manager$1900 Def0006D4
+S A$sound_manager$1810 Def00067A
+S A$sound_manager$1801 Def000670
+S A$sound_manager$1720 Def000625
+S A$sound_manager$1630 Def0005AB
+S A$sound_manager$1621 Def0005A2
+S A$sound_manager$1531 Def000541
+S A$sound_manager$1522 Def000538
+S A$sound_manager$1513 Def000530
+S A$sound_manager$1504 Def000526
+S A$sound_manager$1441 Def0004F2
+S A$sound_manager$1414 Def0004DB
+S A$sound_manager$1351 Def0004A8
+S A$sound_manager$1324 Def000491
+S A$sound_manager$1315 Def000485
+S A$sound_manager$1306 Def000476
+S A$sound_manager$1234 Def000438
+S A$sound_manager$1162 Def0003F5
+S A$sound_manager$1144 Def0003E2
+S A$sound_manager$1126 Def0003D8
+S A$sound_manager$1117 Def0003CB
+S A$sound_manager$1081 Def0003B2
+S A$sound_manager$1072 Def0003AA
+S A$sound_manager$1018 Def000381
+S G$sound_engine_stop$0$0 Def000B6F
+S A$sound_manager$3170 Def000B6F
+S A$sound_manager$3125 Def000B63
+S A$sound_manager$3107 Def000B60
+S A$sound_manager$3080 Def000B4A
+S A$sound_manager$3053 Def000B3A
+S A$sound_manager$3044 Def000B32
+S A$sound_manager$3026 Def000B1E
+S A$sound_manager$3008 Def000B08
+S A$sound_manager$2801 Def000A89
+S A$sound_manager$2621 Def000A10
+S A$sound_manager$2612 Def000A0A
+S A$sound_manager$2603 Def0009EF
+S A$sound_manager$2441 Def000945
+S A$sound_manager$2432 Def000936
+S A$sound_manager$2414 Def00091C
+S A$sound_manager$2351 Def0008AD
+S A$sound_manager$2333 Def00089D
+S A$sound_manager$2324 Def000897
+S A$sound_manager$2315 Def00088D
+S A$sound_manager$2270 Def000862
+S A$sound_manager$2252 Def000856
+S A$sound_manager$2243 Def00084C
+S A$sound_manager$2234 Def000846
+S A$sound_manager$2225 Def000840
+S A$sound_manager$2216 Def000834
+S A$sound_manager$2162 Def0007E9
+S A$sound_manager$2144 Def0007DC
+S A$sound_manager$2135 Def0007CC
+S A$sound_manager$2126 Def0007BE
+S A$sound_manager$2117 Def0007B1
+S A$sound_manager$2090 Def000792
+S A$sound_manager$2081 Def00078D
+S A$sound_manager$2072 Def000787
+S A$sound_manager$2054 Def000767
+S A$sound_manager$2036 Def00075B
+S A$sound_manager$2027 Def000753
+S A$sound_manager$2018 Def000750
+S A$sound_manager$2009 Def000740
+S A$sound_manager$1910 Def0006D9
+S A$sound_manager$1820 Def000680
+S A$sound_manager$1802 Def000671
+S A$sound_manager$1730 Def00062F
+S A$sound_manager$1640 Def0005BD
+S A$sound_manager$1631 Def0005AD
+S A$sound_manager$1622 Def0005A3
+S A$sound_manager$1613 Def000597
+S A$sound_manager$1550 Def000551
+S A$sound_manager$1532 Def000542
+S A$sound_manager$1523 Def000539
+S A$sound_manager$1514 Def000531
+S A$sound_manager$1505 Def000528
+S A$sound_manager$1460 Def0004FF
+S A$sound_manager$1433 Def0004E8
+S A$sound_manager$1361 Def0004B3
+S A$sound_manager$1352 Def0004AB
+S A$sound_manager$1325 Def000492
+S A$sound_manager$1307 Def000477
+S A$sound_manager$1262 Def00044E
+S A$sound_manager$1253 Def000449
+S A$sound_manager$1235 Def000439
+S A$sound_manager$1226 Def00042E
+S A$sound_manager$1190 Def000410
+S A$sound_manager$1145 Def0003E5
+S A$sound_manager$1109 Def0003C8
+S A$sound_manager$1082 Def0003B4
+S A$sound_manager$1073 Def0003AB
+S A$sound_manager$1064 Def0003A3
+S A$sound_manager$1055 Def00039D
+S A$sound_manager$3135 Def000B69
+S A$sound_manager$3126 Def000B64
+S A$sound_manager$3081 Def000B4B
+S A$sound_manager$3045 Def000B33
+S A$sound_manager$3036 Def000B2A
+S A$sound_manager$3027 Def000B21
+S A$sound_manager$3009 Def000B09
+S A$sound_manager$2820 Def000A99
+S A$sound_manager$2811 Def000A95
+S A$sound_manager$2802 Def000A8D
+S A$sound_manager$2703 Def000A45
+S A$sound_manager$2622 Def000A11
+S A$sound_manager$2613 Def000A0D
+S A$sound_manager$2604 Def0009F2
+S A$sound_manager$2550 Def0009A8
+S A$sound_manager$2505 Def000991
+S A$sound_manager$2460 Def000960
+S A$sound_manager$2442 Def000946
+S A$sound_manager$2433 Def000939
+S A$sound_manager$2370 Def0008CD
+S A$sound_manager$2352 Def0008B0
+S A$sound_manager$2316 Def00088E
+S A$sound_manager$2280 Def000867
+S A$sound_manager$2271 Def000863
+S A$sound_manager$2253 Def000858
+S A$sound_manager$2235 Def000847
+S A$sound_manager$2226 Def000841
+S A$sound_manager$2217 Def000836
+S A$sound_manager$2154 Def0007E3
+S A$sound_manager$2118 Def0007B4
+S A$sound_manager$2055 Def00076A
+S A$sound_manager$2019 Def000751
+S A$sound_manager$1911 Def0006DA
+S A$sound_manager$1830 Def000689
+S A$sound_manager$1821 Def000683
+S A$sound_manager$1803 Def000672
+S A$sound_manager$1740 Def000635
+S A$sound_manager$1650 Def0005C3
+S A$sound_manager$1632 Def0005B0
+S A$sound_manager$1623 Def0005A4
+S A$sound_manager$1614 Def00059A
+S A$sound_manager$1560 Def000565
+S A$sound_manager$1551 Def000554
+S A$sound_manager$1542 Def00054D
+S A$sound_manager$1533 Def000543
+S A$sound_manager$1524 Def00053B
+S A$sound_manager$1506 Def00052C
+S A$sound_manager$1461 Def000502
+S A$sound_manager$1452 Def0004FC
+S A$sound_manager$1434 Def0004EB
+S A$sound_manager$1425 Def0004E5
+S A$sound_manager$1407 Def0004D0
+S A$sound_manager$1362 Def0004B6
+S A$sound_manager$1353 Def0004AC
+S A$sound_manager$1344 Def0004A1
+S A$sound_manager$1326 Def000495
+S A$sound_manager$1308 Def000479
+S A$sound_manager$1281 Def00045D
+S A$sound_manager$1272 Def000458
+S A$sound_manager$1263 Def000451
+S A$sound_manager$1236 Def00043A
+S A$sound_manager$1227 Def00042F
+S A$sound_manager$1218 Def00042B
+S A$sound_manager$1191 Def000411
+S A$sound_manager$1182 Def000406
+S A$sound_manager$1146 Def0003E8
+S A$sound_manager$1074 Def0003AD
+S A$sound_manager$1065 Def0003A4
+S A$sound_manager$1038 Def00038E
+S A$sound_manager$3127 Def000B66
+S A$sound_manager$3082 Def000B4E
+S A$sound_manager$3073 Def000B44
+S A$sound_manager$3037 Def000B2C
+S A$sound_manager$3028 Def000B22
+S A$sound_manager$3019 Def000B16
+S A$sound_manager$2911 Def000AD1
+S A$sound_manager$2830 Def000A9E
+S A$sound_manager$2821 Def000A9A
+S A$sound_manager$2812 Def000A98
+S A$sound_manager$2704 Def000A47
+S A$sound_manager$2623 Def000A14
+S A$sound_manager$2605 Def0009F5
+S A$sound_manager$2560 Def0009AE
+S A$sound_manager$2551 Def0009A9
+S A$sound_manager$2542 Def0009A3
+S A$sound_manager$2533 Def00099C
+S A$sound_manager$2470 Def000967
+S A$sound_manager$2443 Def000947
+S A$sound_manager$2434 Def00093A
+S A$sound_manager$2407 Def000913
+S A$sound_manager$2380 Def0008D7
+S A$sound_manager$2371 Def0008CE
+S A$sound_manager$2362 Def0008BE
+S A$sound_manager$2353 Def0008B3
+S A$sound_manager$2344 Def0008A6
+S A$sound_manager$2326 Def00089A
+S A$sound_manager$2317 Def00088F
+S A$sound_manager$2281 Def000868
+S A$sound_manager$2263 Def00085D
+S A$sound_manager$2254 Def000859
+S A$sound_manager$2236 Def000848
+S A$sound_manager$2227 Def000842
+S A$sound_manager$2191 Def000813
+S A$sound_manager$2182 Def000803
+S A$sound_manager$2173 Def0007F3
+S A$sound_manager$2155 Def0007E4
+S A$sound_manager$2119 Def0007B7
+S A$sound_manager$2065 Def00077E
+S A$sound_manager$2056 Def00076D
+S A$sound_manager$2047 Def000760
+S A$sound_manager$1930 Def0006EB
+S A$sound_manager$1912 Def0006DD
+S A$sound_manager$1903 Def0006D5
+S A$sound_manager$1822 Def000684
+S A$sound_manager$1750 Def00063B
+S A$sound_manager$1660 Def0005DE
+S A$sound_manager$1651 Def0005C6
+S A$sound_manager$1633 Def0005B1
+S A$sound_manager$1615 Def00059B
+S A$sound_manager$1570 Def00056D
+S A$sound_manager$1552 Def000557
+S A$sound_manager$1534 Def000546
+S A$sound_manager$1507 Def00052E
+S A$sound_manager$1462 Def000505
+S A$sound_manager$1444 Def0004F5
+S A$sound_manager$1435 Def0004EC
+S A$sound_manager$1381 Def0004C2
+S A$sound_manager$1363 Def0004B9
+S A$sound_manager$1354 Def0004AE
+S A$sound_manager$1345 Def0004A2
+S A$sound_manager$1336 Def00049E
+S A$sound_manager$1318 Def000487
+S A$sound_manager$1309 Def00047A
+S A$sound_manager$1282 Def00045F
+S A$sound_manager$1264 Def000453
+S A$sound_manager$1246 Def000443
+S A$sound_manager$1192 Def000414
+S A$sound_manager$1183 Def000407
+S A$sound_manager$1174 Def000403
+S A$sound_manager$1147 Def0003E9
+S A$sound_manager$1138 Def0003DE
+S A$sound_manager$1075 Def0003AE
+S A$sound_manager$1066 Def0003A6
+S A$sound_manager$1048 Def000398
+S C$sound_manager.c$547$1_0$101 Def000B78
+S G$sound_engine_play_cmd$0$0 Def000B63
+S A$sound_manager$3092 Def000B53
+S A$sound_manager$3065 Def000B41
+S A$sound_manager$3029 Def000B24
+S A$sound_manager$2912 Def000AD5
+S A$sound_manager$2840 Def000AAA
+S A$sound_manager$2831 Def000AA0
+S A$sound_manager$2732 Def000A58
+S A$sound_manager$2723 Def000A54
+S A$sound_manager$2714 Def000A50
+S A$sound_manager$2651 Def000A23
+S A$sound_manager$2606 Def0009F8
+S A$sound_manager$2570 Def0009B5
+S A$sound_manager$2534 Def00099E
+S A$sound_manager$2516 Def000998
+S A$sound_manager$2453 Def000950
+S A$sound_manager$2435 Def00093C
+S A$sound_manager$2426 Def000929
+S A$sound_manager$2408 Def000916
+S A$sound_manager$2390 Def0008EC
+S A$sound_manager$2381 Def0008D9
+S A$sound_manager$2372 Def0008CF
+S A$sound_manager$2363 Def0008C1
+S A$sound_manager$2354 Def0008B6
+S A$sound_manager$2345 Def0008A9
+S A$sound_manager$2318 Def000891
+S A$sound_manager$2309 Def00088A
+S A$sound_manager$2291 Def000872
+S A$sound_manager$2282 Def000869
+S A$sound_manager$2264 Def00085E
+S A$sound_manager$2255 Def00085B
+S A$sound_manager$2237 Def000849
+S A$sound_manager$2192 Def000815
+S A$sound_manager$2183 Def000806
+S A$sound_manager$2174 Def0007F6
+S A$sound_manager$2156 Def0007E5
+S A$sound_manager$2057 Def00076F
+S A$sound_manager$2048 Def000761
+S A$sound_manager$1931 Def0006EE
+S A$sound_manager$1913 Def0006E0
+S A$sound_manager$1814 Def00067B
+S A$sound_manager$1760 Def000641
+S A$sound_manager$1751 Def00063C
+S A$sound_manager$1724 Def000629
+S A$sound_manager$1715 Def00061F
+S A$sound_manager$1706 Def000618
+S A$sound_manager$1661 Def0005E1
+S A$sound_manager$1652 Def0005C7
+S A$sound_manager$1634 Def0005B3
+S A$sound_manager$1616 Def00059E
+S A$sound_manager$1607 Def000591
+S A$sound_manager$1580 Def000579
+S A$sound_manager$1571 Def00056E
+S A$sound_manager$1553 Def000558
+S A$sound_manager$1517 Def000532
+S A$sound_manager$1490 Def00051D
+S A$sound_manager$1472 Def00050C
+S A$sound_manager$1463 Def000506
+S A$sound_manager$1445 Def0004F8
+S A$sound_manager$1436 Def0004ED
+S A$sound_manager$1382 Def0004C5
+S A$sound_manager$1373 Def0004BE
+S A$sound_manager$1355 Def0004AF
+S A$sound_manager$1319 Def000488
+S A$sound_manager$1283 Def000460
+S A$sound_manager$1265 Def000454
+S A$sound_manager$1247 Def000446
+S A$sound_manager$1184 Def000409
+S A$sound_manager$1166 Def0003F6
+S A$sound_manager$1148 Def0003EC
+S A$sound_manager$1139 Def0003DF
+S A$sound_manager$1094 Def0003B8
+S A$sound_manager$1067 Def0003A7
+S A$sound_manager$1058 Def00039E
+S A$sound_manager$1049 Def000399
+S A$sound_manager$3183 Def000B77
+S A$sound_manager$3174 Def000B72
+S A$sound_manager$3093 Def000B54
+S A$sound_manager$2841 Def000AAC
+S A$sound_manager$2733 Def000A59
+S A$sound_manager$2724 Def000A55
+S A$sound_manager$2715 Def000A53
+S A$sound_manager$2652 Def000A27
+S A$sound_manager$2607 Def0009FB
+S A$sound_manager$2580 Def0009BC
+S A$sound_manager$2535 Def0009A1
+S A$sound_manager$2490 Def00097C
+S A$sound_manager$2454 Def000953
+S A$sound_manager$2436 Def00093D
+S A$sound_manager$2427 Def00092C
+S A$sound_manager$2391 Def0008EF
+S A$sound_manager$2373 Def0008D0
+S A$sound_manager$2364 Def0008C4
+S A$sound_manager$2355 Def0008B7
+S A$sound_manager$2346 Def0008AC
+S A$sound_manager$2337 Def00089E
+S A$sound_manager$2328 Def00089B
+S A$sound_manager$2319 Def000892
+S A$sound_manager$2292 Def000875
+S A$sound_manager$2283 Def00086A
+S A$sound_manager$2265 Def00085F
+S A$sound_manager$2247 Def00084E
+S A$sound_manager$2238 Def00084A
+S A$sound_manager$2184 Def000808
+S A$sound_manager$2175 Def0007F8
+S A$sound_manager$2157 Def0007E6
+S A$sound_manager$2148 Def0007DF
+S A$sound_manager$2139 Def0007CF
+S A$sound_manager$2094 Def000794
+S A$sound_manager$2076 Def000788
+S A$sound_manager$2058 Def000772
+S A$sound_manager$1932 Def0006EF
+S A$sound_manager$1923 Def0006E6
+S A$sound_manager$1860 Def0006A8
+S A$sound_manager$1842 Def000693
+S A$sound_manager$1815 Def00067E
+S A$sound_manager$1761 Def000644
+S A$sound_manager$1752 Def00063D
+S A$sound_manager$1743 Def000636
+S A$sound_manager$1734 Def000631
+S A$sound_manager$1716 Def000623
+S A$sound_manager$1671 Def0005F0
+S A$sound_manager$1662 Def0005E4
+S A$sound_manager$1653 Def0005CA
+S A$sound_manager$1644 Def0005BE
+S A$sound_manager$1635 Def0005B6
+S A$sound_manager$1626 Def0005A7
+S A$sound_manager$1608 Def000592
+S A$sound_manager$1590 Def000581
+S A$sound_manager$1572 Def000571
+S A$sound_manager$1554 Def000559
+S A$sound_manager$1518 Def000533
+S A$sound_manager$1491 Def00051E
+S A$sound_manager$1482 Def000517
+S A$sound_manager$1473 Def00050D
+S A$sound_manager$1464 Def000509
+S A$sound_manager$1446 Def0004F9
+S A$sound_manager$1437 Def0004EE
+S A$sound_manager$1419 Def0004DE
+S A$sound_manager$1383 Def0004C6
+S A$sound_manager$1374 Def0004BF
+S A$sound_manager$1356 Def0004B1
+S A$sound_manager$1284 Def000461
+S A$sound_manager$1275 Def00045A
+S A$sound_manager$1257 Def00044C
+S A$sound_manager$1248 Def000447
+S A$sound_manager$1167 Def0003F9
+S A$sound_manager$1095 Def0003BB
+S A$sound_manager$1086 Def0003B5
+S A$sound_manager$1068 Def0003A8
+S A$sound_manager$1059 Def0003A1
+S C$sound_manager.c$549$1_0$101 Def000B78
+S A$sound_manager$3175 Def000B75
+S A$sound_manager$3157 Def000B6C
+S A$sound_manager$3148 Def000B6A
+S A$sound_manager$3094 Def000B57
+S A$sound_manager$3076 Def000B46
+S A$sound_manager$3058 Def000B3B
+S A$sound_manager$2905 Def000ACC
+S A$sound_manager$2806 Def000A91
+S A$sound_manager$2761 Def000A6E
+S A$sound_manager$2752 Def000A6A
+S A$sound_manager$2743 Def000A66
+S A$sound_manager$2734 Def000A5B
+S A$sound_manager$2680 Def000A39
+S A$sound_manager$2608 Def0009FE
+S A$sound_manager$2581 Def0009BD
+S A$sound_manager$2563 Def0009AF
+S A$sound_manager$2491 Def00097F
+S A$sound_manager$2473 Def00096A
+S A$sound_manager$2464 Def000961
+S A$sound_manager$2455 Def000956
+S A$sound_manager$2446 Def00094A
+S A$sound_manager$2437 Def00093F
+S A$sound_manager$2428 Def00092F
+S A$sound_manager$2419 Def00091F
+S A$sound_manager$2392 Def0008F2
+S A$sound_manager$2374 Def0008D1
+S A$sound_manager$2365 Def0008C7
+S A$sound_manager$2356 Def0008B8
+S A$sound_manager$2338 Def00089F
+S A$sound_manager$2293 Def000878
+S A$sound_manager$2284 Def00086D
+S A$sound_manager$2248 Def00084F
+S A$sound_manager$2185 Def00080B
+S A$sound_manager$2176 Def0007FB
+S A$sound_manager$2167 Def0007EC
+S A$sound_manager$2158 Def0007E7
+S A$sound_manager$2149 Def0007E0
+S A$sound_manager$2077 Def000789
+S A$sound_manager$2068 Def000781
+S A$sound_manager$2059 Def000775
+S A$sound_manager$1960 Def00070B
+S A$sound_manager$1942 Def0006F7
+S A$sound_manager$1924 Def0006E9
+S A$sound_manager$1906 Def0006D6
+S A$sound_manager$1870 Def0006B0
+S A$sound_manager$1843 Def000696
+S A$sound_manager$1816 Def00067F
+S A$sound_manager$1807 Def000673
+S A$sound_manager$1771 Def00064A
+S A$sound_manager$1753 Def00063E
+S A$sound_manager$1735 Def000632
+S A$sound_manager$1690 Def000604
+S A$sound_manager$1681 Def0005F9
+S A$sound_manager$1672 Def0005F3
+S A$sound_manager$1663 Def0005E6
+S A$sound_manager$1654 Def0005CD
+S A$sound_manager$1645 Def0005BF
+S A$sound_manager$1636 Def0005B7
+S A$sound_manager$1609 Def000594
+S A$sound_manager$1591 Def000583
+S A$sound_manager$1573 Def000572
+S A$sound_manager$1564 Def000566
+S A$sound_manager$1555 Def00055A
+S A$sound_manager$1528 Def00053E
+S A$sound_manager$1519 Def000534
+S A$sound_manager$1492 Def00051F
+S A$sound_manager$1474 Def00050E
+S A$sound_manager$1447 Def0004FA
+S A$sound_manager$1438 Def0004EF
+S A$sound_manager$1393 Def0004C9
+S A$sound_manager$1384 Def0004C7
+S A$sound_manager$1375 Def0004C0
+S A$sound_manager$1357 Def0004B2
+S A$sound_manager$1348 Def0004A5
+S A$sound_manager$1285 Def000464
+S A$sound_manager$1276 Def00045B
+S A$sound_manager$1258 Def00044D
+S A$sound_manager$1249 Def000448
+S A$sound_manager$1168 Def0003FC
+S A$sound_manager$1096 Def0003BC
+S XG$sound_engine_init$0$0 Def000AEF
+S C$sound_manager.c$102$1_0$20 Def00013E
+S _sound_engine_get_state Def000B78
+S A$sound_manager$3149 Def000B6B
+S A$sound_manager$3086 Def000B4F
+S A$sound_manager$3077 Def000B47
+S A$sound_manager$3059 Def000B3C
+S A$sound_manager$2960 Def000AEA
+S A$sound_manager$2906 Def000ACD
+S A$sound_manager$2870 Def000ABF
+S A$sound_manager$2807 Def000A93
+S A$sound_manager$2762 Def000A70
+S A$sound_manager$2753 Def000A6B
+S A$sound_manager$2744 Def000A69
+S A$sound_manager$2708 Def000A4A
+S A$sound_manager$2681 Def000A3B
+S A$sound_manager$2645 Def000A1D
+S A$sound_manager$2636 Def000A19
+S A$sound_manager$2627 Def000A15
+S A$sound_manager$2609 Def000A01
+S A$sound_manager$2591 Def0009CB
+S A$sound_manager$2582 Def0009C0
+S A$sound_manager$2555 Def0009AA
+S A$sound_manager$2546 Def0009A6
+S A$sound_manager$2492 Def000980
+S A$sound_manager$2465 Def000962
+S A$sound_manager$2456 Def000957
+S A$sound_manager$2438 Def000942
+S A$sound_manager$2429 Def000930
+S A$sound_manager$2393 Def0008F5
+S A$sound_manager$2366 Def0008C8
+S A$sound_manager$2357 Def0008BB
+S A$sound_manager$2339 Def0008A2
+S A$sound_manager$2294 Def000879
+S A$sound_manager$2285 Def00086E
+S A$sound_manager$2276 Def000864
+S A$sound_manager$2249 Def000851
+S A$sound_manager$2186 Def00080E
+S A$sound_manager$2177 Def0007FE
+S A$sound_manager$2168 Def0007EF
+S A$sound_manager$2087 Def00078E
+S A$sound_manager$2078 Def00078A
+S A$sound_manager$2069 Def000782
+S A$sound_manager$1961 Def00070C
+S A$sound_manager$1952 Def000700
+S A$sound_manager$1943 Def0006F8
+S A$sound_manager$1925 Def0006EA
+S A$sound_manager$1907 Def0006D7
+S A$sound_manager$1880 Def0006BE
+S A$sound_manager$1853 Def0006A0
+S A$sound_manager$1844 Def000697
+S A$sound_manager$1835 Def00068C
+S A$sound_manager$1826 Def000685
+S A$sound_manager$1808 Def000676
+S A$sound_manager$1790 Def000663
+S A$sound_manager$1772 Def00064D
+S A$sound_manager$1736 Def000633
+S A$sound_manager$1691 Def000605
+S A$sound_manager$1682 Def0005FC
+S A$sound_manager$1673 Def0005F4
+S A$sound_manager$1664 Def0005E9
+S A$sound_manager$1655 Def0005D0
+S A$sound_manager$1646 Def0005C1
+S A$sound_manager$1637 Def0005B8
+S A$sound_manager$1583 Def00057A
+S A$sound_manager$1574 Def000573
+S A$sound_manager$1565 Def000569
+S A$sound_manager$1556 Def00055D
+S A$sound_manager$1538 Def000549
+S A$sound_manager$1529 Def00053F
+S A$sound_manager$1475 Def000511
+S A$sound_manager$1448 Def0004FB
+S A$sound_manager$1394 Def0004CA
+S A$sound_manager$1367 Def0004BA
+S A$sound_manager$1277 Def00045C
+S A$sound_manager$1196 Def000417
+S A$sound_manager$1169 Def0003FD
+S A$sound_manager$1097 Def0003BD
+S C$sound_manager.c$103$1_0$20 Def00013F
+S A$sound_manager$3087 Def000B50
+S A$sound_manager$3078 Def000B48
+S A$sound_manager$2961 Def000AED
+S A$sound_manager$2943 Def000AE6
+S A$sound_manager$2934 Def000AE1
+S A$sound_manager$2925 Def000ADD
+S A$sound_manager$2916 Def000AD9
+S A$sound_manager$2907 Def000ACF
+S A$sound_manager$2835 Def000AA2
+S A$sound_manager$2772 Def000A78
+S A$sound_manager$2709 Def000A4B
+S A$sound_manager$2646 Def000A1E
+S A$sound_manager$2637 Def000A1A
+S A$sound_manager$2628 Def000A18
+S A$sound_manager$2592 Def0009CE
+S A$sound_manager$2583 Def0009C1
+S A$sound_manager$2574 Def0009B6
+S A$sound_manager$2529 Def000999
+S A$sound_manager$2493 Def000981
+S A$sound_manager$2484 Def000970
+S A$sound_manager$2466 Def000963
+S A$sound_manager$2457 Def000959
+S A$sound_manager$2439 Def000943
+S A$sound_manager$2394 Def0008F9
+S A$sound_manager$2385 Def0008DC
+S A$sound_manager$2367 Def0008C9
+S A$sound_manager$2358 Def0008BC
+S A$sound_manager$2295 Def00087A
+S A$sound_manager$2286 Def000870
+S A$sound_manager$2277 Def000865
+S A$sound_manager$2259 Def00085C
+S A$sound_manager$2196 Def000817
+S A$sound_manager$2187 Def000810
+S A$sound_manager$2178 Def000800
+S A$sound_manager$2169 Def0007F2
+S A$sound_manager$2097 Def000797
+S A$sound_manager$2088 Def00078F
+S A$sound_manager$2079 Def00078B
+S A$sound_manager$1971 Def000714
+S A$sound_manager$1953 Def000703
+S A$sound_manager$1944 Def0006F9
+S A$sound_manager$1917 Def0006E1
+S A$sound_manager$1908 Def0006D8
+S A$sound_manager$1881 Def0006C1
+S A$sound_manager$1854 Def0006A3
+S A$sound_manager$1836 Def00068D
+S A$sound_manager$1809 Def000677
+S A$sound_manager$1791 Def000664
+S A$sound_manager$1773 Def00064E
+S A$sound_manager$1746 Def000637
+S A$sound_manager$1692 Def000607
+S A$sound_manager$1683 Def0005FD
+S A$sound_manager$1674 Def0005F5
+S A$sound_manager$1665 Def0005EA
+S A$sound_manager$1656 Def0005D3
+S A$sound_manager$1638 Def0005BB
+S A$sound_manager$1629 Def0005AA
+S A$sound_manager$1584 Def00057D
+S A$sound_manager$1575 Def000576
+S A$sound_manager$1566 Def00056B
+S A$sound_manager$1557 Def000560
+S A$sound_manager$1476 Def000512
+S A$sound_manager$1395 Def0004CB
+S A$sound_manager$1368 Def0004BB
+S A$sound_manager$1269 Def000455
+S A$sound_manager$1188 Def00040A
+S A$sound_manager$200 Def000072
+S A$sound_manager$101 Def000017
+S C$sound_manager.c$104$1_0$20 Def000143
+S Fsound_manager$tbl_freq_latch$0_0$0 Def000046
+S A$sound_manager$3196 Def000B78
+S A$sound_manager$3088 Def000B51
+S A$sound_manager$3079 Def000B49
+S A$sound_manager$2980 Def000AF2
+S A$sound_manager$2935 Def000AE4
+S A$sound_manager$2926 Def000ADE
+S A$sound_manager$2917 Def000ADC
+S A$sound_manager$2863 Def000AB6
+S A$sound_manager$2854 Def000AB2
+S A$sound_manager$2845 Def000AAE
+S A$sound_manager$2836 Def000AA6
+S A$sound_manager$2773 Def000A7A
+S A$sound_manager$2674 Def000A33
+S A$sound_manager$2665 Def000A2F
+S A$sound_manager$2656 Def000A2B
+S A$sound_manager$2647 Def000A20
+S A$sound_manager$2593 Def0009D1
+S A$sound_manager$2584 Def0009C3
+S A$sound_manager$2575 Def0009B9
+S A$sound_manager$2566 Def0009B1
+S A$sound_manager$2494 Def000984
+S A$sound_manager$2485 Def000973
+S A$sound_manager$2476 Def00096D
+S A$sound_manager$2467 Def000964
+S A$sound_manager$2458 Def00095C
+S A$sound_manager$2449 Def00094D
+S A$sound_manager$2395 Def0008FD
+S A$sound_manager$2386 Def0008DF
+S A$sound_manager$2368 Def0008CA
+S A$sound_manager$2296 Def00087B
+S A$sound_manager$2287 Def000871
+S A$sound_manager$2278 Def000866
+S A$sound_manager$2269 Def000861
+S A$sound_manager$2197 Def000818
+S A$sound_manager$2089 Def000790
+S A$sound_manager$1954 Def000704
+S A$sound_manager$1945 Def0006FA
+S A$sound_manager$1936 Def0006F1
+S A$sound_manager$1918 Def0006E4
+S A$sound_manager$1882 Def0006C2
+S A$sound_manager$1855 Def0006A5
+S A$sound_manager$1792 Def000665
+S A$sound_manager$1783 Def000654
+S A$sound_manager$1765 Def000645
+S A$sound_manager$1747 Def000638
+S A$sound_manager$1729 Def00062C
+S A$sound_manager$1693 Def00060A
+S A$sound_manager$1684 Def0005FE
+S A$sound_manager$1675 Def0005F6
+S A$sound_manager$1657 Def0005D6
+S A$sound_manager$1639 Def0005BC
+S A$sound_manager$1585 Def00057E
+S A$sound_manager$1576 Def000577
+S A$sound_manager$1558 Def000561
+S A$sound_manager$1477 Def000513
+S A$sound_manager$1378 Def0004C1
+S A$sound_manager$1369 Def0004BC
+S A$sound_manager$1297 Def00046A
+S A$sound_manager$1189 Def00040D
+S C$sound_manager.c$140$1_0$30 Def0001F4
+S C$sound_manager.c$105$1_0$20 Def000144
+S _sound_engine_update Def000AF0
+A _DATA size C3 flags 0 addr 0
+S Fsound_manager$ram_cmd$0_0$0 Def000000
+S Fsound_manager$carry_flag$0_0$0 Def0000C2
+S Fsound_manager$ram_ch$0_0$0 Def000002
+S Fsound_manager$ram_flags$0_0$0 Def000001
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
@@ -22,6 +1932,782 @@ A _GSFINAL size 0 flags 0 addr 0
 A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00 00
+R 00 00 01 00
+T 00 00 00
+R 00 00 01 00
+T 01 00 00
+R 00 00 01 00
+T 01 00 00
+R 00 00 01 00
+T 02 00 00
+R 00 00 01 00
+T 02 00 00
+R 00 00 01 00
+T C2 00 00
+R 00 00 01 00
+T C2 00 00
+R 00 00 01 00
+T 00 00 00
 R 00 00 00 00
-T 00 00 00 11 07 00 C9
+T 00 00 00 01 65 CB 09 4D 44 59 50 7B D6 B5 7A DE
 R 00 00 00 00
+T 0D 00 00 06 30 06 21 00 00 09 7E C9
+R 00 00 00 00 02 07 00 00
+T 16 00 00
+R 00 00 00 00
+T 16 00 00 AF C9
+R 00 00 00 00
+T 18 00 00
+R 00 00 00 00
+T 18 00 00 00 00 31 35 B5 35 EC 35 62 37 79 38
+R 00 00 00 00
+T 24 00 00 AB 38 D3 38 FD 38 0F 39 39 39 B3 31
+R 00 00 00 00
+T 30 00 00 6A 39 7F 39 94 39 C7 39 B3 31 B3 31
+R 00 00 00 00
+T 3C 00 00 FC 39 35 3A 47 3A 55 3A 8C 3A
+R 00 00 00 00
+T 46 00 00
+R 00 00 00 00
+T 46 00 00 80 A0 C0 C0
+R 00 00 00 00
+T 4A 00 00
+R 00 00 00 00
+T 4A 00 00 90 B0 D0 F0
+R 00 00 00 00
+T 4E 00 00
+R 00 00 00 00
+T 4E 00 00 E5 CD 00 00 E1 23 4F 06 00 C5 CD 00 00
+R 00 00 00 00 00 05 00 00 00 0E 00 00
+T 5B 00 00 C1 6F AF B1 5F 7D B0 57 C9
+R 00 00 00 00
+T 64 00 00
+R 00 00 00 00
+T 64 00 00 7E CB 57 20 0B FD 21 02 00 FD 39 FD 7E
+R 00 00 00 00
+T 71 00 00 00 D3 7F
+R 00 00 00 00
+T 74 00 00
+R 00 00 00 00
+T 74 00 00 E1 33 E9
+R 00 00 00 00
+T 77 00 00
+R 00 00 00 00
+T 77 00 00 DD E5 DD 21 00 00 DD 39 F5 F5 3B 4F DD
+R 00 00 00 00
+T 84 00 00 75 FF 51 1E 00 0E 08
+R 00 00 00 00
+T 8B 00 00
+R 00 00 00 00
+T 8B 00 00 7A 07 E6 01 DD 77 FE EB 29 EB DD 7E FE
+R 00 00 00 00
+T 98 00 00 B7 28 2A 21 00 00 DD 7E FF DD 77 FB AF
+R 00 00 00 00
+T A5 00 00 DD 77 FC DD 77 FD DD 77 FE DD 7E FB 83
+R 00 00 00 00
+T B2 00 00 5F DD 7E FC 8A 57 DD 7E FD 8D 6F DD 7E
+R 00 00 00 00
+T BF 00 00 FE 8C 67 DD 75 FE
+R 00 00 00 00
+T C5 00 00
+R 00 00 00 00
+T C5 00 00 0D 20 C3 DD 7E FE 32 C2 00 DD F9 DD E1
+R 00 00 00 00 00 0A 01 00
+T D2 00 00 C9
+R 00 00 00 00
+T D3 00 00
+R 00 00 00 00
+T D3 00 00 DD E5 DD 21 00 00 DD 39 F5 F5 0E 00
+R 00 00 00 00
+T DF 00 00
+R 00 00 00 00
+T DF 00 00 11 00 00 29 CB 13 CB 12 DD 7E 05 DD 77
+R 00 00 00 00
+T EC 00 00 FC AF DD 77 FD DD 77 FE DD 77 FF 7D DD
+R 00 00 00 00
+T F9 00 00 86 FC 6F 7C DD 8E FD 67 7B DD 8E FE 5F
+R 00 00 00 00
+T 06 01 00 7A DD 8E FF 57 7B E6 01 DD 77 05 44 DD
+R 00 00 00 00
+T 13 01 00 7E 05 B7 20 06 78 DD 96 04 38 16
+R 00 00 00 00
+T 1E 01 00
+R 00 00 00 00
+T 1E 01 00 78 DD 96 04 26 00 57 1E 00 7D B3 6F 7C
+R 00 00 00 00
+T 2B 01 00 B2 67 DD 36 05 00 C3 38 01
+R 00 00 00 00 00 0A 00 00
+T 34 01 00
+R 00 00 00 00
+T 34 01 00 DD 36 05 01
+R 00 00 00 00
+T 38 01 00
+R 00 00 00 00
+T 38 01 00 0C 79 D6 08 38 A1 7D 87 DD B6 05 2F DD
+R 00 00 00 00
+T 45 01 00 F9 DD E1 E1 C1 E9
+R 00 00 00 00
+T 4B 01 00
+R 00 00 00 00
+T 4B 01 00 0E 00
+R 00 00 00 00
+T 4D 01 00
+R 00 00 00 00
+T 4D 01 00 21 02 00 06 00 09 36 00 0C 79 D6 C0 38
+R 00 00 00 00 00 04 01 00
+T 5A 01 00 F2 3E 9F D3 7F 3E BF D3 7F 3E DF D3 7F
+R 00 00 00 00
+T 67 01 00 3E FF D3 7F 21 01 00 36 00 C9
+R 00 00 00 00 00 08 01 00
+T 71 01 00
+R 00 00 00 00
+T 71 01 00 DD E5 DD 21 00 00 DD 39 F5 F5 4D 44 23
+R 00 00 00 00
+T 7E 01 00 E3 D5 69 60 CD 00 00 D1 DD 77 FE
+R 00 00 00 00 00 08 00 00
+T 89 01 00
+R 00 00 00 00
+T 89 01 00 DD 46 FE DD 35 FE 78 B7 28 58 7B D6
+R 00 00 00 00
+T 95 01 00 C2 00 00 7A DE C2 00 00 30 50 C1 C5 DD
+R 00 00 00 00 09 03 01 00 89 08 01 00
+T 9E 01 00 36 FF 00
+R 00 00 00 00
+T A1 01 00
+R 00 00 00 00
+T A1 01 00 DD 6E FF 26 00 19 C5 FD E1 03 E5 C5 D5
+R 00 00 00 00
+T AE 01 00 FD E5 E1 CD 00 00 D1 C1 E1 77 DD 34 FF
+R 00 00 00 00 00 07 00 00
+T BB 01 00 DD 7E FF D6 09 38 DF 33 33 C5 21 09 00
+R 00 00 00 00
+T C8 01 00 19 36 20 21 0A 00 19 36 01 21 0B 00 19
+R 00 00 00 00
+T D5 01 00 36 00 21 0C 00 19 36 00 21 0D 00 19 36
+R 00 00 00 00
+T E2 01 00 00 21 20 00 19 EB C3 89 01
+R 00 00 00 00 00 0A 00 00
+T EB 01 00
+R 00 00 00 00
+T EB 01 00 21 00 00 36 80 DD F9 DD E1 C9
+R 00 00 00 00 00 04 01 00
+T F5 01 00
+R 00 00 00 00
+T F5 01 00 4F CB 21 06 00 21 9F 34 09 C3 4E 00
+R 00 00 00 00 00 0D 00 00
+T 01 02 00
+R 00 00 00 00
+T 01 02 00 DD E5 DD 21 00 00 DD 39 F5 F5 3B DD 75
+R 00 00 00 00
+T 0E 02 00 FD DD 74 FE 33 33 D5
+R 00 00 00 00
+T 15 02 00
+R 00 00 00 00
+T 15 02 00 DD 7E FD C6 0E 5F DD 7E FE CE 00 57 1A
+R 00 00 00 00
+T 22 02 00 CB 3F 26 00 C1 C5 6F 09 D5 CD 00 00 D1
+R 00 00 00 00 00 0D 00 00
+T 2F 02 00 DD 77 FF 1A 4F CB 41 20 2C DD 7E FF 07
+R 00 00 00 00
+T 3C 02 00 07 07 07 DD 77 FF B7 20 04 12 C3 15 02
+R 00 00 00 00 00 0E 00 00
+T 49 02 00
+R 00 00 00 00
+T 49 02 00 DD 7E FF D6 10 20 06 79 3D 12 C3 15 02
+R 00 00 00 00 00 0E 00 00
+T 56 02 00
+R 00 00 00 00
+T 56 02 00 DD 7E FF D6 20 20 07 DD 36 FF 00 C3
+R 00 00 00 00
+T 62 02 00 93 02
+R 00 00 00 00 00 03 00 00
+T 64 02 00
+R 00 00 00 00
+T 64 02 00 79 3C 12 DD 7E FF F6 F0 DD 4E FD DD 46
+R 00 00 00 00
+T 71 02 00 FE 21 08 00 09 4E 06 00 6F 26 00 09 4D
+R 00 00 00 00
+T 7E 02 00 44 3E FF B9 3E 00 98 3E 00 17 2C DD 75
+R 00 00 00 00
+T 8B 02 00 FF B7 20 04 DD 36 FF 00
+R 00 00 00 00
+T 93 02 00
+R 00 00 00 00
+T 93 02 00 DD 6E FD DD 66 FE 11 16 00 19 DD 7E FF
+R 00 00 00 00
+T A0 02 00 2F E6 0F 77 DD F9 DD E1 C9
+R 00 00 00 00
+T A9 02 00
+R 00 00 00 00
+T A9 02 00 DD E5 DD 21 00 00 DD 39 FD 21 F9 FF FD
+R 00 00 00 00
+T B6 02 00 39 FD F9 4D 44 DD 7E 05 DD 77 F9 DD 7E
+R 00 00 00 00
+T C3 02 00 06 DD 77 FA E1 E5 7E DD 77 FE 23 7E DD
+R 00 00 00 00
+T D0 02 00 77 FF DD 7E 04 1E 00 E6 1F DD 77 FC DD
+R 00 00 00 00
+T DD 02 00 36 FD 00 DD CB FD 7E C2 FF 04 3E 0E DD
+R 00 00 00 00 00 0B 00 00
+T EA 02 00 BE FC 3E 00 DD 9E FD E2 F6 02 EE 80
+R 00 00 00 00 00 0B 00 00
+T F6 02 00
+R 00 00 00 00
+T F6 02 00 FA FF 04 DD 5E FC 16 00 21 05 03 19 19
+R 00 00 00 00 00 04 00 00 00 0C 00 00
+T 03 03 00 19 E9
+R 00 00 00 00
+T 05 03 00
+R 00 00 00 00
+T 05 03 00 C3 32 03 C3 43 03 C3 56 03 C3
+R 00 00 00 00 00 04 00 00 00 07 00 00 00 0A 00 00
+T 0F 03 00 8A 03 C3 B8 03 C3 CB 03 C3
+R 00 00 00 00 00 03 00 00 00 06 00 00 00 09 00 00
+T 18 03 00 DE 03 C3 F2 03 C3 06 04 C3
+R 00 00 00 00 00 03 00 00 00 06 00 00 00 09 00 00
+T 21 03 00 1A 04 C3 2E 04 C3 6A 04 C3
+R 00 00 00 00 00 03 00 00 00 06 00 00 00 09 00 00
+T 2A 03 00 A1 04 C3 E8 04 C3 56 03
+R 00 00 00 00 00 03 00 00 00 06 00 00 00 09 00 00
+T 32 03 00
+R 00 00 00 00
+T 32 03 00 03 03 C5 DD 6E FE DD 66 FF CD 00 00 C1
+R 00 00 00 00 00 0D 00 00
+T 3F 03 00 02 C3 0C 05
+R 00 00 00 00 00 05 00 00
+T 43 03 00
+R 00 00 00 00
+T 43 03 00 21 08 00 09 E5 DD 6E FE DD 66 FF CD
+R 00 00 00 00
+T 4F 03 00 00 00 E1 77 C3 0C 05
+R 00 00 00 00 00 03 00 00 00 08 00 00
+T 56 03 00
+R 00 00 00 00
+T 56 03 00 DD 7E FC D6 02 DD B6 FD 20 04 AF C3
+R 00 00 00 00
+T 62 03 00 69 03
+R 00 00 00 00 00 03 00 00
+T 64 03 00
+R 00 00 00 00
+T 64 03 00 3A 01 00 E6 20
+R 00 00 00 00 00 04 01 00
+T 69 03 00
+R 00 00 00 00
+T 69 03 00 32 01 00 AF 02 11 4A 00 69 60 23 7E E6
+R 00 00 00 00 00 04 01 00 00 09 00 00
+T 76 03 00 03 6F 26 00 19 7E F6 0F F5 33 69 60 CD
+R 00 00 00 00
+T 83 03 00 64 00 3E 01 C3 18 05
+R 00 00 00 00 00 03 00 00 00 08 00 00
+T 8A 03 00
+R 00 00 00 00
+T 8A 03 00 C5 DD 6E FE DD 66 FF CD 00 00 C1 F6 E0
+R 00 00 00 00 00 0B 00 00
+T 97 03 00 57 C5 D5 D5 33 69 60 CD 64 00 D1 C1 7A
+R 00 00 00 00 00 0B 00 00
+T A4 03 00 F6 FC 3C B7 20 07 0A CB B7 02 C3 0C 05
+R 00 00 00 00 00 0E 00 00
+T B1 03 00
+R 00 00 00 00
+T B1 03 00 0A CB F7 02 C3 0C 05
+R 00 00 00 00 00 08 00 00
+T B8 03 00
+R 00 00 00 00
+T B8 03 00 21 07 00 09 E5 DD 6E FE DD 66 FF CD
+R 00 00 00 00
+T C4 03 00 00 00 E1 77 C3 0C 05
+R 00 00 00 00 00 03 00 00 00 08 00 00
+T CB 03 00
+R 00 00 00 00
+T CB 03 00 DD 6E FE DD 66 FF CD 4E 00 1B DD 73 FE
+R 00 00 00 00 00 0A 00 00
+T D8 03 00 DD 72 FF C3 0C 05
+R 00 00 00 00 00 07 00 00
+T DE 03 00
+R 00 00 00 00
+T DE 03 00 0A CB EF 02 DD 6E FE DD 66 FF 2B DD 75
+R 00 00 00 00
+T EB 03 00 FE DD 74 FF C3 0C 05
+R 00 00 00 00 00 08 00 00
+T F2 03 00
+R 00 00 00 00
+T F2 03 00 0A CB AF 02 DD 6E FE DD 66 FF 2B DD 75
+R 00 00 00 00
+T FF 03 00 FE DD 74 FF C3 0C 05
+R 00 00 00 00 00 08 00 00
+T 06 04 00
+R 00 00 00 00
+T 06 04 00 0A CB DF 02 DD 6E FE DD 66 FF 2B DD 75
+R 00 00 00 00
+T 13 04 00 FE DD 74 FF C3 0C 05
+R 00 00 00 00 00 08 00 00
+T 1A 04 00
+R 00 00 00 00
+T 1A 04 00 0A CB 9F 02 DD 6E FE DD 66 FF 2B DD 75
+R 00 00 00 00
+T 27 04 00 FE DD 74 FF C3 0C 05
+R 00 00 00 00 00 08 00 00
+T 2E 04 00
+R 00 00 00 00
+T 2E 04 00 C5 DD 6E FE DD 66 FF CD 4E 00 C1 D5 FD
+R 00 00 00 00 00 0B 00 00
+T 3B 04 00 E1 DD 5E FE DD 56 FF 13 21 09 00 09 35
+R 00 00 00 00
+T 48 04 00 7E DD 77 FF 3D 77 DD 6E FF 26 00 09 72
+R 00 00 00 00
+T 55 04 00 DD 6E FF 26 00 2B 09 73 FD E5 C1 0B DD
+R 00 00 00 00
+T 62 04 00 71 FE DD 70 FF C3 0C 05
+R 00 00 00 00 00 09 00 00
+T 6A 04 00
+R 00 00 00 00
+T 6A 04 00 21 09 00 09 EB 1A DD 77 FB DD 77 FF 6F
+R 00 00 00 00
+T 77 04 00 26 00 09 7E DD 77 FC DD 36 FD 00 DD 6E
+R 00 00 00 00
+T 84 04 00 FF 26 00 23 09 4E AF DD B6 FC DD 77 FE
+R 00 00 00 00
+T 91 04 00 79 DD B6 FD DD 77 FF DD 7E FB C6 02 12
+R 00 00 00 00
+T 9E 04 00 C3 0C 05
+R 00 00 00 00 00 04 00 00
+T A1 04 00
+R 00 00 00 00
+T A1 04 00 C5 DD 6E FE DD 66 FF CD 00 00 C1 C6 17
+R 00 00 00 00 00 0B 00 00
+T AE 04 00 6F 26 00 09 EB DD 4E FE DD 46 FF 03 1A
+R 00 00 00 00
+T BB 04 00 B7 20 0A C5 D5 69 60 CD 00 00 D1 C1 12
+R 00 00 00 00 00 0B 00 00
+T C8 04 00
+R 00 00 00 00
+T C8 04 00 03 1A 3D 12 B7 28 0F 69 60 CD 4E 00 1B
+R 00 00 00 00 00 0D 00 00
+T D5 04 00 DD 73 FE DD 72 FF C3 0C 05
+R 00 00 00 00 00 0A 00 00
+T DE 04 00
+R 00 00 00 00
+T DE 04 00 03 DD 71 FE DD 70 FF C3 0C 05
+R 00 00 00 00 00 0B 00 00
+T E8 04 00
+R 00 00 00 00
+T E8 04 00 21 05 00 09 4E E5 C5 DD 6E FE DD 66 FF
+R 00 00 00 00
+T F5 04 00 CD 00 00 C1 E1 81 77 C3 0C 05
+R 00 00 00 00 00 04 00 00 00 0B 00 00
+T FF 04 00
+R 00 00 00 00
+T FF 04 00 DD 6E FE DD 66 FF 2B DD 75 FE DD 74 FF
+R 00 00 00 00
+T 0C 05 00
+R 00 00 00 00
+T 0C 05 00 E1 E5 DD 7E FE 77 23 DD 7E FF 77 AF
+R 00 00 00 00
+T 18 05 00
+R 00 00 00 00
+T 18 05 00 DD F9 DD E1 E1 C1 33 E9
+R 00 00 00 00
+T 20 05 00
+R 00 00 00 00
+T 20 05 00 DD E5 DD 21 00 00 DD 39 FD 21 F8 FF FD
+R 00 00 00 00
+T 2D 05 00 39 FD F9 4D 44 23 23 23 5E 16 00 C5 FD
+R 00 00 00 00
+T 3A 05 00 E1 FD 6E 04 AF B3 5F 7D B2 DD 73 FE DD
+R 00 00 00 00
+T 47 05 00 77 FF DD 36 FD 00 DD 36 F8 00
+R 00 00 00 00
+T 51 05 00
+R 00 00 00 00
+T 51 05 00 DD 5E FE DD 56 FF 6B 62 23 DD 75 FE DD
+R 00 00 00 00
+T 5E 05 00 74 FF C5 EB CD 00 00 C1 DD 77 F9 D6 E0
+R 00 00 00 00 00 08 00 00
+T 6B 05 00 38 24 C5 21 08 00 39 E5 DD 7E F9 F5 33
+R 00 00 00 00
+T 78 05 00 69 60 CD A9 02 C1 B7 28 05 3E 01 C3
+R 00 00 00 00 00 06 00 00
+T 84 05 00 15 07
+R 00 00 00 00 00 03 00 00
+T 86 05 00
+R 00 00 00 00
+T 86 05 00 DD 34 FE 20 C6 DD 34 FF C3 51 05
+R 00 00 00 00 00 0C 00 00
+T 91 05 00
+R 00 00 00 00
+T 91 05 00 0A CB 5F CA 1F 06 21 11 00 09 DD 7E F9
+R 00 00 00 00 00 07 00 00
+T 9E 05 00 77 21 10 00 09 EB DD 6E FE DD 66 FF 7D
+R 00 00 00 00
+T AB 05 00 C6 01 DD 77 FE 7C CE 00 DD 77 FF C5 D5
+R 00 00 00 00
+T B8 05 00 CD 00 00 D1 C1 12 0A CB 6F 28 55 21
+R 00 00 00 00 00 04 00 00
+T C4 05 00 15 00 09 DD 75 FA DD 74 FB DD 7E FE DD
+R 00 00 00 00
+T D1 05 00 77 FC DD 7E FF DD 77 FD DD 7E FC C6 01
+R 00 00 00 00
+T DE 05 00 DD 77 FE DD 7E FD CE 00 DD 77 FF C5 DD
+R 00 00 00 00
+T EB 05 00 6E FC DD 66 FD CD 00 00 C1 D1 E1 E5 D5
+R 00 00 00 00 00 09 00 00
+T F8 05 00 77 21 14 00 09 EB DD 6E FE DD 66 FF 7D
+R 00 00 00 00
+T 05 06 00 C6 01 DD 77 FE 7C CE 00 DD 77 FF C5 D5
+R 00 00 00 00
+T 12 06 00 CD 00 00 D1 C1 12
+R 00 00 00 00 00 04 00 00
+T 18 06 00
+R 00 00 00 00
+T 18 06 00 DD 36 FD 01 C3 AC 06
+R 00 00 00 00 00 08 00 00
+T 1F 06 00
+R 00 00 00 00
+T 1F 06 00 DD CB F9 7E 20 07 DD 36 F8 01 C3 AC 06
+R 00 00 00 00 00 0E 00 00
+T 2C 06 00
+R 00 00 00 00
+T 2C 06 00 DD 7E F9 C6 80 5F B7 28 0A 69 60 23 23
+R 00 00 00 00
+T 39 06 00 23 23 23 7E 83 5F
+R 00 00 00 00
+T 3F 06 00
+R 00 00 00 00
+T 3F 06 00 C5 7B CD F5 01 C1 21 10 00 09 73 21
+R 00 00 00 00 00 06 00 00
+T 4B 06 00 11 00 09 72 0A CB 6F 28 38 DD 5E FE DD
+R 00 00 00 00
+T 58 06 00 56 FF 6B 62 23 DD 75 FE DD 74 FF C5 EB
+R 00 00 00 00
+T 65 06 00 CD 00 00 C1 C6 80 59 50 21 05 00 19 5E
+R 00 00 00 00 00 04 00 00
+T 72 06 00 83 DD 77 F9 C5 CD F5 01 C1 21 14 00 09
+R 00 00 00 00 00 09 00 00
+T 7F 06 00 73 21 15 00 09 72 DD 36 FD 01 C3 AC 06
+R 00 00 00 00 00 0E 00 00
+T 8C 06 00
+R 00 00 00 00
+T 8C 06 00 C5 DD 6E FE DD 66 FF CD 00 00 C1 DD 77
+R 00 00 00 00 00 0B 00 00
+T 99 06 00 F9 DD CB F9 7E 20 0C DD 34 FE 20 03 DD
+R 00 00 00 00
+T A6 06 00 34 FF
+R 00 00 00 00
+T A8 06 00
+R 00 00 00 00
+T A8 06 00 DD 36 F8 01
+R 00 00 00 00
+T AC 06 00
+R 00 00 00 00
+T AC 06 00 DD 7E FD B7 28 1C DD 5E FE DD 56 FF 6B
+R 00 00 00 00
+T B9 06 00 62 23 DD 75 FE DD 74 FF C5 EB CD 00 00
+R 00 00 00 00 00 0E 00 00
+T C6 06 00 C1 DD 77 F9 DD 36 F8 01
+R 00 00 00 00
+T CE 06 00
+R 00 00 00 00
+T CE 06 00 DD 7E F8 B7 28 17 69 60 23 23 6E C5 DD
+R 00 00 00 00
+T DB 06 00 7E F9 CD 77 00 C1 21 0A 00 09 73 21
+R 00 00 00 00 00 06 00 00
+T E7 06 00 0B 00 09 72
+R 00 00 00 00
+T EB 06 00
+R 00 00 00 00
+T EB 06 00 21 0E 00 09 36 00 21 0F 00 09 36 00 59
+R 00 00 00 00
+T F8 06 00 50 13 13 13 DD 7E FE 12 21 04 00 09 DD
+R 00 00 00 00
+T 05 07 00 7E FF 77 21 0C 00 09 36 00 21 0D 00 09
+R 00 00 00 00
+T 12 07 00 36 00 AF
+R 00 00 00 00
+T 15 07 00
+R 00 00 00 00
+T 15 07 00 DD F9 DD E1 C9
+R 00 00 00 00
+T 1A 07 00
+R 00 00 00 00
+T 1A 07 00 DD E5 DD 21 00 00 DD 39 FD 21 F2 FF FD
+R 00 00 00 00
+T 27 07 00 39 FD F9 DD 75 FE DD 74 FF DD 7E FE C6
+R 00 00 00 00
+T 34 07 00 0C DD 77 F2 DD 7E FF CE 00 DD 77 F3 E1
+R 00 00 00 00
+T 41 07 00 E5 4E 06 00 DD 7E FE C6 0D 5F DD 7E FF
+R 00 00 00 00
+T 4E 07 00 CE 00 57 1A 67 2E 00 79 B5 4F 78 B4 47
+R 00 00 00 00
+T 5B 07 00 03 79 E1 E5 77 78 12 DD 7E FE C6 0A DD
+R 00 00 00 00
+T 68 07 00 77 FC DD 7E FF CE 00 DD 77 FD DD 6E FC
+R 00 00 00 00
+T 75 07 00 DD 66 FD 5E 16 00 DD 6E FE DD 66 FF C5
+R 00 00 00 00
+T 82 07 00 01 0B 00 09 C1 6E AF B3 5F 7D B2 67 6B
+R 00 00 00 00
+T 8F 07 00 BF ED 42 20 0D DD 6E FE DD 66 FF CD
+R 00 00 00 00
+T 9B 07 00 20 05 B7 C2 94 09
+R 00 00 00 00 00 03 00 00 00 07 00 00
+T A1 07 00
+R 00 00 00 00
+T A1 07 00 DD 4E FE DD 46 FF 21 10 00 09 4E 06 00
+R 00 00 00 00
+T AE 07 00 DD 5E FE DD 56 FF 21 11 00 19 5E AF B1
+R 00 00 00 00
+T BB 07 00 4F 7B B0 47 DD 7E FE C6 16 DD 77 F4 DD
+R 00 00 00 00
+T C8 07 00 7E FF CE 00 DD 77 F5 DD 7E FE C6 01 DD
+R 00 00 00 00
+T D5 07 00 77 F6 DD 7E FF CE 00 DD 77 F7 78 B1 20
+R 00 00 00 00
+T E2 07 00 09 C1 E1 E5 C5 36 0F C3 70 09
+R 00 00 00 00 00 0B 00 00
+T EC 07 00
+R 00 00 00 00
+T EC 07 00 DD 6E FE DD 66 FF 5E DD 7E FE C6 12 DD
+R 00 00 00 00
+T F9 07 00 77 F8 DD 7E FF CE 00 DD 77 F9 DD 7E FE
+R 00 00 00 00
+T 06 08 00 C6 13 DD 77 FA DD 7E FF CE 00 DD 77 FB
+R 00 00 00 00
+T 13 08 00 CB 6B 20 12 79 DD 6E F8 DD 66 F9 77 DD
+R 00 00 00 00
+T 20 08 00 6E FA DD 66 FB 70 C3 AD 08
+R 00 00 00 00 00 0A 00 00
+T 29 08 00
+R 00 00 00 00
+T 29 08 00 DD 5E FE DD 56 FF 21 14 00 19 5E 16 00
+R 00 00 00 00
+T 36 08 00 DD 6E FE DD 66 FF C5 01 15 00 09 C1 6E
+R 00 00 00 00
+T 43 08 00 AF 67 B3 5F 7D B2 57 EB BF ED 42 7C 1E
+R 00 00 00 00
+T 50 08 00 00 E6 80 B3 D6 01 3E 00 17 EE 01 5F 55
+R 00 00 00 00
+T 5D 08 00 7B B7 28 03 AF 92 57
+R 00 00 00 00
+T 64 08 00
+R 00 00 00 00
+T 64 08 00 E1 E5 6E C5 D5 7A CD 77 00 D5 FD E1 D1
+R 00 00 00 00 00 0A 00 00
+T 71 08 00 C1 DD 6E FC DD 66 FD 56 C5 D5 3A C2 00
+R 00 00 00 00 00 0E 01 00
+T 7E 08 00 F5 33 D5 33 FD E5 E1 CD D3 00 D1 C1 6F
+R 00 00 00 00 00 0B 00 00
+T 8B 08 00 26 00 7B B7 28 09 AF 95 5F 9F 94 57 C3
+R 00 00 00 00
+T 98 08 00 9B 08
+R 00 00 00 00 00 03 00 00
+T 9A 08 00
+R 00 00 00 00
+T 9A 08 00 EB
+R 00 00 00 00
+T 9B 08 00
+R 00 00 00 00
+T 9B 08 00 EB 09 EB 7B DD 6E F8 DD 66 F9 77 DD 6E
+R 00 00 00 00
+T A8 08 00 FA DD 66 FB 72
+R 00 00 00 00
+T AD 08 00
+R 00 00 00 00
+T AD 08 00 DD 4E FE DD 46 FF 21 07 00 09 7E DD 77
+R 00 00 00 00
+T BA 08 00 FD B7 20 16 DD 4E FE DD 46 FF 21 08 00
+R 00 00 00 00
+T C7 08 00 09 7E 2F E6 0F C1 E1 E5 C5 77 C3 1F 09
+R 00 00 00 00 00 0E 00 00
+T D4 08 00
+R 00 00 00 00
+T D4 08 00 DD 7E FD E6 7F DD 77 FD DD 35 FD DD 7E
+R 00 00 00 00
+T E1 08 00 FD DD 77 FC DD 36 FD 00 DD 7E FC DD 77
+R 00 00 00 00
+T EE 08 00 F2 DD 7E FD DD 77 F3 DD CB F2 26 DD CB
+R 00 00 00 00
+T FB 08 00 F3 16 DD 7E F2 C6 AE DD 77 FC DD 7E F3
+R 00 00 00 00
+T 08 09 00 CE 3A DD 77 FD DD 6E FC DD 66 FD CD
+R 00 00 00 00
+T 14 09 00 4E 00 DD 6E FE DD 66 FF CD 01 02
+R 00 00 00 00 00 03 00 00 00 0C 00 00
+T 1F 09 00
+R 00 00 00 00
+T 1F 09 00 DD 6E FE DD 66 FF CB 76 20 47 DD 6E F8
+R 00 00 00 00
+T 2C 09 00 DD 66 F9 7E E6 0F 4F DD 6E F6 DD 66 F7
+R 00 00 00 00
+T 39 09 00 7E E6 03 5F 16 00 21 46 00 19 7E B1 F5
+R 00 00 00 00 00 0A 00 00
+T 46 09 00 33 DD 6E FE DD 66 FF CD 64 00 DD 6E F8
+R 00 00 00 00 00 0B 00 00
+T 53 09 00 DD 66 F9 7E E6 F0 DD 6E FA DD 66 FB 4E
+R 00 00 00 00
+T 60 09 00 B1 07 07 07 07 F5 33 DD 6E FE DD 66 FF
+R 00 00 00 00
+T 6D 09 00 CD 64 00
+R 00 00 00 00 00 04 00 00
+T 70 09 00
+R 00 00 00 00
+T 70 09 00 DD 6E F6 DD 66 F7 7E E6 03 4F 06 00 21
+R 00 00 00 00
+T 7D 09 00 4A 00 09 7E DD 6E F4 DD 66 F5 4E B1 F5
+R 00 00 00 00 00 03 00 00
+T 8A 09 00 33 DD 6E FE DD 66 FF CD 64 00
+R 00 00 00 00 00 0B 00 00
+T 94 09 00
+R 00 00 00 00
+T 94 09 00 DD F9 DD E1 C9
+R 00 00 00 00
+T 99 09 00
+R 00 00 00 00
+T 99 09 00 3A 00 00 CB 7F CA 4B 01 FE 97 D2 4B 01
+R 00 00 00 00 00 04 01 00 00 09 00 00 00 0E 00 00
+T A6 09 00 C6 80 5F B7 C8 01 18 00 6B 26 00 29 09
+R 00 00 00 00 00 09 00 00
+T B3 09 00 4E 23 46 3A 01 00 57 3E 16 93 DA E1 0A
+R 00 00 00 00 00 07 01 00 00 0E 00 00
+T C0 09 00 D5 16 00 21 CB 09 19 19 19 D1 E9
+R 00 00 00 00 00 07 00 00
+T CB 09 00
+R 00 00 00 00
+T CB 09 00 C3 E1 0A C3 10 0A C3 10 0A C3
+R 00 00 00 00 00 04 00 00 00 07 00 00 00 0A 00 00
+T D5 09 00 10 0A C3 10 0A C3 1D 0A C3
+R 00 00 00 00 00 03 00 00 00 06 00 00 00 09 00 00
+T DE 09 00 1D 0A C3 1D 0A C3 33 0A C3
+R 00 00 00 00 00 03 00 00 00 06 00 00 00 09 00 00
+T E7 09 00 1D 0A C3 1D 0A C3 E1 0A C3
+R 00 00 00 00 00 03 00 00 00 06 00 00 00 09 00 00
+T F0 09 00 45 0A C3 58 0A C3 6E 0A C3
+R 00 00 00 00 00 03 00 00 00 06 00 00 00 09 00 00
+T F9 09 00 84 0A C3 E1 0A C3 E1 0A C3
+R 00 00 00 00 00 03 00 00 00 06 00 00 00 09 00 00
+T 02 0A 00 9D 0A C3 B6 0A C3 C4 0A C3
+R 00 00 00 00 00 03 00 00 00 06 00 00 00 09 00 00
+T 0B 0A 00 10 0A C3 CC 0A
+R 00 00 00 00 00 03 00 00 00 06 00 00
+T 10 0A 00
+R 00 00 00 00
+T 10 0A 00 C5 CD 4B 01 C1 11 02 00 69 60 C3 71 01
+R 00 00 00 00 00 05 00 00 00 09 01 00 00 0E 00 00
+T 1D 0A 00
+R 00 00 00 00
+T 1D 0A 00 7A E6 0F C2 E1 0A FD 21 01 00 FD 36 00
+R 00 00 00 00 00 07 00 00 00 0B 01 00
+T 2A 0A 00 10 11 82 00 69 60 C3 71 01
+R 00 00 00 00 00 05 01 00 00 0A 00 00
+T 33 0A 00
+R 00 00 00 00
+T 33 0A 00 7A E6 1F C2 E1 0A 3E DF D3 7F 11 A2 00
+R 00 00 00 00 00 07 00 00 00 0E 01 00
+T 40 0A 00 69 60 C3 71 01
+R 00 00 00 00 00 06 00 00
+T 45 0A 00
+R 00 00 00 00
+T 45 0A 00 CB 42 C2 E1 0A 7A F6 02 32 01 00 11
+R 00 00 00 00 00 06 00 00 00 0C 01 00
+T 51 0A 00 82 00 69 60 C3 71 01
+R 00 00 00 00 00 03 01 00 00 08 00 00
+T 58 0A 00
+R 00 00 00 00
+T 58 0A 00 7A E6 03 C2 E1 0A FD 21 01 00 FD 36 00
+R 00 00 00 00 00 07 00 00 00 0B 01 00
+T 65 0A 00 04 11 82 00 69 60 C3 71 01
+R 00 00 00 00 00 05 01 00 00 0A 00 00
+T 6E 0A 00
+R 00 00 00 00
+T 6E 0A 00 CB 42 20 6F 7A F6 02 32 01 00 3E DF D3
+R 00 00 00 00 00 0B 01 00
+T 7B 0A 00 7F 11 A2 00 69 60 C3 71 01
+R 00 00 00 00 00 05 01 00 00 0A 00 00
+T 84 0A 00
+R 00 00 00 00
+T 84 0A 00 7A E6 0F 20 58 FD 21 01 00 FD 36 00 10
+R 00 00 00 00 00 0A 01 00
+T 91 0A 00 3E DF D3 7F 11 82 00 69 60 C3 71 01
+R 00 00 00 00 00 08 01 00 00 0D 00 00
+T 9D 0A 00
+R 00 00 00 00
+T 9D 0A 00 7A E6 03 20 3F FD 21 01 00 FD 36 00 04
+R 00 00 00 00 00 0A 01 00
+T AA 0A 00 3E DF D3 7F 11 62 00 69 60 C3 71 01
+R 00 00 00 00 00 08 01 00 00 0D 00 00
+T B6 0A 00
+R 00 00 00 00
+T B6 0A 00 7A F6 01 32 01 00 11 62 00 69 60 C3
+R 00 00 00 00 00 07 01 00 00 0A 01 00
+T C2 0A 00 71 01
+R 00 00 00 00 00 03 00 00
+T C4 0A 00
+R 00 00 00 00
+T C4 0A 00 11 02 00 69 60 C3 71 01
+R 00 00 00 00 00 04 01 00 00 09 00 00
+T CC 0A 00
+R 00 00 00 00
+T CC 0A 00 7A E6 03 20 10 FD 21 01 00 FD 36 00 04
+R 00 00 00 00 00 0A 01 00
+T D9 0A 00 11 82 00 69 60 C3 71 01
+R 00 00 00 00 00 04 01 00 00 09 00 00
+T E1 0A 00
+R 00 00 00 00
+T E1 0A 00 21 00 00 36 80 C9
+R 00 00 00 00 00 04 01 00
+T E7 0A 00
+R 00 00 00 00
+T E7 0A 00 CD 4B 01 21 00 00 36 80 C9
+R 00 00 00 00 00 04 00 00 00 07 01 00
+T F0 0A 00
+R 00 00 00 00
+T F0 0A 00 DD E5 DD 21 00 00 DD 39 F5 CD 99 09 0E
+R 00 00 00 00 00 0D 00 00
+T FD 0A 00 00
+R 00 00 00 00
+T FE 0A 00
+R 00 00 00 00
+T FE 0A 00 69 26 00 5D 54 13 13 13 EB 29 29 29 29
+R 00 00 00 00
+T 0B 0B 00 29 EB FD 21 02 00 FD 19 FD 46 00 29 29
+R 00 00 00 00 00 07 01 00
+T 18 0B 00 29 29 29 7D C6 02 00 00 DD 77 FE 7C CE
+R 00 00 00 00 09 08 01 00
+T 23 0B 00 02 00 00 DD 77 FF E1 E5 7E CB 78 28 08
+R 00 00 00 00 89 03 01 00
+T 2E 0B 00 CB D7 E1 E5 77 C3 3B 0B
+R 00 00 00 00 00 09 00 00
+T 36 0B 00
+R 00 00 00 00
+T 36 0B 00 CB 97 E1 E5 77
+R 00 00 00 00
+T 3B 0B 00
+R 00 00 00 00
+T 3B 0B 00 0C 79 D6 03 38 BD 0E 00
+R 00 00 00 00
+T 43 0B 00
+R 00 00 00 00
+T 43 0B 00 69 26 00 29 29 29 29 29 11 02 00 19 7E
+R 00 00 00 00 00 0C 01 00
+T 50 0B 00 07 30 05 C5 CD 1A 07 C1
+R 00 00 00 00 00 08 00 00
+T 58 0B 00
+R 00 00 00 00
+T 58 0B 00 0C 79 D6 06 38 E5 DD F9 DD E1 C9
+R 00 00 00 00
+T 63 0B 00
+R 00 00 00 00
+T 63 0B 00 4F C6 80 32 00 00 C9
+R 00 00 00 00 00 07 01 00
+T 6A 0B 00
+R 00 00 00 00
+T 6A 0B 00 3C 4F C3 63 0B
+R 00 00 00 00 00 06 00 00
+T 6F 0B 00
+R 00 00 00 00
+T 6F 0B 00 CD 4B 01 21 00 00 36 80 C9
+R 00 00 00 00 00 04 00 00 00 07 01 00
+T 78 0B 00
+R 00 00 00 00
+T 78 0B 00 3A 00 00 C9
+R 00 00 00 00 00 04 01 00
