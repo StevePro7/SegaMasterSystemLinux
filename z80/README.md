@@ -11,6 +11,12 @@ D:\GitHub\StevePro7\Blogger\MAME
 D:\GitHub\StevePro7\Blogger\Z80
 
 
+Chat.html
+D:\GitHub\StevePro8\SegaMasterSystemLinux\z80
+
+
+D:\GitHub\StevePro8\SegaMasterSystemLinux\ExamplesNew420\10-Testing\01-MusicSFX
+
 
 
 D:\Code\testing2\sverx420\devkitSMS\crt0\crt0_sms.rel
